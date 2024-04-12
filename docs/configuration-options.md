@@ -96,7 +96,7 @@ For information on options to settings please refer to [here](http://smoothiewar
 {% include_relative zprobe-options.md %}
 
 | [Leveling strategy](http://smoothieware.org/zprobe#leveling-strategies) | | |
-{% include_relative zprobe-leveling-strategy-options.md %}
+{% include_relative zprobe-options.md %}
 
 | [Panel](http://smoothieware.org/panel) | | |
 {% include_relative panel-options.md %}
