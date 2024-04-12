@@ -1,5 +1,5 @@
 
-{% include_relative module-forum-thread.md %}
+{% include_relative forum_thread.md %}
 
 
 <!-- Comments:
