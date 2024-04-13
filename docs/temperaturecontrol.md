@@ -74,7 +74,7 @@ Note PT100 as used by the e3d amplifier is supported in current edge, but not in
 
 ##### Configuration and usage
 
-{% include_relative PT100.md %}
+{% include_relative pt100.md %}
 
 #### Thermocouple via SPI
 
