@@ -48,11 +48,11 @@ Notes:
 
 ### Interwiki
 
-DokuWiki supports [Interwiki](Interwiki.md) links. These are quick links to other Wikis. For example, this is a link to Wikipedia's page about Wikis: [Wiki](wp>Wiki.md).
+DokuWiki supports [Interwiki](Interwiki.md) links. These are quick links to other Wikis. For example, this is a link to Wikipedia's page about Wikis: [Wiki](wp>wiki.md).
 
 ### Windows Shares
 
-Windows shares like [this](\\server\share.md) are recognized, too. Please note that these only make sense in a homogeneous user group like a corporate [Intranet](wp>Intranet.md).
+Windows shares like [this](\\server\share.md) are recognized, too. Please note that these only make sense in a homogeneous user group like a corporate [Intranet](wp>intranet.md).
 
 Notes:
 

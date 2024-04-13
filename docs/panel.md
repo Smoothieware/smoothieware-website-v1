@@ -129,7 +129,7 @@ It is one of the most popular options for panel controllers.
 >
 > There is an adapter board to easily connect a ReprapDiscount GLCD to a Smoothieboard with flat cable, however note this is entirely optional.
 >
-> You can find information about it at the [RRDGLCDAdapter](RRDGLCDAdapter.md) page.
+> You can find information about it at the [RRDGLCDAdapter](rrdglcdadapter.md) page.
 >
 > It's sources are available on [github](https://github.com/llegoff/GlcdAdapter2).
 >

@@ -15,8 +15,8 @@ This image shows the board layout of the Smoothiedriver interface:
 
 You can download the eagle files for that image to check sizing here:
 
-- [SmoothieDriverPort.sch](/smoothiedriver/SmoothieDriverPort.sch.md)
-- [SmoothieDriverPort.brd](/smoothiedriver/SmoothieDriverPort.brd.md)
+- [SmoothieDriverPort.sch](/smoothiedriver/smoothiedriverport.sch.md)
+- [SmoothieDriverPort.brd](/smoothiedriver/smoothiedriverport.brd.md)
 
 ## Smoothiedriver Levels of Compliance
 

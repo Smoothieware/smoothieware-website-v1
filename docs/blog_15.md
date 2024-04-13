@@ -9,9 +9,9 @@ Recently, a lot of key things have happened, so let's do an update:
 
 ## Firmware
 
-The [mBed version of the Smoothie2 firmware](https://github.com/Smoothieware/Smoothie2.md) is a port of the [v1 firmware we all love](https://github.com/Smoothieware/Smoothieware.md) to the LPC4337 (the chip on the Smoothieboard v2). The mBed version has been put on hold and is superseded by the [nuttx version of the Smoothie v2 firmware](https://github.com/Smoothieware/smoothie-v2.md).
+The [mBed version of the Smoothie2 firmware](https://github.com/Smoothieware/Smoothie2.md) is a port of the [v1 firmware we all love](https://github.com/Smoothieware/Smoothieware.md) to the LPC4337 (the chip on the Smoothieboard v2). The mBed version has been put on hold and is superseded by the [nuttx version of the Smoothie v2 firmware](https://github.com/smoothieware/smoothie-v2.md).
 
-These [awesome people](https://github.com/Smoothieware/Smoothie2/graphs/contributors.md) have gotten the alpha version of the nuttx firmware up and running.
+These [awesome people](https://github.com/smoothieware/smoothie2/graphs/contributors.md) have gotten the alpha version of the nuttx firmware up and running.
 
 <iframe width="100%" height="600" src="https://www.youtube.com/embed/qBVmJ0OQFPw?rel=0&amp;modestbranding=1" frameborder="0" allowfullscreen></iframe>
 
@@ -93,7 +93,7 @@ This will allow you to start from a Smoothieboard and add pretty much **anything
 
 You can find a list of the boards [here](https://docs.google.com/document/d/144EbmhN6z-J2V_Zw7GfJpZrfD-B0dC3cuea9oWPgxNM/edit#).
 
-Several of the boards have already been [contributed by volunteers](https://github.com/Smoothieware/Smoothieboard2.md).
+Several of the boards have already been [contributed by volunteers](https://github.com/smoothieware/smoothieboard2.md).
 
 ## Video Tutorials
 
@@ -101,9 +101,9 @@ We plan on having a full series of video tutorials on Youtube for the v2 series 
 
 That series will cover everything, and watching it in its entirety should make you a Smoothie expert, but you can also watch just whatever part you need for your specific project. The videos will also be integrated into the written documentation website.
 
-The community is currently writing the synopses for this series (help welcome) [here](https://github.com/Smoothieware/Smoothie-video-tutorials.md).
+The community is currently writing the synopses for this series (help welcome) [here](https://github.com/smoothieware/smoothie-video-tutorials.md).
 
-Once the synopses are written, the plan is to hire Youtube 3D printing celebrity [Thomas Sanladerer](https://github.com/Smoothieware/Smoothie-video-tutorials.md) to shoot them all, and publish them on his channel. Total planned runtime for the first series of videos is approximately 2 hours, but more will come after that.
+Once the synopses are written, the plan is to hire Youtube 3D printing celebrity [Thomas Sanladerer](https://github.com/smoothieware/smoothie-video-tutorials.md) to shoot them all, and publish them on his channel. Total planned runtime for the first series of videos is approximately 2 hours, but more will come after that.
 
 ## Help
 

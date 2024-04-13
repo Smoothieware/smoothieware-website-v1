@@ -12,7 +12,7 @@ Here is how to flash a new firmware to your Smoothieboard.
 >
 > When you upgrade to a newer version, make sure you also upgrade your [configuration file](http://smoothieware.org/configuring-smoothie.md), to make sure the firmware can understand it. We try very hard to maintain backwards compatibility, however in the years since the start of the project, there have been a few very rare changes, so having a very old configuration with a very recent firmware can rarely cause problems.
 >
-> When upgrading from such a very old firmware, make sure you read [the upgrade notes](https://github.com/Smoothieware/Smoothieware/blob/edge/upgrade-notes.md).
+> When upgrading from such a very old firmware, make sure you read [the upgrade notes](https://github.com/smoothieware/smoothieware/blob/edge/upgrade-notes.md).
 
 This is also presuming your Smoothieboard is already flashed with the [DFU bootloader](http://smoothieware.org/flashing-the-bootloader.md) ( it is already if you bought the board, it probably isn't if you built it yourself ).
 

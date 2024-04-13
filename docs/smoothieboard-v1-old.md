@@ -46,7 +46,7 @@ You can now get a smoothieboard [here](http://smoothieware.org/getting-smoothieb
 
 ### Power inputs
 - Main 12-24V (Stepper drivers) power can be connected using a 3.5mm or 5mm screw terminal, SMT power jack connector, or a Molex connector (ATX-harddrive style)
-- 5V input can come from a 3.5mm screw terminal, a SMT power jack connector, or a Molex connector as above or taken directly from the USB cable. 5V can also be supplied by a [5V regulator installed on the board](http://smoothieware.org/VoltageRegulator.md).
+- 5V input can come from a 3.5mm screw terminal, a SMT power jack connector, or a Molex connector as above or taken directly from the USB cable. 5V can also be supplied by a [5V regulator installed on the board](http://smoothieware.org/voltageregulator.md).
 
 ### Inputs
 - 4 Thermistor (ADC) inputs.

@@ -75,4 +75,4 @@ Now that the board has power, you can use that power to move things!
 
 ### Emergency stop
 
-It is recommended you setup an emergency stop button on your machine, so that in case of a problem, you can easily and quickly turn the machine off. For information on how to do this, please read [EmergencyStop](/EmergencyStop.md).
+It is recommended you setup an emergency stop button on your machine, so that in case of a problem, you can easily and quickly turn the machine off. For information on how to do this, please read [EmergencyStop](/emergencystop.md).

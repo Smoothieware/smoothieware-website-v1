@@ -8,7 +8,7 @@ This changes Smoothie to calculate acceleration for every step instead of 1000 t
 It also comes with many many smaller improvements to planning and step generation. It solves many small problems users experienced in some circumstances. Amongst those, it is expected to fix the infamous "S3D bug", so please test that.
 It is also expected to make Smoothie more sturdy overall, and is a first step towards implementing some more refactors.
 
-A few things have changed for users, so please read [the upgrade notes](https://github.com/Smoothieware/Smoothieware/blob/edge/upgrade-notes.md) before upgrading.
+A few things have changed for users, so please read [the upgrade notes](https://github.com/smoothieware/smoothieware/blob/edge/upgrade-notes.md) before upgrading.
 
 To upgrade, the procedure is as usual, and you can find it here: [Flashing Smoothie Firmware](http://smoothieware.org/flashing-smoothie-firmware)
 

@@ -84,7 +84,7 @@ The filename must be `config` or `config.txt`
 > **IMPORTANT**
 >
 > If you are upgrading from a previous version of master or edge check for upgrade notes in the github root directory.
-> [Upgrade notes](https://github.com/Smoothieware/Smoothieware/blob/edge/upgrade-notes.md)
+> [Upgrade notes](https://github.com/smoothieware/smoothieware/blob/edge/upgrade-notes.md)
 
 ## Options
 

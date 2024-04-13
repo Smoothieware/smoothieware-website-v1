@@ -26,21 +26,21 @@ All documentation and additional information besides the [syntax description](/s
 - [System Requirements](/requirements.md)
 - [Download DokuWiki](http://download.dokuwiki.org/) :!:
 - [Change Log](/changes.md)
-- [How to install or upgrade](/Install.md) :!:
+- [How to install or upgrade](/install.md) :!:
 - [Configuration](/config.md)
 
 **Using DokuWiki**
 
 - [Wiki Syntax](/syntax.md)
 - [The manual](/manual.md) :!:
-- [Frequently Asked Questions (FAQ)](/FAQ.md)
+- [Frequently Asked Questions (FAQ)](/faq.md)
 - [Glossary](/glossary.md)
 - [Search for DokuWiki help and documentation](http://search.dokuwiki.org)
 
 **Customizing DokuWiki**
 
 - [Tips and Tricks](/tips.md)
-- [How to create and use templates](/Template.md)
+- [How to create and use templates](/template.md)
 - [Installing plugins](/plugins.md)
 - [Development Resources](/development.md)
 

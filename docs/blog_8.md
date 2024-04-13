@@ -1,2 +1,2 @@
 
-Checkout [Zprobe page](Zprobe.md) for more info.
+Checkout [Zprobe page](zprobe.md) for more info.

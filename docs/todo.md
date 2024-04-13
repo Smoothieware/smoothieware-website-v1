@@ -181,7 +181,7 @@ Basic functions such as serial communication, configuration, planning and step g
 
 Many have already offered to help, and at this point, several are at the point where they have hardware to work on, and are starting to get familiar with the codebase. But this is a huge project, and here more is better! So come join the effort :)
 
-You can find a list of the things to do for this project in the ReadMe: [Smoothie2 README](https://github.com/Smoothieware/Smoothie2/blob/master/README.md)
+You can find a list of the things to do for this project in the ReadMe: [Smoothie2 README](https://github.com/smoothieware/smoothie2/blob/master/readme.md)
 
 Below are a few of the ones that need the most work. Because these are difficult to implement, it's hard finding people to work on them. If you think you are capable of doing any of those, please please please [contact us](mailto:wolf.arthur@gmail.com), we really need help on these.
 

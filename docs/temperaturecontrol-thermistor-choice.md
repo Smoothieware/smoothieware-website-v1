@@ -49,7 +49,7 @@ This is the preferred method. Set the Steinhart Hart coefficients in the configu
 temperature_control.hotend.coefficients 0.000722376862540841,0.000216302098124288,0.000000092640163984
 ```
 
-To determine the Steinhart Hart coefficients for your thermistor, please refer to the [SteinhartHart](SteinhartHart.md) page.
+To determine the Steinhart Hart coefficients for your thermistor, please refer to the [SteinhartHart](steinharthart.md) page.
 
 Alternatively, if you have the temperature curve for your thermistor, you can define three points on that curve and let Smoothie calculate the coefficients:
 

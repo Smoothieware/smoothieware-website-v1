@@ -9,7 +9,7 @@ This feature is one of the rare ones that requires compiling Smoothie. Because i
 
 There are two resources that were written about this feature when it was released that you might want to read:
 * [ABC pull request](https://github.com/Smoothieware/Smoothieware/pull/1055) on GitHub.
-* [Smoothie's upgrade notes](https://github.com/Smoothieware/Smoothieware/blob/edge/upgrade-notes.md)
+* [Smoothie's upgrade notes](https://github.com/smoothieware/smoothieware/blob/edge/upgrade-notes.md)
 
 > [!WARNING]
 > **NOTE** that currently WCS is not supported for ABC axis (G10 L2...). G92 A0 resets the A axis and does not set the WCS for it (same for B and C).

@@ -101,7 +101,7 @@ temperature_control.vac_n2.rt_curve               20.0,220,120,6000,220,120000
 
 On some Pick and Place machines, the head (Z axis) is controlled by a hobby servo motor.
 
-However, by default in Smoothie, those are controlled via the [Switch](Switch.md) module using M-codes such as `M280`.
+However, by default in Smoothie, those are controlled via the [Switch](switch.md) module using M-codes such as `M280`.
 
 This works, but that's not how you usually address a Z axis. 
 
