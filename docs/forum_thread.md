@@ -1,6 +1,7 @@
 
-{% include_relative forum_thread.md %}
-
+<!-- 
+{     % include_relative forum_thread.md %    }
+--> 
 
 <!-- Comments:
 - The DokuWiki include syntax has been converted to the Jekyll include_relative syntax for Markdown.
