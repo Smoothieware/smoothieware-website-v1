@@ -17,16 +17,15 @@ my_pin_name 19!
 
 There are other modifiers for pins:
 
-> [!NOTE]
-> | Modifier | Symbol | Description |
-> | --- | --- | --- |
-> | Invert pin | `!` | Exclamation mark |
-> | Open drain | `o` | Lowercase O letter |
-> | Pull up | `^` | Caret, `Shift`+`6` on QWERTY keyboards (Default on most pins) |
-> | Pull down | `v` | Lowercase v letter |
-> | No pullup | `-` | Minus sign |
-> | Repeater mode | `@` | At / Arobase sign |
-> | No modifier | | If you do not set any option/modifier for your pin, it will be in pullup mode as if it had `^` specified |
+| Modifier | Symbol | Description |
+| --- | --- | --- |
+| Invert pin | `!` | Exclamation mark |
+| Open drain | `o` | Lowercase O letter |
+| Pull up | `^` | Caret, `Shift`+`6` on QWERTY keyboards (Default on most pins) |
+| Pull down | `v` | Lowercase v letter |
+| No pullup | `-` | Minus sign |
+| Repeater mode | `@` | At / Arobase sign |
+| No modifier | | If you do not set any option/modifier for your pin, it will be in pullup mode as if it had `^` specified |
 
 > [!WARNING]
 > Some pins have hardware on the board itself, enforcing a given configuration.
