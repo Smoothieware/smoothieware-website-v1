@@ -18,7 +18,7 @@ These are the names of the different stepper motors/drivers, and the correspondi
 
 The value is in Amperes and is generally found on the motor itself or in its datasheet.
 
-You can find and set these values in the [configuration file](/configuring-smoothie.md).
+You can find and set these values in the [configuration file](configuring-smoothie.md).
 
 They are found near the other values for a given axis, for example:
 

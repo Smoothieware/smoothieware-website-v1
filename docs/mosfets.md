@@ -1,6 +1,6 @@
 
 > [!WARNING]
-> ![Warning](/images/external/warning.png)
+> ![Warning]<img src="images/Warning.png" alt="Warning">
 > If it will burn your skin, don't touch it. Simple.
 
 Smoothie has up to 6 MOSFET controls (6 on 5X, 4 on 4X, and 2 on 3X). The MOSFETs act as switches to ground: loads must be connected between the power source and the MOSFET switched terminal. When the MOSFET is switched on, power will be applied to the load. When the MOSFET is switched off, power will be removed, because one load terminal will be essentially disconnected and current cannot flow. The exception being inductive load 'flyback' switching transients, discussed above.
@@ -32,7 +32,7 @@ MOSFETs list:
 | Mixed MOSFETs  | Third small MOSFET  | `1.22`          | X9               | VBB (motor) input            | 12-24V  | 3A max     |
 
 MOSFETs diagram:
-![MOSFET Input Output](/images/smoothieboard-graphics/schematics/mosfet-input-output.svg.png)
+!<img src="images/MOSFETs.png" alt="MOSFET Input Output">
 
 > [!WARNING]
 > MOSFET power inputs have a polarity, make sure you connect `+` on that connector to `+` on your PSU, and `-` to `-` on the PSU. Heater elements, however, do not have a polarity, so you do not have to worry about polarity on the outputs. If you are using another output element like a Peltier or a Spindle, you need to be careful to respect the polarity for the outputs too.
@@ -41,7 +41,7 @@ Never use the big MOSFETS for more than 12.5A (and monitor connector and MOSFET 
 
 Trying to power a 40W (or more) hotend cartridge heater at 12V with the small FETs will destroy them, usually locking (melting) them to the "ON" state (shorted) and possibly destroying the circuitry driving the MOSFET gate.
 
-If you need to control more than 12 Amps, you cannot do it with one of the MOSFETS on board, however, you can use a Solid State Relay. For information see the [Solid State Relay Appendix on this page](/general-appendixes.md#solidstaterelay).
+If you need to control more than 12 Amps, you cannot do it with one of the MOSFETS on board, however, you can use a Solid State Relay. For information see the [Solid State Relay Appendix on this page](general-appendixes.md#solidstaterelay).
 
 > [!NOTE]
 > In the case of both the Big MOSFETS pair and the Small MOSFETS pair, you take power from the PSU (Power Supply Unit) to them via their respective power input connectors.

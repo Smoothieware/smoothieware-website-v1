@@ -1,3 +1,14 @@
-title: Your Site Title
+title: SmoothieWare
 baseurl: "/docs"  # Base URL for your project
+markdown: kramdown
+plugins:
+  - jekyll-github-metadata
 
+theme: minima # Or any theme you prefer
+
+include:
+  - _pages
+
+exclude:
+  - Gemfile
+  - Gemfile.lock

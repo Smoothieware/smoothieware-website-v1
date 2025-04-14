@@ -3,7 +3,7 @@
 
 Smoothiedriver is a series of motor driver PCBs that are designed to connect to the no-driver series of Smoothieboard (coming soon). At the core of the system is the 3 pin parallel stepper system used on modern repraps: Enable, Direction, Step. All Smoothiedrivers support at least this basic interface which is compatible with older AVR based motion controllers such as RAMPS.
 
-![Smoothiedriver 20gamma 20no 20connectors 20small](/images/smoothiedriver/smoothiedriver-20gamma-20no-20connectors-20small.jpg)
+![Smoothiedriver 20gamma 20no 20connectors 20small](images/smoothiedriver-gamma-no-connectors-small.jpg)
 
 The first Smoothiedriver is a DC motor controller with encoder feedback, implemented as a full H-bridge driven by an ARM Cortex-M0 microcontroller. The current prototype is a triple channel controller that can drive 3.5A per channel. More drivers are planned and are in development from stepper drivers that can handle over 2A with 64x microstepping to BLDC controllers!
 
@@ -11,12 +11,13 @@ The first Smoothiedriver is a DC motor controller with encoder feedback, impleme
 
 This image shows the board layout of the Smoothiedriver interface:
 
-![SmoothieDriverPort](/images/smoothiedriver/smoothiedriverport.png)
+
+![SmoothieDriverPort](images/smoothie-driver-port.png)
 
 You can download the eagle files for that image to check sizing here:
 
-- [SmoothieDriverPort.sch](/smoothiedriver/smoothiedriverport.sch.md)
-- [SmoothieDriverPort.brd](/smoothiedriver/smoothiedriverport.brd.md)
+- [SmoothieDriverPort.sch](smoothiedriver/smoothiedriverport.sch.md)
+- [SmoothieDriverPort.brd](smoothiedriver/smoothiedriverport.brd.md)
 
 ## Smoothiedriver Levels of Compliance
 
@@ -44,4 +45,4 @@ The first true Smoothiedriver will probably be the Smoothiedriver DC. It will be
 
 ## Status
 
-The first Smoothiedriver DC-2 prototype had firmware but it was using a different MCU than is currently being targeted so the firmware will have to be rewritten. On the bright side, [mbed](https://www.mbed.org) just went open source so now the same libraries can be used for both [Smoothieware](/smoothieware.md) and [Smoothieware Mini](/accessory.md)!
+The first Smoothiedriver DC-2 prototype had firmware but it was using a different MCU than is currently being targeted so the firmware will have to be rewritten. On the bright side, [mbed](https://www.mbed.org) just went open source so now the same libraries can be used for both [Smoothieware](smoothieware.md) and [Smoothieware Mini](accessory.md)!

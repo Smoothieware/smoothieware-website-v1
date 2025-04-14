@@ -1,5 +1,6 @@
 
-<img align="right" src="/images/joystick/joystick.png" alt="Joystick Module" width="200"/>
+
+<img align="right" src="images/joystick.png" alt="Joystick Module" width="200"/>
 
 # Joystick Module
 
@@ -21,9 +22,9 @@ Some possible uses for the Joystick module:
 
 ### Hardware Requirements
 
-<img src="/images/joystick/joystick.png" alt="Joystick" width="150"/>
-<img src="/images/joystick/sparkfun_joystick.jpg" alt="Sparkfun Joystick" width="150"/>
-<img src="/images/joystick/sparkfun_slider.jpg" alt="Sparkfun Slider" width="150"/>
+<img src="images/joystick.png" alt="Joystick" width="150"/>
+<img src="images/sparkfun_joystick.jpg" alt="Sparkfun Joystick" width="150"/>
+<img src="images/sparkfun_slider.jpg" alt="Sparkfun Slider" width="150"/>
 
 To begin, you will need a device that you want to read. Some example devices are shown here, but really any variable resistor (potentiometer) or device that outputs 0-3.3 V should work. For more information on how potentiometers work, see [SparkFun's tutorial](https://learn.sparkfun.com/tutorials/voltage-dividers/).
 
@@ -33,7 +34,9 @@ For the rest of the document, the examples will be for a 2-axis joystick like in
 
 If you have a potentiometer, you will need to connect one side to 3.3 V, the other side to ground, and the wiper to a pin on the SmoothieBoard which supports analog reading (see table below).
 
-<img src="/images/joystick/potentiometer_schematic.png" alt="Potentiometer Schematic" width="300"/>
+
+<img src="images/potentiometer-schematic.png" alt="Potentiometer Schematic" width="300"/>
+
 
 The above image shows a basic schematic of a potentiometer. Pins 1 and 3 are the ends of the potentiometer, and Pin 2 is the wiper. Vin should be 3.3 V for the SmoothieBoard, and Pin 2 will be connected to a compatible pin on the SmoothieBoard (see table below).
 
@@ -56,7 +59,11 @@ The analog pins on the SmoothieBoard which can be connected to a wiper (Pin 2 in
 See [Pinout](pinout.md) for a diagram of the SmoothieBoard with the pins labeled.
 
 For a joystick, you will need to connect each wiper (the left/right and up/down) to different analog pins (e.g. 1.30 and 1.31).
-<img src="/images/joystick/joystick_connections.png" alt="Joystick Connections" width="400"/>
+
+<img src="images/missing.png" alt="" width=100>
+<!-- LED
+<img src="images/joystick/joystick_connections.png" alt="Joystick Connections" width="400"/>
+-->
 
 ## Configuration
 
@@ -66,8 +73,10 @@ The configuration file, at its most basic level, must tell the SmoothieBoard how
 The way the Joystick module performs this conversion is to first measure the voltage coming in. The module then subtracts off an offset, called `zero_offset`. The module then scales the voltage reading so that the `zero_offset` voltage becomes 0, and the `endpoint` voltage becomes 1 or -1 (depends on if `endpoint` is greater or less than `zero_offset`). Any values which end up outside the -1 to 1 range are fixed to be at +/- 1.
 
 <div align="center">
-<img src="/images/joystick/joystick_mapping_diagram.png" alt="Joystick Mapping Diagram" width="1000"/>
-
+<img src="images/missing.png" alt="Joystick Mapping">
+<!-- LED
+<img src="images/joystick/joystick_mapping_diagram.png" alt="Joystick Mapping Diagram" width="1000"/>
+-->
 Example Mapping from joystick position to output with `zero_offset` = 1.5 V and `endpoint` = 0 V
 </div>
 

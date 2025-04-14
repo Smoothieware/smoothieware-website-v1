@@ -1,7 +1,7 @@
 
 <div class='panel panel-default wrap_right' style='width:340px;padding:10px '>
 <div class='panel-heading'><h4 class='panel-title'>Connecteurs USB</h4></div>
-<img src='/images/usb.svg.png' width='320px'><br/>
+<img src='images/usb-cable.png' width='320px'><br/>
 Smoothie utilise l'USB-B
 </div>
 
@@ -11,7 +11,7 @@ Votre Smoothieboard est livrée avec une carte Micro SD insérée dans le port M
 
 Les cartes livrées sont pré-configurées. Il n'est pas nécessaire de préparer la carte SD avant de connecter la Smoothieboard à votre ordinateur pour pouvoir l'utiliser, puisqu'un fichier de configuration basique y est installé.
 
-Avant de connecter votre carte, il est préférable de jeter un œil à notre liste de [Logiciels](/software.md) et d'installer un programme "hôte" pour communiquer avec la smoothie.
+Avant de connecter votre carte, il est préférable de jeter un œil à notre liste de [Logiciels](software.md) et d'installer un programme "hôte" pour communiquer avec la smoothie.
 
 ## Connexion via USB
 
@@ -19,7 +19,9 @@ Vous pouvez commencer par vous familiariser avec la Smoothieboard en la connecta
 
 <div class='panel panel-default wrap_right' style='width:340px;padding:10px '>
 <div class='panel-heading'><h4 class='panel-title'>Carte SD</h4></div>
-<img src='/images/smoothie-config-screencap.png' width='320px'><br/>
+
+<img src='images/smoothie-config-screencap.png' width='320px'><br/>
+
 Fichiers sur votre carte SD
 </div>
 
@@ -31,19 +33,19 @@ Ceci permet d'ajouter, de copier, d'éditer ou de supprimer n'importe quel fichi
 > Pour en savoir plus sur la configuration de votre Smoothieboard, cliquez ici : [Configurer la Smoothieboard](http://smoothieware.org/configuring-smoothie.md)
 
 > [!PRIMARY]
-> La carte SD peut également être utilisée pour configurer votre carte avec une version plus récente du firmware (micrologiciel), voir [Où trouver le fichier binaire](/getting-smoothie.md) et [Comment le remplacer via une carte SD](/flashing-smoothie-firmware.md).
+> La carte SD peut également être utilisée pour configurer votre carte avec une version plus récente du firmware (micrologiciel), voir [Où trouver le fichier binaire](getting-smoothie.md) et [Comment le remplacer via une carte SD](flashing-smoothie-firmware.md).
 >
-> Elle s'utilise aussi pour ranger et lire des fichiers en format [G-Code](https://fr.wikipedia.org/wiki/Programmation_de_commande_num%C3%A9rique), voir [Lecteur](/player.md).
+> Elle s'utilise aussi pour ranger et lire des fichiers en format [G-Code](https://fr.wikipedia.org/wiki/Programmation_de_commande_num%C3%A9rique), voir [Lecteur](player.md).
 
 La carte ne sert cependant pas qu'à stocker des données. Elle possède également une interface série [USB CDC](http://en.wikipedia.org/wiki/USB_communications_device_class), vous permettant d'envoyer du G-code et de recevoir des réponses (Il existe une interface DFU pour mettre à jour les firmwares, mais elle est surtout destinée aux développeurs.)
 
-L'interface CDC (Série) est aussi utilisée par des programmes hôte comme [Pronterface](/pronterface.md) pour vous permettre d'interagir avec votre machine. Si vous le connaissez déjà, essayez de vous connecter dès à présent et vous recevrez une réponse de la carte. Dans le cas contraire, l'explication se trouve un peu plus loin dans le guide.
+L'interface CDC (Série) est aussi utilisée par des programmes hôte comme [Pronterface](pronterface.md) pour vous permettre d'interagir avec votre machine. Si vous le connaissez déjà, essayez de vous connecter dès à présent et vous recevrez une réponse de la carte. Dans le cas contraire, l'explication se trouve un peu plus loin dans le guide.
 
 ## Connexion réseau
 
 <div class='panel panel-default wrap_right' style='width:340px;padding:10px '>
 <div class='panel-heading'><h4 class='panel-title'>Réseau</h4></div>
-<img src='/images/network.switches.jpg' width='320px'><br/>
+<img src='images/network.switches.jpg' width='320px'><br/>
 J'espère que vous avez moins de câbles...
 </div>
 
@@ -53,7 +55,7 @@ Vous trouverez le même type de technologie, par exemple, sur une imprimante 2D 
 
 Vous pouvez ainsi accéder à une interface web hébergée par la carte, et contrôler l'appareil via votre navigateur.
 
-Cela vous permet de connecter en réseau des logiciels capables de le supporter (comme [Pronterface](/pronterface.md) et [Visicut](/visicut.md)) à votre Smoothieboard.
+Cela vous permet de connecter en réseau des logiciels capables de le supporter (comme [Pronterface](pronterface.md) et [Visicut](visicut.md)) à votre Smoothieboard.
 
 Par défaut, le réseau est désactivé. Il est cependant très simple à activer et à configurer.
 

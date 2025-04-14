@@ -20,7 +20,7 @@ Different strategies are useful for different geometries of machines, click on o
 
 **NOTE** When G30 stores the probe position or prints out the value, it is in actuator units not necessarily in mm. This is only an issue for rotary deltas where the actuator units are degrees not mm. Most other configurations it will be mm.
 
-![A servo-controlled retractable probe](/images/external/https.lh5.ggpht.com.zrhoohrn9q4zsiv.apyxqmg8ch.imum2uehoehlqta2puzoeiov4mzs3nvaflcoipgo9vkmsv3tet98hr1yvlkwyqq.png)
+![A servo-controlled retractable probe](https://lh5.ggpht.com/ZRHoohRN9Q4ZsIV-apYxqMg8CH-Imum2uEhoehLqtA2PuzoeIov4MzS3NVafLcOIPGO9vkMsv3tet98HR1YVlkwYqQ)
 
 Making the probe retractable allows the probe not to be in the way of the plastic when it is not used.
 
@@ -194,7 +194,7 @@ Example use:
 
 See [http://minow.blogspot.com/](http://minow.blogspot.com/) for more details of calibrating a delta.
 
-![A probing height map](/images/external/http.boim.com.deltautil.flatbed.png)
+![A probing height map](http://boim.com/DeltaUtil/flatBed.png)
 
 Nothing is perfect
 

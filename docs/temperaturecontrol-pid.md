@@ -1,5 +1,5 @@
+<img src="images/temperaturecontrol.gif" alt="TemperatureControl" width="430px"><br/>
 
-<img src="/images/external/http.m.eet.com.media.1074906.0208bcfig2.gif" width="430px"><br/>
 *It's not very refined*
 
 PID is important. Without PID, a simple way to control temperature would be:

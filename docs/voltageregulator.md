@@ -30,10 +30,10 @@ Which can be purchased from [Robotseed](http://robotseed.com/index.php?id_produc
 
 This is how it looks when soldered on:
 
-![Voltage regulator](/images/start/vregtop.png)
+![Voltage regulator](images/voltage-regulator-top.jpg)
 
 *Red circle marks where it is located*
 
-![Voltage regulator closeup](/images/start/vregclose.png)
+![Voltage regulator closeup](images/voltage-regulator-close.jpg)
 
 *Note the orientation*

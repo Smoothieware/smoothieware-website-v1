@@ -19,7 +19,7 @@ There are two resources that were written about this feature when it was release
 
 ## Compiling 6-axis
 
-Before attempting this, please read [compiling smoothie](/compiling-smoothie.md), and compile Smoothie "normally" for practice.
+Before attempting this, please read [compiling smoothie](compiling-smoothie.md), and compile Smoothie "normally" for practice.
 
 Once that is done (and only once that is done), you need to do the same process, but instead of doing 
 

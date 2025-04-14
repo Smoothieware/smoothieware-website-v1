@@ -36,7 +36,8 @@ The jogger module must figure out how to convert the -1 to 1 range of the joysti
 
 The maximum speed should be relatively straightforward, however the nonlinearity is more difficult to explain. To see how it works, consider the following graph:
 
-![Jogger Speed Map](/images/jogger/jogger_speed_map.png)
+
+![Jogger Speed Map](images/joystick-speed-map.png)
 
 On the X-axis is the joystick position, from not moved on the left (0.00) to fully moved on the right (1.00). On the Y-axis is the jogging speed, where 0% is not moving and 100% is moving as fast as possible. The different colored lines show how the nonlinearity parameter affects the jog speed. The table below describes the values demonstrated in the chart above:
 

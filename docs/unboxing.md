@@ -1,7 +1,7 @@
 
 <div class='panel panel-default wrap_right' style='width:340px;padding:10px '>
 <div class='panel-heading'><h4 class='panel-title'>USB Connectors</h4></div>
-<img src='/images/usb.svg.png' width='320px'><br/>
+<img src='images/usb-cable.png' width='320px'><br/>
 Smoothie uses USB-B
 </div>
 
@@ -22,7 +22,9 @@ A good first step is to connect your board to your computer to familiarize yours
 
 <div class='panel panel-default wrap_right' style='width:340px;padding:10px '>
 <div class='panel-heading'><h4 class='panel-title'>SD card</h4></div>
-<img src='/images/smoothie-config-screencap.png' width='320px'><br/>
+
+<img src='images/smoothie-config-screencap.png' width='320px'><br/>
+
 Files on your Smoothieboard's SD card
 </div>
 
@@ -46,7 +48,7 @@ The CDC (Serial) interface is the interface host programs like [Pronterface](pro
 
 <div class='panel panel-default wrap_right' style='width:340px;padding:10px '>
 <div class='panel-heading'><h4 class='panel-title'>Network</h4></div>
-<img src='/images/network.switches.jpg' width='320px'><br/>
+<img src='images/network.switches.jpg' width='320px'><br/>
 Hope you have fewer cables than this
 </div>
 

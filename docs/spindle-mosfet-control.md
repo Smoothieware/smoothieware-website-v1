@@ -15,14 +15,14 @@ Connect the diode in reverse across the motor (when the MOSFET is on, it must **
 
 The same considerations apply to other inductive loads such as solenoid valves and relay coils.
 
-[Solid state relays](/general-appendixes.md#solidstaterelay) are controlled via a GPIO pin, and can control higher loads, but are on/off only (no control of the exact amount of power sent via PWM). For more information about SSRs, [see this appendix](/general-appendixes.md#solidstaterelay).
+[Solid state relays](general-appendixes.md#solidstaterelay) are controlled via a GPIO pin, and can control higher loads, but are on/off only (no control of the exact amount of power sent via PWM). For more information about SSRs, [see this appendix](general-appendixes.md#solidstaterelay).
 
 > [!WARNING]
 > It is critical that you add a diode across your motor if you are going to control it with a Smoothieboard. If you do not do this, you are absolutely guaranteed to destroy the MOSFET, and possibly the Smoothieboard.
 
 Here is a brief on the MOSFETs on the Smoothieboard:
 
-![Mosfet power input and outputs](/images/3d-printer-guide/smoothieboard-mosfets.png)
+![Mosfet power input and outputs](images/mosfet-input-output.svg)
 *Note: a mosfet cannot provide power if it is not provided power via an input.*
 
 ## MOSFETs
@@ -41,7 +41,7 @@ TODO: diagram
 
 Now that you have located which MOSFET you are going to use for Spindle control, and what GPIO pin it corresponds to, you need to add a spindle control section to your configuration file.
 
-We will be doing this using the [Switch](/switch.md) module.
+We will be doing this using the [Switch](switch.md) module.
 
 Add this to your configuration file:
 

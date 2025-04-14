@@ -1,6 +1,4 @@
-
-![Mill Coords](/images/external/http.wiki.makespace.org.images.2.2d.mill.coords.png)
-
+<img src="images/cnc-returning-to-origin.png" alt="Returning To Origin" width=200 height=200>
 ## G28 G-code
 
 On a CNC mill, `G28` means "go to the recorded origin point in the machine coordinates workspace".

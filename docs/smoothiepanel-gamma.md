@@ -9,7 +9,7 @@ The [original plan to use an ARM Cortex-M0 MCU](smoothiepanelalpha.md) has been 
 
 ## Preview
 
-![Smoothiepanel Prototype](/images/external/https.dl.dropboxusercontent.com.u.45859274.smoothiepanel.proto3.asm.sm.jpg)
+![Smoothiepanel Prototype](images/smoothie-panel-proto3-asm-sm.jpg)
 
 ## Status
 The current status of this board is prototyping: I'm now on the 3rd prototype of the board. Having completed the software side of the Beta board is really making it much easier to do both sides now (i.e. coding both the master and slave sides).

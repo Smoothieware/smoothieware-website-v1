@@ -2,7 +2,7 @@
 > [!SUCCESS]
 > **General advice when asking for help**
 >
-> ![Animated Flashing Construction Barricade](/images/external/http.www.netanimations.net.animated.flashing.construction.barracade.gif)
+><img src="https://www.netanimations.net/animated-roped-off-construction-barracades.gif" alt="Animated Flashing Construction Barricade">
 >
 > - **Please read the [Troubleshooting](troubleshooting.md) section** before you ask for help, in case your question is answered there.
 > - A lot of questions have already been asked in the past. It might be worth it searching the forum for an answer to your question. The wiki may also have the answer you are searching for, you can use the [search function](http://smoothieware.org/search) here and on the forum.

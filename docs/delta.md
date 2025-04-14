@@ -5,11 +5,11 @@ Linear delta 3D printers use the power of mathematics to move your extruder. The
 
 This page will walk you through how to configure Smoothie to control a linear delta printer, how to tune its different parameters, and how to calibrate them automatically or manually.
 
-Linear delta machines such as the [Rostock](http://reprap.org/wiki/Rostock) and the [Kossel](http://reprap.org/wiki/Kossel) use three linear axes in a triangular configuration, arms, and some clever math to move a tool in three dimensions.
+Linear delta machines such as the <img src=images/Rostock.jpg alt="Rostock"> and the <img src="images/Kossel.jpg alt="Kossel"> use three linear axes in a triangular configuration, arms, and some clever math to move a tool in three dimensions.
 
 They can be quite fast due to the low moving mass, in particular in the Z direction, which is usually slower in typical Cartesian 3D printer designs.
 
-![Delta Printer](/_media///external/https.atom3dp.com.wp.content.uploads.2017.09.2atomfx.png)
+<img src="https://store.atom3dp.com/uploads/d415cab3efa35ca8796ebcaa2a26ac374cf44ff5.png" alt="Delta Printer" width=400 height=400>
 
 ## Start with this file!
 
@@ -34,7 +34,7 @@ arm_radius                                   124.0            # this is the hori
 
 Here is a labelled schematic of a normal linear delta:
 
-![Delta kinematics basic](/_media//delta/delta.png)
+<img src="https://reprap.org/mediawiki/images/4/40/Delta_geometry1.png" alt="Delta kinematics basic" width=600 height=837>
 
 This shows the basic terminology and structure of delta machines.
 
@@ -176,7 +176,7 @@ When that is done, your printer is always at the same position, every time: The 
 
 But it doesn't know how high above the bed it is, unless you tell it. And it needs to know this, so that when you tell it to go to Z 0 (the bed), it knows how much to move from its position at the Z maximum.
 
-![Delta machine coordinates](/_media///external/http.i.imgur.com.9iwkw92.png)
+<img src="images/DeltaAtHome.jpg" alt="Delta machine coordinates">
 
 This shows how to get your bearings around a delta 3D printer. It's basically a cylinder and you position things around its center.
 

@@ -98,7 +98,7 @@ extruder.hotend2.en_pin 4.29
 > These pins are for the epsilon (5th) driver on a Smoothieboard. This is what is most commonly used, but in another board or setup, you may have to use other pins.
 
 > [!TIP]
-> You can do special things to Smoothie pins, for example, you can invert them, which is useful to revert the direction of your extruder if it is wired the wrong way around on your board, see [Pin Configuration](/pin-configuration.md).
+> You can do special things to Smoothie pins, for example, you can invert them, which is useful to revert the direction of your extruder if it is wired the wrong way around on your board, see [Pin Configuration](pin-configuration.md).
 > 
 > You can make your extruder module use any other stepper motor driver, or even an external stepper motor driver, simply by providing the adequate pins for that driver, see [Pinout](pinout.md).
 
@@ -126,7 +126,7 @@ If your machine has multiple extruders, you also want to look at [multiple-extru
 
 ### Configuration
 
-The default Smoothie [configuration example](/configuring-smoothie.md) contains an example extruder section, this means you do not need to create a new one, but you can just re-use the sample one.
+The default Smoothie [configuration example](configuring-smoothie.md) contains an example extruder section, this means you do not need to create a new one, but you can just re-use the sample one.
 
 The configuration looks like this:
 

@@ -96,7 +96,7 @@ panel.external_sd.sdcd_pin               0.28!^           # sd detect signal (se
 The button on the glcd and Viki2 can be wired as a Kill button by following [This guide](killbutton.md). In that case the 
 `panel.back_button_pin` should be commented out.
 
-![A RRD GLCD](/images/panel/img0831small.jpg)
+![A RRD GLCD](images/panel/img0831small.jpg)
 
 Showing Smoothie's "watch" screen
 
@@ -176,7 +176,7 @@ You can find a list of pins on the Smoothieboard to connect to the panel [here](
 > 5vdc availability presumes a 5vdc source (power from SBUS, 5V input, or optionally installed 5v converter VBB).
 Be aware that RRD does not follow proper conventions for pin numbering. The pin 1 indicator on the ribbon is actually pin 10 in the RRD schematic. The image above is numbered according to the RRD inset schematics. 
 
-![GLCD Wiring](/images/panel/ax5m_glcd_sm.jpg)
+<img src="images/ax5m-glcd-sm.jpg" alt="GLCD Wiring" width=200>
 
 ## RRD GLCD to Azteeg X5 Mini v1.1 interface board
 
@@ -184,10 +184,9 @@ This interface board is simple to install, eliminates custom cables, frustration
 
 It is compatible with Azteeg X5 Mini v1.1 motion controller and is available from [www.UltiBots.com](http://www.ultibots.com/glcd-to-azteeg-x5-mini-board). Source files are on our [GitHub](https://github.com/UltiBots/GLCD2X5).
 
-![GLCD to Azteeg X5 Mini Wiring Harness](/images/panel/GLCDtoAzteegX5miniWiringHarness.png)
+![GLCD to Azteeg X5 Mini Wiring Harness](images/glcd-2-alteeg-x5-Harness.jpg)
 
-[PDF Download](/_media/panel/GLCDtoAzteegX5miniWiringHarness.pdf)
-
+[PDF Download](https://smoothieware.github.io/Webif-pack/documentation/web/images/glcdtoazteegx5miniwiringharness.pdf)
 ## Azteeg X5 Mini to RRD GLCD wiring harness
 
 This wiring harness uses three 2x10, one 1x2 .100" crimp housings and one heat shrinked female pin to connect the RRD GLCD to an Azteeg X5 Mini.

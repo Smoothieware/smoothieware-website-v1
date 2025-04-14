@@ -11,7 +11,7 @@ You can find a default config file for 3D printing [here in the github repositor
 
 ```html
 <br/>
-<a href="https://github.com/Smoothieware/Smoothieware/raw/edge/ConfigSamples/Smoothieboard/config" class="btn btn-primary btn-lg" style="width:100%"> <img src="/images/download-icon.png " style="width:48px; margin-right:48px"><b>Click here</b> to get the latest configuration file example</a>
+<a href="https://github.com/Smoothieware/Smoothieware/raw/edge/ConfigSamples/Smoothieboard/config" class="btn btn-primary btn-lg" style="width:100%"> <img src="images/download-icon.png" style="width:48px; margin-right:48px"><b>Click here</b> to get the latest configuration file example</a>
 <br/>
 ```
 
@@ -27,7 +27,7 @@ default_feed_rate                 4000                 # Default rate ( mm/minut
 
 Where `default_feed_rate` is the configuration option, `4000` is the value ( which you can change ), and everything after `#` is a comment ( that Smoothie will ignore ).
 
-You can find a complete list of possible configuration options [here](/configuration-options.md).
+You can find a complete list of possible configuration options [here](configuration-options.md).
 
 {% include_relative donate.md %}
 

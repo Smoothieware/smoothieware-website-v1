@@ -12,7 +12,7 @@ This port is used at boot time to send a lot of debugging information from the S
 
 Once this is done, you can then use the UART port the same way you would use the USB/Serial or the Telnet port: you send it commands or G-codes, and you get answers. As the UART has NO FLOW CONTROL, you MUST rigidly use the ping-pong protocol, sending ONE line of G-code per `ok` received.
 
-You configure the baud rate for the UART port in the [configuration file](/configuring-smoothie.md) by changing the `uart0.baud_rate` configuration option.
+You configure the baud rate for the UART port in the [configuration file](configuring-smoothie.md) by changing the `uart0.baud_rate` configuration option.
 
 > [!IMPORTANT]
 > On Linux machines, the output of the serial debug port is not nicely formatted because the Smoothieboard sends only a LF, but a CRLF is needed.

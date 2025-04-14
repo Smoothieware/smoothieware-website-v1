@@ -6,7 +6,7 @@
 
 How well your machine is wired is going to determine how long it lives and how resistant it is to breakage.
 
-We have a great guide on different techniques and recommendations, please read the [how to wire page](/how-to-wire.md).
+We have a great guide on different techniques and recommendations, please read the [how to wire page](how-to-wire.md).
 
 ## Crimping connectors
 <a name='crimping-connectors'></a>
@@ -100,13 +100,13 @@ Most external drivers have both a + and - pin for each of EN, DIR, and STP. The 
 > [!TIP]
 > While this example will show using the pins of one of the on-board drivers to control the external driver, you can use pretty much any free GPIO pin to control the step/direction/enable pins on your external driver.
 > 
-> See [pinout](/pinout.md) and [pin usage](/lpc1769-pin-usage.md) to find free pins.
+> See [pinout](pinout.md) and [pin usage](lpc1769-pin-usage.md) to find free pins.
 
 All loadouts of Smoothieboard (3x, 4x, 5x) can control 5 external stepper drivers using these ports. The presence or absence of a built-in driver will not affect the external driver.
 
 This shows control of an external driver using the pins on the positive side of the external driver's input.
 
-![External Driver](/images/smoothieboard-graphics/schematics/external-driver.svg.png)
+![External Driver](images/external-driver.png)
 
 Please note, if your external driver requires 5V, that Smoothieboard only provides 3.3v on its output pins.
 
@@ -114,7 +114,8 @@ Two solutions to this: either use a [level shifter](https://www.sparkfun.com/pro
 
 For example:
 
-![External Driver Open Drain](/images/smoothieboard-graphics/schematics/external-driver-open-drain.svg.png)
+
+![External Driver Open Drain](images/external-driver-open-drain.png)
 
 Here, the 5V is taken from an endstop input's positive terminal, taken to the 5V inputs on the external driver. The step/direction/enable pins on the Smoothieboard are taken to the GND inputs on the external driver.
 
@@ -198,7 +199,8 @@ alpha_step_pin   2.0!o     # Pin for alpha stepper step signal
 
 If one of your axes requires more than one motor and driver, you can wire the control signals for one axis to multiple drivers, like so:
 
-![External drivers wired in parallel](/images/unnamed.png)
+
+![External drivers wired in parallel](images/mult-drivers-in-parallel.png)
 
 ## Solid State Relays
 <a name='solidstaterelay'></a>
@@ -211,11 +213,12 @@ To control your Solid State Relay (SSR), you will need one GPIO pin (use one of 
 
 An SSR is essentially a big switch: you cut a wire, plug each end of the cut wire into its two terminals, and then you'll be able to control whether or not those two ends of the wire connect or not. Simple as that.
 
-![Wiring a Solid State Relay](/images/smoothieboard-graphics/schematics/ssr-basic.svg.png)
+
+![Wiring a Solid State Relay](images/ssr-basic.png)
 
 You will need to connect GND on the Smoothieboard to the "-" connection on the Input side of the SSR, and the GPIO pin on the Smoothieboard to the "+" connection on the Input side of the SSR. This example shows using P1.30
 
-Then simply configure the module that will be using the SSR to use that pin, for example in the case of [Switch](/switch.md):
+Then simply configure the module that will be using the SSR to use that pin, for example in the case of [Switch](switch.md):
 
 ```
 switch.misc.enable                   true #
@@ -225,7 +228,7 @@ switch.misc.output_pin               2.4  # GPIO pin we connected to "+" on the 
 switch.misc.output_type              digital        # just an on or off pin
 ```
 
-In the case of [TemperatureControl](/temperature-control.md), where you use the SSR to control a heating element for example, there is a catch.
+In the case of [TemperatureControl](temperature-control.md), where you use the SSR to control a heating element for example, there is a catch.
 
 SSRs have a low maximum frequency they can be switched at. You need to specify that frequency or Smoothie will drive it way too fast. In this example, the maximum frequency is 20Hz.
 

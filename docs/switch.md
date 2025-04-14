@@ -224,7 +224,7 @@ before_resume_gcode                  G91_G1E1_G90                          # Gco
 
 ### Spindle control button
 
-This configuration allows you to set a single button to start and stop your [spindle](/spindle-module.md).
+This configuration allows you to set a single button to start and stop your [spindle](spindle-module.md).
 
 ```markdown
 switch.spindle.enable                true                     # Enable this module
@@ -236,7 +236,7 @@ switch.spindle.input_pin_behavior    toggle                   # This pin toggles
 
 ### Laser power supply
 
-For the enable ( TTL ) pin on a CO2 laser PSU, for power control use the [Laser](/laser.md) module.
+For the enable ( TTL ) pin on a CO2 laser PSU, for power control use the [Laser](laser.md) module.
 
 ```markdown
 # Switch module for laser TTL control
@@ -246,7 +246,7 @@ switch.laser.input_off_command                 M107             # Turn OFF when 
 switch.laser.output_pin                        1.31             # Pin to control, to be connected to the laser power supply's TTL input
 ```
 
-Note this is now supported by the [laser module](/laser.md) itself, where the pin is automatically toggled, using the `laser_module_ttl_pin` configuration option.
+Note this is now supported by the [laser module](laser.md) itself, where the pin is automatically toggled, using the `laser_module_ttl_pin` configuration option.
 
 However, if you are not using that functionality, this allows you to turn the laser power supply using G-codes.
 

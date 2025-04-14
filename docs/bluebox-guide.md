@@ -1,12 +1,10 @@
 
 # Your guide to installing Smoothieboard in a Blue Box Laser Cutting machine
 
-( See also [blue-box-guide](/blue-box-guide.md) )
+( See also [blue-box-guide](blue-box-guide.md) )
 
 <div class="grid">
 <div class="col md-6">
-
-<img src="/images/external/http.chibidibidiwah.wdfiles.com.local.files.start.icon.laser.big.round.png" class="pull-left" width="80" height="80" alt="Laser Icon">
 
 « Blue Box » laser cutters ( sometimes also referred to as K40 ) are cheap Chinese machines basically designed for laser engraving of stamps. 
 
@@ -23,7 +21,7 @@ This is a step-by-step guide to connecting your board to the various components 
 
 This guide is a [community](http://smoothieware.org/irc) effort, and this page is a Wiki. Please don't hesitate to [edit it](#_editpage) to fix mistakes and add information, any help is very welcome.
 
-<img src="/images/external/http.chibidibidiwah.wdfiles.com.local.resized.images.blue.box.guide.k40.400.90px.medium.jpg" width="100%" alt="Blue Box Laser Cutter">
+<img src="images/smooth-k40.png" width="100%" alt="Blue Box Laser Cutter" width=400 height=292>
 
 </div>
 <div class="col md-6">
@@ -64,7 +62,7 @@ The laser Power Supply ( PSU ) converts the mains ( 110 or 220V AC ) power into 
 
 In the case of these small blue box laser cutters, this PSU also provides 5V power for the electronics' logic, and 24V for the stepper motors.
 
-The exact model may vary depending on your exact machine's model, manufacturer, and version. Here in this tutorial, we will be using the MYJG40W from [http://www.jnmydy.com](http://www.jnmydy.com), but other PSUs should be very similar in their wiring and function.
+The exact model may vary depending on your exact machine's model, manufacturer, and version. Here in this tutorial, we will be using the MYJG40W from [Amazon](https://www.amazon.com/Cloudray-Laser-Supply-Engraver-Cutter/dp/B079MHKQXF?th=1), but other PSUs should be very similar in their wiring and function.
 
 If your PSU is too different from the one in this guide to allow you to adapt the instructions, please contact the community.
 
@@ -72,7 +70,7 @@ If your PSU is too different from the one in this guide to allow you to adapt th
 </div>
 <div class="grid">
 <div class="col md-6">
-<img src="/images/external/http.chibidibidiwah.wdfiles.com.local.files.blue.box.guide.psu.jpg" alt="Power Supply Unit">
+<img src="images/myjg40w.jpg" alt="Power Supply Unit" width=400 height=292>
 </div>
 </div>
 <div class="clearfix"></div>
@@ -115,7 +113,9 @@ The controller board that comes with the blue box is very limited, and can only 
 </div>
 <div class="grid">
 <div class="col md-6">
-<img src="/images/external/http.chibidibidiwah.wdfiles.com.local.resized.images.blue.box.guide.pastedgraphic.tiff.medium.jpg" alt="Controller Board">
+
+<img src="images/k40-controller.jpg" alt="Controller Board" width=600 height=390>
+
 </div>
 </div>
 <div class="clearfix"></div>
@@ -137,7 +137,7 @@ You will want to connect 24V power to the VBB input on the Smoothieboard, 5V pow
 | | `G` | Power Ground | Connect to the Ground input on the Smoothieboard |
 </div>
 <div class="col md-6">
-<img src="/images/external/http.chibidibidiwah.wdfiles.com.local.files.3d.printer.guide.smoothieboard.polarity.png" alt="Smoothieboard Polarity">
+<img src="images/polarity.png" alt="Smoothieboard Polarity">
 </div>
 </div>
 <div class="clearfix"></div>
@@ -161,7 +161,9 @@ The first thing you want to do, is find the wires for each stepper motor, and fo
 
 </div>
 <div class="col md-6">
-<img src="/images/external/http.chibidibidiwah.wdfiles.com.local.files.blue.box.guide.page8image31312.jpg" alt="Stepper Motors">
+
+<img src="images/wiring-stepper-motor.png" alt="Stepper Motors">
+
 </div>
 </div>
 <div class="clearfix"></div>

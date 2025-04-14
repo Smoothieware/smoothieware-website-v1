@@ -2,12 +2,12 @@
 # Coronavirus
 
 > [!WARNING]
-> ![OSHW Logo](/images/oshw-logo.png)
-> ![Virus](/images/virus.png)
+> ![OSHW Logo](images/oshw-logo.png)
+> ![Virus](images/virus.png)
 > 
 > **TL;DR:** If you are helping with the Covid efforts and have Smoothie troubles [contact us](mailto:wolf.arthur@gmail.com) as soon as possible and we'll do everything we can to help you as a priority.
 
-![Reddit Post](/images/rzhn6hvvwxq41.jpg)
+![Reddit Post](images/rzhn6hvvwxq41.jpg)
 
 Turns out, all those 3D printers are for more than printing Poke-people. Who knew ??
 

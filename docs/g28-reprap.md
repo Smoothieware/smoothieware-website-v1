@@ -1,6 +1,4 @@
-
-![G28 G-code](/images/external/https.www.cnccookbook.com.wp.content.uploads.2012.07.p1011808.jpg)
-
+<img src="images/3d-printer-homing.png" alt="Homing" width=200 height=200>
 # G28 G-code
 
 G28 means "seek the endstops for each axis, stop once they are found and this position is now the origin for the machine".

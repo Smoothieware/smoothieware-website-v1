@@ -5,7 +5,7 @@ This module reads temperature reading sensors (thermistors) and uses heater and 
 
 This is used for example for [extruder](extruder.md) hotends, or heated beds.
 
-![A hotend](/images/external/http.1.bp.blogspot.com.00qoc.wajma.ulwmttgrjdi.aaaaaaaaaim.bpogqugsfzu.s1600.v.and.vb.jpg)
+![A hotend](https://reprap.org/mediawiki/images/thumb/2/2a/Jhn_mk5.jpg/190px-Jhn_mk5.jpg)
 
 This is a J-head hotend with its thermistor and heating element.
 
@@ -159,7 +159,7 @@ In the case of mosfets, on a [Smoothieboard](smoothieboard.md), a given pin is c
 
 See this schematic below or on the [Smoothieboard](smoothieboard.md) page to see what mosfet corresponds to what pin.
 
-![Mosfet inputs and outputs](/images/smoothieboard-graphics/schematics/mosfet-input-output.svg.png)
+![Mosfet inputs and outputs](images/mosfet-input-output.svg)
 
 Read more about the mosfets [here](http://smoothieware.org/mosfets.md)
 
@@ -248,7 +248,7 @@ You definitely should set up as many safety features as you can, even those that
 > [!DANGER]
 > This can happen to you
 >
-> ![Fire](/_media///external/http.chibidibidiwah.wdfiles.com.local.files.temperaturecontrol.fire.jpg)
+> ![Fire](https://chibidibidiwah.wdfiles.com/local--files/temperaturecontrol/fire.jpg)
 >
 > It has already been known to happen to Reprap/CNC enthusiasts. For an example see [here](http://www.soliforum.com/post/57749/#p57749).
 

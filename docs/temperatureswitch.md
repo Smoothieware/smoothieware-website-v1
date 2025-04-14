@@ -9,7 +9,7 @@ Simply, TemperatureSwitch turns on/off the `switch.xxx` where `xxx` is the user-
 
 If the printer has multiple hot ends, TemperatureSwitch will monitor all of them and if any one goes over the threshold, will turn on the switch. It will only turn the switch off if all of them are below the threshold temperature.
 
-Since hot ends heat up relatively quickly and cool off slowly, the polling interval for heatup and cooldown are independently configurable in the [configuration file](/configuring-smoothie.md). This is done to minimize processor load during printing.
+Since hot ends heat up relatively quickly and cool off slowly, the polling interval for heatup and cooldown are independently configurable in the [configuration file](configuring-smoothie.md). This is done to minimize processor load during printing.
 
 Here's a description of the configurable parameters:
 

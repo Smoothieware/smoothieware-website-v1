@@ -46,7 +46,7 @@ To wire the power supply unit to [mains](http://en.wikipedia.org/wiki/Mains_elec
 
 Once the wires connected to the PSU, make sure none of your computers is doing something important (like a system upgrade). In case something goes wrong, plug the PSU into a power strip with an on/off button. Then turn that button ON. If your house loses power, you did something wrong. If an LED illuminates on the PSU, everything is fine: unplug the PSU and continue.
 
-If you are new to wiring, please check our [how to wire guide](/how-to-wire.md).
+If you are new to wiring, please check our [how to wire guide](how-to-wire.md).
 
 > [!DANGER]
 > **[NEVER](http://1.media.collegehumor.cvcdn.com/60/74/db2c0a0e1cbfdbe1eecf50a0289884d3-free-key-cleaner.jpg)** manipulate mains (220/110V) power wires while they are plugged into the wall plug. Unpleasantness and/or death are common consequences of not respecting this rule.
@@ -59,8 +59,7 @@ Now that the PSU is getting mains power, your PSU is converting it into 12V or 2
 The most important thing for DC is to respect polarity: **+** goes to **+**, **-** goes to **-**. On the PSU, **+** terminals are indicated as **+**, **V+**, **12V+** or **24V+**. Ground (**-**) terminals are indicated as **-**, **V-**, **COM** or **GND**.
 
 On the Smoothieboard they are indicated simply as **+** and **-**.
-
-![Smoothieboard Power Connections](/_media///external/https.raw.githubusercontent.com.bouni.smoothieboard.graphics.master.smoothieboard.power.png)
+<img src="https://github.com/Bouni/smoothieboard-graphics/blob/master/smoothieboard-power.png?raw=true" alt="Smoothieboard Power Connections">
 
 By convention, black (sometimes brown) wires are used for ground, and red (sometimes orange, white or yellow) wires are used for power connections.
 
@@ -75,4 +74,4 @@ Now that the board has power, you can use that power to move things!
 
 ### Emergency stop
 
-It is recommended you setup an emergency stop button on your machine, so that in case of a problem, you can easily and quickly turn the machine off. For information on how to do this, please read [EmergencyStop](/emergencystop.md).
+It is recommended you setup an emergency stop button on your machine, so that in case of a problem, you can easily and quickly turn the machine off. For information on how to do this, please read [EmergencyStop](emergencystop.md).

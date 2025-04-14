@@ -62,7 +62,7 @@ This is a link to the [Editing the wiki](editing-the-wiki.md) page.
 To insert an image, do:
 
 ```html
-<img src="/images/external/http.www.example.com.image.png" alt="Example Image">
+<img src="images/SampleImage.jpg" alt="Sample Image">
 ```
 
 A nicer way of integrating images is to do the following:
@@ -70,7 +70,7 @@ A nicer way of integrating images is to do the following:
 ```html
 <div class='panel panel-default wrap_right' style='width:450px;padding:10px '>
   <div class='panel-heading'><h4 class='panel-title'>A laser power supply</h4></div>
-  <img src='/images/external/http.img.alibaba.com.img.pb.960.762.268.1285495147301.hz.cnmyalibaba.web4.68831.jpg' width='430px'><br/>
+  <img src='images/laser-power-supply.png' width='400px' height='400px'><br/>
   They use very high voltages and are dangerous
 </div>
 ```
@@ -163,7 +163,7 @@ You can insert raw HTML into the page by doing:
 ```html
 <h1>Custom HTML</h1>
 <p>Something else</p>
-<img src="/images/anything.png" alt="hello ;-)">
+<img src="images/circuit.png" alt="hello ;-)">
 ```
 
 This is in particular useful to insert Youtube videos and the like.

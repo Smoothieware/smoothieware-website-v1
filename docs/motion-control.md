@@ -11,8 +11,7 @@ This page explains how to configure the different motion control parameters you 
 > **NOTE** you **MUST** define at least alpha, beta, and gamma in a valid config file, do not comment out gamma even if you are not using it.
 
 ## Acceleration
-
-![Acceleration](/images/external/http.1.bp.blogspot.com.mb9mtoxzl28.ukv9tc0quti.aaaaaaaaags.ps.kcqmi08y.s1600.ex1.rocket.tracks.flag.gif)
+<img src="images/rocket-tracks-flag.gif" alt="Acceleration">
 
 Or "the increase of speed". You experience it every day.
 
@@ -29,8 +28,7 @@ You set the acceleration value by modifying the `acceleration` value in your con
 ```plaintext
 acceleration                                 3000             # Acceleration in mm/second/second.
 ```
-
-![Force is mass times acceleration](/images/external/http.memeguy.com.photos.images.drag.bike.chain.during.acceleration.63245.gif)
+![Force is mass times acceleration](https://memeguy.com/photos/images/drag-bike-chain-during-acceleration-63245.gif)
 
 The units are millimeters per second per second, which means how many "millimeters per second" worth of speed is added every second.
 

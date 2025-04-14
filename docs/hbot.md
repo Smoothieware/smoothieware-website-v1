@@ -2,10 +2,10 @@
 # H-Bot and CoreXY Configuration
 
 ## H-Bot
-![H-Bot Diagram](/images/external/http.www.doublejumpelectric.com.projects.core.xy.pics.hbot.svg.png)
+<img src="images/h-bot-diagram.png" alt="H-Bot Diagram">>
 
 ## CoreXY
-![CoreXY Diagram](/images/external/http.www.doublejumpelectric.com.projects.core.xy.pics.corexy.svg.png)
+<img src="images/core-xy-diagram.png" alt="CoreXY Diagram">
 
 To configure your HBot or Corexy, set the `arm_solution` parameter in your configuration file to either `corexy` or `hbot`. For example:
 

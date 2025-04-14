@@ -7,13 +7,13 @@ There are two solutions:
 
 Solder an [LED Tactile Button](https://www.sparkfun.com/products/10442) on the Smoothieboard.
 
-![Led Tactile Button](/images/kill-pause-button/led_tactile_button.png)
+![Led Tactile Button](images/led-tactile-button.png)
 
 ## Simple Button
 
 Wire a simple button on two pins.
 
-![Simple Button](/images/kill-pause-button/simple_button.png)
+![Simple Button](images/simple-button.png)
 
 > [!DANGER]
 > **It is highly recommended the pause button be configured as a Kill switch instead**

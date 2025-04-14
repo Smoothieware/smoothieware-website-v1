@@ -95,19 +95,19 @@ spindle.switch_on_pin                            2.6      # the pin which is use
 > [!NOTE]
 > If you're using a brushless motor + ESC that takes the PWM directly as a speed reference, you don't need an additional circuit.
 
-![VFD adapter board](/images/spindle-module/analog-vfd-board-pcb.png)
+![VFD adapter board](images/analog-vfd-board-pcb.png)
 *VFD adapter board PCB*
 Used to talk to your VFD via an analog signal
 
 This is an example of a small extension PCB that contains a circuit to convert the 3.3V PWM signal into a 0-10V analog signal.
 
-![VFD adapter board schematic](/images/spindle-module/analog-vfd-board-schematic.png)
+![VFD adapter board schematic](images/analog-vfd-board-schematic.png)
 *VFD adapter board schematic*
 For the curious
 
 This is the related circuit diagram for the converter
 
-![VFD adapter board wiring](/images/spindle-module/analogwiring.png)
+![VFD adapter board wiring](images/analog-wiring.png)
 *VFD adapter board wiring*
 How to connect it to your Smoothieboard and VFD
 
@@ -152,19 +152,19 @@ In order to get the Huanyang VFD accepting commands via ModBus, you need to chan
 ### RS485 extension board
 Like an analog spindle, the Modbus spindle needs an external circuit, but that is much simpler.
 
-![VFD Modbus signal adapter PCB](/images/spindle-module/modbus-vfd-board-pcb.png)
+![VFD Modbus signal adapter PCB](images/modbus-vfd-board-pcb.png)
 *VFD Modbus signal adapter PCB*
 Used to talk to your spindle over RS485 differential signals
 
 This is an example of a small extension PCB that contains a circuit to convert the 3.3V UART signal into an RS485 signal.
 
-![VFD Modbus signal adapter schematic](/images/spindle-module/modbus-vfd-board-schematic.png)
+![VFD Modbus signal adapter schematic](images/modbus-vfd-board-schematic.png)
 *VFD Modbus signal adapter schematic*
 For the curious
 
 This is the related circuit diagram for the converter
 
-![VFD Modbus wiring](/images/spindle-module/rs485wiring.png)
+![VFD Modbus wiring](images/rs485wiring.png)
 *VFD Modbus wiring*
 How to connect it to the Smoothieboard and the VFD
 

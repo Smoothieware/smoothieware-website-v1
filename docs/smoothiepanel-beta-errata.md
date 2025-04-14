@@ -8,6 +8,6 @@ The limited release Smoothiepanel Beta Proto1 boards have a couple of bugs / got
 - R10 and R21 are unpopulated in the prototype. I thought that was enough... but it turns out that can lead to it *sometimes working* and *sometimes not* for random static electricity related reasons. The bottom pad of each needs to be tied to ground to solve this problem. In the following pic the relevant pads on R10 and R21 are circled in red and some convenient nearby gnd points are circled in blue.
 - The click encoder signal is not transmitted over the I2C bus. `ENC_A` and `ENC_B` will need to be wired to two pins, suggested is `P1.22` and `P1.23`
 
-![SmoothiePanelBeta-Proto1 Errata](/images/smoothiepanel-beta-errata/SmoothiePanelBeta-Proto1-errata0.png)
+![SmoothiePanelBeta-Proto1 Errata](images/smoothiepanel-beta-errata/SmoothiePanelBeta-Proto1-errata0.png)
 
 - The I2C port pull-ups are not populated which may be a problem for some. These are R7 and R8 and anything in the general vicinity of 1k to 10k should work, though a smaller number should generally lead to more stable comms that can be run at higher speed.

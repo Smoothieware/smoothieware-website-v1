@@ -28,8 +28,7 @@ Smoothie comes with stepper motor drivers designed for bipolar stepper motors, w
 > ```
 > Ideal stepper is (for reprap printers and similar small CNC using microstepping drivers on 12-24v supply) NEMA17 size, rated 1.5A to 1.8A or less, 1-4ohm winding resistance, 3 to 8 mH, 62oz.in (0.44Nm, 4.5kg.cm) or more of torque, 1.8 or 0.9 degrees per step (200/400 steps/rev respectively), for example the kysan 1124090/42BYGH4803 or the rattm 17HS8401 or Wantai
 > ```
-
-![Stepper motor wiring](/_media///external/http.chibidibidiwah.wdfiles.com.local.files.3d.printer.guide.smoothieboard.steppers.wiring.png)
+![Stepper motor wiring](https://github.com/Bouni/smoothieboard-graphics/blob/master/smoothieboard-stepper-wiring.png?raw=true)
 *Be careful you get the coils right*
 
 ## Wiring
@@ -47,13 +46,16 @@ The tricky thing is often to find out which wires connect to which poles. If you
 - Multimeter: Configure your multimeter to read resistance. Then the method is the same as the previous one, take two wires at random, test them, except you know you find a coil when you measure electrical resistance between two wires. If you measure no contact, try another wire combination. Note the colours that correspond to each coil.
 
 Now to connect the wires to the Smoothieboard. Let's call one coil A, and the other coil B. It doesn't matter which is which. Polarity also doesn't matter, all it changes is the direction the motor turns, and you can change that in the configuration file. Now simply connect your two wires to the Smoothieboard's 4 pins for that stepper motor driver as such: AABB or BBAA. Other combinations like ABBA or ABAB will not work.
+>
 
-![How to properly connect stepper motors](/_media///smoothieboard-graphics/smoothieboard-stepper-wiring.png)
+![How to properly connect stepper motors](https://raw.githubusercontent.com/Bouni/smoothieboard-graphics/master/smoothieboard-stepper-wiring.png)
+
 *If you don't get it right, it won't work properly*
 
 Once your stepper motor is properly connected to your Smoothieboard, it is ready to be controlled.
 
-![Wiring a stepper motor to a stepper motor driver](/_media///smoothieboard-graphics/schematics/stepper-basic.svg.png)
+![Wiring a stepper motor to a stepper motor driver](http://arthurwolf.github.io/smoothieboard-graphics/schematics/stepper-basic.svg)
+
 *In this example, a stepper motor is connected to the M1 driver, and power is provided to VBB (the main power input).*
 
 ### External Stepper driver
@@ -61,8 +63,7 @@ Once your stepper motor is properly connected to your Smoothieboard, it is ready
 If you want to use larger stepper motors than the Smoothieboard's drivers can handle (2A max), you need to use external stepper drivers.
 
 You can find detailed information on how to wire an external stepper motor driver to a Smoothieboard in the [External driver appendix](http://smoothieware.org/general-appendixes#external-drivers).
-
-![Stepper motor](/_media///external/https.cdn.automationdirect.com.images.products.labels.pl.stpmtr17060.01.jpg)
+![Stepper motor](http://smoothieware.org/general-appendixes#external-drivers)
 *They often have useful information on them*
 
 ## Configuring
@@ -98,8 +99,8 @@ alpha_current                                1.68             # X stepper motor 
 ```
 
 Do this for each stepper motor you have to connect to the board. (If you have a Cartesian robot, see which motor connects to which stepper driver in the array above. If you use another type of arm solution, see the specific documentation.)
-
-![A stepper motor](/_media///external/http.cncsuperstore.com.image.cache.data.products.kits.assemblies.js.20kh42jm2b182a.20kit.8.500x500.jpg)
+![A stepper motor]
+(http://cncsuperstore.com/image/cache/data/Products/Kits_Assemblies/JS%20KH42JM2B182A%20KIT/8-500x500.JPG)
 
 ### Steps per millimeter
 
@@ -137,7 +138,7 @@ In the case of your extruder stepper motor, the principle is the same, but the v
 
 Here are two good videos about steps-per-millimeters:
 
-![Pronterface](/_media///external/http.reprap.org.mediawiki.images.1.12.pronterface.png)
+![Pronterface](https://reprap.org/mediawiki/images/1/12/Pronterface.png)
 
 ### Direction
 

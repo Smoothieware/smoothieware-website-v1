@@ -1,7 +1,7 @@
 
 # Basics
 
-![Smoothieboard](/images/howitworks/6249349954_bff0ecc9f2_z.jpg)
+![Smoothieboard](images/howitworks/6249349954_bff0ecc9f2_z.jpg)
 
 **In its most basic form, the job of Smoothie is to receive [G-code](http://en.wikipedia.org/wiki/G-code) commands and translate those into actual movement for a robot.**
 
@@ -18,7 +18,7 @@ Now let's get into more detail for each part:
 
 ## GcodeDispatch
 
-![GcodeDispatch](/images/howitworks/6248821477_15aac886cd_z.jpg)
+![GcodeDispatch](images/howitworks/6248821477_15aac886cd_z.jpg)
 
 It is interesting to note that here we are interested only in G-code commands, but the `on_console_line_received` event actually gets called with any new line, to any module that registered for it (see [Kernel](https://github.com/arthurwolf/Smoothie/blob/master/src/libs/Kernel.cpp), [Module](https://github.com/arthurwolf/Smoothie/blob/master/src/libs/Module.cpp) and the [Module example](http://smoothieware.org/moduleexample)). This can, for example, be used to handle [command-line-like](http://smoothieware.org/console-commands) instructions.
 
@@ -26,7 +26,7 @@ The [Gcode](https://github.com/arthurwolf/Smoothie/blob/master/src/modules/commu
 
 ## Robot
 
-![Robot](/images/howitworks/6249350092_9ddb8439d8_z.jpg)
+![Robot](images/howitworks/6249350092_9ddb8439d8_z.jpg)
 
 Again here we are interested only in movement G-codes, but any module that registers for the `on_gcode_received` event will be called with that G-code and gets a chance to use it. Even this module (Robot) actually recognizes not only movement G-codes but also mode-changing G-codes (absolute/relative, inch/millimeter, etc.).
 
@@ -36,7 +36,7 @@ The segment cutting part is a port of grbl, more specifically, [chamnit's amelio
 
 ## Planner
 
-![Planner](/images/howitworks/6249350188_90566e9a2e_z.jpg)
+![Planner](images/howitworks/6249350188_90566e9a2e_z.jpg)
 
 Contrary to previous module-to-module transfer, we did not here use an event call/event handler. This is because the new line segment the Planner receives really only matters for the Planner, so an event call here would be superfluous. However, if you have a use case where plugging in here would make sense, [just ask](mailto:wolf.arthur@gmail.com).
 
@@ -46,7 +46,7 @@ At the end here, we add the new Block to the queue. Now the goal of this is for 
 
 ## Stepper
 
-![Stepper](/images/howitworks/6249350300_b53acde8ed_b.jpg)
+![Stepper](images/howitworks/6249350300_b53acde8ed_b.jpg)
 
 So the first, most important loop in the Stepper module is the stepping loop. It is the one that actually makes the stepper motor move. It also, if necessary, gets a new Block from the Planner's queue when it has finished stepping the previous one.
 
