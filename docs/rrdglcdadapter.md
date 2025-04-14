@@ -3,7 +3,7 @@
 
 This adapter allows you to connect a [Reprapdiscount GLCD panel](http://smoothieware.org/panel) to a Smoothieboard easily.
 
-![GLCD Adapter](/images/rrdglcdadapter/glcdav2.jpg)
+![GLCD Adapter](images/rrdglcdadapter/glcdav2.jpg)
 
 All of the panel's functionalities are available:
 
@@ -29,33 +29,33 @@ For US another version coming soon [here](http://shop.uberclock.com)
 
 Place the 3-pin connectors below the PCB
 
-![GLCD Adapter Kit](/images/rrdglcdadapter/glcdav2_kit.jpg)
+![GLCD Adapter Kit](images/rrdglcdadapter/glcdav2-kit.jpg)
 
 And solder
 
-![GLCD Adapter Soldering](/images/rrdglcdadapter/glcdav2_weld0.jpg)
+![GLCD Adapter Soldering](images/rrdglcdadapter/glcdav2-weld0.jpg)
 
 Mount the EXP1 & EXP2 connectors, and solder
 
-![GLCD Adapter Original](/images/rrdglcdadapter/glcdav2_orig.jpg)
+![GLCD Adapter Original](images/rrdglcdadapter/glcdav2-orig.jpg)
 
-![RRDGLCD Version](/images/rrdglcdadapter/rrdglcdvo.png)
+![RRDGLCD Version](images/rrdglcdadapter/rrdglcdvo.png)
 
 On some RRDGLCD the connector are reversed
 
-![GLCD Adapter Copy](/images/rrdglcdadapter/glcdav2_copy.jpg)
+![GLCD Adapter Copy](images/rrdglcdadapter/glcdav2-copy.jpg)
 
-![RRDGLCD Copy](/images/rrdglcdadapter/rrdglcdcopy.png)
+![RRDGLCD Copy](images/rrdglcdadapter/rrdglcdcopy.png)
 
 ## Power supply
 
 If Smoothieboard has a good 5V regulator, or a 5V power supply, the panel of the power supply can be drawn from this one by means of a diode (ex 1N5817).
 
-![GLCD Adapter Power Supply](/images/rrdglcdadapter/glcdav2_power1.jpg)
+![GLCD Adapter Power Supply](images/rrdglcdadapter/glcdav2-power1.jpg)
 
 If not, please install a voltage regulator Recom 785.0-1
 
-![GLCD Adapter Voltage Regulator](/images/rrdglcdadapter/glcdav2_power2.jpg)
+![GLCD Adapter Voltage Regulator](images/rrdglcdadapter/glcdav2-power2.jpg)
 
 The diode and regulator may be mounted at the same time.
 
@@ -65,9 +65,9 @@ The adapter is configured for Smoothieboard v1.0a and newer.
 
 For v1.0 Smoothieboard, configure the PCB
 
-![GLCD Adapter Configuration](/images/rrdglcdadapter/glcdav2_config1.jpg)
+![GLCD Adapter Configuration](images/rrdglcdadapter/glcdav2-config1.jpg)
 
-![GLCD Adapter Configuration 2](/images/rrdglcdadapter/glcdav2_config2.jpg)
+![GLCD Adapter Configuration 2](images/rrdglcdadapter/glcdav2-config2.jpg)
 
 Cut the jumper track, and drop a welding goute on the other part of the jumper.
 
@@ -75,9 +75,9 @@ Cut the jumper track, and drop a welding goute on the other part of the jumper.
 
 Solder the connector missing
 
-![GLCD Adapter Smoothieboard](/images/rrdglcdadapter/glcdv2_smoothie.png)
+![GLCD Adapter Smoothieboard](images/rrdglcdadapter/glcdv2-smoothie.png)
 
-Update firmware (version after October 2014), see [Flashing Smoothie firmware](/flashing-smoothie-firmware.md)
+Update firmware (version after October 2014), see [Flashing Smoothie firmware](flashing-smoothie-firmware.md)
 Edit the config file on the µSD:
 
 ```markdown
@@ -108,14 +108,14 @@ switch.nonoise.output_type                   digital
 
 This will create a pseudo-switch that does nothing, but it will enable the pull-down on the pin. You have to leave out the `panel.buzz_pin` line.
 
-![GLCD Adapter](/images/rrdglcdadapter/adapter.jpg)
+![GLCD Adapter](images/rrdglcdadapter/adapter.jpg)
 
 The V1 of this adapter was not capable of accessing the panel's SD card slot.
 
 This functionality can be made available on the v1 by cutting track on PCB
 
-![GLCD Adapter V1](/images/rrdglcdadapter/gcldv1_03.jpg)
+![GLCD Adapter V1](images/rrdglcdadapter/gcldv1-03.jpg)
 
 And soldering a cable under the PCB
 
-![GLCD Adapter V1 Soldering](/images/rrdglcdadapter/gcldv1_04.jpg)
+![GLCD Adapter V1 Soldering](images/rrdglcdadapter/gcldv1-04.jpg)

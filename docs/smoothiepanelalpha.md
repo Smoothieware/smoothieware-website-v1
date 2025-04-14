@@ -5,9 +5,10 @@ SmoothiePanel is an [Open Source Hardware](http://en.wikipedia.org/wiki/Open-sou
 It is intended to control a [Smoothieboard](http://smoothieware.org/Smoothieboard) ( [GPL](http://en.wikipedia.org/wiki/Gpl) too ), though could easily be connected to any system with available I2C.
 
 ## Preview
-
-![Smoothiepanel proto1 small](/images/external/https.dl.dropbox.com.u.45859274.smoothiepanel.20proto1.20small.jpg)
-
+![Smoothiepanel proto1 small](images/Missing.png)<br/>
+<!-- LED
+![Smoothiepanel proto1 small](images/external/https.dl.dropbox.com.u.45859274.smoothiepanel.20proto1.20small.jpg)
+-->
 ## Status
 
 The current status of this board is prototyping: design is done, and the first prototypes have arrived and are being assembled by hand. The firmware has not even been started yet. ;)

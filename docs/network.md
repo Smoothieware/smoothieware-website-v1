@@ -5,7 +5,7 @@ Smoothieboard has an RJ45 connector, which can be used to connect the board to y
 
 ## Settings
 
-Smoothie supports Ethernet access, which must be enabled in the [configuration file](/configuring-smoothie.md).
+Smoothie supports Ethernet access, which must be enabled in the [configuration file](configuring-smoothie.md).
 
 To enable the network, set `network.enable` to `true`.
 
@@ -37,7 +37,7 @@ network.ip_gateway                           192.168.3.1      # the gateway addr
 
 The basic network configuration options can be seen at the end of the [Config Sample](https://github.com/arthurwolf/Smoothie/blob/edge/ConfigSamples/Smoothieboard/config#L312).
 
-If your configuration file does not contain the network section, it probably means the version of Smoothie that shipped with your board is too old. You need to use the latest edge firmware and use the latest configuration file. See [Flashing Smoothie Firmware](/flashing-smoothie-firmware.md) and [Configuring Smoothie](/configuring-smoothie.md).
+If your configuration file does not contain the network section, it probably means the version of Smoothie that shipped with your board is too old. You need to use the latest edge firmware and use the latest configuration file. See [Flashing Smoothie Firmware](flashing-smoothie-firmware.md) and [Configuring Smoothie](configuring-smoothie.md).
 
 ### All Options
 
@@ -63,7 +63,7 @@ To access Smoothie over the network, you first need to know its IP address. If y
 
 You can access Smoothie by using its network services:
 
-- Telnet (port 23) to run commands, stream G-code to Smoothie, or connect from [Pronterface](/pronterface.md) (see below)
+- Telnet (port 23) to run commands, stream G-code to Smoothie, or connect from [Pronterface](pronterface.md) (see below)
 - HTTP web server (port 80) allows control from your web browser
 - Simple File Transfer Protocol (port 115) allows uploading of files from an SFTP client.
 - (**NOT SUPPORTED** needs to be enabled and compiled) Plan9 (9P/Styx) (port 564) provides remote access to the file system from compatible clients (typically Linux)
@@ -76,9 +76,9 @@ You can use a terminal to connect to your board via telnet by typing in a termin
 telnet ip_of_smoothie:23
 ```
 
-[Pronterface](/pronterface.md) can also connect to Smoothie over the network by using telnet - just enter `ip_of_smoothie:23` instead of the serial port before clicking 'Connect'. Where `ip_of_smoothie` is the IP address of your Smoothie. You must check the box under Settings Menu that says `TCP streaming mode`.
+[Pronterface](pronterface.md) can also connect to Smoothie over the network by using telnet - just enter `ip_of_smoothie:23` instead of the serial port before clicking 'Connect'. Where `ip_of_smoothie` is the IP address of your Smoothie. You must check the box under Settings Menu that says `TCP streaming mode`.
 
-Raw telnet provides console access to run [console commands](/console-commands.md) or G-code, useful network commands here are `net` and `netstat`. See the [smoothie-stream.py example](https://github.com/arthurwolf/Smoothie/blob/edge/smoothie-stream.py) for streaming.
+Raw telnet provides console access to run [console commands](console-commands.md) or G-code, useful network commands here are `net` and `netstat`. See the [smoothie-stream.py example](https://github.com/arthurwolf/Smoothie/blob/edge/smoothie-stream.py) for streaming.
 
 #### Web Server (port 80)
 
@@ -108,7 +108,7 @@ http://ip_of_smoothie/sd/webif/index.html
 
 <div class='panel panel-default wrap_center' style='width:640px;padding:10px '>
 <div class='panel-heading'><h4 class='panel-title'>Web interface</h4></div>
-<img src='/images/network/new_webif.png' width='620px'><br/>
+<img src='images/new-web-interface.png' width='620px'><br/>
 It allows you to control the machine over the network
 </div>
 
@@ -118,7 +118,7 @@ Note: [Simple File Transfer Protocol](http://en.wikipedia.org/wiki/Simple_File_T
 
 #### Plan9 Network Filesystem (port 564)
 
-**NOTE**: Plan9 is not built into Smoothie by default. To include it, rebuild Smoothie with `make PLAN9=1`. See [Compiling Smoothie](/compiling-smoothie.md).
+**NOTE**: Plan9 is not built into Smoothie by default. To include it, rebuild Smoothie with `make PLAN9=1`. See [Compiling Smoothie](compiling-smoothie.md).
 
 The Plan9 network file system can be used on Linux to directly mount the Smoothieboard over the network. First, activate the option `network.plan9.enable` and restart your Smoothie. After that, you can mount with:
 

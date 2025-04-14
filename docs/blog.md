@@ -1,7 +1,7 @@
 
 # Smoothie blog
 
-[Smoothieboard v2 second update](/blog_15.md)
+[Smoothieboard v2 second update](blog_15.md)
 
 posted on Saturday: 19 November, 2016
 
@@ -9,7 +9,7 @@ It's been a bit over a year since the first update about the Smoothie2 project. 
 
 ---
 
-[Major Code Update](/blog_14.md)
+[Major Code Update](blog_14.md)
 
 posted on Monday: 04 July, 2016
 
@@ -17,7 +17,7 @@ New features, please test (read more…)
 
 ---
 
-[Smoothieboard v2 progress update](/blog_13.md)
+[Smoothieboard v2 progress update](blog_13.md)
 
 posted on Sunday: 18 October, 2015
 
@@ -25,7 +25,7 @@ We really often get asked « When is Smoothieboard v2 coming out ? » lately. (r
 
 ---
 
-[Added Oversampling](/blog_12.md)
+[Added Oversampling](blog_12.md)
 
 posted on Monday: 27 July, 2015
 
@@ -35,7 +35,7 @@ This seems to help keep the temperatures more stable. (read more…)
 
 ---
 
-[Upgrade to GCC 4.8](/blog_11.md)
+[Upgrade to GCC 4.8](blog_11.md)
 
 posted on Tuesday: 16 September, 2014
 
@@ -43,7 +43,7 @@ Edge now uses the current version of GCC 4.8, anyone developing on edge should d
 
 ---
 
-[Volumetric Printing Support Added](/blog_10.md)
+[Volumetric Printing Support Added](blog_10.md)
 
 posted on Thursday: 14 August, 2014
 
@@ -51,7 +51,7 @@ Information can be found on the Extruder Page under the heading of "Filament Dia
 
 ---
 
-[Configuration Submenu Added to Panel](/blog_9.md)
+[Configuration Submenu Added to Panel](blog_9.md)
 
 posted on Sunday: 01 June, 2014
 
@@ -59,7 +59,7 @@ The latest edge now has a Configuration submenu containing adjustments for: (rea
 
 ---
 
-[Zprobe software update](/blog_8.md)
+[Zprobe software update](blog_8.md)
 
 posted on Saturday: 26 April, 2014
 
@@ -67,7 +67,7 @@ Checkout Zprobe page for more info. (read more…)
 
 ---
 
-[config: planner_queue_size](/blog_7.md)
+[config: planner_queue_size](blog_7.md)
 
 posted on Monday: 20 January, 2014
 
@@ -75,7 +75,7 @@ Smoothie Edge-0b3e620 and later now pays attention to config option "planner_que
 
 ---
 
-[Smoothie sited driving an h-bot on Hackaday](/blog_6.md)
+[Smoothie sited driving an h-bot on Hackaday](blog_6.md)
 
 posted on Friday: 05 April, 2013
 

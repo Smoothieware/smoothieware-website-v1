@@ -1,7 +1,7 @@
 
 # Your guide to installing Smoothieboard in a CNC Milling Machine
 
-![CNC Mill Icon](/images/icon.cnc.mill.round.big.png)
+<img src="images/icon-cnc-mill.png" alt="CNC Mill Icon" width = 200 height=200>
 
 Although not as common as the Smoothiefied 3D printer, the CNC mill machine is fairly simple to Smoothiefy.
 
@@ -9,7 +9,7 @@ This is a step-by-step guide to connecting your board to the various components 
 
 This guide is a [community](http://smoothieware.org/irc) effort, and this page is a Wiki. Please don't hesitate to [edit it](#_editpage) to fix mistakes and add information, any help is very welcome.
 
-![Smoothieboard Fritzing](/images/smoothieboard.fritzing.png)
+<img src="images/smoothieboard-fritzing.png" alt="Smoothieboard Fritzing" width=600 height=600>
 
 On a typical CNC mill or CNC router setup, installing a Smoothieboard will mean you do the following things:
 
@@ -17,8 +17,8 @@ On a typical CNC mill or CNC router setup, installing a Smoothieboard will mean 
 - Install some [Software](software.md) to talk to your board
 - Install the [Windows drivers](windows-drivers.md) if using that OS
 - Connect your board via [USB](usb.md) and practice talking to it
-- Take a look at the [configuration](/configuring-smoothie.md)
-- Upgrade your [firmware](/flashing-smoothie-firmware.md) to the latest version if you feel like it
+- Take a look at the [configuration](configuring-smoothie.md)
+- Upgrade your [firmware](flashing-smoothie-firmware.md) to the latest version if you feel like it
 - Wire your power supply and provide it with power
 - Wire the power supply to [Smoothieboard](smoothieboard.md)'s motor input
 - Connect motors to the stepper motor driver outputs
@@ -71,7 +71,7 @@ You will find more information on `grbl_mode` on the [grbl_mode](http://smoothie
 
 {% include_relative spindle-control.md %}
 
-{% include_relative z-probe-guide.md %}
+{% include_relative zprobe-guide.md %}
 
 {% include_relative panel-guide.md %}
 

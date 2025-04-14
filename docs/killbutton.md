@@ -7,13 +7,13 @@ There are two solutions for implementing a kill button on the Smoothieboard:
 
 Solder an [LED Tactile Button](https://www.sparkfun.com/products/10442) on the Smoothieboard.
 
-![Led Tactile Button](/images/killbutton/led_tactile_button.png)
+![Led Tactile Button](images/led-tactile-button.png)
 
 ## Simple Button
 
 Wire a simple button on two pins.
 
-![Simple Button](/images/killbutton/simple_button.png)
+![Simple Button](images/simple-button.png)
 
 The button may be configured as a kill switch, which will halt all operations, turn off heaters, and pause the host. It can be cleared with a `M999` command or by resetting the board. To enable a kill button, the following configuration is added:
 

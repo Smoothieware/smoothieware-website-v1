@@ -1,11 +1,11 @@
 
 > [!NOTE]
-> ![Smoothie Logo](/images/oshw-logo.png)
-> ![Information Icon](/images/info_1_.png)
+> ![Smoothie Logo](images/oshw-logo.png)
+> ![Information Icon](images/info-1.png)
 > **Smoothie** is a **[free, opensource, high performance](start.md)** and modular **G-code** interpreter and **CNC** control system for the powerful **[Smoothieboard](smoothieboard.md)** 32bits controller. It's designed to be very user-friendly and hacker-friendly. The Source code is on [GitHub](https://github.com/Smoothieware/Smoothieware). ヾ(❀◦◡◦)彡 
 
 > [!WARNING]
-> ![Festa Junina Icon](/images/festa-junina.png)
+> ![Festa Junina Icon](images/festa-junina.png)
 > Smoothieboard v2 is now on Kickstarter! Get your board [here](https://www.kickstarter.com/projects/arthurwolf/smoothieboard-v2).
 
 The Smoothie project is always looking for help, whatever your skills are, there are things you can do to improve the project with the other volunteers, if you feel like you could give us some of your free time, please [contact us](mailto:wolf.arthur@gmail.com), **help and working together** is what has made this project so neat, advanced and precious over the years, and is **very welcome**.
@@ -16,15 +16,15 @@ The Smoothie project is always looking for help, whatever your skills are, there
 
 ### Step by step guides
 
-![3D Printer Icon](/images/icon.3dprinter.big.round.png)
+![3D Printer Icon](images/icon-3d-printer-big-round.png)
 
 [3D printer guide](3d-printer-guide.md)
 
-![Laser Cutter Icon](/images/icon.laser.big.round.png)
+![Laser Cutter Icon](images/icon-laser-big-round.png)
 
 [Laser cutter guide](laser-cutter-guide.md)
 
-![CNC Mill Icon](/images/icon.cnc.mill.round.big.png)
+![CNC Mill Icon](images/icon-cnc-mill-big-round.png)
 
 [CNC mill guide](cnc-mill-guide.md)
 
@@ -39,14 +39,14 @@ There is also a [Pick and Place](pick-and-place.md) guide.
   - [UART](uart.md)
   - [Bluetooth](bluetooth-serial.md)
   - [Wifi](wifi.md) (new)
-- ![Configuration Icon](/images/board.png)
+- ![Configuration Icon](images/board.png)
   - [Configuring Smoothie](configuring-smoothie.md): Configuration and use, by module
   - [List of all configuration options](configuration-options.md)
   - [Motion control](motion-control.md): All things related to gcode interpolation, motion and acceleration planning, and step generation
     - [Arm Solutions](Arm-Solutions.md): [Cartesian](Cartesian.md), [Delta](delta.md), [Hbot](Hbot.md), [Core-XY](Core-XY.md), [Rotary Delta](Rotary-Delta.md), [Morgan Scara](morgan-scara.md)
     - [6axis](6axis.md): Using A, B and C axes, for 4, 5 or 6 axis motion.
     - [Grbl mode](grbl-mode.md): Using Smoothie in CNC-specific mode instead of 3D printing mode
-- ![Tools Icon](/images/glove.png)
+- !<img src="images/glove.png" alt="Tools Icon" width=200>
   - [Tools](tools.md)
     - [Extruder](extruder.md): Control extruders for 3D printing
     - [Temperaturecontrol](temperaturecontrol.md): Heat and cool things like hotends and heated beds
@@ -85,7 +85,7 @@ There is also a [Pick and Place](pick-and-place.md) guide.
   - [Editing the Wiki](editing-the-wiki.md): How to edit this documentation and improve it.
 
 > [!NOTE]
-> ![Binary Code Icon](/images/binary-code.png)
+> !<img src="images/binary-code.png" alt="Binary Code Icon" width=200>
 > **The firmware.bin file**
 > 
 > Note, Smoothieboards come completely pre-flashed, you do not need to compile or flash the firmware, unless you want to upgrade to a newer version, or to contribute to the code.
@@ -109,7 +109,7 @@ More: [Windows Drivers](Windows-Drivers.md), [Linux Drivers](Linux-Drivers.md), 
 - [Pin usage](lpc1769-pin-usage.md) has information on the use and capability of all pins
 - [How to wire](how-to-wire.md) describes tutorials, tools and best practices for wiring and cabling work when installing your Smoothieboard in a new machine.
 
-![Smoothieboard Fritzing](/images/smoothieboard-fritzing.png)
+![Smoothieboard Fritzing](images/smoothieboard-fritzing.png)
 
 [Get a Smoothieboard here](getting-smoothieboard.md)
 
@@ -117,7 +117,7 @@ More: [Windows Drivers](Windows-Drivers.md), [Linux Drivers](Linux-Drivers.md), 
 
 ### For users
 
-![Worker Icon](/images/worker.png)
+!<img src="images/worker.png" alt="Worker Icon" width=200>
 
 - Powerful (120Mhz, 32bit) [micro-controller](http://www.embeddedartists.com/products/lpcxpresso/lpc1769_xpr.php).
 - Easy to use and [configure](configuring-smoothie.md).
@@ -130,7 +130,7 @@ More: [Windows Drivers](Windows-Drivers.md), [Linux Drivers](Linux-Drivers.md), 
 
 ### For hackers
 
-![Blueprint Icon](/images/blueprint_1_.png)
+!<img src="images/blueprint-1.png" alt="Blueprint Icon" width = 200>
 
 - Modular, event-driven design, allowing to add functionality easily without modifying the core. See the [ModuleExample](moduleexample.md)
 - Designed to support non-Cartesian machines
@@ -143,7 +143,7 @@ More: [Windows Drivers](Windows-Drivers.md), [Linux Drivers](Linux-Drivers.md), 
 
 ### Developer documentation
 
-![Coding Icon](/images/coding.png)
+!<img src="images/coding.png" alt="Coding Icon" width=200>
 
 - **[Todo](todo.md)**: List of the things that are being worked on in the project. We need your help!
 - [HowItWorks](howitworks.md): Walk-through the inner workings of Smoothie (°٢°)

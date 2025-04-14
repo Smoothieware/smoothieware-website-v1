@@ -1,5 +1,5 @@
+<img src="images/limit-switch.png" alt="Guide-End Stops">
 
-<img src="/images/external/http.www.a2aprinter.ca.image.cache.data.48.600x450.jpg" width="430px"><br/>
 *It's essentially just a switch*
 
 # Endstops
@@ -10,7 +10,7 @@ This allows Smoothie to then precisely know where everything is relative to that
 
 However, end-stops are not necessary, you could do without them. They are just so convenient that most machines use them.
 
-End-stops can also be used as limit switches which prevent the machine from attempting to move beyond the physical limits of the axis (by pausing/stopping movement when triggered), see the [Endstops page](/endstops.md) for details about configuring Smoothie to use End Stops as limit switches.
+End-stops can also be used as limit switches which prevent the machine from attempting to move beyond the physical limits of the axis (by pausing/stopping movement when triggered), see the [Endstops page](endstops.md) for details about configuring Smoothie to use End Stops as limit switches.
 
 > [!NOTE]
 > To make things as simple as possible: In Smoothie, endstops do three things: 
@@ -21,7 +21,8 @@ End-stops can also be used as limit switches which prevent the machine from atte
 > [!WARNING]
 > Smoothie does not allow you to use a zprobe as an endstop. An endstop must be dedicated to being an endstop and cannot be used as a zprobe and vice versa. This does not mean *ANY* kind of feature is missing, you can still do everything you expect, this is just a subtility in vocabulary and in how configuration is organized, that new users are generally fine with, *except* if they come from another system which has a different paradigm.
 
-<img src="/images/external/http.chibidibidiwah.wdfiles.com.local.files.3d.printer.guide.smoothieboard.endstops.png" width="430px"><br/>
+<img src="images/limit-switch.png" width="430px"><br/>
+
 *There are 6 of them, two for each axis*
 
 ## Mechanical endstop wiring
@@ -44,8 +45,7 @@ Most mechanical end-stops have 3 connection points, to which you have to attach 
 * **C**: Common
 * **NO**: Normally Open, meaning it is not connected to **C** when the interrupter is not pressed, and connected to **C** when the interrupter is pressed.
 * **NC**: Normally Closed, meaning it is connected to **C** when the interrupter is not pressed, and not connected to **C** when the interrupter is pressed.
-
-<img src="/images/smoothieboard-graphics/schematics/endstop-basic.svg.png" width="620px"><br/>
+<img src="images/end-stops.png" width="620px"><br/>
 *You want to connect the **Signal** (green in the schematic) and **Ground** (blue in the schematic) pins for the end-stop on the Smoothieboard, to the **C** and **NC** connection points on the end-stop.*
 
 > [!NOTE]
@@ -100,7 +100,7 @@ alpha_min_endstop                            1.28v
 
 In some very rare cases, the endstop reading circuit on the Smoothieboard will not be adequate for your endstop type. In this case, you should use a "free" GPIO pin on the Smoothieboard that nothing else uses to connect your endstop to.
 
-See [Pinout](/pinout.md) to find adequate pins.
+See [Pinout](pinout.md) to find adequate pins.
 
 ## Testing
 
@@ -108,7 +108,7 @@ The default configuration most probably already has everything you need: the pin
 
 Once they are wired, you can test your end-stops.
 
-To do this, reset your Smoothieboard, then connect to it using host software like Pronterface or the [web interface](/network.md).
+To do this, reset your Smoothieboard, then connect to it using host software like Pronterface or the [web interface](network.md).
 
 Now connect to your Smoothieboard over the serial interface. Power your machine on by plugging the PSU into the wall.
 
@@ -155,4 +155,4 @@ Here is the exact mapping of pin names to inputs on the Smoothieboard:
 | Config value | alpha_min | alpha_max | beta_min  | beta_max | gamma_min | gamma_max |
 | Pin name     | 1.24      | 1.25      | 1.26      | 1.27     | 1.28      | 1.29      |
 
-More information can be found [here](/endstops.md).
+More information can be found [here](endstops.md).

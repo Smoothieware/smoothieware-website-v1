@@ -8,7 +8,7 @@ Before you start wiring your machine's elements to the board, there are several 
 > [!DANGER]
 > **Polarity**
 > 
-> ![Power connections](/images/3d.printer.guide.smoothieboard.polarity.png)
+> ![Power connections](images/polarity.png)
 > 
 > Note the inversion between the 5mm and 3.5mm connectors
 > 
@@ -50,7 +50,7 @@ Before you start wiring your machine's elements to the board, there are several 
 > [!INFO]
 > **USB v Ethernet**
 > 
-> USB can, in some setups, be subject to interference, which causes disconnections, and can ruin your work. This is very hard to prevent if it happens even in normal conditions. Ethernet, on the other hand, does not have this problem: save yourself the trouble, and use Ethernet right away. It's very nice. See [Network](/network.md) for information on how to set it up.
+> USB can, in some setups, be subject to interference, which causes disconnections, and can ruin your work. This is very hard to prevent if it happens even in normal conditions. Ethernet, on the other hand, does not have this problem: save yourself the trouble, and use Ethernet right away. It's very nice. See [Network](network.md) for information on how to set it up.
 
 > [!WARNING]
 > **Destroying your board**

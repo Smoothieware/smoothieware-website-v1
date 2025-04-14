@@ -10,17 +10,17 @@
 
 Create a Fork in your GitHub of [Smoothieware repository](https://github.com/Smoothieware/Smoothieware.git) by clicking the Fork button.
 
-![Fork button](/images/github-1.png)
+![Fork button](images/github-1.png)
 
 You will now have a forked repository in your list of repositories.
 
-![Forked repository](/images/github-2.png)
+![Forked repository](images/github-2.png)
 
 ## Clone the forked repository
 
 You can get the URL for cloning that repository by clicking the copy URL button.
 
-![Copy URL button](/images/github-3.png)
+![Copy URL button](images/github-3.png)
 
 On your local workstation clone the repository: `git clone <your GitHub fork of Smoothie>`
 
@@ -48,11 +48,11 @@ Push the branch to your GitHub: `git push origin fix/some-error`
 
 In GitHub, there should be a button that says pull request for that branch, click it.
 
-![Pull request button](/images/github-4.png)
+![Pull request button](images/github-4.png)
 
 Select edge as the destination branch, add comments.
 
-![Selecting branch](/images/github-5.png)
+![Selecting branch](images/github-5.png)
 
 > [!WARNING]
 > **Please**

@@ -60,7 +60,7 @@ In order to analyze how much various things we do take to execute, their cost, w
 
 This has been extremely useful in the past to figure out where we spent too much time, what needed fixing, etc.
 
-![Step generation graph](/images/accel-branch/step-generation-graph.png)
+![Step generation graph](images/step-generation-graph.png)
 
 1. In white, is the X-axis step signal. It is [turned on here](https://github.com/arthurwolf/Smoothie/blob/edge/src/libs/StepperMotor.cpp#L52) and [turned off here](https://github.com/arthurwolf/Smoothie/blob/edge/src/libs/StepTicker.cpp#L134).
 2. In brown is the [duration of this interrupt](https://github.com/arthurwolf/Smoothie/blob/edge/src/libs/StepTicker.cpp#L151). This is the total time we spend generating steps. It is the time we want to reduce as much as possible. A bit of the rest of the time is spent doing acceleration, all the rest in the main loop, mostly doing Planner math.
@@ -188,6 +188,6 @@ Several optimizations found and applied:
 
 These are optimizations that are most useful in the case we don't do anything. Applying them gives us the following signals/durations:
 
-![Optimized step generation graph](/images/accel-branch/optimized-step-generation-graph.png)
+![Optimized step generation graph](images/accel-branch/optimized-step-generation-graph.png)
 
 Compared to the previous graph, we now spend significantly less time in the interrupt when no step is generated, and a bit less time when one or more steps are generated.

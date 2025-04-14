@@ -81,7 +81,7 @@ If your axis is moving away from the endstop when homing, you need to invert you
 
 ## Limit switches
 
-Endstops may be configured to act as limit switches, during normal operations if any enabled limit switch is triggered the system will halt and all operations will stop, it will send a `!!` command to the host to stop it sending any more data (a recent dev octoprint and recent [Pronterface](/pronterface.md) support this).
+Endstops may be configured to act as limit switches, during normal operations if any enabled limit switch is triggered the system will halt and all operations will stop, it will send a `!!` command to the host to stop it sending any more data (a recent dev octoprint and recent [Pronterface](pronterface.md) support this).
 Sending `$X`, or sending `M999`, or a reset will be required to continue. **NOTE** While any limit switch is still triggered the limits are disabled, so make sure you jog away from the limit otherwise you can crash into the limit switch. This is far from perfect but it is a compromise to allow you to jog off the endstop, if this were not the case it would only be possible to manually push the axis off the limit switch. A possible workaround is to also enable soft endstops as described below, and config it to ignore moves that will move past the soft endstop, if you do this then it will only allow the axis to jog away from the endstop.
 
 To enable endstops as limit switches the following config options can be used, they are disabled by default.

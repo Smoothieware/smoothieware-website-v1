@@ -1,7 +1,7 @@
 
 ## Logic Power Inputs
 
-![Logic Power Inputs](/images/smoothieboard-graphics/schematics/smoothieboard-logic-inputs.svg.png)
+![Logic Power Inputs](images/logic-power-inputs.svg)
 
 There are different ways of providing logic power to your board.
 

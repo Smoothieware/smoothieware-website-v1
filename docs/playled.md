@@ -3,10 +3,10 @@
 
 You can solder a [Led Tactile Button](https://www.sparkfun.com/products/10442) on the Smoothieboard.
 
-![Led Tactile Button](/images/killbutton/led_tactile_button.png)
+![Led Tactile Button](images/led-tactile-button.png)
 
 # Simple LED
 
 Alternatively, you can wire a simple LED on two pins.
 
-![Simple LED](/images/playled/simple_led.png)
+![Simple LED](images/simple-led.png)

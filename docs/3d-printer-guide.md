@@ -1,7 +1,7 @@
 
 # Your guide to installing Smoothieboard in a 3D printer
 
-![3D Printer Icon](/images/icon.3dprinter.big.round.png)
+![3D Printer Icon](images/icon-3d-printer.png)
 
 Probably the machine for which Smoothie is most used, due to Smoothie's roots in the [RepRap](http://reprap.org/wiki/Main_Page) project, 3D printers are fairly simple to Smoothiefy. 
 
@@ -9,35 +9,35 @@ This is a step-by-step guide to connecting your board to the various components 
 
 This guide is a [community](http://smoothieware.org/irc) effort, and this page is a Wiki. Please don't hesitate to [edit it](#_editpage) to fix mistakes and add information, any help is very welcome.
 
-![Smoothieboard Fritzing](/images/smoothieboard-fritzing.png)
+![Smoothieboard Fritzing](images/smoothieboard-fritzing.png)
 
 On a typical 3D printer setup, installing a Smoothieboard will mean you do the following things:
 
 * Read all of the guide before you start, best way to avoid mistakes
-* Install some [Software](/software.md) to talk to your board
-* Install the [Windows drivers](/windows-drivers.md) if using that OS
-* Connect your board via [USB](/usb.md) and practice talking to it
-* Take a look at the [configuration](/configuring-smoothie.md)
-* Upgrade your [firmware](/flashing-smoothie-firmware.md) to the latest version if you feel like it
+* Install some [Software](software.md) to talk to your board
+* Install the [Windows drivers](windows-drivers.md) if using that OS
+* Connect your board via [USB](usb.md) and practice talking to it
+* Take a look at the [configuration](configuring-smoothie.md)
+* Upgrade your [firmware](flashing-smoothie-firmware.md) to the latest version if you feel like it
 * Wire your power supply and provide it with power
-* Wire the power supply to [Smoothieboard](/smoothieboard.md)'s motor and mosfet power inputs
+* Wire the power supply to [Smoothieboard](smoothieboard.md)'s motor and mosfet power inputs
 * Connect motors to the stepper motor driver outputs
 * Edit your configuration to match your motors
 * Test the motors, and admire your accomplishment for hours
-* Connect [Endstops](/endstops.md) to the endstop inputs
+* Connect [Endstops](endstops.md) to the endstop inputs
 * Edit your configuration to match your endstops
 * Test your endstops by homing the machine
 * Connect your hotend and heated bed's thermistors to the thermistor inputs
 * Edit your configuration to match your thermistors
-* Test that they read [temperature](/temperaturecontrol.md) correctly, admire a beautiful temperature graph
+* Test that they read [temperature](temperaturecontrol.md) correctly, admire a beautiful temperature graph
 * Connect your hotend and heated bed's heaters to the mosfet outputs
 * Edit your configuration to tell Smoothie what to heat, with what mosfet and how
 * Test that you can correctly control temperature on all heaters, carefully
 * Connect, configure and test any fans you may have
 * Connect, configure and test any probes you may have
 * Setup calibration or leveling if relevant
-* Configure your slicing [software](/software.md) and slice a 3D file into a G-code file
-* Use your host [software](/software.md) to send your new G-code file to the Smoothieboard
+* Configure your slicing [software](software.md) and slice a 3D file into a G-code file
+* Use your host [software](software.md) to send your new G-code file to the Smoothieboard
 * Watch as the machine prints using your new Smoothieboard system
 * Be happy
 
@@ -49,7 +49,7 @@ At the end of this guide, you should have a fully working machine.
 
 Some users have hand-translated this page. Note that this translated version is by definition never going to be up-to-date. Use it to help you understand in general, but any specific information should be taken from the original version, especially before asking the community for help.
 
-* [Version Francaise](/3d-printer-guide-fr.md)
+* [Version Francaise](3d-printer-guide-fr.md)
 
 {% include_relative unboxing.md %}
 
@@ -67,14 +67,14 @@ Some users have hand-translated this page. Note that this translated version is 
 
 {% include_relative extruder-guide.md %}
 
-![A Hotend](/images/v6.hero.large.jpg)
+![A Hotend](images/v6-hero-hot-end.png)
 It contains a thermistor and a heating element in its heating block
 
 ## Temperature control
 
 In a 3D printer, you heat thermoplastics. There are two different parts in which you want to do that. First, the hot-end heats the plastic to the point where it is liquid enough to go through the nozzle. Second, the heated bed (in only some printers), on which the first layer is deposited, is heated to allow for better sticking of the plastic to the bed, and more uniform temperature in the part while printing.
 
-For detailed information about temperature control in Smoothie, you can look at this part of the documentation: [TemperatureControl](http://smoothieware.org/temperaturecontrol)
+For detailed information about temperature control in Smoothie, you can look at this part of the documentation: [TemperatureControl](http://smoothieware.org/temperaturecontrol.md)
 
 The process is essentially the same to wire and control a hot-end, or a heated bed, and is as follows:
 
@@ -84,7 +84,7 @@ A [thermistor](http://en.wikipedia.org/wiki/Thermistor)'s resistance changes wit
 
 This allows Smoothie to turn the heater on or off depending on the temperature it reads, to achieve the desired temperature.
 
-![Thermistor inputs](/images/smoothieboard-thermistor-inputs.png)
+![Thermistor inputs](images/thermistor-inputs.png)
 There are 4 of them, close to the SD card slot
 
 To wire the thermistor, take the two wires from the thermistor on your hot-end or heated bed, and connect them to one of the pairs of thermistor inputs on the Smoothieboard. Each input is two pins, one for each thermistor wire. There is no polarity to respect.
@@ -112,7 +112,7 @@ temperature_control.bed.thermistor_pin       0.24             # Pin for the heat
 
 You can, however, use any thermistor pin you want for any temperature control module you want.
 
-![A thermistor](/images/100kohm.ntc.thermistors.ntc.100k.jpg)
+![A thermistor](images/thermistor.png)
 They come in all shapes and sizes
 
 {% include_relative temperaturecontrol-thermistor-choice.md %}
@@ -127,7 +127,7 @@ These heating elements need to be connected to Smoothieboard on a port that allo
 
 {% include_relative mosfets.md %}
 
-![A heated bed](/images/pcb.heatbed.mk2.front.small.jpg)
+![A heated bed](https://reprap.org/mediawiki/images/9/99/Heatbed_glass_clips_1a.jpg)
 Often made out of a rigid, or flexible (kapton) PCB
 
 #### Example
@@ -181,7 +181,7 @@ Once you know the heater works correctly, there is still some tuning to do: tuni
 
 ### Heater safety
 
-There are features you can configure to make sure that your [temperature control](/temperaturecontrol.md) module will detect when something is wrong, and stop the machine when that happens.
+There are features you can configure to make sure that your [temperature control](temperaturecontrol.md) module will detect when something is wrong, and stop the machine when that happens.
 
 It is a good thing to read about these, and configure them as best as you can, because your house burning down is a very bad thing.
 
@@ -217,7 +217,8 @@ This means we will make 4 connections:
 * Connecting the hotend to the first small mosfet output
 * Connecting the power supply to the small mosfet power input
 
-![Example wiring with a hotend and a heated bed](/images/example-heating-setup.svg.png)
+![Example wiring with a hotend and a heated bed](images/example-heating-setup.svg)
+
 Note how the mosfets need power provided to their power inputs
 
 {% include_relative guide-endstops.md %}
@@ -260,7 +261,8 @@ switch.fan.output_type                       pwm              # PWM output setta
 
 Now wire the fan to the output for that MOSFET (here it is the first small MOSFET, using pin 2.4), make sure you respect polarity.
 
-![Wiring a fan to a small mosfet](/images/fan-basic.svg.png)
+![Wiring a fan to a small mosfet](images/fan-basic.svg.png)
+
 The fan is wired to the output for the first small mosfet (watch the polarity, and make sure you always add a diode when wiring a fan), and the small mosfets are getting power via their power input. (NB Note - newer revisions of the Smoothieboard now come with the Diodes installed on the Small Mosfets - do a visual check to confirm)
 
 You can now control your fan digitally: issue the M106 G-code to turn it on, and M107 to turn it off. Those are also the commands slicing software generates to control fans.
@@ -270,8 +272,12 @@ You can now control your fan digitally: issue the M106 G-code to turn it on, and
 > 
 > You likely will be fine for fans with current ratings below 0.25Amps (most common types), however, while it is common practice to omit the diode under that rating, we still require you install one for safety. (Understand: if you do not install a diode and burn your MOSFET because of it, it will be considered user error.) Above this, you need to install a diode across the MOSFET's power output as you are pretty much guaranteed to burn the MOSFET without one. (NB Note - newer revisions of the Smoothieboard now come with the Diodes installed on the Small Mosfets - do a visual check to confirm)
 
-![Version 1.1 and up: Diodes added on a Smoothieboard](/images/o8f1o1d.png)
+<!-- LED 
+![Version 1.1 and up: Diodes added on a Smoothieboard](images/o8f1o1d.png)
+-->
 Note starting with Smoothieboard version 1.1, **you do not need to do this anymore** on the first two small mosfets, as the diodes are there by default.
 
-![Prior to version 1.1 PCBs: Adding Diodes to a Smoothieboard](/images/d94bd040f9.b.jpg)
+
+![Prior to version 1.1 PCBs: Adding Diodes to a Smoothieboard](images/adding-diodes-before-v1-1.jpg)
+
 The diode should be installed with the white band (negative side of the diode) soldered to the + (positive side) of the power output, and the other side to the - (negative side) of the power output. Good diodes to use are: 1N5819 or SS

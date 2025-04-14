@@ -20,11 +20,11 @@ A small 3D printer driven by a Smoothieboard may not endanger a user under norma
 
 To provide the bare minimum of safety, you should be able to stop all motors immediately in case of an accident. To do so, you could just use the play/pause switch of the Smoothieboard, but as mentioned above, this could not work properly for several reasons. Instead, you should rely on an external circuit that cuts the power for the steppers.
 
-![Emergency Stop Wiring 1](/images/emergency-stop-1.png)
+![Emergency Stop Wiring 1](images/emergency-stop-1.png)
 
 The Emergency stop button can be wired directly in the + line of VBB to achieve this, but maybe the current for the stepper motors exceeds the ratings of the push button. So it's a better idea to use a contactor/relay that switches the VBB and the Emergency stop button just switches the contactor/relay.
 
-![Emergency Stop Wiring 2](/images/emergency-stop-2.png)
+![Emergency Stop Wiring 2](images/emergency-stop-2.png)
 
 > [!WARNING]
 > **Logic Power Supply**
@@ -43,7 +43,7 @@ This wiring will stop all motor movement and all power outputs as long as they a
 
 Below is an example of how a proper emergency stop circuit for my 3 axis CNC mill with a dual Y-axis and a VFD could be realized. We assume all stepper drivers are external ones.
 
-![Emergency Stop Wiring 3](/images/emergency-stop-3.png)
+![Emergency Stop Wiring 4](images/emergency-stop-4.png )
 
 We assume the mill is large, let's say 1.2m by 1.2m big, that means that a normal person needs more than one e-stop button because you want to make sure that you can reach one from every position around the machine. The four buttons (S1 - S4, all NC) are simply wired in series, that means that if one is pressed, the contactors are all going to be switched off because they are no longer supplied with 24VDC. The separate 24VDC power supply is needed because the external stepper drivers are supplied with a higher voltage, 60VDC for example, and getting contactors with that coil voltage is not easy.
 

@@ -7,7 +7,7 @@ You need to choose a fuse with a value higher than your "normal" current for a g
 
 Here is an example of a fuse protecting the mosfet power input:
 
-![Protecting your board with a fuse](/images/smoothieboard-graphics/schematics/protection-via-fuse.png)
+![Protecting your board with a fuse](images/protection-via-fuse.png)
 *Note the fuse must have an adequate rating*
 
 

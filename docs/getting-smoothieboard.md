@@ -5,7 +5,7 @@
 
 ## North America
 
-- [Robosprout](https://www.robosprout.com/product/smoothieboard-5xc/), (USA) Smoothie lead contributing company, official US reseller. (**In Stock**)
+- [Robosprout](https://www.robosprout.com/product-category/smoothieboards), (USA) Smoothie lead contributing company, official US reseller. (**In Stock**)
 - [Everlast Concepts LLC](https://www.amazon.com/dp/B0786SVQ9Z?ref=myi_title_dp), reseller (USA) & (Amazon USA)
 
 ## Europe and rest of the world

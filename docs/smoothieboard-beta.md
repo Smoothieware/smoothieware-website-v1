@@ -82,7 +82,7 @@ Most connectors on smoothieboard are broken out to the borders for easy access:
 
 ![Smoothieboard Wiring](https://farm8.static.flickr.com/7263/7832149516_76d367a105_b.jpg)
 
-![Smoothieboard Diagram](http://chibidibidiwah.wdfiles.com/local--files/smoothieboard/smoothie.wiring.diagram.png)
+![Smoothieboard Diagram](https://github.com/Bouni/smoothieboard-graphics/blob/master/smoothieboard-wiring.png?raw=true)
 
 **Warning**: Please note the inversion Vbb connectors: the 5mm one has GND to the left, the 3.5mm one has GND to the right.
 **Note**: on the I2C header the pinout is wrong in the above diagram, it is from top to bottom: 3v3 sda scl gnd

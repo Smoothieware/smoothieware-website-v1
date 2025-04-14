@@ -28,4 +28,4 @@ Depending on the configuration:
 - the 4X board have 3 to 6 available PWM pins
 - the 3X board have 4 to 7 available PWM pins
 
-![Smoothie Wiring Diagram](/images/external/http.chibidibidiwah.wdfiles.com.local.files.smoothieboard.smoothie.wiring.diagram.png)
+<img src="https://github.com/Bouni/smoothieboard-graphics/blob/master/smoothieboard-wiring.png?raw=true" alt="Smoothie Wiring Diagram" width=600>

@@ -15,7 +15,7 @@ For an SPP module, I recommend the HC-05 Bluetooth 2.1 EDR (Enhanced Data Rate) 
 
 You can also use a BLE (Bluetooth Low Energy) or BT4.0 device like the HC-10, but you will need a comms device that talks BLE/BT4.0 and not many computers do (a recent-model Apple Macbook Pro/Air will be able to, my recent-model HP doesn't), so by sticking to the HC-05 you can be sure of being compatible with the majority of devices. 
 
-![HC-05 Bluetooth Module](/images/external/https.web.archive.org.web.20161013235353im.http.gd1.alicdn.com.bao.uploaded.i1.14767031049461097.t1rryxxzxkxxxxxxxx.0.item.pic.jpg.400x400.jpg.webp)
+<img src="https://components101.com/sites/default/files/components/HC-05-Bluetooth-Module.jpg" alt="HC-05 Bluetooth Module">
 
 I prefer the CZ over the JY for a few reasons – it is really small, it is really well made, it has the KEY (P34, state pin) already broken out and it does level shifting of all the pins back to the 3.3V required by the HC module, unlike some of the other breakouts.
 

@@ -71,7 +71,7 @@ $lang['js']['nosmblinks'] = '';
 
 You can also use an image to link to another internal or external page by combining the syntax for links and images (see below) like this:
 
-![DokuWiki Logo](wiki:dokuwiki-128.png)
+!<img src="https://www.dokuwiki.org/lib/tpl/dokuwiki/images/logo.png" alt="DokuWiki Logo" width =200>
 
 Please note: The image formatting is the only formatting syntax accepted in link names.
 

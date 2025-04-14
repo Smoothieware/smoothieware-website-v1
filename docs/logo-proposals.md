@@ -6,21 +6,19 @@ This page lists all the logos that Smoothie community members have proposed for 
 While at present (July 2016) no logo has been "officially" selected, you are welcome to use any of them.
 
 ## Skarab
+<img src="images/smoothie-logo-green.svg" alt="Smoothie Logo Green" width=400>
 
-![Smoothie Logo Green](/images/external/http.chibidibidiwah.wdfiles.com.local.files.logo.proposals.smoothie.logo.green.svg.png)
-
-![Smoothie Logo](/images/external/http.chibidibidiwah.wdfiles.com.local.files.logo.proposals.smoothie.logo.svg.png)
+<img src="images/smoothie-logo.svg" alt="Smoothie Logo" width=400>
 
 ## Arthur Wolf
 
 Only basic ideas, actual logo would need to be much more refined, but schematically:
 
-![Smoothieboard Fritzing Logo](/images/external/http.chibidibidiwah.wdfiles.com.local.files.logo.proposals.smoothieboard.fritzing.logo.png)
+<img src="images/smoothieboard-fritzing-logo.png" alt="Smoothieboard Fritzing Logo" width=400>
 
-![Smoothie Test Logo](/images/external/http.chibidibidiwah.wdfiles.com.local.files.logo.proposals.smoothie.test.logo.png)
+<img src="images/smoothie-test-logo.png" alt="Smoothie Test Logo" width=400>
 
-![Smoothieboard V2 PCB Logo](/images/external/http.chibidibidiwah.wdfiles.com.local.files.logo.proposals.smoothieboard.v2.pcb.logo.png)
+<img src="images/smoothieboard-v2-pcb-logo.png" alt="Smoothieboard V2 PCB Logo" width=400>
 
 Similar to Geneva's hackerspace's logo:
-
-![Geneva Hackerspace Logo](/images/external/https.www.posttenebraslab.ch.status.img.logo.png)
+<img src="https://www.posttenebraslab.ch/status/img/logo.png" alt="Geneva Hackerspace Logo" width=400>

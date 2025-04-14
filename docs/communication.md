@@ -3,7 +3,7 @@
 
 Communication modules are modules used to represent/control ways of communication between the Smoothieboard and the rest of the world. This can include a UART or USB serial port.
 
-For a list of communication modules and documentation on their use and configuration, please look at the list on the [homepage](/).
+For a list of communication modules and documentation on their use and configuration, please look at the list on the [homepage](index.md).
 
 Developers need to be aware that Smoothie uses the "standard" reprap "ping-pong" protocol. This means that you **MUST** wait for `ok` to be sent before sending each line of G-code. If this is not strictly adhered to, then odd things may happen.
 Developers need to be aware that receipt of `ok` means the line was received but it **DOES NOT** mean the line has been executed or even planned. In order to get decent planning, the planning buffer needs to be filled so it can plan ahead, so `ok` does not wait for each line to be actually executed. For efficiency purposes, `G1` commands send `ok` immediately on receipt before they are even put in the planning queue. Whereas most other G-codes will only send `OK` when they have been entered into the buffer. If the buffer is full, then `ok` will not be sent until there is room.

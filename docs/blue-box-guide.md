@@ -1,9 +1,8 @@
 
-( See also [Smoothiebox Guide](/bluebox-guide.md) )
+( See also [Smoothiebox Guide](bluebox-guide.md) )
 
 # SmoothK40 Guide
-
-![Laser Machine](/images/external/https.ae01.alicdn.com.kf.h6f945574ceea4c328508474f3bc3fef7z.machine.de.gravure.laser.40w.co2.laser.graveur.12x8.pouces.k40.laser.cutter.usb.port.lcd.jpg.400)
+<img src="https://omtechlaser.com/cdn/shop/files/1_d4b5e2f8-be9d-4ed7-91f8-c00245b09768.jpg?v=1722323278&width=500" alt="Laser Machine">
 
 You want to use proper software to drive your Laser machine, this is the best reason to change for a Smoothie board, and start to use your laser cutter as simply as an inkjet printer.
 
@@ -13,7 +12,7 @@ by Stephane BUISSON (Oct/Nov 2015)
 Before you get started you should have a look into your laser power supply.
 There are different models and types out there and the wiring would vary accordingly.
 
-![PSU](/images/psu.png)
+![PSU](images/psu.png)
 
 I will look at 2 common cases:
 
@@ -31,19 +30,19 @@ PSU could label them differently ex: (G,P,L,G,IN,5v ), (TH,TL,WP,G,IN.5V ), (K+,
 
 Conditions for a recent PSU (not my case)
 
-![Spreadsheet](/images/spreadsheet.png)
+![Spreadsheet](images/spreadsheet.png)
 
 Personally, I got a MYJG40W from [jnmydy.com](http://www.jnmydy.com) and I can't find any manual for it. (don't speak Chinese)
 
 But I made it work with this schema:
 
-![K40 Wiring](/images/k40-wiring.png)
+![K40 Wiring](images/k40-wiring.png)
 
 Connecting end stops and motors:
 
 From the factory, I identified 2 original wirings, very similar. Flat connector (CN3) or cables (CN21 CN22 CN4) doing the same thing.
 
-![Pasted](/images/pasted.png)
+![Pasted](images/pasted.png)
 
 You need to play with a controller to find out your wiring on the flat cable.
 or
@@ -58,7 +57,7 @@ Level shifter:
 Smoothie board Pin 2.5 on JP 33 is 3.3V you will need a level shifter to 5V (2GBP on eBay),
 see schema for wiring.
 
-![Smoothie Attempt](/images/smoothie-attempt.png)
+![Smoothie Attempt](images/smoothie-attempt.png)
 
 ### LCD
 
@@ -72,11 +71,11 @@ Identify your motors, and check their specs (max current).
 Find the datasheet for your motors and their current max. (K40 is fitted with all sorts of motor ref.)
 [Smoothmotor](http://www.smoothmotor.com/Standard-Models/Nema-Stepper-Motor.html)
 
-![Page 8](/images/page8.png)
+![Page 8](images/page8.png)
 
 X Motor (double-sided shaft) 17HA507H-22P3
 
-![Page 9](/images/page9.png)
+![Page 9](images/page9.png)
 
 Y Motor 17HA113Y-22A2 FH140513
 
@@ -151,7 +150,7 @@ network.hostname                             SmoothK40             # Some DHCP s
 #network.mac_override                         xx.xx.xx.xx.xx.xx     # override the mac address, only do this if you have a conflict
 ```
 
-![Welcome to Smoothie](/images/welcome-to-smoothie.png)
+![Welcome to Smoothie](images/welcome-to-smoothie.png)
 
 Command: tracing (G1) a line from your actual position to (X100, Y100) full laser power (`S1`)
 
@@ -163,7 +162,7 @@ Download the latest (Smoothie tab for dev. version) [Visicut Download](http://hc
 
 Select menu Option, manage laser cutter, choose smoothie, fill your settings in. You are done ;-))
 
-![Visicut Settings](/images/visicut-settings.png)
+![Visicut Settings](images/visicut-settings.png)
 
 ## Fusion 360
 

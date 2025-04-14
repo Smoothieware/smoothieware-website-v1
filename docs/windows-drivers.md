@@ -7,7 +7,7 @@ Please continue reading to determine the correct drivers to install for your ver
 
 ## Installers Windows 2000 through Windows 8
 
-- Windows 2000/Vista/7/8 64bit/32bit: [smoothieware-usb-driver-v1.1.exe](http://smoothieware.org/_media/windows-drivers/smoothieware-usb-driver-v1.1.exe)
+- Windows 2000/Vista/7/8 64bit/32bit: [smoothieware-usb-driver-v1.1.exe](windows-drivers/smoothieware-usb-driver-v1.1.exe)
   
   Note: Windows 8.1 is known to not like the new driver. Please use the v1.0 driver found below with Windows 8.1 for now.
 
@@ -39,22 +39,22 @@ Download the driver files zip and unzip it somewhere. You can use whatever you l
 
 Click the "start" button and pull up the control panel. From there, we want to open the device manager. Now we need to locate the device to install. If you are using an old firmware, you may find an unknown "CDCMSC DEVICE". If you are using a recent version of Smoothieware, you may find up to two "Smoothie Serial" devices. Here is an example of what you might see on recent firmware:
 
-![Control Panel](/images/windows-drivers/cp.jpg)
+![Control Panel](images/cp.jpg)
 
-![Device Manager](/images/windows-drivers/dm.jpg)
+![Device Manager](images/dm.jpg)
 
 Right-click the first one and select "Update Driver Software"
 
-![Update Driver Software](/images/windows-drivers/uds.jpg)
+![Update Driver Software](images/uds.jpg)
 
 Find where you unzipped the driver to
 
-![Find the Driver](/images/windows-drivers/findthedriver.jpg)
+![Find the Driver](images/findthedriver.jpg)
 
 You should now have a recognized "Smoothie Virtual Serial Port". You might have two of them if that option is enabled in the config. **Note that your COM ports might be different numbers** (mine are 9 and 10). The port numbering can be changed through the advanced port properties, but you shouldn't really need to do that. Also, note that "smoothie DFU" is still unrecognized. This is fine. You can ignore that.
 
-![Driver Installed](/images/windows-drivers/done.jpg)
+![Driver Installed](images/done.jpg)
 
 ## Does none of this work for you?
 
-There are some Windows machines that do not seem to like any of these drivers. These problems do not seem tied to a specific version of Windows. In order to find the cause, we would appreciate submissions of hardware information from affected machines. If you have a machine that does not like these drivers, please complete the steps found on the [How to submit Windows System Information](/windows-systeminfo.md) page. Hopefully, this will help us identify a pattern to the problem which could help us come up with a solution.
+There are some Windows machines that do not seem to like any of these drivers. These problems do not seem tied to a specific version of Windows. In order to find the cause, we would appreciate submissions of hardware information from affected machines. If you have a machine that does not like these drivers, please complete the steps found on the [How to submit Windows System Information](windows-systeminfo.md) page. Hopefully, this will help us identify a pattern to the problem which could help us come up with a solution.

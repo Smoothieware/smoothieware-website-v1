@@ -29,9 +29,8 @@ It features:
 
 The board comes in 3 versions, 3X, 4X and 5X, with different sets of peripherals each.
 
-More information on the [Smoothieboard v1 page](http://smoothieware.org/smoothieboard-v1).
-
-![Smoothieboard v1](/_media///external/https.raw.githubusercontent.com.bouni.smoothieboard.graphics.master.smoothieboard.fritzing.png)
+![Smoothieboard v1](images/smoothieboard-fritzing.png)<br/>
+More information on the [Smoothieboard v1 page](http://smoothieware.org/smoothieboard-v1)
 
 ---
 
@@ -52,9 +51,7 @@ It will feature:
 Currently being designed, see [here](http://smoothieware.org/blog_15).
 
 Because v2 is being developed by awesome volunteers, we have no timetable or planned release date, so please stop asking.
-
-![Smoothieboard v2](/_media///external/http.chibidibidiwah.wdfiles.com.local.files.smoothieboards.bbcbe6c49fd1ebfe48d26c60b61238da.png)
-
+![Smoothieboard v2](images/smoothieboard-fritzing.png)
 ---
 
 ## `v2-mini`
@@ -76,9 +73,8 @@ It will feature:
 
 Currently being designed, see [here](http://smoothieware.org/blog_15).
 
-Because v2 is being developed by awesome volunteers, we have no timetable or planned release date, so please stop asking.
-
-![Smoothieboard v2-mini](/_media///external/http.chibidibidiwah.wdfiles.com.local.files.smoothieboards.slack.imgs.com.3.png)
+![Smoothieboard v2-mini](images/smoothieboard-v2-mini.png)<br/>
+Because v2 is being developed by awesome volunteers, we have no timetable or planned release date, so please stop asking
 
 ---
 
@@ -101,6 +97,6 @@ Currently being designed, see [here](http://smoothieware.org/blog_15).
 
 Because v2 is being developed by awesome volunteers, we have no timetable or planned release date, so please stop asking.
 
-![Smoothieboard v2-pro](/_media///external/http.chibidibidiwah.wdfiles.com.local.files.smoothieboards.smoothieboardhybrid.pre9.png)
+![Smoothieboard v2-pro](images/smoothieboard-fritzing.png)
 
 ---

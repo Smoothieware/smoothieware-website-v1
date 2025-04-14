@@ -1,5 +1,4 @@
-
-![Coordinate Systems](/images/external/https.infosys.beckhoff.com.content.1033.tf5200.coordinate.systems.images.png.306366603.web.png)
+<img src="images/Missing.png" alt="G92 - Set Offset" class="pull-right" width="200" height="200">
 
 ## G92 G-code
 

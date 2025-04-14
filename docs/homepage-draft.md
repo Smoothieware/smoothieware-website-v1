@@ -15,10 +15,10 @@
 
         Shortcuts : 
 
-- [Click here to see the documentation](/documentation.md)
-- [Click here to see the source code](/source-code.md)
-- [Click here to engage the community](/community.md)
-- [Click here to get a board](/get-a-board.md)
+- [Click here to see the documentation](documentation.md)
+- [Click here to see the source code](source-code.md)
+- [Click here to engage the community](community.md)
+- [Click here to get a board](get-a-board.md)
 
 
     </div>
@@ -32,21 +32,21 @@
 <div class="row">
 
 	<div class="col-md-4">
-		<img src="/images/homepage-draft/smoothieboard-mcu.png" style="width:120px; height:120px;margin-top:20px; margin-bottom:20px;" class="img-circle" >
+		<img src="images/homepage-draft/smoothieboard-mcu.png" style="width:120px; height:120px;margin-top:20px; margin-bottom:20px;" class="img-circle" >
 		
 		<span class="h3"> Powerful </span>
 		
 		Designed to run on [32 bit hardware](http://www.nxp.com/products/microcontrollers/product_series/lpc1700/) in an age of [8-bit boards](https://www.arduino.cc/en/Main/ArduinoBoardMega2560), with a lot of effort put into optimisation, and moving forward to [more powerful](http://www.nxp.com/products/microcontrollers/product_series/lpc4300/) platforms as they appear. Does its job faster, more correctly, and of course smoothly. [More](#u-collapse-powerful)
 
 	<div class="col-md-4">
-		<img src="/images/external/http.chibidibidiwah.wdfiles.com.local.files.homepage.draft.oshw.logo.inverted.png" style="width:120px; height:120px;margin-top:20px; margin-bottom:20px;" class="img-circle" >
+		<img src="imges/homepage/oshw-logo-inverted.png" 		style="width:120px; height:120px;margin-top:20px; margin-bottom:20px;" class="img-circle" >
 		
 		<span class="h3"> Open Source </span>
 		
 		Open-Source [firmware](https://github.com/Smoothieware/Smoothieware) running on Open-Hardware [boards](https://github.com/Smoothieware/Smoothieboard), written and designed by the community, for the community. Contributors welcome !  [More](#u-collapse-opensource)
 
 	<div class="col-md-4">
-		<img src="/images/external/http.www.spacetelescope.org.static.archives.images.large.heic0503a.jpg" style="width:120px; height:120px;margin-top:20px; margin-bottom:20px;" class="img-circle" >
+		<img src="https://esahubble.org/static/archives/images/large/heic0503a.jpg" style="width:120px; height:120px;margin-top:20px; margin-bottom:20px;" class="img-circle" >
 		
 	<span class="h3"> Universal </span>
 		Brings different communities together to create a larger project: supports [laser cutting](http://smoothieware.org/laser-cutter-guide), [3D printing](http://smoothieware.org/3d-printer-guide) and [CNC milling](http://smoothieware.org/cnc-mill-guide), instead of specializing on one job. Means more community, more contributors, more features, more eyes on the code, more documentation and more awesomeness. [More](#u-collapse-universal)
@@ -76,7 +76,9 @@ The firmware is the result of years of hard work making sure we use as much of t
 
 <div id="collapse-opensource" class="collapse panel panel-default">
 <div class="panel-body" style="text-align: left">
-<a href="https://github.com/Smoothieware/Smoothieware"> <img src="/images/external/https.camo.githubusercontent.com.38ef81f8aca64bb9a64448d0d70f1308ef5341ab.68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" style="position:absolute; top:0px; right: 0px" ></a>
+
+<a href="https://github.com/Smoothieware/Smoothieware"> <img src="https://i0.wp.com/opensource.org/wp-content/uploads/2009/06/osi_symbol.png?w=628&ssl=1" style="position:absolute; top:0px; right: 0px" width=300></a>
+
 
 Everything Smoothie-related, from the code, to the hardware design files, to the documentation, is fully Open-Source.
 
@@ -109,22 +111,24 @@ And it also means that if the laser people make the motion control code better, 
 <div class="row">
 
 	<div class="col-md-4">
-		<img src="/images/external/http.chibidibidiwah.wdfiles.com.local.files.homepage.draft.candy.image.jpg" style="width:120px; height:120px;margin-top:20px; margin-bottom:20px;" class="img-circle" >
 		
-		<span class="h3"> Feature rich </span>
+		<img src="images/homepage/candy-image.jpg" style="width:120px; height:120px;margin-top:20px; margin-bottom:20px;" class="img-circle" >
+		
+				<span class="h3"> Feature rich </span>
 		
 		Using superior hardware to pioneer features that make your life easier, allow for new digital fabrication techniques, or make the current ones more powerful. Enjoy cutting-edge functionality and see more added all the time.
 
 	<div class="col-md-4">
-		<img src="/images/external/http.www.mathcs.duq.edu.tobin.maya.fig29.jpg" style="width:120px; height:120px;margin-top:20px; margin-bottom:20px;" class="img-circle" >
-		
+		<img src="images/homepage/fig29.jpg" style="width:120px; height:120px;margin-top:20px; margin-bottom:20px;" class="img-circle" >
+
 		<span class="h3"> Documented </span>
 		
 		The most complete and beginner-friendly documentation around. Enjoy machine-specific step by step general guides, as well as in-depth documentation of each feature. 
 		
 	<div class="col-md-4">
-		<img src="/images/external/http.circos.ca.images.img.circos.sample.59.png" style="width:120px; height:120px;margin-top:20px; margin-bottom:20px;" class="img-circle" >
-		
+		<img src="images/homepage/circos-sample-59.png" 
+		style="width:120px; height:120px;margin-top:20px; margin-bottom:20px;" class="img-circle" >
+
 		<span class="h3"> Modular </span>
 		
 		Highly modular code allows for an easier contributor experience, better long-term codebase sanity, and also enjoy a very versatile system that makes it easy to do unusual and innovative things, often without even having to code anything.
@@ -133,21 +137,21 @@ And it also means that if the laser people make the motion control code better, 
 <div class="row">
 
 	<div class="col-md-4">
-		<img src="/images/external/http.upload.wikimedia.org.wikipedia.commons.7.72.slice.of.bumbleberry.pie.jpg" style="width:120px; height:120px;margin-top:20px; margin-bottom:20px;" class="img-circle" >
-		
+		<img src="images/homepage/Slice_of_Bumbleberry_Pie.jpg" style="width:120px; height:120px;margin-top:20px; margin-bottom:20px;" class="img-circle" >
+
 		<span class="h3"> Easy </span>
 		
 		Experience painless configuration simply by editing a file, live tuning of parameters, all documented in detail. Even doing new and unusual things is made easier. And if anything goes wrong, find a very active community to help.
 
 	<div class="col-md-4">
-		<img src="/images/external/http.whyfiles.org.wp.content.uploads.2011.02.leafcutter.closeup.jpg" style="width:120px; height:120px;margin-top:20px; margin-bottom:20px;" class="img-circle" >
-		
+		<img src="images/homepage/heic0503a.jpg" style="width:120px; height:120px;margin-top:20px; margin-bottom:20px;" class="img-circle" >
+
 		<span class="h3"> Community driven </span>
 		
 		Sed ultrices, neque vitae dictum hendrerit, enim lacus molestie ligula, sit amet mattis augue ipsum sed leo. Sed tempus erat at enim finibus, eu dapibus purus malesuada.
 
 	<div class="col-md-4">
-		<img src="/images/external/http.t3.gstatic.com.images.q.tbn.and9gctoewe.u6qwchfttf8roe7w9ykudti7zqzzhbi0qkrsxma3vghf" style="width:120px; height:120px;margin-top:20px; margin-bottom:20px;" class="img-circle" >
+		<img src="images/homepage/star-navigator" style="width:120px; height:120px;margin-top:20px; margin-bottom:20px;" class="img-circle" >
 		
 		<span class="h3"> Future friendly </span>
 		

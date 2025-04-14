@@ -6,7 +6,7 @@
 > 
 > Left here for historical purposes....
 
-![Touchprobe Image](/images/external/http.chibidibidiwah.wdfiles.com.local.files.gallery.cbr5vb7odykexwcunqz7lxb.vph8znhd2neevo.nsxg.png)
+![Touchprobe Image](https://www.centroidcnc.com/centroid_diy/images/kp-1_green_bore.png)
 
 Currently, the only operation regarding touchprobes supported by Smoothie is `G31`. `G31` works similarly to `G1` codes but stops if the probe is touched. Please note that coordinated moves are not supported. This means only moves along a single axis will work. Some examples:
 
@@ -75,4 +75,4 @@ It's very easy to convert the logfile to a PLY file, which is supported by most 
    $$M=(P4.x+\frac{(P5.x-P4.x)}{2},P3.y)$$
 5. M is the center.
 
-![Midpoint Image](/images/touchprobe/midpoint.png)
+![Midpoint Image](images/midpoint.png)

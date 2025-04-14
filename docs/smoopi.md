@@ -14,54 +14,29 @@ It also works with a popular Mach3 USB-based pendant called the HB04 (only teste
 
 ## Screenshots
 
-![Main screen in desktop mode](/images/external/https.raw.githubusercontent.com.wolfmanjm.kivy.smoothie.host.master.pics.desktop.mode.png)
+<img src="https://github.com/wolfmanjm/kivy-smoothie-host/blob/master/pics/desktop-mode.png?raw=true" alt="Main screen in desktop mode"><br/>*Main screen in desktop mode*
 
-*Main screen in desktop mode*
+<img src="https://github.com/wolfmanjm/kivy-smoothie-host/blob/master/pics/config-editor.png?raw=true" alt="Here you can directly edit your configuration options"><br/>*Here you can directly edit your configuration options*
 
-![Here you can directly edit your configuration options](/images/external/https.raw.githubusercontent.com.wolfmanjm.kivy.smoothie.host.master.pics.config.editor.png)
+<img src="https://github.com/wolfmanjm/kivy-smoothie-host/blob/master/pics/dro_mode.png?raw=true" alt="DRO mode to move to where you want to be"><br/>*DRO mode to move to where you want to be*
 
-*Here you can directly edit your configuration options*
 
-![DRO mode to move to where you want to be](/images/external/https.raw.githubusercontent.com.wolfmanjm.kivy.smoothie.host.master.pics.dro.mode.png)
+<img src="https://github.com/wolfmanjm/kivy-smoothie-host/blob/master/pics/gcode-help.png?raw=true" alt="Gcode helper: appears when you are entering gcode manually to save you time"><br/>*Gcode helper: appears when you are entering gcode manually to save you time*
 
-*DRO mode to move to where you want to be*
+<img src="https://github.com/wolfmanjm/kivy-smoothie-host/blob/master/pics/macro-screen.png?raw=true" alt="Macros, here you can use them and easily set up new ones"><br/>*Macros, here you can use them and easily set up new ones*
 
-![Gcode helper: appears when you are entering gcode manually to save you time](/images/external/https.raw.githubusercontent.com.wolfmanjm.kivy.smoothie.host.master.pics.gcode.help.png)
+<img src="https://github.com/wolfmanjm/kivy-smoothie-host/blob/master/pics/mpg-mode.png?raw=true" alt="MPG mode! Sweet"><br/>*MPG mode! Sweet*
 
-*Gcode helper: appears when you are entering gcode manually to save you time*
+<img src="https://github.com/wolfmanjm/kivy-smoothie-host/blob/master/pics/screen1.png?raw=true" alt="Extruder control, if you have a 3D printer"><br/>*Extruder control, if you have a 3D printer*
 
-![Macros, here you can use them and easily set up new ones](/images/external/https.raw.githubusercontent.com.wolfmanjm.kivy.smoothie.host.master.pics.macro.screen.png)
+<img src="https://github.com/wolfmanjm/kivy-smoothie-host/blob/master/pics/screen2.png?raw=true" alt="Console, for the hacker in your heart"><br/>*Console, for the hacker in your heart*
 
-*Macros, here you can use them and easily set up new ones*
+<img src="https://github.com/wolfmanjm/kivy-smoothie-host/blob/master/pics/screen3.png?raw=true" alt="Jog screen, for fast and precise positioning"><br/>*Jog screen, for fast and precise positioning*
 
-![MPG mode! Sweet](/images/external/https.raw.githubusercontent.com.wolfmanjm.kivy.smoothie.host.master.pics.mpg.mode.png)
+<img src="https://github.com/wolfmanjm/kivy-smoothie-host/blob/master/pics/settings.png?raw=true" alt="Settings for the Smoopi application itself"><br/>*Settings for the Smoopi application itself*
 
-*MPG mode! Sweet*
+<img src="https://github.com/wolfmanjm/kivy-smoothie-host/blob/master/pics/temp-graph.png?raw=true" alt="Extruder control and temp graph"><br/>*Extruder control and temp graph*
 
-![Extruder control, if you have a 3D printer](/images/external/https.raw.githubusercontent.com.wolfmanjm.kivy.smoothie.host.master.pics.screen1.png)
+<img src="https://github.com/wolfmanjm/kivy-smoothie-host/blob/master/pics/viewer-select.png?raw=true" alt="Viewer with selection"><br/>*Viewer with selection*
 
-*Extruder control, if you have a 3D printer*
-
-![Console, for the hacker in your heart](/images/external/https.raw.githubusercontent.com.wolfmanjm.kivy.smoothie.host.master.pics.screen2.png)
-
-*Console, for the hacker in your heart*
-
-![Jog screen, for fast and precise positioning](/images/external/https.raw.githubusercontent.com.wolfmanjm.kivy.smoothie.host.master.pics.screen3.png)
-
-*Jog screen, for fast and precise positioning*
-
-![Settings for the Smoopi application itself](/images/external/https.raw.githubusercontent.com.wolfmanjm.kivy.smoothie.host.master.pics.settings.png)
-
-*Settings for the Smoopi application itself*
-
-![Extruder control and temp graph](/images/external/https.raw.githubusercontent.com.wolfmanjm.kivy.smoothie.host.master.pics.temp.graph.png)
-
-*Extruder control and temp graph*
-
-![Viewer with selection](/images/external/https.raw.githubusercontent.com.wolfmanjm.kivy.smoothie.host.master.pics.viewer.select.png)
-
-*Viewer with selection*
-
-![More viewer screen, you can click to go wherever you want here](/images/external/https.raw.githubusercontent.com.wolfmanjm.kivy.smoothie.host.master.pics.viewerscreen.png)
-
-*More viewer screen, you can click to go wherever you want here*
+<img src="https://github.com/wolfmanjm/kivy-smoothie-host/blob/master/pics/viewerscreen.png?raw=true" alt="More viewer screen, you can click to go wherever you want here"><br/>*More viewer screen, you can click to go wherever you want here*

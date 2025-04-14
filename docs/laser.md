@@ -1,5 +1,5 @@
+<img src='images/high-voltage.png' width=300 height=427>
 
-<img src='/images/external/http.img.alibaba.com.img.pb.960.762.268.1285495147301.hz.cnmyalibaba.web4.68831.jpg' width='430px'><br/>
 They use very high voltages and are dangerous
 
 # Laser control
@@ -100,7 +100,7 @@ Here you could in theory replace the jumper by a potentiometer, allowing you to 
 
 The wiring looks like this:
 
-<img src='/images/smoothieboard-graphics/schematics/laser-power-supply-l.svg.png' width='100%'><br/>
+<img src='images/laser-power-supply.png' width='100%'><br/>
 
 You then also need to configure the laser module accordingly:
 

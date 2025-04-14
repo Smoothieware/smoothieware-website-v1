@@ -232,9 +232,9 @@ Other projects related to the v2 hardware:
 > The Smoothie firmware is trying very hard to be as modular as possible, and to make it easy to do weird things. In v2, we want to make the hardware even more modular/hackable than it already is.
 > 
 > To do this, we plan on having a set of standard connectors ( based on the gadgeteer pinout ):
-> 
-> ![Gadgeteer Pinout](/images/external/http.files.channel9.msdn.com.wlwimages.1932b237046e4743a4e79e6800c0220f.image.5b2.5d.3.png)
-> 
+
+> ![Gadgeteer Pinout](images/socket-types-table.png)
+
 > and a very varied set and extension boards that'd plug easily into those connectors, for a very large variety of sensors, actuators, and peripherals.
 > 
 > You can find more information on this project at this link: [Extension boards](https://plus.google.com/+ArthurWolf/posts/GPF7hSGQiew)
@@ -250,8 +250,8 @@ Other projects related to the v2 hardware:
 > 
 > [Kliment Yanev](https://github.com/kliment) ( of Pronterface and Teacup fame ) is currently working on this. Any help welcome!
 > 
-> Preview: ![Extruder Board](http://i.imgur.com/TFH1bHX.png)
-
+> Preview: !<[Extruder Board](images/tfh1bhx.png)
+>
 ## Documentation
 
 The [Smoothieware website](http://smoothieware.org), which contains the

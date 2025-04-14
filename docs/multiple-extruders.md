@@ -1,7 +1,6 @@
 
 # Multiple Extrusion
-
-![Dual Extruder](/images/external/http.www.geeky.gadgets.com.wp.content.uploads.2014.11.dual.extruder.jpg)
+!<img src="https://www.geeky-gadgets.com/wp-content/uploads/2020/09/dual-extruder-3D-Printer.jpg" alt="Dual Extruder">
 
 Smoothie can handle up to 3 extruders (6 defined axes is the maximum the memory can handle). To add extruders, simply add `Extruder` (controlling the extruder motor) and `TemperatureControl` (controlling the hotend) modules to the configuration file for each new extruder.
 

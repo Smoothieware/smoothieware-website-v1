@@ -1,2 +1,2 @@
 
-![C-Beam](/images/cartesian/c-beam.jpg)
+![C-Beam](images/cartesian/c-beam.jpg)
