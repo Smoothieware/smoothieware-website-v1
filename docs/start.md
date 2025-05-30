@@ -1,7 +1,7 @@
 
 > [!NOTE]
 > <img src="images/oshw-logo.png" style="width:50px; height:50px;">
-> ![Information Icon](images/info-1.png)
+> <img src="images/info-1.png" style="width:50px; height:50px;">
 > **Smoothie** is a **[free, opensource, high performance](start.md)** and modular **G-code** interpreter and **CNC** control system for the powerful **[Smoothieboard](smoothieboard.md)** 32bits controller. It's designed to be very user-friendly and hacker-friendly. The Source code is on [GitHub](https://github.com/Smoothieware/Smoothieware). ヾ(❀◦◡◦)彡 
 
 > [!WARNING]
