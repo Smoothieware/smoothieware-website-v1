@@ -26,6 +26,32 @@ title: SmoothieWare Home
   color: inherit; /* Ensures the caption inherits your preferred styling */
 }
 
+  /* base styling for all callouts */
+.callout {
+  padding: 1rem;
+  border-radius: 0.5rem;
+  margin: 1rem 0;
+  display: block;
+}
+
+/* info/note style */
+.callout-note {
+  background-color: #e7f5ff;
+  border: 1px solid #91d5ff;
+}
+
+/* warning style */
+.callout-warning {
+  background-color: #fff7e6;
+  border: 1px solid #ffd591;
+}
+
+/* danger style */
+.callout-danger {
+  background-color: #fff1f0;
+  border: 1px solid #ffa39e;
+}
+
 </style>
 
 <img
@@ -34,9 +60,12 @@ title: SmoothieWare Home
   style="width:100px; height:auto;"
 />
 
+
 # SmoothieWare
 
-**Smoothie** is a **[free, opensource, high performance](start.md)** and modular **G-code** interpreter and **CNC** control system for the powerful **[SmoothieBoard](smoothieboard.md)** 32bit controller. It's designed to be very user-friendly and hacker-friendly. The Source code is on [GitHub](https://github.com/Smoothieware/Smoothieware). ヾ(❀◦◡◦)彡 
+> **Smoothie** is a **[free, opensource, high performance](start.md)** and modular **G-code** interpreter and **CNC** control system for the powerful **[SmoothieBoard](smoothieboard.md)** 32bit controller. It's designed to be very user-friendly and hacker-friendly. The Source code is on [GitHub](https://github.com/Smoothieware/Smoothieware). ヾ(❀◦◡◦)彡 
+{: .callout .callout-note }
+
 
 <img src="images/festa-junina.png" alt="Party" width=50 height=50>
 [SmoothieBoard v2 is HERE!](https://www.robosprout.com/product-category/smoothieboards).
