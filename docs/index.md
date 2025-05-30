@@ -28,7 +28,11 @@ title: SmoothieWare Home
 
 </style>
 
-![OSHW Logo](images/oshw-logo.png){: width="100px" }
+<img
+  src="images/oshw-logo.png"
+  alt="OSHW logo"
+  style="width:100px; height:auto;"
+/>
 
 # SmoothieWare
 
