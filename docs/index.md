@@ -67,8 +67,10 @@ title: SmoothieWare Home
 {: .callout .callout-note }
 
 
-<img src="images/festa-junina.png" alt="Party" width=50 height=50>
-[SmoothieBoard v2 is HERE!](https://www.robosprout.com/product-category/smoothieboards).
+
+
+> <img src="images/festa-junina.png" alt="Party" style="width:50px;height:50px"> [SmoothieBoard v2 is HERE!](https://www.robosprout.com/product-category/smoothieboards).
+> {: .callout .callout-note }
 
 The Smoothie project is always looking for help. Whatever your skills are, there are things you can do to improve the project with the other volunteers. If you feel that you could give us some of your free time, please [contact us](mailto:wolf.arthur@gmail.com), **help and working together** is what has made this project so neat, advanced and precious over the years, and is **very welcome**.
 
