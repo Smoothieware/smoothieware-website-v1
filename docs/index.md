@@ -28,7 +28,8 @@ title: SmoothieWare Home
 
 </style>
 
-<img src="images/oshw-logo.png" alt="Our Logo" Width=100 Height=100>
+![OSHW Logo](images/oshw-logo.png){: width="100px" }
+
 # SmoothieWare
 
 **Smoothie** is a **[free, opensource, high performance](start.md)** and modular **G-code** interpreter and **CNC** control system for the powerful **[SmoothieBoard](smoothieboard.md)** 32bit controller. It's designed to be very user-friendly and hacker-friendly. The Source code is on [GitHub](https://github.com/Smoothieware/Smoothieware). ヾ(❀◦◡◦)彡 
