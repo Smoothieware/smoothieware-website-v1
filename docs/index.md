@@ -54,19 +54,11 @@ title: SmoothieWare Home
 
 </style>
 
-<img
-  src="images/oshw-logo.png"
-  alt="OSHW logo"
-  style="width:100px; height:auto;"
-/>
-
 
 # SmoothieWare
 
 > **Smoothie** is a **[free, opensource, high performance](start.md)** and modular **G-code** interpreter and **CNC** control system for the powerful **[SmoothieBoard](smoothieboard.md)** 32bit controller. It's designed to be very user-friendly and hacker-friendly. The Source code is on [GitHub](https://github.com/Smoothieware/Smoothieware). ヾ(❀◦◡◦)彡 
 {: .callout .callout-note }
-
-
 
 
 > <img src="images/festa-junina.png" alt="Party" style="width:50px;height:50px"> [SmoothieBoard v2 is HERE!](https://www.robosprout.com/product-category/smoothieboards).
@@ -240,3 +232,12 @@ Current edge build status: ![Build Status](https://travis-ci.org/Smoothieware/Sm
 ## Reviews
 
 [Watch a review](http://www.youtube.com/embed/vsu_vAKvRO0?hd=1)
+
+
+
+<img
+  src="images/oshw-logo.png"
+  alt="OSHW logo"
+  style="width:100px; height:auto;"
+/>
+
