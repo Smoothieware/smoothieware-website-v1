@@ -182,7 +182,7 @@ This shows how to get your bearings around a delta 3D printer. It's basically a 
 
 There are several ways to tell Smoothie how high the hotend is from the bed after homing:
 
-{% include_relative gamma_max.md %}
+{% include_relative gamma-max.md %}
 
 ## Automated calibration
 
