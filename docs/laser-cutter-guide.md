@@ -67,7 +67,7 @@ At the end of this guide, you should have a fully working machine.
 
 {% include_relative laser.md %}
 
-{% include_relative zprobe-guide.md %}
+{% include_relative z-probe-guide.md %}
 
 {% include_relative panel-guide.md %}
 
