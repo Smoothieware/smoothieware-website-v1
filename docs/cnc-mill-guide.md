@@ -71,7 +71,7 @@ You will find more information on `grbl_mode` on the [grbl_mode](http://smoothie
 
 {% include_relative spindle-control.md %}
 
-{% include_relative zprobe-guide.md %}
+{% include_relative z-probe-guide.md %}
 
 {% include_relative panel-guide.md %}
 
