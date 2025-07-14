@@ -48,6 +48,7 @@ All software below either knows how to interface with (or how to generate g-code
 - [Lightburn](https://lightburnsoftware.com/) - LightBurn is layout, editing, and control software for your laser cutter.
 - [LaserGRBL](http://lasergrbl.com/en/) - For laser engraving and cutting, particularly advanced for engraving
 - [Polygonia](https://hackaday.io/page/5969-polygonia-symmetrical-pattern-designer-for-laser-cutting-and-3d-printing) - A tool to easily create repeating patterns for laser cutting: [Online tool](https://polygonia.design/)
+- [Rayforge](https://github.com/barebaric/rayforge) - An easy to use, open source, cross-platform tool for laser cutting and engraving
 
 ## Chaining
 
