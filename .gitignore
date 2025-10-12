@@ -1,0 +1,10 @@
+# playwright
+.playwright-mcp/
+
+# sass cache
+.sass-cache
+
+# prompts
+tasks/prompts.md
+tasks/
+
