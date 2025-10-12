@@ -1,5 +1,8 @@
-
 # Contribution Guidelines
+
+{::nomarkdown}
+<img src="images/github-1.png" alt="GitHub" width="300" height="auto" style="float: right; margin-left: 1rem;"/>
+{:/nomarkdown}
 
 In order for a Pull request to be accepted it must meet certain standards and guidelines.
 
