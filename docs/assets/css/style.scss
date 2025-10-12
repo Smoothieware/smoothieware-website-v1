@@ -1,0 +1,74 @@
+---
+---
+
+@import "{{ site.theme }}";
+
+/* Custom CSS for Smoothieware documentation */
+
+.menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 75px;
+}
+
+.menu-item {
+  text-align: center;
+  margin: 10px;
+}
+
+.menu-item img {
+  width: 150px; /* Constrain icon size */
+  height: auto;
+}
+
+.menu-item a {
+  text-decoration: none; /* Remove underline */
+  color: inherit; /* Inherit styling */
+}
+
+/* Base styling for all callouts */
+.callout {
+  padding: 1rem;
+  border-radius: 0.5rem;
+  margin: 1rem 0;
+  display: block;
+}
+
+/* Info/note style */
+.callout-note {
+  background-color: #e7f5ff;
+  border: 1px solid #91d5ff;
+}
+
+/* Warning style */
+.callout-warning {
+  background-color: #fff7e6;
+  border: 1px solid #ffd591;
+}
+
+/* Danger style */
+.callout-danger {
+  background-color: #fff1f0;
+  border: 1px solid #ffa39e;
+}
+
+/* Constrain icon images - targets images with "icon" in filename */
+img[src*="icon."] {
+  max-width: 150px;
+  height: auto;
+}
+
+/* Constrain all images in paragraphs and list items to reasonable sizes */
+/* Use .markdown-body prefix to override theme CSS specificity */
+.markdown-body p img,
+.markdown-body li img,
+.markdown-body blockquote img {
+  max-width: 100px !important;
+  height: auto;
+}
+
+/* Hide the site title H1 at the top of every page */
+.markdown-body > h1:first-child {
+  display: none;
+}
