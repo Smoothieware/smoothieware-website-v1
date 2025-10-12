@@ -29,8 +29,141 @@
 
     <nav class="smoothie-nav">
       <div class="nav-content">
-        <img src="{{ '/images/oshw-logo.png' | relative_url }}" alt="OSHW Logo" class="nav-logo">
-        <a href="{{ '/' | relative_url }}" class="nav-title">Smoothieware</a>
+        <!-- Left side: Logo and title -->
+        <div class="nav-left">
+          <img src="{{ '/images/oshw-logo.png' | relative_url }}" alt="OSHW Logo" class="nav-logo">
+          <a href="{{ '/' | relative_url }}" class="nav-title">Smoothieware</a>
+        </div>
+
+        <!-- Right side: Menu items -->
+        <div class="nav-right">
+          <!-- Documentation -->
+          <a href="{{ '/' | relative_url }}" class="nav-item">
+            <img src="{{ '/images/manual.png' | relative_url }}" alt="Documentation" class="nav-item-icon">
+            <span class="nav-item-text">DOCUMENTATION</span>
+          </a>
+
+          <!-- Smoothieboard -->
+          <a href="{{ '/smoothieboard' | relative_url }}" class="nav-item">
+            <img src="{{ '/images/circuit_1_.png' | relative_url }}" alt="Smoothieboard" class="nav-item-icon">
+            <span class="nav-item-text">SMOOTHIEBOARD</span>
+          </a>
+
+          <!-- Community Dropdown -->
+          <sl-dropdown class="nav-dropdown">
+            <button slot="trigger" class="nav-item nav-dropdown-trigger">
+              <img src="{{ '/images/volunteer.png' | relative_url }}" alt="Community" class="nav-item-icon">
+              <span class="nav-item-text">COMMUNITY</span>
+            </button>
+
+            <sl-menu>
+              <sl-menu-item>
+                <img src="{{ '/images/hashtag.png' | relative_url }}" slot="prefix" class="menu-icon">
+                <a href="{{ '/irc' | relative_url }}" class="menu-link">IRC : recommended (ﾉ◕ヮ◕)ﾉ*:･ﾟ✧</a>
+              </sl-menu-item>
+
+              <sl-menu-item>
+                <img src="{{ '/images/index.png' | relative_url }}" slot="prefix" class="menu-icon">
+                <a href="https://discord.gg/Ne3B8Fd" class="menu-link" target="_blank" rel="noopener">Discord</a>
+              </sl-menu-item>
+
+              <sl-menu-item>
+                <img src="{{ '/images/mails.png' | relative_url }}" slot="prefix" class="menu-icon">
+                <a href="{{ '/forum-welcome-mat' | relative_url }}" class="menu-link">Forum</a>
+              </sl-menu-item>
+
+              <sl-menu-item>
+                <img src="{{ '/images/rain.png' | relative_url }}" slot="prefix" class="menu-icon">
+                <a href="http://forums.reprap.org/list.php?418" class="menu-link" target="_blank" rel="noopener">Reprap forum Smoothie section</a>
+              </sl-menu-item>
+
+              <sl-menu-item>
+                <img src="{{ '/images/mail.png' | relative_url }}" slot="prefix" class="menu-icon">
+                <a href="{{ '/mailing-lists-welcome-mat' | relative_url }}" class="menu-link">Support/Help Mailing list</a>
+              </sl-menu-item>
+
+              <sl-menu-item>
+                <img src="{{ '/images/mail_1_.png' | relative_url }}" slot="prefix" class="menu-icon">
+                <a href="{{ '/mailing-lists-welcome-mat' | relative_url }}" class="menu-link">Developer Mailing list</a>
+              </sl-menu-item>
+
+              <sl-menu-item>
+                <img src="{{ '/images/google-plus.png' | relative_url }}" slot="prefix" class="menu-icon">
+                <a href="{{ '/google-plus-welcome-mat' | relative_url }}" class="menu-link">Google+ Community</a>
+              </sl-menu-item>
+
+              <sl-menu-item>
+                <img src="{{ '/images/twitter.png' | relative_url }}" slot="prefix" class="menu-icon">
+                <a href="https://twitter.com/Smoothieware" class="menu-link" target="_blank" rel="noopener">Twitter</a>
+              </sl-menu-item>
+
+              <sl-menu-item>
+                <img src="{{ '/images/facebook.png' | relative_url }}" slot="prefix" class="menu-icon">
+                <a href="https://www.facebook.com/Smoothieware/" class="menu-link" target="_blank" rel="noopener">Facebook Page</a>
+              </sl-menu-item>
+
+              <sl-menu-item>
+                <img src="{{ '/images/facebook_1_.png' | relative_url }}" slot="prefix" class="menu-icon">
+                <a href="https://www.facebook.com/groups/2238743883046001/" class="menu-link" target="_blank" rel="noopener">Facebook Group</a>
+              </sl-menu-item>
+
+              <sl-menu-item>
+                <img src="{{ '/images/reddit.png' | relative_url }}" slot="prefix" class="menu-icon">
+                <a href="https://www.reddit.com/r/Smoothieboard/" class="menu-link" target="_blank" rel="noopener">Reddit : Smoothieboard</a>
+              </sl-menu-item>
+
+              <sl-menu-item>
+                <img src="{{ '/images/reddit_1_.png' | relative_url }}" slot="prefix" class="menu-icon">
+                <a href="https://www.reddit.com/r/smoothieware/" class="menu-link" target="_blank" rel="noopener">Reddit : Smoothieware</a>
+              </sl-menu-item>
+
+              <sl-menu-item>
+                <img src="{{ '/images/slack.png' | relative_url }}" slot="prefix" class="menu-icon">
+                <a href="https://join.slack.com/t/smoothieproject/shared_invite/zt-e7d0lkth-o_vONjzDlDFOXTSnHYDV1w" class="menu-link" target="_blank" rel="noopener">Slack</a>
+              </sl-menu-item>
+
+              <sl-menu-item>
+                <img src="{{ '/images/linkedin.png' | relative_url }}" slot="prefix" class="menu-icon">
+                <a href="https://www.linkedin.com/company/smoothieware/about/" class="menu-link" target="_blank" rel="noopener">LinkedIn Page</a>
+              </sl-menu-item>
+
+              <sl-menu-item>
+                <img src="{{ '/images/coffee-machine.png' | relative_url }}" slot="prefix" class="menu-icon">
+                <a href="https://forum.makerforums.info/c/controllers/smoothie" class="menu-link" target="_blank" rel="noopener">Maker forums Smoothie category</a>
+              </sl-menu-item>
+
+              <sl-menu-item>
+                <img src="{{ '/images/sprout.png' | relative_url }}" slot="prefix" class="menu-icon">
+                <a href="https://github.com/Smoothieware/" class="menu-link" target="_blank" rel="noopener">Github project</a>
+              </sl-menu-item>
+
+              <sl-menu-item>
+                <img src="{{ '/images/gallery.png' | relative_url }}" slot="prefix" class="menu-icon">
+                <a href="{{ '/gallery' | relative_url }}" class="menu-link">Gallery</a>
+              </sl-menu-item>
+            </sl-menu>
+          </sl-dropdown>
+
+          <!-- Search Dropdown -->
+          <sl-dropdown class="nav-dropdown">
+            <button slot="trigger" class="nav-item nav-dropdown-trigger">
+              <img src="{{ '/images/search.png' | relative_url }}" alt="Search" class="nav-item-icon">
+              <span class="nav-item-text">SEARCH</span>
+            </button>
+
+            <sl-menu class="search-menu">
+              <div class="search-form-container">
+                <form action="https://www.google.com/search" method="get" target="_blank" class="search-form">
+                  <input type="hidden" name="sitesearch" value="smoothieware.org">
+                  <input type="text" name="q" placeholder="Search documentation..." class="search-input" autofocus>
+                  <button type="submit" class="search-button">
+                    <img src="{{ '/images/search.png' | relative_url }}" alt="Search" class="search-icon">
+                  </button>
+                </form>
+              </div>
+            </sl-menu>
+          </sl-dropdown>
+        </div>
       </div>
     </nav>
 

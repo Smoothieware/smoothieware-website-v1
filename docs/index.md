@@ -24,9 +24,9 @@ title: Smoothieware Home
 
 The Smoothie project is always looking for help. Whatever your skills are, there are things you can do to improve the project with the other volunteers. If you feel that you could give us some of your free time, please [contact us](mailto:wolf.arthur@gmail.com), **help and working together** is what has made this project so neat, advanced and precious over the years, and is **very welcome**.
 
-## Documentation
+# Documentation
 
-### Step by step guides
+## Step by step guides
 
 <div class="menu">
   <div class="menu-item">
@@ -51,7 +51,7 @@ The Smoothie project is always looking for help. Whatever your skills are, there
 
 There is also a [Pick and Place](pick-and-place) guide.
 
-### Firmware documentation
+## Firmware documentation
 
 - [Basics](basics)
 - [Communication](communication)
@@ -130,7 +130,11 @@ Note, Smoothieboards come completely pre-flashed, you do not need to compile or 
 
 More: [Windows Drivers](Windows-Drivers), [Linux Drivers](Linux-Drivers), [Mac Drivers](Mac-Drivers), [New Features](New-Features), [Gallery](Gallery), [Smoothieboard Beta Guide](smoothieboard-beta-guide)
 
-### Hardware documentation
+{::nomarkdown}
+<img src="images/smoothieboard-fritzing.png" alt="Smoothieboard Fritzing" style="float: right; margin-left: 1rem; min-width:300px; max-width: 400px"/>
+{:/nomarkdown}
+
+## Hardware documentation
 
 **Available now**: [SmoothieBoard](smoothieboard), the modular and awesome, smoothie-dedicated CNC controller.
 
@@ -140,15 +144,20 @@ More: [Windows Drivers](Windows-Drivers), [Linux Drivers](Linux-Drivers), [Mac D
 - [Pin usage](lpc1769-pin-usage) has information on the use and capability of all pins
 - [How to wire](how-to-wire) describes tutorials, tools and best practices for wiring and cabling work when installing your Smoothieboard in a new machine.
 
+# Getting a Smoothieboard
+
 {::nomarkdown}
-<img src="images/smoothieboard-fritzing.png" alt="Smoothieboard Fritzing" width=600  style="float: right; margin-left: 1rem;"/>
+<div style="clear: both; text-align: center; margin: 2rem 0;">
+  <sl-button variant="primary" size="large" href="getting-smoothieboard">
+    <sl-icon slot="prefix" name="cart-fill"></sl-icon>
+    Get a Smoothieboard here
+  </sl-button>
+</div>
 {:/nomarkdown}
 
-[Get a Smoothieboard here](getting-smoothieboard)
+# Features
 
-## Features
-
-### For users
+## For users
 
 {::nomarkdown}
 <img src="images/worker.png" alt="Worker" width=100 height=100  style="float: right; margin-left: 1rem;"/>
@@ -163,7 +172,7 @@ More: [Windows Drivers](Windows-Drivers), [Linux Drivers](Linux-Drivers), [Mac D
 - Composite USB Mass Storage + Serial interface to host.
 - Free [email support (✿◠‿◠)](mailto:wolf.arthur@gmail.com)
 
-### For hackers
+## For hackers
 
 {::nomarkdown}
 <img src="images/blueprint-1.png" alt="Hackers" width=100 height=100  style="float: right; margin-left: 1rem;"/>
@@ -178,7 +187,7 @@ More: [Windows Drivers](Windows-Drivers), [Linux Drivers](Linux-Drivers), [Mac D
 
 {% include_relative donate.md %}
 
-### Developer documentation
+# Developer documentation
 
 {::nomarkdown}
 <img src="images/coding.png" alt="Coding" width=100 height=100  style="float: right; margin-left: 1rem;"/>
@@ -201,7 +210,7 @@ More: [Windows Drivers](Windows-Drivers), [Linux Drivers](Linux-Drivers), [Mac D
 
 Current edge build status: ![Build Status](https://travis-ci.org/Smoothieware/Smoothieware.svg?branch=edge)
 
-## Reviews
+# Reviews
 
 [Watch a review](http://www.youtube.com/embed/vsu_vAKvRO0?hd=1)
 
