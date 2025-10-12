@@ -73,19 +73,19 @@ The Smoothie project is always looking for help. Whatever your skills are, there
 <div class="menu">
   <div class="menu-item">
     <a href="3d-printer-guide.md">
-      <img src="images/icon-3d-printer.png" alt="3D Printer" width="100" height="100">
+      <img src="images/guide-3d-printer.png" alt="3D Printer">
       <p>3D Printer Guide</p>
     </a>
   </div>
   <div class="menu-item">
     <a href="laser-cutting-guide.md">
-      <img src="images/icon-laser.png" alt="Laser Icon" width="100" height="100">
+      <img src="images/guide-laser.png" alt="Laser">
       <p>Laser Cutting Guide</p>
     </a>
   </div>
   <div class="menu-item">
     <a href="cnc-mill-guide.md">
-      <img src="images/icon-cnc-mill.png" alt="CNC Mill Icon" width="100" height="100">
+      <img src="images/guide-cnc-mill.png" alt="CNC Mill">
       <p>CNC Mill</p>
     </a>
   </div>
