@@ -1,63 +1,11 @@
 ---
 layout: default
-title: SmoothieWare Home
+title: Smoothieware Home
 ---
-<style>
-  .menu {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 75px;
-  
-}
 
-.menu-item {
-  text-align: center;
-  margin: 10px;
-}
+# Smoothieware
 
-.menu-item img {
-  width: 150px; /* Adjust size as needed */
-  height: auto;
-}
-
-.menu-item a {
-  text-decoration: none; /* Removes underline */
-  color: inherit; /* Ensures the caption inherits your preferred styling */
-}
-
-  /* base styling for all callouts */
-.callout {
-  padding: 1rem;
-  border-radius: 0.5rem;
-  margin: 1rem 0;
-  display: block;
-}
-
-/* info/note style */
-.callout-note {
-  background-color: #e7f5ff;
-  border: 1px solid #91d5ff;
-}
-
-/* warning style */
-.callout-warning {
-  background-color: #fff7e6;
-  border: 1px solid #ffd591;
-}
-
-/* danger style */
-.callout-danger {
-  background-color: #fff1f0;
-  border: 1px solid #ffa39e;
-}
-
-</style>
-
-
-# SmoothieWare
-
-> **Smoothie** is a **[free, opensource, high performance](start.md)** and modular **G-code** interpreter and **CNC** control system for the powerful **[SmoothieBoard](smoothieboard.md)** 32bit controller. It's designed to be very user-friendly and hacker-friendly. The Source code is on [GitHub](https://github.com/Smoothieware/Smoothieware). ヾ(❀◦◡◦)彡 
+> **Smoothie** is a **[free, opensource, high performance](start.md)** and modular **G-code** interpreter and **CNC** control system for the powerful **[SmoothieBoard](smoothieboard.md)** 32bit controller. It's designed to be very user-friendly and hacker-friendly. The Source code is on [GitHub](https://github.com/Smoothieware/Smoothieware). ヾ(❀◦◡◦)彡
 {: .callout .callout-note }
 
 
@@ -103,18 +51,18 @@ There is also a [Pick and Place](pick-and-place.md) guide.
   - [Bluetooth](bluetooth-serial.md)
   - [Wifi](wifi.md) (new)
 
- - <img src="images/board.png" alt="Board" width=100 height=100>
+<img src="images/board.png" alt="Board" width=100 height=100>
 
-  - [Configuring Smoothie](configuring-smoothie.md): Configuration and use, by module
+- [Configuring Smoothie](configuring-smoothie.md): Configuration and use, by module
   - [List of all configuration options](configuration-options.md)
   - [Motion control](motion-control.md): All things related to gcode interpolation, motion and acceleration planning, and step generation
   - [Arm Solutions](Arm-Solutions.md): [Cartesian](Cartesian.md), [Delta](delta.md), [Hbot](Hbot.md), [Core-XY](Core-XY.md), [Rotary Delta](Rotary-Delta.md), [Morgan Scara](morgan-scara.md)
   - [6axis](6axis.md): Using A, B and C axes, for 4, 5 or 6 axis motion.
   - [Grbl mode](grbl-mode.md): Using Smoothie in CNC-specific mode instead of 3D printing mode
 
-  - <img src="images/glove.png" alt="Tools" width=100 height=100>
-  
-  - [Tools](tools.md)
+<img src="images/glove.png" alt="Tools" width=100 height=100>
+
+- [Tools](tools.md)
   - [Extruder](extruder.md): Control extruders for 3D printing
   - [Temperaturecontrol](temperaturecontrol.md): Heat and cool things like hotends and heated beds
   - [Laser](laser.md): For cutting
@@ -176,7 +124,7 @@ More: [Windows Drivers](Windows-Drivers.md), [Linux Drivers](Linux-Drivers.md), 
 - [Pin usage](lpc1769-pin-usage.md) has information on the use and capability of all pins
 - [How to wire](how-to-wire.md) describes tutorials, tools and best practices for wiring and cabling work when installing your Smoothieboard in a new machine.
 
-!<img src='images/smoothieboard-fritzing.png' alt='Smoothieboard Fritzing' width=600>
+<img src="images/smoothieboard-fritzing.png" alt="Smoothieboard Fritzing" width=600>
 
 [Get a Smoothieboard here](getting-smoothieboard.md)
 

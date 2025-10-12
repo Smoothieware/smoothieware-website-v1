@@ -37,20 +37,20 @@
 
 /* Info/note style */
 .callout-note {
-  background-color: #e7f5ff;
-  border: 1px solid #91d5ff;
+  background-color: #2a2a2a;
+  border: 1px solid #4a4a4a;
 }
 
 /* Warning style */
 .callout-warning {
-  background-color: #fff7e6;
-  border: 1px solid #ffd591;
+  background-color: #2a2a2a;
+  border: 1px solid #4a4a4a;
 }
 
 /* Danger style */
 .callout-danger {
-  background-color: #fff1f0;
-  border: 1px solid #ffa39e;
+  background-color: #2a2a2a;
+  border: 1px solid #4a4a4a;
 }
 
 /* Constrain icon images - targets images with "icon" in filename */
@@ -71,4 +71,31 @@ img[src*="icon."] {
 /* Hide the site title H1 at the top of every page */
 .markdown-body > h1:first-child {
   display: none;
+}
+
+/* Increase page width by 25% - override midnight theme's wrapper and section widths */
+.wrapper {
+  width: 1000px !important; /* Default is 800px, increased by 25% */
+  max-width: 1000px !important;
+  margin: 0 auto !important; /* Center the wrapper */
+}
+
+/* The section element inside wrapper should also be 1000px to fill the wrapper */
+section {
+  width: 1000px !important; /* Make section same width as wrapper */
+  max-width: 1000px !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+@media print, screen and (max-width: 1080px) {
+  .wrapper {
+    width: auto !important;
+    max-width: 90% !important;
+  }
+
+  section {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
 }
