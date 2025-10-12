@@ -2,7 +2,7 @@
 # Joystick Developer Documentation
 
 ## Basic Usage
-To use [joystick](joystick.md) readings in your module, you will first need to import the headers which are used for requesting public data from other modules. Add these lines of code somewhere near the top of your module's .cpp file:
+To use [joystick](joystick) readings in your module, you will first need to import the headers which are used for requesting public data from other modules. Add these lines of code somewhere near the top of your module's .cpp file:
 
 ```cpp
 #include "JoystickPublicAccess.h"

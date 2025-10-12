@@ -14,38 +14,38 @@ Smoothie is primarily a [G-code](http://en.wikipedia.org/wiki/G-code) interprete
 
 | G-Code | Description | Example |
 | ------ | ----------- | ------- |
-| [G0](g0.md) | Move to the given coordinates. To the contrary of G1, if there is a tool it will most of the time be off during this kind of move. This is a "go to" move rather than a "do while going to" move. The F parameter defines speed and is remembered by subsequent commands ( specified in millimetres/minute ) (command is modal) | `G0 X10 Y5 F100` |
-| [G1](g1.md) | Move to the given coordinates, see above for difference with G0. Takes the same F parameter as G0. (command is modal) | `G1 X20 Y2.3 F200` |
-| [G2](g2.md) | Clockwise circular motion: go to point with coordinates XYZ while rotating around point with relative coordinates IJ (command is not modal)| `G2 X10 J5` |
-| [G3](g3.md) | Counter-clockwise motion: see above (command is not modal)| `G3 Y5 X10 I2` |
-| [G4](g4.md) | Dwell S<seconds> or P<milliseconds>, In grbl mode P is float seconds to comply with gcode standards | `G4 P1000` |
-| [G10](g10.md) | Do firmware extruder retract | `G10` |
-| [G11](g11.md) | Do firmware extruder un-retract | `G11` |
+| [G0](g0) | Move to the given coordinates. To the contrary of G1, if there is a tool it will most of the time be off during this kind of move. This is a "go to" move rather than a "do while going to" move. The F parameter defines speed and is remembered by subsequent commands ( specified in millimetres/minute ) (command is modal) | `G0 X10 Y5 F100` |
+| [G1](g1) | Move to the given coordinates, see above for difference with G0. Takes the same F parameter as G0. (command is modal) | `G1 X20 Y2.3 F200` |
+| [G2](g2) | Clockwise circular motion: go to point with coordinates XYZ while rotating around point with relative coordinates IJ (command is not modal)| `G2 X10 J5` |
+| [G3](g3) | Counter-clockwise motion: see above (command is not modal)| `G3 Y5 X10 I2` |
+| [G4](g4) | Dwell S<seconds> or P<milliseconds>, In grbl mode P is float seconds to comply with gcode standards | `G4 P1000` |
+| [G10](g10) | Do firmware extruder retract | `G10` |
+| [G11](g11) | Do firmware extruder un-retract | `G11` |
 | G10 L1 | Set extruder tool offset for specified extruder where Pn is the extruder number + 1 (T0 is P1, T1 is P2), This stays set until reset. Permanent change must be added to config, Only active when multiple extruders have been defined | `G10 L1 P2 X10` |
 | G10 L2, G10 L20 | Set workspace coordinates [LinuxCNC G10 L2](http://linuxcnc.org/docs/html/gcode/coordinates.html) and [LinuxCNC G10](http://linuxcnc.org/docs/html/gcode/g-code.html#gcode:g10-l2)| `G10 L2 P1 X0` |
-| [G17](g17.md) | Select XYZ plane (command is modal)| `G17` |
-| [G18](g18.md) | Select XZY plane (command is modal)| `G18` |
-| [G19](g19.md) | Select YZX plane (command is modal)| `G19` |
-| [G20](g20.md) | Inch mode: passed coordinates will be considered as Inches, so internally translated to millimeters (command is modal) | `G20` |
-| [G21](g21.md) | Millimeter mode (default) : passed coordinates will be considered as millimeters (command is modal)| `G21` |
-| [G28](g28.md) | Home The given axis, or if no axis specified home all axis at the same time (edge) **NOTE** in CNC/grbl mode this is move to park position, use `$H` to home  | `G28` |
+| [G17](g17) | Select XYZ plane (command is modal)| `G17` |
+| [G18](g18) | Select XZY plane (command is modal)| `G18` |
+| [G19](g19) | Select YZX plane (command is modal)| `G19` |
+| [G20](g20) | Inch mode: passed coordinates will be considered as Inches, so internally translated to millimeters (command is modal) | `G20` |
+| [G21](g21) | Millimeter mode (default) : passed coordinates will be considered as millimeters (command is modal)| `G21` |
+| [G28](g28) | Home The given axis, or if no axis specified home all axis at the same time (edge) **NOTE** in CNC/grbl mode this is move to park position, use `$H` to home  | `G28` |
 | G28.1 | Set Predefined Position - This position will be returned to by G28.2 | `G28.1` |
 | G28.2 | Move to Predefined Position - This perform a rapid move to the Predefined position set by G28.1 (in grbl mode this will do a home) | `G28.2` |
 | G28.3 | Manual Homing - This allows you to set a home position manually without moving to limit switches | `G28.3` |
 | G28.4 | Manual Homing based on actuator position- This allows you to set a home position manually based on actuator position (used for rotary delta) | `G28.4` |
 | G28.5 | Clears the homed flag for the specified axis, or all if not specifed | `G28.5` `G28.5 Z0` |
 | G28.6 | Shows the homing status of each axis | `G28.6` |
-| G29 | Probes the bed and outputs the bed heights depending on levelling strategy selected, see [ZProbe](zprobe.md)  | `G29` |
-| [G30](g30.md) | Simple Z probe at current XY, reports distance moved down until probe triggers. optional F parameter defines the speed of probing, zprobe.slow_feedrate is used when not supplied | `G30` `G30 F100` |
-| G31 | Depends on levelling strategy selected, see [ZProbe](zprobe.md)  | `G31` |
-| G32 | Depends on levelling strategy selected, see [ZProbe](zprobe.md). For calibration on delta, uses Z probe to calibrate delta endstops and arm radius, use R parameter to select only arm radius calibration and E to select only endstop calibration. I to set target precision, J to set probe_radius, K to keep current endstop trim settings.  In Zgrid module, it starts the grid probing | `G32` `G32 R` `G32 E` `G32 EK` `G32 I0.02` |
+| G29 | Probes the bed and outputs the bed heights depending on levelling strategy selected, see [ZProbe](zprobe)  | `G29` |
+| [G30](g30) | Simple Z probe at current XY, reports distance moved down until probe triggers. optional F parameter defines the speed of probing, zprobe.slow_feedrate is used when not supplied | `G30` `G30 F100` |
+| G31 | Depends on levelling strategy selected, see [ZProbe](zprobe)  | `G31` |
+| G32 | Depends on levelling strategy selected, see [ZProbe](zprobe). For calibration on delta, uses Z probe to calibrate delta endstops and arm radius, use R parameter to select only arm radius calibration and E to select only endstop calibration. I to set target precision, J to set probe_radius, K to keep current endstop trim settings.  In Zgrid module, it starts the grid probing | `G32` `G32 R` `G32 E` `G32 EK` `G32 I0.02` |
 | G38.2 G38.3 G38.4 G38.5 | Standard probe commands implemented as documented [here](http://linuxcnc.org/docs/2.6/html/gcode/gcode.html#sec:G38-probe) | `'G38.2 Z-10'`|
 | G43.2 | [Baby steps](http://smoothieware.org/motion-control#adjusting-z-once-printing-starts-sometimes-called-babysteps) | `G43.2 Z0.05` |
 | G53 | Must be on a line by itself OR the first G code on a line, the directly following G0/G1 will be executed in MCS coordinates | `G53 G0 X0 Y0` |
-| [G54](g54.md)-G59.3 | use workspace coordinates [LinuxCNC G54-G59.3](http://linuxcnc.org/docs/html/gcode/coordinates.html) and [LinuxCNC G54-G59.3](http://linuxcnc.org/docs/html/gcode/g-code.html#gcode:g54-g59.3) | `G54` |
-| [G90](g90.md) | Absolute mode (default) (command is modal)| `G90` |
-| [G91](g91.md) | Relative mode (command is modal)| `G91` |
-| [G92](g92.md) | Set global workspace coordinate system to specified coordinates [LinuxCNC G92](http://linuxcnc.org/docs/html/gcode/g-code.html#gcode:g92) | `G92 X0 Y0 Z0` |
+| [G54](g54)-G59.3 | use workspace coordinates [LinuxCNC G54-G59.3](http://linuxcnc.org/docs/html/gcode/coordinates.html) and [LinuxCNC G54-G59.3](http://linuxcnc.org/docs/html/gcode/g-code.html#gcode:g54-g59.3) | `G54` |
+| [G90](g90) | Absolute mode (default) (command is modal)| `G90` |
+| [G91](g91) | Relative mode (command is modal)| `G91` |
+| [G92](g92) | Set global workspace coordinate system to specified coordinates [LinuxCNC G92](http://linuxcnc.org/docs/html/gcode/g-code.html#gcode:g92) | `G92 X0 Y0 Z0` |
 | G92.1 | Clear the G92 and G30 Znnn offsets | `G92.1`|
 | G92.4 | manually set homing (MCS) for XYZ  | `G92.4 X0 Y0 Z0`|
 
@@ -57,7 +57,7 @@ Smoothie is primarily a [G-code](http://en.wikipedia.org/wiki/G-code) interprete
 > ```
 
 ## Additional Codes
-The Smoothieware configuration file permits the association of additional codes with some tool functions.  For example, for a [Switch module](switch.md), you can specify an arbitrary command in the 'input_on_command' and 'input_off_command'.  This means that some additional codes may be available, depending on your specific configuration file.
+The Smoothieware configuration file permits the association of additional codes with some tool functions.  For example, for a [Switch module](switch), you can specify an arbitrary command in the 'input_on_command' and 'input_off_command'.  This means that some additional codes may be available, depending on your specific configuration file.
 
 For example, if you are using servos, then you will likely have configured the following commands:
 

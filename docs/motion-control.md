@@ -11,8 +11,10 @@ This page explains how to configure the different motion control parameters you 
 > **NOTE** you **MUST** define at least alpha, beta, and gamma in a valid config file, do not comment out gamma even if you are not using it.
 
 ## Acceleration
+{::nomarkdown}
 <img src="images/rocket-tracks-flag.gif" alt="Acceleration">
 
+{:/nomarkdown}
 Or "the increase of speed". You experience it every day.
 
 When you ask Smoothie to move a certain distance at a certain speed, it starts at a speed of 0 (not moving).
@@ -143,7 +145,7 @@ Here are all the options related to motion control:
 ## For devs
 
 > [!NOTE]
-> Smoothie's main job is to convert G-code into movement. Motion control modules (in the source code [src/modules/robot](https://github.com/arthurwolf/Smoothie/tree/edge/src/modules/robot)) are the various steps in that process. For more on that process, see [Howitworks](howitworks.md), for general use and configuration documentation on Smoothie's motion control, see below:
+> Smoothie's main job is to convert G-code into movement. Motion control modules (in the source code [src/modules/robot](https://github.com/arthurwolf/Smoothie/tree/edge/src/modules/robot)) are the various steps in that process. For more on that process, see [Howitworks](howitworks), for general use and configuration documentation on Smoothie's motion control, see below:
 
 ## External resources
 

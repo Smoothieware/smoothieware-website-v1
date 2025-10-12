@@ -1,7 +1,7 @@
 
 # Your guide to installing Smoothieboard in a Blue Box Laser Cutting machine
 
-( See also [blue-box-guide](blue-box-guide.md) )
+( See also [blue-box-guide](blue-box-guide) )
 
 <div class="grid">
 <div class="col md-6">
@@ -21,8 +21,10 @@ This is a step-by-step guide to connecting your board to the various components 
 
 This guide is a [community](http://smoothieware.org/irc) effort, and this page is a Wiki. Please don't hesitate to [edit it](#_editpage) to fix mistakes and add information, any help is very welcome.
 
+{::nomarkdown}
 <img src="images/smooth-k40.png" width="100%" alt="Blue Box Laser Cutter" width=400 height=292>
 
+{:/nomarkdown}
 </div>
 <div class="col md-6">
 [TOC]
@@ -114,8 +116,10 @@ The controller board that comes with the blue box is very limited, and can only 
 <div class="grid">
 <div class="col md-6">
 
+{::nomarkdown}
 <img src="images/k40-controller.jpg" alt="Controller Board" width=600 height=390>
 
+{:/nomarkdown}
 </div>
 </div>
 <div class="clearfix"></div>
@@ -162,8 +166,10 @@ The first thing you want to do, is find the wires for each stepper motor, and fo
 </div>
 <div class="col md-6">
 
+{::nomarkdown}
 <img src="images/wiring-stepper-motor.png" alt="Stepper Motors">
 
+{:/nomarkdown}
 </div>
 </div>
 <div class="clearfix"></div>

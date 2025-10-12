@@ -46,7 +46,7 @@ Then Smoothie will interpret the G-code you send to it the same way Reprap-type 
 >
 > This special build has `grbl_mode` enabled (set to "true") by default.
 >
-> You can get the special CNC build pre-compiled at [getting-smoothie](getting-smoothie.md) or compile it yourself at [compiling-smoothie](compiling-smoothie.md).
+> You can get the special CNC build pre-compiled at [getting-smoothie](getting-smoothie) or compile it yourself at [compiling-smoothie](compiling-smoothie).
 >
 > Note, some modules are excluded in CNC mode, like temperature control.
 
@@ -54,9 +54,9 @@ Then Smoothie will interpret the G-code you send to it the same way Reprap-type 
 >
 > This page only mentions 3D printers and CNC mills. Lasers are neither.
 >
-> Traditionally, Lasercutting software (like [laserweb](laserweb.md) or [visicut](visicut.md)) have learned to talk to Smoothie in its 3D printing mode.
+> Traditionally, Lasercutting software (like [laserweb](laserweb) or [visicut](visicut)) have learned to talk to Smoothie in its 3D printing mode.
 >
-> However, more CNC oriented software can also be used to control lasers (they are virtually similar to a CNC mill with a very thin tool and no Z axis), this is the case for example of [bcnc](bcnc.md).
+> However, more CNC oriented software can also be used to control lasers (they are virtually similar to a CNC mill with a very thin tool and no Z axis), this is the case for example of [bcnc](bcnc).
 
 Typical differences between 3d mode and CNC mode are:
 

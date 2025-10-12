@@ -10,7 +10,7 @@ Your board needs two sorts of power to work: 12-24V power to turn motors, heat h
 There are three ways to provide 5V power to the board:
 
 - By plugging a USB cable in, USB cables provide 5V
-- By soldering a [voltage regulator](voltageregulator.md) to the board (and providing 12+24V, which the voltage regulator then turns into 5V)
+- By soldering a [voltage regulator](voltageregulator) to the board (and providing 12+24V, which the voltage regulator then turns into 5V)
 - By providing 5V directly to the 5V power input (next to the VBB power input)
 
 If you want to keep it simple, the easiest solution is just to connect your Smoothieboard to your computer via USB.

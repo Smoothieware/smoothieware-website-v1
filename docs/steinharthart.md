@@ -17,7 +17,7 @@ These can be measured empirically or taken from the R-C tables that most thermis
 
 Alternatively, you can calculate the coefficients with a smoothie command and enter them using **M305** as shown below.
 
-At a command prompt (or in [pronterface](pronterface.md) prefix with @) type:
+At a command prompt (or in [pronterface](pronterface) prefix with @) type:
 
 ```plaintext
 calc_thermistor 25,100000.0,150,1655.0,240,269.0

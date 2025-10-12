@@ -1,7 +1,7 @@
 
 # Probing with Smoothie
 
-A probe is a switch (much like an [Endstop](endstop.md)) used to find where something is located automatically.
+A probe is a switch (much like an [Endstop](endstop)) used to find where something is located automatically.
 
 Smoothie will use it to move until the probe is "triggered" and stop there.
 
@@ -11,12 +11,12 @@ It can be used on CNC mills to:
 
 It can be used on 3D printers to:
 - Find the touching point between the actuator and the bed
-- Calibrate [Delta](delta.md) geometry
+- Calibrate [Delta](delta) geometry
 - Do grid-based bed leveling to compensate for bed height irregularities
 
 Different strategies are useful for different geometries of machines, click on one to go to it:
-- For [Delta](delta.md) machines, you can do [grid leveling](#delta-grid) **and** [calibration](#delta-calibration)
-- For [Cartesian](cartesian.md) machines, you can do [grid leveling](#rectangular-grid-compensation) **or** [three-point leveling](#three-point)
+- For [Delta](delta) machines, you can do [grid leveling](#delta-grid) **and** [calibration](#delta-calibration)
+- For [Cartesian](cartesian) machines, you can do [grid leveling](#rectangular-grid-compensation) **or** [three-point leveling](#three-point)
 
 **NOTE** When G30 stores the probe position or prints out the value, it is in actuator units not necessarily in mm. This is only an issue for rotary deltas where the actuator units are degrees not mm. Most other configurations it will be mm.
 
@@ -138,7 +138,7 @@ It will also adjust the delta radius (`M665 Rnnn`) to get the center the same he
 
 ### Example configuration
 
-To activate this leveling strategy, copy/paste the following to your [configuration file](configuring-smoothie.md) and edit it accordingly:
+To activate this leveling strategy, copy/paste the following to your [configuration file](configuring-smoothie) and edit it accordingly:
 
 ```markdown
 leveling-strategy.delta-calibration.enable                true      # Set to true to enable the delta calibration leveling strategy.
@@ -182,7 +182,7 @@ Example use:
 ```
 
 > [!WARNING]
-> You will need to set the Z height after calibration using one of the several methods available mentioned here [Delta](delta.md)
+> You will need to set the Z height after calibration using one of the several methods available mentioned here [Delta](delta)
 
 > [!WARNING]
 > There are **NO** probe offsets for delta calibration, so the probe should be within 10-20mm of the nozzle. This is by design as the calibration works solely on relative positions.
@@ -292,7 +292,7 @@ leveling-strategy.delta-grid.initial_height  10
 
 ### Example configuration
 
-To activate this leveling strategy, copy/paste the following to your [configuration file](configuring-smoothie.md) and edit it accordingly:
+To activate this leveling strategy, copy/paste the following to your [configuration file](configuring-smoothie) and edit it accordingly:
 
 ```markdown
 leveling-strategy.delta-grid.enable               true     # The strategy must be enabled in the config, as well as the zprobe module.

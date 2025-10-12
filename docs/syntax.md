@@ -1,7 +1,7 @@
 
 # Formatting Syntax
 
-DokuWiki supports some simple markup language, which tries to make the data files as readable as possible. This page contains all possible syntax you may use when editing the pages. Simply have a look at the source of this page by pressing "Edit this page". If you want to try something, just use the [playground](playground.md) page. The simpler markup is easily accessible via [quick buttons](toolbar.md), too.
+DokuWiki supports some simple markup language, which tries to make the data files as readable as possible. This page contains all possible syntax you may use when editing the pages. Simply have a look at the source of this page by pressing "Edit this page". If you want to try something, just use the [playground](playground) page. The simpler markup is easily accessible via [quick buttons](toolbar), too.
 
 ## Basic Text Formatting
 
@@ -30,34 +30,34 @@ External links are recognized automatically: [http://www.google.com](http://www.
 
 ### Internal
 
-Internal links are created by using square brackets. You can either just give a [pagename](pagename.md) or use an additional [link text](pagename.md).
+Internal links are created by using square brackets. You can either just give a [pagename](pagename) or use an additional [link text](pagename).
 
 Wiki page names are converted to lowercase automatically, special characters are not allowed.
 
-You can use [some:namespaces](some/namespaces.md) by using a colon in the page name.
+You can use [some:namespaces](some/namespaces) by using a colon in the page name.
 
-For details about namespaces see [namespaces](namespaces.md).
+For details about namespaces see [namespaces](namespaces).
 
 Linking to a specific section is possible, too. Just add the section name behind a hash character as known from HTML. This links to [this Section](syntax.md#internal).
 
 Notes:
 
-- Links to [existing pages](syntax.md) are shown in a different style from [nonexisting](nonexisting.md) ones.
-- DokuWiki does not use CamelCase to automatically create links by default, but this behavior can be enabled in the [config](config.md) file. Hint: If DokuWiki is a link, then it's enabled.
+- Links to [existing pages](syntax) are shown in a different style from [nonexisting](nonexisting) ones.
+- DokuWiki does not use CamelCase to automatically create links by default, but this behavior can be enabled in the [config](config) file. Hint: If DokuWiki is a link, then it's enabled.
 - When a section's heading is changed, its bookmark changes, too. So don't rely on section linking too much.
 
 ### Interwiki
 
-DokuWiki supports [Interwiki](Interwiki.md) links. These are quick links to other Wikis. For example, this is a link to Wikipedia's page about Wikis: [Wiki](wp>wiki.md).
+DokuWiki supports [Interwiki](Interwiki) links. These are quick links to other Wikis. For example, this is a link to Wikipedia's page about Wikis: [Wiki](wp>wiki).
 
 ### Windows Shares
 
-Windows shares like [this](\\server\share.md) are recognized, too. Please note that these only make sense in a homogeneous user group like a corporate [Intranet](wp>intranet.md).
+Windows shares like [this](\\server\share) are recognized, too. Please note that these only make sense in a homogeneous user group like a corporate [Intranet](wp>intranet).
 
 Notes:
 
 - For security reasons direct browsing of windows shares only works in Microsoft Internet Explorer per default (and only in the "local zone").
-- For Mozilla and Firefox, it can be enabled through different workarounds mentioned in the [Mozilla Knowledge Base](http://kb.mozillazine.org/Links_to_local_pages_do_not_work). However, there will still be a JavaScript warning about trying to open a Windows Share. To remove this warning (for all users), put the following line in `conf/lang/en/lang.php` (more details at [localization](localization.md)): 
+- For Mozilla and Firefox, it can be enabled through different workarounds mentioned in the [Mozilla Knowledge Base](http://kb.mozillazine.org/Links_to_local_pages_do_not_work). However, there will still be a JavaScript warning about trying to open a Windows Share. To remove this warning (for all users), put the following line in `conf/lang/en/lang.php` (more details at [localization](localization)): 
 ```php
 <?php
 /**
@@ -71,8 +71,10 @@ $lang['js']['nosmblinks'] = '';
 
 You can also use an image to link to another internal or external page by combining the syntax for links and images (see below) like this:
 
+{::nomarkdown}
 !<img src="https://www.dokuwiki.org/lib/tpl/dokuwiki/images/logo.png" alt="DokuWiki Logo" width =200>
 
+{:/nomarkdown}
 Please note: The image formatting is the only formatting syntax accepted in link names.
 
 The whole image and link syntax is supported (including image resizing, internal and external images and URLs, and interwiki links).
@@ -162,7 +164,7 @@ Dokuwiki supports ordered and unordered lists. To create a list item, indent you
    - Just use indention for deeper levels
 3. That's it
 
-Also, take a look at the [FAQ on list items](faq:lists.md).
+Also, take a look at the [FAQ on list items](faq:lists).
 
 ## Text Conversions
 
@@ -200,9 +202,9 @@ Typography: DokuWiki can convert simple text characters to their typographically
 -> <- <-> => <= <=> >> << -- --- 640x480 (c) (tm) (r)
 "He thought 'It's a man's world'..."
 
-The same can be done to produce any kind of HTML, it just needs to be added to the [pattern file](entities.md).
+The same can be done to produce any kind of HTML, it just needs to be added to the [pattern file](entities).
 
-There are three exceptions which do not come from that pattern file: multiplication entity (640x480), 'single' and "double quotes". They can be turned off through a [config option](config:typography.md).
+There are three exceptions which do not come from that pattern file: multiplication entity (640x480), 'single' and "double quotes". They can be turned off through a [config option](config:typography).
 
 ## Quoting
 
@@ -295,7 +297,7 @@ class HelloWorldApp {
 
 DokuWiki can highlight source code, which makes it easier to read. It uses the GeSHi Generic Syntax Highlighter -- so any language supported by GeSHi is supported. The syntax uses the same code and file blocks described in the previous section, but this time the name of the language syntax to be highlighted is included inside the tag, e.g. `<code java>` or `<file java>`.
 
-There are additional [advanced options](syntax_highlighting.md) available for syntax highlighting, such as highlighting lines or adding line numbers.
+There are additional [advanced options](syntax_highlighting) available for syntax highlighting, such as highlighting lines or adding line numbers.
 
 ### Downloadable Code Blocks
 
@@ -366,7 +368,7 @@ Some syntax influences how DokuWiki renders a page without creating any output i
 
 ## Syntax Plugins
 
-DokuWiki's syntax can be extended by [Plugins](plugins.md). How the installed plugins are used is described on their appropriate description pages. The following syntax plugins are available in this particular DokuWiki installation:
+DokuWiki's syntax can be extended by [Plugins](plugins). How the installed plugins are used is described on their appropriate description pages. The following syntax plugins are available in this particular DokuWiki installation:
 
 ```markdown
 INFO:syntaxplugins

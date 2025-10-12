@@ -3,7 +3,7 @@
 
 Smoothieboard has a USB port.
 
-You can plug a USB cable into the Smoothieboard, and plug that cable into your computer, and you'll then be able to control your Smoothieboard using [Software](software.md) on your computer.
+You can plug a USB cable into the Smoothieboard, and plug that cable into your computer, and you'll then be able to control your Smoothieboard using [Software](software) on your computer.
 
 ## Features
 
@@ -36,4 +36,4 @@ If you are using Windows 10, you do not need to install the driver, and installi
 
 ## Usage
 
-Once the driver is installed, the Smoothieboard should be recognized both as a Mass Storage Device (similar to a USB thumb drive), allowing you to access the files on the SD cards, as well as a Serial (COM) device, allowing you to send commands (for example via [Pronterface](pronterface.md)).
+Once the driver is installed, the Smoothieboard should be recognized both as a Mass Storage Device (similar to a USB thumb drive), allowing you to access the files on the SD cards, as well as a Serial (COM) device, allowing you to send commands (for example via [Pronterface](pronterface)).

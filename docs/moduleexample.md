@@ -75,7 +75,7 @@ class Laser : public Module {
 So now, whenever a module calls the `on_gcode_execute` event, this callback function will be called. In this case, the Stepper module calls this upon deleting a move it has just finished stepping.
 Because of the way C++ works, arguments to events here must be passed as void pointers and then manually cast in the callback function. You can see how that's done: here we cast a Gcode object.
 
-You can find more information about the different events in [ListOfEvents](listofevents.md).
+You can find more information about the different events in [ListOfEvents](listofevents).
 
 ## Doing something useful
 

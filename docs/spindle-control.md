@@ -2,8 +2,10 @@
 <div class='panel panel-default wrap_right' style='width:450px;padding:10px '>
 <div class='panel-heading'><h4 class='panel-title'>A spindle motor</h4></div>
 
+{::nomarkdown}
 <img src='images/spindle.png'><br/>
 
+{:/nomarkdown}
 They turn a tool at very high speeds
 </div>
 
@@ -23,7 +25,7 @@ If you are using a VFD to power your spindle, you can use your Smoothieboard to 
 
 There are two methods, using Modbus, or using an analog signal.
 
-For information on doing so, see the [Spindle Module](spindle-module.md)
+For information on doing so, see the [Spindle Module](spindle-module)
 
 This is the recommended method.
 
@@ -31,4 +33,4 @@ This is the recommended method.
 
 If you are not using a VFD, an alternative is to use one of the mosfets on the Smoothieboard to control the spindle.
 
-If you want to learn about this technique, go to [controlling a spindle with a mosfet](spindle-mosfet-control.md).
+If you want to learn about this technique, go to [controlling a spindle with a mosfet](spindle-mosfet-control).

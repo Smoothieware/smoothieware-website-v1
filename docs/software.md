@@ -8,16 +8,16 @@ All software below either knows how to interface with (or how to generate g-code
 - [Slic3r](http://slic3r.org/) - 3D printing slicer
 - [Cura](https://ultimaker.com/en/products/software) - 3D printing slicer and host.
 - [Prusa Control](http://prusacontrol.org/) - A beginner-friendly interface for the Slic3r engine.
-- [Pronterface](http://www.pronterface.com/) - 3D printing host. See the guide on the Wiki: [Pronterface](pronterface.md)
+- [Pronterface](http://www.pronterface.com/) - 3D printing host. See the guide on the Wiki: [Pronterface](pronterface)
 - [3Delta Printer Control](https://github.com/minad/3delta) - 3D printing host especially suited for delta printers.
-- [OctoPrint](http://octoprint.org/) - Awesome web interface (Host) for 3D printer control. On the wiki: [Octoprint](octoprint.md)
-- [Simplify3D](https://www.simplify3d.com/) - Closed source 3D printing slicer and host. On the wiki: [Simplify3D](simplify3d.md)
+- [OctoPrint](http://octoprint.org/) - Awesome web interface (Host) for 3D printer control. On the wiki: [Octoprint](octoprint)
+- [Simplify3D](https://www.simplify3d.com/) - Closed source 3D printing slicer and host. On the wiki: [Simplify3D](simplify3d)
 - [Fabrica](http://arthurwolf.github.io/fabrica/) - Easy to use web control interface (Host)
 - [Smoopi](https://github.com/wolfmanjm/kivy-smoothie-host) - Host specifically written for Smoothieware, runs on rpi with touch screen or a desktop.
 
 ## CNC
 
-- [bCNC](https://github.com/vlachoudis/bCNC/wiki) - On the wiki: [bCNC](bcnc.md) Open-Source CNC host with great preview and other operations. Set machine type to smoothie, and add `grbl_mode true` to your smoothie config or even better use the firmware-cnc.bin build of smoothieware (**Note**: You must update to the latest version of Smoothieware to ensure compatibility with bCNC).
+- [bCNC](https://github.com/vlachoudis/bCNC/wiki) - On the wiki: [bCNC](bcnc) Open-Source CNC host with great preview and other operations. Set machine type to smoothie, and add `grbl_mode true` to your smoothie config or even better use the firmware-cnc.bin build of smoothieware (**Note**: You must update to the latest version of Smoothieware to ensure compatibility with bCNC).
 - [OpenSCAM.org](http://openscam.org/) - Open-Source Simulation & Computer Aided Machining (Free 3-axis CNC Simulator which understands G-Code)
 - [CNC.js](https://github.com/cncjs/cncjs) - Open-Source CNC host with lots of features, running in your browser.
 - [OpenSCAD.org](http://openscad.org/) - Open-Source CAD software.

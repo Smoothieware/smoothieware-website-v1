@@ -1,11 +1,13 @@
 
 
+{::nomarkdown}
 <img align="right" src="images/joystick.png" alt="Joystick Module" width="200"/>
 
+{:/nomarkdown}
 # Joystick Module
 
 ## What is Joystick?
-Joystick is a module for SmoothieBoard which adds the ability to use joysticks with your machine. It is much like the [Switch](switch.md) module, but can read from things which output an [analog](https://learn.sparkfun.com/tutorials/analog-vs-digital) voltage (things like joysticks, sliders, knobs, force sensitive resistors, etc).
+Joystick is a module for SmoothieBoard which adds the ability to use joysticks with your machine. It is much like the [Switch](switch) module, but can read from things which output an [analog](https://learn.sparkfun.com/tutorials/analog-vs-digital) voltage (things like joysticks, sliders, knobs, force sensitive resistors, etc).
 
 Some possible uses for the Joystick module:
 - Moving your machine to set up the part origin (see [jogging](#jogging))
@@ -22,10 +24,16 @@ Some possible uses for the Joystick module:
 
 ### Hardware Requirements
 
+{::nomarkdown}
 <img src="images/joystick.png" alt="Joystick" width="150"/>
+{:/nomarkdown}
+{::nomarkdown}
 <img src="images/sparkfun_joystick.jpg" alt="Sparkfun Joystick" width="150"/>
+{:/nomarkdown}
+{::nomarkdown}
 <img src="images/sparkfun_slider.jpg" alt="Sparkfun Slider" width="150"/>
 
+{:/nomarkdown}
 To begin, you will need a device that you want to read. Some example devices are shown here, but really any variable resistor (potentiometer) or device that outputs 0-3.3 V should work. For more information on how potentiometers work, see [SparkFun's tutorial](https://learn.sparkfun.com/tutorials/voltage-dividers/).
 
 For the rest of the document, the examples will be for a 2-axis joystick like in the right-most picture. This joystick has two separate potentiometers for each axis, and has springs inside to return the knob to the center when released (think PlayStation controller knob).
@@ -35,8 +43,10 @@ For the rest of the document, the examples will be for a 2-axis joystick like in
 If you have a potentiometer, you will need to connect one side to 3.3 V, the other side to ground, and the wiper to a pin on the SmoothieBoard which supports analog reading (see table below).
 
 
+{::nomarkdown}
 <img src="images/potentiometer-schematic.png" alt="Potentiometer Schematic" width="300"/>
 
+{:/nomarkdown}
 
 The above image shows a basic schematic of a potentiometer. Pins 1 and 3 are the ends of the potentiometer, and Pin 2 is the wiper. Vin should be 3.3 V for the SmoothieBoard, and Pin 2 will be connected to a compatible pin on the SmoothieBoard (see table below).
 
@@ -56,13 +66,17 @@ The analog pins on the SmoothieBoard which can be connected to a wiper (Pin 2 in
 | **1.30** | spare | Recommended pin |
 | **1.31** | spare | Recommended pin |
 
-See [Pinout](pinout.md) for a diagram of the SmoothieBoard with the pins labeled.
+See [Pinout](pinout) for a diagram of the SmoothieBoard with the pins labeled.
 
 For a joystick, you will need to connect each wiper (the left/right and up/down) to different analog pins (e.g. 1.30 and 1.31).
 
+{::nomarkdown}
 <img src="images/missing.png" alt="" width=100>
+{:/nomarkdown}
 <!-- LED
+{::nomarkdown}
 <img src="images/joystick/joystick_connections.png" alt="Joystick Connections" width="400"/>
+{:/nomarkdown}
 -->
 
 ## Configuration
@@ -75,7 +89,9 @@ The way the Joystick module performs this conversion is to first measure the vol
 <div align="center">
 <img src="images/missing.png" alt="Joystick Mapping">
 <!-- LED
+{::nomarkdown}
 <img src="images/joystick/joystick_mapping_diagram.png" alt="Joystick Mapping Diagram" width="1000"/>
+{:/nomarkdown}
 -->
 Example Mapping from joystick position to output with `zero_offset` = 1.5 V and `endpoint` = 0 V
 </div>
@@ -118,7 +134,7 @@ joystick.vertical.refresh_rate                 100
 joystick.vertical.start_value                  0
 ```
 
-With the joystick configuration done, you will simply need to configure the [Jogger](jogger.md). The only pertinent config for the joystick/jogger connection is setting the `data_source_xxx` configs for the Jogger. An example of those options is shown below:
+With the joystick configuration done, you will simply need to configure the [Jogger](jogger). The only pertinent config for the joystick/jogger connection is setting the `data_source_xxx` configs for the Jogger. An example of those options is shown below:
 
 ```markdown
 # Jogger Configuration
@@ -130,7 +146,7 @@ jogger.data_source_beta                        vertical
 These options tell the jogger the names of the joystick modules to read when jogging.
 
 > [!SUCCESS]
-> You're all set! For more jogging configuration options, see [Jogger](jogger.md).
+> You're all set! For more jogging configuration options, see [Jogger](jogger).
 
 ### Feed Rate Override 
 <a name='fro'></a>
@@ -157,7 +173,7 @@ feedoverride.data_source                       fro
 ```
 
 > [!SUCCESS]
-> You're all set! For more feed-rate override configuration options, see [Feed Rate Override](feed-rate-override.md).
+> You're all set! For more feed-rate override configuration options, see [Feed Rate Override](feed-rate-override).
 
 ## Developer Documentation
-For information on how to write your own module which uses a joystick, see the [joystick developer documentation](joystick-dev.md).
+For information on how to write your own module which uses a joystick, see the [joystick developer documentation](joystick-dev).

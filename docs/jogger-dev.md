@@ -3,7 +3,7 @@
 
 ## Writing a Custom Joystick Module
 
-There are a few devices which could be used for jogging, but don't fall into the analog potentiometer category, and can't be used with the base [joystick](joystick.md) module. Some examples include:
+There are a few devices which could be used for jogging, but don't fall into the analog potentiometer category, and can't be used with the base [joystick](joystick) module. Some examples include:
 
 - Encoder / MPG devices, where speed of the knob controls speed of jogging
 - Joystick with digital output
@@ -76,7 +76,7 @@ jogger.data_source_gamma           joystickZ
 jogger.jog_axes                    XYZ
 ```
 
-The example assumes you have properly set up three [joystick](joystick.md) modules with names "joystickX", "joystickY" and "joystickZ".
+The example assumes you have properly set up three [joystick](joystick) modules with names "joystickX", "joystickY" and "joystickZ".
 
 Then, to set the jog axes, simply run `M777` followed by three letters of the axes you want the joystick to control.
 

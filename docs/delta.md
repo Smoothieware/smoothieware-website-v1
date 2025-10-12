@@ -5,11 +5,15 @@ Linear delta 3D printers use the power of mathematics to move your extruder. The
 
 This page will walk you through how to configure Smoothie to control a linear delta printer, how to tune its different parameters, and how to calibrate them automatically or manually.
 
+{::nomarkdown}
 Linear delta machines such as the <img src=images/Rostock.jpg alt="Rostock"> and the <img src="images/Kossel.jpg alt="Kossel"> use three linear axes in a triangular configuration, arms, and some clever math to move a tool in three dimensions.
+{:/nomarkdown}
 
 They can be quite fast due to the low moving mass, in particular in the Z direction, which is usually slower in typical Cartesian 3D printer designs.
 
+{::nomarkdown}
 <img src="https://store.atom3dp.com/uploads/d415cab3efa35ca8796ebcaa2a26ac374cf44ff5.png" alt="Delta Printer" width=400 height=400>
+{:/nomarkdown}
 
 ## Start with this file!
 
@@ -34,7 +38,9 @@ arm_radius                                   124.0            # this is the hori
 
 Here is a labelled schematic of a normal linear delta:
 
+{::nomarkdown}
 <img src="https://reprap.org/mediawiki/images/4/40/Delta_geometry1.png" alt="Delta kinematics basic" width=600 height=837>
+{:/nomarkdown}
 
 This shows the basic terminology and structure of delta machines.
 
@@ -176,7 +182,9 @@ When that is done, your printer is always at the same position, every time: The 
 
 But it doesn't know how high above the bed it is, unless you tell it. And it needs to know this, so that when you tell it to go to Z 0 (the bed), it knows how much to move from its position at the Z maximum.
 
+{::nomarkdown}
 <img src="images/DeltaAtHome.jpg" alt="Delta machine coordinates">
+{:/nomarkdown}
 
 This shows how to get your bearings around a delta 3D printer. It's basically a cylinder and you position things around its center.
 
@@ -186,7 +194,7 @@ There are several ways to tell Smoothie how high the hotend is from the bed afte
 
 ## Automated calibration
 
-See [ZProbe](zprobe.md) for how to use zprobe to calibrate a delta.
+See [ZProbe](zprobe) for how to use zprobe to calibrate a delta.
 
 Here is a common sequence that you may do to auto calibrate the delta for the first time, this need not be repeated unless the bed changes.
 
@@ -216,7 +224,7 @@ Full example configurations (including zprobe) can be found at [https://github.c
 
 This process will allow you to manually calibrate your delta printer:
 
-* Set `gamma_max` so the 0 position in Z is 20mm above the bed. See [gamma_max](gamma-max.md).
+* Set `gamma_max` so the 0 position in Z is 20mm above the bed. See [gamma_max](gamma-max).
 * Home, with `G28`.
 * **Point A**: Move to a point at the edge of the bed, in front of the X (alpha) tower.
 * Get the head set just right at the 0 position (so that a piece of paper can just slide between the hotend and bed plate).
@@ -237,7 +245,7 @@ This process will allow you to manually calibrate your delta printer:
 * Finally, go to the center of the bed, move the head until it touches the bed, and issue `M306 Z0`.
 * Save all your new settings with `M500`.
 
-If this is too much work, use the automated calibration which does exactly that procedure automatically. (Except for the Z height which you still need to do after calibration). See [the zprobe documentation page](zprobe.md).
+If this is too much work, use the automated calibration which does exactly that procedure automatically. (Except for the Z height which you still need to do after calibration). See [the zprobe documentation page](zprobe).
 
 ### Manual calibration scripts
 

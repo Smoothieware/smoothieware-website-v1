@@ -5,7 +5,7 @@ SmoothiePanel is an [Open Source Hardware](http://en.wikipedia.org/wiki/Open-sou
 
 It is intended to control a [Smoothieboard](http://smoothieware.org/Smoothieboard) ( [GPL](http://en.wikipedia.org/wiki/Gpl) too ), though could easily be connected to almost any logic control system.
 
-The [original plan to use an ARM Cortex-M0 MCU](smoothiepanelalpha.md) has been brought back out and dusted off because the open source tool-chain is ready! Also, there were some periodic issues with the [Beta design](smoothiepanel-beta.md) that used I2C port expanders. In the end came down to line noise from using I2C over cables in a noisy environment. So that brings us to our newest prototype! I've gone back to using an MCU but this time I've gone with a USB capable chip. It still has the Nunchuck port of course but has also gone back to the original idea of customizable / replaceable interface panel.
+The [original plan to use an ARM Cortex-M0 MCU](smoothiepanelalpha) has been brought back out and dusted off because the open source tool-chain is ready! Also, there were some periodic issues with the [Beta design](smoothiepanel-beta) that used I2C port expanders. In the end came down to line noise from using I2C over cables in a noisy environment. So that brings us to our newest prototype! I've gone back to using an MCU but this time I've gone with a USB capable chip. It still has the Nunchuck port of course but has also gone back to the original idea of customizable / replaceable interface panel.
 
 ## Preview
 

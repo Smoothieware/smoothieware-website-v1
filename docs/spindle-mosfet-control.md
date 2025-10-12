@@ -41,7 +41,7 @@ TODO: diagram
 
 Now that you have located which MOSFET you are going to use for Spindle control, and what GPIO pin it corresponds to, you need to add a spindle control section to your configuration file.
 
-We will be doing this using the [Switch](switch.md) module.
+We will be doing this using the [Switch](switch) module.
 
 Add this to your configuration file:
 

@@ -15,9 +15,9 @@ One way to prevent the last two bad things is to add a second thermistor to the 
 
 To implement this, you need three things:
 
-- A [switch](switch.md) module that turns the PSU on and OFF. (See the [Switch](switch.md) documentation.)
-- A [temperaturecontrol](temperaturecontrol.md) module that doesn't control any MOSFET but reads just the safety thermistor.
-- A [temperatureswitch](temperatureswitch.md) module that turns a switch off if a temperaturecontrol module goes above a given temperature.
+- A [switch](switch) module that turns the PSU on and OFF. (See the [Switch](switch) documentation.)
+- A [temperaturecontrol](temperaturecontrol) module that doesn't control any MOSFET but reads just the safety thermistor.
+- A [temperatureswitch](temperatureswitch) module that turns a switch off if a temperaturecontrol module goes above a given temperature.
 
 Here is an example configuration:
 

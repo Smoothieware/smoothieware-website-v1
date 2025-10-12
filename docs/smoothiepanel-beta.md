@@ -2,9 +2,9 @@
 # SmoothiePanel Beta
 
 SmoothiePanel is an [Open Source Hardware](http://en.wikipedia.org/wiki/Open-source_hardware) integrated PanelMax. The goal is to bring a 20x4 Character Display with RGB Backlight, RGB illuminated click-encoder, and illuminated Play and Back buttons down to a single I2C port. The basic interface panel supports an illuminated pause button, an illuminated back button, an RGB Click Encoder, a Wii Nunchuck, and lots of extra io!
-It is intended to control a [Smoothieboard](smoothieboard.md) ( [GPL](http://en.wikipedia.org/wiki/Gpl) too ), though could easily be connected to any system with available I2C.
+It is intended to control a [Smoothieboard](smoothieboard) ( [GPL](http://en.wikipedia.org/wiki/Gpl) too ), though could easily be connected to any system with available I2C.
 
-The [original plan to use an ARM Cortex-M0 MCU](smoothiepanelalpha.md) has been put on hold until the open source tool-chain is ready. A new beta version has just been prototyped based on i2c port expanders from NXP:
+The [original plan to use an ARM Cortex-M0 MCU](smoothiepanelalpha) has been put on hold until the open source tool-chain is ready. A new beta version has just been prototyped based on i2c port expanders from NXP:
 
 ## Preview
 

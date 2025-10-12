@@ -9,10 +9,10 @@ This is the case, for example, of linear delta (often just called "delta") machi
 
 Currently, Smoothieware supports the following arm/motion solutions:
 
-- [Cartesian](cartesian.md)
-- [Delta](delta.md) (Linear Delta)
-- [Rotary Delta](rotary-delta.md)
-- [Hbot](hbot.md) (CoreXY)
+- [Cartesian](cartesian)
+- [Delta](delta) (Linear Delta)
+- [Rotary Delta](rotary-delta)
+- [Hbot](hbot) (CoreXY)
 - Morgan Scara
 
 To configure your machine for the right type, see its specific page.

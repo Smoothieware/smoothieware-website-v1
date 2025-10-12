@@ -1,2 +1,2 @@
 
-See [console-commands](console-commands.md)
+See [console-commands](console-commands)

@@ -77,7 +77,7 @@ Solder the connector missing
 
 ![GLCD Adapter Smoothieboard](images/rrdglcdadapter/glcdv2-smoothie.png)
 
-Update firmware (version after October 2014), see [Flashing Smoothie firmware](flashing-smoothie-firmware.md)
+Update firmware (version after October 2014), see [Flashing Smoothie firmware](flashing-smoothie-firmware)
 Edit the config file on the µSD:
 
 ```markdown

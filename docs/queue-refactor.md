@@ -15,7 +15,7 @@ It ended up not too bad, but still very very far from optimal.
 
 I guess we can start by explaining the problem the queue tries to solve before explaining the problem with the way we currently do it.
 
-A pretty good explanation can be found here: [howitworks](howitworks.md).
+A pretty good explanation can be found here: [howitworks](howitworks).
 
 ### How it now works
 

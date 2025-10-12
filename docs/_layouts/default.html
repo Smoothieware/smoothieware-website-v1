@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="{{ site.lang | default: "en-US" }}">
+<html lang="{{ site.lang | default: "en-US" }}" class="sl-theme-dark">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -16,15 +16,32 @@
     <![endif]-->
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     {% include head-custom.html %}
+
+    <!-- Shoelace Components Library -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/themes/dark.css" />
+    <script type="module">
+      import { setBasePath } from 'https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/utilities/base-path.js';
+      setBasePath('https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/');
+    </script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/shoelace-autoloader.js"></script>
   </head>
   <body>
+
+    <nav class="smoothie-nav">
+      <div class="nav-content">
+        <img src="{{ '/images/oshw-logo.png' | relative_url }}" alt="OSHW Logo" class="nav-logo">
+        <a href="{{ '/' | relative_url }}" class="nav-title">Smoothieware</a>
+      </div>
+    </nav>
 
     <div class="wrapper">
 
       <section>
+        <div class="markdown-body">
 
-        {{ content }}
+          {{ content }}
 
+        </div>
       </section>
 
     </div>

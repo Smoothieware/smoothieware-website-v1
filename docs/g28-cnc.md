@@ -1,9 +1,11 @@
+{::nomarkdown}
 <img src="images/cnc-returning-to-origin.png" alt="Returning To Origin" width=200 height=200>
+{:/nomarkdown}
 ## G28 G-code
 
 On a CNC mill, `G28` means "go to the recorded origin point in the machine coordinates workspace".
 
-The machine coordinates are the position of the machine relative to the point at which the [endstops](endstops.md) are hit.
+The machine coordinates are the position of the machine relative to the point at which the [endstops](endstops) are hit.
 
 This is by opposition to the workspace coordinates, which are the coordinates you use to position a job you want to do.
 
@@ -27,19 +29,19 @@ No parameters.
 
 ### Friend Gcodes
 
-The [`G28.1`](g28-1.md) Gcode is used to set the origin position for the machine.
+The [`G28.1`](g28-1) Gcode is used to set the origin position for the machine.
 
 ### Configuration
 
-See the [endstops](endstops.md) module.
+See the [endstops](endstops) module.
 
 ### Speeds
 
-The speed at which the movement to the origin point will occur is the "seek" speed, which is the speed of the last `G0` command issued, or if none was ever issued, the value of the `default_seek_rate` configuration [option](configuring-smoothie.md).
+The speed at which the movement to the origin point will occur is the "seek" speed, which is the speed of the last `G0` command issued, or if none was ever issued, the value of the `default_seek_rate` configuration [option](configuring-smoothie).
 
 ### Endstop seeking
 
-If you are looking for a way to "home" to the endstops, the same way `G28` does on 3D printers, use the `$H` command to trigger this behavior, and configure it using the [Endstop](endstops.md) module.
+If you are looking for a way to "home" to the endstops, the same way `G28` does on 3D printers, use the `$H` command to trigger this behavior, and configure it using the [Endstop](endstops) module.
 
 ### Further reading
 

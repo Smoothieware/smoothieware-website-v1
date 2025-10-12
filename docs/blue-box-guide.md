@@ -1,9 +1,11 @@
 
-( See also [Smoothiebox Guide](bluebox-guide.md) )
+( See also [Smoothiebox Guide](bluebox-guide) )
 
 # SmoothK40 Guide
+{::nomarkdown}
 <img src="https://omtechlaser.com/cdn/shop/files/1_d4b5e2f8-be9d-4ed7-91f8-c00245b09768.jpg?v=1722323278&width=500" alt="Laser Machine">
 
+{:/nomarkdown}
 You want to use proper software to drive your Laser machine, this is the best reason to change for a Smoothie board, and start to use your laser cutter as simply as an inkjet printer.
 
 **Smoothie guide for K40**

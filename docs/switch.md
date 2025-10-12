@@ -16,7 +16,7 @@ If you come from the industry, the Switch module is Smoothie's implementation of
 
 ## Configuration
 
-Like [TemperatureControl](temperature-control.md), there can be multiple Switch modules. All you need to do is give each module its own name in the config file.
+Like [TemperatureControl](temperature-control), there can be multiple Switch modules. All you need to do is give each module its own name in the config file.
 
 ```markdown
 switch.fan1.enable                        true
@@ -159,7 +159,7 @@ switch.servo2.output_pin                        3.26             # Must be a PWM
 switch.servo2.output_type                       hwpwm            # H/W pwm output settable with S parameter in the input_on_command
 ```
 
-To find a PWM-capable pins, see [Pinout](pinout.md)
+To find a PWM-capable pins, see [Pinout](pinout)
 
 ### Power supply control
 
@@ -224,7 +224,7 @@ before_resume_gcode                  G91_G1E1_G90                          # Gco
 
 ### Spindle control button
 
-This configuration allows you to set a single button to start and stop your [spindle](spindle-module.md).
+This configuration allows you to set a single button to start and stop your [spindle](spindle-module).
 
 ```markdown
 switch.spindle.enable                true                     # Enable this module
@@ -236,7 +236,7 @@ switch.spindle.input_pin_behavior    toggle                   # This pin toggles
 
 ### Laser power supply
 
-For the enable ( TTL ) pin on a CO2 laser PSU, for power control use the [Laser](laser.md) module.
+For the enable ( TTL ) pin on a CO2 laser PSU, for power control use the [Laser](laser) module.
 
 ```markdown
 # Switch module for laser TTL control
@@ -246,15 +246,15 @@ switch.laser.input_off_command                 M107             # Turn OFF when 
 switch.laser.output_pin                        1.31             # Pin to control, to be connected to the laser power supply's TTL input
 ```
 
-Note this is now supported by the [laser module](laser.md) itself, where the pin is automatically toggled, using the `laser_module_ttl_pin` configuration option.
+Note this is now supported by the [laser module](laser) itself, where the pin is automatically toggled, using the `laser_module_ttl_pin` configuration option.
 
 However, if you are not using that functionality, this allows you to turn the laser power supply using G-codes.
 
 ### Setting up a reset button
 
-Smoothie has a reset button, and you can wire an external button to that ( see [Pinout](pinout.md) ).
+Smoothie has a reset button, and you can wire an external button to that ( see [Pinout](pinout) ).
 
-However, maybe you have an existing [Panel](panel.md), which has a button on it, and you want to turn that into a reset button.
+However, maybe you have an existing [Panel](panel), which has a button on it, and you want to turn that into a reset button.
 
 If that's the case, you can setup a switch module to read whatever pin you wired that button to, and make it trigger the `reset` command whenever it is pressed, like this:
 

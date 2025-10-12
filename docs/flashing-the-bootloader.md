@@ -14,10 +14,10 @@ The bootloader was written by Triffid_Hunter and can be found [here](https://git
 
 ## LPCXpresso1769 or SmoothieBoard
 
-To flash the bootloader you need a Serial-USB (can be a FTDI cable, an Arduino, CP2102, etc.) cable connected to the UART0 pins of the LPC1769 (6-pin connector noted as "Serial" on a [Smoothieboard](smoothieboard.md)), and the "reset" and "bootloader" (ISP) buttons connected.
+To flash the bootloader you need a Serial-USB (can be a FTDI cable, an Arduino, CP2102, etc.) cable connected to the UART0 pins of the LPC1769 (6-pin connector noted as "Serial" on a [Smoothieboard](smoothieboard)), and the "reset" and "bootloader" (ISP) buttons connected.
 
 If you have a Smoothieboard, all of this is already there, just connect the Serial-USB/FTDI cable. (Well, actually if you have a SmoothieBoard it comes with the bootloader pre-flashed, just move ahead to the actual firmware flashing. Except for the beta board where you might want to flash anyway to get SDHC support).
-If you have an LPCXpresso1769, you want to look at [Smoothie On A Breadboard](smoothie-on-a-breadboard.md) for how to wire the serial cable and the buttons.
+If you have an LPCXpresso1769, you want to look at [Smoothie On A Breadboard](smoothie-on-a-breadboard) for how to wire the serial cable and the buttons.
 
 (Sometimes it is better connecting TXD->RXD and RXD->TXD, you should not use USB to RS232, because it can be +15/-15v, but MCU is 3.3V)
 

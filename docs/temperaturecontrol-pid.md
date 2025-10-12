@@ -1,5 +1,7 @@
+{::nomarkdown}
 <img src="images/temperaturecontrol.gif" alt="TemperatureControl" width="430px"><br/>
 
+{:/nomarkdown}
 *It's not very refined*
 
 PID is important. Without PID, a simple way to control temperature would be:

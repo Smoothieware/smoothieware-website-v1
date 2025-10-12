@@ -1,7 +1,7 @@
 
 ## Why is my web interface missing?
 
-You likely got to this page because you connected to your Smoothieboard over the [Network](network.md) and expected to be welcomed by the classic web interface, but instead, you received a webpage explaining that it is no longer available, and you should come here for information on how to resolve the issue.
+You likely got to this page because you connected to your Smoothieboard over the [Network](network) and expected to be welcomed by the classic web interface, but instead, you received a webpage explaining that it is no longer available, and you should come here for information on how to resolve the issue.
 
 A web interface, even a small one, uses storage space on your Smoothieboard. Up until now, we used to store the web interface in the same place we store the compiled code (firmware) that controls your machine: in the flash memory of the microcontroller.
 

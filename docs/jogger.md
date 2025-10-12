@@ -6,7 +6,7 @@
 
 ## What is Jogger?
 
-Jogger is a module for SmoothieBoard which adds the ability to move your machine around: a process referred to as "jogging". This module is different from most jogging tools in that it accepts input from a [joystick](joystick.md). This means your machine will move smoothly in the direction of the joystick, rather than take a small step in a certain direction each time a button is pressed.
+Jogger is a module for SmoothieBoard which adds the ability to move your machine around: a process referred to as "jogging". This module is different from most jogging tools in that it accepts input from a [joystick](joystick). This means your machine will move smoothly in the direction of the joystick, rather than take a small step in a certain direction each time a button is pressed.
 
 Some possible uses for the Jogger module:
 - Moving a cutting tool to the origin of a part
@@ -19,7 +19,7 @@ Some possible uses for the Jogger module:
 > [!DANGER]
 > Note this page is a work in progress and the joystick functionality is not yet released in smoothieware.
 
-You will need some kind of joystick-like device that the Jogger module will use to tell your steppers where to go. See the [joystick](joystick.md) page for information on how to set up an analog joystick. Once you have the [joystick](joystick.md) modules set up, you will need to know the [module names](module-name.md) of the joystick axes you want to link to the jogger.
+You will need some kind of joystick-like device that the Jogger module will use to tell your steppers where to go. See the [joystick](joystick) page for information on how to set up an analog joystick. Once you have the [joystick](joystick) modules set up, you will need to know the [module names](module-name) of the joystick axes you want to link to the jogger.
 
 ## Configuration
 
@@ -81,4 +81,4 @@ In this example, the jogger will start controlling by controlling XY. When `M778
 
 ## Developer Documentation
 
-For information on how to write a module which the jogger can read, see the [jogger developer documentation](jogger-dev.md).
+For information on how to write a module which the jogger can read, see the [jogger developer documentation](jogger-dev).

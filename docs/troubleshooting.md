@@ -1,18 +1,20 @@
 
 # Troubleshooting a problem with your Smoothieboard
 
+{::nomarkdown}
 <img src="https://imgs.xkcd.com/comics/fixing_problems.png" width="50%">
 
+{:/nomarkdown}
 If you have a problem with your Smoothieboard, don't panic.
 
 First of all, make sure you have read the documentation on this website, it is likely the information you are looking for is here, it is a very complete documentation. In particular take a look at: 
 
-- [3D Printer guide](3d-printer-guide.md)
-- [Laser cutter guide](laser-cutter-guide.md)
-- [CNC Mill/Router guide](cnc-mill-guide.md)
+- [3D Printer guide](3d-printer-guide)
+- [Laser cutter guide](laser-cutter-guide)
+- [CNC Mill/Router guide](cnc-mill-guide)
 
 If you can't find your answer here, you can also ask for help in the community. There are many channels:
-- [IRC for live chat, quicker answers quite often](irc.md)
+- [IRC for live chat, quicker answers quite often](irc)
 - [Forum](http://smoothieware.org/forum-welcome-mat)
 - [Support Mailing list](http://groups.google.com/group/smoothie-dev)
 - [Google+ community](https://groups.google.com/g/smoothieware-support)
@@ -45,7 +47,7 @@ Sometimes SD cards get corrupted, and it can cause all sorts of weird and diffic
 You should : 
 
 - Format your SD card ( as FAT32 )
-- Paste the [most recent firmware](getting-smoothie.md) file on your SD card
+- Paste the [most recent firmware](getting-smoothie) file on your SD card
 - Paste your configuration file to the SD card
 - Insert the SD card back into the board and reset it
 
@@ -84,8 +86,8 @@ You want to make sure your remove as many influencing factors when debugging an 
 For example, let's say your ethernet is not working, then you want to do a few things : 
 
 - Unplug everything from the board except USB ( which you need for power ) and Ethernet. This makes sure the problem isn't coming from some of the rest of the wiring
-- Use the latest version of the edge firmware ( see [Getting Smoothie](getting-smoothie.md) ). This makes sure people helping you have the same frame of reference as you
-- Use the latest version of the example config file ( see [Configuring Smoothie](configuring-smoothie.md) ), and strictly only modify the lines related to Ethernet, leave all the rest unchanged. This makes sure the rest of your config isn't part of the problem
+- Use the latest version of the edge firmware ( see [Getting Smoothie](getting-smoothie) ). This makes sure people helping you have the same frame of reference as you
+- Use the latest version of the example config file ( see [Configuring Smoothie](configuring-smoothie) ), and strictly only modify the lines related to Ethernet, leave all the rest unchanged. This makes sure the rest of your config isn't part of the problem
 - Try at least two different Ethernet cables, this makes sure the problem isn't the cable
 - Try at least two different routers/networks, this makes sure the problem isn't the network
 
@@ -117,7 +119,7 @@ If they don't help you, then feel free to ask the community, but please be aware
 
 Always make sure you have your board updated to the very latest version of the firmware before you ask for help.
 
-You will likely be asked to provide the result of the [version command](console-commands.md) so make sure to prepare that in advance.
+You will likely be asked to provide the result of the [version command](console-commands) so make sure to prepare that in advance.
 
 Ideally, use Pronterface when troubleshooting, for various reasons ( one of which is that some hosts hide error messages. Another one is it helps us be better at helping you if everybody we help has the same host ).
 
@@ -159,7 +161,7 @@ Different behavior can represent different situations and problems for the board
 > 
 > Then the firmware is running, but the board encountered a problem reading or accessing the SD card, or the configuration file on the SD card. 
 > 
-> Try taking the card in and out of the board several times, or try using another SD card ( [here is how to set up a new card](sd-card.md) ).
+> Try taking the card in and out of the board several times, or try using another SD card ( [here is how to set up a new card](sd-card) ).
 > 
 > See below for more details.
 
@@ -174,7 +176,7 @@ Different behavior can represent different situations and problems for the board
 > 
 > ![Firmware crash LED behavior](images/missing.png)
 > 
-> Then the firmware is not running. You can try [flashing the firmware again](flashing-smoothie-firmware.md).
+> Then the firmware is not running. You can try [flashing the firmware again](flashing-smoothie-firmware).
 > 
 > See below for more details.
 
@@ -192,7 +194,7 @@ If so, there is a short in one of the peripherals. Quite often this is due to in
 
 If this still does not solve the problem, examine the board for problems with your soldering of components/connectors and any other anomalies you can detect.
 
-If you can still not find anything, [contact the community](getting-help-community.md).
+If you can still not find anything, [contact the community](getting-help-community).
 
 ### The 3.3V LED is ON but LED4 is not ON
 
@@ -208,8 +210,8 @@ If it still fails, then as you tried two SD cards they are probably both fine. T
 
 Format a SD card as FAT32, and on that fresh card, copy two files: 
 
-- **firmware.bin** , with this exact name, which you can find [here](getting-smoothie.md)
-- **config** , with this exact name, which you can find [here](configuring-smoothie.md)
+- **firmware.bin** , with this exact name, which you can find [here](getting-smoothie)
+- **config** , with this exact name, which you can find [here](configuring-smoothie)
 
 Then insert the card into your Smoothieboard and try again.
 
@@ -219,7 +221,7 @@ Or LED1 and LED4 are ON, but LED2 and LED3 are not blinking.
 
 This could be caused by a firmware bug, or by a problem with your configuration file. 
 
-Try with a [fresh configuration file](configuring-smoothie.md), and if it does not solve the problem [contact the community](getting-help-community.md).
+Try with a [fresh configuration file](configuring-smoothie), and if it does not solve the problem [contact the community](getting-help-community).
 
 If you soldered the smoothieboard then check either the 12 MHz oscillator or the SD card/SD card slot.
 *This could be a bad solder joint with the 12 MHz oscillator (crystal), a bad SD card slot, a bad SD card, and/or a bad config file. 
@@ -268,7 +270,7 @@ The config changes are not taken into account, files do not appear or do not upd
 
 If anything like this happens, that could be related to the SD card "messing up", format the SD card ( as VFAT/FAT32 ), then paste your files back on it.
 
-See [SD card](sd-card.md).
+See [SD card](sd-card).
 
 Sometimes the SD card can get corrupted after which it will do strange things. Always make sure you unmount ( virtually not physically ) your SD card after doing anything on it
 
@@ -286,9 +288,9 @@ You need to remove the `#` character and Smoothie will now take the line into ac
 
 If you try to run bed leveling or calibration, and the board answers something like «  No strategy found to handle G32 », please do the following : 
 
-- Flash the very latest [firmware](flashing-smoothie-firmware.md)
-- Start your configuration fresh from the very latest [example configuration file](configuring-smoothie.md)
-- Enable the calibration strategy by following the exact instructions at [zprobe](zprobe.md)
+- Flash the very latest [firmware](flashing-smoothie-firmware)
+- Start your configuration fresh from the very latest [example configuration file](configuring-smoothie)
+- Enable the calibration strategy by following the exact instructions at [zprobe](zprobe)
 
 This error message most of the time means your config and firmware aren't up to date with each other. Upgrading everything solves the issue.
 
@@ -296,9 +298,9 @@ This error message most of the time means your config and firmware aren't up to 
 
 If you try to run bed leveling or calibration, and it seems to have no effect at all, please do the following : 
 
-- Flash the very latest [firmware](flashing-smoothie-firmware.md)
-- Start your configuration fresh from the very latest [example configuration file](configuring-smoothie.md)
-- Enable the calibration strategy by following the exact instructions at [zprobe](zprobe.md)
+- Flash the very latest [firmware](flashing-smoothie-firmware)
+- Start your configuration fresh from the very latest [example configuration file](configuring-smoothie)
+- Enable the calibration strategy by following the exact instructions at [zprobe](zprobe)
 
 This symptom most of the time means your config and firmware aren't up to date with each other. Upgrading everything solves the issue.
 

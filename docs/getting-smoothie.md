@@ -47,7 +47,7 @@ You can retrieve the code using [git](http://git-scm.com/download):
 git clone git://github.com/Smoothieware/Smoothie.git
 ```
 
-For instruction to compile Smoothie from source, please see [compiling-smoothie](compiling-smoothie.md).
+For instruction to compile Smoothie from source, please see [compiling-smoothie](compiling-smoothie).
 
 {% include_relative latest-firmware.md %}
 

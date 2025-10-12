@@ -1,5 +1,7 @@
+{::nomarkdown}
 <img src='images/high-voltage.png' width=300 height=427>
 
+{:/nomarkdown}
 They use very high voltages and are dangerous
 
 # Laser control
@@ -100,8 +102,10 @@ Here you could in theory replace the jumper by a potentiometer, allowing you to 
 
 The wiring looks like this:
 
+{::nomarkdown}
 <img src='images/laser-power-supply.png' width='100%'><br/>
 
+{:/nomarkdown}
 You then also need to configure the laser module accordingly:
 
 ```markdown

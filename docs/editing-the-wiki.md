@@ -54,7 +54,7 @@ This is a link: [link name](http://www.example.com).
 To insert a link to a page on the wiki itself, do:
 
 ```
-This is a link to the [Editing the wiki](editing-the-wiki.md) page.
+This is a link to the [Editing the wiki](editing-the-wiki) page.
 ```
 
 ### Images
@@ -62,7 +62,9 @@ This is a link to the [Editing the wiki](editing-the-wiki.md) page.
 To insert an image, do:
 
 ```html
+{::nomarkdown}
 <img src="images/SampleImage.jpg" alt="Sample Image">
+{:/nomarkdown}
 ```
 
 A nicer way of integrating images is to do the following:
@@ -163,7 +165,9 @@ You can insert raw HTML into the page by doing:
 ```html
 <h1>Custom HTML</h1>
 <p>Something else</p>
+{::nomarkdown}
 <img src="images/circuit.png" alt="hello ;-)">
+{:/nomarkdown}
 ```
 
 This is in particular useful to insert Youtube videos and the like.

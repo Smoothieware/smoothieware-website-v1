@@ -3,11 +3,11 @@
 
 SmoothiePanel is an [Open Source Hardware](http://en.wikipedia.org/wiki/Open-source_hardware) control interface for industrial robotic machinery. It adds a screen and user interface to allow easy control of a Smoothieboard. The current design brings a graphic LCD with RGB Backlight and changeable interface panel down to a port, optionally SPI, UART, or USB.
 
-It is intended to control a [Smoothieboard](smoothieboard.md) ( [GPL](http://en.wikipedia.org/wiki/Gpl) too ), though could easily be connected to almost any logic control system or even run stand-alone.
+It is intended to control a [Smoothieboard](smoothieboard) ( [GPL](http://en.wikipedia.org/wiki/Gpl) too ), though could easily be connected to almost any logic control system or even run stand-alone.
 
 ## A bit of History
 
-The [original plan to use an ARM Cortex-M0 MCU](smoothiepanelalpha.md) has been brought back out and dusted off because the open source tool-chain is ready! Also, there were some periodic issues with the [Beta design](smoothiepanel-beta.md) that used I2C port expanders. In the end came down to line noise from using I2C over cables in a noisy environment. That brings us to the [Gamma design](smoothiepanel-gamma.md). I went back to using an MCU but I went with a USB capable chip. It still has the Nunchuck port of course but has also gone back to the original idea of customizable / replaceable interface panel. There was then a Delta design that fixed a couple hardware bugs in the Gamma design and added the character lcd footprint back in.
+The [original plan to use an ARM Cortex-M0 MCU](smoothiepanelalpha) has been brought back out and dusted off because the open source tool-chain is ready! Also, there were some periodic issues with the [Beta design](smoothiepanel-beta) that used I2C port expanders. In the end came down to line noise from using I2C over cables in a noisy environment. That brings us to the [Gamma design](smoothiepanel-gamma). I went back to using an MCU but I went with a USB capable chip. It still has the Nunchuck port of course but has also gone back to the original idea of customizable / replaceable interface panel. There was then a Delta design that fixed a couple hardware bugs in the Gamma design and added the character lcd footprint back in.
 
 ## Current Prototype - Proto5 (Epsilon)
 

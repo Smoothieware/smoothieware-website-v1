@@ -42,7 +42,7 @@ If you want to do that, you have two ways to cause Smoothie to enter MRI mode:
 
 GDB should have been installed along with the GCC compiler and other GNU tools used to build the Smoothie source code.
 
-Note that you need to compile Smoothie yourself before you can do any debugging, please see [compiling-smoothie](compiling-smoothie.md)
+Note that you need to compile Smoothie yourself before you can do any debugging, please see [compiling-smoothie](compiling-smoothie)
 
 From a Terminal or Command Prompt that is able to build Smoothie, you should be able to set the current directory to the root of the Smoothie project which contains main.bin, main.elf, etc and run one of the following commands to launch GDB. The main difference between the OS's is the type of name used for the serial port. You should use the same serial port name and baud rate when launching GDB as you used for the Terminal application in which you saw the $T packet. **Please note:** You must first disconnect your terminal application from Smoothie before attempting to connect GDB to MRI.
 

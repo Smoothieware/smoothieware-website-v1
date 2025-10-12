@@ -3,7 +3,7 @@
 
 Smoothieboard can be made to work for more than 3 axes.
 
-We are not talking about extruders here (these are supported separately, see [Extruder](extruder.md)), but rotational axes, like those for example used for 4 or 5-axis machining.
+We are not talking about extruders here (these are supported separately, see [Extruder](extruder)), but rotational axes, like those for example used for 4 or 5-axis machining.
 
 This feature is one of the rare ones that requires compiling Smoothie. Because it increases the size of the movement planning queue significantly, we were unfortunately not able to fit it in the "normal" firmware.
 
@@ -19,7 +19,7 @@ There are two resources that were written about this feature when it was release
 
 ## Compiling 6-axis
 
-Before attempting this, please read [compiling smoothie](compiling-smoothie.md), and compile Smoothie "normally" for practice.
+Before attempting this, please read [compiling smoothie](compiling-smoothie), and compile Smoothie "normally" for practice.
 
 Once that is done (and only once that is done), you need to do the same process, but instead of doing 
 

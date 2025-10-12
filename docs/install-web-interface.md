@@ -1,7 +1,7 @@
 
 # Installing the web interface to the SD card
 
-You are here either because your SD card is [missing its web interface](missing-web-interface.md) or because you want to upgrade your currently installed web interface.
+You are here either because your SD card is [missing its web interface](missing-web-interface) or because you want to upgrade your currently installed web interface.
 
 This page explains how to grab the web interface off the internet, and then install it to your SD card.
 

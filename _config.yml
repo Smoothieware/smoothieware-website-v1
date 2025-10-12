@@ -5,6 +5,14 @@ source: ./docs
 # GitHub Pages theme
 remote_theme: pages-themes/midnight@v0.2.0
 
+# Markdown processor configuration
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+  syntax_highlighter_opts:
+    disable: true
+
 # Enable GitHub Pages compatible plugins
 plugins:
   - jekyll-remote-theme

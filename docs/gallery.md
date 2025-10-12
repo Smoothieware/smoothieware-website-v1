@@ -9,7 +9,9 @@ Smoothieboard driving a Hot wire Foam cutter, By Karlo Terrazas May 2017
 
 ![Nice wiring](images/2016-2.jpg)
 
+{::nomarkdown}
 <img src="images/laser-engrave-paper.jpg" alt="Laser engraving with LaserWeb and Smoothieboard">
+{:/nomarkdown}
 Laser engraving with LaserWeb and Smoothieboard, by Ariel Yahni, February 2016
 <iframe width="560" height="315" src="https://www.youtube.com/embed/0ZMn9tS2_II" frameborder="0" allowfullscreen></iframe>
 Smoothieboard driving a plasma cutter, by Peter Van Der Walt, January 2016
@@ -81,8 +83,10 @@ Beta touchprobe code results, powertomato, May 2013
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/aTN9iEur9dk" frameborder="0" allowfullscreen></iframe>
 Smoothieboard cutting aluminium on a 6040 router, Arthur, May 2013
+{::nomarkdown}
 !<img src="https://www.youtube.com/embed/ZKCS0renQ34?si=odKsvF5QCj4j2KJC" alt="A smoothieboard in the wild">
 
+{:/nomarkdown}
 «A smoothieboard in the wild», by Morbo, April 2013
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/_EWfmcWAz-M" frameborder="0" allowfullscreen></iframe>

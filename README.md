@@ -55,11 +55,35 @@ To test changes locally before pushing:
 
 3. View at `http://localhost:4000`
 
+**Using Docker (recommended):**
+
+The project includes `serve-local.sh` for Docker-based development:
+
+```bash
+./serve-local.sh
+```
+
+**Restarting After Configuration Changes:**
+
+Jekyll auto-reloads content files but **NOT** `_config.yml`. After changing themes, plugins, or other config settings, restart the server:
+
+```bash
+# Find Docker container
+docker ps
+
+# Restart it
+docker restart <container-id>
+```
+
+Or stop and run `./serve-local.sh` again.
+
 ### Making Changes
 
 1. Edit `.md` files in the `/docs` folder
 2. Add images to `/docs/images/` and reference with `/images/filename.png`
 3. Commit and push - GitHub Pages rebuilds automatically (1-2 minutes)
+
+**Note:** Changes to `_config.yml` require a server restart locally (see above)
 
 ## Documentation Organization
 

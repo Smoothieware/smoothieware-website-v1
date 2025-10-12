@@ -1,7 +1,7 @@
 
 # Smoothieboard Beta Guide
 
-The ( current/jan-2013 ) beta status of the first batch of [Smoothieboards](smoothieboard.md) leads to new users having much of the same questions, which are not really answered in the documentation.
+The ( current/jan-2013 ) beta status of the first batch of [Smoothieboards](smoothieboard) leads to new users having much of the same questions, which are not really answered in the documentation.
 
 This is a guide for new users of Smoothieboard in general, with specific information about whatever is specific to this first beta batch.
 
@@ -23,7 +23,7 @@ A great way to see what connector options you have for each connection is to loo
 - The green screw terminals are 2.54mm screw terminals. They are nice but more difficult to come by. Much cheaper for 2.54mm are the:
 - Black 2.54mm pins.
 
-You can find links to buy those connectors on the [Smoothieboard](smoothieboard.md) page, in the "border connectors" section.
+You can find links to buy those connectors on the [Smoothieboard](smoothieboard) page, in the "border connectors" section.
 
 The cheapest option is simply to use 2.54mm pins for everything ( except power ), but your choice really depends at what is at the end of the wires on your printer: screw terminals are a more "universal" option.
 
@@ -48,7 +48,7 @@ If you already have one, you are faced with a choice: the bootloader that was fl
 
 This means that if your card is more than 2GB in size, it won't be able to use it. So if your microSD card is bigger than 2GB, you can either:
 
-- Flash a newer bootloader that supports SDHC cards, see [flashing-the-bootloader](flashing-the-bootloader.md).
+- Flash a newer bootloader that supports SDHC cards, see [flashing-the-bootloader](flashing-the-bootloader).
 - Or get a 2GB or less microSD card.
 
 ## Firmware
@@ -61,8 +61,8 @@ The edge branch on the other hand ( [https://github.com/arthurwolf/Smoothie/tree
 
 Getting and compiling and flashing Smoothie is pretty well documented, just remember you want the "edge" branch:
 
-- [getting-smoothie](getting-smoothie.md)
-- [compiling-smoothie](compiling-smoothie.md)
+- [getting-smoothie](getting-smoothie)
+- [compiling-smoothie](compiling-smoothie)
 
 Once the firmware is flashed onto the board ( you know it is because the firmware file is renamed on the SD card ), we move on to config:
 
@@ -70,13 +70,13 @@ Once the firmware is flashed onto the board ( you know it is because the firmwar
 
 Smoothie gets its configuration from a small file named "config" that you drop in the root of the SD card.
 
-You can find information on the page [configuring-smoothie](configuring-smoothie.md).
+You can find information on the page [configuring-smoothie](configuring-smoothie).
 
 Once you have copied the file under the name "config" on the SD card, you can move on.
 
 ## I hate Windows
 
-Seriously. If you are unfortunate enough to be a Windows user, you want to go read this page: [windows-drivers](windows-drivers.md) to get USB to work on your Smoothieboard.
+Seriously. If you are unfortunate enough to be a Windows user, you want to go read this page: [windows-drivers](windows-drivers) to get USB to work on your Smoothieboard.
 
 If something does not work, you can contact the team via [IRC](http://smoothieware.org/irc).
 

@@ -12,7 +12,7 @@ Assuming you have read the documentation (again: do it, do not skip the document
 
 This guide follows the general structure of the [original Marlin documentation](http://marlinfw.org/docs/configuration/configuration.html)
 
-This assumes you start from the [default configuration file](configuring-smoothie.md).
+This assumes you start from the [default configuration file](configuring-smoothie).
 
 ## Baud rate
 
@@ -40,7 +40,7 @@ In Marlin, you define the number of extruders by changing this value:
 
 in Smoothie, things are much more modular, and you configure extruders by creating new extruder modules. If you have one extruder, you create one extruder module, if you have three, you create three extruder modules.
 
-For details see [Extruder](extruder.md) and [Multiple extruders](multiple-extruders.md).
+For details see [Extruder](extruder) and [Multiple extruders](multiple-extruders).
 
 ## Single nozzle
 
@@ -50,7 +50,7 @@ If you have multiple extruders but a single nozzle, in Marlin you set the follow
 #define SINGLENOZZLE
 ```
 
-But in Smoothie, you do this by creating multiple [Extruder modules](multiple-extruders.md) but only one [Temperaturecontrol module](temperaturecontrol.md).
+But in Smoothie, you do this by creating multiple [Extruder modules](multiple-extruders) but only one [Temperaturecontrol module](temperaturecontrol).
 
 ## Hotend offsets
 
@@ -89,9 +89,9 @@ In Marlin, you tell Marlin you want to control a power supply by doing:
 #define POWER_SUPPLY 1
 ```
 
-While in Smoothie you use the [Switch module](switch.md) to associate a Gcode with a specific control pin, giving you much more freedom as to how you configure and wire things.
+While in Smoothie you use the [Switch module](switch) to associate a Gcode with a specific control pin, giving you much more freedom as to how you configure and wire things.
 
-See the [Switch module](switch.md) for more details and examples, but here is one possible power supply control configuration:
+See the [Switch module](switch) for more details and examples, but here is one possible power supply control configuration:
 
 ```markdown
 switch.psu.enable true # turn atx on/off
@@ -117,7 +117,7 @@ In Marlin, you associate the number of a thermistor type with a given thermistor
 #define TEMP_SENSOR_BED 3
 ```
 
-In Smoothie, you go to a specific [Temperaturecontrol](temperaturecontrol.md) module, and edit its sensor type:
+In Smoothie, you go to a specific [Temperaturecontrol](temperaturecontrol) module, and edit its sensor type:
 
 For example:
 
@@ -125,7 +125,7 @@ For example:
 temperature_control.hotend.thermistor EPCOS100K
 ```
 
-See the [Temperaturecontrol](temperaturecontrol.md) page for a list of possible values, and for other ways to specify the sensor's properties.
+See the [Temperaturecontrol](temperaturecontrol) page for a list of possible values, and for other ways to specify the sensor's properties.
 
 There is no direct match between Marlin's "numbers" and Smoothie's "model numbers", you need to know the part number of your thermistor in order to configure it.
 
@@ -139,7 +139,7 @@ In Marlin, you set the PID parameters for the hotend this way:
   #define  DEFAULT_Kd 114
 ```
 
-While in Smoothie, you instead configure that value for each [Temperaturecontrol](temperaturecontrol.md) module, in that module, for example:
+While in Smoothie, you instead configure that value for each [Temperaturecontrol](temperaturecontrol) module, in that module, for example:
 
 ```markdown
 # PID configuration 
@@ -179,7 +179,7 @@ arm_length 250.0 # This is the length of an arm from hinge to hinge
 arm_radius 124.0 # This is the horizontal distance from hinge to hinge when the effector is centered
 ```
 
-See the [Delta](delta.md) page for more details on setting up a delta machine.
+See the [Delta](delta) page for more details on setting up a delta machine.
 
 ## Endstops
 
@@ -364,7 +364,7 @@ While in Smoothie you modify:
 acceleration 3000
 ```
 
-To set separate values for each axis, see [Motion control](motion-control.md).
+To set separate values for each axis, see [Motion control](motion-control).
 
 ## Jerk
 
@@ -397,7 +397,7 @@ This is not an exact science as smoothie and marlin's methods are different, but
 
 ## Zprobe
 
-Marlin and Smoothie are very different in this regard, please carefully read the documentation for the [Probing with Smoothie](zprobe.md) module.
+Marlin and Smoothie are very different in this regard, please carefully read the documentation for the [Probing with Smoothie](zprobe) module.
 
 ## Motor direction
 
@@ -475,6 +475,6 @@ In Marlin, you configure this sensor by doing:
 #endif
 ```
 
-While in Smoothie you use the [Filament detector](filament-detector.md) module
+While in Smoothie you use the [Filament detector](filament-detector) module
 
 ## Bed levelling

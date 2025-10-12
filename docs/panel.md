@@ -93,7 +93,7 @@ panel.external_sd.sdcd_pin               0.28!^           # sd detect signal (se
 
 ### Using the spare button as a Kill switch
 
-The button on the glcd and Viki2 can be wired as a Kill button by following [This guide](killbutton.md). In that case the 
+The button on the glcd and Viki2 can be wired as a Kill button by following [This guide](killbutton). In that case the 
 `panel.back_button_pin` should be commented out.
 
 ![A RRD GLCD](images/panel/img0831small.jpg)
@@ -129,7 +129,7 @@ It is one of the most popular options for panel controllers.
 >
 > There is an adapter board to easily connect a ReprapDiscount GLCD to a Smoothieboard with flat cable, however note this is entirely optional.
 >
-> You can find information about it at the [RRDGLCDAdapter](rrdglcdadapter.md) page.
+> You can find information about it at the [RRDGLCDAdapter](rrdglcdadapter) page.
 >
 > It's sources are available on [github](https://github.com/llegoff/GlcdAdapter2).
 >
@@ -176,8 +176,10 @@ You can find a list of pins on the Smoothieboard to connect to the panel [here](
 > 5vdc availability presumes a 5vdc source (power from SBUS, 5V input, or optionally installed 5v converter VBB).
 Be aware that RRD does not follow proper conventions for pin numbering. The pin 1 indicator on the ribbon is actually pin 10 in the RRD schematic. The image above is numbered according to the RRD inset schematics. 
 
+{::nomarkdown}
 <img src="images/ax5m-glcd-sm.jpg" alt="GLCD Wiring" width=200>
 
+{:/nomarkdown}
 ## RRD GLCD to Azteeg X5 Mini v1.1 interface board
 
 This interface board is simple to install, eliminates custom cables, frustration, and wire mess.

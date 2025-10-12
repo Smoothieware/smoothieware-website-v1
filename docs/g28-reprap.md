@@ -1,4 +1,6 @@
+{::nomarkdown}
 <img src="images/3d-printer-homing.png" alt="Homing" width=200 height=200>
+{:/nomarkdown}
 # G28 G-code
 
 G28 means "seek the endstops for each axis, stop once they are found and this position is now the origin for the machine".
@@ -37,13 +39,13 @@ G28 X0 Y0 Z0
 
 ## Configuration
 
-See the [Endstops](endstops.md) module documentation.
+See the [Endstops](endstops) module documentation.
 
 ## Delta
 
 This page assumes you are using a cartesian machine.
 
-If you are using a [Delta](delta.md) machine, then you cannot individually home axes.
+If you are using a [Delta](delta) machine, then you cannot individually home axes.
 
 Instead, all "actuators" are homed together to the top of the machine, which sets you at the top of the Z work area, and at the center of the XY work area.
 

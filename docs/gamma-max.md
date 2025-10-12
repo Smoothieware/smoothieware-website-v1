@@ -27,7 +27,7 @@ Then move to the point the machine currently thinks is Z 0:
 G0 Z0
 ```
 
-Then move the head to the bed by jogging, using [Pronterface](pronterface.md)'s arrows, the panel, the web interface or whatever other method is adequate in your case.
+Then move the head to the bed by jogging, using [Pronterface](pronterface)'s arrows, the panel, the web interface or whatever other method is adequate in your case.
 
 Finally issue the `M306 Z0` command which will use the current Z position as a homing offset:
 
@@ -63,7 +63,7 @@ Then set the current Z position to 0:
 G92 Z0
 ```
 
-Then move the head to the bed by jogging, using [Pronterface](pronterface.md)'s arrows, the panel, the web interface or whatever other method is adequate in your case.
+Then move the head to the bed by jogging, using [Pronterface](pronterface)'s arrows, the panel, the web interface or whatever other method is adequate in your case.
 
 Once the head is exactly at the bed, issue this command:
 
@@ -73,9 +73,9 @@ M114
 
 This will return the position of all axes. The current position of the Z axis is the value you must use as your `gamma_max` value.
 
-Now simply edit the [configuration file](configuring-smoothie.md) to set this value, and reset the board.
+Now simply edit the [configuration file](configuring-smoothie) to set this value, and reset the board.
 
-Alternatively (delta only) you can use the `M665 Z(distance)` command to set the value in the [config override system](configuring-smoothie.md), and `M500` to save that value to the SD card.
+Alternatively (delta only) you can use the `M665 Z(distance)` command to set the value in the [config override system](configuring-smoothie), and `M500` to save that value to the SD card.
 
 The `gamma_max` value in the configuration file is ignored if `M665` is set and saved.
 
@@ -111,9 +111,9 @@ Your `gamma_max` value is that reported distance, plus the z probe offset ( dist
 
 For example, if you home, then do `G30`, and it reports a height of 311mm, and your probe is 7mm below your hotend, then your `gamma_max` is 311 + 7 = 318mm.
 
-Simply edit the [configuration file](configuring-smoothie.md) to set this value, and reset the board.
+Simply edit the [configuration file](configuring-smoothie) to set this value, and reset the board.
 
-Alternatively you can use the `M665 Z(distance)` command to set the value in the [config override system](configuring-smoothie.md), and `M500` to save that value to the SD card.
+Alternatively you can use the `M665 Z(distance)` command to set the value in the [config override system](configuring-smoothie), and `M500` to save that value to the SD card.
 
 The `gamma_max` value in the configuration file is ignored if `M665` is set and saved.
 

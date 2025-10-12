@@ -10,7 +10,7 @@ If you are looking to help the project, but do not know where to start, this is 
 > [!NOTE]
 > If you have an idea for a new feature or any kind of improvement, please contact the community via IRC or the mailing lists to discuss it. You can also contact [wolf.arthur@gmail.com](mailto:wolf.arthur@gmail.com) with any questions or to chat about implementation details.
 > 
-> You likely also want to read the following pages : [coding-standards](coding-standards.md), [contribution-guidlines](contribution-guidlines.md), [developers-guide](developers-guide.md) and [github](github.md).
+> You likely also want to read the following pages : [coding-standards](coding-standards), [contribution-guidlines](contribution-guidlines), [developers-guide](developers-guide) and [github](github).
 
 ## Smoothieware v1 firmware
 
@@ -159,7 +159,7 @@ The Smoothieware firmware that runs on the Smoothieboard v1 ( Smoothieware v1 ) 
 > 
 > We are working on a new system to report errors in a more consistent and useful manner, see the [specification here](https://docs.google.com/document/d/16J-TbTM1v5mIs1aVF4OaIIJ-3PRYd82V65SvI577pcM/edit?usp=sharing).
 > 
-> Additionally, a [complete list of all firmware errors](error.md) has been drafted, and the page along with a bit of javascript magic, is intended to allow the firmware to link ( via short-form links ) directly to complete documentation about any error that just occurred ( as well as to log said errors, also in short-form manner ).
+> Additionally, a [complete list of all firmware errors](error) has been drafted, and the page along with a bit of javascript magic, is intended to allow the firmware to link ( via short-form links ) directly to complete documentation about any error that just occurred ( as well as to log said errors, also in short-form manner ).
 
 > [!TIP]
 > **M1 support**

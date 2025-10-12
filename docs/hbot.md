@@ -2,11 +2,15 @@
 # H-Bot and CoreXY Configuration
 
 ## H-Bot
+{::nomarkdown}
 <img src="images/h-bot-diagram.png" alt="H-Bot Diagram">>
 
+{:/nomarkdown}
 ## CoreXY
+{::nomarkdown}
 <img src="images/core-xy-diagram.png" alt="CoreXY Diagram">
 
+{:/nomarkdown}
 To configure your HBot or Corexy, set the `arm_solution` parameter in your configuration file to either `corexy` or `hbot`. For example:
 
 ```markdown

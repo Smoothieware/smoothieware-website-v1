@@ -1,8 +1,8 @@
 
-This page is a summary of [LPC1769 Pin Usage](lpc1769-pin-usage.md) concerning only hardware PWM capable pins.
+This page is a summary of [LPC1769 Pin Usage](lpc1769-pin-usage) concerning only hardware PWM capable pins.
 Hardware PWM is available only on pins `2.0` to `2.5`, `1.18`, `1.20`, `1.21`, `1.23`, `1.24`, `1.26`, `3.25` and `3.26`
 
-If you plan to use a hobby servo, LEDs, lasers or any kind of device which require PWM with the [Switch module](switch.md), ensure to pick the right pin depending on your board version.
+If you plan to use a hobby servo, LEDs, lasers or any kind of device which require PWM with the [Switch module](switch), ensure to pick the right pin depending on your board version.
 
 ## Available hardware PWM pins
 
@@ -28,4 +28,6 @@ Depending on the configuration:
 - the 4X board have 3 to 6 available PWM pins
 - the 3X board have 4 to 7 available PWM pins
 
+{::nomarkdown}
 <img src="https://github.com/Bouni/smoothieboard-graphics/blob/master/smoothieboard-wiring.png?raw=true" alt="Smoothie Wiring Diagram" width=600>
+{:/nomarkdown}

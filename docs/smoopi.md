@@ -14,29 +14,55 @@ It also works with a popular Mach3 USB-based pendant called the HB04 (only teste
 
 ## Screenshots
 
+{::nomarkdown}
 <img src="https://github.com/wolfmanjm/kivy-smoothie-host/blob/master/pics/desktop-mode.png?raw=true" alt="Main screen in desktop mode"><br/>*Main screen in desktop mode*
 
+{:/nomarkdown}
+{::nomarkdown}
 <img src="https://github.com/wolfmanjm/kivy-smoothie-host/blob/master/pics/config-editor.png?raw=true" alt="Here you can directly edit your configuration options"><br/>*Here you can directly edit your configuration options*
 
+{:/nomarkdown}
+{::nomarkdown}
 <img src="https://github.com/wolfmanjm/kivy-smoothie-host/blob/master/pics/dro_mode.png?raw=true" alt="DRO mode to move to where you want to be"><br/>*DRO mode to move to where you want to be*
 
+{:/nomarkdown}
 
+{::nomarkdown}
 <img src="https://github.com/wolfmanjm/kivy-smoothie-host/blob/master/pics/gcode-help.png?raw=true" alt="Gcode helper: appears when you are entering gcode manually to save you time"><br/>*Gcode helper: appears when you are entering gcode manually to save you time*
 
+{:/nomarkdown}
+{::nomarkdown}
 <img src="https://github.com/wolfmanjm/kivy-smoothie-host/blob/master/pics/macro-screen.png?raw=true" alt="Macros, here you can use them and easily set up new ones"><br/>*Macros, here you can use them and easily set up new ones*
 
+{:/nomarkdown}
+{::nomarkdown}
 <img src="https://github.com/wolfmanjm/kivy-smoothie-host/blob/master/pics/mpg-mode.png?raw=true" alt="MPG mode! Sweet"><br/>*MPG mode! Sweet*
 
+{:/nomarkdown}
+{::nomarkdown}
 <img src="https://github.com/wolfmanjm/kivy-smoothie-host/blob/master/pics/screen1.png?raw=true" alt="Extruder control, if you have a 3D printer"><br/>*Extruder control, if you have a 3D printer*
 
+{:/nomarkdown}
+{::nomarkdown}
 <img src="https://github.com/wolfmanjm/kivy-smoothie-host/blob/master/pics/screen2.png?raw=true" alt="Console, for the hacker in your heart"><br/>*Console, for the hacker in your heart*
 
+{:/nomarkdown}
+{::nomarkdown}
 <img src="https://github.com/wolfmanjm/kivy-smoothie-host/blob/master/pics/screen3.png?raw=true" alt="Jog screen, for fast and precise positioning"><br/>*Jog screen, for fast and precise positioning*
 
+{:/nomarkdown}
+{::nomarkdown}
 <img src="https://github.com/wolfmanjm/kivy-smoothie-host/blob/master/pics/settings.png?raw=true" alt="Settings for the Smoopi application itself"><br/>*Settings for the Smoopi application itself*
 
+{:/nomarkdown}
+{::nomarkdown}
 <img src="https://github.com/wolfmanjm/kivy-smoothie-host/blob/master/pics/temp-graph.png?raw=true" alt="Extruder control and temp graph"><br/>*Extruder control and temp graph*
 
+{:/nomarkdown}
+{::nomarkdown}
 <img src="https://github.com/wolfmanjm/kivy-smoothie-host/blob/master/pics/viewer-select.png?raw=true" alt="Viewer with selection"><br/>*Viewer with selection*
 
+{:/nomarkdown}
+{::nomarkdown}
 <img src="https://github.com/wolfmanjm/kivy-smoothie-host/blob/master/pics/viewerscreen.png?raw=true" alt="More viewer screen, you can click to go wherever you want here"><br/>*More viewer screen, you can click to go wherever you want here*
+{:/nomarkdown}

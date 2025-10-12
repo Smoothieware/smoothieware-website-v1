@@ -5,6 +5,79 @@
 
 /* Custom CSS for Smoothieware documentation */
 
+/* Navigation Bar */
+.smoothie-nav {
+  background-color: #1e1e1e;
+  border-bottom: 2px solid #444;
+  padding: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-content {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  max-width: 1000px;
+  width: 100%;
+  padding: 0 20px;
+}
+
+.nav-logo {
+  width: 50px !important;
+  height: 50px !important;
+  max-width: 50px !important;
+  max-height: 50px !important;
+  object-fit: contain;
+}
+
+.nav-title {
+  font-size: 28px;
+  font-weight: bold;
+  color: #ffcc00;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.nav-title:hover {
+  color: #ffd633;
+}
+
+/* Adjust body to account for fixed nav */
+body {
+  padding-top: 80px;
+}
+
+/* Shoelace Alert Spacing and Custom Styling */
+sl-alert {
+  display: block;
+  margin: 1.5rem 0 !important;
+}
+
+/* First alert after heading should have top margin */
+h1 + sl-alert,
+h2 + sl-alert,
+h3 + sl-alert {
+  margin-top: 1.5rem !important;
+}
+
+/* Alert before paragraphs should have bottom margin */
+sl-alert + p,
+sl-alert + h1,
+sl-alert + h2,
+sl-alert + h3,
+sl-alert + .menu,
+sl-alert + div {
+  margin-top: 1.5rem !important;
+}
+
 .menu {
   display: flex;
   justify-content: center;
@@ -78,6 +151,7 @@ img[src*="icon."] {
   width: 1000px !important; /* Default is 800px, increased by 25% */
   max-width: 1000px !important;
   margin: 0 auto !important; /* Center the wrapper */
+  padding-top: 100px !important; /* Account for 80px nav bar + 20px spacing */
 }
 
 /* The section element inside wrapper should also be 1000px to fill the wrapper */
@@ -86,6 +160,14 @@ section {
   max-width: 1000px !important;
   margin-left: 0 !important;
   margin-right: 0 !important;
+  margin-top: 0 !important; /* Remove top margin */
+  padding-top: 0 !important; /* Remove top padding */
+}
+
+/* Remove top margin/padding from markdown-body */
+.markdown-body {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
 }
 
 @media print, screen and (max-width: 1080px) {

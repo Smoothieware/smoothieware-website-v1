@@ -1,15 +1,15 @@
 
 # TemperatureSwitch
 
-TemperatureSwitch is an optional module that automatically controls an output (typically to control one of the small MOSFETs) through a [Switch](switch.md) module, based on a configurable threshold temperature.
+TemperatureSwitch is an optional module that automatically controls an output (typically to control one of the small MOSFETs) through a [Switch](switch) module, based on a configurable threshold temperature.
 
-It is commonly used to turn on/off a cooling fan or water pump to cool a 3D printer [extruder](extruder.md) hot end's cold zone.
+It is commonly used to turn on/off a cooling fan or water pump to cool a 3D printer [extruder](extruder) hot end's cold zone.
 
 Simply, TemperatureSwitch turns on/off the `switch.xxx` where `xxx` is the user-defined `switch.xxx` = `fan` or `misc` in the default configuration files.
 
 If the printer has multiple hot ends, TemperatureSwitch will monitor all of them and if any one goes over the threshold, will turn on the switch. It will only turn the switch off if all of them are below the threshold temperature.
 
-Since hot ends heat up relatively quickly and cool off slowly, the polling interval for heatup and cooldown are independently configurable in the [configuration file](configuring-smoothie.md). This is done to minimize processor load during printing.
+Since hot ends heat up relatively quickly and cool off slowly, the polling interval for heatup and cooldown are independently configurable in the [configuration file](configuring-smoothie). This is done to minimize processor load during printing.
 
 Here's a description of the configurable parameters:
 

@@ -13,8 +13,10 @@ If the machine does not come with a switch on the door that turns the laser off 
 
 If you leave your machine alone even for a few minutes, this can happen to you:
 
+{::nomarkdown}
 <img src="https://en.wikipedia.org/wiki/Laser_safety" alt="Lasers are dangerous">
 
+{:/nomarkdown}
 <div align="center"><strong>Lasers are dangerous</strong><br>
 They can burn your house, and they can burn your eyes, be careful.</div>
 

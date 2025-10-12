@@ -72,7 +72,7 @@ You can now get a smoothieboard [here](http://smoothieware.org/getting-smoothieb
 
 - Dimensions are 130x105mm
 - 3D files can be found [here on Thingiverse](http://www.thingiverse.com/thing:45537) to design cases and plates and such.
-- [Schematics](smoothieboard-schematic.md)
+- [Schematics](smoothieboard-schematic)
 
 ![Smoothieboard Illustration](https://github.com/Bouni/smoothieboard-graphics/blob/master/smoothieboard.png?raw=true)
 

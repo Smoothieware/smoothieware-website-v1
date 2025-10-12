@@ -12,7 +12,7 @@ Assuming you have read the documentation (again: do it, do not skip the document
 
 This guide follows the general structure of the [original GRBL documentation](https://github.com/grbl/grbl/wiki/Configuring-Grbl-v0.9)
 
-This assumes you start from the [default configuration file](configuring-smoothie.md).
+This assumes you start from the [default configuration file](configuring-smoothie).
 
 ## Commands
 
@@ -241,7 +241,7 @@ While in Smoothie you modify:
 acceleration    3000
 ```
 
-To set separate values for each axis, see [Motion control](motion-control.md).
+To set separate values for each axis, see [Motion control](motion-control).
 
 ## $130, $131, $132 – X, Y, Z Max travel, mm
 

@@ -3,7 +3,7 @@
 
 Smoothie can be compiled using [GCC](http://en.wikipedia.org/wiki/GNU_Compiler_Collection).
 
-First of all, [get Smoothie](getting-smoothie.md)'s source.
+First of all, [get Smoothie](getting-smoothie)'s source.
 
 You do not need to do any of this if you just want to use your board. This is only needed if you want the absolute latest firmware, or are modifying Smoothie's source.
 

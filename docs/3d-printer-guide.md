@@ -1,7 +1,9 @@
 
 # Your guide to installing Smoothieboard in a 3D printer
 
-![3D Printer Icon](images/icon-3d-printer.png)
+{::nomarkdown}
+<img src="images/guide-3d-printer.png" alt="3D printer icon" width=100 height=100 style="float: right; margin-left: 1rem;"/>
+{:/nomarkdown}
 
 Probably the machine for which Smoothie is most used, due to Smoothie's roots in the [RepRap](http://reprap.org/wiki/Main_Page) project, 3D printers are fairly simple to Smoothiefy. 
 
@@ -9,35 +11,37 @@ This is a step-by-step guide to connecting your board to the various components 
 
 This guide is a [community](http://smoothieware.org/irc) effort, and this page is a Wiki. Please don't hesitate to [edit it](#_editpage) to fix mistakes and add information, any help is very welcome.
 
-![Smoothieboard Fritzing](images/smoothieboard-fritzing.png)
+{::nomarkdown}
+<img src="images/smoothieboard-fritzing.png" alt="Smoothieboard Fritzing" style="float: right; margin-left: 1rem; width: 500px;">
+{:/nomarkdown}
 
 On a typical 3D printer setup, installing a Smoothieboard will mean you do the following things:
 
 * Read all of the guide before you start, best way to avoid mistakes
-* Install some [Software](software.md) to talk to your board
-* Install the [Windows drivers](windows-drivers.md) if using that OS
-* Connect your board via [USB](usb.md) and practice talking to it
-* Take a look at the [configuration](configuring-smoothie.md)
-* Upgrade your [firmware](flashing-smoothie-firmware.md) to the latest version if you feel like it
+* Install some [Software](software) to talk to your board
+* Install the [Windows drivers](windows-drivers) if using that OS
+* Connect your board via [USB](usb) and practice talking to it
+* Take a look at the [configuration](configuring-smoothie)
+* Upgrade your [firmware](flashing-smoothie-firmware) to the latest version if you feel like it
 * Wire your power supply and provide it with power
-* Wire the power supply to [Smoothieboard](smoothieboard.md)'s motor and mosfet power inputs
+* Wire the power supply to [Smoothieboard](smoothieboard)'s motor and mosfet power inputs
 * Connect motors to the stepper motor driver outputs
 * Edit your configuration to match your motors
 * Test the motors, and admire your accomplishment for hours
-* Connect [Endstops](endstops.md) to the endstop inputs
+* Connect [Endstops](endstops) to the endstop inputs
 * Edit your configuration to match your endstops
 * Test your endstops by homing the machine
 * Connect your hotend and heated bed's thermistors to the thermistor inputs
 * Edit your configuration to match your thermistors
-* Test that they read [temperature](temperaturecontrol.md) correctly, admire a beautiful temperature graph
+* Test that they read [temperature](temperaturecontrol) correctly, admire a beautiful temperature graph
 * Connect your hotend and heated bed's heaters to the mosfet outputs
 * Edit your configuration to tell Smoothie what to heat, with what mosfet and how
 * Test that you can correctly control temperature on all heaters, carefully
 * Connect, configure and test any fans you may have
 * Connect, configure and test any probes you may have
 * Setup calibration or leveling if relevant
-* Configure your slicing [software](software.md) and slice a 3D file into a G-code file
-* Use your host [software](software.md) to send your new G-code file to the Smoothieboard
+* Configure your slicing [software](software) and slice a 3D file into a G-code file
+* Use your host [software](software) to send your new G-code file to the Smoothieboard
 * Watch as the machine prints using your new Smoothieboard system
 * Be happy
 
@@ -49,7 +53,7 @@ At the end of this guide, you should have a fully working machine.
 
 Some users have hand-translated this page. Note that this translated version is by definition never going to be up-to-date. Use it to help you understand in general, but any specific information should be taken from the original version, especially before asking the community for help.
 
-* [Version Francaise](3d-printer-guide-fr.md)
+* [Version Francaise](3d-printer-guide-fr)
 
 {% include_relative unboxing.md %}
 
@@ -181,7 +185,7 @@ Once you know the heater works correctly, there is still some tuning to do: tuni
 
 ### Heater safety
 
-There are features you can configure to make sure that your [temperature control](temperaturecontrol.md) module will detect when something is wrong, and stop the machine when that happens.
+There are features you can configure to make sure that your [temperature control](temperaturecontrol) module will detect when something is wrong, and stop the machine when that happens.
 
 It is a good thing to read about these, and configure them as best as you can, because your house burning down is a very bad thing.
 

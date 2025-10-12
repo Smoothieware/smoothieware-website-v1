@@ -15,10 +15,10 @@
 
         Shortcuts : 
 
-- [Click here to see the documentation](documentation.md)
-- [Click here to see the source code](source-code.md)
-- [Click here to engage the community](community.md)
-- [Click here to get a board](get-a-board.md)
+- [Click here to see the documentation](documentation)
+- [Click here to see the source code](source-code)
+- [Click here to engage the community](community)
+- [Click here to get a board](get-a-board)
 
 
     </div>
@@ -77,8 +77,10 @@ The firmware is the result of years of hard work making sure we use as much of t
 <div id="collapse-opensource" class="collapse panel panel-default">
 <div class="panel-body" style="text-align: left">
 
+{::nomarkdown}
 <a href="https://github.com/Smoothieware/Smoothieware"> <img src="https://i0.wp.com/opensource.org/wp-content/uploads/2009/06/osi_symbol.png?w=628&ssl=1" style="position:absolute; top:0px; right: 0px" width=300></a>
 
+{:/nomarkdown}
 
 Everything Smoothie-related, from the code, to the hardware design files, to the documentation, is fully Open-Source.
 
@@ -112,8 +114,10 @@ And it also means that if the laser people make the motion control code better, 
 
 	<div class="col-md-4">
 		
+{::nomarkdown}
 		<img src="images/homepage/candy-image.jpg" style="width:120px; height:120px;margin-top:20px; margin-bottom:20px;" class="img-circle" >
 		
+{:/nomarkdown}
 				<span class="h3"> Feature rich </span>
 		
 		Using superior hardware to pioneer features that make your life easier, allow for new digital fabrication techniques, or make the current ones more powerful. Enjoy cutting-edge functionality and see more added all the time.

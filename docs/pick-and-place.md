@@ -5,15 +5,15 @@ Note: this page is not a "full" guide like for the other machines yet, that is s
 
 ## Compilation
 
-To get an OpenPNP machine to run, we recommend using the [CNC version of the firmware](grbl-mode.md).
+To get an OpenPNP machine to run, we recommend using the [CNC version of the firmware](grbl-mode).
 
-However, if you are using a vacuum sensor, that sensor requires you to use the [Temperature Control](temperaturecontrol.md) module, which is not enabled by default in the CNC build.
+However, if you are using a vacuum sensor, that sensor requires you to use the [Temperature Control](temperaturecontrol) module, which is not enabled by default in the CNC build.
 
-Therefore, you will need to build your own firmware, which is very easy if you follow [this simple guide](compiling-smoothie.md).
+Therefore, you will need to build your own firmware, which is very easy if you follow [this simple guide](compiling-smoothie).
 
 Make sure you compile the "CNC build" ( `make CNC=1` ), not the normal/default build, this is explained in the simple guide.
 
-Once you have used this guide to compile your own CNC build, you need to make one small modification so the next time you compile, it will include the [Temperature Control](temperaturecontrol.md) module, which the CNC build does not include by default ( it's more typical of 3D printer builds, so the flash space for it is wasted if it's included typically ).
+Once you have used this guide to compile your own CNC build, you need to make one small modification so the next time you compile, it will include the [Temperature Control](temperaturecontrol) module, which the CNC build does not include by default ( it's more typical of 3D printer builds, so the flash space for it is wasted if it's included typically ).
 
 There are two ways to make it so compilation will include this module, both methods are valid, the first one ( user file creation ), is preferred:
 
@@ -101,7 +101,7 @@ temperature_control.vac_n2.rt_curve               20.0,220,120,6000,220,120000
 
 On some Pick and Place machines, the head (Z axis) is controlled by a hobby servo motor.
 
-However, by default in Smoothie, those are controlled via the [Switch](switch.md) module using M-codes such as `M280`.
+However, by default in Smoothie, those are controlled via the [Switch](switch) module using M-codes such as `M280`.
 
 This works, but that's not how you usually address a Z axis. 
 

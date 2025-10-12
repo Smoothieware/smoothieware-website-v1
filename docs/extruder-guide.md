@@ -3,7 +3,7 @@
 
 Extruders are used to push plastic filament through a hotend, to achieve the awesome feat of [3D Printing](http://en.wikipedia.org/wiki/3D_printing).
 
-This module controls the motor that pushes the filament, it does not take care of the hotend itself, which is the job of [TemperatureControl](temperature-control.md).
+This module controls the motor that pushes the filament, it does not take care of the hotend itself, which is the job of [TemperatureControl](temperature-control).
 
 The most important parameter to get your extruder module to work properly, is `extruder.[module-name].steps_per_mm`.
 
@@ -73,7 +73,7 @@ These can be set differently for each extruder defined.
 
 ### Pins
 
-As all stepper motors, the extruder stepper motor needs 3 pins to be controlled: **step**, **direction**, and **enable** (See [Pin Reference](http://smoothieware.org/lpc1769-pin-usage) and [Pinout](pinout.md)):
+As all stepper motors, the extruder stepper motor needs 3 pins to be controlled: **step**, **direction**, and **enable** (See [Pin Reference](http://smoothieware.org/lpc1769-pin-usage) and [Pinout](pinout)):
 
 **1st Extruder** (delta, or M4)
 
@@ -98,15 +98,15 @@ extruder.hotend2.en_pin 4.29
 > These pins are for the epsilon (5th) driver on a Smoothieboard. This is what is most commonly used, but in another board or setup, you may have to use other pins.
 
 > [!TIP]
-> You can do special things to Smoothie pins, for example, you can invert them, which is useful to revert the direction of your extruder if it is wired the wrong way around on your board, see [Pin Configuration](pin-configuration.md).
+> You can do special things to Smoothie pins, for example, you can invert them, which is useful to revert the direction of your extruder if it is wired the wrong way around on your board, see [Pin Configuration](pin-configuration).
 > 
-> You can make your extruder module use any other stepper motor driver, or even an external stepper motor driver, simply by providing the adequate pins for that driver, see [Pinout](pinout.md).
+> You can make your extruder module use any other stepper motor driver, or even an external stepper motor driver, simply by providing the adequate pins for that driver, see [Pinout](pinout).
 
 ### Current
 
 On boards which feature current control of the stepper motor drivers (Smoothieboard or 4pi), you have to set that value for the extruder too.
 
-This is handled by the [Currentcontrol](currentcontrol.md) module, but usually, the line for the configuration of a given stepper motor is written along with its pins, for clarity.
+This is handled by the [Currentcontrol](currentcontrol) module, but usually, the line for the configuration of a given stepper motor is written along with its pins, for clarity.
 
 ```markdown
 delta_current 1.5
@@ -122,11 +122,11 @@ Here is an example of a common configuration and wiring of an extruder with a Sm
 
 This example setup is of an extruder (stepper motor) connected to the M4 stepper motor driver.
 
-If your machine has multiple extruders, you also want to look at [multiple-extruders](multiple-extruders.md).
+If your machine has multiple extruders, you also want to look at [multiple-extruders](multiple-extruders).
 
 ### Configuration
 
-The default Smoothie [configuration example](configuring-smoothie.md) contains an example extruder section, this means you do not need to create a new one, but you can just re-use the sample one.
+The default Smoothie [configuration example](configuring-smoothie) contains an example extruder section, this means you do not need to create a new one, but you can just re-use the sample one.
 
 The configuration looks like this:
 

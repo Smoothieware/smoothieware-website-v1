@@ -1,6 +1,6 @@
 
 > [!NOTE]
-> This part of the documentation is deprecated. Please refer to the [spindle module page](spindle-module.md) instead.
+> This part of the documentation is deprecated. Please refer to the [spindle module page](spindle-module) instead.
 
 | Parameter               | Value   | Description |
 | ----------------------- | ------- | ----------- |

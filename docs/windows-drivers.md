@@ -57,4 +57,4 @@ You should now have a recognized "Smoothie Virtual Serial Port". You might have 
 
 ## Does none of this work for you?
 
-There are some Windows machines that do not seem to like any of these drivers. These problems do not seem tied to a specific version of Windows. In order to find the cause, we would appreciate submissions of hardware information from affected machines. If you have a machine that does not like these drivers, please complete the steps found on the [How to submit Windows System Information](windows-systeminfo.md) page. Hopefully, this will help us identify a pattern to the problem which could help us come up with a solution.
+There are some Windows machines that do not seem to like any of these drivers. These problems do not seem tied to a specific version of Windows. In order to find the cause, we would appreciate submissions of hardware information from affected machines. If you have a machine that does not like these drivers, please complete the steps found on the [How to submit Windows System Information](windows-systeminfo) page. Hopefully, this will help us identify a pattern to the problem which could help us come up with a solution.

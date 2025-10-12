@@ -3,7 +3,7 @@
 
 This module reads temperature reading sensors (thermistors) and uses heater and cooler elements to maintain a set temperature.
 
-This is used for example for [extruder](extruder.md) hotends, or heated beds.
+This is used for example for [extruder](extruder) hotends, or heated beds.
 
 ![A hotend](https://reprap.org/mediawiki/images/thumb/2/2a/Jhn_mk5.jpg/190px-Jhn_mk5.jpg)
 
@@ -41,7 +41,7 @@ To reach a desired temperature, you must be able to know what the current temper
 
 A given controller board only has a given number of [ADCs](http://en.wikipedia.org/wiki/Analog-to-digital_converter) (analog (temperature) to digital (Smoothie) converter) capable pins.
 
-On the [Smoothieboard](smoothieboard.md) for example, there are 4 thermistor inputs, labelled from **T0** (or th1) to **T3** (or th4), and corresponding in the same order to the pins **0.23** to **0.26**. T0 is usually used for the hotend, and T1 for the bed.
+On the [Smoothieboard](smoothieboard) for example, there are 4 thermistor inputs, labelled from **T0** (or th1) to **T3** (or th4), and corresponding in the same order to the pins **0.23** to **0.26**. T0 is usually used for the hotend, and T1 for the bed.
 
 Thermistor inputs are not polarized, the direction you connect them in on your board is not important.
 
@@ -151,13 +151,13 @@ To reach the desired temperature, you need a means of changing the temperature. 
 
 This is for example how hotends or heated beds are heated to their target temperature.
 
-The component turning the current on and off can be a [mosFET](http://en.wikipedia.org/wiki/MOSFET) (like on [Smoothieboard](smoothieboard.md)) or a [Solid-State Relay](https://en.wikipedia.org/wiki/Solid-state_relay) for example.
+The component turning the current on and off can be a [mosFET](http://en.wikipedia.org/wiki/MOSFET) (like on [Smoothieboard](smoothieboard)) or a [Solid-State Relay](https://en.wikipedia.org/wiki/Solid-state_relay) for example.
 
 This is controlled from the board running Smoothie using a GPIO pin.
 
-In the case of mosfets, on a [Smoothieboard](smoothieboard.md), a given pin is connected to a given mosfet, and you have to use that specific pin to control that specific mosfet.
+In the case of mosfets, on a [Smoothieboard](smoothieboard), a given pin is connected to a given mosfet, and you have to use that specific pin to control that specific mosfet.
 
-See this schematic below or on the [Smoothieboard](smoothieboard.md) page to see what mosfet corresponds to what pin.
+See this schematic below or on the [Smoothieboard](smoothieboard) page to see what mosfet corresponds to what pin.
 
 ![Mosfet inputs and outputs](images/mosfet-input-output.svg)
 

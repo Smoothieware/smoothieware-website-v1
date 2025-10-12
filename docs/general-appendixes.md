@@ -6,7 +6,7 @@
 
 How well your machine is wired is going to determine how long it lives and how resistant it is to breakage.
 
-We have a great guide on different techniques and recommendations, please read the [how to wire page](how-to-wire.md).
+We have a great guide on different techniques and recommendations, please read the [how to wire page](how-to-wire).
 
 ## Crimping connectors
 <a name='crimping-connectors'></a>
@@ -100,7 +100,7 @@ Most external drivers have both a + and - pin for each of EN, DIR, and STP. The 
 > [!TIP]
 > While this example will show using the pins of one of the on-board drivers to control the external driver, you can use pretty much any free GPIO pin to control the step/direction/enable pins on your external driver.
 > 
-> See [pinout](pinout.md) and [pin usage](lpc1769-pin-usage.md) to find free pins.
+> See [pinout](pinout) and [pin usage](lpc1769-pin-usage) to find free pins.
 
 All loadouts of Smoothieboard (3x, 4x, 5x) can control 5 external stepper drivers using these ports. The presence or absence of a built-in driver will not affect the external driver.
 
@@ -218,7 +218,7 @@ An SSR is essentially a big switch: you cut a wire, plug each end of the cut wir
 
 You will need to connect GND on the Smoothieboard to the "-" connection on the Input side of the SSR, and the GPIO pin on the Smoothieboard to the "+" connection on the Input side of the SSR. This example shows using P1.30
 
-Then simply configure the module that will be using the SSR to use that pin, for example in the case of [Switch](switch.md):
+Then simply configure the module that will be using the SSR to use that pin, for example in the case of [Switch](switch):
 
 ```
 switch.misc.enable                   true #
@@ -228,7 +228,7 @@ switch.misc.output_pin               2.4  # GPIO pin we connected to "+" on the 
 switch.misc.output_type              digital        # just an on or off pin
 ```
 
-In the case of [TemperatureControl](temperature-control.md), where you use the SSR to control a heating element for example, there is a catch.
+In the case of [TemperatureControl](temperature-control), where you use the SSR to control a heating element for example, there is a catch.
 
 SSRs have a low maximum frequency they can be switched at. You need to specify that frequency or Smoothie will drive it way too fast. In this example, the maximum frequency is 20Hz.
 

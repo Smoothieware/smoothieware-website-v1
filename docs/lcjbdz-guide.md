@@ -9,7 +9,7 @@ This is an in-progress guide/log of my conversion of a 60W Liaocheng city Dongch
 
 The electronics and software that come with it are generally considered barely usable, and are at the very least very limited.
 
-However, the machine itself, while cutting costs at all corners, and not being of the best quality, is a good option for anybody looking at getting started with laser cutting or looking to upgrade from a [bluebox-guide](bluebox-guide.md).
+However, the machine itself, while cutting costs at all corners, and not being of the best quality, is a good option for anybody looking at getting started with laser cutting or looking to upgrade from a [bluebox-guide](bluebox-guide).
 
 These machines can be found for $2300 or even sometimes less on eBay, and have become more and more popular as people have started replacing the internal electronics, first with Arduino-based boards, and now with Smoothieboard. This allows for easier use, more software options, and makes for an overall much better machine.
 

@@ -48,7 +48,7 @@ M500
 
 Which will save the configuration values automatically in a configuration override file.
 
-Learn more about configuration overrides [here](configuring-smoothie.md).
+Learn more about configuration overrides [here](configuring-smoothie).
 
 > [!WARNING]
 > Do not send `M303` over the web interface, use Telnet, Pronterface, or any other serial terminal. If sent over the web, the answers will accumulate in Smoothie's RAM and may crash it.

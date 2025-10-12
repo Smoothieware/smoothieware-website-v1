@@ -3,8 +3,8 @@
 
 | Option | Default Value | Description |
 | ------ | ------------- | ----------- |
-| `default_feed_rate` | 4000 | Default rate for [G1](g1.md)/[G2](g2.md)/[G3](g3.md) moves in millimetres/minute. This is overridden by the first `F` (feedrate) parameter after reset, and never used again. |
-| `default_seek_rate` | 4000 | Default rate for [G0](g0.md) moves in millimetres/minute |
+| `default_feed_rate` | 4000 | Default rate for [G1](g1)/[G2](g2)/[G3](g3) moves in millimetres/minute. This is overridden by the first `F` (feedrate) parameter after reset, and never used again. |
+| `default_seek_rate` | 4000 | Default rate for [G0](g0) moves in millimetres/minute |
 | `mm_max_arc_error` | 0.01 | Arcs are cut into segments (lines), This is the maximum error for line segments that divide arcs |
 | `mm_per_line_segment` | 5 | Lines can be cut into segments (generally not useful with cartesian coordinates robots), this sets the maximum length of any given segment. Segments longer than this will be cut into several segments. |
 | `delta_segments_per_second` | 100 | Instead of cutting lines into segments based on a distance, cut them based on time: segments will be cut so that Smoothie executes -about- `delta_segments_per_second` segments each second. This is mostly useful when using `linear_delta` arm solutions. |

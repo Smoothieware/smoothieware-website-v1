@@ -14,7 +14,7 @@ Mainly for 3D printers, but very useful for debugging problems with any types of
 > [!WARNING]
 > Pronterface is designed for 3D printers and will do weird things for CNC mills and laser cutters (like ignoring some commands).
 > 
-> For CNC mills/routers, use [bCNC](bcnc.md) and for laser cutters use [Visicut](visicut.md).
+> For CNC mills/routers, use [bCNC](bcnc) and for laser cutters use [Visicut](visicut).
 
 ## Getting it
 
@@ -49,7 +49,7 @@ Smoothie uses serial over USB (ACM), allowing Pronterface to send commands and G
 > [!IMPORTANT]
 > Using a Smoothieboard with the Windows operating system, requires the prior installation of drivers.
 > 
-> Those drivers as well as instructions on how to install them, can be found at the [Windows Drivers](windows-drivers.md) page.
+> Those drivers as well as instructions on how to install them, can be found at the [Windows Drivers](windows-drivers) page.
 > 
 > Please make sure you install the drivers, and restart the computer, before you try to connect to Smoothie via Pronterface.
 
@@ -75,7 +75,7 @@ Smoothieboard has an ethernet connector, it exposes a web interface, but also a 
 
 You can use that interface to connect to Smoothieboard over Ethernet, using Pronterface.
 
-First of all, set up your Smoothieboard to activate Ethernet: see the [Network](network.md) page.
+First of all, set up your Smoothieboard to activate Ethernet: see the [Network](network) page.
 
 > [!WARNING]
 > It is not recommended that you talk to your Smoothieboard over Wifi, it introduces a certain lag, that can make the interface annoying, or even unusable.
@@ -114,13 +114,13 @@ In addition to all of the nice buttons and controls the Pronterface interface of
 
 Sending G-codes requires no special treatment at all, simply input the G-code into the `Send` input box (lower right), and hit the `Send` button.
 
-You can [find a list of useful G-codes here](supported-g-codes.md).
+You can [find a list of useful G-codes here](supported-g-codes).
 
 ### Commands
 
 In addition to G-codes, Smoothie understands a set of commands.
 
-You can [find a list of useful commands here](console-commands.md).
+You can [find a list of useful commands here](console-commands).
 
 However, sending commands is not as trivial as sending G-codes.
 
@@ -132,7 +132,7 @@ For example, to send the `version` command, you need to actually send `@version`
 
 ## Sending files
 
-Smoothieboard has an SD card, which is used to store [configuration](configuring-smoothie.md), but also G-code files.
+Smoothieboard has an SD card, which is used to store [configuration](configuring-smoothie), but also G-code files.
 
 You can use Pronterface to send G-code files to the Smoothieboard, which are then stored, and which you can then play as you wish.
 

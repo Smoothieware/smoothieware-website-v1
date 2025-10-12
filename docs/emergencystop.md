@@ -29,7 +29,7 @@ The Emergency stop button can be wired directly in the + line of VBB to achieve 
 > [!WARNING]
 > **Logic Power Supply**
 > If you interrupt the VBB line for emergency stop, the Smoothieboard may be powered off as well if you use the voltage regulator on board to supply the MCU.
-> To avoid this, you can power it separately by supplying 5V to the same connector. For details, check out the section about [power input](main-power-input.md).
+> To avoid this, you can power it separately by supplying 5V to the same connector. For details, check out the section about [power input](main-power-input).
 
 > [!WARNING]
 > **Contactor Coil Voltage**
@@ -60,4 +60,4 @@ The VFD is powered via mains directly, so we will disconnect it as well.
 > [!NOTE]
 > Maybe the VFD has an E-Stop input and I'm going to use that input and not the mains variant, but that needs to be checked for the certain VFD.
 
-The K1 relay is wired to the play/pause button ([see the details here](pausebutton.md)). This has the effect that if you push an emergency stop button, the Smoothieboard will be stopped as well. So if you release the button, the machine will not start to move again.
+The K1 relay is wired to the play/pause button ([see the details here](pausebutton)). This has the effect that if you push an emergency stop button, the Smoothieboard will be stopped as well. So if you release the button, the machine will not start to move again.

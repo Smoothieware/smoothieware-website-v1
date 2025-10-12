@@ -15,8 +15,10 @@ For an SPP module, I recommend the HC-05 Bluetooth 2.1 EDR (Enhanced Data Rate) 
 
 You can also use a BLE (Bluetooth Low Energy) or BT4.0 device like the HC-10, but you will need a comms device that talks BLE/BT4.0 and not many computers do (a recent-model Apple Macbook Pro/Air will be able to, my recent-model HP doesn't), so by sticking to the HC-05 you can be sure of being compatible with the majority of devices. 
 
+{::nomarkdown}
 <img src="https://components101.com/sites/default/files/components/HC-05-Bluetooth-Module.jpg" alt="HC-05 Bluetooth Module">
 
+{:/nomarkdown}
 I prefer the CZ over the JY for a few reasons – it is really small, it is really well made, it has the KEY (P34, state pin) already broken out and it does level shifting of all the pins back to the 3.3V required by the HC module, unlike some of the other breakouts.
 
 Of course, some of the US manufacturers make some great boards with superior features and wonderful quality control, but that comes at a price - personally I like paying $4 for a bluetooth module, rather than $25-30.
@@ -115,7 +117,7 @@ Connect the female DuPont cables to the 4 UART pins on the Smoothie (next to the
 
 ## Connect:
 
-Reboot the SmoothieBoard and you should now be able to connect using a terminal app like CoolTerm or directly using your printer app (like [Pronterface](pronterface.md)).
+Reboot the SmoothieBoard and you should now be able to connect using a terminal app like CoolTerm or directly using your printer app (like [Pronterface](pronterface)).
 
 In this configuration, the UART is set to 115,200 bps, but the HC-05 is capable of 230,400bps, 460,800bps - right up to 1,382,400, although at those rates you will probably be experiencing some significant percentage of comms errors. The BT SPP link itself is capable of upwards of 3Mb/s, given perfect radio conditions.
 

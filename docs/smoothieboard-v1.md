@@ -13,7 +13,7 @@ Its main design goals are:
 
 This page is for v1, the [first version](https://www.kickstarter.com/projects/logxen/smoothieboard-the-future-of-cnc-motion-control) of the Smoothieboard hardware.
 
-To find out where to purchase a Smoothieboard, see **[Getting Smoothieboard](getting-smoothieboard.md)**.
+To find out where to purchase a Smoothieboard, see **[Getting Smoothieboard](getting-smoothieboard)**.
 
 ![Smoothieboard Fritzing](images/smoothieboard-fritzing.png)
 
@@ -30,7 +30,9 @@ Compared to lots of other boards, this allows for faster/smoother movement, more
 
 The board runs the Smoothie firmware, which has been designed and perfected to take the best advantage of the hardware, to make the board easy to configure and use, and to add cool features.
 
+{::nomarkdown}
 <img src="http://mbed.org/media/uploads/synvox/lpc1768_mbed_pinout.gif" alt="LPC1768 Pinout"><br/>
+{:/nomarkdown}
 See [Firmware](http://smoothieware.org)
 
 ## USB
@@ -47,7 +49,9 @@ This allows for pretty neat things like:
 - Dropping firmware upgrade files to the board for easy [flashing](http://smoothieware.org/flashing-smoothie-firmware)
 
 
+{::nomarkdown}
 <img src="images/usb-cable.png" alt="USB Cable" width=300><br/>
+{:/nomarkdown}
 See [USB](http://smoothieware.org/usb)
 
 ## Ethernet
@@ -58,7 +62,9 @@ You can then use different protocols to talk to the board:
 - HTTP to use web interfaces hosted on the board, or via using host software that supports this
 - Telnet to send commands via a serial interface, or via using host software that supports this
 
+{::nomarkdown}
 <img src="images/ethernet-cable.png" alt="Ethernet Cable"><br/>
+{:/nomarkdown}
 See [Network](http://smoothieware.org/network)
 
 ## SD Card
@@ -66,16 +72,18 @@ See [Network](http://smoothieware.org/network)
 The board comes with a SD card slot containing a 2GB card.
 
 The card is used for:
-- The [configuration file](configuring-smoothie.md) that the firmware reads at boot time to set up everything
-- The [firmware file](flashing-smoothie-firmware.md), which you can replace to upgrade the firmware
-- A [boot gcode file](player.md) that is executed when the board starts
-- [Web interfaces](install-web-interface.md) for access via the [ethernet interface](network.md)
+- The [configuration file](configuring-smoothie) that the firmware reads at boot time to set up everything
+- The [firmware file](flashing-smoothie-firmware), which you can replace to upgrade the firmware
+- A [boot gcode file](player) that is executed when the board starts
+- [Web interfaces](install-web-interface) for access via the [ethernet interface](network)
 - A bundle of software and documentation we prepared for you for those days when you don't have Internet access
 
-You can also add Gcode files to it and then [play them from the SD card](player.md), which is useful for files so dense that streaming them to the board isn't convenient.
+You can also add Gcode files to it and then [play them from the SD card](player), which is useful for files so dense that streaming them to the board isn't convenient.
 
+{::nomarkdown}
 <img src="images/sd-card.png" alt="SD Card"><br/>
-See [SD Card](sd-card.md)
+{:/nomarkdown}
+See [SD Card](sd-card)
 
 ## Stepper Motor Drivers
 
@@ -92,7 +100,7 @@ The drivers on the v1 board are [A5984](https://www.allegromicro.com/en/search?q
 
 The Smoothieboard 3X has 3 drivers, the 4X has 4 drivers, and the 5X has 5 drivers, thus their names.
 
-See [Current Control](currentcontrol.md).
+See [Current Control](currentcontrol).
 
 ![Stepper Motor Driver](images/tssop24.jpg)
 
@@ -110,28 +118,28 @@ Smoothieboard 3X has two small mosfets, Smoothieboard 4X has two small and two b
 
 This is more than you need, which is nice if you ever break one, and also means a Smoothieboard 4X can be used for dual extrusion just by adding an external stepper driver, and a Smoothieboard 5X can be used for triple extrusion the same way, because you already have extra thermistor inputs and mosfets.
 
-See [Mosfets](mosfets.md).
+See [Mosfets](mosfets).
 [Mosfet](images/mosfet.jpg)<br/>  
 
 ## Temperature Reading
 
 All v1 boards come with 4 temperature reading inputs.
 
-These can be used to read the resistance of thermistors in your hotend or heated bed, inferring from it its current temperature, and from this the [temperature control](temperature-control.md) module can regulate the temperature by choosing whether to heat it or not.
+These can be used to read the resistance of thermistors in your hotend or heated bed, inferring from it its current temperature, and from this the [temperature control](temperature-control) module can regulate the temperature by choosing whether to heat it or not.
 
 
-See [Temperature Control](temperature-control.md)<br/>
+See [Temperature Control](temperature-control)<br/>
 
 ![Temperature Reading](images/reactor-schematic.png)
 
 
 ## Endstops
 
-The board has 6 endstop inputs. These can be used for [limit switches](endstops.md) at the end of the axes, used to limit motion within the work area, or for homing to origin.
+The board has 6 endstop inputs. These can be used for [limit switches](endstops) at the end of the axes, used to limit motion within the work area, or for homing to origin.
 
-They can also be used to connect probes, for example for bed leveling or [automated machine calibration](zprobe.md).
+They can also be used to connect probes, for example for bed leveling or [automated machine calibration](zprobe).
 
-See [Endstops](endstops.md) and [Probes](zprobe.md).
+See [Endstops](endstops) and [Probes](zprobe).
 [Limit Switches](images/limit-switch.png)<br/>
 
 ## Power Inputs
@@ -140,9 +148,9 @@ Smoothieboard has a main power input that supports from 12 to 24V.
 
 Each mosfet pair must also be powered via its own, separate input, supporting from 12 to 24V.
 
-The board's logic power can be provided via USB, via the 5V power input, or by adding the [voltage regulator](voltageregulator.md) to the board. The board will automatically select the best power input amongst those you provide.
+The board's logic power can be provided via USB, via the 5V power input, or by adding the [voltage regulator](voltageregulator) to the board. The board will automatically select the best power input amongst those you provide.
 
-See [Main power input](main-power-input.md) and [Logic power](logic-power.md).
+See [Main power input](main-power-input) and [Logic power](logic-power).
 
 ![UPS](images/ups.png)
 
@@ -152,7 +160,7 @@ The board is designed to make it as easy as possible to add things to it.
 
 As such, most pins are broken out to connectors, and great care is taken to make sure extending the board is as easy as possible
 
-See [Pinout](pinout.md).
+See [Pinout](pinout).
 
 ![Smoothieboard Wiring](https://github.com/Bouni/smoothieboard-graphics/blob/master/smoothieboard-wiring.png?raw=true)
 

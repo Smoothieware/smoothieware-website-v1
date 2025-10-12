@@ -126,6 +126,53 @@ jekyll serve --source docs --baseurl ""
 # View at http://localhost:4000
 ```
 
+**Docker-based Local Development:**
+
+The project includes `serve-local.sh` which runs Jekyll in a Docker container:
+
+```bash
+# Start Jekyll server in Docker
+./serve-local.sh
+
+# Server runs on http://localhost:4000
+```
+
+**IMPORTANT: Restarting the Server for Configuration Changes**
+
+Jekyll automatically reloads when content files (`.md`) change, but **does NOT reload when `_config.yml` is modified**. After changing configuration, themes, or other `_config.yml` settings, you MUST restart the server:
+
+**If using Docker (serve-local.sh):**
+```bash
+# Find the container ID
+docker ps
+
+# Restart the container
+docker restart <container-id>
+
+# Or stop and restart fresh
+docker stop <container-id>
+./serve-local.sh
+```
+
+**If using local Jekyll:**
+```bash
+# Stop server (Ctrl+C)
+# Restart with:
+jekyll serve --source docs --baseurl ""
+```
+
+**Changes that require restart:**
+- Modifying `_config.yml` (theme, baseurl, plugins, etc.)
+- Adding new plugins
+- Changing Jekyll configuration
+- Modifying site-wide settings
+
+**Changes that auto-reload (no restart needed):**
+- Editing content files (`.md`)
+- Modifying CSS in `docs/assets/`
+- Adding/changing images
+- Updating HTML in `_layouts/` or `_includes/`
+
 ### Adding New Content
 
 **New Documentation Page:**

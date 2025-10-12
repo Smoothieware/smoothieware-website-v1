@@ -2,9 +2,11 @@
 > [!SUCCESS]
 > **General advice when asking for help**
 >
+{::nomarkdown}
 ><img src="https://www.netanimations.net/animated-roped-off-construction-barracades.gif" alt="Animated Flashing Construction Barricade">
+{:/nomarkdown}
 >
-> - **Please read the [Troubleshooting](troubleshooting.md) section** before you ask for help, in case your question is answered there.
+> - **Please read the [Troubleshooting](troubleshooting) section** before you ask for help, in case your question is answered there.
 > - A lot of questions have already been asked in the past. It might be worth it searching the forum for an answer to your question. The wiki may also have the answer you are searching for, you can use the [search function](http://smoothieware.org/search) here and on the forum.
 > - Please mention your board type, OS, machine type, and any other useful information.
 > - If you are using a MKS or an AZSMZ board, **please** note that those boards are toxic to the community and project. As such, **we respectfully request** that you first contact the seller for help before asking in the forum or anywhere else in the community. Community members generally do not want to help companies that hurt the project we are all building. Please read [this](http://smoothieware.org/troubleshooting#somebody-refused-to-help-me-because-my-board-is-a-mks-what-s-that-all-about.md) before posting.

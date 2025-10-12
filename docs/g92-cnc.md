@@ -1,10 +1,12 @@
+{::nomarkdown}
 <img src="images/Missing.png" alt="G92 - Set Offset" class="pull-right" width="200" height="200">
+{:/nomarkdown}
 
 ## G92 G-code
 
 G92 means "set an offset in all coordinate systems".
 
-The machine coordinates are the position of the machine relative to the point at which the [endstops](endstops.md) are hit.
+The machine coordinates are the position of the machine relative to the point at which the [endstops](endstops) are hit.
 
 This is by opposition to the workspace coordinates, which are the coordinates you use to position a job you want to do.
 
@@ -43,7 +45,7 @@ Which means: set a global offset of 10 in the X axis and 10 in the Y axis.
 
 ### Friend Gcodes
 
-The [`G92.1`](g92-1.md) Gcode is used to reset the offsets.
+The [`G92.1`](g92-1) Gcode is used to reset the offsets.
 
 ### Further reading
 

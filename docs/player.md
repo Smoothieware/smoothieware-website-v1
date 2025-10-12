@@ -44,7 +44,7 @@ play /sd/gcodefile.gcode -v
 > 
 > Unlike Pronterface it won't give you a method to pass commands anyway.
 > 
-> You can possibly use the [M24](supported-g-codes.md) G-code instead.
+> You can possibly use the [M24](supported-g-codes) G-code instead.
 
 ### `progress`
 

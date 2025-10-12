@@ -7,11 +7,11 @@ Smoothie uses USB-B
 
 # Unboxing
 
-Your Smoothieboard comes with a micro [SD card](sd-card.md) in the microSD slot.
+Your Smoothieboard comes with a micro [SD card](sd-card) in the microSD slot.
 
 The boards come pre-flashed. With a basic configuration file installed on the SD card, no preparation is needed before you can connect Smoothieboard to your computer and start interacting with it.
 
-The first thing you might want to do before you start connecting your board is to look at our list of [Software](software.md), and install a "host" program to talk to the board.
+The first thing you might want to do before you start connecting your board is to look at our list of [Software](software), and install a "host" program to talk to the board.
 
 > [!WARNING]
 > Don't have a Smoothieboard? If you don't have a Smoothieboard but have or consider purchasing an MKS board, please make sure you read [What's wrong with MKS](http://smoothieware.org/troubleshooting#what-is-wrong-with-mks)
@@ -23,8 +23,10 @@ A good first step is to connect your board to your computer to familiarize yours
 <div class='panel panel-default wrap_right' style='width:340px;padding:10px '>
 <div class='panel-heading'><h4 class='panel-title'>SD card</h4></div>
 
+{::nomarkdown}
 <img src='images/smoothie-config-screencap.png' width='320px'><br/>
 
+{:/nomarkdown}
 Files on your Smoothieboard's SD card
 </div>
 
@@ -36,13 +38,13 @@ This allows you to add, copy, edit, or delete any file you'd like. Already prese
 > You can read more about configuring your Smoothieboard at [Configuring Smoothie](http://smoothieware.org/configuring-smoothie)
 
 > [!NOTE]
-> The SD card can also be used to flash a more recent version of the firmware to your board, while the pre-flashed firmware should work this is not always the case, see [where to get the binary file](getting-smoothie.md) and [how to flash it via the SD card](flashing-smoothie-firmware.md).
+> The SD card can also be used to flash a more recent version of the firmware to your board, while the pre-flashed firmware should work this is not always the case, see [where to get the binary file](getting-smoothie) and [how to flash it via the SD card](flashing-smoothie-firmware).
 > 
-> It can also be used to store and play [G-Code](http://en.wikipedia.org/wiki/G-code) files, see [Player](player.md).
+> It can also be used to store and play [G-Code](http://en.wikipedia.org/wiki/G-code) files, see [Player](player).
 
 USB Mass Storage is not the only thing you get when you connect the board. The board also exposes a [USB CDC](http://en.wikipedia.org/wiki/USB_communications_device_class) Serial interface, allowing you to send G-Code and receive answers. (There is also a DFU interface for flashing firmwares but that's mostly for developers).
 
-The CDC (Serial) interface is the interface host programs like [Pronterface](pronterface.md) use to allow you to interact with your machine. If you are already familiar with it, you can try connecting right now and get an answer from the board. If not, we explain it all later in this guide.
+The CDC (Serial) interface is the interface host programs like [Pronterface](pronterface) use to allow you to interact with your machine. If you are already familiar with it, you can try connecting right now and get an answer from the board. If not, we explain it all later in this guide.
 
 # Connecting via the network
 
@@ -58,7 +60,7 @@ This is the same kind of technology you would find on a network-connected 2D pri
 
 It allows you to access a web interface the board serves, and control the machine via your browser.
 
-It also allows you to connect some software that supports it (like [Pronterface](pronterface.md) and [Visicut](visicut.md)) to your Smoothieboard via the network.
+It also allows you to connect some software that supports it (like [Pronterface](pronterface) and [Visicut](visicut)) to your Smoothieboard via the network.
 
 Network is disabled by default but is very easy to enable and configure.
 

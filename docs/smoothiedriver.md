@@ -16,8 +16,8 @@ This image shows the board layout of the Smoothiedriver interface:
 
 You can download the eagle files for that image to check sizing here:
 
-- [SmoothieDriverPort.sch](smoothiedriver/smoothiedriverport.sch.md)
-- [SmoothieDriverPort.brd](smoothiedriver/smoothiedriverport.brd.md)
+- [SmoothieDriverPort.sch](smoothiedriver/smoothiedriverport.sch)
+- [SmoothieDriverPort.brd](smoothiedriver/smoothiedriverport.brd)
 
 ## Smoothiedriver Levels of Compliance
 
@@ -45,4 +45,4 @@ The first true Smoothiedriver will probably be the Smoothiedriver DC. It will be
 
 ## Status
 
-The first Smoothiedriver DC-2 prototype had firmware but it was using a different MCU than is currently being targeted so the firmware will have to be rewritten. On the bright side, [mbed](https://www.mbed.org) just went open source so now the same libraries can be used for both [Smoothieware](smoothieware.md) and [Smoothieware Mini](accessory.md)!
+The first Smoothiedriver DC-2 prototype had firmware but it was using a different MCU than is currently being targeted so the firmware will have to be rewritten. On the bright side, [mbed](https://www.mbed.org) just went open source so now the same libraries can be used for both [Smoothieware](smoothieware) and [Smoothieware Mini](accessory)!

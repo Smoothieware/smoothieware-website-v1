@@ -3,7 +3,7 @@
 
 In order for a Pull request to be accepted it must meet certain standards and guidelines.
 
-In addition to following the [Coding Standards](coding-standards.md), it is suggested the following be adopted:
+In addition to following the [Coding Standards](coding-standards), it is suggested the following be adopted:
 
 1. There must be a detailed description of the change, why it was added, what the use case is, and a link to the documentation to use it in the wiki if applicable.
 2. Only one feature per pull request; if you change multiple files with unrelated changes, it will be rejected.

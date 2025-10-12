@@ -1,5 +1,5 @@
 
-See [Endstops](endstops.md)
+See [Endstops](endstops)
 
 
 Conversion complete.
