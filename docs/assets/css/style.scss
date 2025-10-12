@@ -157,6 +157,31 @@ sl-menu-item::part(base):hover {
   width: 100%;
 }
 
+/* Deprecated menu items (e.g., Google+) */
+.menu-item-deprecated {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.menu-item-deprecated::part(base) {
+  color: #666 !important;
+}
+
+.menu-item-deprecated::part(base):hover {
+  background-color: transparent !important;
+  color: #666 !important;
+}
+
+.menu-item-deprecated .menu-link {
+  pointer-events: none;
+  color: #666;
+}
+
+.menu-item-deprecated .menu-icon {
+  opacity: 0.5;
+  filter: grayscale(100%);
+}
+
 /* Search form styling */
 .search-menu {
   min-width: 300px;
