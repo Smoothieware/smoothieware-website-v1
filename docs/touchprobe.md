@@ -1,22 +1,63 @@
+---
+layout: default
+title: Using the Touchprobe
+---
 
-# Using the touchprobe
+# Using the Touchprobe
 
-> [!NOTE]
-> This module is no longer supported, and is not compiled in. If someone fixes this let us know.
-> 
-> Left here for historical purposes....
+<sl-alert variant="warning" open>
+  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+  <strong>Deprecated Module:</strong> This module is no longer supported and is not compiled in by default. If someone fixes this, please let us know. This documentation is left here for historical purposes.
+</sl-alert>
 
-![Touchprobe Image](https://www.centroidcnc.com/centroid_diy/images/kp-1_green_bore.png)
+<sl-alert variant="primary" open>
+  <sl-icon slot="icon" name="lightbulb"></sl-icon>
+  <strong>Alternative:</strong> For modern probing functionality, see the <a href="zprobe">ZProbe module</a> which is actively maintained and supports more features.
+</sl-alert>
 
-Currently, the only operation regarding touchprobes supported by Smoothie is `G31`. `G31` works similarly to `G1` codes but stops if the probe is touched. Please note that coordinated moves are not supported. This means only moves along a single axis will work. Some examples:
+---
+
+## About Touchprobes
+
+{::nomarkdown}
+<div style="text-align: center;">
+  <a href="https://www.centroidcnc.com/centroid_diy/images/kp-1_green_bore.png">
+    <img src="https://www.centroidcnc.com/centroid_diy/images/kp-1_green_bore.png" alt="Touchprobe" style="min-width: 640px; width: 640px; max-width: 100%; height: auto; margin: 2rem 0;"/>
+  </a>
+  <p style="font-style: italic; margin-top: 0.5rem;">Example of a CNC touchprobe</p>
+</div>
+{:/nomarkdown}
+
+Currently, the only operation regarding touchprobes supported by this module is `G31`.
+
+`G31` works similarly to `G1` codes but stops if the probe is touched.
+
+**Important limitation:** Coordinated moves are not supported. This means only moves along a single axis will work.
+
+---
+
+## Basic Usage Examples
+
+### Simple Probe Move
 
 This will move to Z-10 and stop when a touch happens during that move:
+
 ```gcode
 G90
 G31 Z-10 F150
 ```
 
+- `G90` - Absolute positioning mode
+- `G31` - Probe move command
+- `Z-10` - Move to Z position -10
+- `F150` - Feed rate of 150 mm/min
+
+---
+
+### Two-Stage Probe (Fast then Slow)
+
 This will probe at a fast speed, retract, probe at a slow speed, and report the position:
+
 ```gcode
 G91
 G31 Z-10 F300
@@ -25,31 +66,75 @@ G31 Z-0.3 F50
 M114
 ```
 
-In addition to the `M114`, every touch is logged to a file (for more information see: [Using log files](#using-log-files))
+**What each line does:**
+- `G91` - Switch to relative positioning
+- `G31 Z-10 F300` - Fast probe down 10mm at 300 mm/min
+- `G0 Z0.2` - Retract 0.2mm
+- `G31 Z-0.3 F50` - Slow probe down 0.3mm at 50 mm/min
+- `M114` - Report current position
+
+In addition to the `M114` report, every touch is logged to a file if logging is enabled (see Configuration section below).
+
+---
 
 ## Configuration
 
-The touchprobe module has the following configuration values (the values here are the default):
+The touchprobe module has the following configuration values (the values shown are defaults):
 
-```ini
-touchprobe_enable                   false              # enables/disables the module the other config values are ignored if this is false
-touchprobe_log_enable               false              # should the touches be logged
+```gcode
+touchprobe_enable                   false              # enables/disables the module (other values ignored if false)
+touchprobe_log_enable               false              # should the touches be logged to file
 touchprobe_logfile_name             /sd/probe_log.csv  # location of the log file
-touchprobe_log_rotate_mcode         0                  # adds a spacer to the logfile if Mxxx is issued
+touchprobe_log_rotate_mcode         0                  # adds a spacer to logfile if Mxxx is issued
 touchprobe_pin                      nc                 # selects the pin where the probe is connected
-touchprobe_debounce_count           100                # reports a touch if the probe is active for this number of ticks (prevents false positives) 
+touchprobe_debounce_count           100                # reports touch if probe active for this many ticks (prevents false positives)
 ```
 
-## Using log files
+### Configuration Details
 
-The log file is an easy way to create point clouds of the probed objects. Due to bugs in mbed, the log file isn't created automatically, so you have to create it first and restart Smoothie in order to update the file-handle properly. You should also properly unmount (safely remove) the SD card before logging. This is because the file-system is dual-mounted: by your operating system and by Smoothie. As a consequence, desynchronization is possible. If you forget this, try to remount the SD card afterward; most of the time, no data loss will happen.
+| Parameter | Description |
+| --------- | ----------- |
+| `touchprobe_enable` | Must be set to `true` to use the module |
+| `touchprobe_log_enable` | Set to `true` to log all probe touches |
+| `touchprobe_logfile_name` | Path to log file (must be on SD card) |
+| `touchprobe_log_rotate_mcode` | M-code number to insert spacer in log |
+| `touchprobe_pin` | Input pin for probe signal |
+| `touchprobe_debounce_count` | Higher values = more noise resistance but slower response |
 
-### Convert to a Stanford PLY file
+---
 
-It's very easy to convert the logfile to a PLY file, which is supported by most point cloud applications. Note this only works if there are no spacers in the file, that are generated by the "log-rotation" M-code.
+## Using Log Files
 
-1. Find out how many points have been logged (*nix users can use `wc -l` for that).
-2. Append the following header:
+The log file is an easy way to create point clouds of the probed objects.
+
+<sl-alert variant="warning" open>
+  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+  <strong>Important Setup Steps:</strong>
+  <ul>
+    <li>Due to bugs in mbed, the log file isn't created automatically</li>
+    <li>You must create the file first and restart Smoothie to update the file-handle properly</li>
+    <li>Properly unmount (safely remove) the SD card before logging</li>
+    <li>The file-system is dual-mounted by your OS and Smoothie, which can cause desynchronization</li>
+  </ul>
+</sl-alert>
+
+If you forget to safely remove the SD card, try to remount it afterward. Most of the time, no data loss will happen.
+
+---
+
+### Convert to Stanford PLY File
+
+It's very easy to convert the logfile to a PLY file, which is supported by most point cloud applications.
+
+**Note:** This only works if there are no spacers in the file that are generated by the "log-rotation" M-code.
+
+#### Conversion Steps
+
+1. **Count the points** - Find out how many points have been logged
+   - On Linux/Mac: Use `wc -l filename.csv`
+   - On Windows: Open in a text editor and check line count
+
+2. **Create the PLY header:**
    ```ply
    ply
    format ascii 1.0
@@ -62,17 +147,64 @@ It's very easy to convert the logfile to a PLY file, which is supported by most 
    property list uchar int vertex_indices
    end_header
    ```
-3. Replace 'xxxxxxxx' with the number you found in step 1.
-4. You're done.
 
-## Finding the center of round objects
+3. **Replace `xxxxxxxx`** with the number you found in step 1
 
-1. Probe along the Y-axis for P1 and P2.
-2. Calculate the center between them: 
-   $$P3=(P1.x, P1.y + \frac{(P2.y-P1.y)}{2})$$
-3. Probe along the X-axis for P4 and P5, make sure the Y-axis is at P3.y.
-4. Calculate the center between them: 
-   $$M=(P4.x+\frac{(P5.x-P4.x)}{2},P3.y)$$
-5. M is the center.
+4. **Prepend the header** to your log file data
 
-![Midpoint Image](images/midpoint.png)
+5. **Save with .ply extension**
+
+6. **You're done!** Open in any point cloud viewer
+
+---
+
+## Finding the Center of Round Objects
+
+A common CNC task is finding the center of circular holes or bosses.
+
+### Method
+
+{::nomarkdown}
+<div style="text-align: center;">
+  <a href="images/midpoint.png">
+    <img src="images/midpoint.png" alt="Finding center of round objects" style="min-width: 640px; width: 640px; max-width: 100%; height: auto; margin: 2rem 0;"/>
+  </a>
+  <p style="font-style: italic; margin-top: 0.5rem;">Diagram showing probe points for finding center</p>
+</div>
+{:/nomarkdown}
+
+### Steps
+
+1. **Probe along the Y-axis** for P1 and P2 (opposite sides)
+
+2. **Calculate the center between them:**
+
+   P3 = (P1.x, P1.y + (P2.y - P1.y) / 2)
+
+3. **Probe along the X-axis** for P4 and P5
+   - Make sure the Y-axis is positioned at P3.y
+
+4. **Calculate the center between them:**
+
+   M = (P4.x + (P5.x - P4.x) / 2, P3.y)
+
+5. **M is the center** of the round object
+
+---
+
+## Alternatives
+
+Since this module is deprecated, consider using:
+
+- [ZProbe module](zprobe) - Modern, actively maintained probing system
+- [G30 command](g30) - Built-in probing command
+- [Leveling strategies](leveling-strategy) - For bed leveling and surface mapping
+
+---
+
+## Further Reading
+
+- [ZProbe module documentation](zprobe)
+- [G30 G-code documentation](g30)
+- [Supported G-codes](supported-g-codes)
+- [Endstops configuration](endstops)

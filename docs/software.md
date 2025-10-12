@@ -54,8 +54,7 @@ All software below either knows how to interface with (or how to generate g-code
 
 - [This plugin](https://github.com/tapnair/UGS_Fusion) for Fusion360 allows you to start your Gcode files from within Fusion360 directly using Universal Gcode Sender (skipping the step of first saving the file in Fusion360, then opening it in Universal Gcode Sender)
 
-> [!NOTE]
-> A few words you will see in this documentation that require a bit of explanation:
-> - **Host** software is software that is used to "talk" to your Smoothieboard. It allows you to control the machine (for example "jog" the axes), to "stream" a G-code job, or to upload it to the SD card, things like that.
-> - **Slicing** software is software that is used to take a 3D model file, and based on some settings you input, "slice" it into layers, and generate a G-code file that the Smoothieboard can then execute to print a thing.
-> - **CAM** software, or **CAM Package**, for Computer Assisted Manufacturing, is software that is used to take a 3D or 3D file, and based on some settings you input, transform it into a list of tool movements (G-code file) for a machine that uses a tool to remove material from a workpiece.
+<sl-alert variant="neutral" open>
+  <sl-icon slot="icon" name="info-circle"></sl-icon>
+  A few words you will see in this documentation that require a bit of explanation: - <strong>Host</strong> software is software that is used to "talk" to your Smoothieboard.<br><br>It allows you to control the machine (for example "jog" the axes), to "stream" a G-code job, or to upload it to the SD card, things like that.<br><br>- <strong>Slicing</strong> software is software that is used to take a 3D model file, and based on some settings you input, "slice" it into layers, and generate a G-code file that the Smoothieboard can then execute to print a thing.<br><br>- <strong>CAM</strong> software, or <strong>CAM Package</strong>, for Computer Assisted Manufacturing, is software that is used to take a 3D or 3D file, and based on some settings you input, transform it into a list of tool movements (G-code file) for a machine that uses a tool to remove material from a workpiece.
+</sl-alert>

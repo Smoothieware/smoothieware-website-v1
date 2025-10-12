@@ -3,14 +3,16 @@
 
 If you are a GRBL user moving to a Smoothie system, you might have an existing configuration you want to port over.
 
-> [!WARNING]
-> Please note it is imperative you read the whole documentation before using Smoothie. Skipping this step **will** almost certainly result in damage and danger.
->
-> Again, read the whole documentation, do not only rely on this guide.
+{::nomarkdown}
+<sl-alert variant="warning" open>
+  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+  <strong>Read the Documentation First!</strong> Please note it is imperative you read the whole documentation before using Smoothie. Skipping this step <strong>will</strong> almost certainly result in damage and danger.
+  <br><br>
+  Again, read the whole documentation, do not only rely on this guide.
+</sl-alert>
+{:/nomarkdown}
 
 Assuming you have read the documentation (again: do it, do not skip the documentation), this page is aimed at helping you understand what GRBL options correspond to what Smoothie options.
-
-This guide follows the general structure of the [original GRBL documentation](https://github.com/grbl/grbl/wiki/Configuring-Grbl-v0.9)
 
 This assumes you start from the [default configuration file](configuring-smoothie).
 

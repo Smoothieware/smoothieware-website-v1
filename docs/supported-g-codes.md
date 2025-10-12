@@ -1,14 +1,18 @@
 
 # Supported G-Codes
 
-Smoothie is primarily a [G-code](http://en.wikipedia.org/wiki/G-code) interpreter. Here is a list of the G-codes that are currently supported:
+Smoothie is primarily a [G-code](http://en.wikipedia.org/wiki/G-code) interpreter.
 
-> [!NOTE]
-> Make sure your Gcode is in uppercase, separation by space characters is optional, as shown everywhere on this wiki. For example:
-> 
-> `G1 X10 F100`
-> 
-> Lowercase is reserved for commands.
+Here is a list of the G-codes that are currently supported:
+
+<sl-alert variant="neutral" open>
+  <sl-icon slot="icon" name="info-circle"></sl-icon>
+  Make sure your Gcode is in uppercase, separation by space characters is optional, as shown everywhere on this wiki. For example:<br><br>
+
+  <code>G1 X10 F100</code><br><br>
+
+  Lowercase is reserved for commands.
+</sl-alert>
 
 ## G codes
 
@@ -40,7 +44,7 @@ Smoothie is primarily a [G-code](http://en.wikipedia.org/wiki/G-code) interprete
 | G31 | Depends on levelling strategy selected, see [ZProbe](zprobe)  | `G31` |
 | G32 | Depends on levelling strategy selected, see [ZProbe](zprobe). For calibration on delta, uses Z probe to calibrate delta endstops and arm radius, use R parameter to select only arm radius calibration and E to select only endstop calibration. I to set target precision, J to set probe_radius, K to keep current endstop trim settings.  In Zgrid module, it starts the grid probing | `G32` `G32 R` `G32 E` `G32 EK` `G32 I0.02` |
 | G38.2 G38.3 G38.4 G38.5 | Standard probe commands implemented as documented [here](http://linuxcnc.org/docs/2.6/html/gcode/gcode.html#sec:G38-probe) | `'G38.2 Z-10'`|
-| G43.2 | [Baby steps](http://smoothieware.org/motion-control#adjusting-z-once-printing-starts-sometimes-called-babysteps) | `G43.2 Z0.05` |
+| G43.2 | [Baby steps](motion-control#adjusting-z-once-printing-starts-sometimes-called-babysteps) | `G43.2 Z0.05` |
 | G53 | Must be on a line by itself OR the first G code on a line, the directly following G0/G1 will be executed in MCS coordinates | `G53 G0 X0 Y0` |
 | [G54](g54)-G59.3 | use workspace coordinates [LinuxCNC G54-G59.3](http://linuxcnc.org/docs/html/gcode/coordinates.html) and [LinuxCNC G54-G59.3](http://linuxcnc.org/docs/html/gcode/g-code.html#gcode:g54-g59.3) | `G54` |
 | [G90](g90) | Absolute mode (default) (command is modal)| `G90` |
@@ -49,12 +53,15 @@ Smoothie is primarily a [G-code](http://en.wikipedia.org/wiki/G-code) interprete
 | G92.1 | Clear the G92 and G30 Znnn offsets | `G92.1`|
 | G92.4 | manually set homing (MCS) for XYZ  | `G92.4 X0 Y0 Z0`|
 
-> [!WARNING]
-> G Code comments begin at a semicolon, and end at the end of the line:
-> Example:
-> ```
-> G0 X7 Y8 ;this is the comment
-> ```
+<sl-alert variant="warning" open>
+  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+  <strong>G Code comments</strong><br><br>
+
+  G Code comments begin at a semicolon, and end at the end of the line.<br><br>
+
+  Example:<br>
+  <code>G0 X7 Y8 ;this is the comment</code>
+</sl-alert>
 
 ## Additional Codes
 The Smoothieware configuration file permits the association of additional codes with some tool functions.  For example, for a [Switch module](switch), you can specify an arbitrary command in the 'input_on_command' and 'input_off_command'.  This means that some additional codes may be available, depending on your specific configuration file.
@@ -74,12 +81,16 @@ Additionally, in your configuration, you can assign sub-commands to deal with mu
 | M280.2 | Move your second servo | |
 
 ## Tool change
-Tn will change the tool to n for all future commands, it may appear anywhere on the line or on a line by itself
+
+Tn will change the tool to n for all future commands, it may appear anywhere on the line or on a line by itself:
+
 `T1 M200`
+
 `M200 T1`
 
 **NOTE** This is not compatible with the G-code spec, but unfortunately most slicers create incorrect Gcode for tool change.
 
-> [!WARNING]
-> Note in smoothie there must be a space in front of a line that is affected by a modal G code.
-> Some G code processors like HeeksCNC don't prefix the space neither do they prefix each line with the modal G code.
+<sl-alert variant="warning" open>
+  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+  <strong>Important:</strong> In smoothie there must be a space in front of a line that is affected by a modal G code. Some G code processors like HeeksCNC don't prefix the space neither do they prefix each line with the modal G code.
+</sl-alert>

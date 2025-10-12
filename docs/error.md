@@ -1,5 +1,11 @@
-
 # List of Smoothie Firmware Errors
+
+When Smoothie encounters a problem, it will report an error number to help you diagnose and fix the issue.
+
+This page lists all possible error codes, their causes, solutions, and any associated parameters.
+
+
+## Error Reference
 
 | Error Number | Cause | Solution | Parameters |
 | ------------ | ----- | -------- | ---------- |

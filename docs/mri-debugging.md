@@ -1,12 +1,30 @@
 
+---
+layout: default
+title: Debugging with MRI
+---
+
 # Debugging with MRI
 
-> [!NOTE]
-> If Smoothie crashes, or you manually tell it to, it can go into a special mode (MRI), where if you use a serial cable to connect to its hardware serial port (UART0), you can use GDB to connect to it, and step through the code, add breakpoints, print values, and more generally debug the code. This is a feature that would otherwise require an expensive JTAG adapter.
+{::nomarkdown}
+<sl-alert variant="neutral" open>
+  <sl-icon slot="icon" name="info-circle"></sl-icon>
+  If Smoothie crashes, or you manually tell it to, it can go into a special mode (MRI), where if you use a serial cable to connect to its hardware serial port (UART0), you can use GDB to connect to it, and step through the code, add breakpoints, print values, and more generally debug the code. This is a feature that would otherwise require an expensive JTAG adapter.
+</sl-alert>
+{:/nomarkdown}
 
 If you are using a JTAG debugger with your Smoothie project, you can scroll down to the sections which discuss mini and full dumps since those are applicable to JTAG debugging as well.
 
-Smoothie contains the Monitor for Remote Inspection, MRI, a debug monitor for the NXP LPC1768 device. This monitor allows the GNU Debugger, GDB, to be connected to the device when a hard fault occurs. It can also be configured to break on start and then used to step through any desired Smoothie source code but this isn't the default configuration in the Smoothie project where it is primarily used for crash analysis.
+---
+
+## What is MRI?
+
+Smoothie contains the Monitor for Remote Inspection, MRI, a debug monitor for the NXP LPC1768 device.
+
+This monitor allows the GNU Debugger, GDB, to be connected to the device when a hard fault occurs.
+
+It can also be configured to break on start and then used to step through any desired Smoothie source code but this isn't the default configuration in the Smoothie project where it is primarily used for crash analysis.
+
 
 ## Indication of Crash
 
@@ -16,7 +34,9 @@ When Smoothie crashes and MRI takes over control of the device, you will see thi
 $T0b0c:20430010;0d:e07c0010;0e:a1960000;0f:58410010;
 ```
 
-This line is MRI attempting to tell GDB that Smoothie has stopped for some reason. If an unexpected exception was thrown to cause the crash then you will see something like this before the $T packet.
+This line is MRI attempting to tell GDB that Smoothie has stopped for some reason.
+
+If an unexpected exception was thrown to cause the crash then you will see something like this before the $T packet.
 
 ```
 **Hard Fault**
@@ -35,21 +55,33 @@ But sometimes you want to put Smoothie into MRI mode to poke around in its brain
 
 If you want to do that, you have two ways to cause Smoothie to enter MRI mode:
 
-- Press the `ISP` button next to the `Reset` button
-- Send the `break` command over any serial interface (UART, USB/Serial, or Telnet)
+- **Press the ISP button** next to the Reset button on your Smoothieboard
+- **Send the break command** over any serial interface (UART, USB/Serial, or Telnet)
+
+---
 
 ## Connecting GDB to MRI
 
 GDB should have been installed along with the GCC compiler and other GNU tools used to build the Smoothie source code.
 
-Note that you need to compile Smoothie yourself before you can do any debugging, please see [compiling-smoothie](compiling-smoothie)
+Note that you need to compile Smoothie yourself before you can do any debugging, please see [compiling-smoothie](compiling-smoothie).
 
-From a Terminal or Command Prompt that is able to build Smoothie, you should be able to set the current directory to the root of the Smoothie project which contains main.bin, main.elf, etc and run one of the following commands to launch GDB. The main difference between the OS's is the type of name used for the serial port. You should use the same serial port name and baud rate when launching GDB as you used for the Terminal application in which you saw the $T packet. **Please note:** You must first disconnect your terminal application from Smoothie before attempting to connect GDB to MRI.
+From a Terminal or Command Prompt that is able to build Smoothie, you should be able to set the current directory to the root of the Smoothie project which contains main.bin, main.elf, etc and run one of the following commands to launch GDB.
+
+The main difference between the OS's is the type of name used for the serial port.
+
+You should use the same serial port name and baud rate when launching GDB as you used for the Terminal application in which you saw the $T packet.
+
+**Please note:** You must first disconnect your terminal application from Smoothie before attempting to connect GDB to MRI.
 
 In these following examples, we will assume that you are in the root directory of the Smoothie source tree and that your .ELF file is therefore located in the LPC1768/ subdirectory.
 
-> [!WARNING]
-> You need to connect a USB/UART adapter cable to the UART (Serial) 6-pin connector on the Smoothieboard (next to the USB connector, close to the endstops). And then use that connection to talk to MRI. **You cannot talk to MRI over the USB cable**
+{::nomarkdown}
+<sl-alert variant="warning" open>
+  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+  <strong>Important:</strong> You need to connect a USB/UART adapter cable to the UART (Serial) 6-pin connector on the Smoothieboard (next to the USB connector, close to the endstops). And then use that connection to talk to MRI. <strong>You cannot talk to MRI over the USB cable</strong>.
+</sl-alert>
+{:/nomarkdown}
 
 ### Windows
 
@@ -187,16 +219,17 @@ And reduce the base stepping frequency:
 base_stepping_frequency 50000 # Base frequency for stepping
 ```
 
-> [!NOTE]
-> You can add your module excludes in the `src/default_excludes.mk` file. Because it is not saved by git, it is useful for development as you can delete it once you are done, and you do not risk committing a modified makefile with your code.
->
-> For example, you can add this to it:
->
-> ```
-> export CNC=1
-> export NONETWORK=1
-> export EXCLUDE_MODULES = tools/laser tools/filamentdetector tools/scaracal tools/temperaturecontrol tools/extruder tools/zprobe tools/endstops
-> ```
+{::nomarkdown}
+<sl-alert variant="primary" open>
+  <sl-icon slot="icon" name="lightbulb"></sl-icon>
+  <strong>Tip:</strong> You can add your module excludes in the <code>src/default_excludes.mk</code> file. Because it is not saved by git, it is useful for development as you can delete it once you are done, and you do not risk committing a modified makefile with your code.
+  <br/><br/>
+  For example, you can add this to it:
+  <pre>export CNC=1
+export NONETWORK=1
+export EXCLUDE_MODULES = tools/laser tools/filamentdetector tools/scaracal tools/temperaturecontrol tools/extruder tools/zprobe tools/endstops</pre>
+</sl-alert>
+{:/nomarkdown}
 
 ## More documentation
 

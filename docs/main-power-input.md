@@ -1,7 +1,9 @@
 
 # Main Power Input
 
-Without power, your board can not do much. The board uses power to operate the control logic and to move stepper motors, and power heating elements, fans, and others.
+Without power, your board can not do much.
+
+The board uses power to operate the control logic and to move stepper motors, and power heating elements, fans, and others.
 
 ## How to choose a power supply unit (PSU)
 
@@ -48,29 +50,55 @@ Once the wires connected to the PSU, make sure none of your computers is doing s
 
 If you are new to wiring, please check our [how to wire guide](how-to-wire).
 
-> [!DANGER]
-> **[NEVER](http://1.media.collegehumor.cvcdn.com/60/74/db2c0a0e1cbfdbe1eecf50a0289884d3-free-key-cleaner.jpg)** manipulate mains (220/110V) power wires while they are plugged into the wall plug. Unpleasantness and/or death are common consequences of not respecting this rule.
+<sl-alert variant="danger" open>
+  <sl-icon slot="icon" name="exclamation-octagon"></sl-icon>
+  <strong>NEVER Manipulate Live Wires</strong>
+  <br><br>
+  <strong><a href="http://1.media.collegehumor.cvcdn.com/60/74/db2c0a0e1cbfdbe1eecf50a0289884d3-free-key-cleaner.jpg">NEVER</a></strong> manipulate mains (220/110V) power wires while they are plugged into the wall plug.
+  <br><br>
+  Unpleasantness and/or death are common consequences of not respecting this rule.
+</sl-alert>
 
-> [!DANGER]
-> Ground your printer's frame by connecting it to the Earth terminal on your power supply. In the (unlikely) event that a power supply wire comes undone and touches the printer's frame, this will prevent you from getting an unpleasant and/or deadly shock.
+<sl-alert variant="danger" open>
+  <sl-icon slot="icon" name="exclamation-octagon"></sl-icon>
+  <strong>Ground Your Machine</strong>
+  <br><br>
+  Ground your printer's frame by connecting it to the Earth terminal on your power supply.
+  <br><br>
+  In the (unlikely) event that a power supply wire comes undone and touches the printer's frame, this will prevent you from getting an unpleasant and/or deadly shock.
+</sl-alert>
 
 Now that the PSU is getting mains power, your PSU is converting it into 12V or 24V DC (Direct Current) power. You need to connect wires from it to the Smoothieboard to provide power.
 
 The most important thing for DC is to respect polarity: **+** goes to **+**, **-** goes to **-**. On the PSU, **+** terminals are indicated as **+**, **V+**, **12V+** or **24V+**. Ground (**-**) terminals are indicated as **-**, **V-**, **COM** or **GND**.
 
 On the Smoothieboard they are indicated simply as **+** and **-**.
-{::nomarkdown}
-<img src="https://github.com/Bouni/smoothieboard-graphics/blob/master/smoothieboard-power.png?raw=true" alt="Smoothieboard Power Connections">
 
+{::nomarkdown}
+<div style="text-align: center; margin: 2rem 0;">
+  <a href="https://github.com/Bouni/smoothieboard-graphics/blob/master/smoothieboard-power.png?raw=true">
+    <img src="https://github.com/Bouni/smoothieboard-graphics/blob/master/smoothieboard-power.png?raw=true" alt="Smoothieboard Power Connections" style="min-width: 640px; max-width: 100%;">
+  </a>
+  <p><em>Smoothieboard power connection diagram</em></p>
+</div>
 {:/nomarkdown}
+
 By convention, black (sometimes brown) wires are used for ground, and red (sometimes orange, white or yellow) wires are used for power connections.
 
 You may want to turn on the power supplies and test the output voltages before connecting them to the Smoothieboard (and turn them back off before connecting).
 
 Once the wires are correctly connected, you can turn the PSU ON. If everything was done correctly, the red LED (marked **VBB**) on the Smoothieboard will light up brightly.
 
-> [!WARNING]
-> If the **VBB** LED does not light up, immediately turn the PSU off. Check polarity, and check all the connections are strong and properly done. When you turn the PSU on, make sure you are ready to immediately turn it back off.
+<sl-alert variant="warning" open>
+  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+  <strong>LED Not Lighting Up</strong>
+  <br><br>
+  If the <strong>VBB</strong> LED does not light up, immediately turn the PSU off.
+  <br><br>
+  Check polarity, and check all the connections are strong and properly done.
+  <br><br>
+  When you turn the PSU on, make sure you are ready to immediately turn it back off.
+</sl-alert>
 
 Now that the board has power, you can use that power to move things!
 

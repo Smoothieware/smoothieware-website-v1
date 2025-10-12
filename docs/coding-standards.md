@@ -1,4 +1,3 @@
-
 # Coding Standards
 
 Lots of people work together on Smoothie's code.
@@ -6,6 +5,7 @@ Lots of people work together on Smoothie's code.
 {% include_relative contributing.md %}
 
 In order to make everybody's life easier, and keep the codebase clean and manageable, here are a few rules you should follow when coding Smoothie stuff:
+
 
 ## Do not include other headers in a header file unless absolutely necessary to define something in that header
 
@@ -79,7 +79,11 @@ This is rarely needed and is only currently used by the makefile and main.cpp to
 - Four (4) spaces per indent, no tabs please.
 - Mostly follows linux bracket style [Linux Kernel Coding Style](http://astyle.sourceforge.net/astyle.html#_style=linux).
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/SsoOG6ZeyUI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+{::nomarkdown}
+<div style="text-align: center; margin: 2rem 0;">
+  <iframe width="640" height="360" src="https://www.youtube.com/embed/SsoOG6ZeyUI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+{:/nomarkdown}
 
 ## Must compile cleanly
 
@@ -87,15 +91,26 @@ Your contributed code must compile cleanly with no warnings.
 
 ## Test your code!!
 
-This is really important. If you make changes to existing code make sure it is thoroughly tested before issuing a pull request.
+This is really important.
+
+If you make changes to existing code make sure it is thoroughly tested before issuing a pull request.
+
 If it is a new feature it should be tested as well as possible, or request testing by pointing to your branch in your repo.
 
 ## Keep pull requests small
 
-Only one feature or bug fix or refactor should go into a specific pull request, it is very hard to scan a huge pull request and to test it, so keep the changes small and testable. Please follow git flow practices where possible.
+Only one feature or bug fix or refactor should go into a specific pull request, it is very hard to scan a huge pull request and to test it, so keep the changes small and testable.
+
+Please follow git flow practices where possible.
+
 Branches should be called feature/feature-name or fix/fix-name, and only contain changes relevant to that feature or fix.
+
 If other changes need to be made that are not directly related to this change but this change relies on them then it should be noted in the pull request that it depends on pull request #xxxx.
 
 ## Do not use blocking wait loops
 
-There must not be any blocking wait loops in the code, there is no RTOS here so a blocking wait loop stops everything from running, and if long enough will trigger the watchdog timer. In the case of needing to wait for several milliseconds you can use the `safe_delay_ms` or `safe_delay_us` function call, which will call on_idle() to keep things going. However, note this is not an accurate delay. For accurate timing, an interrupt timer must be used.
+There must not be any blocking wait loops in the code, there is no RTOS here so a blocking wait loop stops everything from running, and if long enough will trigger the watchdog timer.
+
+In the case of needing to wait for several milliseconds you can use the `safe_delay_ms` or `safe_delay_us` function call, which will call on_idle() to keep things going.
+
+However, note this is not an accurate delay. For accurate timing, an interrupt timer must be used.

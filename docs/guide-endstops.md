@@ -1,46 +1,64 @@
 {::nomarkdown}
-<img src="images/limit-switch.png" alt="Guide-End Stops">
-
+<a href="images/limit-switch.png">
+  <img src="images/limit-switch.png" alt="Guide-End Stops" width="200" height="200" style="float: right; margin-left: 1rem;"/>
+</a>
 {:/nomarkdown}
-*It's essentially just a switch*
 
 # Endstops
 
-End-stops are small interrupters that you put at the end of each of your axes. When you boot your machine up, Smoothie has no way of knowing the position of each axis. When it starts a print, Smoothie moves the axis until it touches that interrupter, and when it is hit, it declares that that is position **0** for that axis. And does so for all axes.
+*It's essentially just a switch*
 
-This allows Smoothie to then precisely know where everything is relative to that initial position. It is quite convenient as it saves you the hassle of actually moving the machine into that position when you want to start a print. Automation is great.
+End-stops are small interrupters that you put at the end of each of your axes.
+
+When you boot your machine up, Smoothie has no way of knowing the position of each axis.
+
+When it starts a print, Smoothie moves the axis until it touches that interrupter, and when it is hit, it declares that that is position **0** for that axis. And does so for all axes.
+
+This allows Smoothie to then precisely know where everything is relative to that initial position.
+
+It is quite convenient as it saves you the hassle of actually moving the machine into that position when you want to start a print. Automation is great.
 
 However, end-stops are not necessary, you could do without them. They are just so convenient that most machines use them.
 
 End-stops can also be used as limit switches which prevent the machine from attempting to move beyond the physical limits of the axis (by pausing/stopping movement when triggered), see the [Endstops page](endstops) for details about configuring Smoothie to use End Stops as limit switches.
 
-> [!NOTE]
-> To make things as simple as possible: In Smoothie, endstops do three things: 
-> * Homing (move til endstop is hit)
-> * Hard endstops (stop when endstop is hit, which is optional)
-> * Soft endstop (once homed, do not go further than a set position, which is also optional)
+<sl-alert variant="neutral" open>
+  <sl-icon slot="icon" name="info-circle"></sl-icon>
+  <strong>To make things as simple as possible:</strong> In Smoothie, endstops do three things:<br><br>
+  • Homing (move til endstop is hit)<br>
+  • Hard endstops (stop when endstop is hit, which is optional)<br>
+  • Soft endstop (once homed, do not go further than a set position, which is also optional)
+</sl-alert>
 
-> [!WARNING]
-> Smoothie does not allow you to use a zprobe as an endstop. An endstop must be dedicated to being an endstop and cannot be used as a zprobe and vice versa. This does not mean *ANY* kind of feature is missing, you can still do everything you expect, this is just a subtility in vocabulary and in how configuration is organized, that new users are generally fine with, *except* if they come from another system which has a different paradigm.
+<sl-alert variant="warning" open>
+  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+  Smoothie does not allow you to use a zprobe as an endstop. An endstop must be dedicated to being an endstop and cannot be used as a zprobe and vice versa.<br><br>
+  This does not mean <em>ANY</em> kind of feature is missing, you can still do everything you expect, this is just a subtility in vocabulary and in how configuration is organized, that new users are generally fine with, <em>except</em> if they come from another system which has a different paradigm.
+</sl-alert>
 
 {::nomarkdown}
-<img src="images/limit-switch.png" width="430px"><br/>
-
+<div style="text-align: center; margin: 2rem 0;">
+  <a href="images/limit-switch.png">
+    <img src="images/limit-switch.png" alt="Six endstops" width="430"/>
+  </a>
+  <p><em>There are 6 of them, two for each axis</em></p>
+</div>
 {:/nomarkdown}
-*There are 6 of them, two for each axis*
 
 ## Mechanical endstop wiring
 
-This will concentrate on the most common type of end-stops: the mechanical ones. Other types exist like optical or hall-o sensors.
+This will concentrate on the most common type of end-stops: the mechanical ones.
 
-> [!WARNING]
-> There are plenty of fun and futuristic endstop types around: optical, laser, magnetic, force-sensitive, infrared, inductive, etc...
-> 
-> However, please note that the general feedback from the community, is that most of those are either less precise, less repeatable, or much more difficult to get to "work right", compared to the classical "mechanical" endstop.
-> 
-> The mechanical endstop is actually likely the most precise, repeatable and easy to get to work option you have at your disposal. Just because these other options exist and have been explored by the community, does not mean they are better. 
-> 
-> You might happen have a good reason to use a fancy endstop, but if you don't, it's likely a good idea to stick with a mechanical one.
+Other types exist like optical or hall-o sensors.
+
+<sl-alert variant="warning" open>
+  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+  <strong>About Fancy Endstop Types</strong><br><br>
+  There are plenty of fun and futuristic endstop types around: optical, laser, magnetic, force-sensitive, infrared, inductive, etc...<br><br>
+  However, please note that the general feedback from the community, is that most of those are either less precise, less repeatable, or much more difficult to get to "work right", compared to the classical "mechanical" endstop.<br><br>
+  The mechanical endstop is actually likely the most precise, repeatable and easy to get to work option you have at your disposal. Just because these other options exist and have been explored by the community, does not mean they are better.<br><br>
+  You might happen have a good reason to use a fancy endstop, but if you don't, it's likely a good idea to stick with a mechanical one.
+</sl-alert>
 
 [Mechanical end-stops](http://reprap.org/wiki/Mechanical_Endstop) are simple interrupters: when not pressed, they do not let the current pass, when pressed, they let the current pass. By connecting a digital input pin on the Smoothieboard to the interrupter, and connecting the other side of the interrupter to Ground, the Smoothieboard can read whether or not it is connected to Ground, and therefore whether or not the end-stop is pressed.
 
@@ -50,17 +68,26 @@ Most mechanical end-stops have 3 connection points, to which you have to attach 
 * **NO**: Normally Open, meaning it is not connected to **C** when the interrupter is not pressed, and connected to **C** when the interrupter is pressed.
 * **NC**: Normally Closed, meaning it is connected to **C** when the interrupter is not pressed, and not connected to **C** when the interrupter is pressed.
 {::nomarkdown}
-<img src="images/end-stops.png" width="620px"><br/>
+<div style="text-align: center; margin: 2rem 0;">
+  <a href="images/end-stops.png">
+    <img src="images/end-stops.png" alt="Endstop wiring diagram" style="min-width: 640px; height: auto;"/>
+  </a>
+  <p><em>You want to connect the <strong>Signal</strong> (green in the schematic) and <strong>Ground</strong> (blue in the schematic) pins for the end-stop on the Smoothieboard, to the <strong>C</strong> and <strong>NC</strong> connection points on the end-stop.</em></p>
+</div>
 {:/nomarkdown}
-*You want to connect the **Signal** (green in the schematic) and **Ground** (blue in the schematic) pins for the end-stop on the Smoothieboard, to the **C** and **NC** connection points on the end-stop.*
 
-> [!NOTE]
-> For each endstop, we connect C to Signal and NC to Ground because this means the digital input pin (endstop connector) will be connected to Ground in its normal state and cut from Ground when the button is pressed. This approach is less prone to noise than the reverse. See [here](http://wot.lv/combating-endstop-noise-on-a-reprap.html) for more information.
-> 
-> Another positive effect of this approach is, that if a wire breaks for some reason you get the same signal as if the endstop is pressed. That makes sure that even with a damaged wire you are not able to overrun the endstop.
+<sl-alert variant="neutral" open>
+  <sl-icon slot="icon" name="info-circle"></sl-icon>
+  <strong>Why C to Signal and NC to Ground?</strong><br><br>
+  For each endstop, we connect C to Signal and NC to Ground because this means the digital input pin (endstop connector) will be connected to Ground in its normal state and cut from Ground when the button is pressed. This approach is less prone to noise than the reverse. See <a href="http://wot.lv/combating-endstop-noise-on-a-reprap.html">here</a> for more information.<br><br>
+  Another positive effect of this approach is, that if a wire breaks for some reason you get the same signal as if the endstop is pressed. That makes sure that even with a damaged wire you are not able to overrun the endstop.
+</sl-alert>
 
-> [!DANGER]
-> Make absolutely sure that you do not connect VCC (red) and GND (blue) to a mechanical (microswitch) endstop! Depending on your wiring this may fry your smoothieboard instantly or when the switch gets pressed. There is certain wiring where this won't happen when you switch the signal between VCC and GND, but if you're not careful enough you will damage your board.
+<sl-alert variant="danger" open>
+  <sl-icon slot="icon" name="exclamation-octagon"></sl-icon>
+  <strong>Do NOT Connect VCC and GND!</strong><br><br>
+  Make absolutely sure that you do not connect VCC (red) and GND (blue) to a mechanical (microswitch) endstop! Depending on your wiring this may fry your smoothieboard instantly or when the switch gets pressed. There is certain wiring where this won't happen when you switch the signal between VCC and GND, but if you're not careful enough you will damage your board.
+</sl-alert>
 
 You want to connect your X end-stop to the X min pins, Y end-stop to the Y min pins, and Z end-stop to the Z min pins.
 

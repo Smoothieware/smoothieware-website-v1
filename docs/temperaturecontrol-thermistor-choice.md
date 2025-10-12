@@ -34,8 +34,10 @@ Set the beta value in the configuration file:
 temperature_control.hotend.beta       4066   # set beta for thermistor
 ```
 
-> [!WARNING]
-> Beta values provided by manufacturers are typically for the 0-80°C range, which can result in readings being about 7-10°C too high for the 185-230°C range. This makes beta values generally suitable for heated beds but not for hotends.
+<sl-alert variant="warning" open>
+  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+  Beta values provided by manufacturers are typically for the 0-80°C range, which can result in readings being about 7-10°C too high for the 185-230°C range.<br><br>This makes beta values generally suitable for heated beds but not for hotends.
+</sl-alert>
 
 If the thermistor is 100K ohms at 25°C, this setting is usually sufficient. Additional settings like `r0`, `t0`, `r1`, `r2` are not typically needed as the defaults work well.
 

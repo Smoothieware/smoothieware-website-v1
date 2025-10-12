@@ -1,6 +1,12 @@
 
 # Jogger Options
 
+The Jogger module allows you to control machine movement using joystick input.
+
+This page lists all configuration options for the Jogger module.
+
+## Configuration Options
+
 | Option | Example Value | Explanation |
 | ------ | ------------- | ----------- |
 | `jogger.enable` | true | If true, enable the Jogger module |

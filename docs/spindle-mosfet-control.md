@@ -1,9 +1,15 @@
 
-# Spindle control with a Mosfet
+# Spindle Control with a MOSFET
 
 If you are not using a VFD, and your spindle motor is a DC motor of low enough power (voltage and current, **including** any current extremes when stalled), you can control it directly using the MOSFETs on the Smoothieboard.
 
-MOSFETs are present on-board, but have limited current capacity (up to 12A) and need to be protected by a 'flyback' diode when controlling a motor, electromechanical relay or other inductive load. See [Wikipedia Flyback_diode](https://en.wikipedia.org/wiki/Flyback_diode) and [Driving inductive load, Electronics StackExchange](https://electronics.stackexchange.com/questions/358210/driving-inductive-load-from-ic-with-mosfet).
+## Overview
+
+MOSFETs are present on-board, but have limited current capacity (up to 12A) and need to be protected by a 'flyback' diode when controlling a motor, electromechanical relay or other inductive load.
+
+For more information, see:
+- [Wikipedia: Flyback diode](https://en.wikipedia.org/wiki/Flyback_diode)
+- [Driving inductive load, Electronics StackExchange](https://electronics.stackexchange.com/questions/358210/driving-inductive-load-from-ic-with-mosfet)
 
 Motors have the property of inductance, which is the electrical equivalent of inertia. The motor current will continue to flow after the MOSFET is switched off, because the energy stored in the inductor by the current does not instantly disappear. The current will decrease as the stored energy is dissipated. This current flow results in the voltage across the motor reversing and increasing (or "spiking") until the current finds a path to flow.
 
@@ -15,15 +21,18 @@ Connect the diode in reverse across the motor (when the MOSFET is on, it must **
 
 The same considerations apply to other inductive loads such as solenoid valves and relay coils.
 
-[Solid state relays](general-appendixes.md#solidstaterelay) are controlled via a GPIO pin, and can control higher loads, but are on/off only (no control of the exact amount of power sent via PWM). For more information about SSRs, [see this appendix](general-appendixes.md#solidstaterelay).
+[Solid state relays](general-appendixes#solidstaterelay) are controlled via a GPIO pin, and can control higher loads, but are on/off only (no control of the exact amount of power sent via PWM). For more information about SSRs, [see this appendix](general-appendixes#solidstaterelay).
 
-> [!WARNING]
-> It is critical that you add a diode across your motor if you are going to control it with a Smoothieboard. If you do not do this, you are absolutely guaranteed to destroy the MOSFET, and possibly the Smoothieboard.
+{::nomarkdown}
+<sl-alert variant="danger" open>
+  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+  <strong>Critical Warning:</strong> It is critical that you add a diode across your motor if you are going to control it with a Smoothieboard. If you do not do this, you are absolutely guaranteed to destroy the MOSFET, and possibly the Smoothieboard.
+</sl-alert>
+{:/nomarkdown}
 
-Here is a brief on the MOSFETs on the Smoothieboard:
+## Important Note
 
-![Mosfet power input and outputs](images/mosfet-input-output.svg)
-*Note: a mosfet cannot provide power if it is not provided power via an input.*
+A MOSFET cannot provide power if it is not provided power via an input. Make sure you properly connect both the input power and output connections.
 
 ## MOSFETs
 
@@ -45,7 +54,7 @@ We will be doing this using the [Switch](switch) module.
 
 Add this to your configuration file:
 
-```markdown
+```gcode
 # Spindle control Switch module
 switch.spindle.enable                            true             #
 switch.spindle.input_on_command                  M3               #
@@ -67,7 +76,7 @@ If you need to choose the power (speed) of your Spindle, you can do so because t
 
 Simply do:
 
-```markdown
+```gcode
 M3 S128
 ```
 
@@ -79,27 +88,33 @@ To set the spindle to half power/speed. PWM values go from 0 to 255.
 
 Because the spindle can feed power back into the MOSFET and damage the MOSFET, you also need to wire a diode of sufficient size across the output. See notes in the first section above.
 
-# PID loopback spindle control
+## PID Loopback Spindle Control
 
-To get more accurate RPM control, you can use a feedback sensor. This can be optical or a hall effect sensor, which senses the rotation of the spindle. Smoothie then measures the real RPM of the spindle and adjusts the PWM value accordingly.
+To get more accurate RPM control, you can use a feedback sensor. This can be optical or a hall effect sensor, which senses the rotation of the spindle.
+
+Smoothie then measures the real RPM of the spindle and adjusts the PWM value accordingly.
+
+### Hardware Requirements
 
 To use this module, you need to connect your spindle to pins with proper hardware support:
-* PWM output pin: any of P1.18, P1.20, P1.21, P1.23, P1.24, P1.26, P2.0 - P2.5, P2.26, P3.25
-* Feedback sensor pin: must be in port 0 or port 2; P2.6 and P2.7 are available on smoothieboard
 
-## Configuration
+- **PWM output pin:** any of P1.18, P1.20, P1.21, P1.23, P1.24, P1.26, P2.0 - P2.5, P2.26, P3.25
+- **Feedback sensor pin:** must be in port 0 or port 2; P2.6 and P2.7 are available on smoothieboard
+
+### PID Configuration Options
 
 | Option | Example value | Explanation |
 | ------ | ------------- | ----------- |
 {% include_relative spindle-options.md %}
 
-## G-code
+### G-code Commands
 
-Available G-code commands:
-* `M3` will start the spindle. `M3 S5000` will start the spindle and set speed to 5000 RPM.
-* `M5` will stop the spindle. Last set RPM is remembered and used for next `M3` command if S argument is not given.
-* `M957` will report the current spindle speed and PWM value.
-* `M958` will report the current PID parameters. `M958 Px.xxx Ix.xxx Dx.xxx` will set them (to save the new values, you need to edit config file manually).
+Available G-code commands for PID spindle control:
+
+- **M3** - Start the spindle. `M3 S5000` will start the spindle and set speed to 5000 RPM.
+- **M5** - Stop the spindle. Last set RPM is remembered and used for next `M3` command if S argument is not given.
+- **M957** - Report the current spindle speed and PWM value.
+- **M958** - Report the current PID parameters. `M958 Px.xxx Ix.xxx Dx.xxx` will set them (to save the new values, you need to edit config file manually).
 
 ## Tuning the PID parameters
 

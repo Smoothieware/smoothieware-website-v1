@@ -1,3 +1,10 @@
+# Switch Module Options
+
+The Switch module is a versatile module that can be used to do many different things.
+
+It uses commands or pins as inputs, to send commands or switch pins as output.
+
+## Configuration Options
 
 | Parameter | Default | Description |
 | --------- | ------- | ----------- |
@@ -18,3 +25,8 @@
 | `switch.module_name.pwm_period_ms` | 20 | Period used by the H/W and S/W PWM, 20ms is 50Hz which is the default if not set |
 | `switch.module_name.failsafe_set_to` | 0 | 0 or 1 what to set the output pin to in case of a crash or HALT condition |
 | `switch.module_name.ignore_on_halt` | false | set to true to not set the failsafe or `startup_value` value when a HALT condition is triggered |
+
+<sl-alert variant="neutral" open>
+  <sl-icon slot="icon" name="info-circle"></sl-icon>
+  For more information about using the Switch module, see the main [Switch](switch) documentation page.
+</sl-alert>

@@ -7,8 +7,10 @@ While manual control is sometimes fine (turn it on before starting your G-code, 
 
 The spindle module supports different types of spindles which are described in the following subsections.
 
-> [!NOTE]
-> **NOTE** the spindle module is NOT compiled into the normal smoothie build, you need to use the CNC build.
+<sl-alert variant="warning" open>
+  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+  The spindle module is NOT compiled into the normal smoothie build, you need to use the CNC build.
+</sl-alert>
 
 ## General
 
@@ -28,9 +30,10 @@ Available G-code commands:
 
 ## PWM Spindle
 
-> [!NOTE]
-> The PWM spindle is generic for all spindles that use a direct PWM signal to control the spindle speed directly with a MOSFet.
-> It needs a feedback sensor to adjust the speed using a PID control.
+<sl-alert variant="neutral" open>
+  <sl-icon slot="icon" name="info-circle"></sl-icon>
+  The PWM spindle is generic for all spindles that use a direct PWM signal to control the spindle speed directly with a MOSFet.<br><br>It needs a feedback sensor to adjust the speed using a PID control.
+</sl-alert>
 
 ### Example config options
 
@@ -47,38 +50,29 @@ spindle.control_D                            0.1               # default 0.0001.
 spindle.control_smoothing                    0.1               # default 0.1. This value is low pass filter time constant in seconds.
 ```
 
-> [!NOTE]
-> Check the [pinout](http://smoothieware.org/pinout) to verify if a pin is capable for a certain functionality!
+<sl-alert variant="neutral" open>
+  <sl-icon slot="icon" name="info-circle"></sl-icon>
+  Check the <a href="http://smoothieware.org/pinout">pinout</a> to verify if a pin is capable for a certain functionality!
+</sl-alert>
 
-> [!TIP]
-> **Hobby servo ESC as spindle control**
-> Since I'm experimenting with hobby ESC+motor combos (1:8 scale 3 phase 4068 like motor) I wanted to share its config. ESCs act like hobby servos - 20 ms period time, 1.5-2ms duty cycle time -, so instead of having modified the spindle code, I've created a switch for commands M3/M5. Due to the very small duty cycle window, you won't have much control over the motor: S7.5 is neutral, S12.5 is "fastest" after calibrating the ESC manually with bCNC (read ESC's manual; below S7.5 is breaking for now).
->
-> The following code is working, setting neutral upon boot - ESC init.
-> ```markdown
-> switch.servo.enable                          true             # Servo module for PWM control
-> switch.servo.input_on_command                M3
-> switch.servo.input_off_command               M5
-> switch.servo.output_pin                      1.23o!             # spare pin with PWM capability, 3.25 should also work from EXP2, maybe needed to set it to 1.23o!
-> switch.servo.output_type                     hwpwm
-> #switch.servo.pwm_period_ms                  20                #set PWM period to 20ms (50 Hz)
-> switch.servo.startup_state                   true                # turn on the output to have neutral for ESC
-> switch.servo.startup_value                   7.5               # this is default_off_value
-> switch.servo.default_on_value                7.5
-> switch.servo.failsafe_set_to                 0
-> ```
+<sl-alert variant="primary" open>
+  <sl-icon slot="icon" name="lightbulb"></sl-icon>
+  <strong>Hobby servo ESC as spindle control</strong> Since I'm experimenting with hobby ESC+motor combos (1:8 scale 3 phase 4068 like motor) I wanted to share its config.<br><br>ESCs act like hobby servos - 20 ms period time, 1.5-2ms duty cycle time -, so instead of having modified the spindle code, I've created a switch for commands M3/M5.<br><br>Due to the very small duty cycle window, you won't have much control over the motor: S7.5 is neutral, S12.5 is "fastest" after calibrating the ESC manually with bCNC (read ESC's manual; below S7.5 is breaking for now).<br><br>The following code is working, setting neutral upon boot - ESC init.<br><br>``<code>markdown switch.servo.enable                          true             # Servo module for PWM control switch.servo.input_on_command                M3 switch.servo.input_off_command               M5 switch.servo.output_pin                      1.23o!             # spare pin with PWM capability, 3.25 should also work from EXP2, maybe needed to set it to 1.23o! switch.servo.output_type                     hwpwm #switch.servo.pwm_period_ms                  20                #set PWM period to 20ms (50 Hz) switch.servo.startup_state                   true                # turn on the output to have neutral for ESC switch.servo.startup_value                   7.5               # this is default_off_value switch.servo.default_on_value                7.5 switch.servo.failsafe_set_to                 0 </code>``.
+</sl-alert>
 
-> [!NOTE]
-> If you want to learn more about this module, or are curious how it works, Smoothie is Open-Source and you can simply go look at the code, [here](https://github.com/Smoothieware/Smoothieware/blob/edge/src/modules/tools/spindle/PWMSpindleControl.cpp).
+<sl-alert variant="neutral" open>
+  <sl-icon slot="icon" name="info-circle"></sl-icon>
+  If you want to learn more about this module, or are curious how it works, Smoothie is Open-Source and you can simply go look at the code, <a href="https://github.com/Smoothieware/Smoothieware/blob/edge/src/modules/tools/spindle/PWMSpindleControl.cpp">here</a>.
+</sl-alert>
 
 ## Analog Spindle
 
 This module is used to control a [VFD](http://en.wikipedia.org/wiki/Variable-frequency_drive) with a PWM that is converted to a 0-10V analog signal by an additional circuit. That circuit also provides an optocoupler for switching the VFD RUN signal. It is also the mode of choice if you run a brushless motor spindle driven by an [ESC](https://en.wikipedia.org/wiki/Electronic_speed_control), in that case, you will not need any additional circuitry.
 
-> [!NOTE]
-> The analog spindle is generic for all VFD's that use a 0-10V speed reference signal, so it doesn't need a special implementation for a certain VFD.
-> The downside is that the signal is not completely linear and may be interfered with by noise.
-> If you can use a VFD that supports Modbus/RS485, it's highly recommended to use that technique!
+<sl-alert variant="neutral" open>
+  <sl-icon slot="icon" name="info-circle"></sl-icon>
+  The analog spindle is generic for all VFD's that use a 0-10V speed reference signal, so it doesn't need a special implementation for a certain VFD.<br><br>The downside is that the signal is not completely linear and may be interfered with by noise.<br><br>If you can use a VFD that supports Modbus/RS485, it's highly recommended to use that technique!.
+</sl-alert>
 
 ### Example config options
 
@@ -92,8 +86,10 @@ spindle.switch_on_pin                            2.6      # the pin which is use
 
 ### PWM to analog converter circuit
 
-> [!NOTE]
-> If you're using a brushless motor + ESC that takes the PWM directly as a speed reference, you don't need an additional circuit.
+<sl-alert variant="neutral" open>
+  <sl-icon slot="icon" name="info-circle"></sl-icon>
+  If you're using a brushless motor + ESC that takes the PWM directly as a speed reference, you don't need an additional circuit.
+</sl-alert>
 
 ![VFD adapter board](images/analog-vfd-board-pcb.png)
 *VFD adapter board PCB*
@@ -113,11 +109,15 @@ How to connect it to your Smoothieboard and VFD
 
 This example shows how to wire the Smoothieboard to a Huanyang VFD using the PCB shown above.
 
-> [!WARNING]
-> Unfortunately, the circuit does not create a completely linear output signal. As you can see in the graph, the signal is better at the beginning and at the end.
+<sl-alert variant="warning" open>
+  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+  Unfortunately, the circuit does not create a completely linear output signal.<br><br>As you can see in the graph, the signal is better at the beginning and at the end.
+</sl-alert>
 
-> [!NOTE]
-> If you want to learn more about this module, or are curious how it works, Smoothie is Open-Source and you can simply go look at the code, [here](https://github.com/Smoothieware/Smoothieware/blob/edge/src/modules/tools/spindle/AnalogSpindleControl.cpp).
+<sl-alert variant="neutral" open>
+  <sl-icon slot="icon" name="info-circle"></sl-icon>
+  If you want to learn more about this module, or are curious how it works, Smoothie is Open-Source and you can simply go look at the code, <a href="https://github.com/Smoothieware/Smoothieware/blob/edge/src/modules/tools/spindle/AnalogSpindleControl.cpp">here</a>.
+</sl-alert>
 
 ## Modbus Spindle
 
@@ -125,8 +125,10 @@ This module is used to control a [VFD](http://en.wikipedia.org/wiki/Variable-fre
 It provides a Modbus implementation and is easily extendable to support a wide range of [Modbus](http://en.wikipedia.org/wiki/Modbus) compliant VFDs.
 But it also can support VFDs that are not compliant with the Modbus standard such as the widely used [Huanyang VFD](http://www.hy-electrical.com/productshow_e.asp?id=12) that is popular and cheap on eBay.
 
-> [!NOTE]
-> The modbus spindle needs a separate implementation for every VFD model. At the time of writing only the Huanyang is implemented, but it is very easy to extend the module for many other models.
+<sl-alert variant="neutral" open>
+  <sl-icon slot="icon" name="info-circle"></sl-icon>
+  The modbus spindle needs a separate implementation for every VFD model.<br><br>At the time of writing only the Huanyang is implemented, but it is very easy to extend the module for many other models.
+</sl-alert>
 
 ### Example config options
 
@@ -142,12 +144,10 @@ spindle.dir_pin                                  2.5      # RS485 is only half-d
 
 In order to get the Huanyang VFD accepting commands via ModBus, you need to change a few parameters:
 
-> [!NOTE]
-> - PD001: 2 (Source of run commands: communication port)
-> - PD002: 2 (Source of operating frequency: communication port)
-> - PD163: 1 (Communication address: 1)
-> - PD164: 1 (Communication Baud Rate: 9600)
-> - PD165: 3 (Communication Data Method: 8N1 RTU)
+<sl-alert variant="neutral" open>
+  <sl-icon slot="icon" name="info-circle"></sl-icon>
+  - PD001: 2 (Source of run commands: communication port) - PD002: 2 (Source of operating frequency: communication port) - PD163: 1 (Communication address: 1) - PD164: 1 (Communication Baud Rate: 9600) - PD165: 3 (Communication Data Method: 8N1 RTU)
+</sl-alert>
 
 ### RS485 extension board
 Like an analog spindle, the Modbus spindle needs an external circuit, but that is much simpler.
@@ -170,5 +170,7 @@ How to connect it to the Smoothieboard and the VFD
 
 This example shows how to wire the Smoothieboard to a Huanyang VFD using the PCB shown above.
 
-> [!NOTE]
-> If you want to learn more about this module, or are curious how it works, Smoothie is Open-Source and you can simply go look at the code, [here](https://github.com/Smoothieware/Smoothieware/blob/edge/src/modules/tools/spindle/ModbusSpindleControl.cpp).
+<sl-alert variant="neutral" open>
+  <sl-icon slot="icon" name="info-circle"></sl-icon>
+  If you want to learn more about this module, or are curious how it works, Smoothie is Open-Source and you can simply go look at the code, <a href="https://github.com/Smoothieware/Smoothieware/blob/edge/src/modules/tools/spindle/ModbusSpindleControl.cpp">here</a>.
+</sl-alert>

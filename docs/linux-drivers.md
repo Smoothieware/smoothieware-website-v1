@@ -1,7 +1,7 @@
 
 # Linux + Smoothie == ❤️
 
-This is optional, but makes things more convenient...
+This is optional, but makes things more convenient.
 
 ## udev rules
 
@@ -21,6 +21,7 @@ sudo service udev restart # ubuntu
 ```
 
 Under Fedora, Smoothieboard is handled by the modem manager (as an Openmoko).
+
 To avoid this, add the following to the udev rule:
 
 ```bash
@@ -28,15 +29,22 @@ ENV{ID_MM_DEVICE_IGNORE}="1"
 ```
 
 Then plug in Smoothie, and it should appear as `/dev/smoothie0`.
+
 If you have two USB serial devices configured, the second one will be `/dev/smoothie1`.
 
-> [!NOTE]
-> The distribution-specific sections need to be verified for other distributions.
+{::nomarkdown}
+<sl-alert variant="neutral" open>
+  <sl-icon slot="icon" name="info-circle"></sl-icon>
+  The distribution-specific sections need to be verified for other distributions.
+</sl-alert>
+{:/nomarkdown}
 
 ### Fedora, Ubuntu, Debian, and derivatives
 
-If you want to be able to communicate with `/dev/smoothie0` using your regular non-superuser login, then you need to add your user to the `dialout` group. 
+If you want to be able to communicate with `/dev/smoothie0` using your regular non-superuser login, then you need to add your user to the `dialout` group.
+
 To be able to flash via DFU as a regular user, add the user to the `plugdev` group too.
+
 This can be done with:
 
 ```bash
@@ -63,6 +71,7 @@ usermod -a -G uucp <username>
 Replace `<username>` with the name of your user.
 
 To be able to upload firmware using `make upload` without needing to use `sudo`, you need the udev rule shown above.
+
 It sets the permissions for all users to `rw` (0666).
 
 ## PID problems

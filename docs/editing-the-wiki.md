@@ -1,21 +1,29 @@
 
-# Editing the Wiki
+# Editing the Documentation
 
-This documentation is a [Wiki](https://en.wikipedia.org/wiki/Wiki), which means anyone can edit it.
+This documentation is hosted on GitHub Pages and uses Jekyll with Markdown formatting.
 
-Simply click the `Edit` button at the bottom of every page. The first time you will need to create a Wikidot account, which takes just a minute.
+Anyone can contribute improvements by submitting pull requests to the [GitHub repository](https://github.com/Smoothieware/smoothieware-website-v1).
 
 You are very much encouraged to help us improve this documentation.
 
-Even small contributions can have a large impact and make lots of new user's life easier.
+Even small contributions can have a large impact and make lots of new user's lives easier.
 
-In order to edit the wiki, you will need to learn a few things, like how to write in Wiki Markup language.
+## How to Contribute
 
-You can just write plain text, and it will be displayed, but there are ways to make it more useful :)
+In order to edit the documentation, you will need to:
+
+1. Fork the repository on GitHub
+
+2. Edit markdown files in the `/docs` folder
+
+3. Submit a pull request with your changes
+
+You can just write plain text, and it will be displayed, but there are ways to make it more useful using Markdown formatting.
 
 It is fairly simple, and you can very easily just copy the way it is done on existing pages.
 
-A good starting point is the Wikidot [Wiki Syntax documentation](http://www.wikidot.com/doc-wiki-syntax:start).
+A good starting point is the [GitHub Flavored Markdown documentation](https://guides.github.com/features/mastering-markdown/).
 
 ## A few examples
 
@@ -100,29 +108,35 @@ Some code
 
 It will be formatted as mono-space, and will not be interpreted as Wiki markup.
 
-### Boxes
+### Alert Boxes
 
-We have a special syntax for "notes" that makes nice colored boxes, like this:
+We use Shoelace alert components for notes, warnings, and other callouts:
 
-> [!SUCCESS]
-> **Shiny box**
-> With lots of yummy information
+<sl-alert variant="primary" open>
+  <sl-icon slot="icon" name="lightbulb"></sl-icon>
+  <strong>Shiny box</strong><br>
+  With lots of yummy information
+</sl-alert>
 
 The syntax is:
 
-```
-> [!SUCCESS]
-> **Shiny box**
-> With lots of yummy information
+```html
+<sl-alert variant="primary" open>
+  <sl-icon slot="icon" name="lightbulb"></sl-icon>
+  <strong>Shiny box</strong><br>
+  With lots of yummy information
+</sl-alert>
 ```
 
-You can change the color of the box by changing `bs-callout-success` to other values:
-- `bs-callout-danger`: Red
-- `bs-callout-warning`: Orange
-- `bs-callout-success`: Green
-- `bs-callout-primary`: Blue
-- `bs-callout-info`: Light blue
-- `bs-callout-default`: Grey
+Available variants and their typical uses:
+
+- `variant="danger"`: Red - for critical warnings
+
+- `variant="warning"`: Orange - for important cautions
+
+- `variant="primary"`: Blue - for tips and recommendations
+
+- `variant="neutral"`: Gray - for general information and notes
 
 ### Table of contents
 
@@ -172,20 +186,30 @@ You can insert raw HTML into the page by doing:
 
 This is in particular useful to insert Youtube videos and the like.
 
-### Page formatting
+### Page Layout
 
-The Smoothie wiki uses [Bootstrap](http://getbootstrap.com/) for formatting, which means you can use its nice features to make your pages look nicer.
+The site uses Jekyll with custom CSS for formatting.
 
-For example, you can format your page with two columns:
+For images, you can float them to the right or center them:
 
+**Floating an image to the right:**
+
+```html
+{::nomarkdown}
+<a href="images/example.png">
+  <img src="images/example.png" alt="Description" width="200" height="150" style="float: right; margin-left: 1rem;"/>
+</a>
+{:/nomarkdown}
 ```
-One column
-Another column
-```
 
-You do this by writing:
+**Centering a large image:**
 
-```
-One column
-Another column
+```html
+{::nomarkdown}
+<div style="text-align: center;">
+  <a href="images/example.png">
+    <img src="images/example.png" alt="Description" style="min-width: 640px; width: 100%; max-width: 800px;"/>
+  </a>
+</div>
+{:/nomarkdown}
 ```

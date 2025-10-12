@@ -1,3 +1,12 @@
+# Endstops Configuration Options
+
+This page provides a complete reference of all configuration options for the endstops module.
+
+The endstops module handles homing and limit switches for your machine, supporting various arm solutions including Cartesian, CoreXY, Delta, and SCARA.
+
+For more information on setting up endstops, see the main [Endstops](endstops) documentation.
+
+## Configuration Reference
 
 | Parameter | Default | Description |
 | --------- | ------- | ----------- |

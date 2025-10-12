@@ -1,27 +1,37 @@
 
-# Lasers will make you blind. In an instant. In the blink of an eye, quite literally.
+# Lasers will make you blind
 
-> [!DANGER]
-> **Never** look into the beam or at any surface the beam might reflect off of.
-> **Never** have the machine powered while the door is open.
+In an instant. In the blink of an eye, quite literally.
+
+{::nomarkdown}
+<sl-alert variant="danger" open>
+  <sl-icon slot="icon" name="exclamation-octagon"></sl-icon>
+  <strong>CRITICAL SAFETY WARNINGS:</strong><br><br>
+  <strong>Never</strong> look into the beam or at any surface the beam might reflect off of.<br><br>
+  <strong>Never</strong> have the machine powered while the door is open.
+</sl-alert>
+{:/nomarkdown}
 
 You are responsible for your own safety.
 
 Eyes cannot be replaced.
 
-If the machine does not come with a switch on the door that turns the laser off when the door is open, this is stupid and dangerous. Please install that switch.
+## Door Safety Switch
 
-If you leave your machine alone even for a few minutes, this can happen to you:
+If the machine does not come with a switch on the door that turns the laser off when the door is open, this is stupid and dangerous.
+
+Please install that switch.
+
+## Fire Hazard
+
+If you leave your machine alone even for a few minutes, fire can start.
 
 {::nomarkdown}
-<img src="https://en.wikipedia.org/wiki/Laser_safety" alt="Lasers are dangerous">
-
+<sl-alert variant="danger" open>
+  <sl-icon slot="icon" name="fire"></sl-icon>
+  <strong>Lasers are dangerous</strong><br><br>
+  They can burn your house, and they can burn your eyes. Be careful and never leave your laser unattended.
+</sl-alert>
 {:/nomarkdown}
-<div align="center"><strong>Lasers are dangerous</strong><br>
-They can burn your house, and they can burn your eyes, be careful.</div>
 
-
-**Comments:**
-- Converted the callout to a markdown alert/callout.
-- The image source was kept as is, assuming the path will be corrected during the website migration.
-- The HTML div tags were kept for the centered text, as markdown does not support text alignment.
+For more information on laser safety, please refer to [laser safety resources](https://en.wikipedia.org/wiki/Laser_safety).

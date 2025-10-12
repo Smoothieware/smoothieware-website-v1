@@ -11,10 +11,10 @@ Pronterface's website is at [http://www.pronterface.com/](http://www.pronterface
 
 Mainly for 3D printers, but very useful for debugging problems with any types of machine because it does communication very well and reports problems instead of ignoring them.
 
-> [!WARNING]
-> Pronterface is designed for 3D printers and will do weird things for CNC mills and laser cutters (like ignoring some commands).
-> 
-> For CNC mills/routers, use [bCNC](bcnc) and for laser cutters use [Visicut](visicut).
+<sl-alert variant="warning" open>
+  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+  Pronterface is designed for 3D printers and will do weird things for CNC mills and laser cutters (like ignoring some commands).<br><br>For CNC mills/routers, use <a href="bcnc">bCNC</a> and for laser cutters use <a href="visicut">Visicut</a>.
+</sl-alert>
 
 ## Getting it
 
@@ -34,24 +34,15 @@ Everybody has USB, and Smoothie does too.
 
 Smoothie uses serial over USB (ACM), allowing Pronterface to send commands and G-codes for execution, and even to upload files.
 
-> [!WARNING]
-> Contrary to Ethernet, USB can fail due to [EMI](http://en.wikipedia.org/wiki/Electromagnetic_interference) and [ground loop](http://en.wikipedia.org/wiki/Ground_loop_%28electricity%29) problems.
-> 
-> Those problems will mostly manifest as your board "disconnecting", this means it would become un-responsive, the machine would stop moving, and sometimes your host computer may indicate that a USB disconnect occurred.
-> 
-> Ways to fight those problems include:
-> - Make sure your USB cable is as short as possible
-> - It should be shielded
-> - It should have ferrite at one end, or even better, both ends
-> - The machine shouldn't be placed in an electromagnetically noisy environment.
-> - The machine, and the computer controlling it, should be connected as close as possible in the electrical installation, ideally they should be plugged in the same power strip.
+<sl-alert variant="warning" open>
+  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+  Contrary to Ethernet, USB can fail due to <a href="http://en.wikipedia.org/wiki/Electromagnetic_interference">EMI</a> and <a href="http://en.wikipedia.org/wiki/Ground_loop_%28electricity%29">ground loop</a> problems.<br><br>Those problems will mostly manifest as your board "disconnecting", this means it would become un-responsive, the machine would stop moving, and sometimes your host computer may indicate that a USB disconnect occurred.<br><br>Ways to fight those problems include: - Make sure your USB cable is as short as possible - It should be shielded - It should have ferrite at one end, or even better, both ends - The machine shouldn't be placed in an electromagnetically noisy environment.<br><br>- The machine, and the computer controlling it, should be connected as close as possible in the electrical installation, ideally they should be plugged in the same power strip.
+</sl-alert>
 
-> [!IMPORTANT]
-> Using a Smoothieboard with the Windows operating system, requires the prior installation of drivers.
-> 
-> Those drivers as well as instructions on how to install them, can be found at the [Windows Drivers](windows-drivers) page.
-> 
-> Please make sure you install the drivers, and restart the computer, before you try to connect to Smoothie via Pronterface.
+<sl-alert variant="warning" open>
+  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+  Using a Smoothieboard with the Windows operating system, requires the prior installation of drivers.<br><br>Those drivers as well as instructions on how to install them, can be found at the <a href="windows-drivers">Windows Drivers</a> page.<br><br>Please make sure you install the drivers, and restart the computer, before you try to connect to Smoothie via Pronterface.
+</sl-alert>
 
 To connect to Smoothie, follow this procedure:
 
@@ -77,15 +68,15 @@ You can use that interface to connect to Smoothieboard over Ethernet, using Pron
 
 First of all, set up your Smoothieboard to activate Ethernet: see the [Network](network) page.
 
-> [!WARNING]
-> It is not recommended that you talk to your Smoothieboard over Wifi, it introduces a certain lag, that can make the interface annoying, or even unusable.
-> 
-> Make sure your computer is connected to your network switch and then to your Smoothieboard, using ethernet cable all the way.
+<sl-alert variant="warning" open>
+  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+  It is not recommended that you talk to your Smoothieboard over Wifi, it introduces a certain lag, that can make the interface annoying, or even unusable.<br><br>Make sure your computer is connected to your network switch and then to your Smoothieboard, using ethernet cable all the way.
+</sl-alert>
 
-> [!TIP]
-> Make sure you have the right option set in Pronterface. Go into the `Settings > Options` menu, then go to the `Printer Settings` tab, and check that the `TCP streaming mode` option is checked.
-> 
-> If it is not, you will probably experience slow transfers and streaming.
+<sl-alert variant="primary" open>
+  <sl-icon slot="icon" name="lightbulb"></sl-icon>
+  Make sure you have the right option set in Pronterface.<br><br>Go into the <code>Settings > Options</code> menu, then go to the <code>Printer Settings</code> tab, and check that the <code>TCP streaming mode</code> option is checked.<br><br>If it is not, you will probably experience slow transfers and streaming.
+</sl-alert>
 
 Once you have confirmed that the Network functionality works normally (for example by accessing the Web Interface), you can now try to connect using Pronterface.
 

@@ -1,9 +1,19 @@
 
 # What makes a Smoothieboard a Smoothie?
 
-Smoothieboard is a simplified controller board for robotic motion control and tool operation. Although there are an increasing number of alternate form factors, the original design includes all the electronic parts necessary to power and control a small to middle-sized CNC machine (including but not only: 3D printers, laser cutters, and CNC mills): stepper motor drivers, heater/cooler drivers, temperature sensing, limit switches, SPI, I2C and additional I/O for hardware expansion and it includes USB, UART, ethernet, and an SD card. Alternate design should include these elements or analogues of them as well, or show how to add them easily.
+Smoothieboard is a simplified controller board for robotic motion control and tool operation.
 
-A Smoothie motion control board is more than a piece of hardware. It's also the software and [firmware](https://github.com/arthurwolf/Smoothie) that let you program and communicate with it, the documentation and tutorials that explain how to use it, and the community that can help you when you have trouble. It's the fact that all of these work together more than any individual piece that makes the project useful.
+Although there are an increasing number of alternate form factors, the original design includes all the electronic parts necessary to power and control a small to middle-sized CNC machine (including but not only: 3D printers, laser cutters, and CNC mills): stepper motor drivers, heater/cooler drivers, temperature sensing, limit switches, SPI, I2C and additional I/O for hardware expansion and it includes USB, UART, ethernet, and an SD card.
+
+Alternate design should include these elements or analogues of them as well, or show how to add them easily.
+
+## More Than Hardware
+
+A Smoothie motion control board is more than a piece of hardware.
+
+It's also the software and [firmware](https://github.com/arthurwolf/Smoothie) that let you program and communicate with it, the documentation and tutorials that explain how to use it, and the community that can help you when you have trouble.
+
+It's the fact that all of these work together more than any individual piece that makes the project useful.
 
 To help maintain this coherence we've put together the following list of things to keep in mind as you work on making your own hardware.
 

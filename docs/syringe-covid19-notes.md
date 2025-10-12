@@ -3,12 +3,21 @@
 
 ## Context
 
-I ([Arthur Wolf](mailto:wolf.arthur@gmail.com), Smoothie project creator), was contacted by Phillipe Cochin ([covid3d.org](https://covid3d.org/)), asking for help with stepper-motor related questions for their syringe pusher project. We talked on the phone and exchanged quite a bit of info, this page is about listing that info for future reference, and to share it with other members of the project.
+I ([Arthur Wolf](mailto:wolf.arthur@gmail.com), Smoothie project creator), was contacted by Phillipe Cochin ([covid3d.org](https://covid3d.org/)), asking for help with stepper-motor related questions for their syringe pusher project.
 
-> [!WARNING]
-> ![Bacteria](images/bacteria-1.png)
-> ### About
-> This page is an internal document with some information regarding the syringepump Open-Source project. If you found this at random, this probably doesn't matter to you.
+We talked on the phone and exchanged quite a bit of info, this page is about listing that info for future reference, and to share it with other members of the project.
+
+{::nomarkdown}
+<sl-alert variant="warning" open>
+  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+  <div style="display: flex; align-items: center; gap: 1rem;">
+    <img src="images/bacteria_1_.png" alt="Bacteria" width="80" height="80" style="flex-shrink: 0;"/>
+    <div>
+      <strong>About This Page:</strong> This page is an internal document with some information regarding the syringepump Open-Source project. If you found this at random, this probably doesn't matter to you.
+    </div>
+  </div>
+</sl-alert>
+{:/nomarkdown}
 
 **Note**: I am also working on a *separate* Covid-19 project, so I can't be 100% on this to help, but I'll do my best.
 
@@ -75,9 +84,15 @@ A proposed plan for auto-syringes includes designing a special version of Smooth
 
 Pros and cons for different options are presented to help with decision-making.
 
-![Comparison](images/screenshot-from-2020-04-06_23-50-41.png)
+{::nomarkdown}
+<div style="text-align: center; margin: 2rem 0;">
+  <a href="images/screenshot_from_2020-04-06_23-50-41.png">
+    <img src="images/screenshot_from_2020-04-06_23-50-41.png" alt="Comparison" style="width: 100%; max-width: 800px; height: auto;"/>
+  </a>
+</div>
+{:/nomarkdown}
 
-The comparison can be found at: [Google Spreadsheet](https://docs.google.com/spreadsheets/d/1UT5zNyo1xt-qPeB4LfyTRXMTwKU8H6BDeTEF9So0A3E/edit?usp=sharing).
+The full comparison spreadsheet can be found at: [Google Spreadsheet](https://docs.google.com/spreadsheets/d/1UT5zNyo1xt-qPeB4LfyTRXMTwKU8H6BDeTEF9So0A3E/edit?usp=sharing).
 
 ### Foreseen Issues
 

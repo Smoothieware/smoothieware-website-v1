@@ -1,7 +1,22 @@
 
-# AC
-**Alternative current**  
-In AC, the current moves back and forth with the changing magnetic field.  
+# Glossary
+
+This page provides definitions for common terms used in the Smoothieware documentation.
+
+{::nomarkdown}
+<sl-alert variant="neutral" open>
+  <sl-icon slot="icon" name="info-circle"></sl-icon>
+  This glossary is being actively expanded. If you find a term that needs clarification, please <a href="mailto:wolf.arthur@gmail.com">contact us</a>.
+</sl-alert>
+{:/nomarkdown}
+
+## A
+
+### AC
+**Alternative current**
+
+In AC, the current moves back and forth with the changing magnetic field.
+
 This is the type of electricity from wall sockets in your home.
 
 # Cases/Enclosures

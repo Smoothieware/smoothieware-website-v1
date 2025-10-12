@@ -1,7 +1,7 @@
 
 # Configuring Z height
 
-After homing ( with `G28` ), the machine knows it is at Z maximum position if your machine homes to max, and at Z minimum position if your machine homes to min.
+After homing (with `G28`), the machine knows it is at Z maximum position if your machine homes to max, and at Z minimum position if your machine homes to min.
 
 Because of this, it will read the configuration option `gamma_max` or `gamma_min` depending and set the current Z position to that value.
 
@@ -31,8 +31,10 @@ Then move the head to the bed by jogging, using [Pronterface](pronterface)'s arr
 
 Finally issue the `M306 Z0` command which will use the current Z position as a homing offset:
 
-> [!NOTE]
-> You cannot use M306 unless you have Z homing endstops, if you can't home Z then you can't set homing offsets.
+<sl-alert variant="neutral" open>
+  <sl-icon slot="icon" name="info-circle"></sl-icon>
+  You cannot use M306 unless you have Z homing endstops, if you can't home Z then you can't set homing offsets.
+</sl-alert>
 
 ```
 M306 Z0
@@ -46,7 +48,11 @@ M500
 
 Next time you home, the machine will know how high above the bed it is.
 
-![Height adjustment](images/height-adjustment.png)
+{::nomarkdown}
+<a href="images/height-adjustment.png">
+  <img src="images/height-adjustment.png" alt="Height adjustment diagram showing the Z axis configuration" style="display: block; margin: 2rem auto; min-width: 640px; width: 80%; max-width: 800px;"/>
+</a>
+{:/nomarkdown}
 
 
 ## Finding gamma_max manually
@@ -87,11 +93,14 @@ If you have some sort of probe attached to your head ( or below your head ), whi
 
 Now there are two different cases here:
 
-* Either when the probe is triggered, the hotend is exactly at bed level ( this is the case of probes under the bed, or probes that trigger when the hotend itself is pushed )
-* Or, when the probe is triggered, the hotend is above the bed by a given distance, which we will call the z probe offset ( this is the case of servo-retracted probes, bltouch, inductive probes, IR probes, etc ).
+* Either when the probe is triggered, the hotend is exactly at bed level (this is the case of probes under the bed, or probes that trigger when the hotend itself is pushed)
+* Or, when the probe is triggered, the hotend is above the bed by a given distance, which we will call the z probe offset (this is the case of servo-retracted probes, bltouch, inductive probes, IR probes, etc).
 
-
-![Probe offset](images/probe-offset.png)
+{::nomarkdown}
+<a href="images/probe-offset.png">
+  <img src="images/probe-offset.png" alt="Diagram showing Z probe offset measurement" style="display: block; margin: 2rem auto; min-width: 640px; width: 80%; max-width: 800px;"/>
+</a>
+{:/nomarkdown}
 
 First home the machine:
 
@@ -142,15 +151,21 @@ G28
 G30 Znnn
 ```
 
-When `nnn` is the distance between your probe's triggering point, and the bed ( or probe offset ):
+When `nnn` is the distance between your probe's triggering point, and the bed (or probe offset):
 
-![Probe offset](images/probe-offset.png)
+{::nomarkdown}
+<a href="images/probe-offset.png">
+  <img src="images/probe-offset.png" alt="Diagram showing Z probe offset measurement" style="display: block; margin: 2rem auto; min-width: 640px; width: 80%; max-width: 800px;"/>
+</a>
+{:/nomarkdown}
 
 The `G30 Znnn` command moves the head until the probe triggers, then sets the current Z height to `nnn`.
 
 So for example if your probe triggers when the hotend is 5mm above the bed, do `G30 Z5`, and if your probe triggers exactly when the hotend touches the bed, do `G30 Z0`.
 
-> [!NOTE]
-> Behind the scenes G30 Z0 does a G92 Z0, so you can save this if you set 'save_g92 true' in config and issue M500 that saves the offset at 0. Note that G92 is creating a new coordinate system called the Workspace coordinate system (or WCS) it is worth reading up on how that works.
+<sl-alert variant="neutral" open>
+  <sl-icon slot="icon" name="info-circle"></sl-icon>
+  Behind the scenes G30 Z0 does a G92 Z0, so you can save this if you set 'save_g92 true' in config and issue M500 that saves the offset at 0. Note that G92 is creating a new coordinate system called the Workspace coordinate system (or WCS) it is worth reading up on how that works.
+</sl-alert>
 
 If you are doing this manually you can save time by jogging the Z to within 5mm of the bed then issue the `G30 Z0`.

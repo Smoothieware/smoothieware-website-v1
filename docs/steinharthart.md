@@ -1,5 +1,9 @@
 
-To add a new thermistor, you need to calculate the Steinhart Hart coefficients and then enter them into the [configuration file](http://smoothieware.org/configuring-smoothie.md) or using `M305` and save with `M500`.
+# Steinhart-Hart Thermistor Configuration
+
+To add a new thermistor, you need to calculate the Steinhart Hart coefficients and then enter them into the [configuration file](configuring-smoothie) or using `M305` and save with `M500`.
+
+## Using R-T Curve Method
 
 This can be done by adding this to the configuration:
 
@@ -14,6 +18,8 @@ Here: 126800Ω at 20°C, 1360Ω at 150°C, and 206.5Ω at 240°C
 It is best to use the resistance of the thermistors at temperatures around 25, 150, 250 degrees C.
 
 These can be measured empirically or taken from the R-C tables that most thermistor data sheets contain.
+
+## Calculating Coefficients
 
 Alternatively, you can calculate the coefficients with a smoothie command and enter them using **M305** as shown below.
 

@@ -6,15 +6,16 @@
 <div class="grid">
 <div class="col md-6">
 
-« Blue Box » laser cutters ( sometimes also referred to as K40 ) are cheap Chinese machines basically designed for laser engraving of stamps. 
+« Blue Box » laser cutters ( sometimes also referred to as K40 ) are cheap Chinese machines basically designed for laser engraving of stamps.
 
-The electronics and software that come with it are generally considered barely usable, and are at the very least very limited. 
+The electronics and software that come with it are generally considered barely usable, and are at the very least very limited.
 
 However, the machine itself, while cutting cost at all corners, and not being of the best quality, is a good option ( and the cheapest option possible ) for anybody looking at getting started with laser cutting.
 
 These machines can be found for $700 or even sometimes less on eBay, and have become more and more popular as people have started replacing the internal electronics, first with Arduino-based boards, and now with Smoothieboard. This allows for easier use, more software options, and makes for an overall much better machine.
 
-Their work area is roughly A4 size, and the laser power is about 40W. 
+Their work area is roughly A4 size, and the laser power is about 40W.
+
 This allows the machine to cut and engrave plywood, MDF, balsa, cardboard, paper, leather, cloth, and PMMA ( acrylic ), up to about 5mm thickness.
 
 This is a step-by-step guide to connecting your board to the various components of the laser cutter, configuring everything, from the beginning to actually cutting material.
@@ -22,8 +23,9 @@ This is a step-by-step guide to connecting your board to the various components 
 This guide is a [community](http://smoothieware.org/irc) effort, and this page is a Wiki. Please don't hesitate to [edit it](#_editpage) to fix mistakes and add information, any help is very welcome.
 
 {::nomarkdown}
-<img src="images/smooth-k40.png" width="100%" alt="Blue Box Laser Cutter" width=400 height=292>
-
+<a href="images/smooth-k40.png">
+  <img src="images/smooth-k40.png" alt="Blue Box Laser Cutter" style="width: 100%; max-width: 400px;"/>
+</a>
 {:/nomarkdown}
 </div>
 <div class="col md-6">
@@ -35,7 +37,7 @@ This guide is a [community](http://smoothieware.org/irc) effort, and this page i
 
 ## About this guide
 
-This guide is specific to the « Blue box » model that is very commonly found, but the information it contains should be useful for most Chinese laser cutters. 
+This guide is specific to the « Blue box » model that is very commonly found, but the information it contains should be useful for most Chinese laser cutters.
 
 Larger Chinese models have higher quality, and function on basically the same principle ( except they use external stepper motor drivers ).
 
@@ -72,7 +74,11 @@ If your PSU is too different from the one in this guide to allow you to adapt th
 </div>
 <div class="grid">
 <div class="col md-6">
-<img src="images/myjg40w.jpg" alt="Power Supply Unit" width=400 height=292>
+{::nomarkdown}
+<a href="images/myjg40w.jpg">
+  <img src="images/myjg40w.jpg" alt="Power Supply Unit" width="400" height="292" style="float: right; margin-left: 1rem;"/>
+</a>
+{:/nomarkdown}
 </div>
 </div>
 <div class="clearfix"></div>
@@ -117,8 +123,9 @@ The controller board that comes with the blue box is very limited, and can only 
 <div class="col md-6">
 
 {::nomarkdown}
-<img src="images/k40-controller.jpg" alt="Controller Board" width=600 height=390>
-
+<a href="images/k40-controller.jpg">
+  <img src="images/k40-controller.jpg" alt="Controller Board" style="min-width: 640px; display: block; margin: 2rem auto;"/>
+</a>
 {:/nomarkdown}
 </div>
 </div>
@@ -141,7 +148,11 @@ You will want to connect 24V power to the VBB input on the Smoothieboard, 5V pow
 | | `G` | Power Ground | Connect to the Ground input on the Smoothieboard |
 </div>
 <div class="col md-6">
-<img src="images/polarity.png" alt="Smoothieboard Polarity">
+{::nomarkdown}
+<a href="images/polarity.png">
+  <img src="images/polarity.png" alt="Smoothieboard Polarity" width="200" height="200" style="float: right; margin-left: 1rem;"/>
+</a>
+{:/nomarkdown}
 </div>
 </div>
 <div class="clearfix"></div>
@@ -167,8 +178,9 @@ The first thing you want to do, is find the wires for each stepper motor, and fo
 <div class="col md-6">
 
 {::nomarkdown}
-<img src="images/wiring-stepper-motor.png" alt="Stepper Motors">
-
+<a href="images/wiring-stepper-motor.png">
+  <img src="images/wiring-stepper-motor.png" alt="Stepper Motors" width="300" height="300" style="float: right; margin-left: 1rem;"/>
+</a>
 {:/nomarkdown}
 </div>
 </div>

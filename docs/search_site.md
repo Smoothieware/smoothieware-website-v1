@@ -1,9 +1,14 @@
 
 # Search
 
-> [!NOTE]
-> Please do not remove or change this page if you want to keep the search function working.
+<sl-alert variant="warning" open>
+  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+  <strong>Important:</strong> Please do not remove or change this page if you want to keep the search function working.
+</sl-alert>
 
+This page is a placeholder for the site's search functionality.
 
-**Comments**: 
-- The original DokuWiki file only contained a search module and a comment. The search module is a functional part of the wiki and does not have a direct Markdown equivalent, so it has been omitted from the conversion. The comment has been converted to a Markdown callout for visibility.
+<sl-alert variant="neutral" open>
+  <sl-icon slot="icon" name="info-circle"></sl-icon>
+  <strong>Note:</strong> The original DokuWiki file contained a search module that does not have a direct Markdown equivalent. Search functionality is provided by the site's theme and configuration.
+</sl-alert>

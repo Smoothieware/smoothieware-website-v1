@@ -1,11 +1,24 @@
 
-> [!WARNING]
-> **NOTE** Using eclipse is **not** supported by the smoothie developers, you are on your own if you decide to use it.
+{::nomarkdown}
+<sl-alert variant="warning" open>
+  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+  <strong>NOTE:</strong> Using Eclipse is <strong>not</strong> supported by the Smoothie developers, you are on your own if you decide to use it.
+</sl-alert>
+{:/nomarkdown}
 
-I first want to thank [David Cabanis](http://mbed.org/users/dcabanis/) for the e-mail that he sent me a few months ago. It forms the core of this page. David, You Rock!
+I first want to thank [David Cabanis](http://mbed.org/users/dcabanis/) for the e-mail that he sent me a few months ago.
+
+It forms the core of this page. David, You Rock!
 
 # Install Eclipse with C/C++ and GNU Support
-To get started, you need to install Eclipse. To this you will add support for the GNU tool chain used by the Smoothie project. At the time this page was written, Eclipse 4.4 (Luna), was the current release. This guide also applies to later versions - 4.5 (Mars) and 4.6 (Neon).
+
+To get started, you need to install Eclipse.
+
+To this you will add support for the GNU tool chain used by the Smoothie project.
+
+At the time this page was written, Eclipse 4.4 (Luna), was the current release.
+
+This guide also applies to later versions - 4.5 (Mars) and 4.6 (Neon).
 
 - Eclipse is a Java application and [requires at least version 6 of the Java Runtime Environment, JRE](http://wiki.eclipse.org/Eclipse/Installation#Install_a_JVM), be installed on your machine. On Windows and Linux, you will want to make sure that you have this Java requirement installed. On OS X, it will detect the Java requirement when you first attempt to run Eclipse and offer to install it for you if not already installed.
 - Go to [Eclipse Downloads](http://www.eclipse.org/downloads) to download and decompress the **Eclipse IDE for C/C++ Developers** archive.
@@ -28,13 +41,21 @@ To get started, you need to install Eclipse. To this you will add support for th
   - **Collaboration/Eclipse Git Team Provider**, **Collaboration/Java implementation of Git**
 
 # Create Eclipse Project for Smoothie
+
 - Open a shell and change into the **workspace directory** using `cd`
-  - In this, check out the Smoothieware source repository as described in [Getting Smoothie](http://smoothieware.org/getting-smoothie)
+
+  - In this, check out the Smoothieware source repository as described in [Getting Smoothie](getting-smoothie)
+
     - If you wish, you can switch between branches using the git eclipse plugin later
+
     - In the **workspace directory** there should be a directory named **Smoothie** now. It will be our the **project directory**
+
     - [optional] you might want to rename the **project directory**. At this time this can be done in your shell. If you decide to do so later, do it in eclipse.
+
   - Change into the **project directory**
-  - Retrieve and install the tool chain as described in [Compiling Smoothie](http://smoothieware.org/compiling-smoothie)
+
+  - Retrieve and install the tool chain as described in [Compiling Smoothie](compiling-smoothie)
+
   - Type `make all` to test, if the compiler works. The first build will take a while. To speed that up you might provide the parameter `-j <number of cores + 1>` to make (e.g. `make -j 3 all`)
 - Go back to Eclipse
   - On the **File** menu select **New** > **Makefile Project with Existing Code**

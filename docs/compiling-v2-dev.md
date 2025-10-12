@@ -3,6 +3,8 @@
 
 This tutorial is for Ubuntu 16.04 LTS, but can be adapted for other distros.
 
+This guide will walk you through the process of compiling and installing NuttX on the Bambino 200E board.
+
 ## Pre-requisites
 
 First, install the necessary packages:
@@ -69,11 +71,18 @@ This creates `nuttx.bin` to be flashed onto the Bambino board.
 
 ## Flashing to the board
 
-Several methods are available for flashing the board:
+Several methods are available for flashing the board.
+
+Choose the method that matches your available hardware.
 
 ### Using a STLink-v2 with OpenOCD
 
-**Note:** OpenOCD version 0.10 or newer is required.
+{::nomarkdown}
+<sl-alert variant="neutral" open>
+  <sl-icon slot="icon" name="info-circle"></sl-icon>
+  <strong>Note:</strong> OpenOCD version 0.10 or newer is required.
+</sl-alert>
+{:/nomarkdown}
 
 Connect the ST-Link v2 to the J5 connector on the board and use:
 
@@ -85,7 +94,12 @@ Use a USB/Serial board connected to Slot 5 and a terminal like "minicom" set to 
 
 ### Using JLink with OpenOCD
 
-**Note:** OpenOCD version 0.10 or newer is required.
+{::nomarkdown}
+<sl-alert variant="neutral" open>
+  <sl-icon slot="icon" name="info-circle"></sl-icon>
+  <strong>Note:</strong> OpenOCD version 0.10 or newer is required.
+</sl-alert>
+{:/nomarkdown}
 
 Edit `jlink.cfg` to use SWD:
 

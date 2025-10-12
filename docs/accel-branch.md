@@ -1,6 +1,8 @@
 
-> [!NOTE]
-> This is mainly out of date now, and describes a pretty old snapshot of smoothie. left here for historical reasons.
+<sl-alert variant="neutral" open>
+  <sl-icon slot="icon" name="info-circle"></sl-icon>
+  This is mainly out of date now, and describes a pretty old snapshot of smoothie. Left here for historical reasons.
+</sl-alert>
 
 This page is intended as a description of the current status of acceleration and stepping in Smoothie, and then a log of the process of moving to better acceleration and better ( maybe ) stepping.
 
@@ -19,16 +21,27 @@ Here is the plan:
 A summary of how we get smoothie to generate steps:
 
 1. We [receive a line over UART (for example)](https://github.com/arthurwolf/Smoothie/blob/edge/src/modules/communication/SerialConsole.cpp#L40), and [dispatch it as an event to all modules](https://github.com/arthurwolf/Smoothie/blob/edge/src/modules/communication/SerialConsole.cpp#L61).
+
 2. If [that line is a GCode](https://github.com/arthurwolf/Smoothie/blob/edge/src/modules/communication/GcodeDispatch.cpp#L28), we [dispatch that as an event to all modules](https://github.com/arthurwolf/Smoothie/blob/edge/src/modules/communication/GcodeDispatch.cpp#L100).
+
 3. The [Robot likes to listen to GCodes](https://github.com/arthurwolf/Smoothie/blob/edge/src/modules/robot/Robot.cpp#L95), converts them into small line segments, and [passes those to the Planner](https://github.com/arthurwolf/Smoothie/blob/edge/src/modules/robot/Robot.cpp#L253).
+
 4. The [Planner receives this segment](https://github.com/arthurwolf/Smoothie/blob/edge/src/modules/robot/Planner.cpp#L39), and [turns it into a Block on the Conveyor](https://github.com/arthurwolf/Smoothie/blob/edge/src/modules/robot/Planner.cpp#L46), then [does all kinds of acceleration math/planning on it to figure out the maximal speeds for each movement](https://github.com/arthurwolf/Smoothie/blob/edge/src/modules/robot/Planner.cpp#L155). The block is now at the end of the Conveyor's queue.
+
 5. If this is the first block we added ever, the [conveyor queue starts playing music](https://github.com/arthurwolf/Smoothie/blob/edge/src/modules/robot/Conveyor.cpp#L90): the Conveyor [calls the on_block_begin event, warning all modules that this block starts playing](https://github.com/arthurwolf/Smoothie/blob/edge/src/modules/robot/Conveyor.cpp#L113).
+
 6. Some modules, like Stepper and Extruder, like [to take responsibility for a Block](https://github.com/arthurwolf/Smoothie/blob/edge/src/modules/robot/Stepper.cpp#L120). We are here interested in Stepper as it's the one responsible for doing movements.
+
 7. Now the very interesting (for us, don't be sad, planner people) part begins: Stepper [instructs its StepperMotor objects to move](https://github.com/arthurwolf/Smoothie/blob/edge/src/modules/robot/Stepper.cpp#L131). They are instructed to [move a certain number of steps](https://github.com/arthurwolf/Smoothie/blob/edge/src/libs/StepperMotor.cpp#L110). Also, the StepperMotor is [made active](https://github.com/arthurwolf/Smoothie/blob/edge/src/libs/StepperMotor.cpp#L130) in the [StepTicker's list of active motors](https://github.com/arthurwolf/Smoothie/blob/edge/src/libs/StepTicker.cpp#L247).
+
 8. Things now stop happening in the normal, main loop context, and start happening elsewhere.
+
 9. The stepping interrupt is executed by the interrupt thingie, [at a fixed frequency](https://github.com/arthurwolf/Smoothie/blob/edge/src/libs/StepTicker.cpp#L54) (we used 100kHz, the default).
+
 10. When this [interrupt occurs](https://github.com/arthurwolf/Smoothie/blob/edge/src/libs/StepTicker.cpp#L151), the main thing to happen is that every active StepperMotor's [tick() method gets called](https://github.com/arthurwolf/Smoothie/blob/edge/src/libs/StepTicker.cpp#L88).
+
 11. The main job of [this method](https://github.com/arthurwolf/Smoothie/blob/edge/src/libs/StepperMotor.cpp#L43) is simply to do what is called [Bresenham's line algorithm](http://en.wikipedia.org/wiki/Bresenham%27s_line_algorithm). Basically, we increment a counter by a fixed value every tick(), and [when that counter is higher than a given value](https://github.com/arthurwolf/Smoothie/blob/edge/src/libs/StepperMotor.cpp#L49) (determined by [the speed we want to move at](https://github.com/arthurwolf/Smoothie/blob/edge/src/libs/StepperMotor.cpp#L158)), we [generate a step signal to the stepper driver](https://github.com/arthurwolf/Smoothie/blob/edge/src/libs/StepperMotor.cpp#L52).
+
 (Note we do not actually do Bresenham, we do a floating-point DDA on three axes).
 
 This is the core of what smoothie does.
@@ -60,7 +73,11 @@ In order to analyze how much various things we do take to execute, their cost, w
 
 This has been extremely useful in the past to figure out where we spent too much time, what needed fixing, etc.
 
-![Step generation graph](images/step-generation-graph.png)
+{::nomarkdown}
+<a href="images/step-generation-graph.png">
+  <img src="images/step-generation-graph.png" alt="Step generation graph showing timing analysis" style="min-width: 640px; display: block; margin: 2rem auto;"/>
+</a>
+{:/nomarkdown}
 
 1. In white, is the X-axis step signal. It is [turned on here](https://github.com/arthurwolf/Smoothie/blob/edge/src/libs/StepperMotor.cpp#L52) and [turned off here](https://github.com/arthurwolf/Smoothie/blob/edge/src/libs/StepTicker.cpp#L134).
 2. In brown is the [duration of this interrupt](https://github.com/arthurwolf/Smoothie/blob/edge/src/libs/StepTicker.cpp#L151). This is the total time we spend generating steps. It is the time we want to reduce as much as possible. A bit of the rest of the time is spent doing acceleration, all the rest in the main loop, mostly doing Planner math.
@@ -188,6 +205,10 @@ Several optimizations found and applied:
 
 These are optimizations that are most useful in the case we don't do anything. Applying them gives us the following signals/durations:
 
-![Optimized step generation graph](images/accel-branch/optimized-step-generation-graph.png)
+{::nomarkdown}
+<a href="images/accel-branch/optimized-step-generation-graph.png">
+  <img src="images/accel-branch/optimized-step-generation-graph.png" alt="Optimized step generation graph showing improved performance" style="min-width: 640px; display: block; margin: 2rem auto;"/>
+</a>
+{:/nomarkdown}
 
 Compared to the previous graph, we now spend significantly less time in the interrupt when no step is generated, and a bit less time when one or more steps are generated.

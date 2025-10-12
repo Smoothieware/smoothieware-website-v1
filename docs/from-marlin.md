@@ -1,12 +1,18 @@
+---
+layout: default
+title: Moving from Marlin to Smoothie
+---
 
 # Moving from Marlin to Smoothie
 
 If you are a Marlin user moving to a Smoothie system, you might have an existing configuration you want to port over.
 
-> [!WARNING]
-> Please note it is imperative you read the whole documentation before using Smoothie. Skipping this step **will** almost certainly result in damage and danger.
-> 
-> Again, read the whole documentation, do not only rely on this guide.
+<sl-alert variant="warning" open>
+  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+  Please note it is imperative you read the whole documentation before using Smoothie. Skipping this step <strong>will</strong> almost certainly result in damage and danger.
+  <br><br>
+  Again, read the whole documentation, do not only rely on this guide.
+</sl-alert>
 
 Assuming you have read the documentation (again: do it, do not skip the documentation), this page is aimed at helping you understand what Marlin options correspond to what Smoothie options.
 
@@ -18,7 +24,9 @@ This assumes you start from the [default configuration file](configuring-smoothi
 
 When talking to your Smoothieboard over USB, the baud rate isn't configurable and it will go as fast as USB allows, any baud rate set in your host software is ignored too.
 
-When talking to your Smoothieboard over the UART port, you have to set the baud rate. In Marlin that is done with:
+When talking to your Smoothieboard over the UART port, you have to set the baud rate.
+
+In Marlin that is done with:
 
 ```cpp
 #define BAUDRATE 115200
@@ -38,7 +46,9 @@ In Marlin, you define the number of extruders by changing this value:
 #define EXTRUDERS 1
 ```
 
-in Smoothie, things are much more modular, and you configure extruders by creating new extruder modules. If you have one extruder, you create one extruder module, if you have three, you create three extruder modules.
+in Smoothie, things are much more modular, and you configure extruders by creating new extruder modules.
+
+If you have one extruder, you create one extruder module, if you have three, you create three extruder modules.
 
 For details see [Extruder](extruder) and [Multiple extruders](multiple-extruders).
 
@@ -142,7 +152,7 @@ In Marlin, you set the PID parameters for the hotend this way:
 While in Smoothie, you instead configure that value for each [Temperaturecontrol](temperaturecontrol) module, in that module, for example:
 
 ```markdown
-# PID configuration 
+# PID configuration
 # See http://smoothieware.org/temperaturecontrol#pid
 temperature_control.hotend.p_factor 13.7 # P (proportional) factor
 temperature_control.hotend.i_factor 0.097 # I (integral) factor
@@ -209,7 +219,9 @@ Smoothie uses these to differentiate "axes" from "actuators".
 
 They are the same thing on cartesian machines, but are different on other machines, and it is important to distinguish them or the configuration would quickly get confusing.
 
-Essentially cartesian users have to suffer a small discomfort so that other users can have a better life. Thanks Cartesian users!
+Essentially cartesian users have to suffer a small discomfort so that other users can have a better life.
+
+Thanks Cartesian users!
 
 ## Endstop pullups
 
@@ -281,7 +293,7 @@ In Marlin, you set the steps per millimeters for each axis by changing:
 /**
  * Default Axis Steps Per Unit (steps/mm)
  * Override with M92
- *                                      X, Y, Z, E0 [[,|E1[[,|E2[, E3]]]]]
+ *                                      X, Y, Z, E0 [, E1[, E2[, E3]]]
  */
 #define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 4000, 500 }
 ```
@@ -312,7 +324,7 @@ In Marlin, you set the maximum feed rates (speeds) by changing:
 /**
  * Default Max Feed Rate (mm/s)
  * Override with M203
- *                                      X, Y, Z, E0 [[,|E1[[,|E2[, E3]]]]]
+ *                                      X, Y, Z, E0 [, E1[, E2[, E3]]]
  */
 #define DEFAULT_MAX_FEEDRATE { 500, 500, 2.25, 45 }
 ```
@@ -385,7 +397,9 @@ In Marlin, you set how hard axes can accelerate and decelerate at direction chan
 #define DEFAULT_EJERK                  5.0
 ```
 
-However Smoothie uses a different concept, which more finely allows to regulate speeds. You need to modify the value:
+However Smoothie uses a different concept, which more finely allows to regulate speeds.
+
+You need to modify the value:
 
 ```markdown
 junction_deviation 0.05 # See http://smoothieware.org/motion-control#junction-deviation
@@ -478,3 +492,5 @@ In Marlin, you configure this sensor by doing:
 While in Smoothie you use the [Filament detector](filament-detector) module
 
 ## Bed levelling
+
+For bed levelling and probing, see the [Zprobe](zprobe) documentation.

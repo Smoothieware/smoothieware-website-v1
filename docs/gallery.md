@@ -1,20 +1,51 @@
+# Gallery
 
-<iframe src="https://player.vimeo.com/video/517828544" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
-[Rotary Delta 3D printer](https://vimeo.com/517828544) from [Eric Powell](https://vimeo.com/user134707031) on [Vimeo](https://vimeo.com).
+A collection of projects and machines powered by Smoothieware and Smoothieboard.
 
-Smoothieboard driving a rotary delta machine, by [Eric Powell](https://forum.makerforums.info/t/homing-problem-using-smoothieware-on-rotary-delta/82556/10), March 2021
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/AKgKzSsWntw" frameborder="0" allowfullscreen></iframe>
-Smoothieboard driving a Hot wire Foam cutter, By Karlo Terrazas May 2017
-
-![Nice wiring](images/2016-2.jpg)
+<sl-alert variant="neutral" open>
+  <sl-icon slot="icon" name="info-circle"></sl-icon>
+  This gallery showcases the versatility of Smoothieboard - from 3D printers and laser cutters to CNC mills, plasma cutters, and even unconventional applications like seeding machines and embroidery.
+</sl-alert>
 
 {::nomarkdown}
-<img src="images/laser-engrave-paper.jpg" alt="Laser engraving with LaserWeb and Smoothieboard">
+<div style="text-align: center; margin: 2rem 0;">
+  <iframe src="https://player.vimeo.com/video/517828544" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+  <p><em><a href="https://vimeo.com/517828544">Rotary Delta 3D printer</a> from <a href="https://vimeo.com/user134707031">Eric Powell</a> on <a href="https://vimeo.com">Vimeo</a>.</em></p>
+  <p>Smoothieboard driving a rotary delta machine, by <a href="https://forum.makerforums.info/t/homing-problem-using-smoothieware-on-rotary-delta/82556/10">Eric Powell</a>, March 2021</p>
+</div>
 {:/nomarkdown}
-Laser engraving with LaserWeb and Smoothieboard, by Ariel Yahni, February 2016
-<iframe width="560" height="315" src="https://www.youtube.com/embed/0ZMn9tS2_II" frameborder="0" allowfullscreen></iframe>
-Smoothieboard driving a plasma cutter, by Peter Van Der Walt, January 2016
+
+{::nomarkdown}
+<div style="text-align: center; margin: 2rem 0;">
+  <iframe width="640" height="360" src="https://www.youtube.com/embed/AKgKzSsWntw" frameborder="0" allowfullscreen></iframe>
+  <p><em>Smoothieboard driving a Hot wire Foam cutter, By Karlo Terrazas May 2017</em></p>
+</div>
+{:/nomarkdown}
+
+{::nomarkdown}
+<div style="text-align: center; margin: 2rem 0;">
+  <a href="images/2016-2.jpg">
+    <img src="images/2016-2.jpg" alt="Nice wiring" style="min-width: 640px; height: auto;"/>
+  </a>
+  <p><em>Nice wiring</em></p>
+</div>
+{:/nomarkdown}
+
+{::nomarkdown}
+<div style="text-align: center; margin: 2rem 0;">
+  <a href="images/laser-engrave-paper.jpg">
+    <img src="images/laser-engrave-paper.jpg" alt="Laser engraving with LaserWeb and Smoothieboard" style="min-width: 640px; height: auto;"/>
+  </a>
+  <p><em>Laser engraving with LaserWeb and Smoothieboard, by Ariel Yahni, February 2016</em></p>
+</div>
+{:/nomarkdown}
+
+{::nomarkdown}
+<div style="text-align: center; margin: 2rem 0;">
+  <iframe width="640" height="360" src="https://www.youtube.com/embed/0ZMn9tS2_II" frameborder="0" allowfullscreen></iframe>
+  <p><em>Smoothieboard driving a plasma cutter, by Peter Van Der Walt, January 2016</em></p>
+</div>
+{:/nomarkdown}
 
 ![Protovoltaics Pick and place machine](https://cdn.hackaday.io /2813711435167279499.jpg)
 [Protovoltaics Pick and place machine](https://hackaday.io/project/5200-pick-and-place-machine) with Smoothieboard, September 2015
@@ -84,10 +115,11 @@ Beta touchprobe code results, powertomato, May 2013
 <iframe width="560" height="315" src="https://www.youtube.com/embed/aTN9iEur9dk" frameborder="0" allowfullscreen></iframe>
 Smoothieboard cutting aluminium on a 6040 router, Arthur, May 2013
 {::nomarkdown}
-!<img src="https://www.youtube.com/embed/ZKCS0renQ34?si=odKsvF5QCj4j2KJC" alt="A smoothieboard in the wild">
-
+<div style="text-align: center; margin: 2rem 0;">
+  <iframe width="640" height="360" src="https://www.youtube.com/embed/ZKCS0renQ34" frameborder="0" allowfullscreen></iframe>
+  <p><em>«A smoothieboard in the wild», by Morbo, April 2013</em></p>
+</div>
 {:/nomarkdown}
-«A smoothieboard in the wild», by Morbo, April 2013
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/_EWfmcWAz-M" frameborder="0" allowfullscreen></iframe>
 Smoothieboard printing on a hbot-type printer, Wulfnor, March 2013

@@ -9,21 +9,29 @@ The basic process is simply to [download it](https://github.com/Smoothieware/Web
 
 The process in more detail is as such:
 
+
+
 ## 1. Download the web interface
 
-The web interface is stored in a Github repository so that the community can contribute and help make it better. Please don't hesitate to help.
+The web interface is stored in a Github repository so that the community can contribute and help make it better.
+
+Please don't hesitate to help.
 
 Go to this address: [https://github.com/Smoothieware/Webif-pack](https://github.com/Smoothieware/Webif-pack)
 
-Then click on the Green «Clone or Download» button
+Then click on the Green «Clone or Download» button.
 
-Then click on «Download Zip»
+Then click on «Download Zip».
 
 Or alternatively, you can also download the Zip directly by going to this link: [https://github.com/Smoothieware/Webif-pack/archive/gh-pages.zip](https://github.com/Smoothieware/Webif-pack/archive/gh-pages.zip)
 
-## 2. Extract the web interface to your SD card.
 
-First, make sure you can access your Smoothieboard's SD card, either by plugging the Smoothieboard's USB cable into your computer, or by plugging the Smoothieboard's microSD card into your computer's MicroSD slot. This will allow to copy the new files to it.
+
+## 2. Extract the web interface to your SD card
+
+First, make sure you can access your Smoothieboard's SD card, either by plugging the Smoothieboard's USB cable into your computer, or by plugging the Smoothieboard's microSD card into your computer's MicroSD slot.
+
+This will allow you to copy the new files to it.
 
 Now that you have downloaded the `gh-pages.zip` file, open it in your file navigator.
 
@@ -33,18 +41,22 @@ The file extraction tool will ask you Where to extract the files.
 
 Select the Smoothieboard's SD card, then extract the files.
 
-Next, rename the `Webif-pack-gh-pages` folder to simply `webif`
+Next, rename the `Webif-pack-gh-pages` folder to simply `webif`.
 
 Finally, «safely eject» the SD card from the computer (this is a software function not a physical action).
 
-Now, your web interface is ready to use
+Now, your web interface is ready to use.
 
-> [!WARNING]
-> Some users have reported problems extracting the Zip file using the normal Windows unzipping program.
-> 
-> If this happens to you, please try using 7zip ([http://www.7-zip.org/](http://www.7-zip.org/)), it has been reported to work fine.
+<sl-alert variant="warning" open>
+  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+  Some users have reported problems extracting the Zip file using the normal Windows unzipping program.
 
-## 3. Use your web interface.
+  If this happens to you, please try using 7zip (<a href="http://www.7-zip.org/">http://www.7-zip.org/</a>), it has been reported to work fine.
+</sl-alert>
+
+
+
+## 3. Use your web interface
 
 Now, restart your Smoothieboard.
 
@@ -58,10 +70,16 @@ And there you go, you now have access to your new interface (make sure you empty
 
 If you need any help, don't [hesitate to ask](mailto:wolf.arthur@gmail.com).
 
+
+
 ## All steps in a video
 
-[![All steps in a video](https://img.youtube.com/vi/mvWzaHfcL1k/0.jpg)](https://www.youtube.com/watch?v=mvWzaHfcL1k)
+{::nomarkdown}
+<iframe width="560" height="315" src="https://www.youtube.com/embed/mvWzaHfcL1k" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+{:/nomarkdown}
 
 ## 4. Bonus: skip copying files
 
 You can also skip copying files simply by accessing [http://smoothieware.github.io/Webif-pack/new-web-interface/index.html](http://smoothieware.github.io/Webif-pack/new-web-interface/index.html) and entering your machine's IP address, but this requires having internet access.
+
+

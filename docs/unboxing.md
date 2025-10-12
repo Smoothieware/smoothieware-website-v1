@@ -13,8 +13,11 @@ The boards come pre-flashed. With a basic configuration file installed on the SD
 
 The first thing you might want to do before you start connecting your board is to look at our list of [Software](software), and install a "host" program to talk to the board.
 
-> [!WARNING]
-> Don't have a Smoothieboard? If you don't have a Smoothieboard but have or consider purchasing an MKS board, please make sure you read [What's wrong with MKS](http://smoothieware.org/troubleshooting#what-is-wrong-with-mks)
+<sl-alert variant="warning" open>
+  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+  <strong>Own a non-Smoothieboard board?</strong><br><br>
+  If you don't have a Smoothieboard but have or consider purchasing an MKS board, please make sure you read <a href="troubleshooting#what-is-wrong-with-mks">What's wrong with MKS</a>
+</sl-alert>
 
 # Connecting via USB
 
@@ -34,13 +37,15 @@ A moment after connection, your computer will recognize the Smoothieboard as a [
 
 This allows you to add, copy, edit, or delete any file you'd like. Already present on the SD card is a file named "config". This file contains all of the configuration options for your board and is read when you start or reset your board. You edit the [configuration](http://smoothieware.org/configuring-smoothie) simply by editing this file in a [Text Editor](https://wiki.gnome.org/Apps/Gedit), saving it, and resetting the board. No need to recompile or flash the board.
 
-> [!SUCCESS]
-> You can read more about configuring your Smoothieboard at [Configuring Smoothie](http://smoothieware.org/configuring-smoothie)
+<sl-alert variant="success" open>
+  <sl-icon slot="icon" name="check-circle"></sl-icon>
+  You can read more about configuring your Smoothieboard at <a href="http://smoothieware.org/configuring-smoothie">Configuring Smoothie</a>
+</sl-alert>
 
-> [!NOTE]
-> The SD card can also be used to flash a more recent version of the firmware to your board, while the pre-flashed firmware should work this is not always the case, see [where to get the binary file](getting-smoothie) and [how to flash it via the SD card](flashing-smoothie-firmware).
-> 
-> It can also be used to store and play [G-Code](http://en.wikipedia.org/wiki/G-code) files, see [Player](player).
+<sl-alert variant="neutral" open>
+  <sl-icon slot="icon" name="info-circle"></sl-icon>
+  The SD card can also be used to flash a more recent version of the firmware to your board, while the pre-flashed firmware should work this is not always the case, see <a href="getting-smoothie">where to get the binary file</a> and <a href="flashing-smoothie-firmware">how to flash it via the SD card</a>.<br><br>It can also be used to store and play <a href="http://en.wikipedia.org/wiki/G-code">G-Code</a> files, see <a href="player">Player</a>.
+</sl-alert>
 
 USB Mass Storage is not the only thing you get when you connect the board. The board also exposes a [USB CDC](http://en.wikipedia.org/wiki/USB_communications_device_class) Serial interface, allowing you to send G-Code and receive answers. (There is also a DFU interface for flashing firmwares but that's mostly for developers).
 

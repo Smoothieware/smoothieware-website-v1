@@ -13,18 +13,22 @@
 - [Robotseed](http://robotseed.com/index.php?id_lang=2), Smoothie lead contributing company (**Intermittent stock**, reservations can be made via [email](mailto:wolf.arthur@gmail.com). If you are in a hurry, try Robosprout above instead)
 - [Robotseed on Amazon](https://www.amazon.fr/Smoothieboard-5XC-SmoothieBoard-SB-1-0/dp/B00TIYS7S6/ref=sr_1_1?ie=UTF8&qid=1480984970&sr=8-1&keywords=smoothieboard) (France)
 
-> [!WARNING]
-> #### Worldwide shortages
-> 
-> As you might have heard in the news, there are worldwide shortages of a lot of chips.
-> 
-> This has had a massive impact on our ability to produce Smoothieboard v1, and to make progress on Smoothieboard v2.
-> 
-> We currently have managed to produce boards, and there should be stock for the foreseeable future, but this is a constant fight to stay in stock, and you can expect at *some point*, we'll have shortages again like we had at the beginning of 2021.
-> 
-> The chips are also much more expensive than normal. We were able to get *some* at higher-than-normal-but-not-crazy prices some weeks back (this severely reduces our margins, but for the time being we have decided not to change our prices and to keep all of the effort/cost on our side of the equation rather than on users' side), but at the time of this writing (May 2021), the only chips available have 1000%+ price markups: [https://www.win-source.net/nxp-lpc1769fbd100.html](https://www.win-source.net/nxp-lpc1769fbd100.html). If we end up having to produce boards with those new chip prices, we won't be able to keep the prices the same anymore.
-> 
-> Hopefully, all of this calms down and fixes itself as 2021 progresses. We'll keep you informed.
+{::nomarkdown}
+<sl-alert variant="warning" open>
+  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+  <h4>Worldwide shortages</h4>
+  <br>
+  As you might have heard in the news, there are worldwide shortages of a lot of chips.
+  <br><br>
+  This has had a massive impact on our ability to produce Smoothieboard v1, and to make progress on Smoothieboard v2.
+  <br><br>
+  We currently have managed to produce boards, and there should be stock for the foreseeable future, but this is a constant fight to stay in stock, and you can expect at <em>some point</em>, we'll have shortages again like we had at the beginning of 2021.
+  <br><br>
+  The chips are also much more expensive than normal. We were able to get <em>some</em> at higher-than-normal-but-not-crazy prices some weeks back (this severely reduces our margins, but for the time being we have decided not to change our prices and to keep all of the effort/cost on our side of the equation rather than on users' side), but at the time of this writing (May 2021), the only chips available have 1000%+ price markups: <a href="https://www.win-source.net/nxp-lpc1769fbd100.html">https://www.win-source.net/nxp-lpc1769fbd100.html</a>. If we end up having to produce boards with those new chip prices, we won't be able to keep the prices the same anymore.
+  <br><br>
+  Hopefully, all of this calms down and fixes itself as 2021 progresses. We'll keep you informed.
+</sl-alert>
+{:/nomarkdown}
 
 ## List of historical resellers
 
@@ -57,10 +61,14 @@ If your company currently has stock, but is listed as not having it, please [ema
 
 If you want to become a reseller, please [email us](mailto:wolf.arthur@gmail.com).
 
-> [!WARNING]
-> **Out of stock?**
-> 
-> You find all shops are out of stock? There's a lot of demand and it's not easy being always in stock. We might actually still have boards for you, or be close to refilling. To be sure you don't miss something, email us: [mailto:wolf.arthur@gmail.com](mailto:wolf.arthur@gmail.com)
+{::nomarkdown}
+<sl-alert variant="warning" open>
+  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+  <strong>Out of stock?</strong>
+  <br><br>
+  You find all shops are out of stock? There's a lot of demand and it's not easy being always in stock. We might actually still have boards for you, or be close to refilling. To be sure you don't miss something, email us: <a href="mailto:wolf.arthur@gmail.com">wolf.arthur@gmail.com</a>
+</sl-alert>
+{:/nomarkdown}
 
 ## Broken boards
 

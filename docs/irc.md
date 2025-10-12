@@ -7,17 +7,22 @@ Before you use Smoothie's IRC channel, please read the following advice:
 
 {% include_relative help-guidelines.md %}
 
-> [!SUCCESS]
-> **IRC-specific recommendations**
-> 
-> - Do not ask if you can ask for help, or ask if anyone is around, just ask your question.
-> - Stay around until somebody answers, some times are more active than others, if you stick around somebody will maybe answer you an hour from now.
-> - Be polite: Remember you are talking to volunteers who could be having a beer with their friends but are here helping you instead.
-> - Be precise: The more information you give, and the more clearly you give it, the better others will be able to help you.
-> - If somebody tells you to read the documentation, they are not being mean to you, they are just pointing out that your question is answered in the documentation, and that it is more fair for you to read your answer there, than for them to help you when that time could be instead spent helping somebody whose question is not answered in the documentation.
-> - Don't repeat: People can read your question even long after you have asked it, repeating it will only cause others to be annoyed.
-> - Stay on the channel and help others, that's how we build a friendly community in which it is easy to get help.
-> - If your question was not answered in the documentation, add it to the documentation: the documentation is a wiki anyone can edit, please help us make it more complete.
+{::nomarkdown}
+<sl-alert variant="primary" open>
+  <sl-icon slot="icon" name="chat-dots"></sl-icon>
+  <strong>IRC-specific recommendations</strong><br><br>
+  <ul>
+    <li><strong>Do not ask if you can ask for help</strong>, or ask if anyone is around, just ask your question.</li>
+    <li><strong>Stay around until somebody answers</strong>, some times are more active than others, if you stick around somebody will maybe answer you an hour from now.</li>
+    <li><strong>Be polite</strong>: Remember you are talking to volunteers who could be having a beer with their friends but are here helping you instead.</li>
+    <li><strong>Be precise</strong>: The more information you give, and the more clearly you give it, the better others will be able to help you.</li>
+    <li><strong>Reading documentation is not mean</strong>: If somebody tells you to read the documentation, they are not being mean to you, they are just pointing out that your question is answered in the documentation, and that it is more fair for you to read your answer there, than for them to help you when that time could be instead spent helping somebody whose question is not answered in the documentation.</li>
+    <li><strong>Don't repeat</strong>: People can read your question even long after you have asked it, repeating it will only cause others to be annoyed.</li>
+    <li><strong>Stay on the channel and help others</strong>, that's how we build a friendly community in which it is easy to get help.</li>
+    <li><strong>Improve the documentation</strong>: If your question was not answered in the documentation, add it to the documentation: the documentation is a wiki anyone can edit, please help us make it more complete.</li>
+  </ul>
+</sl-alert>
+{:/nomarkdown}
 
 ## Connecting
 

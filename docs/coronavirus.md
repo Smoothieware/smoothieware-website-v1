@@ -1,21 +1,34 @@
 
 # Coronavirus
 
-> [!WARNING]
-> ![OSHW Logo](images/oshw-logo.png)
-> ![Virus](images/virus.png)
-> 
-> **TL;DR:** If you are helping with the Covid efforts and have Smoothie troubles [contact us](mailto:wolf.arthur@gmail.com) as soon as possible and we'll do everything we can to help you as a priority.
+{::nomarkdown}
+<sl-alert variant="warning" open>
+  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+  <div style="display:flex;align-items:center;gap:15px;margin-bottom:10px;">
+    <img src="images/oshw-logo.png" alt="OSHW Logo" style="width:50px;height:50px;">
+    <img src="images/virus.png" alt="Virus" style="width:50px;height:50px;">
+  </div>
+  <strong>TL;DR:</strong> If you are helping with the Covid efforts and have Smoothie troubles <a href="mailto:wolf.arthur@gmail.com">contact us</a> as soon as possible and we'll do everything we can to help you as a priority.
+</sl-alert>
+{:/nomarkdown}
 
-![Reddit Post](images/rzhn6hvvwxq41.jpg)
+{::nomarkdown}
+<a href="images/rzhn6hvvwxq41.jpg">
+  <img src="images/rzhn6hvvwxq41.jpg" alt="Reddit Post" style="display:block;margin:20px auto;min-width:640px;max-width:100%;height:auto;"/>
+</a>
+{:/nomarkdown}
 
 Turns out, all those 3D printers are for more than printing Poke-people. Who knew ??
 
 As the global [Coronavirus pandemic](https://en.wikipedia.org/wiki/2019%E2%80%9320_coronavirus_pandemic) progresses, some hospitals and care centers find themselves short on items essential to protect healthcare personnel and their patients from infection.
 
-It also happens that many people these past few years (that's you guys) have been learning to do 3D printing and other machine fabrication, many have machines at home, and it turns out that some essential hardware is in fact quite easy to manufacture using these DIY 3D printers.
+It also happens that many people these past few years (that's you guys) have been learning to do 3D printing and other machine fabrication.
 
-And so, where I live, the local 3D printing community has manufactured thousands of face masks in just a few days, that have been life-savers for the local hospitals. As far as I can gather, this is happening pretty much everywhere, all around the world.
+Many have machines at home, and it turns out that some essential hardware is in fact quite easy to manufacture using these DIY 3D printers.
+
+And so, where I live, the local 3D printing community has manufactured thousands of face masks in just a few days, that have been life-savers for the local hospitals.
+
+As far as I can gather, this is happening pretty much everywhere, all around the world.
 
 If it's not happening close to you, **it's likely it will happen soon**, so get that dust off your 3D printer.
 
@@ -35,9 +48,13 @@ Otherwise, social media seems to be the way to coordinate efforts. Here's a list
 
 ## Files
 
-There seems to be a lot of files flying around. If you don't have a fablab coordinating what needs to be printed and where it needs to be sent, it might make sense for you to contact your local hospital to ask what they *need* you to print, and where to deposit it.
+There seems to be a lot of files flying around.
 
-Here are some files that seem to be commonly used. These are only examples, there are many more, feel free to add links:
+If you don't have a fablab coordinating what needs to be printed and where it needs to be sent, it might make sense for you to contact your local hospital to ask what they *need* you to print, and where to deposit it.
+
+Here are some files that seem to be commonly used.
+
+These are only examples, there are many more, feel free to add links:
 - [Prusa face shield](https://www.prusaprinters.org/prints/26708-prusa-protective-face-shield-rc2-with-covered-brow), for 3D printing
 - [Comments for the v1 of the shield](https://www.prusaprinters.org/prints/25857-protective-face-shield-rc1/comments) has links to versions for laser cutting. Laser cutting face shields seem to be able to produce much larger quantities of face masks, much faster, so if you have a laser cutter, it's likely to be possible to help a lot with it.
 - [The Prusa portal for all things covid](https://www.prusa3d.com/covid19/).

@@ -1,34 +1,45 @@
-
 # Console commands
+
+{::nomarkdown}
+<img src="images/coding.png" alt="Console" width="300" height="auto" style="float: right; margin-left: 1rem;"/>
+{:/nomarkdown}
 
 In Smoothie, when connected to your board via Serial, in the same way that you can send Gcodes, you can also send some commands to manipulate the firmware's behavior and get information.
 
 Here are the different commands, grouped by module.
 
-> [!WARNING]
-> Not all of the console commands are documented here, feel free to add any that have been missed.
+<sl-alert variant="warning" open>
+  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+  Not all of the console commands are documented here, feel free to add any that have been missed.
+</sl-alert>
 
-> [!WARNING]
-> Commands are meant as shortcuts/easier to use alternatives to G/M-codes when users are interacting directly with the machine via one of the serial ports.
->
-> If you are developing a host, you should use G/M-codes to interface programmatically with the machine, as they are more consistent in their format and answers and easier to parse.
->
-> Commands on the other hand have no guarantee to have any of that, they are meant for manual use.
+<sl-alert variant="warning" open>
+  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+  Commands are meant as shortcuts/easier to use alternatives to G/M-codes when users are interacting directly with the machine via one of the serial ports.
+  <br><br>
+  If you are developing a host, you should use G/M-codes to interface programmatically with the machine, as they are more consistent in their format and answers and easier to parse.
+  <br><br>
+  Commands on the other hand have no guarantee to have any of that, they are meant for manual use.
+</sl-alert>
 
-> [!NOTE]
-> **Pronterface** requires that you prefix your commands with the `@` character.
->
-> So for example if you want to use the `help` command, send:
->
-> `@help`
->
-> On other hosts you can use `M1000 command`
+<sl-alert variant="neutral" open>
+  <sl-icon slot="icon" name="info-circle"></sl-icon>
+  <strong>Pronterface</strong> requires that you prefix your commands with the <code>@</code> character.
+  <br><br>
+  So for example if you want to use the <code>help</code> command, send:
+  <br><br>
+  <code>@help</code>
+  <br><br>
+  On other hosts you can use <code>M1000 command</code>
+</sl-alert>
 
 ---
 
 ## SimpleShell
 
 SimpleShell is a small unix-like shell module that allows you to browse the file system (SD card or other) and act on files.
+
+This provides a powerful command-line interface for managing files and executing commands.
 
 ### help
 
@@ -153,7 +164,7 @@ play /sd/gcode_file -v
 play list_of_configuration_changes
 ```
 
-See the specific documentation at the [Player](http://smoothieware.org/player) page.
+See the specific documentation at the [Player](player) page.
 
 ### progress
 
@@ -214,7 +225,7 @@ Free AHB0: 13152, AHB1: 10440
 break
 ```
 
-Breaks into [MRI debugging mode](http://smoothieware.org/mri-debugging)
+Breaks into [MRI debugging mode](mri-debugging)
 
 ### net
 
@@ -301,7 +312,8 @@ Prints a list of thermistor presets known to Smoothie with their numerical IDs.
 
 ## Config
 
-The config module is in charge of storing and retrieving configuration values (in/from the `config` file, see [Configuring Smoothie](http://smoothieware.org/configuring-smoothie)).
+The config module is in charge of storing and retrieving configuration values (in/from the `config` file, see [Configuring Smoothie](configuring-smoothie)).
+
 It also provides a few commands to manipulate those values.
 
 ### config-get
@@ -314,9 +326,12 @@ config-get <configuration_source> <configuration_setting>
 
 Outputs the value of this configuration setting to the standard output. The value is taken from the `config` file.
 
-> [!DANGER]
-> **WARNING it is HIGHLY recommended to NOT use this command** as it uses a huge amount of memory to reload the config file and may **CRASH**.
-> Use `cat /sd/config` instead.
+<sl-alert variant="danger" open>
+  <sl-icon slot="icon" name="exclamation-octagon"></sl-icon>
+  <strong>WARNING it is HIGHLY recommended to NOT use this command</strong> as it uses a huge amount of memory to reload the config file and may <strong>CRASH</strong>.
+  <br><br>
+  Use <code>cat /sd/config</code> instead.
+</sl-alert>
 
 `<configuration_source>`: This optional parameter selects where to read the value from. Valid sources are 'local' and 'sd'. Leaving this parameter out will read the current live settings in use.
 
@@ -335,13 +350,20 @@ config-set <configuration_source> <configuration_setting> <value>
 ```
 
 Changes the value of this configuration setting to the value passed as a parameter.
-**Note:** This command cannot currently "insert" characters, and just replaces ones that are already present. So if the new value has a length that would require inserting characters not to go over the end of the line, it will be refused. This is why all the lines in your config file must have extra whitespace (which are very useful to get nicely formatted comment columns, see [Configuring Smoothie](http://smoothieware.org/configuring-smoothie)).
+
+**Note:** This command cannot currently "insert" characters, and just replaces ones that are already present.
+
+So if the new value has a length that would require inserting characters not to go over the end of the line, it will be refused.
+
+This is why all the lines in your config file must have extra whitespace (which are very useful to get nicely formatted comment columns, see [Configuring Smoothie](configuring-smoothie)).
 
 `<configuration_source>`: This parameter selects where to write the value to. Valid sources are 'firm' and 'sd'.
 
 `<configuration_setting>`: This parameter selects which value should be set.
 
-Note you need to then reset your board, either by cycling the power, or by issuing the `reset` command. Configuration changes are not taken into account until the config file is read again, which happens when the board starts.
+Note you need to then reset your board, either by cycling the power, or by issuing the `reset` command.
+
+Configuration changes are not taken into account until the config file is read again, which happens when the board starts.
 
 `<value>`: The value to write.
 
@@ -375,7 +397,7 @@ The following commands are available for testing lasers (prepend `@` in pronterf
 - `fire nnn` where nnn is 0-100 percentage of power (example `fire 10` will turn on laser at 10%)
 - `fire off` turn off the test fire and return to automatic mode.
 
-See the [Laser module](http://smoothieware.org/laser) for more information.
+See the [Laser module](laser) for more information.
 
 And be very careful as this command will leave your laser on indefinitely, it is the only thing that can do that, and it is dangerous.
 

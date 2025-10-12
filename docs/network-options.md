@@ -1,5 +1,11 @@
 
-# Network Options
+# Network Configuration Options
+
+This page lists all network-related configuration options for Smoothieware.
+
+For more information about network setup, see the [Network](network) guide.
+
+## Configuration Reference
 
 | Option | Default Value | Description |
 | ------ | ------------- | ----------- |

@@ -1,3 +1,7 @@
+---
+layout: default
+title: Extruder Guide
+---
 
 # Extruder
 
@@ -7,7 +11,15 @@ This module controls the motor that pushes the filament, it does not take care o
 
 The most important parameter to get your extruder module to work properly, is `extruder.[module-name].steps_per_mm`.
 
-You can create as many Extruder modules as you want (although you may run out of memory and Smoothie will no longer boot), as long as you give them different module names. You can name those modules whatever you want (as long as you stick to only alphanumerical characters). **NOTE** that the default build of Smoothie only supports 2 extruders (5 axis), if you need 3 extruders you need to compile with `make AXIS=6`.
+
+You can create as many Extruder modules as you want (although you may run out of memory and Smoothie will no longer boot), as long as you give them different module names.
+
+You can name those modules whatever you want (as long as you stick to only alphanumerical characters).
+
+<sl-alert variant="neutral" open>
+  <sl-icon slot="icon" name="info-circle"></sl-icon>
+  <strong>NOTE</strong> that the default build of Smoothie only supports 2 extruders (5 axis), if you need 3 extruders you need to compile with <code>make AXIS=6</code>.
+</sl-alert>
 
 ## Configuration
 
@@ -19,19 +31,27 @@ This value depends on your stepper motor, the microstepping on your stepper moto
 
 A very good guide on how to find this value can be found here: [Triffid Hunter's Calibration Guide](http://reprap.org/wiki/Triffid_Hunter%27s_Calibration_Guide#E_steps)
 
+
 ```markdown
 extruder.hotend.steps_per_mm 140
 ```
 
 ### Filament diameter
 
-This is an optional parameter for those who want to use volumetric extrusion, but are too lazy to do their own math. ;) Simply enter the machine's filament diameter here and set your slicer's filament diameter to 1.128379mm (2*sqrt(1/pi)) and enjoy portable gcode! Further explanation can be found in Triffid Hunter's guide, linked above.
+This is an optional parameter for those who want to use volumetric extrusion, but are too lazy to do their own math. ;)
 
-> [!WARNING]
-> In the current **edge** builds, when a filament diameter is specified either from M200 Dxxx or the config setting Smoothie expects all E values specified to be in mm³, so when you click extrude 10mm in Pronterface Smoothie will actually extrude 10mm³. And E values in a gcode file will all be expected to be mm³.
-> Note that when firmware retraction is specified via M207 the retraction length is still in mm not mm³, but will be converted to mm³ based on the filament diameter at the time of extrusion.
-> 
-> In the current **master** builds, only print moves have E specified in mm³, retract or extrude only moves are still in mm. The change in edge is to be more compliant with other firmwares and user expectations.
+Simply enter the machine's filament diameter here and set your slicer's filament diameter to 1.128379mm (2*sqrt(1/pi)) and enjoy portable gcode!
+
+Further explanation can be found in Triffid Hunter's guide, linked above.
+
+<sl-alert variant="warning" open>
+  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+  In the current <strong>edge</strong> builds, when a filament diameter is specified either from M200 Dxxx or the config setting Smoothie expects all E values specified to be in mm³, so when you click extrude 10mm in Pronterface Smoothie will actually extrude 10mm³. And E values in a gcode file will all be expected to be mm³.
+  <br><br>
+  Note that when firmware retraction is specified via M207 the retraction length is still in mm not mm³, but will be converted to mm³ based on the filament diameter at the time of extrusion.
+  <br><br>
+  In the current <strong>master</strong> builds, only print moves have E specified in mm³, retract or extrude only moves are still in mm. The change in edge is to be more compliant with other firmwares and user expectations.
+</sl-alert>
 
 ```markdown
 extruder.hotend.filament_diameter 3.0
@@ -51,8 +71,8 @@ Note this is optional, you are not obligated to set this up, but it is a nice fe
 
 The amounts of extrusion and speed can be set with the following M codes:
 
-| `M207` | set retract length S[positive|mm] F[feedrate|mm/min] Z[additional|zlift/hop] Q[zlift|feedrate mm/min] | `M207 S4 F30 Z1` |
-| `M208` | set retract recover length S[positive|mm surplus to the M207 S*] F[feedrate|mm/min] | `M208 S0 F8` |
+| `M207` | set retract length S[positive\|mm] F[feedrate\|mm/min] Z[additional\|zlift/hop] Q[zlift\|feedrate mm/min] | `M207 S4 F30 Z1` |
+| `M208` | set retract recover length S[positive\|mm surplus to the M207 S*] F[feedrate\|mm/min] | `M208 S0 F8` |
 
 or can be set in config with the following settings:
 
@@ -67,9 +87,10 @@ extruder.hotend.retract_zlift_feedrate 6000 # zlift feedrate in mm/min (Note mm/
 
 These can be set differently for each extruder defined.
 
-> [!WARNING]
-> Please note the inconsistency here with the config specifying mm/sec and the M206/207 specifying mm/min.
-> Sorry about that.
+<sl-alert variant="warning" open>
+  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+  Please note the inconsistency here with the config specifying mm/sec and the M206/207 specifying mm/min. Sorry about that.
+</sl-alert>
 
 ### Pins
 
@@ -83,8 +104,10 @@ extruder.hotend.dir_pin 0.22
 extruder.hotend.en_pin 0.21
 ```
 
-> [!WARNING]
-> These pins are for the delta (4th) driver on a Smoothieboard. This is what is most commonly used, but in another board or setup, you may have to use other pins.
+<sl-alert variant="warning" open>
+  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+  These pins are for the delta (4th) driver on a Smoothieboard. This is what is most commonly used, but in another board or setup, you may have to use other pins.
+</sl-alert>
 
 **2nd Extruder** (epsilon, or M5)
 
@@ -94,13 +117,17 @@ extruder.hotend2.dir_pin 2.13
 extruder.hotend2.en_pin 4.29
 ```
 
-> [!WARNING]
-> These pins are for the epsilon (5th) driver on a Smoothieboard. This is what is most commonly used, but in another board or setup, you may have to use other pins.
+<sl-alert variant="warning" open>
+  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+  These pins are for the epsilon (5th) driver on a Smoothieboard. This is what is most commonly used, but in another board or setup, you may have to use other pins.
+</sl-alert>
 
-> [!TIP]
-> You can do special things to Smoothie pins, for example, you can invert them, which is useful to revert the direction of your extruder if it is wired the wrong way around on your board, see [Pin Configuration](pin-configuration).
-> 
-> You can make your extruder module use any other stepper motor driver, or even an external stepper motor driver, simply by providing the adequate pins for that driver, see [Pinout](pinout).
+<sl-alert variant="primary" open>
+  <sl-icon slot="icon" name="lightbulb"></sl-icon>
+  You can do special things to Smoothie pins, for example, you can invert them, which is useful to revert the direction of your extruder if it is wired the wrong way around on your board, see <a href="pin-configuration">Pin Configuration</a>.
+  <br><br>
+  You can make your extruder module use any other stepper motor driver, or even an external stepper motor driver, simply by providing the adequate pins for that driver, see <a href="pinout">Pinout</a>.
+</sl-alert>
 
 ### Current
 
@@ -150,4 +177,6 @@ Now that your extruder is configured, you can wire it:
 
 ### Wiring
 
-Wiring your extruder stepper motor is very similar to how you wire your X, Y, and Z stepper motors (see adequate documentation): you just wire the 4 wires of the stepper motor, to the output connector of the M4 stepper motor driver.
+Wiring your extruder stepper motor is very similar to how you wire your X, Y, and Z stepper motors (see adequate documentation):
+
+you just wire the 4 wires of the stepper motor, to the output connector of the M4 stepper motor driver.

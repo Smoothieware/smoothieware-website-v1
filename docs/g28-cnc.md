@@ -1,7 +1,10 @@
+# G28 G-code
+
 {::nomarkdown}
-<img src="images/cnc-returning-to-origin.png" alt="Returning To Origin" width=200 height=200>
+<a href="images/cnc-returning-to-origin.png">
+  <img src="images/cnc-returning-to-origin.png" alt="Returning To Origin" width="200" height="200" style="float: right; margin-left: 1rem;"/>
+</a>
 {:/nomarkdown}
-## G28 G-code
 
 On a CNC mill, `G28` means "go to the recorded origin point in the machine coordinates workspace".
 
@@ -9,7 +12,9 @@ The machine coordinates are the position of the machine relative to the point at
 
 This is by opposition to the workspace coordinates, which are the coordinates you use to position a job you want to do.
 
-The origin point is a recorded position, it is arbitrary and you choose it, but it is generally the point you want the tool to be at when it is not doing anything. It is not necessarily the `0,0,0` point of the workspace coordinates, but it can be if you want it to.
+The origin point is a recorded position, it is arbitrary and you choose it, but it is generally the point you want the tool to be at when it is not doing anything.
+
+It is not necessarily the `0,0,0` point of the workspace coordinates, but it can be if you want it to.
 
 ### Format
 

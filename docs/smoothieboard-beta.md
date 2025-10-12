@@ -1,12 +1,21 @@
 
-# This page is a legacy documentation for the 4-axis only version of smoothieboard, also known as the beta smoothieboard, released January 2013 and sold by Trinitylabs and then Ipsofactio in the first months of 2013.
+# Smoothieboard Beta (Legacy Documentation)
+
+<sl-alert variant="warning" open>
+  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+  <strong>Legacy Documentation:</strong> This page documents the 4-axis only version of Smoothieboard, also known as the "beta Smoothieboard", released January 2013 and sold by Trinitylabs and then Ipsofactio in the first months of 2013. This is historical information only.
+</sl-alert>
 
 SmoothieBoard is an [Open Source Hardware](http://en.wikipedia.org/wiki/Open-source_hardware) [CNC controller board](http://en.wikipedia.org/wiki/Numerical_control) based on the [LPC 1769](http://ics.nxp.com/lpcxpresso/~LPC1769/) Cortex-M3 chip.
 It is intended to run the [Smoothie modular firmware](http://smoothieware.org/) ( [GPL](http://en.wikipedia.org/wiki/Gpl) too ), and is targeted at [3D Printers](http://reprap.org), [Laser cutters](http://en.wikipedia.org/wiki/Laser_cutter), [CNC Mills](http://en.wikipedia.org/wiki/Milling_machine), [Pick and place](http://en.wikipedia.org/wiki/Pick_and_place) and other small-sized CNC machines. Larger machines can be driven using the [bare](http://) version and external drivers.
 
 ## Preview
 
-![Smoothieboard](https://farm8.static.flickr.com/7270/7759993256_5c9c881eb8_z.jpg)
+{::nomarkdown}
+<a href="https://farm8.static.flickr.com/7270/7759993256_5c9c881eb8_z.jpg">
+  <img src="https://farm8.static.flickr.com/7270/7759993256_5c9c881eb8_z.jpg" alt="Smoothieboard Beta" style="display: block; margin: 2rem auto; min-width: 640px; width: 80%; max-width: 800px;"/>
+</a>
+{:/nomarkdown}
 
 ## Status
 A first batch of *beta* smoothieboards has been made, and has been [sold out](http://trinitylabs.com/products/beta-smoothieboard).
@@ -80,12 +89,27 @@ Price may vary from vendor to vendor.
 
 Most connectors on smoothieboard are broken out to the borders for easy access:
 
-![Smoothieboard Wiring](https://farm8.static.flickr.com/7263/7832149516_76d367a105_b.jpg)
+{::nomarkdown}
+<a href="https://farm8.static.flickr.com/7263/7832149516_76d367a105_b.jpg">
+  <img src="https://farm8.static.flickr.com/7263/7832149516_76d367a105_b.jpg" alt="Smoothieboard Wiring" style="display: block; margin: 2rem auto; min-width: 640px; width: 80%; max-width: 800px;"/>
+</a>
+{:/nomarkdown}
 
-![Smoothieboard Diagram](https://github.com/Bouni/smoothieboard-graphics/blob/master/smoothieboard-wiring.png?raw=true)
+{::nomarkdown}
+<a href="https://github.com/Bouni/smoothieboard-graphics/blob/master/smoothieboard-wiring.png?raw=true">
+  <img src="https://github.com/Bouni/smoothieboard-graphics/blob/master/smoothieboard-wiring.png?raw=true" alt="Smoothieboard Diagram" style="display: block; margin: 2rem auto; min-width: 640px; width: 80%; max-width: 800px;"/>
+</a>
+{:/nomarkdown}
 
-**Warning**: Please note the inversion Vbb connectors: the 5mm one has GND to the left, the 3.5mm one has GND to the right.
-**Note**: on the I2C header the pinout is wrong in the above diagram, it is from top to bottom: 3v3 sda scl gnd
+<sl-alert variant="warning" open>
+  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+  <strong>Warning:</strong> Please note the inversion Vbb connectors: the 5mm one has GND to the left, the 3.5mm one has GND to the right.
+</sl-alert>
+
+<sl-alert variant="neutral" open>
+  <sl-icon slot="icon" name="info-circle"></sl-icon>
+  <strong>Note:</strong> On the I2C header the pinout is wrong in the above diagram, it is from top to bottom: 3v3 sda scl gnd
+</sl-alert>
 
 Here is a list of the different connectors, in clockwise order:
 
@@ -168,9 +192,13 @@ Each thermistor has a couple of 2.54mm pins (allowing for pin connectors or scre
 
 ## Non-border connectors and components
 
-![Smoothieboard Internal](https://farm9.static.flickr.com/8437/7831724724_2e1f40d8f7_b.jpg)
+{::nomarkdown}
+<a href="https://farm9.static.flickr.com/8437/7831724724_2e1f40d8f7_b.jpg">
+  <img src="https://farm9.static.flickr.com/8437/7831724724_2e1f40d8f7_b.jpg" alt="Smoothieboard Internal Components" style="display: block; margin: 2rem auto; min-width: 640px; width: 80%; max-width: 800px;"/>
+</a>
+{:/nomarkdown}
 
-All essential connectors being broken out to the perimeter of the board, the rest is on the board itself, where it's a tad less easy to reach (but we can't have 5 meters of perimeter, that'd be dumb.)
+All essential connectors being broken out to the perimeter of the board, the rest is on the board itself, where it's a tad less easy to reach (but we can't have 5 meters of perimeter, that'd be dumb).
 
 All of them are optional and not soldered by default.
 

@@ -17,14 +17,10 @@ Smoothie's power input is 12-24v, and the voltage regulator takes it down to 5V.
 
 Which can be purchased from [Robotseed](http://robotseed.com/index.php?id_product=20&controller=product&id_lang=2) or [Uberclock](http://shop.uberclock.com/collections/smoothie/products/switching-regulator-dc-to-dc-5v)
 
-> [!NOTE]
-> If you are intending to power a ReprapDiscount Full Graphic LCD controller off 5V power supplied by an on-board regulator, you will most likely need a 1-Amp version of the regulator, as the backlight of the GLCD requires 250mA alone.
-> 
-> Recom part `R-78E5.0-1.0` is the same size/pin configuration as the recommended part above.
-> 
-> It is available at Digikey, and likely at other major electronics component sites.
-> 
-> [More power](http://www.audioholics.com/home-theater-connection/connecting-an-external-amp-to-a-receiver/image)
+<sl-alert variant="neutral" open>
+  <sl-icon slot="icon" name="info-circle"></sl-icon>
+  If you are intending to power a ReprapDiscount Full Graphic LCD controller off 5V power supplied by an on-board regulator, you will most likely need a 1-Amp version of the regulator, as the backlight of the GLCD requires 250mA alone.<br><br>Recom part <code>R-78E5.0-1.0</code> is the same size/pin configuration as the recommended part above.<br><br>It is available at Digikey, and likely at other major electronics component sites.<br><br><a href="http://www.audioholics.com/home-theater-connection/connecting-an-external-amp-to-a-receiver/image">More power</a>.
+</sl-alert>
 
 ## Voltage Regulator Installation
 

@@ -1,11 +1,20 @@
+# Configuration Options
 
-# Configuration options
+{::nomarkdown}
+<img src="images/board.png" alt="Configuration" width="300" height="auto" style="float: right; margin-left: 1rem;"/>
+{:/nomarkdown}
 
-This is a list of most configuration options currently understood by the Smoothie firmware. Some are omitted from this list as they are advanced and not recommended.
+This is a comprehensive list of configuration options understood by the Smoothie firmware.
 
-If you want more information about a given module, how it works and how to configure it, (and any advanced options that are not in this list) you can refer to that module's page.
+Some advanced options are omitted from this list and are not recommended for general use.
 
-For information on options to settings please refer to [here](http://smoothieware.org/configuring-smoothie) for pull up, pull down, open drain, etc.
+## Getting More Information
+
+If you want more information about a given module, how it works and how to configure it, (and any advanced options that are not in this list) you can refer to that module's specific documentation page.
+
+For information on pin options and electrical settings (pull up, pull down, open drain, etc.), please refer to [configuring-smoothie](configuring-smoothie).
+
+## Configuration Reference Table
 
 | Option | Example value | Explanation |
 | ------ | ------------- | ----------- |

@@ -2,7 +2,10 @@
 # Joystick Developer Documentation
 
 ## Basic Usage
-To use [joystick](joystick) readings in your module, you will first need to import the headers which are used for requesting public data from other modules. Add these lines of code somewhere near the top of your module's .cpp file:
+
+To use [joystick](joystick) readings in your module, you will first need to import the headers which are used for requesting public data from other modules.
+
+Add these lines of code somewhere near the top of your module's .cpp file:
 
 ```cpp
 #include "JoystickPublicAccess.h"
@@ -10,6 +13,7 @@ To use [joystick](joystick) readings in your module, you will first need to impo
 ```
 
 Now, somewhere in your code (not in an interrupt), you can add the following lines of code:
+
 ```cpp
 struct PAD_joystick s;
 if (PublicData::get_value(joystick_checksum, MODULE_NAME_CHK, &s)) {
@@ -38,6 +42,7 @@ this->MODULE_NAME = get_checksum(THEKERNEL->config->value(jogger_checksum, data_
 The code saves the module name checksum for passing to the public data request. Using the default empty string "" means no joysticks will respond to the public data request, so proper handling of that case needs to be added in the first example under "code to run if the request failed".
 
 After obtaining the public data request response, you can access the following fields:
+
 ```cpp
 //struct PAD_joystick s;     //for reference
 s.name_checksum              //returns the checksum of the replying module name
@@ -45,11 +50,18 @@ s.raw                        //returns the raw ADC reading, if a manual mapping 
 s.position                   //returns the mapped ADC reading, on a -1 to 1 scale, this is the most common value to use
 ```
 
-> [!SUCCESS]
-> You now have the value of the joystick, and can use it however your module likes.
+<sl-alert variant="primary" open>
+  <sl-icon slot="icon" name="check-circle"></sl-icon>
+  <strong>Success!</strong>
+  <br><br>
+  You now have the value of the joystick, and can use it however your module likes.
+</sl-alert>
 
 ## Refreshing the Joystick Reading
-Note that you may want to continually read/update the joystick value. One way to accomplish this is to set up a slow ticker which repeats every so often:
+
+Note that you may want to continually read/update the joystick value.
+
+One way to accomplish this is to set up a slow ticker which repeats every so often:
 
 ```cpp
 void YourModule::on_module_loaded()

@@ -1,7 +1,9 @@
 
 # Laser Module Configuration
 
-The following table outlines the configuration options for the laser module in Smoothieware:
+The following table outlines the configuration options for the laser module in Smoothieware.
+
+These options control how the laser is powered, modulated, and synchronized with machine movements.
 
 | Option | Default Value | Description |
 | ------ | ------------- | ----------- |
@@ -12,3 +14,11 @@ The following table outlines the configuration options for the laser module in S
 | `laser_module_minimum_power` | `0.0` | This duty cycle will be used for travel moves to keep the laser active without actually burning. Useful for some diode setups. Value is from `0` to `1`. |
 | `laser_module_pwm_period` | `20` | PWM frequency expressed as the period in microseconds. |
 | `laser_module_proportional_power` | `true` | Whether the laser power should be proportional to the current speed, so as speed of movement ramps up (and down), laser power is proportionally adjusted, so that the amount of laser power/quantity of photons for a given distance/area is always constant, even if speed has to increase/decrease progressively. This is true by default, but in some situations you might want to disable this feature. |
+
+## Related Documentation
+
+For more information on using the laser module, see:
+
+- [Laser Module](laser) - Main laser documentation
+- [Laser Cutter Guide](laser-cutter-guide) - Step-by-step setup guide
+- [Configuration Options](configuration-options) - All Smoothieware configuration options

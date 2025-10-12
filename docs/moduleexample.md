@@ -1,11 +1,20 @@
 
-# The aim of this is to provide a step-by-step overview of how to create a basic module for use with Smoothie.
+# Module Example
+
+The aim of this guide is to provide a step-by-step overview of how to create a basic module for use with Smoothie.
+
 The example here will be a laser control module.
 
 ## What is a module
 
-In Smoothie, everything is a module. A **module** is essentially a piece of code (an object) that connects to the rest of the code only through event calls and event handlers.
-The core of Smoothie (serial communication, motion planning, actual stepping) is divided into modules. And then **you** can write modules for additional tasks, like controlling a laser, 3D printing, or whatever cool idea you have.
+In Smoothie, everything is a module.
+
+A **module** is essentially a piece of code (an object) that connects to the rest of the code only through event calls and event handlers.
+
+The core of Smoothie (serial communication, motion planning, actual stepping) is divided into modules.
+
+And then **you** can write modules for additional tasks, like controlling a laser, 3D printing, or whatever cool idea you have.
+
 The main idea is to be able to add these additional functionalities in the simplest way possible, without having to edit the core, just connect to/call events.
 
 ## About this example

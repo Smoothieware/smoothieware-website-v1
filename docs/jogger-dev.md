@@ -3,10 +3,14 @@
 
 ## Writing a Custom Joystick Module
 
-There are a few devices which could be used for jogging, but don't fall into the analog potentiometer category, and can't be used with the base [joystick](joystick) module. Some examples include:
+There are a few devices which could be used for jogging, but don't fall into the analog potentiometer category, and can't be used with the base [joystick](joystick) module.
+
+Some examples include:
 
 - Encoder / MPG devices, where speed of the knob controls speed of jogging
+
 - Joystick with digital output
+
 - Paddle switch / buttons to jog at a fixed speed when pressed
 
 In these cases, you will need to write a module which:

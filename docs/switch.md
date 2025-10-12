@@ -109,8 +109,10 @@ switch.fan1.input_off_command             M107     # any command starting with t
 
 In addition to `input_on_command` and `input_off_command` there are also corresponding config settings `output_on_command` and `output_off_command`. Offhand, it seems unlikely that a single switch module would need to use both input_ and output_ commands.
 
-> [!NOTE]
-> If you want to learn more about this module, or are curious how it works, Smoothie is Open-Source and you can simply go look at the code, [here](https://github.com/Smoothieware/Smoothieware/blob/edge/src/modules/tools/switch/Switch.cpp).
+<sl-alert variant="neutral" open>
+  <sl-icon slot="icon" name="info-circle"></sl-icon>
+  If you want to learn more about this module, or are curious how it works, Smoothie is Open-Source and you can simply go look at the code, [here](https://github.com/Smoothieware/Smoothieware/blob/edge/src/modules/tools/switch/Switch.cpp).
+</sl-alert>
 
 ## Examples
 

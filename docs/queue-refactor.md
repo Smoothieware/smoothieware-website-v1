@@ -1,15 +1,21 @@
-
-# Queue refactor documentation
+# Queue Refactor Documentation
 
 The goal of this document is to describe the current problem with the queue, propose a possible solution, and describe its implementation (called the queue refactor).
 
 Writing a document is much less work than actually coding the refactor, and it allows discussion before implementation (avoiding having to do more refactors later).
 
-If you are interested in helping with this refactor, please don't hesitate to join the discussion here, or contact me at [wolf.arthur@gmail.com](mailto:wolf.arthur@gmail.com).
+{::nomarkdown}
+<sl-alert variant="primary" open>
+  <sl-icon slot="icon" name="lightbulb"></sl-icon>
+  If you are interested in helping with this refactor, please don't hesitate to join the discussion here, or contact me at <a href="mailto:wolf.arthur@gmail.com">wolf.arthur@gmail.com</a>.
+</sl-alert>
+{:/nomarkdown}
 
-## The problem with the queue
+## The Problem with the Queue
 
-So essentially, Smoothie was originally coded with no consideration whatsoever for RAM usage. Yes. Sue me.
+So essentially, Smoothie was originally coded with no consideration whatsoever for RAM usage.
+
+Yes. Sue me.
 
 It ended up not too bad, but still very very far from optimal.
 
@@ -17,13 +23,13 @@ I guess we can start by explaining the problem the queue tries to solve before e
 
 A pretty good explanation can be found here: [howitworks](howitworks).
 
-### How it now works
+### How It Now Works
 
 In short, when we get say, a G-code for a movement, the following happens (oversimplified):
 
-- Robot interprets the G-code and makes a line from it
-- The line is added to the Queue (it is then called a "Block")
-- Acceleration/Deceleration parameters are re-computed for all of the Queue's Blocks
+1. Robot interprets the G-code and makes a line from it
+2. The line is added to the Queue (it is then called a "Block")
+3. Acceleration/Deceleration parameters are re-computed for all of the Queue's Blocks
 
 This last step is the main reason for the Queue: we have a list of Blocks "buffered" in advance, so we can "look into the future" and compute acceleration in an optimal fashion.
 
@@ -37,6 +43,7 @@ The process is:
 - Go to first step
 
 Now what this means for a module is there are two different processes/loops:
+
 - The one in which you receive an instruction
 - The one in which you have to execute an instruction
 
@@ -58,11 +65,13 @@ Then when the Conveyor pops a Block from the queue, for each of the G-code strin
 
 And because this event is called when the Block is popped off the Queue (about to be actually executed), the "beep" is now executed at the right time.
 
-### What's wrong with that?
+### What's Wrong with That?
 
 Well, it's extremely wasteful.
 
-Pretty much, **every** G-code is pushed onto the queue. That's a huge waste of RAM.
+Pretty much, **every** G-code is pushed onto the queue.
+
+That's a huge waste of RAM.
 
 For example, the G-code:
 
@@ -84,7 +93,7 @@ All of these are good reasons to do things differently.
 
 For those interested in more details on how things work now, you can look at the [Block](https://github.com/Smoothieware/Smoothieware/blob/edge/src/modules/robot/Block.h), [Conveyor](https://github.com/Smoothieware/Smoothieware/blob/edge/src/modules/robot/Conveyor.cpp), and [Queue](https://github.com/Smoothieware/Smoothieware/blob/edge/src/modules/robot/Conveyor.h#L51).
 
-## A proposed solution
+## A Proposed Solution
 
 So the idea then is to store things in a much more compact fashion.
 
@@ -94,11 +103,14 @@ Modules decide exactly what information they want to store in the Queue, and onl
 
 Then when the time comes, they get that information back.
 
+### Advantages
+
 This has so many advantages:
-- Much lower RAM usage
-- Can be about as simple to the coder as we do now
-- Much faster
-- Fixed-size (in bytes not Blocks) Queue for **all** the data (including non-movement data), for easier RAM management
+
+- **Much lower RAM usage**
+- **Can be about as simple to the coder as we do now**
+- **Much faster**
+- **Fixed-size (in bytes not Blocks) Queue for all the data** (including non-movement data), for easier RAM management
 
 Here is the proposed format for the new Blocks (now called "Actions" to differentiate them from the movement Blocks (which become just another kind of Action)):
 
@@ -106,7 +118,9 @@ Here is the proposed format for the new Blocks (now called "Actions" to differen
 - 1 byte: Length in bytes `n`
 - `n` bytes: Data
 
-The queue is composed of a series of those Actions. When a module tries to add an Action to the Queue, and the Queue does not have enough room, we wait until there is room (similar to what the current movement queue does).
+The queue is composed of a series of those Actions.
+
+When a module tries to add an Action to the Queue, and the Queue does not have enough room, we wait until there is room (similar to what the current movement queue does).
 
 Example queue (random non-real-life actions):
 
@@ -134,7 +148,9 @@ Now compared to the current system, this is extremely compact!
 
 ## Implementing
 
-Here is the general idea of how things would work in the new system. We'll follow the life of our "beep" action from above:
+Here is the general idea of how things would work in the new system.
+
+We'll follow the life of our "beep" action from above:
 
 - `G123 S2` is received from the Serial line (meaning "make beep, with tone 2khz")
 - Gcodedispatch calls the `on_gcode_received` event with this G-code as a parameter
@@ -158,7 +174,9 @@ And done!
 
 ## For each module
 
-Now the logic of moving from the current Queue to Action Queue is not so hard. What makes this so complicated is that pretty much **all** the modules must change the way they work.
+Now the logic of moving from the current Queue to Action Queue is not so hard.
+
+What makes this so complicated is that pretty much **all** the modules must change the way they work.
 
 This is a list of the modules that need to change, and in what way they need to change.
 

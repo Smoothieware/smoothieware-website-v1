@@ -1,20 +1,42 @@
 
 # How to wire your Smoothieboard
 
-![Complex Wiring](images/complex-wiring.jpg)
+{::nomarkdown}
+<a href="images/complex-wiring.jpg">
+  <img src="images/complex-wiring.jpg" alt="Complex Wiring" style="display:block;margin:20px auto;min-width:640px;max-width:100%;height:auto;"/>
+</a>
+{:/nomarkdown}
 
 ## Introduction
+
 The main goal of this guide is to provide basic electrical knowledge to beginners and to share some useful tips and ideas on how to achieve nice wiring for your machines.
 
-There are thousands of awesome builders around the world with top-notch parts and genius concepts, but when it comes to wiring, a common approach is to hide everything behind some panels and place two zip ties. While it will surely work, spending a few hours organizing and optimizing your wiring is a win-win. Your machine will be safer, cleaner, and you won't even need to hide everything anymore ;). It can save you time later debugging problems or upgrading parts without rewiring them all the way.
+There are thousands of awesome builders around the world with top-notch parts and genius concepts, but when it comes to wiring, a common approach is to hide everything behind some panels and place two zip ties.
+
+While it will surely work, spending a few hours organizing and optimizing your wiring is a win-win.
+
+Your machine will be safer, cleaner, and you won't even need to hide everything anymore ;).
+
+It can save you time later debugging problems or upgrading parts without rewiring them all the way.
 
 ## Electricity 101
+
 This section is a basic summary of electricity. It will teach you how to safely wire your machine.
 
-> [!WARNING]
-> Basic electricity is not a really difficult domain. It's dangerous if you don't know what you're doing and what can be dangerous. Remember that common sense is a great asset for not dying in the process.
+{::nomarkdown}
+<sl-alert variant="warning" open>
+  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+  Basic electricity is not a really difficult domain. It's dangerous if you don't know what you're doing and what can be dangerous. Remember that common sense is a great asset for not dying in the process.
+</sl-alert>
+{:/nomarkdown}
 
-First thing to mention is the fact that there are different electrical laws in different countries. They can be very (too) strict to irrelevant (dangerous), different units, or different colors. This guide tries to be as global as possible but don't take for granted that everything will apply in your country. If you have any doubts, please refer to your local rules.
+First thing to mention is the fact that there are different electrical laws in different countries.
+
+They can be very (too) strict to irrelevant (dangerous), different units, or different colors.
+
+This guide tries to be as global as possible but don't take for granted that everything will apply in your country.
+
+If you have any doubts, please refer to your local rules.
 
 ### Mains
 [Mains electricity summary](https://en.wikipedia.org/wiki/Mains_electricity)
@@ -63,8 +85,10 @@ Not much choice here, you got to choose between solid-core and stranded wire. Bo
 
 **Shielded cables** are surrounded by a metallic mesh providing shielding against electromagnetic interference (EMI). They can prevent a power cable, like one on a VFD (Variable-Frequency Drive), from emitting too much noise that could cause issues to other wires around it. Shielding works best to provide protection against EMI on a lower power data line like a USB or Ethernet cable. In our case, shielded cables are not required unless you are running a VFD controlled spindle CNC or high power laser tubes.
 
-> [!WARNING]
-> Shield mesh should not be considered or used as a grounding cable. It could work on a low-powered DC printer, but if there are any AC mains used in your setup it could potentially cause a **deadly failure**. Use a spare wire inside the cable, if available and you are using multi-conductor cable, or run a new/separate one for grounding. The shield itself needs to be connected to ground on the controller side, not on the actuator or captor end, and should not be used as a grounding source for anything that you're connecting the wire to.
+<sl-alert variant="danger" open>
+  <sl-icon slot="icon" name="exclamation-octagon"></sl-icon>
+  Shield mesh should not be considered or used as a grounding cable. It could work on a low-powered DC printer, but if there are any AC mains used in your setup it could potentially cause a <strong>deadly failure</strong>. Use a spare wire inside the cable, if available and you are using multi-conductor cable, or run a new/separate one for grounding. The shield itself needs to be connected to ground on the controller side, not on the actuator or captor end, and should not be used as a grounding source for anything that you're connecting the wire to.
+</sl-alert>
 
 ### Size
 
@@ -191,13 +215,17 @@ Crimping connectors are a cheap and easy way to connect our electrical component
 
 The Smoothieboard comes with a complete set of Dupont connectors for the stepper motors, endstops, and thermistors. They require some dexterity to crimp and we strongly advise you to buy a cheap crimping tool on one of your favorite Asian web stores. It will last you a lifetime and save a lot of time (and anger).
 
-> [!TIP]
-> The crimping operation is quite straightforward:
-> - Strip about 2mm of the wire
-> - Place the pin on the crimping tool, tighten a little
-> - Place your stripped cable inside the pin, you need to "feel" the correct depth there are two claws on the pin, one who bites the copper, the other the isolation for better protection against traction.
-> - When in place finish the crimping tool movement.
-> - You can adjust the tool to crimp more or less the pin by removing the screw and turning the dial on the side (see picture above).
+<sl-alert variant="primary" open>
+  <sl-icon slot="icon" name="lightbulb"></sl-icon>
+  The crimping operation is quite straightforward:
+  <ul>
+    <li>Strip about 2mm of the wire</li>
+    <li>Place the pin on the crimping tool, tighten a little</li>
+    <li>Place your stripped cable inside the pin, you need to "feel" the correct depth there are two claws on the pin, one who bites the copper, the other the isolation for better protection against traction.</li>
+    <li>When in place finish the crimping tool movement.</li>
+    <li>You can adjust the tool to crimp more or less the pin by removing the screw and turning the dial on the side (see picture above).</li>
+  </ul>
+</sl-alert>
 
 Resources:
 - [Guide on how to crimp connectors](http://www.societyofrobots.com/electronics_wire_connector.shtml)
@@ -209,10 +237,14 @@ The so-called aviation type connectors are cheap, provide a more solid connectio
 
 ![Smoothie Wiring 2](images/how-to-wire/20161206_smoothie_wiring_2.jpg)
 
-> [!TIP]
-> - Remove the really small screw to open the connector and try **not to lose it by replacing it on the black part** during your work inside
-> - Pin numbers are written on the inside and the outside of the black part so no front or back view questions.
-> - Since it mounts from the outside of the enclosure, make sure to pass your wires through the hole **before soldering** (seems logical but...no, wait and see)
+<sl-alert variant="primary" open>
+  <sl-icon slot="icon" name="lightbulb"></sl-icon>
+  <ul>
+    <li>Remove the really small screw to open the connector and try <strong>not to lose it by replacing it on the black part</strong> during your work inside</li>
+    <li>Pin numbers are written on the inside and the outside of the black part so no front or back view questions.</li>
+    <li>Since it mounts from the outside of the enclosure, make sure to pass your wires through the hole <strong>before soldering</strong> (seems logical but...no, wait and see)</li>
+  </ul>
+</sl-alert>
 
 ## Tools
 

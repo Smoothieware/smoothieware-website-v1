@@ -1,7 +1,9 @@
 
 # List of Events for Modules in Smoothie
 
-This is a list of all the events that a Module can register for in Smoothie:
+This is a list of all the events that a Module can register for in Smoothie.
+
+These events allow modules to respond to various system activities and communicate with each other.
 
 | Name                    | Called from                                         | Description                                                                                   | How to cast the argument                                                                                   |
 |-------------------------|-----------------------------------------------------|-----------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------|

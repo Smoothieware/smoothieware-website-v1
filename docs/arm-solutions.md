@@ -7,12 +7,18 @@ However, on other machines, the position in Cartesian space (X, Y, Z) must be co
 
 This is the case, for example, of linear delta (often just called "delta") machines.
 
+## Supported Arm Solutions
+
 Currently, Smoothieware supports the following arm/motion solutions:
 
 - [Cartesian](cartesian)
 - [Delta](delta) (Linear Delta)
 - [Rotary Delta](rotary-delta)
 - [Hbot](hbot) (CoreXY)
-- Morgan Scara
+- [Morgan Scara](morgan-scara)
 
-To configure your machine for the right type, see its specific page.
+## Configuration
+
+To configure your machine for the right type, see its specific page linked above.
+
+Each arm solution has its own configuration parameters and requirements.

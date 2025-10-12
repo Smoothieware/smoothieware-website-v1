@@ -50,5 +50,7 @@ Which will save the configuration values automatically in a configuration overri
 
 Learn more about configuration overrides [here](configuring-smoothie).
 
-> [!WARNING]
-> Do not send `M303` over the web interface, use Telnet, Pronterface, or any other serial terminal. If sent over the web, the answers will accumulate in Smoothie's RAM and may crash it.
+<sl-alert variant="warning" open>
+  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+  Do not send <code>M303</code> over the web interface, use Telnet, Pronterface, or any other serial terminal.<br><br>If sent over the web, the answers will accumulate in Smoothie's RAM and may crash it.
+</sl-alert>

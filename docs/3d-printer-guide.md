@@ -2,17 +2,21 @@
 # Your guide to installing Smoothieboard in a 3D printer
 
 {::nomarkdown}
-<img src="images/guide-3d-printer.png" alt="3D printer icon" width=100 height=100 style="float: right; margin-left: 1rem;"/>
+<a href="images/guide-3d-printer.png">
+  <img src="images/guide-3d-printer.png" alt="3D printer icon" width="300" height="300" style="float: right; margin-left: 1rem;"/>
+</a>
 {:/nomarkdown}
 
-Probably the machine for which Smoothie is most used, due to Smoothie's roots in the [RepRap](http://reprap.org/wiki/Main_Page) project, 3D printers are fairly simple to Smoothiefy. 
+Probably the machine for which Smoothie is most used, due to Smoothie's roots in the [RepRap](http://reprap.org/wiki/Main_Page) project, 3D printers are fairly simple to Smoothiefy.
 
 This is a step-by-step guide to connecting your board to the various components of the 3D printer, configuring everything, from the beginning to actual printing.
 
 This guide is a [community](http://smoothieware.org/irc) effort, and this page is a Wiki. Please don't hesitate to [edit it](#_editpage) to fix mistakes and add information, any help is very welcome.
 
 {::nomarkdown}
-<img src="images/smoothieboard-fritzing.png" alt="Smoothieboard Fritzing" style="float: right; margin-left: 1rem; width: 500px;">
+<a href="images/smoothieboard-fritzing.png">
+  <img src="images/smoothieboard-fritzing.png" alt="Smoothieboard Fritzing" style="float: right; margin-left: 1rem; width: 500px;"/>
+</a>
 {:/nomarkdown}
 
 On a typical 3D printer setup, installing a Smoothieboard will mean you do the following things:
@@ -49,7 +53,7 @@ This guide will walk through everything you need to accomplish to successfully p
 
 At the end of this guide, you should have a fully working machine.
 
-**Translations**
+## Translations
 
 Some users have hand-translated this page. Note that this translated version is by definition never going to be up-to-date. Use it to help you understand in general, but any specific information should be taken from the original version, especially before asking the community for help.
 
@@ -71,12 +75,23 @@ Some users have hand-translated this page. Note that this translated version is 
 
 {% include_relative extruder-guide.md %}
 
-![A Hotend](images/v6-hero-hot-end.png)
-It contains a thermistor and a heating element in its heating block
+{::nomarkdown}
+<a href="images/v6-hero-hot-end.png">
+  <img src="images/v6-hero-hot-end.png" alt="A Hotend" width="300" height="200" style="float: right; margin-left: 1rem;"/>
+</a>
+{:/nomarkdown}
+
+A hotend contains a thermistor and a heating element in its heating block.
 
 ## Temperature control
 
-In a 3D printer, you heat thermoplastics. There are two different parts in which you want to do that. First, the hot-end heats the plastic to the point where it is liquid enough to go through the nozzle. Second, the heated bed (in only some printers), on which the first layer is deposited, is heated to allow for better sticking of the plastic to the bed, and more uniform temperature in the part while printing.
+In a 3D printer, you heat thermoplastics.
+
+There are two different parts in which you want to do that:
+
+First, the hot-end heats the plastic to the point where it is liquid enough to go through the nozzle.
+
+Second, the heated bed (in only some printers), on which the first layer is deposited, is heated to allow for better sticking of the plastic to the bed, and more uniform temperature in the part while printing.
 
 For detailed information about temperature control in Smoothie, you can look at this part of the documentation: [TemperatureControl](http://smoothieware.org/temperaturecontrol.md)
 
@@ -84,23 +99,34 @@ The process is essentially the same to wire and control a hot-end, or a heated b
 
 ### Thermistor
 
-A [thermistor](http://en.wikipedia.org/wiki/Thermistor)'s resistance changes with temperature. By reading that resistance, we can determine the temperature of a hot-end or a heated bed.
+A [thermistor](http://en.wikipedia.org/wiki/Thermistor)'s resistance changes with temperature.
+
+By reading that resistance, we can determine the temperature of a hot-end or a heated bed.
 
 This allows Smoothie to turn the heater on or off depending on the temperature it reads, to achieve the desired temperature.
 
-![Thermistor inputs](images/thermistor-inputs.png)
-There are 4 of them, close to the SD card slot
+{::nomarkdown}
+<a href="images/thermistor-inputs.png">
+  <img src="images/thermistor-inputs.png" alt="Thermistor inputs" width="300" height="200" style="float: right; margin-left: 1rem;"/>
+</a>
+{:/nomarkdown}
+
+There are 4 thermistor inputs, close to the SD card slot.
 
 To wire the thermistor, take the two wires from the thermistor on your hot-end or heated bed, and connect them to one of the pairs of thermistor inputs on the Smoothieboard. Each input is two pins, one for each thermistor wire. There is no polarity to respect.
 
 Smoothieboard has 4 thermistor inputs total, meaning a line of 8 pins on the edge of the board. Polarity is not important for thermistors.
 
-> [!WARNING]
-> The Smoothieboard has two grounds: a normal Ground, shared with the motors and everything else, and a special Analog Ground, which is isolated from the rest, to protect the very sensitive ADCs (analog to digital converters) used to read temperatures.
-> 
-> When reading temperature, never use the normal ground to read temperatures, always use the AGND connections provided on the thermistor inputs.
-> 
-> This also means you cannot "share the ground" on wires going to your hotend, as some users sometimes do to "save wires". This is a very bad idea and will cause a lot of problems.
+{::nomarkdown}
+<sl-alert variant="warning" open>
+  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+  <strong>Ground Connection Warning:</strong> The Smoothieboard has two grounds: a normal Ground, shared with the motors and everything else, and a special Analog Ground, which is isolated from the rest, to protect the very sensitive ADCs (analog to digital converters) used to read temperatures.
+  <br><br>
+  When reading temperature, never use the normal ground to read temperatures, always use the AGND connections provided on the thermistor inputs.
+  <br><br>
+  This also means you cannot "share the ground" on wires going to your hotend, as some users sometimes do to "save wires". This is a very bad idea and will cause a lot of problems.
+</sl-alert>
+{:/nomarkdown}
 
 By convention (meaning that if you wire things according to the way it is specified in the default configuration file, you do not need to edit the configuration file as it will already be correct), 
 
@@ -116,14 +142,23 @@ temperature_control.bed.thermistor_pin       0.24             # Pin for the heat
 
 You can, however, use any thermistor pin you want for any temperature control module you want.
 
-![A thermistor](images/thermistor.png)
-They come in all shapes and sizes
+{::nomarkdown}
+<a href="images/thermistor.png">
+  <img src="images/thermistor.png" alt="A thermistor" width="300" height="225" style="float: right; margin-left: 1rem;"/>
+</a>
+{:/nomarkdown}
+
+Thermistors come in all shapes and sizes.
 
 {% include_relative temperaturecontrol-thermistor-choice.md %}
 
 ### Heating element
 
-Now that Smoothie can read the temperature, it needs a way to heat things and maintain a desired temperature. This is the heating element. On a hot-end, that is usually a resistor or a [cartridge heater](http://en.wikipedia.org/wiki/Cartridge_heater), on a heated bed, that is usually a [PCB plate](http://reprap.org/wiki/PCB_Heatbed) designed to have the right resistance, or a [kapton heated bed](https://www.google.com/search?q=kapton+heater&source=lnms&tbm=isch&biw=1920&bih=1032).
+Now that Smoothie can read the temperature, it needs a way to heat things and maintain a desired temperature.
+
+This is the heating element.
+
+On a hot-end, that is usually a resistor or a [cartridge heater](http://en.wikipedia.org/wiki/Cartridge_heater), on a heated bed, that is usually a [PCB plate](http://reprap.org/wiki/PCB_Heatbed) designed to have the right resistance, or a [kapton heated bed](https://www.google.com/search?q=kapton+heater&source=lnms&tbm=isch&biw=1920&bih=1032).
 
 Because of its resistance, when power is applied to a heater, the heater consumes energy to generate heat.
 
@@ -131,12 +166,23 @@ These heating elements need to be connected to Smoothieboard on a port that allo
 
 {% include_relative mosfets.md %}
 
-![A heated bed](https://reprap.org/mediawiki/images/9/99/Heatbed_glass_clips_1a.jpg)
-Often made out of a rigid, or flexible (kapton) PCB
+{::nomarkdown}
+<a href="https://reprap.org/mediawiki/images/9/99/Heatbed_glass_clips_1a.jpg">
+  <img src="https://reprap.org/mediawiki/images/9/99/Heatbed_glass_clips_1a.jpg" alt="A heated bed" width="300" height="200" style="float: right; margin-left: 1rem;"/>
+</a>
+{:/nomarkdown}
+
+Heated beds are often made out of a rigid, or flexible (kapton) PCB.
 
 #### Example
 
-Let's say you want to connect a heated bed to your Smoothieboard. First, wire the thermistor to the thermistor input. Then, find out (from the Internet, or your seller/manufacturer) the current rating for that heated bed. In this example it will be the classical [RepRap](http://www.reprap.org) PCB plate [Heatbed](http://reprap.org/wiki/PCB_Heatbed). 
+Let's say you want to connect a heated bed to your Smoothieboard.
+
+First, wire the thermistor to the thermistor input.
+
+Then, find out (from the Internet, or your seller/manufacturer) the current rating for that heated bed.
+
+In this example it will be the classical [RepRap](http://www.reprap.org) PCB plate [Heatbed](http://reprap.org/wiki/PCB_Heatbed).
 
 Ours has an 11A current rating, this means we cannot use it with a small MOSFET, and we need to wire it to a big MOSFET.
 
@@ -165,7 +211,9 @@ Once your thermistor is connected, and both the power input and the heater eleme
 
 To do this, reset your Smoothieboard, then connect to it using host software like [Pronterface](http://reprap.org/wiki/Printrun), or using the [web interface](http://smoothieware.org/network).
 
-Now connect to your Smoothieboard over the serial interface. Power your machine on by plugging the PSU into the wall.
+Now connect to your Smoothieboard over the serial interface.
+
+Power your machine on by plugging the PSU into the wall.
 
 If anything burns or smells funny, turn everything off immediately and investigate.
 
@@ -221,15 +269,22 @@ This means we will make 4 connections:
 * Connecting the hotend to the first small mosfet output
 * Connecting the power supply to the small mosfet power input
 
-![Example wiring with a hotend and a heated bed](images/example-heating-setup.svg)
-
-Note how the mosfets need power provided to their power inputs
+{::nomarkdown}
+<div style="text-align: center; margin: 2rem 0;">
+  <a href="images/example-heating-setup.svg">
+    <img src="images/example-heating-setup.svg" alt="Example wiring with a hotend and a heated bed" style="min-width: 640px; height: auto;"/>
+  </a>
+  <p><em>Note how the mosfets need power provided to their power inputs</em></p>
+</div>
+{:/nomarkdown}
 
 {% include_relative guide-endstops.md %}
 
 ## Fans
 
-Fans are important: they help you cool things down. On a 3D printer there are two main things you need to cool:
+Fans are important: they help you cool things down.
+
+On a 3D printer there are two main things you need to cool:
 
 First, most often your hot-end's "cool" part (the top of it) needs to be cooled so heat does not accumulate there and transfer to the rest of the machine and damage it.
 
@@ -265,16 +320,27 @@ switch.fan.output_type                       pwm              # PWM output setta
 
 Now wire the fan to the output for that MOSFET (here it is the first small MOSFET, using pin 2.4), make sure you respect polarity.
 
-![Wiring a fan to a small mosfet](images/fan-basic.svg.png)
-
-The fan is wired to the output for the first small mosfet (watch the polarity, and make sure you always add a diode when wiring a fan), and the small mosfets are getting power via their power input. (NB Note - newer revisions of the Smoothieboard now come with the Diodes installed on the Small Mosfets - do a visual check to confirm)
+{::nomarkdown}
+<div style="text-align: center; margin: 2rem 0;">
+  <a href="images/fan-basic.svg.png">
+    <img src="images/fan-basic.svg.png" alt="Wiring a fan to a small mosfet" style="min-width: 640px; height: auto;"/>
+  </a>
+  <p><em>The fan is wired to the output for the first small mosfet (watch the polarity, and make sure you always add a diode when wiring a fan), and the small mosfets are getting power via their power input. (NB Note - newer revisions of the Smoothieboard now come with the Diodes installed on the Small Mosfets - do a visual check to confirm)</em></p>
+</div>
+{:/nomarkdown}
 
 You can now control your fan digitally: issue the M106 G-code to turn it on, and M107 to turn it off. Those are also the commands slicing software generates to control fans.
 
-> [!WARNING]
-> Fans (and other active loads like solenoids, mechanical relays, motors, anything with a coil) can feed power back into the MOSFET and destroy it.
-> 
-> You likely will be fine for fans with current ratings below 0.25Amps (most common types), however, while it is common practice to omit the diode under that rating, we still require you install one for safety. (Understand: if you do not install a diode and burn your MOSFET because of it, it will be considered user error.) Above this, you need to install a diode across the MOSFET's power output as you are pretty much guaranteed to burn the MOSFET without one. (NB Note - newer revisions of the Smoothieboard now come with the Diodes installed on the Small Mosfets - do a visual check to confirm)
+{::nomarkdown}
+<sl-alert variant="warning" open>
+  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+  <strong>Diode Protection Required:</strong> Fans (and other active loads like solenoids, mechanical relays, motors, anything with a coil) can feed power back into the MOSFET and destroy it.
+  <br><br>
+  You likely will be fine for fans with current ratings below 0.25Amps (most common types), however, while it is common practice to omit the diode under that rating, we still require you install one for safety. (Understand: if you do not install a diode and burn your MOSFET because of it, it will be considered user error.) Above this, you need to install a diode across the MOSFET's power output as you are pretty much guaranteed to burn the MOSFET without one.
+  <br><br>
+  <strong>Note:</strong> Newer revisions of the Smoothieboard now come with the Diodes installed on the Small Mosfets - do a visual check to confirm.
+</sl-alert>
+{:/nomarkdown}
 
 <!-- LED 
 ![Version 1.1 and up: Diodes added on a Smoothieboard](images/o8f1o1d.png)
@@ -282,6 +348,15 @@ You can now control your fan digitally: issue the M106 G-code to turn it on, and
 Note starting with Smoothieboard version 1.1, **you do not need to do this anymore** on the first two small mosfets, as the diodes are there by default.
 
 
-![Prior to version 1.1 PCBs: Adding Diodes to a Smoothieboard](images/adding-diodes-before-v1-1.jpg)
+{::nomarkdown}
+<div style="text-align: center; margin: 2rem 0;">
+  <a href="images/adding-diodes-before-v1-1.jpg">
+    <img src="images/adding-diodes-before-v1-1.jpg" alt="Prior to version 1.1 PCBs: Adding Diodes to a Smoothieboard" style="min-width: 640px; height: auto;"/>
+  </a>
+  <p><em>Prior to version 1.1 PCBs: Adding Diodes to a Smoothieboard</em></p>
+</div>
+{:/nomarkdown}
 
-The diode should be installed with the white band (negative side of the diode) soldered to the + (positive side) of the power output, and the other side to the - (negative side) of the power output. Good diodes to use are: 1N5819 or SS
+The diode should be installed with the white band (negative side of the diode) soldered to the + (positive side) of the power output, and the other side to the - (negative side) of the power output.
+
+Good diodes to use are: 1N5819 or SS14.

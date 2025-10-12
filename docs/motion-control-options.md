@@ -1,6 +1,14 @@
 
 # Motion Control Options
 
+This page provides a complete reference of all configuration options for motion control in Smoothieware.
+
+These settings control how your machine moves, including speed, acceleration, and movement planning.
+
+For more information about motion control concepts, see the [Motion Control](motion-control) documentation.
+
+## Configuration Reference
+
 | Option | Default Value | Description |
 | ------ | ------------- | ----------- |
 | `default_feed_rate` | 4000 | Default rate for [G1](g1)/[G2](g2)/[G3](g3) moves in millimetres/minute. This is overridden by the first `F` (feedrate) parameter after reset, and never used again. |

@@ -5,7 +5,11 @@ This module reads temperature reading sensors (thermistors) and uses heater and 
 
 This is used for example for [extruder](extruder) hotends, or heated beds.
 
-![A hotend](https://reprap.org/mediawiki/images/thumb/2/2a/Jhn_mk5.jpg/190px-Jhn_mk5.jpg)
+{::nomarkdown}
+<a href="https://reprap.org/mediawiki/images/thumb/2/2a/Jhn_mk5.jpg/190px-Jhn_mk5.jpg">
+  <img src="https://reprap.org/mediawiki/images/thumb/2/2a/Jhn_mk5.jpg/190px-Jhn_mk5.jpg" alt="A J-head hotend with thermistor and heating element" width="200" height="auto" style="float: right; margin-left: 1rem;"/>
+</a>
+{:/nomarkdown}
 
 This is a J-head hotend with its thermistor and heating element.
 
@@ -53,16 +57,10 @@ temperature_control.hotend.thermistor_pin        0.23
 | ----------------------------------- | -------- | -------- | ------- | ------- |
 | Pin for configuration               | 0.23     | 0.24     | 0.25    | 0.26    |
 
-> [!WARNING]
-> You read the value of the thermistor inputs by sending the `M105` command.
->
-> If you receive a value of `inf` for an input, for example:
->
-> ```markdown
-> ok T :inf /0.0 @0 B:24.1 /0.0 @
-> ```
->
-> It means the sensor is not properly connected, or it is damaged in some way.
+<sl-alert variant="warning" open>
+  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+  You read the value of the thermistor inputs by sending the <code>M105</code> command.<br><br>If you receive a value of <code>inf</code> for an input, for example: ``<code>markdown ok T :inf /0.0 @0 B:24.1 /0.0 @ </code>`` It means the sensor is not properly connected, or it is damaged in some way.
+</sl-alert>
 
 ##### Choosing the right thermistor
 
@@ -245,12 +243,10 @@ Fires are painful, expensive, and can even cause death.
 
 You definitely should set up as many safety features as you can, even those that are disabled by default. This section explains how to do so.
 
-> [!DANGER]
-> This can happen to you
->
-> ![Fire](https://chibidibidiwah.wdfiles.com/local--files/temperaturecontrol/fire.jpg)
->
-> It has already been known to happen to Reprap/CNC enthusiasts. For an example see [here](http://www.soliforum.com/post/57749/#p57749).
+<sl-alert variant="danger" open>
+  <sl-icon slot="icon" name="exclamation-octagon"></sl-icon>
+  This can happen to you !<a href="https://chibidibidiwah.wdfiles.com/local--files/temperaturecontrol/fire.jpg">Fire</a> It has already been known to happen to Reprap/CNC enthusiasts.<br><br>For an example see <a href="http://www.soliforum.com/post/57749/#p57749">here</a>.
+</sl-alert>
 
 This chapter covers all of the safety features, and how to set them up if needed.
 
@@ -337,10 +333,10 @@ Please note that if your PID settings are not correctly tuned, this can get acti
 
 If the Smoothieboard is being a bit too strict with detecting the temperatures, you can add `runaway_error_range` as a parameter (optional), it is 1° by default meaning acceptable temperature detected can be +/- 1° of the set temp. If your printer tends to not stick close enough to the right temperature, increase this value. It only applies to the heat up and cool down timeouts.
 
-> [!WARNING]
-> Cool down timeout
->
-> **NOTE** If you set `runaway_cooling_timeout` then understand that if you set a bed temp when the bed is already hotter than the setting it will need to cool down within the time period you set. If the bed has a lot of thermal mass then this may take a long time or actually never happen, and a timeout will occur eventually. This is why it is disabled by default. However, if you do reduce the bed temperature during a print you **MUST** set this value otherwise you will get a runaway detection error if the new temp is lower than the current temp. This is also true of setting the hotend temperature lower while printing, then you also need to set this timeout correctly.
+<sl-alert variant="warning" open>
+  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+  Cool down timeout <strong>NOTE</strong> If you set <code>runaway_cooling_timeout</code> then understand that if you set a bed temp when the bed is already hotter than the setting it will need to cool down within the time period you set.<br><br>If the bed has a lot of thermal mass then this may take a long time or actually never happen, and a timeout will occur eventually.<br><br>This is why it is disabled by default.<br><br>However, if you do reduce the bed temperature during a print you <strong>MUST</strong> set this value otherwise you will get a runaway detection error if the new temp is lower than the current temp.<br><br>This is also true of setting the hotend temperature lower while printing, then you also need to set this timeout correctly.
+</sl-alert>
 
 #### Out of range runaway detection
 

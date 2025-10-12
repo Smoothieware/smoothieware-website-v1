@@ -27,7 +27,7 @@ There are other modifiers for pins:
 | Repeater mode | `@` | At / Arobase sign |
 | No modifier | | If you do not set any option/modifier for your pin, it will be in pullup mode as if it had `^` specified |
 
-> [!WARNING]
-> Some pins have hardware on the board itself, enforcing a given configuration.
->
-> The main example of this is the endstop inputs, which have on-board pull-up resistors, meaning trying to deactivate pull-ups in configuration (`-` for them) will not work (configuration cannot deactivate/remove physically present pull-up resistors, it can only act on pull-up pin-configuration peripherals "inside" the chip).
+<sl-alert variant="warning" open>
+  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+  Some pins have hardware on the board itself, enforcing a given configuration.<br><br>The main example of this is the endstop inputs, which have on-board pull-up resistors, meaning trying to deactivate pull-ups in configuration (<code>-</code> for them) will not work (configuration cannot deactivate/remove physically present pull-up resistors, it can only act on pull-up pin-configuration peripherals "inside" the chip).
+</sl-alert>

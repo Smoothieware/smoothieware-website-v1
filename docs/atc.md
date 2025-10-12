@@ -1,22 +1,33 @@
 
 # Automated Tool Change
 
-An automated tool changer is a system allowing a CNC machine to automatically change tools/effectors. This is commonly seen in high-end CNC routers/machining centers where the spindle has the ability to use a set of different "collets", grabbed and released using compressed air. But more recently we've also seen the Reprap community show different implementations for 3D printers, where different extruders can be grabbed and released independently.
+An automated tool changer is a system allowing a CNC machine to automatically change tools/effectors.
+
+This is commonly seen in high-end CNC routers/machining centers where the spindle has the ability to use a set of different "collets", grabbed and released using compressed air.
+
+But more recently we've also seen the Reprap community show different implementations for 3D printers, where different extruders can be grabbed and released independently.
 
 This page documents how to set up ATC with a Smoothieboard.
 
 ## Status
 
-This feature is currently in beta/actively being implemented. We need your help with testing and with the actually coding, please don't hesitate if you feel like you can give the project some of your time.
+<sl-alert variant="primary" open>
+  <sl-icon slot="icon" name="rocket-takeoff"></sl-icon>
+  This feature is currently in beta/actively being implemented. We need your help with testing and with the actually coding, please don't hesitate if you feel like you can give the project some of your time.
+</sl-alert>
 
 ## Methods
 
 There are two different possible methods to implement ATC, depending on which part of the CAM toolchain actually implements the tool chain:
 
-- ATC in the post-processor, where the post-processor adds to the program at the right moments the right G-codes to do the tool change.
-- ATC in the controller, where Smoothieboard receives commands like `T1`, `T2` etc, and converts those into the right G-codes to do the tool change.
+- **ATC in the post-processor**: The post-processor adds to the program at the right moments the right G-codes to do the tool change.
 
-Status: Right now, we are concentrating on implementing ATC with a post-processor for Fusion360. This is because it's faster/easier to figure things out that way. However, once that method is mature it'll be trivial to do the implementation within Smoothie (which was mostly done already in the "recursive" branch on github).
+- **ATC in the controller**: Smoothieboard receives commands like `T1`, `T2` etc, and converts those into the right G-codes to do the tool change.
+
+<sl-alert variant="neutral" open>
+  <sl-icon slot="icon" name="info-circle"></sl-icon>
+  <strong>Status:</strong> Right now, we are concentrating on implementing ATC with a post-processor for Fusion360. This is because it's faster/easier to figure things out that way. However, once that method is mature it'll be trivial to do the implementation within Smoothie (which was mostly done already in the "recursive" branch on github).
+</sl-alert>
 
 ### Smoothie ATC Method
 
@@ -24,12 +35,19 @@ Status: Right now, we are concentrating on implementing ATC with a post-processo
 
 ### Fusion360 Post-Processor Method
 
-This method requires you use a custom post-processor for Fusion360. Whenever a tool change has to occur, the post-processor inserts the right sequence of commands into the G-code file to release the previous tool and grab the new one.
+This method requires you use a custom post-processor for Fusion360.
 
-- First get the Post-Processor at [Smoothie-Fusion360-PostProcessor](https://github.com/arthurwolf/Smoothie-Fusion360-PostProcessor)
-- In the "Post-Process" window in Fusion360, specify you want to use this post-processor instead of the default Smoothie one.
-- In the post-processor options, configure your tool rack's position and design.
-- Generate G-code and test
+Whenever a tool change has to occur, the post-processor inserts the right sequence of commands into the G-code file to release the previous tool and grab the new one.
+
+**Steps to set up:**
+
+1. First get the Post-Processor at [Smoothie-Fusion360-PostProcessor](https://github.com/arthurwolf/Smoothie-Fusion360-PostProcessor)
+
+2. In the "Post-Process" window in Fusion360, specify you want to use this post-processor instead of the default Smoothie one.
+
+3. In the post-processor options, configure your tool rack's position and design.
+
+4. Generate G-code and test
 
 ## Physical setup example
 

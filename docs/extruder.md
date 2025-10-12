@@ -5,18 +5,21 @@
 
 All of the options currently supported by the Extruder module:
 
+
 | Option | Example value | Explanation |
 | ------ | ------------- | ----------- |
 {% include_relative extruder-options.md %}
 
-> [!NOTE]
-> This is the new format which allows multiple extruders. The old format is deprecated. The old "one-extruder-only" configuration options will still be valid for backward compatibility, but it is recommended not to use them.
->
-> For example where before you used `extruder_steps_per_mm` you must now use `extruder.[module-name].steps_per_mm`.
+<sl-alert variant="neutral" open>
+  <sl-icon slot="icon" name="info-circle"></sl-icon>
+  This is the new format which allows multiple extruders. The old format is deprecated. The old "one-extruder-only" configuration options will still be valid for backward compatibility, but it is recommended not to use them.<br><br>
+  For example where before you used `extruder_steps_per_mm` you must now use `extruder.[module-name].steps_per_mm`.
+</sl-alert>
 
 ## G-code
 
 Here are the G-code commands currently supported by the Extruder module:
+
 
 - `G0`/`G1`: Move to the given coordinates. The F parameter defines speed and is remembered by subsequent commands (specified in millimetres/minute) (command is modal)
 - `G10`: Do firmware extruder retract
@@ -40,8 +43,10 @@ Here are the G-code commands currently supported by the Extruder module:
 - `M500`: Save volatile settings to an override file
 - `M503`: Display volatile settings
 
-> [!TIP]
-> If you want to learn more about this module, or are curious how it works, Smoothie is Open-Source and you can simply go look at the code, [here](https://github.com/Smoothieware/Smoothieware/blob/edge/src/modules/tools/extruder/Extruder.cpp).
+<sl-alert variant="primary" open>
+  <sl-icon slot="icon" name="lightbulb"></sl-icon>
+  If you want to learn more about this module, or are curious how it works, Smoothie is Open-Source and you can simply go look at the code, <a href="https://github.com/Smoothieware/Smoothieware/blob/edge/src/modules/tools/extruder/Extruder.cpp">here</a>.
+</sl-alert>
 
 ### External resources
 

@@ -1,19 +1,31 @@
+---
+layout: default
+title: Developers Guide
+---
+
+# Developers Guide
 
 {% include_relative contributing.md %}
 
-This page contains or will contain information you need to know when coding for Smoothie. TODO: make a proper introduction.
+This page contains information you need to know when coding for Smoothie.
+
+It covers the configuration system, coding standards, and how to submit contributions to the project.
 
 ## How to submit a pull request to the Smoothieware Github project
 
-### Config system and checksums
+See the [Github](github) page for detailed instructions on submitting pull requests.
 
-#### When to read configuration
+## Config system and checksums
 
-When coding a Smoothie module, you probably want the user to be able to configure it. In Smoothie, configuration is stored in a configuration file, which is read at startup time (when your module is being loaded).
+### When to read configuration
+
+When coding a Smoothie module, you probably want the user to be able to configure it.
+
+In Smoothie, configuration is stored in a configuration file, which is read at startup time (when your module is being loaded).
 
 If you want your config values to be read only upon module loading, read your config values from the `on_module_loaded` callback of your module: [example](https://github.com/arthurwolf/Smoothie/blob/bee725fcd5dce2162f643dd747fb95c1cc9f4242/src/modules/utils/pausebutton/PauseButton.cpp#L16).
 
-#### Checksums
+### Checksums
 
 Consider a setting that looks like this in our config file:
 
@@ -30,9 +42,12 @@ void MyModule::on_config_loaded(void* argument){
 }
 ```
 
-To save flash storage space, we use [Checksums](http://en.wikipedia.org/wiki/Checksum): we don't store the actual string, but a checksum of that string. We can compare the checksums of the configuration lines in the config file and still know if they correspond to our string.
+To save flash storage space, we use [Checksums](http://en.wikipedia.org/wiki/Checksum): we don't store the actual string, but a checksum of that string.
 
-An online tool to compute those when needed can be found [here](http://www.dioda.ro/tst/tstfletcher.php).
+We can compare the checksums of the configuration lines in the config file and still know if they correspond to our string.
+
+An online tool to compute checksums when needed can be found [here](http://www.dioda.ro/tst/tstfletcher.php).
+
 The actual code for the checksum calculation is in [src/libs/utils.cpp](https://github.com/arthurwolf/Smoothie/blob/edge/src/libs/utils.cpp):
 
 ```cpp
@@ -59,11 +74,13 @@ void MyModule::on_config_loaded(void* argument){
 }
 ```
 
-#### Config value types
+### Config value types
 
-There are different types of config values you can retrieve from the config file. They are all strings, but there are convenience methods that allow you to convert them into other types.
+There are different types of config values you can retrieve from the config file.
 
-##### ConfigValue object
+They are all strings, but there are convenience methods that allow you to convert them into other types.
+
+#### ConfigValue object
 
 This is not very useful. It's what you get when you do:
 
@@ -71,9 +88,11 @@ This is not very useful. It's what you get when you do:
 	this->kernel->config->value(whatever_checksum);
 ```
 
-You get an object of type [ConfigValue](https://github.com/arthurwolf/Smoothie/blob/edge/src/libs/Config.h). It stores the string (if the config option was found in the file) and has all kinds of convenience methods.
+You get an object of type [ConfigValue](https://github.com/arthurwolf/Smoothie/blob/edge/src/libs/Config.h).
 
-##### String
+It stores the string (if the config option was found in the file) and has all kinds of convenience methods.
+
+#### String
 
 If your value is a string, you can access it using the `as_string()` method:
 
@@ -83,7 +102,7 @@ If your value is a string, you can access it using the `as_string()` method:
 
 Note: if you provided a default string, and the option is not found in the config file, that default will be returned. See below.
 
-##### Number
+#### Number
 
 Converts your string to a double:
 
@@ -93,7 +112,7 @@ Converts your string to a double:
 
 Note: if you provided a default number, and the option is not found in the config file, that default will be returned. See below.
 
-##### Boolean
+#### Boolean
 
 This is convenient for stuff like:
 
@@ -106,9 +125,11 @@ This prevents the module from being loaded if the `laser_module_enable` config o
 
 "true" and "1" are valid true values, anything else is false.
 
-##### Pin
+#### Pin
 
-Pin objects represent a pin configuration. They store the port number, the pin number, whether the pin is inverted, and other stuff. See: [Pin.h](https://github.com/arthurwolf/Smoothie/blob/edge/src/libs/Pin.h).
+Pin objects represent a pin configuration.
+
+They store the port number, the pin number, whether the pin is inverted, and other stuff. See: [Pin.h](https://github.com/arthurwolf/Smoothie/blob/edge/src/libs/Pin.h).
 
 They are generated from the result of `as_string()` (making default values as strings possible).
 
@@ -116,9 +137,11 @@ They are generated from the result of `as_string()` (making default values as st
 	this->step_pin = this->kernel->config->value(extruder_step_pin_checksum)->by_default("1.22")->as_pin()->as_output();
 ```
 
-#### Defaults
+### Defaults
 
-You can set a default value in case that option is not specified in the config file using the `by_default()` method, which can take either a string or a double. Doubles are used as defaults only by the `as_number()` and `as_bool()` methods.
+You can set a default value in case that option is not specified in the config file using the `by_default()` method, which can take either a string or a double.
+
+Doubles are used as defaults only by the `as_number()` and `as_bool()` methods.
 
 ```cpp
 	this->acceleration = this->kernel->config->value(acceleration_checksum)->by_default(1)->as_number();

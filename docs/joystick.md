@@ -1,13 +1,18 @@
 
 
-{::nomarkdown}
-<img align="right" src="images/joystick.png" alt="Joystick Module" width="200"/>
-
-{:/nomarkdown}
 # Joystick Module
 
+{::nomarkdown}
+<a href="images/joystick.png">
+  <img src="images/joystick.png" alt="Joystick Module" width="200" height="200" style="float: right; margin-left: 1rem;"/>
+</a>
+{:/nomarkdown}
+
 ## What is Joystick?
-Joystick is a module for SmoothieBoard which adds the ability to use joysticks with your machine. It is much like the [Switch](switch) module, but can read from things which output an [analog](https://learn.sparkfun.com/tutorials/analog-vs-digital) voltage (things like joysticks, sliders, knobs, force sensitive resistors, etc).
+
+Joystick is a module for SmoothieBoard which adds the ability to use joysticks with your machine.
+
+It is much like the [Switch](switch) module, but can read from things which output an [analog](https://learn.sparkfun.com/tutorials/analog-vs-digital) voltage (things like joysticks, sliders, knobs, force sensitive resistors, etc).
 
 Some possible uses for the Joystick module:
 - Moving your machine to set up the part origin (see [jogging](#jogging))
@@ -18,23 +23,24 @@ Some possible uses for the Joystick module:
 
 ## Getting Started
 
-> [!DANGER]
-> Note this page is a work in progress and the joystick functionality is not yet released in smoothieware.
-> To test it you need to use pull request [Smoothieware#1122](https://github.com/Smoothieware/Smoothieware/pull/1122), and instructions on how to test a Pull request are here [Checking out pull requests](http://smoothieware.org/third-party-branches#checking-out-pull-requests)
+<sl-alert variant="danger" open>
+  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+  <strong>Work in Progress:</strong> Note this page is a work in progress and the joystick functionality is not yet released in smoothieware. To test it you need to use pull request <a href="https://github.com/Smoothieware/Smoothieware/pull/1122">Smoothieware#1122</a>, and instructions on how to test a Pull request are here <a href="third-party-branches#checking-out-pull-requests">Checking out pull requests</a>
+</sl-alert>
 
 ### Hardware Requirements
 
 {::nomarkdown}
-<img src="images/joystick.png" alt="Joystick" width="150"/>
+<div style="text-align: center;">
+  <a href="images/joystick.png"><img src="images/joystick.png" alt="Joystick" width="150" style="display: inline-block; margin: 0.5rem;"/></a>
+  <a href="images/sparkfun_joystick.jpg"><img src="images/sparkfun_joystick.jpg" alt="Sparkfun Joystick" width="150" style="display: inline-block; margin: 0.5rem;"/></a>
+  <a href="images/sparkfun_slider.jpg"><img src="images/sparkfun_slider.jpg" alt="Sparkfun Slider" width="150" style="display: inline-block; margin: 0.5rem;"/></a>
+</div>
 {:/nomarkdown}
-{::nomarkdown}
-<img src="images/sparkfun_joystick.jpg" alt="Sparkfun Joystick" width="150"/>
-{:/nomarkdown}
-{::nomarkdown}
-<img src="images/sparkfun_slider.jpg" alt="Sparkfun Slider" width="150"/>
 
-{:/nomarkdown}
-To begin, you will need a device that you want to read. Some example devices are shown here, but really any variable resistor (potentiometer) or device that outputs 0-3.3 V should work. For more information on how potentiometers work, see [SparkFun's tutorial](https://learn.sparkfun.com/tutorials/voltage-dividers/).
+To begin, you will need a device that you want to read. Some example devices are shown here, but really any variable resistor (potentiometer) or device that outputs 0-3.3 V should work.
+
+For more information on how potentiometers work, see [SparkFun's tutorial](https://learn.sparkfun.com/tutorials/voltage-dividers/).
 
 For the rest of the document, the examples will be for a 2-axis joystick like in the right-most picture. This joystick has two separate potentiometers for each axis, and has springs inside to return the knob to the center when released (think PlayStation controller knob).
 
@@ -42,16 +48,24 @@ For the rest of the document, the examples will be for a 2-axis joystick like in
 
 If you have a potentiometer, you will need to connect one side to 3.3 V, the other side to ground, and the wiper to a pin on the SmoothieBoard which supports analog reading (see table below).
 
-
 {::nomarkdown}
-<img src="images/potentiometer-schematic.png" alt="Potentiometer Schematic" width="300"/>
-
+<div style="text-align: center;">
+  <a href="images/potentiometer-schematic.png">
+    <img src="images/potentiometer-schematic.png" alt="Potentiometer Schematic" width="400"/>
+  </a>
+</div>
 {:/nomarkdown}
 
-The above image shows a basic schematic of a potentiometer. Pins 1 and 3 are the ends of the potentiometer, and Pin 2 is the wiper. Vin should be 3.3 V for the SmoothieBoard, and Pin 2 will be connected to a compatible pin on the SmoothieBoard (see table below).
+The above image shows a basic schematic of a potentiometer.
 
-> [!WARNING]
-> Use caution when connecting a potentiometer to your SmoothieBoard. If Vin is a higher voltage than the SmoothieBoard's pins can handle (-0.5 to 5.1 V for > 10 ms), you might ruin your board. Use Vin = 3.3 V unless you know what you are doing.
+Pins 1 and 3 are the ends of the potentiometer, and Pin 2 is the wiper.
+
+Vin should be 3.3 V for the SmoothieBoard, and Pin 2 will be connected to a compatible pin on the SmoothieBoard (see table below).
+
+<sl-alert variant="warning" open>
+  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+  <strong>Caution:</strong> Use caution when connecting a potentiometer to your SmoothieBoard. If Vin is a higher voltage than the SmoothieBoard's pins can handle (-0.5 to 5.1 V for > 10 ms), you might ruin your board. Use Vin = 3.3 V unless you know what you are doing.
+</sl-alert>
 
 The analog pins on the SmoothieBoard which can be connected to a wiper (Pin 2 in above schematic) are shown in the table below:
 
@@ -97,12 +111,19 @@ Example Mapping from joystick position to output with `zero_offset` = 1.5 V and 
 </div>
 
 ### Auto-Zeroing
-The joystick module has an optional feature which automatically determines `zero_offset`. For a short period of time (`startup_time`) after the SmoothieBoard is powered on / reset, the joystick module averages the joystick readings. The average value at the end of the startup time is used as the `zero_offset`.
 
-This feature is useful for joysticks, where the `zero_offset` is somewhat unknown (it is usually around 1.65 V but different devices have slightly different center values). It would not make sense to enable for sliders or knobs, since the knob doesn't have a known/default starting position.
+The joystick module has an optional feature which automatically determines `zero_offset`.
 
-> [!WARNING]
-> Be careful not to move the joystick during the `startup_time`, otherwise the `zero_offset` will be wrong and the joystick will have undesirable behavior.
+For a short period of time (`startup_time`) after the SmoothieBoard is powered on / reset, the joystick module averages the joystick readings. The average value at the end of the startup time is used as the `zero_offset`.
+
+This feature is useful for joysticks, where the `zero_offset` is somewhat unknown (it is usually around 1.65 V but different devices have slightly different center values).
+
+It would not make sense to enable for sliders or knobs, since the knob doesn't have a known/default starting position.
+
+<sl-alert variant="warning" open>
+  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+  <strong>Important:</strong> Be careful not to move the joystick during the <code>startup_time</code>, otherwise the <code>zero_offset</code> will be wrong and the joystick will have undesirable behavior.
+</sl-alert>
 
 ### All Configuration Options
 
@@ -145,14 +166,18 @@ jogger.data_source_beta                        vertical
 
 These options tell the jogger the names of the joystick modules to read when jogging.
 
-> [!SUCCESS]
-> You're all set! For more jogging configuration options, see [Jogger](jogger).
+<sl-alert variant="success" open>
+  <sl-icon slot="icon" name="check-circle"></sl-icon>
+  You're all set! For more jogging configuration options, see <a href="jogger">Jogger</a>.
+</sl-alert>
 
-### Feed Rate Override 
+### Feed Rate Override
 <a name='fro'></a>
 
-> [!WARNING]
-> Note: no feed rate override has been implemented in smoothie yet. The following example is purely hypothetical.
+<sl-alert variant="warning" open>
+  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+  <strong>Note:</strong> No feed rate override has been implemented in smoothie yet. The following example is purely hypothetical.
+</sl-alert>
 
 To use the joystick to override your machine's feed rate (to go faster or slower while cutting/printing), set up a single joystick axis. An example snippet of the configuration file is shown below:
 
@@ -172,8 +197,10 @@ With the joystick properly configured, you will simply need to tell the Feed Rat
 feedoverride.data_source                       fro
 ```
 
-> [!SUCCESS]
-> You're all set! For more feed-rate override configuration options, see [Feed Rate Override](feed-rate-override).
+<sl-alert variant="success" open>
+  <sl-icon slot="icon" name="check-circle"></sl-icon>
+  You're all set! For more feed-rate override configuration options, see <a href="feed-rate-override">Feed Rate Override</a>.
+</sl-alert>
 
 ## Developer Documentation
 For information on how to write your own module which uses a joystick, see the [joystick developer documentation](joystick-dev).

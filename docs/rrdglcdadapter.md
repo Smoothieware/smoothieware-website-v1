@@ -1,9 +1,14 @@
-
 # RRD GLCD Adapter board
 
 This adapter allows you to connect a [Reprapdiscount GLCD panel](http://smoothieware.org/panel) to a Smoothieboard easily.
 
-![GLCD Adapter](images/rrdglcdadapter/glcdav2.jpg)
+{::nomarkdown}
+<div style="text-align: center; margin: 2rem 0;">
+  <a href="/images/rrdglcdadapter/glcdav2.jpg">
+    <img src="/images/rrdglcdadapter/glcdav2.jpg" alt="GLCD Adapter" style="min-width: 640px; width: 80%; height: auto;"/>
+  </a>
+</div>
+{:/nomarkdown}
 
 All of the panel's functionalities are available:
 
@@ -20,42 +25,97 @@ The Source is on [GitHub](https://github.com/llegoff/GlcdAdapter2)
 ## Getting one
 
 You can now get a RRDGLCD Adapter [here](http://robotseed.com).
+
 For US another version coming soon [here](http://shop.uberclock.com)
 
-> [!NOTE]
-> Both versions look a bit different, but are functionally identical and are used the same way. The RobotSeed version is pictured here, but the instructions are identical for the Uberclock version.
+{::nomarkdown}
+<sl-alert variant="neutral" open>
+  <sl-icon slot="icon" name="info-circle"></sl-icon>
+  Both versions look a bit different, but are functionally identical and are used the same way.
+  <br><br>
+  The RobotSeed version is pictured here, but the instructions are identical for the Uberclock version.
+</sl-alert>
+{:/nomarkdown}
 
 ## Assembly
 
 Place the 3-pin connectors below the PCB
 
-![GLCD Adapter Kit](images/rrdglcdadapter/glcdav2-kit.jpg)
+{::nomarkdown}
+<div style="text-align: center; margin: 2rem 0;">
+  <a href="/images/rrdglcdadapter/glcdav2_kit.jpg">
+    <img src="/images/rrdglcdadapter/glcdav2_kit.jpg" alt="GLCD Adapter Kit" style="min-width: 640px; width: 80%; height: auto;"/>
+  </a>
+</div>
+{:/nomarkdown}
 
 And solder
 
-![GLCD Adapter Soldering](images/rrdglcdadapter/glcdav2-weld0.jpg)
+{::nomarkdown}
+<div style="text-align: center; margin: 2rem 0;">
+  <a href="/images/rrdglcdadapter/glcdav2_weld0.jpg">
+    <img src="/images/rrdglcdadapter/glcdav2_weld0.jpg" alt="GLCD Adapter Soldering" style="min-width: 640px; width: 80%; height: auto;"/>
+  </a>
+</div>
+{:/nomarkdown}
 
 Mount the EXP1 & EXP2 connectors, and solder
 
-![GLCD Adapter Original](images/rrdglcdadapter/glcdav2-orig.jpg)
+{::nomarkdown}
+<div style="text-align: center; margin: 2rem 0;">
+  <a href="/images/rrdglcdadapter/glcdav2_orig.jpg">
+    <img src="/images/rrdglcdadapter/glcdav2_orig.jpg" alt="GLCD Adapter Original" style="min-width: 640px; width: 80%; height: auto;"/>
+  </a>
+</div>
+{:/nomarkdown}
 
-![RRDGLCD Version](images/rrdglcdadapter/rrdglcdvo.png)
+{::nomarkdown}
+<div style="text-align: center; margin: 2rem 0;">
+  <a href="/images/rrdglcdadapter/rrdglcdvo.png">
+    <img src="/images/rrdglcdadapter/rrdglcdvo.png" alt="RRDGLCD Version" style="min-width: 640px; width: 80%; height: auto;"/>
+  </a>
+</div>
+{:/nomarkdown}
 
 On some RRDGLCD the connector are reversed
 
-![GLCD Adapter Copy](images/rrdglcdadapter/glcdav2-copy.jpg)
+{::nomarkdown}
+<div style="text-align: center; margin: 2rem 0;">
+  <a href="/images/rrdglcdadapter/glcdav2_copy.jpg">
+    <img src="/images/rrdglcdadapter/glcdav2_copy.jpg" alt="GLCD Adapter Copy" style="min-width: 640px; width: 80%; height: auto;"/>
+  </a>
+</div>
+{:/nomarkdown}
 
-![RRDGLCD Copy](images/rrdglcdadapter/rrdglcdcopy.png)
+{::nomarkdown}
+<div style="text-align: center; margin: 2rem 0;">
+  <a href="/images/rrdglcdadapter/rrdglcdcopy.png">
+    <img src="/images/rrdglcdadapter/rrdglcdcopy.png" alt="RRDGLCD Copy" style="min-width: 640px; width: 80%; height: auto;"/>
+  </a>
+</div>
+{:/nomarkdown}
 
 ## Power supply
 
 If Smoothieboard has a good 5V regulator, or a 5V power supply, the panel of the power supply can be drawn from this one by means of a diode (ex 1N5817).
 
-![GLCD Adapter Power Supply](images/rrdglcdadapter/glcdav2-power1.jpg)
+{::nomarkdown}
+<div style="text-align: center; margin: 2rem 0;">
+  <a href="/images/rrdglcdadapter/glcdav2_power1.jpg">
+    <img src="/images/rrdglcdadapter/glcdav2_power1.jpg" alt="GLCD Adapter Power Supply" style="min-width: 640px; width: 80%; height: auto;"/>
+  </a>
+</div>
+{:/nomarkdown}
 
 If not, please install a voltage regulator Recom 785.0-1
 
-![GLCD Adapter Voltage Regulator](images/rrdglcdadapter/glcdav2-power2.jpg)
+{::nomarkdown}
+<div style="text-align: center; margin: 2rem 0;">
+  <a href="/images/rrdglcdadapter/glcdav2_power2.jpg">
+    <img src="/images/rrdglcdadapter/glcdav2_power2.jpg" alt="GLCD Adapter Voltage Regulator" style="min-width: 640px; width: 80%; height: auto;"/>
+  </a>
+</div>
+{:/nomarkdown}
 
 The diode and regulator may be mounted at the same time.
 
@@ -65,9 +125,21 @@ The adapter is configured for Smoothieboard v1.0a and newer.
 
 For v1.0 Smoothieboard, configure the PCB
 
-![GLCD Adapter Configuration](images/rrdglcdadapter/glcdav2-config1.jpg)
+{::nomarkdown}
+<div style="text-align: center; margin: 2rem 0;">
+  <a href="/images/rrdglcdadapter/glcdav2_config1.jpg">
+    <img src="/images/rrdglcdadapter/glcdav2_config1.jpg" alt="GLCD Adapter Configuration" style="min-width: 640px; width: 80%; height: auto;"/>
+  </a>
+</div>
+{:/nomarkdown}
 
-![GLCD Adapter Configuration 2](images/rrdglcdadapter/glcdav2-config2.jpg)
+{::nomarkdown}
+<div style="text-align: center; margin: 2rem 0;">
+  <a href="/images/rrdglcdadapter/glcdav2_config2.jpg">
+    <img src="/images/rrdglcdadapter/glcdav2_config2.jpg" alt="GLCD Adapter Configuration 2" style="min-width: 640px; width: 80%; height: auto;"/>
+  </a>
+</div>
+{:/nomarkdown}
 
 Cut the jumper track, and drop a welding goute on the other part of the jumper.
 
@@ -75,9 +147,16 @@ Cut the jumper track, and drop a welding goute on the other part of the jumper.
 
 Solder the connector missing
 
-![GLCD Adapter Smoothieboard](images/rrdglcdadapter/glcdv2-smoothie.png)
+{::nomarkdown}
+<div style="text-align: center; margin: 2rem 0;">
+  <a href="/images/rrdglcdadapter/glcdv2_smoothie.png">
+    <img src="/images/rrdglcdadapter/glcdv2_smoothie.png" alt="GLCD Adapter Smoothieboard" style="min-width: 640px; width: 80%; height: auto;"/>
+  </a>
+</div>
+{:/nomarkdown}
 
 Update firmware (version after October 2014), see [Flashing Smoothie firmware](flashing-smoothie-firmware)
+
 Edit the config file on the µSD:
 
 ```markdown
@@ -98,7 +177,11 @@ panel.external_sd.spi_cs_pin          0.28              # set spi chip select fo
 panel.external_sd.sdcd_pin            0.27!^            # sd detect signal (set to nc if no sdcard detect) (or any spare pin)
 ```
 
-If you do not want to use the buzzer, leaving out the `panel.buzz_pin` line will leave the pin floating. As there is no pull-down on the buzzer, it will keep buzzing. To avoid this, you can either solder a pull-down resistor on the adapter board or you can use this little hack:
+If you do not want to use the buzzer, leaving out the `panel.buzz_pin` line will leave the pin floating.
+
+As there is no pull-down on the buzzer, it will keep buzzing.
+
+To avoid this, you can either solder a pull-down resistor on the adapter board or you can use this little hack:
 
 ```markdown
 switch.nonoise.enable                        true
@@ -106,16 +189,36 @@ switch.nonoise.output_pin                    1.31v
 switch.nonoise.output_type                   digital
 ```
 
-This will create a pseudo-switch that does nothing, but it will enable the pull-down on the pin. You have to leave out the `panel.buzz_pin` line.
+This will create a pseudo-switch that does nothing, but it will enable the pull-down on the pin.
 
-![GLCD Adapter](images/rrdglcdadapter/adapter.jpg)
+You have to leave out the `panel.buzz_pin` line.
+
+{::nomarkdown}
+<div style="text-align: center; margin: 2rem 0;">
+  <a href="/images/rrdglcdadapter/adapter.jpg">
+    <img src="/images/rrdglcdadapter/adapter.jpg" alt="GLCD Adapter" style="min-width: 640px; width: 80%; height: auto;"/>
+  </a>
+</div>
+{:/nomarkdown}
 
 The V1 of this adapter was not capable of accessing the panel's SD card slot.
 
 This functionality can be made available on the v1 by cutting track on PCB
 
-![GLCD Adapter V1](images/rrdglcdadapter/gcldv1-03.jpg)
+{::nomarkdown}
+<div style="text-align: center; margin: 2rem 0;">
+  <a href="/images/rrdglcdadapter/gcldv1_03.jpg">
+    <img src="/images/rrdglcdadapter/gcldv1_03.jpg" alt="GLCD Adapter V1" style="min-width: 640px; width: 80%; height: auto;"/>
+  </a>
+</div>
+{:/nomarkdown}
 
 And soldering a cable under the PCB
 
-![GLCD Adapter V1 Soldering](images/rrdglcdadapter/gcldv1-04.jpg)
+{::nomarkdown}
+<div style="text-align: center; margin: 2rem 0;">
+  <a href="/images/rrdglcdadapter/gcldv1_04.jpg">
+    <img src="/images/rrdglcdadapter/gcldv1_04.jpg" alt="GLCD Adapter V1 Soldering" style="min-width: 640px; width: 80%; height: auto;"/>
+  </a>
+</div>
+{:/nomarkdown}

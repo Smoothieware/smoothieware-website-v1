@@ -40,28 +40,51 @@ grbl_mode    false
 
 Then Smoothie will interpret the G-code you send to it the same way Reprap-type firmwares interpret it, as "3D printing" G-code.
 
-> [!SUCCESS] **CNC build**
->
-> Smoothie has a special "CNC" build with some special CNC features and adaptations.
->
-> This special build has `grbl_mode` enabled (set to "true") by default.
->
-> You can get the special CNC build pre-compiled at [getting-smoothie](getting-smoothie) or compile it yourself at [compiling-smoothie](compiling-smoothie).
->
-> Note, some modules are excluded in CNC mode, like temperature control.
+## CNC Build
 
-> [!NOTE] **Lasers**
->
-> This page only mentions 3D printers and CNC mills. Lasers are neither.
->
-> Traditionally, Lasercutting software (like [laserweb](laserweb) or [visicut](visicut)) have learned to talk to Smoothie in its 3D printing mode.
->
-> However, more CNC oriented software can also be used to control lasers (they are virtually similar to a CNC mill with a very thin tool and no Z axis), this is the case for example of [bcnc](bcnc).
+{::nomarkdown}
+<sl-alert variant="primary" open>
+  <sl-icon slot="icon" name="tools"></sl-icon>
+  <strong>CNC build</strong><br><br>
 
-Typical differences between 3d mode and CNC mode are:
+  Smoothie has a special "CNC" build with some special CNC features and adaptations.<br><br>
+
+  This special build has <code>grbl_mode</code> enabled (set to "true") by default.<br><br>
+
+  You can get the special CNC build pre-compiled at <a href="getting-smoothie">getting-smoothie</a> or compile it yourself at <a href="compiling-smoothie">compiling-smoothie</a>.<br><br>
+
+  Note, some modules are excluded in CNC mode, like temperature control.
+</sl-alert>
+{:/nomarkdown}
+
+## Lasers and CNC Mode
+
+{::nomarkdown}
+<sl-alert variant="neutral" open>
+  <sl-icon slot="icon" name="info-circle"></sl-icon>
+  <strong>Lasers</strong><br><br>
+
+  This page only mentions 3D printers and CNC mills. Lasers are neither.<br><br>
+
+  Traditionally, Lasercutting software (like <a href="laserweb">laserweb</a> or <a href="visicut">visicut</a>) have learned to talk to Smoothie in its 3D printing mode.<br><br>
+
+  However, more CNC oriented software can also be used to control lasers (they are virtually similar to a CNC mill with a very thin tool and no Z axis), this is the case for example of <a href="bcnc">bcnc</a>.
+</sl-alert>
+{:/nomarkdown}
+
+## Key Differences
+
+Typical differences between 3D mode and CNC mode are:
 
 1. Error messages are different
 2. `G28` goes to park position and is NOT home, `$H` homes in CNC mode
 3. Many GCodes may be differently interpreted in CNC mode than in 3D mode, please check your gcode references (Linuxcnc has a good GCode reference, do not use the reprap gcode reference for CNC mode)
 
-**NOTE** you cannot generally use pronterface to control CNC/grbl mode, as Pronterface is for 3D printers and uses a different dialect of gcode, it also does not allow you to send commands such as `$H` to home. It also tends to truncate commands like `G28.2` by not sending the `.2` part.
+{::nomarkdown}
+<sl-alert variant="warning" open>
+  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+  <strong>Pronterface Compatibility</strong><br><br>
+
+  You cannot generally use pronterface to control CNC/grbl mode, as Pronterface is for 3D printers and uses a different dialect of gcode. It also does not allow you to send commands such as <code>$H</code> to home. It also tends to truncate commands like <code>G28.2</code> by not sending the <code>.2</code> part.
+</sl-alert>
+{:/nomarkdown}

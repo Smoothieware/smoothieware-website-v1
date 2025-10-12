@@ -1,4 +1,13 @@
 
+# Extruder Configuration Options
+
+This page lists all configuration options for the Extruder module.
+
+For more detailed information and examples, see the [Extruder](extruder) guide.
+
+
+## Configuration Reference
+
 | Parameter | Default | Description |
 | --------- | ------- | ----------- |
 | `extruder.module_name.enable` | true | Whether to activate the extruder module at all. All configuration is ignored if false. Each time an `extruder.module_name.enable` line is encountered, an extruder module with the name «module_name» will be created. |

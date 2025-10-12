@@ -1,17 +1,30 @@
+# Smoothie on a Breadboard
 
-# Introduction
+<sl-alert variant="danger" open>
+  <sl-icon slot="icon" name="exclamation-octagon"></sl-icon>
+  <strong>PLEASE DO NOT BUILD THIS</strong>
 
-There has recently been some interest in getting Smoothie to run using the [LPCXpresso 1769](http://www.embeddedartists.com/products/lpcxpresso/lpc1769_xpr.php) breakout board for the [LPC1769](http://www.nxp.com/products/microcontrollers-and-processors/arm-processors/lpc-mcus/lpc1700-cortex-m3/512kb-flash-64kb-sram-ethernet-usb-lqfp100-package:LPC1769FBD100) chip, and components placed on a breadboard.
+  2021 update: Please don't build one of these. They are purely an educational reference that is not meant to actually be built, and you're just going to cause yourself a lot of trouble.
 
-If you don't mind the hackyness of breadboards, or if tinkering is in fact what you're after, this can be a quite nice solution.
+  If you have any doubts and still think you should build one, please <a href="mailto:wolf.arthur@gmail.com">contact us by email</a> first.
 
-> [!WARNING]
-> **Warning**: Breadboard setups are very sensitive to Electro-Magnetic Interference, you will most probably get false readings, resets and hangs if used on an actual machine, this page is for hackers looking into learning and testing new designs.
->
-> It is not appropriate for actual machines you want to use on a daily basis and expect to be reliable.
+  The introduction below was written a decade ago, when this was the only way to run Smoothie on <em>anything</em>, making this better than anything else, since nothing else existed.
+</sl-alert>
 
-> [!DANGER]
-> 2021 update, written after a user recently tried to build one of these not realizing it was not a viable path to a working controller, resulting in lots of tears: Please don't build one of these, they are purely an educational thing that is not meant to actually be built, and you're just going to cause yourself a lot of trouble. If you have any doubts and still think you should build one, please [Send us an Email](mailto:wolf.arthur@gmail.com). The introduction above was written a decade ago, when this was the singular only way to run Smoothie on *anything*, making this better than anything else, since nothing else existed.
+<sl-alert variant="warning" open>
+  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+  <strong>Warning</strong>: Breadboard setups are very sensitive to Electro-Magnetic Interference.
+
+  You will most probably get false readings, resets and hangs if used on an actual machine.
+
+  This page is for hackers looking into learning and testing new designs. It is not appropriate for actual machines you want to use on a daily basis and expect to be reliable.
+</sl-alert>
+
+## Introduction
+
+There has been some interest in getting Smoothie to run using the [LPCXpresso 1769](http://www.embeddedartists.com/products/lpcxpresso/lpc1769_xpr.php) breakout board for the [LPC1769](http://www.nxp.com/products/microcontrollers-and-processors/arm-processors/lpc-mcus/lpc1700-cortex-m3/512kb-flash-64kb-sram-ethernet-usb-lqfp100-package:LPC1769FBD100) chip, and components placed on a breadboard.
+
+If you don't mind the hackyness of breadboards, or if tinkering is in fact what you're after, this can be an interesting educational solution.
 
 ## Materials needed
 
@@ -28,11 +41,17 @@ To make this you'll need:
 
 If you like to tinker with reprap/CNC electronic stuff, you probably already have most of this.
 
-## The big picture
+## The Big Picture
 
-This is what smoothie on a breadboard looks like (graphics are thanks to the awesome [fritzing](http://fritzing.org/)):
+This is what Smoothie on a breadboard looks like (graphics are thanks to the awesome [fritzing](http://fritzing.org/)):
 
-![Smoothie on a breadboard](images/smoothie-on-a-breadboard/bb09.jpg)
+{::nomarkdown}
+<div style="text-align: center; margin: 2rem 0;">
+  <a href="images/smoothie-on-a-breadboard/bb09.jpg">
+    <img src="images/smoothie-on-a-breadboard/bb09.jpg" alt="Smoothie on a Breadboard" style="min-width: 640px; max-width: 100%; height: auto;"/>
+  </a>
+</div>
+{:/nomarkdown}
 
 A short description:
 - At the core, you have the LPCXpresso board. It can be powered from, and connected to the computer via either the USB port or the USB to Serial adapter. The USB to Serial adapter can be used in place of the USB port, you'll be able to use Smoothie fine, but then you miss out on all the fun where Smoothie connected to the computer via USB shows as both USB/Serial and Mass Storage, exposing the SD Card.
@@ -52,7 +71,13 @@ Warning: we will refer to the pin numbering found on the LPCXpresso PCB; this is
 
 You'll need the breadboard in a bit of a special configuration, due to the dimension/pin configuration of the LPCXPresso board:
 
-![Breadboard configuration](images/smoothie-on-a-breadboard/bb01.jpg)
+{::nomarkdown}
+<div style="text-align: center; margin: 2rem 0;">
+  <a href="images/smoothie-on-a-breadboard/bb01.jpg">
+    <img src="images/smoothie-on-a-breadboard/bb01.jpg" alt="Breadboard Configuration" style="min-width: 640px; max-width: 100%; height: auto;"/>
+  </a>
+</div>
+{:/nomarkdown}
 
 You just need to remove one of the power supply bars, and attach the two breadboards together (will require cutting the sticky sheet at the bottom of some breadboards).
 
@@ -166,11 +191,15 @@ currentcontrol_module_enable                 false             #
 
 ## Notes
 
-> [!WARNING]
-> The pinouts for the motors above are an example and actually conflict with other pins in current versions of smoothie so it is recommended you use the pinouts from this chart: [http://smoothieware.org/lpc1769-pin-usage](http://smoothieware.org/lpc1769-pin-usage).
+<sl-alert variant="warning" open>
+  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+  The pinouts for the motors above are an example and actually conflict with other pins in current versions of Smoothie.
+
+  It is recommended you use the pinouts from this chart: <a href="lpc1769-pin-usage">LPC1769 Pin Usage</a>.
+</sl-alert>
 
 ## Done
 
 And there you go!
 
-If you have any questions or if something is wrong/missing, please don't hesitate to [email](mailto:wolf.arthur@gmail.com).
+If you have any questions or if something is wrong/missing, please don't hesitate to [send us an email](mailto:wolf.arthur@gmail.com).

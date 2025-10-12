@@ -1,6 +1,10 @@
 
 # Joystick Options
 
+The joystick module allows you to control Smoothie using analog joystick inputs. Below are the configuration options available.
+
+## Basic Options
+
 | Option | Example Value | Explanation |
 | ------ | ------------- | ----------- |
 | `joystick.module-name.enable` | true | If true, create and enable a new Joystick module with the name "module_name" |
@@ -10,6 +14,8 @@
 | `joystick.module-name.endpoint` | 3.3 | Sets what voltage will map to +/- 1. If `endpoint` is greater than `zero_offset`, it specifies what voltage maps to 1. If `endpoint` is less than `zero_offset`, it specifies what voltage maps to -1 |
 
 ## Auto-Zero Configurations
+
+The auto-zero feature automatically determines the center position of your joystick on startup.
 
 | Option | Example Value | Explanation |
 | ------ | ------------- | ----------- |

@@ -1,6 +1,15 @@
+# Spindle Options (Deprecated)
 
-> [!NOTE]
-> This part of the documentation is deprecated. Please refer to the [spindle module page](spindle-module) instead.
+<sl-alert variant="warning" open>
+  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+  <strong>Deprecated Documentation</strong>
+
+  This part of the documentation is deprecated. Please refer to the <a href="spindle-module">spindle module page</a> instead for current information.
+</sl-alert>
+
+## Configuration Options
+
+The following table lists the deprecated configuration options for the old spindle module:
 
 | Parameter               | Value   | Description |
 | ----------------------- | ------- | ----------- |

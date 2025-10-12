@@ -20,17 +20,27 @@ Different strategies are useful for different geometries of machines, click on o
 
 **NOTE** When G30 stores the probe position or prints out the value, it is in actuator units not necessarily in mm. This is only an issue for rotary deltas where the actuator units are degrees not mm. Most other configurations it will be mm.
 
-![A servo-controlled retractable probe](https://lh5.ggpht.com/ZRHoohRN9Q4ZsIV-apYxqMg8CH-Imum2uEhoehLqtA2PuzoeIov4MzS3NVafLcOIPGO9vkMsv3tet98HR1YVlkwYqQ)
-
-Making the probe retractable allows the probe not to be in the way of the plastic when it is not used.
+{::nomarkdown}
+<div style="text-align: center; margin: 2rem 0;">
+  <a href="https://lh5.ggpht.com/ZRHoohRN9Q4ZsIV-apYxqMg8CH-Imum2uEhoehLqtA2PuzoeIov4MzS3NVafLcOIPGO9vkMsv3tet98HR1YVlkwYqQ">
+    <img src="https://lh5.ggpht.com/ZRHoohRN9Q4ZsIV-apYxqMg8CH-Imum2uEhoehLqtA2PuzoeIov4MzS3NVafLcOIPGO9vkMsv3tet98HR1YVlkwYqQ" alt="A servo-controlled retractable probe" style="min-width: 640px; max-width: 100%; height: auto;"/>
+  </a>
+  <p style="margin-top: 0.5rem; font-style: italic;">Making the probe retractable allows the probe not to be in the way of the plastic when it is not used.</p>
+</div>
+{:/nomarkdown}
 
 ## Hardware requirements
 
 You will need a probe switch attached to the machine's actuator, or a bed able to trigger an end stop input when the hotend touches it. A point detection is best as the actual position is important for probing. (proximity probes are suboptimal as they do not detect the point position).
 
-> [!WARNING]
-> A probe is **not** an endstop and therefore cannot be used to Home the Z axis. You need a Z endstop to use G28 to home the Z axis. Below are some instructions on how you can set the bed Z height using a probe (G30).
-> **NOTE** that gamma_max in the endstop configuration **IS** used to set the maximum default travel for a probe command (G30) **ONLY IF** zprobe.max_z is not defined.
+<sl-alert variant="warning" open>
+  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+  A probe is <strong>not</strong> an endstop and therefore cannot be used to Home the Z axis. You need a Z endstop to use G28 to home the Z axis.
+
+  Below are some instructions on how you can set the bed Z height using a probe (G30).
+
+  <strong>NOTE</strong> that gamma_max in the endstop configuration <strong>IS</strong> used to set the maximum default travel for a probe command (G30) <strong>ONLY IF</strong> zprobe.max_z is not defined.
+</sl-alert>
 
 A bit more: You have two choices:
 
@@ -60,8 +70,12 @@ zprobe.return_feedrate       0                  # feedrate after a probe, defaul
 zprobe.max_z                 200                # maximum default travel for the probe command, will use gamma_max if not defined
 ```
 
-> [!NOTE]
-> The `slow_feedrate` is the speed the probe moves down to find the bed, it returns (probe up) at 2 * `slow_feedrate` or `return_feedrate`. `fast_feedrate` is only used for any XY moves done during probing.
+<sl-alert variant="neutral" open>
+  <sl-icon slot="icon" name="info-circle"></sl-icon>
+  The <code>slow_feedrate</code> is the speed the probe moves down to find the bed, it returns (probe up) at 2 * <code>slow_feedrate</code> or <code>return_feedrate</code>.
+
+  <code>fast_feedrate</code> is only used for any XY moves done during probing.
+</sl-alert>
 
 First test the zprobe with `M119`, make sure that the probe is 1 when triggered and 0 when not triggered.
 
@@ -82,9 +96,12 @@ There are several M670 parameters that can set different settings for zprobe ove
 | `M670 H2.00` | Set Probe height (mm) |
 | `M670 I1` | Temporarily invert the sense of the probe pin (Not saved with M500) |
 
-> [!IMPORTANT]
-> If a `leveling-strategy.xxx.enable` is set to `true` this enables one of the bed leveling strategies described below.
-> **NOTE** that most leveling strategies cannot be run from a web interface, if using network use telnet to run them, or use the USB serial port.
+<sl-alert variant="primary" open>
+  <sl-icon slot="icon" name="lightbulb"></sl-icon>
+  If a <code>leveling-strategy.xxx.enable</code> is set to <code>true</code> this enables one of the bed leveling strategies described below.
+
+  <strong>NOTE</strong> that most leveling strategies cannot be run from a web interface. If using network, use telnet to run them, or use the USB serial port.
+</sl-alert>
 
 ### Configuration options
 
@@ -96,8 +113,10 @@ There are several M670 parameters that can set different settings for zprobe ove
 
 ## Delta calibration
 
-> [!WARNING]
-> This calibrates the endstops and delta radius only, it is designed to be run once and done, no need to run it before each print. Just run it and save the results. It does **not** set the Z height, that can be done in several different ways as described later.
+<sl-alert variant="warning" open>
+  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+  This calibrates the endstops and delta radius only, it is designed to be run once and done, no need to run it before each print.<br><br>Just run it and save the results.<br><br>It does <strong>not</strong> set the Z height, that can be done in several different ways as described later.
+</sl-alert>
 
 Make sure the config has `delta_homing` true set and that `zprobe.max_z` is set to about 20-30mm shorter than the distance to the bed, otherwise it will crash into the bed at high speed.
 
@@ -111,10 +130,10 @@ leveling-strategy.delta-calibration.initial_height 10        # height above bed 
 #this should be a height that is enough that the probe will not hit the bed and is an offset from zprobe.max_z (can be set to 0 if zprobe.max_z takes into account the probe offset)
 ```
 
-> [!WARNING]
-> Note that `leveling-strategy.delta-calibration.radius` should optimally be set such that the probe points are on the circumference of a circle that is equidistant from the center of the bed to the towers.
-> This minimizes the effect one endstop has on the others when adjusted.
-> This will usually put the probe points close to the edge of the glass bed.
+<sl-alert variant="warning" open>
+  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+  Note that <code>leveling-strategy.delta-calibration.radius</code> should optimally be set such that the probe points are on the circumference of a circle that is equidistant from the center of the bed to the towers.<br><br>This minimizes the effect one endstop has on the others when adjusted.<br><br>This will usually put the probe points close to the edge of the glass bed.
+</sl-alert>
 
 ### Calibration routine
 
@@ -181,16 +200,20 @@ Example use:
     (Machine is now calibrated and knows its correct height above the bed)
 ```
 
-> [!WARNING]
-> You will need to set the Z height after calibration using one of the several methods available mentioned here [Delta](delta)
+<sl-alert variant="warning" open>
+  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+  You will need to set the Z height after calibration using one of the several methods available mentioned here <a href="delta">Delta</a>
+</sl-alert>
 
-> [!WARNING]
-> There are **NO** probe offsets for delta calibration, so the probe should be within 10-20mm of the nozzle. This is by design as the calibration works solely on relative positions.
-> To be clear: there are no offsets in Smoothie, and they would not be useful as calibration is relative. This can be confusing to Marlin users. Just use it and you'll see.
+<sl-alert variant="warning" open>
+  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+  There are <strong>NO</strong> probe offsets for delta calibration, so the probe should be within 10-20mm of the nozzle.<br><br>This is by design as the calibration works solely on relative positions.<br><br>To be clear: there are no offsets in Smoothie, and they would not be useful as calibration is relative.<br><br>This can be confusing to Marlin users.<br><br>Just use it and you'll see.
+</sl-alert>
 
-> [!NOTE]
-> If you are getting the `Calibration failed to complete` error, or the probe crashes into the bed on the initial probe, it usually means you need to increase the `leveling-strategy.delta-calibration.initial_height` config setting to a bigger value, try 10 or 20 or bigger.
-> With the recent version it should move fast to just above the bed then move to the bed slowly, if it hits the bed on the first fast move then you need to set initial-height bigger.
+<sl-alert variant="neutral" open>
+  <sl-icon slot="icon" name="info-circle"></sl-icon>
+  If you are getting the <code>Calibration failed to complete</code> error, or the probe crashes into the bed on the initial probe, it usually means you need to increase the <code>leveling-strategy.delta-calibration.initial_height</code> config setting to a bigger value, try 10 or 20 or bigger.<br><br>With the recent version it should move fast to just above the bed then move to the bed slowly, if it hits the bed on the first fast move then you need to set initial-height bigger.
+</sl-alert>
 
 See [http://minow.blogspot.com/](http://minow.blogspot.com/) for more details of calibrating a delta.
 
@@ -207,12 +230,15 @@ Should be used in conjunction with the delta calibration strategy above.
 
 First calibrate with G32 then if needed do G31 to set the grid compensation. If you want to save the grid, do M374.
 
-> [!WARNING]
-> **For use on linear delta machines only, do not use for a cartesian machine.**
-> The `delta-grid.radius` specified should be at least as big as the largest X,Y position likely to be moved to. It gets very inaccurate if you try to print outside of the radius you specified.
+<sl-alert variant="warning" open>
+  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+  <strong>For use on linear delta machines only, do not use for a cartesian machine.</strong> The <code>delta-grid.radius</code> specified should be at least as big as the largest X,Y position likely to be moved to.<br><br>It gets very inaccurate if you try to print outside of the radius you specified.
+</sl-alert>
 
-> [!WARNING]
-> `G31` is the probe command on this not `G32`.
+<sl-alert variant="warning" open>
+  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+  <code>G31</code> is the probe command on this not <code>G32</code>.
+</sl-alert>
 
 ### Configuration
 
@@ -250,8 +276,10 @@ If you are not using all 3 endstops (or prefer to home manually before G32):
 leveling-strategy.delta-grid.do_home        false
 ```
 
-> [!WARNING]
-> You are responsible to make sure that (0,0) is in a repeatable location if `do_home` is set to `false`.
+<sl-alert variant="warning" open>
+  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+  You are responsible to make sure that (0,0) is in a repeatable location if <code>do_home</code> is set to <code>false</code>.
+</sl-alert>
 
 Optionally probe offsets from the nozzle or tool head can be defined with...
 
@@ -261,10 +289,10 @@ leveling-strategy.delta-grid.probe_offsets  0,0,0  # probe offsets x,y,z  (Z sho
 
 They may also be set with M565 X0 Y0 Z0.
 
-> [!WARNING]
-> Setting probe offsets on a delta will make the grid less effective the further the probe is from the head, this is especially true if you are using it to correct geometry errors, as they depend on the actuator position not the head position.
-> So having a probe offset from the head will try to compensate for errors which are offset from where the head actually is.
-> There is no easy way to overcome this other than have the probe as close to the nozzle as possible.
+<sl-alert variant="warning" open>
+  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+  Setting probe offsets on a delta will make the grid less effective the further the probe is from the head, this is especially true if you are using it to correct geometry errors, as they depend on the actuator position not the head position.<br><br>So having a probe offset from the head will try to compensate for errors which are offset from where the head actually is.<br><br>There is no easy way to overcome this other than have the probe as close to the nozzle as possible.
+</sl-alert>
 
 If the saved grid is to be loaded on boot then this must be set in the config...
 
@@ -274,9 +302,10 @@ leveling-strategy.delta-grid.save        true
 
 Then when M500 is issued it will save M375 which will cause the grid to be loaded on boot. The default is to not autoload the grid on boot.
 
-> [!NOTE]
-> The grid size and the radius is saved in the file, and restored when it is loaded with M375. If the grid size is different from the one in config it will **NOT** load. If the radius is different, then the radius will be set to whatever was saved overriding the one set in config.
-> **DO NOT** call M375 from a gcode file as that will cause the system to run out of memory and crash.
+<sl-alert variant="neutral" open>
+  <sl-icon slot="icon" name="info-circle"></sl-icon>
+  The grid size and the radius is saved in the file, and restored when it is loaded with M375.<br><br>If the grid size is different from the one in config it will <strong>NOT</strong> load.<br><br>If the radius is different, then the radius will be set to whatever was saved overriding the one set in config.<br><br><strong>DO NOT</strong> call M375 from a gcode file as that will cause the system to run out of memory and crash.
+</sl-alert>
 
 Optionally an initial_height can be set that tell the initial probe where to stop the fast descent before it probes, this should be around 5-10mm above the bed
 

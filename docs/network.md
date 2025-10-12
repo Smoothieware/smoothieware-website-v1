@@ -1,7 +1,9 @@
 
 # Network Interface
 
-Smoothieboard has an RJ45 connector, which can be used to connect the board to your local Ethernet network and communicate with it over TCP/IP. This works similarly to how you would access your 2D printer or other network devices.
+Smoothieboard has an RJ45 connector, which can be used to connect the board to your local Ethernet network and communicate with it over TCP/IP.
+
+This works similarly to how you would access your 2D printer or other network devices.
 
 ## Settings
 
@@ -9,7 +11,9 @@ Smoothie supports Ethernet access, which must be enabled in the [configuration f
 
 To enable the network, set `network.enable` to `true`.
 
-The IP address can be set statically or set to use DHCP. However, due to buffer size limitations, some DHCP servers are not supported.
+The IP address can be set statically or set to use DHCP.
+
+However, due to buffer size limitations, some DHCP servers are not supported.
 
 Here is an example of a setup using DHCP (meaning that the router automatically assigns an IP address to the Smoothieboard):
 
@@ -37,7 +41,11 @@ network.ip_gateway                           192.168.3.1      # the gateway addr
 
 The basic network configuration options can be seen at the end of the [Config Sample](https://github.com/arthurwolf/Smoothie/blob/edge/ConfigSamples/Smoothieboard/config#L312).
 
-If your configuration file does not contain the network section, it probably means the version of Smoothie that shipped with your board is too old. You need to use the latest edge firmware and use the latest configuration file. See [Flashing Smoothie Firmware](flashing-smoothie-firmware) and [Configuring Smoothie](configuring-smoothie).
+If your configuration file does not contain the network section, it probably means the version of Smoothie that shipped with your board is too old.
+
+You need to use the latest edge firmware and use the latest configuration file.
+
+See [Flashing Smoothie Firmware](flashing-smoothie-firmware) and [Configuring Smoothie](configuring-smoothie).
 
 ### All Options
 
@@ -94,17 +102,25 @@ Custom web pages can be accessed from the SD card, for example:
 http://ip_of_smoothie/sd/webif/index.html
 ```
 
-> [!SUCCESS]
-> Smoothie ships with a very basic web interface, however, you can install better ones by following these instructions: [Installing the new web interface](http://smoothieware.org/install-web-interface.md).
+<sl-alert variant="success" open>
+  <sl-icon slot="icon" name="check-circle"></sl-icon>
+  Smoothie ships with a very basic web interface, however, you can install better ones by following these instructions: <a href="install-web-interface.md">Installing the new web interface</a>.
+</sl-alert>
 
-> [!DANGER]
-> **DO NOT** use the web interface and telnet at the same time. This will crash Smoothie.
+<sl-alert variant="danger" open>
+  <sl-icon slot="icon" name="exclamation-octagon"></sl-icon>
+  <strong>DO NOT</strong> use the web interface and telnet at the same time. This will crash Smoothie.
+</sl-alert>
 
-> [!WARNING]
-> For Smoothieboards v1, make sure you never access or refresh the web interface while the machine is executing a G-code file. This can result in a crash. Just make sure you don't do it, load the page while it's not running, then use the page but do not refresh or re-load it. This is a limitation of the current firmware, we expect it to be possible to fix in v2.
+<sl-alert variant="warning" open>
+  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+  For Smoothieboards v1, make sure you never access or refresh the web interface while the machine is executing a G-code file. This can result in a crash. Just make sure you don't do it, load the page while it's not running, then use the page but do not refresh or re-load it. This is a limitation of the current firmware, we expect it to be possible to fix in v2.
+</sl-alert>
 
-> [!WARNING]
-> If you have several interfaces, or installed a new one, whenever changing from an interface to another, make sure you fully clear your cache. See the documentation for your browser, or google about it, to find exact instructions for your setup.
+<sl-alert variant="warning" open>
+  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+  If you have several interfaces, or installed a new one, whenever changing from an interface to another, make sure you fully clear your cache. See the documentation for your browser, or google about it, to find exact instructions for your setup.
+</sl-alert>
 
 <div class='panel panel-default wrap_center' style='width:640px;padding:10px '>
 <div class='panel-heading'><h4 class='panel-title'>Web interface</h4></div>
@@ -157,11 +173,15 @@ To use the network capabilities of the Smoothieboard (4X and 5X, note the 3X boa
 
 They are, for example, available from [RobotSeed](http://robotseed.com/index.php?id_product=16&controller=product&id_lang=2).
 
-> [!PRIMARY]
-> Versions of Smoothieboard starting August 2014 have the Ethernet connector soldered by default.
+<sl-alert variant="primary" open>
+  <sl-icon slot="icon" name="info-circle"></sl-icon>
+  Versions of Smoothieboard starting August 2014 have the Ethernet connector soldered by default.
+</sl-alert>
 
-> [!WARNING]
-> Note it must be a Mag (Magnetic) Jack; a standard RJ45 connector will not work. The only officially supported connector is the **Hanrun HR911105A**.
+<sl-alert variant="warning" open>
+  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+  Note it must be a Mag (Magnetic) Jack; a standard RJ45 connector will not work. The only officially supported connector is the <strong>Hanrun HR911105A</strong>.
+</sl-alert>
 
 ## Hostname
 

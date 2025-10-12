@@ -1,7 +1,17 @@
 
 # Formatting Syntax
 
-DokuWiki supports some simple markup language, which tries to make the data files as readable as possible. This page contains all possible syntax you may use when editing the pages. Simply have a look at the source of this page by pressing "Edit this page". If you want to try something, just use the [playground](playground) page. The simpler markup is easily accessible via [quick buttons](toolbar), too.
+DokuWiki supports some simple markup language, which tries to make the data files as readable as possible.
+
+This page contains all possible syntax you may use when editing the pages.
+
+Simply have a look at the source of this page by pressing "Edit this page".
+
+If you want to try something, just use the [playground](playground) page.
+
+The simpler markup is easily accessible via [quick buttons](toolbar), too.
+
+
 
 ## Basic Text Formatting
 
@@ -72,12 +82,16 @@ $lang['js']['nosmblinks'] = '';
 You can also use an image to link to another internal or external page by combining the syntax for links and images (see below) like this:
 
 {::nomarkdown}
-!<img src="https://www.dokuwiki.org/lib/tpl/dokuwiki/images/logo.png" alt="DokuWiki Logo" width =200>
-
+<a href="https://www.dokuwiki.org">
+  <img src="https://www.dokuwiki.org/lib/tpl/dokuwiki/images/logo.png" alt="DokuWiki Logo" width="200"/>
+</a>
 {:/nomarkdown}
+
 Please note: The image formatting is the only formatting syntax accepted in link names.
 
 The whole image and link syntax is supported (including image resizing, internal and external images and URLs, and interwiki links).
+
+
 
 ## Footnotes
 
@@ -87,7 +101,11 @@ You can add footnotes[^1] by using double parentheses.
 
 ## Sectioning
 
-You can use up to five different levels of headlines to structure your content. If you have more than three headlines, a table of contents is generated automatically -- this can be disabled by including the string `~~NOTOC~~` in the document.
+You can use up to five different levels of headlines to structure your content.
+
+If you have more than three headlines, a table of contents is generated automatically -- this can be disabled by including the string `~~NOTOC~~` in the document.
+
+
 
 ### Headline Level 3
 #### Headline Level 4

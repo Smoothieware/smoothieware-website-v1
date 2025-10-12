@@ -1,28 +1,46 @@
+---
+layout: default
+title: SmoothK40 Guide
+---
 
 ( See also [Smoothiebox Guide](bluebox-guide) )
 
 # SmoothK40 Guide
-{::nomarkdown}
-<img src="https://omtechlaser.com/cdn/shop/files/1_d4b5e2f8-be9d-4ed7-91f8-c00245b09768.jpg?v=1722323278&width=500" alt="Laser Machine">
 
+{::nomarkdown}
+<a href="https://omtechlaser.com/cdn/shop/files/1_d4b5e2f8-be9d-4ed7-91f8-c00245b09768.jpg?v=1722323278&width=500">
+  <img src="https://omtechlaser.com/cdn/shop/files/1_d4b5e2f8-be9d-4ed7-91f8-c00245b09768.jpg?v=1722323278&width=500" alt="Laser Machine" style="width:100%; max-width: 640px; display: block; margin: 1rem auto;"/>
+</a>
 {:/nomarkdown}
+
 You want to use proper software to drive your Laser machine, this is the best reason to change for a Smoothie board, and start to use your laser cutter as simply as an inkjet printer.
 
 **Smoothie guide for K40**
+
 by Stephane BUISSON (Oct/Nov 2015)
 
+## Understanding Your Power Supply
+
 Before you get started you should have a look into your laser power supply.
+
 There are different models and types out there and the wiring would vary accordingly.
 
-![PSU](images/psu.png)
+{::nomarkdown}
+<a href="images/psu.png">
+  <img src="images/psu.png" alt="PSU" style="width:100%; max-width: 640px; display: block; margin: 1rem auto;"/>
+</a>
+{:/nomarkdown}
 
 I will look at 2 common cases:
 
-Laser fire on L or on IN. 
+Laser fire on L or on IN.
 
 The best way to find out your case is to look at how your original wiring was in the factory state.
 
+### PSU Connection Requirements
+
 To fire the PSU will need to satisfy several conditions, materialized by corresponding connections.
+
 PSU could label them differently ex: (G,P,L,G,IN,5v ), (TH,TL,WP,G,IN.5V ), (K+,K-,etc…)
 
 - Door switch
@@ -32,52 +50,90 @@ PSU could label them differently ex: (G,P,L,G,IN,5v ), (TH,TL,WP,G,IN.5V ), (K+,
 
 Conditions for a recent PSU (not my case)
 
-![Spreadsheet](images/spreadsheet.png)
+{::nomarkdown}
+<a href="images/spreadsheet.png">
+  <img src="images/spreadsheet.png" alt="Spreadsheet" style="width:100%; max-width: 640px; display: block; margin: 1rem auto;"/>
+</a>
+{:/nomarkdown}
 
 Personally, I got a MYJG40W from [jnmydy.com](http://www.jnmydy.com) and I can't find any manual for it. (don't speak Chinese)
 
 But I made it work with this schema:
 
-![K40 Wiring](images/k40-wiring.png)
+{::nomarkdown}
+<a href="images/k40-wiring.png">
+  <img src="images/k40-wiring.png" alt="K40 Wiring" style="width:100%; max-width: 640px; display: block; margin: 1rem auto;"/>
+</a>
+{:/nomarkdown}
 
-Connecting end stops and motors:
+## Connecting Endstops and Motors
 
-From the factory, I identified 2 original wirings, very similar. Flat connector (CN3) or cables (CN21 CN22 CN4) doing the same thing.
+From the factory, I identified 2 original wirings, very similar.
 
-![Pasted](images/pasted.png)
+Flat connector (CN3) or cables (CN21 CN22 CN4) doing the same thing.
+
+{::nomarkdown}
+<a href="images/pasted.png">
+  <img src="images/pasted.png" alt="Pasted" style="width:100%; max-width: 640px; display: block; margin: 1rem auto;"/>
+</a>
+{:/nomarkdown}
 
 You need to play with a controller to find out your wiring on the flat cable.
+
 or
+
 CN4 is your X motor (plug directly onto Smoothieboard 4XC alpha motor)
+
 CN21 is your Y motor (plug directly onto Smoothieboard 4XC beta motor)
+
 CN22 is your limit switches (X,Y, shared ground) extension cable to be made for connection onto Smoothieboard 4XC min end switches.
+
 (Blue lines were 24V & Ground, Green lines were Fire laser & Ground)
 
-This is simple and very straightforward. No need to touch the front panel wiring (pot, switches, Vu meter).
+This is simple and very straightforward.
 
-Level shifter:
+No need to touch the front panel wiring (pot, switches, Vu meter).
+
+### Level shifter
+
 Smoothie board Pin 2.5 on JP 33 is 3.3V you will need a level shifter to 5V (2GBP on eBay),
 see schema for wiring.
 
-![Smoothie Attempt](images/smoothie-attempt.png)
+{::nomarkdown}
+<a href="images/smoothie-attempt.png">
+  <img src="images/smoothie-attempt.png" alt="Smoothie Attempt" style="width:100%; max-width: 640px; display: block; margin: 1rem auto;"/>
+</a>
+{:/nomarkdown}
 
 ### LCD
 
 Not compulsory, but handy to have to display your IP (dhcp), to home or jog the head, and print from SD.
+
 Needs its own voltage regulator for readable contrast.
+
 The limited 30 cm cables length for the display make it delicate to install the LCD on the front panel, but it's doable.
 
 ### Motors
 
 Identify your motors, and check their specs (max current).
+
 Find the datasheet for your motors and their current max. (K40 is fitted with all sorts of motor ref.)
+
 [Smoothmotor](http://www.smoothmotor.com/Standard-Models/Nema-Stepper-Motor.html)
 
-![Page 8](images/page8.png)
+{::nomarkdown}
+<a href="images/page8.png">
+  <img src="images/page8.png" alt="Page 8" style="width:100%; max-width: 640px; display: block; margin: 1rem auto;"/>
+</a>
+{:/nomarkdown}
 
 X Motor (double-sided shaft) 17HA507H-22P3
 
-![Page 9](images/page9.png)
+{::nomarkdown}
+<a href="images/page9.png">
+  <img src="images/page9.png" alt="Page 9" style="width:100%; max-width: 640px; display: block; margin: 1rem auto;"/>
+</a>
+{:/nomarkdown}
 
 Y Motor 17HA113Y-22A2 FH140513
 
@@ -93,7 +149,10 @@ The section you want to update are:
 - Steps per mm accordingly to your measurements (I suggest doing several straight lines, measure them with caliper and make average (for precision reading) for X &Y)
 - Network following your specs.
 
+### My Configuration Example
+
 In my case:
+
 Changes in config are:
 
 - Alpha & beta steps per mm (157.575)
@@ -152,7 +211,11 @@ network.hostname                             SmoothK40             # Some DHCP s
 #network.mac_override                         xx.xx.xx.xx.xx.xx     # override the mac address, only do this if you have a conflict
 ```
 
-![Welcome to Smoothie](images/welcome-to-smoothie.png)
+{::nomarkdown}
+<a href="images/welcome-to-smoothie.png">
+  <img src="images/welcome-to-smoothie.png" alt="Welcome to Smoothie" style="width:100%; max-width: 640px; display: block; margin: 1rem auto;"/>
+</a>
+{:/nomarkdown}
 
 Command: tracing (G1) a line from your actual position to (X100, Y100) full laser power (`S1`)
 
@@ -162,16 +225,26 @@ Command: tracing (G1) a line from your actual position to (X100, Y100) full lase
 
 Download the latest (Smoothie tab for dev. version) [Visicut Download](http://hci.rwth-aachen.de/visicut-download)
 
-Select menu Option, manage laser cutter, choose smoothie, fill your settings in. You are done ;-))
+Select menu Option, manage laser cutter, choose smoothie, fill your settings in.
 
-![Visicut Settings](images/visicut-settings.png)
+You are done ;-))
+
+{::nomarkdown}
+<a href="images/visicut-settings.png">
+  <img src="images/visicut-settings.png" alt="Visicut Settings" style="width:100%; max-width: 640px; display: block; margin: 1rem auto;"/>
+</a>
+{:/nomarkdown}
 
 ## Fusion 360
 
 Works with Smoothie in USB.
+
 Free for non-professional use.
 
+### Community Resources
+
 Join and comments on the G+ K40 User's community
+
 [K40 User's Community](https://plus.google.com/u/0/communities/118113483589382049502)
 
 Thank you for reading.

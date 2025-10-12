@@ -29,8 +29,13 @@ It features:
 
 The board comes in 3 versions, 3X, 4X and 5X, with different sets of peripherals each.
 
-![Smoothieboard v1](images/smoothieboard-fritzing.png)<br/>
-More information on the [Smoothieboard v1 page](http://smoothieware.org/smoothieboard-v1)
+{::nomarkdown}
+<a href="images/smoothieboard-fritzing.png">
+  <img src="images/smoothieboard-fritzing.png" alt="Smoothieboard v1" style="width: 640px; height: auto; display: block; margin: 2rem auto;"/>
+</a>
+{:/nomarkdown}
+
+More information on the [Smoothieboard v1 page](smoothieboard-v1)
 
 ---
 
@@ -48,10 +53,19 @@ It will feature:
 - Standard expansion ports with a [series of plug-and-play boards](https://docs.google.com/document/d/1PKwoEB4zZQWxT4tJm48W-1_lBEOAGzk7noKMVmRszs4/edit?usp=sharing)
 - Much more
 
-Currently being designed, see [here](http://smoothieware.org/blog_15).
+Currently being designed, see [blog post](blog_15).
 
-Because v2 is being developed by awesome volunteers, we have no timetable or planned release date, so please stop asking.
-![Smoothieboard v2](images/smoothieboard-fritzing.png)
+<sl-alert variant="neutral" open>
+  <sl-icon slot="icon" name="info-circle"></sl-icon>
+  Because v2 is being developed by awesome volunteers, we have no timetable or planned release date, so please stop asking.
+</sl-alert>
+
+{::nomarkdown}
+<a href="images/smoothieboard-fritzing.png">
+  <img src="images/smoothieboard-fritzing.png" alt="Smoothieboard v2" style="width: 640px; height: auto; display: block; margin: 2rem auto;"/>
+</a>
+{:/nomarkdown}
+
 ---
 
 ## `v2-mini`
@@ -71,10 +85,18 @@ It will feature:
 - Not much more
 - You have to solder the connectors yourself
 
-Currently being designed, see [here](http://smoothieware.org/blog_15).
+Currently being designed, see [blog post](blog_15).
 
-![Smoothieboard v2-mini](images/smoothieboard-v2-mini.png)<br/>
-Because v2 is being developed by awesome volunteers, we have no timetable or planned release date, so please stop asking
+{::nomarkdown}
+<a href="images/smoothieboard-v2-mini.png">
+  <img src="images/smoothieboard-v2-mini.png" alt="Smoothieboard v2-mini" style="width: 640px; height: auto; display: block; margin: 2rem auto;"/>
+</a>
+{:/nomarkdown}
+
+<sl-alert variant="neutral" open>
+  <sl-icon slot="icon" name="info-circle"></sl-icon>
+  Because v2 is being developed by awesome volunteers, we have no timetable or planned release date, so please stop asking.
+</sl-alert>
 
 ---
 
@@ -93,10 +115,17 @@ It will feature:
 - Many standard expansion ports with a [series of plug-and-play boards](https://docs.google.com/document/d/1PKwoEB4zZQWxT4tJm48W-1_lBEOAGzk7noKMVmRszs4/edit?usp=sharing)
 - Much more
 
-Currently being designed, see [here](http://smoothieware.org/blog_15).
+Currently being designed, see [blog post](blog_15).
 
-Because v2 is being developed by awesome volunteers, we have no timetable or planned release date, so please stop asking.
+{::nomarkdown}
+<a href="images/smoothieboard-fritzing.png">
+  <img src="images/smoothieboard-fritzing.png" alt="Smoothieboard v2-pro" style="width: 640px; height: auto; display: block; margin: 2rem auto;"/>
+</a>
+{:/nomarkdown}
 
-![Smoothieboard v2-pro](images/smoothieboard-fritzing.png)
+<sl-alert variant="neutral" open>
+  <sl-icon slot="icon" name="info-circle"></sl-icon>
+  Because v2 is being developed by awesome volunteers, we have no timetable or planned release date, so please stop asking.
+</sl-alert>
 
 ---

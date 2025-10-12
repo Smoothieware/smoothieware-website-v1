@@ -19,10 +19,10 @@ If you can't find your answer here, you can also ask for help in the community. 
 - [Support Mailing list](http://groups.google.com/group/smoothie-dev)
 - [Google+ community](https://groups.google.com/g/smoothieware-support)
 
-> [!WARNING]
-> Before doing anything else, including asking for help, please read the "How to troubleshoot" section below.
-> 
-> And of course try to find the answer to your question on this page too.
+<sl-alert variant="warning" open>
+  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+  Before doing anything else, including asking for help, please read the "How to troubleshoot" section below.<br><br>And of course try to find the answer to your question on this page too.
+</sl-alert>
 
 Below is the list of the most common problems and things you can try to solve them :
 
@@ -143,42 +143,20 @@ We are still only interested in the green LEDs.
 
 Different behavior can represent different situations and problems for the board : 
 
-> [!NOTE]
-> Normal pattern
-> 
-> If your LEDs do this : 
-> 
-> ![Normal LED behavior](images/debug/leds.normal.gif)
-> 
-> Then the firmware is running, and the LEDs are displaying correct behavior.
+<sl-alert variant="neutral" open>
+  <sl-icon slot="icon" name="info-circle"></sl-icon>
+  Normal pattern If your LEDs do this : !<a href="images/debug/leds.normal.gif">Normal LED behavior</a> Then the firmware is running, and the LEDs are displaying correct behavior.
+</sl-alert>
 
-> [!WARNING]
-> SD card problem
-> 
-> If your LEDs do this : 
-> 
-> ![SD card problem LED behavior](images/debug/leds.nosdcard.gif)
-> 
-> Then the firmware is running, but the board encountered a problem reading or accessing the SD card, or the configuration file on the SD card. 
-> 
-> Try taking the card in and out of the board several times, or try using another SD card ( [here is how to set up a new card](sd-card) ).
-> 
-> See below for more details.
+<sl-alert variant="warning" open>
+  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+  SD card problem If your LEDs do this : !<a href="images/debug/leds.nosdcard.gif">SD card problem LED behavior</a> Then the firmware is running, but the board encountered a problem reading or accessing the SD card, or the configuration file on the SD card.<br><br>Try taking the card in and out of the board several times, or try using another SD card ( <a href="sd-card">here is how to set up a new card</a> ).<br><br>See below for more details.
+</sl-alert>
 
-> [!DANGER]
-> Firmware crash
-> 
-> If your LEDs do this : 
-> 
-> ![Firmware crash LED behavior](images/missing.png)
-> 
-> Or this : 
-> 
-> ![Firmware crash LED behavior](images/missing.png)
-> 
-> Then the firmware is not running. You can try [flashing the firmware again](flashing-smoothie-firmware).
-> 
-> See below for more details.
+<sl-alert variant="danger" open>
+  <sl-icon slot="icon" name="exclamation-octagon"></sl-icon>
+  Firmware crash If your LEDs do this : !<a href="images/missing.png">Firmware crash LED behavior</a> Or this : !<a href="images/missing.png">Firmware crash LED behavior</a> Then the firmware is not running.<br><br>You can try <a href="flashing-smoothie-firmware">flashing the firmware again</a>.<br><br>See below for more details.
+</sl-alert>
 
 ### Plugged in and 3.3V LED is OFF
 

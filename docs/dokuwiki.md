@@ -1,7 +1,12 @@
-
 # DokuWiki
 
-DokuWiki is a simple to use and highly versatile Open Source [wiki](https://en.wikipedia.org/wiki/Wiki) software that doesn't require a database. It is loved by users for its clean and readable [syntax](syntax). The ease of maintenance, backup and integration makes it an administrator's favorite. Built in [access controls](acl) and [authentication connectors](auth) make DokuWiki especially useful in the enterprise context and the large number of [plugins](plugins) contributed by its vibrant community allow for a broad range of use cases beyond a traditional wiki.
+DokuWiki is a simple to use and highly versatile Open Source [wiki](https://en.wikipedia.org/wiki/Wiki) software that doesn't require a database.
+
+It is loved by users for its clean and readable [syntax](syntax).
+
+The ease of maintenance, backup and integration makes it an administrator's favorite.
+
+Built in [access controls](acl) and [authentication connectors](auth) make DokuWiki especially useful in the enterprise context and the large number of [plugins](plugins) contributed by its vibrant community allow for a broad range of use cases beyond a traditional wiki.
 
 Read the [DokuWiki Manual](manual) to unleash the full power of DokuWiki.
 
@@ -58,4 +63,6 @@ All documentation and additional information besides the [syntax description](sy
 
 2004-2015 (c) Andreas Gohr <andi@splitbrain.org> (Please do not contact me for help and support -- use the [mailing list](mailing-lists-welcome-mat) or [forum](http://forum.dokuwiki.org) instead) and the DokuWiki Community
 
-The DokuWiki engine is licensed under [GNU General Public License](http://www.gnu.org/licenses/gpl.html) Version 2. If you use DokuWiki in your company, consider [donating](donate) a few bucks ;-).
+The DokuWiki engine is licensed under [GNU General Public License](http://www.gnu.org/licenses/gpl.html) Version 2.
+
+If you use DokuWiki in your company, consider [donating](donate) a few bucks ;-).

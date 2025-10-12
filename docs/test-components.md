@@ -10,6 +10,7 @@ This page tests Shoelace components integration with the Smoothieware theme.
 ## Alert Components
 
 ### Primary Alert
+
 {::nomarkdown}
 <sl-alert variant="primary" open>
   <sl-icon slot="icon" name="info-circle"></sl-icon>
@@ -19,6 +20,7 @@ This page tests Shoelace components integration with the Smoothieware theme.
 {:/nomarkdown}
 
 ### Success Alert
+
 {::nomarkdown}
 <sl-alert variant="success" open>
   <sl-icon slot="icon" name="check2-circle"></sl-icon>
@@ -28,6 +30,7 @@ This page tests Shoelace components integration with the Smoothieware theme.
 {:/nomarkdown}
 
 ### Neutral Alert (Similar to our current callout-note)
+
 {::nomarkdown}
 <sl-alert variant="neutral" open>
   <sl-icon slot="icon" name="info-circle"></sl-icon>
@@ -37,6 +40,7 @@ This page tests Shoelace components integration with the Smoothieware theme.
 {:/nomarkdown}
 
 ### Warning Alert
+
 {::nomarkdown}
 <sl-alert variant="warning" open>
   <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
@@ -46,6 +50,7 @@ This page tests Shoelace components integration with the Smoothieware theme.
 {:/nomarkdown}
 
 ### Danger Alert
+
 {::nomarkdown}
 <sl-alert variant="danger" open>
   <sl-icon slot="icon" name="exclamation-octagon"></sl-icon>
@@ -55,6 +60,7 @@ This page tests Shoelace components integration with the Smoothieware theme.
 {:/nomarkdown}
 
 ## Alert Without Icon
+
 {::nomarkdown}
 <sl-alert variant="primary" open>
   <strong>No Icon Alert</strong><br />
@@ -63,6 +69,7 @@ This page tests Shoelace components integration with the Smoothieware theme.
 {:/nomarkdown}
 
 ## Closable Alert
+
 {::nomarkdown}
 <sl-alert variant="primary" open closable>
   <sl-icon slot="icon" name="info-circle"></sl-icon>
@@ -73,11 +80,14 @@ This page tests Shoelace components integration with the Smoothieware theme.
 
 ## Testing with Dark Theme
 
-All alerts above should display nicely with the midnight dark theme. The Shoelace components should automatically adapt or we may need to adjust styling.
+All alerts above should display nicely with the midnight dark theme.
+
+The Shoelace components should automatically adapt or we may need to adjust styling.
 
 ## Other Components
 
 ### Button
+
 {::nomarkdown}
 <sl-button variant="primary">Primary Button</sl-button>
 <sl-button variant="success">Success Button</sl-button>
@@ -87,6 +97,7 @@ All alerts above should display nicely with the midnight dark theme. The Shoelac
 {:/nomarkdown}
 
 ### Badge
+
 {::nomarkdown}
 <sl-badge variant="primary">Primary</sl-badge>
 <sl-badge variant="success">Success</sl-badge>

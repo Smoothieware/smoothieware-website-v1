@@ -69,5 +69,7 @@ temperatureswitch.psu_off.inverted            false            # turn the switch
 | ------ | ------------- | ----------- |
 {% include_relative temperatureswitch-options.md %}
 
-> [!NOTE]
-> If you want to learn more about this module, or are curious how it works, Smoothie is Open-Source and you can simply go look at the code, [here](https://github.com/Smoothieware/Smoothieware/blob/edge/src/modules/tools/temperatureswitch/TemperatureSwitch.cpp).
+<sl-alert variant="neutral" open>
+  <sl-icon slot="icon" name="info-circle"></sl-icon>
+  If you want to learn more about this module, or are curious how it works, Smoothie is Open-Source and you can simply go look at the code, <a href="https://github.com/Smoothieware/Smoothieware/blob/edge/src/modules/tools/temperatureswitch/TemperatureSwitch.cpp">here</a>.
+</sl-alert>

@@ -1,5 +1,9 @@
 
-# Pin list
+# LPC1769 Pin Usage
+
+This page documents all pin assignments for the LPC1769 microcontroller on Smoothieboard.
+
+## Pin list
 
 | ARM Pin | mBed Pin | LPCXpresso Pin | Assignment | Comment |
 | ------- | -------- | -------------- | ---------- | ------- |
@@ -74,11 +78,17 @@
 | P4.28 | - | Pad15 | play/pause led | |
 | P4.29 | - | Pad16 | epsilon_en_pin | spare on 3 and 4 driver cannot be used in opendrain |
 
-> [!NOTE]
-> The following pins are hardwired and would need to be changed in source code `P0.2` `P0.3`, `P0.6`-`P0.9`, `P0.29`, `P0.30`, `P2.9`, `P2.10`, `P2.12` The rest are configurable in config. 
-> Some pins are also setup as outputs and changed in the Bootloader and those are not configurable, these pins are... `P1.18`, `P1.19`, `P1.20`, `P1.21`, `P4.28`, `P2.4`, `P2.5`, `P2.6`, `P2.7` However once booted these can be reassigned if needed.
->
-> `P0.*` and `P2.*` can be setup as interrupt enabled pins.
+{::nomarkdown}
+<sl-alert variant="neutral" open>
+  <sl-icon slot="icon" name="info-circle"></sl-icon>
+  <strong>Hardwired Pins:</strong><br><br>
+  The following pins are hardwired and would need to be changed in source code: <code>P0.2</code> <code>P0.3</code>, <code>P0.6</code>-<code>P0.9</code>, <code>P0.29</code>, <code>P0.30</code>, <code>P2.9</code>, <code>P2.10</code>, <code>P2.12</code>. The rest are configurable in config.<br><br>
+
+  Some pins are also setup as outputs and changed in the Bootloader and those are not configurable, these pins are: <code>P1.18</code>, <code>P1.19</code>, <code>P1.20</code>, <code>P1.21</code>, <code>P4.28</code>, <code>P2.4</code>, <code>P2.5</code>, <code>P2.6</code>, <code>P2.7</code>. However once booted these can be reassigned if needed.<br><br>
+
+  <code>P0.*</code> and <code>P2.*</code> can be setup as interrupt enabled pins.
+</sl-alert>
+{:/nomarkdown}
 
 ## LPC176x ADC channels and pins
 
@@ -93,8 +103,12 @@
 | AD6 P0.3 | 0-GPIO, | 1-RXD0, 2-AD0[6], 3- | 6,7 bits of PINSEL0 * not available on Smoothieboard |
 | AD7 P0.2 | 0-GPIO, | 1-TXD0, 2-AD0[7], 3- | 4,5 bits of PINSEL0 * not available on Smoothieboard |
 
-> [!WARNING]
-> ADC pins are not 5v tolerant.
+{::nomarkdown}
+<sl-alert variant="warning" open>
+  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+  ADC pins are not 5v tolerant.
+</sl-alert>
+{:/nomarkdown}
 
 ## Pinout
 

@@ -1,7 +1,14 @@
 
 # Delta Grid Calibration Options
 
+The Delta Grid leveling strategy provides automatic bed leveling for delta-style 3D printers by probing multiple points across the print surface.
+
 The following are the configuration options for the Delta Grid leveling strategy:
+
+<sl-alert variant="neutral" open>
+  <sl-icon slot="icon" name="info-circle"></sl-icon>
+  The zprobe module must also be enabled and configured for this leveling strategy to work.
+</sl-alert>
 
 | Option | Value | Description |
 | ------ | ----- | ----------- |

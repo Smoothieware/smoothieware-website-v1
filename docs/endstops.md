@@ -42,8 +42,10 @@ to:
 beta_min_endstop   1.26^!
 ```
 
-> [!NOTE]
-> If, when homing, your endstop moves a few millimeters, and stops, it most probably means it's inverted (it thinks it's already hitting the endstop, and moves back from it). Just invert it in config and see if that helps.
+<sl-alert variant="neutral" open>
+  <sl-icon slot="icon" name="info-circle"></sl-icon>
+  If, when homing, your endstop moves a few millimeters, and stops, it most probably means it's inverted (it thinks it's already hitting the endstop, and moves back from it). Just invert it in config and see if that helps.
+</sl-alert>
 
 ## Homing
 
@@ -67,17 +69,23 @@ will home all axes which have endstops enabled (all three by default).
 
 If your axis is moving away from the endstop when homing, you need to invert your min and max endstops, or invert the direction of the axis, depending on your preference.
 
-> [!WARNING]
-> The firmware-cnc.bin is in CNC mode and by default uses grbl compatibility mode in this mode G28 does **not** home, it goes to a predefined park position (defined with G28.1). To home in CNC/GRBL mode you issue $H, (or G28.2).
+<sl-alert variant="warning" open>
+  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+  The firmware-cnc.bin is in CNC mode and by default uses grbl compatibility mode in this mode G28 does <strong>not</strong> home, it goes to a predefined park position (defined with G28.1). To home in CNC/GRBL mode you issue $H, (or G28.2).
+</sl-alert>
 
-> [!WARNING]
-> Currently only min **or** max endstops can be used for homing.
-> Do not set endstops for axes that shall not be homed.
+<sl-alert variant="warning" open>
+  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+  Currently only min <strong>or</strong> max endstops can be used for homing.<br>
+  Do not set endstops for axes that shall not be homed.
+</sl-alert>
 
-> [!WARNING]
-> Note for Deltas using M666 to set soft trim:
-> When you home a delta that has non zero trim values, you will find that X and Y are not 0 after homing. This is normal.
-> If you want X0 Y0 after homing you can set `move_to_origin_after_home  true` in the config, this will move the effector to 0,0 after it homes and sets the trim. However, note this may crash into your endstops, so make sure you enable limit switches, as this will force the carriages off the endstops after homing but before moving to 0,0.
+<sl-alert variant="warning" open>
+  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+  <strong>Note for Deltas using M666 to set soft trim:</strong><br><br>
+  When you home a delta that has non zero trim values, you will find that X and Y are not 0 after homing. This is normal.<br><br>
+  If you want X0 Y0 after homing you can set <code>move_to_origin_after_home  true</code> in the config, this will move the effector to 0,0 after it homes and sets the trim. However, note this may crash into your endstops, so make sure you enable limit switches, as this will force the carriages off the endstops after homing but before moving to 0,0.
+</sl-alert>
 
 ## Limit switches
 
@@ -94,20 +102,23 @@ gamma_limit_enable                          true            # set to true to ena
 
 When one axis is enabled both min and max endstops will be enabled as limit switches, setting an endstop pin to nc will disable it.
 
-> [!WARNING]
-> After homing the axis is usually left triggering the endstop, this would prevent that axis from moving, so when limit switches are enabled after homing the axis will back off the endstop by the `*.homing_retract_mm` amount.
-> 
-> The downside is if you home to 0 and at 0 the endstop is triggered going to 0,0 will cause a limit switch to fire. The workaround is to set homing offset to -5 (eg `M206 X-5 Y-5`) or enough to back off the endstop so when you go to 0,0 it does not trigger the endstop.
-> 
-> That way you can home, and safely go to 0 without triggering a limit switch event. An alternative is to set min/max X/Y to -5 rather than 0.
+<sl-alert variant="warning" open>
+  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+  After homing the axis is usually left triggering the endstop, this would prevent that axis from moving, so when limit switches are enabled after homing the axis will back off the endstop by the <code>*.homing_retract_mm</code> amount.<br><br>
+  The downside is if you home to 0 and at 0 the endstop is triggered going to 0,0 will cause a limit switch to fire. The workaround is to set homing offset to -5 (eg <code>M206 X-5 Y-5</code>) or enough to back off the endstop so when you go to 0,0 it does not trigger the endstop.<br><br>
+  That way you can home, and safely go to 0 without triggering a limit switch event. An alternative is to set min/max X/Y to -5 rather than 0.
+</sl-alert>
 
-> [!TIP]
-> Boards with few endstops:
-> On some boards you have only 3 endstop connectors, which is not enough to have one connector for each end of each axis, but you can still connect two endstops for each end of each axis by connecting the two endstops on a single connector:
-> * In series and each connected as normally-closed
-> * Or in parallel and each connected as normally-open
-> 
-> This will allow for min and max limit switches to still work.
+<sl-alert variant="primary" open>
+  <sl-icon slot="icon" name="lightbulb"></sl-icon>
+  <strong>Boards with few endstops:</strong><br><br>
+  On some boards you have only 3 endstop connectors, which is not enough to have one connector for each end of each axis, but you can still connect two endstops for each end of each axis by connecting the two endstops on a single connector:
+  <ul>
+    <li>In series and each connected as normally-closed</li>
+    <li>Or in parallel and each connected as normally-open</li>
+  </ul>
+  This will allow for min and max limit switches to still work.
+</sl-alert>
 
 ## Soft endstops
 
@@ -177,9 +188,11 @@ alpha_min   -100
 
 By default, the machine will home, and set the current position as configured, but will not move to 0,0 after homing. If you want to move to the origin after homing, you need to set `move_to_origin_after_home` to true.
 
-> [!NOTE]
-> Going further:
-> If you want to learn more about this module, or are curious how it works, Smoothie is Open-Source and you can simply go look at the code, [here](https://github.com/Smoothieware/Smoothieware/blob/edge/src/modules/tools/endstops/Endstops.cpp).
+<sl-alert variant="neutral" open>
+  <sl-icon slot="icon" name="info-circle"></sl-icon>
+  <strong>Going further:</strong><br><br>
+  If you want to learn more about this module, or are curious how it works, Smoothie is Open-Source and you can simply go look at the code, <a href="https://github.com/Smoothieware/Smoothieware/blob/edge/src/modules/tools/endstops/Endstops.cpp">here</a>.
+</sl-alert>
 
 ## Types of endstops
 
@@ -189,4 +202,8 @@ By default, the machine will home, and set the current position as configured, b
 
 ### General video about mechanical endstops
 
-<iframe width="100%" height="720" src="https://www.youtube.com/embed/FrYdAiSLKig" frameborder="0" allowfullscreen></iframe>
+{::nomarkdown}
+<div style="text-align: center;">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/FrYdAiSLKig" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+{:/nomarkdown}

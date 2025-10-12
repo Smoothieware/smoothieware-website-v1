@@ -1,6 +1,10 @@
 
 # Temperature Control Options
 
+This page lists all configuration options for the Temperature Control module, which manages heating and cooling for things like hotends and heated beds.
+
+## Configuration Options
+
 | Option | Default Value | Description |
 | ------ | ------------- | ----------- |
 | `temperature_control.[module_name].enable` | true | Whether to activate this temperaturecontrol module. You can create as many temperaturecontrol modules as you want, simply by giving a new module a name, and setting its `enable` option to true. |

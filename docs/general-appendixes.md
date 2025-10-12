@@ -11,14 +11,24 @@ We have a great guide on different techniques and recommendations, please read t
 ## Crimping connectors
 <a name='crimping-connectors'></a>
 
-If your Smoothieboard came with connectors, you got connector casings, and [crimps](http://en.wikipedia.org/wiki/Crimp_connection). You will need to attach your crimps to your cables, and then insert the crimps into the connector casings.
+If your Smoothieboard came with connectors, you got connector casings, and [crimps](http://en.wikipedia.org/wiki/Crimp_connection).
+
+You will need to attach your crimps to your cables, and then insert the crimps into the connector casings.
 
 [This tutorial](http://sparks.gogo.co.nz/crimping/index.html) is a good read about crimping properly.
 
-> [!WARNING]
-> Please be careful and patient, if you have never done it before you will probably fail a few times before getting the hang of it. Also be careful to insert the crimp into your connector the right way around.
+{::nomarkdown}
+<sl-alert variant="warning" open>
+  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+  Please be careful and patient, if you have never done it before you will probably fail a few times before getting the hang of it. Also be careful to insert the crimp into your connector the right way around.
+</sl-alert>
+{:/nomarkdown}
 
-<iframe width="100%" height="400px" src="http://www.youtube.com/embed/L8Mfvv1PqpY" frameborder="0" allowfullscreen></iframe>
+{::nomarkdown}
+<div style="text-align: center; margin: 2rem 0;">
+  <iframe width="100%" height="400px" src="https://www.youtube.com/embed/L8Mfvv1PqpY" frameborder="0" allowfullscreen></iframe>
+</div>
+{:/nomarkdown}
 
 ## Soldering connectors
 <a name='soldering-connectors'></a>
@@ -65,7 +75,11 @@ For example if you want the epsilon ( M5 ) driver to be the slave to the gamma (
 
 The connectors for this can be found close to the stepper motor drivers, and are labelled.
 
-<iframe width="560" height="315" src="http://www.youtube.com/embed/b0dCM0JDYOM" frameborder="0" allowfullscreen></iframe>
+{::nomarkdown}
+<div style="text-align: center; margin: 2rem 0;">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/b0dCM0JDYOM" frameborder="0" allowfullscreen></iframe>
+</div>
+{:/nomarkdown}
 
 Finally you need to do two things in your configuration file:
 
@@ -97,16 +111,26 @@ The logic pins that control the stepper drivers are broken out on all 5 axes to 
 
 Most external drivers have both a + and - pin for each of EN, DIR, and STP. The simplest way to connect the external driver is to wire Smoothieboard GND to all 3 - pins, and the logic pins of Smoothieboard to the corresponding + pins. Note that Smoothie is 3.3V logic and each pin can only supply a maximum current of 4 mA, which is not usually a problem unless interfacing to very large, or very old external drivers which may need a little more.
 
-> [!TIP]
-> While this example will show using the pins of one of the on-board drivers to control the external driver, you can use pretty much any free GPIO pin to control the step/direction/enable pins on your external driver.
-> 
-> See [pinout](pinout) and [pin usage](lpc1769-pin-usage) to find free pins.
+{::nomarkdown}
+<sl-alert variant="primary" open>
+  <sl-icon slot="icon" name="lightbulb"></sl-icon>
+  While this example will show using the pins of one of the on-board drivers to control the external driver, you can use pretty much any free GPIO pin to control the step/direction/enable pins on your external driver.
+  <br><br>
+  See <a href="pinout">pinout</a> and <a href="lpc1769-pin-usage">pin usage</a> to find free pins.
+</sl-alert>
+{:/nomarkdown}
 
 All loadouts of Smoothieboard (3x, 4x, 5x) can control 5 external stepper drivers using these ports. The presence or absence of a built-in driver will not affect the external driver.
 
 This shows control of an external driver using the pins on the positive side of the external driver's input.
 
-![External Driver](images/external-driver.png)
+{::nomarkdown}
+<div style="text-align: center; margin: 2rem 0;">
+  <a href="images/external-driver.png">
+    <img src="images/external-driver.png" alt="External Driver" style="min-width: 640px; max-width: 100%; height: auto;"/>
+  </a>
+</div>
+{:/nomarkdown}
 
 Please note, if your external driver requires 5V, that Smoothieboard only provides 3.3v on its output pins.
 
@@ -114,8 +138,13 @@ Two solutions to this: either use a [level shifter](https://www.sparkfun.com/pro
 
 For example:
 
-
-![External Driver Open Drain](images/external-driver-open-drain.png)
+{::nomarkdown}
+<div style="text-align: center; margin: 2rem 0;">
+  <a href="images/external-driver-open-drain.png">
+    <img src="images/external-driver-open-drain.png" alt="External Driver Open Drain" style="min-width: 640px; max-width: 100%; height: auto;"/>
+  </a>
+</div>
+{:/nomarkdown}
 
 Here, the 5V is taken from an endstop input's positive terminal, taken to the 5V inputs on the external driver. The step/direction/enable pins on the Smoothieboard are taken to the GND inputs on the external driver.
 
@@ -137,70 +166,74 @@ it's also possible to invert a pin:
 alpha_step_pin   2.0!o     # Pin for alpha stepper step signal
 ```
 
-> [!NOTE]
-> [Reprap Discount](http://www.reprapdiscount.com) has a nice [external driver called the Silencio](http://www.reprapdiscount.com/electronics/74-rrd-silencioso-128-microstep-driver-pololu-compatible.html).
-> 
-> It does 1/128 microstepping, so using it with Smoothie makes a lot of sense since Smoothie can do higher [step rates](http://reprap.org/wiki/Step_rates).
-> 
-> It comes with an adapter for pololu-type drivers for RAMPS-type boards. However, you can also simply wire it to Smoothie's external driver connectors.
-> 
-> The only catch is: the pins are not in the same order in Smoothie and on the driver's cable. (Note the colors maybe different on your cable)
-> 
-> | Silencio cable color | Black | Green | Red | Blue |
-> |----------------------|-------|-------|-----|------|
-> | Silencio connector order | +5v | Enable | Direction | Step |
-> | Smoothie connector order | Ground | Step | Direction | Enable |
-> 
-> No big deal though, you simply need to swap the step and enable pins in the configuration file.
-> Also DO NOT connect the Black wire to the 4th pin on Smoothie which is GND on Smoothie, it must be connected to a +5v pin elsewhere (e.g., on the endstops)
-> 
-> Additionally, you need to invert (by adding a `!` to the pin number) the enable pin (that's specific to the Silencio)
-> The step pin does not need to be inverted.
-> 
-> For example for your alpha driver, change:
-> 
-> ```
-> alpha_step_pin      2.0       # Pin for alpha stepper step signal
-> alpha_dir_pin       0.5       # Pin for alpha stepper direction
-> alpha_en_pin        0.4       # Pin for alpha enable pin
-> ```
-> 
-> to
-> 
-> ```
-> alpha_step_pin      2.0       # Pin for alpha stepper step signal
-> alpha_dir_pin       0.5       # Pin for alpha stepper direction
-> alpha_en_pin        0.4!      # Pin for alpha enable pin
-> ```
-> 
-> And just wire the Silencio connector to the Smoothieboard external driver connector
+{::nomarkdown}
+<sl-alert variant="neutral" open>
+  <sl-icon slot="icon" name="info-circle"></sl-icon>
+  <strong>Reprap Discount Silencio Driver</strong><br><br>
+  <a href="http://www.reprapdiscount.com">Reprap Discount</a> has a nice <a href="http://www.reprapdiscount.com/electronics/74-rrd-silencioso-128-microstep-driver-pololu-compatible.html">external driver called the Silencio</a>.<br><br>
 
-> [!NOTE]
-> There are more versions labeled TB6600 on the market, but they use different driver chips inside. First of all, you'll need to know if the driver is ok with higher step rates (200 kHz), or you'll have to tune `microseconds_per_step_pulse` and/or `base_stepping_frequency`.
-> 
-> Since TB6600 uses 5V signals and Smoothie is 3.3V we should either use TTL converters or open-drain (as mentioned before). My setup uses open-drain with 5V taken from the board (signals are connected to "-" pins, 5V is to all "+" pins).
-> 
-> The config is the following for alpha, but it's the same for the rest:
-> 
-> ```
-> # Stepper module pins (ports, and pin numbers, appending "!" to the number will invert a pin)
-> alpha_step_pin                               2.0!o              # Pin for alpha stepper step signal
-> alpha_dir_pin                                0.5!o              # Pin for alpha stepper direction
-> alpha_en_pin                                 0.4!o              # Pin for alpha enable pin
-> ```
-> 
-> If you want to change the rotating direction, simply leave out the "!":
-> 
-> ```
-> alpha_dir_pin                                0.5o              # Pin for alpha stepper direction
-> ```
+  It does 1/128 microstepping, so using it with Smoothie makes a lot of sense since Smoothie can do higher <a href="http://reprap.org/wiki/Step_rates">step rates</a>.<br><br>
+
+  It comes with an adapter for pololu-type drivers for RAMPS-type boards. However, you can also simply wire it to Smoothie's external driver connectors.<br><br>
+
+  The only catch is: the pins are not in the same order in Smoothie and on the driver's cable. (Note the colors maybe different on your cable)<br><br>
+
+  <table>
+    <tr><th>Silencio cable color</th><td>Black</td><td>Green</td><td>Red</td><td>Blue</td></tr>
+    <tr><th>Silencio connector order</th><td>+5v</td><td>Enable</td><td>Direction</td><td>Step</td></tr>
+    <tr><th>Smoothie connector order</th><td>Ground</td><td>Step</td><td>Direction</td><td>Enable</td></tr>
+  </table><br>
+
+  No big deal though, you simply need to swap the step and enable pins in the configuration file.
+  Also DO NOT connect the Black wire to the 4th pin on Smoothie which is GND on Smoothie, it must be connected to a +5v pin elsewhere (e.g., on the endstops)<br><br>
+
+  Additionally, you need to invert (by adding a <code>!</code> to the pin number) the enable pin (that's specific to the Silencio).
+  The step pin does not need to be inverted.<br><br>
+
+  For example for your alpha driver, change:<br>
+  <pre><code>alpha_step_pin      2.0       # Pin for alpha stepper step signal
+alpha_dir_pin       0.5       # Pin for alpha stepper direction
+alpha_en_pin        0.4       # Pin for alpha enable pin</code></pre>
+
+  to<br>
+  <pre><code>alpha_step_pin      2.0       # Pin for alpha stepper step signal
+alpha_dir_pin       0.5       # Pin for alpha stepper direction
+alpha_en_pin        0.4!      # Pin for alpha enable pin</code></pre>
+
+  And just wire the Silencio connector to the Smoothieboard external driver connector
+</sl-alert>
+{:/nomarkdown}
+
+{::nomarkdown}
+<sl-alert variant="neutral" open>
+  <sl-icon slot="icon" name="info-circle"></sl-icon>
+  <strong>TB6600 External Drivers</strong><br><br>
+  There are more versions labeled TB6600 on the market, but they use different driver chips inside. First of all, you'll need to know if the driver is ok with higher step rates (200 kHz), or you'll have to tune <code>microseconds_per_step_pulse</code> and/or <code>base_stepping_frequency</code>.<br><br>
+
+  Since TB6600 uses 5V signals and Smoothie is 3.3V we should either use TTL converters or open-drain (as mentioned before). My setup uses open-drain with 5V taken from the board (signals are connected to "-" pins, 5V is to all "+" pins).<br><br>
+
+  The config is the following for alpha, but it's the same for the rest:<br>
+  <pre><code># Stepper module pins (ports, and pin numbers, appending "!" to the number will invert a pin)
+alpha_step_pin                               2.0!o              # Pin for alpha stepper step signal
+alpha_dir_pin                                0.5!o              # Pin for alpha stepper direction
+alpha_en_pin                                 0.4!o              # Pin for alpha enable pin</code></pre>
+
+  If you want to change the rotating direction, simply leave out the "!":<br>
+  <pre><code>alpha_dir_pin                                0.5o              # Pin for alpha stepper direction</code></pre>
+</sl-alert>
+{:/nomarkdown}
 
 ### Multiple drivers in parallel
 
 If one of your axes requires more than one motor and driver, you can wire the control signals for one axis to multiple drivers, like so:
 
-
-![External drivers wired in parallel](images/mult-drivers-in-parallel.png)
+{::nomarkdown}
+<div style="text-align: center; margin: 2rem 0;">
+  <a href="images/mult-drivers-in-parallel.png">
+    <img src="images/mult-drivers-in-parallel.png" alt="External drivers wired in parallel" style="min-width: 640px; max-width: 100%; height: auto;"/>
+  </a>
+</div>
+{:/nomarkdown}
 
 ## Solid State Relays
 <a name='solidstaterelay'></a>
@@ -211,12 +244,21 @@ Typical Solid State Relays (SSR) can handle up to 40Amps easily, sometimes more.
 
 To control your Solid State Relay (SSR), you will need one GPIO pin (use one of the free ones on the board ideally), and a connection to GND (plenty of those).
 
-An SSR is essentially a big switch: you cut a wire, plug each end of the cut wire into its two terminals, and then you'll be able to control whether or not those two ends of the wire connect or not. Simple as that.
+An SSR is essentially a big switch: you cut a wire, plug each end of the cut wire into its two terminals, and then you'll be able to control whether or not those two ends of the wire connect or not.
 
+Simple as that.
 
-![Wiring a Solid State Relay](images/ssr-basic.png)
+{::nomarkdown}
+<div style="text-align: center; margin: 2rem 0;">
+  <a href="images/ssr-basic.png">
+    <img src="images/ssr-basic.png" alt="Wiring a Solid State Relay" style="min-width: 640px; max-width: 100%; height: auto;"/>
+  </a>
+</div>
+{:/nomarkdown}
 
-You will need to connect GND on the Smoothieboard to the "-" connection on the Input side of the SSR, and the GPIO pin on the Smoothieboard to the "+" connection on the Input side of the SSR. This example shows using P1.30
+You will need to connect GND on the Smoothieboard to the "-" connection on the Input side of the SSR, and the GPIO pin on the Smoothieboard to the "+" connection on the Input side of the SSR.
+
+This example shows using P1.30
 
 Then simply configure the module that will be using the SSR to use that pin, for example in the case of [Switch](switch):
 
@@ -247,7 +289,11 @@ temperature_control.bed.hysteresis           2.0             # set to the temper
                                                               # when using bang bang
 ```
 
-<iframe width="100%" height="720" src="https://www.youtube.com/embed/TiEwNf1H_Tc" frameborder="0" allowfullscreen></iframe>
+{::nomarkdown}
+<div style="text-align: center; margin: 2rem 0;">
+  <iframe width="100%" height="720" src="https://www.youtube.com/embed/TiEwNf1H_Tc" frameborder="0" allowfullscreen></iframe>
+</div>
+{:/nomarkdown}
 
 ## Swapping stepper motor drivers
 

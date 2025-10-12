@@ -20,13 +20,10 @@ The following panels are currently supported by Smoothie :
 
 Supported SPI chips:-  ST7565, ST7920, SSD1306
 
-> [!NOTE]
-> I2C and parallel panels are not supported directly, however using a cheap Arduino Mini Pro, Uno or Nano
-you can use the following I2C panels or a regular Reprap style Parallel style LCD using the universal panel adapter [universal panel adapter](https://github.com/wolfmanjm/universal-panel-adapter) and the `universal_adapter` driver :
->
-> - old Viki lcd I2C
-> - Most reprap style parallel LCD - Parallel
-> - Panelolu2 probably works but not tested - I2C
+<sl-alert variant="neutral" open>
+  <sl-icon slot="icon" name="info-circle"></sl-icon>
+  I2C and parallel panels are not supported directly, however using a cheap Arduino Mini Pro, Uno or Nano you can use the following I2C panels or a regular Reprap style Parallel style LCD using the universal panel adapter <a href="https://github.com/wolfmanjm/universal-panel-adapter">universal panel adapter</a> and the <code>universal_adapter</code> driver : - old Viki lcd I2C - Most reprap style parallel LCD - Parallel - Panelolu2 probably works but not tested - I2C
+</sl-alert>
 
 ## Configuration
 
@@ -67,8 +64,10 @@ custom_menu.filament_change_r.command              M24               #
 
 ### External SD card setup
 
-> [!WARNING]
-> **WARNING** using the external sdcard for printing from is not recommended, and is **NOT** supported. Running SPI over long (or even short) cables is problematic, and can cause random hangs and/or corrupted data. I am not aware of a way to fix this other than using differential buffer drivers.
+<sl-alert variant="warning" open>
+  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+  <strong>WARNING</strong> using the external sdcard for printing from is not recommended, and is <strong>NOT</strong> supported. Running SPI over long (or even short) cables is problematic, and can cause random hangs and/or corrupted data. I am not aware of a way to fix this other than using differential buffer drivers.
+</sl-alert>
 
 For the RRD GLCD it **CANNOT** share the same SPI as the LCD so it must be hooked up to the onboard sdcard SPI and use a spare pin for the sdcs.
 Also note that an external SDcard sharing the SPI port with the onboard/internal sdcard **must** be ejected before rebooting as the bootloader does not like the external card. **NOTE** Smoothie will **not** boot if the external sdcard is inserted in the RRD LCD sdcard slot at boot time, it must be inserted after it has booted.
@@ -106,44 +105,40 @@ The Reprapdiscount GLCD is a black and white graphical display with an encoder c
 
 It is one of the most popular options for panel controllers.
 
-> [!NOTE]
-> Power from the 5v line directly, from the 5v uart pin with a decoupling capacitor of at least 0.1uF, from a + pin on an unused endstop, or an external 5V power supply capable of delivering at least 500 mA. 
+<sl-alert variant="neutral" open>
+  <sl-icon slot="icon" name="info-circle"></sl-icon>
+  Power from the 5v line directly, from the 5v uart pin with a decoupling capacitor of at least 0.1uF, from a + pin on an unused endstop, or an external 5V power supply capable of delivering at least 500 mA.
+</sl-alert>
 
-> [!NOTE]
-> [MOAR](http://www.audioholics.com/home-theater-connection/connecting-an-external-amp-to-a-receiver/image)
->
-> If you are using the onboard 5V regulator to step down from 12/24V, check the current draw required for your panel - depending on the color/backlight on your GLCD, it may require >250 mA for the backlight. 
->
-> The normal recommended 5V regulator will not supply enough current for those panels - if the panel powers up, it will have very low contrast.  
->
-> Use Recom part `R-78E5.0-**1.0**` instead - it will supply 1 amp (vs 0.5 amps for the normally recommended regulator).
->
-> It is available at Digikey, and likely at other major electronics component sites.
->
-> See [Voltage Regulator](http://smoothieware.org/voltageregulator).
->
-> As an alternative to replacing the R-78E5.0 part on the Smoothieboard, solder a 5V 0.5 amp or 1 amp regulator to the adaptor card in the location marked. Ordinary 7805 regulators will work in that role. See [78xx](https://en.wikipedia.org/wiki/78xx)
+<sl-alert variant="neutral" open>
+  <sl-icon slot="icon" name="info-circle"></sl-icon>
+  <strong><a href="http://www.audioholics.com/home-theater-connection/connecting-an-external-amp-to-a-receiver/image">MOAR</a></strong><br><br>
+  If you are using the onboard 5V regulator to step down from 12/24V, check the current draw required for your panel - depending on the color/backlight on your GLCD, it may require >250 mA for the backlight.<br><br>
+  The normal recommended 5V regulator will not supply enough current for those panels - if the panel powers up, it will have very low contrast.<br><br>
+  Use Recom part <code>R-78E5.0-**1.0**</code> instead - it will supply 1 amp (vs 0.5 amps for the normally recommended regulator).<br><br>
+  It is available at Digikey, and likely at other major electronics component sites.<br><br>
+  See <a href="voltageregulator.md">Voltage Regulator</a>.<br><br>
+  As an alternative to replacing the R-78E5.0 part on the Smoothieboard, solder a 5V 0.5 amp or 1 amp regulator to the adaptor card in the location marked. Ordinary 7805 regulators will work in that role. See <a href="https://en.wikipedia.org/wiki/78xx">78xx</a>
+</sl-alert>
 
-> [!NOTE]
-> Adapter
->
-> There is an adapter board to easily connect a ReprapDiscount GLCD to a Smoothieboard with flat cable, however note this is entirely optional.
->
-> You can find information about it at the [RRDGLCDAdapter](rrdglcdadapter) page.
->
-> It's sources are available on [github](https://github.com/llegoff/GlcdAdapter2).
->
-> Note that you may have to solder physical pins to the board for pins 3.25 and 3.26, otherwise the rotary encoder will not work.
+<sl-alert variant="neutral" open>
+  <sl-icon slot="icon" name="info-circle"></sl-icon>
+  <strong>Adapter</strong><br><br>
+  There is an adapter board to easily connect a ReprapDiscount GLCD to a Smoothieboard with flat cable, however note this is entirely optional.<br><br>
+  You can find information about it at the <a href="rrdglcdadapter.md">RRDGLCDAdapter</a> page.<br><br>
+  It's sources are available on <a href="https://github.com/llegoff/GlcdAdapter2">github</a>.<br><br>
+  Note that you may have to solder physical pins to the board for pins 3.25 and 3.26, otherwise the rotary encoder will not work.
+</sl-alert>
 
-> [!WARNING]
-> Clones
->
-> Note that there are a lot of clones of the official RRD GLCD, and their connectors are reversed. If you buy one of them, you need to modify your adapter board, by removing the sockets of the 10-pin connectors and rotating them 180 degrees each.
+<sl-alert variant="warning" open>
+  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+  Clones Note that there are a lot of clones of the official RRD GLCD, and their connectors are reversed.<br><br>If you buy one of them, you need to modify your adapter board, by removing the sockets of the 10-pin connectors and rotating them 180 degrees each.
+</sl-alert>
 
-> [!WARNING]
-> SPI thermocouples
->
-> Because the RRD GLCD does not implement SPI correctly, it has to be alone on it's SPI port. This means you won't be able to use SPI thermocouples and the RRD GLCD together on the same board, unfortunately
+<sl-alert variant="warning" open>
+  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+  SPI thermocouples Because the RRD GLCD does not implement SPI correctly, it has to be alone on it's SPI port.<br><br>This means you won't be able to use SPI thermocouples and the RRD GLCD together on the same board, unfortunately.
+</sl-alert>
 
 ### Manual wiring
 
@@ -170,10 +165,10 @@ panel.external_sd.sdcd_pin            0.27!^            # sd detect signal (set 
 
 You can find a list of pins on the Smoothieboard to connect to the panel [here](http://chibidibidiwah.wdfiles.com/local--files/panel/smoothieboard2sd.jpg) and [here](http://chibidibidiwah.wdfiles.com/local--files/panel/GLCDPINOUTS2SD.jpg).
 
-> [!WARNING]
-> Pin numbering
->
-> 5vdc availability presumes a 5vdc source (power from SBUS, 5V input, or optionally installed 5v converter VBB).
+<sl-alert variant="warning" open>
+  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+  Pin numbering 5vdc availability presumes a 5vdc source (power from SBUS, 5V input, or optionally installed 5v converter VBB).
+</sl-alert>
 Be aware that RRD does not follow proper conventions for pin numbering. The pin 1 indicator on the ribbon is actually pin 10 in the RRD schematic. The image above is numbered according to the RRD inset schematics. 
 
 {::nomarkdown}

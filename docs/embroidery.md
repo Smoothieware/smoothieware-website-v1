@@ -1,11 +1,23 @@
 
-# Introduction
+# Embroidery Machine Control with Smoothieware
 
-Embroidery machines are a combination of an industrial sewing machine and a computer-controlled XY frame or pantograph. There are a large number of machine manufacturers, each with their own internal machine formats. Most machine manufacturers handle the .dst or digital stitch Tajima format, with an import function to convert these to internal machine code. Due to the original input source for these machines being 8-bit paper tape, there are a limited set of commands for encoding embroidery design data for machine embroidery. There are a number of special functions that can be encoded in a .dst file:
+## Introduction
 
-- Trim
-- Stop
-- Jump
+Embroidery machines are a combination of an industrial sewing machine and a computer-controlled XY frame or pantograph.
+
+There are a large number of machine manufacturers, each with their own internal machine formats.
+
+Most machine manufacturers handle the .dst or digital stitch Tajima format, with an import function to convert these to internal machine code.
+
+Due to the original input source for these machines being 8-bit paper tape, there are a limited set of commands for encoding embroidery design data for machine embroidery.
+
+### Special Functions
+
+There are a number of special functions that can be encoded in a .dst file:
+
+- **Trim** - Cut the thread
+- **Stop** - Pause for operator intervention
+- **Jump** - Move without stitching
 
 Originally, the "colour" was not encoded in the .dst, so a supplementary printout would be supplied with a digitized file to assist an operator in encoding the colour changes required to correctly sew out a design.
 
@@ -13,24 +25,39 @@ The "trim" is not always available on a machine, so once a design has been sewn 
 
 Newer machines have automatic trims, colour changes, and additional special functions such as punch, sequin, and appliqué may also be available.
 
-Each stitch is encoded as a relative position from the last stitch, and typically is encoded with a maximum stitch length of 12.1mm for a single stitch, with a resolution of 0.1mm in X and Y for pantograph placement.
+### Stitch Encoding
 
-## ToolChain
+Each stitch is encoded as a relative position from the last stitch.
 
-The embroidery machine toolchain typically consists of:
+Typically it is encoded with a maximum stitch length of 12.1mm for a single stitch, with a resolution of 0.1mm in X and Y for pantograph placement.
 
-- Design software: This is simply turning an image into lines, geometric or abstract areas, and text. This software often provides the ability to load an image file and "trace" it with design tools. The output is a design file made of various shapes. Inkscape often serves this purpose.
-- "Digitizing" or "punching" software: Each line, piece of text, and area of the design is turned into an independent sewing object, and stitching specific design choices are made. For example, lines can be defined in terms of straight stitches, doubled rows of stitches (out and back), or triple rows of stitches; stitch length can be defined. Areas are defined in terms of borders, fill patterns, and underlayment, all of which are optional. Borders are simply outlines defined as the lines above. Underlayment places basting stitches beneath the area to be filled; this helps bind the main fabric to any interfacing fabric, and provides additional strength against wrinkling or stretching. Fills vary in terms of decorative stitching patterns. Satin fills consist of long, edge-to-edge parallel stitches, while tatami fills use staggered rows of shorter stitches to give a more flat appearance. Not all fills use parallel rows of stitches; some fills may be done with concentric circles, smaller geometric shapes like circles, squares, or triangles, or even patterns like snowflakes or stars. Fill tools offer ways to specify the direction and density of the fill stitches.
-- Lettering is often handled as a separate feature. Some software will import TrueType Fonts, and will fill the lettering based on user-specified parameters. Better software has a suite of pre-digitized fonts designed specifically for their quality of embroidery.
-- Each object has a start and end point. Jump stitches are long moves by the machine without placing a stitch, these threads may be cut away by the operator after the design is stitched. Cut stitches are available on some advanced machines that have integrated cutting blades, and will avoid leaving the jump thread visible.
-- Digitizing software also includes database functions to allow the user to manage the available resources. These can include an inventory of available threads (which define the materials, colors, thicknesses, sheen, etc., and can be organized by manufacturers or other user-specified groupings of attributes); fabric types (which can help the user by providing recommended underlayment stitch settings, minimum and maximum stitch lengths, and stabilizers); machine types (defining machine capabilities, file formats and communication protocols, and an inventory of available embroidery hoops and their geometry); and designs, monogram patterns, fill patterns, and other types of embroidery elements offered.
-- Each object is placed in a stitch ordering list. Simple software will order the list in the same order the user enters the objects. More advanced software may reorder the list by itself. The user needs to be able to specify the final order of the list. The list is also where color changes, tie-offs (knots), jump stitches, cut stitches, and "stops" (a pause in the stitching to allow the operator to perform some function, such as cutting a jump stitch or placing an applique piece) are specified.
-- Digitizing software usually automatically generates the locations of start and end points, jump stitches, tie-offs (knots), cut stitches, and color changes. However, the user may want to change these points.
-- The output of the digitizing software is an embroidery file, such as a .DST file, that then needs to be transferred to the embroidery machine. Depending on the technology available in the embroidery machine, the file may be written to a USB stick, a memory card, a serial port on a USB cable, a floppy disk (for very old machines), or even sent to a shared drive using a cloud service.
-- The software on the embroidery machine loads the embroidery file. It may offer many of the design and digitizing functions found above. Most machines have an independent library of simple border designs, monograms, and a few text fonts optimized for that machine, and allow the operator to quickly produce a simple name badge, monogram, or embroider text on an object. The machine software may offer the ability to scale or rotate the design.
-- Some machines have automatic hoop detection capabilities, which allows the machine to know when the hoop is inserted and determine the geometry of the hoop. Others require manual hoop selection, or may simply assume the hoop is the same one as was specified in the embroidery file.
-- Some machines offer the ability to precisely locate the design by moving the hoop beneath the needle to some pre-selected points on the design. This enables the operator to precisely align the design on the garment.
-- All embroidery machines have a few basic user controls: start, stop, and stitch speed selection. The operator interface may have a way for the user to see color/thread changes. The operator usually has a way to re-position the hoop: current stitch position, pattern start position, bobbin change position, jump-thread cutting position, etc. Status and error messages will be displayed, such as stitch speed, current stitch number, thread or needle breakage detection, low bobbin thread, low top thread, machine overheat, etc. The operator will also usually have a way to select a new current stitch number, allowing the user to back up to the point of a broken thread, or to jump back to the stitch prior to where some problem occurred and some of the design had to be ripped out.
+## Embroidery ToolChain
+
+The embroidery machine toolchain typically consists of several software components and processes:
+
+- **Design software**: This is simply turning an image into lines, geometric or abstract areas, and text. This software often provides the ability to load an image file and "trace" it with design tools. The output is a design file made of various shapes. Inkscape often serves this purpose.
+
+- **"Digitizing" or "punching" software**: Each line, piece of text, and area of the design is turned into an independent sewing object, and stitching specific design choices are made. For example, lines can be defined in terms of straight stitches, doubled rows of stitches (out and back), or triple rows of stitches; stitch length can be defined. Areas are defined in terms of borders, fill patterns, and underlayment, all of which are optional. Borders are simply outlines defined as the lines above. Underlayment places basting stitches beneath the area to be filled; this helps bind the main fabric to any interfacing fabric, and provides additional strength against wrinkling or stretching. Fills vary in terms of decorative stitching patterns. Satin fills consist of long, edge-to-edge parallel stitches, while tatami fills use staggered rows of shorter stitches to give a more flat appearance. Not all fills use parallel rows of stitches; some fills may be done with concentric circles, smaller geometric shapes like circles, squares, or triangles, or even patterns like snowflakes or stars. Fill tools offer ways to specify the direction and density of the fill stitches.
+
+- **Lettering**: Often handled as a separate feature. Some software will import TrueType Fonts, and will fill the lettering based on user-specified parameters. Better software has a suite of pre-digitized fonts designed specifically for their quality of embroidery.
+
+- **Object management**: Each object has a start and end point. Jump stitches are long moves by the machine without placing a stitch, these threads may be cut away by the operator after the design is stitched. Cut stitches are available on some advanced machines that have integrated cutting blades, and will avoid leaving the jump thread visible.
+
+- **Database functions**: Digitizing software also includes database functions to allow the user to manage the available resources. These can include an inventory of available threads (which define the materials, colors, thicknesses, sheen, etc., and can be organized by manufacturers or other user-specified groupings of attributes); fabric types (which can help the user by providing recommended underlayment stitch settings, minimum and maximum stitch lengths, and stabilizers); machine types (defining machine capabilities, file formats and communication protocols, and an inventory of available embroidery hoops and their geometry); and designs, monogram patterns, fill patterns, and other types of embroidery elements offered.
+
+- **Stitch ordering**: Each object is placed in a stitch ordering list. Simple software will order the list in the same order the user enters the objects. More advanced software may reorder the list by itself. The user needs to be able to specify the final order of the list. The list is also where color changes, tie-offs (knots), jump stitches, cut stitches, and "stops" (a pause in the stitching to allow the operator to perform some function, such as cutting a jump stitch or placing an applique piece) are specified.
+
+- **Automatic generation**: Digitizing software usually automatically generates the locations of start and end points, jump stitches, tie-offs (knots), cut stitches, and color changes. However, the user may want to change these points.
+
+- **File output**: The output of the digitizing software is an embroidery file, such as a .DST file, that then needs to be transferred to the embroidery machine. Depending on the technology available in the embroidery machine, the file may be written to a USB stick, a memory card, a serial port on a USB cable, a floppy disk (for very old machines), or even sent to a shared drive using a cloud service.
+
+- **Machine software**: The software on the embroidery machine loads the embroidery file. It may offer many of the design and digitizing functions found above. Most machines have an independent library of simple border designs, monograms, and a few text fonts optimized for that machine, and allow the operator to quickly produce a simple name badge, monogram, or embroider text on an object. The machine software may offer the ability to scale or rotate the design.
+
+- **Hoop detection**: Some machines have automatic hoop detection capabilities, which allows the machine to know when the hoop is inserted and determine the geometry of the hoop. Others require manual hoop selection, or may simply assume the hoop is the same one as was specified in the embroidery file.
+
+- **Design positioning**: Some machines offer the ability to precisely locate the design by moving the hoop beneath the needle to some pre-selected points on the design. This enables the operator to precisely align the design on the garment.
+
+- **Machine controls**: All embroidery machines have a few basic user controls: start, stop, and stitch speed selection. The operator interface may have a way for the user to see color/thread changes. The operator usually has a way to re-position the hoop: current stitch position, pattern start position, bobbin change position, jump-thread cutting position, etc. Status and error messages will be displayed, such as stitch speed, current stitch number, thread or needle breakage detection, low bobbin thread, low top thread, machine overheat, etc. The operator will also usually have a way to select a new current stitch number, allowing the user to back up to the point of a broken thread, or to jump back to the stitch prior to where some problem occurred and some of the design had to be ripped out.
 
 ### Digitising
 

@@ -1,5 +1,19 @@
-
 # LPC4337 Pin Usage
+
+This page documents the pin assignments for the LPC4337 microcontroller used in Smoothie v2 prototypes.
+
+The table below shows how each ARM pin is mapped to GPIO pins and their usage in different board versions.
+
+{::nomarkdown}
+<sl-alert variant="neutral" open>
+  <sl-icon slot="icon" name="info-circle"></sl-icon>
+  <strong>For Smoothie v1 Users</strong>
+  <br><br>
+  This page is specifically for Smoothie v2 development. If you're using Smoothie v1 with the LPC1769, see the <a href="lpc1769-pin-usage">LPC1769 Pin Usage</a> page instead.
+</sl-alert>
+{:/nomarkdown}
+
+## Pin Reference Table
 
 | ARM Pin | GPIO Pin | LPCXpresso | v2-proto1 | v2pro-proto1 | Comment |
 | ------- | -------- | ---------- | --------- | ------------ | ------- |
@@ -147,4 +161,41 @@
 | PD_12   | GPIO6_26 |            |            |              | `pwm` |
 | PD_13   | GPIO6_27 |            |            |              | `pwm` |
 | PD_14   | GPIO6_28 |            |            |              | `pwm` |
-| PD_15   | GPIO6_29 |            |           
+| PD_15   | GPIO6_29 |            |            |              | `pwm` |
+| PD_16   | GPIO6_30 |            |            |              | `pwm` |
+| PE_0    | GPIO7_0  |            |            |              |         |
+| PE_1    | GPIO7_1  |            |            |              |         |
+| PE_2    | GPIO7_2  |            |            |              |         |
+| PE_3    | GPIO7_3  |            |            |              |         |
+| PE_4    | GPIO7_4  |            |            |              |         |
+| PE_5    | GPIO7_5  |            |            |              | `adc` |
+| PE_6    | GPIO7_6  |            |            |              | `adc` |
+| PE_7    | GPIO7_7  |            |            |              |         |
+| PE_8    | GPIO7_8  |            |            |              |         |
+| PE_9    | GPIO7_9  |            |            |              |         |
+| PE_10   | GPIO7_10 |            |            |              |         |
+| PE_11   | GPIO7_11 |            |            |              |         |
+| PE_12   | GPIO7_12 |            |            |              |         |
+| PE_13   | GPIO7_13 |            |            |              |         |
+| PE_14   | GPIO7_14 |            |            |              |         |
+| PE_15   | GPIO7_15 |            |            |              |         |
+| PF_0    |          |            |            |              |         |
+| PF_1    | GPIO7_16 |            |            |              |         |
+| PF_2    | GPIO7_17 |            |            |              |         |
+| PF_3    | GPIO7_18 |            |            |              |         |
+| PF_4    | GPIO7_19 |            | adc0       | adc0         | `adc` |
+| PF_5    | GPIO7_20 |            | adc1       | adc1         | `adc` |
+| PF_6    | GPIO7_21 |            | adc2       | adc2         | `adc` |
+| PF_7    | GPIO7_22 |            | adc3       | adc3         | `adc` |
+| PF_8    | GPIO7_23 |            | adc4       | adc4         | `adc` |
+| PF_9    | GPIO7_24 |            | adc5       | adc5         | `adc` |
+| PF_10   | GPIO7_25 |            | adc6       | adc6         | `adc` |
+| PF_11   | GPIO7_26 |            | adc7       | adc7         | `adc` |
+
+## Notes
+
+Items in *italics* are hardcoded and cannot be easily changed.
+
+The `pwm` capability indicates that the pin supports hardware PWM generation.
+
+The LPC4337 is significantly more powerful than the LPC1769, with more pins, more memory, and additional peripherals.

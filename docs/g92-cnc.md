@@ -1,8 +1,10 @@
-{::nomarkdown}
-<img src="images/Missing.png" alt="G92 - Set Offset" class="pull-right" width="200" height="200">
-{:/nomarkdown}
+# G92 G-code
 
-## G92 G-code
+{::nomarkdown}
+<a href="images/Missing.png">
+  <img src="images/Missing.png" alt="G92 - Set Offset" width="200" height="200" style="float: right; margin-left: 1rem;"/>
+</a>
+{:/nomarkdown}
 
 G92 means "set an offset in all coordinate systems".
 
