@@ -112,12 +112,12 @@ title: Smoothieware Home
     initFireworks();
     fireworks.start();
 
-    // Launch one firework every 400ms with weighted colors
+    // Launch one firework every 200ms with weighted colors
     launchInterval = setInterval(function() {
       if (isHovering) {
         launchWeighted(1);
       }
-    }, 400);
+    }, 200);
   });
 
   // Stop fireworks when mouse leaves
