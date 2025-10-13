@@ -269,6 +269,34 @@ sl-alert + div {
   margin-top: 1.5rem !important;
 }
 
+/* Move alert color highlight from top to left side and make it 2x wider */
+sl-alert::part(base) {
+  border-top: none !important;
+  border-left: 6px solid var(--sl-color-primary-600) !important; /* 2x the default 3px */
+  border-radius: 0 4px 4px 0 !important; /* Keep rounded corners on right side only */
+}
+
+/* Apply variant-specific colors to left border */
+sl-alert[variant="primary"]::part(base) {
+  border-left-color: var(--sl-color-primary-600) !important;
+}
+
+sl-alert[variant="success"]::part(base) {
+  border-left-color: var(--sl-color-success-600) !important;
+}
+
+sl-alert[variant="neutral"]::part(base) {
+  border-left-color: var(--sl-color-neutral-600) !important;
+}
+
+sl-alert[variant="warning"]::part(base) {
+  border-left-color: var(--sl-color-warning-600) !important;
+}
+
+sl-alert[variant="danger"]::part(base) {
+  border-left-color: var(--sl-color-danger-600) !important;
+}
+
 .menu {
   display: flex;
   justify-content: center;
