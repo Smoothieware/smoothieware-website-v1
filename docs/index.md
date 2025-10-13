@@ -13,13 +13,98 @@ title: Smoothieware Home
 {:/nomarkdown}
 
 {::nomarkdown}
-<sl-alert variant="primary" open>
-  <sl-icon slot="icon" name="rocket-takeoff"></sl-icon>
-  <div style="display:flex;align-items:center;gap:15px;">
-    <a href="https://www.robosprout.com/product-category/smoothieboards" style = "font-size:48px;font-weight:bold;">SmoothieBoard v2 is HERE!</a>
-    <img src="/images/fiesta-junina.png" alt="Party" style="width:50px;height:50px;">
-  </div>
-</sl-alert>
+<div id="v2-announcement-container" style="position: relative;">
+  <sl-alert id="v2-announcement" variant="primary" open>
+    <sl-icon slot="icon" name="rocket-takeoff"></sl-icon>
+    <div style="display:flex;align-items:center;gap:15px;">
+      <a href="https://www.robosprout.com/product-category/smoothieboards" style = "font-size:48px;font-weight:bold;">SmoothieBoard v2 is HERE!</a>
+      <img src="/images/fiesta-junina.png" alt="Party" style="width:50px;height:50px;">
+    </div>
+  </sl-alert>
+  <canvas id="fireworks-canvas" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 10;"></canvas>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/fireworks-js@2.10.8/dist/index.umd.min.js"></script>
+<script>
+(function() {
+  const container = document.getElementById('v2-announcement-container');
+  const alert = document.getElementById('v2-announcement');
+  const canvas = document.getElementById('fireworks-canvas');
+
+  let fireworks = null;
+  let isHovering = false;
+
+  // Initialize fireworks
+  function initFireworks() {
+    if (!fireworks) {
+      fireworks = new Fireworks.default(canvas, {
+        autoresize: true,
+        opacity: 0.8,
+        acceleration: 1.05,
+        friction: 0.97,
+        gravity: 1.5,
+        particles: 80,
+        traceLength: 3,
+        traceSpeed: 10,
+        explosion: 5,
+        intensity: 30,
+        flickering: 50,
+        lineStyle: 'round',
+        hue: {
+          min: 0,
+          max: 360
+        },
+        delay: {
+          min: 15,
+          max: 30
+        },
+        rocketsPoint: {
+          min: 50,
+          max: 50
+        },
+        lineWidth: {
+          explosion: {
+            min: 1,
+            max: 3
+          },
+          trace: {
+            min: 1,
+            max: 2
+          }
+        },
+        brightness: {
+          min: 50,
+          max: 80
+        },
+        decay: {
+          min: 0.015,
+          max: 0.03
+        },
+        mouse: {
+          click: false,
+          move: false,
+          max: 1
+        }
+      });
+    }
+  }
+
+  // Start fireworks on hover
+  alert.addEventListener('mouseenter', function() {
+    isHovering = true;
+    initFireworks();
+    fireworks.start();
+  });
+
+  // Stop fireworks when mouse leaves
+  alert.addEventListener('mouseleave', function() {
+    isHovering = false;
+    if (fireworks) {
+      fireworks.stop();
+    }
+  });
+})();
+</script>
 {:/nomarkdown}
 
 The Smoothie project is always looking for help. Whatever your skills are, there are things you can do to improve the project with the other volunteers. If you feel that you could give us some of your free time, please [contact us](mailto:wolf.arthur@gmail.com), **help and working together** is what has made this project so neat, advanced and precious over the years, and is **very welcome**.
