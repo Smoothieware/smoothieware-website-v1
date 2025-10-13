@@ -17,7 +17,7 @@ title: Smoothieware Home
   <sl-icon slot="icon" name="rocket-takeoff"></sl-icon>
   <div style="display:flex;align-items:center;gap:15px;">
     <a href="https://www.robosprout.com/product-category/smoothieboards" style = "font-size:48px;font-weight:bold;">SmoothieBoard v2 is HERE!</a>
-    <img src="/images/festa-junina.png" alt="Party" style="width:50px;height:50px;">
+    <img src="/images/fiesta-junina.png" alt="Party" style="width:50px;height:50px;">
   </div>
 </sl-alert>
 {:/nomarkdown}
