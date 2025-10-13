@@ -33,89 +33,106 @@ title: Smoothieware Home
 
   let fireworks = null;
   let isHovering = false;
+  let colorCycleInterval = null;
 
-  // Custom hue selector for blue/orange theme
-  function getCustomHue() {
+  // Get random hue configuration (blue or orange with occasional accents)
+  function getRandomHueConfig() {
     const rand = Math.random();
     if (rand < 0.45) {
-      // Blues (45% chance) - hue 180-240
-      return 180 + Math.random() * 60;
+      return { min: 180, max: 240 };  // Blues
     } else if (rand < 0.90) {
-      // Oranges (45% chance) - hue 20-40
-      return 20 + Math.random() * 20;
+      return { min: 20, max: 40 };    // Oranges
     } else if (rand < 0.95) {
-      // Yellow-oranges (5% chance) - hue 40-55
-      return 40 + Math.random() * 15;
+      return { min: 40, max: 55 };    // Yellow-oranges (rare)
     } else {
-      // Dark blues (5% chance) - hue 200-220
-      return 200 + Math.random() * 20;
+      return { min: 200, max: 220 };  // Dark blues (rare)
     }
   }
 
-  // Initialize fireworks
-  function initFireworks() {
-    if (!fireworks) {
-      fireworks = new Fireworks.default(canvas, {
-        autoresize: true,
-        opacity: 0.8,
-        acceleration: 1.05,
-        friction: 0.97,
-        gravity: 1.5,
-        particles: 80,
-        traceLength: 3,
-        traceSpeed: 10,
-        explosion: 5,
-        intensity: 30,
-        flickering: 50,
-        lineStyle: 'round',
-        hue: getCustomHue,
-        delay: {
-          min: 15,
-          max: 30
-        },
-        rocketsPoint: {
-          min: 50,
-          max: 50
-        },
-        lineWidth: {
-          explosion: {
-            min: 1,
-            max: 3
-          },
-          trace: {
-            min: 1,
-            max: 2
-          }
-        },
-        brightness: {
-          min: 50,
-          max: 80
-        },
-        decay: {
-          min: 0.015,
-          max: 0.03
-        },
-        mouse: {
-          click: false,
-          move: false,
-          max: 1
-        }
-      });
+  // Create fireworks with specific hue range
+  function createFireworks(hueConfig) {
+    if (fireworks) {
+      fireworks.stop();
+      fireworks = null;
     }
+
+    fireworks = new Fireworks.default(canvas, {
+      autoresize: true,
+      opacity: 0.8,
+      acceleration: 1.05,
+      friction: 0.97,
+      gravity: 1.5,
+      particles: 80,
+      traceLength: 3,
+      traceSpeed: 10,
+      explosion: 5,
+      intensity: 30,
+      flickering: 50,
+      lineStyle: 'round',
+      hue: hueConfig,
+      delay: {
+        min: 15,
+        max: 30
+      },
+      rocketsPoint: {
+        min: 50,
+        max: 50
+      },
+      lineWidth: {
+        explosion: {
+          min: 1,
+          max: 3
+        },
+        trace: {
+          min: 1,
+          max: 2
+        }
+      },
+      brightness: {
+        min: 50,
+        max: 80
+      },
+      decay: {
+        min: 0.015,
+        max: 0.03
+      },
+      mouse: {
+        click: false,
+        move: false,
+        max: 1
+      }
+    });
+
+    fireworks.start();
+  }
+
+  // Cycle between color schemes every 2 seconds
+  function startColorCycling() {
+    createFireworks(getRandomHueConfig());
+
+    colorCycleInterval = setInterval(function() {
+      if (isHovering) {
+        createFireworks(getRandomHueConfig());
+      }
+    }, 2000);
   }
 
   // Start fireworks on hover
   alert.addEventListener('mouseenter', function() {
     isHovering = true;
-    initFireworks();
-    fireworks.start();
+    startColorCycling();
   });
 
   // Stop fireworks when mouse leaves
   alert.addEventListener('mouseleave', function() {
     isHovering = false;
+    if (colorCycleInterval) {
+      clearInterval(colorCycleInterval);
+      colorCycleInterval = null;
+    }
     if (fireworks) {
       fireworks.stop();
+      fireworks = null;
     }
   });
 })();
