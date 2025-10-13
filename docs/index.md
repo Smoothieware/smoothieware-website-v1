@@ -43,13 +43,17 @@ The Smoothie project is always looking for help. Whatever your skills are, there
   </div>
   <div class="menu-item">
     <a href="cnc-mill-guide">
-      <img src="/images/guide-cnc-mill.png" alt="CNC Mill">
+      <img src = "/images/guide-cnc-mill.png" alt = "CNC Mill">
       <p>CNC Mill</p>
     </a>
   </div>
+  <div class = "menu-item">
+  <a   href  = "pick-and-place">
+  <img src   = "/images/guide-pnp.png" alt = "Pick and place">
+      <p>Pick and Place</p>
+    </a>
+  </div>
 </div>
-
-There is also a [Pick and Place](pick-and-place) guide.
 
 ## Firmware documentation
 
