@@ -34,6 +34,24 @@ title: Smoothieware Home
   let fireworks = null;
   let isHovering = false;
 
+  // Custom hue selector for blue/orange theme
+  function getCustomHue() {
+    const rand = Math.random();
+    if (rand < 0.45) {
+      // Blues (45% chance) - hue 180-240
+      return 180 + Math.random() * 60;
+    } else if (rand < 0.90) {
+      // Oranges (45% chance) - hue 20-40
+      return 20 + Math.random() * 20;
+    } else if (rand < 0.95) {
+      // Yellow-oranges (5% chance) - hue 40-55
+      return 40 + Math.random() * 15;
+    } else {
+      // Dark blues (5% chance) - hue 200-220
+      return 200 + Math.random() * 20;
+    }
+  }
+
   // Initialize fireworks
   function initFireworks() {
     if (!fireworks) {
@@ -50,10 +68,7 @@ title: Smoothieware Home
         intensity: 30,
         flickering: 50,
         lineStyle: 'round',
-        hue: {
-          min: 0,
-          max: 360
-        },
+        hue: getCustomHue,
         delay: {
           min: 15,
           max: 30
