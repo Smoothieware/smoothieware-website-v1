@@ -32,25 +32,25 @@ The Smoothie project is always looking for help. Whatever your skills are, there
   <div class="menu-item">
     <a href="3d-printer-guide">
       <img src="/images/guide-3d-printer.png" alt="3D Printer">
-      <p>3D Printer Guide</p>
+      <p><strong>3D Printer</strong> Guide</p>
     </a>
   </div>
   <div class="menu-item">
     <a href="laser-cutter-guide">
       <img src="/images/guide-laser.png" alt="Laser">
-      <p>Laser Cutting Guide</p>
+      <p><strong>Laser Cutting</strong> Guide</p>
     </a>
   </div>
   <div class="menu-item">
     <a href="cnc-mill-guide">
       <img src = "/images/guide-cnc-mill.png" alt = "CNC Mill">
-      <p>CNC Mill</p>
+      <p><strong>CNC Mill</strong> Guide</p>
     </a>
   </div>
   <div class = "menu-item">
   <a   href  = "pick-and-place">
   <img src   = "/images/guide-pnp.png" alt = "Pick and place">
-      <p>Pick and Place</p>
+      <p><strong>Pick and Place</strong> Guide</p>
     </a>
   </div>
 </div>
