@@ -1,7 +1,9 @@
 # Contribution Guidelines
 
 {::nomarkdown}
-<img src="images/github-1.png" alt="GitHub" width="300" height="auto" style="float: right; margin-left: 1rem;"/>
+<a href="/images/github-1.png">
+  <img src="/images/github-1.png" alt="GitHub" width="150" height="150" style="float: right; margin-left: 1rem;"/>
+</a>
 {:/nomarkdown}
 
 In order for a Pull request to be accepted it must meet certain standards and guidelines.
@@ -12,15 +14,20 @@ In addition to following the [Coding Standards](coding-standards), it is suggest
 
 2. Only one feature per pull request; if you change multiple files with unrelated changes, it will be rejected.
 
-3. Do not make gratuitous changes. If your coding style is different from the one adopted by most of the Smoothie codebase, do not make changes to suit your style. People's styles differ, and the new code you write may reflect your coding style, which is okay, but changing existing code to match your style is not okay. Doing so will delay the acceptance of your code or have it rejected entirely.
+3. Do not make gratuitous changes. If your coding style is different from the one adopted by most of the Smoothie codebase, do not make changes to suit your style.
+   People's styles differ, and the new code you write may reflect your coding style, which is okay, but changing existing code to match your style is not okay.
+   Doing so will delay the acceptance of your code or have it rejected entirely.
 
-4. Maintain backward compatibility. Do not make changes that will break other people's systems; it is not acceptable to force everyone to change their config files to accommodate your change. If necessary, add new configs to enable your change if it is breaking backward compatibility.
+4. Maintain backward compatibility. Do not make changes that will break other people's systems; it is not acceptable to force everyone to change their config files to accommodate your change.
+   If necessary, add new configs to enable your change if it is breaking backward compatibility.
 
 5. Do not make changes that are specific to your setup. Smoothie needs to work in many different environments.
 
-6. Do not make changes that customize messages specific to your company or implementation. You are welcome to do this in your own fork and binary; it is not okay to try to merge that into the upstream repository.
+6. Do not make changes that customize messages specific to your company or implementation.
+   You are welcome to do this in your own fork and binary; it is not okay to try to merge that into the upstream repository.
 
-7. Test your changes in as many different configurations as you can, e.g., different arm solutions. In the Pull request, state what tests have been done and what tests need to be done.
+7. Test your changes in as many different configurations as you can, e.g., different arm solutions.
+   In the Pull request, state what tests have been done and what tests need to be done.
 
 8. Do not commit changes to the FirmwareBin directory or any binary files in the repository.
 

@@ -6,8 +6,8 @@ This module reads temperature reading sensors (thermistors) and uses heater and 
 This is used for example for [extruder](extruder) hotends, or heated beds.
 
 {::nomarkdown}
-<a href="https://reprap.org/mediawiki/images/thumb/2/2a/Jhn_mk5.jpg/190px-Jhn_mk5.jpg">
-  <img src="https://reprap.org/mediawiki/images/thumb/2/2a/Jhn_mk5.jpg/190px-Jhn_mk5.jpg" alt="A J-head hotend with thermistor and heating element" width="200" height="auto" style="float: right; margin-left: 1rem;"/>
+<a href="/images/jhead.png">
+  <img src="/images/jhead.png" alt="A J-head hotend with thermistor and heating element" width="200" height="auto" style="float: right; margin-left: 1rem;"/>
 </a>
 {:/nomarkdown}
 

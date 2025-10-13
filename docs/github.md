@@ -3,10 +3,12 @@
 
 # How to submit a pull request to the Smoothieware Github project
 
+{::nomarkdown}
 <sl-alert variant="neutral" open>
   <sl-icon slot="icon" name="info-circle"></sl-icon>
   We use edge as our stable branch (master is no longer maintained). We do not have an unstable branch, so this is why we only allow very well tested PRs into edge.
 </sl-alert>
+{:/nomarkdown}
 
 ## Fork the original repository
 
@@ -30,13 +32,16 @@ On your local workstation clone the repository: `git clone <your GitHub fork of 
 
 Create a fix branch with a descriptive name: `git checkout -b fix/some-error`
 
+{::nomarkdown}
 <sl-alert variant="warning" open>
   <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
   <strong>NOTE only one feature/bug fix per branch please</strong>
 </sl-alert>
+{:/nomarkdown}
 
 Edit the file to fix the error.
 
+{::nomarkdown}
 <sl-alert variant="warning" open>
   <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
   <strong>Please</strong>
@@ -45,6 +50,7 @@ Edit the file to fix the error.
     <li>Make sure your changes are coincide with our <a href="coding-standards.md">coding standards</a>! (use 4 spaces per indent and not tabs, etc.)</li>
   </ul>
 </sl-alert>
+{:/nomarkdown}
 
 ## Commit your changes and push it back on GitHub
 
@@ -62,6 +68,7 @@ Select edge as the destination branch, add comments.
 
 ![Selecting branch](images/github-5.png)
 
+{::nomarkdown}
 <sl-alert variant="warning" open>
   <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
   <strong>Please</strong>
@@ -70,6 +77,7 @@ Select edge as the destination branch, add comments.
     <li>Check that only the lines you want changed are changed.</li>
   </ul>
 </sl-alert>
+{:/nomarkdown}
 
 Finally, submit the pull request.
 

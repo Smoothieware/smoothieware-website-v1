@@ -1,7 +1,9 @@
 # Configurator
 
 {::nomarkdown}
-<img src="images/coding.png" alt="Configuration" width="250" height="auto" style="float: right; margin-left: 1rem;"/>
+<a href="/images/coding.png">
+  <img src="/images/coding.png" alt="Configuration" width="150" height="150" style="float: right; margin-left: 1rem;"/>
+</a>
 {:/nomarkdown}
 
 The Configurator module allows you to manipulate configuration using console commands.

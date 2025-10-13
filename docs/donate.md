@@ -2,8 +2,8 @@
 # Support the Project
 
 {::nomarkdown}
-<a href="images/give.png">
-  <img src="images/give.png" alt="GIVE" width=100 height=100 style="float: right; margin-left: 1rem;"/>
+<a href="/images/give.png">
+  <img src="/images/give.png" alt="GIVE" width="150" height="150" style="float: right; margin-left: 1rem;"/>
 </a>
 {:/nomarkdown}
 

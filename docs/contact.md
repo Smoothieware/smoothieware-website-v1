@@ -1,7 +1,9 @@
 # Contact
 
 {::nomarkdown}
-<img src="images/hashtag.png" alt="Contact" width="300" height="auto" style="float: right; margin-left: 1rem;"/>
+<a href="/images/hashtag.png">
+  <img src="/images/hashtag.png" alt="Contact" width="150" height="150" style="float: right; margin-left: 1rem;"/>
+</a>
 {:/nomarkdown}
 
 For questions, support, or to get involved with the Smoothieware community, please see the [Community](community) page.

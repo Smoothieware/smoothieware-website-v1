@@ -2,8 +2,8 @@
 # Your guide to installing Smoothieboard in a 3D printer
 
 {::nomarkdown}
-<a href="images/guide-3d-printer.png">
-  <img src="images/guide-3d-printer.png" alt="3D printer icon" width="300" height="300" style="float: right; margin-left: 1rem;"/>
+<a href="/images/guide-3d-printer.png">
+  <img src="/images/guide-3d-printer.png" alt="3D printer icon" width="100" height="100" style="float: right; margin-left: 1rem;"/>
 </a>
 {:/nomarkdown}
 
@@ -13,13 +13,13 @@ This is a step-by-step guide to connecting your board to the various components 
 
 This guide is a [community](http://smoothieware.org/irc) effort, and this page is a Wiki. Please don't hesitate to [edit it](#_editpage) to fix mistakes and add information, any help is very welcome.
 
+On a typical 3D printer setup, installing a Smoothieboard will mean you do the following things: 
+
 {::nomarkdown}
-<a href="images/smoothieboard-fritzing.png">
-  <img src="images/smoothieboard-fritzing.png" alt="Smoothieboard Fritzing" style="float: right; margin-left: 1rem; width: 500px;"/>
+<a   href = "/images/smoothieboard-fritzing.png">
+<img src  = "/images/smoothieboard-fritzing.png" alt = "Smoothieboard Fritzing" style = "float: right; margin-left: 1rem; width: 500px;"/>
 </a>
 {:/nomarkdown}
-
-On a typical 3D printer setup, installing a Smoothieboard will mean you do the following things:
 
 * Read all of the guide before you start, best way to avoid mistakes
 * Install some [Software](software) to talk to your board
@@ -76,8 +76,8 @@ Some users have hand-translated this page. Note that this translated version is 
 {% include_relative extruder-guide.md %}
 
 {::nomarkdown}
-<a href="images/v6-hero-hot-end.png">
-  <img src="images/v6-hero-hot-end.png" alt="A Hotend" width="300" height="200" style="float: right; margin-left: 1rem;"/>
+<a href="/images/v6-hero-hot-end.png">
+  <img src="/images/v6-hero-hot-end.png" alt="A Hotend" width="300" height="200" style="float: right; margin-left: 1rem;"/>
 </a>
 {:/nomarkdown}
 
@@ -106,8 +106,8 @@ By reading that resistance, we can determine the temperature of a hot-end or a h
 This allows Smoothie to turn the heater on or off depending on the temperature it reads, to achieve the desired temperature.
 
 {::nomarkdown}
-<a href="images/thermistor-inputs.png">
-  <img src="images/thermistor-inputs.png" alt="Thermistor inputs" width="300" height="200" style="float: right; margin-left: 1rem;"/>
+<a href="/images/thermistor-inputs.png">
+  <img src="/images/thermistor-inputs.png" alt="Thermistor inputs" width="300" height="200" style="float: right; margin-left: 1rem;"/>
 </a>
 {:/nomarkdown}
 
@@ -143,8 +143,8 @@ temperature_control.bed.thermistor_pin       0.24             # Pin for the heat
 You can, however, use any thermistor pin you want for any temperature control module you want.
 
 {::nomarkdown}
-<a href="images/thermistor.png">
-  <img src="images/thermistor.png" alt="A thermistor" width="300" height="225" style="float: right; margin-left: 1rem;"/>
+<a href="/images/thermistor.png">
+  <img src="/images/thermistor.png" alt="A thermistor" width="300" height="225" style="float: right; margin-left: 1rem;"/>
 </a>
 {:/nomarkdown}
 
@@ -271,8 +271,8 @@ This means we will make 4 connections:
 
 {::nomarkdown}
 <div style="text-align: center; margin: 2rem 0;">
-  <a href="images/example-heating-setup.svg">
-    <img src="images/example-heating-setup.svg" alt="Example wiring with a hotend and a heated bed" style="min-width: 640px; height: auto;"/>
+  <a href="/images/example-heating-setup.svg">
+    <img src="/images/example-heating-setup.svg" alt="Example wiring with a hotend and a heated bed" style="min-width: 640px; height: auto;"/>
   </a>
   <p><em>Note how the mosfets need power provided to their power inputs</em></p>
 </div>
@@ -322,8 +322,8 @@ Now wire the fan to the output for that MOSFET (here it is the first small MOSFE
 
 {::nomarkdown}
 <div style="text-align: center; margin: 2rem 0;">
-  <a href="images/fan-basic.svg.png">
-    <img src="images/fan-basic.svg.png" alt="Wiring a fan to a small mosfet" style="min-width: 640px; height: auto;"/>
+  <a href="/images/fan-basic.svg">
+    <img src="/images/fan-basic.svg" alt="Wiring a fan to a small mosfet" style="min-width: 640px; height: auto;"/>
   </a>
   <p><em>The fan is wired to the output for the first small mosfet (watch the polarity, and make sure you always add a diode when wiring a fan), and the small mosfets are getting power via their power input. (NB Note - newer revisions of the Smoothieboard now come with the Diodes installed on the Small Mosfets - do a visual check to confirm)</em></p>
 </div>
@@ -350,8 +350,8 @@ Note starting with Smoothieboard version 1.1, **you do not need to do this anymo
 
 {::nomarkdown}
 <div style="text-align: center; margin: 2rem 0;">
-  <a href="images/adding-diodes-before-v1-1.jpg">
-    <img src="images/adding-diodes-before-v1-1.jpg" alt="Prior to version 1.1 PCBs: Adding Diodes to a Smoothieboard" style="min-width: 640px; height: auto;"/>
+  <a href="/images/adding-diodes-before-v1-1.jpg">
+    <img src="/images/adding-diodes-before-v1-1.jpg" alt="Prior to version 1.1 PCBs: Adding Diodes to a Smoothieboard" style="min-width: 640px; height: auto;"/>
   </a>
   <p><em>Prior to version 1.1 PCBs: Adding Diodes to a Smoothieboard</em></p>
 </div>
@@ -360,3 +360,17 @@ Note starting with Smoothieboard version 1.1, **you do not need to do this anymo
 The diode should be installed with the white band (negative side of the diode) soldered to the + (positive side) of the power output, and the other side to the - (negative side) of the power output.
 
 Good diodes to use are: 1N5819 or SS14.
+
+
+
+
+{% include_relative z-probe-guide.md %}
+
+{% include_relative panel-guide.md %}
+
+## Appendixes
+
+{% include_relative general-appendixes.md %}
+
+
+{% include_relative troubleshooting.md %}

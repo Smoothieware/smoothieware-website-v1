@@ -5,7 +5,6 @@ This page lists all configuration options for the Extruder module.
 
 For more detailed information and examples, see the [Extruder](extruder) guide.
 
-
 ## Configuration Reference
 
 | Parameter | Default | Description |

@@ -26,8 +26,8 @@ Before you get started you should have a look into your laser power supply.
 There are different models and types out there and the wiring would vary accordingly.
 
 {::nomarkdown}
-<a href="images/psu.png">
-  <img src="images/psu.png" alt="PSU" style="width:100%; max-width: 640px; display: block; margin: 1rem auto;"/>
+<a href="/images/psu.png">
+  <img src="/images/psu.png" alt="PSU" style="width:100%; max-width: 640px; display: block; margin: 1rem auto;"/>
 </a>
 {:/nomarkdown}
 
@@ -51,8 +51,8 @@ PSU could label them differently ex: (G,P,L,G,IN,5v ), (TH,TL,WP,G,IN.5V ), (K+,
 Conditions for a recent PSU (not my case)
 
 {::nomarkdown}
-<a href="images/spreadsheet.png">
-  <img src="images/spreadsheet.png" alt="Spreadsheet" style="width:100%; max-width: 640px; display: block; margin: 1rem auto;"/>
+<a href="/images/spreadsheet.png">
+  <img src="/images/spreadsheet.png" alt="Spreadsheet" style="width:100%; max-width: 640px; display: block; margin: 1rem auto;"/>
 </a>
 {:/nomarkdown}
 
@@ -61,8 +61,8 @@ Personally, I got a MYJG40W from [jnmydy.com](http://www.jnmydy.com) and I can't
 But I made it work with this schema:
 
 {::nomarkdown}
-<a href="images/k40-wiring.png">
-  <img src="images/k40-wiring.png" alt="K40 Wiring" style="width:100%; max-width: 640px; display: block; margin: 1rem auto;"/>
+<a href="/images/k40-wiring.png">
+  <img src="/images/k40-wiring.png" alt="K40 Wiring" style="width:100%; max-width: 640px; display: block; margin: 1rem auto;"/>
 </a>
 {:/nomarkdown}
 
@@ -73,8 +73,8 @@ From the factory, I identified 2 original wirings, very similar.
 Flat connector (CN3) or cables (CN21 CN22 CN4) doing the same thing.
 
 {::nomarkdown}
-<a href="images/pasted.png">
-  <img src="images/pasted.png" alt="Pasted" style="width:100%; max-width: 640px; display: block; margin: 1rem auto;"/>
+<a href="/images/pasted.png">
+  <img src="/images/pasted.png" alt="Pasted" style="width:100%; max-width: 640px; display: block; margin: 1rem auto;"/>
 </a>
 {:/nomarkdown}
 
@@ -100,8 +100,8 @@ Smoothie board Pin 2.5 on JP 33 is 3.3V you will need a level shifter to 5V (2GB
 see schema for wiring.
 
 {::nomarkdown}
-<a href="images/smoothie-attempt.png">
-  <img src="images/smoothie-attempt.png" alt="Smoothie Attempt" style="width:100%; max-width: 640px; display: block; margin: 1rem auto;"/>
+<a href="/images/smoothie-attempt.png">
+  <img src="/images/smoothie-attempt.png" alt="Smoothie Attempt" style="width:100%; max-width: 640px; display: block; margin: 1rem auto;"/>
 </a>
 {:/nomarkdown}
 
@@ -122,16 +122,16 @@ Find the datasheet for your motors and their current max. (K40 is fitted with al
 [Smoothmotor](http://www.smoothmotor.com/Standard-Models/Nema-Stepper-Motor.html)
 
 {::nomarkdown}
-<a href="images/page8.png">
-  <img src="images/page8.png" alt="Page 8" style="width:100%; max-width: 640px; display: block; margin: 1rem auto;"/>
+<a href="/images/page8.png">
+  <img src="/images/page8.png" alt="Page 8" style="width:100%; max-width: 640px; display: block; margin: 1rem auto;"/>
 </a>
 {:/nomarkdown}
 
 X Motor (double-sided shaft) 17HA507H-22P3
 
 {::nomarkdown}
-<a href="images/page9.png">
-  <img src="images/page9.png" alt="Page 9" style="width:100%; max-width: 640px; display: block; margin: 1rem auto;"/>
+<a href="/images/page9.png">
+  <img src="/images/page9.png" alt="Page 9" style="width:100%; max-width: 640px; display: block; margin: 1rem auto;"/>
 </a>
 {:/nomarkdown}
 
@@ -212,8 +212,8 @@ network.hostname                             SmoothK40             # Some DHCP s
 ```
 
 {::nomarkdown}
-<a href="images/welcome-to-smoothie.png">
-  <img src="images/welcome-to-smoothie.png" alt="Welcome to Smoothie" style="width:100%; max-width: 640px; display: block; margin: 1rem auto;"/>
+<a href="/images/welcome-to-smoothie.png">
+  <img src="/images/welcome-to-smoothie.png" alt="Welcome to Smoothie" style="width:100%; max-width: 640px; display: block; margin: 1rem auto;"/>
 </a>
 {:/nomarkdown}
 
@@ -230,8 +230,8 @@ Select menu Option, manage laser cutter, choose smoothie, fill your settings in.
 You are done ;-))
 
 {::nomarkdown}
-<a href="images/visicut-settings.png">
-  <img src="images/visicut-settings.png" alt="Visicut Settings" style="width:100%; max-width: 640px; display: block; margin: 1rem auto;"/>
+<a href="/images/visicut-settings.png">
+  <img src="/images/visicut-settings.png" alt="Visicut Settings" style="width:100%; max-width: 640px; display: block; margin: 1rem auto;"/>
 </a>
 {:/nomarkdown}
 

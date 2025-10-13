@@ -3,6 +3,7 @@
 
 This chapter should give you an idea about how to realize a proper emergency stop setup.
 
+{::nomarkdown}
 <sl-alert variant="warning" open>
   <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
   <strong>Warning</strong><br><br>
@@ -12,6 +13,7 @@ This chapter should give you an idea about how to realize a proper emergency sto
 
   Even in industrial grade CNC controllers it is necessary to have an external emergency circuit (If the CNC controller does not provide safety integrated features).
 </sl-alert>
+{:/nomarkdown}
 
 A small 3D printer driven by a Smoothieboard may not endanger a user under normal conditions due to the small stepper motors used, but if the machine gets bigger the risk also increases.
 
@@ -19,11 +21,13 @@ Anyway, it's always a good idea to have a proper emergency circuit in place to p
 
 ## Basic Emergency Stop Setup
 
+{::nomarkdown}
 <sl-alert variant="neutral" open>
   <sl-icon slot="icon" name="info-circle"></sl-icon>
   <strong>E-stop wiring</strong><br><br>
   For safety reasons, emergency buttons are wired as NC (normally closed) switches. This makes sure that in case of a cable break, an emergency stop is triggered.
 </sl-alert>
+{:/nomarkdown}
 
 To provide the bare minimum of safety, you should be able to stop all motors immediately in case of an accident.
 
@@ -33,8 +37,8 @@ Instead, you should rely on an external circuit that cuts the power for the step
 
 {::nomarkdown}
 <div style="text-align: center; margin: 2rem 0;">
-  <a href="images/emergency-stop-1.png">
-    <img src="images/emergency-stop-1.png" alt="Emergency Stop Wiring 1" style="min-width: 640px; height: auto;"/>
+  <a href="/images/emergency-stop-1.png">
+    <img src="/images/emergency-stop-1.png" alt="Emergency Stop Wiring 1" style="min-width: 640px; height: auto;"/>
   </a>
 </div>
 {:/nomarkdown}
@@ -45,12 +49,13 @@ So it's a better idea to use a contactor/relay that switches the VBB and the Eme
 
 {::nomarkdown}
 <div style="text-align: center; margin: 2rem 0;">
-  <a href="images/emergency-stop-2.png">
-    <img src="images/emergency-stop-2.png" alt="Emergency Stop Wiring 2" style="min-width: 640px; height: auto;"/>
+  <a href="/images/emergency-stop-2.png">
+    <img src="/images/emergency-stop-2.png" alt="Emergency Stop Wiring 2" style="min-width: 640px; height: auto;"/>
   </a>
 </div>
 {:/nomarkdown}
 
+{::nomarkdown}
 <sl-alert variant="warning" open>
   <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
   <strong>Logic Power Supply</strong><br><br>
@@ -58,12 +63,15 @@ So it's a better idea to use a contactor/relay that switches the VBB and the Eme
 
   To avoid this, you can power it separately by supplying 5V to the same connector. For details, check out the section about <a href="main-power-input">power input</a>.
 </sl-alert>
+{:/nomarkdown}
 
+{::nomarkdown}
 <sl-alert variant="warning" open>
   <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
   <strong>Contactor Coil Voltage</strong><br><br>
   Make sure that the rated voltage of your contactor coil is the same as your PSU output voltage! If that doesn't apply, you need to separate the pushbutton and coil circuit from the voltage switched by the contactor.
 </sl-alert>
+{:/nomarkdown}
 
 This setup will stop all parts that are powered through the VBB connector.
 
@@ -83,8 +91,8 @@ We assume all stepper drivers are external ones.
 
 {::nomarkdown}
 <div style="text-align: center; margin: 2rem 0;">
-  <a href="images/emergency-stop-4.png">
-    <img src="images/emergency-stop-4.png" alt="Emergency Stop Wiring 4" style="min-width: 640px; height: auto;"/>
+  <a href="/images/emergency-stop-4.png">
+    <img src="/images/emergency-stop-4.png" alt="Emergency Stop Wiring 4" style="min-width: 640px; height: auto;"/>
   </a>
 </div>
 {:/nomarkdown}
@@ -106,11 +114,14 @@ The VFD is powered via mains directly, so we will disconnect it as well.
   <strong>Stay Alive</strong><br><br>
   Working with mains voltage and even DC voltages above 50VDC is considered deadly! Make sure you know what you do or if not, ask a person with the necessary skills to help you!
 </sl-alert>
+{:/nomarkdown}
 
+{::nomarkdown}
 <sl-alert variant="neutral" open>
   <sl-icon slot="icon" name="info-circle"></sl-icon>
   Maybe the VFD has an E-Stop input and I'm going to use that input and not the mains variant, but that needs to be checked for the certain VFD.
 </sl-alert>
+{:/nomarkdown}
 
 The K1 relay is wired to the play/pause button ([see the details here](pausebutton)).
 

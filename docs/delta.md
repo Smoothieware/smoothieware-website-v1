@@ -1,5 +1,10 @@
-
 # Configuring a Smoothieboard for Linear Delta Kinematics
+
+{::nomarkdown}
+<a href="/images/board.png">
+  <img src="/images/board.png" alt="Delta Configuration" width="150" height="150" style="float: right; margin-left: 1rem;"/>
+</a>
+{:/nomarkdown}
 
 Linear delta 3D printers use the power of mathematics to move your extruder.
 
@@ -24,12 +29,14 @@ They can be quite fast due to the low moving mass, in particular in the Z direct
 
 ## Start with this file!
 
+{::nomarkdown}
 <sl-alert variant="neutral" open>
   <sl-icon slot="icon" name="info-circle"></sl-icon>
   <strong>Use the Delta Configuration File</strong>
   <p>You can find an example linear delta configuration on GitHub <a href="https://github.com/Smoothieware/Smoothieware/blob/edge/ConfigSamples/Smoothieboard.delta/config">here</a>.</p>
   <p>It is <strong>strongly recommended</strong> you start from this example configuration file instead of modifying the default cartesian configuration file.</p>
 </sl-alert>
+{:/nomarkdown}
 
 ## Enabling the Arm Solution
 
@@ -83,6 +90,7 @@ Beyond that, precise construction of your delta printer is critical:
 - The towers need to be 120° apart and perfectly vertical
 - The three arms (including their carriages) must all be the same length to the center of the effector platform
 
+{::nomarkdown}
 <sl-alert variant="primary" open>
   <sl-icon slot="icon" name="lightbulb"></sl-icon>
   <strong>Coming from Marlin?</strong>
@@ -92,16 +100,19 @@ Beyond that, precise construction of your delta printer is critical:
     <li><code>arm_radius</code> is <code>DELTA_RADIUS</code>, which is calculated as follows: <code>DELTA_RADIUS</code> = <code>DELTA_SMOOTH_ROD_OFFSET</code> - <code>DELTA_EFFECTOR_OFFSET</code> - <code>DELTA_CARRIAGE_OFFSET</code></li>
   </ul>
 </sl-alert>
+{:/nomarkdown}
 
 ## Homing
 
 The linear delta arm solution is pretty much useless without homing.
 
+{::nomarkdown}
 <sl-alert variant="danger" open>
   <sl-icon slot="icon" name="exclamation-octagon"></sl-icon>
   <strong>Endstops Required</strong>
   <p><strong>Do not try to set up a printer without endstops, and do not try to do anything with your printer before you home it.</strong></p>
 </sl-alert>
+{:/nomarkdown}
 
 Test the endstops with M119, and make sure the X endstop triggers when the endstop on the X tower is activated, and same for Y and Z towers.
 
@@ -160,11 +171,13 @@ The `alpha_trim_mm`, `beta_trim_mm` and `gamma_trim_mm` settings are a way to tw
 
 The trim values are the distance in millimeters from the point where your endstop is triggered.
 
+{::nomarkdown}
 <sl-alert variant="neutral" open>
   <sl-icon slot="icon" name="info-circle"></sl-icon>
   <strong>Migrating from Repetier-Firmware?</strong>
   <p>If you are migrating a printer from Repetier-Firmware, your endstop offsets are defined in terms of steps for your stepper motors. To convert, divide the number of steps by your steps_per_mm for that axis.</p>
 </sl-alert>
+{:/nomarkdown}
 
 `M666 Xnnn Ynnn Znnn` allow you to adjust the trim values on a live system.
 
@@ -174,6 +187,7 @@ Negative values adjust the endstops down by that number of mm. Positive values a
 
 When you have found the correct values for your endstop settings (see the suggested workflow near the bottom of this page for one process to adjust the trim values), edit the config file and reboot, or save the `M666` values with `M500`.
 
+{::nomarkdown}
 <sl-alert variant="warning" open>
   <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
   <strong>Note for Deltas using M666 to set soft trim</strong>
@@ -182,6 +196,7 @@ When you have found the correct values for your endstop settings (see the sugges
   <p>When you home a delta that has non zero trim values, you will find that X and Y are not 0 after homing. This is normal.</p>
   <p>If you want X0 Y0 after homing you can set <code>move_to_origin_after_home  true</code> in the config (this is the default now), this will move the effector to 0,0 after it homes and sets the trim. Note that the carriages will move off the endstops a little bit after homing so the head can move without crashing into the endstops.</p>
 </sl-alert>
+{:/nomarkdown}
 
 ## Arm Parameters
 
@@ -205,6 +220,7 @@ On its own will just report the current settings.
 
 These can also be saved with M500.
 
+{::nomarkdown}
 <sl-alert variant="warning" open>
   <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
   <strong>It's all relative</strong>
@@ -219,6 +235,7 @@ These can also be saved with M500.
   </ol>
   <p>Once the z-height is correct, your printer should be well-calibrated. You should not need to re-do these calibration steps unless you change hardware on your printer.</p>
 </sl-alert>
+{:/nomarkdown}
 
 ## Height Calibration
 
@@ -232,8 +249,8 @@ And it needs to know this, so that when you tell it to go to Z 0 (the bed), it k
 
 {::nomarkdown}
 <div style="text-align: center; margin: 20px 0;">
-  <a href="images/DeltaAtHome.jpg">
-    <img src="images/DeltaAtHome.jpg" alt="Delta machine coordinates" style="max-width: 500px; height: auto;"/>
+  <a href="/images/DeltaAtHome.jpg">
+    <img src="/images/DeltaAtHome.jpg" alt="Delta machine coordinates" style="max-width: 500px; height: auto;"/>
   </a>
   <p><em>Understanding delta printer coordinates - it's basically a cylinder and you position things around its center</em></p>
 </div>
@@ -359,10 +376,12 @@ G0 Z0 X0 Y90 F3500
 
 Here's a manual calibration tutorial video:
 
+{::nomarkdown}
 <sl-alert variant="neutral" open>
   <sl-icon slot="icon" name="info-circle"></sl-icon>
   <strong>Note:</strong> The second video mentioned in this video has a technique which is NOT a good fine-tuning method - the one where he measures the first layer thickness. This is not a good way to adjust trim.
 </sl-alert>
+{:/nomarkdown}
 
 {::nomarkdown}
 <div style="text-align: center; margin: 20px 0;">

@@ -1,7 +1,12 @@
 
 # Smoothie Mailing Lists
 
-Mailing lists are a great way to get help or discuss various topics about Smoothie.
+{::nomarkdown}
+<sl-alert variant="primary" open>
+  <sl-icon slot="icon" name="envelope"></sl-icon>
+  Mailing lists are a great way to get help or discuss various topics about Smoothie with the community.
+</sl-alert>
+{:/nomarkdown}
 
 Before posting to the mailing lists, please read the following recommendations:
 
@@ -9,16 +14,30 @@ Before posting to the mailing lists, please read the following recommendations:
 
 ## The Mailing Lists
 
-Smoothie has two different mailing lists:
+Smoothie has two different mailing lists, each serving a specific purpose:
 
 ### Support Mailing List
 
-The [support mailing list](http://groups.google.com/group/smoothieware-support) is used to get help with problems.
+The [support mailing list](http://groups.google.com/group/smoothieware-support) is for getting help with problems.
 
-Click [here](http://groups.google.com/group/smoothieware-support) to go there.
+This is the right place to ask questions about:
+
+- Configuration issues
+- Hardware problems
+- Software troubleshooting
+- General usage questions
+
+[Visit the support mailing list](http://groups.google.com/group/smoothieware-support)
 
 ### Developer Mailing List
 
-The [developer mailing list](http://groups.google.com/group/smoothie-dev) is used to discuss Smoothie coding and evolutions.
+The [developer mailing list](http://groups.google.com/group/smoothie-dev) is for discussing Smoothie coding and development.
 
-Click [here](http://groups.google.com/group/smoothie-dev) to go there.
+This is the right place for:
+
+- Code contributions
+- Feature proposals
+- Architecture discussions
+- Development coordination
+
+[Visit the developer mailing list](http://groups.google.com/group/smoothie-dev)

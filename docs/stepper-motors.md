@@ -1,9 +1,11 @@
 
 # Stepper Motors
 
-![Stepper Motor](https://www.youtube.com/embed/eyqwLiowZiU)
-
-![Stepper Motor](https://www.youtube.com/embed/bngx2dKl5jU)
+{::nomarkdown}
+<div style="text-align: center; margin: 2rem 0;">
+  <iframe style="width:70%; min-height:500px" src="https://www.youtube.com/embed/eyqwLiowZiU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+{:/nomarkdown}
 
 A bit of theory:
 
@@ -13,10 +15,32 @@ Because they work by steps, and you can accurately control how many steps you mo
 
 Smoothie comes with stepper motor drivers designed for bipolar stepper motors, with a maximum current rating of 2 Amps.
 
+{::nomarkdown}
 <sl-alert variant="warning" open>
   <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
-  There is a very wide variety of stepper motors around.<br><br>Bigger motors are generally more powerful.<br><br>For a given size, motors will have different torques, max speeds, and different capacities to maintain torque as speed increases.<br><br>It is important you choose the right motor for your application.<br><br>The most common mistake is to choose a high inductance motor.<br><br>There are two main "families" of motors out there: high inductance motors are mostly designed for maintaining position and moving rarely (like on a telescope mount), and low inductance motors are designed for moving often, and at high speeds (like on a CNC mill or 3D printer).<br><br>If you use a high inductance stepper motor with a Smoothieboard (or any "CNC" stepper motor driver), not only will you get bad speed/torque performance, but when moving the stepper motor (or axis) by hand, very high voltage will be generated, which can destroy your stepper motor driver.<br><br>You can recognize a "high inductance" stepper motor by the fact that it's rated inductance is high, in general higher than <code>10mH</code> is bad.<br><br>If your motor doesn't tell you its inductance, rated voltage is also an indication: high inductance stepper motors usually have high rated voltages, a typical value being <code>12V</code>, where "CNC" steppers have voltage below 5V.<br><br>This is not what you want, you want a low inductance stepper motor, with an inductance ideally below 10mH, and a rated voltage ideally below 5V The reprap community defines a good stepper motor like this: ``<code> Ideal stepper is (for reprap printers and similar small CNC using microstepping drivers on 12-24v supply) NEMA17 size, rated 1.5A to 1.8A or less, 1-4ohm winding resistance, 3 to 8 mH, 62oz.in (0.44Nm, 4.5kg.cm) or more of torque, 1.8 or 0.9 degrees per step (200/400 steps/rev respectively), for example the kysan 1124090/42BYGH4803 or the rattm 17HS8401 or Wantai </code>`` !<a href="https://github.com/Bouni/smoothieboard-graphics/blob/master/smoothieboard-stepper-wiring.png?raw=true">Stepper motor wiring</a> *Be careful you get the coils right*.
+  <strong>Choosing the Right Stepper Motor</strong>
+  <br><br>
+  There is a very wide variety of stepper motors around. Bigger motors are generally more powerful.
+  <br><br>
+  For a given size, motors will have different torques, max speeds, and different capacities to maintain torque as speed increases. It is important you choose the right motor for your application.
+  <br><br>
+  <strong>The most common mistake is to choose a high inductance motor.</strong>
+  <br><br>
+  There are two main "families" of motors out there: high inductance motors are mostly designed for maintaining position and moving rarely (like on a telescope mount), and low inductance motors are designed for moving often, and at high speeds (like on a CNC mill or 3D printer).
+  <br><br>
+  If you use a high inductance stepper motor with a Smoothieboard (or any "CNC" stepper motor driver), not only will you get bad speed/torque performance, but when moving the stepper motor (or axis) by hand, very high voltage will be generated, which can destroy your stepper motor driver.
+  <br><br>
+  You can recognize a "high inductance" stepper motor by the fact that it's rated inductance is high, in general higher than <code>10mH</code> is bad.
+  <br><br>
+  If your motor doesn't tell you its inductance, rated voltage is also an indication: high inductance stepper motors usually have high rated voltages, a typical value being <code>12V</code>, where "CNC" steppers have voltage below 5V.
+  <br><br>
+  This is not what you want, you want a low inductance stepper motor, with an inductance ideally below 10mH, and a rated voltage ideally below 5V.
+  <br><br>
+  The reprap community defines a good stepper motor like this: <em>Ideal stepper is (for reprap printers and similar small CNC using microstepping drivers on 12-24v supply) NEMA17 size, rated 1.5A to 1.8A or less, 1-4ohm winding resistance, 3 to 8 mH, 62oz.in (0.44Nm, 4.5kg.cm) or more of torque, 1.8 or 0.9 degrees per step (200/400 steps/rev respectively), for example the kysan 1124090/42BYGH4803 or the rattm 17HS8401 or Wantai</em>
+  <br><br>
+  See: <a href="https://github.com/Bouni/smoothieboard-graphics/blob/master/smoothieboard-stepper-wiring.png?raw=true">Stepper motor wiring</a> - <strong>Be careful you get the coils right</strong>.
 </sl-alert>
+{:/nomarkdown}
 
 ## Wiring
 
@@ -33,25 +57,32 @@ The tricky thing is often to find out which wires connect to which poles. If you
 - Multimeter: Configure your multimeter to read resistance. Then the method is the same as the previous one, take two wires at random, test them, except you know you find a coil when you measure electrical resistance between two wires. If you measure no contact, try another wire combination. Note the colours that correspond to each coil.
 
 Now to connect the wires to the Smoothieboard. Let's call one coil A, and the other coil B. It doesn't matter which is which. Polarity also doesn't matter, all it changes is the direction the motor turns, and you can change that in the configuration file. Now simply connect your two wires to the Smoothieboard's 4 pins for that stepper motor driver as such: AABB or BBAA. Other combinations like ABBA or ABAB will not work.
->
 
-![How to properly connect stepper motors](https://raw.githubusercontent.com/Bouni/smoothieboard-graphics/master/smoothieboard-stepper-wiring.png)
-
-*If you don't get it right, it won't work properly*
+{::nomarkdown}
+<div style="text-align: center; margin: 2rem 0;">
+  <a href="/images/smoothieboard-steppers-wiring.png">
+    <img src="/images/smoothieboard-steppers-wiring.png" alt="How to properly connect stepper motors" style="min-width: 640px; width: 640px; max-width: 100%; height: auto;"/>
+  </a>
+  <p style="font-style: italic; margin-top: 0.5rem;">If you don't get it right, it won't work properly</p>
+</div>
+{:/nomarkdown}
 
 Once your stepper motor is properly connected to your Smoothieboard, it is ready to be controlled.
 
-![Wiring a stepper motor to a stepper motor driver](http://arthurwolf.github.io/smoothieboard-graphics/schematics/stepper-basic.svg)
-
-*In this example, a stepper motor is connected to the M1 driver, and power is provided to VBB (the main power input).*
+{::nomarkdown}
+<div style="text-align: center; margin: 2rem 0;">
+  <a href="/images/stepper-basic.png">
+    <img src="/images/stepper-basic.png" alt="Wiring a stepper motor to a stepper motor driver" style="min-width: 640px; width: 640px; max-width: 100%; height: auto;"/>
+  </a>
+  <p style="font-style: italic; margin-top: 0.5rem;">In this example, a stepper motor is connected to the M1 driver, and power is provided to VBB (the main power input).</p>
+</div>
+{:/nomarkdown}
 
 ### External Stepper driver
 
 If you want to use larger stepper motors than the Smoothieboard's drivers can handle (2A max), you need to use external stepper drivers.
 
 You can find detailed information on how to wire an external stepper motor driver to a Smoothieboard in the [External driver appendix](http://smoothieware.org/general-appendixes#external-drivers).
-![Stepper motor](http://smoothieware.org/general-appendixes#external-drivers)
-*They often have useful information on them*
 
 ## Configuring
 
@@ -86,8 +117,6 @@ alpha_current                                1.68             # X stepper motor 
 ```
 
 Do this for each stepper motor you have to connect to the board. (If you have a Cartesian robot, see which motor connects to which stepper driver in the array above. If you use another type of arm solution, see the specific documentation.)
-![A stepper motor]
-(http://cncsuperstore.com/image/cache/data/Products/Kits_Assemblies/JS%20KH42JM2B182A%20KIT/8-500x500.JPG)
 
 ### Steps per millimeter
 
@@ -123,9 +152,11 @@ Do this for each stepper motor driver.
 
 In the case of your extruder stepper motor, the principle is the same, but the value is `extruder_steps_per_mm`.
 
-Here are two good videos about steps-per-millimeters:
+Here is a good video on steps per millimeters:
 
-![Pronterface](https://reprap.org/mediawiki/images/1/12/Pronterface.png)
+{::nomarkdown}
+<iframe width="100%" height="500" src="https://www.youtube.com/embed/VIHgDiCCY0Y?si=c8WmmaF2VHNQLQw3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+{:/nomarkdown}
 
 ### Direction
 
@@ -155,7 +186,15 @@ Save the config file, reset the Smoothieboard, connect again using Pronterface. 
 
 Do this for each axis.
 
+{::nomarkdown}
 <sl-alert variant="warning" open>
   <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
-  If you have a moving bed in the Y axis for example, as opposed to a moving tool, be careful: what matters is the direction of the head relative to the bed, not the direction of the bed relative to the machine.<br><br>It's very common to get confused and invert your Y axis on moving bed machines (or not invert it when it should be).<br><br>Basically, if an asymmetrical object looks like the model when it is printed, then your Y axis is correct, otherwise you need to change your configuration.
+  <strong>Moving Bed Machines:</strong>
+  <br><br>
+  If you have a moving bed in the Y axis for example, as opposed to a moving tool, be careful: what matters is the direction of the head relative to the bed, not the direction of the bed relative to the machine.
+  <br><br>
+  It's very common to get confused and invert your Y axis on moving bed machines (or not invert it when it should be).
+  <br><br>
+  Basically, if an asymmetrical object looks like the model when it is printed, then your Y axis is correct, otherwise you need to change your configuration.
 </sl-alert>
+{:/nomarkdown}

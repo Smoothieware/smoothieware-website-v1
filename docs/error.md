@@ -4,7 +4,6 @@ When Smoothie encounters a problem, it will report an error number to help you d
 
 This page lists all possible error codes, their causes, solutions, and any associated parameters.
 
-
 ## Error Reference
 
 | Error Number | Cause | Solution | Parameters |

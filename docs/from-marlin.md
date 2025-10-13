@@ -7,12 +7,14 @@ title: Moving from Marlin to Smoothie
 
 If you are a Marlin user moving to a Smoothie system, you might have an existing configuration you want to port over.
 
+{::nomarkdown}
 <sl-alert variant="warning" open>
   <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
   Please note it is imperative you read the whole documentation before using Smoothie. Skipping this step <strong>will</strong> almost certainly result in damage and danger.
   <br><br>
   Again, read the whole documentation, do not only rely on this guide.
 </sl-alert>
+{:/nomarkdown}
 
 Assuming you have read the documentation (again: do it, do not skip the documentation), this page is aimed at helping you understand what Marlin options correspond to what Smoothie options.
 

@@ -1,8 +1,17 @@
+# Acceleration Branch
 
+{::nomarkdown}
+<a href="/images/binary-code.png">
+  <img src="/images/binary-code.png" alt="Binary code" width="300" height="300" style="float: right; margin-left: 1rem;"/>
+</a>
+{:/nomarkdown}
+
+{::nomarkdown}
 <sl-alert variant="neutral" open>
   <sl-icon slot="icon" name="info-circle"></sl-icon>
   This is mainly out of date now, and describes a pretty old snapshot of smoothie. Left here for historical reasons.
 </sl-alert>
+{:/nomarkdown}
 
 This page is intended as a description of the current status of acceleration and stepping in Smoothie, and then a log of the process of moving to better acceleration and better ( maybe ) stepping.
 
@@ -74,8 +83,8 @@ In order to analyze how much various things we do take to execute, their cost, w
 This has been extremely useful in the past to figure out where we spent too much time, what needed fixing, etc.
 
 {::nomarkdown}
-<a href="images/step-generation-graph.png">
-  <img src="images/step-generation-graph.png" alt="Step generation graph showing timing analysis" style="min-width: 640px; display: block; margin: 2rem auto;"/>
+<a href="/images/step-generation-graph.png">
+  <img src="/images/step-generation-graph.png" alt="Step generation graph showing timing analysis" style="min-width: 640px; display: block; margin: 2rem auto;"/>
 </a>
 {:/nomarkdown}
 
@@ -206,8 +215,8 @@ Several optimizations found and applied:
 These are optimizations that are most useful in the case we don't do anything. Applying them gives us the following signals/durations:
 
 {::nomarkdown}
-<a href="images/accel-branch/optimized-step-generation-graph.png">
-  <img src="images/accel-branch/optimized-step-generation-graph.png" alt="Optimized step generation graph showing improved performance" style="min-width: 640px; display: block; margin: 2rem auto;"/>
+<a href="/images/accel-branch/optimized-step-generation-graph.png">
+  <img src="/images/accel-branch/optimized-step-generation-graph.png" alt="Optimized step generation graph showing improved performance" style="min-width: 640px; display: block; margin: 2rem auto;"/>
 </a>
 {:/nomarkdown}
 

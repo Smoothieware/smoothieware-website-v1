@@ -1,7 +1,9 @@
 # Configuration Options
 
 {::nomarkdown}
-<img src="images/board.png" alt="Configuration" width="300" height="auto" style="float: right; margin-left: 1rem;"/>
+<a href="/images/board.png">
+  <img src="/images/board.png" alt="Configuration" width="150" height="150" style="float: right; margin-left: 1rem;"/>
+</a>
 {:/nomarkdown}
 
 This is a comprehensive list of configuration options understood by the Smoothie firmware.

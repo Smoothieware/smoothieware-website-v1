@@ -1,6 +1,12 @@
 
 # Migrating to Smoothie
 
+{::nomarkdown}
+<a href="/images/migration.png">
+  <img src="/images/migration.png" alt="Migration" style="float: right; margin-left: 1rem; width: 320px;"/>
+</a>
+{:/nomarkdown}
+
 If you are migrating from another firmware, here are guides to help you understand how some values from your old firmware match the values in your new Smoothie system.
 
 Smoothie uses different configuration parameters and approaches than other common CNC/3D printer firmwares. These guides will help you translate your existing settings.
@@ -22,7 +28,9 @@ When migrating to Smoothie:
 - **Test each major change** before proceeding to the next
 - **Consult the troubleshooting guide** if you encounter issues
 
+{::nomarkdown}
 <sl-alert variant="neutral" open>
   <sl-icon slot="icon" name="info-circle"></sl-icon>
   Need help with your migration? Visit the <a href="irc">IRC channel</a> or check the <a href="troubleshooting">troubleshooting guide</a>.
 </sl-alert>
+{:/nomarkdown}

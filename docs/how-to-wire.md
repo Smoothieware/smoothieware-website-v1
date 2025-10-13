@@ -2,8 +2,8 @@
 # How to wire your Smoothieboard
 
 {::nomarkdown}
-<a href="images/complex-wiring.jpg">
-  <img src="images/complex-wiring.jpg" alt="Complex Wiring" style="display:block;margin:20px auto;min-width:640px;max-width:100%;height:auto;"/>
+<a href="/images/complex-wiring.jpg">
+  <img src="/images/complex-wiring.jpg" alt="Complex Wiring" style="display:block;margin:20px auto;min-width:640px;max-width:100%;height:auto;"/>
 </a>
 {:/nomarkdown}
 
@@ -61,8 +61,20 @@ As seen earlier, earth is for security. In case of default, by example from equi
 Furthermore, earthing those big conductive parts will help with static electrical discharges and prevent them from damaging your brand new Smoothieboard!
 
 ### Protections
-Your house has protection. They are different according to your local rules. In case of electrical default, they may be too slow to react so adding a fuse on the mains of your machine is a good idea. You can buy nice inlets with integrated fuse like this one:
-![Inlet with Fuse](images/how-to-wire/inlet_with_fuse.jpg)
+
+Your house has protection.
+
+They are different according to your local rules.
+
+In case of electrical default, they may be too slow to react so adding a fuse on the mains of your machine is a good idea.
+
+You can buy nice inlets with integrated fuse like this one:
+
+{::nomarkdown}
+<a href="/images/how-to-wire/inlet_with_fuse.jpg">
+  <img src="/images/how-to-wire/inlet_with_fuse.jpg" alt="Inlet with Fuse" width="300" height="200" style="display:block;margin:1rem auto;"/>
+</a>
+{:/nomarkdown}
 
 For bigger power, a circuit breaker is a better option as they are quicker to react in case of a problem (the fuse needs to melt). Even quicker, the RCCB (Residual current circuit breaker) will check the currents leaving to and returning from the load and compare them. If the difference is bigger than a fixed threshold (usually 30mA), it will open.
 
@@ -139,7 +151,11 @@ Tier 3 - low voltage heat pads (12-24VDC) or any current-hungry (high amperage) 
 
 ### Color Coding
 
-![Color Coding](images/how-to-wire/color_coding.jpg)
+{::nomarkdown}
+<a href="/images/how-to-wire/color_coding.jpg">
+  <img src="/images/how-to-wire/color_coding.jpg" alt="Color Coding" width="300" height="200" style="float:right;margin-left:1rem;"/>
+</a>
+{:/nomarkdown}
 
 Color coding your wire is an easy way to identify them later by just looking at them. Color coding is generally ruled by electrical laws of countries. Here's the most important:
 - Brown, black, or grey for Live
@@ -169,19 +185,38 @@ In this chapter, you will find useful components used in electrical cabinets to 
 Here are a few things you can use to manage your wires and cables but also pneumatic or water hoses, filament tubes, etc.
 
 #### Cable Trunking
-![Wiring Ducts](images/how-to-wire/wiring_ducts.jpg)
-![Eustathios](images/how-to-wire/20160402_eustathios_3.jpg)
+
+{::nomarkdown}
+<a href="/images/how-to-wire/wiring_ducts.jpg">
+  <img src="/images/how-to-wire/wiring_ducts.jpg" alt="Wiring Ducts" width="300" height="200" style="display:inline-block;margin:0.5rem;"/>
+</a>
+<a href="/images/how-to-wire/20160402_eustathios_3.jpg">
+  <img src="/images/how-to-wire/20160402_eustathios_3.jpg" alt="Eustathios Cable Management" width="300" height="200" style="display:inline-block;margin:0.5rem;"/>
+</a>
+{:/nomarkdown}
 
 Also called cable ways, cable ducts. The slotted ones are very handy, wires can go in or out where you want. If you have a hot spot full of cables, you can cut some parts to widen the slot. Just cut to length and screw in place. They exist in many sizes of width and height, take some time to choose the right one. 20x20mm fits nicely on 2020 aluminum extrusion. Make sure to use if possible flat head screws or at least with no sharp edges who can damage your wires. The main downside is that you sometimes need to sacrifice space to place them, especially inside electrical cabinets or let's say the electronics area of your printer.
 
 #### Mesh Sleeves & Spiral Wrap
-![Mesh Sleeve](images/how-to-wire/mesh_sleeve.jpg)
-![Spiral Wrap](images/how-to-wire/spiral_wrap.jpg)
+
+{::nomarkdown}
+<a href="/images/how-to-wire/mesh_sleeve.jpg">
+  <img src="/images/how-to-wire/mesh_sleeve.jpg" alt="Mesh Sleeve" width="300" height="200" style="display:inline-block;margin:0.5rem;"/>
+</a>
+<a href="/images/how-to-wire/spiral_wrap.jpg">
+  <img src="/images/how-to-wire/spiral_wrap.jpg" alt="Spiral Wrap" width="300" height="200" style="display:inline-block;margin:0.5rem;"/>
+</a>
+{:/nomarkdown}
 
 Useful to link moving parts over short distances like extruder carriages. They are no brain to use but once in place, it's not the happiest thing to have to add new wires inside.
 
 #### Drag Chains
-![Cable Chain](images/how-to-wire/cable_chain.jpg)
+
+{::nomarkdown}
+<a href="/images/how-to-wire/cable_chain.jpg">
+  <img src="/images/how-to-wire/cable_chain.jpg" alt="Cable Chain" width="300" height="200" style="display:block;margin:1rem auto;"/>
+</a>
+{:/nomarkdown}
 
 The holy grail for CNC routers but they fit perfectly on smaller 3D printers too. Like wire trunking, they're available in many sizes by meter(s). Don't worry if the length is too long for your need. You can just remove some elements until you get the correct length. You will find two types, one closed, the other can be open all the way (to make you happier when adding new wires).
 
@@ -189,29 +224,54 @@ The holy grail for CNC routers but they fit perfectly on smaller 3D printers too
 
 #### Terminals
 
-![Bridge Terminals](images/how-to-wire/bridge_terminals.jpg)
+{::nomarkdown}
+<a href="/images/how-to-wire/bridge_terminals.jpg">
+  <img src="/images/how-to-wire/bridge_terminals.jpg" alt="Bridge Terminals" width="300" height="200" style="float:right;margin-left:1rem;"/>
+</a>
+{:/nomarkdown}
 
 You probably know well terminals as elements on your control board where you connect your wires. I'd like to introduce another type of terminals used in industry to simplify the wiring job. They have a similar function as screw terminals strips: connect circuits together. Where screw terminals have only 2 connection points these industrial terminals can have up to 4 connections points and can be multilevel to save space. They exist in different sizes for different wire sizes. The standard size is up to 2.5mm2 (AWG13) but you can find smaller ones capped for 0.5 or 0.75mm2 (AWG18 or 20), again to save space.
 
 Connection points can either be spring clamps or screws. Screws tend to be the "old" way while clamps are easier, faster, and less prone to wire break (screw over-tightened). Screw connections require crimping ferrules on flex wires.
 
 On the left: 2 level terminal with 3 clamp connection points on each.
-![Screw Terminals](images/how-to-wire/screw_terminals.jpg)
-![Bridge Terminals](images/how-to-wire/bridge_terminals.jpg)
+
+{::nomarkdown}
+<a href="/images/how-to-wire/screw_terminals.jpg">
+  <img src="/images/how-to-wire/screw_terminals.jpg" alt="Screw Terminals" width="300" height="200" style="display:inline-block;margin:0.5rem;"/>
+</a>
+<a href="/images/how-to-wire/bridge_terminals.jpg">
+  <img src="/images/how-to-wire/bridge_terminals.jpg" alt="Bridge Terminals with Bridging" width="300" height="200" style="display:inline-block;margin:0.5rem;"/>
+</a>
+{:/nomarkdown}
 
 Each terminal or terminal's stage can be bridged with its neighbors (in red on the right). Bridges can be purchased at any special length from 2 to 10 or 20. The longer is the better since you can cut them afterward.
 
 For example, make 2 groups of bridged terminals and use each to distribute power supply + and - easily from a single place and spare you the awful spaghetti-thing going from a component to another to another to... You can do that for every different voltage running on your machine.
 
-Use them as wire interface between the inside and the outside of your control box. Below: internal cabinets wiring come from the bottom cable way, upper cables go to actuators, sensors, etc.
+Use them as wire interface between the inside and the outside of your control box.
 
-![Example 01](images/how-to-wire/example_01.jpg)
+Below: internal cabinets wiring come from the bottom cable way, upper cables go to actuators, sensors, etc.
+
+{::nomarkdown}
+<a href="/images/how-to-wire/example_01.jpg">
+  <img src="/images/how-to-wire/example_01.jpg" alt="Wiring Example" width="400" height="300" style="display:block;margin:1rem auto;"/>
+</a>
+{:/nomarkdown}
 
 #### Crimping Connectors
 
-Crimping connectors are a cheap and easy way to connect our electrical components. There are many types available. The most known are Dupont, Molex, or the simple headers as found on Arduino, etc.
+Crimping connectors are a cheap and easy way to connect our electrical components.
 
-![Smoothie Wiring](images/how-to-wire/20161206_smoothie_wiring.jpg)
+There are many types available.
+
+The most known are Dupont, Molex, or the simple headers as found on Arduino, etc.
+
+{::nomarkdown}
+<a href="/images/how-to-wire/20161206_smoothie_wiring.jpg">
+  <img src="/images/how-to-wire/20161206_smoothie_wiring.jpg" alt="Smoothie Wiring with Dupont Connectors" width="400" height="300" style="display:block;margin:1rem auto;"/>
+</a>
+{:/nomarkdown}
 
 The Smoothieboard comes with a complete set of Dupont connectors for the stepper motors, endstops, and thermistors. They require some dexterity to crimp and we strongly advise you to buy a cheap crimping tool on one of your favorite Asian web stores. It will last you a lifetime and save a lot of time (and anger).
 
@@ -233,9 +293,19 @@ Resources:
 
 #### Aviation Type
 
-The so-called aviation type connectors are cheap, provide a more solid connection than crimped connectors shown above. They too are available in many configurations depending on the number of pins and pin size. Pins need to be soldered, make sure you have a soldering iron. These connectors make great connectors for controller enclosures, see examples at the bottom of this page.
+The so-called aviation type connectors are cheap, provide a more solid connection than crimped connectors shown above.
 
-![Smoothie Wiring 2](images/how-to-wire/20161206_smoothie_wiring_2.jpg)
+They too are available in many configurations depending on the number of pins and pin size.
+
+Pins need to be soldered, make sure you have a soldering iron.
+
+These connectors make great connectors for controller enclosures, see examples at the bottom of this page.
+
+{::nomarkdown}
+<a href="/images/how-to-wire/20161206_smoothie_wiring_2.jpg">
+  <img src="/images/how-to-wire/20161206_smoothie_wiring_2.jpg" alt="Aviation Type Connectors" width="400" height="300" style="display:block;margin:1rem auto;"/>
+</a>
+{:/nomarkdown}
 
 <sl-alert variant="primary" open>
   <sl-icon slot="icon" name="lightbulb"></sl-icon>

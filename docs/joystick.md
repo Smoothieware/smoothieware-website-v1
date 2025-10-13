@@ -3,8 +3,8 @@
 # Joystick Module
 
 {::nomarkdown}
-<a href="images/joystick.png">
-  <img src="images/joystick.png" alt="Joystick Module" width="200" height="200" style="float: right; margin-left: 1rem;"/>
+<a href="/images/joystick.png">
+  <img src="/images/joystick.png" alt="Joystick Module" width="200" height="200" style="float: right; margin-left: 1rem;"/>
 </a>
 {:/nomarkdown}
 
@@ -32,9 +32,9 @@ Some possible uses for the Joystick module:
 
 {::nomarkdown}
 <div style="text-align: center;">
-  <a href="images/joystick.png"><img src="images/joystick.png" alt="Joystick" width="150" style="display: inline-block; margin: 0.5rem;"/></a>
-  <a href="images/sparkfun_joystick.jpg"><img src="images/sparkfun_joystick.jpg" alt="Sparkfun Joystick" width="150" style="display: inline-block; margin: 0.5rem;"/></a>
-  <a href="images/sparkfun_slider.jpg"><img src="images/sparkfun_slider.jpg" alt="Sparkfun Slider" width="150" style="display: inline-block; margin: 0.5rem;"/></a>
+  <a href="/images/joystick.png"><img src="/images/joystick.png" alt="Joystick" width="150" style="display: inline-block; margin: 0.5rem;"/></a>
+  <a href="/images/sparkfun_joystick.jpg"><img src="/images/sparkfun_joystick.jpg" alt="Sparkfun Joystick" width="150" style="display: inline-block; margin: 0.5rem;"/></a>
+  <a href="/images/sparkfun_slider.jpg"><img src="/images/sparkfun_slider.jpg" alt="Sparkfun Slider" width="150" style="display: inline-block; margin: 0.5rem;"/></a>
 </div>
 {:/nomarkdown}
 
@@ -50,8 +50,8 @@ If you have a potentiometer, you will need to connect one side to 3.3 V, the oth
 
 {::nomarkdown}
 <div style="text-align: center;">
-  <a href="images/potentiometer-schematic.png">
-    <img src="images/potentiometer-schematic.png" alt="Potentiometer Schematic" width="400"/>
+  <a href="/images/potentiometer-schematic.png">
+    <img src="/images/potentiometer-schematic.png" alt="Potentiometer Schematic" width="400"/>
   </a>
 </div>
 {:/nomarkdown}
@@ -85,11 +85,11 @@ See [Pinout](pinout) for a diagram of the SmoothieBoard with the pins labeled.
 For a joystick, you will need to connect each wiper (the left/right and up/down) to different analog pins (e.g. 1.30 and 1.31).
 
 {::nomarkdown}
-<img src="images/missing.png" alt="" width=100>
+<img src="/images/missing.png" alt="" width=100>
 {:/nomarkdown}
 <!-- LED
 {::nomarkdown}
-<img src="images/joystick/joystick_connections.png" alt="Joystick Connections" width="400"/>
+<img src="/images/joystick/joystick_connections.png" alt="Joystick Connections" width="400"/>
 {:/nomarkdown}
 -->
 
@@ -101,10 +101,10 @@ The configuration file, at its most basic level, must tell the SmoothieBoard how
 The way the Joystick module performs this conversion is to first measure the voltage coming in. The module then subtracts off an offset, called `zero_offset`. The module then scales the voltage reading so that the `zero_offset` voltage becomes 0, and the `endpoint` voltage becomes 1 or -1 (depends on if `endpoint` is greater or less than `zero_offset`). Any values which end up outside the -1 to 1 range are fixed to be at +/- 1.
 
 <div align="center">
-<img src="images/missing.png" alt="Joystick Mapping">
+<img src="/images/missing.png" alt="Joystick Mapping">
 <!-- LED
 {::nomarkdown}
-<img src="images/joystick/joystick_mapping_diagram.png" alt="Joystick Mapping Diagram" width="1000"/>
+<img src="/images/joystick/joystick_mapping_diagram.png" alt="Joystick Mapping Diagram" width="1000"/>
 {:/nomarkdown}
 -->
 Example Mapping from joystick position to output with `zero_offset` = 1.5 V and `endpoint` = 0 V

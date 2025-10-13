@@ -1,5 +1,15 @@
+---
+layout: default
+title: Installing the Web Interface
+---
 
 # Installing the web interface to the SD card
+
+{::nomarkdown}
+<a href="/images/github-1.png">
+  <img src="/images/github-1.png" alt="Web Interface" width="240" height="240" style="float: right; margin-left: 1rem;"/>
+</a>
+{:/nomarkdown}
 
 You are here either because your SD card is [missing its web interface](missing-web-interface) or because you want to upgrade your currently installed web interface.
 
@@ -8,8 +18,6 @@ This page explains how to grab the web interface off the internet, and then inst
 The basic process is simply to [download it](https://github.com/Smoothieware/Webif-pack) then copy it to your SD card.
 
 The process in more detail is as such:
-
-
 
 ## 1. Download the web interface
 
@@ -24,8 +32,6 @@ Then click on the Green «Clone or Download» button.
 Then click on «Download Zip».
 
 Or alternatively, you can also download the Zip directly by going to this link: [https://github.com/Smoothieware/Webif-pack/archive/gh-pages.zip](https://github.com/Smoothieware/Webif-pack/archive/gh-pages.zip)
-
-
 
 ## 2. Extract the web interface to your SD card
 
@@ -47,14 +53,14 @@ Finally, «safely eject» the SD card from the computer (this is a software func
 
 Now, your web interface is ready to use.
 
+{::nomarkdown}
 <sl-alert variant="warning" open>
   <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
   Some users have reported problems extracting the Zip file using the normal Windows unzipping program.
-
+  <br><br>
   If this happens to you, please try using 7zip (<a href="http://www.7-zip.org/">http://www.7-zip.org/</a>), it has been reported to work fine.
 </sl-alert>
-
-
+{:/nomarkdown}
 
 ## 3. Use your web interface
 
@@ -70,16 +76,12 @@ And there you go, you now have access to your new interface (make sure you empty
 
 If you need any help, don't [hesitate to ask](mailto:wolf.arthur@gmail.com).
 
-
-
 ## All steps in a video
 
 {::nomarkdown}
-<iframe width="560" height="315" src="https://www.youtube.com/embed/mvWzaHfcL1k" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="640" height="480" src="https://www.youtube.com/embed/mvWzaHfcL1k" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="display: block; margin: 2rem auto;"></iframe>
 {:/nomarkdown}
 
 ## 4. Bonus: skip copying files
 
 You can also skip copying files simply by accessing [http://smoothieware.github.io/Webif-pack/new-web-interface/index.html](http://smoothieware.github.io/Webif-pack/new-web-interface/index.html) and entering your machine's IP address, but this requires having internet access.
-
-

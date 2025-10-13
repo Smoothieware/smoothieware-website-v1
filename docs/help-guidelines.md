@@ -2,12 +2,14 @@
 
 General advice when asking for help from the Smoothieware community.
 
+{::nomarkdown}
 <sl-alert variant="primary" open>
   <sl-icon slot="icon" name="lightbulb"></sl-icon>
   <strong>Read These Guidelines Before Asking for Help</strong>
   <br><br>
   Following these guidelines will help you get faster and better answers to your questions. It shows respect for the volunteers who help support the project.
 </sl-alert>
+{:/nomarkdown}
 
 ## Before You Ask
 
@@ -27,6 +29,7 @@ General advice when asking for help from the Smoothieware community.
 
 - If your problem has anything to do with files or config not being taken into account, please format your [SD card](sd-card), start with a fresh config file example and most recent firmware and port your config over, then try again.
 
+{::nomarkdown}
 <sl-alert variant="warning" open>
   <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
   <strong>Note About MKS and AZSMZ Boards</strong>
@@ -37,6 +40,7 @@ General advice when asking for help from the Smoothieware community.
   <br><br>
   Community members generally do not want to help companies that hurt the project we are all building. Please read <a href="troubleshooting#somebody-refused-to-help-me-because-my-board-is-a-mks-what-s-that-all-about">this explanation</a> before posting.
 </sl-alert>
+{:/nomarkdown}
 
 ## Using Pastebin
 

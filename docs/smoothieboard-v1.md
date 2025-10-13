@@ -15,7 +15,13 @@ This page is for v1, the [first version](https://www.kickstarter.com/projects/lo
 
 To find out where to purchase a Smoothieboard, see **[Getting Smoothieboard](getting-smoothieboard)**.
 
-![Smoothieboard Fritzing](images/smoothieboard-fritzing.png)
+{::nomarkdown}
+<div style="text-align: center; margin: 2rem 0;">
+  <a href="/images/smoothieboard-fritzing.png">
+    <img src="/images/smoothieboard-fritzing.png" alt="Smoothieboard Fritzing Diagram" style="min-width: 640px; width: 80%; height: auto;"/>
+  </a>
+</div>
+{:/nomarkdown}
 
 ## Microcontroller
 
@@ -31,8 +37,12 @@ Compared to lots of other boards, this allows for faster/smoother movement, more
 The board runs the Smoothie firmware, which has been designed and perfected to take the best advantage of the hardware, to make the board easy to configure and use, and to add cool features.
 
 {::nomarkdown}
-<img src="http://mbed.org/media/uploads/synvox/lpc1768_mbed_pinout.gif" alt="LPC1768 Pinout"><br/>
+<div style="text-align: center; margin: 2rem 0;">
+  <img src="http://mbed.org/media/uploads/synvox/lpc1768_mbed_pinout.gif" alt="LPC1768 Pinout" style="width: auto; height: auto; max-width: 100%;"/>
+  <p><em>LPC1768 Pinout Diagram</em></p>
+</div>
 {:/nomarkdown}
+
 See [Firmware](http://smoothieware.org)
 
 ## USB
@@ -50,7 +60,7 @@ This allows for pretty neat things like:
 
 
 {::nomarkdown}
-<img src="images/usb-cable.png" alt="USB Cable" width=300><br/>
+<img src="/images/usb-cable.png" alt="USB Cable" width=300><br/>
 {:/nomarkdown}
 See [USB](http://smoothieware.org/usb)
 
@@ -63,7 +73,7 @@ You can then use different protocols to talk to the board:
 - Telnet to send commands via a serial interface, or via using host software that supports this
 
 {::nomarkdown}
-<img src="images/ethernet-cable.png" alt="Ethernet Cable"><br/>
+<img src="/images/ethernet-cable.png" alt="Ethernet Cable"><br/>
 {:/nomarkdown}
 See [Network](http://smoothieware.org/network)
 
@@ -81,7 +91,7 @@ The card is used for:
 You can also add Gcode files to it and then [play them from the SD card](player), which is useful for files so dense that streaming them to the board isn't convenient.
 
 {::nomarkdown}
-<img src="images/sd-card.png" alt="SD Card"><br/>
+<img src="/images/sd-card.png" alt="SD Card"><br/>
 {:/nomarkdown}
 See [SD Card](sd-card)
 

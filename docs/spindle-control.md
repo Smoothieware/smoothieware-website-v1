@@ -1,8 +1,8 @@
 # Spindle Control
 
 {::nomarkdown}
-<a href="images/spindle.png">
-  <img src="images/spindle.png" alt="A spindle motor" width="350" height="auto" style="float: right; margin-left: 1rem;"/>
+<a href="/images/spindle.png">
+  <img src="/images/spindle.png" alt="A spindle motor" width="350" height="auto" style="float: right; margin-left: 1rem;"/>
 </a>
 {:/nomarkdown}
 
@@ -30,10 +30,12 @@ There are two methods, using Modbus, or using an analog signal.
 
 For information on doing so, see the [Spindle Module](spindle-module)
 
+{::nomarkdown}
 <sl-alert variant="primary" open>
   <sl-icon slot="icon" name="star"></sl-icon>
   <strong>Recommended Method:</strong> Using a VFD is the preferred way to control your spindle for best performance and safety.
 </sl-alert>
+{:/nomarkdown}
 
 ## Controlling using mosfets
 

@@ -6,24 +6,30 @@ Please continue reading to determine the correct drivers to install for your ver
 
 ## Windows 10 and Later
 
+{::nomarkdown}
 <sl-alert variant="primary" open>
   <sl-icon slot="icon" name="info-circle"></sl-icon>
   <strong>Good News:</strong> There is no need to install drivers on Windows 10 or later. It should all work out of the box.
 </sl-alert>
+{:/nomarkdown}
 
+{::nomarkdown}
 <sl-alert variant="warning" open>
   <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
   In fact, installing the drivers on Windows 10 may cause trouble. Only install drivers if you're using Windows 8.1 or earlier.
 </sl-alert>
+{:/nomarkdown}
 
 ## Installers Windows 2000 through Windows 8
 
 - **Windows 2000/Vista/7/8 (64bit/32bit)**: [smoothieware-usb-driver-v1.1.exe](windows-drivers/smoothieware-usb-driver-v1.1.exe)
 
+{::nomarkdown}
 <sl-alert variant="neutral" open>
   <sl-icon slot="icon" name="info-circle"></sl-icon>
   <strong>Note:</strong> Windows 8.1 is known to not like the new driver. Please use the v1.0 driver found below with Windows 8.1 for now.
 </sl-alert>
+{:/nomarkdown}
 
 ## Using the Installers
 
@@ -68,14 +74,14 @@ If you are using a recent version of Smoothieware, you may find up to two "Smoot
 Here is an example of what you might see on recent firmware:
 
 {::nomarkdown}
-<a href="images/cp.jpg">
-  <img src="images/cp.jpg" alt="Control Panel" style="width: 640px; height: auto; display: block; margin: 2rem auto;"/>
+<a href="/images/cp.jpg">
+  <img src="/images/cp.jpg" alt="Control Panel" style="width: 640px; height: auto; display: block; margin: 2rem auto;"/>
 </a>
 {:/nomarkdown}
 
 {::nomarkdown}
-<a href="images/dm.jpg">
-  <img src="images/dm.jpg" alt="Device Manager" style="width: 640px; height: auto; display: block; margin: 2rem auto;"/>
+<a href="/images/dm.jpg">
+  <img src="/images/dm.jpg" alt="Device Manager" style="width: 640px; height: auto; display: block; margin: 2rem auto;"/>
 </a>
 {:/nomarkdown}
 
@@ -84,8 +90,8 @@ Here is an example of what you might see on recent firmware:
 Right-click the first one and select "Update Driver Software"
 
 {::nomarkdown}
-<a href="images/uds.jpg">
-  <img src="images/uds.jpg" alt="Update Driver Software" style="width: 640px; height: auto; display: block; margin: 2rem auto;"/>
+<a href="/images/uds.jpg">
+  <img src="/images/uds.jpg" alt="Update Driver Software" style="width: 640px; height: auto; display: block; margin: 2rem auto;"/>
 </a>
 {:/nomarkdown}
 
@@ -94,8 +100,8 @@ Right-click the first one and select "Update Driver Software"
 Find where you unzipped the driver to
 
 {::nomarkdown}
-<a href="images/findthedriver.jpg">
-  <img src="images/findthedriver.jpg" alt="Find the Driver" style="width: 640px; height: auto; display: block; margin: 2rem auto;"/>
+<a href="/images/findthedriver.jpg">
+  <img src="/images/findthedriver.jpg" alt="Find the Driver" style="width: 640px; height: auto; display: block; margin: 2rem auto;"/>
 </a>
 {:/nomarkdown}
 
@@ -110,8 +116,8 @@ The port numbering can be changed through the advanced port properties, but you 
 Also, note that "smoothie DFU" is still unrecognized. This is fine. You can ignore that.
 
 {::nomarkdown}
-<a href="images/done.jpg">
-  <img src="images/done.jpg" alt="Driver Installed" style="width: 640px; height: auto; display: block; margin: 2rem auto;"/>
+<a href="/images/done.jpg">
+  <img src="/images/done.jpg" alt="Driver Installed" style="width: 640px; height: auto; display: block; margin: 2rem auto;"/>
 </a>
 {:/nomarkdown}
 

@@ -5,6 +5,8 @@ This is optional, but makes things more convenient.
 
 ## udev rules
 
+Creating proper udev rules allows you to access your Smoothieboard without needing root privileges.
+
 Create a file `/etc/udev/rules.d/90-smoothie.rules` and add the following to it:
 
 ```bash
@@ -20,6 +22,12 @@ udevadm control --reload-rules
 sudo service udev restart # ubuntu
 ```
 
+Then plug in Smoothie, and it should appear as `/dev/smoothie0`.
+
+If you have two USB serial devices configured, the second one will be `/dev/smoothie1`.
+
+### Fedora-specific configuration
+
 Under Fedora, Smoothieboard is handled by the modem manager (as an Openmoko).
 
 To avoid this, add the following to the udev rule:
@@ -28,16 +36,14 @@ To avoid this, add the following to the udev rule:
 ENV{ID_MM_DEVICE_IGNORE}="1"
 ```
 
-Then plug in Smoothie, and it should appear as `/dev/smoothie0`.
-
-If you have two USB serial devices configured, the second one will be `/dev/smoothie1`.
-
 {::nomarkdown}
 <sl-alert variant="neutral" open>
   <sl-icon slot="icon" name="info-circle"></sl-icon>
   The distribution-specific sections need to be verified for other distributions.
 </sl-alert>
 {:/nomarkdown}
+
+## User permissions
 
 ### Fedora, Ubuntu, Debian, and derivatives
 
@@ -60,9 +66,9 @@ sudo vigr
 
 and adding the username to the end of the line for `dialout` and `plugdev`.
 
-### Arch
+### Arch Linux
 
-To be able to communicate with the Smoothie on Arch Linux, you need to be in the `uucp` group.
+To be able to communicate with the Smoothie on Arch Linux, you need to be in the `uucp` group:
 
 ```bash
 usermod -a -G uucp <username>
@@ -72,19 +78,23 @@ Replace `<username>` with the name of your user.
 
 To be able to upload firmware using `make upload` without needing to use `sudo`, you need the udev rule shown above.
 
-It sets the permissions for all users to `rw` (0666).
+It sets the permissions for all users to read/write (0666).
 
 ## PID problems
 
 If your PID and VIDs are `0000`, take a look at [this forum post](http://smoothieware.org/forum/t-1047411?from=email#post-2184547).
 
-## Kernel versions
+## Troubleshooting
+
+### Kernel versions
+
+Some kernel versions may cause connection issues with Smoothieboard.
 
 One user has found that one kernel version caused his machine to disconnect, while other kernel versions didn't.
 
 Here's what his tests showed:
 
-- `Linux octoprint 4.19.0-8-amd64 #1 SMP Debian 4.19.98-1 (2020-01-26) x86_64 GNU/Linux` works
-- `Linux zen 5.3.18-2-pve #1 SMP PVE 5.3.18-2 (Sat, 15 Feb 2020 15:11:52 +0100) x86_64 GNU/Linux`
+- `Linux octoprint 4.19.0-8-amd64 #1 SMP Debian 4.19.98-1 (2020-01-26) x86_64 GNU/Linux` - works
+- `Linux zen 5.3.18-2-pve #1 SMP PVE 5.3.18-2 (Sat, 15 Feb 2020 15:11:52 +0100) x86_64 GNU/Linux` - disconnects
 
-If you have weird Linux issues where it disconnects, maybe try a different kernel version and see if that helps.
+If you have weird Linux issues where it disconnects, try a different kernel version and see if that helps.

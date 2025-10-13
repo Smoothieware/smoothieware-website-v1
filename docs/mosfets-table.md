@@ -43,15 +43,19 @@ Smoothieboard has three MOSFET pairs:
 
 ## Important Safety Notes
 
+{::nomarkdown}
 <sl-alert variant="warning" open>
   <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
   <strong>Current Limits:</strong> Do not exceed the maximum current ratings. Big MOSFETs can handle up to 12A, small MOSFETs up to 3A. Exceeding these limits can damage the board.
 </sl-alert>
+{:/nomarkdown}
 
+{::nomarkdown}
 <sl-alert variant="neutral" open>
   <sl-icon slot="icon" name="info-circle"></sl-icon>
   <strong>Shared Power:</strong> MOSFETs in the same pair share their power input. Make sure your power supply can handle the combined load of both outputs in a pair.
 </sl-alert>
+{:/nomarkdown}
 
 ## Configuration
 

@@ -1,11 +1,13 @@
 # Flashing the Bootloader
 
+{::nomarkdown}
 <sl-alert variant="warning" open>
   <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
   <strong>Homemade Boards Only</strong>
   <p>This is relevant only on homemade boards.</p>
   <p>This is not needed on all recent purchased boards (after summer 2013), they come with the bootloader pre-flashed.</p>
 </sl-alert>
+{:/nomarkdown}
 
 ## What is the Bootloader?
 
@@ -29,10 +31,12 @@ If you have a Smoothieboard, all of this is already there, just connect the Seri
 
 If you have an LPCXpresso1769, you want to look at [Smoothie On A Breadboard](smoothie-on-a-breadboard) for how to wire the serial cable and the buttons.
 
+{::nomarkdown}
 <sl-alert variant="neutral" open>
   <sl-icon slot="icon" name="info-circle"></sl-icon>
   <strong>Connection Note:</strong> Sometimes it is better connecting TXD->RXD and RXD->TXD. You should not use USB to RS232, because it can be +15/-15v, but MCU is 3.3V.
 </sl-alert>
+{:/nomarkdown}
 
 ### Entering Bootloader Mode
 

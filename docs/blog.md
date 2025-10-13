@@ -1,5 +1,10 @@
-
 # Smoothie blog
+
+{::nomarkdown}
+<a href="/images/bacteria.png">
+  <img src="/images/bacteria.png" alt="News" width="300" height="300" style="float: right; margin-left: 1rem;"/>
+</a>
+{:/nomarkdown}
 
 ## [Smoothieboard v2 second update](blog_15)
 

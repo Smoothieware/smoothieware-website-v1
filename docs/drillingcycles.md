@@ -5,6 +5,12 @@ title: Drilling Cycles Module
 
 # Drilling Cycles Module
 
+{::nomarkdown}
+<a href="/images/glove.png">
+  <img src="/images/glove.png" alt="Drilling Cycles" width="150" height="150" style="float: right; margin-left: 1rem;"/>
+</a>
+{:/nomarkdown}
+
 The canned drilling cycles module is a short G-Code produced by some serious CAM software to make holes.
 
 In addition to adding some features, this significantly reduces the number of instructions sent through the serial port.
@@ -13,15 +19,19 @@ Currently, the drilling cycles module implements the first three options in abso
 
 For a complete list/description of G-Code, see [Tormach's G81-G89 Background](http://www.tormach.com/g81_g89_background).
 
+{::nomarkdown}
 <sl-alert variant="warning" open>
   <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
   Incremental mode not implemented (L).
 </sl-alert>
+{:/nomarkdown}
 
+{::nomarkdown}
 <sl-alert variant="danger" open>
   <sl-icon slot="icon" name="exclamation-octagon"></sl-icon>
   In relative mode <code>G91</code>, drilling holes operations are ignored.
 </sl-alert>
+{:/nomarkdown}
 
 ## Configuration
 

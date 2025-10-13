@@ -18,10 +18,12 @@ Feel free to use this page to experiment with documentation styles before applyi
 
 ## Example Alert
 
+{::nomarkdown}
 <sl-alert variant="neutral" open>
   <sl-icon slot="icon" name="info-circle"></sl-icon>
   This is an example neutral alert component using Shoelace.
 </sl-alert>
+{:/nomarkdown}
 
 ## Example Code Block
 
@@ -36,8 +38,8 @@ M104 S200  ; Set hotend temperature
 
 {::nomarkdown}
 <div style="text-align: center; margin: 2rem 0;">
-  <a href="images/smoothieboard-fritzing.png">
-    <img src="images/smoothieboard-fritzing.png" alt="Example Image" style="width: 400px; max-width: 100%; height: auto;"/>
+  <a href="/images/smoothieboard-fritzing.png">
+    <img src="/images/smoothieboard-fritzing.png" alt="Example Image" style="width: 400px; max-width: 100%; height: auto;"/>
   </a>
   <p style="margin-top: 0.5rem; font-style: italic;">Example centered image with caption</p>
 </div>

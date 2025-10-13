@@ -1,8 +1,8 @@
 # Laser control
 
 {::nomarkdown}
-<a href="images/high-voltage.png">
-  <img src="images/high-voltage.png" alt="High Voltage Warning" width="300" height="427" style="float: right; margin-left: 1rem;"/>
+<a href="/images/high-voltage.png">
+  <img src="/images/high-voltage.png" alt="High Voltage Warning" width="300" height="427" style="float: right; margin-left: 1rem;"/>
 </a>
 {:/nomarkdown}
 
@@ -119,8 +119,8 @@ Here you could in theory replace the jumper by a potentiometer, allowing you to 
 The wiring looks like this:
 
 {::nomarkdown}
-<a href="images/laser-power-supply.png">
-  <img src="images/laser-power-supply.png" alt="Laser Power Supply Wiring" style="width: 100%; max-width: 800px; display: block; margin: 2rem auto;"/>
+<a href="/images/laser-power-supply.png">
+  <img src="/images/laser-power-supply.png" alt="Laser Power Supply Wiring" style="width: 100%; max-width: 800px; display: block; margin: 2rem auto;"/>
 </a>
 {:/nomarkdown}
 

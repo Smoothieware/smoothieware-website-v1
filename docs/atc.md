@@ -1,5 +1,10 @@
-
 # Automated Tool Change
+
+{::nomarkdown}
+<a href="/images/glove.png">
+  <img src="/images/glove.png" alt="Tools" width="300" height="300" style="float: right; margin-left: 1rem;"/>
+</a>
+{:/nomarkdown}
 
 An automated tool changer is a system allowing a CNC machine to automatically change tools/effectors.
 
@@ -11,10 +16,12 @@ This page documents how to set up ATC with a Smoothieboard.
 
 ## Status
 
+{::nomarkdown}
 <sl-alert variant="primary" open>
   <sl-icon slot="icon" name="rocket-takeoff"></sl-icon>
   This feature is currently in beta/actively being implemented. We need your help with testing and with the actually coding, please don't hesitate if you feel like you can give the project some of your time.
 </sl-alert>
+{:/nomarkdown}
 
 ## Methods
 
@@ -24,10 +31,12 @@ There are two different possible methods to implement ATC, depending on which pa
 
 - **ATC in the controller**: Smoothieboard receives commands like `T1`, `T2` etc, and converts those into the right G-codes to do the tool change.
 
+{::nomarkdown}
 <sl-alert variant="neutral" open>
   <sl-icon slot="icon" name="info-circle"></sl-icon>
   <strong>Status:</strong> Right now, we are concentrating on implementing ATC with a post-processor for Fusion360. This is because it's faster/easier to figure things out that way. However, once that method is mature it'll be trivial to do the implementation within Smoothie (which was mostly done already in the "recursive" branch on github).
 </sl-alert>
+{:/nomarkdown}
 
 ### Smoothie ATC Method
 

@@ -1,16 +1,24 @@
+---
+layout: default
+title: Jogger Module
+---
 
 # Jogger Module
 
+{::nomarkdown}
 <sl-alert variant="danger" open>
   <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
   <strong>Deprecated:</strong> This module no longer works and has been abandoned, and there are no plans to integrate it.
 </sl-alert>
+{:/nomarkdown}
 
 ## What is Jogger?
 
 Jogger is a module for SmoothieBoard which adds the ability to move your machine around: a process referred to as "jogging".
 
-This module is different from most jogging tools in that it accepts input from a [joystick](joystick). This means your machine will move smoothly in the direction of the joystick, rather than take a small step in a certain direction each time a button is pressed.
+This module is different from most jogging tools in that it accepts input from a [joystick](joystick).
+
+This means your machine will move smoothly in the direction of the joystick, rather than take a small step in a certain direction each time a button is pressed.
 
 Some possible uses for the Jogger module:
 
@@ -21,14 +29,18 @@ Some possible uses for the Jogger module:
 
 ## Getting Started
 
+{::nomarkdown}
 <sl-alert variant="danger" open>
   <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
   <strong>Work in Progress:</strong> Note this page is a work in progress and the joystick functionality is not yet released in smoothieware.
 </sl-alert>
+{:/nomarkdown}
 
 You will need some kind of joystick-like device that the Jogger module will use to tell your steppers where to go.
 
-See the [joystick](joystick) page for information on how to set up an analog joystick. Once you have the [joystick](joystick) modules set up, you will need to know the [module names](module-name) of the joystick axes you want to link to the jogger.
+See the [joystick](joystick) page for information on how to set up an analog joystick.
+
+Once you have the [joystick](joystick) modules set up, you will need to know the [module names](module-name) of the joystick axes you want to link to the jogger.
 
 ## Configuration
 
@@ -50,8 +62,8 @@ The maximum speed should be relatively straightforward, however the nonlinearity
 To see how it works, consider the following graph:
 
 {::nomarkdown}
-<a href="images/joystick-speed-map.png">
-  <img src="images/joystick-speed-map.png" alt="Jogger speed mapping graph showing different nonlinearity values" style="display: block; margin: 2rem auto; min-width: 640px; width: 80%; max-width: 800px;"/>
+<a href="/images/joystick-speed-map.png">
+  <img src="/images/joystick-speed-map.png" alt="Jogger speed mapping graph showing different nonlinearity values" style="display: block; margin: 2rem auto; min-width: 640px; width: 80%; max-width: 800px;"/>
 </a>
 {:/nomarkdown}
 
@@ -59,7 +71,9 @@ On the X-axis is the joystick position, from not moved on the left (0.00) to ful
 
 On the Y-axis is the jogging speed, where 0% is not moving and 100% is moving as fast as possible.
 
-The different colored lines show how the nonlinearity parameter affects the jog speed. The table below describes the values demonstrated in the chart above:
+The different colored lines show how the nonlinearity parameter affects the jog speed.
+
+The table below describes the values demonstrated in the chart above:
 
 | Nonlinearity | Comments |
 | ------------ | -------- |
@@ -79,7 +93,9 @@ If undesired jogging occurs, increase the `dead_zone` value.
 
 ### Set Jog Axes
 
-The command to set the jog axes is `M777` by default, unless changed by the `m_code_set` configuration. To use the command, type the M-code followed by the letters to use for jog axes (in order of alpha, beta, etc.).
+The command to set the jog axes is `M777` by default, unless changed by the `m_code_set` configuration.
+
+To use the command, type the M-code followed by the letters to use for jog axes (in order of alpha, beta, etc.).
 
 | Example       | Alpha Jog Axis | Beta Jog Axis |
 | ------------- | -------------- | ------------- |
@@ -89,7 +105,9 @@ The command to set the jog axes is `M777` by default, unless changed by the `m_c
 
 ### Toggle Jog Axes
 
-The command to toggle the jog axes is `M778` by default, unless changed by the `m_code_toggle` configuration. Toggling the axes will cycle between the axes set in the `jog_axes` configuration.
+The command to toggle the jog axes is `M778` by default, unless changed by the `m_code_toggle` configuration.
+
+Toggling the axes will cycle between the axes set in the `jog_axes` configuration.
 
 ```
 M778
@@ -101,7 +119,11 @@ An example line of configuration is shown below:
 jogger.jog_axes             XY,XZ,-Z         #cycle between the joystick horz/vert controlling axes XY, XZ, and nothing/Z when using M778
 ```
 
-In this example, the jogger will start controlling by controlling XY. When `M778` is issued, it will change to XZ. If issued again, it will change to nothing/Z, and if issued once more, go back to XY.
+In this example, the jogger will start controlling by controlling XY.
+
+When `M778` is issued, it will change to XZ.
+
+If issued again, it will change to nothing/Z, and if issued once more, go back to XY.
 
 ## Developer Documentation
 

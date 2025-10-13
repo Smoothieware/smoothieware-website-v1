@@ -22,10 +22,12 @@ Simply pass your S3D G-code through this tool and the problem will stop occurrin
 
 ## July 2016 Update
 
+{::nomarkdown}
 <sl-alert variant="primary" open>
   <sl-icon slot="icon" name="info-circle"></sl-icon>
   <strong>Good News:</strong> Both Simplify3D and Smoothie have addressed the compatibility issues.
 </sl-alert>
+{:/nomarkdown}
 
 A small update of the S3D issue:
 
@@ -41,7 +43,9 @@ Cheers.
 
 ## S3D Host Software
 
+{::nomarkdown}
 <sl-alert variant="warning" open>
   <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
   It seems that the S3D Host does not support Smoothie correctly, so it is <strong>recommended to NOT use that as host software</strong>.
 </sl-alert>
+{:/nomarkdown}

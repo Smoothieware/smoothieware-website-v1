@@ -1,5 +1,15 @@
+---
+layout: default
+title: Smoothie IRC Channel
+---
 
 # Smoothie IRC Channel
+
+{::nomarkdown}
+<a href="/images/hashtag.png">
+  <img src="/images/hashtag.png" alt="IRC Chat" width="240" height="240" style="float: right; margin-left: 1rem;"/>
+</a>
+{:/nomarkdown}
 
 IRC, or "Internet Relay Chat", is a nice way to chat directly with other community members, and get answers faster than using forums or mailing lists.
 

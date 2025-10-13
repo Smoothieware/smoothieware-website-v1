@@ -5,15 +5,19 @@ title: Using the Touchprobe
 
 # Using the Touchprobe
 
+{::nomarkdown}
 <sl-alert variant="warning" open>
   <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
   <strong>Deprecated Module:</strong> This module is no longer supported and is not compiled in by default. If someone fixes this, please let us know. This documentation is left here for historical purposes.
 </sl-alert>
+{:/nomarkdown}
 
+{::nomarkdown}
 <sl-alert variant="primary" open>
   <sl-icon slot="icon" name="lightbulb"></sl-icon>
   <strong>Alternative:</strong> For modern probing functionality, see the <a href="zprobe">ZProbe module</a> which is actively maintained and supports more features.
 </sl-alert>
+{:/nomarkdown}
 
 ---
 
@@ -32,7 +36,9 @@ Currently, the only operation regarding touchprobes supported by this module is 
 
 `G31` works similarly to `G1` codes but stops if the probe is touched.
 
-**Important limitation:** Coordinated moves are not supported. This means only moves along a single axis will work.
+**Important limitation:** Coordinated moves are not supported.
+
+This means only moves along a single axis will work.
 
 ---
 
@@ -67,6 +73,7 @@ M114
 ```
 
 **What each line does:**
+
 - `G91` - Switch to relative positioning
 - `G31 Z-10 F300` - Fast probe down 10mm at 300 mm/min
 - `G0 Z0.2` - Retract 0.2mm
@@ -107,6 +114,7 @@ touchprobe_debounce_count           100                # reports touch if probe 
 
 The log file is an easy way to create point clouds of the probed objects.
 
+{::nomarkdown}
 <sl-alert variant="warning" open>
   <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
   <strong>Important Setup Steps:</strong>
@@ -117,8 +125,11 @@ The log file is an easy way to create point clouds of the probed objects.
     <li>The file-system is dual-mounted by your OS and Smoothie, which can cause desynchronization</li>
   </ul>
 </sl-alert>
+{:/nomarkdown}
 
-If you forget to safely remove the SD card, try to remount it afterward. Most of the time, no data loss will happen.
+If you forget to safely remove the SD card, try to remount it afterward.
+
+Most of the time, no data loss will happen.
 
 ---
 
@@ -166,8 +177,8 @@ A common CNC task is finding the center of circular holes or bosses.
 
 {::nomarkdown}
 <div style="text-align: center;">
-  <a href="images/midpoint.png">
-    <img src="images/midpoint.png" alt="Finding center of round objects" style="min-width: 640px; width: 640px; max-width: 100%; height: auto; margin: 2rem 0;"/>
+  <a href="/images/midpoint.png">
+    <img src="/images/midpoint.png" alt="Finding center of round objects" style="min-width: 640px; width: 640px; max-width: 100%; height: auto; margin: 2rem 0;"/>
   </a>
   <p style="font-style: italic; margin-top: 0.5rem;">Diagram showing probe points for finding center</p>
 </div>

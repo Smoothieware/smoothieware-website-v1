@@ -1,5 +1,6 @@
 # Config Override Warning
 
+{::nomarkdown}
 <sl-alert variant="warning" open>
   <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
   <strong>Override doing its job but the user not realizing the full extents of its effects</strong>
@@ -12,6 +13,7 @@
 
   And if at all possible, while debugging issues, simply remove your config override file (save it first of course).
 </sl-alert>
+{:/nomarkdown}
 
 ## What is Config Override?
 

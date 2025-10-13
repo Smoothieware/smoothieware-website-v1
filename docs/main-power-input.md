@@ -1,9 +1,25 @@
+{::nomarkdown}
+<div style="float: right; margin-left: 1rem;">
+<a href="/images/power-supply.png">
+  <img src="/images/power-supply.png" alt="Be careful, mains voltage is dangerous" width="320" height="auto" />
+</a>
+<p style="text-color: #eee; text-size: 0.8em; text-align: center"> Be careful, mains voltage is dangerous </p>
+</div>
+{:/nomarkdown}
+
 
 # Main Power Input
 
-Without power, your board can not do much.
+{::nomarkdown}
+<sl-alert variant="warning" open>
+  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+  <strong>Safety First:</strong> This page involves working with mains power (110V/220V). Always exercise extreme caution and never work on live circuits.
+</sl-alert>
+{:/nomarkdown}
 
-The board uses power to operate the control logic and to move stepper motors, and power heating elements, fans, and others.
+Without power, your board cannot do much.
+
+The board uses power to operate the control logic, move stepper motors, power heating elements, fans, and other peripherals.
 
 ## How to choose a power supply unit (PSU)
 
@@ -75,12 +91,11 @@ The most important thing for DC is to respect polarity: **+** goes to **+**, **-
 On the Smoothieboard they are indicated simply as **+** and **-**.
 
 {::nomarkdown}
-<div style="text-align: center; margin: 2rem 0;">
-  <a href="https://github.com/Bouni/smoothieboard-graphics/blob/master/smoothieboard-power.png?raw=true">
-    <img src="https://github.com/Bouni/smoothieboard-graphics/blob/master/smoothieboard-power.png?raw=true" alt="Smoothieboard Power Connections" style="min-width: 640px; max-width: 100%;">
-  </a>
-  <p><em>Smoothieboard power connection diagram</em></p>
-</div>
+<sl-alert variant = "primary" open>
+<sl-icon  slot    = "icon" name = "diagram-3"></sl-icon>
+  <img src="/images/main-power-input.png" style="width:100%"/>
+  <p><strong>Wiring Diagram:</strong> Refer to the <a href="https://github.com/Bouni/smoothieboard-graphics/blob/master/smoothieboard-power.png?raw=true">Smoothieboard power connection diagram</a> for visual reference on connecting power supplies. </p>
+</sl-alert>
 {:/nomarkdown}
 
 By convention, black (sometimes brown) wires are used for ground, and red (sometimes orange, white or yellow) wires are used for power connections.

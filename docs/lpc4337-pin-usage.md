@@ -194,8 +194,24 @@ The table below shows how each ARM pin is mapped to GPIO pins and their usage in
 
 ## Notes
 
+### Pin Conventions
+
 Items in *italics* are hardcoded and cannot be easily changed.
 
 The `pwm` capability indicates that the pin supports hardware PWM generation.
 
-The LPC4337 is significantly more powerful than the LPC1769, with more pins, more memory, and additional peripherals.
+### Comparison to LPC1769
+
+The LPC4337 is significantly more powerful than the LPC1769.
+
+Key improvements include:
+
+- More GPIO pins available
+- More memory for complex operations
+- Additional peripheral interfaces
+- Higher clock speeds
+
+## Related Documentation
+
+- [LPC1769 Pin Usage](lpc1769-pin-usage) - For Smoothie v1 boards
+- [Smoothieboard](smoothieboard) - Main hardware documentation

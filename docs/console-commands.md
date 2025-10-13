@@ -1,18 +1,23 @@
 # Console commands
 
 {::nomarkdown}
-<img src="images/coding.png" alt="Console" width="300" height="auto" style="float: right; margin-left: 1rem;"/>
+<a href="/images/coding.png">
+  <img src="/images/coding.png" alt="Console" width="150" height="150" style="float: right; margin-left: 1rem;"/>
+</a>
 {:/nomarkdown}
 
 In Smoothie, when connected to your board via Serial, in the same way that you can send Gcodes, you can also send some commands to manipulate the firmware's behavior and get information.
 
 Here are the different commands, grouped by module.
 
+{::nomarkdown}
 <sl-alert variant="warning" open>
   <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
   Not all of the console commands are documented here, feel free to add any that have been missed.
 </sl-alert>
+{:/nomarkdown}
 
+{::nomarkdown}
 <sl-alert variant="warning" open>
   <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
   Commands are meant as shortcuts/easier to use alternatives to G/M-codes when users are interacting directly with the machine via one of the serial ports.
@@ -21,7 +26,9 @@ Here are the different commands, grouped by module.
   <br><br>
   Commands on the other hand have no guarantee to have any of that, they are meant for manual use.
 </sl-alert>
+{:/nomarkdown}
 
+{::nomarkdown}
 <sl-alert variant="neutral" open>
   <sl-icon slot="icon" name="info-circle"></sl-icon>
   <strong>Pronterface</strong> requires that you prefix your commands with the <code>@</code> character.
@@ -32,6 +39,7 @@ Here are the different commands, grouped by module.
   <br><br>
   On other hosts you can use <code>M1000 command</code>
 </sl-alert>
+{:/nomarkdown}
 
 ---
 
@@ -326,19 +334,24 @@ config-get <configuration_source> <configuration_setting>
 
 Outputs the value of this configuration setting to the standard output. The value is taken from the `config` file.
 
+{::nomarkdown}
 <sl-alert variant="danger" open>
   <sl-icon slot="icon" name="exclamation-octagon"></sl-icon>
   <strong>WARNING it is HIGHLY recommended to NOT use this command</strong> as it uses a huge amount of memory to reload the config file and may <strong>CRASH</strong>.
   <br><br>
   Use <code>cat /sd/config</code> instead.
 </sl-alert>
+{:/nomarkdown}
 
 `<configuration_source>`: This optional parameter selects where to read the value from. Valid sources are 'local' and 'sd'. Leaving this parameter out will read the current live settings in use.
 
 `<configuration_setting>`: This parameter selects which value should be read.
 
+Examples:
+
 ```plaintext
 config-get acceleration
+config-get sd alpha_steps_per_mm
 ```
 
 ### config-set
@@ -361,11 +374,13 @@ This is why all the lines in your config file must have extra whitespace (which 
 
 `<configuration_setting>`: This parameter selects which value should be set.
 
+`<value>`: The value to write.
+
 Note you need to then reset your board, either by cycling the power, or by issuing the `reset` command.
 
 Configuration changes are not taken into account until the config file is read again, which happens when the board starts.
 
-`<value>`: The value to write.
+Example:
 
 ```plaintext
 config-set sd acceleration 1000

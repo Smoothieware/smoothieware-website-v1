@@ -30,8 +30,8 @@ It features:
 The board comes in 3 versions, 3X, 4X and 5X, with different sets of peripherals each.
 
 {::nomarkdown}
-<a href="images/smoothieboard-fritzing.png">
-  <img src="images/smoothieboard-fritzing.png" alt="Smoothieboard v1" style="width: 640px; height: auto; display: block; margin: 2rem auto;"/>
+<a href="/images/smoothieboard-fritzing.png">
+  <img src="/images/smoothieboard-fritzing.png" alt="Smoothieboard v1" style="width: 640px; height: auto; display: block; margin: 2rem auto;"/>
 </a>
 {:/nomarkdown}
 
@@ -61,8 +61,8 @@ Currently being designed, see [blog post](blog_15).
 </sl-alert>
 
 {::nomarkdown}
-<a href="images/smoothieboard-fritzing.png">
-  <img src="images/smoothieboard-fritzing.png" alt="Smoothieboard v2" style="width: 640px; height: auto; display: block; margin: 2rem auto;"/>
+<a href="/images/smoothieboard-fritzing.png">
+  <img src="/images/smoothieboard-fritzing.png" alt="Smoothieboard v2" style="width: 640px; height: auto; display: block; margin: 2rem auto;"/>
 </a>
 {:/nomarkdown}
 
@@ -88,8 +88,8 @@ It will feature:
 Currently being designed, see [blog post](blog_15).
 
 {::nomarkdown}
-<a href="images/smoothieboard-v2-mini.png">
-  <img src="images/smoothieboard-v2-mini.png" alt="Smoothieboard v2-mini" style="width: 640px; height: auto; display: block; margin: 2rem auto;"/>
+<a href="/images/smoothieboard-v2-mini.png">
+  <img src="/images/smoothieboard-v2-mini.png" alt="Smoothieboard v2-mini" style="width: 640px; height: auto; display: block; margin: 2rem auto;"/>
 </a>
 {:/nomarkdown}
 
@@ -118,8 +118,8 @@ It will feature:
 Currently being designed, see [blog post](blog_15).
 
 {::nomarkdown}
-<a href="images/smoothieboard-fritzing.png">
-  <img src="images/smoothieboard-fritzing.png" alt="Smoothieboard v2-pro" style="width: 640px; height: auto; display: block; margin: 2rem auto;"/>
+<a href="/images/smoothieboard-fritzing.png">
+  <img src="/images/smoothieboard-fritzing.png" alt="Smoothieboard v2-pro" style="width: 640px; height: auto; display: block; margin: 2rem auto;"/>
 </a>
 {:/nomarkdown}
 

@@ -1,5 +1,6 @@
-
 # Sensor Types
+
+When setting up endstops and probes for your CNC machine or 3D printer, choosing the right sensor type is crucial for reliable operation.
 
 Here is a table of the common sensor types, with their pros, cons, and our advice:
 
@@ -14,4 +15,19 @@ Here is a table of the common sensor types, with their pros, cons, and our advic
 | IR probes | Z probe, bed probe | Non-contact | Expensive, analog meaning it requires an adapter, terrible repeatability/accuracy, more complex to wire | You probably shouldn't use these unless you have a very good reason. | |
 | Bltouch | Retractable Z-probes | Cheap, very durable, very precise/repeatable, retractable (equivalent to a servo-mounted mechanical switch) | None, other than the added complexity of retracting | The mechanical switches are the best sensors by far, but this is very similar, essentially emulating a servo-mounted mechanical switch. | |
 
-The [Reprap probe page](https://reprap.org/wiki/z_probe#inductive.md) also has information on this that you might find helpful.
+## Recommendations
+
+{::nomarkdown}
+<sl-alert variant="primary" open>
+  <sl-icon slot="icon" name="lightbulb"></sl-icon>
+  <strong>Our Top Recommendation:</strong> Mechanical switches are the simplest, cheapest, and most reliable option for endstops and probes.
+  <br><br>
+  For retractable Z-probes, BLTouch sensors provide excellent performance and reliability.
+  <br><br>
+  Avoid complex sensors unless you have a specific requirement that justifies the added complexity and cost.
+</sl-alert>
+{:/nomarkdown}
+
+## Additional Resources
+
+The [Reprap probe page](https://reprap.org/wiki/Z_probe) also has information on this that you might find helpful.

@@ -1,5 +1,11 @@
 # DokuWiki
 
+{::nomarkdown}
+<a href="/images/binary-code.png">
+  <img src="/images/binary-code.png" alt="DokuWiki" width="150" height="150" style="float: right; margin-left: 1rem;"/>
+</a>
+{:/nomarkdown}
+
 DokuWiki is a simple to use and highly versatile Open Source [wiki](https://en.wikipedia.org/wiki/Wiki) software that doesn't require a database.
 
 It is loved by users for its clean and readable [syntax](syntax).

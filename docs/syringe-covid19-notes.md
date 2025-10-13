@@ -11,7 +11,7 @@ We talked on the phone and exchanged quite a bit of info, this page is about lis
 <sl-alert variant="warning" open>
   <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
   <div style="display: flex; align-items: center; gap: 1rem;">
-    <img src="images/bacteria_1_.png" alt="Bacteria" width="80" height="80" style="flex-shrink: 0;"/>
+    <img src="/images/bacteria_1_.png" alt="Bacteria" width="80" height="80" style="flex-shrink: 0;"/>
     <div>
       <strong>About This Page:</strong> This page is an internal document with some information regarding the syringepump Open-Source project. If you found this at random, this probably doesn't matter to you.
     </div>
@@ -86,8 +86,8 @@ Pros and cons for different options are presented to help with decision-making.
 
 {::nomarkdown}
 <div style="text-align: center; margin: 2rem 0;">
-  <a href="images/screenshot_from_2020-04-06_23-50-41.png">
-    <img src="images/screenshot_from_2020-04-06_23-50-41.png" alt="Comparison" style="width: 100%; max-width: 800px; height: auto;"/>
+  <a href="/images/screenshot_from_2020-04-06_23-50-41.png">
+    <img src="/images/screenshot_from_2020-04-06_23-50-41.png" alt="Comparison" style="width: 100%; max-width: 800px; height: auto;"/>
   </a>
 </div>
 {:/nomarkdown}

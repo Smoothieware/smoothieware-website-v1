@@ -1,7 +1,9 @@
 # Configuration File
 
 {::nomarkdown}
-<img src="images/board.png" alt="Configuration" width="300" height="auto" style="float: right; margin-left: 1rem;"/>
+<a href="/images/board.png">
+  <img src="/images/board.png" alt="Configuration" width="150" height="150" style="float: right; margin-left: 1rem;"/>
+</a>
 {:/nomarkdown}
 
 One of the really appreciated features of the Smoothie firmware is that it doesn't require editing source code, compiling, or flashing in order to edit the configuration.
@@ -21,18 +23,20 @@ The configuration changes will be applied immediately after the board resets.
 You can find a default config file for 3D printing [here in the github repository](https://github.com/Smoothieware/Smoothieware/raw/edge/ConfigSamples/Smoothieboard/config) or by clicking on the big blue button just below:
 
 {::nomarkdown}
-<br/>
-<sl-button variant="primary" size="large" href="https://github.com/Smoothieware/Smoothieware/raw/edge/ConfigSamples/Smoothieboard/config" style="width:100%; max-width: 600px;">
-  <img src="images/download-icon.png" style="width:32px; margin-right:16px; vertical-align: middle;"/>
-  <b>Click here</b> to get the latest configuration file example
-</sl-button>
-<br/>
+<div style="margin: 2rem 0;">
+  <sl-button variant="primary" size="large" href="https://github.com/Smoothieware/Smoothieware/raw/edge/ConfigSamples/Smoothieboard/config" style="width:100%; max-width: 600px;">
+    <img src="/images/download-icon.png" style="width:32px; margin-right:16px; vertical-align: middle;"/>
+    <b>Click here</b> to get the latest configuration file example
+  </sl-button>
+</div>
 {:/nomarkdown}
 
+{::nomarkdown}
 <sl-alert variant="warning" open>
   <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
   Please remember that the config file on the SD card you got with your Smoothieboard may not be current. Always download the newest version with the button above.
 </sl-alert>
+{:/nomarkdown}
 
 ## Configuration File Format
 
@@ -52,13 +56,16 @@ You can find a complete list of possible configuration options [here](configurat
 
 {% include_relative donate.md %}
 
+{::nomarkdown}
 <sl-alert variant="success" open>
   <sl-icon slot="icon" name="check-circle"></sl-icon>
   <strong>Deltas</strong>
   <p>If you are configuring a delta 3D printer, you will save a lot of time and effort by starting with the delta example file instead of the normal example file.</p>
   <p>You can find the delta example file <a href="https://github.com/Smoothieware/Smoothieware/blob/edge/ConfigSamples/Smoothieboard.delta/config">here</a>.</p>
 </sl-alert>
+{:/nomarkdown}
 
+{::nomarkdown}
 <sl-alert variant="danger" open>
   <sl-icon slot="icon" name="exclamation-octagon"></sl-icon>
   <strong>Comments</strong>
@@ -68,13 +75,16 @@ You can find a complete list of possible configuration options [here](configurat
   <pre>#default_feed_rate                 4000                 # Default rate ( mm/minute ) for G1/G2/G3 moves</pre>
   <p>Will completely be ignored by Smoothie. To make Smoothie take it into account again, remove the <code>#</code> character at the beginning.</p>
 </sl-alert>
+{:/nomarkdown}
 
+{::nomarkdown}
 <sl-alert variant="danger" open>
   <sl-icon slot="icon" name="exclamation-octagon"></sl-icon>
   <strong>Line length</strong>
   <p>Make sure all your lines are shorter than 132 characters. Lines longer than this can cause issues.</p>
   <p>This should not be a problem if you do not add further comments, just be careful if you do.</p>
 </sl-alert>
+{:/nomarkdown}
 
 ## File Requirements
 
@@ -82,6 +92,7 @@ Smoothie will not work without a valid configuration file on the SD card.
 
 The filename must be `config` or `config.txt`
 
+{::nomarkdown}
 <sl-alert variant="warning" open>
   <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
   <strong>SD Card Mounting</strong>
@@ -90,19 +101,24 @@ The filename must be `config` or `config.txt`
   <p>Concurrent access to the SD card via the host and the Smoothie is not supported. The SD card must be safely removed or unmounted then Smoothie reset after copying or editing files from the host mount point.</p>
   <p>This is especially true on Macs which randomly like to read and write the SD card. If this happens during a print it will cause pauses and other printing problems.</p>
 </sl-alert>
+{:/nomarkdown}
 
+{::nomarkdown}
 <sl-alert variant="neutral" open>
   <sl-icon slot="icon" name="info-circle"></sl-icon>
   <strong>This is optional</strong>
   <p>Smoothieboard comes with a configuration file already on the SD card. You only need to get a new configuration file if you are making your own board, or if you are upgrading your firmware.</p>
 </sl-alert>
+{:/nomarkdown}
 
+{::nomarkdown}
 <sl-alert variant="warning" open>
   <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
   <strong>IMPORTANT</strong>
   <p>If you are upgrading from a previous version of master or edge, check for upgrade notes in the github root directory.</p>
   <p><a href="https://github.com/smoothieware/smoothieware/blob/edge/upgrade-notes.md">Upgrade notes</a></p>
 </sl-alert>
+{:/nomarkdown}
 
 ## Options
 
@@ -142,6 +158,7 @@ Using Unicode can cause problems.
 
 To avoid problems, use the default file on github (see link above) as your starting point.
 
+{::nomarkdown}
 <sl-alert variant="danger" open>
   <sl-icon slot="icon" name="exclamation-octagon"></sl-icon>
   <strong>Notepad++</strong>
@@ -149,6 +166,7 @@ To avoid problems, use the default file on github (see link above) as your start
   <p>Another good simple text editor that runs under Windows and will edit Smoothie config files with no problems is: <a href="https://wiki.gnome.org/Apps/Gedit">Gedit</a></p>
   <p>ANSI and UTF8 are equivalent for a subset of characters but sometimes quotes and such can be replaced with Unicode variants.</p>
 </sl-alert>
+{:/nomarkdown}
 
 ## Console configuration commands
 
@@ -190,12 +208,14 @@ As these settings can be temporarily overridden with M-codes there is a way to s
 | `M503` | Display overridden settings if any |  |
 | `M504` | Save the settings to an override file with specified extension | `M504 blue-pla` |
 
+{::nomarkdown}
 <sl-alert variant="danger" open>
   <sl-icon slot="icon" name="exclamation-octagon"></sl-icon>
   <strong>Crashing</strong>
   <p>Do not issue <code>M500</code> or <code>M504</code> when printing, or the machine could crash or the SD card become corrupted.</p>
   <p>Also do not issue M500 in a G-code file, it is not intended to be executed that way and may well crash the system. It is a manual command only.</p>
 </sl-alert>
+{:/nomarkdown}
 
 ### Example Override Values
 
@@ -228,11 +248,13 @@ M666
 M665
 ```
 
+{::nomarkdown}
 <sl-alert variant="danger" open>
   <sl-icon slot="icon" name="exclamation-octagon"></sl-icon>
   <strong>Do not</strong>
   <p>Edit the config-override file yourself, only use the commands to edit the values.</p>
 </sl-alert>
+{:/nomarkdown}
 
 ## Advanced pin configuration
 

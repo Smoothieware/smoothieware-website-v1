@@ -55,7 +55,11 @@ See [Flashing Smoothie Firmware](flashing-smoothie-firmware) and [Configuring Sm
 
 ### Wiring
 
-To access your Smoothieboard, you need to connect it to your network by plugging an Ethernet cable into the Smoothieboard at one end and into your Ethernet router at the other end. Please note that you can't connect a Smoothieboard directly to your computer unless you use a special type of cable and configuration on your computer. You want to use a router for this.
+To access your Smoothieboard, you need to connect it to your network by plugging an Ethernet cable into the Smoothieboard at one end and into your Ethernet router at the other end.
+
+Please note that you can't connect a Smoothieboard directly to your computer unless you use a special type of cable and configuration on your computer.
+
+You want to use a router for this.
 
 Once configured and plugged in, reset the Smoothieboard and wait for it to connect to the network.
 
@@ -102,31 +106,42 @@ Custom web pages can be accessed from the SD card, for example:
 http://ip_of_smoothie/sd/webif/index.html
 ```
 
+{::nomarkdown}
 <sl-alert variant="success" open>
   <sl-icon slot="icon" name="check-circle"></sl-icon>
   Smoothie ships with a very basic web interface, however, you can install better ones by following these instructions: <a href="install-web-interface.md">Installing the new web interface</a>.
 </sl-alert>
+{:/nomarkdown}
 
+{::nomarkdown}
 <sl-alert variant="danger" open>
   <sl-icon slot="icon" name="exclamation-octagon"></sl-icon>
   <strong>DO NOT</strong> use the web interface and telnet at the same time. This will crash Smoothie.
 </sl-alert>
+{:/nomarkdown}
 
+{::nomarkdown}
 <sl-alert variant="warning" open>
   <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
   For Smoothieboards v1, make sure you never access or refresh the web interface while the machine is executing a G-code file. This can result in a crash. Just make sure you don't do it, load the page while it's not running, then use the page but do not refresh or re-load it. This is a limitation of the current firmware, we expect it to be possible to fix in v2.
 </sl-alert>
+{:/nomarkdown}
 
+{::nomarkdown}
 <sl-alert variant="warning" open>
   <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
   If you have several interfaces, or installed a new one, whenever changing from an interface to another, make sure you fully clear your cache. See the documentation for your browser, or google about it, to find exact instructions for your setup.
 </sl-alert>
+{:/nomarkdown}
 
-<div class='panel panel-default wrap_center' style='width:640px;padding:10px '>
-<div class='panel-heading'><h4 class='panel-title'>Web interface</h4></div>
-<img src='images/new-web-interface.png' width='620px'><br/>
-It allows you to control the machine over the network
+{::nomarkdown}
+<div style="text-align: center; margin: 2rem 0;">
+  <a href="/images/new-web-interface.png">
+    <img src="/images/new-web-interface.png" alt="Web interface" style="min-width: 640px; max-width: 800px; width: 100%;"/>
+  </a>
+  <p><em>The web interface allows you to control the machine over the network</em></p>
 </div>
+{:/nomarkdown}
 
 #### Simple File Transfer Protocol (port 115)
 
@@ -173,15 +188,19 @@ To use the network capabilities of the Smoothieboard (4X and 5X, note the 3X boa
 
 They are, for example, available from [RobotSeed](http://robotseed.com/index.php?id_product=16&controller=product&id_lang=2).
 
+{::nomarkdown}
 <sl-alert variant="primary" open>
   <sl-icon slot="icon" name="info-circle"></sl-icon>
   Versions of Smoothieboard starting August 2014 have the Ethernet connector soldered by default.
 </sl-alert>
+{:/nomarkdown}
 
+{::nomarkdown}
 <sl-alert variant="warning" open>
   <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
   Note it must be a Mag (Magnetic) Jack; a standard RJ45 connector will not work. The only officially supported connector is the <strong>Hanrun HR911105A</strong>.
 </sl-alert>
+{:/nomarkdown}
 
 ## Hostname
 

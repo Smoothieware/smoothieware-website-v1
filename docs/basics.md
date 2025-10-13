@@ -1,5 +1,11 @@
 # Smoothie basics
 
+{::nomarkdown}
+<a href="/images/board.png">
+  <img src="/images/board.png" alt="Board" width="300" height="300" style="float: right; margin-left: 1rem;"/>
+</a>
+{:/nomarkdown}
+
 Here are some basic notions and pointers about Smoothie.
 
 ## What is Smoothie?

@@ -1,11 +1,13 @@
 # Spindle Options (Deprecated)
 
+{::nomarkdown}
 <sl-alert variant="warning" open>
   <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
   <strong>Deprecated Documentation</strong>
-
+  <br><br>
   This part of the documentation is deprecated. Please refer to the <a href="spindle-module">spindle module page</a> instead for current information.
 </sl-alert>
+{:/nomarkdown}
 
 ## Configuration Options
 

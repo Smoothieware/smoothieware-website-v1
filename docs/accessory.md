@@ -1,5 +1,10 @@
-
 # Smoothieware Mini
+
+{::nomarkdown}
+<a href="/images/circuit.png">
+  <img src="/images/circuit.png" alt="Circuit" width="300" height="300" style="float: right; margin-left: 1rem;"/>
+</a>
+{:/nomarkdown}
 
 Smoothieware Mini is a [free, opensource](http://dank.bengler.no/-/page/show/5470_grbl) firmware for an accessory system designed to run on ARM Cortex-M0 and run as extensions of a [Smoothieboard](smoothieboard).
 

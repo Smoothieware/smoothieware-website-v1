@@ -5,6 +5,13 @@ This is a list of all the events that a Module can register for in Smoothie.
 
 These events allow modules to respond to various system activities and communicate with each other.
 
+{::nomarkdown}
+<sl-alert variant="primary" open>
+  <sl-icon slot="icon" name="info-circle"></sl-icon>
+  This reference is essential for developers creating custom modules for Smoothie. Each event provides a hook into specific system activities.
+</sl-alert>
+{:/nomarkdown}
+
 | Name                    | Called from                                         | Description                                                                                   | How to cast the argument                                                                                   |
 |-------------------------|-----------------------------------------------------|-----------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------|
 | `ON_MAIN_LOOP`          | `/main.cpp`                                         | Called in a loop in main(), all G/M commands must be executed or issued in this event.        | no argument                                                                                                |

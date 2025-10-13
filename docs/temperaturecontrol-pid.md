@@ -6,8 +6,8 @@ title: Temperature Control PID
 # Temperature Control PID
 
 {::nomarkdown}
-<a href="images/temperaturecontrol.gif">
-  <img src="images/temperaturecontrol.gif" alt="TemperatureControl" width="430" height="auto" style="float: right; margin-left: 1rem;"/>
+<a href="/images/temperaturecontrol.gif">
+  <img src="/images/temperaturecontrol.gif" alt="TemperatureControl" width="430" height="auto" style="float: right; margin-left: 1rem;"/>
 </a>
 {:/nomarkdown}
 
@@ -54,10 +54,12 @@ temperature_control.hotend.i_factor     0.1
 temperature_control.hotend.d_factor     100
 ```
 
+{::nomarkdown}
 <sl-alert variant="warning" open>
   <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
   <strong>Important:</strong> Do not try to use PID settings from Marlin as they are not compatible. Smoothie uses different PID algorithms and the values will not translate directly.
 </sl-alert>
+{:/nomarkdown}
 
 ---
 
@@ -71,10 +73,12 @@ So unless you have been given those values with your hardware, or you are a PID 
 
 ### PID Auto-Tuning
 
+{::nomarkdown}
 <sl-alert variant="primary" open>
   <sl-icon slot="icon" name="lightbulb"></sl-icon>
   <strong>Recommended Method:</strong> Use Smoothie's built-in PID auto-tuning feature to automatically calculate optimal PID values for your hardware.
 </sl-alert>
+{:/nomarkdown}
 
 To auto-tune your PID values:
 
@@ -123,10 +127,12 @@ d_factor = 100
    - Too low: More overshoot
    - Too high: Very sensitive, noisy
 
+{::nomarkdown}
 <sl-alert variant="neutral" open>
   <sl-icon slot="icon" name="info-circle"></sl-icon>
   <strong>Tip:</strong> Make small adjustments (10-20% at a time) and test thoroughly after each change. Monitor temperature graphs to see the effect of your changes.
 </sl-alert>
+{:/nomarkdown}
 
 ---
 
@@ -232,6 +238,7 @@ This uses simple on/off control. Not recommended for most applications.
 
 ## Safety Notes
 
+{::nomarkdown}
 <sl-alert variant="danger" open>
   <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
   <strong>Safety Warning:</strong>
@@ -243,3 +250,4 @@ This uses simple on/off control. Not recommended for most applications.
     <li>Stop immediately if anything seems wrong</li>
   </ul>
 </sl-alert>
+{:/nomarkdown}

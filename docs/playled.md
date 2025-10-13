@@ -22,8 +22,8 @@ You can solder an [LED Tactile Button](https://www.sparkfun.com/products/10442) 
 This provides both a visual indicator (LED) and a button for controlling playback.
 
 {::nomarkdown}
-<a href="images/led-tactile-button.png">
-  <img src="images/led-tactile-button.png" alt="LED Tactile Button mounted on Smoothieboard" style="display: block; margin: 2rem auto; min-width: 640px; width: 80%; max-width: 800px;"/>
+<a href="/images/led-tactile-button.png">
+  <img src="/images/led-tactile-button.png" alt="LED Tactile Button mounted on Smoothieboard" style="display: block; margin: 2rem auto; min-width: 640px; width: 80%; max-width: 800px;"/>
 </a>
 {:/nomarkdown}
 
@@ -41,8 +41,8 @@ Alternatively, you can wire a simple LED to two pins on the board.
 This is a more basic solution that only provides the visual indicator without a button.
 
 {::nomarkdown}
-<a href="images/simple-led.png">
-  <img src="images/simple-led.png" alt="Simple LED wired to Smoothieboard pins" style="display: block; margin: 2rem auto; min-width: 640px; width: 80%; max-width: 800px;"/>
+<a href="/images/simple-led.png">
+  <img src="/images/simple-led.png" alt="Simple LED wired to Smoothieboard pins" style="display: block; margin: 2rem auto; min-width: 640px; width: 80%; max-width: 800px;"/>
 </a>
 {:/nomarkdown}
 

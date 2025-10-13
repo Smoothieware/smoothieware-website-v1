@@ -3,7 +3,16 @@
 
 This page documents all pin assignments for the LPC1769 microcontroller on Smoothieboard.
 
+{::nomarkdown}
+<sl-alert variant="primary" open>
+  <sl-icon slot="icon" name="cpu"></sl-icon>
+  This comprehensive reference shows how every pin on the LPC1769 is assigned on Smoothieboard. Use this to identify available pins for custom functionality.
+</sl-alert>
+{:/nomarkdown}
+
 ## Pin list
+
+The following table shows all pin assignments on the LPC1769 microcontroller:
 
 | ARM Pin | mBed Pin | LPCXpresso Pin | Assignment | Comment |
 | ------- | -------- | -------------- | ---------- | ------- |

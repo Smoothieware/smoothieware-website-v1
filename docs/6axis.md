@@ -6,8 +6,8 @@ title: 6 Axis Configuration
 # 6 axis
 
 {::nomarkdown}
-<a href="images/circuit.png">
-  <img src="images/circuit.png" alt="Circuit diagram" width="300" height="300" style="float: right; margin-left: 1rem;"/>
+<a href="/images/circuit.png">
+  <img src="/images/circuit.png" alt="Circuit diagram" width="300" height="300" style="float: right; margin-left: 1rem;"/>
 </a>
 {:/nomarkdown}
 
@@ -73,19 +73,23 @@ make AXIS=5 PAXIS=4 CNC=1
 
 Means Smoothie is compiled with XYZAB axes, and distances are calculated in the XYZA space.
 
+{::nomarkdown}
 <sl-alert variant="neutral" open>
   <sl-icon slot="icon" name="info-circle"></sl-icon>
   <strong>NOTE</strong> that in most cases you <strong>DO NOT</strong> need to set PAXIS. Only do this if you fully understand the difference between a Cartesian (primary) axis and say a rotary axis.
 </sl-alert>
+{:/nomarkdown}
 
 Once your firmware is compiled, you can now flash it to the board and start using it.
 
 ## Using additional axes
 
+{::nomarkdown}
 <sl-alert variant="warning" open>
   <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
   <strong>NOTE</strong> You MUST fully define the alpha, beta, and gamma (XYZ) axis before the other axis. They MUST have valid pin definitions for the step and dir pins (enable is optional). If you do not define valid pins for these first three axes, Smoothie will not boot.
 </sl-alert>
+{:/nomarkdown}
 
 ### Configuration
 
@@ -126,15 +130,19 @@ This configuration is very similar to that of your XYZ axes, and you need to cha
 
 Optionally if you are using endstops on the A, B, or C axis, you need to **replace** your endstops section with the following (it is also found in the [snippets example](https://github.com/Smoothieware/Smoothieware/blob/edge/ConfigSamples/Snippets/abc-endstop.config)):
 
+{::nomarkdown}
 <sl-alert variant="danger" open>
   <sl-icon slot="icon" name="exclamation-octagon"></sl-icon>
   <strong>NOTE</strong> DO NOT use the following syntax if you only have XYZ axis! Use the regular endstop config syntax.
 </sl-alert>
+{:/nomarkdown}
 
+{::nomarkdown}
 <sl-alert variant="warning" open>
   <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
   <strong>NOTE</strong> If you define a homing axis then there MUST be a defined axis with the same designation (e.g., B endstop MUST have B axis defined)
 </sl-alert>
+{:/nomarkdown}
 
 **NOTE** The ABC axis will always home after the XYZ axis home and will home individually, unless `homing_order` is defined in which case all axes will home individually in the order specified.
 

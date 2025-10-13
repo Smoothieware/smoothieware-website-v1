@@ -2,8 +2,8 @@
 # Your guide to installing Smoothieboard in a Laser Cutting machine
 
 {::nomarkdown}
-<a href="images/guide-laser.png">
-  <img src="images/guide-laser.png" alt="Laser icon" width="100" height="100" style="float: right; margin-left: 1rem;"/>
+<a href="/images/guide-laser.png">
+  <img src="/images/guide-laser.png" alt="Laser icon" width="100" height="100" style="float: right; margin-left: 1rem;"/>
 </a>
 {:/nomarkdown}
 
@@ -22,8 +22,8 @@ Please don't hesitate to [edit it](#_editpage) to fix mistakes and add informati
 
 
 {::nomarkdown}
-<a href="images/smoothieboard-fritzing.png">
-  <img src="images/smoothieboard-fritzing.png" alt="Smoothieboard Fritzing" style="float: right; margin-left: 1rem; width: 500px;"/>
+<a href="/images/smoothieboard-fritzing.png">
+  <img src="/images/smoothieboard-fritzing.png" alt="Smoothieboard Fritzing" style="float: right; margin-left: 1rem; width: 500px;"/>
 </a>
 {:/nomarkdown}
 
@@ -82,8 +82,8 @@ At the end of this guide, you should have a fully working machine.
 
 {::nomarkdown}
 <div style="text-align: center; margin: 2rem 0;">
-  <a href="images/firebrick.jpg">
-    <img src="images/firebrick.jpg" alt="A laser tube" style="min-width: 640px; width: 80%; height: auto;"/>
+  <a href="/images/firebrick.jpg">
+    <img src="/images/firebrick.jpg" alt="A laser tube" style="min-width: 640px; width: 80%; height: auto;"/>
   </a>
   <p><em>They look nice but they are dangerous</em></p>
 </div>

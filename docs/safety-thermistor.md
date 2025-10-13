@@ -1,4 +1,3 @@
-
 # Safety Thermistor
 
 Hot-ends have a heating element (controlled by a MOSFET) and a thermistor to read its temperature.
@@ -11,13 +10,19 @@ A few bad things can happen:
 - The thermistor can fall off the heater, in which case Smoothie will think the hot-end is cold, and heat it too much.
 - The MOSFET can fail, and be always on, resulting in the hot-end being over-heated.
 
-One way to prevent the last two bad things is to add a second thermistor to the hot-end. The second thermistor also reads the temperature on the hot-end, and if something goes bad, Smoothie turns the PSU off, preventing damage.
+One way to prevent the last two bad things is to add a second thermistor to the hot-end.
+
+The second thermistor also reads the temperature on the hot-end, and if something goes bad, Smoothie turns the PSU off, preventing damage.
+
+## Implementation
 
 To implement this, you need three things:
 
 - A [switch](switch) module that turns the PSU on and OFF. (See the [Switch](switch) documentation.)
 - A [temperaturecontrol](temperaturecontrol) module that doesn't control any MOSFET but reads just the safety thermistor.
 - A [temperatureswitch](temperatureswitch) module that turns a switch off if a temperaturecontrol module goes above a given temperature.
+
+## Example Configuration
 
 Here is an example configuration:
 
@@ -41,7 +46,20 @@ temperature_control.psu.thermistor         Semitec          # Thermistor type
 temperature_control.psu.designator         F                # Designator for the safety thermistor
 ```
 
-A few notes:
+## Important Notes
 
-- If you have a voltage regulator as your only 5V source on Smoothieboard, this will not work, as turning the PSU off will also turn the 5V off.
-- If you use an ATX PSU, you can wire the 5VSB supply to the 5V input on the Smoothieboard, in which case the Smoothieboard will still get its 5V even if the PSU is shut down by the switch module. Wire the ATX PS_ON to the ground of a small MOSFET. This will allow it to turn on/off with `M80`/`M81`, and will also shut off in case of a crash.
+{::nomarkdown}
+<sl-alert variant="warning" open>
+  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+  <strong>5V Voltage Regulator Limitation:</strong> If you have a voltage regulator as your only 5V source on Smoothieboard, this will not work, as turning the PSU off will also turn the 5V off.
+</sl-alert>
+{:/nomarkdown}
+
+{::nomarkdown}
+<sl-alert variant="primary" open>
+  <sl-icon slot="icon" name="lightbulb"></sl-icon>
+  <strong>ATX PSU Solution:</strong> If you use an ATX PSU, you can wire the 5VSB supply to the 5V input on the Smoothieboard, in which case the Smoothieboard will still get its 5V even if the PSU is shut down by the switch module.
+  <br><br>
+  Wire the ATX PS_ON to the ground of a small MOSFET. This will allow it to turn on/off with <code>M80</code>/<code>M81</code>, and will also shut off in case of a crash.
+</sl-alert>
+{:/nomarkdown}

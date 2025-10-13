@@ -6,8 +6,8 @@ title: Latest Smoothie Commits
 # Latest Smoothie Commits
 
 {::nomarkdown}
-<a href="images/oshw-logo.png">
-  <img src="images/oshw-logo.png" alt="Smoothieware Logo" width="150" height="150" style="float: right; margin-left: 1rem;"/>
+<a href="/images/oshw-logo.png">
+  <img src="/images/oshw-logo.png" alt="Smoothieware Logo" width="150" height="150" style="float: right; margin-left: 1rem;"/>
 </a>
 {:/nomarkdown}
 

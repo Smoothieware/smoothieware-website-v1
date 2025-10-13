@@ -7,6 +7,7 @@ title: Forum Guidelines
 
 {% include_relative help-guidelines.md %}
 
+{::nomarkdown}
 <sl-alert variant="primary" open>
   <sl-icon slot="icon" name="chat-dots"></sl-icon>
   <strong>Forum posting guidelines</strong><br><br>
@@ -16,3 +17,5 @@ title: Forum Guidelines
     <li>Please put: <code>[[details="config.txt"]]Your config file's content[[/details]]</code> around your copy/pasted configuration files, or any other large file, it makes them much easier to read. Please post your configuration file if you think it has any chance of being relevant.</li>
   </ul>
 </sl-alert>
+{:/nomarkdown}
+

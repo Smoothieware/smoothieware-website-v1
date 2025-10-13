@@ -15,24 +15,29 @@ Smoothieware will accept this input as if it were a simple mechanical switch.
 JohnSL on [GitHub](https://github.com/JohnSL/FSR_Endstop) has created an FSR controller board specifically for this purpose.
 
 **Where to buy:**
+
 - [AndOrNot](http://www.andornot.co.uk/product/fsr-controller)
 - [TriD Printing](http://www.tridprinting.com/Electronics/#3D-Printer-FSR)
 - [UltiBots](http://www.ultibots.com/fsr-leveling)
 
 **Resources:**
+
 - [John's blog post](http://trains.socha.com/2014/05/auto-adjust-fsr-end-stop-detector.html) about the board
 - [FSR pad design](http://www.andornot.co.uk/fsr-leveling/) by AndOrNot for delta printers
 
+{::nomarkdown}
 <sl-alert variant="neutral" open>
   <sl-icon slot="icon" name="info-circle"></sl-icon>
   This board is powered directly from the endstop pins, making installation straightforward.
 </sl-alert>
+{:/nomarkdown}
 
 ### Toucher - 4-Point FSR Controller
 
 For Cartesian machines with square heat beds, there is a 4-point FSR controller called "Toucher".
 
 **Resources:**
+
 - [Toucher on GitHub](https://github.com/random-builder/toucher)
 - [FSR mount design on Thingiverse](https://www.thingiverse.com/thing:2461845)
 
@@ -41,6 +46,7 @@ For Cartesian machines with square heat beds, there is a 4-point FSR controller 
 The [Deltabot group](https://groups.google.com/forum/#!searchin/deltabot/fsr) is where most discussion on using FSRs is located.
 
 **Topics to look for:**
+
 - Alternative boards like the Arduino Mini
 - WingWong's Trinket-derived design
 - FSR mounting techniques and best practices

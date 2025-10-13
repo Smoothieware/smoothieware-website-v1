@@ -23,8 +23,8 @@ This is a step-by-step guide to connecting your board to the various components 
 This guide is a [community](http://smoothieware.org/irc) effort, and this page is a Wiki. Please don't hesitate to [edit it](#_editpage) to fix mistakes and add information, any help is very welcome.
 
 {::nomarkdown}
-<a href="images/smooth-k40.png">
-  <img src="images/smooth-k40.png" alt="Blue Box Laser Cutter" style="width: 100%; max-width: 400px;"/>
+<a href="/images/smooth-k40.png">
+  <img src="/images/smooth-k40.png" alt="Blue Box Laser Cutter" style="width: 100%; max-width: 400px;"/>
 </a>
 {:/nomarkdown}
 </div>
@@ -75,8 +75,8 @@ If your PSU is too different from the one in this guide to allow you to adapt th
 <div class="grid">
 <div class="col md-6">
 {::nomarkdown}
-<a href="images/myjg40w.jpg">
-  <img src="images/myjg40w.jpg" alt="Power Supply Unit" width="400" height="292" style="float: right; margin-left: 1rem;"/>
+<a href="/images/myjg40w.jpg">
+  <img src="/images/myjg40w.jpg" alt="Power Supply Unit" width="400" height="292" style="float: right; margin-left: 1rem;"/>
 </a>
 {:/nomarkdown}
 </div>
@@ -123,8 +123,8 @@ The controller board that comes with the blue box is very limited, and can only 
 <div class="col md-6">
 
 {::nomarkdown}
-<a href="images/k40-controller.jpg">
-  <img src="images/k40-controller.jpg" alt="Controller Board" style="min-width: 640px; display: block; margin: 2rem auto;"/>
+<a href="/images/k40-controller.jpg">
+  <img src="/images/k40-controller.jpg" alt="Controller Board" style="min-width: 640px; display: block; margin: 2rem auto;"/>
 </a>
 {:/nomarkdown}
 </div>
@@ -149,8 +149,8 @@ You will want to connect 24V power to the VBB input on the Smoothieboard, 5V pow
 </div>
 <div class="col md-6">
 {::nomarkdown}
-<a href="images/polarity.png">
-  <img src="images/polarity.png" alt="Smoothieboard Polarity" width="200" height="200" style="float: right; margin-left: 1rem;"/>
+<a href="/images/polarity.png">
+  <img src="/images/polarity.png" alt="Smoothieboard Polarity" width="200" height="200" style="float: right; margin-left: 1rem;"/>
 </a>
 {:/nomarkdown}
 </div>
@@ -178,8 +178,8 @@ The first thing you want to do, is find the wires for each stepper motor, and fo
 <div class="col md-6">
 
 {::nomarkdown}
-<a href="images/wiring-stepper-motor.png">
-  <img src="images/wiring-stepper-motor.png" alt="Stepper Motors" width="300" height="300" style="float: right; margin-left: 1rem;"/>
+<a href="/images/wiring-stepper-motor.png">
+  <img src="/images/wiring-stepper-motor.png" alt="Stepper Motors" width="300" height="300" style="float: right; margin-left: 1rem;"/>
 </a>
 {:/nomarkdown}
 </div>

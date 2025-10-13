@@ -47,8 +47,8 @@ This is what Smoothie on a breadboard looks like (graphics are thanks to the awe
 
 {::nomarkdown}
 <div style="text-align: center; margin: 2rem 0;">
-  <a href="images/smoothie-on-a-breadboard/bb09.jpg">
-    <img src="images/smoothie-on-a-breadboard/bb09.jpg" alt="Smoothie on a Breadboard" style="min-width: 640px; max-width: 100%; height: auto;"/>
+  <a href="/images/smoothie-on-a-breadboard/bb09.jpg">
+    <img src="/images/smoothie-on-a-breadboard/bb09.jpg" alt="Smoothie on a Breadboard" style="min-width: 640px; max-width: 100%; height: auto;"/>
   </a>
 </div>
 {:/nomarkdown}
@@ -73,8 +73,8 @@ You'll need the breadboard in a bit of a special configuration, due to the dimen
 
 {::nomarkdown}
 <div style="text-align: center; margin: 2rem 0;">
-  <a href="images/smoothie-on-a-breadboard/bb01.jpg">
-    <img src="images/smoothie-on-a-breadboard/bb01.jpg" alt="Breadboard Configuration" style="min-width: 640px; max-width: 100%; height: auto;"/>
+  <a href="/images/smoothie-on-a-breadboard/bb01.jpg">
+    <img src="/images/smoothie-on-a-breadboard/bb01.jpg" alt="Breadboard Configuration" style="min-width: 640px; max-width: 100%; height: auto;"/>
   </a>
 </div>
 {:/nomarkdown}

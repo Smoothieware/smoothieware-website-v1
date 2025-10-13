@@ -71,7 +71,7 @@ To insert an image, do:
 
 ```html
 {::nomarkdown}
-<img src="images/SampleImage.jpg" alt="Sample Image">
+<img src="/images/SampleImage.jpg" alt="Sample Image">
 {:/nomarkdown}
 ```
 
@@ -180,7 +180,7 @@ You can insert raw HTML into the page by doing:
 <h1>Custom HTML</h1>
 <p>Something else</p>
 {::nomarkdown}
-<img src="images/circuit.png" alt="hello ;-)">
+<img src="/images/circuit.png" alt="hello ;-)">
 {:/nomarkdown}
 ```
 
@@ -196,8 +196,8 @@ For images, you can float them to the right or center them:
 
 ```html
 {::nomarkdown}
-<a href="images/example.png">
-  <img src="images/example.png" alt="Description" width="200" height="150" style="float: right; margin-left: 1rem;"/>
+<a href="/images/example.png">
+  <img src="/images/example.png" alt="Description" width="200" height="150" style="float: right; margin-left: 1rem;"/>
 </a>
 {:/nomarkdown}
 ```
@@ -207,8 +207,8 @@ For images, you can float them to the right or center them:
 ```html
 {::nomarkdown}
 <div style="text-align: center;">
-  <a href="images/example.png">
-    <img src="images/example.png" alt="Description" style="min-width: 640px; width: 100%; max-width: 800px;"/>
+  <a href="/images/example.png">
+    <img src="/images/example.png" alt="Description" style="min-width: 640px; width: 100%; max-width: 800px;"/>
   </a>
 </div>
 {:/nomarkdown}

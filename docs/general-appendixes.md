@@ -126,8 +126,8 @@ This shows control of an external driver using the pins on the positive side of 
 
 {::nomarkdown}
 <div style="text-align: center; margin: 2rem 0;">
-  <a href="images/external-driver.png">
-    <img src="images/external-driver.png" alt="External Driver" style="min-width: 640px; max-width: 100%; height: auto;"/>
+  <a href="/images/external-driver.png">
+    <img src="/images/external-driver.png" alt="External Driver" style="min-width: 640px; max-width: 100%; height: auto;"/>
   </a>
 </div>
 {:/nomarkdown}
@@ -140,8 +140,8 @@ For example:
 
 {::nomarkdown}
 <div style="text-align: center; margin: 2rem 0;">
-  <a href="images/external-driver-open-drain.png">
-    <img src="images/external-driver-open-drain.png" alt="External Driver Open Drain" style="min-width: 640px; max-width: 100%; height: auto;"/>
+  <a href="/images/external-driver-open-drain.png">
+    <img src="/images/external-driver-open-drain.png" alt="External Driver Open Drain" style="min-width: 640px; max-width: 100%; height: auto;"/>
   </a>
 </div>
 {:/nomarkdown}
@@ -229,8 +229,8 @@ If one of your axes requires more than one motor and driver, you can wire the co
 
 {::nomarkdown}
 <div style="text-align: center; margin: 2rem 0;">
-  <a href="images/mult-drivers-in-parallel.png">
-    <img src="images/mult-drivers-in-parallel.png" alt="External drivers wired in parallel" style="min-width: 640px; max-width: 100%; height: auto;"/>
+  <a href="/images/mult-drivers-in-parallel.png">
+    <img src="/images/mult-drivers-in-parallel.png" alt="External drivers wired in parallel" style="min-width: 640px; max-width: 100%; height: auto;"/>
   </a>
 </div>
 {:/nomarkdown}
@@ -250,8 +250,8 @@ Simple as that.
 
 {::nomarkdown}
 <div style="text-align: center; margin: 2rem 0;">
-  <a href="images/ssr-basic.png">
-    <img src="images/ssr-basic.png" alt="Wiring a Solid State Relay" style="min-width: 640px; max-width: 100%; height: auto;"/>
+  <a href="/images/ssr-basic.svg">
+    <img src="/images/ssr-basic.svg" alt="Wiring a Solid State Relay" style="min-width: 640px; max-width: 100%; height: auto;"/>
   </a>
 </div>
 {:/nomarkdown}

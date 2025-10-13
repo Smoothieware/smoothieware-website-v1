@@ -31,10 +31,12 @@ Then move the head to the bed by jogging, using [Pronterface](pronterface)'s arr
 
 Finally issue the `M306 Z0` command which will use the current Z position as a homing offset:
 
+{::nomarkdown}
 <sl-alert variant="neutral" open>
   <sl-icon slot="icon" name="info-circle"></sl-icon>
   You cannot use M306 unless you have Z homing endstops, if you can't home Z then you can't set homing offsets.
 </sl-alert>
+{:/nomarkdown}
 
 ```
 M306 Z0
@@ -49,8 +51,8 @@ M500
 Next time you home, the machine will know how high above the bed it is.
 
 {::nomarkdown}
-<a href="images/height-adjustment.png">
-  <img src="images/height-adjustment.png" alt="Height adjustment diagram showing the Z axis configuration" style="display: block; margin: 2rem auto; min-width: 640px; width: 80%; max-width: 800px;"/>
+<a href="/images/height-adjustment.png">
+  <img src="/images/height-adjustment.png" alt="Height adjustment diagram showing the Z axis configuration" style="display: block; margin: 2rem auto; min-width: 640px; width: 80%; max-width: 800px;"/>
 </a>
 {:/nomarkdown}
 
@@ -97,8 +99,8 @@ Now there are two different cases here:
 * Or, when the probe is triggered, the hotend is above the bed by a given distance, which we will call the z probe offset (this is the case of servo-retracted probes, bltouch, inductive probes, IR probes, etc).
 
 {::nomarkdown}
-<a href="images/probe-offset.png">
-  <img src="images/probe-offset.png" alt="Diagram showing Z probe offset measurement" style="display: block; margin: 2rem auto; min-width: 640px; width: 80%; max-width: 800px;"/>
+<a href="/images/probe-offset.png">
+  <img src="/images/probe-offset.png" alt="Diagram showing Z probe offset measurement" style="display: block; margin: 2rem auto; min-width: 640px; width: 80%; max-width: 800px;"/>
 </a>
 {:/nomarkdown}
 
@@ -154,8 +156,8 @@ G30 Znnn
 When `nnn` is the distance between your probe's triggering point, and the bed (or probe offset):
 
 {::nomarkdown}
-<a href="images/probe-offset.png">
-  <img src="images/probe-offset.png" alt="Diagram showing Z probe offset measurement" style="display: block; margin: 2rem auto; min-width: 640px; width: 80%; max-width: 800px;"/>
+<a href="/images/probe-offset.png">
+  <img src="/images/probe-offset.png" alt="Diagram showing Z probe offset measurement" style="display: block; margin: 2rem auto; min-width: 640px; width: 80%; max-width: 800px;"/>
 </a>
 {:/nomarkdown}
 
@@ -163,9 +165,11 @@ The `G30 Znnn` command moves the head until the probe triggers, then sets the cu
 
 So for example if your probe triggers when the hotend is 5mm above the bed, do `G30 Z5`, and if your probe triggers exactly when the hotend touches the bed, do `G30 Z0`.
 
+{::nomarkdown}
 <sl-alert variant="neutral" open>
   <sl-icon slot="icon" name="info-circle"></sl-icon>
-  Behind the scenes G30 Z0 does a G92 Z0, so you can save this if you set 'save_g92 true' in config and issue M500 that saves the offset at 0. Note that G92 is creating a new coordinate system called the Workspace coordinate system (or WCS) it is worth reading up on how that works.
+  Behind the scenes G30 Z0 does a G92 Z0, so you can save this if you set 'save_g92 true' in config and issue M500 that saves the offset at 0. Note that G92 is creating a new coordinate system called the Workspace coordinate system (WCS) it is worth reading up on how that works.
 </sl-alert>
+{:/nomarkdown}
 
 If you are doing this manually you can save time by jogging the Z to within 5mm of the bed then issue the `G30 Z0`.

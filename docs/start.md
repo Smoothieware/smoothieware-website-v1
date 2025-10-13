@@ -5,10 +5,12 @@ title: Smoothieware Home
 
 # Smoothieware
 
+{::nomarkdown}
 <sl-alert variant="primary" open>
   <sl-icon slot="icon" name="arrow-right-circle"></sl-icon>
   This page has been moved to the <a href="index">main homepage</a>. You will find all the same content there with improved formatting and organization.
 </sl-alert>
+{:/nomarkdown}
 
 ## Quick Links
 

@@ -17,7 +17,7 @@ title: Smoothieware Home
   <sl-icon slot="icon" name="rocket-takeoff"></sl-icon>
   <div style="display:flex;align-items:center;gap:15px;">
     <a href="https://www.robosprout.com/product-category/smoothieboards" style = "font-size:48px;font-weight:bold;">SmoothieBoard v2 is HERE!</a>
-    <img src="images/festa-junina.png" alt="Party" style="width:50px;height:50px;">
+    <img src="/images/festa-junina.png" alt="Party" style="width:50px;height:50px;">
   </div>
 </sl-alert>
 {:/nomarkdown}
@@ -31,19 +31,19 @@ The Smoothie project is always looking for help. Whatever your skills are, there
 <div class="menu">
   <div class="menu-item">
     <a href="3d-printer-guide">
-      <img src="images/guide-3d-printer.png" alt="3D Printer">
+      <img src="/images/guide-3d-printer.png" alt="3D Printer">
       <p>3D Printer Guide</p>
     </a>
   </div>
   <div class="menu-item">
     <a href="laser-cutter-guide">
-      <img src="images/guide-laser.png" alt="Laser">
+      <img src="/images/guide-laser.png" alt="Laser">
       <p>Laser Cutting Guide</p>
     </a>
   </div>
   <div class="menu-item">
     <a href="cnc-mill-guide">
-      <img src="images/guide-cnc-mill.png" alt="CNC Mill">
+      <img src="/images/guide-cnc-mill.png" alt="CNC Mill">
       <p>CNC Mill</p>
     </a>
   </div>
@@ -62,7 +62,7 @@ There is also a [Pick and Place](pick-and-place) guide.
   - [Wifi](wifi) (new)
 
 {::nomarkdown}
-<img src="images/board.png" alt="Board" width=100 height=100 style="float: right; margin-left: 1rem;"/>
+<img src="/images/board.png" alt="Board" width=100 height=100 style="float: right; margin-left: 1rem;"/>
 {:/nomarkdown}
 
 - [Configuring Smoothie](configuring-smoothie): Configuration and use, by module
@@ -73,7 +73,7 @@ There is also a [Pick and Place](pick-and-place) guide.
   - [Grbl mode](grbl-mode): Using Smoothie in CNC-specific mode instead of 3D printing mode
 
 {::nomarkdown}
-<img src="images/glove.png" alt="Tools" width=100 height=100  style="float: right; margin-left: 1rem;"/>
+<img src="/images/glove.png" alt="Tools" width=100 height=100  style="float: right; margin-left: 1rem;"/>
 {:/nomarkdown}
 
 - [Tools](tools)
@@ -114,7 +114,7 @@ There is also a [Pick and Place](pick-and-place) guide.
   - [Editing the Wiki](editing-the-wiki): How to edit this documentation and improve it.
 
 {::nomarkdown}
-<img src="images/binary-code.png" alt="Binary Code" width=100 height=100  style="float: right; margin-left: 1rem;"/>
+<img src="/images/binary-code.png" alt="Binary Code" width=100 height=100  style="float: right; margin-left: 1rem;"/>
 {:/nomarkdown}
 
 **The firmware.bin file**
@@ -131,7 +131,7 @@ Note, Smoothieboards come completely pre-flashed, you do not need to compile or 
 More: [Windows Drivers](Windows-Drivers), [Linux Drivers](Linux-Drivers), [Mac Drivers](Mac-Drivers), [New Features](New-Features), [Gallery](Gallery), [Smoothieboard Beta Guide](smoothieboard-beta-guide)
 
 {::nomarkdown}
-<img src="images/smoothieboard-fritzing.png" alt="Smoothieboard Fritzing" style="float: right; margin-left: 1rem; min-width:300px; max-width: 400px"/>
+<img src="/images/smoothieboard-fritzing-blue.png" alt="Smoothieboard Fritzing" style="float: right; margin-left: 1rem; min-width:300px; max-width: 400px"/>
 {:/nomarkdown}
 
 ## Hardware documentation
@@ -160,7 +160,7 @@ More: [Windows Drivers](Windows-Drivers), [Linux Drivers](Linux-Drivers), [Mac D
 ## For users
 
 {::nomarkdown}
-<img src="images/worker.png" alt="Worker" width=100 height=100  style="float: right; margin-left: 1rem;"/>
+<img src="/images/worker.png" alt="Worker" width=100 height=100  style="float: right; margin-left: 1rem;"/>
 {:/nomarkdown}
 
 - Powerful (120Mhz, 32bit) [micro-controller](http://www.embeddedartists.com/products/lpcxpresso/lpc1769_xpr.php).
@@ -175,7 +175,7 @@ More: [Windows Drivers](Windows-Drivers), [Linux Drivers](Linux-Drivers), [Mac D
 ## For hackers
 
 {::nomarkdown}
-<img src="images/blueprint-1.png" alt="Hackers" width=100 height=100  style="float: right; margin-left: 1rem;"/>
+<img src="/images/blueprint-1.png" alt="Hackers" width=100 height=100  style="float: right; margin-left: 1rem;"/>
 {:/nomarkdown}
 
 - Modular, event-driven design, allowing to add functionality easily without modifying the core. See the [ModuleExample](moduleexample)
@@ -190,7 +190,7 @@ More: [Windows Drivers](Windows-Drivers), [Linux Drivers](Linux-Drivers), [Mac D
 # Developer documentation
 
 {::nomarkdown}
-<img src="images/coding.png" alt="Coding" width=100 height=100  style="float: right; margin-left: 1rem;"/>
+<img src="/images/coding.png" alt="Coding" width=100 height=100  style="float: right; margin-left: 1rem;"/>
 {:/nomarkdown}
 
 - **[Todo](todo)**: List of the things that are being worked on in the project. We need your help!
@@ -218,7 +218,7 @@ Current edge build status: ![Build Status](https://travis-ci.org/Smoothieware/Sm
 
 {::nomarkdown}
 <img
-  src="images/oshw-logo.png"
+  src="/images/oshw-logo.png"
   alt="OSHW logo"
   style="width:100px; height:auto;"
 />

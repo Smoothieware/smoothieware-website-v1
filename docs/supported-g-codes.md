@@ -5,6 +5,7 @@ Smoothie is primarily a [G-code](http://en.wikipedia.org/wiki/G-code) interprete
 
 Here is a list of the G-codes that are currently supported:
 
+{::nomarkdown}
 <sl-alert variant="neutral" open>
   <sl-icon slot="icon" name="info-circle"></sl-icon>
   Make sure your Gcode is in uppercase, separation by space characters is optional, as shown everywhere on this wiki. For example:<br><br>
@@ -13,6 +14,7 @@ Here is a list of the G-codes that are currently supported:
 
   Lowercase is reserved for commands.
 </sl-alert>
+{:/nomarkdown}
 
 ## G codes
 
@@ -53,6 +55,7 @@ Here is a list of the G-codes that are currently supported:
 | G92.1 | Clear the G92 and G30 Znnn offsets | `G92.1`|
 | G92.4 | manually set homing (MCS) for XYZ  | `G92.4 X0 Y0 Z0`|
 
+{::nomarkdown}
 <sl-alert variant="warning" open>
   <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
   <strong>G Code comments</strong><br><br>
@@ -62,6 +65,7 @@ Here is a list of the G-codes that are currently supported:
   Example:<br>
   <code>G0 X7 Y8 ;this is the comment</code>
 </sl-alert>
+{:/nomarkdown}
 
 ## Additional Codes
 The Smoothieware configuration file permits the association of additional codes with some tool functions.  For example, for a [Switch module](switch), you can specify an arbitrary command in the 'input_on_command' and 'input_off_command'.  This means that some additional codes may be available, depending on your specific configuration file.
@@ -90,7 +94,9 @@ Tn will change the tool to n for all future commands, it may appear anywhere on 
 
 **NOTE** This is not compatible with the G-code spec, but unfortunately most slicers create incorrect Gcode for tool change.
 
+{::nomarkdown}
 <sl-alert variant="warning" open>
   <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
   <strong>Important:</strong> In smoothie there must be a space in front of a line that is affected by a modal G code. Some G code processors like HeeksCNC don't prefix the space neither do they prefix each line with the modal G code.
 </sl-alert>
+{:/nomarkdown}

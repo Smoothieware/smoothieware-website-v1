@@ -5,7 +5,6 @@
 
 All of the options currently supported by the Extruder module:
 
-
 | Option | Example value | Explanation |
 | ------ | ------------- | ----------- |
 {% include_relative extruder-options.md %}
@@ -19,7 +18,6 @@ All of the options currently supported by the Extruder module:
 ## G-code
 
 Here are the G-code commands currently supported by the Extruder module:
-
 
 - `G0`/`G1`: Move to the given coordinates. The F parameter defines speed and is remembered by subsequent commands (specified in millimetres/minute) (command is modal)
 - `G10`: Do firmware extruder retract

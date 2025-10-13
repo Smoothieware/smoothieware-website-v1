@@ -1,11 +1,16 @@
 
 # Mac Drivers and SD Card Issues
 
-## Overview
-
-Smoothieboard appears as a USB Mass Storage device on Mac OS X and generally works without additional drivers.
+{::nomarkdown}
+<sl-alert variant="success" open>
+  <sl-icon slot="icon" name="check-circle"></sl-icon>
+  <strong>Good News:</strong> Smoothieboard appears as a USB Mass Storage device on Mac OS X and generally works without additional drivers.
+</sl-alert>
+{:/nomarkdown}
 
 However, there are some common issues that Mac users may encounter.
+
+This page addresses the most common Mac-specific problems and their solutions.
 
 ## SD Card Slow to Unmount on Mac OS X
 
@@ -42,7 +47,12 @@ This creates a marker file that tells macOS not to index this volume.
 
 ### Recommended Approach
 
-Solution 2 (marker file) is recommended as it is persistent and will continue to work even if you reformat the SD card and restore the marker file.
+{::nomarkdown}
+<sl-alert variant="primary" open>
+  <sl-icon slot="icon" name="star"></sl-icon>
+  <strong>Recommended:</strong> Solution 2 (marker file) is preferred as it is persistent and will continue to work even if you reformat the SD card and restore the marker file.
+</sl-alert>
+{:/nomarkdown}
 
 Solution 1 needs to be re-run each time the SD card is mounted on a new Mac.
 

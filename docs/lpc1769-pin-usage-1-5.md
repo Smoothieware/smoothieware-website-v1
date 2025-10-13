@@ -57,9 +57,11 @@ It includes comparisons with version 1.0, as well as Edison and FPGA pin configu
 
 ## Summary
 
-Version 1.5 introduces several changes and optimizations:
+Version 1.5 introduces several changes and optimizations compared to version 1.0.
 
 ### New Functions in v1.5
+
+The following new functions are available in version 1.5:
 
 - DAC (Digital-to-Analog Converter)
 - 5V PWM output
@@ -68,6 +70,8 @@ Version 1.5 introduces several changes and optimizations:
 - Optional RS485 (not populated by default, pins free)
 
 ### Pin Allocation Details
+
+The pin allocation for version 1.5 uses advanced techniques to maximize available functionality:
 
 - The 5 enable pins will go on an 8-pin I2C IO expander (PCA9554B)
 - MS1, MS2, and RESET/SLEEP stepper pins will have pull-ups to expander pins

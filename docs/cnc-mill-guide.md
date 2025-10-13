@@ -2,8 +2,8 @@
 # Your guide to installing Smoothieboard in a CNC Milling Machine
 
 {::nomarkdown}
-<a href="images/guide-cnc-mill.png">
-  <img src="images/guide-cnc-mill.png" alt="CNC mill icon" width="100" height="100" style="float: right; margin-left: 1rem;"/>
+<a href="/images/guide-cnc-mill.png">
+  <img src="/images/guide-cnc-mill.png" alt="CNC mill icon" width="100" height="100" style="float: right; margin-left: 1rem;"/>
 </a>
 {:/nomarkdown}
 
@@ -14,8 +14,8 @@ This is a step-by-step guide to connecting your board to the various components 
 This guide is a [community](http://smoothieware.org/irc) effort, and this page is a Wiki. Please don't hesitate to [edit it](#_editpage) to fix mistakes and add information, any help is very welcome.
 
 {::nomarkdown}
-<a href="images/smoothieboard-fritzing.png">
-  <img src="images/smoothieboard-fritzing.png" alt="Smoothieboard Fritzing" style="float: right; margin-left: 1rem; width: 500px;"/>
+<a href="/images/smoothieboard-fritzing.png">
+  <img src="/images/smoothieboard-fritzing.png" alt="Smoothieboard Fritzing" style="float: right; margin-left: 1rem; width: 500px;"/>
 </a>
 {:/nomarkdown}
 

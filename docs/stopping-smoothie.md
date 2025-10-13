@@ -82,10 +82,12 @@ Emergency stop that instantly halts all operations.
 
 **Documentation:** [Supported G-codes](supported-g-codes), [Kill Button](killbutton)
 
+{::nomarkdown}
 <sl-alert variant="danger" open>
   <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
   <strong>Warning:</strong> Using the kill button or M112 will cause position loss. You must home all axes before continuing normal operation.
 </sl-alert>
+{:/nomarkdown}
 
 ---
 
@@ -113,6 +115,7 @@ When the kill button is pressed (or there is a temperature fault, M112 is issued
 
 ### Halt State Behavior
 
+{::nomarkdown}
 <sl-alert variant="warning" open>
   <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
   <strong>Halt State Indicators:</strong>
@@ -122,6 +125,7 @@ When the kill button is pressed (or there is a temperature fault, M112 is issued
     <li>PSU may be turned off if a PSU Switch is defined</li>
   </ul>
 </sl-alert>
+{:/nomarkdown}
 
 ### Clearing Halt State
 
@@ -135,10 +139,12 @@ The Halt state can be cleared by:
 
 ## Using Buttons and Sensors
 
+{::nomarkdown}
 <sl-alert variant="primary" open>
   <sl-icon slot="icon" name="lightbulb"></sl-icon>
   <strong>Tip:</strong> All stop commands can be triggered by a button or a sensor if a <a href="switch">Switch module</a> is configured to do so. This allows for physical emergency stop buttons or automatic stopping based on sensor conditions.
 </sl-alert>
+{:/nomarkdown}
 
 ---
 

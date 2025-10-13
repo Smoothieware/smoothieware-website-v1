@@ -1,5 +1,6 @@
 title: Smoothieware Documentation
 baseurl: ""
+repository: Smoothieware/smoothieware-website-v1
 
 # GitHub Pages theme
 remote_theme: pages-themes/midnight@v0.2.0

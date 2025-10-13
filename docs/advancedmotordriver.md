@@ -1,25 +1,34 @@
-
 # Advanced Driver Chip Module
+
+{::nomarkdown}
+<a href="/images/circuit.png">
+  <img src="/images/circuit.png" alt="Circuit diagram" width="300" height="300" style="float: right; margin-left: 1rem;"/>
+</a>
+{:/nomarkdown}
 
 This module is used to control SPI based stepper motor driver chips, like the Panucatt Bigfoot series.
 
+{::nomarkdown}
 <sl-alert variant="warning" open>
   <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
   This does not work on Smoothieboards or Azteeg X5 Mini as is, as they do not use the required driver chips.
-
+  <br><br>
   If you really know what you are doing, you can hook the drivers to the SPI bus of those old boards.
-
+  <br><br>
   Make sure your drivers have sufficient power filtering.
 </sl-alert>
+{:/nomarkdown}
 
+{::nomarkdown}
 <sl-alert variant="warning" open>
   <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
   Note that most of these drivers derive their power from Vbb (12v), not from the 3.3v, so in order to be set up correctly, they need to be powered up before Smoothie boots.
-
+  <br><br>
   This means the Vbb must be on before the 5v power comes on.
-
+  <br><br>
   Alternatively, the Smoothieboard must be hard reset after power is on.
 </sl-alert>
+{:/nomarkdown}
 
 ## Config settings
 

@@ -1,8 +1,8 @@
 # Déballage
 
 {::nomarkdown}
-<a href="images/usb-cable.png">
-  <img src="images/usb-cable.png" alt="Connecteurs USB" width="320" height="auto" style="float: right; margin-left: 1rem;"/>
+<a href="/images/usb-cable.png">
+  <img src="/images/usb-cable.png" alt="Connecteurs USB" width="320" height="auto" style="float: right; margin-left: 1rem;"/>
 </a>
 {:/nomarkdown}
 
@@ -21,8 +21,8 @@ Connectez un câble [USB-B](https://fr.wikipedia.org/wiki/Universal_Serial_Bus) 
 Smoothie utilise l'USB-B.
 
 {::nomarkdown}
-<a href="images/smoothie-config-screencap.png">
-  <img src="images/smoothie-config-screencap.png" alt="Carte SD - Fichiers sur votre carte SD" width="320" height="auto" style="float: right; margin-left: 1rem;"/>
+<a href="/images/smoothie-config-screencap.png">
+  <img src="/images/smoothie-config-screencap.png" alt="Carte SD - Fichiers sur votre carte SD" width="320" height="auto" style="float: right; margin-left: 1rem;"/>
 </a>
 {:/nomarkdown}
 
@@ -34,17 +34,21 @@ Ceci permet d'ajouter, de copier, d'éditer ou de supprimer n'importe quel fichi
 
 Ce fichier contient toutes les options de configuration de votre carte et se lit lorsque vous la lancez ou réinitialisez. Pour éditer la [configuration](configuring-smoothie) il vous suffit d'éditer ce fichier dans un [Éditeur de texte](https://wiki.gnome.org/Apps/Gedit), d'enregistrer, puis de réinitialiser la carte. Inutile de recompiler ou de configurer la carte.
 
+{::nomarkdown}
 <sl-alert variant="success" open>
   <sl-icon slot="icon" name="check-circle"></sl-icon>
   Pour en savoir plus sur la configuration de votre Smoothieboard, cliquez ici : <a href="configuring-smoothie">Configurer la Smoothieboard</a>
 </sl-alert>
+{:/nomarkdown}
 
+{::nomarkdown}
 <sl-alert variant="primary" open>
   <sl-icon slot="icon" name="info-circle"></sl-icon>
   La carte SD peut également être utilisée pour configurer votre carte avec une version plus récente du firmware (micrologiciel), voir <a href="getting-smoothie">Où trouver le fichier binaire</a> et <a href="flashing-smoothie-firmware">Comment le remplacer via une carte SD</a>.
   <br><br>
   Elle s'utilise aussi pour ranger et lire des fichiers en format <a href="https://fr.wikipedia.org/wiki/Programmation_de_commande_num%C3%A9rique">G-Code</a>, voir <a href="player">Lecteur</a>.
 </sl-alert>
+{:/nomarkdown}
 
 La carte ne sert cependant pas qu'à stocker des données. Elle possède également une interface série [USB CDC](http://en.wikipedia.org/wiki/USB_communications_device_class), vous permettant d'envoyer du G-code et de recevoir des réponses (Il existe une interface DFU pour mettre à jour les firmwares, mais elle est surtout destinée aux développeurs.)
 
@@ -55,8 +59,8 @@ Si vous le connaissez déjà, essayez de vous connecter dès à présent et vous
 ## Connexion réseau
 
 {::nomarkdown}
-<a href="images/network.switches.jpg">
-  <img src="images/network.switches.jpg" alt="Réseau - J'espère que vous avez moins de câbles..." width="320" height="auto" style="float: right; margin-left: 1rem;"/>
+<a href="/images/network.switches.jpg">
+  <img src="/images/network.switches.jpg" alt="Réseau - J'espère que vous avez moins de câbles..." width="320" height="auto" style="float: right; margin-left: 1rem;"/>
 </a>
 {:/nomarkdown}
 

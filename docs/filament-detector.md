@@ -9,7 +9,6 @@ The Smoothieboard then compares those pulses against the current theoretical pos
 
 If a difference is detected, the filament is not advancing correctly, which means that there is a problem with the pushing of the filament.
 
-
 <sl-alert variant="neutral" open>
   <sl-icon slot="icon" name="info-circle"></sl-icon>
   Smoothie uses the host command `action:pause` to tell the host to stop sending gcode.
@@ -19,14 +18,10 @@ If a difference is detected, the filament is not advancing correctly, which mean
 
 ## M-Code Commands
 
-Use `M404` command to set filament detector parameters: S seconds per check, P pulses per mm
-
-Use `M405` command to disable filament detector
-
-Use `M406` command to enable filament detector
-
-Use `M407` command to check if the filament detector gets triggered and to calibrate
-
+- Use `M404` command to set filament detector parameters: S seconds per check, P pulses per mm
+- Use `M405` command to disable filament detector
+- Use `M406` command to enable filament detector
+- Use `M407` command to check if the filament detector gets triggered and to calibrate
 
 ## Configuration options
 

@@ -1,13 +1,21 @@
 # bCNC
 
+{::nomarkdown}
+<a href="/images/coding.png">
+  <img src="/images/coding.png" alt="Coding" width="300" height="300" style="float: right; margin-left: 1rem;"/>
+</a>
+{:/nomarkdown}
+
 [bCNC](https://github.com/vlachoudis/bCNC) is a program that makes it convenient to use Smoothie as a CNC mill or laser cutter, and better yet, it is free!
 
 It also comes with several features useful for CNC and laser work, such as a work coordinate system, basic CAM, and a remote pendant web app.
 
+{::nomarkdown}
 <sl-alert variant="danger" open>
   <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
   <strong>Be Careful</strong>: Failure to properly configure bCNC for use with Smoothie can result in your machine crashing, parts breaking, and being sad. Be careful and check your work.
 </sl-alert>
+{:/nomarkdown}
 
 ## Getting Started
 

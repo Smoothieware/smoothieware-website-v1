@@ -6,7 +6,9 @@ title: Contributing to Smoothieware
 # Contributing
 
 {::nomarkdown}
-<img src="images/give.png" alt="Contributing" width="300" height="auto" style="float: right; margin-left: 1rem;"/>
+<a href="/images/give.png">
+  <img src="/images/give.png" alt="Contributing" width="150" height="150" style="float: right; margin-left: 1rem;"/>
+</a>
 {:/nomarkdown}
 
 The Smoothieware project is always looking for help.
@@ -15,10 +17,12 @@ Whatever your skills are, there are things you can do to improve the project wit
 
 Help and working together is what has made this project so advanced and precious over the years, and is very welcome.
 
+{::nomarkdown}
 <sl-alert variant="primary" open>
   <sl-icon slot="icon" name="heart"></sl-icon>
   We appreciate all contributions, whether it's code, documentation, bug reports, or helping other users in the community!
 </sl-alert>
+{:/nomarkdown}
 
 ## Getting Started
 

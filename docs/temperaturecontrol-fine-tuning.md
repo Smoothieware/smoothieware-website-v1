@@ -6,10 +6,12 @@ This page provides tips for fine-tuning temperature control settings in Smoothie
 
 ### Using a 12V Heater on a 24V System
 
+{::nomarkdown}
 <sl-alert variant="warning" open>
   <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
   If you are using a 12V heater on a 24V system, you need to limit the PWM duty cycle to prevent damage.
 </sl-alert>
+{:/nomarkdown}
 
 You need to set `max_pwm` to 64:
 

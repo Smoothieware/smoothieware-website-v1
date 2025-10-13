@@ -1,35 +1,31 @@
----
-layout: default
-title: Safety Warnings
----
-
 # Safety Warnings
 
 Before you start wiring your machine's elements to the board, there are several things you need to keep in mind and be careful about during all of the assembly.
 
 **Make sure you read this. Seriously. Not kidding. Do it. It's important.**
 
+{::nomarkdown}
 <sl-alert variant="danger" open>
   <sl-icon slot="icon" name="exclamation-octagon"></sl-icon>
   <strong>Critical:</strong> The warnings on this page can save your equipment, prevent fires, and potentially save your life. Read every section carefully and follow all safety guidelines.
 </sl-alert>
+{:/nomarkdown}
 
 ---
 
 ## Polarity
 
+{::nomarkdown}
 <sl-alert variant="danger" open>
   <sl-icon slot="icon" name="exclamation-octagon"></sl-icon>
   <strong>Power Polarity Warning</strong>
 
-  {::nomarkdown}
   <div style="text-align: center; margin: 1rem 0;">
-    <a href="images/polarity.png">
-      <img src="images/polarity.png" alt="Power connections" style="max-width: 100%; height: auto;"/>
+    <a href="/images/polarity.png">
+      <img src="/images/polarity.png" alt="Power connections" style="max-width: 100%; height: auto;"/>
     </a>
     <p style="font-style: italic; margin-top: 0.5rem;">Note the inversion between the 5mm and 3.5mm connectors</p>
   </div>
-  {:/nomarkdown}
 
   <p>Always make sure the <a href="http://en.wikipedia.org/wiki/Electrical_polarity">polarity</a> is correct when wiring in power inputs (coming from the <a href="http://en.wikipedia.org/wiki/Power_supply_unit_%28computer%29">Power Supply</a>). <strong>Reversed polarity can damage or destroy all or part of your board.</strong></p>
 
@@ -41,11 +37,13 @@ Before you start wiring your machine's elements to the board, there are several 
 
   <p>The main (labeled VBB) power input has a reverse polarity protection, however, it will not hold forever. As soon as you notice something is wrong, turn the power supply off and check again.</p>
 </sl-alert>
+{:/nomarkdown}
 
 ---
 
 ## Disconnecting Stepper Motors
 
+{::nomarkdown}
 <sl-alert variant="danger" open>
   <sl-icon slot="icon" name="exclamation-octagon"></sl-icon>
   <strong>Never Disconnect Motors While Powered</strong>
@@ -54,11 +52,13 @@ Before you start wiring your machine's elements to the board, there are several 
 
   <p>The drivers have very good protection against most possible problems and are very hard to destroy accidentally. But it is possible.</p>
 </sl-alert>
+{:/nomarkdown}
 
 ---
 
 ## Preventing Shorts
 
+{::nomarkdown}
 <sl-alert variant="warning" open>
   <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
   <strong>Metallic Objects and Shorts</strong>
@@ -71,11 +71,13 @@ Before you start wiring your machine's elements to the board, there are several 
     <li>Use a plastic screwdriver or the like</li>
   </ul>
 </sl-alert>
+{:/nomarkdown}
 
 ---
 
 ## Using the Right Connector
 
+{::nomarkdown}
 <sl-alert variant="warning" open>
   <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
   <strong>Check Connections Carefully</strong>
@@ -84,11 +86,13 @@ Before you start wiring your machine's elements to the board, there are several 
 
   <p>A common example of this problem is plugging a power input cable into the connector for an output, or plugging the limit switches in backwards.</p>
 </sl-alert>
+{:/nomarkdown}
 
 ---
 
 ## Crimping Quality
 
+{::nomarkdown}
 <sl-alert variant="warning" open>
   <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
   <strong>Ensure Quality Connections</strong>
@@ -97,11 +101,13 @@ Before you start wiring your machine's elements to the board, there are several 
 
   <p>Connections (to the stepper motors for example) lost while the machine is running can destroy your board.</p>
 </sl-alert>
+{:/nomarkdown}
 
 ---
 
 ## VBB Power Input Markings
 
+{::nomarkdown}
 <sl-alert variant="danger" open>
   <sl-icon slot="icon" name="exclamation-octagon"></sl-icon>
   <strong>VBB Connector Polarity</strong>
@@ -112,11 +118,13 @@ Before you start wiring your machine's elements to the board, there are several 
 
   <p>However, if you did not get your connectors soldered, and want to solder a 3.5mm connector instead of a 5mm connector, also note that <strong>the polarity is the opposite</strong>.</p>
 </sl-alert>
+{:/nomarkdown}
 
 ---
 
 ## USB vs Ethernet
 
+{::nomarkdown}
 <sl-alert variant="primary" open>
   <sl-icon slot="icon" name="lightbulb"></sl-icon>
   <strong>Recommendation: Use Ethernet</strong>
@@ -125,11 +133,13 @@ Before you start wiring your machine's elements to the board, there are several 
 
   <p>Ethernet, on the other hand, does not have this problem: save yourself the trouble, and use Ethernet right away. It's very nice. See <a href="network">Network</a> for information on how to set it up.</p>
 </sl-alert>
+{:/nomarkdown}
 
 ---
 
 ## How to Destroy Your Board (Don't Do These Things)
 
+{::nomarkdown}
 <sl-alert variant="danger" open>
   <sl-icon slot="icon" name="exclamation-octagon"></sl-icon>
   <strong>Board Destruction Warning</strong>
@@ -151,11 +161,13 @@ Before you start wiring your machine's elements to the board, there are several 
 
   <p><a href="https://en.wikipedia.org/wiki/Electrostatic_discharge">Electrostatic discharge</a> can also destroy your board: make sure you <a href="http://smoothieware.org/forum/t-1381690?from=email#post-2475310">properly ground everything</a>.</p>
 </sl-alert>
+{:/nomarkdown}
 
 ---
 
 ## Heater Safety
 
+{::nomarkdown}
 <sl-alert variant="danger" open>
   <sl-icon slot="icon" name="fire"></sl-icon>
   <strong>Fire Hazard - Critical Safety Warning</strong>
@@ -164,11 +176,13 @@ Before you start wiring your machine's elements to the board, there are several 
 
   <p><strong>Fires will kill you if you don't.</strong></p>
 </sl-alert>
+{:/nomarkdown}
 
 ---
 
 ## Grounding
 
+{::nomarkdown}
 <sl-alert variant="danger" open>
   <sl-icon slot="icon" name="exclamation-octagon"></sl-icon>
   <strong>Proper Grounding Required</strong>
@@ -185,11 +199,13 @@ Before you start wiring your machine's elements to the board, there are several 
     <li><a href="http://smoothieware.org/forum/t-1381690?from=email#post-2475310">Smoothie Forum Discussion</a></li>
   </ul>
 </sl-alert>
+{:/nomarkdown}
 
 ---
 
 ## Environmental Hazards
 
+{::nomarkdown}
 <sl-alert variant="warning" open>
   <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
   <strong>Be Aware of Your Environment</strong>
@@ -204,6 +220,7 @@ Before you start wiring your machine's elements to the board, there are several 
 
   <p><strong>Confined Spaces:</strong> You are even more in danger if you are using your machine in a confined space, always be on the watch for safety issues.</p>
 </sl-alert>
+{:/nomarkdown}
 
 ---
 
@@ -217,6 +234,7 @@ To properly understand some of the safety instructions in this documentation, ba
 
 ## Summary
 
+{::nomarkdown}
 <sl-alert variant="danger" open>
   <sl-icon slot="icon" name="exclamation-octagon"></sl-icon>
   <strong>Key Safety Points</strong>
@@ -233,5 +251,6 @@ To properly understand some of the safety instructions in this documentation, ba
     <li>When in doubt, power off and check</li>
   </ul>
 </sl-alert>
+{:/nomarkdown}
 
 **Remember:** Prevention is always better than repair. Take your time, double-check everything, and never skip safety steps to save time.

@@ -1,8 +1,8 @@
 # G92 G-code
 
 {::nomarkdown}
-<a href="images/Missing.png">
-  <img src="images/Missing.png" alt="G92 - Set Offset" width="200" height="200" style="float: right; margin-left: 1rem;"/>
+<a href="/images/gcode.png">
+  <img src="/images/gcode.png" alt="G-code icon" width="250" height="250" style="float: right; margin-left: 1rem;"/>
 </a>
 {:/nomarkdown}
 
@@ -14,17 +14,33 @@ This is by opposition to the workspace coordinates, which are the coordinates yo
 
 This sets an offset valid in all coordinate systems.
 
-G92 makes the current point have the coordinates you want (without motion), where the axis parameters contain the axis numbers you want. All axis parameters are optional, except that at least one must be used. If an axis parameter is not used for a given axis, the coordinate on that axis of the current point is not changed.
+G92 makes the current point have the coordinates you want (without motion), where the axis parameters contain the axis numbers you want.
 
-When G92 is executed, the origins of all coordinate systems move. They move such that the value of the current controlled point, in the currently active coordinate system, becomes the specified value. All coordinate system's origins are offset this same distance.
+All axis parameters are optional, except that at least one must be used.
 
-For example, suppose the current point is at X=4 and there is currently no G92 offset active. Then `G92 X7` is programmed. This moves all origins -3 in X, which causes the current point to become X=7. This -3 is saved in memory.
+If an axis parameter is not used for a given axis, the coordinate on that axis of the current point is not changed.
+
+When G92 is executed, the origins of all coordinate systems move.
+
+They move such that the value of the current controlled point, in the currently active coordinate system, becomes the specified value.
+
+All coordinate system's origins are offset this same distance.
+
+For example, suppose the current point is at X=4 and there is currently no G92 offset active.
+
+Then `G92 X7` is programmed.
+
+This moves all origins -3 in X, which causes the current point to become X=7.
+
+This -3 is saved in memory.
 
 Being in incremental distance (`G91`) mode has no effect on the action of G92.
 
-G92 offsets may be already be in effect when the G92 is called. If this is the case, the offset is replaced with a new offset that makes the current point become the specified value.
+G92 offsets may be already be in effect when the G92 is called.
 
-### Format
+If this is the case, the offset is replaced with a new offset that makes the current point become the specified value.
+
+## Format
 
 The command is used as such: 
 
@@ -34,7 +50,7 @@ G92 X10 Y10
 
 Which means: set a global offset of 10 in the X axis and 10 in the Y axis.
 
-### Parameters
+## Parameters
 
 | Parameter | Usage               | Example  |
 | --------- | ------------------- | -------- |
@@ -45,11 +61,11 @@ Which means: set a global offset of 10 in the X axis and 10 in the Y axis.
 | `B`       | Offset in the B axis | `G92 B10` |
 | `C`       | Offset in the C axis | `G92 C10` |
 
-### Friend Gcodes
+## Friend Gcodes
 
 The [`G92.1`](g92-1) Gcode is used to reset the offsets.
 
-### Further reading
+## Further reading
 
 These resources are used as references for Gcode: 
 - [LinuxCNC Gcode list](http://linuxcnc.org/docs/html/gcode.html) (some of this page's content is taken from their G92 documentation)

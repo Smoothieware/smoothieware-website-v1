@@ -1,4 +1,3 @@
-
 # Utils
 
 Utils are miscellaneous utility modules in Smoothieware that provide helpful functionality but do not represent physical [Tools](tools) like extruders or lasers.

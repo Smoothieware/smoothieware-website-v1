@@ -1,5 +1,10 @@
-
 # Arm Solutions
+
+{::nomarkdown}
+<a href="/images/board.png">
+  <img src="/images/board.png" alt="Board" width="300" height="300" style="float: right; margin-left: 1rem;"/>
+</a>
+{:/nomarkdown}
 
 On a typical "Cartesian" machine, each actuator (a motor and a linear rail, named alpha, beta, gamma) corresponds to an axis (like X, Y, and Z).
 

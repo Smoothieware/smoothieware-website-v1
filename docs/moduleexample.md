@@ -1,6 +1,13 @@
 
 # Module Example
 
+{::nomarkdown}
+<sl-alert variant="primary" open>
+  <sl-icon slot="icon" name="code-square"></sl-icon>
+  <strong>Developer Guide:</strong> This guide provides a step-by-step overview of how to create a basic module for use with Smoothie.
+</sl-alert>
+{:/nomarkdown}
+
 The aim of this guide is to provide a step-by-step overview of how to create a basic module for use with Smoothie.
 
 The example here will be a laser control module.
@@ -19,9 +26,15 @@ The main idea is to be able to add these additional functionalities in the simpl
 
 ## About this example
 
-For the example, we'll create a simple module that turns the laser on and off depending on received G codes, and PWM adjusts the laser power to the robot's speed so that it plays nicely with look-ahead acceleration management. This should actually be sufficient to do basic laser cutting.
+For the example, we'll create a simple module that turns the laser on and off depending on received G codes.
+
+PWM adjusts the laser power to the robot's speed so that it plays nicely with look-ahead acceleration management.
+
+This should actually be sufficient to do basic laser cutting.
+
 Also, there'll be a lot of explaining here, but if you landed on this page, you will probably understand everything just by looking at the code; it's not that complicated.
-Good examples also are the core modules, in `/modules/communication/` and `/modules/robot/`.
+
+Good examples of existing modules are in `/modules/communication/` and `/modules/robot/`.
 
 ## Code style
 
@@ -59,8 +72,18 @@ Once the module is added, `on_module_loaded()` is called so that you can registe
 
 ## On the two G code events
 
-So in our example, we want to turn the laser on/off depending on the G codes we receive. But because of the acceleration management (G code look-ahead, see the Planner class), received G codes are not executed when they are received. They are pushed in a queue, and then popped out when the previous movement has finished executing.
-So there are two events: `on_gcode_received` and `on_gcode_execute`. The one that's of interest to us now is `on_gcode_execute`, which is called right before the movement corresponding to that G code line is executed.
+So in our example, we want to turn the laser on/off depending on the G codes we receive.
+
+But because of the acceleration management (G code look-ahead, see the Planner class), received G codes are not executed when they are received.
+
+They are pushed into a queue, and then popped out when the previous movement has finished executing.
+
+So there are two events:
+
+- `on_gcode_received` - called when a G-code is received
+- `on_gcode_execute` - called right before the movement corresponding to that G-code line is executed
+
+The one that's of interest to us now is `on_gcode_execute`.
 
 ## Registering for an event
 

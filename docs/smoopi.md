@@ -1,4 +1,3 @@
-
 # Smoopi
 
 ## Overview
@@ -8,6 +7,15 @@ Smoopi is a feature-rich Host written specifically for Smoothie.
 It can run on an RPI with a touch screen or on a Desktop.
 
 The Host is suitable for controlling both 3D printers and CNC and Laser machines.
+
+{::nomarkdown}
+<sl-alert variant="primary" open>
+  <sl-icon slot="icon" name="lightbulb"></sl-icon>
+  <strong>Versatile Control:</strong> Smoopi provides a complete control interface for your Smoothie-powered machine, whether it's a 3D printer, CNC mill, or laser cutter.
+  <br><br>
+  It works great on a Raspberry Pi with a touchscreen for standalone operation, or on your desktop computer for full-featured control.
+</sl-alert>
+{:/nomarkdown}
 
 ## Installation
 
@@ -22,8 +30,6 @@ It also works with a popular Mach3 USB-based pendant called the HB04 (only teste
 All the buttons on the HB04 are configurable, and the LCD is fully operational.
 
 This is a great tool for CNC machines.
-
-
 
 ## Screenshots
 
@@ -143,5 +149,3 @@ This is a great tool for CNC machines.
   <p><em>More viewer screen, you can click to go wherever you want here</em></p>
 </div>
 {:/nomarkdown}
-
-

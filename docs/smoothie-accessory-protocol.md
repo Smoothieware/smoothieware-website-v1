@@ -3,6 +3,15 @@
 
 This document describes the protocol for communicating with Smoothie accessories and peripherals.
 
+{::nomarkdown}
+<sl-alert variant="neutral" open>
+  <sl-icon slot="icon" name="info-circle"></sl-icon>
+  <strong>Technical Documentation:</strong> This page contains detailed technical specifications for developers implementing Smoothie accessory communication protocols.
+  <br><br>
+  If you're just using Smoothieboard, you don't need to read this. This is for advanced users and developers creating custom accessories.
+</sl-alert>
+{:/nomarkdown}
+
 ## Protocol Overview
 
 The Smoothie Accessory Protocol has the following key characteristics:

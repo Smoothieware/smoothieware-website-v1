@@ -11,7 +11,6 @@ This module controls the motor that pushes the filament, it does not take care o
 
 The most important parameter to get your extruder module to work properly, is `extruder.[module-name].steps_per_mm`.
 
-
 You can create as many Extruder modules as you want (although you may run out of memory and Smoothie will no longer boot), as long as you give them different module names.
 
 You can name those modules whatever you want (as long as you stick to only alphanumerical characters).
@@ -29,8 +28,7 @@ We need to find the number of steps the stepper motor drivers have to generate i
 
 This value depends on your stepper motor, the microstepping on your stepper motor drivers, the gear reduction ratio on the extruder assembly if any, and the diameter of your hobbed pulley/bolt.
 
-A very good guide on how to find this value can be found here: [Triffid Hunter's Calibration Guide](http://reprap.org/wiki/Triffid_Hunter%27s_Calibration_Guide#E_steps)
-
+A very good guide on how to find this value can be found here: [Triffid Hunter's Calibration Guide](http://reprap.org/wiki/Triffid_Hunter%27s_Calibration_Guide#E_steps).
 
 ```markdown
 extruder.hotend.steps_per_mm 140

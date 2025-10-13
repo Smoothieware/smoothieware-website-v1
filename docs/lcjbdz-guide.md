@@ -3,7 +3,11 @@
 
 This is an in-progress guide/log of my conversion of a 60W Liaocheng city Dongchangfu District Branch painted laser equipment Co. (LCJBDZ) CNC laser cutter to run a Smoothieboard. They're the red box lasers available for very little money on Amazon.
 
-![LCJBDZ Laser Cutter](images/lcjbdz-guide/lcjbdz-laser-cutter.jpg)
+{::nomarkdown}
+<a href="/images/lcjbdz-guide/lcjbdz-laser-cutter.jpg">
+  <img src="/images/lcjbdz-guide/lcjbdz-laser-cutter.jpg" alt="LCJBDZ Laser Cutter" style="display:block;margin:2rem auto;min-width:640px;max-width:800px;width:100%;height:auto;"/>
+</a>
+{:/nomarkdown}
 
 « Red Box » laser cutters are cheap Chinese machines that perform surprisingly well for their price, and they're popular in maker spaces with limited budgets.
 

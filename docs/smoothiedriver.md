@@ -1,6 +1,13 @@
 
 # Smoothiedriver
 
+{::nomarkdown}
+<sl-alert variant="neutral" open>
+  <sl-icon slot="icon" name="info-circle"></sl-icon>
+  <strong>Development Project:</strong> Smoothiedriver is a series of motor driver PCBs currently in development for use with future "no-driver" Smoothieboard variants.
+</sl-alert>
+{:/nomarkdown}
+
 Smoothiedriver is a series of motor driver PCBs that are designed to connect to the no-driver series of Smoothieboard (coming soon).
 
 At the core of the system is the 3 pin parallel stepper system used on modern repraps: Enable, Direction, Step.
@@ -9,8 +16,8 @@ All Smoothiedrivers support at least this basic interface which is compatible wi
 
 {::nomarkdown}
 <div style="text-align: center; margin: 2rem 0;">
-  <a href="images/smoothiedriver-gamma-no-connectors-small.jpg">
-    <img src="images/smoothiedriver-gamma-no-connectors-small.jpg" alt="Smoothiedriver gamma board" style="min-width: 640px; width: 80%; height: auto;"/>
+  <a href="/images/smoothiedriver-gamma-no-connectors-small.jpg">
+    <img src="/images/smoothiedriver-gamma-no-connectors-small.jpg" alt="Smoothiedriver gamma board" style="min-width: 640px; width: 80%; height: auto;"/>
   </a>
 </div>
 {:/nomarkdown}
@@ -29,8 +36,8 @@ This image shows the board layout of the Smoothiedriver interface:
 
 {::nomarkdown}
 <div style="text-align: center; margin: 2rem 0;">
-  <a href="images/smoothie-driver-port.png">
-    <img src="images/smoothie-driver-port.png" alt="SmoothieDriver Port Layout" style="min-width: 640px; width: 80%; height: auto;"/>
+  <a href="/images/smoothie-driver-port.png">
+    <img src="/images/smoothie-driver-port.png" alt="SmoothieDriver Port Layout" style="min-width: 640px; width: 80%; height: auto;"/>
   </a>
 </div>
 {:/nomarkdown}

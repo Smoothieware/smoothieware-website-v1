@@ -42,10 +42,12 @@ to:
 beta_min_endstop   1.26^!
 ```
 
+{::nomarkdown}
 <sl-alert variant="neutral" open>
   <sl-icon slot="icon" name="info-circle"></sl-icon>
   If, when homing, your endstop moves a few millimeters, and stops, it most probably means it's inverted (it thinks it's already hitting the endstop, and moves back from it). Just invert it in config and see if that helps.
 </sl-alert>
+{:/nomarkdown}
 
 ## Homing
 

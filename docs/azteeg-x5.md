@@ -1,5 +1,10 @@
-
 # Super Quick Start Up Guide
+
+{::nomarkdown}
+<a href="/images/board.png">
+  <img src="/images/board.png" alt="Board" width="300" height="300" style="float: right; margin-left: 1rem;"/>
+</a>
+{:/nomarkdown}
 
 ## Things you'll need
 
@@ -20,10 +25,12 @@ The Azteeg X5 mini comes pre-flashed with a bootloader, so you're ready to get s
 
 4. **Insert and power on**: Insert the SD card into the Azteeg X5 mini card slot and plug in your USB cable.
 
+   {::nomarkdown}
    <sl-alert variant="warning" open>
      <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
      Make sure the INPUT SEL jumper is on USB if powering from USB.
    </sl-alert>
+   {:/nomarkdown}
 
 5. **Watch the boot sequence**: The X5 mini will boot and read the files on the card looking for new firmware. LEDs will count up and then start flashing to indicate that Smoothieware is now running.
 
@@ -35,10 +42,12 @@ The Azteeg X5 mini comes pre-flashed with a bootloader, so you're ready to get s
 
 7. **Install micro stepping jumpers**:
 
+   {::nomarkdown}
    <sl-alert variant="danger" open>
      <sl-icon slot="icon" name="exclamation-octagon"></sl-icon>
      <strong>Install micro stepping jumpers before attempting to move motors!</strong> See the <a href="http://files.panucatt.com/datasheets/x5mini_wiring.pdf">Wiring Diagram</a> for jumper details.
    </sl-alert>
+   {:/nomarkdown}
 
 ## Using the Serial Console
 

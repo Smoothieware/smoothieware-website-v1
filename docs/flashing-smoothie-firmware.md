@@ -3,7 +3,6 @@
 
 Here is how to flash a new firmware to your Smoothieboard.
 
-
 {::nomarkdown}
 <sl-alert variant="neutral" open>
   <sl-icon slot="icon" name="info-circle"></sl-icon>
@@ -23,7 +22,6 @@ Here is how to flash a new firmware to your Smoothieboard.
 
 This guide presumes your Smoothieboard is already flashed with the [DFU bootloader](flashing-the-bootloader) ( it is already if you bought the board, it probably isn't if you built it yourself ).
 
-
 ## Step by Step
 
 ### Download
@@ -31,7 +29,6 @@ This guide presumes your Smoothieboard is already flashed with the [DFU bootload
 The latest bin is available at [Smoothieware FirmwareBin](https://github.com/Smoothieware/Smoothieware/tree/edge/FirmwareBin)
 
 For detailed instructions and all the ways you can obtain a pre-made binary file or make your own, see [Getting Smoothie](getting-smoothie).
-
 
 ### Copy
 

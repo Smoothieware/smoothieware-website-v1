@@ -9,12 +9,14 @@ The Smoothieware community is active and helpful. There are several channels whe
 - [Support Mailing list](http://groups.google.com/group/smoothieware-support) - Email-based support discussions
 - [Dev Mailing list](http://groups.google.com/group/smoothie-dev) - Development discussions and planning
 
+{::nomarkdown}
 <sl-alert variant="primary" open>
   <sl-icon slot="icon" name="chat-dots"></sl-icon>
   <strong>IRC is Recommended</strong>
   <br><br>
   For the fastest response and most interactive help, we recommend joining the IRC channel. Many experienced users and developers are regularly available to help in real-time.
 </sl-alert>
+{:/nomarkdown}
 
 ## Before Asking for Help
 

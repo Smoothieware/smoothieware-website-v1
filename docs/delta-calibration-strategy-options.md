@@ -1,8 +1,16 @@
 # Delta Calibration Strategy Options
 
+{::nomarkdown}
+<a href="/images/board.png">
+  <img src="/images/board.png" alt="Delta Calibration" width="150" height="150" style="float: right; margin-left: 1rem;"/>
+</a>
+{:/nomarkdown}
+
 The delta calibration leveling strategy is specifically designed for linear delta machines.
 
-It uses a Z-probe to automatically determine the bed plane's tilt and the arm's radius, providing precise calibration for delta kinematics.
+It uses a Z-probe to automatically determine the bed plane's tilt and the arm's radius.
+
+This provides precise calibration for delta kinematics.
 
 {::nomarkdown}
 <sl-alert variant="neutral" open>

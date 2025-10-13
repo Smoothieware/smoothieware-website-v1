@@ -1,5 +1,15 @@
+---
+layout: default
+title: Jogger Developer Documentation
+---
 
 # Jogger Developer Documentation
+
+{::nomarkdown}
+<a href="/images/coding.png">
+  <img src="/images/coding.png" alt="Developer Documentation" width="240" height="240" style="float: right; margin-left: 1rem;"/>
+</a>
+{:/nomarkdown}
 
 ## Writing a Custom Joystick Module
 
@@ -8,9 +18,7 @@ There are a few devices which could be used for jogging, but don't fall into the
 Some examples include:
 
 - Encoder / MPG devices, where speed of the knob controls speed of jogging
-
 - Joystick with digital output
-
 - Paddle switch / buttons to jog at a fixed speed when pressed
 
 In these cases, you will need to write a module which:
@@ -19,6 +27,7 @@ In these cases, you will need to write a module which:
 2. Responds to a public data request from the jogger with the reading
 
 For an example on how #1 is done for analog devices, see the source code for `JoystickAxis.cpp`.
+
 The following examples will explain how to accomplish #2.
 
 ### Including Necessary Headers
@@ -35,7 +44,9 @@ This allows your code to conform to the data format the jogger will be expecting
 
 ### Responding to Public Data Requests
 
-Your module will need to respond to a public data request from the Jogger. To do so, you must first register your module with the Kernel so it knows to call your module when a public data request is made:
+Your module will need to respond to a public data request from the Jogger.
+
+To do so, you must first register your module with the Kernel so it knows to call your module when a public data request is made:
 
 ```cpp
 void YourModule::on_module_loaded()
@@ -51,13 +62,13 @@ void YourModule::on_get_public_data(void *argument)
 {
     //cast the argument to a PublicDataRequest pointer
     PublicDataRequest *pdr = static_cast<PublicDataRequest *>(argument);
-    
+
     //check if the request is for a joystick module, return if not
     if (!pdr->starts_with(joystick_checksum)) return;
-    
+
     //check if the request is for this particular joystick module, return if not
     if (!pdr->second_element_is(this->name_checksum)) return;
-    
+
     //caller has provided the location to write the state to
     struct PAD_joystick* pad = static_cast<struct PAD_joystick *>(pdr->get_data_ptr());
     pad->name_checksum = this->name_checksum;
@@ -67,11 +78,17 @@ void YourModule::on_get_public_data(void *argument)
 }
 ```
 
-You will need to fill in a few areas of the above example for your own module. The module "name_checksum" will need to be determined at startup, see "JoystickAxisPool.cpp" for an example of how to create many different named modules.
+You will need to fill in a few areas of the above example for your own module.
+
+The module "name_checksum" will need to be determined at startup, see "JoystickAxisPool.cpp" for an example of how to create many different named modules.
 
 ## Adding Axes
 
-The jogger module was written to support up to 6 concurrent jog axes. By default, the module enables 3, which means if you setup a 3D joystick, you can have three axes jogging at the same time. An example jogger config is shown below:
+The jogger module was written to support up to 6 concurrent jog axes.
+
+By default, the module enables 3, which means if you setup a 3D joystick, you can have three axes jogging at the same time.
+
+An example jogger config is shown below:
 
 ```plaintext
 jogger.data_source_alpha           joystickX
@@ -90,7 +107,9 @@ For up to 6 axes (maybe you have two 2D joysticks running at the same time, or a
 #define NUM_JOG_AXES 3
 ```
 
-Changing the value to your desired number of axes and recompiling will give you new firmware which enables the extra axes. The jogger data source names for each axis are:
+Changing the value to your desired number of axes and recompiling will give you new firmware which enables the extra axes.
+
+The jogger data source names for each axis are:
 
 | Axis 1            | Axis 2            | Axis 3            | Axis 4            | Axis 5            | Axis 6            |
 | ----------------- | ----------------- | ----------------- | ----------------- | ----------------- | ----------------- |

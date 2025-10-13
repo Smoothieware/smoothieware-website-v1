@@ -5,6 +5,12 @@ title: Developers Guide
 
 # Developers Guide
 
+{::nomarkdown}
+<a href="/images/coding.png">
+  <img src="/images/coding.png" alt="Developer Guide" width="150" height="150" style="float: right; margin-left: 1rem;"/>
+</a>
+{:/nomarkdown}
+
 {% include_relative contributing.md %}
 
 This page contains information you need to know when coding for Smoothie.
