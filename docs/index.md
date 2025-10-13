@@ -33,106 +33,102 @@ title: Smoothieware Home
 
   let fireworks = null;
   let isHovering = false;
-  let colorCycleInterval = null;
+  let launchInterval = null;
 
-  // Get random hue configuration (blue or orange with occasional accents)
-  function getRandomHueConfig() {
-    const rand = Math.random();
-    if (rand < 0.45) {
-      return { min: 180, max: 240 };  // Blues
-    } else if (rand < 0.90) {
-      return { min: 20, max: 40 };    // Oranges
-    } else if (rand < 0.95) {
-      return { min: 40, max: 55 };    // Yellow-oranges (rare)
+  // Pick a hue range with weights: ~45% blue, ~45% orange, ~10% yellow-orange
+  function pickHueRange() {
+    const r = Math.random();
+    if (r < 0.45) {
+      return { min: 200, max: 240 };  // Blues: ~200-240°
+    } else if (r < 0.90) {
+      return { min: 25, max: 40 };    // Oranges: ~25-40°
     } else {
-      return { min: 200, max: 220 };  // Dark blues (rare)
+      return { min: 45, max: 55 };    // Yellow-oranges: ~45-55° (near 60° is yellow)
     }
   }
 
-  // Create fireworks with specific hue range
-  function createFireworks(hueConfig) {
-    if (fireworks) {
-      fireworks.stop();
-      fireworks = null;
-    }
+  // Launch fireworks in a chosen hue
+  function launchWeighted(count) {
+    if (count < 1) return;
+    const hueRange = pickHueRange();
+    fireworks.updateOptions({ hue: hueRange });
+    fireworks.launch(count);
+  }
 
-    fireworks = new Fireworks.default(canvas, {
-      autoresize: true,
-      opacity: 0.8,
-      acceleration: 1.05,
-      friction: 0.97,
-      gravity: 1.5,
-      particles: 80,
-      traceLength: 3,
-      traceSpeed: 10,
-      explosion: 5,
-      intensity: 30,
-      flickering: 50,
-      lineStyle: 'round',
-      hue: hueConfig,
-      delay: {
-        min: 15,
-        max: 30
-      },
-      rocketsPoint: {
-        min: 50,
-        max: 50
-      },
-      lineWidth: {
-        explosion: {
-          min: 1,
-          max: 3
+  // Initialize fireworks
+  function initFireworks() {
+    if (!fireworks) {
+      fireworks = new Fireworks.default(canvas, {
+        autoresize: true,
+        opacity: 0.8,
+        acceleration: 1.05,
+        friction: 0.97,
+        gravity: 1.5,
+        particles: 80,
+        traceLength: 3,
+        traceSpeed: 10,
+        explosion: 5,
+        flickering: 50,
+        lineStyle: 'round',
+        hue: { min: 200, max: 240 },  // Start with blue
+        delay: {
+          min: 15,
+          max: 30
         },
-        trace: {
-          min: 1,
-          max: 2
+        rocketsPoint: {
+          min: 50,
+          max: 50
+        },
+        lineWidth: {
+          explosion: {
+            min: 1,
+            max: 3
+          },
+          trace: {
+            min: 1,
+            max: 2
+          }
+        },
+        brightness: {
+          min: 50,
+          max: 80
+        },
+        decay: {
+          min: 0.015,
+          max: 0.03
+        },
+        mouse: {
+          click: false,
+          move: false,
+          max: 1
         }
-      },
-      brightness: {
-        min: 50,
-        max: 80
-      },
-      decay: {
-        min: 0.015,
-        max: 0.03
-      },
-      mouse: {
-        click: false,
-        move: false,
-        max: 1
-      }
-    });
-
-    fireworks.start();
-  }
-
-  // Cycle between color schemes every 2 seconds
-  function startColorCycling() {
-    createFireworks(getRandomHueConfig());
-
-    colorCycleInterval = setInterval(function() {
-      if (isHovering) {
-        createFireworks(getRandomHueConfig());
-      }
-    }, 2000);
+      });
+    }
   }
 
   // Start fireworks on hover
   alert.addEventListener('mouseenter', function() {
     isHovering = true;
-    startColorCycling();
+    initFireworks();
+    fireworks.start();
+
+    // Launch one firework every 400ms with weighted colors
+    launchInterval = setInterval(function() {
+      if (isHovering) {
+        launchWeighted(1);
+      }
+    }, 400);
   });
 
   // Stop fireworks when mouse leaves
   alert.addEventListener('mouseleave', function() {
     isHovering = false;
-    if (colorCycleInterval) {
-      clearInterval(colorCycleInterval);
-      colorCycleInterval = null;
+    if (launchInterval) {
+      clearInterval(launchInterval);
+      launchInterval = null;
     }
     if (fireworks) {
       fireworks.stop();
-      fireworks = null;
     }
   });
 })();
