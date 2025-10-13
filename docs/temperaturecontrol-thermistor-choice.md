@@ -1,5 +1,5 @@
 
-# Thermistor Choice
+### Thermistor Choice
 
 Different models of thermistors are used in hotends or heated beds, and each type translates temperature into resistance differently. It's essential to inform Smoothie about the specific thermistor model you have to ensure accurate temperature readings.
 
@@ -22,11 +22,11 @@ Currently, Smoothie recognizes the following thermistor models:
 | `RRRF10K` | 3964 | | | | | |
 | `HT100K` | 3990 | | | | | |
 
-## Unknown Thermistor
+#### Unknown Thermistor
 
 If your thermistor is not recognized by Smoothie, you can define the parameters manually in the configuration file using either the beta value or the Steinhart Hart algorithm.
 
-### Using Beta Values
+##### Using Beta Values
 
 Set the beta value in the configuration file:
 
@@ -45,7 +45,7 @@ If the thermistor is 100K ohms at 25°C, this setting is usually sufficient. Add
 
 If you're unsure about your thermistor model, contact the designer or seller of your 3D printer, hotend, or heated bed to obtain the specifications and beta value.
 
-### Using the Steinhart Hart Algorithm
+##### Using the Steinhart Hart Algorithm
 
 This is the preferred method. Set the Steinhart Hart coefficients in the configuration file:
 

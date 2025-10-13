@@ -1,11 +1,11 @@
 
-# MOSFETs Table
+#### MOSFETs Table
 
 This page documents the MOSFET outputs available on Smoothieboard and their specifications.
 
 MOSFETs are used to control high-power devices like heated beds, hotends, fans, and other accessories.
 
-## MOSFET Specifications
+##### MOSFET Specifications
 
 | MOSFET Pair         | Big MOSFETS        | Small MOSFETS      | Mixed MOSFETS         |
 |---------------------|--------------------|--------------------|-----------------------|
@@ -16,32 +16,32 @@ MOSFETs are used to control high-power devices like heated beds, hotends, fans, 
 | Maximum current     | 12A                | 12A                | 3A                    | 3A                 | 12A       | 3A        |
 | Used by default for | Heated bed         |                    | Hotend 0              | Fan                | Hotend 1  |           |
 
-## Understanding MOSFET Pairs
+##### Understanding MOSFET Pairs
 
 Smoothieboard has three MOSFET pairs:
 
-### Big MOSFETs Pair (P2_7 and P2_5)
+###### Big MOSFETs Pair (P2_7 and P2_5)
 
 - **Current capacity**: 12A each
 - **Power input**: Shared between the two outputs (between P2_7 and P2_5 terminals)
 - **Typical use**: Heated bed (high current devices)
 - **Note**: Both outputs share the same power input
 
-### Small MOSFETs Pair (P2_4 and P2_6)
+###### Small MOSFETs Pair (P2_4 and P2_6)
 
 - **Current capacity**: 3A each
 - **Power input**: Shared between the two outputs (between P2_6 and P1_23 terminals)
 - **Typical use**: Hotend 0 and fan (moderate current devices)
 - **Note**: Both outputs share the same power input
 
-### Mixed MOSFETs Pair (P1_23 and P1_22)
+###### Mixed MOSFETs Pair (P1_23 and P1_22)
 
 - **Current capacity**: P1_23: 12A, P1_22: 3A
 - **Power input**: Taken directly from VBB (main power supply)
 - **Typical use**: P1_23 for Hotend 1, P1_22 for accessories
 - **Note**: These outputs use the main VBB power supply
 
-## Important Safety Notes
+##### Important Safety Notes
 
 {::nomarkdown}
 <sl-alert variant="warning" open>
@@ -57,7 +57,7 @@ Smoothieboard has three MOSFET pairs:
 </sl-alert>
 {:/nomarkdown}
 
-## Configuration
+##### Configuration
 
 To configure a MOSFET output in your config file, use the appropriate pin number from the "Digital output pin" row.
 
@@ -73,7 +73,7 @@ Example for configuring a hotend on P2_4:
 temperature_control.hotend.heater_pin  2.4
 ```
 
-## Related Documentation
+##### Related Documentation
 
 - [Smoothieboard](smoothieboard) - Main board documentation
 - [Temperature Control](temperaturecontrol) - Configuring heaters

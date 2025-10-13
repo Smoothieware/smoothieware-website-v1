@@ -1,4 +1,4 @@
-# MOSFETs
+### MOSFETs
 
 {::nomarkdown}
 <a href="/images/Warning.png">
@@ -57,7 +57,7 @@ MOSFETs list:
 | Mixed MOSFETs  | Third big MOSFET    | `1.23`          | X16              | VBB (motor) input            | 12-24V  | 12.5A max  |
 | Mixed MOSFETs  | Third small MOSFET  | `1.22`          | X9               | VBB (motor) input            | 12-24V  | 3A max     |
 
-## MOSFETs diagram
+#### MOSFETs diagram
 
 {::nomarkdown}
 <div style="text-align: center; margin: 2rem 0;">

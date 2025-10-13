@@ -1,4 +1,4 @@
-# Troubleshooting a problem with your Smoothieboard
+## Troubleshooting a problem with your Smoothieboard
 
 {::nomarkdown}
 <a href="https://imgs.xkcd.com/comics/fixing_problems.png">
@@ -28,21 +28,21 @@ If you can't find your answer here, you can also ask for help in the community. 
 
 Below is the list of the most common problems and things you can try to solve them :
 
-## Table of contents
+### Table of contents
 
 <!-- TOC -->
 
-## How to troubleshoot
+### How to troubleshoot
 
 Here are some of the things you should do when running into trouble, and before asking any kind of help around : 
 
-### 1. Backup your configuration file
+#### 1. Backup your configuration file
 
 Take your SD card out, and save your configuration file to your computer. If you are going to be messing around with the printer, you'd better be safe and make sure if anything happens to your SD card, you will not lose the work you put into your configuration file.
 
 You should really have done this already, it's just good sense.
 
-### 2. Clean your SD card
+#### 2. Clean your SD card
 
 Sometimes SD cards get corrupted, and it can cause all sorts of weird and difficult to understand problems.
 
@@ -59,7 +59,7 @@ It's probably a good idea to do this even if you don't think it's a SD card rela
 
 {% include_relative override-warning.md %}
 
-### 3. Incremental wiring
+#### 3. Incremental wiring
 
 This may not apply to your specific problem, but if it does : 
 
@@ -67,7 +67,7 @@ Unplug everything from your board, then plug things back into the board one at a
 
 Start with USB, then the power supply, then do the same for each peripheral in turn until everything is plugged back in. If you do not know what the problem is, it should help you pinpoint it.
 
-### 4. Prepare your config for asking for help.
+#### 4. Prepare your config for asking for help.
 
 Open your configuration file.
 
@@ -81,7 +81,7 @@ Click on « Create new paste »
 
 The website will give you a link. You can now give this link to people on IRC or the forums, without having to copy/paste the entire file, and people will be able to see your config and help you.
 
-### 5. Isolate the problem as much as possible
+#### 5. Isolate the problem as much as possible
 
 You want to make sure your remove as many influencing factors when debugging an issue. This makes sure you don't confuse a problem with another, or miss the fact that two problems are actually working together to ruin your life.
 
@@ -99,7 +99,7 @@ Make sure this is not a hardware problem before asking for help also, is your la
 
 Finally, make sure you mention all those steps you have taken when asking the community for help, if you don't people will start telling you to do things you have already done.
 
-### 6. Describe/Take a picture of your setup
+#### 6. Describe/Take a picture of your setup
 
 Take a picture of your Smoothieboard, a global view of it ( tip : pictures are much sharper and therefore useful, if neither the camera nor the subject are moving. Deposit your camera on a flat surface or fix it in some fashion. If you think pressing the button will make it move, remember you can use a 5-second countdown to take pictures. )
 
@@ -109,7 +109,7 @@ When posting on a forum/social media to get help, attach your config ( it's past
 
 If using a mailing list, do not insert the pictures in the body of your email, but rather attach them to the email. This make things easier for volunteers helping you, and not doing so often leads to ridiculously weird email client layouts ( for example if the picture is much larger than the screen ).
 
-### 7. Before asking the community for help.
+#### 7. Before asking the community for help.
 
 If you have an Open-Source board like the Smoothieboard, a board from Panucatt, or one of the many designed by the community and that support the project, ignore this.
 
@@ -127,9 +127,9 @@ Ideally, use Pronterface when troubleshooting, for various reasons ( one of whic
 
 1000% make sure you use the very latest example config file ( with your values ported over to it ), and the very latest firmware versions. This can't be repeated enough. This is said here and everywhere many times. If you come in asking for help, and after an hour everyone realizes your firmware is a year old, there is going to be a lot of frustration at you, you probably want to avoid that if you can.
 
-## Power supply problems
+### Power supply problems
 
-### Smoothieboard does not work at all
+#### Smoothieboard does not work at all
 
 First off, do any LEDs turn on on the board when plugged in via USB ?
 
@@ -166,7 +166,7 @@ Different behavior can represent different situations and problems for the board
 </sl-alert>
 {:/nomarkdown}
 
-### Plugged in and 3.3V LED is OFF
+#### Plugged in and 3.3V LED is OFF
 
 This means the microcontroller on your Smoothieboard is not getting any power.
 
@@ -182,7 +182,7 @@ If this still does not solve the problem, examine the board for problems with yo
 
 If you can still not find anything, [contact the community](getting-help-community).
 
-### The 3.3V LED is ON but LED4 is not ON
+#### The 3.3V LED is ON but LED4 is not ON
 
 LED4 indicates SD card status. If it is not lit up, it means there is a problem with your SD card.
 
@@ -201,7 +201,7 @@ Format a SD card as FAT32, and on that fresh card, copy two files: 
 
 Then insert the card into your Smoothieboard and try again.
 
-### The 3.3V LED is ON but none of the 1 through 4 LEDS is ON
+#### The 3.3V LED is ON but none of the 1 through 4 LEDS is ON
 
 Or LED1 and LED4 are ON, but LED2 and LED3 are not blinking.
 
@@ -212,15 +212,15 @@ Try with a [fresh configuration file](configuring-smoothie), and if it does not 
 If you soldered the smoothieboard then check either the 12 MHz oscillator or the SD card/SD card slot.
 *This could be a bad solder joint with the 12 MHz oscillator (crystal), a bad SD card slot, a bad SD card, and/or a bad config file. 
 
-### The 3.3V LED is ON, and LEDs 1 and 3 are ON and 3 is not blinking, LEDs 2 and 4 are OFF
+#### The 3.3V LED is ON, and LEDs 1 and 3 are ON and 3 is not blinking, LEDs 2 and 4 are OFF
 
 This could mean your board has no bootloader, which is very wrong. Contact whomever sold you your Smoothieboard.
 
-### The 3.3V LED is ON, and LEDs 1, 2, 3 and 4 are ON and none are blinking
+#### The 3.3V LED is ON, and LEDs 1, 2, 3 and 4 are ON and none are blinking
 
 This could mean you have a bootloader but no firmware was ever flashed or found on the SD card. Again, this is very wrong, contact whomever sold you your Smoothieboard.
 
-### 12 or 24V power is plugged in but the VBB LED is not ON
+#### 12 or 24V power is plugged in but the VBB LED is not ON
 
 Unplug power immediately !
 
@@ -228,29 +228,29 @@ Check that your power is not in reverse polarity.
 
 Even if you think you have it correct (read the instructions carefully, the markings on the board can be a bit confusing), try reversing it just in case.
 
-### All LEDs are on but LED 2 and 3 are solid
+#### All LEDs are on but LED 2 and 3 are solid
 
 Firmware didn't get flashed, you need to flash it and also make sure you uploaded a valid config.
 
-### It smells like something is burning!
+#### It smells like something is burning!
 
 Whaaaaa! Unplug everything! Get a fire extinguisher!
 
 Now, try to remember exactly what you were doing with your board, and contact whomever sold it to you.
 
-### Mosfets are never turning on
+#### Mosfets are never turning on
 
 You configured everything right and plugged the heating elements into your mosfet outputs, but no matter what you do, they do not turn on.
 
 Note Smoothieboard does not have a single power input. It has one for the motors, and then the big mosfets have their own inputs, and the small ones have theirs. You need to provide power to each, according to the mosfets you are using. See the documentation on this, it goes into great detail and has diagrams.
 
-### Grounding problems
+#### Grounding problems
 
 If you don't know about grounding, it's a great idea to read this post : [Earth, Ground, and the Grid](http://hackaday.com/2017/07/25/earth-ground-and-the-grid/)
 
-## Configuration problems
+### Configuration problems
 
-### Changes to configuration are ignored in general
+#### Changes to configuration are ignored in general
 
 The config changes are not taken into account, files do not appear or do not update on the SD card
 
@@ -264,13 +264,13 @@ For configuration changes which are being made in the `config` file and are not 
 
 {% include_relative override-warning.md %}
 
-### Changes to configuration are ignored on a particular line
+#### Changes to configuration are ignored on a particular line
 
 If a line begins with the `#` character, it means it is "commented out" and Smoothieboard will ignore it. 
 
 You need to remove the `#` character and Smoothie will now take the line into account.
 
-### «  No strategy found to handle G32 »
+#### «  No strategy found to handle G32 »
 
 If you try to run bed leveling or calibration, and the board answers something like «  No strategy found to handle G32 », please do the following : 
 
@@ -280,7 +280,7 @@ If you try to run bed leveling or calibration, and the board answers something l
 
 This error message most of the time means your config and firmware aren't up to date with each other. Upgrading everything solves the issue.
 
-### Bed leveling seems to have no effect
+#### Bed leveling seems to have no effect
 
 If you try to run bed leveling or calibration, and it seems to have no effect at all, please do the following : 
 
@@ -290,9 +290,9 @@ If you try to run bed leveling or calibration, and it seems to have no effect at
 
 This symptom most of the time means your config and firmware aren't up to date with each other. Upgrading everything solves the issue.
 
-## Movement problems
+### Movement problems
 
-### My stepper motor does not turn correctly
+#### My stepper motor does not turn correctly
 
 If it always turns in the same direction, and/or turns only weakly, and/or makes a strange sound, one very common cause of that is that only 3 of the wires of the motor are connected to the stepper motor driver.
 
@@ -302,7 +302,7 @@ If that doesn't help, do the following : 
 - Try this motor on another stepper motor driver
 - Try another motor on this stepper motor driver
 
-### My stepper motor does not turn at all and makes a very high-pitched sound
+#### My stepper motor does not turn at all and makes a very high-pitched sound
 
 This can happen with Z axis (or any leadscrew driven stepper motor) due to the high steps per millimeter number. You are probably trying to move it too fast. Try asking it to move at a much lower speed ( for example `G1 Z100 F100` ).
 
@@ -310,7 +310,7 @@ It's also possible you are trying to home, or to probe too fast. See the corresp
 
 If you are using external stepper motor drivers (driven by ENn, Stn and DIRn pins) check polarity, voltage and timings of signals to your driver. Also consider increasing `microseconds_per_step_pulse` slightly if the default 1us pulse width is too narrow for your driver or cable lengths.
 
-### My stepper motor does not turn at all
+#### My stepper motor does not turn at all
 
 And it does not present any resistance/torque when turning it manually :
 

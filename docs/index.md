@@ -89,24 +89,24 @@ There is also a [Pick and Place](pick-and-place) guide.
   - [Drillingcycles](drillingcycles): Canned drilling cycles support
   - [Filament-detector](filament-detector): Use an encoder to check filament is pushed correctly
   - [Utilities](utils)
+    - [Smoopi](smoopi): **New and Recommended** drive Smoothie using a color touch screen on [Raspberry Pi](https://www.raspberrypi.com/) 
     - [Player](player): Play files from the SD card
     - [Currentcontrol](currentcontrol): Digitally control your stepper motors current 
     - [AdvancedMotorDriver](advancedmotordriver): For controlling SPI based stepper motor controllers like DRV8711 and TMC26X
     - [Configurator](configurator): Manipulate configuration using console commands
     - [Kill Button](killbutton) and [Play LED](play-led): S/W based kill and play activity LED
     - [Panel](panel): Drive smoothie directly without a host using monochrome lcd screens and click encoders
-    - [Smoopi](smoopi): **New** drive Smoothie using a color touch screen on rpi
     - [on_boot.gcode](on_boot.gcode): Execute G-codes every time the board boots
 - [Using Smoothie](using-smoothie): General firmware use
   - [Console Commands](console-commands)
   - [Supported G-Codes](supported-g-codes)
   - [Stopping Smoothie](stopping-smoothie)
   - [Software](software)
-    - [Pronterface](pronterface)
-    - [Octoprint](octoprint)
-    - [bCNC](bcnc)
-    - [Smoopi](smoopi): **New** drive Smoothie using a color touch screen on rpi
-    - [Fusion360](fusion360)
+    - [Smoopi](smoopi): **New and Recommended** drive Smoothie using a color touch screen on [Raspberry Pi](https://www.raspberrypi.com/)
+    - [Pronterface](pronterface): Control 3D printers. The OG.
+    - [Octoprint](octoprint): Web-page based 3D printer control and management system.
+    - [bCNC](bcnc): Control interface for CNC machines.
+    - [Fusion360](fusion360): CAD/CAM software with a lot of features and a free/students tier.
 - **[Troubleshooting](troubleshooting)**: It doesn't work (ノo益o)ノ彡┻━┻ ! What to do ∩(︶▽︶)∩.
   - [MRI](mri-debugging): In the very rare case smoothie code crashes
 - [Contributing](contributing): We need your help!

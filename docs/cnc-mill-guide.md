@@ -109,7 +109,7 @@ You will find more information on `grbl_mode` on the [grbl_mode](http://smoothie
 
 {% include_relative panel-guide.md %}
 
-## Appendixes
+# Appendixes
 
 ### External stepper drivers
 
@@ -137,10 +137,10 @@ If you run into trouble, something doesn't work as it should, head over to the [
 
 You can also contact the [Community](http://smoothieware.org/irc) for help if you can't find an answer in the documentation.
 
-## bCNC configuration
+# bCNC configuration
 
 {% include_relative bcnc.md %}
 
-## Software
+# Software
 
 {% include_relative software.md %}

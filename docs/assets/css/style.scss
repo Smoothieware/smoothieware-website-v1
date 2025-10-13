@@ -249,7 +249,7 @@ body {
 /* Shoelace Alert Spacing and Custom Styling */
 sl-alert {
   display: block;
-  margin: 1.5rem 0 !important;
+  margin: 1.5rem 0 1.5rem 6px !important;
 }
 
 /* First alert after heading should have top margin */
@@ -269,10 +269,10 @@ sl-alert + div {
   margin-top: 1.5rem !important;
 }
 
-/* Move alert color highlight from top to left side and make it 2x wider */
+/* Move alert color highlight from top to left side and make it wider */
 sl-alert::part(base) {
   border-top: none !important;
-  border-left: 6px solid var(--sl-color-primary-600) !important; /* 2x the default 3px */
+  border-left: 10px solid var(--sl-color-primary-600) !important;
   border-radius: 0 4px 4px 0 !important; /* Keep rounded corners on right side only */
 }
 

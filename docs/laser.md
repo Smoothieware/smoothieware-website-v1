@@ -1,5 +1,3 @@
-# Laser control
-
 {::nomarkdown}
 <a href="/images/high-voltage.png">
   <img src="/images/high-voltage.png" alt="High Voltage Warning" width="300" height="427" style="float: right; margin-left: 1rem;"/>

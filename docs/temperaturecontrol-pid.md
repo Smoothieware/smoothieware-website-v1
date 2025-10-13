@@ -3,7 +3,7 @@ layout: default
 title: Temperature Control PID
 ---
 
-# Temperature Control PID
+### Temperature Control PID
 
 {::nomarkdown}
 <a href="/images/temperaturecontrol.gif">
@@ -11,7 +11,7 @@ title: Temperature Control PID
 </a>
 {:/nomarkdown}
 
-## Why PID is Important
+#### Why PID is Important
 
 PID is crucial for stable temperature control.
 
@@ -30,7 +30,7 @@ It means reaching temperatures that could be undesirable, and it means you will 
 
 ---
 
-## What is PID?
+#### What is PID?
 
 The solution to this is [PID](http://en.wikipedia.org/wiki/PID_controller).
 
@@ -44,7 +44,7 @@ It uses some math, allowing us to correct those problems by turning the heater o
 
 ---
 
-## Configuring PID Values
+#### Configuring PID Values
 
 The P, I, and D factors are configured in your config file as follows:
 
@@ -63,7 +63,7 @@ temperature_control.hotend.d_factor     100
 
 ---
 
-## Finding the Right Values
+#### Finding the Right Values
 
 The really tricky thing is to find the right values for these 3 factors.
 
@@ -71,7 +71,7 @@ The default ones are most probably wrong for your setup.
 
 So unless you have been given those values with your hardware, or you are a PID grand-master, you will need some help finding the optimal values.
 
-### PID Auto-Tuning
+##### PID Auto-Tuning
 
 {::nomarkdown}
 <sl-alert variant="primary" open>
@@ -99,11 +99,11 @@ To auto-tune your PID values:
 
 ---
 
-## Manual PID Tuning
+#### Manual PID Tuning
 
 If auto-tuning doesn't work well for your setup, you can manually tune:
 
-### Starting Values
+##### Starting Values
 
 Begin with conservative values:
 
@@ -113,7 +113,7 @@ i_factor = 0.1
 d_factor = 100
 ```
 
-### Tuning Process
+##### Tuning Process
 
 1. **Adjust P first:**
    - Too low: Slow to reach temperature, large oscillations
@@ -136,25 +136,25 @@ d_factor = 100
 
 ---
 
-## Different Heater Types
+#### Different Heater Types
 
 Different heater configurations may require different tuning approaches:
 
-### High-Power Heaters
+##### High-Power Heaters
 
 High-power heaters (like cartridge heaters) may need:
 - Lower P values
 - Higher D values
 - Faster response times
 
-### Low-Power Heaters
+##### Low-Power Heaters
 
 Low-power heaters (like resistive wire) may need:
 - Higher P values
 - More integral action
 - Slower response tuning
 
-### Heated Beds
+##### Heated Beds
 
 Heated beds typically need:
 - Much lower P values due to large thermal mass
@@ -163,9 +163,9 @@ Heated beds typically need:
 
 ---
 
-## Troubleshooting PID Issues
+#### Troubleshooting PID Issues
 
-### Temperature Oscillates
+##### Temperature Oscillates
 
 **Symptom:** Temperature swings up and down around target
 
@@ -174,7 +174,7 @@ Heated beds typically need:
 - Increase D factor
 - Check for good thermal coupling between heater and thermistor
 
-### Slow to Reach Temperature
+##### Slow to Reach Temperature
 
 **Symptom:** Takes a long time to heat up
 
@@ -183,7 +183,7 @@ Heated beds typically need:
 - Check PWM frequency settings
 - Verify heater power is adequate
 
-### Overshoots Temperature
+##### Overshoots Temperature
 
 **Symptom:** Temperature goes past target then settles
 
@@ -192,7 +192,7 @@ Heated beds typically need:
 - Increase D factor
 - Reduce I factor
 
-### Won't Stabilize
+##### Won't Stabilize
 
 **Symptom:** Can't maintain steady temperature
 
@@ -203,9 +203,9 @@ Heated beds typically need:
 
 ---
 
-## Advanced Configuration
+#### Advanced Configuration
 
-### PWM Frequency
+##### PWM Frequency
 
 The PWM frequency can affect PID performance:
 
@@ -215,7 +215,7 @@ temperature_control.hotend.pwm_frequency    1000
 
 Higher frequencies (1000-4000 Hz) are typically better for solid-state relays and MOSFETs.
 
-### Bang-Bang Mode
+##### Bang-Bang Mode
 
 For very simple setups, you can disable PID entirely:
 
@@ -227,7 +227,7 @@ This uses simple on/off control. Not recommended for most applications.
 
 ---
 
-## Further Reading
+#### Further Reading
 
 - [Temperature Control module documentation](temperaturecontrol)
 - [Thermistor configuration](thermistors)
@@ -236,7 +236,7 @@ This uses simple on/off control. Not recommended for most applications.
 
 ---
 
-## Safety Notes
+#### Safety Notes
 
 {::nomarkdown}
 <sl-alert variant="danger" open>

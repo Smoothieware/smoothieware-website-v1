@@ -1,6 +1,4 @@
 
-# Smoothieboards
-
 The Smoothieboards are numerical fabrication controllers designed to run the Open-Source [Smoothieware](http://smoothieware.org) firmware, by a community of volunteers.
 
 They come into a range of different versions, with different feature sets and advantages.
@@ -11,7 +9,7 @@ This page lists the different boards, you can find more information in each Smoo
 
 ---
 
-## `v1`
+# v1
 
 Smoothieboard v1 has been the first released Smoothieboard and has received several updates.
 
@@ -37,9 +35,11 @@ The board comes in 3 versions, 3X, 4X and 5X, with different sets of peripherals
 
 More information on the [Smoothieboard v1 page](smoothieboard-v1)
 
+Get your `v1` board at https://www.robosprout.com/
+
 ---
 
-## `v2`
+# v2 (`v2-prime`)
 
 The successor of the v1 board in the version 2 line of Smoothieboards.
 
@@ -60,15 +60,16 @@ Currently being designed, see [blog post](blog_15).
   Because v2 is being developed by awesome volunteers, we have no timetable or planned release date, so please stop asking.
 </sl-alert>
 
-{::nomarkdown}
-<a href="/images/smoothieboard-fritzing.png">
-  <img src="/images/smoothieboard-fritzing.png" alt="Smoothieboard v2" style="width: 640px; height: auto; display: block; margin: 2rem auto;"/>
-</a>
-{:/nomarkdown}
+Get your `v2` board here: https://www.robosprout.com/product-category/smoothieboards/v2-smoothieboard/ 
 
 ---
 
-## `v2-mini`
+# v2-mini
+
+<sl-alert variant = "neutral" open>
+<sl-icon  slot    = "icon" name = "info-circle"></sl-icon>
+  Note: Because of covid and tariffs, the development of `v2-mini` has been post-poned, and partially for now been replaced by the main `v2` board (`v2-prime`).
+</sl-alert>
 
 A minimalistic version of the v2 board, designed to be as inexpensive as possible.
 
@@ -100,7 +101,7 @@ Currently being designed, see [blog post](blog_15).
 
 ---
 
-## `v2-pro`
+# v2-pro
 
 An overpowered version of v2, for experimenting with intergalactic features and use on high-end machines.
 
@@ -116,12 +117,6 @@ It will feature:
 - Much more
 
 Currently being designed, see [blog post](blog_15).
-
-{::nomarkdown}
-<a href="/images/smoothieboard-fritzing.png">
-  <img src="/images/smoothieboard-fritzing.png" alt="Smoothieboard v2-pro" style="width: 640px; height: auto; display: block; margin: 2rem auto;"/>
-</a>
-{:/nomarkdown}
 
 <sl-alert variant="neutral" open>
   <sl-icon slot="icon" name="info-circle"></sl-icon>

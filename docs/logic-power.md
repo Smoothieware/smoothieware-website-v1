@@ -1,5 +1,5 @@
 
-## Logic Power Inputs
+# Logic Power Inputs
 
 {::nomarkdown}
 <a href="/images/smoothieboard-logic-inputs.svg">

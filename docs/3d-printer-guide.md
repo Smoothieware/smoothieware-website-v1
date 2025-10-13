@@ -53,7 +53,7 @@ This guide will walk through everything you need to accomplish to successfully p
 
 At the end of this guide, you should have a fully working machine.
 
-## Translations
+# Translations
 
 Some users have hand-translated this page. Note that this translated version is by definition never going to be up-to-date. Use it to help you understand in general, but any specific information should be taken from the original version, especially before asking the community for help.
 
@@ -83,7 +83,7 @@ Some users have hand-translated this page. Note that this translated version is 
 
 A hotend contains a thermistor and a heating element in its heating block.
 
-## Temperature control
+# Temperature control
 
 In a 3D printer, you heat thermoplastics.
 
@@ -97,7 +97,7 @@ For detailed information about temperature control in Smoothie, you can look at 
 
 The process is essentially the same to wire and control a hot-end, or a heated bed, and is as follows:
 
-### Thermistor
+## Thermistor
 
 A [thermistor](http://en.wikipedia.org/wiki/Thermistor)'s resistance changes with temperature.
 
@@ -152,7 +152,7 @@ Thermistors come in all shapes and sizes.
 
 {% include_relative temperaturecontrol-thermistor-choice.md %}
 
-### Heating element
+## Heating element
 
 Now that Smoothie can read the temperature, it needs a way to heat things and maintain a desired temperature.
 
@@ -174,7 +174,7 @@ These heating elements need to be connected to Smoothieboard on a port that allo
 
 Heated beds are often made out of a rigid, or flexible (kapton) PCB.
 
-#### Example
+### Example
 
 Let's say you want to connect a heated bed to your Smoothieboard.
 
@@ -205,7 +205,7 @@ To help you figure out what is what, here is a recapitulating table:
 
 {% include_relative mosfets-table.md %}
 
-### Testing
+## Testing
 
 Once your thermistor is connected, and both the power input and the heater elements are plugged in, you are ready to test your temperature controller.
 
@@ -223,15 +223,15 @@ Now, in Pronterface, set the temperature for either your bed or your hot-end, de
 
 Once you know the heater works correctly, there is still some tuning to do: tuning your PID settings.
 
-### PID
+## PID
 
 {% include_relative temperaturecontrol-pid.md %}
 
-### PID autotuning
+## PID autotuning
 
 {% include_relative temperaturecontrol-pid-autotuning.md %}
 
-### Heater safety
+## Heater safety
 
 There are features you can configure to make sure that your [temperature control](temperaturecontrol) module will detect when something is wrong, and stop the machine when that happens.
 
@@ -241,7 +241,7 @@ It is also a good thing to configure it well, because if you do not, it is possi
 
 You can read more about temperature control safety [here](http://smoothieware.org/temperaturecontrol#safety).
 
-### Example setup
+## Example setup
 
 This information is all very abstract.
 
@@ -280,7 +280,7 @@ This means we will make 4 connections:
 
 {% include_relative guide-endstops.md %}
 
-## Fans
+# Fans
 
 Fans are important: they help you cool things down.
 
@@ -368,7 +368,7 @@ Good diodes to use are: 1N5819 or SS14.
 
 {% include_relative panel-guide.md %}
 
-## Appendixes
+# Appendixes
 
 {% include_relative general-appendixes.md %}
 

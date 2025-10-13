@@ -1,17 +1,17 @@
 
 # Pronterface
 
+{::nomarkdown}
+<a href="/images/pronterface.png">
+  <img src="/images/pronterface.png" alt="Pronterface Screenshot" width="40%" style="float: right; margin-left: 1rem;"/>
+</a>
+{:/nomarkdown}
+
 Pronterface is a host software for Reprap electronics, originally developed by [Kliment](https://github.com/kliment/Printrun).
 
 It is mostly oriented towards 3D printing but can also be used to control laser cutters and CNC routers.
 
 Pronterface's website is at [http://www.pronterface.com/](http://www.pronterface.com/)
-
-{::nomarkdown}
-<div style="text-align: center; margin: 2rem 0;">
-  <p><em>Image: The pronterface interface (image file missing: images/pronterface-raw.png)</em></p>
-</div>
-{:/nomarkdown}
 
 Mainly for 3D printers, but very useful for debugging problems with any types of machine because it does communication very well and reports problems instead of ignoring them.
 

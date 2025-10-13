@@ -1,5 +1,3 @@
-# Software
-
 All software below either knows how to interface with (or how to generate G-code) for Smoothieware.
 
 ## 3D Printing

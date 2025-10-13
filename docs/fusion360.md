@@ -27,4 +27,6 @@ For a comprehensive tutorial on using Fusion 360 with CNC machines, watch this v
 </sl-alert>
 {:/nomarkdown}
 
+If this is still empty by the time you get here, email `wolf.arthur@gmail.com`.
+
 For more information, see the [CNC Mill Guide](cnc-mill-guide) and [ATC documentation](atc).

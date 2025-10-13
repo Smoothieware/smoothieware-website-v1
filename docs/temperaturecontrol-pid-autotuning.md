@@ -1,5 +1,5 @@
 
-# PID Autotuning
+### PID Autotuning
 
 Smoothie can automatically tune (find) your P, I, and D factors using a process described [here](http://brettbeauregard.com/blog/2012/01/arduino-pid-autotune-library/).
 

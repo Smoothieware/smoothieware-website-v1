@@ -1,8 +1,6 @@
-# bCNC
-
 {::nomarkdown}
 <a href="/images/coding.png">
-  <img src="/images/coding.png" alt="Coding" width="300" height="300" style="float: right; margin-left: 1rem;"/>
+  <img src="/images/coding.png" alt="Coding" width="100" height="100" style="float: right; margin-left: 1rem;"/>
 </a>
 {:/nomarkdown}
 
@@ -18,6 +16,12 @@ It also comes with several features useful for CNC and laser work, such as a wor
 {:/nomarkdown}
 
 ## Getting Started
+
+{::nomarkdown}
+<a href="/images/bcnc.png">
+  <img src="/images/bcnc.png" alt="BCNC Screenshot" width="320" style="float: right; margin-left: 1rem;"/>
+</a>
+{:/nomarkdown}
 
 The first step is to update your SmoothieBoard to the latest, edge, version of the CNC firmware build, as support for bCNC is relatively new.
 

@@ -1,6 +1,13 @@
 
 # Octoprint Connection Guide
 
+{::nomarkdown}
+<a href="/images/octoprint.png">
+  <img src="/images/octoprint.png" alt="Octoprint Screenshot" width="320" style="float: right; margin-left: 1rem;"/>
+</a>
+{:/nomarkdown}
+
+
 [Octoprint](http://octoprint.org) is a popular web interface for 3D printers that provides remote control and monitoring capabilities.
 
 There are 3 different ways to connect Octoprint to Smoothie:

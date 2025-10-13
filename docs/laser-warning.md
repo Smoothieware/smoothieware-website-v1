@@ -1,5 +1,5 @@
 
-# Lasers will make you blind
+## Lasers will make you blind
 
 {::nomarkdown}
 <a href="/images/laser-danger.png">
@@ -32,13 +32,13 @@ Always make sure fire extinguishers of the adequate type are present on site.
 
 A bucket of sand and a mini-shovel (which does not replace a fire extinguisher) can be a good tool to extinguish small "paper" fires in the machine without having to waste a fire extinguisher or wet the machine's internals.
 
-## Door Safety Switch
+### Door Safety Switch
 
 If the machine does not come with a switch on the door that turns the laser off when the door is open, this is stupid and dangerous.
 
 Please install that switch, and make sure it operates properly on a regular basis.
 
-## Fire Hazard
+### Fire Hazard
 
 If you leave your machine alone even for a few minutes, fire can start.
 

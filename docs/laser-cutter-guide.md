@@ -66,7 +66,7 @@ At the end of this guide, you should have a fully working machine.
 
 {% include_relative migrating.md %}
 
-## Safety
+# Safety
 
 {% include_relative laser-warning.md %}
 
@@ -89,7 +89,7 @@ At the end of this guide, you should have a fully working machine.
 </div>
 {:/nomarkdown}
 
-## Laser control
+# Laser control
 
 
 
@@ -99,7 +99,7 @@ At the end of this guide, you should have a fully working machine.
 
 {% include_relative panel-guide.md %}
 
-## Appendixes
+# Appendixes
 
 {% include_relative general-appendixes.md %}
 
@@ -126,10 +126,10 @@ If you run into trouble, something doesn't work as it should, head over to the [
 
 You can also contact the [Community](irc) for help if you can't find an answer in the documentation.
 
-## bCNC configuration
+# bCNC configuration
 
 {% include_relative bcnc.md %}
 
-## Software
+# Software
 
 {% include_relative software.md %}
