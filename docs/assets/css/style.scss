@@ -312,6 +312,12 @@ sl-alert[variant="danger"]::part(base) {
 .menu-item img {
   width: 150px; /* Constrain icon size */
   height: auto;
+  transform: rotate(0deg); /* Straight by default */
+  transition: transform 0.3s ease; /* Smooth rotation animation */
+}
+
+.menu-item:hover img {
+  transform: rotate(12deg); /* Rotate on hover - more than navbar icons */
 }
 
 .menu-item a {
