@@ -41,6 +41,13 @@ Get your `v1` board at https://www.robosprout.com/
 
 # v2 (`v2-prime`)
 
+{::nomarkdown}
+<a href="/images/v2-prime.png">
+  <img src="/images/v2-prime.png" alt="Smoothieboard v2 prime" style="width: 640px; height: auto; display: block; margin: 2rem auto;"/>
+</a>
+{:/nomarkdown}
+
+
 The successor of the v1 board in the version 2 line of Smoothieboards.
 
 It will feature:
@@ -65,6 +72,12 @@ Get your `v2` board here: https://www.robosprout.com/product-category/smoothiebo
 ---
 
 # v2-mini
+
+{::nomarkdown}
+<a href="/images/v2-mini.png">
+  <img src="/images/v2-mini.png" alt="Smoothieboard v2 mini" style="width: 640px; height: auto; display: block; margin: 2rem auto;"/>
+</a>
+{:/nomarkdown}
 
 <sl-alert variant = "neutral" open>
 <sl-icon  slot    = "icon" name = "info-circle"></sl-icon>
@@ -102,6 +115,12 @@ Currently being designed, see [blog post](blog_15).
 ---
 
 # v2-pro
+
+{::nomarkdown}
+<a href="/images/v2-pro.png">
+  <img src="/images/v2-pro.png" alt="Smoothieboard v2 pro" style="width: 640px; height: auto; display: block; margin: 2rem auto;"/>
+</a>
+{:/nomarkdown}
 
 An overpowered version of v2, for experimenting with intergalactic features and use on high-end machines.
 
