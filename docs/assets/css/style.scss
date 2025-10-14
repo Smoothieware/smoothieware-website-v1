@@ -5,6 +5,11 @@
 
 /* Custom CSS for Smoothieware documentation */
 
+/* Global Font - Montserrat */
+*, html, body {
+  font-family: "Montserrat", sans-serif !important;
+}
+
 /* Navigation Bar */
 .smoothie-nav {
   background-color: #1e1e1e;

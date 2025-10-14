@@ -325,7 +325,7 @@ More: [Windows Drivers](Windows-Drivers), [Linux Drivers](Linux-Drivers), [Mac D
 - Smoothie developer IRC forum on [IRC](irc) in #smoothiedev @ irc.freenode.net
 - [Logo Proposals](logo-proposals)
 
-Current edge build status: ![Build Status](https://travis-ci.org/Smoothieware/Smoothieware.svg?branch=edge)
+Current edge build status: [![Build Status](https://app.travis-ci.com/Smoothieware/Smoothieware.svg?branch=edge)](https://app.travis-ci.com/Smoothieware/Smoothieware)
 
 # Reviews
 
