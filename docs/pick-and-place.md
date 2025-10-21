@@ -1,16 +1,109 @@
 
-# Pick and Place
+# Your guide to installing Smoothieboard in a Pick and Place Machine
 
-<sl-alert variant="neutral" open>
-  <sl-icon slot="icon" name="info-circle"></sl-icon>
-  <strong>Note:</strong> This page is not a "full" guide like for the other machines yet. However, you should be able to use the <a href="cnc-mill-guide">CNC guide</a> and this page together to get your OpenPNP Pick and Place running easily.
-</sl-alert>
+{::nomarkdown}
+<a href="/images/guide-pick-and-place.png">
+  <img src="/images/guide-pick-and-place.png" alt="Pick and place icon" width="100" height="100" style="float: right; margin-left: 1rem;" onerror="this.style.display='none'"/>
+</a>
+{:/nomarkdown}
 
-## Compilation
+Pick and Place machines are specialized CNC machines that automate the placement of electronic components onto printed circuit boards (PCBs).
 
-To get an OpenPNP machine to run, we recommend using the [CNC version of the firmware](grbl-mode).
+A Pick and Place machine is essentially a very fast and precise CNC machine without a spindle, but with vacuum nozzles to pick up and place components.
 
-However, if you are using a vacuum sensor, that sensor requires you to use the [Temperature Control](temperaturecontrol) module, which is not enabled by default in the CNC build.
+This is a step-by-step guide to connecting your board to the various components of the Pick and Place machine, configuring everything, from the beginning to actually placing components.
+
+This guide is a [community](http://smoothieware.org/irc) effort, and this page is a Wiki. Please don't hesitate to [edit it](#_editpage) to fix mistakes and add information, any help is very welcome.
+
+{::nomarkdown}
+<a href="/images/smoothieboard-fritzing.png">
+  <img src="/images/smoothieboard-fritzing.png" alt="Smoothieboard Fritzing" style="float: right; margin-left: 1rem; width: 500px;"/>
+</a>
+{:/nomarkdown}
+
+## Installation overview
+
+On a typical Pick and Place machine setup, installing a Smoothieboard will mean you do the following things:
+
+- Read all of the guide before you start, best way to avoid mistakes
+
+- Install some [Software](software) to talk to your board
+
+- Install the [Windows drivers](windows-drivers) if using that OS
+
+- Connect your board via [USB](usb) and practice talking to it
+
+- Take a look at the [configuration](configuring-smoothie)
+
+- Upgrade your [firmware](flashing-smoothie-firmware) to the latest version if you feel like it
+
+- Wire your power supply and provide it with power
+
+- Wire the power supply to [Smoothieboard](smoothieboard)'s motor input
+
+- Connect motors to the stepper motor driver outputs (X, Y, Z, and rotation axes)
+
+- Edit your configuration to match your motors
+
+- Test the motors, and admire your accomplishment for hours
+
+- Connect [Endstops](endstops) to the endstop inputs
+
+- Edit your configuration to match your endstops
+
+- Test your endstops by homing the machine
+
+- Connect your vacuum system (pump, solenoids, sensors)
+
+- Configure and test vacuum sensing for component detection
+
+- Configure and test vacuum control solenoids
+
+- Connect and configure nozzle servos or Z-axis steppers
+
+- Test pick and place operations with sample components
+
+- Connect, configure and test any probes or cameras you may have
+
+- Configure your OpenPNP software and calibrate the machine
+
+- Run test pick and place jobs with low-value components
+
+- Watch as the machine places components using your new Smoothieboard system
+
+- Be happy
+
+This guide will walk through everything you need to accomplish to successfully perform these steps.
+
+At the end of this guide, you should have a fully working machine.
+
+{% include_relative unboxing.md %}
+
+{% include_relative migrating.md %}
+
+{% include_relative warning.md %}
+
+## Pick and Place firmware
+
+Smoothie firmware tries to create a single firmware for all types of machines (you then adapt the firmware to your machine type by changing the configuration).
+
+However, for Pick and Place machines, we recommend using the special "CNC" build of the firmware.
+
+The CNC build includes:
+
+- A special CNC version of the [Panel](http://smoothieware.org/panel) screens
+
+- `grbl_mode` enabled by default (which means Smoothie interprets G-code as CNC G-code rather than 3D-printing G-code)
+
+- Better support for precise positioning and fast movements typical of Pick and Place operations
+
+You will find information on flashing the firmware at [getting-smoothie](http://smoothieware.org/getting-smoothie)
+
+You will find more information on `grbl_mode` on the [grbl_mode](http://smoothieware.org/grbl-mode) page.
+
+### Including Temperature Control for Vacuum Sensors
+
+If you are using vacuum sensors to detect component pickup, those sensors require you to use the [Temperature Control](temperaturecontrol) module, which is not enabled by default in the CNC build.
 
 Therefore, you will need to build your own firmware, which is very easy if you follow [this simple guide](compiling-smoothie).
 
@@ -20,7 +113,7 @@ Once you have used this guide to compile your own CNC build, you need to make on
 
 There are two ways to make it so compilation will include this module, both methods are valid, the first one (user file creation) is preferred:
 
-### User file method
+#### User file method
 
 Just create a file named `src/default_excludes.mk` (that is, it is in the `src/` folder in your copy of Smoothie's source).
 
@@ -44,7 +137,7 @@ make
 
 Use the resulting `.bin` file, and you're good to go!
 
-### Command line option
+#### Command line option
 
 This method does not require creating a file, but it also means you have to remember to add this option to your command line **every time** you compile the firmware, so this is probably not the best method if you are a forgetful person.
 
@@ -66,58 +159,84 @@ That's it! Now your firmware will compile with the temperature-control module in
 
 Just remember to use the right command instead of the default one next time you update your firmware!
 
+{::nomarkdown}
 <sl-alert variant="neutral" open>
   <sl-icon slot="icon" name="info-circle"></sl-icon>
   Thanks to wolfmanjm for both methods!
 </sl-alert>
+{:/nomarkdown}
 
-## Vacuum sensor
+{% include_relative logic-power.md %}
 
-<sl-alert variant="primary" open>
-  <sl-icon slot="icon" name="lightbulb"></sl-icon>
-  <strong>TODO:</strong> Here add the right configuration to be able to use the temperature-control module to directly read ADCs, bypassing the actual thermistor math for direct/linear reading. This will be added as soon as Shai provides his configuration.
-</sl-alert>
+{% include_relative main-power-input.md %}
 
-Example vacuum sensor configuration:
+{% include_relative stepper-motors.md %}
 
-```plaintext
-# VACUUM SENSING
+{% include_relative guide-endstops.md %}
 
-# LEFT Nozzle Vacuum configuration
+# Pick and Place Tool Control
 
-temperature_control.vac_n1.enable                 true             # Whether to activate this ( "hotend" ) module at all.
-temperature_control.vac_n1.sensor                   ad8495           #
-temperature_control.vac_n1.ad8495_pin             0.23             # Pin for the thermistor to read
-temperature_control.vac_n1.ad8495_offset          0                #
-temperature_control.vac_n1.heater_pin             nc               # Pin to controls the heater, nc if a read only thermistor.
-temperature_control.vac_n1.readings_per_second      500                # How many times per second to read temperature from the sensor.
-temperature_control.vac_n1.get_m_code               104                  # Calling this M-code will return the current temperature.
-temperature_control.vac_n1.designator             VAC              # Designator letter for this module
-temperature_control.vac_n1.rt_curve               20.0,220,120,6000,220,120000
+Pick and Place machines use vacuum nozzles instead of spindles or lasers to manipulate components.
 
-# RIGHT Nozzle Vacuum configuration
+This section covers how to configure and control the vacuum system, sensors, and nozzles.
 
-temperature_control.vac_n2.enable                 true             # Whether to activate this ( "hotend" ) module at all.
-temperature_control.vac_n2.sensor                   ad8495           #
-temperature_control.vac_n2.ad8495_pin             0.24             # Pin for the thermistor to read
-temperature_control.vac_n2.ad8495_offset          0                #
-temperature_control.vac_n2.heater_pin             nc               # Pin to controls the heater, nc if a read only thermistor.
-temperature_control.vac_n2.readings_per_second      500              # How many times per second to read temperature from the sensor.
-temperature_control.vac_n2.get_m_code               105                  # Calling this M-code will return the current temperature.
-temperature_control.vac_n2.designator             VAC              # Designator letter for this module
-temperature_control.vac_n2.rt_curve               20.0,220,120,6000,220,120000
-```
+{% include_relative pick-and-place-control.md %}
 
-## Servos as axes
+{% include_relative z-probe-guide.md %}
 
-On some Pick and Place machines, the head (Z axis) is controlled by a hobby servo motor.
+{% include_relative panel-guide.md %}
 
-However, by default in Smoothie, those are controlled via the [Switch](switch) module using M-codes such as `M280`.
+# Appendixes
 
-This works, but that's not how you usually address a Z axis.
+{% include_relative general-appendixes.md %}
 
-If you want a bit of extra convenience, by being able to talk to your hobby servo as if it was a Z axis (which means you will also be able to use it in places like homing or probing the way you typically use a Z axis, if this is something you need), then you can use this special branch of Smoothie that implements this feature:
+### Pick and Place Specific Notes
 
-* [Slave Switch](https://github.com/Smoothieware/Smoothieware/tree/feature/slaveswitch)
+Pick and Place machines typically require:
 
-Once you compile this branch, you will be able to use your hobby servo as a Z axis (and other such switch <-> axis associations). Note this is not documented right now, but the configuration is very easy to extract from the new file in the source code, and if you can't figure it out, the community can help you easily, just ask!
+- **Fast acceleration**: Configure your acceleration values higher than typical CNC machines for quick pick and place operations
+- **Precise positioning**: Ensure your steps per millimeter are accurately calibrated
+- **Multiple axes**: Many Pick and Place machines have 4+ axes (X, Y, Z, and rotation)
+- **Vision systems**: Most modern machines integrate cameras for component and fiducial recognition
+
+### OpenPNP Integration
+
+OpenPNP (Open Source Pick and Place) is the most common software used to control Pick and Place machines with Smoothieboard.
+
+For detailed OpenPNP configuration, see the [OpenPNP documentation](https://github.com/openpnp/openpnp/wiki).
+
+Key integration points:
+- Use GcodeDriver in OpenPNP
+- Configure your axes in both Smoothie and OpenPNP
+- Set up your vacuum sensing through M-codes
+- Calibrate your cameras and nozzle offsets
+
+## Troubleshooting
+
+If you run into trouble, something doesn't work as it should, head over to the [Troubleshooting](troubleshooting) page for a list of common problems and means of diagnosis.
+
+You can also contact the [Community](http://smoothieware.org/irc) for help if you can't find an answer in the documentation.
+
+### Pick and Place Specific Issues
+
+**Components not picking up:**
+- Check vacuum pressure with sensors
+- Verify solenoid is activating
+- Ensure nozzle size matches component
+- Check for air leaks in vacuum lines
+
+**Placement accuracy issues:**
+- Recalibrate steps per millimeter
+- Check for mechanical backlash
+- Verify vision system alignment
+- Ensure proper homing and endstop configuration
+
+**Speed issues:**
+- Increase acceleration values in config
+- Verify motors have sufficient current
+- Check for mechanical binding
+- Ensure proper motor cooling
+
+# Software
+
+{% include_relative software.md %}
