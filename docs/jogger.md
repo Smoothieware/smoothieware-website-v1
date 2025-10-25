@@ -62,8 +62,8 @@ The maximum speed should be relatively straightforward, however the nonlinearity
 To see how it works, consider the following graph:
 
 {::nomarkdown}
-<a href="/images/joystick-speed-map.png">
-  <img src="/images/joystick-speed-map.png" alt="Jogger speed mapping graph showing different nonlinearity values" style="display: block; margin: 2rem auto; min-width: 640px; width: 80%; max-width: 800px;"/>
+<a href="/images/temporary/joystick-generic.jpg">
+  <img src="/images/temporary/joystick-generic.jpg" alt="Jogger speed mapping graph showing different nonlinearity values" style="display: block; margin: 2rem auto; min-width: 640px; width: 80%; max-width: 800px;"/>
 </a>
 {:/nomarkdown}
 

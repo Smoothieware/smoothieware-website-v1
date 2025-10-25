@@ -148,21 +148,21 @@ Different behavior can represent different situations and problems for the board
 {::nomarkdown}
 <sl-alert variant="neutral" open>
   <sl-icon slot="icon" name="info-circle"></sl-icon>
-  Normal pattern If your LEDs do this : !<a href="/images/debug/leds.normal.gif">Normal LED behavior</a> Then the firmware is running, and the LEDs are displaying correct behavior.
+  Normal pattern If your LEDs do this : <a href="/images/temporary/led-indicator-generic.jpg"><img src="/images/temporary/led-indicator-generic.jpg" alt="Normal LED behavior" style="width: 100px; height: auto;"/></a> Then the firmware is running, and the LEDs are displaying correct behavior.
 </sl-alert>
 {:/nomarkdown}
 
 {::nomarkdown}
 <sl-alert variant="warning" open>
   <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
-  SD card problem If your LEDs do this : !<a href="/images/debug/leds.nosdcard.gif">SD card problem LED behavior</a> Then the firmware is running, but the board encountered a problem reading or accessing the SD card, or the configuration file on the SD card.<br><br>Try taking the card in and out of the board several times, or try using another SD card ( <a href="sd-card">here is how to set up a new card</a> ).<br><br>See below for more details.
+  SD card problem If your LEDs do this : <a href="/images/temporary/sd-card-slot-generic.jpg"><img src="/images/temporary/sd-card-slot-generic.jpg" alt="SD card problem LED behavior" style="width: 100px; height: auto;"/></a> Then the firmware is running, but the board encountered a problem reading or accessing the SD card, or the configuration file on the SD card.<br><br>Try taking the card in and out of the board several times, or try using another SD card ( <a href="sd-card">here is how to set up a new card</a> ).<br><br>See below for more details.
 </sl-alert>
 {:/nomarkdown}
 
 {::nomarkdown}
 <sl-alert variant="danger" open>
   <sl-icon slot="icon" name="exclamation-octagon"></sl-icon>
-  Firmware crash If your LEDs do this : !<a href="/images/debug/leds.crash.gif">Firmware crash LED behavior</a> Or this : !<a href="/images/debug/leds.crash2.gif">Firmware crash LED behavior</a> Then the firmware is not running.<br><br>You can try <a href="flashing-smoothie-firmware">flashing the firmware again</a>.<br><br>See below for more details.
+  Firmware crash If your LEDs do this : <a href="/images/temporary/circuit-board-generic.jpg"><img src="/images/temporary/circuit-board-generic.jpg" alt="Firmware crash LED behavior" style="width: 100px; height: auto;"/></a> Or this : <a href="/images/temporary/circuit-board-generic.jpg"><img src="/images/temporary/circuit-board-generic.jpg" alt="Firmware crash LED behavior" style="width: 100px; height: auto;"/></a> Then the firmware is not running.<br><br>You can try <a href="flashing-smoothie-firmware">flashing the firmware again</a>.<br><br>See below for more details.
 </sl-alert>
 {:/nomarkdown}
 

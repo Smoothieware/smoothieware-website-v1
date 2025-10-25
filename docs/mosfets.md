@@ -1,8 +1,8 @@
 ### MOSFETs
 
 {::nomarkdown}
-<a href="/images/Warning.png">
-  <img src="/images/Warning.png" alt="Warning" width="100" height="100" style="float: right; margin-left: 1rem;"/>
+<a href="/images/temporary/mosfet-generic.jpg">
+  <img src="/images/temporary/mosfet-generic.jpg" alt="Warning" style="width: 100px; height: 100px; float: right; margin-left: 1rem;"/>
 </a>
 {:/nomarkdown}
 
@@ -61,8 +61,8 @@ MOSFETs list:
 
 {::nomarkdown}
 <div style="text-align: center; margin: 2rem 0;">
-  <a href="/images/MOSFETs.png">
-    <img src="/images/MOSFETs.png" alt="MOSFET Input Output" style="min-width: 640px; max-width: 100%; height: auto;"/>
+  <a href="/images/temporary/mosfet-generic.jpg">
+    <img src="/images/temporary/mosfet-generic.jpg" alt="MOSFET Input Output" style="min-width: 640px; max-width: 100%; height: auto;"/>
   </a>
 </div>
 {:/nomarkdown}

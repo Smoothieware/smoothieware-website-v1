@@ -7,7 +7,7 @@ title: Connecting to Smoothie
 
 {::nomarkdown}
 <a href="/images/circuit.png">
-  <img src="/images/circuit.png" alt="Circuit Connection" width="150" height="150" style="float: right; margin-left: 1rem;"/>
+  <img src="/images/circuit.png" alt="Circuit Connection" style="width: 150px; height: 150px; float: right; margin-left: 1rem;"/>
 </a>
 {:/nomarkdown}
 

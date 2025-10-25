@@ -3,7 +3,7 @@
 
 {::nomarkdown}
 <a href="/images/guide-3d-printer.png">
-  <img src="/images/guide-3d-printer.png" alt="3D printer icon" width="100" height="100" style="float: right; margin-left: 1rem;"/>
+  <img src="/images/guide-3d-printer.png" alt="3D printer icon" style="width: 100px; height: 100px; float: right; margin-left: 1rem;"/>
 </a>
 {:/nomarkdown}
 
@@ -16,8 +16,8 @@ This guide is a [community](http://smoothieware.org/irc) effort, and this page i
 On a typical 3D printer setup, installing a Smoothieboard will mean you do the following things: 
 
 {::nomarkdown}
-<a   href = "/images/smoothieboard-fritzing.png">
-<img src  = "/images/smoothieboard-fritzing.png" alt = "Smoothieboard Fritzing" style = "float: right; margin-left: 1rem; width: 500px;"/>
+<a href="/images/smoothieboard-fritzing.png">
+  <img src="/images/smoothieboard-fritzing.png" alt="Smoothieboard Fritzing" style="float: right; margin-left: 1rem; width: 500px;"/>
 </a>
 {:/nomarkdown}
 
@@ -77,7 +77,7 @@ Some users have hand-translated this page. Note that this translated version is 
 
 {::nomarkdown}
 <a href="/images/v6-hero-hot-end.png">
-  <img src="/images/v6-hero-hot-end.png" alt="A Hotend" width="300" height="200" style="float: right; margin-left: 1rem;"/>
+  <img src="/images/v6-hero-hot-end.png" alt="A Hotend" style="width: 300px; height: 200px; float: right; margin-left: 1rem;"/>
 </a>
 {:/nomarkdown}
 
@@ -107,7 +107,7 @@ This allows Smoothie to turn the heater on or off depending on the temperature i
 
 {::nomarkdown}
 <a href="/images/thermistor-inputs.png">
-  <img src="/images/thermistor-inputs.png" alt="Thermistor inputs" width="300" height="200" style="float: right; margin-left: 1rem;"/>
+  <img src="/images/thermistor-inputs.png" alt="Thermistor inputs" style="width: 300px; height: 200px; float: right; margin-left: 1rem;"/>
 </a>
 {:/nomarkdown}
 
@@ -144,7 +144,7 @@ You can, however, use any thermistor pin you want for any temperature control mo
 
 {::nomarkdown}
 <a href="/images/thermistor.png">
-  <img src="/images/thermistor.png" alt="A thermistor" width="300" height="225" style="float: right; margin-left: 1rem;"/>
+  <img src="/images/thermistor.png" alt="A thermistor" style="width: 300px; height: 225px; float: right; margin-left: 1rem;"/>
 </a>
 {:/nomarkdown}
 
@@ -350,8 +350,8 @@ Note starting with Smoothieboard version 1.1, **you do not need to do this anymo
 
 {::nomarkdown}
 <div style="text-align: center; margin: 2rem 0;">
-  <a href="/images/adding-diodes-before-v1-1.jpg">
-    <img src="/images/adding-diodes-before-v1-1.jpg" alt="Prior to version 1.1 PCBs: Adding Diodes to a Smoothieboard" style="min-width: 640px; height: auto;"/>
+  <a href="/images/temporary/mosfet-generic.jpg">
+    <img src="/images/temporary/mosfet-generic.jpg" alt="Prior to version 1.1 PCBs: Adding Diodes to a Smoothieboard" style="min-width: 640px; height: auto;"/>
   </a>
   <p><em>Prior to version 1.1 PCBs: Adding Diodes to a Smoothieboard</em></p>
 </div>

@@ -3,7 +3,7 @@
 
 {::nomarkdown}
 <a href="/images/pronterface.png">
-  <img src="/images/pronterface.png" alt="Pronterface Screenshot" width="40%" style="float: right; margin-left: 1rem;"/>
+  <img src="/images/pronterface.png" alt="Pronterface Screenshot" style="width: 40%; float: right; margin-left: 1rem;"/>
 </a>
 {:/nomarkdown}
 

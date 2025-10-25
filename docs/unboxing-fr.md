@@ -1,8 +1,8 @@
 # Déballage
 
 {::nomarkdown}
-<a href="/images/usb-cable.png">
-  <img src="/images/usb-cable.png" alt="Connecteurs USB" width="320" height="auto" style="float: right; margin-left: 1rem;"/>
+<a href="/images/recovered/usb-cable.png">
+  <img src="/images/recovered/usb-cable.png" alt="Connecteurs USB" style="width: 320px; height: auto; float: right; margin-left: 1rem;"/>
 </a>
 {:/nomarkdown}
 
@@ -22,7 +22,7 @@ Smoothie utilise l'USB-B.
 
 {::nomarkdown}
 <a href="/images/smoothie-config-screencap.png">
-  <img src="/images/smoothie-config-screencap.png" alt="Carte SD - Fichiers sur votre carte SD" width="320" height="auto" style="float: right; margin-left: 1rem;"/>
+  <img src="/images/smoothie-config-screencap.png" alt="Carte SD - Fichiers sur votre carte SD" style="width: 320px; height: auto; float: right; margin-left: 1rem;"/>
 </a>
 {:/nomarkdown}
 
@@ -59,8 +59,8 @@ Si vous le connaissez déjà, essayez de vous connecter dès à présent et vous
 ## Connexion réseau
 
 {::nomarkdown}
-<a href="/images/network.switches.jpg">
-  <img src="/images/network.switches.jpg" alt="Réseau - J'espère que vous avez moins de câbles..." width="320" height="auto" style="float: right; margin-left: 1rem;"/>
+<a href="/images/recovered/network.switches.jpg">
+  <img src="/images/recovered/network.switches.jpg" alt="Réseau - J'espère que vous avez moins de câbles..." style="width: 320px; height: auto; float: right; margin-left: 1rem;"/>
 </a>
 {:/nomarkdown}
 

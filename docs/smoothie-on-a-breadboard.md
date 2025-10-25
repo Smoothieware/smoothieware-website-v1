@@ -47,8 +47,8 @@ This is what Smoothie on a breadboard looks like (graphics are thanks to the awe
 
 {::nomarkdown}
 <div style="text-align: center; margin: 2rem 0;">
-  <a href="/images/smoothie-on-a-breadboard/bb09.jpg">
-    <img src="/images/smoothie-on-a-breadboard/bb09.jpg" alt="Smoothie on a Breadboard" style="min-width: 640px; max-width: 100%; height: auto;"/>
+  <a href="/images/recovered/bb09.jpg">
+    <img src="/images/recovered/bb09.jpg" alt="Smoothie on a Breadboard" style="min-width: 640px; max-width: 100%; height: auto;"/>
   </a>
 </div>
 {:/nomarkdown}
@@ -73,8 +73,8 @@ You'll need the breadboard in a bit of a special configuration, due to the dimen
 
 {::nomarkdown}
 <div style="text-align: center; margin: 2rem 0;">
-  <a href="/images/smoothie-on-a-breadboard/bb01.jpg">
-    <img src="/images/smoothie-on-a-breadboard/bb01.jpg" alt="Breadboard Configuration" style="min-width: 640px; max-width: 100%; height: auto;"/>
+  <a href="/images/recovered/bb01.jpg">
+    <img src="/images/recovered/bb01.jpg" alt="Breadboard Configuration" style="min-width: 640px; max-width: 100%; height: auto;"/>
   </a>
 </div>
 {:/nomarkdown}
@@ -86,14 +86,18 @@ You just need to remove one of the power supply bars, and attach the two breadbo
 You must solder the two long ranges of holes on that board with standard 2.54mm golden pins at the bottom.
 Then simply insert into the breadboard, with the first pins on the left at 6 pins from the border.
 
-![LPCXpresso board](images/smoothie-on-a-breadboard/bb02.jpg)
+<a href="/images/recovered/bb02.jpg">
+  <img src="/images/recovered/bb02.jpg" alt="LPCXpresso board" style="display: block; margin: 20px auto; min-width: 640px; max-width: 100%; height: auto;"/>
+</a>
 
 ## USB-Serial cable
 
 To flash the bootloader, and later eventually debug, you need to connect to the board via serial. That won't work via USB directly until smoothie is flashed in there.
 You can use an [FTDI cable](https://www.adafruit.com/products/70), the [Arduino USB2Serial board](http://store.arduino.cc/eu/index.php?main_page=product_info&cPath=11_15&products_id=143), or even directly an Arduino board, using pins 0 and 1 as TX and RX.
 
-![USB-Serial cable](images/smoothie-on-a-breadboard/bb03.jpg)
+<a href="/images/recovered/bb03.jpg">
+  <img src="/images/recovered/bb03.jpg" alt="USB-Serial cable" style="display: block; margin: 20px auto; min-width: 640px; max-width: 100%; height: auto;"/>
+</a>
 
 Blue wire in this picture (pin 21) is RX, green (pin 22) is TX. On an [FTDI cable](http://adafruit.com/datasheets/DS_TTL-232R_CABLES_V201.pdf), RX is yellow, TX orange. On the Arduino USB2Serial and Arduino boards, those are indicated. (On some generic FTDI / TTL USB2Serial modules, if you experience problems with the serial connection not connecting, then you might want to try swapping the RX and TX connections between the LPCPxresso board and USB2Serial module, TX pin connects to RX pin and RX pin connects to TX pin, also worthy of note is that there are both 5Volt and 3.3Volt I/O variants of these USB2Serial boards available)
 GND (black) goes into the bottom rail of the two bottom power bars, and to the GND pin on the LPCXpresso.
@@ -106,7 +110,9 @@ The LED and resistor are not necessary, but it's always nice to know you've conn
 You need a reset button to reset your board connected to pin 4, and a bootloader button connected to pin 51 (shown in the diagram below) to get it to enter bootloader mode in order to flash the SD card bootloader (this only needs to be done once).
 Also, a play/pause button is used to force the bootloader into DFU mode to flash the firmware, this is connected to pin p2.12, and is not shown in the following diagram.
 
-![Buttons](images/smoothie-on-a-breadboard/bb04.jpg)
+<a href="/images/recovered/bb04.jpg">
+  <img src="/images/recovered/bb04.jpg" alt="Buttons" style="display: block; margin: 20px auto; min-width: 640px; max-width: 100%; height: auto;"/>
+</a>
 
 Both buttons are push buttons, and connect from their respective pins to GND. Lower left is RESET, and top right is BOOTLOADER.
 You'll then be able to flash the chip using lpc21isp [following these instructions](http://smoothieware.org/flashing-the-bootloader).
@@ -118,7 +124,9 @@ To force the bootloader into DFU mode hold the play/pause button, press reset th
 Exact connection will depend on the pin order for your microSD breakout board.
 Here pictured is an imaginary breakout board that would have the pins in the same order as the LPCXpresso, making things neatly arranged:
 
-![MicroSD card breakout board](images/smoothie-on-a-breadboard/bb05.jpg)
+<a href="/images/recovered/bb05.jpg">
+  <img src="/images/recovered/bb05.jpg" alt="MicroSD card breakout board" style="display: block; margin: 20px auto; min-width: 640px; max-width: 100%; height: auto;"/>
+</a>
 
 - Green is MOSI (sometimes DO), Master Out Slave In, pin 5
 - Blue is MISO (sometimes DI), Master In Slave Out, pin 6
@@ -136,7 +144,9 @@ If flashing the bootloader works, but flashing firmwares from the SD card doesn'
 
 USB connection is quite simple. It's pretty much the same as the serial cable: 5V to VIN (orange), GND to GND (black), connect D- (green) to pin 36 and D+ (blue) to pin 37 and you're done.
 
-![USB breakout board](images/smoothie-on-a-breadboard/bb06.jpg)
+<a href="/images/recovered/bb06.jpg">
+  <img src="/images/recovered/bb06.jpg" alt="USB breakout board" style="display: block; margin: 20px auto; min-width: 640px; max-width: 100%; height: auto;"/>
+</a>
 
 If you have flashed the bootloader and then smoothie, it should show up as both Mass Storage, and USB/Serial to your computer.
 
@@ -144,7 +154,9 @@ If you have flashed the bootloader and then smoothie, it should show up as both 
 
 These two circuits allow you to read the hotend's temperature and change that temperature via a heater. You don't need that for CNC milling and lasercutting, so use a jumper and jump it if that's your case.
 
-![Hotend control](images/smoothie-on-a-breadboard/bb07.jpg)
+<a href="/images/recovered/bb07.jpg">
+  <img src="/images/recovered/bb07.jpg" alt="Hotend control" style="display: block; margin: 20px auto; min-width: 640px; max-width: 100%; height: auto;"/>
+</a>
 
 The bottom circuit is the thermistor circuit. From pin 20, connect a 4.7Kohm resistor to 3.3V power (orange), and a 10uF capacitor to ground. The 2.54mm screw terminal connects the pin 20 and the ground to the two wires from your thermistor. The thermistor doesn't have a polarity so it can be connected either way.
 The top circuit is the Mosfet circuit, it controls the heating element in your hotend. The horizontal resistor is 10Kohm and connects from the Gate to GND (pull-down resistor) and the other one is 1Kohm and connects the Gate to pin 45 on the LPCXpresso. The left 2.54mm screw terminal is the power input for the heater element. If you want to use only one power supply for both the heater and the steppers (will work fine with most ATX Power supplies), you can connect this to the top right power bar instead where we will later have the stepper motors' power rail. The other 2.54mm screw terminal goes to the heater.
@@ -158,7 +170,9 @@ You need:
 
 Here shown is a picture with 4 stepper drivers:
 
-![Stepper drivers](images/smoothie-on-a-breadboard/bb08.jpg)
+<a href="/images/recovered/bb08.jpg">
+  <img src="/images/recovered/bb08.jpg" alt="Stepper drivers" style="display: block; margin: 20px auto; min-width: 640px; max-width: 100%; height: auto;"/>
+</a>
 
 Bit of a legend:
 - Grey wires are STEP inputs

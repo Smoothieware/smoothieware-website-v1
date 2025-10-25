@@ -5,8 +5,12 @@
 <sl-alert variant="warning" open>
   <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
   <div style="display:flex;align-items:center;gap:15px;margin-bottom:10px;">
-    <img src="/images/oshw-logo.png" alt="OSHW Logo" style="width:50px;height:50px;">
-    <img src="/images/virus.png" alt="Virus" style="width:50px;height:50px;">
+    <a href="/images/oshw-logo.png">
+      <img src="/images/oshw-logo.png" alt="OSHW Logo" style="width: 50px; height: 50px;"/>
+    </a>
+    <a href="/images/virus.png">
+      <img src="/images/virus.png" alt="Virus" style="width: 50px; height: 50px;"/>
+    </a>
   </div>
   <strong>TL;DR:</strong> If you are helping with the Covid efforts and have Smoothie troubles <a href="mailto:wolf.arthur@gmail.com">contact us</a> as soon as possible and we'll do everything we can to help you as a priority.
 </sl-alert>

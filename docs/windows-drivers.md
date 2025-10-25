@@ -74,14 +74,14 @@ If you are using a recent version of Smoothieware, you may find up to two "Smoot
 Here is an example of what you might see on recent firmware:
 
 {::nomarkdown}
-<a href="/images/cp.jpg">
-  <img src="/images/cp.jpg" alt="Control Panel" style="width: 640px; height: auto; display: block; margin: 2rem auto;"/>
+<a href="/images/recovered/cp.jpg">
+  <img src="/images/recovered/cp.jpg" alt="Control Panel" style="width: 640px; height: auto; display: block; margin: 2rem auto;"/>
 </a>
 {:/nomarkdown}
 
 {::nomarkdown}
-<a href="/images/dm.jpg">
-  <img src="/images/dm.jpg" alt="Device Manager" style="width: 640px; height: auto; display: block; margin: 2rem auto;"/>
+<a href="/images/recovered/dm.jpg">
+  <img src="/images/recovered/dm.jpg" alt="Device Manager" style="width: 640px; height: auto; display: block; margin: 2rem auto;"/>
 </a>
 {:/nomarkdown}
 
@@ -90,8 +90,8 @@ Here is an example of what you might see on recent firmware:
 Right-click the first one and select "Update Driver Software"
 
 {::nomarkdown}
-<a href="/images/uds.jpg">
-  <img src="/images/uds.jpg" alt="Update Driver Software" style="width: 640px; height: auto; display: block; margin: 2rem auto;"/>
+<a href="/images/recovered/uds.jpg">
+  <img src="/images/recovered/uds.jpg" alt="Update Driver Software" style="width: 640px; height: auto; display: block; margin: 2rem auto;"/>
 </a>
 {:/nomarkdown}
 
@@ -100,8 +100,8 @@ Right-click the first one and select "Update Driver Software"
 Find where you unzipped the driver to
 
 {::nomarkdown}
-<a href="/images/findthedriver.jpg">
-  <img src="/images/findthedriver.jpg" alt="Find the Driver" style="width: 640px; height: auto; display: block; margin: 2rem auto;"/>
+<a href="/images/recovered/findthedriver.jpg">
+  <img src="/images/recovered/findthedriver.jpg" alt="Find the Driver" style="width: 640px; height: auto; display: block; margin: 2rem auto;"/>
 </a>
 {:/nomarkdown}
 
@@ -116,8 +116,8 @@ The port numbering can be changed through the advanced port properties, but you 
 Also, note that "smoothie DFU" is still unrecognized. This is fine. You can ignore that.
 
 {::nomarkdown}
-<a href="/images/done.jpg">
-  <img src="/images/done.jpg" alt="Driver Installed" style="width: 640px; height: auto; display: block; margin: 2rem auto;"/>
+<a href="/images/recovered/done.jpg">
+  <img src="/images/recovered/done.jpg" alt="Driver Installed" style="width: 640px; height: auto; display: block; margin: 2rem auto;"/>
 </a>
 {:/nomarkdown}
 

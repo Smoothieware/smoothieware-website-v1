@@ -229,8 +229,8 @@ If one of your axes requires more than one motor and driver, you can wire the co
 
 {::nomarkdown}
 <div style="text-align: center; margin: 2rem 0;">
-  <a href="/images/mult-drivers-in-parallel.png">
-    <img src="/images/mult-drivers-in-parallel.png" alt="External drivers wired in parallel" style="min-width: 640px; max-width: 100%; height: auto;"/>
+  <a href="/images/temporary/cable-duct-generic.jpg">
+    <img src="/images/temporary/cable-duct-generic.jpg" alt="External drivers wired in parallel" style="min-width: 640px; max-width: 100%; height: auto;"/>
   </a>
 </div>
 {:/nomarkdown}

@@ -33,24 +33,24 @@ Only basic ideas, actual logo would need to be much more refined, but schematica
 
 {::nomarkdown}
 <div style="text-align: center; margin: 2rem 0;">
-  <a href="/images/smoothieboard-fritzing-logo.png">
-    <img src="/images/smoothieboard-fritzing-logo.png" alt="Smoothieboard Fritzing Logo" style="width: 400px; max-width: 100%; height: auto;"/>
+  <a href="/images/recovered/smoothieboard-fritzing-logo.png">
+    <img src="/images/recovered/smoothieboard-fritzing-logo.png" alt="Smoothieboard Fritzing Logo" style="width: 400px; max-width: 100%; height: auto;"/>
   </a>
 </div>
 {:/nomarkdown}
 
 {::nomarkdown}
 <div style="text-align: center; margin: 2rem 0;">
-  <a href="/images/smoothie-test-logo.png">
-    <img src="/images/smoothie-test-logo.png" alt="Smoothie Test Logo" style="width: 400px; max-width: 100%; height: auto;"/>
+  <a href="/images/recovered/smoothie-test-logo.png">
+    <img src="/images/recovered/smoothie-test-logo.png" alt="Smoothie Test Logo" style="width: 400px; max-width: 100%; height: auto;"/>
   </a>
 </div>
 {:/nomarkdown}
 
 {::nomarkdown}
 <div style="text-align: center; margin: 2rem 0;">
-  <a href="/images/smoothieboard-v2-pcb-logo.png">
-    <img src="/images/smoothieboard-v2-pcb-logo.png" alt="Smoothieboard V2 PCB Logo" style="width: 400px; max-width: 100%; height: auto;"/>
+  <a href="/images/recovered/smoothieboard-v2-pcb-logo.png">
+    <img src="/images/recovered/smoothieboard-v2-pcb-logo.png" alt="Smoothieboard V2 PCB Logo" style="width: 400px; max-width: 100%; height: auto;"/>
   </a>
 </div>
 {:/nomarkdown}

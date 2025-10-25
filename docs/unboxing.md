@@ -2,7 +2,7 @@
 
 {::nomarkdown}
 <a href="/images/usb.png">
-  <img src="/images/usb.png" alt="USB Connectors" width="320" height="auto" style="float: right; margin-left: 1rem;"/>
+  <img src="/images/usb.png" alt="USB Connectors" style="width: 320px; height: auto; float: right; margin-left: 1rem;"/>
 </a>
 {:/nomarkdown}
 
@@ -26,7 +26,7 @@ The first thing you might want to do before you start connecting your board is t
 
 {::nomarkdown}
 <a href="/images/files-on-sd.png">
-  <img src="/images/files-on-sd.png" alt="SD card - Files on your Smoothieboard's SD card" width="320" height="auto" style="float: right; margin-left: 1rem;"/>
+  <img src="/images/files-on-sd.png" alt="SD card - Files on your Smoothieboard's SD card" style="width: 320px; height: auto; float: right; margin-left: 1rem;"/>
 </a>
 {:/nomarkdown}
 
@@ -79,7 +79,7 @@ If not, we explain it all later in this guide.
 
 {::nomarkdown}
 <a href="/images/network-cables.png">
-  <img src="/images/network-cables.png" alt="Network - Hope you have fewer cables than this" width="320" height="auto" style="float: right; margin-left: 1rem;"/>
+  <img src="/images/network-cables.png" alt="Network - Hope you have fewer cables than this" style="width: 320px; height: auto; float: right; margin-left: 1rem;"/>
 </a>
 {:/nomarkdown}
 
@@ -101,7 +101,7 @@ You can find all the information you need about using the network interface here
 
 {::nomarkdown}
 <a href="/images/firmware-upgrade.png">
-  <img src="/images/firmware-upgrade.png" alt="Updating the firmware" width="320" height="auto" style="float: right; margin-left: 1rem;"/>
+  <img src="/images/firmware-upgrade.png" alt="Updating the firmware" style="width: 320px; height: auto; float: right; margin-left: 1rem;"/>
 </a>
 {:/nomarkdown}
 

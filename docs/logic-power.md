@@ -3,7 +3,7 @@
 
 {::nomarkdown}
 <a href="/images/smoothieboard-logic-inputs.svg">
-  <img src="/images/smoothieboard-logic-inputs.svg" alt="Logic Power Inputs" width="300" style="float: right; margin-left: 1rem;"/>
+  <img src="/images/smoothieboard-logic-inputs.svg" alt="Logic Power Inputs" style="width: 300px; float: right; margin-left: 1rem;"/>
 </a>
 {:/nomarkdown}
 

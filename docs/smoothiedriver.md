@@ -16,8 +16,8 @@ All Smoothiedrivers support at least this basic interface which is compatible wi
 
 {::nomarkdown}
 <div style="text-align: center; margin: 2rem 0;">
-  <a href="/images/smoothiedriver-gamma-no-connectors-small.jpg">
-    <img src="/images/smoothiedriver-gamma-no-connectors-small.jpg" alt="Smoothiedriver gamma board" style="min-width: 640px; width: 80%; height: auto;"/>
+  <a href="/images/recovered/smoothiedriver-gamma-no-connectors-small.jpg">
+    <img src="/images/recovered/smoothiedriver-gamma-no-connectors-small.jpg" alt="Smoothiedriver gamma board" style="min-width: 640px; width: 80%; height: auto;"/>
   </a>
 </div>
 {:/nomarkdown}
@@ -36,8 +36,8 @@ This image shows the board layout of the Smoothiedriver interface:
 
 {::nomarkdown}
 <div style="text-align: center; margin: 2rem 0;">
-  <a href="/images/smoothie-driver-port.png">
-    <img src="/images/smoothie-driver-port.png" alt="SmoothieDriver Port Layout" style="min-width: 640px; width: 80%; height: auto;"/>
+  <a href="/images/recovered/smoothie-driver-port.png">
+    <img src="/images/recovered/smoothie-driver-port.png" alt="SmoothieDriver Port Layout" style="min-width: 640px; width: 80%; height: auto;"/>
   </a>
 </div>
 {:/nomarkdown}

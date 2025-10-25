@@ -26,7 +26,7 @@ It is made by a community.
 
 {::nomarkdown}
 <a href="/images/board.png">
-  <img src="/images/board.png" alt="Smoothieboard MCU" width="240" height="240" style="float: right; margin-left: 1rem;"/>
+  <img src="/images/board.png" alt="Smoothieboard MCU" style="width: 240px; height: 240px; float: right; margin-left: 1rem;"/>
 </a>
 {:/nomarkdown}
 
@@ -52,7 +52,7 @@ The firmware is the result of years of hard work making sure we use as much of t
 
 {::nomarkdown}
 <a href="/images/oshw-logo.png">
-  <img src="/images/oshw-logo.png" alt="OSHW Logo" width="240" height="240" style="float: right; margin-left: 1rem;"/>
+  <img src="/images/oshw-logo.png" alt="OSHW Logo" style="width: 240px; height: 240px; float: right; margin-left: 1rem;"/>
 </a>
 {:/nomarkdown}
 
@@ -76,7 +76,7 @@ We strongly believe in the idea of Open-Source and Open-Hardware, and see every 
 
 {::nomarkdown}
 <a href="/images/glove.png">
-  <img src="/images/glove.png" alt="Universal Tools" width="240" height="240" style="float: right; margin-left: 1rem;"/>
+  <img src="/images/glove.png" alt="Universal Tools" style="width: 240px; height: 240px; float: right; margin-left: 1rem;"/>
 </a>
 {:/nomarkdown}
 
@@ -106,7 +106,7 @@ And it also means that if the laser people make the motion control code better, 
 
 {::nomarkdown}
 <a href="/images/coding.png">
-  <img src="/images/coding.png" alt="Feature Rich" width="240" height="240" style="float: right; margin-left: 1rem;"/>
+  <img src="/images/coding.png" alt="Feature Rich" style="width: 240px; height: 240px; float: right; margin-left: 1rem;"/>
 </a>
 {:/nomarkdown}
 
@@ -120,7 +120,7 @@ Enjoy cutting-edge functionality and see more added all the time.
 
 {::nomarkdown}
 <a href="/images/binary-code.png">
-  <img src="/images/binary-code.png" alt="Documentation" width="240" height="240" style="float: right; margin-left: 1rem;"/>
+  <img src="/images/binary-code.png" alt="Documentation" style="width: 240px; height: 240px; float: right; margin-left: 1rem;"/>
 </a>
 {:/nomarkdown}
 
@@ -134,7 +134,7 @@ Enjoy machine-specific step by step general guides, as well as in-depth document
 
 {::nomarkdown}
 <a href="/images/circuit.png">
-  <img src="/images/circuit.png" alt="Modular" width="240" height="240" style="float: right; margin-left: 1rem;"/>
+  <img src="/images/circuit.png" alt="Modular" style="width: 240px; height: 240px; float: right; margin-left: 1rem;"/>
 </a>
 {:/nomarkdown}
 
@@ -146,7 +146,7 @@ Highly modular code allows for an easier contributor experience, better long-ter
 
 {::nomarkdown}
 <a href="/images/coffee-machine.png">
-  <img src="/images/coffee-machine.png" alt="Easy to Use" width="240" height="240" style="float: right; margin-left: 1rem;"/>
+  <img src="/images/coffee-machine.png" alt="Easy to Use" style="width: 240px; height: 240px; float: right; margin-left: 1rem;"/>
 </a>
 {:/nomarkdown}
 
@@ -162,7 +162,7 @@ And if anything goes wrong, find a very active community to help.
 
 {::nomarkdown}
 <a href="/images/bacteria.png">
-  <img src="/images/bacteria.png" alt="Community" width="240" height="240" style="float: right; margin-left: 1rem;"/>
+  <img src="/images/bacteria.png" alt="Community" style="width: 240px; height: 240px; float: right; margin-left: 1rem;"/>
 </a>
 {:/nomarkdown}
 
@@ -176,7 +176,7 @@ A vibrant ecosystem of contributors, users, and enthusiasts working together to 
 
 {::nomarkdown}
 <a href="/images/hashtag.png">
-  <img src="/images/hashtag.png" alt="Future Friendly" width="240" height="240" style="float: right; margin-left: 1rem;"/>
+  <img src="/images/hashtag.png" alt="Future Friendly" style="width: 240px; height: 240px; float: right; margin-left: 1rem;"/>
 </a>
 {:/nomarkdown}
 

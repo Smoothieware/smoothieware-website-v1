@@ -7,7 +7,7 @@ title: Smoothie IRC Channel
 
 {::nomarkdown}
 <a href="/images/hashtag.png">
-  <img src="/images/hashtag.png" alt="IRC Chat" width="240" height="240" style="float: right; margin-left: 1rem;"/>
+  <img src="/images/hashtag.png" alt="IRC Chat" style="width: 240px; height: 240px; float: right; margin-left: 1rem;"/>
 </a>
 {:/nomarkdown}
 

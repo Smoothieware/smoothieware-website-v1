@@ -3,7 +3,7 @@
 
 {::nomarkdown}
 <a href="/images/octoprint.png">
-  <img src="/images/octoprint.png" alt="Octoprint Screenshot" width="320" style="float: right; margin-left: 1rem;"/>
+  <img src="/images/octoprint.png" alt="Octoprint Screenshot" style="width: 320px; float: right; margin-left: 1rem;"/>
 </a>
 {:/nomarkdown}
 

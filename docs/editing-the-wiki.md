@@ -71,7 +71,9 @@ To insert an image, do:
 
 ```html
 {::nomarkdown}
-<img src="/images/SampleImage.jpg" alt="Sample Image">
+<a href="/images/temporary/3d-printer-probe.jpg">
+  <img src="/images/temporary/3d-printer-probe.jpg" alt="Sample Image"/>
+</a>
 {:/nomarkdown}
 ```
 
@@ -80,7 +82,9 @@ A nicer way of integrating images is to do the following:
 ```html
 <div class='panel panel-default wrap_right' style='width:450px;padding:10px '>
   <div class='panel-heading'><h4 class='panel-title'>A laser power supply</h4></div>
-  <img src='images/laser-power-supply.png' width='400px' height='400px'><br/>
+  <a href="/images/temporary/voltage-regulator-generic.jpg">
+    <img src="/images/temporary/voltage-regulator-generic.jpg" style="width: 400px; height: 400px;"/>
+  </a><br/>
   They use very high voltages and are dangerous
 </div>
 ```
@@ -180,7 +184,9 @@ You can insert raw HTML into the page by doing:
 <h1>Custom HTML</h1>
 <p>Something else</p>
 {::nomarkdown}
-<img src="/images/circuit.png" alt="hello ;-)">
+<a href="/images/circuit.png">
+  <img src="/images/circuit.png" alt="hello ;-)"/>
+</a>
 {:/nomarkdown}
 ```
 
@@ -196,8 +202,8 @@ For images, you can float them to the right or center them:
 
 ```html
 {::nomarkdown}
-<a href="/images/example.png">
-  <img src="/images/example.png" alt="Description" width="200" height="150" style="float: right; margin-left: 1rem;"/>
+<a href="/images/temporary/pick-place-machine-generic.jpg">
+  <img src="/images/temporary/pick-place-machine-generic.jpg" alt="Description" style="width: 200px; height: 150px; float: right; margin-left: 1rem;"/>
 </a>
 {:/nomarkdown}
 ```
@@ -207,8 +213,8 @@ For images, you can float them to the right or center them:
 ```html
 {::nomarkdown}
 <div style="text-align: center;">
-  <a href="/images/example.png">
-    <img src="/images/example.png" alt="Description" style="min-width: 640px; width: 100%; max-width: 800px;"/>
+  <a href="/images/temporary/pick-place-machine-generic.jpg">
+    <img src="/images/temporary/pick-place-machine-generic.jpg" alt="Description" style="min-width: 640px; width: 100%; max-width: 800px;"/>
   </a>
 </div>
 {:/nomarkdown}

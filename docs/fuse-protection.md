@@ -13,8 +13,8 @@ For example, if your heated bed consumes 10A, you want to have a 15A fuse protec
 Here is an example of a fuse protecting the mosfet power input:
 
 {::nomarkdown}
-<a href="/images/protection-via-fuse.svg">
-  <img src="/images/protection-via-fuse.svg" alt="Protecting your board with a fuse" style="min-width: 640px; display: block; margin: 2rem auto;"/>
+<a href="/images/temporary/cable-duct-generic.jpg">
+  <img src="/images/temporary/cable-duct-generic.jpg" alt="Protecting your board with a fuse" style="min-width: 640px; display: block; margin: 2rem auto;"/>
 </a>
 <p style="text-align: center;"><em>Note: The fuse must have an adequate current rating for your application</em></p>
 {:/nomarkdown}

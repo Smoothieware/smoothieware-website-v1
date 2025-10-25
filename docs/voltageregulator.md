@@ -30,15 +30,15 @@ Which can be purchased from [Robotseed](http://robotseed.com/index.php?id_produc
 This is how it looks when soldered on:
 
 {::nomarkdown}
-<a href="/images/voltage-regulator-top.jpg">
-  <img src="/images/voltage-regulator-top.jpg" alt="Voltage regulator location" style="min-width: 400px; width: 50%; display: block; margin: 1rem auto;"/>
+<a href="/images/temporary/voltage-regulator-generic.jpg">
+  <img src="/images/temporary/voltage-regulator-generic.jpg" alt="Voltage regulator location" style="min-width: 400px; width: 50%; display: block; margin: 1rem auto;"/>
 </a>
 <p style="text-align: center; font-style: italic;">Red circle marks where it is located</p>
 {:/nomarkdown}
 
 {::nomarkdown}
-<a href="/images/voltage-regulator-close.jpg">
-  <img src="/images/voltage-regulator-close.jpg" alt="Voltage regulator closeup" style="min-width: 400px; width: 50%; display: block; margin: 1rem auto;"/>
+<a href="/images/temporary/voltage-regulator-generic.jpg">
+  <img src="/images/temporary/voltage-regulator-generic.jpg" alt="Voltage regulator closeup" style="min-width: 400px; width: 50%; display: block; margin: 1rem auto;"/>
 </a>
 <p style="text-align: center; font-style: italic;">Note the orientation</p>
 {:/nomarkdown}

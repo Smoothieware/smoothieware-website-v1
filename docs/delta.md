@@ -2,7 +2,7 @@
 
 {::nomarkdown}
 <a href="/images/board.png">
-  <img src="/images/board.png" alt="Delta Configuration" width="150" height="150" style="float: right; margin-left: 1rem;"/>
+  <img src="/images/board.png" alt="Delta Configuration" style="width: 150px; height: 150px; float: right; margin-left: 1rem;"/>
 </a>
 {:/nomarkdown}
 
@@ -249,8 +249,8 @@ And it needs to know this, so that when you tell it to go to Z 0 (the bed), it k
 
 {::nomarkdown}
 <div style="text-align: center; margin: 20px 0;">
-  <a href="/images/DeltaAtHome.jpg">
-    <img src="/images/DeltaAtHome.jpg" alt="Delta machine coordinates" style="max-width: 500px; height: auto;"/>
+  <a href="/images/temporary/delta-printer-generic.jpg">
+    <img src="/images/temporary/delta-printer-generic.jpg" alt="Delta machine coordinates" style="max-width: 500px; height: auto;"/>
   </a>
   <p><em>Understanding delta printer coordinates - it's basically a cylinder and you position things around its center</em></p>
 </div>

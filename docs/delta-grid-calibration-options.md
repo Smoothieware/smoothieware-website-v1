@@ -2,7 +2,7 @@
 
 {::nomarkdown}
 <a href="/images/board.png">
-  <img src="/images/board.png" alt="Delta Grid" width="150" height="150" style="float: right; margin-left: 1rem;"/>
+  <img src="/images/board.png" alt="Delta Grid" style="width: 150px; height: 150px; float: right; margin-left: 1rem;"/>
 </a>
 {:/nomarkdown}
 

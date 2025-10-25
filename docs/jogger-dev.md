@@ -7,7 +7,7 @@ title: Jogger Developer Documentation
 
 {::nomarkdown}
 <a href="/images/coding.png">
-  <img src="/images/coding.png" alt="Developer Documentation" width="240" height="240" style="float: right; margin-left: 1rem;"/>
+  <img src="/images/coding.png" alt="Developer Documentation" style="width: 240px; height: 240px; float: right; margin-left: 1rem;"/>
 </a>
 {:/nomarkdown}
 

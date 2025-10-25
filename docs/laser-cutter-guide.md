@@ -82,8 +82,8 @@ At the end of this guide, you should have a fully working machine.
 
 {::nomarkdown}
 <div style="text-align: center; margin: 2rem 0;">
-  <a href="/images/firebrick.jpg">
-    <img src="/images/firebrick.jpg" alt="A laser tube" style="min-width: 640px; width: 80%; height: auto;"/>
+  <a href="/images/recovered/firebrick-laser-tube.jpg">
+    <img src="/images/recovered/firebrick-laser-tube.jpg" alt="A laser tube" style="min-width: 640px; width: 80%; height: auto;"/>
   </a>
   <p><em>They look nice but they are dangerous</em></p>
 </div>

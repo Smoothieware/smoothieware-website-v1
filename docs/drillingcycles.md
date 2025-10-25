@@ -7,7 +7,7 @@ title: Drilling Cycles Module
 
 {::nomarkdown}
 <a href="/images/glove.png">
-  <img src="/images/glove.png" alt="Drilling Cycles" width="150" height="150" style="float: right; margin-left: 1rem;"/>
+  <img src="/images/glove.png" alt="Drilling Cycles" style="width: 150px; height: 150px; float: right; margin-left: 1rem;"/>
 </a>
 {:/nomarkdown}
 

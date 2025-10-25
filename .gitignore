@@ -1,6 +1,16 @@
 # playwright
 .playwright-mcp/
 
+# node_modules
+node_modules/
+
+# package json
+package.json
+package-lock.json
+
+# vs code
+.vscode/
+
 # sass cache
 .sass-cache
 

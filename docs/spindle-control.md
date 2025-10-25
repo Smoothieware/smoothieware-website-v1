@@ -1,8 +1,8 @@
 # Spindle Control
 
 {::nomarkdown}
-<a href="/images/spindle.png">
-  <img src="/images/spindle.png" alt="A spindle motor" width="350" height="auto" style="float: right; margin-left: 1rem;"/>
+<a href="/images/temporary/cnc-spindle-generic.jpg">
+  <img src="/images/temporary/cnc-spindle-generic.jpg" alt="A spindle motor" style="width: 350px; height: auto; float: right; margin-left: 1rem;"/>
 </a>
 {:/nomarkdown}
 

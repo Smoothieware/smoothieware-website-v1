@@ -2,7 +2,7 @@
 
 {::nomarkdown}
 <a href="/images/board.png">
-  <img src="/images/board.png" alt="Configuration" width="150" height="150" style="float: right; margin-left: 1rem;"/>
+  <img src="/images/board.png" alt="Configuration" style="width: 150px; height: 150px; float: right; margin-left: 1rem;"/>
 </a>
 {:/nomarkdown}
 
@@ -25,7 +25,9 @@ You can find a default config file for 3D printing [here in the github repositor
 {::nomarkdown}
 <div style="margin: 2rem 0;">
   <sl-button variant="primary" size="large" href="https://github.com/Smoothieware/Smoothieware/raw/edge/ConfigSamples/Smoothieboard/config" style="width:100%; max-width: 600px;">
-    <img src="/images/download-icon.png" style="width:32px; margin-right:16px; vertical-align: middle;"/>
+    <a href="/images/download-icon.png">
+      <img src="/images/download-icon.png" style="width: 32px; margin-right: 16px; vertical-align: middle;"/>
+    </a>
     <b>Click here</b> to get the latest configuration file example
   </sl-button>
 </div>

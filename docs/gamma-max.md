@@ -99,8 +99,8 @@ Now there are two different cases here:
 * Or, when the probe is triggered, the hotend is above the bed by a given distance, which we will call the z probe offset (this is the case of servo-retracted probes, bltouch, inductive probes, IR probes, etc).
 
 {::nomarkdown}
-<a href="/images/probe-offset.png">
-  <img src="/images/probe-offset.png" alt="Diagram showing Z probe offset measurement" style="display: block; margin: 2rem auto; min-width: 640px; width: 80%; max-width: 800px;"/>
+<a href="/images/temporary/3d-printer-probe.jpg">
+  <img src="/images/temporary/3d-printer-probe.jpg" alt="Diagram showing Z probe offset measurement" style="display: block; margin: 2rem auto; min-width: 640px; width: 80%; max-width: 800px;"/>
 </a>
 {:/nomarkdown}
 
@@ -156,8 +156,8 @@ G30 Znnn
 When `nnn` is the distance between your probe's triggering point, and the bed (or probe offset):
 
 {::nomarkdown}
-<a href="/images/probe-offset.png">
-  <img src="/images/probe-offset.png" alt="Diagram showing Z probe offset measurement" style="display: block; margin: 2rem auto; min-width: 640px; width: 80%; max-width: 800px;"/>
+<a href="/images/temporary/3d-printer-probe.jpg">
+  <img src="/images/temporary/3d-printer-probe.jpg" alt="Diagram showing Z probe offset measurement" style="display: block; margin: 2rem auto; min-width: 640px; width: 80%; max-width: 800px;"/>
 </a>
 {:/nomarkdown}
 

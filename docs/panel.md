@@ -97,7 +97,10 @@ The button on the glcd and Viki2 can be wired as a Kill button by following [Thi
 
 {::nomarkdown}
 <div style="text-align: center; margin: 2rem 0;">
-  <p><em>Image: A RRD GLCD showing Smoothie's "watch" screen (image file missing: images/panel/img0831small.jpg)</em></p>
+  <a href="/images/temporary/lcd-panel-generic.jpg">
+    <img src="/images/temporary/lcd-panel-generic.jpg" alt="A RRD GLCD showing Smoothie's watch screen" style="width: 400px; max-width: 100%; height: auto;"/>
+  </a>
+  <p><em>A RRD GLCD showing Smoothie's "watch" screen</em></p>
 </div>
 {:/nomarkdown}
 
@@ -174,8 +177,9 @@ You can find a list of pins on the Smoothieboard to connect to the panel [here](
 Be aware that RRD does not follow proper conventions for pin numbering. The pin 1 indicator on the ribbon is actually pin 10 in the RRD schematic. The image above is numbered according to the RRD inset schematics. 
 
 {::nomarkdown}
-<img src="/images/ax5m-glcd-sm.jpg" alt="GLCD Wiring" width=200>
-
+<a href="/images/temporary/lcd-panel-generic.jpg">
+  <img src="/images/temporary/lcd-panel-generic.jpg" alt="GLCD Wiring" style="width: 200px; height: auto;"/>
+</a>
 {:/nomarkdown}
 ## RRD GLCD to Azteeg X5 Mini v1.1 interface board
 
@@ -185,7 +189,10 @@ It is compatible with Azteeg X5 Mini v1.1 motion controller and is available fro
 
 {::nomarkdown}
 <div style="text-align: center; margin: 2rem 0;">
-  <p><em>Image: GLCD to Azteeg X5 Mini Wiring Harness (image file path issue: should be /images/glcd-2-alteeg-x5-Harness.jpg)</em></p>
+  <a href="/images/temporary/cable-duct-generic.jpg">
+    <img src="/images/temporary/cable-duct-generic.jpg" alt="GLCD to Azteeg X5 Mini Wiring Harness" style="width: 400px; max-width: 100%; height: auto;"/>
+  </a>
+  <p><em>GLCD to Azteeg X5 Mini Wiring Harness</em></p>
 </div>
 {:/nomarkdown}
 

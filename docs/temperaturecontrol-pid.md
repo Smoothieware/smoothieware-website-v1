@@ -6,8 +6,8 @@ title: Temperature Control PID
 ### Temperature Control PID
 
 {::nomarkdown}
-<a href="/images/temperaturecontrol.gif">
-  <img src="/images/temperaturecontrol.gif" alt="TemperatureControl" width="430" height="auto" style="float: right; margin-left: 1rem;"/>
+<a href="/images/temporary/joystick-generic.jpg">
+  <img src="/images/temporary/joystick-generic.jpg" alt="TemperatureControl" style="width: 430px; float: right; margin-left: 1rem;"/>
 </a>
 {:/nomarkdown}
 

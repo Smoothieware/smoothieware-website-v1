@@ -1,8 +1,8 @@
 # Pick and Place Tool Control
 
 {::nomarkdown}
-<a href="/images/pick-and-place-nozzle.png">
-  <img src="/images/pick-and-place-nozzle.png" alt="A pick and place nozzle" width="350" height="auto" style="float: right; margin-left: 1rem;" onerror="this.style.display='none'"/>
+<a href="/images/temporary/pick-place-machine-generic.jpg">
+  <img src="/images/temporary/pick-place-machine-generic.jpg" alt="A pick and place nozzle" style="width: 350px; float: right; margin-left: 1rem;"/>
 </a>
 {:/nomarkdown}
 

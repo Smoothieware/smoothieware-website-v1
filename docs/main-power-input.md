@@ -1,7 +1,7 @@
 {::nomarkdown}
 <div style="float: right; margin-left: 1rem;">
 <a href="/images/power-supply.png">
-  <img src="/images/power-supply.png" alt="Be careful, mains voltage is dangerous" width="320" height="auto" />
+  <img src="/images/power-supply.png" alt="Be careful, mains voltage is dangerous" style="width: 320px; height: auto;"/>
 </a>
 <p style="text-color: #eee; text-size: 0.8em; text-align: center"> Be careful, mains voltage is dangerous </p>
 </div>
@@ -93,7 +93,9 @@ On the Smoothieboard they are indicated simply as **+** and **-**.
 {::nomarkdown}
 <sl-alert variant = "primary" open>
 <sl-icon  slot    = "icon" name = "diagram-3"></sl-icon>
-  <img src="/images/main-power-input.png" style="width:100%"/>
+  <a href="/images/main-power-input.png">
+    <img src="/images/main-power-input.png" style="width: 100%;"/>
+  </a>
   <p><strong>Wiring Diagram:</strong> Refer to the <a href="https://github.com/Bouni/smoothieboard-graphics/blob/master/smoothieboard-power.png?raw=true">Smoothieboard power connection diagram</a> for visual reference on connecting power supplies. </p>
 </sl-alert>
 {:/nomarkdown}

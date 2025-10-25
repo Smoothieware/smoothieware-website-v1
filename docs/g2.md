@@ -2,7 +2,7 @@
 
 {::nomarkdown}
 <a href="/images/gcode.png">
-  <img src="/images/gcode.png" alt="G-code icon" width="250" height="250" style="float: right; margin-left: 1rem;"/>
+  <img src="/images/gcode.png" alt="G-code icon" style="width: 250px; height: 250px; float: right; margin-left: 1rem;"/>
 </a>
 {:/nomarkdown}
 

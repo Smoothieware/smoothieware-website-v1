@@ -7,7 +7,7 @@ title: Contributing to Smoothieware
 
 {::nomarkdown}
 <a href="/images/give.png">
-  <img src="/images/give.png" alt="Contributing" width="150" height="150" style="float: right; margin-left: 1rem;"/>
+  <img src="/images/give.png" alt="Contributing" style="width: 150px; height: 150px; float: right; margin-left: 1rem;"/>
 </a>
 {:/nomarkdown}
 

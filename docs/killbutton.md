@@ -8,8 +8,8 @@ There are two solutions for implementing a kill button on the Smoothieboard:
 Solder an [LED Tactile Button](https://www.sparkfun.com/products/10442) on the Smoothieboard.
 
 {::nomarkdown}
-<a href="/images/led-tactile-button.png">
-  <img src="/images/led-tactile-button.png" alt="Led Tactile Button" width="300" height="300" style="float: right; margin-left: 1rem;"/>
+<a href="/images/recovered/led-tactile-button.png">
+  <img src="/images/recovered/led-tactile-button.png" alt="Led Tactile Button" style="width: 300px; height: 300px; float: right; margin-left: 1rem;"/>
 </a>
 {:/nomarkdown}
 
@@ -18,8 +18,8 @@ Solder an [LED Tactile Button](https://www.sparkfun.com/products/10442) on the S
 Wire a simple button on two pins.
 
 {::nomarkdown}
-<a href="/images/simple-button.png">
-  <img src="/images/simple-button.png" alt="Simple Button" width="300" height="300" style="float: right; margin-left: 1rem;"/>
+<a href="/images/recovered/simple-button.png">
+  <img src="/images/recovered/simple-button.png" alt="Simple Button" style="width: 300px; height: 300px; float: right; margin-left: 1rem;"/>
 </a>
 {:/nomarkdown}
 

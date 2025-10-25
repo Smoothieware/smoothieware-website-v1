@@ -4,9 +4,7 @@ This adapter allows you to connect a [Reprapdiscount GLCD panel](http://smoothie
 
 {::nomarkdown}
 <div style="text-align: center; margin: 2rem 0;">
-  <a href="/images/rrdglcdadapter/glcdav2.jpg">
-    <img src="/images/rrdglcdadapter/glcdav2.jpg" alt="GLCD Adapter" style="min-width: 640px; width: 80%; height: auto;"/>
-  </a>
+  <a href="/images/rrdglcdadapter/glcdav2.jpg"><img src="/images/rrdglcdadapter/glcdav2.jpg" alt="GLCD Adapter" style="min-width: 640px; width: 80%; height: auto;"/></a>
 </div>
 {:/nomarkdown}
 
@@ -43,9 +41,7 @@ Place the 3-pin connectors below the PCB
 
 {::nomarkdown}
 <div style="text-align: center; margin: 2rem 0;">
-  <a href="/images/rrdglcdadapter/glcdav2_kit.jpg">
-    <img src="/images/rrdglcdadapter/glcdav2_kit.jpg" alt="GLCD Adapter Kit" style="min-width: 640px; width: 80%; height: auto;"/>
-  </a>
+  <a href="/images/rrdglcdadapter/glcdav2_kit.jpg"><img src="/images/rrdglcdadapter/glcdav2_kit.jpg" alt="GLCD Adapter Kit" style="min-width: 640px; width: 80%; height: auto;"/></a>
 </div>
 {:/nomarkdown}
 
@@ -53,9 +49,7 @@ And solder
 
 {::nomarkdown}
 <div style="text-align: center; margin: 2rem 0;">
-  <a href="/images/rrdglcdadapter/glcdav2_weld0.jpg">
-    <img src="/images/rrdglcdadapter/glcdav2_weld0.jpg" alt="GLCD Adapter Soldering" style="min-width: 640px; width: 80%; height: auto;"/>
-  </a>
+  <a href="/images/rrdglcdadapter/glcdav2_weld0.jpg"><img src="/images/rrdglcdadapter/glcdav2_weld0.jpg" alt="GLCD Adapter Soldering" style="min-width: 640px; width: 80%; height: auto;"/></a>
 </div>
 {:/nomarkdown}
 
@@ -63,17 +57,13 @@ Mount the EXP1 & EXP2 connectors, and solder
 
 {::nomarkdown}
 <div style="text-align: center; margin: 2rem 0;">
-  <a href="/images/rrdglcdadapter/glcdav2_orig.jpg">
-    <img src="/images/rrdglcdadapter/glcdav2_orig.jpg" alt="GLCD Adapter Original" style="min-width: 640px; width: 80%; height: auto;"/>
-  </a>
+  <a href="/images/rrdglcdadapter/glcdav2_orig.jpg"><img src="/images/rrdglcdadapter/glcdav2_orig.jpg" alt="GLCD Adapter Original" style="min-width: 640px; width: 80%; height: auto;"/></a>
 </div>
 {:/nomarkdown}
 
 {::nomarkdown}
 <div style="text-align: center; margin: 2rem 0;">
-  <a href="/images/rrdglcdadapter/rrdglcdvo.png">
-    <img src="/images/rrdglcdadapter/rrdglcdvo.png" alt="RRDGLCD Version" style="min-width: 640px; width: 80%; height: auto;"/>
-  </a>
+  <a href="/images/rrdglcdadapter/rrdglcdvo.png"><img src="/images/rrdglcdadapter/rrdglcdvo.png" alt="RRDGLCD Version" style="min-width: 640px; width: 80%; height: auto;"/></a>
 </div>
 {:/nomarkdown}
 
@@ -81,17 +71,13 @@ On some RRDGLCD the connector are reversed
 
 {::nomarkdown}
 <div style="text-align: center; margin: 2rem 0;">
-  <a href="/images/rrdglcdadapter/glcdav2_copy.jpg">
-    <img src="/images/rrdglcdadapter/glcdav2_copy.jpg" alt="GLCD Adapter Copy" style="min-width: 640px; width: 80%; height: auto;"/>
-  </a>
+  <a href="/images/rrdglcdadapter/glcdav2_copy.jpg"><img src="/images/rrdglcdadapter/glcdav2_copy.jpg" alt="GLCD Adapter Copy" style="min-width: 640px; width: 80%; height: auto;"/></a>
 </div>
 {:/nomarkdown}
 
 {::nomarkdown}
 <div style="text-align: center; margin: 2rem 0;">
-  <a href="/images/rrdglcdadapter/rrdglcdcopy.png">
-    <img src="/images/rrdglcdadapter/rrdglcdcopy.png" alt="RRDGLCD Copy" style="min-width: 640px; width: 80%; height: auto;"/>
-  </a>
+  <a href="/images/rrdglcdadapter/rrdglcdcopy.png"><img src="/images/rrdglcdadapter/rrdglcdcopy.png" alt="RRDGLCD Copy" style="min-width: 640px; width: 80%; height: auto;"/></a>
 </div>
 {:/nomarkdown}
 
@@ -101,9 +87,7 @@ If Smoothieboard has a good 5V regulator, or a 5V power supply, the panel of the
 
 {::nomarkdown}
 <div style="text-align: center; margin: 2rem 0;">
-  <a href="/images/rrdglcdadapter/glcdav2_power1.jpg">
-    <img src="/images/rrdglcdadapter/glcdav2_power1.jpg" alt="GLCD Adapter Power Supply" style="min-width: 640px; width: 80%; height: auto;"/>
-  </a>
+  <a href="/images/rrdglcdadapter/glcdav2_power1.jpg"><img src="/images/rrdglcdadapter/glcdav2_power1.jpg" alt="GLCD Adapter Power Supply" style="min-width: 640px; width: 80%; height: auto;"/></a>
 </div>
 {:/nomarkdown}
 
@@ -111,9 +95,7 @@ If not, please install a voltage regulator Recom 785.0-1
 
 {::nomarkdown}
 <div style="text-align: center; margin: 2rem 0;">
-  <a href="/images/rrdglcdadapter/glcdav2_power2.jpg">
-    <img src="/images/rrdglcdadapter/glcdav2_power2.jpg" alt="GLCD Adapter Voltage Regulator" style="min-width: 640px; width: 80%; height: auto;"/>
-  </a>
+  <a href="/images/rrdglcdadapter/glcdav2_power2.jpg"><img src="/images/rrdglcdadapter/glcdav2_power2.jpg" alt="GLCD Adapter Voltage Regulator" style="min-width: 640px; width: 80%; height: auto;"/></a>
 </div>
 {:/nomarkdown}
 

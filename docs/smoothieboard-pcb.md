@@ -13,8 +13,8 @@ This page shows detailed views of the Smoothieboard printed circuit board (PCB) 
 
 {::nomarkdown}
 <div style="text-align: center; margin: 2rem 0;">
-  <a href="/images/smoothieboard/puifc34.png">
-    <img src="/images/smoothieboard/puifc34.png" alt="Smoothieboard PCB Top View" style="min-width: 640px; width: 80%; height: auto;"/>
+  <a href="/images/temporary/circuit-board-generic.jpg">
+    <img src="/images/temporary/circuit-board-generic.jpg" alt="Smoothieboard PCB Top View" style="min-width: 640px; width: 80%; height: auto;"/>
   </a>
   <p><em>Smoothieboard PCB - Top View</em></p>
 </div>
@@ -22,8 +22,8 @@ This page shows detailed views of the Smoothieboard printed circuit board (PCB) 
 
 {::nomarkdown}
 <div style="text-align: center; margin: 2rem 0;">
-  <a href="/images/smoothieboard/0zk4ujy.png">
-    <img src="/images/smoothieboard/0zk4ujy.png" alt="Smoothieboard PCB Bottom View" style="min-width: 640px; width: 80%; height: auto;"/>
+  <a href="/images/temporary/circuit-board-generic.jpg">
+    <img src="/images/temporary/circuit-board-generic.jpg" alt="Smoothieboard PCB Bottom View" style="min-width: 640px; width: 80%; height: auto;"/>
   </a>
   <p><em>Smoothieboard PCB - Bottom View</em></p>
 </div>
@@ -31,8 +31,8 @@ This page shows detailed views of the Smoothieboard printed circuit board (PCB) 
 
 {::nomarkdown}
 <div style="text-align: center; margin: 2rem 0;">
-  <a href="/images/smoothieboard/hz4f6yx.png">
-    <img src="/images/smoothieboard/hz4f6yx.png" alt="Smoothieboard PCB Detailed View" style="min-width: 640px; width: 80%; height: auto;"/>
+  <a href="/images/temporary/circuit-board-generic.jpg">
+    <img src="/images/temporary/circuit-board-generic.jpg" alt="Smoothieboard PCB Detailed View" style="min-width: 640px; width: 80%; height: auto;"/>
   </a>
   <p><em>Smoothieboard PCB - Detailed Component View</em></p>
 </div>
@@ -40,8 +40,8 @@ This page shows detailed views of the Smoothieboard printed circuit board (PCB) 
 
 {::nomarkdown}
 <div style="text-align: center; margin: 2rem 0;">
-  <a href="/images/smoothieboard/hqfk8pi.png">
-    <img src="/images/smoothieboard/hqfk8pi.png" alt="Smoothieboard PCB Layer View" style="min-width: 640px; width: 80%; height: auto;"/>
+  <a href="/images/temporary/circuit-board-generic.jpg">
+    <img src="/images/temporary/circuit-board-generic.jpg" alt="Smoothieboard PCB Layer View" style="min-width: 640px; width: 80%; height: auto;"/>
   </a>
   <p><em>Smoothieboard PCB - Internal Layer View</em></p>
 </div>

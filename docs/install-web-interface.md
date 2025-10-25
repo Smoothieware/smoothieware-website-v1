@@ -7,7 +7,7 @@ title: Installing the Web Interface
 
 {::nomarkdown}
 <a href="/images/github-1.png">
-  <img src="/images/github-1.png" alt="Web Interface" width="240" height="240" style="float: right; margin-left: 1rem;"/>
+  <img src="/images/github-1.png" alt="Web Interface" style="width: 240px; height: 240px; float: right; margin-left: 1rem;"/>
 </a>
 {:/nomarkdown}
 

@@ -37,8 +37,8 @@ Instead, you should rely on an external circuit that cuts the power for the step
 
 {::nomarkdown}
 <div style="text-align: center; margin: 2rem 0;">
-  <a href="/images/emergency-stop-1.png">
-    <img src="/images/emergency-stop-1.png" alt="Emergency Stop Wiring 1" style="min-width: 640px; height: auto;"/>
+  <a href="/images/temporary/emergency-stop-generic.jpg">
+    <img src="/images/temporary/emergency-stop-generic.jpg" alt="Emergency Stop Wiring 1" style="min-width: 640px; height: auto;"/>
   </a>
 </div>
 {:/nomarkdown}
@@ -49,8 +49,8 @@ So it's a better idea to use a contactor/relay that switches the VBB and the Eme
 
 {::nomarkdown}
 <div style="text-align: center; margin: 2rem 0;">
-  <a href="/images/emergency-stop-2.png">
-    <img src="/images/emergency-stop-2.png" alt="Emergency Stop Wiring 2" style="min-width: 640px; height: auto;"/>
+  <a href="/images/temporary/emergency-stop-generic.jpg">
+    <img src="/images/temporary/emergency-stop-generic.jpg" alt="Emergency Stop Wiring 2" style="min-width: 640px; height: auto;"/>
   </a>
 </div>
 {:/nomarkdown}
@@ -91,8 +91,8 @@ We assume all stepper drivers are external ones.
 
 {::nomarkdown}
 <div style="text-align: center; margin: 2rem 0;">
-  <a href="/images/emergency-stop-4.png">
-    <img src="/images/emergency-stop-4.png" alt="Emergency Stop Wiring 4" style="min-width: 640px; height: auto;"/>
+  <a href="/images/temporary/emergency-stop-generic.jpg">
+    <img src="/images/temporary/emergency-stop-generic.jpg" alt="Emergency Stop Wiring 4" style="min-width: 640px; height: auto;"/>
   </a>
 </div>
 {:/nomarkdown}

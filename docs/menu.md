@@ -16,21 +16,21 @@ title: Menu Icons Reference
 
 {::nomarkdown}
 <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; align-items: center;">
-  <img src="/images/hashtag.png" width="24" alt="Hashtag"/>
-  <img src="/images/mails.png" width="24" alt="Mails"/>
-  <img src="/images/rain.png" width="24" alt="Rain"/>
-  <img src="/images/mail.png" width="24" alt="Mail"/>
-  <img src="/images/mail_1_.png" width="24" alt="Mail Alt"/>
-  <img src="/images/google-plus.png" width="24" alt="Google Plus"/>
-  <img src="/images/twitter.png" width="24" alt="Twitter"/>
-  <img src="/images/facebook.png" width="24" alt="Facebook"/>
-  <img src="/images/facebook_1_.png" width="24" alt="Facebook Alt"/>
-  <img src="/images/reddit.png" width="24" alt="Reddit"/>
-  <img src="/images/reddit_1_.png" width="24" alt="Reddit Alt"/>
-  <img src="/images/slack.png" width="24" alt="Slack"/>
-  <img src="/images/linkedin.png" width="24" alt="LinkedIn"/>
-  <img src="/images/coffee-machine.png" width="24" alt="Coffee Machine"/>
-  <img src="/images/sprout.png" width="24" alt="Sprout"/>
+  <a href="/images/hashtag.png"><img src="/images/hashtag.png" alt="Hashtag" style="width: 24px; height: auto;"/></a>
+  <a href="/images/mails.png"><img src="/images/mails.png" alt="Mails" style="width: 24px; height: auto;"/></a>
+  <a href="/images/rain.png"><img src="/images/rain.png" alt="Rain" style="width: 24px; height: auto;"/></a>
+  <a href="/images/mail.png"><img src="/images/mail.png" alt="Mail" style="width: 24px; height: auto;"/></a>
+  <a href="/images/mail_1_.png"><img src="/images/mail_1_.png" alt="Mail Alt" style="width: 24px; height: auto;"/></a>
+  <a href="/images/google-plus.png"><img src="/images/google-plus.png" alt="Google Plus" style="width: 24px; height: auto;"/></a>
+  <a href="/images/twitter.png"><img src="/images/twitter.png" alt="Twitter" style="width: 24px; height: auto;"/></a>
+  <a href="/images/facebook.png"><img src="/images/facebook.png" alt="Facebook" style="width: 24px;"/></a>
+  <a href="/images/facebook_1_.png"><img src="/images/facebook_1_.png" alt="Facebook Alt" style="width: 24px;"/></a>
+  <a href="/images/reddit.png"><img src="/images/reddit.png" alt="Reddit" style="width: 24px;"/></a>
+  <a href="/images/reddit_1_.png"><img src="/images/reddit_1_.png" alt="Reddit Alt" style="width: 24px;"/></a>
+  <a href="/images/slack.png"><img src="/images/slack.png" alt="Slack" style="width: 24px;"/></a>
+  <a href="/images/linkedin.png"><img src="/images/linkedin.png" alt="LinkedIn" style="width: 24px;"/></a>
+  <a href="/images/coffee-machine.png"><img src="/images/coffee-machine.png" alt="Coffee Machine" style="width: 24px;"/></a>
+  <a href="/images/sprout.png"><img src="/images/sprout.png" alt="Sprout" style="width: 24px;"/></a>
 </div>
 {:/nomarkdown}
 
@@ -41,31 +41,31 @@ title: Menu Icons Reference
 {::nomarkdown}
 <div style="display: flex; gap: 1rem; flex-wrap: wrap; align-items: center;">
   <div style="text-align: center;">
-    <img src="/images/manual.png" width="40" alt="Manual"/>
+    <a href="/images/manual.png"><img src="/images/manual.png" alt="Manual" style="width: 40px;"/></a>
     <div style="font-size: 0.8em;">Manual</div>
   </div>
   <div style="text-align: center;">
-    <img src="/images/smoothieboard-fritzing.png" width="40" alt="Smoothieboard"/>
+    <a href="/images/smoothieboard-fritzing.png"><img src="/images/smoothieboard-fritzing.png" alt="Smoothieboard" style="width: 40px;"/></a>
     <div style="font-size: 0.8em;">Board</div>
   </div>
   <div style="text-align: center;">
-    <img src="/images/circuit_1_.png" width="40" alt="Circuit"/>
+    <a href="/images/circuit_1_.png"><img src="/images/circuit_1_.png" alt="Circuit" style="width: 40px;"/></a>
     <div style="font-size: 0.8em;">Circuit</div>
   </div>
   <div style="text-align: center;">
-    <img src="/images/pcb-board.png" width="40" alt="PCB Board"/>
+    <a href="/images/pcb-board.png"><img src="/images/pcb-board.png" alt="PCB Board" style="width: 40px;"/></a>
     <div style="font-size: 0.8em;">PCB</div>
   </div>
   <div style="text-align: center;">
-    <img src="/images/gallery.png" width="40" alt="Gallery"/>
+    <a href="/images/gallery.png"><img src="/images/gallery.png" alt="Gallery" style="width: 40px;"/></a>
     <div style="font-size: 0.8em;">Gallery</div>
   </div>
   <div style="text-align: center;">
-    <img src="/images/volunteer.png" width="40" alt="Volunteer"/>
+    <a href="/images/volunteer.png"><img src="/images/volunteer.png" alt="Volunteer" style="width: 40px;"/></a>
     <div style="font-size: 0.8em;">Volunteer</div>
   </div>
   <div style="text-align: center;">
-    <img src="/images/search.png" width="40" alt="Search"/>
+    <a href="/images/search.png"><img src="/images/search.png" alt="Search" style="width: 40px;"/></a>
     <div style="font-size: 0.8em;">Search</div>
   </div>
 </div>
@@ -78,31 +78,31 @@ title: Menu Icons Reference
 {::nomarkdown}
 <div style="display: flex; gap: 1.5rem; flex-wrap: wrap; align-items: center;">
   <div style="text-align: center;">
-    <img src="/images/manual.png" width="64" alt="Manual"/>
+    <a href="/images/manual.png"><img src="/images/manual.png" alt="Manual" style="width: 64px;"/></a>
     <div style="font-size: 0.9em;">Manual</div>
   </div>
   <div style="text-align: center;">
-    <img src="/images/smoothieboard-fritzing.png" width="64" alt="Smoothieboard"/>
+    <a href="/images/smoothieboard-fritzing.png"><img src="/images/smoothieboard-fritzing.png" alt="Smoothieboard" style="width: 64px;"/></a>
     <div style="font-size: 0.9em;">Board</div>
   </div>
   <div style="text-align: center;">
-    <img src="/images/circuit_1_.png" width="64" alt="Circuit"/>
+    <a href="/images/circuit_1_.png"><img src="/images/circuit_1_.png" alt="Circuit" style="width: 64px;"/></a>
     <div style="font-size: 0.9em;">Circuit</div>
   </div>
   <div style="text-align: center;">
-    <img src="/images/pcb-board.png" width="64" alt="PCB Board"/>
+    <a href="/images/pcb-board.png"><img src="/images/pcb-board.png" alt="PCB Board" style="width: 64px;"/></a>
     <div style="font-size: 0.9em;">PCB</div>
   </div>
   <div style="text-align: center;">
-    <img src="/images/gallery.png" width="64" alt="Gallery"/>
+    <a href="/images/gallery.png"><img src="/images/gallery.png" alt="Gallery" style="width: 64px;"/></a>
     <div style="font-size: 0.9em;">Gallery</div>
   </div>
   <div style="text-align: center;">
-    <img src="/images/volunteer.png" width="64" alt="Volunteer"/>
+    <a href="/images/volunteer.png"><img src="/images/volunteer.png" alt="Volunteer" style="width: 64px;"/></a>
     <div style="font-size: 0.9em;">Volunteer</div>
   </div>
   <div style="text-align: center;">
-    <img src="/images/search.png" width="64" alt="Search"/>
+    <a href="/images/search.png"><img src="/images/search.png" alt="Search" style="width: 64px;"/></a>
     <div style="font-size: 0.9em;">Search</div>
   </div>
 </div>

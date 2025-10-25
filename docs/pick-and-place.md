@@ -2,8 +2,8 @@
 # Your guide to installing Smoothieboard in a Pick and Place Machine
 
 {::nomarkdown}
-<a href="/images/guide-pick-and-place.png">
-  <img src="/images/guide-pick-and-place.png" alt="Pick and place icon" width="100" height="100" style="float: right; margin-left: 1rem;" onerror="this.style.display='none'"/>
+<a href="/images/temporary/pick-place-machine-generic.jpg">
+  <img src="/images/temporary/pick-place-machine-generic.jpg" alt="Pick and place icon" style="width: 100px; height: 100px; float: right; margin-left: 1rem;"/>
 </a>
 {:/nomarkdown}
 
@@ -17,7 +17,7 @@ This guide is a [community](http://smoothieware.org/irc) effort, and this page i
 
 {::nomarkdown}
 <a href="/images/smoothieboard-fritzing.png">
-  <img src="/images/smoothieboard-fritzing.png" alt="Smoothieboard Fritzing" style="float: right; margin-left: 1rem; width: 500px;"/>
+  <img src="/images/smoothieboard-fritzing.png" alt="Smoothieboard Fritzing" style="width: 500px; float: right; margin-left: 1rem;"/>
 </a>
 {:/nomarkdown}
 

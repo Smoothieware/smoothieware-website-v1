@@ -1,6 +1,6 @@
 {::nomarkdown}
-<a href="/images/limit-switch.png">
-  <img src="/images/limit-switch.png" alt="Guide-End Stops" width="200" height="200" style="float: right; margin-left: 1rem;"/>
+<a href="/images/recovered/limit-switch.png">
+  <img src="/images/recovered/limit-switch.png" alt="Guide-End Stops" style="width: 200px; height: 200px; float: right; margin-left: 1rem;"/>
 </a>
 {:/nomarkdown}
 
@@ -42,8 +42,8 @@ End-stops can also be used as limit switches which prevent the machine from atte
 
 {::nomarkdown}
 <div style="text-align: center; margin: 2rem 0;">
-  <a href="/images/limit-switch.png">
-    <img src="/images/limit-switch.png" alt="Six endstops" width="430"/>
+  <a href="/images/recovered/limit-switch.png">
+    <img src="/images/recovered/limit-switch.png" alt="Six endstops" style="width: 430px;"/>
   </a>
   <p><em>There are 6 of them, two for each axis</em></p>
 </div>
@@ -75,8 +75,8 @@ Most mechanical end-stops have 3 connection points, to which you have to attach 
 * **NC**: Normally Closed, meaning it is connected to **C** when the interrupter is not pressed, and not connected to **C** when the interrupter is pressed.
 {::nomarkdown}
 <div style="text-align: center; margin: 2rem 0;">
-  <a href="/images/end-stops.png">
-    <img src="/images/end-stops.png" alt="Endstop wiring diagram" style="min-width: 640px; height: auto;"/>
+  <a href="/images/recovered/end-stops.png">
+    <img src="/images/recovered/end-stops.png" alt="Endstop wiring diagram" style="min-width: 640px; height: auto;"/>
   </a>
   <p><em>You want to connect the <strong>Signal</strong> (green in the schematic) and <strong>Ground</strong> (blue in the schematic) pins for the end-stop on the Smoothieboard, to the <strong>C</strong> and <strong>NC</strong> connection points on the end-stop.</em></p>
 </div>

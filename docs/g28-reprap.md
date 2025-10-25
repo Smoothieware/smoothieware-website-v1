@@ -1,6 +1,6 @@
 {::nomarkdown}
 <a href="/images/guide-3d-printer.png">
-  <img src="/images/guide-3d-printer.png" alt="3D Printer" width="250" height="250" style="float: right; margin-left: 1rem;"/>
+  <img src="/images/guide-3d-printer.png" alt="3D Printer" style="width: 250px; height: 250px; float: right; margin-left: 1rem;"/>
 </a>
 {:/nomarkdown}
 

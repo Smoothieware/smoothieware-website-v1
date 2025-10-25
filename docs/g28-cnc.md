@@ -1,8 +1,8 @@
 # G28 G-code
 
 {::nomarkdown}
-<a href="/images/cnc-returning-to-origin.png">
-  <img src="/images/cnc-returning-to-origin.png" alt="Returning To Origin" width="200" height="200" style="float: right; margin-left: 1rem;"/>
+<a href="/images/temporary/cnc-spindle-generic.jpg">
+  <img src="/images/temporary/cnc-spindle-generic.jpg" alt="Returning To Origin" style="width: 200px; height: 200px; float: right; margin-left: 1rem;"/>
 </a>
 {:/nomarkdown}
 

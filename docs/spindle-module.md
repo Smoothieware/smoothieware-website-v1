@@ -163,8 +163,8 @@ This is the related circuit diagram for the converter.
 
 {::nomarkdown}
 <div style="text-align: center; margin: 2rem 0;">
-  <a href="/images/analog-wiring.png">
-    <img src="/images/analog-wiring.png" alt="VFD adapter board wiring" style="min-width: 640px; width: 640px; max-width: 100%; height: auto;"/>
+  <a href="/images/recovered/analog-wiring.png">
+    <img src="/images/recovered/analog-wiring.png" alt="VFD adapter board wiring" style="min-width: 640px; width: 640px; max-width: 100%; height: auto;"/>
   </a>
   <p style="font-style: italic; margin-top: 0.5rem;">VFD adapter board wiring - How to connect it to your Smoothieboard and VFD</p>
 </div>

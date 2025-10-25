@@ -2,7 +2,7 @@
 
 {::nomarkdown}
 <a href="/images/coding.png">
-  <img src="/images/coding.png" alt="Console" width="150" height="150" style="float: right; margin-left: 1rem;"/>
+  <img src="/images/coding.png" alt="Console" style="width: 150px; height: 150px; float: right; margin-left: 1rem;"/>
 </a>
 {:/nomarkdown}
 

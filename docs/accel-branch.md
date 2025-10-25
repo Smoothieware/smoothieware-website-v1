@@ -2,7 +2,7 @@
 
 {::nomarkdown}
 <a href="/images/binary-code.png">
-  <img src="/images/binary-code.png" alt="Binary code" width="300" height="300" style="float: right; margin-left: 1rem;"/>
+  <img src="/images/binary-code.png" alt="Binary code" style="width: 300px; height: 300px; float: right; margin-left: 1rem;"/>
 </a>
 {:/nomarkdown}
 

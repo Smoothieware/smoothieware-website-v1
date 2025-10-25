@@ -2,8 +2,8 @@
 # How to wire your Smoothieboard
 
 {::nomarkdown}
-<a href="/images/complex-wiring.jpg">
-  <img src="/images/complex-wiring.jpg" alt="Complex Wiring" style="display:block;margin:20px auto;min-width:640px;max-width:100%;height:auto;"/>
+<a href="/images/recovered/complex-wiring.jpg">
+  <img src="/images/recovered/complex-wiring.jpg" alt="Complex Wiring" style="display: block; margin: 20px auto; min-width: 640px; max-width: 100%; height: auto;"/>
 </a>
 {:/nomarkdown}
 
@@ -71,8 +71,8 @@ In case of electrical default, they may be too slow to react so adding a fuse on
 You can buy nice inlets with integrated fuse like this one:
 
 {::nomarkdown}
-<a href="/images/how-to-wire/inlet_with_fuse.jpg">
-  <img src="/images/how-to-wire/inlet_with_fuse.jpg" alt="Inlet with Fuse" width="300" height="200" style="display:block;margin:1rem auto;"/>
+<a href="/images/recovered/inlet_with_fuse.jpg">
+  <img src="/images/recovered/inlet_with_fuse.jpg" alt="Inlet with Fuse" style="width: 300px; height: 200px; display: block; margin: 1rem auto;"/>
 </a>
 {:/nomarkdown}
 
@@ -152,8 +152,8 @@ Tier 3 - low voltage heat pads (12-24VDC) or any current-hungry (high amperage) 
 ### Color Coding
 
 {::nomarkdown}
-<a href="/images/how-to-wire/color_coding.jpg">
-  <img src="/images/how-to-wire/color_coding.jpg" alt="Color Coding" width="300" height="200" style="float:right;margin-left:1rem;"/>
+<a href="/images/recovered/color_coding.jpg">
+  <img src="/images/recovered/color_coding.jpg" alt="Color Coding" style="width: 300px; height: 200px; float: right; margin-left: 1rem;"/>
 </a>
 {:/nomarkdown}
 
@@ -187,11 +187,11 @@ Here are a few things you can use to manage your wires and cables but also pneum
 #### Cable Trunking
 
 {::nomarkdown}
-<a href="/images/how-to-wire/wiring_ducts.jpg">
-  <img src="/images/how-to-wire/wiring_ducts.jpg" alt="Wiring Ducts" width="300" height="200" style="display:inline-block;margin:0.5rem;"/>
+<a href="/images/temporary/cable-duct-generic.jpg">
+  <img src="/images/temporary/cable-duct-generic.jpg" alt="Wiring Ducts" style="width: 300px; height: 200px; display: inline-block; margin: 0.5rem;"/>
 </a>
-<a href="/images/how-to-wire/20160402_eustathios_3.jpg">
-  <img src="/images/how-to-wire/20160402_eustathios_3.jpg" alt="Eustathios Cable Management" width="300" height="200" style="display:inline-block;margin:0.5rem;"/>
+<a href="/images/recovered/20160402_eustathios_3.jpg">
+  <img src="/images/recovered/20160402_eustathios_3.jpg" alt="Eustathios Cable Management" style="width: 300px; height: 200px; display: inline-block; margin: 0.5rem;"/>
 </a>
 {:/nomarkdown}
 
@@ -200,11 +200,11 @@ Also called cable ways, cable ducts. The slotted ones are very handy, wires can 
 #### Mesh Sleeves & Spiral Wrap
 
 {::nomarkdown}
-<a href="/images/how-to-wire/mesh_sleeve.jpg">
-  <img src="/images/how-to-wire/mesh_sleeve.jpg" alt="Mesh Sleeve" width="300" height="200" style="display:inline-block;margin:0.5rem;"/>
+<a href="/images/recovered/mesh_sleeve.jpg">
+  <img src="/images/recovered/mesh_sleeve.jpg" alt="Mesh Sleeve" style="width: 300px; height: 200px; display: inline-block; margin: 0.5rem;"/>
 </a>
-<a href="/images/how-to-wire/spiral_wrap.jpg">
-  <img src="/images/how-to-wire/spiral_wrap.jpg" alt="Spiral Wrap" width="300" height="200" style="display:inline-block;margin:0.5rem;"/>
+<a href="/images/recovered/spiral_wrap.jpg">
+  <img src="/images/recovered/spiral_wrap.jpg" alt="Spiral Wrap" style="width: 300px; height: 200px; display: inline-block; margin: 0.5rem;"/>
 </a>
 {:/nomarkdown}
 
@@ -213,8 +213,8 @@ Useful to link moving parts over short distances like extruder carriages. They a
 #### Drag Chains
 
 {::nomarkdown}
-<a href="/images/how-to-wire/cable_chain.jpg">
-  <img src="/images/how-to-wire/cable_chain.jpg" alt="Cable Chain" width="300" height="200" style="display:block;margin:1rem auto;"/>
+<a href="/images/recovered/cable_chain.jpg">
+  <img src="/images/recovered/cable_chain.jpg" alt="Cable Chain" style="width: 300px; height: 200px; display: block; margin: 1rem auto;"/>
 </a>
 {:/nomarkdown}
 
@@ -225,8 +225,8 @@ The holy grail for CNC routers but they fit perfectly on smaller 3D printers too
 #### Terminals
 
 {::nomarkdown}
-<a href="/images/how-to-wire/bridge_terminals.jpg">
-  <img src="/images/how-to-wire/bridge_terminals.jpg" alt="Bridge Terminals" width="300" height="200" style="float:right;margin-left:1rem;"/>
+<a href="/images/recovered/bridge_terminals.jpg">
+  <img src="/images/recovered/bridge_terminals.jpg" alt="Bridge Terminals" style="width: 300px; height: 200px; float: right; margin-left: 1rem;"/>
 </a>
 {:/nomarkdown}
 
@@ -237,11 +237,11 @@ Connection points can either be spring clamps or screws. Screws tend to be the "
 On the left: 2 level terminal with 3 clamp connection points on each.
 
 {::nomarkdown}
-<a href="/images/how-to-wire/screw_terminals.jpg">
-  <img src="/images/how-to-wire/screw_terminals.jpg" alt="Screw Terminals" width="300" height="200" style="display:inline-block;margin:0.5rem;"/>
+<a href="/images/recovered/screw_terminals.jpg">
+  <img src="/images/recovered/screw_terminals.jpg" alt="Screw Terminals" style="width: 300px; height: 200px; display:inline-block;margin:0.5rem;"/>
 </a>
-<a href="/images/how-to-wire/bridge_terminals.jpg">
-  <img src="/images/how-to-wire/bridge_terminals.jpg" alt="Bridge Terminals with Bridging" width="300" height="200" style="display:inline-block;margin:0.5rem;"/>
+<a href="/images/recovered/bridge_terminals.jpg">
+  <img src="/images/recovered/bridge_terminals.jpg" alt="Bridge Terminals with Bridging" style="width: 300px; height: 200px; display:inline-block;margin:0.5rem;"/>
 </a>
 {:/nomarkdown}
 
@@ -254,8 +254,8 @@ Use them as wire interface between the inside and the outside of your control bo
 Below: internal cabinets wiring come from the bottom cable way, upper cables go to actuators, sensors, etc.
 
 {::nomarkdown}
-<a href="/images/how-to-wire/example_01.jpg">
-  <img src="/images/how-to-wire/example_01.jpg" alt="Wiring Example" width="400" height="300" style="display:block;margin:1rem auto;"/>
+<a href="/images/temporary/cable-duct-generic.jpg">
+  <img src="/images/temporary/cable-duct-generic.jpg" alt="Wiring Example" style="width: 400px; height: 300px; display:block;margin:1rem auto;"/>
 </a>
 {:/nomarkdown}
 
@@ -268,8 +268,8 @@ There are many types available.
 The most known are Dupont, Molex, or the simple headers as found on Arduino, etc.
 
 {::nomarkdown}
-<a href="/images/how-to-wire/20161206_smoothie_wiring.jpg">
-  <img src="/images/how-to-wire/20161206_smoothie_wiring.jpg" alt="Smoothie Wiring with Dupont Connectors" width="400" height="300" style="display:block;margin:1rem auto;"/>
+<a href="/images/recovered/20161206_smoothie_wiring.jpg">
+  <img src="/images/recovered/20161206_smoothie_wiring.jpg" alt="Smoothie Wiring with Dupont Connectors" style="width: 400px; height: 300px; display:block;margin:1rem auto;"/>
 </a>
 {:/nomarkdown}
 
@@ -302,8 +302,8 @@ Pins need to be soldered, make sure you have a soldering iron.
 These connectors make great connectors for controller enclosures, see examples at the bottom of this page.
 
 {::nomarkdown}
-<a href="/images/how-to-wire/20161206_smoothie_wiring_2.jpg">
-  <img src="/images/how-to-wire/20161206_smoothie_wiring_2.jpg" alt="Aviation Type Connectors" width="400" height="300" style="display:block;margin:1rem auto;"/>
+<a href="/images/recovered/20161206_smoothie_wiring_2.jpg">
+  <img src="/images/recovered/20161206_smoothie_wiring_2.jpg" alt="Aviation Type Connectors" style="width: 400px; height: 300px; display:block;margin:1rem auto;"/>
 </a>
 {:/nomarkdown}
 

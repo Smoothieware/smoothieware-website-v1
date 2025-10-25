@@ -141,8 +141,8 @@ It's essentially just enough to run a 3D printer with no heated bed, a small las
 - No connectors pre-installed (DIY soldering required)
 
 {::nomarkdown}
-<a href="/images/smoothieboard-v2-mini.png">
-  <img src="/images/smoothieboard-v2-mini.png" alt="Smoothieboard v2-mini render" style="width: 640px; height: auto; display: block; margin: 2rem auto;"/>
+<a href="/images/recovered/smoothieboard-v2-mini.png">
+  <img src="/images/recovered/smoothieboard-v2-mini.png" alt="Smoothieboard v2-mini render" style="width: 640px; height: auto; display: block; margin: 2rem auto;"/>
 </a>
 {:/nomarkdown}
 

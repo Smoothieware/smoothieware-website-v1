@@ -35,8 +35,8 @@ A collection of projects and machines powered by Smoothieware and Smoothieboard.
 
 {::nomarkdown}
 <div style="text-align: center; margin: 2rem 0;">
-  <a href="/images/laser-engrave-paper.jpg">
-    <img src="/images/laser-engrave-paper.jpg" alt="Laser engraving with LaserWeb and Smoothieboard" style="min-width: 640px; height: auto;"/>
+  <a href="/images/temporary/laser-cutter-generic.jpg">
+    <img src="/images/temporary/laser-cutter-generic.jpg" alt="Laser engraving with LaserWeb and Smoothieboard" style="min-width: 640px; height: auto;"/>
   </a>
   <p><em>Laser engraving with LaserWeb and Smoothieboard, by Ariel Yahni, February 2016</em></p>
 </div>
@@ -114,8 +114,8 @@ A collection of projects and machines powered by Smoothieware and Smoothieboard.
 
 {::nomarkdown}
 <div style="text-align: center; margin: 2rem 0;">
-  <a href="/images/ce7nsnp.jpg">
-    <img src="/images/ce7nsnp.jpg" alt="Smoothie doing dual extrusion on a delta" style="min-width: 640px; height: auto;"/>
+  <a href="/images/temporary/delta-printer-generic.jpg">
+    <img src="/images/temporary/delta-printer-generic.jpg" alt="Smoothie doing dual extrusion on a delta" style="min-width: 640px; height: auto;"/>
   </a>
   <p><em>Smoothie doing dual extrusion on a delta by Gestalt73, May 2014</em></p>
 </div>
@@ -123,8 +123,8 @@ A collection of projects and machines powered by Smoothieware and Smoothieboard.
 
 {::nomarkdown}
 <div style="text-align: center; margin: 2rem 0;">
-  <a href="/images/shapeoko.jpg">
-    <img src="/images/shapeoko.jpg" alt="Breadboard Smoothie on ShapeOko" style="min-width: 640px; height: auto;"/>
+  <a href="/images/temporary/cnc-spindle-generic.jpg">
+    <img src="/images/temporary/cnc-spindle-generic.jpg" alt="Breadboard Smoothie on ShapeOko" style="min-width: 640px; height: auto;"/>
   </a>
   <p><em>Breadboard Smoothie on ShapeOko, by impure_hate, March 2014</em></p>
 </div>
@@ -132,8 +132,8 @@ A collection of projects and machines powered by Smoothieware and Smoothieboard.
 
 {::nomarkdown}
 <div style="text-align: center; margin: 2rem 0;">
-  <a href="/images/img-0002.jpg">
-    <img src="/images/img-0002.jpg" alt="Smoothieboard laser cutting/engraving" style="min-width: 640px; height: auto;"/>
+  <a href="/images/recovered/img-0002.jpg">
+    <img src="/images/recovered/img-0002.jpg" alt="Smoothieboard laser cutting/engraving" style="min-width: 640px; height: auto;"/>
   </a>
   <p><em>Smoothieboard laser cutting/engraving, by Jason Harper, March 2014 <a href="https://www.icloud.com/photostream/fr-fr/#A9JtdOXmJtrzH4">pictures</a> <a href="https://www.youtube.com/watch?v=V8y1WM676pY">video</a></em></p>
 </div>
@@ -155,8 +155,8 @@ A collection of projects and machines powered by Smoothieware and Smoothieboard.
 
 {::nomarkdown}
 <div style="text-align: center; margin: 2rem 0;">
-  <a href="/images/laser-fun.jpg">
-    <img src="/images/laser-fun.jpg" alt="Laser fun" style="min-width: 640px; height: auto;"/>
+  <a href="/images/temporary/laser-cutter-generic.jpg">
+    <img src="/images/temporary/laser-cutter-generic.jpg" alt="Laser fun" style="min-width: 640px; height: auto;"/>
   </a>
   <p><em>Laser fun, by trimpot, June 2013</em></p>
 </div>
@@ -192,8 +192,8 @@ A collection of projects and machines powered by Smoothieware and Smoothieboard.
 
 {::nomarkdown}
 <div style="text-align: center; margin: 2rem 0;">
-  <a href="/images/probe-results.png">
-    <img src="/images/probe-results.png" alt="Beta touchprobe code results" style="min-width: 640px; height: auto;"/>
+  <a href="/images/temporary/3d-printer-probe.jpg">
+    <img src="/images/temporary/3d-printer-probe.jpg" alt="Beta touchprobe code results" style="min-width: 640px; height: auto;"/>
   </a>
   <p><em>Beta touchprobe code results, powertomato, May 2013</em></p>
 </div>
@@ -228,8 +228,8 @@ A collection of projects and machines powered by Smoothieware and Smoothieboard.
 
 {::nomarkdown}
 <div style="text-align: center; margin: 2rem 0;">
-  <a href="/images/crowded.JPG">
-    <img src="/images/crowded.JPG" alt="Crowded Smoothie on a Breadboard setup" style="min-width: 640px; height: auto;"/>
+  <a href="/images/temporary/circuit-board-generic.jpg">
+    <img src="/images/temporary/circuit-board-generic.jpg" alt="Crowded Smoothie on a Breadboard setup" style="min-width: 640px; height: auto;"/>
   </a>
   <p><em>Crowded <a href="smoothie-on-a-breadboard">Smoothie on a Breadboard</a> setup by wolfmanjm, March 2013</em></p>
 </div>
@@ -258,8 +258,8 @@ A collection of projects and machines powered by Smoothieware and Smoothieboard.
 
 {::nomarkdown}
 <div style="text-align: center; margin: 2rem 0;">
-  <a href="/images/smoothieboard-on-kossel.jpg">
-    <img src="/images/smoothieboard-on-kossel.jpg" alt="Smoothieboard on a Kossel" style="min-width: 640px; height: auto;"/>
+  <a href="/images/temporary/delta-printer-generic.jpg">
+    <img src="/images/temporary/delta-printer-generic.jpg" alt="Smoothieboard on a Kossel" style="min-width: 640px; height: auto;"/>
   </a>
   <p><em>Smoothieboard on a Kossel, by merkur2k, January 2013</em></p>
 </div>

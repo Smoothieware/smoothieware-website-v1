@@ -7,7 +7,7 @@ This is used for example for [extruder](extruder) hotends, or heated beds.
 
 {::nomarkdown}
 <a href="/images/jhead.png">
-  <img src="/images/jhead.png" alt="A J-head hotend with thermistor and heating element" width="200" height="auto" style="float: right; margin-left: 1rem;"/>
+  <img src="/images/jhead.png" alt="A J-head hotend with thermistor and heating element" style="width: 200px; height: auto; float: right; margin-left: 1rem;"/>
 </a>
 {:/nomarkdown}
 
@@ -157,7 +157,9 @@ In the case of mosfets, on a [Smoothieboard](smoothieboard), a given pin is conn
 
 See this schematic below or on the [Smoothieboard](smoothieboard) page to see what mosfet corresponds to what pin.
 
-![Mosfet inputs and outputs](images/mosfet-input-output.svg)
+<a href="/images/mosfet-input-output.svg">
+  <img src="/images/mosfet-input-output.svg" alt="Mosfet inputs and outputs"/>
+</a>
 
 Read more about the mosfets [here](http://smoothieware.org/mosfets.md)
 

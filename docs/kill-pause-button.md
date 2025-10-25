@@ -8,8 +8,8 @@ There are two solutions:
 Solder an [LED Tactile Button](https://www.sparkfun.com/products/10442) on the Smoothieboard.
 
 {::nomarkdown}
-<a href="/images/led-tactile-button.png">
-  <img src="/images/led-tactile-button.png" alt="Led Tactile Button" style="display:block;margin:20px auto;min-width:640px;max-width:100%;height:auto;"/>
+<a href="/images/recovered/led-tactile-button.png">
+  <img src="/images/recovered/led-tactile-button.png" alt="Led Tactile Button" style="display:block;margin:20px auto;min-width:640px;max-width:100%;height:auto;"/>
 </a>
 {:/nomarkdown}
 
@@ -18,8 +18,8 @@ Solder an [LED Tactile Button](https://www.sparkfun.com/products/10442) on the S
 Wire a simple button on two pins.
 
 {::nomarkdown}
-<a href="/images/simple-button.png">
-  <img src="/images/simple-button.png" alt="Simple Button" style="display:block;margin:20px auto;min-width:640px;max-width:100%;height:auto;"/>
+<a href="/images/recovered/simple-button.png">
+  <img src="/images/recovered/simple-button.png" alt="Simple Button" style="display:block;margin:20px auto;min-width:640px;max-width:100%;height:auto;"/>
 </a>
 {:/nomarkdown}
 

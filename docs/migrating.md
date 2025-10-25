@@ -3,7 +3,7 @@
 
 {::nomarkdown}
 <a href="/images/migration.png">
-  <img src="/images/migration.png" alt="Migration" style="float: right; margin-left: 1rem; width: 320px;"/>
+  <img src="/images/migration.png" alt="Migration" style="width: 320px; float: right; margin-left: 1rem;"/>
 </a>
 {:/nomarkdown}
 
