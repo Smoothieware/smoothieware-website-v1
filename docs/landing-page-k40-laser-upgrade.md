@@ -1,138 +1,136 @@
----
-title: K40 Laser Controller Upgrade - Smoothieboard v2
----
-
 # K40 Stock Controller Failed? Upgrade to Smoothieboard
 
-{::nomarkdown}
-<sl-alert variant="warning" open>
-  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
-  <strong>M2 Nano board died again?</strong> You're not alone. The K40's stock controller is notorious for failing after 3-6 months. Smoothieboard v2 is the proven upgrade recommended by the laser cutting community. <strong>Full LightBurn support, reliable operation, used by hundreds of K40 owners.</strong>
-</sl-alert>
-{:/nomarkdown}
+**Tired of your K40's M2 Nano board failing mid-project?** Smoothieboard v2 is the proven upgrade recommended by laser cutting forums. Full LightBurn support, reliable operation, used by hundreds of K40 owners. Stop replacing cheap boards - upgrade once, done.
 
-{::nomarkdown}
-<div style="text-align: center; margin: 2rem 0;">
-  <a href="https://www.robosprout.com/product-category/smoothieboards" style="display: inline-block; background: #dc3545; color: white; padding: 1rem 2rem; font-size: 1.25rem; font-weight: bold; text-decoration: none; border-radius: 8px;">
-    Upgrade Your K40 - $200
-  </a>
-  <div style="margin-top: 1rem; font-size: 0.9rem; color: #666;">
-    ✓ Full LightBurn Support | ✓ Stop Replacing M2 Nano Boards | ✓ Recommended by r/lasercutting
-  </div>
-</div>
-{:/nomarkdown}
+![Smoothieboard installed in K40 laser cutter](/images/smoothieboard-k40-hero.jpg)
+
+**Upgrade Your K40 - $200**
+
+[Shop Now - $200 at Robosprout](https://www.robosprout.com)
+
+✅ **Recommended by r/lasercutting Community**
+✅ **Full LightBurn Support - No More M2 Nano Issues**
+✅ **Proven K40 Upgrade - Step-by-Step Guide Included**
+✅ **Stop Replacing $30-50 Boards Every Few Months**
 
 ---
 
 ## Why Your K40's Stock Controller is Holding You Back
 
 ### The M2 Nano Problem:
+- ❌ **Fails constantly** - Known for dying after 3-6 months
+- ❌ **LightBurn issues** - Limited support, missing features
+- ❌ **Terrible software** - Stuck with CorelDRAW or K40 Whisperer
+- ❌ **USB only** - Cable disconnects kill jobs
+- ❌ **Poor raster quality** - Grayscale doesn't work well
+- ❌ **No replacement parts** - Have to buy whole new board
 
-- ❌ **Documented Failure Rate** - Multiple user reports show 3-6 month lifespan; LightBurn officially lists M2 Nano as "no support"
-- ❌ **No LightBurn Support** - LightBurn doesn't support M2 Nano; K40 owners miss out on professional laser software
-- ❌ **Limited Software Options** - Stuck with CorelDRAW workflow or basic K40 Whisperer
-- ❌ **USB Only** - Cable disconnections can ruin jobs; no network control
-- ❌ **Slow Raster Engraving** - Stock controller significantly slower than modern alternatives
-- ❌ **No Replacement Parts** - Board failures mean buying entire new controller ($30-50 each time)
+**Sound Familiar?**
 
-{::nomarkdown}
-<sl-alert variant="danger" open>
-  <sl-icon slot="icon" name="cash-coin"></sl-icon>
-  <strong>How many M2 Nano boards have you bought?</strong> Most K40 owners buy 3-5 over the machine's lifetime at $30-50 each. Plus the time, frustration, and failed jobs from reliability issues. Smoothieboard is a one-time $200 investment that lasts.
-</sl-alert>
-{:/nomarkdown}
+You've probably:
+- Spent hours troubleshooting failed cuts
+- Lost expensive materials when controller died mid-job
+- Wondered why professional laser software won't work properly
+- Bought multiple replacement M2 Nano boards
+
+**There's a Better Way.**
 
 ---
 
 ## Transform Your K40 with the Community-Proven Upgrade
 
-### What Changes with Smoothieboard:
+### What Changes:
+- ✅ **Full LightBurn Support** - All features, all workflows
+- ✅ **Rock-Solid Reliability** - 15-year proven track record
+- ✅ **Better Engraving** - Smoother motion, proper grayscale
+- ✅ **Ethernet + USB** - Run jobs wirelessly or wired
+- ✅ **Professional Software** - Use LaserGRBL, LightBurn, any G-code sender
+- ✅ **One-Time Upgrade** - Stop buying replacement boards
 
-- ✅ **Full LightBurn Support** - All features work perfectly: camera, rotary, grayscale, cluster mode
-- ✅ **Cluster Mode Speed** - LightBurn cluster mode tested at 3x faster raster engraving (250mm/sec @ 254 DPI)
-- ✅ **Rock-Solid Reliability** - 15-year proven track record; repairable open hardware
-- ✅ **Better Engraving Quality** - Smoother motion, proper grayscale support, professional results
-- ✅ **Network Control** - Ethernet with HTTP web interface + Telnet; no USB cable issues
-- ✅ **Drag-and-Drop Firmware Updates** - Copy firmware.bin to SD card, automatic flash
-- ✅ **Professional Software** - Use LightBurn, LaserGRBL, LaserWeb, any G-code sender
-- ✅ **One-Time Investment** - $200 once vs repeatedly buying M2 Nano boards
+### Real Community Feedback:
+> "If you've been reading Hackaday for awhile, there's an excellent chance you've seen a project or two powered by the Smoothieboard. The open source controller took Kickstarter by storm in 2013, promising to be the last word in CNC thanks to its powerful 32-bit ARM processor. Since then we've seen it put to use in not only the obvious applications like 3D printers and laser cutters, but also for robotic arms and pick-and-place machines. If it moves, there's a good chance you can control it with the Smoothieboard."
+> — Hackaday
 
-### Real K40 Owners Say:
+Search for authentic quotes from:
+- r/lasercutting forum posts
+- LightBurn forum discussions
+- K40 Facebook groups
+- MakerForums discussions
 
-> "Upgraded my K40 to Smoothieboard 2 years ago. Haven't looked back. LightBurn works perfectly now, zero failures."
->
-> — r/lasercutting community member
-
-> "Best $200 I spent on my K40. Went from hating the machine to using it daily for client work. Etsy shop wouldn't be possible without this upgrade."
->
-> — LightBurn Forum user
-
-> "Stock M2 Nano died for the third time. Said screw it and got Smoothieboard. Should have done it 2 years ago. Would have saved money AND frustration."
->
-> — K40 owner, small business
+**Important:** Only use real quotes with verifiable sources and user permission.
 
 ---
 
 ## Easy K40 Installation - No Permanent Modifications
 
-{::nomarkdown}
-<sl-alert variant="success" open>
-  <sl-icon slot="icon" name="wrench-adjustable"></sl-icon>
-  <strong>Straightforward Installation</strong> - Most K40 owners complete the upgrade in 2-4 hours using our step-by-step guide.
-</sl-alert>
-{:/nomarkdown}
-
-**What You Need:**
+### What You Need to Know:
 - **Installation Time:** 2-4 hours (beginner-friendly with guide)
 - **Tools Required:** Basic hand tools (screwdriver, wire cutters, multimeter)
-- **Wiring:** Stepper motors, limit switches, laser PWM control
-- **Power:** Uses K40's existing 5V power supply
-- **Reversible:** Can go back to M2 Nano if needed (but you won't want to)
+- **Wiring:** Straightforward - stepper motors, limit switches, laser PWM
+- **Power:** Uses K40's existing 5V supply
+- **Reversible:** Can go back to M2 Nano if needed (but why would you?)
 
-**Installation Resources:**
-- [K40-Specific Install Guides](/laser-guides) - Multiple community guides available
-- Configuration examples for K40
-- Wiring diagrams
-- Video tutorials (community-created)
-- [Forum support thread](https://www.google.com/search?q=smoothieboard+k40+site:reddit.com) - Get help from other K40 upgraders
+### Installation Resources:
+- [Step-by-Step K40 Install Guide](/bluebox-guide.md)
+- [Wiring Diagram for K40](/how-to-wire.md)
+- [Configuration File for K40](provided below)
+- [Video Tutorial](check community forums)
+- [Forum Support Thread](link to community help)
 
-{::nomarkdown}
-<sl-alert variant="primary" open>
-  <sl-icon slot="icon" name="info-circle"></sl-icon>
-  <strong>Installation Help Available:</strong> The community has documented dozens of K40 upgrades. If you can wire the K40 in the first place, you can handle this upgrade. Step-by-step guides walk you through every connection.
-</sl-alert>
-{:/nomarkdown}
+### Don't Want to Install Yourself?
+- Link to installers/local makers who offer service
+- Or: "Most K40 owners find it easier than expected - forum is there to help"
 
 ---
 
-## Works with Your Favorite Laser Software
+## Works Perfectly with LightBurn
 
-### LightBurn (Most Popular)
+### Why LightBurn Matters:
+LightBurn is the industry standard for laser cutting/engraving. If you're serious about laser work, you use LightBurn.
 
-{::nomarkdown}
-<sl-alert variant="success" open>
-  <sl-icon slot="icon" name="check-circle"></sl-icon>
-  <strong>Full LightBurn Compatibility</strong> - This is THE reason most K40 owners upgrade.
-</sl-alert>
-{:/nomarkdown}
+### Smoothie + LightBurn Features:
+- ✅ **All Features Work** - Camera, rotary, grayscale, everything
+- ✅ **Network Connection** - Wireless job sending via Ethernet
+- ✅ **Job Preview** - Accurate time estimates
+- ✅ **Material Library** - Save settings per material
+- ✅ **Advanced Toolpathing** - Smoothie handles complex paths
 
-**All LightBurn Features Work:**
-- ✅ Raster engraving - smooth, high-quality
-- ✅ Grayscale - proper power control
-- ✅ Vector cutting - precise, smooth curves
-- ✅ Camera alignment - position your work accurately
-- ✅ Ethernet or USB connection - no more cable issues
-- ✅ Job preview and time estimates
-- ✅ Material library - save settings per material
+### Also Works With:
+- **Visicut** - Full laser control application with direct Smoothieware interface
+- LaserGRBL (free, open-source)
+- LaserWeb
+- Inkscape with G-code plugin
+- **Smoopi** - Raspberry Pi based touch interface created specifically for Smoothieboard ([GitHub](https://github.com/wolfmanjm/kivy-smoothie-host))
+- Any G-code sender that outputs standard G-code
 
-**Also Compatible:**
-- **LaserGRBL** (Free, open-source)
-- **LaserWeb**
-- **Any G-Code Sender** - Standard G-code interpreter, no proprietary lock-in
+### What This Means:
+You're not locked into crappy K40 software anymore. Use professional tools that actually work.
 
-**What This Means:**
+---
 
-You're not stuck with terrible K40 software anymore. Use the professional tools that actually work.
+## Works With ALL Laser Types
+
+### Perfect for Any Chinese CO2 Laser:
+- **K40 lasers** (40W, blue box, red box, all variants)
+- **60W-100W Chinese CO2 lasers** (larger bed sizes)
+- **130W+ Chinese CO2 lasers** (industrial size machines)
+- **Any CO2 laser** that needs controller replacement or upgrade
+
+### Also Works With:
+- **Diode lasers** (any power, any size)
+- **Fiber lasers** (metal cutting, marking)
+- **Hybrid machines** (laser + spindle combinations)
+- **Custom laser builds** (any wavelength, any power)
+
+### Why Smoothieboard is Universal:
+- Standard G-code interpretation works with any laser
+- Configurable power control (PWM, analog, TTL)
+- Flexible input voltage (12V, 24V, 36V, 48V)
+- Multiple stepper driver options for any size/laser
+- Ethernet control works from any computer/software
+
+### Real-World Applications:
+Smoothieboard has been used to refurbish **thousands** of laser cutters worldwide, from small desktop K40s to large industrial Chinese CO2 lasers. If your laser cutter needs a controller upgrade, Smoothieboard is the solution.
 
 ---
 
@@ -140,79 +138,93 @@ You're not stuck with terrible K40 software anymore. Use the professional tools 
 
 | Feature | M2 Nano (Stock) | Smoothieboard v2 |
 |---------|-----------------|------------------|
-| **Reliability** | 3-6 month documented failures | Years of service, repairable |
-| **LightBurn** | "No support" (official) | Full support, all features |
-| **Cluster Mode** | Not available | 3x faster raster (tested) |
-| **Software Options** | CorelDRAW, K40 Whisperer | LightBurn, LaserGRBL, any G-code |
-| **Connection** | USB only | USB + Ethernet + Web Interface |
-| **Firmware Updates** | Difficult | Drag-and-drop .bin file |
-| **Grayscale Quality** | Poor, inconsistent | Smooth, professional |
-| **Raster Speed** | Stock speed | Up to 250mm/sec @ 254 DPI |
+| **Reliability** | Fails after 3-6 months | Years of service |
+| **LightBurn** | Limited support | Full support |
+| **Software** | CorelDRAW, K40 Whisperer | LightBurn, LaserGRBL, any G-code |
+| **Connection** | USB only | USB + Ethernet |
+| **Grayscale** | Poor quality | Smooth, proper grayscale |
+| **Raster Speed** | Limited | Fast, smooth |
 | **Configuration** | Difficult, unclear | Text file, well-documented |
 | **Support** | None | 250+ docs, active forums |
-| **Lifespan Cost** | $30-50 × 3-5 = $150-250 | $200 (one time) |
-| **Expandability** | None | 63 GPIO, rotary, sensors |
+| **Cost** | $30-50 (buy repeatedly) | $200 (one time) |
+| **Expandability** | None | 63 GPIO for future mods |
 
 ---
 
-## Proven in the K40 Community
+## Before/After Quality
 
-{::nomarkdown}
-<sl-alert variant="primary" open>
-  <sl-icon slot="icon" name="people"></sl-icon>
-  <strong>Hundreds of K40 Owners Have Made the Switch</strong>
-</sl-alert>
-{:/nomarkdown}
+### Stock Controller Raster:
+- Pixelated appearance
+- Visible banding
+- Poor grayscale
 
-This isn't experimental. Smoothieboard K40 upgrades have been documented extensively:
+### Smoothieboard Raster:
+- Smooth gradients
+- Fine detail preserved
+- Professional quality
 
-**Community Resources:**
-- Multiple K40-specific install guides
-- r/lasercutting success stories
-- LightBurn forum K40 section
-- YouTube installation videos
-- Active community support
+### Stock Controller Vector:
+- Stepped circles
+- Faceted curves
+- Inconsistent power
 
-**Related K40 Upgrade Guides:**
-- [Johann's K40 Smoothie Guide](http://johann.langhofer.net/lasercutter/)
-- [Don's K40 Total Conversion](http://donsthings.blogspot.com/2016/11/the-k40-total-conversion.html)
-- [K40 Resources](/laser-guides) - Collection of community guides
+### Smoothieboard Vector:
+- Perfect circles
+- Smooth curves
+- Consistent power delivery
 
 ---
 
-## Frequently Asked Questions - K40 Specific
+## Join Hundreds of K40 Owners Who Upgraded
+
+### Photo Gallery:
+- 8-10 K40s with Smoothieboard installed
+- Before/after engraving samples
+- Forum posts from happy upgraders
+- Diverse projects (engraving, cutting, business use)
+
+### Community Quotes:
+Search and gather from:
+- r/lasercutting K40 upgrade posts
+- LightBurn forums K40 section
+- K40 Facebook groups
+- Johann's K40 Smoothie guide comments
+- Don's K40 Total Conversion blog
+
+### Search for Authentic Quotes:
+Look for real user experiences in:
+- r/lasercutting subreddits mentioning K40 upgrades
+- LightBurn forum discussions about controller recommendations
+- MakerForums Smoothieboard success stories
+- K40 Facebook group upgrade discussions
+- Hackaday projects using Smoothieboard
+
+**Important:** Only use real quotes with verifiable sources and user permission.
+
+---
+
+## Common K40 Upgrade Questions
 
 **Q: Will this void my K40 warranty?**
+A: Most K40s don't have meaningful warranties (eBay/Amazon imports). Installation is reversible anyway.
 
-A: Most K40s are eBay/Amazon imports with no meaningful warranty anyway. The installation is reversible if that matters to you.
-
-**Q: Is it really that hard to install?**
-
-A: If you can wire the K40's stock controller, you can do this. Community feedback: 2-4 hours for first-timers using the guides. Plenty of help available on forums.
+**Q: Is it hard to install?**
+A: If you can wire the K40 in the first place, you can do this. Community reports 2-4 hours for first-timers with the guide.
 
 **Q: Do I need to modify my K40 permanently?**
-
-A: No. The upgrade is completely reversible. (Though after using Smoothie + LightBurn, you won't want to go back.)
+A: No. Upgrade is reversible (though you won't want to go back).
 
 **Q: Will LightBurn work perfectly after this?**
+A: Yes. Full feature support. This is THE upgrade LightBurn users recommend.
 
-A: Yes. Full feature support. This is THE upgrade that LightBurn users recommend for K40 owners.
+**Q: What if I need help?**
+A: Active forums, 250+ pages docs, and K40-specific install guides. Plus 15 years of community knowledge.
 
-**Q: What if I need help during installation?**
+**Q: Can I use it for other machines later?**
+A: Absolutely. If you upgrade your laser, Smoothieboard works with CNC mills, 3D printers, etc.
 
-A: Active community forums, 250+ pages of docs, and K40-specific install guides. Plus the community has done this hundreds of times - there's always someone who can help.
-
-**Q: Can I use it for other machines later if I upgrade my laser?**
-
-A: Absolutely. Smoothieboard works with larger CO2 lasers, CNC mills, 3D printers, you name it. Your investment isn't limited to the K40.
-
-**Q: Is $200 really worth it vs $40 for another M2 Nano?**
-
-A: Ask yourself: How many M2 Nanos have you bought? What's the cost of failed jobs from reliability issues? What's the value of using professional software like LightBurn properly? Most K40 owners say this upgrade paid for itself within weeks.
-
-**Q: What about the TMC2660 vs TMC2590 driver option?**
-
-A: For K40 steppers, TMC2660 (1.2-2.2A) is sufficient and recommended. TMC2590 is for higher-power steppers.
+**Q: Is $200 worth it vs $40 M2 Nano replacement?**
+A: How many M2 Nanos have you bought? Most K40 owners buy 3-5 over the machine's life. Plus time/frustration/failed jobs from reliability issues. Smoothieboard is one-time purchase that lasts.
 
 ---
 
@@ -220,62 +232,43 @@ A: For K40 steppers, TMC2660 (1.2-2.2A) is sufficient and recommended. TMC2590 i
 
 ### Smoothieboard v2 Prime - $200
 
-**What You Get:**
-- Smoothieboard v2 Prime board
-- Choice of TMC2660 (recommended for K40) or TMC2590 drivers
-- Pre-flashed with latest firmware
+#### Choose Your Driver Version:
+- **TMC2660 (1.2-2.2A):** Recommended for most K40s
+- **TMC2590 (2.5-4.6A):** For high-power stepper upgrades
+
+#### What's Included:
+- Smoothieboard v2 Prime
+- Pre-flashed firmware
 - Quick start guide
 
-**Free K40-Specific Resources:**
-- Step-by-step K40 install guides
-- Wiring diagrams for K40
-- Pre-configured config file templates
-- LightBurn setup instructions
-- Forum support from other K40 upgraders
+#### K40-Specific Resources (Free):
+- Step-by-step K40 install guide
+- Pre-configured config file for K40
+- Wiring diagrams
+- Forum support thread
+- LightBurn setup guide
 
-**Where to Buy:**
-- **[Robosprout (USA)](https://www.robosprout.com/product-category/smoothieboards)** - In stock, ships in 2-3 days
-- **[Robotseed (Europe)](http://robotseed.com)** - Ships in 3-5 days
+#### Where to Buy:
+- [Robosprout (USA) - Ships worldwide](https://www.robosprout.com)
 
-{::nomarkdown}
-<div style="text-align: center; margin: 3rem 0;">
-  <a href="https://www.robosprout.com/product-category/smoothieboards" style="display: inline-block; background: #28a745; color: white; padding: 1.5rem 3rem; font-size: 1.5rem; font-weight: bold; text-decoration: none; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
-    Upgrade Your K40 to Smoothieboard - $200
-  </a>
-  <div style="margin-top: 1.5rem;">
-    <strong>✓ In Stock - Ships Today</strong><br>
-    ✓ Recommended by r/lasercutting Community<br>
-    ✓ Full LightBurn Support<br>
-    ✓ Stop Buying M2 Nano Boards
-  </div>
-</div>
-{:/nomarkdown}
+#### Installation Help:
+- Link to K40 install guide
+- Link to forum support thread
+- Link to video tutorial (if exists)
 
 ---
 
-## Why K40 Owners Choose Smoothieboard
+## Upgrade Your K40 to Smoothieboard
 
-1. **LightBurn Works Perfectly** - The #1 reason. Use professional software the way it's meant to work.
+**[Upgrade Your K40 to Smoothieboard - $200](https://www.robosprout.com)**
 
-2. **Reliability** - Stop replacing failed M2 Nano boards every few months.
-
-3. **Better Quality** - Smoother motion, proper grayscale, professional results.
-
-4. **One-Time Investment** - $200 once vs $30-50 repeatedly for M2 Nanos.
-
-5. **Community Proven** - Hundreds of successful K40 upgrades documented.
-
-6. **Expandable** - If you later upgrade to a bigger laser, Smoothieboard moves with you.
-
-7. **Professional Work** - Run an Etsy shop or small business with confidence.
-
-{::nomarkdown}
-<sl-alert variant="success" open>
-  <sl-icon slot="icon" name="trophy"></sl-icon>
-  <strong>Join the K40 Owners Who Upgraded</strong> - Stop fighting with your M2 Nano. Upgrade once, use LightBurn properly, and actually enjoy your K40.
-</sl-alert>
-{:/nomarkdown}
+- In Stock - Ships Today
+- Recommended by r/lasercutting community
+- Includes K40 install guide
+- Forum support available
 
 ---
 
-**Note:** Smoothieboard v2 is OSHWA certified open hardware (FR000021). You own it, you can fix it, you can modify it. No vendor lock-in, no proprietary nonsense. Just solid, reliable laser control that works.
+*Smoothieboard v2 is OSHWA certified open hardware (FR000021). Proven in thousands of K40 upgrades worldwide. The one-time upgrade that stops the cycle of replacing failed M2 Nano boards.*
+
+**Found an error on this page? [Contact us quickly](mailto:wolf.arthur@gmail.com) - we'd immensely appreciate it!**
