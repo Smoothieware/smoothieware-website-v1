@@ -22,3 +22,8 @@ tasks/
 data/
 import/
 src/
+
+# random
+AGENTS.md
+venv
+tmp

@@ -131,6 +131,16 @@ We welcome contributions:
 
 The Smoothie firmware is free, open-source software developed by volunteers. If you find this software useful, want to say thanks and encourage development, please consider a [Donation](https://paypal.me/smoothieware).
 
+## Smoothieboard V2 SVG Palette (Work in Progress)
+
+Tooling for the layered SVG pipeline (see `tasks/01-create-v2-board-svg.md`) samples colours directly from the V2 reference renders. Initial measurements gathered with a small PIL helper script:
+
+- Background: `#CACAE4` (pixel sample at 20,20)
+- Provisional substrate: `#555150` (sample at 900,600 — subject to confirmation once mask separation tooling is in place)
+- Silkscreen highlight: `#F5F3EB` (sample at 1110,160)
+
+The extraction scripts will refresh these values automatically as the SVG pipeline matures; see `data/board-design-research/top/metadata/notes.md` for details.
+
 ## License
 
 Smoothieware is released under the [GNU GPL v3](http://www.gnu.org/licenses/gpl-3.0.en.html).
