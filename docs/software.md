@@ -61,6 +61,14 @@
     color: var(--sl-color-primary-700);
     border-radius: var(--sl-border-radius-pill);
     font-weight: 500;
+    white-space: nowrap;
+  }
+
+  .card-badges {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    flex-wrap: nowrap;
   }
 
   .links-section {
@@ -77,12 +85,6 @@
 
   .compatibility-details {
     margin: 1rem 0;
-  }
-
-  .source-tag {
-    font-size: 0.75rem;
-    color: var(--sl-color-neutral-500);
-    font-style: italic;
   }
 
   /* Card image styling */
@@ -119,6 +121,19 @@
     background: var(--sl-color-primary-600);
   }
 
+  .recommended-badge {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.25rem 0.6rem;
+    background: #dc3545;
+    color: white;
+    border-radius: var(--sl-border-radius-pill);
+    margin-left: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
   @media (max-width: 768px) {
     .software-grid {
       grid-template-columns: 1fr;
@@ -129,6 +144,68 @@
 <div class="category-section">
   <h2 id="3d-printing-software" class="category-header">3D Printing Software</h2>
   <div class="software-grid">
+    <sl-card class="software-card">
+      <sl-carousel slot="image" autoplay autoplay-interval="10000" loop pagination mouse-dragging style="--aspect-ratio: 16/9;">
+        <sl-carousel-item>
+          <img src="/images/software-screenshots/smoopi-8-of-8.png" alt="Smoopi Screenshot 8" style="width: 100%; height: 100%; object-fit: contain;">
+        </sl-carousel-item>
+        <sl-carousel-item>
+          <img src="/images/software-screenshots/smoopi-1-of-8.png" alt="Smoopi Screenshot 1" style="width: 100%; height: 100%; object-fit: contain;">
+        </sl-carousel-item>
+        <sl-carousel-item>
+          <img src="/images/software-screenshots/smoopi-2-of-8.png" alt="Smoopi Screenshot 2" style="width: 100%; height: 100%; object-fit: contain;">
+        </sl-carousel-item>
+        <sl-carousel-item>
+          <img src="/images/software-screenshots/smoopi-3-of-8.png" alt="Smoopi Screenshot 3" style="width: 100%; height: 100%; object-fit: contain;">
+        </sl-carousel-item>
+        <sl-carousel-item>
+          <img src="/images/software-screenshots/smoopi-4-of-8.png" alt="Smoopi Screenshot 4" style="width: 100%; height: 100%; object-fit: contain;">
+        </sl-carousel-item>
+        <sl-carousel-item>
+          <img src="/images/software-screenshots/smoopi-5-of-8.png" alt="Smoopi Screenshot 5" style="width: 100%; height: 100%; object-fit: contain;">
+        </sl-carousel-item>
+        <sl-carousel-item>
+          <img src="/images/software-screenshots/smoopi-6-of-8.png" alt="Smoopi Screenshot 6" style="width: 100%; height: 100%; object-fit: contain;">
+        </sl-carousel-item>
+        <sl-carousel-item>
+          <img src="/images/software-screenshots/smoopi-7-of-8.png" alt="Smoopi Screenshot 7" style="width: 100%; height: 100%; object-fit: contain;">
+        </sl-carousel-item>
+      </sl-carousel>
+
+      <div class="card-header">
+        <h3 class="software-title">Smoopi</h3>
+        <div class="card-badges">
+          <span class="recommended-badge">Recommended</span>
+          <span class="software-type">Host Software</span>
+        </div>
+      </div>
+
+      <div class="links-section">
+        <sl-button href="https://github.com/wolfmanjm/kivy-smoothie-host" target="_blank" class="link-button" variant="primary" size="small">
+          <sl-icon name="globe" slot="prefix"></sl-icon>
+          Official Site
+        </sl-button>
+        <sl-button href="https://github.com/wolfmanjm/kivy-smoothie-host/releases" target="_blank" class="link-button" variant="default" size="small">
+          <sl-icon name="download" slot="prefix"></sl-icon>
+          Download
+        </sl-button>
+      </div>      <p>Host specifically written for Smoothieware, runs on rpi with touch screen or a desktop.</p>
+
+      <sl-details summary="Smoothieboard Compatibility">
+        <div class="compatibility-details">
+          <p><strong>Designed specifically for Smoothieboard</strong> with native integration. Works on Raspberry Pi with touch screen or desktop</p>
+        </div>
+      </sl-details>
+
+      <div class="links-section">
+        <sl-button href="https://github.com/wolfmanjm/kivy-smoothie-host/wiki" target="_blank" class="link-button" variant="default" size="small">
+          <sl-icon name="book" slot="prefix"></sl-icon>
+          Documentation
+        </sl-button>
+      </div>
+
+    </sl-card>
+
 
     <sl-card class="software-card">
       <img slot="image" src="/images/software-screenshots/cura-3-of-3.png" alt="Cura Screenshot" style="width: 100%; height: auto; object-fit: cover;">
@@ -168,7 +245,6 @@
         </sl-button>
       </div>
 
-      <p class="source-tag">Source: Smoothieware Cura Configuration + Internet Research</p>
     </sl-card>
 
     <sl-card class="software-card">
@@ -205,7 +281,6 @@
         </sl-button>
       </div>
 
-      <p class="source-tag">Source: Project Documentation + Internet Research</p>
     </sl-card>
 
     <sl-card class="software-card">
@@ -256,7 +331,7 @@
           <sl-icon name="download" slot="prefix"></sl-icon>
           Download
         </sl-button>
-      </div>      <p>Awesome web interface (Host) for 3D printer control. On the wiki: [Octoprint](octoprint)</p>
+      </div>      <p>Awesome web interface (Host) for 3D printer control. On the wiki: <a href="octoprint">Octoprint</a></p>
 
       <sl-details summary="Smoothieboard Compatibility">
         <div class="compatibility-details">
@@ -271,7 +346,6 @@
         </sl-button>
       </div>
 
-      <p class="source-tag">Source: Project Documentation + Internet Research</p>
     </sl-card>
 
     <sl-card class="software-card">
@@ -291,7 +365,7 @@
           <sl-icon name="download" slot="prefix"></sl-icon>
           Download
         </sl-button>
-      </div>      <p>3D printing host. See the guide on the Wiki: [Pronterface](pronterface)</p>
+      </div>      <p>3D printing host. See the guide on the Wiki: <a href="pronterface">Pronterface</a></p>
 
       <sl-details summary="Smoothieboard Compatibility">
         <div class="compatibility-details">
@@ -306,7 +380,6 @@
         </sl-button>
       </div>
 
-      <p class="source-tag">Source: Project Documentation + Internet Research</p>
     </sl-card>
 
     <sl-card class="software-card">
@@ -343,67 +416,6 @@
         </sl-button>
       </div>
 
-      <p class="source-tag">Source: Project Documentation + Internet Research</p>
-    </sl-card>
-
-    <sl-card class="software-card">
-      <sl-carousel slot="image" autoplay autoplay-interval="10000" loop pagination mouse-dragging style="--aspect-ratio: 16/9;">
-        <sl-carousel-item>
-          <img src="/images/software-screenshots/smoopi-8-of-8.png" alt="Smoopi Screenshot 8" style="width: 100%; height: 100%; object-fit: contain;">
-        </sl-carousel-item>
-        <sl-carousel-item>
-          <img src="/images/software-screenshots/smoopi-1-of-8.png" alt="Smoopi Screenshot 1" style="width: 100%; height: 100%; object-fit: contain;">
-        </sl-carousel-item>
-        <sl-carousel-item>
-          <img src="/images/software-screenshots/smoopi-2-of-8.png" alt="Smoopi Screenshot 2" style="width: 100%; height: 100%; object-fit: contain;">
-        </sl-carousel-item>
-        <sl-carousel-item>
-          <img src="/images/software-screenshots/smoopi-3-of-8.png" alt="Smoopi Screenshot 3" style="width: 100%; height: 100%; object-fit: contain;">
-        </sl-carousel-item>
-        <sl-carousel-item>
-          <img src="/images/software-screenshots/smoopi-4-of-8.png" alt="Smoopi Screenshot 4" style="width: 100%; height: 100%; object-fit: contain;">
-        </sl-carousel-item>
-        <sl-carousel-item>
-          <img src="/images/software-screenshots/smoopi-5-of-8.png" alt="Smoopi Screenshot 5" style="width: 100%; height: 100%; object-fit: contain;">
-        </sl-carousel-item>
-        <sl-carousel-item>
-          <img src="/images/software-screenshots/smoopi-6-of-8.png" alt="Smoopi Screenshot 6" style="width: 100%; height: 100%; object-fit: contain;">
-        </sl-carousel-item>
-        <sl-carousel-item>
-          <img src="/images/software-screenshots/smoopi-7-of-8.png" alt="Smoopi Screenshot 7" style="width: 100%; height: 100%; object-fit: contain;">
-        </sl-carousel-item>
-      </sl-carousel>
-
-      <div class="card-header">
-        <h3 class="software-title">Smoopi</h3>
-        <span class="software-type">Host Software</span>
-      </div>
-
-      <div class="links-section">
-        <sl-button href="https://github.com/wolfmanjm/kivy-smoothie-host" target="_blank" class="link-button" variant="primary" size="small">
-          <sl-icon name="globe" slot="prefix"></sl-icon>
-          Official Site
-        </sl-button>
-        <sl-button href="https://github.com/wolfmanjm/kivy-smoothie-host/releases" target="_blank" class="link-button" variant="default" size="small">
-          <sl-icon name="download" slot="prefix"></sl-icon>
-          Download
-        </sl-button>
-      </div>      <p>Host specifically written for Smoothieware, runs on rpi with touch screen or a desktop.</p>
-
-      <sl-details summary="Smoothieboard Compatibility">
-        <div class="compatibility-details">
-          <p><strong>Designed specifically for Smoothieboard</strong> with native integration. Works on Raspberry Pi with touch screen or desktop</p>
-        </div>
-      </sl-details>
-
-      <div class="links-section">
-        <sl-button href="https://github.com/wolfmanjm/kivy-smoothie-host/wiki" target="_blank" class="link-button" variant="default" size="small">
-          <sl-icon name="book" slot="prefix"></sl-icon>
-          Documentation
-        </sl-button>
-      </div>
-
-      <p class="source-tag">Source: Project Documentation + Internet Research</p>
     </sl-card>
 
     <sl-card class="software-card">
@@ -440,7 +452,6 @@
         </sl-button>
       </div>
 
-      <p class="source-tag">Source: Project Documentation + Internet Research</p>
     </sl-card>
 
     <sl-card class="software-card">
@@ -477,7 +488,6 @@
         </sl-button>
       </div>
 
-      <p class="source-tag">Source: Internet Research</p>
     </sl-card>
 
     <sl-card class="software-card">
@@ -514,7 +524,6 @@
         </sl-button>
       </div>
 
-      <p class="source-tag">Source: Internet Research</p>
     </sl-card>
 
     <sl-card class="software-card">
@@ -549,7 +558,6 @@
         </sl-button>
       </div>
 
-      <p class="source-tag">Source: Project Documentation</p>
     </sl-card>
 
     <sl-card class="software-card">
@@ -569,7 +577,7 @@
           <sl-icon name="download" slot="prefix"></sl-icon>
           Download
         </sl-button>
-      </div>      <p>Closed source 3D printing slicer and host. On the wiki: [Simplify3D](simplify3d)</p>
+      </div>      <p>Closed source 3D printing slicer and host. On the wiki: <a href="simplify3d">Simplify3D</a></p>
 
       <sl-details summary="Smoothieboard Compatibility">
         <div class="compatibility-details">
@@ -584,7 +592,6 @@
         </sl-button>
       </div>
 
-      <p class="source-tag">Source: Project Documentation + Internet Research</p>
     </sl-card>
 
     <sl-card class="software-card">
@@ -621,7 +628,6 @@
         </sl-button>
       </div>
 
-      <p class="source-tag">Source: Project Documentation</p>
     </sl-card>
 
     <sl-card class="software-card">
@@ -658,7 +664,6 @@
         </sl-button>
       </div>
 
-      <p class="source-tag">Source: Project Documentation</p>
     </sl-card>
 
     <sl-card class="software-card">
@@ -695,7 +700,6 @@
         </sl-button>
       </div>
 
-      <p class="source-tag">Source: Project Documentation</p>
     </sl-card>
 
   </div>
@@ -746,7 +750,6 @@
         </sl-button>
       </div>
 
-      <p class="source-tag">Source: Internet Research</p>
     </sl-card>
 
     <sl-card class="software-card">
@@ -783,7 +786,6 @@
         </sl-button>
       </div>
 
-      <p class="source-tag">Source: Internet Research</p>
     </sl-card>
 
     <sl-card class="software-card">
@@ -820,7 +822,6 @@
         </sl-button>
       </div>
 
-      <p class="source-tag">Source: Internet Research</p>
     </sl-card>
 
     <sl-card class="software-card">
@@ -857,7 +858,6 @@
         </sl-button>
       </div>
 
-      <p class="source-tag">Source: Internet Research</p>
     </sl-card>
 
     <sl-card class="software-card">
@@ -910,7 +910,6 @@
         </sl-button>
       </div>
 
-      <p class="source-tag">Source: Project Documentation + Internet Research</p>
     </sl-card>
 
     <sl-card class="software-card">
@@ -969,7 +968,6 @@
         </sl-button>
       </div>
 
-      <p class="source-tag">Source: Project Documentation + Internet Research</p>
     </sl-card>
 
   </div>
@@ -996,7 +994,7 @@
           <sl-icon name="download" slot="prefix"></sl-icon>
           Download
         </sl-button>
-      </div>      <p>On the wiki: [bCNC](bcnc) Open-Source CNC host with great preview and other operations. Set machine type to smoothie, and add `grbl_mode true` to your smoothie config or even better use the firmware-cnc.bin build of smoothieware (**Note**: You must update to the latest version of Smoothieware to ensure compatibility with bCNC).</p>
+      </div>      <p>On the wiki: <a href="bcnc">bCNC</a> Open-Source CNC host with great preview and other operations. Set machine type to smoothie, and add <code>grbl_mode true</code> to your smoothie config or even better use the firmware-cnc.bin build of smoothieware (<strong>Note</strong>: You must update to the latest version of Smoothieware to ensure compatibility with bCNC).</p>
 
       <sl-details summary="Smoothieboard Compatibility">
         <div class="compatibility-details">
@@ -1011,7 +1009,6 @@
         </sl-button>
       </div>
 
-      <p class="source-tag">Source: Project Documentation + Internet Research</p>
     </sl-card>
 
     <sl-card class="software-card">
@@ -1053,7 +1050,6 @@
         </sl-button>
       </div>
 
-      <p class="source-tag">Source: Project Documentation</p>
     </sl-card>
 
     <sl-card class="software-card">
@@ -1088,7 +1084,6 @@
         </sl-button>
       </div>
 
-      <p class="source-tag">Source: Project Documentation</p>
     </sl-card>
 
     <sl-card class="software-card">
@@ -1125,7 +1120,6 @@
         </sl-button>
       </div>
 
-      <p class="source-tag">Source: Project Documentation</p>
     </sl-card>
 
     <sl-card class="software-card">
@@ -1145,7 +1139,7 @@
           <sl-icon name="download" slot="prefix"></sl-icon>
           Download
         </sl-button>
-      </div>      <p>Closed-Source, but cheap and feature-full CAM software. Widely used by hobbyists. [Video Tutorial](https://youtu.be/rV8zeE9s7xs)</p>
+      </div>      <p>Closed-Source, but cheap and feature-full CAM software. Widely used by hobbyists. <a href="https://youtu.be/rV8zeE9s7xs">Video Tutorial</a></p>
 
       <sl-details summary="Smoothieboard Compatibility">
         <div class="compatibility-details">
@@ -1160,7 +1154,6 @@
         </sl-button>
       </div>
 
-      <p class="source-tag">Source: Project Documentation + Internet Research</p>
     </sl-card>
 
     <sl-card class="software-card">
@@ -1197,7 +1190,6 @@
         </sl-button>
       </div>
 
-      <p class="source-tag">Source: Project Documentation + Internet Research</p>
     </sl-card>
 
     <sl-card class="software-card">
@@ -1234,7 +1226,6 @@
         </sl-button>
       </div>
 
-      <p class="source-tag">Source: Project Documentation</p>
     </sl-card>
 
     <sl-card class="software-card">
@@ -1271,7 +1262,6 @@
         </sl-button>
       </div>
 
-      <p class="source-tag">Source: Internet Research</p>
     </sl-card>
 
     <sl-card class="software-card">
@@ -1304,7 +1294,6 @@
         </sl-button>
       </div>
 
-      <p class="source-tag">Source: Project Documentation</p>
     </sl-card>
 
   </div>
@@ -1348,7 +1337,6 @@
         </sl-button>
       </div>
 
-      <p class="source-tag">Source: Project Documentation + Internet Research</p>
     </sl-card>
 
     <sl-card class="software-card">
@@ -1401,7 +1389,6 @@
         </sl-button>
       </div>
 
-      <p class="source-tag">Source: Project Documentation + Internet Research</p>
     </sl-card>
 
     <sl-card class="software-card">
@@ -1436,7 +1423,6 @@
         </sl-button>
       </div>
 
-      <p class="source-tag">Source: Project Documentation + Internet Research</p>
     </sl-card>
 
     <sl-card class="software-card">
@@ -1456,7 +1442,7 @@
           <sl-icon name="download" slot="prefix"></sl-icon>
           Download
         </sl-button>
-      </div>      <p>Full laser control application (Host and CAM), has Smoothieware interface. [Video tutorial](https://www.youtube.com/watch?v=lbTTPkDEhOg&amp;feature=autoshare).</p>
+      </div>      <p>Full laser control application (Host and CAM), has Smoothieware interface. <a href="https://www.youtube.com/watch?v=lbTTPkDEhOg&amp;feature=autoshare">Video tutorial</a>.</p>
 
       <sl-details summary="Smoothieboard Compatibility">
         <div class="compatibility-details">
@@ -1471,7 +1457,6 @@
         </sl-button>
       </div>
 
-      <p class="source-tag">Source: Project Documentation + Internet Research</p>
     </sl-card>
 
     <sl-card class="software-card">
@@ -1508,7 +1493,6 @@
         </sl-button>
       </div>
 
-      <p class="source-tag">Source: Project Documentation + Internet Research</p>
     </sl-card>
 
     <sl-card class="software-card">
@@ -1528,7 +1512,7 @@
           <sl-icon name="download" slot="prefix"></sl-icon>
           Download
         </sl-button>
-      </div>      <p>A tool to easily create repeating patterns for laser cutting: [Online tool](https://polygonia.design/)</p>
+      </div>      <p>A tool to easily create repeating patterns for laser cutting: <a href="https://polygonia.design/">Online tool</a></p>
 
       <sl-details summary="Smoothieboard Compatibility">
         <div class="compatibility-details">
@@ -1543,7 +1527,6 @@
         </sl-button>
       </div>
 
-      <p class="source-tag">Source: Project Documentation</p>
     </sl-card>
 
   </div>
@@ -1606,7 +1589,6 @@
         </sl-button>
       </div>
 
-      <p class="source-tag">Source: Project Documentation + Internet Research</p>
     </sl-card>
 
     <sl-card class="software-card">
@@ -1650,7 +1632,6 @@
         </sl-button>
       </div>
 
-      <p class="source-tag">Source: Internet Research</p>
     </sl-card>
 
     <sl-card class="software-card">
@@ -1683,7 +1664,6 @@
         </sl-button>
       </div>
 
-      <p class="source-tag">Source: Project Documentation</p>
     </sl-card>
 
     <sl-card class="software-card">
@@ -1716,7 +1696,6 @@
         </sl-button>
       </div>
 
-      <p class="source-tag">Source: Project Documentation</p>
     </sl-card>
 
     <sl-card class="software-card">
@@ -1753,7 +1732,6 @@
         </sl-button>
       </div>
 
-      <p class="source-tag">Source: Internet Research</p>
     </sl-card>
 
     <sl-card class="software-card">
@@ -1790,7 +1768,6 @@
         </sl-button>
       </div>
 
-      <p class="source-tag">Source: Internet Research</p>
     </sl-card>
 
     <sl-card class="software-card">
@@ -1827,7 +1804,6 @@
         </sl-button>
       </div>
 
-      <p class="source-tag">Source: Internet Research</p>
     </sl-card>
 
     <sl-card class="software-card">
@@ -1864,7 +1840,6 @@
         </sl-button>
       </div>
 
-      <p class="source-tag">Source: Internet Research</p>
     </sl-card>
 
     <sl-card class="software-card">
@@ -1901,7 +1876,6 @@
         </sl-button>
       </div>
 
-      <p class="source-tag">Source: Internet Research</p>
     </sl-card>
 
     <sl-card class="software-card">
@@ -1934,7 +1908,6 @@
         </sl-button>
       </div>
 
-      <p class="source-tag">Source: Internet Research</p>
     </sl-card>
 
   </div>
@@ -1978,7 +1951,6 @@
         </sl-button>
       </div>
 
-      <p class="source-tag">Source: Project Documentation</p>
     </sl-card>
 
     <sl-card class="software-card">
@@ -2015,7 +1987,6 @@
         </sl-button>
       </div>
 
-      <p class="source-tag">Source: Project Documentation + Internet Research</p>
     </sl-card>
 
     <sl-card class="software-card">
@@ -2035,7 +2006,7 @@
           <sl-icon name="download" slot="prefix"></sl-icon>
           Download
         </sl-button>
-      </div>      <p>Laser/CNC CAM: Output GCode from SVG files in [Inkscape](http://inkscape.org/). [Video tutorial](https://www.youtube.com/watch?v=xw8h0c5Vdw8).</p>
+      </div>      <p>Laser/CNC CAM: Output GCode from SVG files in <a href="http://inkscape.org/">Inkscape</a>. <a href="https://www.youtube.com/watch?v=xw8h0c5Vdw8">Video tutorial</a>.</p>
 
       <sl-details summary="Smoothieboard Compatibility">
         <div class="compatibility-details">
@@ -2050,7 +2021,6 @@
         </sl-button>
       </div>
 
-      <p class="source-tag">Source: Project Documentation</p>
     </sl-card>
 
   </div>
@@ -2094,7 +2064,6 @@
         </sl-button>
       </div>
 
-      <p class="source-tag">Source: Internet Research</p>
     </sl-card>
 
     <sl-card class="software-card">
@@ -2131,7 +2100,6 @@
         </sl-button>
       </div>
 
-      <p class="source-tag">Source: Internet Research</p>
     </sl-card>
 
   </div>
@@ -2175,7 +2143,6 @@
         </sl-button>
       </div>
 
-      <p class="source-tag">Source: Internet Research</p>
     </sl-card>
 
     <sl-card class="software-card">
@@ -2212,7 +2179,6 @@
         </sl-button>
       </div>
 
-      <p class="source-tag">Source: Internet Research</p>
     </sl-card>
 
     <sl-card class="software-card">
@@ -2242,7 +2208,6 @@
         </div>
       </sl-details>
 
-      <p class="source-tag">Source: Internet Research</p>
     </sl-card>
 
   </div>
@@ -2286,7 +2251,6 @@
         </sl-button>
       </div>
 
-      <p class="source-tag">Source: Internet Research</p>
     </sl-card>
 
     <sl-card class="software-card">
@@ -2323,7 +2287,6 @@
         </sl-button>
       </div>
 
-      <p class="source-tag">Source: Project Documentation</p>
     </sl-card>
 
     <sl-card class="software-card">
@@ -2360,7 +2323,6 @@
         </sl-button>
       </div>
 
-      <p class="source-tag">Source: Project Documentation</p>
     </sl-card>
 
     <sl-card class="software-card">
@@ -2393,7 +2355,6 @@
         </sl-button>
       </div>
 
-      <p class="source-tag">Source: Project Documentation</p>
     </sl-card>
 
     <sl-card class="software-card">
@@ -2426,7 +2387,6 @@
         </sl-button>
       </div>
 
-      <p class="source-tag">Source: Project Documentation</p>
     </sl-card>
 
   </div>
@@ -2470,7 +2430,6 @@
         </sl-button>
       </div>
 
-      <p class="source-tag">Source: Project Documentation</p>
     </sl-card>
 
     <sl-card class="software-card">
@@ -2505,7 +2464,6 @@
         </sl-button>
       </div>
 
-      <p class="source-tag">Source: Project Documentation</p>
     </sl-card>
 
     <sl-card class="software-card">
@@ -2542,7 +2500,6 @@
         </sl-button>
       </div>
 
-      <p class="source-tag">Source: Project Documentation</p>
     </sl-card>
 
     <sl-card class="software-card">
@@ -2579,7 +2536,6 @@
         </sl-button>
       </div>
 
-      <p class="source-tag">Source: Project Documentation</p>
     </sl-card>
 
   </div>
@@ -2621,7 +2577,6 @@
         </sl-button>
       </div>
 
-      <p class="source-tag">Source: Project Documentation</p>
     </sl-card>
 
     <sl-card class="software-card">
@@ -2647,7 +2602,6 @@
         </div>
       </sl-details>
 
-      <p class="source-tag">Source: Project Documentation</p>
     </sl-card>
 
     <sl-card class="software-card">
@@ -2703,7 +2657,6 @@
         </sl-button>
       </div>
 
-      <p class="source-tag">Source: Project Documentation</p>
     </sl-card>
 
     <sl-card class="software-card">
@@ -2753,7 +2706,6 @@
         </sl-button>
       </div>
 
-      <p class="source-tag">Source: Project Documentation</p>
     </sl-card>
 
   </div>

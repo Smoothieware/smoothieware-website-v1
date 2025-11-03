@@ -239,4 +239,4 @@ You can also contact the [Community](http://smoothieware.org/irc) for help if yo
 
 # Software
 
-{% include_relative software.md %}
+See the comprehensive [Software Compatibility List](software.md) for all software that works with Smoothieware.

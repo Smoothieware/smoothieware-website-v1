@@ -132,4 +132,4 @@ You can also contact the [Community](irc) for help if you can't find an answer i
 
 # Software
 
-{% include_relative software.md %}
+See the comprehensive [Software Compatibility List](software.md) for all software that works with Smoothieware.
