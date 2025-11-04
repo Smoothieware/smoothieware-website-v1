@@ -5,14 +5,16 @@
 **Generated:** 2025-11-04
 **Last Verified:** 2025-11-04 (Complete source code analysis)
 
-**Total Settings:** ~350 verified configuration keys
-- Robot & Motion: 110+ settings (40 global, 42 motor-specific, 28 arm-solution-specific)
+**Total Settings:** ~280-290 verified configuration keys
+- Robot & Motion: 75-81 settings (45 global, 30-36 motor-specific for 5-6 axes)
 - Endstops: 50+ settings (30 root-level + 10 module-based + 10 global)
-- Temperature Control: 40 settings (24 general + sensor-specific)
-- ZProbe & Leveling: 47 settings (11 base + 36 strategy-specific)
+- Temperature Control: 42 settings (24 core + 18 sensor-specific)
+- ZProbe & Leveling: 49 settings (13 base + 36 strategy-specific)
 - Extruder: 17 settings
-- Switch: 18 settings
-- Other Modules: 45+ settings (Laser, Filament Detector, Spindle, etc.)
+- Switch: 17 settings
+- Other Modules: 40+ settings (Laser, Filament Detector, Spindle, etc.)
+
+**Note:** v1 supports maximum 6 axes (alpha, beta, gamma, delta, epsilon, zeta). References to "eta" and "theta" axes in older documentation are incorrect.
 
 ---
 
@@ -22,9 +24,9 @@ This configuration reference documents Smoothieware v1 configuration settings **
 
 ### Documentation Coverage
 
-- **Source Code Verified Settings:** ~350 total configuration keys
+- **Source Code Verified Settings:** ~280-290 total configuration keys
 - **Documented in This File:** Subset of most commonly used settings
-- **Complete Documentation:** Available in `docs/` directory (242 settings fully documented)
+- **Complete Documentation:** Available in `docs/` directory (242 settings fully documented, 85% coverage)
   - See `docs/configuration-options.md` for complete reference table
   - Individual module documentation in `docs/*-options.md` files
 

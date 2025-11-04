@@ -949,6 +949,7 @@ See the [configuration documentation](configuring-smoothie.md) for complete deta
 3. Check enable pin state (some configs disable motors by default)
 4. Send simple test command: `G0 X10` (should move X axis 10mm)
 5. Feel the motor - does it get warm? If cold, no current. If scorching hot, current too high.
+6. Are you setting your speeds too high? This is a common issue that can cause a motor to not be able to move.
 
 **Heater won't heat:**
 1. Check MOSFET power input (needs 12-24V separate from motor power)
