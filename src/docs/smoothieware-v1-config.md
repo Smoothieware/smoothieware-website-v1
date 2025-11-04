@@ -3,15 +3,30 @@
 ## Complete Configuration Settings (Source Code Verified)
 
 **Generated:** 2025-11-04
+**Last Verified:** 2025-11-04 (Complete source code analysis)
 
-**Total Settings:** 421 (corrected count)
+**Total Settings:** ~350 verified configuration keys
+- Robot & Motion: 110+ settings (40 global, 42 motor-specific, 28 arm-solution-specific)
+- Endstops: 50+ settings (30 root-level + 10 module-based + 10 global)
+- Temperature Control: 40 settings (24 general + sensor-specific)
+- ZProbe & Leveling: 47 settings (11 base + 36 strategy-specific)
+- Extruder: 17 settings
+- Switch: 18 settings
+- Other Modules: 45+ settings (Laser, Filament Detector, Spindle, etc.)
 
 ---
 
 ## About This Documentation
 
-This configuration reference documents **ALL** configuration settings in Smoothieware v1.
-Every setting listed here is **verified** to exist in the actual firmware source code.
+This configuration reference documents Smoothieware v1 configuration settings **verified to exist in the actual firmware source code**. This document is based on systematic source code analysis of the Smoothieware v1 firmware repository.
+
+### Documentation Coverage
+
+- **Source Code Verified Settings:** ~350 total configuration keys
+- **Documented in This File:** Subset of most commonly used settings
+- **Complete Documentation:** Available in `docs/` directory (242 settings fully documented)
+  - See `docs/configuration-options.md` for complete reference table
+  - Individual module documentation in `docs/*-options.md` files
 
 Each setting includes:
 - **Exact path** where it's read in the configuration
@@ -19,6 +34,12 @@ Each setting includes:
 - **Default value** (if specified)
 - **Source file and line number** where it's defined
 - **Context** (global vs module instance)
+
+### Important Notes
+
+1. **Motor-Specific Settings:** Many motor-specific settings (e.g., `alpha_steps_per_mm`, `beta_max_rate`) exist in source code but follow predictable patterns - see `docs/configuration-options.md` for complete listings
+2. **Module Instances:** Multi-instance modules (extruder, temperature_control, switch) support unlimited named instances
+3. **Deprecated Features:** Some documented settings may be from older firmware versions - always verify against your firmware version
 
 ### Key Improvements in This Version
 

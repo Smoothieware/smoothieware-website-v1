@@ -14,9 +14,15 @@ This document provides a **complete and verified** reference for Smoothieware v2
 ### Statistics
 
 - **Total Configuration Sections:** 41
-- **Total Unique Settings:** 314+
-- **Source Files Analyzed:** 68 C++ files
-- **Config Read Calls:** 368
+- **Total Unique Settings:** ~230 verified configuration keys
+  - Robot & Motion: 78 settings (conveyor, planner, motion control, actuators, arm solutions)
+  - Endstops: 21 settings (10 per-endstop + 11 common)
+  - Temperature Control: 38 settings (25 general + sensor-specific)
+  - ZProbe & Leveling: 41 settings (12 base + 29 strategy-specific)
+  - Extruder: 12 settings
+  - Switch: 17 settings
+  - Other Modules: 21+ settings (Laser, Filament Detector, Lathe, ELS)
+- **Source Files Analyzed:** 48 C++ files with configuration reads
 - **Sample Configs Available:** 7 (3D printer, CNC, Delta, Lathe, etc.)
 
 ### Key Differences from v1

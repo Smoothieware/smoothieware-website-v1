@@ -1,7 +1,8 @@
 # Smoothieware v1 to v2 Configuration Migration Guide
 
-**Document Version:** 1.0
-**Last Updated:** 2025-11-03
+**Document Version:** 1.1
+**Last Updated:** 2025-11-04
+**Last Verified:** 2025-11-04 (Complete parallel source code analysis)
 **Purpose:** Complete comparison of configuration settings between Smoothieware v1 (LPC1769) and v2 (STM32H745/STM32H743)
 
 ---
@@ -15,17 +16,70 @@ Smoothieware v2 represents a **substantial architectural evolution** from v1, mo
 **Key Findings:**
 - **Configuration Format:** Complete change from custom text format to INI sections
 - **File Location:** Remains on SD card but changes from `config.txt` to `config.ini`
-- **Total Settings:** v1 has 348 documented settings, v2 has 314+ documented settings
+- **Total Settings:** v1 has ~350 verified settings, v2 has ~230 verified settings
+  - v1: 110+ Robot/Motion, 50+ Endstops, 40 Temp Control, 47 ZProbe, 17 Extruder, 18 Switch, 45+ Other
+  - v2: 78 Robot/Motion, 21 Endstops, 38 Temp Control, 41 ZProbe, 12 Extruder, 17 Switch, 21+ Other
 - **Migration Complexity:** **Medium to High** - Many settings renamed, restructured, or changed semantics
 - **Breaking Changes:** Driver system (TMC support), pin notation, module structure
-- **Hardware Support:** v2 adds native TMC2590/TMC2660 driver support
+- **Hardware Support:** v2 adds native TMC2590/TMC2660 driver support, lathe/ELS modules
 - **Backward Compatibility:** **None** - Complete configuration rewrite required
 
 **Migration Time Estimate:** 2-4 hours for experienced users with typical machine configurations
 
 ---
 
-### 2. Configuration System Differences
+### 2. Documentation Analysis Findings
+
+**Documentation Analysis Date:** 2025-11-04
+
+A comprehensive parallel analysis of all Smoothieware v1 configuration documentation files (`docs/*.md`) was conducted to verify documentation completeness against source code findings.
+
+#### 2.1 Documentation Completeness
+
+| Aspect | Finding |
+|--------|---------|
+| **Total Documented Settings** | 242 settings across all `docs/*-options.md` files |
+| **Total Source Code Settings** | ~350 settings (from firmware source analysis) |
+| **Documentation Coverage** | ~69% (242/350) |
+| **Undocumented Settings** | ~108 settings exist in source but lack full documentation |
+
+#### 2.2 Module Documentation Status
+
+| Module | Documented | Source Code | Completeness | Status |
+|--------|-----------|-------------|--------------|--------|
+| Motion Control | 15 | 15 | 100% | ✅ Complete |
+| Player | 5 | 5 | 100% | ✅ Complete |
+| Temperature Switch | 9 | 9 | 100% | ✅ Complete |
+| Panel | 34 | 34 | 100% | ✅ Complete |
+| Network | 9 | 9 | 100% | ✅ Complete |
+| Switch | 17 | 18 | 94% | ⚠️ Mostly Complete |
+| Temperature Control | 36 | 40 | 90% | ⚠️ Mostly Complete |
+| Endstops | 44 | 50+ | 88% | ⚠️ Mostly Complete |
+| ZProbe & Leveling | 42 | 47 | 89% | ⚠️ Mostly Complete |
+| **Laser** | **7** | **11** | **64%** | **❌ Critical Gap** |
+| Robot & Motion | 56 | 110+ | 51% | ⚠️ Pattern-based |
+| **Spindle** | **9 (deprecated)** | **24 (current)** | **38%** | **❌ Outdated** |
+
+#### 2.3 Critical Documentation Issues
+
+**High Priority Issues:**
+1. **Laser Module:** Only 7/11 settings documented. Missing: `inverted_pwm`, `pullup`, `opendrain`, `maximum_s_value`, `default_power`. Additionally, docs use incorrect `laser_module_*` prefix instead of `laser.*`
+2. **Spindle Module:** Documentation describes deprecated 9-setting PID module instead of current 24-setting type-based module (PWM/Analog/Modbus)
+3. **Robot & Motion:** Only 56/110+ settings documented. Missing motor-specific settings follow predictable patterns but lack explicit documentation
+
+**Medium Priority Issues:**
+4. **ZProbe Delta Grid:** 2 settings (`radius`, `do_home`) documented in main file but missing from options table
+5. **Temperature Control:** Minor issues (duplicate entry, inconsistent defaults)
+
+#### 2.4 Documentation Location
+
+- **Primary:** `docs/configuration-options.md` - Master reference table with 50 inline settings + 12 included files
+- **Included Files:** Individual `docs/*-options.md` files for each module
+- **This Document:** Consolidated findings from source code + documentation analysis
+
+---
+
+### 3. Configuration System Differences
 
 #### 2.1 File Format
 

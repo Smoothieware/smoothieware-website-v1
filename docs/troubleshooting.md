@@ -304,7 +304,11 @@ If that doesn't help, do the following : 
 
 #### My stepper motor does not turn at all and makes a very high-pitched sound
 
-This can happen with Z axis (or any leadscrew driven stepper motor) due to the high steps per millimeter number. You are probably trying to move it too fast. Try asking it to move at a much lower speed ( for example `G1 Z100 F100` ).
+A motor not moving at all, or moving erratically, or making a high pitch sound, or vibrating instead of moving, is a typical consequence of trying to move a motor too fast, or trying to accelerate a motor to too high a speed with too high acceleration (not "giving it enough time" to reach its target speed).
+
+This can happen most often with Z axis (or any leadscrew driven stepper motor) due to the high steps per millimeter number, but also sometimes with other types of axes/systems, if you are trying to move it too fast.
+
+Try asking it to move at a much lower speed ( for example `G0 Z100 F100` ).
 
 It's also possible you are trying to home, or to probe too fast. See the corresponding modules for how to modify the default speeds.
 
