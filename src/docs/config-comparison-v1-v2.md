@@ -1,9 +1,6 @@
 # Smoothieware v1 to v2 Configuration Migration Guide
 
-**Document Version:** 1.1
-**Last Updated:** 2025-11-04
-**Last Verified:** 2025-11-04 (Complete parallel source code analysis)
-**Purpose:** Complete comparison of configuration settings between Smoothieware v1 (LPC1769) and v2 (STM32H745/STM32H743)
+**Purpose:** Comparison of configuration settings between Smoothieware v1 (LPC1769) and v2 (STM32H745/STM32H743)
 
 ---
 
@@ -16,13 +13,13 @@ Smoothieware v2 represents a **substantial architectural evolution** from v1, mo
 **Key Findings:**
 - **Configuration Format:** Complete change from custom text format to INI sections
 - **File Location:** Remains on SD card but changes from `config.txt` to `config.ini`
-- **Total Settings:** v1 has ~280-290 verified settings, v2 has ~230 verified settings
+- **Total Settings:** v1 has ~280-290 settings, v2 has ~230 settings
   - v1: 75-81 Robot/Motion, 50+ Endstops, 42 Temp Control, 49 ZProbe, 17 Extruder, 17 Switch, 40+ Other
   - v2: 78 Robot/Motion, 21 Endstops, 38 Temp Control, 41 ZProbe, 12 Extruder, 17 Switch, 21+ Other
-- **Migration Complexity:** **Medium to High** - Many settings renamed, restructured, or changed semantics
+- **Migration Complexity:** Medium to High - Many settings renamed, restructured, or changed semantics
 - **Breaking Changes:** Driver system (TMC support), pin notation, module structure
 - **Hardware Support:** v2 adds native TMC2590/TMC2660 driver support, lathe/ELS modules
-- **Backward Compatibility:** **None** - Complete configuration rewrite required
+- **Backward Compatibility:** None - Complete configuration rewrite required
 
 **Note:** v1 robot kinematics support maximum 6 actuators (alpha through zeta). The `eta_current` and `theta_current` settings control stepper driver currents on channels 6-7 for external steppers (MCP4451-based boards only, default -1/disabled). v2 supports up to 8 robot actuators.
 
@@ -30,65 +27,7 @@ Smoothieware v2 represents a **substantial architectural evolution** from v1, mo
 
 ---
 
-### 2. Documentation Analysis Findings
-
-**Documentation Analysis Date:** 2025-11-04
-
-A comprehensive parallel analysis of all Smoothieware v1 configuration documentation files (`docs/*.md`) was conducted to verify documentation completeness against source code findings.
-
-#### 2.1 Documentation Completeness
-
-| Aspect | Finding |
-|--------|---------|
-| **Total Documented Settings** | 242 settings across all `docs/*-options.md` files |
-| **Total Source Code Settings** | ~280-290 settings (from firmware source analysis) |
-| **Documentation Coverage** | ~85% (242/285 average) |
-| **Undocumented Settings** | ~40-50 settings exist in source but lack full documentation |
-
-#### 2.2 Module Documentation Status
-
-| Module | Documented | Source Code | Completeness | Status |
-|--------|-----------|-------------|--------------|--------|
-| Motion Control | 15 | 25 | 60% | ⚠️ Incomplete |
-| Player | 5 | 5 | 100% | ✅ Complete |
-| Temperature Switch | 9 | 9 | 100% | ✅ Complete |
-| Panel | 31 | 36 | 86% | ⚠️ Mostly Complete |
-| Network | 9 | 9 | 100% | ✅ Complete |
-| Switch | 17 | 17 | 100% | ✅ Complete |
-| Temperature Control | 26 | 42 | 62% | ⚠️ Incomplete |
-| Endstops | 43 | 50+ | 86% | ⚠️ Mostly Complete |
-| ZProbe & Leveling | 42 | 49 | 86% | ⚠️ Mostly Complete |
-| Laser | 7 | 9 | 78% | ⚠️ Mostly Complete (3 wrong defaults) |
-| Robot & Motion | 56 | 75-81 | 69-75% | ⚠️ Pattern-based |
-| Spindle | 17 | 20 | 85% | ⚠️ Mostly Complete |
-
-#### 2.3 Documentation Issues
-
-**High Priority Issues:**
-1. **Laser Module:** 7/9 functional settings documented (78%). **CRITICAL:** 3 default values are incorrect in documentation:
-   - `laser_module_enable`: docs show `true`, actual default is `false`
-   - `laser_module_maximum_power`: docs show `0.8`, actual default is `1.0`
-   - `laser_module_ttl_pin`: docs show `1.30`, actual default is `nc`
-   - Missing: `laser_module_pin` (deprecated alias), `laser_module_maximum_s_value` (scaling setting)
-   - **Note:** Documentation correctly uses `laser_module_*` prefix which matches v1 source code
-2. **Motion Control:** Only 15/25 settings documented (60%). Missing: queue_delay_time_ms, mm_per_arc_segment, arc_correction, axis max speeds, etc.
-3. **Temperature Control:** Only 26/42 settings documented (62%). Missing ~16 settings including safety features and sensor-specific configurations
-4. **Robot & Motion:** Only 56/75-81 settings documented (69-75%). Motor-specific settings follow predictable patterns but lack explicit documentation
-
-**Medium Priority Issues:**
-5. **Spindle Module:** 17/20 settings documented (85%). Documentation correctly describes v1's current type-based system (PWM/Analog/Modbus). Missing: `ignore_on_halt`, `max_pwm`, `min_rpm`
-6. **Panel Module:** 31/36 settings documented (86%). Missing: pause_button_pin, display_extruder, longpress_delay, LED pins
-7. **Endstops:** Old syntax documented but new `endstop.<name>.*` syntax missing
-
-#### 2.4 Documentation Location
-
-- **Primary:** `docs/configuration-options.md` - Master reference table with 50 inline settings + 12 included files
-- **Included Files:** Individual `docs/*-options.md` files for each module
-- **This Document:** Consolidated findings from source code + documentation analysis
-
----
-
-### 3. Configuration System Differences
+### 2. Configuration System Differences
 
 #### 2.1 File Format
 

@@ -1,20 +1,17 @@
-# Smoothieware v2 Configuration Reference - SOURCE CODE VERIFIED
+# Smoothieware v2 Configuration Reference
 
-**Document Status:** Complete source code analysis
-**Last Updated:** 2025-11-04
-**Firmware Version:** Smoothieware v2 (analyzed from GitHub repository)
-**Analysis Method:** Systematic extraction from C++ source code
+**Firmware Version:** Smoothieware v2
 
 ---
 
 ## Executive Summary
 
-This document provides a **complete and verified** reference for Smoothieware v2 configuration settings, extracted directly from the source code. Unlike documentation that may become outdated, every setting in this document has been verified to exist in the actual firmware implementation.
+This document provides a reference for Smoothieware v2 configuration settings.
 
 ### Statistics
 
 - **Total Configuration Sections:** 41
-- **Total Unique Settings:** ~230 verified configuration keys
+- **Total Unique Settings:** ~230 configuration keys
   - Robot & Motion: 78 settings (conveyor, planner, motion control, actuators, arm solutions)
   - Endstops: 21 settings (10 per-endstop + 11 common)
   - Temperature Control: 38 settings (25 general + sensor-specific)
@@ -22,7 +19,6 @@ This document provides a **complete and verified** reference for Smoothieware v2
   - Extruder: 12 settings
   - Switch: 17 settings
   - Other Modules: 21+ settings (Laser, Filament Detector, Lathe, ELS)
-- **Source Files Analyzed:** 48 C++ files with configuration reads
 - **Sample Configs Available:** 7 (3D printer, CNC, Delta, Lathe, etc.)
 
 ### Key Differences from v1

@@ -1,11 +1,8 @@
 # Smoothieware v1 Configuration Reference
 
-## Complete Configuration Settings (Source Code Verified)
+## Complete Configuration Settings
 
-**Generated:** 2025-11-04
-**Last Verified:** 2025-11-04 (Complete source code analysis)
-
-**Total Settings:** ~280-290 verified configuration keys
+**Total Settings:** ~280-290 configuration keys
 - Robot & Motion: 75-81 settings (45 global, 30-36 motor-specific for 5-6 axes)
 - Endstops: 50+ settings (30 root-level + 10 module-based + 10 global)
 - Temperature Control: 42 settings (24 core + 18 sensor-specific)
@@ -20,11 +17,11 @@
 
 ## About This Documentation
 
-This configuration reference documents Smoothieware v1 configuration settings **verified to exist in the actual firmware source code**. This document is based on systematic source code analysis of the Smoothieware v1 firmware repository.
+This configuration reference documents Smoothieware v1 configuration settings.
 
 ### Documentation Coverage
 
-- **Source Code Verified Settings:** ~280-290 total configuration keys
+- **Total Settings:** ~280-290 configuration keys
 - **Documented in This File:** Subset of most commonly used settings
 - **Complete Documentation:** Available in `docs/` directory (242 settings fully documented, 85% coverage)
   - See `docs/configuration-options.md` for complete reference table
@@ -39,27 +36,9 @@ Each setting includes:
 
 ### Important Notes
 
-1. **Motor-Specific Settings:** Many motor-specific settings (e.g., `alpha_steps_per_mm`, `beta_max_rate`) exist in source code but follow predictable patterns - see `docs/configuration-options.md` for complete listings
+1. **Motor-Specific Settings:** Many motor-specific settings (e.g., `alpha_steps_per_mm`, `beta_max_rate`) follow predictable patterns - see `docs/configuration-options.md` for complete listings
 2. **Module Instances:** Multi-instance modules (extruder, temperature_control, switch) support unlimited named instances
 3. **Deprecated Features:** Some documented settings may be from older firmware versions - always verify against your firmware version
-
-### Key Improvements in This Version
-
-1. **Root-Level Endstop Configuration**: Added complete documentation of the traditional/common endstop configuration method
-2. **Temperature Control Module**: Properly organized as a module with instance-based configuration, including:
-   - Advanced sensor configuration guides (Thermistors, MAX31855, AD8495, PT100)
-   - PID vs Bang-Bang control comparison with use case recommendations
-   - Safety features documentation (temperature limits, runaway detection)
-   - M-code customization reference
-   - Complete example configurations (single hotend, dual hotend, high-temp, chamber)
-   - Predefined thermistor models reference
-3. **Leveling Strategies**: Complete documentation of all 4 leveling strategy types with comprehensive usage guide:
-   - All M-codes (G29, G31, G32, M370, M374, M375, M500, M501, M503, M561, M565, M557)
-   - Strategy selection guide by printer type
-   - Probe offset configuration with examples
-   - Typical workflow documentation (first-time setup, daily use, re-probing)
-   - Troubleshooting section for common leveling issues
-4. **Accurate Counts**: All settings properly counted and categorized
 
 ---
 
