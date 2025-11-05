@@ -185,11 +185,11 @@ General advice when asking for help from the Smoothieware community.
 {::nomarkdown}
 <sl-alert variant="warning" open>
   <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
-  <strong>Note About MKS and AZSMZ Boards</strong>
+  <strong>Note About MKS, AZSMZ and other clone Boards</strong>
   <br><br>
-  If you are using a MKS or an AZSMZ board, <strong>please</strong> note that those boards are toxic to the community and project.
+  If you are using a MKS or an AZSMZ board, or some other type of clone board, <strong>please</strong> note that those boards are toxic to the community and project.
   <br><br>
-  As such, <strong>we respectfully request</strong> that you first contact the seller for help before asking in the forum or anywhere else in the community, then after you have done this, you can ask the smoothie community for help of course, this isn't about preventing you from asking for help, just about making sure the sellers of boards that are toxic to the project at the very least do their part, by having these sorts of questions asked first. We'd greatly appreciate it.
+  As such, <strong>we respectfully request</strong> in the nicest fashion possible, that you first contact the seller of the clone board for help before (not instead of) asking in the forum or anywhere else in the community, then after you have done this, you can ask the smoothie community for help of course, this isn't about preventing you from asking for help, just about making sure the sellers of boards that are toxic to the project at the very least do their part, by having these sorts of questions asked first. We believe it makes sense to request this, and we find most users tend to agree. We'd greatly appreciate it.
   <br><br>
   Community members generally do not want to help companies that hurt the project we are all building. Please read <a href="troubleshooting#somebody-refused-to-help-me-because-my-board-is-a-mks-what-s-that-all-about">this explanation</a> before posting.
 </sl-alert>

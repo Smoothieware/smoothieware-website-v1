@@ -24,7 +24,7 @@ Smoothieware v2 represents a **substantial architectural evolution** from v1, mo
 - **Hardware Support:** v2 adds native TMC2590/TMC2660 driver support, lathe/ELS modules
 - **Backward Compatibility:** **None** - Complete configuration rewrite required
 
-**Note:** v1 supports maximum 6 axes (alpha, beta, gamma, delta, epsilon, zeta). v2 supports up to 8 axes.
+**Note:** v1 robot kinematics support maximum 6 actuators (alpha through zeta). The `eta_current` and `theta_current` settings control stepper driver currents on channels 6-7 for external steppers (MCP4451-based boards only, default -1/disabled). v2 supports up to 8 robot actuators.
 
 **Migration Time Estimate:** 2-4 hours for experienced users with typical machine configurations
 

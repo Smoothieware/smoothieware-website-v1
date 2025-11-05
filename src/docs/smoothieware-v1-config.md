@@ -14,7 +14,7 @@
 - Switch: 17 settings
 - Other Modules: 40+ settings (Laser, Filament Detector, Spindle, etc.)
 
-**Note:** v1 supports maximum 6 axes (alpha, beta, gamma, delta, epsilon, zeta). References to "eta" and "theta" axes in older documentation are incorrect.
+**Note:** v1 robot kinematics support maximum 6 actuators (alpha, beta, gamma, delta, epsilon, zeta). The `eta_current` and `theta_current` configuration settings exist for controlling stepper driver currents on channels 6-7, but ONLY work with MCP4451-based boards (Smoothieboard, Azteeg X5 GT) and CANNOT be used as robot actuators - they are for external stepper drivers not integrated into the motion system. Default value is -1 (disabled).
 
 ---
 
@@ -7910,6 +7910,25 @@ kill_button_pin <value>
 kill_button_poll_frequency <value>
 ```
 
+#### `kill_button_toggle_enable`
+
+**Type:** `bool`
+
+**Default Value:** `false`
+
+**Context:** Global setting
+
+- Found in: `docs/killbutton.md`
+- Context: Global setting
+
+**Description:** Allows for latching estop button. When true, the kill button acts as a toggle - pressing and latching it will halt the system, and releasing it will exit the halt condition (unless `unkill_enable` is set to false).
+
+**Configuration:**
+
+```
+kill_button_toggle_enable <value>
+```
+
 #### `laser_module_enable`
 
 **Type:** `bool`
@@ -9052,6 +9071,908 @@ y_size <value>
 ```
 zeta_current <value>
 ```
+
+---
+
+## Appendix - Additional Options Found
+
+The following configuration options were found in documentation and examples but were not auto-generated from the source code. These are valid configuration options used in multi-axis configurations.
+
+#### `delta_steps_per_mm`
+
+**Type:** `number`
+
+**Context:** Multi-axis configuration (A-axis / 4th axis / rotary axis)
+
+**Description:** Configures the steps per millimeter (or steps per degree for rotary axes) for the delta (A) axis. This is used when configuring a 4th axis for rotary operations, indexing, or 5-axis milling.
+
+**Found in:**
+- `/home/arthur/dev/smoothieware/smoothieware-website-v1/docs/6axis.md` (line 100)
+- `/home/arthur/dev/smoothieware/smoothieware-website-v1/docs/landing-page-cnc-milling.md` (line 143)
+- `/home/arthur/dev/smoothieware/smoothieware-website-v1/docs/landing-page-cnc-mill.md` (line 167)
+- `/home/arthur/dev/smoothieware/smoothieware-website-v1/docs/landing-page-grbl-alternative.md` (line 116)
+
+**Example Configuration:**
+
+```
+# A axis for rotary operations
+delta_steps_per_mm     50      # Steps per degree for rotary axis
+```
+
+**Configuration:**
+
+```
+delta_steps_per_mm <value>
+```
+
+#### `delta_max_rate`
+
+**Type:** `number`
+
+**Context:** Multi-axis configuration (A-axis / 4th axis / rotary axis)
+
+**Description:** Configures the maximum rate (speed) for the delta (A) axis in mm/min. For rotary axes, this represents the maximum rotational speed. Used in conjunction with `delta_steps_per_mm` for 4th and 5th axis configurations.
+
+**Found in:**
+- `/home/arthur/dev/smoothieware/smoothieware-website-v1/docs/6axis.md` (line 105)
+- `/home/arthur/dev/smoothieware/smoothieware-website-v1/docs/landing-page-cnc-milling.md` (line 144)
+- `/home/arthur/dev/smoothieware/smoothieware-website-v1/docs/landing-page-cnc-mill.md` (line 168)
+- `/home/arthur/dev/smoothieware/smoothieware-website-v1/docs/landing-page-grbl-alternative.md` (line 117)
+
+**Example Configuration:**
+
+```
+# A axis maximum speed
+delta_max_rate         30000   # Maximum rotary speed in mm/min
+```
+
+**Configuration:**
+
+```
+delta_max_rate <value>
+```
+
+---
+
+#### `axis_scaling_x`
+
+**Type:** `number`
+
+**Context:** Morgan arm solution configuration
+
+**Description:** Scaling factor applied to the X axis when using the morgan arm solution. This allows for correction of dimensional accuracy in the X direction for the morgan SCARA-type arm configuration.
+
+**Found in:**
+- `/home/arthur/dev/smoothieware/smoothieware-website-v1/docs/configuration-options.md` (line 36)
+
+**Example Configuration:**
+
+```
+# Morgan arm solution X axis scaling
+axis_scaling_x 0.8
+```
+
+**Configuration:**
+
+```
+axis_scaling_x <value>
+```
+
+#### `axis_scaling_y`
+
+**Type:** `number`
+
+**Context:** Morgan arm solution configuration
+
+**Description:** Scaling factor applied to the Y axis when using the morgan arm solution. This allows for correction of dimensional accuracy in the Y direction for the morgan SCARA-type arm configuration.
+
+**Found in:**
+- `/home/arthur/dev/smoothieware/smoothieware-website-v1/docs/configuration-options.md` (line 37)
+
+**Example Configuration:**
+
+```
+# Morgan arm solution Y axis scaling
+axis_scaling_y 0.8
+```
+
+**Configuration:**
+
+```
+axis_scaling_y <value>
+```
+
+#### `digipot_max_current`
+
+**Type:** `number`
+
+**Context:** Current control module configuration
+
+**Description:** Defines the maximum current that can be set through the digital potentiometer (digipot) used for controlling stepper motor driver currents. This is a hardware-dependent value based on the specific digipot chip and board design.
+
+**Found in:**
+- `/home/arthur/dev/smoothieware/smoothieware-website-v1/docs/configuration-options.md` (line 76)
+
+**Example Configuration:**
+
+```
+# Current control settings
+currentcontrol_module_enable true
+digipotchip mcp4451
+digipot_max_current 2.0   # Maximum 2 amps
+```
+
+**Configuration:**
+
+```
+digipot_max_current <value>
+```
+
+#### `digipot_factor`
+
+**Type:** `number`
+
+**Context:** Current control module configuration
+
+**Description:** Conversion factor for translating desired current values (in amperes) into the digital values required by the digipot chip. This is calculated based on the specific hardware design and varies between board types. For boards using the MCP4451 chip, a typical value is 113.33.
+
+**Found in:**
+- `/home/arthur/dev/smoothieware/smoothieware-website-v1/docs/configuration-options.md` (line 77)
+
+**Example Configuration:**
+
+```
+# Current control settings
+currentcontrol_module_enable true
+digipotchip mcp4451
+digipot_factor 113.33     # Conversion factor for MCP4451
+```
+
+**Configuration:**
+
+```
+digipot_factor <value>
+```
+
+---
+
+#### `network.hostname`
+
+**Type:** `string`
+
+**Context:** Network configuration
+
+**Description:** Allows setting a custom hostname for the Smoothieboard that some DHCP servers will recognize and register. This enables connecting to the machine using a memorable hostname instead of an IP address (e.g., `http://smoothk40/` instead of `http://192.168.1.123/`).
+
+**Found in:**
+- `/home/arthur/dev/smoothieware/smoothieware-website-v1/docs/blue-box-guide.md` (line 206)
+
+**Example Configuration:**
+
+```
+# Network hostname for easier access
+network.hostname    SmoothK40    # Some DHCP servers accept a hostname for the machine
+```
+
+**Configuration:**
+
+```
+network.hostname <hostname>
+```
+
+#### `network.mac_override`
+
+**Type:** `string` (MAC address format: xx.xx.xx.xx.xx.xx)
+
+**Context:** Network configuration
+
+**Description:** Overrides the default MAC address of the Smoothieboard's network interface. This is useful only if you have a MAC address conflict on your network (which is extremely rare). Under normal circumstances, this setting should not be used.
+
+**Found in:**
+- `/home/arthur/dev/smoothieware/smoothieware-website-v1/docs/blue-box-guide.md` (line 211)
+
+**Example Configuration:**
+
+```
+# Override MAC address (only use if you have a conflict)
+#network.mac_override    xx.xx.xx.xx.xx.xx    # override the mac address
+```
+
+**Configuration:**
+
+```
+network.mac_override <mac_address>
+```
+
+---
+
+#### `gamma.acceleration`
+
+**Type:** `number`
+
+**Context:** Motion control - per-axis acceleration override
+
+**Description:** Allows setting a separate acceleration value specifically for the gamma (Z) axis, overriding the global `acceleration` setting. This is useful for machines where the Z axis has significantly different mass characteristics or movement requirements compared to X and Y axes. On some machines, the Z axis is very different from the others and has different requirements and capabilities.
+
+**Found in:**
+- `/home/arthur/dev/smoothieware/smoothieware-website-v1/docs/motion-control.md` (line 64)
+
+**Example Configuration:**
+
+```
+# Global acceleration
+acceleration               3000   # Global acceleration in mm/second/second
+
+# Z-axis specific acceleration (overrides global for Z only)
+gamma.acceleration         200    # Lower acceleration for heavy Z axis
+```
+
+**Configuration:**
+
+```
+gamma.acceleration <value>
+```
+
+**Note:** Similarly, `alpha.acceleration` and `beta.acceleration` can be used for X and Y axes respectively, though this is less common. These per-actuator acceleration settings should not be used with delta arm solutions.
+
+---
+
+#### `alpha_acceleration`
+
+**Type:** `number`
+
+**Context:** Motion control - per-actuator acceleration override
+
+**Description:** Sets the acceleration for the alpha actuator (X axis on cartesian machines) in mm/second/second. This allows per-actuator control of acceleration, overriding the global `acceleration` setting. Do not set this on delta arm solutions.
+
+**Found in:**
+- `/home/arthur/dev/smoothieware/smoothieware-website-v1/docs/motion-control-options.md` (line 21)
+
+**Example Configuration:**
+
+```
+# Per-actuator acceleration control
+alpha_acceleration    3000   # X axis acceleration
+beta_acceleration     3000   # Y axis acceleration
+gamma_acceleration    200    # Z axis acceleration (slower for heavy Z)
+```
+
+**Configuration:**
+
+```
+alpha_acceleration <value>
+```
+
+---
+
+#### `beta_acceleration`
+
+**Type:** `number`
+
+**Context:** Motion control - per-actuator acceleration override
+
+**Description:** Sets the acceleration for the beta actuator (Y axis on cartesian machines) in mm/second/second. This allows per-actuator control of acceleration, overriding the global `acceleration` setting. Do not set this on delta arm solutions.
+
+**Found in:**
+- `/home/arthur/dev/smoothieware/smoothieware-website-v1/docs/motion-control-options.md` (line 22)
+
+**Configuration:**
+
+```
+beta_acceleration <value>
+```
+
+---
+
+## Appendix - Additional Options Found
+
+This section contains configuration options found in documentation files that are not yet fully documented in the main configuration reference above.
+
+---
+
+#### `temperature_control.<name>.e3d_amplifier_pin`
+
+**Type:** `pin`
+
+**Context:** Temperature Control module - PT100 sensor configuration
+
+**Description:** When using a PT100 E3D temperature sensor (sensor type `pt100_e3d`), this specifies the ADC pin where the E3D PT100 amplifier board output signal is connected. This must be a free ADC pin (not a thermistor input pin, as those have built-in pull-ups). Typically `1.30` or `1.31` on most boards.
+
+**Found in:**
+- `/home/arthur/dev/smoothieware/smoothieware-website-v1/docs/pt100.md` (lines 37-39)
+
+**Example Configuration:**
+
+```
+temperature_control.hotend.enable              true
+temperature_control.hotend.sensor              pt100_e3d
+temperature_control.hotend.e3d_amplifier_pin   1.30        # must be a free ADC pin, not a temperature input
+```
+
+**Configuration:**
+
+```
+temperature_control.<name>.e3d_amplifier_pin <pin>
+```
+
+**Important Notes:**
+- The PT100 E3D amplifier must be powered from the AVCC and AGND header pins on newer Smoothieboards
+- If AVCC/AGND pins are not available, you can use 3.3V and GND, but this may introduce noise
+- DO NOT power from 5V or you will damage the port
+- You cannot use a thermistor input pin due to the pull-up resistor on the board
+
+---
+
+## Appendix - Additional Options Found
+
+The following configuration options were found in the documentation but were not yet catalogued in this comprehensive list. They are added here for completeness.
+
+---
+
+#### `temperature_control.<name>.rt_curve`
+
+**Type:** `string` (comma-separated values)
+
+**Context:** Temperature control - thermistor calibration
+
+**Description:** Allows you to define three points on a temperature curve for your thermistor, and Smoothie will calculate the Steinhart-Hart coefficients automatically. This is an alternative to manually specifying the coefficients. Format: `temp1,resistance1,temp2,resistance2,temp3,resistance3`
+
+**Found in:**
+- `/home/arthur/dev/smoothieware/smoothieware-website-v1/docs/temperaturecontrol-thermistor-choice.md` (line 61)
+
+**Example Configuration:**
+
+```
+# Define three temperature/resistance points for Smoothie to calculate coefficients
+temperature_control.hotend.rt_curve    20.0,126800,150,1360,240,206.5
+```
+
+**Configuration:**
+
+```
+temperature_control.<name>.rt_curve <t1>,<r1>,<t2>,<r2>,<t3>,<r3>
+```
+
+**Note:** This is an alternative to specifying `coefficients` directly. Use either `rt_curve` OR `coefficients`, not both.
+
+---
+
+#### `temperature_control.<name>.coefficients`
+
+**Type:** `string` (comma-separated floating point values)
+
+**Context:** Temperature control - thermistor calibration
+
+**Description:** Allows you to manually specify the Steinhart-Hart coefficients for your thermistor. This is the preferred method for accurate temperature readings, especially at higher temperatures (above 80°C). The three coefficients define the mathematical relationship between resistance and temperature.
+
+**Found in:**
+- `/home/arthur/dev/smoothieware/smoothieware-website-v1/docs/temperaturecontrol-thermistor-choice.md` (line 53)
+
+**Example Configuration:**
+
+```
+# Manually specify Steinhart-Hart coefficients for accurate temperature readings
+temperature_control.hotend.coefficients    0.000722376862540841,0.000216302098124288,0.000000092640163984
+```
+
+**Configuration:**
+
+```
+temperature_control.<name>.coefficients <coeff_a>,<coeff_b>,<coeff_c>
+```
+
+**Note:** This is the preferred method over using `beta` values, especially for hotends where temperatures exceed 80°C. Use either `coefficients` OR `rt_curve` OR `beta`, not multiple methods.
+
+---
+
+#### `touchprobe_enable`
+
+**Type:** `boolean`
+
+**Context:** Touchprobe module (deprecated)
+
+**Description:** Enables or disables the touchprobe module. When set to false, all other touchprobe configuration values are ignored. This module is deprecated and not compiled by default. For modern probing functionality, use the ZProbe module instead.
+
+**Found in:**
+- `/home/arthur/dev/smoothieware/smoothieware-website-v1/docs/touchprobe.md` (line 92)
+
+**Example Configuration:**
+
+```
+touchprobe_enable    false    # enables/disables the module (other values ignored if false)
+```
+
+**Configuration:**
+
+```
+touchprobe_enable <true|false>
+```
+
+**Warning:** This module is deprecated. Use the `zprobe` module for modern probing functionality.
+
+---
+
+#### `touchprobe_log_enable`
+
+**Type:** `boolean`
+
+**Context:** Touchprobe module (deprecated)
+
+**Description:** When enabled, all probe touches will be logged to a file specified by `touchprobe_logfile_name`. This is useful for creating point clouds of probed objects.
+
+**Found in:**
+- `/home/arthur/dev/smoothieware/smoothieware-website-v1/docs/touchprobe.md` (line 93)
+
+**Example Configuration:**
+
+```
+touchprobe_log_enable    false    # should the touches be logged to file
+```
+
+**Configuration:**
+
+```
+touchprobe_log_enable <true|false>
+```
+
+---
+
+#### `touchprobe_logfile_name`
+
+**Type:** `string` (file path)
+
+**Context:** Touchprobe module (deprecated)
+
+**Description:** Specifies the location of the log file where probe touches will be recorded when `touchprobe_log_enable` is true. Must be on the SD card (typically starts with `/sd/`).
+
+**Found in:**
+- `/home/arthur/dev/smoothieware/smoothieware-website-v1/docs/touchprobe.md` (line 94)
+
+**Example Configuration:**
+
+```
+touchprobe_logfile_name    /sd/probe_log.csv    # location of the log file
+```
+
+**Configuration:**
+
+```
+touchprobe_logfile_name <filepath>
+```
+
+---
+
+#### `touchprobe_log_rotate_mcode`
+
+**Type:** `number` (M-code number)
+
+**Context:** Touchprobe module (deprecated)
+
+**Description:** Specifies an M-code that, when issued, will add a spacer to the log file. This can be useful for separating different probing sessions in the same log file.
+
+**Found in:**
+- `/home/arthur/dev/smoothieware/smoothieware-website-v1/docs/touchprobe.md` (line 95)
+
+**Example Configuration:**
+
+```
+touchprobe_log_rotate_mcode    0    # adds a spacer to logfile if Mxxx is issued
+```
+
+**Configuration:**
+
+```
+touchprobe_log_rotate_mcode <mcode_number>
+```
+
+---
+
+#### `touchprobe_pin`
+
+**Type:** `pin`
+
+**Context:** Touchprobe module (deprecated)
+
+**Description:** Selects the input pin where the touchprobe is connected. Must be a valid input pin. Use `nc` (not connected) to disable.
+
+**Found in:**
+- `/home/arthur/dev/smoothieware/smoothieware-website-v1/docs/touchprobe.md` (line 96)
+
+**Example Configuration:**
+
+```
+touchprobe_pin    nc    # selects the pin where the probe is connected
+```
+
+**Configuration:**
+
+```
+touchprobe_pin <pin>
+```
+
+---
+
+#### `touchprobe_debounce_count`
+
+**Type:** `number`
+
+**Context:** Touchprobe module (deprecated)
+
+**Description:** Specifies how many consecutive ticks the probe must be active before a touch is reported. Higher values provide more resistance to noise and false positives but result in slower response time.
+
+**Found in:**
+- `/home/arthur/dev/smoothieware/smoothieware-website-v1/docs/touchprobe.md` (line 97)
+
+**Example Configuration:**
+
+```
+touchprobe_debounce_count    100    # reports touch if probe active for this many ticks (prevents false positives)
+```
+
+**Configuration:**
+
+```
+touchprobe_debounce_count <number>
+```
+
+---
+
+#### `temperature_control.<name>.ad8495_pin`
+
+**Type:** `pin`
+
+**Context:** Temperature Control Module (AD8495 sensor)
+
+**Description:** Specifies the analog input pin to read from when using an AD8495 thermocouple amplifier. This is an alternative to `thermistor_pin` specifically for AD8495 sensors. The AD8495 is a thermocouple amplifier that outputs an analog voltage proportional to the temperature measured by a K-type thermocouple.
+
+**Found in:**
+- `/home/arthur/dev/smoothieware/smoothieware-website-v1/docs/pick-and-place-control.md` (lines 53, 65)
+
+**Example Configuration:**
+
+```
+temperature_control.vac_n1.sensor                 ad8495
+temperature_control.vac_n1.ad8495_pin             0.23    # Pin for the thermistor to read
+temperature_control.vac_n1.ad8495_offset          0
+```
+
+**Configuration:**
+
+```
+temperature_control.<name>.ad8495_pin <pin>
+```
+
+**Notes:**
+- Used when `sensor` is set to `ad8495`
+- Connect to one of the thermistor input pins (T0-T3)
+- Can also be used with `thermistor_pin` (both work for AD8495 sensors)
+
+---
+
+#### `temperature_control.<name>.ad8495_offset`
+
+**Type:** `number`
+
+**Context:** Temperature Control Module (AD8495 sensor)
+
+**Description:** Offset value for calibrating the AD8495 thermocouple amplifier reading. This allows you to compensate for any systematic error in the temperature measurement. The offset is added to the raw reading from the sensor.
+
+**Found in:**
+- `/home/arthur/dev/smoothieware/smoothieware-website-v1/docs/pick-and-place-control.md` (lines 54, 66)
+
+**Example Configuration:**
+
+```
+temperature_control.vac_n1.sensor                 ad8495
+temperature_control.vac_n1.ad8495_pin             0.23
+temperature_control.vac_n1.ad8495_offset          0       # Temperature offset for calibration
+```
+
+**Configuration:**
+
+```
+temperature_control.<name>.ad8495_offset <value>
+```
+
+**Notes:**
+- Typical value is 0 (no offset)
+- Positive values increase the reported temperature
+- Negative values decrease the reported temperature
+- Use for calibration if your AD8495 reads consistently high or low
+
+---
+
+#### `temperature_control.<name>.rt_curve`
+
+**Type:** `comma-separated values`
+
+**Context:** Temperature Control Module (Custom sensor calibration)
+
+**Description:** Defines a custom resistance-temperature curve for temperature sensors. This allows you to use custom thermistors or linear sensors that don't match the predefined thermistor models. The values define points on the curve that Smoothie uses for interpolation.
+
+**Found in:**
+- `/home/arthur/dev/smoothieware/smoothieware-website-v1/docs/pick-and-place-control.md` (lines 59, 71)
+
+**Example Configuration:**
+
+```
+temperature_control.vac_n1.sensor                 ad8495
+temperature_control.vac_n1.rt_curve               20.0,220,120,6000,220,120000
+```
+
+**Configuration:**
+
+```
+temperature_control.<name>.rt_curve <value1>,<value2>,<value3>,...
+```
+
+**Notes:**
+- Format and exact meaning of values depends on sensor type
+- Used for custom calibration curves
+- In the example from pick-and-place machines, this is used with AD8495 for vacuum sensor calibration
+- Values typically define temperature and corresponding ADC reading pairs
+- Consult source code or community for specific curve format details
+
+---
+
+#### `leveling-strategy.rectangular-grid.only_by_two_corners`
+
+**Type:** `boolean`
+
+**Context:** Rectangular Grid Leveling Strategy (PCB milling)
+
+**Description:** Enables a special "two corners" mode for grid leveling that simplifies the probing process. Instead of requiring precise bed dimensions in the configuration, this mode allows you to specify the grid position and size dynamically with each G32 command using the current head position as a reference point.
+
+**Found in:**
+- `/home/arthur/dev/smoothieware/smoothieware-website-v1/docs/pcb-milling.md` (line 28)
+
+**Example Configuration:**
+
+```
+leveling-strategy.rectangular-grid.only_by_two_corners        true
+```
+
+**Usage:**
+
+With this enabled, you can use:
+```
+G32 Xnn Ynn Ann Bnn Inn Jnn
+```
+
+Where:
+- X, Y = Starting position (Machine coordinates)
+- A = X size of grid
+- B = Y size of grid
+- I = X grid divisions (optional)
+- J = Y grid divisions (optional)
+
+**Quick mode without config enable:**
+```
+G32 R1 X0 Y0 A30 B30
+```
+
+The R1 parameter uses current position as start point, with X and Y as offsets.
+
+**Configuration:**
+
+```
+leveling-strategy.rectangular-grid.only_by_two_corners <true|false>
+```
+
+**Notes:**
+- All positions are in Machine Coordinate System (MCS), not Work Coordinate System (WCS)
+- Particularly useful for PCB milling where board position varies
+- Allows flexible grid positioning without reconfiguring
+- If probe offset exists, head moves to account for offset
+
+---
+
+#### `zprobe.dwell_before_probing`
+
+**Type:** `number` (seconds)
+
+**Context:** ZProbe module
+
+**Description:** Specifies a dwell time in seconds before the probe begins its descent to contact the bed. This delay allows the probe and bed to settle after rapid movement, which is particularly useful for piezo-based Z-probes that can be triggered by vibration from the movement itself. The dwell period helps prevent false triggers by allowing mechanical vibrations to dissipate.
+
+**Found in:**
+- `/home/arthur/dev/smoothieware/smoothieware-website-v1/docs/zprobe-options.md` (line 22)
+
+**Example Configuration:**
+
+```
+zprobe.enable                true
+zprobe.probe_pin             1.28!^
+zprobe.slow_feedrate         5
+zprobe.dwell_before_probing  0.2    # Wait 0.2 seconds before probing
+```
+
+**Configuration:**
+
+```
+zprobe.dwell_before_probing <seconds>
+```
+
+**Notes:**
+- Default value if not specified: 0 (no dwell)
+- Typical value for piezo probes: 0.2 seconds
+- Helps prevent false triggers on sensitive probes
+- Not needed for most mechanical switch-based probes
+- Can be set to 0 to disable the dwell entirely
+
+---
+
+#### `temperature_control.<name>.use_beta_table`
+
+**Type:** `boolean`
+
+**Context:** Temperature control - thermistor configuration override
+
+**Description:** When set to `true`, forces Smoothie to use the old beta-based temperature calculation method for predefined thermistors, instead of the newer Steinhart-Hart coefficients. By default, predefined thermistors that have known Steinhart-Hart coefficients will use them for more accurate readings. Set this to `true` if you want to maintain compatibility with older behavior or if you experience issues with the Steinhart-Hart calculations.
+
+**Found in:**
+- `/home/arthur/dev/smoothieware/smoothieware-website-v1/docs/steinharthart.md` (line 72)
+
+**Example Configuration:**
+
+```
+temperature_control.hotend.use_beta_table  true    # force predefined thermistors to use the old beta values
+```
+
+**Configuration:**
+
+```
+temperature_control.<name>.use_beta_table <true|false>
+```
+
+**Note:** Beta values from datasheets are typically accurate for the 0-80°C range, but can be 7-10 degrees off in the 185-230°C printing range. Steinhart-Hart coefficients provide better accuracy across the full temperature range. Beta calculation is still acceptable for heated beds since they operate within the published beta temperature range.
+
+---
+
+#### `spindle_enable` (DEPRECATED)
+
+**Type:** `boolean`
+
+**Context:** Spindle module - deprecated configuration
+
+**Description:** **This is a deprecated configuration option from older firmware versions.** If set to true, enables the Spindle module, which uses an encoder to PID-control a PWM-modulated spindle motor. This option used underscores instead of dots. Modern firmware uses the dot notation: `spindle.enable`. This is part of a deprecated configuration format and should be replaced with the modern syntax.
+
+**Found in:**
+- `/home/arthur/dev/smoothieware/smoothieware-website-v1/docs/spindle-options.md` (line 18)
+
+**Example Configuration (deprecated):**
+
+```
+spindle_enable    true    # DO NOT USE - deprecated format
+```
+
+**Modern Configuration:**
+
+```
+spindle.enable    true    # Use this instead
+```
+
+**Migration:** Replace all underscore-based spindle options with dot-based equivalents.
+
+---
+
+#### `spindle_pwm_pin` (DEPRECATED)
+
+**Type:** `pin`
+
+**Context:** Spindle module - deprecated configuration
+
+**Description:** **This is a deprecated configuration option from older firmware versions.** Output PWM pin for spindle control (uses hardware PWM). Hardware PWM is available only on pins 2.0 to 2.5, 1.18, 1.20, 1.21, 1.23, 1.24, 1.26, 3.25 and 3.26. Modern firmware uses the dot notation: `spindle.pwm_pin`.
+
+**Found in:**
+- `/home/arthur/dev/smoothieware/smoothieware-website-v1/docs/spindle-options.md` (line 19)
+
+**Migration:** Replace with `spindle.pwm_pin`
+
+---
+
+#### `spindle_pwm_period` (DEPRECATED)
+
+**Type:** `number`
+
+**Context:** Spindle module - deprecated configuration
+
+**Description:** **This is a deprecated configuration option from older firmware versions.** PWM period to use in microseconds. Modern firmware uses the dot notation: `spindle.pwm_period`.
+
+**Found in:**
+- `/home/arthur/dev/smoothieware/smoothieware-website-v1/docs/spindle-options.md` (line 20)
+
+**Migration:** Replace with `spindle.pwm_period`
+
+---
+
+#### `spindle_feedback_pin` (DEPRECATED)
+
+**Type:** `pin`
+
+**Context:** Spindle module - deprecated configuration
+
+**Description:** **This is a deprecated configuration option from older firmware versions.** Feedback input pin for spindle encoder (must be Port 0 or 2, meaning the pin number must be 2.x or 0.x). Modern firmware uses the dot notation: `spindle.feedback_pin`.
+
+**Found in:**
+- `/home/arthur/dev/smoothieware/smoothieware-website-v1/docs/spindle-options.md` (line 21)
+
+**Migration:** Replace with `spindle.feedback_pin`
+
+---
+
+#### `spindle_pulses_per_rev` (DEPRECATED)
+
+**Type:** `number`
+
+**Context:** Spindle module - deprecated configuration
+
+**Description:** **This is a deprecated configuration option from older firmware versions.** Number of feedback pulses per revolution on the feedback input pin. Modern firmware uses the dot notation: `spindle.pulses_per_rev`.
+
+**Found in:**
+- `/home/arthur/dev/smoothieware/smoothieware-website-v1/docs/spindle-options.md` (line 22)
+
+**Migration:** Replace with `spindle.pulses_per_rev`
+
+---
+
+#### `spindle_default_rpm` (DEPRECATED)
+
+**Type:** `number`
+
+**Context:** Spindle module - deprecated configuration
+
+**Description:** **This is a deprecated configuration option from older firmware versions.** RPM to use if none given in M3 command, in rotations/minute. Modern firmware uses the dot notation: `spindle.default_rpm`.
+
+**Found in:**
+- `/home/arthur/dev/smoothieware/smoothieware-website-v1/docs/spindle-options.md` (line 23)
+
+**Migration:** Replace with `spindle.default_rpm`
+
+---
+
+#### `spindle_control_P` (DEPRECATED)
+
+**Type:** `number`
+
+**Context:** Spindle module - deprecated configuration
+
+**Description:** **This is a deprecated configuration option from older firmware versions.** PID P factor (unit is 1 / RPM). Modern firmware uses the dot notation: `spindle.control_P`.
+
+**Found in:**
+- `/home/arthur/dev/smoothieware/smoothieware-website-v1/docs/spindle-options.md` (line 24)
+
+**Migration:** Replace with `spindle.control_P`
+
+---
+
+#### `spindle_control_I` (DEPRECATED)
+
+**Type:** `number`
+
+**Context:** Spindle module - deprecated configuration
+
+**Description:** **This is a deprecated configuration option from older firmware versions.** PID I factor (unit is 1 / ( RPM x seconds )). Modern firmware uses the dot notation: `spindle.control_I`.
+
+**Found in:**
+- `/home/arthur/dev/smoothieware/smoothieware-website-v1/docs/spindle-options.md` (line 25)
+
+**Migration:** Replace with `spindle.control_I`
+
+---
+
+#### `spindle_control_D` (DEPRECATED)
+
+**Type:** `number`
+
+**Context:** Spindle module - deprecated configuration
+
+**Description:** **This is a deprecated configuration option from older firmware versions.** PID D factor (unit is 1 / (RPM / seconds)). Modern firmware uses the dot notation: `spindle.control_D`.
+
+**Found in:**
+- `/home/arthur/dev/smoothieware/smoothieware-website-v1/docs/spindle-options.md` (line 26)
+
+**Migration:** Replace with `spindle.control_D`
 
 ---
 
