@@ -11,6 +11,159 @@ General advice when asking for help from the Smoothieware community.
 </sl-alert>
 {:/nomarkdown}
 
+{::nomarkdown}
+<div id="be-nice-container" style="position: relative; margin-top: 20px;">
+  <sl-alert id="be-nice-alert" variant="success" open>
+    <sl-icon slot="icon" name="heart-fill"></sl-icon>
+    <div style="text-align: center;">
+      <span style="font-size: 48px; font-weight: bold;">BE NICE</span>
+    </div>
+  </sl-alert>
+  <canvas id="be-nice-fireworks-canvas" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 10;"></canvas>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/fireworks-js@2.10.8/dist/index.umd.min.js"></script>
+<script>
+(function() {
+  const container = document.getElementById('be-nice-container');
+  const alert = document.getElementById('be-nice-alert');
+  const canvas = document.getElementById('be-nice-fireworks-canvas');
+
+  let fireworks = null;
+  let isHovering = false;
+  let launchInterval = null;
+  let autoStopTimeout = null;
+
+  // Pick a hue range with weights: ~45% blue, ~45% orange, ~10% yellow-orange
+  function pickHueRange() {
+    const r = Math.random();
+    if (r < 0.45) {
+      return { min: 200, max: 240 };  // Blues: ~200-240°
+    } else if (r < 0.90) {
+      return { min: 25, max: 40 };    // Oranges: ~25-40°
+    } else {
+      return { min: 45, max: 55 };    // Yellow-oranges: ~45-55° (near 60° is yellow)
+    }
+  }
+
+  // Launch fireworks in a chosen hue
+  function launchWeighted(count) {
+    if (count < 1) return;
+    const hueRange = pickHueRange();
+    fireworks.updateOptions({ hue: hueRange });
+    fireworks.launch(count);
+  }
+
+  // Initialize fireworks
+  function initFireworks() {
+    if (!fireworks) {
+      fireworks = new Fireworks.default(canvas, {
+        autoresize: true,
+        opacity: 0.8,
+        acceleration: 1.05,
+        friction: 0.97,
+        gravity: 1.5,
+        particles: 80,
+        traceLength: 3,
+        traceSpeed: 10,
+        explosion: 5,
+        flickering: 50,
+        lineStyle: 'round',
+        hue: { min: 200, max: 240 },  // Start with blue
+        delay: {
+          min: 15,
+          max: 30
+        },
+        rocketsPoint: {
+          min: 50,
+          max: 50
+        },
+        lineWidth: {
+          explosion: {
+            min: 1,
+            max: 3
+          },
+          trace: {
+            min: 1,
+            max: 2
+          }
+        },
+        brightness: {
+          min: 50,
+          max: 80
+        },
+        decay: {
+          min: 0.015,
+          max: 0.03
+        },
+        mouse: {
+          click: false,
+          move: false,
+          max: 1
+        }
+      });
+    }
+  }
+
+  // Start fireworks
+  function startFireworks() {
+    initFireworks();
+    fireworks.start();
+
+    // Launch one firework every 200ms with weighted colors
+    if (!launchInterval) {
+      launchInterval = setInterval(function() {
+        launchWeighted(1);
+      }, 200);
+    }
+  }
+
+  // Stop fireworks
+  function stopFireworks() {
+    if (launchInterval) {
+      clearInterval(launchInterval);
+      launchInterval = null;
+    }
+    if (fireworks) {
+      fireworks.stop();
+    }
+  }
+
+  // Start fireworks on hover
+  alert.addEventListener('mouseenter', function() {
+    isHovering = true;
+
+    // Clear any pending auto-stop timeout
+    if (autoStopTimeout) {
+      clearTimeout(autoStopTimeout);
+      autoStopTimeout = null;
+    }
+
+    startFireworks();
+  });
+
+  // Stop fireworks when mouse leaves (only if not in auto-play period)
+  alert.addEventListener('mouseleave', function() {
+    isHovering = false;
+    stopFireworks();
+  });
+
+  // Auto-start fireworks for 15 seconds after page load
+  window.addEventListener('load', function() {
+    startFireworks();
+
+    // Stop after 15 seconds, unless hovering
+    autoStopTimeout = setTimeout(function() {
+      if (!isHovering) {
+        stopFireworks();
+      }
+      autoStopTimeout = null;
+    }, 15000);  // 15 seconds
+  });
+})();
+</script>
+{:/nomarkdown}
+
 ## Before You Ask
 
 - **Please read the [Troubleshooting](troubleshooting) section** before you ask for help, in case your question is answered there.
@@ -36,7 +189,7 @@ General advice when asking for help from the Smoothieware community.
   <br><br>
   If you are using a MKS or an AZSMZ board, <strong>please</strong> note that those boards are toxic to the community and project.
   <br><br>
-  As such, <strong>we respectfully request</strong> that you first contact the seller for help before asking in the forum or anywhere else in the community.
+  As such, <strong>we respectfully request</strong> that you first contact the seller for help before asking in the forum or anywhere else in the community, then after you have done this, you can ask the smoothie community for help of course, this isn't about preventing you from asking for help, just about making sure the sellers of boards that are toxic to the project at the very least do their part, by having these sorts of questions asked first. We'd greatly appreciate it.
   <br><br>
   Community members generally do not want to help companies that hurt the project we are all building. Please read <a href="troubleshooting#somebody-refused-to-help-me-because-my-board-is-a-mks-what-s-that-all-about">this explanation</a> before posting.
 </sl-alert>
