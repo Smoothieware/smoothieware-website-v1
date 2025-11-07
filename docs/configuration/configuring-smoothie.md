@@ -128,7 +128,7 @@ The filename must be `config` or `config.txt`
 
 ## Options
 
-You can find all configuration options on this page: [All configuration options](http://smoothieware.org/configuration-options)
+You can find all configuration options on this page: [All configuration options](/configuration-options)
 
 And you can also find the configuration options for each module, in that module's page.
 
@@ -176,7 +176,7 @@ To avoid problems, use the default file on github (see link above) as your start
 
 ## Console configuration commands
 
-There are [console commands](http://smoothieware.org/console-commands) that allow you to edit the configuration file over serial, without having to open the file in a text editor.
+There are [console commands](/console-commands) that allow you to edit the configuration file over serial, without having to open the file in a text editor.
 
 These commands are:
 
@@ -194,7 +194,7 @@ Will set the current acceleration setting to 1000.
 
 You need to reset the board after changing a value for it to be taken into account.
 
-You can find more information at [Console Commands](http://smoothieware.org/console-commands).
+You can find more information at [Console Commands](/console-commands).
 
 ## Config Overrides
 
@@ -270,7 +270,7 @@ M665
 
 You can do away with an editable configuration file altogether if that makes sense in your setup. For example, if you don't want users to have an easy way to edit the configuration by editing the configuration file on the SD card.
 
-To do this, remove the configuration file from the SD card. Then follow the instructions at [Compiling Smoothie](http://smoothieware.org/compiling-smoothie) but before compiling, edit the file named "config.default" to contain the values you want. Then compile, and flash to the board.
+To do this, remove the configuration file from the SD card. Then follow the instructions at [Compiling Smoothie](/compiling-smoothie) but before compiling, edit the file named "config.default" to contain the values you want. Then compile, and flash to the board.
 
 Now the firmware will be configured with the values you set, but users won't be able to edit them using the SD card, and modifying values will require compiling and reflashing.
 

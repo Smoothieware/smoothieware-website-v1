@@ -1,3 +1,7 @@
+---
+permalink: /player-options
+---
+
 # Player Options
 
 The Player module in Smoothie allows you to play G-code files from the SD card and control various aspects of playback behavior.

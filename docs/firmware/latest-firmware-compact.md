@@ -1,3 +1,7 @@
+---
+permalink: /latest-firmware-compact
+---
+
 ## Recent Commits
 
 {::nomarkdown}

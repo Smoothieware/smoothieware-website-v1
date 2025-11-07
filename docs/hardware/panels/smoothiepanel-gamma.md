@@ -1,4 +1,5 @@
 ---
+permalink: /smoothiepanel-gamma
 layout: default
 title: SmoothiePanel Gamma
 ---

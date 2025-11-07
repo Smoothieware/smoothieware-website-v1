@@ -1,3 +1,7 @@
+---
+permalink: /override-warning
+---
+
 # Config Override Warning
 
 {::nomarkdown}

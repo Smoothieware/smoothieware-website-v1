@@ -72,7 +72,7 @@ spindle.control_smoothing                    0.1               # default 0.1. Th
 {::nomarkdown}
 <sl-alert variant="neutral" open>
   <sl-icon slot="icon" name="info-circle"></sl-icon>
-  Check the <a href="http://smoothieware.org/pinout">pinout</a> to verify if a pin is capable for a certain functionality!
+  Check the <a href="/pinout">pinout</a> to verify if a pin is capable for a certain functionality!
 </sl-alert>
 {:/nomarkdown}
 

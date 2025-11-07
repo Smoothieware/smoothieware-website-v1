@@ -1,4 +1,5 @@
 ---
+permalink: /irc
 layout: default
 title: Smoothie IRC Channel
 ---

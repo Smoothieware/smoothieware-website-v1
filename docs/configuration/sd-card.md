@@ -1,4 +1,5 @@
 ---
+permalink: /sd-card
 layout: default
 title: SD Card
 ---

@@ -1,4 +1,5 @@
 ---
+permalink: /touchprobe
 layout: default
 title: Using the Touchprobe
 ---

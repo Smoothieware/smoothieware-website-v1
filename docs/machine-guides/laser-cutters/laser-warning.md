@@ -1,3 +1,7 @@
+---
+permalink: /laser-warning
+---
+
 ## Lasers will make you blind
 
 {::nomarkdown}

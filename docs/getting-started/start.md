@@ -1,4 +1,5 @@
 ---
+permalink: /start
 layout: default
 title: Smoothieware Home
 ---

@@ -1,3 +1,7 @@
+---
+permalink: /printing-from-sd-card
+---
+
 # Printing, milling or cutting from the SD card
 
 Printing, milling or cutting from the SD card on Smoothieboard is easy.

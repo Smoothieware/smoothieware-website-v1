@@ -1,3 +1,7 @@
+---
+permalink: /temperaturecontrol-fine-tuning
+---
+
 # Temperature Control Fine Tuning
 
 This page provides tips for fine-tuning temperature control settings in Smoothie.

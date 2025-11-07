@@ -1,4 +1,5 @@
 ---
+permalink: /drillingcycles
 layout: default
 title: Drilling Cycles Module
 ---

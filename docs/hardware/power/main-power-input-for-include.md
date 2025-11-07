@@ -1,3 +1,7 @@
+---
+permalink: /main-power-input-for-include
+---
+
 {::nomarkdown}
 <div style="float: right; margin-left: 1rem;">
 <a href="/images/power-supply.png">

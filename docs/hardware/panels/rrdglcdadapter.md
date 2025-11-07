@@ -4,7 +4,7 @@ permalink: /rrdglcdadapter
 
 # RRD GLCD Adapter board
 
-This adapter allows you to connect a [Reprapdiscount GLCD panel](http://smoothieware.org/panel) to a Smoothieboard easily.
+This adapter allows you to connect a [Reprapdiscount GLCD panel](/panel) to a Smoothieboard easily.
 
 {::nomarkdown}
 <div style="text-align: center; margin: 2rem 0;">

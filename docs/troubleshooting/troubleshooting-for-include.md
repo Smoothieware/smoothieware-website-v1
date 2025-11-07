@@ -1,3 +1,7 @@
+---
+permalink: /troubleshooting-for-include
+---
+
 ## Troubleshooting a problem with your Smoothieboard
 
 {::nomarkdown}
@@ -15,7 +19,7 @@ First of all, make sure you have read the documentation on this website, it is l
 
 If you can't find your answer here, you can also ask for help in the community. There are many channels:
 - [IRC for live chat, quicker answers quite often](irc)
-- [Forum](http://smoothieware.org/forum-welcome-mat)
+- [Forum](/forum-welcome-mat)
 - [Support Mailing list](http://groups.google.com/group/smoothie-dev)
 - [Google+ community](https://groups.google.com/g/smoothieware-support)
 

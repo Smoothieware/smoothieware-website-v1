@@ -1,4 +1,5 @@
 ---
+permalink: /jogger-dev
 layout: default
 title: Jogger Developer Documentation
 ---

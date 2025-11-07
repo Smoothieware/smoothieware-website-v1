@@ -64,7 +64,7 @@ For information on pin options and electrical settings (pull up, pull down, open
 
 | Communication | | |
 | `uart0.baud_rate` | 115200 | Baud rate for the default hardware serial port ( UART0, labelled "Serial" on the board, close to the USB connector ). Defaults to 9600 if undefined, or if the configuration file can not be read. |
-| `second_usb_serial_enable` | false | This enables a second serial port over the USB connection ( for example to have both [Pronterface](http://smoothieware.org/pronterface) and a terminal connected) |
+| `second_usb_serial_enable` | false | This enables a second serial port over the USB connection ( for example to have both [Pronterface](/pronterface) and a terminal connected) |
 
 | Miscellaneous | | |
 | `leds_disable` | true | Disable the 4 flashing LEDs on the board |
@@ -83,38 +83,38 @@ For information on pin options and electrical settings (pull up, pull down, open
 | `eta_current` | 1.5 | Current setting for the 7th stepper motor driver current control |
 | `theta_current` | 1.5 | Current setting for the 8th stepper motor driver current control |
 
-| [Player](http://smoothieware.org/player) | | |
+| [Player](/player) | | |
 {% include modules/player/player-options.md %}
 
-| [Extruder](http://smoothieware.org/extruder) | | |
+| [Extruder](/extruder) | | |
 {% include modules/extruders/extruder-options.md %}
 
-| [Laser](http://smoothieware.org/laser) | | |
+| [Laser](/laser) | | |
 {% include modules/laser/laser-options.md %}
 
-| [Temperature control](http://smoothieware.org/temperaturecontrol) | | |
+| [Temperature control](/temperaturecontrol) | | |
 {% include modules/temperature/temperaturecontrol-options.md %}
 
-| [Switch](http://smoothieware.org/switch) | | |
+| [Switch](/switch) | | |
 {% include modules/input-controls/switch-options.md %}
 
-| [Temperature Switch](http://smoothieware.org/temperatureswitch) | | |
+| [Temperature Switch](/temperatureswitch) | | |
 {% include modules/temperature/temperatureswitch-options.md %}
 
-| [Spindle control](http://smoothieware.org/spindle-control) | | |
+| [Spindle control](/spindle-control) | | |
 {% include modules/spindle/spindle-options.md %}
 
-| [Endstops](http://smoothieware.org/endstops) | | |
+| [Endstops](/endstops) | | |
 {% include modules/endstops-probes/endstops-options-for-include.md %}
 
-| [Z probe](http://smoothieware.org/zprobe) | | |
+| [Z probe](/zprobe) | | |
 {% include modules/endstops-probes/zprobe-options-for-include.md %}
 
-| [Leveling strategy](http://smoothieware.org/zprobe#leveling-strategies) | | |
+| [Leveling strategy](/zprobe#leveling-strategies) | | |
 {% include modules/endstops-probes/zprobe-options-for-include.md %}
 
-| [Panel](http://smoothieware.org/panel) | | |
+| [Panel](/panel) | | |
 {% include hardware/panels/panel-options.md %}
 
-| [Network](http://smoothieware.org/network) | | |
+| [Network](/network) | | |
 {% include modules/network/network-options.md %}

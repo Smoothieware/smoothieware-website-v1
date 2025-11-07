@@ -1,3 +1,7 @@
+---
+permalink: /mosfets-for-include
+---
+
 ### MOSFETs
 
 {::nomarkdown}

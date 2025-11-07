@@ -1,3 +1,7 @@
+---
+permalink: /delta-grid-calibration-options
+---
+
 # Delta Grid Calibration Options
 
 {::nomarkdown}

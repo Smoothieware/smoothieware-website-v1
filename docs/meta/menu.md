@@ -1,4 +1,5 @@
 ---
+permalink: /menu
 layout: default
 title: Menu Icons Reference
 ---

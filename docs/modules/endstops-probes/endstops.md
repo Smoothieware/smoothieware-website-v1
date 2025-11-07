@@ -32,7 +32,7 @@ If an endstop always reports 0, it probably means that it is not wired correctly
 
 If an endstop's values are inverted, it probably means you wired the pin as NO when it is NC, or the opposite.
 
-You can reverse a pin in the configuration file by adding or removing a « `!` » character after the pin number (see [Pin Configuration](http://smoothieware.org/pin-configuration.md)).
+You can reverse a pin in the configuration file by adding or removing a « `!` » character after the pin number (see [Pin Configuration](/pin-configuration)).
 
 For example, if the beta min endstop is inverted in your diagnostics, change:
 

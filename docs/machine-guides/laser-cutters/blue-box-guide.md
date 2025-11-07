@@ -1,4 +1,5 @@
 ---
+permalink: /blue-box-guide
 layout: default
 title: SmoothK40 Guide
 ---

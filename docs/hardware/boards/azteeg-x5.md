@@ -40,7 +40,7 @@ The Azteeg X5 mini comes pre-flashed with a bootloader, so you're ready to get s
 
 6. **Connect to Smoothie**: You may now connect to Smoothie with [Pronterface](pronterface) or Repetier Host at any baud rate.
 
-   If using **Windows**, you will need to install an inf serial driver for it to recognize the "Smoothie-serial" showing up on your PC. See [Windows Drivers](http://smoothieware.org/windows-drivers).
+   If using **Windows**, you will need to install an inf serial driver for it to recognize the "Smoothie-serial" showing up on your PC. See [Windows Drivers](/windows-drivers).
 
    Mac OS/X and Linux have the drivers built in. You can ignore any messages about missing DFU drivers.
 

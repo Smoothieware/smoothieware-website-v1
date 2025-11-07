@@ -1,3 +1,7 @@
+---
+permalink: /panel-options
+---
+
 | Parameter | Value | Description |
 | --------- | ----- | ----------- |
 | `panel.enable` | true | Set to true to enable the panel interface. Panels are a screen, an encoder wheel and/or a set of buttons, used to control your machine. |

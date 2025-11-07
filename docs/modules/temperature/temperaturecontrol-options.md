@@ -1,3 +1,7 @@
+---
+permalink: /temperaturecontrol-options
+---
+
 # Temperature Control Options
 
 This page lists all configuration options for the Temperature Control module, which manages heating and cooling for things like hotends and heated beds.

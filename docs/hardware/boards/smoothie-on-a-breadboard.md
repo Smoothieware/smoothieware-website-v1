@@ -119,7 +119,7 @@ Also, a play/pause button is used to force the bootloader into DFU mode to flash
 </a>
 
 Both buttons are push buttons, and connect from their respective pins to GND. Lower left is RESET, and top right is BOOTLOADER.
-You'll then be able to flash the chip using lpc21isp [following these instructions](http://smoothieware.org/flashing-the-bootloader).
+You'll then be able to flash the chip using lpc21isp [following these instructions](/flashing-the-bootloader).
 
 To force the bootloader into DFU mode hold the play/pause button, press reset then release the play/pause button.
 

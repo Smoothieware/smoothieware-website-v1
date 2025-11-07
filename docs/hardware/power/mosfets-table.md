@@ -1,3 +1,7 @@
+---
+permalink: /mosfets-table
+---
+
 #### MOSFETs Table
 
 This page documents the MOSFET outputs available on Smoothieboard and their specifications.

@@ -1,3 +1,7 @@
+---
+permalink: /motion-control-options
+---
+
 # Motion Control Options
 
 This page provides a complete reference of all configuration options for motion control in Smoothieware.

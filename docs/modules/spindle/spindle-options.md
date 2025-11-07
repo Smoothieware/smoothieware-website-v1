@@ -1,3 +1,7 @@
+---
+permalink: /spindle-options
+---
+
 # Spindle Options (Deprecated)
 
 {::nomarkdown}

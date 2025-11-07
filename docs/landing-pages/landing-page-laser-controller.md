@@ -1,4 +1,5 @@
 ---
+permalink: /landing-page-laser-controller
 title: Laser Cutter Controller - Professional Laser Control
 ---
 

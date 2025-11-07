@@ -1230,7 +1230,7 @@ function setup_config_line_click_handlers($popup: JQuery<HTMLElement>): void {
                     $line.on('click', (e) => {
 
                         // Don't trigger if clicking on copy button or other interactive elements
-                        if ($(e.target).closest('sl-copy-button, a').length > 0) {
+                        if ($(e.target).closest('sl-copy-button, sl-icon-button, a').length > 0) {
                             return;
                         }
 
@@ -1248,6 +1248,51 @@ function setup_config_line_click_handlers($popup: JQuery<HTMLElement>): void {
                         $(this).css('background-color', '');
                     });
                 }
+            });
+        }
+
+        // Set up copy button click handlers for highlighted lines
+        const copy_buttons = $popup.find('.copy-line-button');
+
+        if (copy_buttons.length > 0) {
+            copy_buttons.each((_index, button) => {
+                const $button = $(button);
+
+                // Add click handler to copy line content
+                $button.on('click', async (e) => {
+
+                    // Prevent event from propagating to the line click handler
+                    e.stopPropagation();
+                    e.preventDefault();
+
+                    // Get the line content from the parent line's data attribute
+                    const $line = $button.closest('.config-line');
+                    const line_content = $line.attr('data-line-content');
+
+                    if (line_content) {
+                        try {
+                            // Copy to clipboard using Clipboard API
+                            await navigator.clipboard.writeText(line_content);
+
+                            // Visual feedback: briefly change the icon
+                            $button.attr('name', 'check');
+                            setTimeout(() => {
+                                $button.attr('name', 'copy');
+                            }, 1500);
+
+                            console.log(`[setting-tag.ts] Copied line: ${line_content}`);
+
+                        } catch (error) {
+                            console.error('[setting-tag.ts] Failed to copy line:', error);
+
+                            // Show error feedback
+                            $button.attr('name', 'x');
+                            setTimeout(() => {
+                                $button.attr('name', 'copy');
+                            }, 1500);
+                        }
+                    }
+                });
             });
         }
     }, 100);

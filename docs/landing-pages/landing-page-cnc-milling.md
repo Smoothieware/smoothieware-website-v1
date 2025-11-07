@@ -307,7 +307,7 @@ A: Manual tool change (M6) is straightforward. ATC possible with GPIO programmin
 - [Robosprout (USA) - Ships worldwide](https://www.robosprout.com)
 
 #### Additional Notes:
-- External stepper driver support available for larger machines (see [wiring guide](http://smoothieware.org/general-appendixes))
+- External stepper driver support available for larger machines (see [wiring guide](/general-appendixes))
 - Board can be re-used for lasers, 3D printers, vinyl cutters, pick and place machines, gluing machines, etc.
 
 ---

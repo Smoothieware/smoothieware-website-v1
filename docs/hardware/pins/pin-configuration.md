@@ -1,3 +1,7 @@
+---
+permalink: /pin-configuration
+---
+
 # Pin Configuration
 
 A "pin" is an input or output on the Smoothieboard.
@@ -6,7 +10,7 @@ In a lot of cases (step/direction for external stepper motors, button inputs), y
 
 In other cases, a given pin is tied to a given peripheral on the board.
 
-See [Pinout](http://smoothieware.org/pinout.md) to learn about which pins are where.
+See [Pinout](/pinout) to learn about which pins are where.
 
 You can have a pin's output inverted by adding a `!` after this pin's number in the config line, example:
 

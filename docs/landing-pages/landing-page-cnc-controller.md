@@ -1,4 +1,5 @@
 ---
+permalink: /landing-page-cnc-controller
 title: CNC Controller Board - Smoothieboard v2 Prime
 ---
 

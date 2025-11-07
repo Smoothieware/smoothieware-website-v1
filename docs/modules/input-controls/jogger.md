@@ -1,4 +1,5 @@
 ---
+permalink: /jogger
 layout: default
 title: Jogger Module
 ---

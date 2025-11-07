@@ -1,3 +1,7 @@
+---
+permalink: /laser-for-include
+---
+
 {::nomarkdown}
 <a href="/images/temporary/laser-cutter-generic.jpg">
   <img src="/images/temporary/laser-cutter-generic.jpg" alt="High Voltage Warning" style="width: 300px; height: 427px; float: right; margin-left: 1rem;"/>

@@ -1,3 +1,7 @@
+---
+permalink: /migrating
+---
+
 # Migrating to Smoothie
 
 {::nomarkdown}

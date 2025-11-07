@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-edit-pages
 layout: default
 title: How to Edit Pages
 ---

@@ -1,3 +1,7 @@
+---
+permalink: /laser-guides-for-include
+---
+
 # Machine-specific guides
 
 Some guides have been written (or are being written) for converting specific machines to Smoothie.

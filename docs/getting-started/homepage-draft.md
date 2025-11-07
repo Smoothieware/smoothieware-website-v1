@@ -1,4 +1,5 @@
 ---
+permalink: /homepage-draft
 layout: default
 title: Welcome to Smoothie
 ---

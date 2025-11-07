@@ -1,3 +1,7 @@
+---
+permalink: /temperatureswitch-options
+---
+
 # TemperatureSwitch Options
 
 The TemperatureSwitch module automatically toggles a Switch module at a specified temperature.

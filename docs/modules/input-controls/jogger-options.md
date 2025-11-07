@@ -1,3 +1,7 @@
+---
+permalink: /jogger-options
+---
+
 # Jogger Options
 
 The Jogger module allows you to control machine movement using joystick input.

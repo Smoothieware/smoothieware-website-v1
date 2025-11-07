@@ -1,3 +1,7 @@
+---
+permalink: /guides
+---
+
 # Smoothie Guides
 
 Choose the guide that matches your machine type:

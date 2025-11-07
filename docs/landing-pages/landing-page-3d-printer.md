@@ -1,4 +1,5 @@
 ---
+permalink: /landing-page-3d-printer
 title: 3D Printer Controller - 32-Bit Without the Complexity
 ---
 

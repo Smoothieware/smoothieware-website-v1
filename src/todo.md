@@ -49,7 +49,7 @@
 # <setting> tag.
 
 * [ ] **Maybe**, create a page for each setting, based on the template used for the <setting> tag popups?
-* [ ] Add full support for the <setting> tag to only have a v1 or v2 entry and not two.
+* [x] Add full support for the <setting> tag to only have a v1 or v2 entry and not two.
 * [ ] The "arm_solution" setting in the yaml file doesn't have a "valid values" list for v1 but has it for v2, we need to fix this, and find other places where there are mismatches like this, but always base it on actual data from the source code.
 * [ ] Currently when we select an element with the <setting> tag the text that gets actually selected/copy-pasted isn't ideal, we'd like a custom format for settings, we should try to figure out a way to implement this so something nicer is selected when users select text that contains a <setting>.
 * [ ] CRITICAL: In advance, figure out which v2 settings don't have a matching v1 setting and vice versa and figure all that out BEFORE we edit the entire site to use the new <setting> tags.
@@ -57,6 +57,9 @@
 * [ ] CRITICAL: For the v2 settings we need an example section where we use the example config file and we show this setting "in-situ" inside the example config file. Actually maybe we need to do that for v1 too.
 * [ ] Let us configure between hover or click for the setting popups.
 * [ ] For any steps_per_mm value, have a "calculator" inside an alert in the popup. then once that is added, ask the coding agent for ideas for any other such tools, get a list of such tools, and select some to actually implement.
+* [ ] For stuff that contains alpha, beta, etc, for both v1 and v2 we should have a diagram based on the board images we have, that shows "this is alpha, this is beta", etc with the current one highlighted.
+* [ ] Currently if I copy/paste a line with a <setting> tag in it there are carriage returns between the elements, we want a nicer format, ideally with the v1/v2 labels included in a single-line format etc.
+* [ ] Currently for the default values we only use the value from the code, but we should show both the value from the code and the one from the example file if it exists.
 
 # Testing.
 

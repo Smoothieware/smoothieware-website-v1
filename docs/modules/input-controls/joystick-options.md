@@ -1,3 +1,7 @@
+---
+permalink: /joystick-options
+---
+
 # Joystick Options
 
 The joystick module allows you to control Smoothie using analog joystick inputs. Below are the configuration options available.

@@ -1120,10 +1120,39 @@ sl-alert::part(base) {
     align-items: baseline;
     padding: 0.15rem 0.75rem;
     transition: background-color 0.2s;
+    position: relative;
 }
 
 .config-line:hover {
     background-color: #121212;
+}
+
+/* Copy line button - shown on hover for any line */
+.copy-line-button {
+    position: absolute;
+    right: 0.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0;
+    transition: opacity 0.2s;
+    z-index: 10;
+    font-size: 1rem;
+}
+
+.config-line:hover .copy-line-button {
+    opacity: 1;
+}
+
+.copy-line-button::part(base) {
+    color: rgba(88, 166, 255, 0.9);
+}
+
+.config-line-target .copy-line-button::part(base) {
+    color: rgba(59, 130, 246, 0.9);
+}
+
+.config-line-section .copy-line-button::part(base) {
+    color: rgba(139, 92, 246, 0.9);
 }
 
 .line-number {
@@ -1143,16 +1172,50 @@ sl-alert::part(base) {
     font-family: 'Courier New', Consolas, monospace;
 }
 
-/* Target line (the setting being shown) - bold */
+/* Target line (the setting being shown) - bold with text glow effect */
+.config-line-target {
+    border-left: 3px solid rgba(59, 130, 246, 0.6);
+}
+
 .config-line-target .line-content {
     font-weight: bold;
     color: #ffffff;
+    text-shadow:
+        0 0 20px rgba(59, 130, 246, 0.6),
+        0 0 12px rgba(59, 130, 246, 0.5),
+        0 0 8px rgba(59, 130, 246, 0.4),
+        0 0 4px rgba(59, 130, 246, 0.3);
 }
 
-/* Section header line (v2 INI sections) - bold */
+.config-line-target .line-number {
+    color: rgba(59, 130, 246, 0.9);
+    font-weight: 600;
+    text-shadow:
+        0 0 10px rgba(59, 130, 246, 0.5),
+        0 0 5px rgba(59, 130, 246, 0.4);
+}
+
+/* Section header line (v2 INI sections) - bold with text glow effect */
+.config-line-section {
+    border-left: 3px solid rgba(139, 92, 246, 0.6);
+}
+
 .config-line-section .line-content {
     font-weight: bold;
     color: #ffffff;
+    text-shadow:
+        0 0 20px rgba(139, 92, 246, 0.6),
+        0 0 12px rgba(139, 92, 246, 0.5),
+        0 0 8px rgba(139, 92, 246, 0.4),
+        0 0 4px rgba(139, 92, 246, 0.3);
+}
+
+.config-line-section .line-number {
+    color: rgba(139, 92, 246, 0.9);
+    font-weight: 600;
+    text-shadow:
+        0 0 10px rgba(139, 92, 246, 0.5),
+        0 0 5px rgba(139, 92, 246, 0.4);
 }
 
 /* File breadcrumb (GitHub-style) */

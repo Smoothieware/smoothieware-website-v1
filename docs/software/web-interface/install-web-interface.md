@@ -1,4 +1,5 @@
 ---
+permalink: /install-web-interface
 layout: default
 title: Installing the Web Interface
 ---

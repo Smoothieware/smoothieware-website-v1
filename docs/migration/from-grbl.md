@@ -108,7 +108,7 @@ zprobe.probe_pin                             1.28!^          # Pin probe is atta
 In GRBL, you set the junction deviation parameter by modifying the `$11` option, while in Smoothie you edit:
 
 ```markdown
-junction_deviation                           0.05             # See http://smoothieware.org/motion-control#junction-deviation
+junction_deviation                           0.05             # See /motion-control#junction-deviation
 ```
 
 ## $12 – Arc tolerance, mm
@@ -194,7 +194,7 @@ In GRBL, you set the steps per millimeter for the primary axes by modifying the 
 
 ```markdown
 # Arm solution configuration: Cartesian robot. Translates mm positions into stepper positions
-# See http://smoothieware.org/stepper-motors
+# See /stepper-motors
 alpha_steps_per_mm                           80               # Steps per mm for alpha (X) stepper
 beta_steps_per_mm                            80               # Steps per mm for beta (Y) stepper
 gamma_steps_per_mm                           1600             # Steps per mm for gamma (Z) stepper

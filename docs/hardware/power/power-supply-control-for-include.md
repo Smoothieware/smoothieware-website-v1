@@ -1,3 +1,7 @@
+---
+permalink: /power-supply-control-for-include
+---
+
 # Power Supply Control
 
 This page describes how to control your power supply's ON/OFF signal from Smoothie using the Switch module.

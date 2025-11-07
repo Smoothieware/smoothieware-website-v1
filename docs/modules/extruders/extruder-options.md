@@ -1,3 +1,7 @@
+---
+permalink: /extruder-options
+---
+
 # Extruder Configuration Options
 
 This page lists all configuration options for the Extruder module.

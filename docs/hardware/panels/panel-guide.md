@@ -1,3 +1,7 @@
+---
+permalink: /panel-guide
+---
+
 # Panel Guide
 
 A panel is the combination of a screen and some kind of input method (buttons, encoder, touchscreen) attached to the machine.

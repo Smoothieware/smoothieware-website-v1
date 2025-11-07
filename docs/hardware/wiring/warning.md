@@ -1,3 +1,7 @@
+---
+permalink: /warning
+---
+
 # Safety Warnings
 
 Before you start wiring your machine's elements to the board, there are several things you need to keep in mind and be careful about during all of the assembly.

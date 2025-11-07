@@ -1,4 +1,5 @@
 ---
+permalink: /community
 layout: default
 title: Community
 ---
@@ -11,7 +12,7 @@ Join the Smoothieware community to get help, share your projects, and connect wi
 
 We have several ways to connect with the community:
 
-- [IRC (recommended ヾ(❀◦◡◦)彡*:・゚✧ )](http://smoothieware.org/irc) - Real-time chat for quick questions and discussions
+- [IRC (recommended ヾ(❀◦◡◦)彡*:・゚✧ )](/irc) - Real-time chat for quick questions and discussions
 - [Forum](forum/c-496918/general) - Threaded discussions for in-depth topics
 - [Support Mailing list](http://groups.google.com/group/smoothieware-support) - Email-based support and discussions
 - [Dev Mailing list](http://groups.google.com/group/smoothie-dev) - Development discussions and contributions

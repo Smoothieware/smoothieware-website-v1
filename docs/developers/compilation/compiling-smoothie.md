@@ -202,11 +202,11 @@ Ref: "make clean all" will compile/recompile everything needed for Smoothie. The
 
 ### Flashing via SD Bootloader
 
-If you are using a smoothieboard, the [SD bootloader](http://smoothieware.org/flashing-the-bootloader) is already present.
+If you are using a smoothieboard, the [SD bootloader](/flashing-the-bootloader) is already present.
 
-If you are using an mBed please see [here](http://smoothieware.org/flashing-the-bootloader).
+If you are using an mBed please see [here](/flashing-the-bootloader).
 
-If you are using an LPCXpresso1769 then you must first install the [SD bootloader](http://smoothieware.org/flashing-the-bootloader).
+If you are using an LPCXpresso1769 then you must first install the [SD bootloader](/flashing-the-bootloader).
 
 Once it is compiled, then simply copy the generated .bin file to the SD card with the name **firmware.bin**, then reset and it will be flashed to the board automatically.
 
@@ -217,7 +217,7 @@ make
 cp LPC1768/main.bin /media/smoothieboard-or-mbed/firmware.bin
 ```
 
-Detailed instructions can be found on the [Flashing Smoothie](http://smoothieware.org/flashing-smoothie-firmware) page.
+Detailed instructions can be found on the [Flashing Smoothie](/flashing-smoothie-firmware) page.
 
 ### Flashing via DFU (USB Device Firmware Update)
 

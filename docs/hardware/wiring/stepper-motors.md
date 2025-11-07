@@ -1,3 +1,7 @@
+---
+permalink: /stepper-motors
+---
+
 # Stepper Motors
 
 {::nomarkdown}
@@ -81,13 +85,13 @@ Once your stepper motor is properly connected to your Smoothieboard, it is ready
 
 If you want to use larger stepper motors than the Smoothieboard's drivers can handle (2A max), you need to use external stepper drivers.
 
-You can find detailed information on how to wire an external stepper motor driver to a Smoothieboard in the [External driver appendix](http://smoothieware.org/general-appendixes#external-drivers).
+You can find detailed information on how to wire an external stepper motor driver to a Smoothieboard in the [External driver appendix](/general-appendixes#external-drivers).
 
 ## Configuring
 
 Example configurations are available on [GitHub](https://github.com/Smoothieware/Smoothieware/tree/edge/ConfigSamples).
 
-You can also refer to the [Configuration documentation](http://smoothieware.org/configuring-smoothie).
+You can also refer to the [Configuration documentation](/configuring-smoothie).
 
 ### Current
 
@@ -159,7 +163,7 @@ Here is a good video on steps per millimeters:
 
 ### Direction
 
-It is now time to test your stepper motors. For this, you will need to use host software like Pronterface or the [web interface](http://smoothieware.org/network).
+It is now time to test your stepper motors. For this, you will need to use host software like Pronterface or the [web interface](/network).
 
 Now connect to your Smoothieboard over the serial interface. Power your machine on by plugging the PSU into the wall.
 

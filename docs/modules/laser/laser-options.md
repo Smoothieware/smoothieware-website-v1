@@ -1,3 +1,7 @@
+---
+permalink: /laser-options
+---
+
 # Laser Module Configuration
 
 The following table outlines the configuration options for the laser module in Smoothieware.

@@ -19,7 +19,7 @@ This is a J-head hotend with its thermistor and heating element.
 
 ## Multiple modules
 
-In Smoothie, you do not get just one TemperatureControl module. You can actually create as many as you want, simply by adding them to the [configuration file](http://smoothieware.org/configuring-smoothie.md).
+In Smoothie, you do not get just one TemperatureControl module. You can actually create as many as you want, simply by adding them to the [configuration file](/configuring-smoothie).
 
 It goes something like this:
 
@@ -37,7 +37,7 @@ This will create and configure two separate TemperatureControl modules that will
 
 The line that effectively "creates" the module is the `enable` option. If set to true, a module is created and further configuration is read. If set to false, further configuration for this module is ignored as no module is created.
 
-In the **Configuration** section below, the first two parts (`temperature_control.module_name`) of the configuration are sometimes omitted for conciseness, but have to be added in your actual configuration file ([see example](http://smoothieware.org/configuring-smoothie.md)).
+In the **Configuration** section below, the first two parts (`temperature_control.module_name`) of the configuration are sometimes omitted for conciseness, but have to be added in your actual configuration file ([see example](/configuring-smoothie)).
 
 ## Configuration
 
@@ -165,7 +165,7 @@ See this schematic below or on the [Smoothieboard](smoothieboard) page to see wh
   <img src="/images/mosfet-input-output.svg" alt="Mosfet inputs and outputs"/>
 </a>
 
-Read more about the mosfets [here](http://smoothieware.org/mosfets.md)
+Read more about the mosfets [here](/mosfets)
 
 To set a pin to a given heater, do for example:
 
@@ -260,7 +260,7 @@ This chapter covers all of the safety features, and how to set them up if needed
 
 If a thermistor is disconnected from its thermistor input (cable gets cut, connector falls), Smoothie can detect the problem by itself, as this causes a recognizably different input.
 
-When this happens, Smoothie will detect the problem, turn off all heaters, and enter the [HALT state](http://smoothieware.org/stopping-smoothie.md). It will also show you the following message:
+When this happens, Smoothie will detect the problem, turn off all heaters, and enter the [HALT state](/stopping-smoothie). It will also show you the following message:
 
 ```markdown
 Temperature reading is unreliable on T, HALT asserted - reset or M999 required

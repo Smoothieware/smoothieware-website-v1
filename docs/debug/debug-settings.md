@@ -1,4 +1,5 @@
 ---
+permalink: /debug-settings
 layout: default
 title: Debug - Setting Tags
 ---

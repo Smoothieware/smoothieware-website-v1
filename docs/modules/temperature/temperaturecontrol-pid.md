@@ -1,3 +1,7 @@
+---
+permalink: /temperaturecontrol-pid
+---
+
 ### Temperature Control PID
 
 {::nomarkdown}

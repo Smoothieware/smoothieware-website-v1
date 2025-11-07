@@ -15,7 +15,7 @@ Although not as common as the Smoothiefied 3D printer, the CNC mill machine is f
 
 This is a step-by-step guide to connecting your board to the various components of the CNC mill machine, configuring everything, from the beginning to actually milling material.
 
-This guide is a [community](http://smoothieware.org/irc) effort, and this page is a Wiki. Please don't hesitate to [edit it](#_editpage) to fix mistakes and add information, any help is very welcome.
+This guide is a [community](/irc) effort, and this page is a Wiki. Please don't hesitate to [edit it](#_editpage) to fix mistakes and add information, any help is very welcome.
 
 {::nomarkdown}
 <a href="/images/smoothieboard-fritzing.png">
@@ -89,15 +89,15 @@ However, due to lack of flash space on the v1 hardware, the v1 Smoothie firmware
 
 It includes:
 
-- A special CNC version of the [Panel](http://smoothieware.org/panel) screens
+- A special CNC version of the [Panel](/panel) screens
 
 - `grbl_mode` enabled by default (which means Smoothie interprets G-code as CNC G-code rather than 3D-printing G-code)
 
 - The Spindle module
 
-You will find information on flashing the firmware at [getting-smoothie](http://smoothieware.org/getting-smoothie)
+You will find information on flashing the firmware at [getting-smoothie](/getting-smoothie)
 
-You will find more information on `grbl_mode` on the [grbl_mode](http://smoothieware.org/grbl-mode) page.
+You will find more information on `grbl_mode` on the [grbl_mode](/grbl-mode) page.
 
 {% include hardware/power/logic-power-for-include.md %}
 
@@ -139,7 +139,7 @@ However, if you do not want to use the module, there are solutions to convert th
 
 If you run into trouble, something doesn't work as it should, head over to the [Troubleshooting](troubleshooting) page for a list of common problems and means of diagnosis.
 
-You can also contact the [Community](http://smoothieware.org/irc) for help if you can't find an answer in the documentation.
+You can also contact the [Community](/irc) for help if you can't find an answer in the documentation.
 
 # bCNC configuration
 

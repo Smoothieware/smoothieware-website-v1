@@ -1,4 +1,5 @@
 ---
+permalink: /pcb-milling
 layout: default
 title: PCB Milling
 ---

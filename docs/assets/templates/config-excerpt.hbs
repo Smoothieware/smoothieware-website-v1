@@ -44,9 +44,11 @@
             {{#each config_excerpt.lines}}
             <div class="config-line {{#if is_target}}config-line-target{{/if}} {{#if is_section_header}}config-line-section{{/if}}"
                  style="opacity: {{opacity_for_fade_level fade_level}}"
-                 {{#if ../github_url}}data-github-url="{{build_line_url ../github_url line_number}}"{{/if}}>
+                 {{#if ../github_url}}data-github-url="{{build_line_url ../github_url line_number}}"{{/if}}
+                 data-line-content="{{escape content}}">
                 <span class="line-number">{{add line_number 1}}</span>
                 <code class="line-content">{{{html_content}}}</code>
+                <sl-icon-button name="copy" label="Copy line" class="copy-line-button"></sl-icon-button>
             </div>
             {{/each}}
         </div>

@@ -1,4 +1,5 @@
 ---
+permalink: /test-components
 layout: default
 title: Shoelace Components Test
 ---

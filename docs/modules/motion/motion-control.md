@@ -169,7 +169,7 @@ It can be canceled with `G49`.
 
 **NOTE** as this uses tool offsets a multi-extruder setup executing a `T0` or `T1` will reset the offset to the default for that tool.
 
-If you want to do baby steps from the panel menus, you can easily do this using the custom_menu (see [panel](http://smoothieware.org/panel#all-configuration-options)) feature of panels:
+If you want to do baby steps from the panel menus, you can easily do this using the custom_menu (see [panel](/panel#all-configuration-options)) feature of panels:
 
 ```plaintext
 custom_menu.babystepup.enable               true              #

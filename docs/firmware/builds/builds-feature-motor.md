@@ -1,3 +1,7 @@
+---
+permalink: /builds-feature-motor
+---
+
 # Feature/Motor Branch Builds
 
 This page provides automated builds for the [feature/motor](https://github.com/smoothieware/smoothieware/tree/feature/motor) branch.

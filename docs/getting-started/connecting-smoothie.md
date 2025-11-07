@@ -1,4 +1,5 @@
 ---
+permalink: /connecting-smoothie
 layout: default
 title: Connecting to Smoothie
 ---

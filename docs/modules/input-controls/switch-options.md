@@ -1,3 +1,7 @@
+---
+permalink: /switch-options
+---
+
 # Switch Module Options
 
 The Switch module is a versatile module that can be used to do many different things.

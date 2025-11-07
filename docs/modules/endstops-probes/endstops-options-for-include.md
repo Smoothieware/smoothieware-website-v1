@@ -1,3 +1,7 @@
+---
+permalink: /endstops-options-for-include
+---
+
 # Endstops Configuration Options
 
 This page provides a complete reference of all configuration options for the endstops module.

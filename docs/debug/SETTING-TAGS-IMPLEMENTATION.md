@@ -1,3 +1,7 @@
+---
+permalink: /SETTING-TAGS-IMPLEMENTATION
+---
+
 # Setting Tags Implementation Summary
 
 ## Overview

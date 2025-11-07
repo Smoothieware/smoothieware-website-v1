@@ -1,4 +1,5 @@
 ---
+permalink: /developers-guide
 layout: default
 title: Developers Guide
 ---

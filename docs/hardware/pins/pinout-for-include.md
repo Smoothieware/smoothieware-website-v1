@@ -1,3 +1,7 @@
+---
+permalink: /pinout-for-include
+---
+
 # Smoothieboard Pinout
 
 This page shows the pinout diagrams for the Smoothieboard.

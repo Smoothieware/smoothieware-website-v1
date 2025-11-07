@@ -5,7 +5,7 @@ permalink: /getting-smoothieboard
 
 # Getting Smoothieboard
 
-[Smoothieboard](http://smoothieware.org/smoothieboard) is now for sale from the US (by Chris Cecil, Smoothie project contributor) and Europe (by Arthur, Smoothie/Smoothieboard dev).
+[Smoothieboard](/smoothieboard) is now for sale from the US (by Chris Cecil, Smoothie project contributor) and Europe (by Arthur, Smoothie/Smoothieboard dev).
 
 ## North America
 
@@ -88,4 +88,4 @@ Smoothieboard is [OpenHardware](http://en.wikipedia.org/wiki/Open-source_hardwar
 
 You are free to use it, make it, sell it, modify it (as long as you release the changes under the same license).
 
-If you want to make it yourself and use the Smoothie* namespace, you want to take a look [here](http://smoothieware.org/policy).
+If you want to make it yourself and use the Smoothie* namespace, you want to take a look [here](/policy).

@@ -1,3 +1,7 @@
+---
+permalink: /contributing-for-include
+---
+
 # Contributing
 
 {::nomarkdown}

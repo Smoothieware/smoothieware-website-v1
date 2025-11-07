@@ -1,3 +1,7 @@
+---
+permalink: /stopping-smoothie-for-include
+---
+
 # Stopping Smoothie
 
 There are several different ways to stop Smoothie during operation, each with different behaviors and use cases.

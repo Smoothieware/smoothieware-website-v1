@@ -1,4 +1,5 @@
 ---
+permalink: /latest-firmware
 layout: default
 title: Latest Smoothie Commits
 ---

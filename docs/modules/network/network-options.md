@@ -1,3 +1,7 @@
+---
+permalink: /network-options
+---
+
 # Network Configuration Options
 
 This page lists all network-related configuration options for Smoothieware.

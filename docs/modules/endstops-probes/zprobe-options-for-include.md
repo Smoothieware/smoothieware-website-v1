@@ -1,3 +1,7 @@
+---
+permalink: /zprobe-options-for-include
+---
+
 # Z-Probe Options
 
 The Z-probe module in Smoothieware is used to scan surfaces, calibrate machine parameters, and compensate for non-planar surfaces.

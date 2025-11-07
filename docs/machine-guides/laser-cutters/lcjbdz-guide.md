@@ -26,13 +26,13 @@ This allows the machine to cut and engrave plywood, MDF, balsa, cardboard, paper
 
 This is a step-by-step guide to connecting your board to the various components of the laser cutter, configuring everything, from the beginning to actually cutting material.
 
-This guide is a [community](http://smoothieware.org/irc) effort, and this page is a Wiki. Please don't hesitate to [edit it](#_editpage) to fix mistakes and add information, any help is very welcome.
+This guide is a [community](/irc) effort, and this page is a Wiki. Please don't hesitate to [edit it](#_editpage) to fix mistakes and add information, any help is very welcome.
 
 ## About this guide
 
 This guide is specific to the « Red box » model that is very commonly found, but the information it contains should be useful for most Chinese laser cutters. 
 
-There is a more general guide: the [Laser Cutter Guide](http://smoothieware.org/laser-cutter-guide.md). You should read it before you read this guide, as it contains much information you need to be familiar with to do things properly.
+There is a more general guide: the [Laser Cutter Guide](/laser-cutter-guide). You should read it before you read this guide, as it contains much information you need to be familiar with to do things properly.
 
 This guide is based on M@ Dunlap's red box build log... okay, let's call it what it is, this guide **is** my red box build log...
 

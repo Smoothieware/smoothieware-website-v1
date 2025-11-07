@@ -1,4 +1,5 @@
 ---
+permalink: /6axis
 layout: default
 title: 6 Axis Configuration
 ---

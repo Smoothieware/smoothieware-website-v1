@@ -1,3 +1,7 @@
+---
+permalink: /unboxing
+---
+
 # Unboxing
 
 {::nomarkdown}
@@ -37,7 +41,7 @@ Connect a [USB-B](http://en.wikipedia.org/wiki/USB#.22A.22_.26_.22B.22_connector
 
 A moment after connection, your computer will recognize the Smoothieboard as a [USB Mass Storage Device](http://en.wikipedia.org/wiki/USB_mass_storage_device_class) (like a USB disk-drive or an SD card reader), showing you the files present on the SD card.
 
-Drivers are needed for Windows 7/8, while Linux and Mac OS X directly support the device, you can [find those drivers here](http://smoothieware.org/windows-drivers).
+Drivers are needed for Windows 7/8, while Linux and Mac OS X directly support the device, you can [find those drivers here](/windows-drivers).
 
 This allows you to add, copy, edit, or delete any file you'd like.
 
@@ -45,14 +49,14 @@ Already present on the SD card is a file named "config".
 
 This file contains all of the configuration options for your board and is read when you start or reset your board.
 
-You edit the [configuration](http://smoothieware.org/configuring-smoothie) simply by editing this file in a [Text Editor](https://wiki.gnome.org/Apps/Gedit), saving it, and resetting the board.
+You edit the [configuration](/configuring-smoothie) simply by editing this file in a [Text Editor](https://wiki.gnome.org/Apps/Gedit), saving it, and resetting the board.
 
 No need to recompile or flash the board.
 
 {::nomarkdown}
 <sl-alert variant="success" open>
   <sl-icon slot="icon" name="check-circle"></sl-icon>
-  You can read more about configuring your Smoothieboard at <a href="http://smoothieware.org/configuring-smoothie">Configuring Smoothie</a>
+  You can read more about configuring your Smoothieboard at <a href="/configuring-smoothie">Configuring Smoothie</a>
 </sl-alert>
 {:/nomarkdown}
 
@@ -95,7 +99,7 @@ Network is disabled by default but is very easy to enable and configure.
 
 It is also the recommended main method of communicating with your Smoothieboard.
 
-You can find all the information you need about using the network interface here: [Network interface](http://smoothieware.org/network)
+You can find all the information you need about using the network interface here: [Network interface](/network)
 
 # Updating your firmware
 
@@ -113,4 +117,4 @@ Then, the new firmware will "flash" (you will see the LEDs on the board do a lit
 
 This is particularly useful if you ever need to ask for help, as people helping you will be assuming you have the latest version.
 
-You can find the file, and information on how to flash it, at [Flashing Smoothie Firmware](http://smoothieware.org/flashing-smoothie-firmware).
+You can find the file, and information on how to flash it, at [Flashing Smoothie Firmware](/flashing-smoothie-firmware).

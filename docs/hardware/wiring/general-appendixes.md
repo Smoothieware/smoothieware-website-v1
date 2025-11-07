@@ -1,3 +1,7 @@
+---
+permalink: /general-appendixes
+---
+
 {% include modules/player/printing-from-sd-card.md %}
 
 ## Wiring

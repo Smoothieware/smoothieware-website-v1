@@ -1,3 +1,7 @@
+---
+permalink: /gamma-max-for-include
+---
+
 # Configuring Z height
 
 After homing (with `G28`), the machine knows it is at Z maximum position if your machine homes to max, and at Z minimum position if your machine homes to min.

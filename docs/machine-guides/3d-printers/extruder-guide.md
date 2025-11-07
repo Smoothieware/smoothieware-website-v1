@@ -1,3 +1,7 @@
+---
+permalink: /extruder-guide
+---
+
 # Extruder
 
 Extruders are used to push plastic filament through a hotend, to achieve the awesome feat of [3D Printing](http://en.wikipedia.org/wiki/3D_printing).
@@ -87,7 +91,7 @@ These can be set differently for each extruder defined.
 
 ### Pins
 
-As all stepper motors, the extruder stepper motor needs 3 pins to be controlled: **step**, **direction**, and **enable** (See [Pin Reference](http://smoothieware.org/lpc1769-pin-usage) and [Pinout](pinout)):
+As all stepper motors, the extruder stepper motor needs 3 pins to be controlled: **step**, **direction**, and **enable** (See [Pin Reference](/lpc1769-pin-usage) and [Pinout](pinout)):
 
 **1st Extruder** (delta, or M4)
 
@@ -152,7 +156,7 @@ The configuration looks like this:
 
 ```markdown
 ## Extruder module configuration
-# See http://smoothieware.org/extruder
+# See /extruder
 extruder.hotend.enable true # Whether to activate the extruder module at all. All configuration is ignored if false
 extruder.hotend.steps_per_mm 140 # Steps per mm for extruder stepper
 extruder.hotend.acceleration 500 # Acceleration for the stepper motor mm/sec²

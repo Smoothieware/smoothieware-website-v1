@@ -12377,7 +12377,7 @@ function setup_config_line_click_handlers($popup) {
         if (github_url) {
           $line.css("cursor", "pointer");
           $line.on("click", (e) => {
-            if (import_jquery.default(e.target).closest("sl-copy-button, a").length > 0) {
+            if (import_jquery.default(e.target).closest("sl-copy-button, sl-icon-button, a").length > 0) {
               return;
             }
             window.open(github_url, "_blank", "noopener,noreferrer");
@@ -12390,6 +12390,34 @@ function setup_config_line_click_handlers($popup) {
             import_jquery.default(this).css("background-color", "");
           });
         }
+      });
+    }
+    const copy_buttons = $popup.find(".copy-line-button");
+    if (copy_buttons.length > 0) {
+      copy_buttons.each((_index, button) => {
+        const $button = import_jquery.default(button);
+        $button.on("click", async (e) => {
+          e.stopPropagation();
+          e.preventDefault();
+          const $line = $button.closest(".config-line");
+          const line_content = $line.attr("data-line-content");
+          if (line_content) {
+            try {
+              await navigator.clipboard.writeText(line_content);
+              $button.attr("name", "check");
+              setTimeout(() => {
+                $button.attr("name", "copy");
+              }, 1500);
+              console.log(`[setting-tag.ts] Copied line: ${line_content}`);
+            } catch (error) {
+              console.error("[setting-tag.ts] Failed to copy line:", error);
+              $button.attr("name", "x");
+              setTimeout(() => {
+                $button.attr("name", "copy");
+              }, 1500);
+            }
+          }
+        });
       });
     }
   }, 100);

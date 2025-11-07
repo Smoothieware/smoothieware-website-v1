@@ -1,4 +1,5 @@
 ---
+permalink: /landing-page-cnc-mill
 title: CNC Mill Controller - Affordable Professional Control
 ---
 

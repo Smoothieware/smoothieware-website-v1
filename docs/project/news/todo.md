@@ -26,7 +26,7 @@ But there are many things we want to improve, and new features we want to implem
 {::nomarkdown}
 <sl-alert variant="success" open>
   <sl-icon slot="icon" name="check-circle"></sl-icon>
-  <strong>Step generation improvements</strong> <a href="https://github.com/wolfmanjm">Jim Morris</a> is working on several improvements on the step generation in Smoothie, including <a href="https://github.com/Smoothieware/Smoothieware/issues/82">removing on_gcode_execute</a> and <a href="https://github.com/Smoothieware/Smoothieware/issues/107">doing acceleration every step</a> instead of on a fixed clock as we do now, as well as many other small changes.<br><br>This is expected to result in a much saner codebase, smoothness/performance improvements, and to make it easier to implement some new features, like S-curve acceleration, 6-axis support and some extruder features.<br><br>This is going to require, amongst other things, a massive rewrite of the Extrude and Laser modules.<br><br>This is also possibly going to solve the problem <a href="http://smoothieware.org/simplify3d">Simplify3D and Smoothie have with each other</a>.<br><br><strong>Update</strong> : This was merged into edge beginning of July 2016, and is now being tested by the community in the wild.
+  <strong>Step generation improvements</strong> <a href="https://github.com/wolfmanjm">Jim Morris</a> is working on several improvements on the step generation in Smoothie, including <a href="https://github.com/Smoothieware/Smoothieware/issues/82">removing on_gcode_execute</a> and <a href="https://github.com/Smoothieware/Smoothieware/issues/107">doing acceleration every step</a> instead of on a fixed clock as we do now, as well as many other small changes.<br><br>This is expected to result in a much saner codebase, smoothness/performance improvements, and to make it easier to implement some new features, like S-curve acceleration, 6-axis support and some extruder features.<br><br>This is going to require, amongst other things, a massive rewrite of the Extrude and Laser modules.<br><br>This is also possibly going to solve the problem <a href="/simplify3d">Simplify3D and Smoothie have with each other</a>.<br><br><strong>Update</strong> : This was merged into edge beginning of July 2016, and is now being tested by the community in the wild.
 </sl-alert>
 {:/nomarkdown}
 
@@ -103,7 +103,7 @@ But there are many things we want to improve, and new features we want to implem
 {::nomarkdown}
 <sl-alert variant="primary" open>
   <sl-icon slot="icon" name="lightbulb"></sl-icon>
-  <strong>Queue refactor</strong> There is a planned refactoring ( or at least an exploration to see if it would be practical ) of the "queue" system in Smoothie, that would make the code saner, would use less ram, and would allow for more performance/new features.<br><br>You can read about it at : <a href="http://smoothieware.org/queue-refactor">Queue refactor</a> It is likely this will not be tried before a lot of other things happen ( including Smoothie2 firmware ) because it would change a lot of things in the firmware.<br><br>It is also possible we will move step by step towards this, at least for part of it ( Jim Morris already started this by removing occurrences of on_gcode_execute ).<br><br>NOTE this is no longer required after the motion control merge.<br><br>It basically is not an issue now.
+  <strong>Queue refactor</strong> There is a planned refactoring ( or at least an exploration to see if it would be practical ) of the "queue" system in Smoothie, that would make the code saner, would use less ram, and would allow for more performance/new features.<br><br>You can read about it at : <a href="/queue-refactor">Queue refactor</a> It is likely this will not be tried before a lot of other things happen ( including Smoothie2 firmware ) because it would change a lot of things in the firmware.<br><br>It is also possible we will move step by step towards this, at least for part of it ( Jim Morris already started this by removing occurrences of on_gcode_execute ).<br><br>NOTE this is no longer required after the motion control merge.<br><br>It basically is not an issue now.
 </sl-alert>
 {:/nomarkdown}
 
@@ -151,9 +151,9 @@ But there are many things we want to improve, and new features we want to implem
 
 ## Smoothie2 firmware
 
-[Smoothie2](https://github.com/Smoothieware/Smoothie2) is a port of the Smoothieware firmware to the [Smoothieboard v2 hardware](http://smoothieware.org/blog_13).
+[Smoothie2](https://github.com/Smoothieware/Smoothie2) is a port of the Smoothieware firmware to the [Smoothieboard v2 hardware](/blog_13).
 
-[Second update on v2 hardware](http://smoothieware.org/blog_15)
+[Second update on v2 hardware](/blog_15)
 
 Basic functions such as serial communication, configuration, planning and step generation, have been ported, but many others like temperature control, USB, Ethernet, SD card support, etc, are still missing.
 

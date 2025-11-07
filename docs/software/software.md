@@ -243,7 +243,7 @@ permalink: /software
           <sl-icon name="book" slot="prefix"></sl-icon>
           Documentation
         </sl-button>
-        <sl-button href="http://smoothieware.org/cura" target="_blank" class="link-button" variant="default" size="small">
+        <sl-button href="/cura" target="_blank" class="link-button" variant="default" size="small">
           <sl-icon name="link" slot="prefix"></sl-icon>
           Smoothie Setup
         </sl-button>

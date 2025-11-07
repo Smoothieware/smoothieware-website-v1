@@ -24,7 +24,7 @@ This allows the machine to cut and engrave plywood, MDF, balsa, cardboard, paper
 
 This is a step-by-step guide to connecting your board to the various components of the laser cutter, configuring everything, from the beginning to actually cutting material.
 
-This guide is a [community](http://smoothieware.org/irc) effort, and this page is a Wiki. Please don't hesitate to [edit it](#_editpage) to fix mistakes and add information, any help is very welcome.
+This guide is a [community](/irc) effort, and this page is a Wiki. Please don't hesitate to [edit it](#_editpage) to fix mistakes and add information, any help is very welcome.
 
 {::nomarkdown}
 <a href="/images/temporary/laser-cutter-generic.jpg">
@@ -45,7 +45,7 @@ This guide is specific to the « Blue box » model that is very commonly found, 
 
 Larger Chinese models have higher quality, and function on basically the same principle ( except they use external stepper motor drivers ).
 
-There is a more general guide: the [Laser Cutter Guide](http://smoothieware.org/laser-cutter-guide). You should read it before you read this guide, as it contains much information you need to be familiar with to do things properly.
+There is a more general guide: the [Laser Cutter Guide](/laser-cutter-guide). You should read it before you read this guide, as it contains much information you need to be familiar with to do things properly.
 
 This guide is based on Stephane BUISSON's blue box build log.
 
@@ -174,7 +174,7 @@ Your machine has two stepper motors, one for the X axis, and one for the Y axis.
 
 If you are using a Smoothieboard in a blue box, you will want to wire each of those stepper motors to one of the stepper motor drivers on the Smoothieboard ( M1 for X, and M2 for Y ).
 
-If you are following this guide along but are using a larger machine than the blue box, then it's very likely your machine came with external stepper motor drivers, and you want to simply have Smoothieboard control those via their step/direction/enable interface. If this is the case, please look at the [laser cutter guide's](http://smoothieware.org/laser-cutter-guide) section on external stepper motor drivers.
+If you are following this guide along but are using a larger machine than the blue box, then it's very likely your machine came with external stepper motor drivers, and you want to simply have Smoothieboard control those via their step/direction/enable interface. If this is the case, please look at the [laser cutter guide's](/laser-cutter-guide) section on external stepper motor drivers.
 
 The first thing you want to do, is find the wires for each stepper motor, and follow them to the controller board.
 
@@ -196,6 +196,6 @@ Once you have located each set of 4 wires, separate them from the rest, and for 
 
 Then connect the X stepper motor to the M1 stepper motor driver, and the Y stepper motor to the M2 stepper motor driver.
 
-Finally, in your [configuration file](http://smoothieware.org/configuring-smoothie), change `alpha_current` and `beta_current` to the value `1` ( for 1 Ampere ), and change the `alpha_steps_per_mm` and `beta_steps_per_mm` to the value `157.575`.
+Finally, in your [configuration file](/configuring-smoothie), change `alpha_current` and `beta_current` to the value `1` ( for 1 Ampere ), and change the `alpha_steps_per_mm` and `beta_steps_per_mm` to the value `157.575`.
 
 Once this is done, connect to the board via USB using software such as Pronterface or the web interface, power up the machine, and you should be able to move the stepper motors, and therefore the axes, using the controls in the software.

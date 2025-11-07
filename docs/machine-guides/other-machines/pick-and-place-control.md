@@ -1,3 +1,7 @@
+---
+permalink: /pick-and-place-control
+---
+
 # Pick and Place Tool Control
 
 {::nomarkdown}

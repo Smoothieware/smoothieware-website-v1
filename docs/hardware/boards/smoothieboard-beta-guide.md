@@ -113,7 +113,7 @@ Once you have copied the configuration file under the name "config" on the SD ca
 
   See the <a href="windows-drivers">Windows Drivers</a> page for detailed instructions.
 
-  If something does not work, you can contact the team via <a href="http://smoothieware.org/irc">IRC</a>.
+  If something does not work, you can contact the team via <a href="/irc">IRC</a>.
 </sl-alert>
 
 If you are a Linux or Mac user, don't worry about drivers - it'll all work out of the box.

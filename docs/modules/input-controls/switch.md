@@ -48,7 +48,7 @@ etc ...
 
 The initial internal state of the switch at boot is set by the `startup_state` setting, which should be set to "true" or "false". 
 
-Also remember that individual pins can be inverted with a `!` ( see [Pin Configuration](http://smoothieware.org/pin-configuration) ). Default is false. 
+Also remember that individual pins can be inverted with a `!` ( see [Pin Configuration](/pin-configuration) ). Default is false. 
 
 There is also a `startup_value` setting that sets the default analog value used for pwm on an output pin. This value defaults to always on.
 
@@ -76,7 +76,7 @@ switch.fan1.input_pin_behavior            toggle
 
 ### Output Pin
 
-Set this config value to drive an output pin based on the internal state of the Switch module. Remember that the pin can always be inverted with a `!` ( see [Pin Configuration](http://smoothieware.org/pin-configuration) ).
+Set this config value to drive an output pin based on the internal state of the Switch module. Remember that the pin can always be inverted with a `!` ( see [Pin Configuration](/pin-configuration) ).
 
 ```markdown
 switch.fan1.output_pin                    2.7
@@ -194,7 +194,7 @@ after_suspend_gcode                      G91_G0E-5_G0Z10_G90_G0X-50Y-50        #
 before_resume_gcode                      G91_G1E1_G90                          # Gcode to run after temp is reached but before resume - do a prime
 ```
 
-Note, there is a real filament detector module which works much better than this, see [filament-detector](http://smoothieware.org/filament-detector).
+Note, there is a real filament detector module which works much better than this, see [filament-detector](/filament-detector).
 
 ### Suspend and resume buttons
 
@@ -301,7 +301,7 @@ switch.z-2.output_pin                        1.30             # Pin to control e
 
 For wiring, simply wire pin 1.31 to the enable pin of the first stepper driver and pin 1.30 to the enable pin of the second stepper driver. 
 
-Wiring the same way you'd wire step and direction signals in the [external|drivers documentation](http://smoothieware.org/general-appendixes#external-drivers). ( note that if you will be using Open-Drain wiring, you need to add "o!" to your pin numbers, same as for step and dir ).
+Wiring the same way you'd wire step and direction signals in the [external|drivers documentation](/general-appendixes#external-drivers). ( note that if you will be using Open-Drain wiring, you need to add "o!" to your pin numbers, same as for step and dir ).
 
 You also need to wire the endstops so that a trigger is detected when *either* is triggered. This means if your endstops are wired as NC, you wire them in series, and if they are wiride as NO, you wire them in parralel.
 

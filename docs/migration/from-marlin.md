@@ -1,4 +1,5 @@
 ---
+permalink: /from-marlin
 layout: default
 title: Moving from Marlin to Smoothie
 ---
@@ -155,7 +156,7 @@ While in Smoothie, you instead configure that value for each [Temperaturecontrol
 
 ```markdown
 # PID configuration
-# See http://smoothieware.org/temperaturecontrol#pid
+# See /temperaturecontrol#pid
 temperature_control.hotend.p_factor 13.7 # P (proportional) factor
 temperature_control.hotend.i_factor 0.097 # I (integral) factor
 temperature_control.hotend.d_factor 24 # D (derivative) factor
@@ -304,7 +305,7 @@ While in Smoothie, you edit the steps for the primary axes by changing:
 
 ```markdown
 # Arm solution configuration: Cartesian robot. Translates mm positions into stepper positions
-# See http://smoothieware.org/stepper-motors
+# See /stepper-motors
 alpha_steps_per_mm 80 # Steps per mm for alpha (X) stepper
 beta_steps_per_mm 80 # Steps per mm for beta (Y) stepper
 gamma_steps_per_mm 4000 # Steps per mm for gamma (Z) stepper
@@ -404,7 +405,7 @@ However Smoothie uses a different concept, which more finely allows to regulate 
 You need to modify the value:
 
 ```markdown
-junction_deviation 0.05 # See http://smoothieware.org/motion-control#junction-deviation
+junction_deviation 0.05 # See /motion-control#junction-deviation
 ```
 
 This is not an exact science as smoothie and marlin's methods are different, but if you are looking for a "start" value (that will still likely have to be tuned), you can find your junction_deviation by dividing Marlin's jerk by 60:
@@ -435,7 +436,7 @@ While in Smoothie, you do this by adding a `!` to the direction pin of that axis
 ```markdown
 # Stepper module configuration
 # Pins are defined as ports, and pin numbers, appending "!" to the number will invert a pin
-# See http://smoothieware.org/pin-configuration and http://smoothieware.org/pinout
+# See /pin-configuration and /pinout
 alpha_step_pin 2.0 # Pin for alpha stepper step signal
 alpha_dir_pin 0.5 # Pin for alpha stepper direction, add '!' to reverse direction
 alpha_en_pin 0.4 # Pin for alpha enable pin
@@ -448,7 +449,7 @@ to:
 ```markdown
 # Stepper module configuration
 # Pins are defined as ports, and pin numbers, appending "!" to the number will invert a pin
-# See http://smoothieware.org/pin-configuration and http://smoothieware.org/pinout
+# See /pin-configuration and /pinout
 alpha_step_pin 2.0 # Pin for alpha stepper step signal
 alpha_dir_pin 0.5! # Pin for alpha stepper direction, add '!' to reverse direction
 alpha_en_pin 0.4 # Pin for alpha enable pin

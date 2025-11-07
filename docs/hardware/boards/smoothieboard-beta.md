@@ -34,9 +34,9 @@ The [Smoothie](http://smoothieware.org) firmware is designed for maximum usefuln
 
 And with more to come: laser engraving, SMT pick and place machine, foam cutter, delta robot, and anything else you care to imagine.
 
-## [Getting one](http://smoothieware.org/getting-smoothieboard)
+## [Getting one](/getting-smoothieboard)
 
-You can now get a smoothieboard [here](http://smoothieware.org/getting-smoothieboard).
+You can now get a smoothieboard [here](/getting-smoothieboard).
 
 ## Price
 We intend to have the best price possible right from the first batch. That would be $120 for the bare ( bare meaning working, just without connectors ) board, an additional $10 for the microSD card and USB cable if you don't have them already, and same thing $10 more for screw terminals, pin headers and power connectors.

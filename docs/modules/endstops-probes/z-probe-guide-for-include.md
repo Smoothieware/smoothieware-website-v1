@@ -1,3 +1,7 @@
+---
+permalink: /z-probe-guide-for-include
+---
+
 # Z-Probe Guide
 
 Smoothie allows you to use a probe to do a variety of tasks that improve precision and automation in your CNC operations.

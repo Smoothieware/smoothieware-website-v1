@@ -1,3 +1,7 @@
+---
+permalink: /temperaturecontrol-thermistor-choice
+---
+
 ### Thermistor Choice
 
 Different models of thermistors are used in hotends or heated beds, and each type translates temperature into resistance differently. It's essential to inform Smoothie about the specific thermistor model you have to ensure accurate temperature readings.

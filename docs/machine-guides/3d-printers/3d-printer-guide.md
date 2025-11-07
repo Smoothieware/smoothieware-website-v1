@@ -15,7 +15,7 @@ Probably the machine for which Smoothie is most used, due to Smoothie's roots in
 
 This is a step-by-step guide to connecting your board to the various components of the 3D printer, configuring everything, from the beginning to actual printing.
 
-This guide is a [community](http://smoothieware.org/irc) effort, and this page is a Wiki. Please don't hesitate to [edit it](#_editpage) to fix mistakes and add information, any help is very welcome.
+This guide is a [community](/irc) effort, and this page is a Wiki. Please don't hesitate to [edit it](#_editpage) to fix mistakes and add information, any help is very welcome.
 
 On a typical 3D printer setup, installing a Smoothieboard will mean you do the following things: 
 
@@ -97,7 +97,7 @@ First, the hot-end heats the plastic to the point where it is liquid enough to g
 
 Second, the heated bed (in only some printers), on which the first layer is deposited, is heated to allow for better sticking of the plastic to the bed, and more uniform temperature in the part while printing.
 
-For detailed information about temperature control in Smoothie, you can look at this part of the documentation: [TemperatureControl](http://smoothieware.org/temperaturecontrol.md)
+For detailed information about temperature control in Smoothie, you can look at this part of the documentation: [TemperatureControl](/temperaturecontrol)
 
 The process is essentially the same to wire and control a hot-end, or a heated bed, and is as follows:
 
@@ -213,7 +213,7 @@ To help you figure out what is what, here is a recapitulating table:
 
 Once your thermistor is connected, and both the power input and the heater elements are plugged in, you are ready to test your temperature controller.
 
-To do this, reset your Smoothieboard, then connect to it using host software like [Pronterface](http://reprap.org/wiki/Printrun), or using the [web interface](http://smoothieware.org/network).
+To do this, reset your Smoothieboard, then connect to it using host software like [Pronterface](http://reprap.org/wiki/Printrun), or using the [web interface](/network).
 
 Now connect to your Smoothieboard over the serial interface.
 
@@ -243,7 +243,7 @@ It is a good thing to read about these, and configure them as best as you can, b
 
 It is also a good thing to configure it well, because if you do not, it is possible Smoothie will think there is a problem when there is none, which can be annoying.
 
-You can read more about temperature control safety [here](http://smoothieware.org/temperaturecontrol#safety).
+You can read more about temperature control safety [here](/temperaturecontrol#safety).
 
 ## Example setup
 

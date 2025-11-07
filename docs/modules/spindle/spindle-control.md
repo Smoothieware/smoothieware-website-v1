@@ -1,3 +1,7 @@
+---
+permalink: /spindle-control
+---
+
 # Spindle Control
 
 {::nomarkdown}

@@ -93,9 +93,9 @@ The Host software will then provide you with a graphical user interface to inter
   <strong>Additional communication options</strong>
   <ul>
     <li>Aside from connecting via the USB cable, you can also use the on-board Ethernet connector to interface with the board, see <a href="ethernet">Ethernet</a>. This provides a telnet interface (similar to the Serial/USB interface the USB cable offers), and a Web interface. One advantage of this is that Ethernet is less prone to suffer from <a href="http://en.wikipedia.org/wiki/Electromagnetic_interference">Electromagnetic interference</a> problems than USB.</li>
-    <li>Smoothieboard has an on-board SD card. Instead of using your host software to stream your G-code program line by line, you can also upload it all at once to the SD card, then execute it from there. This removes the bottleneck of communication while printing (though that is very rarely a problem). See <a href="http://smoothieware.org/printing-from-sd-card">Printing from the SD Card</a>.</li>
-    <li>Smoothie has a set of commands you can use to interact with and configure the board. See <a href="http://smoothieware.org/console-commands">Console Commands</a>.</li>
-    <li>The G-codes that Smoothie understands are listed at <a href="http://smoothieware.org/supported-g-codes">Supported G-codes</a>.</li>
+    <li>Smoothieboard has an on-board SD card. Instead of using your host software to stream your G-code program line by line, you can also upload it all at once to the SD card, then execute it from there. This removes the bottleneck of communication while printing (though that is very rarely a problem). See <a href="/printing-from-sd-card">Printing from the SD Card</a>.</li>
+    <li>Smoothie has a set of commands you can use to interact with and configure the board. See <a href="/console-commands">Console Commands</a>.</li>
+    <li>The G-codes that Smoothie understands are listed at <a href="/supported-g-codes">Supported G-codes</a>.</li>
   </ul>
 </sl-alert>
 

@@ -1,4 +1,5 @@
 ---
+permalink: /smoothieboard-schematic
 layout: default
 title: Smoothieboard Schematic
 ---

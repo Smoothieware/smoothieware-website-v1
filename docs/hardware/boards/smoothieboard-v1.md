@@ -54,13 +54,13 @@ See [Firmware](http://smoothieware.org)
 The USB interface connects to a host (your computer), and can be used:
 
 - Via its USB/MSD (Mass storage) interface to directly access the SD card in the board (read, edit, copy/paste files)
-- Via its USB/CDC (Serial) interface to send commands (like [Gcodes](http://smoothieware.org/supported-g-codes)) for execution, for example using host software
+- Via its USB/CDC (Serial) interface to send commands (like [Gcodes](/supported-g-codes)) for execution, for example using host software
 
 This allows for pretty neat things like:
 
-- Editing the [configuration](http://smoothieware.org/configuring-smoothie) without having to edit source file or reflash the firmware
-- Dropping Gcode files to the board and [executing them](http://smoothieware.org/player)
-- Dropping firmware upgrade files to the board for easy [flashing](http://smoothieware.org/flashing-smoothie-firmware)
+- Editing the [configuration](/configuring-smoothie) without having to edit source file or reflash the firmware
+- Dropping Gcode files to the board and [executing them](/player)
+- Dropping firmware upgrade files to the board for easy [flashing](/flashing-smoothie-firmware)
 
 
 {::nomarkdown}
@@ -68,7 +68,7 @@ This allows for pretty neat things like:
   <img src="/images/recovered/usb-cable.png" alt="USB Cable" style="width: 300px;"/>
 </a>
 {:/nomarkdown}
-See [USB](http://smoothieware.org/usb)
+See [USB](/usb)
 
 ## Ethernet
 
@@ -83,7 +83,7 @@ You can then use different protocols to talk to the board:
   <img src="/images/recovered/ethernet-cable.png" alt="Ethernet Cable"/>
 </a>
 {:/nomarkdown}
-See [Network](http://smoothieware.org/network)
+See [Network](/network)
 
 ## SD Card
 
@@ -204,7 +204,7 @@ You can find the Eagle files on [GitHub](https://github.com/arthurwolf/SmoothieB
 - [Components BOM](https://docs.google.com/spreadsheet/ccc?key=0Api7_ZbfikkKdGRDblUwMDFWcm1CT2M2bENkQWpZZ0E#gid=0)
 - [Connectors BOM](https://docs.google.com/spreadsheet/ccc?key=0Api7_ZbfikkKdHR5VkdXMFFwcHRFOG5CXzdpOGhqM3c#gid=0)
 
-You can find the old version of this Smoothieboard v1 page [here](http://smoothieware.org/smoothieboard-v1-old).
+You can find the old version of this Smoothieboard v1 page [here](/smoothieboard-v1-old).
 <a href="/images/oshw-logo.png">
   <img src="/images/oshw-logo.png" alt="Open Hardware Logo"/>
 </a>

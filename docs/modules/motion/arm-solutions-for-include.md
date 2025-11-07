@@ -1,3 +1,7 @@
+---
+permalink: /arm-solutions-for-include
+---
+
 # Arm Solutions
 
 {::nomarkdown}
