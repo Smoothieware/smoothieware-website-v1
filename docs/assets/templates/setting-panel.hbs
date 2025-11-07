@@ -1,0 +1,229 @@
+<div class="setting-panel-content">
+    {{! Setting name header with copy button and type badge }}
+    {{! Layout: setting name (left) | type badge (right) }}
+    <div class="setting-header">
+        <code class="setting-name">{{escape display_name}}</code>
+        <sl-badge variant="primary" pill>
+            <sl-icon name="gear"></sl-icon> {{type_display setting.type}}
+        </sl-badge>
+        {{#if setting.deprecated}}
+        <sl-badge variant="danger" pill><sl-icon name="exclamation-triangle"></sl-icon> Deprecated</sl-badge>
+        {{/if}}
+        {{#if setting.required}}
+        <sl-badge variant="warning" pill><sl-icon name="asterisk"></sl-icon> Required</sl-badge>
+        {{/if}}
+        <sl-copy-button
+            value="{{escape display_name}}"
+            copy-label="Copy setting name"
+            success-label="Copied!"
+            error-label="Failed to copy"
+        ></sl-copy-button>
+    </div>
+
+    {{! Description (rendered as markdown) }}
+    <div class="setting-description">
+        <sl-icon name="file-text"></sl-icon>
+        <div>{{{markdown setting.description}}}</div>
+    </div>
+
+    <sl-divider></sl-divider>
+
+    {{! Description bullets (if available) - rendered as markdown }}
+    {{#if setting.description_bullets}}
+    <ul class="setting-bullets">
+        {{#each setting.description_bullets}}
+        <li><sl-icon name="arrow-right-short"></sl-icon> {{{markdown this}}}</li>
+        {{/each}}
+    </ul>
+    {{/if}}
+
+    {{! Metadata section with icons }}
+    <div class="setting-metadata">
+        {{! Section (v2 only) }}
+        {{#if setting.section}}
+        <div class="setting-meta-item">
+            <sl-icon name="folder"></sl-icon>
+            <strong>Section:</strong>
+            <sl-tag size="medium" variant="neutral">
+                {{escape setting.section}}
+            </sl-tag>
+        </div>
+        {{/if}}
+
+        {{#if setting.default}}
+        <div class="setting-meta-item">
+            <sl-icon name="bookmark"></sl-icon>
+            <strong>Default:</strong>
+            <sl-tag size="medium" variant="neutral">
+                {{escape setting.default}}{{#if setting.units}} {{escape setting.units}}{{/if}}
+            </sl-tag>
+        </div>
+        {{/if}}
+
+        {{#if setting.module}}
+        <div class="setting-meta-item">
+            <sl-icon name="box"></sl-icon>
+            <strong>Module:</strong>
+            <sl-tag size="medium" variant="primary">
+                {{escape setting.module}}
+            </sl-tag>
+        </div>
+        {{/if}}
+
+        {{#if setting.context}}
+        <div class="setting-meta-item">
+            <sl-icon name="layout-text-window"></sl-icon>
+            <strong>Context:</strong>
+            <span>{{{markdown setting.context}}}</span>
+        </div>
+        {{/if}}
+
+        {{#if setting.defined_in}}
+        <div class="setting-meta-item">
+            <sl-icon name="code-slash"></sl-icon>
+            <strong>Defined in:</strong>
+            {{{github_link setting.defined_in version}}}
+        </div>
+        {{/if}}
+
+        {{! Minimum value (if available) }}
+        {{#if setting.minimum_value}}
+        <div class="setting-meta-item">
+            <sl-icon name="arrow-down-circle"></sl-icon>
+            <strong>Minimum:</strong>
+            <span class="meta-value">{{{markdown setting.minimum_value}}}</span>
+            {{#if setting.units}}
+            <sl-badge variant="neutral" pill class="units-badge">{{escape setting.units}}</sl-badge>
+            {{/if}}
+        </div>
+        {{/if}}
+
+        {{! Maximum value (if available) }}
+        {{#if setting.maximum_value}}
+        <div class="setting-meta-item">
+            <sl-icon name="arrow-up-circle"></sl-icon>
+            <strong>Maximum:</strong>
+            <span class="meta-value">{{{markdown setting.maximum_value}}}</span>
+            {{#if setting.units}}
+            <sl-badge variant="neutral" pill class="units-badge">{{escape setting.units}}</sl-badge>
+            {{/if}}
+        </div>
+        {{/if}}
+    </div>
+
+    <sl-divider></sl-divider>
+
+    {{! Pin type alert (if type is pin) }}
+    {{#if_eq setting.type "pin"}}
+    <sl-alert variant="primary" open>
+        <sl-icon slot="icon" name="info-circle"></sl-icon>
+        For details of how to use and configure pins go to <a href="https://smoothieware.org/pin-configuration" target="_blank" rel="noopener" class="pin-config-link">pin configuration</a>
+    </sl-alert>
+    {{/if_eq}}
+
+    {{! Typical values (v1) or valid values (v2) - displayed inline as tags }}
+    {{#if values_field}}
+    <div class="setting-values-section">
+        <strong>{{values_label}}</strong>
+        <div class="setting-values-inline">
+            {{#each values_field}}
+            {{#if this.description}}
+            <sl-tooltip content="{{escape this.description}}">
+                <sl-badge variant="success" pill class="value-badge">{{escape this.value}}</sl-badge>
+            </sl-tooltip>
+            {{else}}
+            <sl-badge variant="success" pill class="value-badge">{{escape this.value}}</sl-badge>
+            {{/if}}
+            {{/each}}
+        </div>
+    </div>
+    {{/if}}
+
+    {{! Examples (if available) }}
+    {{#if setting.examples}}
+    <strong>💡 Examples</strong>
+    <div class="setting-examples">
+        {{#each setting.examples}}
+        <div class="setting-example-item">
+            <pre><code>{{{highlight_example this}}}</code></pre>
+            <sl-copy-button
+                value="{{escape this}}"
+                copy-label="Copy example"
+            ></sl-copy-button>
+        </div>
+        {{/each}}
+    </div>
+    {{/if}}
+
+    {{! Related settings (if available) - make clickable }}
+    {{#if setting.related_settings}}
+    <sl-divider></sl-divider>
+    <div class="setting-related">
+        <strong><sl-icon name="link-45deg"></sl-icon> Related settings:</strong><br>
+        {{#each setting.related_settings}}
+        <sl-button variant="default" size="small" class="related-setting-button" data-setting-name="{{escape this}}">
+            <sl-icon slot="prefix" name="link-45deg"></sl-icon>
+            <code class="setting-button-text">{{escape this}}</code>
+        </sl-button>
+        {{/each}}
+    </div>
+    {{/if}}
+
+    {{! Related M-codes (if available) }}
+    {{#if setting.related_m_codes}}
+    <div class="setting-related-mcodes">
+        <strong><sl-icon name="terminal"></sl-icon> Related G-code commands:</strong>
+        <div class="mcode-tags">
+            {{#each setting.related_m_codes}}
+            {{{mcode_link this}}}
+            {{/each}}
+        </div>
+    </div>
+    {{/if}}
+
+    {{! Related pages (if available) - make clickable with link }}
+    {{#if setting.related_pages}}
+    <div class="setting-pages">
+        <strong><sl-icon name="book"></sl-icon> Related pages:</strong><br>
+        {{#each setting.related_pages}}
+        <sl-button variant="default" size="small" class="related-page-button" onclick="window.open('https://smoothieware.org/{{this}}', '_blank')">
+            <sl-icon slot="prefix" name="link-45deg"></sl-icon>
+            {{escape this}}
+        </sl-button>
+        {{/each}}
+    </div>
+    {{/if}}
+
+    {{! Notes section (if available) }}
+    {{#if setting.notes}}
+    <sl-divider></sl-divider>
+    <div class="setting-notes">
+        <sl-alert variant="neutral" open>
+            <sl-icon slot="icon" name="info-circle"></sl-icon>
+            <strong>Notes:</strong><br>
+            {{{markdown setting.notes}}}
+        </sl-alert>
+    </div>
+    {{/if}}
+
+    {{! Corresponding setting in other version }}
+    {{#if corresponding}}
+    <sl-divider></sl-divider>
+    <div class="setting-corresponding">
+        <sl-alert variant="primary" open class="clickable-alert" data-target-panel="{{target_panel}}">
+            <sl-icon slot="icon" name="arrow-left-right"></sl-icon>
+            <strong>Corresponding {{other_version}} setting:</strong>
+            <br>
+            <code>{{escape corresponding}}</code>
+            <sl-copy-button
+                value="{{escape corresponding}}"
+                copy-label="Copy {{other_version}} setting name"
+                style="float: right;"
+            ></sl-copy-button>
+        </sl-alert>
+    </div>
+    {{/if}}
+
+    {{! Config excerpt (in-situ example) }}
+    {{{config_excerpt_html}}}
+</div>

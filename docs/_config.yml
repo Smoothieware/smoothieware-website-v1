@@ -20,6 +20,7 @@ plugins:
   - jekyll-relative-links
   - jekyll-titles-from-headings
   - jekyll-github-metadata
+  - jekyll-redirect-from
 
 # Process markdown files without front matter
 optional_front_matter:
@@ -41,6 +42,9 @@ defaults:
       path: ""
     values:
       layout: default
+
+# Point include root at current directory (inside Docker this is /usr/src/app which contains all files)
+includes_dir: "."
 
 # Include additional directories
 include:

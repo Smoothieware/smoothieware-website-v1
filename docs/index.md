@@ -163,7 +163,7 @@ The Smoothie project is always looking for help. Whatever your skills are, there
     </a>
   </div>
   <div class = "menu-item">
-  <a   href  = "pick-and-place">
+  <a   href  = "/pick-and-place-guide">
   <img src   = "/images/guide-pnp.png" alt = "Pick and place">
       <p><strong>Pick and Place</strong> Guide</p>
     </a>
@@ -189,7 +189,7 @@ The Smoothie project is always looking for help. Whatever your skills are, there
 - [Configuring Smoothie](configuring-smoothie): Configuration and use, by module
   - [List of all configuration options](configuration-options)
   - [Motion control](motion-control): All things related to gcode interpolation, motion and acceleration planning, and step generation
-  - [Arm Solutions](Arm-Solutions): [Cartesian](Cartesian), [Delta](delta), [Hbot](Hbot), [Core-XY](Core-XY), [Rotary Delta](Rotary-Delta), [Morgan Scara](morgan-scara)
+  - [Arm Solutions](arm-solutions): [Cartesian](cartesian), [Delta](delta), [Hbot](hbot), [Core-XY](Core-XY), [Rotary Delta](rotary-delta), [Morgan Scara](morgan-scara)
   - [6axis](6axis): Using A, B and C axes, for 4, 5 or 6 axis motion.
   - [Grbl mode](grbl-mode): Using Smoothie in CNC-specific mode instead of 3D printing mode
 
@@ -231,8 +231,8 @@ The Smoothie project is always looking for help. Whatever your skills are, there
     - [bCNC](bcnc): Control interface for CNC machines.
     - [Fusion360](fusion360): CAD/CAM software with a lot of features and a free/students tier.
 - **[Troubleshooting](troubleshooting)**: It doesn't work (ノo益o)ノ彡┻━┻ ! What to do ∩(︶▽︶)∩.
-  - [MRI](mri-debugging): In the very rare case smoothie code crashes
-- [Contributing](contributing): We need your help!
+  - [MRI](mri-debugging): An amazing tool to help smoothie firmware developers and hackers debug issues using a proper debugging workflow.
+- [Contributing](contributing): **We need your help!**
   - [Todo](todo): List of the things that are being worked on in the project.
   - [Editing the Wiki](editing-the-wiki): How to edit this documentation and improve it.
 
@@ -253,7 +253,7 @@ Note, Smoothieboards come completely pre-flashed, you do not need to compile or 
  - [How to file an Issue on Github](https://github.com/smoothieware/smoothieware/blob/edge/issue_template)
  - [Flashing the Bootloader](flashing-the-bootloader)
 
-More: [Windows Drivers](Windows-Drivers), [Linux Drivers](Linux-Drivers), [Mac Drivers](Mac-Drivers), [New Features](New-Features), [Gallery](Gallery), [Smoothieboard Beta Guide](smoothieboard-beta-guide)
+More: [Windows Drivers](windows-drivers), [Linux Drivers](linux-drivers), [Mac Drivers](mac-drivers), [New Features](new-features), [Gallery](gallery), [Smoothieboard Beta Guide](smoothieboard-beta-guide)
 
 {::nomarkdown}
 <a href="/images/smoothieboard-fritzing-blue.png">
@@ -269,6 +269,7 @@ More: [Windows Drivers](Windows-Drivers), [Linux Drivers](Linux-Drivers), [Mac D
 - [Running Smoothie on a Breadboard](smoothie-on-a-breadboard)
 - [Pinout](pinout) has diagrams of all pins on the board
 - [Pin usage](lpc1769-pin-usage) has information on the use and capability of all pins
+- [Pin configuration](pin-configuration) details how to configure pins to be inverted, open-drain, pulled-down, pulled-up, etc.
 - [How to wire](how-to-wire) describes tutorials, tools and best practices for wiring and cabling work when installing your Smoothieboard in a new machine.
 
 # Getting a Smoothieboard
@@ -316,7 +317,7 @@ More: [Windows Drivers](Windows-Drivers), [Linux Drivers](Linux-Drivers), [Mac D
 - Strict process for acceptance of new code, to keep the project at high quality
 - Heavily commented code
 
-{% include_relative donate.md %}
+{% include project/donate-for-include.md %}
 
 # Developer documentation
 

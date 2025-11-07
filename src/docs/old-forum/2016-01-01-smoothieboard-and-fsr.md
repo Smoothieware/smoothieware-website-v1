@@ -4,17 +4,19 @@
 
 ---
 
-### Smoothieboard and FSR  
-*by billdan, 12 Feb 2015*  
+# Smoothieboard and FSR
 
-I'm considering using FSRs with my Smoothieboard. Has anyone successfully integrated them? Any tips on the setup?  
+**billdan**  
+*12 Feb 2015 04:07*
+
+I'm looking into using FSR (Force-Sensitive Resistor) sensors with the Smoothieboard on an Ultimaker. Has anyone successfully integrated FSRs with the Smoothieboard? I'm particularly interested in how others have handled the wiring and calibration. Any tips or experiences would be greatly appreciated!
 
 ---
 
-### Re: Smoothieboard and FSR  
-*by Zedsquared, 22 Feb 2015*  
+**Zedsquared**  
+*22 Feb 2015 16:53*
 
-I have found that three FSRs in parallel will reliably trigger an endstop pin on the smoothieboard without any other circuitry. I have them mounted under my printbed on a Kossel mini. I did have to experiment a bit with the physical mounting to get it right (varying the size of the contact patch between FSR and bed).  
+I have found that three FSRs in parallel will reliably trigger an endstop pin on the Smoothieboard without any other circuitry. I have them mounted under my printbed on a Kossel mini. I did have to experiment a bit with the physical mounting to get it right (varying the size of the contact patch between FSR and bed).
 
 Cheers,  
 Robin.

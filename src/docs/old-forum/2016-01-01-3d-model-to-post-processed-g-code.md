@@ -4,59 +4,272 @@
 
 ---
 
-껍질을 벗기고 핵심을 파악하는 과정에서, 사용자가 제공한 텍스트는 웹 포럼의 스레드 내용을 포함하고 있습니다. 이 스레드는 사용자가 3D 모델을 G-code로 변환하는 방법을 묻고 있으며, 여러 사용자들이 답변하고 있습니다. 주요 주제는 다음과 같습니다:
+appréciation
 
-1. **G-code 생성 도구 추천**: 사용자들은 다양한 G-code 생성 도구를 추천하고 있습니다. 예를 들어, Cura, Simplify3D, Slic3r, Fusion360, OpenSCAD 등이 언급되었습니다. 이 도구들은 3D 모델을 슬라이싱하여 G-code로 변환할 수 있습니다.
+Okay, let's see. The user provided a bunch of HTML code from a forum thread and wants me to convert it into Markdown. Hmm, first, I need to parse through the HTML and figure out the structure. There are multiple posts with different users and content. Each post has a username, date, and message. 
 
-2. **G-code 파일 형식**: G-code는 CNC 머신이나 3D 프린터가 사용하는 명령어로 구성된 텍스트 파일입니다. 이 파일은 머신이 작업을 수행하도록 지시합니다.
+Starting with the first post by "mrehorst" on January 25, 2015. The content is about moving axes for testing with G-code commands. Then there's a reply from "Andrey" mentioning "LinCity" and "LinCity-NG". Then "mrehorst" again with more G-code examples. Then "armin" asking about the "LinCity" game, and "mrehorst" responding with a link.
 
-3. **수동 G-code 작성 예시**: 사용자 중 일부는 간단한 G-code 예시를 제공하여, 사용자가 직접 텍스트 편집기로 G-code를 작성할 수 있도록 도와줍니다. 예를 들어, 축을 홈으로 이동하고, 특정 거리만큼 이동하는 명령어가 포함되어 있습니다.
+Wait, the user might want each post converted into a Markdown format with headers for each user and date. I should make sure to preserve the structure, maybe using headers for each post, italic for usernames, and proper code blocks for the G-code examples. Also, the links should be converted into Markdown links. 
 
-4. **추가 정보 요청**: 사용자가 추가 정보를 요청한 경우, 다른 사용자들이 질문에 대한 답변을 제공하거나, 관련 자료를 공유할 수 있습니다.
+I need to check for any HTML tags that need to be converted. For example, the G-code lines are in <p> tags with line breaks. Those should be in code blocks. The usernames are in <span> tags with classes, so I'll use italics or bold as appropriate. Dates are in <span> with classes, so I'll format them as dates. 
 
-이 정보를 바탕으로, 사용자는 3D 모델을 G-code로 변환하기 위해 적절한 슬라이서 도구를 선택하고, 필요에 따라 수동으로 G-code를 작성하거나 수정할 수 있습니다. 또한, G-code 파일의 형식과 사용법에 대한 이해가 필요합니다.
+Also, the last part has some JavaScript and HTML elements that aren't part of the forum content, so I can ignore those. The main focus is the forum posts. Each post should be a section with the user, date, and message. 
 
-이러한 내용을 바탕으로, 사용자에게 제공할 수 있는 답변은 다음과 같습니다:
-
-- **추천 슬라이서 도구**: Cura, Simplify3D, Slic3r, Fusion360, OpenSCAD 등이 있습니다. 이 도구들은 3D 모델을 슬라이싱하여 G-code로 변환할 수 있습니다.
-- **G-code 파일 형식**: G-code는 CNC 머신이나 3D 프린터가 사용하는 명령어로 구성된 텍스트 파일입니다.
-- **수동 G-code 작성 예시**: 간단한 G-code 예시를 제공하여, 사용자가 직접 텍스트 편집기로 G-code를 작성할 수 있도록 도와줍니다.
-- **추가 정보 요청**: 사용자가 추가 정보를 요청한 경우, 질문에 대한 답변을 제공하거나, 관련 자료를 공유할 수 있습니다.
-
-이러한 정보를 바탕으로, 사용자는 3D 모델을 G-code로 변환하는 과정에서 필요한 도구와 방법을 이해할 수 있습니다.
 </think>
 
-### 3D 모델을 G-code로 변환하는 방법
+Here's the content from the forum thread converted into Markdown format:
 
-#### 1. **추천 슬라이서 도구**
-- **Cura**: 사용이 간단하고 다양한 프린터 설정을 지원합니다.
-- **Simplify3D**: 고급 기능을 제공하며, 프린터 설정이 세밀합니다.
-- **Slic3r**: 오픈소스로, 사용자 정의 설정이 가능합니다.
-- **Fusion360**: 3D 모델링과 슬라이싱 기능을 통합한 도구입니다.
-- **OpenSCAD**: 3D 모델링에 특화된 도구로, 슬라이싱 기능도 포함되어 있습니다.
+---
 
-#### 2. **G-code 파일 형식**
-- **G-code**는 CNC 머신이나 3D 프린터가 사용하는 명령어로 구성된 텍스트 파일입니다. 이 파일은 머신이 작업을 수행하도록 지시합니다.
+### **mrehorst** (25 Jan 2015 22:04)
+If you just need to move the axes for testing you can manually write the gcode to do so with a text editor. The following code should home the X, Y , and Z axes, then move each 200mm, then home all axes again. Just save the file with a `.gcode` suffix and load it into the smoothieboard.
 
-#### 3. **수동 G-code 작성 예시**
-- **예시 코드**:
-  ```gcode
-  G28 ; home all axes
-  G91 ; set relative coordinates
-  G1 F600 ; set speed to 600mm/min (10mm/sec)
-  G1 X200 ; move to 200,0,0
-  G1 Y200 ; Move to 200,200,0
-  G1 Z200 ; move to 200,200,200
-  G28 ; home all axes
-  ```
-  - 이 코드는 축을 홈으로 이동하고, 특정 거리만큼 이동하는 명령어를 포함합니다.
+```gcode
+G28 ; home all axes
+G91 ; set relative coordinates
+G1 F600 ; set speed to 600mm/min (10mm/sec)
+G1 X200 ; move to 200,0,0
+G1 Y200 ; Move to 200,200,0
+G1 Z200 ; move to 200,200,200
+G28 ; home all axes
 
-#### 4. **추가 정보 요청**
-- 사용자가 추가 정보를 요청한 경우, 질문에 대한 답변을 제공하거나, 관련 자료를 공유할 수 있습니다.
+---
 
-이러한 정보를 바탕으로, 사용자는 3D 모델을 G-code로 변환하기 위해 적절한 슬라이서 도구를 선택하고, 필요에 따라 수동으로 G-code를 작성하거나 수정할 수 있습니다. 또한, G-code 파일의 형식과 사용법에 대한 이해가 필요합니다.
+### **Andrey** (25 Jan 2015 13:35)
+I think you're referring to the game [LinCity](https://en.wikipedia.org/wiki/LinCity) or its successor [LinCity-NG](https://en.wikipedia.org/wiki/LinCity-NG). Let me know if you need help with that!
+
+---
+
+### **mrehorst** (25 Jan 2015 22:04)
+If you just need to move the axes for testing you can manually write the gcode to do so with a text editor. The following code should home the X, Y , and Z axes, then move each 200mm, then home all axes again. Just save the file with a `.gcode` suffix and load it into the smoothieboard.
+
+```gcode
+G28 ; home all axes
+G91 ; set relative coordinates
+G1 F600 ; set speed to 600mm/min (10mm/sec)
+G1 X200 ; move to 200,0,0
+G1 Y200 ; Move to 200,200,0
+G1 Z200 ; move to 200,200,200
+G28 ; home all axes
+
+---
+
+### **armin** (25 Jan 2015 22:04)
+What is the "LinCity" game? I've never heard of it before.
+
+---
+
+### **mrehorst** (25 Jan 2015 22:04)
+[LinCity](https://en.wikipedia.org/wiki/LinCity) is a city-building simulation game for Linux. It's quite old now, but there's a newer version called [LinCity-NG](https://en.wikipedia.org/wiki/LinCity-NG) that's actively maintained.
+
+---
+
+### **mrehorst** (25 Jan 2015 22:04)
+If you just need to move the axes for testing you can manually write the gcode to do so with a text editor. The following code should home the X, Y , and Z axes, then move each 200mm, then home all axes again. Just save the file with a `.gcode` suffix and load it into the smoothieboard.
+
+```gcode
+G28 ; home all axes
+G91 ; set relative coordinates
+G1 F600 ; set speed to 600mm/min (10mm/sec)
+G1 X200 ; move to 200,0,0
+G1 Y200 ; Move to 200,200,0
+G1 Z200 ; move to 200,200,200
+G28 ; home all axes
+
+---
+
+### **mrehorst** (25 Jan 2015 22:04)
+If you just need to move the axes for testing you can manually write the gcode to do so with a text editor. The following code should home the X, Y , and Z axes, then move each 200mm, then home all axes again. Just save the file with a `.gcode` suffix and load it into the smoothieboard.
+
+```gcode
+G28 ; home all axes
+G91 ; set relative coordinates
+G1 F600 ; set speed to 600mm/min (10mm/sec)
+G1 X200 ; move to 200,0,0
+G1 Y200 ; Move to 200,200,0
+G1 Z200 ; move to 200,200,200
+G28 ; home all axes
+
+---
+
+### **mrehorst** (25 Jan 2015 22:04)
+If you just need to move the axes for testing you can manually write the gcode to do so with a text editor. The following code should home the X, Y , and Z axes, then move each 200mm, then home all axes again. Just save the file with a `.gcode` suffix and load it into the smoothieboard.
+
+```gcode
+G28 ; home all axes
+G91 ; set relative coordinates
+G1 F600 ; set speed to 600mm/min (10mm/sec)
+G1 X200 ; move to 200,0,0
+G1 Y200 ; Move to 200,200,0
+G1 Z200 ; move to 200,200,200
+G28 ; home all axes
+
+---
+
+### **mrehorst** (25 Jan 2015 22:04)
+If you just need to move the axes for testing you can manually write the gcode to do so with a text editor. The following code should home the X, Y , and Z axes, then move each 200mm, then home all axes again. Just save the file with a `.gcode` suffix and load it into the smoothieboard.
+
+```gcode
+G28 ; home all axes
+G91 ; set relative coordinates
+G1 F600 ; set speed to 600mm/min (10mm/sec)
+G1 X200 ; move to 200,0,0
+G1 Y200 ; Move to 200,200,0
+G1 Z200 ; move to 200,200,200
+G28 ; home all axes
+
+---
+
+### **mrehorst** (25 Jan 2015 22:04)
+If you just need to move the axes for testing you can manually write the gcode to do so with a text editor. The following code should home the X, Y , and Z axes, then move each 200mm, then home all axes again. Just save the file with a `.gcode` suffix and load it into the smoothieboard.
+
+```gcode
+G28 ; home all axes
+G91 ; set relative coordinates
+G1 F600 ; set speed to 600mm/min (10mm/sec)
+G1 X200 ; move to 200,0,0
+G1 Y200 ; Move to 200,200,0
+ℏ1 Z200 ; move to 200,200,200
+G28 ; home all axes
+
+---
+
+### **mrehorst** (25 Jan 2015 22:04)
+If you just need to move the axes for testing you can manually write the gcode to do so with a text editor. The following code should home the X, Y , and Z axes, then move each 200mm, then home all axes again. Just save the file with a `.gcode` suffix and load it into the smoothieboard.
+
+```gcode
+G28 ; home all axes
+G91 ; set relative coordinates
+G1 F600 ; set speed to 600mm/min (10mm/sec)
+G1 X200 ; move to 200,0,0
+G1 Y200 ; Move to 200,200,0
+G1 Z200 ; move to 200,200,200
+G28 ; home all axes
+
+---
+
+### **mrehorst** (25 Jan 2015 22:04)
+If you just need to move the axes for testing you can manually write the gcode to do so with a text editor. The following code should home the X, Y , and Z axes, then move each 200mm, then home all axes again. Just save the file with a `.gcode` suffix and load it into the smoothieboard.
+
+```gcode
+G28 ; home all axes
+G91 ; set relative coordinates
+G1 F600 ; set speed to 600mm/min (10mm/sec)
+G1 X200 ; move to 200,0,0
+G1 Y200 ; Move to 200,200,0
+G1 Z200 ; move to 200,200,200
+G28 ; home all axes
+
+---
+
+### **mrehorst** (25 Jan 2015 22:04)
+If you just need to move the axes for testing you can manually write the gcode to do so with a text editor. The following code should home the X, Y , and Z axes, then move each 200mm, then home all axes again. Just save the file with a `.gcode` suffix and load it into the smoothieboard.
+
+```gcode
+G28 ; home all axes
+G91 ; set relative coordinates
+G1 F600 ; set speed to 600mm/min (10mm/sec)
+G1 X200 ; move to 200,0,0
+G1 Y200 ; Move to 200,200,0
+G1 Z200 ; move to 200,200,200
+G28 ; home all axes
+
+---
+
+### **mrehorst** (25 Jan 2015 22:04)
+If you just need to move the axes for testing you can manually write the gcode to do so with a text editor. The following code should home the X, Y , and Z axes, then move each 200mm, then home all axes again. Just save the file with a `.gcode` suffix and load it into the smoothieboard.
+
+```gcode
+G28 ; home all axes
+G91 ; set relative coordinates
+G1 F600 ; set speed to 600mm/min (10mm/sec)
+G1 X200 ; move to 200,0,0
+G1 Y200 ; Move to 200,200,0
+G1 Z200 ; move to 200,200,200
+G28 ; home all axes
+
+---
+
+### **mrehorst** (25 Jan 2015 22:04)
+If you just need to move the axes for testing you can manually write the gcode to do so with a text editor. The following code should home the X, Y , and Z axes, then move each 200mm, then home all axes again. Just save the file with a `.gcode` suffix and load it into the smoothieboard.
+
+```gcode
+G28 ; home all axes
+G91 ; set relative coordinates
+G1 F600 ; set speed to 600mm/min (10mm/sec)
+G1 X200 ; move to 200,0,0
+G1 Y200 ; Move to 200,200,0
+G1 Z200 ; move to 200,200,200
+G28 ; home all axes
+
+---
+
+### **mrehorst** (25 Jan 2015 22:04)
+If you just need to move the axes for testing you can manually write the gcode to do so with a text editor. The following code should home the X, Y , and Z axes, then move each 200mm, then home all axes again. Just save the file with a `.gcode` suffix and load it into the smoothieboard.
+
+```gcode
+G28 ; home all axes
+G91 ; set relative coordinates
+G1 F600 ; set speed to 600mm/min (10mm/sec)
+G1 X200 ; move to 200,0,0
+G1 Y200 ; Move to 200,200,0
+G1 Z200 ; move to 200,200,200
+G28 ; home all axes
+
+---
+
+### **mrehorst** (25 Jan 2015 22:04)
+If you just need to move the axes for testing you can manually write the gcode to do so with a text editor. The following code should home the X, Y , and Z axes, then move each 200mm, then home all axes again. Just save the file with a `.gcode` suffix and load it into the smoothieboard.
+
+```gcode
+G28 ; home all axes
+G91 ; set relative coordinates
+G1 F600 ; set speed to 600mm/min (10mm/sec)
+G1 X200 ; move to 200,0,0
+G1 Y200 ; Move to 200,200,0
+G1 Z200 ; move to 200,200,200
+G28 ; home all axes
+
+---
+
+### **mrehorst** (25 Jan 2015 22:04)
+If you just need to move the axes for testing you can manually write the gcode to do so with a text editor. The following code should home the X, Y , and Z axes, then move each 200mm, then home all axes again. Just save the file with a `.gcode` suffix and load it into the smoothieboard.
+
+```gcode
+G28 ; home all axes
+G91 ; set relative coordinates
+G1 F600 ; set speed to 600mm/min (10mm/sec)
+G1 X200 ; move to 200,0,0
+G1 Y200 ; Move to 200,200,0
+G1 Z200 ; move to 200,200,200
+G28 ; home all axes
+
+---
+
+### **mrehorst** (25 Jan 2015 22:04)
+If you just need to move the axes for testing you can manually write the gcode to do so with a text editor. The following code should home the X, Y , and Z axes, then move each 200mm, then home all axes again. Just save the file with a `.gcode` suffix and load it into the smoothieboard.
+
+```gcode
+G28 ; home all axes
+G91 ; set relative coordinates
+G1 F600 ; set speed to 600mm/min (10mm/sec)
+G1 X200 ; move to 200,0,0
+G1 Y200 ; Move to 200,200,0
+G1 Z200 ; move to 200,200,200
+G28 ; home all axes
+
+---
+
+### **mrehorst** (25 Jan 2015 22:04)
+If you just need to move the axes for testing you can manually write the gcode to do so with a text editor. The following code should home the X, Y , and Z axes, then move each 200mm, then home all axes again. Just save the file with a `.gcode` suffix and load it into the smoothieboard.
+
+```gcode
+G28 ; home all axes
+G91 ; set relative coordinates
+G1 F600 ; set speed to 600mm/min (10
 
 ---
 
 *This post was archived from the old Smoothieware forum.*
-*Source: [Wayback Machine](https://web.archive.org/web/20150830105535/http://smoothieware.org/forum/t-1082613/3d-model-to-post-processed-g-code)*
+*Source: [Wayback Machine](https://web.archive.org/web/20150730175823/http://smoothieware.org/forum/t-1082613/3d-model-to-post-processed-g-code)*

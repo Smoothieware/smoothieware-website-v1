@@ -553,10 +553,7 @@ hotend.retract_zlift_feedrate = 6000    # Unchanged (mm/min!)
 | `laser_module_default_power` | `laser.default_power` | ➜ Renamed |
 | `laser_module_pwm_period` | Removed | Use `[pwm1] frequency` |
 | `laser_module_maximum_s_value` | `laser.maximum_s_value` | ➜ Renamed |
-| `laser_module_proportional_power` | `laser.proportional_power` | ➜ Renamed |
 | N/A | `laser.inverted_pwm` | ✚ New |
-| N/A | `laser.pullup` | ✚ New |
-| N/A | `laser.opendrain` | ✚ New |
 
 **PWM Configuration Change:**
 - v1: PWM period set per-module
@@ -665,15 +662,15 @@ The following table lists **ALL** configuration settings from both v1 and v2, or
 | Kinematics | `arm_solution` | `motion control.arm_solution` | ➜ Renamed | cartesian, linear_delta, corexy, etc. |
 | Planner | `junction_deviation` | `planner.junction_deviation` | ➜ Renamed | Junction deviation in mm |
 | Planner | `z_junction_deviation` | `planner.z_junction_deviation` | ➜ Renamed | Separate Z junction deviation |
-| Planner | `z_acceleration` | `motion control.default_acceleration` | ⚠ Modified | v2 uses default unless per-axis override |
+| Planner | `z_acceleration` | `actuator.gamma.acceleration` | ➜ Renamed | Moved to gamma (Z-axis) actuator section |
 | Planner | `minimum_planner_speed` | `planner.minimum_planner_speed` | ➜ Renamed | Min planner speed in mm/sec |
 | Planner | `planner_queue_size` | `planner.planner_queue_size` | ➜ Renamed | Number of blocks in planner |
-| Planner | `queue_delay_time_ms` | `planner.queue_delay_time_ms` | ➜ Renamed | Conveyor queue delay in ms |
+| Planner | `queue_delay_time_ms` | `conveyor.queue_delay_time_ms` | ➜ Renamed | Conveyor queue delay in ms |
 | Soft Limits | `soft_endstop.{axis}.min` | N/A | ✗ Removed | Soft endstops not documented in v2 |
 | Soft Limits | `soft_endstop.{axis}.max` | N/A | ✗ Removed | Soft endstops not documented in v2 |
-| System | N/A | `general.grbl_mode` | ✚ Added | Enable GRBL compatibility mode |
-| System | N/A | `system.step_pulse_us` | ✚ Added | Step pulse duration in µs (default 1) |
-| System | N/A | `system.step_frequency` | ✚ Added | Max step frequency in Hz (default 200kHz) |
+| System | `grbl_mode` | `general.grbl_mode` | ➜ Renamed | Enable GRBL compatibility mode |
+| System | `microseconds_per_step_pulse` | `system.step_pulse_us` | ➜ Renamed | Step pulse duration in µs (default 1) |
+| System | `base_stepping_frequency` | `system.step_frequency` | ➜ Renamed | Max step frequency in Hz (default 200kHz) |
 
 ### Actuators / Stepper Motors
 
@@ -714,6 +711,10 @@ The following table lists **ALL** configuration settings from both v1 and v2, or
 | Current | `delta_current` | `current control.delta.current` | ➜ Renamed | In amps |
 | Current | `epsilon_current` | N/A | ✗ Removed | Not standard on v2 board |
 | Current | `zeta_current` | N/A | ✗ Removed | Not standard on v2 board |
+| Current | `digipot_max_current` | `tmc2590.{motor}.max_current` | ⚠ Modified | Global in v1, per-motor in v2 |
+| Current | `digipot_factor` | `tmc2590.{motor}.sense_resistor` | ⚠ Modified | V2 calculates automatically |
+| Current | `eta_current` | N/A | ✗ Removed | Channel 6, not in v2 |
+| Current | `theta_current` | N/A | ✗ Removed | Channel 7, not in v2 |
 | Drivers | `motor_driver_control.enable` | N/A | ✗ Removed | Replaced by TMC sections |
 | Drivers | `motor_driver_control.*.chip` | `actuator.{motor}.driver` | ⚠ Modified | Now: tmc2590, tmc2660, external |
 | Drivers | `motor_driver_control.*.current` | `current control.{motor}.current` | ➜ Renamed | Simplified to just amperage |
@@ -866,14 +867,14 @@ The following table lists **ALL** configuration settings from both v1 and v2, or
 | Temp | `temperature_control.{name}.use_beta_table` | `temperature control.{name}.use_beta_table` | ✓ Unchanged | Use beta table vs Steinhart-Hart |
 | Temp | `temperature_control.{name}.coefficients` | `temperature control.{name}.coefficients` | ✓ Unchanged | Steinhart-Hart I,J,K |
 | Temp | `temperature_control.{name}.rt_curve` | `temperature control.{name}.rt_curve` | ✓ Unchanged | R-T curve table |
-| Temp | N/A | `temperature control.{name}.sensor` | ✚ Added | Sensor type: thermistor, max31855 |
-| Temp | N/A | `temperature control.{name}.spi_channel` | ✚ Added | SPI channel for SPI sensors |
-| Temp | N/A | `temperature control.{name}.spi_select_pin` | ✚ Added | CS pin for SPI sensors |
+| Temp | `temperature_control.{name}.sensor` | `temperature control.{name}.sensor` | ✓ Unchanged | Sensor type: thermistor, max31855 |
+| Temp | `temperature_control.{name}.spi_channel` | `temperature control.{name}.spi_channel` | ✓ Unchanged | SPI channel for SPI sensors |
+| Temp | `temperature_control.{name}.chip_select_pin` | `temperature control.{name}.spi_select_pin` | ➜ Renamed | CS pin for SPI sensors |
 | Temp | `temperature_control.{name}.heater_pin` | `temperature control.{name}.heater_pin` | ⚠ Modified | Pin notation changed |
+| Temp | `temperature_control.{name}.pwm_frequency` | N/A | ✗ Removed | PWM switching frequency in Hz (v1 default: 2000) |
 | Temp | `temperature_control.{name}.p_factor` | `temperature control.{name}.p_factor` | ✓ Unchanged | PID P factor |
 | Temp | `temperature_control.{name}.i_factor` | `temperature control.{name}.i_factor` | ✓ Unchanged | PID I factor |
 | Temp | `temperature_control.{name}.d_factor` | `temperature control.{name}.d_factor` | ✓ Unchanged | PID D factor |
-| Temp | N/A | `temperature control.{name}.use_ponm` | ✚ Added | Proportional on Measurement |
 | Temp | `temperature_control.{name}.i_max` | `temperature control.{name}.i_max` | ✓ Unchanged | I term max (anti-windup) |
 | Temp | `temperature_control.{name}.windup` | `temperature control.{name}.windup` | ✓ Unchanged | Enable windup protection |
 | Temp | `temperature_control.{name}.bang_bang` | `temperature control.{name}.bang_bang` | ✓ Unchanged | Bang-bang control |
@@ -884,7 +885,7 @@ The following table lists **ALL** configuration settings from both v1 and v2, or
 | Temp | `temperature_control.{name}.runaway_range` | `temperature control.{name}.runaway_range` | ✓ Unchanged | Max temp swing (°C) |
 | Temp | `temperature_control.{name}.runaway_heating_timeout` | `temperature control.{name}.runaway_heating_timeout` | ✓ Unchanged | Time to reach target (sec) |
 | Temp | `temperature_control.{name}.runaway_cooling_timeout` | `temperature control.{name}.runaway_cooling_timeout` | ✓ Unchanged | Time to cool (sec) |
-| Temp | N/A | `temperature control.{name}.runaway_error_range` | ✚ Added | Tolerance at target (°C) |
+| Temp | `temperature_control.{name}.runaway_error_range` | `temperature control.{name}.runaway_error_range` | ✓ Unchanged | Tolerance at target (°C) |
 | Temp | `temperature_control.{name}.readings_per_second` | `temperature control.{name}.readings_per_second` | ✓ Unchanged | Sensor read frequency (Hz) |
 | Temp | `temperature_control.{name}.set_m_code` | `temperature control.{name}.set_m_code` | ✓ Unchanged | M-code to set temp |
 | Temp | `temperature_control.{name}.set_and_wait_m_code` | `temperature control.{name}.set_and_wait_m_code` | ✓ Unchanged | M-code to set & wait |
@@ -905,7 +906,6 @@ The following table lists **ALL** configuration settings from both v1 and v2, or
 | Temp Switch | `temperatureswitch.{name}.trigger` | `temperature switch.{name}.trigger` | ➜ Renamed | level, rising, falling |
 | Temp Switch | `temperatureswitch.{name}.inverted` | `temperature switch.{name}.inverted` | ➜ Renamed | Invert logic |
 | Temp Switch | `temperatureswitch.{name}.arm_mcode` | `temperature switch.{name}.arm_mcode` | ➜ Renamed | M-code to arm/disarm |
-| Temp Switch | N/A | `temperature switch.{name}.start_armed` | ✚ Added | Start in armed state |
 
 ### Extruder
 
@@ -923,6 +923,13 @@ The following table lists **ALL** configuration settings from both v1 and v2, or
 | Extruder | `extruder.{name}.retract_recover_feedrate` | `extruder.{name}.retract_recover_feedrate` | ✓ Unchanged | Recover speed (mm/sec) |
 | Extruder | `extruder.{name}.retract_zlift_length` | `extruder.{name}.retract_zlift_length` | ✓ Unchanged | Z-lift on retract (mm) |
 | Extruder | `extruder.{name}.retract_zlift_feedrate` | `extruder.{name}.retract_zlift_feedrate` | ✓ Unchanged | Z-lift speed (mm/min - NOTE!) |
+| Extruder | `extruder.{name}.steps_per_mm` | `actuator.delta.steps_per_mm` | ➜ Renamed | Moved to actuator section |
+| Extruder | `extruder.{name}.acceleration` | `actuator.delta.acceleration` | ➜ Renamed | Moved to actuator section |
+| Extruder | `extruder.{name}.max_speed` | `actuator.delta.max_rate` | ➜ Renamed | Moved to actuator, max_speed→max_rate |
+| Extruder | `extruder.{name}.step_pin` | `actuator.delta.step_pin` | ⚠ Modified | Moved to actuator, pin notation changed |
+| Extruder | `extruder.{name}.dir_pin` | `actuator.delta.dir_pin` | ⚠ Modified | Moved to actuator, pin notation changed |
+| Extruder | `extruder.{name}.en_pin` | `actuator.delta.en_pin` | ⚠ Modified | Moved to actuator, pin notation changed |
+| Extruder | `extruder.{name}.default_feed_rate` | N/A | ✗ Removed | Use motion control.default_feed_rate |
 
 ### Laser
 
@@ -930,17 +937,16 @@ The following table lists **ALL** configuration settings from both v1 and v2, or
 |----------|-----------|-----------|--------|-------|
 | Laser | `laser_module_enable` | `laser.enable` | ➜ Renamed | Enable laser module |
 | Laser | `laser_module_pin` | N/A | ✗ Removed | Use pwm_pin or ttl_pin instead |
+| Laser | `laser_module_tickle_power` | N/A | ✗ Removed | Deprecated in V1, replaced by laser_module_minimum_power |
 | Laser | `laser_module_pwm_pin` | `laser.pwm_pin` | ➜ Renamed | PWM control pin |
 | Laser | `laser_module_ttl_pin` | `laser.ttl_pin` | ➜ Renamed | TTL on/off pin |
 | Laser | `laser_module_maximum_power` | `laser.maximum_power` | ➜ Renamed | Max duty cycle (0-1) |
 | Laser | `laser_module_minimum_power` | `laser.minimum_power` | ➜ Renamed | Min duty cycle to stay on |
-| Laser | `laser_module_default_power` | `laser.default_power` | ➜ Renamed | Default power if unspecified |
+| Laser | N/A | `laser.default_power` | ✚ Added | Default laser power (S value) if not specified in G-code |
 | Laser | `laser_module_maximum_s_value` | `laser.maximum_s_value` | ➜ Renamed | Max S value in G-code |
-| Laser | `laser_module_proportional_power` | `laser.proportional_power` | ➜ Renamed | Proportional on accel |
+| Laser | `laser_module_proportional_power` | N/A | ✗ Removed | Not present in v2 source code |
 | Laser | `laser_module_pwm_period` | Use `[pwm1] frequency` | ⚠ Modified | Now global PWM freq setting |
 | Laser | N/A | `laser.inverted_pwm` | ✚ Added | Invert PWM signal |
-| Laser | N/A | `laser.pullup` | ✚ Added | Enable pullup on PWM pin |
-| Laser | N/A | `laser.opendrain` | ✚ Added | Open-drain mode |
 
 ### Switch Module
 
@@ -955,14 +961,14 @@ The following table lists **ALL** configuration settings from both v1 and v2, or
 | Switch | `switch.{name}.input_off_command` | `switch.{name}.input_off_command` | ✓ Unchanged | G/M-code to turn off |
 | Switch | `switch.{name}.subcode` | `switch.{name}.subcode` | ✓ Unchanged | Sub-code for command |
 | Switch | `switch.{name}.output_pin` | `switch.{name}.output_pin` | ⚠ Modified | Pin notation changed |
-| Switch | `switch.{name}.output_type` | `switch.{name}.output_type` | ✓ Unchanged | digital, sigmadeltapwm, hwpwm |
+| Switch | `switch.{name}.output_type` | `switch.{name}.output_type` | ⚠ Modified | digital, sigmadeltapwm (was pwm in v1), hwpwm; v1's swpwm removed |
 | Switch | `switch.{name}.startup_state` | `switch.{name}.startup_state` | ✓ Unchanged | Initial state (digital) |
 | Switch | `switch.{name}.startup_value` | `switch.{name}.startup_value` | ✓ Unchanged | Initial PWM value |
-| Switch | `switch.{name}.default_on_value` | `switch.{name}.default_on_value` | ✓ Unchanged | Default value when on (hwpwm) |
+| Switch | `switch.{name}.default_on_value` | N/A | ✗ Removed | Exists in V1 but not in V2 |
 | Switch | `switch.{name}.max_pwm` | `switch.{name}.max_pwm` | ✓ Unchanged | Max PWM for sigmadelta |
+| Switch | `switch.{name}.pwm_period_ms` | N/A | ✗ Removed | PWM period in ms. V2 uses global [pwm1]/[pwm2] frequency instead |
 | Switch | `switch.{name}.failsafe_set_to` | `switch.{name}.failsafe_set_to` | ✓ Unchanged | Failsafe state |
-| Switch | `switch.{name}.halt_set_to` | `switch.{name}.halt_set_to` | ✓ Unchanged | State on HALT |
-| Switch | N/A | `switch.{name}.ignore_on_halt` | ✚ Added | Don't change state on HALT |
+| Switch | `switch.{name}.ignore_on_halt` | `switch.{name}.ignore_on_halt` | ✓ Unchanged | Don't change state on HALT |
 
 ### Kill Button
 
@@ -978,9 +984,10 @@ The following table lists **ALL** configuration settings from both v1 and v2, or
 | Category | v1 Setting | v2 Setting | Status | Notes |
 |----------|-----------|-----------|--------|-------|
 | Network | `network.enable` | `network.enable` | ✓ Unchanged | Enable network module |
-| Network | N/A | `network.shell_enable` | ✚ Added | Enable telnet shell |
+| Network | `telnet.enable` | `network.shell_enable` | ➜ Renamed | Renamed from telnet.enable |
 | Network | N/A | `network.ftp_enable` | ✚ Added | Enable FTP server |
-| Network | N/A | `network.webserver_enable` | ✚ Added | Enable web server |
+| Network | `webserver.enable` | `network.webserver_enable` | ➜ Renamed | Renamed from webserver.enable |
+| Network | `network.plan9.enable` | N/A | ✗ Removed | Plan9 filesystem server not in V2 |
 | Network | N/A | `network.ntp_enable` | ✚ Added | Enable NTP time sync |
 | Network | N/A | `network.hostname` | ✚ Added | Network hostname |
 | Network | `network.ip_address` | `network.ip_address` | ✓ Unchanged | IP (auto=DHCP, or static) |
@@ -996,7 +1003,7 @@ The following table lists **ALL** configuration settings from both v1 and v2, or
 | Category | v1 Setting | v2 Setting | Status | Notes |
 |----------|-----------|-----------|--------|-------|
 | Serial | `baud_rate` or `uart0.baud_rate` | `uart console.baudrate` | ⚠ Modified | Now in `[uart console]` section |
-| Serial | N/A | `consoles.second_usb_serial_enable` | ✚ Added | Second USB serial port |
+| Serial | `second_usb_serial_enable` | `consoles.second_usb_serial_enable` | ➜ Renamed | Second USB serial port |
 | UART | N/A | `uart console.enable` | ✚ Added | Enable UART console |
 | UART | N/A | `uart console.console` | ✚ Added | Use as console |
 | UART | N/A | `uart console.channel` | ✚ Added | UART channel (1-8) |
@@ -1012,8 +1019,8 @@ The following table lists **ALL** configuration settings from both v1 and v2, or
 | System | N/A | `general.grbl_mode` | ✚ Added | Enable GRBL compatibility |
 | System | N/A | `general.config-override` | ✚ Added | Enable config-override.ini |
 | System | N/A | `system.flash_on_boot` | ✚ Added | Auto-flash flashme.bin on boot |
-| System | N/A | `system.msc_enable` | ✚ Added | USB mass storage mode |
-| System | N/A | `system.dfu_enable` | ✚ Added | DFU mode for developers |
+| System | `msd_disable` | `system.msc_enable` | ⚠ Modified | Logic inverted: v1 disables, v2 enables USB mass storage |
+| System | `dfu_enable` | `system.dfu_enable` | ➜ Renamed | DFU mode for developers |
 | System | N/A | `system.aux_play_led` | ✚ Added | Secondary play LED pin |
 | System | N/A | `system.fets_enable_pin` | ✚ Added | Global FET enable pin |
 | System | N/A | `system.fets_power_enable_pin` | ✚ Added | Global FET power enable |
@@ -1027,6 +1034,8 @@ The following table lists **ALL** configuration settings from both v1 and v2, or
 | LEDs | `play_led_pin` | `system.aux_play_led` | ⚠ Modified | Renamed and moved |
 | LEDs | `pause_led_pin` | N/A | ✗ Removed | Not in v2 |
 | LEDs | `play_led_disable` | N/A | ✗ Removed | Not in v2 |
+| System | `leds_disable` | N/A | ✗ Removed | LED control simplified in v2 |
+| System | `ok_per_line` | N/A | ✗ Removed | True behavior standard in v2 |
 
 ### Spindle
 
@@ -1041,7 +1050,11 @@ The following table lists **ALL** configuration settings from both v1 and v2, or
 | Spindle | `spindle.default_rpm` | N/A | ✗ Removed | Not documented in v2 |
 | Spindle | `spindle.feedback_pin` | N/A | ✗ Removed | Not documented in v2 |
 | Spindle | `spindle.pulses_per_rev` | N/A | ✗ Removed | Not documented in v2 |
+| Spindle | `spindle.max_pwm` | N/A | ✗ Removed | Maximum PWM duty cycle |
+| Spindle | `spindle.control_smoothing` | N/A | ✗ Removed | Low-pass filter time constant |
 | Spindle | `spindle.control_P/I/D` | N/A | ✗ Removed | Not documented in v2 |
+| Spindle | `spindle.switch_on_pin` | N/A | ✗ Removed | VFD enable pin |
+| Spindle | `spindle.dir_pin` | N/A | ✗ Removed | RS485 direction control pin |
 | Spindle | `spindle.vfd_type` | N/A | ✗ Removed | Not documented in v2 |
 | Spindle | `spindle.tx_pin` / `rx_pin` | N/A | ✗ Removed | Modbus not supported in v2 |
 
@@ -1049,22 +1062,30 @@ The following table lists **ALL** configuration settings from both v1 and v2, or
 
 | Category | v1 Setting | v2 Setting | Status | Notes |
 |----------|-----------|-----------|--------|-------|
-| Panel | `panel.enable` | `display.enable` | ⚠ Modified | Display module in v2 (limited support) |
+| Panel | `panel.enable` | `st7920.enable` or `tm1638.enable` | ⚠ Modified | V2 uses separate modules per display type (no unified display.enable) |
 | Panel | Most panel.* settings | N/A | ✗ Removed | Many LCD variants not supported in v2 |
 | Display | N/A | `tm1638.enable` | ✚ Added | TM1638 LED display module |
 | Display | N/A | `tm1638.clock_pin` | ✚ Added | Clock pin |
 | Display | N/A | `tm1638.data_pin` | ✚ Added | Data pin |
 | Display | N/A | `tm1638.strobe_pin` | ✚ Added | Strobe pin |
 
+### ST7920 Display (V2 Only)
+
+| Category | v1 Setting | v2 Setting | Status | Notes |
+|----------|-----------|-----------|--------|-------|
+| ST7920 | N/A | `st7920.enable` | ✚ Added | Enable ST7920 graphical LCD |
+| ST7920 | N/A | `st7920.clk` | ✚ Added | Clock pin |
+| ST7920 | N/A | `st7920.mosi` | ✚ Added | MOSI/data pin |
+
 ### Player / File Execution
 
 | Category | v1 Setting | v2 Setting | Status | Notes |
 |----------|-----------|-----------|--------|-------|
-| Player | `on_boot_gcode` | N/A | ✗ Removed | Boot G-code removed in v2 |
-| Player | `on_boot_gcode_enable` | N/A | ✗ Removed | Not in v2 |
-| Player | `after_suspend_gcode` | N/A | ✗ Removed | Suspend system reworked |
-| Player | `before_resume_gcode` | N/A | ✗ Removed | Suspend system reworked |
-| Player | `leave_heaters_on_suspend` | N/A | ✗ Removed | Simplified in v2 |
+| Player | `on_boot_gcode` | `player.on_boot_gcode` | ➜ Renamed | Moved to [player] section, plays G-code file on boot (default: /sd/on_boot.gcode) |
+| Player | `on_boot_gcode_enable` | `player.on_boot_gcode_enable` | ➜ Renamed | Moved to [player] section, enables boot G-code (default: true) |
+| Player | `after_suspend_gcode` | `player.after_suspend_gcode` | ➜ Renamed | Moved to [player] section, G-code executed after suspend (default: "") |
+| Player | `before_resume_gcode` | `player.before_resume_gcode` | ➜ Renamed | Moved to [player] section, G-code executed before resume (default: "") |
+| Player | `leave_heaters_on_suspend` | `player.leave_heaters_on_suspend` | ➜ Renamed | Moved to [player] section, controls heater behavior during suspend (default: false) |
 
 ### Special Modules (v2 Only)
 

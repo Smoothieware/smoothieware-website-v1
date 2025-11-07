@@ -5,26 +5,19 @@
 ---
 
 
-Forum > [Smoothie Firwmare / General](http://example.com/forum/t-934381) > [Wiring Diagram Question](http://example.com/forum/t-934381/wiring-diagram-question)
+Forum: 3D Printing > Wiring Diagram Question
 
-**Summary:**  
-Why does the wiring diagram for the 12-24V connection show wires connected to your board?
+**Started by kkuc on 15 Jul 2014 02:06**
 
----
-
-### Post 1: Wiring Diagram Question  
-**Author:** [kkuc](http://example.com/user/kkuc), 15 Jul 2014 02:06  
-
-The user asked:  
-> The wiring diagram for the 12-24V connection shows wires connected to your board. Why is this the case?
+**Wiring Diagram Question**  
+Why does the wiring diagram show two separate connections for 12V and 24V on the same board?
 
 ---
 
-### Post 2: Re: Wiring Diagram Question  
-**Author:** [kkuc](http://example.com/user/kkuc), 15 Jul 2014 03:47  
+**Re: Wiring Diagram Question**  
+*Posted by kkuc on 15 Jul 2014 03:47*
 
-The user replied:  
-> No more need for help. I learned that this is to connect different voltages to your board. So certain equipment can run at 12V and other equipment can run at 24V.
+No more need for help. I learned that this is to connect different voltages to your board. So certain equipment can run at 12V and other equipment can run at 24V.
 
 
 ---

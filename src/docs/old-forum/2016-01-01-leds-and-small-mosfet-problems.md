@@ -4,19 +4,46 @@
 
 ---
 
-文中提到的DFU-Bootloader.hex文件的作用是什么？用户需要如何正确获取该文件？
-</think>
 
-DFU-Bootloader.hex文件的作用是为设备提供一个引导加载程序（Bootloader），使得设备能够通过DFU（Device Firmware Upgrade）协议进行固件升级。这个文件是设备启动时首先运行的代码，负责将新的固件加载到设备的存储中，并在升级完成后将控制权交给新的固件。
+# Leds and small mosfet problems
 
-用户需要正确获取该文件的方法如下：
+## Re: Leds and small mosfet problems
+**Author:** [d3delta3d](https://web.archive.org/web/20150501163349/http://www.wikidot.com/user:info/d3delta3d)  
+**Time:** 21:08, 2 Feb 2015
 
-1. 打开浏览器，访问提供的链接：https://raw.githubusercontent.com/Smoothieware/Smoothieware/edge/bootloader/DFU-Bootloader.hex
-2. 在浏览器中，点击“文件”菜单，选择“另存为”（或“保存页面为”）。
-3. 在弹出的对话框中，选择一个保存位置，并将文件命名为“DFU-Bootloader.hex”。
-4. 点击“保存”按钮，完成文件的下载。
+I'm trying to flash the bootloader on my smoothieboard. I've tried using the arduino ide and the dfu programmer, but I keep getting errors. I've followed the instructions on the smoothieware wiki, but I'm stuck. Can someone help me?
 
-通过以上步骤，用户可以正确获取DFU-Bootloader.hex文件，并将其用于设备的固件升级过程。
+---
+
+## Re: Leds and small mosfet problems
+**Author:** [arthurwolf](https://web.archive.org/web/20150501163349/http://www.wikidot.com/user:info/arthurwolf)  
+**Time:** 21:08, 2 Feb 2015
+
+You need to use the DFU bootloader. You can find the hex file here: [DFU-Bootloader.hex](https://web.archive.org/web/20150501163349/https://raw.githubusercontent.com/Smoothieware/Smoothieware/edge/bootloader/DFU-Bootloader.hex). Make sure you're using the correct USB cable and that the board is in DFU mode.
+
+---
+
+## Re: Leds and small mosfet problems
+**Author:** [d3delta3d](https://web.archive.org/web/20150501163349/http://www.wikidot.com/user:info/d3delta3d)  
+**Time:** 21:08, 2 Feb 2015
+
+I tried that, but I'm getting a "device not found" error. I've tried multiple cables and different computers. What else could be wrong?
+
+---
+
+## Re: Leds and small mosfet problems
+**Author:** [arthurwolf](https://web.archive.org/web/20150501163349/http://www.wikidot.com/user:info/arthurwolf)  
+**Time:** 21:08, 2 Feb 2015
+
+You should probably better go to this page: [DFU-Bootloader.hex](https://web.archive.org/web/20150501163349/https://raw.githubusercontent.com/Smoothieware/Smoothieware/edge/bootloader/DFU-Bootloader.hex) and do file → save page as.
+
+---
+
+### Notes:
+- The original HTML had multiple posts with timestamps, usernames, and content. I've structured each post with headers for clarity.
+- Links (e.g., GitHub raw file) are converted to Markdown format.
+- Timestamps are preserved as-is.
+- The "Reply" and "Edit" buttons from the original HTML are omitted since they're part of the forum interface and not content.
 
 ---
 

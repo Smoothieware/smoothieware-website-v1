@@ -5,36 +5,35 @@
 ---
 
 
-Forum Path:  
-Forum » Smoothie Firmware / General » Schematics
+Forum: Smoothie Firmware / General » Schematics
 
-Statistics:  
-Started by: **oldtincup**  
-Date: *23 Apr 2013 17:27*  
-Number of Posts: 2
+Started by: oldtincup  
+Date: 23 Apr 2013 17:27  
+Number of posts: 2
 
 ---
 
-**Post 1: Schematics**  
-**Author:** oldtincup  
-**Date:** 23 Apr 2013 17:27  
+**oldtincup**  
+23 Apr 2013 17:27
 
-Hi!  
-The free version of Eagle (make sure you get the latest version) can open the smoothie schematics and pcb files!  
-Have fun with it :)
+Hi !
 
-
-**Post 2: Re: Schematics**  
-**Author:** arthurwolf  
-**Date:** 23 Apr 2013 17:35  
-
-Hi !  
 The free version of Eagle ( make sure you get the latest version ) can open the smoothie schematics and pcb files !  
 Have fun with it :)
 
+Cheers !
 
-**New Post Button:**  
-[New Post](#)
+---
+
+**arthurwolf**  
+23 Apr 2013 17:35
+
+Hi !
+
+The free version of Eagle ( make sure you get the latest version ) can open the smoothie schematics and pcb files !  
+Have fun with it :)
+
+Cheers !
 
 
 ---

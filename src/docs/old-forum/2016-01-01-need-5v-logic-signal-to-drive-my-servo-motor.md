@@ -4,29 +4,21 @@
 
 ---
 
-Forum Thread  
-Forum » [Smoothie Firwmare / General](/web/20150721082511/http://smoothieware.org/forum/c-496918/general) » [Need 5v logic signal to drive my Servo motor](/web/20150721082511/http://smoothieware.org/forum/t-1260101/need-5v-logic-signal-to-drive-my-servo-motor)  
+# Need 5v logic signal to drive my Servo motor
 
-**Summary:**  
-driving my Clear-path servo all-in-one servo motor from the driver breakout pins need 5V Logic  
+**Forum Path:** [Forum](/web/20150721082511/http://smoothieware.org/forum/start) » [Smoothie Firwmare / General](/web/20150721082511/http://smoothieware.org/forum/t-1260101/need-5v-logic-signal-to-drive-my-servo-motor)
 
-**Started by:** [dannydefe](https://web.archive.org/web/20150721082511/http://www.wikidot.com/user:info/dannydefe)  
-**Date:** 27 Jun 2015 20:19  
-**Number of posts:** 1  
-**RSS:** [New posts](/web/20150721082511/http://smoothieware.org/feed/forum/t-1260101.xml)  
+**Author:** [dannydefe](https://www.wikidot.com/user:info/dannydefe)  
+**Date:** 27 Jun 2015
 
----
+**Summary:** Need 5v logic signal to drive my Servo motor
 
-**Need 5v logic signal to drive my Servo motor**  
-by [dannydefe](https://web.archive.org/web/20150721082511/http://www.wikidot.com/user:info/dannydefe), 27 Jun 2015 20:19  
+**Post Content:**
 
-We are directly driving my  
-[teknicdotcom/model-info/CPM-SDSK-2310S-RLN](teknicdotcom/model-info/CPM-SDSK-2310S-RLN)  
-Clear-path servo all-in-one servo motor from the driver breakout pins on the board. The servos have built-in drivers that require 4.5 to 5v logic signal. From what I understand the signals coming from the Smoothie X5 board is 3.3V Does anyone have suggestions or do I end up with a Logic level converter ?  
+teknicdotcom/model-info/CPM-SDSK-2310S-RLN  
+Clear-path servo all-in-one servo motor from the driver breakout pins on the board. The servos have built-in drivers that require 4.5 to 5v logic signal. From what I understand the signals coming from the Smoothie X5 board is 3.3V. Does anyone have suggestions or do I end up with a Logic level converter ?
 
-[sparkfundotcom/products/12009](sparkfundotcom/products/12009)  
-
-**Reply** | [Options](javascript:;)
+sparkfundotcom/products/12009
 
 ---
 

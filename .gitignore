@@ -21,7 +21,7 @@ tasks/
 # work folders
 data/
 import/
-src/
+#src/
 
 # random
 AGENTS.md

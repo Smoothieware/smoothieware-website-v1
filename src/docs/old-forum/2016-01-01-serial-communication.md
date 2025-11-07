@@ -4,20 +4,19 @@
 
 ---
 
+# Serial Communication
 
-Forum > Smoothie Firwmare / General > Serial Communication
+## Serial Communication  
+**by rhitch**, 18 May 2013 13:55  
 
-Started by [rhitch](https://web.archive.org/web/20150501163337/http://www.wikidot.com/user:info/rhitch) on 18 May 2013 13:55 | 2 posts  
-[Subscribe to RSS feed](https://web.archive.org/web/20150501163337/http://www.wikidot.com/forum/t-653845/serial-communication)
+Figured out that I can connect using Pronterface immediately after flashing firmware but only once. If I disconnect and reconnect no response. I still have not been able to connect via terminal program.
 
-### Serial Communication
-> Figured out that I can connect using Pronterface immediately after flashing firmware but only once. If I disconnect and reconnect no response. I still have not been able to connect via terminal program.
+## Re: Serial Communication  
+**by rhitch**, 18 May 2013 14:36  
 
-### Re: Serial Communication
-> Figured out that I can connect using Pronterface immediately after flashing firmware but only once. If I disconnect and reconnect no response. I still have not been able to connect via terminal program.
-
+Figured out that I can connect using Pronterface immediately after flashing firmware but only once. If I disconnect and reconnect no response. I still have not been able to connect via terminal program.
 
 ---
 
 *This post was archived from the old Smoothieware forum.*
-*Source: [Wayback Machine](https://web.archive.org/web/20150828075206/http://smoothieware.org/forum/t-653845/serial-communication)*
+*Source: [Wayback Machine](https://web.archive.org/web/20150723181358/http://smoothieware.org/forum/t-653845/serial-communication)*

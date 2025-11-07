@@ -1,0 +1,15 @@
+{{! Template for rendering path elements with progressive color darkening }}
+{{! Each part is a path segment, with color_level calculated for progressive darkening }}
+{{! Right-most element is darkest (color level 0), progressively lighter to the left }}
+
+{{#each parts}}
+    {{! Path element with color data attribute }}
+    <span class="setting-path-element" data-color="{{this.color_level}}">{{escape this.text}}</span>
+
+    {{! Diagonal separator with dot (except after last element) }}
+    {{#unless @last}}
+    <span class="setting-separator-diagonal" data-from="{{this.color_level}}" data-to="{{this.next_color_level}}">
+        <span class="setting-dot"></span>
+    </span>
+    {{/unless}}
+{{/each}}

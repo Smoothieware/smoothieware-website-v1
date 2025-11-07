@@ -105,9 +105,9 @@ docs/images/
 The site uses `{% include_relative filename.md %}` for modular content:
 
 ```markdown
-{% include_relative unboxing.md %}
-{% include_relative warning.md %}
-{% include_relative donate.md %}
+{% include_relative unboxing.md %} -->
+{% include_relative warning.md %} -->
+{% include_relative donate.md %} -->
 ```
 
 These are resolved at build time by Jekyll.

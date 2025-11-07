@@ -1,0 +1,11 @@
+{{! Template for panel when setting is not found }}
+{{! Shows a neutral alert explaining that the setting might not be available in this version }}
+
+<div class="setting-panel-content">
+    <sl-alert variant="neutral" open>
+        <sl-icon slot="icon" name="info-circle"></sl-icon>
+        <strong>{{version}} setting not found</strong>
+        <br>
+        This setting may not be available in {{version}}, or the data may not have loaded correctly.
+    </sl-alert>
+</div>

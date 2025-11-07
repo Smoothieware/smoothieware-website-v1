@@ -357,9 +357,10 @@ sl-alert[variant="danger"]::part(base) {
 }
 
 /* Constrain icon images - targets images with "icon" in filename */
+/* Must come AFTER paragraph img rules for proper specificity */
 img[src*="icon."] {
-  max-width: 150px;
-  height: auto;
+  max-width: 200px !important;
+  height: auto !important;
 }
 
 /* Constrain all images in paragraphs and list items to reasonable sizes */
@@ -369,6 +370,14 @@ img[src*="icon."] {
 .markdown-body blockquote img {
   max-width: 100px !important;
   height: auto;
+}
+
+/* Override for icon images - ensure icons in paragraphs are not too small */
+.markdown-body p img[src*="icon."],
+.markdown-body li img[src*="icon."],
+.markdown-body blockquote img[src*="icon."] {
+  max-width: 200px !important;
+  height: auto !important;
 }
 
 /* Hide the site title H1 at the top of every page */

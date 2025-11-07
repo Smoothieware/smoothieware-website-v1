@@ -4,32 +4,36 @@
 
 ---
 
-## Looking for help from the community.
 
-### Summary:
+Forum > Smoothie Firmware / General
+
+**Started by**: [arthurwolf](https://web.archive.org/web/20160826143512/http://www.wikidot.com/user:info/arthurwolf)  
+**Date**: 05 Jun 2016 16:28  
+**Number of posts**: 1  
+**RSS**: [RSS feed](https://web.archive.org/web/20160826143512/http://www.wikidot.com/forum/t-1727968/looking-for-help-from-the-community)
+
+**Summary**:  
 If you are looking for a way to give back to the project : this is it !
 
-**Forum Thread**  
-[Forum](/web/20161026100529/http://smoothieware.org/forum/start) » [Smoothie Firmware / General](/web/20161026100529/http://smoothieware.org/forum/c-496918/general) » Looking for help from the community.
+---
 
-**Started by:** [arthurwolf](https://web.archive.org/web/20161026100529/http://www.wikidot.com/user:info/arthurwolf)  
-**Date:** 05 Jun 2016 16:28  
-**Number of posts:** 1  
-**RSS:** [New posts](/web/20161026100529/http://smoothieware.org/feed/forum/t-1727968.xml)
+**Looking for help from the community.**  
+by [arthurwolf](https://web.archive.org/web/20160826143512/http://www.wikidot.com/user:info/arthurwolf), 05 Jun 2016 16:28
 
-We are looking for folks who are ready to help with writing synopses for a series of video tutorials.
+We're looking for help with the following:
 
-Please read this post about it: [Google+ Post](https://web.archive.org/web</s>
+- Writing content for the project's documentation  
+- Translating content into other languages  
+- Testing new features  
 
-We are looking for folks who are ready to help with writing synopses for a series of video tutorials.
+If you're interested in contributing, please [reply](javascript:postReply(event,2519714)) to this thread or check out the [task list](https://web.archive.org/web/20160826143512/http://www.wikidot.com/forum/t-1727968/looking-for-help-from-the-community).
 
-Please read this post about it: [Google+ Post](https://web.archive.org/web/20161026100529/https://plus.google.com/110264297247552222336/posts/8KpDqDqDqDq)  
-and check out the TODO list at [TODO List](https://web.archive.org/web/20161026100529/http://www.wikidot.com/smoothie-firmware:todo).
+Thanks a ton!
 
-**Last edited** by [arthurwolf](https://web.archive.org/web/20161026100529/http://www.wikidot.com/user:info/arthurwolf) on 05 Jun 2016 16:28.  
-[Reply](javascript:postReply(event,2519714)) | [Options](javascript:togglePostOptions(event,2519714))
+*Last edited on 27 Jun 2016 18:16 by [arthurwolf](https://web.archive.org/web/20160826143512/http://www.wikidot.com/user:info/arthurwolf)*
+
 
 ---
 
 *This post was archived from the old Smoothieware forum.*
-*Source: [Wayback Machine](https://web.archive.org/web/20161014011352/http://smoothieware.org/forum/t-1727968/looking-for-help-from-the-community)*
+*Source: [Wayback Machine](https://web.archive.org/web/20160806191431/http://smoothieware.org/forum/t-1727968/looking-for-help-from-the-community)*

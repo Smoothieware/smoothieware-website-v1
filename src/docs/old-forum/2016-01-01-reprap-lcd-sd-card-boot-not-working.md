@@ -31,7 +31,7 @@ The adapter might be providing additional power or signal stability. Try cleanin
 ---
 
 ## Post by Tpete61 (April 1, 2015 1:30 AM)
-I cleaned the slot and tried a different card, but the problem remains. The microSD card works in the adapter, but not directly in the panel. Could there be a hardware issue with the panel's SD card reader?
+I cleaned the slot and tried a different card, but the problem remains. The microSD card works in the adapter, but not directly in the panel. Could there be a compatibility issue with the panel's SD card reader?
 
 ---
 

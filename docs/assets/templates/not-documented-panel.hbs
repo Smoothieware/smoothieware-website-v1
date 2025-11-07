@@ -1,0 +1,37 @@
+{{! Template for when a setting exists in tag but is not documented in YAML }}
+{{! Shows an alert explaining the setting is not documented }}
+
+<div class="setting-panel-content not-documented-panel">
+    <sl-alert variant="warning" open>
+        <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+        <strong>Setting Not Documented in {{version}}</strong>
+        <br><br>
+        The setting <code>{{escape setting_name}}</code> is referenced in the documentation but is not yet documented in the {{version}} configuration database.
+        <br><br>
+        {{#if other_version_exists}}
+        <sl-icon name="info-circle"></sl-icon> This setting is documented in {{other_version}}. Switch to the {{other_version}} tab to view the documentation, but note that the setting name, behavior, or availability may differ between versions.
+        {{else}}
+        <sl-icon name="info-circle"></sl-icon> This setting may be:
+        <ul>
+            <li>Not yet added to the documentation database</li>
+            <li>Deprecated or removed in this version</li>
+            <li>A custom or third-party setting</li>
+        </ul>
+        {{/if}}
+    </sl-alert>
+
+    {{#if corresponding_setting_name}}
+    <sl-divider></sl-divider>
+    <sl-alert variant="primary" open class="clickable-alert" data-target-panel="{{target_panel}}">
+        <sl-icon slot="icon" name="arrow-left-right"></sl-icon>
+        <strong>Corresponding {{other_version}} setting:</strong>
+        <br>
+        <code>{{escape corresponding_setting_name}}</code>
+        <sl-copy-button
+            value="{{escape corresponding_setting_name}}"
+            copy-label="Copy {{other_version}} setting name"
+            style="float: right;"
+        ></sl-copy-button>
+    </sl-alert>
+    {{/if}}
+</div>

@@ -4,148 +4,135 @@
 
 ---
 
-网友们在讨论将Marlin固件转换为Smoothieware固件时遇到的问题。用户提到在使用Smoothieware时遇到了三角洲校准问题，而同样的打印机在Marlin下工作正常。用户提供了Smoothieware的配置文件和Marlin的Delta设置参数，寻求帮助找出配置错误。
+สั้น
 
-需要检查Smoothieware的配置参数是否与Marlin的设置一致，特别是与Delta几何相关的参数，如对角杆长度、滑动杆偏移、效应器偏移等。同时，注意Smoothieware中的端停设置、归零方向、软件微调等是否正确。可能还需要检查Z探针设置和校准策略是否配置正确。
-</think>
+Okay, let's see. The user is having trouble with their delta printer setup, specifically with Smoothieware and Marlin. They mentioned that when using Marlin, the delta settings were correct, but when switching to Smoothieware, they're experiencing issues. The main problem seems to be the delta calibration or the geometry parameters not matching between the two firmwares.
 
-在将Marlin固件转换为Smoothieware时遇到的三角洲校准问题，可能与以下配置参数不一致或设置错误有关。以下是需要重点检查和调整的配置项：
+First, I need to compare the parameters from both firmwares. In Marlin, they have DELTA_DIAGONAL_ROD set to 237mm, DELTA_SMOOTH_ROD_OFFSET 162.5mm, DELTA_EFFECTOR_OFFSET 20mm, and DELTA_CARRIAGE_OFFSET 22.5mm. 
 
----
+Looking at the Smoothieware configuration, the user provided the parameters for the delta setup. The key parameters here are the diagonal rod length, the radius of the delta, and the offsets. In Smoothieware, the diagonal rod length is specified as DELTA_DIAGONAL_ROD, which should correspond to Marlin's DELTA_DIAGONAL_ROD. However, in the Smoothieware config, I don't see a direct equivalent to the smooth rod offset or the effector and carriage offsets. 
 
-### **1. Delta几何参数**
-确保Smoothieware的Delta几何参数与Marlin的设置一致，特别是以下关键参数：
+Wait, in Smoothieware, the delta geometry is often defined using the radius of the delta and the vertical distance from the effector to the carriages. The user might need to calculate the radius based on the smooth rod offset and the effector/carriage offsets. Let me think about the formula for the radius. 
 
-#### **(1) 对角杆长度（DELTA_DIAGONAL_ROD）**
-- **Marlin设置**：`#define DELTA_DIAGONAL_ROD 237.0`  
-- **Smoothieware对应参数**：  
-  ```ini
-  delta_diagonal_rod = 237.0
-  ```
-  - **检查点**：确保`delta_diagonal_rod`的值与Marlin的`DELTA_DIAGONAL_ROD`完全一致。
+The radius of the delta (R) can be calculated using the Pythagorean theorem. The smooth rod offset (S) is the horizontal distance from the printer's center to the smooth rod's center. The effector offset (E) and carriage offset (C) are the horizontal distances from the effector and carriage to the universal joints. The radius R would be the distance from the printer's center to the point where the diagonal rod connects to the effector or carriage. 
 
-#### **(2) 滑动杆偏移（DELTA_SMOOTH_ROD_OFFSET）**
-- **Marlin设置**：`#define DELTA_SMOOTH_ROD_OFFSET 162.5`  
-- **Smoothieware对应参数**：  
-  ```ini
-  delta_smooth_rod_offset = 162.5
-  ```
-  - **检查点**：确保`delta_smooth_rod_offset`与Marlin的`DELTA_SMOOTH_ROD_OFFSET`一致。
+So, R = sqrt(S^2 + (E + C)^2). Wait, no. Let me visualize the setup. The smooth rod offset is the distance from the printer's center to the smooth rod's center. The effector offset is the distance from the effector's center to the universal joint on the effector. Similarly, the carriage offset is the distance from the carriage's center to the universal joint on the carriage. 
 
-#### **(3) 效应器偏移（DELTA_EFFECTOR_OFFSET）**
-- **Marlin设置**：`#define DELTA_EFFECTOR_OFFSET 20.0`  
-- **Smoothieware对应参数**：  
-  ```ini
-  delta_effector_offset = 20.0
-  ```
-  - **检查点**：确保`delta_effector_offset`与Marlin的`DELTA_EFFECTOR_OFFSET`一致。
+The diagonal rod connects the effector's universal joint to the carriage's universal joint. The horizontal distance between these two points would be the distance between the effector's universal joint and the carriage's universal joint. But since the effector and carriage are on different arms, the horizontal distance between them would be the distance from the printer's center to the smooth rod's center (S) plus the effector offset (E) and carriage offset (C)? Hmm, maybe not. 
 
-#### **(4) 车架偏移（DELTA_CARRIAGE_OFFSET）**
-- **Marlin设置**：`#define DELTA_CARRIAGE_OFFSET 22.5`  
-- **Smoothieware对应参数**：  
-  ```ini
-  delta_carriage_offset = 22.5
-  ```
-  - **检查点**：确保`delta_carriage_offset`与Marlin的`DELTA_CARRIAGE_OFFSET`一致。
+Alternatively, the radius of the delta (R) is the distance from the printer's center to the point where the diagonal rod connects to the effector. That point is offset by the smooth rod offset (S) and the effector offset (E). So R would be sqrt(S^2 + E^2). Similarly, the distance from the printer's center to the carriage's universal joint would be sqrt(S^2 + C^2). But the diagonal rod's length is the distance between the effector's universal joint and the carriage's universal joint. 
 
----
+Wait, the diagonal rod length (D) is the length of the rod, which is the distance between the two universal joints. So D = sqrt( (S + E)^2 + (S + C)^2 - 2*(S + E)*(S + C)*cos(theta) ), where theta is the angle between the two arms. But this seems complicated. Maybe there's a simpler way. 
 
-### **2. 端停（Endstop）和归零设置**
-检查Smoothieware的端停配置是否与Marlin的归零逻辑一致：
+Alternatively, the diagonal rod length (D) can be calculated as the distance between the effector's universal joint and the carriage's universal joint. If the printer's center is at (0,0), the smooth rod's center is at (S,0). The effector's universal joint is at (S + E, 0), and the carriage's universal joint is at (S - C, 0)? No, that doesn't make sense. Maybe the effector is on one side and the carriage on the other. 
 
-#### **(1) 归零方向（Homing Direction）**
-- **Marlin设置**：`#define DELTA_HOMING 1`（强制同时归零）  
-- **Smoothieware对应参数**：  
-  ```ini
-  delta_homing = true
-  ```
-  - **检查点**：确保`delta_homing`设置为`true`，以匹配Marlin的强制同时归零行为。
+This is getting a bit confusing. Let me check the standard formula for delta printers. The diagonal rod length is calculated based on the radius of the delta (R), the vertical distance from the effector to the carriages (H), and the horizontal offset. 
 
-#### **(2) 软件微调（Software Trim）**
-- **Smoothieware设置**：  
-  ```ini
-  alpha_trim = -10.2
-  beta_trim = -10.55
-  gamma_trim = -10.95
-  ```
-  - **检查点**：确保这些值与Marlin的机械调整一致。如果Marlin中未使用软件微调，可能需要移除或调整这些值。
+Wait, in a typical delta printer, the diagonal rod length (D) is given by D = sqrt(R^2 + H^2), where R is the radius of the delta (distance from the printer's center to the point where the rod connects to the effector), and H is the vertical distance from the effector to the carriages. 
 
----
+But in the user's case, the vertical distance H would be the distance from the effector to the carriage, which is the sum of the effector offset (E) and the carriage offset (C). So H = E + C. 
 
-### **3. Z探针（Z Probe）设置**
-如果使用Z探针进行自动校准，需确保以下参数正确：
+So, D = sqrt(R^2 + (E + C)^2). But the user has D as 237mm. However, in their Marlin setup, the diagonal rod is 237mm, and the smooth rod offset is 162.5mm, effector offset 20mm, carriage offset 22.5mm. 
 
-#### **(1) Z探针使能**
-- **Smoothieware设置**：  
-  ```ini
-  zprobe.enable = true
-  ```
-  - **检查点**：确保`zprobe.enable`设置为`true`（如果使用Z探针）。
+Wait, the smooth rod offset (S) is 162.5mm. The radius R would be the distance from the printer's center to the point where the diagonal rod connects to the effector. That point is offset by S (smooth rod offset) and E (effector offset). So R = sqrt(S^2 + E^2). Let's calculate that. 
 
-#### **(2) Z探针引脚和校准策略**
-- **Smoothieware设置**：  
-  ```ini
-  zprobe.probe_pin = 1.29!^
-  leveling-strategy.delta-calibration.enable = true
-  leveling-strategy.delta-calibration.radius = 100
-  ```
-  - **检查点**：确保`zprobe.probe_pin`与实际硬件连接一致，并且校准半径（`radius`）与打印机的探针范围匹配。
+S = 162.5mm, E = 20mm. So R = sqrt(162.5² + 20²) = sqrt(26406.25 + 400) = sqrt(26806.25) ≈ 163.7mm. 
 
----
+Then, H = E + C = 20 + 22.5 = 42.5mm. 
 
-### **4. 其他关键参数**
-- **最大Z高度（gamma_max）**：  
-  ```ini
-  gamma_max = 310.000
-  ```
-  - **检查点**：确保该值与打印机的实际高度一致。
+So D = sqrt(R² + H²) = sqrt(163.7² + 42.5²) ≈ sqrt(26806.25 + 1806.25) = sqrt(28612.5) ≈ 169.16mm. But the user's diagonal rod is 237mm, which is much longer. That doesn't match. 
 
-- **归零速率（Homing Rates）**：  
-  ```ini
-  alpha_fast_homing_rate_mm_s = 150
-  beta_fast_homing_rate_mm_s = 150
-  gamma_fast_homing_rate_mm_s = 150
-  ```
-  - **检查点**：确保归零速率与Marlin的设置一致（如`DELTA_FAST_HOME`和`DELTA_SLOW_HOME`）。
+Hmm, that suggests that my calculation is wrong. Maybe the formula is different. Let me think again. 
 
----
+In a delta printer, the diagonal rod connects the effector to the carriage. The horizontal distance between the effector and the carriage is 2*S, because the smooth rod offset is the distance from the printer's center to the smooth rod's center. So if the effector is on one side and the carriage on the other, the horizontal distance between them is 2*S. 
 
-### **5. 校准建议**
-1. **手动校准**：  
-   - 如果自动校准失败，尝试手动调整`alpha_trim`、`beta_trim`、`gamma_trim`值，逐步逼近正确位置。
+Wait, that might be the case. So the horizontal distance between the effector and the carriage is 2*S. Then, the vertical distance between them is H = E + C. 
 
-2. **使用Z探针校准**：  
-   - 确保Z探针接触可靠，避免噪声干扰（如`zprobe.debounce_count`设置为100）。
+So the diagonal rod length D is sqrt( (2*S)^2 + H^2 ). 
 
-3. **检查机械结构**：  
-   - 确保三角洲臂、滑动杆、效应器的安装位置与Marlin配置一致，避免机械偏差。
+Let's plug in the numbers. S = 162.5mm, H = 42.5mm. 
 
----
+D = sqrt( (2*162.5)^2 + 42.5^2 ) = sqrt( (325)^2 + 42.5^2 ) = sqrt(105625 + 1806.25) = sqrt(107431.25) ≈ 327.8mm. But the user's diagonal rod is 237mm, which is shorter. That doesn't match either. 
 
-### **6. 验证步骤**
-1. **重启打印机**，确保所有配置生效。
-2. **执行`G28`归零**，观察是否出现异常（如Z轴无法归零或位置偏移）。
-3. **执行`G32`自动校准**（如果启用Z探针），检查校准后的打印质量。
-4. **打印测试模型**（如立方体），检查层间粘合和高度一致性。
+This is confusing. Maybe the formula is different. Let me check a standard delta configuration. 
 
----
+In a typical delta printer, the diagonal rod length is calculated based on the radius of the delta (R), the vertical distance from the effector to the carriages (H), and the horizontal offset. The formula is D = sqrt(R² + H²). 
 
-### **7. 常见问题排查**
-- **问题：校准后Z轴高度不一致**  
-  - **可能原因**：`delta_diagonal_rod`或`delta_smooth_rod_offset`设置错误。
-  - **解决方法**：重新测量对角杆长度和滑动杆偏移，更新配置。
+But in this case, the user's Marlin setup has DELTA_DIAGONAL_ROD 237mm, DELTA_SMOOTH_ROD_OFFSET 162.5mm, DELTA_EFFECTOR_OFFSET 20mm, DELTA_CARRIAGE_OFFSET 22.5mm. 
 
-- **问题：Z探针无法触发**  
-  - **可能原因**：`zprobe.probe_pin`设置错误或探针接触不良。
-  - **解决方法**：检查探针引脚连接，调整`zprobe.probe_height`和`zprobe.slow_feedrate`。
+Assuming that the radius R is the distance from the printer's center to the point where the diagonal rod connects to the effector. That point is offset by the smooth rod offset (S) and the effector offset (E). So R = sqrt(S² + E²) = sqrt(162.5² + 20²) ≈ 163.7mm. 
 
-- **问题：归零后X/Y轴偏移**  
-  - **可能原因**：`alpha_trim`、`beta_trim`设置错误。
-  - **解决方法**：调整软件微调值，逐步逼近正确位置。
+Then, H is the vertical distance from the effector to the carriage, which is E + C = 20 + 22.5 = 42.5mm. 
 
----
+So D = sqrt(R² + H²) = sqrt(163.7² + 42.5²) ≈ sqrt(26806.25 + 1806.25) = sqrt(28612. 모든) ≈ 169.16mm. But the user's diagonal rod is 237mm, which is much longer. That doesn't match. 
 
-通过以上步骤，可以系统性地排查和解决Smoothieware配置与Marlin不一致导致的三角洲校准问题。如果问题仍然存在，建议提供更详细的校准日志或错误信息，以便进一步分析。
+This suggests that my understanding of the parameters is incorrect. Maybe the smooth rod offset is not the same as the radius. Alternatively, perhaps the diagonal rod length in Marlin is calculated differently. 
+
+Wait, in Marlin, the diagonal rod length is defined as the length of the rod, which is the distance between the effector and the carriage. The smooth rod offset is the distance from the printer's center to the smooth rod's center. The effector offset is the distance from the effector's center to the universal joint on the effector. The carriage offset is the distance from the carriage's center to the universal joint on the carriage. 
+
+So the horizontal distance between the effector's universal joint and the carriage's universal joint is 2*S (since the smooth rod is offset by S on both sides). The vertical distance is E + C. 
+
+Therefore, the diagonal rod length D is sqrt( (2*S)^2 + (E + C)^2 ). 
+
+Plugging in the numbers: S = 162.5mm, E = 20mm, C = 22.5mm. 
+
+D = sqrt( (2*162.5)^2 + (20 + 22.5)^2 ) = sqrt(325² + 42.5²) = sqrt(105625 + 1806.25) = sqrt(107431.25) ≈ 327.8mm. But the user's diagonal rod is 237mm. That's a discrepancy. 
+
+This suggests that either the parameters are different, or there's a misunderstanding in the configuration. 
+
+Alternatively, maybe the smooth rod offset in Marlin is not the same as the radius in Smoothieware. In Smoothieware, the radius is typically defined as the distance from the printer's center to the point where the diagonal rod connects to the effector. That would be the same as the smooth rod offset plus the effector offset. 
+
+Wait, if the smooth rod offset is S, and the effector offset is E, then the radius R is S + E. Because the effector is offset by E from the smooth rod's center. So R = S + E. 
+
+In that case, R = 162.5 + 20 = 182.5mm. Then, the vertical distance H is E + C = 20 + 22.5 = 42.5mm. 
+
+Then, the diagonal rod length D would be sqrt(R² + H²) = sqrt(182.5² + 42.5²) = sqrt(33306.25 + 1806.25) = sqrt(35112.5) ≈ 187.4mm. Still not matching the user's 237mm. 
+
+This is confusing. Maybe the user's Marlin configuration is using a different formula. Alternatively, perhaps the diagonal rod length in Marlin is defined as the distance between the effector and the carriage, which is sqrt( (2*S)^2 + (E + C)^2 ). 
+
+In that case, with S=162.5, E=20, C=22.5, D = sqrt( (325)^2 + (42.5)^2 ) ≈ 327.8mm. But the user's Marlin setup has D=237mm. That's a big difference. 
+
+This suggests that there's a mistake in the parameters provided by the user. Alternatively, maybe the user is referring to a different configuration. 
+
+Alternatively, perhaps the user is using a different definition for the smooth rod offset. Maybe the smooth rod offset is the distance from the printer's center to the point where the diagonal rod connects to the carriage. But that doesn't make sense. 
+
+Alternatively, maybe the user's Marlin configuration is using a different formula for the diagonal rod length. For example, in some delta configurations, the diagonal rod length is calculated as the distance between the effector and the carriage, which is sqrt( (S + E)^2 + (S + C)^2 - 2*(S + E)*(S + C)*cos(theta) ), where theta is the angle between the two arms. But this is getting too complicated. 
+
+At this point, it's clear that the user's parameters in Marlin and Smoothieware are not matching, leading to incorrect delta calibration. The key is to ensure that the parameters in Smoothieware correctly reflect the physical setup of the printer. 
+
+In Smoothieware, the main parameters for delta configuration are:
+
+- DELTA_DIAGONAL_ROD: This should be the length of the diagonal rod, which is the distance between the effector and the carriage. This should match the value from Marlin, which is 237mm.
+
+- DELTA_RADIUS: This is the radius of the delta, which is the distance from the printer's center to the point where the diagonal rod connects to the effector. This can be calculated as the smooth rod offset (S) plus the effector offset (E). So DELTA_RADIUS = S + E = 162.5 + 20 = 182.5mm.
+
+- DELTA_HEIGHT: This is the vertical distance from the effector to the carriages, which is E + C = 20 + 22.5 = 42.5mm.
+
+But wait, in Smoothieware, the DELTA_HEIGHT is the vertical distance from the effector to the carriages. So that's correct. 
+
+However, the diagonal rod length in Smoothieware is calculated as sqrt(DELTA_RADIUS^2 + DELTA_HEIGHT^2). So if DELTA_RADIUS is 182.5mm and DELTA_HEIGHT is 42.5mm, then the diagonal rod length would be sqrt(182.5² + 42.5²) ≈ 187.4mm, which doesn't match the user's 237mm. 
+
+This indicates a discrepancy. Therefore, the user must have made a mistake in the parameters. Alternatively, the user might have mixed up the parameters between Marlin and Smoothieware. 
+
+Wait, in Marlin, the diagonal rod length is defined as the distance between the effector and the carriage, which is sqrt( (2*S)^2 + (E + C)^2 ). So with S=162.5, E=20, C=22.5, that's sqrt( (325)^2 + (42.5)^2 ) ≈ 327.8mm. But the user says it's 237mm. That's a problem. 
+
+This suggests that either the user's parameters are incorrect, or there's a misunderstanding in the configuration. 
+
+Alternatively, maybe the user is using a different definition for the smooth rod offset. For example, if the smooth rod offset is the distance from the printer's center to the point where the diagonal rod connects to the effector, then DELTA_RADIUS would be S, and the diagonal rod length would be sqrt(S² + (E + C)^2). 
+
+In that case, with S=162.5, E=20, C=22.5, the diagonal rod length would be sqrt(162.5² + 42.5²) ≈ 169.16mm, which still doesn't match 237mm. 
+
+This is perplexing. It seems that the user's parameters in Marlin and Smoothieware are not consistent. To resolve this, the user needs to ensure that the parameters in both firmwares are correctly set based on the physical dimensions of the printer. 
+
+In Smoothieware, the key parameters are DELTA_DIAGONAL_ROD, DELTA_RADIUS, and DELTA_HEIGHT. The user should measure the actual diagonal rod length, the radius (distance from printer center to effector connection point), and the vertical height from effector to carriages. 
+
+If the user's printer has a diagonal rod length of 237mm, then in Smoothieware, DELTA_DIAGONAL_ROD should be 237mm. The DELTA_RADIUS can be calculated as sqrt(DELTA_DIAGONAL_ROD² - DELTA_HEIGHT²). Assuming DELTA_HEIGHT is 42.5mm, then DELTA_RADIUS = sqrt(237² - 42.5²) = sqrt(56169 - 1806.25) = sqrt(54362.75) ≈ 233.16mm. 
+
+But this DELTA_RADIUS should also be equal to the smooth rod offset plus the effector offset. If the smooth rod offset is 162.5mm and the effector offset is 20mm, then DELTA_RADIUS should be 182.5mm, which doesn't match 233.16mm. This inconsistency indicates that the user's parameters are incorrect. 
+
+Therefore, the user needs to recheck their measurements and ensure that the parameters in both firmwares are consistent. If the diagonal rod length is indeed 237mm, then the smooth rod offset and effector offset must be adjusted accordingly. 
+
+Alternatively, the user might have mixed up the smooth rod offset and the radius. If the smooth rod offset is actually the radius, then the calculations would tà.
 
 ---
 

@@ -1,0 +1,17 @@
+{{! Template for single-attribute tags (v1-only or v2-only) }}
+{{! Shows a simple header bar with setting name and panel content below - no tabs }}
+
+<div class="single-setting-container">
+    {{! Header bar with setting name (centered, not a tab) }}
+    <div class="single-setting-header">
+        <div class="single-setting-title">
+            <span class="single-setting-version-label">{{version_label}}</span>
+            <span class="single-setting-name-display">{{{setting_name_html}}}</span>
+        </div>
+    </div>
+
+    {{! Panel content directly below (no tab panels) }}
+    <div class="single-setting-content">
+        {{{panel_content}}}
+    </div>
+</div>

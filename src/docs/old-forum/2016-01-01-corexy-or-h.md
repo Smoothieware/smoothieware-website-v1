@@ -4,30 +4,33 @@
 
 ---
 
-# Corexy or H-bot arm solution
 
-**By luised**, 06 Mar 2015 04:48
+Corexy or H-bot arm solution
+by luised, 06 Mar 2015
 
-Hello,
+Hello.
 
 Just add to your configuration file :
 
-
-arm_solution     corexy
+```arm_solution     corexy```
 
 And that's it :)
 
 
-**By arthurwolf**, 16 Mar 2015 22:02
+Re: Corexy or H-bot arm solution
+by arthurwolf, 16 Mar 2015
 
 Hey.
 
 Just add to your configuration file :
 
-
-arm_solution     corexy
+```arm_solution     corexy```
 
 And that's it :)
+
+
+New Post
+
 
 ---
 

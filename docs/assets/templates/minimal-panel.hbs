@@ -1,0 +1,41 @@
+{{! Template for minimal panel when YAML data doesn't exist but tag attribute does }}
+{{! Shows just the setting name and explains that detailed documentation isn't available }}
+
+<div class="setting-panel-content">
+    <div class="setting-header">
+        <code class="setting-name">{{escape setting_name}}</code>
+        <sl-copy-button
+            value="{{escape setting_name}}"
+            copy-label="Copy setting name"
+            success-label="Copied!"
+            error-label="Failed to copy"
+        ></sl-copy-button>
+    </div>
+
+    <sl-divider></sl-divider>
+
+    <sl-alert variant="neutral" open>
+        <sl-icon slot="icon" name="info-circle"></sl-icon>
+        <strong>Limited documentation available</strong>
+        <br>
+        Detailed documentation for this setting hasn't been added to the database yet. The setting name is provided from the page source.
+    </sl-alert>
+
+    {{! Corresponding setting alert (if provided) }}
+    {{#if corresponding_setting_name}}
+    <sl-divider></sl-divider>
+    <div class="setting-corresponding">
+        <sl-alert variant="primary" open class="clickable-alert" data-target-panel="{{target_panel}}">
+            <sl-icon slot="icon" name="arrow-left-right"></sl-icon>
+            <strong>Corresponding {{other_version}} setting:</strong>
+            <br>
+            <code>{{escape corresponding_setting_name}}</code>
+            <sl-copy-button
+                value="{{escape corresponding_setting_name}}"
+                copy-label="Copy {{other_version}} setting name"
+                style="float: right;"
+            ></sl-copy-button>
+        </sl-alert>
+    </div>
+    {{/if}}
+</div>

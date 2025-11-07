@@ -10,16 +10,21 @@ Forum » [Smoothie Firwmare / General](/web/20150721082547/http://smoothieware.o
 **Summary:** Blank LCD screen after power off/on!  
 
 **Started by:** [gabehc](https://web.archive.org/web/20150721082547/http://www.wikidot.com/user:info/gabehc)  
-**Date:** 03 Jul 2015颛 07:31  
-**Last edited:** 03 Jul 2015颛 07:31 by [gabehc](https://web.archive.org/web/20150721082547/http://www.wikidot.com/user:info/gabehc)  
+**Date:** 03 Jul 2015 07:31  
+**Number of posts:** 1  
+**RSS:** [New posts](/web/20150721082547/http://smoothieware.org/feed/forum/t-1266146.xml)  
 
-**Reinit GLCD after M80 Power on**  
-When issuing an M80 power on command, the GLCD (Graphical Liquid Crystal Display) becomes blank. Is there a specific command or configuration entry in `config.txt` that can be used to reinitialize the GLCD without requiring a full system reboot?  
+---
 
-[Reply](#) | [Options](#)  
+** freq:** Reinit GLCD after M80 Power on  
+**Author:** [gabehc](https://web.archive.org/web/20150721082547/http://www.wikidot.com/user:info/gabehc)  
+**Date:** 03 Jul 2015 07:31  
 
-**New Post**  
-[New Post](#)
+When issuing an M80 power on command, the GLCD becomes blank. Is there a specific command to reinitialize it, or can this be configured via `config.txt`?  
+
+**Last edited by:** gabehc on 03 Jul 2015 07:31  
+
+[Reply](javascript:postReply(event,2330239))
 
 ---
 

@@ -1,0 +1,1252 @@
+/**
+ * setting-tag.css
+ *
+ * Styles for <setting> custom tags that display Smoothieware configuration options
+ * Shows both v1 and v2 setting names in a compact single-line format with diagonal separators
+ *
+ * Visual format: v1 / setting.name | v2 / module / option
+ * - v1 label: pastel orange on black
+ * - v2 label: pastel blue on black
+ * - Path elements: white text on progressively darker greys (right to left, subtle differences)
+ * - Diagonal separators (actual diagonal cuts, not gradients)
+ * - Vertical separator between v1 and v2 sections
+ * - Dots between path elements (positioned over diagonals, no layout shift)
+ */
+
+/* Base setting tag container */
+setting {
+    /* Inline flex for horizontal layout */
+    display:         inline-flex;
+    align-items:     stretch;
+
+    /* Monospace font for code appearance */
+    font-family:     'Courier New', Courier, monospace;
+    font-size:       0.85em;
+    font-weight:     500;
+
+    /* Compact container sizing */
+    height:          22px;
+    margin:          0 3px;
+
+    /* Rounded corners */
+    border-radius:   3px;
+    overflow:        hidden;
+
+    /* Smooth transitions for hover effects */
+    transition:      filter 0.2s ease;
+
+    /* Make it look clickable when interactive */
+    cursor:          help;
+
+    /* Vertical alignment with surrounding text */
+    vertical-align:  middle;
+
+    /* No wrapping */
+    white-space:     nowrap;
+
+    /* Allow text selection so tags can be copied with surrounding text */
+    user-select:     text;
+
+    /* Remove default spacing */
+    line-height:     1;
+
+    /* Positioning context with low z-index */
+    position:        relative;
+    z-index:         1;
+}
+
+/* Hover effect - slight brightness increase */
+setting:hover {
+    filter:          brightness(1.2);
+}
+
+/* v1 label (pastel orange on black) */
+.setting-v1-label {
+    display:         inline-flex;
+    align-items:     center;
+    padding:         0 5px;
+    background:      #000;
+    color:           #ffd966; /* Pastel orange - lighter and more muted */
+    font-weight:     900; /* Much bolder */
+    user-select:     none; /* Hide from selection - visual decorator only */
+}
+
+/* Display v1 text via pseudo-element (not included in text selection) */
+.setting-v1-label::before {
+    content:         "v1";
+}
+
+/* v2 label (pastel blue on black) */
+.setting-v2-label {
+    display:         inline-flex;
+    align-items:     center;
+    padding:         0 5px;
+    background:      #000;
+    color:           #7ec8ed; /* Pastel blue - lighter and more muted */
+    font-weight:     900; /* Much bolder */
+    user-select:     none; /* Hide from selection - visual decorator only */
+}
+
+/* Display v2 text via pseudo-element (not included in text selection) */
+.setting-v2-label::before {
+    content:         "v2";
+}
+
+/* Path elements with progressive color darkening */
+/* Right-most element (data-color="0") is darkest, progressively lighter to left */
+/* Strengthened gradient: 20% stronger lightening effect (6 units per step instead of 5) */
+.setting-path-element {
+    display:         inline-flex;
+    align-items:     center;
+    padding:         0 6px;
+    color:           #fff;
+}
+
+.setting-path-element[data-color="0"] {
+    background:      #0a0a0a; /* Darkest - right-most element (10) */
+}
+
+.setting-path-element[data-color="1"] {
+    background:      #101010; /* +6 units lighter (16) */
+}
+
+.setting-path-element[data-color="2"] {
+    background:      #161616; /* +6 units lighter (22) */
+}
+
+.setting-path-element[data-color="3"] {
+    background:      #1c1c1c; /* +6 units lighter - left-most element (28) */
+}
+
+/* Dot separators between path elements */
+/* Positioned absolutely within diagonal separator to prevent layout shift */
+.setting-dot {
+    position:        absolute;
+    top:             50%;
+    left:            50%;
+    transform:       translate(-50%, -50%);
+    color:           #fff;
+    font-size:       0.9em;
+    opacity:         0; /* Hidden by default */
+    transition:      opacity 0.2s ease;
+    pointer-events:  none;
+    z-index:         10; /* Above diagonal background */
+}
+
+/* Display dot text via pseudo-element (not included in text selection) */
+.setting-dot::before {
+    content:         ".";
+}
+
+/* Show dots on hover */
+setting:hover .setting-dot {
+    opacity:         1;
+}
+
+/* Vertical separator (thin black bar between v1 and v2) */
+.setting-separator-vertical {
+    display:         inline-block;
+    width:           2px;
+    height:          22px;
+    background:      #000;
+    user-select:     none; /* Hide from selection - visual decorator only */
+}
+
+/* Diagonal separator (creates sharp diagonal transition between sections) */
+.setting-separator-diagonal {
+    display:         inline-block;
+    width:           6px; /* Compact width */
+    height:          22px;
+    position:        relative;
+    overflow:        hidden;
+    z-index:         1; /* Keep in same layer as parent setting element */
+    user-select:     none; /* Hide from selection - visual decorator only */
+}
+
+/* Create sharp diagonal using clip-path and skew */
+/* Increased width and adjusted positioning to eliminate teeth artifacts */
+.setting-separator-diagonal::before {
+    content:         '';
+    position:        absolute;
+    top:             -1px; /* Slight overlap to eliminate top teeth */
+    left:            -4px; /* Adjusted for better coverage */
+    width:           14px; /* Increased width to cover diagonal fully */
+    height:          24px; /* Increased height to eliminate artifacts */
+    transform:       skewX(-20deg);
+}
+
+/* Black to color level 0 (darkest) */
+.setting-separator-diagonal[data-from="black"][data-to="0"]::before {
+    background:      linear-gradient(to right, #000 0%, #000 50%, #0a0a0a 50%, #0a0a0a 100%);
+}
+
+/* Black to color level 1 */
+.setting-separator-diagonal[data-from="black"][data-to="1"]::before {
+    background:      linear-gradient(to right, #000 0%, #000 50%, #101010 50%, #101010 100%);
+}
+
+/* Black to color level 2 */
+.setting-separator-diagonal[data-from="black"][data-to="2"]::before {
+    background:      linear-gradient(to right, #000 0%, #000 50%, #161616 50%, #161616 100%);
+}
+
+/* Black to color level 3 */
+.setting-separator-diagonal[data-from="black"][data-to="3"]::before {
+    background:      linear-gradient(to right, #000 0%, #000 50%, #1c1c1c 50%, #1c1c1c 100%);
+}
+
+/* Color level 3 to 2 */
+.setting-separator-diagonal[data-from="3"][data-to="2"]::before {
+    background:      linear-gradient(to right, #1c1c1c 0%, #1c1c1c 50%, #161616 50%, #161616 100%);
+}
+
+/* Color level 2 to 1 */
+.setting-separator-diagonal[data-from="2"][data-to="1"]::before {
+    background:      linear-gradient(to right, #161616 0%, #161616 50%, #101010 50%, #101010 100%);
+}
+
+/* Color level 1 to 0 (darkest) */
+.setting-separator-diagonal[data-from="1"][data-to="0"]::before {
+    background:      linear-gradient(to right, #101010 0%, #101010 50%, #0a0a0a 50%, #0a0a0a 100%);
+}
+
+/* Popup container (sl-popup component) */
+.setting-popup {
+    /* Arrow color */
+    --arrow-color: #333;
+
+    /* Z-index for proper layering - much higher than setting tags */
+    z-index:         9999 !important;
+}
+
+/* Ensure popup appears above everything */
+.setting-popup::part(popup) {
+    z-index:         9999 !important;
+}
+
+/* Popup content wrapper */
+.setting-popup-content {
+    /* Styling */
+    background:      #1e1e1e;
+    color:           #ecf0f1;
+    padding:         0;
+    border-radius:   8px;
+    box-shadow:      0 8px 24px rgba(0, 0, 0, 0.6);
+    border:          1px solid #333;
+
+    /* Typography */
+    font-family:     'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size:       0.85em;
+    line-height:     1.4;
+
+    /* Width - 60% of page width (increased for better readability) */
+    width:           60vw;
+    max-width:       60vw;
+    min-width:       500px;
+    max-height:      80vh;
+    overflow-y:      auto;
+
+    /* Ensure content is in proper stacking context */
+    position:        relative;
+    z-index:         1;
+}
+
+/* Shoelace tab group styling */
+.setting-tooltip-tabs {
+    --sl-panel-background-color: #0f0f0f;
+    --sl-panel-border-color: #333;
+}
+
+.setting-tooltip-tabs::part(nav) {
+    padding:         4px;
+    display:         flex;
+    position:        sticky;
+    top:             0;
+    z-index:         10;
+    background:      #1a1a1a;
+}
+
+.setting-tooltip-tabs::part(body) {
+    padding:         0;
+}
+
+/* Make tabs full width (50/50 split) with centered text */
+.setting-tooltip-tabs sl-tab {
+    flex:            1;
+    text-align:      center;
+}
+
+.setting-tooltip-tabs sl-tab::part(base) {
+    justify-content: center;
+    width:           100%;
+}
+
+/* Setting panel content */
+.setting-panel-content {
+    padding:         10px;
+    color:           #ecf0f1;
+}
+
+/* Setting header */
+.setting-header {
+    display:         flex;
+    align-items:     center;
+    gap:             6px;
+    margin-bottom:   8px;
+    flex-wrap:       wrap;
+}
+
+.setting-name {
+    font-size:       1em;
+    font-weight:     600;
+    color:           #ffd966;
+    flex:            1;
+    min-width:       200px;
+}
+
+.setting-header sl-copy-button {
+    margin-left:     auto;
+}
+
+/* Setting description */
+.setting-description {
+    margin-bottom:   8px;
+    line-height:     1.4;
+    color:           #d4d4d4;
+    display:         flex;
+    align-items:     flex-start;
+    gap:             6px;
+}
+
+.setting-description sl-icon {
+    margin-top:      2px;
+    flex-shrink:     0;
+}
+
+/* Setting bullets - compact spacing */
+.setting-bullets {
+    margin:          2px 0 20px 0; /* Increased bottom margin for spacing before metadata box */
+    padding-left:    8px;
+    color:           #d4d4d4;
+    list-style:      none;
+    line-height:     1.05; /* Nearly as compact as normal text */
+}
+
+.setting-bullets li {
+    margin:          0 0 1px 0; /* Nearly zero vertical spacing */
+    display:         flex;
+    align-items:     baseline; /* Align icon and text on same baseline */
+    gap:             4px;
+}
+
+.setting-bullets li sl-icon {
+    flex-shrink:     0;
+    color:           #7ec8ed;
+    font-size:       1em;
+}
+
+/* Setting metadata - flexible grid that adapts to content */
+.setting-metadata {
+    background:      #2a2a2a;
+    padding:         8px;
+    border-radius:   4px;
+    margin:          8px 0;
+    display:         flex;
+    flex-wrap:       wrap;
+    gap:             8px 12px;
+}
+
+.setting-meta-item {
+    color:           #d4d4d4;
+    display:         flex;
+    align-items:     flex-start;
+    gap:             6px;
+    flex-wrap:       wrap;
+    min-width:       0; /* Allow shrinking */
+    flex:            1 1 auto; /* Flex grow and shrink */
+    max-width:       100%; /* Prevent overflow */
+}
+
+.setting-meta-item sl-icon {
+    color:           #7ec8ed;
+    flex-shrink:     0;
+}
+
+.setting-meta-item code {
+    background:      #1e1e1e;
+    padding:         2px 4px;
+    border-radius:   3px;
+    color:           #7ec8ed;
+}
+
+.setting-meta-item .meta-value {
+    color:           #ecf0f1;
+    font-weight:     500;
+}
+
+/* Typical values - inline list format */
+.setting-typical-values {
+    margin:          4px 0 8px 0;
+    padding-left:    0;
+    color:           #d4d4d4;
+    line-height:     1.5;
+    list-style:      none;
+    display:         flex;
+    flex-wrap:       wrap;
+    gap:             8px;
+}
+
+.setting-typical-values li {
+    margin:          0;
+    display:         inline-flex;
+    align-items:     center;
+    gap:             6px;
+}
+
+.setting-typical-values li sl-badge {
+    flex-shrink:     0;
+}
+
+.setting-typical-values li .value-description {
+    font-size:       0.9em;
+}
+
+.setting-typical-values li .value-description p {
+    margin:          0;
+    display:         inline;
+}
+
+/* GitHub link styling */
+.github-link {
+    display:         inline-flex;
+    align-items:     center;
+    gap:             4px;
+    color:           #7ec8ed !important;
+    text-decoration: none;
+    transition:      color 0.2s ease;
+}
+
+.github-link:hover {
+    color:           #ffd966 !important;
+}
+
+.github-link sl-icon {
+    font-size:       1.1em;
+}
+
+/* Markdown rendered content */
+.setting-description p,
+.setting-bullets li p,
+.setting-meta-item p {
+    margin:          0 !important;
+    display:         inline;
+    line-height:     inherit;
+}
+
+.setting-description code,
+.setting-bullets li code,
+.setting-meta-item code,
+.setting-value-card code {
+    background:      rgba(0, 0, 0, 0.3);
+    padding:         2px 4px;
+    border-radius:   3px;
+    color:           #7ec8ed;
+    font-family:     'Courier New', Courier, monospace;
+}
+
+.setting-description a,
+.setting-bullets li a,
+.setting-meta-item a,
+.setting-value-card a {
+    color:           #7ec8ed;
+    text-decoration: underline;
+}
+
+.setting-description a:hover,
+.setting-bullets li a:hover,
+.setting-meta-item a:hover,
+.setting-value-card a:hover {
+    color:           #ffd966;
+}
+
+/* Related settings, M-codes, and pages - consistent spacing */
+.setting-related,
+.setting-related-mcodes,
+.setting-pages {
+    margin:          8px 0;
+    color:           #d4d4d4;
+}
+
+.setting-related strong,
+.setting-related-mcodes strong,
+.setting-pages strong {
+    display:         flex;
+    align-items:     center;
+    gap:             4px;
+    margin-bottom:   8px; /* Increased from 6px for consistency */
+    font-size:       0.95em;
+}
+
+.setting-related strong sl-icon,
+.setting-related-mcodes strong sl-icon,
+.setting-pages strong sl-icon {
+    color:           #7ec8ed;
+}
+
+.setting-related sl-tag,
+.setting-pages sl-tag {
+    margin:          2px;
+}
+
+/* M-code tags wrapper */
+.mcode-tags {
+    display:         flex;
+    flex-wrap:       wrap;
+    gap:             6px;
+    margin-top:      0;
+}
+
+/* M-code links (clickable M-codes with documentation) */
+.mcode-link {
+    text-decoration: none;
+    display:         inline-block;
+    transition:      transform 0.2s ease, filter 0.2s ease;
+}
+
+.mcode-link:hover {
+    transform:       scale(1.05);
+    filter:          brightness(1.2);
+}
+
+.mcode-link sl-tag {
+    cursor:          pointer;
+}
+
+/* Related setting tags are clickable */
+.related-setting-tag {
+    cursor:          pointer;
+    transition:      transform 0.2s ease, filter 0.2s ease;
+}
+
+.related-setting-tag:hover {
+    transform:       scale(1.05);
+    filter:          brightness(1.2);
+}
+
+/* Related page links */
+.related-page-link {
+    text-decoration: none;
+    display:         inline-block;
+}
+
+.related-page-link sl-tag {
+    transition:      transform 0.2s ease, filter 0.2s ease;
+}
+
+.related-page-link:hover sl-tag {
+    transform:       scale(1.05);
+    filter:          brightness(1.2);
+}
+
+/* Hide the removable X button on tags */
+.setting-related sl-tag::part(remove-button),
+.setting-pages sl-tag::part(remove-button) {
+    display:         none;
+}
+
+/* Corresponding setting */
+.setting-corresponding {
+    margin:          8px 0;
+}
+
+.setting-corresponding sl-alert {
+    margin:          0;
+}
+
+.setting-corresponding sl-alert::part(base) {
+    padding:         8px;
+}
+
+/* Clickable alert for switching tabs */
+.clickable-alert {
+    cursor:          pointer;
+    transition:      transform 0.2s ease, filter 0.2s ease;
+}
+
+.clickable-alert:hover {
+    transform:       scale(1.02);
+    filter:          brightness(1.15);
+}
+
+.clickable-alert::part(base) {
+    cursor:          pointer;
+}
+
+.setting-corresponding code {
+    background:      rgba(0, 0, 0, 0.3);
+    padding:         2px 4px;
+    border-radius:   3px;
+    color:           #ffd966;
+    font-weight:     600;
+}
+
+/* Dividers for visual separation */
+sl-divider {
+    --spacing:       8px;
+    --color:         #3a3a3a;
+}
+
+/* Details/accordion styling */
+sl-details {
+    margin:          8px 0;
+}
+
+sl-details::part(base) {
+    border:          1px solid #3a3a3a;
+    background:      #2a2a2a;
+}
+
+sl-details::part(summary) {
+    font-weight:     600;
+    padding:         8px;
+}
+
+sl-details::part(content) {
+    padding:         8px;
+}
+
+/* Loading tooltip */
+.setting-tooltip-loading {
+    padding:         24px;
+    text-align:      center;
+    color:           #d4d4d4;
+}
+
+.setting-tooltip-loading sl-spinner {
+    --indicator-color: #7ec8ed;
+    --track-color:     #2a2a2a;
+    margin-bottom:     12px;
+}
+
+.setting-tooltip-loading p {
+    display:         flex;
+    align-items:     center;
+    justify-content: center;
+    gap:             6px;
+    margin:          0;
+    font-size:       0.95em;
+}
+
+/* Error tooltip */
+.setting-tooltip-error {
+    padding:         10px;
+}
+
+.setting-tooltip-error sl-alert::part(base) {
+    padding:         8px;
+}
+
+/* Units badge for min/max values */
+.units-badge {
+    background:      #000000;
+    color:           #ffffff;
+    font-size:       0.85em;
+    margin-left:     4px;
+}
+
+/* Related settings and pages buttons */
+.related-setting-button,
+.related-page-button {
+    margin:          2px 4px 2px 0;
+}
+
+.setting-button-text {
+    font-family:     'Courier New', Courier, monospace;
+    font-size:       0.9em;
+    color:           inherit;
+}
+
+/* Pin configuration link in alert */
+.pin-config-link {
+    color:           #7ec8ed;
+    text-decoration: underline;
+    font-weight:     600;
+}
+
+.pin-config-link:hover {
+    color:           #a8d9f0;
+}
+
+/* ============================================================================
+   TAB TITLE REDESIGN - Professional, compact, engaging
+   ============================================================================ */
+
+/* Tab title container - 50% larger overall */
+.tab-title {
+    display:         flex;
+    align-items:     center;
+    gap:             8px;
+    font-size:       1.05em; /* Reduced by 30% from 1.5em */
+    padding:         6px 12px;
+}
+
+/* Version label - bold, uppercase */
+.tab-version-label {
+    font-weight:     700;
+    text-transform:  uppercase;
+    letter-spacing:  0.5px;
+    color:           #ffffff;
+    font-size:       0.9em;
+    flex-shrink:     0;
+}
+
+/* Mini setting display in tabs - similar to <setting> tag but compact */
+.tab-setting-display {
+    display:         inline-flex;
+    align-items:     stretch;
+    font-family:     'Courier New', Courier, monospace;
+    font-size:       0.95em;
+    font-weight:     500;
+    height:          24px;
+    border-radius:   3px;
+    overflow:        hidden;
+    white-space:     nowrap;
+    line-height:     1;
+}
+
+/* Tab setting path elements - lighter from right to left */
+.tab-setting-path-element {
+    display:         inline-flex;
+    align-items:     center;
+    padding:         0 7px;
+    color:           #fff;
+    font-size:       0.95em;
+}
+
+/* Color levels - darkest on right, lightest on left */
+.tab-setting-path-element[data-color="0"] {
+    background:      #0a0a0a; /* Darkest */
+}
+
+.tab-setting-path-element[data-color="1"] {
+    background:      #181818;
+}
+
+.tab-setting-path-element[data-color="2"] {
+    background:      #262626;
+}
+
+.tab-setting-path-element[data-color="3"] {
+    background:      #343434; /* Lightest */
+}
+
+/* Diagonal separator in tabs */
+.tab-setting-separator-diagonal {
+    display:         inline-block;
+    width:           7px;
+    height:          24px;
+    position:        relative;
+    overflow:        hidden;
+}
+
+/* Diagonal background */
+.tab-setting-separator-diagonal::before {
+    content:         '';
+    position:        absolute;
+    top:             -2px;
+    left:            -4px;
+    right:           -4px;
+    bottom:          -2px;
+    background:      linear-gradient(to right, #0a0a0a 0%, #0a0a0a 50%, #181818 50%, #181818 100%);
+    transform:       skewX(-20deg);
+}
+
+/* Dot separator - always visible in tabs */
+.tab-setting-dot {
+    position:        absolute;
+    top:             50%;
+    left:            50%;
+    transform:       translate(-50%, -50%);
+    color:           #fff;
+    font-size:       0.9em;
+    opacity:         1; /* Always visible */
+    pointer-events:  none;
+    z-index:         10;
+}
+
+/* ============================================================================
+   METADATA ALIGNMENT - Vertically centered labels and values
+   ============================================================================ */
+
+.setting-meta-item {
+    display:         flex;
+    align-items:     center; /* Center vertically */
+    gap:             8px;
+    margin:          6px 0;
+    flex-wrap:       wrap;
+}
+
+.setting-meta-item sl-icon {
+    flex-shrink:     0;
+    font-size:       1.1em;
+    opacity:         0.7;
+}
+
+.setting-meta-item strong {
+    flex-shrink:     0;
+    min-width:       85px;
+    color:           #95a5a6;
+    font-size:       0.9em;
+}
+
+/* Compact badges/pills for metadata values */
+.setting-meta-item sl-tag,
+.setting-meta-item sl-badge {
+    font-size:       0.85em !important;
+    padding:         2px 8px !important;
+    height:          auto !important;
+    line-height:     1.3 !important;
+}
+
+/* Metadata value containers - ensure alignment */
+.meta-value {
+    display:         inline-flex;
+    align-items:     center;
+}
+
+/* ============================================================================
+   VALUES DISPLAY - Inline tags with tooltips
+   ============================================================================ */
+
+.setting-values-section {
+    margin:          12px 0;
+}
+
+.setting-values-section > strong {
+    display:         block;
+    margin-bottom:   8px;
+}
+
+/* Inline values container - displays badges in a row with wrapping */
+.setting-values-inline {
+    display:         flex;
+    flex-wrap:       wrap;
+    gap:             8px;
+    align-items:     center;
+}
+
+/* Individual value badges - compact styling */
+.value-badge {
+    font-size:       0.85em !important;
+    padding:         4px 12px !important;
+    white-space:     nowrap;
+    cursor:          help; /* Indicates tooltip on hover */
+}
+
+/* Tooltip styling for value descriptions */
+sl-tooltip[content] .value-badge {
+    cursor:          help;
+}
+
+/* ============================================================================
+   COMPACT BADGES/PILLS - Overall size reduction
+   ============================================================================ */
+
+/* Type badge - more compact */
+.setting-header sl-badge {
+    font-size:       0.8em !important;
+    padding:         2px 6px !important;
+    margin-left:     6px;
+}
+
+/* Units badge - compact */
+.units-badge {
+    background:      #000000 !important;
+    color:           #ffffff !important;
+    font-size:       0.75em !important;
+    padding:         2px 6px !important;
+    margin-left:     4px;
+    vertical-align:  middle;
+}
+
+/* Related settings and pages buttons - compact */
+.related-setting-button,
+.related-page-button {
+    font-size:       0.85em !important;
+    padding:         4px 10px !important;
+    height:          auto !important;
+    margin:          2px 4px 2px 0;
+}
+
+.setting-button-text {
+    font-family:     'Courier New', Courier, monospace;
+    font-size:       0.95em;
+}
+
+/* ============================================================================
+   OVERALL DESIGN POLISH - Professional aesthetics
+   ============================================================================ */
+
+/* Tab group - cleaner separation */
+.setting-tooltip-tabs::part(tabs) {
+    border-bottom:   2px solid #333;
+}
+
+/* Active tab - more prominent */
+.setting-tooltip-tabs::part(active-tab-indicator) {
+    height:          3px;
+    background:      linear-gradient(90deg, #7ec8ed 0%, #ffd966 100%);
+}
+
+/* Panel content - consistent padding */
+.setting-panel-content {
+    padding:         20px 24px;
+}
+
+/* Setting header - cleaner layout */
+.setting-header {
+    display:         flex;
+    align-items:     center;
+    gap:             10px;
+    margin-bottom:   16px;
+    flex-wrap:       wrap;
+}
+
+.setting-name {
+    font-size:       1.15em;
+    font-weight:     600;
+    color:           #ffffff;
+    font-family:     'Courier New', Courier, monospace;
+}
+
+/* Description - better spacing */
+.setting-description {
+    margin:          12px 0;
+    line-height:     1.5;
+}
+
+/* Dividers - subtle separation */
+sl-divider {
+    --width:         1px;
+    --color:         #333;
+    margin:          16px 0;
+}
+
+/* Examples section - terminal style */
+.setting-examples {
+    display:         flex;
+    flex-direction:  column;
+    gap:             8px;
+    margin:          8px 0;
+}
+
+.setting-example-item {
+    display:         flex;
+    align-items:     center;
+    gap:             8px;
+    background:      #000000; /* Pure black background for terminal style */
+    border-radius:   4px;
+    padding:         10px 14px;
+    border:          1px solid #333;
+}
+
+.setting-example-item pre {
+    margin:          0;
+    flex-grow:       1;
+}
+
+.setting-example-item code {
+    color:           #ffffff !important; /* White text */
+    font-family:     'Courier New', Courier, monospace !important; /* Monospace terminal style */
+    font-size:       0.9em;
+    line-height:     1.4;
+}
+
+/* Comment highlighting in examples */
+.setting-example-item code .comment {
+    color:           #888888; /* Light grey for comments */
+}
+
+/* Section headers (with emojis like "🎯 Typical Values", "💡 Examples") */
+.setting-panel-content > strong {
+    display:         block;
+    margin-top:      20px; /* More space above headers */
+    margin-bottom:   8px;
+    font-size:       1.05em;
+    color:           #ecf0f1;
+}
+
+/* Related sections - better organization */
+.setting-related,
+.setting-pages,
+.setting-related-mcodes {
+    margin:          12px 0;
+}
+
+.setting-related strong,
+.setting-pages strong,
+.setting-related-mcodes strong {
+    display:         flex;
+    align-items:     center;
+    gap:             10px; /* Increased gap between icon and text */
+    margin-bottom:   8px;
+    color:           #95a5a6;
+}
+
+/* Alerts - consistent styling */
+sl-alert {
+    margin:          12px 0;
+}
+
+sl-alert::part(base) {
+    border-radius:   6px;
+}
+
+/* Notes section - distinct styling */
+.setting-notes sl-alert {
+    --sl-panel-background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Corresponding setting alert - clickable styling */
+.clickable-alert {
+    cursor:          pointer;
+    transition:      transform 0.2s ease;
+}
+
+.clickable-alert:hover {
+    transform:       scale(1.01);
+}
+
+/* ============================================================================
+ * SINGLE-SETTING DISPLAY (for v1-only or v2-only tags, no tabs)
+ * ============================================================================ */
+
+/* Container for single-attribute setting display */
+.single-setting-container {
+    display:         flex;
+    flex-direction:  column;
+    width:           100%;
+}
+
+/* Header bar - styled like a centered top bar, not a tab */
+.single-setting-header {
+    display:         flex;
+    justify-content: center;
+    align-items:     center;
+    padding:         16px 20px;
+    background:      linear-gradient(180deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.04) 100%);
+    border-bottom:   2px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Title container - centered display */
+.single-setting-title {
+    display:         flex;
+    align-items:     center;
+    gap:             12px;
+    font-size:       0.95em;
+}
+
+/* Version label (V1 SETTING: or V2 SETTING:) */
+.single-setting-version-label {
+    font-weight:     600;
+    font-size:       0.75em;
+    letter-spacing:  0.5px;
+    text-transform:  uppercase;
+    color:           rgba(255, 255, 255, 0.5);
+}
+
+/* Setting name display - reuses mini-setting styles */
+.single-setting-name-display {
+    display:         inline-flex;
+    align-items:     center;
+}
+
+/* Content area below the header */
+.single-setting-content {
+    padding:         0;
+}
+
+/* Print styles - simplified for printing */
+@media print {
+    setting {
+        background:  white;
+        color:       black;
+        border:      1px solid black;
+    }
+
+    .setting-tooltip {
+        display:     none;
+    }
+}
+
+/* ============================================================================
+   Config Excerpt (In-Situ Example) Section
+   ============================================================================ */
+
+.config-excerpt-section {
+    margin-top: 1rem;
+}
+
+.config-excerpt-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+    color: #e0e0e0;
+}
+
+.config-excerpt-header h4 {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.config-excerpt-container {
+    background-color: #0a0a0a;
+    border: 1px solid #2a2a2a;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.config-excerpt-content {
+    padding: 0.5rem 0;
+    font-family: 'Courier New', Consolas, monospace;
+    font-size: 0.85rem;
+    line-height: 1.6;
+}
+
+.config-line {
+    display: flex;
+    align-items: baseline;
+    padding: 0.15rem 0.75rem;
+    transition: background-color 0.2s;
+}
+
+.config-line:hover {
+    background-color: #121212;
+}
+
+.line-number {
+    display: inline-block;
+    width: 3.5rem;
+    text-align: right;
+    margin-right: 1rem;
+    color: #666;
+    user-select: none;
+    flex-shrink: 0;
+}
+
+.line-content {
+    color: #e0e0e0;
+    white-space: pre;
+    flex-grow: 1;
+    font-family: 'Courier New', Consolas, monospace;
+}
+
+/* Target line (the setting being shown) - bold */
+.config-line-target .line-content {
+    font-weight: bold;
+    color: #ffffff;
+}
+
+/* Section header line (v2 INI sections) - bold */
+.config-line-section .line-content {
+    font-weight: bold;
+    color: #ffffff;
+}
+
+/* File breadcrumb (GitHub-style) */
+.config-file-breadcrumb {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    padding: 0.5rem 0.75rem;
+    background-color: #0a0a0a;
+    border: 1px solid #2a2a2a;
+    border-bottom: none;
+    font-size: 0.85rem;
+    color: #999;
+}
+
+.config-file-breadcrumb sl-breadcrumb {
+    font-family: 'Courier New', Consolas, monospace;
+}
+
+.config-file-breadcrumb a.config-file-link {
+    color: #58a6ff;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.2em;
+}
+
+.config-file-breadcrumb a.config-file-link:hover {
+    text-decoration: underline;
+}
+
+.config-file-breadcrumb sl-copy-button {
+    font-size: 0.85rem;
+}
+
+/* Clickable config lines */
+.config-line[data-github-url] {
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.config-line[data-github-url]:hover {
+    background-color: rgba(88, 166, 255, 0.15);
+}
+
+/* GitHub-style syntax highlighting for config files */
+/* Based on GitHub Primer Dark theme colors */
+
+/* Comments (lines starting with #) */
+.config-syntax-comment {
+    color: #959da5;
+}
+
+/* Section headers (V2: [section_name]) */
+.config-syntax-section {
+    color: #b392f0;
+    font-weight: bold;
+}
+
+/* Setting names/keywords */
+.config-syntax-setting {
+    color: #ea4a5a;
+}
+
+/* Values/strings */
+.config-syntax-value {
+    color: #79b8ff;
+}
+
+/* Equal signs and separators */
+.config-syntax-separator {
+    color: #c8e1ff;
+}
+
+/* Default text color for config lines */
+.line-content {
+    color: #c9d1d9;
+    font-family: 'Courier New', Consolas, monospace;
+}
+
+/* Not found message */
+.config-excerpt-not-found {
+    margin-top: 1rem;
+}
+
+.config-excerpt-message {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem;
+    background-color: #1a1a1a;
+    border: 1px solid #2a2a2a;
+    border-radius: 4px;
+    color: #999;
+}
+

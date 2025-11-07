@@ -1,0 +1,14 @@
+{{! Template for error tooltip when setting is not found }}
+
+<div class="setting-tooltip-error">
+    <sl-alert variant="danger" open>
+        <sl-icon slot="icon" name="exclamation-octagon"></sl-icon>
+        <strong>Setting Not Found</strong>
+        <br><br>
+        <strong>v1:</strong> <code>{{escape v1_name}}</code>
+        <br>
+        <strong>v2:</strong> <code>{{escape v2_name}}</code>
+        <br><br>
+        <small>Neither setting could be found in the loaded configuration data.</small>
+    </sl-alert>
+</div>

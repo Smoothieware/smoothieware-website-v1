@@ -4,22 +4,17 @@
 
 ---
 
+# M107 dont shut down pin 2.4
 
-# M107 don't shut down pin 2.4
+**Patryk Pabo** - 24 Jun 2015 00:29
 
-**By Patryk Pabo**, 24 Jun 2015 00:29
-
-I'm having an issue where the M107 command isn't shutting down pin 2.4. I've tried restoring the firmware and checking the connections, but the problem persists. Any ideas what could be causing this?
+I'm having an issue where M107 isn't shutting down pin 2.4. I installed a fan and a MOSFET, but the fan is running continuously. I tried restoring the firmware, but the problem persists. Any ideas?
 
 ---
 
-**Re: M107 don't shut down pin 2.4**
+**arthurwolf** - 24 Jun 2015 08:40
 
-**By arthurwolf**, 24 Jun 2015 08:40
-
-Did you install a diode on the output?  
-If not, the fan probably killed the mosfet.
-
+Did you install a diode on the output? If not, the fan probably killed the MOSFET.
 
 ---
 

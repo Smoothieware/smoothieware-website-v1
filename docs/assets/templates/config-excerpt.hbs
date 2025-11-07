@@ -1,0 +1,67 @@
+{{! Template for displaying config file excerpt (in-situ example) }}
+{{! Shows the setting in context within the actual config file }}
+
+{{#if config_excerpt}}
+<div class="config-excerpt-section">
+    <sl-divider></sl-divider>
+
+    <div class="config-excerpt-header">
+        <sl-icon name="file-earmark-code"></sl-icon>
+        <h4>In-Situ Example</h4>
+    </div>
+
+    {{! GitHub-style breadcrumb showing file path }}
+    {{#if file_path}}
+    <div class="config-file-breadcrumb">
+        <sl-breadcrumb>
+            {{! Parse and display file path segments }}
+            {{#if (starts_with file_path "v1/")}}
+                <sl-breadcrumb-item>Smoothieware</sl-breadcrumb-item>
+                <sl-breadcrumb-item>ConfigSamples</sl-breadcrumb-item>
+            {{else}}
+                <sl-breadcrumb-item>SmoothieV2</sl-breadcrumb-item>
+                <sl-breadcrumb-item>ConfigSamples</sl-breadcrumb-item>
+            {{/if}}
+            {{! Display the filename as a link to GitHub }}
+            <sl-breadcrumb-item>
+                {{#if github_url}}
+                <a href="{{github_url}}" target="_blank" rel="noopener noreferrer" class="config-file-link">
+                    {{extract_filename file_path}}
+                    <sl-icon name="box-arrow-up-right" style="font-size: 0.8em; margin-left: 0.2em;"></sl-icon>
+                </a>
+                {{else}}
+                {{extract_filename file_path}}
+                {{/if}}
+            </sl-breadcrumb-item>
+        </sl-breadcrumb>
+        {{! Copy button for file path }}
+        <sl-copy-button value="{{file_path}}" copy-label="Copy file path" success-label="Copied!" error-label="Error"></sl-copy-button>
+    </div>
+    {{/if}}
+
+    <div class="config-excerpt-container">
+        <div class="config-excerpt-content">
+            {{#each config_excerpt.lines}}
+            <div class="config-line {{#if is_target}}config-line-target{{/if}} {{#if is_section_header}}config-line-section{{/if}}"
+                 style="opacity: {{opacity_for_fade_level fade_level}}"
+                 {{#if ../github_url}}data-github-url="{{build_line_url ../github_url line_number}}"{{/if}}>
+                <span class="line-number">{{add line_number 1}}</span>
+                <code class="line-content">{{{html_content}}}</code>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+</div>
+{{else}}
+<div class="config-excerpt-not-found">
+    <sl-divider></sl-divider>
+    <div class="config-excerpt-header">
+        <sl-icon name="file-earmark-code"></sl-icon>
+        <h4>In-Situ Example</h4>
+    </div>
+    <div class="config-excerpt-message">
+        <sl-icon name="info-circle"></sl-icon>
+        <span>This setting is not present in the example config file for this version.</span>
+    </div>
+</div>
+{{/if}}

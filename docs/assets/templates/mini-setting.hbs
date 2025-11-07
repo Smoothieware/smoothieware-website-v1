@@ -1,0 +1,10 @@
+<span class="tab-setting-display">
+{{#each parts}}
+    {{#if @index}}
+    <span class="tab-setting-separator-diagonal">
+        <span class="tab-setting-dot">.</span>
+    </span>
+    {{/if}}
+    <span class="tab-setting-path-element" data-color="{{color}}">{{text}}</span>
+{{/each}}
+</span>

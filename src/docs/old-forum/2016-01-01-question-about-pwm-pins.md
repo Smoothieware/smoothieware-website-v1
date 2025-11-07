@@ -4,15 +4,21 @@
 
 ---
 
-### Question about PWM pins.
-by 761834, 01 Sep 2014 06:43
+## Question about PWM pins.
 
-Which MOSFETs are suitable for a 12V, 10A circuit? I'm looking for something that can handle the current and voltage, and has a low Rds(on) value.
+Which pins support PWM? Also, when using the Switched Mode Power Supply (SMPS) with the 3.3V setting, what voltage is output on the pins?
+
+**Author:** 761834  
+**Date:** 01 Sep 2014 06:43
+
+---
 
 ### Re: Question about PWM pins.
-by 761834, 07 Sep 2014 20:45
 
 Figured it out. For future reference, the answers are yes, and 3.3v.
+
+**Author:** 761834  
+**Date:** 07 Sep 2014 20:45
 
 ---
 

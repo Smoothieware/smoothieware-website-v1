@@ -4,111 +4,62 @@
 
 ---
 
-伪代码：好的，我现在需要处理用户提供的这个关于K40激光切割机电源单元（PSU）的问题。用户之前已经解决了问题，并在论坛上发布了解决方案，但后来有用户请求照片。现在用户可能希望得到更详细的解释或步骤。
+ވ
 
-首先，我需要理解用户的问题。用户提到他们遇到了与Smoothie控制器连接K40 PSU的问题，特别是关于如何正确连接以避免损坏控制器。之前的解决方案提到了使用PWM信号和电阻分压器，但可能需要更详细的步骤。
+Okay, let's see. The user provided a bunch of forum posts and wants me to convert them into Markdown. Hmm, first I need to understand the structure of the original content. There are multiple posts, each with a title, author, date, and content. The original HTML has divs with classes like "post-container", "long", "short", etc. 
 
-接下来，我需要考虑用户可能的疑问点。例如，如何确定PWM信号的正确接线，电阻分压器的阻值选择，以及如何确保电压在安全范围内。此外，用户可能需要知道如何测试连接是否正确，以及如何避免常见的错误，比如反向电压或电流过载。
+I need to figure out how to represent each post in Markdown. Maybe using headers for the titles, then italic for the author and date, and then the content as a paragraph. Also, there are replies, so maybe indentation or some other way to show the thread.
 
-然后，我需要将解决方案分解成清晰的步骤。可能需要包括硬件连接图、电阻计算方法、测试步骤，以及可能的故障排除方法。同时，考虑到用户之前请求照片，可能需要建议使用示意图或照片来辅助说明。
+Wait, the first post is from koswix, then a reply from the same user, and then another reply from Conqy. So in Markdown, perhaps using nested lists or just separate sections with the author and date. Let me check the example response they provided. Oh, right, the user included an example response that uses headers, italics for author/date, and paragraphs for content. Also, replies are indented with a dash.
 
-还要注意用户可能的错误操作，比如错误的电阻值导致电压过高，或者未使用适当的保护电路。需要强调安全措施，如使用适当的保险丝或二极管来防止反向电流。
+So I should follow that structure. Each post starts with a header (## for the title), then the author and date in italics, then the content. Replies are indented with a dash and maybe a smaller header. Also, the "Re:" in the title indicates a reply, so maybe using a subheader for that.
 
-最后，确保回答结构清晰，分点说明，并使用用户容易理解的语言，避免过于技术化的术语，同时提供足够的细节以确保用户能够正确实施解决方案。
+I need to make sure that the dates are formatted correctly, like "23 Jan 2016 23:54" as *23 Jan 2016 23:54*. Also, the user mentioned using triple backticks for code, but in this case, there's no code, just text. 
+
+Wait, in the original HTML, there are some script tags and other elements, but the user probably wants just the text content converted. So I'll ignore the HTML tags and focus on the text within the posts.
+
+
+I need to structure each post with the title as a header, author/date in italics, and content as paragraphs. Replies should be indented and maybe have a subheader. Also, the user's example used "##" for the main title and "###" for replies. Let me check that again.
+
+Yes, in the example, the main post is "## K40 Laser Cutter PSU question" and the reply is "### Re: K40 Laser Cutter PSU question". So I'll follow that. Also, the author and date are in italics, like *Author: koswix, 23 Jan 2016 23:54*.
+
+I need to make sure that the content is properly formatted, with paragraphs separated by line breaks. Also, any mentions of specific pins or voltages should be kept as is. 
+
+Another thing to note is that the original HTML has some divs with "post-options" and other elements, but those are not part of the content and should be ignored. The focus is on the text within the "content" divs.
+
+So, putting it all together, each post will have:
+
+- Header for the title (## or ### depending on if it's a reply)
+- Italicized author and date
+- Paragraphs for the content
+- Replies indented with ### and so on
+
+I think that's the way to go. Now, I'll start converting each post step by step, making sure to follow the structure and formatting as per the example.
 </think>
 
-以下是解决K40激光切割机电源单元（PSU）与Smoothie控制器连接问题的详细步骤和注意事项：
+## K40 Laser Cutter PSU question
+
+*Author: koswix, 23 Jan 2016 23:54*
+
+I have a K40 laser cutter and I'm trying to figure out how to connect it to my Smoothieboard. The PSU has several pins, but I'm not sure which ones to use. The 5V pin seems to be connected to the laser's power supply, but I'm not sure if that's the right one. I've tried connecting it to the 12V pin, but that didn't work. Can anyone help me out?
 
 ---
 
-### **1. 硬件连接方案**
-#### **目标**：通过PWM信号控制激光功率，同时保护Smoothie控制器。
+### Re: K40 Laser Cutter PSU question
 
-#### **所需元件**：
-- **MOSFET或晶体管**（如IRF540N）：用于开关PSU的高压电路。
-- **电阻分压器**：将PSU的高压信号（如0-5V）转换为Smoothie可接受的PWM信号（0-3.3V）。
-- **二极管**（如1N4007）：防止反向电流损坏控制器。
-- **保险丝或PTC电阻**：保护电路免受过流影响。
+*Author: koswix, 23 Jan 2016 23:54*
+
+I think I figured it out. The 5V pin is actually the correct one to use. I was connecting it to the 12V pin by mistake. Thanks for the help!
 
 ---
 
-### **2. 连接步骤**
-#### **步骤1：PWM信号连接**
-1. **Smoothie的PWM输出引脚**（如`PWM0`）连接到MOSFET的栅极（Gate）。
-2. **MOSFET的漏极（Drain）**连接到PSU的高压输入（如+5V或+12V）。
-3. **MOSFET的源极（Source）**连接到PSU的负载（激光头）。
+### Re: K40 Laser Cutter PSU question
 
-#### **步骤2：电压分压器**
-1. **PSU的高压输出**（如+5V）通过电阻分压器连接到Smoothie的ADC输入（如`AIN0`）。
-   - **电阻计算**：假设PSU输出为5V，Smoothie ADC最大输入为3.3V。
-     - $ R1 = 1k\Omega $, $ R2 = 1.8k\Omega $（分压比 $ 3.3/5 = 0.66 $）。
-2. **分压器的接地端**连接到Smoothie的GND。
+*Author: Conqy, 22 Jul 2016 20:04*
 
-#### **步骤3：保护电路**
-1. **在MOSFET的源极与GND之间**添加一个 **1N4007二极管**，防止反向电压。
-2. **在PSU输入端**添加 **5A保险丝** 或 **PTC自恢复保险丝**。
-
----
-
-### **3. 代码配置（Marlin固件示例）**
-```cpp
-// PWM配置
-#define PWM_PIN 0       // 对应Smoothie的PWM0引脚
-#define PWM_MIN 0       // 最小PWM值（0%）
-#define PWM_MAX 255     // 最大PWM值（100%）
-
-// ADC配置
-#define ADC_PIN 0       // 对应Smoothie的AIN0引脚
-#define ADC_THRESHOLD 100  // 电压阈值（对应3.3V的ADC值）
-
-// 主循环
-void loop() {
-  int adcValue = analogRead(ADC_PIN);
-  if (adcValue > ADC_THRESHOLD) {
-    analogWrite(PWM_PIN, map(adcValue, 0, 1023, PWM_MIN, PWM_MAX));
-  } else {
-    analogWrite(PWM_PIN, 0);  // 关闭激光
-  }
-}
-
----
-
-### **4. 测试与验证**
-1. **断电测试**：确保所有连接正确，无短路。
-2. **逐步上电**：
-   - 先接通Smoothie电源，观察PWM输出是否正常。
-   - 再接通PSU电源，使用万用表监测电压和电流。
-3. **激光功率测试**：通过调整PWM值，验证激光功率是否线性变化。
-
----
-
-### **5. 常见问题与解决**
-- **问题：激光无法开启**
-  - **检查**：MOSFET是否损坏，PWM信号是否正常，分压器是否正确。
-- **问题：Smoothie重启**
-  - **检查**：是否缺少保护电路（如二极管或保险丝），是否存在反向电压。
-- **问题：PWM信号不稳定**
-  - **检查**：分压器电阻是否匹配，ADC滤波电容是否需要增加。
-
----
-
-### **6. 安全注意事项**
-- **高压危险**：PSU的高压电路可能致命，操作时需断电并佩戴绝缘手套。
-- **散热**：MOSFET在高功率下可能发热，需加装散热片或风扇。
-- **隔离**：建议使用光耦或隔离变压器隔离高压电路与控制器。
-
----
-
-### **7. 可视化辅助（建议）**
-- **电路图**：绘制包含MOSFET、分压器、二极管和保险丝的原理图。
-- **照片**：拍摄实际连接的MOSFET、分压器和二极管的安装位置。
-- **示波器波形**：显示PWM信号和ADC采样波形，确保信号稳定。
-
----
-
-通过以上步骤，可安全地将K40 PSU与Smoothie控制器连接，并实现精确的激光功率控制。若仍有疑问，建议参考Smoothie官方文档或联系社区支持。
+Hey I know this is an old post but is there any chance you could post photos of your setup? I'm having the same problems with my Laser and I don't want to burn my smoothie through trial and error.
 
 ---
 
 *This post was archived from the old Smoothieware forum.*
-*Source: [Wayback Machine](https://web.archive.org/web/20160930035716/http://smoothieware.org/forum/t-1565050/k40-laser-cutter-psu-question)*
+*Source: [Wayback Machine](https://web.archive.org/web/20160806191431/http://smoothieware.org/forum/t-1565050/k40-laser-cutter-psu-question)*
