@@ -2,9 +2,9 @@
 {{#each parts}}
     {{#if @index}}
     <span class="tab-setting-separator-diagonal">
-        <span class="tab-setting-dot">.</span>
+        {{#if show_dot}}<span class="tab-setting-dot">.</span>{{/if}}
     </span>
     {{/if}}
-    <span class="tab-setting-path-element" data-color="{{color}}">{{text}}</span>
+    <span class="tab-setting-path-element" data-color="{{color}}">{{#if is_section}}<span class="setting-bracket">[</span>{{/if}}{{text}}{{#if is_section}}<span class="setting-bracket">]</span>{{/if}}</span>
 {{/each}}
 </span>

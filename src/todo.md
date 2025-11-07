@@ -60,6 +60,9 @@
 * [ ] For stuff that contains alpha, beta, etc, for both v1 and v2 we should have a diagram based on the board images we have, that shows "this is alpha, this is beta", etc with the current one highlighted.
 * [ ] Currently if I copy/paste a line with a <setting> tag in it there are carriage returns between the elements, we want a nicer format, ideally with the v1/v2 labels included in a single-line format etc.
 * [ ] Currently for the default values we only use the value from the code, but we should show both the value from the code and the one from the example file if it exists.
+* [ ] For pin-type setting tags, use the svg diagrams to display which pins are valid for each one.
+* [ ] For values that are speeds like values with feed_rate etc in them (and we might be able to determine also based on the unit type value/property), we should have a simple thing where a circle goes around a pill-shape track that's the width of the popup, that shows what the speed looks like, trying to figure out the size of the screen based on its resolution and type (desktop, phone), etc, and a slider that lets us select the speed with exponential changes/scale.
+*_[ ] For the arm_solution setting we should have images for each of the possible values.
 
 # Testing.
 

@@ -21,14 +21,41 @@ This repository contains the documentation website hosted at **[smoothieware.org
 
 ```
 smoothieware-website-v1/
-├── _config.yml          # Jekyll configuration
-├── docs/                # Documentation content (served by GitHub Pages)
-│   ├── index.md        # Homepage
-│   ├── *.md            # 277+ documentation pages
-│   └── images/         # Images and assets
-├── LICENSE             # GNU GPL v3 license
-└── README.md           # This file
+├── docs/                           # GitHub Pages source directory
+│   ├── _config.yml                 # Jekyll configuration
+│   ├── _layouts/                   # Custom page layouts
+│   │   └── default.html            # Main layout template
+│   ├── assets/                     # Static assets and data
+│   │   ├── css/                    # Stylesheets
+│   │   ├── js/                     # JavaScript files (compiled TypeScript)
+│   │   ├── templates/              # Handlebars templates (.hbs)
+│   │   ├── data/                   # YAML configuration databases
+│   │   └── config/                 # Config file samples (v1/v2)
+│   ├── images/                     # Image assets (organized by topic)
+│   ├── community/                  # Community resources
+│   ├── configuration/              # Configuration documentation
+│   ├── developers/                 # Developer documentation
+│   ├── firmware/                   # Firmware documentation
+│   ├── gcode-reference/            # G-code reference
+│   ├── getting-started/            # Getting started guides
+│   ├── hardware/                   # Hardware documentation
+│   ├── machine-guides/             # Machine-specific guides
+│   ├── modules/                    # Module documentation
+│   ├── software/                   # Software documentation
+│   ├── troubleshooting/            # Troubleshooting guides
+│   ├── index.md                    # Homepage
+│   └── CNAME                       # Custom domain
+├── LICENSE                         # GNU GPL v3 license
+├── README.md                       # This file
+├── CLAUDE.md                       # AI assistant guidelines
+└── serve-local.sh                  # Docker-based local dev server
 ```
+
+**Content Statistics**:
+- 292 markdown documentation files
+- Organized into 23 logical subdirectories
+- Custom Midnight theme with Shoelace components
+- Interactive configuration documentation system
 
 ## GitHub Pages Setup
 
@@ -37,7 +64,9 @@ smoothieware-website-v1/
 - **Hosting**: GitHub Pages serves from the `/docs` folder on the `main` branch
 - **Custom Domain**: [smoothieware.org](https://smoothieware.org)
 - **Build System**: Jekyll automatically builds when changes are pushed
-- **Theme**: Uses the Primer theme for clean, modern appearance
+- **Theme**: GitHub Pages Midnight theme (`pages-themes/midnight@v0.2.0`)
+- **Components**: Shoelace web components for interactive UI elements
+- **Configuration**: Advanced YAML-based configuration database (346 v1 settings, v2 support)
 
 ### Local Development
 
@@ -79,36 +108,47 @@ Or stop and run `./serve-local.sh` again.
 
 ### Making Changes
 
-1. Edit `.md` files in the `/docs` folder
+1. Edit `.md` files in the appropriate `/docs` subdirectory
 2. Add images to `/docs/images/` and reference with `/images/filename.png`
-3. Commit and push - GitHub Pages rebuilds automatically (1-2 minutes)
+3. Use front matter for custom permalinks:
+   ```yaml
+   ---
+   permalink: /my-custom-url
+   layout: default
+   title: Page Title
+   ---
+   ```
+4. Commit and push - GitHub Pages rebuilds automatically (1-2 minutes)
 
-**Note:** Changes to `_config.yml` require a server restart locally (see above)
+**Note:**
+- Changes to `docs/_config.yml` require a server restart locally (see above)
+- Use `<setting>` tags for configuration options: `<setting v1="..." v2="..."></setting>`
+- Shoelace components available: `<sl-alert>`, `<sl-button>`, `<sl-icon>`, etc.
 
 ## Documentation Organization
 
-### Step-by-Step Guides
-- [3D Printer Guide](docs/3d-printer-guide.md)
-- [Laser Cutter Guide](docs/laser-cutter-guide.md)
-- [CNC Mill Guide](docs/cnc-mill-guide.md)
-- [Pick and Place Guide](docs/pick-and-place.md)
+### Main Categories (23 Directories)
 
-### Firmware Documentation
-- Configuration and setup
-- Motion control systems
-- Communication (Network, USB, UART, Bluetooth, Wifi)
-- Tools (Extruder, Temperature control, Laser, Endstops, etc.)
+1. **community/** - Community resources (IRC, forums, Discord, mailing lists)
+2. **configuration/** - Configuration guides and tools
+3. **developers/** - Developer documentation and APIs
+4. **firmware/** - Firmware features and internals
+5. **gcode-reference/** - G-code command reference
+6. **getting-started/** - New user guides
+7. **hardware/** - Physical hardware documentation
+8. **machine-guides/** - Machine-specific setup guides
+   - 3D printers, laser cutters, CNC mills, pick-and-place
+9. **modules/** - Firmware module documentation
+10. **software/** - CAM software, host software, web interface
+11. **troubleshooting/** - Problem-solving guides
+12. And more...
 
-### Hardware Documentation
-- Smoothieboard versions and specifications
-- Pinout diagrams
-- Wiring tutorials and best practices
+### Key Pages
 
-### Developer Documentation
-- Architecture and design
-- Coding standards
-- Module development
-- Contributing guidelines
+- [Homepage](docs/index.md) - Main entry point
+- [Getting Started](docs/getting-started/) - New user guides
+- [Configuration](docs/configuration/configuring-smoothie.md) - Setup and config
+- [Machine Guides](docs/machine-guides/) - Machine-specific tutorials
 
 ## Links
 
@@ -131,15 +171,257 @@ We welcome contributions:
 
 The Smoothie firmware is free, open-source software developed by volunteers. If you find this software useful, want to say thanks and encourage development, please consider a [Donation](https://paypal.me/smoothieware).
 
-## Smoothieboard V2 SVG Palette (Work in Progress)
+## Advanced Features
 
-Tooling for the layered SVG pipeline (see `tasks/01-create-v2-board-svg.md`) samples colours directly from the V2 reference renders. Initial measurements gathered with a small PIL helper script:
+### Interactive Configuration System
 
-- Background: `#CACAE4` (pixel sample at 20,20)
-- Provisional substrate: `#555150` (sample at 900,600 — subject to confirmation once mask separation tooling is in place)
-- Silkscreen highlight: `#F5F3EB` (sample at 1110,160)
+- **YAML Configuration Database**: 346 v1 settings + v2 support
+- **Custom `<setting>` Tags**: Interactive tooltips showing v1 ↔ v2 mapping
+- **Handlebars Templates**: Dynamic rendering of configuration data
+- **Debug Page**: `/debug-settings` demonstrates all features
 
-The extraction scripts will refresh these values automatically as the SVG pipeline matures; see `data/board-design-research/top/metadata/notes.md` for details.
+### Shoelace Components
+
+The site uses Shoelace web components for modern UI:
+- `<sl-alert>` - Alert boxes with icons
+- `<sl-button>` - Styled buttons
+- `<sl-dropdown>` / `<sl-menu>` - Navigation dropdowns
+- `<sl-icon>` - Icon library
+
+### Custom Theme
+
+- **Base**: GitHub Pages Midnight theme
+- **Customizations**: Custom navigation, dark mode, OSHW branding
+- **Fonts**: Montserrat from Google Fonts
+- **Responsive**: Mobile-friendly design
+
+## Site Architecture & Technical Details
+
+### Jekyll Configuration
+
+The site uses Jekyll with several important plugins and settings configured in `docs/_config.yml`:
+
+**Theme & Plugins:**
+- **Theme**: `pages-themes/midnight@v0.2.0` (GitHub Pages Midnight theme)
+- **Markdown**: Kramdown with GFM (GitHub Flavored Markdown)
+- **Plugins**:
+  - `jekyll-remote-theme` - Load theme from GitHub
+  - `jekyll-optional-front-matter` - Process MD files without front matter
+  - `jekyll-relative-links` - Auto-convert relative links
+  - `jekyll-titles-from-headings` - Extract titles from H1
+  - `jekyll-github-metadata` - GitHub repo metadata
+  - `jekyll-redirect-from` - URL redirection support
+
+**Key Settings:**
+- `baseurl: ""` - Empty string (not `/docs`)
+- `includes_dir: "."` - Current directory for includes
+- Default layout: `default` for all pages
+
+### Custom Layout (`docs/_layouts/default.html`)
+
+The custom layout provides:
+- Dark theme (`sl-theme-dark`)
+- Custom navigation bar with OSHW logo
+- Dropdown menus for community resources
+- Shoelace web components integration
+- Google Fonts (Montserrat)
+- Auto-loaded TypeScript/JavaScript modules
+
+### Interactive Components
+
+**Shoelace Web Components** (loaded from CDN):
+```html
+<sl-alert variant="primary">...</sl-alert>
+<sl-button>...</sl-button>
+<sl-dropdown>...</sl-dropdown>
+<sl-icon name="...">...</sl-icon>
+```
+
+**Custom `<setting>` Tags**:
+Used for configuration documentation with interactive tooltips:
+```html
+<setting v1="alpha_steps_per_mm" v2="actuator.alpha.steps_per_mm"></setting>
+```
+
+Features:
+- Hover tooltips showing v1/v2 setting paths
+- Monospace display (white on black)
+- CSS fallback without JavaScript
+- Powered by YAML configuration database
+
+### Configuration Database
+
+**Location**: `docs/assets/data/`
+
+**Files**:
+- `smoothieware-v1-config.yaml` - 346 settings across 11 modules
+- `smoothieware-v2-config.yaml` - v2 configuration
+
+**Database Structure**:
+```yaml
+metadata:
+  version: v1
+  total_settings: 346
+  total_modules: 11
+
+modules:
+  - name: Robot & Motion Control
+    setting_count: 81
+    settings:
+      - name: acceleration
+        type: number
+        default: 100.0
+        units: mm/s²
+        corresponding_v1: acceleration
+        corresponding_v2: motion control.default_acceleration
+        description: "..."
+        typical_values: [...]
+        related_settings: [...]
+        examples: [...]
+```
+
+### Handlebars Templates
+
+**Location**: `docs/assets/templates/`
+
+Client-side templates for dynamic rendering:
+- `setting-panel.hbs` - Full setting information panel
+- `mini-setting.hbs` - Compact setting display
+- `config-excerpt.hbs` - Configuration excerpts
+- `tab-group.hbs` - Tabbed interface
+- `error-tooltip.hbs` / `loading-tooltip.hbs` - Status messages
+- And more...
+
+### JavaScript/TypeScript
+
+**Location**: `docs/assets/js/`
+
+Compiled TypeScript modules:
+- `load-assets.js` (312 KB) - Asset loading system
+- `setting-tag.js` (474 KB) - Setting tag implementation
+- `config-finder.js` (19 KB) - Configuration finder
+- `animate.js` (222 KB) - Animation system
+
+**Note**: Files are pre-compiled; TypeScript source not in repo.
+
+### Markdown Extensions (Kramdown)
+
+**Raw HTML Blocks**:
+```markdown
+{::nomarkdown}
+<sl-alert variant="primary" open>
+  HTML content here
+</sl-alert>
+{:/nomarkdown}
+```
+
+**Features**:
+- Fenced code blocks
+- Tables and task lists
+- Automatic header IDs
+- Strikethrough text
+
+### Front Matter
+
+All pages can use YAML front matter:
+```yaml
+---
+permalink: /custom-url
+layout: default
+title: Page Title
+---
+```
+
+Benefits:
+- Custom URLs (cleaner permalinks)
+- Override default layout
+- Set page-specific metadata
+- Optional (auto-extracted from H1 if missing)
+
+### Build Process
+
+1. **Push to main** → Triggers GitHub Pages build
+2. **Jekyll processes**:
+   - Reads `docs/_config.yml`
+   - Processes all `.md` files in `docs/`
+   - Applies plugins (front matter, links, titles)
+   - Renders with `_layouts/default.html`
+   - Resolves `{% include_relative %}` directives
+3. **Client-side**:
+   - JavaScript loads Handlebars templates
+   - Setting tags query YAML database
+   - Shoelace components render
+4. **Deploy** → Live at smoothieware.org (1-2 minutes)
+
+### Development Workflow
+
+**Local Testing**:
+```bash
+./serve-local.sh              # Docker (recommended)
+# OR
+jekyll serve --source docs --baseurl ""
+```
+
+**Hot Reload**:
+- ✅ Markdown files auto-reload
+- ✅ CSS/JS auto-reload
+- ✅ Images auto-reload
+- ❌ `_config.yml` requires restart
+
+**Restart Server**:
+```bash
+docker ps                      # Find container
+docker restart <container-id>  # Restart
+```
+
+### File Naming Conventions
+
+- **Markdown files**: lowercase-with-hyphens.md
+- **Directories**: lowercase-with-hyphens/
+- **Images**: descriptive-name.png in `/images/`
+- **Templates**: template-name.hbs in `assets/templates/`
+- **Data files**: config-name.yaml in `assets/data/`
+
+### URL Structure
+
+- **GitHub URL**: https://smoothieware.github.io/smoothieware-website-v1/
+- **Custom Domain**: https://smoothieware.org (via CNAME)
+- **Permalinks**: Defined in front matter or auto-generated from filename
+
+### Best Practices
+
+**DO**:
+- ✅ Use front matter for custom permalinks
+- ✅ Put files in appropriate subdirectories
+- ✅ Use Shoelace components for UI elements
+- ✅ Use `<setting>` tags for configuration docs
+- ✅ Test locally before pushing
+- ✅ Use absolute image paths: `/images/...`
+- ✅ Update YAML database when documenting settings
+
+**DON'T**:
+- ❌ Create files in `/docs` root (use subdirectories)
+- ❌ Use uppercase in filenames/directories
+- ❌ Use relative image paths: `../images/...`
+- ❌ Edit `_config.yml` without testing
+- ❌ Use raw HTML without `{::nomarkdown}` wrapper
+- ❌ Add large binary files (compress first)
+
+### Debug & Testing
+
+**Debug Page**: `/debug-settings` demonstrates:
+- Setting tag functionality
+- Tooltip behavior
+- v1 ↔ v2 configuration mapping
+- CSS fallback modes
+
+**Test Changes**:
+1. Run local server
+2. Check all pages affected
+3. Verify links work
+4. Test Shoelace components
+5. Check setting tags render
+6. Push to deploy
 
 ## License
 

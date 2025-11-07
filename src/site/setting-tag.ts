@@ -347,6 +347,9 @@ function initialize_setting_tags($setting_elements: JQuery<HTMLElement>): void {
         const v1_setting = $(this).attr('v1') ?? '';
         const v2_setting = $(this).attr('v2') ?? '';
 
+        // Check if no-version attribute is set (presence check, value doesn't matter)
+        const no_version = $(this).attr('no-version') !== undefined;
+
         // Parse settings into path elements
         const v1_parts = v1_setting.split('.');
         const v2_parts = v2_setting.split('.');
@@ -357,15 +360,16 @@ function initialize_setting_tags($setting_elements: JQuery<HTMLElement>): void {
 
         // Build path HTML using template (only if setting is not empty)
         // Pass undefined for empty settings so Handlebars treats them as falsy
-        const v1_path_html = v1_setting ? build_path_elements(v1_parts) : undefined;
-        const v2_path_html = v2_setting ? build_path_elements(v2_parts) : undefined;
+        const v1_path_html = v1_setting ? build_path_elements(v1_parts, false) : undefined;
+        const v2_path_html = v2_setting ? build_path_elements(v2_parts, true) : undefined;
 
         // Render complete structure using template
         const html_structure = compiled_setting_structure_template({
             v1_first_color: first_v1_color,
             v1_path_html: v1_path_html,
             v2_first_color: first_v2_color,
-            v2_path_html: v2_path_html
+            v2_path_html: v2_path_html,
+            no_version: no_version
         });
 
         // Replace content of setting element
@@ -413,19 +417,17 @@ function create_popup_for_setting($setting: JQuery<HTMLElement>, v1_name: string
     // Create unique ID for this setting's popup
     const popup_id = `setting-popup-${Math.random().toString(36).substr(2, 9)}`;
 
-    // Create sl-popup element with flip, shift, and hover-bridge
+    // Create sl-popup element with shift and hover-bridge (NO flip - always bottom)
     const $popup = $(`
         <sl-popup
             id="${popup_id}"
             placement="bottom"
-            distance="8"
+            distance="10"
             skidding="0"
-            flip
-            flip-fallback-strategy="best-fit"
             shift
             hover-bridge
             arrow
-            arrow-placement="start"
+            arrow-placement="anchor"
             class="setting-popup"
         >
             <div class="setting-popup-content">
@@ -527,7 +529,7 @@ function create_popup_for_setting($setting: JQuery<HTMLElement>, v1_name: string
  * Dots are positioned absolutely within diagonal separators (no layout shift on hover)
  * Uses Handlebars template for rendering
  */
-function build_path_elements(parts: string[]): string {
+function build_path_elements(parts: string[], is_v2: boolean = false): string {
 
     // Guard against uncompiled template
     if (!compiled_path_elements_template) {
@@ -547,12 +549,14 @@ function build_path_elements(parts: string[]): string {
         return {
             text: part_text,
             color_level: color_level,
-            next_color_level: next_color_level
+            next_color_level: next_color_level,
+            is_first: is_v2 && index === 0,                    // First element in v2 gets brackets
+            show_dot: is_v2 ? index > 0 : true                 // v2: no dot after section name, v1: always show dot
         };
     });
 
     // Render using template
-    return compiled_path_elements_template({ parts: template_data });
+    return compiled_path_elements_template({ parts: template_data, is_v2 });
 }
 
 /**
@@ -662,6 +666,58 @@ function find_setting_with_pattern_matching(setting_name: string, settings_map: 
         }
     }
 
+    // SECTION PREFIX STRIPPING FALLBACK
+    // HTML tags often specify "section.setting" (e.g., "current control.alpha.current")
+    // But YAML name field only has the setting part (e.g., "alpha.current")
+    // Try stripping the first segment (assumed to be section) and searching again
+    if (segments.length >= 2) {
+
+        // Try removing first segment (section prefix)
+        const without_section = segments.slice(1).join('.');
+
+        // Try exact match without section
+        const match_without_section = settings_map.get(without_section);
+        if (match_without_section) {
+            return match_without_section;
+        }
+
+        // Also try with normalized version (spaces -> underscores)
+        const normalized_without_section = without_section.replace(/ /g, '_');
+        if (normalized_without_section !== without_section) {
+            const normalized_match_without_section = settings_map.get(normalized_without_section);
+            if (normalized_match_without_section) {
+                return normalized_match_without_section;
+            }
+        }
+    }
+
+    // V2 AGGRESSIVE PREFIX STRIPPING
+    // V2 uses short names in YAML (e.g., "enable") with a module field (e.g., "switch")
+    // HTML tags use full names with section and instance (e.g., "switch.fan.enable")
+    // Try progressively stripping more segments from the left until we find a match
+    // This handles cases like "switch.fan.enable" -> "fan.enable" -> "enable"
+    if (segments.length >= 3) {
+        // Start from 2 segments stripped (e.g., "switch.fan.enable" -> "enable")
+        for (let strip_count = 2; strip_count < segments.length; strip_count++) {
+            const stripped = segments.slice(strip_count).join('.');
+
+            // Try exact match
+            const stripped_match = settings_map.get(stripped);
+            if (stripped_match) {
+                return stripped_match;
+            }
+
+            // Try with space-to-underscore normalization
+            const normalized_stripped = stripped.replace(/ /g, '_');
+            if (normalized_stripped !== stripped) {
+                const normalized_stripped_match = settings_map.get(normalized_stripped);
+                if (normalized_stripped_match) {
+                    return normalized_stripped_match;
+                }
+            }
+        }
+    }
+
     // No match found
     return undefined;
 }
@@ -722,8 +778,8 @@ async function generate_shoelace_tooltip(v1_setting_name: string, v2_setting_nam
 
     // Prepare data for tab-group template
     // Generate mini setting displays for tab titles (using tag attribute values)
-    const v1_mini_setting = v1_setting_name ? generate_tab_title_mini_setting(v1_setting_name) : '';
-    const v2_mini_setting = v2_setting_name ? generate_tab_title_mini_setting(v2_setting_name) : '';
+    const v1_mini_setting = v1_setting_name ? generate_tab_title_mini_setting(v1_setting_name, 'v1') : '';
+    const v2_mini_setting = v2_setting_name ? generate_tab_title_mini_setting(v2_setting_name, 'v2') : '';
 
     // Generate panel content (now async - searches multiple config files)
     // Priority: YAML data > not-documented panel (with proper warning) > not found
@@ -772,7 +828,7 @@ async function generate_single_setting_tooltip(setting_name: string, version: st
     }
 
     // Generate the setting name display HTML (using mini setting template)
-    const setting_name_html = generate_tab_title_mini_setting(setting_name);
+    const setting_name_html = generate_tab_title_mini_setting(setting_name, version);
 
     // Generate the panel content (now async - searches multiple config files)
     let panel_content: string;
@@ -800,7 +856,7 @@ async function generate_single_setting_tooltip(setting_name: string, version: st
  * Similar to <setting> tag but without v1/v2 label, just the path with diagonal separators
  * Dots are always visible, backgrounds get lighter from right to left
  */
-function generate_tab_title_mini_setting(setting_name: string): string {
+function generate_tab_title_mini_setting(setting_name: string, version: string = 'v1'): string {
 
     // Guard against template not loaded
     if (!compiled_mini_setting_template) {
@@ -809,6 +865,9 @@ function generate_tab_title_mini_setting(setting_name: string): string {
 
     // Split setting name by dots
     const path_parts = setting_name.split('.');
+
+    // Check if this is v2
+    const is_v2 = version === 'v2';
 
     // Prepare data for template
     // Reverse to assign colors (rightmost = darkest = color 0)
@@ -819,7 +878,9 @@ function generate_tab_title_mini_setting(setting_name: string): string {
 
         return {
             text: text,
-            color: clamped_color
+            color: clamped_color,
+            is_section: is_v2 && index === 0,                  // First element in v2 gets brackets
+            show_dot: is_v2 ? index > 0 : true                 // v2: no dot after section name, v1: always show dot
         };
     });
 

@@ -3,7 +3,7 @@
 
 {{#if v1_path_html}}
 {{! V1 section }}
-<span class="setting-v1-label"></span>
+{{#unless no_version}}<span class="setting-v1-label"></span>{{/unless}}
 <span class="setting-separator-diagonal" data-from="black" data-to="{{v1_first_color}}"></span>
 {{{v1_path_html}}}
 {{/if}}
@@ -15,7 +15,7 @@
 
 {{#if v2_path_html}}
 {{! V2 section }}
-<span class="setting-v2-label"></span>
+{{#unless no_version}}<span class="setting-v2-label"></span>{{/unless}}
 <span class="setting-separator-diagonal" data-from="black" data-to="{{v2_first_color}}"></span>
 {{{v2_path_html}}}
 {{/if}}

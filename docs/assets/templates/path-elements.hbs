@@ -4,12 +4,12 @@
 
 {{#each parts}}
     {{! Path element with color data attribute }}
-    <span class="setting-path-element" data-color="{{this.color_level}}">{{escape this.text}}</span>
+    <span class="setting-path-element" data-color="{{this.color_level}}">{{#if this.is_first}}<span class="setting-bracket">[</span>{{/if}}{{escape this.text}}{{#if this.is_first}}<span class="setting-bracket">]</span>{{/if}}</span>
 
     {{! Diagonal separator with dot (except after last element) }}
     {{#unless @last}}
     <span class="setting-separator-diagonal" data-from="{{this.color_level}}" data-to="{{this.next_color_level}}">
-        <span class="setting-dot"></span>
+        {{#if this.show_dot}}<span class="setting-dot"></span>{{/if}}
     </span>
     {{/unless}}
 {{/each}}

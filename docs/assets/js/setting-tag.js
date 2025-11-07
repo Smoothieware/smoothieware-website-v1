@@ -11908,17 +11908,19 @@ function initialize_setting_tags($setting_elements) {
   $setting_elements.each(function() {
     const v1_setting = import_jquery.default(this).attr("v1") ?? "";
     const v2_setting = import_jquery.default(this).attr("v2") ?? "";
+    const no_version = import_jquery.default(this).attr("no-version") !== undefined;
     const v1_parts = v1_setting.split(".");
     const v2_parts = v2_setting.split(".");
     const first_v1_color = Math.min(v1_parts.length - 1, COLOR_LEVELS.length - 1);
     const first_v2_color = Math.min(v2_parts.length - 1, COLOR_LEVELS.length - 1);
-    const v1_path_html = v1_setting ? build_path_elements(v1_parts) : undefined;
-    const v2_path_html = v2_setting ? build_path_elements(v2_parts) : undefined;
+    const v1_path_html = v1_setting ? build_path_elements(v1_parts, false) : undefined;
+    const v2_path_html = v2_setting ? build_path_elements(v2_parts, true) : undefined;
     const html_structure = compiled_setting_structure_template({
       v1_first_color: first_v1_color,
       v1_path_html,
       v2_first_color: first_v2_color,
-      v2_path_html
+      v2_path_html,
+      no_version
     });
     import_jquery.default(this).html(html_structure);
     create_popup_for_setting(import_jquery.default(this), v1_setting, v2_setting);
@@ -11946,14 +11948,12 @@ function create_popup_for_setting($setting, v1_name, v2_name) {
         <sl-popup
             id="${popup_id}"
             placement="bottom"
-            distance="8"
+            distance="10"
             skidding="0"
-            flip
-            flip-fallback-strategy="best-fit"
             shift
             hover-bridge
             arrow
-            arrow-placement="start"
+            arrow-placement="anchor"
             class="setting-popup"
         >
             <div class="setting-popup-content">
@@ -12008,7 +12008,7 @@ function create_popup_for_setting($setting, v1_name, v2_name) {
     popup_element.active = false;
   });
 }
-function build_path_elements(parts) {
+function build_path_elements(parts, is_v2 = false) {
   if (!compiled_path_elements_template) {
     console.error("[setting-tag.ts] Path elements template not compiled");
     return "";
@@ -12019,10 +12019,12 @@ function build_path_elements(parts) {
     return {
       text: part_text,
       color_level,
-      next_color_level
+      next_color_level,
+      is_first: is_v2 && index === 0,
+      show_dot: is_v2 ? index > 0 : true
     };
   });
-  return compiled_path_elements_template({ parts: template_data });
+  return compiled_path_elements_template({ parts: template_data, is_v2 });
 }
 function render_markdown(text) {
   let html = escape_html(text);
@@ -12071,6 +12073,36 @@ function find_setting_with_pattern_matching(setting_name, settings_map) {
       }
     }
   }
+  if (segments.length >= 2) {
+    const without_section = segments.slice(1).join(".");
+    const match_without_section = settings_map.get(without_section);
+    if (match_without_section) {
+      return match_without_section;
+    }
+    const normalized_without_section = without_section.replace(/ /g, "_");
+    if (normalized_without_section !== without_section) {
+      const normalized_match_without_section = settings_map.get(normalized_without_section);
+      if (normalized_match_without_section) {
+        return normalized_match_without_section;
+      }
+    }
+  }
+  if (segments.length >= 3) {
+    for (let strip_count = 2;strip_count < segments.length; strip_count++) {
+      const stripped = segments.slice(strip_count).join(".");
+      const stripped_match = settings_map.get(stripped);
+      if (stripped_match) {
+        return stripped_match;
+      }
+      const normalized_stripped = stripped.replace(/ /g, "_");
+      if (normalized_stripped !== stripped) {
+        const normalized_stripped_match = settings_map.get(normalized_stripped);
+        if (normalized_stripped_match) {
+          return normalized_stripped_match;
+        }
+      }
+    }
+  }
   return;
 }
 async function generate_shoelace_tooltip(v1_setting_name, v2_setting_name) {
@@ -12097,8 +12129,8 @@ async function generate_shoelace_tooltip(v1_setting_name, v2_setting_name) {
   if (!compiled_tab_group_template) {
     return '<div class="setting-panel-content"><p>Error: Tab group template not loaded</p></div>';
   }
-  const v1_mini_setting = v1_setting_name ? generate_tab_title_mini_setting(v1_setting_name) : "";
-  const v2_mini_setting = v2_setting_name ? generate_tab_title_mini_setting(v2_setting_name) : "";
+  const v1_mini_setting = v1_setting_name ? generate_tab_title_mini_setting(v1_setting_name, "v1") : "";
+  const v2_mini_setting = v2_setting_name ? generate_tab_title_mini_setting(v2_setting_name, "v2") : "";
   let v1_panel_content;
   if (v1_setting) {
     v1_panel_content = await generate_setting_panel(v1_setting, "v1", v2_setting_name, v1_setting_name);
@@ -12126,7 +12158,7 @@ async function generate_single_setting_tooltip(setting_name, version, setting_da
   if (!compiled_single_setting_template) {
     return '<div class="setting-panel-content"><p>Error: Single setting template not loaded</p></div>';
   }
-  const setting_name_html = generate_tab_title_mini_setting(setting_name);
+  const setting_name_html = generate_tab_title_mini_setting(setting_name, version);
   let panel_content;
   if (setting_data) {
     panel_content = await generate_setting_panel(setting_data, version, undefined, setting_name);
@@ -12140,17 +12172,20 @@ async function generate_single_setting_tooltip(setting_name, version, setting_da
     panel_content
   });
 }
-function generate_tab_title_mini_setting(setting_name) {
+function generate_tab_title_mini_setting(setting_name, version = "v1") {
   if (!compiled_mini_setting_template) {
     return `<span class="tab-setting-display">${escape_html(setting_name)}</span>`;
   }
   const path_parts = setting_name.split(".");
+  const is_v2 = version === "v2";
   const template_parts = path_parts.map((text, index) => {
     const color_index = path_parts.length - 1 - index;
     const clamped_color = Math.min(color_index, 3);
     return {
       text,
-      color: clamped_color
+      color: clamped_color,
+      is_section: is_v2 && index === 0,
+      show_dot: is_v2 ? index > 0 : true
     };
   });
   return compiled_mini_setting_template({ parts: template_parts });

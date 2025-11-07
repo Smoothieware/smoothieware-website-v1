@@ -20,7 +20,7 @@ setting {
     align-items:     stretch;
 
     /* Monospace font for code appearance */
-    font-family:     'Courier New', Courier, monospace;
+    font-family:     'Courier New', Courier, monospace !important;
     font-size:       0.85em;
     font-weight:     500;
 
@@ -94,12 +94,13 @@ setting:hover {
 
 /* Path elements with progressive color darkening */
 /* Right-most element (data-color="0") is darkest, progressively lighter to left */
-/* Strengthened gradient: 20% stronger lightening effect (6 units per step instead of 5) */
+/* Strengthened gradient: 40% stronger lightening effect (7 units per step) */
 .setting-path-element {
     display:         inline-flex;
     align-items:     center;
     padding:         0 6px;
     color:           #fff;
+    font-family:     'Courier New', Courier, monospace !important;
 }
 
 .setting-path-element[data-color="0"] {
@@ -107,15 +108,23 @@ setting:hover {
 }
 
 .setting-path-element[data-color="1"] {
-    background:      #101010; /* +6 units lighter (16) */
+    background:      #111111; /* +7 units lighter (17) */
 }
 
 .setting-path-element[data-color="2"] {
-    background:      #161616; /* +6 units lighter (22) */
+    background:      #181818; /* +7 units lighter (24) */
 }
 
 .setting-path-element[data-color="3"] {
-    background:      #1c1c1c; /* +6 units lighter - left-most element (28) */
+    background:      #1f1f1f; /* +7 units lighter - left-most element (31) */
+}
+
+/* Brackets around section names - greyer than the text */
+.setting-bracket {
+    color:           #999; /* Grey color that blends slightly into background */
+    user-select:     text; /* Allow selection so brackets are copied */
+    font-family:     'Courier New', Courier, monospace !important; /* Same monospace as text for alignment */
+    display:         inline; /* Keep inline with text */
 }
 
 /* Dot separators between path elements */
@@ -140,6 +149,11 @@ setting:hover {
 
 /* Show dots on hover */
 setting:hover .setting-dot {
+    opacity:         1;
+}
+
+/* Show dots always when no-version attribute is present */
+setting[no-version] .setting-dot {
     opacity:         1;
 }
 
@@ -182,32 +196,32 @@ setting:hover .setting-dot {
 
 /* Black to color level 1 */
 .setting-separator-diagonal[data-from="black"][data-to="1"]::before {
-    background:      linear-gradient(to right, #000 0%, #000 50%, #101010 50%, #101010 100%);
+    background:      linear-gradient(to right, #000 0%, #000 50%, #111111 50%, #111111 100%);
 }
 
 /* Black to color level 2 */
 .setting-separator-diagonal[data-from="black"][data-to="2"]::before {
-    background:      linear-gradient(to right, #000 0%, #000 50%, #161616 50%, #161616 100%);
+    background:      linear-gradient(to right, #000 0%, #000 50%, #181818 50%, #181818 100%);
 }
 
 /* Black to color level 3 */
 .setting-separator-diagonal[data-from="black"][data-to="3"]::before {
-    background:      linear-gradient(to right, #000 0%, #000 50%, #1c1c1c 50%, #1c1c1c 100%);
+    background:      linear-gradient(to right, #000 0%, #000 50%, #1f1f1f 50%, #1f1f1f 100%);
 }
 
 /* Color level 3 to 2 */
 .setting-separator-diagonal[data-from="3"][data-to="2"]::before {
-    background:      linear-gradient(to right, #1c1c1c 0%, #1c1c1c 50%, #161616 50%, #161616 100%);
+    background:      linear-gradient(to right, #1f1f1f 0%, #1f1f1f 50%, #181818 50%, #181818 100%);
 }
 
 /* Color level 2 to 1 */
 .setting-separator-diagonal[data-from="2"][data-to="1"]::before {
-    background:      linear-gradient(to right, #161616 0%, #161616 50%, #101010 50%, #101010 100%);
+    background:      linear-gradient(to right, #181818 0%, #181818 50%, #111111 50%, #111111 100%);
 }
 
 /* Color level 1 to 0 (darkest) */
 .setting-separator-diagonal[data-from="1"][data-to="0"]::before {
-    background:      linear-gradient(to right, #101010 0%, #101010 50%, #0a0a0a 50%, #0a0a0a 100%);
+    background:      linear-gradient(to right, #111111 0%, #111111 50%, #0a0a0a 50%, #0a0a0a 100%);
 }
 
 /* Popup container (sl-popup component) */
@@ -721,6 +735,7 @@ sl-details::part(content) {
     padding:         0 7px;
     color:           #fff;
     font-size:       0.95em;
+    font-family:     'Courier New', Courier, monospace !important;
 }
 
 /* Color levels - darkest on right, lightest on left */
@@ -729,15 +744,15 @@ sl-details::part(content) {
 }
 
 .tab-setting-path-element[data-color="1"] {
-    background:      #181818;
+    background:      #1b1b1b; /* +17 units lighter (27) */
 }
 
 .tab-setting-path-element[data-color="2"] {
-    background:      #262626;
+    background:      #2c2c2c; /* +17 units lighter (44) */
 }
 
 .tab-setting-path-element[data-color="3"] {
-    background:      #343434; /* Lightest */
+    background:      #3d3d3d; /* +17 units lighter - Lightest (61) */
 }
 
 /* Diagonal separator in tabs */
@@ -757,7 +772,7 @@ sl-details::part(content) {
     left:            -4px;
     right:           -4px;
     bottom:          -2px;
-    background:      linear-gradient(to right, #0a0a0a 0%, #0a0a0a 50%, #181818 50%, #181818 100%);
+    background:      linear-gradient(to right, #0a0a0a 0%, #0a0a0a 50%, #1b1b1b 50%, #1b1b1b 100%);
     transform:       skewX(-20deg);
 }
 
