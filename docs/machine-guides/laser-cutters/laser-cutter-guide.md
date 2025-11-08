@@ -103,6 +103,39 @@ At the end of this guide, you should have a fully working machine.
 
 {% include hardware/panels/panel-guide.md %}
 
+# Startup Automation
+
+For laser cutters, safety is paramount. You can use startup automation to ensure your laser is in a safe state every time the machine boots.
+
+## Safe Laser Startup
+
+Create a file called `on_boot.gcode` in the root of your SD card with safe default commands:
+
+```gcode
+G21          ; Metric units
+G90          ; Absolute positioning
+M5           ; Laser OFF (critical for safety!)
+M3 S0        ; Set laser power to 0
+G28 X Y      ; Home X and Y (typically don't home Z for lasers)
+G0 X5 Y5     ; Move away from origin
+```
+
+{::nomarkdown}
+<sl-alert variant="danger" open>
+  <sl-icon slot="icon" name="exclamation-octagon"></sl-icon>
+  <strong>Safety Critical:</strong> Always ensure your on_boot.gcode starts with commands that turn OFF the laser (M5) and set power to zero (M3 S0). Never enable the laser automatically in startup scripts.
+</sl-alert>
+{:/nomarkdown}
+
+Enable the on_boot.gcode file in your config:
+
+```
+on_boot_gcode_enable true
+on_boot_gcode /sd/on_boot.gcode
+```
+
+For more information and examples, see the [on_boot.gcode documentation](on_boot.gcode).
+
 # Appendixes
 
 {% include hardware/wiring/general-appendixes.md %}

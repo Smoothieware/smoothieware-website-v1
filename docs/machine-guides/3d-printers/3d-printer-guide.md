@@ -372,6 +372,31 @@ Good diodes to use are: 1N5819 or SS14.
 
 {% include hardware/panels/panel-guide.md %}
 
+# Automation and Startup
+
+Once you have your printer fully configured and working, you might want to automate certain startup tasks.
+
+## Automatic Homing on Boot
+
+A common automation is to have your printer automatically home all axes when it boots up. This ensures your printer is always in a known state when you start using it.
+
+To set this up, create a file called `on_boot.gcode` in the root of your SD card with:
+
+```gcode
+G28  ; Home all axes
+G0 Z10  ; Raise Z to safe height
+G0 X10 Y10  ; Move to safe position
+```
+
+Then enable it in your config:
+
+```
+on_boot_gcode_enable true
+on_boot_gcode /sd/on_boot.gcode
+```
+
+For more information and advanced examples, see the [on_boot.gcode documentation](on_boot.gcode).
+
 # Appendixes
 
 {% include hardware/wiring/general-appendixes.md %}

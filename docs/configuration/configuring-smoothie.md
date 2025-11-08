@@ -266,6 +266,24 @@ M665
 
 {% include hardware/pins/pin-configuration.md %}
 
+## Related Configuration Features
+
+### Startup Automation
+
+Beyond the main configuration file, Smoothie also supports startup automation through the [on_boot.gcode](on_boot.gcode) file. This allows you to automatically execute G-code commands every time your board boots up.
+
+This is useful for:
+- Automatically homing axes on startup
+- Setting default temperatures or speeds
+- Initializing machine state
+- Running calibration routines
+
+See the [on_boot.gcode documentation](on_boot.gcode) for details on how to set this up.
+
+### SD Card Files
+
+For more information about other special files on the SD card (like `config-override`, `firmware.bin`, etc.), see the [SD Card documentation](sd-card).
+
 ## Hard setting configuration
 
 You can do away with an editable configuration file altogether if that makes sense in your setup. For example, if you don't want users to have an easy way to edit the configuration by editing the configuration file on the SD card.

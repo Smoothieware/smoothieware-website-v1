@@ -1,0 +1,62 @@
+/**
+ * raw-tag.css
+ *
+ * Styles for <raw> custom tags that display text in a monospace black box
+ * - Simple inline code-like appearance
+ * - Black background with white monospace text
+ * - Lightly rounded corners
+ * - No interactive features (simpler cousin of <setting> tag)
+ */
+
+/* Base raw tag container */
+raw {
+    /* Inline display for use within text */
+    display:         inline-block;
+
+    /* Monospace font for code appearance */
+    font-family:     'Courier New', Courier, monospace !important;
+    font-size:       0.85em;
+    font-weight:     500;
+
+    /* Compact sizing */
+    margin:          0 3px;
+    padding:         0;
+
+    /* Rounded corners */
+    border-radius:   3px;
+    overflow:        hidden;
+
+    /* Vertical alignment with surrounding text */
+    vertical-align:  middle;
+
+    /* No wrapping */
+    white-space:     nowrap;
+
+    /* Allow text selection */
+    user-select:     text;
+
+    /* Remove default spacing */
+    line-height:     1;
+}
+
+/* Raw content wrapper */
+.raw-content {
+    display:         inline-block;
+    padding:         5px 9px;
+    background:      #000;
+    color:           #fff;
+
+    /* Monospace font for code appearance - use !important to override parent styles */
+    font-family:     'Courier New', Courier, monospace !important;
+
+    /* Match the border radius of the container */
+    border-radius:   3px;
+
+    /* Ensure text is selectable */
+    user-select:     text;
+}
+
+/* Optional hover effect for visual feedback */
+raw:hover .raw-content {
+    background:      #1a1a1a;
+}

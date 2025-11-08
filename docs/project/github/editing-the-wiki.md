@@ -146,6 +146,346 @@ Available variants and their typical uses:
 
 - `variant="neutral"`: Gray - for general information and notes
 
+### Configuration Settings
+
+For documenting Smoothieware configuration options, we have a special `<setting>` tag that creates interactive tooltips with detailed information:
+
+{::nomarkdown}
+<sl-alert variant="primary" open>
+  <sl-icon slot="icon" name="lightbulb"></sl-icon>
+  <strong>Interactive Configuration Tags</strong><br>
+  The <code>&lt;setting&gt;</code> tag displays configuration options with rich tooltips showing defaults, valid values, and examples from our YAML configuration database.
+</sl-alert>
+{:/nomarkdown}
+
+#### Basic Syntax
+
+**For v1 settings:**
+
+```html
+<setting v1="alpha_steps_per_mm"></setting>
+```
+
+Which renders as: {::nomarkdown}<setting v1="alpha_steps_per_mm"></setting>{:/nomarkdown}
+
+**For v2 settings:**
+
+```html
+<setting v2="actuator.alpha.steps_per_mm"></setting>
+```
+
+Which renders as: {::nomarkdown}<setting v2="actuator.alpha.steps_per_mm"></setting>{:/nomarkdown}
+
+**For settings that exist in both versions:**
+
+```html
+<setting v1="acceleration" v2="motion control.default_acceleration"></setting>
+```
+
+Which renders as: {::nomarkdown}<setting v1="acceleration" v2="motion control.default_acceleration"></setting>{:/nomarkdown}
+
+#### How It Works
+
+When you use a `<setting>` tag:
+- It displays as an inline code element (monospace, highlighted)
+- Shows both v1 and v2 names when applicable
+- Provides an interactive tooltip on hover with:
+  - Full description
+  - Default values
+  - Valid value ranges
+  - Usage examples
+  - Related settings
+- All data comes from `/docs/assets/data/smoothieware-v1-config.yaml`
+
+#### Examples
+
+Here are some real-world examples:
+
+**Motor configuration:**
+
+```html
+Configure the <setting v1="alpha_steps_per_mm" v2="actuator.alpha.steps_per_mm"></setting>
+setting to control how many motor steps equal 1mm of movement.
+```
+
+Renders as:
+
+{::nomarkdown}
+Configure the <setting v1="alpha_steps_per_mm" v2="actuator.alpha.steps_per_mm"></setting>
+setting to control how many motor steps equal 1mm of movement.
+{:/nomarkdown}
+
+**Temperature control:**
+
+```html
+The hotend thermistor pin is set with
+<setting v1="temperature_control.hotend.thermistor_pin" v2="thermistor_pin"></setting>.
+```
+
+Renders as:
+
+{::nomarkdown}
+The hotend thermistor pin is set with
+<setting v1="temperature_control.hotend.thermistor_pin" v2="thermistor_pin"></setting>.
+{:/nomarkdown}
+
+**Motion settings:**
+
+```html
+Basic motion is controlled by <setting v1="acceleration" v2="motion control.default_acceleration"></setting>
+and <setting v1="junction_deviation" v2="planner.junction_deviation"></setting>.
+```
+
+Renders as:
+
+{::nomarkdown}
+Basic motion is controlled by <setting v1="acceleration" v2="motion control.default_acceleration"></setting>
+and <setting v1="junction_deviation" v2="planner.junction_deviation"></setting>.
+{:/nomarkdown}
+
+**Single version only:**
+
+```html
+The <setting v1="arm_solution"></setting> determines your kinematics type.
+```
+
+Renders as:
+
+{::nomarkdown}
+The <setting v1="arm_solution"></setting> determines your kinematics type.
+{:/nomarkdown}
+
+#### Important Notes
+
+{::nomarkdown}
+<sl-alert variant="warning" open>
+  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+  <strong>Markdown Wrapper Required</strong><br>
+  When using setting tags inside regular markdown content, you must wrap them in <code>{::nomarkdown}...{:/nomarkdown}</code> blocks to prevent Jekyll from processing them as markdown.
+</sl-alert>
+{:/nomarkdown}
+
+**Example with wrapper:**
+
+```html
+{::nomarkdown}
+Configure your printer by setting <setting v1="alpha_steps_per_mm"></setting> first.
+{:/nomarkdown}
+```
+
+Renders as:
+
+{::nomarkdown}
+Configure your printer by setting <setting v1="alpha_steps_per_mm"></setting> first.
+{:/nomarkdown}
+
+#### Testing Your Settings
+
+You can test setting tags and see all available examples on the [Debug Settings](/debug-settings) page, which demonstrates various usage patterns and interactive features.
+
+### Raw Text Display
+
+For displaying raw text, code snippets, or technical values in a monospace black box, we have the `<raw>` tag:
+
+{::nomarkdown}
+<sl-alert variant="primary" open>
+  <sl-icon slot="icon" name="lightbulb"></sl-icon>
+  <strong>Simple Code Display</strong><br>
+  The <code>&lt;raw&gt;</code> tag displays text in a monospace black box with white text - perfect for inline code snippets, file paths, or technical values.
+</sl-alert>
+{:/nomarkdown}
+
+#### Basic Syntax
+
+```html
+<raw>text content here</raw>
+```
+
+Which renders as: {::nomarkdown}<raw>text content here</raw>{:/nomarkdown}
+
+#### Use Cases
+
+**File paths:**
+
+```html
+The configuration file is located at <raw>/etc/smoothie/config</raw>.
+```
+
+Renders as:
+
+{::nomarkdown}
+The configuration file is located at <raw>/etc/smoothie/config</raw>.
+{:/nomarkdown}
+
+**Code snippets:**
+
+```html
+Use the command <raw>M114</raw> to query the current position.
+```
+
+Renders as:
+
+{::nomarkdown}
+Use the command <raw>M114</raw> to query the current position.
+{:/nomarkdown}
+
+**Technical values:**
+
+```html
+Set the baud rate to <raw>115200</raw> for serial communication.
+```
+
+Renders as:
+
+{::nomarkdown}
+Set the baud rate to <raw>115200</raw> for serial communication.
+{:/nomarkdown}
+
+**Pin assignments:**
+
+```html
+Connect the signal wire to pin <raw>2.5</raw> on the board.
+```
+
+Renders as:
+
+{::nomarkdown}
+Connect the signal wire to pin <raw>2.5</raw> on the board.
+{:/nomarkdown}
+
+#### Notes
+
+- The `<raw>` tag is simpler than the `<setting>` tag - it has no interactive features or tooltips
+- Best used for short inline code snippets or technical values
+- Text is displayed in white monospace font on a black background
+- Like other custom tags, wrap in `{::nomarkdown}...{:/nomarkdown}` when using in markdown content
+
+### G-code and M-code Display
+
+For displaying G-codes and M-codes, we have specialized tags:
+
+{::nomarkdown}
+<sl-alert variant="primary" open>
+  <sl-icon slot="icon" name="lightbulb"></sl-icon>
+  <strong>G-code and M-code Tags</strong><br>
+  Use <code>&lt;gcode&gt;</code> for G-codes and <code>&lt;mcode&gt;</code> for M-codes - same styling as <code>&lt;raw&gt;</code> but semantically correct.
+</sl-alert>
+{:/nomarkdown}
+
+#### Basic Syntax
+
+**For G-codes:**
+
+```html
+<gcode>G10</gcode>
+```
+
+Which renders as: {::nomarkdown}<gcode>G10</gcode>{:/nomarkdown}
+
+**For M-codes:**
+
+```html
+<mcode>M119</mcode>
+```
+
+Which renders as: {::nomarkdown}<mcode>M119</mcode>{:/nomarkdown}
+
+#### Use Cases
+
+**G-code commands:**
+
+```html
+Use the <gcode>G28</gcode> command to home all axes.
+```
+
+Renders as:
+
+{::nomarkdown}
+Use the <gcode>G28</gcode> command to home all axes.
+{:/nomarkdown}
+
+**M-code commands:**
+
+```html
+Send <mcode>M119</mcode> to check endstop status.
+```
+
+Renders as:
+
+{::nomarkdown}
+Send <mcode>M119</mcode> to check endstop status.
+{:/nomarkdown}
+
+**In documentation:**
+
+```html
+The <gcode>G0</gcode> and <gcode>G1</gcode> commands control linear movement, while <mcode>M3</mcode> starts the spindle.
+```
+
+Renders as:
+
+{::nomarkdown}
+The <gcode>G0</gcode> and <gcode>G1</gcode> commands control linear movement, while <mcode>M3</mcode> starts the spindle.
+{:/nomarkdown}
+
+### Pin Number Display
+
+For displaying pin numbers and assignments, use the `<pin>` tag:
+
+{::nomarkdown}
+<sl-alert variant="primary" open>
+  <sl-icon slot="icon" name="lightbulb"></sl-icon>
+  <strong>Pin Number Tag</strong><br>
+  The <code>&lt;pin&gt;</code> tag displays pin numbers in a monospace black box - perfect for hardware documentation.
+</sl-alert>
+{:/nomarkdown}
+
+#### Basic Syntax
+
+```html
+<pin>1.18</pin>
+```
+
+Which renders as: {::nomarkdown}<pin>1.18</pin>{:/nomarkdown}
+
+#### Use Cases
+
+**Pin assignments:**
+
+```html
+Connect the thermistor to pin <pin>0.23</pin>.
+```
+
+Renders as:
+
+{::nomarkdown}
+Connect the thermistor to pin <pin>0.23</pin>.
+{:/nomarkdown}
+
+**Wiring instructions:**
+
+```html
+The step signal goes to <pin>2.0</pin>, direction to <pin>0.5</pin>, and enable to <pin>0.4</pin>.
+```
+
+Renders as:
+
+{::nomarkdown}
+The step signal goes to <pin>2.0</pin>, direction to <pin>0.5</pin>, and enable to <pin>0.4</pin>.
+{:/nomarkdown}
+
+**Hardware documentation:**
+
+```html
+Smoothieboard uses pins <pin>1.18</pin> through <pin>1.21</pin> for the X axis motor driver.
+```
+
+Renders as:
+
+{::nomarkdown}
+Smoothieboard uses pins <pin>1.18</pin> through <pin>1.21</pin> for the X axis motor driver.
+{:/nomarkdown}
+
 ### Table of contents
 
 If the page has many headers, you can add a table of contents to it to make it easier to navigate, by doing:

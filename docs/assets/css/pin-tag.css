@@ -1,0 +1,93 @@
+/**
+ * pin-tag.css
+ *
+ * Styles for <pin> custom tags that display pin numbers in pill-shaped tags
+ * - Pill shape (fully rounded ends)
+ * - Black background with white monospace text
+ * - Gold pin connector icon on the left with hole in center
+ * - No interactive features (same as <raw> tag)
+ */
+
+/* Base pin tag container */
+pin {
+    /* Inline display for use within text */
+    display:         inline-block;
+
+    /* Monospace font for code appearance */
+    font-family:     'Courier New', Courier, monospace !important;
+    font-size:       0.85em;
+    font-weight:     500;
+
+    /* Compact sizing */
+    margin:          0 3px;
+    padding:         0;
+
+    /* Pill shape - full half circles on ends */
+    border-radius:   999px;
+    overflow:        visible;
+
+    /* Vertical alignment with surrounding text */
+    vertical-align:  middle;
+
+    /* No wrapping */
+    white-space:     nowrap;
+
+    /* Allow text selection */
+    user-select:     text;
+
+    /* Remove default spacing */
+    line-height:     1;
+}
+
+/* Pin content wrapper */
+.pin-content {
+    display:         inline-flex;
+    align-items:     center;
+    padding:         6px 12px 4px 8px;
+    background:      #000;
+    color:           #fff;
+    position:        relative;
+
+    /* Monospace font for code appearance - use !important to override parent styles */
+    font-family:     'Courier New', Courier, monospace !important;
+
+    /* Pill shape - full half circles on ends */
+    border-radius:   999px;
+
+    /* Ensure text is selectable */
+    user-select:     text;
+
+    /* Padding left to make room for the gold pin circle with more spacing */
+    padding-left:    22px;
+}
+
+/* Gold pin connector circle (before the text) */
+.pin-content::before {
+    content:         '';
+    position:        absolute;
+    left:            5px;
+    top:             50%;
+    transform:       translateY(-50%);
+
+    /* Smaller circle dimensions to fit concentrically with pill edge */
+    width:           12px;
+    height:          12px;
+
+    /* Gold color using radial gradient - creates a ring with grey hole in center */
+    /* Hole is at 36% radius (20% larger than previous 30%) */
+    /* Hole color matches page background grey (#1a1a1a) */
+    background:      radial-gradient(circle at center,
+                        #1a1a1a 0%,
+                        #1a1a1a 36%,
+                        #d4af37 36%,
+                        #d4af37 100%);
+    border-radius:   50%;
+
+    /* Positioning */
+    flex-shrink:     0;
+}
+
+/* Optional hover effect for visual feedback */
+pin:hover .pin-content {
+    background:      #1a1a1a;
+}

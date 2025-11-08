@@ -494,6 +494,29 @@ In Marlin, you configure this sensor by doing:
 
 While in Smoothie you use the [Filament detector](filament-detector) module
 
+## Startup scripts
+
+In Marlin, you can use `autostart.g` or similar startup scripts to run commands when the board boots.
+
+In Smoothie, this is handled by the [on_boot.gcode](on_boot.gcode) file.
+
+Simply create a file called `on_boot.gcode` in the root of your SD card and add the G-code commands you want to run on startup (one per line).
+
+For example, to automatically home all axes on boot:
+
+```gcode
+G28  ; Home all axes
+```
+
+Enable it in your config:
+
+```markdown
+on_boot_gcode_enable true
+on_boot_gcode /sd/on_boot.gcode
+```
+
+See the [on_boot.gcode documentation](on_boot.gcode) for more details and examples.
+
 ## Bed levelling
 
 For bed levelling and probing, see the [Zprobe](zprobe) documentation.

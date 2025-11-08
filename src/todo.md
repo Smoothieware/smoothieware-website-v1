@@ -15,7 +15,7 @@
 * [ ] Create a "custom format" for G-codes the same way we are planning to do for config settings, that will make them display nicer and link to their specific page.
 * [ ] Improve the existing G-code pages, have a template to follow and make them all consistent, include examples and explanations. Maybe different templates for different "types"
 * [ ] Run a search of the site for places where we could mention G-codes more often/mention more G-codes etc., do this by first creating a list of G-codes and what they do, put that list into "context", then have sub-agents with that context go over all the pages and locate interesting locations for mentioning G-codes/G-codes.
-* [ ] The pick and place page still has a few differences from the other guides like the missing icon at the top, ask a model to find all differences, then ask it to fix them.
+* [x] The pick and place page still has a few differences from the other guides like the missing icon at the top, ask a model to find all differences, then ask it to fix them.
 * [ ] Currently, images are surrounded by a `a href`, we want to change that with an actual setup where when we click an image, we have a popup show up (and in that popup there is an actual link to the image if needed), this should be do-able with just shoelace and some JavaScript.
 * [ ] Create XML files or YAML files for the list of pages with descriptions, for the list of settings with all the data we collected, for the list of G-codes with lots of details, and then in our "fancy" displays like the ones for details about settings, use that data like the one about the pages etc, to show extra data for example for the recommended pages we can show a description of each, etc. Same for the G-codes.
 * [ ] FEATURE implement full translations of the site in multiple languages and publish them as sub-folders and promote them, do a dozen languages then one new language each week. This will require also translating things like the planned xml/YAML files with all the data.
@@ -36,8 +36,8 @@
 * [ ] Figure out hardware and firmware differences between v1 and v2 from docs and research, and from there create a list of proposed changes to the site and "parallel" side by side parts of the site.
 * [ ] The "tooltip" for the settings should be smart about where to display, displaying where on the screen there is currently the most space.
 * [ ] Ask Chris Cecil to go over the entire documentation page by page, maybe a few pages a day (create an "all pages" with groups to be able to do it bit by bit, maybe with a section under each to add notes?)
-* [ ] Verify that the YAML files for the settings actually get cached and not loaded from the server every time a page is loaded.
-* [ ] Add the new "settings" tag to http://localhost:4000/editing-the-wiki 
+* [x] Verify that the YAML files for the settings actually get cached and not loaded from the server every time a page is loaded.
+* [x] Add the new "settings" tag to http://localhost:4000/editing-the-wiki 
 * [ ] Link to or include the pin-configuration page from the various guides and from more places in the site.
 * [ ] Have a "raw value" tag, for example for the symbols in https://smoothieware.org/pin-configuration and other places, and document it in the editing-the-wiki page.
 * [ ] Restructure the src/site/ files to be broken down into more libraries, and make sure the libraries are correctly integrated into the actual site along with the code.
@@ -47,6 +47,7 @@
 * [ ] Some stuff like the config example files in assets/ need to be kept up to date, we should create a script that gets them from github and updates as needed.
 * [ ] Ask Jim Morris for a list of new features in v2 and where I could learn about them to document them.
 * [ ] I nthe list of settings, have an icon for each setting "type".
+* [ ] It's possible the way the setting tag is currently implementd isn't good for SEO, we should look into that and if needed change somewhat how it's used.
 
 # <setting> tag.
 
@@ -65,6 +66,7 @@
 * [ ] For pin-type setting tags, use the svg diagrams to display which pins are valid for each one.
 * [ ] For values that are speeds like values with feed_rate etc in them (and we might be able to determine also based on the unit type value/property), we should have a simple thing where a circle goes around a pill-shape track that's the width of the popup, that shows what the speed looks like, trying to figure out the size of the screen based on its resolution and type (desktop, phone), etc, and a slider that lets us select the speed with exponential changes/scale.
 *_[ ] For the arm_solution setting we should have images for each of the possible values.
+* [ ] CRITICAL: Before we actually replace all the settings with <setting> tags, we need to create a very clear and detailled spec for what settings should look like/be specified at, including adding the full path, including the section for v2 settings etc.
 
 # Testing.
 

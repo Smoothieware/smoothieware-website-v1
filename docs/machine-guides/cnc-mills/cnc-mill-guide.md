@@ -113,6 +113,34 @@ You will find more information on `grbl_mode` on the [grbl_mode](/grbl-mode) pag
 
 {% include hardware/panels/panel-guide.md %}
 
+# Startup Automation
+
+For CNC mills, automating startup tasks can improve safety and workflow efficiency.
+
+## Safe Startup Sequence
+
+You can configure your mill to automatically run a safe startup sequence when it boots. Create a file called `on_boot.gcode` in the root of your SD card.
+
+For example, a safe CNC startup might include:
+
+```gcode
+G21          ; Metric units
+G90          ; Absolute positioning
+G17          ; XY plane selection
+M5           ; Ensure spindle is off
+```
+
+Note: For CNC mills, it's often safer to NOT automatically home axes on boot, especially if you have a mounted workpiece. Instead, you can set safe defaults and then manually home when ready.
+
+Enable the on_boot.gcode file in your config:
+
+```
+on_boot_gcode_enable true
+on_boot_gcode /sd/on_boot.gcode
+```
+
+See the [on_boot.gcode documentation](on_boot.gcode) for more details and examples specific to CNC applications.
+
 # Appendixes
 
 ### External stepper drivers

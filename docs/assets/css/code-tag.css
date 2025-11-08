@@ -1,0 +1,105 @@
+/**
+ * code-tag.css
+ *
+ * Styles for <gcode> and <mcode> custom tags that display G-code and M-code in monospace black boxes
+ * - Simple inline code-like appearance
+ * - Black background with white monospace text
+ * - Lightly rounded corners
+ * - No interactive features (same as <raw> tag)
+ */
+
+/* Base gcode tag container */
+gcode {
+    /* Inline display for use within text */
+    display:         inline-block;
+
+    /* Monospace font for code appearance */
+    font-family:     'Courier New', Courier, monospace !important;
+    font-size:       0.85em;
+    font-weight:     500;
+
+    /* Compact sizing */
+    margin:          0 3px;
+    padding:         0;
+
+    /* Rounded corners */
+    border-radius:   3px;
+    overflow:        hidden;
+
+    /* Vertical alignment with surrounding text */
+    vertical-align:  middle;
+
+    /* No wrapping */
+    white-space:     nowrap;
+
+    /* Allow text selection */
+    user-select:     text;
+
+    /* Remove default spacing */
+    line-height:     1;
+}
+
+/* Base mcode tag container */
+mcode {
+    /* Inline display for use within text */
+    display:         inline-block;
+
+    /* Monospace font for code appearance */
+    font-family:     'Courier New', Courier, monospace !important;
+    font-size:       0.85em;
+    font-weight:     500;
+
+    /* Compact sizing */
+    margin:          0 3px;
+    padding:         0;
+
+    /* Rounded corners */
+    border-radius:   3px;
+    overflow:        hidden;
+
+    /* Vertical alignment with surrounding text */
+    vertical-align:  middle;
+
+    /* No wrapping */
+    white-space:     nowrap;
+
+    /* Allow text selection */
+    user-select:     text;
+
+    /* Remove default spacing */
+    line-height:     1;
+}
+
+/* Code content wrapper (shared by gcode and mcode) */
+.code-content {
+    display:         inline-block;
+    padding:         5px 9px;
+    background:      #000;
+    color:           #fff;
+
+    /* Monospace font for code appearance - use !important to override parent styles */
+    font-family:     'Courier New', Courier, monospace !important;
+
+    /* Match the border radius of the container */
+    border-radius:   3px;
+
+    /* Ensure text is selectable */
+    user-select:     text;
+}
+
+/* Optional hover effect for visual feedback */
+gcode:hover .code-content,
+mcode:hover .code-content {
+    background:      #1a1a1a;
+}
+
+/* Colored first letters using setting tag v1/v2 colors */
+.gcode-letter {
+    /* Pastel orange from v1 label color */
+    color:           #ffd966;
+}
+
+.mcode-letter {
+    /* Pastel blue from v2 label color */
+    color:           #7ec8ed;
+}
