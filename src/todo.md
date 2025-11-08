@@ -65,6 +65,8 @@
 * [ ] Have a consistent table system with custom tags and custom css/formatting that looks the same everywhere, base it on the primevue data table stuff.
 * [ ] Our code in src/site/ seems to fail silently too easily, including with the Promise.all stuff, the template compiling failing silently, etc, we should add a lot more catching code and in general make it more error tolerant and have better reporting.
 * [ ] For mcode/gcode tags that contain parameters, we should have a section in the popup with a sentence that explains what it all means, maybe using a template in the yaml file like a handlebarjs template or something? Like convert the parameters into a sentence, or base it on the declared parameters?
+* [ ] Every instance of 5V, +5V, GND, 3.3V, 3V3, +3.3V, etc, should use the <raw> tag.
+
 
 # <setting> tag.
 

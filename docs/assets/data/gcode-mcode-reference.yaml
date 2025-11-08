@@ -631,6 +631,64 @@ mcodes:
       - M1
       - M600
       - M601
+  M104:
+    description:
+      - Set extruder temperature without waiting.
+      - Sets the target temperature for the hotend and continues executing commands immediately.
+    parameters:
+      - letter: S
+        description: Target temperature
+        type: temperature
+        unit: °C
+        required: true
+    example:
+      - M104 S200 - Set hotend to 200°C
+    notes:
+      - Does not wait for temperature to be reached (use M109 to wait).
+      - Temperature control continues in background.
+      - Multiple temperature control modules can be targeted using different designators.
+    related_codes:
+      - M109
+      - M105
+      - M140
+  M105:
+    description:
+      - Get temperature reading.
+      - Reports current and target temperatures for all temperature control modules.
+    parameters: []
+    example:
+      - M105
+    notes:
+      - "Output format: `ok T:22.1 /0.0 @0 B:22.5 /75.0 @210`"
+      - T is typically the hotend, B is typically the bed.
+      - First number is current temperature, second (after /) is target temperature.
+      - "@ value shows current heater power output."
+      - If you receive 'inf', the thermistor is disconnected or damaged.
+    related_codes:
+      - M104
+      - M109
+      - M140
+      - M190
+  M109:
+    description:
+      - Set extruder temperature and wait.
+      - Sets the target temperature for the hotend and waits until that temperature is reached before continuing.
+    parameters:
+      - letter: S
+        description: Target temperature
+        type: temperature
+        unit: °C
+        required: true
+    example:
+      - M109 S190 - Set hotend to 190°C and wait
+    notes:
+      - Pauses execution until target temperature is reached.
+      - Useful at start of print to ensure hotend is ready.
+      - Use M104 if you don't want to wait.
+    related_codes:
+      - M104
+      - M105
+      - M190
   M1:
     description:
       - Sleep or Conditional Stop.
@@ -1006,6 +1064,25 @@ mcodes:
       - M306
     example:
       - M119
+  M140:
+    description:
+      - Set bed temperature without waiting.
+      - Sets the target temperature for the heated bed and continues executing commands immediately.
+    parameters:
+      - letter: S
+        description: Target temperature
+        type: temperature
+        unit: °C
+        required: true
+    example:
+      - M140 S60 - Set bed to 60°C
+    notes:
+      - Does not wait for temperature to be reached (use M190 to wait).
+      - Temperature control continues in background.
+    related_codes:
+      - M190
+      - M105
+      - M104
   M143:
     description:
       - Set max temp - set maximum allowable temperature
@@ -1022,6 +1099,26 @@ mcodes:
       - M305
     example:
       - M143 S250
+  M190:
+    description:
+      - Set bed temperature and wait.
+      - Sets the target temperature for the heated bed and waits until that temperature is reached before continuing.
+    parameters:
+      - letter: S
+        description: Target temperature
+        type: temperature
+        unit: °C
+        required: true
+    example:
+      - M190 S60 - Set bed to 60°C and wait
+    notes:
+      - Pauses execution until target bed temperature is reached.
+      - Useful at start of print to ensure bed is ready.
+      - Use M140 if you don't want to wait.
+    related_codes:
+      - M140
+      - M105
+      - M109
   M200:
     description:
       - Set filament diameter - for volumetric extrusion
@@ -1202,9 +1299,41 @@ mcodes:
       - Found in source code, documentation pending
     related_codes:
       - M143
+      - M303
       - M305
     example:
       - M301 P22.2 I1.08 D114.0
+  M303:
+    description:
+      - PID autotune - automatically calibrate PID parameters for a temperature control module.
+      - Runs a heating/cooling cycle to determine optimal PID values.
+    parameters:
+      - letter: E
+        description: Extruder number (0=first hotend, -1=bed)
+        type: integer
+        unit: none
+        required: false
+      - letter: S
+        description: Target temperature for tuning
+        type: temperature
+        unit: °C
+        required: true
+      - letter: C
+        description: Number of cycles (default 8)
+        type: integer
+        unit: none
+        required: false
+    example:
+      - M303 E0 S200 C8 - Autotune hotend at 200°C
+      - M303 E-1 S60 - Autotune bed at 60°C
+    notes:
+      - Process takes several minutes to complete.
+      - Results are displayed but not automatically saved.
+      - Use M301 to manually set the resulting PID values.
+      - Save with M500 to persist the values.
+    related_codes:
+      - M301
+      - M500
   M305:
     description:
       - Set sensor - configure temperature sensor

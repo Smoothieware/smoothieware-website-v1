@@ -13989,6 +13989,7 @@ Expecting ` + expected.join(", ") + ", got '" + (this.terminals_[symbol] || symb
             placement="bottom"
             distance="10"
             skidding="0"
+            strategy="fixed"
             shift
             hover-bridge
             arrow
@@ -14050,6 +14051,39 @@ Expecting ` + expected.join(", ") + ", got '" + (this.terminals_[symbol] || symb
       popup_element.active = false;
     });
   }
+  function process_all_code_tags() {
+    const $gcode_elements = import_jquery.default("gcode:not(.code-tag-processed)");
+    const $mcode_elements = import_jquery.default("mcode:not(.code-tag-processed)");
+    if ($gcode_elements.length === 0 && $mcode_elements.length === 0) {
+      console.log("[code-tag.ts] No unprocessed gcode or mcode tags found");
+      return;
+    }
+    console.log(`[code-tag.ts] Found ${$gcode_elements.length} unprocessed gcode tag(s) and ${$mcode_elements.length} unprocessed mcode tag(s)`);
+    $gcode_elements.each(function() {
+      import_jquery.default(this).addClass("code-tag-processed");
+      const text_content = import_jquery.default(this).text().trim();
+      const code_command = text_content.split(/\s+/)[0];
+      const first_letter = escape_html(text_content.charAt(0));
+      const rest_of_text = escape_html(text_content.substring(1));
+      const colored_content = `<span class="gcode-letter">${first_letter}</span>${rest_of_text}`;
+      const html_structure = `<span class="code-content">${colored_content}</span>`;
+      import_jquery.default(this).html(html_structure);
+      create_popup_for_code(import_jquery.default(this), code_command, true);
+      console.log(`[code-tag.ts] Processed gcode tag: "${text_content}" (lookup: "${code_command}")`);
+    });
+    $mcode_elements.each(function() {
+      import_jquery.default(this).addClass("code-tag-processed");
+      const text_content = import_jquery.default(this).text().trim();
+      const code_command = text_content.split(/\s+/)[0];
+      const first_letter = escape_html(text_content.charAt(0));
+      const rest_of_text = escape_html(text_content.substring(1));
+      const colored_content = `<span class="mcode-letter">${first_letter}</span>${rest_of_text}`;
+      const html_structure = `<span class="code-content">${colored_content}</span>`;
+      import_jquery.default(this).html(html_structure);
+      create_popup_for_code(import_jquery.default(this), code_command, false);
+      console.log(`[code-tag.ts] Processed mcode tag: "${text_content}" (lookup: "${code_command}")`);
+    });
+  }
   import_jquery.default(() => {
     console.log("[code-tag.ts] Initializing gcode and mcode tag handlers");
     console.log("[code-tag.ts] Starting Promise.all for template and data loading");
@@ -14060,35 +14094,15 @@ Expecting ` + expected.join(", ") + ", got '" + (this.terminals_[symbol] || symb
       console.log("[code-tag.ts] Template and data loaded, processing tags");
       console.log("[code-tag.ts] compiled_code_popup_template type:", typeof compiled_code_popup_template);
       console.log("[code-tag.ts] compiled_code_popup_template value:", compiled_code_popup_template);
-      const $gcode_elements = import_jquery.default("gcode");
-      const $mcode_elements = import_jquery.default("mcode");
-      if ($gcode_elements.length === 0 && $mcode_elements.length === 0) {
-        console.log("[code-tag.ts] No gcode or mcode tags found on this page");
-        return;
-      }
-      console.log(`[code-tag.ts] Found ${$gcode_elements.length} gcode tag(s) and ${$mcode_elements.length} mcode tag(s)`);
-      $gcode_elements.each(function() {
-        const text_content = import_jquery.default(this).text().trim();
-        const code_command = text_content.split(/\s+/)[0];
-        const first_letter = escape_html(text_content.charAt(0));
-        const rest_of_text = escape_html(text_content.substring(1));
-        const colored_content = `<span class="gcode-letter">${first_letter}</span>${rest_of_text}`;
-        const html_structure = `<span class="code-content">${colored_content}</span>`;
-        import_jquery.default(this).html(html_structure);
-        create_popup_for_code(import_jquery.default(this), code_command, true);
-        console.log(`[code-tag.ts] Processed gcode tag: "${text_content}" (lookup: "${code_command}")`);
-      });
-      $mcode_elements.each(function() {
-        const text_content = import_jquery.default(this).text().trim();
-        const code_command = text_content.split(/\s+/)[0];
-        const first_letter = escape_html(text_content.charAt(0));
-        const rest_of_text = escape_html(text_content.substring(1));
-        const colored_content = `<span class="mcode-letter">${first_letter}</span>${rest_of_text}`;
-        const html_structure = `<span class="code-content">${colored_content}</span>`;
-        import_jquery.default(this).html(html_structure);
-        create_popup_for_code(import_jquery.default(this), code_command, false);
-        console.log(`[code-tag.ts] Processed mcode tag: "${text_content}" (lookup: "${code_command}")`);
-      });
+      process_all_code_tags();
+      setTimeout(() => {
+        console.log("[code-tag.ts] Re-processing tags after Shoelace render delay");
+        process_all_code_tags();
+      }, 100);
+      setTimeout(() => {
+        console.log("[code-tag.ts] Final re-processing of tags");
+        process_all_code_tags();
+      }, 500);
     }).catch((error) => {
       console.error("[code-tag.ts] Error loading template or data:", error);
     });

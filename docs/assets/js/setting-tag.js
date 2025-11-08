@@ -12047,6 +12047,7 @@ Expecting ` + expected.join(", ") + ", got '" + (this.terminals_[symbol] || symb
             placement="bottom"
             distance="10"
             skidding="0"
+            strategy="fixed"
             shift
             hover-bridge
             arrow

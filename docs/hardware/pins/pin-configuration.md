@@ -15,7 +15,7 @@ See [Pinout](/pinout) to learn about which pins are where.
 You can have a pin's output inverted by adding a `!` after this pin's number in the config line, example:
 
 ```markdown
-my_pin_name 19!
+my_pin_name 1.19!
 ```
 
 There are other modifiers for pins:
@@ -149,7 +149,7 @@ Use repeater mode (`@`) when you have long cables prone to noise, or when you ne
 my_pin_name 2.11!o^
 ```
 
-In this example, pin 2.11 is configured with:
+In this example, pin <pin>2.11</pin> is configured with:
 - `!` - Inverted output
 - `o` - Open-drain mode
 - `^` - Pull-up enabled

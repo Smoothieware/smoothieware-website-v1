@@ -518,6 +518,7 @@ function create_popup_for_setting($setting: JQuery<HTMLElement>, v1_name: string
             placement="bottom"
             distance="10"
             skidding="0"
+            strategy="fixed"
             shift
             hover-bridge
             arrow

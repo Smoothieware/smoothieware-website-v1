@@ -210,6 +210,7 @@ function create_popup_for_code($code_element: JQuery<HTMLElement>, code: string,
             placement="bottom"
             distance="10"
             skidding="0"
+            strategy="fixed"
             shift
             hover-bridge
             arrow
@@ -303,36 +304,29 @@ function create_popup_for_code($code_element: JQuery<HTMLElement>, code: string,
     });
 }
 
-// Wait for DOM to be fully loaded before processing tags
-$(() => {
+/**
+ * Process all gcode and mcode tags in the page
+ * Can be called multiple times - will skip already processed tags
+ */
+function process_all_code_tags(): void {
 
-    console.log('[code-tag.ts] Initializing gcode and mcode tag handlers');
+    // Find all <gcode> and <mcode> elements in the page
+    const $gcode_elements = $('gcode:not(.code-tag-processed)');
+    const $mcode_elements = $('mcode:not(.code-tag-processed)');
 
-    // Load template and data in parallel
-    console.log('[code-tag.ts] Starting Promise.all for template and data loading');
-    Promise.all([
-        load_and_compile_template(),
-        load_gcode_mcode_data()
-    ]).then(() => {
+    // Guard against no tags found
+    if ($gcode_elements.length === 0 && $mcode_elements.length === 0) {
+        console.log('[code-tag.ts] No unprocessed gcode or mcode tags found');
+        return;
+    }
 
-        console.log('[code-tag.ts] Template and data loaded, processing tags');
-        console.log('[code-tag.ts] compiled_code_popup_template type:', typeof compiled_code_popup_template);
-        console.log('[code-tag.ts] compiled_code_popup_template value:', compiled_code_popup_template);
+    console.log(`[code-tag.ts] Found ${$gcode_elements.length} unprocessed gcode tag(s) and ${$mcode_elements.length} unprocessed mcode tag(s)`);
 
-        // Find all <gcode> and <mcode> elements in the page
-        const $gcode_elements = $('gcode');
-        const $mcode_elements = $('mcode');
+    // Process each gcode tag
+    $gcode_elements.each(function(this: HTMLElement) {
 
-        // Guard against no tags found
-        if ($gcode_elements.length === 0 && $mcode_elements.length === 0) {
-            console.log('[code-tag.ts] No gcode or mcode tags found on this page');
-            return;
-        }
-
-        console.log(`[code-tag.ts] Found ${$gcode_elements.length} gcode tag(s) and ${$mcode_elements.length} mcode tag(s)`);
-
-        // Process each gcode tag
-        $gcode_elements.each(function(this: HTMLElement) {
+        // Mark as processed to avoid reprocessing
+        $(this).addClass('code-tag-processed');
 
             // Get the text content (may include parameters like "G92 E0")
             const text_content = $(this).text().trim();
@@ -359,33 +353,76 @@ $(() => {
             console.log(`[code-tag.ts] Processed gcode tag: "${text_content}" (lookup: "${code_command}")`);
         });
 
-        // Process each mcode tag
-        $mcode_elements.each(function(this: HTMLElement) {
+    // Process each mcode tag
+    $mcode_elements.each(function(this: HTMLElement) {
 
-            // Get the text content (may include parameters like "M104 S200")
-            const text_content = $(this).text().trim();
+        // Mark as processed to avoid reprocessing
+        $(this).addClass('code-tag-processed');
 
-            // Extract the code command (first part before any space)
-            // This is used for database lookup
-            const code_command = text_content.split(/\s+/)[0];
+        // Get the text content (may include parameters like "M104 S200")
+        const text_content = $(this).text().trim();
 
-            // Wrap the first letter (M) in colored span
-            const first_letter = escape_html(text_content.charAt(0));
-            const rest_of_text = escape_html(text_content.substring(1));
-            const colored_content = `<span class="mcode-letter">${first_letter}</span>${rest_of_text}`;
+        // Extract the code command (first part before any space)
+        // This is used for database lookup
+        const code_command = text_content.split(/\s+/)[0];
 
-            // Create the display structure with colored first letter
-            const html_structure = `<span class="code-content">${colored_content}</span>`;
+        // Wrap the first letter (M) in colored span
+        const first_letter = escape_html(text_content.charAt(0));
+        const rest_of_text = escape_html(text_content.substring(1));
+        const colored_content = `<span class="mcode-letter">${first_letter}</span>${rest_of_text}`;
 
-            // Replace content of mcode element
-            $(this).html(html_structure);
+        // Create the display structure with colored first letter
+        const html_structure = `<span class="code-content">${colored_content}</span>`;
 
-            // Create popup once for this tag (matches setting-tag.ts pattern)
-            // Use code_command (not full text_content) for database lookup
-            create_popup_for_code($(this), code_command, false);
+        // Replace content of mcode element
+        $(this).html(html_structure);
 
-            console.log(`[code-tag.ts] Processed mcode tag: "${text_content}" (lookup: "${code_command}")`);
-        });
+        // Create popup once for this tag (matches setting-tag.ts pattern)
+        // Use code_command (not full text_content) for database lookup
+        create_popup_for_code($(this), code_command, false);
+
+        console.log(`[code-tag.ts] Processed mcode tag: "${text_content}" (lookup: "${code_command}")`);
+    });
+}
+
+// Wait for DOM to be fully loaded before processing tags
+$(() => {
+
+    console.log('[code-tag.ts] Initializing gcode and mcode tag handlers');
+
+    // Load template and data in parallel
+    console.log('[code-tag.ts] Starting Promise.all for template and data loading');
+
+    const templatePromise = load_and_compile_template();
+    const dataPromise = load_gcode_mcode_data();
+
+    console.log('[code-tag.ts] Template promise:', templatePromise);
+    console.log('[code-tag.ts] Data promise:', dataPromise);
+
+    Promise.all([
+        templatePromise,
+        dataPromise
+    ]).then(() => {
+
+        console.log('[code-tag.ts] Template and data loaded, processing tags');
+        console.log('[code-tag.ts] compiled_code_popup_template type:', typeof compiled_code_popup_template);
+        console.log('[code-tag.ts] compiled_code_popup_template value:', compiled_code_popup_template);
+
+        // Process tags immediately
+        process_all_code_tags();
+
+        // Process again after a short delay to catch Shoelace-rendered content
+        setTimeout(() => {
+            console.log('[code-tag.ts] Re-processing tags after Shoelace render delay');
+            process_all_code_tags();
+        }, 100);
+
+        // Process again after a longer delay to catch any late-rendered content
+        setTimeout(() => {
+            console.log('[code-tag.ts] Final re-processing of tags');
+            process_all_code_tags();
+        }, 500);
+
     }).catch((error) => {
         console.error('[code-tag.ts] Error loading template or data:', error);
     });

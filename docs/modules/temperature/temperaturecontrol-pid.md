@@ -85,8 +85,8 @@ To auto-tune your PID values:
    ```gcode
    M303 E0 S200
    ```
-   - `E0` specifies the hotend (use E1, E2, etc. for other extruders)
-   - `S200` is the target temperature (adjust to your typical printing temperature)
+   - <raw>E0</raw> specifies the hotend (use <raw>E1</raw>, <raw>E2</raw>, etc. for other extruders)
+   - <raw>S200</raw> is the target temperature (adjust to your typical printing temperature)
 
 2. **Wait for completion** - The process will take several minutes as it cycles the heater and measures response
 
@@ -231,7 +231,7 @@ This uses simple on/off control. Not recommended for most applications.
 - [Temperature Control module documentation](temperaturecontrol)
 - [Thermistor configuration](thermistors)
 - [Heater configuration](heater)
-- [M303 G-code documentation](supported-g-codes)
+- [<mcode>M303</mcode> G-code documentation](supported-g-codes)
 
 ---
 

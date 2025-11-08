@@ -49,7 +49,7 @@ To reach a desired temperature, you must be able to know what the current temper
 
 A given controller board only has a given number of [ADCs](http://en.wikipedia.org/wiki/Analog-to-digital_converter) (analog (temperature) to digital (Smoothie) converter) capable pins.
 
-On the [Smoothieboard](smoothieboard) for example, there are 4 thermistor inputs, labelled from **T0** (or th1) to **T3** (or th4), and corresponding in the same order to the pins **0.23** to **0.26**. T0 is usually used for the hotend, and T1 for the bed.
+On the [Smoothieboard](smoothieboard) for example, there are 4 thermistor inputs, labelled from **T0** (or th1) to **T3** (or th4), and corresponding in the same order to the pins <pin>0.23</pin> to <pin>0.26</pin>. T0 is usually used for the hotend, and T1 for the bed.
 
 Thermistor inputs are not polarized, the direction you connect them in on your board is not important.
 
@@ -59,11 +59,11 @@ temperature_control.hotend.thermistor_pin        0.23
 
 | Smoothieboard thermistor input name | T0 (th1) | T1 (th2) | T2(th3) | T3(th4) |
 | ----------------------------------- | -------- | -------- | ------- | ------- |
-| Pin for configuration               | 0.23     | 0.24     | 0.25    | 0.26    |
+| Pin for configuration               | <pin>0.23</pin> | <pin>0.24</pin> | <pin>0.25</pin> | <pin>0.26</pin> |
 
 <sl-alert variant="warning" open>
   <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
-  You read the value of the thermistor inputs by sending the <code>M105</code> command.<br><br>If you receive a value of <code>inf</code> for an input, for example: ``<code>markdown ok T :inf /0.0 @0 B:24.1 /0.0 @ </code>`` It means the sensor is not properly connected, or it is damaged in some way.
+  You read the value of the thermistor inputs by sending the <mcode>M105</mcode> command.<br><br>If you receive a value of <raw>inf</raw> for an input, for example: <raw>ok T:inf /0.0 @0 B:24.1 /0.0 @</raw> It means the sensor is not properly connected, or it is damaged in some way.
 </sl-alert>
 
 ##### Choosing the right thermistor
@@ -93,10 +93,10 @@ Here is an example of how to connect the [Adafruit Thermocouple Amplifier MAX318
 | ------------- | -------------- |
 | 3v3           | Vin            |
 | GND           | GND            |
-| `0.16` CS     | CS             |
-| `0.18` MOSI   | Not used       |
-| `0.15` SCK    | CLK            |
-| `0.17` MISO   | DO             |
+| <pin>0.16</pin> CS | CS             |
+| <pin>0.18</pin> MOSI | Not used       |
+| <pin>0.15</pin> SCK | CLK            |
+| <pin>0.17</pin> MISO | DO             |
 
 To configure Smoothie to use the thermocouple connected like this, replace the thermistor and thermistor_pin parameters with the following:
 ```markdown
@@ -183,7 +183,7 @@ By default, Smoothie will not heat anything. That could be a dangerous thing to 
 
 You have to send [G-codes](http://reprap.org/wiki/G-code) to turn your heater on and off, set a given temperature etc.
 
-There is a set of widely used G-codes corresponding to different usual actions (for example setting the hotend temperature is `M104` in the [Reprap](http://reprap.org) world).
+There is a set of widely used G-codes corresponding to different usual actions (for example setting the hotend temperature is <mcode>M104</mcode> in the [Reprap](http://reprap.org) world).
 
 But as you are defining your own custom temperature controller, you have to choose what gcode will be used to control it, Smoothie doesn't know what exactly it's controlling.
 
@@ -198,7 +198,7 @@ temperature_control.hotend.set_and_wait_m_code   109
 
 ### Reading with G-code
 
-There is a single g-code used to read temperature for all the temperature_control modules at the same time: `M105`
+There is a single g-code used to read temperature for all the temperature_control modules at the same time: <mcode>M105</mcode>
 
 But it has to have a way to tell you what temperature corresponds to what specific module.
 
@@ -266,7 +266,7 @@ When this happens, Smoothie will detect the problem, turn off all heaters, and e
 Temperature reading is unreliable on T, HALT asserted - reset or M999 required
 ```
 
-You need to solve the issue, and then either reset the board or issue the `M999` command.
+You need to solve the issue, and then either reset the board or issue the <mcode>M999</mcode> command.
 
 You do not need to do anything to activate this safety check.
 
@@ -297,7 +297,7 @@ Error: MINTEMP or MAXTEMP triggered on T. Check your temperature sensors!
 HALT asserted - reset or M999 required
 ```
 
-You need to solve the issue, and then either reset the board or issue the `M999` command.
+You need to solve the issue, and then either reset the board or issue the <mcode>M999</mcode> command.
 
 The most likely cause for this problem is that a heater mosfet is stuck being always active. If this is the case, Smoothie cannot control that heater anymore, and nothing the firmware can do can solve the issue, and you are on your way to a fire.
 
