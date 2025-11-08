@@ -1,0 +1,171 @@
+<sl-popup placement="bottom" shift hover-bridge arrow class="pin-popup">
+    <div class="pin-popup-panel">
+        <div class="pin-popup-header">
+            <span class="pin-popup-name">
+                <span class="pin-popup-number">{{pin_name}}</span>
+            </span>
+            {{#if arm_pin}}
+            <span class="pin-popup-arm">{{arm_pin}}</span>
+            {{/if}}
+        </div>
+
+        <div class="pin-popup-body">
+            {{#if assignment}}
+            <div class="pin-popup-section pin-popup-assignment">
+                <div class="pin-popup-label"><sl-icon name="tag"></sl-icon> Assignment:</div>
+                <div class="pin-popup-value">
+                    <strong>{{assignment}}</strong>
+                </div>
+            </div>
+            {{/if}}
+
+            {{#if description}}
+            <div class="pin-popup-section">
+                <div class="pin-popup-label">Description:</div>
+                <div class="pin-popup-value">
+                    {{#if description.length}}
+                        {{#each description}}
+                        <p>{{this}}</p>
+                        {{/each}}
+                    {{else}}
+                        <p>{{description}}</p>
+                    {{/if}}
+                </div>
+            </div>
+            {{/if}}
+
+            {{#if pwm_capable}}
+            <div class="pin-popup-section pin-popup-capabilities">
+                <div class="pin-popup-label"><sl-icon name="cpu"></sl-icon> Capabilities:</div>
+                <div class="pin-popup-capabilities-grid">
+                    {{#if_truthy pwm_capable}}
+                    <sl-tag size="small" variant="success" pill>
+                        <sl-icon slot="prefix" name="activity"></sl-icon>
+                        Hardware PWM
+                    </sl-tag>
+                    {{/if_truthy}}
+                    {{#if adc_channel}}
+                    <sl-tag size="small" variant="primary" pill>
+                        <sl-icon slot="prefix" name="bar-chart"></sl-icon>
+                        ADC: {{adc_channel}}
+                    </sl-tag>
+                    {{/if}}
+                    {{#if_truthy interrupt_capable}}
+                    <sl-tag size="small" variant="warning" pill>
+                        <sl-icon slot="prefix" name="lightning"></sl-icon>
+                        Interrupt
+                    </sl-tag>
+                    {{/if_truthy}}
+                </div>
+            </div>
+            {{/if}}
+
+            {{#if peripheral}}
+            <div class="pin-popup-section">
+                <div class="pin-popup-label"><sl-icon name="link-45deg"></sl-icon> Peripheral:</div>
+                <div class="pin-popup-value">
+                    <sl-tag variant="primary">{{peripheral}}</sl-tag>
+                </div>
+            </div>
+            {{/if}}
+
+            {{#if alternate_functions}}
+            {{#if alternate_functions.length}}
+            <div class="pin-popup-section">
+                <div class="pin-popup-label">Alternate Functions:</div>
+                <div class="pin-popup-value">
+                    <ul class="pin-popup-list">
+                        {{#each alternate_functions}}
+                        <li>{{this}}</li>
+                        {{/each}}
+                    </ul>
+                </div>
+            </div>
+            {{/if}}
+            {{/if}}
+
+            {{#if mbed_pin}}
+            <div class="pin-popup-section pin-popup-pin-names">
+                <div class="pin-popup-label"><sl-icon name="diagram-3"></sl-icon> Pin Names:</div>
+                <div class="pin-popup-pin-names-grid">
+                    {{#if mbed_pin}}
+                    <div class="pin-name-item">
+                        <span class="pin-name-type">mBed:</span>
+                        <code class="pin-name-value">{{mbed_pin}}</code>
+                    </div>
+                    {{/if}}
+                    {{#if lpcxpresso_pin}}
+                    <div class="pin-name-item">
+                        <span class="pin-name-type">LPCXpresso:</span>
+                        <code class="pin-name-value">{{lpcxpresso_pin}}</code>
+                    </div>
+                    {{/if}}
+                </div>
+            </div>
+            {{/if}}
+
+            {{#if usage_warnings}}
+            {{#if usage_warnings.length}}
+            <div class="pin-popup-section pin-popup-warnings">
+                <div class="pin-popup-label"><sl-icon name="exclamation-triangle"></sl-icon> Warnings:</div>
+                <div class="pin-popup-value">
+                    <sl-alert variant="warning" open>
+                        <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+                        <ul class="pin-popup-list">
+                            {{#each usage_warnings}}
+                            <li>{{this}}</li>
+                            {{/each}}
+                        </ul>
+                    </sl-alert>
+                </div>
+            </div>
+            {{/if}}
+            {{/if}}
+
+            {{#if config_examples}}
+            {{#if config_examples.length}}
+            <div class="pin-popup-section pin-popup-examples">
+                <div class="pin-popup-label"><sl-icon name="code-slash"></sl-icon> Config Examples:</div>
+                <div class="pin-popup-value">
+                    {{#each config_examples}}
+                    <code class="pin-popup-config-example">{{this}}</code>
+                    {{/each}}
+                </div>
+            </div>
+            {{/if}}
+            {{/if}}
+
+            {{#if related_pins}}
+            {{#if related_pins.length}}
+            <div class="pin-popup-section pin-popup-related">
+                <div class="pin-popup-label"><sl-icon name="link"></sl-icon> Related Pins:</div>
+                <div class="pin-popup-value">
+                    {{#each related_pins}}
+                    <sl-tag size="small">{{this}}</sl-tag>
+                    {{/each}}
+                </div>
+            </div>
+            {{/if}}
+            {{/if}}
+
+            {{#if configurable}}
+            <div class="pin-popup-section pin-popup-footer">
+                <sl-tag size="small" variant="neutral" pill>
+                    <sl-icon slot="prefix" name="gear"></sl-icon>
+                    {{#if_truthy configurable}}
+                    Configurable
+                    {{else}}
+                    Not Configurable
+                    {{/if_truthy}}
+                </sl-tag>
+                {{#if_truthy hardwired}}
+                <sl-tag size="small" variant="danger" pill>
+                    <sl-icon slot="prefix" name="lock"></sl-icon>
+                    Hardwired
+                </sl-tag>
+                {{/if_truthy}}
+            </div>
+            {{/if}}
+        </div>
+    </div>
+</sl-popup>

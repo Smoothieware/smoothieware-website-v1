@@ -116,10 +116,11 @@ async function update_layout_with_scripts(ts_files: string[]): Promise<void> {
 
     // Generate script tags for each compiled JS file
     // (test/ and lib/ files are already excluded from ts_files array)
+    // Note: No type="module" because Bun bundles to CommonJS-style IIFE format
     const script_tags = ts_files
         .map(ts_file => {
             const js_filename = ts_file.replace(/\.ts$/, '.js');
-            return `    <script type="module" src="{{ '/assets/js/${js_filename}' | relative_url }}"></script>`;
+            return `    <script src="{{ '/assets/js/${js_filename}' | relative_url }}"></script>`;
         })
         .join('\n');
 

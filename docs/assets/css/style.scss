@@ -437,3 +437,32 @@ section {
     max-width: 100% !important;
   }
 }
+
+/* Code block styling - monospace font with darker background */
+.markdown-body pre,
+.markdown-body pre code {
+  font-family: 'Courier New', Courier, monospace !important;
+  background-color: #0f0f0f !important; /* Nearly black background, 5% lighter */
+}
+
+.markdown-body pre {
+  padding: 16px !important;
+  border-radius: 6px !important;
+  overflow-x: auto !important;
+  margin: 1.2em 0 !important;
+}
+
+.markdown-body pre code {
+  padding: 0 !important;
+  background-color: transparent !important; /* Code inside pre uses pre's background */
+  border: none !important;
+}
+
+/* Inline code styling - monospace font with slightly lighter background */
+.markdown-body code {
+  font-family: 'Courier New', Courier, monospace !important;
+  background-color: #1a1a1a !important;
+  padding: 3px 6px !important;
+  border-radius: 3px !important;
+  font-size: 0.9em !important;
+}

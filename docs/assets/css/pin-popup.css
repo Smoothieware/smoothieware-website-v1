@@ -1,0 +1,260 @@
+/**
+ * pin-popup.css
+ *
+ * Styling for pin information hover popups
+ * - Dark theme matching site design
+ * - Clear information hierarchy
+ * - Similar design to code and setting tag popups
+ *
+ * NOTE: Base pin tag styling is in pin-tag.css
+ */
+
+/* Interactive cursor for pins with popups */
+pin.pin-tag {
+    cursor:          help;
+}
+
+/* Z-index for proper layering - ensure popups appear above all content including alerts */
+.pin-popup {
+    z-index:         9999 !important;
+}
+
+/* Ensure popup appears above everything (targets shadow DOM part) */
+.pin-popup::part(popup) {
+    z-index:         9999 !important;
+}
+
+/* Main popup panel */
+.pin-popup-panel {
+    background:      #1a1a1a;
+    border:          1px solid #333;
+    border-radius:   6px;
+    padding:         0;
+    min-width:       320px;
+    max-width:       500px;
+    font-family:     -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    font-size:       14px;
+    line-height:     1.5;
+    color:           #fff;
+    box-shadow:      0 4px 16px rgba(0, 0, 0, 0.5);
+}
+
+/* Header section with pin number and ARM pin */
+.pin-popup-header {
+    background:      #0a0a0a;
+    border-bottom:   1px solid #333;
+    padding:         12px 16px;
+    display:         flex;
+    justify-content: space-between;
+    align-items:     center;
+}
+
+/* Pin number display (e.g., "1.18", "2.5") */
+.pin-popup-name {
+    font-family:     'Courier New', Courier, monospace !important;
+    font-size:       24px;
+    font-weight:     bold;
+}
+
+.pin-popup-number {
+    color:           #7ec8ed; /* Blue color for pin numbers */
+}
+
+/* ARM pin reference (e.g., "P1.18") */
+.pin-popup-arm {
+    font-family:     'Courier New', Courier, monospace !important;
+    font-size:       14px;
+    color:           #888;
+    background:      rgba(126, 200, 237, 0.1);
+    padding:         4px 8px;
+    border-radius:   3px;
+}
+
+/* Body section with all information */
+.pin-popup-body {
+    padding:         16px;
+}
+
+/* Individual section (assignment, description, etc.) */
+.pin-popup-section {
+    margin-bottom:   12px;
+}
+
+.pin-popup-section:last-child {
+    margin-bottom:   0;
+}
+
+/* Section labels (Assignment, Description, etc.) */
+.pin-popup-label {
+    font-weight:     600;
+    color:           #7ec8ed; /* Blue color */
+    margin-bottom:   6px;
+    font-size:       13px;
+    display:         flex;
+    align-items:     center;
+    gap:             6px;
+}
+
+.pin-popup-label sl-icon {
+    font-size:       14px;
+}
+
+/* Section values */
+.pin-popup-value {
+    color:           #ccc;
+    line-height:     1.6;
+}
+
+/* Assignment section - special emphasis */
+.pin-popup-assignment .pin-popup-value {
+    font-size:       15px;
+}
+
+.pin-popup-assignment .pin-popup-value strong {
+    color:           #ffd966; /* Yellow color for assignment */
+}
+
+/* Capabilities grid */
+.pin-popup-capabilities-grid {
+    display:         flex;
+    flex-wrap:       wrap;
+    gap:             8px;
+    margin-top:      8px;
+}
+
+/* Pin names grid (mBed, LPCXpresso) */
+.pin-popup-pin-names-grid {
+    display:         grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap:             12px;
+    margin-top:      8px;
+}
+
+.pin-name-item {
+    background:      rgba(255, 255, 255, 0.03);
+    border:          1px solid #444;
+    border-radius:   4px;
+    padding:         8px 12px;
+}
+
+.pin-name-type {
+    font-size:       11px;
+    color:           #888;
+    text-transform:  uppercase;
+    letter-spacing:  0.5px;
+    display:         block;
+    margin-bottom:   4px;
+}
+
+.pin-name-value {
+    font-family:     'Courier New', Courier, monospace !important;
+    font-size:       14px;
+    color:           #fff;
+    background:      transparent;
+    padding:         0;
+    border:          none;
+}
+
+/* Lists in popup */
+.pin-popup-list {
+    margin:          0;
+    padding-left:    20px;
+    color:           #ccc;
+}
+
+.pin-popup-list li {
+    margin-bottom:   4px;
+    line-height:     1.6;
+}
+
+/* Config examples */
+.pin-popup-config-example {
+    font-family:     'Courier New', Courier, monospace !important;
+    background:      #000;
+    color:           #fff;
+    padding:         8px 12px;
+    border-radius:   3px;
+    border:          1px solid #333;
+    font-size:       13px;
+    display:         block;
+    margin-bottom:   6px;
+    overflow-x:      auto;
+}
+
+.pin-popup-config-example:last-child {
+    margin-bottom:   0;
+}
+
+/* Scrollbar styling for webkit browsers */
+.pin-popup-config-example::-webkit-scrollbar {
+    height:          6px;
+}
+
+.pin-popup-config-example::-webkit-scrollbar-track {
+    background:      #000;
+}
+
+.pin-popup-config-example::-webkit-scrollbar-thumb {
+    background:      #444;
+    border-radius:   3px;
+}
+
+.pin-popup-config-example::-webkit-scrollbar-thumb:hover {
+    background:      #555;
+}
+
+/* Warnings section - special styling */
+.pin-popup-warnings .pin-popup-value sl-alert {
+    --sl-panel-background-color: rgba(255, 193, 7, 0.1);
+    --sl-panel-border-color: rgba(255, 193, 7, 0.3);
+}
+
+/* Related pins */
+.pin-popup-related .pin-popup-value {
+    display:         flex;
+    flex-wrap:       wrap;
+    gap:             8px;
+    margin-top:      8px;
+}
+
+/* Footer section with status tags */
+.pin-popup-footer {
+    display:         flex;
+    gap:             8px;
+    flex-wrap:       wrap;
+    margin-top:      12px;
+    padding-top:     12px;
+    border-top:      1px solid #333;
+}
+
+/* Not found popup special styling */
+.pin-popup-not-found .pin-popup-body {
+    padding:         12px;
+}
+
+.pin-popup-not-found .pin-popup-value sl-alert {
+    --sl-panel-background-color: rgba(255, 193, 7, 0.1);
+    --sl-panel-border-color: rgba(255, 193, 7, 0.3);
+}
+
+/* Loading popup special styling */
+.pin-popup-loading .pin-popup-body {
+    padding:         12px;
+}
+
+.pin-popup-loading .pin-popup-value sl-alert {
+    --sl-panel-background-color: rgba(33, 150, 243, 0.1);
+    --sl-panel-border-color: rgba(33, 150, 243, 0.3);
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .pin-popup-panel {
+        min-width:       280px;
+        max-width:       calc(100vw - 32px);
+    }
+
+    .pin-popup-pin-names-grid {
+        grid-template-columns: 1fr;
+    }
+}

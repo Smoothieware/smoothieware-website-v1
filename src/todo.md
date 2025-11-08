@@ -48,6 +48,11 @@
 * [ ] Ask Jim Morris for a list of new features in v2 and where I could learn about them to document them.
 * [ ] I nthe list of settings, have an icon for each setting "type".
 * [ ] It's possible the way the setting tag is currently implementd isn't good for SEO, we should look into that and if needed change somewhat how it's used.
+* [ ] Settings popups should have a link at the bottom to the page with all settings, same thing for gcodes, same thing for pins, and we should have all those pages on the homepage too.
+* [ ] Have the PDFs for the microcontroller user manuals and some of the other components like the motor drivers inside of docs/assets/ somewhere and add download links in some places in the docs.
+* [x] On http://localhost:4000/pin-configuration give more detailled explanation of what each thing means.
+* [ ] For the pin configuration page we (maybe) figured out a way to convert pngs to svgs that use our site's font, we should document this process and then use it for more of our images, all those that are diagrams.
+* [ ] On http://localhost:4000/editing-the-wiki add screenshots for the "how to contribute" guide.
 
 # <setting> tag.
 

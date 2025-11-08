@@ -1,0 +1,19 @@
+<sl-popup placement="bottom" shift hover-bridge arrow class="pin-popup pin-popup-loading">
+    <div class="pin-popup-panel">
+        <div class="pin-popup-header">
+            <span class="pin-popup-name">
+                <span class="pin-popup-number">{{pin_name}}</span>
+            </span>
+        </div>
+
+        <div class="pin-popup-body">
+            <div class="pin-popup-section">
+                <sl-alert variant="primary" open>
+                    <sl-icon slot="icon" name="hourglass"></sl-icon>
+                    <strong>Loading pin information...</strong>
+                    <p>Please wait while the pin database is loading.</p>
+                </sl-alert>
+            </div>
+        </div>
+    </div>
+</sl-popup>

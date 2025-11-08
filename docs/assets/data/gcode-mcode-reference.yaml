@@ -1,0 +1,1410 @@
+gcodes:
+  G0:
+    description:
+      - Rapid linear movement without activating tool.
+      - Moves to specified coordinates at maximum feedrate.
+      - Used for quick positioning between points without cutting/extruding/lasing.
+    parameters:
+      - letter: X
+        description: X axis position
+        type: coordinate
+        unit: mm
+        required: false
+      - letter: Y
+        description: Y axis position
+        type: coordinate
+        unit: mm
+        required: false
+      - letter: Z
+        description: Z axis position
+        type: coordinate
+        unit: mm
+        required: false
+      - letter: E
+        description: Extruder position
+        type: coordinate
+        unit: mm
+        required: false
+      - letter: F
+        description: Maximum feedrate for this move
+        type: speed
+        unit: mm/min
+        required: false
+    example:
+      - "`G0 X10 Y20 Z5`, `G91G0E20G90` (extruder extrude 20mm in relative mode)"
+    notes:
+      - Used in suspend/resume operations; part of standard gcode state.
+      - Appears in console command output and after_suspend gcode sequences.
+      - Smoothie supports this code.
+      - Uses maximum feedrate for rapid positioning.
+      - Does not activate laser/spindle/heaters.
+      - Can be used for quick positioning between work areas.
+      - Standard RepRap rapid movement command.
+      - Does not guarantee linear interpolation on non-Cartesian machines (delta, SCARA).
+      - Most firmwares move at maximum configured feedrate.
+      - "LASER MODE: When used with laser cutters, G0 keeps the laser OFF during movement (rapid positioning/travel moves)."
+    related_codes:
+      - G1
+      - G90
+      - G91
+  G1:
+    description:
+      - Controlled linear movement while activating the tool.
+      - On CNC mills, used for cutting.
+      - On laser cutters, laser is automatically turned on.
+      - On 3D printers, called an extrusion move.
+      - This is the primary work command for most machining operations.
+    parameters:
+      - letter: X
+        description: X axis position
+        type: coordinate
+        unit: mm
+        required: false
+      - letter: Y
+        description: Y axis position
+        type: coordinate
+        unit: mm
+        required: false
+      - letter: Z
+        description: Z axis position
+        type: coordinate
+        unit: mm
+        required: false
+      - letter: A
+        description: A axis position (rotary)
+        type: coordinate
+        unit: degrees
+        required: false
+      - letter: B
+        description: B axis position (rotary)
+        type: coordinate
+        unit: degrees
+        required: false
+      - letter: C
+        description: C axis position (rotary)
+        type: coordinate
+        unit: degrees
+        required: false
+      - letter: E
+        description: Extruder position
+        type: coordinate
+        unit: mm
+        required: false
+      - letter: F
+        description: Feedrate for this move
+        type: speed
+        unit: mm/min
+        required: false
+      - letter: S
+        description: Laser power (S0=off, S1=100%)
+        type: percentage
+        unit: decimal
+        required: false
+    example:
+      - G1 X10 Y20 F30 - Move to X10 Y20 at 30mm/min
+    notes:
+      - F parameter is modal (remembered).
+      - G0 and G1 have independent modal feedrates.
+      - Default feedrate set by default_feed_rate config.
+      - Modal command (can omit G1 on subsequent lines).
+      - "WARNING: Use spaces between parameters (G1 X10 E10 not G1X10E10) to avoid scientific notation interpretation."
+      - Supports absolute (G90) and relative (G91) motion modes.
+      - Coordinates can be absolute (G90) or relative (G91).
+      - Feedrate (F) is modal - once set, it persists until changed.
+      - This is the most frequently used G-code in print files.
+      - "LASER MODE: When used with laser cutters, G1 turns the laser ON during movement (cutting/engraving moves)."
+      - Laser power can be controlled with the S parameter.
+    related_codes:
+      - G0
+      - G2
+      - G3
+      - G90
+      - G91
+  G2:
+    description:
+      - Move while activating the tool in a clockwise arc motion.
+      - Equivalent to G1, except the motion is rotational instead of linear (arc motion).
+    parameters:
+      - letter: X
+        description: End position in X axis
+        type: coordinate
+        unit: mm
+        required: false
+      - letter: Y
+        description: End position in Y axis
+        type: coordinate
+        unit: mm
+        required: false
+      - letter: Z
+        description: End position in Z axis
+        type: coordinate
+        unit: mm
+        required: false
+      - letter: I
+        description: Arc center offset from current X position
+        type: offset
+        unit: mm
+        required: false
+      - letter: J
+        description: Arc center offset from current Y position
+        type: offset
+        unit: mm
+        required: false
+      - letter: K
+        description: Arc center offset from current Z position
+        type: offset
+        unit: mm
+        required: false
+      - letter: R
+        description: Arc radius (alternative to I/J specification)
+        type: distance
+        unit: mm
+        required: false
+      - letter: F
+        description: Feedrate for arc motion
+        type: speed
+        unit: mm/min
+        required: false
+    example:
+      - "`G2 X10 Y20 I30 J40 F100` - Move to X position 10, Y position 20, while maintaining a constant distance from the point of relative coordinates X 30 and Y 40, at a speed of 100 millimeters/minute."
+      - "Alternative: `G2 X10 Y20 R50 F100` uses radius instead of I/J offsets."
+    notes:
+      - Clockwise arc motion.
+      - G2's counterclockwise twin is G3.
+      - Used for arc cutting operations on CNC machines.
+      - Can specify arc center using either I/J/K offsets from current position or R radius parameter.
+    related_codes:
+      - G1
+      - G3
+      - G17
+  G3:
+    description:
+      - Move while activating the tool in a counter-clockwise arc motion.
+      - Exactly the same as G2 but counter-clockwise instead of clockwise.
+    parameters:
+      - letter: X
+        description: End position in X axis
+        type: coordinate
+        unit: mm
+        required: false
+      - letter: Y
+        description: End position in Y axis
+        type: coordinate
+        unit: mm
+        required: false
+      - letter: Z
+        description: End position in Z axis
+        type: coordinate
+        unit: mm
+        required: false
+      - letter: I
+        description: Arc center offset from current X position
+        type: offset
+        unit: mm
+        required: false
+      - letter: J
+        description: Arc center offset from current Y position
+        type: offset
+        unit: mm
+        required: false
+      - letter: K
+        description: Arc center offset from current Z position
+        type: offset
+        unit: mm
+        required: false
+      - letter: R
+        description: Arc radius (alternative to I/J specification)
+        type: distance
+        unit: mm
+        required: false
+      - letter: F
+        description: Feedrate for arc motion
+        type: speed
+        unit: mm/min
+        required: false
+    example:
+      - Same syntax as G2, e.g., `G3 X10 Y20 I30 J40 F100` or `G3 X10 Y20 R50 F100`
+    notes:
+      - Counter-clockwise arc motion.
+      - "Related command: G2 (clockwise arc)."
+      - Both commands use the same parameters and syntax, differing only in the direction of the arc movement.
+      - Can specify arc center using either I/J/K offsets from current position or R radius parameter.
+    related_codes:
+      - G1
+      - G2
+      - G17
+  G4:
+    description:
+      - Pause for a given duration of time.
+      - Useful for waiting for spindles to ramp up to speed or for small layers to cool down on 3D printers.
+    parameters:
+      - letter: S
+        description: Duration to wait
+        type: time
+        unit: seconds
+        required: false
+      - letter: P
+        description: Duration to wait (milliseconds, or seconds if grbl_mode)
+        type: time
+        unit: ms
+        required: false
+    example:
+      - "`G4 S5` - Pause for 5 seconds."
+    notes:
+      - If `grbl_mode` is set to `true`, then the `P` parameter is the duration to wait in seconds (as a float value), not milliseconds, to conform to G-Code standards.
+      - Otherwise, `P` is in milliseconds.
+      - Commonly used to allow ooze prevention, wait for spindle speed stabilization, or allow small layers to cool.
+      - Some firmwares may process other commands during dwell; behavior varies.
+    related_codes: []
+  G10:
+    description:
+      - Retract filament according to settings configured with M207.
+      - Used for firmware retraction to prevent oozing during travel moves.
+    parameters:
+      - letter: L
+        description: Command type (L1=set tool offset, L2=retract)
+        type: integer
+        unit: none
+        required: false
+      - letter: P
+        description: Tool number
+        type: integer
+        unit: none
+        required: false
+    notes:
+      - Firmware retraction simplifies G-code by using configured retract settings rather than explicit E moves.
+      - Settings defined by M207 (retract length, speed, Z-lift).
+      - Some firmwares support L2/P for tool offset configuration (CNC-specific).
+    related_codes:
+      - G11
+      - M207
+      - M208
+    example:
+      - G10 L2 P0
+  G11:
+    description:
+      - Unretract (recover) filament according to settings configured with M208.
+      - Reverses the retraction performed by G10.
+    parameters: []
+    notes:
+      - Typically follows G10 after a travel move.
+      - Uses M208 configured settings for unretract length and speed.
+      - Restores extrusion to normal after retraction.
+    related_codes:
+      - G10
+      - M207
+      - M208
+    example:
+      - G11
+  G17:
+    description:
+      - XY plane select (standard gcode modal command)
+    parameters: []
+    example:
+      - "`GC:G0 G54 G17 G21 G90 G94 M0 M5 M9 T0 F15000.0 S0.8000` (appears in host command response)"
+    notes:
+      - Standard modal command; indicates active plane for circular interpolation Selects XY plane for arc commands (G2/G3).
+      - Also affects plane selection for G81-G89 canned cycles on CNC firmwares.
+      - Default plane on most machines.
+    related_codes:
+      - G2
+      - G3
+  G20:
+    description:
+      - Set units to inches.
+      - Switches to British/Imperial measurement system where coordinates are in inches instead of millimeters.
+    parameters: []
+    notes:
+      - Less common in 3D printing (metric is standard).
+      - More prevalent in CNC machining from older CAM software.
+      - Affects interpretation of all coordinate parameters (X, Y, Z, E).
+      - Use G21 to return to metric.
+    related_codes:
+      - G21
+    example:
+      - G20
+  G21:
+    description:
+      - Metric units mode (millimeters)
+    parameters: []
+    example:
+      - "`GC:G0 G54 G17 G21 G90 G94 M0 M5 M9 T0 F15000.0 S0.8000` (appears in host command response)"
+    notes:
+      - Standard gcode modal; Smoothie uses metric units Default mode for most RepRap firmwares.
+      - All coordinates interpreted as millimeters.
+      - Standard for 3D printing globally.
+    related_codes:
+      - G20
+  G28:
+    description:
+      - The meaning depends on machine type.
+      - "On CNC mills: Go to the recorded origin point in the machine coordinates workspace."
+      - "On 3D printers (RepRap): Seek the endstops for each axis, stop once they are found and this position is now the origin for the machine."
+    parameters:
+      - letter: X
+        description: Home X axis
+        type: flag
+        unit: none
+        required: false
+      - letter: Y
+        description: Home Y axis
+        type: flag
+        unit: none
+        required: false
+      - letter: Z
+        description: Home Z axis
+        type: flag
+        unit: none
+        required: false
+    notes:
+      - After homing, the machine's position is set to `gamma_max` or `gamma_min` values depending on whether machine homes to max or min.
+      - Essential first command before starting work.
+      - Required before using probe operations or setting homing offsets.
+      - "RepRap interpretation: homes to endstops and sets that position as origin."
+      - "CNC interpretation: returns to pre-recorded home position."
+      - Some firmwares support homing individual axes or all if no parameters specified.
+      - Critical safety command - should be first command after machine power-on.
+    related_codes:
+      - G28.1
+      - G30
+      - M119
+      - M306
+      - M665
+    example:
+      - G28 X Y Z
+  G28.1:
+    description:
+      - Store the origin position that the machine goes to when the G28 command is issued.
+      - This position is stored into memory but is lost if the machine is reset.
+    parameters:
+      - letter: X
+        description: Set X origin position
+        type: coordinate
+        unit: mm
+        required: false
+      - letter: Y
+        description: Set Y origin position
+        type: coordinate
+        unit: mm
+        required: false
+      - letter: Z
+        description: Set Z origin position
+        type: coordinate
+        unit: mm
+        required: false
+    example:
+      - "`G28.1 X10 Y10` - Record the origin position as being at the X position 10 and Y position 10"
+    notes: ""
+    related_codes:
+      - G28
+  G30:
+    description:
+      - Move the probe until it hits something in the Z axis.
+      - Used on CNC mills to find workpiece location, tool length, or touch point between tool and workpiece.
+      - On 3D printers, used to find touch point of bed and actuator, calibrate Delta machines, or automatically level beds.
+    parameters:
+      - letter: Z
+        description: Z height to set after probe triggers
+        type: coordinate
+        unit: mm
+        required: false
+      - letter: F
+        description: Probe feedrate
+        type: speed
+        unit: mm/min
+        required: false
+    notes:
+      - Reports the distance traveled by the probe.
+      - When Z parameter is used, sets current Z height to that value (performs G92 Z value internally).
+      - Can be automated in slicing software for automatic bed leveling at print start.
+      - Probe offset is the distance between probe triggering point and actual bed surface.
+      - If 'save_g92 true' is set in config, `G30 Z0` saves the offset.
+    related_codes:
+      - G28
+      - G32
+      - M119
+    example:
+      - G30 Z0 F100
+  G32:
+    description:
+      - Bed leveling or calibration command. Triggers the configured calibration strategy for the machine.
+    parameters: []
+    notes:
+      - Requires a calibration strategy to be configured and enabled.
+      - Common error "No strategy found to handle G32" means config and firmware are out of sync - requires updating both firmware and example configuration file.
+      - Must enable calibration strategy via zprobe module configuration.
+    related_codes:
+      - G30
+      - M665
+    example:
+      - G32
+  G38:
+    description:
+      - Probe towards workpiece - straight probe with optional error handling (G38.2/G38.3)
+    parameters:
+      - letter: X
+        description: Target X position
+        type: coordinate
+        unit: mm
+        required: false
+      - letter: Y
+        description: Target Y position
+        type: coordinate
+        unit: mm
+        required: false
+      - letter: Z
+        description: Target Z position
+        type: coordinate
+        unit: mm
+        required: false
+      - letter: F
+        description: Probe feedrate
+        type: speed
+        unit: mm/min
+        required: false
+    notes:
+      - Found in source code, documentation pending
+    related_codes:
+      - G38.3
+      - G30
+    example:
+      - G38.2 Z-10 F50
+  G38.3:
+    description:
+      - Probe without error - straight probe, no error on fail
+    parameters:
+      - letter: X
+        description: Target X position
+        type: coordinate
+        unit: mm
+        required: false
+      - letter: Y
+        description: Target Y position
+        type: coordinate
+        unit: mm
+        required: false
+      - letter: Z
+        description: Target Z position
+        type: coordinate
+        unit: mm
+        required: false
+      - letter: F
+        description: Probe feedrate
+        type: speed
+        unit: mm/min
+        required: false
+    notes:
+      - Found in source code, documentation pending
+    related_codes:
+      - G38
+    example:
+      - G38.3 Z-10 F50
+  G53:
+    description:
+      - Use machine coordinates - disable workspace offset for next move
+    parameters: []
+    notes:
+      - Found in source code, documentation pending
+    related_codes:
+      - G54
+      - G59
+    example:
+      - G53 G0 X0 Y0
+  G54:
+    description:
+      - Select work coordinate system 1.
+      - Allows you to define different coordinate systems for different work pieces or setups.
+    parameters: []
+    example:
+      - "`G54` - Select work coordinate system 1; `GC:G0 G54 G17 G21 G90 G94 M0 M5 M9 T0 F15000.0 S0.8000` (appears in host command response)"
+    notes:
+      - Standard WCS selection; appears in host state reporting via `$G` command
+    related_codes:
+      - G53
+      - G59
+  G59:
+    description:
+      - Workspace offset - set workspace coordinate system (G54-G59)
+    parameters: []
+    notes:
+      - Found in source code, documentation pending
+    related_codes:
+      - G53
+      - G54
+    example:
+      - G59
+  G90:
+    description:
+      - Set all moves starting now to use absolute coordinates.
+      - Positions are given relative to the 0,0,0 point of the current workspace coordinate system, not relative to the current position.
+    parameters: []
+    example:
+      - "`G90` - Enable absolute coordinate mode; `G91G0E20G90` (switches to absolute mode after relative extrusion)"
+    notes:
+      - Standard modal command; used in configuration and gcode sequences.
+      - Smoothie supports this code.
+      - Most print files use absolute positioning for X/Y/Z movements.
+      - Some slicers may use relative E (extruder) with M83 while keeping X/Y/Z absolute.
+      - This is the default mode on most firmwares.
+    related_codes:
+      - G91
+      - G0
+      - G1
+  G91:
+    description:
+      - Set all moves starting now to use relative coordinates.
+      - Positions are given relative to the current position, not relative to the 0,0,0 point of the current workspace coordinate system.
+    parameters: []
+    example:
+      - "`G91` - Enable relative coordinate mode; `G91G0E20G90` (used for relative extrusion in suspend/resume sequences)"
+    notes:
+      - Standard modal command; used in extruder control and manual adjustments Useful for manual jogging and relative adjustments.
+      - Some slicers use relative E-axis mode (M83) for extrusion while keeping X/Y/Z in absolute mode.
+      - Be cautious mixing positioning modes.
+    related_codes:
+      - G90
+      - G0
+      - G1
+  G92:
+    description:
+      - Set an offset for all coordinate systems.
+      - Makes the current point have the coordinates you want (without motion).
+      - When G92 is executed, the origins of all coordinate systems move such that the value of the current controlled point becomes the specified value.
+    parameters:
+      - letter: X
+        description: Set current X position to this value
+        type: coordinate
+        unit: mm
+        required: false
+      - letter: Y
+        description: Set current Y position to this value
+        type: coordinate
+        unit: mm
+        required: false
+      - letter: Z
+        description: Set current Z position to this value
+        type: coordinate
+        unit: mm
+        required: false
+      - letter: E
+        description: Set current extruder position to this value
+        type: coordinate
+        unit: mm
+        required: false
+    notes:
+      - Creates a new coordinate system called Workspace Coordinate System (WCS).
+      - Does not move the machine physically.
+      - Used to establish reference points after manual positioning.
+      - Can be saved with M500 if 'save_g92 true' is configured.
+      - Does NOT move any axes - only changes coordinate system.
+      - Commonly used as 'G92 E0' to reset extruder position at start of print or after retraction.
+      - Can create confusion if not properly managed - prefer G28 for establishing true machine origin.
+    related_codes:
+      - G28
+      - M306
+    example:
+      - G92 X0 Y0 Z0
+  G94:
+    description:
+      - Feedrate mode (motion per minute)
+    parameters: []
+    example:
+      - "`GC:G0 G54 G17 G21 G90 G94 M0 M5 M9 T0 F15000.0 S0.8000` (appears in host command response)"
+    notes:
+      - Standard modal command for feedrate units (mm/min)
+    related_codes: []
+mcodes:
+  M0:
+    description:
+      - Program stop.
+      - Pauses program execution unconditionally.
+      - Machine waits for user intervention to continue.
+    parameters: []
+    example:
+      - "`GC:G0 G54 G17 G21 G90 G94 M0 M5 M9 T0 F15000.0 S0.8000` (appears in host command response)"
+    notes:
+      - Behavior varies by firmware.
+      - Some require button press, others accept M108 command to continue.
+      - Appears as part of gcode state reporting from the `$G` host command.
+      - May turn off heaters depending on firmware configuration.
+    related_codes:
+      - M1
+      - M600
+      - M601
+  M1:
+    description:
+      - Sleep or Conditional Stop.
+      - Pauses program execution until user provides input via button press or resume command.
+    parameters: []
+    example:
+      - Not explicitly shown, but referenced as alternative to M600
+    notes:
+      - Similar to M0 but may be ignored if 'optional stop' is disabled in firmware settings.
+      - Support for M1 is planned in Smoothieware v1.
+      - May be partially implemented using M600 instead.
+      - See `/project/news/todo`.
+      - Traditionally used in CNC for tool changes or workpiece inspection.
+    related_codes:
+      - M0
+      - M600
+      - M601
+  M3:
+    description:
+      - Spindle on, clockwise rotation. Starts spindle or laser at specified speed.
+    parameters:
+      - letter: S
+        description: Spindle speed
+        type: speed
+        unit: RPM
+        required: false
+    notes:
+      - Found in source code, documentation pending.
+      - S parameter sets speed in RPM for spindles or power percentage for lasers.
+      - Commonly used in CNC milling and laser cutting applications.
+      - Counterpart is M4 (counter-clockwise) and M5 (stop).
+    related_codes:
+      - M5
+      - M957
+      - M958
+    example:
+      - M3 S12000
+  M5:
+    description:
+      - Spindle/tool stop command
+    parameters: []
+    example:
+      - "`GC:G0 G54 G17 G21 G90 G94 M0 M5 M9 T0 F15000.0 S0.8000` (appears in host command response)"
+    notes:
+      - Part of standard gcode state; appears in host responses via `$G` command
+    related_codes:
+      - M3
+      - M957
+      - M958
+  M9:
+    description:
+      - Turn off coolant/auxiliary output
+    parameters: []
+    example:
+      - "`GC:G0 G54 G17 G21 G90 G94 M0 M5 M9 T0 F15000.0 S0.8000` (appears in host command response)"
+    notes:
+      - Standard gcode command; appears in host state reporting
+    related_codes: []
+  M20:
+    description:
+      - List the contents of the SD card connected to your Smoothieboard.
+      - When issued, Smoothie reads the SD card contents and outputs the file list to the serial port.
+    parameters:
+      - letter: S
+        description: Output style (0=default)
+        type: integer
+        unit: none
+        required: false
+      - letter: P
+        description: Directory path
+        type: string
+        unit: none
+        required: false
+    notes:
+      - Output format may vary by firmware.
+      - Some return long filenames, others 8.3 DOS format.
+      - P parameter allows listing subdirectories.
+      - Essential for remote SD card file management.
+    related_codes:
+      - M21
+      - M23
+      - M24
+      - M25
+      - M26
+      - M27
+      - M30
+      - M32
+    example:
+      - M20 S0
+  M21:
+    description:
+      - Initialize SD card. Mounts/initializes SD card for file operations.
+    parameters: []
+    notes:
+      - Compatibility command - many firmwares auto-initialize SD card on insertion.
+      - Some firmwares use this to remount after card swap.
+      - Returns error if card not present or unreadable.
+    related_codes:
+      - M20
+    example:
+      - M21
+  M23:
+    description:
+      - Select SD file for printing. Opens file and prepares it for printing with M24.
+    parameters:
+      - letter: filename
+        description: File to select
+        type: string
+        unit: none
+        required: true
+    notes:
+      - Must be followed by M24 to start print.
+      - Filename may need quotes if it contains spaces (firmware-dependent).
+      - File must exist on SD card or command fails.
+    related_codes:
+      - M20
+      - M24
+      - M32
+    example:
+      - M23 print.gcode
+  M24:
+    description:
+      - Start or resume SD print. Begins printing the file selected with M23, or resumes a paused print.
+    parameters: []
+    notes:
+      - If no file selected with M23, command may fail.
+      - Can resume prints paused with M25.
+      - Position and state must be maintained for successful resume.
+    related_codes:
+      - M23
+      - M25
+      - M600
+      - M601
+    example:
+      - M24
+  M25:
+    description:
+      - Pause SD print. Pauses current SD card print job.
+    parameters: []
+    notes:
+      - Waits for movement queue to empty before pausing.
+      - Heater behavior during pause is firmware-dependent.
+      - Use M24 to resume.
+      - Position is maintained for resume.
+    related_codes:
+      - M24
+      - M600
+      - M601
+    example:
+      - M25
+  M26:
+    description:
+      - Abort SDCARD print. Stops execution of a file being played from SD card immediately.
+    parameters:
+      - letter: S
+        description: Byte position in file
+        type: integer
+        unit: bytes
+        required: false
+    notes:
+      - Completes the current G-code command before stopping.
+      - Discards remaining queued commands.
+      - Attempts to maintain correct position after abort.
+      - Heaters remain at current state.
+      - Position is maintained and recoverable, but file must be restarted from beginning.
+      - Quick stop option while preserving position and keeping heaters on.
+    related_codes:
+      - M24
+      - M25
+    example:
+      - M26 S1024
+  M27:
+    description:
+      - Report SD status - report print progress
+    parameters: []
+    notes:
+      - Found in source code, documentation pending
+    related_codes:
+      - M20
+      - M24
+    example:
+      - M27
+  M30:
+    description:
+      - Delete file - remove file from SD card
+    parameters:
+      - letter: filename
+        description: File to delete
+        type: string
+        unit: none
+        required: true
+    notes:
+      - Found in source code, documentation pending
+    related_codes:
+      - M20
+    example:
+      - M30 old_file.gcode
+  M32:
+    description:
+      - Select and start print - select and immediately start file
+    parameters:
+      - letter: filename
+        description: File to select and start
+        type: string
+        unit: none
+        required: true
+    notes:
+      - Found in source code, documentation pending
+    related_codes:
+      - M20
+      - M23
+      - M24
+    example:
+      - M32 print.gcode
+  M84:
+    description:
+      - Stop idle hold. Disables stepper motors to reduce heat and power consumption.
+    parameters:
+      - letter: S
+        description: Timeout before disabling motors
+        type: time
+        unit: seconds
+        required: false
+    notes:
+      - With S parameter, sets timeout for automatic motor disable after inactivity.
+      - Without parameters, disables motors immediately.
+      - Motors will re-enable on next movement command.
+      - Allows manual axis movement when disabled.
+    related_codes:
+      - M92
+      - M203
+    example:
+      - M84 S600
+  M92:
+    description:
+      - Set axis steps per unit. Calibrates how many motor steps equal one millimeter of movement.
+    parameters:
+      - letter: X
+        description: Steps per mm for X axis
+        type: decimal
+        unit: steps/mm
+        required: false
+      - letter: Y
+        description: Steps per mm for Y axis
+        type: decimal
+        unit: steps/mm
+        required: false
+      - letter: Z
+        description: Steps per mm for Z axis
+        type: decimal
+        unit: steps/mm
+        required: false
+      - letter: E
+        description: Steps per mm for extruder
+        type: decimal
+        unit: steps/mm
+        required: false
+    notes:
+      - Critical calibration parameter.
+      - "Calculated from: (motor steps/rev) × (microstepping) / (mm per revolution)."
+      - Different for each axis based on mechanics (lead screws, belts, etc.).
+      - E-axis value depends on extruder gear ratio and filament diameter.
+      - Changes take effect immediately but reset on reboot unless saved with M500.
+    related_codes:
+      - M203
+      - M204
+    example:
+      - M92 X80 Y80 Z400 E93
+  M112:
+    description:
+      - Emergency stop / Kill command. Instantly halts all operations.
+    parameters: []
+    notes:
+      - If issued from host, must wait for receive buffer to have room.
+      - If physical kill button pressed, stops instantly.
+      - All heaters turned off.
+      - File playing aborted.
+      - Position is LOST - homing required before further operation.
+      - System enters Halt state until M999 is sent.
+      - This is a destructive stop - only use in emergencies as position cannot be recovered.
+      - Implemented as highest priority command in most firmwares.
+      - May not wait for buffer if implemented correctly.
+      - Emergency use only - all motion halts, heaters off, position lost.
+      - Requires M999 to clear halt state and resume operation.
+    related_codes:
+      - M999
+    example:
+      - M112
+  M114:
+    description:
+      - Report position of all axes. Returns the current position of X, Y, Z and other axes.
+    parameters: []
+    notes:
+      - Useful for determining current position after manual jogging.
+      - The Z position returned is used to set `gamma_max` value when calibrating Z height.
+      - Returns all axis positions in current workspace coordinates.
+      - "Output format varies by firmware but typically: 'X:10.00 Y:20.00 Z:5.00 E:0.00'."
+      - Some firmwares include additional information like stepper positions or live coordinates.
+      - Essential for debugging positioning issues.
+    related_codes:
+      - G28
+      - G92
+    example:
+      - M114
+  M119:
+    description:
+      - Get endstop status. Reports the current state of all endstop switches.
+    parameters: []
+    notes:
+      - Returns whether each endstop is triggered or open.
+      - "Format typically: 'x_min: open' or 'x_max: TRIGGERED'."
+      - Critical for debugging homing issues and verifying endstop wiring.
+      - Should be checked before first use of machine.
+    related_codes:
+      - G28
+      - G30
+      - M306
+    example:
+      - M119
+  M143:
+    description:
+      - Set max temp - set maximum allowable temperature
+    parameters:
+      - letter: S
+        description: Maximum temperature
+        type: temperature
+        unit: °C
+        required: true
+    notes:
+      - Found in source code, documentation pending
+    related_codes:
+      - M301
+      - M305
+    example:
+      - M143 S250
+  M200:
+    description:
+      - Set filament diameter - for volumetric extrusion
+    parameters:
+      - letter: D
+        description: Filament diameter
+        type: decimal
+        unit: mm
+        required: true
+    notes:
+      - Found in source code, documentation pending
+    related_codes:
+      - M221
+    example:
+      - M200 D1.75
+  M203:
+    description:
+      - Set max feedrate - set maximum axis velocities
+    parameters:
+      - letter: X
+        description: Maximum feedrate for X axis
+        type: speed
+        unit: mm/min
+        required: false
+      - letter: Y
+        description: Maximum feedrate for Y axis
+        type: speed
+        unit: mm/min
+        required: false
+      - letter: Z
+        description: Maximum feedrate for Z axis
+        type: speed
+        unit: mm/min
+        required: false
+      - letter: E
+        description: Maximum feedrate for extruder
+        type: speed
+        unit: mm/min
+        required: false
+    notes:
+      - Found in source code, documentation pending
+    related_codes:
+      - M92
+      - M204
+    example:
+      - M203 X18000 Y18000 Z1000 E9000
+  M204:
+    description:
+      - Set acceleration - set print/travel acceleration
+    parameters:
+      - letter: S
+        description: Default acceleration
+        type: acceleration
+        unit: mm/s²
+        required: false
+      - letter: P
+        description: Print acceleration
+        type: acceleration
+        unit: mm/s²
+        required: false
+      - letter: T
+        description: Travel acceleration
+        type: acceleration
+        unit: mm/s²
+        required: false
+    notes:
+      - Found in source code, documentation pending
+    related_codes:
+      - M203
+    example:
+      - M204 S3000 P3000 T3000
+  M207:
+    description:
+      - Set retract - configure filament retraction
+    parameters:
+      - letter: S
+        description: Retract length
+        type: distance
+        unit: mm
+        required: false
+      - letter: F
+        description: Retract feedrate
+        type: speed
+        unit: mm/min
+        required: false
+      - letter: Z
+        description: Z lift on retraction
+        type: distance
+        unit: mm
+        required: false
+    notes:
+      - Found in source code, documentation pending
+    related_codes:
+      - M208
+      - G10
+      - G11
+    example:
+      - M207 S4 F3000 Z0.5
+  M208:
+    description:
+      - Set unretract - configure filament unretraction
+    parameters:
+      - letter: S
+        description: Recover length
+        type: distance
+        unit: mm
+        required: false
+      - letter: F
+        description: Recover feedrate
+        type: speed
+        unit: mm/min
+        required: false
+    notes:
+      - Found in source code, documentation pending
+    related_codes:
+      - M207
+      - G10
+      - G11
+    example:
+      - M208 S0 F3000
+  M220:
+    description:
+      - Set speed factor override. Adjusts feedrate by specified percentage without modifying G-code.
+    parameters:
+      - letter: S
+        description: Speed percentage
+        type: percentage
+        unit: "%"
+        required: true
+    notes:
+      - S100 = 100% (normal speed), S50 = 50% speed, S200 = 200% speed.
+      - Useful for real-time speed adjustment during printing.
+      - Does not modify F values in G-code, just scales them.
+      - Most firmwares default to 100% on reset.
+    related_codes:
+      - M221
+    example:
+      - M220 S100
+  M221:
+    description:
+      - Flow rate override - adjust extrusion percentage or laser power
+    parameters:
+      - letter: S
+        description: Flow rate percentage
+        type: percentage
+        unit: "%"
+        required: true
+    notes:
+      - Found in source code, documentation pending S100 = 100% flow (normal), S95 = 5% under-extrusion, S105 = 5% over-extrusion.
+      - Useful for fine-tuning extrusion without reslicing.
+      - Does not affect travel moves or retractions.
+      - For lasers, may control power percentage.
+    related_codes:
+      - M220
+      - M200
+    example:
+      - M221 S95
+  M301:
+    description:
+      - Set PID - set PID controller parameters
+    parameters:
+      - letter: P
+        description: Proportional (Kp)
+        type: decimal
+        unit: none
+        required: false
+      - letter: I
+        description: Integral (Ki)
+        type: decimal
+        unit: none
+        required: false
+      - letter: D
+        description: Derivative (Kd)
+        type: decimal
+        unit: none
+        required: false
+    notes:
+      - Found in source code, documentation pending
+    related_codes:
+      - M143
+      - M305
+    example:
+      - M301 P22.2 I1.08 D114.0
+  M305:
+    description:
+      - Set sensor - configure temperature sensor
+    parameters:
+      - letter: P
+        description: Heater number
+        type: integer
+        unit: none
+        required: true
+      - letter: T
+        description: Thermistor resistance at 25°C
+        type: decimal
+        unit: ohms
+        required: false
+      - letter: B
+        description: Beta value
+        type: integer
+        unit: none
+        required: false
+    notes:
+      - Found in source code, documentation pending
+    related_codes:
+      - M143
+      - M301
+    example:
+      - M305 P0 T100000 B4138
+  M306:
+    description:
+      - Set homing offset. Uses the current position as a Z homing offset.
+    parameters:
+      - letter: Z
+        description: Z axis offset
+        type: coordinate
+        unit: mm
+        required: false
+    notes:
+      - Cannot be used unless machine has Z homing endstops.
+      - Saves the current Z position as the homing offset.
+      - Must be followed by M500 to persist to SD card.
+      - Preferred method over manual `gamma_max` configuration as it uses current position directly.
+    related_codes:
+      - M665
+      - M500
+      - G28
+      - G92
+      - M119
+    example:
+      - M306 Z0
+  M408:
+    description:
+      - Status query command; returns machine status information for PanelDue support
+    parameters:
+      - letter: S
+        description: Response type
+        type: integer
+        unit: none
+        required: false
+    example:
+      - M408 S0
+    notes:
+      - Specifically being implemented for PanelDue hardware support.
+      - Useful for web interface projects.
+      - See `/project/news/todo`
+    related_codes: []
+  M500:
+    description:
+      - Save configuration to SD card.
+      - Writes current configuration and calibration data to the SD card for persistence across reboots.
+    parameters: []
+    notes:
+      - Essential for saving calibration values like Z height offsets (set via M306 or M665), probe offsets, and saved G92 positions.
+      - Without M500, configuration changes are lost on power cycle.
+      - Can save both Z height and delta calibration data together.
+    related_codes:
+      - M501
+      - M503
+      - M306
+      - M665
+    example:
+      - M500
+  M501:
+    description:
+      - Restore from EEPROM - load settings from persistent storage
+    parameters: []
+    notes:
+      - Found in source code, documentation pending
+    related_codes:
+      - M500
+      - M503
+    example:
+      - M501
+  M503:
+    description:
+      - Report settings - output current EEPROM settings
+    parameters: []
+    notes:
+      - Found in source code, documentation pending
+    related_codes:
+      - M500
+      - M501
+    example:
+      - M503
+  M600:
+    description:
+      - Suspend print. Pauses execution of file being played from SD card or streamed from host.
+    parameters: []
+    example:
+      - M600
+    notes:
+      - Used as pause/user-input mechanism; possibly related to or alternative to M1 support.
+      - Mentioned in `/project/news/todo` Stops once movement queue is empty (not instant).
+      - All state is saved.
+      - Heaters turned off by default (configurable).
+      - Jogging and extruding allowed during suspension.
+      - Can be resumed with `resume` command or M601.
+      - Requires upstream host support (Pronterface and OctoPrint support it).
+      - Fully recoverable with position maintained.
+      - Ideal for mid-print filament changes or filament-out detection.
+    related_codes:
+      - M601
+      - M24
+      - M25
+      - M0
+      - M1
+  M601:
+    description:
+      - Resume print. Resumes execution after suspension with M600.
+    parameters: []
+    notes:
+      - Opposite of M600.
+      - Requires the machine to be suspended first.
+      - Resumes from exact position where suspension occurred.
+      - Position is fully maintained.
+    related_codes:
+      - M600
+      - M24
+    example:
+      - M601
+  M665:
+    description:
+      - Config override system (Delta machines only).
+      - Sets calibration values that override the configuration file.
+    parameters:
+      - letter: Z
+        description: Z height value
+        type: coordinate
+        unit: mm
+        required: false
+      - letter: L
+        description: Diagonal rod length
+        type: distance
+        unit: mm
+        required: false
+      - letter: R
+        description: Delta radius
+        type: distance
+        unit: mm
+        required: false
+    notes:
+      - Delta-specific command.
+      - Allows setting `gamma_max` value without editing configuration file.
+      - Values set with M665 override the `gamma_max` value in the configuration file if saved.
+      - Must be followed by M500 to persist to SD card.
+      - Commonly used for Z height and delta calibration data.
+    related_codes:
+      - M306
+      - M500
+      - G28
+      - G32
+    example:
+      - M665 L250 R140 Z297.5
+  M951:
+    description:
+      - LED test - diagnostics command
+    parameters: []
+    notes:
+      - Found in source code, documentation pending
+    related_codes:
+      - M952
+    example:
+      - M951
+  M952:
+    description:
+      - Error dump - output error statistics
+    parameters: []
+    notes:
+      - Found in source code, documentation pending
+    related_codes:
+      - M951
+    example:
+      - M952
+  M957:
+    description:
+      - Report spindle - report spindle status
+    parameters: []
+    notes:
+      - Found in source code, documentation pending
+    related_codes:
+      - M958
+      - M3
+      - M5
+    example:
+      - M957
+  M958:
+    description:
+      - Set spindle - configure spindle parameters
+    parameters:
+      - letter: P
+        description: PWM value
+        type: percentage
+        unit: "%"
+        required: false
+    notes:
+      - Found in source code, documentation pending
+    related_codes:
+      - M957
+      - M3
+      - M5
+    example:
+      - M958 P50
+  M999:
+    description:
+      - Clear halt state. Restores normal operation after emergency stop (M112) or kill button press.
+    parameters: []
+    example:
+      - "`@power off` or after hitting a hard endstop, user may send `M999`"
+    notes:
+      - Used to recover from hard or soft endstop hits.
+      - Can also be used with `reset` command as alternative.
+      - See `/troubleshooting/error` Required to exit Halt state after emergency stop.
+      - "Three ways to clear Halt state: issue M999 from host, hold physical kill button for 2 seconds, or use LCD panel."
+      - Position remains lost after emergency stop - must home all axes before attempting further movement.
+      - Do not resume work without verifying machine state.
+    related_codes:
+      - M112
+  M1000:
+    description:
+      - Generic command wrapper for sending console commands from G-code; acts as a relay
+    parameters:
+      - letter: command
+        description: Console command to execute
+        type: string
+        unit: none
+        required: true
+    example:
+      - "`M1000 command` or `M1000 fire 50`"
+    notes:
+      - Used to send non-gcode commands (like `fire`, `suspend`, `resume`) when not using Pronterface.
+      - In Pronterface, prefix commands with `@` instead.
+      - See `/software/console/console-commands`
+    related_codes: []
+  M1234:
+    description:
+      - Undocumented M-code supported by Smoothie firmware. Purpose unknown; documentation needed.
+    parameters: []
+    example:
+      - M1234
+    notes: ""
+    related_codes: []

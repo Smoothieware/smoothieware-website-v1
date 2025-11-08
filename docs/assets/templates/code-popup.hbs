@@ -1,0 +1,108 @@
+<div class="code-popup-panel">
+    <div class="code-popup-header">
+        <span class="code-popup-code">
+            <span class="code-popup-letter">{{letter}}</span><span class="code-popup-number">{{number}}</span>
+        </span>
+        <span class="code-popup-type">{{code_type}}</span>
+    </div>
+
+    <div class="code-popup-body">
+        <div class="code-popup-section">
+            <div class="code-popup-label">Description:</div>
+            <div class="code-popup-value">
+                {{#if description}}
+                    {{#if description.length}}
+                        {{#each description}}
+                        <p>{{this}}</p>
+                        {{/each}}
+                    {{else}}
+                        {{description}}
+                    {{/if}}
+                {{else}}
+                    No description available
+                {{/if}}
+            </div>
+        </div>
+
+        {{#if parameters}}
+        {{#if parameters.length}}
+        <div class="code-popup-section code-popup-parameters">
+            <div class="code-popup-label"><sl-icon name="sliders"></sl-icon> Parameters:</div>
+            <div class="code-popup-params-grid">
+                {{#each parameters}}
+                <div class="code-param-card {{#if this.required}}param-required{{else}}param-optional{{/if}}">
+                    <div class="param-header">
+                        <span class="param-letter">{{this.letter}}</span>
+                        {{#if this.required}}
+                        <sl-badge variant="danger" pill size="small">Required</sl-badge>
+                        {{else}}
+                        <sl-badge variant="neutral" pill size="small">Optional</sl-badge>
+                        {{/if}}
+                    </div>
+                    <div class="param-description">{{this.description}}</div>
+                    <div class="param-meta">
+                        <sl-tag size="small" variant="primary" pill>
+                            <sl-icon slot="prefix" name="diagram-3"></sl-icon>
+                            {{this.type}}
+                        </sl-tag>
+                        {{#unless (eq this.unit "none")}}
+                        <sl-tag size="small" variant="success" pill>
+                            <sl-icon slot="prefix" name="rulers"></sl-icon>
+                            {{this.unit}}
+                        </sl-tag>
+                        {{/unless}}
+                    </div>
+                </div>
+                {{/each}}
+            </div>
+        </div>
+        {{/if}}
+        {{/if}}
+
+        {{#if example}}
+        <div class="code-popup-section">
+            <div class="code-popup-label">Example:</div>
+            <div class="code-popup-value code-popup-example">
+                {{#if example.length}}
+                    {{#each example}}
+                    <p>{{this}}</p>
+                    {{/each}}
+                {{else}}
+                    {{example}}
+                {{/if}}
+            </div>
+        </div>
+        {{/if}}
+
+        {{#if notes}}
+        <div class="code-popup-section">
+            <div class="code-popup-label">Notes:</div>
+            <div class="code-popup-value">
+                {{#if notes.length}}
+                    {{#each notes}}
+                    <p>{{this}}</p>
+                    {{/each}}
+                {{else}}
+                    {{notes}}
+                {{/if}}
+            </div>
+        </div>
+        {{/if}}
+
+        {{#if related_codes}}
+        {{#if related_codes.length}}
+        <div class="code-popup-section code-popup-related">
+            <div class="code-popup-label"><sl-icon name="link-45deg"></sl-icon> Related codes:</div>
+            <div class="code-popup-related-buttons">
+                {{#each related_codes}}
+                <sl-button variant="default" size="small" class="related-code-button" data-code="{{this}}">
+                    <sl-icon slot="prefix" name="link-45deg"></sl-icon>
+                    <code class="code-button-text">{{this}}</code>
+                </sl-button>
+                {{/each}}
+            </div>
+        </div>
+        {{/if}}
+        {{/if}}
+    </div>
+</div>

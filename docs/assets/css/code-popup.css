@@ -1,0 +1,212 @@
+/**
+ * code-popup.css
+ *
+ * Styling for G-code and M-code hover popups
+ * - Dark theme matching site design
+ * - Clear information hierarchy
+ * - Similar design to setting tag popups
+ */
+
+/* Z-index for proper layering - ensure popups appear above all content including alerts */
+.code-popup {
+    z-index:         9999 !important;
+}
+
+/* Ensure popup appears above everything (targets shadow DOM part) */
+.code-popup::part(popup) {
+    z-index:         9999 !important;
+}
+
+/* Main popup panel */
+.code-popup-panel {
+    background:      #1a1a1a;
+    border:          1px solid #333;
+    border-radius:   6px;
+    padding:         0;
+    min-width:       300px;
+    max-width:       500px;
+    font-family:     -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    font-size:       14px;
+    line-height:     1.5;
+    color:           #fff;
+    box-shadow:      0 4px 16px rgba(0, 0, 0, 0.5);
+}
+
+/* Header section with code and type */
+.code-popup-header {
+    background:      #0a0a0a;
+    border-bottom:   1px solid #333;
+    padding:         12px 16px;
+    display:         flex;
+    justify-content: space-between;
+    align-items:     center;
+}
+
+/* Code display (e.g., "G28", "M119") */
+.code-popup-code {
+    font-family:     'Courier New', Courier, monospace !important;
+    font-size:       24px;
+    font-weight:     bold;
+}
+
+/* Code letter (G or M) - colored */
+.code-popup-letter {
+    /* Color will be set dynamically via inline style */
+}
+
+/* Code number - white */
+.code-popup-number {
+    color:           #fff;
+}
+
+/* Code type label (e.g., "G-code", "M-code") */
+.code-popup-type {
+    font-size:       12px;
+    color:           #888;
+    text-transform:  uppercase;
+    letter-spacing:  0.5px;
+}
+
+/* Body section with all information */
+.code-popup-body {
+    padding:         16px;
+}
+
+/* Individual section (description, parameters, etc.) */
+.code-popup-section {
+    margin-bottom:   12px;
+}
+
+.code-popup-section:last-child {
+    margin-bottom:   0;
+}
+
+/* Section labels (Description, Parameters, etc.) */
+.code-popup-label {
+    font-weight:     600;
+    color:           #7ec8ed; /* Blue color */
+    margin-bottom:   4px;
+    font-size:       13px;
+}
+
+/* Section values */
+.code-popup-value {
+    color:           #ccc;
+    line-height:     1.6;
+}
+
+/* Example code styling */
+.code-popup-example {
+    font-family:     'Courier New', Courier, monospace !important;
+    background:      #000;
+    padding:         8px 12px;
+    border-radius:   3px;
+    border:          1px solid #333;
+    font-size:       13px;
+    color:           #fff;
+    overflow-x:      auto;
+}
+
+/* Scrollbar styling for webkit browsers */
+.code-popup-example::-webkit-scrollbar {
+    height:          6px;
+}
+
+.code-popup-example::-webkit-scrollbar-track {
+    background:      #000;
+}
+
+.code-popup-example::-webkit-scrollbar-thumb {
+    background:      #444;
+    border-radius:   3px;
+}
+
+.code-popup-example::-webkit-scrollbar-thumb:hover {
+    background:      #555;
+}
+
+/* Related codes section */
+.code-popup-related {
+    margin-top:      12px;
+}
+
+.code-popup-related-buttons {
+    display:         flex;
+    flex-wrap:       wrap;
+    gap:             8px;
+    margin-top:      8px;
+}
+
+.related-code-button {
+    cursor:          pointer;
+}
+
+.code-button-text {
+    font-family:     'Courier New', Courier, monospace !important;
+    font-size:       13px;
+    color:           inherit;
+}
+
+/* Fancy parameter display */
+.code-popup-parameters {
+    margin-top:      16px;
+}
+
+.code-popup-params-grid {
+    display:         grid;
+    grid-template-columns: 1fr;
+    gap:             12px;
+    margin-top:      12px;
+}
+
+.code-param-card {
+    background:      rgba(255, 255, 255, 0.03);
+    border:          1px solid #444;
+    border-radius:   6px;
+    padding:         12px;
+    transition:      all 0.2s ease;
+}
+
+.code-param-card:hover {
+    background:      rgba(255, 255, 255, 0.06);
+    border-color:    #555;
+    transform:       translateY(-1px);
+}
+
+.param-required {
+    border-left:     3px solid #ff6b6b;
+}
+
+.param-optional {
+    border-left:     3px solid #888;
+}
+
+.param-header {
+    display:         flex;
+    justify-content: space-between;
+    align-items:     center;
+    margin-bottom:   8px;
+}
+
+.param-letter {
+    font-family:     'Courier New', Courier, monospace !important;
+    font-size:       18px;
+    font-weight:     bold;
+    color:           #ffd966;
+    background:      rgba(255, 217, 102, 0.1);
+    padding:         4px 10px;
+    border-radius:   4px;
+}
+
+.param-description {
+    color:           #ddd;
+    font-size:       13px;
+    line-height:     1.6;
+    margin-bottom:   10px;
+}
+
+.param-meta {
+    display:         flex;
+    gap:             8px;
+    flex-wrap:       wrap;
+}

@@ -259,10 +259,14 @@ setting[no-version] .setting-dot {
     min-width:       500px;
     max-height:      80vh;
     overflow-y:      auto;
+    overflow-x:      hidden;
 
     /* Ensure content is in proper stacking context */
     position:        relative;
     z-index:         1;
+    box-sizing:      border-box;
+    word-wrap:       break-word;
+    overflow-wrap:   break-word;
 }
 
 /* Shoelace tab group styling */
@@ -299,6 +303,10 @@ setting[no-version] .setting-dot {
 .setting-panel-content {
     padding:         10px;
     color:           #ecf0f1;
+    box-sizing:      border-box;
+    width:           100%;
+    overflow-wrap:   break-word;
+    word-wrap:       break-word;
 }
 
 /* Setting header */
@@ -330,11 +338,31 @@ setting[no-version] .setting-dot {
     display:         flex;
     align-items:     flex-start;
     gap:             6px;
+    word-wrap:       break-word;
+    overflow-wrap:   break-word;
+    max-width:       100%;
 }
 
 .setting-description sl-icon {
     margin-top:      2px;
     flex-shrink:     0;
+}
+
+.setting-description > :not(sl-icon) {
+    flex:            1;
+    min-width:       0;
+    word-wrap:       break-word;
+    overflow-wrap:   break-word;
+    white-space:     normal;
+}
+
+.setting-description > div {
+    flex:            1;
+    min-width:       0;
+    word-wrap:       break-word;
+    overflow-wrap:   break-word;
+    white-space:     normal;
+    overflow:        hidden;
 }
 
 /* Setting bullets - compact spacing */
@@ -455,6 +483,9 @@ setting[no-version] .setting-dot {
     margin:          0 !important;
     display:         inline;
     line-height:     inherit;
+    word-wrap:       break-word;
+    overflow-wrap:   break-word;
+    white-space:     normal;
 }
 
 .setting-description code,

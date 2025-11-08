@@ -1,0 +1,24 @@
+<sl-popup placement="bottom" shift hover-bridge arrow class="pin-popup pin-popup-not-found">
+    <div class="pin-popup-panel">
+        <div class="pin-popup-header">
+            <span class="pin-popup-name">
+                <span class="pin-popup-number">{{pin_name}}</span>
+            </span>
+        </div>
+
+        <div class="pin-popup-body">
+            <div class="pin-popup-section">
+                <sl-alert variant="warning" open>
+                    <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+                    <strong>Pin not found in database</strong>
+                    <p>This pin ({{pin_name}}) is not documented in the pin database. It may be:</p>
+                    <ul>
+                        <li>A pin from Smoothieboard v2 (this database is v1 only)</li>
+                        <li>A typo or incorrect pin number</li>
+                        <li>A special-purpose pin not yet documented</li>
+                    </ul>
+                </sl-alert>
+            </div>
+        </div>
+    </div>
+</sl-popup>
