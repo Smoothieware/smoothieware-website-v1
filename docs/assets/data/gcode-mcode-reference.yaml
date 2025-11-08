@@ -689,6 +689,32 @@ mcodes:
     notes:
       - Standard gcode command; appears in host state reporting
     related_codes: []
+  M17:
+    description:
+      - Enable/power all stepper motors
+    parameters: []
+    notes:
+      - Powers on stepper motor drivers
+      - Motors will hold position
+      - Opposite of M18/M84
+    related_codes:
+      - M18
+      - M84
+    example:
+      - M17
+  M18:
+    description:
+      - Disable all stepper motors
+    parameters: []
+    notes:
+      - Powers off stepper motor drivers
+      - Motors can be moved freely by hand
+      - Same as M84
+    related_codes:
+      - M17
+      - M84
+    example:
+      - M18
   M20:
     description:
       - List the contents of the SD card connected to your Smoothieboard.
@@ -845,6 +871,36 @@ mcodes:
       - M24
     example:
       - M32 print.gcode
+  M82:
+    description:
+      - Set extruder to absolute mode
+    parameters: []
+    notes:
+      - Makes E axis coordinates absolute
+      - E values in gcode are absolute positions
+      - Most slicers use this mode
+      - Does not affect X/Y/Z axes (use G90/G91 for those)
+    related_codes:
+      - M83
+      - G90
+      - G91
+    example:
+      - M82
+  M83:
+    description:
+      - Set extruder to relative mode
+    parameters: []
+    notes:
+      - Makes E axis coordinates relative
+      - E values in gcode are relative movements
+      - Useful for manual extrusion
+      - Does not affect X/Y/Z axes (use G90/G91 for those)
+    related_codes:
+      - M82
+      - G90
+      - G91
+    example:
+      - M83
   M84:
     description:
       - Stop idle hold. Disables stepper motors to reduce heat and power consumption.

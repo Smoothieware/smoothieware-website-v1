@@ -173,7 +173,8 @@ The Smoothie project is always looking for help. Whatever your skills are, there
 
 ## Firmware documentation
 
-- [Basics](basics)
+- **[Getting Started](getting-started)**: Complete guide to setting up your Smoothieboard from unboxing to first operation
+- [Basics](basics): Fundamental concepts, terminology, and technical background
 - [Communication](communication)
   - [Network](network)
   - [USB](usb)
@@ -232,8 +233,8 @@ The Smoothie project is always looking for help. Whatever your skills are, there
     - [bCNC](bcnc): Control interface for CNC machines.
     - [Fusion360](fusion360): CAD/CAM software with a lot of features and a free/students tier.
 - **[Troubleshooting](troubleshooting)**: It doesn't work (ノo益o)ノ彡┻━┻ ! What to do ∩(︶▽︶)∩.
-  - [MRI](mri-debugging): In the very rare case smoothie code crashes
-- [Contributing](contributing): We need your help!
+  - [MRI](mri-debugging): An amazing tool to help smoothie firmware developers and hackers debug issues using a proper debugging workflow.
+- [Contributing](contributing): **We need your help!**
   - [Todo](todo): List of the things that are being worked on in the project.
   - [Editing the Wiki](editing-the-wiki): How to edit this documentation and improve it.
 
@@ -270,6 +271,7 @@ More: [Windows Drivers](windows-drivers), [Linux Drivers](linux-drivers), [Mac D
 - [Running Smoothie on a Breadboard](smoothie-on-a-breadboard)
 - [Pinout](pinout) has diagrams of all pins on the board
 - [Pin usage](lpc1769-pin-usage) has information on the use and capability of all pins
+- [Pin configuration](pin-configuration) details how to configure pins to be inverted, open-drain, pulled-down, pulled-up, etc.
 - [How to wire](how-to-wire) describes tutorials, tools and best practices for wiring and cabling work when installing your Smoothieboard in a new machine.
 
 # Getting a Smoothieboard

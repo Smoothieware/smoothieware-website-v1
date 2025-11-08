@@ -58,6 +58,13 @@
 * [ ] We added cache busting to the includes in docs/_layouts/default.html , we should remove them once everything is stable.
 * [ ] Setting to see only v1 or v2 settings, that is closable.
 * [ ] That's a lot of assets we get when the page loads, maybe we can pack all of this a lot more with webpack or something similar? Like the handlebars templates, the yaml files, etc?
+* [ ] Have v1/v2 version separators, and have both horizontal and vertical versions.
+* [ ] Have a special format just for lists of settings / settings tables, that have support for hiding v1/v2 as required.
+* [ ] Have a special format for lists of gcodes, and add them in any place where it makes sense to.
+* [ ] http://localhost:4000/arm-solutions doesn't have a full list of the supported arm solutions, and pages for each.
+* [ ] Have a consistent table system with custom tags and custom css/formatting that looks the same everywhere, base it on the primevue data table stuff.
+* [ ] Our code in src/site/ seems to fail silently too easily, including with the Promise.all stuff, the template compiling failing silently, etc, we should add a lot more catching code and in general make it more error tolerant and have better reporting.
+* [ ] For mcode/gcode tags that contain parameters, we should have a section in the popup with a sentence that explains what it all means, maybe using a template in the yaml file like a handlebarjs template or something? Like convert the parameters into a sentence, or base it on the declared parameters?
 
 # <setting> tag.
 

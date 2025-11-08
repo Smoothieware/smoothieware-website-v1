@@ -4,16 +4,23 @@ permalink: /rotary-delta
 
 # Rotary Delta
 
-Rotary delta is a new and relatively uncommon arm solution for robotic systems.
-
-Unlike traditional linear delta robots, rotary deltas use rotating joints instead of sliding carriages.
+{::nomarkdown}
+<sl-alert variant="neutral" open>
+  <sl-icon slot="icon" name="info-circle"></sl-icon>
+  <strong>Version Support:</strong> This arm solution is supported in both Smoothieware v1 ✅ and v2 ✅
+</sl-alert>
+{:/nomarkdown}
 
 {::nomarkdown}
 <sl-alert variant="warning" open>
   <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
-  <strong>Limited Support:</strong> This is an experimental arm solution with limited documentation and testing. It is currently unsupported as no active developers have a rotary delta to test on.
+  <strong>Limited Support:</strong> This is an experimental arm solution with limited documentation and testing. It is currently unsupported as no active developers have a rotary delta to test on. Use at your own risk.
 </sl-alert>
 {:/nomarkdown}
+
+Rotary delta is a new and relatively uncommon arm solution for robotic systems.
+
+Unlike traditional linear delta robots, rotary deltas use rotating joints instead of sliding carriages.
 
 ## What is a Rotary Delta?
 
@@ -70,6 +77,20 @@ If you attempt to build and use a rotary delta with Smoothieboard, be prepared f
 4. **Code debugging**: You will likely need to modify the source code
 5. **Limited community support**: Very few people have experience with this
 
+## Comparison with Other Arm Solutions
+
+| Feature | Rotary Delta | Linear Delta | Cartesian |
+|---------|--------------|--------------|-----------|
+| Setup complexity | Very high | High | Low |
+| Calibration difficulty | Extremely hard | Hard | Easy |
+| Build volume shape | Hemispherical | Cylindrical | Rectangular |
+| Speed potential | High | Very high | Medium |
+| Moving mass | Very low | Low | High |
+| Mechanical precision | Extreme | High | Medium |
+| Homing difficulty | Very hard | Medium | Easy |
+| Community support | Minimal | Good | Excellent |
+| Status | Experimental | Proven | Standard |
+
 ## Alternative Arm Solutions
 
 If you're looking for a delta-style robot, consider these better-supported options:
@@ -79,6 +100,15 @@ If you're looking for a delta-style robot, consider these better-supported optio
 - [Cartesian](cartesian) - Standard X/Y/Z motion (most common)
 
 Linear deltas are well-documented, well-tested, and have excellent community support.
+
+## Source Code
+
+For developers interested in the implementation or considering modifications:
+
+- **v1:** [RotaryDeltaSolution.cpp](https://github.com/Smoothieware/Smoothieware/blob/edge/src/modules/robot/arm_solutions/RotaryDeltaSolution.cpp)
+- **v2:** [RotaryDeltaSolution.cpp](https://github.com/Smoothieware/Smoothieware-v2/blob/main/Firmware/src/robot/arm_solutions/RotaryDeltaSolution.cpp)
+
+The source code contains the kinematic equations and may be helpful if you're implementing or debugging a rotary delta system.
 
 ## Contributing
 

@@ -91,18 +91,8 @@ $(() => {
     // Always load config files (they're small and may be needed)
     load_config_files();
 
-    // Check if page contains any <setting> tags
-    const $setting_elements = $('setting');
-
-    // If no setting tags found, skip loading settings YAML data
-    if ($setting_elements.length === 0) {
-        console.log('[load-assets.ts] No setting tags found, skipping settings YAML load');
-        return;
-    }
-
-    console.log(`[load-assets.ts] Found ${$setting_elements.length} setting tag(s), loading configuration data...`);
-
-    // Load the settings data
+    // Always load settings data (will be cached for future page visits)
+    console.log('[load-assets.ts] Loading configuration data...');
     load_settings_data();
 });
 

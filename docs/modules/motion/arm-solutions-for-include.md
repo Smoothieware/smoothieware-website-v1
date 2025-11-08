@@ -18,16 +18,45 @@ This is the case, for example, of linear delta (often just called "delta") machi
 
 ## Supported Arm Solutions
 
-Currently, Smoothieware supports the following arm/motion solutions:
+Smoothieware supports multiple arm/motion solutions to accommodate different machine architectures. The table below shows which solutions are available in each firmware version:
 
-- [Cartesian](cartesian)
-- [Delta](delta) (Linear Delta)
-- [Rotary Delta](rotary-delta)
-- [Hbot](hbot) (CoreXY)
-- [Morgan Scara](morgan-scara)
+| Setting | v1 | v2 | Description | Documentation |
+|---------|----|----|-------------|---------------|
+| <raw>cartesian</raw> | ✅ | ✅ | Standard X/Y/Z configuration where each motor directly controls one axis | [Cartesian](cartesian) |
+| <raw>linear_delta</raw> | ✅ | ✅ | Three vertical linear rails in triangular configuration (Rostock, Kossel) | [Delta](delta) |
+| <raw>corexy</raw> or <raw>hbot</raw> | ✅ | ✅ | Crossed-belt system where both motors contribute to X and Y movement | [HBot/CoreXY](hbot) |
+| <raw>corexz</raw> | ✅ | ✅ | Crossed-belt variant where both motors contribute to X and Z movement | [CoreXZ](corexz) |
+| <raw>morgan</raw> | ✅ | ✅ | SCARA-style robotic arm with two parallel rotary joints | [Morgan SCARA](morgan-scara) |
+| <raw>rotary_delta</raw> | ✅ | ✅ | Delta variant using rotating joints instead of linear slides (experimental) | [Rotary Delta](rotary-delta) |
+| <raw>rotatable_cartesian</raw> | ✅ | ❌ | Cartesian system rotated by a specified angle (v1 only) | [Rotatable Cartesian](rotatable-cartesian) |
+
+{::nomarkdown}
+<sl-alert variant="primary" open>
+  <sl-icon slot="icon" name="info-circle"></sl-icon>
+  <strong>Configuration Aliases:</strong> Some arm solutions can be specified using multiple names:
+  <ul>
+    <li><code>linear_delta</code>, <code>delta</code>, <code>rostock</code>, or <code>kossel</code> all select Linear Delta</li>
+    <li><code>hbot</code> or <code>corexy</code> both select HBot (they use the same implementation)</li>
+    <li><code>morgan</code> selects Morgan SCARA</li>
+  </ul>
+</sl-alert>
+{:/nomarkdown}
 
 ## Configuration
 
-To configure your machine for the right type, see its specific page linked above.
+To configure your machine for the right type, see its specific page linked in the table above.
 
-Each arm solution has its own configuration parameters and requirements.
+Each arm solution has its own configuration parameters and requirements. The <setting v1="arm_solution" v2="motion control.arm_solution"></setting> setting determines the kinematics system used by your machine.
+
+The basic configuration syntax is:
+
+```
+arm_solution [solution_name]
+```
+
+For example:
+```
+arm_solution cartesian
+```
+
+If no arm solution is specified, `cartesian` is used by default.

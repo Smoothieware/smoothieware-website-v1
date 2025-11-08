@@ -5,6 +5,13 @@ permalink: /delta
 # Configuring a Smoothieboard for Linear Delta Kinematics
 
 {::nomarkdown}
+<sl-alert variant="neutral" open>
+  <sl-icon slot="icon" name="info-circle"></sl-icon>
+  <strong>Version Support:</strong> This arm solution is supported in both Smoothieware v1 ✅ and v2 ✅
+</sl-alert>
+{:/nomarkdown}
+
+{::nomarkdown}
 <a href="/images/board.png">
   <img src="/images/board.png" alt="Delta Configuration" style="width: 150px; height: 150px; float: right; margin-left: 1rem;"/>
 </a>
@@ -425,3 +432,21 @@ Where:
 - D is delta_tower1_angle
 - E is delta_tower2_angle
 - H is delta_tower3_angle
+
+## Source Code
+
+For developers or those interested in the implementation details, the Linear Delta solution is implemented in:
+
+- **v1:** [LinearDeltaSolution.cpp](https://github.com/Smoothieware/Smoothieware/blob/edge/src/modules/robot/arm_solutions/LinearDeltaSolution.cpp)
+- **v2:** [LinearDeltaSolution.cpp](https://github.com/Smoothieware/Smoothieware-v2/blob/main/Firmware/src/robot/arm_solutions/LinearDeltaSolution.cpp)
+
+The source code contains the kinematic equations used to convert between Cartesian coordinates and delta tower positions.
+
+## See Also
+
+- [Arm Solutions](arm-solutions) - Overview of all arm solution types
+- [Rotary Delta](rotary-delta) - Alternative delta design with rotating joints
+- [Cartesian](cartesian) - Standard Cartesian configuration
+- [ZProbe](zprobe) - Automatic bed leveling and calibration
+- [Delta Calibration Strategy](delta-calibration-strategy) - Automated delta calibration
+- [Motion Control](motion-control) - General motion control configuration

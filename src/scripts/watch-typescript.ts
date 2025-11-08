@@ -75,7 +75,7 @@ async function compile_all_typescript_files(): Promise<void> {
                 entrypoints: [input_path],
                 outdir:      JS_OUTPUT_DIR,
                 target:      'browser',
-                format:      'esm',
+                format:      'iife',
                 minify:      false,
                 sourcemap:   'none',
                 splitting:   false,  // Bundle all imports into the output file

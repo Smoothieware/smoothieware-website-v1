@@ -261,6 +261,11 @@ function create_popup_for_code($code_element: JQuery<HTMLElement>, code: string,
             const code_map = is_gcode ? gcode_data : mcode_data;
             const code_info = code_map[code];
 
+            console.log(`[code-tag.ts] Looking up code: "${code}", is_gcode: ${is_gcode}`);
+            console.log('[code-tag.ts] code_map keys:', Object.keys(code_map));
+            console.log('[code-tag.ts] code_info:', code_info);
+            console.log('[code-tag.ts] compiled_code_popup_template exists:', !!compiled_code_popup_template);
+
             // If no template or no code info, show error
             if (!compiled_code_popup_template || !code_info) {
                 $popup.find('.code-popup-content').html('<p>Code data not available</p>');
@@ -312,6 +317,7 @@ $(() => {
 
         console.log('[code-tag.ts] Template and data loaded, processing tags');
         console.log('[code-tag.ts] compiled_code_popup_template type:', typeof compiled_code_popup_template);
+        console.log('[code-tag.ts] compiled_code_popup_template value:', compiled_code_popup_template);
 
         // Find all <gcode> and <mcode> elements in the page
         const $gcode_elements = $('gcode');
@@ -328,8 +334,12 @@ $(() => {
         // Process each gcode tag
         $gcode_elements.each(function(this: HTMLElement) {
 
-            // Get the text content
+            // Get the text content (may include parameters like "G92 E0")
             const text_content = $(this).text().trim();
+
+            // Extract the code command (first part before any space)
+            // This is used for database lookup
+            const code_command = text_content.split(/\s+/)[0];
 
             // Wrap the first letter (G) in colored span
             const first_letter = escape_html(text_content.charAt(0));
@@ -343,16 +353,21 @@ $(() => {
             $(this).html(html_structure);
 
             // Create popup once for this tag (matches setting-tag.ts pattern)
-            create_popup_for_code($(this), text_content, true);
+            // Use code_command (not full text_content) for database lookup
+            create_popup_for_code($(this), code_command, true);
 
-            console.log(`[code-tag.ts] Processed gcode tag: "${text_content}"`);
+            console.log(`[code-tag.ts] Processed gcode tag: "${text_content}" (lookup: "${code_command}")`);
         });
 
         // Process each mcode tag
         $mcode_elements.each(function(this: HTMLElement) {
 
-            // Get the text content
+            // Get the text content (may include parameters like "M104 S200")
             const text_content = $(this).text().trim();
+
+            // Extract the code command (first part before any space)
+            // This is used for database lookup
+            const code_command = text_content.split(/\s+/)[0];
 
             // Wrap the first letter (M) in colored span
             const first_letter = escape_html(text_content.charAt(0));
@@ -366,9 +381,12 @@ $(() => {
             $(this).html(html_structure);
 
             // Create popup once for this tag (matches setting-tag.ts pattern)
-            create_popup_for_code($(this), text_content, false);
+            // Use code_command (not full text_content) for database lookup
+            create_popup_for_code($(this), code_command, false);
 
-            console.log(`[code-tag.ts] Processed mcode tag: "${text_content}"`);
+            console.log(`[code-tag.ts] Processed mcode tag: "${text_content}" (lookup: "${code_command}")`);
         });
+    }).catch((error) => {
+        console.error('[code-tag.ts] Error loading template or data:', error);
     });
 });

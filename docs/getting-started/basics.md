@@ -5,12 +5,43 @@ permalink: /basics
 # Smoothie basics
 
 {::nomarkdown}
+<sl-alert variant="primary" open>
+  <sl-icon slot="icon" name="book"></sl-icon>
+  <strong>This page explains concepts</strong><br>
+  This is a reference for understanding terminology, principles, and how things work. If you're looking for step-by-step setup instructions, see the <a href="getting-started">Getting Started Guide</a> instead.
+</sl-alert>
+{:/nomarkdown}
+
+{::nomarkdown}
 <a href="/images/board.png">
   <img src="/images/board.png" alt="Board" style="width: 300px; height: 300px; float: right; margin-left: 1rem;"/>
 </a>
 {:/nomarkdown}
 
 Here are some basic notions and pointers about Smoothie.
+
+## Quick Terminology Reference
+
+New to CNC? Here are the essential terms you'll see throughout this documentation:
+
+| Term | What it means |
+|------|---------------|
+| **Smoothie** | The firmware (software) that runs on the microcontroller |
+| **Smoothieboard** | The physical controller board (hardware) |
+| **Firmware** | Software stored permanently on a chip that controls hardware |
+| **G-code** | The language used to command CNC machines (like "G0 X10" to move to position X=10) |
+| **Host software** | The program on your computer that sends commands to the board |
+| **Microcontroller** | A small computer chip dedicated to controlling hardware |
+| **CAD** | Computer-Aided Design software for creating models |
+| **CAM** | Computer-Aided Manufacturing software that converts models to G-code |
+| **Slicer** | CAM software specifically for 3D printing |
+| **CNC** | Computer Numerical Control - using computers to control machines |
+| **Stepper motor** | A motor that moves in precise, discrete steps |
+| **Endstop** | A limit switch that tells the machine where an axis ends |
+| **Homing** | The process of finding the origin point (0,0,0) using endstops |
+| **Feed rate** | The speed at which the tool moves during operation |
+| **Acceleration** | How quickly the machine speeds up or slows down |
+| **Steps per mm** | How many motor steps equal one millimeter of movement |
 
 ## What is Smoothie?
 
@@ -26,10 +57,478 @@ If you are curious, you can find a list of G-codes for Smoothie, and their expla
 
 This allows you to use Smoothie to execute [CNC](http://en.wikipedia.org/wiki/Numerical_control) operations.
 
+## Hardware vs Software: The Distinction
+
+One of the most common points of confusion: **Smoothie is not Smoothieboard**.
+
+### Smoothie (the firmware)
+
+Smoothie is software - specifically, [firmware](http://en.wikipedia.org/wiki/Firmware).
+
+Firmware is software that lives permanently on a microcontroller chip and directly controls hardware. Unlike programs on your computer that can be closed and restarted, firmware runs continuously from the moment the board powers on until it's turned off.
+
+Think of it like this:
+- Your computer has an operating system (Windows, Linux, macOS)
+- Your phone has an operating system (iOS, Android)
+- Your Smoothieboard has Smoothie
+
+The firmware:
+- Interprets G-code commands
+- Controls stepper motors with precise timing
+- Manages temperature sensors and heaters
+- Coordinates motion planning and acceleration
+- Handles communication over USB/Ethernet
+
+### Smoothieboard (the hardware)
+
+Smoothieboard is the physical controller board - the actual circuit board with chips, connectors, and components.
+
+The board contains:
+- A microcontroller chip (LPC1769 on v1, STM32H745 on v2)
+- Stepper motor drivers
+- MOSFETs for controlling heaters and other high-power devices
+- Connectors for motors, sensors, and peripherals
+- SD card slot
+- USB and Ethernet ports
+
+The Smoothieboard is the platform that Smoothie firmware runs on.
+
+### Why the distinction matters
+
+- You can **update Smoothie firmware** without changing hardware
+- You can potentially run Smoothie on **other boards** (not just Smoothieboard)
+- When someone says "my Smoothie isn't working," they could mean firmware (software problem) or hardware (physical problem)
+- Configuration changes affect the **firmware's behavior**, not the hardware itself
+
+### Versions
+
+- **Smoothieboard v1** = LPC1769 processor, widely used, stable
+- **Smoothieboard v2** = STM32H745 processor, more powerful, newer
+
+Both run Smoothie firmware, but the hardware capabilities differ. See [Smoothieboard](smoothieboard) for detailed hardware specifications.
+
+## What is G-code?
+
+G-code is the universal language of CNC machines. Understanding it helps you troubleshoot, modify, and create machine programs.
+
+### The basics
+
+G-code is a simple text format where each line is a command:
+
+```
+G28           ; Home all axes
+G0 X10 Y20    ; Rapid move to X=10mm, Y=20mm
+G1 X50 F1000  ; Linear move to X=50mm at 1000mm/min
+M104 S200     ; Set hotend temperature to 200°C
+```
+
+### Command structure
+
+**G-codes** (like G0, G1, G28):
+- Motion commands (G0 = rapid move, G1 = controlled move)
+- Positioning commands (G28 = home, G92 = set position)
+- Coordinate system commands (G90 = absolute, G91 = relative)
+
+**M-codes** (like M104, M106):
+- Machine control (M104 = set temp, M106 = fan on)
+- Program control (M0 = pause, M30 = end program)
+- Configuration (M92 = set steps/mm, M203 = set max speeds)
+
+**Parameters** (like X10, F1000, S200):
+- Values that modify commands
+- X/Y/Z = positions
+- F = feed rate (speed)
+- S = spindle speed or temperature or other parameter depending on context
+
+**Comments** (text after `;`):
+- Explanations ignored by the machine
+- Useful for documenting what the code does
+
+### How G-code files work
+
+A typical G-code file might have thousands of lines:
+```
+G21           ; Use millimeters
+G90           ; Absolute positioning
+G28           ; Home all axes
+M104 S200     ; Heat hotend to 200°C
+M190 S60      ; Heat bed to 60°C and wait
+G1 X50 Y50 F3000  ; Move to start position
+G1 Z0.2       ; Lower to first layer height
+... thousands more lines ...
+M104 S0       ; Turn off hotend
+M140 S0       ; Turn off bed
+M84           ; Disable motors
+```
+
+### Where G-code comes from
+
+You don't write G-code by hand (usually). CAM software generates it:
+
+- **3D printing**: Slicer software (Slic3r, Cura) converts STL → G-code
+- **Laser cutting**: CAM software (LightBurn) converts SVG/DXF → G-code
+- **CNC milling**: CAM software (Fusion360, CamBam) converts STL/DXF → G-code
+
+The CAM software figures out the optimal tool paths and outputs the G-code that makes it happen.
+
+### Smoothie's G-code support
+
+Smoothie implements the most common G-codes used in CNC operations.
+
+See [Supported G-codes](supported-g-codes) for the complete list of what Smoothie understands.
+
+## CNC Fundamentals
+
+**CNC** = Computer Numerical Control. Using computers to control machine tools with precision and repeatability.
+
+### Coordinate systems
+
+CNC machines work in a coordinate space:
+
+**Cartesian systems** (most common):
+- **X axis**: Typically left/right (horizontal)
+- **Y axis**: Typically front/back (horizontal, perpendicular to X)
+- **Z axis**: Typically up/down (vertical)
+
+**Additional axes**:
+- **A, B, C**: Rotational axes (advanced, not always present)
+- **E**: Extruder axis (3D printers)
+
+### Origin and homing
+
+**Origin (0,0,0)**: The reference point for all coordinates
+
+**Homing**: The process of finding the origin using endstops (limit switches):
+- Machine moves each axis until it hits the endstop
+- That position becomes 0 for that axis
+- Now the machine knows where it is in space
+
+**Work coordinates vs Machine coordinates**:
+- Machine coordinates: Relative to the physical endstops
+- Work coordinates: Relative to your workpiece (can be offset)
+
+### Motion types
+
+**Rapid positioning (G0)**:
+- Fast move to get the tool in position
+- Not for cutting/printing - just positioning
+- Uses maximum speed
+
+**Linear interpolation (G1)**:
+- Controlled movement at a specified feed rate
+- Used for actual work (cutting, printing, engraving)
+- Example: `G1 X100 Y50 F1000` (move to X=100, Y=50 at 1000mm/min)
+
+**Arc interpolation (G2/G3)**:
+- Circular/curved motion
+- G2 = clockwise, G3 = counterclockwise
+- Used for smooth curves without lots of tiny line segments
+
+### Feed rate
+
+**Feed rate** = how fast the tool moves during work
+
+- Measured in mm/minute or mm/second (Smoothie uses mm/minute)
+- Different materials/operations need different feed rates:
+  - Too fast: Poor quality, missed steps, tool breakage
+  - Too slow: Wasted time, heat buildup, poor finish
+
+### Acceleration
+
+Machines can't instantly change speed - they need to accelerate and decelerate.
+
+**Why acceleration matters**:
+- Prevents lost steps (motors can't keep up)
+- Reduces vibration and ringing
+- Protects mechanical components from shock
+
+**Too much acceleration**: Machine shakes, parts wear out, quality suffers
+**Too little acceleration**: Slow, inefficient operation
+
+Smoothie handles acceleration planning automatically - you just set the limits in configuration.
+
+### Steps per millimeter
+
+Stepper motors move in discrete steps, not continuous rotation.
+
+**Steps per mm** tells Smoothie: "How many motor steps = 1mm of motion?"
+
+This depends on:
+- Motor steps per revolution (usually 200)
+- Microstepping (1, 1/2, 1/4, 1/8, 1/16, 1/32, etc.)
+- Mechanical setup (belt pitch, pulley teeth, leadscrew pitch, etc.)
+
+Getting this right is critical for dimensional accuracy.
+
+### Coordinate modes
+
+**Absolute positioning (G90)**:
+- Positions are relative to the origin
+- `G1 X100` means "go to position 100mm from origin"
+
+**Relative positioning (G91)**:
+- Positions are relative to current location
+- `G1 X100` means "move 100mm from wherever you are now"
+
+Most G-code uses absolute mode (G90) because it's more predictable.
+
+For more details on motion control, see [Motion Control](motion-control).
+
+## Smoothie's Architecture: The Module System
+
+Understanding how Smoothie is organized internally helps you configure it effectively and understand what each configuration option does.
+
+### Modular design
+
+Smoothie isn't one monolithic program. It's built from independent **modules** that each handle specific functions:
+
+**Core modules everyone uses**:
+- **Motion module**: Coordinates motor movements, handles acceleration planning
+- **Endstops module**: Manages limit switches and homing
+- **Switch module**: Creates custom G-code → I/O mappings
+
+**Tool modules** (use what your machine needs):
+- **Extruder module**: Controls extruder for 3D printing
+- **Temperature control module**: Manages heaters and monitors thermistors
+- **Laser module**: Controls laser power for cutting/engraving
+- **Spindle module**: Controls spindle for CNC milling
+- **ZProbe module**: Handles bed leveling and probing
+
+**Communication modules**:
+- **Network module**: Ethernet, web interface, FTP
+- **USB module**: USB serial communication
+- **Player module**: Plays G-code files from SD card
+
+**Utility modules**:
+- **Panel module**: Support for LCD panels and encoders
+- **Current control module**: Digital stepper current control
+- **Kill button module**: Software-based emergency stop
+
+### Event-driven design
+
+Modules communicate through an **event system**:
+
+1. Something happens (G-code arrives, timer fires, endstop triggers)
+2. An **event** is broadcast
+3. Modules that care about that event respond
+4. Modules that don't care ignore it
+
+This allows:
+- Adding new features without modifying core code
+- Modules to work independently
+- Easy customization and extension
+
+For developers: see [Module Example](moduleexample) and [List of Events](listofevents).
+
+### Configuration implications
+
+Because of this modular design:
+
+**Each module has its own config section**:
+```
+# Extruder module configuration
+extruder.hotend.enable           true
+extruder.hotend.steps_per_mm     140
+
+# Temperature control module configuration
+temperature_control.hotend.enable           true
+temperature_control.hotend.thermistor_pin   0.23
+
+# Switch module configuration
+switch.fan.enable               true
+switch.fan.input_pin            2.6
+```
+
+**You only configure modules you're using**:
+- 3D printer? Enable extruder and temperature control
+- Laser cutter? Enable laser module
+- CNC mill? Enable spindle module
+
+**Modules can be enabled/disabled independently**:
+- Set `enable false` to turn off a module
+- No wasted resources on unused features
+
+Understanding the module system explains why the config file is organized the way it is.
+
+See [Configuring Smoothie](configuring-smoothie) for practical configuration guidance.
+
+## Understanding Configuration
+
+Configuration deserves special attention because it's how you tell Smoothie about your specific machine.
+
+### The config file format
+
+Dead simple: key = value pairs with comments
+
+```
+# This is a comment - Smoothie ignores it
+
+default_feed_rate    4000     # Default speed in mm/minute
+acceleration         3000     # Acceleration in mm/sec^2
+alpha_steps_per_mm   80       # Steps per mm for X axis (alpha)
+```
+
+**Format rules**:
+- Lines starting with `#` are ignored (comments)
+- Anything after `#` on a line is ignored
+- Format: `option_name  value  # comment`
+- Whitespace doesn't matter (use spaces or tabs)
+- Lines must be under 132 characters
+- File must be ANSI encoded (not UTF-8)
+
+### How it works
+
+1. Edit the config file on the SD card
+2. Safely eject/unmount the SD card from your computer
+3. Reset Smoothieboard (button or power cycle)
+4. Smoothie reads the config on boot and applies settings
+5. Changes take effect immediately
+
+**Important**: Changes ONLY take effect after reset. Editing while the machine runs does nothing until you reset.
+
+### Config organization
+
+The config file is organized by module:
+
+```
+# Motion Control Module
+default_feed_rate              4000
+default_seek_rate              4000
+acceleration                   3000
+junction_deviation             0.05
+
+# Stepper Motor Module
+alpha_steps_per_mm             80
+beta_steps_per_mm              80
+gamma_steps_per_mm             2560
+
+# Extruder Module
+extruder.hotend.enable         true
+extruder.hotend.steps_per_mm   140
+extruder.hotend.max_speed      50
+
+# Temperature Control Module
+temperature_control.hotend.enable           true
+temperature_control.hotend.thermistor_pin   0.23
+temperature_control.hotend.heater_pin       2.7
+```
+
+Each section configures a specific module. This matches the module architecture described above.
+
+### Axis naming convention
+
+Smoothie uses Greek letters internally but X/Y/Z in G-code:
+
+| G-code axis | Config prefix | Typical use |
+|-------------|---------------|-------------|
+| X | `alpha` | Left/right |
+| Y | `beta` | Front/back |
+| Z | `gamma` | Up/down |
+| A | `delta` | 4th axis rotation or delta kinematics |
+| B | `epsilon` | 5th axis rotation |
+| C | `zeta` | 6th axis rotation |
+| E | `extruder` | 3D printer extruder |
+
+So `alpha_steps_per_mm` configures the X axis, `beta_steps_per_mm` configures Y, etc.
+
+### Config override file
+
+Certain M-codes can modify settings at runtime and save them to `config-override`:
+
+```
+M92 X80 Y80 Z400       ; Set steps per mm
+M500                   ; Save to config-override
+```
+
+If `config-override` exists:
+- It's loaded AFTER the main config file
+- Values in override file take precedence
+- This lets you tune settings without editing config
+
+**To remove overrides**: Delete `config-override` or use `M502`
+
+See [Configuring Smoothie](configuring-smoothie) for complete details and [Configuration Options](configuration-options) for all available options.
+
+## The Three-Stage Process: Design → Generate → Fabricate
+
+Every CNC project follows the same basic pattern, regardless of whether you're 3D printing, laser cutting, or CNC milling.
+
+Understanding this workflow helps you:
+- Troubleshoot problems (which stage is failing?)
+- Choose appropriate software
+- Understand what each file type is for
+- Communicate clearly when asking for help
+
+### Stage 1: Design (CAD)
+
+**Goal**: Create a digital model of what you want to make
+
+**Tools**: CAD software
+- 3D modeling: OpenSCAD, Fusion360, Blender, FreeCAD
+- 2D design: Inkscape, Adobe Illustrator, CorelDRAW
+
+**Output**: A model file
+- 3D: STL, OBJ, STEP
+- 2D: SVG, DXF, PDF
+
+At this stage you're just designing - no machine involved yet.
+
+### Stage 2: Generate (CAM/Slicing)
+
+**Goal**: Convert your model into machine instructions (G-code)
+
+**Tools**: CAM software or Slicers
+- 3D printing: Slic3r, Cura, PrusaSlicer
+- Laser cutting: LightBurn, LaserWeb
+- CNC milling: Fusion360 CAM, CamBam, EstlCAM
+
+**Output**: G-code file
+- Contains thousands of movement commands
+- Optimized tool paths
+- Specific to your machine's capabilities
+
+This is where you tell the software:
+- Material type and thickness
+- Tool specifications (nozzle size, bit diameter, laser power)
+- Speeds and feeds
+- Work offsets and orientation
+
+### Stage 3: Fabricate (G-code Execution)
+
+**Goal**: Send G-code to Smoothieboard and create the physical object
+
+**Tools**: Host software
+- Pronterface, Octoprint (3D printing)
+- LightBurn (laser cutting)
+- bCNC, CNCjs (CNC milling)
+- Or directly from SD card
+
+**Output**: Your finished physical object
+
+This is where Smoothieboard comes in:
+- Host software streams G-code line-by-line
+- Smoothie interprets each command
+- Motors move, tools operate
+- Object gets created
+
+### Common file formats explained
+
+| Format | Stage | Contains | Used For |
+|--------|-------|----------|----------|
+| STL | Design output | 3D mesh (triangles) | 3D printing, 3D milling |
+| DXF | Design output | 2D vectors | Laser cutting, 2D milling |
+| SVG | Design output | 2D vectors | Laser cutting, engraving |
+| G-code | Generate output | Machine commands | All CNC operations |
+
+**Why you can't skip the CAM stage**: Your machine doesn't understand STL or DXF files directly. It only understands G-code. CAM software figures out how to move the tool to create your design.
+
+Now let's look at specific workflows for different machine types:
+
 ## Workflow examples
 
 Some examples of workflow:
 
+{::nomarkdown}
 <sl-alert variant="neutral" open>
   <sl-icon slot="icon" name="info-circle"></sl-icon>
   <strong>3D printer workflow</strong>
@@ -43,7 +542,9 @@ Some examples of workflow:
     <li>The motors move, the extruder extrudes, and a nice-looking 3D printed object gets created.</li>
   </ul>
 </sl-alert>
+{:/nomarkdown}
 
+{::nomarkdown}
 <sl-alert variant="neutral" open>
   <sl-icon slot="icon" name="info-circle"></sl-icon>
   <strong>CNC milling machine workflow</strong>
@@ -57,53 +558,299 @@ Some examples of workflow:
     <li>The motors move, spindle spindles, and a milled object gets carved out of material.</li>
   </ul>
 </sl-alert>
+{:/nomarkdown}
 
 The workflow is very similar for a laser cutter, as it is essentially a CNC mill with a very very thin tool (the laser beam).
 
-## Smoothie adventure
+### Why the workflow matters
 
-When setting up a machine to be controlled by a [Smoothieboard](smoothieboard), the process is generally as follows:
+**When something goes wrong, ask**:
+- Design stage issue? Wrong dimensions, bad geometry → Fix in CAD
+- Generate stage issue? Wrong feeds, bad tool paths → Fix CAM settings
+- Fabricate stage issue? Motors skipping, poor quality → Fix machine config or mechanical issues
 
-- Before anything else, read the guide for your machine type: [3D printer guide](3d-printer-guide), [laser cutter guide](laser-cutter-guide) or [cnc mill guide](cnc-mill-guide), in its entirety.
+**File format troubleshooting**:
+- Host software can't open your file? → Wrong file type, probably need to run CAM first
+- G-code looks wrong? → Problem in CAM stage, regenerate with different settings
+- Model looks wrong? → Problem in CAD stage, fix design
 
-- If using Windows, install the [driver](windows-drivers).
+Understanding the stages prevents hours of debugging the wrong thing.
 
-- Install some [software](software) to talk to the board.
+## File Types: What They Are and What They're For
 
-- Connect your board to your computer via [usb](usb) or [ethernet](network) and practice talking to it.
+Understanding file types helps you:
+- Know which software opens which files
+- Understand error messages about file formats
+- Organize your workflow properly
 
-- Now following the guide, start plugging peripherals into your board, and editing your [configuration](configuring-smoothie) accordingly.
+### Design stage files
 
-- Test each thing before moving on the the next, it helps make sure if there is a problem you know exactly where it happens.
+**STL (StereoLithography)**:
+- Contains: 3D mesh made of triangles
+- Created by: 3D CAD software
+- Used for: 3D printing, 3D milling
+- Can't be edited without CAD software
+- Standard format across all 3D printing
 
-- Once everything works, you can start using your machine to fabricate things.
+**DXF (Drawing eXchange Format)**:
+- Contains: 2D vectors (lines, arcs, circles)
+- Created by: 2D CAD software
+- Used for: Laser cutting, 2D milling, drilling patterns
+- Can be opened in most CAD and CAM software
 
-## Communication
+**SVG (Scalable Vector Graphics)**:
+- Contains: 2D vectors
+- Created by: Vector graphics software (Inkscape, Illustrator)
+- Used for: Laser cutting, engraving
+- Web-friendly format
 
-You can't do anything if you can't talk to your [Smoothieboard](smoothieboard).
+### Generate stage files
 
-The usual way to do so is to simply connect a USB cable to your Smoothieboard, then to your computer, and then to connect your host software to the Smoothieboard.
+**G-code (.gcode, .nc, .cnc, .tap)**:
+- Contains: Machine movement commands
+- Created by: CAM software or slicers
+- Used for: Actually running the machine
+- Plain text, human-readable (if you know G-code)
+- Different extensions, same content
 
-See your host software of choice's documentation on this matter.
+**Toolpath files** (various formats):
+- Some CAM software uses intermediate formats
+- Usually converted to G-code before sending to machine
 
-The Host software will then provide you with a graphical user interface to interact with your Smoothieboard (and therefore with your machine), and you shouldn't have to worry about communication more than this.
+### Smoothie-specific files
 
-<sl-alert variant="primary" open>
-  <sl-icon slot="icon" name="lightbulb"></sl-icon>
-  <strong>Additional communication options</strong>
-  <ul>
-    <li>Aside from connecting via the USB cable, you can also use the on-board Ethernet connector to interface with the board, see <a href="ethernet">Ethernet</a>. This provides a telnet interface (similar to the Serial/USB interface the USB cable offers), and a Web interface. One advantage of this is that Ethernet is less prone to suffer from <a href="http://en.wikipedia.org/wiki/Electromagnetic_interference">Electromagnetic interference</a> problems than USB.</li>
-    <li>Smoothieboard has an on-board SD card. Instead of using your host software to stream your G-code program line by line, you can also upload it all at once to the SD card, then execute it from there. This removes the bottleneck of communication while printing (though that is very rarely a problem). See <a href="/printing-from-sd-card">Printing from the SD Card</a>.</li>
-    <li>Smoothie has a set of commands you can use to interact with and configure the board. See <a href="/console-commands">Console Commands</a>.</li>
-    <li>The G-codes that Smoothie understands are listed at <a href="/supported-g-codes">Supported G-codes</a>.</li>
-  </ul>
-</sl-alert>
+**config or config.txt**:
+- Contains: Smoothie configuration options
+- Format: Plain text key-value pairs
+- Location: SD card root
+- Purpose: Tells Smoothie how your machine is set up
 
-## Electricity
+**firmware.bin**:
+- Contains: Smoothie firmware (compiled binary)
+- Format: Binary executable
+- Location: SD card root
+- Purpose: Updates the firmware when present on boot
 
-When reading this documentation, understanding of basic principles of electricity will be expected and can not be done without.
+**config-override**:
+- Contains: Settings saved by M-codes (M500)
+- Format: Plain text G-code commands
+- Location: SD card root
+- Purpose: Overrides values in config file
 
-Here are a few videos to refresh your memory:
+**on_boot.gcode**:
+- Contains: G-code to run automatically on boot
+- Format: Plain text G-code
+- Location: SD card root
+- Purpose: Automate startup tasks (homing, heating, etc.)
+
+### Common confusion
+
+**"My slicer won't open my STL file"**
+→ Check the file isn't corrupted. Try opening in CAD software first.
+
+**"Smoothieboard won't accept my STL file"**
+→ Smoothie doesn't understand STL. You must slice it to G-code first.
+
+**"My G-code from Machine A doesn't work on Machine B"**
+→ G-code is machine-specific. Different sizes, different setups = different G-code.
+
+**"Can I edit G-code directly?"**
+→ Yes, it's plain text. But it's tedious and error-prone. Better to fix CAM settings and regenerate.
+
+**"Which file do I put on the SD card?"**
+→ Config file + G-code files. Firmware only when updating.
+
+## How Communication Works
+
+Understanding how your computer talks to Smoothieboard helps you troubleshoot problems and choose the right method for your setup.
+
+### The three communication paths
+
+**1. USB Serial** (most common)
+
+When you plug in a USB cable:
+- Your computer sees Smoothieboard as two devices:
+  - A **serial port** (for sending commands)
+  - A **USB drive** (the SD card)
+
+The serial port uses a "ping-pong" protocol:
+1. Computer sends a line of G-code
+2. Smoothie receives it, processes it, sends "ok"
+3. Computer waits for "ok" before sending the next line
+4. Repeat until done
+
+**Important**: "ok" means "received and queued" not "finished executing". The command is buffered for motion planning. Use `M400` if you need to wait for actual completion.
+
+**2. Ethernet** (alternative)
+
+The Ethernet port provides:
+- **Telnet interface**: Like USB serial, but over network
+- **Web interface**: Control via web browser
+- **FTP**: Upload files to SD card remotely
+
+Advantages:
+- Less prone to electromagnetic interference than USB
+- Can control the machine remotely
+- Multiple clients can monitor status
+
+See [Network](network) for setup details.
+
+**3. SD Card** (standalone)
+
+The SD card allows operation without a computer:
+- Copy G-code files to the SD card
+- Use the web interface or panel to select and play files
+- Machine runs independently
+
+Perfect for production runs where you don't want a computer connected.
+
+### The protocol in detail
+
+Smoothie uses the RepRap "ping-pong" protocol developed for 3D printers:
+
+**For developers/advanced users**:
+- `G1` commands send "ok" immediately upon receipt (before queuing)
+- Other commands send "ok" when queued
+- If the buffer is full, "ok" waits until there's room
+- Never send the next line until you receive "ok"
+- Violating this causes undefined behavior
+
+**Special jog command** (`$J`):
+- Bypasses the motion planning delay
+- Executes immediately even if buffer is empty
+- Useful for manual control and pendants
+
+For complete protocol details, see [Communication](communication).
+
+### Console commands
+
+Beyond G-code, Smoothie has text commands for configuration and control:
+
+```
+version           - Show firmware version
+help              - List available commands
+config-get sd acceleration  - Read a config value
+config-set sd acceleration 1000  - Set a config value
+ls /sd            - List files on SD card
+play /sd/file.gcode  - Play a file from SD
+```
+
+These commands let you interact with Smoothie directly without G-code.
+
+See [Console Commands](console-commands) for the complete reference.
+
+### File types on the SD card
+
+The SD card stores several types of files:
+
+| File | Purpose |
+|------|---------|
+| `config` or `config.txt` | Main configuration file (required) |
+| `firmware.bin` | Firmware update file (board flashes this on boot if present) |
+| `config-override` | M-code saved settings that override config file |
+| `on_boot.gcode` | G-code executed automatically every boot |
+| `*.gcode`, `*.nc`, `*.cnc` | Your G-code programs |
+
+Understanding what these files do helps you organize your SD card and troubleshoot issues.
+
+See [SD Card](sd-card) for more details.
+
+## Common Misconceptions
+
+Let's clear up some common confusion:
+
+### About firmware and configuration
+
+**❌ "I need to compile firmware to change settings"**
+✅ Wrong. Configuration is done via text file on SD card. Edit config, save, reset - done.
+
+**❌ "Smoothie and Smoothieboard are the same thing"**
+✅ Wrong. Smoothie = firmware (software). Smoothieboard = controller board (hardware).
+
+**❌ "I need to update firmware regularly"**
+✅ Wrong. Smoothie is very stable. Most users never update after initial setup. Only update if you need new features or bug fixes.
+
+### About G-code and communication
+
+**❌ "'ok' means the command finished executing"**
+✅ Wrong. "ok" means "received and queued". Use `M400` to wait for actual completion.
+
+**❌ "I can edit config while the machine is running"**
+✅ Wrong. Config changes require board reset. Use M-codes (M92, M203, etc.) for runtime changes, save with M500 if desired.
+
+**❌ "More acceleration is always better"**
+✅ Wrong. Excessive acceleration causes ringing, vibration, and mechanical wear. Tune to your machine's mechanical capabilities.
+
+**❌ "The SD card mounts automatically so I can edit files anytime"**
+✅ Wrong. Concurrent access from computer and Smoothie corrupts SD cards. Always unmount before operations, reset board after editing.
+
+### About hardware
+
+**❌ "Higher microstepping always gives better precision"**
+✅ Half-truth. Microstepping smooths motion but doesn't increase precision beyond ~1/16. Mechanical factors (backlash, belt stretch) limit real precision more than stepping.
+
+**❌ "I can just copy someone else's config file"**
+✅ Wrong. Every machine is different. Motor specs, mechanical setup, wiring - all affect config values. Use example configs as templates, not final solutions.
+
+**❌ "12V and 24V are interchangeable"**
+✅ Very wrong. Components are rated for specific voltages. Using wrong voltage destroys things.
+
+### About troubleshooting
+
+**❌ "If it's not in the config file, it doesn't matter"**
+✅ Wrong. Wiring, mechanical setup, electrical safety, proper grounding - all matter. Config can't fix hardware problems.
+
+When in doubt, start with the basics: check wiring, verify config values, test one thing at a time.
+
+## Electrical Fundamentals (Required Knowledge)
+
+Working with Smoothieboard means working with electricity. You don't need an electrical engineering degree, but you do need to understand the basics.
+
+**This isn't optional.** If you don't understand voltage, current, and polarity, you will:
+- Connect things incorrectly and damage components
+- Create fire hazards
+- Waste time troubleshooting problems you created
+- Potentially injure yourself
+
+### What you must understand
+
+Before wiring anything:
+
+**Voltage (Volts, V)**:
+- Electrical "pressure" or potential
+- Different components need different voltages (5V, 12V, 24V, etc.)
+- Wrong voltage = damaged components
+- Symbol: V
+
+**Current (Amperes, Amps, A)**:
+- Flow of electricity
+- Components draw current based on their needs
+- Your power supply must provide enough current
+- Wrong current capacity = insufficient power or fire
+- Symbol: A or I
+
+**Resistance (Ohms, Ω)**:
+- Opposition to current flow
+- Determines how much current flows at a given voltage
+- Ohm's Law: V = I × R (voltage = current × resistance)
+- Symbol: Ω
+
+**Power (Watts, W)**:
+- Rate of energy use
+- Power = Voltage × Current (P = V × I)
+- Determines heat generation
+- Your PSU must provide enough wattage
+- Symbol: W
+
+**Polarity**:
+- Positive (+) and negative (-)
+- DC current flows from + to -
+- **Reversing polarity destroys components**
+- Always double-check polarity before connecting power
+
+### Educational resources
+
+If any of the above is unclear, watch these videos before attempting any wiring:
 
 ### What is electricity
 
@@ -148,3 +895,56 @@ Here are a few videos to refresh your memory:
 There is very little math in these videos (except the last one), if you have a hard time with what's still there, we warmly recommend heading over to [Khan Academy](https://www.khanacademy.org/)'s math videos for easy to digest courses.
 
 If you want to go further on this subject, you can also follow this [basic Electrical Engineering](https://www.khanacademy.org/science/electrical-engineering/introduction-to-ee) video course.
+
+### Practical application to Smoothieboard
+
+**When wiring your machine, you'll need to:**
+
+- Choose appropriate power supply voltage (12V vs 24V)
+- Calculate total current requirements (motors + heaters + electronics)
+- Select correct wire gauge based on current
+- Understand polarity for stepper motors, thermistors, and power inputs
+- Calculate power dissipation for MOSFETs and heaters
+
+**Common voltage levels in CNC**:
+- **5V**: Logic level, some sensors
+- **12V**: Common for motors, heaters, fans
+- **24V**: Often used for motors and heaters
+- **120V/230V AC**: Main power input (dangerous - respect it)
+
+**Why 24V is often used instead of 12V**:
+- Higher voltage = lower current for same power
+- Lower current = less voltage drop in wires
+- Better performance for steppers (higher speeds possible)
+- Less heat generation in wiring
+
+For detailed wiring instructions and safety, see [How to Wire](how-to-wire).
+
+## Further Reading
+
+**Now that you understand the concepts, explore the details**:
+
+**Core documentation**:
+- [Getting Started](getting-started) - Step-by-step setup guide
+- [Configuring Smoothie](configuring-smoothie) - Complete configuration reference
+- [Console Commands](console-commands) - All available commands
+- [Supported G-codes](supported-g-codes) - G-code reference
+
+**Technical deep dives**:
+- [Motion Control](motion-control) - Motion planning, acceleration, kinematics
+- [Module Example](moduleexample) - How modules work (for developers)
+- [How it Works](howitworks) - Inner workings of Smoothie firmware
+
+**Hardware**:
+- [Smoothieboard](smoothieboard) - Hardware specifications
+- [Pinout](pinout) - Pin diagrams and capabilities
+- [How to Wire](how-to-wire) - Wiring best practices and safety
+
+**Machine-specific**:
+- [3D Printer Guide](3d-printer-guide)
+- [Laser Cutter Guide](laser-cutter-guide)
+- [CNC Mill Guide](cnc-mill-guide)
+- [Pick and Place Guide](pick-and-place-guide)
+
+**When things break**:
+- [Troubleshooting](troubleshooting) - Common problems and solutions
