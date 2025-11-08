@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="{{ '/assets/css/code-popup.css' | relative_url }}">
     <link rel="stylesheet" href="{{ '/assets/css/pin-tag.css' | relative_url }}">
     <link rel="stylesheet" href="{{ '/assets/css/pin-popup.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/css/version-selector.css' | relative_url }}">
     <script src="{{ '/assets/js/respond.js' | relative_url }}"></script>
     <!--[if lt IE 9]>
       <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -36,12 +37,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
     <!-- AUTO-GENERATED TYPESCRIPT SCRIPTS START -->
-    <script type="module" src="{{ '/assets/js/load-assets.js' | relative_url }}?v={{ site.time | date: '%s' }}"></script>
-    <script type="module" src="{{ '/assets/js/raw-tag.js' | relative_url }}?v={{ site.time | date: '%s' }}"></script>
-    <script type="module" src="{{ '/assets/js/code-tag.js' | relative_url }}?v={{ site.time | date: '%s' }}"></script>
-    <script type="module" src="{{ '/assets/js/setting-tag.js' | relative_url }}?v={{ site.time | date: '%s' }}"></script>
-    <script type="module" src="{{ '/assets/js/animate.js' | relative_url }}?v={{ site.time | date: '%s' }}"></script>
-    <script type="module" src="{{ '/assets/js/pin-tag.js' | relative_url }}?v={{ site.time | date: '%s' }}"></script>
+    <script src="{{ '/assets/js/load-assets.js' | relative_url }}"></script>
+    <script src="{{ '/assets/js/raw-tag.js' | relative_url }}"></script>
+    <script src="{{ '/assets/js/code-tag.js' | relative_url }}"></script>
+    <script src="{{ '/assets/js/setting-tag.js' | relative_url }}"></script>
+    <script src="{{ '/assets/js/version-selector.js' | relative_url }}"></script>
+    <script src="{{ '/assets/js/animate.js' | relative_url }}"></script>
+    <script src="{{ '/assets/js/pin-tag.js' | relative_url }}"></script>
     <!-- AUTO-GENERATED TYPESCRIPT SCRIPTS END -->
   </head>
   <body>
@@ -180,6 +182,30 @@
                   </button>
                 </form>
               </div>
+            </sl-menu>
+          </sl-dropdown>
+
+          <!-- Version Selector Dropdown -->
+          <sl-dropdown id="version-selector-dropdown" class="nav-dropdown version-selector-dropdown">
+            <button slot="trigger" class="nav-item nav-dropdown-trigger version-selector-button" id="version-selector-button">
+              <sl-icon name="gear" class="version-selector-icon gear-icon"></sl-icon>
+              <span class="version-selector-text v1-text">v1</span>
+              <span class="version-selector-text v2-text">v2</span>
+            </button>
+
+            <sl-menu class="version-selector-menu">
+              <sl-menu-item class="version-menu-item" data-version="v1">
+                <sl-icon slot="prefix" name="1-circle"></sl-icon>
+                Show Only V1
+              </sl-menu-item>
+              <sl-menu-item class="version-menu-item" data-version="v2">
+                <sl-icon slot="prefix" name="2-circle"></sl-icon>
+                Show Only V2
+              </sl-menu-item>
+              <sl-menu-item class="version-menu-item" data-version="both">
+                <sl-icon slot="prefix" name="list-ul"></sl-icon>
+                Show Both Versions
+              </sl-menu-item>
             </sl-menu>
           </sl-dropdown>
         </div>

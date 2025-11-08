@@ -1,11 +1,14 @@
 {{! Template for rendering the complete setting tag structure }}
 {{! Conditionally displays v1 and/or v2 settings based on which attributes are provided }}
+{{! Each section is wrapped in a container that can be hidden/shown based on display_version setting }}
 
 {{#if v1_path_html}}
-{{! V1 section }}
+{{! V1 section - wrapped in container for dynamic hiding }}
+<span class="setting-v1-content">
 {{#unless no_version}}<span class="setting-v1-label"></span>{{/unless}}
 <span class="setting-separator-diagonal" data-from="black" data-to="{{v1_first_color}}"></span>
 {{{v1_path_html}}}
+</span>
 {{/if}}
 
 {{#if v1_path_html}}{{#if v2_path_html}}
@@ -14,8 +17,10 @@
 {{/if}}{{/if}}
 
 {{#if v2_path_html}}
-{{! V2 section }}
+{{! V2 section - wrapped in container for dynamic hiding }}
+<span class="setting-v2-content">
 {{#unless no_version}}<span class="setting-v2-label"></span>{{/unless}}
 <span class="setting-separator-diagonal" data-from="black" data-to="{{v2_first_color}}"></span>
 {{{v2_path_html}}}
+</span>
 {{/if}}

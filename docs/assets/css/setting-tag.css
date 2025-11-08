@@ -795,7 +795,7 @@ sl-details::part(content) {
     overflow:        hidden;
 }
 
-/* Diagonal background */
+/* Diagonal background - default fallback */
 .tab-setting-separator-diagonal::before {
     content:         '';
     position:        absolute;
@@ -805,6 +805,22 @@ sl-details::part(content) {
     bottom:          -2px;
     background:      linear-gradient(to right, #0a0a0a 0%, #0a0a0a 50%, #1b1b1b 50%, #1b1b1b 100%);
     transform:       skewX(-20deg);
+}
+
+/* Color transitions for tab diagonal separators - matching inline tag colors */
+/* Color level 3 to 2 */
+.tab-setting-separator-diagonal[data-from="3"][data-to="2"]::before {
+    background:      linear-gradient(to right, #3d3d3d 0%, #3d3d3d 50%, #2c2c2c 50%, #2c2c2c 100%);
+}
+
+/* Color level 2 to 1 */
+.tab-setting-separator-diagonal[data-from="2"][data-to="1"]::before {
+    background:      linear-gradient(to right, #2c2c2c 0%, #2c2c2c 50%, #1b1b1b 50%, #1b1b1b 100%);
+}
+
+/* Color level 1 to 0 (darkest) */
+.tab-setting-separator-diagonal[data-from="1"][data-to="0"]::before {
+    background:      linear-gradient(to right, #1b1b1b 0%, #1b1b1b 50%, #0a0a0a 50%, #0a0a0a 100%);
 }
 
 /* Dot separator - always visible in tabs */
@@ -1080,8 +1096,11 @@ sl-alert::part(base) {
     justify-content: center;
     align-items:     center;
     padding:         16px 20px;
-    background:      linear-gradient(180deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.04) 100%);
+    background:      #1a1a1a;
     border-bottom:   2px solid rgba(255, 255, 255, 0.1);
+    position:        sticky;
+    top:             0;
+    z-index:         10;
 }
 
 /* Title container - centered display */
@@ -1359,3 +1378,12 @@ sl-alert::part(base) {
     color: #999;
 }
 
+/* Wrapper containers for v1 and v2 content sections */
+/* Used for dynamic showing/hiding based on display_version setting */
+/* Must maintain flex layout to avoid breaking tag appearance */
+.setting-v1-content,
+.setting-v2-content {
+    display:         inline-flex;
+    align-items:     stretch;
+    height:          100%;
+}

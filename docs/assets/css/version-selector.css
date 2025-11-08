@@ -1,0 +1,82 @@
+/* Version Selector Dropdown Styling */
+
+/* Version selector button in header */
+.version-selector-button {
+    position: relative;
+}
+
+/* Gear icon - shown when version not configured */
+.version-selector-icon.gear-icon {
+    font-size: 24px;
+    color: #e0e0e0;
+}
+
+/* Version text - shown when version is configured */
+.version-selector-text {
+    display: none;
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+/* V1 text styling - matches setting tag color */
+.version-selector-text.v1-text {
+    color: #ffd966;
+}
+
+/* V2 text styling - matches setting tag color */
+.version-selector-text.v2-text {
+    color: #7ec8ed;
+}
+
+/* State-specific visibility for gear icon */
+.version-selector-button[data-version="nc"] .version-selector-icon.gear-icon {
+    display: inline-block;
+}
+
+.version-selector-button[data-version="v1"] .version-selector-icon.gear-icon,
+.version-selector-button[data-version="v2"] .version-selector-icon.gear-icon,
+.version-selector-button[data-version="both"] .version-selector-icon.gear-icon {
+    display: none;
+}
+
+/* State-specific visibility for version text */
+.version-selector-button[data-version="v1"] .version-selector-text.v1-text {
+    display: inline-block;
+}
+
+.version-selector-button[data-version="v2"] .version-selector-text.v2-text {
+    display: inline-block;
+}
+
+.version-selector-button[data-version="both"] .version-selector-text.v1-text,
+.version-selector-button[data-version="both"] .version-selector-text.v2-text {
+    display: inline-block;
+}
+
+/* Add separator between v1 and v2 when showing both */
+.version-selector-button[data-version="both"] .version-selector-text.v1-text::after {
+    content: "/";
+    color: #666;
+    margin: 0 4px;
+}
+
+/* Menu styling */
+.version-selector-menu {
+    min-width: 200px;
+}
+
+/* Version menu item styling */
+.version-menu-item::part(base) {
+    padding: 12px 16px;
+}
+
+/* Highlight current version in menu */
+.version-menu-item[data-current="true"]::part(base) {
+    background-color: rgba(255, 204, 0, 0.2);
+    font-weight: bold;
+}
+
+.version-menu-item[data-current="true"]::part(base):hover {
+    background-color: rgba(255, 204, 0, 0.25);
+}

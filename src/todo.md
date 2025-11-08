@@ -57,6 +57,7 @@
 * [ ] They yaml file for pins should have for each pin a clear description of what it's used for/as on the smoothieboard board.
 * [ ] We added cache busting to the includes in docs/_layouts/default.html , we should remove them once everything is stable.
 * [ ] Setting to see only v1 or v2 settings, that is closable.
+* [ ] That's a lot of assets we get when the page loads, maybe we can pack all of this a lot more with webpack or something similar? Like the handlebars templates, the yaml files, etc?
 
 # <setting> tag.
 

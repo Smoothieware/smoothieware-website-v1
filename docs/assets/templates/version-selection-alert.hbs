@@ -1,0 +1,28 @@
+{{!--
+Template for the version selection alert shown when user has not configured their preference
+Shows at the TOP of setting popups when display_version is "nc"
+--}}
+
+<sl-alert variant="danger" open class="version-selection-alert">
+    <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+    <strong>Choose Your Board Version</strong>
+    <br><br>
+    We can show settings for Smoothieboard V1, V2, or both versions.
+    <br>
+    Please select your preference:
+    <br><br>
+    <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+        <sl-button variant="primary" size="small" class="version-choice-button" data-version="v1">
+            <sl-icon slot="prefix" name="1-circle"></sl-icon>
+            Show Only V1
+        </sl-button>
+        <sl-button variant="primary" size="small" class="version-choice-button" data-version="v2">
+            <sl-icon slot="prefix" name="2-circle"></sl-icon>
+            Show Only V2
+        </sl-button>
+        <sl-button variant="neutral" size="small" class="version-choice-button" data-version="both">
+            <sl-icon slot="prefix" name="list-ul"></sl-icon>
+            Show Both
+        </sl-button>
+    </div>
+</sl-alert>

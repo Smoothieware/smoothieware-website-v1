@@ -32,6 +32,15 @@ import Handlebars from 'handlebars';
 // Import config finder library
 import { find_setting_in_config, type ConfigSearchRequest } from './lib/config-finder';
 
+// Import configuration management library
+import {
+    get_display_version,
+    set_display_version,
+    is_version_not_configured,
+    should_show_both,
+    type DisplayVersion
+} from './lib/config';
+
 // Compiled Handlebars templates (loaded on page load)
 let compiled_setting_panel_template: HandlebarsTemplateDelegate<any> | null = null;
 let compiled_tab_group_template: HandlebarsTemplateDelegate<any> | null = null;
@@ -45,6 +54,8 @@ let compiled_minimal_panel_template: HandlebarsTemplateDelegate<any> | null = nu
 let compiled_loading_tooltip_template: HandlebarsTemplateDelegate<any> | null = null;
 let compiled_error_tooltip_template: HandlebarsTemplateDelegate<any> | null = null;
 let compiled_config_excerpt_template: HandlebarsTemplateDelegate<any> | null = null;
+let compiled_version_selection_alert_template: HandlebarsTemplateDelegate<any> | null = null;
+let compiled_version_change_alert_template: HandlebarsTemplateDelegate<any> | null = null;
 
 // Define color levels for path elements (darkest to lightest)
 // Right-most element uses index 0 (darkest), progressively lighter to the left
@@ -89,7 +100,9 @@ async function load_and_compile_template(): Promise<void> {
             minimal_panel_response,
             loading_tooltip_response,
             error_tooltip_response,
-            config_excerpt_response
+            config_excerpt_response,
+            version_selection_alert_response,
+            version_change_alert_response
         ] = await Promise.all([
             fetch('/assets/templates/setting-panel.hbs'),
             fetch('/assets/templates/tab-group.hbs'),
@@ -102,7 +115,9 @@ async function load_and_compile_template(): Promise<void> {
             fetch('/assets/templates/minimal-panel.hbs'),
             fetch('/assets/templates/loading-tooltip.hbs'),
             fetch('/assets/templates/error-tooltip.hbs'),
-            fetch('/assets/templates/config-excerpt.hbs')
+            fetch('/assets/templates/config-excerpt.hbs'),
+            fetch('/assets/templates/version-selection-alert.hbs'),
+            fetch('/assets/templates/version-change-alert.hbs')
         ]);
 
         // Guard against fetch errors
@@ -142,6 +157,12 @@ async function load_and_compile_template(): Promise<void> {
         if (!config_excerpt_response.ok) {
             throw new Error(`Failed to fetch config-excerpt.hbs: ${config_excerpt_response.statusText}`);
         }
+        if (!version_selection_alert_response.ok) {
+            throw new Error(`Failed to fetch version-selection-alert.hbs: ${version_selection_alert_response.statusText}`);
+        }
+        if (!version_change_alert_response.ok) {
+            throw new Error(`Failed to fetch version-change-alert.hbs: ${version_change_alert_response.statusText}`);
+        }
 
         // Get the template sources
         const panel_source = await panel_response.text();
@@ -156,6 +177,8 @@ async function load_and_compile_template(): Promise<void> {
         const loading_tooltip_source = await loading_tooltip_response.text();
         const error_tooltip_source = await error_tooltip_response.text();
         const config_excerpt_source = await config_excerpt_response.text();
+        const version_selection_alert_source = await version_selection_alert_response.text();
+        const version_change_alert_source = await version_change_alert_response.text();
 
         // Register Handlebars helpers
         Handlebars.registerHelper('escape', (text: any) => {
@@ -211,6 +234,11 @@ async function load_and_compile_template(): Promise<void> {
         Handlebars.registerHelper('if_eq', function(this: any, arg1: any, arg2: any, options: any) {
             // Equality comparison helper for Handlebars
             return (arg1 == arg2) ? options.fn(this) : options.inverse(this);
+        });
+
+        Handlebars.registerHelper('eq', (arg1: any, arg2: any) => {
+            // Simple equality helper that returns boolean (for use in unless/if subexpressions)
+            return arg1 == arg2;
         });
 
         Handlebars.registerHelper('highlight_example', (text: any) => {
@@ -295,6 +323,8 @@ async function load_and_compile_template(): Promise<void> {
         compiled_loading_tooltip_template = Handlebars.compile(loading_tooltip_source);
         compiled_error_tooltip_template = Handlebars.compile(error_tooltip_source);
         compiled_config_excerpt_template = Handlebars.compile(config_excerpt_source);
+        compiled_version_selection_alert_template = Handlebars.compile(version_selection_alert_source);
+        compiled_version_change_alert_template = Handlebars.compile(version_change_alert_source);
 
         console.log('[setting-tag.ts] All Handlebars templates loaded and compiled successfully');
 
@@ -327,7 +357,68 @@ $(() => {
     }).catch((error: unknown) => {
         console.error('[setting-tag.ts] Failed to initialize setting tags:', error);
     });
+
+    // Listen for version changes from the header version selector
+    $(document).on('version-changed', function() {
+
+        // Update all setting tags visibility when version changes from header
+        update_all_setting_tags_visibility();
+
+        console.log('[setting-tag.ts] Updated setting tags in response to header version selector change');
+    });
 });
+
+/**
+ * Updates the visibility of v1/v2 content in all setting tags based on display_version setting
+ * Called on initial load and whenever the version preference changes
+ */
+function update_all_setting_tags_visibility(): void {
+
+    const display_version = get_display_version();
+
+    // Find all setting elements
+    const $all_settings = $('setting');
+
+    $all_settings.each(function(this: HTMLElement) {
+
+        const $setting = $(this);
+
+        // Get v1 and v2 attribute values to determine if this is a dual-attribute tag
+        const v1_setting = $setting.attr('v1') ?? '';
+        const v2_setting = $setting.attr('v2') ?? '';
+
+        // Only apply hiding logic to dual-attribute tags (tags with both v1 and v2)
+        const is_dual_attribute = v1_setting && v2_setting;
+
+        if (is_dual_attribute) {
+
+            // Find v1 and v2 content spans and separator
+            const $v1_content = $setting.find('.setting-v1-content');
+            const $v2_content = $setting.find('.setting-v2-content');
+            const $separator = $setting.find('.setting-separator-vertical');
+
+            // Show/hide based on display_version setting
+            if (display_version === 'v1') {
+                // Show only v1
+                $v1_content.show();
+                $v2_content.hide();
+                $separator.hide();
+            } else if (display_version === 'v2') {
+                // Show only v2
+                $v1_content.hide();
+                $v2_content.show();
+                $separator.hide();
+            } else {
+                // Show both (nc or both)
+                $v1_content.show();
+                $v2_content.show();
+                $separator.show();
+            }
+        }
+    });
+
+    console.log(`[setting-tag.ts] Updated all setting tag visibility for display_version: ${display_version}`);
+}
 
 /**
  * Initialize all setting tags after template is loaded
@@ -378,6 +469,9 @@ function initialize_setting_tags($setting_elements: JQuery<HTMLElement>): void {
         // Create sl-popup for this setting element
         create_popup_for_setting($(this), v1_setting, v2_setting);
     });
+
+    // Update visibility based on current display_version setting
+    update_all_setting_tags_visibility();
 }
 
 /**
@@ -494,6 +588,9 @@ function create_popup_for_setting($setting: JQuery<HTMLElement>, v1_name: string
 
             // Set up click handlers for config lines to link to GitHub
             setup_config_line_click_handlers($popup);
+
+            // Set up click handlers for version choice buttons
+            setup_version_choice_handlers($popup, v1_name, v2_name);
 
             content_loaded = true;
         }
@@ -757,17 +854,30 @@ async function generate_shoelace_tooltip(v1_setting_name: string, v2_setting_nam
         return generate_error_tooltip(v1_setting_name, v2_setting_name);
     }
 
+    // Check the user's display version preference
+    const display_version = get_display_version();
+
     // Check if this is a single-attribute tag (v1-only or v2-only)
     const is_v1_only = v1_setting_name && !v2_setting_name;
     const is_v2_only = v2_setting_name && !v1_setting_name;
     const is_single_attribute = is_v1_only || is_v2_only;
 
-    // For single-attribute tags, use the single-setting template (no tabs)
-    if (is_single_attribute) {
+    // Determine if we should show as single version based on user preference
+    // If user selected "v1" or "v2" (not "both" or "nc"), treat dual-attribute tags as single-version
+    const show_as_v1_only = is_v1_only || (display_version === 'v1' && !is_v2_only);
+    const show_as_v2_only = is_v2_only || (display_version === 'v2' && !is_v1_only);
+    const show_as_single = show_as_v1_only || show_as_v2_only;
+
+    // For single-attribute tags OR when user has selected v1/v2 only, use the single-setting template (no tabs)
+    if (show_as_single) {
+        const selected_version = show_as_v1_only ? 'v1' : 'v2';
+        const selected_setting_name = show_as_v1_only ? v1_setting_name : v2_setting_name;
+        const selected_setting = show_as_v1_only ? v1_setting : v2_setting;
+
         return await generate_single_setting_tooltip(
-            is_v1_only ? v1_setting_name : v2_setting_name,
-            is_v1_only ? 'v1' : 'v2',
-            is_v1_only ? v1_setting : v2_setting
+            selected_setting_name,
+            selected_version,
+            selected_setting
         );
     }
 
@@ -807,13 +917,20 @@ async function generate_shoelace_tooltip(v1_setting_name: string, v2_setting_nam
         v2_panel_content = generate_not_found_panel('v2');
     }
 
+    // Generate version alerts (reuse display_version declared earlier)
+    const version_selection_alert = is_version_not_configured() ? generate_version_selection_alert() : '';
+    const version_change_alert = !is_version_not_configured() ? generate_version_change_alert(display_version) : '';
+
     // Render template with prepared data
-    return compiled_tab_group_template({
+    const main_content = compiled_tab_group_template({
         v1_mini_setting,
         v2_mini_setting,
         v1_panel_content,
         v2_panel_content
     });
+
+    // Wrap content with alerts at top and bottom
+    return version_selection_alert + main_content + version_change_alert;
 }
 
 /**
@@ -843,12 +960,20 @@ async function generate_single_setting_tooltip(setting_name: string, version: st
     // Determine version label
     const version_label = version === 'v1' ? 'V1 SETTING:' : 'V2 SETTING:';
 
+    // Generate version alerts
+    const display_version_single = get_display_version();
+    const version_selection_alert = is_version_not_configured() ? generate_version_selection_alert() : '';
+    const version_change_alert = !is_version_not_configured() ? generate_version_change_alert(display_version_single) : '';
+
     // Render template
-    return compiled_single_setting_template({
+    const main_content = compiled_single_setting_template({
         version_label,
         setting_name_html,
         panel_content
     });
+
+    // Wrap content with alerts at top and bottom
+    return version_selection_alert + main_content + version_change_alert;
 }
 
 /**
@@ -876,9 +1001,17 @@ function generate_tab_title_mini_setting(setting_name: string, version: string =
         const color_index = path_parts.length - 1 - index;
         const clamped_color = Math.min(color_index, 3); // Max 4 color levels
 
+        // Calculate color transition for diagonal BEFORE this element
+        // The diagonal should transition FROM previous element TO current element
+        const prev_index = index - 1;
+        const prev_color_index = prev_index >= 0 ? path_parts.length - 1 - prev_index : 0;
+        const prev_clamped_color = Math.min(prev_color_index, 3);
+
         return {
             text: text,
             color: clamped_color,
+            from_color: prev_clamped_color,     // Color of previous element (left side of diagonal)
+            to_color: clamped_color,            // Color of current element (right side of diagonal)
             is_section: is_v2 && index === 0,                  // First element in v2 gets brackets
             show_dot: is_v2 ? index > 0 : true                 // v2: no dot after section name, v1: always show dot
         };
@@ -1267,6 +1400,61 @@ function setup_clickable_alert_handlers($popup: JQuery<HTMLElement>): void {
 }
 
 /**
+ * Sets up click handlers for version choice buttons
+ * Handles both version selection (nc state) and version change (configured state)
+ */
+function setup_version_choice_handlers($popup: JQuery<HTMLElement>, v1_setting_name: string, v2_setting_name: string): void {
+
+    // Wait for content to be rendered
+    setTimeout(() => {
+
+        // Find all version choice buttons
+        const version_buttons = $popup.find('.version-choice-button');
+
+        if (version_buttons.length > 0) {
+            version_buttons.each((_index, button) => {
+                const $button = $(button);
+                const selected_version = $button.attr('data-version') as DisplayVersion;
+
+                if (selected_version) {
+                    $button.on('click', async (e) => {
+
+                        // Prevent event propagation
+                        e.stopPropagation();
+                        e.preventDefault();
+
+                        console.log(`[setting-tag.ts] Version choice selected: ${selected_version}`);
+
+                        // Save the version preference
+                        set_display_version(selected_version);
+
+                        // Update all setting tags on the page immediately
+                        update_all_setting_tags_visibility();
+
+                        // Regenerate the tooltip content with new configuration
+                        const new_content = await generate_shoelace_tooltip(v1_setting_name, v2_setting_name);
+
+                        // Update the popup content
+                        $popup.find('.setting-popup-content').html(new_content);
+
+                        // Re-setup all handlers with new content
+                        setup_tab_listener($popup);
+                        setup_clickable_alert_handlers($popup);
+                        restore_tab_preference($popup);
+                        setup_related_settings_handlers($popup, $popup.attr('id') || '');
+                        setup_config_line_click_handlers($popup);
+                        setup_version_choice_handlers($popup, v1_setting_name, v2_setting_name);
+
+                        console.log(`[setting-tag.ts] Tooltip refreshed with new version setting: ${selected_version}`);
+                    });
+                }
+            });
+        }
+
+    }, 100);
+}
+
+/**
  * Sets up click handlers for config lines to link to GitHub
  */
 function setup_config_line_click_handlers($popup: JQuery<HTMLElement>): void {
@@ -1357,6 +1545,43 @@ function setup_config_line_click_handlers($popup: JQuery<HTMLElement>): void {
             });
         }
     }, 100);
+}
+
+/**
+ * Generates the version selection alert HTML (for "nc" state)
+ * Shown at the top of popups when user hasn't configured their preference
+ */
+function generate_version_selection_alert(): string {
+
+    // Guard against template not loaded
+    if (!compiled_version_selection_alert_template) {
+        console.error('[setting-tag.ts] Version selection alert template not compiled');
+        return '';
+    }
+
+    // Render template
+    return compiled_version_selection_alert_template({});
+}
+
+/**
+ * Generates the version change alert HTML (for configured state)
+ * Shown at the bottom of popups when user has configured their preference
+ */
+function generate_version_change_alert(current_version: DisplayVersion): string {
+
+    // Guard against template not loaded
+    if (!compiled_version_change_alert_template) {
+        console.error('[setting-tag.ts] Version change alert template not compiled');
+        return '';
+    }
+
+    // Don't show if version is "nc" (not configured)
+    if (current_version === 'nc') {
+        return '';
+    }
+
+    // Render template with current version
+    return compiled_version_change_alert_template({ current_version });
 }
 
 /**

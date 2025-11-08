@@ -1,0 +1,36 @@
+{{!--
+Template for the version change alert shown at the bottom of setting popups
+Only shown when user has already configured their preference (display_version is not "nc")
+Shows buttons to change to different version settings
+current_version: the currently configured version ("v1", "v2", or "both")
+--}}
+
+<sl-alert variant="primary" open class="version-change-alert">
+    <sl-icon slot="icon" name="info-circle"></sl-icon>
+    <strong>Version Display Setting</strong>
+    <br>
+    Currently showing: <strong>{{#if_eq current_version "v1"}}V1 Only{{/if_eq}}{{#if_eq current_version "v2"}}V2 Only{{/if_eq}}{{#if_eq current_version "both"}}Both Versions{{/if_eq}}</strong>
+    <br><br>
+    Change to:
+    <br><br>
+    <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+        {{#unless (eq current_version "v1")}}
+        <sl-button variant="default" size="small" class="version-choice-button" data-version="v1">
+            <sl-icon slot="prefix" name="1-circle"></sl-icon>
+            Show Only V1
+        </sl-button>
+        {{/unless}}
+        {{#unless (eq current_version "v2")}}
+        <sl-button variant="default" size="small" class="version-choice-button" data-version="v2">
+            <sl-icon slot="prefix" name="2-circle"></sl-icon>
+            Show Only V2
+        </sl-button>
+        {{/unless}}
+        {{#unless (eq current_version "both")}}
+        <sl-button variant="default" size="small" class="version-choice-button" data-version="both">
+            <sl-icon slot="prefix" name="list-ul"></sl-icon>
+            Show Both
+        </sl-button>
+        {{/unless}}
+    </div>
+</sl-alert>

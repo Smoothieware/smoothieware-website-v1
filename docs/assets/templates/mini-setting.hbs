@@ -1,7 +1,7 @@
 <span class="tab-setting-display">
 {{#each parts}}
     {{#if @index}}
-    <span class="tab-setting-separator-diagonal">
+    <span class="tab-setting-separator-diagonal" data-from="{{from_color}}" data-to="{{to_color}}">
         {{#if show_dot}}<span class="tab-setting-dot">.</span>{{/if}}
     </span>
     {{/if}}
