@@ -45,6 +45,8 @@
 * [ ] We have a lot of templates now in docs/assets/templates/, maybe some of those can be merged, maybe the logic is unnecessarily complicated and can be simplified/compacted in some ways? (also make sure there isn't code duplication between the templates...)
 * [ ] In the settings YAML files, some of the v1 settings have better/longer descriptions than the v2 ones, and more details in general. And sometimes it's the opposite. We need to fix that by porting any extra information from one to the other where it's acceptable, and where it's verified from the source code and from the docs.
 * [ ] Some stuff like the config example files in assets/ need to be kept up to date, we should create a script that gets them from github and updates as needed.
+* [ ] Ask Jim Morris for a list of new features in v2 and where I could learn about them to document them.
+* [ ] I nthe list of settings, have an icon for each setting "type".
 
 # <setting> tag.
 

@@ -2340,182 +2340,182 @@ Examples showing settings that actually changed significantly or were removed/ad
         <tr>            <td colspan="3" class="module-header">Temperature Control</td>
         </tr>
         <tr>
-            <td><setting no-version v1="temperature_control.{name}.bang_bang"></setting></td>
+            <td><setting no-version v1="bang_bang"></setting></td>
             <td><setting no-version v2="temperature control.bang_bang"></setting></td>
             <td class="description-cell">Switches from PID control to simple bang-bang (hysteresis) control. In bang-bang mode, the heater is fully on when below target temperature minus hyst...</td>
         </tr>
         <tr>
-            <td><setting no-version v1="temperature_control.{name}.beta"></setting></td>
+            <td><setting no-version v1="beta"></setting></td>
             <td><setting no-version v2="temperature control.beta"></setting></td>
             <td class="description-cell">The beta coefficient characterizes the thermistor&#39;s resistance-temperature relationship. It&#39;s used in the simplified Steinhart-Hart equation (beta equ...</td>
         </tr>
         <tr>
-            <td><setting no-version v1="temperature_control.{name}.chip_select_pin"></setting></td>
+            <td><setting no-version v1="chip_select_pin"></setting></td>
             <td><setting no-version v2="temperature control.spi_select_pin"></setting></td>
             <td class="description-cell">Specifies which pin is used as the chip select (CS) signal for the MAX31855 thermocouple-to-digital converter. Allows multiple MAX31855 devices to sha...</td>
         </tr>
         <tr>
-            <td><setting no-version v1="temperature_control.{name}.coefficients"></setting></td>
+            <td><setting no-version v1="coefficients"></setting></td>
             <td><setting no-version v2="temperature control.coefficients"></setting></td>
             <td class="description-cell">The three coefficients (c1, c2, c3) of the Steinhart-Hart equation, which provides very accurate temperature calculation across the full operating ran...</td>
         </tr>
         <tr>
-            <td><setting no-version v1="temperature_control.{name}.d_factor"></setting></td>
+            <td><setting no-version v1="d_factor"></setting></td>
             <td><setting no-version v2="temperature control.d_factor"></setting></td>
             <td class="description-cell">The derivative term of the PID controller. Responds to the rate of temperature change to reduce overshoot and improve stability. Internally scaled by...</td>
         </tr>
         <tr>
-            <td><setting no-version v1="temperature_control.{name}.designator"></setting></td>
+            <td><setting no-version v1="designator"></setting></td>
             <td><setting no-version v2="temperature control.designator"></setting></td>
             <td class="description-cell">The letter/identifier that prefixes this module&#39;s temperature in M105 responses. Allows host software to identify which heater each temperature readin...</td>
         </tr>
         <tr>
-            <td><setting no-version v1="temperature_control.{name}.e3d_amplifier_pin"></setting></td>
+            <td><setting no-version v1="e3d_amplifier_pin"></setting></td>
             <td class="empty-cell">—</td>
             <td class="description-cell">Specifies which ADC pin reads the analog voltage from the E3D PT100 amplifier. The amplifier converts PT100 RTD resistance to a voltage that can be re...</td>
         </tr>
         <tr>
-            <td><setting no-version v1="temperature_control.{name}.enable"></setting></td>
+            <td><setting no-version v1="enable"></setting></td>
             <td><setting no-version v2="temperature control.enable"></setting></td>
             <td class="description-cell">Enables or disables the temperature control module instance. You can create as many temperature control modules as needed by giving each a unique name...</td>
         </tr>
         <tr>
-            <td><setting no-version v1="temperature_control.{name}.get_m_code"></setting></td>
+            <td><setting no-version v1="get_m_code"></setting></td>
             <td><setting no-version v2="temperature control.get_m_code"></setting></td>
             <td class="description-cell">Specifies which M-code reports the current temperature for this module. M105 is standard for temperature reporting and returns data for all temperatur...</td>
         </tr>
         <tr>
-            <td><setting no-version v1="temperature_control.{name}.heater_pin"></setting></td>
+            <td><setting no-version v1="heater_pin"></setting></td>
             <td><setting no-version v2="temperature control.heater_pin"></setting></td>
             <td class="description-cell">Specifies the output pin used to drive the heater element. This pin controls either an onboard MOSFET or an external Solid State Relay (SSR). Set to `...</td>
         </tr>
         <tr>
-            <td><setting no-version v1="temperature_control.{name}.hysteresis"></setting></td>
+            <td><setting no-version v1="hysteresis"></setting></td>
             <td><setting no-version v2="temperature control.hysteresis"></setting></td>
             <td class="description-cell">Defines the temperature band around the target temperature for bang-bang control. Heater turns on when temperature drops below (target - hysteresis) a...</td>
         </tr>
         <tr>
-            <td><setting no-version v1="temperature_control.{name}.i_factor"></setting></td>
+            <td><setting no-version v1="i_factor"></setting></td>
             <td><setting no-version v2="temperature control.i_factor"></setting></td>
             <td class="description-cell">The integral term of the PID controller. Eliminates steady-state error by accumulating error over time. Internally scaled by `readings_per_second` (PI...</td>
         </tr>
         <tr>
-            <td><setting no-version v1="temperature_control.{name}.i_max"></setting></td>
+            <td><setting no-version v1="i_max"></setting></td>
             <td><setting no-version v2="temperature control.i_max"></setting></td>
             <td class="description-cell">Limits the integral accumulator to prevent integral windup. When the heater is at full power (max_pwm) for extended periods, the integral term would o...</td>
         </tr>
         <tr>
-            <td><setting no-version v1="temperature_control.{name}.max_pwm"></setting></td>
+            <td><setting no-version v1="max_pwm"></setting></td>
             <td><setting no-version v2="temperature control.max_pwm"></setting></td>
             <td class="description-cell">Limits the maximum power delivered to the heater by capping the PWM duty cycle. Useful when running a 12V heater from 24V supply, or to limit maximum...</td>
         </tr>
         <tr>
-            <td><setting no-version v1="temperature_control.{name}.max_temp"></setting></td>
+            <td><setting no-version v1="max_temp"></setting></td>
             <td><setting no-version v2="temperature control.max_temp"></setting></td>
             <td class="description-cell">Hard upper limit for temperature. If the sensor reads above this value, the system immediately halts and turns off all heaters. Critical safety featur...</td>
         </tr>
         <tr>
-            <td><setting no-version v1="temperature_control.{name}.min_temp"></setting></td>
+            <td><setting no-version v1="min_temp"></setting></td>
             <td><setting no-version v2="temperature control.min_temp"></setting></td>
             <td class="description-cell">Hard lower limit for temperature. If the sensor reads below this value, the system halts. Primarily used to detect disconnected or failed thermistors,...</td>
         </tr>
         <tr>
-            <td><setting no-version v1="temperature_control.{name}.p_factor"></setting></td>
+            <td><setting no-version v1="p_factor"></setting></td>
             <td><setting no-version v2="temperature control.p_factor"></setting></td>
             <td class="description-cell">The proportional term of the PID controller. Determines how aggressively the controller responds to the current temperature error. Higher values produ...</td>
         </tr>
         <tr>
-            <td><setting no-version v1="temperature_control.{name}.preset1"></setting></td>
+            <td><setting no-version v1="preset1"></setting></td>
             <td><setting no-version v2="temperature control.preset1"></setting></td>
             <td class="description-cell">Allows setting a common temperature with a shortcut. When you set temperature to `1.0`, the controller uses this preset value instead. Useful for quic...</td>
         </tr>
         <tr>
-            <td><setting no-version v1="temperature_control.{name}.preset2"></setting></td>
+            <td><setting no-version v1="preset2"></setting></td>
             <td><setting no-version v2="temperature control.preset2"></setting></td>
             <td class="description-cell">Second preset temperature slot. When you set temperature to `2.0`, the controller uses this preset value instead.</td>
         </tr>
         <tr>
-            <td><setting no-version v1="temperature_control.{name}.pwm_frequency"></setting></td>
+            <td><setting no-version v1="pwm_frequency"></setting></td>
             <td class="empty-cell">—</td>
             <td class="description-cell">Frequency at which the heater output switches on and off. High frequencies (kHz range) are suitable for MOSFETs. Low frequencies (10-40 Hz) are requir...</td>
         </tr>
         <tr>
-            <td><setting no-version v1="temperature_control.{name}.r0"></setting></td>
+            <td><setting no-version v1="r0"></setting></td>
             <td><setting no-version v2="temperature control.r0"></setting></td>
             <td class="description-cell">The nominal resistance of the thermistor at the reference temperature (usually 25°C). This is a fundamental property of the thermistor, typically spec...</td>
         </tr>
         <tr>
-            <td><setting no-version v1="temperature_control.{name}.r1"></setting></td>
+            <td><setting no-version v1="r1"></setting></td>
             <td><setting no-version v2="temperature control.r1"></setting></td>
             <td class="description-cell">Value of resistor in series with the thermistor, if present. Most Smoothieboard configurations use only a pullup resistor (r2) with no series resistor...</td>
         </tr>
         <tr>
-            <td><setting no-version v1="temperature_control.{name}.r2"></setting></td>
+            <td><setting no-version v1="r2"></setting></td>
             <td><setting no-version v2="temperature control.r2"></setting></td>
             <td class="description-cell">Value of the pullup resistor connected between the thermistor and VCC. Smoothieboard has built-in 4.7kΩ pullup resistors on thermistor inputs TH1-TH4.</td>
         </tr>
         <tr>
-            <td><setting no-version v1="temperature_control.{name}.readings_per_second"></setting></td>
+            <td><setting no-version v1="readings_per_second"></setting></td>
             <td><setting no-version v2="temperature control.readings_per_second"></setting></td>
             <td class="description-cell">How many times per second the temperature sensor is read and the PID control loop is executed. Higher values provide faster response but increase CPU...</td>
         </tr>
         <tr>
-            <td><setting no-version v1="temperature_control.{name}.rt_curve"></setting></td>
+            <td><setting no-version v1="rt_curve"></setting></td>
             <td><setting no-version v2="temperature control.rt_curve"></setting></td>
             <td class="description-cell">Specify three temperature/resistance pairs from the thermistor datasheet, and Smoothie will automatically calculate Steinhart-Hart coefficients. Best...</td>
         </tr>
         <tr>
-            <td><setting no-version v1="temperature_control.{name}.runaway_cooling_timeout"></setting></td>
+            <td><setting no-version v1="runaway_cooling_timeout"></setting></td>
             <td><setting no-version v2="temperature control.runaway_cooling_timeout"></setting></td>
             <td class="description-cell">Maximum time allowed to cool down to target temperature when reducing temperature. If temperature doesn&#39;t reach target within this time, the system ha...</td>
         </tr>
         <tr>
-            <td><setting no-version v1="temperature_control.{name}.runaway_error_range"></setting></td>
+            <td><setting no-version v1="runaway_error_range"></setting></td>
             <td><setting no-version v2="temperature control.runaway_error_range"></setting></td>
             <td class="description-cell">Defines how close the actual temperature must be to the target to be considered &quot;reached.&quot; Used by runaway detection to determine when heating/cooling...</td>
         </tr>
         <tr>
-            <td><setting no-version v1="temperature_control.{name}.runaway_heating_timeout"></setting></td>
+            <td><setting no-version v1="runaway_heating_timeout"></setting></td>
             <td><setting no-version v2="temperature control.runaway_heating_timeout"></setting></td>
             <td class="description-cell">Maximum time allowed from when heating starts until target temperature is reached. If the temperature doesn&#39;t reach target within this time, the syste...</td>
         </tr>
         <tr>
-            <td><setting no-version v1="temperature_control.{name}.runaway_range"></setting></td>
+            <td><setting no-version v1="runaway_range"></setting></td>
             <td><setting no-version v2="temperature control.runaway_range"></setting></td>
             <td class="description-cell">Once the target temperature is reached, monitors for temperature divergence. If actual temperature deviates from target by more than this amount for &gt;...</td>
         </tr>
         <tr>
-            <td><setting no-version v1="temperature_control.{name}.sensor"></setting></td>
+            <td><setting no-version v1="sensor"></setting></td>
             <td><setting no-version v2="temperature control.sensor"></setting></td>
             <td class="description-cell">Selects the temperature sensor implementation. Different sensors use different physical principles and require different configuration parameters.</td>
         </tr>
         <tr>
-            <td><setting no-version v1="temperature_control.{name}.set_and_wait_m_code"></setting></td>
+            <td><setting no-version v1="set_and_wait_m_code"></setting></td>
             <td><setting no-version v2="temperature control.set_and_wait_m_code"></setting></td>
             <td class="description-cell">Specifies which M-code sets the target temperature and waits until that temperature is reached before continuing execution. Blocking command.</td>
         </tr>
         <tr>
-            <td><setting no-version v1="temperature_control.{name}.set_m_code"></setting></td>
+            <td><setting no-version v1="set_m_code"></setting></td>
             <td><setting no-version v2="temperature control.set_m_code"></setting></td>
             <td class="description-cell">Specifies which M-code sets the target temperature without waiting. Execution continues immediately after setting the temperature.</td>
         </tr>
         <tr>
-            <td><setting no-version v1="temperature_control.{name}.spi_channel"></setting></td>
+            <td><setting no-version v1="spi_channel"></setting></td>
             <td><setting no-version v2="temperature control.spi_channel"></setting></td>
             <td class="description-cell">Selects which hardware SPI peripheral is used to communicate with the MAX31855. Smoothieboard has two SPI channels with different pin assignments.</td>
         </tr>
         <tr>
-            <td><setting no-version v1="temperature_control.{name}.t0"></setting></td>
+            <td><setting no-version v1="t0"></setting></td>
             <td><setting no-version v2="temperature control.t0"></setting></td>
             <td class="description-cell">The temperature at which the thermistor has resistance R0. Almost always 25°C for commercial thermistors, as this is the industry standard reference p...</td>
         </tr>
         <tr>
-            <td><setting no-version v1="temperature_control.{name}.thermistor"></setting></td>
+            <td><setting no-version v1="thermistor"></setting></td>
             <td><setting no-version v2="temperature control.thermistor"></setting></td>
             <td class="description-cell">Selects a pre-calibrated thermistor from the built-in database, automatically setting Steinhart-Hart coefficients or beta values. This simplifies conf...</td>
         </tr>
         <tr>
-            <td><setting no-version v1="temperature_control.{name}.thermistor_pin"></setting></td>
+            <td><setting no-version v1="thermistor_pin"></setting></td>
             <td><setting no-version v2="temperature control.thermistor_pin"></setting></td>
             <td class="description-cell">Specifies which ADC (Analog-to-Digital Converter) pin is connected to the temperature sensor. Smoothieboard provides dedicated thermistor inputs TH1 t...</td>
         </tr>
@@ -2525,7 +2525,7 @@ Examples showing settings that actually changed significantly or were removed/ad
             <td class="description-cell">Tool number for M-code addressing and tool selection. Determines which temperature controller is addressed by T commands and whether the controller re...</td>
         </tr>
         <tr>
-            <td><setting no-version v1="temperature_control.{name}.use_beta_table"></setting></td>
+            <td><setting no-version v1="use_beta_table"></setting></td>
             <td><setting no-version v2="temperature control.use_beta_table"></setting></td>
             <td class="description-cell">When using a predefined thermistor, force the use of the legacy beta table values instead of the more accurate Steinhart-Hart coefficients. Provided f...</td>
         </tr>
@@ -2535,7 +2535,7 @@ Examples showing settings that actually changed significantly or were removed/ad
             <td class="description-cell">Use Proportional on Measurement instead of Proportional on Error. PonM mode reduces overshoot when changing setpoint by applying the P term to measure...</td>
         </tr>
         <tr>
-            <td><setting no-version v1="temperature_control.{name}.windup"></setting></td>
+            <td><setting no-version v1="windup"></setting></td>
             <td><setting no-version v2="temperature control.windup"></setting></td>
             <td class="description-cell">When enabled, the integral term only accumulates when the output is not saturated (not at 0 or max_pwm). This alternative anti-windup strategy prevent...</td>
         </tr>
