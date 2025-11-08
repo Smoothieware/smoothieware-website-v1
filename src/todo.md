@@ -53,6 +53,8 @@
 * [x] On http://localhost:4000/pin-configuration give more detailled explanation of what each thing means.
 * [ ] For the pin configuration page we (maybe) figured out a way to convert pngs to svgs that use our site's font, we should document this process and then use it for more of our images, all those that are diagrams.
 * [ ] On http://localhost:4000/editing-the-wiki add screenshots for the "how to contribute" guide.
+* [ ] In the page with all the settings, for settings that are pins in the description we should use <pin> tags for the default pin.
+* [ ] They yaml file for pins should have for each pin a clear description of what it's used for/as on the smoothieboard board.
 
 # <setting> tag.
 

@@ -104,6 +104,24 @@
             </div>
             {{/if}}
 
+            {{#if usage_notes}}
+            {{#if usage_notes.length}}
+            <div class="pin-popup-section pin-popup-notes">
+                <div class="pin-popup-label"><sl-icon name="info-circle"></sl-icon> Notes:</div>
+                <div class="pin-popup-value">
+                    <sl-alert variant="primary" open>
+                        <sl-icon slot="icon" name="info-circle"></sl-icon>
+                        <ul class="pin-popup-list">
+                            {{#each usage_notes}}
+                            <li>{{this}}</li>
+                            {{/each}}
+                        </ul>
+                    </sl-alert>
+                </div>
+            </div>
+            {{/if}}
+            {{/if}}
+
             {{#if usage_warnings}}
             {{#if usage_warnings.length}}
             <div class="pin-popup-section pin-popup-warnings">
