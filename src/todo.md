@@ -55,6 +55,8 @@
 * [ ] On http://localhost:4000/editing-the-wiki add screenshots for the "how to contribute" guide.
 * [ ] In the page with all the settings, for settings that are pins in the description we should use <pin> tags for the default pin.
 * [ ] They yaml file for pins should have for each pin a clear description of what it's used for/as on the smoothieboard board.
+* [ ] We added cache busting to the includes in docs/_layouts/default.html , we should remove them once everything is stable.
+* [ ] Setting to see only v1 or v2 settings, that is closable.
 
 # <setting> tag.
 

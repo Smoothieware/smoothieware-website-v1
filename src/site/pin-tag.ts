@@ -46,6 +46,16 @@ let is_loading = false;
  * Used as a Handlebars helper
  */
 function escape_html(text: string): string {
+
+    // Handle non-string values that Handlebars might pass
+    if (text === null || text === undefined) {
+        return '';
+    }
+
+    if (typeof text !== 'string') {
+        text = String(text);
+    }
+
     const map: Record<string, string> = {
         '&': '&amp;',
         '<': '&lt;',

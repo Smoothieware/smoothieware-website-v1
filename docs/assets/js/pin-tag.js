@@ -13895,6 +13895,12 @@ var compiled_pin_loading_template = null;
 var pin_database = null;
 var is_loading = false;
 function escape_html(text) {
+  if (text === null || text === undefined) {
+    return "";
+  }
+  if (typeof text !== "string") {
+    text = String(text);
+  }
   const map2 = {
     "&": "&amp;",
     "<": "&lt;",

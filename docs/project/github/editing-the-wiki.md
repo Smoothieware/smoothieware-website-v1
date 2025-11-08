@@ -486,24 +486,6 @@ Renders as:
 Smoothieboard uses pins <pin>1.18</pin> through <pin>1.21</pin> for the X axis motor driver.
 {:/nomarkdown}
 
-### Table of contents
-
-If the page has many headers, you can add a table of contents to it to make it easier to navigate, by doing:
-
-```
-[TOC]
-```
-
-You can right-justify it by doing:
-
-```
-[TOC]
-```
-
-Here is what it looks like:
-
-[TOC]
-
 ### Lists
 
 You can make nicely formatted lists by doing:
