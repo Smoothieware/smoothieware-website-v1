@@ -294,6 +294,12 @@ If you try to run bed leveling or calibration, and it seems to have no effect at
 
 This symptom most of the time means your config and firmware aren't up to date with each other. Upgrading everything solves the issue.
 
+### Web Interface problems
+
+#### Why is my web interface missing?
+
+If you connected to your Smoothieboard over the network and expected to see the web interface but it wasn't available, see the [Missing Web Interface](missing-web-interface) page for complete instructions on how to install it on your SD card.
+
 ### Movement problems
 
 #### My stepper motor does not turn correctly

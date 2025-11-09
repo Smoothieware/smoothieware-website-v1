@@ -80,6 +80,7 @@
 * [ ] Deep-dive page into how the planner works.
 * [ ] Migration tool for v1 to v2 config files.
 * [ ] Migration tools for marlin (and others?) to v1 and v2 config files.
+* [ ] "Cleanup" script to remove config options that are not needed since they use the default from the firmware.
 * [ ] Once we have these tools, have a migration page (do we already have one?) with links to these tools and explanations.
 * [ ] Interactive board tool for v1 and v2 with the magic scrolling thing wheret he board moves around the page and zooms and blurs and highlights different parts depending on the section we are at in the page. 
 * [ ] Linear motion system comparion going over belts vs screws etc and how it all matters or not to smoothie.
@@ -88,8 +89,10 @@
 * [ ] Import useful information from the robotseed laser user guide and deployment guide.
 * [ ] Pre-flight safety check-list page, and safety section in the home page.
 * [ ] Grounding and shielding guide, if not already included in existing page(s)?
-* [-] Create a error-messages.md page from the source code.
-
+* [x] Create a error-messages.md page from the source code.
+* [ ] FEATURE: Branches page, we need to figure out all the useful branches and document what they do and how to use them.
+* [ ] Figure out all v1-only and all v2-only settings and make sure the site handles them correctly wherever mentionned.
+* [ ] Make code blocks support settings, maybe automagically by having the tags added magically any time we see a code block?
 
 # <setting> tag.
 
