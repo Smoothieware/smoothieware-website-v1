@@ -7,7 +7,7 @@ permalink: /howitworks
 
 {::nomarkdown}
 <a href="/images/board.png">
-  <img src="/images/board.png" alt="Smoothieboard" style="min-width: 640px; min-height: 400px; width: 100%; max-width: 800px; height: auto; display: block; margin: 2rem auto;"/>
+  <img src="/images/board.png" alt="Smoothieboard" style="width: 240px; float: right; margin: 0 0 1rem 1rem;"/>
 </a>
 {:/nomarkdown}
 
@@ -35,7 +35,7 @@ Now let's get into more detail for each part:
 
 {::nomarkdown}
 <a href="/images/binary-code.png">
-  <img src="/images/binary-code.png" alt="GcodeDispatch" style="min-width: 640px; min-height: 400px; width: 100%; max-width: 800px; height: auto; display: block; margin: 2rem auto;"/>
+  <img src="/images/binary-code.png" alt="GcodeDispatch" style="width: 240px; float: right; margin: 0 0 1rem 1rem;"/>
 </a>
 {:/nomarkdown}
 
@@ -67,7 +67,7 @@ The segment cutting part is a port of grbl, more specifically, [chamnit's amelio
 
 {::nomarkdown}
 <a href="/images/circuit.png">
-  <img src="/images/circuit.png" alt="Planner" style="min-width: 640px; min-height: 400px; width: 100%; max-width: 800px; height: auto; display: block; margin: 2rem auto;"/>
+  <img src="/images/circuit.png" alt="Planner" style="width: 240px; float: right; margin: 0 0 1rem 1rem;"/>
 </a>
 {:/nomarkdown}
 
@@ -91,7 +91,7 @@ We just push the Block to the top of the queue, and it will be executed by the S
 
 {::nomarkdown}
 <a href="/images/coding.png">
-  <img src="/images/coding.png" alt="Stepper" style="min-width: 640px; min-height: 400px; width: 100%; max-width: 800px; height: auto; display: block; margin: 2rem auto;"/>
+  <img src="/images/coding.png" alt="Stepper" style="width: 240px; float: right; margin: 0 0 1rem 1rem;"/>
 </a>
 {:/nomarkdown}
 

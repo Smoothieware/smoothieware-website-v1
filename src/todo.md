@@ -66,6 +66,29 @@
 * [ ] Our code in src/site/ seems to fail silently too easily, including with the Promise.all stuff, the template compiling failing silently, etc, we should add a lot more catching code and in general make it more error tolerant and have better reporting.
 * [ ] For mcode/gcode tags that contain parameters, we should have a section in the popup with a sentence that explains what it all means, maybe using a template in the yaml file like a handlebarjs template or something? Like convert the parameters into a sentence, or base it on the declared parameters?
 * [ ] Every instance of 5V, +5V, GND, 3.3V, 3V3, +3.3V, etc, should use the <raw> tag.
+* [ ] On the smoopi page, use a carrousel instead of the long series of images.  
+* [ ] The http://localhost:4000/on_boot.gcode page isn't working, figure out if it exists or not and fix it.
+* [ ] The using-smoothie page is linked from the home page, but is missing or empty or something.
+* [ ] The same way we have yaml files for settings and gcodes, we should have one for terminal commands.
+* [ ] Get more troubleshooting questions/solutions from the forum and other sources, and use them to improve the troubleshooting page.
+* [ ] Create a frequently asked questions page from the forum and other parts of the docs, and link to it from the homepage in the torubleshooting section and from other places in the site.
+* [ ] Find all the diagrams (and create new ones as needed), and re-do all of them by hand, with text in gimp with Montserrat font.
+* [ ] Create (or improve) a coding guide that explains how to code a module step by step, for both v1 and v2.
+* [ ] Have a tour of the board with detailled descriptions of each part, for both v1 and v2, and include it in the "hardware documentation" section of the home page.
+* [ ] Create more snippets for v1 and v2 and add them to github.
+* [ ] Create a snippets page that lists all the snippets that are on github and explains what they are and details about them.
+* [ ] Deep-dive page into how the planner works.
+* [ ] Migration tool for v1 to v2 config files.
+* [ ] Migration tools for marlin (and others?) to v1 and v2 config files.
+* [ ] Once we have these tools, have a migration page (do we already have one?) with links to these tools and explanations.
+* [ ] Interactive board tool for v1 and v2 with the magic scrolling thing wheret he board moves around the page and zooms and blurs and highlights different parts depending on the section we are at in the page. 
+* [ ] Linear motion system comparion going over belts vs screws etc and how it all matters or not to smoothie.
+* [ ] Detailled machine alignment and squaring procedures.
+* [ ] Detailled laser alignment procedures including detailled testing instructions.
+* [ ] Import useful information from the robotseed laser user guide and deployment guide.
+* [ ] Pre-flight safety check-list page, and safety section in the home page.
+* [ ] Grounding and shielding guide, if not already included in existing page(s)?
+* [-] Create a error-messages.md page from the source code.
 
 
 # <setting> tag.
