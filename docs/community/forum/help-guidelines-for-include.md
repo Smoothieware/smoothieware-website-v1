@@ -1,7 +1,3 @@
----
-permalink: /help-guidelines-for-include
----
-
 # Help Guidelines
 
 General advice when asking for help from the Smoothieware community.

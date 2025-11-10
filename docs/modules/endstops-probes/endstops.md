@@ -90,7 +90,7 @@ If your axis is moving away from the endstop when homing, you need to invert you
   <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
   <strong>Note for Deltas using M666 to set soft trim:</strong><br><br>
   When you home a delta that has non zero trim values, you will find that X and Y are not 0 after homing. This is normal.<br><br>
-  If you want X0 Y0 after homing you can set <code>move_to_origin_after_home  true</code> in the config, this will move the effector to 0,0 after it homes and sets the trim. However, note this may crash into your endstops, so make sure you enable limit switches, as this will force the carriages off the endstops after homing but before moving to 0,0.
+  If you want X0 Y0 after homing you can set <setting v1="move_to_origin_after_home" v2="endstops.common.move_to_origin_after_home"></setting> to <code>true</code> in the config, this will move the effector to 0,0 after it homes and sets the trim. However, note this may crash into your endstops, so make sure you enable limit switches, as this will force the carriages off the endstops after homing but before moving to 0,0.
 </sl-alert>
 
 ## Limit switches
@@ -110,7 +110,7 @@ When one axis is enabled both min and max endstops will be enabled as limit swit
 
 <sl-alert variant="warning" open>
   <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
-  After homing the axis is usually left triggering the endstop, this would prevent that axis from moving, so when limit switches are enabled after homing the axis will back off the endstop by the <code>*.homing_retract_mm</code> amount.<br><br>
+  After homing the axis is usually left triggering the endstop, this would prevent that axis from moving, so when limit switches are enabled after homing the axis will back off the endstop by the <setting v1="{axis}_homing_retract_mm" v2="endstops.{min/max}{axis}.retract"></setting> amount.<br><br>
   The downside is if you home to 0 and at 0 the endstop is triggered going to 0,0 will cause a limit switch to fire. The workaround is to set homing offset to -5 (eg <code>M206 X-5 Y-5</code>) or enough to back off the endstop so when you go to 0,0 it does not trigger the endstop.<br><br>
   That way you can home, and safely go to 0 without triggering a limit switch event. An alternative is to set min/max X/Y to -5 rather than 0.
 </sl-alert>

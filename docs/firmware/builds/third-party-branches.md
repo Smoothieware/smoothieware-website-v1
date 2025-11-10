@@ -28,6 +28,7 @@ This page lists community-maintained branches and forks of Smoothie firmware tha
 - [Motor branch](https://github.com/Smoothieware/Smoothieware/tree/feature/motor): Adds a new module that allows controlling DC motors with cw/ccw pins, and both homing and "tick count" movement. Useful for some automated tool changers, some powder printing wipers, and some pick and place head mechanisms.
 - [Spindle reverse rotation](https://github.com/Smoothieware/Smoothieware/tree/feature/slaveswitch): Adds M4 to the Spindle module to allow counter rotation.
 - [Slave Switch](https://github.com/Smoothieware/Smoothieware/tree/feature/slaveswitch): Allows a Switch module ( for a hobby servo typically ), to be controlled exactly like a normal axis ( like your Z axis say ), allowing for example hobby servos to be controlled exactly like normal axes, making them now about to do things like homing or probing, which they couldn't before just as a switch.
+- [OpenPNP branch](https://github.com/markmaker/Smoothieware/tree/feature/best-for-pnp): A [branch by Mark Maker](https://makr.zone/smoothieware-new-firmware-for-pnp/500/) with features specific for OpenPNP, recommended by the OpenPNP project to be able to use it to the fullest extent.
 
 ## Using a Third-Party Branch in Your Machine
 

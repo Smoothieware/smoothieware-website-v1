@@ -126,7 +126,7 @@ You've spent hours:
 
 **Marlin:** Edit Configuration.h → Install PlatformIO → Compile (5 min wait) → Upload → Test → Repeat if wrong. **Total: 15-30 minutes.**
 
-**Smoothie:** Edit `extruder.hotend.steps_per_mm` → Save → Reboot. **Total: 30 seconds.**
+**Smoothie:** Edit <setting v1="extruder.hotend.steps_per_mm" v2="extruder.hotend.steps_per_mm"></setting> → Save → Reboot. **Total: 30 seconds.**
 
 ---
 

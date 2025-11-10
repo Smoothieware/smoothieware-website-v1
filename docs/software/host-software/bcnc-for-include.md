@@ -1,7 +1,3 @@
----
-permalink: /bcnc-for-include
----
-
 {::nomarkdown}
 <a href="/images/coding.png">
   <img src="/images/coding.png" alt="Coding" width="100" height="100" style="float: right; margin-left: 1rem;"/>

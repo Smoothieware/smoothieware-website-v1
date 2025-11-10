@@ -46,7 +46,7 @@ See the [endstops](endstops) module.
 
 ### Speeds
 
-The speed at which the movement to the origin point will occur is the "seek" speed, which is the speed of the last `G0` command issued, or if none was ever issued, the value of the `default_seek_rate` configuration [option](configuring-smoothie).
+The speed at which the movement to the origin point will occur is the "seek" speed, which is the speed of the last `G0` command issued, or if none was ever issued, the value of the <setting v1="default_seek_rate" v2="motion control.default_seek_rate"></setting> configuration [option](configuring-smoothie).
 
 ### Endstop seeking
 

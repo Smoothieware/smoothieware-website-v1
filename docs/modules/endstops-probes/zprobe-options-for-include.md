@@ -1,7 +1,3 @@
----
-permalink: /zprobe-options-for-include
----
-
 # Z-Probe Options
 
 The Z-probe module in Smoothieware is used to scan surfaces, calibrate machine parameters, and compensate for non-planar surfaces.
@@ -14,15 +10,15 @@ The following table lists the configuration options for the Z-probe module:
 
 | Option | Value | Description |
 | ------ | ----- | ----------- |
-| `zprobe.enable` | `true` | Set to true to enable the Z-probe module. This is used to scan surfaces, and to calibrate parameters and compensate for non-planar surfaces. |
-| `zprobe.probe_pin` | `1.28!^` | Pin the probe is connected to. |
-| `zprobe.slow_feedrate` | `5` | Speed in millimetres/second at which the probe seeks a surface. |
-| `zprobe.fast_feedrate` | `100` | Speed in millimetres/second at which the probe does fast moves. |
-| `zprobe.return_feedrate` | `50` | Speed in millimetres/second at which the probe does the return after a probe. |
-| `zprobe.debounce_ms` | `1` | Debounce the probe pin over this number of milliseconds. Set to 1 or 2 if your probe is too noisy and gives false readings. |
-| `zprobe.probe_height` | `5` | Distance above the bed at which the probing is started, once the bed's height is known. |
-| `zprobe.max_z` | `200` | Maximum Z (was gamma_max) |
-| `zprobe.dwell_before_probing` | `0.2` | Dwell time in seconds before probing. Useful for piezo Z-probe to avoid false trigger. |
+| <setting v1="zprobe.enable" v2="zprobe.enable"></setting> | `true` | Set to true to enable the Z-probe module. This is used to scan surfaces, and to calibrate parameters and compensate for non-planar surfaces. |
+| <setting v1="zprobe.probe_pin" v2="zprobe.probe_pin"></setting> | `1.28!^` | Pin the probe is connected to. |
+| <setting v1="zprobe.slow_feedrate" v2="zprobe.slow_feedrate"></setting> | `5` | Speed in millimetres/second at which the probe seeks a surface. |
+| <setting v1="zprobe.fast_feedrate" v2="zprobe.fast_feedrate"></setting> | `100` | Speed in millimetres/second at which the probe does fast moves. |
+| <setting v1="zprobe.return_feedrate" v2="zprobe.return_feedrate"></setting> | `50` | Speed in millimetres/second at which the probe does the return after a probe. |
+| <setting v1="zprobe.debounce_ms" v2="zprobe.debounce_ms"></setting> | `1` | Debounce the probe pin over this number of milliseconds. Set to 1 or 2 if your probe is too noisy and gives false readings. |
+| <setting v1="zprobe.probe_height" v2="zprobe.probe_height"></setting> | `5` | Distance above the bed at which the probing is started, once the bed's height is known. |
+| <setting v1="zprobe.max_z" v2="zprobe.max_travel"></setting> | `200` | Maximum Z (was gamma_max) |
+| <setting v1="zprobe.dwell_before_probing" v2="zprobe.dwell_before_probing"></setting> | `0.2` | Dwell time in seconds before probing. Useful for piezo Z-probe to avoid false trigger. |
 
 ## Understanding Probe Speeds
 
@@ -36,7 +32,7 @@ Using a slower speed for the actual probing ensures more accurate measurements.
 
 ## Pin Configuration
 
-The `probe_pin` setting uses special suffixes:
+The <setting v1="zprobe.probe_pin" v2="zprobe.probe_pin"></setting> setting uses special suffixes:
 
 - **`!`** - Inverts the pin logic (useful for normally-open vs normally-closed switches)
 - **`^`** - Enables internal pull-up resistor
@@ -75,7 +71,7 @@ Different probe types work with Smoothieware:
 
 - Use pressure sensors
 - Very fast and accurate
-- May need `dwell_before_probing` setting
+- May need <setting v1="zprobe.dwell_before_probing" v2="zprobe.dwell_before_probing"></setting> setting
 
 ## Usage
 

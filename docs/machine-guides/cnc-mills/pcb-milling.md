@@ -29,6 +29,8 @@ Enable it in the configuration with:
 leveling-strategy.rectangular-grid.only_by_two_corners        true
 ```
 
+**Setting:** <setting v1="leveling-strategy.rectangular-grid.only_by_two_corners" v2="cartesian grid leveling strategy.only_by_two_corners"></setting>
+
 Before two corners mode, you had to correct machine (0,0) and bed size according to the desired probing grid position and size.
 
 "Two corners" is not an absolutely correct name for this mode, because it uses only one corner and rectangle size. Name from one of CAD.

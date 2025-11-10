@@ -265,7 +265,7 @@ See [Configuring Smoothie](configuring-smoothie) for complete documentation.
 
 **Motors**
 
-Measure actual distances vs commanded distances, adjust `steps_per_mm` in config until accurate.
+Measure actual distances vs commanded distances, adjust steps_per_mm in config until accurate.
 
 **Acceleration**
 

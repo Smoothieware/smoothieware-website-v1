@@ -31,23 +31,23 @@ If a difference is detected, the filament is not advancing correctly, which mean
 
 | Option | Example value | Explanation |
 | ------ | ------------- | ----------- |
-| `filament_detector.enable` | `true` | This module is activated only if this is set to `true` |
-| `filament_detector.encoder_pin` | `2.11` | This is the pin the encoder is connected to. Must be an interrupt pin |
-| `filament_detector.bulge_pin` | `1.31` | OPTIONAL This is the pin the bulge switch is connected to. If this switch is triggered (by a bulge in the filament) and the filament is moving, this will trigger an alarm |
-| `filament_detector.seconds_per_check` | `2` | How many seconds between filament position checks, must be long enough for several pulses to be detected, but not too long |
-| `filament_detector.pulses_per_mm` | `0.5` | The number of pulses the encoder produces for every millimeter of filament movement |
+| <setting v1="filament_detector.enable"></setting> | `true` | This module is activated only if this is set to `true` |
+| <setting v1="filament_detector.encoder_pin"></setting> | `2.11` | This is the pin the encoder is connected to. Must be an interrupt pin |
+| <setting v1="filament_detector.bulge_pin"></setting> | `1.31` | OPTIONAL This is the pin the bulge switch is connected to. If this switch is triggered (by a bulge in the filament) and the filament is moving, this will trigger an alarm |
+| <setting v1="filament_detector.seconds_per_check"></setting> | `2` | How many seconds between filament position checks, must be long enough for several pulses to be detected, but not too long |
+| <setting v1="filament_detector.pulses_per_mm"></setting> | `0.5` | The number of pulses the encoder produces for every millimeter of filament movement |
 
 ## Calibration
 
 Disable the detector with `M405`, pull a known length of filament through the detector then see how many pulses were detected with `M407`.
 
-Set the `pulses_per_mm` (in config) to the calculated number (e.g., 20mm generated 50 pulses, so pulses/mm is 50/20= 2.5)
+Set the <setting v1="filament_detector.pulses_per_mm"></setting> (in config) to the calculated number (e.g., 20mm generated 50 pulses, so pulses/mm is 50/20= 2.5)
 
 You can set the steps per mm temporarily with `M404 P2.5` to check before changing it in config.
 
 Enable the detector with `M406` and test with a small print.
 
-If the detector mis-triggers too often reduce the `pulses_per_mm` and/or increase the check time.
+If the detector mis-triggers too often reduce the <setting v1="filament_detector.pulses_per_mm"></setting> and/or increase the check time.
 
 ## Hardware
 

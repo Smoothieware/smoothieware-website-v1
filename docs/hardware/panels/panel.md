@@ -96,8 +96,8 @@ panel.external_sd.sdcd_pin               0.28!^           # sd detect signal (se
 
 ### Using the spare button as a Kill switch
 
-The button on the glcd and Viki2 can be wired as a Kill button by following [This guide](killbutton). In that case the 
-`panel.back_button_pin` should be commented out.
+The button on the glcd and Viki2 can be wired as a Kill button by following [This guide](killbutton). In that case the
+<setting v1="panel.back_button_pin"></setting> should be commented out.
 
 {::nomarkdown}
 <div style="text-align: center; margin: 2rem 0;">

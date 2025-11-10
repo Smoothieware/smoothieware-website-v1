@@ -327,12 +327,12 @@ Because of this modular design:
 **Each module has its own config section**:
 ```
 # Extruder module configuration
-extruder.hotend.enable           true
-extruder.hotend.steps_per_mm     140
+<setting v1="extruder.hotend.enable" v2="extruder.hotend.enable"></setting>           true
+<setting v1="extruder.hotend.steps_per_mm" v2="extruder.hotend.steps_per_mm"></setting>     140
 
 # Temperature control module configuration
 temperature_control.hotend.enable           true
-temperature_control.hotend.thermistor_pin   0.23
+<setting v1="temperature_control.hotend.thermistor_pin" v2="thermistor_pin"></setting>   0.23
 
 # Switch module configuration
 switch.fan.enable               true
@@ -392,25 +392,25 @@ The config file is organized by module:
 
 ```
 # Motion Control Module
-default_feed_rate              4000
+<setting v1="default_feed_rate" v2="motion control.default_feed_rate"></setting>              4000
 default_seek_rate              4000
-acceleration                   3000
-junction_deviation             0.05
+<setting v1="acceleration" v2="motion control.default_acceleration"></setting>                   3000
+<setting v1="junction_deviation" v2="planner.junction_deviation"></setting>             0.05
 
 # Stepper Motor Module
-alpha_steps_per_mm             80
-beta_steps_per_mm              80
-gamma_steps_per_mm             2560
+<setting v1="alpha_steps_per_mm" v2="actuator.x.steps_per_mm"></setting>             80
+<setting v1="beta_steps_per_mm" v2="actuator.y.steps_per_mm"></setting>              80
+<setting v1="gamma_steps_per_mm" v2="actuator.z.steps_per_mm"></setting>             2560
 
 # Extruder Module
-extruder.hotend.enable         true
-extruder.hotend.steps_per_mm   140
-extruder.hotend.max_speed      50
+<setting v1="extruder.hotend.enable" v2="extruder.hotend.enable"></setting>         true
+<setting v1="extruder.hotend.steps_per_mm" v2="extruder.hotend.steps_per_mm"></setting>   140
+<setting v1="extruder.hotend.max_speed" v2="motion control.max_speed"></setting>      50
 
 # Temperature Control Module
 temperature_control.hotend.enable           true
-temperature_control.hotend.thermistor_pin   0.23
-temperature_control.hotend.heater_pin       2.7
+<setting v1="temperature_control.hotend.thermistor_pin" v2="thermistor_pin"></setting>   0.23
+<setting v1="temperature_control.hotend.heater_pin" v2="heater_pin"></setting>       2.7
 ```
 
 Each section configures a specific module. This matches the module architecture described above.
@@ -429,7 +429,7 @@ Smoothie uses Greek letters internally but X/Y/Z in G-code:
 | C | `zeta` | 6th axis rotation |
 | E | `extruder` | 3D printer extruder |
 
-So `alpha_steps_per_mm` configures the X axis, `beta_steps_per_mm` configures Y, etc.
+So <setting v1="alpha_steps_per_mm" v2="actuator.x.steps_per_mm"></setting> configures the X axis, <setting v1="beta_steps_per_mm" v2="actuator.y.steps_per_mm"></setting> configures Y, etc.
 
 ### Config override file
 

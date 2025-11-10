@@ -1,7 +1,3 @@
----
-permalink: /laser-for-include
----
-
 {::nomarkdown}
 <a href="/images/temporary/laser-cutter-generic.jpg">
   <img src="/images/temporary/laser-cutter-generic.jpg" alt="High Voltage Warning" style="width: 300px; height: 427px; float: right; margin-left: 1rem;"/>
@@ -92,7 +88,7 @@ laser_module_pwm_pin                         2.5              # this pin will be
 #laser_module_pwm_period                     20               # this sets the pwm frequency as the period in microseconds
 ```
 
-If needed, replace the 2.5 value for laser_module_pwm_pin with the pin you chose in the wiring section.
+If needed, replace the 2.5 value for <setting v1="laser_module_pwm_pin" v2="laser.pwm_pin"></setting> with the pin you chose in the wiring section.
 
 Save the file, reset the board, you are now ready for laser testing.
 

@@ -10,6 +10,26 @@
         </div>
 
         <div class="pin-popup-body">
+            {{#if has_modifiers}}
+            <div class="pin-popup-section pin-popup-modifiers">
+                <sl-alert variant="primary" open>
+                    <sl-icon slot="icon" name="sliders"></sl-icon>
+                    <div class="pin-popup-label" style="margin-bottom: 0.5rem;"><strong>Pin Modifiers Configured:</strong></div>
+                    <div class="pin-popup-value">
+                        {{#each modifiers}}
+                        <div style="margin-bottom: 0.5rem;">
+                            <sl-tag size="small" variant="primary" pill>
+                                <code style="font-weight: bold;">{{symbol}}</code> - {{label}}
+                            </sl-tag>
+                            <div style="margin-left: 0.5rem; margin-top: 0.25rem; font-size: 0.9em;">
+                                {{description}}
+                            </div>
+                        </div>
+                        {{/each}}
+                    </div>
+                </sl-alert>
+            </div>
+            {{/if}}
             {{#if assignment}}
             <div class="pin-popup-section pin-popup-assignment">
                 <div class="pin-popup-label"><sl-icon name="tag"></sl-icon> Assignment:</div>

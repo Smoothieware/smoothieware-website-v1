@@ -51,7 +51,7 @@ They can be quite fast due to the low moving mass, in particular in the Z direct
 
 ## Enabling the Arm Solution
 
-To setup your Smoothieboard for control of a linear delta machine, you must select the `linear_delta` arm solution.
+To setup your Smoothieboard for control of a linear delta machine, you must select the <setting v1="arm_solution" v2="motion control.arm_solution"></setting> arm solution.
 
 This is true for all linear delta type bots - older versions of the firmware included separate configurations for Rostock and Kossel printers, but these have been unified.
 
@@ -82,15 +82,15 @@ The two most important parameters are as follows:
 
 ### Arm Radius
 
-You need to set `arm_radius` to be the horizontal distance between the joints on the arm rod when in the home position.
+You need to set <setting v1="arm_radius" v2="linear delta.arm_radius"></setting> to be the horizontal distance between the joints on the arm rod when in the home position.
 
-An incorrect value for `arm_radius` will cause the effector's height above the bed to change as it moves around on the X-Y plane.
+An incorrect value for <setting v1="arm_radius" v2="linear delta.arm_radius"></setting> will cause the effector's height above the bed to change as it moves around on the X-Y plane.
 
 ### Arm Length
 
-Set `arm_length` to the length between joints of the arms.
+Set <setting v1="arm_length" v2="linear delta.arm_length"></setting> to the length between joints of the arms.
 
-An incorrect value for `arm_length` will affect the scaling of movements in the X-Y plane - printed parts will come out smaller (`arm_length` needs to be reduced) or larger (`arm_length` needs to be increased) than intended.
+An incorrect value for <setting v1="arm_length" v2="linear delta.arm_length"></setting> will affect the scaling of movements in the X-Y plane - printed parts will come out smaller (<setting v1="arm_length" v2="linear delta.arm_length"></setting> needs to be reduced) or larger (<setting v1="arm_length" v2="linear delta.arm_length"></setting> needs to be increased) than intended.
 
 ### Critical Construction Notes
 
@@ -205,7 +205,7 @@ When you have found the correct values for your endstop settings (see the sugges
   <p>The latest edge now uses soft trim, this allows positive and negative trim values without crashing your endstops.</p>
   <p>(Note the old suggestion of adding -5 to all your trim values is no longer valid and will do nothing other than lose 5mm from your build height).</p>
   <p>When you home a delta that has non zero trim values, you will find that X and Y are not 0 after homing. This is normal.</p>
-  <p>If you want X0 Y0 after homing you can set <code>move_to_origin_after_home  true</code> in the config (this is the default now), this will move the effector to 0,0 after it homes and sets the trim. Note that the carriages will move off the endstops a little bit after homing so the head can move without crashing into the endstops.</p>
+  <p>If you want X0 Y0 after homing you can set <setting v1="move_to_origin_after_home" v2="endstops.common.move_to_origin_after_home"></setting> to true in the config (this is the default now), this will move the effector to 0,0 after it homes and sets the trim. Note that the carriages will move off the endstops a little bit after homing so the head can move without crashing into the endstops.</p>
 </sl-alert>
 {:/nomarkdown}
 

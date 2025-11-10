@@ -1,20 +1,16 @@
----
-permalink: /gamma-max-for-include
----
-
 # Configuring Z height
 
 After homing (with `G28`), the machine knows it is at Z maximum position if your machine homes to max, and at Z minimum position if your machine homes to min.
 
-Because of this, it will read the configuration option `gamma_max` or `gamma_min` depending and set the current Z position to that value.
+Because of this, it will read the configuration option <setting v1="gamma_max"></setting> or <setting v1="gamma_min"></setting> depending and set the current Z position to that value.
 
-So after homing, the Z position is set to `gamma_max` or `gamma_min`.
+So after homing, the Z position is set to <setting v1="gamma_max"></setting> or <setting v1="gamma_min"></setting>.
 
-This means for example if you home to max that if your hotend is 300mm above your bed after homing, and you set `gamma_max` to 300, after homing, you can just tell the machine to go to Z position 0, and it will go to the bed's height.
+This means for example if you home to max that if your hotend is 300mm above your bed after homing, and you set <setting v1="gamma_max"></setting> to 300, after homing, you can just tell the machine to go to Z position 0, and it will go to the bed's height.
 
-To put it simply, setting `gamma_max` or `gamma_min` is your way of telling Smoothie what the distance is between your bed, and the hotend, when the machine has just homed.
+To put it simply, setting <setting v1="gamma_max"></setting> or <setting v1="gamma_min"></setting> is your way of telling Smoothie what the distance is between your bed, and the hotend, when the machine has just homed.
 
-To find the right value for `gamma_max` or `gamma_min` do one of the following: 
+To find the right value for <setting v1="gamma_max"></setting> or <setting v1="gamma_min"></setting> do one of the following: 
 
 ## Simplified manual adjustment method (Recommended method)
 
@@ -82,13 +78,13 @@ Once the head is exactly at the bed, issue this command:
 M114
 ```
 
-This will return the position of all axes. The current position of the Z axis is the value you must use as your `gamma_max` value.
+This will return the position of all axes. The current position of the Z axis is the value you must use as your <setting v1="gamma_max"></setting> value.
 
 Now simply edit the [configuration file](configuring-smoothie) to set this value, and reset the board.
 
 Alternatively (delta only) you can use the `M665 Z(distance)` command to set the value in the [config override system](configuring-smoothie), and `M500` to save that value to the SD card.
 
-The `gamma_max` value in the configuration file is ignored if `M665` is set and saved.
+The <setting v1="gamma_max"></setting> value in the configuration file is ignored if `M665` is set and saved.
 
 Next time you home, the machine will know how high above the bed it is.
 
@@ -121,15 +117,15 @@ G30
 
 This will report the distance traveled by the probe.
 
-Your `gamma_max` value is that reported distance, plus the z probe offset ( distance between the probe triggering point, and the bed ).
+Your <setting v1="gamma_max"></setting> value is that reported distance, plus the z probe offset ( distance between the probe triggering point, and the bed ).
 
-For example, if you home, then do `G30`, and it reports a height of 311mm, and your probe is 7mm below your hotend, then your `gamma_max` is 311 + 7 = 318mm.
+For example, if you home, then do `G30`, and it reports a height of 311mm, and your probe is 7mm below your hotend, then your <setting v1="gamma_max"></setting> is 311 + 7 = 318mm.
 
 Simply edit the [configuration file](configuring-smoothie) to set this value, and reset the board.
 
 Alternatively you can use the `M665 Z(distance)` command to set the value in the [config override system](configuring-smoothie), and `M500` to save that value to the SD card.
 
-The `gamma_max` value in the configuration file is ignored if `M665` is set and saved.
+The <setting v1="gamma_max"></setting> value in the configuration file is ignored if `M665` is set and saved.
 
 Next time you home, the machine will know how high above the bed it is.
 

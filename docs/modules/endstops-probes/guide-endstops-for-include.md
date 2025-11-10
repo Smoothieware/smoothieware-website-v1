@@ -1,7 +1,3 @@
----
-permalink: /guide-endstops-for-include
----
-
 {::nomarkdown}
 <a href="/images/recovered/limit-switch.png">
   <img src="/images/recovered/limit-switch.png" alt="Guide-End Stops" style="width: 200px; height: 200px; float: right; margin-left: 1rem;"/>

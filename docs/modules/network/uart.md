@@ -25,7 +25,7 @@ Once this is done, you can then use the UART port the same way you would use the
 
 As the UART has NO FLOW CONTROL, you MUST rigidly use the ping-pong protocol, sending ONE line of G-code per `ok` received.
 
-You configure the baud rate for the UART port in the [configuration file](configuring-smoothie) by changing the `uart0.baud_rate` configuration option.
+You configure the baud rate for the UART port in the [configuration file](configuring-smoothie) by changing the <setting v1="uart0.baud_rate" v2="uart console.baudrate"></setting> configuration option.
 
 {::nomarkdown}
 <sl-alert variant="warning" open>

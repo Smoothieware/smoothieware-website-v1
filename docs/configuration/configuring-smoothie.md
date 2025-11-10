@@ -54,7 +54,7 @@ Example:
 default_feed_rate                 4000                 # Default rate ( mm/minute ) for G1/G2/G3 moves
 ```
 
-Where `default_feed_rate` is the configuration option, `4000` is the value (which you can change), and everything after `#` is a comment (that Smoothie will ignore).
+Where <setting v1="default_feed_rate" v2="motion control.default_feed_rate"></setting> is the configuration option, `4000` is the value (which you can change), and everything after `#` is a comment (that Smoothie will ignore).
 
 This simple format makes the configuration very readable and easy to understand.
 
@@ -184,13 +184,13 @@ These commands are:
 config-get sd acceleration
 ```
 
-Will return the current acceleration setting from the SD card
+Will return the current <setting v1="acceleration" v2="motion control.default_acceleration"></setting> setting from the SD card
 
 ```plaintext
 config-set sd acceleration 1000
 ```
 
-Will set the current acceleration setting to 1000.
+Will set the current <setting v1="acceleration" v2="motion control.default_acceleration"></setting> setting to 1000.
 
 You need to reset the board after changing a value for it to be taken into account.
 

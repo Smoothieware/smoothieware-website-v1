@@ -1,7 +1,3 @@
----
-permalink: /donate-for-include
----
-
 # Support the Project
 
 {::nomarkdown}

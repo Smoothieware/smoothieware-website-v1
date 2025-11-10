@@ -1,7 +1,3 @@
----
-permalink: /logic-power-for-include
----
-
 # Logic Power Inputs
 
 {::nomarkdown}

@@ -105,11 +105,13 @@ Once you have the correct rating, you can set the corresponding parameter in the
 
 Smoothie has a funny way of naming stepper motor drivers. Instead of naming them X, Y or Z, because this makes no sense in [non-cartesian](http://en.wikipedia.org/wiki/Cartesian_coordinate_robot) robots like [delta](http://en.wikipedia.org/wiki/Delta_robot) robots, we name the drivers using Greek letters so they are [arm application](http://en.wikipedia.org/wiki/Arm_solution) agnostic:
 
-| Label on the Smoothieboard | M1 | M2 | M3 | M4 | M5 |
-| ------------------------- | --- | --- | --- | --- | --- |
-| Axis in a Cartesian machine | **X** (left-right) | **Y** (front-back) | **Z** (up-down) | **E0**: First extruder | **E1**: Second extruder |
-| Greek letter | α (alpha) | β (beta) | γ (gamma) | δ (delta) | ε (epsilon) |
-| Current setting configuration option | alpha_current | beta_current | gamma_current | delta_current | epsilon_current |
+| Label on the Smoothieboard | Axis in a Cartesian machine | Greek letter | Current setting configuration option |
+| --- | --- | --- | --- |
+| M1 | **X** (left-right) | α (alpha) | <setting v1="alpha_current" v2="current control.alpha.current"></setting> |
+| M2 | **Y** (front-back) | β (beta) | <setting v1="beta_current" v2="current control.beta.current"></setting> |
+| M3 | **Z** (up-down) | γ (gamma) | <setting v1="gamma_current" v2="current control.gamma.current"></setting> |
+| M4 | **E0**: First extruder | δ (delta) | <setting v1="delta_current" v2="current control.delta.current"></setting> |
+| M5 | **E1**: Second extruder | ε (epsilon) | <setting v1="epsilon_current" v2="current control.epsilon.current"></setting> |
 
 Now, as described in the "Unboxing" paragraph, connect the board to your computer, open the "config" file with a text editor, and change the configuration value for each stepper motor driver to the correct value.
 
@@ -129,7 +131,7 @@ You need Smoothieboard to convert the millimeters you ask of it, into steps the 
 
 That conversion depends on your exact arm solution. The most common, and the simplest, is the Cartesian arm solution, and it is the one we will focus on here. Documentation for other arm solutions can be found separately.
 
-In the case of a Cartesian arm solution, you simply convert a certain number of millimeters to a certain number of steps. That is the steps_per_millimeter configuration option that you have to set for each stepper motor.
+In the case of a Cartesian arm solution, you simply convert a certain number of millimeters to a certain number of steps. That is the <setting v1="alpha_steps_per_mm" v2="actuator.x.steps_per_mm"></setting> configuration option that you have to set for each stepper motor.
 
 To compute it, you must multiply a certain number of factors.
 
@@ -153,7 +155,7 @@ alpha_steps_per_mm                           80               # Steps per mm for
 
 Do this for each stepper motor driver.
 
-In the case of your extruder stepper motor, the principle is the same, but the value is `extruder_steps_per_mm`.
+In the case of your extruder stepper motor, the principle is the same, but the value is <setting v1="extruder.hotend.steps_per_mm" v2="extruder.hotend.steps_per_mm"></setting>.
 
 Here is a good video on steps per millimeters:
 
@@ -183,7 +185,7 @@ Becomes:
 alpha_dir_pin                                0.5!             # Pin for alpha stepper direction
 ```
 
-This is for your axes. In the case of your extruder, the config value is `extruder_dir_pin`.
+This is for your axes. In the case of your extruder, the config value is <setting v1="extruder.hotend.dir_pin" v2="extruder.hotend.dir_pin"></setting>.
 
 Save the config file, reset the Smoothieboard, connect again using Pronterface. Now the axis will move in the right direction.
 

@@ -430,23 +430,90 @@ The <gcode>G0</gcode> and <gcode>G1</gcode> commands control linear movement, wh
 
 ### Pin Number Display
 
-For displaying pin numbers and assignments, use the `<pin>` tag:
+For displaying pin numbers and assignments with interactive tooltips, use the `<pin>` tag:
 
 {::nomarkdown}
 <sl-alert variant="primary" open>
   <sl-icon slot="icon" name="lightbulb"></sl-icon>
-  <strong>Pin Number Tag</strong><br>
-  The <code>&lt;pin&gt;</code> tag displays pin numbers in a monospace black box - perfect for hardware documentation.
+  <strong>Interactive Pin Tag</strong><br>
+  The <code>&lt;pin&gt;</code> tag displays pin numbers with rich interactive tooltips showing pin capabilities, peripheral assignments, warnings, and configuration examples from our YAML pin database. Supports pin modifiers for showing configured behavior.
 </sl-alert>
 {:/nomarkdown}
 
 #### Basic Syntax
+
+**Simple pin number:**
 
 ```html
 <pin>1.18</pin>
 ```
 
 Which renders as: {::nomarkdown}<pin>1.18</pin>{:/nomarkdown}
+
+Hover over the pin to see detailed information including:
+- Pin assignment and description
+- Hardware capabilities (PWM, ADC, interrupt support)
+- Peripheral connections
+- Alternate functions
+- Pin naming across different platforms (mBed, LPCXpresso)
+- Usage notes and warnings
+- Configuration examples
+
+#### Pin Modifiers
+
+The `<pin>` tag supports all Smoothieware pin modifiers. When you include modifiers, the popup will display an explanation of what each modifier does:
+
+**Pin with modifiers:**
+
+```html
+<pin>1.12o!</pin>
+```
+
+Which renders as: {::nomarkdown}<pin>1.12o!</pin>{:/nomarkdown}
+
+**Available modifiers:**
+- `!` - Invert pin (reverses logic levels)
+- `o` - Open-drain mode (for shared signals)
+- `^` - Pull-up enabled (default, weak pull to 3.3V)
+- `v` - Pull-down enabled (weak pull to ground)
+- `-` - No pull resistor (disables internal pulls)
+- `@` - Repeater mode (maintains last state, rarely used)
+
+**Multiple modifiers:**
+
+You can combine multiple modifiers in any order:
+
+```html
+<pin>2.11!o^</pin>
+```
+
+Which renders as: {::nomarkdown}<pin>2.11!o^</pin>{:/nomarkdown}
+
+The popup will show each modifier with its meaning and usage information.
+
+**Common modifier combinations:**
+
+```html
+Endstop configured as <pin>1.24!^</pin> (inverted with pull-up)
+```
+
+Renders as:
+
+{::nomarkdown}
+Endstop configured as <pin>1.24!^</pin> (inverted with pull-up)
+{:/nomarkdown}
+
+```html
+Shared alarm signal on <pin>2.11o^</pin> (open-drain with pull-up)
+```
+
+Renders as:
+
+{::nomarkdown}
+Shared alarm signal on <pin>2.11o^</pin> (open-drain with pull-up)
+{:/nomarkdown}
+
+See the [Pin Configuration](/pin-configuration) page for detailed explanations of what each modifier does and when to use them.
 
 #### Use Cases
 
@@ -484,6 +551,18 @@ Renders as:
 
 {::nomarkdown}
 Smoothieboard uses pins <pin>1.18</pin> through <pin>1.21</pin> for the X axis motor driver.
+{:/nomarkdown}
+
+**Configuration examples with modifiers:**
+
+```html
+Configure your endstop as <pin>1.29!^</pin> for inverted logic with pull-up enabled.
+```
+
+Renders as:
+
+{::nomarkdown}
+Configure your endstop as <pin>1.29!^</pin> for inverted logic with pull-up enabled.
 {:/nomarkdown}
 
 ### Lists

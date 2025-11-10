@@ -53,10 +53,10 @@ Once you have the [joystick](joystick) modules set up, you will need to know the
 
 The jogger module must figure out how to convert the -1 to 1 range of the joystick into meaningful jog speeds.
 
-To do this, two main configuration parameters come into play: `max_speed` and `nonlinearity`.
+To do this, two main configuration parameters come into play: <setting v1="jogger.max_speed"></setting> and <setting v1="jogger.nonlinearity"></setting>.
 
-- `max_speed`: tells the jogger how fast to go when the joystick is pushed as far as possible
-- `nonlinearity`: tells the jogger how to go from not moving to max speed
+- <setting v1="jogger.max_speed"></setting>: tells the jogger how fast to go when the joystick is pushed as far as possible
+- <setting v1="jogger.nonlinearity"></setting>: tells the jogger how to go from not moving to max speed
 
 The maximum speed should be relatively straightforward, however the nonlinearity is more difficult to explain.
 
@@ -86,15 +86,15 @@ The table below describes the values demonstrated in the chart above:
 
 Notice for all the example values in the chart above, there is a region below ~0.05 on the joystick axis where the jogger does not move at all.
 
-This is the `dead_zone` configuration, which is used to make sure the joystick has actually moved before jogging.
+This is the <setting v1="jogger.dead_zone"></setting> configuration, which is used to make sure the joystick has actually moved before jogging.
 
-If undesired jogging occurs, increase the `dead_zone` value.
+If undesired jogging occurs, increase the <setting v1="jogger.dead_zone"></setting> value.
 
 ## Examples
 
 ### Set Jog Axes
 
-The command to set the jog axes is `M777` by default, unless changed by the `m_code_set` configuration.
+The command to set the jog axes is `M777` by default, unless changed by the <setting v1="jogger.m_code_set"></setting> configuration.
 
 To use the command, type the M-code followed by the letters to use for jog axes (in order of alpha, beta, etc.).
 
@@ -106,9 +106,9 @@ To use the command, type the M-code followed by the letters to use for jog axes 
 
 ### Toggle Jog Axes
 
-The command to toggle the jog axes is `M778` by default, unless changed by the `m_code_toggle` configuration.
+The command to toggle the jog axes is `M778` by default, unless changed by the <setting v1="jogger.m_code_toggle"></setting> configuration.
 
-Toggling the axes will cycle between the axes set in the `jog_axes` configuration.
+Toggling the axes will cycle between the axes set in the <setting v1="jogger.jog_axes"></setting> configuration.
 
 ```
 M778
@@ -119,6 +119,8 @@ An example line of configuration is shown below:
 ```markdown
 jogger.jog_axes             XY,XZ,-Z         #cycle between the joystick horz/vert controlling axes XY, XZ, and nothing/Z when using M778
 ```
+
+NOTE: This references <setting v1="jogger.jog_axes"></setting>.
 
 In this example, the jogger will start controlling by controlling XY.
 

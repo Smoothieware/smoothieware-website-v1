@@ -466,3 +466,52 @@ section {
   border-radius: 3px !important;
   font-size: 0.9em !important;
 }
+
+/* Table styling - prevent overflow and enable word wrap */
+.markdown-body table {
+  max-width: 100% !important;
+  width: 100% !important;
+  table-layout: fixed !important; /* Fixed layout enables better word wrapping */
+  border-collapse: collapse !important;
+  margin: 1.2em 0 !important;
+  display: table !important;
+  overflow-x: auto !important;
+}
+
+.markdown-body th,
+.markdown-body td {
+  word-wrap: break-word !important;
+  word-break: break-word !important;
+  overflow-wrap: break-word !important;
+  padding: 8px 12px !important;
+  vertical-align: top !important;
+  hyphens: auto !important; /* Enable automatic hyphenation for long words */
+}
+
+/* Ensure table headers are readable */
+.markdown-body th {
+  font-weight: 600 !important;
+  text-align: left !important;
+}
+
+/* Handle very narrow columns gracefully */
+.markdown-body td {
+  min-width: 80px !important; /* Minimum width to prevent columns from becoming too narrow */
+}
+
+/* Draft additions highlighting - dark red background for new text (visible on dark theme) */
+.draft-addition {
+  background-color: #4a1515 !important;
+  padding: 10px 15px !important;
+  border-radius: 4px !important;
+  display: block !important;
+  margin: 1rem 0 !important;
+  border-left: 4px solid #ff4444 !important;
+}
+
+/* Draft images - light red hue filter for new images */
+.draft-image {
+  filter: sepia(100%) hue-rotate(330deg) saturate(200%) brightness(95%) !important;
+  border: 2px solid #ffcccc !important;
+  border-radius: 4px !important;
+}

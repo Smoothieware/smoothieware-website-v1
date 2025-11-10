@@ -14087,9 +14087,13 @@ Expecting ` + expected.join(", ") + ", got '" + (this.terminals_[symbol] || symb
   import_jquery.default(() => {
     console.log("[code-tag.ts] Initializing gcode and mcode tag handlers");
     console.log("[code-tag.ts] Starting Promise.all for template and data loading");
+    const templatePromise = load_and_compile_template();
+    const dataPromise = load_gcode_mcode_data();
+    console.log("[code-tag.ts] Template promise:", templatePromise);
+    console.log("[code-tag.ts] Data promise:", dataPromise);
     Promise.all([
-      load_and_compile_template(),
-      load_gcode_mcode_data()
+      templatePromise,
+      dataPromise
     ]).then(() => {
       console.log("[code-tag.ts] Template and data loaded, processing tags");
       console.log("[code-tag.ts] compiled_code_popup_template type:", typeof compiled_code_popup_template);

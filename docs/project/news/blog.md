@@ -82,7 +82,7 @@ Checkout Zprobe page for more info. [Read more…](blog_8)
 
 **Posted on:** Monday, 20 January 2014
 
-Smoothie Edge-0b3e620 and later now pays attention to config option "planner_queue_size". [Read more…](blog_7)
+Smoothie Edge-0b3e620 and later now pays attention to config option <setting v1="planner_queue_size" v2="planner.planner_queue_size"></setting>. [Read more…](blog_7)
 
 ---
 

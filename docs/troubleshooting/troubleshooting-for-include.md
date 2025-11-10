@@ -1,7 +1,3 @@
----
-permalink: /troubleshooting-for-include
----
-
 ## Troubleshooting a problem with your Smoothieboard
 
 {::nomarkdown}
@@ -322,7 +318,7 @@ Try asking it to move at a much lower speed ( for example `G0 Z100 F100` ).
 
 It's also possible you are trying to home, or to probe too fast. See the corresponding modules for how to modify the default speeds.
 
-If you are using external stepper motor drivers (driven by ENn, Stn and DIRn pins) check polarity, voltage and timings of signals to your driver. Also consider increasing `microseconds_per_step_pulse` slightly if the default 1us pulse width is too narrow for your driver or cable lengths.
+If you are using external stepper motor drivers (driven by ENn, Stn and DIRn pins) check polarity, voltage and timings of signals to your driver. Also consider increasing <setting v1="microseconds_per_step_pulse" v2="system.step_pulse_us"></setting> slightly if the default 1us pulse width is too narrow for your driver or cable lengths.
 
 #### My stepper motor does not turn at all
 

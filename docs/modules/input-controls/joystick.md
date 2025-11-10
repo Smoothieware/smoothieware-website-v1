@@ -106,7 +106,7 @@ For a joystick, you will need to connect each wiper (the left/right and up/down)
 ### Mapping Voltage to Position
 The configuration file, at its most basic level, must tell the SmoothieBoard how to convert the 0 to 3.3 V that it reads into a more useful range of numbers. The range that the Joystick module uses is -1 to 1. It is also possible to use a 0 to 1 range if negative values don't make sense for your application.
 
-The way the Joystick module performs this conversion is to first measure the voltage coming in. The module then subtracts off an offset, called `zero_offset`. The module then scales the voltage reading so that the `zero_offset` voltage becomes 0, and the `endpoint` voltage becomes 1 or -1 (depends on if `endpoint` is greater or less than `zero_offset`). Any values which end up outside the -1 to 1 range are fixed to be at +/- 1.
+The way the Joystick module performs this conversion is to first measure the voltage coming in. The module then subtracts off an offset, called <setting v1="joystick.{name}.zero_offset"></setting>. The module then scales the voltage reading so that the <setting v1="joystick.{name}.zero_offset"></setting> voltage becomes 0, and the <setting v1="joystick.{name}.endpoint"></setting> voltage becomes 1 or -1 (depends on if <setting v1="joystick.{name}.endpoint"></setting> is greater or less than <setting v1="joystick.{name}.zero_offset"></setting>). Any values which end up outside the -1 to 1 range are fixed to be at +/- 1.
 
 <div align="center">
 <a href="/images/temporary/voltage-regulator-generic.jpg">
@@ -119,22 +119,22 @@ The way the Joystick module performs this conversion is to first measure the vol
 </a>
 {:/nomarkdown}
 -->
-Example Mapping from joystick position to output with `zero_offset` = 1.5 V and `endpoint` = 0 V
+Example Mapping from joystick position to output with <setting v1="joystick.{name}.zero_offset"></setting> = 1.5 V and <setting v1="joystick.{name}.endpoint"></setting> = 0 V
 </div>
 
 ### Auto-Zeroing
 
-The joystick module has an optional feature which automatically determines `zero_offset`.
+The joystick module has an optional feature which automatically determines <setting v1="joystick.{name}.zero_offset"></setting>.
 
-For a short period of time (`startup_time`) after the SmoothieBoard is powered on / reset, the joystick module averages the joystick readings. The average value at the end of the startup time is used as the `zero_offset`.
+For a short period of time (<setting v1="joystick.{name}.startup_time"></setting>) after the SmoothieBoard is powered on / reset, the joystick module averages the joystick readings. The average value at the end of the startup time is used as the <setting v1="joystick.{name}.zero_offset"></setting>.
 
-This feature is useful for joysticks, where the `zero_offset` is somewhat unknown (it is usually around 1.65 V but different devices have slightly different center values).
+This feature is useful for joysticks, where the <setting v1="joystick.{name}.zero_offset"></setting> is somewhat unknown (it is usually around 1.65 V but different devices have slightly different center values).
 
 It would not make sense to enable for sliders or knobs, since the knob doesn't have a known/default starting position.
 
 <sl-alert variant="warning" open>
   <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
-  <strong>Important:</strong> Be careful not to move the joystick during the <code>startup_time</code>, otherwise the <code>zero_offset</code> will be wrong and the joystick will have undesirable behavior.
+  <strong>Important:</strong> Be careful not to move the joystick during the startup time (set by <setting v1="joystick.{name}.startup_time"></setting>), otherwise the <setting v1="joystick.{name}.zero_offset"></setting> will be wrong and the joystick will have undesirable behavior.
 </sl-alert>
 
 ### All Configuration Options
@@ -167,7 +167,7 @@ joystick.vertical.refresh_rate                 100
 joystick.vertical.start_value                  0
 ```
 
-With the joystick configuration done, you will simply need to configure the [Jogger](jogger). The only pertinent config for the joystick/jogger connection is setting the `data_source_xxx` configs for the Jogger. An example of those options is shown below:
+With the joystick configuration done, you will simply need to configure the [Jogger](jogger). The only pertinent config for the joystick/jogger connection is setting the data_source configs for the Jogger (like <setting v1="jogger.data_source_alpha"></setting>). An example of those options is shown below:
 
 ```markdown
 # Jogger Configuration

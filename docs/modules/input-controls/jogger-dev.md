@@ -98,6 +98,12 @@ jogger.data_source_gamma           joystickZ
 jogger.jog_axes                    XYZ
 ```
 
+NOTE: This is showing config file syntax - the settings referenced are:
+- <setting v1="jogger.data_source_alpha"></setting>
+- <setting v1="jogger.data_source_beta"></setting>
+- <setting v1="jogger.data_source_gamma"></setting>
+- <setting v1="jogger.jog_axes"></setting>
+
 The example assumes you have properly set up three [joystick](joystick) modules with names "joystickX", "joystickY" and "joystickZ".
 
 Then, to set the jog axes, simply run `M777` followed by three letters of the axes you want the joystick to control.

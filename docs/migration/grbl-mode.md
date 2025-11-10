@@ -26,7 +26,7 @@ Unfortunately, this has become such a widespread standard in 3D printing that it
 
 Therefore, we support both formats.
 
-The way you choose which format Smoothie will interpret the G-code you send to it as, is by changing the `grbl_mode` option.
+The way you choose which format Smoothie will interpret the G-code you send to it as, is by changing the <setting v1="grbl_mode" v2="general.grbl_mode"></setting> option.
 
 If you set it to `true`:
 
@@ -53,7 +53,7 @@ Then Smoothie will interpret the G-code you send to it the same way Reprap-type 
 
   Smoothie has a special "CNC" build with some special CNC features and adaptations.<br><br>
 
-  This special build has <code>grbl_mode</code> enabled (set to "true") by default.<br><br>
+  This special build has <setting v1="grbl_mode" v2="general.grbl_mode"></setting> enabled (set to "true") by default.<br><br>
 
   You can get the special CNC build pre-compiled at <a href="getting-smoothie">getting-smoothie</a> or compile it yourself at <a href="compiling-smoothie">compiling-smoothie</a>.<br><br>
 

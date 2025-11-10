@@ -46,11 +46,11 @@ etc ...
 
 ### Startup State
 
-The initial internal state of the switch at boot is set by the `startup_state` setting, which should be set to "true" or "false". 
+The initial internal state of the switch at boot is set by the <setting v1="switch.{name}.startup_state" v2="switch.{name}.startup_state"></setting> setting, which should be set to "true" or "false".
 
-Also remember that individual pins can be inverted with a `!` ( see [Pin Configuration](/pin-configuration) ). Default is false. 
+Also remember that individual pins can be inverted with a `!` ( see [Pin Configuration](/pin-configuration) ). Default is false.
 
-There is also a `startup_value` setting that sets the default analog value used for pwm on an output pin. This value defaults to always on.
+There is also a <setting v1="switch.{name}.startup_value" v2="switch.{name}.startup_value"></setting> setting that sets the default analog value used for pwm on an output pin. This value defaults to always on.
 
 ```markdown
 switch.fan1.startup_state                 false

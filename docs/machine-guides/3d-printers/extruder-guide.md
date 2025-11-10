@@ -8,7 +8,7 @@ Extruders are used to push plastic filament through a hotend, to achieve the awe
 
 This module controls the motor that pushes the filament, it does not take care of the hotend itself, which is the job of [TemperatureControl](temperature-control).
 
-The most important parameter to get your extruder module to work properly, is `extruder.[module-name].steps_per_mm`.
+The most important parameter to get your extruder module to work properly, is <setting v1="extruder.{name}.steps_per_mm" v2="extruder.{name}.steps_per_mm"></setting>.
 
 You can create as many Extruder modules as you want (although you may run out of memory and Smoothie will no longer boot), as long as you give them different module names.
 

@@ -83,7 +83,7 @@ Will suspend a print in progress. It does the following:
 2. Wait for empty queue
 3. Save the current position, extruder position, temperatures - any state that would need to be restored
 4. --retract by specified amount either on command line or in config-- - not implemented yet
-5. Turn off heaters (unless the config has `leave_heaters_on_suspend true`)
+5. Turn off heaters (unless the config has <setting v1="leave_heaters_on_suspend"></setting> `true`)
 6. Optionally run after_suspend gcode (set in config defines gcode to run eg. `after_suspend G91G0E20G90`)
 
 User may jog or remove and insert filament at this point, extruding or retracting as needed.
@@ -97,7 +97,7 @@ This could be triggered by a Switch module to setup a simple out of filament det
 
 <sl-alert variant="neutral" open>
   <sl-icon slot="icon" name="info-circle"></sl-icon>
-  <strong>Performance Note:</strong> The queue must drain before it will suspend. If you need to have the system suspend quicker the only way to do it is to set the config variable <code>mm_per_line_segment 1</code>. This will mean it will stop within 32mm, but there is a performance penalty for segmenting when you do not need to.
+  <strong>Performance Note:</strong> The queue must drain before it will suspend. If you need to have the system suspend quicker the only way to do it is to set the config variable <setting v1="mm_per_line_segment" v2="motion control.mm_per_line_segment"></setting> to <code>1</code>. This will mean it will stop within 32mm, but there is a performance penalty for segmenting when you do not need to.
 </sl-alert>
 
 

@@ -16,7 +16,7 @@ All of the options currently supported by the Extruder module:
 <sl-alert variant="neutral" open>
   <sl-icon slot="icon" name="info-circle"></sl-icon>
   This is the new format which allows multiple extruders. The old format is deprecated. The old "one-extruder-only" configuration options will still be valid for backward compatibility, but it is recommended not to use them.<br><br>
-  For example where before you used `extruder_steps_per_mm` you must now use `extruder.[module-name].steps_per_mm`.
+  For example where before you used `extruder_steps_per_mm` you must now use <setting v1="extruder.{name}.steps_per_mm" v2="extruder.{name}.steps_per_mm"></setting>.
 </sl-alert>
 
 ## G-code

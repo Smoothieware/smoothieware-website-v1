@@ -164,7 +164,7 @@ In my experience, going over 230400 doesn't really give you anything except the 
 Stick with 115,200 or 230,400 as UART speeds - this is set in the config file:
 
 ```cpp
-# Serial communications configuration ( transmission rate default to 9600 if undefined )  
+# Serial communications configuration ( transmission rate default to 9600 if undefined )
 uart0.baud_rate  115200   # Baud rate for the default hardware serial port
 ```
 

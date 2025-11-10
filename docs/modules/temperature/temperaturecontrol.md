@@ -35,7 +35,7 @@ etc ...
 
 This will create and configure two separate TemperatureControl modules that will act completely independently from each other.
 
-The line that effectively "creates" the module is the `enable` option. If set to true, a module is created and further configuration is read. If set to false, further configuration for this module is ignored as no module is created.
+The line that effectively "creates" the module is the <setting v1="temperature_control.{name}.enable" v2="temperature control.enable"></setting> option. If set to true, a module is created and further configuration is read. If set to false, further configuration for this module is ignored as no module is created.
 
 In the **Configuration** section below, the first two parts (`temperature_control.module_name`) of the configuration are sometimes omitted for conciseness, but have to be added in your actual configuration file ([see example](/configuring-smoothie)).
 
@@ -288,9 +288,9 @@ You activate this safety check (and you should) by adding the following to your 
 temperature_control.module_name.max_temp      300
 ```
 
-Once this is set, it will be impossible to set temperatures higher than the `max_temp` value.
+Once this is set, it will be impossible to set temperatures higher than the <setting v1="temperature_control.{name}.max_temp" v2="temperature control.max_temp"></setting> value.
 
-Also, if the temperature reaches this `max_temp` temperature, Smoothie will turn off all heaters, go into HALT state, and print out the following message:
+Also, if the temperature reaches this <setting v1="temperature_control.{name}.max_temp" v2="temperature control.max_temp"></setting> temperature, Smoothie will turn off all heaters, go into HALT state, and print out the following message:
 
 ```markdown
 Error: MINTEMP or MAXTEMP triggered on T. Check your temperature sensors!

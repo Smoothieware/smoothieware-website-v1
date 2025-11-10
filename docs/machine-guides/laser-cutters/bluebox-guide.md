@@ -196,6 +196,6 @@ Once you have located each set of 4 wires, separate them from the rest, and for 
 
 Then connect the X stepper motor to the M1 stepper motor driver, and the Y stepper motor to the M2 stepper motor driver.
 
-Finally, in your [configuration file](/configuring-smoothie), change `alpha_current` and `beta_current` to the value `1` ( for 1 Ampere ), and change the `alpha_steps_per_mm` and `beta_steps_per_mm` to the value `157.575`.
+Finally, in your [configuration file](/configuring-smoothie), change <setting v1="alpha_current" v2="current control.alpha.current"></setting> and <setting v1="beta_current" v2="current control.beta.current"></setting> to the value `1` ( for 1 Ampere ), and change the <setting v1="alpha_steps_per_mm" v2="actuator.x.steps_per_mm"></setting> and <setting v1="beta_steps_per_mm" v2="actuator.y.steps_per_mm"></setting> to the value `157.575`.
 
 Once this is done, connect to the board via USB using software such as Pronterface or the web interface, power up the machine, and you should be able to move the stepper motors, and therefore the axes, using the controls in the software.

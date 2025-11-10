@@ -1,7 +1,3 @@
----
-permalink: /flashing-smoothie-firmware-for-include
----
-
 # Flashing Smoothie Firmware
 
 Here is how to flash a new firmware to your Smoothieboard.

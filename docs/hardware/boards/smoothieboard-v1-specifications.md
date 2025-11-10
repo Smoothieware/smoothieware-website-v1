@@ -70,6 +70,8 @@ gamma_current   1.5    # Z axis motor current
 delta_current   1.5    # Extruder motor current
 ```
 
+The current settings are <setting v1="alpha_current" v2="current control.alpha.current"></setting>, <setting v1="beta_current" v2="current control.beta.current"></setting>, <setting v1="gamma_current" v2="current control.gamma.current"></setting>, and <setting v1="delta_current" v2="current control.delta.current"></setting>.
+
 Typical values range from 0.5A for small motors to 2.0A for larger NEMA 17 motors. Check your motor's datasheet for the rated current. You want to set it to the motor's rated current, or slightly below. Setting it too high won't make your motors stronger - it'll just make them hotter.
 
 ### Microstepping
@@ -936,6 +938,8 @@ temperature_control.hotend.thermistor           Semitec
 temperature_control.hotend.set_m_code           104
 temperature_control.hotend.set_and_wait_m_code  109
 ```
+
+Key temperature control settings include <setting v1="temperature_control.{name}.enable" v2="temperature control.enable"></setting>, <setting v1="temperature_control.{name}.thermistor_pin" v2="temperature control.thermistor_pin"></setting>, and <setting v1="temperature_control.{name}.heater_pin" v2="temperature control.heater_pin"></setting>.
 
 See the [configuration documentation](configuring-smoothie) for complete details.
 

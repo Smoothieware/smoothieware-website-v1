@@ -93,6 +93,16 @@
 * [ ] FEATURE: Branches page, we need to figure out all the useful branches and document what they do and how to use them.
 * [ ] Figure out all v1-only and all v2-only settings and make sure the site handles them correctly wherever mentionned.
 * [ ] Make code blocks support settings, maybe automagically by having the tags added magically any time we see a code block?
+* [ ] Make the docs more compact, remove some fat, and maybe have some information in expandable boxes if it's not critical, with a custom expandable tag.
+* [ ] All pages should have a link at the top and bottom going to edit the page on github.
+* [ ] There are some instances of old formats of settings in the docs like laser_module_proportional_power , we should identify all of them, and update the docs to use the newer formats.
+* [ ] Do internet research related to laser+smoothie, cnc+smoothie, etc, and use all that to improve the guides.
+  * [ ] Research + laser guide.
+  * [ ] Research + cnc guide.
+  * [ ] Research + 3D printer guide.
+  * [ ] Research + pick and place guide.
+* [ ] Pin diagrams such as https://github.com/Bouni/smoothieboard-graphics/blob/master/smoothieboard-wiring.png?raw=true are messed up by the dark background, we need to give them a white background.
+* [ ] Fix the thing where we see stuff like « permalink: /stepper-motors — » in the laser cutter guide.
 
 # <setting> tag.
 
@@ -112,6 +122,7 @@
 * [ ] For values that are speeds like values with feed_rate etc in them (and we might be able to determine also based on the unit type value/property), we should have a simple thing where a circle goes around a pill-shape track that's the width of the popup, that shows what the speed looks like, trying to figure out the size of the screen based on its resolution and type (desktop, phone), etc, and a slider that lets us select the speed with exponential changes/scale.
 *_[ ] For the arm_solution setting we should have images for each of the possible values.
 * [ ] CRITICAL: Before we actually replace all the settings with <setting> tags, we need to create a very clear and detailled spec for what settings should look like/be specified at, including adding the full path, including the section for v2 settings etc.
+* [ ] Some places recommend the user edits a page like search «edit it» on http://localhost:4000/draft-laser-cutter-guide , we should fix that with links to github.
 
 # Testing.
 

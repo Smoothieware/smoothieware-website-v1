@@ -1,7 +1,3 @@
----
-permalink: /forum-guidelines-for-include
----
-
 # Forum Guidelines
 
 {% include community/forum/help-guidelines-for-include.md %}

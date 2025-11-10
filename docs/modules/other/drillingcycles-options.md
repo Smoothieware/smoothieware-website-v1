@@ -10,5 +10,5 @@ The drilling cycles module provides canned cycles for CNC drilling operations. S
 
 | Option | Default Value | Description |
 |--------|---------------|-------------|
-| drillingcycles.enable | false | Enable drillingcycles module. |
-| drillingcycles.dwell_units | `S` | Dwell units `S` = seconds, `P` = millis. |
+| <setting v1="drillingcycles.enable"></setting> | false | Enable drillingcycles module. |
+| <setting v1="drillingcycles.dwell_units"></setting> | `S` | Dwell units `S` = seconds, `P` = millis. |

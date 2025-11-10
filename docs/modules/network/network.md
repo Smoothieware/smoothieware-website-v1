@@ -13,7 +13,7 @@ This works similarly to how you would access your 2D printer or other network de
 
 Smoothie supports Ethernet access, which must be enabled in the [configuration file](configuring-smoothie).
 
-To enable the network, set `network.enable` to `true`.
+To enable the network, set <setting v1="network.enable" v2="network.enable"></setting> to `true`.
 
 The IP address can be set statically or set to use DHCP.
 
@@ -155,7 +155,7 @@ Note: [Simple File Transfer Protocol](http://en.wikipedia.org/wiki/Simple_File_T
 
 **NOTE**: Plan9 is not built into Smoothie by default. To include it, rebuild Smoothie with `make PLAN9=1`. See [Compiling Smoothie](compiling-smoothie).
 
-The Plan9 network file system can be used on Linux to directly mount the Smoothieboard over the network. First, activate the option `network.plan9.enable` and restart your Smoothie. After that, you can mount with:
+The Plan9 network file system can be used on Linux to directly mount the Smoothieboard over the network. First, activate the option <setting v1="network.plan9.enable"></setting> and restart your Smoothie. After that, you can mount with:
 
 ```plaintext
 mount -t 9p 192.168.2.120 -o dfltuid=1000,dfltgid=1000 /mnt/smoothie 
@@ -215,7 +215,7 @@ network.ip_address  auto          # use dhcp to get IP address
 network.hostname   smoothie1   # optionally set this hostname for dhcp
 ```
 
-Note the `network.hostname` is optional. (see section 3.14 [RFC 2132](https://www.ietf.org/rfc/rfc2132.txt))
+Note the <setting v1="network.hostname" v2="network.hostname"></setting> is optional. (see section 3.14 [RFC 2132](https://www.ietf.org/rfc/rfc2132.txt))
 
 ## Net Command
 

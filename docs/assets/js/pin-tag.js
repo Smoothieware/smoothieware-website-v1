@@ -13927,6 +13927,54 @@ Expecting ` + expected.join(", ") + ", got '" + (this.terminals_[symbol] || symb
     }
     return html;
   }
+  function parse_pin_text(pin_text) {
+    const trimmed = pin_text.trim();
+    const pin_number_regex = /^(\d+\.\d+)/;
+    const match = trimmed.match(pin_number_regex);
+    if (!match) {
+      return {
+        base_pin: trimmed,
+        full_pin: trimmed,
+        modifiers: []
+      };
+    }
+    const base_pin = match[1];
+    const modifier_text = trimmed.substring(base_pin.length);
+    const valid_modifiers = ["!", "o", "^", "v", "-", "@"];
+    const modifiers = [];
+    for (const char of modifier_text) {
+      if (valid_modifiers.includes(char)) {
+        modifiers.push(char);
+      }
+    }
+    return {
+      base_pin,
+      full_pin: trimmed,
+      modifiers
+    };
+  }
+  function get_modifier_description(modifier) {
+    const descriptions = {
+      "!": "Invert pin - reverses the logic level (high becomes low, low becomes high)",
+      o: "Open-drain mode - pin can only pull to ground or disconnect (useful for shared signals)",
+      "^": "Pull-up enabled - weak resistor pulls pin high to 3.3V when not driven (default)",
+      v: "Pull-down enabled - weak resistor pulls pin low to ground when not driven",
+      "-": "No pull resistor - disables internal pull-up/pull-down resistors",
+      "@": "Repeater mode - maintains the last signal state (rarely used, for long cables)"
+    };
+    return descriptions[modifier] ?? `Unknown modifier: ${modifier}`;
+  }
+  function get_modifier_label(modifier) {
+    const labels = {
+      "!": "Inverted",
+      o: "Open-Drain",
+      "^": "Pull-Up",
+      v: "Pull-Down",
+      "-": "No Pull",
+      "@": "Repeater"
+    };
+    return labels[modifier] ?? modifier;
+  }
   async function load_and_compile_templates() {
     try {
       const [
@@ -13997,14 +14045,15 @@ Expecting ` + expected.join(", ") + ", got '" + (this.terminals_[symbol] || symb
       is_loading = false;
     }
   }
-  function create_popup_for_pin($pin_element, pin_name) {
-    if (!pin_database || !pin_database.has(pin_name)) {
-      console.warn(`[pin-tag.ts] Pin ${pin_name} not found in database`);
+  function create_popup_for_pin($pin_element, pin_text) {
+    const parsed = parse_pin_text(pin_text);
+    if (!pin_database || !pin_database.has(parsed.base_pin)) {
+      console.warn(`[pin-tag.ts] Pin ${parsed.base_pin} not found in database`);
       if (!compiled_pin_not_found_template) {
         console.error("[pin-tag.ts] Pin not found template not compiled");
         return;
       }
-      const not_found_html = compiled_pin_not_found_template({ pin_name });
+      const not_found_html = compiled_pin_not_found_template({ pin_name: parsed.full_pin });
       const $popup2 = import_jquery.default(not_found_html);
       $pin_element.after($popup2);
       setTimeout(() => {
@@ -14014,10 +14063,22 @@ Expecting ` + expected.join(", ") + ", got '" + (this.terminals_[symbol] || symb
       add_hover_handlers($pin_element, $popup2);
       return;
     }
-    const pin_data = pin_database.get(pin_name);
+    const pin_data = pin_database.get(parsed.base_pin);
+    const modifier_info = parsed.modifiers.length > 0 ? {
+      has_modifiers: true,
+      modifiers: parsed.modifiers.map((mod) => ({
+        symbol: mod,
+        label: get_modifier_label(mod),
+        description: get_modifier_description(mod)
+      }))
+    } : {
+      has_modifiers: false
+    };
     const template_data = {
-      pin_name,
-      ...pin_data
+      pin_name: parsed.full_pin,
+      base_pin: parsed.base_pin,
+      ...pin_data,
+      ...modifier_info
     };
     if (!compiled_pin_popup_template) {
       console.error("[pin-tag.ts] Pin popup template not compiled");

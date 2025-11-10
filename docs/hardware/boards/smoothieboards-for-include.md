@@ -1,7 +1,3 @@
----
-permalink: /smoothieboards-for-include
----
-
 # Smoothieboards
 
 The Smoothieboards are numerical fabrication controllers designed to run the Open-Source [Smoothieware](http://smoothieware.org) firmware, by a community of volunteers.

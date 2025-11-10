@@ -14,9 +14,9 @@ If you plan to use a hobby servo, LEDs, lasers or any kind of device which requi
 
 | ARM Pin | 3X/3XC | 4X/4XC | 5X/5XC | Assignment | Comment |
 | ------- | ------ | ------ | ------ | ---------- | ------- |
-| P1.18 | leds_disable | leds_disable | leds_disable | led1 | set `leds_disable` in config to use it |
-| P1.20 | leds_disable | leds_disable | leds_disable | led3 | set `leds_disable` in config to use it |
-| P1.21 | leds_disable | leds_disable | leds_disable | led4 | set `leds_disable` in config to use it |
+| P1.18 | leds_disable | leds_disable | leds_disable | led1 | set <setting v1="leds_disable"></setting> in config to use it |
+| P1.20 | leds_disable | leds_disable | leds_disable | led3 | set <setting v1="leds_disable"></setting> in config to use it |
+| P1.21 | leds_disable | leds_disable | leds_disable | led4 | set <setting v1="leds_disable"></setting> in config to use it |
 | P1.23 | `available` | `available` | | 3rd large fet | |
 | P1.24 | | | | alpha_min_endstop | can be used on delta without min endstops |
 | P1.26 | | | | beta_min_endstop | can be used on delta without min endstops |
