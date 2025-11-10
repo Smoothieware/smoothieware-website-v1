@@ -63,21 +63,21 @@ Some users have hand-translated this page. Note that this translated version is 
 
 * [Version Francaise](3d-printer-guide-fr)
 
-{% include getting-started/unboxing.md %}
+{% include getting-started/unboxing-for-include.md %}
 
-{% include migration/migrating.md %}
+{% include migration/migrating-for-include.md %}
 
-{% include hardware/wiring/warning.md %}
+{% include hardware/wiring/warning-for-include.md %}
 
 {% include hardware/power/logic-power-for-include.md %}
 
 {% include hardware/power/main-power-input-for-include.md %}
 
-{% include hardware/wiring/stepper-motors.md %}
+{% include hardware/wiring/stepper-motors-for-include.md %}
 
 {% include modules/motion/arm-solutions-for-include.md %}
 
-{% include machine-guides/3d-printers/extruder-guide.md %}
+{% include machine-guides/3d-printers/extruder-guide-for-include.md %}
 
 {::nomarkdown}
 <a href="/images/v6-hero-hot-end.png">
@@ -154,7 +154,7 @@ You can, however, use any thermistor pin you want for any temperature control mo
 
 Thermistors come in all shapes and sizes.
 
-{% include modules/temperature/temperaturecontrol-thermistor-choice.md %}
+{% include modules/temperature/temperaturecontrol-thermistor-choice-for-include.md %}
 
 ## Heating element
 
@@ -207,7 +207,7 @@ temperature_control.bed.heater_pin           2.5              # Pin that control
 
 To help you figure out what is what, here is a recapitulating table:
 
-{% include hardware/power/mosfets-table.md %}
+{% include hardware/power/mosfets-table-for-include.md %}
 
 ## Testing
 
@@ -229,11 +229,11 @@ Once you know the heater works correctly, there is still some tuning to do: tuni
 
 ## PID
 
-{% include modules/temperature/temperaturecontrol-pid.md %}
+{% include modules/temperature/temperaturecontrol-pid-for-include.md %}
 
 ## PID autotuning
 
-{% include modules/temperature/temperaturecontrol-pid-autotuning.md %}
+{% include modules/temperature/temperaturecontrol-pid-autotuning-for-include.md %}
 
 ## Heater safety
 
@@ -370,7 +370,7 @@ Good diodes to use are: 1N5819 or SS14.
 
 {% include modules/endstops-probes/z-probe-guide-for-include.md %}
 
-{% include hardware/panels/panel-guide.md %}
+{% include hardware/panels/panel-guide-for-include.md %}
 
 # Automation and Startup
 
@@ -399,7 +399,7 @@ For more information and advanced examples, see the [on_boot.gcode documentation
 
 # Appendixes
 
-{% include hardware/wiring/general-appendixes.md %}
+{% include hardware/wiring/general-appendixes-for-include.md %}
 
 
 {% include troubleshooting/troubleshooting-for-include.md %}

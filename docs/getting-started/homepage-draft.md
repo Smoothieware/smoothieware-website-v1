@@ -89,7 +89,7 @@ Contrary to more specialized platforms, the goal with Smoothie is to be useful o
 
 The main 3 machines supported currently, are laser cutters, 3D printers and CNC mills, and each has a step by step guide:
 
-{% include getting-started/guides.md %}
+{% include getting-started/guides-for-include.md %}
 
 Other machines machine types are possible, like vinyl cutters, and more machines are planned, like lathes, plasma cutters and 4/5-axis CNC mills.
 

@@ -187,7 +187,7 @@ Here are all the options related to motion control:
 
 | Option | Example value | Explanation |
 | ------ | ------------- | ----------- |
-{% include modules/motion/motion-control-options.md %}
+{% include modules/motion/motion-control-options-for-include.md %}
 
 ## For devs
 

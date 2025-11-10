@@ -73,7 +73,7 @@ In order to configure your Smoothieboard to use a specific MOSFET, you need to k
 
 Here is a recapitulating table to help you find that out:
 
-{% include hardware/power/mosfets-table.md %}
+{% include hardware/power/mosfets-table-for-include.md %}
 
 ## Wiring
 
@@ -146,7 +146,7 @@ To use this module, you need to connect your spindle to pins with proper hardwar
 
 | Option | Example value | Explanation |
 | ------ | ------------- | ----------- |
-{% include modules/spindle/spindle-options.md %}
+{% include modules/spindle/spindle-options-for-include.md %}
 
 ### G-code Commands
 

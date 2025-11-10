@@ -52,7 +52,7 @@ While this machine does come with a safety switch on the door, it also comes wit
 
 Also, the seams around the door aren't protected and there's a set of vent holes in the front of the door. Plug all of these, both to improve safety by preventing people from looking in and to improve exhaust airflow (by forcing it to come in from the bottom). Some soft window insulation and some aluminum tape (respectively) work beautifully for these tasks.
 
-{% include hardware/wiring/warning.md %}
+{% include hardware/wiring/warning-for-include.md %}
 
 ## Endstops
 

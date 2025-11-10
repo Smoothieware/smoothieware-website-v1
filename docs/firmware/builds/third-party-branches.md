@@ -100,4 +100,4 @@ This branch adds the "motor" module, that lets you control a DC motor, including
 
 If you have an ATC CNC mill and want to use this module, contact wolf.arthur@gmail.com for help setting it up/showing interest in documentation being written for it.
 
-{% include firmware/builds/builds-feature-motor.md %}
+{% include firmware/builds/builds-feature-motor-for-include.md %}

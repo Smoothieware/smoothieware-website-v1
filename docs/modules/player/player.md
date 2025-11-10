@@ -23,7 +23,7 @@ On the very latest version of smoothieware it will tolerate `\r\n` terminated li
 
 Here are all the available options for the Player module:
 
-{% include modules/player/player-options.md %}
+{% include modules/player/player-options-for-include.md %}
 
 ## Commands
 

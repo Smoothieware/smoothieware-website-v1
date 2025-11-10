@@ -56,7 +56,7 @@ git clone git://github.com/Smoothieware/Smoothie.git
 
 For instruction to compile Smoothie from source, please see [compiling-smoothie](compiling-smoothie).
 
-{% include firmware/latest-firmware-compact.md %}
+{% include firmware/latest-firmware-compact-for-include.md %}
 
 ### Edge branch
 
@@ -80,4 +80,4 @@ The edge branch is automatically built for every new commit to the repository.
 
 You can find these automatic builds below with different possible configurations, in particular the default build (for 3D printers), and the CNC build for different amounts of axes:
 
-{% include firmware/builds/builds-edge.md %}
+{% include firmware/builds/builds-edge-for-include.md %}

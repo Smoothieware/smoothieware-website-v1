@@ -71,7 +71,7 @@ temperatureswitch.psu_off.inverted            false            # turn the switch
 
 | Option | Example value | Explanation |
 | ------ | ------------- | ----------- |
-{% include modules/temperature/temperatureswitch-options.md %}
+{% include modules/temperature/temperatureswitch-options-for-include.md %}
 
 {::nomarkdown}
 <sl-alert variant="neutral" open>

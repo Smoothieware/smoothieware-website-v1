@@ -42,7 +42,7 @@ etc ...
 
 | Option | Example value | Explanation |
 | ------ | ------------- | ----------- |
-{% include modules/input-controls/switch-options.md %}
+{% include modules/input-controls/switch-options-for-include.md %}
 
 ### Startup State
 

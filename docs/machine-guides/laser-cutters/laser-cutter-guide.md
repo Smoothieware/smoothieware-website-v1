@@ -66,21 +66,21 @@ At the end of this guide, you should have a fully working machine.
 
 {% include machine-guides/laser-cutters/laser-guides-for-include.md %}
 
-{% include getting-started/unboxing.md %}
+{% include getting-started/unboxing-for-include.md %}
 
-{% include migration/migrating.md %}
+{% include migration/migrating-for-include.md %}
 
 # Safety
 
-{% include machine-guides/laser-cutters/laser-warning.md %}
+{% include machine-guides/laser-cutters/laser-warning-for-include.md %}
 
-{% include hardware/wiring/warning.md %}
+{% include hardware/wiring/warning-for-include.md %}
 
 {% include hardware/power/logic-power-for-include.md %}
 
 {% include hardware/power/main-power-input-for-include.md %}
 
-{% include hardware/wiring/stepper-motors.md %}
+{% include hardware/wiring/stepper-motors-for-include.md %}
 
 {% include modules/endstops-probes/guide-endstops-for-include.md %}
 
@@ -101,7 +101,7 @@ At the end of this guide, you should have a fully working machine.
 
 {% include modules/endstops-probes/z-probe-guide-for-include.md %}
 
-{% include hardware/panels/panel-guide.md %}
+{% include hardware/panels/panel-guide-for-include.md %}
 
 # Startup Automation
 
@@ -138,7 +138,7 @@ For more information and examples, see the [on_boot.gcode documentation](on_boot
 
 # Appendixes
 
-{% include hardware/wiring/general-appendixes.md %}
+{% include hardware/wiring/general-appendixes-for-include.md %}
 
 ### Laser engraving
 

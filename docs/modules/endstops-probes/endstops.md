@@ -202,7 +202,7 @@ By default, the machine will home, and set the current position as configured, b
 
 ## Types of endstops
 
-{% include modules/temperature/sensor-types.md %}
+{% include modules/temperature/sensor-types-for-include.md %}
 
 ## External resources
 

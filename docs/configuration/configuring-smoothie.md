@@ -264,7 +264,7 @@ M665
 
 ## Advanced pin configuration
 
-{% include hardware/pins/pin-configuration.md %}
+{% include hardware/pins/pin-configuration-for-include.md %}
 
 ## Related Configuration Features
 

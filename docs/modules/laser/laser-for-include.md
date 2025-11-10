@@ -94,7 +94,7 @@ Save the file, reset the board, you are now ready for laser testing.
 
 ### All options
 
-{% include modules/laser/laser-options.md %}
+{% include modules/laser/laser-options-for-include.md %}
 
 ## Example setup
 

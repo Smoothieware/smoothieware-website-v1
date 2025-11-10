@@ -68,7 +68,7 @@ temperature_control.hotend.thermistor_pin        0.23
 
 ##### Choosing the right thermistor
 
-{% include modules/temperature/temperaturecontrol-thermistor-choice.md %}
+{% include modules/temperature/temperaturecontrol-thermistor-choice-for-include.md %}
 
 #### PT100
 
@@ -76,7 +76,7 @@ Note PT100 as used by the e3d amplifier is supported in current edge, but not in
 
 ##### Configuration and usage
 
-{% include modules/temperature/pt100.md %}
+{% include modules/temperature/pt100-for-include.md %}
 
 #### Thermocouple via SPI
 
@@ -175,7 +175,7 @@ temperature_control.hotend.heater_pin        2.7
 
 **Note on pins:**
 
-{% include hardware/pins/pin-configuration.md %}
+{% include hardware/pins/pin-configuration-for-include.md %}
 
 ### Controlling with G-codes
 
@@ -231,15 +231,15 @@ The default form of heater control is PID.
 
 ### PID
 
-{% include modules/temperature/temperaturecontrol-pid.md %}
+{% include modules/temperature/temperaturecontrol-pid-for-include.md %}
 
 ### PID autotuning
 
-{% include modules/temperature/temperaturecontrol-pid-autotuning.md %}
+{% include modules/temperature/temperaturecontrol-pid-autotuning-for-include.md %}
 
 ### Fine Tuning
 
-{% include modules/temperature/temperaturecontrol-fine-tuning.md %}
+{% include modules/temperature/temperaturecontrol-fine-tuning-for-include.md %}
 
 ## Safety
 

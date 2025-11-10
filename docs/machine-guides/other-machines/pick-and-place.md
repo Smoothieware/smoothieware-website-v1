@@ -84,11 +84,11 @@ This guide will walk through everything you need to accomplish to successfully p
 
 At the end of this guide, you should have a fully working machine.
 
-{% include getting-started/unboxing.md %}
+{% include getting-started/unboxing-for-include.md %}
 
-{% include migration/migrating.md %}
+{% include migration/migrating-for-include.md %}
 
-{% include hardware/wiring/warning.md %}
+{% include hardware/wiring/warning-for-include.md %}
 
 ## Pick and Place firmware
 
@@ -177,7 +177,7 @@ Just remember to use the right command instead of the default one next time you 
 
 {% include hardware/power/main-power-input-for-include.md %}
 
-{% include hardware/wiring/stepper-motors.md %}
+{% include hardware/wiring/stepper-motors-for-include.md %}
 
 {% include modules/endstops-probes/guide-endstops-for-include.md %}
 
@@ -187,15 +187,15 @@ Pick and Place machines use vacuum nozzles instead of spindles or lasers to mani
 
 This section covers how to configure and control the vacuum system, sensors, and nozzles.
 
-{% include machine-guides/other-machines/pick-and-place-control.md %}
+{% include machine-guides/other-machines/pick-and-place-control-for-include.md %}
 
 {% include modules/endstops-probes/z-probe-guide-for-include.md %}
 
-{% include hardware/panels/panel-guide.md %}
+{% include hardware/panels/panel-guide-for-include.md %}
 
 # Appendixes
 
-{% include hardware/wiring/general-appendixes.md %}
+{% include hardware/wiring/general-appendixes-for-include.md %}
 
 ### Pick and Place Specific Notes
 

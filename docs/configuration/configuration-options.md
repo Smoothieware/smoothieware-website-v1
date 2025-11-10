@@ -25,7 +25,7 @@ For information on pin options and electrical settings (pull up, pull down, open
 | Option | Example value | Explanation |
 | ------ | ------------- | ----------- |
 | General motion | | |
-{% include modules/motion/motion-control-options.md %}
+{% include modules/motion/motion-control-options-for-include.md %}
 | <setting v1="alpha_steps_per_mm" v2="actuator.alpha.steps_per_mm"></setting> | 80 | Steps per millimetre for alpha stepper motor ( this is the `X` axis for a cartesian machine ) |
 | <setting v1="beta_steps_per_mm" v2="actuator.beta.steps_per_mm"></setting> | 80 | Steps per millimetre for beta stepper motor ( this is the `Y` axis for a cartesian machine ) |
 | <setting v1="gamma_steps_per_mm" v2="actuator.gamma.steps_per_mm"></setting> | 1600 | Steps per millimetre for gamma stepper motor ( this is the `Z` axis for a cartesian machine ) |
@@ -84,25 +84,25 @@ For information on pin options and electrical settings (pull up, pull down, open
 | <setting v1="theta_current"></setting> | 1.5 | Current setting for the 8th stepper motor driver current control |
 
 | [Player](/player) | | |
-{% include modules/player/player-options.md %}
+{% include modules/player/player-options-for-include.md %}
 
 | [Extruder](/extruder) | | |
-{% include modules/extruders/extruder-options.md %}
+{% include modules/extruders/extruder-options-for-include.md %}
 
 | [Laser](/laser) | | |
-{% include modules/laser/laser-options.md %}
+{% include modules/laser/laser-options-for-include.md %}
 
 | [Temperature control](/temperaturecontrol) | | |
-{% include modules/temperature/temperaturecontrol-options.md %}
+{% include modules/temperature/temperaturecontrol-options-for-include.md %}
 
 | [Switch](/switch) | | |
-{% include modules/input-controls/switch-options.md %}
+{% include modules/input-controls/switch-options-for-include.md %}
 
 | [Temperature Switch](/temperatureswitch) | | |
-{% include modules/temperature/temperatureswitch-options.md %}
+{% include modules/temperature/temperatureswitch-options-for-include.md %}
 
 | [Spindle control](/spindle-control) | | |
-{% include modules/spindle/spindle-options.md %}
+{% include modules/spindle/spindle-options-for-include.md %}
 
 | [Endstops](/endstops) | | |
 {% include modules/endstops-probes/endstops-options-for-include.md %}
@@ -114,7 +114,7 @@ For information on pin options and electrical settings (pull up, pull down, open
 {% include modules/endstops-probes/zprobe-options-for-include.md %}
 
 | [Panel](/panel) | | |
-{% include hardware/panels/panel-options.md %}
+{% include hardware/panels/panel-options-for-include.md %}
 
 | [Network](/network) | | |
-{% include modules/network/network-options.md %}
+{% include modules/network/network-options-for-include.md %}

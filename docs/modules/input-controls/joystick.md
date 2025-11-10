@@ -139,7 +139,7 @@ It would not make sense to enable for sliders or knobs, since the knob doesn't h
 
 ### All Configuration Options
 
-{% include modules/input-controls/joystick-options.md %}
+{% include modules/input-controls/joystick-options-for-include.md %}
 
 ## Usage
 

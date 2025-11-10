@@ -37,7 +37,7 @@ Here are all the configuration options available for the Panel module :
 
 | Option | Example value | Explanation |
 | ------ | ------------- | ----------- |
-{% include hardware/panels/panel-options.md %}
+{% include hardware/panels/panel-options-for-include.md %}
 
 ### Custom menu entries
 

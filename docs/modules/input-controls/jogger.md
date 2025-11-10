@@ -47,7 +47,7 @@ Once you have the [joystick](joystick) modules set up, you will need to know the
 
 ### All Configuration Options
 
-{% include modules/input-controls/jogger-options.md %}
+{% include modules/input-controls/jogger-options-for-include.md %}
 
 ### Mapping Joystick Position to Jog Speed
 

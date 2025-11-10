@@ -141,21 +141,21 @@ Before proceeding with installation:
 {:/nomarkdown}
 
 
-{% include getting-started/unboxing.md %}
+{% include getting-started/unboxing-for-include.md %}
 
-{% include migration/migrating.md %}
+{% include migration/migrating-for-include.md %}
 
 # Safety
 
-{% include_relative laser-warning.md %}
+{% include_relative laser-warning-for-include.md %}
 
-{% include hardware/wiring/warning.md %}
+{% include hardware/wiring/warning-for-include.md %}
 
 {% include hardware/power/logic-power-for-include.md %}
 
 {% include hardware/power/main-power-input-for-include.md %}
 
-{% include hardware/wiring/stepper-motors.md %}
+{% include hardware/wiring/stepper-motors-for-include.md %}
 
 {% include modules/endstops-probes/guide-endstops-for-include.md %}
 
@@ -180,7 +180,7 @@ Before proceeding with installation:
 
 {% include modules/endstops-probes/z-probe-guide-for-include.md %}
 
-{% include hardware/panels/panel-guide.md %}
+{% include hardware/panels/panel-guide-for-include.md %}
 
 # Startup Automation
 
@@ -221,7 +221,7 @@ For more information and examples, see the [<raw>on_boot.gcode</raw> documentati
 
 # Appendixes
 
-{% include hardware/wiring/general-appendixes.md %}
+{% include hardware/wiring/general-appendixes-for-include.md %}
 
 ### Laser engraving
 
@@ -258,13 +258,13 @@ See the comprehensive [Software Compatibility List](software) for all software t
 
 For detailed technical information about CO2, diode, and fiber laser system components, beam delivery systems, and focus lens specifications, see the [Laser System Components Appendix](draft-laser-components-appendix).
 
-{% include_relative laser-components-appendix.md %}
+{% include_relative laser-components-appendix-for-include.md %}
 
 # Laser Safety Appendix
 
 For detailed safety procedures, prohibited materials, electrical hazards, and regulatory information, see the [Laser Safety Appendix](draft-laser-safety-appendix).
 
-{% include_relative laser-safety-appendix.md %}
+{% include_relative laser-safety-appendix-for-include.md %}
 
 # Appendix: Operating Procedures
 

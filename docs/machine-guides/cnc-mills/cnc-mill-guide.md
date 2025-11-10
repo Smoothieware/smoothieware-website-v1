@@ -75,11 +75,11 @@ This guide will walk through everything you need to accomplish to successfully p
 
 At the end of this guide, you should have a fully working machine.
 
-{% include getting-started/unboxing.md %}
+{% include getting-started/unboxing-for-include.md %}
 
-{% include migration/migrating.md %}
+{% include migration/migrating-for-include.md %}
 
-{% include hardware/wiring/warning.md %}
+{% include hardware/wiring/warning-for-include.md %}
 
 ## CNC firmware
 
@@ -103,15 +103,15 @@ You will find more information on `grbl_mode` on the [grbl_mode](/grbl-mode) pag
 
 {% include hardware/power/main-power-input-for-include.md %}
 
-{% include hardware/wiring/stepper-motors.md %}
+{% include hardware/wiring/stepper-motors-for-include.md %}
 
 {% include modules/endstops-probes/guide-endstops-for-include.md %}
 
-{% include modules/spindle/spindle-control.md %}
+{% include modules/spindle/spindle-control-for-include.md %}
 
 {% include modules/endstops-probes/z-probe-guide-for-include.md %}
 
-{% include hardware/panels/panel-guide.md %}
+{% include hardware/panels/panel-guide-for-include.md %}
 
 # Startup Automation
 
@@ -161,7 +161,7 @@ However, if you do not want to use the module, there are solutions to convert th
 
 - If you are using Cambam you can use [this post-processor script](http://chibidibidiwah.wdfiles.com/local--files/cnc-mill-guide/SmoothiePCB.cbpp)
 
-{% include hardware/wiring/general-appendixes.md %}
+{% include hardware/wiring/general-appendixes-for-include.md %}
 
 ## Troubleshooting
 

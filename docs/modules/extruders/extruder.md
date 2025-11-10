@@ -3,7 +3,7 @@ permalink: /extruder
 ---
 
 
-{% include machine-guides/3d-printers/extruder-guide.md %}
+{% include machine-guides/3d-printers/extruder-guide-for-include.md %}
 
 ## All options
 
@@ -11,7 +11,7 @@ All of the options currently supported by the Extruder module:
 
 | Option | Example value | Explanation |
 | ------ | ------------- | ----------- |
-{% include modules/extruders/extruder-options.md %}
+{% include modules/extruders/extruder-options-for-include.md %}
 
 <sl-alert variant="neutral" open>
   <sl-icon slot="icon" name="info-circle"></sl-icon>

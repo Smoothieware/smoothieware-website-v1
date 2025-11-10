@@ -51,8 +51,8 @@ This guide is based on Stephane BUISSON's blue box build log.
 
 ## Safety
 
-{% include machine-guides/laser-cutters/laser-warning.md %}
-{% include hardware/wiring/warning.md %}
+{% include machine-guides/laser-cutters/laser-warning-for-include.md %}
+{% include hardware/wiring/warning-for-include.md %}
 
 <div class="clearfix"></div>
 

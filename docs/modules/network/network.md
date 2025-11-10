@@ -55,7 +55,7 @@ See [Flashing Smoothie Firmware](flashing-smoothie-firmware) and [Configuring Sm
 
 | Option | Example Value | Explanation |
 | ------ | ------------- | ----------- |
-{% include modules/network/network-options.md %}
+{% include modules/network/network-options-for-include.md %}
 
 ### Wiring
 

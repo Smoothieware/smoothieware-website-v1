@@ -57,7 +57,7 @@ The point is you configure your sensor as *either* a probe or an endstop, **not 
 
 ## Types of probes
 
-{% include modules/temperature/sensor-types.md %}
+{% include modules/temperature/sensor-types-for-include.md %}
 
 ## Configuration
 
@@ -167,7 +167,7 @@ It will also adjust the delta radius (`M665 Rnnn`) to get the center the same he
 
 | Option | Example value | Explanation |
 | --- | --- | --- |
-{% include modules/leveling/delta-calibration-strategy-options.md %}
+{% include modules/leveling/delta-calibration-strategy-options-for-include.md %}
 
 ### Example configuration
 
@@ -347,7 +347,7 @@ leveling-strategy.delta-grid.initial_height  10
 
 | Option | Example value | Explanation |
 | --- | --- | --- |
-{% include modules/leveling/delta-grid-calibration-options.md %}
+{% include modules/leveling/delta-grid-calibration-options-for-include.md %}
 
 ### Example configuration
 

@@ -57,7 +57,7 @@ Then see if your problem still exists or not.
 
 It's probably a good idea to do this even if you don't think it's a SD card related problem, quite often people think it's not and it fixes the issue anyway.
 
-{% include configuration/override-warning.md %}
+{% include configuration/override-warning-for-include.md %}
 
 #### 3. Incremental wiring
 
@@ -262,7 +262,7 @@ Sometimes the SD card can get corrupted after which it will do strange things. A
 
 For configuration changes which are being made in the `config` file and are not being applied, check that they are not being overridden in the `config-override` file in the same folder:
 
-{% include configuration/override-warning.md %}
+{% include configuration/override-warning-for-include.md %}
 
 #### Changes to configuration are ignored on a particular line
 

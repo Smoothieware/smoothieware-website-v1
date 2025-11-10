@@ -38,7 +38,7 @@ For a complete list/description of G-Code, see [Tormach's G81-G89 Background](ht
 
 | Option | Example Value | Explanation |
 | ------ | ------------- | ----------- |
-{% include modules/other/drillingcycles-options.md %}
+{% include modules/other/drillingcycles-options-for-include.md %}
 
 ## G-Code
 
