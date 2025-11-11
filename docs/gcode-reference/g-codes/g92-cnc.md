@@ -2,7 +2,9 @@
 permalink: /g92-cnc
 ---
 
-# G92 G-code
+{::nomarkdown}
+# <gcode>G92</gcode> G-code
+{:/nomarkdown}
 
 {::nomarkdown}
 <a href="/images/gcode.png">
@@ -10,7 +12,9 @@ permalink: /g92-cnc
 </a>
 {:/nomarkdown}
 
-G92 means "set an offset in all coordinate systems".
+{::nomarkdown}
+<gcode>G92</gcode> means "set an offset in all coordinate systems".
+{:/nomarkdown}
 
 The machine coordinates are the position of the machine relative to the point at which the [endstops](endstops) are hit.
 
@@ -18,29 +22,37 @@ This is by opposition to the workspace coordinates, which are the coordinates yo
 
 This sets an offset valid in all coordinate systems.
 
-G92 makes the current point have the coordinates you want (without motion), where the axis parameters contain the axis numbers you want.
+{::nomarkdown}
+<gcode>G92</gcode> makes the current point have the coordinates you want (without motion), where the axis parameters contain the axis numbers you want.
+{:/nomarkdown}
 
 All axis parameters are optional, except that at least one must be used.
 
 If an axis parameter is not used for a given axis, the coordinate on that axis of the current point is not changed.
 
-When G92 is executed, the origins of all coordinate systems move.
+{::nomarkdown}
+When <gcode>G92</gcode> is executed, the origins of all coordinate systems move.
+{:/nomarkdown}
 
 They move such that the value of the current controlled point, in the currently active coordinate system, becomes the specified value.
 
 All coordinate system's origins are offset this same distance.
 
-For example, suppose the current point is at X=4 and there is currently no G92 offset active.
+{::nomarkdown}
+For example, suppose the current point is at X=4 and there is currently no <gcode>G92</gcode> offset active.
 
-Then `G92 X7` is programmed.
+Then <gcode>G92</gcode> X7 is programmed.
+{:/nomarkdown}
 
 This moves all origins -3 in X, which causes the current point to become X=7.
 
 This -3 is saved in memory.
 
-Being in incremental distance (`G91`) mode has no effect on the action of G92.
+{::nomarkdown}
+Being in incremental distance (<gcode>G91</gcode>) mode has no effect on the action of <gcode>G92</gcode>.
 
-G92 offsets may be already be in effect when the G92 is called.
+<gcode>G92</gcode> offsets may be already be in effect when the <gcode>G92</gcode> is called.
+{:/nomarkdown}
 
 If this is the case, the offset is replaced with a new offset that makes the current point become the specified value.
 
@@ -58,16 +70,16 @@ Which means: set a global offset of 10 in the X axis and 10 in the Y axis.
 
 | Parameter | Usage               | Example  |
 | --------- | ------------------- | -------- |
-| `X`       | Offset in the X axis | `G92 X10` |
-| `Y`       | Offset in the Y axis | `G92 Y10` |
-| `Z`       | Offset in the Z axis | `G92 Z10` |
-| `A`       | Offset in the A axis | `G92 A10` |
-| `B`       | Offset in the B axis | `G92 B10` |
-| `C`       | Offset in the C axis | `G92 C10` |
+| `X`       | Offset in the X axis | <gcode>G92</gcode> X10 |
+| `Y`       | Offset in the Y axis | <gcode>G92</gcode> Y10 |
+| `Z`       | Offset in the Z axis | <gcode>G92</gcode> Z10 |
+| `A`       | Offset in the A axis | <gcode>G92</gcode> A10 |
+| `B`       | Offset in the B axis | <gcode>G92</gcode> B10 |
+| `C`       | Offset in the C axis | <gcode>G92</gcode> C10 |
 
 ## Friend Gcodes
 
-The [`G92.1`](g92-1) Gcode is used to reset the offsets.
+The <gcode>G92.1</gcode> Gcode is used to reset the offsets.
 
 ## Further reading
 

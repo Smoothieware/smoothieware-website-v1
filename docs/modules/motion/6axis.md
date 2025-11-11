@@ -30,7 +30,7 @@ There are two resources that were written about this feature when it was release
 {::nomarkdown}
 <sl-alert variant="warning" open>
   <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
-  <strong>NOTE</strong> that currently WCS is not supported for ABC axis (G10 L2...). G92 A0 resets the A axis and does not set the WCS for it (same for B and C).
+  <strong>NOTE</strong> that currently WCS is not supported for ABC axis (<gcode>G10</gcode> L2...). <gcode>G92</gcode> A0 resets the A axis and does not set the WCS for it (same for B and C).
 </sl-alert>
 {:/nomarkdown}
 

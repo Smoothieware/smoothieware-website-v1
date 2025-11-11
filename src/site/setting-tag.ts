@@ -359,12 +359,15 @@ $(() => {
     });
 
     // Listen for version changes from the header version selector
-    $(document).on('version-changed', function() {
+    $(document).on('version-changed', async function() {
 
         // Update all setting tags visibility when version changes from header
         update_all_setting_tags_visibility();
 
-        console.log('[setting-tag.ts] Updated setting tags in response to header version selector change');
+        // Regenerate all loaded popup content to reflect new version preference
+        await regenerate_all_popup_content();
+
+        console.log('[setting-tag.ts] Updated setting tags and popups in response to header version selector change');
     });
 });
 
@@ -418,6 +421,56 @@ function update_all_setting_tags_visibility(): void {
     });
 
     console.log(`[setting-tag.ts] Updated all setting tag visibility for display_version: ${display_version}`);
+}
+
+/**
+ * Regenerates content for all popup tooltips that have been loaded
+ * Called when the version preference changes from the header selector
+ */
+async function regenerate_all_popup_content(): Promise<void> {
+
+    // Find all popup elements
+    const $all_popups = $('.setting-popup');
+
+    // Guard against no popups
+    if ($all_popups.length === 0) {
+        return;
+    }
+
+    console.log(`[setting-tag.ts] Regenerating content for ${$all_popups.length} popup(s)`);
+
+    // Iterate through each popup
+    for (let i = 0; i < $all_popups.length; i++) {
+        const $popup = $($all_popups[i]);
+
+        // Check if this popup has been loaded (has metadata stored)
+        const popup_data = $popup.data('setting-popup-data');
+
+        if (popup_data && popup_data.content_loaded) {
+
+            const v1_name = popup_data.v1_name;
+            const v2_name = popup_data.v2_name;
+            const popup_id = popup_data.popup_id;
+
+            console.log(`[setting-tag.ts] Regenerating popup for v1="${v1_name}" v2="${v2_name}"`);
+
+            // Regenerate tooltip content with new version preference
+            const tooltip_html = await generate_shoelace_tooltip(v1_name, v2_name);
+
+            // Update popup content
+            $popup.find('.setting-popup-content').html(tooltip_html);
+
+            // Re-setup all handlers with new content
+            setup_tab_listener($popup);
+            setup_clickable_alert_handlers($popup);
+            restore_tab_preference($popup);
+            setup_related_settings_handlers($popup, popup_id);
+            setup_config_line_click_handlers($popup);
+            setup_version_choice_handlers($popup, v1_name, v2_name);
+        }
+    }
+
+    console.log('[setting-tag.ts] Popup content regeneration complete');
 }
 
 /**
@@ -594,6 +647,14 @@ function create_popup_for_setting($setting: JQuery<HTMLElement>, v1_name: string
             setup_version_choice_handlers($popup, v1_name, v2_name);
 
             content_loaded = true;
+
+            // Store metadata on popup element for regeneration when version changes
+            $popup.data('setting-popup-data', {
+                v1_name: v1_name,
+                v2_name: v2_name,
+                popup_id: popup_id,
+                content_loaded: true
+            });
         }
     });
 

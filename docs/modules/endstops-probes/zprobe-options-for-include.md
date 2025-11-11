@@ -11,7 +11,7 @@ The following table lists the configuration options for the Z-probe module:
 | Option | Value | Description |
 | ------ | ----- | ----------- |
 | <setting v1="zprobe.enable" v2="zprobe.enable"></setting> | `true` | Set to true to enable the Z-probe module. This is used to scan surfaces, and to calibrate parameters and compensate for non-planar surfaces. |
-| <setting v1="zprobe.probe_pin" v2="zprobe.probe_pin"></setting> | `1.28!^` | Pin the probe is connected to. |
+| <setting v1="zprobe.probe_pin" v2="zprobe.probe_pin"></setting> | <pin>1.28!^</pin> | Pin the probe is connected to. |
 | <setting v1="zprobe.slow_feedrate" v2="zprobe.slow_feedrate"></setting> | `5` | Speed in millimetres/second at which the probe seeks a surface. |
 | <setting v1="zprobe.fast_feedrate" v2="zprobe.fast_feedrate"></setting> | `100` | Speed in millimetres/second at which the probe does fast moves. |
 | <setting v1="zprobe.return_feedrate" v2="zprobe.return_feedrate"></setting> | `50` | Speed in millimetres/second at which the probe does the return after a probe. |
@@ -37,7 +37,9 @@ The <setting v1="zprobe.probe_pin" v2="zprobe.probe_pin"></setting> setting uses
 - **`!`** - Inverts the pin logic (useful for normally-open vs normally-closed switches)
 - **`^`** - Enables internal pull-up resistor
 
-For example, `1.28!^` means pin 1.28 with inverted logic and pull-up enabled.
+{::nomarkdown}
+For example, <pin>1.28!^</pin> means pin <pin>1.28</pin> with inverted logic and pull-up enabled.
+{:/nomarkdown}
 
 ## Common Probe Types
 
@@ -77,9 +79,11 @@ Different probe types work with Smoothieware:
 
 After configuration, use these G-codes:
 
-- **G30** - Single probe at current XY position
-- **G32** - Run bed leveling (if leveling strategy is configured)
-- **M119** - Show endstop status (including probe)
+{::nomarkdown}
+- <strong><gcode>G30</gcode></strong> - Single probe at current XY position
+- <strong><gcode>G32</gcode></strong> - Run bed leveling (if leveling strategy is configured)
+- <strong><mcode>M119</mcode></strong> - Show endstop status (including probe)
+{:/nomarkdown}
 
 ## Related Documentation
 

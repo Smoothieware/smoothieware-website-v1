@@ -221,7 +221,7 @@ The Smoothie project is always looking for help. Whatever your skills are, there
     - [Configurator](configurator): Manipulate configuration using console commands
     - [Kill Button](killbutton) and [Play LED](play-led): S/W based kill and play activity LED
     - [Panel](panel): Drive smoothie directly without a host using monochrome lcd screens and click encoders
-    - [on_boot.gcode](on_boot.gcode): Execute G-codes every time the board boots
+    - [on_boot.gcode File](on-boot-gcode): Execute G-codes every time the board boots
 - [Using Smoothie](using-smoothie): General firmware use
   - [Console Commands](console-commands)
   - [Supported G-Codes](supported-g-codes)

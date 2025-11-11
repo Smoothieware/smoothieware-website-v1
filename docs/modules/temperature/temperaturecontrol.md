@@ -181,9 +181,11 @@ temperature_control.hotend.heater_pin        2.7
 
 By default, Smoothie will not heat anything. That could be a dangerous thing to do unwatched.
 
-You have to send [G-codes](http://reprap.org/wiki/G-code) to turn your heater on and off, set a given temperature etc.
+{::nomarkdown}
+You have to send <a href="http://reprap.org/wiki/G-code">G-codes</a> to turn your heater on and off, set a given temperature etc.
 
-There is a set of widely used G-codes corresponding to different usual actions (for example setting the hotend temperature is <mcode>M104</mcode> in the [Reprap](http://reprap.org) world).
+There is a set of widely used G-codes corresponding to different usual actions (for example setting the hotend temperature is <mcode>M104</mcode> in the <a href="http://reprap.org">Reprap</a> world).
+{:/nomarkdown}
 
 But as you are defining your own custom temperature controller, you have to choose what gcode will be used to control it, Smoothie doesn't know what exactly it's controlling.
 
@@ -198,9 +200,11 @@ temperature_control.hotend.set_and_wait_m_code   109
 
 ### Reading with G-code
 
+{::nomarkdown}
 There is a single g-code used to read temperature for all the temperature_control modules at the same time: <mcode>M105</mcode>
 
 But it has to have a way to tell you what temperature corresponds to what specific module.
+{:/nomarkdown}
 
 There is a standard format for this which was used before Smoothie and still is today:
 
@@ -266,7 +270,9 @@ When this happens, Smoothie will detect the problem, turn off all heaters, and e
 Temperature reading is unreliable on T, HALT asserted - reset or M999 required
 ```
 
+{::nomarkdown}
 You need to solve the issue, and then either reset the board or issue the <mcode>M999</mcode> command.
+{:/nomarkdown}
 
 You do not need to do anything to activate this safety check.
 
@@ -297,7 +303,9 @@ Error: MINTEMP or MAXTEMP triggered on T. Check your temperature sensors!
 HALT asserted - reset or M999 required
 ```
 
+{::nomarkdown}
 You need to solve the issue, and then either reset the board or issue the <mcode>M999</mcode> command.
+{:/nomarkdown}
 
 The most likely cause for this problem is that a heater mosfet is stuck being always active. If this is the case, Smoothie cannot control that heater anymore, and nothing the firmware can do can solve the issue, and you are on your way to a fire.
 

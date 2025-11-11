@@ -25,7 +25,9 @@ Developers need to be aware that receipt of `ok` means the line was received but
 
 In order to get decent planning, the planning buffer needs to be filled so it can plan ahead, so `ok` does not wait for each line to be actually executed.
 
-For efficiency purposes, `G1` commands send `ok` immediately on receipt before they are even put in the planning queue.
+{::nomarkdown}
+For efficiency purposes, <gcode>G1</gcode> commands send `ok` immediately on receipt before they are even put in the planning queue.
+{:/nomarkdown}
 
 Whereas most other G-codes will only send `OK` when they have been entered into the buffer.
 

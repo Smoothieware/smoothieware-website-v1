@@ -27,13 +27,15 @@ Connect your PSU to the power input connector for those FETs (providing power to
 
 Smoothie connects/disconnects the element's ground as needed to maintain temperature or as requested by G-codes.
 
+{::nomarkdown}
 There are three main pairs of MOSFETs on the board:
 
-- **Big MOSFET pair**: Their outputs are labeled **P2_7** and **P2_5** on the schematic, the input connector for them is found between them. They are found on the 4X and 5X boards. To power those MOSFETs, you need to provide them with power by wiring their power input to the power supply.
+- **Big MOSFET pair**: Their outputs are labeled **P<pin>2.7</pin>** and **P<pin>2.5</pin>** on the schematic, the input connector for them is found between them. They are found on the 4X and 5X boards. To power those MOSFETs, you need to provide them with power by wiring their power input to the power supply.
 
-- **Small MOSFET pair**: Their outputs are labeled **P2_6** and **P2_4** on the schematic, the input connector for them is found by their side, between P2_6 and P1_23. They are found on all of the boards. To power those MOSFETs, you need to provide them with power by wiring their power input to the power supply.
+- **Small MOSFET pair**: Their outputs are labeled **P<pin>2.6</pin>** and **P<pin>2.4</pin>** on the schematic, the input connector for them is found by their side, between P<pin>2.6</pin> and P<pin>1.23</pin>. They are found on all of the boards. To power those MOSFETs, you need to provide them with power by wiring their power input to the power supply.
 
-- **Mixed MOSFET pair**: Their outputs are labeled **P1_22** and **P1_23** on the schematic. The pair is called "mixed" because it consists of one big MOSFET and one small MOSFET. They do not have a specific input, they take power directly from VBB (the Stepper motors power input described in the Stepper Motors chapter). To power those MOSFETs, you need to provide them with power by wiring their power input (which is the same as the one for the stepper motors) to the power supply.
+- **Mixed MOSFET pair**: Their outputs are labeled **P<pin>1.22</pin>** and **P<pin>1.23</pin>** on the schematic. The pair is called "mixed" because it consists of one big MOSFET and one small MOSFET. They do not have a specific input, they take power directly from VBB (the Stepper motors power input described in the Stepper Motors chapter). To power those MOSFETs, you need to provide them with power by wiring their power input (which is the same as the one for the stepper motors) to the power supply.
+{:/nomarkdown}
 
 {::nomarkdown}
 <sl-alert variant="primary" open>
@@ -50,12 +52,12 @@ MOSFETs list:
 
 | MOSFET group   | MOSFET name         | Controlling pin | Output connector | Input method                 | Voltage | Current    |
 | -------------- | ------------------- | --------------- | ---------------- | ---------------------------- | ------- | ---------- |
-| Big MOSFETs    | First big MOSFET    | `2.7`           | X15              | Big MOSFETs power input X13  | 12-24V  | 12.5A max  |
-| Big MOSFETs    | Second big MOSFET   | `2.5`           | X10              | Big MOSFETs power input X13  | 12-24V  | 12.5A max  |
-| Small MOSFETs  | First small MOSFET  | `2.4`           | X7               | Small MOSFETs power input X6 | 12-24V  | 3A max     |
-| Small MOSFETs  | Second small MOSFET | `2.6`           | X8               | Small MOSFETs power input X6 | 12-24V  | 3A max     |
-| Mixed MOSFETs  | Third big MOSFET    | `1.23`          | X16              | VBB (motor) input            | 12-24V  | 12.5A max  |
-| Mixed MOSFETs  | Third small MOSFET  | `1.22`          | X9               | VBB (motor) input            | 12-24V  | 3A max     |
+| Big MOSFETs    | First big MOSFET    | <pin>2.7</pin>           | X15              | Big MOSFETs power input X13  | 12-24V  | 12.5A max  |
+| Big MOSFETs    | Second big MOSFET   | <pin>2.5</pin>           | X10              | Big MOSFETs power input X13  | 12-24V  | 12.5A max  |
+| Small MOSFETs  | First small MOSFET  | <pin>2.4</pin>           | X7               | Small MOSFETs power input X6 | 12-24V  | 3A max     |
+| Small MOSFETs  | Second small MOSFET | <pin>2.6</pin>           | X8               | Small MOSFETs power input X6 | 12-24V  | 3A max     |
+| Mixed MOSFETs  | Third big MOSFET    | <pin>1.23</pin>          | X16              | VBB (motor) input            | 12-24V  | 12.5A max  |
+| Mixed MOSFETs  | Third small MOSFET  | <pin>1.22</pin>          | X9               | VBB (motor) input            | 12-24V  | 3A max     |
 
 #### MOSFETs diagram
 

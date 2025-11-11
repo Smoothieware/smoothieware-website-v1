@@ -79,7 +79,11 @@ That's a huge waste of RAM.
 
 For example, the G-code:
 
-`G1 X23.43 Y12.34 E22.33` is 23 bytes.
+{::nomarkdown}
+<gcode>G1</gcode> X23.43 Y12.34 E22.33
+{:/nomarkdown}
+
+is 23 bytes.
 
 But because we already store the XYZ target coordinates in the Block, those are redundant.
 

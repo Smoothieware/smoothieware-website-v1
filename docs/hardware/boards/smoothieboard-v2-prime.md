@@ -826,22 +826,26 @@ Dual-core MCU but only M7 runs firmware currently. M4 available for future featu
 ### Steppers Won't Move
 
 **Check:**
+{::nomarkdown}
 - [ ] Motor current set in config file (alpha_current, beta_current, etc.)
 - [ ] Motors wired correctly (coil pairs: 1A-1B, 2A-2B)
 - [ ] Enable pin not stuck disabled (check config)
-- [ ] Send simple G-code command (e.g., `G0 X10`)
+- [ ] Send simple G-code command (e.g., <gcode>G0</gcode> X10)
 - [ ] Driver not overheated (thermal shutdown - let it cool)
 - [ ] Vmot power present (check LED)
+{:/nomarkdown}
 
 ### Heater Won't Heat
 
 **Check:**
+{::nomarkdown}
 - [ ] VFET power connected (12-24V to 2× XT30)
 - [ ] Heater element not shorted or open (check resistance with multimeter)
 - [ ] Correct heater pin in config (HOTEND1, HOTEND2, BED, etc.)
-- [ ] Temperature reading correct (send `M105` command)
+- [ ] Temperature reading correct (send <mcode>M105</mcode> command)
 - [ ] PID values set (temperature_control.hotend.p_factor, etc.)
 - [ ] MOSFET output LED lit when heating commanded
+{:/nomarkdown}
 
 ### SD Card Not Detected
 

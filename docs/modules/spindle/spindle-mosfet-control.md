@@ -105,7 +105,9 @@ You can do this either manually by sending G-codes directly to the board via ser
 
 You can choose the exact G-codes in the configuration.
 
-Here we used the standard `M3` to turn the Spindle ON, and `M5` to turn the Spindle OFF.
+{::nomarkdown}
+Here we used the standard <mcode>M3</mcode> to turn the Spindle ON, and <mcode>M5</mcode> to turn the Spindle OFF.
+{:/nomarkdown}
 
 If you need to choose the power (speed) of your Spindle, you can do so because the output is configured as PWM.
 
@@ -139,8 +141,10 @@ Smoothie then measures the real RPM of the spindle and adjusts the PWM value acc
 
 To use this module, you need to connect your spindle to pins with proper hardware support:
 
-- **PWM output pin:** any of P1.18, P1.20, P1.21, P1.23, P1.24, P1.26, P2.0 - P2.5, P2.26, P3.25
-- **Feedback sensor pin:** must be in port 0 or port 2; P2.6 and P2.7 are available on smoothieboard
+{::nomarkdown}
+- **PWM output pin:** any of <pin>1.18</pin>, <pin>1.20</pin>, <pin>1.21</pin>, <pin>1.23</pin>, <pin>1.24</pin>, <pin>1.26</pin>, <pin>2.0</pin> - <pin>2.5</pin>, <pin>2.26</pin>, <pin>3.25</pin>
+- **Feedback sensor pin:** must be in port 0 or port 2; <pin>2.6</pin> and <pin>2.7</pin> are available on smoothieboard
+{:/nomarkdown}
 
 ### PID Configuration Options
 
@@ -152,10 +156,12 @@ To use this module, you need to connect your spindle to pins with proper hardwar
 
 Available G-code commands for PID spindle control:
 
-- **M3** - Start the spindle. `M3 S5000` will start the spindle and set speed to 5000 RPM.
-- **M5** - Stop the spindle. Last set RPM is remembered and used for next `M3` command if S argument is not given.
-- **M957** - Report the current spindle speed and PWM value.
-- **M958** - Report the current PID parameters. `M958 Px.xxx Ix.xxx Dx.xxx` will set them (to save the new values, you need to edit config file manually).
+{::nomarkdown}
+- <mcode>M3</mcode> - Start the spindle. <mcode>M3</mcode> S5000 will start the spindle and set speed to 5000 RPM.
+- <mcode>M5</mcode> - Stop the spindle. Last set RPM is remembered and used for next <mcode>M3</mcode> command if S argument is not given.
+- <mcode>M957</mcode> - Report the current spindle speed and PWM value.
+- <mcode>M958</mcode> - Report the current PID parameters. <mcode>M958</mcode> Px.xxx Ix.xxx Dx.xxx will set them (to save the new values, you need to edit config file manually).
+{:/nomarkdown}
 
 ## Tuning the PID parameters
 
@@ -163,11 +169,13 @@ There is no PID autotuning for spindle parameters currently.
 
 You can use the following process to manually tune the PID:
 
-1. Set dummy values with `M958 P0.0001 I0 D0`
-2. Stop the spindle with `M5` and make sure spindle is ready to run on next `M3` command (i.e. power supply is on).
-3. Run `M3 S100000`, which should start the spindle at maximum speed.
+{::nomarkdown}
+1. Set dummy values with <mcode>M958</mcode> P0.0001 I0 D0
+2. Stop the spindle with <mcode>M5</mcode> and make sure spindle is ready to run on next <mcode>M3</mcode> command (i.e. power supply is on).
+3. Run <mcode>M3</mcode> S100000, which should start the spindle at maximum speed.
 4. Measure the time **T** it takes for the spindle to reach full speed (using your ears and a stopwatch).
-5. Check the maximum RPM **R** the spindle reaches by running `M957`
+5. Check the maximum RPM **R** the spindle reaches by running <mcode>M957</mcode>
+{:/nomarkdown}
 
 Now set the parameters to:
 
@@ -177,4 +185,6 @@ Now set the parameters to:
 
 Some manual tuning may be needed after this.
 
-Test speed changes using the `M3` command and try loading the spindle to see if it reacts fast enough to load changes.
+{::nomarkdown}
+Test speed changes using the <mcode>M3</mcode> command and try loading the spindle to see if it reacts fast enough to load changes.
+{:/nomarkdown}

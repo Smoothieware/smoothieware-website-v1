@@ -8,11 +8,13 @@ permalink: /g28-reprap
 </a>
 {:/nomarkdown}
 
-# G28 G-code
+{::nomarkdown}
+# <gcode>G28</gcode> G-code
 
-G28 means "seek the endstops for each axis, stop once they are found and this position is now the origin for the machine".
+<gcode>G28</gcode> means "seek the endstops for each axis, stop once they are found and this position is now the origin for the machine".
 
 This G-code is specific to Reprap and does not conform to the normal G-code standard.
+{:/nomarkdown}
 
 ## Format
 
@@ -40,9 +42,9 @@ G28 X0 Y0 Z0
 
 | Parameter | Usage | Example |
 | --------- | ----- | ------- |
-| `X` | Move until you hit this endstop then set the position in this axis to this value | G28 X0 |
-| `Y` | Move until you hit this endstop then set the position in this axis to this value | G28 Y0 |
-| `Z` | Move until you hit this endstop then set the position in this axis to this value | G28 Z0 |
+| `X` | Move until you hit this endstop then set the position in this axis to this value | <gcode>G28</gcode> X0 |
+| `Y` | Move until you hit this endstop then set the position in this axis to this value | <gcode>G28</gcode> Y0 |
+| `Z` | Move until you hit this endstop then set the position in this axis to this value | <gcode>G28</gcode> Z0 |
 
 ## Configuration
 

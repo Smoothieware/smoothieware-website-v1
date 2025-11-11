@@ -81,14 +81,13 @@ Then Smoothie will interpret the G-code you send to it the same way Reprap-type 
 Typical differences between 3D mode and CNC mode are:
 
 1. Error messages are different
-2. `G28` goes to park position and is NOT home, `$H` homes in CNC mode
-3. Many GCodes may be differently interpreted in CNC mode than in 3D mode, please check your gcode references (Linuxcnc has a good GCode reference, do not use the reprap gcode reference for CNC mode)
+2. {::nomarkdown}<gcode>G28</gcode> goes to park position and is NOT home, <raw>$H</raw> homes in CNC mode{:/nomarkdown}
+3. Many GCodes may be differently interpreted in CNC mode than in 3D mode, please check your gcode references (Linuxcnc has a [good GCode reference](https://linuxcnc.org/docs/html/gcode/g-code.html), do not use the reprap gcode reference for CNC mode)
 
-{::nomarkdown}
 <sl-alert variant="warning" open>
   <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
   <strong>Pronterface Compatibility</strong><br><br>
 
-  You cannot generally use pronterface to control CNC/grbl mode, as Pronterface is for 3D printers and uses a different dialect of gcode. It also does not allow you to send commands such as <code>$H</code> to home. It also tends to truncate commands like <code>G28.2</code> by not sending the <code>.2</code> part.
+  You cannot generally use pronterface to control CNC/grbl mode, as Pronterface is for 3D printers and uses a different dialect of gcode. It also does not allow you to send commands such as <raw>$H</raw> to home. It also tends to truncate commands like <gcode>G28.2</gcode> by not sending the <raw>.2</raw> part.
 </sl-alert>
-{:/nomarkdown}
+

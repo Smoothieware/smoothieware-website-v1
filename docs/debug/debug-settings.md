@@ -117,7 +117,9 @@ While others were **renamed or restructured**:
 
 ## Pin Notation Changes
 
-v1 used port.pin notation like `2.5`, while v2 uses STM32-style names:
+{::nomarkdown}
+v1 used port.pin notation like <pin>2.5</pin>, while v2 uses STM32-style names:
+{:/nomarkdown}
 
 - Example: <setting v1="2.0" v2="PD3"></setting> - Alpha step pin
 - Example: <setting v1="2.1" v2="PD4"></setting> - Alpha direction pin

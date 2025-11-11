@@ -16,7 +16,9 @@ The canned drilling cycles module is a short G-Code produced by some serious CAM
 
 In addition to adding some features, this significantly reduces the number of instructions sent through the serial port.
 
-Currently, the drilling cycles module implements the first three options in absolute mode `G90` only.
+{::nomarkdown}
+Currently, the drilling cycles module implements the first three options in absolute mode <gcode>G90</gcode> only.
+{:/nomarkdown}
 
 For a complete list/description of G-Code, see [Tormach's G81-G89 Background](http://www.tormach.com/g81_g89_background).
 
@@ -30,7 +32,7 @@ For a complete list/description of G-Code, see [Tormach's G81-G89 Background](ht
 {::nomarkdown}
 <sl-alert variant="danger" open>
   <sl-icon slot="icon" name="exclamation-octagon"></sl-icon>
-  In relative mode <code>G91</code>, drilling holes operations are ignored.
+  In relative mode <gcode>G91</gcode>, drilling holes operations are ignored.
 </sl-alert>
 {:/nomarkdown}
 

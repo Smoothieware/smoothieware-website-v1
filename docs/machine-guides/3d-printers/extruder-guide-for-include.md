@@ -51,22 +51,28 @@ Further explanation can be found in Triffid Hunter's guide, linked above.
 extruder.hotend.filament_diameter 3.0
 ```
 
+{::nomarkdown}
 The filament diameter can also be saved at runtime with this M code:
 
-| `M200` | Set E units for volumetric extrusion - D<filament diameter> set to 0 to disable volumetric extrusion | `M200 D3.0` |
+| <mcode>M200</mcode> | Set E units for volumetric extrusion - D<filament diameter> set to 0 to disable volumetric extrusion | <mcode>M200</mcode> D3.0 |
 
-and saved with `M500`.
+and saved with <mcode>M500</mcode>.
+{:/nomarkdown}
 
 ### Firmware Retract
 
-`G10`/`G11` will cause the filament to retract and unretract, this option can be set in most current slicers.
+{::nomarkdown}
+<gcode>G10</gcode>/<gcode>G11</gcode> will cause the filament to retract and unretract, this option can be set in most current slicers.
+{:/nomarkdown}
 
 Note this is optional, you are not obligated to set this up, but it is a nice feature if you want to use it.
 
+{::nomarkdown}
 The amounts of extrusion and speed can be set with the following M codes:
 
-| `M207` | set retract length S[positive\|mm] F[feedrate\|mm/min] Z[additional\|zlift/hop] Q[zlift\|feedrate mm/min] | `M207 S4 F30 Z1` |
-| `M208` | set retract recover length S[positive\|mm surplus to the M207 S*] F[feedrate\|mm/min] | `M208 S0 F8` |
+| <mcode>M207</mcode> | set retract length S[positive\|mm] F[feedrate\|mm/min] Z[additional\|zlift/hop] Q[zlift\|feedrate mm/min] | <mcode>M207</mcode> S4 F30 Z1 |
+| <mcode>M208</mcode> | set retract recover length S[positive\|mm surplus to the M207 S*] F[feedrate\|mm/min] | <mcode>M208</mcode> S0 F8 |
+{:/nomarkdown}
 
 or can be set in config with the following settings:
 
@@ -92,11 +98,13 @@ As all stepper motors, the extruder stepper motor needs 3 pins to be controlled:
 
 **1st Extruder** (delta, or M4)
 
+{::nomarkdown}
 ```markdown
-extruder.hotend.step_pin 2.3
-extruder.hotend.dir_pin 0.22
-extruder.hotend.en_pin 0.21
+extruder.hotend.step_pin <pin>2.3</pin>
+extruder.hotend.dir_pin <pin>0.22</pin>
+extruder.hotend.en_pin <pin>0.21</pin>
 ```
+{:/nomarkdown}
 
 <sl-alert variant="warning" open>
   <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
@@ -105,11 +113,13 @@ extruder.hotend.en_pin 0.21
 
 **2nd Extruder** (epsilon, or M5)
 
+{::nomarkdown}
 ```markdown
-extruder.hotend2.step_pin 2.8
-extruder.hotend2.dir_pin 2.13
-extruder.hotend2.en_pin 4.29
+extruder.hotend2.step_pin <pin>2.8</pin>
+extruder.hotend2.dir_pin <pin>2.13</pin>
+extruder.hotend2.en_pin <pin>4.29</pin>
 ```
+{:/nomarkdown}
 
 <sl-alert variant="warning" open>
   <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
@@ -151,6 +161,7 @@ The default Smoothie [configuration example](configuring-smoothie) contains an e
 
 The configuration looks like this:
 
+{::nomarkdown}
 ```markdown
 ## Extruder module configuration
 # See /extruder
@@ -159,12 +170,13 @@ extruder.hotend.steps_per_mm 140 # Steps per mm for extruder stepper
 extruder.hotend.acceleration 500 # Acceleration for the stepper motor mm/sec²
 extruder.hotend.max_speed 50 # Maximum speed in mm/s
 
-extruder.hotend.step_pin 2.3 # Pin for extruder step signal
-extruder.hotend.dir_pin 0.22 # Pin for extruder dir signal (add '!' to reverse direction)
-extruder.hotend.en_pin 0.21 # Pin for extruder enable signal
+extruder.hotend.step_pin <pin>2.3</pin> # Pin for extruder step signal
+extruder.hotend.dir_pin <pin>0.22</pin> # Pin for extruder dir signal (add '!' to reverse direction)
+extruder.hotend.en_pin <pin>0.21</pin> # Pin for extruder enable signal
 
 delta_current 1.5 # Current setting in Amperes for this motor driver
 ```
+{:/nomarkdown}
 
 Now that your extruder is configured, you can wire it:
 

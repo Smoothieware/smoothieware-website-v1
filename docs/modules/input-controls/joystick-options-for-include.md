@@ -8,7 +8,7 @@ The joystick module allows you to control Smoothie using analog joystick inputs.
 | Option | Example Value | Explanation |
 | ------ | ------------- | ----------- |
 | <setting v1="joystick.{name}.enable"></setting> | true | If true, create and enable a new Joystick module with the name "module_name" |
-| <setting v1="joystick.{name}.pin"></setting>| `1.30` | Which SmoothieBoard pin should be used to read the value. See table above for allowable pins. |
+| <setting v1="joystick.{name}.pin"></setting>| <pin>1.30</pin> | Which SmoothieBoard pin should be used to read the value. See table above for allowable pins. |
 | <setting v1="joystick.{name}.refresh_rate"></setting> | 10 | Sets how many times per second to update the joystick reading |
 | <setting v1="joystick.{name}.zero_offset"></setting> | 1.65 | Sets what voltage will map to zero output |
 | <setting v1="joystick.{name}.endpoint"></setting> | 3.3 | Sets what voltage will map to +/- 1. If <setting v1="joystick.{name}.endpoint"></setting> is greater than <setting v1="joystick.{name}.zero_offset"></setting>, it specifies what voltage maps to 1. If <setting v1="joystick.{name}.endpoint"></setting> is less than <setting v1="joystick.{name}.zero_offset"></setting>, it specifies what voltage maps to -1 |

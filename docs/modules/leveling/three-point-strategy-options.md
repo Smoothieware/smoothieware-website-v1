@@ -19,17 +19,21 @@ The following table lists the configuration options for this leveling strategy:
 | <setting v1="leveling-strategy.three-point-leveling.home_first" v2="three point leveling strategy.home_first"></setting> | `true` | Home the X and Y axes before probing. |
 | <setting v1="leveling-strategy.three-point-leveling.tolerance" v2="three point leveling strategy.tolerance"></setting> | `0.03` | The probe tolerance in millimeters, anything less than this will be ignored, default is `0.03mm`. |
 | <setting v1="leveling-strategy.three-point-leveling.probe_offsets" v2="three point leveling strategy.probe_offsets"></setting> | `0,0,0` | The probe offset from nozzle, must be X,Y,Z (Z should always be 0), default is no offset. This is used if your nozzle is not exactly at the same position as where your tool would be. |
-| <setting v1="leveling-strategy.three-point-leveling.save_plane" v2="three point leveling strategy.save_plane"></setting> | `false` | Set to `true` to allow the bed plane to be saved with `M500`, default is `false`. |
+| <setting v1="leveling-strategy.three-point-leveling.save_plane" v2="three point leveling strategy.save_plane"></setting> | `false` | {::nomarkdown}Set to <code>true</code> to allow the bed plane to be saved with <mcode>M500</mcode>, default is <code>false</code>.{:/nomarkdown} |
 
+{::nomarkdown}
 ## Usage
 
 After configuring three-point leveling, you need to:
 
-1. **Home your machine**: Use `G28` to home all axes
-2. **Run the leveling**: Use `G32` to execute the three-point probe sequence
-3. **Save (optional)**: If `save_plane` is true, use `M500` to save the results
+<ol>
+<li><strong>Home your machine</strong>: Use <gcode>G28</gcode> to home all axes</li>
+<li><strong>Run the leveling</strong>: Use <gcode>G32</gcode> to execute the three-point probe sequence</li>
+<li><strong>Save (optional)</strong>: If <code>save_plane</code> is true, use <mcode>M500</mcode> to save the results</li>
+</ol>
 
 The leveling will be applied to all subsequent moves automatically.
+{:/nomarkdown}
 
 ## Related Documentation
 

@@ -20,7 +20,9 @@ This page lists community-maintained branches and forks of Smoothie firmware tha
 - [OpenTrons](https://github.com/OpenTrons/SmoothiewareOT): A custom fork that supports 6-axis movement ( but is not yet stable ) and some opentron-specific features
 - [Multiple Grids](https://github.com/pyjamasam/Smoothieware): Allows use of multiple grids for grid levelling
 - [Reprap Morgan](https://github.com/RepRapMorgan/Smoothieware): A fork with features optimized for the Reprap Morgan architecture
-- [Ditto Printing](https://github.com/RTimothyEdwards/Smoothieware): A fork with branch features/ditto-printing to enable one or more secondary extruders to duplicate the movements of the primary, using RepRap gcode "M605 S2"
+{::nomarkdown}
+- [Ditto Printing](https://github.com/RTimothyEdwards/Smoothieware): A fork with branch features/ditto-printing to enable one or more secondary extruders to duplicate the movements of the primary, using RepRap gcode "<mcode>M605</mcode> S2"
+{:/nomarkdown}
 - [Joystick Jogging](https://groups.google.com/forum/#!topic/smoothie-dev/fWqX3zo7EPo): A new module to allow jogging with a joystick. Needs testing, so if you are interested by this feature, please help.
 - [Dual X, Y, Z, E](https://github.com/3DMS/Smoothieware): Mimics the Dual X, Y or Dual Z feature of Marlin. You will need to add new parameters into your configuration file in order to make it work.
 - [Dual motor AND Endstops for homing](https://github.com/Smoothieware/Smoothieware/pull/1431): Much like the above, but allows you to add a second endstop that stops the second motor independently to square the two motors during the homing operation.

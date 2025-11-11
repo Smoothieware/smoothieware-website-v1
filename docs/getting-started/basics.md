@@ -29,7 +29,7 @@ New to CNC? Here are the essential terms you'll see throughout this documentatio
 | **Smoothie** | The firmware (software) that runs on the microcontroller |
 | **Smoothieboard** | The physical controller board (hardware) |
 | **Firmware** | Software stored permanently on a chip that controls hardware |
-| **G-code** | The language used to command CNC machines (like "G0 X10" to move to position X=10) |
+| **G-code** | The language used to command CNC machines (like "<gcode>G0</gcode> X10" to move to position X=10) |
 | **Host software** | The program on your computer that sends commands to the board |
 | **Microcontroller** | A small computer chip dedicated to controlling hardware |
 | **CAD** | Computer-Aided Design software for creating models |
@@ -124,15 +124,17 @@ M104 S200     ; Set hotend temperature to 200°C
 
 ### Command structure
 
-**G-codes** (like G0, G1, G28):
-- Motion commands (G0 = rapid move, G1 = controlled move)
-- Positioning commands (G28 = home, G92 = set position)
-- Coordinate system commands (G90 = absolute, G91 = relative)
+{::nomarkdown}
+**G-codes** (like <gcode>G0</gcode>, <gcode>G1</gcode>, <gcode>G28</gcode>):
+- Motion commands (<gcode>G0</gcode> = rapid move, <gcode>G1</gcode> = controlled move)
+- Positioning commands (<gcode>G28</gcode> = home, <gcode>G92</gcode> = set position)
+- Coordinate system commands (<gcode>G90</gcode> = absolute, <gcode>G91</gcode> = relative)
 
-**M-codes** (like M104, M106):
-- Machine control (M104 = set temp, M106 = fan on)
-- Program control (M0 = pause, M30 = end program)
-- Configuration (M92 = set steps/mm, M203 = set max speeds)
+**M-codes** (like <mcode>M104</mcode>, <mcode>M106</mcode>):
+- Machine control (<mcode>M104</mcode> = set temp, <mcode>M106</mcode> = fan on)
+- Program control (<mcode>M0</mcode> = pause, <mcode>M30</mcode> = end program)
+- Configuration (<mcode>M92</mcode> = set steps/mm, <mcode>M203</mcode> = set max speeds)
+{:/nomarkdown}
 
 **Parameters** (like X10, F1000, S200):
 - Values that modify commands
@@ -209,20 +211,22 @@ CNC machines work in a coordinate space:
 
 ### Motion types
 
-**Rapid positioning (G0)**:
+{::nomarkdown}
+**Rapid positioning (<gcode>G0</gcode>)**:
 - Fast move to get the tool in position
 - Not for cutting/printing - just positioning
 - Uses maximum speed
 
-**Linear interpolation (G1)**:
+**Linear interpolation (<gcode>G1</gcode>)**:
 - Controlled movement at a specified feed rate
 - Used for actual work (cutting, printing, engraving)
-- Example: `G1 X100 Y50 F1000` (move to X=100, Y=50 at 1000mm/min)
+- Example: <gcode>G1</gcode> X100 Y50 F1000 (move to X=100, Y=50 at 1000mm/min)
 
-**Arc interpolation (G2/G3)**:
+**Arc interpolation (<gcode>G2</gcode>/<gcode>G3</gcode>)**:
 - Circular/curved motion
-- G2 = clockwise, G3 = counterclockwise
+- <gcode>G2</gcode> = clockwise, <gcode>G3</gcode> = counterclockwise
 - Used for smooth curves without lots of tiny line segments
+{:/nomarkdown}
 
 ### Feed rate
 
@@ -262,15 +266,17 @@ Getting this right is critical for dimensional accuracy.
 
 ### Coordinate modes
 
-**Absolute positioning (G90)**:
+{::nomarkdown}
+**Absolute positioning (<gcode>G90</gcode>)**:
 - Positions are relative to the origin
-- `G1 X100` means "go to position 100mm from origin"
+- <gcode>G1</gcode> X100 means "go to position 100mm from origin"
 
-**Relative positioning (G91)**:
+**Relative positioning (<gcode>G91</gcode>)**:
 - Positions are relative to current location
-- `G1 X100` means "move 100mm from wherever you are now"
+- <gcode>G1</gcode> X100 means "move 100mm from wherever you are now"
 
-Most G-code uses absolute mode (G90) because it's more predictable.
+Most G-code uses absolute mode (<gcode>G90</gcode>) because it's more predictable.
+{:/nomarkdown}
 
 For more details on motion control, see [Motion Control](motion-control).
 
@@ -332,11 +338,11 @@ Because of this modular design:
 
 # Temperature control module configuration
 temperature_control.hotend.enable           true
-<setting v1="temperature_control.hotend.thermistor_pin" v2="thermistor_pin"></setting>   0.23
+<setting v1="temperature_control.hotend.thermistor_pin" v2="thermistor_pin"></setting>   <pin>0.23</pin>
 
 # Switch module configuration
 switch.fan.enable               true
-switch.fan.input_pin            2.6
+switch.fan.input_pin            <pin>2.6</pin>
 ```
 
 **You only configure modules you're using**:
@@ -409,8 +415,10 @@ default_seek_rate              4000
 
 # Temperature Control Module
 temperature_control.hotend.enable           true
-<setting v1="temperature_control.hotend.thermistor_pin" v2="thermistor_pin"></setting>   0.23
-<setting v1="temperature_control.hotend.heater_pin" v2="heater_pin"></setting>       2.7
+{::nomarkdown}
+<setting v1="temperature_control.hotend.thermistor_pin" v2="thermistor_pin"></setting>   <pin>0.23</pin>
+<setting v1="temperature_control.hotend.heater_pin" v2="heater_pin"></setting>       <pin>2.7</pin>
+{:/nomarkdown}
 ```
 
 Each section configures a specific module. This matches the module architecture described above.
@@ -433,7 +441,9 @@ So <setting v1="alpha_steps_per_mm" v2="actuator.x.steps_per_mm"></setting> conf
 
 ### Config override file
 
+{::nomarkdown}
 Certain M-codes can modify settings at runtime and save them to `config-override`:
+{:/nomarkdown}
 
 ```
 M92 X80 Y80 Z400       ; Set steps per mm
@@ -445,7 +455,9 @@ If `config-override` exists:
 - Values in override file take precedence
 - This lets you tune settings without editing config
 
-**To remove overrides**: Delete `config-override` or use `M502`
+{::nomarkdown}
+**To remove overrides**: Delete `config-override` or use <mcode>M502</mcode>
+{:/nomarkdown}
 
 See [Configuring Smoothie](configuring-smoothie) for complete details and [Configuration Options](configuration-options) for all available options.
 
@@ -772,11 +784,15 @@ Let's clear up some common confusion:
 
 ### About G-code and communication
 
+{::nomarkdown}
 **❌ "'ok' means the command finished executing"**
-✅ Wrong. "ok" means "received and queued". Use `M400` to wait for actual completion.
+✅ Wrong. "ok" means "received and queued". Use <mcode>M400</mcode> to wait for actual completion.
+{:/nomarkdown}
 
+{::nomarkdown}
 **❌ "I can edit config while the machine is running"**
-✅ Wrong. Config changes require board reset. Use M-codes (M92, M203, etc.) for runtime changes, save with M500 if desired.
+✅ Wrong. Config changes require board reset. Use M-codes (<mcode>M92</mcode>, <mcode>M203</mcode>, etc.) for runtime changes, save with <mcode>M500</mcode> if desired.
+{:/nomarkdown}
 
 **❌ "More acceleration is always better"**
 ✅ Wrong. Excessive acceleration causes ringing, vibration, and mechanical wear. Tune to your machine's mechanical capabilities.

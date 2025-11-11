@@ -170,13 +170,17 @@ Now you need to move an axis to make sure the stepper motor is turning in the ri
 
 Your X axis will move. If it moved to the right, great! Everything is fine, and you have nothing to change. If it moved to the left, you need to invert the direction of that axis.
 
+{::nomarkdown}
 You do this by editing the configuration file, and inverting the direction pin for that stepper motor driver:
+{:/nomarkdown}
 
 ```
 alpha_dir_pin                                0.5              # Pin for alpha stepper direction
 ```
 
+{::nomarkdown}
 Becomes:
+{:/nomarkdown}
 
 ```
 alpha_dir_pin                                0.5!             # Pin for alpha stepper direction

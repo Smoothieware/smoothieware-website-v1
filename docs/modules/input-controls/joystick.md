@@ -71,22 +71,26 @@ Vin should be 3.3 V for the SmoothieBoard, and Pin 2 will be connected to a comp
   <strong>Caution:</strong> Use caution when connecting a potentiometer to your SmoothieBoard. If Vin is a higher voltage than the SmoothieBoard's pins can handle (-0.5 to 5.1 V for > 10 ms), you might ruin your board. Use Vin = 3.3 V unless you know what you are doing.
 </sl-alert>
 
+{::nomarkdown}
 The analog pins on the SmoothieBoard which can be connected to a wiper (Pin 2 in above schematic) are shown in the table below:
+{:/nomarkdown}
 
 | Analog Pin | Smoothie Assignment | Comments |
 | ---------- | ------------------- | -------- |
-| 0.2 | uart0 txd | Not recommended (used for ISP programming of the bootloader and for debugging) |
-| 0.3 | uart0 rxd | Not recommended (used for ISP programming of the bootloader and for debugging) |
-| 0.23 | hotend.thermistor_pin | Not recommended (used for thermistors and has built-in 4.7 kΩ pull-up) |
-| 0.24 | bed.thermistor_pin | Not recommended (used for thermistors and has built-in 4.7 kΩ pull-up) |
-| 0.25 | thermistor2 | Not recommended (used for thermistors and has built-in 4.7 kΩ pull-up) |
-| 0.26 | thermistor3 | Not recommended (used for thermistors and has built-in 4.7 kΩ pull-up) |
-| **1.30** | spare | Recommended pin |
-| **1.31** | spare | Recommended pin |
+| <pin>0.2</pin> | uart0 txd | Not recommended (used for ISP programming of the bootloader and for debugging) |
+| <pin>0.3</pin> | uart0 rxd | Not recommended (used for ISP programming of the bootloader and for debugging) |
+| <pin>0.23</pin> | hotend.thermistor_pin | Not recommended (used for thermistors and has built-in 4.7 kΩ pull-up) |
+| <pin>0.24</pin> | bed.thermistor_pin | Not recommended (used for thermistors and has built-in 4.7 kΩ pull-up) |
+| <pin>0.25</pin> | thermistor2 | Not recommended (used for thermistors and has built-in 4.7 kΩ pull-up) |
+| <pin>0.26</pin> | thermistor3 | Not recommended (used for thermistors and has built-in 4.7 kΩ pull-up) |
+| **<pin>1.30</pin>** | spare | Recommended pin |
+| **<pin>1.31</pin>** | spare | Recommended pin |
 
 See [Pinout](pinout) for a diagram of the SmoothieBoard with the pins labeled.
 
-For a joystick, you will need to connect each wiper (the left/right and up/down) to different analog pins (e.g. 1.30 and 1.31).
+{::nomarkdown}
+For a joystick, you will need to connect each wiper (the left/right and up/down) to different analog pins (e.g. <pin>1.30</pin> and <pin>1.31</pin>).
+{:/nomarkdown}
 
 {::nomarkdown}
 <a href="/images/temporary/terminal-connector.jpg">

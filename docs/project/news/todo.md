@@ -61,7 +61,7 @@ But there are many things we want to improve, and new features we want to implem
 {::nomarkdown}
 <sl-alert variant="success" open>
   <sl-icon slot="icon" name="check-circle"></sl-icon>
-  <strong>PanelDue support</strong> <a href="https://github.com/chrisbrent">Chris Brent</a> is working on implementing support for the <a href="http://www.think3dprint3d.com/PanelDue">Paneldue</a> into Smoothie ( specifically the M408 G-code, which will also be useful for web interface projects ).<br><br>You can follow the progress at <a href="https://github.com/Smoothieware/Smoothieware/pull/798">PanelDue support</a>.
+  <strong>PanelDue support</strong> <a href="https://github.com/chrisbrent">Chris Brent</a> is working on implementing support for the <a href="http://www.think3dprint3d.com/PanelDue">Paneldue</a> into Smoothie ( specifically the <mcode>M408</mcode> G-code, which will also be useful for web interface projects ).<br><br>You can follow the progress at <a href="https://github.com/Smoothieware/Smoothieware/pull/798">PanelDue support</a>.
 </sl-alert>
 {:/nomarkdown}
 
@@ -138,7 +138,7 @@ But there are many things we want to improve, and new features we want to implem
 {::nomarkdown}
 <sl-alert variant="primary" open>
   <sl-icon slot="icon" name="lightbulb"></sl-icon>
-  <strong>M1 support</strong> Support for a Gcode that pauses until user input.<br><br>User input can be a button or a Gcode.<br><br>We possibly only need a Gcode, since a button can then be created with Switch.<br><br>( note this might be partially supported, just with M600 instead ).
+  <strong><mcode>M1</mcode> support</strong> Support for a Gcode that pauses until user input.<br><br>User input can be a button or a Gcode.<br><br>We possibly only need a Gcode, since a button can then be created with Switch.<br><br>( note this might be partially supported, just with <mcode>M600</mcode> instead ).
 </sl-alert>
 {:/nomarkdown}
 

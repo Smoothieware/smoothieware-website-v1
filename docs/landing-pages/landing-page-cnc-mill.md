@@ -236,7 +236,7 @@ delta_max_rate         30000   # A-axis rotary speed
 ## Touch Probing & Tool Management
 
 **Touch Probe Support:**
-- G38.2/G38.3 probing G-codes for part alignment
+- <gcode>G38.2</gcode>/<gcode>G38.3</gcode> probing G-codes for part alignment
 - Part edge finding and zero-setting
 - Surface mapping for uneven stock
 - Tool length measurement

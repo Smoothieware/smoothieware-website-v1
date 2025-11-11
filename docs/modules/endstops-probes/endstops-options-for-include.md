@@ -15,21 +15,21 @@ For more information on setting up endstops, see the main [Endstops](endstops) d
 | `delta_homing` | false | Set to true if this machine uses a `linear_delta` arm solution |
 | `rdelta_homing` | false | Set to true if this machine uses a `rotary_delta` arm solution |
 | `scara_homing` | false | Set to true if this machine uses a `scara` arm solution |
-| `alpha_min_endstop` | `1.24^` | Alpha (X axis or alpha tower) minimum limit endstop. Set to `nc` if not installed on your machine. |
-| `alpha_max_endstop` | `1.25^` | Alpha (X axis or alpha tower) maximum limit endstop. Set to `nc` if not installed on your machine. |
-| `alpha_homing_direction` | home_to_min | In which direction to home. If set to `home_to_min`, homing (using the `G28` G-code) will move until it hits the minimum endstop and then set the current position to `alpha_min`. If set to `home_to_max`, homing will move until it hits the maximum endstop, and then set the current position to `alpha_max` |
+| `alpha_min_endstop` | <pin>1.24^</pin> | Alpha (X axis or alpha tower) minimum limit endstop. Set to `nc` if not installed on your machine. |
+| `alpha_max_endstop` | <pin>1.25^</pin> | Alpha (X axis or alpha tower) maximum limit endstop. Set to `nc` if not installed on your machine. |
+| `alpha_homing_direction` | home_to_min | In which direction to home. If set to `home_to_min`, homing (using the <gcode>G28</gcode> G-code) will move until it hits the minimum endstop and then set the current position to `alpha_min`. If set to `home_to_max`, homing will move until it hits the maximum endstop, and then set the current position to `alpha_max` |
 | `alpha_min` | 0 | This gets loaded after homing when `alpha_homing_direction` is set to `home_to_min` and the minimum endstop is hit. **NOTE** the homing offset is added to this set with `M206 Xnnn` |
 | `alpha_max` | 200 | This gets loaded after homing when `alpha_homing_direction` is set to `home_to_max` and the maximum endstop is hit. |
 | `alpha_max_travel` | 500 | This determines how far the X axis can travel looking for the endstop before it gives up |
-| `beta_min_endstop` | `1.26^` | Beta (Y axis or beta tower) minimum limit endstop. Set to `nc` if not installed on your machine. |
-| `beta_max_endstop` | `1.27^` | Beta (Y axis or beta tower) maximum limit endstop. Set to `nc` if not installed on your machine. |
-| `beta_homing_direction` | home_to_min | In which direction to home. If set to `home_to_min`, homing (using the `G28` G-code) will move until it hits the minimum endstop and then set the current position to `beta_min`. If set to `home_to_max`, homing will move until it hits the maximum endstop, and then set the current position to `beta_max` |
+| `beta_min_endstop` | <pin>1.26^</pin> | Beta (Y axis or beta tower) minimum limit endstop. Set to `nc` if not installed on your machine. |
+| `beta_max_endstop` | <pin>1.27^</pin> | Beta (Y axis or beta tower) maximum limit endstop. Set to `nc` if not installed on your machine. |
+| `beta_homing_direction` | home_to_min | In which direction to home. If set to `home_to_min`, homing (using the <gcode>G28</gcode> G-code) will move until it hits the minimum endstop and then set the current position to `beta_min`. If set to `home_to_max`, homing will move until it hits the maximum endstop, and then set the current position to `beta_max` |
 | `beta_min` | 0 | This gets loaded after homing when `beta_homing_direction` is set to `home_to_min` and the minimum endstop is hit. |
 | `beta_max` | 200 | This gets loaded after homing when `beta_homing_direction` is set to `home_to_max` and the maximum endstop is hit. |
 | `beta_max_travel` | 500 | This determines how far the Y axis can travel looking for the endstop before it gives up |
-| `gamma_min_endstop` | `1.28^` | Gamma (Z axis or gamma tower) minimum limit endstop. Set to `nc` if not installed on your machine. |
-| `gamma_max_endstop` | `1.29^` | Gamma (Z axis or gamma tower) maximum limit endstop. Set to `nc` if not installed on your machine. |
-| `gamma_homing_direction` | home_to_min | In which direction to home. If set to `home_to_min`, homing (using the `G28` G-code) will move until it hits the minimum endstop and then set the current position to `gamma_min`. If set to `home_to_max`, homing will move until it hits the maximum endstop, and then set the current position to `gamma_max` |
+| `gamma_min_endstop` | <pin>1.28^</pin> | Gamma (Z axis or gamma tower) minimum limit endstop. Set to `nc` if not installed on your machine. |
+| `gamma_max_endstop` | <pin>1.29^</pin> | Gamma (Z axis or gamma tower) maximum limit endstop. Set to `nc` if not installed on your machine. |
+| `gamma_homing_direction` | home_to_min | In which direction to home. If set to `home_to_min`, homing (using the <gcode>G28</gcode> G-code) will move until it hits the minimum endstop and then set the current position to `gamma_min`. If set to `home_to_max`, homing will move until it hits the maximum endstop, and then set the current position to `gamma_max` |
 | `gamma_min` | 0 | This gets loaded after homing when `gamma_homing_direction` is set to `home_to_min` and the minimum endstop is hit. |
 | `gamma_max` | 200 | This gets loaded after homing when `gamma_homing_direction` is set to `home_to_max` and the maximum endstop is hit. |
 | `gamma_max_travel` | 500 | This determines how far the Z axis can travel looking for the endstop before it gives up |

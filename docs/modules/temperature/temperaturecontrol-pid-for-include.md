@@ -78,12 +78,14 @@ So unless you have been given those values with your hardware, or you are a PID 
 
 To auto-tune your PID values:
 
-1. **Start the auto-tune process:**
-   ```gcode
-   M303 E0 S200
-   ```
-   - <raw>E0</raw> specifies the hotend (use <raw>E1</raw>, <raw>E2</raw>, etc. for other extruders)
-   - <raw>S200</raw> is the target temperature (adjust to your typical printing temperature)
+{::nomarkdown}
+1. <strong>Start the auto-tune process:</strong>
+   <mcode>M303</mcode> E0 S200
+   <ul>
+   <li><raw>E0</raw> specifies the hotend (use <raw>E1</raw>, <raw>E2</raw>, etc. for other extruders)</li>
+   <li><raw>S200</raw> is the target temperature (adjust to your typical printing temperature)</li>
+   </ul>
+{:/nomarkdown}
 
 2. **Wait for completion** - The process will take several minutes as it cycles the heater and measures response
 
@@ -225,10 +227,14 @@ This uses simple on/off control. Not recommended for most applications.
 
 #### Further Reading
 
-- [Temperature Control module documentation](temperaturecontrol)
-- [Thermistor configuration](thermistors)
-- [Heater configuration](heater)
-- [<mcode>M303</mcode> G-code documentation](supported-g-codes)
+{::nomarkdown}
+<ul>
+<li><a href="/temperaturecontrol">Temperature Control module documentation</a></li>
+<li><a href="/thermistors">Thermistor configuration</a></li>
+<li><a href="/heater">Heater configuration</a></li>
+<li><mcode>M303</mcode> G-code documentation (see <a href="/supported-g-codes">supported G-codes</a>)</li>
+</ul>
+{:/nomarkdown}
 
 ---
 

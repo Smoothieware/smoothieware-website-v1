@@ -151,14 +151,18 @@ If you find that movement is incorrect after wiring and configuring your printer
 
 ### Systematic Direction Testing
 
+{::nomarkdown}
 To systematically test and correct directions:
 
-1. **Test X movement**: Command `G0 X10` and verify the toolhead moves in the +X direction
-   - If wrong, try inverting one motor's direction pin
-2. **Test Y movement**: Command `G0 Y10` and verify the toolhead moves in the +Y direction
-   - If wrong, try swapping motor cables or inverting the other motor's direction
-3. **Test diagonal**: Command `G0 X10 Y10` to verify coordinated movement
-4. **Test homing**: Run `G28` to verify endstops work correctly
+<ol>
+<li><strong>Test X movement</strong>: Command <gcode>G0</gcode> X10 and verify the toolhead moves in the +X direction
+   <ul><li>If wrong, try inverting one motor's direction pin</li></ul></li>
+<li><strong>Test Y movement</strong>: Command <gcode>G0</gcode> Y10 and verify the toolhead moves in the +Y direction
+   <ul><li>If wrong, try swapping motor cables or inverting the other motor's direction</li></ul></li>
+<li><strong>Test diagonal</strong>: Command <gcode>G0</gcode> X10 Y10 to verify coordinated movement</li>
+<li><strong>Test homing</strong>: Run <gcode>G28</gcode> to verify endstops work correctly</li>
+</ol>
+{:/nomarkdown}
 
 ## Advantages and Disadvantages
 

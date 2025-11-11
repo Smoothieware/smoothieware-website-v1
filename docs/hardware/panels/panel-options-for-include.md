@@ -26,7 +26,7 @@
 </tr>
 <tr>
 <td><setting v1="panel.spi_cs_pin"></setting></td>
-<td><code>0.16</code></td>
+<td><pin>0.16</pin></td>
 <td>CS (Chip Select) pin to use, this can be used to have several different devices on the same SPI port, as long as each device has a separate CS pin. Note that the RRD GLCD panel does not support this and requires being alone on its port.</td>
 </tr>
 <tr>
@@ -61,12 +61,12 @@
 </tr>
 <tr>
 <td><setting v1="panel.encoder_a_pin"></setting></td>
-<td><code>3.25!^</code></td>
+<td><pin>3.25!^</pin></td>
 <td>A pin for the encoder wheel. Encoders have two pins: A and B. Set to <code>nc</code> if you use no encoder. ^ defines menu move direction</td>
 </tr>
 <tr>
 <td><setting v1="panel.encoder_b_pin"></setting></td>
-<td><code>3.26!^</code></td>
+<td><pin>3.26!^</pin></td>
 <td>B pin for the encoder wheel. Encoders have two pins: A and B. Set to <code>nc</code> if you use no encoder. ^ defines menu move direction</td>
 </tr>
 <tr>
@@ -76,27 +76,27 @@
 </tr>
 <tr>
 <td><setting v1="panel.click_button_pin"></setting></td>
-<td><code>1.30!^</code></td>
+<td><pin>1.30!^</pin></td>
 <td>Pin for the click ("enter") button</td>
 </tr>
 <tr>
 <td><setting v1="panel.buzz_pin"></setting></td>
-<td><code>1.31</code></td>
+<td><pin>1.31</pin></td>
 <td>Pin for the buzzer</td>
 </tr>
 <tr>
 <td><setting v1="panel.back_button_pin"></setting></td>
-<td><code>2.11!^</code></td>
+<td><pin>2.11!^</pin></td>
 <td>Pin for the back button</td>
 </tr>
 <tr>
 <td><setting v1="panel.up_button_pin"></setting></td>
-<td><code>0.1!</code></td>
+<td><pin>0.1!</pin></td>
 <td>Pin for the up button</td>
 </tr>
 <tr>
 <td><setting v1="panel.down_button_pin"></setting></td>
-<td><code>0.0!</code></td>
+<td><pin>0.0!</pin></td>
 <td>Pin for the down button</td>
 </tr>
 <tr>
@@ -141,12 +141,12 @@
 </tr>
 <tr>
 <td><setting v1="panel.external_sd.spi_cs_pin"></setting></td>
-<td><code>2.8</code></td>
+<td><pin>2.8</pin></td>
 <td>Set the CS (Chip Select) pin for the external SD card, this allows you to use multiple devices on the same SPI port, as long as they each have a CS pin</td>
 </tr>
 <tr>
 <td><setting v1="panel.external_sd.sdcd_pin"></setting></td>
-<td><code>2.13!^</code></td>
+<td><pin>2.13!^</pin></td>
 <td>SD card detect signal pin, set to <code>nc</code> if you don't use an SD card detect signal</td>
 </tr>
 <tr>

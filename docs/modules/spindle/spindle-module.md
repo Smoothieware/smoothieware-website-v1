@@ -35,10 +35,12 @@ spindle.ignore_on_halt                           false  # set to false to turn o
 
 Available G-code commands:
 
-- `M3` will start the spindle. `M3 S5000` will start the spindle and set speed to 5000 RPM.
-- `M5` will stop the spindle. Last set RPM is remembered and used for next `M3` command if S argument is not given.
-- `M957` will report the current spindle speed and PWM value. This returns not the actual value but the value that was set through M3.
-- `M958` will report the current PID parameters. `M958 Px.xxx Ix.xxx Dx.xxx` will set them (to save the new values, you need to edit config file manually).
+{::nomarkdown}
+- <mcode>M3</mcode> will start the spindle. <mcode>M3</mcode> S5000 will start the spindle and set speed to 5000 RPM.
+- <mcode>M5</mcode> will stop the spindle. Last set RPM is remembered and used for next <mcode>M3</mcode> command if S argument is not given.
+- <mcode>M957</mcode> will report the current spindle speed and PWM value. This returns not the actual value but the value that was set through <mcode>M3</mcode>.
+- <mcode>M958</mcode> will report the current PID parameters. <mcode>M958</mcode> Px.xxx Ix.xxx Dx.xxx will set them (to save the new values, you need to edit config file manually).
+{:/nomarkdown}
 
 ## PWM Spindle
 
@@ -83,7 +85,7 @@ spindle.control_smoothing                    0.1               # default 0.1. Th
   <br><br>
   Since I'm experimenting with hobby ESC+motor combos (1:8 scale 3 phase 4068 like motor) I wanted to share its config.
   <br><br>
-  ESCs act like hobby servos - 20 ms period time, 1.5-2ms duty cycle time - so instead of having modified the spindle code, I've created a switch for commands M3/M5.
+  ESCs act like hobby servos - 20 ms period time, 1.5-2ms duty cycle time - so instead of having modified the spindle code, I've created a switch for commands <mcode>M3</mcode>/<mcode>M5</mcode>.
   <br><br>
   Due to the very small duty cycle window, you won't have much control over the motor: S7.5 is neutral, S12.5 is "fastest" after calibrating the ESC manually with bCNC (read ESC's manual; below S7.5 is braking for now).
   <br><br>

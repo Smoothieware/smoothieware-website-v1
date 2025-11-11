@@ -13893,8 +13893,8 @@ Expecting ` + expected.join(", ") + ", got '" + (this.terminals_[symbol] || symb
   var compiled_code_popup_template = null;
   var gcode_data = {};
   var mcode_data = {};
-  async function load_and_compile_template() {
-    console.log("[code-tag.ts] load_and_compile_template() ENTRY");
+  async function load_and_compile_code_template() {
+    console.log("[code-tag.ts] load_and_compile_code_template() ENTRY");
     try {
       console.log("[code-tag.ts] Fetching code popup template...");
       const template_response = await fetch("/assets/templates/code-popup.hbs");
@@ -13914,7 +13914,7 @@ Expecting ` + expected.join(", ") + ", got '" + (this.terminals_[symbol] || symb
     } catch (error) {
       console.error("[code-tag.ts] Error loading code popup template:", error);
     }
-    console.log("[code-tag.ts] load_and_compile_template() EXIT");
+    console.log("[code-tag.ts] load_and_compile_code_template() EXIT");
   }
   async function load_gcode_mcode_data() {
     console.log("[code-tag.ts] load_gcode_mcode_data() ENTRY");
@@ -14087,7 +14087,7 @@ Expecting ` + expected.join(", ") + ", got '" + (this.terminals_[symbol] || symb
   import_jquery.default(() => {
     console.log("[code-tag.ts] Initializing gcode and mcode tag handlers");
     console.log("[code-tag.ts] Starting Promise.all for template and data loading");
-    const templatePromise = load_and_compile_template();
+    const templatePromise = load_and_compile_code_template();
     const dataPromise = load_gcode_mcode_data();
     console.log("[code-tag.ts] Template promise:", templatePromise);
     console.log("[code-tag.ts] Data promise:", dataPromise);

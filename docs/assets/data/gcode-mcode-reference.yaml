@@ -244,14 +244,14 @@ gcodes:
         unit: seconds
         required: false
       - letter: P
-        description: Duration to wait (milliseconds, or seconds if grbl_mode)
+        description: Duration to wait (milliseconds, or seconds if `grbl_mode`)
         type: time
         unit: ms
         required: false
     example:
       - "`G4 S5` - Pause for 5 seconds."
     notes:
-      - If `grbl_mode` is set to `true`, then the `P` parameter is the duration to wait in seconds (as a float value), not milliseconds, to conform to G-Code standards.
+      - If <setting v1="grbl_mode" v2="general.grbl_mode"></setting> is set to `true`, then the `P` parameter is the duration to wait in seconds (as a float value), not milliseconds, to conform to G-Code standards.
       - Otherwise, `P` is in milliseconds.
       - Commonly used to allow ooze prevention, wait for spindle speed stabilization, or allow small layers to cool.
       - Some firmwares may process other commands during dwell; behavior varies.
@@ -394,9 +394,235 @@ gcodes:
         required: false
     example:
       - "`G28.1 X10 Y10` - Record the origin position as being at the X position 10 and Y position 10"
-    notes: ""
+    notes:
+      - Can be saved permanently with M500 command.
+      - Used to set park position when alpha_homing.home_to_origin is enabled.
     related_codes:
       - G28
+      - G28.2
+      - M500
+  G28.2:
+    description:
+      - Move to Predefined Position set by G28.1.
+      - Performs a rapid move to the predefined position.
+      - In grbl mode, this command performs a home operation instead.
+    parameters:
+      - letter: X
+        description: Move to X predefined position
+        type: flag
+        unit: none
+        required: false
+      - letter: Y
+        description: Move to Y predefined position
+        type: flag
+        unit: none
+        required: false
+      - letter: Z
+        description: Move to Z predefined position
+        type: flag
+        unit: none
+        required: false
+    example:
+      - "G28.2"
+      - "G28.2 Z0"
+    notes:
+      - In grbl mode, this performs force homing.
+      - Without parameters, moves all axes to predefined positions.
+    related_codes:
+      - G28
+      - G28.1
+  G28.3:
+    description:
+      - Manual Homing - Set home position manually without moving to limit switches.
+      - Allows setting a home position at the current location.
+    parameters:
+      - letter: X
+        description: Set current position as X home
+        type: flag
+        unit: none
+        required: false
+      - letter: Y
+        description: Set current position as Y home
+        type: flag
+        unit: none
+        required: false
+      - letter: Z
+        description: Set current position as Z home
+        type: flag
+        unit: none
+        required: false
+    example:
+      - "G28.3"
+      - "G28.3 X0 Y0"
+    notes:
+      - Does not move any axis, only sets homing status.
+      - Useful when limit switches are not available.
+    related_codes:
+      - G28
+      - G28.4
+  G28.4:
+    description:
+      - Manual Homing based on actuator position.
+      - Sets home position manually based on actuator position rather than machine coordinates.
+      - Used primarily for rotary delta machines.
+    parameters:
+      - letter: X
+        description: Set actuator X home
+        type: flag
+        unit: none
+        required: false
+      - letter: Y
+        description: Set actuator Y home
+        type: flag
+        unit: none
+        required: false
+      - letter: Z
+        description: Set actuator Z home
+        type: flag
+        unit: none
+        required: false
+    example:
+      - "G28.4"
+    notes:
+      - Specifically designed for rotary delta configurations.
+      - Sets homing based on actuator/stepper position.
+    related_codes:
+      - G28
+      - G28.3
+  G28.5:
+    description:
+      - Clear the homed flag for specified axes.
+      - Without parameters, clears homed flag for all axes.
+    parameters:
+      - letter: X
+        description: Clear X axis homed flag
+        type: flag
+        unit: none
+        required: false
+      - letter: Y
+        description: Clear Y axis homed flag
+        type: flag
+        unit: none
+        required: false
+      - letter: Z
+        description: Clear Z axis homed flag
+        type: flag
+        unit: none
+        required: false
+    example:
+      - "G28.5"
+      - "G28.5 Z0"
+    notes:
+      - Forces re-homing before movement is allowed.
+      - Useful after manual position changes.
+    related_codes:
+      - G28
+      - G28.6
+  G28.6:
+    description:
+      - Report homing status of each axis.
+      - Shows which axes have been homed.
+    parameters: []
+    example:
+      - "G28.6"
+    notes:
+      - Returns homing status for all configured axes.
+      - Useful for diagnostics and verification.
+    related_codes:
+      - G28
+      - G28.5
+  G29:
+    description:
+      - Bed probe test command.
+      - Behavior depends on the configured leveling strategy.
+      - "ThreePointStrategy: Probes three probe points and reports Z at each point."
+      - "DeltaGridStrategy: Test probes in a spiral pattern within radius, producing a map of offsets."
+      - "CartGridStrategy: Test probes a rectangle and reports bed heights."
+    parameters:
+      - letter: X
+        description: Rectangle width (CartGrid) or start X (two corners mode)
+        type: distance
+        unit: mm
+        required: false
+      - letter: Y
+        description: Rectangle height (CartGrid) or start Y (two corners mode)
+        type: distance
+        unit: mm
+        required: false
+      - letter: I
+        description: Number of probe points (DeltaGrid) or grid columns (CartGrid)
+        type: integer
+        unit: none
+        required: false
+      - letter: J
+        description: Probe radius (DeltaGrid) or grid rows (CartGrid)
+        type: distance
+        unit: mm
+        required: false
+    example:
+      - "G29"
+      - "G29 X100 Y100 I7 J7"
+    notes:
+      - Requires a leveling strategy to be configured (ThreePoint, DeltaGrid, or CartGrid).
+      - Does not activate compensation - use G31/G32 for that.
+      - Used for testing and visualizing bed topology.
+      - See ZProbe module documentation for leveling strategy configuration.
+    related_codes:
+      - G30
+      - G31
+      - G32
+      - M370
+      - M375
+  G31:
+    description:
+      - Leveling strategy command.
+      - Behavior depends on the configured leveling strategy.
+      - "ThreePointStrategy: Reports bed leveling plane status and probe trigger status."
+      - "DeltaGridStrategy: Probes the grid and activates compensation."
+      - "CartGridStrategy: Probes the grid and activates compensation."
+    parameters:
+      - letter: X
+        description: Rectangle width (CartGrid) or start X (two corners mode)
+        type: distance
+        unit: mm
+        required: false
+      - letter: Y
+        description: Rectangle height (CartGrid) or start Y (two corners mode)
+        type: distance
+        unit: mm
+        required: false
+      - letter: A
+        description: Rectangle width from start point (CartGrid two corners mode)
+        type: distance
+        unit: mm
+        required: false
+      - letter: B
+        description: Rectangle length from start point (CartGrid two corners mode)
+        type: distance
+        unit: mm
+        required: false
+      - letter: J
+        description: Probe radius (DeltaGrid)
+        type: distance
+        unit: mm
+        required: false
+    example:
+      - "G31"
+      - "G31 X100 Y100"
+      - "G31 J75"
+    notes:
+      - Requires a leveling strategy to be configured.
+      - Activates bed compensation (except ThreePoint where it reports status).
+      - Compensation remains active until reset with M370 or M561.
+      - Grid can be saved with M374 (CartGrid) or M375 (DeltaGrid).
+    related_codes:
+      - G29
+      - G30
+      - G32
+      - M370
+      - M561
+      - M374
+      - M375
   G30:
     description:
       - Move the probe until it hits something in the Z axis.
@@ -438,9 +664,11 @@ gcodes:
       - M665
     example:
       - G32
-  G38:
+  G38.2:
     description:
-      - Probe towards workpiece - straight probe with optional error handling (G38.2/G38.3)
+      - Probe towards workpiece - straight probe with error on failure.
+      - Moves toward target coordinates until probe triggers.
+      - Returns error if probe does not trigger before reaching target.
     parameters:
       - letter: X
         description: Target X position
@@ -463,15 +691,22 @@ gcodes:
         unit: mm/min
         required: false
     notes:
-      - Found in source code, documentation pending
+      - Standard LinuxCNC probe command.
+      - Generates error if probe fails to trigger.
+      - Probe must trigger before reaching target position.
     related_codes:
       - G38.3
+      - G38.4
+      - G38.5
       - G30
     example:
-      - G38.2 Z-10 F50
+      - "G38.2 Z-10 F50"
+      - "G38.2 X10 Y10 F100"
   G38.3:
     description:
-      - Probe without error - straight probe, no error on fail
+      - Probe without error - straight probe, no error on fail.
+      - Moves toward target coordinates until probe triggers.
+      - Does not generate error if probe fails to trigger.
     parameters:
       - letter: X
         description: Target X position
@@ -494,11 +729,110 @@ gcodes:
         unit: mm/min
         required: false
     notes:
-      - Found in source code, documentation pending
+      - Standard LinuxCNC probe command.
+      - Silent failure mode - no error if probe does not trigger.
+      - Useful for finding edges or checking presence.
     related_codes:
-      - G38
+      - G38.2
+      - G38.4
+      - G38.5
+      - G30
     example:
-      - G38.3 Z-10 F50
+      - "G38.3 Z-10 F50"
+      - "G38.3 X10 Y10 F100"
+  G38.4:
+    description:
+      - Probe away from workpiece - moves until probe opens (releases).
+      - Returns error if probe does not open before reaching target.
+    parameters:
+      - letter: X
+        description: Target X position
+        type: coordinate
+        unit: mm
+        required: false
+      - letter: Y
+        description: Target Y position
+        type: coordinate
+        unit: mm
+        required: false
+      - letter: Z
+        description: Target Z position
+        type: coordinate
+        unit: mm
+        required: false
+      - letter: F
+        description: Probe feedrate
+        type: speed
+        unit: mm/min
+        required: false
+    notes:
+      - Standard LinuxCNC probe command.
+      - Opposite of G38.2 - probes until release instead of contact.
+      - Generates error if probe fails to open.
+    related_codes:
+      - G38.2
+      - G38.3
+      - G38.5
+      - G30
+    example:
+      - "G38.4 Z10 F50"
+  G38.5:
+    description:
+      - Probe away from workpiece without error.
+      - Moves until probe opens (releases), no error on fail.
+    parameters:
+      - letter: X
+        description: Target X position
+        type: coordinate
+        unit: mm
+        required: false
+      - letter: Y
+        description: Target Y position
+        type: coordinate
+        unit: mm
+        required: false
+      - letter: Z
+        description: Target Z position
+        type: coordinate
+        unit: mm
+        required: false
+      - letter: F
+        description: Probe feedrate
+        type: speed
+        unit: mm/min
+        required: false
+    notes:
+      - Standard LinuxCNC probe command.
+      - Opposite of G38.3 - probes until release instead of contact.
+      - Does not generate error if probe fails to open.
+    related_codes:
+      - G38.2
+      - G38.3
+      - G38.4
+      - G30
+    example:
+      - "G38.5 Z10 F50"
+  G43.2:
+    description:
+      - Baby steps - adjust Z height during printing.
+      - Allows fine-tuning of Z offset while a print is in progress.
+      - Sometimes called "live Z adjustment" or "babysteps".
+    parameters:
+      - letter: Z
+        description: Z offset adjustment amount
+        type: coordinate
+        unit: mm
+        required: true
+    notes:
+      - Useful for fine-tuning first layer height during printing.
+      - Does not change saved Z offset, only temporary adjustment.
+      - Adjustments are additive - each call adds to previous adjustments.
+    related_codes:
+      - G92
+      - M306
+    example:
+      - "G43.2 Z0.05"
+      - "G43.2 Z-0.02"
   G53:
     description:
       - Use machine coordinates - disable workspace offset for next move
@@ -519,20 +853,114 @@ gcodes:
       - "`G54` - Select work coordinate system 1; `GC:G0 G54 G17 G21 G90 G94 M0 M5 M9 T0 F15000.0 S0.8000` (appears in host command response)"
     notes:
       - Standard WCS selection; appears in host state reporting via `$G` command
+      - Default work coordinate system on most machines.
     related_codes:
       - G53
-      - G59
-  G59:
+      - G55
+      - G10
+  G55:
     description:
-      - Workspace offset - set workspace coordinate system (G54-G59)
+      - Select work coordinate system 2.
+      - Second of multiple available workspace coordinate systems.
     parameters: []
+    example:
+      - "G55"
     notes:
-      - Found in source code, documentation pending
+      - Part of LinuxCNC standard G54-G59.3 workspace coordinate system.
+      - Use G10 L2 to set coordinate offsets.
     related_codes:
       - G53
       - G54
+      - G56
+      - G10
+  G56:
+    description:
+      - Select work coordinate system 3.
+    parameters: []
     example:
+      - "G56"
+    notes:
+      - Part of LinuxCNC standard workspace coordinate systems.
+    related_codes:
+      - G54
+      - G55
+      - G57
+      - G10
+  G57:
+    description:
+      - Select work coordinate system 4.
+    parameters: []
+    example:
+      - "G57"
+    notes:
+      - Part of LinuxCNC standard workspace coordinate systems.
+    related_codes:
+      - G54
+      - G56
+      - G58
+      - G10
+  G58:
+    description:
+      - Select work coordinate system 5.
+    parameters: []
+    example:
+      - "G58"
+    notes:
+      - Part of LinuxCNC standard workspace coordinate systems.
+    related_codes:
+      - G54
+      - G57
       - G59
+      - G10
+  G59:
+    description:
+      - Select work coordinate system 6.
+    parameters: []
+    example:
+      - "G59"
+    notes:
+      - Part of LinuxCNC standard workspace coordinate systems.
+    related_codes:
+      - G54
+      - G58
+      - G59.1
+      - G10
+  G59.1:
+    description:
+      - Select work coordinate system 7.
+    parameters: []
+    example:
+      - "G59.1"
+    notes:
+      - Extended workspace coordinate system (G59.1, G59.2, G59.3).
+    related_codes:
+      - G59
+      - G59.2
+      - G10
+  G59.2:
+    description:
+      - Select work coordinate system 8.
+    parameters: []
+    example:
+      - "G59.2"
+    notes:
+      - Extended workspace coordinate system.
+    related_codes:
+      - G59.1
+      - G59.3
+      - G10
+  G59.3:
+    description:
+      - Select work coordinate system 9.
+    parameters: []
+    example:
+      - "G59.3"
+    notes:
+      - Final extended workspace coordinate system.
+    related_codes:
+      - G59.2
+      - G54
+      - G10
   G90:
     description:
       - Set all moves starting now to use absolute coordinates.
@@ -601,9 +1029,58 @@ gcodes:
       - Can create confusion if not properly managed - prefer G28 for establishing true machine origin.
     related_codes:
       - G28
+      - G92.1
       - M306
     example:
-      - G92 X0 Y0 Z0
+      - "G92 X0 Y0 Z0"
+      - "G92 E0"
+  G92.1:
+    description:
+      - Clear G92 and G30 coordinate offsets.
+      - Resets workspace coordinate offsets to zero.
+      - Removes offsets created by G92 commands.
+    parameters: []
+    notes:
+      - Clears both G92 offsets and any G30 Z offsets.
+      - Returns to machine coordinate system.
+      - Useful for starting fresh after using coordinate offsets.
+    related_codes:
+      - G92
+      - G92.4
+      - G30
+    example:
+      - "G92.1"
+  G92.4:
+    description:
+      - Manually set homing (Machine Coordinate System) for XYZ.
+      - Sets the machine coordinates directly without moving.
+      - Advanced command for setting MCS position.
+    parameters:
+      - letter: X
+        description: Set machine X coordinate
+        type: coordinate
+        unit: mm
+        required: false
+      - letter: Y
+        description: Set machine Y coordinate
+        type: coordinate
+        unit: mm
+        required: false
+      - letter: Z
+        description: Set machine Z coordinate
+        type: coordinate
+        unit: mm
+        required: false
+    notes:
+      - Sets machine coordinate system (MCS) position directly.
+      - Different from G92 which sets workspace offsets.
+      - Use with caution as it affects the machine coordinate reference.
+    related_codes:
+      - G92
+      - G92.1
+      - G28
+    example:
+      - "G92.4 X0 Y0 Z0"
   G94:
     description:
       - Feedrate mode (motion per minute)

@@ -171,7 +171,7 @@ alpha_angle  2.0    # Small correction angle
   <strong>Not Available in v2:</strong> The Rotatable Cartesian arm solution has been removed in Smoothieware v2. If you need similar functionality in v2, you have several alternatives:
   <ul>
     <li><strong>Rotate G-code before sending:</strong> Use your CAM software or a post-processor to rotate coordinates</li>
-    <li><strong>Use coordinate system offsets:</strong> G-code coordinate system commands (G54-G59) can sometimes achieve similar results</li>
+    <li><strong>Use coordinate system offsets:</strong> G-code coordinate system commands (<gcode>G54</gcode>-<gcode>G59</gcode>) can sometimes achieve similar results</li>
     <li><strong>Physically align your machine:</strong> Mechanically correct the angular misalignment</li>
     <li><strong>Stay on v1:</strong> If this feature is critical, continue using Smoothieware v1</li>
   </ul>

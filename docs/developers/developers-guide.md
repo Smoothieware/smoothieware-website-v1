@@ -140,9 +140,11 @@ They store the port number, the pin number, whether the pin is inverted, and oth
 
 They are generated from the result of `as_string()` (making default values as strings possible).
 
+{::nomarkdown}
 ```cpp
-	this->step_pin = this->kernel->config->value(extruder_step_pin_checksum)->by_default("1.22")->as_pin()->as_output();
+	this->step_pin = this->kernel->config->value(extruder_step_pin_checksum)->by_default("<pin>1.22</pin>")->as_pin()->as_output();
 ```
+{:/nomarkdown}
 
 ### Defaults
 
@@ -150,9 +152,11 @@ You can set a default value in case that option is not specified in the config f
 
 Doubles are used as defaults only by the `as_number()` and `as_bool()` methods.
 
+{::nomarkdown}
 ```cpp
 	this->acceleration = this->kernel->config->value(acceleration_checksum)->by_default(1)->as_number();
-	this->step_pin = this->kernel->config->value(extruder_step_pin_checksum)->by_default("1.22")->as_pin()->as_output();
+	this->step_pin = this->kernel->config->value(extruder_step_pin_checksum)->by_default("<pin>1.22</pin>")->as_pin()->as_output();
 ```
+{:/nomarkdown}
 
 If you want Smoothie to die if no config value is set in the config file, you can also use `->required()`, but that's mean.

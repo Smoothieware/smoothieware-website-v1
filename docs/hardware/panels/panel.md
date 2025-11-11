@@ -41,8 +41,10 @@ Here are all the configuration options available for the Panel module :
 
 ### Custom menu entries
 
+{::nomarkdown}
 Menu entries can be added from the config file for simple commands, for instance the following adds a Power on and Power off menu entry.
-Note that _ will be converted to a space when displayed in the Menu. Commands can be seperated with a |. If you want to add a menu entry that probes your z-axis you will have to use a command like G30 Z0 followed by a G0 Z10. For this you need a custom menu entry "custom_menu.zprobe.command G30Z0|G0Z10". This moves the z-axis down untill it hits the probe, sets Z to 0 and moves 10 back up.
+Note that _ will be converted to a space when displayed in the Menu. Commands can be seperated with a |. If you want to add a menu entry that probes your z-axis you will have to use a command like <gcode>G30</gcode> Z0 followed by a <gcode>G0</gcode> Z10. For this you need a custom menu entry "custom_menu.zprobe.command G30Z0|G0Z10". This moves the z-axis down untill it hits the probe, sets Z to 0 and moves 10 back up.
+{:/nomarkdown}
 
 ```markdown
 custom_menu.power_on.enable              true              #
@@ -136,7 +138,7 @@ It is one of the most popular options for panel controllers.
   There is an adapter board to easily connect a ReprapDiscount GLCD to a Smoothieboard with flat cable, however note this is entirely optional.<br><br>
   You can find information about it at the <a href="rrdglcdadapter.md">RRDGLCDAdapter</a> page.<br><br>
   It's sources are available on <a href="https://github.com/llegoff/GlcdAdapter2">github</a>.<br><br>
-  Note that you may have to solder physical pins to the board for pins 3.25 and 3.26, otherwise the rotary encoder will not work.
+  Note that you may have to solder physical pins to the board for pins <pin>3.25</pin> and <pin>3.26</pin>, otherwise the rotary encoder will not work.
 </sl-alert>
 
 <sl-alert variant="warning" open>

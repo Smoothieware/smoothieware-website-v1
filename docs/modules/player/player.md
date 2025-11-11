@@ -58,7 +58,7 @@ play /sd/gcodefile.gcode -v
 
   Unlike Pronterface it won't give you a method to pass commands anyway.
 
-  You can possibly use the <a href="supported-g-codes">M24</a> G-code instead.
+  You can possibly use the <mcode>M24</mcode> G-code instead.
 </sl-alert>
 
 
@@ -113,19 +113,21 @@ Will resume a suspended print. It does the following:
 3. Restore the position it was at and E and any other saved state
 4. Resume sd print or send resume upstream
 
+{::nomarkdown}
 ## G-codes
 
 The following G-codes are supported by the Player module:
 
 
 
-- `M21` : Initialize the SD card. This does nothing in Smoothie but is kept for compatibility
-- `M23` : Select a file, for example : `M23 file.gcode`
-- `M24` : Start or resume SD card print
-- `M25` : Pause SD card print 
-- `M26` : Abort a SD card print
-- `M27` : Report print progress
-- `M32` : Select a file, and start playing it, for example : `M32 file.gcode`
-- `M600` : Suspend print in progress (use console command resume or M601 to continue)
-- `M600.1` : Suspend print in progress, but leave heaters on
-- `M601` : Resume print after suspend
+- <mcode>M21</mcode> : Initialize the SD card. This does nothing in Smoothie but is kept for compatibility
+- <mcode>M23</mcode> : Select a file, for example : <mcode>M23</mcode> file.gcode
+- <mcode>M24</mcode> : Start or resume SD card print
+- <mcode>M25</mcode> : Pause SD card print
+- <mcode>M26</mcode> : Abort a SD card print
+- <mcode>M27</mcode> : Report print progress
+- <mcode>M32</mcode> : Select a file, and start playing it, for example : <mcode>M32</mcode> file.gcode
+- <mcode>M600</mcode> : Suspend print in progress (use console command resume or <mcode>M601</mcode> to continue)
+- M600.1 : Suspend print in progress, but leave heaters on
+- <mcode>M601</mcode> : Resume print after suspend
+{:/nomarkdown}

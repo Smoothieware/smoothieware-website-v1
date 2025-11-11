@@ -99,10 +99,12 @@ Note that you can change the floats to `middle` to make the image centered, or `
 
 ### Commands
 
-If you are mentioning a G-code or a configuration option, we have a special syntax that makes it look `like this`, simply do:
+If you are mentioning a G-code, M-code, or configuration option, we have special tags for that. For G-codes and M-codes, use the `<gcode>` and `<mcode>` tags:
 
-```
-The `G1` G-code is pretty cool.
+```html
+{::nomarkdown}
+The <gcode>G1</gcode> G-code is pretty cool.
+{:/nomarkdown}
 ```
 
 ### Code

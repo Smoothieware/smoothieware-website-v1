@@ -121,7 +121,9 @@ Others connect `Signal` to `5V` when triggered, and `Signal` to `Ground` when no
 
 To know exactly what your endstop does, see its documentation.
 
-If once wired, your endstop reports the opposite of what it should via the `M119` command (`1` when triggered/pushed, and `0` when not triggered), see the "Testing" section.
+{::nomarkdown}
+If once wired, your endstop reports the opposite of what it should via the <mcode>M119</mcode> command (`1` when triggered/pushed, and `0` when not triggered), see the "Testing" section.
+{:/nomarkdown}
 
 Some endstops might require removing their "pull-up" configuration, in this case, change:
 
@@ -163,7 +165,9 @@ On the other hand, if the axis moves a small distance in the wrong direction, th
 
 Another problem can be that the axis moves and never stops, even after the end-stop is physically hit. This means your Smoothieboard actually never reads the end-stop as being pressed.
 
-There is a command that allows you to debug this kind of situation: in Pronterface, enter the "**M119**" G-code.
+{::nomarkdown}
+There is a command that allows you to debug this kind of situation: in Pronterface, enter the "<strong><mcode>M119</mcode></strong>" G-code.
+{:/nomarkdown}
 
 Smoothie will answer with the status of each endstop like this:
 
@@ -196,6 +200,6 @@ Here is the exact mapping of pin names to inputs on the Smoothieboard:
 | Endstop      | X MIN     | X MAX     | Y MIN     | Y MAX    | Z MIN     | Z MAX     |
 | ------------ | --------- | --------- | --------- | -------- | --------- | --------- |
 | Config value | alpha_min | alpha_max | beta_min  | beta_max | gamma_min | gamma_max |
-| Pin name     | 1.24      | 1.25      | 1.26      | 1.27     | 1.28      | 1.29      |
+| Pin name     | <pin>1.24</pin>      | <pin>1.25</pin>      | <pin>1.26</pin>      | <pin>1.27</pin>     | <pin>1.28</pin>      | <pin>1.29</pin>      |
 
 More information can be found [here](endstops).

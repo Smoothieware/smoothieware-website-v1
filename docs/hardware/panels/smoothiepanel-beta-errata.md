@@ -41,9 +41,11 @@ The bottom pad of each resistor needs to be tied to ground to solve this problem
 
 The click encoder signal is not transmitted over the I2C bus.
 
+{::nomarkdown}
 `ENC_A` and `ENC_B` will need to be wired to two pins.
 
-The suggested pins are `P1.22` and `P1.23`.
+The suggested pins are <pin>1.22</pin> and <pin>1.23</pin>.
+{:/nomarkdown}
 
 ### I2C Pull-ups
 

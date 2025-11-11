@@ -33,9 +33,11 @@ title: Using the Touchprobe
 </div>
 {:/nomarkdown}
 
-Currently, the only operation regarding touchprobes supported by this module is `G31`.
+{::nomarkdown}
+Currently, the only operation regarding touchprobes supported by this module is <gcode>G31</gcode>.
 
-`G31` works similarly to `G1` codes but stops if the probe is touched.
+<gcode>G31</gcode> works similarly to <gcode>G1</gcode> codes but stops if the probe is touched.
+{:/nomarkdown}
 
 **Important limitation:** Coordinated moves are not supported.
 
@@ -54,10 +56,12 @@ G90
 G31 Z-10 F150
 ```
 
-- `G90` - Absolute positioning mode
-- `G31` - Probe move command
-- `Z-10` - Move to Z position -10
-- `F150` - Feed rate of 150 mm/min
+{::nomarkdown}
+- <gcode>G90</gcode> - Absolute positioning mode
+- <gcode>G31</gcode> - Probe move command
+- Z-10 - Move to Z position -10
+- F150 - Feed rate of 150 mm/min
+{:/nomarkdown}
 
 ---
 
@@ -75,13 +79,17 @@ M114
 
 **What each line does:**
 
-- `G91` - Switch to relative positioning
-- `G31 Z-10 F300` - Fast probe down 10mm at 300 mm/min
-- `G0 Z0.2` - Retract 0.2mm
-- `G31 Z-0.3 F50` - Slow probe down 0.3mm at 50 mm/min
-- `M114` - Report current position
+{::nomarkdown}
+- <gcode>G91</gcode> - Switch to relative positioning
+- <gcode>G31</gcode> Z-10 F300 - Fast probe down 10mm at 300 mm/min
+- <gcode>G0</gcode> Z0.2 - Retract 0.2mm
+- <gcode>G31</gcode> Z-0.3 F50 - Slow probe down 0.3mm at 50 mm/min
+- <mcode>M114</mcode> - Report current position
+{:/nomarkdown}
 
-In addition to the `M114` report, every touch is logged to a file if logging is enabled (see Configuration section below).
+{::nomarkdown}
+In addition to the <mcode>M114</mcode> report, every touch is logged to a file if logging is enabled (see Configuration section below).
+{:/nomarkdown}
 
 ---
 

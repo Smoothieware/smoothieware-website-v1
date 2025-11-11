@@ -55,11 +55,13 @@ If you feel like your machine is too slow, you increase acceleration.
 
 If your machine starts losing steps, losing its position, or shakes too much, you reduce acceleration.
 
+{::nomarkdown}
 Note that you do not need to reset your Smoothieboard to try new values.
 
-You can start a "job", and while the job is executing, try new values using the `M204` M-code.
+You can start a "job", and while the job is executing, try new values using the <mcode>M204</mcode> M-code.
 
-For example, `M204 S2000` sets acceleration to 2000 (it takes a few seconds for this to take effect after the command is sent).
+For example, <mcode>M204</mcode> S2000 sets acceleration to 2000 (it takes a few seconds for this to take effect after the command is sent).
+{:/nomarkdown}
 
 {::nomarkdown}
 <sl-alert variant="neutral" open>
@@ -154,20 +156,26 @@ alpha_max_rate       30000.0         # mm/min
 
 ## Adjusting Z once printing starts (sometimes called babysteps)
 
+{::nomarkdown}
 You can adjust the Z while it is printing by using the WCS offsets.
 
 For instance, to raise the head 0.1mm:
 
-1. `G10 P0 L2 Z0.1` - this will set the Z WCS to 0.1mm higher, however, it will NOT move the head immediately as it only takes effect on the next G1 that has a Z in it
-2. `G0 Znnn` - this will move the Z after the last received G-code to nnn, you will need to make sure that nnn is the actual Z height you want right now (usually the Z it is currently at, as 0.1mm will be added to that due to step 1)
+<ol>
+<li><gcode>G10</gcode> P0 L2 Z0.1 - this will set the Z WCS to 0.1mm higher, however, it will NOT move the head immediately as it only takes effect on the next <gcode>G1</gcode> that has a Z in it</li>
+<li><gcode>G0</gcode> Znnn - this will move the Z after the last received G-code to nnn, you will need to make sure that nnn is the actual Z height you want right now (usually the Z it is currently at, as 0.1mm will be added to that due to step 1)</li>
+</ol>
 
 A better and easier way is in the very latest edge build.
 
-`G43.2 Z0.1` will raise the Z by 0.1mm by setting the Z tool offset and also queuing a move by 0.1mm, this is not instant but will happen when the previous G-codes have executed.
+<gcode>G43.2</gcode> Z0.1 will raise the Z by 0.1mm by setting the Z tool offset and also queuing a move by 0.1mm, this is not instant but will happen when the previous G-codes have executed.
 
-It can be canceled with `G49`.
+It can be canceled with <gcode>G49</gcode>.
+{:/nomarkdown}
 
-**NOTE** as this uses tool offsets a multi-extruder setup executing a `T0` or `T1` will reset the offset to the default for that tool.
+{::nomarkdown}
+<strong>NOTE</strong> as this uses tool offsets a multi-extruder setup executing a T0 or T1 will reset the offset to the default for that tool.
+{:/nomarkdown}
 
 If you want to do baby steps from the panel menus, you can easily do this using the custom_menu (see [panel](/panel#all-configuration-options)) feature of panels:
 

@@ -106,7 +106,9 @@ NOTE: This is showing config file syntax - the settings referenced are:
 
 The example assumes you have properly set up three [joystick](joystick) modules with names "joystickX", "joystickY" and "joystickZ".
 
-Then, to set the jog axes, simply run `M777` followed by three letters of the axes you want the joystick to control.
+{::nomarkdown}
+Then, to set the jog axes, simply run <mcode>M777</mcode> followed by three letters of the axes you want the joystick to control.
+{:/nomarkdown}
 
 For up to 6 axes (maybe you have two 2D joysticks running at the same time, or a 4D joystick?), you will need to recompile the smoothie source code changing the default jog axes in `Jogger.h`:
 
@@ -122,4 +124,6 @@ The jogger data source names for each axis are:
 | ----------------- | ----------------- | ----------------- | ----------------- | ----------------- | ----------------- |
 | data_source_alpha | data_source_beta  | data_source_gamma | data_source_delta | data_source_epsilon | data_source_zeta |
 
-Note that `M777` and `jogger.jog_axes` will then accept up to 6 letters.
+{::nomarkdown}
+Note that <mcode>M777</mcode> and <setting v1="jogger.jog_axes"></setting> will then accept up to 6 letters.
+{:/nomarkdown}

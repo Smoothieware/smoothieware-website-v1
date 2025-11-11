@@ -49,14 +49,16 @@ beta_current                                 1.5              # Y stepper motor 
 beta_max_rate                                30000.0          # mm/min
 ```
 
+{::nomarkdown}
 The current can also be set using `M907` where XYZ set the current for alpha, beta, gamma, and ABC set the current for delta, epsilon, and zeta respectively.
 
-These are saved with `M503` in the config-override, use `M503` to see the current setting.
+These are saved with <mcode>M503</mcode> in the config-override, use <mcode>M503</mcode> to see the current setting.
+{:/nomarkdown}
 
 {::nomarkdown}
 <sl-alert variant="warning" open>
   <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
-  On Smoothieboards that use an I2C based current controller, it is **NOT** recommended to issue `M907` in GCode files.
+  On Smoothieboards that use an I2C based current controller, it is **NOT** recommended to issue M907 in GCode files.
 </sl-alert>
 {:/nomarkdown}
 

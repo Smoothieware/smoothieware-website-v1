@@ -125,23 +125,26 @@ The linear delta arm solution is pretty much useless without homing.
 </sl-alert>
 {:/nomarkdown}
 
-Test the endstops with M119, and make sure the X endstop triggers when the endstop on the X tower is activated, and same for Y and Z towers.
+{::nomarkdown}
+Test the endstops with <mcode>M119</mcode>, and make sure the X endstop triggers when the endstop on the X tower is activated, and same for Y and Z towers.
+{:/nomarkdown}
 
 Here is a generic delta homing configuration:
 
+{::nomarkdown}
 ```markdown
 endstops_enable                              false            # The endstop module is enabled by default and can be disabled here
 delta_homing                                 true             # Forces all three axis to home at the same time regardless of what is specified in G28
 alpha_min_endstop                            nc               # Pin to read min endstop, add a ! to invert if endstop is NO connected to ground
-alpha_max_endstop                            1.25^            # Pin to read max endstop, uncomment this and comment the above if using max endstops
+alpha_max_endstop                            <pin>1.25</pin>^            # Pin to read max endstop, uncomment this and comment the above if using max endstops
 alpha_homing_direction                       home_to_max      # Or set to home_to_max and set alpha_max and uncomment the alpha_max_endstop
 alpha_max                                    0                # This gets loaded as the current position after homing when home_to_max is set
 beta_min_endstop                             nc               # Pin to read min endstop, add a ! to invert if endstop is NO connected to ground
-beta_max_endstop                             1.27^            # Pin to read max endstop, uncomment this and comment the above if using max endstops
+beta_max_endstop                             <pin>1.27</pin>^            # Pin to read max endstop, uncomment this and comment the above if using max endstops
 beta_homing_direction                        home_to_max      # Or set to home_to_max and set alpha_max and uncomment the alpha_max_endstop
 beta_max                                     0                # This gets loaded as the current position after homing when home_to_max is set
 gamma_min_endstop                            nc               # Pin to read min endstop, add a ! to invert if endstop is NO connected to ground
-gamma_max_endstop                            1.29^            # Pin to read max endstop, uncomment this and comment the above if using max endstops
+gamma_max_endstop                            <pin>1.29</pin>^            # Pin to read max endstop, uncomment this and comment the above if using max endstops
 gamma_homing_direction                       home_to_max      # Or set to home_to_max and set alpha_max and uncomment the alpha_max_endstop
 gamma_max                                    300              # This gets loaded as the current position after homing when home_to_max is set
 
@@ -161,6 +164,7 @@ alpha_homing_retract_mm                      5                # Distance to retr
 beta_homing_retract_mm                       5                # Distance to retract from the endstop after it is hit for beta/Y
 gamma_homing_retract_mm                      5                # Distance to retract from the endstop after it is hit for gamma/Z
 ```
+{:/nomarkdown}
 
 ### Gamma Max
 
@@ -190,13 +194,17 @@ The trim values are the distance in millimeters from the point where your endsto
 </sl-alert>
 {:/nomarkdown}
 
-`M666 Xnnn Ynnn Znnn` allow you to adjust the trim values on a live system.
+{::nomarkdown}
+<mcode>M666</mcode> Xnnn Ynnn Znnn allow you to adjust the trim values on a live system.
 
-You need to home after setting `M666`.
+You need to home after setting <mcode>M666</mcode>.
+{:/nomarkdown}
 
 Negative values adjust the endstops down by that number of mm. Positive values are up.
 
-When you have found the correct values for your endstop settings (see the suggested workflow near the bottom of this page for one process to adjust the trim values), edit the config file and reboot, or save the `M666` values with `M500`.
+{::nomarkdown}
+When you have found the correct values for your endstop settings (see the suggested workflow near the bottom of this page for one process to adjust the trim values), edit the config file and reboot, or save the <mcode>M666</mcode> values with <mcode>M500</mcode>.
+{:/nomarkdown}
 
 {::nomarkdown}
 <sl-alert variant="warning" open>
@@ -211,25 +219,33 @@ When you have found the correct values for your endstop settings (see the sugges
 
 ## Arm Parameters
 
-`arm_length` and `arm_radius` can be set live using:
+{::nomarkdown}
+<code>arm_length</code> and <code>arm_radius</code> can be set live using:
+{:/nomarkdown}
 
 ```markdown
 M665 L340.0 R240.5
 ```
 
-Where L is the `arm_length` and R is the `arm_radius`
+{::nomarkdown}
+Where L is the <code>arm_length</code> and R is the <code>arm_radius</code>
+{:/nomarkdown}
 
 **NOTE: You MUST do a Home after setting these.**
 
+{::nomarkdown}
 Simply doing:
+{:/nomarkdown}
 
 ```markdown
 M665
 ```
 
+{::nomarkdown}
 On its own will just report the current settings.
 
-These can also be saved with M500.
+These can also be saved with <mcode>M500</mcode>.
+{:/nomarkdown}
 
 {::nomarkdown}
 <sl-alert variant="warning" open>
@@ -305,45 +321,49 @@ Full example configurations (including zprobe) can be found at [https://github.c
 
 This process will allow you to manually calibrate your delta printer:
 
-1. Set `gamma_max` so the 0 position in Z is 20mm above the bed. See [gamma_max](gamma-max).
+{::nomarkdown}
+1. Set <code>gamma_max</code> so the 0 position in Z is 20mm above the bed. See [gamma_max](gamma-max).
 
-2. Home, with `G28`.
+2. Home, with <gcode>G28</gcode>.
 
 3. **Point A**: Move to a point at the edge of the bed, in front of the X (alpha) tower.
 
 4. Get the head set just right at the 0 position (so that a piece of paper can just slide between the hotend and bed plate).
 
-5. Do `M306 Z0`.
+5. Do <mcode>M306</mcode> Z0.
 
-6. Home again, with `G28`.
+6. Home again, with <gcode>G28</gcode>.
 
 7. Repeat the same process (go back to Point A), and check it produces the same results.
+{:/nomarkdown}
 
 8. **Point B**: Move to a point at the edge of the bed, in front of the Y (beta) tower.
 
-9. Tune the Y (beta) endstop offset value by entering `M666 Ynnn` where `nnn` is the distance between the hotend and bed at this point.
+{::nomarkdown}
+9. Tune the Y (beta) endstop offset value by entering <mcode>M666</mcode> Ynnn where `nnn` is the distance between the hotend and bed at this point.
 
-10. Home the machine with `G28`
+10. Home the machine with <gcode>G28</gcode>
 
 11. Go back to point B, and keep this loop until the height is perfectly adjusted, and the hotend always touches the bed at this point.
 
 12. **Point C**: Move to a point at the edge of the bed, in front of the Z (gamma) tower.
 
-13. Tune the Z endstop offset value by entering `M666 Znnn` where `nnn` is the distance between the hotend and bed at this point.
+13. Tune the Z endstop offset value by entering <mcode>M666</mcode> Znnn where `nnn` is the distance between the hotend and bed at this point.
 
-14. Home the machine with `G28`.
+14. Home the machine with <gcode>G28</gcode>.
 
 15. Go back to point C, and keep this loop until the height is perfectly adjusted, and the hotend always touches the bed at this point.
 
-16. Now that all three towers' endstop offsets are tuned, save them with `M500`.
+16. Now that all three towers' endstop offsets are tuned, save them with <mcode>M500</mcode>.
 
-17. Test the height is now the same at the three points as it is at the center, if it is not, Adjust your arm radius with `M665 Rnnn`.
+17. Test the height is now the same at the three points as it is at the center, if it is not, Adjust your arm radius with <mcode>M665</mcode> Rnnn.
 
 18. Continue adjusting arm radius until the three points and the center of the bed are all at the same height.
 
-19. Finally, go to the center of the bed, move the head until it touches the bed, and issue `M306 Z0`.
+19. Finally, go to the center of the bed, move the head until it touches the bed, and issue <mcode>M306</mcode> Z0.
 
-20. Save all your new settings with `M500`.
+20. Save all your new settings with <mcode>M500</mcode>.
+{:/nomarkdown}
 
 If this is too much work, use the automated calibration which does exactly that procedure automatically. (Except for the Z height which you still need to do after calibration). See [the zprobe documentation page](zprobe).
 
@@ -419,7 +439,9 @@ delta_tower2_angle
 delta_tower3_angle
 ```
 
-Alternatively, the values can be changed live (and saved with M500):
+{::nomarkdown}
+Alternatively, the values can be changed live (and saved with <mcode>M500</mcode>):
+{:/nomarkdown}
 
 ```markdown
 M665 Axxx Bxxx Cxxx Dxxx Exxx Hxxx

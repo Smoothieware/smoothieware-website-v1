@@ -53,7 +53,9 @@ The file uses standard G-code format:
 - **One command per line**
 - **Comments** start with `;` or `()`
 - **Standard G-code syntax** (same as any G-code file)
-- **Case insensitive** (G28 and g28 are equivalent)
+{::nomarkdown}
+- **Case insensitive** (<gcode>G28</gcode> and <gcode>G28</gcode> are equivalent)
+{:/nomarkdown}
 - **Blank lines** are ignored
 
 {::nomarkdown}
@@ -288,7 +290,9 @@ Smoothieware v2 also supports boot-time G-code execution. While the exact implem
 
 ### config-override
 
-The [config-override](configuring-smoothie#config-override) file is created when you use the `M500` command to save settings. You can load these saved settings in your `on_boot.gcode`:
+{::nomarkdown}
+The [config-override](configuring-smoothie#config-override) file is created when you use the <mcode>M500</mcode> command to save settings. You can load these saved settings in your `on_boot.gcode`:
+{:/nomarkdown}
 
 ```gcode
 M501  ; Load settings from config-override

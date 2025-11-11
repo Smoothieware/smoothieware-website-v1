@@ -11962,9 +11962,10 @@ Expecting ` + expected.join(", ") + ", got '" + (this.terminals_[symbol] || symb
     }).catch((error) => {
       console.error("[setting-tag.ts] Failed to initialize setting tags:", error);
     });
-    import_jquery.default(document).on("version-changed", function() {
+    import_jquery.default(document).on("version-changed", async function() {
       update_all_setting_tags_visibility();
-      console.log("[setting-tag.ts] Updated setting tags in response to header version selector change");
+      await regenerate_all_popup_content();
+      console.log("[setting-tag.ts] Updated setting tags and popups in response to header version selector change");
     });
   });
   function update_all_setting_tags_visibility() {
@@ -11995,6 +11996,32 @@ Expecting ` + expected.join(", ") + ", got '" + (this.terminals_[symbol] || symb
       }
     });
     console.log(`[setting-tag.ts] Updated all setting tag visibility for display_version: ${display_version}`);
+  }
+  async function regenerate_all_popup_content() {
+    const $all_popups = import_jquery.default(".setting-popup");
+    if ($all_popups.length === 0) {
+      return;
+    }
+    console.log(`[setting-tag.ts] Regenerating content for ${$all_popups.length} popup(s)`);
+    for (let i = 0;i < $all_popups.length; i++) {
+      const $popup = import_jquery.default($all_popups[i]);
+      const popup_data = $popup.data("setting-popup-data");
+      if (popup_data && popup_data.content_loaded) {
+        const v1_name = popup_data.v1_name;
+        const v2_name = popup_data.v2_name;
+        const popup_id = popup_data.popup_id;
+        console.log(`[setting-tag.ts] Regenerating popup for v1="${v1_name}" v2="${v2_name}"`);
+        const tooltip_html = await generate_shoelace_tooltip(v1_name, v2_name);
+        $popup.find(".setting-popup-content").html(tooltip_html);
+        setup_tab_listener($popup);
+        setup_clickable_alert_handlers($popup);
+        restore_tab_preference($popup);
+        setup_related_settings_handlers($popup, popup_id);
+        setup_config_line_click_handlers($popup);
+        setup_version_choice_handlers($popup, v1_name, v2_name);
+      }
+    }
+    console.log("[setting-tag.ts] Popup content regeneration complete");
   }
   function initialize_setting_tags($setting_elements) {
     if (!compiled_setting_structure_template) {
@@ -12088,6 +12115,12 @@ Expecting ` + expected.join(", ") + ", got '" + (this.terminals_[symbol] || symb
         setup_config_line_click_handlers($popup);
         setup_version_choice_handlers($popup, v1_name, v2_name);
         content_loaded = true;
+        $popup.data("setting-popup-data", {
+          v1_name,
+          v2_name,
+          popup_id,
+          content_loaded: true
+        });
       }
     });
     $setting.on("mouseleave", function() {

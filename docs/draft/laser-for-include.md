@@ -173,12 +173,37 @@ Choose which you will use, all have a <raw>GND</raw> header close-by (all are un
 
 Now you need to find which GPIO pin/port number corresponds to the PWM pin you chose, so you can tell Smoothie which you'll be using in the configuration file.
 
-| Pin number for configuration | Label on the board | Comment |
-| ---------------------------- | ------------------ | ------- |
-| <pin>2.2</pin>                          | <raw>STP3</raw>               | Only if you are not using a <raw>Z</raw> axis/the gamma driver. Make sure you set <setting v1="gamma_step_pin" v2="gamma.step_pin"></setting> to the <raw>nc</raw> value. The unlabelled pin in <raw>JP12</raw> is <raw>GND</raw>. |
-| <pin>2.3</pin>                          | <raw>STP4</raw>               | Only if you are not using the delta driver. Make sure you set <setting v1="delta_step_pin" v2="delta.step_pin"></setting> to the <raw>nc</raw> value. The unlabelled pin in <raw>JP15</raw> is <raw>GND</raw>. |
-| <pin>2.4</pin>                          | <raw>PWM0</raw>               | Only if you are not using the first small MOSFET (<raw>X8</raw>). All pins of <raw>JP10</raw> are <raw>GND</raw>. |
-| <pin>2.5</pin>                          | <raw>PWM1</raw>               | Only if you are not using the second big MOSFET (<raw>X15</raw>). All pins of <raw>JP10</raw> are <raw>GND</raw>. |
+<table>
+<thead>
+<tr>
+<th>Pin number for configuration</th>
+<th>Label on the board</th>
+<th>Comment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><pin>2.2</pin></td>
+<td><raw>STP3</raw></td>
+<td>Only if you are not using a <raw>Z</raw> axis/the gamma driver. Make sure you set <setting v1="gamma_step_pin" v2="gamma.step_pin"></setting> to the <raw>nc</raw> value. The unlabelled pin in <raw>JP12</raw> is <raw>GND</raw>.</td>
+</tr>
+<tr>
+<td><pin>2.3</pin></td>
+<td><raw>STP4</raw></td>
+<td>Only if you are not using the delta driver. Make sure you set <setting v1="delta_step_pin" v2="delta.step_pin"></setting> to the <raw>nc</raw> value. The unlabelled pin in <raw>JP15</raw> is <raw>GND</raw>.</td>
+</tr>
+<tr>
+<td><pin>2.4</pin></td>
+<td><raw>PWM0</raw></td>
+<td>Only if you are not using the first small MOSFET (<raw>X8</raw>). All pins of <raw>JP10</raw> are <raw>GND</raw>.</td>
+</tr>
+<tr>
+<td><pin>2.5</pin></td>
+<td><raw>PWM1</raw></td>
+<td>Only if you are not using the second big MOSFET (<raw>X15</raw>). All pins of <raw>JP10</raw> are <raw>GND</raw>.</td>
+</tr>
+</tbody>
+</table>
 
 Now that the PSU is wired to the Smoothieboard and that you know which pin you are using for control, you can change the configuration file to setup laser control.
 
@@ -273,9 +298,9 @@ In particular, you'll likely need to increase the <raw>pwm frequency</raw>, and 
   Lasers can make you blind. And bionic eyes are not there just yet.
 </sl-alert>
 
-Here is how Smoothie laser control works: <raw>G0</raw> and <raw>G1</raw> are exactly the same command, they take positional parameters (X10 Y5 Z3 for example) and move the tool to that position. {::nomarkdown}<span style="background-color: #4a1515; padding: 2px 4px; border-radius: 2px;">This is fundamental laser safety - <raw>G0</raw> is for rapid positioning without cutting, <raw>G1</raw> enables the laser during the move.</span>{:/nomarkdown}
+Here is how Smoothie laser control works: <gcode>G0</gcode> and <gcode>G1</gcode> are exactly the same command, they take positional parameters (X10 Y5 Z3 for example) and move the tool to that position. {::nomarkdown}<span style="background-color: #4a1515; padding: 2px 4px; border-radius: 2px;">This is fundamental laser safety - <gcode>G0</gcode> is for rapid positioning without cutting, <gcode>G1</gcode> enables the laser during the move.</span>{:/nomarkdown}
 
-The only difference is that when using <raw>G0</raw> the laser stays off, and when using <raw>G1</raw> the laser is on, only during movement.
+The only difference is that when using <gcode>G0</gcode> the laser stays off, and when using <gcode>G1</gcode> the laser is on, only during movement.
 
 To test, try moving your laser with <gcode>G0</gcode> and try moving it with <gcode>G1</gcode>:
 

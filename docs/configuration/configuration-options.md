@@ -46,19 +46,19 @@ For information on pin options and electrical settings (pull up, pull down, open
 | <setting v1="set_g92"></setting> | 0,0,0 | set the G92 offset to x,y,z (See WCS) |
 
 | Stepper motors | | |
-| <setting v1="alpha_step_pin" v2="actuator.x.step_pin"></setting> | `2.0` | Pin for alpha stepper step signal |
-| <setting v1="alpha_dir_pin" v2="actuator.x.dir_pin"></setting> | `0.5` | Pin for alpha stepper direction |
-| <setting v1="alpha_en_pin" v2="actuator.x.en_pin"></setting> | `0.4` | Pin for alpha enable pin |
+| <setting v1="alpha_step_pin" v2="actuator.x.step_pin"></setting> | <pin>2.0</pin> | Pin for alpha stepper step signal |
+| <setting v1="alpha_dir_pin" v2="actuator.x.dir_pin"></setting> | <pin>0.5</pin> | Pin for alpha stepper direction |
+| <setting v1="alpha_en_pin" v2="actuator.x.en_pin"></setting> | <pin>0.4</pin> | Pin for alpha enable pin |
 | <setting v1="alpha_current" v2="current control.alpha.current"></setting> | 1.5 | M1 stepper motor driver current, in Amperes. |
 | <setting v1="alpha_max_rate" v2="actuator.alpha.max_rate"></setting> | 30000 | Maximum allowable speed for this actuator ( as opposed to axis, they are the same on a cartesian machine, but not on a delta machine for example ), in millimetres/minute. |
-| <setting v1="beta_step_pin" v2="actuator.y.step_pin"></setting> | `2.1` | Pin for beta stepper step signal |
-| <setting v1="beta_dir_pin" v2="actuator.y.dir_pin"></setting> | `0.11` | Pin for beta stepper direction |
-| <setting v1="beta_en_pin" v2="actuator.y.en_pin"></setting> | `0.10` | Pin for beta enable |
+| <setting v1="beta_step_pin" v2="actuator.y.step_pin"></setting> | <pin>2.1</pin> | Pin for beta stepper step signal |
+| <setting v1="beta_dir_pin" v2="actuator.y.dir_pin"></setting> | <pin>0.11</pin> | Pin for beta stepper direction |
+| <setting v1="beta_en_pin" v2="actuator.y.en_pin"></setting> | <pin>0.10</pin> | Pin for beta enable |
 | <setting v1="beta_current" v2="current control.beta.current"></setting> | 1.5 | M2 stepper motor driver current, in Amperes. |
 | <setting v1="beta_max_rate" v2="actuator.beta.max_rate"></setting> | 30000 | Maximum allowable speed for this actuator, in millimetres/minute. |
-| <setting v1="gamma_step_pin" v2="actuator.z.step_pin"></setting> | `2.2` | Pin for gamma stepper step signal |
-| <setting v1="gamma_dir_pin" v2="actuator.z.dir_pin"></setting> | `0.20` | Pin for gamma stepper direction |
-| <setting v1="gamma_en_pin" v2="actuator.z.en_pin"></setting> | `0.19` | Pin for gamma enable |
+| <setting v1="gamma_step_pin" v2="actuator.z.step_pin"></setting> | <pin>2.2</pin> | Pin for gamma stepper step signal |
+| <setting v1="gamma_dir_pin" v2="actuator.z.dir_pin"></setting> | <pin>0.20</pin> | Pin for gamma stepper direction |
+| <setting v1="gamma_en_pin" v2="actuator.z.en_pin"></setting> | <pin>0.19</pin> | Pin for gamma enable |
 | <setting v1="gamma_current" v2="current control.gamma.current"></setting> | 1.5 | M3 stepper motor driver current, in Amperes. |
 | <setting v1="gamma_max_rate" v2="actuator.gamma.max_rate"></setting> | 300 | Maximum allowable speed for this actuator , in millimetres/minute. |
 
@@ -70,7 +70,7 @@ For information on pin options and electrical settings (pull up, pull down, open
 | <setting v1="leds_disable"></setting> | true | Disable the 4 flashing LEDs on the board |
 | <setting v1="play_led_disable"></setting> | true | Disable the "play" status LED |
 | <setting v1="kill_button_enable"></setting> | false | Enable the "kill" button |
-| <setting v1="kill_button_pin"></setting> | `2.12` | Pin for the "kill" button |
+| <setting v1="kill_button_pin"></setting> | <pin>2.12</pin> | Pin for the "kill" button |
 | <setting v1="msd_disable"></setting> | false | Disable the MSD ( SD Card access over USB ) when set to true ( requires a special binary, which you can find [here](https://github.com/Smoothieware/Smoothieware/blob/edge/FirmwareBin/firmware-disablemsd.bin), will be ignored without the special binary) |
 | <setting v1="dfu_enable"></setting> | false | For Linux developers, set to true to enable DFU, which allows you to flash new firmwares over USB |
 

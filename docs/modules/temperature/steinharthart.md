@@ -5,7 +5,9 @@ permalink: /steinharthart
 
 # Steinhart-Hart Thermistor Configuration
 
-To add a new thermistor, you need to calculate the Steinhart Hart coefficients and then enter them into the [configuration file](configuring-smoothie) or using `M305` and save with `M500`.
+{::nomarkdown}
+To add a new thermistor, you need to calculate the Steinhart Hart coefficients and then enter them into the <a href="/configuring-smoothie">configuration file</a> or using <mcode>M305</mcode> and save with <mcode>M500</mcode>.
+{:/nomarkdown}
 
 ## Using R-T Curve Method
 
@@ -25,7 +27,9 @@ These can be measured empirically or taken from the R-C tables that most thermis
 
 ## Calculating Coefficients
 
-Alternatively, you can calculate the coefficients with a smoothie command and enter them using **M305** as shown below.
+{::nomarkdown}
+Alternatively, you can calculate the coefficients with a smoothie command and enter them using <mcode>M305</mcode> as shown below.
+{:/nomarkdown}
 
 At a command prompt (or in [pronterface](pronterface) prefix with @) type:
 
@@ -40,11 +44,13 @@ Steinhart Hart coefficients:  I0.000722376862540841 J0.000216302098124288 K0.000
   Paste the above in the M305 S0 command, then save with M500
 ```
 
+{::nomarkdown}
 So either issue the command...
 
-`M305 S0 I0.000722376862540841 J0.000216302098124288 K0.000000092640163984`
+<mcode>M305</mcode> S0 I0.000722376862540841 J0.000216302098124288 K0.000000092640163984
 
-and save with `M500` to the config-override file.
+and save with <mcode>M500</mcode> to the config-override file.
+{:/nomarkdown}
 
 Or enter them in the config:
 
@@ -58,7 +64,9 @@ Another alternative is to issue the command:
 calc_thermistor -s0 25,100000.0,150,1655.0,240,269.0
 ```
 
-This will set the specified thermistor (0 is hotend) to the calculated values, which can then be saved with `M500`.
+{::nomarkdown}
+This will set the specified thermistor (0 is hotend) to the calculated values, which can then be saved with <mcode>M500</mcode>.
+{:/nomarkdown}
 
 This will set up the new thermistor using the Steinhart Hart Equation to convert resistance to temperature.
 
@@ -66,7 +74,9 @@ You can still use beta to calculate the temperature, but if you use the publishe
 
 (Using beta for the bed is fine as that is within the temperature range of the published betas).
 
-If there is a beta specified in the config, that will be used unless overridden by `M500`. `M503` will show an `M305` command if there is an override active.
+{::nomarkdown}
+If there is a beta specified in the config, that will be used unless overridden by <mcode>M500</mcode>. <mcode>M503</mcode> will show an <mcode>M305</mcode> command if there is an override active.
+{:/nomarkdown}
 
 Predefined thermistors for which the new Steinhart Hart Coefficients are known will use them, the older predefined ones will continue to use Beta.
 

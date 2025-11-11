@@ -6,7 +6,9 @@ permalink: /pwm-capable
 
 This page is a summary of [LPC1769 Pin Usage](lpc1769-pin-usage) concerning only hardware PWM capable pins.
 
-Hardware PWM is available only on pins `2.0` to `2.5`, `1.18`, `1.20`, `1.21`, `1.23`, `1.24`, `1.26`, `3.25` and `3.26`.
+{::nomarkdown}
+Hardware PWM is available only on pins <pin>2.0</pin> to <pin>2.5</pin>, <pin>1.18</pin>, <pin>1.20</pin>, <pin>1.21</pin>, <pin>1.23</pin>, <pin>1.24</pin>, <pin>1.26</pin>, <pin>3.25</pin> and <pin>3.26</pin>.
+{:/nomarkdown}
 
 If you plan to use a hobby servo, LEDs, lasers or any kind of device which require PWM with the [Switch module](switch), ensure to pick the right pin depending on your board version.
 

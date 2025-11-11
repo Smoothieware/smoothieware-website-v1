@@ -50,9 +50,11 @@ The file consists of key and value pairs. Most values are commented to indicate 
 
 Example:
 
+{::nomarkdown}
 ```plaintext
-default_feed_rate                 4000                 # Default rate ( mm/minute ) for G1/G2/G3 moves
+default_feed_rate                 4000                 # Default rate ( mm/minute ) for <gcode>G1</gcode>/<gcode>G2</gcode>/<gcode>G3</gcode> moves
 ```
+{:/nomarkdown}
 
 Where <setting v1="default_feed_rate" v2="motion control.default_feed_rate"></setting> is the configuration option, `4000` is the value (which you can change), and everything after `#` is a comment (that Smoothie will ignore).
 
@@ -78,7 +80,7 @@ You can find a complete list of possible configuration options [here](configurat
   <p>If a line begins with a <code>#</code>, it means it is commented and Smoothie will ignore it. Anything after a <code>#</code> is also ignored (like the explanations at the end of the lines).</p>
   <p>Some values are commented by default, you need to uncomment them by removing the <code>#</code> at the beginning of the line if you want them to take effect.</p>
   <p>For example this line:</p>
-  <pre>#default_feed_rate                 4000                 # Default rate ( mm/minute ) for G1/G2/G3 moves</pre>
+  <pre>#default_feed_rate                 4000                 # Default rate ( mm/minute ) for <gcode>G1</gcode>/<gcode>G2</gcode>/<gcode>G3</gcode> moves</pre>
   <p>Will completely be ignored by Smoothie. To make Smoothie take it into account again, remove the <code>#</code> character at the beginning.</p>
 </sl-alert>
 {:/nomarkdown}
@@ -202,24 +204,26 @@ Many settings in Smoothie can be set immediately with `M` commands, these settin
 
 There is a set of M-codes (`M50x`) documented below that allow you to save all the current settings that have M-codes to set them. This is particularly convenient for parameters that require tuning, as you can use a command to modify them without having to open the file and reset the board.
 
-As these settings can be temporarily overridden with M-codes there is a way to save these settings. Once saved they are reloaded on reset or boot overriding the settings in the config file. If you then edit the config file, make sure the setting you are editing is not being overridden by the override file (`M503` will tell you if there is an active override file). This can sometimes explain why editing the config file appears to have no effect.
+{::nomarkdown}
+As these settings can be temporarily overridden with M-codes there is a way to save these settings. Once saved they are reloaded on reset or boot overriding the settings in the config file. If you then edit the config file, make sure the setting you are editing is not being overridden by the override file (<mcode>M503</mcode> will tell you if there is an active override file). This can sometimes explain why editing the config file appears to have no effect.
+{:/nomarkdown}
 
 ### M-code Reference Table
 
 | M-code | Description | Example |
 | ------ | ----------- | ------- |
-| `M500` | Save settings to an override file  | |
-| `M501` | Load config-override file optionally specifying the extension | `M501` - loads `config-override`, `M501 test1` - loads `config-override.test1` |
-| `M502` | Delete the override file, reverting to config settings at next reset  |  |
-| `M503` | Display overridden settings if any |  |
-| `M504` | Save the settings to an override file with specified extension | `M504 blue-pla` |
+| <mcode>M500</mcode> | Save settings to an override file  | |
+| <mcode>M501</mcode> | Load config-override file optionally specifying the extension | <mcode>M501</mcode> - loads `config-override`, <mcode>M501</mcode> test1 - loads `config-override.test1` |
+| <mcode>M502</mcode> | Delete the override file, reverting to config settings at next reset  |  |
+| <mcode>M503</mcode> | Display overridden settings if any |  |
+| <mcode>M504</mcode> | Save the settings to an override file with specified extension | <mcode>M504</mcode> blue-pla |
 
 {::nomarkdown}
 <sl-alert variant="danger" open>
   <sl-icon slot="icon" name="exclamation-octagon"></sl-icon>
   <strong>Crashing</strong>
-  <p>Do not issue <code>M500</code> or <code>M504</code> when printing, or the machine could crash or the SD card become corrupted.</p>
-  <p>Also do not issue M500 in a G-code file, it is not intended to be executed that way and may well crash the system. It is a manual command only.</p>
+  <p>Do not issue <mcode>M500</mcode> or <mcode>M504</mcode> when printing, or the machine could crash or the SD card become corrupted.</p>
+  <p>Also do not issue <mcode>M500</mcode> in a G-code file, it is not intended to be executed that way and may well crash the system. It is a manual command only.</p>
 </sl-alert>
 {:/nomarkdown}
 

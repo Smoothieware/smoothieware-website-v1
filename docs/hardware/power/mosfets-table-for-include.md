@@ -9,37 +9,39 @@ MOSFETs are used to control high-power devices like heated beds, hotends, fans, 
 
 | MOSFET Pair         | Big MOSFETS        | Small MOSFETS      | Mixed MOSFETS         |
 |---------------------|--------------------|--------------------|-----------------------|
-| Label on diagram    | **P2_7**           | **P2_5**           | **P2_4**              | **P2_6**           | **P1_23** | **P1_22** |
-| Digital output pin  | `2.7`              | `2.5`              | `2.4`                 | `2.6`              | `1.23`    | `1.22`    |
-| Power Input         | Between `P2_7` and `P2_5` | Between `P2_6` and `P1_23` | Taken from **VBB**    |
+| Label on diagram    | **P<pin>2.7</pin>**           | **P<pin>2.5</pin>**           | **P<pin>2.4</pin>**              | **P<pin>2.6</pin>**           | **P<pin>1.23</pin>** | **P<pin>1.22</pin>** |
+| Digital output pin  | <pin>2.7</pin>              | <pin>2.5</pin>              | <pin>2.4</pin>                 | <pin>2.6</pin>              | <pin>1.23</pin>    | <pin>1.22</pin>    |
+| Power Input         | Between P<pin>2.7</pin> and P<pin>2.5</pin> | Between P<pin>2.6</pin> and P<pin>1.23</pin> | Taken from **VBB**    |
 | Size                | Big                | Big                | Small                 | Small              | Big       | Small     |
 | Maximum current     | 12A                | 12A                | 3A                    | 3A                 | 12A       | 3A        |
 | Used by default for | Heated bed         |                    | Hotend 0              | Fan                | Hotend 1  |           |
 
 ##### Understanding MOSFET Pairs
 
+{::nomarkdown}
 Smoothieboard has three MOSFET pairs:
 
-###### Big MOSFETs Pair (P2_7 and P2_5)
+###### Big MOSFETs Pair (P<pin>2.7</pin> and P<pin>2.5</pin>)
 
 - **Current capacity**: 12A each
-- **Power input**: Shared between the two outputs (between P2_7 and P2_5 terminals)
+- **Power input**: Shared between the two outputs (between P<pin>2.7</pin> and P<pin>2.5</pin> terminals)
 - **Typical use**: Heated bed (high current devices)
 - **Note**: Both outputs share the same power input
 
-###### Small MOSFETs Pair (P2_4 and P2_6)
+###### Small MOSFETs Pair (P<pin>2.4</pin> and P<pin>2.6</pin>)
 
 - **Current capacity**: 3A each
-- **Power input**: Shared between the two outputs (between P2_6 and P1_23 terminals)
+- **Power input**: Shared between the two outputs (between P<pin>2.6</pin> and P<pin>1.23</pin> terminals)
 - **Typical use**: Hotend 0 and fan (moderate current devices)
 - **Note**: Both outputs share the same power input
 
-###### Mixed MOSFETs Pair (P1_23 and P1_22)
+###### Mixed MOSFETs Pair (P<pin>1.23</pin> and P<pin>1.22</pin>)
 
-- **Current capacity**: P1_23: 12A, P1_22: 3A
+- **Current capacity**: P<pin>1.23</pin>: 12A, P<pin>1.22</pin>: 3A
 - **Power input**: Taken directly from VBB (main power supply)
-- **Typical use**: P1_23 for Hotend 1, P1_22 for accessories
+- **Typical use**: P<pin>1.23</pin> for Hotend 1, P<pin>1.22</pin> for accessories
 - **Note**: These outputs use the main VBB power supply
+{:/nomarkdown}
 
 ##### Important Safety Notes
 
@@ -61,13 +63,17 @@ Smoothieboard has three MOSFET pairs:
 
 To configure a MOSFET output in your config file, use the appropriate pin number from the "Digital output pin" row.
 
-Example for configuring a heated bed on P2_7:
+{::nomarkdown}
+Example for configuring a heated bed on P<pin>2.7</pin>:
+{:/nomarkdown}
 
 ```
 temperature_control.bed.heater_pin     2.7
 ```
 
-Example for configuring a hotend on P2_4:
+{::nomarkdown}
+Example for configuring a hotend on P<pin>2.4</pin>:
+{:/nomarkdown}
 
 ```
 temperature_control.hotend.heater_pin  2.4

@@ -30,7 +30,7 @@ It includes comparisons with version 1.0, as well as Edison and FPGA pin configu
 {::nomarkdown}
 <sl-alert variant="neutral" open>
   <sl-icon slot="icon" name="info-circle"></sl-icon>
-  <strong>Note:</strong> The <em>italicized</em> pins are hardcoded and would need to be changed in the source code (P0.2, P0.3, P0.6 - P0.9, P0.29, P0.30, P2.9, P2.10). The rest are soft configurable in config.
+  <strong>Note:</strong> The <em>italicized</em> pins are hardcoded and would need to be changed in the source code (<pin>0.2</pin>, <pin>0.3</pin>, <pin>0.6</pin> - <pin>0.9</pin>, <pin>0.29</pin>, <pin>0.30</pin>, <pin>2.9</pin>, <pin>2.10</pin>). The rest are soft configurable in config.
 </sl-alert>
 {:/nomarkdown}
 

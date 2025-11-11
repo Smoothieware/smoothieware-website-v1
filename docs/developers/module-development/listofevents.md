@@ -78,8 +78,8 @@ These events allow modules to respond to various system activities and communica
 | `ON_SECOND_TICK`        | `/libs/SlowTicker.cpp`                              | Called once per second by the SlowTicker timer. Used for periodic tasks that don't need to run as frequently as `ON_IDLE`, such as temperature monitoring, status updates, watchdog checks, etc. | no argument                                                                                                |
 | `ON_GET_PUBLIC_DATA`    | `/libs/PublicData.cpp`                              | Allow communication of data between modules. Module A can get data from B by providing checksums identifying Module B and the desired data. | `PublicDataRequest *pdr = static_cast<PublicDataRequest *>(argument)`                                      |
 | `ON_SET_PUBLIC_DATA`    | `/libs/PublicData.cpp`                              | Allow communication of data between modules. Module A can set data from B by providing checksums identifying Module B and the data to set up. | `PublicDataRequest *pdr = static_cast<PublicDataRequest *>(argument);`                                     |
-| `ON_HALT`               | Multiple sources: `/modules/communication/GcodeDispatch.cpp` (M112 emergency stop), `/modules/tools/endstops/Endstops.cpp`, `/modules/tools/temperaturecontrol/TemperatureControl.cpp`, etc. | Called when the system enters or exits HALT state (emergency stop). This disables heaters and motors, ignores further incoming Gcode and clears block queue. Used by modules to safely shut down or restart after emergency conditions. | `if(argument == nullptr)` - entering halt state; `if(argument == (void*)1)` - clearing halt state (M999 or unkill button) |
-| `ON_ENABLE`             | `/modules/robot/Robot.cpp` (M17/M18 commands), `/modules/robot/Conveyor.cpp` | Called to enable or disable stepper motors. Triggered by M17 (enable), M18 (disable), or when motion starts. Modules handling motor drivers should respond to this event. | `uint32_t bm = (uint32_t)argument;`<br>`if(bm == 0x01)` - enable all motors<br>`if(bm == 0 or nullptr)` - disable all motors<br>Otherwise: bit 0 = enable/disable, bits 1-6 = axis mask (bit1=X, bit2=Y, bit3=Z, bit4=A, bit5=B, bit6=C) |
+| `ON_HALT`               | Multiple sources: `/modules/communication/GcodeDispatch.cpp` (<mcode>M112</mcode> emergency stop), `/modules/tools/endstops/Endstops.cpp`, `/modules/tools/temperaturecontrol/TemperatureControl.cpp`, etc. | Called when the system enters or exits HALT state (emergency stop). This disables heaters and motors, ignores further incoming Gcode and clears block queue. Used by modules to safely shut down or restart after emergency conditions. | `if(argument == nullptr)` - entering halt state; `if(argument == (void*)1)` - clearing halt state (<mcode>M999</mcode> or unkill button) |
+| `ON_ENABLE`             | `/modules/robot/Robot.cpp` (<mcode>M17</mcode>/<mcode>M18</mcode> commands), `/modules/robot/Conveyor.cpp` | Called to enable or disable stepper motors. Triggered by <mcode>M17</mcode> (enable), <mcode>M18</mcode> (disable), or when motion starts. Modules handling motor drivers should respond to this event. | `uint32_t bm = (uint32_t)argument;`<br>`if(bm == 0x01)` - enable all motors<br>`if(bm == 0 or nullptr)` - disable all motors<br>Otherwise: bit 0 = enable/disable, bits 1-6 = axis mask (bit1=X, bit2=Y, bit3=Z, bit4=A, bit5=B, bit6=C) |
 | `NUMBER_OF_DEFINED_EVENTS` | n/a                                               | Only used to enumerate the events. Not an actual event that gets called.                     | no argument                                                                                                |
 
 {::nomarkdown}
@@ -136,15 +136,17 @@ void MyModule::on_halt(void *argument) {
 
 ### Common Module Patterns
 
-**Temperature Control** registers for:
-- `ON_IDLE` - PID calculations and sensor reading
-- `ON_SECOND_TICK` - Temperature reporting and monitoring
-- `ON_HALT` - Emergency heater shutdown
-- `ON_GCODE_RECEIVED` - M104/M109 temperature commands
+{::nomarkdown}
+<strong>Temperature Control</strong> registers for:
+- <code>ON_IDLE</code> - PID calculations and sensor reading
+- <code>ON_SECOND_TICK</code> - Temperature reporting and monitoring
+- <code>ON_HALT</code> - Emergency heater shutdown
+- <code>ON_GCODE_RECEIVED</code> - <mcode>M104</mcode>/<mcode>M109</mcode> temperature commands
 
-**Endstops** registers for:
-- `ON_IDLE` - Checking endstop states during moves
-- `ON_GCODE_RECEIVED` - M119 endstop status, homing commands
+<strong>Endstops</strong> registers for:
+- <code>ON_IDLE</code> - Checking endstop states during moves
+- <code>ON_GCODE_RECEIVED</code> - <mcode>M119</mcode> endstop status, homing commands
+{:/nomarkdown}
 
 **Laser** registers for:
 - `ON_HALT` - Immediately disable laser for safety

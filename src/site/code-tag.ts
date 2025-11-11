@@ -29,9 +29,9 @@ let mcode_data: Record<string, any> = {};
 /**
  * Loads and compiles the Handlebars template for code popup
  */
-async function load_and_compile_template(): Promise<void> {
+async function load_and_compile_code_template(): Promise<void> {
 
-    console.log('[code-tag.ts] load_and_compile_template() ENTRY');
+    console.log('[code-tag.ts] load_and_compile_code_template() ENTRY');
 
     try {
         console.log('[code-tag.ts] Fetching code popup template...');
@@ -66,7 +66,7 @@ async function load_and_compile_template(): Promise<void> {
         console.error('[code-tag.ts] Error loading code popup template:', error);
     }
 
-    console.log('[code-tag.ts] load_and_compile_template() EXIT');
+    console.log('[code-tag.ts] load_and_compile_code_template() EXIT');
 }
 
 /**
@@ -393,7 +393,7 @@ $(() => {
     // Load template and data in parallel
     console.log('[code-tag.ts] Starting Promise.all for template and data loading');
 
-    const templatePromise = load_and_compile_template();
+    const templatePromise = load_and_compile_code_template();
     const dataPromise = load_gcode_mcode_data();
 
     console.log('[code-tag.ts] Template promise:', templatePromise);

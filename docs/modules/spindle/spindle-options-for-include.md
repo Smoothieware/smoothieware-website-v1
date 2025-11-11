@@ -17,11 +17,11 @@ The following table lists the deprecated configuration options for the old spind
 | Parameter               | Value   | Description |
 | ----------------------- | ------- | ----------- |
 | <setting v1="spindle_enable"></setting>        | true    | If set to true, enables the Spindle module, which uses an encoder to PID-control a PWM-modulated spindle motor |
-| <setting v1="spindle_pwm_pin"></setting>       | `2.4`   | Output PWM pin (uses hardware PWM). Note: hardware PWM is available only on pins `2.0` to `2.5`, `1.18`, `1.20`, `1.21`, `1.23`, `1.24`, `1.26`, `3.25` and `3.26` |
+| <setting v1="spindle_pwm_pin"></setting>       | <pin>2.4</pin>   | Output PWM pin (uses hardware PWM). Note: hardware PWM is available only on pins <pin>2.0</pin> to <pin>2.5</pin>, <pin>1.18</pin>, <pin>1.20</pin>, <pin>1.21</pin>, <pin>1.23</pin>, <pin>1.24</pin>, <pin>1.26</pin>, <pin>3.25</pin> and <pin>3.26</pin> |
 | <setting v1="spindle_pwm_period"></setting>    | 100     | PWM period to use in microseconds |
-| <setting v1="spindle_feedback_pin"></setting>  | `2.6`   | Feedback input pin (must be Port 0 or 2, meaning the pin number must be `2.x` or `0.x`) |
+| <setting v1="spindle_feedback_pin"></setting>  | <pin>2.6</pin>   | Feedback input pin (must be Port 0 or 2, meaning the pin number must be `2.x` or `0.x`) |
 | <setting v1="spindle_pulses_per_rev"></setting>| 3       | Number of feedback pulses per revolution on the feedback input pin |
-| <setting v1="spindle_default_rpm"></setting>   | 5000    | RPM to use if none given in M3 command, in rotations/minute |
+| <setting v1="spindle_default_rpm"></setting>   | 5000    | RPM to use if none given in <mcode>M3</mcode> command, in rotations/minute |
 | <setting v1="spindle_control_P"></setting>     | 0.0002  | PID P factor (unit is 1 / RPM) |
 | <setting v1="spindle_control_I"></setting>     | 0.0001  | PID I factor (unit is 1 / ( RPM x seconds )) |
 | <setting v1="spindle_control_D"></setting>     | 0.000001| PID D factor (unit is 1 / (R PM / seconds )) |

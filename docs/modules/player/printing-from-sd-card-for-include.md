@@ -25,7 +25,7 @@ Now, with your gcode files on the SD card, there are a few options to run it fro
 
   You can find more information about using the <code>play</code> command <a href="player">here</a>.<br><br>
 
-  You can also use the <code>M24</code> G-code to play files from the SD card, see <a href="supported-g-codes">Supported G-codes</a>.
+  You can also use the <mcode>M24</mcode> G-code to play files from the SD card, see <a href="supported-g-codes">Supported G-codes</a>.
 </sl-alert>
 
 ### Web interface

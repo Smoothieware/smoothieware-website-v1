@@ -94,21 +94,25 @@ If undesired jogging occurs, increase the <setting v1="jogger.dead_zone"></setti
 
 ### Set Jog Axes
 
-The command to set the jog axes is `M777` by default, unless changed by the <setting v1="jogger.m_code_set"></setting> configuration.
+{::nomarkdown}
+The command to set the jog axes is <mcode>M777</mcode> by default, unless changed by the <setting v1="jogger.m_code_set"></setting> configuration.
 
 To use the command, type the M-code followed by the letters to use for jog axes (in order of alpha, beta, etc.).
+{:/nomarkdown}
 
 | Example       | Alpha Jog Axis | Beta Jog Axis |
 | ------------- | -------------- | ------------- |
-| `M777 XY`     | X              | Y             |
-| `M777 XZ`     | X              | Z             |
-| `M777 -Z`     | none           | Z             |
+| <mcode>M777</mcode> XY     | X              | Y             |
+| <mcode>M777</mcode> XZ     | X              | Z             |
+| <mcode>M777</mcode> -Z     | none           | Z             |
 
 ### Toggle Jog Axes
 
-The command to toggle the jog axes is `M778` by default, unless changed by the <setting v1="jogger.m_code_toggle"></setting> configuration.
+{::nomarkdown}
+The command to toggle the jog axes is <mcode>M778</mcode> by default, unless changed by the <setting v1="jogger.m_code_toggle"></setting> configuration.
 
 Toggling the axes will cycle between the axes set in the <setting v1="jogger.jog_axes"></setting> configuration.
+{:/nomarkdown}
 
 ```
 M778
@@ -122,11 +126,13 @@ jogger.jog_axes             XY,XZ,-Z         #cycle between the joystick horz/ve
 
 NOTE: This references <setting v1="jogger.jog_axes"></setting>.
 
+{::nomarkdown}
 In this example, the jogger will start controlling by controlling XY.
 
-When `M778` is issued, it will change to XZ.
+When <mcode>M778</mcode> is issued, it will change to XZ.
 
 If issued again, it will change to nothing/Z, and if issued once more, go back to XY.
+{:/nomarkdown}
 
 ## Developer Documentation
 

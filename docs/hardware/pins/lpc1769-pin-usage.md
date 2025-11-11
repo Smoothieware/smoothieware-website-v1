@@ -95,9 +95,9 @@ The following table shows all pin assignments on the LPC1769 microcontroller:
 <sl-alert variant="neutral" open>
   <sl-icon slot="icon" name="info-circle"></sl-icon>
   <strong>Hardwired Pins:</strong><br><br>
-  The following pins are hardwired and would need to be changed in source code: <code>P0.2</code> <code>P0.3</code>, <code>P0.6</code>-<code>P0.9</code>, <code>P0.29</code>, <code>P0.30</code>, <code>P2.9</code>, <code>P2.10</code>, <code>P2.12</code>. The rest are configurable in config.<br><br>
+  The following pins are hardwired and would need to be changed in source code: <pin>0.2</pin> <pin>0.3</pin>, <pin>0.6</pin>-<pin>0.9</pin>, <pin>0.29</pin>, <pin>0.30</pin>, <pin>2.9</pin>, <pin>2.10</pin>, <pin>2.12</pin>. The rest are configurable in config.<br><br>
 
-  Some pins are also setup as outputs and changed in the Bootloader and those are not configurable, these pins are: <code>P1.18</code>, <code>P1.19</code>, <code>P1.20</code>, <code>P1.21</code>, <code>P4.28</code>, <code>P2.4</code>, <code>P2.5</code>, <code>P2.6</code>, <code>P2.7</code>. However once booted these can be reassigned if needed.<br><br>
+  Some pins are also setup as outputs and changed in the Bootloader and those are not configurable, these pins are: <pin>1.18</pin>, <pin>1.19</pin>, <pin>1.20</pin>, <pin>1.21</pin>, <pin>4.28</pin>, <pin>2.4</pin>, <pin>2.5</pin>, <pin>2.6</pin>, <pin>2.7</pin>. However once booted these can be reassigned if needed.<br><br>
 
   <code>P0.*</code> and <code>P2.*</code> can be setup as interrupt enabled pins.
 </sl-alert>

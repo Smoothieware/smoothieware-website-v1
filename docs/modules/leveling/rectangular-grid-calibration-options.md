@@ -30,11 +30,11 @@ The following table lists all available configuration options for the rectangula
 | <setting v1="leveling-strategy.rectangular-grid.save" v2="cartesian grid leveling strategy.save"></setting> | `false` | If the saved grid is to be loaded on boot then this must be set to true. |
 | <setting v1="leveling-strategy.rectangular-grid.initial_height" v2="cartesian grid leveling strategy.initial_height"></setting> | `10` | The initial_height (in mm) tells the initial probe where to move to in Z before it probes, this should be around 5-10mm above the bed. |
 | <setting v1="leveling-strategy.rectangular-grid.human_readable" v2="cartesian grid leveling strategy.human_readable"></setting> | `true` | Human readable formatting of probe table. |
-| <setting v1="leveling-strategy.rectangular-grid.only_by_two_corners" v2="cartesian grid leveling strategy.only_by_two_corners"></setting> | `true` | G29/31/32 will not work without providing XYAB parameters: XY - start point, AB rectangle size from starting point. "Two corners" not absolutely correct name for this mode, because it uses only one corner and rectangle size. This mode is designed for PCB milling when you work with board size different from bed size. More about this mode in [PCB milling](pcb-milling). |
+| <setting v1="leveling-strategy.rectangular-grid.only_by_two_corners" v2="cartesian grid leveling strategy.only_by_two_corners"></setting> | `true` | {::nomarkdown}<gcode>G29</gcode>/<gcode>G31</gcode>/<gcode>G32</gcode> will not work without providing XYAB parameters: XY - start point, AB rectangle size from starting point. "Two corners" not absolutely correct name for this mode, because it uses only one corner and rectangle size. This mode is designed for PCB milling when you work with board size different from bed size. More about this mode in [PCB milling](pcb-milling).{:/nomarkdown} |
 | <setting v1="leveling-strategy.rectangular-grid.dampening_start" v2="cartesian grid leveling strategy.dampening_start"></setting> | `0.5` | Compensation normally is applied for all heights, with full power. If you set this setting to a height, the compensation will start to be applied less and less (linearly) until "height_limit" is reached. Any height before this setting will still be compensated fully. |
 | <setting v1="leveling-strategy.rectangular-grid.height_limit" v2="cartesian grid leveling strategy.height_limit"></setting> | `1` | The compensation algorithm will stop working after this limit, starting from the "dampening_start" parameter. After the height goes through this limit, no more compensation will be applied. |
-| <setting v1="leveling-strategy.rectangular-grid.before_probe_gcode" v2="zprobe.before_probe_gcode"></setting> | `M280` | Automatically deploy a bltouch probe before the probing. |
-| <setting v1="leveling-strategy.rectangular-grid.after_probe_gcode" v2="zprobe.after_probe_gcode"></setting> | `M281` | Automatically stow the bltouch after probing. |
+| <setting v1="leveling-strategy.rectangular-grid.before_probe_gcode" v2="zprobe.before_probe_gcode"></setting> | <mcode>M280</mcode> | Automatically deploy a bltouch probe before the probing. |
+| <setting v1="leveling-strategy.rectangular-grid.after_probe_gcode" v2="zprobe.after_probe_gcode"></setting> | <mcode>M281</mcode> | Automatically stow the bltouch after probing. |
 
 ## Related Documentation
 
@@ -58,7 +58,7 @@ For more information about leveling and probing, see:
 {::nomarkdown}
 <sl-alert variant="primary" open>
   <sl-icon slot="icon" name="lightbulb"></sl-icon>
-  When using <code>only_by_two_corners</code> mode, you must provide XYAB parameters with G29/G31/G32 commands.
+  When using <code>only_by_two_corners</code> mode, you must provide XYAB parameters with <gcode>G29</gcode>/<gcode>G31</gcode>/<gcode>G32</gcode> commands.
   <br><br>
   This is particularly useful for PCB milling where you're working with different board sizes.
 </sl-alert>

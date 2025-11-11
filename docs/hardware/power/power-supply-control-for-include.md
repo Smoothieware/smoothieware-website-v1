@@ -8,7 +8,9 @@ This allows your board to automatically turn the power supply on or off when nee
 
 ## Method 1: Direct Connection to ATX PS_ON
 
+{::nomarkdown}
 Here is how to control an ATX power supply's ON/OFF signal from a bare pin connected to the PS_ON signal:
+{:/nomarkdown}
 
 ```gcode
 switch.psu.enable                            true             # turn atx on/off
@@ -21,16 +23,20 @@ switch.psu.failsafe_set_to                   1                # so the ATX turns
                                                                # However leave commented or set to false if you want the ATX to turn off for an over heat fault condition
 ```
 
+{::nomarkdown}
 <sl-alert variant="neutral" open>
   <sl-icon slot="icon" name="info-circle"></sl-icon>
-  <strong>Note:</strong> This uses the PSON pin on the power supply, which should be open-drain, thus the <code>o</code> in <code>0.25o!</code>.
+  <strong>Note:</strong> This uses the PSON pin on the power supply, which should be open-drain, thus the <code>o</code> in <code><pin>0.25o!</pin></code>.
 </sl-alert>
+{:/nomarkdown}
 
 ---
 
 ## Method 2: Using a MOSFET or SSR
 
+{::nomarkdown}
 Here is how to control an ATX power supply's ON/OFF signal from a small MOSFET connected to the PS_ON signal, or to an SSR which powers a non-ATX PSU:
+{:/nomarkdown}
 
 ```gcode
 switch.psu.enable                            true             # turn atx on/off
@@ -42,21 +48,25 @@ switch.psu.output_type                       digital          # on/off only
                                                                # However leave commented or set to false if you want the PSU to turn off for an over heat fault condition
 ```
 
+{::nomarkdown}
 <sl-alert variant="primary" open>
   <sl-icon slot="icon" name="lightbulb"></sl-icon>
   <strong>Tip:</strong> When using a MOSFET, note that the pin is NOT inverted (no <code>!</code> after the pin number), unlike the direct connection method.
 </sl-alert>
+{:/nomarkdown}
 
 ---
 
+{::nomarkdown}
 ## G-code Commands
 
 Once configured, you can control your power supply with these commands:
 
 | Command | Function |
 | ------- | -------- |
-| `M80` | Turn power supply ON |
-| `M81` | Turn power supply OFF |
+| <mcode>M80</mcode> | Turn power supply ON |
+| <mcode>M81</mcode> | Turn power supply OFF |
+{:/nomarkdown}
 
 ---
 

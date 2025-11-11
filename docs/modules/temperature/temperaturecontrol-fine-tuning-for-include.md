@@ -24,7 +24,9 @@ temperature_control.hotend.max_pwm 64
 
 If you are getting 10°C or more initial overshoot of temperature, you can set <setting v1="temperature_control.{name}.i_max" v2="temperature control.i_max"></setting> to a lower value (default is <setting v1="temperature_control.{name}.max_pwm" v2="temperature control.max_pwm"></setting>).
 
-<raw>128</raw> seems to be a good value, but it can be tuned with <mcode>M301 S0 Xnnn</mcode> where <raw>nnn</raw> is a number less than or equal to <setting v1="temperature_control.{name}.max_pwm" v2="temperature control.max_pwm"></setting>:
+{::nomarkdown}
+<raw>128</raw> seems to be a good value, but it can be tuned with <mcode>M301</mcode> S0 Xnnn where <raw>nnn</raw> is a number less than or equal to <setting v1="temperature_control.{name}.max_pwm" v2="temperature control.max_pwm"></setting>:
+{:/nomarkdown}
 
 ```plaintext
 temperature_control.hotend.i_max 128

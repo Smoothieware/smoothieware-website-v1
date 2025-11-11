@@ -91,13 +91,13 @@ It includes:
 
 - A special CNC version of the [Panel](/panel) screens
 
-- `grbl_mode` enabled by default (which means Smoothie interprets G-code as CNC G-code rather than 3D-printing G-code)
+- <setting v1="grbl_mode" v2="general.grbl_mode"></setting> enabled by default (which means Smoothie interprets G-code as CNC G-code rather than 3D-printing G-code)
 
 - The Spindle module
 
 You will find information on flashing the firmware at [getting-smoothie](/getting-smoothie)
 
-You will find more information on `grbl_mode` on the [grbl_mode](/grbl-mode) page.
+You will find more information on <setting v1="grbl_mode" v2="general.grbl_mode"></setting> on the [grbl_mode](/grbl-mode) page.
 
 {% include hardware/power/logic-power-for-include.md %}
 
@@ -130,7 +130,9 @@ G17          ; XY plane selection
 M5           ; Ensure spindle is off
 ```
 
+{::nomarkdown}
 Note: For CNC mills, it's often safer to NOT automatically home axes on boot, especially if you have a mounted workpiece. Instead, you can set safe defaults and then manually home when ready.
+{:/nomarkdown}
 
 Enable the on_boot.gcode file in your config:
 

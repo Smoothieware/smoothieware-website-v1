@@ -213,9 +213,11 @@ Most prefer red, as it's killy, but there are other choices.
 
 Mystery!
 
+{::nomarkdown}
 ### Other extra pins breakout
 
-Breaks out un-used pins 1.30, 1.31, 1.23 and 1.22. For extension fun.
+Breaks out un-used pins <pin>1.30</pin>, <pin>1.31</pin>, <pin>1.23</pin> and <pin>1.22</pin>. For extension fun.
+{:/nomarkdown}
 
 ### SD card SPI breakout
 

@@ -37,7 +37,7 @@ A method of disabling auto mount on macOS is mentioned [here](https://wolfpaulus
 | ---- | ----------- |
 | **FIRMWARE.CUR** | Copy of firmware file currently flashed onto the Smoothieboard |
 | **config** or **config.txt** | One or the other, not both. Defines Smoothieware configuration options needed for the attached device |
-| **config-override** | Created when the G-code `M500` is played. See [supported G-codes](supported-g-codes) |
+| **config-override** | Created when the G-code <mcode>M500</mcode> is played. See [supported G-codes](supported-g-codes) |
 | **on_boot.gcode** | Played on startup of Smoothieboard. Can be used to initialize the Smoothie driven device |
 | **firmware.bin** | Firmware update file. If present, is flashed onto the Smoothieboard and renamed to FIRMWARE.CUR after the update completes |
 

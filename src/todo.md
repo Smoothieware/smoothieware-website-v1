@@ -103,6 +103,8 @@
   * [ ] Research + pick and place guide.
 * [ ] Pin diagrams such as https://github.com/Bouni/smoothieboard-graphics/blob/master/smoothieboard-wiring.png?raw=true are messed up by the dark background, we need to give them a white background.
 * [ ] Fix the thing where we see stuff like « permalink: /stepper-motors — » in the laser cutter guide.
+* [ ] Fix the remaining images manually.
+* [ ] Create a page explaining in detail the MCS, including diagrams, and an interactive demo.
 
 # <setting> tag.
 

@@ -211,7 +211,9 @@ temperature_control.bed.heater_pin  2.5
 temperature_control.bed.thermistor  Honeywell100K
 ```
 
+{::nomarkdown}
 **That's it. Human-readable. No compilation needed.**
+{:/nomarkdown}
 
 Change PID values? Edit three numbers. Save. Reboot. Done.
 

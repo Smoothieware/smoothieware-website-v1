@@ -64,6 +64,6 @@ temperature_control.psu.designator         F                # Designator for the
   <sl-icon slot="icon" name="lightbulb"></sl-icon>
   <strong>ATX PSU Solution:</strong> If you use an ATX PSU, you can wire the 5VSB supply to the 5V input on the Smoothieboard, in which case the Smoothieboard will still get its 5V even if the PSU is shut down by the switch module.
   <br><br>
-  Wire the ATX PS_ON to the ground of a small MOSFET. This will allow it to turn on/off with <code>M80</code>/<code>M81</code>, and will also shut off in case of a crash.
+  Wire the ATX PS_ON to the ground of a small MOSFET. This will allow it to turn on/off with <mcode>M80</mcode>/<mcode>M81</mcode>, and will also shut off in case of a crash.
 </sl-alert>
 {:/nomarkdown}

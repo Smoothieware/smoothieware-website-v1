@@ -27,7 +27,9 @@ Wire a simple button on two pins.
 </a>
 {:/nomarkdown}
 
-The button may be configured as a kill switch, which will halt all operations, turn off heaters, and pause the host. It can be cleared with a `M999` command or by resetting the board. To enable a kill button, the following configuration is added:
+{::nomarkdown}
+The button may be configured as a kill switch, which will halt all operations, turn off heaters, and pause the host. It can be cleared with a <mcode>M999</mcode> command or by resetting the board. To enable a kill button, the following configuration is added:
+{:/nomarkdown}
 
 ```plaintext
 kill_button_enable                        true             # set to true to enable a kill button
@@ -52,7 +54,7 @@ unkill_enable     false                # do not unkill when button held or relea
 
 <sl-alert variant="warning" open>
   <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
-  <strong>Normally Closed (NC) Kill Button Warning:</strong> If your kill button is "Normally Closed" (NC), it will be pressed at boot time. By default, the bootloader reads the `2.12` pin at boot time and if it is closed, will enter DFU mode. This means that you cannot use pin `2.12` for a normally closed kill button as it will prevent the board from booting normally. The solution is very simple: just use any other pin and edit the configuration accordingly.
+  <strong>Normally Closed (NC) Kill Button Warning:</strong> If your kill button is "Normally Closed" (NC), it will be pressed at boot time. By default, the bootloader reads the <pin>2.12</pin> pin at boot time and if it is closed, will enter DFU mode. This means that you cannot use pin <pin>2.12</pin> for a normally closed kill button as it will prevent the board from booting normally. The solution is very simple: just use any other pin and edit the configuration accordingly.
 </sl-alert>
 
 {% include troubleshooting/stopping-smoothie-for-include.md %}

@@ -2,7 +2,9 @@
 permalink: /g28-cnc
 ---
 
-# G28 G-code
+{::nomarkdown}
+# <gcode>G28</gcode> G-code
+{:/nomarkdown}
 
 {::nomarkdown}
 <a href="/images/temporary/cnc-spindle-generic.jpg">
@@ -10,7 +12,8 @@ permalink: /g28-cnc
 </a>
 {:/nomarkdown}
 
-On a CNC mill, `G28` means "go to the recorded origin point in the machine coordinates workspace".
+{::nomarkdown}
+On a CNC mill, <gcode>G28</gcode> means "go to the recorded origin point in the machine coordinates workspace".
 
 The machine coordinates are the position of the machine relative to the point at which the [endstops](endstops) are hit.
 
@@ -19,6 +22,7 @@ This is by opposition to the workspace coordinates, which are the coordinates yo
 The origin point is a recorded position, it is arbitrary and you choose it, but it is generally the point you want the tool to be at when it is not doing anything.
 
 It is not necessarily the `0,0,0` point of the workspace coordinates, but it can be if you want it to.
+{:/nomarkdown}
 
 ### Format
 
@@ -38,7 +42,9 @@ No parameters.
 
 ### Friend Gcodes
 
-The [`G28.1`](g28-1) Gcode is used to set the origin position for the machine.
+{::nomarkdown}
+The <gcode>G28.1</gcode> Gcode is used to set the origin position for the machine.
+{:/nomarkdown}
 
 ### Configuration
 
@@ -46,11 +52,15 @@ See the [endstops](endstops) module.
 
 ### Speeds
 
-The speed at which the movement to the origin point will occur is the "seek" speed, which is the speed of the last `G0` command issued, or if none was ever issued, the value of the <setting v1="default_seek_rate" v2="motion control.default_seek_rate"></setting> configuration [option](configuring-smoothie).
+{::nomarkdown}
+The speed at which the movement to the origin point will occur is the "seek" speed, which is the speed of the last <gcode>G0</gcode> command issued, or if none was ever issued, the value of the <setting v1="default_seek_rate" v2="motion control.default_seek_rate"></setting> configuration [option](configuring-smoothie).
+{:/nomarkdown}
 
 ### Endstop seeking
 
-If you are looking for a way to "home" to the endstops, the same way `G28` does on 3D printers, use the `$H` command to trigger this behavior, and configure it using the [Endstop](endstops) module.
+{::nomarkdown}
+If you are looking for a way to "home" to the endstops, the same way <gcode>G28</gcode> does on 3D printers, use the `$H` command to trigger this behavior, and configure it using the [Endstop](endstops) module.
+{:/nomarkdown}
 
 ### Further reading
 

@@ -1,6 +1,8 @@
 # Configuring Z height
 
-After homing (with `G28`), the machine knows it is at Z maximum position if your machine homes to max, and at Z minimum position if your machine homes to min.
+{::nomarkdown}
+After homing (with <gcode>G28</gcode>), the machine knows it is at Z maximum position if your machine homes to max, and at Z minimum position if your machine homes to min.
+{:/nomarkdown}
 
 Because of this, it will read the configuration option <setting v1="gamma_max"></setting> or <setting v1="gamma_min"></setting> depending and set the current Z position to that value.
 
@@ -28,12 +30,14 @@ G0 Z0
 
 Then move the head to the bed by jogging, using [Pronterface](pronterface)'s arrows, the panel, the web interface or whatever other method is adequate in your case.
 
-Finally issue the `M306 Z0` command which will use the current Z position as a homing offset:
+{::nomarkdown}
+Finally issue the <mcode>M306</mcode> Z0 command which will use the current Z position as a homing offset:
+{:/nomarkdown}
 
 {::nomarkdown}
 <sl-alert variant="neutral" open>
   <sl-icon slot="icon" name="info-circle"></sl-icon>
-  You cannot use M306 unless you have Z homing endstops, if you can't home Z then you can't set homing offsets.
+  You cannot use <mcode>M306</mcode> unless you have Z homing endstops, if you can't home Z then you can't set homing offsets.
 </sl-alert>
 {:/nomarkdown}
 
@@ -41,7 +45,9 @@ Finally issue the `M306 Z0` command which will use the current Z position as a h
 M306 Z0
 ```
 
-Then save to the SD card with `M500`:
+{::nomarkdown}
+Then save to the SD card with <mcode>M500</mcode>:
+{:/nomarkdown}
 
 ```
 M500
@@ -82,9 +88,13 @@ This will return the position of all axes. The current position of the Z axis is
 
 Now simply edit the [configuration file](configuring-smoothie) to set this value, and reset the board.
 
-Alternatively (delta only) you can use the `M665 Z(distance)` command to set the value in the [config override system](configuring-smoothie), and `M500` to save that value to the SD card.
+{::nomarkdown}
+Alternatively (delta only) you can use the <mcode>M665</mcode> Z(distance) command to set the value in the <a href="configuring-smoothie">config override system</a>, and <mcode>M500</mcode> to save that value to the SD card.
+{:/nomarkdown}
 
-The <setting v1="gamma_max"></setting> value in the configuration file is ignored if `M665` is set and saved.
+{::nomarkdown}
+The <setting v1="gamma_max"></setting> value in the configuration file is ignored if <mcode>M665</mcode> is set and saved.
+{:/nomarkdown}
 
 Next time you home, the machine will know how high above the bed it is.
 
@@ -117,15 +127,23 @@ G30
 
 This will report the distance traveled by the probe.
 
+{::nomarkdown}
 Your <setting v1="gamma_max"></setting> value is that reported distance, plus the z probe offset ( distance between the probe triggering point, and the bed ).
+{:/nomarkdown}
 
-For example, if you home, then do `G30`, and it reports a height of 311mm, and your probe is 7mm below your hotend, then your <setting v1="gamma_max"></setting> is 311 + 7 = 318mm.
+{::nomarkdown}
+For example, if you home, then do <gcode>G30</gcode>, and it reports a height of 311mm, and your probe is 7mm below your hotend, then your <setting v1="gamma_max"></setting> is 311 + 7 = 318mm.
+{:/nomarkdown}
 
 Simply edit the [configuration file](configuring-smoothie) to set this value, and reset the board.
 
-Alternatively you can use the `M665 Z(distance)` command to set the value in the [config override system](configuring-smoothie), and `M500` to save that value to the SD card.
+{::nomarkdown}
+Alternatively you can use the <mcode>M665</mcode> Z(distance) command to set the value in the <a href="configuring-smoothie">config override system</a>, and <mcode>M500</mcode> to save that value to the SD card.
+{:/nomarkdown}
 
-The <setting v1="gamma_max"></setting> value in the configuration file is ignored if `M665` is set and saved.
+{::nomarkdown}
+The <setting v1="gamma_max"></setting> value in the configuration file is ignored if <mcode>M665</mcode> is set and saved.
+{:/nomarkdown}
 
 Next time you home, the machine will know how high above the bed it is.
 
@@ -160,15 +178,21 @@ When `nnn` is the distance between your probe's triggering point, and the bed (o
 </a>
 {:/nomarkdown}
 
-The `G30 Znnn` command moves the head until the probe triggers, then sets the current Z height to `nnn`.
+{::nomarkdown}
+The <gcode>G30</gcode> Znnn command moves the head until the probe triggers, then sets the current Z height to nnn.
+{:/nomarkdown}
 
-So for example if your probe triggers when the hotend is 5mm above the bed, do `G30 Z5`, and if your probe triggers exactly when the hotend touches the bed, do `G30 Z0`.
+{::nomarkdown}
+So for example if your probe triggers when the hotend is 5mm above the bed, do <gcode>G30</gcode> Z5, and if your probe triggers exactly when the hotend touches the bed, do <gcode>G30</gcode> Z0.
+{:/nomarkdown}
 
 {::nomarkdown}
 <sl-alert variant="neutral" open>
   <sl-icon slot="icon" name="info-circle"></sl-icon>
-  Behind the scenes G30 Z0 does a G92 Z0, so you can save this if you set 'save_g92 true' in config and issue M500 that saves the offset at 0. Note that G92 is creating a new coordinate system called the Workspace coordinate system (WCS) it is worth reading up on how that works.
+  Behind the scenes <gcode>G30</gcode> Z0 does a <gcode>G92</gcode> Z0, so you can save this if you set 'save_g92 true' in config and issue <mcode>M500</mcode> that saves the offset at 0. Note that <gcode>G92</gcode> is creating a new coordinate system called the Workspace coordinate system (WCS) it is worth reading up on how that works.
 </sl-alert>
 {:/nomarkdown}
 
-If you are doing this manually you can save time by jogging the Z to within 5mm of the bed then issue the `G30 Z0`.
+{::nomarkdown}
+If you are doing this manually you can save time by jogging the Z to within 5mm of the bed then issue the <gcode>G30</gcode> Z0.
+{:/nomarkdown}

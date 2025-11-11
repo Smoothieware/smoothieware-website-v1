@@ -31,9 +31,11 @@ This page documents how to set up ATC with a Smoothieboard.
 
 There are two different possible methods to implement ATC, depending on which part of the CAM toolchain actually implements the tool chain:
 
+{::nomarkdown}
 - **ATC in the post-processor**: The post-processor adds to the program at the right moments the right G-codes to do the tool change.
 
-- **ATC in the controller**: Smoothieboard receives commands like `T1`, `T2` etc, and converts those into the right G-codes to do the tool change.
+- **ATC in the controller**: Smoothieboard receives commands like T1, T2 etc, and converts those into the right G-codes to do the tool change.
+{:/nomarkdown}
 
 {::nomarkdown}
 <sl-alert variant="neutral" open>
