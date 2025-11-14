@@ -5,12 +5,10 @@ Smoothie can automatically tune (find) your P, I, and D factors using a process 
 
 Here is an example of the G-code command used to launch PID autotune:
 
-{::nomarkdown}
-<mcode>M303</mcode> E0 S190
-{:/nomarkdown}
+{::nomarkdown}<mcode>M303</mcode>{:/nomarkdown} E0 S190
 
-- <raw>E0</raw> is the number of the heater or bed temperature control module, determined by the order that they appear in the config file. Here it would be 0 for the hotend, and 1 for the bed.
-- <raw>S190</raw> is the temperature to autotune for. Use the temperature you will be using your heater at in real life. For a hotend here we use 190°C.
+- {::nomarkdown}<raw>E0</raw>{:/nomarkdown} is the number of the heater or bed temperature control module, determined by the order that they appear in the config file. Here it would be 0 for the hotend, and 1 for the bed.
+- {::nomarkdown}<raw>S190</raw>{:/nomarkdown} is the temperature to autotune for. Use the temperature you will be using your heater at in real life. For a hotend here we use 190°C.
 
 When you run the command, tuning begins:
 
@@ -38,15 +36,13 @@ Cycle 4: max: 246.189, min: 227.627, avg separation: 0.418274
 PID Autotune Complete! The settings above have been loaded into memory, but not written to your config file.
 ```
 
-{::nomarkdown}
-Now edit your configuration to use those three values (<raw>Kp</raw> is <raw>p_factor</raw>, <raw>Ki</raw> is <raw>i_factor</raw>, <raw>Kd</raw> is <raw>d_factor</raw>), reset, and temperature control should work much better. (Also <mcode>M301</mcode> can be used to set the PID values and saved with <mcode>M500</mcode>)
+Now edit your configuration to use those three values ({::nomarkdown}<raw>Kp</raw>{:/nomarkdown} is {::nomarkdown}<raw>p_factor</raw>{:/nomarkdown}, {::nomarkdown}<raw>Ki</raw>{:/nomarkdown} is {::nomarkdown}<raw>i_factor</raw>{:/nomarkdown}, {::nomarkdown}<raw>Kd</raw>{:/nomarkdown} is {::nomarkdown}<raw>d_factor</raw>{:/nomarkdown}), reset, and temperature control should work much better. (Also {::nomarkdown}<mcode>M301</mcode>{:/nomarkdown} can be used to set the PID values and saved with {::nomarkdown}<mcode>M500</mcode>{:/nomarkdown})
 
 Alternatively, you can also enter the following G-code:
 
-<mcode>M500</mcode>
+{::nomarkdown}<mcode>M500</mcode>{:/nomarkdown}
 
 Which will save the configuration values automatically in a configuration override file.
-{:/nomarkdown}
 
 Learn more about configuration overrides [here](configuring-smoothie).
 

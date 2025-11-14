@@ -411,9 +411,7 @@ config-load dump
 
 `fire`
 
-{::nomarkdown}
-The following commands are available for testing lasers (prepend `@` in pronterface or <mcode>M1000</mcode> in other hosts):
-{:/nomarkdown}
+The following commands are available for testing lasers (prepend `@` in pronterface or {::nomarkdown}<mcode>M1000</mcode>{:/nomarkdown} in other hosts):
 
 - `fire nnn` where nnn is 0-100 percentage of power (example `fire 10` will turn on laser at 10%)
 - `fire off` turn off the test fire and return to automatic mode.
@@ -426,9 +424,7 @@ And be very careful as this command will leave your laser on indefinitely, it is
 
 These are commands designed to return information to a Host program like Smoopi. Some are instant and reply regardless of the state of the buffers.
 
-{::nomarkdown}
-`$G` return gcode state eg `GC:<gcode>G0</gcode> <gcode>G54</gcode> <gcode>G17</gcode> <gcode>G21</gcode> <gcode>G90</gcode> <gcode>G94</gcode> <mcode>M0</mcode> <mcode>M5</mcode> <mcode>M9</mcode> T0 F15000.0 S0.8000`
-{:/nomarkdown}
+`$G` return gcode state eg `GC:{::nomarkdown}<gcode>G0</gcode>{:/nomarkdown} {::nomarkdown}<gcode>G54</gcode>{:/nomarkdown} {::nomarkdown}<gcode>G17</gcode>{:/nomarkdown} {::nomarkdown}<gcode>G21</gcode>{:/nomarkdown} {::nomarkdown}<gcode>G90</gcode>{:/nomarkdown} {::nomarkdown}<gcode>G94</gcode>{:/nomarkdown} {::nomarkdown}<mcode>M0</mcode>{:/nomarkdown} {::nomarkdown}<mcode>M5</mcode>{:/nomarkdown} {::nomarkdown}<mcode>M9</mcode>{:/nomarkdown} T0 F15000.0 S0.8000`
 
 `$I` same as `$G` but sends no ok and is instant
 

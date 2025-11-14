@@ -70,7 +70,7 @@ gamma_current   1.5    # Z axis motor current
 delta_current   1.5    # Extruder motor current
 ```
 
-The current settings are <setting v1="alpha_current" v2="current control.alpha.current"></setting>, <setting v1="beta_current" v2="current control.beta.current"></setting>, <setting v1="gamma_current" v2="current control.gamma.current"></setting>, and <setting v1="delta_current" v2="current control.delta.current"></setting>.
+The current settings are {::nomarkdown}<setting v1="alpha_current" v2="current control.alpha.current"></setting>{:/nomarkdown}, {::nomarkdown}<setting v1="beta_current" v2="current control.beta.current"></setting>{:/nomarkdown}, {::nomarkdown}<setting v1="gamma_current" v2="current control.gamma.current"></setting>{:/nomarkdown}, and {::nomarkdown}<setting v1="delta_current" v2="current control.delta.current"></setting>{:/nomarkdown}.
 
 Typical values range from 0.5A for small motors to 2.0A for larger NEMA 17 motors. Check your motor's datasheet for the rated current. You want to set it to the motor's rated current, or slightly below. Setting it too high won't make your motors stronger - it'll just make them hotter.
 
@@ -290,9 +290,7 @@ The SD card is the brains of the configuration and file storage. It holds:
 
 **firmware.bin** - When you want to update the firmware, you drop a `firmware.bin` file on the SD card. When the board boots and sees this file, it automatically flashes the new firmware and deletes the file. Easy firmware updates without needing a programmer or special software.
 
-{::nomarkdown}
-**G-code files** - Your print/cut/mill files live here. The board can play them directly from the SD card using the `play` command or the <mcode>M24</mcode> G-code.
-{:/nomarkdown}
+**G-code files** - Your print/cut/mill files live here. The board can play them directly from the SD card using the `play` command or the {::nomarkdown}<mcode>M24</mcode>{:/nomarkdown} G-code.
 
 **Web interface files** - If you're using the Ethernet features, the HTML/CSS/JavaScript for the web interface lives here.
 
@@ -932,7 +930,6 @@ microseconds    32     # 1/32 microstepping (quieter)
 ```
 
 **Temperature Control (Example for Hotend):**
-{::nomarkdown}
 ```
 temperature_control.hotend.enable               true
 temperature_control.hotend.thermistor_pin       0.23
@@ -942,8 +939,7 @@ temperature_control.hotend.set_m_code           104
 temperature_control.hotend.set_and_wait_m_code  109
 ```
 
-Key temperature control settings include <setting v1="temperature_control.{name}.enable" v2="temperature control.enable"></setting>, <setting v1="temperature_control.{name}.thermistor_pin" v2="temperature control.thermistor_pin"></setting>, and <setting v1="temperature_control.{name}.heater_pin" v2="temperature control.heater_pin"></setting>.
-{:/nomarkdown}
+Key temperature control settings include {::nomarkdown}<setting v1="temperature_control.{name}.enable" v2="temperature control.enable"></setting>{:/nomarkdown}, {::nomarkdown}<setting v1="temperature_control.{name}.thermistor_pin" v2="temperature control.thermistor_pin"></setting>{:/nomarkdown}, and {::nomarkdown}<setting v1="temperature_control.{name}.heater_pin" v2="temperature control.heater_pin"></setting>{:/nomarkdown}.
 
 See the [configuration documentation](configuring-smoothie) for complete details.
 
@@ -956,23 +952,19 @@ See the [configuration documentation](configuring-smoothie) for complete details
 4. Try different USB cable/port or different 5V supply
 
 **Motors won't move:**
-{::nomarkdown}
 1. Check current setting in config file (needs to be >0)
 2. Verify motor wiring (coil pairs correct - check continuity)
 3. Check enable pin state (some configs disable motors by default)
-4. Send simple test command: <gcode>G0</gcode> X10 (should move X axis 10mm)
+4. Send simple test command: {::nomarkdown}<gcode>G0</gcode>{:/nomarkdown} X10 (should move X axis 10mm)
 5. Feel the motor - does it get warm? If cold, no current. If scorching hot, current too high.
 6. Are you setting your speeds too high? This is a common issue that can cause a motor to not be able to move.
-{:/nomarkdown}
 
 **Heater won't heat:**
 1. Check MOSFET power input (needs 12-24V separate from motor power)
 2. Measure heater resistance (should be 10-30Ω for typical hotend, 1-2Ω for bed)
-{::nomarkdown}
 3. Check config file (correct pins, PID values loaded)
-4. Send <mcode>M105</mcode> - does it report temperature?
-5. Manually enable heater: <mcode>M104</mcode> S200 (set hotend to 200°C)
-{:/nomarkdown}
+4. Send {::nomarkdown}<mcode>M105</mcode>{:/nomarkdown} - does it report temperature?
+5. Manually enable heater: {::nomarkdown}<mcode>M104</mcode>{:/nomarkdown} S200 (set hotend to 200°C)
 
 **Temperature reads wrong:**
 1. Check thermistor type in config matches physical thermistor

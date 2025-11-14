@@ -33,11 +33,9 @@ title: Using the Touchprobe
 </div>
 {:/nomarkdown}
 
-{::nomarkdown}
-Currently, the only operation regarding touchprobes supported by this module is <gcode>G31</gcode>.
+Currently, the only operation regarding touchprobes supported by this module is {::nomarkdown}<gcode>G31</gcode>{:/nomarkdown}.
 
-<gcode>G31</gcode> works similarly to <gcode>G1</gcode> codes but stops if the probe is touched.
-{:/nomarkdown}
+{::nomarkdown}<gcode>G31</gcode>{:/nomarkdown} works similarly to {::nomarkdown}<gcode>G1</gcode>{:/nomarkdown} codes but stops if the probe is touched.
 
 **Important limitation:** Coordinated moves are not supported.
 
@@ -56,12 +54,10 @@ G90
 G31 Z-10 F150
 ```
 
-{::nomarkdown}
-- <gcode>G90</gcode> - Absolute positioning mode
-- <gcode>G31</gcode> - Probe move command
+- {::nomarkdown}<gcode>G90</gcode>{:/nomarkdown} - Absolute positioning mode
+- {::nomarkdown}<gcode>G31</gcode>{:/nomarkdown} - Probe move command
 - Z-10 - Move to Z position -10
 - F150 - Feed rate of 150 mm/min
-{:/nomarkdown}
 
 ---
 
@@ -79,17 +75,13 @@ M114
 
 **What each line does:**
 
-{::nomarkdown}
-- <gcode>G91</gcode> - Switch to relative positioning
-- <gcode>G31</gcode> Z-10 F300 - Fast probe down 10mm at 300 mm/min
-- <gcode>G0</gcode> Z0.2 - Retract 0.2mm
-- <gcode>G31</gcode> Z-0.3 F50 - Slow probe down 0.3mm at 50 mm/min
-- <mcode>M114</mcode> - Report current position
-{:/nomarkdown}
+- {::nomarkdown}<gcode>G91</gcode>{:/nomarkdown} - Switch to relative positioning
+- {::nomarkdown}<gcode>G31</gcode>{:/nomarkdown} Z-10 F300 - Fast probe down 10mm at 300 mm/min
+- {::nomarkdown}<gcode>G0</gcode>{:/nomarkdown} Z0.2 - Retract 0.2mm
+- {::nomarkdown}<gcode>G31</gcode>{:/nomarkdown} Z-0.3 F50 - Slow probe down 0.3mm at 50 mm/min
+- {::nomarkdown}<mcode>M114</mcode>{:/nomarkdown} - Report current position
 
-{::nomarkdown}
-In addition to the <mcode>M114</mcode> report, every touch is logged to a file if logging is enabled (see Configuration section below).
-{:/nomarkdown}
+In addition to the {::nomarkdown}<mcode>M114</mcode>{:/nomarkdown} report, every touch is logged to a file if logging is enabled (see Configuration section below).
 
 ---
 

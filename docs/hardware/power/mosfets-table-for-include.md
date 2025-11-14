@@ -18,30 +18,28 @@ MOSFETs are used to control high-power devices like heated beds, hotends, fans, 
 
 ##### Understanding MOSFET Pairs
 
-{::nomarkdown}
 Smoothieboard has three MOSFET pairs:
 
-###### Big MOSFETs Pair (P<pin>2.7</pin> and P<pin>2.5</pin>)
+###### Big MOSFETs Pair (P{::nomarkdown}<pin>2.7</pin>{:/nomarkdown} and P{::nomarkdown}<pin>2.5</pin>{:/nomarkdown})
 
 - **Current capacity**: 12A each
-- **Power input**: Shared between the two outputs (between P<pin>2.7</pin> and P<pin>2.5</pin> terminals)
+- **Power input**: Shared between the two outputs (between P{::nomarkdown}<pin>2.7</pin>{:/nomarkdown} and P{::nomarkdown}<pin>2.5</pin>{:/nomarkdown} terminals)
 - **Typical use**: Heated bed (high current devices)
 - **Note**: Both outputs share the same power input
 
-###### Small MOSFETs Pair (P<pin>2.4</pin> and P<pin>2.6</pin>)
+###### Small MOSFETs Pair (P{::nomarkdown}<pin>2.4</pin>{:/nomarkdown} and P{::nomarkdown}<pin>2.6</pin>{:/nomarkdown})
 
 - **Current capacity**: 3A each
-- **Power input**: Shared between the two outputs (between P<pin>2.6</pin> and P<pin>1.23</pin> terminals)
+- **Power input**: Shared between the two outputs (between P{::nomarkdown}<pin>2.6</pin>{:/nomarkdown} and P{::nomarkdown}<pin>1.23</pin>{:/nomarkdown} terminals)
 - **Typical use**: Hotend 0 and fan (moderate current devices)
 - **Note**: Both outputs share the same power input
 
-###### Mixed MOSFETs Pair (P<pin>1.23</pin> and P<pin>1.22</pin>)
+###### Mixed MOSFETs Pair (P{::nomarkdown}<pin>1.23</pin>{:/nomarkdown} and P{::nomarkdown}<pin>1.22</pin>{:/nomarkdown})
 
-- **Current capacity**: P<pin>1.23</pin>: 12A, P<pin>1.22</pin>: 3A
+- **Current capacity**: P{::nomarkdown}<pin>1.23</pin>{:/nomarkdown}: 12A, P{::nomarkdown}<pin>1.22</pin>{:/nomarkdown}: 3A
 - **Power input**: Taken directly from VBB (main power supply)
-- **Typical use**: P<pin>1.23</pin> for Hotend 1, P<pin>1.22</pin> for accessories
+- **Typical use**: P{::nomarkdown}<pin>1.23</pin>{:/nomarkdown} for Hotend 1, P{::nomarkdown}<pin>1.22</pin>{:/nomarkdown} for accessories
 - **Note**: These outputs use the main VBB power supply
-{:/nomarkdown}
 
 ##### Important Safety Notes
 
@@ -63,17 +61,13 @@ Smoothieboard has three MOSFET pairs:
 
 To configure a MOSFET output in your config file, use the appropriate pin number from the "Digital output pin" row.
 
-{::nomarkdown}
-Example for configuring a heated bed on P<pin>2.7</pin>:
-{:/nomarkdown}
+Example for configuring a heated bed on P{::nomarkdown}<pin>2.7</pin>{:/nomarkdown}:
 
 ```
 temperature_control.bed.heater_pin     2.7
 ```
 
-{::nomarkdown}
-Example for configuring a hotend on P<pin>2.4</pin>:
-{:/nomarkdown}
+Example for configuring a hotend on P{::nomarkdown}<pin>2.4</pin>{:/nomarkdown}:
 
 ```
 temperature_control.hotend.heater_pin  2.4

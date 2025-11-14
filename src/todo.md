@@ -105,6 +105,8 @@
 * [ ] Fix the thing where we see stuff like « permalink: /stepper-motors — » in the laser cutter guide.
 * [ ] Fix the remaining images manually.
 * [ ] Create a page explaining in detail the MCS, including diagrams, and an interactive demo.
+* [ ] Vinyl cutter guide (get one of the two big vinyl cutters from the fablab and set it up better and make a guide from it)
+* [ ] CRITICAL: Add lathe documentation and add lathe guide.
 
 # <setting> tag.
 

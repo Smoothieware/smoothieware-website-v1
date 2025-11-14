@@ -124,9 +124,7 @@ In addition to `input_on_command` and `input_off_command` there are also corresp
 
 ### Fan
 
-{::nomarkdown}
 This configuration will allow you to control a fan using the standard reprap G-codes for controlling a fan
-{:/nomarkdown}
 
 This is already present in the default configuration file
 
@@ -301,9 +299,7 @@ switch.z-2.input_off_command                 M1012            # Turn OFF
 switch.z-2.output_pin                        1.30             # Pin to control enable pin of driver
 ```
 
-{::nomarkdown}
-For wiring, simply wire pin <pin>1.31</pin> to the enable pin of the first stepper driver and pin <pin>1.30</pin> to the enable pin of the second stepper driver.
-{:/nomarkdown} 
+For wiring, simply wire pin {::nomarkdown}<pin>1.31</pin>{:/nomarkdown} to the enable pin of the first stepper driver and pin {::nomarkdown}<pin>1.30</pin>{:/nomarkdown} to the enable pin of the second stepper driver. 
 
 Wiring the same way you'd wire step and direction signals in the [external|drivers documentation](/general-appendixes#external-drivers). ( note that if you will be using Open-Drain wiring, you need to add "o!" to your pin numbers, same as for step and dir ).
 

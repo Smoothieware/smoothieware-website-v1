@@ -13,24 +13,24 @@ Understanding the components of your laser system will help you configure, maint
 
 ### CO2 Laser Tube Fundamentals
 
-CO2 laser tubes are sealed glass tubes containing a gas mixture of <raw>CO2</raw>, nitrogen, and helium. When high voltage electricity passes through this gas mixture, it produces an infrared laser beam at <raw>10.6μm</raw> wavelength (invisible to the human eye).
+CO2 laser tubes are sealed glass tubes containing a gas mixture of {::nomarkdown}<raw>CO2</raw>{:/nomarkdown}, nitrogen, and helium. When high voltage electricity passes through this gas mixture, it produces an infrared laser beam at {::nomarkdown}<raw>10.6μm</raw>{:/nomarkdown} wavelength (invisible to the human eye).
 
 **Key characteristics**:
-- **Wavelength**: <raw>10.6μm</raw> infrared (invisible, requires red dot pointer for alignment)
-- **Lifespan**: Typically <raw>2000-8000 hours</raw> depending on power level and cooling
+- **Wavelength**: {::nomarkdown}<raw>10.6μm</raw>{:/nomarkdown} infrared (invisible, requires red dot pointer for alignment)
+- **Lifespan**: Typically {::nomarkdown}<raw>2000-8000 hours</raw>{:/nomarkdown} depending on power level and cooling
 - **Power degradation**: Tube performance degrades gradually over time, not sudden failure
 - **Fragility**: Glass construction requires careful handling - avoid mechanical shock
 - **Cooling requirement**: Must have continuous water cooling during operation
 
-Higher power tubes generally have shorter lifespans (a <raw>40W</raw> tube will last longer than a <raw>130W</raw> tube under similar conditions).
+Higher power tubes generally have shorter lifespans (a {::nomarkdown}<raw>40W</raw>{:/nomarkdown} tube will last longer than a {::nomarkdown}<raw>130W</raw>{:/nomarkdown} tube under similar conditions).
 
 ### Diode Laser Fundamentals
 
 Diode lasers use semiconductor laser diodes (similar to high-power LEDs) to produce coherent light.
 
 **Key characteristics**:
-- **Wavelength**: <raw>405-450nm</raw> (visible blue/violet) or <raw>808-980nm</raw> (invisible infrared)
-- **Lifespan**: <raw>10,000-50,000 hours</raw> depending on power level and cooling
+- **Wavelength**: {::nomarkdown}<raw>405-450nm</raw>{:/nomarkdown} (visible blue/violet) or {::nomarkdown}<raw>808-980nm</raw>{:/nomarkdown} (invisible infrared)
+- **Lifespan**: {::nomarkdown}<raw>10,000-50,000 hours</raw>{:/nomarkdown} depending on power level and cooling
 - **Power degradation**: Gradual reduction over time
 - **Mounting**: Often directly mounted on carriage (no beam delivery mirrors needed)
 - **Cooling requirement**: Passive heatsink for low power, active fan cooling for higher power
@@ -41,25 +41,25 @@ Diode lasers use semiconductor laser diodes (similar to high-power LEDs) to prod
 Fiber lasers use optical fiber doped with rare-earth elements as the gain medium.
 
 **Key characteristics**:
-- **Wavelength**: <raw>1064nm</raw> infrared (invisible)
-- **Lifespan**: <raw>50,000-100,000 hours</raw> (extremely long-lived)
+- **Wavelength**: {::nomarkdown}<raw>1064nm</raw>{:/nomarkdown} infrared (invisible)
+- **Lifespan**: {::nomarkdown}<raw>50,000-100,000 hours</raw>{:/nomarkdown} (extremely long-lived)
 - **Power degradation**: Minimal degradation over lifespan
 - **Beam quality**: Excellent beam quality for fine detail work
-- **Cooling requirement**: Air cooling for low power (<raw><50W</raw>), water cooling for high power
-- **Efficiency**: Very high efficiency (<raw>30-40%</raw> electrical to optical conversion)
+- **Cooling requirement**: Air cooling for low power ({::nomarkdown}<raw><50W</raw>{:/nomarkdown}), water cooling for high power
+- **Efficiency**: Very high efficiency ({::nomarkdown}<raw>30-40%</raw>{:/nomarkdown} electrical to optical conversion)
 
 ### Beam Delivery Systems
 
 **CO2 Laser - 3-Mirror System:**
 
-Most CO2 laser cutters use a <raw>3-mirror</raw> system to direct the beam from the tube to the workpiece:
+Most CO2 laser cutters use a {::nomarkdown}<raw>3-mirror</raw>{:/nomarkdown} system to direct the beam from the tube to the workpiece:
 
 1. **Mirror 1**: Deflects beam from the laser tube exit toward the moving gantry
-2. **Mirror 2**: Mounted on the <raw>Y-axis</raw> gantry, directs the beam downward to the laser head
+2. **Mirror 2**: Mounted on the {::nomarkdown}<raw>Y-axis</raw>{:/nomarkdown} gantry, directs the beam downward to the laser head
 3. **Mirror 3**: Inside the laser head, directs beam through the focus lens to the workpiece
 
 **Mirror specifications**:
-- Coated specifically for <raw>10.6μm</raw> wavelength (molybdenum or gold coating)
+- Coated specifically for {::nomarkdown}<raw>10.6μm</raw>{:/nomarkdown} wavelength (molybdenum or gold coating)
 - Must be kept scrupulously clean - contamination absorbs laser energy and damages coating
 - Alignment is critical - misalignment causes power loss and poor cut quality
 - Mirrors must be mechanically stable (vibration degrades beam quality)
@@ -92,10 +92,10 @@ Fiber lasers deliver the beam through optical fiber:
 The focus lens concentrates the laser beam to its smallest spot size for cutting. Different focal lengths serve different purposes:
 
 **Common focal lengths**:
-- **<raw>38mm</raw> (<raw>1.5"</raw>)**: Smallest spot, finest detail, shallow depth of focus - best for thin materials and fine engraving
-- **<raw>50mm</raw> (<raw>2"</raw>)**: Balanced performance - good general purpose lens
-- **<raw>63.5mm</raw> (<raw>2.5"</raw>)**: Larger spot, deeper focus - good for thicker materials
-- **<raw>101.6mm</raw> (<raw>4"</raw>)**: Largest spot, deepest focus - specialized applications for thick materials
+- **{::nomarkdown}<raw>38mm</raw>{:/nomarkdown} ({::nomarkdown}<raw>1.5"</raw>{:/nomarkdown})**: Smallest spot, finest detail, shallow depth of focus - best for thin materials and fine engraving
+- **{::nomarkdown}<raw>50mm</raw>{:/nomarkdown} ({::nomarkdown}<raw>2"</raw>{:/nomarkdown})**: Balanced performance - good general purpose lens
+- **{::nomarkdown}<raw>63.5mm</raw>{:/nomarkdown} ({::nomarkdown}<raw>2.5"</raw>{:/nomarkdown})**: Larger spot, deeper focus - good for thicker materials
+- **{::nomarkdown}<raw>101.6mm</raw>{:/nomarkdown} ({::nomarkdown}<raw>4"</raw>{:/nomarkdown})**: Largest spot, deepest focus - specialized applications for thick materials
 
 **Focus adjustment methods**:
 - **Distance shims**: Physical spacers that set exact lens-to-material distance

@@ -8,9 +8,7 @@ This allows your board to automatically turn the power supply on or off when nee
 
 ## Method 1: Direct Connection to ATX PS_ON
 
-{::nomarkdown}
 Here is how to control an ATX power supply's ON/OFF signal from a bare pin connected to the PS_ON signal:
-{:/nomarkdown}
 
 ```gcode
 switch.psu.enable                            true             # turn atx on/off
@@ -26,7 +24,7 @@ switch.psu.failsafe_set_to                   1                # so the ATX turns
 {::nomarkdown}
 <sl-alert variant="neutral" open>
   <sl-icon slot="icon" name="info-circle"></sl-icon>
-  <strong>Note:</strong> This uses the PSON pin on the power supply, which should be open-drain, thus the <code>o</code> in <code><pin>0.25o!</pin></code>.
+  <strong>Note:</strong> This uses the PSON pin on the power supply, which should be open-drain, thus the <code>o</code> in <code>0.25o!</code>.
 </sl-alert>
 {:/nomarkdown}
 
@@ -34,9 +32,7 @@ switch.psu.failsafe_set_to                   1                # so the ATX turns
 
 ## Method 2: Using a MOSFET or SSR
 
-{::nomarkdown}
 Here is how to control an ATX power supply's ON/OFF signal from a small MOSFET connected to the PS_ON signal, or to an SSR which powers a non-ATX PSU:
-{:/nomarkdown}
 
 ```gcode
 switch.psu.enable                            true             # turn atx on/off
@@ -57,16 +53,14 @@ switch.psu.output_type                       digital          # on/off only
 
 ---
 
-{::nomarkdown}
 ## G-code Commands
 
 Once configured, you can control your power supply with these commands:
 
 | Command | Function |
 | ------- | -------- |
-| <mcode>M80</mcode> | Turn power supply ON |
-| <mcode>M81</mcode> | Turn power supply OFF |
-{:/nomarkdown}
+| {::nomarkdown}<mcode>M80</mcode>{:/nomarkdown} | Turn power supply ON |
+| {::nomarkdown}<mcode>M81</mcode>{:/nomarkdown} | Turn power supply OFF |
 
 ---
 

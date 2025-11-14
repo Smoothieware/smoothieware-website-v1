@@ -124,17 +124,15 @@ M104 S200     ; Set hotend temperature to 200°C
 
 ### Command structure
 
-{::nomarkdown}
-**G-codes** (like <gcode>G0</gcode>, <gcode>G1</gcode>, <gcode>G28</gcode>):
-- Motion commands (<gcode>G0</gcode> = rapid move, <gcode>G1</gcode> = controlled move)
-- Positioning commands (<gcode>G28</gcode> = home, <gcode>G92</gcode> = set position)
-- Coordinate system commands (<gcode>G90</gcode> = absolute, <gcode>G91</gcode> = relative)
+**G-codes** (like {::nomarkdown}<gcode>G0</gcode>{:/nomarkdown}, {::nomarkdown}<gcode>G1</gcode>{:/nomarkdown}, {::nomarkdown}<gcode>G28</gcode>{:/nomarkdown}):
+- Motion commands ({::nomarkdown}<gcode>G0</gcode>{:/nomarkdown} = rapid move, {::nomarkdown}<gcode>G1</gcode>{:/nomarkdown} = controlled move)
+- Positioning commands ({::nomarkdown}<gcode>G28</gcode>{:/nomarkdown} = home, {::nomarkdown}<gcode>G92</gcode>{:/nomarkdown} = set position)
+- Coordinate system commands ({::nomarkdown}<gcode>G90</gcode>{:/nomarkdown} = absolute, {::nomarkdown}<gcode>G91</gcode>{:/nomarkdown} = relative)
 
-**M-codes** (like <mcode>M104</mcode>, <mcode>M106</mcode>):
-- Machine control (<mcode>M104</mcode> = set temp, <mcode>M106</mcode> = fan on)
-- Program control (<mcode>M0</mcode> = pause, <mcode>M30</mcode> = end program)
-- Configuration (<mcode>M92</mcode> = set steps/mm, <mcode>M203</mcode> = set max speeds)
-{:/nomarkdown}
+**M-codes** (like {::nomarkdown}<mcode>M104</mcode>{:/nomarkdown}, {::nomarkdown}<mcode>M106</mcode>{:/nomarkdown}):
+- Machine control ({::nomarkdown}<mcode>M104</mcode>{:/nomarkdown} = set temp, {::nomarkdown}<mcode>M106</mcode>{:/nomarkdown} = fan on)
+- Program control ({::nomarkdown}<mcode>M0</mcode>{:/nomarkdown} = pause, {::nomarkdown}<mcode>M30</mcode>{:/nomarkdown} = end program)
+- Configuration ({::nomarkdown}<mcode>M92</mcode>{:/nomarkdown} = set steps/mm, {::nomarkdown}<mcode>M203</mcode>{:/nomarkdown} = set max speeds)
 
 **Parameters** (like X10, F1000, S200):
 - Values that modify commands
@@ -211,22 +209,20 @@ CNC machines work in a coordinate space:
 
 ### Motion types
 
-{::nomarkdown}
-**Rapid positioning (<gcode>G0</gcode>)**:
+**Rapid positioning ({::nomarkdown}<gcode>G0</gcode>{:/nomarkdown})**:
 - Fast move to get the tool in position
 - Not for cutting/printing - just positioning
 - Uses maximum speed
 
-**Linear interpolation (<gcode>G1</gcode>)**:
+**Linear interpolation ({::nomarkdown}<gcode>G1</gcode>{:/nomarkdown})**:
 - Controlled movement at a specified feed rate
 - Used for actual work (cutting, printing, engraving)
-- Example: <gcode>G1</gcode> X100 Y50 F1000 (move to X=100, Y=50 at 1000mm/min)
+- Example: {::nomarkdown}<gcode>G1</gcode>{:/nomarkdown} X100 Y50 F1000 (move to X=100, Y=50 at 1000mm/min)
 
-**Arc interpolation (<gcode>G2</gcode>/<gcode>G3</gcode>)**:
+**Arc interpolation ({::nomarkdown}<gcode>G2</gcode>{:/nomarkdown}/{::nomarkdown}<gcode>G3</gcode>{:/nomarkdown})**:
 - Circular/curved motion
-- <gcode>G2</gcode> = clockwise, <gcode>G3</gcode> = counterclockwise
+- {::nomarkdown}<gcode>G2</gcode>{:/nomarkdown} = clockwise, {::nomarkdown}<gcode>G3</gcode>{:/nomarkdown} = counterclockwise
 - Used for smooth curves without lots of tiny line segments
-{:/nomarkdown}
 
 ### Feed rate
 
@@ -266,17 +262,15 @@ Getting this right is critical for dimensional accuracy.
 
 ### Coordinate modes
 
-{::nomarkdown}
-**Absolute positioning (<gcode>G90</gcode>)**:
+**Absolute positioning ({::nomarkdown}<gcode>G90</gcode>{:/nomarkdown})**:
 - Positions are relative to the origin
-- <gcode>G1</gcode> X100 means "go to position 100mm from origin"
+- {::nomarkdown}<gcode>G1</gcode>{:/nomarkdown} X100 means "go to position 100mm from origin"
 
-**Relative positioning (<gcode>G91</gcode>)**:
+**Relative positioning ({::nomarkdown}<gcode>G91</gcode>{:/nomarkdown})**:
 - Positions are relative to current location
-- <gcode>G1</gcode> X100 means "move 100mm from wherever you are now"
+- {::nomarkdown}<gcode>G1</gcode>{:/nomarkdown} X100 means "move 100mm from wherever you are now"
 
-Most G-code uses absolute mode (<gcode>G90</gcode>) because it's more predictable.
-{:/nomarkdown}
+Most G-code uses absolute mode ({::nomarkdown}<gcode>G90</gcode>{:/nomarkdown}) because it's more predictable.
 
 For more details on motion control, see [Motion Control](motion-control).
 
@@ -441,9 +435,7 @@ So <setting v1="alpha_steps_per_mm" v2="actuator.x.steps_per_mm"></setting> conf
 
 ### Config override file
 
-{::nomarkdown}
 Certain M-codes can modify settings at runtime and save them to `config-override`:
-{:/nomarkdown}
 
 ```
 M92 X80 Y80 Z400       ; Set steps per mm
@@ -455,9 +447,7 @@ If `config-override` exists:
 - Values in override file take precedence
 - This lets you tune settings without editing config
 
-{::nomarkdown}
-**To remove overrides**: Delete `config-override` or use <mcode>M502</mcode>
-{:/nomarkdown}
+**To remove overrides**: Delete `config-override` or use {::nomarkdown}<mcode>M502</mcode>{:/nomarkdown}
 
 See [Configuring Smoothie](configuring-smoothie) for complete details and [Configuration Options](configuration-options) for all available options.
 
@@ -789,10 +779,8 @@ Let's clear up some common confusion:
 ✅ Wrong. "ok" means "received and queued". Use <mcode>M400</mcode> to wait for actual completion.
 {:/nomarkdown}
 
-{::nomarkdown}
 **❌ "I can edit config while the machine is running"**
-✅ Wrong. Config changes require board reset. Use M-codes (<mcode>M92</mcode>, <mcode>M203</mcode>, etc.) for runtime changes, save with <mcode>M500</mcode> if desired.
-{:/nomarkdown}
+✅ Wrong. Config changes require board reset. Use M-codes ({::nomarkdown}<mcode>M92</mcode>{:/nomarkdown}, {::nomarkdown}<mcode>M203</mcode>{:/nomarkdown}, etc.) for runtime changes, save with {::nomarkdown}<mcode>M500</mcode>{:/nomarkdown} if desired.
 
 **❌ "More acceleration is always better"**
 ✅ Wrong. Excessive acceleration causes ringing, vibration, and mechanical wear. Tune to your machine's mechanical capabilities.

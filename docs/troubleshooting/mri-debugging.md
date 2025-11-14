@@ -223,7 +223,7 @@ And reduce the base stepping frequency:
 base_stepping_frequency 50000 # Base frequency for stepping
 ```
 
-Note: The <setting v1="base_stepping_frequency" v2="system.step_frequency"></setting> setting controls the base frequency for stepping.
+Note: The {::nomarkdown}<setting v1="base_stepping_frequency" v2="system.step_frequency"></setting>{:/nomarkdown} setting controls the base frequency for stepping.
 
 {::nomarkdown}
 <sl-alert variant="primary" open>

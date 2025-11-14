@@ -71,12 +71,10 @@ You've probably tried:
 ## Easy Transition for GRBL Users
 
 ### You Already Know Most of This:
-{::nomarkdown}
 - ✅ **Same G-Code** - Standard RS274/NGC G-code
-- ✅ **Familiar Commands** - <gcode>G0</gcode>, <gcode>G1</gcode>, <gcode>G2</gcode>, <gcode>G3</gcode>, <mcode>M3</mcode>, <mcode>M5</mcode>, etc. all work
+- ✅ **Familiar Commands** - {::nomarkdown}<gcode>G0</gcode>{:/nomarkdown}, {::nomarkdown}<gcode>G1</gcode>{:/nomarkdown}, {::nomarkdown}<gcode>G2</gcode>{:/nomarkdown}, {::nomarkdown}<gcode>G3</gcode>{:/nomarkdown}, {::nomarkdown}<mcode>M3</mcode>{:/nomarkdown}, {::nomarkdown}<mcode>M5</mcode>{:/nomarkdown}, etc. all work
 - ✅ **Compatible Software** - bCNC, CNCjs, Universal G-Code Sender
 - ✅ **Similar Workflow** - Same CAM → controller → machine process
-{:/nomarkdown}
 
 ### What's Different (Better):
 - **Config in Text File** - Open `config.txt`, edit, save, reboot. No compiling.

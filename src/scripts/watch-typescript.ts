@@ -70,15 +70,16 @@ async function compile_all_typescript_files(): Promise<void> {
 
         try {
             // Use Bun's build API to compile TypeScript to JavaScript
-            // Using splitting: false to bundle all imports into a single output file
+            // Using ESM format with external jQuery to share the same jQuery instance across all modules
             const result = await Bun.build({
                 entrypoints: [input_path],
                 outdir:      JS_OUTPUT_DIR,
                 target:      'browser',
-                format:      'iife',
+                format:      'esm',
                 minify:      false,
                 sourcemap:   'none',
-                splitting:   false,  // Bundle all imports into the output file
+                splitting:   true,     // Enable code splitting for shared dependencies
+                external:    ['jquery'], // jQuery loaded via importmap in HTML
             });
 
             // Check for build errors

@@ -97,10 +97,8 @@ No need to touch the front panel wiring (pot, switches, Vu meter).
 
 ### Level shifter
 
-{::nomarkdown}
-Smoothie board Pin <pin>2.5</pin> on JP 33 is 3.3V you will need a level shifter to 5V (2GBP on eBay),
+Smoothie board Pin {::nomarkdown}<pin>2.5</pin>{:/nomarkdown} on JP 33 is 3.3V you will need a level shifter to 5V (2GBP on eBay),
 see schema for wiring.
-{:/nomarkdown}
 
 {::nomarkdown}
 <a href="/images/smoothie-attempt.png">
@@ -164,47 +162,41 @@ Changes in config are:
 - LCD (true)
 - Network (enable true, added line for network hostname SmoothK40)
 
-{::nomarkdown}
 ```markdown
 # Arm solution configuration: Cartesian robot. Translates mm positions into stepper positions
 alpha_steps_per_mm                           157.575               # Steps per mm for alpha stepper (based on my measurements)
 beta_steps_per_mm                            157.575               # Steps per mm for beta stepper
 gamma_steps_per_mm                           1600                  # Steps per mm for gamma stepper
 ```
-{:/nomarkdown}
 
-{::nomarkdown}
 ```markdown
 # Stepper module pins (ports, and pin numbers, appending "!" to the number will invert a pin)
-alpha_step_pin                               <pin>2.0</pin>                   # Pin for alpha stepper step signal
-alpha_dir_pin                                <pin>0.5!</pin>                  # Pin for alpha stepper direction (inverted with `!`)
-alpha_en_pin                                 <pin>0.4</pin>                   # Pin for alpha enable pin
+alpha_step_pin                               {::nomarkdown}<pin>2.0</pin>{:/nomarkdown}                   # Pin for alpha stepper step signal
+alpha_dir_pin                                {::nomarkdown}<pin>0.5!</pin>{:/nomarkdown}                  # Pin for alpha stepper direction (inverted with `!`)
+alpha_en_pin                                 {::nomarkdown}<pin>0.4</pin>{:/nomarkdown}                   # Pin for alpha enable pin
 alpha_current                                0.6                   # X stepper motor current
 alpha_max_rate                               30000.0               # mm/min
 
-beta_step_pin                                <pin>2.1</pin>                   # Pin for beta stepper step signal
-beta_dir_pin                                 <pin>0.11</pin>                  # Pin for beta stepper direction
-beta_en_pin                                  <pin>0.10</pin>                  # Pin for beta enable
+beta_step_pin                                {::nomarkdown}<pin>2.1</pin>{:/nomarkdown}                   # Pin for beta stepper step signal
+beta_dir_pin                                 {::nomarkdown}<pin>0.11</pin>{:/nomarkdown}                  # Pin for beta stepper direction
+beta_en_pin                                  {::nomarkdown}<pin>0.10</pin>{:/nomarkdown}                  # Pin for beta enable
 beta_current                                 0.5                   # Y stepper motor current
 beta_max_rate                                30000.0               # mm/min
 ```
-{:/nomarkdown}
 
 ...
 
-{::nomarkdown}
 ```markdown
 # Laser module configuration
 laser_module_enable                          false                 # Whether to activate the laser module at all. All configuration is
                                                                   # ignored if false.
-laser_module_pin                             <pin>2.5!</pin>                  # this pin (connect to PSU IN) PWM to control the laser. Only P2.0 - P2.5, P1.18, P1.20, P1.21, P1.23, P1.24, P1.26, P3.25, P3.26
+laser_module_pin                             {::nomarkdown}<pin>2.5!</pin>{:/nomarkdown}                  # this pin (connect to PSU IN) PWM to control the laser. Only P2.0 - P2.5, P1.18, P1.20, P1.21, P1.23, P1.24, P1.26, P3.25, P3.26
                                                                   # can be used since laser requires hardware PWM
 laser_module_maximum_power                   1.0                   # this is the maximum duty cycle that will be applied to the laser (Potentiometer like)
 laser_module_tickle_power                    0.0                   # this duty cycle will be used for travel moves to keep the laser
                                                                   # active without actually burning
 laser_module_pwm_period                      20                    # this sets the pwm frequency as the period in microseconds
 ```
-{:/nomarkdown}
 
 ```markdown
 # Network settings
@@ -226,9 +218,7 @@ network.hostname                             SmoothK40             # Some DHCP s
 </a>
 {:/nomarkdown}
 
-{::nomarkdown}
-Command: tracing (<gcode>G1</gcode>) a line from your actual position to (X100, Y100) full laser power (S1)
-{:/nomarkdown}
+Command: tracing ({::nomarkdown}<gcode>G1</gcode>{:/nomarkdown}) a line from your actual position to (X100, Y100) full laser power (S1)
 
 # Software
 

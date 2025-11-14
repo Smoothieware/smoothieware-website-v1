@@ -27,15 +27,13 @@ Connect your PSU to the power input connector for those FETs (providing power to
 
 Smoothie connects/disconnects the element's ground as needed to maintain temperature or as requested by G-codes.
 
-{::nomarkdown}
 There are three main pairs of MOSFETs on the board:
 
-- **Big MOSFET pair**: Their outputs are labeled **P<pin>2.7</pin>** and **P<pin>2.5</pin>** on the schematic, the input connector for them is found between them. They are found on the 4X and 5X boards. To power those MOSFETs, you need to provide them with power by wiring their power input to the power supply.
+- **Big MOSFET pair**: Their outputs are labeled **P{::nomarkdown}<pin>2.7</pin>{:/nomarkdown}** and **P{::nomarkdown}<pin>2.5</pin>{:/nomarkdown}** on the schematic, the input connector for them is found between them. They are found on the 4X and 5X boards. To power those MOSFETs, you need to provide them with power by wiring their power input to the power supply.
 
-- **Small MOSFET pair**: Their outputs are labeled **P<pin>2.6</pin>** and **P<pin>2.4</pin>** on the schematic, the input connector for them is found by their side, between P<pin>2.6</pin> and P<pin>1.23</pin>. They are found on all of the boards. To power those MOSFETs, you need to provide them with power by wiring their power input to the power supply.
+- **Small MOSFET pair**: Their outputs are labeled **P{::nomarkdown}<pin>2.6</pin>{:/nomarkdown}** and **P{::nomarkdown}<pin>2.4</pin>{:/nomarkdown}** on the schematic, the input connector for them is found by their side, between P{::nomarkdown}<pin>2.6</pin>{:/nomarkdown} and P{::nomarkdown}<pin>1.23</pin>{:/nomarkdown}. They are found on all of the boards. To power those MOSFETs, you need to provide them with power by wiring their power input to the power supply.
 
-- **Mixed MOSFET pair**: Their outputs are labeled **P<pin>1.22</pin>** and **P<pin>1.23</pin>** on the schematic. The pair is called "mixed" because it consists of one big MOSFET and one small MOSFET. They do not have a specific input, they take power directly from VBB (the Stepper motors power input described in the Stepper Motors chapter). To power those MOSFETs, you need to provide them with power by wiring their power input (which is the same as the one for the stepper motors) to the power supply.
-{:/nomarkdown}
+- **Mixed MOSFET pair**: Their outputs are labeled **P{::nomarkdown}<pin>1.22</pin>{:/nomarkdown}** and **P{::nomarkdown}<pin>1.23</pin>{:/nomarkdown}** on the schematic. The pair is called "mixed" because it consists of one big MOSFET and one small MOSFET. They do not have a specific input, they take power directly from VBB (the Stepper motors power input described in the Stepper Motors chapter). To power those MOSFETs, you need to provide them with power by wiring their power input (which is the same as the one for the stepper motors) to the power supply.
 
 {::nomarkdown}
 <sl-alert variant="primary" open>

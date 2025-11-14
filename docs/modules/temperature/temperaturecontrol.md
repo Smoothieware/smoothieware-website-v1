@@ -35,7 +35,7 @@ etc ...
 
 This will create and configure two separate TemperatureControl modules that will act completely independently from each other.
 
-The line that effectively "creates" the module is the <setting v1="temperature_control.{name}.enable" v2="temperature control.enable"></setting> option. If set to true, a module is created and further configuration is read. If set to false, further configuration for this module is ignored as no module is created.
+The line that effectively "creates" the module is the {::nomarkdown}<setting v1="temperature_control.{name}.enable" v2="temperature control.enable"></setting>{:/nomarkdown} option. If set to true, a module is created and further configuration is read. If set to false, further configuration for this module is ignored as no module is created.
 
 In the **Configuration** section below, the first two parts (`temperature_control.module_name`) of the configuration are sometimes omitted for conciseness, but have to be added in your actual configuration file ([see example](/configuring-smoothie)).
 
@@ -49,7 +49,7 @@ To reach a desired temperature, you must be able to know what the current temper
 
 A given controller board only has a given number of [ADCs](http://en.wikipedia.org/wiki/Analog-to-digital_converter) (analog (temperature) to digital (Smoothie) converter) capable pins.
 
-On the [Smoothieboard](smoothieboard) for example, there are 4 thermistor inputs, labelled from **T0** (or th1) to **T3** (or th4), and corresponding in the same order to the pins <pin>0.23</pin> to <pin>0.26</pin>. T0 is usually used for the hotend, and T1 for the bed.
+On the [Smoothieboard](smoothieboard) for example, there are 4 thermistor inputs, labelled from **T0** (or th1) to **T3** (or th4), and corresponding in the same order to the pins {::nomarkdown}<pin>0.23</pin>{:/nomarkdown} to {::nomarkdown}<pin>0.26</pin>{:/nomarkdown}. T0 is usually used for the hotend, and T1 for the bed.
 
 Thermistor inputs are not polarized, the direction you connect them in on your board is not important.
 
@@ -59,12 +59,14 @@ temperature_control.hotend.thermistor_pin        0.23
 
 | Smoothieboard thermistor input name | T0 (th1) | T1 (th2) | T2(th3) | T3(th4) |
 | ----------------------------------- | -------- | -------- | ------- | ------- |
-| Pin for configuration               | <pin>0.23</pin> | <pin>0.24</pin> | <pin>0.25</pin> | <pin>0.26</pin> |
+| Pin for configuration               | {::nomarkdown}<pin>0.23</pin>{:/nomarkdown} | {::nomarkdown}<pin>0.24</pin>{:/nomarkdown} | {::nomarkdown}<pin>0.25</pin>{:/nomarkdown} | {::nomarkdown}<pin>0.26</pin>{:/nomarkdown} |
 
+{::nomarkdown}
 <sl-alert variant="warning" open>
   <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
   You read the value of the thermistor inputs by sending the <mcode>M105</mcode> command.<br><br>If you receive a value of <raw>inf</raw> for an input, for example: <raw>ok T:inf /0.0 @0 B:24.1 /0.0 @</raw> It means the sensor is not properly connected, or it is damaged in some way.
 </sl-alert>
+{:/nomarkdown}
 
 ##### Choosing the right thermistor
 
@@ -93,10 +95,10 @@ Here is an example of how to connect the [Adafruit Thermocouple Amplifier MAX318
 | ------------- | -------------- |
 | 3v3           | Vin            |
 | GND           | GND            |
-| <pin>0.16</pin> CS | CS             |
-| <pin>0.18</pin> MOSI | Not used       |
-| <pin>0.15</pin> SCK | CLK            |
-| <pin>0.17</pin> MISO | DO             |
+| {::nomarkdown}<pin>0.16</pin>{:/nomarkdown} CS | CS             |
+| {::nomarkdown}<pin>0.18</pin>{:/nomarkdown} MOSI | Not used       |
+| {::nomarkdown}<pin>0.15</pin>{:/nomarkdown} SCK | CLK            |
+| {::nomarkdown}<pin>0.17</pin>{:/nomarkdown} MISO | DO             |
 
 To configure Smoothie to use the thermocouple connected like this, replace the thermistor and thermistor_pin parameters with the following:
 ```markdown
@@ -181,11 +183,9 @@ temperature_control.hotend.heater_pin        2.7
 
 By default, Smoothie will not heat anything. That could be a dangerous thing to do unwatched.
 
-{::nomarkdown}
 You have to send <a href="http://reprap.org/wiki/G-code">G-codes</a> to turn your heater on and off, set a given temperature etc.
 
-There is a set of widely used G-codes corresponding to different usual actions (for example setting the hotend temperature is <mcode>M104</mcode> in the <a href="http://reprap.org">Reprap</a> world).
-{:/nomarkdown}
+There is a set of widely used G-codes corresponding to different usual actions (for example setting the hotend temperature is {::nomarkdown}<mcode>M104</mcode>{:/nomarkdown} in the <a href="http://reprap.org">Reprap</a> world).
 
 But as you are defining your own custom temperature controller, you have to choose what gcode will be used to control it, Smoothie doesn't know what exactly it's controlling.
 
@@ -200,11 +200,9 @@ temperature_control.hotend.set_and_wait_m_code   109
 
 ### Reading with G-code
 
-{::nomarkdown}
-There is a single g-code used to read temperature for all the temperature_control modules at the same time: <mcode>M105</mcode>
+There is a single g-code used to read temperature for all the temperature_control modules at the same time: {::nomarkdown}<mcode>M105</mcode>{:/nomarkdown}
 
 But it has to have a way to tell you what temperature corresponds to what specific module.
-{:/nomarkdown}
 
 There is a standard format for this which was used before Smoothie and still is today:
 
@@ -270,9 +268,7 @@ When this happens, Smoothie will detect the problem, turn off all heaters, and e
 Temperature reading is unreliable on T, HALT asserted - reset or M999 required
 ```
 
-{::nomarkdown}
-You need to solve the issue, and then either reset the board or issue the <mcode>M999</mcode> command.
-{:/nomarkdown}
+You need to solve the issue, and then either reset the board or issue the {::nomarkdown}<mcode>M999</mcode>{:/nomarkdown} command.
 
 You do not need to do anything to activate this safety check.
 
@@ -294,18 +290,16 @@ You activate this safety check (and you should) by adding the following to your 
 temperature_control.module_name.max_temp      300
 ```
 
-Once this is set, it will be impossible to set temperatures higher than the <setting v1="temperature_control.{name}.max_temp" v2="temperature control.max_temp"></setting> value.
+Once this is set, it will be impossible to set temperatures higher than the {::nomarkdown}<setting v1="temperature_control.{name}.max_temp" v2="temperature control.max_temp"></setting>{:/nomarkdown} value.
 
-Also, if the temperature reaches this <setting v1="temperature_control.{name}.max_temp" v2="temperature control.max_temp"></setting> temperature, Smoothie will turn off all heaters, go into HALT state, and print out the following message:
+Also, if the temperature reaches this {::nomarkdown}<setting v1="temperature_control.{name}.max_temp" v2="temperature control.max_temp"></setting>{:/nomarkdown} temperature, Smoothie will turn off all heaters, go into HALT state, and print out the following message:
 
 ```markdown
 Error: MINTEMP or MAXTEMP triggered on T. Check your temperature sensors!
 HALT asserted - reset or M999 required
 ```
 
-{::nomarkdown}
-You need to solve the issue, and then either reset the board or issue the <mcode>M999</mcode> command.
-{:/nomarkdown}
+You need to solve the issue, and then either reset the board or issue the {::nomarkdown}<mcode>M999</mcode>{:/nomarkdown} command.
 
 The most likely cause for this problem is that a heater mosfet is stuck being always active. If this is the case, Smoothie cannot control that heater anymore, and nothing the firmware can do can solve the issue, and you are on your way to a fire.
 

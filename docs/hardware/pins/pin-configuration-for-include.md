@@ -146,7 +146,7 @@ Use repeater mode (`@`) when you have long cables prone to noise, or when you ne
 my_pin_name 2.11!o^
 ```
 
-In this example, pin <pin>2.11</pin> is configured with:
+In this example, pin {::nomarkdown}<pin>2.11</pin>{:/nomarkdown} is configured with:
 - `!` - Inverted output
 - `o` - Open-drain mode
 - `^` - Pull-up enabled

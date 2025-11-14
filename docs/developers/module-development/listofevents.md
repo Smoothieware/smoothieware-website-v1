@@ -136,17 +136,15 @@ void MyModule::on_halt(void *argument) {
 
 ### Common Module Patterns
 
-{::nomarkdown}
-<strong>Temperature Control</strong> registers for:
-- <code>ON_IDLE</code> - PID calculations and sensor reading
-- <code>ON_SECOND_TICK</code> - Temperature reporting and monitoring
-- <code>ON_HALT</code> - Emergency heater shutdown
-- <code>ON_GCODE_RECEIVED</code> - <mcode>M104</mcode>/<mcode>M109</mcode> temperature commands
+**Temperature Control** registers for:
+- `ON_IDLE` - PID calculations and sensor reading
+- `ON_SECOND_TICK` - Temperature reporting and monitoring
+- `ON_HALT` - Emergency heater shutdown
+- `ON_GCODE_RECEIVED` - {::nomarkdown}<mcode>M104</mcode>{:/nomarkdown}/{::nomarkdown}<mcode>M109</mcode>{:/nomarkdown} temperature commands
 
-<strong>Endstops</strong> registers for:
-- <code>ON_IDLE</code> - Checking endstop states during moves
-- <code>ON_GCODE_RECEIVED</code> - <mcode>M119</mcode> endstop status, homing commands
-{:/nomarkdown}
+**Endstops** registers for:
+- `ON_IDLE` - Checking endstop states during moves
+- `ON_GCODE_RECEIVED` - {::nomarkdown}<mcode>M119</mcode>{:/nomarkdown} endstop status, homing commands
 
 **Laser** registers for:
 - `ON_HALT` - Immediately disable laser for safety

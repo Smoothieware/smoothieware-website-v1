@@ -1,18 +1,16 @@
 # Configuring Z height
 
-{::nomarkdown}
-After homing (with <gcode>G28</gcode>), the machine knows it is at Z maximum position if your machine homes to max, and at Z minimum position if your machine homes to min.
-{:/nomarkdown}
+After homing (with {::nomarkdown}<gcode>G28</gcode>{:/nomarkdown}), the machine knows it is at Z maximum position if your machine homes to max, and at Z minimum position if your machine homes to min.
 
-Because of this, it will read the configuration option <setting v1="gamma_max"></setting> or <setting v1="gamma_min"></setting> depending and set the current Z position to that value.
+Because of this, it will read the configuration option {::nomarkdown}<setting v1="gamma_max"></setting>{:/nomarkdown} or {::nomarkdown}<setting v1="gamma_min"></setting>{:/nomarkdown} depending and set the current Z position to that value.
 
-So after homing, the Z position is set to <setting v1="gamma_max"></setting> or <setting v1="gamma_min"></setting>.
+So after homing, the Z position is set to {::nomarkdown}<setting v1="gamma_max"></setting>{:/nomarkdown} or {::nomarkdown}<setting v1="gamma_min"></setting>{:/nomarkdown}.
 
-This means for example if you home to max that if your hotend is 300mm above your bed after homing, and you set <setting v1="gamma_max"></setting> to 300, after homing, you can just tell the machine to go to Z position 0, and it will go to the bed's height.
+This means for example if you home to max that if your hotend is 300mm above your bed after homing, and you set {::nomarkdown}<setting v1="gamma_max"></setting>{:/nomarkdown} to 300, after homing, you can just tell the machine to go to Z position 0, and it will go to the bed's height.
 
-To put it simply, setting <setting v1="gamma_max"></setting> or <setting v1="gamma_min"></setting> is your way of telling Smoothie what the distance is between your bed, and the hotend, when the machine has just homed.
+To put it simply, setting {::nomarkdown}<setting v1="gamma_max"></setting>{:/nomarkdown} or {::nomarkdown}<setting v1="gamma_min"></setting>{:/nomarkdown} is your way of telling Smoothie what the distance is between your bed, and the hotend, when the machine has just homed.
 
-To find the right value for <setting v1="gamma_max"></setting> or <setting v1="gamma_min"></setting> do one of the following: 
+To find the right value for {::nomarkdown}<setting v1="gamma_max"></setting>{:/nomarkdown} or {::nomarkdown}<setting v1="gamma_min"></setting>{:/nomarkdown} do one of the following: 
 
 ## Simplified manual adjustment method (Recommended method)
 
@@ -30,9 +28,7 @@ G0 Z0
 
 Then move the head to the bed by jogging, using [Pronterface](pronterface)'s arrows, the panel, the web interface or whatever other method is adequate in your case.
 
-{::nomarkdown}
-Finally issue the <mcode>M306</mcode> Z0 command which will use the current Z position as a homing offset:
-{:/nomarkdown}
+Finally issue the {::nomarkdown}<mcode>M306</mcode>{:/nomarkdown} Z0 command which will use the current Z position as a homing offset:
 
 {::nomarkdown}
 <sl-alert variant="neutral" open>
@@ -45,9 +41,7 @@ Finally issue the <mcode>M306</mcode> Z0 command which will use the current Z po
 M306 Z0
 ```
 
-{::nomarkdown}
-Then save to the SD card with <mcode>M500</mcode>:
-{:/nomarkdown}
+Then save to the SD card with {::nomarkdown}<mcode>M500</mcode>{:/nomarkdown}:
 
 ```
 M500
@@ -84,17 +78,13 @@ Once the head is exactly at the bed, issue this command:
 M114
 ```
 
-This will return the position of all axes. The current position of the Z axis is the value you must use as your <setting v1="gamma_max"></setting> value.
+This will return the position of all axes. The current position of the Z axis is the value you must use as your {::nomarkdown}<setting v1="gamma_max"></setting>{:/nomarkdown} value.
 
 Now simply edit the [configuration file](configuring-smoothie) to set this value, and reset the board.
 
-{::nomarkdown}
-Alternatively (delta only) you can use the <mcode>M665</mcode> Z(distance) command to set the value in the <a href="configuring-smoothie">config override system</a>, and <mcode>M500</mcode> to save that value to the SD card.
-{:/nomarkdown}
+Alternatively (delta only) you can use the {::nomarkdown}<mcode>M665</mcode>{:/nomarkdown} Z(distance) command to set the value in the [config override system](configuring-smoothie), and {::nomarkdown}<mcode>M500</mcode>{:/nomarkdown} to save that value to the SD card.
 
-{::nomarkdown}
-The <setting v1="gamma_max"></setting> value in the configuration file is ignored if <mcode>M665</mcode> is set and saved.
-{:/nomarkdown}
+The {::nomarkdown}<setting v1="gamma_max"></setting>{:/nomarkdown} value in the configuration file is ignored if {::nomarkdown}<mcode>M665</mcode>{:/nomarkdown} is set and saved.
 
 Next time you home, the machine will know how high above the bed it is.
 
@@ -127,23 +117,15 @@ G30
 
 This will report the distance traveled by the probe.
 
-{::nomarkdown}
-Your <setting v1="gamma_max"></setting> value is that reported distance, plus the z probe offset ( distance between the probe triggering point, and the bed ).
-{:/nomarkdown}
+Your {::nomarkdown}<setting v1="gamma_max"></setting>{:/nomarkdown} value is that reported distance, plus the z probe offset ( distance between the probe triggering point, and the bed ).
 
-{::nomarkdown}
-For example, if you home, then do <gcode>G30</gcode>, and it reports a height of 311mm, and your probe is 7mm below your hotend, then your <setting v1="gamma_max"></setting> is 311 + 7 = 318mm.
-{:/nomarkdown}
+For example, if you home, then do {::nomarkdown}<gcode>G30</gcode>{:/nomarkdown}, and it reports a height of 311mm, and your probe is 7mm below your hotend, then your {::nomarkdown}<setting v1="gamma_max"></setting>{:/nomarkdown} is 311 + 7 = 318mm.
 
 Simply edit the [configuration file](configuring-smoothie) to set this value, and reset the board.
 
-{::nomarkdown}
-Alternatively you can use the <mcode>M665</mcode> Z(distance) command to set the value in the <a href="configuring-smoothie">config override system</a>, and <mcode>M500</mcode> to save that value to the SD card.
-{:/nomarkdown}
+Alternatively you can use the {::nomarkdown}<mcode>M665</mcode>{:/nomarkdown} Z(distance) command to set the value in the [config override system](configuring-smoothie), and {::nomarkdown}<mcode>M500</mcode>{:/nomarkdown} to save that value to the SD card.
 
-{::nomarkdown}
-The <setting v1="gamma_max"></setting> value in the configuration file is ignored if <mcode>M665</mcode> is set and saved.
-{:/nomarkdown}
+The {::nomarkdown}<setting v1="gamma_max"></setting>{:/nomarkdown} value in the configuration file is ignored if {::nomarkdown}<mcode>M665</mcode>{:/nomarkdown} is set and saved.
 
 Next time you home, the machine will know how high above the bed it is.
 
@@ -178,13 +160,9 @@ When `nnn` is the distance between your probe's triggering point, and the bed (o
 </a>
 {:/nomarkdown}
 
-{::nomarkdown}
-The <gcode>G30</gcode> Znnn command moves the head until the probe triggers, then sets the current Z height to nnn.
-{:/nomarkdown}
+The {::nomarkdown}<gcode>G30</gcode>{:/nomarkdown} Znnn command moves the head until the probe triggers, then sets the current Z height to nnn.
 
-{::nomarkdown}
-So for example if your probe triggers when the hotend is 5mm above the bed, do <gcode>G30</gcode> Z5, and if your probe triggers exactly when the hotend touches the bed, do <gcode>G30</gcode> Z0.
-{:/nomarkdown}
+So for example if your probe triggers when the hotend is 5mm above the bed, do {::nomarkdown}<gcode>G30</gcode>{:/nomarkdown} Z5, and if your probe triggers exactly when the hotend touches the bed, do {::nomarkdown}<gcode>G30</gcode>{:/nomarkdown} Z0.
 
 {::nomarkdown}
 <sl-alert variant="neutral" open>
@@ -193,6 +171,4 @@ So for example if your probe triggers when the hotend is 5mm above the bed, do <
 </sl-alert>
 {:/nomarkdown}
 
-{::nomarkdown}
-If you are doing this manually you can save time by jogging the Z to within 5mm of the bed then issue the <gcode>G30</gcode> Z0.
-{:/nomarkdown}
+If you are doing this manually you can save time by jogging the Z to within 5mm of the bed then issue the {::nomarkdown}<gcode>G30</gcode>{:/nomarkdown} Z0.

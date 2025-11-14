@@ -15,11 +15,9 @@ The config settings for Endstops are as follows:
 
 ## Reading
 
-{::nomarkdown}
-You can use the <mcode>M119</mcode> command to show the status of the configured endstops.
+You can use the {::nomarkdown}<mcode>M119</mcode>{:/nomarkdown} command to show the status of the configured endstops.
 
-<mcode>M119</mcode> answers this way:
-{:/nomarkdown}
+{::nomarkdown}<mcode>M119</mcode>{:/nomarkdown} answers this way:
 
 ```
 min_x:0 min_y:0 min_z:0 max_x:0 max_y:0 max_z:0
@@ -28,9 +26,7 @@ ok
 
 If an endstop is not connected the pin should be set to « `nc` » (meaning "not connected"), and its value will not be reported.
 
-{::nomarkdown}
-This is particularly useful when setting up your machine: you can issue the <mcode>M119</mcode> command with your endstops unpressed, check that the values are 0 (which would be correct), and issue the command again with your endstops pressed, check that the values are all 1 (which is correct for pressed endstops).
-{:/nomarkdown}
+This is particularly useful when setting up your machine: you can issue the {::nomarkdown}<mcode>M119</mcode>{:/nomarkdown} command with your endstops unpressed, check that the values are 0 (which would be correct), and issue the command again with your endstops pressed, check that the values are all 1 (which is correct for pressed endstops).
 
 If an endstop always reports 0, it probably means that it is not wired correctly.
 
@@ -59,9 +55,7 @@ beta_min_endstop   1.26^!
 
 ## Homing
 
-{::nomarkdown}
-You use the <gcode>G28</gcode> command to home your machine.
-{:/nomarkdown}
+You use the {::nomarkdown}<gcode>G28</gcode>{:/nomarkdown} command to home your machine.
 
 For example:
 
@@ -101,10 +95,8 @@ If your axis is moving away from the endstop when homing, you need to invert you
 
 ## Limit switches
 
-{::nomarkdown}
 Endstops may be configured to act as limit switches, during normal operations if any enabled limit switch is triggered the system will halt and all operations will stop, it will send a `!!` command to the host to stop it sending any more data (a recent dev octoprint and recent [Pronterface](pronterface) support this).
-Sending `$X`, or sending <mcode>M999</mcode>, or a reset will be required to continue. **NOTE** While any limit switch is still triggered the limits are disabled, so make sure you jog away from the limit otherwise you can crash into the limit switch. This is far from perfect but it is a compromise to allow you to jog off the endstop, if this were not the case it would only be possible to manually push the axis off the limit switch. A possible workaround is to also enable soft endstops as described below, and config it to ignore moves that will move past the soft endstop, if you do this then it will only allow the axis to jog away from the endstop.
-{:/nomarkdown}
+Sending `$X`, or sending {::nomarkdown}<mcode>M999</mcode>{:/nomarkdown}, or a reset will be required to continue. **NOTE** While any limit switch is still triggered the limits are disabled, so make sure you jog away from the limit otherwise you can crash into the limit switch. This is far from perfect but it is a compromise to allow you to jog off the endstop, if this were not the case it would only be possible to manually push the axis off the limit switch. A possible workaround is to also enable soft endstops as described below, and config it to ignore moves that will move past the soft endstop, if you do this then it will only allow the axis to jog away from the endstop.
 
 To enable endstops as limit switches the following config options can be used, they are disabled by default.
 

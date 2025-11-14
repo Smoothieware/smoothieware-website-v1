@@ -28,9 +28,9 @@ Smoothie and GRBL use different commands. Here is a table showing corresponding 
 | ------------ | -------------------- | ------ |
 | `$`          | `help`               | Display help |
 | `$$`         | `cat /sd/config`     | Display current configuration |
-| `$#`         | <mcode>M114</mcode>, `M114.1`, `M114.2` | Display current positions |
+| `$#`         | {::nomarkdown}<mcode>M114</mcode>{:/nomarkdown}, `M114.1`, `M114.2` | Display current positions |
 | `$I`         | `version`            | Display build info |
-| `$X`         | <mcode>M999</mcode>               | Exit alarm mode |
+| `$X`         | {::nomarkdown}<mcode>M999</mcode>{:/nomarkdown} | Exit alarm mode |
 | `$H`         | `$H`                 | Run homing cycle |
 
 ## $2 – Step port invert mask:binary

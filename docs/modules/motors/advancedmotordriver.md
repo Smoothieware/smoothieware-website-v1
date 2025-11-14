@@ -115,25 +115,23 @@ alpha_step_pin                               2.0              # Pin for alpha st
 alpha_dir_pin                                0.5              # Pin for alpha stepper direction
 ```
 
-{::nomarkdown}
 ## M code settings
 
 Many settings can be made on the fly with M codes, many of these are specific to certain chips:
 
-- <mcode>M906</mcode> Xnnn change current to nnn in milliamps for motor designator X
+- {::nomarkdown}<mcode>M906</mcode>{:/nomarkdown} Xnnn change current to nnn in milliamps for motor designator X
 
-- <mcode>M909</mcode> Ynn set microstepping for motor designator Y to 1/nn
+- {::nomarkdown}<mcode>M909</mcode>{:/nomarkdown} Ynn set microstepping for motor designator Y to 1/nn
 
 - M909.1 Xnnn set microstepping and also change steps/mm accordingly
 
-- <mcode>M911</mcode> will dump all the registers and status of all the motors
+- {::nomarkdown}<mcode>M911</mcode>{:/nomarkdown} will dump all the registers and status of all the motors
 
 - M911.1 Pn (or `X0`) will dump the registers and status of the selected motor. `R0` will request format in processing machine-readable format
 
 - M911.2 Pn (or `Y0`) `Rxxx Vyyy` sets Register xxx to value yyy for motor nnn, xxx == 255 writes the registers, xxx == 0 shows what registers are mapped to what
 
 - M911.3 Pn (or `X0`) will set the options based on the parameters passed as below...
-{:/nomarkdown}
   - TMC2660 (& TMC2130 NOT IN EDGE BUILD YET):
     - `M911.3 Onnn Qnnn` set StallGuard Threshold O=stall_guard_threshold, Q=stall_guard_filter_enabled
     - `M911.3 Hnnn Innn Jnnn Knnn Lnnn` set CoolStep Configuration H=lower_SG_threshold, I=SG_hysteresis, J=current_decrement_step_size, K=current_increment_step_size, L=lower_current_limit
@@ -158,6 +156,4 @@ Many settings can be made on the fly with M codes, many of these are specific to
     - `M911.3 S17 Un Vn Wn Xn` set Diag1options U=stall, V=index, W=onstate, X=pushpull
 - DRV8711: has none at the moment, just set the raw register.
 
-{::nomarkdown}
-These are saved with <mcode>M500</mcode> and override anything set in config.
-{:/nomarkdown}
+These are saved with {::nomarkdown}<mcode>M500</mcode>{:/nomarkdown} and override anything set in config.

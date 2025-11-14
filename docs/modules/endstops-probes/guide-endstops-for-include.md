@@ -113,7 +113,7 @@ This means that where for a mechanical endstop you connect the `Signal` and `GND
 
 Other than this, it works exactly the same as a mechanical endstop: The `Signal` pin receives something different depending on whether the endstop is triggered or not.
 
-Different powered endstops have different behaviors: 
+Different powered endstops have different behaviors:
 
 Some connect `Signal` to `Ground` when triggered, and `Signal` to `5V` when not triggered.
 
@@ -121,9 +121,7 @@ Others connect `Signal` to `5V` when triggered, and `Signal` to `Ground` when no
 
 To know exactly what your endstop does, see its documentation.
 
-{::nomarkdown}
-If once wired, your endstop reports the opposite of what it should via the <mcode>M119</mcode> command (`1` when triggered/pushed, and `0` when not triggered), see the "Testing" section.
-{:/nomarkdown}
+If once wired, your endstop reports the opposite of what it should via the {::nomarkdown}<mcode>M119</mcode>{:/nomarkdown} command (`1` when triggered/pushed, and `0` when not triggered), see the "Testing" section.
 
 Some endstops might require removing their "pull-up" configuration, in this case, change:
 
@@ -165,9 +163,7 @@ On the other hand, if the axis moves a small distance in the wrong direction, th
 
 Another problem can be that the axis moves and never stops, even after the end-stop is physically hit. This means your Smoothieboard actually never reads the end-stop as being pressed.
 
-{::nomarkdown}
-There is a command that allows you to debug this kind of situation: in Pronterface, enter the "<strong><mcode>M119</mcode></strong>" G-code.
-{:/nomarkdown}
+There is a command that allows you to debug this kind of situation: in Pronterface, enter the "{::nomarkdown}<strong><mcode>M119</mcode></strong>{:/nomarkdown}" G-code.
 
 Smoothie will answer with the status of each endstop like this:
 
@@ -200,6 +196,6 @@ Here is the exact mapping of pin names to inputs on the Smoothieboard:
 | Endstop      | X MIN     | X MAX     | Y MIN     | Y MAX    | Z MIN     | Z MAX     |
 | ------------ | --------- | --------- | --------- | -------- | --------- | --------- |
 | Config value | alpha_min | alpha_max | beta_min  | beta_max | gamma_min | gamma_max |
-| Pin name     | <pin>1.24</pin>      | <pin>1.25</pin>      | <pin>1.26</pin>      | <pin>1.27</pin>     | <pin>1.28</pin>      | <pin>1.29</pin>      |
+| Pin name     | {::nomarkdown}<pin>1.24</pin>{:/nomarkdown} | {::nomarkdown}<pin>1.25</pin>{:/nomarkdown} | {::nomarkdown}<pin>1.26</pin>{:/nomarkdown} | {::nomarkdown}<pin>1.27</pin>{:/nomarkdown} | {::nomarkdown}<pin>1.28</pin>{:/nomarkdown} | {::nomarkdown}<pin>1.29</pin>{:/nomarkdown} |
 
 More information can be found [here](endstops).

@@ -76,15 +76,11 @@ temperature_control.vac_n2.rt_curve               20.0,220,120,6000,220,120000
 
 Connect your vacuum sensor to one of the thermistor inputs on the Smoothieboard (T0-T3).
 
-{::nomarkdown}
 In the example above:
-- Left nozzle sensor connects to T0 (pin <pin>0.23</pin>)
-- Right nozzle sensor connects to T1 (pin <pin>0.24</pin>)
-{:/nomarkdown}
+- Left nozzle sensor connects to T0 (pin {::nomarkdown}<pin>0.23</pin>{:/nomarkdown})
+- Right nozzle sensor connects to T1 (pin {::nomarkdown}<pin>0.24</pin>{:/nomarkdown})
 
-{::nomarkdown}
-You can then read the vacuum level using the configured M-codes (<mcode>M104</mcode> for left nozzle, <mcode>M105</mcode> for right nozzle in this example).
-{:/nomarkdown}
+You can then read the vacuum level using the configured M-codes ({::nomarkdown}<mcode>M104</mcode>{:/nomarkdown} for left nozzle, {::nomarkdown}<mcode>M105</mcode>{:/nomarkdown} for right nozzle in this example).
 
 ## Vacuum Solenoid Control
 

@@ -104,9 +104,7 @@ This is an example that should be the most common case, which you are most likel
 
 In this example a RECI power supply but this should apply to most Chinese power supplies.
 
-{::nomarkdown}
-The basic idea is this: pin <pin>1.23</pin> (hardware PWM-capable) is configured as open-drain and inverted (<pin>1.23o!</pin>), then connected to the L (Low) TTL input on the power supply.
-{:/nomarkdown}
+The basic idea is this: pin {::nomarkdown}<pin>1.23</pin>{:/nomarkdown} (hardware PWM-capable) is configured as open-drain and inverted ({::nomarkdown}<pin>1.23o!</pin>{:/nomarkdown}), then connected to the L (Low) TTL input on the power supply.
 
 Ground from the Smoothieboard is connected to ground on the Power Supply.
 
@@ -157,13 +155,11 @@ In particular, you'll likely need to increase the pwm frequency, and wiring migh
   Lasers can make you blind. And bionic eyes are not there just yet.
 </sl-alert>
 
-{::nomarkdown}
-Here is how Smoothie laser control works: <gcode>G0</gcode> and <gcode>G1</gcode> are exactly the same command, they take positional parameters (X10 Y5 Z3 for example) and move the tool to that position.
+Here is how Smoothie laser control works: {::nomarkdown}<gcode>G0</gcode>{:/nomarkdown} and {::nomarkdown}<gcode>G1</gcode>{:/nomarkdown} are exactly the same command, they take positional parameters (X10 Y5 Z3 for example) and move the tool to that position.
 
-The only difference is that when using <gcode>G0</gcode> the laser stays off, and when using <gcode>G1</gcode> the laser is on, only during movement.
+The only difference is that when using {::nomarkdown}<gcode>G0</gcode>{:/nomarkdown} the laser stays off, and when using {::nomarkdown}<gcode>G1</gcode>{:/nomarkdown} the laser is on, only during movement.
 
-To test, try moving your laser with <gcode>G0</gcode> and try moving it with <gcode>G1</gcode>:
-{:/nomarkdown}
+To test, try moving your laser with {::nomarkdown}<gcode>G0</gcode>{:/nomarkdown} and try moving it with {::nomarkdown}<gcode>G1</gcode>{:/nomarkdown}:
 
 ```markdown
 G0 X10 F300
@@ -178,26 +174,20 @@ For example:
 G1 X10 F300 S0.2
 ```
 
-{::nomarkdown}
 ## Supported G-codes
 
 The following G-codes are supported by the Laser module:
 
-<ul>
-<li><gcode>G0</gcode>: Move without activating the laser</li>
-<li><gcode>G1</gcode>/<gcode>G2</gcode>/<gcode>G3</gcode>: Move with the laser activated</li>
-<li>S: The S parameter sets the current power of the laser, when it is activated, from 0 (0%) to 1 (100%).</li>
-<li><mcode>M221</mcode> Snnn globally scales the laser power provided by <gcode>G1</gcode> by nnn percent. So <mcode>M221</mcode> S75 will scale the laser power to 75%.</li>
-<li><mcode>M221</mcode> Rxxx: Set the PWM frequency to xxx Hz (Hertz). This specifies frequency, and <strong>not</strong> period, be aware and careful.</li>
-<li><mcode>M221</mcode> P1: Temporarily disable proportional laser power (as per the <code>laser_module_proportional_power</code> configuration option, see its description for more details). This is <strong>not</strong> saved by the <mcode>M500</mcode> command.</li>
-</ul>
-{:/nomarkdown}
+- {::nomarkdown}<gcode>G0</gcode>{:/nomarkdown}: Move without activating the laser
+- {::nomarkdown}<gcode>G1</gcode>{:/nomarkdown}/{::nomarkdown}<gcode>G2</gcode>{:/nomarkdown}/{::nomarkdown}<gcode>G3</gcode>{:/nomarkdown}: Move with the laser activated
+- S: The S parameter sets the current power of the laser, when it is activated, from 0 (0%) to 1 (100%).
+- {::nomarkdown}<mcode>M221</mcode>{:/nomarkdown} Snnn globally scales the laser power provided by {::nomarkdown}<gcode>G1</gcode>{:/nomarkdown} by nnn percent. So {::nomarkdown}<mcode>M221</mcode>{:/nomarkdown} S75 will scale the laser power to 75%.
+- {::nomarkdown}<mcode>M221</mcode>{:/nomarkdown} Rxxx: Set the PWM frequency to xxx Hz (Hertz). This specifies frequency, and **not** period, be aware and careful.
+- {::nomarkdown}<mcode>M221</mcode>{:/nomarkdown} P1: Temporarily disable proportional laser power (as per the `laser_module_proportional_power` configuration option, see its description for more details). This is **not** saved by the {::nomarkdown}<mcode>M500</mcode>{:/nomarkdown} command.
 
-{::nomarkdown}
 ## Supported commands
 
-The following commands are available for testing (prepend @ in pronterface or <mcode>M1000</mcode> in other hosts)
-{:/nomarkdown}
+The following commands are available for testing (prepend @ in pronterface or {::nomarkdown}<mcode>M1000</mcode>{:/nomarkdown} in other hosts)
 
 * `fire nnn` where nnn is 0-100 percentage of power (example fire 10 will turn on laser at 10%)
 * `fire off` turn off the test fire and return to automatic mode.

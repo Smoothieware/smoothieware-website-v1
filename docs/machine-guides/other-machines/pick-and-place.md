@@ -100,13 +100,13 @@ The CNC build includes:
 
 - A special CNC version of the [Panel](/panel) screens
 
-- <setting v1="grbl_mode" v2="general.grbl_mode"></setting> enabled by default (which means Smoothie interprets G-code as CNC G-code rather than 3D-printing G-code)
+- {::nomarkdown}<setting v1="grbl_mode" v2="general.grbl_mode"></setting>{:/nomarkdown} enabled by default (which means Smoothie interprets G-code as CNC G-code rather than 3D-printing G-code)
 
 - Better support for precise positioning and fast movements typical of Pick and Place operations
 
 You will find information on flashing the firmware at [getting-smoothie](/getting-smoothie)
 
-You will find more information on <setting v1="grbl_mode" v2="general.grbl_mode"></setting> on the [grbl_mode](/grbl-mode) page.
+You will find more information on {::nomarkdown}<setting v1="grbl_mode" v2="general.grbl_mode"></setting>{:/nomarkdown} on the [grbl_mode](/grbl-mode) page.
 
 ### Including Temperature Control for Vacuum Sensors
 

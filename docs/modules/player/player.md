@@ -113,21 +113,19 @@ Will resume a suspended print. It does the following:
 3. Restore the position it was at and E and any other saved state
 4. Resume sd print or send resume upstream
 
-{::nomarkdown}
 ## G-codes
 
 The following G-codes are supported by the Player module:
 
 
 
-- <mcode>M21</mcode> : Initialize the SD card. This does nothing in Smoothie but is kept for compatibility
-- <mcode>M23</mcode> : Select a file, for example : <mcode>M23</mcode> file.gcode
-- <mcode>M24</mcode> : Start or resume SD card print
-- <mcode>M25</mcode> : Pause SD card print
-- <mcode>M26</mcode> : Abort a SD card print
-- <mcode>M27</mcode> : Report print progress
-- <mcode>M32</mcode> : Select a file, and start playing it, for example : <mcode>M32</mcode> file.gcode
-- <mcode>M600</mcode> : Suspend print in progress (use console command resume or <mcode>M601</mcode> to continue)
+- {::nomarkdown}<mcode>M21</mcode>{:/nomarkdown} : Initialize the SD card. This does nothing in Smoothie but is kept for compatibility
+- {::nomarkdown}<mcode>M23</mcode>{:/nomarkdown} : Select a file, for example : {::nomarkdown}<mcode>M23</mcode>{:/nomarkdown} file.gcode
+- {::nomarkdown}<mcode>M24</mcode>{:/nomarkdown} : Start or resume SD card print
+- {::nomarkdown}<mcode>M25</mcode>{:/nomarkdown} : Pause SD card print
+- {::nomarkdown}<mcode>M26</mcode>{:/nomarkdown} : Abort a SD card print
+- {::nomarkdown}<mcode>M27</mcode>{:/nomarkdown} : Report print progress
+- {::nomarkdown}<mcode>M32</mcode>{:/nomarkdown} : Select a file, and start playing it, for example : {::nomarkdown}<mcode>M32</mcode>{:/nomarkdown} file.gcode
+- {::nomarkdown}<mcode>M600</mcode>{:/nomarkdown} : Suspend print in progress (use console command resume or {::nomarkdown}<mcode>M601</mcode>{:/nomarkdown} to continue)
 - M600.1 : Suspend print in progress, but leave heaters on
-- <mcode>M601</mcode> : Resume print after suspend
-{:/nomarkdown}
+- {::nomarkdown}<mcode>M601</mcode>{:/nomarkdown} : Resume print after suspend

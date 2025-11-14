@@ -256,10 +256,8 @@ See [Configuring Smoothie](configuring-smoothie) for complete documentation.
 
 **Test everything**
 
-{::nomarkdown}
-- Motors: Try <gcode>G0</gcode> X10 <gcode>G0</gcode> Y10 etc.
-- Endstops: Try homing with <gcode>G28</gcode>
-{:/nomarkdown}
+- Motors: Try {::nomarkdown}<gcode>G0</gcode>{:/nomarkdown} X10 {::nomarkdown}<gcode>G0</gcode>{:/nomarkdown} Y10 etc.
+- Endstops: Try homing with {::nomarkdown}<gcode>G28</gcode>{:/nomarkdown}
 - Temperature: Check readings (3D printers)
 - Tools: Test heaters/lasers/spindles carefully
 
@@ -308,10 +306,8 @@ If it doesn't work: see below.
 
 - Check wiring
 - Check motor current in config
-{::nomarkdown}
-- Try simple commands like <gcode>G0</gcode> X10
-- Use <mcode>M119</mcode> to check endstops aren't triggered
-{:/nomarkdown}
+- Try simple commands like {::nomarkdown}<gcode>G0</gcode>{:/nomarkdown} X10
+- Use {::nomarkdown}<mcode>M119</mcode>{:/nomarkdown} to check endstops aren't triggered
 
 **Endstops not working**
 

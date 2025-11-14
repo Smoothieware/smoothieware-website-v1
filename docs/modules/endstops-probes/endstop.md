@@ -15,8 +15,6 @@ This page has moved.
 
 ## Quick Links
 
-{::nomarkdown}
 - [Endstops Documentation](endstops) - Complete endstop configuration guide
 - [Endstop Options](endstops-options) - Configuration reference table
-- [Homing](g28) - <gcode>G28</gcode> homing command documentation
-{:/nomarkdown}
+- [Homing](g28) - {::nomarkdown}<gcode>G28</gcode>{:/nomarkdown} homing command documentation

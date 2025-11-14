@@ -153,9 +153,7 @@ You are now connected to Smoothie and you can start talking to it. Here are a fe
 - `ls /sd/` - Lists files in the current folder or the "/sd/" folder
 - `cd /sd/` - Changes the path to the "/sd/" folder
 - `play /sd/file.g -q` - Plays the G-code file indicated. The `-q` option is optional and makes the play silent
-{::nomarkdown}
-- <gcode>G1</gcode> X10 F100 - Moves the machine 10 millimeters in the X axis, at 100mm/minute
-{:/nomarkdown}
+- {::nomarkdown}<gcode>G1</gcode>{:/nomarkdown} X10 F100 - Moves the machine 10 millimeters in the X axis, at 100mm/minute
 
 <sl-alert variant="primary" open>
   <sl-icon slot="icon" name="lightbulb"></sl-icon>

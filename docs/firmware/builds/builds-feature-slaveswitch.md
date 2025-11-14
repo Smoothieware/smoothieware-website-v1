@@ -6,10 +6,12 @@ permalink: /builds-feature-slaveswitch
 
 This page contains the most recent automated builds for the [feature/slaveswitch](https://github.com/smoothieware/smoothieware/tree/feature/slaveswitch) branch.
 
+{::nomarkdown}
 <sl-alert variant="neutral" open>
   <sl-icon slot="icon" name="info-circle"></sl-icon>
   This branch adds the ability for switch modules to mirror/slave the value of a robot axis (e.g., 33mm becomes 33% PWM value).
 </sl-alert>
+{:/nomarkdown}
 
 <!-- TODO: Move all the formatting stuff into the proper CSS file. Have this script automatically upload/integrate said file -->
 

@@ -160,9 +160,7 @@ And also change a bit the way we instantiate the module:
 Laser laser = Laser(p21);
 ```
 
-{::nomarkdown}
-That's it, now the Laser pin will be LOW during <gcode>G0</gcode> moves, and HIGH during <gcode>G1</gcode>, <gcode>G2</gcode>, and <gcode>G3</gcode> moves.
-{:/nomarkdown}
+That's it, now the Laser pin will be LOW during {::nomarkdown}<gcode>G0</gcode>{:/nomarkdown} moves, and HIGH during {::nomarkdown}<gcode>G1</gcode>{:/nomarkdown}, {::nomarkdown}<gcode>G2</gcode>{:/nomarkdown}, and {::nomarkdown}<gcode>G3</gcode>{:/nomarkdown} moves.
 But that's not enough. Because we use acceleration, the speed is not constant. And thus if the power of the laser stays constant, that power will be too much when accelerating and decelerating.
 So we need to have a laser power that is proportional to the instant speed of the robot.
 That's the kind of thing the `on_speed_change` event is for.

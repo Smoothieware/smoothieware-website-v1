@@ -53,9 +53,7 @@ The file uses standard G-code format:
 - **One command per line**
 - **Comments** start with `;` or `()`
 - **Standard G-code syntax** (same as any G-code file)
-{::nomarkdown}
-- **Case insensitive** (<gcode>G28</gcode> and <gcode>G28</gcode> are equivalent)
-{:/nomarkdown}
+- **Case insensitive** ({::nomarkdown}<gcode>G28</gcode>{:/nomarkdown} and {::nomarkdown}<gcode>g28</gcode>{:/nomarkdown} are equivalent)
 - **Blank lines** are ignored
 
 {::nomarkdown}

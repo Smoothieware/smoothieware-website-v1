@@ -36,7 +36,6 @@ The default configuration is for a single extruder. To set up a second one, use 
 
 Here is an example configuration for two extruders:
 
-{::nomarkdown}
 ```plaintext
 # Extruder module configuration
 extruder.hotend.enable                          true
@@ -44,9 +43,9 @@ extruder.hotend.steps_per_mm                    140
 extruder.hotend.default_feed_rate               600
 extruder.hotend.acceleration                    500
 extruder.hotend.max_speed                       50
-extruder.hotend.step_pin                        <pin>2.3</pin>
-extruder.hotend.dir_pin                         <pin>0.22</pin>
-extruder.hotend.en_pin                          <pin>0.21</pin>
+extruder.hotend.step_pin                        2.3
+extruder.hotend.dir_pin                         0.22
+extruder.hotend.en_pin                          0.21
 delta_current                                   1.5
 
 # Second extruder module configuration
@@ -55,12 +54,11 @@ extruder.hotend2.steps_per_mm                   140
 extruder.hotend2.default_feed_rate              600
 extruder.hotend2.acceleration                   500
 extruder.hotend2.max_speed                      50
-extruder.hotend2.step_pin                       <pin>2.8</pin>
-extruder.hotend2.dir_pin                        <pin>2.13</pin>
-extruder.hotend2.en_pin                         <pin>4.29</pin>
+extruder.hotend2.step_pin                       2.8
+extruder.hotend2.dir_pin                        2.13
+extruder.hotend2.en_pin                         4.29
 epsilon_current                                 1.5
 ```
-{:/nomarkdown}
 
 Replace your current extruder configuration with this in the config file.
 
@@ -70,12 +68,11 @@ Also, configure an additional `TemperatureControl` module for the hotend.
 
 Example configuration for two hotends:
 
-{::nomarkdown}
 ```plaintext
 # Temperature control configuration
 temperature_control.hotend.enable            true
-temperature_control.hotend.thermistor_pin    <pin>0.23</pin>
-temperature_control.hotend.heater_pin        <pin>2.7</pin>
+temperature_control.hotend.thermistor_pin    0.23
+temperature_control.hotend.heater_pin        2.7
 temperature_control.hotend.thermistor        EPCOS100K
 temperature_control.hotend.set_m_code        104
 temperature_control.hotend.set_and_wait_m_code 109
@@ -83,14 +80,13 @@ temperature_control.hotend.designator        T0
 
 # Second hotend configuration
 temperature_control.hotend2.enable            true
-temperature_control.hotend2.thermistor_pin    <pin>0.25</pin>
-temperature_control.hotend2.heater_pin        <pin>1.23</pin>
+temperature_control.hotend2.thermistor_pin    0.25
+temperature_control.hotend2.heater_pin        1.23
 temperature_control.hotend2.thermistor        EPCOS100K
 temperature_control.hotend2.set_m_code        104
 temperature_control.hotend2.set_and_wait_m_code 109
 temperature_control.hotend2.designator        T1
 ```
-{:/nomarkdown}
 
 {::nomarkdown}
 <sl-alert variant="warning" open>

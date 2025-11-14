@@ -245,9 +245,7 @@ In Marlin you set the pull-up of an endstop by changing:
 #endif
 ```
 
-{::nomarkdown}
-While in Smoothie you do it by changing the pin for a given endstop from for example <pin>1.25</pin> to <pin>1.25^</pin>.
-{:/nomarkdown}
+While in Smoothie you do it by changing the pin for a given endstop from for example {::nomarkdown}<pin>1.25</pin>{:/nomarkdown} to {::nomarkdown}<pin>1.25^</pin>{:/nomarkdown}.
 
 ## Endstop inverting
 
@@ -264,9 +262,7 @@ In Marlin you invert an endstop by changing:
 #define Z_MIN_PROBE_ENDSTOP_INVERTING false // set to true to invert the logic of the endstop.
 ```
 
-{::nomarkdown}
-While in Smoothie you do it by changing the pin for a given endstop from for example <pin>1.25</pin> to <pin>1.25!</pin>.
-{:/nomarkdown}
+While in Smoothie you do it by changing the pin for a given endstop from for example {::nomarkdown}<pin>1.25</pin>{:/nomarkdown} to {::nomarkdown}<pin>1.25!</pin>{:/nomarkdown}.
 
 ## Homing speed
 

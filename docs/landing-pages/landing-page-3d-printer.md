@@ -126,7 +126,7 @@ You've spent hours:
 
 **Marlin:** Edit Configuration.h → Install PlatformIO → Compile (5 min wait) → Upload → Test → Repeat if wrong. **Total: 15-30 minutes.**
 
-**Smoothie:** Edit <setting v1="extruder.hotend.steps_per_mm" v2="extruder.hotend.steps_per_mm"></setting> → Save → Reboot. **Total: 30 seconds.**
+**Smoothie:** Edit {::nomarkdown}<setting v1="extruder.hotend.steps_per_mm" v2="extruder.hotend.steps_per_mm"></setting>{:/nomarkdown} → Save → Reboot. **Total: 30 seconds.**
 
 ---
 
@@ -211,9 +211,7 @@ temperature_control.bed.heater_pin  2.5
 temperature_control.bed.thermistor  Honeywell100K
 ```
 
-{::nomarkdown}
 **That's it. Human-readable. No compilation needed.**
-{:/nomarkdown}
 
 Change PID values? Edit three numbers. Save. Reboot. Done.
 

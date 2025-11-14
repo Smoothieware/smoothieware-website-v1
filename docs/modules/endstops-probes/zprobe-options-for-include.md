@@ -37,9 +37,7 @@ The <setting v1="zprobe.probe_pin" v2="zprobe.probe_pin"></setting> setting uses
 - **`!`** - Inverts the pin logic (useful for normally-open vs normally-closed switches)
 - **`^`** - Enables internal pull-up resistor
 
-{::nomarkdown}
-For example, <pin>1.28!^</pin> means pin <pin>1.28</pin> with inverted logic and pull-up enabled.
-{:/nomarkdown}
+For example, {::nomarkdown}<pin>1.28!^</pin>{:/nomarkdown} means pin {::nomarkdown}<pin>1.28</pin>{:/nomarkdown} with inverted logic and pull-up enabled.
 
 ## Common Probe Types
 
@@ -79,11 +77,9 @@ Different probe types work with Smoothieware:
 
 After configuration, use these G-codes:
 
-{::nomarkdown}
-- <strong><gcode>G30</gcode></strong> - Single probe at current XY position
-- <strong><gcode>G32</gcode></strong> - Run bed leveling (if leveling strategy is configured)
-- <strong><mcode>M119</mcode></strong> - Show endstop status (including probe)
-{:/nomarkdown}
+- <strong>{::nomarkdown}<gcode>G30</gcode>{:/nomarkdown}</strong> - Single probe at current XY position
+- <strong>{::nomarkdown}<gcode>G32</gcode>{:/nomarkdown}</strong> - Run bed leveling (if leveling strategy is configured)
+- <strong>{::nomarkdown}<mcode>M119</mcode>{:/nomarkdown}</strong> - Show endstop status (including probe)
 
 ## Related Documentation
 

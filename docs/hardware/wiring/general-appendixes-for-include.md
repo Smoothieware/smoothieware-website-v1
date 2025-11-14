@@ -160,9 +160,7 @@ becomes
 alpha_step_pin   2.0o     # Pin for alpha stepper step signal
 ```
 
-{::nomarkdown}
 it's also possible to invert a pin:
-{:/nomarkdown}
 
 ```
 alpha_step_pin   2.0!o     # Pin for alpha stepper step signal
@@ -258,13 +256,11 @@ Simple as that.
 </div>
 {:/nomarkdown}
 
-{::nomarkdown}
 You will need to connect GND on the Smoothieboard to the "-" connection on the Input side of the SSR, and the GPIO pin on the Smoothieboard to the "+" connection on the Input side of the SSR.
 
-This example shows using P<pin>1.30</pin>
+This example shows using P{::nomarkdown}<pin>1.30</pin>{:/nomarkdown}
 
 Then simply configure the module that will be using the SSR to use that pin, for example in the case of [Switch](switch):
-{:/nomarkdown}
 
 ```
 switch.misc.enable                   true #
@@ -307,9 +303,7 @@ For example, you have a board that has two connectors on the Z axis, but you wan
 
 In that case, all you need to do is exchange the 3 pin definitions for these two axes.
 
-{::nomarkdown}
 For example:
-{:/nomarkdown}
 
 ```
 beta_step_pin                                2.1              # Pin for beta stepper step signal
@@ -321,9 +315,7 @@ gamma_dir_pin                                0.20             # Pin for gamma st
 gamma_en_pin                                 0.19             # Pin for gamma enable
 ```
 
-{::nomarkdown}
 Becomes:
-{:/nomarkdown}
 
 ```
 beta_step_pin                                2.2              # Pin for beta stepper step signal

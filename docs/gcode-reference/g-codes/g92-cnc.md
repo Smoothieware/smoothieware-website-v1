@@ -2,9 +2,7 @@
 permalink: /g92-cnc
 ---
 
-{::nomarkdown}
-# <gcode>G92</gcode> G-code
-{:/nomarkdown}
+# {::nomarkdown}<gcode>G92</gcode>{:/nomarkdown} G-code
 
 {::nomarkdown}
 <a href="/images/gcode.png">
@@ -12,9 +10,7 @@ permalink: /g92-cnc
 </a>
 {:/nomarkdown}
 
-{::nomarkdown}
-<gcode>G92</gcode> means "set an offset in all coordinate systems".
-{:/nomarkdown}
+{::nomarkdown}<gcode>G92</gcode>{:/nomarkdown} means "set an offset in all coordinate systems".
 
 The machine coordinates are the position of the machine relative to the point at which the [endstops](endstops) are hit.
 
@@ -22,37 +18,29 @@ This is by opposition to the workspace coordinates, which are the coordinates yo
 
 This sets an offset valid in all coordinate systems.
 
-{::nomarkdown}
-<gcode>G92</gcode> makes the current point have the coordinates you want (without motion), where the axis parameters contain the axis numbers you want.
-{:/nomarkdown}
+{::nomarkdown}<gcode>G92</gcode>{:/nomarkdown} makes the current point have the coordinates you want (without motion), where the axis parameters contain the axis numbers you want.
 
 All axis parameters are optional, except that at least one must be used.
 
 If an axis parameter is not used for a given axis, the coordinate on that axis of the current point is not changed.
 
-{::nomarkdown}
-When <gcode>G92</gcode> is executed, the origins of all coordinate systems move.
-{:/nomarkdown}
+When {::nomarkdown}<gcode>G92</gcode>{:/nomarkdown} is executed, the origins of all coordinate systems move.
 
 They move such that the value of the current controlled point, in the currently active coordinate system, becomes the specified value.
 
 All coordinate system's origins are offset this same distance.
 
-{::nomarkdown}
-For example, suppose the current point is at X=4 and there is currently no <gcode>G92</gcode> offset active.
+For example, suppose the current point is at X=4 and there is currently no {::nomarkdown}<gcode>G92</gcode>{:/nomarkdown} offset active.
 
-Then <gcode>G92</gcode> X7 is programmed.
-{:/nomarkdown}
+Then {::nomarkdown}<gcode>G92</gcode>{:/nomarkdown} X7 is programmed.
 
 This moves all origins -3 in X, which causes the current point to become X=7.
 
 This -3 is saved in memory.
 
-{::nomarkdown}
-Being in incremental distance (<gcode>G91</gcode>) mode has no effect on the action of <gcode>G92</gcode>.
+Being in incremental distance ({::nomarkdown}<gcode>G91</gcode>{:/nomarkdown}) mode has no effect on the action of {::nomarkdown}<gcode>G92</gcode>{:/nomarkdown}.
 
-<gcode>G92</gcode> offsets may be already be in effect when the <gcode>G92</gcode> is called.
-{:/nomarkdown}
+{::nomarkdown}<gcode>G92</gcode>{:/nomarkdown} offsets may be already be in effect when the {::nomarkdown}<gcode>G92</gcode>{:/nomarkdown} is called.
 
 If this is the case, the offset is replaced with a new offset that makes the current point become the specified value.
 
@@ -79,7 +67,7 @@ Which means: set a global offset of 10 in the X axis and 10 in the Y axis.
 
 ## Friend Gcodes
 
-The <gcode>G92.1</gcode> Gcode is used to reset the offsets.
+The {::nomarkdown}<gcode>G92.1</gcode>{:/nomarkdown} Gcode is used to reset the offsets.
 
 ## Further reading
 

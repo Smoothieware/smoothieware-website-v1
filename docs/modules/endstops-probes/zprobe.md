@@ -22,9 +22,7 @@ Different strategies are useful for different geometries of machines, click on o
 - For [Delta](delta) machines, you can do [grid leveling](#delta-grid) **and** [calibration](#delta-calibration)
 - For [Cartesian](cartesian) machines, you can do [grid leveling](#rectangular-grid-compensation) **or** [three-point leveling](#three-point)
 
-{::nomarkdown}
-<strong>NOTE:</strong> When <gcode>G30</gcode> stores the probe position or prints out the value, it is in actuator units not necessarily in mm. This is only an issue for rotary deltas where the actuator units are degrees not mm. Most other configurations it will be mm.
-{:/nomarkdown}
+<strong>NOTE:</strong> When {::nomarkdown}<gcode>G30</gcode>{:/nomarkdown} stores the probe position or prints out the value, it is in actuator units not necessarily in mm. This is only an issue for rotary deltas where the actuator units are degrees not mm. Most other configurations it will be mm.
 
 {::nomarkdown}
 <div style="text-align: center; margin: 2rem 0;">
@@ -50,14 +48,12 @@ You will need a probe switch attached to the machine's actuator, or a bed able t
 </sl-alert>
 {:/nomarkdown}
 
-{::nomarkdown}
 A bit more: You have two choices:
 
-- Configure your probe as an endstop (in the endstop module), in which case you can use <gcode>G28</gcode> to use it to seek the bed, but you can't use it in the zprobe module
-- Configure your probe as a probe (in the probe module), in which case you can't use it with <gcode>G28</gcode> (the endstop module) to seek the bed, <strong>but</strong> you can use it with <gcode>G30</gcode> to seek the bed, and you can use it with <gcode>G31</gcode>/<gcode>G32</gcode> etc to level/calibrate (this is likely what you want to do).
+- Configure your probe as an endstop (in the endstop module), in which case you can use {::nomarkdown}<gcode>G28</gcode>{:/nomarkdown} to use it to seek the bed, but you can't use it in the zprobe module
+- Configure your probe as a probe (in the probe module), in which case you can't use it with {::nomarkdown}<gcode>G28</gcode>{:/nomarkdown} (the endstop module) to seek the bed, <strong>but</strong> you can use it with {::nomarkdown}<gcode>G30</gcode>{:/nomarkdown} to seek the bed, and you can use it with {::nomarkdown}<gcode>G31</gcode>{:/nomarkdown}/{::nomarkdown}<gcode>G32</gcode>{:/nomarkdown} etc to level/calibrate (this is likely what you want to do).
 
-The point is you configure your sensor as <em>either</em> a probe or an endstop, <strong>not both</strong>. You can still use it for both leveling/calibration <em>and</em> bed seeking, it's just that if it's a probe (and not an endstop), you use a different Gcode (<gcode>G30</gcode>) than if it were an endstop (<gcode>G28</gcode>).
-{:/nomarkdown}
+The point is you configure your sensor as <em>either</em> a probe or an endstop, <strong>not both</strong>. You can still use it for both leveling/calibration <em>and</em> bed seeking, it's just that if it's a probe (and not an endstop), you use a different Gcode ({::nomarkdown}<gcode>G30</gcode>{:/nomarkdown}) than if it were an endstop ({::nomarkdown}<gcode>G28</gcode>{:/nomarkdown}).
 
 ## Types of probes
 
@@ -89,23 +85,19 @@ zprobe.max_z                 200                # maximum default travel for the
 </sl-alert>
 {:/nomarkdown}
 
-{::nomarkdown}
-First test the zprobe with <mcode>M119</mcode>, make sure that the probe is 1 when triggered and 0 when not triggered.
+First test the zprobe with {::nomarkdown}<mcode>M119</mcode>{:/nomarkdown}, make sure that the probe is 1 when triggered and 0 when not triggered.
 
-<gcode>G30</gcode> will probe from the current position until it hits the bed and the probe triggers, it will report the distance traveled then return to where it started.
+{::nomarkdown}<gcode>G30</gcode>{:/nomarkdown} will probe from the current position until it hits the bed and the probe triggers, it will report the distance traveled then return to where it started.
 
-<gcode>G30</gcode> Znnn will probe until it hits the bed then sets Z to nnn (by doing <gcode>G92</gcode> Znnn), this can be used to set the nozzle height if nnn is the probes Z offset from the nozzle in the Z direction.
+{::nomarkdown}<gcode>G30</gcode>{:/nomarkdown} Znnn will probe until it hits the bed then sets Z to nnn (by doing {::nomarkdown}<gcode>G92</gcode>{:/nomarkdown} Znnn), this can be used to set the nozzle height if nnn is the probes Z offset from the nozzle in the Z direction.
 
-<gcode>G30</gcode> Fxxx will run the probe at xxx mm/min overriding the slow_feedrate.
+{::nomarkdown}<gcode>G30</gcode>{:/nomarkdown} Fxxx will run the probe at xxx mm/min overriding the slow_feedrate.
 
-<gcode>G38.2</gcode>, <gcode>G38.3</gcode>, <gcode>G38.4</gcode>, <gcode>G38.5</gcode> (for probing in X and Y) are also implemented as documented <a href="http://linuxcnc.org/docs/2.6/html/gcode/gcode.html#sec:G38-probe">here</a>. <strong>NOTE:</strong> probing in X or Y on a delta is not recommended due to non-linear movement issues.
+{::nomarkdown}<gcode>G38.2</gcode>{:/nomarkdown}, {::nomarkdown}<gcode>G38.3</gcode>{:/nomarkdown}, {::nomarkdown}<gcode>G38.4</gcode>{:/nomarkdown}, {::nomarkdown}<gcode>G38.5</gcode>{:/nomarkdown} (for probing in X and Y) are also implemented as documented <a href="http://linuxcnc.org/docs/2.6/html/gcode/gcode.html#sec:G38-probe">here</a>. <strong>NOTE:</strong> probing in X or Y on a delta is not recommended due to non-linear movement issues.
 
-If there are multiple leveling strategies selected the Pn parameter will select which one to send leveling codes to, 0 being the first defined one, 1 the second and so on. For example, <gcode>G29</gcode> P1 will send <gcode>G29</gcode> to the second defined leveling strategy.
-{:/nomarkdown}
+If there are multiple leveling strategies selected the Pn parameter will select which one to send leveling codes to, 0 being the first defined one, 1 the second and so on. For example, {::nomarkdown}<gcode>G29</gcode>{:/nomarkdown} P1 will send {::nomarkdown}<gcode>G29</gcode>{:/nomarkdown} to the second defined leveling strategy.
 
-{::nomarkdown}
-There are several <mcode>M670</mcode> parameters that can set different settings for zprobe overriding the config settings, these are all saved with <mcode>M500</mcode>
-{:/nomarkdown}
+There are several {::nomarkdown}<mcode>M670</mcode>{:/nomarkdown} parameters that can set different settings for zprobe overriding the config settings, these are all saved with {::nomarkdown}<mcode>M500</mcode>{:/nomarkdown}
 
 | <mcode>M670</mcode> S0.50 K2.00 R2.5 | Set Probe feedrates slow/fast/return (mm/sec) |
 | <mcode>M670</mcode> Z200.00 | Set Probe max_z (mm) |
@@ -159,21 +151,17 @@ leveling-strategy.delta-calibration.initial_height 10        # height above bed 
 
 ### Calibration routine
 
-{::nomarkdown}
-Issuing the <gcode>G32</gcode> command will run the full calibration sequence automatically.
+Issuing the {::nomarkdown}<gcode>G32</gcode>{:/nomarkdown} command will run the full calibration sequence automatically.
 
 It will cycle several times to converge on a good result.
 
-If the result is good use <mcode>M500</mcode> to save the <mcode>M666</mcode> settings.
-{:/nomarkdown}
+If the result is good use {::nomarkdown}<mcode>M500</mcode>{:/nomarkdown} to save the {::nomarkdown}<mcode>M666</mcode>{:/nomarkdown} settings.
 
 What will happen is it will home the probe down to find the bed, then home again then move down to 5mm above the bed (or whatever you set `zprobe.probe_height` to).
 
 Then it will probe the three towers at the specified `leveling-strategy.delta-calibration.radius` from the center, and will print out the results, it will set the endstop trims and home, this will repeat 3-4 times, each time the difference between the three probes should get smaller, once it has completed 4 probes or the difference is under 0.03mm it will home one last time then probe the three points to confirm the calibration, then probe the center.
 
-{::nomarkdown}
-It will also adjust the delta radius (<mcode>M665</mcode> Rnnn) to get the center the same height as the outside points.
-{:/nomarkdown}
+It will also adjust the delta radius ({::nomarkdown}<mcode>M665</mcode>{:/nomarkdown} Rnnn) to get the center the same height as the outside points.
 
 ### Configuration options
 
@@ -325,9 +313,7 @@ Optionally probe offsets from the nozzle or tool head can be defined with...
 leveling-strategy.delta-grid.probe_offsets  0,0,0  # probe offsets x,y,z  (Z should always be 0)
 ```
 
-{::nomarkdown}
-They may also be set with <mcode>M565</mcode> X0 Y0 Z0.
-{:/nomarkdown}
+They may also be set with {::nomarkdown}<mcode>M565</mcode>{:/nomarkdown} X0 Y0 Z0.
 
 {::nomarkdown}
 <sl-alert variant="warning" open>
@@ -342,9 +328,7 @@ If the saved grid is to be loaded on boot then this must be set in the config...
 leveling-strategy.delta-grid.save        true
 ```
 
-{::nomarkdown}
-Then when <mcode>M500</mcode> is issued it will save <mcode>M375</mcode> which will cause the grid to be loaded on boot. The default is to not autoload the grid on boot.
-{:/nomarkdown}
+Then when {::nomarkdown}<mcode>M500</mcode>{:/nomarkdown} is issued it will save {::nomarkdown}<mcode>M375</mcode>{:/nomarkdown} which will cause the grid to be loaded on boot. The default is to not autoload the grid on boot.
 
 {::nomarkdown}
 <sl-alert variant="neutral" open>

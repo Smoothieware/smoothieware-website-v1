@@ -35,9 +35,7 @@ Wire a simple button on two pins.
 </sl-alert>
 {:/nomarkdown}
 
-{::nomarkdown}
-The pause button may be configured as a kill switch instead of pause, this will halt all operations and turn off heaters and pause the host. It can be cleared with a <mcode>M999</mcode> or reset. To enable a kill button the following is added to the config:
-{:/nomarkdown}
+The pause button may be configured as a kill switch instead of pause, this will halt all operations and turn off heaters and pause the host. It can be cleared with a {::nomarkdown}<mcode>M999</mcode>{:/nomarkdown} or reset. To enable a kill button the following is added to the config:
 
 ```plaintext
 kill_button_enable                        true             # set to true to enable a kill button

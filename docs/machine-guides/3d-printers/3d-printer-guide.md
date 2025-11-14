@@ -139,12 +139,10 @@ By convention (meaning that if you wire things according to the way it is specif
 
 In the [default configuration file](https://github.com/Smoothieware/Smoothieware/blob/edge/ConfigSamples/Smoothieboard/config), the thermistor pins are set up using that convention:
 
-{::nomarkdown}
 ```markdown
-temperature_control.hotend.thermistor_pin    <pin>0.23</pin>             # Pin for the thermistor to read (here T0)
-temperature_control.bed.thermistor_pin       <pin>0.24</pin>             # Pin for the heated bed to read (here T1)
+temperature_control.hotend.thermistor_pin    {::nomarkdown}<pin>0.23</pin>{:/nomarkdown}             # Pin for the thermistor to read (here T0)
+temperature_control.bed.thermistor_pin       {::nomarkdown}<pin>0.24</pin>{:/nomarkdown}             # Pin for the heated bed to read (here T1)
 ```
-{:/nomarkdown}
 
 You can, however, use any thermistor pin you want for any temperature control module you want.
 
@@ -196,22 +194,16 @@ We connect our PSU to the power input for the big MOSFETS pair (don't forget to 
 
 Then we connect the two wires from the PCB bed to one of the big MOSFETS out. Polarity is not important here.
 
-{::nomarkdown}
-Because this is the heated bed, we connect it to the **P2_7** (pin <pin>2.7</pin> in the configuration file). This is a convention: it is configured that way in the default configuration file, meaning that if you connect it there, you do not need to change the configuration file to specify where you are connecting it: the configuration file is already correct.
-{:/nomarkdown}
+Because this is the heated bed, we connect it to the **P2_7** (pin {::nomarkdown}<pin>2.7</pin>{:/nomarkdown} in the configuration file). This is a convention: it is configured that way in the default configuration file, meaning that if you connect it there, you do not need to change the configuration file to specify where you are connecting it: the configuration file is already correct.
 
-{::nomarkdown}
-For the hot-end, the default output is **P2_4** (pin <pin>2.4</pin> in the configuration file).
-{:/nomarkdown}
+For the hot-end, the default output is **P2_4** (pin {::nomarkdown}<pin>2.4</pin>{:/nomarkdown} in the configuration file).
 
 To set a different MOSFET output for the bed or the hot-end, you have to edit the configuration file to the digital output pin corresponding to your chosen MOSFET. These are the lines you would have to edit:
 
-{::nomarkdown}
 ```markdown
-temperature_control.hotend.heater_pin        <pin>2.7</pin>              # Pin that controls the heater cartridge for the hot-end
-temperature_control.bed.heater_pin           <pin>2.5</pin>              # Pin that controls the heated bed
+temperature_control.hotend.heater_pin        {::nomarkdown}<pin>2.7</pin>{:/nomarkdown}              # Pin that controls the heater cartridge for the hot-end
+temperature_control.bed.heater_pin           {::nomarkdown}<pin>2.5</pin>{:/nomarkdown}              # Pin that controls the heated bed
 ```
-{:/nomarkdown}
 
 To help you figure out what is what, here is a recapitulating table:
 
@@ -320,21 +312,17 @@ You do not need a big MOSFET to control a fan. One of the small MOSFETs is more 
 
 Then, you need to edit your configuration file to add (or alter) this section:
 
-{::nomarkdown}
 ```markdown
 # Switch module for fan control
 switch.fan.enable                            true             #
 switch.fan.input_on_command                  M106             #
 switch.fan.input_off_command                 M107             #
-switch.fan.output_pin                        <pin>2.4</pin>              # The pin matching the MOSFET we chose
+switch.fan.output_pin                        {::nomarkdown}<pin>2.4</pin>{:/nomarkdown}              # The pin matching the MOSFET we chose
 switch.fan.output_type                       pwm              # PWM output settable with S parameter in the input_on_comand
 #switch.fan.max_pwm                           255              # set max PWM for the pin default is 255
 ```
-{:/nomarkdown}
 
-{::nomarkdown}
-Now wire the fan to the output for that MOSFET (here it is the first small MOSFET, using pin <pin>2.4</pin>), make sure you respect polarity.
-{:/nomarkdown}
+Now wire the fan to the output for that MOSFET (here it is the first small MOSFET, using pin {::nomarkdown}<pin>2.4</pin>{:/nomarkdown}), make sure you respect polarity.
 
 {::nomarkdown}
 <div style="text-align: center; margin: 2rem 0;">
@@ -345,9 +333,7 @@ Now wire the fan to the output for that MOSFET (here it is the first small MOSFE
 </div>
 {:/nomarkdown}
 
-{::nomarkdown}
-You can now control your fan digitally: issue the <mcode>M106</mcode> G-code to turn it on, and <mcode>M107</mcode> to turn it off. Those are also the commands slicing software generates to control fans.
-{:/nomarkdown}
+You can now control your fan digitally: issue the {::nomarkdown}<mcode>M106</mcode>{:/nomarkdown} G-code to turn it on, and {::nomarkdown}<mcode>M107</mcode>{:/nomarkdown} to turn it off. Those are also the commands slicing software generates to control fans.
 
 {::nomarkdown}
 <sl-alert variant="warning" open>

@@ -35,12 +35,12 @@ spindle.ignore_on_halt                           false  # set to false to turn o
 
 Available G-code commands:
 
-{::nomarkdown}
-- <mcode>M3</mcode> will start the spindle. <mcode>M3</mcode> S5000 will start the spindle and set speed to 5000 RPM.
-- <mcode>M5</mcode> will stop the spindle. Last set RPM is remembered and used for next <mcode>M3</mcode> command if S argument is not given.
-- <mcode>M957</mcode> will report the current spindle speed and PWM value. This returns not the actual value but the value that was set through <mcode>M3</mcode>.
-- <mcode>M958</mcode> will report the current PID parameters. <mcode>M958</mcode> Px.xxx Ix.xxx Dx.xxx will set them (to save the new values, you need to edit config file manually).
-{:/nomarkdown}
+
+- {::nomarkdown}<mcode>M3</mcode>{:/nomarkdown} will start the spindle. {::nomarkdown}<mcode>M3</mcode>{:/nomarkdown} {::nomarkdown}<raw>S5000</raw>{:/nomarkdown} will start the spindle and set speed to 5000 RPM.
+- {::nomarkdown}<mcode>M5</mcode>{:/nomarkdown} will stop the spindle. Last set RPM is remembered and used for next {::nomarkdown}<mcode>M3</mcode>{:/nomarkdown} command if {::nomarkdown}<raw>S</raw>{:/nomarkdown} argument is not given.
+- {::nomarkdown}<mcode>M957</mcode>{:/nomarkdown} will report the current spindle speed and PWM value. This returns not the actual value but the value that was set through {::nomarkdown}<mcode>M3</mcode>{:/nomarkdown}.
+- {::nomarkdown}<mcode>M958</mcode>{:/nomarkdown} will report the current PID parameters. {::nomarkdown}<mcode>M958</mcode>{:/nomarkdown} {::nomarkdown}<raw>Px.xxx Ix.xxx Dx.xxx</raw>{:/nomarkdown} will set them (to save the new values, you need to edit config file manually).
+
 
 ## PWM Spindle
 

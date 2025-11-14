@@ -218,11 +218,9 @@ The component is [this LED Tactile Button](http://www.sparkfun.com/products/1044
 
 Mystery!
 
-{::nomarkdown}
 ### Other extra pins breakout
 
-Breaks out un-used pins <pin>1.30</pin>, <pin>1.31</pin>, <pin>1.23</pin> and <pin>1.22</pin>. For extension fun.
-{:/nomarkdown}
+Breaks out un-used pins {::nomarkdown}<pin>1.30</pin>{:/nomarkdown}, {::nomarkdown}<pin>1.31</pin>{:/nomarkdown}, {::nomarkdown}<pin>1.23</pin>{:/nomarkdown} and {::nomarkdown}<pin>1.22</pin>{:/nomarkdown}. For extension fun.
 
 ### SD card SPI breakout
 

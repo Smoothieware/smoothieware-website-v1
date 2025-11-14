@@ -26,7 +26,7 @@ Unfortunately, this has become such a widespread standard in 3D printing that it
 
 Therefore, we support both formats.
 
-The way you choose which format Smoothie will interpret the G-code you send to it as, is by changing the <setting v1="grbl_mode" v2="general.grbl_mode"></setting> option.
+The way you choose which format Smoothie will interpret the G-code you send to it as, is by changing the {::nomarkdown}<setting v1="grbl_mode" v2="general.grbl_mode"></setting>{:/nomarkdown} option.
 
 If you set it to `true`:
 
@@ -81,7 +81,7 @@ Then Smoothie will interpret the G-code you send to it the same way Reprap-type 
 Typical differences between 3D mode and CNC mode are:
 
 1. Error messages are different
-2. {::nomarkdown}<gcode>G28</gcode> goes to park position and is NOT home, <raw>$H</raw> homes in CNC mode{:/nomarkdown}
+2. {::nomarkdown}<gcode>G28</gcode>{:/nomarkdown} goes to park position and is NOT home, {::nomarkdown}<raw>$H</raw>{:/nomarkdown} homes in CNC mode
 3. Many GCodes may be differently interpreted in CNC mode than in 3D mode, please check your gcode references (Linuxcnc has a [good GCode reference](https://linuxcnc.org/docs/html/gcode/g-code.html), do not use the reprap gcode reference for CNC mode)
 
 <sl-alert variant="warning" open>

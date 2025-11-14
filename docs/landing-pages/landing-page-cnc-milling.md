@@ -198,7 +198,7 @@ delta_max_rate         30000   # Rotary speed
 ## Advanced Features for Precision Work
 
 ### Touch Probe Support:
-- <gcode>G38.2</gcode>/<gcode>G38.3</gcode> probing G-codes
+- {::nomarkdown}<gcode>G38.2</gcode>{:/nomarkdown}/{::nomarkdown}<gcode>G38.3</gcode>{:/nomarkdown} probing G-codes
 - Part alignment and zero-finding
 - Surface mapping
 - Tool length measurement

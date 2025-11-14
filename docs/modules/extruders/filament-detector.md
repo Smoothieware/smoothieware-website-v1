@@ -22,12 +22,10 @@ If a difference is detected, the filament is not advancing correctly, which mean
 
 ## M-Code Commands
 
-{::nomarkdown}
-- Use <mcode>M404</mcode> command to set filament detector parameters: S seconds per check, P pulses per mm
-- Use <mcode>M405</mcode> command to disable filament detector
-- Use <mcode>M406</mcode> command to enable filament detector
-- Use <mcode>M407</mcode> command to check if the filament detector gets triggered and to calibrate
-{:/nomarkdown}
+- Use {::nomarkdown}<mcode>M404</mcode>{:/nomarkdown} command to set filament detector parameters: S seconds per check, P pulses per mm
+- Use {::nomarkdown}<mcode>M405</mcode>{:/nomarkdown} command to disable filament detector
+- Use {::nomarkdown}<mcode>M406</mcode>{:/nomarkdown} command to enable filament detector
+- Use {::nomarkdown}<mcode>M407</mcode>{:/nomarkdown} command to check if the filament detector gets triggered and to calibrate
 
 ## Configuration options
 
@@ -41,15 +39,13 @@ If a difference is detected, the filament is not advancing correctly, which mean
 
 ## Calibration
 
-{::nomarkdown}
-Disable the detector with <mcode>M405</mcode>, pull a known length of filament through the detector then see how many pulses were detected with <mcode>M407</mcode>.
+Disable the detector with {::nomarkdown}<mcode>M405</mcode>{:/nomarkdown}, pull a known length of filament through the detector then see how many pulses were detected with {::nomarkdown}<mcode>M407</mcode>{:/nomarkdown}.
 
 Set the <setting v1="filament_detector.pulses_per_mm"></setting> (in config) to the calculated number (e.g., 20mm generated 50 pulses, so pulses/mm is 50/20= 2.5)
 
-You can set the steps per mm temporarily with <mcode>M404</mcode> P2.5 to check before changing it in config.
+You can set the steps per mm temporarily with {::nomarkdown}<mcode>M404</mcode>{:/nomarkdown} P2.5 to check before changing it in config.
 
-Enable the detector with <mcode>M406</mcode> and test with a small print.
-{:/nomarkdown}
+Enable the detector with {::nomarkdown}<mcode>M406</mcode>{:/nomarkdown} and test with a small print.
 
 If the detector mis-triggers too often reduce the <setting v1="filament_detector.pulses_per_mm"></setting> and/or increase the check time.
 

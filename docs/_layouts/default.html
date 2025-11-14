@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="{{ '/assets/css/pin-tag.css' | relative_url }}">
     <link rel="stylesheet" href="{{ '/assets/css/pin-popup.css' | relative_url }}">
     <link rel="stylesheet" href="{{ '/assets/css/version-selector.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/css/versioned-tag.css' | relative_url }}">
     <script src="{{ '/assets/js/respond.js' | relative_url }}"></script>
     <!--[if lt IE 9]>
       <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -36,14 +37,24 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
+    <!-- Import map for external dependencies -->
+    <script type="importmap">
+    {
+      "imports": {
+        "jquery": "https://cdn.jsdelivr.net/npm/jquery@3.7.1/+esm"
+      }
+    }
+    </script>
+
     <!-- AUTO-GENERATED TYPESCRIPT SCRIPTS START -->
-    <script src="{{ '/assets/js/load-assets.js' | relative_url }}"></script>
-    <script src="{{ '/assets/js/raw-tag.js' | relative_url }}"></script>
-    <script src="{{ '/assets/js/code-tag.js' | relative_url }}"></script>
-    <script src="{{ '/assets/js/setting-tag.js' | relative_url }}"></script>
-    <script src="{{ '/assets/js/version-selector.js' | relative_url }}"></script>
-    <script src="{{ '/assets/js/animate.js' | relative_url }}"></script>
-    <script src="{{ '/assets/js/pin-tag.js' | relative_url }}"></script>
+    <script type="module" src="{{ '/assets/js/load-assets.js' | relative_url }}"></script>
+    <script type="module" src="{{ '/assets/js/raw-tag.js' | relative_url }}"></script>
+    <script type="module" src="{{ '/assets/js/code-tag.js' | relative_url }}"></script>
+    <script type="module" src="{{ '/assets/js/setting-tag.js' | relative_url }}"></script>
+    <script type="module" src="{{ '/assets/js/version-selector.js' | relative_url }}"></script>
+    <script type="module" src="{{ '/assets/js/animate.js' | relative_url }}"></script>
+    <script type="module" src="{{ '/assets/js/pin-tag.js' | relative_url }}"></script>
+    <script type="module" src="{{ '/assets/js/versioned-tag.js' | relative_url }}"></script>
     <!-- AUTO-GENERATED TYPESCRIPT SCRIPTS END -->
   </head>
   <body>

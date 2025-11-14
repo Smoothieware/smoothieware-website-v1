@@ -22,6 +22,25 @@ Here is a list of the G-codes that are currently supported:
 
 ## G codes
 
+<style>
+table {
+  table-layout: fixed;
+  width: 100%;
+}
+table th:nth-child(1),
+table td:nth-child(1) {
+  width: 15%;
+}
+table th:nth-child(2),
+table td:nth-child(2) {
+  width: 70%;
+}
+table th:nth-child(3),
+table td:nth-child(3) {
+  width: 15%;
+}
+</style>
+
 | G-Code | Description | Example |
 | ------ | ----------- | ------- |
 | <gcode>G0</gcode> [→](g0) | Move to the given coordinates. To the contrary of <gcode>G1</gcode>, if there is a tool it will most of the time be off during this kind of move. This is a "go to" move rather than a "do while going to" move. The F parameter defines speed and is remembered by subsequent commands ( specified in millimetres/minute ) (command is modal) | <gcode>G0</gcode> X10 Y5 F100 |

@@ -79,9 +79,7 @@ That's a huge waste of RAM.
 
 For example, the G-code:
 
-{::nomarkdown}
-<gcode>G1</gcode> X23.43 Y12.34 E22.33
-{:/nomarkdown}
+{::nomarkdown}<gcode>G1</gcode>{:/nomarkdown} X23.43 Y12.34 E22.33
 
 is 23 bytes.
 
