@@ -6,13 +6,13 @@
  * - Horizontal layout: side-by-side (50/50 split)
  * - Vertical layout: stacked (one above another)
  * - Works without JavaScript (shows both by default)
- * - v1 content: pastel orange accent
- * - v2 content: pastel blue accent
+ * - v1 content: pastel orange accent (1px dotted border)
+ * - v2 content: pastel blue accent (1px dotted border)
  *
  * Visibility is controlled by data-display-version attribute set by JavaScript:
- * - No attribute or "nc" or "both": show both v1 and v2
- * - "v1": show only v1
- * - "v2": show only v2
+ * - No attribute or "nc" or "both": show both v1 and v2 with borders and labels
+ * - "v1": show only v1 with no styling (plain content)
+ * - "v2": show only v2 with no styling (plain content)
  */
 
 /* Base versioned tag container */
@@ -20,8 +20,8 @@ versioned {
     /* Block display for proper layout */
     display:         block;
 
-    /* Margin for spacing */
-    margin:          1em 0;
+    /* No margin by default (when showing only one version) */
+    margin:          0;
 
     /* Clear floats */
     clear:           both;
@@ -30,36 +30,62 @@ versioned {
     position:        relative;
 }
 
+/* Add margin only when showing both versions */
+versioned[data-display-version="both"],
+versioned[data-display-version="nc"],
+versioned:not([data-display-version]) {
+    margin:          1em 0;
+}
+
 /* Horizontal layout (default) - side by side */
 versioned[orientation="horizontal"],
 versioned:not([orientation]),
 versioned[orientation=""] {
     display:         flex;
     flex-direction:  row;
-    gap:             1em;
+    gap:             0;  /* No gap by default */
     align-items:     stretch;
+}
+
+/* Horizontal layout gap - only when showing both versions */
+versioned[data-display-version="both"][orientation="horizontal"],
+versioned[data-display-version="nc"][orientation="horizontal"],
+versioned:not([data-display-version])[orientation="horizontal"],
+versioned[data-display-version="both"]:not([orientation]),
+versioned[data-display-version="nc"]:not([orientation]),
+versioned:not([data-display-version]):not([orientation]),
+versioned[data-display-version="both"][orientation=""],
+versioned[data-display-version="nc"][orientation=""],
+versioned:not([data-display-version])[orientation=""] {
+    gap:             1em;
 }
 
 /* Vertical layout - stacked */
 versioned[orientation="vertical"] {
     display:         flex;
     flex-direction:  column;
-    gap:             1em;
+    gap:             0;  /* No gap by default */
     align-items:     stretch;
 }
 
-/* v1 content container */
+/* Vertical layout gap - only when showing both versions */
+versioned[data-display-version="both"][orientation="vertical"],
+versioned[data-display-version="nc"][orientation="vertical"],
+versioned:not([data-display-version])[orientation="vertical"] {
+    gap:             1em;
+}
+
+/* v1 content container - only styled when showing both versions */
 v1 {
     /* Block display */
     display:         block;
 
-    /* Background and border */
-    background:      #1a1a1a;
-    border:          2px solid #ffd966; /* Pastel orange accent */
-    border-radius:   6px;
-
-    /* Padding */
-    padding:         1em;
+    /* Default: no styling (when showing only v1) */
+    background:      none;
+    border:          none;
+    border-radius:   0;
+    padding:         0;
+    margin:          0;
 
     /* Flex grow for horizontal layout */
     flex:            1;
@@ -74,18 +100,17 @@ v1 {
     position:        relative;
 }
 
-/* v2 content container */
+/* v2 content container - only styled when showing both versions */
 v2 {
     /* Block display */
     display:         block;
 
-    /* Background and border */
-    background:      #1a1a1a;
-    border:          2px solid #7ec8ed; /* Pastel blue accent */
-    border-radius:   6px;
-
-    /* Padding */
-    padding:         1em;
+    /* Default: no styling (when showing only v2) */
+    background:      none;
+    border:          none;
+    border-radius:   0;
+    padding:         0;
+    margin:          0;
 
     /* Flex grow for horizontal layout */
     flex:            1;
@@ -100,19 +125,43 @@ v2 {
     position:        relative;
 }
 
-/* Version labels */
+/* When showing BOTH versions: add styling to distinguish them */
+versioned[data-display-version="both"] v1,
+versioned[data-display-version="nc"] v1,
+versioned:not([data-display-version]) v1 {
+    background:      #1a1a1a;
+    border:          1px dotted #ffd966; /* 1px dotted orange */
+    border-radius:   6px;
+    padding:         1em;
+    /* South-east shadow - strong for dark mode */
+    box-shadow:      8px 8px 16px rgba(0, 0, 0, 0.5),
+                     4px 4px 8px rgba(0, 0, 0, 0.4),
+                     2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+versioned[data-display-version="both"] v2,
+versioned[data-display-version="nc"] v2,
+versioned:not([data-display-version]) v2 {
+    background:      #1a1a1a;
+    border:          1px dotted #7ec8ed; /* 1px dotted blue */
+    border-radius:   6px;
+    padding:         1em;
+    /* South-east shadow - strong for dark mode */
+    box-shadow:      8px 8px 16px rgba(0, 0, 0, 0.5),
+                     4px 4px 8px rgba(0, 0, 0, 0.4),
+                     2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Version labels - ALWAYS shown, positioned on the right */
 v1::before,
 v2::before {
-    /* Content */
-    content:         attr(data-version);
-
     /* Display */
     display:         inline-block;
 
-    /* Position */
+    /* Position on the RIGHT */
     position:        absolute;
     top:             -12px;
-    left:            10px;
+    right:           10px;  /* Changed from left to right */
 
     /* Background */
     background:      #1a1a1a;
@@ -131,24 +180,46 @@ v2::before {
 
     /* Z-index */
     z-index:         1;
+
+    /* Cursor to indicate clickability */
+    cursor:          pointer;
+
+    /* Transition for smooth hover effect */
+    transition:      all 0.2s ease;
 }
 
-/* v1 label */
+/* v1 label styling */
 v1::before {
     content:         "V1";
     color:           #ffd966; /* Pastel orange */
     border:          1px solid #ffd966;
 }
 
-/* v2 label */
+/* v2 label styling */
 v2::before {
     content:         "V2";
     color:           #7ec8ed; /* Pastel blue */
     border:          1px solid #7ec8ed;
 }
 
-/* Typography inside v1 and v2 */
-v1, v2 {
+/* Label hover effect - brighten on hover */
+v1::before:hover,
+v2::before:hover {
+    transform:       scale(1.1);
+    box-shadow:      0 0 8px rgba(255, 217, 102, 0.5);
+}
+
+v2::before:hover {
+    box-shadow:      0 0 8px rgba(126, 200, 237, 0.5);
+}
+
+/* Typography inside v1 and v2 - only when showing both versions */
+versioned[data-display-version="both"] v1,
+versioned[data-display-version="nc"] v1,
+versioned:not([data-display-version]) v1,
+versioned[data-display-version="both"] v2,
+versioned[data-display-version="nc"] v2,
+versioned:not([data-display-version]) v2 {
     font-family:     'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size:       0.95em;
     line-height:     1.6;
@@ -196,6 +267,39 @@ versioned[data-display-version="v2"] v1 {
 /* versioned elements without data-display-version show both by default */
 /* versioned[data-display-version="nc"] shows both */
 /* versioned[data-display-version="both"] shows both */
+
+/* ============================================================================
+   HOVER EFFECTS IN SINGLE-VERSION MODE
+   ============================================================================
+   When showing only v1 or v2, hovering over the content area shows a border
+   to indicate it's interactive and clickable
+   ============================================================================ */
+
+/* Show border when hovering over v1 in v1-only mode */
+versioned[data-display-version="v1"] v1:hover {
+    background:      #1a1a1a;
+    border:          1px dotted #ffd966; /* 1px dotted orange */
+    border-radius:   6px;
+    padding:         1em;
+    transition:      all 0.2s ease;
+    /* South-east shadow - strong for dark mode */
+    box-shadow:      8px 8px 16px rgba(0, 0, 0, 0.5),
+                     4px 4px 8px rgba(0, 0, 0, 0.4),
+                     2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Show border when hovering over v2 in v2-only mode */
+versioned[data-display-version="v2"] v2:hover {
+    background:      #1a1a1a;
+    border:          1px dotted #7ec8ed; /* 1px dotted blue */
+    border-radius:   6px;
+    padding:         1em;
+    transition:      all 0.2s ease;
+    /* South-east shadow - strong for dark mode */
+    box-shadow:      8px 8px 16px rgba(0, 0, 0, 0.5),
+                     4px 4px 8px rgba(0, 0, 0, 0.4),
+                     2px 2px 4px rgba(0, 0, 0, 0.3);
+}
 
 /* ============================================================================
    RESPONSIVE BEHAVIOR

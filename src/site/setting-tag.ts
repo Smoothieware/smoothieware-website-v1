@@ -374,6 +374,8 @@ $(() => {
 /**
  * Updates the visibility of v1/v2 content in all setting tags based on display_version setting
  * Called on initial load and whenever the version preference changes
+ *
+ * Tags with the 'demo' attribute are skipped - they maintain their own display state
  */
 function update_all_setting_tags_visibility(): void {
 
@@ -385,6 +387,21 @@ function update_all_setting_tags_visibility(): void {
     $all_settings.each(function(this: HTMLElement) {
 
         const $setting = $(this);
+
+        // Check if element has demo attribute - if so, skip version-based visibility logic
+        const has_demo = $setting.attr('demo') !== undefined;
+
+        if (has_demo) {
+            // Demo element - always show both v1 and v2 content regardless of global setting
+            const $v1_content = $setting.find('.setting-v1-content');
+            const $v2_content = $setting.find('.setting-v2-content');
+            const $separator = $setting.find('.setting-separator-vertical');
+
+            $v1_content.show();
+            $v2_content.show();
+            $separator.show();
+            return; // Skip to next element
+        }
 
         // Get v1 and v2 attribute values to determine if this is a dual-attribute tag
         const v1_setting = $setting.attr('v1') ?? '';

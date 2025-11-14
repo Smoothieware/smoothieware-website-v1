@@ -25,6 +25,8 @@ import {
  *
  * This sets the data-display-version attribute on each <versioned> element
  * CSS rules then hide/show v1/v2 content based on this attribute
+ *
+ * Tags with the 'demo' attribute are skipped - they maintain their own display state
  */
 function update_all_versioned_tags_visibility(): void {
 
@@ -35,8 +37,24 @@ function update_all_versioned_tags_visibility(): void {
     const $all_versioned = $('versioned');
 
     // Set data-display-version attribute on each versioned element
-    // CSS rules use this attribute to control visibility of v1/v2 content
-    $all_versioned.attr('data-display-version', display_version);
+    // Skip elements with 'demo' attribute - they control their own visibility
+    $all_versioned.each(function() {
+        const $element = $(this);
+
+        // Check if element has demo attribute
+        const demo_value = $element.attr('demo');
+
+        if (demo_value !== undefined) {
+            // Element has demo attribute - set display based on demo value
+            // If demo has a value (like demo="v1" or demo="both"), use that
+            // If demo is just present without value, default to "both"
+            const demo_display = demo_value === '' ? 'both' : demo_value;
+            $element.attr('data-display-version', demo_display);
+        } else {
+            // Normal element - use global display version
+            $element.attr('data-display-version', display_version);
+        }
+    });
 
     console.log(`[versioned-tag.ts] Updated all versioned tag visibility for display_version: ${display_version}`);
 }
@@ -66,4 +84,32 @@ $(() => {
         // Update all versioned tags visibility when version changes from header
         update_all_versioned_tags_visibility();
     });
+
+    // Add click handlers to v1 and v2 elements to open version selector menu
+    // Using event delegation since elements may be added dynamically
+    $(document).on('click', 'v1, v2', function(event) {
+
+        // Get the version selector dropdown element
+        const version_selector_dropdown = document.getElementById('version-selector-dropdown') as any;
+
+        // Guard against missing dropdown
+        if (!version_selector_dropdown) {
+            console.warn('[versioned-tag.ts] Version selector dropdown not found');
+            return;
+        }
+
+        // Open the dropdown using Shoelace API
+        // Shoelace dropdowns have a show() method
+        if (typeof version_selector_dropdown.show === 'function') {
+            version_selector_dropdown.show();
+            console.log('[versioned-tag.ts] Opened version selector dropdown');
+        } else {
+            console.warn('[versioned-tag.ts] Version selector dropdown does not have show() method');
+        }
+
+        // Prevent event bubbling
+        event.stopPropagation();
+    });
+
+    console.log('[versioned-tag.ts] Click handlers attached to v1 and v2 elements');
 });

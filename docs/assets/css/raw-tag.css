@@ -37,6 +37,11 @@ raw {
 
     /* Remove default spacing */
     line-height:     1;
+
+    /* South-east shadow - strong for dark mode */
+    box-shadow:      8px 8px 16px rgba(0, 0, 0, 0.5),
+                     4px 4px 8px rgba(0, 0, 0, 0.4),
+                     2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 /* Raw content wrapper */

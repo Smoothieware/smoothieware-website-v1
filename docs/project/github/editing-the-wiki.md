@@ -168,7 +168,7 @@ For documenting Smoothieware configuration options, we have a special `<setting>
 <setting v1="alpha_steps_per_mm"></setting>
 ```
 
-Which renders as: {::nomarkdown}<setting v1="alpha_steps_per_mm"></setting>{:/nomarkdown}
+Which renders as: {::nomarkdown}<setting demo v1="alpha_steps_per_mm"></setting>{:/nomarkdown}
 
 **For v2 settings:**
 
@@ -176,7 +176,7 @@ Which renders as: {::nomarkdown}<setting v1="alpha_steps_per_mm"></setting>{:/no
 <setting v2="actuator.alpha.steps_per_mm"></setting>
 ```
 
-Which renders as: {::nomarkdown}<setting v2="actuator.alpha.steps_per_mm"></setting>{:/nomarkdown}
+Which renders as: {::nomarkdown}<setting demo v2="actuator.alpha.steps_per_mm"></setting>{:/nomarkdown}
 
 **For settings that exist in both versions:**
 
@@ -184,7 +184,7 @@ Which renders as: {::nomarkdown}<setting v2="actuator.alpha.steps_per_mm"></sett
 <setting v1="acceleration" v2="motion control.default_acceleration"></setting>
 ```
 
-Which renders as: {::nomarkdown}<setting v1="acceleration" v2="motion control.default_acceleration"></setting>{:/nomarkdown}
+Which renders as: {::nomarkdown}<setting demo v1="acceleration" v2="motion control.default_acceleration"></setting>{:/nomarkdown}
 
 #### How It Works
 
@@ -213,7 +213,7 @@ setting to control how many motor steps equal 1mm of movement.
 Renders as:
 
 {::nomarkdown}
-Configure the <setting v1="alpha_steps_per_mm" v2="actuator.alpha.steps_per_mm"></setting>
+Configure the <setting demo v1="alpha_steps_per_mm" v2="actuator.alpha.steps_per_mm"></setting>
 setting to control how many motor steps equal 1mm of movement.
 {:/nomarkdown}
 
@@ -228,7 +228,7 @@ Renders as:
 
 {::nomarkdown}
 The hotend thermistor pin is set with
-<setting v1="temperature_control.hotend.thermistor_pin" v2="thermistor_pin"></setting>.
+<setting demo v1="temperature_control.hotend.thermistor_pin" v2="thermistor_pin"></setting>.
 {:/nomarkdown}
 
 **Motion settings:**
@@ -241,8 +241,8 @@ and <setting v1="junction_deviation" v2="planner.junction_deviation"></setting>.
 Renders as:
 
 {::nomarkdown}
-Basic motion is controlled by <setting v1="acceleration" v2="motion control.default_acceleration"></setting>
-and <setting v1="junction_deviation" v2="planner.junction_deviation"></setting>.
+Basic motion is controlled by <setting demo v1="acceleration" v2="motion control.default_acceleration"></setting>
+and <setting demo v1="junction_deviation" v2="planner.junction_deviation"></setting>.
 {:/nomarkdown}
 
 **Single version only:**
@@ -254,7 +254,7 @@ The <setting v1="arm_solution"></setting> determines your kinematics type.
 Renders as:
 
 {::nomarkdown}
-The <setting v1="arm_solution"></setting> determines your kinematics type.
+The <setting demo v1="arm_solution"></setting> determines your kinematics type.
 {:/nomarkdown}
 
 #### Important Notes
@@ -278,8 +278,22 @@ Configure your printer by setting <setting v1="alpha_steps_per_mm"></setting> fi
 Renders as:
 
 {::nomarkdown}
-Configure your printer by setting <setting v1="alpha_steps_per_mm"></setting> first.
+Configure your printer by setting <setting demo v1="alpha_steps_per_mm"></setting> first.
 {:/nomarkdown}
+
+#### Demo Attribute
+
+For documentation pages (like this one), you can use the `demo` attribute to make custom tags render independently of the currently selected version:
+
+```html
+<setting demo v1="alpha_steps_per_mm" v2="actuator.alpha.steps_per_mm"></setting>
+```
+
+With `demo`, the tag will always display both v1 and v2 content (for dual-attribute tags) regardless of the user's version selector choice. This ensures documentation examples always look the same.
+
+The `demo` attribute works with:
+- `<setting>` tags - always shows both versions
+- `<versioned>` tags - use `demo="both"` to always show both, `demo="v1"` for v1-only demo, `demo="v2"` for v2-only demo
 
 #### Testing Your Settings
 
@@ -565,6 +579,337 @@ Renders as:
 
 {::nomarkdown}
 Configure your endstop as <pin>1.29!^</pin> for inverted logic with pull-up enabled.
+{:/nomarkdown}
+
+### Version-Specific Content
+
+For displaying content that differs between Smoothieware V1 and V2, we have the `<versioned>` tag system:
+
+{::nomarkdown}
+<sl-alert variant="primary" open>
+  <sl-icon slot="icon" name="lightbulb"></sl-icon>
+  <strong>Version-Specific Content Display</strong><br>
+  The <code>&lt;versioned&gt;</code> tag lets you show different content for V1 and V2 users based on their version preference. Content can be displayed side-by-side (horizontal) or stacked (vertical).
+</sl-alert>
+{:/nomarkdown}
+
+#### Basic Syntax
+
+The `<versioned>` tag contains two sections: `<v1>` for V1-specific content and `<v2>` for V2-specific content. To enable markdown processing inside these tags, wrap them with Kramdown's `{::nomarkdown}` / `{:/nomarkdown}` directives:
+
+```html
+{::nomarkdown}
+<versioned>
+<v1>
+{:/nomarkdown}
+
+V1 content here with **markdown** formatting.
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+V2 content here with **markdown** formatting.
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
+```
+
+#### Horizontal Layout (Side-by-Side)
+
+The default orientation is horizontal, which displays V1 and V2 content side-by-side (50/50 split). This is best for comparing similar content:
+
+```html
+{::nomarkdown}
+<versioned orientation="horizontal">
+<v1>
+{:/nomarkdown}
+
+**V1 Configuration:**
+
+- Setting A: `value1`
+- Setting B: `value2`
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+**V2 Configuration:**
+
+- Setting A: `new_value1`
+- Setting B: `new_value2`
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
+```
+
+You can omit `orientation="horizontal"` since it's the default:
+
+```html
+{::nomarkdown}
+<versioned>
+<v1>
+{:/nomarkdown}
+
+V1 content here.
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+V2 content here.
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
+```
+
+#### Vertical Layout (Stacked)
+
+For longer content sections, use vertical orientation to stack V1 and V2 content:
+
+```html
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
+
+**V1 Network Configuration:**
+
+In Smoothieware V1, network settings use a flat structure:
+
+- `network.enable true`
+- `network.ip_address 192.168.1.100`
+- `network.ip_mask 255.255.255.0`
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+**V2 Network Configuration:**
+
+In Smoothieware V2, network settings use INI-style sections:
+
+```
+[network]
+enable = true
+ip_address = 192.168.1.100
+netmask = 255.255.255.0
+```
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
+```
+
+#### Markdown Support
+
+To use markdown inside versioned tags, you **must** wrap the HTML tags with `{::nomarkdown}` and `{:/nomarkdown}` directives. This tells Jekyll's Kramdown processor to handle the content correctly.
+
+**Important rules:**
+
+1. Use `{::nomarkdown}` before opening HTML tags
+2. Use `{:/nomarkdown}` after opening tags to re-enable markdown
+3. Add blank lines after `{:/nomarkdown}` and before `{::nomarkdown}` for proper parsing
+4. Repeat the pattern when closing tags
+
+**All markdown features work inside versioned content:**
+- **Bold** and _italic_ text
+- Bullet and numbered lists
+- Code blocks with triple backticks
+- Inline `code`
+- Tables
+- Links
+- Nested custom tags like `<setting>`, `<pin>`, `<gcode>`, etc.
+
+#### Use Cases
+
+**Configuration comparisons:**
+
+```html
+{::nomarkdown}
+<versioned>
+<v1>
+{:/nomarkdown}
+
+Configure stepper motors with <setting v1="alpha_steps_per_mm"></setting>
+and <setting v1="alpha_max_rate"></setting>.
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+Configure stepper motors with <setting v2="actuator.alpha.steps_per_mm"></setting>
+and <setting v2="actuator.alpha.max_rate"></setting>.
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
+```
+
+**Renders as:**
+
+{::nomarkdown}
+<versioned demo="both">
+<v1>
+{:/nomarkdown}
+
+Configure stepper motors with <setting demo v1="alpha_steps_per_mm"></setting>
+and <setting demo v1="alpha_max_rate"></setting>.
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+Configure stepper motors with <setting demo v2="actuator.alpha.steps_per_mm"></setting>
+and <setting demo v2="actuator.alpha.max_rate"></setting>.
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
+
+**Feature availability:**
+
+```html
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
+
+This feature is not available in V1.
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+**New in V2:**
+
+This feature allows you to configure advanced motion control
+with improved acceleration profiles.
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
+```
+
+**Renders as:**
+
+{::nomarkdown}
+<versioned demo="both" orientation="vertical">
+<v1>
+{:/nomarkdown}
+
+This feature is not available in V1.
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+**New in V2:**
+
+This feature allows you to configure advanced motion control
+with improved acceleration profiles.
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
+
+**Pin assignments with differences:**
+
+```html
+{::nomarkdown}
+<versioned>
+<v1>
+{:/nomarkdown}
+
+Connect the thermistor to <pin>0.23</pin> and configure with
+<setting v1="temperature_control.hotend.thermistor_pin"></setting>.
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+Connect the thermistor to <pin>0.23</pin> (same pin) and configure with
+<setting v2="thermistor.hotend.pin"></setting>.
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
+```
+
+**Renders as:**
+
+{::nomarkdown}
+<versioned demo="both">
+<v1>
+{:/nomarkdown}
+
+Connect the thermistor to <pin>0.23</pin> and configure with
+<setting demo v1="temperature_control.hotend.thermistor_pin"></setting>.
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+Connect the thermistor to <pin>0.23</pin> (same pin) and configure with
+<setting demo v2="thermistor.hotend.pin"></setting>.
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
+
+#### How It Works
+
+The versioned tag system integrates with the version selector in the page header:
+
+- **Show V1**: Displays only V1 content (V2 hidden)
+- **Show V2**: Displays only V2 content (V1 hidden)
+- **Show Both**: Displays both side-by-side or stacked with color-coded borders
+  - V1 content: orange dotted border
+  - V2 content: blue dotted border
+
+When showing only one version, the content appears as normal page text with no special styling. When showing both, the borders help distinguish between versions.
+
+Users can click on the V1/V2 labels to open the version selector and switch between modes.
+
+#### Important Notes
+
+{::nomarkdown}
+<sl-alert variant="warning" open>
+  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+  <strong>Kramdown Wrappers Required for Markdown</strong><br>
+  Without the <code>{::nomarkdown}</code> / <code>{:/nomarkdown}</code> wrappers, markdown inside versioned tags will NOT be processed. Always use the wrapper pattern shown in the examples above.
+</sl-alert>
+{:/nomarkdown}
+
+{::nomarkdown}
+<sl-alert variant="primary" open>
+  <sl-icon slot="icon" name="lightbulb"></sl-icon>
+  <strong>Test Your Versioned Content</strong><br>
+  See the <a href="/debug-versioned-tags">Debug Versioned Tags</a> page for comprehensive examples and to test how versioned content appears in different modes.
+</sl-alert>
 {:/nomarkdown}
 
 ### Lists

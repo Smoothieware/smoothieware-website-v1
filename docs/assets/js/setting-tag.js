@@ -6138,6 +6138,16 @@ function update_all_setting_tags_visibility() {
   const $all_settings = $("setting");
   $all_settings.each(function() {
     const $setting = $(this);
+    const has_demo = $setting.attr("demo") !== undefined;
+    if (has_demo) {
+      const $v1_content = $setting.find(".setting-v1-content");
+      const $v2_content = $setting.find(".setting-v2-content");
+      const $separator = $setting.find(".setting-separator-vertical");
+      $v1_content.show();
+      $v2_content.show();
+      $separator.show();
+      return;
+    }
     const v1_setting = $setting.attr("v1") ?? "";
     const v2_setting = $setting.attr("v2") ?? "";
     const is_dual_attribute = v1_setting && v2_setting;
