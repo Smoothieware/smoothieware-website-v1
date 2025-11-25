@@ -44,11 +44,58 @@ It uses some math, allowing us to correct those problems by turning the heater o
 
 The P, I, and D factors are configured in your config file as follows:
 
+{::nomarkdown}
+<review id="temperaturecontrol-pid:pid-factors-config">
+<proposal>
+{:/nomarkdown}
+
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
+
+**V1 Configuration:**
+
 ```gcode
 temperature_control.hotend.p_factor     100
 temperature_control.hotend.i_factor     0.1
 temperature_control.hotend.d_factor     100
 ```
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+**V2 Configuration:**
+
+```ini
+[temperature control]
+hotend.p_factor = 100
+hotend.i_factor = 0.1
+hotend.d_factor = 100
+```
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
+
+{::nomarkdown}
+</proposal>
+<original>
+{:/nomarkdown}
+
+```gcode
+temperature_control.hotend.p_factor     100
+temperature_control.hotend.i_factor     0.1
+temperature_control.hotend.d_factor     100
+```
+
+{::nomarkdown}
+</original>
+</review>
+{:/nomarkdown}
 
 {::nomarkdown}
 <sl-alert variant="warning" open>
@@ -101,11 +148,58 @@ If auto-tuning doesn't work well for your setup, you can manually tune:
 
 Begin with conservative values:
 
+{::nomarkdown}
+<review id="temperaturecontrol-pid:starting-values-config">
+<proposal>
+{:/nomarkdown}
+
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
+
+**V1 Configuration:**
+
 ```gcode
 p_factor = 100
 i_factor = 0.1
 d_factor = 100
 ```
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+**V2 Configuration:**
+
+```ini
+[temperature control]
+hotend.p_factor = 100
+hotend.i_factor = 0.1
+hotend.d_factor = 100
+```
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
+
+{::nomarkdown}
+</proposal>
+<original>
+{:/nomarkdown}
+
+```gcode
+p_factor = 100
+i_factor = 0.1
+d_factor = 100
+```
+
+{::nomarkdown}
+</original>
+</review>
+{:/nomarkdown}
 
 ##### Tuning Process
 
@@ -203,9 +297,52 @@ Heated beds typically need:
 
 The PWM frequency can affect PID performance:
 
+{::nomarkdown}
+<review id="temperaturecontrol-pid:pwm-frequency-config">
+<proposal>
+{:/nomarkdown}
+
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
+
+**V1 Configuration:**
+
 ```gcode
 temperature_control.hotend.pwm_frequency    1000
 ```
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+**V2 Configuration:**
+
+```ini
+[temperature control]
+hotend.pwm_frequency = 1000
+```
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
+
+{::nomarkdown}
+</proposal>
+<original>
+{:/nomarkdown}
+
+```gcode
+temperature_control.hotend.pwm_frequency    1000
+```
+
+{::nomarkdown}
+</original>
+</review>
+{:/nomarkdown}
 
 Higher frequencies (1000-4000 Hz) are typically better for solid-state relays and MOSFETs.
 
@@ -213,9 +350,52 @@ Higher frequencies (1000-4000 Hz) are typically better for solid-state relays an
 
 For very simple setups, you can disable PID entirely:
 
+{::nomarkdown}
+<review id="temperaturecontrol-pid:bang-bang-mode-config">
+<proposal>
+{:/nomarkdown}
+
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
+
+**V1 Configuration:**
+
 ```gcode
 temperature_control.hotend.bang_bang    true
 ```
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+**V2 Configuration:**
+
+```ini
+[temperature control]
+hotend.bang_bang = true
+```
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
+
+{::nomarkdown}
+</proposal>
+<original>
+{:/nomarkdown}
+
+```gcode
+temperature_control.hotend.bang_bang    true
+```
+
+{::nomarkdown}
+</original>
+</review>
+{:/nomarkdown}
 
 This uses simple on/off control. Not recommended for most applications.
 

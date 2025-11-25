@@ -25,7 +25,7 @@ This page documents new features that were added to Smoothie in 2013.
 
 - `reset` and `dfu` commands added to SimpleShell.
 
-- Added support for [onboot.gcode](https://github.com/arthurwolf/smoothie/pull/124/files) to run automatically at power up by setting {::nomarkdown}<setting v1="on_boot_gcode_enable"></setting>{:/nomarkdown} to true in config. The name of the file to be run can also be changed by setting {::nomarkdown}<setting v1="on_boot_gcode"></setting>{:/nomarkdown}.
+- Added support for [onboot.gcode](https://github.com/arthurwolf/smoothie/pull/124/files) to run automatically at power up by setting {::nomarkdown}<review><proposal><versioned><v1><setting v1="on_boot_gcode_enable"></setting></v1><v2>Not supported in v2</v2></versioned></proposal><original>on_boot_gcode_enable</original></review>{:/nomarkdown} to true in config. The name of the file to be run can also be changed by setting {::nomarkdown}<review><proposal><versioned><v1><setting v1="on_boot_gcode"></setting></v1><v2>Not supported in v2</v2></versioned></proposal><original>on_boot_gcode</original></review>{:/nomarkdown}.
 
 - Added [button](https://github.com/arthurwolf/smoothie/pull/123/files), which in a sense is the other half of the Switch module. This module will trigger custom m-codes when a pin is toggled. The combination of Button and Switch modules allows for 'programming' of basic behaviors with only simple config changes. An example would be a physical button that turns a fan, heater, or other tool on and off.
 

@@ -15,9 +15,10 @@
 
 /* Base setting tag container */
 setting {
-    /* Inline flex for horizontal layout */
+    /* Inline flex for horizontal layout with wrapping support */
     display:         inline-flex;
     align-items:     stretch;
+    flex-wrap:       wrap;
 
     /* Monospace font for code appearance */
     font-family:     'Courier New', Courier, monospace !important;
@@ -25,8 +26,12 @@ setting {
     font-weight:     500;
 
     /* Compact container sizing */
-    height:          22px;
+    height:          auto;
+    min-height:      22px;
     margin:          0 3px;
+
+    /* Black background to hide wrapping artifacts */
+    background:      #000;
 
     /* Rounded corners */
     border-radius:   3px;
@@ -40,9 +45,6 @@ setting {
 
     /* Vertical alignment with surrounding text */
     vertical-align:  middle;
-
-    /* No wrapping */
-    white-space:     nowrap;
 
     /* Allow text selection so tags can be copied with surrounding text */
     user-select:     text;
@@ -1390,5 +1392,7 @@ sl-alert::part(base) {
 .setting-v2-content {
     display:         inline-flex;
     align-items:     stretch;
-    height:          100%;
+    height:          22px;
+    min-height:      22px;
+    white-space:     nowrap;
 }

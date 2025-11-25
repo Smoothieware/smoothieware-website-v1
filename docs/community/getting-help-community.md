@@ -9,6 +9,43 @@ The Smoothieware community is active and helpful. There are several channels whe
 ## Communication Channels
 
 - [IRC (recommended)](irc) - Real-time chat with the community and developers
+
+{::nomarkdown}
+<review id="getting-help-community:github-discussions">
+<proposal>
+{:/nomarkdown}
+
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
+
+- [Github Discussions](https://github.com/Smoothieware/Smoothieware/discussions) - Community Q&A and discussions
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+- [Github Discussions](https://github.com/Smoothieware/SmoothieV2/discussions) - Community Q&A and discussions
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
+
+{::nomarkdown}
+</proposal>
+<original>
+{:/nomarkdown}
+
+- [Github Discussions](https://github.com/Smoothieware/Smoothieware/discussions) - Community Q&A and discussions
+
+{::nomarkdown}
+</original>
+</review>
+{:/nomarkdown}
+
 - [Forum](https://forum.makerforums.info/c/controllers/smoothie/) - Discussion board for questions and announcements
 - [Support Mailing list](http://groups.google.com/group/smoothieware-support) - Email-based support discussions
 - [Dev Mailing list](http://groups.google.com/group/smoothie-dev) - Development discussions and planning

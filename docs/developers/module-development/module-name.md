@@ -20,11 +20,73 @@ There is no limit to how many modules you can create.
 
 ## Creating Module Instances
 
+{::nomarkdown}
+<review id="module-name:creating-instances">
+<proposal>
+{:/nomarkdown}
+
 Modules are created by choosing a module name, and setting the `enable` option to `true` for that module.
 
 The module name can be any identifier you choose (like `first`, `second`, `left`, `right`, etc.).
 
-## Example
+Here's how you would create three separate extruder modules:
+
+<versioned orientation="horizontal">
+<v1>
+{:/nomarkdown}
+
+```gcode
+extruder.first.enable     true
+extruder.second.enable    true
+extruder.third.enable     true
+```
+
+Each instance can then have its own configuration options using the same naming pattern:
+
+```gcode
+extruder.first.steps_per_mm           92.4
+extruder.first.max_speed              50
+
+extruder.second.steps_per_mm          90.0
+extruder.second.max_speed             50
+```
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+```ini
+[extruder]
+first.enable = true
+second.enable = true
+third.enable = true
+```
+
+Each instance can then have its own configuration options using the same pattern:
+
+```ini
+[extruder]
+first.steps_per_mm = 92.4
+first.max_speed = 50
+
+second.steps_per_mm = 90.0
+second.max_speed = 50
+```
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
+
+{::nomarkdown}
+</proposal>
+<original>
+{:/nomarkdown}
+
+Modules are created by choosing a module name, and setting the `enable` option to `true` for that module.
+
+The module name can be any identifier you choose (like `first`, `second`, `left`, `right`, etc.).
 
 Here's how you would create three separate extruder modules:
 
@@ -43,6 +105,11 @@ extruder.first.max_speed              50
 extruder.second.steps_per_mm          90.0
 extruder.second.max_speed             50
 ```
+
+{::nomarkdown}
+</original>
+</review>
+{:/nomarkdown}
 
 ## Supported Modules
 

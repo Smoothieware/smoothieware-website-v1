@@ -47,11 +47,52 @@ The "Morgan" variant is a specific SCARA implementation that was designed and co
 
 ## Configuration
 
+{::nomarkdown}
+<review id="morgan-scara:configuration">
+<proposal>
+{:/nomarkdown}
+
+To configure your machine to use the Morgan SCARA arm solution, add this to your configuration file:
+
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
+
+```
+arm_solution morgan
+```
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+```ini
+[general]
+arm_solution = morgan
+```
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
+
+{::nomarkdown}
+</proposal>
+<original>
+{:/nomarkdown}
+
 To configure your machine to use the Morgan SCARA arm solution, add this to your configuration file:
 
 ```
 arm_solution morgan
 ```
+
+{::nomarkdown}
+</original>
+</review>
+{:/nomarkdown}
 
 ### Configuration Parameters
 

@@ -4,9 +4,45 @@ permalink: /windows-drivers
 
 # Smoothie Drivers for Windows
 
+{::nomarkdown}
+<review id="windows-drivers:version-intro">
+<proposal>
+{:/nomarkdown}
+
+If you run Windows, you may need to install drivers to use the virtual serial over USB interface. Driver requirements depend on both your Windows version and which Smoothieware version you're using.
+
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
+
+**Smoothieware V1** uses a standard virtual serial port (CDC/ACM) over USB. Continue reading to determine the correct drivers for your Windows version and v1 hardware.
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+**Smoothieware V2** also uses a standard virtual serial port (CDC/ACM) over USB, and uses the same driver compatibility as V1. Windows 10 and later automatically recognize V2's composite USB device without additional drivers.
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
+
+{:/nomarkdown}
+</proposal>
+<original>
+{:/nomarkdown}
+
 If you run Windows, you will need to install drivers to use the virtual serial over USB interface.
 
 Please continue reading to determine the correct drivers to install for your version of Windows.
+
+{::nomarkdown}
+</original>
+</review>
+{:/nomarkdown}
 
 ## Windows 10 and Later
 
@@ -24,7 +60,17 @@ Please continue reading to determine the correct drivers to install for your ver
 </sl-alert>
 {:/nomarkdown}
 
+{::nomarkdown}
+<review id="windows-drivers:installer-note">
+<proposal>
+{:/nomarkdown}
+
 ## Installers Windows 2000 through Windows 8
+
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
 
 - **Windows 2000/Vista/7/8 (64bit/32bit)**: [smoothieware-usb-driver-v1.1.exe](windows-drivers/smoothieware-usb-driver-v1.1.exe)
 
@@ -33,6 +79,39 @@ Please continue reading to determine the correct drivers to install for your ver
   <sl-icon slot="icon" name="info-circle"></sl-icon>
   <strong>Note:</strong> Windows 8.1 is known to not like the new driver. Please use the v1.0 driver found below with Windows 8.1 for now.
 </sl-alert>
+{:/nomarkdown}
+
+These drivers are for **Smoothieware V1** hardware only.
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+For **Smoothieware V2**, driver support is generally better on modern Windows versions. If using Windows 10 or later, no drivers are needed. For older Windows versions with V2 hardware, the V1 drivers above may work, though V2 should ideally be used with modern operating systems.
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
+
+{:/nomarkdown}
+</proposal>
+<original>
+{:/nomarkdown}
+
+- **Windows 2000/Vista/7/8 (64bit/32bit)**: [smoothieware-usb-driver-v1.1.exe](windows-drivers/smoothieware-usb-driver-v1.1.exe)
+
+{::nomarkdown}
+<sl-alert variant="neutral" open>
+  <sl-icon slot="icon" name="info-circle"></sl-icon>
+  <strong>Note:</strong> Windows 8.1 is known to not like the new driver. Please use the v1.0 driver found below with Windows 8.1 for now.
+</sl-alert>
+{:/nomarkdown}
+
+{::nomarkdown}
+</original>
+</review>
 {:/nomarkdown}
 
 ## Using the Installers

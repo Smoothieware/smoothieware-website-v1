@@ -10,6 +10,67 @@ permalink: /eclipse
 </sl-alert>
 {:/nomarkdown}
 
+{::nomarkdown}
+<review id="eclipse:version-information">
+<proposal>
+{:/nomarkdown}
+
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
+
+This guide is for **Smoothieware V1** development on the LPC1768 platform using Eclipse with the GNU ARM toolchain and make-based build system.
+
+**V1 Development Environment:**
+- **IDE**: Eclipse with GNU ARM plugins
+- **Build System**: Makefile-based
+- **Toolchain**: gcc-arm-none-eabi
+- **Debugger**: MRI (Monitor for Remote Inspection) over UART
+- **Processor**: LPC1769 (Cortex-M3)
+- **Flash Method**: USB mass storage (drag-and-drop firmware.bin)
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+For **Smoothieware V2** development on STM32H745, the development environment differs significantly:
+
+**V2 Development Environment:**
+- **IDE**: STM32CubeIDE or Visual Studio Code recommended
+- **Build System**: Rake/Ruby-based build system (not make)
+- **Toolchain**: gcc-arm-none-eabi (same) or ARM Compiler 6
+- **Debugger**: Hardware debuggers (ST-Link, J-Link, etc.) via SWD
+- **Processor**: STM32H745 dual-core (Cortex-M7 + M4)
+- **Flash Method**: ST-Link programmer or DFU mode
+- **RTOS**: FreeRTOS (V2 uses RTOS, V1 is bare-metal)
+
+The Eclipse setup described on this page will **not work** for V2 development. Refer to the V2 development documentation for proper setup.
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
+
+{::nomarkdown}
+</proposal>
+<original>
+{:/nomarkdown}
+
+{::nomarkdown}
+<sl-alert variant="primary" open>
+  <sl-icon slot="icon" name="info-circle"></sl-icon>
+  <strong>Version Information:</strong><br>
+  This guide is for <strong>Smoothieware V1</strong> development on the LPC1768 platform. For V2 development on STM32H745, the build system and debugging approach differ significantly (V2 uses Rake/Ruby build system instead of make, and hardware debuggers instead of MRI).
+</sl-alert>
+{:/nomarkdown}
+
+{::nomarkdown}
+</original>
+</review>
+{:/nomarkdown}
+
 I first want to thank [David Cabanis](http://mbed.org/users/dcabanis/) for the e-mail that he sent me a few months ago.
 
 It forms the core of this page. David, You Rock!
@@ -71,6 +132,15 @@ This guide also applies to later versions - 4.5 (Mars) and 4.6 (Neon).
   - Now you have to be quick: In the lower right corner there is the progress icon. Click it. If it isn't there, click **Window->Show View->other** and select **General/Progress**
     - When the **C/C++ Indexer** is running in the **Progress** view, stop it by clicking the red square icon.
     - The reason is that the CHECKSUM()-macro causes an out of memory-exception in the indexer.
+
+{::nomarkdown}
+<sl-alert variant="neutral" open>
+  <sl-icon slot="icon" name="info-circle"></sl-icon>
+  <strong>V1-Specific Workaround:</strong><br>
+  This CHECKSUM() macro workaround is specific to Smoothieware V1. V2 uses a different configuration system and does not use the CHECKSUM() macro.
+</sl-alert>
+{:/nomarkdown}
+
     - To correct this, unfold the structure in the Project Explorer and open **src/libs/checksumm.h**
       - This change does not affect normal compilation or build in Eclipse. It only affects the Indexer of Eclipse.
       - Insert at line 54:

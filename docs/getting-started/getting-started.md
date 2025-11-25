@@ -149,7 +149,42 @@ You need software on your computer to talk to the board. Pick one:
 
 See [Software](software) for the full list.
 
+{::nomarkdown}
+<review id="getting-started:download-config">
+<proposal>
+{:/nomarkdown}
+
 **3. Download configuration file**
+
+You'll need a config file for your machine type:
+
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
+
+- [3D printer config](https://github.com/Smoothieware/Smoothieware/raw/edge/ConfigSamples/Smoothieboard/config) - Most common
+- [Delta printer config](https://github.com/Smoothieware/Smoothieware/blob/edge/ConfigSamples/Smoothieboard.delta/config) - If you have a delta
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+- [V2 Prime config](https://github.com/Smoothieware/SmoothieV2/raw/main/FirmwareBin/config.ini) - Latest V2 board
+- Check the [V2 Configuration Reference](/configuration-v2) for INI-style syntax differences
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
+
+Save this somewhere, you'll need it later.
+
+{::nomarkdown}
+</proposal>
+<original>
+{:/nomarkdown}
 
 You'll need a config file for your machine type:
 
@@ -157,6 +192,11 @@ You'll need a config file for your machine type:
 - [Delta printer config](https://github.com/Smoothieware/Smoothieware/blob/edge/ConfigSamples/Smoothieboard.delta/config) - If you have a delta
 
 Save this somewhere, you'll need it later.
+
+{::nomarkdown}
+</original>
+</review>
+{:/nomarkdown}
 
 **4. Read your machine guide**
 
@@ -225,6 +265,82 @@ Your machine guide has the detailed wiring instructions. General order:
 
 Configuration is just editing a text file. No compiling, no fancy tools.
 
+{::nomarkdown}
+<review id="getting-started:config-setup">
+<proposal>
+{:/nomarkdown}
+
+**Copy config to SD card**
+
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
+
+1. Plug in your USB cable (board should be powered)
+2. The SD card appears as a drive
+3. Copy your downloaded config file to it
+4. Name it `config` or `config.txt`
+5. Safely eject the drive
+6. Reset the board (press reset button or power cycle)
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+1. Plug in your USB cable (board should be powered)
+2. The SD card appears as a drive
+3. Copy your downloaded `config.ini` file to it
+4. The file MUST be named exactly `config.ini` (V2 uses INI format, not plain text)
+5. Safely eject the drive
+6. Reset the board (press reset button or power cycle)
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
+
+**Edit for your machine**
+
+You'll need to change values for your specific setup. Open the config file in any text editor and look for:
+
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
+
+- Steps per mm for your motors
+- Max speeds and accelerations
+- Endstop pin assignments
+- Temperature sensor types
+- Tool configurations
+
+See [Configuring Smoothie](configuring-smoothie) for complete documentation.
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+- Steps per mm for your motors (in INI sections like `[actuator.alpha]`)
+- Max speeds and accelerations
+- Endstop pin assignments
+- Temperature sensor types
+- Tool configurations
+
+V2 uses INI-style configuration (like Windows config files) instead of V1's key-value format. See [Configuring Smoothie V2](/configuration-v2) for complete documentation.
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
+
+{::nomarkdown}
+</proposal>
+<original>
+{:/nomarkdown}
+
 **Copy config to SD card**
 
 1. Plug in your USB cable (board should be powered)
@@ -245,6 +361,11 @@ You'll need to change values for your specific setup. Open the config file in an
 - Tool configurations
 
 See [Configuring Smoothie](configuring-smoothie) for complete documentation.
+
+{::nomarkdown}
+</original>
+</review>
+{:/nomarkdown}
 
 {::nomarkdown}
 <sl-alert variant="warning" open>

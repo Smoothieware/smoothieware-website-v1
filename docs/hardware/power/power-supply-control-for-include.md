@@ -10,7 +10,17 @@ This allows your board to automatically turn the power supply on or off when nee
 
 Here is how to control an ATX power supply's ON/OFF signal from a bare pin connected to the PS_ON signal:
 
-```gcode
+{::nomarkdown}
+<review id="power-supply-control:direct-atx">
+<proposal>
+{:/nomarkdown}
+
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
+
+```plaintext
 switch.psu.enable                            true             # turn atx on/off
 switch.psu.input_on_command                  M80              # command to turn on
 switch.psu.input_off_command                 M81              # command to turn off
@@ -20,6 +30,49 @@ switch.psu.failsafe_set_to                   1                # so the ATX turns
 #switch.psu.ignore_on_halt                    true             # so the ATX does not turn off on a HALT condition (like limit trigger)
                                                                # However leave commented or set to false if you want the ATX to turn off for an over heat fault condition
 ```
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+```ini
+[switch]
+psu.enable = true             # turn atx on/off
+psu.input_on_command = M80    # command to turn on
+psu.input_off_command = M81   # command to turn off
+psu.output_pin = 0.25o!       # open drain, inverted
+psu.output_type = digital     # on/off only
+psu.failsafe_set_to = 1       # so the ATX turns off on a system crash
+#psu.ignore_on_halt = true    # so the ATX does not turn off on a HALT condition (like limit trigger)
+                              # However leave commented or set to false if you want the ATX to turn off for an over heat fault condition
+```
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
+
+{::nomarkdown}
+</proposal>
+<original>
+{:/nomarkdown}
+
+```plaintext
+switch.psu.enable                            true             # turn atx on/off
+switch.psu.input_on_command                  M80              # command to turn on
+switch.psu.input_off_command                 M81              # command to turn off
+switch.psu.output_pin                        0.25o!           # open drain, inverted
+switch.psu.output_type                       digital          # on/off only
+switch.psu.failsafe_set_to                   1                # so the ATX turns off on a system crash
+#switch.psu.ignore_on_halt                    true             # so the ATX does not turn off on a HALT condition (like limit trigger)
+                                                               # However leave commented or set to false if you want the ATX to turn off for an over heat fault condition
+```
+
+{::nomarkdown}
+</original>
+</review>
+{:/nomarkdown}
 
 {::nomarkdown}
 <sl-alert variant="neutral" open>
@@ -34,7 +87,17 @@ switch.psu.failsafe_set_to                   1                # so the ATX turns
 
 Here is how to control an ATX power supply's ON/OFF signal from a small MOSFET connected to the PS_ON signal, or to an SSR which powers a non-ATX PSU:
 
-```gcode
+{::nomarkdown}
+<review id="power-supply-control:mosfet-ssr">
+<proposal>
+{:/nomarkdown}
+
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
+
+```plaintext
 switch.psu.enable                            true             # turn atx on/off
 switch.psu.input_on_command                  M80              # command to turn on
 switch.psu.input_off_command                 M81              # command to turn off
@@ -43,6 +106,47 @@ switch.psu.output_type                       digital          # on/off only
 #switch.psu.ignore_on_halt                    true             # so the PSU does not turn off on a HALT condition (like limit trigger)
                                                                # However leave commented or set to false if you want the PSU to turn off for an over heat fault condition
 ```
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+```ini
+[switch]
+psu.enable = true             # turn atx on/off
+psu.input_on_command = M80    # command to turn on
+psu.input_off_command = M81   # command to turn off
+psu.output_pin = 2.4          # small mosfet (NB not inverted)
+psu.output_type = digital     # on/off only
+#psu.ignore_on_halt = true    # so the PSU does not turn off on a HALT condition (like limit trigger)
+                              # However leave commented or set to false if you want the PSU to turn off for an over heat fault condition
+```
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
+
+{::nomarkdown}
+</proposal>
+<original>
+{:/nomarkdown}
+
+```plaintext
+switch.psu.enable                            true             # turn atx on/off
+switch.psu.input_on_command                  M80              # command to turn on
+switch.psu.input_off_command                 M81              # command to turn off
+switch.psu.output_pin                        2.4              # small mosfet (NB not inverted)
+switch.psu.output_type                       digital          # on/off only
+#switch.psu.ignore_on_halt                    true             # so the PSU does not turn off on a HALT condition (like limit trigger)
+                                                               # However leave commented or set to false if you want the PSU to turn off for an over heat fault condition
+```
+
+{::nomarkdown}
+</original>
+</review>
+{:/nomarkdown}
 
 {::nomarkdown}
 <sl-alert variant="primary" open>

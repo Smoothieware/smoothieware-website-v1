@@ -94,6 +94,97 @@ Once your firmware is compiled, you can now flash it to the board and start usin
 
 ### Configuration
 
+{::nomarkdown}
+<review id="6axis:abc-configuration">
+<proposal>
+{:/nomarkdown}
+
+You can now add the following to your configuration file:
+
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
+
+**V1 Configuration:**
+
+```plaintext
+# A axis
+delta_steps_per_mm                    100     # may be steps per degree for example
+delta_step_pin                        xx      # Pin for delta stepper step signal
+delta_dir_pin                         xx      # Pin for delta stepper direction
+delta_en_pin                          xx      # Pin for delta enable
+delta_current                         1.5     # Z stepper motor current
+delta_max_rate                        300.0   # mm/min
+delta_acceleration                    500.0   # mm/sec²
+
+# B axis
+epsilon_steps_per_mm                  100     # may be steps per degree for example
+epsilon_step_pin                      xx      # Pin for delta stepper step signal
+epsilon_dir_pin                       xx      # Pin for delta stepper direction
+epsilon_en_pin                        xx      # Pin for delta enable
+epsilon_current                       1.5     # Z stepper motor current
+epsilon_max_rate                      300.0   # mm/min
+epsilon_acceleration                  500.0   # mm/sec²
+
+# C axis
+zeta_steps_per_mm                     100     # may be steps per degree for example
+zeta_step_pin                         xx      # Pin for delta stepper step signal
+zeta_dir_pin                          xx      # Pin for delta stepper direction
+zeta_en_pin                           xx      # Pin for delta enable
+zeta_current                          1.5     # Z stepper motor current
+zeta_max_rate                         300.0   # mm/min
+zeta_acceleration                     500.0   # mm/sec²
+```
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+**V2 Configuration:**
+
+```ini
+[delta]
+steps_per_mm = 100     # may be steps per degree for example
+step_pin = xx          # Pin for delta stepper step signal
+dir_pin = xx           # Pin for delta stepper direction
+en_pin = xx            # Pin for delta enable
+current = 1.5          # Motor current
+max_rate = 300.0       # mm/min
+acceleration = 500.0   # mm/sec²
+
+[epsilon]
+steps_per_mm = 100     # may be steps per degree for example
+step_pin = xx          # Pin for epsilon stepper step signal
+dir_pin = xx           # Pin for epsilon stepper direction
+en_pin = xx            # Pin for epsilon enable
+current = 1.5          # Motor current
+max_rate = 300.0       # mm/min
+acceleration = 500.0   # mm/sec²
+
+[zeta]
+steps_per_mm = 100     # may be steps per degree for example
+step_pin = xx          # Pin for zeta stepper step signal
+dir_pin = xx           # Pin for zeta stepper direction
+en_pin = xx            # Pin for zeta enable
+current = 1.5          # Motor current
+max_rate = 300.0       # mm/min
+acceleration = 500.0   # mm/sec²
+```
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
+
+This configuration is very similar to that of your XYZ axes, and you need to change the values to fit your setup.
+
+{::nomarkdown}
+</proposal>
+<original>
+{:/nomarkdown}
+
 You can now add the following to your configuration file:
 
 ```bash
@@ -126,6 +217,11 @@ zeta_acceleration                     500.0   # mm/sec²
 ```
 
 This configuration is very similar to that of your XYZ axes, and you need to change the values to fit your setup.
+
+{::nomarkdown}
+</original>
+</review>
+{:/nomarkdown}
 
 ### Endstop Configuration
 

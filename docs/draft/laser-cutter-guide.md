@@ -206,6 +206,48 @@ G0 X5 Y5     ; Move away from origin
 </sl-alert>
 {:/nomarkdown}
 
+{::nomarkdown}
+<review id="laser-cutter-guide:startup-automation-config">
+<proposal>
+{:/nomarkdown}
+
+Enable the <raw>on_boot.gcode</raw> file in your config:
+
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
+
+```
+on_boot_gcode_enable true
+on_boot_gcode /sd/on_boot.gcode
+```
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+```ini
+[startup]
+on_boot_gcode_enable = true
+on_boot_gcode = /sd/on_boot.gcode
+```
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
+
+{::nomarkdown}<span style="background-color: #4a1515; padding: 2px 4px; border-radius: 2px;">Startup automation ensures the laser is always in a safe state after power-up, preventing accidental firing during initialization.</span>{:/nomarkdown}
+
+Note: The {::nomarkdown}<setting v1="on_boot_gcode_enable" v2="startup.on_boot_gcode_enable"></setting>{:/nomarkdown} and {::nomarkdown}<setting v1="on_boot_gcode" v2="startup.on_boot_gcode"></setting>{:/nomarkdown} settings control this behavior.
+
+{::nomarkdown}
+</proposal>
+<original>
+{:/nomarkdown}
+
 Enable the <raw>on_boot.gcode</raw> file in your config:
 
 ```
@@ -216,6 +258,11 @@ on_boot_gcode /sd/on_boot.gcode
 {::nomarkdown}<span style="background-color: #4a1515; padding: 2px 4px; border-radius: 2px;">Startup automation ensures the laser is always in a safe state after power-up, preventing accidental firing during initialization.</span>{:/nomarkdown}
 
 Note: The <setting v1="on_boot_gcode_enable" v2="startup.on_boot_gcode_enable"></setting> and <setting v1="on_boot_gcode" v2="startup.on_boot_gcode"></setting> settings control this behavior.
+
+{::nomarkdown}
+</original>
+</review>
+{:/nomarkdown}
 
 For more information and examples, see the [<raw>on_boot.gcode</raw> documentation](on_boot.gcode).
 

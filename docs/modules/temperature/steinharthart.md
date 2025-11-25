@@ -9,11 +9,56 @@ To add a new thermistor, you need to calculate the Steinhart Hart coefficients a
 
 ## Using R-T Curve Method
 
+{::nomarkdown}
+<review id="steinharthart:rt-curve-method">
+<proposal>
+{:/nomarkdown}
+
+This can be done by adding this to the configuration:
+
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
+
+**V1 Configuration (flat namespace):**
+
+```plaintext
+temperature_control.hotend.rt_curve          20.0,126800,150,1360,240,206.5
+```
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+**V2 Configuration (INI sections):**
+
+```ini
+[temperature control]
+hotend.rt_curve = 20.0,126800,150,1360,240,206.5
+```
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
+
+{::nomarkdown}
+</proposal>
+<original>
+{:/nomarkdown}
+
 This can be done by adding this to the configuration:
 
 ```plaintext
 temperature_control.hotend.rt_curve          20.0,126800,150,1360,240,206.5
 ```
+
+{::nomarkdown}
+</original>
+</review>
+{:/nomarkdown}
 
 Where the 6 numbers are temperature/resistance pairs for three sets of readings.
 
@@ -48,9 +93,52 @@ and save with {::nomarkdown}<mcode>M500</mcode>{:/nomarkdown} to the config-over
 
 Or enter them in the config:
 
+{::nomarkdown}
+<review id="steinharthart:coefficients-config">
+<proposal>
+{:/nomarkdown}
+
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
+
+**V1 Configuration (flat namespace):**
+
 ```plaintext
 temperature_control.hotend.coefficients 0.000722376862540841,0.000216302098124288,0.000000092640163984
 ```
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+**V2 Configuration (INI sections):**
+
+```ini
+[temperature control]
+hotend.coefficients = 0.000722376862540841,0.000216302098124288,0.000000092640163984
+```
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
+
+{::nomarkdown}
+</proposal>
+<original>
+{:/nomarkdown}
+
+```plaintext
+temperature_control.hotend.coefficients 0.000722376862540841,0.000216302098124288,0.000000092640163984
+```
+
+{::nomarkdown}
+</original>
+</review>
+{:/nomarkdown}
 
 Another alternative is to issue the command:
 
@@ -72,6 +160,49 @@ Predefined thermistors for which the new Steinhart Hart Coefficients are known w
 
 You can force smoothie to continue to use the old beta settings for all predefined thermistors by setting:
 
+{::nomarkdown}
+<review id="steinharthart:use-beta-table">
+<proposal>
+{:/nomarkdown}
+
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
+
+**V1 Configuration (flat namespace):**
+
 ```plaintext
 temperature_control.hotend.use_beta_table  true    # force predefined thermistors to use the old beta values
 ```
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+**V2 Configuration (INI sections):**
+
+```ini
+[temperature control]
+hotend.use_beta_table = true    # force predefined thermistors to use the old beta values
+```
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
+
+{::nomarkdown}
+</proposal>
+<original>
+{:/nomarkdown}
+
+```plaintext
+temperature_control.hotend.use_beta_table  true    # force predefined thermistors to use the old beta values
+```
+
+{::nomarkdown}
+</original>
+</review>
+{:/nomarkdown}

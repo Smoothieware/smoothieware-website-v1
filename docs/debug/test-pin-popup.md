@@ -7,6 +7,42 @@ title: Pin Tag Popup Test
 
 This page tests the `<pin>` custom tag functionality with interactive hover popups showing detailed pin information.
 
+{::nomarkdown}
+<review id="test-pin-popup:intro-version">
+<proposal>
+{:/nomarkdown}
+
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
+
+This version shows **Smoothieboard V1** pins in the standard V1 format (Port.Pin, e.g., `2.0`, `0.5`).
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+This version shows pin information for **Smoothieboard V2**. V2 uses a different pin naming convention (Port+Pin, e.g., PA0, PB15) compared to V1.
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
+
+{::nomarkdown}
+</proposal>
+<original>
+{:/nomarkdown}
+
+This version shows **Smoothieboard V1** pins in the standard V1 format (Port.Pin, e.g., `2.0`, `0.5`).
+
+{::nomarkdown}
+</original>
+</review>
+{:/nomarkdown}
+
 ## Features to Test
 
 1. **Popup Placement**: Popups appear at bottom with proper positioning
@@ -22,7 +58,41 @@ This page tests the `<pin>` custom tag functionality with interactive hover popu
 
 ## Common GPIO Pins
 
-These are the most commonly used pins on Smoothieboard v1:
+{::nomarkdown}
+<review id="test-pin-popup:common-gpio">
+<proposal>
+{:/nomarkdown}
+
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
+
+These are the most commonly used pins on Smoothieboard V1:
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+This section shows Smoothieboard V1 pin examples. V2 uses different pin naming conventions (PA0, PB15, etc.) and has different hardware layouts due to the STM32H7xx microcontroller. Refer to the V2 hardware documentation for pin assignments.
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
+
+{::nomarkdown}
+</proposal>
+<original>
+{:/nomarkdown}
+
+These are the most commonly used pins on Smoothieboard V1:
+
+{::nomarkdown}
+</original>
+</review>
+{:/nomarkdown}
 
 - <pin>2.0</pin> - Alpha axis step pin (PWM capable)
 - <pin>2.1</pin> - Alpha axis direction pin
@@ -142,10 +212,47 @@ These are hardwired and not user-configurable:
 
 ## Edge Cases
 
+{::nomarkdown}
+<review id="test-pin-popup:edge-cases">
+<proposal>
+{:/nomarkdown}
+
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
+
 Test pins that might not be documented:
 
 - <pin>99.99</pin> - This pin doesn't exist (should show "not found" popup)
-- <pin>P1.18</pin> - v2 format pin (should not be found in v1 database)
+- <pin>P1.18</pin> - V2 format pin (should not be found in V1 database)
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+This section shows V1-style edge cases. V2 uses different pin naming conventions. For V2 testing, refer to the V2 hardware documentation which covers the STM32H7xx pin layout.
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
+
+{::nomarkdown}
+</proposal>
+<original>
+{:/nomarkdown}
+
+Test pins that might not be documented:
+
+- <pin>99.99</pin> - This pin doesn't exist (should show "not found" popup)
+- <pin>P1.18</pin> - V2 format pin (should not be found in V1 database)
+
+{::nomarkdown}
+</original>
+</review>
+{:/nomarkdown}
 
 ## Pin Usage Examples
 
@@ -157,7 +264,17 @@ Example configuration snippets are shown in the popups. Hover over these pins to
 
 ## Test Coverage
 
-The pin database includes:
+{::nomarkdown}
+<review id="test-pin-popup:test-coverage">
+<proposal>
+{:/nomarkdown}
+
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
+
+The V1 pin database includes:
 - **161 total pins** (70 GPIO + 91 special/peripheral)
 - **GPIO ports**: P0 (32 pins), P1 (32 pins), P2 (14 pins), P3 (26 pins), P4 (32 pins)
 - **PWM-capable**: 8+ pins documented
@@ -165,3 +282,34 @@ The pin database includes:
 - **Special peripherals**: USB, Ethernet, I2C, SPI, UART, etc.
 
 All pins should display informative popups. GPIO pins have configuration details, while special function pins explain their hardwired purpose.
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+This page shows test coverage for the **Smoothieboard V1** pin database and popup functionality. V2 uses a completely different microcontroller (STM32H745) with different pin naming and layout. A V2-specific test page would be needed to test V2 pins.
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
+
+{::nomarkdown}
+</proposal>
+<original>
+{:/nomarkdown}
+
+The V1 pin database includes:
+- **161 total pins** (70 GPIO + 91 special/peripheral)
+- **GPIO ports**: P0 (32 pins), P1 (32 pins), P2 (14 pins), P3 (26 pins), P4 (32 pins)
+- **PWM-capable**: 8+ pins documented
+- **ADC channels**: 8 channels (0.23-0.26, 1.30-1.31, plus more)
+- **Special peripherals**: USB, Ethernet, I2C, SPI, UART, etc.
+
+All pins should display informative popups. GPIO pins have configuration details, while special function pins explain their hardwired purpose.
+
+{::nomarkdown}
+</original>
+</review>
+{:/nomarkdown}

@@ -61,6 +61,61 @@ The point is you configure your sensor as <em>either</em> a probe or an endstop,
 
 ## Configuration
 
+{::nomarkdown}
+<review id="zprobe:basic-config">
+<proposal>
+{:/nomarkdown}
+
+Add the following to the config file:
+
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
+
+```
+gamma_min_endstop            nc                 # normally 1.28. Change to nc to prevent conflict, not needed on Azteeg X5
+
+zprobe.enable                true               # set to true to enable a zprobe
+zprobe.probe_pin             1.28!^             # pin probe is attached to if NC remove the !, Azteeg X5 this is 1.29
+zprobe.slow_feedrate         5                  # mm/sec probe feed rate
+#zprobe.debounce_ms          1                  # set if noisy
+zprobe.fast_feedrate         100                # move feedrate
+zprobe.probe_height          5                  # how much above bed to start probe NB only needed for G32 on delta
+zprobe.return_feedrate       0                  # feedrate after a probe, default 0 is double of slow_feedrate (mm/s)
+zprobe.max_z                 200                # maximum default travel for the probe command, will use gamma_max if not defined
+```
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+```ini
+[endstops.gamma_min]
+pin = nc                 # normally 1.28. Change to nc to prevent conflict
+
+[zprobe]
+enable = true               # set to true to enable a zprobe
+probe_pin = 1.28!^          # pin probe is attached to if NC remove the !
+slow_feedrate = 5           # mm/sec probe feed rate
+#debounce_ms = 1            # set if noisy
+fast_feedrate = 100         # move feedrate
+probe_height = 5            # how much above bed to start probe NB only needed for G32 on delta
+return_feedrate = 0         # feedrate after a probe, default 0 is double of slow_feedrate (mm/s)
+max_travel = 200            # maximum default travel for the probe command
+```
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
+
+{::nomarkdown}
+</proposal>
+<original>
+{:/nomarkdown}
+
 Add the following to the config file:
 
 ```markdown
@@ -75,6 +130,11 @@ zprobe.probe_height          5                  # how much above bed to start pr
 zprobe.return_feedrate       0                  # feedrate after a probe, default 0 is double of slow_feedrate (mm/s)
 zprobe.max_z                 200                # maximum default travel for the probe command, will use gamma_max if not defined
 ```
+
+{::nomarkdown}
+</original>
+</review>
+{:/nomarkdown}
 
 {::nomarkdown}
 <sl-alert variant="neutral" open>
@@ -132,6 +192,50 @@ There are several {::nomarkdown}<mcode>M670</mcode>{:/nomarkdown} parameters tha
 
 Make sure the config has `delta_homing` true set and that `zprobe.max_z` is set to about 20-30mm shorter than the distance to the bed, otherwise it will crash into the bed at high speed.
 
+{::nomarkdown}
+<review id="zprobe:delta-calibration-config">
+<proposal>
+{:/nomarkdown}
+
+Also in the config set:
+
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
+
+```
+leveling-strategy.delta-calibration.enable   true            # basic delta calibration
+leveling-strategy.delta-calibration.radius   100             # the probe radius
+leveling-strategy.delta-calibration.initial_height 10        # height above bed to stop initial move
+#the initial height above the bed we stop the initial move down after home to find the bed
+#this should be a height that is enough that the probe will not hit the bed and is an offset from zprobe.max_z (can be set to 0 if zprobe.max_z takes into account the probe offset)
+```
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+```ini
+[leveling_strategy.delta_calibration]
+enable = true            # basic delta calibration
+radius = 100             # the probe radius
+initial_height = 10      # height above bed to stop initial move
+#the initial height above the bed we stop the initial move down after home to find the bed
+#this should be a height that is enough that the probe will not hit the bed and is an offset from zprobe.max_travel (can be set to 0 if zprobe.max_travel takes into account the probe offset)
+```
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
+
+{::nomarkdown}
+</proposal>
+<original>
+{:/nomarkdown}
+
 Also in the config set:
 
 ```markdown
@@ -141,6 +245,11 @@ leveling-strategy.delta-calibration.initial_height 10        # height above bed 
 #the initial height above the bed we stop the initial move down after home to find the bed
 #this should be a height that is enough that the probe will not hit the bed and is an offset from zprobe.max_z (can be set to 0 if zprobe.max_z takes into account the probe offset)
 ```
+
+{::nomarkdown}
+</original>
+</review>
+{:/nomarkdown}
 
 {::nomarkdown}
 <sl-alert variant="warning" open>
@@ -266,6 +375,80 @@ First calibrate with G32 then if needed do G31 to set the grid compensation. If 
 
 ### Configuration
 
+{::nomarkdown}
+<review id="zprobe:delta-grid-config">
+<proposal>
+{:/nomarkdown}
+
+The strategy must be enabled in the config as well as zprobe.
+
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
+
+```
+leveling-strategy.delta-grid.enable         true
+```
+
+The radius of the bed must be specified with...
+
+```
+leveling-strategy.delta-grid.radius        50
+```
+
+This needs to be at least as big as the maximum printing radius as moves outside of this will not be compensated for correctly
+
+The size of the grid can be set with...
+
+```
+leveling-strategy.delta-grid.size        7
+```
+
+This is the X and Y size of the grid, it must be an odd number, the default is 7 which is 49 probe points
+
+```
+leveling-strategy.delta-grid.do_home         true
+```
+
+This must be set on a Delta printer (although it should default to true).
+
+If you are not using all 3 endstops (or prefer to home manually before G32):
+
+```
+leveling-strategy.delta-grid.do_home        false
+```
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+```ini
+[leveling_strategy.delta_grid]
+enable = true         # Enable delta grid leveling
+radius = 50           # Radius of the bed (needs to be at least as big as maximum printing radius)
+size = 7              # X and Y size of grid (must be odd number, default 7 = 49 probe points)
+do_home = true        # Must be set on Delta printer (defaults to true)
+```
+
+If you are not using all 3 endstops (or prefer to home manually before G32):
+
+```ini
+[leveling_strategy.delta_grid]
+do_home = false
+```
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
+
+{::nomarkdown}
+</proposal>
+<original>
+{:/nomarkdown}
+
 The strategy must be enabled in the config as well as zprobe.
 
 ```markdown
@@ -299,6 +482,11 @@ If you are not using all 3 endstops (or prefer to home manually before G32):
 ```markdown
 leveling-strategy.delta-grid.do_home        false
 ```
+
+{::nomarkdown}
+</original>
+</review>
+{:/nomarkdown}
 
 {::nomarkdown}
 <sl-alert variant="warning" open>

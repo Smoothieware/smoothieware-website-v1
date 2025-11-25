@@ -5,33 +5,106 @@ permalink: /getting-smoothieboard
 
 # Getting Smoothieboard
 
+[Smoothieboard](/smoothieboard) comes in two main versions available for purchase. Choose the version that best fits your needs, then select a reseller in your region.
+
+{::nomarkdown}
+<review id="getting-smoothieboard:board-selection-guide">
+<proposal>
+{:/nomarkdown}
+
+## Which Board Should You Get?
+
+Both Smoothieboard v1 and v2-prime are currently in production. Here's a quick comparison:
+
+{::nomarkdown}
+<versioned orientation="horizontal">
+<v1>
+{:/nomarkdown}
+
+**Smoothieboard v1**
+
+- **Processor**: LPC1769 (32-bit, 120 MHz)
+- **Drivers**: 3-5× A5984 stepper drivers
+- **Flash/RAM**: 512 KB / 64 KB
+- **Best for**: Budget-conscious makers, proven reliability
+- **Status**: In production since 2013
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+**Smoothieboard v2-prime**
+
+- **Processor**: STM32H745 dual-core (480 MHz + 240 MHz)
+- **Drivers**: 4× TMC2660/2590 (silent operation)
+- **Flash/RAM**: 2 MB / 1 MB
+- **Best for**: High-performance, quiet, advanced features
+- **Status**: In production since 2023
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
+
+For detailed specifications and comparison, see [Smoothieboards Overview](/smoothieboard).
+
+{::nomarkdown}
+</proposal>
+<original>
+{:/nomarkdown}
+
 [Smoothieboard](/smoothieboard) is now for sale from the US (by Chris Cecil, Smoothie project contributor) and Europe (by Arthur, Smoothie/Smoothieboard dev).
 
+{::nomarkdown}
+</original>
+</review>
+{:/nomarkdown}
+
 ## North America
+
+{::nomarkdown}
+<review id="getting-smoothieboard:resellers-north-america">
+<proposal>
+{:/nomarkdown}
+
+- [Robosprout](https://www.robosprout.com/product-category/smoothieboards) (USA) - Official US reseller. Stocks both **v1 and v2-prime** (**In Stock**)
+- [Everlast Concepts LLC](https://www.amazon.com/dp/B0786SVQ9Z?ref=myi_title_dp) (USA & Amazon USA) - v1 reseller
+
+{::nomarkdown}
+</proposal>
+<original>
+{:/nomarkdown}
 
 - [Robosprout](https://www.robosprout.com/product-category/smoothieboards), (USA) Smoothie lead contributing company, official US reseller. (**In Stock**)
 - [Everlast Concepts LLC](https://www.amazon.com/dp/B0786SVQ9Z?ref=myi_title_dp), reseller (USA) & (Amazon USA)
 
-## Europe and rest of the world
+{::nomarkdown}
+</original>
+</review>
+{:/nomarkdown}
+
+## Europe and Rest of the World
+
+{::nomarkdown}
+<review id="getting-smoothieboard:resellers-europe">
+<proposal>
+{:/nomarkdown}
+
+- [Robotseed](http://robotseed.com/index.php?id_lang=2) (Europe) - Smoothie lead company, stocks both **v1 and v2-prime**. (**Intermittent stock**, reservations via [email](mailto:wolf.arthur@gmail.com). For urgent orders, try [Robosprout](https://www.robosprout.com/) instead)
+- [Robotseed on Amazon](https://www.amazon.fr/Smoothieboard-5XC-SmoothieBoard-SB-1-0/dp/B00TIYS7S6/ref=sr_1_1?ie=UTF8&qid=1480984970&sr=8-1&keywords=smoothieboard) (France) - v1 sales
+
+{::nomarkdown}
+</proposal>
+<original>
+{:/nomarkdown}
 
 - [Robotseed](http://robotseed.com/index.php?id_lang=2), Smoothie lead contributing company (**Intermittent stock**, reservations can be made via [email](mailto:wolf.arthur@gmail.com). If you are in a hurry, try Robosprout above instead)
 - [Robotseed on Amazon](https://www.amazon.fr/Smoothieboard-5XC-SmoothieBoard-SB-1-0/dp/B00TIYS7S6/ref=sr_1_1?ie=UTF8&qid=1480984970&sr=8-1&keywords=smoothieboard) (France)
 
 {::nomarkdown}
-<sl-alert variant="warning" open>
-  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
-  <h4>Worldwide shortages</h4>
-  <br>
-  As you might have heard in the news, there are worldwide shortages of a lot of chips.
-  <br><br>
-  This has had a massive impact on our ability to produce Smoothieboard v1, and to make progress on Smoothieboard v2.
-  <br><br>
-  We currently have managed to produce boards, and there should be stock for the foreseeable future, but this is a constant fight to stay in stock, and you can expect at <em>some point</em>, we'll have shortages again like we had at the beginning of 2021.
-  <br><br>
-  The chips are also much more expensive than normal. We were able to get <em>some</em> at higher-than-normal-but-not-crazy prices some weeks back (this severely reduces our margins, but for the time being we have decided not to change our prices and to keep all of the effort/cost on our side of the equation rather than on users' side), but at the time of this writing (May 2021), the only chips available have 1000%+ price markups: <a href="https://www.win-source.net/nxp-lpc1769fbd100.html">https://www.win-source.net/nxp-lpc1769fbd100.html</a>. If we end up having to produce boards with those new chip prices, we won't be able to keep the prices the same anymore.
-  <br><br>
-  Hopefully, all of this calms down and fixes itself as 2021 progresses. We'll keep you informed.
-</sl-alert>
+</original>
+</review>
 {:/nomarkdown}
 
 ## List of historical resellers

@@ -13,6 +13,82 @@ title: Smoothieware Home
 </sl-alert>
 {:/nomarkdown}
 
+{::nomarkdown}
+<sl-alert variant="warning" open>
+  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+  <strong>Choose Your Version</strong><br>
+  Smoothieware has two major versions. Select your version using the version selector at the top of the page to see documentation and guides specific to your hardware.
+</sl-alert>
+{:/nomarkdown}
+
+{::nomarkdown}
+<review id="start:version-guidance">
+<proposal>
+{:/nomarkdown}
+
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
+
+### Smoothieware V1
+
+You're using the **original Smoothieware V1** platform with the LPC1769-based Smoothieboard.
+
+**Getting Started:**
+- Review the [unboxing guide](/unboxing) for hardware setup
+- Follow the [configuration guide](/configuring-smoothie) to set up your machine
+- Check [community support](/community) - most active on IRC (#smoothie @ freenode)
+- See the [machine guides](#step-by-step-guides) for your specific machine type
+
+**Key Resources:**
+- Configuration uses simple key-value format in `config.txt`
+- [Motion control](/motion-control) documentation for axis setup
+- [Tool documentation](/tools) for extruders, lasers, and spindles
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+### Smoothieware V2
+
+You're using the **new Smoothieware V2** platform with the STM32H745-based Smoothieboard V2 Prime.
+
+**Getting Started:**
+- Review the [unboxing guide](/unboxing) for hardware setup
+- Follow the [configuration guide](/configuring-smoothie) to set up your machine
+- Check [community support](/community) - most active on Maker Forums and Discord
+- See the [machine guides](#step-by-step-guides) for your specific machine type
+
+**Key Differences from V1:**
+- More powerful dual-core processor (STM32H745)
+- 16× more RAM, 4× more flash storage
+- Enhanced stepper drivers with advanced features
+- INI-style configuration format
+- Expanded I/O capabilities with Gadgeteer expansion headers
+
+**Key Resources:**
+- Configuration uses INI-style format with sections
+- [V2 Architecture](/v2-differences) guide for technical details
+- [Motion control](/motion-control) documentation adapted for V2
+- [Tool documentation](/tools) for all supported peripherals
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
+
+{::nomarkdown}
+</proposal>
+<original>
+{:/nomarkdown}
+
+{::nomarkdown}
+</original>
+</review>
+{:/nomarkdown}
+
 ## Quick Links
 
 ### Step-by-Step Guides

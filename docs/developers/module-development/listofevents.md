@@ -5,15 +5,52 @@ permalink: /listofevents
 
 # List of Events for Modules in Smoothie
 
-This is a list of all the events that a Module can register for in Smoothie.
+{::nomarkdown}
+<review id="listofevents:introduction">
+<proposal>
+{:/nomarkdown}
+
+<versioned orientation="horizontal">
+<v1>
+{:/nomarkdown}
+
+This is a list of all the events that a Module can register for in Smoothieware V1.
 
 These events allow modules to respond to various system activities and communicate with each other.
 
 {::nomarkdown}
 <sl-alert variant="primary" open>
   <sl-icon slot="icon" name="info-circle"></sl-icon>
-  This reference is essential for developers creating custom modules for Smoothie. Each event provides a hook into specific system activities.
+  This reference is essential for developers creating custom modules for Smoothieware V1. Each event provides a hook into specific system activities.
 </sl-alert>
+
+</v1>
+<v2>
+{:/nomarkdown}
+
+Smoothieware V2 does not use the event-based module system. Instead, V2 uses FreeRTOS with configuration-based modules that communicate via direct lookup and request methods.
+
+{::nomarkdown}
+<sl-alert variant="neutral" open>
+  <sl-icon slot="icon" name="info-circle"></sl-icon>
+  This page documents the V1 event system only. V2 modules are configured dynamically and use a registry-based approach with the <code>Module::lookup()</code> and <code>request()</code> interface rather than global events.
+</sl-alert>
+
+</v2>
+</versioned>
+{:/nomarkdown}
+</proposal>
+<original>
+{:/nomarkdown}
+
+This is a list of all the events that a Module can register for in Smoothieware V1.
+
+These events allow modules to respond to various system activities and communicate with each other.
+
+</original>
+{::nomarkdown}
+</review>
+{:/nomarkdown}
 
 <style>
 .events-table-wrapper {
@@ -88,7 +125,38 @@ These events allow modules to respond to various system activities and communica
 
 ## Event System Architecture
 
-The Smoothie event system provides a publish-subscribe pattern for module communication. Events are defined in `/libs/Module.h` as an enumeration, and the kernel dispatches these events to all registered modules.
+{::nomarkdown}
+<review id="listofevents:architecture">
+<proposal>
+{:/nomarkdown}
+
+<versioned orientation="horizontal">
+<v1>
+{:/nomarkdown}
+
+The Smoothieware V1 event system provides a publish-subscribe pattern for module communication. Events are defined in `/libs/Module.h` as an enumeration, and the kernel dispatches these events to all registered modules.
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+This section describes Smoothieware V1 only. V2 uses FreeRTOS with a module registry and request-based communication instead of the event system.
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
+</proposal>
+<original>
+{:/nomarkdown}
+
+The Smoothieware V1 event system provides a publish-subscribe pattern for module communication. Events are defined in `/libs/Module.h` as an enumeration, and the kernel dispatches these events to all registered modules.
+
+</original>
+{::nomarkdown}
+</review>
+{:/nomarkdown}
 
 ### How Events Work
 
@@ -99,7 +167,38 @@ The Smoothie event system provides a publish-subscribe pattern for module commun
 
 ## Registering for Events
 
-To register your module for an event, add the registration call in your module's constructor or `on_module_loaded()` method:
+{::nomarkdown}
+<review id="listofevents:registering">
+<proposal>
+{:/nomarkdown}
+
+<versioned orientation="horizontal">
+<v1>
+{:/nomarkdown}
+
+To register your module for an event, add the registration call in your module's constructor or `on_module_loaded()` method (V1 only):
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+This section applies to Smoothieware V1 only. V2 modules use configuration-based registration instead.
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
+</proposal>
+<original>
+{:/nomarkdown}
+
+To register your module for an event, add the registration call in your module's constructor or `on_module_loaded()` method (V1 only):
+
+</original>
+{::nomarkdown}
+</review>
+{:/nomarkdown}
 
 ```cpp
 void MyModule::on_module_loaded() {
@@ -157,6 +256,39 @@ void MyModule::on_halt(void *argument) {
 - `ON_IDLE` - Process enable/disable events safely (SPI communication)
 
 ## Best Practices
+
+{::nomarkdown}
+<review id="listofevents:best-practices">
+<proposal>
+{:/nomarkdown}
+
+<versioned orientation="horizontal">
+<v1>
+{:/nomarkdown}
+
+These best practices apply to Smoothieware V1 module development using the event system.
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+This section applies to Smoothieware V1 only. V2 modules use a different architecture.
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
+</proposal>
+<original>
+{:/nomarkdown}
+
+These best practices apply to Smoothieware V1 module development using the event system.
+
+</original>
+{::nomarkdown}
+</review>
+{:/nomarkdown}
 
 {::nomarkdown}
 <sl-alert variant="success" open>
@@ -255,6 +387,39 @@ void MyModule::on_halt(void *argument) {
 
 ## See Also
 
+{::nomarkdown}
+<review id="listofevents:see-also">
+<proposal>
+{:/nomarkdown}
+
+<versioned orientation="horizontal">
+<v1>
+{:/nomarkdown}
+
 - [Module Development Guide](/module-development-guide) - General module development
 - [Module Example](/moduleexample) - Simple module example
 - [Public Data System](/publicdataexample) - Using ON_GET_PUBLIC_DATA and ON_SET_PUBLIC_DATA
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+This page is for Smoothieware V1 module development. For V2, see the V2 module documentation (coming soon).
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
+</proposal>
+<original>
+{:/nomarkdown}
+
+- [Module Development Guide](/module-development-guide) - General module development
+- [Module Example](/moduleexample) - Simple module example
+- [Public Data System](/publicdataexample) - Using ON_GET_PUBLIC_DATA and ON_SET_PUBLIC_DATA
+
+</original>
+{::nomarkdown}
+</review>
+{:/nomarkdown}

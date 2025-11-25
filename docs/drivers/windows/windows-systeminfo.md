@@ -1,11 +1,19 @@
 ---
 permalink: /windows-systeminfo
+layout: default
+title: Submit Windows System Information
 ---
-
 
 # How to submit Windows System Information
 
 If you are experiencing driver problems on Windows, we may ask you to complete these steps to submit your system's information for review.
+
+{::nomarkdown}
+<sl-alert variant="neutral" open>
+  <sl-icon slot="icon" name="info-circle"></sl-icon>
+  <strong>Applies to Both V1 and V2:</strong> These troubleshooting steps apply to Smoothieware V1 and V2, as both versions use the same USB driver and encounter similar hardware-specific issues.
+</sl-alert>
+{:/nomarkdown}
 
 The driver problems seem to only affect some computers, and it does not seem specific to which version of Windows is being run.
 

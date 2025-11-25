@@ -33,6 +33,16 @@ A method of disabling auto mount on macOS is mentioned [here](https://wolfpaulus
 
 ## Files That May Be Found on the SD Card
 
+{::nomarkdown}
+<review id="sd-card:files-table">
+<proposal>
+{:/nomarkdown}
+
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
+
 | File | Description |
 | ---- | ----------- |
 | **FIRMWARE.CUR** | Copy of firmware file currently flashed onto the Smoothieboard |
@@ -40,6 +50,40 @@ A method of disabling auto mount on macOS is mentioned [here](https://wolfpaulus
 | **config-override** | Created when the G-code <mcode>M500</mcode> is played. See [supported G-codes](supported-g-codes) |
 | **on_boot.gcode** | Played on startup of Smoothieboard. Can be used to initialize the Smoothie driven device |
 | **firmware.bin** | Firmware update file. If present, is flashed onto the Smoothieboard and renamed to FIRMWARE.CUR after the update completes |
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+| File | Description |
+| ---- | ----------- |
+| **FIRMWARE.CUR** | Copy of firmware file currently flashed onto the Smoothieboard |
+| **config.ini** | Main configuration file. Defines Smoothieware configuration options needed for the attached device (V2 uses INI format with sections) |
+| **config-override.ini** | Created when the G-code <mcode>M500</mcode> is played. See [supported G-codes](supported-g-codes) |
+| **on_boot.gcode** | Played on startup of Smoothieboard. Can be used to initialize the Smoothie driven device |
+| **flashme.bin** or **firmware.bin** | Firmware update file. If present, is flashed onto the Smoothieboard and renamed to FIRMWARE.CUR after the update completes |
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
+</proposal>
+<original>
+{:/nomarkdown}
+
+| File | Description |
+| ---- | ----------- |
+| **FIRMWARE.CUR** | Copy of firmware file currently flashed onto the Smoothieboard |
+| **config** or **config.txt** | One or the other, not both. Defines Smoothieware configuration options needed for the attached device |
+| **config-override** | Created when the G-code <mcode>M500</mcode> is played. See [supported G-codes](supported-g-codes) |
+| **on_boot.gcode** | Played on startup of Smoothieboard. Can be used to initialize the Smoothie driven device |
+| **firmware.bin** | Firmware update file. If present, is flashed onto the Smoothieboard and renamed to FIRMWARE.CUR after the update completes |
+
+</original>
+{::nomarkdown}
+</review>
+{:/nomarkdown}
 
 {::nomarkdown}
 <sl-alert variant="neutral" open>
@@ -81,19 +125,81 @@ The Smoothieboard only needs the "config" file on the SD card to work properly.
 
 ---
 
+{::nomarkdown}
+<review id="sd-card:requirements">
+<proposal>
+{:/nomarkdown}
+
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
+
 ## SD Card Requirements
 
 {::nomarkdown}
 <sl-alert variant="primary" open>
   <sl-icon slot="icon" name="lightbulb"></sl-icon>
-  <strong>SD Card Specifications:</strong>
+  <strong>SD Card Specifications (V1):</strong>
   <ul>
+    <li>Interface: SPI (Serial Peripheral Interface) - ~400-500 KB/s</li>
     <li>Format: FAT32/VFAT</li>
     <li>Recommended size: 2GB to 32GB</li>
     <li>Class 4 or higher recommended for good performance</li>
     <li>Avoid cards larger than 32GB as they may have compatibility issues</li>
+    <li>Note: SPI interface is slower, which can cause delays when loading large G-code files</li>
   </ul>
 </sl-alert>
+{:/nomarkdown}
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+## SD Card Requirements
+
+{::nomarkdown}
+<sl-alert variant="primary" open>
+  <sl-icon slot="icon" name="lightbulb"></sl-icon>
+  <strong>SD Card Specifications (V2):</strong>
+  <ul>
+    <li>Interface: SDIO (SD Input/Output) - 10-25 MB/s (20-50× faster than V1)</li>
+    <li>Format: FAT32/VFAT</li>
+    <li>Recommended size: 2GB to 32GB</li>
+    <li>Class 4 or higher recommended for good performance</li>
+    <li>Avoid cards larger than 32GB as they may have compatibility issues</li>
+    <li>Benefit: Fast SDIO interface means large G-code files load instantly</li>
+  </ul>
+</sl-alert>
+{:/nomarkdown}
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
+</proposal>
+<original>
+{:/nomarkdown}
+
+## SD Card Requirements
+
+<sl-alert variant="primary" open>
+  <sl-icon slot="icon" name="lightbulb"></sl-icon>
+  <strong>SD Card Specifications (V1):</strong>
+  <ul>
+    <li>Interface: SPI (Serial Peripheral Interface) - ~400-500 KB/s</li>
+    <li>Format: FAT32/VFAT</li>
+    <li>Recommended size: 2GB to 32GB</li>
+    <li>Class 4 or higher recommended for good performance</li>
+    <li>Avoid cards larger than 32GB as they may have compatibility issues</li>
+    <li>Note: SPI interface is slower, which can cause delays when loading large G-code files</li>
+  </ul>
+</sl-alert>
+
+</original>
+{::nomarkdown}
+</review>
 {:/nomarkdown}
 
 ---

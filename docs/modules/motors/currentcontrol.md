@@ -41,6 +41,16 @@ They are found near the other values for a given axis.
 
 For example:
 
+{::nomarkdown}
+<review id="currentcontrol:config-example">
+<proposal>
+{:/nomarkdown}
+
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
+
 ```plaintext
 beta_step_pin                                2.1              # Pin for beta stepper step signal
 beta_dir_pin                                 0.11             # Pin for beta stepper direction
@@ -48,6 +58,47 @@ beta_en_pin                                  0.10             # Pin for beta ena
 beta_current                                 1.5              # Y stepper motor current
 beta_max_rate                                30000.0          # mm/min
 ```
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+```ini
+[actuator]
+beta.step_pin = PG2               # Pin for beta stepper step signal
+beta.dir_pin = PG3                # Pin for beta stepper direction
+beta.en_pin = PJ3                 # Pin for beta enable
+beta.max_rate = 30000.0           # mm/min
+beta.microsteps = 32
+beta.driver = tmc2660
+
+[tmc2660]
+beta.current = 1500          # Y stepper motor current in milliamps
+```
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
+
+{::nomarkdown}
+</proposal>
+<original>
+{:/nomarkdown}
+
+```plaintext
+beta_step_pin                                2.1              # Pin for beta stepper step signal
+beta_dir_pin                                 0.11             # Pin for beta stepper direction
+beta_en_pin                                  0.10             # Pin for beta enable
+beta_current                                 1.5              # Y stepper motor current
+beta_max_rate                                30000.0          # mm/min
+```
+
+{::nomarkdown}
+</original>
+</review>
+{:/nomarkdown}
 
 {::nomarkdown}
 The current can also be set using `M907` where XYZ set the current for alpha, beta, gamma, and ABC set the current for delta, epsilon, and zeta respectively.

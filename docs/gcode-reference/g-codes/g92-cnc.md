@@ -56,6 +56,16 @@ Which means: set a global offset of 10 in the X axis and 10 in the Y axis.
 
 ## Parameters
 
+{::nomarkdown}
+<review id="g92-cnc:parameters-section">
+<proposal>
+{:/nomarkdown}
+
+{::nomarkdown}
+<versioned>
+<v1>
+{:/nomarkdown}
+
 | Parameter | Usage               | Example  |
 | --------- | ------------------- | -------- |
 | `X`       | Offset in the X axis | <gcode>G92</gcode> X10 |
@@ -65,12 +75,107 @@ Which means: set a global offset of 10 in the X axis and 10 in the Y axis.
 | `B`       | Offset in the B axis | <gcode>G92</gcode> B10 |
 | `C`       | Offset in the C axis | <gcode>G92</gcode> C10 |
 
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+| Parameter | Usage               | Example  |
+| --------- | ------------------- | -------- |
+| `X`       | Offset in the X axis | <gcode>G92</gcode> X10 |
+| `Y`       | Offset in the Y axis | <gcode>G92</gcode> Y10 |
+| `Z`       | Offset in the Z axis | <gcode>G92</gcode> Z10 |
+| `A`       | Offset in the A axis | <gcode>G92</gcode> A10 |
+| `B`       | Offset in the B axis | <gcode>G92</gcode> B10 |
+| `C`       | Offset in the C axis | <gcode>G92</gcode> C10 |
+
+V2 supports the same parameter set as V1, with identical behavior for setting coordinate offsets in any axis.
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
+
+{::nomarkdown}
+</proposal>
+<original>
+{:/nomarkdown}
+
+| Parameter | Usage               | Example  |
+| --------- | ------------------- | -------- |
+| `X`       | Offset in the X axis | <gcode>G92</gcode> X10 |
+| `Y`       | Offset in the Y axis | <gcode>G92</gcode> Y10 |
+| `Z`       | Offset in the Z axis | <gcode>G92</gcode> Z10 |
+| `A`       | Offset in the A axis | <gcode>G92</gcode> A10 |
+| `B`       | Offset in the B axis | <gcode>G92</gcode> B10 |
+| `C`       | Offset in the C axis | <gcode>G92</gcode> C10 |
+
+{::nomarkdown}
+</original>
+</review>
+{:/nomarkdown}
+
+## Implementation Details
+
+{::nomarkdown}
+<review id="g92-cnc:implementation-details">
+<proposal>
+{:/nomarkdown}
+
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
+
+**V1 Implementation:**
+
+The {::nomarkdown}<gcode>G92</gcode>{:/nomarkdown} command in V1 modifies all coordinate system origins simultaneously. When executed:
+
+1. The offset is calculated: `offset = specified_position - current_position`
+2. All workspace coordinate system origins are shifted by this offset
+3. The offset remains in memory until reset with {::nomarkdown}<gcode>G92.1</gcode>{:/nomarkdown} or a power cycle
+4. Affects both linear axes (X, Y, Z) and rotational axes (A, B, C) equally
+
+Configuration is done through the [Motion Control module](motion-control).
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+**V2 Implementation:**
+
+V2's {::nomarkdown}<gcode>G92</gcode>{:/nomarkdown} command behaves identically to V1, ensuring compatibility with existing G-code programs. The offset calculation and application are the same:
+
+1. The offset is calculated: `offset = specified_position - current_position`
+2. All workspace coordinate system origins are shifted by this offset
+3. The offset persists until reset with {::nomarkdown}<gcode>G92.1</gcode>{:/nomarkdown} or a power cycle
+4. Affects both linear axes (X, Y, Z) and rotational axes (A, B, C) equally
+
+Configuration is done through the [Motion Control module](motion-control) using INI-style settings.
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
+
+{::nomarkdown}
+</proposal>
+</review>
+{:/nomarkdown}
+
 ## Friend Gcodes
 
 The {::nomarkdown}<gcode>G92.1</gcode>{:/nomarkdown} Gcode is used to reset the offsets.
 
+Related coordinate system commands:
+- {::nomarkdown}<gcode>G54</gcode>{:/nomarkdown} to {::nomarkdown}<gcode>G59</gcode>{:/nomarkdown} - Select workspace coordinate systems
+- {::nomarkdown}<gcode>G10</gcode>{:/nomarkdown} - Set workspace offset values
+- {::nomarkdown}<gcode>G90</gcode>{:/nomarkdown} - Absolute positioning mode
+- {::nomarkdown}<gcode>G91</gcode>{:/nomarkdown} - Relative positioning mode
+
 ## Further reading
 
-These resources are used as references for Gcode: 
+These resources are used as references for Gcode:
 - [LinuxCNC Gcode list](http://linuxcnc.org/docs/html/gcode.html) (some of this page's content is taken from their G92 documentation)
 - [Reprap Gcode list](http://reprap.org/wiki/G-code)

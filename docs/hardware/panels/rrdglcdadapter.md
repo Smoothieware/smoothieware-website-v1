@@ -143,6 +143,74 @@ Solder the connector missing
 
 Update firmware (version after October 2014), see [Flashing Smoothie firmware](flashing-smoothie-firmware)
 
+{::nomarkdown}
+<review id="rrdglcdadapter:panel-configuration">
+<proposal>
+{:/nomarkdown}
+
+Edit the config file on the µSD:
+
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
+
+**V1 Configuration (flat namespace):**
+
+```markdown
+# config settings
+panel.enable                          true              # set to true to enable the panel code
+panel.lcd                             reprap_discount_glcd     # set type of panel
+panel.spi_channel                     0                 # spi channel to use  ; GLCD EXP1 Pins 3,5 (MOSI, SCLK)
+panel.spi_cs_pin                      0.16              # spi chip select     ; GLCD EXP1 Pin 4
+panel.encoder_a_pin                   3.25!^            # encoder pin         ; GLCD EXP2 Pin 3
+panel.encoder_b_pin                   3.26!^            # encoder pin         ; GLCD EXP2 Pin 5
+panel.click_button_pin                1.30!^            # click button        ; GLCD EXP1 Pin 2
+panel.buzz_pin                        1.31              # pin for buzzer      ; GLCD EXP1 Pin 1
+panel.back_button_pin                 2.11!^            # 2.11 menu back      ; GLCD EXP2 Pin 8
+# setup for external sd card on the GLCD which uses the onboard sdcard SPI port
+panel.external_sd                     true              # set to true if there is an extrernal sdcard on the panel
+panel.external_sd.spi_channel         1                 # set spi channel the sdcard is on
+panel.external_sd.spi_cs_pin          0.28              # set spi chip select for the sdcard (or any spare pin)
+panel.external_sd.sdcd_pin            0.27!^            # sd detect signal (set to nc if no sdcard detect) (or any spare pin)
+```
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+**V2 Configuration (INI sections):**
+
+```ini
+[panel]
+enable = true                      # set to true to enable the panel code
+lcd = reprap_discount_glcd         # set type of panel
+spi_channel = 0                    # spi channel to use  ; GLCD EXP1 Pins 3,5 (MOSI, SCLK)
+spi_cs_pin = P0_16                 # spi chip select     ; GLCD EXP1 Pin 4
+encoder_a_pin = P3_25!^            # encoder pin         ; GLCD EXP2 Pin 3
+encoder_b_pin = P3_26!^            # encoder pin         ; GLCD EXP2 Pin 5
+click_button_pin = P1_30!^         # click button        ; GLCD EXP1 Pin 2
+buzz_pin = P1_31                   # pin for buzzer      ; GLCD EXP1 Pin 1
+back_button_pin = P2_11!^          # 2.11 menu back      ; GLCD EXP2 Pin 8
+
+[panel.external_sd]
+enable = true                      # set to true if there is an external sdcard on the panel
+spi_channel = 1                    # set spi channel the sdcard is on
+spi_cs_pin = P0_28                 # set spi chip select for the sdcard (or any spare pin)
+sdcd_pin = P0_27!^                 # sd detect signal (set to nc if no sdcard detect) (or any spare pin)
+```
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
+
+{::nomarkdown}
+</proposal>
+<original>
+{:/nomarkdown}
+
 Edit the config file on the µSD:
 
 ```markdown
@@ -163,9 +231,62 @@ panel.external_sd.spi_cs_pin          0.28              # set spi chip select fo
 panel.external_sd.sdcd_pin            0.27!^            # sd detect signal (set to nc if no sdcard detect) (or any spare pin)
 ```
 
+{::nomarkdown}
+</original>
+</review>
+{:/nomarkdown}
+
 If you do not want to use the buzzer, leaving out the `panel.buzz_pin` line will leave the pin floating.
 
 As there is no pull-down on the buzzer, it will keep buzzing.
+
+{::nomarkdown}
+<review id="rrdglcdadapter:buzzer-workaround">
+<proposal>
+{:/nomarkdown}
+
+To avoid this, you can either solder a pull-down resistor on the adapter board or you can use this little hack:
+
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
+
+**V1 Configuration:**
+
+```markdown
+switch.nonoise.enable                        true
+switch.nonoise.output_pin                    1.31v
+switch.nonoise.output_type                   digital
+```
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+**V2 Configuration:**
+
+```ini
+[switch]
+nonoise.enable = true
+nonoise.output_pin = P1_31v
+nonoise.output_type = digital
+```
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
+
+This will create a pseudo-switch that does nothing, but it will enable the pull-down on the pin.
+
+You have to leave out the `panel.buzz_pin` line.
+
+{::nomarkdown}
+</proposal>
+<original>
+{:/nomarkdown}
 
 To avoid this, you can either solder a pull-down resistor on the adapter board or you can use this little hack:
 
@@ -178,6 +299,11 @@ switch.nonoise.output_type                   digital
 This will create a pseudo-switch that does nothing, but it will enable the pull-down on the pin.
 
 You have to leave out the `panel.buzz_pin` line.
+
+{::nomarkdown}
+</original>
+</review>
+{:/nomarkdown}
 
 {::nomarkdown}
 <div style="text-align: center; margin: 2rem 0;">

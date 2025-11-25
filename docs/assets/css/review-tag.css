@@ -1,0 +1,202 @@
+/**
+ * review-tag.css
+ *
+ * Styling for <review> custom tags used in AI-assisted documentation updates
+ */
+
+/* CSS Custom Properties for easy customization */
+:root {
+    /* Default state colors (no status) */
+    --review-proposal-default-bg: #2a3444;
+    --review-proposal-default-border: #4a70a0;
+    --review-original-default-bg: #3a2d44;
+    --review-original-default-border: #7050a0;
+
+    /* Accepted state colors */
+    --review-accepted-bg: #2c3a2c;
+    --review-accepted-border: #4a8b4a;
+
+    /* Rejected state colors */
+    --review-rejected-bg: #3a2c2c;
+    --review-rejected-border: #8b4545;
+
+    /* Comment state colors */
+    --review-comment-bg: #2c3a3a;
+    --review-comment-border: #4a8b8b;
+
+    /* Control colors */
+    --review-controls-bg: rgba(40, 40, 40, 0.95);
+    --review-toggle-color: #9ca3af;
+    --review-accept-color: #28a745;
+    --review-reject-color: #dc3545;
+    --review-comment-color: #3b82f6;
+}
+
+/* Review container */
+.review-container {
+    position: relative;
+    margin: 1.5em 0;
+}
+
+/* Icon controls - floating in top-right */
+.review-controls {
+    position: absolute;
+    top: 0.5em;
+    right: 0.5em;
+    z-index: 100;
+    display: flex;
+    gap: 0.5em;
+    background: var(--review-controls-bg);
+    padding: 0.25em;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Icon group */
+.review-icon-group {
+    display: flex;
+    gap: 0.25em;
+}
+
+/* Individual icon colors */
+.review-toggle-icon::part(base) {
+    color: var(--review-toggle-color);
+}
+
+.review-accept-icon::part(base) {
+    color: var(--review-accept-color);
+}
+
+.review-reject-icon::part(base) {
+    color: var(--review-reject-color);
+}
+
+.review-comment-icon::part(base) {
+    color: var(--review-comment-color);
+}
+
+/* Active state for icons - light ring/shadow effect */
+.review-icon-active::part(base) {
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.5),
+                0 0 0 4px rgba(0, 0, 0, 0.2);
+    background-color: rgba(0, 0, 0, 0.05);
+    border-radius: 4px;
+}
+
+/* Content area */
+.review-content {
+    border-radius: 4px;
+}
+
+/* Proposal content styling - default (no status) */
+.review-proposal {
+    background-color: var(--review-proposal-default-bg);
+    padding: 1em;
+    border-left: 4px solid var(--review-proposal-default-border);
+    border-radius: 4px;
+}
+
+/* Original content styling - default (no status) */
+.review-original {
+    background-color: var(--review-original-default-bg);
+    padding: 1em;
+    border-left: 4px solid var(--review-original-default-border);
+    border-radius: 4px;
+}
+
+/* Accepted state */
+.review-proposal.review-state-accepted,
+.review-original.review-state-accepted {
+    background-color: var(--review-accepted-bg);
+    border-left-color: var(--review-accepted-border);
+}
+
+/* Rejected state */
+.review-proposal.review-state-rejected,
+.review-original.review-state-rejected {
+    background-color: var(--review-rejected-bg);
+    border-left-color: var(--review-rejected-border);
+}
+
+/* Comment state */
+.review-proposal.review-state-comment,
+.review-original.review-state-comment {
+    background-color: var(--review-comment-bg);
+    border-left-color: var(--review-comment-border);
+}
+
+/* Ensure custom tags inside review content render correctly */
+.review-proposal setting,
+.review-original setting,
+.review-proposal pin,
+.review-original pin,
+.review-proposal versioned,
+.review-original versioned {
+    /* Inherit styling from parent tag implementations */
+}
+
+/* Comment dialog styling */
+.review-comment-dialog {
+    --width: 500px;
+}
+
+.review-comment-textarea {
+    width: 100%;
+    margin-top: 0.5em;
+}
+
+/* Production mode - no backgrounds, normal display */
+.review-container[data-production="true"] .review-original {
+    background-color: transparent;
+    padding: 0;
+    border-left: none;
+}
+
+.review-container[data-production="true"] .review-proposal {
+    display: none;
+}
+
+/* Responsive adjustments for mobile */
+@media (max-width: 768px) {
+    .review-controls {
+        top: 0.25em;
+        right: 0.25em;
+        padding: 0.15em;
+    }
+
+    .review-icon-group {
+        gap: 0.15em;
+    }
+
+    .review-proposal,
+    .review-original {
+        padding: 0.75em;
+    }
+}
+
+/* Animation for icon state changes */
+@keyframes review-icon-flash {
+    0% { opacity: 1; }
+    50% { opacity: 0.6; }
+    100% { opacity: 1; }
+}
+
+.review-icon-active {
+    animation: review-icon-flash 0.3s ease-in-out;
+}
+
+/* Ensure icons have pointer cursor */
+.review-icon {
+    cursor: pointer;
+}
+
+/* Hover effects for icons */
+.review-icon::part(base):hover {
+    opacity: 0.8;
+}
+
+/* Focus styles for accessibility */
+.review-icon::part(base):focus-visible {
+    outline: 2px solid #007bff;
+    outline-offset: 2px;
+}

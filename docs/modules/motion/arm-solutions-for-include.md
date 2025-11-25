@@ -40,6 +40,61 @@ Smoothieware supports multiple arm/motion solutions to accommodate different mac
 
 ## Configuration
 
+{::nomarkdown}
+<review id="arm-solutions:configuration-syntax">
+<proposal>
+{:/nomarkdown}
+
+To configure your machine for the right type, see its specific page linked in the table above.
+
+Each arm solution has its own configuration parameters and requirements. The <setting v1="arm_solution" v2="motion control.arm_solution"></setting> setting determines the kinematics system used by your machine.
+
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
+
+**V1 Configuration (flat namespace):**
+
+```plaintext
+arm_solution cartesian
+```
+
+For example, to configure a linear delta printer:
+```plaintext
+arm_solution linear_delta
+```
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+**V2 Configuration (INI sections):**
+
+```ini
+[motion control]
+arm_solution = cartesian
+```
+
+For example, to configure a linear delta printer:
+```ini
+[motion control]
+arm_solution = linear_delta
+```
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
+
+If no arm solution is specified, `cartesian` is used by default.
+
+{::nomarkdown}
+</proposal>
+<original>
+{:/nomarkdown}
+
 To configure your machine for the right type, see its specific page linked in the table above.
 
 Each arm solution has its own configuration parameters and requirements. The <setting v1="arm_solution" v2="motion control.arm_solution"></setting> setting determines the kinematics system used by your machine.
@@ -56,3 +111,8 @@ arm_solution cartesian
 ```
 
 If no arm solution is specified, `cartesian` is used by default.
+
+{::nomarkdown}
+</original>
+</review>
+{:/nomarkdown}

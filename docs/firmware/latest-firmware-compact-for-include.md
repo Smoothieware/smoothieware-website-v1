@@ -2,6 +2,57 @@
 ## Recent Commits
 
 {::nomarkdown}
+<review id="latest-firmware:branch-versioning">
+<proposal>
+{:/nomarkdown}
+
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
+
+**Master Branch (V1 Stable)**
+
+The master branch contains the stable releases for Smoothieware V1 (LPC1769 hardware). This branch is production-ready and recommended for most V1 users.
+
+{::nomarkdown}
+<div style="margin: 1.5rem 0;">
+  <div id="master-commits-compact" style="font-size: 0.9em;">
+    <sl-spinner style="font-size: 1.5rem;"></sl-spinner>
+    <span style="margin-left: 0.5rem; color: #888;">Loading...</span>
+  </div>
+</div>
+{:/nomarkdown}
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+**Edge Branch (V2 Development)**
+
+The edge branch contains the latest development for Smoothieware V2 (STM32H745 hardware). This branch is actively developed and may contain experimental features. For production use, wait for stable releases.
+
+{::nomarkdown}
+<div style="margin: 1.5rem 0;">
+  <div id="edge-commits-compact" style="font-size: 0.9em;">
+    <sl-spinner style="font-size: 1.5rem;"></sl-spinner>
+    <span style="margin-left: 0.5rem; color: #888;">Loading...</span>
+  </div>
+</div>
+{:/nomarkdown}
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
+
+{::nomarkdown}
+</proposal>
+<original>
+{:/nomarkdown}
+
+{::nomarkdown}
 <div style="margin: 1.5rem 0;">
   <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
     <!-- Edge Branch -->
@@ -27,6 +78,12 @@
     </div>
   </div>
 </div>
+{:/nomarkdown}
+
+{::nomarkdown}
+</original>
+</review>
+{:/nomarkdown}
 
 <script>
 // Compact version - shows only 5 commits per branch

@@ -7,6 +7,42 @@ permalink: /portability-refactor
 
 The purpose of this document is to outline the current problems with Smoothie's portability, propose a solution and guide the implementation.
 
+{::nomarkdown}
+<review id="portability-refactor:introduction">
+<proposal>
+{:/nomarkdown}
+
+{::nomarkdown}
+<versioned orientation="horizontal">
+<v1>
+{:/nomarkdown}
+
+This document describes the refactoring effort planned for V1 to improve hardware portability through a Hardware Abstraction Layer (HAL).
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+**Note:** Smoothieware V2 has successfully implemented the HAL refactoring approach proposed in this document. V2 uses a clean Hardware Abstraction Layer with ST's STM32 HAL library, separate HAL wrappers, and modular driver support for the STM32H7xx platform, making porting to new hardware significantly easier than in V1.
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
+
+{::nomarkdown}
+</proposal>
+<original>
+{:/nomarkdown}
+
+This document describes the refactoring effort planned for V1 to improve hardware portability through a Hardware Abstraction Layer (HAL).
+
+{::nomarkdown}
+</original>
+</review>
+{:/nomarkdown}
+
 ## The problem
 Though Smoothie is based on mBed, it is not easily ported to other boards / processors.
 

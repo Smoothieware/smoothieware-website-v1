@@ -32,6 +32,50 @@ Other PT100 amplifiers may be supported later (i.e. MAX31865 via SPI).
 
 ## Configuration
 
+{::nomarkdown}
+<review id="pt100:configuration">
+<proposal>
+{:/nomarkdown}
+
+You wire a PT100 *almost* the same way you would a thermistor, but you need to specify to Smoothie it is a PT100 and where you connected the amplifier signal output:
+
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
+
+**V1 Configuration (flat namespace):**
+
+```markdown
+temperature_control.hotend.enable              true
+temperature_control.hotend.sensor              pt100_e3d
+temperature_control.hotend.e3d_amplifier_pin   1.30        # must be a free ADC pin, not a temperature input
+```
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+**V2 Configuration (INI sections):**
+
+```ini
+[temperature control]
+hotend.enable = true
+hotend.sensor = pt100_e3d
+hotend.e3d_amplifier_pin = 1.30     # must be a free ADC pin, not a temperature input
+```
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
+
+{::nomarkdown}
+</proposal>
+<original>
+{:/nomarkdown}
+
 You wire a PT100 *almost* the same way you would a thermistor, but you need to specify to Smoothie it is a PT100 and where you connected the amplifier signal output:
 
 ```markdown
@@ -39,6 +83,11 @@ temperature_control.hotend.enable              true
 temperature_control.hotend.sensor              pt100_e3d
 temperature_control.hotend.e3d_amplifier_pin   1.30        # must be a free ADC pin, not a temperature input
 ```
+
+{::nomarkdown}
+</original>
+</review>
+{:/nomarkdown}
 
 {::nomarkdown}
 <sl-alert variant="neutral" open>

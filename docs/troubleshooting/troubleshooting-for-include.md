@@ -260,9 +260,7 @@ See [SD card](sd-card).
 
 Sometimes the SD card can get corrupted after which it will do strange things. Always make sure you unmount ( virtually not physically ) your SD card after doing anything on it
 
-For configuration changes which are being made in the `config` file and are not being applied, check that they are not being overridden in the `config-override` file in the same folder:
-
-{% include configuration/override-warning-for-include.md %}
+For configuration changes which are being made in the `config` file and are not being applied, check that they are not being overridden in the `config-override` file in the same folder (see the "What is Config Override?" section earlier on this page for full details).
 
 #### Changes to configuration are ignored on a particular line
 

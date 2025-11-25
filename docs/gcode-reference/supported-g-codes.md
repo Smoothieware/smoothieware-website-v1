@@ -41,6 +41,11 @@ table td:nth-child(3) {
 }
 </style>
 
+{::nomarkdown}
+<review id="supported-g-codes:g-code-table">
+<proposal>
+{:/nomarkdown}
+
 | G-Code | Description | Example |
 | ------ | ----------- | ------- |
 | <gcode>G0</gcode> [→](g0) | Move to the given coordinates. To the contrary of <gcode>G1</gcode>, if there is a tool it will most of the time be off during this kind of move. This is a "go to" move rather than a "do while going to" move. The F parameter defines speed and is remembered by subsequent commands ( specified in millimetres/minute ) (command is modal) | <gcode>G0</gcode> X10 Y5 F100 |
@@ -61,13 +66,15 @@ table td:nth-child(3) {
 | <gcode>G28.1</gcode> | Set Predefined Position - This position will be returned to by <gcode>G28.2</gcode> | <gcode>G28.1</gcode> |
 | <gcode>G28.2</gcode> | Move to Predefined Position - This perform a rapid move to the Predefined position set by <gcode>G28.1</gcode> (in grbl mode this will do a home) | <gcode>G28.2</gcode> |
 | <gcode>G28.3</gcode> | Manual Homing - This allows you to set a home position manually without moving to limit switches | <gcode>G28.3</gcode> |
-| <gcode>G28.4</gcode> | Manual Homing based on actuator position- This allows you to set a home position manually based on actuator position (used for rotary delta) | <gcode>G28.4</gcode> |
+| <gcode>G28.4</gcode> | **V2 Only** - Manual Homing based on actuator position. This allows you to set a home position manually based on actuator position (used for rotary delta) | <gcode>G28.4</gcode> |
 | <gcode>G28.5</gcode> | Clears the homed flag for the specified axis, or all if not specifed | <gcode>G28.5</gcode> <gcode>G28.5</gcode> Z0 |
 | <gcode>G28.6</gcode> | Shows the homing status of each axis | <gcode>G28.6</gcode> |
+| <gcode>G28.7</gcode> | **V2 Only** - Home slaved axis. For dual-motor axes (e.g., dual Z motors), homes the secondary motor independently | <gcode>G28.7</gcode> Z |
 | <gcode>G29</gcode> | Bed probe test - probes bed and reports heights. Behavior depends on levelling strategy (ThreePoint/DeltaGrid/CartGrid), see [ZProbe](zprobe)  | <gcode>G29</gcode> |
 | <gcode>G30</gcode> [→](g30) | Simple Z probe at current XY, reports distance moved down until probe triggers. optional F parameter defines the speed of probing, zprobe.slow_feedrate is used when not supplied | <gcode>G30</gcode> <gcode>G30</gcode> F100 |
 | <gcode>G31</gcode> | Leveling strategy command - probes grid and activates compensation, or reports status (ThreePoint). Depends on levelling strategy, see [ZProbe](zprobe)  | <gcode>G31</gcode> |
 | <gcode>G32</gcode> | Depends on levelling strategy selected, see [ZProbe](zprobe). For calibration on delta, uses Z probe to calibrate delta endstops and arm radius, use R parameter to select only arm radius calibration and E to select only endstop calibration. I to set target precision, J to set probe_radius, K to keep current endstop trim settings.  In Zgrid module, it starts the grid probing | <gcode>G32</gcode> <gcode>G32</gcode> R <gcode>G32</gcode> E <gcode>G32</gcode> EK <gcode>G32</gcode> I0.02 |
+| <gcode>G33</gcode> | **V2 Only** - Lathe threading with spindle synchronization. For CNC lathe operations, synchronizes tool feed with spindle rotation for cutting uniform threads | <gcode>G33</gcode> Z10 K2.0 |
 | <gcode>G38.2</gcode> <gcode>G38.3</gcode> <gcode>G38.4</gcode> <gcode>G38.5</gcode> | Standard probe commands implemented as documented [here](http://linuxcnc.org/docs/2.6/html/gcode/gcode.html#sec:G38-probe) | <gcode>G38.2</gcode> Z-10 |
 | <gcode>G43.2</gcode> | [Baby steps](motion-control#adjusting-z-once-printing-starts-sometimes-called-babysteps) | <gcode>G43.2</gcode> Z0.05 |
 | <gcode>G53</gcode> | Must be on a line by itself OR the first G code on a line, the directly following <gcode>G0</gcode>/<gcode>G1</gcode> will be executed in MCS coordinates | <gcode>G53</gcode> <gcode>G0</gcode> X0 Y0 |
@@ -86,6 +93,17 @@ table td:nth-child(3) {
 | <gcode>G92.1</gcode> | Clear the <gcode>G92</gcode> and <gcode>G30</gcode> Znnn offsets | <gcode>G92.1</gcode> |
 | <gcode>G92.4</gcode> | manually set homing (MCS) for XYZ  | <gcode>G92.4</gcode> X0 Y0 Z0 |
 | <gcode>G94</gcode> | Feedrate mode (motion per minute) - standard modal command for feedrate units (mm/min) | <gcode>G94</gcode> |
+
+</proposal>
+<original>
+{:/nomarkdown}
+
+Original table without version-specific annotations and missing G33 (V2-only lathe threading command).
+
+{::nomarkdown}
+</original>
+</review>
+{:/nomarkdown}
 
 {::nomarkdown}
 <sl-alert variant="warning" open>
@@ -154,6 +172,8 @@ table td:nth-child(3) {
 | <gcode>M952</gcode> | Error dump - output error statistics | <gcode>M952</gcode> |
 | <gcode>M957</gcode> | Report spindle status | <gcode>M957</gcode> |
 | <gcode>M958</gcode> | Set spindle parameters (P for PWM percentage) | <gcode>M958</gcode> P50 |
+| <gcode>M911</gcode> | **V2 Only** - Direct TMC stepper driver register access via SPI. Read all driver status with no parameters, write/read specific registers with S and V parameters | <gcode>M911</gcode> |
+| <gcode>M911.1</gcode> | **V2 Only** - Write TMC register. S parameter specifies register, V parameter specifies value to write | <gcode>M911.1</gcode> S<register> V<value> |
 | <gcode>M999</gcode> | Clear halt state after emergency stop (M112) or kill button. Position lost - must re-home | <gcode>M999</gcode> |
 | <gcode>M1000</gcode> | Generic command wrapper - send console commands from G-code | <gcode>M1000</gcode> fire 50 |
 | <gcode>M1234</gcode> [→](m1234) | Undocumented M-code (purpose unknown) | <gcode>M1234</gcode> |

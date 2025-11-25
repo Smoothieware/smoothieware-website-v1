@@ -91,13 +91,58 @@ It includes:
 
 - A special CNC version of the [Panel](/panel) screens
 
+{::nomarkdown}
+<review id="cnc-mill:grbl-mode-config">
+<proposal>
+{:/nomarkdown}
+
+**GRBL Mode Configuration:**
+
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
+
+```markdown
+grbl_mode true
+```
+
+This setting is enabled by default in the CNC firmware build, which means Smoothie interprets G-code as CNC G-code rather than 3D-printing G-code.
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+```ini
+[general]
+grbl_mode = true
+```
+
+This setting is enabled by default in the CNC firmware build, which means Smoothie interprets G-code as CNC G-code rather than 3D-printing G-code.
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
+
+{::nomarkdown}
+</proposal>
+<original>
+{:/nomarkdown}
+
 - <setting v1="grbl_mode" v2="general.grbl_mode"></setting> enabled by default (which means Smoothie interprets G-code as CNC G-code rather than 3D-printing G-code)
+
+{::nomarkdown}
+</original>
+</review>
+{:/nomarkdown}
 
 - The Spindle module
 
 You will find information on flashing the firmware at [getting-smoothie](/getting-smoothie)
 
-You will find more information on <setting v1="grbl_mode" v2="general.grbl_mode"></setting> on the [grbl_mode](/grbl-mode) page.
+You will find more information on GRBL mode on the [grbl_mode](/grbl-mode) page.
 
 {% include hardware/power/logic-power-for-include.md %}
 

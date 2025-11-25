@@ -19,6 +19,54 @@ The IP address can be set statically or set to use DHCP.
 
 However, due to buffer size limitations, some DHCP servers are not supported.
 
+{::nomarkdown}
+<review id="network:dhcp-configuration">
+<proposal>
+{:/nomarkdown}
+
+Here is an example of a setup using DHCP (meaning that the router automatically assigns an IP address to the Smoothieboard):
+
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
+
+**V1 Configuration (flat namespace):**
+
+```plaintext
+# network settings
+network.enable                               true            # enable the ethernet network services
+network.webserver.enable                     false            # enable the webserver
+network.telnet.enable                        false            # enable the telnet server
+network.plan9.enable                         true             # enable the plan9 network filesystem
+network.ip_address                           auto             # use dhcp to get ip address
+```
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+**V2 Configuration (INI sections):**
+
+```ini
+[network]
+enable = true            # enable the ethernet network services
+webserver_enable = false # enable the webserver
+shell_enable = false     # enable the telnet server (renamed from telnet.enable)
+ip_address = auto        # use dhcp to get ip address
+```
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
+
+{::nomarkdown}
+</proposal>
+<original>
+{:/nomarkdown}
+
 Here is an example of a setup using DHCP (meaning that the router automatically assigns an IP address to the Smoothieboard):
 
 ```plaintext
@@ -29,6 +77,63 @@ network.telnet.enable                        false            # enable the telne
 network.plan9.enable                         true             # enable the plan9 network filesystem
 network.ip_address                           auto             # use dhcp to get ip address
 ```
+
+{::nomarkdown}
+</original>
+</review>
+{:/nomarkdown}
+
+{::nomarkdown}
+<review id="network:static-ip-configuration">
+<proposal>
+{:/nomarkdown}
+
+And an example of how to set up with a static IP:
+
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
+
+**V1 Configuration (flat namespace):**
+
+```plaintext
+# network settings
+network.enable                               true             # enable the ethernet network services
+network.webserver.enable                     false            # enable the webserver
+network.telnet.enable                        false            # enable the telnet server
+network.plan9.enable                         true             # enable the plan9 network filesystem
+network.ip_address                           192.168.3.222    # the IP address
+network.ip_mask                              255.255.255.0    # the ip mask
+network.ip_gateway                           192.168.1.254    # the gateway address
+```
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+**V2 Configuration (INI sections):**
+
+```ini
+[network]
+enable = true             # enable the ethernet network services
+webserver_enable = false  # enable the webserver
+shell_enable = false      # enable the telnet server (renamed from telnet.enable)
+ip_address = 192.168.3.222    # the IP address
+ip_mask = 255.255.255.0       # the ip mask
+ip_gateway = 192.168.1.254    # the gateway address
+```
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
+
+{::nomarkdown}
+</proposal>
+<original>
+{:/nomarkdown}
 
 And an example of how to set up with a static IP:
 
@@ -42,6 +147,11 @@ network.ip_address                           192.168.3.222    # the IP address
 network.ip_mask                              255.255.255.0    # the ip mask
 network.ip_gateway                           192.168.1.254    # the gateway address
 ```
+
+{::nomarkdown}
+</original>
+</review>
+{:/nomarkdown}
 
 The basic network configuration options can be seen at the end of the [Config Sample](https://github.com/arthurwolf/Smoothie/blob/edge/ConfigSamples/Smoothieboard/config#L312).
 
@@ -208,12 +318,59 @@ They are, for example, available from [RobotSeed](http://robotseed.com/index.php
 
 ## Hostname
 
+{::nomarkdown}
+<review id="network:hostname-configuration">
+<proposal>
+{:/nomarkdown}
+
+You can configure a hostname for the DHCP server as such:
+
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
+
+**V1 Configuration:**
+
+```plaintext
+network.ip_address  auto          # use dhcp to get IP address
+network.hostname   smoothie1   # optionally set this hostname for dhcp
+```
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+**V2 Configuration:**
+
+```ini
+[network]
+ip_address = auto          # use dhcp to get IP address
+hostname = smoothie1       # optionally set this hostname for dhcp
+```
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
+
+{::nomarkdown}
+</proposal>
+<original>
+{:/nomarkdown}
+
 You can configure a hostname for the DHCP server as such:
 
 ```plaintext
 network.ip_address  auto          # use dhcp to get IP address
 network.hostname   smoothie1   # optionally set this hostname for dhcp
 ```
+
+{::nomarkdown}
+</original>
+</review>
+{:/nomarkdown}
 
 Note the <setting v1="network.hostname" v2="network.hostname"></setting> is optional. (see section 3.14 [RFC 2132](https://www.ietf.org/rfc/rfc2132.txt))
 

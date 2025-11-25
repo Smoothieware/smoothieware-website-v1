@@ -63,6 +63,57 @@ CoreXY and H-Bot offer several advantages:
 
 ## Configuration
 
+{::nomarkdown}
+<review id="hbot:configuration">
+<proposal>
+{:/nomarkdown}
+
+To configure your HBot or CoreXY machine, set the `arm_solution` parameter in your configuration file to either `corexy` or `hbot`:
+
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
+
+```
+arm_solution corexy
+```
+
+or
+
+```
+arm_solution hbot
+```
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+```ini
+[general]
+arm_solution = corexy
+```
+
+or
+
+```ini
+[general]
+arm_solution = hbot
+```
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
+
+Both options use the same implementation in Smoothieware. Choose the name that matches your mechanical belt configuration.
+
+{::nomarkdown}
+</proposal>
+<original>
+{:/nomarkdown}
+
 To configure your HBot or CoreXY machine, set the `arm_solution` parameter in your configuration file to either `corexy` or `hbot`:
 
 ```
@@ -77,7 +128,22 @@ arm_solution hbot
 
 Both options use the same implementation in Smoothieware. Choose the name that matches your mechanical belt configuration.
 
+{::nomarkdown}
+</original>
+</review>
+{:/nomarkdown}
+
 ### Complete Configuration Example
+
+{::nomarkdown}
+<review id="hbot:complete-config">
+<proposal>
+{:/nomarkdown}
+
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
 
 ```
 # CoreXY arm solution
@@ -107,6 +173,86 @@ gamma_max_rate                               300
 # CoreXY homing (optional but recommended)
 corexy_homing                                true
 ```
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+```ini
+[general]
+arm_solution = corexy
+corexy_homing = true
+
+[actuator]
+alpha.step_pin = PG0
+alpha.dir_pin = PG1
+alpha.en_pin = PJ2
+alpha.steps_per_mm = 80
+alpha.max_rate = 24000
+alpha.microsteps = 32
+alpha.driver = tmc2660
+
+beta.step_pin = PG2
+beta.dir_pin = PG3
+beta.en_pin = PJ3
+beta.steps_per_mm = 80
+beta.max_rate = 24000
+beta.microsteps = 32
+beta.driver = tmc2660
+
+gamma.step_pin = PG4
+gamma.dir_pin = PG5
+gamma.en_pin = PJ4
+gamma.steps_per_mm = 400
+gamma.max_rate = 300
+gamma.microsteps = 32
+gamma.driver = tmc2660
+```
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
+
+{::nomarkdown}
+</proposal>
+<original>
+{:/nomarkdown}
+
+```
+# CoreXY arm solution
+arm_solution                                 corexy
+
+# Alpha motor (X/Y motor 1)
+alpha_step_pin                               2.0
+alpha_dir_pin                                0.5
+alpha_en_pin                                 0.4
+alpha_steps_per_mm                           80
+alpha_max_rate                               24000    # mm/min - can be very high!
+
+# Beta motor (X/Y motor 2)
+beta_step_pin                                2.1
+beta_dir_pin                                 0.11
+beta_en_pin                                  0.10
+beta_steps_per_mm                            80
+beta_max_rate                                24000    # mm/min - can be very high!
+
+# Gamma motor (Z motor - independent)
+gamma_step_pin                               2.2
+gamma_dir_pin                                0.20
+gamma_en_pin                                 0.19
+gamma_steps_per_mm                           400
+gamma_max_rate                               300
+
+# CoreXY homing (optional but recommended)
+corexy_homing                                true
+```
+
+{::nomarkdown}
+</original>
+</review>
+{:/nomarkdown}
 
 ## Speed Settings
 

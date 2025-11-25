@@ -25,10 +25,10 @@ This provides precise calibration for delta kinematics.
 The following table outlines the configuration options for the delta calibration leveling strategy:
 
 | Option | Value | Description |
-| ------ | ----- | ----------- |
-| <setting v1="leveling-strategy.delta-calibration.enable" v2="zprobe.calibration"></setting> | `true` | Set to `true` to enable the delta calibration leveling strategy. This uses the probe to determine the plane's tilt and arm's radius in a delta machine. |
-| <setting v1="leveling-strategy.delta-calibration.radius" v2="delta calibration strategy.radius"></setting> | `100` | Radius at which to probe the three points. |
-| <setting v1="leveling-strategy.delta-calibration.initial_height" v2="delta calibration strategy.initial_height"></setting> | `10` | The initial height above the bed where we stop the initial move down after home to find the bed. This should be a height that is enough that the probe will not hit the bed and is the absolute Z position. |
+| ------ | :-----: | ----------- |
+| <setting v1="leveling-strategy.delta-calibration.enable" v2="zprobe.calibration"></setting> | {::nomarkdown}<raw>`true`</raw>{:/nomarkdown} | Set to `true` to enable the delta calibration leveling strategy. This uses the probe to determine the plane's tilt and arm's radius in a delta machine. |
+| <setting v1="leveling-strategy.delta-calibration.radius" v2="delta calibration strategy.radius"></setting> | {::nomarkdown}<raw>`100`</raw>{:/nomarkdown} | Radius at which to probe the three points. |
+| <setting v1="leveling-strategy.delta-calibration.initial_height" v2="delta calibration strategy.initial_height"></setting> | {::nomarkdown}<raw>`10`</raw>{:/nomarkdown} | The initial height above the bed where we stop the initial move down after home to find the bed. This should be a height that is enough that the probe will not hit the bed and is the absolute Z position. |
 
 ## Related Documentation
 

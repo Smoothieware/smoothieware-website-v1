@@ -5,12 +5,42 @@ permalink: /flashing-the-bootloader
 # Flashing the Bootloader
 
 {::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
+
+{::nomarkdown}
 <sl-alert variant="warning" open>
   <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
-  <strong>Homemade Boards Only</strong>
+  <strong>Homemade Boards Only (v1)</strong>
+  <p>This page covers SD bootloader flashing for Smoothieware V1.</p>
   <p>This is relevant only on homemade boards.</p>
   <p>This is not needed on all recent purchased boards (after summer 2013), they come with the bootloader pre-flashed.</p>
 </sl-alert>
+{:/nomarkdown}
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+{::nomarkdown}
+<sl-alert variant="info" open>
+  <sl-icon slot="icon" name="info-circle"></sl-icon>
+  <strong>V2 Users: Different Flashing Method</strong>
+  <p>Smoothieware V2 uses a different firmware flashing mechanism via <raw>flashme.bin</raw> files and DFU mode.</p>
+  <p>See the <a href="/flashing-smoothie-firmware">firmware flashing guide</a> for V2 instructions.</p>
+</sl-alert>
+{:/nomarkdown}
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
+
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
 {:/nomarkdown}
 
 ## What is the Bootloader?
@@ -27,6 +57,23 @@ The bootloader was written by Triffid_Hunter and can be found [here](https://git
 
 ## LPCXpresso1769 or SmoothieBoard
 
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+This page documents the v1 SD bootloader. V2 uses different mechanisms - see the [firmware flashing guide](/flashing-smoothie-firmware) for V2 bootloader and DFU information.
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
+
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
+
 To flash the bootloader you need a Serial-USB (can be a FTDI cable, an Arduino, CP2102, etc.) cable connected to the UART0 pins of the LPC1769 (6-pin connector noted as "Serial" on a [Smoothieboard](smoothieboard)), and the "reset" and "bootloader" (ISP) buttons connected.
 
 If you have a Smoothieboard, all of this is already there, just connect the Serial-USB/FTDI cable.
@@ -40,6 +87,23 @@ If you have an LPCXpresso1769, you want to look at [Smoothie On A Breadboard](sm
   <sl-icon slot="icon" name="info-circle"></sl-icon>
   <strong>Connection Note:</strong> Sometimes it is better connecting TXD->RXD and RXD->TXD. You should not use USB to RS232, because it can be +15/-15v, but MCU is 3.3V.
 </sl-alert>
+{:/nomarkdown}
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+(V2 content would go here - see [firmware flashing guide](/flashing-smoothie-firmware))
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
+
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
 {:/nomarkdown}
 
 ### Entering Bootloader Mode
@@ -93,6 +157,23 @@ Change `/dev/ttyACM0` to whatever matches your Serial-USB cable.
 
 Now flashing occurs, and that's it!
 
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+V2 bootloader flashing is handled differently. See the [firmware flashing guide](/flashing-smoothie-firmware) for V2 instructions.
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
+
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
+
 ## Mbed
 
 Because the mBed has its own USB flashing thing, you don't want to use the SD bootloader with it.
@@ -128,3 +209,15 @@ This means we will not be getting SD card support, as we'll be flashing over the
 The approach is similar to what's explained in the Mbed section.
 
 A working fork for this based upon the Mbed USB flashing, can be found [here](https://github.com/Skeen/Smoothieware).
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+**Mbed and direct serial flashing are v1-only methods.** For V2 firmware updates, use the methods described in the [firmware flashing guide](/flashing-smoothie-firmware).
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}

@@ -912,6 +912,227 @@ Users can click on the V1/V2 labels to open the version selector and switch betw
 </sl-alert>
 {:/nomarkdown}
 
+## Review Tags (For AI-Assisted Updates)
+
+The `<review>` tag is used during AI-assisted documentation updates to propose changes that require human review before being finalized.
+
+{::nomarkdown}
+<sl-alert variant="primary" open>
+  <sl-icon slot="icon" name="lightbulb"></sl-icon>
+  <strong>Review Workflow for Documentation Updates</strong><br>
+  The <code>&lt;review&gt;</code> tag enables a structured workflow where AI agents can propose documentation changes, and human reviewers can accept, reject, or comment on each change individually before finalizing.
+</sl-alert>
+{:/nomarkdown}
+
+### Combining Review and Versioned Tags
+
+The `<review>` and `<versioned>` tags can be combined to propose version-specific content changes. Here's a working example from the community page:
+
+```html
+{::nomarkdown}
+<review id="page-name:section-description">
+<proposal>
+{:/nomarkdown}
+
+Introductory text that applies to both versions.
+
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
+
+**V1-specific content:**
+
+- List item with <setting v1="some_setting"></setting>
+- Another item
+
+<sl-alert variant="primary" open>
+  <sl-icon slot="icon" name="info-circle"></sl-icon>
+  V1-specific alert or note
+</sl-alert>
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+**V2-specific content:**
+
+- Different list for V2
+- With different settings
+
+<sl-alert variant="primary" open>
+  <sl-icon slot="icon" name="info-circle"></sl-icon>
+  V2-specific alert or note
+</sl-alert>
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
+
+{::nomarkdown}
+</proposal>
+<original>
+{:/nomarkdown}
+
+Original content that's being replaced.
+
+{::nomarkdown}
+</original>
+</review>
+{:/nomarkdown}
+```
+
+**Key points when combining these tags:**
+
+1. **Review wraps versioned**: The `<review>` tag is the outermost wrapper
+2. **Versioned inside proposal**: Place the `<versioned>` tag inside the `<proposal>` section
+3. **Proper nesting**: Each tag pair must have correct `{::nomarkdown}` / `{:/nomarkdown}` wrappers
+4. **Blank lines**: Add blank lines after `{:/nomarkdown}` and before `{::nomarkdown}` for proper markdown parsing
+5. **Custom tags work**: You can use `<setting>`, `<pin>`, Shoelace components, etc. inside versioned sections
+
+### Tag Structure
+
+```html
+{::nomarkdown}
+<review id="page-name:change-description">
+<proposal>
+{:/nomarkdown}
+
+New or updated content goes here. Can include markdown, <setting> tags, <pin> tags, etc.
+
+{::nomarkdown}
+</proposal>
+<original>
+{:/nomarkdown}
+
+Original content being replaced (optional - omit if adding new content)
+
+{::nomarkdown}
+</original>
+</review>
+{:/nomarkdown}
+```
+
+### Review ID Format
+
+The `id` attribute must follow the format: `page-name:brief-description`
+
+Examples:
+- `extruders:pin-descriptions`
+- `motion-control:acceleration-formula`
+- `3d-printer-guide:wiring-section`
+
+### Tag Behavior
+
+**On Localhost** (http://localhost:4000):
+- Shows proposed content with pink background
+- Displays control icons in top-right:
+  - **Toggle**: Switch between proposal and original
+  - **Accept** (green checkmark): Mark change as accepted
+  - **Reject** (red X): Mark change as rejected
+  - **Comment** (blue chat): Add review notes
+- All actions saved to browser localStorage
+- Console logs review data for export
+
+**On Production Site** (smoothieware.org):
+- Shows only original content (or nothing if no original)
+- No backgrounds, no icons
+- Completely invisible to end users
+
+### Using Markdown Inside Review Tags
+
+Both `<proposal>` and `<original>` tags support markdown, but **you must use Kramdown's `{::nomarkdown}` directives** (same as `<versioned>` tag):
+
+```html
+{::nomarkdown}
+<review id="example:markdown-demo">
+<proposal>
+{:/nomarkdown}
+
+The **acceleration** setting controls how quickly the machine speeds up.
+
+You can set it using:
+<setting v1="acceleration" v2="motion control.default_acceleration"></setting>
+
+For more info, see the [motion control guide](/motion-control).
+
+{::nomarkdown}
+</proposal>
+<original>
+{:/nomarkdown}
+
+The acceleration setting controls speed.
+
+{::nomarkdown}
+</original>
+</review>
+{:/nomarkdown}
+```
+
+**Critical Requirements**:
+- **Must wrap with `{::nomarkdown}` / `{:/nomarkdown}`** to enable markdown processing
+- Place `{:/nomarkdown}` immediately after opening tags (`<proposal>`, `<original>`)
+- Place `{::nomarkdown}` immediately before closing tags (`</proposal>`, `</original>`)
+- Custom tags (`<setting>`, `<pin>`, etc.) work normally inside review content
+- Blank lines create paragraph breaks
+- Use standard markdown syntax between the directives
+
+### Workflow for AI Updates
+
+1. **AI proposes changes**: Wraps updates in `<review>` tags with unique IDs
+2. **Human reviews**: Views changes on localhost, uses icons to accept/reject/comment
+3. **Export review data**: Copy JSON from browser console
+4. **AI processes feedback**: Accepts accepted changes, refines commented changes, removes rejected changes
+5. **Finalize**: Remove `<review>` tags, leaving only final content
+
+### Review Data Export
+
+All review actions are logged to the browser console:
+
+```json
+{
+    "extruders:pin-descriptions": {
+        "accept": true
+    },
+    "extruders:safety-warning": {
+        "comment": true,
+        "note": "Add metric example"
+    },
+    "motion-control:formula": {
+        "reject": true
+    }
+}
+```
+
+Copy this JSON to provide feedback to the AI agent for refinement.
+
+### Best Practices
+
+1. **Unique IDs**: Each review tag must have a globally unique ID
+2. **Descriptive IDs**: Use format `page:section` for clarity
+3. **One change per tag**: Keep proposals focused and atomic
+4. **Include original**: Always include `<original>` content when replacing (not adding)
+5. **Test rendering**: Verify custom tags render correctly inside reviews
+6. **Clean up**: Remove all `<review>` tags before pushing to production
+
+{::nomarkdown}
+<sl-alert variant="warning" open>
+  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+  <strong>Production Safety</strong><br>
+  Review tags should NEVER be pushed to the production site. They are for localhost testing only. On production, they automatically show only the original content with no visual indicators.
+</sl-alert>
+{:/nomarkdown}
+
+{::nomarkdown}
+<sl-alert variant="primary" open>
+  <sl-icon slot="icon" name="lightbulb"></sl-icon>
+  <strong>Test Review Tags</strong><br>
+  See the <a href="/debug-review">Debug Review Tags</a> page for interactive examples and to test the review workflow.
+</sl-alert>
+{:/nomarkdown}
+
 ### Lists
 
 You can make nicely formatted lists by doing:

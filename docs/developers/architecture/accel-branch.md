@@ -33,6 +33,13 @@ Here is the plan:
 
 A summary of how we get smoothie to generate steps:
 
+{::nomarkdown}
+<sl-alert variant="neutral" open>
+  <sl-icon slot="icon" name="info-circle"></sl-icon>
+  This describes v1 architecture. See the version-specific sections below for v2 differences in step rates and capabilities.
+</sl-alert>
+{:/nomarkdown}
+
 1. We [receive a line over UART (for example)](https://github.com/arthurwolf/Smoothie/blob/edge/src/modules/communication/SerialConsole.cpp#L40), and [dispatch it as an event to all modules](https://github.com/arthurwolf/Smoothie/blob/edge/src/modules/communication/SerialConsole.cpp#L61).
 
 2. If [that line is a GCode](https://github.com/arthurwolf/Smoothie/blob/edge/src/modules/communication/GcodeDispatch.cpp#L28), we [dispatch that as an event to all modules](https://github.com/arthurwolf/Smoothie/blob/edge/src/modules/communication/GcodeDispatch.cpp#L100).
@@ -225,3 +232,107 @@ These are optimizations that are most useful in the case we don't do anything. A
 {:/nomarkdown}
 
 Compared to the previous graph, we now spend significantly less time in the interrupt when no step is generated, and a bit less time when one or more steps are generated.
+
+## V1 vs V2 Step Generation Comparison
+
+{::nomarkdown}
+<review id="accel-branch:step-generation-comparison">
+<proposal>
+{:/nomarkdown}
+
+The stepping and acceleration architecture has evolved significantly between V1 and V2:
+
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
+
+### V1 Step Generation
+
+**Hardware Capabilities:**
+- Maximum step rate: 100 kHz
+- Microstepping: Up to 1/32
+- Processor: NXP LPC1769 (100-120 MHz)
+- Timer: Hardware timer interrupt at fixed frequency
+- Processing: Modest CPU headroom
+
+**Configuration:**
+Set the step frequency and acceleration using:
+- <setting v1="base_stepping_frequency"></setting> - Default 100 kHz
+- <setting v1="acceleration"></setting> - Default acceleration in mm/s²
+
+**Limitations:**
+- Fixed stepping frequency at 100 kHz provides good precision but limits maximum speed at high microstepping ratios
+- Coarse microstepping (max 1/32) means lower resolution at maximum speeds
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+### V2 Step Generation
+
+**Hardware Capabilities:**
+- Maximum step rate: 200 kHz (2× faster than V1)
+- Microstepping: Up to 1/256 with interpolation (8× finer than V1)
+- Processor: STM32H745 (480 MHz M7 core, 8.2× DMIPS faster than V1)
+- Timer: Hardware timer with <1% jitter
+- Processing: Extensive CPU headroom for advanced features
+
+**Configuration:**
+Set the step frequency and acceleration using:
+- <setting v2="system.step_frequency"></setting> - Default 200 kHz
+- <setting v2="motion control.default_acceleration"></setting> - Default acceleration in mm/s²
+- <setting v2="system.step_pulse_us"></setting> - Configurable pulse width (1-3+ microseconds)
+
+**Improvements:**
+- 2× faster stepping (200 kHz vs 100 kHz) enables fine microstepping at full speed
+- 1/256 microstepping (vs 1/32) provides 8× finer resolution
+- Configurable step pulse width for driver compatibility
+- Lower jitter timing for more precise motion control
+- Enables: 1/64 microstepping at full speed, fast rapids (30,000 mm/min), smooth delta motion
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
+
+{::nomarkdown}
+</proposal>
+<original>
+{:/nomarkdown}
+
+The stepping and acceleration architecture has evolved significantly between V1 and V2:
+
+### V1 Step Generation
+
+**Hardware Capabilities:**
+- Maximum step rate: 100 kHz
+- Microstepping: Up to 1/32
+- Processor: NXP LPC1769 (100-120 MHz)
+- Timer: Hardware timer interrupt at fixed frequency
+- Processing: Modest CPU headroom
+
+**Configuration:**
+Set the step frequency and acceleration using:
+- <setting v1="base_stepping_frequency"></setting> - Default 100 kHz
+- <setting v1="acceleration"></setting> - Default acceleration in mm/s²
+
+**Limitations:**
+- Fixed stepping frequency at 100 kHz provides good precision but limits maximum speed at high microstepping ratios
+- Coarse microstepping (max 1/32) means lower resolution at maximum speeds
+
+{::nomarkdown}
+</original>
+</review>
+{:/nomarkdown}
+
+### Performance Summary
+
+| Metric | V1 | V2 | Improvement |
+|--------|----|----|-------------|
+| Maximum step rate | 100 kHz | 200 kHz | 2× faster |
+| Maximum microstepping | 1/32 | 1/256 | 8× finer |
+| Processor speed | 100 MHz | 480 MHz | 4.8× faster |
+| CPU headroom | Limited | Extensive | Enables more features |
+
+The increased step rate and finer microstepping in V2, combined with significantly more CPU power, enables much smoother motion at higher speeds and supports advanced features like sensorless homing and dynamic load compensation on the stepper drivers.

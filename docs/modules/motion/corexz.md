@@ -49,11 +49,52 @@ CoreXZ is useful for machines where:
 
 ## Configuration
 
+{::nomarkdown}
+<review id="corexz:configuration">
+<proposal>
+{:/nomarkdown}
+
+To configure your machine to use the CoreXZ arm solution, add this to your configuration file:
+
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
+
+```
+arm_solution corexz
+```
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+```ini
+[general]
+arm_solution = corexz
+```
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
+
+{::nomarkdown}
+</proposal>
+<original>
+{:/nomarkdown}
+
 To configure your machine to use the CoreXZ arm solution, add this to your configuration file:
 
 ```
 arm_solution corexz
 ```
+
+{::nomarkdown}
+</original>
+</review>
+{:/nomarkdown}
 
 ### Reduction Parameters
 
@@ -73,6 +114,16 @@ These parameters allow you to adjust for different pulley sizes or gear ratios i
 The default `z_reduction` of 3.0 assumes that the Z axis typically needs more torque and less speed than the X axis.
 
 ### Complete Configuration Example
+
+{::nomarkdown}
+<review id="corexz:complete-config">
+<proposal>
+{:/nomarkdown}
+
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
 
 ```
 # CoreXZ arm solution
@@ -101,6 +152,86 @@ gamma_en_pin                                 0.19
 gamma_steps_per_mm                           80
 gamma_max_rate                               6000
 ```
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+```ini
+[general]
+arm_solution = corexz
+x_reduction = 1.0
+z_reduction = 3.0
+
+[actuator]
+alpha.step_pin = PG0
+alpha.dir_pin = PG1
+alpha.en_pin = PJ2
+alpha.steps_per_mm = 80
+alpha.max_rate = 12000
+alpha.microsteps = 32
+alpha.driver = tmc2660
+
+beta.step_pin = PG2
+beta.dir_pin = PG3
+beta.en_pin = PJ3
+beta.steps_per_mm = 80
+beta.max_rate = 12000
+beta.microsteps = 32
+beta.driver = tmc2660
+
+gamma.step_pin = PG4
+gamma.dir_pin = PG5
+gamma.en_pin = PJ4
+gamma.steps_per_mm = 80
+gamma.max_rate = 6000
+gamma.microsteps = 32
+gamma.driver = tmc2660
+```
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
+
+{::nomarkdown}
+</proposal>
+<original>
+{:/nomarkdown}
+
+```
+# CoreXZ arm solution
+arm_solution                                 corexz
+x_reduction                                  1.0
+z_reduction                                  3.0
+
+# Alpha (X/Z motor 1)
+alpha_step_pin                               2.0
+alpha_dir_pin                                0.5
+alpha_en_pin                                 0.4
+alpha_steps_per_mm                           80
+alpha_max_rate                               12000
+
+# Beta (X/Z motor 2)
+beta_step_pin                                2.1
+beta_dir_pin                                 0.11
+beta_en_pin                                  0.10
+beta_steps_per_mm                            80
+beta_max_rate                                12000
+
+# Gamma (Y motor - independent)
+gamma_step_pin                               2.2
+gamma_dir_pin                                0.20
+gamma_en_pin                                 0.19
+gamma_steps_per_mm                           80
+gamma_max_rate                               6000
+```
+
+{::nomarkdown}
+</original>
+</review>
+{:/nomarkdown}
 
 ## Speed Settings
 

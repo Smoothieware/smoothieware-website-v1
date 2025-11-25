@@ -11,15 +11,15 @@ This is useful if your Z plate/bed is not perfectly aligned with your XY gantry.
 The following table lists the configuration options for this leveling strategy:
 
 | Option | Value | Description |
-| ------ | ----- | ----------- |
-| <setting v1="leveling-strategy.three-point-leveling.enable" v2="zprobe.leveling"></setting> | `true` | Set to `true` to enable the leveling strategy that probes three points to define a plane and then keeps the Z parallel to that plane. This is useful if your Z plate/bed is not perfectly aligned with your XY gantry. |
-| <setting v1="leveling-strategy.three-point-leveling.point1"></setting> | `100.0,0.0` | The first probe point (X, Y). |
-| <setting v1="leveling-strategy.three-point-leveling.point2"></setting> | `200.0,200.0` | The second probe point (X, Y). |
-| <setting v1="leveling-strategy.three-point-leveling.point3"></setting> | `0.0,200.0` | The third probe point (X, Y). |
-| <setting v1="leveling-strategy.three-point-leveling.home_first" v2="three point leveling strategy.home_first"></setting> | `true` | Home the X and Y axes before probing. |
-| <setting v1="leveling-strategy.three-point-leveling.tolerance" v2="three point leveling strategy.tolerance"></setting> | `0.03` | The probe tolerance in millimeters, anything less than this will be ignored, default is `0.03mm`. |
-| <setting v1="leveling-strategy.three-point-leveling.probe_offsets" v2="three point leveling strategy.probe_offsets"></setting> | `0,0,0` | The probe offset from nozzle, must be X,Y,Z (Z should always be 0), default is no offset. This is used if your nozzle is not exactly at the same position as where your tool would be. |
-| <setting v1="leveling-strategy.three-point-leveling.save_plane" v2="three point leveling strategy.save_plane"></setting> | `false` | Set to `true` to allow the bed plane to be saved with {::nomarkdown}<mcode>M500</mcode>{:/nomarkdown}, default is `false`. |
+| ------ | :-----: | ----------- |
+| <setting v1="leveling-strategy.three-point-leveling.enable" v2="zprobe.leveling"></setting> | {::nomarkdown}<raw>`true`</raw>{:/nomarkdown} | Set to `true` to enable the leveling strategy that probes three points to define a plane and then keeps the Z parallel to that plane. This is useful if your Z plate/bed is not perfectly aligned with your XY gantry. |
+| <setting v1="leveling-strategy.three-point-leveling.point1"></setting> | {::nomarkdown}<raw>`100.0,0.0`</raw>{:/nomarkdown} | The first probe point (X, Y). |
+| <setting v1="leveling-strategy.three-point-leveling.point2"></setting> | {::nomarkdown}<raw>`200.0,200.0`</raw>{:/nomarkdown} | The second probe point (X, Y). |
+| <setting v1="leveling-strategy.three-point-leveling.point3"></setting> | {::nomarkdown}<raw>`0.0,200.0`</raw>{:/nomarkdown} | The third probe point (X, Y). |
+| <setting v1="leveling-strategy.three-point-leveling.home_first" v2="three point leveling strategy.home_first"></setting> | {::nomarkdown}<raw>`true`</raw>{:/nomarkdown} | Home the X and Y axes before probing. |
+| <setting v1="leveling-strategy.three-point-leveling.tolerance" v2="three point leveling strategy.tolerance"></setting> | {::nomarkdown}<raw>`0.03`</raw>{:/nomarkdown} | The probe tolerance in millimeters, anything less than this will be ignored, default is `0.03mm`. |
+| <setting v1="leveling-strategy.three-point-leveling.probe_offsets" v2="three point leveling strategy.probe_offsets"></setting> | {::nomarkdown}<raw>`0,0,0`</raw>{:/nomarkdown} | The probe offset from nozzle, must be X,Y,Z (Z should always be 0), default is no offset. This is used if your nozzle is not exactly at the same position as where your tool would be. |
+| <setting v1="leveling-strategy.three-point-leveling.save_plane" v2="three point leveling strategy.save_plane"></setting> | {::nomarkdown}<raw>`false`</raw>{:/nomarkdown} | Set to `true` to allow the bed plane to be saved with {::nomarkdown}<mcode>M500</mcode>{:/nomarkdown}, default is `false`. |
 
 ## Usage
 

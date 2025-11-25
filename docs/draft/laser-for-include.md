@@ -31,6 +31,16 @@ Smoothie moves the motors, and the Laser module talks to the laser power supply 
   <strong>Always</strong> disconnect power before working on any electrical connections.
 </sl-alert>
 
+{::nomarkdown}
+<review id="laser-for-include:firmware-version">
+<proposal>
+{:/nomarkdown}
+
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
+
 <sl-alert variant="primary" open>
   <sl-icon slot="icon" name="lightbulb"></sl-icon>
   For laser cutters, you will get some extra features (in particular nice laser-specific screen information on panels) if you use the "cnc" version of the firmware.
@@ -39,6 +49,37 @@ Smoothie moves the motors, and the Laser module talks to the laser power supply 
 
   See <a href="flashing-smoothie-firmware">flashing the firmware</a> and choose the file called <code>firmware-cnc.bin</code>.
 </sl-alert>
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+<sl-alert variant="primary" open>
+  <sl-icon slot="icon" name="lightbulb"></sl-icon>
+  Smoothieware V2 includes laser support in the main firmware build. No special firmware variant is needed for laser operation.
+</sl-alert>
+
+{::nomarkdown}
+</v2>
+</versioned>
+</proposal>
+<original>
+{:/nomarkdown}
+
+<sl-alert variant="primary" open>
+  <sl-icon slot="icon" name="lightbulb"></sl-icon>
+  For laser cutters, you will get some extra features (in particular nice laser-specific screen information on panels) if you use the "cnc" version of the firmware.
+
+  Though the normal (edge) version will work fine.
+
+  See <a href="flashing-smoothie-firmware">flashing the firmware</a> and choose the file called <code>firmware-cnc.bin</code>.
+</sl-alert>
+
+{::nomarkdown}
+</original>
+</review>
+{:/nomarkdown}
 
 
 ## Wiring
@@ -209,7 +250,58 @@ Now that the PSU is wired to the Smoothieboard and that you know which pin you a
 
 ## Configuration
 
-You now need to edit the "config" file on the SD card (the default configuration file already contains example laser lines so you may only need to edit/enable those) to add or setup the laser part as follows: {::nomarkdown}<span style="background-color: #4a1515; padding: 2px 4px; border-radius: 2px;">The <setting v1="laser_module_enable" v2="laser.enable"></setting> must be set to "true" to activate laser control - it's disabled by default for safety.</span>{:/nomarkdown} 
+{::nomarkdown}
+<review id="laser-for-include:main-config">
+<proposal>
+{:/nomarkdown}
+
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
+
+You now need to edit the "config" file on the SD card (the default configuration file already contains example laser lines so you may only need to edit/enable those) to add or setup the laser part as follows: {::nomarkdown}<span style="background-color: #4a1515; padding: 2px 4px; border-radius: 2px;">The <setting v1="laser_module_enable"></setting> must be set to "true" to activate laser control - it's disabled by default for safety.</span>{:/nomarkdown}
+
+```markdown
+# Laser module configuration
+laser_module_enable                          true             # Whether to activate the laser module at all. All configuration is
+                                                              # ignored if false.
+laser_module_pwm_pin                         2.5              # this pin will be PWMed to control the laser. Only P2.0 - P2.5
+                                                              # can be used since laser requires hardware PWM
+#laser_module_maximum_power                  1.0              # this is the maximum duty cycle that will be applied to the laser
+#laser_module_minimum_power                  0.0              # this duty cycle will be used for travel moves to keep the laser
+                                                              # active without actually burning
+#laser_module_pwm_period                     20               # this sets the pwm frequency as the period in microseconds
+```
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+You now need to edit the "config" file on the SD card (V2 uses INI-style configuration format) to add or setup the laser section as follows: {::nomarkdown}<span style="background-color: #4a1515; padding: 2px 4px; border-radius: 2px;">The <setting v2="laser.enable"></setting> must be set to "true" to activate laser control - it's disabled by default for safety.</span>{:/nomarkdown}
+
+```ini
+# Laser module configuration
+[laser]
+enable = true                 # Enable the laser module
+pwm_pin = 2.5                # PWM output pin for laser control (only PWM-capable pins)
+#maximum_power = 1.0         # Maximum duty cycle (0.0 to 1.0)
+#minimum_power = 0.0         # Duty cycle for travel moves (keeps laser active without burning)
+
+# PWM frequency is configured separately in the PWM module section
+[pwm1]                       # Or pwm2, depending on which PWM channel is used
+#frequency = 50000           # PWM frequency in Hz (50kHz default)
+```
+
+{::nomarkdown}
+</v2>
+</versioned>
+</proposal>
+<original>
+{:/nomarkdown}
+
+You now need to edit the "config" file on the SD card (the default configuration file already contains example laser lines so you may only need to edit/enable those) to add or setup the laser part as follows: {::nomarkdown}<span style="background-color: #4a1515; padding: 2px 4px; border-radius: 2px;">The <setting v1="laser_module_enable" v2="laser.enable"></setting> must be set to "true" to activate laser control - it's disabled by default for safety.</span>{:/nomarkdown}
 
 ```markdown
 # Laser module configuration
@@ -223,7 +315,43 @@ laser_module_pwm_pin                         2.5              # this pin will be
 #laser_module_pwm_period                     20               # this sets the pwm frequency as the period in microseconds
 ```
 
+{::nomarkdown}
+</original>
+</review>
+{:/nomarkdown}
+
+{::nomarkdown}
+<review id="laser-for-include:pin-modifiers">
+<proposal>
+{:/nomarkdown}
+
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
+
+If needed, replace the <pin>2.5</pin> value for <setting v1="laser_module_pwm_pin"></setting> with the pin you chose in the wiring section. {::nomarkdown}<span style="background-color: #4a1515; padding: 2px 4px; border-radius: 2px;">Remember to use the <raw>o!</raw> suffix (e.g., "<pin>1.23o!</pin>") if your PSU requires open-drain inverted signaling.</span>{:/nomarkdown}
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+If needed, replace the <pin>2.5</pin> value for <setting v2="laser.pwm_pin"></setting> with the pin you chose in the wiring section. For V2, pin modifiers are configured separately using <setting v2="laser.inverted_pwm"></setting>, <setting v2="laser.opendrain"></setting>, and <setting v2="laser.pullup"></setting> configuration options instead of pin suffixes.
+
+{::nomarkdown}
+</v2>
+</versioned>
+</proposal>
+<original>
+{:/nomarkdown}
+
 If needed, replace the <pin>2.5</pin> value for <setting v1="laser_module_pwm_pin" v2="laser.pwm_pin"></setting> with the pin you chose in the wiring section. {::nomarkdown}<span style="background-color: #4a1515; padding: 2px 4px; border-radius: 2px;">Remember to use the <raw>o!</raw> suffix (e.g., "<pin>1.23o!</pin>") if your PSU requires open-drain inverted signaling.</span>{:/nomarkdown}
+
+{::nomarkdown}
+</original>
+</review>
+{:/nomarkdown}
 
 Save the file, reset the board, you are now ready for laser testing. {::nomarkdown}<span style="background-color: #4a1515; padding: 2px 4px; border-radius: 2px;">Always verify cooling system is running and ventilation is operating before any laser testing.</span>{:/nomarkdown}
 
@@ -239,7 +367,38 @@ This is an example that should be the most common case, which you are most likel
 
 In this example a RECI power supply but this should apply to most Chinese power supplies.
 
+{::nomarkdown}
+<review id="laser-for-include:example-pin-config">
+<proposal>
+{:/nomarkdown}
+
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
+
 The basic idea is this: pin <pin>1.23</pin> (hardware PWM-capable) is configured as open-drain and inverted (<pin>1.23o!</pin>), then connected to the <raw>L</raw> (Low) TTL input on the power supply. {::nomarkdown}<span style="background-color: #4a1515; padding: 2px 4px; border-radius: 2px;">The <raw>o!</raw> suffix configures the pin as open-drain and inverted, which is necessary to provide proper voltage levels for the PSU control input.</span>{:/nomarkdown}
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+The basic idea is this: pin <pin>1.23</pin> (hardware PWM-capable) is configured as open-drain and inverted using separate configuration options, then connected to the <raw>L</raw> (Low) TTL input on the power supply. In V2, you set <setting v2="laser.pwm_pin"></setting> to <raw>1.23</raw>, then enable <setting v2="laser.opendrain"></setting> and <setting v2="laser.inverted_pwm"></setting> to achieve the same behavior.
+
+{::nomarkdown}
+</v2>
+</versioned>
+</proposal>
+<original>
+{:/nomarkdown}
+
+The basic idea is this: pin <pin>1.23</pin> (hardware PWM-capable) is configured as open-drain and inverted (<pin>1.23o!</pin>), then connected to the <raw>L</raw> (Low) TTL input on the power supply. {::nomarkdown}<span style="background-color: #4a1515; padding: 2px 4px; border-radius: 2px;">The <raw>o!</raw> suffix configures the pin as open-drain and inverted, which is necessary to provide proper voltage levels for the PSU control input.</span>{:/nomarkdown}
+
+{::nomarkdown}
+</original>
+</review>
+{:/nomarkdown}
 
 Ground from the Smoothieboard is connected to ground on the Power Supply.
 
@@ -265,6 +424,49 @@ The wiring looks like this:
 </a>
 {:/nomarkdown}
 
+{::nomarkdown}
+<review id="laser-for-include:example-config">
+<proposal>
+{:/nomarkdown}
+
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
+
+You then also need to configure the laser module accordingly:
+
+```markdown
+# Laser module configuration
+laser_module_enable                          true             # Whether to activate the laser module at all. All configuration is
+                                                              # ignored if false.
+laser_module_pwm_pin                         1.23o!           # this pin will be PWMed to control the laser. Only P2.0 - P2.5
+                                                              # can be used since laser requires hardware PWM
+```
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+You then also need to configure the laser module accordingly:
+
+```ini
+# Laser module configuration
+[laser]
+enable = true                 # Enable the laser module
+pwm_pin = 1.23               # PWM output pin for laser control
+inverted_pwm = true          # Invert PWM signal (equivalent to ! modifier in V1)
+opendrain = true             # Use open-drain mode (equivalent to o modifier in V1)
+```
+
+{::nomarkdown}
+</v2>
+</versioned>
+</proposal>
+<original>
+{:/nomarkdown}
+
 You then also need to configure the laser module accordingly:
 
 ```markdown
@@ -274,6 +476,11 @@ laser_module_enable                          false            # Whether to activ
 laser_module_pwm_pin                         1.23o!           # this pin will be PWMed to control the laser. Only P2.0 - P2.5
                                                               # can be used since laser requires hardware PWM
 ```
+
+{::nomarkdown}
+</original>
+</review>
+{:/nomarkdown}
 
 ### Note on K40
 

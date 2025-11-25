@@ -22,6 +22,16 @@ Simply edit the configuration file, **unmount/safely eject** the SD card from th
 
 The configuration changes will be applied immediately after the board resets.
 
+{::nomarkdown}
+<review id="configuring-smoothie:getting-config-file">
+<proposal>
+{:/nomarkdown}
+
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
+
 ## Getting the Configuration File
 
 You can find a default config file for 3D printing [here in the github repository](https://github.com/Smoothieware/Smoothieware/raw/edge/ConfigSamples/Smoothieboard/config) or by clicking on the big blue button just below:
@@ -44,7 +54,81 @@ You can find a default config file for 3D printing [here in the github repositor
 </sl-alert>
 {:/nomarkdown}
 
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+## Getting the Configuration File
+
+You can find a default config file for 3D printing [here in the github repository](https://github.com/Smoothieware/Smoothieware-V2/raw/main/ConfigSamples/config.ini) or by clicking on the big blue button just below:
+
+{::nomarkdown}
+<div style="margin: 2rem 0;">
+  <sl-button variant="primary" size="large" href="https://github.com/Smoothieware/Smoothieware-V2/raw/main/ConfigSamples/config.ini" style="width:100%; max-width: 600px;">
+    <a href="/images/download-icon.png">
+      <img src="/images/download-icon.png" style="width: 32px; margin-right: 16px; vertical-align: middle;"/>
+    </a>
+    <b>Click here</b> to get the latest configuration file example
+  </sl-button>
+</div>
+{:/nomarkdown}
+
+{::nomarkdown}
+<sl-alert variant="warning" open>
+  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+  Please remember that the config file on the SD card you got with your Smoothieboard may not be current. Always download the newest version with the button above.
+</sl-alert>
+{:/nomarkdown}
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
+
+{::nomarkdown}
+</proposal>
+<original>
+{:/nomarkdown}
+
+## Getting the Configuration File
+
+You can find a default config file for 3D printing [here in the github repository](https://github.com/Smoothieware/Smoothieware/raw/edge/ConfigSamples/Smoothieboard/config) or by clicking on the big blue button just below:
+
+{::nomarkdown}
+<div style="margin: 2rem 0;">
+  <sl-button variant="primary" size="large" href="https://github.com/Smoothieware/Smoothieware/raw/edge/ConfigSamples/Smoothieboard/config" style="width:100%; max-width: 600px;">
+    <a href="/images/download-icon.png">
+      <img src="/images/download-icon.png" style="width: 32px; margin-right: 16px; vertical-align: middle;"/>
+    </a>
+    <b>Click here</b> to get the latest configuration file example
+  </sl-button>
+</div>
+{:/nomarkdown}
+
+{::nomarkdown}
+<sl-alert variant="warning" open>
+  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+  Please remember that the config file on the SD card you got with your Smoothieboard may not be current. Always download the newest version with the button above.
+</sl-alert>
+{:/nomarkdown}
+
+{::nomarkdown}
+</original>
+</review>
+{:/nomarkdown}
+
 ## Configuration File Format
+
+{::nomarkdown}
+<review id="configuring-smoothie:file-format">
+<proposal>
+{:/nomarkdown}
+
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
 
 The file consists of key and value pairs. Most values are commented to indicate what they mean, but a lot of them are also explained in this documentation.
 
@@ -54,9 +138,54 @@ Example:
 default_feed_rate                 4000                 # Default rate ( mm/minute ) for G1/G2/G3 moves
 ```
 
-Where {::nomarkdown}<setting v1="default_feed_rate" v2="motion control.default_feed_rate"></setting>{:/nomarkdown} is the configuration option, `4000` is the value (which you can change), and everything after `#` is a comment (that Smoothie will ignore).
+Where {::nomarkdown}<setting v1="default_feed_rate"></setting>{:/nomarkdown} is the configuration option, `4000` is the value (which you can change), and everything after `#` is a comment (that Smoothie will ignore).
 
 This simple format makes the configuration very readable and easy to understand.
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+The file uses a standard INI format with sections and hierarchical settings. Most values are commented to indicate what they mean, but a lot of them are also explained in this documentation.
+
+Example:
+
+```ini
+[motion control]
+default_feed_rate = 4000  # Default rate (mm/minute) for G1/G2/G3 moves
+```
+
+Where {::nomarkdown}<setting v2="motion control.default_feed_rate"></setting>{:/nomarkdown} is the configuration option, `4000` is the value (which you can change), and everything after `#` is a comment (that Smoothie will ignore).
+
+This structured format makes the configuration organized and hierarchical, with related settings grouped into sections.
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
+
+{::nomarkdown}
+</proposal>
+<original>
+{:/nomarkdown}
+
+The file consists of key and value pairs. Most values are commented to indicate what they mean, but a lot of them are also explained in this documentation.
+
+Example:
+
+```plaintext
+default_feed_rate                 4000                 # Default rate ( mm/minute ) for G1/G2/G3 moves
+```
+
+Where {::nomarkdown}<setting v1="default_feed_rate"></setting>{:/nomarkdown} is the configuration option, `4000` is the value (which you can change), and everything after `#` is a comment (that Smoothie will ignore).
+
+This simple format makes the configuration very readable and easy to understand.
+
+{::nomarkdown}
+</original>
+</review>
+{:/nomarkdown}
 
 You can find a complete list of possible configuration options [here](configuration-options).
 
@@ -84,6 +213,16 @@ You can find a complete list of possible configuration options [here](configurat
 {:/nomarkdown}
 
 {::nomarkdown}
+<review id="configuring-smoothie:line-length">
+<proposal>
+{:/nomarkdown}
+
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
+
+{::nomarkdown}
 <sl-alert variant="danger" open>
   <sl-icon slot="icon" name="exclamation-octagon"></sl-icon>
   <strong>Line length</strong>
@@ -92,11 +231,73 @@ You can find a complete list of possible configuration options [here](configurat
 </sl-alert>
 {:/nomarkdown}
 
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
+
+{::nomarkdown}
+</proposal>
+<original>
+{:/nomarkdown}
+
+{::nomarkdown}
+</original>
+</review>
+{:/nomarkdown}
+
+{::nomarkdown}
+<review id="configuring-smoothie:file-requirements">
+<proposal>
+{:/nomarkdown}
+
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
+
 ## File Requirements
 
 Smoothie will not work without a valid configuration file on the SD card.
 
 The filename must be `config` or `config.txt`
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+## File Requirements
+
+Smoothie will not work without a valid configuration file on the SD card.
+
+The filename must be `config.ini`
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
+
+{::nomarkdown}
+</proposal>
+<original>
+{:/nomarkdown}
+
+## File Requirements
+
+Smoothie will not work without a valid configuration file on the SD card.
+
+The filename must be `config` or `config.txt`
+
+{::nomarkdown}
+</original>
+</review>
+{:/nomarkdown}
 
 {::nomarkdown}
 <sl-alert variant="warning" open>
@@ -156,6 +357,16 @@ And now, when configuration is read, Smoothie will read both files, and take the
 
 If you have a long and complex configuration, this can be helpful to organize better.
 
+{::nomarkdown}
+<review id="configuring-smoothie:encoding">
+<proposal>
+{:/nomarkdown}
+
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
+
 ## Encoding
 
 If you make the config file by yourself please save it using ANSI encoding.
@@ -174,7 +385,51 @@ To avoid problems, use the default file on github (see link above) as your start
 </sl-alert>
 {:/nomarkdown}
 
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+## Encoding
+
+In Smoothieware V2, configuration files use UTF-8 encoding. Modern text editors handle UTF-8 by default, so you shouldn't need to configure encoding manually.
+
+To avoid problems, use the default file from github (see link above) as your starting point.
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
+
+{::nomarkdown}
+</proposal>
+<original>
+{:/nomarkdown}
+
+## Encoding
+
+If you make the config file by yourself please save it using ANSI encoding.
+
+Using Unicode can cause problems.
+
+To avoid problems, use the default file on github (see link above) as your starting point.
+
+{::nomarkdown}
+</original>
+</review>
+{:/nomarkdown}
+
 ## Console configuration commands
+
+{::nomarkdown}
+<review id="configuring-smoothie:console-commands">
+<proposal>
+{:/nomarkdown}
+
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
 
 There are [console commands](/console-commands) that allow you to edit the configuration file over serial, without having to open the file in a text editor.
 
@@ -184,17 +439,79 @@ These commands are:
 config-get sd acceleration
 ```
 
-Will return the current {::nomarkdown}<setting v1="acceleration" v2="motion control.default_acceleration"></setting>{:/nomarkdown} setting from the SD card
+Will return the current {::nomarkdown}<setting v1="acceleration"></setting>{:/nomarkdown} setting from the SD card
 
 ```plaintext
 config-set sd acceleration 1000
 ```
 
-Will set the current {::nomarkdown}<setting v1="acceleration" v2="motion control.default_acceleration"></setting>{:/nomarkdown} setting to 1000.
+Will set the current {::nomarkdown}<setting v1="acceleration"></setting>{:/nomarkdown} setting to 1000.
 
 You need to reset the board after changing a value for it to be taken into account.
 
 You can find more information at [Console Commands](/console-commands).
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+There are [console commands](/console-commands) that allow you to edit the configuration file over serial, without having to open the file in a text editor.
+
+The INI-style configuration in V2 uses hierarchical setting names. Example commands:
+
+```plaintext
+config-get sd motion\ control default_feed_rate
+```
+
+Will return the current {::nomarkdown}<setting v2="motion control.default_feed_rate"></setting>{:/nomarkdown} setting from the SD card
+
+```plaintext
+config-set sd motion\ control default_feed_rate 4000
+```
+
+Will set the current {::nomarkdown}<setting v2="motion control.default_feed_rate"></setting>{:/nomarkdown} setting to 4000.
+
+Note that section names with spaces require escaping with backslashes on the command line.
+
+You need to reset the board after changing a value for it to be taken into account.
+
+You can find more information at [Console Commands](/console-commands).
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
+
+{::nomarkdown}
+</proposal>
+<original>
+{:/nomarkdown}
+
+There are [console commands](/console-commands) that allow you to edit the configuration file over serial, without having to open the file in a text editor.
+
+These commands are:
+
+```plaintext
+config-get sd acceleration
+```
+
+Will return the current {::nomarkdown}<setting v1="acceleration"></setting>{:/nomarkdown} setting from the SD card
+
+```plaintext
+config-set sd acceleration 1000
+```
+
+Will set the current {::nomarkdown}<setting v1="acceleration"></setting>{:/nomarkdown} setting to 1000.
+
+You need to reset the board after changing a value for it to be taken into account.
+
+You can find more information at [Console Commands](/console-commands).
+
+{::nomarkdown}
+</original>
+</review>
+{:/nomarkdown}
 
 ## Config Overrides
 
@@ -284,6 +601,16 @@ See the [on_boot.gcode documentation](on_boot.gcode) for details on how to set t
 
 For more information about other special files on the SD card (like `config-override`, `firmware.bin`, etc.), see the [SD Card documentation](sd-card).
 
+{::nomarkdown}
+<review id="configuring-smoothie:hard-setting-config">
+<proposal>
+{:/nomarkdown}
+
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
+
 ## Hard setting configuration
 
 You can do away with an editable configuration file altogether if that makes sense in your setup. For example, if you don't want users to have an easy way to edit the configuration by editing the configuration file on the SD card.
@@ -293,3 +620,39 @@ To do this, remove the configuration file from the SD card. Then follow the inst
 Now the firmware will be configured with the values you set, but users won't be able to edit them using the SD card, and modifying values will require compiling and reflashing.
 
 This is useful for example if you are an OEM selling machines where users are not meant to play around with configuration.
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+## Configuration Approaches
+
+In Smoothieware V2, configuration is always file-based on the SD card (`config.ini`). Hardcoding configuration into the firmware is not supported. This ensures users can always modify settings on the SD card, which aligns with Smoothieware's philosophy of accessible configuration.
+
+If you need to restrict access to certain settings, consider using read-only file permissions on the SD card or physical access controls rather than firmware-level restrictions.
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
+
+{::nomarkdown}
+</proposal>
+<original>
+{:/nomarkdown}
+
+## Hard setting configuration
+
+You can do away with an editable configuration file altogether if that makes sense in your setup. For example, if you don't want users to have an easy way to edit the configuration by editing the configuration file on the SD card.
+
+To do this, remove the configuration file from the SD card. Then follow the instructions at [Compiling Smoothie](/compiling-smoothie) but before compiling, edit the file named "config.default" to contain the values you want. Then compile, and flash to the board.
+
+Now the firmware will be configured with the values you set, but users won't be able to edit them using the SD card, and modifying values will require compiling and reflashing.
+
+This is useful for example if you are an OEM selling machines where users are not meant to play around with configuration.
+
+{::nomarkdown}
+</original>
+</review>
+{:/nomarkdown}

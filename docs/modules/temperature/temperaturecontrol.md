@@ -21,6 +21,60 @@ This is a J-head hotend with its thermistor and heating element.
 
 In Smoothie, you do not get just one TemperatureControl module. You can actually create as many as you want, simply by adding them to the [configuration file](/configuring-smoothie).
 
+{::nomarkdown}
+<review id="temperaturecontrol:multiple-modules-config">
+<proposal>
+{:/nomarkdown}
+
+It goes something like this:
+
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
+
+**V1 Configuration (flat namespace):**
+
+```markdown
+temperature_control.hotend.enable                    true
+temperature_control.hotend.thermistor_pin            0.23
+etc ...
+
+temperature_control.bed.enable                       true
+temperature_control.bed.thermistor_pin               0.24
+etc ...
+```
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+**V2 Configuration (INI sections):**
+
+```ini
+[temperature control]
+hotend.enable = true
+hotend.thermistor_pin = 0.23
+# etc ...
+
+bed.enable = true
+bed.thermistor_pin = 0.24
+# etc ...
+```
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
+
+This will create and configure two separate TemperatureControl modules that will act completely independently from each other.
+
+{::nomarkdown}
+</proposal>
+<original>
+{:/nomarkdown}
+
 It goes something like this:
 
 ```markdown
@@ -34,6 +88,11 @@ etc ...
 ```
 
 This will create and configure two separate TemperatureControl modules that will act completely independently from each other.
+
+{::nomarkdown}
+</original>
+</review>
+{:/nomarkdown}
 
 The line that effectively "creates" the module is the {::nomarkdown}<setting v1="temperature_control.{name}.enable" v2="temperature control.enable"></setting>{:/nomarkdown} option. If set to true, a module is created and further configuration is read. If set to false, further configuration for this module is ignored as no module is created.
 
@@ -53,9 +112,52 @@ On the [Smoothieboard](smoothieboard) for example, there are 4 thermistor inputs
 
 Thermistor inputs are not polarized, the direction you connect them in on your board is not important.
 
+{::nomarkdown}
+<review id="temperaturecontrol:thermistor-pin-config">
+<proposal>
+{:/nomarkdown}
+
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
+
+**V1 Configuration:**
+
 ```markdown
 temperature_control.hotend.thermistor_pin        0.23
 ```
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+**V2 Configuration:**
+
+```ini
+[temperature control]
+hotend.thermistor_pin = 0.23
+```
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
+
+{::nomarkdown}
+</proposal>
+<original>
+{:/nomarkdown}
+
+```markdown
+temperature_control.hotend.thermistor_pin        0.23
+```
+
+{::nomarkdown}
+</original>
+</review>
+{:/nomarkdown}
 
 | Smoothieboard thermistor input name | T0 (th1) | T1 (th2) | T2(th3) | T3(th4) |
 | ----------------------------------- | -------- | -------- | ------- | ------- |
@@ -101,6 +203,54 @@ Here is an example of how to connect the [Adafruit Thermocouple Amplifier MAX318
 | {::nomarkdown}<pin>0.17</pin>{:/nomarkdown} MISO | DO             |
 
 To configure Smoothie to use the thermocouple connected like this, replace the thermistor and thermistor_pin parameters with the following:
+
+{::nomarkdown}
+<review id="temperaturecontrol:max31855-config">
+<proposal>
+{:/nomarkdown}
+
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
+
+**V1 Configuration:**
+
+```markdown
+temperature_control.hotend.sensor        max31855
+```
+
+The SPI channel and chip select pin can be changed using the following parameters:
+
+```markdown
+temperature_control.hotend.chip_select_pin    0.16
+temperature_control.hotend.spi_channel         0    # SPI channel 0 or 1
+```
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+**V2 Configuration:**
+
+```ini
+[temperature control]
+hotend.sensor = max31855
+hotend.spi_select_pin = 0.16
+hotend.spi_channel = 0    # SPI channel 0 or 1
+```
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
+
+{::nomarkdown}
+</proposal>
+<original>
+{:/nomarkdown}
+
 ```markdown
 temperature_control.hotend.sensor        max31855
 ```
@@ -111,13 +261,61 @@ temperature_control.hotend.chip_select_pin    0.16
 temperature_control.hotend.spi_channel         0    # SPI channel 0 or 1
 ```
 
+{::nomarkdown}
+</original>
+</review>
+{:/nomarkdown}
+
 Note that when using max31855, you need to reduce the frequency at which temperatures are read. This is due to a limitation in the amplifier. For more information see [this pull request](https://github.com/Smoothieware/Smoothieware/pull/891).
 
 There is a quirk to the max31855 and max6675 chips: They take 100 and 220 milliseconds, respectively, to perform the temp conversion. Sampling them faster than this will interrupt the conversion process, causing the chip to return the same value every for every subsequent sampling. To resolve that issue, readings_per_second should be 9 for the max31855 and 4 for the max6675.
 
+{::nomarkdown}
+<review id="temperaturecontrol:readings-per-second-config">
+<proposal>
+{:/nomarkdown}
+
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
+
+**V1 Configuration:**
+
 ```markdown
 temperature_control.module_name.readings_per_second      4
 ```
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+**V2 Configuration:**
+
+```ini
+[temperature control]
+module_name.readings_per_second = 4
+```
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
+
+{::nomarkdown}
+</proposal>
+<original>
+{:/nomarkdown}
+
+```markdown
+temperature_control.module_name.readings_per_second      4
+```
+
+{::nomarkdown}
+</original>
+</review>
+{:/nomarkdown}
 
 #### Thermocouple via Amplifier
 
@@ -126,6 +324,18 @@ Smoothie supports reading thermocouples via an ADC (the same kind used to read t
 This allows you to read values from a thermocouple without having to use a SPI port.
 
 To use the AD8495, you need to set the right sensor type:
+
+{::nomarkdown}
+<review id="temperaturecontrol:ad8495-config">
+<proposal>
+{:/nomarkdown}
+
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
+
+**V1 Configuration:**
 
 ```markdown
 temperature_control.hotend.sensor    ad8495
@@ -144,6 +354,55 @@ NOTE from a community member: The AD8495 needs a GND and VCC. Using either GND o
 ```markdown
 temperature_control.hotend.ad8495_offset   250
 ```
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+**V2 Configuration:**
+
+```ini
+[temperature control]
+hotend.sensor = ad8495
+hotend.ad8495_pin = 0.24
+hotend.ad8495_offset = 250
+```
+
+Configuration notes are the same as V1.
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
+
+{::nomarkdown}
+</proposal>
+<original>
+{:/nomarkdown}
+
+```markdown
+temperature_control.hotend.sensor    ad8495
+```
+
+And then configure the pin you'll be using to read the sensor:
+
+```markdown
+temperature_control.hotend.ad8495_pin   0.24
+```
+
+And the offset. This will depend on the AD8495 wiring. If the REF pin(pin 2) is connected to ground or 0V then the offset is 0. This means that Smoothie can measure 0C to 660C, depending on thermocouple. If, like the Adafruit board, the REF pin is connected to 1.25V then the offset is 250. With a 250 offset, Smoothie can measure -250C to 410C. The formula for calculating offset is offset = REF/0.005. The simplest way to see if the offset is set incorrectly is that the temperature reading at room temperature will be wrong.
+
+NOTE from a community member: The AD8495 needs a GND and VCC. Using either GND or AGND from the Smoothieboard seems to work. Unclear which is preferred (if you know, please update this note!).
+
+```markdown
+temperature_control.hotend.ad8495_offset   250
+```
+
+{::nomarkdown}
+</original>
+</review>
+{:/nomarkdown}
 
 ### Heating things up.
 
@@ -171,9 +430,52 @@ Read more about the mosfets [here](/mosfets)
 
 To set a pin to a given heater, do for example:
 
+{::nomarkdown}
+<review id="temperaturecontrol:heater-pin-config">
+<proposal>
+{:/nomarkdown}
+
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
+
+**V1 Configuration:**
+
 ```markdown
 temperature_control.hotend.heater_pin        2.7
 ```
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+**V2 Configuration:**
+
+```ini
+[temperature control]
+hotend.heater_pin = 2.7
+```
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
+
+{::nomarkdown}
+</proposal>
+<original>
+{:/nomarkdown}
+
+```markdown
+temperature_control.hotend.heater_pin        2.7
+```
+
+{::nomarkdown}
+</original>
+</review>
+{:/nomarkdown}
 
 **Note on pins:**
 
@@ -191,10 +493,55 @@ But as you are defining your own custom temperature controller, you have to choo
 
 So for example if this is a hotend, it will look something like this for the "standard" gcodes:
 
+{::nomarkdown}
+<review id="temperaturecontrol:gcode-config">
+<proposal>
+{:/nomarkdown}
+
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
+
+**V1 Configuration:**
+
 ```markdown
 temperature_control.hotend.set_m_code            104
 temperature_control.hotend.set_and_wait_m_code   109
 ```
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+**V2 Configuration:**
+
+```ini
+[temperature control]
+hotend.set_m_code = 104
+hotend.set_and_wait_m_code = 109
+```
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
+
+{::nomarkdown}
+</proposal>
+<original>
+{:/nomarkdown}
+
+```markdown
+temperature_control.hotend.set_m_code            104
+temperature_control.hotend.set_and_wait_m_code   109
+```
+
+{::nomarkdown}
+</original>
+</review>
+{:/nomarkdown}
 
 `set_m_code` is used to set a given temperature, and continue running Smoothie immediately. `set_and_wait_m_code` is used to set a given temperature, and then pause Smoothie until that temperature is reached.
 
@@ -212,20 +559,110 @@ ok T:22.1 /0.0 @0 B:22.5 /75.0 @210
 
 Here T is the hotend, and B is the bed. This is a convention. But in your configuration, we have to specify which is which:
 
+{::nomarkdown}
+<review id="temperaturecontrol:designator-config">
+<proposal>
+{:/nomarkdown}
+
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
+
+**V1 Configuration:**
+
 ```markdown
 temperature_control.hotend.designator        T
 ```
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+**V2 Configuration:**
+
+```ini
+[temperature control]
+hotend.designator = T
+```
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
+
+{::nomarkdown}
+</proposal>
+<original>
+{:/nomarkdown}
+
+```markdown
+temperature_control.hotend.designator        T
+```
+
+{::nomarkdown}
+</original>
+</review>
+{:/nomarkdown}
 
 ### Bang Bang Control
 
 The simplest form of heat control is called bang bang this simply turns the heater on or off depending on whether it is under or over the target temperature (plus some hysteresis).
 This is best used for high amp beds using a relay to turn it on and off.
 
+{::nomarkdown}
+<review id="temperaturecontrol:bang-bang-config">
+<proposal>
+{:/nomarkdown}
+
+to enable this form of control in the config define the following...
+
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
+
+**V1 Configuration:**
+
+```markdown
+temperature_control.bed.bang_bang            true            # set to true to use bang bang control rather than PID
+temperature_control.bed.hysteresis            2.0              # set to the temperature in degrees C to use as hysteresis when
+```
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+**V2 Configuration:**
+
+```ini
+[temperature control]
+bed.bang_bang = true          # set to true to use bang bang control rather than PID
+bed.hysteresis = 2.0          # set to the temperature in degrees C to use as hysteresis
+```
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
+
+{::nomarkdown}
+</proposal>
+<original>
+{:/nomarkdown}
+
 to enable this form of control in the config define the following...
 ```markdown
 temperature_control.bed.bang_bang            true            # set to true to use bang bang control rather than PID
 temperature_control.bed.hysteresis            2.0              # set to the temperature in degrees C to use as hysteresis when
 ```
+
+{::nomarkdown}
+</original>
+</review>
+{:/nomarkdown}
 
 Example: If you set your temperature to 50 degrees, and your hysterisis is 2 degrees, then the heaters will turn on if the temperature is below 48 degrees, and off if the temperature is above 52 degrees.
 
@@ -286,9 +723,52 @@ You do not need to do anything to activate this, it is on by default.
 
 You activate this safety check (and you should) by adding the following to your configuration:
 
+{::nomarkdown}
+<review id="temperaturecontrol:max-temp-safety-config">
+<proposal>
+{:/nomarkdown}
+
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
+
+**V1 Configuration:**
+
 ```markdown
 temperature_control.module_name.max_temp      300
 ```
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+**V2 Configuration:**
+
+```ini
+[temperature control]
+module_name.max_temp = 300
+```
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
+
+{::nomarkdown}
+</proposal>
+<original>
+{:/nomarkdown}
+
+```markdown
+temperature_control.module_name.max_temp      300
+```
+
+{::nomarkdown}
+</original>
+</review>
+{:/nomarkdown}
 
 Once this is set, it will be impossible to set temperatures higher than the {::nomarkdown}<setting v1="temperature_control.{name}.max_temp" v2="temperature control.max_temp"></setting>{:/nomarkdown} value.
 
@@ -325,9 +805,52 @@ Then, we add a margin to this, for example 20%, and we say that if the hotend ta
 
 Now that you have a reasonable safety value, add the `runaway_heating_timeout` option to your configuration file:
 
+{::nomarkdown}
+<review id="temperaturecontrol:runaway-heating-timeout-config">
+<proposal>
+{:/nomarkdown}
+
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
+
+**V1 Configuration:**
+
 ```markdown
 temperature_control.module_name.runaway_heating_timeout      120 # max is 4088 seconds
 ```
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+**V2 Configuration:**
+
+```ini
+[temperature control]
+module_name.runaway_heating_timeout = 120  # max is 4088 seconds
+```
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
+
+{::nomarkdown}
+</proposal>
+<original>
+{:/nomarkdown}
+
+```markdown
+temperature_control.module_name.runaway_heating_timeout      120 # max is 4088 seconds
+```
+
+{::nomarkdown}
+</original>
+</review>
+{:/nomarkdown}
 
 Now, if heating ever takes longer than 120 seconds, Smoothie will know there is a problem, enter HALT state, turn off heaters, and show the following message:
 

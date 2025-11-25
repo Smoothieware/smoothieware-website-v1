@@ -166,6 +166,11 @@ alpha_angle  2.0    # Small correction angle
 ## Migration to Smoothieware v2
 
 {::nomarkdown}
+<review id="rotatable-cartesian:v2-removal">
+<proposal>
+{:/nomarkdown}
+
+{::nomarkdown}
 <sl-alert variant="danger" open>
   <sl-icon slot="icon" name="exclamation-octagon"></sl-icon>
   <strong>Not Available in v2:</strong> The Rotatable Cartesian arm solution has been removed in Smoothieware v2. If you need similar functionality in v2, you have several alternatives:
@@ -176,6 +181,29 @@ alpha_angle  2.0    # Small correction angle
     <li><strong>Stay on v1:</strong> If this feature is critical, continue using Smoothieware v1</li>
   </ul>
 </sl-alert>
+{:/nomarkdown}
+
+{::nomarkdown}
+</proposal>
+<original>
+{:/nomarkdown}
+
+{::nomarkdown}
+<sl-alert variant="danger" open>
+  <sl-icon slot="icon" name="exclamation-octagon"></sl-icon>
+  <strong>Not Available in v2:</strong> The Rotatable Cartesian arm solution has been removed in Smoothieware v2. If you need similar functionality in v2, you have several alternatives:
+  <ul>
+    <li><strong>Rotate G-code before sending:</strong> Use your CAM software or a post-processor to rotate coordinates</li>
+    <li><strong>Use coordinate system offsets:</strong> G-code coordinate system commands (<gcode>G54</gcode>-<gcode>G59</gcode>) can sometimes achieve similar results</li>
+    <li><strong>Physically align your machine:</strong> Mechanically correct the angular misalignment</li>
+    <li><strong>Stay on v1:</strong> If this feature is critical, continue using Smoothieware v1</li>
+  </ul>
+</sl-alert>
+{:/nomarkdown}
+
+{::nomarkdown}
+</original>
+</review>
 {:/nomarkdown}
 
 ## Troubleshooting

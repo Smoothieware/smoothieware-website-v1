@@ -33,6 +33,48 @@ Cartesian is the default and most straightforward arm solution for several reaso
 
 ## Configuration
 
+{::nomarkdown}
+<review id="cartesian:basic-configuration">
+<proposal>
+{:/nomarkdown}
+
+To configure your machine to use the Cartesian arm solution, add this to your configuration file:
+
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
+
+**V1 Configuration:**
+
+```plaintext
+arm_solution cartesian
+```
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+**V2 Configuration:**
+
+```ini
+[motion control]
+arm_solution = cartesian
+```
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
+
+This is the default setting in Smoothieware, so if you don't specify an arm solution, Cartesian will be used automatically.
+
+{::nomarkdown}
+</proposal>
+<original>
+{:/nomarkdown}
+
 To configure your machine to use the Cartesian arm solution, add this to your configuration file:
 
 ```
@@ -41,7 +83,95 @@ arm_solution cartesian
 
 This is the default setting in Smoothieware, so if you don't specify an arm solution, Cartesian will be used automatically.
 
+{::nomarkdown}
+</original>
+</review>
+{:/nomarkdown}
+
 ### Complete Configuration Example
+
+{::nomarkdown}
+<review id="cartesian:complete-example">
+<proposal>
+{:/nomarkdown}
+
+Here's a typical Cartesian configuration:
+
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
+
+**V1 Configuration:**
+
+```plaintext
+# Cartesian arm solution (can be omitted as it's the default)
+arm_solution                                 cartesian
+
+# Alpha (X axis)
+alpha_step_pin                               2.0
+alpha_dir_pin                                0.5
+alpha_en_pin                                 0.4
+alpha_steps_per_mm                           80
+alpha_max_rate                               12000
+
+# Beta (Y axis)
+beta_step_pin                                2.1
+beta_dir_pin                                 0.11
+beta_en_pin                                  0.10
+beta_steps_per_mm                            80
+beta_max_rate                                12000
+
+# Gamma (Z axis)
+gamma_step_pin                               2.2
+gamma_dir_pin                                0.20
+gamma_en_pin                                 0.19
+gamma_steps_per_mm                           400
+gamma_max_rate                               300
+```
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+**V2 Configuration:**
+
+```ini
+[motion control]
+arm_solution = cartesian
+
+[alpha]
+step_pin = 2.0
+dir_pin = 0.5
+en_pin = 0.4
+steps_per_mm = 80
+max_rate = 12000
+
+[beta]
+step_pin = 2.1
+dir_pin = 0.11
+en_pin = 0.10
+steps_per_mm = 80
+max_rate = 12000
+
+[gamma]
+step_pin = 2.2
+dir_pin = 0.20
+en_pin = 0.19
+steps_per_mm = 400
+max_rate = 300
+```
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
+
+{::nomarkdown}
+</proposal>
+<original>
+{:/nomarkdown}
 
 Here's a typical Cartesian configuration:
 
@@ -70,6 +200,11 @@ gamma_en_pin                                 0.19
 gamma_steps_per_mm                           400
 gamma_max_rate                               300
 ```
+
+{::nomarkdown}
+</original>
+</review>
+{:/nomarkdown}
 
 ## Common Cartesian Machines
 

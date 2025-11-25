@@ -1,10 +1,10 @@
 # General.
 
-* [ ] Add the pictures of the `v2` boards to the `smoothieboards` page.
-* [ ] v2 info is completely outdated in the `smoothieboards` page.
+* [.] Add the pictures of the `v2` boards to the `smoothieboards` page.
+* [.] v2 info is completely outdated in the `smoothieboards` page.
 * [x] Globally identify and fix all the broken images, using the internet archive wherever it makes sense.
 * [ ] Some images were replaced with placeholders/temporary images, replace them with good images.
-* [ ] Search for software, both G-code senders and G-code generators (maybe do that in smoothie-marketing, we already have a task like that in there), and use the results as the basis for a new software page.
+* [.] Search for software, both G-code senders and G-code generators (maybe do that in smoothie-marketing, we already have a task like that in there), and use the results as the basis for a new software page.
 * [ ] Create a "migration" tool from v1 config to v2 config, including recognizing which v1 settings were default meaning they no longer need to be set in v2 (assuming the default in v2 has the same value)
 * [ ] Document all the snippets at https://github.com/Smoothieware/Smoothieware/tree/edge/ConfigSamples/Snippets 
 * [ ] Endstops page doesn't contain the new endstops config format, must update.
@@ -22,7 +22,7 @@
 * [ ] Once the YAML files are created with all the data about config options and G-code etc., ask Chris Cecil to review them, maybe pay him for them even as it's quite a bit of work.
 * [ ] FEATURE: Configuration wizard in JavaScript.
 * [ ] Create "planner" page, based on the source code of the planner, that explains in detail and with pedagogy what the planner does and how, ideally with ai-generated images (mermaid?)
-* [ ] Create on-boot-gcode page about `on_boot.gcode` file and fill it, and find the right places to link to it from.
+* [.] Create on-boot-gcode page about `on_boot.gcode` file and fill it, and find the right places to link to it from.
 * [ ] Figure out a full list of gcodes and mcodes from the source code and the docs.
 * [ ] FEATURE: We have extracted the `old-forum` data/posts, we need to fix their dates, then we should figure out some categories, move them into those, and then from there create a section of the site in which we have lists of posts, and we can go see those posts.
 * [ ] `old-forums` is missing some posts that it says the Wayback Machine has not saved, we should ask it for examples of such posts, and then go see ourselves if they really are missing or not. 
@@ -39,7 +39,7 @@
 * [x] Verify that the YAML files for the settings actually get cached and not loaded from the server every time a page is loaded.
 * [x] Add the new "settings" tag to http://localhost:4000/editing-the-wiki 
 * [ ] Link to or include the pin-configuration page from the various guides and from more places in the site.
-* [ ] Have a "raw value" tag, for example for the symbols in https://smoothieware.org/pin-configuration and other places, and document it in the editing-the-wiki page.
+* [x] Have a "raw value" tag, for example for the symbols in https://smoothieware.org/pin-configuration and other places, and document it in the editing-the-wiki page.
 * [ ] Restructure the src/site/ files to be broken down into more libraries, and make sure the libraries are correctly integrated into the actual site along with the code.
 * [ ] Have a new tag format for pins <pin>, and first create a list of all places in the code where a specific pin is listed (and work out v1/v2 correspondences/matches)
 * [ ] We have a lot of templates now in docs/assets/templates/, maybe some of those can be merged, maybe the logic is unnecessarily complicated and can be simplified/compacted in some ways? (also make sure there isn't code duplication between the templates...)
@@ -54,11 +54,11 @@
 * [ ] For the pin configuration page we (maybe) figured out a way to convert pngs to svgs that use our site's font, we should document this process and then use it for more of our images, all those that are diagrams.
 * [ ] On http://localhost:4000/editing-the-wiki add screenshots for the "how to contribute" guide.
 * [ ] In the page with all the settings, for settings that are pins in the description we should use <pin> tags for the default pin.
-* [ ] They yaml file for pins should have for each pin a clear description of what it's used for/as on the smoothieboard board.
+* [.] They yaml file for pins should have for each pin a clear description of what it's used for/as on the smoothieboard board.
 * [ ] We added cache busting to the includes in docs/_layouts/default.html , we should remove them once everything is stable.
-* [ ] Setting to see only v1 or v2 settings, that is closable.
+* [x] Setting to see only v1 or v2 settings, that is closable.
 * [ ] That's a lot of assets we get when the page loads, maybe we can pack all of this a lot more with webpack or something similar? Like the handlebars templates, the yaml files, etc?
-* [ ] Have v1/v2 version separators, and have both horizontal and vertical versions.
+* [x] Have v1/v2 version separators, and have both horizontal and vertical versions.
 * [ ] Have a special format just for lists of settings / settings tables, that have support for hiding v1/v2 as required.
 * [ ] Have a special format for lists of gcodes, and add them in any place where it makes sense to.
 * [ ] http://localhost:4000/arm-solutions doesn't have a full list of the supported arm solutions, and pages for each.
@@ -67,7 +67,7 @@
 * [ ] For mcode/gcode tags that contain parameters, we should have a section in the popup with a sentence that explains what it all means, maybe using a template in the yaml file like a handlebarjs template or something? Like convert the parameters into a sentence, or base it on the declared parameters?
 * [ ] Every instance of 5V, +5V, GND, 3.3V, 3V3, +3.3V, etc, should use the <raw> tag.
 * [ ] On the smoopi page, use a carrousel instead of the long series of images.  
-* [ ] The http://localhost:4000/on_boot.gcode page isn't working, figure out if it exists or not and fix it.
+* [.] The http://localhost:4000/on_boot.gcode page isn't working, figure out if it exists or not and fix it.
 * [ ] The using-smoothie page is linked from the home page, but is missing or empty or something.
 * [ ] The same way we have yaml files for settings and gcodes, we should have one for terminal commands.
 * [ ] Get more troubleshooting questions/solutions from the forum and other sources, and use them to improve the troubleshooting page.
@@ -107,6 +107,12 @@
 * [ ] Create a page explaining in detail the MCS, including diagrams, and an interactive demo.
 * [ ] Vinyl cutter guide (get one of the two big vinyl cutters from the fablab and set it up better and make a guide from it)
 * [ ] CRITICAL: Add lathe documentation and add lathe guide.
+* [ ] Document the v2 ew exclusive features (lathe threading G33, dual-motor auto-alignment, extensive expansion)
+* [ ] Document the v2 unit test stuff.
+* [ ] Create more general info in the guides like usage stuff, so we get better SEO for the documentation and people can discover the site when searching for info about machines in general and not just about smoothie.
+* [ ] Integrate https://github.com/Smoothieware/Smoothieware/issues/1537 into the documentation (grid levelling Z starting point issue)
+* [ ] Use AI to scan for obsolete pages like the Google+ ones, and delete them/clean up the site and files. Also scan for obsolete content inside of pages. 
+
 
 # <setting> tag.
 
@@ -135,7 +141,7 @@
 
 # v2/v1.
 
-* [ ] Create a nice-looking tag for the settings, where we have a nice tag format, where we can spedify v1/v2 config options in a single format, that's like [ v1 / config.something.something | v2 / module #something / option ] (in a nice format like the zsh terminal pill stuff), v1 and v2 are "inverted" (color on black instead of black on color) to not be confused with the values. And there is a global flag to hide/show v1/v2 config values, by default showing both.
+* [x] Create a nice-looking tag for the settings, where we have a nice tag format, where we can spedify v1/v2 config options in a single format, that's like [ v1 / config.something.something | v2 / module #something / option ] (in a nice format like the zsh terminal pill stuff), v1 and v2 are "inverted" (color on black instead of black on color) to not be confused with the values. And there is a global flag to hide/show v1/v2 config values, by default showing both.
 
 # Refactoring.
 

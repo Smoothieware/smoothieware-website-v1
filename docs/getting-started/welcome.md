@@ -1,35 +1,143 @@
 ---
 permalink: /welcome
+layout: default
+title: Welcome to Smoothieware
 ---
 
+# Welcome to Smoothieware
 
-# Welcome to your new DokuWiki
+Smoothieware is an open-source G-code interpreter and CNC control system that turns your computer (or SBC) into a powerful motion controller for 3D printers, laser cutters, CNC mills, pick-and-place machines, and other automated equipment.
 
-Congratulations, your wiki is now up and running. Here are a few more tips to get you started.
+This documentation covers both **Smoothieware V1** (stable, feature-complete) and **Smoothieware V2** (modern redesign with improved architecture).
 
-Enjoy your work with DokuWiki,
--- the developers
+## Quick Start
 
-## Create your first pages
+Select your version to get tailored guidance:
 
-Your wiki needs to have a start page. As long as it doesn't exist, this link will be red: [start](start).
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
 
-Go on, follow that link and create the page. If you need help with using the syntax you can always refer to the [syntax page](wiki/syntax).
+### You're Using Smoothieware V1
 
-You might also want to use a sidebar. To create it, just edit the [sidebar](sidebar) page. Everything in that page will be shown in a margin column on the side. Read our [FAQ on sidebars](doku>faq:sidebar) to learn more.
+**V1 is a mature, stable, production-ready firmware** for the LPC1769-based Smoothieboard. It's been refined over years and powers thousands of machines.
 
-Please be aware that not all templates support sidebars.
+**Start here:**
+1. [Installing Firmware](/firmware/installing-firmware-lpc) - Flash V1 firmware to your board
+2. [Configuring Smoothie](/configuration/configuring-smoothie) - Set up your machine configuration
+3. [Getting Help](/getting-help-community) - Join the IRC channel or forum
 
-## Customize your Wiki
+**Key resources:**
+- [Configuration Options](/configuration/configuration-options) - Complete settings reference
+- [G-code Reference](/gcode-reference) - Supported G-codes and M-codes
+- [Hardware Documentation](/hardware) - Board specifications and pinouts
+- [Machine-Specific Guides](/machine-guides) - 3D printer, laser, CNC setup
 
-Once you're comfortable with creating and editing pages you might want to have a look at the [configuration settings](this>doku.php?do=admin&page=config) (be sure to login as superuser first).
+**Communication:**
+- [IRC (Recommended)](/irc) - Real-time chat on #smoothie @ irc.freenode.net
+- [Forum](https://forum.makerforums.info/) - Threaded discussions
+- [Mailing Lists](http://groups.google.com/group/smoothieware-support) - Email-based support
 
-You may also want to see what [plugins](doku>plugins) and [templates](doku>templates) are available at DokuWiki.org to extend the functionality and looks of your DokuWiki installation.
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
 
-## Join the Community
+### You're Using Smoothieware V2
 
-DokuWiki is an Open Source project that thrives through user contributions. A good way to stay informed on what's going on and to get useful tips in using DokuWiki is subscribing to the [newsletter](doku>newsletter).
+**V2 is a modern redesign** with improved architecture, better hardware abstraction, and new features. It runs on modern hardware (LPC1778, LPC1847, ST32F4xx) and is actively developed.
 
-The [DokuWiki User Forum](http://forum.dokuwiki.org) is an excellent way to get in contact with other DokuWiki users and is just one of the many ways to get [support](doku>faq:support).
+**Start here:**
+1. [Installing Firmware](/firmware/v2-firmware) - Flash V2 firmware to your board
+2. [V2 Configuration](/configuration/v2-config) - Learn V2's INI-style configuration
+3. [Getting Help](/getting-help-community) - Join Maker Forums or Discord
 
-Of course we'd be more than happy to have you [getting involved](doku>teams:getting_involved) with DokuWiki.
+**Key differences from V1:**
+- Modern hardware platforms (multiple chip options)
+- Improved motion control and kinematics
+- Better networking and connectivity
+- Active development with new features
+- Requires configuration file migration if upgrading from V1
+
+**Key resources:**
+- [V1 to V2 Migration](/migration/v1-to-v2) - Upgrading from V1
+- [V2 Architecture](/developers/architecture/v2-design) - How V2 works internally
+- [V2 Configuration Reference](/configuration/v2-configuration-options) - All V2 settings
+- [V2 Development](/developers/compiling-v2-dev) - Building from source
+
+**Communication:**
+- [Maker Forums](https://forum.makerforums.info/) - Most active V2 community
+- [Discord](https://forum.makerforums.info/) - Real-time community chat (invite in forums)
+- [Mailing Lists](http://groups.google.com/group/smoothie-dev) - Development discussions
+- [IRC](/irc) - #smoothiedev @ irc.freenode.net (less active)
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
+
+## About This Documentation
+
+This documentation site covers:
+
+- **Getting Started** - Installation, configuration, first steps
+- **Configuration** - All settings and options for your version
+- **Hardware** - Board specifications, pinouts, wiring
+- **Firmware** - Flashing and updating your firmware
+- **Modules** - Specialized functionality (temperature control, leveling, etc.)
+- **G-code Reference** - Supported commands and syntax
+- **Troubleshooting** - Common issues and solutions
+- **Developer Guides** - Architecture, development, contributing
+
+## Need Help?
+
+{::nomarkdown}
+<versioned>
+<v1>
+{:/nomarkdown}
+
+**V1 Users:**
+- **Quick questions?** Join [IRC](/irc) for real-time help
+- **Detailed discussions?** Post on the [Forum](https://forum.makerforums.info/)
+- **Email support?** [Support Mailing List](http://groups.google.com/group/smoothieware-support)
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+**V2 Users:**
+- **Community help?** [Maker Forums](https://forum.makerforums.info/) (most active)
+- **Real-time chat?** [Discord](https://forum.makerforums.info/) (community-run)
+- **Email support?** [Support Mailing List](http://groups.google.com/group/smoothieware-support)
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
+
+{::nomarkdown}
+<sl-alert variant="primary" open>
+  <sl-icon slot="icon" name="lightbulb"></sl-icon>
+  <strong>Version Selection</strong><br>
+  Use the version selector in the navigation bar to switch between V1 and V2 documentation. This site shows version-specific content based on your selection.
+</sl-alert>
+{:/nomarkdown}
+
+## Contributing
+
+This documentation is community-maintained. If you find errors, have suggestions, or want to contribute:
+
+1. See [Editing the Wiki](/editing-the-wiki) for contribution guidelines
+2. Fork the [GitHub repository](https://github.com/Smoothieware/smoothieware-website-v1)
+3. Submit a pull request with your improvements
+
+Even small contributions make a huge difference for new users!
+
+## Learn More
+
+- **[About Smoothieware](/about)** - Project history and philosophy
+- **[Community](/community)** - Join the Smoothie community
+- **[GitHub Repositories](https://github.com/Smoothieware)** - Source code
+- **[License](/license)** - GNU GPL v3

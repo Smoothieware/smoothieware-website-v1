@@ -98,6 +98,46 @@ If your axis is moving away from the endstop when homing, you need to invert you
 Endstops may be configured to act as limit switches, during normal operations if any enabled limit switch is triggered the system will halt and all operations will stop, it will send a `!!` command to the host to stop it sending any more data (a recent dev octoprint and recent [Pronterface](pronterface) support this).
 Sending `$X`, or sending {::nomarkdown}<mcode>M999</mcode>{:/nomarkdown}, or a reset will be required to continue. **NOTE** While any limit switch is still triggered the limits are disabled, so make sure you jog away from the limit otherwise you can crash into the limit switch. This is far from perfect but it is a compromise to allow you to jog off the endstop, if this were not the case it would only be possible to manually push the axis off the limit switch. A possible workaround is to also enable soft endstops as described below, and config it to ignore moves that will move past the soft endstop, if you do this then it will only allow the axis to jog away from the endstop.
 
+{::nomarkdown}
+<review id="endstops:limit-switches-config">
+<proposal>
+{:/nomarkdown}
+
+To enable endstops as limit switches the following config options can be used, they are disabled by default.
+
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
+
+```
+alpha_limit_enable                          true            # set to true to enable X min and max limit switches
+beta_limit_enable                           true            # set to true to enable Y min and max limit switches
+gamma_limit_enable                          true            # set to true to enable Z min and max limit switches
+```
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+```ini
+[endstops.common]
+alpha_limit_enable = true            # set to true to enable X min and max limit switches
+beta_limit_enable = true             # set to true to enable Y min and max limit switches
+gamma_limit_enable = true            # set to true to enable Z min and max limit switches
+```
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
+
+{::nomarkdown}
+</proposal>
+<original>
+{:/nomarkdown}
+
 To enable endstops as limit switches the following config options can be used, they are disabled by default.
 
 ```
@@ -105,6 +145,11 @@ alpha_limit_enable                          true            # set to true to ena
 beta_limit_enable                           true            # set to true to enable Y min and max limit switches
 gamma_limit_enable                          true            # set to true to enable Z min and max limit switches
 ```
+
+{::nomarkdown}
+</original>
+</review>
+{:/nomarkdown}
 
 When one axis is enabled both min and max endstops will be enabled as limit switches, setting an endstop pin to nc will disable it.
 
@@ -132,6 +177,56 @@ Soft(ware) endstops is a feature that allows the board to refuse any command tha
 
 Note that this feature only functions once the machine has been homed (until then it can't know where it is). After the machine has been homed this feature is enabled. it can be temporarily disabled using the `M211 S0` M-code, and can be enabled again using the `M211 S1` M-code.
 
+{::nomarkdown}
+<review id="endstops:soft-endstops-config">
+<proposal>
+{:/nomarkdown}
+
+The configuration is as such:
+
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
+
+```
+soft_endstop.enable         true         # Enable soft endstops
+soft_endstop.x_min          1            # Minimum X position
+soft_endstop.x_max          999          # Maximum X position
+soft_endstop.y_min          1            # Minimum Y position
+soft_endstop.y_max          499          # Maximum Y position
+soft_endstop.z_min          1            # Minimum Z position
+soft_endstop.z_max          199          # Maximum Z position
+soft_endstop.halt           true         # Whether to issue a HALT state when hitting a soft endstop (if false, will just ignore commands that would exceed the limit)
+```
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+```ini
+[soft_endstop]
+enable = true         # Enable soft endstops
+x_min = 1             # Minimum X position
+x_max = 999           # Maximum X position
+y_min = 1             # Minimum Y position
+y_max = 499           # Maximum Y position
+z_min = 1             # Minimum Z position
+z_max = 199           # Maximum Z position
+halt = true           # Whether to issue a HALT state when hitting a soft endstop (if false, will just ignore commands that would exceed the limit)
+```
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
+
+{::nomarkdown}
+</proposal>
+<original>
+{:/nomarkdown}
+
 The configuration is as such:
 
 ```
@@ -144,6 +239,11 @@ soft_endstop.z_min          1            # Minimum Z position
 soft_endstop.z_max          199          # Maximum Z position
 soft_endstop.halt           true         # Whether to issue a HALT state when hitting a soft endstop (if false, will just ignore commands that would exceed the limit)
 ```
+
+{::nomarkdown}
+</original>
+</review>
+{:/nomarkdown}
 
 Simply add this series of config options to your config file and the machine will start respecting soft endstops.
 
