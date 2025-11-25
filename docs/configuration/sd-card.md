@@ -67,7 +67,6 @@ A method of disabling auto mount on macOS is mentioned [here](https://wolfpaulus
 {::nomarkdown}
 </v2>
 </versioned>
-{:/nomarkdown}
 </proposal>
 <original>
 {:/nomarkdown}
@@ -80,8 +79,8 @@ A method of disabling auto mount on macOS is mentioned [here](https://wolfpaulus
 | **on_boot.gcode** | Played on startup of Smoothieboard. Can be used to initialize the Smoothie driven device |
 | **firmware.bin** | Firmware update file. If present, is flashed onto the Smoothieboard and renamed to FIRMWARE.CUR after the update completes |
 
-</original>
 {::nomarkdown}
+</original>
 </review>
 {:/nomarkdown}
 
@@ -177,7 +176,6 @@ The Smoothieboard only needs the "config" file on the SD card to work properly.
 {::nomarkdown}
 </v2>
 </versioned>
-{:/nomarkdown}
 </proposal>
 <original>
 {:/nomarkdown}
@@ -197,8 +195,8 @@ The Smoothieboard only needs the "config" file on the SD card to work properly.
   </ul>
 </sl-alert>
 
-</original>
 {::nomarkdown}
+</original>
 </review>
 {:/nomarkdown}
 

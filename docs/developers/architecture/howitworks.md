@@ -27,6 +27,7 @@ permalink: /howitworks
 
 This is done in several steps:
 
+{::nomarkdown}
 <versioned>
 <v1>
 {:/nomarkdown}
@@ -55,7 +56,6 @@ The V2 firmware follows a similar conceptual flow: serial input is parsed into G
 {::nomarkdown}
 </v2>
 </versioned>
-{:/nomarkdown}
 </proposal>
 <original>
 {:/nomarkdown}
@@ -78,7 +78,6 @@ The acceleration profile for the Planner's queue (list of upcoming Blocks) is re
 
 {::nomarkdown}
 </original>
-{:/nomarkdown}
 </review>
 {:/nomarkdown}
 
@@ -97,6 +96,7 @@ Now let's get into more detail for each part:
 <proposal>
 {:/nomarkdown}
 
+{::nomarkdown}
 <versioned>
 <v1>
 {:/nomarkdown}
@@ -117,7 +117,6 @@ In V2, the G-code dispatch system follows a similar pattern: serial input is par
 {::nomarkdown}
 </v2>
 </versioned>
-{:/nomarkdown}
 </proposal>
 <original>
 {:/nomarkdown}
@@ -146,6 +145,7 @@ The [Gcode](https://github.com/arthurwolf/Smoothie/blob/master/src/modules/commu
 <proposal>
 {:/nomarkdown}
 
+{::nomarkdown}
 <versioned>
 <v1>
 {:/nomarkdown}
@@ -170,7 +170,6 @@ In V2, the robot/planner module similarly handles movement G-codes and coordinat
 {::nomarkdown}
 </v2>
 </versioned>
-{:/nomarkdown}
 </proposal>
 <original>
 {:/nomarkdown}
@@ -203,6 +202,7 @@ The segment cutting part is a port of grbl, more specifically, [chamnit's amelio
 <proposal>
 {:/nomarkdown}
 
+{::nomarkdown}
 <versioned>
 <v1>
 {:/nomarkdown}
@@ -233,7 +233,6 @@ In V2, the planner performs similar functions: it receives line segments, comput
 {::nomarkdown}
 </v2>
 </versioned>
-{:/nomarkdown}
 </proposal>
 <original>
 {:/nomarkdown}
@@ -272,6 +271,7 @@ We just push the Block to the top of the queue, and it will be executed by the S
 <proposal>
 {:/nomarkdown}
 
+{::nomarkdown}
 <versioned>
 <v1>
 {:/nomarkdown}
@@ -306,7 +306,6 @@ Refer to the V2 firmware documentation for specific stepping rate capabilities a
 {::nomarkdown}
 </v2>
 </versioned>
-{:/nomarkdown}
 </proposal>
 <original>
 {:/nomarkdown}

@@ -12,14 +12,77 @@ title: Latest Smoothie Commits
 </a>
 {:/nomarkdown}
 
+{::nomarkdown}
+<review id="latest-firmware:intro-alert">
+<proposal>
+<versioned orientation="horizontal">
+<v1>
+<sl-alert variant="neutral" open>
+  <sl-icon slot="icon" name="info-circle"></sl-icon>
+  The following is a list of the latest commits to the <strong>Smoothieware V1</strong> project on GitHub for the <code>edge</code> and <code>master</code> branches.
+</sl-alert>
+</v1>
+<v2>
+<sl-alert variant="neutral" open>
+  <sl-icon slot="icon" name="info-circle"></sl-icon>
+  The following is a list of the latest commits to the <strong>Smoothieware V2</strong> project on GitHub for the <code>master</code> branch.
+</sl-alert>
+</v2>
+</versioned>
+</proposal>
+<original>
 <sl-alert variant="neutral" open>
   <sl-icon slot="icon" name="info-circle"></sl-icon>
   The following is a list of the latest commits to the Smoothieware project on GitHub for the <code>edge</code> and <code>master</code> branches.
 </sl-alert>
-
-## Recent Commits
+</original>
+</review>
+{:/nomarkdown}
 
 {::nomarkdown}
+<review id="latest-firmware:version-commits">
+<proposal>
+<h2>Recent Commits</h2>
+
+<versioned orientation="vertical">
+<v1>
+<div style="margin-bottom: 2rem;">
+  <h3 style="color: #ffcc00; margin-bottom: 1rem;">
+    <sl-icon name="git"></sl-icon> V1 Edge Branch
+    <span style="font-size: 0.8em; color: #888; font-weight: normal;"> - Development branch with latest features</span>
+  </h3>
+  <div id="v1-edge-commits" style="margin-bottom: 2rem;">
+    <sl-spinner style="font-size: 2rem; --track-width: 4px;"></sl-spinner>
+    <span style="margin-left: 1rem; color: #888;">Loading commits...</span>
+  </div>
+
+  <h3 style="color: #ffcc00; margin-bottom: 1rem;">
+    <sl-icon name="git"></sl-icon> V1 Master Branch
+    <span style="font-size: 0.8em; color: #888; font-weight: normal;"> - Stable release branch</span>
+  </h3>
+  <div id="v1-master-commits" style="margin-bottom: 2rem;">
+    <sl-spinner style="font-size: 2rem; --track-width: 4px;"></sl-spinner>
+    <span style="margin-left: 1rem; color: #888;">Loading commits...</span>
+  </div>
+</div>
+</v1>
+<v2>
+<div style="margin-bottom: 2rem;">
+  <h3 style="color: #ffcc00; margin-bottom: 1rem;">
+    <sl-icon name="git"></sl-icon> V2 Master Branch
+    <span style="font-size: 0.8em; color: #888; font-weight: normal;"> - Primary development branch</span>
+  </h3>
+  <div id="v2-master-commits" style="margin-bottom: 2rem;">
+    <sl-spinner style="font-size: 2rem; --track-width: 4px;"></sl-spinner>
+    <span style="margin-left: 1rem; color: #888;">Loading commits...</span>
+  </div>
+</div>
+</v2>
+</versioned>
+</proposal>
+<original>
+<h2>Recent Commits</h2>
+
 <div style="margin-bottom: 2rem;">
   <h3 style="color: #ffcc00; margin-bottom: 1rem;">
     <sl-icon name="git"></sl-icon> Edge Branch
@@ -39,6 +102,8 @@ title: Latest Smoothie Commits
     <span style="margin-left: 1rem; color: #888;">Loading commits...</span>
   </div>
 </div>
+</original>
+</review>
 
 <script>
 // Function to format date as relative time
@@ -67,12 +132,13 @@ function formatRelativeTime(dateString) {
 }
 
 // Function to fetch and display commits for a branch
-async function fetchCommits(branch, containerId) {
+async function fetchCommits(repo, branch, containerId) {
   const container = document.getElementById(containerId);
+  if (!container) return; // Container might not exist if version is switched
 
   try {
     const response = await fetch(
-      `https://api.github.com/repos/Smoothieware/Smoothieware/commits?sha=${branch}&per_page=10`
+      `https://api.github.com/repos/${repo}/commits?sha=${branch}&per_page=10`
     );
 
     if (!response.ok) {
@@ -145,7 +211,7 @@ async function fetchCommits(branch, containerId) {
     // Add link to see all commits
     html += `
       <div style="margin-top: 1.5rem; text-align: center;">
-        <a href="https://github.com/Smoothieware/Smoothieware/commits/${branch}"
+        <a href="https://github.com/${repo}/commits/${branch}"
            target="_blank"
            style="
              display: inline-block;
@@ -171,7 +237,7 @@ async function fetchCommits(branch, containerId) {
         <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
         <strong>Failed to load commits</strong><br>
         ${error.message}. Please visit the
-        <a href="https://github.com/Smoothieware/Smoothieware/commits/${branch}" target="_blank" style="color: inherit; text-decoration: underline;">
+        <a href="https://github.com/${repo}/commits/${branch}" target="_blank" style="color: inherit; text-decoration: underline;">
           GitHub commits page
         </a> directly.
       </sl-alert>
@@ -181,14 +247,24 @@ async function fetchCommits(branch, containerId) {
 
 // Load commits when page loads
 document.addEventListener('DOMContentLoaded', () => {
-  fetchCommits('edge', 'edge-commits');
-  fetchCommits('master', 'master-commits');
+  // V1 commits (Smoothieware/Smoothieware)
+  fetchCommits('Smoothieware/Smoothieware', 'edge', 'v1-edge-commits');
+  fetchCommits('Smoothieware/Smoothieware', 'master', 'v1-master-commits');
+
+  // V2 commits (Smoothieware/SmoothieV2)
+  fetchCommits('Smoothieware/SmoothieV2', 'master', 'v2-master-commits');
+
+  // Original IDs for backward compatibility
+  fetchCommits('Smoothieware/Smoothieware', 'edge', 'edge-commits');
+  fetchCommits('Smoothieware/Smoothieware', 'master', 'master-commits');
 });
 </script>
 
 <style>
 /* Additional styling for better appearance */
-#edge-commits, #master-commits {
+#edge-commits, #master-commits,
+#v1-edge-commits, #v1-master-commits,
+#v2-master-commits {
   min-height: 100px;
 }
 </style>

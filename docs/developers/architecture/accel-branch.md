@@ -242,6 +242,7 @@ Compared to the previous graph, we now spend significantly less time in the inte
 
 The stepping and acceleration architecture has evolved significantly between V1 and V2:
 
+{::nomarkdown}
 <versioned orientation="vertical">
 <v1>
 {:/nomarkdown}
@@ -294,9 +295,6 @@ Set the step frequency and acceleration using:
 {::nomarkdown}
 </v2>
 </versioned>
-{:/nomarkdown}
-
-{::nomarkdown}
 </proposal>
 <original>
 {:/nomarkdown}

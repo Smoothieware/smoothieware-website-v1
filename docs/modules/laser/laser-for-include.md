@@ -74,7 +74,17 @@ Now that the PSU is wired to the Smoothieboard and that you know which pin you a
 
 ## Configuration
 
-You now need to edit the "config" file on the SD card (the default configuration file already contains example laser lines so you may only need to edit/enable those) to add or setup the laser part as follows: 
+You now need to edit the "config" file on the SD card (the default configuration file already contains example laser lines so you may only need to edit/enable those) to add or setup the laser part as follows:
+
+{::nomarkdown}
+<review id="laser:basic-config">
+<proposal>
+{:/nomarkdown}
+
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
 
 ```markdown
 # Laser module configuration
@@ -83,10 +93,53 @@ laser_module_enable                          false            # Whether to activ
 laser_module_pwm_pin                         2.5              # this pin will be PWMed to control the laser. Only P2.0 - P2.5
                                                               # can be used since laser requires hardware PWM
 #laser_module_maximum_power                  1.0              # this is the maximum duty cycle that will be applied to the laser
-#laser_module_minimum_power                  0.0              # this duty cycle will be used for travel moves to keep the laser 
+#laser_module_minimum_power                  0.0              # this duty cycle will be used for travel moves to keep the laser
                                                               # active without actually burning
 #laser_module_pwm_period                     20               # this sets the pwm frequency as the period in microseconds
 ```
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+```ini
+[laser]
+enable = true                # Whether to activate the laser module at all
+pwm_pin = 2.5                # This pin will be PWMed to control the laser
+                             # Only P2.0-P2.5 can be used (hardware PWM required)
+#maximum_power = 1.0         # Maximum duty cycle applied to the laser
+#minimum_power = 0.0         # Duty cycle for travel moves (keeps laser active
+                             # without burning)
+#pwm_period = 20             # PWM period in microseconds
+```
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
+
+{::nomarkdown}
+</proposal>
+<original>
+{:/nomarkdown}
+
+```markdown
+# Laser module configuration
+laser_module_enable                          false            # Whether to activate the laser module at all. All configuration is
+                                                              # ignored if false.
+laser_module_pwm_pin                         2.5              # this pin will be PWMed to control the laser. Only P2.0 - P2.5
+                                                              # can be used since laser requires hardware PWM
+#laser_module_maximum_power                  1.0              # this is the maximum duty cycle that will be applied to the laser
+#laser_module_minimum_power                  0.0              # this duty cycle will be used for travel moves to keep the laser
+                                                              # active without actually burning
+#laser_module_pwm_period                     20               # this sets the pwm frequency as the period in microseconds
+```
+
+{::nomarkdown}
+</original>
+</review>
+{:/nomarkdown}
 
 If needed, replace the 2.5 value for <setting v1="laser_module_pwm_pin" v2="laser.pwm_pin"></setting> with the pin you chose in the wiring section.
 
@@ -124,6 +177,16 @@ The wiring looks like this:
 
 You then also need to configure the laser module accordingly:
 
+{::nomarkdown}
+<review id="laser:example-setup">
+<proposal>
+{:/nomarkdown}
+
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
+
 ```markdown
 # Laser module configuration
 laser_module_enable                          false            # Whether to activate the laser module at all. All configuration is
@@ -131,6 +194,42 @@ laser_module_enable                          false            # Whether to activ
 laser_module_pwm_pin                         1.23o!           # this pin will be PWMed to control the laser. Only P2.0 - P2.5
                                                               # can be used since laser requires hardware PWM
 ```
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+```ini
+[laser]
+enable = true                # Whether to activate the laser module at all
+pwm_pin = 1.23o!             # This pin will be PWMed to control the laser
+                             # Only P2.0-P2.5 can be used (hardware PWM required)
+                             # 'o!' means open-drain and inverted
+```
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
+
+{::nomarkdown}
+</proposal>
+<original>
+{:/nomarkdown}
+
+```markdown
+# Laser module configuration
+laser_module_enable                          false            # Whether to activate the laser module at all. All configuration is
+                                                              # ignored if false.
+laser_module_pwm_pin                         1.23o!           # this pin will be PWMed to control the laser. Only P2.0 - P2.5
+                                                              # can be used since laser requires hardware PWM
+```
+
+{::nomarkdown}
+</original>
+</review>
+{:/nomarkdown}
 
 ### Note on K40
 

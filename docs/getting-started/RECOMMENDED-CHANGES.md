@@ -30,7 +30,7 @@ If you're on Windows, go install the [Windows drivers](windows-drivers) now. Lin
 <v2>
 {:/nomarkdown}
 
-**Windows users:** V2 uses native USB and typically works without drivers on Windows 10+. If the board doesn't appear, see [V2 connection help](/windows-drivers-v2). Linux and Mac have full support built-in.
+**Windows users:** V2 uses native USB and typically works without drivers on Windows 10+. If the board doesn't appear, see [Windows Drivers](/windows-drivers). Linux and Mac have full support built-in.
 
 {::nomarkdown}
 </v2>
@@ -198,7 +198,7 @@ Windows 10+ may take a moment to recognize the device.
 - Try a different USB cable (defective cables are common)
 - Try a different USB port
 - Wait a moment (first connection may be slow)
-- See [V2 Troubleshooting](/v2-troubleshooting) for more
+- See [Troubleshooting](/troubleshooting) for more
 
 {::nomarkdown}
 </v2>
@@ -266,7 +266,7 @@ You've got the basics! To unlock more power:
 
 You've got the basics! V2 has additional capabilities:
 - [Network Configuration](/network) - Set up Ethernet (faster than USB)
-- [V2 Modules](/v2-modules) - Advanced features like networking and new drivers
+- [Configuration Options](/configuration-options) - Advanced features and settings
 - [Motion Control](motion-control) - Fine-tune acceleration and motion
 - [Advanced G-codes](supported-g-codes) - All supported G-code commands
 

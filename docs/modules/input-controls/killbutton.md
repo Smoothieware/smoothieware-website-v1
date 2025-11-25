@@ -28,8 +28,100 @@ Wire a simple button on two pins.
 {:/nomarkdown}
 
 {::nomarkdown}
-The button may be configured as a kill switch, which will halt all operations, turn off heaters, and pause the host. It can be cleared with a <mcode>M999</mcode> command or by resetting the board. To enable a kill button, the following configuration is added:
+<review id="killbutton:config">
+<proposal>
 {:/nomarkdown}
+
+The button may be configured as a kill switch, which will halt all operations, turn off heaters, and pause the host. It can be cleared with a {::nomarkdown}<mcode>M999</mcode>{:/nomarkdown} command or by resetting the board. To enable a kill button, the following configuration is added:
+
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
+
+```plaintext
+kill_button_enable                        true             # set to true to enable a kill button
+kill_button_pin                           2.12             # kill button pin. default is same as pause button 2.12 (Add ^ for external buttons)
+```
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+```ini
+[kill button]
+enable = true                # set to true to enable a kill button
+pin = 2.12                   # kill button pin (Add ^ for external buttons)
+```
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
+
+When in the halted state (after the kill button is pressed), the play LED will flash rapidly. The kill state can be cleared by holding down the kill button for 2 seconds or more.
+
+Alternatively, a latching E-Stop button can be hooked up to the kill button header (usually normally open). Then use this config:
+
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
+
+```plaintext
+kill_button_toggle_enable        true                # allows for latching estop button
+```
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+```ini
+[kill button]
+toggle_enable = true         # allows for latching estop button
+```
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
+
+When the E-Stop button is hit and latched on, it will halt the system. When it is unlatched and released, the system will exit the halt condition.
+
+If you do not want the halt to exit when it is released, then set this:
+
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
+
+```plaintext
+unkill_enable     false                # do not unkill when button held or released
+```
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+```ini
+[kill button]
+unkill_enable = false        # do not unkill when button held or released
+```
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
+
+{::nomarkdown}
+</proposal>
+<original>
+{:/nomarkdown}
+
+The button may be configured as a kill switch, which will halt all operations, turn off heaters, and pause the host. It can be cleared with a {::nomarkdown}<mcode>M999</mcode>{:/nomarkdown} command or by resetting the board. To enable a kill button, the following configuration is added:
 
 ```plaintext
 kill_button_enable                        true             # set to true to enable a kill button
@@ -51,6 +143,11 @@ If you do not want the halt to exit when it is released, then set this:
 ```plaintext
 unkill_enable     false                # do not unkill when button held or released
 ```
+
+{::nomarkdown}
+</original>
+</review>
+{:/nomarkdown}
 
 <sl-alert variant="warning" open>
   <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>

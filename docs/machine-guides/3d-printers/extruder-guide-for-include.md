@@ -136,9 +136,9 @@ As all stepper motors, the extruder stepper motor needs 3 pins to be controlled:
 **1st Extruder** (delta, or M4)
 
 ```markdown
-extruder.hotend.step_pin {::nomarkdown}<pin>2.3</pin>{:/nomarkdown}
-extruder.hotend.dir_pin {::nomarkdown}<pin>0.22</pin>{:/nomarkdown}
-extruder.hotend.en_pin {::nomarkdown}<pin>0.21</pin>{:/nomarkdown}
+extruder.hotend.step_pin 2.3
+extruder.hotend.dir_pin 0.22
+extruder.hotend.en_pin 0.21
 ```
 
 <sl-alert variant="warning" open>
@@ -149,9 +149,9 @@ extruder.hotend.en_pin {::nomarkdown}<pin>0.21</pin>{:/nomarkdown}
 **2nd Extruder** (epsilon, or M5)
 
 ```markdown
-extruder.hotend2.step_pin {::nomarkdown}<pin>2.8</pin>{:/nomarkdown}
-extruder.hotend2.dir_pin {::nomarkdown}<pin>2.13</pin>{:/nomarkdown}
-extruder.hotend2.en_pin {::nomarkdown}<pin>4.29</pin>{:/nomarkdown}
+extruder.hotend2.step_pin 2.8
+extruder.hotend2.dir_pin 2.13
+extruder.hotend2.en_pin 4.29
 ```
 
 <sl-alert variant="warning" open>
@@ -202,9 +202,9 @@ extruder.hotend.steps_per_mm 140 # Steps per mm for extruder stepper
 extruder.hotend.acceleration 500 # Acceleration for the stepper motor mm/sec²
 extruder.hotend.max_speed 50 # Maximum speed in mm/s
 
-extruder.hotend.step_pin {::nomarkdown}<pin>2.3</pin>{:/nomarkdown} # Pin for extruder step signal
-extruder.hotend.dir_pin {::nomarkdown}<pin>0.22</pin>{:/nomarkdown} # Pin for extruder dir signal (add '!' to reverse direction)
-extruder.hotend.en_pin {::nomarkdown}<pin>0.21</pin>{:/nomarkdown} # Pin for extruder enable signal
+extruder.hotend.step_pin 2.3 # Pin for extruder step signal
+extruder.hotend.dir_pin 0.22 # Pin for extruder dir signal (add '!' to reverse direction)
+extruder.hotend.en_pin 0.21 # Pin for extruder enable signal
 
 delta_current 1.5 # Current setting in Amperes for this motor driver
 ```

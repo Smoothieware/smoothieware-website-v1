@@ -172,7 +172,7 @@ You'll need a config file for your machine type:
 {:/nomarkdown}
 
 - [V2 Prime config](https://github.com/Smoothieware/SmoothieV2/raw/main/FirmwareBin/config.ini) - Latest V2 board
-- Check the [V2 Configuration Reference](/configuration-v2) for INI-style syntax differences
+- Check the [Configuration Guide](/configuring-smoothie) for INI-style syntax differences
 
 {::nomarkdown}
 </v2>
@@ -329,7 +329,7 @@ See [Configuring Smoothie](configuring-smoothie) for complete documentation.
 - Temperature sensor types
 - Tool configurations
 
-V2 uses INI-style configuration (like Windows config files) instead of V1's key-value format. See [Configuring Smoothie V2](/configuration-v2) for complete documentation.
+V2 uses INI-style configuration (like Windows config files) instead of V1's key-value format. See [Configuring Smoothie](/configuring-smoothie) for complete documentation.
 
 {::nomarkdown}
 </v2>

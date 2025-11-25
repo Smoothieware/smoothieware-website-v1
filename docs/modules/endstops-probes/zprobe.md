@@ -537,6 +537,64 @@ leveling-strategy.delta-grid.initial_height  10
 | --- | --- | --- |
 {% include modules/leveling/delta-grid-calibration-options-for-include.md %}
 
+{::nomarkdown}
+<review id="zprobe:delta-grid-example-config">
+<proposal>
+{:/nomarkdown}
+
+### Example configuration
+
+To activate this leveling strategy, copy/paste the following to your [configuration file](configuring-smoothie) and edit it accordingly:
+
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
+
+```
+leveling-strategy.delta-grid.enable               true     # The strategy must be enabled in the config, as well as the zprobe module.
+leveling-strategy.delta-grid.radius               50       # Radius of the bed, must be specified. This needs to be at least as big as
+                                                           # the maximum printing radius as moves outside of this will not
+                                                           # be compensated for correctly
+leveling-strategy.delta-grid.size                 7        # The size of the grid, for example, 7 causes a 7x7 grid with 49 points.
+                                                           # Must be an odd number.
+leveling-strategy.delta-grid.probe_offsets        0,0,0    # Optional probe offsets from the nozzle or tool head
+leveling-strategy.delta-grid.save                 false    # If the saved grid is to be loaded on boot then this must be set to true
+leveling-strategy.delta-grid.initial_height       10       # Optionally an initial_height can be set that tell the initial probe
+                                                           # where to stop the fast descent before it probes, this should be
+                                                           # around 5-10mm above the bed
+```
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+```ini
+[leveling_strategy.delta_grid]
+enable = true               # The strategy must be enabled in the config, as well as the zprobe module.
+radius = 50                 # Radius of the bed, must be specified. This needs to be at least as big as
+                            # the maximum printing radius as moves outside of this will not
+                            # be compensated for correctly
+size = 7                    # The size of the grid, for example, 7 causes a 7x7 grid with 49 points.
+                            # Must be an odd number.
+probe_offsets = 0,0,0       # Optional probe offsets from the nozzle or tool head
+save = false                # If the saved grid is to be loaded on boot then this must be set to true
+initial_height = 10         # Optionally an initial_height can be set that tell the initial probe
+                            # where to stop the fast descent before it probes, this should be
+                            # around 5-10mm above the bed
+```
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
+
+{::nomarkdown}
+</proposal>
+<original>
+{:/nomarkdown}
+
 ### Example configuration
 
 To activate this leveling strategy, copy/paste the following to your [configuration file](configuring-smoothie) and edit it accordingly:
@@ -554,6 +612,11 @@ leveling-strategy.delta-grid.initial_height       10       # Optionally an initi
                                                            # where to stop the fast descent before it probes, this should be
                                                            # around 5-10mm above the bed
 ```
+
+{::nomarkdown}
+</original>
+</review>
+{:/nomarkdown}
 
 ### Usage
 

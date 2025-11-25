@@ -108,7 +108,7 @@ If you are just hunting for part numbers, the bill of materials is [also availab
 
 {::nomarkdown}
 <a href="https://github.com/Bouni/smoothieboard-graphics/blob/master/smoothieboard.png?raw=true">
-  <img src="https://github.com/Bouni/smoothieboard-graphics/blob/master/smoothieboard.png?raw=true" alt="Smoothieboard Illustration" style="width: 640px; height: auto; display: block; margin: 2rem auto;"/>
+  <img src="https://github.com/Bouni/smoothieboard-graphics/blob/master/smoothieboard.png?raw=true" alt="Smoothieboard Illustration" style="width: 640px; height: auto; display: block; margin: 2rem auto; background-color: #f8f8f8;"/>
 </a>
 {:/nomarkdown}
 

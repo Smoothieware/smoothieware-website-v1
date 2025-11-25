@@ -2853,11 +2853,3 @@ Examples showing settings that actually changed significantly or were removed/ad
 
 <p><strong>Total settings:</strong> 624 rows from 22 modules</p>
 {:/nomarkdown}
-    </tbody>
-</table>
-
-<p><strong>Total settings:</strong> 611 rows from 22 modules</p>
-{:/nomarkdown}
-
-<p><strong>Total settings:</strong> 611 rows from 22 modules</p>
-{:/nomarkdown}

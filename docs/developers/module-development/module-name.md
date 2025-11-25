@@ -31,6 +31,7 @@ The module name can be any identifier you choose (like `first`, `second`, `left`
 
 Here's how you would create three separate extruder modules:
 
+{::nomarkdown}
 <versioned orientation="horizontal">
 <v1>
 {:/nomarkdown}
@@ -77,9 +78,6 @@ second.max_speed = 50
 {::nomarkdown}
 </v2>
 </versioned>
-{:/nomarkdown}
-
-{::nomarkdown}
 </proposal>
 <original>
 {:/nomarkdown}

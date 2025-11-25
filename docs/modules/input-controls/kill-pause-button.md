@@ -35,6 +35,48 @@ Wire a simple button on two pins.
 </sl-alert>
 {:/nomarkdown}
 
+{::nomarkdown}
+<review id="kill-pause-button:config">
+<proposal>
+{:/nomarkdown}
+
+The pause button may be configured as a kill switch instead of pause, this will halt all operations and turn off heaters and pause the host. It can be cleared with a {::nomarkdown}<mcode>M999</mcode>{:/nomarkdown} or reset. To enable a kill button the following is added to the config:
+
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
+
+```plaintext
+kill_button_enable                        true             # set to true to enable a kill button
+kill_button_pin                           2.12             # kill button pin. default is same as pause button 2.12
+```
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+```ini
+[kill button]
+enable = true                # set to true to enable a kill button
+pin = 2.12                   # kill button pin
+toggle_enable = false        # if true, button down triggers kill and button up triggers unkill
+unkill_enable = true         # if true, allows the button to clear halt state (2 second press required when toggle_enable is false)
+```
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
+
+When in the halted state (after kill button is pressed) the play LED will flash rapidly, whereas when paused it flashes slowly.
+
+{::nomarkdown}
+</proposal>
+<original>
+{:/nomarkdown}
+
 The pause button may be configured as a kill switch instead of pause, this will halt all operations and turn off heaters and pause the host. It can be cleared with a {::nomarkdown}<mcode>M999</mcode>{:/nomarkdown} or reset. To enable a kill button the following is added to the config:
 
 ```plaintext
@@ -43,3 +85,8 @@ kill_button_pin                           2.12             # kill button pin. de
 ```
 
 When in the halted state (after kill button is pressed) the play LED will flash rapidly, whereas when paused it flashes slowly.
+
+{::nomarkdown}
+</original>
+</review>
+{:/nomarkdown}

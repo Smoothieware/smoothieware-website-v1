@@ -57,6 +57,46 @@ However, the source code may be helpful if you can read C++ code:
 
 ## Configuration
 
+{::nomarkdown}
+<review id="rotary-delta:config">
+<proposal>
+{:/nomarkdown}
+
+To use the rotary delta arm solution, you would set in your config file:
+
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
+
+```
+arm_solution                             rotary_delta
+```
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+```ini
+[motion control]
+arm_solution = rotary_delta
+```
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
+
+However, be aware that additional configuration parameters will be needed, and these are not well documented.
+
+You will likely need to examine the source code to understand what parameters are required.
+
+{::nomarkdown}
+</proposal>
+<original>
+{:/nomarkdown}
+
 To use the rotary delta arm solution, you would set in your config file:
 
 ```
@@ -66,6 +106,11 @@ arm_solution                             rotary_delta
 However, be aware that additional configuration parameters will be needed, and these are not well documented.
 
 You will likely need to examine the source code to understand what parameters are required.
+
+{::nomarkdown}
+</original>
+</review>
+{:/nomarkdown}
 
 ## Challenges You Will Face
 

@@ -207,18 +207,78 @@ spindle.control_smoothing                    0.1               # default 0.1. Th
   <br><br>
   The following code is working, setting neutral upon boot - ESC init:
   <br><br>
-  <code>
-switch.servo.enable                          true<br>
-switch.servo.input_on_command                M3<br>
-switch.servo.input_off_command               M5<br>
-switch.servo.output_pin                      1.23o!<br>
-switch.servo.output_type                     hwpwm<br>
-switch.servo.startup_state                   true<br>
-switch.servo.startup_value                   7.5<br>
-switch.servo.default_on_value                7.5<br>
-switch.servo.failsafe_set_to                 0
-  </code>
 </sl-alert>
+{:/nomarkdown}
+
+{::nomarkdown}
+<review id="spindle-module:esc-init">
+<proposal>
+{:/nomarkdown}
+
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
+
+**V1 Configuration (flat namespace):**
+
+```markdown
+switch.servo.enable                          true
+switch.servo.input_on_command                M3
+switch.servo.input_off_command               M5
+switch.servo.output_pin                      1.23o!
+switch.servo.output_type                     hwpwm
+switch.servo.startup_state                   true
+switch.servo.startup_value                   7.5
+switch.servo.default_on_value                7.5
+switch.servo.failsafe_set_to                 0
+```
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+**V2 Configuration (INI sections):**
+
+```ini
+[switch]
+servo.enable = true
+servo.input_on_command = M3
+servo.input_off_command = M5
+servo.output_pin = 1.23o!
+servo.output_type = hwpwm
+servo.startup_state = true
+servo.startup_value = 7.5
+servo.default_on_value = 7.5
+servo.failsafe_set_to = 0
+```
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
+
+{::nomarkdown}
+</proposal>
+<original>
+{:/nomarkdown}
+
+```markdown
+switch.servo.enable                          true
+switch.servo.input_on_command                M3
+switch.servo.input_off_command               M5
+switch.servo.output_pin                      1.23o!
+switch.servo.output_type                     hwpwm
+switch.servo.startup_state                   true
+switch.servo.startup_value                   7.5
+switch.servo.default_on_value                7.5
+switch.servo.failsafe_set_to                 0
+```
+
+{::nomarkdown}
+</original>
+</review>
 {:/nomarkdown}
 
 {::nomarkdown}

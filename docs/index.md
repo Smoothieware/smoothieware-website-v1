@@ -37,8 +37,6 @@ title: Smoothieware Home
 </div>
 
 {::nomarkdown}
-
-{::nomarkdown}
 </proposal>
 <original>
 {:/nomarkdown}
@@ -55,13 +53,15 @@ title: Smoothieware Home
     </div>
   </sl-alert>
   <canvas id="fireworks-canvas" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 10;"></canvas>
-</div>{:/nomarkdown}
+</div>
+{:/nomarkdown}
 
 {::nomarkdown}
 </original>
 </review>
 {:/nomarkdown}
 
+{::nomarkdown}
 <script src="https://cdn.jsdelivr.net/npm/fireworks-js@2.10.8/dist/index.umd.min.js"></script>
 <script>
 (function() {
@@ -212,17 +212,22 @@ The Smoothie project is always looking for help. Whatever your skills are, there
 <review id="homepage:getting-started-intro">
 <proposal>
 {:/nomarkdown}
+
 - **[Getting Started](getting-started)**: Complete guide to setting up your Smoothieboard from unboxing to first operation. Covers both v1 and v2 hardware with version-specific notes.
+
 {::nomarkdown}
 </proposal>
 <original>
 {:/nomarkdown}
+
 - **[Getting Started](getting-started)**: Complete guide to setting up your Smoothieboard from unboxing to first operation
+
 {::nomarkdown}
 </original>
 </review>
 {:/nomarkdown}
 - [Basics](basics): Fundamental concepts, terminology, and technical background
+- [Glossary](glossary): Definitions of common terms used in CNC and 3D printing
 - [Communication](communication)
   - [Network](network)
   - [USB](usb)
@@ -240,22 +245,26 @@ The Smoothie project is always looking for help. Whatever your skills are, there
 <review id="homepage:configuring-smoothie-versions">
 <proposal>
 {:/nomarkdown}
+
 - [Configuring Smoothie](configuring-smoothie): Configuration and use, by module. **Note:** v1 and v2 use different configuration formats (flat INI vs hierarchical).
   - [List of all configuration options](configuration-options)
   - [Motion control](motion-control): All things related to gcode interpolation, motion and acceleration planning, and step generation
   - [Arm Solutions](arm-solutions): [Cartesian](cartesian), [Delta](delta), [Hbot](hbot), [Core-XY](Core-XY), [Rotary Delta](rotary-delta), [Morgan Scara](morgan-scara)
   - [6axis](6axis): Using A, B and C axes, for 4, 5 or 6 axis motion.
   - [Grbl mode](grbl-mode): Using Smoothie in CNC-specific mode instead of 3D printing mode
+
 {::nomarkdown}
 </proposal>
 <original>
 {:/nomarkdown}
+
 - [Configuring Smoothie](configuring-smoothie): Configuration and use, by module
   - [List of all configuration options](configuration-options)
   - [Motion control](motion-control): All things related to gcode interpolation, motion and acceleration planning, and step generation
   - [Arm Solutions](arm-solutions): [Cartesian](cartesian), [Delta](delta), [Hbot](hbot), [Core-XY](Core-XY), [Rotary Delta](rotary-delta), [Morgan Scara](morgan-scara)
   - [6axis](6axis): Using A, B and C axes, for 4, 5 or 6 axis motion.
   - [Grbl mode](grbl-mode): Using Smoothie in CNC-specific mode instead of 3D printing mode
+
 {::nomarkdown}
 </original>
 </review>
@@ -288,12 +297,16 @@ The Smoothie project is always looking for help. Whatever your skills are, there
 <review id="homepage:configurator-versions">
 <proposal>
 {:/nomarkdown}
+
     - [Configurator](configurator): Manipulate configuration using console commands. **Version note:** Very different between v1 and v2.
+
 {::nomarkdown}
 </proposal>
 <original>
 {:/nomarkdown}
+
     - [Configurator](configurator): Manipulate configuration using console commands
+
 {::nomarkdown}
 </original>
 </review>
@@ -379,12 +392,16 @@ More: [Windows Drivers](windows-drivers), [Linux Drivers](linux-drivers), [Mac D
 <review id="homepage:microcontroller-specs">
 <proposal>
 {:/nomarkdown}
-- <versioned><v1>Powerful (120Mhz, 32bit) [micro-controller](http://www.embeddedartists.com/products/lpcxpresso/lpc1769_xpr.php).</v1><v2>Powerful (480MHz dual-core, 32bit) [micro-controller](https://www.st.com/en/microcontrollers-microprocessors/stm32h745xi.html).</v2></versioned>
+
+- {::nomarkdown}<versioned><v1>{:/nomarkdown}Powerful (120Mhz, 32bit) [micro-controller](http://www.embeddedartists.com/products/lpcxpresso/lpc1769_xpr.php).{::nomarkdown}</v1><v2>{:/nomarkdown}Powerful (480MHz dual-core, 32bit) [micro-controller](https://www.st.com/en/microcontrollers-microprocessors/stm32h745xi.html).{::nomarkdown}</v2></versioned>{:/nomarkdown}
+
 {::nomarkdown}
 </proposal>
 <original>
 {:/nomarkdown}
+
 - Powerful (120Mhz, 32bit) [micro-controller](http://www.embeddedartists.com/products/lpcxpresso/lpc1769_xpr.php).
+
 {::nomarkdown}
 </original>
 </review>

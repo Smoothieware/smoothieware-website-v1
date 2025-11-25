@@ -49,8 +49,8 @@ Select your version to get tailored guidance:
 **V2 is a modern redesign** with improved architecture, better hardware abstraction, and new features. It runs on modern hardware (LPC1778, LPC1847, ST32F4xx) and is actively developed.
 
 **Start here:**
-1. [Installing Firmware](/firmware/v2-firmware) - Flash V2 firmware to your board
-2. [V2 Configuration](/configuration/v2-config) - Learn V2's INI-style configuration
+1. [Installing Firmware](/flashing-smoothie-firmware) - Flash V2 firmware to your board
+2. [Configuration Guide](/configuring-smoothie) - Learn V2's INI-style configuration
 3. [Getting Help](/getting-help-community) - Join Maker Forums or Discord
 
 **Key differences from V1:**
@@ -61,10 +61,10 @@ Select your version to get tailored guidance:
 - Requires configuration file migration if upgrading from V1
 
 **Key resources:**
-- [V1 to V2 Migration](/migration/v1-to-v2) - Upgrading from V1
-- [V2 Architecture](/developers/architecture/v2-design) - How V2 works internally
-- [V2 Configuration Reference](/configuration/v2-configuration-options) - All V2 settings
-- [V2 Development](/developers/compiling-v2-dev) - Building from source
+- [V1 to V2 Migration](/migrating) - Upgrading from V1
+- [Architecture Overview](/howitworks) - How Smoothie works internally
+- [Configuration Options](/configuration-options) - All configuration settings
+- [V2 Development](/compiling-v2-dev) - Building from source
 
 **Communication:**
 - [Maker Forums](https://forum.makerforums.info/) - Most active V2 community

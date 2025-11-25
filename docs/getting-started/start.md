@@ -70,9 +70,9 @@ You're using the **new Smoothieware V2** platform with the STM32H745-based Smoot
 
 **Key Resources:**
 - Configuration uses INI-style format with sections
-- [V2 Architecture](/v2-differences) guide for technical details
+- [Architecture Overview](/howitworks) guide for technical details
 - [Motion control](/motion-control) documentation adapted for V2
-- [Tool documentation](/tools) for all supported peripherals
+- [Configuration Options](/configuration-options) for all supported settings
 
 {::nomarkdown}
 </v2>

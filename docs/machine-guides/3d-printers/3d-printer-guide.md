@@ -140,8 +140,8 @@ By convention (meaning that if you wire things according to the way it is specif
 In the [default configuration file](https://github.com/Smoothieware/Smoothieware/blob/edge/ConfigSamples/Smoothieboard/config), the thermistor pins are set up using that convention:
 
 ```markdown
-temperature_control.hotend.thermistor_pin    {::nomarkdown}<pin>0.23</pin>{:/nomarkdown}             # Pin for the thermistor to read (here T0)
-temperature_control.bed.thermistor_pin       {::nomarkdown}<pin>0.24</pin>{:/nomarkdown}             # Pin for the heated bed to read (here T1)
+temperature_control.hotend.thermistor_pin    0.23             # Pin for the thermistor to read (here T0)
+temperature_control.bed.thermistor_pin       0.24             # Pin for the heated bed to read (here T1)
 ```
 
 You can, however, use any thermistor pin you want for any temperature control module you want.
@@ -201,8 +201,8 @@ For the hot-end, the default output is **P2_4** (pin {::nomarkdown}<pin>2.4</pin
 To set a different MOSFET output for the bed or the hot-end, you have to edit the configuration file to the digital output pin corresponding to your chosen MOSFET. These are the lines you would have to edit:
 
 ```markdown
-temperature_control.hotend.heater_pin        {::nomarkdown}<pin>2.7</pin>{:/nomarkdown}              # Pin that controls the heater cartridge for the hot-end
-temperature_control.bed.heater_pin           {::nomarkdown}<pin>2.5</pin>{:/nomarkdown}              # Pin that controls the heated bed
+temperature_control.hotend.heater_pin        2.7              # Pin that controls the heater cartridge for the hot-end
+temperature_control.bed.heater_pin           2.5              # Pin that controls the heated bed
 ```
 
 To help you figure out what is what, here is a recapitulating table:
@@ -317,7 +317,7 @@ Then, you need to edit your configuration file to add (or alter) this section:
 switch.fan.enable                            true             #
 switch.fan.input_on_command                  M106             #
 switch.fan.input_off_command                 M107             #
-switch.fan.output_pin                        {::nomarkdown}<pin>2.4</pin>{:/nomarkdown}              # The pin matching the MOSFET we chose
+switch.fan.output_pin                        2.4              # The pin matching the MOSFET we chose
 switch.fan.output_type                       pwm              # PWM output settable with S parameter in the input_on_comand
 #switch.fan.max_pwm                           255              # set max PWM for the pin default is 255
 ```

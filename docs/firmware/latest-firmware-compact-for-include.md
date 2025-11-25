@@ -2,57 +2,38 @@
 ## Recent Commits
 
 {::nomarkdown}
-<review id="latest-firmware:branch-versioning">
+<review id="latest-firmware-compact:branch-versioning">
 <proposal>
-{:/nomarkdown}
-
-{::nomarkdown}
 <versioned orientation="vertical">
 <v1>
-{:/nomarkdown}
-
-**Master Branch (V1 Stable)**
-
-The master branch contains the stable releases for Smoothieware V1 (LPC1769 hardware). This branch is production-ready and recommended for most V1 users.
-
-{::nomarkdown}
-<div style="margin: 1.5rem 0;">
-  <div id="master-commits-compact" style="font-size: 0.9em;">
+<p><strong>V1 Edge Branch</strong> <span style="color: #888; font-size: 0.9em;">- Development branch with latest features</span></p>
+<div style="margin: 1rem 0;">
+  <div id="v1-edge-commits-compact" style="font-size: 0.9em;">
     <sl-spinner style="font-size: 1.5rem;"></sl-spinner>
     <span style="margin-left: 0.5rem; color: #888;">Loading...</span>
   </div>
 </div>
-{:/nomarkdown}
 
-{::nomarkdown}
+<p><strong>V1 Master Branch</strong> <span style="color: #888; font-size: 0.9em;">- Stable release branch</span></p>
+<div style="margin: 1rem 0;">
+  <div id="v1-master-commits-compact" style="font-size: 0.9em;">
+    <sl-spinner style="font-size: 1.5rem;"></sl-spinner>
+    <span style="margin-left: 0.5rem; color: #888;">Loading...</span>
+  </div>
+</div>
 </v1>
 <v2>
-{:/nomarkdown}
-
-**Edge Branch (V2 Development)**
-
-The edge branch contains the latest development for Smoothieware V2 (STM32H745 hardware). This branch is actively developed and may contain experimental features. For production use, wait for stable releases.
-
-{::nomarkdown}
-<div style="margin: 1.5rem 0;">
-  <div id="edge-commits-compact" style="font-size: 0.9em;">
+<p><strong>V2 Master Branch</strong> <span style="color: #888; font-size: 0.9em;">- Primary development branch</span></p>
+<div style="margin: 1rem 0;">
+  <div id="v2-master-commits-compact" style="font-size: 0.9em;">
     <sl-spinner style="font-size: 1.5rem;"></sl-spinner>
     <span style="margin-left: 0.5rem; color: #888;">Loading...</span>
   </div>
 </div>
-{:/nomarkdown}
-
-{::nomarkdown}
 </v2>
 </versioned>
-{:/nomarkdown}
-
-{::nomarkdown}
 </proposal>
 <original>
-{:/nomarkdown}
-
-{::nomarkdown}
 <div style="margin: 1.5rem 0;">
   <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
     <!-- Edge Branch -->
@@ -78,12 +59,8 @@ The edge branch contains the latest development for Smoothieware V2 (STM32H745 h
     </div>
   </div>
 </div>
-{:/nomarkdown}
-
-{::nomarkdown}
 </original>
 </review>
-{:/nomarkdown}
 
 <script>
 // Compact version - shows only 5 commits per branch
@@ -111,12 +88,13 @@ function formatRelativeTimeCompact(dateString) {
   return 'just now';
 }
 
-async function fetchCommitsCompact(branch, containerId) {
+async function fetchCommitsCompact(repo, branch, containerId) {
   const container = document.getElementById(containerId);
+  if (!container) return; // Container might not exist if version is switched
 
   try {
     const response = await fetch(
-      `https://api.github.com/repos/Smoothieware/Smoothieware/commits?sha=${branch}&per_page=5`
+      `https://api.github.com/repos/${repo}/commits?sha=${branch}&per_page=5`
     );
 
     if (!response.ok) {
@@ -176,7 +154,7 @@ async function fetchCommitsCompact(branch, containerId) {
   } catch (error) {
     container.innerHTML = `
       <div style="color: #ff6b6b; font-size: 0.85em;">
-        Failed to load. <a href="https://github.com/Smoothieware/Smoothieware/commits/${branch}"
+        Failed to load. <a href="https://github.com/${repo}/commits/${branch}"
         target="_blank" style="color: #ffcc00; text-decoration: underline;">View on GitHub</a>
       </div>
     `;
@@ -184,8 +162,16 @@ async function fetchCommitsCompact(branch, containerId) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  fetchCommitsCompact('edge', 'edge-commits-compact');
-  fetchCommitsCompact('master', 'master-commits-compact');
+  // V1 commits (Smoothieware/Smoothieware)
+  fetchCommitsCompact('Smoothieware/Smoothieware', 'edge', 'v1-edge-commits-compact');
+  fetchCommitsCompact('Smoothieware/Smoothieware', 'master', 'v1-master-commits-compact');
+
+  // V2 commits (Smoothieware/SmoothieV2)
+  fetchCommitsCompact('Smoothieware/SmoothieV2', 'master', 'v2-master-commits-compact');
+
+  // Original IDs for backward compatibility
+  fetchCommitsCompact('Smoothieware/Smoothieware', 'edge', 'edge-commits-compact');
+  fetchCommitsCompact('Smoothieware/Smoothieware', 'master', 'master-commits-compact');
 });
 </script>
 {:/nomarkdown}

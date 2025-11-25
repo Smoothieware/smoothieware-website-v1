@@ -96,6 +96,104 @@ arm_solution morgan
 
 ### Configuration Parameters
 
+{::nomarkdown}
+<review id="morgan-scara:parameters">
+<proposal>
+{:/nomarkdown}
+
+Based on the source code, Morgan SCARA likely requires the following parameters (exact names may vary - refer to the source code for definitive information):
+
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
+
+```
+arm_solution                                 morgan
+
+# Arm geometry (example values - adjust for your machine)
+# These parameters define the physical dimensions of your SCARA arm
+arm1_length                                  150.0    # Length of proximal arm segment (mm)
+arm2_length                                  150.0    # Length of distal arm segment (mm)
+
+# Alpha motor (proximal joint - rotary)
+alpha_step_pin                               2.0
+alpha_dir_pin                                0.5
+alpha_en_pin                                 0.4
+alpha_steps_per_mm                           # Steps per degree of rotation
+alpha_max_rate                               # Maximum rotation speed
+
+# Beta motor (distal joint - rotary)
+beta_step_pin                                2.1
+beta_dir_pin                                 0.11
+beta_en_pin                                  0.10
+beta_steps_per_mm                            # Steps per degree of rotation
+beta_max_rate                                # Maximum rotation speed
+
+# Gamma motor (Z axis - linear)
+gamma_step_pin                               2.2
+gamma_dir_pin                                0.20
+gamma_en_pin                                 0.19
+gamma_steps_per_mm                           400      # Linear steps per mm
+gamma_max_rate                               300      # Linear speed in mm/min
+```
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+```ini
+[motion control]
+arm_solution = morgan
+
+# Arm geometry
+[arm_solution]
+arm1_length = 150.0    # Length of proximal arm segment (mm)
+arm2_length = 150.0    # Length of distal arm segment (mm)
+
+# Alpha motor (proximal joint - rotary)
+[actuator.alpha]
+step_pin = 2.0
+dir_pin = 0.5
+en_pin = 0.4
+steps_per_mm = xxx     # Steps per degree of rotation
+max_rate = xxx         # Maximum rotation speed
+
+# Beta motor (distal joint - rotary)
+[actuator.beta]
+step_pin = 2.1
+dir_pin = 0.11
+en_pin = 0.10
+steps_per_mm = xxx
+max_rate = xxx
+
+# Gamma motor (Z axis - linear)
+[actuator.gamma]
+step_pin = 2.2
+dir_pin = 0.20
+en_pin = 0.19
+steps_per_mm = 400
+max_rate = 300
+```
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
+
+{::nomarkdown}
+<sl-alert variant="warning" open>
+  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+  <strong>Note:</strong> The exact parameter names and requirements should be verified in the source code. The above configuration is based on typical SCARA requirements and may need adjustment for Morgan SCARA specifically.
+</sl-alert>
+{:/nomarkdown}
+
+{::nomarkdown}
+</proposal>
+<original>
+{:/nomarkdown}
+
 Based on the source code, Morgan SCARA likely requires the following parameters (exact names may vary - refer to the source code for definitive information):
 
 ```
@@ -133,6 +231,11 @@ gamma_max_rate                               300      # Linear speed in mm/min
   <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
   <strong>Note:</strong> The exact parameter names and requirements should be verified in the source code. The above configuration is based on typical SCARA requirements and may need adjustment for Morgan SCARA specifically.
 </sl-alert>
+{:/nomarkdown}
+
+{::nomarkdown}
+</original>
+</review>
 {:/nomarkdown}
 
 ## When to Use Morgan SCARA

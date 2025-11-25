@@ -11,9 +11,41 @@ See [Pinout](/pinout) to learn about which pins are where.
 
 You can have a pin's output inverted by adding a `!` after this pin's number in the config line, example:
 
+{::nomarkdown}
+<review id="pin-config:invert-example">
+<proposal>
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
+
+```
+my_pin_name 1.19!
+```
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+```
+my_pin_name PB3!
+```
+
+{::nomarkdown}
+</v2>
+</versioned>
+</proposal>
+<original>
+{:/nomarkdown}
+
 ```markdown
 my_pin_name 1.19!
 ```
+
+{::nomarkdown}
+</original>
+</review>
+{:/nomarkdown}
 
 There are other modifiers for pins:
 
@@ -142,11 +174,48 @@ Use repeater mode (`@`) when you have long cables prone to noise, or when you ne
 **Important:** You can use multiple modifiers on the same pin by placing them one after another. The pin configuration system allows you to combine different flags to achieve exactly the behavior you need.
 
 **Syntax:**
+
+{::nomarkdown}
+<review id="pin-config:syntax-example">
+<proposal>
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
+
+```
+my_pin_name 2.11!o^
+```
+
+In this example, pin {::nomarkdown}<pin>2.11</pin>{:/nomarkdown} is configured with:
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+```
+my_pin_name PC7!o^
+```
+
+In this example, pin `PC7` is configured with:
+
+{::nomarkdown}
+</v2>
+</versioned>
+</proposal>
+<original>
+{:/nomarkdown}
+
 ```markdown
 my_pin_name 2.11!o^
 ```
 
 In this example, pin {::nomarkdown}<pin>2.11</pin>{:/nomarkdown} is configured with:
+
+{::nomarkdown}
+</original>
+</review>
+{:/nomarkdown}
 - `!` - Inverted output
 - `o` - Open-drain mode
 - `^` - Pull-up enabled
@@ -156,41 +225,211 @@ In this example, pin {::nomarkdown}<pin>2.11</pin>{:/nomarkdown} is configured w
 Here are some practical combinations you might use in your 3D printer or CNC setup:
 
 **1. Inverted with Pull-up (`!^`)**
+
+{::nomarkdown}
+<review id="pin-config:inverted-pullup">
+<proposal>
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
+
+```
+endstop_pin 1.24!^
+```
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+```
+endstop_pin PA5!^
+```
+
+{::nomarkdown}
+</v2>
+</versioned>
+</proposal>
+<original>
+{:/nomarkdown}
+
 ```markdown
 endstop_pin 1.24!^
 ```
+
+{::nomarkdown}
+</original>
+</review>
+{:/nomarkdown}
+
 This is extremely common for endstops. The pull-up keeps the pin high (3.3V) when the switch is open, and the inversion means the firmware reads this as "not triggered." When the switch closes, the pin goes to ground, and the inversion makes the firmware read it as "triggered."
 
 **Why it's useful:** Many endstop configurations expect the opposite logic from what the hardware naturally provides. This lets you match your firmware expectations without rewiring.
 
 **2. Open-drain with Pull-up (`o^`)**
+
+{::nomarkdown}
+<review id="pin-config:opendrain-pullup">
+<proposal>
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
+
+```
+shared_alarm_pin 2.11o^
+```
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+```
+shared_alarm_pin PC7o^
+```
+
+{::nomarkdown}
+</v2>
+</versioned>
+</proposal>
+<original>
+{:/nomarkdown}
+
 ```markdown
 shared_alarm_pin 2.11o^
 ```
+
+{::nomarkdown}
+</original>
+</review>
+{:/nomarkdown}
+
 This creates a "wired-OR" configuration where multiple devices can signal on the same wire. Each device uses open-drain to pull the line low when active, and the pull-up resistor keeps it high when no device is signaling.
 
 **Why it's useful:** You can connect multiple safety sensors (like door switches, emergency stops, or temperature alarms) to a single pin. Any sensor triggering will pull the pin low.
 
 **3. Inverted Open-drain (`!o`)**
+
+{::nomarkdown}
+<review id="pin-config:inverted-opendrain">
+<proposal>
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
+
+```
+output_pin 1.18!o
+```
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+```
+output_pin PB8!o
+```
+
+{::nomarkdown}
+</v2>
+</versioned>
+</proposal>
+<original>
+{:/nomarkdown}
+
 ```markdown
 output_pin 1.18!o
 ```
+
+{::nomarkdown}
+</original>
+</review>
+{:/nomarkdown}
+
 This inverts an open-drain output, which can be useful when controlling devices that expect active-high signals while using open-drain for level shifting.
 
 **Why it's useful:** When interfacing with 5V logic devices from your 3.3V Smoothieboard, you can use open-drain with a pull-up resistor to 5V on the other device. The inversion lets you maintain the expected logic levels.
 
 **4. No Pull with Invert (`!-`)**
+
+{::nomarkdown}
+<review id="pin-config:nopull-invert">
+<proposal>
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
+
+```
+external_driver_pin 2.5!-
+```
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+```
+external_driver_pin PD12!-
+```
+
+{::nomarkdown}
+</v2>
+</versioned>
+</proposal>
+<original>
+{:/nomarkdown}
+
 ```markdown
 external_driver_pin 2.5!-
 ```
+
+{::nomarkdown}
+</original>
+</review>
+{:/nomarkdown}
+
 Disables internal pull resistors and inverts the signal. This is useful when external hardware provides its own pull resistors and you need inverted logic.
 
 **Why it's useful:** Some external stepper drivers or relay boards have their own pull-up or pull-down resistors. Using `-` prevents conflicts between internal and external resistors, and `!` adapts the logic level.
 
 **5. Pull-down with Invert (`!v`)**
+
+{::nomarkdown}
+<review id="pin-config:pulldown-invert">
+<proposal>
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
+
+```
+sensor_pin 1.29!v
+```
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+```
+sensor_pin PE6!v
+```
+
+{::nomarkdown}
+</v2>
+</versioned>
+</proposal>
+<original>
+{:/nomarkdown}
+
 ```markdown
 sensor_pin 1.29!v
 ```
+
+{::nomarkdown}
+</original>
+</review>
+{:/nomarkdown}
+
 Uses pull-down to keep the pin low by default, then inverts the reading. This means the firmware sees "high" when nothing is connected and "low" when the sensor activates and pulls the pin high.
 
 **Why it's useful:** Some active sensors output a positive voltage when triggered. Pull-down keeps noise low when disconnected, and the inversion can match your firmware's expected logic.

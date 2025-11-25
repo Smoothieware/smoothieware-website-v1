@@ -101,7 +101,7 @@ Most connectors on smoothieboard are broken out to the borders for easy access:
 
 {::nomarkdown}
 <a href="https://github.com/Bouni/smoothieboard-graphics/blob/master/smoothieboard-wiring.png?raw=true">
-  <img src="https://github.com/Bouni/smoothieboard-graphics/blob/master/smoothieboard-wiring.png?raw=true" alt="Smoothieboard Diagram" style="display: block; margin: 2rem auto; min-width: 640px; width: 80%; max-width: 800px;"/>
+  <img src="https://github.com/Bouni/smoothieboard-graphics/blob/master/smoothieboard-wiring.png?raw=true" alt="Smoothieboard Diagram" style="display: block; margin: 2rem auto; min-width: 640px; width: 80%; max-width: 800px; background-color: #f8f8f8;"/>
 </a>
 {:/nomarkdown}
 

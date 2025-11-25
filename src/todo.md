@@ -112,6 +112,12 @@
 * [ ] Create more general info in the guides like usage stuff, so we get better SEO for the documentation and people can discover the site when searching for info about machines in general and not just about smoothie.
 * [ ] Integrate https://github.com/Smoothieware/Smoothieware/issues/1537 into the documentation (grid levelling Z starting point issue)
 * [ ] Use AI to scan for obsolete pages like the Google+ ones, and delete them/clean up the site and files. Also scan for obsolete content inside of pages. 
+* [ ] The map at http://localhost:4000/getting-smoothieboard is broken.
+* [ ] CRITICAL When we have the stuff where first time users are asked for their versions, the landing pages should be excluded from this, CRITICAL
+* [ ] Review the forum/mailing list guidelines and welcome mats, make sure they are up to date, point to the right things, are actually used by the links at the top of the site, etc.
+* [ ] CRITICAL: Merge the http://localhost:4000/debug-settings page with the main page that lists all configuration options.
+* [ ] We have a http://localhost:4000/lpc4337-pin-usage page but no version for the stm32h7, we should create it, especially now that we have the markdown version of the datasheet/user manual of the chip. Still need to extract info from the schematics.
+* [ ] Some pages like http://localhost:4000/pwm-capable deserve to be linked to from more places, we should for EACH page, go over all other pages and find any link that could be made and make it, systematically.
 
 
 # <setting> tag.

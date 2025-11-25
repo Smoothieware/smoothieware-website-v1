@@ -14,20 +14,20 @@ If you plan to use a hobby servo, LEDs, lasers or any kind of device which requi
 
 | ARM Pin | 3X/3XC | 4X/4XC | 5X/5XC | Assignment | Comment |
 | ------- | ------ | ------ | ------ | ---------- | ------- |
-| P1.18 | leds_disable | leds_disable | leds_disable | led1 | set <setting v1="leds_disable"></setting> in config to use it |
-| P1.20 | leds_disable | leds_disable | leds_disable | led3 | set <setting v1="leds_disable"></setting> in config to use it |
-| P1.21 | leds_disable | leds_disable | leds_disable | led4 | set <setting v1="leds_disable"></setting> in config to use it |
-| P1.23 | `available` | `available` | | 3rd large fet | |
-| P1.24 | | | | alpha_min_endstop | can be used on delta without min endstops |
-| P1.26 | | | | beta_min_endstop | can be used on delta without min endstops |
-| P2.0 | | | | alpha_step_pin | |
-| P2.1 | | | | beta_step_pin | |
-| P2.2 | | | | gamma_step_pin | |
-| P2.3 | `available` | | | delta_step_pin | |
-| P2.4 | | | | psu.output_pin | |
-| P2.5 | | | | bed.heater_pin | |
-| P3.25 | `available` | `available` | `available` | | used for encoder pin for all panels |
-| P3.26 | `available` | `available` | `available` | | used for encoder pin for all panels |
+| <raw>P1.18</raw> | <setting v1="leds_disable"></setting> | <setting v1="leds_disable"></setting> | <setting v1="leds_disable"></setting> | <raw>led1</raw> | set <setting v1="leds_disable"></setting> in config to use it |
+| <raw>P1.20</raw> | <setting v1="leds_disable"></setting> | <setting v1="leds_disable"></setting> | <setting v1="leds_disable"></setting> | <raw>led3</raw> | set <setting v1="leds_disable"></setting> in config to use it |
+| <raw>P1.21</raw> | <setting v1="leds_disable"></setting> | <setting v1="leds_disable"></setting> | <setting v1="leds_disable"></setting> | <raw>led4</raw> | set <setting v1="leds_disable"></setting> in config to use it |
+| <raw>P1.23</raw> | <raw>available</raw> | <raw>available</raw> | | <raw>3rd large fet</raw> | |
+| <raw>P1.24</raw> | | | | <setting v1="alpha_min_endstop"></setting> | can be used on delta without min endstops |
+| <raw>P1.26</raw> | | | | <setting v1="beta_min_endstop"></setting> | can be used on delta without min endstops |
+| <raw>P2.0</raw> | | | | <setting v1="alpha_step_pin"></setting> | |
+| <raw>P2.1</raw> | | | | <setting v1="beta_step_pin"></setting> | |
+| <raw>P2.2</raw> | | | | <setting v1="gamma_step_pin"></setting> | |
+| <raw>P2.3</raw> | <raw>available</raw> | | | <setting v1="delta_step_pin"></setting> | |
+| <raw>P2.4</raw> | | | | <setting v1="switch.psu.output_pin"></setting> | |
+| <raw>P2.5</raw> | | | | <setting v1="temperature_control.bed.heater_pin"></setting> | |
+| <raw>P3.25</raw> | <raw>available</raw> | <raw>available</raw> | <raw>available</raw> | | used for encoder pin for all panels |
+| <raw>P3.26</raw> | <raw>available</raw> | <raw>available</raw> | <raw>available</raw> | | used for encoder pin for all panels |
 
 ## Summary by Board Version
 
@@ -42,7 +42,7 @@ Depending on the configuration:
 {::nomarkdown}
 <div style="text-align: center; margin: 2rem 0;">
   <a href="https://github.com/Bouni/smoothieboard-graphics/blob/master/smoothieboard-wiring.png?raw=true">
-    <img src="https://github.com/Bouni/smoothieboard-graphics/blob/master/smoothieboard-wiring.png?raw=true" alt="Smoothie Wiring Diagram" style="min-width: 640px; width: 80%; height: auto;"/>
+    <img src="https://github.com/Bouni/smoothieboard-graphics/blob/master/smoothieboard-wiring.png?raw=true" alt="Smoothie Wiring Diagram" style="min-width: 640px; width: 80%; height: auto; background-color: #f8f8f8;"/>
   </a>
 </div>
 {:/nomarkdown}

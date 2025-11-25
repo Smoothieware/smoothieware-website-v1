@@ -163,9 +163,49 @@ In my experience, going over 230400 doesn't really give you anything except the 
 
 Stick with 115,200 or 230,400 as UART speeds - this is set in the config file:
 
+{::nomarkdown}
+<review id="bluetooth-serial:uart-config">
+<proposal>
+{:/nomarkdown}
+
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
+
 ```cpp
 # Serial communications configuration ( transmission rate default to 9600 if undefined )
 uart0.baud_rate  115200   # Baud rate for the default hardware serial port
 ```
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+```ini
+[uart]
+baud_rate = 115200   # Baud rate for the default hardware serial port
+```
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
+
+{::nomarkdown}
+</proposal>
+<original>
+{:/nomarkdown}
+
+```cpp
+# Serial communications configuration ( transmission rate default to 9600 if undefined )
+uart0.baud_rate  115200   # Baud rate for the default hardware serial port
+```
+
+{::nomarkdown}
+</original>
+</review>
+{:/nomarkdown}
 
 It may be that you are able to perform the Bluetooth AT command setting using the SmoothieBoard itself, but I haven't investigated that method. If you have a spare FTDI USB-to-UART module, you can connect that directly to the Bluetooth module and program it using a terminal app.

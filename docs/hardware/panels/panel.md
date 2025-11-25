@@ -35,8 +35,6 @@ Supported SPI chips:-  ST7565, ST7920, SSD1306
 
 Here are all the configuration options available for the Panel module :
 
-| Option | Example value | Explanation |
-| ------ | ------------- | ----------- |
 {% include hardware/panels/panel-options-for-include.md %}
 
 ### Custom menu entries

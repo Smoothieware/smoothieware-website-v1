@@ -150,6 +150,95 @@ It would not make sense to enable for sliders or knobs, since the knob doesn't h
 ### Jogging 
 <a name='Jogging'></a>
 
+{::nomarkdown}
+<review id="joystick:jogging-config">
+<proposal>
+{:/nomarkdown}
+
+To use the joystick for jogging, configure two different modules with two different names. For example, one module will be called "horizontal" and the other "vertical". An example config file for the joystick is shown below:
+
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
+
+```
+# joystick-2D.config
+joystick.horizontal.enable                     true              # enable the horizontal axis joystick
+joystick.horizontal.pin                        1.30              # use pin 1.30 connected to potentiometer wiper
+joystick.horizontal.endpoint                   3.20              # 3.2 V maps to +1 in joystick reading
+joystick.horizontal.auto_zero                  true              # automatically determine the zero point
+joystick.horizontal.startup_time               1000              # take readings for 1 second at startup to get auto-zero point
+joystick.horizontal.refresh_rate               100               # update the joystick position 100 times per second
+joystick.horizontal.start_value                0                 # when auto-zeroing, force joystick output to be 0
+
+joystick.vertical.enable                       true              # enable the vertical axis joystick
+joystick.vertical.pin                          1.31
+joystick.vertical.endpoint                     3.20
+joystick.vertical.auto_zero                    true
+joystick.vertical.startup_time                 1000
+joystick.vertical.refresh_rate                 100
+joystick.vertical.start_value                  0
+```
+
+With the joystick configuration done, you will simply need to configure the [Jogger](jogger). The only pertinent config for the joystick/jogger connection is setting the data_source configs for the Jogger (like <setting v1="jogger.data_source_alpha"></setting>). An example of those options is shown below:
+
+```
+# Jogger Configuration
+jogger.enable                                  true
+jogger.data_source_alpha                       horizontal
+jogger.data_source_beta                        vertical
+```
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+<sl-alert variant="warning" open>
+  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+  <strong>Note:</strong> The Joystick module has not yet been ported to Smoothieware v2. This functionality may be added in a future release. Check the <a href="https://github.com/Smoothieware/SmoothieV2">SmoothieV2 repository</a> for updates.
+</sl-alert>
+
+When available, the v2 configuration would likely follow this format:
+
+```ini
+# joystick-2D.ini
+[joystick.horizontal]
+enable = true              # enable the horizontal axis joystick
+pin = 1.30                 # use pin 1.30 connected to potentiometer wiper
+endpoint = 3.20            # 3.2 V maps to +1 in joystick reading
+auto_zero = true           # automatically determine the zero point
+startup_time = 1000        # take readings for 1 second at startup to get auto-zero point
+refresh_rate = 100         # update the joystick position 100 times per second
+start_value = 0            # when auto-zeroing, force joystick output to be 0
+
+[joystick.vertical]
+enable = true
+pin = 1.31
+endpoint = 3.20
+auto_zero = true
+startup_time = 1000
+refresh_rate = 100
+start_value = 0
+
+# Jogger Configuration
+[jogger]
+enable = true
+data_source_alpha = horizontal
+data_source_beta = vertical
+```
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
+
+{::nomarkdown}
+</proposal>
+<original>
+{:/nomarkdown}
+
 To use the joystick for jogging, configure two different modules with two different names. For example, one module will be called "horizontal" and the other "vertical". An example config file for the joystick is shown below:
 
 ```markdown
@@ -180,12 +269,94 @@ jogger.data_source_alpha                       horizontal
 jogger.data_source_beta                        vertical
 ```
 
+{::nomarkdown}
+</original>
+</review>
+{:/nomarkdown}
+
 These options tell the jogger the names of the joystick modules to read when jogging.
 
 <sl-alert variant="success" open>
   <sl-icon slot="icon" name="check-circle"></sl-icon>
   You're all set! For more jogging configuration options, see <a href="jogger">Jogger</a>.
 </sl-alert>
+
+{::nomarkdown}
+<review id="joystick:fro-config">
+<proposal>
+{:/nomarkdown}
+
+### Feed Rate Override
+<a name='fro'></a>
+
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
+
+<sl-alert variant="warning" open>
+  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+  <strong>Note:</strong> No feed rate override has been implemented in smoothie yet. The following example is purely hypothetical.
+</sl-alert>
+
+To use the joystick to override your machine's feed rate (to go faster or slower while cutting/printing), set up a single joystick axis. An example snippet of the configuration file is shown below:
+
+```
+# feedrate-override.config
+joystick.fro.enable                            true              # enable the feed-rate override joystick
+joystick.fro.pin                               1.30              # use pin 1.30 connected to potentiometer wiper
+joystick.fro.endpoint                          3.20              # 3.2 V maps to +1 in joystick reading
+joystick.fro.zero_offset                       0                 # 0 V maps to 0 in joystick reading
+joystick.fro.refresh_rate                      100               # update the joystick position 100 times per second
+```
+
+With the joystick properly configured, you will simply need to tell the Feed Rate Override module (doesn't exist yet) which joystick to read:
+
+```
+# Feed Rate Override Configuration
+feedoverride.data_source                       fro
+```
+
+<sl-alert variant="success" open>
+  <sl-icon slot="icon" name="check-circle"></sl-icon>
+  You're all set! For more feed-rate override configuration options, see <a href="feed-rate-override">Feed Rate Override</a>.
+</sl-alert>
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+<sl-alert variant="warning" open>
+  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+  <strong>Note:</strong> The Joystick module and Feed Rate Override functionality have not yet been ported to Smoothieware v2.
+</sl-alert>
+
+When available, the v2 configuration would likely follow this format:
+
+```ini
+# feedrate-override.ini
+[joystick.fro]
+enable = true              # enable the feed-rate override joystick
+pin = 1.30                 # use pin 1.30 connected to potentiometer wiper
+endpoint = 3.20            # 3.2 V maps to +1 in joystick reading
+zero_offset = 0            # 0 V maps to 0 in joystick reading
+refresh_rate = 100         # update the joystick position 100 times per second
+
+# Feed Rate Override Configuration
+[feedoverride]
+data_source = fro
+```
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
+
+{::nomarkdown}
+</proposal>
+<original>
+{:/nomarkdown}
 
 ### Feed Rate Override
 <a name='fro'></a>
@@ -217,6 +388,11 @@ feedoverride.data_source                       fro
   <sl-icon slot="icon" name="check-circle"></sl-icon>
   You're all set! For more feed-rate override configuration options, see <a href="feed-rate-override">Feed Rate Override</a>.
 </sl-alert>
+
+{::nomarkdown}
+</original>
+</review>
+{:/nomarkdown}
 
 ## Developer Documentation
 For information on how to write your own module which uses a joystick, see the [joystick developer documentation](joystick-dev).

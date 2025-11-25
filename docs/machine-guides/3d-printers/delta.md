@@ -133,15 +133,15 @@ Here is a generic delta homing configuration:
 endstops_enable                              false            # The endstop module is enabled by default and can be disabled here
 delta_homing                                 true             # Forces all three axis to home at the same time regardless of what is specified in G28
 alpha_min_endstop                            nc               # Pin to read min endstop, add a ! to invert if endstop is NO connected to ground
-alpha_max_endstop                            {::nomarkdown}<pin>1.25</pin>{:/nomarkdown}^            # Pin to read max endstop, uncomment this and comment the above if using max endstops
+alpha_max_endstop                            1.25^            # Pin to read max endstop, uncomment this and comment the above if using max endstops
 alpha_homing_direction                       home_to_max      # Or set to home_to_max and set alpha_max and uncomment the alpha_max_endstop
 alpha_max                                    0                # This gets loaded as the current position after homing when home_to_max is set
 beta_min_endstop                             nc               # Pin to read min endstop, add a ! to invert if endstop is NO connected to ground
-beta_max_endstop                             {::nomarkdown}<pin>1.27</pin>{:/nomarkdown}^            # Pin to read max endstop, uncomment this and comment the above if using max endstops
+beta_max_endstop                             1.27^            # Pin to read max endstop, uncomment this and comment the above if using max endstops
 beta_homing_direction                        home_to_max      # Or set to home_to_max and set alpha_max and uncomment the alpha_max_endstop
 beta_max                                     0                # This gets loaded as the current position after homing when home_to_max is set
 gamma_min_endstop                            nc               # Pin to read min endstop, add a ! to invert if endstop is NO connected to ground
-gamma_max_endstop                            {::nomarkdown}<pin>1.29</pin>{:/nomarkdown}^            # Pin to read max endstop, uncomment this and comment the above if using max endstops
+gamma_max_endstop                            1.29^            # Pin to read max endstop, uncomment this and comment the above if using max endstops
 gamma_homing_direction                       home_to_max      # Or set to home_to_max and set alpha_max and uncomment the alpha_max_endstop
 gamma_max                                    300              # This gets loaded as the current position after homing when home_to_max is set
 

@@ -14,7 +14,7 @@ This page shows the pinout diagrams for the Smoothieboard.
 {::nomarkdown}
 <div style="text-align:center;margin:20px 0;">
   <a href="https://raw.githubusercontent.com/Bouni/smoothieboard-graphics/master/smoothieboard-wiring.png" target="_blank">
-    <img src="https://github.com/Bouni/smoothieboard-graphics/blob/master/smoothieboard-wiring.png?raw=true" alt="Smoothieboard Wiring" style="min-width:640px;max-width:100%;height:auto;"/>
+    <img src="https://github.com/Bouni/smoothieboard-graphics/blob/master/smoothieboard-wiring.png?raw=true" alt="Smoothieboard Wiring" style="min-width:640px;max-width:100%;height:auto;background-color:#f8f8f8;"/>
   </a>
   <p><em>Smoothieboard wiring diagram - click to enlarge</em></p>
 </div>
@@ -27,7 +27,7 @@ This page shows the pinout diagrams for the Smoothieboard.
 {::nomarkdown}
 <div style="text-align:center;margin:20px 0;">
   <a href="https://github.com/Bouni/smoothieboard-graphics/blob/master/smoothieboard-pin-capabilities.png?raw=true" target="_blank">
-    <img src="https://github.com/Bouni/smoothieboard-graphics/blob/master/smoothieboard-pin-capabilities.png?raw=true" alt="Smoothieboard Pin Capabilities" style="min-width:640px;max-width:100%;height:auto;"/>
+    <img src="https://github.com/Bouni/smoothieboard-graphics/blob/master/smoothieboard-pin-capabilities.png?raw=true" alt="Smoothieboard Pin Capabilities" style="min-width:640px;max-width:100%;height:auto;background-color:#f8f8f8;"/>
   </a>
   <p><em>Smoothieboard pin capabilities - click to enlarge</em></p>
 </div>

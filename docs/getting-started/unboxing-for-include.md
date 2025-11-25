@@ -103,7 +103,7 @@ This file uses INI-style sections (e.g., `[actuator]`, `[motion control]`) with 
 
 The file is read when you start or reset your board.
 
-You edit the [configuration](/configuring-smoothie) by editing this file in a [Text Editor](https://wiki.gnome.org/Apps/Gedit), saving it, and resetting the board. V2 configuration is structured differently from V1, so refer to the [V2 configuration guide](/configuration) for proper formatting.
+You edit the [configuration](/configuring-smoothie) by editing this file in a [Text Editor](https://wiki.gnome.org/Apps/Gedit), saving it, and resetting the board. V2 configuration is structured differently from V1, so refer to the [configuration guide](/configuring-smoothie) for proper formatting.
 
 {::nomarkdown}
 </v2>

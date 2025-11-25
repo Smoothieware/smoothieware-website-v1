@@ -94,6 +94,7 @@ table td:nth-child(3) {
 | <gcode>G92.4</gcode> | manually set homing (MCS) for XYZ  | <gcode>G92.4</gcode> X0 Y0 Z0 |
 | <gcode>G94</gcode> | Feedrate mode (motion per minute) - standard modal command for feedrate units (mm/min) | <gcode>G94</gcode> |
 
+{::nomarkdown}
 </proposal>
 <original>
 {:/nomarkdown}

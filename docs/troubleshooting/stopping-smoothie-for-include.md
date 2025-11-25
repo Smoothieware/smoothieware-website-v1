@@ -20,7 +20,7 @@ Understanding these methods is important for safe operation and troubleshooting.
 </tr>
 <tr>
   <td>abort</td>
-  <td>{::nomarkdown}<mcode>M26</mcode>{:/nomarkdown}</td>
+  <td><mcode>M26</mcode></td>
   <td>Stops SDCARD print immediately</td>
   <td>Not affected</td>
   <td>Aborts</td>
@@ -29,16 +29,16 @@ Understanding these methods is important for safe operation and troubleshooting.
 </tr>
 <tr>
   <td>suspend</td>
-  <td>{::nomarkdown}<mcode>M600</mcode>{:/nomarkdown}</td>
+  <td><mcode>M600</mcode></td>
   <td>Stops once queue is empty</td>
   <td>Turned off (if option enabled)</td>
   <td>Paused, can be resumed</td>
-  <td>Yes, with resume or {::nomarkdown}<mcode>M601</mcode>{:/nomarkdown}</td>
+  <td>Yes, with resume or <mcode>M601</mcode></td>
   <td><a href="player">Player</a></td>
 </tr>
 <tr>
   <td>Kill button</td>
-  <td>{::nomarkdown}<mcode>M112</mcode>{:/nomarkdown}</td>
+  <td><mcode>M112</mcode></td>
   <td>Stops instantly (if button), waits for buffer (if host)</td>
   <td>Turned off</td>
   <td>Aborted</td>
@@ -60,7 +60,7 @@ Understanding these methods is important for safe operation and troubleshooting.
 
 ## Detailed Method Descriptions
 
-### Abort Command (abort / {::nomarkdown}<mcode>M26</mcode>{:/nomarkdown})
+### Abort Command (abort / `M26`)
 
 Stops the execution of a file being played from SDCARD.
 
@@ -79,7 +79,7 @@ Stops the execution of a file being played from SDCARD.
 
 ---
 
-### Suspend Command (suspend / {::nomarkdown}<mcode>M600</mcode>{:/nomarkdown})
+### Suspend Command (suspend / `M600`)
 
 Suspends the execution of a file being played from SDCARD or being streamed from a host.
 
@@ -88,7 +88,7 @@ Suspends the execution of a file being played from SDCARD or being streamed from
 - All state is saved
 - Heaters turned off by default (configurable)
 - Jogging and extruding are allowed during suspension
-- Can be resumed with resume or {::nomarkdown}<mcode>M601</mcode>{:/nomarkdown}
+- Can be resumed with resume or `M601`
 
 **Use Case:** Mid-print filament change or filament out detection.
 
@@ -100,17 +100,17 @@ Suspends the execution of a file being played from SDCARD or being streamed from
 
 ---
 
-### Kill Button / {::nomarkdown}<mcode>M112</mcode>{:/nomarkdown}
+### Kill Button / `M112`
 
 Emergency stop that instantly halts all operations.
 
 **Behavior:**
 - **If kill button pressed:** Stops instantly
-- **If {::nomarkdown}<mcode>M112</mcode>{:/nomarkdown} issued from host:** Has to wait for the receive buffer to have room
+- **If `M112` issued from host:** Has to wait for the receive buffer to have room
 - All heaters turned off
 - File playing aborted
 - Position is lost
-- System enters Halt state until {::nomarkdown}<mcode>M999</mcode>{:/nomarkdown} is sent
+- System enters Halt state until `M999` is sent
 
 **Use Case:** Emergency situations requiring immediate stop.
 
@@ -137,7 +137,7 @@ Sends a control character to stop Smoothie instantly.
 - All heaters turned off
 - File playing aborted
 - Position is lost
-- System enters Halt state until {::nomarkdown}<mcode>M999</mcode>{:/nomarkdown} or $X is sent
+- System enters Halt state until `M999` or `$X` is sent
 
 **Use Case:** Emergency stop from terminal/console when streaming G-code.
 
@@ -147,7 +147,7 @@ Sends a control character to stop Smoothie instantly.
 
 ## Halt State
 
-When the kill button is pressed (or there is a temperature fault, {::nomarkdown}<mcode>M112</mcode>{:/nomarkdown} is issued, a limit switch is hit, or other error), the system enters the **Halt state**.
+When the kill button is pressed (or there is a temperature fault, `M112` is issued, a limit switch is hit, or other error), the system enters the **Halt state**.
 
 ### Halt State Behavior
 
@@ -167,7 +167,7 @@ When the kill button is pressed (or there is a temperature fault, {::nomarkdown}
 
 The Halt state can be cleared by:
 
-1. **Issuing {::nomarkdown}<mcode>M999</mcode>{:/nomarkdown}** from the host
+1. **Issuing `M999`** from the host
 2. **Holding the flashing kill button** for 2 seconds
 3. **Using the LCD panel** (if equipped)
 
@@ -188,7 +188,7 @@ The Halt state can be cleared by:
 
 ### For Normal Operation
 
-- Use **suspend/resume** ({::nomarkdown}<mcode>M600</mcode>{:/nomarkdown}/{::nomarkdown}<mcode>M601</mcode>{:/nomarkdown}) for planned interruptions like filament changes
+- Use **suspend/resume** (`M600`/`M601`) for planned interruptions like filament changes
 - Use **abort** when you need to stop quickly but keep heaters on
 
 ### For Emergencies
@@ -198,7 +198,7 @@ The Halt state can be cleared by:
 
 ### Recovery After Emergency Stop
 
-1. Clear the Halt state with {::nomarkdown}<mcode>M999</mcode>{:/nomarkdown}
+1. Clear the Halt state with `M999`
 2. Home all axes before attempting further movement
 3. Check that heaters are at safe temperatures before proceeding
 4. Verify machine state before resuming work

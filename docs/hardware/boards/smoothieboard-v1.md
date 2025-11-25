@@ -192,7 +192,13 @@ As such, most pins are broken out to connectors, and great care is taken to make
 
 See [Pinout](pinout).
 
-![Smoothieboard Wiring](https://github.com/Bouni/smoothieboard-graphics/blob/master/smoothieboard-wiring.png?raw=true)
+{::nomarkdown}
+<div style="text-align: center; margin: 2rem 0;">
+  <a href="https://github.com/Bouni/smoothieboard-graphics/blob/master/smoothieboard-wiring.png?raw=true">
+    <img src="https://github.com/Bouni/smoothieboard-graphics/blob/master/smoothieboard-wiring.png?raw=true" alt="Smoothieboard Wiring" style="min-width: 640px; width: 80%; height: auto; background-color: #f8f8f8;"/>
+  </a>
+</div>
+{:/nomarkdown}
 
 ## Sources
 

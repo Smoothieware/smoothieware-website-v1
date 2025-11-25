@@ -2,6 +2,26 @@
 permalink: /rotatable-cartesian
 ---
 
+{::nomarkdown}
+<versioned>
+<v1>
+{:/nomarkdown}
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+<sl-alert variant="danger" open>
+  <sl-icon slot="icon" name="exclamation-octagon"></sl-icon>
+  <strong>Not Available in v2:</strong> The Rotatable Cartesian arm solution has been removed in Smoothieware v2 and is not available. If you need this functionality, you must use Smoothieware v1 or consider alternative approaches such as rotating your G-code coordinates before sending them to the machine.
+</sl-alert>
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
+
 # Rotatable Cartesian Arm Solution
 
 {::nomarkdown}
@@ -55,6 +75,11 @@ Rotatable Cartesian is useful in specific scenarios:
 
 ## Configuration
 
+{::nomarkdown}
+<versioned>
+<v1>
+{:/nomarkdown}
+
 To configure your machine to use the Rotatable Cartesian arm solution, add this to your configuration file:
 
 ```
@@ -104,6 +129,23 @@ gamma_steps_per_mm                           400
 gamma_max_rate                               6000
 ```
 
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+{::nomarkdown}
+<sl-alert variant="warning" open>
+  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+  <strong>v1 Only:</strong> This configuration section applies only to Smoothieware v1. The Rotatable Cartesian arm solution is not available in v2. Please see the <a href="#migration-to-smoothieware-v2">Migration to Smoothieware v2</a> section for alternatives.
+</sl-alert>
+{:/nomarkdown}
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
+
 ## Understanding the Rotation
 
 ### Example: 45-Degree Rotation
@@ -134,6 +176,11 @@ Rotated Cartesian (alpha_angle = 45):
 
 ## Common Use Cases
 
+{::nomarkdown}
+<versioned>
+<v1>
+{:/nomarkdown}
+
 ### Case 1: Machine Built at an Angle
 
 Your machine frame was built with the gantry at 15° to your work table:
@@ -162,6 +209,23 @@ Your machine has a 2° misalignment that's difficult to correct mechanically:
 arm_solution rotatable_cartesian
 alpha_angle  2.0    # Small correction angle
 ```
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+{::nomarkdown}
+<sl-alert variant="warning" open>
+  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+  <strong>v1 Only:</strong> These configuration examples apply only to Smoothieware v1. For v2 alternatives, see the <a href="#migration-to-smoothieware-v2">Migration to Smoothieware v2</a> section.
+</sl-alert>
+{:/nomarkdown}
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
 
 ## Migration to Smoothieware v2
 

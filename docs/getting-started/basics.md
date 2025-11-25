@@ -325,19 +325,72 @@ For developers: see [Module Example](moduleexample) and [List of Events](listofe
 Because of this modular design:
 
 **Each module has its own config section**:
+
+{::nomarkdown}
+<review id="basics:module-config-section">
+<proposal>
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
+
 ```
 # Extruder module configuration
-<setting v1="extruder.hotend.enable" v2="extruder.hotend.enable"></setting>           true
-<setting v1="extruder.hotend.steps_per_mm" v2="extruder.hotend.steps_per_mm"></setting>     140
+extruder.hotend.enable                      true
+extruder.hotend.steps_per_mm                140
 
 # Temperature control module configuration
 temperature_control.hotend.enable           true
-<setting v1="temperature_control.hotend.thermistor_pin" v2="thermistor_pin"></setting>   <pin>0.23</pin>
+temperature_control.hotend.thermistor_pin   0.23
 
 # Switch module configuration
-switch.fan.enable               true
-switch.fan.input_pin            <pin>2.6</pin>
+switch.fan.enable                           true
+switch.fan.input_pin                        2.6
 ```
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+```
+# Extruder module configuration
+extruder.hotend.enable                      true
+extruder.hotend.steps_per_mm                140
+
+# Temperature control module configuration
+temperature_control.hotend.enable           true
+temperature_control.hotend.thermistor_pin   0.23
+
+# Switch module configuration
+switch.fan.enable                           true
+switch.fan.input_pin                        2.6
+```
+
+{::nomarkdown}
+</v2>
+</versioned>
+</proposal>
+<original>
+{:/nomarkdown}
+
+```
+# Extruder module configuration
+extruder.hotend.enable                      true
+extruder.hotend.steps_per_mm                140
+
+# Temperature control module configuration
+temperature_control.hotend.enable           true
+temperature_control.hotend.thermistor_pin   0.23
+
+# Switch module configuration
+switch.fan.enable                           true
+switch.fan.input_pin                        2.6
+```
+
+{::nomarkdown}
+</original>
+</review>
+{:/nomarkdown}
 
 **You only configure modules you're using**:
 - 3D printer? Enable extruder and temperature control
@@ -390,30 +443,98 @@ alpha_steps_per_mm   80       # Steps per mm for X axis (alpha)
 
 The config file is organized by module:
 
+{::nomarkdown}
+<review id="basics:config-organization">
+<proposal>
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
+
 ```
 # Motion Control Module
-<setting v1="default_feed_rate" v2="motion control.default_feed_rate"></setting>              4000
-default_seek_rate              4000
-<setting v1="acceleration" v2="motion control.default_acceleration"></setting>                   3000
-<setting v1="junction_deviation" v2="planner.junction_deviation"></setting>             0.05
+default_feed_rate                           4000
+default_seek_rate                           4000
+acceleration                                3000
+junction_deviation                          0.05
 
 # Stepper Motor Module
-<setting v1="alpha_steps_per_mm" v2="actuator.x.steps_per_mm"></setting>             80
-<setting v1="beta_steps_per_mm" v2="actuator.y.steps_per_mm"></setting>              80
-<setting v1="gamma_steps_per_mm" v2="actuator.z.steps_per_mm"></setting>             2560
+alpha_steps_per_mm                          80
+beta_steps_per_mm                           80
+gamma_steps_per_mm                          2560
 
 # Extruder Module
-<setting v1="extruder.hotend.enable" v2="extruder.hotend.enable"></setting>         true
-<setting v1="extruder.hotend.steps_per_mm" v2="extruder.hotend.steps_per_mm"></setting>   140
-<setting v1="extruder.hotend.max_speed" v2="motion control.max_speed"></setting>      50
+extruder.hotend.enable                      true
+extruder.hotend.steps_per_mm                140
+extruder.hotend.max_speed                   50
 
 # Temperature Control Module
 temperature_control.hotend.enable           true
-{::nomarkdown}
-<setting v1="temperature_control.hotend.thermistor_pin" v2="thermistor_pin"></setting>   <pin>0.23</pin>
-<setting v1="temperature_control.hotend.heater_pin" v2="heater_pin"></setting>       <pin>2.7</pin>
-{:/nomarkdown}
+temperature_control.hotend.thermistor_pin   0.23
+temperature_control.hotend.heater_pin       2.7
 ```
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+```
+# Motion Control Module
+motion control.default_feed_rate            4000
+motion control.default_seek_rate            4000
+motion control.default_acceleration         3000
+planner.junction_deviation                  0.05
+
+# Stepper Motor Module
+actuator.x.steps_per_mm                     80
+actuator.y.steps_per_mm                     80
+actuator.z.steps_per_mm                     2560
+
+# Extruder Module
+extruder.hotend.enable                      true
+extruder.hotend.steps_per_mm                140
+motion control.max_speed                    50
+
+# Temperature Control Module
+temperature_control.hotend.enable           true
+temperature_control.hotend.thermistor_pin   0.23
+temperature_control.hotend.heater_pin       2.7
+```
+
+{::nomarkdown}
+</v2>
+</versioned>
+</proposal>
+<original>
+{:/nomarkdown}
+
+```
+# Motion Control Module
+default_feed_rate                           4000
+default_seek_rate                           4000
+acceleration                                3000
+junction_deviation                          0.05
+
+# Stepper Motor Module
+alpha_steps_per_mm                          80
+beta_steps_per_mm                           80
+gamma_steps_per_mm                          2560
+
+# Extruder Module
+extruder.hotend.enable                      true
+extruder.hotend.steps_per_mm                140
+extruder.hotend.max_speed                   50
+
+# Temperature Control Module
+temperature_control.hotend.enable           true
+temperature_control.hotend.thermistor_pin   0.23
+temperature_control.hotend.heater_pin       2.7
+```
+
+{::nomarkdown}
+</original>
+</review>
+{:/nomarkdown}
 
 Each section configures a specific module. This matches the module architecture described above.
 
@@ -774,10 +895,8 @@ Let's clear up some common confusion:
 
 ### About G-code and communication
 
-{::nomarkdown}
 **❌ "'ok' means the command finished executing"**
-✅ Wrong. "ok" means "received and queued". Use <mcode>M400</mcode> to wait for actual completion.
-{:/nomarkdown}
+✅ Wrong. "ok" means "received and queued". Use {::nomarkdown}<mcode>M400</mcode>{:/nomarkdown} to wait for actual completion.
 
 **❌ "I can edit config while the machine is running"**
 ✅ Wrong. Config changes require board reset. Use M-codes ({::nomarkdown}<mcode>M92</mcode>{:/nomarkdown}, {::nomarkdown}<mcode>M203</mcode>{:/nomarkdown}, etc.) for runtime changes, save with {::nomarkdown}<mcode>M500</mcode>{:/nomarkdown} if desired.

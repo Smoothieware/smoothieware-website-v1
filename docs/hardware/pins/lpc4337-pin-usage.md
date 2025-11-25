@@ -4,7 +4,16 @@ permalink: /lpc4337-pin-usage
 
 # LPC4337 Pin Usage
 
-This page documents the pin assignments for the LPC4337 microcontroller used in Smoothie v2 prototypes.
+{::nomarkdown}
+<sl-alert variant="warning" open>
+  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+  <strong>Outdated Design</strong>
+  <br><br>
+  This page documents an early Smoothie v2 prototype design that used the LPC4337 microcontroller. This design has been superseded - <strong>Smoothie v2 boards now use the STM32H7 microcontroller</strong>. This page is kept for historical reference only.
+</sl-alert>
+{:/nomarkdown}
+
+This page documents the pin assignments for the LPC4337 microcontroller used in early Smoothie v2 prototypes.
 
 The table below shows how each ARM pin is mapped to GPIO pins and their usage in different board versions.
 
@@ -13,7 +22,7 @@ The table below shows how each ARM pin is mapped to GPIO pins and their usage in
   <sl-icon slot="icon" name="info-circle"></sl-icon>
   <strong>For Smoothie v1 Users</strong>
   <br><br>
-  This page is specifically for Smoothie v2 development. If you're using Smoothie v1 with the LPC1769, see the <a href="lpc1769-pin-usage">LPC1769 Pin Usage</a> page instead.
+  If you're using Smoothie v1 with the LPC1769, see the <a href="lpc1769-pin-usage">LPC1769 Pin Usage</a> page instead.
 </sl-alert>
 {:/nomarkdown}
 

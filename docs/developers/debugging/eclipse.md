@@ -51,9 +51,6 @@ The Eclipse setup described on this page will **not work** for V2 development. R
 {::nomarkdown}
 </v2>
 </versioned>
-{:/nomarkdown}
-
-{::nomarkdown}
 </proposal>
 <original>
 {:/nomarkdown}
@@ -198,7 +195,7 @@ You now have a new created project named like the **project directory** in the l
 - To clean select **Project->Clean..:** from the main menu. Make your selection and click ok.
   - The **Console** should should show:
 ```plaintext
-<Time> **** Clean-only build of configuration Debug for project Smoothie ****
+[Time] **** Clean-only build of configuration Debug for project Smoothie ****
 make clean 
 Cleaning mbed
 make[1]: Betrete Verzeichnis '/home/stth/daten/programmieren/eclipse_smt/Smoothie/mbed'
@@ -208,12 +205,12 @@ Cleaning up all build generated files
 make[2]: Verlasse Verzeichnis '/home/stth/daten/programmieren/eclipse_smt/Smoothie/src'
 make[1]: Verlasse Verzeichnis '/home/stth/daten/programmieren/eclipse_smt/Smoothie/src'
 
-<Time> Build Finished (took 416ms)
+[Time] Build Finished (took 416ms)
 ```
 - Click on the hammer icon in the main tool bar
   - the **Console** view should show:
 ```plaintext
-<Time> **** Build of configuration Debug for project Smoothie ****
+[Time] **** Build of configuration Debug for project Smoothie ****
 make all 
 make[1]: Betrete Verzeichnis '/home/stth/daten/programmieren/eclipse_smt/Smoothie/mbed'
 Building src
@@ -230,7 +227,7 @@ Extracting disassembly to ../LPC1768/main.disasm
 make[2]: Verlasse Verzeichnis '/home/stth/daten/programmieren/eclipse_smt/Smoothie/src'
 make[1]: Verlasse Verzeichnis '/home/stth/daten/programmieren/eclipse_smt/Smoothie/src'
 
-<Time> Build Finished (took 1m:16s.206ms)
+[Time] Build Finished (took 1m:16s.206ms)
 ```
 
 **If you get many error markers when you open a file even when the project builds without complaints, try this:**

@@ -51,6 +51,55 @@ Once that is done (and only once that is done), you need to do the same process,
 make
 ```
 
+{::nomarkdown}
+<review id="6axis:compilation">
+<proposal>
+{:/nomarkdown}
+
+You now do:
+
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
+
+**V1 Compilation:**
+
+```bash
+make clean
+make AXIS=6 CNC=1
+```
+
+You can change this number to 5 or 4 if you do not need all 6 axes.
+
+It saves memory and allows you to use more of it for other things.
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+**V2 Compilation:**
+
+SmoothieV2 has native support for up to 6 axes without special compilation flags. The build system is different from V1:
+
+```bash
+# V2 uses rake instead of make
+rake build
+```
+
+Multi-axis support is built-in by default. Check the [SmoothieV2 repository](https://github.com/Smoothieware/SmoothieV2) for the latest build instructions.
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
+
+{::nomarkdown}
+</proposal>
+<original>
+{:/nomarkdown}
+
 You now do:
 
 ```bash
@@ -61,6 +110,11 @@ make AXIS=6 CNC=1
 You can change this number to 5 or 4 if you do not need all 6 axes.
 
 It saves memory and allows you to use more of it for other things.
+
+{::nomarkdown}
+</original>
+</review>
+{:/nomarkdown}
 
 ### Primary Axis Configuration
 
@@ -243,6 +297,127 @@ Optionally if you are using endstops on the A, B, or C axis, you need to **repla
 
 **NOTE** The ABC axis will always home after the XYZ axis home and will home individually, unless `homing_order` is defined in which case all axes will home individually in the order specified.
 
+{::nomarkdown}
+<review id="6axis:endstops">
+<proposal>
+{:/nomarkdown}
+
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
+
+**V1 Endstop Configuration:**
+
+```plaintext
+## Endstops new syntax (the name is not significant)
+# NOTE only a min or a max homing endstop may be defined
+endstop.minx.enable                          true             # enable an endstop
+endstop.minx.pin                             1.24             # pin
+endstop.minx.homing_direction                home_to_min      # direction it moves to the endstop
+endstop.minx.homing_position                 0                # the cartesian coordinate this is set to when it homes
+endstop.minx.axis                            X                # the axis designator
+endstop.minx.max_travel                      500              # the maximum travel in mm before it times out
+endstop.minx.fast_rate                       50               # fast homing rate in mm/sec
+endstop.minx.slow_rate                       25               # slow homing rate in mm/sec
+endstop.minx.retract                         5                # bounce off endstop in mm
+
+# ... (similar configuration for other axes) ...
+
+# For ABC axes, use the same syntax:
+endstop.mina.enable                          true
+endstop.mina.pin                             x.xx
+endstop.mina.homing_direction                home_to_min
+endstop.mina.homing_position                 0
+endstop.mina.axis                            A
+endstop.mina.max_travel                      360              # degrees for rotary axis
+endstop.mina.fast_rate                       50
+endstop.mina.slow_rate                       25
+endstop.mina.retract                         5
+
+# type of machine
+# corexy_homing                               false            # set to true if homing on an hbot or corexy
+
+# optional order in which axis will home, default is they all home at the same time,
+# if this is set it will force each axis to home one at a time in the specified order
+# homing_order                                 XYZ              # x axis followed by y then z last
+# move_to_origin_after_home                    false            # move XY to 0,0 after homing
+# endstop_debounce_count                       100              # uncomment if you get noise on your endstops, default is 100
+# endstop_debounce_ms                          0                # uncomment if you get noise on your endstops, default is 0 millisecond debounce
+# home_z_first true # uncomment and set to true to home the Z first, otherwise Z homes after XY
+```
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+**V2 Endstop Configuration:**
+
+```ini
+[endstops]
+common.debounce_ms = 0
+
+minx.enable = true
+minx.pin = 1.24
+minx.homing_direction = home_to_min
+minx.homing_position = 0
+minx.axis = X
+minx.max_travel = 500
+minx.fast_rate = 50
+minx.slow_rate = 25
+minx.retract = 5
+
+# ... (similar configuration for Y and Z axes) ...
+
+# For ABC axes, use the same pattern:
+mina.enable = true
+mina.pin = x.xx
+mina.homing_direction = home_to_min
+mina.homing_position = 0
+mina.axis = A
+mina.max_travel = 360          # degrees for rotary axis
+mina.fast_rate = 50
+mina.slow_rate = 25
+mina.retract = 5
+
+minb.enable = true
+minb.pin = x.xx
+minb.homing_direction = home_to_min
+minb.homing_position = 0
+minb.axis = B
+minb.max_travel = 360
+minb.fast_rate = 50
+minb.slow_rate = 25
+minb.retract = 5
+
+minc.enable = true
+minc.pin = x.xx
+minc.homing_direction = home_to_min
+minc.homing_position = 0
+minc.axis = C
+minc.max_travel = 360
+minc.fast_rate = 50
+minc.slow_rate = 25
+minc.retract = 5
+
+# Optional settings:
+# corexy_homing = false            # set to true if homing on an hbot or corexy
+# homing_order = XYZ               # x axis followed by y then z last
+# move_to_origin_after_home = false
+# home_z_first = true              # uncomment and set to true to home the Z first
+```
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
+
+{::nomarkdown}
+</proposal>
+<original>
+{:/nomarkdown}
+
 ```bash
 ## Endstops new syntax (the name is not significant)
 # NOTE only a min or a max homing endstop may be defined
@@ -269,3 +444,8 @@ endstop.minx.retract                         5                # bounce off endst
 # endstop_debounce_ms                          0                # uncomment if you get noise on your endstops, default is 0 millisecond debounce
 # home_z_first true # uncomment and set to true to home the Z first, otherwise Z homes after XY
 ```
+
+{::nomarkdown}
+</original>
+</review>
+{:/nomarkdown}
