@@ -122,17 +122,30 @@ interface ParsedPin {
 /**
  * Parses a pin text to extract the base pin number and any modifiers
  * Modifiers: ! (invert), o (open-drain), ^ (pull-up), v (pull-down), - (no pull), @ (repeater)
+ *
+ * Supports both V1 and V2 pin formats:
+ * - V1 (LPC1769): digit.digit format, e.g., "1.12", "2.5", "0.26"
+ * - V2 (STM32H7): PXn format, e.g., "PG0", "PA0_C", "PJ12"
  */
 function parse_pin_text(pin_text: string): ParsedPin {
     // Trim whitespace
     const trimmed = pin_text.trim();
 
-    // Regular expression to match pin number (e.g., 1.12, 2.5, 0.26)
+    // Regular expression to match V1 pin format (e.g., 1.12, 2.5, 0.26)
     // Pin format: digit(s).digit(s)
-    const pin_number_regex = /^(\d+\.\d+)/;
+    const v1_pin_regex = /^(\d+\.\d+)/;
 
-    // Extract base pin number
-    const match = trimmed.match(pin_number_regex);
+    // Regular expression to match V2 pin format (e.g., PG0, PA0_C, PJ12)
+    // Pin format: P + port letter (A-K) + pin number (0-15) + optional _C suffix
+    const v2_pin_regex = /^(P[A-K]\d{1,2}(?:_C)?)/i;
+
+    // Try V1 format first
+    let match = trimmed.match(v1_pin_regex);
+
+    // If V1 didn't match, try V2 format
+    if (!match) {
+        match = trimmed.match(v2_pin_regex);
+    }
 
     if (!match) {
         // No valid pin number found, return original text as base
@@ -143,10 +156,11 @@ function parse_pin_text(pin_text: string): ParsedPin {
         };
     }
 
-    const base_pin = match[1];
+    // Normalize V2 pins to uppercase for database lookup
+    const base_pin = match[1].toUpperCase();
 
     // Everything after the base pin number is considered modifiers
-    const modifier_text = trimmed.substring(base_pin.length);
+    const modifier_text = trimmed.substring(match[1].length);
 
     // Valid modifier characters
     const valid_modifiers = ['!', 'o', '^', 'v', '-', '@'];
@@ -260,7 +274,8 @@ async function load_and_compile_templates(): Promise<void> {
 }
 
 /**
- * Loads the pin database from YAML file
+ * Loads the pin databases from both V1 and V2 YAML files
+ * Merges them into a single database for lookups
  */
 async function load_pin_database(): Promise<void> {
     // Prevent duplicate loading
@@ -271,29 +286,49 @@ async function load_pin_database(): Promise<void> {
     is_loading = true;
 
     try {
-        console.log('[pin-tag.ts] Loading pin database from YAML...');
+        console.log('[pin-tag.ts] Loading pin databases from YAML files...');
 
-        // Fetch the YAML file
-        const response = await fetch('/assets/data/smoothieware-v1-pins.yaml');
-        if (!response.ok) {
-            throw new Error(`Failed to fetch pin database: ${response.status} ${response.statusText}`);
-        }
-
-        const yaml_text = await response.text();
-
-        // Parse YAML using js-yaml library
-        const yaml_data = jsyaml.load(yaml_text);
-
-        // Convert to Map for fast lookups
+        // Initialize database
         pin_database = new Map();
 
-        if (yaml_data && yaml_data.pins) {
-            for (const [pin_name, pin_info] of Object.entries(yaml_data.pins)) {
-                pin_database.set(pin_name, pin_info);
+        // Fetch both V1 and V2 YAML files in parallel
+        const [v1_response, v2_response] = await Promise.all([
+            fetch('/assets/data/smoothieware-v1-pins.yaml'),
+            fetch('/assets/data/smoothieware-v2-pins.yaml')
+        ]);
+
+        // Process V1 pins (LPC1769 format: 0.0, 1.12, etc.)
+        if (v1_response.ok) {
+            const v1_yaml_text = await v1_response.text();
+            const v1_data = jsyaml.load(v1_yaml_text) as any;
+
+            if (v1_data && v1_data.pins) {
+                for (const [pin_name, pin_info] of Object.entries(v1_data.pins)) {
+                    pin_database.set(pin_name, pin_info);
+                }
+                console.log(`[pin-tag.ts] Loaded ${Object.keys(v1_data.pins).length} V1 pins`);
             }
+        } else {
+            console.warn(`[pin-tag.ts] Could not load V1 pins: ${v1_response.status}`);
         }
 
-        console.log(`[pin-tag.ts] Loaded ${pin_database.size} pins from database`);
+        // Process V2 pins (STM32 format: PG0, PA0_C, etc.)
+        if (v2_response.ok) {
+            const v2_yaml_text = await v2_response.text();
+            const v2_data = jsyaml.load(v2_yaml_text) as any;
+
+            if (v2_data && v2_data.pins) {
+                for (const [pin_name, pin_info] of Object.entries(v2_data.pins)) {
+                    // Normalize to uppercase for consistent lookups
+                    pin_database.set(pin_name.toUpperCase(), pin_info);
+                }
+                console.log(`[pin-tag.ts] Loaded ${Object.keys(v2_data.pins).length} V2 pins`);
+            }
+        } else {
+            console.warn(`[pin-tag.ts] Could not load V2 pins: ${v2_response.status}`);
+        }
+
+        console.log(`[pin-tag.ts] Total pins in database: ${pin_database.size}`);
 
     } catch (error) {
         console.error('[pin-tag.ts] Error loading pin database:', error);

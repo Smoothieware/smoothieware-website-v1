@@ -49,13 +49,13 @@
 
     <!-- AUTO-GENERATED TYPESCRIPT SCRIPTS START -->
     <script type="module" src="{{ '/assets/js/load-assets.js' | relative_url }}"></script>
-    <script type="module" src="{{ '/assets/js/review-tag.js' | relative_url }}"></script>
     <script type="module" src="{{ '/assets/js/raw-tag.js' | relative_url }}"></script>
     <script type="module" src="{{ '/assets/js/code-tag.js' | relative_url }}"></script>
     <script type="module" src="{{ '/assets/js/setting-tag.js' | relative_url }}"></script>
     <script type="module" src="{{ '/assets/js/version-selector.js' | relative_url }}"></script>
     <script type="module" src="{{ '/assets/js/animate.js' | relative_url }}"></script>
     <script type="module" src="{{ '/assets/js/pin-tag.js' | relative_url }}"></script>
+    <script type="module" src="{{ '/assets/js/review-tag.js' | relative_url }}"></script>
     <script type="module" src="{{ '/assets/js/versioned-tag.js' | relative_url }}"></script>
     <!-- AUTO-GENERATED TYPESCRIPT SCRIPTS END -->
   </head>
@@ -241,6 +241,15 @@
         <div class="markdown-body">
 
           {{ content }}
+
+          <!-- Wiki edit callout -->
+          <div class="wiki-edit-callout" style="margin-top: 3rem;">
+            <sl-alert variant="neutral" open>
+              <sl-icon slot="icon" name="pencil-square"></sl-icon>
+              <strong>This is a wiki!</strong> If you'd like to improve this page, you can
+              <a href="https://github.com/Smoothieware/smoothieware-website-v1/edit/main/docs/{{ page.path }}" target="_blank" rel="noopener">edit it on GitHub</a>.
+            </sl-alert>
+          </div>
 
         </div>
       </section>

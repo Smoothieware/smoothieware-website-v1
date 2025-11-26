@@ -118,6 +118,9 @@
 * [ ] CRITICAL: Merge the http://localhost:4000/debug-settings page with the main page that lists all configuration options.
 * [ ] We have a http://localhost:4000/lpc4337-pin-usage page but no version for the stm32h7, we should create it, especially now that we have the markdown version of the datasheet/user manual of the chip. Still need to extract info from the schematics.
 * [ ] Some pages like http://localhost:4000/pwm-capable deserve to be linked to from more places, we should for EACH page, go over all other pages and find any link that could be made and make it, systematically.
+* [ ] We are creating a v2-schematic.md file that contains the v2 hardware details, we should create new sections/sub-pages that give details about parts of the board, and then include them in specific parts of the site where they are relevant, 
+      and give each a screenshot/part of the schematic images.
+
 
 
 # <setting> tag.

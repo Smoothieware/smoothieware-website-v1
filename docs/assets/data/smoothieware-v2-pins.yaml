@@ -1,0 +1,3029 @@
+# Smoothieware V2 Pin Database
+# Pin information for STM32H745XIHx on Smoothieboard V2 Prime
+# Format: STM32 pin naming (PXn where X = port letter A-K, n = pin number 0-15)
+# Special analog pins end in _C suffix (dedicated ADC inputs)
+
+metadata:
+  version: v2
+  mcu: STM32H745XIHx
+  package: 265-pin BGA
+  board: Smoothieboard V2 Prime (TMC2660 variant)
+  last_updated: '2025-11-26'
+  source: smoothiev2-prime-2660.pdf schematic
+  pin_count: 170  # Complete coverage of all documented GPIO pins
+
+pins:
+  # ============================================================================
+  # Motor Driver Pins
+  # ============================================================================
+  PG0:
+    stm32_pin: PG0
+    bga_position: T8
+    assignment: Motor A Step
+    description: >-
+      TMC2660 Motor A (Alpha/X axis) step pulse input. Each rising edge advances the motor
+      one microstep. Connected to TMC2660 STEP input. Used for primary X-axis stepper motor
+      control in cartesian machines, or alpha axis in delta/corexy configurations.
+    peripheral: TMC2660
+    configurable: true
+    pin_functions:
+      - GPIO
+      - TIM5_CH1
+    electrical_characteristics:
+      voltage_min: 0V
+      voltage_max: 3.3V
+      type: Digital output
+    typical_uses:
+      - Alpha/X axis step signal
+      - Primary motor control
+    config_examples:
+      - 'alpha.step_pin = PG0'
+    supported_modifiers:
+      - '!'
+    hardwired: false
+    pwm_capable: true
+
+  PG1:
+    stm32_pin: PG1
+    bga_position: U8
+    assignment: Motor A Dir
+    description: >-
+      TMC2660 Motor A (Alpha/X axis) direction control. Logic level determines motor rotation
+      direction. Connected to TMC2660 DIR input. Use ! modifier to invert if motor runs
+      backwards.
+    peripheral: TMC2660
+    configurable: true
+    pin_functions:
+      - GPIO
+    electrical_characteristics:
+      voltage_min: 0V
+      voltage_max: 3.3V
+      type: Digital output
+    typical_uses:
+      - Alpha/X axis direction signal
+    config_examples:
+      - 'alpha.dir_pin = PG1'
+      - 'alpha.dir_pin = PG1!'
+    supported_modifiers:
+      - '!'
+    hardwired: false
+    pwm_capable: false
+
+  PJ2:
+    stm32_pin: PJ2
+    bga_position: T6
+    assignment: Motor A CS
+    description: >-
+      TMC2660 Motor A chip select for SPI communication. Active low. Used for configuring
+      motor driver parameters like current, microstepping, StealthChop/SpreadCycle modes.
+    peripheral: TMC2660 SPI
+    configurable: false
+    pin_functions:
+      - GPIO
+      - SPI CS
+    electrical_characteristics:
+      voltage_min: 0V
+      voltage_max: 3.3V
+      type: Digital output (active low)
+    hardwired: true
+    pwm_capable: false
+
+  PF12:
+    stm32_pin: PF12
+    bga_position: R7
+    assignment: Motor B Step
+    description: >-
+      TMC2660 Motor B (Beta/Y axis) step pulse input. Each rising edge advances the motor
+      one microstep. Connected to TMC2660 STEP input.
+    peripheral: TMC2660
+    configurable: true
+    pin_functions:
+      - GPIO
+    typical_uses:
+      - Beta/Y axis step signal
+    config_examples:
+      - 'beta.step_pin = PF12'
+    supported_modifiers:
+      - '!'
+    hardwired: false
+    pwm_capable: false
+
+  PF11:
+    stm32_pin: PF11
+    bga_position: T7
+    assignment: Motor B Dir
+    description: >-
+      TMC2660 Motor B (Beta/Y axis) direction control. Logic level determines motor rotation
+      direction. Connected to TMC2660 DIR input.
+    peripheral: TMC2660
+    configurable: true
+    pin_functions:
+      - GPIO
+    typical_uses:
+      - Beta/Y axis direction signal
+    config_examples:
+      - 'beta.dir_pin = PF11'
+    supported_modifiers:
+      - '!'
+    hardwired: false
+    pwm_capable: false
+
+  PB12:
+    stm32_pin: PB12
+    bga_position: T14
+    assignment: Motor B CS
+    description: >-
+      TMC2660 Motor B chip select for SPI communication. Active low.
+    peripheral: TMC2660 SPI
+    configurable: false
+    hardwired: true
+    pwm_capable: false
+
+  PE14:
+    stm32_pin: PE14
+    bga_position: U10
+    assignment: Motor C Step
+    description: >-
+      TMC2660 Motor C (Gamma/Z axis) step pulse input. Each rising edge advances the motor
+      one microstep. Connected to TMC2660 STEP input.
+    peripheral: TMC2660
+    configurable: true
+    pin_functions:
+      - GPIO
+    typical_uses:
+      - Gamma/Z axis step signal
+    config_examples:
+      - 'gamma.step_pin = PE14'
+    supported_modifiers:
+      - '!'
+    hardwired: false
+    pwm_capable: false
+
+  PE15:
+    stm32_pin: PE15
+    bga_position: R11
+    assignment: Motor C Dir
+    description: >-
+      TMC2660 Motor C (Gamma/Z axis) direction control.
+    peripheral: TMC2660
+    configurable: true
+    typical_uses:
+      - Gamma/Z axis direction signal
+    config_examples:
+      - 'gamma.dir_pin = PE15'
+    supported_modifiers:
+      - '!'
+    hardwired: false
+    pwm_capable: false
+
+  PJ3:
+    stm32_pin: PJ3
+    bga_position: U6
+    assignment: Motor C CS
+    description: >-
+      TMC2660 Motor C chip select for SPI communication. Active low.
+    peripheral: TMC2660 SPI
+    configurable: false
+    hardwired: true
+    pwm_capable: false
+
+  PE10:
+    stm32_pin: PE10
+    bga_position: N9
+    assignment: Motor D Step / Board Detect
+    description: >-
+      TMC2660 Motor D (Delta/Extruder) step pulse input. Also serves as board detection
+      bit 3 at boot time. Each rising edge advances the motor one microstep.
+    peripheral: TMC2660
+    configurable: true
+    pin_functions:
+      - GPIO
+      - Board detect bit 3
+    typical_uses:
+      - Delta/Extruder step signal
+      - Board variant detection
+    config_examples:
+      - 'delta.step_pin = PE10'
+    supported_modifiers:
+      - '!'
+    hardwired: false
+    pwm_capable: false
+
+  PE12:
+    stm32_pin: PE12
+    bga_position: R10
+    assignment: Motor D Dir
+    description: >-
+      TMC2660 Motor D (Delta/Extruder) direction control.
+    peripheral: TMC2660
+    configurable: true
+    pin_functions:
+      - GPIO
+      - TIM1_CH3N
+    typical_uses:
+      - Delta/Extruder direction signal
+    config_examples:
+      - 'delta.dir_pin = PE12'
+    supported_modifiers:
+      - '!'
+    hardwired: false
+    pwm_capable: true
+
+  PJ4:
+    stm32_pin: PJ4
+    bga_position: U7
+    assignment: Motor D CS
+    description: >-
+      TMC2660 Motor D chip select for SPI communication. Active low.
+    peripheral: TMC2660 SPI
+    configurable: false
+    hardwired: true
+    pwm_capable: false
+
+  PH13:
+    stm32_pin: PH13
+    bga_position: D16
+    assignment: Motor Enable
+    description: >-
+      Shared motor enable signal for all TMC2660 drivers. Active low - pull low to enable
+      motors, high to disable. All four motor drivers share this single enable signal.
+      Use open-drain mode for safety (motors disable on MCU reset).
+    peripheral: TMC2660
+    configurable: true
+    pin_functions:
+      - GPIO
+    electrical_characteristics:
+      voltage_min: 0V
+      voltage_max: 3.3V
+      type: Digital output (active low)
+    typical_uses:
+      - Global motor enable/disable
+      - Emergency stop integration
+    config_examples:
+      - 'common.motor_enable_pin = PH13!'
+      - 'alpha.en_pin = PH13!o'
+    supported_modifiers:
+      - '!'
+      - 'o'
+    hardwired: false
+    pwm_capable: false
+
+  # ============================================================================
+  # Motor SPI Bus (Shared)
+  # ============================================================================
+  PD14:
+    stm32_pin: PD14
+    bga_position: P16
+    assignment: Motor SPI MOSI
+    description: >-
+      Shared SPI MOSI (Master Out Slave In) for all TMC2660 motor drivers. Used to send
+      configuration commands and read status from drivers.
+    peripheral: SPI (Motor)
+    configurable: false
+    hardwired: true
+    pwm_capable: false
+
+  PE4:
+    stm32_pin: PE4
+    bga_position: D2
+    assignment: Motor SPI MISO
+    description: >-
+      Shared SPI MISO (Master In Slave Out) for all TMC2660 motor drivers. Used to read
+      driver status and diagnostics.
+    peripheral: SPI (Motor)
+    configurable: false
+    hardwired: true
+    pwm_capable: false
+
+  PI10:
+    stm32_pin: PI10
+    bga_position: F3
+    assignment: Motor SPI SCK
+    description: >-
+      Shared SPI clock for all TMC2660 motor drivers.
+    peripheral: SPI (Motor)
+    configurable: false
+    hardwired: true
+    pwm_capable: false
+
+  # ============================================================================
+  # StallGuard Outputs
+  # ============================================================================
+  PK0:
+    stm32_pin: PK0
+    bga_position: J14
+    assignment: StallGuard A
+    description: >-
+      TMC2660 Motor A StallGuard output. Pulses when motor load exceeds threshold.
+      Used for sensorless homing on X axis.
+    peripheral: TMC2660
+    configurable: true
+    pin_functions:
+      - GPIO
+      - EXTI
+    typical_uses:
+      - Sensorless homing X axis
+      - Motor stall detection
+    config_examples:
+      - 'alpha.stallguard_pin = PK0'
+    hardwired: false
+    pwm_capable: false
+
+  PK1:
+    stm32_pin: PK1
+    bga_position: J15
+    assignment: StallGuard B
+    description: >-
+      TMC2660 Motor B StallGuard output. Used for sensorless homing on Y axis.
+    peripheral: TMC2660
+    configurable: true
+    typical_uses:
+      - Sensorless homing Y axis
+    hardwired: false
+    pwm_capable: false
+
+  PK2:
+    stm32_pin: PK2
+    bga_position: H17
+    assignment: StallGuard C
+    description: >-
+      TMC2660 Motor C StallGuard output. Used for sensorless homing on Z axis.
+    peripheral: TMC2660
+    configurable: true
+    typical_uses:
+      - Sensorless homing Z axis
+    hardwired: false
+    pwm_capable: false
+
+  PK3:
+    stm32_pin: PK3
+    bga_position: C8
+    assignment: StallGuard D
+    description: >-
+      TMC2660 Motor D StallGuard output.
+    peripheral: TMC2660
+    configurable: true
+    hardwired: false
+    pwm_capable: false
+
+  # ============================================================================
+  # Thermistor Inputs (Buffered ADC)
+  # ============================================================================
+  PA0_C:
+    stm32_pin: PA0_C
+    bga_position: T1
+    assignment: Thermistor 1
+    description: >-
+      Buffered thermistor input T1, typically used for hotend temperature sensing.
+      Connected via LMV324 op-amp buffer for noise reduction and protection.
+      ADC1 channel 16 (dedicated analog pin with _C suffix).
+    peripheral: ADC1
+    adc_channel: ADC1_INP16
+    configurable: true
+    pin_functions:
+      - ADC1_INP16
+    electrical_characteristics:
+      voltage_min: 0V
+      voltage_max: 3.3V
+      type: Analog input (buffered)
+      protection: ESD protected, op-amp buffered
+    typical_uses:
+      - Hotend temperature sensing
+      - Heater thermistor input
+    config_examples:
+      - 'temperature_control.hotend.thermistor_pin = PA0_C'
+    hardwired: false
+    pwm_capable: false
+
+  PA1_C:
+    stm32_pin: PA1_C
+    bga_position: T2
+    assignment: Thermistor 2
+    description: >-
+      Buffered thermistor input T2, typically used for heated bed temperature sensing.
+      Connected via LMV324 op-amp buffer. ADC1 channel 17.
+    peripheral: ADC1
+    adc_channel: ADC1_INP17
+    configurable: true
+    pin_functions:
+      - ADC1_INP17
+    electrical_characteristics:
+      voltage_min: 0V
+      voltage_max: 3.3V
+      type: Analog input (buffered)
+    typical_uses:
+      - Heated bed temperature sensing
+    config_examples:
+      - 'temperature_control.bed.thermistor_pin = PA1_C'
+    hardwired: false
+    pwm_capable: false
+
+  PC2_C:
+    stm32_pin: PC2_C
+    bga_position: R1
+    assignment: Thermistor 3
+    description: >-
+      Buffered thermistor input T3, available for second hotend or chamber temperature.
+      Connected via LMV324 op-amp buffer. ADC3 channel 0.
+    peripheral: ADC3
+    adc_channel: ADC3_INP0
+    configurable: true
+    pin_functions:
+      - ADC3_INP0
+    electrical_characteristics:
+      voltage_min: 0V
+      voltage_max: 3.3V
+      type: Analog input (buffered)
+    typical_uses:
+      - Second hotend temperature
+      - Chamber temperature sensing
+    config_examples:
+      - 'temperature_control.hotend2.thermistor_pin = PC2_C'
+    hardwired: false
+    pwm_capable: false
+
+  PC3_C:
+    stm32_pin: PC3_C
+    bga_position: R2
+    assignment: Thermistor 4
+    description: >-
+      Buffered thermistor input T4, available for additional temperature sensing.
+      Connected via LMV324 op-amp buffer. ADC3 channel 1.
+    peripheral: ADC3
+    adc_channel: ADC3_INP1
+    configurable: true
+    pin_functions:
+      - ADC3_INP1
+    electrical_characteristics:
+      voltage_min: 0V
+      voltage_max: 3.3V
+      type: Analog input (buffered)
+    typical_uses:
+      - Additional temperature sensing
+      - Ambient temperature monitoring
+    config_examples:
+      - 'temperature_control.chamber.thermistor_pin = PC3_C'
+    hardwired: false
+    pwm_capable: false
+
+  # ============================================================================
+  # Endstop Inputs
+  # ============================================================================
+  PG10:
+    stm32_pin: PG10
+    bga_position: A9
+    assignment: X Min Endstop
+    description: >-
+      X axis minimum endstop input. Active low by default (triggered when pulled to ground).
+      Buffered and ESD protected. 3.3V logic with optional pull-up/pull-down via JP1.
+    peripheral: Endstop
+    configurable: true
+    pin_functions:
+      - GPIO
+      - EXTI
+    electrical_characteristics:
+      voltage_min: 0V
+      voltage_max: 3.3V
+      type: Digital input (5V tolerant on some STM32)
+      protection: Buffered, ESD protected
+    typical_uses:
+      - X axis homing
+      - X minimum limit switch
+    config_examples:
+      - 'alpha_min_endstop = PG10^'
+      - 'endstop.alpha.limit.pin = PG10^!'
+    supported_modifiers:
+      - '!'
+      - '^'
+      - 'v'
+      - '-'
+    hardwired: false
+    pwm_capable: false
+
+  PG9:
+    stm32_pin: PG9
+    bga_position: A10
+    assignment: X Max Endstop
+    description: >-
+      X axis maximum endstop input. Buffered and ESD protected.
+    peripheral: Endstop
+    configurable: true
+    typical_uses:
+      - X axis maximum limit
+      - Dual endstop configurations
+    config_examples:
+      - 'alpha_max_endstop = PG9^'
+    supported_modifiers:
+      - '!'
+      - '^'
+      - 'v'
+      - '-'
+    hardwired: false
+    pwm_capable: false
+
+  PG11:
+    stm32_pin: PG11
+    bga_position: B9
+    assignment: Y Min Endstop
+    description: >-
+      Y axis minimum endstop input. Buffered and ESD protected.
+    peripheral: Endstop
+    configurable: true
+    typical_uses:
+      - Y axis homing
+    config_examples:
+      - 'beta_min_endstop = PG11^'
+    supported_modifiers:
+      - '!'
+      - '^'
+      - 'v'
+      - '-'
+    hardwired: false
+    pwm_capable: false
+
+  PG12:
+    stm32_pin: PG12
+    bga_position: C9
+    assignment: Y Max Endstop
+    description: >-
+      Y axis maximum endstop input. Buffered and ESD protected.
+    peripheral: Endstop
+    configurable: true
+    typical_uses:
+      - Y axis maximum limit
+    config_examples:
+      - 'beta_max_endstop = PG12^'
+    supported_modifiers:
+      - '!'
+      - '^'
+      - 'v'
+      - '-'
+    hardwired: false
+    pwm_capable: false
+
+  PG13:
+    stm32_pin: PG13
+    bga_position: D9
+    assignment: Z Min Endstop
+    description: >-
+      Z axis minimum endstop input. Often used for bed probing with mechanical switch.
+      Buffered and ESD protected.
+    peripheral: Endstop
+    configurable: true
+    typical_uses:
+      - Z axis homing
+      - Bed leveling probe
+    config_examples:
+      - 'gamma_min_endstop = PG13^'
+    supported_modifiers:
+      - '!'
+      - '^'
+      - 'v'
+      - '-'
+    hardwired: false
+    pwm_capable: false
+
+  PG14:
+    stm32_pin: PG14
+    bga_position: D8
+    assignment: Z Max Endstop
+    description: >-
+      Z axis maximum endstop input. Buffered and ESD protected.
+    peripheral: Endstop
+    configurable: true
+    typical_uses:
+      - Z axis maximum limit
+    config_examples:
+      - 'gamma_max_endstop = PG14^'
+    supported_modifiers:
+      - '!'
+      - '^'
+      - 'v'
+      - '-'
+    hardwired: false
+    pwm_capable: false
+
+  # ============================================================================
+  # Probe Input
+  # ============================================================================
+  PB0:
+    stm32_pin: PB0
+    bga_position: U5
+    assignment: Probe Input
+    description: >-
+      Dedicated probe input via comparator circuit. Supports mechanical probes (0-3.3V),
+      and with JP7 cut, supports higher voltage probes up to 24V (inductive, capacitive).
+      CRITICAL WARNING - JP7 must be cut for >5V probes to prevent board damage.
+    peripheral: Probe
+    configurable: true
+    pin_functions:
+      - GPIO
+      - ADC1_INP9
+      - COMP1_INP
+    electrical_characteristics:
+      voltage_min: 0V
+      voltage_max: 3.3V (default), 24V with JP7 cut
+      type: Analog/Digital input with comparator
+      protection: Comparator circuit, configurable voltage range
+    typical_uses:
+      - BLTouch probe
+      - Inductive probe (Z-probe)
+      - Capacitive probe
+      - Mechanical Z probe
+    config_examples:
+      - 'zprobe.probe_pin = PB0'
+      - 'zprobe.probe_pin = PB0!'
+    supported_modifiers:
+      - '!'
+      - '^'
+    usage_warnings:
+      - JP7 must be CUT for probes >5V input
+      - Default JP7 intact is for <5V operation only
+    hardwired: false
+    pwm_capable: false
+
+  # ============================================================================
+  # MOSFET Outputs (Heaters/Fans)
+  # ============================================================================
+  PJ6:
+    stm32_pin: PJ6
+    bga_position: N15
+    assignment: Hotend A MOSFET
+    description: >-
+      Low-side MOSFET gate for Hotend A heater. PWM capable for PID control.
+      Output buffered via 74HCT541. Subject to highside PFET safety cutoff.
+    peripheral: MOSFET
+    configurable: true
+    pin_functions:
+      - GPIO
+      - PWM
+    electrical_characteristics:
+      voltage_min: 0V
+      voltage_max: 3.3V
+      type: Digital output (buffered)
+      current_rating: ~5A per output
+    typical_uses:
+      - Hotend heater control
+      - PID temperature control
+    config_examples:
+      - 'temperature_control.hotend.heater_pin = PJ6'
+    hardwired: false
+    pwm_capable: true
+
+  PJ7:
+    stm32_pin: PJ7
+    bga_position: N14
+    assignment: Hotend B MOSFET
+    description: >-
+      Low-side MOSFET gate for Hotend B heater. For dual extruder setups.
+      Output buffered via 74HCT541.
+    peripheral: MOSFET
+    configurable: true
+    typical_uses:
+      - Second hotend heater
+    config_examples:
+      - 'temperature_control.hotend2.heater_pin = PJ7'
+    hardwired: false
+    pwm_capable: true
+
+  PJ8:
+    stm32_pin: PJ8
+    bga_position: N13
+    assignment: Fan 1 MOSFET
+    description: >-
+      Low-side MOSFET gate for Fan 1. Typically used for part cooling fan.
+      PWM capable for variable speed control. Buffered via 74HCT541.
+    peripheral: MOSFET
+    configurable: true
+    typical_uses:
+      - Part cooling fan
+      - Print cooling
+    config_examples:
+      - 'switch.fan.output_pin = PJ8'
+    hardwired: false
+    pwm_capable: true
+
+  PJ9:
+    stm32_pin: PJ9
+    bga_position: M14
+    assignment: Fan 2 MOSFET
+    description: >-
+      Low-side MOSFET gate for Fan 2. Can be used for hotend fan or auxiliary.
+      PWM capable. Buffered via 74HCT541.
+    peripheral: MOSFET
+    configurable: true
+    typical_uses:
+      - Hotend cooling fan
+      - Auxiliary fan
+    config_examples:
+      - 'switch.fan2.output_pin = PJ9'
+    hardwired: false
+    pwm_capable: true
+
+  PJ10:
+    stm32_pin: PJ10
+    bga_position: L14
+    assignment: Bed MOSFET
+    description: >-
+      High-current MOSFET gate for heated bed. Uses 2x parallel MOSFETs for ~10-12A
+      capacity. NOT controlled by highside PFET safety (bed stays on independently).
+      PWM capable for PID temperature control.
+    peripheral: MOSFET (High Current)
+    configurable: true
+    pin_functions:
+      - GPIO
+      - PWM
+    electrical_characteristics:
+      voltage_min: 0V
+      voltage_max: 3.3V
+      type: Digital output
+      current_rating: ~10-12A (dual MOSFET)
+    typical_uses:
+      - Heated bed control
+      - High current heating element
+    config_examples:
+      - 'temperature_control.bed.heater_pin = PJ10'
+    hardwired: false
+    pwm_capable: true
+
+  PJ5:
+    stm32_pin: PJ5
+    bga_position: R12
+    assignment: Output Enable
+    description: >-
+      Master output enable for all small FET outputs (not bed). Controls the 74HCT541
+      buffer. When low, all FET outputs are disabled. Safety feature.
+    peripheral: Safety
+    configurable: true
+    typical_uses:
+      - Master FET enable/disable
+      - Safety interlock
+    config_examples:
+      - 'fets_enable_pin = PJ5'
+    hardwired: false
+    pwm_capable: false
+
+  # ============================================================================
+  # SSR Outputs
+  # ============================================================================
+  PC0:
+    stm32_pin: PC0
+    bga_position: L2
+    assignment: SSR1
+    description: >-
+      Solid State Relay output 1. Logic-level output (3.3V) for driving external SSR.
+      Used for high-power AC loads like heated chambers or large heated beds.
+    peripheral: SSR
+    configurable: true
+    typical_uses:
+      - AC heated bed control
+      - Heated chamber
+      - High power loads
+    config_examples:
+      - 'switch.ssr1.output_pin = PC0'
+    hardwired: false
+    pwm_capable: true
+
+  PJ11:
+    stm32_pin: PJ11
+    bga_position: K14
+    assignment: SSR2
+    description: >-
+      Solid State Relay output 2. Logic-level output for driving external SSR.
+    peripheral: SSR
+    configurable: true
+    typical_uses:
+      - Additional SSR control
+    config_examples:
+      - 'switch.ssr2.output_pin = PJ11'
+    hardwired: false
+    pwm_capable: true
+
+  PH2:
+    stm32_pin: PH2
+    bga_position: N2
+    assignment: Extra FET
+    description: >-
+      Extra switched output for auxiliary loads. Can be used for additional fans,
+      LEDs, or other low-current loads.
+    peripheral: MOSFET
+    configurable: true
+    typical_uses:
+      - Auxiliary output
+      - LED control
+      - Extra fan
+    config_examples:
+      - 'switch.extra.output_pin = PH2'
+    hardwired: false
+    pwm_capable: true
+
+  # ============================================================================
+  # Debug LEDs
+  # ============================================================================
+  PJ12:
+    stm32_pin: PJ12
+    bga_position: D11
+    assignment: LED 3
+    description: >-
+      Programmable debug LED 3. Active high.
+    peripheral: LED
+    configurable: true
+    typical_uses:
+      - Status indication
+      - Debug output
+    hardwired: false
+    pwm_capable: false
+
+  PJ13:
+    stm32_pin: PJ13
+    bga_position: E10
+    assignment: LED 2
+    description: >-
+      Programmable debug LED 2. Active high.
+    peripheral: LED
+    configurable: true
+    hardwired: false
+    pwm_capable: false
+
+  PJ14:
+    stm32_pin: PJ14
+    bga_position: D10
+    assignment: LED 1
+    description: >-
+      Programmable debug LED 1. Active high.
+    peripheral: LED
+    configurable: true
+    hardwired: false
+    pwm_capable: false
+
+  PJ15:
+    stm32_pin: PJ15
+    bga_position: B10
+    assignment: LED 4
+    description: >-
+      Programmable debug LED 4. Active high.
+    peripheral: LED
+    configurable: true
+    hardwired: false
+    pwm_capable: false
+
+  PI0:
+    stm32_pin: PI0
+    bga_position: A16
+    assignment: MSD LED
+    description: >-
+      Mass Storage Device mode indicator LED. Lights when USB mass storage is active.
+    peripheral: LED
+    configurable: false
+    hardwired: true
+    pwm_capable: false
+
+  # ============================================================================
+  # USB
+  # ============================================================================
+  PA11:
+    stm32_pin: PA11
+    bga_position: E17
+    assignment: USB Device D-
+    description: >-
+      USB device data minus line. Connected to USB Type-B connector for computer
+      connection. Provides CDC serial and mass storage class.
+    peripheral: USB
+    configurable: false
+    hardwired: true
+    pwm_capable: false
+
+  PA12:
+    stm32_pin: PA12
+    bga_position: E16
+    assignment: USB Device D+
+    description: >-
+      USB device data plus line. Connected to USB Type-B connector.
+    peripheral: USB
+    configurable: false
+    hardwired: true
+    pwm_capable: false
+
+  PB13:
+    stm32_pin: PB13
+    bga_position: U14
+    assignment: USB Host Power
+    description: >-
+      USB host power control. Controls 5V power to USB host port.
+    peripheral: USB Host
+    configurable: true
+    hardwired: false
+    pwm_capable: false
+
+  PB14:
+    stm32_pin: PB14
+    bga_position: U15
+    assignment: USB Host D+
+    description: >-
+      USB host data plus line. For future USB host functionality (flash drives, etc).
+    peripheral: USB Host
+    configurable: false
+    hardwired: true
+    pwm_capable: false
+
+  PB15:
+    stm32_pin: PB15
+    bga_position: T15
+    assignment: USB Host D-
+    description: >-
+      USB host data minus line.
+    peripheral: USB Host
+    configurable: false
+    hardwired: true
+    pwm_capable: false
+
+  # ============================================================================
+  # SD Card (SDIO Interface)
+  # ============================================================================
+  PC8:
+    stm32_pin: PC8
+    bga_position: E13
+    assignment: SD D0
+    description: >-
+      SD card data line 0 (SDIO interface). 4-bit wide data bus for fast SD access.
+      20-50x faster than V1's SPI interface.
+    peripheral: SDMMC
+    configurable: false
+    hardwired: true
+    pwm_capable: false
+
+  PC9:
+    stm32_pin: PC9
+    bga_position: E14
+    assignment: SD D1
+    description: >-
+      SD card data line 1.
+    peripheral: SDMMC
+    configurable: false
+    hardwired: true
+    pwm_capable: false
+
+  PC10:
+    stm32_pin: PC10
+    bga_position: A13
+    assignment: SD D2
+    description: >-
+      SD card data line 2.
+    peripheral: SDMMC
+    configurable: false
+    hardwired: true
+    pwm_capable: false
+
+  PC11:
+    stm32_pin: PC11
+    bga_position: B13
+    assignment: SD D3
+    description: >-
+      SD card data line 3.
+    peripheral: SDMMC
+    configurable: false
+    hardwired: true
+    pwm_capable: false
+
+  PC12:
+    stm32_pin: PC12
+    bga_position: C12
+    assignment: SD Clock
+    description: >-
+      SD card clock signal.
+    peripheral: SDMMC
+    configurable: false
+    hardwired: true
+    pwm_capable: false
+
+  PD2:
+    stm32_pin: PD2
+    bga_position: D12
+    assignment: SD CMD
+    description: >-
+      SD card command/response line.
+    peripheral: SDMMC
+    configurable: false
+    hardwired: true
+    pwm_capable: false
+
+  PG2:
+    stm32_pin: PG2
+    bga_position: H16
+    assignment: Card Detect
+    description: >-
+      SD card detection pin. Low when card inserted.
+    peripheral: SDMMC
+    configurable: false
+    hardwired: true
+    pwm_capable: false
+
+  # ============================================================================
+  # Ethernet
+  # ============================================================================
+  PA1:
+    stm32_pin: PA1
+    bga_position: N4
+    assignment: ETH REFCLK
+    description: >-
+      Ethernet 50MHz reference clock from LAN8720A PHY.
+    peripheral: Ethernet
+    configurable: false
+    hardwired: true
+    pwm_capable: false
+
+  PA2:
+    stm32_pin: PA2
+    bga_position: N3
+    assignment: ETH MDIO
+    description: >-
+      Ethernet management data I/O. Used for PHY configuration.
+    peripheral: Ethernet
+    configurable: false
+    hardwired: true
+    pwm_capable: false
+
+  PC1:
+    stm32_pin: PC1
+    bga_position: M2
+    assignment: ETH MDC
+    description: >-
+      Ethernet management data clock.
+    peripheral: Ethernet
+    configurable: false
+    hardwired: true
+    pwm_capable: false
+
+  PA7:
+    stm32_pin: PA7
+    bga_position: R5
+    assignment: ETH CRS_DV
+    description: >-
+      Ethernet carrier sense / data valid (RMII).
+    peripheral: Ethernet
+    configurable: false
+    hardwired: true
+    pwm_capable: false
+
+  # ============================================================================
+  # Debug Interface
+  # ============================================================================
+  PA13:
+    stm32_pin: PA13
+    bga_position: C15
+    assignment: SWDIO
+    description: >-
+      Serial Wire Debug data I/O. Used for programming and debugging via ST-Link
+      or J-Link. Essential for development and firmware flashing.
+    peripheral: Debug
+    configurable: false
+    hardwired: true
+    pwm_capable: false
+
+  PA14:
+    stm32_pin: PA14
+    bga_position: B14
+    assignment: SWCLK
+    description: >-
+      Serial Wire Debug clock. Used with SWDIO for debug interface.
+    peripheral: Debug
+    configurable: false
+    hardwired: true
+    pwm_capable: false
+
+  PD5:
+    stm32_pin: PD5
+    bga_position: A11
+    assignment: Debug UART TX
+    description: >-
+      Debug UART transmit (USART2). Outputs debug messages at 115200 baud.
+    peripheral: USART2
+    configurable: false
+    hardwired: true
+    pwm_capable: false
+
+  PD6:
+    stm32_pin: PD6
+    bga_position: B11
+    assignment: Debug UART RX
+    description: >-
+      Debug UART receive (USART2). Receives debug commands.
+    peripheral: USART2
+    configurable: false
+    hardwired: true
+    pwm_capable: false
+
+  # ============================================================================
+  # Crystals
+  # ============================================================================
+  PH0:
+    stm32_pin: PH0
+    bga_position: J2
+    assignment: HSE In
+    description: >-
+      High-speed external crystal input. 25MHz crystal for main system clock.
+    peripheral: Crystal
+    configurable: false
+    hardwired: true
+    pwm_capable: false
+
+  PH1:
+    stm32_pin: PH1
+    bga_position: J1
+    assignment: HSE Out
+    description: >-
+      High-speed external crystal output.
+    peripheral: Crystal
+    configurable: false
+    hardwired: true
+    pwm_capable: false
+
+  PC14:
+    stm32_pin: PC14
+    bga_position: C2
+    assignment: LSE In
+    description: >-
+      Low-speed external crystal input. 32.768kHz crystal for RTC.
+    peripheral: Crystal
+    configurable: false
+    hardwired: true
+    pwm_capable: false
+
+  PC15:
+    stm32_pin: PC15
+    bga_position: C1
+    assignment: LSE Out
+    description: >-
+      Low-speed external crystal output.
+    peripheral: Crystal
+    configurable: false
+    hardwired: true
+    pwm_capable: false
+
+  # ============================================================================
+  # Board Detection
+  # ============================================================================
+  PF3:
+    stm32_pin: PF3
+    bga_position: H4
+    assignment: Board Detect Bit 0
+    description: >-
+      Board detection bit 0. Used at boot to identify board variant (TMC2660 vs TMC2590).
+      Board ID is a 4-bit value read from PF3, PF5, PF7, PE10.
+    peripheral: Board Detect
+    configurable: false
+    hardwired: true
+    pwm_capable: false
+
+  PF5:
+    stm32_pin: PF5
+    bga_position: J4
+    assignment: Board Detect Bit 1
+    description: >-
+      Board detection bit 1.
+    peripheral: Board Detect
+    configurable: false
+    hardwired: true
+    pwm_capable: false
+
+  PF7:
+    stm32_pin: PF7
+    bga_position: K3
+    assignment: Board Detect Bit 2
+    description: >-
+      Board detection bit 2.
+    peripheral: Board Detect
+    configurable: false
+    hardwired: true
+    pwm_capable: false
+
+  # ============================================================================
+  # Voltage Sensing
+  # ============================================================================
+  PC4:
+    stm32_pin: PC4
+    bga_position: T4
+    assignment: VMOT Sense
+    description: >-
+      Motor power voltage sense input. Connected via 11:1 voltage divider.
+      Used for monitoring motor power supply voltage.
+    peripheral: ADC
+    adc_channel: ADC1_CH13
+    configurable: true
+    typical_uses:
+      - Motor voltage monitoring
+      - Undervoltage protection
+    hardwired: false
+    pwm_capable: false
+
+  PC5:
+    stm32_pin: PC5
+    bga_position: U4
+    assignment: VFET Sense
+    description: >-
+      MOSFET power voltage sense input. Connected via 11:1 voltage divider.
+      Used for monitoring heater/fan power supply voltage.
+    peripheral: ADC
+    adc_channel: ADC1_CH15
+    configurable: true
+    typical_uses:
+      - MOSFET voltage monitoring
+    hardwired: false
+    pwm_capable: false
+
+  # ============================================================================
+  # I2C Buses
+  # ============================================================================
+  PA4:
+    stm32_pin: PA4
+    bga_position: U3
+    assignment: I2C2 SCL
+    description: >-
+      User I2C bus clock (I2C2). Available for external I2C peripherals like
+      displays, sensors, or expansion boards.
+    peripheral: I2C2
+    configurable: true
+    pin_functions:
+      - GPIO
+      - I2C2_SCL
+      - DAC1_OUT1
+    typical_uses:
+      - I2C display
+      - I2C sensors
+    hardwired: false
+    pwm_capable: false
+
+  PB1:
+    stm32_pin: PB1
+    bga_position: T5
+    assignment: I2C2 SDA
+    description: >-
+      User I2C bus data (I2C2). Available for external I2C peripherals.
+    peripheral: I2C2
+    configurable: true
+    pin_functions:
+      - GPIO
+      - I2C2_SDA
+      - ADC1_INP5
+    hardwired: false
+    pwm_capable: false
+
+  PF14:
+    stm32_pin: PF14
+    bga_position: P8
+    assignment: I2C4 SCL (Expansion GG)
+    description: >-
+      Expansion I2C bus clock on Gadgeteer header GG.
+    peripheral: I2C4
+    configurable: true
+    hardwired: false
+    pwm_capable: false
+
+  PF15:
+    stm32_pin: PF15
+    bga_position: R9
+    assignment: I2C4 SDA (Expansion GG)
+    description: >-
+      Expansion I2C bus data on Gadgeteer header GG.
+    peripheral: I2C4
+    configurable: true
+    hardwired: false
+    pwm_capable: false
+
+  # ============================================================================
+  # SPI (User)
+  # ============================================================================
+  PB3:
+    stm32_pin: PB3
+    bga_position: C6
+    assignment: SPI1 SCK / SWO
+    description: >-
+      User SPI clock (SPI1). Also serves as SWO trace output for debugging.
+      Available on expansion headers for displays or other SPI peripherals.
+    peripheral: SPI1
+    configurable: true
+    pin_functions:
+      - GPIO
+      - SPI1_SCK
+      - SWO
+    hardwired: false
+    pwm_capable: false
+
+  PB4:
+    stm32_pin: PB4
+    bga_position: B7
+    assignment: SPI1 MISO
+    description: >-
+      User SPI data in (SPI1).
+    peripheral: SPI1
+    configurable: true
+    pin_functions:
+      - GPIO
+      - SPI1_MISO
+    hardwired: false
+    pwm_capable: false
+
+  PB5:
+    stm32_pin: PB5
+    bga_position: A5
+    assignment: SPI1 MOSI
+    description: >-
+      User SPI data out (SPI1).
+    peripheral: SPI1
+    configurable: true
+    pin_functions:
+      - GPIO
+      - SPI1_MOSI
+    hardwired: false
+    pwm_capable: false
+
+  # ============================================================================
+  # UART (Expansion)
+  # ============================================================================
+  PD0:
+    stm32_pin: PD0
+    bga_position: D13
+    assignment: UART4 RX (Expansion GD)
+    description: >-
+      Expansion UART receive on Gadgeteer header GD. For serial communication
+      with external devices.
+    peripheral: UART4
+    configurable: true
+    hardwired: false
+    pwm_capable: false
+
+  PD1:
+    stm32_pin: PD1
+    bga_position: E12
+    assignment: UART4 TX (Expansion GD)
+    description: >-
+      Expansion UART transmit on Gadgeteer header GD.
+    peripheral: UART4
+    configurable: true
+    hardwired: false
+    pwm_capable: false
+
+  PD8:
+    stm32_pin: PD8
+    bga_position: U16
+    assignment: USART3 TX
+    description: >-
+      Expansion UART transmit (USART3).
+    peripheral: USART3
+    configurable: true
+    hardwired: false
+    pwm_capable: false
+
+  PD9:
+    stm32_pin: PD9
+    bga_position: T17
+    assignment: USART3 RX
+    description: >-
+      Expansion UART receive (USART3).
+    peripheral: USART3
+    configurable: true
+    hardwired: false
+    pwm_capable: false
+
+  # ============================================================================
+  # PWM/Timer Outputs
+  # ============================================================================
+  PE5:
+    stm32_pin: PE5
+    bga_position: D1
+    assignment: TIM15 CH1 (Expansion GE)
+    description: >-
+      Timer 15 channel 1 PWM output. Available on Gadgeteer header GE for
+      servo control or other PWM applications.
+    peripheral: TIM15
+    configurable: true
+    pin_functions:
+      - GPIO
+      - TIM15_CH1
+    typical_uses:
+      - Servo control
+      - PWM output
+    hardwired: false
+    pwm_capable: true
+
+  PE6:
+    stm32_pin: PE6
+    bga_position: E5
+    assignment: TIM15 CH2 (Expansion GE)
+    description: >-
+      Timer 15 channel 2 PWM output.
+    peripheral: TIM15
+    configurable: true
+    hardwired: false
+    pwm_capable: true
+
+  PE9:
+    stm32_pin: PE9
+    bga_position: P9
+    assignment: TIM1 CH1
+    description: >-
+      Timer 1 channel 1 PWM output. High-resolution timer for precise PWM.
+    peripheral: TIM1
+    configurable: true
+    hardwired: false
+    pwm_capable: true
+
+  PE11:
+    stm32_pin: PE11
+    bga_position: P10
+    assignment: TIM1 CH2
+    description: >-
+      Timer 1 channel 2 PWM output.
+    peripheral: TIM1
+    configurable: true
+    hardwired: false
+    pwm_capable: true
+
+  PE13:
+    stm32_pin: PE13
+    bga_position: T10
+    assignment: TIM1 CH4 (Spare)
+    description: >-
+      Timer 1 channel 4 PWM output. Available as spare PWM.
+    peripheral: TIM1
+    configurable: true
+    hardwired: false
+    pwm_capable: true
+
+  PH6:
+    stm32_pin: PH6
+    bga_position: T11
+    assignment: TIM8 CH1
+    description: >-
+      Timer 8 channel 1 PWM output.
+    peripheral: TIM8
+    configurable: true
+    hardwired: false
+    pwm_capable: true
+
+  PH8:
+    stm32_pin: PH8
+    bga_position: T13
+    assignment: TIM8 CH2 / I2C3 SDA
+    description: >-
+      Timer 8 channel 2 PWM or I2C3 data. Dual function pin.
+    peripheral: TIM8/I2C3
+    configurable: true
+    hardwired: false
+    pwm_capable: true
+
+  PH9:
+    stm32_pin: PH9
+    bga_position: R13
+    assignment: TIM8 CH3
+    description: >-
+      Timer 8 channel 3 PWM output.
+    peripheral: TIM8
+    configurable: true
+    hardwired: false
+    pwm_capable: true
+
+  PH7:
+    stm32_pin: PH7
+    bga_position: U13
+    assignment: TIM8 CH4 / I2C3 SCL
+    description: >-
+      Timer 8 channel 4 PWM or I2C3 clock. Dual function pin.
+    peripheral: TIM8/I2C3
+    configurable: true
+    hardwired: false
+    pwm_capable: true
+
+  # ============================================================================
+  # System Pins
+  # ============================================================================
+  BOOT0:
+    stm32_pin: BOOT0
+    bga_position: E8
+    assignment: Boot Mode
+    description: >-
+      Boot mode selection. LOW = boot from flash (normal), HIGH = DFU mode.
+      Directly tied to pin, active at reset.
+    peripheral: System
+    configurable: false
+    hardwired: true
+    pwm_capable: false
+
+  NRST:
+    stm32_pin: NRST
+    bga_position: K1
+    assignment: MCU Reset
+    description: >-
+      System reset input. Active low. Connected to reset button and debug header.
+    peripheral: System
+    configurable: false
+    hardwired: true
+    pwm_capable: false
+
+  # ============================================================================
+  # Port A - Additional GPIO Pins
+  # ============================================================================
+  PA0:
+    stm32_pin: PA0
+    bga_position: N5
+    assignment: GPIO (Expansion)
+    description: >-
+      General purpose I/O available on expansion headers. Can be used for
+      custom peripherals, sensors, or additional controls. Standard analog
+      pin (non-dedicated, use PA0_C for dedicated analog).
+    peripheral: GPIO
+    configurable: true
+    pin_functions:
+      - GPIO
+      - TIM2_CH1
+      - TIM5_CH1
+      - ADC1_INP16
+    typical_uses:
+      - Custom GPIO
+      - Timer input capture
+      - PWM output
+    hardwired: false
+    pwm_capable: true
+
+  PA3:
+    stm32_pin: PA3
+    bga_position: U2
+    assignment: GPIO (Expansion)
+    description: >-
+      General purpose I/O pin available on Gadgeteer expansion headers.
+      Supports timer functions for PWM generation or input capture.
+    peripheral: GPIO
+    configurable: true
+    pin_functions:
+      - GPIO
+      - TIM2_CH4
+      - TIM5_CH4
+      - TIM15_CH2
+      - ADC1_INP15
+    typical_uses:
+      - Encoder input
+      - PWM output
+      - Analog input
+    config_examples:
+      - 'yaxis.enca_pin = PA3^'
+    hardwired: false
+    pwm_capable: true
+
+  PA5:
+    stm32_pin: PA5
+    bga_position: T3
+    assignment: GPIO (Expansion)
+    description: >-
+      General purpose I/O available on expansion headers. Supports DAC
+      output and SPI functions.
+    peripheral: GPIO
+    configurable: true
+    pin_functions:
+      - GPIO
+      - SPI1_SCK
+      - DAC1_OUT2
+      - TIM2_CH1
+    typical_uses:
+      - DAC output
+      - SPI clock alternate
+      - Status LED
+    config_examples:
+      - 'aux_play_led = PA5'
+    hardwired: false
+    pwm_capable: true
+
+  PA6:
+    stm32_pin: PA6
+    bga_position: R3
+    assignment: GPIO (Expansion)
+    description: >-
+      General purpose I/O available on expansion headers. Supports timer
+      and SPI functions.
+    peripheral: GPIO
+    configurable: true
+    pin_functions:
+      - GPIO
+      - TIM3_CH1
+      - SPI1_MISO
+      - TIM13_CH1
+    typical_uses:
+      - PWM output
+      - Timer input
+    hardwired: false
+    pwm_capable: true
+
+  PA8:
+    stm32_pin: PA8
+    bga_position: E15
+    assignment: GPIO (Expansion)
+    description: >-
+      General purpose I/O with MCO1 (clock output) capability. Available
+      on expansion headers. Can output system clock for debugging.
+    peripheral: GPIO
+    configurable: true
+    pin_functions:
+      - GPIO
+      - MCO1
+      - TIM1_CH1
+      - I2C3_SCL
+    typical_uses:
+      - Clock output
+      - PWM output
+      - I2C alternate
+    hardwired: false
+    pwm_capable: true
+
+  PA9:
+    stm32_pin: PA9
+    bga_position: D15
+    assignment: GPIO (Expansion)
+    description: >-
+      General purpose I/O available on expansion headers. Supports USART1
+      and timer functions.
+    peripheral: GPIO
+    configurable: true
+    pin_functions:
+      - GPIO
+      - USART1_TX
+      - TIM1_CH2
+      - I2C3_SMBA
+    typical_uses:
+      - UART TX
+      - PWM output
+    hardwired: false
+    pwm_capable: true
+
+  PA10:
+    stm32_pin: PA10
+    bga_position: D14
+    assignment: GPIO (Expansion)
+    description: >-
+      General purpose I/O available on expansion headers. Supports USART1
+      and timer functions.
+    peripheral: GPIO
+    configurable: true
+    pin_functions:
+      - GPIO
+      - USART1_RX
+      - TIM1_CH3
+    typical_uses:
+      - UART RX
+      - PWM output
+    hardwired: false
+    pwm_capable: true
+
+  PA15:
+    stm32_pin: PA15
+    bga_position: A14
+    assignment: GPIO (Expansion)
+    description: >-
+      General purpose I/O available on expansion headers. Supports SPI
+      and timer functions. Also JTDI debug function.
+    peripheral: GPIO
+    configurable: true
+    pin_functions:
+      - GPIO
+      - SPI1_NSS
+      - TIM2_CH1
+      - JTDI
+    typical_uses:
+      - SPI chip select
+      - Timer input/output
+    hardwired: false
+    pwm_capable: true
+
+  # ============================================================================
+  # Port B - Additional GPIO Pins
+  # ============================================================================
+  PB2:
+    stm32_pin: PB2
+    bga_position: R6
+    assignment: GPIO (Expansion)
+    description: >-
+      General purpose I/O available on expansion headers. Supports QUADSPI
+      for high-speed flash communication.
+    peripheral: GPIO
+    configurable: true
+    pin_functions:
+      - GPIO
+      - QUADSPI_CLK
+      - SAI1_D1
+    typical_uses:
+      - External flash interface
+      - General GPIO
+    hardwired: false
+    pwm_capable: false
+
+  PB6:
+    stm32_pin: PB6
+    bga_position: B5
+    assignment: GPIO (Expansion)
+    description: >-
+      General purpose I/O available on expansion headers. Supports I2C1,
+      USART1, and timer functions.
+    peripheral: GPIO
+    configurable: true
+    pin_functions:
+      - GPIO
+      - I2C1_SCL
+      - USART1_TX
+      - TIM4_CH1
+      - HDMI_CEC
+    typical_uses:
+      - I2C clock
+      - UART TX
+      - Timer output
+    hardwired: false
+    pwm_capable: true
+
+  PB7:
+    stm32_pin: PB7
+    bga_position: C5
+    assignment: GPIO (Expansion)
+    description: >-
+      General purpose I/O available on expansion headers. Supports I2C1,
+      USART1, and timer functions.
+    peripheral: GPIO
+    configurable: true
+    pin_functions:
+      - GPIO
+      - I2C1_SDA
+      - USART1_RX
+      - TIM4_CH2
+    typical_uses:
+      - I2C data
+      - UART RX
+      - Timer output
+    hardwired: false
+    pwm_capable: true
+
+  PB8:
+    stm32_pin: PB8
+    bga_position: D5
+    assignment: GPIO (Expansion)
+    description: >-
+      General purpose I/O available on expansion headers. Supports I2C1,
+      CAN, and timer functions. Can be used for encoder input.
+    peripheral: GPIO
+    configurable: true
+    pin_functions:
+      - GPIO
+      - I2C1_SCL
+      - TIM4_CH3
+      - FDCAN1_RX
+      - TIM16_CH1
+    typical_uses:
+      - Encoder input
+      - CAN bus
+      - I2C alternate
+      - Heater control
+    config_examples:
+      - 'zaxis.enca_pin = PB8^'
+      - 'temperature_control.hotend2.heater_pin = PB8'
+    hardwired: false
+    pwm_capable: true
+
+  PB9:
+    stm32_pin: PB9
+    bga_position: D4
+    assignment: GPIO (Expansion)
+    description: >-
+      General purpose I/O available on expansion headers. Supports I2C1,
+      CAN, and timer functions. Can be used for encoder input.
+    peripheral: GPIO
+    configurable: true
+    pin_functions:
+      - GPIO
+      - I2C1_SDA
+      - TIM4_CH4
+      - FDCAN1_TX
+      - TIM17_CH1
+    typical_uses:
+      - Encoder input
+      - CAN bus
+      - I2C alternate
+    config_examples:
+      - 'zaxis.encb_pin = PB9^'
+    hardwired: false
+    pwm_capable: true
+
+  PB10:
+    stm32_pin: PB10
+    bga_position: P11
+    assignment: GPIO (Expansion)
+    description: >-
+      General purpose I/O available on expansion headers. Supports I2C2,
+      USART3, and timer functions. Useful for filament encoder.
+    peripheral: GPIO
+    configurable: true
+    pin_functions:
+      - GPIO
+      - I2C2_SCL
+      - USART3_TX
+      - TIM2_CH3
+      - QUADSPI_BK1_NCS
+    typical_uses:
+      - Filament encoder
+      - I2C bus
+      - UART communication
+    config_examples:
+      - 'encoder_pin = PB10'
+    hardwired: false
+    pwm_capable: true
+
+  PB11:
+    stm32_pin: PB11
+    bga_position: P12
+    assignment: GPIO (Expansion)
+    description: >-
+      General purpose I/O available on expansion headers. Supports I2C2,
+      USART3, and timer functions. Useful for filament bulge detection.
+    peripheral: GPIO
+    configurable: true
+    pin_functions:
+      - GPIO
+      - I2C2_SDA
+      - USART3_RX
+      - TIM2_CH4
+    typical_uses:
+      - Filament bulge detector
+      - I2C bus
+      - UART communication
+    config_examples:
+      - 'bulge_pin = PB11'
+    hardwired: false
+    pwm_capable: true
+
+  # ============================================================================
+  # Port C - Additional GPIO Pins
+  # ============================================================================
+  PC2:
+    stm32_pin: PC2
+    bga_position: M3
+    assignment: GPIO (Expansion)
+    description: >-
+      General purpose I/O available on expansion headers. Standard GPIO
+      version of PC2 (use PC2_C for dedicated analog thermistor input).
+    peripheral: GPIO
+    configurable: true
+    pin_functions:
+      - GPIO
+      - SPI2_MISO
+      - ADC3_INP0
+    typical_uses:
+      - SPI data
+      - Analog input
+    hardwired: false
+    pwm_capable: false
+
+  PC3:
+    stm32_pin: PC3
+    bga_position: M4
+    assignment: GPIO (Expansion)
+    description: >-
+      General purpose I/O available on expansion headers. Standard GPIO
+      version of PC3 (use PC3_C for dedicated analog thermistor input).
+    peripheral: GPIO
+    configurable: true
+    pin_functions:
+      - GPIO
+      - SPI2_MOSI
+      - ADC3_INP1
+    typical_uses:
+      - SPI data
+      - Analog input
+    hardwired: false
+    pwm_capable: false
+
+  PC6:
+    stm32_pin: PC6
+    bga_position: F14
+    assignment: GPIO / Motor Step
+    description: >-
+      General purpose I/O with timer capability. Can be used as motor step
+      pin for delta/extruder axis on some board variants.
+    peripheral: GPIO
+    configurable: true
+    pin_functions:
+      - GPIO
+      - TIM3_CH1
+      - TIM8_CH1
+      - USART6_TX
+    typical_uses:
+      - Motor step signal
+      - PWM output
+      - UART TX
+    config_examples:
+      - 'delta.step_pin = PC6'
+    hardwired: false
+    pwm_capable: true
+
+  PC7:
+    stm32_pin: PC7
+    bga_position: F13
+    assignment: GPIO (Expansion)
+    description: >-
+      General purpose I/O with timer capability available on expansion headers.
+    peripheral: GPIO
+    configurable: true
+    pin_functions:
+      - GPIO
+      - TIM3_CH2
+      - TIM8_CH2
+      - USART6_RX
+    typical_uses:
+      - PWM output
+      - UART RX
+    hardwired: false
+    pwm_capable: true
+
+  PC13:
+    stm32_pin: PC13
+    bga_position: E3
+    assignment: GPIO (Expansion)
+    description: >-
+      General purpose I/O available on expansion headers. Low power pin
+      that can also trigger wake from standby mode.
+    peripheral: GPIO
+    configurable: true
+    pin_functions:
+      - GPIO
+      - RTC_OUT
+      - TAMP_IN1
+      - WKUP2
+    typical_uses:
+      - Wake trigger
+      - RTC output
+    hardwired: false
+    pwm_capable: false
+
+  # ============================================================================
+  # Port D - Additional GPIO Pins
+  # ============================================================================
+  PD3:
+    stm32_pin: PD3
+    bga_position: B12
+    assignment: GPIO / Motor Step
+    description: >-
+      General purpose I/O with timer capability. Primary alpha motor step
+      pin on some board variants. Available on Gadgeteer expansion headers.
+    peripheral: GPIO
+    configurable: true
+    pin_functions:
+      - GPIO
+      - SPI2_SCK
+      - USART2_CTS
+    typical_uses:
+      - Alpha motor step
+      - SPI clock
+    config_examples:
+      - 'alpha.step_pin = PD3'
+      - 'zprobe.probe_pin = PD3!^'
+    hardwired: false
+    pwm_capable: false
+
+  PD4:
+    stm32_pin: PD4
+    bga_position: A12
+    assignment: GPIO / Motor Dir
+    description: >-
+      General purpose I/O available on expansion headers. Can be used as
+      alpha motor direction pin on some board variants.
+    peripheral: GPIO
+    configurable: true
+    pin_functions:
+      - GPIO
+      - USART2_RTS
+    typical_uses:
+      - Alpha motor direction
+      - General GPIO
+    config_examples:
+      - 'alpha.dir_pin = PD4'
+    hardwired: false
+    pwm_capable: false
+
+  PD7:
+    stm32_pin: PD7
+    bga_position: C11
+    assignment: FETs Power Enable
+    description: >-
+      FET power enable control on Prime board. Controls power delivery
+      to the MOSFET outputs. Must be enabled for heaters and fans to operate.
+    peripheral: Power Control
+    configurable: true
+    pin_functions:
+      - GPIO
+      - USART2_CK
+      - SPDIFRX_IN0
+    typical_uses:
+      - FET power enable
+      - Safety interlock
+    config_examples:
+      - 'fets_power_enable_pin = PD7'
+    hardwired: false
+    pwm_capable: false
+
+  PD10:
+    stm32_pin: PD10
+    bga_position: T16
+    assignment: GPIO (Expansion)
+    description: >-
+      General purpose I/O available on expansion headers. Supports USART3
+      for serial communication.
+    peripheral: GPIO
+    configurable: true
+    pin_functions:
+      - GPIO
+      - USART3_CK
+    typical_uses:
+      - UART clock
+      - General GPIO
+    hardwired: false
+    pwm_capable: false
+
+  PD11:
+    stm32_pin: PD11
+    bga_position: R15
+    assignment: GPIO (Expansion)
+    description: >-
+      General purpose I/O available on expansion headers. Supports USART3
+      and I2C4 functions.
+    peripheral: GPIO
+    configurable: true
+    pin_functions:
+      - GPIO
+      - USART3_CTS
+      - I2C4_SMBA
+      - QUADSPI_BK1_IO0
+    typical_uses:
+      - UART flow control
+      - I2C
+    hardwired: false
+    pwm_capable: false
+
+  PD12:
+    stm32_pin: PD12
+    bga_position: R16
+    assignment: GPIO / Status LED
+    description: >-
+      General purpose I/O available on expansion headers. Can be used for
+      auxiliary play LED or status indication. Supports timer for PWM.
+    peripheral: GPIO
+    configurable: true
+    pin_functions:
+      - GPIO
+      - TIM4_CH1
+      - I2C4_SCL
+      - USART3_RTS
+    typical_uses:
+      - Aux play LED
+      - Status indication
+      - PWM output
+    config_examples:
+      - 'aux_play_led = PD12'
+    hardwired: false
+    pwm_capable: true
+
+  PD13:
+    stm32_pin: PD13
+    bga_position: R17
+    assignment: GPIO (Expansion)
+    description: >-
+      General purpose I/O available on expansion headers. Supports timer
+      and I2C functions.
+    peripheral: GPIO
+    configurable: true
+    pin_functions:
+      - GPIO
+      - TIM4_CH2
+      - I2C4_SDA
+    typical_uses:
+      - PWM output
+      - I2C data
+    hardwired: false
+    pwm_capable: true
+
+  PD15:
+    stm32_pin: PD15
+    bga_position: P15
+    assignment: GPIO / Encoder Index
+    description: >-
+      General purpose I/O available on expansion headers. Commonly used
+      for spindle encoder index pulse input for synchronized motion.
+    peripheral: GPIO
+    configurable: true
+    pin_functions:
+      - GPIO
+      - TIM4_CH4
+    typical_uses:
+      - Spindle encoder index
+      - Timer input
+    config_examples:
+      - 'index_pin = PD15'
+    hardwired: false
+    pwm_capable: true
+
+  # ============================================================================
+  # Port E - Additional GPIO Pins
+  # ============================================================================
+  PE0:
+    stm32_pin: PE0
+    bga_position: C4
+    assignment: GPIO / Heater
+    description: >-
+      General purpose I/O available on expansion headers. Can be used for
+      hotend heater control on some board configurations.
+    peripheral: GPIO
+    configurable: true
+    pin_functions:
+      - GPIO
+      - TIM4_ETR
+      - LPTIM1_ETR
+    typical_uses:
+      - Hotend heater
+      - Timer external trigger
+    config_examples:
+      - 'temperature_control.hotend.heater_pin = PE0'
+    hardwired: false
+    pwm_capable: false
+
+  PE1:
+    stm32_pin: PE1
+    bga_position: B4
+    assignment: GPIO (Expansion)
+    description: >-
+      General purpose I/O available on expansion headers. Supports LPTIM1
+      for low-power timer operations.
+    peripheral: GPIO
+    configurable: true
+    pin_functions:
+      - GPIO
+      - LPTIM1_IN2
+    typical_uses:
+      - Low power timer input
+      - General GPIO
+    hardwired: false
+    pwm_capable: false
+
+  PE2:
+    stm32_pin: PE2
+    bga_position: C3
+    assignment: GPIO (Expansion)
+    description: >-
+      General purpose I/O available on expansion headers. Supports SPI4
+      and SAI1 audio interface.
+    peripheral: GPIO
+    configurable: true
+    pin_functions:
+      - GPIO
+      - SPI4_SCK
+      - SAI1_MCLK_A
+      - TRACECLK
+    typical_uses:
+      - SPI clock
+      - Debug trace
+    hardwired: false
+    pwm_capable: false
+
+  PE3:
+    stm32_pin: PE3
+    bga_position: D3
+    assignment: GPIO / Heater
+    description: >-
+      General purpose I/O available on expansion headers. Can be used for
+      heated bed control on some board configurations.
+    peripheral: GPIO
+    configurable: true
+    pin_functions:
+      - GPIO
+      - SAI1_SD_B
+      - TRACED0
+    typical_uses:
+      - Heated bed heater
+      - Debug trace
+    config_examples:
+      - 'temperature_control.bed.heater_pin = PE3'
+    hardwired: false
+    pwm_capable: false
+
+  PE7:
+    stm32_pin: PE7
+    bga_position: U9
+    assignment: GPIO (Expansion)
+    description: >-
+      General purpose I/O available on expansion headers. Supports timer
+      and UART functions.
+    peripheral: GPIO
+    configurable: true
+    pin_functions:
+      - GPIO
+      - TIM1_ETR
+      - UART7_RX
+    typical_uses:
+      - Timer external trigger
+      - UART receive
+    hardwired: false
+    pwm_capable: false
+
+  PE8:
+    stm32_pin: PE8
+    bga_position: T9
+    assignment: GPIO (Expansion)
+    description: >-
+      General purpose I/O available on expansion headers. Supports timer
+      and UART functions.
+    peripheral: GPIO
+    configurable: true
+    pin_functions:
+      - GPIO
+      - TIM1_CH1N
+      - UART7_TX
+    typical_uses:
+      - Timer complementary output
+      - UART transmit
+    hardwired: false
+    pwm_capable: true
+
+  # ============================================================================
+  # Port F - Additional GPIO Pins
+  # ============================================================================
+  PF0:
+    stm32_pin: PF0
+    bga_position: G4
+    assignment: GPIO (Expansion)
+    description: >-
+      General purpose I/O available on expansion headers. Supports I2C2
+      for additional I2C bus capability.
+    peripheral: GPIO
+    configurable: true
+    pin_functions:
+      - GPIO
+      - I2C2_SDA
+    typical_uses:
+      - I2C data
+      - General GPIO
+    hardwired: false
+    pwm_capable: false
+
+  PF1:
+    stm32_pin: PF1
+    bga_position: G3
+    assignment: GPIO (Expansion)
+    description: >-
+      General purpose I/O available on expansion headers. Supports I2C2
+      for additional I2C bus capability.
+    peripheral: GPIO
+    configurable: true
+    pin_functions:
+      - GPIO
+      - I2C2_SCL
+    typical_uses:
+      - I2C clock
+      - General GPIO
+    hardwired: false
+    pwm_capable: false
+
+  PF2:
+    stm32_pin: PF2
+    bga_position: G1
+    assignment: Motor SPI SCK (Alternate)
+    description: >-
+      Alternate pin for motor SPI clock. Can be used instead of PI10 on
+      some board configurations.
+    peripheral: SPI (Motor Alt)
+    configurable: true
+    pin_functions:
+      - GPIO
+      - I2C2_SMBA
+    typical_uses:
+      - Motor SPI clock alternate
+      - I2C alert
+    hardwired: false
+    pwm_capable: false
+
+  PF4:
+    stm32_pin: PF4
+    bga_position: J5
+    assignment: GPIO (Expansion)
+    description: >-
+      General purpose I/O available on expansion headers. Located near
+      board detect pins.
+    peripheral: GPIO
+    configurable: true
+    pin_functions:
+      - GPIO
+    typical_uses:
+      - General GPIO
+    hardwired: false
+    pwm_capable: false
+
+  PF6:
+    stm32_pin: PF6
+    bga_position: K2
+    assignment: GPIO (Expansion)
+    description: >-
+      General purpose I/O available on expansion headers. Can be used
+      for encoder input with interrupt capability.
+    peripheral: GPIO
+    configurable: true
+    pin_functions:
+      - GPIO
+      - TIM16_CH1
+      - SPI5_NSS
+      - SAI1_SD_B
+    typical_uses:
+      - Encoder input
+      - Timer capture
+    config_examples:
+      - 'xaxis.encb_pin = PF6^'
+    hardwired: false
+    pwm_capable: true
+
+  PF8:
+    stm32_pin: PF8
+    bga_position: K4
+    assignment: GPIO (Expansion)
+    description: >-
+      General purpose I/O available on expansion headers. Supports timer
+      and SPI functions.
+    peripheral: GPIO
+    configurable: true
+    pin_functions:
+      - GPIO
+      - TIM13_CH1
+      - SPI5_MISO
+      - TIM16_CH1N
+      - SAI1_SCK_B
+    typical_uses:
+      - Timer output
+      - SPI data
+    hardwired: false
+    pwm_capable: true
+
+  PF9:
+    stm32_pin: PF9
+    bga_position: L4
+    assignment: GPIO (Expansion)
+    description: >-
+      General purpose I/O available on expansion headers. Supports timer
+      and SPI functions.
+    peripheral: GPIO
+    configurable: true
+    pin_functions:
+      - GPIO
+      - TIM14_CH1
+      - SPI5_MOSI
+      - TIM17_CH1
+      - SAI1_FS_B
+    typical_uses:
+      - Timer output
+      - SPI data
+    hardwired: false
+    pwm_capable: true
+
+  PF10:
+    stm32_pin: PF10
+    bga_position: L3
+    assignment: GPIO (Expansion)
+    description: >-
+      General purpose I/O available on expansion headers. Can be used for
+      encoder input with interrupt capability. Important: interrupt line 10.
+    peripheral: GPIO
+    configurable: true
+    pin_functions:
+      - GPIO
+      - TIM16_BKIN
+      - SAI1_D3
+      - QUADSPI_CLK
+    typical_uses:
+      - Encoder input
+      - Timer break input
+    config_examples:
+      - 'xaxis.enca_pin = PF10^'
+    hardwired: false
+    pwm_capable: false
+
+  PF13:
+    stm32_pin: PF13
+    bga_position: P7
+    assignment: MSD LED
+    description: >-
+      Mass Storage Device LED indicator pin on Prime board. Lights when
+      USB mass storage mode is active or SD card activity occurs.
+    peripheral: LED
+    configurable: true
+    pin_functions:
+      - GPIO
+    typical_uses:
+      - MSD activity LED
+      - Status indicator
+    config_examples:
+      - 'msc_led = PF13'
+    hardwired: false
+    pwm_capable: false
+
+  # ============================================================================
+  # Port G - Additional GPIO Pins
+  # ============================================================================
+  PG3:
+    stm32_pin: PG3
+    bga_position: H15
+    assignment: GPIO / Motor Step
+    description: >-
+      General purpose I/O available on expansion headers. Can be used as
+      gamma motor step pin on some board variants.
+    peripheral: GPIO
+    configurable: true
+    pin_functions:
+      - GPIO
+    typical_uses:
+      - Gamma motor step
+      - General GPIO
+    config_examples:
+      - 'gamma.step_pin = PG3'
+    hardwired: false
+    pwm_capable: false
+
+  PG4:
+    stm32_pin: PG4
+    bga_position: H14
+    assignment: GPIO / Motor Dir
+    description: >-
+      General purpose I/O available on expansion headers. Can be used as
+      gamma motor direction pin on some board variants.
+    peripheral: GPIO
+    configurable: true
+    pin_functions:
+      - GPIO
+    typical_uses:
+      - Gamma motor direction
+      - General GPIO
+    config_examples:
+      - 'gamma.dir_pin = PG4'
+    hardwired: false
+    pwm_capable: false
+
+  PG5:
+    stm32_pin: PG5
+    bga_position: G14
+    assignment: GPIO / Motor Dir
+    description: >-
+      General purpose I/O available on expansion headers. Can be used as
+      delta motor direction pin on some board variants.
+    peripheral: GPIO
+    configurable: true
+    pin_functions:
+      - GPIO
+    typical_uses:
+      - Delta motor direction
+      - General GPIO
+    config_examples:
+      - 'delta.dir_pin = PG5'
+    hardwired: false
+    pwm_capable: false
+
+  PG6:
+    stm32_pin: PG6
+    bga_position: G15
+    assignment: GPIO (Expansion)
+    description: >-
+      General purpose I/O available on expansion headers.
+    peripheral: GPIO
+    configurable: true
+    pin_functions:
+      - GPIO
+    typical_uses:
+      - General GPIO
+    hardwired: false
+    pwm_capable: false
+
+  PG7:
+    stm32_pin: PG7
+    bga_position: F16
+    assignment: GPIO (Expansion)
+    description: >-
+      General purpose I/O available on expansion headers. Supports USART6
+      for serial communication.
+    peripheral: GPIO
+    configurable: true
+    pin_functions:
+      - GPIO
+      - USART6_CK
+    typical_uses:
+      - UART clock
+      - General GPIO
+    hardwired: false
+    pwm_capable: false
+
+  PG8:
+    stm32_pin: PG8
+    bga_position: F15
+    assignment: GPIO (Expansion)
+    description: >-
+      General purpose I/O available on expansion headers. Supports SPI6
+      and USART6 functions.
+    peripheral: GPIO
+    configurable: true
+    pin_functions:
+      - GPIO
+      - SPI6_NSS
+      - USART6_RTS
+      - SPDIFRX_IN2
+      - TIM8_ETR
+    typical_uses:
+      - SPI chip select
+      - UART flow control
+    hardwired: false
+    pwm_capable: false
+
+  PG15:
+    stm32_pin: PG15
+    bga_position: D6
+    assignment: GPIO (Expansion)
+    description: >-
+      General purpose I/O available on expansion headers. Supports USART6
+      for serial communication.
+    peripheral: GPIO
+    configurable: true
+    pin_functions:
+      - GPIO
+      - USART6_CTS
+    typical_uses:
+      - UART flow control
+      - General GPIO
+    hardwired: false
+    pwm_capable: false
+
+  # ============================================================================
+  # Port H - Additional GPIO Pins
+  # ============================================================================
+  PH3:
+    stm32_pin: PH3
+    bga_position: P2
+    assignment: GPIO (Expansion)
+    description: >-
+      General purpose I/O available on expansion headers.
+    peripheral: GPIO
+    configurable: true
+    pin_functions:
+      - GPIO
+    typical_uses:
+      - General GPIO
+    hardwired: false
+    pwm_capable: false
+
+  PH4:
+    stm32_pin: PH4
+    bga_position: P3
+    assignment: GPIO (Expansion)
+    description: >-
+      General purpose I/O available on expansion headers. Supports I2C2
+      for additional I2C capability.
+    peripheral: GPIO
+    configurable: true
+    pin_functions:
+      - GPIO
+      - I2C2_SCL
+    typical_uses:
+      - I2C clock alternate
+      - General GPIO
+    hardwired: false
+    pwm_capable: false
+
+  PH5:
+    stm32_pin: PH5
+    bga_position: P4
+    assignment: GPIO (Expansion)
+    description: >-
+      General purpose I/O available on expansion headers. Supports I2C2
+      and SPI5 functions.
+    peripheral: GPIO
+    configurable: true
+    pin_functions:
+      - GPIO
+      - I2C2_SDA
+      - SPI5_NSS
+    typical_uses:
+      - I2C data alternate
+      - SPI chip select
+    hardwired: false
+    pwm_capable: false
+
+  PH10:
+    stm32_pin: PH10
+    bga_position: P13
+    assignment: GPIO (Expansion)
+    description: >-
+      General purpose I/O available on expansion headers. Supports timer
+      functions for PWM generation.
+    peripheral: GPIO
+    configurable: true
+    pin_functions:
+      - GPIO
+      - TIM5_CH1
+    typical_uses:
+      - PWM output
+      - Timer capture
+    hardwired: false
+    pwm_capable: true
+
+  PH11:
+    stm32_pin: PH11
+    bga_position: P14
+    assignment: GPIO (Expansion)
+    description: >-
+      General purpose I/O available on expansion headers. Supports timer
+      functions for PWM generation.
+    peripheral: GPIO
+    configurable: true
+    pin_functions:
+      - GPIO
+      - TIM5_CH2
+    typical_uses:
+      - PWM output
+      - Timer capture
+    hardwired: false
+    pwm_capable: true
+
+  PH12:
+    stm32_pin: PH12
+    bga_position: R14
+    assignment: GPIO (Expansion)
+    description: >-
+      General purpose I/O available on expansion headers. Supports timer
+      functions for PWM generation.
+    peripheral: GPIO
+    configurable: true
+    pin_functions:
+      - GPIO
+      - TIM5_CH3
+    typical_uses:
+      - PWM output
+      - Timer capture
+    hardwired: false
+    pwm_capable: true
+
+  PH14:
+    stm32_pin: PH14
+    bga_position: B17
+    assignment: GPIO (Expansion)
+    description: >-
+      General purpose I/O available on expansion headers.
+    peripheral: GPIO
+    configurable: true
+    pin_functions:
+      - GPIO
+    typical_uses:
+      - General GPIO
+    hardwired: false
+    pwm_capable: false
+
+  PH15:
+    stm32_pin: PH15
+    bga_position: B16
+    assignment: GPIO (Expansion)
+    description: >-
+      General purpose I/O available on expansion headers.
+    peripheral: GPIO
+    configurable: true
+    pin_functions:
+      - GPIO
+    typical_uses:
+      - General GPIO
+    hardwired: false
+    pwm_capable: false
+
+  # ============================================================================
+  # Port I - Additional GPIO Pins
+  # ============================================================================
+  PI1:
+    stm32_pin: PI1
+    bga_position: A15
+    assignment: GPIO (Expansion)
+    description: >-
+      General purpose I/O available on expansion headers. Supports SPI2
+      for additional SPI capability.
+    peripheral: GPIO
+    configurable: true
+    pin_functions:
+      - GPIO
+      - SPI2_SCK
+    typical_uses:
+      - SPI clock
+      - General GPIO
+    hardwired: false
+    pwm_capable: false
+
+  PI2:
+    stm32_pin: PI2
+    bga_position: B15
+    assignment: GPIO (Expansion)
+    description: >-
+      General purpose I/O available on expansion headers. Supports SPI2
+      and timer functions.
+    peripheral: GPIO
+    configurable: true
+    pin_functions:
+      - GPIO
+      - SPI2_MISO
+      - TIM8_CH4
+    typical_uses:
+      - SPI data
+      - Timer output
+    hardwired: false
+    pwm_capable: true
+
+  PI3:
+    stm32_pin: PI3
+    bga_position: C14
+    assignment: GPIO (Expansion)
+    description: >-
+      General purpose I/O available on expansion headers. Supports SPI2
+      and timer functions.
+    peripheral: GPIO
+    configurable: true
+    pin_functions:
+      - GPIO
+      - SPI2_MOSI
+      - TIM8_ETR
+    typical_uses:
+      - SPI data
+      - Timer trigger
+    hardwired: false
+    pwm_capable: false
+
+  PI4:
+    stm32_pin: PI4
+    bga_position: A4
+    assignment: GPIO (Gadgeteer GA)
+    description: >-
+      General purpose I/O on Gadgeteer header GA. Available for custom
+      peripherals and expansion.
+    peripheral: GPIO
+    configurable: true
+    pin_functions:
+      - GPIO
+      - TIM8_BKIN
+    typical_uses:
+      - Gadgeteer expansion
+      - Timer break input
+    hardwired: false
+    pwm_capable: false
+
+  PI5:
+    stm32_pin: PI5
+    bga_position: A3
+    assignment: GPIO (Gadgeteer GA)
+    description: >-
+      General purpose I/O on Gadgeteer header GA. Available for custom
+      peripherals and expansion.
+    peripheral: GPIO
+    configurable: true
+    pin_functions:
+      - GPIO
+      - TIM8_CH1
+    typical_uses:
+      - Gadgeteer expansion
+      - Timer output
+    hardwired: false
+    pwm_capable: true
+
+  PI6:
+    stm32_pin: PI6
+    bga_position: A2
+    assignment: GPIO (Gadgeteer GA)
+    description: >-
+      General purpose I/O on Gadgeteer header GA. Available for custom
+      peripherals and expansion.
+    peripheral: GPIO
+    configurable: true
+    pin_functions:
+      - GPIO
+      - TIM8_CH2
+    typical_uses:
+      - Gadgeteer expansion
+      - Timer output
+    hardwired: false
+    pwm_capable: true
+
+  PI7:
+    stm32_pin: PI7
+    bga_position: B3
+    assignment: GPIO (Gadgeteer GA)
+    description: >-
+      General purpose I/O on Gadgeteer header GA. Available for custom
+      peripherals and expansion.
+    peripheral: GPIO
+    configurable: true
+    pin_functions:
+      - GPIO
+      - TIM8_CH3
+    typical_uses:
+      - Gadgeteer expansion
+      - Timer output
+    hardwired: false
+    pwm_capable: true
+
+  PI8:
+    stm32_pin: PI8
+    bga_position: E4
+    assignment: GPIO (Expansion)
+    description: >-
+      General purpose I/O available on expansion headers.
+    peripheral: GPIO
+    configurable: true
+    pin_functions:
+      - GPIO
+    typical_uses:
+      - General GPIO
+    hardwired: false
+    pwm_capable: false
+
+  PI9:
+    stm32_pin: PI9
+    bga_position: E2
+    assignment: GPIO (Expansion)
+    description: >-
+      General purpose I/O available on expansion headers. Supports CAN
+      for industrial communication.
+    peripheral: GPIO
+    configurable: true
+    pin_functions:
+      - GPIO
+      - FDCAN1_RX
+    typical_uses:
+      - CAN bus receive
+      - General GPIO
+    hardwired: false
+    pwm_capable: false
+
+  PI11:
+    stm32_pin: PI11
+    bga_position: F4
+    assignment: GPIO (Expansion)
+    description: >-
+      General purpose I/O available on expansion headers.
+    peripheral: GPIO
+    configurable: true
+    pin_functions:
+      - GPIO
+    typical_uses:
+      - General GPIO
+    hardwired: false
+    pwm_capable: false
+
+  PI12:
+    stm32_pin: PI12
+    bga_position: H1
+    assignment: GPIO (Expansion)
+    description: >-
+      General purpose I/O available on expansion headers.
+    peripheral: GPIO
+    configurable: true
+    pin_functions:
+      - GPIO
+    typical_uses:
+      - General GPIO
+    hardwired: false
+    pwm_capable: false
+
+  PI13:
+    stm32_pin: PI13
+    bga_position: H2
+    assignment: GPIO (Expansion)
+    description: >-
+      General purpose I/O available on expansion headers.
+    peripheral: GPIO
+    configurable: true
+    pin_functions:
+      - GPIO
+    typical_uses:
+      - General GPIO
+    hardwired: false
+    pwm_capable: false
+
+  PI14:
+    stm32_pin: PI14
+    bga_position: H3
+    assignment: GPIO (Expansion)
+    description: >-
+      General purpose I/O available on expansion headers.
+    peripheral: GPIO
+    configurable: true
+    pin_functions:
+      - GPIO
+    typical_uses:
+      - General GPIO
+    hardwired: false
+    pwm_capable: false
+
+  PI15:
+    stm32_pin: PI15
+    bga_position: P5
+    assignment: GPIO (Expansion)
+    description: >-
+      General purpose I/O available on expansion headers.
+    peripheral: GPIO
+    configurable: true
+    pin_functions:
+      - GPIO
+    typical_uses:
+      - General GPIO
+    hardwired: false
+    pwm_capable: false
+
+  # ============================================================================
+  # Port J - Additional GPIO Pins
+  # ============================================================================
+  PJ0:
+    stm32_pin: PJ0
+    bga_position: N6
+    assignment: GPIO (Expansion)
+    description: >-
+      General purpose I/O available on expansion headers.
+    peripheral: GPIO
+    configurable: true
+    pin_functions:
+      - GPIO
+    typical_uses:
+      - General GPIO
+    hardwired: false
+    pwm_capable: false
+
+  PJ1:
+    stm32_pin: PJ1
+    bga_position: P6
+    assignment: GPIO (Expansion)
+    description: >-
+      General purpose I/O available on expansion headers.
+    peripheral: GPIO
+    configurable: true
+    pin_functions:
+      - GPIO
+    typical_uses:
+      - General GPIO
+    hardwired: false
+    pwm_capable: false
+
+  # ============================================================================
+  # Port K - Additional GPIO Pins
+  # ============================================================================
+  PK4:
+    stm32_pin: PK4
+    bga_position: B8
+    assignment: GPIO (Expansion)
+    description: >-
+      General purpose I/O available on expansion headers.
+    peripheral: GPIO
+    configurable: true
+    pin_functions:
+      - GPIO
+    typical_uses:
+      - General GPIO
+    hardwired: false
+    pwm_capable: false
+
+  PK5:
+    stm32_pin: PK5
+    bga_position: A8
+    assignment: GPIO (Expansion)
+    description: >-
+      General purpose I/O available on expansion headers.
+    peripheral: GPIO
+    configurable: true
+    pin_functions:
+      - GPIO
+    typical_uses:
+      - General GPIO
+    hardwired: false
+    pwm_capable: false
+
+  PK6:
+    stm32_pin: PK6
+    bga_position: C7
+    assignment: GPIO (Expansion)
+    description: >-
+      General purpose I/O available on expansion headers.
+    peripheral: GPIO
+    configurable: true
+    pin_functions:
+      - GPIO
+    typical_uses:
+      - General GPIO
+    hardwired: false
+    pwm_capable: false
+
+  PK7:
+    stm32_pin: PK7
+    bga_position: D7
+    assignment: GPIO (Expansion)
+    description: >-
+      General purpose I/O available on expansion headers.
+    peripheral: GPIO
+    configurable: true
+    pin_functions:
+      - GPIO
+    typical_uses:
+      - General GPIO
+    hardwired: false
+    pwm_capable: false

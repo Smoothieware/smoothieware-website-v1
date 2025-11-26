@@ -8094,8 +8094,12 @@ function render_markdown(text) {
 }
 function parse_pin_text(pin_text) {
   const trimmed = pin_text.trim();
-  const pin_number_regex = /^(\d+\.\d+)/;
-  const match = trimmed.match(pin_number_regex);
+  const v1_pin_regex = /^(\d+\.\d+)/;
+  const v2_pin_regex = /^(P[A-K]\d{1,2}(?:_C)?)/i;
+  let match = trimmed.match(v1_pin_regex);
+  if (!match) {
+    match = trimmed.match(v2_pin_regex);
+  }
   if (!match) {
     return {
       base_pin: trimmed,
@@ -8103,8 +8107,8 @@ function parse_pin_text(pin_text) {
       modifiers: []
     };
   }
-  const base_pin = match[1];
-  const modifier_text = trimmed.substring(base_pin.length);
+  const base_pin = match[1].toUpperCase();
+  const modifier_text = trimmed.substring(match[1].length);
   const valid_modifiers = ["!", "o", "^", "v", "-", "@"];
   const modifiers = [];
   for (const char of modifier_text) {
@@ -8189,20 +8193,37 @@ async function load_pin_database() {
   }
   is_loading = true;
   try {
-    console.log("[pin-tag.ts] Loading pin database from YAML...");
-    const response = await fetch("/assets/data/smoothieware-v1-pins.yaml");
-    if (!response.ok) {
-      throw new Error(`Failed to fetch pin database: ${response.status} ${response.statusText}`);
-    }
-    const yaml_text = await response.text();
-    const yaml_data = js_yaml_default.load(yaml_text);
+    console.log("[pin-tag.ts] Loading pin databases from YAML files...");
     pin_database = new Map;
-    if (yaml_data && yaml_data.pins) {
-      for (const [pin_name, pin_info] of Object.entries(yaml_data.pins)) {
-        pin_database.set(pin_name, pin_info);
+    const [v1_response, v2_response] = await Promise.all([
+      fetch("/assets/data/smoothieware-v1-pins.yaml"),
+      fetch("/assets/data/smoothieware-v2-pins.yaml")
+    ]);
+    if (v1_response.ok) {
+      const v1_yaml_text = await v1_response.text();
+      const v1_data = js_yaml_default.load(v1_yaml_text);
+      if (v1_data && v1_data.pins) {
+        for (const [pin_name, pin_info] of Object.entries(v1_data.pins)) {
+          pin_database.set(pin_name, pin_info);
+        }
+        console.log(`[pin-tag.ts] Loaded ${Object.keys(v1_data.pins).length} V1 pins`);
       }
+    } else {
+      console.warn(`[pin-tag.ts] Could not load V1 pins: ${v1_response.status}`);
     }
-    console.log(`[pin-tag.ts] Loaded ${pin_database.size} pins from database`);
+    if (v2_response.ok) {
+      const v2_yaml_text = await v2_response.text();
+      const v2_data = js_yaml_default.load(v2_yaml_text);
+      if (v2_data && v2_data.pins) {
+        for (const [pin_name, pin_info] of Object.entries(v2_data.pins)) {
+          pin_database.set(pin_name.toUpperCase(), pin_info);
+        }
+        console.log(`[pin-tag.ts] Loaded ${Object.keys(v2_data.pins).length} V2 pins`);
+      }
+    } else {
+      console.warn(`[pin-tag.ts] Could not load V2 pins: ${v2_response.status}`);
+    }
+    console.log(`[pin-tag.ts] Total pins in database: ${pin_database.size}`);
   } catch (error) {
     console.error("[pin-tag.ts] Error loading pin database:", error);
     throw error;

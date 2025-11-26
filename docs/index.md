@@ -278,8 +278,8 @@ Note, Smoothieboards come completely pre-flashed, you do not need to compile or 
 More: [Windows Drivers](windows-drivers), [Linux Drivers](linux-drivers), [Mac Drivers](mac-drivers), [New Features](new-features), [Gallery](gallery), [Smoothieboard Beta Guide](smoothieboard-beta-guide)
 
 {::nomarkdown}
-<a href="/images/smoothieboard-fritzing-blue.png">
-  <img src="/images/smoothieboard-fritzing-blue.png" alt="Smoothieboard Fritzing" style="float: right; margin-left: 1rem; min-width:300px; max-width: 400px"/>
+<a id="board-image-link" href="/images/smoothieboard-fritzing-blue.png">
+  <img id="board-image" src="/images/smoothieboard-fritzing-blue.png" alt="Smoothieboard Fritzing" style="float: right; margin-left: 1rem; min-width:300px; max-width: 400px"/>
 </a>
 {:/nomarkdown}
 
@@ -289,10 +289,37 @@ More: [Windows Drivers](windows-drivers), [Linux Drivers](linux-drivers), [Mac D
 
 - [Smoothieboards](smoothieboards): all versions of the Smoothieboard hardware
 - [Running Smoothie on a Breadboard](smoothie-on-a-breadboard)
-- [Pinout](pinout) has diagrams of all pins on the board
-- [Pin usage](lpc1769-pin-usage) has information on the use and capability of all pins
 - [Pin configuration](pin-configuration) details how to configure pins to be inverted, open-drain, pulled-down, pulled-up, etc.
 - [How to wire](how-to-wire) describes tutorials, tools and best practices for wiring and cabling work when installing your Smoothieboard in a new machine.
+
+{::nomarkdown}
+<versioned>
+<v1>
+{:/nomarkdown}
+
+**Smoothieboard v1:**
+- [Smoothieboard V1](smoothieboard-v1): Main documentation for the V1 board
+- [V1 Specifications](smoothieboard-v1-specifications): Technical specifications
+- [V1 Pinout](pinout): Diagrams of all pins on the V1 board
+- [LPC1769 Pin Usage](lpc1769-pin-usage): Pin assignments for the LPC1769 microcontroller
+- [V1 Schematic](smoothieboard-schematic): Hardware schematic documentation
+- [V1 PCB Reference](smoothieboard-pcb): PCB layout and images
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+**Smoothieboard v2:**
+- [Smoothieboard V2 Prime](smoothieboard-v2-prime): Main documentation for the V2 Prime board
+- [V2 vs V1 Differences](smoothieboard-v2-differences): Comparison guide for migration and evaluation
+- [STM32H7 Pin Usage](stm32h7-pin-usage): Pin assignments for the STM32H7 microcontroller
+- [V2 Schematic](smoothieboard-v2-schematic): Hardware schematic documentation
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
 
 # Getting a Smoothieboard
 
@@ -386,3 +413,50 @@ Current edge build status: [![Build Status](https://app.travis-ci.com/Smoothiewa
 </a>
 {:/nomarkdown}
 
+{::nomarkdown}
+<script type="module">
+  import $ from 'jquery';
+
+  // Image paths for v1 and v2 boards
+  const V1_IMAGE = '/images/smoothieboard-fritzing-blue.png';
+  const V2_IMAGE = '/images/v2-prime-render.png';
+
+  // Get display version from localStorage (same logic as versioned-tag.js)
+  function get_display_version() {
+    try {
+      const raw_config = localStorage.getItem('configuration');
+      if (!raw_config) return 'nc';
+      const config = JSON.parse(raw_config);
+      return config.display_version || 'nc';
+    } catch (e) {
+      return 'nc';
+    }
+  }
+
+  // Update board image based on selected version
+  function update_board_image() {
+    const version = get_display_version();
+    const $img = $('#board-image');
+    const $link = $('#board-image-link');
+
+    if (!$img.length || !$link.length) return;
+
+    // If v1 is selected, show v1 image; otherwise show v2 image
+    if (version === 'v1') {
+      $img.attr('src', V1_IMAGE);
+      $link.attr('href', V1_IMAGE);
+      $img.attr('alt', 'Smoothieboard V1');
+    } else {
+      $img.attr('src', V2_IMAGE);
+      $link.attr('href', V2_IMAGE);
+      $img.attr('alt', 'Smoothieboard V2 Prime');
+    }
+  }
+
+  // Run on page load
+  $(document).ready(update_board_image);
+
+  // Listen for version changes (jQuery event)
+  $(document).on('version-changed', update_board_image);
+</script>
+{:/nomarkdown}
