@@ -61,10 +61,7 @@ Step generation is handled by hardware timers for precise timing with minimal ji
 
 ### Current Setting
 
-{::nomarkdown}
-<review id="smoothieboard-v1-specifications:current-setting">
-<proposal>
-{:/nomarkdown}
+
 
 Motor current is set in the [configuration file](configuring-smoothie), not with potentiometers. This is one of the nice things about Smoothieboards - no fiddling with tiny potentiometers with a screwdriver. Just edit a text file:
 
@@ -106,35 +103,13 @@ Note: V2 uses milliamps (mA) instead of amps.
 
 The current settings are {::nomarkdown}<setting v1="alpha_current" v2="current control.alpha.current"></setting>{:/nomarkdown}, {::nomarkdown}<setting v1="beta_current" v2="current control.beta.current"></setting>{:/nomarkdown}, {::nomarkdown}<setting v1="gamma_current" v2="current control.gamma.current"></setting>{:/nomarkdown}, and {::nomarkdown}<setting v1="delta_current" v2="current control.delta.current"></setting>{:/nomarkdown}.
 
-{::nomarkdown}
-</proposal>
-<original>
-{:/nomarkdown}
 
-Motor current is set in the [configuration file](configuring-smoothie), not with potentiometers. This is one of the nice things about Smoothieboards - no fiddling with tiny potentiometers with a screwdriver. Just edit a text file:
-
-```
-alpha_current   1.5    # X axis motor current in Amps
-beta_current    1.5    # Y axis motor current
-gamma_current   1.5    # Z axis motor current
-delta_current   1.5    # Extruder motor current
-```
-
-The current settings are {::nomarkdown}<setting v1="alpha_current" v2="current control.alpha.current"></setting>{:/nomarkdown}, {::nomarkdown}<setting v1="beta_current" v2="current control.beta.current"></setting>{:/nomarkdown}, {::nomarkdown}<setting v1="gamma_current" v2="current control.gamma.current"></setting>{:/nomarkdown}, and {::nomarkdown}<setting v1="delta_current" v2="current control.delta.current"></setting>{:/nomarkdown}.
-
-{::nomarkdown}
-</original>
-</review>
-{:/nomarkdown}
 
 Typical values range from 0.5A for small motors to 2.0A for larger NEMA 17 motors. Check your motor's datasheet for the rated current. You want to set it to the motor's rated current, or slightly below. Setting it too high won't make your motors stronger - it'll just make them hotter.
 
 ### Microstepping
 
-{::nomarkdown}
-<review id="smoothieboard-v1-specifications:microstepping">
-<proposal>
-{:/nomarkdown}
+
 
 Set per-driver in the config file. Most users run 1/16 or 1/32 for a balance of smoothness and performance:
 
@@ -173,23 +148,7 @@ V2 with TMC drivers also supports up to 1/256 microstepping and features like St
 
 Higher microstepping (1/32) is quieter but may reduce high-speed performance slightly. The higher the microstepping, the more steps the processor needs to send for the same movement, which can become a bottleneck at very high speeds.
 
-{::nomarkdown}
-</proposal>
-<original>
-{:/nomarkdown}
 
-Set per-driver in the config file. Most users run 1/16 or 1/32 for a balance of smoothness and performance:
-
-```
-microseconds    16     # 1/16 microstepping
-```
-
-Higher microstepping (1/32) is quieter but may reduce high-speed performance slightly. The higher the microstepping, the more steps the processor needs to send for the same movement, which can become a bottleneck at very high speeds.
-
-{::nomarkdown}
-</original>
-</review>
-{:/nomarkdown}
 
 ### External Drivers
 
@@ -1036,10 +995,7 @@ microseconds    16     # 1/16 microstepping
 microseconds    32     # 1/32 microstepping (quieter)
 ```
 
-{::nomarkdown}
-<review id="smoothieboard-v1-specifications:temperature-control">
-<proposal>
-{:/nomarkdown}
+
 
 **Temperature Control (Example for Hotend):**
 
@@ -1083,27 +1039,7 @@ set_and_wait_m_code = 109
 
 Key temperature control settings include {::nomarkdown}<setting v1="temperature_control.{name}.enable" v2="temperature control.enable"></setting>{:/nomarkdown}, {::nomarkdown}<setting v1="temperature_control.{name}.thermistor_pin" v2="temperature control.thermistor_pin"></setting>{:/nomarkdown}, and {::nomarkdown}<setting v1="temperature_control.{name}.heater_pin" v2="temperature control.heater_pin"></setting>{:/nomarkdown}.
 
-{::nomarkdown}
-</proposal>
-<original>
-{:/nomarkdown}
 
-**Temperature Control (Example for Hotend):**
-```
-temperature_control.hotend.enable               true
-temperature_control.hotend.thermistor_pin       0.23
-temperature_control.hotend.heater_pin           2.7
-temperature_control.hotend.thermistor           Semitec
-temperature_control.hotend.set_m_code           104
-temperature_control.hotend.set_and_wait_m_code  109
-```
-
-Key temperature control settings include {::nomarkdown}<setting v1="temperature_control.{name}.enable" v2="temperature control.enable"></setting>{:/nomarkdown}, {::nomarkdown}<setting v1="temperature_control.{name}.thermistor_pin" v2="temperature control.thermistor_pin"></setting>{:/nomarkdown}, and {::nomarkdown}<setting v1="temperature_control.{name}.heater_pin" v2="temperature control.heater_pin"></setting>{:/nomarkdown}.
-
-{::nomarkdown}
-</original>
-</review>
-{:/nomarkdown}
 
 See the [configuration documentation](configuring-smoothie) for complete details.
 

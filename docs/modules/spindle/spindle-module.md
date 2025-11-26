@@ -23,10 +23,7 @@ The spindle module supports different types of spindles which are described in t
 
 ## General
 
-{::nomarkdown}
-<review id="spindle-module:general-options">
-<proposal>
-{:/nomarkdown}
+
 
 The spindle module has an option which lets you enable or disable the entire module:
 
@@ -62,23 +59,7 @@ ignore_on_halt = false       # set to false to turn off spindle during HALT (saf
 </versioned>
 {:/nomarkdown}
 
-{::nomarkdown}
-</proposal>
-<original>
-{:/nomarkdown}
 
-The spindle module has an option which lets you enable or disable the entire module:
-
-```markdown
-spindle.enable                                   true   # set this to false to disable the spindle module
-spindle.ignore_on_halt                           false  # set to false to turn off spindle during HALT (safe, recommended)
-                                                        # set to true to keep spindle running during emergency stop/limit hit (use with extreme caution)
-```
-
-{::nomarkdown}
-</original>
-</review>
-{:/nomarkdown}
 
 ## G-code
 
@@ -104,10 +85,7 @@ Available G-code commands:
 
 ### Example config options
 
-{::nomarkdown}
-<review id="spindle-module:pwm-config">
-<proposal>
-{:/nomarkdown}
+
 
 {::nomarkdown}
 <versioned orientation="vertical">
@@ -161,31 +139,7 @@ control_smoothing = 0.1      # default 0.1. This value is low pass filter time c
 </versioned>
 {:/nomarkdown}
 
-{::nomarkdown}
-</proposal>
-<original>
-{:/nomarkdown}
 
-```markdown
-spindle.type                                 pwm               # sets the spindle module to PWM mode
-spindle.pwm_pin                              2.5               # Big Mosfet Q7. Pin must be hardware PWM capable.
-spindle.pwm_period                           1000              # default 1000, sets the PWM frequency
-spindle.max_pwm                              1.0               # maximum PWM duty cycle (0.0 to 1.0)
-                                                               # limits power to protect motor from overcurrent
-                                                               # set lower if motor runs too hot at full power
-spindle.feedback_pin                         2.7               # Pin must be interrupt capable.
-spindle.pulses_per_rev                       1.0               # default 1. Defines the number of pulses occur for each rotation
-spindle.default_rpm                          5000              # default 5000. Defines a default RPM value in case no RPM value is provided.
-spindle.control_P                            0.1               # default 0.0001. P value for the PID controller
-spindle.control_I                            0.1               # default 0.0001. I value for the PID controller
-spindle.control_D                            0.1               # default 0.0001. D value for the PID controller
-spindle.control_smoothing                    0.1               # default 0.1. This value is low pass filter time constant in seconds.
-```
-
-{::nomarkdown}
-</original>
-</review>
-{:/nomarkdown}
 
 {::nomarkdown}
 <sl-alert variant="neutral" open>
@@ -210,10 +164,7 @@ spindle.control_smoothing                    0.1               # default 0.1. Th
 </sl-alert>
 {:/nomarkdown}
 
-{::nomarkdown}
-<review id="spindle-module:esc-init">
-<proposal>
-{:/nomarkdown}
+
 
 {::nomarkdown}
 <versioned orientation="vertical">
@@ -259,27 +210,7 @@ servo.failsafe_set_to = 0
 </versioned>
 {:/nomarkdown}
 
-{::nomarkdown}
-</proposal>
-<original>
-{:/nomarkdown}
 
-```markdown
-switch.servo.enable                          true
-switch.servo.input_on_command                M3
-switch.servo.input_off_command               M5
-switch.servo.output_pin                      1.23o!
-switch.servo.output_type                     hwpwm
-switch.servo.startup_state                   true
-switch.servo.startup_value                   7.5
-switch.servo.default_on_value                7.5
-switch.servo.failsafe_set_to                 0
-```
-
-{::nomarkdown}
-</original>
-</review>
-{:/nomarkdown}
 
 {::nomarkdown}
 <sl-alert variant="neutral" open>
@@ -309,10 +240,7 @@ It is also the mode of choice if you run a brushless motor spindle driven by an 
 
 ### Example config options
 
-{::nomarkdown}
-<review id="spindle-module:analog-config">
-<proposal>
-{:/nomarkdown}
+
 
 {::nomarkdown}
 <versioned orientation="vertical">
@@ -358,27 +286,7 @@ switch_on_pin = 2.6          # the pin which is used to enable the VFD (optional
 </versioned>
 {:/nomarkdown}
 
-{::nomarkdown}
-</proposal>
-<original>
-{:/nomarkdown}
 
-```markdown
-spindle.type                                     analog   # set the spindle type to analog, can also be used for ESC spindles controlled by a PWM
-spindle.max_rpm                                  24000    # set the max spindle speed that is achieved at 100% PWM
-spindle.min_rpm                                  100      # minimum spindle speed in RPM
-                                                          # prevents unstable low-speed operation
-                                                          # RPM below this (but > 0) are clamped to min_rpm
-                                                          # M5 or S0 still turns spindle completely off
-spindle.pwm_pin                                  2.4      # the pin which emits the PWM signal
-spindle.pwm_period                               1000     # the PWM frequency
-spindle.switch_on_pin                            2.6      # the pin which is used to enable the VFD (optional)
-```
-
-{::nomarkdown}
-</original>
-</review>
-{:/nomarkdown}
 
 ### PWM to analog converter circuit
 
@@ -457,10 +365,7 @@ But it also can support VFDs that are not compliant with the Modbus standard suc
 
 ### Example config options
 
-{::nomarkdown}
-<review id="spindle-module:modbus-config">
-<proposal>
-{:/nomarkdown}
+
 
 {::nomarkdown}
 <versioned orientation="vertical">
@@ -498,23 +403,7 @@ dir_pin = 2.5                # RS485 is only half-duplex, so we need a pin to sw
 </versioned>
 {:/nomarkdown}
 
-{::nomarkdown}
-</proposal>
-<original>
-{:/nomarkdown}
 
-```markdown
-spindle.type                                     modbus   # set the spindle type to modbus/RS485
-spindle.vfd_type                                 huanyang # set the VFD type, this is necessary because each inverter uses its own commands
-spindle.rx_pin                                   2.6      # RX pin for the soft serial
-spindle.tx_pin                                   2.4      # TX pin for the soft serial
-spindle.dir_pin                                  2.5      # RS485 is only half-duplex, so we need a pin to switch between sending and receiving
-```
-
-{::nomarkdown}
-</original>
-</review>
-{:/nomarkdown}
 
 ### Huanyang VFD Modbus Parameters
 

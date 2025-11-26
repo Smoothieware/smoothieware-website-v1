@@ -61,10 +61,7 @@ The point is you configure your sensor as <em>either</em> a probe or an endstop,
 
 ## Configuration
 
-{::nomarkdown}
-<review id="zprobe:basic-config">
-<proposal>
-{:/nomarkdown}
+
 
 Add the following to the config file:
 
@@ -111,30 +108,7 @@ max_travel = 200            # maximum default travel for the probe command
 </versioned>
 {:/nomarkdown}
 
-{::nomarkdown}
-</proposal>
-<original>
-{:/nomarkdown}
 
-Add the following to the config file:
-
-```markdown
-gamma_min_endstop            nc                 # normally 1.28. Change to nc to prevent conflict, not needed on Azteeg X5
-
-zprobe.enable                true               # set to true to enable a zprobe
-zprobe.probe_pin             1.28!^             # pin probe is attached to if NC remove the !, Azteeg X5 this is 1.29
-zprobe.slow_feedrate         5                  # mm/sec probe feed rate
-#zprobe.debounce_ms          1                  # set if noisy
-zprobe.fast_feedrate         100                # move feedrate
-zprobe.probe_height          5                  # how much above bed to start probe NB only needed for G32 on delta
-zprobe.return_feedrate       0                  # feedrate after a probe, default 0 is double of slow_feedrate (mm/s)
-zprobe.max_z                 200                # maximum default travel for the probe command, will use gamma_max if not defined
-```
-
-{::nomarkdown}
-</original>
-</review>
-{:/nomarkdown}
 
 {::nomarkdown}
 <sl-alert variant="neutral" open>
@@ -192,10 +166,7 @@ There are several {::nomarkdown}<mcode>M670</mcode>{:/nomarkdown} parameters tha
 
 Make sure the config has `delta_homing` true set and that `zprobe.max_z` is set to about 20-30mm shorter than the distance to the bed, otherwise it will crash into the bed at high speed.
 
-{::nomarkdown}
-<review id="zprobe:delta-calibration-config">
-<proposal>
-{:/nomarkdown}
+
 
 Also in the config set:
 
@@ -231,25 +202,7 @@ initial_height = 10      # height above bed to stop initial move
 </versioned>
 {:/nomarkdown}
 
-{::nomarkdown}
-</proposal>
-<original>
-{:/nomarkdown}
 
-Also in the config set:
-
-```markdown
-leveling-strategy.delta-calibration.enable   true            # basic delta calibration
-leveling-strategy.delta-calibration.radius   100             # the probe radius
-leveling-strategy.delta-calibration.initial_height 10        # height above bed to stop initial move
-#the initial height above the bed we stop the initial move down after home to find the bed
-#this should be a height that is enough that the probe will not hit the bed and is an offset from zprobe.max_z (can be set to 0 if zprobe.max_z takes into account the probe offset)
-```
-
-{::nomarkdown}
-</original>
-</review>
-{:/nomarkdown}
 
 {::nomarkdown}
 <sl-alert variant="warning" open>
@@ -375,10 +328,7 @@ First calibrate with G32 then if needed do G31 to set the grid compensation. If 
 
 ### Configuration
 
-{::nomarkdown}
-<review id="zprobe:delta-grid-config">
-<proposal>
-{:/nomarkdown}
+
 
 The strategy must be enabled in the config as well as zprobe.
 
@@ -444,49 +394,7 @@ do_home = false
 </versioned>
 {:/nomarkdown}
 
-{::nomarkdown}
-</proposal>
-<original>
-{:/nomarkdown}
 
-The strategy must be enabled in the config as well as zprobe.
-
-```markdown
-leveling-strategy.delta-grid.enable         true
-```
-
-The radius of the bed must be specified with...
-
-```markdown
-leveling-strategy.delta-grid.radius        50
-```
-
-This needs to be at least as big as the maximum printing radius as moves outside of this will not be compensated for correctly
-
-The size of the grid can be set with...
-
-```markdown
-leveling-strategy.delta-grid.size        7
-```
-
-This is the X and Y size of the grid, it must be an odd number, the default is 7 which is 49 probe points
-
-```markdown
-leveling-strategy.delta-grid.do_home         true
-```
-
-This must be set on a Delta printer (although it should default to true).
-
-If you are not using all 3 endstops (or prefer to home manually before G32):
-
-```markdown
-leveling-strategy.delta-grid.do_home        false
-```
-
-{::nomarkdown}
-</original>
-</review>
-{:/nomarkdown}
 
 {::nomarkdown}
 <sl-alert variant="warning" open>
@@ -537,10 +445,7 @@ leveling-strategy.delta-grid.initial_height  10
 | --- | --- | --- |
 {% include modules/leveling/delta-grid-calibration-options-for-include.md %}
 
-{::nomarkdown}
-<review id="zprobe:delta-grid-example-config">
-<proposal>
-{:/nomarkdown}
+
 
 ### Example configuration
 
@@ -590,33 +495,7 @@ initial_height = 10         # Optionally an initial_height can be set that tell 
 </versioned>
 {:/nomarkdown}
 
-{::nomarkdown}
-</proposal>
-<original>
-{:/nomarkdown}
 
-### Example configuration
-
-To activate this leveling strategy, copy/paste the following to your [configuration file](configuring-smoothie) and edit it accordingly:
-
-```markdown
-leveling-strategy.delta-grid.enable               true     # The strategy must be enabled in the config, as well as the zprobe module.
-leveling-strategy.delta-grid.radius               50       # Radius of the bed, must be specified. This needs to be at least as big as
-                                                           # the maximum printing radius as moves outside of this will not
-                                                           # be compensated for correctly
-leveling-strategy.delta-grid.size                 7        # The size of the grid, for example, 7 causes a 7x7 grid with 49 points.
-                                                           # Must be an odd number.
-leveling-strategy.delta-grid.probe_offsets        0,0,0    # Optional probe offsets from the nozzle or tool head
-leveling-strategy.delta-grid.save                 false    # If the saved grid is to be loaded on boot then this must be set to true
-leveling-strategy.delta-grid.initial_height       10       # Optionally an initial_height can be set that tell the initial probe
-                                                           # where to stop the fast descent before it probes, this should be
-                                                           # around 5-10mm above the bed
-```
-
-{::nomarkdown}
-</original>
-</review>
-{:/nomarkdown}
 
 ### Usage
 

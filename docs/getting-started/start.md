@@ -21,10 +21,7 @@ title: Smoothieware Home
 </sl-alert>
 {:/nomarkdown}
 
-{::nomarkdown}
-<review id="start:version-guidance">
-<proposal>
-{:/nomarkdown}
+
 
 {::nomarkdown}
 <versioned orientation="vertical">
@@ -79,15 +76,7 @@ You're using the **new Smoothieware V2** platform with the STM32H745-based Smoot
 </versioned>
 {:/nomarkdown}
 
-{::nomarkdown}
-</proposal>
-<original>
-{:/nomarkdown}
 
-{::nomarkdown}
-</original>
-</review>
-{:/nomarkdown}
 
 ## Quick Links
 

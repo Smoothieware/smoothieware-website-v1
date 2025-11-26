@@ -3,10 +3,7 @@
 
 Different models of thermistors are used in hotends or heated beds, and each type translates temperature into resistance differently. It's essential to inform Smoothie about the specific thermistor model you have to ensure accurate temperature readings.
 
-{::nomarkdown}
-<review id="temperaturecontrol-thermistor-choice:configuration-methods">
-<proposal>
-{:/nomarkdown}
+
 
 This configuration is done using the `thermistor` option in the configuration file. You provide the name of your thermistor, and Smoothie will handle the math accordingly.
 
@@ -38,21 +35,7 @@ hotend.thermistor = EPCOS100K
 </versioned>
 {:/nomarkdown}
 
-{::nomarkdown}
-</proposal>
-<original>
-{:/nomarkdown}
 
-This configuration is done using the `thermistor` option in the configuration file. You provide the name of your thermistor, and Smoothie will handle the math accordingly.
-
-```markdown
-temperature_control.hotend.thermistor        EPCOS100K
-```
-
-{::nomarkdown}
-</original>
-</review>
-{:/nomarkdown}
 
 Currently, Smoothie recognizes the following thermistor models:
 
@@ -73,10 +56,7 @@ If your thermistor is not recognized by Smoothie, you can define the parameters 
 
 ##### Using Beta Values
 
-{::nomarkdown}
-<review id="temperaturecontrol-thermistor-choice:beta-method">
-<proposal>
-{:/nomarkdown}
+
 
 Set the beta value in the configuration file:
 
@@ -108,21 +88,7 @@ hotend.beta = 4066   # set beta for thermistor
 </versioned>
 {:/nomarkdown}
 
-{::nomarkdown}
-</proposal>
-<original>
-{:/nomarkdown}
 
-Set the beta value in the configuration file:
-
-```markdown
-temperature_control.hotend.beta       4066   # set beta for thermistor
-```
-
-{::nomarkdown}
-</original>
-</review>
-{:/nomarkdown}
 
 {::nomarkdown}
 <sl-alert variant="warning" open>
@@ -137,10 +103,7 @@ If you're unsure about your thermistor model, contact the designer or seller of 
 
 ##### Using the Steinhart Hart Algorithm
 
-{::nomarkdown}
-<review id="temperaturecontrol-thermistor-choice:steinhart-hart-method">
-<proposal>
-{:/nomarkdown}
+
 
 This is the preferred method. Set the Steinhart Hart coefficients in the configuration file:
 
@@ -172,28 +135,11 @@ hotend.coefficients = 0.000722376862540841,0.000216302098124288,0.00000009264016
 </versioned>
 {:/nomarkdown}
 
-{::nomarkdown}
-</proposal>
-<original>
-{:/nomarkdown}
 
-This is the preferred method. Set the Steinhart Hart coefficients in the configuration file:
-
-```markdown
-temperature_control.hotend.coefficients 0.000722376862540841,0.000216302098124288,0.000000092640163984
-```
-
-{::nomarkdown}
-</original>
-</review>
-{:/nomarkdown}
 
 To determine the Steinhart Hart coefficients for your thermistor, please refer to the [SteinhartHart](steinharthart) page.
 
-{::nomarkdown}
-<review id="temperaturecontrol-thermistor-choice:rt-curve-method">
-<proposal>
-{:/nomarkdown}
+
 
 Alternatively, if you have the temperature curve for your thermistor, you can define three points on that curve and let Smoothie calculate the coefficients:
 
@@ -225,18 +171,4 @@ hotend.rt_curve = 20.0,126800,150,1360,240,206.5
 </versioned>
 {:/nomarkdown}
 
-{::nomarkdown}
-</proposal>
-<original>
-{:/nomarkdown}
 
-Alternatively, if you have the temperature curve for your thermistor, you can define three points on that curve and let Smoothie calculate the coefficients:
-
-```markdown
-temperature_control.hotend.rt_curve          20.0,126800,150,1360,240,206.5
-```
-
-{::nomarkdown}
-</original>
-</review>
-{:/nomarkdown}

@@ -5,8 +5,7 @@ permalink: /windows-drivers
 # Smoothie Drivers for Windows
 
 {::nomarkdown}
-<review id="windows-drivers:version-intro">
-<proposal>
+
 <p>If you run Windows, you may need to install drivers to use the virtual serial over USB interface. Driver requirements depend on both your Windows version and which Smoothieware version you're using.</p>
 
 <versioned orientation="vertical">
@@ -17,12 +16,7 @@ permalink: /windows-drivers
 <p><strong>Smoothieware V2</strong> also uses a standard virtual serial port (CDC/ACM) over USB, and uses the same driver compatibility as V1. Windows 10 and later automatically recognize V2's composite USB device without additional drivers.</p>
 </v2>
 </versioned>
-</proposal>
-<original>
-<p>If you run Windows, you will need to install drivers to use the virtual serial over USB interface.</p>
-<p>Please continue reading to determine the correct drivers to install for your version of Windows.</p>
-</original>
-</review>
+
 {:/nomarkdown}
 
 ## Windows 10 and Later
@@ -42,8 +36,7 @@ permalink: /windows-drivers
 {:/nomarkdown}
 
 {::nomarkdown}
-<review id="windows-drivers:installer-note">
-<proposal>
+
 <h2>Installers Windows 2000 through Windows 8</h2>
 
 <versioned orientation="vertical">
@@ -63,18 +56,7 @@ permalink: /windows-drivers
 <p>For <strong>Smoothieware V2</strong>, driver support is generally better on modern Windows versions. If using Windows 10 or later, no drivers are needed. For older Windows versions with V2 hardware, the V1 drivers above may work, though V2 should ideally be used with modern operating systems.</p>
 </v2>
 </versioned>
-</proposal>
-<original>
-<ul>
-<li><strong>Windows 2000/Vista/7/8 (64bit/32bit)</strong>: <a href="windows-drivers/smoothieware-usb-driver-v1.1.exe">smoothieware-usb-driver-v1.1.exe</a></li>
-</ul>
 
-<sl-alert variant="neutral" open>
-  <sl-icon slot="icon" name="info-circle"></sl-icon>
-  <strong>Note:</strong> Windows 8.1 is known to not like the new driver. Please use the v1.0 driver found below with Windows 8.1 for now.
-</sl-alert>
-</original>
-</review>
 {:/nomarkdown}
 
 ## Using the Installers
@@ -99,7 +81,7 @@ For manual installation:
 
 This is just in case the installer doesn't work, or one is running Vista. The installer is new and has not received much testing.
 
-If it didn't work for you, please let us know at mark@uberclock.com.
+If it didn't work for you, please [contact us](mailto:wolf.arthur@gmail.com).
 
 ### Step 1: Download and Extract
 

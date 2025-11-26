@@ -235,10 +235,7 @@ Compared to the previous graph, we now spend significantly less time in the inte
 
 ## V1 vs V2 Step Generation Comparison
 
-{::nomarkdown}
-<review id="accel-branch:step-generation-comparison">
-<proposal>
-{:/nomarkdown}
+
 
 The stepping and acceleration architecture has evolved significantly between V1 and V2:
 
@@ -295,33 +292,7 @@ Set the step frequency and acceleration using:
 {::nomarkdown}
 </v2>
 </versioned>
-</proposal>
-<original>
-{:/nomarkdown}
 
-The stepping and acceleration architecture has evolved significantly between V1 and V2:
-
-### V1 Step Generation
-
-**Hardware Capabilities:**
-- Maximum step rate: 100 kHz
-- Microstepping: Up to 1/32
-- Processor: NXP LPC1769 (100-120 MHz)
-- Timer: Hardware timer interrupt at fixed frequency
-- Processing: Modest CPU headroom
-
-**Configuration:**
-Set the step frequency and acceleration using:
-- <setting v1="base_stepping_frequency"></setting> - Default 100 kHz
-- <setting v1="acceleration"></setting> - Default acceleration in mm/s²
-
-**Limitations:**
-- Fixed stepping frequency at 100 kHz provides good precision but limits maximum speed at high microstepping ratios
-- Coarse microstepping (max 1/32) means lower resolution at maximum speeds
-
-{::nomarkdown}
-</original>
-</review>
 {:/nomarkdown}
 
 ### Performance Summary

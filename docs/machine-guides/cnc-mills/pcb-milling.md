@@ -29,10 +29,7 @@ Enable it in the configuration with:
 leveling-strategy.rectangular-grid.only_by_two_corners        true
 ```
 
-{::nomarkdown}
-<review id="pcb-milling:grid-leveling-config">
-<proposal>
-{:/nomarkdown}
+
 
 **Configuration:**
 
@@ -60,17 +57,7 @@ only_by_two_corners = true
 </versioned>
 {:/nomarkdown}
 
-{::nomarkdown}
-</proposal>
-<original>
-{:/nomarkdown}
 
-**Setting:** <setting v1="leveling-strategy.rectangular-grid.only_by_two_corners" v2="cartesian grid leveling strategy.only_by_two_corners"></setting>
-
-{::nomarkdown}
-</original>
-</review>
-{:/nomarkdown}
 
 Before two corners mode, you had to correct machine (0,0) and bed size according to the desired probing grid position and size.
 

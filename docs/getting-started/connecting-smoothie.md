@@ -18,10 +18,7 @@ Smoothieboard supports multiple connection methods to communicate with your mach
 
 Smoothie supports several ways to connect and communicate:
 
-{::nomarkdown}
-<review id="connecting-smoothie:connection-methods">
-<proposal>
-{:/nomarkdown}
+
 
 {::nomarkdown}
 <versioned>
@@ -48,34 +45,11 @@ Smoothie supports several ways to connect and communicate:
 </versioned>
 {:/nomarkdown}
 
-{::nomarkdown}
-</proposal>
-<original>
-{:/nomarkdown}
 
-- **USB** - See the [USB](usb) documentation for details on USB serial communication
-
-- **Ethernet** - See the [Network](network) documentation for Ethernet connectivity
-
-- **UART** - See the [UART](uart) documentation for serial UART communication
-
-- **Bluetooth** - See the [Bluetooth Serial](bluetooth-serial) documentation for wireless connectivity
-
-- **WiFi** - See the [WiFi](wifi) documentation for wireless network connectivity
-
-Each connection method has its own advantages and use cases.
-
-{::nomarkdown}
-</original>
-</review>
-{:/nomarkdown}
 
 ## Quick Start Guide
 
-{::nomarkdown}
-<review id="connecting-smoothie:quick-start">
-<proposal>
-{:/nomarkdown}
+
 
 {::nomarkdown}
 <versioned orientation="vertical">
@@ -154,27 +128,7 @@ Each connection method has its own advantages and use cases.
 </versioned>
 {:/nomarkdown}
 
-{::nomarkdown}
-</proposal>
-<original>
-{:/nomarkdown}
 
-For most users, the simplest way to connect is via USB:
-
-1. Connect your Smoothieboard to your computer using a USB cable
-
-2. Install the appropriate [Windows drivers](windows-drivers) if needed
-
-3. Use host [software](software) like Pronterface or bCNC to communicate with the board
-
-4. See [Console Commands](console-commands) for available commands
-
-For more advanced setups, consider using Ethernet for more reliable connectivity, especially in electrically noisy environments.
-
-{::nomarkdown}
-</original>
-</review>
-{:/nomarkdown}
 
 ## Choosing a Connection Method
 
@@ -186,10 +140,7 @@ For more advanced setups, consider using Ethernet for more reliable connectivity
 
 ## Connection Reliability
 
-{::nomarkdown}
-<review id="connecting-smoothie:reliability-tips">
-<proposal>
-{:/nomarkdown}
+
 
 {::nomarkdown}
 <versioned orientation="vertical">
@@ -237,17 +188,7 @@ For more advanced setups, consider using Ethernet for more reliable connectivity
 </versioned>
 {:/nomarkdown}
 
-{::nomarkdown}
-</proposal>
-<original>
-{:/nomarkdown}
 
-(No original content - new section)
-
-{::nomarkdown}
-</original>
-</review>
-{:/nomarkdown}
 
 ## Detailed Documentation
 

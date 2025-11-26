@@ -2,8 +2,7 @@
 ## Recent Commits
 
 {::nomarkdown}
-<review id="latest-firmware-compact:branch-versioning">
-<proposal>
+
 <versioned orientation="vertical">
 <v1>
 <p><strong>V1 Edge Branch</strong> <span style="color: #888; font-size: 0.9em;">- Development branch with latest features</span></p>
@@ -32,35 +31,7 @@
 </div>
 </v2>
 </versioned>
-</proposal>
-<original>
-<div style="margin: 1.5rem 0;">
-  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
-    <!-- Edge Branch -->
-    <div>
-      <h4 style="color: #ffcc00; margin-bottom: 0.75rem; font-size: 1.1em;">
-        <sl-icon name="git"></sl-icon> Edge Branch
-      </h4>
-      <div id="edge-commits-compact" style="font-size: 0.9em;">
-        <sl-spinner style="font-size: 1.5rem;"></sl-spinner>
-        <span style="margin-left: 0.5rem; color: #888;">Loading...</span>
-      </div>
-    </div>
 
-    <!-- Master Branch -->
-    <div>
-      <h4 style="color: #ffcc00; margin-bottom: 0.75rem; font-size: 1.1em;">
-        <sl-icon name="git"></sl-icon> Master Branch
-      </h4>
-      <div id="master-commits-compact" style="font-size: 0.9em;">
-        <sl-spinner style="font-size: 1.5rem;"></sl-spinner>
-        <span style="margin-left: 0.5rem; color: #888;">Loading...</span>
-      </div>
-    </div>
-  </div>
-</div>
-</original>
-</review>
 
 <script>
 // Compact version - shows only 5 commits per branch

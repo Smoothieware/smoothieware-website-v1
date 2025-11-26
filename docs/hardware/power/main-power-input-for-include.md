@@ -21,10 +21,7 @@ Without power, your board cannot do much.
 
 The board uses power to operate the control logic, move stepper motors, power heating elements, fans, and other peripherals.
 
-{::nomarkdown}
-<review id="main-power-input:power-architecture">
-<proposal>
-{:/nomarkdown}
+
 
 {::nomarkdown}
 <versioned orientation="vertical">
@@ -152,29 +149,7 @@ The onboard 3A switching regulator provides 5V logic power automatically when Vm
 </versioned>
 {:/nomarkdown}
 
-{::nomarkdown}
-</proposal>
-<original>
-{:/nomarkdown}
 
-## How to choose a power supply unit (PSU)
-
-Two power supplies are required, 5.0V and 'bulk' power (V<sub>BB</sub>).
-
-### 5.0V supply
-
-- **Voltage** (V): The 5.0V supply should be regulated to 5% tolerance (4.75V to 5.25V). This supply provides power for the control logic circuitry, and should be a good quality regulated power supply (which is inexpensive). Using a cheap buck regulator from a higher voltage is *not recommended*, as **ever** exceeding 5.5V on this supply may instantly and permanently damage the control logic on your Smoothieboard.
-- **Current** (A): The 5.0V supply should be rated to supply at least 1A continuous current (or more). Typical load is roughly 0.5A.
-
-### VBB supply
-
-- **Voltage** (V): V<sub>BB</sub> can be from 12 to 24V. While most of the components on the Smoothieboard are rated up to 32V, it is not recommended or supported to use that high of a voltage. 12V PSUs are more common, and generally cheaper. However, the higher the voltage, the higher performance you can get from your stepper motors. This is the reason some designers use 24V PSUs. However, be careful that with a 24V PSU, you will need 24V fans, and will need to reduce the PWM setting for your heating elements or (preferred, and safer) use 24V heating elements.
-- **Current** (A): The total current required is the current for each stepper motor, plus the current for every peripheral on your machine Smoothieboard will control. This depends on your machine type. On a typical 3D printer, you can safely consider 10A to be sufficient for the heated bed, and 10A or a bit less for the rest of the loads. Go for a 17 to 20A PSU if you have a heated bed. 7A to 10 is probably enough if you do not have a heated bed (or if you are setting up a CNC mill or a laser cutter). If you bought your machine as a kit, a PSU with appropriate current is most probably provided (or one is recommended). If building your machine yourself by self-sourcing, the documentation for the machine model will also most probably recommend a current rating. A power supply that is able to supply more current than is needed is not a problem. Having not enough current to drive your hot-end, heater bed, or motors is a problem.
-
-{::nomarkdown}
-</original>
-</review>
-{:/nomarkdown}
 
 ### General Notes
 

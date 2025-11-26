@@ -297,8 +297,7 @@ A: Smoothie is open-source and standalone (no PC needed). Mach3/4 require a Wind
 - Touch probe configuration examples
 
 **Where to Buy:**
-- **[Robosprout (USA)](https://www.robosprout.com/product-category/smoothieboards)** - In stock, ships 2-3 days
-- **[Robotseed (Europe)](http://robotseed.com)** - Ships 3-5 days
+- **[Robosprout (USA)](https://www.robosprout.com/product-category/smoothieboards)** - In stock, ships internationally
 
 {::nomarkdown}
 <div style="text-align: center; margin: 3rem 0;">

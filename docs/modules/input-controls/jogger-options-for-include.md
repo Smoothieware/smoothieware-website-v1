@@ -14,10 +14,7 @@ This page lists all configuration options for the Jogger module.
 
 ## Configuration Options
 
-{::nomarkdown}
-<review id="jogger-options:configuration-table">
-<proposal>
-{:/nomarkdown}
+
 
 {::nomarkdown}
 <versioned orientation="vertical">
@@ -50,26 +47,4 @@ This module is not available in Smoothieware v2.
 </versioned>
 {:/nomarkdown}
 
-{::nomarkdown}
-</proposal>
-<original>
-{:/nomarkdown}
 
-| Option | Example Value | Explanation |
-| ------ | :-----------: | ----------- |
-| <setting v1="jogger.enable"></setting> | {::nomarkdown}<raw>true</raw>{:/nomarkdown} | If true, enable the Jogger module |
-| <setting v1="jogger.data_source_alpha"></setting> | {::nomarkdown}<raw>horizontal</raw>{:/nomarkdown} | Specifies the [module name](module-name) of the Joystick module the alpha/first jog axis will read from |
-| <setting v1="jogger.data_source_beta"></setting> | {::nomarkdown}<raw>vertical</raw>{:/nomarkdown} | Specifies the [module name](module-name) of the Joystick module the beta/second jog axis will read from |
-| <setting v1="jogger.jog_axes"></setting> | {::nomarkdown}<raw>Xy,XZ,-Z</raw>{:/nomarkdown} | Sets a list of the machine axes which will be controlled by the jogger. Axis letters are given in order of jog axis alpha, beta, etc. The first item in the list will be used on startup. Issuing the `toggle axes` command (<mcode>M778</mcode> by default) will cycle between the items in the list. Valid machine letters are X, Y, Z, A, B, C. Use "-" for no axis controlled. **Do not use spaces in the list**. |
-| <setting v1="jogger.m_code_set"></setting> | {::nomarkdown}<raw>777</raw>{:/nomarkdown} | Sets which M-code number the `set axes` command will use (`777` means use <mcode>M777</mcode> to set the jog axes) |
-| <setting v1="jogger.m_code_toggle"></setting> | {::nomarkdown}<raw>778</raw>{:/nomarkdown} | Sets which M-code number the `toggle axes` command will use (`778` means use <mcode>M778</mcode> to toggle the jog axes) |
-| <setting v1="jogger.max_speed"></setting> | {::nomarkdown}<raw>600</raw>{:/nomarkdown} | Sets the maximum speed the machine will jog. If not given, the Jogger uses the general configuration "default_seek_rate" (<gcode>G0</gcode> speed) |
-| <setting v1="jogger.dead_zone"></setting> | {::nomarkdown}<raw>0.05</raw>{:/nomarkdown} | Sets the threshold the joystick must cross before movement occurs (see description below) |
-| <setting v1="jogger.nonlinearity"></setting> | {::nomarkdown}<raw>1.5</raw>{:/nomarkdown} | Sets the non-linearity of the joystick to speed conversion function (see description below) |
-| <setting v1="jogger.refresh_rate"></setting> | {::nomarkdown}<raw>100</raw>{:/nomarkdown} | Specifies how many times per second to read the joysticks |
-| <setting v1="jogger.segment_frequency"></setting> | {::nomarkdown}<raw>10</raw>{:/nomarkdown} | Sets the number of tiny movement segments per second while jogging |
-
-{::nomarkdown}
-</original>
-</review>
-{:/nomarkdown}

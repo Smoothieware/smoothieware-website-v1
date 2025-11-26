@@ -13,33 +13,7 @@ title: Smoothieware Home
 </sl-alert>
 {:/nomarkdown}
 
-{::nomarkdown}
-<review id="homepage:v2-announcement">
-<proposal>
-{:/nomarkdown}
 
-<div id="v2-announcement-container" style="position: relative;">
-  <sl-alert id="v2-announcement" variant="primary" open>
-    <sl-icon slot="icon" name="rocket-takeoff"></sl-icon>
-    <div style="display:flex;align-items:center;gap:15px;">
-      <a href="https://www.robosprout.com/product-category/smoothieboards" style = "font-size:48px;font-weight:bold;">SmoothieBoard v2 is HERE!</a>
-      <a href="/images/fiesta-junina.png">
-        <img src="/images/fiesta-junina.png" alt="Party" style="width:50px;height:50px;"/>
-      </a>
-    </div>
-    <p style="margin-top: 10px; font-size: 0.9em;">
-      <strong>SmoothieBoard v1</strong> (LPC1769) remains the stable, widely-used platform.
-      <strong>SmoothieBoard v2</strong> (STM32H745) offers more processing power and new capabilities.
-      <a href="/smoothieboard">Learn about the differences</a>
-    </p>
-  </sl-alert>
-  <canvas id="fireworks-canvas" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 10;"></canvas>
-</div>
-
-{::nomarkdown}
-</proposal>
-<original>
-{:/nomarkdown}
 
 {::nomarkdown}
 <div id="v2-announcement-container" style="position: relative;">
@@ -56,10 +30,7 @@ title: Smoothieware Home
 </div>
 {:/nomarkdown}
 
-{::nomarkdown}
-</original>
-</review>
-{:/nomarkdown}
+
 
 {::nomarkdown}
 <script src="https://cdn.jsdelivr.net/npm/fireworks-js@2.10.8/dist/index.umd.min.js"></script>
@@ -208,24 +179,11 @@ The Smoothie project is always looking for help. Whatever your skills are, there
 
 ## Firmware documentation
 
-{::nomarkdown}
-<review id="homepage:getting-started-intro">
-<proposal>
-{:/nomarkdown}
 
-- **[Getting Started](getting-started)**: Complete guide to setting up your Smoothieboard from unboxing to first operation. Covers both v1 and v2 hardware with version-specific notes.
-
-{::nomarkdown}
-</proposal>
-<original>
-{:/nomarkdown}
 
 - **[Getting Started](getting-started)**: Complete guide to setting up your Smoothieboard from unboxing to first operation
 
-{::nomarkdown}
-</original>
-</review>
-{:/nomarkdown}
+
 - [Basics](basics): Fundamental concepts, terminology, and technical background
 - [Glossary](glossary): Definitions of common terms used in CNC and 3D printing
 - [Communication](communication)
@@ -241,22 +199,7 @@ The Smoothie project is always looking for help. Whatever your skills are, there
 </a>
 {:/nomarkdown}
 
-{::nomarkdown}
-<review id="homepage:configuring-smoothie-versions">
-<proposal>
-{:/nomarkdown}
 
-- [Configuring Smoothie](configuring-smoothie): Configuration and use, by module. **Note:** v1 and v2 use different configuration formats (flat INI vs hierarchical).
-  - [List of all configuration options](configuration-options)
-  - [Motion control](motion-control): All things related to gcode interpolation, motion and acceleration planning, and step generation
-  - [Arm Solutions](arm-solutions): [Cartesian](cartesian), [Delta](delta), [Hbot](hbot), [Core-XY](Core-XY), [Rotary Delta](rotary-delta), [Morgan Scara](morgan-scara)
-  - [6axis](6axis): Using A, B and C axes, for 4, 5 or 6 axis motion.
-  - [Grbl mode](grbl-mode): Using Smoothie in CNC-specific mode instead of 3D printing mode
-
-{::nomarkdown}
-</proposal>
-<original>
-{:/nomarkdown}
 
 - [Configuring Smoothie](configuring-smoothie): Configuration and use, by module
   - [List of all configuration options](configuration-options)
@@ -265,10 +208,7 @@ The Smoothie project is always looking for help. Whatever your skills are, there
   - [6axis](6axis): Using A, B and C axes, for 4, 5 or 6 axis motion.
   - [Grbl mode](grbl-mode): Using Smoothie in CNC-specific mode instead of 3D printing mode
 
-{::nomarkdown}
-</original>
-</review>
-{:/nomarkdown}
+
 
 {::nomarkdown}
 <a href="/images/glove.png">
@@ -293,24 +233,11 @@ The Smoothie project is always looking for help. Whatever your skills are, there
     - [Player](player): Play files from the SD card
     - [Currentcontrol](currentcontrol): Digitally control your stepper motors current 
     - [AdvancedMotorDriver](advancedmotordriver): For controlling SPI based stepper motor controllers like DRV8711 and TMC26X
-{::nomarkdown}
-<review id="homepage:configurator-versions">
-<proposal>
-{:/nomarkdown}
 
-    - [Configurator](configurator): Manipulate configuration using console commands. **Version note:** Very different between v1 and v2.
-
-{::nomarkdown}
-</proposal>
-<original>
-{:/nomarkdown}
 
     - [Configurator](configurator): Manipulate configuration using console commands
 
-{::nomarkdown}
-</original>
-</review>
-{:/nomarkdown}
+
     - [Kill Button](killbutton) and [Play LED](play-led): S/W based kill and play activity LED
     - [Panel](panel): Drive smoothie directly without a host using monochrome lcd screens and click encoders
     - [on_boot.gcode File](on-boot-gcode): Execute G-codes every time the board boots
@@ -388,24 +315,11 @@ More: [Windows Drivers](windows-drivers), [Linux Drivers](linux-drivers), [Mac D
 </a>
 {:/nomarkdown}
 
-{::nomarkdown}
-<review id="homepage:microcontroller-specs">
-<proposal>
-{:/nomarkdown}
+
 
 - {::nomarkdown}<versioned><v1>{:/nomarkdown}Powerful (120Mhz, 32bit) [micro-controller](http://www.embeddedartists.com/products/lpcxpresso/lpc1769_xpr.php).{::nomarkdown}</v1><v2>{:/nomarkdown}Powerful (480MHz dual-core, 32bit) [micro-controller](https://www.st.com/en/microcontrollers-microprocessors/stm32h745xi.html).{::nomarkdown}</v2></versioned>{:/nomarkdown}
 
-{::nomarkdown}
-</proposal>
-<original>
-{:/nomarkdown}
 
-- Powerful (120Mhz, 32bit) [micro-controller](http://www.embeddedartists.com/products/lpcxpresso/lpc1769_xpr.php).
-
-{::nomarkdown}
-</original>
-</review>
-{:/nomarkdown}
 - Easy to use and [configure](configuring-smoothie).
 - Smooth, jerk-free motion and enabling higher speeds
 - Can be used for CNC milling, laser cutting, and 3D printing.
@@ -414,10 +328,7 @@ More: [Windows Drivers](windows-drivers), [Linux Drivers](linux-drivers), [Mac D
 - Composite USB Mass Storage + Serial interface to host.
 - Free [email support (✿◠‿◠)](mailto:wolf.arthur@gmail.com)
 
-{::nomarkdown}
-<review id="homepage:features-for-hackers">
-<proposal>
-{:/nomarkdown}
+
 
 ## For hackers
 
@@ -434,30 +345,7 @@ More: [Windows Drivers](windows-drivers), [Linux Drivers](linux-drivers), [Mac D
 - Strict process for acceptance of new code, to keep the project at high quality
 - Heavily commented code
 
-{::nomarkdown}
-</proposal>
-<original>
-{:/nomarkdown}
 
-## For hackers
-
-{::nomarkdown}
-<a href="/images/blueprint-1.png">
-  <img src="/images/blueprint-1.png" alt="Hackers" style="width: 100px; height: 100px; float: right; margin-left: 1rem;"/>
-</a>
-{:/nomarkdown}
-
-- Modular, event-driven design, allowing to add functionality easily without modifying the core. See the [ModuleExample](moduleexample)
-- Designed to support non-Cartesian machines
-- LPC1769 leaves lots of room for additional functionality.
-- The mBed [functions](http://mbed.org/handbook/Homepage) and [additional libraries](http://mbed.org/cookbook/Homepage) are available for easy and fast prototyping. But compiles off-line (using GCC), not dependent on the mBed online compiler
-- Strict process for acceptance of new code, to keep the project at high quality
-- Heavily commented code
-
-{::nomarkdown}
-</original>
-</review>
-{:/nomarkdown}
 
 {% include project/donate-for-include.md %}
 

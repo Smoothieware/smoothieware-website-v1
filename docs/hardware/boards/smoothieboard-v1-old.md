@@ -10,11 +10,6 @@ It is intended to run the [Smoothie modular firmware](http://smoothieware.org/) 
 
 Larger machines can be driven using external drivers.
 
-{::nomarkdown}
-<a href="http://robotseed.com/img/p/4/2/42-tm_thickbox_default.jpg">
-  <img src="http://robotseed.com/img/p/4/2/42-tm_thickbox_default.jpg" alt="Smoothieboard Carousel" style="width: 640px; height: auto; display: block; margin: 2rem auto;"/>
-</a>
-{:/nomarkdown}
 
 {::nomarkdown}
 <sl-button variant="primary" size="large" href="getting-smoothieboard">Get a Smoothieboard</sl-button>

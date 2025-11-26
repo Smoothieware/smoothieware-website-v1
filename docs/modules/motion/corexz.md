@@ -49,10 +49,7 @@ CoreXZ is useful for machines where:
 
 ## Configuration
 
-{::nomarkdown}
-<review id="corexz:configuration">
-<proposal>
-{:/nomarkdown}
+
 
 To configure your machine to use the CoreXZ arm solution, add this to your configuration file:
 
@@ -80,21 +77,7 @@ arm_solution = corexz
 </versioned>
 {:/nomarkdown}
 
-{::nomarkdown}
-</proposal>
-<original>
-{:/nomarkdown}
 
-To configure your machine to use the CoreXZ arm solution, add this to your configuration file:
-
-```
-arm_solution corexz
-```
-
-{::nomarkdown}
-</original>
-</review>
-{:/nomarkdown}
 
 ### Reduction Parameters
 
@@ -115,10 +98,7 @@ The default `z_reduction` of 3.0 assumes that the Z axis typically needs more to
 
 ### Complete Configuration Example
 
-{::nomarkdown}
-<review id="corexz:complete-config">
-<proposal>
-{:/nomarkdown}
+
 
 {::nomarkdown}
 <versioned orientation="vertical">
@@ -195,43 +175,7 @@ gamma.driver = tmc2660
 </versioned>
 {:/nomarkdown}
 
-{::nomarkdown}
-</proposal>
-<original>
-{:/nomarkdown}
 
-```
-# CoreXZ arm solution
-arm_solution                                 corexz
-x_reduction                                  1.0
-z_reduction                                  3.0
-
-# Alpha (X/Z motor 1)
-alpha_step_pin                               2.0
-alpha_dir_pin                                0.5
-alpha_en_pin                                 0.4
-alpha_steps_per_mm                           80
-alpha_max_rate                               12000
-
-# Beta (X/Z motor 2)
-beta_step_pin                                2.1
-beta_dir_pin                                 0.11
-beta_en_pin                                  0.10
-beta_steps_per_mm                            80
-beta_max_rate                                12000
-
-# Gamma (Y motor - independent)
-gamma_step_pin                               2.2
-gamma_dir_pin                                0.20
-gamma_en_pin                                 0.19
-gamma_steps_per_mm                           80
-gamma_max_rate                               6000
-```
-
-{::nomarkdown}
-</original>
-</review>
-{:/nomarkdown}
 
 ## Speed Settings
 

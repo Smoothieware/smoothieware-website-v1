@@ -22,10 +22,7 @@ The config-override file is a special file that Smoothie uses to store settings 
 
 This is particularly useful when you want to save calibration values or other settings that shouldn't be in your main config file.
 
-{::nomarkdown}
-<review id="override-warning:activation">
-<proposal>
-{:/nomarkdown}
+
 
 ### Enabling Config Override
 
@@ -55,22 +52,9 @@ Without this setting, any existing `config-override.ini` file will be ignored, a
 </versioned>
 {:/nomarkdown}
 
-{::nomarkdown}
-</proposal>
-<original>
-{:/nomarkdown}
 
-(No original content—this section is new for V2)
 
-{::nomarkdown}
-</original>
-</review>
-{:/nomarkdown}
 
-{::nomarkdown}
-<review id="override-warning:check-for-override-issues">
-<proposal>
-{:/nomarkdown}
 
 ## How to Check for Override Issues
 
@@ -103,22 +87,7 @@ If your configuration changes aren't taking effect:
 </versioned>
 {:/nomarkdown}
 
-{::nomarkdown}
-</proposal>
-<original>
-{:/nomarkdown}
 
-If your configuration changes aren't taking effect:
-
-1. Check if you have a `config-override` file on your SD card
-2. Review its contents to see what settings are being overridden
-3. Either modify the override file or temporarily remove it for testing
-4. Remember to save a backup before removing any files
-
-{::nomarkdown}
-</original>
-</review>
-{:/nomarkdown}
 
 ## When to Use Config Override
 
@@ -133,10 +102,7 @@ Config override is most useful for:
 - Document what settings you've saved to config-override
 - Keep a backup of your override file
 
-{::nomarkdown}
-<review id="override-warning:best-practices">
-<proposal>
-{:/nomarkdown}
+
 
 {::nomarkdown}
 <versioned orientation="horizontal">
@@ -160,15 +126,4 @@ Config override is most useful for:
 </versioned>
 {:/nomarkdown}
 
-{::nomarkdown}
-</proposal>
-<original>
-{:/nomarkdown}
 
-- When troubleshooting, temporarily disable override to isolate issues
-- Consider whether a setting should be in main config or override
-
-{::nomarkdown}
-</original>
-</review>
-{:/nomarkdown}

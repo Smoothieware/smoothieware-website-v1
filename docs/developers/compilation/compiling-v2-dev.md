@@ -2,10 +2,7 @@
 permalink: /compiling-v2-dev
 ---
 
-{::nomarkdown}
-<review id="compiling-v2-dev:deprecation-notice">
-<proposal>
-{:/nomarkdown}
+
 
 {::nomarkdown}
 <sl-alert variant="warning" open>
@@ -14,17 +11,7 @@ permalink: /compiling-v2-dev
   This page documents the Bambino 200E board, an intermediate development board that was discontinued. Current Smoothieware V2 uses the STM32H745-based Smoothieboard Prime. See the main <a href="/compiling-smoothie">compilation guide</a> for current V2 compilation instructions.
 </sl-alert>
 
-{::nomarkdown}
-</proposal>
-<original>
-{:/nomarkdown}
 
-This page documents the Bambino 200E board, an intermediate development board that was discontinued.
-
-{::nomarkdown}
-</original>
-</review>
-{:/nomarkdown}
 
 # Compiling and Installing the NuttX on Bambino 200E board
 

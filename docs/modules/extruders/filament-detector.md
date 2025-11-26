@@ -27,10 +27,7 @@ If a difference is detected, the filament is not advancing correctly, which mean
 - Use {::nomarkdown}<mcode>M406</mcode>{:/nomarkdown} command to enable filament detector
 - Use {::nomarkdown}<mcode>M407</mcode>{:/nomarkdown} command to check if the filament detector gets triggered and to calibrate
 
-{::nomarkdown}
-<review id="filament-detector:config-options">
-<proposal>
-{:/nomarkdown}
+
 
 ## Configuration options
 
@@ -76,25 +73,7 @@ pulses_per_mm = 0.5
 </versioned>
 {:/nomarkdown}
 
-{::nomarkdown}
-</proposal>
-<original>
-{:/nomarkdown}
 
-## Configuration options
-
-| Option | Example value | Explanation |
-| ------ | ------------- | ----------- |
-| <setting v1="filament_detector.enable"></setting> | `true` | This module is activated only if this is set to `true` |
-| <setting v1="filament_detector.encoder_pin"></setting> | <pin>2.11</pin> | This is the pin the encoder is connected to. Must be an interrupt pin |
-| <setting v1="filament_detector.bulge_pin"></setting> | <pin>1.31</pin> | OPTIONAL This is the pin the bulge switch is connected to. If this switch is triggered (by a bulge in the filament) and the filament is moving, this will trigger an alarm |
-| <setting v1="filament_detector.seconds_per_check"></setting> | `2` | How many seconds between filament position checks, must be long enough for several pulses to be detected, but not too long |
-| <setting v1="filament_detector.pulses_per_mm"></setting> | `0.5` | The number of pulses the encoder produces for every millimeter of filament movement |
-
-{::nomarkdown}
-</original>
-</review>
-{:/nomarkdown}
 
 ## Calibration
 

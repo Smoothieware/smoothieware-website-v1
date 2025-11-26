@@ -225,7 +225,7 @@ This log enumerates every unchecked entry in `src/todo.md` with its verification
    - NOT DONE – laser alignment procedures absent beyond existing short notes.
 
 75. (src/todo.md:89) * [ ] Import useful information from the robotseed laser user guide and deployment guide.
-   - NOT DONE – robotseed laser guide not imported.
+   - OBSOLETE – Robotseed no longer exists, guide no longer available.
 
 76. (src/todo.md:90) * [ ] Pre-flight safety check-list page, and safety section in the home page.
    - NOT DONE – no pre-flight safety checklist page; search for "pre-flight" returns nothing.

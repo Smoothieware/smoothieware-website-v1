@@ -28,10 +28,7 @@ To implement this, you need three things:
 
 ## Example Configuration
 
-{::nomarkdown}
-<review id="safety-thermistor:configuration">
-<proposal>
-{:/nomarkdown}
+
 
 Here is an example configuration:
 
@@ -97,37 +94,7 @@ psu.designator = F           # Designator for the safety thermistor
 </versioned>
 {:/nomarkdown}
 
-{::nomarkdown}
-</proposal>
-<original>
-{:/nomarkdown}
 
-Here is an example configuration:
-
-```markdown
-temperatureswitch.psu.enable               false            # Enable temperatureswitch module for PSU
-temperatureswitch.psu.switch               psuswitch        # Designate switch module to use
-temperatureswitch.psu.designator           F                # Designator for the safety thermistor
-temperatureswitch.psu.threshold_temp       45               # Turn the PSU OFF above this temperature, and ON below this temperature. In °C.
-
-switch.psuswitch.enable                    true             # Enable switch module for PSU
-switch.psuswitch.input_on_command          M80              # Command to turn PSU on
-switch.psuswitch.input_off_command         M81              # Command to turn PSU off
-switch.psuswitch.output_pin                1.22!            # Pin for the switch control, 3rd small FET, or pin on header
-switch.psuswitch.output_type               digital          # Output type, on/off only
-
-# Define a read-only temperaturecontrol for a PSU cutoff
-temperature_control.psu.enable             true             # Enable temperaturecontrol module for PSU
-temperature_control.psu.thermistor_pin     0.25             # Pin for the safety thermistor to read
-temperature_control.psu.heater_pin         nc               # Set to 'nc' for read-only temperature control
-temperature_control.psu.thermistor         Semitec          # Thermistor type
-temperature_control.psu.designator         F                # Designator for the safety thermistor
-```
-
-{::nomarkdown}
-</original>
-</review>
-{:/nomarkdown}
 
 ## Important Notes
 

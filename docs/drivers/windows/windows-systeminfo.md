@@ -35,6 +35,6 @@ Please perform the following steps on the computer with the driver difficulties:
 
 5. Save the .NFO file to a known location with a filename that includes your name or alias, the computer's name, and the date of export.
 
-6. Email this file as an attachment to [mark@uberclock.com](mailto:mark@uberclock.com).
+6. Email this file as an attachment to [wolf.arthur@gmail.com](mailto:wolf.arthur@gmail.com).
 
 Thank you for your help!

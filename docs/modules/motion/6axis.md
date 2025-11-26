@@ -51,10 +51,7 @@ Once that is done (and only once that is done), you need to do the same process,
 make
 ```
 
-{::nomarkdown}
-<review id="6axis:compilation">
-<proposal>
-{:/nomarkdown}
+
 
 You now do:
 
@@ -95,26 +92,7 @@ Multi-axis support is built-in by default. Check the [SmoothieV2 repository](htt
 </versioned>
 {:/nomarkdown}
 
-{::nomarkdown}
-</proposal>
-<original>
-{:/nomarkdown}
 
-You now do:
-
-```bash
-make clean
-make AXIS=6 CNC=1
-```
-
-You can change this number to 5 or 4 if you do not need all 6 axes.
-
-It saves memory and allows you to use more of it for other things.
-
-{::nomarkdown}
-</original>
-</review>
-{:/nomarkdown}
 
 ### Primary Axis Configuration
 
@@ -148,10 +126,7 @@ Once your firmware is compiled, you can now flash it to the board and start usin
 
 ### Configuration
 
-{::nomarkdown}
-<review id="6axis:abc-configuration">
-<proposal>
-{:/nomarkdown}
+
 
 You can now add the following to your configuration file:
 
@@ -234,48 +209,7 @@ acceleration = 500.0   # mm/sec²
 
 This configuration is very similar to that of your XYZ axes, and you need to change the values to fit your setup.
 
-{::nomarkdown}
-</proposal>
-<original>
-{:/nomarkdown}
 
-You can now add the following to your configuration file:
-
-```bash
-# A axis
-delta_steps_per_mm                    100     # may be steps per degree for example
-delta_step_pin                        xx      # Pin for delta stepper step signal
-delta_dir_pin                         xx      # Pin for delta stepper direction
-delta_en_pin                          xx      # Pin for delta enable
-delta_current                         1.5     # Z stepper motor current
-delta_max_rate                        300.0   # mm/min
-delta_acceleration                    500.0   # mm/sec²
-
-# B axis
-epsilon_steps_per_mm                  100     # may be steps per degree for example
-epsilon_step_pin                      xx      # Pin for delta stepper step signal
-epsilon_dir_pin                       xx      # Pin for delta stepper direction
-epsilon_en_pin                        xx      # Pin for delta enable
-epsilon_current                       1.5     # Z stepper motor current
-epsilon_max_rate                      300.0   # mm/min
-epsilon_acceleration                  500.0   # mm/sec²
-
-# C axis
-zeta_steps_per_mm                     100     # may be steps per degree for example
-zeta_step_pin                         xx      # Pin for delta stepper step signal
-zeta_dir_pin                          xx      # Pin for delta stepper direction
-zeta_en_pin                           xx      # Pin for delta enable
-zeta_current                          1.5     # Z stepper motor current
-zeta_max_rate                         300.0   # mm/min
-zeta_acceleration                     500.0   # mm/sec²
-```
-
-This configuration is very similar to that of your XYZ axes, and you need to change the values to fit your setup.
-
-{::nomarkdown}
-</original>
-</review>
-{:/nomarkdown}
 
 ### Endstop Configuration
 
@@ -297,10 +231,7 @@ Optionally if you are using endstops on the A, B, or C axis, you need to **repla
 
 **NOTE** The ABC axis will always home after the XYZ axis home and will home individually, unless `homing_order` is defined in which case all axes will home individually in the order specified.
 
-{::nomarkdown}
-<review id="6axis:endstops">
-<proposal>
-{:/nomarkdown}
+
 
 {::nomarkdown}
 <versioned orientation="vertical">
@@ -413,39 +344,4 @@ minc.retract = 5
 </versioned>
 {:/nomarkdown}
 
-{::nomarkdown}
-</proposal>
-<original>
-{:/nomarkdown}
 
-```bash
-## Endstops new syntax (the name is not significant)
-# NOTE only a min or a max homing endstop may be defined
-endstop.minx.enable                          true             # enable an endstop
-endstop.minx.pin                             1.24             # pin
-endstop.minx.homing_direction                home_to_min      # direction it moves to the endstop
-endstop.minx.homing_position                 0                # the cartesian coordinate this is set to when it homes
-endstop.minx.axis                            X                # the axis designator
-endstop.minx.max_travel                      500              # the maximum travel in mm before it times out
-endstop.minx.fast_rate                       50               # fast homing rate in mm/sec
-endstop.minx.slow_rate                       25               # slow homing rate in mm/sec
-endstop.minx.retract                         5                # bounce off endstop in mm
-
-# ... (similar configuration for other axes) ...
-
-# type of machine
-# corexy_homing                               false            # set to true if homing on an hbot or corexy
-
-# optional order in which axis will home, default is they all home at the same time,
-# if this is set it will force each axis to home one at a time in the specified order
-# homing_order                                 XYZ              # x axis followed by y then z last
-# move_to_origin_after_home                    false            # move XY to 0,0 after homing
-# endstop_debounce_count                       100              # uncomment if you get noise on your endstops, default is 100
-# endstop_debounce_ms                          0                # uncomment if you get noise on your endstops, default is 0 millisecond debounce
-# home_z_first true # uncomment and set to true to home the Z first, otherwise Z homes after XY
-```
-
-{::nomarkdown}
-</original>
-</review>
-{:/nomarkdown}

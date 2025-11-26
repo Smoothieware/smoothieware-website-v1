@@ -71,26 +71,13 @@ The **acceleration** setting controls how quickly the machine speeds up.
 **Source:**
 
 ````markdown
-{::nomarkdown}
-<review id="test:basic-markdown">
-<proposal>
-{:/nomarkdown}
+
 
 This is a **proposed change** with `code` and [a link](/).
 
 It includes multiple paragraphs.
 
-{::nomarkdown}
-</proposal>
-<original>
-{:/nomarkdown}
 
-This is the original text.
-
-{::nomarkdown}
-</original>
-</review>
-{:/nomarkdown}
 ````
 
 **Result:**

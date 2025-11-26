@@ -38,10 +38,7 @@ This module is used to control SPI based stepper motor driver chips, like the Pa
 
 This module is enabled in config with:
 
-{::nomarkdown}
-<review id="advancedmotordriver:enable">
-<proposal>
-{:/nomarkdown}
+
 
 {::nomarkdown}
 <versioned orientation="vertical">
@@ -68,26 +65,11 @@ motor_driver_control.motor1.enable true  # where motor1 is any name you wish
 </versioned>
 {:/nomarkdown}
 
-{::nomarkdown}
-</proposal>
-<original>
-{:/nomarkdown}
 
-```markdown
-motor_driver_control.motor1.enable true  # where motor1 is any name you wish
-```
-
-{::nomarkdown}
-</original>
-</review>
-{:/nomarkdown}
 
 The chip this controls is set with:
 
-{::nomarkdown}
-<review id="advancedmotordriver:chip">
-<proposal>
-{:/nomarkdown}
+
 
 {::nomarkdown}
 <versioned orientation="vertical">
@@ -116,27 +98,11 @@ motor_driver_control.motor1.chip DRV8711    # this can be one of DRV8711 or TMC2
 </versioned>
 {:/nomarkdown}
 
-{::nomarkdown}
-</proposal>
-<original>
-{:/nomarkdown}
 
-```markdown
-motor_driver_control.motor1.chip DRV8711    # this can be one of DRV8711 or TMC2660
-                                             # The latter can control any TMC26x derivative
-```
-
-{::nomarkdown}
-</original>
-</review>
-{:/nomarkdown}
 
 The SPI channel to use must be set with:
 
-{::nomarkdown}
-<review id="advancedmotordriver:spi">
-<proposal>
-{:/nomarkdown}
+
 
 {::nomarkdown}
 <versioned orientation="vertical">
@@ -165,28 +131,11 @@ motor_driver_control.motor1.spi_frequency 100000 # the SPI frequency to use
 </versioned>
 {:/nomarkdown}
 
-{::nomarkdown}
-</proposal>
-<original>
-{:/nomarkdown}
 
-```markdown
-motor_driver_control.motor1.spi_channel  0       # or 1
-motor_driver_control.motor1.spi_cs_pin   0.10    # any pin
-motor_driver_control.motor1.spi_frequency 100000 # the SPI frequency to use
-```
-
-{::nomarkdown}
-</original>
-</review>
-{:/nomarkdown}
 
 Other config settings:
 
-{::nomarkdown}
-<review id="advancedmotordriver:settings">
-<proposal>
-{:/nomarkdown}
+
 
 {::nomarkdown}
 <versioned orientation="vertical">
@@ -223,31 +172,11 @@ common.halt_on_driver_alarm = true  # Halt on alarm condition
 </versioned>
 {:/nomarkdown}
 
-{::nomarkdown}
-</proposal>
-<original>
-{:/nomarkdown}
 
-```markdown
-motor_driver_control.motor1.axis  X       # for display purposes and for setting in Mxxx commands and telling the system which axis it controls
-motor_driver_control.motor1.alarm         true  # enable alarm checking of chip, and report with a console message
-motor_driver_control.motor1.halt_on_alarm true  # set to true to force a halt on any alarm condition
-motor_driver_control.motor1.current       3000  # set the motor current in milliamps
-motor_driver_control.motor1.max_current   4000  # the maximum current the chip allows
-motor_driver_control.motor1.microsteps    128   # the microsteps for this driver
-```
-
-{::nomarkdown}
-</original>
-</review>
-{:/nomarkdown}
 
 Some chip-specific configs are...
 
-{::nomarkdown}
-<review id="advancedmotordriver:chip-specific">
-<proposal>
-{:/nomarkdown}
+
 
 {::nomarkdown}
 <versioned orientation="vertical">
@@ -282,29 +211,11 @@ alpha.standstill_current = 0
 </versioned>
 {:/nomarkdown}
 
-{::nomarkdown}
-</proposal>
-<original>
-{:/nomarkdown}
 
-```markdown
-motor_driver_control.motor1.sense_resistor  xxx  # set the sense resistor used, this value is chip specific, set to the default for commonly used drivers
-motor_driver_control.motor1.gain  xxx  # set the gain for a DRV8711, leave at default if you do not know what this is
-# direct register setting... order and codes are chip dependent, values are in 32-bit Hex
-motor_driver_control.motor1.reg 00002,981C0,A0000,C000E,E0060
-```
-
-{::nomarkdown}
-</original>
-</review>
-{:/nomarkdown}
 
 An example of config entries is as follows, this sets two advanced drivers, one is a DRV8711 and the other is a TMC2660.
 
-{::nomarkdown}
-<review id="advancedmotordriver:full-example">
-<proposal>
-{:/nomarkdown}
+
 
 {::nomarkdown}
 <versioned orientation="vertical">
@@ -376,51 +287,13 @@ beta.standstill_current = 0
 </versioned>
 {:/nomarkdown}
 
-{::nomarkdown}
-</proposal>
-<original>
-{:/nomarkdown}
 
-```markdown
-motor_driver_control.alpha.enable           true              # alpha (X) is a TMC26X
-motor_driver_control.alpha.axis             X                 # A to set the settings
-motor_driver_control.alpha.chip             TMC2660           # chip name
-motor_driver_control.alpha.current          1500              # current in milliamps
-motor_driver_control.alpha.max_current      2800              # max current in milliamps
-motor_driver_control.alpha.microsteps       64                # microsteps
-motor_driver_control.alpha.alarm            true              # set to true means the error bits are checked
-motor_driver_control.alpha.halt_on_alarm    false             # if set to true means ON_HALT is entered on any error bits being set
-
-motor_driver_control.alpha.spi_channel       1                # SPI channel 1 is sdcard channel
-motor_driver_control.alpha.spi_cs_pin        0.10             # SPI CS pin
-#motor_driver_control.alpha.spi_frequency     100000          # SPI frequency
-
-motor_driver_control.beta.enable           true              # beta (Y) is a DRV8711
-motor_driver_control.beta.axis             Y                 # Y to set the settings
-motor_driver_control.beta.chip             DRV8711           # chip name
-motor_driver_control.beta.current          4000              # current in milliamps
-motor_driver_control.beta.max_current      4000              # max current in milliamps
-motor_driver_control.beta.microsteps       64                # microsteps
-motor_driver_control.beta.alarm            true              # set to true means the error bits are checked
-motor_driver_control.beta.halt_on_alarm    false             # if set to true means ON_HALT is entered on any error bits being set
-motor_driver_control.beta.spi_channel       1                # SPI channel 1 is sdcard channel
-motor_driver_control.beta.spi_cs_pin        0.19!            # SPI CS pin DRV8711 requires inverted CS
-#motor_driver_control.beta.spi_frequency     100000          # SPI frequency
-```
-
-{::nomarkdown}
-</original>
-</review>
-{:/nomarkdown}
 
 **NOTE:** The step and dir must be driven via the step and dir pins and cannot be driven over the SPI interface.
 
 They are configured as normal, for example...
 
-{::nomarkdown}
-<review id="advancedmotordriver:step-dir-pins">
-<proposal>
-{:/nomarkdown}
+
 
 {::nomarkdown}
 <versioned orientation="vertical">
@@ -448,20 +321,7 @@ alpha.dir_pin = 0.5    # Pin for alpha stepper direction
 </versioned>
 {:/nomarkdown}
 
-{::nomarkdown}
-</proposal>
-<original>
-{:/nomarkdown}
 
-```markdown
-alpha_step_pin                               2.0              # Pin for alpha stepper step signal
-alpha_dir_pin                                0.5              # Pin for alpha stepper direction
-```
-
-{::nomarkdown}
-</original>
-</review>
-{:/nomarkdown}
 
 ## M code settings
 

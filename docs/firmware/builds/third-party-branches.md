@@ -4,10 +4,7 @@ permalink: /third-party-branches
 
 # Third Party Branches
 
-{::nomarkdown}
-<review id="third-party:v1-v2-intro">
-<proposal>
-{:/nomarkdown}
+
 
 This page lists community-maintained branches and forks of Smoothie firmware that provide additional features or optimizations for specific use cases.
 
@@ -39,24 +36,7 @@ V2 has a significantly different codebase and architecture. If you're looking fo
 </sl-alert>
 {:/nomarkdown}
 
-{::nomarkdown}
-</proposal>
-<original>
-{:/nomarkdown}
 
-This page lists community-maintained branches and forks of Smoothie firmware that provide additional features or optimizations for specific use cases.
-
-{::nomarkdown}
-<sl-alert variant="neutral" open>
-  <sl-icon slot="icon" name="info-circle"></sl-icon>
-  <strong>Note to developers</strong>: Please add links to branches of the Smoothie firmware that others may be interested in.
-</sl-alert>
-{:/nomarkdown}
-
-{::nomarkdown}
-</original>
-</review>
-{:/nomarkdown}
 
 ## Available Branches
 
@@ -77,10 +57,7 @@ This page lists community-maintained branches and forks of Smoothie firmware tha
 
 ## Using a Third-Party Branch in Your Machine
 
-{::nomarkdown}
-<review id="third-party:using-branches">
-<proposal>
-{:/nomarkdown}
+
 
 {::nomarkdown}
 <versioned>
@@ -105,21 +82,7 @@ This page lists community-maintained branches and forks of Smoothie firmware tha
 </versioned>
 {:/nomarkdown}
 
-{::nomarkdown}
-</proposal>
-<original>
-{:/nomarkdown}
 
-1. First, go to the link for the GitHub page of that branch
-2. Click the green `Clone or Download` button
-3. Click on `Download ZIP`
-4. Decompress the ZIP file
-5. You can now follow the instructions at [compiling-smoothie](compiling-smoothie) exactly as you would for the edge branch
-
-{::nomarkdown}
-</original>
-</review>
-{:/nomarkdown}
 
 {::nomarkdown}
 <sl-alert variant="warning" open>
@@ -161,10 +124,7 @@ git checkout -b skaterzero807-feature/Jogger edge
 git pull git://github.com/skaterzero807/Smoothieware.git feature/Jogger
 ```
 
-{::nomarkdown}
-<review id="third-party:ports-to-platforms">
-<proposal>
-{:/nomarkdown}
+
 
 ## Ports to other platforms or MCU
 
@@ -216,21 +176,7 @@ These are community ports of Smoothieware **V1** to other hardware. They are **n
 </versioned>
 {:/nomarkdown}
 
-{::nomarkdown}
-</proposal>
-<original>
-{:/nomarkdown}
 
-## Ports to other platforms or MCU
-
-- [SmoothieV2](https://github.com/Smoothieware/SmoothieV2): A port to the LPC43XX microcontroller, used on the Smoothie2 and Smoothie2-pro boards
-- [Smoothie STM32](https://github.com/clementleger/Smoothieware-STM32): A port to the STM32 microcontroller
-- [Smoohieware CHMT](https://github.com/mattthebaker/Smoothieware-CHMT): A port to STM32F4 for running smoothieware on CharmHigh pick and place machines.
-
-{::nomarkdown}
-</original>
-</review>
-{:/nomarkdown}
 
 ## Ports of other firmwares to Smoothieboard
 

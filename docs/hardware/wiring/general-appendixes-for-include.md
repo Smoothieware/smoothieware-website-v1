@@ -52,10 +52,7 @@ If when you test it, the two motors turn in reverse, you need to reverse one of 
 
 You also need to set a current value for that driver that matches the total current your two motors will be using. For example if the motors are each 0.8Amps, your total is 1.6Amps and you need to set for that specific driver ( here gamma driver is shown ) :
 
-{::nomarkdown}
-<review id="general-appendixes:doubling-steppers-current">
-<proposal>
-{:/nomarkdown}
+
 
 {::nomarkdown}
 <versioned orientation="vertical">
@@ -81,19 +78,7 @@ gamma.current = 1.6
 </versioned>
 {:/nomarkdown}
 
-{::nomarkdown}
-</proposal>
-<original>
-{:/nomarkdown}
 
-```plaintext
-gamma_current      1.6
-```
-
-{::nomarkdown}
-</original>
-</review>
-{:/nomarkdown}
 
 ## Doubling stepper motor drivers
 <a name='doubling-drivers'></a>
@@ -124,10 +109,7 @@ Finally you need to do two things in your configuration file:
 
 First, set the current value for **both** drivers. For example if you are using gamma and epsilon set:
 
-{::nomarkdown}
-<review id="general-appendixes:doubling-drivers-current">
-<proposal>
-{:/nomarkdown}
+
 
 {::nomarkdown}
 <versioned orientation="vertical">
@@ -155,29 +137,13 @@ epsilon.current = 1.5
 </versioned>
 {:/nomarkdown}
 
-{::nomarkdown}
-</proposal>
-<original>
-{:/nomarkdown}
 
-```plaintext
-gamma_current       1.5
-epsilon_current      1.5
-```
-
-{::nomarkdown}
-</original>
-</review>
-{:/nomarkdown}
 
 Then, you need to make sure that none of the step, dir and enable configuration values for your slave stepper motor driver, are present in the configuration file.
 
 For example if you are using gamma as a slave, make sure that none of the following values are present in the configuration file:
 
-{::nomarkdown}
-<review id="general-appendixes:doubling-drivers-remove-pins">
-<proposal>
-{:/nomarkdown}
+
 
 {::nomarkdown}
 <versioned orientation="vertical">
@@ -207,21 +173,7 @@ gamma.enable_pin = ...
 </versioned>
 {:/nomarkdown}
 
-{::nomarkdown}
-</proposal>
-<original>
-{:/nomarkdown}
 
-```plaintext
-gamma_step_pin
-gamma_dir_pin
-gamma_en_pin
-```
-
-{::nomarkdown}
-</original>
-</review>
-{:/nomarkdown}
 
 If they are, remove them. And be careful, for the delta driver, if you started from the 3D printer configuration file, they are not referred to as delta_xxx_pin but as extruder_xxx_pin, if they are present you must remove them all.
 
@@ -273,10 +225,7 @@ Here, the 5V is taken from an endstop input's positive terminal, taken to the 5V
 
 In this case, you will also need to change those pins to be open-drain. To change a pin from being normal to being open-drain, you add a `o` lowercase "o" to the pin's number. For example:
 
-{::nomarkdown}
-<review id="general-appendixes:external-driver-open-drain">
-<proposal>
-{:/nomarkdown}
+
 
 {::nomarkdown}
 <versioned orientation="vertical">
@@ -328,31 +277,7 @@ alpha.step_pin = 2.0!o    # Pin for alpha stepper step signal (open-drain, inver
 </versioned>
 {:/nomarkdown}
 
-{::nomarkdown}
-</proposal>
-<original>
-{:/nomarkdown}
 
-```plaintext
-alpha_step_pin    2.0      # Pin for alpha stepper step signal
-```
-
-becomes
-
-```plaintext
-alpha_step_pin   2.0o     # Pin for alpha stepper step signal
-```
-
-it's also possible to invert a pin:
-
-```plaintext
-alpha_step_pin   2.0!o     # Pin for alpha stepper step signal
-```
-
-{::nomarkdown}
-</original>
-</review>
-{:/nomarkdown}
 
 {::nomarkdown}
 <sl-alert variant="neutral" open>
@@ -450,10 +375,7 @@ This example shows using P{::nomarkdown}<pin>1.30</pin>{:/nomarkdown}
 
 Then simply configure the module that will be using the SSR to use that pin, for example in the case of [Switch](switch):
 
-{::nomarkdown}
-<review id="general-appendixes:ssr-switch-config">
-<proposal>
-{:/nomarkdown}
+
 
 {::nomarkdown}
 <versioned orientation="vertical">
@@ -487,23 +409,7 @@ misc.output_type = digital         # just an on or off pin
 </versioned>
 {:/nomarkdown}
 
-{::nomarkdown}
-</proposal>
-<original>
-{:/nomarkdown}
 
-```plaintext
-switch.misc.enable                   true #
-switch.misc.input_on_command         M42  #
-switch.misc.input_off_command        M43  #
-switch.misc.output_pin               2.4  # GPIO pin we connected to "+" on the SSR
-switch.misc.output_type              digital        # just an on or off pin
-```
-
-{::nomarkdown}
-</original>
-</review>
-{:/nomarkdown}
 
 In the case of [TemperatureControl](temperature-control), where you use the SSR to control a heating element for example, there is a catch.
 
@@ -511,10 +417,7 @@ SSRs have a low maximum frequency they can be switched at. You need to specify t
 
 So, you need to modify your module to both use the correct pin (the free GPIO you wired to the SSR), and to the correct frequency. Here are the two lines to change:
 
-{::nomarkdown}
-<review id="general-appendixes:ssr-temperature-config">
-<proposal>
-{:/nomarkdown}
+
 
 {::nomarkdown}
 <versioned orientation="vertical">
@@ -542,27 +445,11 @@ swimming_pool_heating.pwm_frequency = 20
 </versioned>
 {:/nomarkdown}
 
-{::nomarkdown}
-</proposal>
-<original>
-{:/nomarkdown}
 
-```plaintext
-temperature_control.swimming_pool_heating.heater_pin               2.4
-temperature_control.swimming_pool_heating.pwm_frequency            20
-```
-
-{::nomarkdown}
-</original>
-</review>
-{:/nomarkdown}
 
 Another option, which turns the heaters on/off even less often, is to use bang-bang, where the state is only changed when temperature deviates too much from the set value:
 
-{::nomarkdown}
-<review id="general-appendixes:ssr-bang-bang">
-<proposal>
-{:/nomarkdown}
+
 
 {::nomarkdown}
 <versioned orientation="vertical">
@@ -592,21 +479,7 @@ bed.hysteresis = 2.0            # set to the temperature in degrees C to use as 
 </versioned>
 {:/nomarkdown}
 
-{::nomarkdown}
-</proposal>
-<original>
-{:/nomarkdown}
 
-```plaintext
-temperature_control.bed.bang_bang            true            # set to true to use bang bang control rather than PID
-temperature_control.bed.hysteresis           2.0             # set to the temperature in degrees C to use as hysteresis
-                                                              # when using bang bang
-```
-
-{::nomarkdown}
-</original>
-</review>
-{:/nomarkdown}
 
 {::nomarkdown}
 <div style="text-align: center; margin: 2rem 0;">
@@ -624,10 +497,7 @@ In that case, all you need to do is exchange the 3 pin definitions for these two
 
 For example:
 
-{::nomarkdown}
-<review id="general-appendixes:swapping-drivers">
-<proposal>
-{:/nomarkdown}
+
 
 {::nomarkdown}
 <versioned orientation="vertical">
@@ -690,37 +560,7 @@ gamma.enable_pin = 0.10           # Pin for gamma enable
 </versioned>
 {:/nomarkdown}
 
-{::nomarkdown}
-</proposal>
-<original>
-{:/nomarkdown}
 
-```plaintext
-beta_step_pin                                2.1              # Pin for beta stepper step signal
-beta_dir_pin                                 0.11             # Pin for beta stepper direction
-beta_en_pin                                  0.10             # Pin for beta enable
-
-gamma_step_pin                               2.2              # Pin for gamma stepper step signal
-gamma_dir_pin                                0.20             # Pin for gamma stepper direction
-gamma_en_pin                                 0.19             # Pin for gamma enable
-```
-
-Becomes:
-
-```plaintext
-beta_step_pin                                2.2              # Pin for beta stepper step signal
-beta_dir_pin                                 0.20             # Pin for beta stepper direction
-beta_en_pin                                  0.19             # Pin for beta enable
-
-gamma_step_pin                               2.1              # Pin for gamma stepper step signal
-gamma_dir_pin                                0.11             # Pin for gamma stepper direction
-gamma_en_pin                                 0.10             # Pin for gamma enable
-```
-
-{::nomarkdown}
-</original>
-</review>
-{:/nomarkdown}
 
 Now your beta driver becomes your Z axis, and your gamma driver becomes your Y axis.
 

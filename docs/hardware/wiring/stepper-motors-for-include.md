@@ -114,10 +114,7 @@ Now, as described in the "Unboxing" paragraph, connect the board to your compute
 
 For example, if your alpha stepper motor has a current rating of 1.68A, edit the corresponding line to read:
 
-{::nomarkdown}
-<review id="stepper-motors:current-config-example">
-<proposal>
-{:/nomarkdown}
+
 
 {::nomarkdown}
 <versioned orientation="vertical">
@@ -143,19 +140,7 @@ alpha.current = 1.68             # X stepper motor current
 </versioned>
 {:/nomarkdown}
 
-{::nomarkdown}
-</proposal>
-<original>
-{:/nomarkdown}
 
-```plaintext
-alpha_current                                1.68             # X stepper motor current
-```
-
-{::nomarkdown}
-</original>
-</review>
-{:/nomarkdown}
 
 Do this for each stepper motor you have to connect to the board. (If you have a Cartesian robot, see which motor connects to which stepper driver in the array above. If you use another type of arm solution, see the specific documentation.)
 
@@ -185,10 +170,7 @@ To help you, there is an awesome calculator by the awesome Josef Prusa: [http://
 
 Once you know the correct value for a given stepper motor driver, set it in the config file.:
 
-{::nomarkdown}
-<review id="stepper-motors:steps-per-mm-config">
-<proposal>
-{:/nomarkdown}
+
 
 {::nomarkdown}
 <versioned orientation="vertical">
@@ -214,19 +196,7 @@ alpha.steps_per_mm = 80               # Steps per mm for alpha stepper
 </versioned>
 {:/nomarkdown}
 
-{::nomarkdown}
-</proposal>
-<original>
-{:/nomarkdown}
 
-```plaintext
-alpha_steps_per_mm                           80               # Steps per mm for alpha stepper
-```
-
-{::nomarkdown}
-</original>
-</review>
-{:/nomarkdown}
 
 Do this for each stepper motor driver.
 
@@ -250,10 +220,7 @@ Your X axis will move. If it moved to the right, great! Everything is fine, and 
 
 You do this by editing the configuration file, and inverting the direction pin for that stepper motor driver:
 
-{::nomarkdown}
-<review id="stepper-motors:direction-inversion">
-<proposal>
-{:/nomarkdown}
+
 
 {::nomarkdown}
 <versioned orientation="vertical">
@@ -292,25 +259,7 @@ alpha.dir_pin = 0.5!             # Pin for alpha stepper direction (inverted)
 </versioned>
 {:/nomarkdown}
 
-{::nomarkdown}
-</proposal>
-<original>
-{:/nomarkdown}
 
-```plaintext
-alpha_dir_pin                                0.5              # Pin for alpha stepper direction
-```
-
-Becomes:
-
-```plaintext
-alpha_dir_pin                                0.5!             # Pin for alpha stepper direction
-```
-
-{::nomarkdown}
-</original>
-</review>
-{:/nomarkdown}
 
 This is for your axes. In the case of your extruder, the config value is <setting v1="extruder.hotend.dir_pin" v2="extruder.hotend.dir_pin"></setting>.
 

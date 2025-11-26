@@ -63,10 +63,7 @@ CoreXY and H-Bot offer several advantages:
 
 ## Configuration
 
-{::nomarkdown}
-<review id="hbot:configuration">
-<proposal>
-{:/nomarkdown}
+
 
 To configure your HBot or CoreXY machine, set the `arm_solution` parameter in your configuration file to either `corexy` or `hbot`:
 
@@ -109,36 +106,11 @@ arm_solution = hbot
 
 Both options use the same implementation in Smoothieware. Choose the name that matches your mechanical belt configuration.
 
-{::nomarkdown}
-</proposal>
-<original>
-{:/nomarkdown}
 
-To configure your HBot or CoreXY machine, set the `arm_solution` parameter in your configuration file to either `corexy` or `hbot`:
-
-```
-arm_solution corexy
-```
-
-or
-
-```
-arm_solution hbot
-```
-
-Both options use the same implementation in Smoothieware. Choose the name that matches your mechanical belt configuration.
-
-{::nomarkdown}
-</original>
-</review>
-{:/nomarkdown}
 
 ### Complete Configuration Example
 
-{::nomarkdown}
-<review id="hbot:complete-config">
-<proposal>
-{:/nomarkdown}
+
 
 {::nomarkdown}
 <versioned orientation="vertical">
@@ -215,44 +187,7 @@ gamma.driver = tmc2660
 </versioned>
 {:/nomarkdown}
 
-{::nomarkdown}
-</proposal>
-<original>
-{:/nomarkdown}
 
-```
-# CoreXY arm solution
-arm_solution                                 corexy
-
-# Alpha motor (X/Y motor 1)
-alpha_step_pin                               2.0
-alpha_dir_pin                                0.5
-alpha_en_pin                                 0.4
-alpha_steps_per_mm                           80
-alpha_max_rate                               24000    # mm/min - can be very high!
-
-# Beta motor (X/Y motor 2)
-beta_step_pin                                2.1
-beta_dir_pin                                 0.11
-beta_en_pin                                  0.10
-beta_steps_per_mm                            80
-beta_max_rate                                24000    # mm/min - can be very high!
-
-# Gamma motor (Z motor - independent)
-gamma_step_pin                               2.2
-gamma_dir_pin                                0.20
-gamma_en_pin                                 0.19
-gamma_steps_per_mm                           400
-gamma_max_rate                               300
-
-# CoreXY homing (optional but recommended)
-corexy_homing                                true
-```
-
-{::nomarkdown}
-</original>
-</review>
-{:/nomarkdown}
 
 ## Speed Settings
 

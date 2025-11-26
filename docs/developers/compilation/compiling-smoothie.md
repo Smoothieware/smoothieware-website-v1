@@ -11,10 +11,7 @@ First of all, [get Smoothie](getting-smoothie)'s source.
 
 You do not need to do any of this if you just want to use your board. This is only needed if you want the absolute latest firmware, or are modifying Smoothie's source.
 
-{::nomarkdown}
-<review id="compiling-smoothie:intro-overview">
-<proposal>
-{:/nomarkdown}
+
 
 {::nomarkdown}
 <versioned orientation="horizontal">
@@ -35,26 +32,13 @@ You do not need to do any of this if you just want to use your board. This is on
 </versioned>
 {:/nomarkdown}
 
-{::nomarkdown}
-</proposal>
-<original>
-{:/nomarkdown}
 
-**V1 Compilation:** For Smoothieware v1 running on the LPC1769 platform, follow the guide below.
-
-{::nomarkdown}
-</original>
-</review>
-{:/nomarkdown}
 
 ## Getting a toolchain
 
 To compile smoothie, you need a [toolchain](http://en.wikipedia.org/wiki/Toolchain) (a compiler, a linker, etc...).
 
-{::nomarkdown}
-<review id="compiling-smoothie:toolchain-intro">
-<proposal>
-{:/nomarkdown}
+
 
 {::nomarkdown}
 <versioned orientation="vertical">
@@ -79,29 +63,14 @@ Smoothie V2 requires a specific GCC version (10.3.1). Do NOT use newer or older 
 </versioned>
 {:/nomarkdown}
 
-{::nomarkdown}
-</proposal>
-<original>
-{:/nomarkdown}
 
-**V1 Toolchain:**
-
-Smoothie V1 provides install scripts to automatically install a working toolchain.
-
-{::nomarkdown}
-</original>
-</review>
-{:/nomarkdown}
 
 <sl-alert variant="warning" open>
   <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
   Do not use your own toolchain, even if you like it and it's more recent, use the toolchain the other Smoothie devs use, as it's the only one that's guaranteed to work (e.g. newer toolchains are known to produce binaries where network does not work), and the devs can bite if they try to help you for an hour only to figure out you tried to use XGCC super-plus version 3000 and everything would be fine if you were using the normal toolchain. Just follow the instructions.
 </sl-alert>
 
-{::nomarkdown}
-<review id="compiling-smoothie:installation">
-<proposal>
-{:/nomarkdown}
+
 
 {::nomarkdown}
 <versioned orientation="vertical">
@@ -164,28 +133,9 @@ For a specific platform, check the V2 repository build instructions, as toolchai
 </versioned>
 {:/nomarkdown}
 
-{::nomarkdown}
-</proposal>
-<original>
-{:/nomarkdown}
 
-**V1 Installation:**
 
-Go into the Smoothie folder, then run the install script appropriate for your platform:
 
-- Windows: **`win_install.cmd`**
-- OS X: **`mac_install`**
-- Linux: **`linux_install`**
-
-{::nomarkdown}
-</original>
-</review>
-{:/nomarkdown}
-
-{::nomarkdown}
-<review id="compiling-smoothie:buildshell-info">
-<proposal>
-{:/nomarkdown}
 
 {::nomarkdown}
 <versioned orientation="horizontal">
@@ -214,22 +164,7 @@ Go into the Smoothie folder, then run the install script appropriate for your pl
 </versioned>
 {:/nomarkdown}
 
-{::nomarkdown}
-</proposal>
-<original>
-{:/nomarkdown}
 
-<sl-alert variant="neutral" open>
-  <sl-icon slot="icon" name="info-circle"></sl-icon>
-  <strong>Windows users:</strong> Double click from the Window Explorer screen "BuildShell" and this will generate a windows command screen that when you type in "make clean all" will build the complete system and leave the binary for download to the board in the "LPC1768" directory.
-
-  There are no further steps to be done to build the software.
-</sl-alert>
-
-{::nomarkdown}
-</original>
-</review>
-{:/nomarkdown}
 
 <sl-alert variant="warning" open>
   <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
@@ -240,10 +175,7 @@ Go into the Smoothie folder, then run the install script appropriate for your pl
 
 ## Compiling
 
-{::nomarkdown}
-<review id="compiling-smoothie:compiling">
-<proposal>
-{:/nomarkdown}
+
 
 {::nomarkdown}
 <versioned orientation="vertical">
@@ -288,25 +220,7 @@ The output binary will be in `smoothiev2_Prime/smoothiev2.bin` (or respective ta
 </versioned>
 {:/nomarkdown}
 
-{::nomarkdown}
-</proposal>
-<original>
-{:/nomarkdown}
 
-**V1 Compilation:**
-
-Once BuildShell is created, you want to launch it, and compile all of the code that Smoothie consists of:
-
-```bash
-make clean all
-```
-
-The command "make clean all" will compile/recompile everything needed for Smoothie. The end result will be the file **main.bin** in the subfolder **LPC1768**.
-
-{::nomarkdown}
-</original>
-</review>
-{:/nomarkdown}
 
 <sl-alert variant="danger" open>
   <sl-icon slot="icon" name="exclamation-octagon"></sl-icon>
@@ -375,10 +289,7 @@ The command "make clean all" will compile/recompile everything needed for Smooth
   More information on the process of getting mBed code to compile with GCC can be found [here](http://mbed.org/forum/mbed/topic/2336/) (recommended read).
 </sl-alert>
 
-{::nomarkdown}
-<review id="compiling-smoothie:build-variants">
-<proposal>
-{:/nomarkdown}
+
 
 {::nomarkdown}
 <versioned orientation="vertical">
@@ -451,59 +362,7 @@ Configuration of enabled modules and features is primarily handled through the c
 </versioned>
 {:/nomarkdown}
 
-{::nomarkdown}
-</proposal>
-<original>
-{:/nomarkdown}
 
-**V1 Build Variants:**
-
-<sl-alert variant="primary" open>
-  <sl-icon slot="icon" name="check-circle"></sl-icon>
-  <strong>Building CNC version:</strong> If you are trying build the "CNC" version of Smoothie (with `grbl_mode` enabled by default and the special "CNC" control panel screen), you need to do:
-
-  ```bash
-  make clean
-  make CNC=1
-  ```
-</sl-alert>
-
-<sl-alert variant="primary" open>
-  <sl-icon slot="icon" name="check-circle"></sl-icon>
-  <strong>Building with extruders and spindle:</strong> If you are trying build a version of Smoothie that has extruders, temperature control and spindle, you need to do:
-
-  ```bash
-  make clean
-  make INCLUDE_MODULE="tools/drillingcycles tools/spindle"
-  ```
-</sl-alert>
-
-<sl-alert variant="primary" open>
-  <sl-icon slot="icon" name="check-circle"></sl-icon>
-  <strong>Building no-MSD version:</strong> To build the no-msd version of Smoothie (with Mass Storage over USB disabled, for example if your computer is abusing the interface by accessing it for no good reason, causing bugs), do:
-
-  ```bash
-  make clean
-  make DISABLEMSD=1
-  ```
-</sl-alert>
-
-<sl-alert variant="primary" open>
-  <sl-icon slot="icon" name="check-circle"></sl-icon>
-  <strong>Setting build defaults:</strong> If you want your branch to default to some things, let's say for example you want your branch to build as `CNC=1` without having to specify `make CNC=1` each time you build, you can:
-
-  In the `src` directory create a file called `default_excludes.mk` and in that file add:
-
-  ```bash
-  CNC=1
-  export EXCLUDE_MODULES = tools/laser tools/filamentdetector tools/scaracal tools/temperaturecontrol tools/extruder
-  ```
-</sl-alert>
-
-{::nomarkdown}
-</original>
-</review>
-{:/nomarkdown}
 
 <sl-alert variant="neutral" open>
   <sl-icon slot="icon" name="info-circle"></sl-icon>
@@ -519,10 +378,7 @@ Configuration of enabled modules and features is primarily handled through the c
 
 ## Flashing to the board
 
-{::nomarkdown}
-<review id="compiling-smoothie:flashing-methods">
-<proposal>
-{:/nomarkdown}
+
 
 {::nomarkdown}
 <versioned orientation="vertical">
@@ -587,39 +443,11 @@ Board downloads, validates (MD5), and flashes on next boot.
 </versioned>
 {:/nomarkdown}
 
-{::nomarkdown}
-</proposal>
-<original>
-{:/nomarkdown}
 
-**V1: Flashing via SD Bootloader**
-
-If you are using a smoothieboard, the [SD bootloader](/flashing-the-bootloader) is already present.
-
-If you are using an mBed please see [here](/flashing-the-bootloader).
-
-If you are using an LPCXpresso1769 then you must first install the [SD bootloader](/flashing-the-bootloader).
-
-Once it is compiled, then simply copy the generated .bin file to the SD card with the name **firmware.bin**, then reset and it will be flashed to the board automatically.
-
-Example:
-
-```bash
-make
-cp LPC1768/main.bin /media/smoothieboard-or-mbed/firmware.bin
-```
-
-{::nomarkdown}
-</original>
-</review>
-{:/nomarkdown}
 
 Detailed instructions can be found on the [Flashing Smoothie](/flashing-smoothie-firmware) page.
 
-{::nomarkdown}
-<review id="compiling-smoothie:dfu-flashing">
-<proposal>
-{:/nomarkdown}
+
 
 {::nomarkdown}
 <versioned orientation="vertical">
@@ -680,46 +508,4 @@ This automatically handles DFU mode entry and flashing. For manual DFU control, 
 </versioned>
 {:/nomarkdown}
 
-{::nomarkdown}
-</proposal>
-<original>
-{:/nomarkdown}
 
-### Flashing via DFU (USB Device Firmware Update)
-
-An alternative way to flash firmware is to use a utility called [dfu-util](http://dfu-util.sourceforge.net/).
-
-DFU is not enabled by default, to use it you must add the following to your config file:
-
-```bash
-dfu_enable true # enable dfu
-```
-
-You can then use `make upload` to flash the new firmware, as long as smoothie is currently running.
-If smoothie has crashed, then you can manually put the bootloader into DFU mode by:
-1. holding the play/pause button
-2. click the reset button
-3. wait one second and release the play/pause button
-
-#### Installing dfu-util on Mac & Linux
-
-Install using your package manager e.g. apt or homebrew.
-
-#### Installing dfu-util and required driver on Windows
-
-1. Download the [latest dfu-util package](http://dfu-util.sourceforge.net/releases/?C=N;O=D), and extract the ZIP
-2. Move the contents to `C:\Program Files\dfu--util` (or another location of your choice)
-3. Add the above install directory to your PATH environment variable. [howto](https://www.java.com/en/download/help/path.xml)
-4. Log out and back in for this change to take effect
-5. Download [Zadig](http://zadig.akeo.ie/) and run it
-6. Connect your Smoothieboard via USB
-7. In Zadig, select the "Smoothie DFU" device (you may need to enable Options > List All Devices), then choose WinUSB and press the big install button.
-8. Run `make` followed by `make upload`. dfu-util will detect your smoothieboard, which will reset into DFU mode. However, dfu-util will hang here.
-9. Return to the Zadig window, and select the "Smoothie" device and install WinUSB for it as well.
-
-You should now be able to use `make upload` to flash smoothie.
-
-{::nomarkdown}
-</original>
-</review>
-{:/nomarkdown}

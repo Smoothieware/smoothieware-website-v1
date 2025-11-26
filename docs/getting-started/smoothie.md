@@ -14,10 +14,7 @@ The project consists of:
 - **Controller Board**: Specialized PCB (Smoothieboard) with motor drivers and expansion capabilities
 - **Community**: Active developers and users providing support and extensions
 
-{::nomarkdown}
-<review id="smoothie:hardware-overview">
-<proposal>
-{:/nomarkdown}
+
 
 ## Hardware Platform
 
@@ -119,19 +116,7 @@ Smoothieware runs on specialized controller hardware designed for precision moti
 </versioned>
 {:/nomarkdown}
 
-{::nomarkdown}
-</proposal>
-<original>
-{:/nomarkdown}
 
-Smoothie is a free, opensource, high performance G-code interpreter and CNC control system for the ARM Cortex-M3 chip.
-
-It is designed to run on the powerful [Smoothieboard](smoothieboard) 32bit controller.
-
-{::nomarkdown}
-</original>
-</review>
-{:/nomarkdown}
 
 ## Getting Started
 

@@ -32,10 +32,7 @@ Other PT100 amplifiers may be supported later (i.e. MAX31865 via SPI).
 
 ## Configuration
 
-{::nomarkdown}
-<review id="pt100:configuration">
-<proposal>
-{:/nomarkdown}
+
 
 You wire a PT100 *almost* the same way you would a thermistor, but you need to specify to Smoothie it is a PT100 and where you connected the amplifier signal output:
 
@@ -71,23 +68,7 @@ hotend.e3d_amplifier_pin = 1.30     # must be a free ADC pin, not a temperature 
 </versioned>
 {:/nomarkdown}
 
-{::nomarkdown}
-</proposal>
-<original>
-{:/nomarkdown}
 
-You wire a PT100 *almost* the same way you would a thermistor, but you need to specify to Smoothie it is a PT100 and where you connected the amplifier signal output:
-
-```markdown
-temperature_control.hotend.enable              true
-temperature_control.hotend.sensor              pt100_e3d
-temperature_control.hotend.e3d_amplifier_pin   1.30        # must be a free ADC pin, not a temperature input
-```
-
-{::nomarkdown}
-</original>
-</review>
-{:/nomarkdown}
 
 {::nomarkdown}
 <sl-alert variant="neutral" open>

@@ -39,10 +39,7 @@ And that acceleration's value is a function of the torque of your motors and the
 
 You set the acceleration value by modifying the `acceleration` value in your configuration file:
 
-{::nomarkdown}
-<review id="motion-control:acceleration-config">
-<proposal>
-{:/nomarkdown}
+
 
 {::nomarkdown}
 <versioned orientation="horizontal">
@@ -68,19 +65,7 @@ default_acceleration = 3000.0  # Acceleration in mm/second/second
 </versioned>
 {:/nomarkdown}
 
-{::nomarkdown}
-</proposal>
-<original>
-{:/nomarkdown}
 
-```plaintext
-acceleration                                 3000             # Acceleration in mm/second/second.
-```
-
-{::nomarkdown}
-</original>
-</review>
-{:/nomarkdown}
 
 The units are millimeters per second per second, which means how many "millimeters per second" worth of speed is added every second.
 
@@ -134,10 +119,7 @@ Like acceleration, this is a value you will have to "play with" to find the righ
 
 You change it by changing the `junction_deviation` value in config.
 
-{::nomarkdown}
-<review id="motion-control:junction-deviation-config">
-<proposal>
-{:/nomarkdown}
+
 
 {::nomarkdown}
 <versioned orientation="horizontal">
@@ -163,19 +145,7 @@ xy_junction_deviation = 0.05  # Similar to the old "max_jerk", in millimeters
 </versioned>
 {:/nomarkdown}
 
-{::nomarkdown}
-</proposal>
-<original>
-{:/nomarkdown}
 
-```plaintext
-junction_deviation       0.05       # Similar to the old "max_jerk", in millimeters,
-```
-
-{::nomarkdown}
-</original>
-</review>
-{:/nomarkdown}
 
 `0.05` is a typical value for a 3D printer.
 
@@ -209,10 +179,7 @@ This is useful if the machine would "skip" steps or have other problems if too h
 
 To set the maximum speed for an axis, edit the `max_speed` configuration option for that axis:
 
-{::nomarkdown}
-<review id="motion-control:max-speed-config">
-<proposal>
-{:/nomarkdown}
+
 
 {::nomarkdown}
 <versioned orientation="vertical">
@@ -249,27 +216,7 @@ The units for the speed limit are millimeters per minute.
 </versioned>
 {:/nomarkdown}
 
-{::nomarkdown}
-</proposal>
-<original>
-{:/nomarkdown}
 
-```plaintext
-x_axis_max_speed            30000      # mm/min
-```
-
-The units for the speed limit are millimeters per minute.
-
-To limit the speed for an actuator, set the `max_rate` for that actuator:
-
-```plaintext
-alpha_max_rate       30000.0         # mm/min
-```
-
-{::nomarkdown}
-</original>
-</review>
-{:/nomarkdown}
 
 {::nomarkdown}
 <sl-alert variant="primary" open>

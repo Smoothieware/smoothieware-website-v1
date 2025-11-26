@@ -326,13 +326,6 @@ Because of this modular design:
 
 **Each module has its own config section**:
 
-{::nomarkdown}
-<review id="basics:module-config-section">
-<proposal>
-<versioned orientation="vertical">
-<v1>
-{:/nomarkdown}
-
 ```
 # Extruder module configuration
 extruder.hotend.enable                      true
@@ -346,51 +339,6 @@ temperature_control.hotend.thermistor_pin   0.23
 switch.fan.enable                           true
 switch.fan.input_pin                        2.6
 ```
-
-{::nomarkdown}
-</v1>
-<v2>
-{:/nomarkdown}
-
-```
-# Extruder module configuration
-extruder.hotend.enable                      true
-extruder.hotend.steps_per_mm                140
-
-# Temperature control module configuration
-temperature_control.hotend.enable           true
-temperature_control.hotend.thermistor_pin   0.23
-
-# Switch module configuration
-switch.fan.enable                           true
-switch.fan.input_pin                        2.6
-```
-
-{::nomarkdown}
-</v2>
-</versioned>
-</proposal>
-<original>
-{:/nomarkdown}
-
-```
-# Extruder module configuration
-extruder.hotend.enable                      true
-extruder.hotend.steps_per_mm                140
-
-# Temperature control module configuration
-temperature_control.hotend.enable           true
-temperature_control.hotend.thermistor_pin   0.23
-
-# Switch module configuration
-switch.fan.enable                           true
-switch.fan.input_pin                        2.6
-```
-
-{::nomarkdown}
-</original>
-</review>
-{:/nomarkdown}
 
 **You only configure modules you're using**:
 - 3D printer? Enable extruder and temperature control
@@ -444,8 +392,7 @@ alpha_steps_per_mm   80       # Steps per mm for X axis (alpha)
 The config file is organized by module:
 
 {::nomarkdown}
-<review id="basics:config-organization">
-<proposal>
+
 <versioned orientation="vertical">
 <v1>
 {:/nomarkdown}
@@ -504,36 +451,7 @@ temperature_control.hotend.heater_pin       2.7
 {::nomarkdown}
 </v2>
 </versioned>
-</proposal>
-<original>
-{:/nomarkdown}
 
-```
-# Motion Control Module
-default_feed_rate                           4000
-default_seek_rate                           4000
-acceleration                                3000
-junction_deviation                          0.05
-
-# Stepper Motor Module
-alpha_steps_per_mm                          80
-beta_steps_per_mm                           80
-gamma_steps_per_mm                          2560
-
-# Extruder Module
-extruder.hotend.enable                      true
-extruder.hotend.steps_per_mm                140
-extruder.hotend.max_speed                   50
-
-# Temperature Control Module
-temperature_control.hotend.enable           true
-temperature_control.hotend.thermistor_pin   0.23
-temperature_control.hotend.heater_pin       2.7
-```
-
-{::nomarkdown}
-</original>
-</review>
 {:/nomarkdown}
 
 Each section configures a specific module. This matches the module architecture described above.

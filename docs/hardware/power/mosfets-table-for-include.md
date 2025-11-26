@@ -59,10 +59,7 @@ Smoothieboard has three MOSFET pairs:
 
 ##### Configuration
 
-{::nomarkdown}
-<review id="mosfets-table:configuration">
-<proposal>
-{:/nomarkdown}
+
 
 To configure a MOSFET output in your config file, use the appropriate pin number from the "Digital output pin" row.
 
@@ -107,29 +104,7 @@ heater_pin = 2.4
 </versioned>
 {:/nomarkdown}
 
-{::nomarkdown}
-</proposal>
-<original>
-{:/nomarkdown}
 
-To configure a MOSFET output in your config file, use the appropriate pin number from the "Digital output pin" row.
-
-Example for configuring a heated bed on P{::nomarkdown}<pin>2.7</pin>{:/nomarkdown}:
-
-```
-temperature_control.bed.heater_pin     2.7
-```
-
-Example for configuring a hotend on P{::nomarkdown}<pin>2.4</pin>{:/nomarkdown}:
-
-```
-temperature_control.hotend.heater_pin  2.4
-```
-
-{::nomarkdown}
-</original>
-</review>
-{:/nomarkdown}
 
 ##### Related Documentation
 

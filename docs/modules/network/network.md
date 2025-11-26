@@ -19,10 +19,7 @@ The IP address can be set statically or set to use DHCP.
 
 However, due to buffer size limitations, some DHCP servers are not supported.
 
-{::nomarkdown}
-<review id="network:dhcp-configuration">
-<proposal>
-{:/nomarkdown}
+
 
 Here is an example of a setup using DHCP (meaning that the router automatically assigns an IP address to the Smoothieboard):
 
@@ -62,31 +59,9 @@ ip_address = auto        # use dhcp to get ip address
 </versioned>
 {:/nomarkdown}
 
-{::nomarkdown}
-</proposal>
-<original>
-{:/nomarkdown}
 
-Here is an example of a setup using DHCP (meaning that the router automatically assigns an IP address to the Smoothieboard):
 
-```plaintext
-# network settings
-network.enable                               true            # enable the ethernet network services
-network.webserver.enable                     false            # enable the webserver
-network.telnet.enable                        false            # enable the telnet server
-network.plan9.enable                         true             # enable the plan9 network filesystem
-network.ip_address                           auto             # use dhcp to get ip address
-```
 
-{::nomarkdown}
-</original>
-</review>
-{:/nomarkdown}
-
-{::nomarkdown}
-<review id="network:static-ip-configuration">
-<proposal>
-{:/nomarkdown}
 
 And an example of how to set up with a static IP:
 
@@ -130,28 +105,7 @@ ip_gateway = 192.168.1.254    # the gateway address
 </versioned>
 {:/nomarkdown}
 
-{::nomarkdown}
-</proposal>
-<original>
-{:/nomarkdown}
 
-And an example of how to set up with a static IP:
-
-```plaintext
-# network settings
-network.enable                               true             # enable the ethernet network services
-network.webserver.enable                     false            # enable the webserver
-network.telnet.enable                        false            # enable the telnet server
-network.plan9.enable                         true             # enable the plan9 network filesystem
-network.ip_address                           192.168.3.222    # the IP address
-network.ip_mask                              255.255.255.0    # the ip mask
-network.ip_gateway                           192.168.1.254    # the gateway address
-```
-
-{::nomarkdown}
-</original>
-</review>
-{:/nomarkdown}
 
 The basic network configuration options can be seen at the end of the [Config Sample](https://github.com/arthurwolf/Smoothie/blob/edge/ConfigSamples/Smoothieboard/config#L312).
 
@@ -300,7 +254,7 @@ This only works from the computer you edit the hosts file on and requires Smooth
 
 To use the network capabilities of the Smoothieboard (4X and 5X, note the 3X board does not have Ethernet capabilities), an RJ45 Magnetic Modular Jacks aka RJ45 network transformer like the Hanrun HR911105A needs to be soldered onto the board.
 
-They are, for example, available from [RobotSeed](http://robotseed.com/index.php?id_product=16&controller=product&id_lang=2).
+They are available from various electronics suppliers (search for "HR911105A" or "RJ45 magnetic modular jack").
 
 {::nomarkdown}
 <sl-alert variant="primary" open>
@@ -318,10 +272,7 @@ They are, for example, available from [RobotSeed](http://robotseed.com/index.php
 
 ## Hostname
 
-{::nomarkdown}
-<review id="network:hostname-configuration">
-<proposal>
-{:/nomarkdown}
+
 
 You can configure a hostname for the DHCP server as such:
 
@@ -355,22 +306,7 @@ hostname = smoothie1       # optionally set this hostname for dhcp
 </versioned>
 {:/nomarkdown}
 
-{::nomarkdown}
-</proposal>
-<original>
-{:/nomarkdown}
 
-You can configure a hostname for the DHCP server as such:
-
-```plaintext
-network.ip_address  auto          # use dhcp to get IP address
-network.hostname   smoothie1   # optionally set this hostname for dhcp
-```
-
-{::nomarkdown}
-</original>
-</review>
-{:/nomarkdown}
 
 Note the <setting v1="network.hostname" v2="network.hostname"></setting> is optional. (see section 3.14 [RFC 2132](https://www.ietf.org/rfc/rfc2132.txt))
 

@@ -20,7 +20,7 @@ Smoothie's power input is 12-24v, and the voltage regulator takes it down to 5V.
 - Model: `R-78E5.0-0.5`
 - Technical Documents: [Spec Sheet](http://www.recom-power.com/pdf/Innoline/R-78Exx-0.5.pdf)
 
-Which can be purchased from [Robotseed](http://robotseed.com/index.php?id_product=20&controller=product&id_lang=2) or [Uberclock](http://shop.uberclock.com/collections/smoothie/products/switching-regulator-dc-to-dc-5v)
+This can be purchased from electronics suppliers like Digikey, Mouser, or similar (search for "R-78E5.0-0.5").
 
 {::nomarkdown}
 <sl-alert variant="neutral" open>

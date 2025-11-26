@@ -162,8 +162,7 @@ title: CNC Controller Board - Smoothieboard v2 Prime
 - Access to full documentation
 
 **Where to Buy:**
-- **[Robosprout (USA)](https://www.robosprout.com/product-category/smoothieboards)** - Official US reseller, in stock, ships in 2-3 days
-- **[Robotseed (Europe)](http://robotseed.com)** - EU reseller, ships in 3-5 days
+- **[Robosprout (USA)](https://www.robosprout.com/product-category/smoothieboards)** - Official reseller, in stock, ships internationally
 
 {::nomarkdown}
 <div style="text-align: center; margin: 3rem 0;">

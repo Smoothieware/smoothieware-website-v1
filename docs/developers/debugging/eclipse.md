@@ -10,10 +10,7 @@ permalink: /eclipse
 </sl-alert>
 {:/nomarkdown}
 
-{::nomarkdown}
-<review id="eclipse:version-information">
-<proposal>
-{:/nomarkdown}
+
 
 {::nomarkdown}
 <versioned orientation="vertical">
@@ -51,21 +48,7 @@ The Eclipse setup described on this page will **not work** for V2 development. R
 {::nomarkdown}
 </v2>
 </versioned>
-</proposal>
-<original>
-{:/nomarkdown}
 
-{::nomarkdown}
-<sl-alert variant="primary" open>
-  <sl-icon slot="icon" name="info-circle"></sl-icon>
-  <strong>Version Information:</strong><br>
-  This guide is for <strong>Smoothieware V1</strong> development on the LPC1768 platform. For V2 development on STM32H745, the build system and debugging approach differ significantly (V2 uses Rake/Ruby build system instead of make, and hardware debuggers instead of MRI).
-</sl-alert>
-{:/nomarkdown}
-
-{::nomarkdown}
-</original>
-</review>
 {:/nomarkdown}
 
 I first want to thank [David Cabanis](http://mbed.org/users/dcabanis/) for the e-mail that he sent me a few months ago.

@@ -59,10 +59,7 @@ This is a more basic solution that only provides the visual indicator without a 
 
 ## Configuration
 
-{::nomarkdown}
-<review id="playled:configuration">
-<proposal>
-{:/nomarkdown}
+
 
 To enable and configure the play LED in your config file:
 
@@ -100,23 +97,7 @@ disable = false                       # Enable LED support
 </versioned>
 {:/nomarkdown}
 
-{::nomarkdown}
-</proposal>
-<original>
-{:/nomarkdown}
 
-To enable and configure the play LED in your config file:
-
-```
-# Play LED configuration
-play_led_disable                         false              # Enable the play LED
-leds_disable                             false              # Enable LED support
-```
-
-{::nomarkdown}
-</original>
-</review>
-{:/nomarkdown}
 
 The play LED will automatically turn on when a file is being executed from the SD card.
 

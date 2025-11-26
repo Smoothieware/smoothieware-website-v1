@@ -47,10 +47,7 @@ The "Morgan" variant is a specific SCARA implementation that was designed and co
 
 ## Configuration
 
-{::nomarkdown}
-<review id="morgan-scara:configuration">
-<proposal>
-{:/nomarkdown}
+
 
 To configure your machine to use the Morgan SCARA arm solution, add this to your configuration file:
 
@@ -78,28 +75,11 @@ arm_solution = morgan
 </versioned>
 {:/nomarkdown}
 
-{::nomarkdown}
-</proposal>
-<original>
-{:/nomarkdown}
 
-To configure your machine to use the Morgan SCARA arm solution, add this to your configuration file:
-
-```
-arm_solution morgan
-```
-
-{::nomarkdown}
-</original>
-</review>
-{:/nomarkdown}
 
 ### Configuration Parameters
 
-{::nomarkdown}
-<review id="morgan-scara:parameters">
-<proposal>
-{:/nomarkdown}
+
 
 Based on the source code, Morgan SCARA likely requires the following parameters (exact names may vary - refer to the source code for definitive information):
 
@@ -189,54 +169,7 @@ max_rate = 300
 </sl-alert>
 {:/nomarkdown}
 
-{::nomarkdown}
-</proposal>
-<original>
-{:/nomarkdown}
 
-Based on the source code, Morgan SCARA likely requires the following parameters (exact names may vary - refer to the source code for definitive information):
-
-```
-arm_solution                                 morgan
-
-# Arm geometry (example values - adjust for your machine)
-# These parameters define the physical dimensions of your SCARA arm
-arm1_length                                  150.0    # Length of proximal arm segment (mm)
-arm2_length                                  150.0    # Length of distal arm segment (mm)
-
-# Alpha motor (proximal joint - rotary)
-alpha_step_pin                               2.0
-alpha_dir_pin                                0.5
-alpha_en_pin                                 0.4
-alpha_steps_per_mm                           # Steps per degree of rotation
-alpha_max_rate                               # Maximum rotation speed
-
-# Beta motor (distal joint - rotary)
-beta_step_pin                                2.1
-beta_dir_pin                                 0.11
-beta_en_pin                                  0.10
-beta_steps_per_mm                            # Steps per degree of rotation
-beta_max_rate                                # Maximum rotation speed
-
-# Gamma motor (Z axis - linear)
-gamma_step_pin                               2.2
-gamma_dir_pin                                0.20
-gamma_en_pin                                 0.19
-gamma_steps_per_mm                           400      # Linear steps per mm
-gamma_max_rate                               300      # Linear speed in mm/min
-```
-
-{::nomarkdown}
-<sl-alert variant="warning" open>
-  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
-  <strong>Note:</strong> The exact parameter names and requirements should be verified in the source code. The above configuration is based on typical SCARA requirements and may need adjustment for Morgan SCARA specifically.
-</sl-alert>
-{:/nomarkdown}
-
-{::nomarkdown}
-</original>
-</review>
-{:/nomarkdown}
 
 ## When to Use Morgan SCARA
 

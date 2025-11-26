@@ -10,10 +10,7 @@ The Smoothieware community is active and helpful. There are several channels whe
 
 - [IRC (recommended)](irc) - Real-time chat with the community and developers
 
-{::nomarkdown}
-<review id="getting-help-community:github-discussions">
-<proposal>
-{:/nomarkdown}
+
 
 {::nomarkdown}
 <versioned orientation="vertical">
@@ -34,17 +31,7 @@ The Smoothieware community is active and helpful. There are several channels whe
 </versioned>
 {:/nomarkdown}
 
-{::nomarkdown}
-</proposal>
-<original>
-{:/nomarkdown}
 
-- [Github Discussions](https://github.com/Smoothieware/Smoothieware/discussions) - Community Q&A and discussions
-
-{::nomarkdown}
-</original>
-</review>
-{:/nomarkdown}
 
 - [Forum](https://forum.makerforums.info/c/controllers/smoothie/) - Discussion board for questions and announcements
 - [Support Mailing list](http://groups.google.com/group/smoothieware-support) - Email-based support discussions

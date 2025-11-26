@@ -56,10 +56,7 @@ These modules handle system-level features like file playback, current control, 
 
 ## Configuration
 
-{::nomarkdown}
-<review id="utils:configuration-examples">
-<proposal>
-{:/nomarkdown}
+
 
 Each utility module has its own configuration section in the config file.
 
@@ -102,27 +99,7 @@ enable = true                         # Enable digital current control
 </versioned>
 {:/nomarkdown}
 
-{::nomarkdown}
-</proposal>
-<original>
-{:/nomarkdown}
 
-Each utility module has its own configuration section in the config file.
-
-For example:
-
-```
-# Player module
-play_led_disable                false              # Enable play LED
-
-# Current control
-currentcontrol_module_enable    true               # Enable digital current control
-```
-
-{::nomarkdown}
-</original>
-</review>
-{:/nomarkdown}
 
 See each individual module's documentation page for complete configuration options and examples.
 

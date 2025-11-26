@@ -7,10 +7,7 @@ permalink: /getting-smoothieboard
 
 [Smoothieboard](/smoothieboard) comes in two main versions available for purchase. Choose the version that best fits your needs, then select a reseller in your region.
 
-{::nomarkdown}
-<review id="getting-smoothieboard:board-selection-guide">
-<proposal>
-{:/nomarkdown}
+
 
 ## Which Board Should You Get?
 
@@ -49,63 +46,20 @@ Both Smoothieboard v1 and v2-prime are currently in production. Here's a quick c
 
 For detailed specifications and comparison, see [Smoothieboards Overview](/smoothieboard).
 
-{::nomarkdown}
-</proposal>
-<original>
-{:/nomarkdown}
 
-[Smoothieboard](/smoothieboard) is now for sale from the US (by Chris Cecil, Smoothie project contributor) and Europe (by Arthur, Smoothie/Smoothieboard dev).
-
-{::nomarkdown}
-</original>
-</review>
-{:/nomarkdown}
 
 ## North America
 
-{::nomarkdown}
-<review id="getting-smoothieboard:resellers-north-america">
-<proposal>
-{:/nomarkdown}
+
 
 - [Robosprout](https://www.robosprout.com/product-category/smoothieboards) (USA) - Official US reseller. Stocks both **v1 and v2-prime** (**In Stock**)
 - [Everlast Concepts LLC](https://www.amazon.com/dp/B0786SVQ9Z?ref=myi_title_dp) (USA & Amazon USA) - v1 reseller
 
-{::nomarkdown}
-</proposal>
-<original>
-{:/nomarkdown}
 
-- [Robosprout](https://www.robosprout.com/product-category/smoothieboards), (USA) Smoothie lead contributing company, official US reseller. (**In Stock**)
-- [Everlast Concepts LLC](https://www.amazon.com/dp/B0786SVQ9Z?ref=myi_title_dp), reseller (USA) & (Amazon USA)
-
-{::nomarkdown}
-</original>
-</review>
-{:/nomarkdown}
 
 ## Europe and Rest of the World
 
-{::nomarkdown}
-<review id="getting-smoothieboard:resellers-europe">
-<proposal>
-{:/nomarkdown}
-
-- [Robotseed](http://robotseed.com/index.php?id_lang=2) (Europe) - Smoothie lead company, stocks both **v1 and v2-prime**. (**Intermittent stock**, reservations via [email](mailto:wolf.arthur@gmail.com). For urgent orders, try [Robosprout](https://www.robosprout.com/) instead)
-- [Robotseed on Amazon](https://www.amazon.fr/Smoothieboard-5XC-SmoothieBoard-SB-1-0/dp/B00TIYS7S6/ref=sr_1_1?ie=UTF8&qid=1480984970&sr=8-1&keywords=smoothieboard) (France) - v1 sales
-
-{::nomarkdown}
-</proposal>
-<original>
-{:/nomarkdown}
-
-- [Robotseed](http://robotseed.com/index.php?id_lang=2), Smoothie lead contributing company (**Intermittent stock**, reservations can be made via [email](mailto:wolf.arthur@gmail.com). If you are in a hurry, try Robosprout above instead)
-- [Robotseed on Amazon](https://www.amazon.fr/Smoothieboard-5XC-SmoothieBoard-SB-1-0/dp/B00TIYS7S6/ref=sr_1_1?ie=UTF8&qid=1480984970&sr=8-1&keywords=smoothieboard) (France)
-
-{::nomarkdown}
-</original>
-</review>
-{:/nomarkdown}
+*No current European resellers. For EU orders, contact [Robosprout](https://www.robosprout.com/) (ships internationally) or check the historical resellers below.*
 
 ## List of historical resellers
 
@@ -115,7 +69,6 @@ At the current time, they likely do not have stock, but *some* might have a few 
 
 If your company currently has stock, but is listed as not having it, please [email us](mailto:wolf.arthur@gmail.com) so we can correct this page.
 
-- [Uberclock](http://shop.uberclock.com/collections/smoothie)
 - [Everlast Concepts LLC](https://www.amazon.com/dp/B0786SVQ9Z?ref=myi_title_dp), reseller (USA) & (Amazon USA)
 - [Filafarm](http://www.filafarm.de/collections/elektronik/products/smoothieboard), reseller (Germany)
 - [Timeshell](https://store.timeshell.ca/index.php?route=product/search&search=smoothieboard), reseller (Canada)

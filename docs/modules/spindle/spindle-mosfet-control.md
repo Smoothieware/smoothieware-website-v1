@@ -85,10 +85,7 @@ Now that you have located which MOSFET you are going to use for Spindle control,
 
 We will be doing this using the [Switch](switch) module.
 
-{::nomarkdown}
-<review id="spindle-mosfet-control:switch-config">
-<proposal>
-{:/nomarkdown}
+
 
 Add this to your configuration file:
 
@@ -132,27 +129,7 @@ spindle.max_pwm = 255                # set max pwm for the pin default is 255
 </versioned>
 {:/nomarkdown}
 
-{::nomarkdown}
-</proposal>
-<original>
-{:/nomarkdown}
 
-Add this to your configuration file:
-
-```gcode
-# Spindle control Switch module
-switch.spindle.enable                            true             #
-switch.spindle.input_on_command                  M3               #
-switch.spindle.input_off_command                 M5               #
-switch.spindle.output_pin                        2.7              # Here we are using the first big MOSFET
-switch.spindle.output_type                       pwm              # pwm output settable with S parameter in the input_on_command
-switch.spindle.max_pwm                           255              # set max pwm for the pin default is 255
-```
-
-{::nomarkdown}
-</original>
-</review>
-{:/nomarkdown}
 
 ## Controlling the Spindle
 

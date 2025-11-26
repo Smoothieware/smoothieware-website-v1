@@ -17,8 +17,7 @@ The aim of this guide is to provide a step-by-step overview of how to create a b
 The example here will be a laser control module.
 
 {::nomarkdown}
-<review id="moduleexample:what-is-a-module">
-<proposal>
+
 <versioned>
 <v1>
 <h2>What is a module</h2>
@@ -43,21 +42,11 @@ The example here will be a laser control module.
 <p>The main idea is to add functionality without editing the core, through explicit configuration and direct module communication.</p>
 </v2>
 </versioned>
-</proposal>
-<original>
-<h2>What is a module</h2>
-<p>In Smoothie, everything is a module.</p>
-<p>A <strong>module</strong> is essentially a piece of code (an object) that connects to the rest of the code only through event calls and event handlers.</p>
-<p>The core of Smoothie (serial communication, motion planning, actual stepping) is divided into modules.</p>
-<p>And then <strong>you</strong> can write modules for additional tasks, like controlling a laser, 3D printing, or whatever cool idea you have.</p>
-<p>The main idea is to be able to add these additional functionalities in the simplest way possible, without having to edit the core, just connect to/call events.</p>
-</original>
-</review>
+
 {:/nomarkdown}
 
 {::nomarkdown}
-<review id="moduleexample:about-this-example">
-<proposal>
+
 <versioned>
 <v1>
 <h2>About this example</h2>
@@ -80,16 +69,7 @@ The example here will be a laser control module.
 <p>Good examples of existing V2 modules are in the <code>src/modules/</code> directory, particularly <code>Laser</code>, <code>TemperatureControl</code>, and <code>Extruder</code>.</p>
 </v2>
 </versioned>
-</proposal>
-<original>
-<h2>About this example</h2>
-<p>For the example, we'll create a simple module that turns the laser on and off depending on received G codes.</p>
-<p>PWM adjusts the laser power to the robot's speed so that it plays nicely with look-ahead acceleration management.</p>
-<p>This should actually be sufficient to do basic laser cutting.</p>
-<p>Also, there'll be a lot of explaining here, but if you landed on this page, you will probably understand everything just by looking at the code; it's not that complicated.</p>
-<p>Good examples of existing modules are in <code>/modules/communication/</code> and <code>/modules/robot/</code>.</p>
-</original>
-</review>
+
 {:/nomarkdown}
 
 ## Code style
@@ -113,8 +93,7 @@ We make a Laser class, [extending](http://en.wikipedia.org/wiki/Object-oriented_
 The `on_module_loaded` method will be called automatically when the kernel is done loading the module. You shouldn't call the kernel, like to register for an event, **before** `on_module_loaded` is called, like in the constructor.
 
 {::nomarkdown}
-<review id="moduleexample:kernel-and-registry">
-<proposal>
+
 <versioned>
 <v1>
 <h2>About the Kernel</h2>
@@ -160,22 +139,11 @@ maximum_power = 1.0
 minimum_power = 0.0</code></pre>
 </v2>
 </versioned>
-</proposal>
-<original>
-<h2>About the Kernel</h2>
-<p>The kernel (<code>libs/Kernel.h</code>) is basically what you talk to when registering for an event, calling an event, and what calls you (the Module) when you have registered for an event, and another Module calls this event.</p>
-<p>Your module must be added to it like this, in <code>main.cpp</code>:</p>
-<pre><code class="language-cpp">// Add Laser module to Kernel
-Laser laser = Laser();
-kernel-&gt;add_module(&amp;laser);</code></pre>
-<p>Once the module is added, <code>on_module_loaded()</code> is called so that you can register for events.</p>
-</original>
-</review>
+
 {:/nomarkdown}
 
 {::nomarkdown}
-<review id="moduleexample:gcode-handling">
-<proposal>
+
 <versioned>
 <v1>
 <h2>On the two G code events</h2>
@@ -209,25 +177,11 @@ THEDISPATCHER-&gt;add_handler("fire",
     std::bind(&amp;Laser::handle_fire_cmd, this, _1, _2));</code></pre>
 </v2>
 </versioned>
-</proposal>
-<original>
-<h2>On the two G code events</h2>
-<p>So in our example, we want to turn the laser on/off depending on the G codes we receive.</p>
-<p>But because of the acceleration management (G code look-ahead, see the Planner class), received G codes are not executed when they are received.</p>
-<p>They are pushed into a queue, and then popped out when the previous movement has finished executing.</p>
-<p>So there are two events:</p>
-<ul>
-<li><code>on_gcode_received</code> - called when a G-code is received</li>
-<li><code>on_gcode_execute</code> - called right before the movement corresponding to that G-code line is executed</li>
-</ul>
-<p>The one that's of interest to us now is <code>on_gcode_execute</code>.</p>
-</original>
-</review>
+
 {:/nomarkdown}
 
 {::nomarkdown}
-<review id="moduleexample:registering-handlers">
-<proposal>
+
 <versioned>
 <v1>
 <h2>Registering for an event</h2>
@@ -288,32 +242,11 @@ THEDISPATCHER-&gt;add_handler("fire",
 <p>Handlers are type-safe - they receive <code>GCode&amp;</code> and <code>OutputStream&amp;</code> references directly, no casting needed. The Dispatcher calls only registered handlers, which is more efficient than V1's broadcast model.</p>
 </v2>
 </versioned>
-</proposal>
-<original>
-<h2>Registering for an event</h2>
-<p>So here is how we register for an event in our code:</p>
-<pre><code class="language-cpp">class Laser : public Module {
-    public:
-        Laser(){}
 
-        void on_module_loaded() {
-            this-&gt;register_for_event(ON_GCODE_EXECUTE);
-        }
-
-        void on_gcode_execute(void* argument){
-            Gcode* gcode = static_cast&lt;Gcode*&gt;(argument);
-        }
-};</code></pre>
-<p>So now, whenever a module calls the <code>on_gcode_execute</code> event, this callback function will be called. In this case, the Stepper module calls this upon deleting a move it has just finished stepping.</p>
-<p>Because of the way C++ works, arguments to events here must be passed as void pointers and then manually cast in the callback function. You can see how that's done: here we cast a Gcode object.</p>
-<p>You can find more information about the different events in <a href="listofevents">ListOfEvents</a>.</p>
-</original>
-</review>
 {:/nomarkdown}
 
 {::nomarkdown}
-<review id="moduleexample:doing-something-useful">
-<proposal>
+
 <versioned>
 <v1>
 <h2>Doing something useful</h2>
@@ -405,57 +338,11 @@ float Laser::current_speed_ratio(const Block *block) const
 <p>The key difference from V1 is that V2 <strong>polls</strong> the motion system rather than receiving events. This allows real-time power adjustment as the motion accelerates and decelerates through the trapezoid profile.</p>
 </v2>
 </versioned>
-</proposal>
-<original>
-<h2>Doing something useful</h2>
-<p>We have to modify the class a bit to add a <code>PwmOut</code> to it. Then we can do some useful stuff:</p>
-<pre><code class="language-cpp">class Laser : public Module {
-    public:
-        Laser(PinName pin) : laser_pin(pin) {
-            this-&gt;laser_pin.period_us(10);
-        }
 
-        void on_module_loaded() {
-            this-&gt;register_for_event(ON_GCODE_EXECUTE);
-            this-&gt;register_for_event(ON_SPEED_CHANGE);
-        }
-
-        void on_gcode_execute(void* argument) {
-            Gcode* gcode = static_cast&lt;Gcode*&gt;(argument);
-            if (gcode-&gt;has_letter('G')) {
-                int code = gcode-&gt;get_value('G');
-                if (code == 0) { // G0
-                    this-&gt;laser_pin = 0;
-                    this-&gt;laser_on = false;
-                } else if (code &gt; 0 &amp;&amp; code &lt; 4) { // G1, G2, G3
-                    this-&gt;laser_on = true;
-                }
-            }
-        }
-
-        void on_speed_change(void* argument) {
-            Stepper* stepper = static_cast&lt;Stepper*&gt;(argument);
-            if (this-&gt;laser_on) {
-                this-&gt;laser_pin = double(stepper-&gt;trapezoid_adjusted_rate)
-                    / double(stepper-&gt;current_block-&gt;nominal_rate);
-            }
-        }
-
-        PwmOut laser_pin;
-        bool   laser_on;
-};</code></pre>
-<p>And also change a bit the way we instantiate the module:</p>
-<pre><code class="language-cpp">Laser laser = Laser(p21);</code></pre>
-<p>That's it, now the Laser pin will be LOW during G0 moves, and HIGH during G1, G2, and G3 moves.</p>
-<p>But that's not enough. Because we use acceleration, the speed is not constant. And thus if the power of the laser stays constant, that power will be too much when accelerating and decelerating.</p>
-<p>So we need to have a laser power that is proportional to the instant speed of the robot. That's the kind of thing the <code>on_speed_change</code> event is for.</p>
-</original>
-</review>
 {:/nomarkdown}
 
 {::nomarkdown}
-<review id="moduleexample:conclusion">
-<proposal>
+
 <versioned>
 <v1>
 <h2>Conclusion</h2>
@@ -474,10 +361,5 @@ float Laser::current_speed_ratio(const Block *block) const
 <p>Despite these architectural changes, the fundamental principle remains: add functionality without modifying the core firmware, through a well-defined module interface.</p>
 </v2>
 </versioned>
-</proposal>
-<original>
-<h2>Conclusion</h2>
-<p>As you can see here, we have added functionality to Smoothie without having to modify the core, which is the whole point of the modular design.</p>
-</original>
-</review>
+
 {:/nomarkdown}

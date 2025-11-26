@@ -19,10 +19,7 @@ These configuration options control what happens during boot, suspend, and resum
 
 ### Boot Sequence
 
-{::nomarkdown}
-<review id="player-options:boot-sequence">
-<proposal>
-{:/nomarkdown}
+
 
 To automatically home your printer on boot, create a file at `/sd/on_boot.gcode` with:
 
@@ -62,28 +59,7 @@ on_boot_gcode = /sd/on_boot.gcode
 </versioned>
 {:/nomarkdown}
 
-{::nomarkdown}
-</proposal>
-<original>
-{:/nomarkdown}
 
-To automatically home your printer on boot, create a file at `/sd/on_boot.gcode` with:
-
-```gcode
-G28 ; Home all axes
-```
-
-Then enable it in your config:
-
-```
-on_boot_gcode_enable true
-on_boot_gcode /sd/on_boot.gcode
-```
-
-{::nomarkdown}
-</original>
-</review>
-{:/nomarkdown}
 
 ### Suspend and Resume
 

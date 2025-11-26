@@ -30,79 +30,19 @@ For information on pin options and electrical settings (pull up, pull down, open
 | <setting v1="beta_steps_per_mm" v2="actuator.beta.steps_per_mm"></setting> | 80 | Steps per millimetre for beta stepper motor ( this is the `Y` axis for a cartesian machine ) |
 | <setting v1="gamma_steps_per_mm" v2="actuator.gamma.steps_per_mm"></setting> | 1600 | Steps per millimetre for gamma stepper motor ( this is the `Z` axis for a cartesian machine ) |
 
-{::nomarkdown}
-<review id="configuration-options:arm-solution-options">
-<proposal>
-{:/nomarkdown}
 
-{::nomarkdown}
-<versioned orientation="vertical">
-<v1>
-{:/nomarkdown}
 
 | <setting v1="arm_solution" v2="motion control.arm_solution"></setting> | cartesian | Sets the arm solution for this machine. The arm solution converts position in millimetres into actuator positions ( usually in steps ). On cartesian machines those are proportional to each other, but for example on a linear delta machine, some fancy math is required for the conversion. Possible values : `cartesian`, `corexy`, `linear_delta`, `rotatable_cartesian`, `morgan` |
 
-{::nomarkdown}
-</v1>
-<v2>
-{:/nomarkdown}
 
-| <setting v1="arm_solution" v2="motion control.arm_solution"></setting> | cartesian | Sets the arm solution for this machine. The arm solution converts position in millimetres into actuator positions ( usually in steps ). V2 supports: `cartesian`, `corexy`, `corexz`, `linear_delta`, `rotary_delta`, `morgan`. Note: `rotatable_cartesian` was removed in V2. |
-
-{::nomarkdown}
-</v2>
-</versioned>
-{:/nomarkdown}
-
-{::nomarkdown}
-</proposal>
-<original>
-{:/nomarkdown}
-
-| <setting v1="arm_solution" v2="motion control.arm_solution"></setting> | cartesian | Sets the arm solution for this machine. The arm solution converts position in millimetres into actuator positions ( usually in steps ). On cartesian machines those are proportional to each other, but for example on a linear delta machine, some fancy math is required for the conversion. Possible values : `cartesian`, `corexy`, `linear_delta`, `rotatable_cartesian`, `morgan` |
-
-{::nomarkdown}
-</original>
-</review>
-{:/nomarkdown}
 | <setting v1="arm_length" v2="linear delta.arm_length"></setting> | 100 | In the case of a `linear_delta` arm solution, this is the length of an arm from hinge to hinge |
 | <setting v1="arm_radius" v2="linear delta.arm_radius"></setting> | 124 | In the case of a `linear_delta` arm solution, this is the horizontal distance from hinge to hinge when the effector is centered |
 
-{::nomarkdown}
-<review id="configuration-options:alpha-angle-rotatable">
-<proposal>
-{:/nomarkdown}
 
-{::nomarkdown}
-<versioned orientation="vertical">
-<v1>
-{:/nomarkdown}
 
 | <setting v1="alpha_angle"></setting> | 0.0 / 30.0 | Angle by which the plane is rotated. For `rotatable_cartesian` arm solution: default is 0.0. For `experimental_delta` arm solution: default is 30.0. |
 
-{::nomarkdown}
-</v1>
-<v2>
-{:/nomarkdown}
 
-The `rotatable_cartesian` arm solution was removed in V2. For V2, use the standard `cartesian` arm solution. The `alpha_angle` setting applies only to certain delta configurations if still using legacy behavior.
-
-{::nomarkdown}
-</v2>
-</versioned>
-{:/nomarkdown}
-
-{::nomarkdown}
-</proposal>
-<original>
-{:/nomarkdown}
-
-| <setting v1="alpha_angle"></setting> | 0.0 / 30.0 | Angle by which the plane is rotated. For `rotatable_cartesian` arm solution: default is 0.0. For `experimental_delta` arm solution: default is 30.0. |
-
-{::nomarkdown}
-</original>
-</review>
-{:/nomarkdown}
 | <setting v1="arm1_length"></setting> | 100 | In the case of a `morgan` arm solution, length of the first arm |
 | <setting v1="arm2_length"></setting> | 100 | In the case of a `morgan` arm solution, length of the second arm |
 | <setting v1="morgan_offset_x"></setting> | 10 | In the case of a `morgan` arm solution, X offset |
@@ -146,86 +86,22 @@ The `rotatable_cartesian` arm solution was removed in V2. For V2, use the standa
 
 | Current control | | |
 
-{::nomarkdown}
-<review id="configuration-options:current-control-v1-v2">
-<proposal>
-{:/nomarkdown}
 
-{::nomarkdown}
-<versioned orientation="vertical">
-<v1>
-{:/nomarkdown}
 
 | <setting v1="currentcontrol_module_enable"></setting> | true | If set to true, enable digital control of the current settings of the stepper motor drivers. **Note** : this is dependent on the physical board type, and unless you are designing a new board you shouldn't have to modify these settings |
 | <setting v1="digipotchip"></setting> | mcp4451 | Select the digipot chip with which to control the current for the stepper motor drivers. Supported chips are `mcp4451` and `ad5206` |
 | <setting v1="digipot_max_current"></setting> | 2 | Maximum current that can be set |
 | <setting v1="digipot_factor"></setting> | 113.33 | Factor for converting the current into digipot values |
 
-{::nomarkdown}
-</v1>
-<v2>
-{:/nomarkdown}
 
-V2 uses native Trinamic TMC stepper drivers (TMC2660 or TMC2590) with SPI control. Current configuration is set via the `[tmc2660]` or `[tmc2590]` sections. See the [Stepper Motor Drivers](/stepper-motor-drivers) page for detailed configuration options.
-
-{::nomarkdown}
-</v2>
-</versioned>
-{:/nomarkdown}
-
-{::nomarkdown}
-</proposal>
-<original>
-{:/nomarkdown}
-
-| <setting v1="currentcontrol_module_enable"></setting> | true | If set to true, enable digital control of the current settings of the stepper motor drivers. **Note** : this is dependent on the physical board type, and unless you are designing a new board you shouldn't have to modify these settings |
-| <setting v1="digipotchip"></setting> | mcp4451 | Select the digipot chip with which to control the current for the stepper motor drivers. Supported chips are `mcp4451` and `ad5206` |
-| <setting v1="digipot_max_current"></setting> | 2 | Maximum current that can be set |
-| <setting v1="digipot_factor"></setting> | 113.33 | Factor for converting the current into digipot values |
-
-{::nomarkdown}
-</original>
-</review>
-{:/nomarkdown}
 | <setting v1="zeta_current" v2="current control.zeta.current"></setting> | 1.5 | Current setting for the 6th stepper motor driver current control |
 
-{::nomarkdown}
-<review id="configuration-options:eta-theta-current">
-<proposal>
-{:/nomarkdown}
 
-{::nomarkdown}
-<versioned orientation="vertical">
-<v1>
-{:/nomarkdown}
 
 | <setting v1="eta_current"></setting> | 1.5 | Current setting for the 7th stepper motor driver current control |
 | <setting v1="theta_current"></setting> | 1.5 | Current setting for the 8th stepper motor driver current control |
 
-{::nomarkdown}
-</v1>
-<v2>
-{:/nomarkdown}
 
-V2 supports up to 8 actuators with integrated TMC driver configuration. Extended actuator currents (7th and 8th axes) are configured in the `[tmc2660]` or `[tmc2590]` sections with the appropriate axis name.
-
-{::nomarkdown}
-</v2>
-</versioned>
-{:/nomarkdown}
-
-{::nomarkdown}
-</proposal>
-<original>
-{:/nomarkdown}
-
-| <setting v1="eta_current"></setting> | 1.5 | Current setting for the 7th stepper motor driver current control |
-| <setting v1="theta_current"></setting> | 1.5 | Current setting for the 8th stepper motor driver current control |
-
-{::nomarkdown}
-</original>
-</review>
-{:/nomarkdown}
 
 | [Player](/player) | | |
 {% include modules/player/player-options-for-include.md %}

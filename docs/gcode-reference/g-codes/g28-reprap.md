@@ -44,31 +44,15 @@ G28 X0 Y0 Z0
 | `Y` | Move until you hit this endstop then set the position in this axis to this value | <gcode>G28</gcode> Y0 |
 | `Z` | Move until you hit this endstop then set the position in this axis to this value | <gcode>G28</gcode> Z0 |
 
-{::nomarkdown}
-<review id="g28-reprap:grbl-mode-note">
-<proposal>
-{:/nomarkdown}
+
 
 **Note on GRBL Mode:** The Reprap homing behavior described on this page applies when {::nomarkdown}<setting v1="grbl_mode" v2="general.grbl_mode"></setting>{:/nomarkdown} is set to `false` (default). When GRBL mode is enabled, {::nomarkdown}<gcode>G28</gcode>{:/nomarkdown} instead goes to the recorded machine origin. See [GRBL Mode](grbl-mode) for details.
 
-{::nomarkdown}
-</proposal>
-<original>
-{:/nomarkdown}
 
-[No content - new addition]
-
-{::nomarkdown}
-</original>
-</review>
-{:/nomarkdown}
 
 ## Configuration
 
-{::nomarkdown}
-<review id="g28-reprap:configuration-v1-v2">
-<proposal>
-{:/nomarkdown}
+
 
 {::nomarkdown}
 <versioned orientation="vertical">
@@ -107,17 +91,7 @@ homing.direction = home_to_min
 </versioned>
 {:/nomarkdown}
 
-{::nomarkdown}
-</proposal>
-<original>
-{:/nomarkdown}
 
-See the [Endstops](endstops) module documentation.
-
-{::nomarkdown}
-</original>
-</review>
-{:/nomarkdown}
 
 ## Delta
 
@@ -128,10 +102,7 @@ See the [Endstops](endstops) module documentation.
 </sl-alert>
 {:/nomarkdown}
 
-{::nomarkdown}
-<review id="g28-reprap:delta-machines">
-<proposal>
-{:/nomarkdown}
+
 
 {::nomarkdown}
 <versioned orientation="vertical">
@@ -160,19 +131,7 @@ If you are using a [Delta](delta) machine (Cartesian or rotary), homing behavior
 </versioned>
 {:/nomarkdown}
 
-{::nomarkdown}
-</proposal>
-<original>
-{:/nomarkdown}
 
-If you are using a [Delta](delta) machine, then you cannot individually home axes.
-
-Instead, all "actuators" are homed together to the top of the machine, which sets you at the top of the Z work area, and at the center of the XY work area.
-
-{::nomarkdown}
-</original>
-</review>
-{:/nomarkdown}
 
 ## Further reading
 

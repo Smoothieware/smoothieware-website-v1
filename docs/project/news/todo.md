@@ -19,8 +19,7 @@ If you are looking to help the project, but do not know where to start, this is 
 
 ## Smoothieware v1 firmware
 
-<review>
-<proposal>
+
 {:/nomarkdown}
 
 The Smoothieware firmware that runs on the Smoothieboard v1 ( Smoothieware v1 ) has a lot of features, and has received a lot of love over the years.
@@ -44,22 +43,7 @@ Most active development has shifted to Smoothieware v2. See the v2 section below
 </versioned>
 {:/nomarkdown}
 
-{::nomarkdown}
-</proposal>
-<original>
-{:/nomarkdown}
 
-The Smoothieware firmware that runs on the Smoothieboard v1 ( Smoothieware v1 ) has a lot of features, and has received a lot of love over the years.
-
-But there are many things we want to improve, and new features we want to implement or experiment with :
-
-{::nomarkdown}
-</original>
-</review>
-
-<review>
-<proposal>
-{:/nomarkdown}
 
 {::nomarkdown}
 <sl-alert variant="success" open>
@@ -87,25 +71,7 @@ This improvement has been fully implemented in Smoothieware v2, with a maximum s
 </sl-alert>
 {:/nomarkdown}
 
-{::nomarkdown}
-</proposal>
-<original>
-{:/nomarkdown}
 
-{::nomarkdown}
-<sl-alert variant="success" open>
-  <sl-icon slot="icon" name="check-circle"></sl-icon>
-  <strong>Step generation improvements</strong> <a href="https://github.com/wolfmanjm">Jim Morris</a> is working on several improvements on the step generation in Smoothie, including <a href="https://github.com/Smoothieware/Smoothieware/issues/82">removing on_gcode_execute</a> and <a href="https://github.com/Smoothieware/Smoothieware/issues/107">doing acceleration every step</a> instead of on a fixed clock as we do now, as well as many other small changes.<br><br>This is expected to result in a much saner codebase, smoothness/performance improvements, and to make it easier to implement some new features, like S-curve acceleration, 6-axis support and some extruder features.<br><br>This is going to require, amongst other things, a massive rewrite of the Extrude and Laser modules.<br><br>This is also possibly going to solve the problem <a href="/simplify3d">Simplify3D and Smoothie have with each other</a>.<br><br><strong>Update</strong> : This was merged into edge beginning of July 2016, and is now being tested by the community in the wild.
-</sl-alert>
-{:/nomarkdown}
-
-{::nomarkdown}
-</original>
-</review>
-
-<review>
-<proposal>
-{:/nomarkdown}
 
 {::nomarkdown}
 <sl-alert variant="primary" open>
@@ -134,20 +100,7 @@ S-curve acceleration is planned for Smoothieware v2 but has not yet been impleme
 {:/nomarkdown}
 
 {::nomarkdown}
-</proposal>
-<original>
-{:/nomarkdown}
 
-{::nomarkdown}
-<sl-alert variant="primary" open>
-  <sl-icon slot="icon" name="lightbulb"></sl-icon>
-  <strong>S-curve acceleration</strong> <a href="https://github.com/wolfmanjm">Jim Morris</a> is planning on implementing 7th order acceleration into Smoothie.<br><br>See <a href="https://github.com/synthetos/TinyG/wiki/Jerk-Controlled-Motion-Explained">Jerk-Controlled Motion Explained</a> for an explanation of what this is.<br><br>See also this proposed implementation: <a href="https://github.com/PymZoR/S-curve-Planner">S-curve-Planner</a> Also, there has been some discussions of implementing a PNP-specific planner, that would loose axis sync ( not required on Pick and Place machines ), but thanks to this simplifying it a lot, would then be much easier to implement S-curve for.
-</sl-alert>
-{:/nomarkdown}
-
-{::nomarkdown}
-</original>
-</review>
 
 {::nomarkdown}
 <sl-alert variant="success" open>
@@ -163,8 +116,7 @@ S-curve acceleration is planned for Smoothieware v2 but has not yet been impleme
 </sl-alert>
 {:/nomarkdown}
 
-<review>
-<proposal>
+
 {:/nomarkdown}
 
 {::nomarkdown}
@@ -194,20 +146,7 @@ Smoothieware v2 maintains support for multiple kinematics (Cartesian, Linear Del
 {:/nomarkdown}
 
 {::nomarkdown}
-</proposal>
-<original>
-{:/nomarkdown}
 
-{::nomarkdown}
-<sl-alert variant="success" open>
-  <sl-icon slot="icon" name="check-circle"></sl-icon>
-  <strong>6-axis support</strong> Once the step generation improvements and s-curve support have been implemented, it will be much easier to add proper 6-axis ( XYZABC ) support into Smoothie.<br><br>This is currently done by using the Extruder module, which has some limitations, doing it properly would be a good improvement.<br><br>This issue keeps track of that feature : <a href="https://github.com/Smoothieware/Smoothieware/issues/120">6-axis support</a> This is now in current edge.
-</sl-alert>
-{:/nomarkdown}
-
-{::nomarkdown}
-</original>
-</review>
 
 {::nomarkdown}
 <sl-alert variant="success" open>
@@ -302,8 +241,7 @@ Smoothieware v2 maintains support for multiple kinematics (Cartesian, Linear Del
 
 ## Smoothieware v2 firmware
 
-<review>
-<proposal>
+
 {:/nomarkdown}
 
 [Smoothieware v2](https://github.com/Smoothieware/Smoothie2) is the firmware for the [Smoothieboard v2 hardware](/blog_13).
@@ -330,23 +268,7 @@ Core features are now fully implemented including serial communication, configur
 We need your help moving the project forward.
 
 {::nomarkdown}
-</proposal>
-<original>
-{:/nomarkdown}
 
-## Smoothie2 firmware
-
-[Smoothie2](https://github.com/Smoothieware/Smoothie2) is a port of the Smoothieware firmware to the [Smoothieboard v2 hardware](/blog_13).
-
-[Second update on v2 hardware](/blog_15)
-
-Basic functions such as serial communication, configuration, planning and step generation, have been ported, but many others like temperature control, USB, Ethernet, SD card support, etc, are still missing.
-
-We need your help moving the project forward.
-
-{::nomarkdown}
-</original>
-</review>
 
 Many have already offered to help, and at this point, several are at the point where they have hardware to work on, and are starting to get familiar with the codebase.
 
@@ -360,8 +282,7 @@ Because these are difficult to implement, it's hard finding people to work on th
 
 If you think you are capable of doing any of those, please please please [contact us](mailto:wolf.arthur@gmail.com), we really need help on these.
 
-<review>
-<proposal>
+
 {:/nomarkdown}
 
 {::nomarkdown}
@@ -392,25 +313,7 @@ Besides simply implementing basic Serial/USB (CDC) functionality, we'd like the 
 </sl-alert>
 {:/nomarkdown}
 
-{::nomarkdown}
-</proposal>
-<original>
-{:/nomarkdown}
 
-{::nomarkdown}
-<sl-alert variant="primary" open>
-  <sl-icon slot="icon" name="lightbulb"></sl-icon>
-  <strong>USB</strong> Like the v1 board, the v2 board will have a USB port.<br><br>On the v1 board, that port exposes a composite device ( Serial + Mass storage ) to the host computer.<br><br>However, Mass Storage just plain sucks.<br><br>The computer can mess things up anytime without the board being able to prevent it, the board can't safely write to it's own SD card, corruption of the card is a common thing, etc.<br><br>Besides simply implementing basic Serial/USB ( CDC ) functionality, which would already be awesome, we'd like the firmware to support MTP: <a href="https://en.wikipedia.org/wiki/Media_Transfer_Protocol">Media Transfer Protocol</a> That'd be a much safer way for the computer to access the card, it'd allow the board to have control, write to the SD card itself ( which would allow for implementation of many new features ), present virtual files, etc.<br><br>But implementing MTP is a really huge task.<br><br>If you think you could do this, please please contact us.<br><br>There are even some companies likely ready to pay some money for this to encourage implementation.
-</sl-alert>
-{:/nomarkdown}
-
-{::nomarkdown}
-</original>
-</review>
-
-<review>
-<proposal>
-{:/nomarkdown}
 
 {::nomarkdown}
 <sl-alert variant="success" open>
@@ -440,25 +343,7 @@ If you have know-how related to this, please help! :)
 </sl-alert>
 {:/nomarkdown}
 
-{::nomarkdown}
-</proposal>
-<original>
-{:/nomarkdown}
 
-{::nomarkdown}
-<sl-alert variant="primary" open>
-  <sl-icon slot="icon" name="lightbulb"></sl-icon>
-  <strong>Ethernet</strong> The v1 board has an Ethernet port, the v2 board too.<br><br>We need Ethernet, TCP/IP, a web and telnet server, to be implemented in the v2 firmware, the same way it was on the v1.<br><br>I ( Arthur ) have no idea how much work it'd be.<br><br>There is a few implementations of web servers for LPC4337 available on the net, so it may simply be a matter of mashing that together with the v1 implementation.<br><br>The v1 Ethernet implementation has some limitations and problems, it's possible with the better v2 hardware, a better implementation could be done.<br><br>If you have know-how related to this, please help! :).
-</sl-alert>
-{:/nomarkdown}
-
-{::nomarkdown}
-</original>
-</review>
-
-<review>
-<proposal>
-{:/nomarkdown}
 
 {::nomarkdown}
 <sl-alert variant="success" open>
@@ -487,20 +372,7 @@ SD card support in v2 is fully implemented with SDIO interface, providing 10-25 
 {:/nomarkdown}
 
 {::nomarkdown}
-</proposal>
-<original>
-{:/nomarkdown}
 
-{::nomarkdown}
-<sl-alert variant="success" open>
-  <sl-icon slot="icon" name="check-circle"></sl-icon>
-  <strong>SD card</strong> Adam Green is already working on this: <a href="https://github.com/adamgreen/SDCard">SDCard</a> Thank you so much <a href="https://github.com/adamgreen">Adam Green</a>! If you want to help with this, I believe testing can help greatly.
-</sl-alert>
-{:/nomarkdown}
-
-{::nomarkdown}
-</original>
-</review>
 
 ## Smoothie2 hardware
 

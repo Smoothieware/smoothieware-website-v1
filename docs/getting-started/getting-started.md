@@ -149,11 +149,6 @@ You need software on your computer to talk to the board. Pick one:
 
 See [Software](software) for the full list.
 
-{::nomarkdown}
-<review id="getting-started:download-config">
-<proposal>
-{:/nomarkdown}
-
 **3. Download configuration file**
 
 You'll need a config file for your machine type:
@@ -180,23 +175,6 @@ You'll need a config file for your machine type:
 {:/nomarkdown}
 
 Save this somewhere, you'll need it later.
-
-{::nomarkdown}
-</proposal>
-<original>
-{:/nomarkdown}
-
-You'll need a config file for your machine type:
-
-- [3D printer config](https://github.com/Smoothieware/Smoothieware/raw/edge/ConfigSamples/Smoothieboard/config) - Most common
-- [Delta printer config](https://github.com/Smoothieware/Smoothieware/blob/edge/ConfigSamples/Smoothieboard.delta/config) - If you have a delta
-
-Save this somewhere, you'll need it later.
-
-{::nomarkdown}
-</original>
-</review>
-{:/nomarkdown}
 
 **4. Read your machine guide**
 
@@ -265,11 +243,6 @@ Your machine guide has the detailed wiring instructions. General order:
 
 Configuration is just editing a text file. No compiling, no fancy tools.
 
-{::nomarkdown}
-<review id="getting-started:config-setup">
-<proposal>
-{:/nomarkdown}
-
 **Copy config to SD card**
 
 {::nomarkdown}
@@ -334,37 +307,6 @@ V2 uses INI-style configuration (like Windows config files) instead of V1's key-
 {::nomarkdown}
 </v2>
 </versioned>
-{:/nomarkdown}
-
-{::nomarkdown}
-</proposal>
-<original>
-{:/nomarkdown}
-
-**Copy config to SD card**
-
-1. Plug in your USB cable (board should be powered)
-2. The SD card appears as a drive
-3. Copy your downloaded config file to it
-4. Name it `config` or `config.txt`
-5. Safely eject the drive
-6. Reset the board (press reset button or power cycle)
-
-**Edit for your machine**
-
-You'll need to change values for your specific setup. Open the config file in any text editor and look for:
-
-- Steps per mm for your motors
-- Max speeds and accelerations
-- Endstop pin assignments
-- Temperature sensor types
-- Tool configurations
-
-See [Configuring Smoothie](configuring-smoothie) for complete documentation.
-
-{::nomarkdown}
-</original>
-</review>
 {:/nomarkdown}
 
 {::nomarkdown}

@@ -14,10 +14,7 @@ The Configurator module allows you to manipulate configuration using console com
 
 This provides a powerful interface for adjusting Smoothie's settings without editing the config file directly.
 
-{::nomarkdown}
-<review id="configurator:version-differences">
-<proposal>
-{:/nomarkdown}
+
 
 The Configurator module allows you to manipulate configuration using console commands.
 
@@ -61,20 +58,6 @@ Settings are organized hierarchically in INI sections. For example: `[alpha]` se
 </versioned>
 {:/nomarkdown}
 
-{::nomarkdown}
-</proposal>
-<original>
-{:/nomarkdown}
 
-The Configurator module allows you to manipulate configuration using console commands.
-
-This provides a powerful interface for adjusting Smoothie's settings without editing the config file directly.
-
-For detailed information, see the [Console Commands](console-commands) documentation.
-
-{::nomarkdown}
-</original>
-</review>
-{:/nomarkdown}
 
 For detailed information, see the [Console Commands](console-commands) documentation.

@@ -40,10 +40,7 @@ Smoothieware supports multiple arm/motion solutions to accommodate different mac
 
 ## Configuration
 
-{::nomarkdown}
-<review id="arm-solutions:configuration-syntax">
-<proposal>
-{:/nomarkdown}
+
 
 To configure your machine for the right type, see its specific page linked in the table above.
 
@@ -90,29 +87,4 @@ arm_solution = linear_delta
 
 If no arm solution is specified, `cartesian` is used by default.
 
-{::nomarkdown}
-</proposal>
-<original>
-{:/nomarkdown}
 
-To configure your machine for the right type, see its specific page linked in the table above.
-
-Each arm solution has its own configuration parameters and requirements. The <setting v1="arm_solution" v2="motion control.arm_solution"></setting> setting determines the kinematics system used by your machine.
-
-The basic configuration syntax is:
-
-```
-arm_solution [solution_name]
-```
-
-For example:
-```
-arm_solution cartesian
-```
-
-If no arm solution is specified, `cartesian` is used by default.
-
-{::nomarkdown}
-</original>
-</review>
-{:/nomarkdown}

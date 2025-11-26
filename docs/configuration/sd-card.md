@@ -33,10 +33,7 @@ A method of disabling auto mount on macOS is mentioned [here](https://wolfpaulus
 
 ## Files That May Be Found on the SD Card
 
-{::nomarkdown}
-<review id="sd-card:files-table">
-<proposal>
-{:/nomarkdown}
+
 
 {::nomarkdown}
 <versioned orientation="vertical">
@@ -67,21 +64,7 @@ A method of disabling auto mount on macOS is mentioned [here](https://wolfpaulus
 {::nomarkdown}
 </v2>
 </versioned>
-</proposal>
-<original>
-{:/nomarkdown}
 
-| File | Description |
-| ---- | ----------- |
-| **FIRMWARE.CUR** | Copy of firmware file currently flashed onto the Smoothieboard |
-| **config** or **config.txt** | One or the other, not both. Defines Smoothieware configuration options needed for the attached device |
-| **config-override** | Created when the G-code <mcode>M500</mcode> is played. See [supported G-codes](supported-g-codes) |
-| **on_boot.gcode** | Played on startup of Smoothieboard. Can be used to initialize the Smoothie driven device |
-| **firmware.bin** | Firmware update file. If present, is flashed onto the Smoothieboard and renamed to FIRMWARE.CUR after the update completes |
-
-{::nomarkdown}
-</original>
-</review>
 {:/nomarkdown}
 
 {::nomarkdown}
@@ -124,10 +107,7 @@ The Smoothieboard only needs the "config" file on the SD card to work properly.
 
 ---
 
-{::nomarkdown}
-<review id="sd-card:requirements">
-<proposal>
-{:/nomarkdown}
+
 
 {::nomarkdown}
 <versioned orientation="vertical">
@@ -176,28 +156,7 @@ The Smoothieboard only needs the "config" file on the SD card to work properly.
 {::nomarkdown}
 </v2>
 </versioned>
-</proposal>
-<original>
-{:/nomarkdown}
 
-## SD Card Requirements
-
-<sl-alert variant="primary" open>
-  <sl-icon slot="icon" name="lightbulb"></sl-icon>
-  <strong>SD Card Specifications (V1):</strong>
-  <ul>
-    <li>Interface: SPI (Serial Peripheral Interface) - ~400-500 KB/s</li>
-    <li>Format: FAT32/VFAT</li>
-    <li>Recommended size: 2GB to 32GB</li>
-    <li>Class 4 or higher recommended for good performance</li>
-    <li>Avoid cards larger than 32GB as they may have compatibility issues</li>
-    <li>Note: SPI interface is slower, which can cause delays when loading large G-code files</li>
-  </ul>
-</sl-alert>
-
-{::nomarkdown}
-</original>
-</review>
 {:/nomarkdown}
 
 ---

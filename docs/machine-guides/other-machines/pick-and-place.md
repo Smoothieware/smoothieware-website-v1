@@ -100,11 +100,6 @@ The CNC build includes:
 
 - A special CNC version of the [Panel](/panel) screens
 
-{::nomarkdown}
-<review id="pick-and-place:grbl-mode-config">
-<proposal>
-{:/nomarkdown}
-
 **GRBL Mode Configuration:**
 
 {::nomarkdown}
@@ -133,18 +128,6 @@ This setting is enabled by default in the CNC firmware build, which means Smooth
 {::nomarkdown}
 </v2>
 </versioned>
-{:/nomarkdown}
-
-{::nomarkdown}
-</proposal>
-<original>
-{:/nomarkdown}
-
-- {::nomarkdown}<setting v1="grbl_mode" v2="general.grbl_mode"></setting>{:/nomarkdown} enabled by default (which means Smoothie interprets G-code as CNC G-code rather than 3D-printing G-code)
-
-{::nomarkdown}
-</original>
-</review>
 {:/nomarkdown}
 
 - Better support for precise positioning and fast movements typical of Pick and Place operations

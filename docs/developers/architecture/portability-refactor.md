@@ -7,10 +7,7 @@ permalink: /portability-refactor
 
 The purpose of this document is to outline the current problems with Smoothie's portability, propose a solution and guide the implementation.
 
-{::nomarkdown}
-<review id="portability-refactor:introduction">
-<proposal>
-{:/nomarkdown}
+
 
 {::nomarkdown}
 <versioned orientation="horizontal">
@@ -31,17 +28,7 @@ This document describes the refactoring effort planned for V1 to improve hardwar
 </versioned>
 {:/nomarkdown}
 
-{::nomarkdown}
-</proposal>
-<original>
-{:/nomarkdown}
 
-This document describes the refactoring effort planned for V1 to improve hardware portability through a Hardware Abstraction Layer (HAL).
-
-{::nomarkdown}
-</original>
-</review>
-{:/nomarkdown}
 
 ## The problem
 Though Smoothie is based on mBed, it is not easily ported to other boards / processors.

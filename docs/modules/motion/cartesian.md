@@ -33,10 +33,7 @@ Cartesian is the default and most straightforward arm solution for several reaso
 
 ## Configuration
 
-{::nomarkdown}
-<review id="cartesian:basic-configuration">
-<proposal>
-{:/nomarkdown}
+
 
 To configure your machine to use the Cartesian arm solution, add this to your configuration file:
 
@@ -70,30 +67,11 @@ arm_solution = cartesian
 
 This is the default setting in Smoothieware, so if you don't specify an arm solution, Cartesian will be used automatically.
 
-{::nomarkdown}
-</proposal>
-<original>
-{:/nomarkdown}
 
-To configure your machine to use the Cartesian arm solution, add this to your configuration file:
-
-```
-arm_solution cartesian
-```
-
-This is the default setting in Smoothieware, so if you don't specify an arm solution, Cartesian will be used automatically.
-
-{::nomarkdown}
-</original>
-</review>
-{:/nomarkdown}
 
 ### Complete Configuration Example
 
-{::nomarkdown}
-<review id="cartesian:complete-example">
-<proposal>
-{:/nomarkdown}
+
 
 Here's a typical Cartesian configuration:
 
@@ -168,43 +146,7 @@ max_rate = 300
 </versioned>
 {:/nomarkdown}
 
-{::nomarkdown}
-</proposal>
-<original>
-{:/nomarkdown}
 
-Here's a typical Cartesian configuration:
-
-```
-# Cartesian arm solution (can be omitted as it's the default)
-arm_solution                                 cartesian
-
-# Alpha (X axis)
-alpha_step_pin                               2.0
-alpha_dir_pin                                0.5
-alpha_en_pin                                 0.4
-alpha_steps_per_mm                           80
-alpha_max_rate                               12000
-
-# Beta (Y axis)
-beta_step_pin                                2.1
-beta_dir_pin                                 0.11
-beta_en_pin                                  0.10
-beta_steps_per_mm                            80
-beta_max_rate                                12000
-
-# Gamma (Z axis)
-gamma_step_pin                               2.2
-gamma_dir_pin                                0.20
-gamma_en_pin                                 0.19
-gamma_steps_per_mm                           400
-gamma_max_rate                               300
-```
-
-{::nomarkdown}
-</original>
-</review>
-{:/nomarkdown}
 
 ## Common Cartesian Machines
 

@@ -39,10 +39,7 @@ Here are all the configuration options available for the Panel module :
 
 ### Custom menu entries
 
-{::nomarkdown}
-<review id="panel:custom-menu-entries">
-<proposal>
-{:/nomarkdown}
+
 
 Menu entries can be added from the config file for simple commands, for instance the following adds a Power on and Power off menu entry.
 Note that _ will be converted to a space when displayed in the Menu. Commands can be seperated with a |. If you want to add a menu entry that probes your z-axis you will have to use a command like {::nomarkdown}<gcode>G30</gcode>{:/nomarkdown} Z0 followed by a {::nomarkdown}<gcode>G0</gcode>{:/nomarkdown} Z10. For this you need a custom menu entry "custom_menu.zprobe.command G30Z0|G0Z10". This moves the z-axis down untill it hits the probe, sets Z to 0 and moves 10 back up.
@@ -114,40 +111,7 @@ command = M24
 </versioned>
 {:/nomarkdown}
 
-{::nomarkdown}
-</proposal>
-<original>
-{:/nomarkdown}
 
-Menu entries can be added from the config file for simple commands, for instance the following adds a Power on and Power off menu entry.
-Note that _ will be converted to a space when displayed in the Menu. Commands can be seperated with a |. If you want to add a menu entry that probes your z-axis you will have to use a command like {::nomarkdown}<gcode>G30</gcode>{:/nomarkdown} Z0 followed by a {::nomarkdown}<gcode>G0</gcode>{:/nomarkdown} Z10. For this you need a custom menu entry "custom_menu.zprobe.command G30Z0|G0Z10". This moves the z-axis down untill it hits the probe, sets Z to 0 and moves 10 back up.
-
-```markdown
-custom_menu.power_on.enable              true              #
-custom_menu.power_on.name                Power_on          #
-custom_menu.power_on.command             M80               #
-
-custom_menu.power_off.enable             true              #
-custom_menu.power_off.name               Power_off         #
-custom_menu.power_off.command            M81               #
-```
-
-Another example for filament change :
-
-```markdown
-custom_menu.filament_change_c.enable               true                                                   #
-custom_menu.filament_change_c.name                 Change Filament                                        #
-custom_menu.filament_change_c.command              G91|G1_Z0.6_F12000|G90|G1_X0_Y0|G91|G1_Z-0.6|G90|M25   #
-
-custom_menu.filament_change_r.enable               true              #
-custom_menu.filament_change_r.name                 Resume            #
-custom_menu.filament_change_r.command              M24               #
-```
-
-{::nomarkdown}
-</original>
-</review>
-{:/nomarkdown}
 
 ### External SD card setup
 
@@ -237,10 +201,7 @@ It is one of the most popular options for panel controllers.
 On the back of the GLCD EXP1 is to left and EXP2 is to right, pin 1 is bottom left, pin 2 is top left etc.
 5v is EXP1 pin 10, Gnd is EXP1 pin 9
 
-{::nomarkdown}
-<review id="panel:glcd-manual-wiring">
-<proposal>
-{:/nomarkdown}
+
 
 {::nomarkdown}
 <versioned orientation="vertical">
@@ -300,33 +261,7 @@ Note: V2 uses STM32 pin naming (e.g., PG7 instead of 0.16).
 </versioned>
 {:/nomarkdown}
 
-{::nomarkdown}
-</proposal>
-<original>
-{:/nomarkdown}
 
-```markdown
-# config settings
-panel.enable                          true              # set to true to enable the panel code
-panel.lcd                             reprap_discount_glcd     # set type of panel
-panel.spi_channel                     0                 # spi channel to use  ; GLCD EXP1 Pins 3,5 (MOSI, SCLK)
-panel.spi_cs_pin                      0.16              # spi chip select     ; GLCD EXP1 Pin 4
-panel.encoder_a_pin                   3.25!^            # encoder pin         ; GLCD EXP2 Pin 3
-panel.encoder_b_pin                   3.26!^            # encoder pin         ; GLCD EXP2 Pin 5
-panel.click_button_pin                1.30!^            # click button        ; GLCD EXP1 Pin 2
-panel.buzz_pin                        1.31              # pin for buzzer      ; GLCD EXP1 Pin 1
-panel.back_button_pin                 2.11!^            # 2.11 menu back      ; GLCD EXP2 Pin 8
-# setup for external sd card on the GLCD which uses the onboard sdcard SPI port
-panel.external_sd                     true              # set to true if there is an extrernal sdcard on the panel
-panel.external_sd.spi_channel         1                 # set spi channel the sdcard is on
-panel.external_sd.spi_cs_pin          0.28              # set spi chip select for the sdcard (or any spare pin)
-panel.external_sd.sdcd_pin            0.27!^            # sd detect signal (set to nc if no sdcard detect) (or any spare pin)
-```
-
-{::nomarkdown}
-</original>
-</review>
-{:/nomarkdown}
 
 You can find a list of pins on the Smoothieboard to connect to the panel [here](http://chibidibidiwah.wdfiles.com/local--files/panel/smoothieboard2sd.jpg) and [here](http://chibidibidiwah.wdfiles.com/local--files/panel/GLCDPINOUTS2SD.jpg).
 

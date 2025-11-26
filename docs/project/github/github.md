@@ -7,10 +7,7 @@ permalink: /github
 
 # How to submit a pull request to the Smoothieware Github project
 
-{::nomarkdown}
-<review id="github:branch-strategy">
-<proposal>
-{:/nomarkdown}
+
 
 {::nomarkdown}
 <versioned orientation="vertical">
@@ -41,29 +38,11 @@ permalink: /github
 </versioned>
 {:/nomarkdown}
 
-{::nomarkdown}
-</proposal>
-<original>
-{:/nomarkdown}
 
-{::nomarkdown}
-<sl-alert variant="neutral" open>
-  <sl-icon slot="icon" name="info-circle"></sl-icon>
-  We use edge as our stable branch (master is no longer maintained). We do not have an unstable branch, so this is why we only allow very well tested PRs into edge.
-</sl-alert>
-{:/nomarkdown}
-
-{::nomarkdown}
-</original>
-</review>
-{:/nomarkdown}
 
 ## Fork the original repository
 
-{::nomarkdown}
-<review id="github:fork-repository">
-<proposal>
-{:/nomarkdown}
+
 
 {::nomarkdown}
 <versioned orientation="vertical">
@@ -84,17 +63,7 @@ Create a Fork in your GitHub of [Smoothieware V2 repository](https://github.com/
 </versioned>
 {:/nomarkdown}
 
-{::nomarkdown}
-</proposal>
-<original>
-{:/nomarkdown}
 
-Create a Fork in your GitHub of [Smoothieware repository](https://github.com/Smoothieware/Smoothieware.git) by clicking the Fork button.
-
-{::nomarkdown}
-</original>
-</review>
-{:/nomarkdown}
 
 <a href="/images/github-1.png">
   <img src="/images/github-1.png" alt="Fork button"/>
@@ -154,10 +123,7 @@ In GitHub, there should be a button that says pull request for that branch, clic
   <img src="/images/github-4.png" alt="Pull request button"/>
 </a>
 
-{::nomarkdown}
-<review id="github:destination-branch">
-<proposal>
-{:/nomarkdown}
+
 
 {::nomarkdown}
 <versioned orientation="vertical">
@@ -178,17 +144,7 @@ Select master as the destination branch, add comments.
 </versioned>
 {:/nomarkdown}
 
-{::nomarkdown}
-</proposal>
-<original>
-{:/nomarkdown}
 
-Select edge as the destination branch, add comments.
-
-{::nomarkdown}
-</original>
-</review>
-{:/nomarkdown}
 
 <a href="/images/github-5.png">
   <img src="/images/github-5.png" alt="Selecting branch"/>

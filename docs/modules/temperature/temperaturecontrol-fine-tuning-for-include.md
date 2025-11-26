@@ -14,10 +14,7 @@ This page provides tips for fine-tuning temperature control settings in Smoothie
 </sl-alert>
 {:/nomarkdown}
 
-{::nomarkdown}
-<review id="temperaturecontrol-fine-tuning:12v-on-24v-config">
-<proposal>
-{:/nomarkdown}
+
 
 You need to set {::nomarkdown}<setting v1="temperature_control.{name}.max_pwm" v2="temperature control.max_pwm"></setting>{:/nomarkdown} to {::nomarkdown}<raw>64</raw>{:/nomarkdown}:
 
@@ -49,30 +46,13 @@ hotend.max_pwm = 64
 </versioned>
 {:/nomarkdown}
 
-{::nomarkdown}
-</proposal>
-<original>
-{:/nomarkdown}
 
-You need to set {::nomarkdown}<setting v1="temperature_control.{name}.max_pwm" v2="temperature control.max_pwm"></setting>{:/nomarkdown} to {::nomarkdown}<raw>64</raw>{:/nomarkdown}:
-
-```plaintext
-temperature_control.hotend.max_pwm 64
-```
-
-{::nomarkdown}
-</original>
-</review>
-{:/nomarkdown}
 
 ### Fixing Temperature Overshoot (10°C or More)
 
 If you are getting 10°C or more initial overshoot of temperature, you can set {::nomarkdown}<setting v1="temperature_control.{name}.i_max" v2="temperature control.i_max"></setting>{:/nomarkdown} to a lower value (default is {::nomarkdown}<setting v1="temperature_control.{name}.max_pwm" v2="temperature control.max_pwm"></setting>{:/nomarkdown}).
 
-{::nomarkdown}
-<review id="temperaturecontrol-fine-tuning:overshoot-config">
-<proposal>
-{:/nomarkdown}
+
 
 {::nomarkdown}<raw>128</raw>{:/nomarkdown} seems to be a good value, but it can be tuned with {::nomarkdown}<mcode>M301</mcode>{:/nomarkdown} S0 Xnnn where {::nomarkdown}<raw>nnn</raw>{:/nomarkdown} is a number less than or equal to {::nomarkdown}<setting v1="temperature_control.{name}.max_pwm" v2="temperature control.max_pwm"></setting>{:/nomarkdown}:
 
@@ -104,21 +84,7 @@ hotend.i_max = 128
 </versioned>
 {:/nomarkdown}
 
-{::nomarkdown}
-</proposal>
-<original>
-{:/nomarkdown}
 
-{::nomarkdown}<raw>128</raw>{:/nomarkdown} seems to be a good value, but it can be tuned with {::nomarkdown}<mcode>M301</mcode>{:/nomarkdown} S0 Xnnn where {::nomarkdown}<raw>nnn</raw>{:/nomarkdown} is a number less than or equal to {::nomarkdown}<setting v1="temperature_control.{name}.max_pwm" v2="temperature control.max_pwm"></setting>{:/nomarkdown}:
-
-```plaintext
-temperature_control.hotend.i_max 128
-```
-
-{::nomarkdown}
-</original>
-</review>
-{:/nomarkdown}
 
 ### Setting Maximum Safe Temperature
 
@@ -128,10 +94,7 @@ This will ignore any setting of temperatures that are higher than this and inste
 
 It will also trigger a shutdown if this temperature is exceeded.
 
-{::nomarkdown}
-<review id="temperaturecontrol-fine-tuning:max-temp-config">
-<proposal>
-{:/nomarkdown}
+
 
 {::nomarkdown}
 <versioned orientation="vertical">
@@ -161,19 +124,7 @@ hotend.max_temp = 230
 </versioned>
 {:/nomarkdown}
 
-{::nomarkdown}
-</proposal>
-<original>
-{:/nomarkdown}
 
-```plaintext
-temperature_control.hotend.max_temp 230
-```
-
-{::nomarkdown}
-</original>
-</review>
-{:/nomarkdown}
 
 ## Related Documentation
 

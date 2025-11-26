@@ -79,9 +79,7 @@ Each application guide includes:
 - **Email Support**: [Contact us](mailto:wolf.arthur@gmail.com) for technical questions
 
 ### Where to Buy
-- **USA**: [Robosprout](https://www.robosprout.com)
-- **Europe**: Robotseed
-- **International shipping available**
+- **[Robosprout](https://www.robosprout.com)** - Ships internationally
 - **Volume pricing for businesses**
 
 ---

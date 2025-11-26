@@ -66,10 +66,7 @@ For more information about leveling and probing, see:
 
 ## Example Configuration
 
-{::nomarkdown}
-<review id="rectangular-grid:example-config">
-<proposal>
-{:/nomarkdown}
+
 
 {::nomarkdown}
 <versioned orientation="vertical">
@@ -129,36 +126,4 @@ human_readable = true
 </versioned>
 {:/nomarkdown}
 
-{::nomarkdown}
-</proposal>
-<original>
-{:/nomarkdown}
 
-```plaintext
-# Enable rectangular grid leveling
-leveling-strategy.rectangular-grid.enable         true
-
-# Bed dimensions (in mm from home position)
-leveling-strategy.rectangular-grid.x_size         200
-leveling-strategy.rectangular-grid.y_size         200
-
-# Grid size (7x7 = 49 probe points)
-leveling-strategy.rectangular-grid.size           7
-
-# Probe offsets from nozzle (X, Y, Z in mm)
-leveling-strategy.rectangular-grid.probe_offsets  0,0,0
-
-# Initial probe height (mm above bed)
-leveling-strategy.rectangular-grid.initial_height 10
-
-# Save grid to load on boot
-leveling-strategy.rectangular-grid.save           true
-
-# Human readable probe table output
-leveling-strategy.rectangular-grid.human_readable true
-```
-
-{::nomarkdown}
-</original>
-</review>
-{:/nomarkdown}

@@ -13,8 +13,7 @@ title: Latest Smoothie Commits
 {:/nomarkdown}
 
 {::nomarkdown}
-<review id="latest-firmware:intro-alert">
-<proposal>
+
 <versioned orientation="horizontal">
 <v1>
 <sl-alert variant="neutral" open>
@@ -29,19 +28,11 @@ title: Latest Smoothie Commits
 </sl-alert>
 </v2>
 </versioned>
-</proposal>
-<original>
-<sl-alert variant="neutral" open>
-  <sl-icon slot="icon" name="info-circle"></sl-icon>
-  The following is a list of the latest commits to the Smoothieware project on GitHub for the <code>edge</code> and <code>master</code> branches.
-</sl-alert>
-</original>
-</review>
+
 {:/nomarkdown}
 
 {::nomarkdown}
-<review id="latest-firmware:version-commits">
-<proposal>
+
 <h2>Recent Commits</h2>
 
 <versioned orientation="vertical">
@@ -79,31 +70,7 @@ title: Latest Smoothie Commits
 </div>
 </v2>
 </versioned>
-</proposal>
-<original>
-<h2>Recent Commits</h2>
 
-<div style="margin-bottom: 2rem;">
-  <h3 style="color: #ffcc00; margin-bottom: 1rem;">
-    <sl-icon name="git"></sl-icon> Edge Branch
-    <span style="font-size: 0.8em; color: #888; font-weight: normal;"> - Development branch with latest features</span>
-  </h3>
-  <div id="edge-commits" style="margin-bottom: 2rem;">
-    <sl-spinner style="font-size: 2rem; --track-width: 4px;"></sl-spinner>
-    <span style="margin-left: 1rem; color: #888;">Loading commits...</span>
-  </div>
-
-  <h3 style="color: #ffcc00; margin-bottom: 1rem;">
-    <sl-icon name="git"></sl-icon> Master Branch
-    <span style="font-size: 0.8em; color: #888; font-weight: normal;"> - Stable release branch</span>
-  </h3>
-  <div id="master-commits" style="margin-bottom: 2rem;">
-    <sl-spinner style="font-size: 2rem; --track-width: 4px;"></sl-spinner>
-    <span style="margin-left: 1rem; color: #888;">Loading commits...</span>
-  </div>
-</div>
-</original>
-</review>
 
 <script>
 // Function to format date as relative time
