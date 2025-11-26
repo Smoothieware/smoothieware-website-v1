@@ -34,114 +34,6 @@ title: Smoothieware Home
 
 {::nomarkdown}
 <script src="https://cdn.jsdelivr.net/npm/fireworks-js@2.10.8/dist/index.umd.min.js"></script>
-<script>
-(function() {
-  const container = document.getElementById('v2-announcement-container');
-  const alert = document.getElementById('v2-announcement');
-  const canvas = document.getElementById('fireworks-canvas');
-
-  let fireworks = null;
-  let isHovering = false;
-  let launchInterval = null;
-
-  // Pick a hue range with weights: ~45% blue, ~45% orange, ~10% yellow-orange
-  function pickHueRange() {
-    const r = Math.random();
-    if (r < 0.45) {
-      return { min: 200, max: 240 };  // Blues: ~200-240°
-    } else if (r < 0.90) {
-      return { min: 25, max: 40 };    // Oranges: ~25-40°
-    } else {
-      return { min: 45, max: 55 };    // Yellow-oranges: ~45-55° (near 60° is yellow)
-    }
-  }
-
-  // Launch fireworks in a chosen hue
-  function launchWeighted(count) {
-    if (count < 1) return;
-    const hueRange = pickHueRange();
-    fireworks.updateOptions({ hue: hueRange });
-    fireworks.launch(count);
-  }
-
-  // Initialize fireworks
-  function initFireworks() {
-    if (!fireworks) {
-      fireworks = new Fireworks.default(canvas, {
-        autoresize: true,
-        opacity: 0.8,
-        acceleration: 1.05,
-        friction: 0.97,
-        gravity: 1.5,
-        particles: 80,
-        traceLength: 3,
-        traceSpeed: 10,
-        explosion: 5,
-        flickering: 50,
-        lineStyle: 'round',
-        hue: { min: 200, max: 240 },  // Start with blue
-        delay: {
-          min: 15,
-          max: 30
-        },
-        rocketsPoint: {
-          min: 50,
-          max: 50
-        },
-        lineWidth: {
-          explosion: {
-            min: 1,
-            max: 3
-          },
-          trace: {
-            min: 1,
-            max: 2
-          }
-        },
-        brightness: {
-          min: 50,
-          max: 80
-        },
-        decay: {
-          min: 0.015,
-          max: 0.03
-        },
-        mouse: {
-          click: false,
-          move: false,
-          max: 1
-        }
-      });
-    }
-  }
-
-  // Start fireworks on hover
-  alert.addEventListener('mouseenter', function() {
-    isHovering = true;
-    initFireworks();
-    fireworks.start();
-
-    // Launch one firework every 200ms with weighted colors
-    launchInterval = setInterval(function() {
-      if (isHovering) {
-        launchWeighted(1);
-      }
-    }, 200);
-  });
-
-  // Stop fireworks when mouse leaves
-  alert.addEventListener('mouseleave', function() {
-    isHovering = false;
-    if (launchInterval) {
-      clearInterval(launchInterval);
-      launchInterval = null;
-    }
-    if (fireworks) {
-      fireworks.stop();
-    }
-  });
-})();
-</script>
 {:/nomarkdown}
 
 The Smoothie project is always looking for help. Whatever your skills are, there are things you can do to improve the project with the other volunteers. If you feel that you could give us some of your free time, please [contact us](mailto:wolf.arthur@gmail.com), **help and working together** is what has made this project so neat, advanced and precious over the years, and is **very welcome**.
@@ -179,11 +71,7 @@ The Smoothie project is always looking for help. Whatever your skills are, there
 
 ## Firmware documentation
 
-
-
 - **[Getting Started](getting-started)**: Complete guide to setting up your Smoothieboard from unboxing to first operation
-
-
 - [Basics](basics): Fundamental concepts, terminology, and technical background
 - [Glossary](glossary): Definitions of common terms used in CNC and 3D printing
 - [Communication](communication)
@@ -199,16 +87,12 @@ The Smoothie project is always looking for help. Whatever your skills are, there
 </a>
 {:/nomarkdown}
 
-
-
 - [Configuring Smoothie](configuring-smoothie): Configuration and use, by module
   - [List of all configuration options](configuration-options)
   - [Motion control](motion-control): All things related to gcode interpolation, motion and acceleration planning, and step generation
   - [Arm Solutions](arm-solutions): [Cartesian](cartesian), [Delta](delta), [Hbot](hbot), [Core-XY](Core-XY), [Rotary Delta](rotary-delta), [Morgan Scara](morgan-scara)
   - [6axis](6axis): Using A, B and C axes, for 4, 5 or 6 axis motion.
   - [Grbl mode](grbl-mode): Using Smoothie in CNC-specific mode instead of 3D printing mode
-
-
 
 {::nomarkdown}
 <a href="/images/glove.png">
@@ -266,14 +150,15 @@ The Smoothie project is always looking for help. Whatever your skills are, there
  
 Note, Smoothieboards come completely pre-flashed, you do not need to compile or flash the firmware, unless you want to upgrade to a newer version, or to contribute to the code.
  
- - [Getting Smoothie](getting-smoothie)
+ - **[Getting the Smoothie Firmware](getting-smoothie)**
  - [Flashing Smoothie](flashing-smoothie)
  - [Compiling Smoothie](compiling-smoothie)
  - [Setting up a SD-Card](sd-card)
  - [How to file an Issue on Github](https://github.com/smoothieware/smoothieware/blob/edge/issue_template)
  - [Flashing the Bootloader](flashing-the-bootloader)
+ - [Latest Firmware Commits](latest-firmware)
 
-More: [Windows Drivers](windows-drivers), [Linux Drivers](linux-drivers), [Mac Drivers](mac-drivers), [New Features](new-features), [Gallery](gallery), [Smoothieboard Beta Guide](smoothieboard-beta-guide)
+More: [Windows Drivers](windows-drivers), [Linux Drivers](linux-drivers), [Mac Drivers](mac-drivers), [New Features](new-features), [Gallery](gallery)
 
 {::nomarkdown}
 <a id="board-image-link" href="/images/smoothieboard-fritzing-blue.png">
@@ -289,6 +174,7 @@ More: [Windows Drivers](windows-drivers), [Linux Drivers](linux-drivers), [Mac D
 - [Running Smoothie on a Breadboard](smoothie-on-a-breadboard)
 - [Pin configuration](pin-configuration) details how to configure pins to be inverted, open-drain, pulled-down, pulled-up, etc.
 - [How to wire](how-to-wire) describes tutorials, tools and best practices for wiring and cabling work when installing your Smoothieboard in a new machine.
+- [Smoothieboard Beta Guide](smoothieboard-beta-guide): Information for beta testers
 
 {::nomarkdown}
 <versioned>
@@ -340,11 +226,7 @@ More: [Windows Drivers](windows-drivers), [Linux Drivers](linux-drivers), [Mac D
 </a>
 {:/nomarkdown}
 
-
-
 - {::nomarkdown}<versioned><v1>{:/nomarkdown}Powerful (120Mhz, 32bit) [micro-controller](http://www.embeddedartists.com/products/lpcxpresso/lpc1769_xpr.php).{::nomarkdown}</v1><v2>{:/nomarkdown}Powerful (480MHz dual-core, 32bit) [micro-controller](https://www.st.com/en/microcontrollers-microprocessors/stm32h745xi.html).{::nomarkdown}</v2></versioned>{:/nomarkdown}
-
-
 - Easy to use and [configure](configuring-smoothie).
 - Smooth, jerk-free motion and enabling higher speeds
 - Can be used for CNC milling, laser cutting, and 3D printing.
@@ -352,8 +234,6 @@ More: [Windows Drivers](windows-drivers), [Linux Drivers](linux-drivers), [Mac D
 - [SD-Card](sd-card) support for configuration and executing G-code.
 - Composite USB Mass Storage + Serial interface to host.
 - Free [email support (✿◠‿◠)](mailto:wolf.arthur@gmail.com)
-
-
 
 ## For hackers
 
@@ -369,8 +249,6 @@ More: [Windows Drivers](windows-drivers), [Linux Drivers](linux-drivers), [Mac D
 - The mBed [functions](http://mbed.org/handbook/Homepage) and [additional libraries](http://mbed.org/cookbook/Homepage) are available for easy and fast prototyping. But compiles off-line (using GCC), not dependent on the mBed online compiler
 - Strict process for acceptance of new code, to keep the project at high quality
 - Heavily commented code
-
-
 
 {% include project/donate-for-include.md %}
 
@@ -403,58 +281,8 @@ Current edge build status: [![Build Status](https://app.travis-ci.com/Smoothiewa
 
 [Watch a review](http://www.youtube.com/embed/vsu_vAKvRO0?hd=1)
 
-
-
 {::nomarkdown}
 <a href="/images/oshw-logo.png">
   <img src="/images/oshw-logo.png" alt="OSHW logo" style="width:100px; height:auto;"/>
 </a>
-{:/nomarkdown}
-
-{::nomarkdown}
-<script type="module">
-  import $ from 'jquery';
-
-  // Image paths for v1 and v2 boards
-  const V1_IMAGE = '/images/smoothieboard-fritzing-blue.png';
-  const V2_IMAGE = '/images/v2-prime-render.png';
-
-  // Get display version from localStorage (same logic as versioned-tag.js)
-  function get_display_version() {
-    try {
-      const raw_config = localStorage.getItem('configuration');
-      if (!raw_config) return 'nc';
-      const config = JSON.parse(raw_config);
-      return config.display_version || 'nc';
-    } catch (e) {
-      return 'nc';
-    }
-  }
-
-  // Update board image based on selected version
-  function update_board_image() {
-    const version = get_display_version();
-    const $img = $('#board-image');
-    const $link = $('#board-image-link');
-
-    if (!$img.length || !$link.length) return;
-
-    // If v1 is selected, show v1 image; otherwise show v2 image
-    if (version === 'v1') {
-      $img.attr('src', V1_IMAGE);
-      $link.attr('href', V1_IMAGE);
-      $img.attr('alt', 'Smoothieboard V1');
-    } else {
-      $img.attr('src', V2_IMAGE);
-      $link.attr('href', V2_IMAGE);
-      $img.attr('alt', 'Smoothieboard V2 Prime');
-    }
-  }
-
-  // Run on page load
-  $(document).ready(update_board_image);
-
-  // Listen for version changes (jQuery event)
-  $(document).on('version-changed', update_board_image);
-</script>
 {:/nomarkdown}

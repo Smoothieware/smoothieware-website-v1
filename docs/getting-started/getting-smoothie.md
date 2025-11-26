@@ -16,12 +16,41 @@ permalink: /getting-smoothie
   Make sure the very first time you plug your board in, you let it on for at least 20 seconds: it might try flashing its firmware the first time it boots, and interrupting it is bad (solution if this happens: flashing it again).
 </sl-alert>
 
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
+
 Recent stable builds of the firmware can be found here: [https://github.com/Smoothieware/Smoothieware/tree/edge/FirmwareBin](https://github.com/Smoothieware/Smoothieware/tree/edge/FirmwareBin)
+
+You can also view the [latest firmware commits](latest-firmware) to see recent changes to the codebase.
 
 Very latest are called `..._latest.bin`
 
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+Pre-compiled firmware binaries can be downloaded from [download.smoothieware.org](http://download.smoothieware.org):
+
+| Board   | Firmware URL | MD5 Checksum |
+|---------|--------------|--------------|
+| Prime   | [pr.bin](http://download.smoothieware.org/pr.bin) | [pr.md5](http://download.smoothieware.org/pr.md5) |
+| Nucleo  | [nu.bin](http://download.smoothieware.org/nu.bin) | [nu.md5](http://download.smoothieware.org/nu.md5) |
+| Devebox | [de.bin](http://download.smoothieware.org/de.bin) | [de.md5](http://download.smoothieware.org/de.md5) |
+
+You can also view the [latest firmware commits](latest-firmware) to see recent changes to the codebase.
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
+
 You can also find automated builds [here](#automated-builds).
 
+<versioned>
+<v1>
 <sl-alert variant="primary" open>
   <sl-icon slot="icon" name="lightbulb"></sl-icon>
   <strong>CNC-specific builds</strong><br><br>
@@ -30,6 +59,9 @@ You can also find automated builds [here](#automated-builds).
 
   This build has the spindle module compiled in, but not the extruder or temperature control modules. It also only has 3 axes compiled in.
 </sl-alert>
+</v1>
+<v2></v2>
+</versioned>
 
 Then you can flash the new binary by following the guidelines [here](flashing-smoothie-firmware).
 
@@ -37,9 +69,11 @@ If you want the very latest bleeding edge, you can also compile it yourself, com
 
 <sl-alert variant="warning" open>
   <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
-  <strong>IMPORTANT</strong><br><br>
+  <strong>Upgrade Notes (pre-2017 users only)</strong><br><br>
 
-  If you are upgrading from a previous version of master or edge check for upgrade notes in the GitHub root directory: <a href="https://github.com/Smoothieware/Smoothieware/blob/edge/upgrade-notes.md">https://github.com/Smoothieware/Smoothieware/blob/edge/upgrade-notes.md</a>
+  If you are upgrading from a very old version of master or edge (before 2017), check for upgrade notes in the GitHub root directory: <a href="https://github.com/Smoothieware/Smoothieware/blob/edge/upgrade-notes.md">https://github.com/Smoothieware/Smoothieware/blob/edge/upgrade-notes.md</a><br><br>
+
+  Most users who started using Smoothie after 2017 do not need to worry about this.
 </sl-alert>
 
 ## From source
