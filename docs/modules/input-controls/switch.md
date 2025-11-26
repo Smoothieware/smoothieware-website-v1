@@ -76,8 +76,6 @@ zplus10.output_on_command = G91G0Z10G90      # G90 and G91 switch to relative po
 
 ### All options
 
-| Option | Example value | Explanation |
-| ------ | ------------- | ----------- |
 {% include modules/input-controls/switch-options-for-include.md %}
 
 ### Startup State

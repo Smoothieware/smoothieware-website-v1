@@ -1,82 +1,38 @@
-
-# Player Options
-
-The Player module in Smoothie allows you to play G-code files from the SD card and control various aspects of playback behavior.
-
-These configuration options control what happens during boot, suspend, and resume operations.
-
-## Configuration Options
-
-| Option                | Value                           | Description |
-| --------------------- | ------------------------------- | ----------- |
-| <setting v1="on_boot_gcode"></setting>       | {::nomarkdown}<raw>`/sd/on_boot.gcode`</raw>{:/nomarkdown} | G-code file to play when the board boots. This file will automatically be played when the board is done booting up. Useful for example if you want to home your printer when it boots, or do similar tasks. For more information see [on_boot.gcode](on_boot.gcode) |
-| <setting v1="on_boot_gcode_enable"></setting>| {::nomarkdown}<raw>`true`</raw>{:/nomarkdown} | If set to true, play the <setting v1="on_boot_gcode"></setting> file when the board boots up |
-| <setting v1="after_suspend_gcode"></setting> | {::nomarkdown}<gcode>G91</gcode>{:/nomarkdown} {::nomarkdown}<gcode>G0</gcode>{:/nomarkdown} E-5 {::nomarkdown}<gcode>G0</gcode>{:/nomarkdown} Z10 {::nomarkdown}<gcode>G90</gcode>{:/nomarkdown} {::nomarkdown}<gcode>G0</gcode>{:/nomarkdown} X-50 Y-50 | G-code to execute automatically right after the suspend command is received, this is useful if you want to retract, or turn off heaters etc. The `_` character gets converted into space|
-| <setting v1="before_resume_gcode"></setting> | {::nomarkdown}<gcode>G91</gcode>{:/nomarkdown} {::nomarkdown}<gcode>G1</gcode>{:/nomarkdown} E1 {::nomarkdown}<gcode>G90</gcode>{:/nomarkdown}                 | G-code to execute automatically right after the resume command is received, but before resuming execution. However, NOTE this is generally not needed as the resume will restore the state it was in before the suspend.  The `_` character gets converted into space|
-| <setting v1="leave_heaters_on_suspend"></setting> | {::nomarkdown}<raw>`false`</raw>{:/nomarkdown} | If set to true, heaters are left ON when `suspend` is received. If set to false, heaters are turned OFF when `suspend` is received, and then turned back ON when `resume` is received. |
-
-## Usage Examples
-
-### Boot Sequence
-
-
-
-To automatically home your printer on boot, create a file at `/sd/on_boot.gcode` with:
-
-```gcode
-G28 ; Home all axes
-```
-
-Then enable it in your config:
-
 {::nomarkdown}
-<versioned orientation="vertical">
-<v1>
+<table class="config-options-table">
+    <thead>
+        <tr>
+            <th style="width: 25%;">V1 Setting</th>
+            <th style="width: 25%;">V2 Setting</th>
+            <th style="width: 50%;">Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><setting no-version v1="on_boot_gcode_enable"></setting></td>
+            <td><setting no-version v2="player.on_boot_gcode_enable"></setting></td>
+            <td class="description-cell">If set to true, automatically plays the on_boot_gcode file when the board boots up. This allows for automated startup routines like homing or initial positioning.</td>
+        </tr>
+        <tr>
+            <td><setting no-version v1="on_boot_gcode"></setting></td>
+            <td><setting no-version v2="player.on_boot_gcode"></setting></td>
+            <td class="description-cell">Path to the G-code file to play when the board boots. Default is /sd/on_boot.gcode. Useful for automating startup tasks like homing the printer or setting initial temperatures.</td>
+        </tr>
+        <tr>
+            <td><setting no-version v1="after_suspend_gcode"></setting></td>
+            <td><setting no-version v2="player.after_suspend_gcode"></setting></td>
+            <td class="description-cell">G-code to execute automatically right after a suspend command is received. Use underscores (_) instead of spaces in G-code commands. Commonly used to retract filament and move the toolhead away from the print. Example: G91_G0_E-5_G0_Z10_G90_G0_X-50_Y-50 (retracts 5mm, raises Z by 10mm, moves to safe position).</td>
+        </tr>
+        <tr>
+            <td><setting no-version v1="before_resume_gcode"></setting></td>
+            <td><setting no-version v2="player.before_resume_gcode"></setting></td>
+            <td class="description-cell">G-code to execute automatically after a resume command but before resuming the print. Use underscores (_) instead of spaces. Generally not needed since resume restores the previous state automatically. Example: G91_G1_E1_G90 (extrudes 1mm to prime the nozzle).</td>
+        </tr>
+        <tr>
+            <td><setting no-version v1="leave_heaters_on_suspend"></setting></td>
+            <td><setting no-version v2="player.leave_heaters_on_suspend"></setting></td>
+            <td class="description-cell">Controls heater behavior during suspend. When false (default), heaters turn OFF on suspend and back ON on resume. When true, heaters remain ON during suspend. Set to true for short pauses to avoid waiting for heaters to reheat.</td>
+        </tr>
+    </tbody>
+</table>
 {:/nomarkdown}
-
-**V1 Configuration:**
-
-```
-on_boot_gcode_enable true
-on_boot_gcode /sd/on_boot.gcode
-```
-
-{::nomarkdown}
-</v1>
-<v2>
-{:/nomarkdown}
-
-**V2 Configuration:**
-
-```ini
-[player]
-on_boot_gcode_enable = true
-on_boot_gcode = /sd/on_boot.gcode
-```
-
-{::nomarkdown}
-</v2>
-</versioned>
-{:/nomarkdown}
-
-
-
-### Suspend and Resume
-
-The suspend/resume feature is useful for:
-
-- Pausing prints to change filament
-- Temporarily stopping for inspection
-- Emergency stops with state preservation
-
-The `after_suspend_gcode` typically includes commands to:
-
-- Retract filament to prevent oozing
-- Raise the Z axis to prevent damage
-- Move the toolhead to a safe position
-
-## Related Documentation
-
-- [Player Module](player)
-- [on_boot.gcode](on_boot.gcode)
-- [Supported G-Codes](supported-g-codes)

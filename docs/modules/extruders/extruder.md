@@ -9,8 +9,6 @@ permalink: /extruder
 
 All of the options currently supported by the Extruder module:
 
-| Option | Example value | Explanation |
-| ------ | ------------- | ----------- |
 {% include modules/extruders/extruder-options-for-include.md %}
 
 <sl-alert variant="neutral" open>

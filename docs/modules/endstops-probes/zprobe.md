@@ -149,8 +149,6 @@ There are several {::nomarkdown}<mcode>M670</mcode>{:/nomarkdown} parameters tha
 
 ### Configuration options
 
-| Option | Example value | Explanation |
-| --- | --- | --- |
 {% include modules/endstops-probes/zprobe-options-for-include.md %}
 
 # Probing for linear delta machines
@@ -227,8 +225,6 @@ It will also adjust the delta radius ({::nomarkdown}<mcode>M665</mcode>{:/nomark
 
 ### Configuration options
 
-| Option | Example value | Explanation |
-| --- | --- | --- |
 {% include modules/leveling/delta-calibration-strategy-options-for-include.md %}
 
 ### Example configuration
@@ -441,8 +437,6 @@ leveling-strategy.delta-grid.initial_height  10
 
 ### Configuration options
 
-| Option | Example value | Explanation |
-| --- | --- | --- |
 {% include modules/leveling/delta-grid-calibration-options-for-include.md %}
 
 

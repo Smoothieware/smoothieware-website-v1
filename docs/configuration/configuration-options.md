@@ -5,6 +5,8 @@ permalink: /configuration-options
 # Configuration Options
 
 {::nomarkdown}
+<link rel="stylesheet" href="/assets/css/config-tables.css">
+<script src="/assets/js/config-tables.js"></script>
 <a href="/images/board.png">
   <img src="/images/board.png" alt="Configuration" width="150" height="150" style="float: right; margin-left: 1rem;"/>
 </a>
@@ -20,121 +22,156 @@ If you want more information about a given module, how it works and how to confi
 
 For information on pin options and electrical settings (pull up, pull down, open drain, etc.), please refer to [configuring-smoothie](configuring-smoothie).
 
-## Configuration Reference Table
+---
 
-| Option | Example value | Explanation |
-| ------ | :-----------: | ----------- |
-| General motion | | |
+## System & General Settings
+
+The system configuration controls core firmware behavior including step generation frequency, USB modes, LED indicators, and communication interfaces. These settings affect fundamental system operation and should be configured before other modules. For complete documentation, see the system settings section.
+
+{% include modules/other/system-options-for-include.md %}
+
+## Motion Control
+
+The Motion Control module is the heart of Smoothie's kinematic system. It handles coordinate transformation, acceleration planning, and real-time motion execution. This module converts G-code commands into precise stepper motor movements based on your machine's kinematics (cartesian, delta, CoreXY, etc.). For complete documentation, see the [Motion Control](/motion-control) page.
+
 {% include modules/motion/motion-control-options-for-include.md %}
-| <setting v1="alpha_steps_per_mm" v2="actuator.alpha.steps_per_mm"></setting> | 80 | Steps per millimetre for alpha stepper motor ( this is the `X` axis for a cartesian machine ) |
-| <setting v1="beta_steps_per_mm" v2="actuator.beta.steps_per_mm"></setting> | 80 | Steps per millimetre for beta stepper motor ( this is the `Y` axis for a cartesian machine ) |
-| <setting v1="gamma_steps_per_mm" v2="actuator.gamma.steps_per_mm"></setting> | 1600 | Steps per millimetre for gamma stepper motor ( this is the `Z` axis for a cartesian machine ) |
 
+## Actuators (Stepper Motors)
 
+Actuators define the physical stepper motors that move your machine's axes. Each actuator has configuration for pin assignments, steps per millimeter, maximum speeds, microstepping, and optional features like motor reversal and slaving for dual-motor setups. Proper actuator configuration is essential for accurate motion control.
 
-| <setting v1="arm_solution" v2="motion control.arm_solution"></setting> | cartesian | Sets the arm solution for this machine. The arm solution converts position in millimetres into actuator positions ( usually in steps ). On cartesian machines those are proportional to each other, but for example on a linear delta machine, some fancy math is required for the conversion. Possible values : `cartesian`, `corexy`, `linear_delta`, `rotatable_cartesian`, `morgan` |
+{% include modules/motion/actuators-options-for-include.md %}
 
+## Motion Planner
 
-| <setting v1="arm_length" v2="linear delta.arm_length"></setting> | 100 | In the case of a `linear_delta` arm solution, this is the length of an arm from hinge to hinge |
-| <setting v1="arm_radius" v2="linear delta.arm_radius"></setting> | 124 | In the case of a `linear_delta` arm solution, this is the horizontal distance from hinge to hinge when the effector is centered |
+The motion planner performs lookahead optimization across queued moves to calculate optimal acceleration profiles and cornering speeds. It uses junction deviation instead of traditional jerk control for smoother motion. The planner queue size and junction deviation values significantly impact motion quality and print speed.
 
+{% include modules/motion/planner-options-for-include.md %}
 
+## Conveyor
 
-| <setting v1="alpha_angle"></setting> | 0.0 / 30.0 | Angle by which the plane is rotated. For `rotatable_cartesian` arm solution: default is 0.0. For `experimental_delta` arm solution: default is 30.0. |
+The conveyor module enables continuous belt or conveyor functionality, allowing infinite Z-axis printing on belt printers or continuous part production systems. This advanced feature coordinates motion between the standard axes and a moving work surface.
 
+{% include modules/motion/conveyor-options-for-include.md %}
 
-| <setting v1="arm1_length"></setting> | 100 | In the case of a `morgan` arm solution, length of the first arm |
-| <setting v1="arm2_length"></setting> | 100 | In the case of a `morgan` arm solution, length of the second arm |
-| <setting v1="morgan_offset_x"></setting> | 10 | In the case of a `morgan` arm solution, X offset |
-| <setting v1="morgan_offset_y"></setting> | 10 | In the case of a `morgan` arm solution, Y offset |
-| <setting v1="axis_scaling_x"></setting> | 0.8 | In the case of a `morgan` arm solution, scaling in the X axis |
-| <setting v1="axis_scaling_y"></setting> | 0.8 | In the case of a `morgan` arm solution, scaling in the Y axis |
-| <setting v1="x_axis_max_speed"></setting> | 30000 | Maximum allowable speed for the `X` axis, in millimetres/minute. Smoothie will never exceed that value for that axis. |
-| <setting v1="y_axis_max_speed"></setting> | 30000 | Maximum allowable speed for the `Y` axis, in millimetres/minute. Smoothie will never exceed that value for that axis. |
-| <setting v1="z_axis_max_speed"></setting> | 300 | Maximum allowable speed for the `Z` axis, in millimetres/minute. Smoothie will never exceed that value for that axis. |
-| <setting v1="save_g92"></setting> | false | set to true to save any G92 offset with M500 (See WCS) |
-| <setting v1="set_g92"></setting> | 0,0,0 | set the G92 offset to x,y,z (See WCS) |
+## Motors & Current Control
 
-| Stepper motors | | |
-| <setting v1="alpha_step_pin" v2="actuator.x.step_pin"></setting> | <pin>2.0</pin> | Pin for alpha stepper step signal |
-| <setting v1="alpha_dir_pin" v2="actuator.x.dir_pin"></setting> | <pin>0.5</pin> | Pin for alpha stepper direction |
-| <setting v1="alpha_en_pin" v2="actuator.x.en_pin"></setting> | <pin>0.4</pin> | Pin for alpha enable pin |
-| <setting v1="alpha_current" v2="current control.alpha.current"></setting> | 1.5 | M1 stepper motor driver current, in Amperes. |
-| <setting v1="alpha_max_rate" v2="actuator.alpha.max_rate"></setting> | 30000 | Maximum allowable speed for this actuator ( as opposed to axis, they are the same on a cartesian machine, but not on a delta machine for example ), in millimetres/minute. |
-| <setting v1="beta_step_pin" v2="actuator.y.step_pin"></setting> | <pin>2.1</pin> | Pin for beta stepper step signal |
-| <setting v1="beta_dir_pin" v2="actuator.y.dir_pin"></setting> | <pin>0.11</pin> | Pin for beta stepper direction |
-| <setting v1="beta_en_pin" v2="actuator.y.en_pin"></setting> | <pin>0.10</pin> | Pin for beta enable |
-| <setting v1="beta_current" v2="current control.beta.current"></setting> | 1.5 | M2 stepper motor driver current, in Amperes. |
-| <setting v1="beta_max_rate" v2="actuator.beta.max_rate"></setting> | 30000 | Maximum allowable speed for this actuator, in millimetres/minute. |
-| <setting v1="gamma_step_pin" v2="actuator.z.step_pin"></setting> | <pin>2.2</pin> | Pin for gamma stepper step signal |
-| <setting v1="gamma_dir_pin" v2="actuator.z.dir_pin"></setting> | <pin>0.20</pin> | Pin for gamma stepper direction |
-| <setting v1="gamma_en_pin" v2="actuator.z.en_pin"></setting> | <pin>0.19</pin> | Pin for gamma enable |
-| <setting v1="gamma_current" v2="current control.gamma.current"></setting> | 1.5 | M3 stepper motor driver current, in Amperes. |
-| <setting v1="gamma_max_rate" v2="actuator.gamma.max_rate"></setting> | 300 | Maximum allowable speed for this actuator , in millimetres/minute. |
+Current control manages the electrical current delivered to stepper motor drivers, either through digital potentiometers (digipot) on older boards or through integrated TMC driver control on newer boards. Proper current settings prevent motor overheating while ensuring adequate torque. For complete documentation, see the [Current Control](/currentcontrol) page.
 
-| Communication | | |
-| <setting v1="uart0.baud_rate"></setting> | 115200 | Baud rate for the default hardware serial port ( UART0, labelled "Serial" on the board, close to the USB connector ). Defaults to 9600 if undefined, or if the configuration file can not be read. |
-| <setting v1="second_usb_serial_enable"></setting> | false | This enables a second serial port over the USB connection ( for example to have both [Pronterface](/pronterface) and a terminal connected) |
+{% include modules/motors/currentcontrol-options-for-include.md %}
 
-| Miscellaneous | | |
-| <setting v1="leds_disable"></setting> | true | Disable the 4 flashing LEDs on the board |
-| <setting v1="play_led_disable"></setting> | true | Disable the "play" status LED |
-| <setting v1="kill_button_enable"></setting> | false | Enable the "kill" button |
-| <setting v1="kill_button_pin"></setting> | <pin>2.12</pin> | Pin for the "kill" button |
-| <setting v1="msd_disable"></setting> | false | Disable the MSD ( SD Card access over USB ) when set to true ( requires a special binary, which you can find [here](https://github.com/Smoothieware/Smoothieware/blob/edge/FirmwareBin/firmware-disablemsd.bin), will be ignored without the special binary) |
-| <setting v1="dfu_enable"></setting> | false | For Linux developers, set to true to enable DFU, which allows you to flash new firmwares over USB |
+## Endstops
 
-| Current control | | |
+Endstops define the physical limit switches that establish your machine's home position and travel limits. They can be configured as minimum or maximum position stops, with various electrical configurations (normally open, normally closed, pull-up, pull-down). Proper endstop configuration is critical for safe homing and preventing crashes. For complete documentation, see the [Endstops](/endstops) page.
 
-
-
-| <setting v1="currentcontrol_module_enable"></setting> | true | If set to true, enable digital control of the current settings of the stepper motor drivers. **Note** : this is dependent on the physical board type, and unless you are designing a new board you shouldn't have to modify these settings |
-| <setting v1="digipotchip"></setting> | mcp4451 | Select the digipot chip with which to control the current for the stepper motor drivers. Supported chips are `mcp4451` and `ad5206` |
-| <setting v1="digipot_max_current"></setting> | 2 | Maximum current that can be set |
-| <setting v1="digipot_factor"></setting> | 113.33 | Factor for converting the current into digipot values |
-
-
-| <setting v1="zeta_current" v2="current control.zeta.current"></setting> | 1.5 | Current setting for the 6th stepper motor driver current control |
-
-
-
-| <setting v1="eta_current"></setting> | 1.5 | Current setting for the 7th stepper motor driver current control |
-| <setting v1="theta_current"></setting> | 1.5 | Current setting for the 8th stepper motor driver current control |
-
-
-
-| [Player](/player) | | |
-{% include modules/player/player-options-for-include.md %}
-
-| [Extruder](/extruder) | | |
-{% include modules/extruders/extruder-options-for-include.md %}
-
-| [Laser](/laser) | | |
-{% include modules/laser/laser-options-for-include.md %}
-
-| [Temperature control](/temperaturecontrol) | | |
-{% include modules/temperature/temperaturecontrol-options-for-include.md %}
-
-| [Switch](/switch) | | |
-{% include modules/input-controls/switch-options-for-include.md %}
-
-| [Temperature Switch](/temperatureswitch) | | |
-{% include modules/temperature/temperatureswitch-options-for-include.md %}
-
-| [Spindle control](/spindle-control) | | |
-{% include modules/spindle/spindle-options-for-include.md %}
-
-| [Endstops](/endstops) | | |
 {% include modules/endstops-probes/endstops-options-for-include.md %}
 
-| [Z probe](/zprobe) | | |
+## Z Probe
+
+The Z Probe module enables bed leveling and probing functionality using various probe types including mechanical switches, proximity sensors, and BLTouch devices. The probe is used to measure bed surface topology for automatic compensation. For complete documentation, see the [ZProbe](/zprobe) page.
+
 {% include modules/endstops-probes/zprobe-options-for-include.md %}
 
-| [Leveling strategy](/zprobe#leveling-strategies) | | |
-{% include modules/endstops-probes/zprobe-options-for-include.md %}
+## Leveling Strategies
 
-| [Panel](/panel) | | |
+Leveling strategies define how the firmware compensates for bed irregularities or calibrates delta geometry. Different strategies are optimized for different machine types and use cases.
+
+### Three Point Leveling Strategy
+
+Three-point leveling uses measurements at three corners to calculate a plane that represents the bed surface. This is the simplest leveling strategy, suitable for rigid beds with minimal warping. It's commonly used on delta printers for initial calibration.
+
+{% include modules/leveling/three-point-strategy-options-for-include.md %}
+
+### Delta Calibration Strategy
+
+Delta calibration strategy performs comprehensive calibration of linear delta kinematics including tower positions, delta radius, arm lengths, and Z-height. This strategy is specifically designed for delta printers and uses multiple probe points to optimize geometric parameters.
+
+{% include modules/leveling/delta-calibration-strategy-options-for-include.md %}
+
+### Delta Grid Calibration
+
+Delta grid calibration creates a detailed height map of the build surface specifically for delta printers, accounting for both mechanical imperfections and bed surface irregularities. This provides more detailed compensation than three-point leveling.
+
+{% include modules/leveling/delta-grid-calibration-options-for-include.md %}
+
+### Rectangular Grid Leveling
+
+Rectangular grid leveling creates a detailed height map using probe points arranged in a regular grid pattern. This strategy provides the most accurate compensation for beds with significant warping or irregularities. It's commonly used on Cartesian and CoreXY printers.
+
+{% include modules/leveling/rectangular-grid-options-for-include.md %}
+
+## Extruder
+
+The Extruder module controls filament extrusion for 3D printing, managing the stepper motor that pushes filament through the hotend. It handles acceleration, retraction, and coordinates with temperature control for safe operation. For complete documentation, see the [Extruder](/extruder) page.
+
+{% include modules/extruders/extruder-options-for-include.md %}
+
+## Temperature Control
+
+The Temperature Control module manages heating and cooling for components like hotends, heated beds, and heated chambers. It supports multiple temperature sensors (thermistor, thermocouple, PT100), PID control for precise temperature regulation, and comprehensive safety features including thermal runaway protection. For complete documentation, see the [Temperature Control](/temperaturecontrol) page.
+
+{% include modules/temperature/temperaturecontrol-options-for-include.md %}
+
+## Temperature Switch
+
+The Temperature Switch module automatically controls outputs (fans, coolers, heaters) based on temperature thresholds. This is commonly used for hotend cooling fans that turn on when the hotend reaches a certain temperature, or chamber heaters that maintain ambient temperature. For complete documentation, see the [Temperature Switch](/temperatureswitch) page.
+
+{% include modules/temperature/temperatureswitch-options-for-include.md %}
+
+## Tools
+
+### Laser
+
+The Laser module provides PWM control for laser cutters and engravers, with power modulation based on feed rate and optional fire button support. It includes safety features and supports both continuous and pulsed operation modes. For complete documentation, see the [Laser](/laser) page.
+
+{% include modules/laser/laser-options-for-include.md %}
+
+### Spindle
+
+The Spindle module controls spindle motors for CNC milling and routing operations. It supports both PWM speed control and relay-based on/off control, with configurable speed ranges and direction control. For complete documentation, see the [Spindle](/spindle-module) page.
+
+{% include modules/spindle/spindle-options-for-include.md %}
+
+## Input Controls
+
+### Switch
+
+The Switch module provides general-purpose digital I/O control, allowing you to define custom switches and buttons that trigger actions, control outputs, or execute G-code sequences. Switches can be momentary or toggle, with configurable input and output pins. For complete documentation, see the [Switch](/switch) page.
+
+{% include modules/input-controls/switch-options-for-include.md %}
+
+### Joystick
+
+The Joystick module enables manual machine control using analog joystick inputs, allowing operators to jog axes smoothly without G-code commands. This is useful for manual positioning, tool changes, and setup operations.
+
+{% include modules/input-controls/joystick-options-for-include.md %}
+
+### Jogger
+
+The Jogger module provides simple manual jog controls using buttons or encoders, with configurable step sizes and speeds. Unlike the joystick module which uses analog inputs, jogger uses discrete digital inputs for precise incremental movements.
+
+{% include modules/input-controls/jogger-options-for-include.md %}
+
+## Panel & Display
+
+The Panel module handles communication with LCD displays and control panels, supporting various display types including RepRap Discount Full Graphic Smart Controller, Viki2, and other common 3D printer displays. Panels provide local control without requiring a host computer. For complete documentation, see the [Panel](/panel) page.
+
 {% include hardware/panels/panel-options-for-include.md %}
 
-| [Network](/network) | | |
+## Network
+
+The Network module enables Ethernet connectivity on supported boards, allowing remote control, file upload, and web interface access. Network functionality requires appropriate hardware support. For complete documentation, see the [Network](/network) page.
+
 {% include modules/network/network-options-for-include.md %}
+
+## Player
+
+The Player module manages G-code file execution from the SD card, including file selection, pause/resume, progress tracking, and status reporting. It coordinates with all other modules during print execution. For complete documentation, see the [Player](/player) page.
+
+{% include modules/player/player-options-for-include.md %}
+
+## Miscellaneous
+
+Additional configuration options for specialized features and modules.
+
+{% include modules/other/miscellaneous-options-for-include.md %}

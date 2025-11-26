@@ -119,9 +119,30 @@ hotend.thermistor_pin = 0.23
 
 
 
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
+
 | Smoothieboard thermistor input name | T0 (th1) | T1 (th2) | T2(th3) | T3(th4) |
 | ----------------------------------- | -------- | -------- | ------- | ------- |
 | Pin for configuration               | {::nomarkdown}<pin>0.23</pin>{:/nomarkdown} | {::nomarkdown}<pin>0.24</pin>{:/nomarkdown} | {::nomarkdown}<pin>0.25</pin>{:/nomarkdown} | {::nomarkdown}<pin>0.26</pin>{:/nomarkdown} |
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+| Smoothieboard v2 thermistor input name | T1 | T2 | T3 | T4 (Board temp) |
+| -------------------------------------- | -- | -- | -- | --------------- |
+| Pin for configuration                  | {::nomarkdown}<pin>ADC1_1</pin>{:/nomarkdown} | {::nomarkdown}<pin>ADC1_2</pin>{:/nomarkdown} | {::nomarkdown}<pin>ADC1_3</pin>{:/nomarkdown} | {::nomarkdown}<pin>ADC1_0</pin>{:/nomarkdown} |
+| STM32 Pin                              | PF11 | PF12 | PB0 | PA0_C |
+| Typical use                            | Hotend | Bed | Hotend2/Chamber | Board monitoring |
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
 
 {::nomarkdown}
 <sl-alert variant="warning" open>
@@ -153,14 +174,40 @@ Note: As of 2/13/2018, the max31855 module does not work when configured without
 
 Here is an example of how to connect the [Adafruit Thermocouple Amplifier MAX31855 breakout board](http://www.adafruit.com/products/269) to the Smoothieboard.
 
-| Smoothieboard | Breakout board |
-| ------------- | -------------- |
-| 3v3           | Vin            |
-| GND           | GND            |
-| {::nomarkdown}<pin>0.16</pin>{:/nomarkdown} CS | CS             |
-| {::nomarkdown}<pin>0.18</pin>{:/nomarkdown} MOSI | Not used       |
-| {::nomarkdown}<pin>0.15</pin>{:/nomarkdown} SCK | CLK            |
-| {::nomarkdown}<pin>0.17</pin>{:/nomarkdown} MISO | DO             |
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
+
+| Smoothieboard v1 | Breakout board |
+| ---------------- | -------------- |
+| 3v3              | Vin            |
+| GND              | GND            |
+| {::nomarkdown}<pin>0.16</pin>{:/nomarkdown} CS | CS  |
+| {::nomarkdown}<pin>0.18</pin>{:/nomarkdown} MOSI | Not used |
+| {::nomarkdown}<pin>0.15</pin>{:/nomarkdown} SCK | CLK |
+| {::nomarkdown}<pin>0.17</pin>{:/nomarkdown} MISO | DO  |
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+| Smoothieboard v2 | Breakout board |
+| ---------------- | -------------- |
+| 3v3              | Vin            |
+| GND              | GND            |
+| Any GPIO (e.g., from Gadgeteer) | CS  |
+| {::nomarkdown}<pin>PB5</pin>{:/nomarkdown} SPI1 MOSI | Not used |
+| {::nomarkdown}<pin>PB3</pin>{:/nomarkdown} SPI1 SCK | CLK |
+| {::nomarkdown}<pin>PB4</pin>{:/nomarkdown} SPI1 MISO | DO  |
+
+The SPI1 pins are available on Smoothieboard v2 expansion headers. Use any available GPIO pin for chip select (CS).
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
 
 To configure Smoothie to use the thermocouple connected like this, replace the thermistor and thermistor_pin parameters with the following:
 
@@ -290,7 +337,11 @@ hotend.ad8495_pin = 0.24
 hotend.ad8495_offset = 250
 ```
 
-Configuration notes are the same as V1.
+Configure the pin you'll be using to read the sensor with `ad8495_pin`.
+
+The `ad8495_offset` depends on the AD8495 wiring. If the REF pin (pin 2) is connected to ground or 0V then the offset is 0. This means that Smoothie can measure 0C to 660C, depending on thermocouple. If, like the Adafruit board, the REF pin is connected to 1.25V then the offset is 250. With a 250 offset, Smoothie can measure -250C to 410C. The formula for calculating offset is offset = REF/0.005. The simplest way to see if the offset is set incorrectly is that the temperature reading at room temperature will be wrong.
+
+NOTE from a community member: The AD8495 needs a GND and VCC. Using either GND or AGND from the Smoothieboard seems to work. Unclear which is preferred (if you know, please update this note!).
 
 {::nomarkdown}
 </v2>

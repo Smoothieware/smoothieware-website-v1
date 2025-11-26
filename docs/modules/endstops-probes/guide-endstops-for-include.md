@@ -191,11 +191,31 @@ To:
 alpha_min_endstop                            1.28^!
 ```
 
-Here is the exact mapping of pin names to inputs on the Smoothieboard:
+Here is the exact mapping of pin names to inputs on the board:
+
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
 
 | Endstop      | X MIN     | X MAX     | Y MIN     | Y MAX    | Z MIN     | Z MAX     |
 | ------------ | --------- | --------- | --------- | -------- | --------- | --------- |
 | Config value | alpha_min | alpha_max | beta_min  | beta_max | gamma_min | gamma_max |
 | Pin name     | {::nomarkdown}<pin>1.24</pin>{:/nomarkdown} | {::nomarkdown}<pin>1.25</pin>{:/nomarkdown} | {::nomarkdown}<pin>1.26</pin>{:/nomarkdown} | {::nomarkdown}<pin>1.27</pin>{:/nomarkdown} | {::nomarkdown}<pin>1.28</pin>{:/nomarkdown} | {::nomarkdown}<pin>1.29</pin>{:/nomarkdown} |
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+| Endstop      | X MIN     | X MAX     | Y MIN     | Y MAX    | Z MIN     | Z MAX     |
+| ------------ | --------- | --------- | --------- | -------- | --------- | --------- |
+| Config value | minx      | maxx      | miny      | maxy     | minz      | maxz      |
+| Pin name     | {::nomarkdown}<pin>PG10</pin>{:/nomarkdown} | {::nomarkdown}<pin>PG9</pin>{:/nomarkdown} | {::nomarkdown}<pin>PG11</pin>{:/nomarkdown} | {::nomarkdown}<pin>PG12</pin>{:/nomarkdown} | {::nomarkdown}<pin>PG13</pin>{:/nomarkdown} | {::nomarkdown}<pin>PG14</pin>{:/nomarkdown} |
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
 
 More information can be found [here](endstops).

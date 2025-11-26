@@ -71,26 +71,47 @@ Vin should be 3.3 V for the SmoothieBoard, and Pin 2 will be connected to a comp
   <strong>Caution:</strong> Use caution when connecting a potentiometer to your SmoothieBoard. If Vin is a higher voltage than the SmoothieBoard's pins can handle (-0.5 to 5.1 V for > 10 ms), you might ruin your board. Use Vin = 3.3 V unless you know what you are doing.
 </sl-alert>
 
+The analog pins on the Smoothieboard which can be connected to a wiper (Pin 2 in above schematic) are shown in the table below:
+
 {::nomarkdown}
-The analog pins on the SmoothieBoard which can be connected to a wiper (Pin 2 in above schematic) are shown in the table below:
+<versioned orientation="vertical">
+<v1>
 {:/nomarkdown}
 
 | Analog Pin | Smoothie Assignment | Comments |
 | ---------- | ------------------- | -------- |
-| <pin>0.2</pin> | uart0 txd | Not recommended (used for ISP programming of the bootloader and for debugging) |
-| <pin>0.3</pin> | uart0 rxd | Not recommended (used for ISP programming of the bootloader and for debugging) |
-| <pin>0.23</pin> | hotend.thermistor_pin | Not recommended (used for thermistors and has built-in 4.7 kΩ pull-up) |
-| <pin>0.24</pin> | bed.thermistor_pin | Not recommended (used for thermistors and has built-in 4.7 kΩ pull-up) |
-| <pin>0.25</pin> | thermistor2 | Not recommended (used for thermistors and has built-in 4.7 kΩ pull-up) |
-| <pin>0.26</pin> | thermistor3 | Not recommended (used for thermistors and has built-in 4.7 kΩ pull-up) |
-| **<pin>1.30</pin>** | spare | Recommended pin |
-| **<pin>1.31</pin>** | spare | Recommended pin |
+| {::nomarkdown}<pin>0.2</pin>{:/nomarkdown} | uart0 txd | Not recommended (used for ISP programming of the bootloader and for debugging) |
+| {::nomarkdown}<pin>0.3</pin>{:/nomarkdown} | uart0 rxd | Not recommended (used for ISP programming of the bootloader and for debugging) |
+| {::nomarkdown}<pin>0.23</pin>{:/nomarkdown} | hotend.thermistor_pin | Not recommended (used for thermistors and has built-in 4.7 kΩ pull-up) |
+| {::nomarkdown}<pin>0.24</pin>{:/nomarkdown} | bed.thermistor_pin | Not recommended (used for thermistors and has built-in 4.7 kΩ pull-up) |
+| {::nomarkdown}<pin>0.25</pin>{:/nomarkdown} | thermistor2 | Not recommended (used for thermistors and has built-in 4.7 kΩ pull-up) |
+| {::nomarkdown}<pin>0.26</pin>{:/nomarkdown} | thermistor3 | Not recommended (used for thermistors and has built-in 4.7 kΩ pull-up) |
+| **{::nomarkdown}<pin>1.30</pin>{:/nomarkdown}** | spare | Recommended pin |
+| **{::nomarkdown}<pin>1.31</pin>{:/nomarkdown}** | spare | Recommended pin |
 
-See [Pinout](pinout) for a diagram of the SmoothieBoard with the pins labeled.
+For a joystick, you will need to connect each wiper (the left/right and up/down) to different analog pins (e.g. {::nomarkdown}<pin>1.30</pin>{:/nomarkdown} and {::nomarkdown}<pin>1.31</pin>{:/nomarkdown}).
 
 {::nomarkdown}
-For a joystick, you will need to connect each wiper (the left/right and up/down) to different analog pins (e.g. <pin>1.30</pin> and <pin>1.31</pin>).
+</v1>
+<v2>
 {:/nomarkdown}
+
+| Analog Pin | Assignment | Comments |
+| ---------- | ---------- | -------- |
+| {::nomarkdown}<pin>ADC1_1</pin>{:/nomarkdown} (PF11) | Thermistor T1 | Not recommended (used for hotend thermistor) |
+| {::nomarkdown}<pin>ADC1_2</pin>{:/nomarkdown} (PF12) | Thermistor T2 | Not recommended (used for bed thermistor) |
+| {::nomarkdown}<pin>ADC1_3</pin>{:/nomarkdown} (PB0) | Thermistor T3 | Available if not using second hotend |
+| **{::nomarkdown}<pin>ADC1_4</pin>{:/nomarkdown}** (PC2) | Expansion (GH) | Recommended - available on Gadgeteer header GH |
+| **{::nomarkdown}<pin>ADC1_5</pin>{:/nomarkdown}** (PC3) | Expansion (GH) | Recommended - available on Gadgeteer header GH |
+
+For a joystick, you will need to connect each wiper (the left/right and up/down) to different analog pins (e.g. {::nomarkdown}<pin>ADC1_4</pin>{:/nomarkdown} and {::nomarkdown}<pin>ADC1_5</pin>{:/nomarkdown} on the Gadgeteer GH header).
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
+
+See [Pinout](pinout) for a diagram of the Smoothieboard with the pins labeled.
 
 {::nomarkdown}
 <a href="/images/temporary/terminal-connector.jpg">

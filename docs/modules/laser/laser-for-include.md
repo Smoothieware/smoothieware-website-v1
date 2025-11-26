@@ -47,6 +47,11 @@ From the Smoothieboard, you need to connect:
 
 Both Ground pins are easy to find, and the PSU input you find in the manual/datasheet, now all you need is to find a PWM pin on the Smoothieboard.
 
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
+
 There are 6 of them, but 4 of them are used for the step pins for stepper motor drivers.
 
 Those for alpha and beta you won't be able to use as you use those drivers to control the X and Y axes.
@@ -65,10 +70,32 @@ Now you need to find which GPIO pin/port number corresponds to the PWM pin you c
 
 | Pin number for configuration | Label on the board | Comment |
 | ---------------------------- | ------------------ | ------- |
-| <pin>2.2</pin>               | STP3               | Only if you are not using a Z axis/the gamma driver. Make sure you set gamma_step_pin to the "nc" value. The unlabelled pin in JP12 is GND. |
-| <pin>2.3</pin>               | STP4               | Only if you are not using the delta driver. Make sure you set delta_step_pin to the "nc" value. The unlabelled pin in JP15 is GND. |
-| <pin>2.4</pin>               | PWM0               | Only if you are not using the first small MOSFET (X8). All pins of JP10 are GND. |
-| <pin>2.5</pin>               | PWM1               | Only if you are not using the second big MOSFET (X15). All pins of JP10 are GND. |
+| {::nomarkdown}<pin>2.2</pin>{:/nomarkdown} | STP3 | Only if you are not using a Z axis/the gamma driver. Make sure you set gamma_step_pin to the "nc" value. The unlabelled pin in JP12 is GND. |
+| {::nomarkdown}<pin>2.3</pin>{:/nomarkdown} | STP4 | Only if you are not using the delta driver. Make sure you set delta_step_pin to the "nc" value. The unlabelled pin in JP15 is GND. |
+| {::nomarkdown}<pin>2.4</pin>{:/nomarkdown} | PWM0 | Only if you are not using the first small MOSFET (X8). All pins of JP10 are GND. |
+| {::nomarkdown}<pin>2.5</pin>{:/nomarkdown} | PWM1 | Only if you are not using the second big MOSFET (X15). All pins of JP10 are GND. |
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+Smoothieboard v2 has dedicated PWM outputs available on the Gadgeteer headers. These are high-resolution PWM outputs suitable for laser control.
+
+| Pin name for configuration | STM32 Pin | Location | Comment |
+| -------------------------- | --------- | -------- | ------- |
+| {::nomarkdown}<pin>PWM1_1</pin>{:/nomarkdown} | PE9 | Gadgeteer GD | Timer 1, Channel 1 - High-resolution PWM |
+| {::nomarkdown}<pin>PWM1_2</pin>{:/nomarkdown} | PE11 | Gadgeteer GD | Timer 1, Channel 2 - High-resolution PWM |
+| {::nomarkdown}<pin>PWM1_3</pin>{:/nomarkdown} | PE13 | Gadgeteer GD | Timer 1, Channel 3 - High-resolution PWM |
+| {::nomarkdown}<pin>PWM1_4</pin>{:/nomarkdown} | PE14 | Gadgeteer GD | Timer 1, Channel 4 - High-resolution PWM |
+| {::nomarkdown}<pin>PWM2_1</pin>{:/nomarkdown} | PI5 | Gadgeteer GC | Timer 8, Channel 1 |
+
+The Gadgeteer headers provide convenient 3-pin connections with signal, power, and ground for easy wiring.
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
 
 Now that the PSU is wired to the Smoothieboard and that you know which pin you are using for control, you can change the configuration file to setup laser control.
 

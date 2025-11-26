@@ -9,8 +9,6 @@ permalink: /endstops
 
 The config settings for Endstops are as follows:
 
-| Option | Example value | Explanation |
-| ------ | ------------- | ----------- |
 {% include modules/endstops-probes/endstops-options-for-include.md %}
 
 ## Reading

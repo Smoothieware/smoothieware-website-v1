@@ -163,8 +163,6 @@ psu_off.start_armed = false             # NEW IN V2: starts disarmed, must be ar
 
 ## All options
 
-| Option | Example value | Explanation |
-| ------ | ------------- | ----------- |
 {% include modules/temperature/temperatureswitch-options-for-include.md %}
 
 {::nomarkdown}

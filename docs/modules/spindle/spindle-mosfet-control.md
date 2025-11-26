@@ -178,8 +178,6 @@ To use this module, you need to connect your spindle to pins with proper hardwar
 
 ### PID Configuration Options
 
-| Option | Example value | Explanation |
-| ------ | ------------- | ----------- |
 {% include modules/spindle/spindle-options-for-include.md %}
 
 ### G-code Commands

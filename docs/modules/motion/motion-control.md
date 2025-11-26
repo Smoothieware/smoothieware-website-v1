@@ -262,8 +262,6 @@ custom_menu.babystepdown.command            G43.2 Z-0.05      #
 
 Here are all the options related to motion control:
 
-| Option | Example value | Explanation |
-| ------ | ------------- | ----------- |
 {% include modules/motion/motion-control-options-for-include.md %}
 
 ## For devs

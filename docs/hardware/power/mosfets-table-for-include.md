@@ -7,6 +7,11 @@ MOSFETs are used to control high-power devices like heated beds, hotends, fans, 
 
 ##### MOSFET Specifications
 
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
+
 | MOSFET Pair         | Big MOSFETS        | Small MOSFETS      | Mixed MOSFETS         |
 |---------------------|--------------------|--------------------|-----------------------|
 | Label on diagram    | **P<pin>2.7</pin>**           | **P<pin>2.5</pin>**           | **P<pin>2.4</pin>**              | **P<pin>2.6</pin>**           | **P<pin>1.23</pin>** | **P<pin>1.22</pin>** |
@@ -40,6 +45,49 @@ Smoothieboard has three MOSFET pairs:
 - **Power input**: Taken directly from VBB (main power supply)
 - **Typical use**: P{::nomarkdown}<pin>1.23</pin>{:/nomarkdown} for Hotend 1, P{::nomarkdown}<pin>1.22</pin>{:/nomarkdown} for accessories
 - **Note**: These outputs use the main VBB power supply
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+| Output | Controlling Pin | Current Rating | Typical Use |
+|--------|-----------------|----------------|-------------|
+| Hotend A | {::nomarkdown}<pin>PJ6</pin>{:/nomarkdown} | ~5A | Primary hotend heater |
+| Hotend B | {::nomarkdown}<pin>PJ7</pin>{:/nomarkdown} | ~5A | Secondary hotend heater |
+| Fan 1 | {::nomarkdown}<pin>PJ8</pin>{:/nomarkdown} | ~5A | Part cooling fan |
+| Fan 2 | {::nomarkdown}<pin>PJ9</pin>{:/nomarkdown} | ~5A | Auxiliary fan |
+| Bed | {::nomarkdown}<pin>PJ10</pin>{:/nomarkdown} | ~10-12A | Heated bed (dual parallel FETs) |
+| SSR1 | Logic output | mA | External SSR control |
+| SSR2 | Logic output | mA | External SSR control |
+
+##### Understanding MOSFET Outputs
+
+Smoothieboard v2 has a simplified MOSFET architecture:
+
+###### Low-Current FETs (Hotend A, Hotend B, Fan 1, Fan 2)
+
+- **Current capacity**: ~5A each
+- **Power input**: Shared VFET rail (2× XT30 connectors)
+- **Safety feature**: High-side PFET watchdog can cut power to all 4 outputs
+- **Note**: All share the same power source, controlled by safety watchdog
+
+###### Bed FET
+
+- **Current capacity**: ~10-12A (dual parallel MOSFETs)
+- **Power input**: Direct from VFET (not through PFET watchdog)
+- **Typical use**: Heated bed
+- **Note**: Independent of safety watchdog for bed stability
+
+###### SSR Outputs
+
+- **Current capacity**: Milliamps (logic level signals)
+- **Use**: Control external solid-state relays for high-power loads
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
 
 ##### Important Safety Notes
 
