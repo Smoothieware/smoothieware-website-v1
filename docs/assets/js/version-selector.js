@@ -23,7 +23,6 @@ function save_configuration(config) {
   try {
     const json_config = JSON.stringify(config);
     localStorage.setItem(CONFIG_STORAGE_KEY, json_config);
-    console.log("[config.ts] Configuration saved:", config);
   } catch (error) {
     console.error("[config.ts] Error saving configuration to localStorage:", error);
   }

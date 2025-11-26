@@ -35,7 +35,7 @@ You can plug a USB cable into the Smoothieboard to control it via [Software](sof
   - **USB ACM (Serial)** - Virtual COM port for sending commands and G-codes
   - **USB MSC (Mass Storage)** - Access the SD card as a removable drive with safer mounting (button or command controlled)
 
-- **USB Host (USB1)** - Expansion header for future device support (keyboards, WiFi adapters, etc.)
+- **USB Host (USB1)** - USB-A host connector (J2) for future device support (keyboards, WiFi adapters, etc.)
 
 {::nomarkdown}
 </v2>

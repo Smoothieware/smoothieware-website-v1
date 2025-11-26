@@ -16,18 +16,13 @@ import $ from 'jquery';
 // Wait for DOM to be fully loaded before processing tags
 $(() => {
 
-    console.log('[raw-tag.ts] Initializing raw tag handlers');
-
     // Find all <raw> elements in the page
     const $raw_elements = $('raw');
 
     // Guard against no raw tags found
     if ($raw_elements.length === 0) {
-        console.log('[raw-tag.ts] No raw tags found on this page');
         return;
     }
-
-    console.log(`[raw-tag.ts] Found ${$raw_elements.length} raw tag(s)`);
 
     // Process each raw tag
     $raw_elements.each(function(this: HTMLElement) {
@@ -40,8 +35,6 @@ $(() => {
 
         // Replace content of raw element
         $(this).html(html_structure);
-
-        console.log(`[raw-tag.ts] Processed raw tag: "${text_content}"`);
     });
 });
 

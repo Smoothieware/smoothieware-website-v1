@@ -86,13 +86,10 @@ const CACHE_DURATION_MS = 24 * 60 * 60 * 1000; // 24 hours
 // Wait for DOM to be fully loaded
 $(() => {
 
-    console.log('[load-assets.ts] Initializing asset loader');
-
     // Always load config files (they're small and may be needed)
     load_config_files();
 
     // Always load settings data (will be cached for future page visits)
-    console.log('[load-assets.ts] Loading configuration data...');
     load_settings_data();
 });
 
@@ -104,7 +101,6 @@ async function load_settings_data(): Promise<void> {
 
     // Check if already loaded in this page session
     if (window.settings_data_loaded) {
-        console.log('[load-assets.ts] Settings data already loaded in this session');
         return;
     }
 
@@ -112,8 +108,6 @@ async function load_settings_data(): Promise<void> {
     const cache_valid = check_cache_validity();
 
     if (cache_valid) {
-
-        console.log('[load-assets.ts] Loading settings data from browser cache');
 
         // Load from localStorage
         const v1_cached = localStorage.getItem(CACHE_KEY_V1);
@@ -132,8 +126,6 @@ async function load_settings_data(): Promise<void> {
 
                 window.settings_data_loaded = true;
 
-                console.log('[load-assets.ts] Settings data loaded from cache successfully');
-
                 return;
 
             } catch (error) {
@@ -144,7 +136,6 @@ async function load_settings_data(): Promise<void> {
     }
 
     // Cache miss or invalid - fetch fresh data
-    console.log('[load-assets.ts] Fetching fresh settings data from server');
 
     try {
 
@@ -177,10 +168,6 @@ async function load_settings_data(): Promise<void> {
 
         // Cache in localStorage for next time
         cache_settings_data(v1_data, v2_data);
-
-        console.log('[load-assets.ts] Settings data loaded and cached successfully');
-        console.log('[load-assets.ts] v1 settings count:', window.v1_settings.metadata.total_settings);
-        console.log('[load-assets.ts] v2 settings count:', window.v2_settings.metadata.total_settings);
 
     } catch (error) {
         console.error('[load-assets.ts] Failed to load settings data:', error);
@@ -347,8 +334,6 @@ function cache_settings_data(v1_data: any, v2_data: any): void {
         // Store timestamp
         localStorage.setItem(CACHE_TIMESTAMP_KEY, Date.now().toString());
 
-        console.log('[load-assets.ts] Settings data cached successfully');
-
     } catch (error) {
         console.warn('[load-assets.ts] Failed to cache settings data:', error);
         // Continue anyway - caching is not critical
@@ -363,7 +348,6 @@ async function load_config_files(): Promise<void> {
 
     // Check if already loaded in this page session
     if (window.config_files_loaded) {
-        console.log('[load-assets.ts] Config files already loaded in this session');
         return;
     }
 
@@ -371,8 +355,6 @@ async function load_config_files(): Promise<void> {
     const cache_valid = check_config_cache_validity();
 
     if (cache_valid) {
-
-        console.log('[load-assets.ts] Loading config files from browser cache');
 
         // Load from localStorage
         const v1_cached = localStorage.getItem(CACHE_KEY_V1_CONFIG);
@@ -387,8 +369,6 @@ async function load_config_files(): Promise<void> {
 
                 window.config_files_loaded = true;
 
-                console.log('[load-assets.ts] Config files loaded from cache successfully');
-
                 return;
 
             } catch (error) {
@@ -399,7 +379,6 @@ async function load_config_files(): Promise<void> {
     }
 
     // Cache miss or invalid - fetch fresh data
-    console.log('[load-assets.ts] Fetching fresh config files from server');
 
     try {
 
@@ -428,10 +407,6 @@ async function load_config_files(): Promise<void> {
 
         // Cache in localStorage for next time
         cache_config_files(v1_config_text, v2_config_text);
-
-        console.log('[load-assets.ts] Config files loaded and cached successfully');
-        console.log('[load-assets.ts] v1 config size:', v1_config_text.length, 'bytes');
-        console.log('[load-assets.ts] v2 config size:', v2_config_text.length, 'bytes');
 
     } catch (error) {
         console.error('[load-assets.ts] Failed to load config files:', error);
@@ -483,8 +458,6 @@ function cache_config_files(v1_config: string, v2_config: string): void {
 
         // Store timestamp
         localStorage.setItem(CACHE_TIMESTAMP_CONFIG_KEY, Date.now().toString());
-
-        console.log('[load-assets.ts] Config files cached successfully');
 
     } catch (error) {
         console.warn('[load-assets.ts] Failed to cache config files:', error);

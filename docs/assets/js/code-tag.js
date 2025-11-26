@@ -8059,30 +8059,22 @@ var compiled_code_popup_template = null;
 var gcode_data = {};
 var mcode_data = {};
 async function load_and_compile_code_template() {
-  console.log("[code-tag.ts] load_and_compile_code_template() ENTRY");
   try {
-    console.log("[code-tag.ts] Fetching code popup template...");
     const template_response = await fetch("/assets/templates/code-popup.hbs");
-    console.log("[code-tag.ts] Template fetch response status:", template_response.status);
     if (!template_response.ok) {
       console.error("[code-tag.ts] Failed to fetch code popup template:", template_response.status);
       return;
     }
     const template_source = await template_response.text();
-    console.log("[code-tag.ts] Template source length:", template_source.length);
     import_handlebars.default.registerHelper("eq", function(a, b) {
       return a === b;
     });
     compiled_code_popup_template = import_handlebars.default.compile(template_source);
-    console.log("[code-tag.ts] Template compiled successfully, type:", typeof compiled_code_popup_template);
-    console.log("[code-tag.ts] Code popup template loaded and compiled successfully");
   } catch (error) {
     console.error("[code-tag.ts] Error loading code popup template:", error);
   }
-  console.log("[code-tag.ts] load_and_compile_code_template() EXIT");
 }
 async function load_gcode_mcode_data() {
-  console.log("[code-tag.ts] load_gcode_mcode_data() ENTRY");
   try {
     const yaml_response = await fetch("/assets/data/gcode-mcode-reference.yaml");
     if (!yaml_response.ok) {
@@ -8093,11 +8085,9 @@ async function load_gcode_mcode_data() {
     const parsed_data = js_yaml_default.load(yaml_text);
     gcode_data = parsed_data.gcodes || {};
     mcode_data = parsed_data.mcodes || {};
-    console.log(`[code-tag.ts] Loaded ${Object.keys(gcode_data).length} G-codes and ${Object.keys(mcode_data).length} M-codes`);
   } catch (error) {
     console.error("[code-tag.ts] Error loading gcode-mcode-reference.yaml:", error);
   }
-  console.log("[code-tag.ts] load_gcode_mcode_data() EXIT");
 }
 function escape_html(text) {
   const html_escape_map = {
@@ -8113,7 +8103,6 @@ function setup_related_code_handlers($popup) {
   setTimeout(() => {
     $popup.find(".related-code-button").on("click", function() {
       const related_code = $(this).data("code");
-      console.log(`[code-tag.ts] Clicked related code: ${related_code}`);
       const is_gcode = related_code.startsWith("G");
       const code_map = is_gcode ? gcode_data : mcode_data;
       const code_info = code_map[related_code];
@@ -8140,11 +8129,14 @@ function update_popup_content($popup, code, is_gcode, code_info) {
     notes: code_info.notes || "",
     related_codes: code_info.related_codes || []
   };
+  if (!compiled_code_popup_template) {
+    console.error("[code-tag.ts] Code popup template not compiled");
+    return;
+  }
   const new_popup_html = compiled_code_popup_template(template_data);
   $popup.find(".code-popup-content").html(new_popup_html);
   $popup.find(".code-popup-letter").css("color", letter_color);
   setup_related_code_handlers($popup);
-  console.log(`[code-tag.ts] Updated popup to show ${code}`);
 }
 function create_popup_for_code($code_element, code, is_gcode) {
   const popup_id = `code-popup-${Math.random().toString(36).substr(2, 9)}`;
@@ -8181,16 +8173,11 @@ function create_popup_for_code($code_element, code, is_gcode) {
       clearTimeout(hide_timeout);
       hide_timeout = null;
     }
-    console.log(`[code-tag.ts] Hover on code: ${code}`);
     const popup_element = $popup[0];
     popup_element.active = true;
     if (!content_loaded) {
       const code_map = is_gcode ? gcode_data : mcode_data;
       const code_info = code_map[code];
-      console.log(`[code-tag.ts] Looking up code: "${code}", is_gcode: ${is_gcode}`);
-      console.log("[code-tag.ts] code_map keys:", Object.keys(code_map));
-      console.log("[code-tag.ts] code_info:", code_info);
-      console.log("[code-tag.ts] compiled_code_popup_template exists:", !!compiled_code_popup_template);
       if (!compiled_code_popup_template || !code_info) {
         $popup.find(".code-popup-content").html("<p>Code data not available</p>");
         return;
@@ -8220,10 +8207,8 @@ function process_all_code_tags() {
   const $gcode_elements = $("gcode:not(.code-tag-processed)");
   const $mcode_elements = $("mcode:not(.code-tag-processed)");
   if ($gcode_elements.length === 0 && $mcode_elements.length === 0) {
-    console.log("[code-tag.ts] No unprocessed gcode or mcode tags found");
     return;
   }
-  console.log(`[code-tag.ts] Found ${$gcode_elements.length} unprocessed gcode tag(s) and ${$mcode_elements.length} unprocessed mcode tag(s)`);
   $gcode_elements.each(function() {
     $(this).addClass("code-tag-processed");
     const text_content = $(this).text().trim();
@@ -8234,7 +8219,6 @@ function process_all_code_tags() {
     const html_structure = `<span class="code-content">${colored_content}</span>`;
     $(this).html(html_structure);
     create_popup_for_code($(this), code_command, true);
-    console.log(`[code-tag.ts] Processed gcode tag: "${text_content}" (lookup: "${code_command}")`);
   });
   $mcode_elements.each(function() {
     $(this).addClass("code-tag-processed");
@@ -8246,30 +8230,20 @@ function process_all_code_tags() {
     const html_structure = `<span class="code-content">${colored_content}</span>`;
     $(this).html(html_structure);
     create_popup_for_code($(this), code_command, false);
-    console.log(`[code-tag.ts] Processed mcode tag: "${text_content}" (lookup: "${code_command}")`);
   });
 }
 $(() => {
-  console.log("[code-tag.ts] Initializing gcode and mcode tag handlers");
-  console.log("[code-tag.ts] Starting Promise.all for template and data loading");
   const templatePromise = load_and_compile_code_template();
   const dataPromise = load_gcode_mcode_data();
-  console.log("[code-tag.ts] Template promise:", templatePromise);
-  console.log("[code-tag.ts] Data promise:", dataPromise);
   Promise.all([
     templatePromise,
     dataPromise
   ]).then(() => {
-    console.log("[code-tag.ts] Template and data loaded, processing tags");
-    console.log("[code-tag.ts] compiled_code_popup_template type:", typeof compiled_code_popup_template);
-    console.log("[code-tag.ts] compiled_code_popup_template value:", compiled_code_popup_template);
     process_all_code_tags();
     setTimeout(() => {
-      console.log("[code-tag.ts] Re-processing tags after Shoelace render delay");
       process_all_code_tags();
     }, 100);
     setTimeout(() => {
-      console.log("[code-tag.ts] Final re-processing of tags");
       process_all_code_tags();
     }, 500);
   }).catch((error) => {

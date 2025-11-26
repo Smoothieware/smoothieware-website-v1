@@ -79,8 +79,6 @@ export function save_configuration(config: SiteConfiguration): void {
         // Save to localStorage
         localStorage.setItem(CONFIG_STORAGE_KEY, json_config);
 
-        console.log('[config.ts] Configuration saved:', config);
-
     } catch (error: unknown) {
         console.error('[config.ts] Error saving configuration to localStorage:', error);
     }

@@ -326,8 +326,6 @@ async function load_and_compile_template(): Promise<void> {
         compiled_version_selection_alert_template = Handlebars.compile(version_selection_alert_source);
         compiled_version_change_alert_template = Handlebars.compile(version_change_alert_source);
 
-        console.log('[setting-tag.ts] All Handlebars templates loaded and compiled successfully');
-
     } catch (error: unknown) {
         console.error('[setting-tag.ts] Error loading Handlebars templates:', error);
         throw error;
@@ -337,22 +335,16 @@ async function load_and_compile_template(): Promise<void> {
 // Wait for DOM to be fully loaded before attaching event handlers
 $(() => {
 
-    console.log('[setting-tag.ts] Initializing setting tag handlers');
-
     // Find all <setting> elements in the page
     const $setting_elements = $('setting');
 
     // Guard against no setting tags found
     if ($setting_elements.length === 0) {
-        console.log('[setting-tag.ts] No setting tags found on this page');
         return;
     }
 
-    console.log(`[setting-tag.ts] Found ${$setting_elements.length} setting tag(s)`);
-
     // Load and compile Handlebars template before processing setting tags
     load_and_compile_template().then(() => {
-        console.log('[setting-tag.ts] Template ready, processing setting tags');
         initialize_setting_tags($setting_elements);
     }).catch((error: unknown) => {
         console.error('[setting-tag.ts] Failed to initialize setting tags:', error);
@@ -366,8 +358,6 @@ $(() => {
 
         // Regenerate all loaded popup content to reflect new version preference
         await regenerate_all_popup_content();
-
-        console.log('[setting-tag.ts] Updated setting tags and popups in response to header version selector change');
     });
 });
 
@@ -436,8 +426,6 @@ function update_all_setting_tags_visibility(): void {
             }
         }
     });
-
-    console.log(`[setting-tag.ts] Updated all setting tag visibility for display_version: ${display_version}`);
 }
 
 /**
@@ -454,8 +442,6 @@ async function regenerate_all_popup_content(): Promise<void> {
         return;
     }
 
-    console.log(`[setting-tag.ts] Regenerating content for ${$all_popups.length} popup(s)`);
-
     // Iterate through each popup
     for (let i = 0; i < $all_popups.length; i++) {
         const $popup = $($all_popups[i]);
@@ -468,8 +454,6 @@ async function regenerate_all_popup_content(): Promise<void> {
             const v1_name = popup_data.v1_name;
             const v2_name = popup_data.v2_name;
             const popup_id = popup_data.popup_id;
-
-            console.log(`[setting-tag.ts] Regenerating popup for v1="${v1_name}" v2="${v2_name}"`);
 
             // Regenerate tooltip content with new version preference
             const tooltip_html = await generate_shoelace_tooltip(v1_name, v2_name);
@@ -486,8 +470,6 @@ async function regenerate_all_popup_content(): Promise<void> {
             setup_version_choice_handlers($popup, v1_name, v2_name);
         }
     }
-
-    console.log('[setting-tag.ts] Popup content regeneration complete');
 }
 
 /**
@@ -525,6 +507,11 @@ function initialize_setting_tags($setting_elements: JQuery<HTMLElement>): void {
         const v2_path_html = v2_setting ? build_path_elements(v2_parts, true) : undefined;
 
         // Render complete structure using template
+        if (!compiled_setting_structure_template) {
+            console.error('[setting-tag.ts] Setting structure template not compiled');
+            return;
+        }
+
         const html_structure = compiled_setting_structure_template({
             v1_first_color: first_v1_color,
             v1_path_html: v1_path_html,
@@ -626,8 +613,6 @@ function create_popup_for_setting($setting: JQuery<HTMLElement>, v1_name: string
             clearTimeout(hide_timeout);
             hide_timeout = null;
         }
-
-        console.log(`[setting-tag.ts] Hover on setting: v1="${v1_name}" v2="${v2_name}"`);
 
         // Show popup immediately
         const popup_element = $popup[0] as any;
@@ -1228,8 +1213,6 @@ function setup_related_settings_handlers($popup: JQuery<HTMLElement>, popup_id: 
 
             const setting_name = $(this).data('setting-name');
 
-            console.log(`[setting-tag.ts] Clicked related setting: ${setting_name}`);
-
             // Determine which version we're currently viewing by finding the active tab
             const active_tab_element = $popup.find('sl-tab[active]')[0];
             const active_panel_name = active_tab_element ? $(active_tab_element).attr('panel') : 'v1-panel';
@@ -1392,8 +1375,6 @@ function setup_tab_listener($popup: JQuery<HTMLElement>): void {
 
                 // Save to localStorage
                 localStorage.setItem(TAB_PREFERENCE_KEY, version);
-
-                console.log(`[setting-tag.ts] Tab preference saved: ${version}`);
             });
         }
     }, 100);
@@ -1418,7 +1399,6 @@ function restore_tab_preference($popup: JQuery<HTMLElement>): void {
             // Show the preferred panel using Shoelace API
             try {
                 tab_group.show(`${preferred_tab}-panel`);
-                console.log(`[setting-tag.ts] Restored tab preference: ${preferred_tab}`);
             } catch (error: unknown) {
                 console.warn('[setting-tag.ts] Failed to restore tab preference:', error);
             }
@@ -1427,7 +1407,6 @@ function restore_tab_preference($popup: JQuery<HTMLElement>): void {
             const panel = $popup.find(`sl-tab-panel[name="${preferred_tab}-panel"]`)[0];
             if (panel) {
                 (panel as any).active = true;
-                console.log(`[setting-tag.ts] Restored tab preference (fallback): ${preferred_tab}`);
             }
         }
     }, 100);
@@ -1459,7 +1438,6 @@ function setup_clickable_alert_handlers($popup: JQuery<HTMLElement>): void {
                         if (typeof tab_group.show === 'function') {
                             try {
                                 tab_group.show(target_panel);
-                                console.log(`[setting-tag.ts] Switched to panel: ${target_panel}`);
                             } catch (error: unknown) {
                                 console.warn('[setting-tag.ts] Failed to switch tab:', error);
                             }
@@ -1468,7 +1446,6 @@ function setup_clickable_alert_handlers($popup: JQuery<HTMLElement>): void {
                             const panel = $popup.find(`sl-tab-panel[name="${target_panel}"]`)[0];
                             if (panel) {
                                 (panel as any).active = true;
-                                console.log(`[setting-tag.ts] Switched to panel (fallback): ${target_panel}`);
                             }
                         }
                     });
@@ -1502,8 +1479,6 @@ function setup_version_choice_handlers($popup: JQuery<HTMLElement>, v1_setting_n
                         e.stopPropagation();
                         e.preventDefault();
 
-                        console.log(`[setting-tag.ts] Version choice selected: ${selected_version}`);
-
                         // Save the version preference
                         set_display_version(selected_version);
 
@@ -1523,8 +1498,6 @@ function setup_version_choice_handlers($popup: JQuery<HTMLElement>, v1_setting_n
                         setup_related_settings_handlers($popup, $popup.attr('id') || '');
                         setup_config_line_click_handlers($popup);
                         setup_version_choice_handlers($popup, v1_setting_name, v2_setting_name);
-
-                        console.log(`[setting-tag.ts] Tooltip refreshed with new version setting: ${selected_version}`);
                     });
                 }
             });
@@ -1564,7 +1537,6 @@ function setup_config_line_click_handlers($popup: JQuery<HTMLElement>): void {
 
                         // Open GitHub URL in new tab
                         window.open(github_url, '_blank', 'noopener,noreferrer');
-                        console.log(`[setting-tag.ts] Opened GitHub URL: ${github_url}`);
                     });
 
                     // Add hover effect to show it's clickable
@@ -1607,8 +1579,6 @@ function setup_config_line_click_handlers($popup: JQuery<HTMLElement>): void {
                             setTimeout(() => {
                                 $button.attr('name', 'copy');
                             }, 1500);
-
-                            console.log(`[setting-tag.ts] Copied line: ${line_content}`);
 
                         } catch (error) {
                             console.error('[setting-tag.ts] Failed to copy line:', error);

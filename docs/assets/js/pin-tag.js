@@ -8095,10 +8095,18 @@ function render_markdown(text) {
 function parse_pin_text(pin_text) {
   const trimmed = pin_text.trim();
   const v1_pin_regex = /^(\d+\.\d+)/;
-  const v2_pin_regex = /^(P[A-K]\d{1,2}(?:_C)?)/i;
+  const v2_gpio_regex = /^(P[A-K]\d{1,2})/i;
+  const v2_adc_regex = /^(ADC[13]_\d)/i;
+  const v2_pwm_regex = /^(PWM[12]_[1-4])/i;
   let match = trimmed.match(v1_pin_regex);
   if (!match) {
-    match = trimmed.match(v2_pin_regex);
+    match = trimmed.match(v2_adc_regex);
+  }
+  if (!match) {
+    match = trimmed.match(v2_pwm_regex);
+  }
+  if (!match) {
+    match = trimmed.match(v2_gpio_regex);
   }
   if (!match) {
     return {
@@ -8181,7 +8189,6 @@ async function load_and_compile_templates() {
     compiled_pin_popup_template = import_handlebars.default.compile(popup_source);
     compiled_pin_not_found_template = import_handlebars.default.compile(not_found_source);
     compiled_pin_loading_template = import_handlebars.default.compile(loading_source);
-    console.log("[pin-tag.ts] Pin templates compiled successfully");
   } catch (error) {
     console.error("[pin-tag.ts] Error loading pin templates:", error);
     throw error;
@@ -8193,7 +8200,6 @@ async function load_pin_database() {
   }
   is_loading = true;
   try {
-    console.log("[pin-tag.ts] Loading pin databases from YAML files...");
     pin_database = new Map;
     const [v1_response, v2_response] = await Promise.all([
       fetch("/assets/data/smoothieware-v1-pins.yaml"),
@@ -8206,7 +8212,6 @@ async function load_pin_database() {
         for (const [pin_name, pin_info] of Object.entries(v1_data.pins)) {
           pin_database.set(pin_name, pin_info);
         }
-        console.log(`[pin-tag.ts] Loaded ${Object.keys(v1_data.pins).length} V1 pins`);
       }
     } else {
       console.warn(`[pin-tag.ts] Could not load V1 pins: ${v1_response.status}`);
@@ -8218,12 +8223,10 @@ async function load_pin_database() {
         for (const [pin_name, pin_info] of Object.entries(v2_data.pins)) {
           pin_database.set(pin_name.toUpperCase(), pin_info);
         }
-        console.log(`[pin-tag.ts] Loaded ${Object.keys(v2_data.pins).length} V2 pins`);
       }
     } else {
       console.warn(`[pin-tag.ts] Could not load V2 pins: ${v2_response.status}`);
     }
-    console.log(`[pin-tag.ts] Total pins in database: ${pin_database.size}`);
   } catch (error) {
     console.error("[pin-tag.ts] Error loading pin database:", error);
     throw error;
@@ -8305,13 +8308,10 @@ async function initialize_pin_tags() {
       load_and_compile_templates(),
       load_pin_database()
     ]);
-    console.log("[pin-tag.ts] Pin tag initialization started");
     const $pin_elements = $("pin");
     if ($pin_elements.length === 0) {
-      console.log("[pin-tag.ts] No <pin> elements found on page");
       return;
     }
-    console.log(`[pin-tag.ts] Found ${$pin_elements.length} pin elements`);
     $pin_elements.each((index, element) => {
       const $element = $(element);
       const pin_name = $element.text().trim();
@@ -8324,7 +8324,6 @@ async function initialize_pin_tags() {
       $element.addClass("pin-tag");
       create_popup_for_pin($element, pin_name);
     });
-    console.log("[pin-tag.ts] Pin tag initialization completed");
   } catch (error) {
     console.error("[pin-tag.ts] Error initializing pin tags:", error);
   }

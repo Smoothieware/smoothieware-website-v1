@@ -340,7 +340,7 @@ The button prevents accidental MSD mount during operation (which was a problem o
 
 ### USB Host
 
-The board has USB host capability via pins on a Gadgeteer header (PB12-PB15). Hardware is ready but firmware support isn't implemented yet. Future potential for:
+The board has a dedicated USB-A host connector (J2) for connecting USB devices. Hardware is ready but firmware support isn't implemented yet. Future potential for:
 - USB flash drives (G-code storage)
 - USB keyboards (direct input)
 - USB webcams (time-lapse, monitoring)
@@ -558,7 +558,8 @@ The layout is designed to minimize noise - power circuitry separated from sensit
 | **Thermistor (3-pin)** | 3        | Buffered ADC temperature inputs                   |
 | **Gadgeteer (10-pin)** | 8        | Expansion headers                                 |
 | **MOSFET Output**      | Variable | Screw terminals or headers for bed, hotends, fans |
-| **USB**                | 1        | USB Type B or Micro USB (verify with revision)    |
+| **USB Device (Type B)**| 1        | USB-B connector for serial/mass storage (J1)      |
+| **USB Host (Type A)**  | 1        | USB-A connector for peripherals (J2)              |
 | **Ethernet (RJ45)**    | 1        | Network connection                                |
 | **MicroSD Slot**       | 1        | SD card storage                                   |
 | **Probe Input**        | 1        | Dedicated probe connector                         |

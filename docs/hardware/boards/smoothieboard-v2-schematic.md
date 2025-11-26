@@ -653,12 +653,12 @@ A CR2032 coin cell (B5817WS holder) maintains RTC time when main power is off.
 
 | Channel | Op-Amp | Connector | MCU Pin | ADC |
 |---------|--------|-----------|---------|-----|
-| T1 | U12A | J25 | {::nomarkdown}<pin>PA0_C</pin>{:/nomarkdown} | ADC1_INP16 |
-| T2 | U12B | J24 | {::nomarkdown}<pin>PA1_C</pin>{:/nomarkdown} | ADC1_INP17 |
-| T3 | U12C | J26 | {::nomarkdown}<pin>PC2_C</pin>{:/nomarkdown} | ADC3_INP0 |
-| T4 | U12D | J27-J29 | {::nomarkdown}<pin>PC3_C</pin>{:/nomarkdown} | ADC3_INP1 |
+| T1 | U12A | J25 | {::nomarkdown}<raw>PA0_C</raw>{:/nomarkdown} | ADC1_INP16 |
+| T2 | U12B | J24 | {::nomarkdown}<raw>PA1_C</raw>{:/nomarkdown} | ADC1_INP17 |
+| T3 | U12C | J26 | {::nomarkdown}<raw>PC2_C</raw>{:/nomarkdown} | ADC3_INP0 |
+| T4 | U12D | J27-J29 | {::nomarkdown}<raw>PC3_C</raw>{:/nomarkdown} | ADC3_INP1 |
 
-*Note: The `_C` suffix pins are dedicated analog inputs on STM32H7*
+*Note: The `_C` suffix pins are STM32 hardware names for dedicated analog inputs. In config files, use ADC format: `ADC1_0`, `ADC1_1`, `ADC1_2`, `ADC1_3`*
 
 ### 6.2 Endstop Inputs
 

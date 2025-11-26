@@ -22,12 +22,9 @@ $(() => {
   const FORWARD_TICK_INTERVAL = 3000 / 8;
   const RETURN_TICK_INTERVAL = 800 / 8;
   const audio_context = new (window.AudioContext || window.webkitAudioContext);
-  console.log("[animate.ts] AudioContext created, initial state:", audio_context.state);
   const ensure_audio_ready = async () => {
     if (!audio_ready && audio_context.state === "suspended") {
-      console.log("[animate.ts] Resuming suspended AudioContext...");
       await audio_context.resume();
-      console.log("[animate.ts] AudioContext resumed, state:", audio_context.state);
       audio_ready = true;
     }
   };
@@ -43,7 +40,6 @@ $(() => {
   const play_forward_tick_sound = () => {
     if (!audio_ready)
       return;
-    console.log("[animate.ts] Playing forward tick sound");
     const noise_buffer = create_noise_buffer(0.03);
     const noise_source = audio_context.createBufferSource();
     noise_source.buffer = noise_buffer;
@@ -64,7 +60,6 @@ $(() => {
   const play_return_tick_sound = () => {
     if (!audio_ready)
       return;
-    console.log("[animate.ts] Playing return tick sound");
     const noise_buffer = create_noise_buffer(0.025);
     const noise_source = audio_context.createBufferSource();
     noise_source.buffer = noise_buffer;
@@ -96,7 +91,6 @@ $(() => {
   };
   const start_tick_loop = (interval_ms, is_return) => {
     stop_tick_loop();
-    console.log(`[animate.ts] Starting ${is_return ? "return" : "forward"} tick loop with ${interval_ms}ms interval`);
     if (is_return) {
       play_return_tick_sound();
     } else {
@@ -112,7 +106,6 @@ $(() => {
   };
   const stop_tick_loop = () => {
     if (tick_interval !== null) {
-      console.log("[animate.ts] Stopping tick loop");
       clearInterval(tick_interval);
       tick_interval = null;
     }

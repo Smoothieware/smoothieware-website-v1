@@ -369,19 +369,48 @@ pins:
   # ============================================================================
   # Thermistor Inputs (Buffered ADC)
   # ============================================================================
-  PA0_C:
+  # NOTE: In config files, users specify ADC channel names (e.g., ADC1_0), NOT
+  # STM32 pin names. The firmware maps ADC channels to physical pins internally.
+  # ============================================================================
+  ADC1_0:
     stm32_pin: PA0_C
-    bga_position: T1
-    assignment: Thermistor 1
+    bga_position: N5
+    assignment: Board Temperature (T4)
     description: >-
-      Buffered thermistor input T1, typically used for hotend temperature sensing.
-      Connected via LMV324 op-amp buffer for noise reduction and protection.
-      ADC1 channel 16 (dedicated analog pin with _C suffix).
+      ADC channel 0 for on-board temperature sensing (T4). Maps to PA0_C via
+      internal analog switch. In config files, use `ADC1_0` as the pin name.
+      Typically used for monitoring board/ambient temperature.
     peripheral: ADC1
-    adc_channel: ADC1_INP16
+    adc_channel: ADC_CHANNEL_0
     configurable: true
     pin_functions:
-      - ADC1_INP16
+      - ADC1_INP0
+    electrical_characteristics:
+      voltage_min: 0V
+      voltage_max: 3.3V
+      type: Analog input (buffered)
+      protection: ESD protected, op-amp buffered
+    typical_uses:
+      - Board temperature monitoring
+      - Ambient temperature sensing
+    config_examples:
+      - 'temperature_control.board.thermistor_pin = ADC1_0'
+    hardwired: false
+    pwm_capable: false
+
+  ADC1_1:
+    stm32_pin: PF11
+    bga_position: P5
+    assignment: Thermistor 1 (T1)
+    description: >-
+      ADC channel 1 for thermistor input T1, typically used for hotend temperature.
+      Maps to PF11. Connected via LMV324 op-amp buffer for noise reduction.
+      In config files, use `ADC1_1` as the pin name.
+    peripheral: ADC1
+    adc_channel: ADC_CHANNEL_2
+    configurable: true
+    pin_functions:
+      - ADC1_INP2
     electrical_characteristics:
       voltage_min: 0V
       voltage_max: 3.3V
@@ -389,82 +418,340 @@ pins:
       protection: ESD protected, op-amp buffered
     typical_uses:
       - Hotend temperature sensing
-      - Heater thermistor input
+      - Primary heater thermistor
     config_examples:
-      - 'temperature_control.hotend.thermistor_pin = PA0_C'
+      - 'temperature_control.hotend.thermistor_pin = ADC1_1'
     hardwired: false
     pwm_capable: false
 
-  PA1_C:
-    stm32_pin: PA1_C
-    bga_position: T2
-    assignment: Thermistor 2
+  ADC1_2:
+    stm32_pin: PF12
+    bga_position: R7
+    assignment: Thermistor 2 (T2)
     description: >-
-      Buffered thermistor input T2, typically used for heated bed temperature sensing.
-      Connected via LMV324 op-amp buffer. ADC1 channel 17.
+      ADC channel 2 for thermistor input T2, typically used for heated bed temperature.
+      Maps to PF12. Connected via LMV324 op-amp buffer.
+      In config files, use `ADC1_2` as the pin name.
     peripheral: ADC1
-    adc_channel: ADC1_INP17
+    adc_channel: ADC_CHANNEL_6
     configurable: true
     pin_functions:
-      - ADC1_INP17
+      - ADC1_INP6
     electrical_characteristics:
       voltage_min: 0V
       voltage_max: 3.3V
       type: Analog input (buffered)
+      protection: ESD protected, op-amp buffered
     typical_uses:
       - Heated bed temperature sensing
     config_examples:
-      - 'temperature_control.bed.thermistor_pin = PA1_C'
+      - 'temperature_control.bed.thermistor_pin = ADC1_2'
     hardwired: false
     pwm_capable: false
 
-  PC2_C:
-    stm32_pin: PC2_C
-    bga_position: R1
-    assignment: Thermistor 3
+  ADC1_3:
+    stm32_pin: PB0
+    bga_position: U5
+    assignment: Thermistor 3 (T3)
     description: >-
-      Buffered thermistor input T3, available for second hotend or chamber temperature.
-      Connected via LMV324 op-amp buffer. ADC3 channel 0.
-    peripheral: ADC3
-    adc_channel: ADC3_INP0
+      ADC channel 3 for thermistor input T3, available for second hotend or
+      chamber temperature. Maps to PB0. Connected via LMV324 op-amp buffer.
+      In config files, use `ADC1_3` as the pin name.
+    peripheral: ADC1
+    adc_channel: ADC_CHANNEL_9
     configurable: true
     pin_functions:
-      - ADC3_INP0
+      - ADC1_INP9
     electrical_characteristics:
       voltage_min: 0V
       voltage_max: 3.3V
       type: Analog input (buffered)
+      protection: ESD protected, op-amp buffered
     typical_uses:
       - Second hotend temperature
       - Chamber temperature sensing
+      - Probe thermistor
     config_examples:
-      - 'temperature_control.hotend2.thermistor_pin = PC2_C'
+      - 'temperature_control.hotend2.thermistor_pin = ADC1_3'
     hardwired: false
     pwm_capable: false
 
-  PC3_C:
-    stm32_pin: PC3_C
-    bga_position: R2
-    assignment: Thermistor 4
+  ADC1_4:
+    stm32_pin: PC2
+    bga_position: M3
+    assignment: Expansion ADC (GH)
     description: >-
-      Buffered thermistor input T4, available for additional temperature sensing.
-      Connected via LMV324 op-amp buffer. ADC3 channel 1.
-    peripheral: ADC3
-    adc_channel: ADC3_INP1
+      ADC channel 4 for general-purpose analog input. Maps to PC2. Available
+      on Gadgeteer header GH. In config files, use `ADC1_4` as the pin name.
+    peripheral: ADC1
+    adc_channel: ADC_CHANNEL_12
     configurable: true
     pin_functions:
-      - ADC3_INP1
+      - ADC1_INP12
+      - GPIO
     electrical_characteristics:
       voltage_min: 0V
       voltage_max: 3.3V
-      type: Analog input (buffered)
+      type: Analog input
     typical_uses:
       - Additional temperature sensing
-      - Ambient temperature monitoring
+      - Analog sensor input
     config_examples:
-      - 'temperature_control.chamber.thermistor_pin = PC3_C'
+      - 'temperature_control.chamber.thermistor_pin = ADC1_4'
     hardwired: false
     pwm_capable: false
+
+  ADC1_5:
+    stm32_pin: PC3
+    bga_position: M4
+    assignment: Expansion ADC (GH)
+    description: >-
+      ADC channel 5 for general-purpose analog input. Maps to PC3. Available
+      on Gadgeteer header GH. In config files, use `ADC1_5` as the pin name.
+    peripheral: ADC1
+    adc_channel: ADC_CHANNEL_13
+    configurable: true
+    pin_functions:
+      - ADC1_INP13
+      - GPIO
+    electrical_characteristics:
+      voltage_min: 0V
+      voltage_max: 3.3V
+      type: Analog input
+    typical_uses:
+      - Additional temperature sensing
+      - Analog sensor input
+    config_examples:
+      - 'temperature_control.extra.thermistor_pin = ADC1_5'
+    hardwired: false
+    pwm_capable: false
+
+  ADC1_6:
+    stm32_pin: PA3
+    bga_position: U2
+    assignment: Expansion ADC (GH)
+    description: >-
+      ADC channel 6 for general-purpose analog input. Maps to PA3. Available
+      on Gadgeteer header GH. In config files, use `ADC1_6` as the pin name.
+    peripheral: ADC1
+    adc_channel: ADC_CHANNEL_15
+    configurable: true
+    pin_functions:
+      - ADC1_INP15
+      - GPIO
+    electrical_characteristics:
+      voltage_min: 0V
+      voltage_max: 3.3V
+      type: Analog input
+    typical_uses:
+      - Additional analog sensing
+    config_examples:
+      - 'voltage_monitor.custom = ADC1_6'
+    hardwired: false
+    pwm_capable: false
+
+  # ADC3 channels for voltage monitoring
+  ADC3_0:
+    stm32_pin: PC0
+    bga_position: L2
+    assignment: Voltage Monitor
+    description: >-
+      ADC3 channel 0 for voltage monitoring. Can be used with voltage divider
+      for motor supply (VMOT) sensing. In config files, use `ADC3_0` with
+      optional scale factor.
+    peripheral: ADC3
+    adc_channel: ADC3_CHANNEL_10
+    configurable: true
+    pin_functions:
+      - ADC3_INP10
+    electrical_characteristics:
+      voltage_min: 0V
+      voltage_max: 3.3V
+      type: Analog input
+    typical_uses:
+      - Motor voltage monitoring (VMOT)
+    config_examples:
+      - 'voltage_monitor.vmotor = ADC3_0,11.0'
+    hardwired: false
+    pwm_capable: false
+
+  # ============================================================================
+  # PWM Outputs (Config file format)
+  # ============================================================================
+  # These are the pin names used in Smoothieware V2 config files for PWM outputs
+
+  PWM1_1:
+    stm32_pin: PE9
+    bga_position: P9
+    assignment: PWM Timer 1 Channel 1
+    description: >-
+      PWM output using Timer 1, Channel 1. High-resolution timer for precise
+      PWM control. Available on Gadgeteer header GD. In config files, use
+      `PWM1_1` as the pin name.
+    peripheral: TIM1
+    timer_channel: 1
+    configurable: true
+    pin_functions:
+      - TIM1_CH1
+      - GPIO
+    electrical_characteristics:
+      voltage_min: 0V
+      voltage_max: 3.3V
+      type: Digital output (PWM)
+    typical_uses:
+      - Servo control
+      - LED dimming
+      - Fan speed control
+    config_examples:
+      - 'switch.servo.output_pin = PWM1_1'
+    hardwired: false
+    pwm_capable: true
+
+  PWM1_2:
+    stm32_pin: PE11
+    bga_position: P10
+    assignment: PWM Timer 1 Channel 2
+    description: >-
+      PWM output using Timer 1, Channel 2. High-resolution timer for precise
+      PWM control. Available on Gadgeteer header GD. In config files, use
+      `PWM1_2` as the pin name.
+    peripheral: TIM1
+    timer_channel: 2
+    configurable: true
+    pin_functions:
+      - TIM1_CH2
+      - GPIO
+    typical_uses:
+      - Servo control
+      - LED dimming
+    config_examples:
+      - 'switch.led.output_pin = PWM1_2'
+    hardwired: false
+    pwm_capable: true
+
+  PWM1_3:
+    stm32_pin: PE13
+    bga_position: T10
+    assignment: PWM Timer 1 Channel 3
+    description: >-
+      PWM output using Timer 1, Channel 3. High-resolution timer. Available on
+      Gadgeteer header GD. In config files, use `PWM1_3` as the pin name.
+    peripheral: TIM1
+    timer_channel: 3
+    configurable: true
+    pin_functions:
+      - TIM1_CH3
+      - GPIO
+    typical_uses:
+      - Servo control
+      - PWM output
+    config_examples:
+      - 'switch.pwm.output_pin = PWM1_3'
+    hardwired: false
+    pwm_capable: true
+
+  PWM1_4:
+    stm32_pin: PE14
+    bga_position: U10
+    assignment: PWM Timer 1 Channel 4
+    description: >-
+      PWM output using Timer 1, Channel 4. High-resolution timer. Available on
+      Gadgeteer header GD. In config files, use `PWM1_4` as the pin name.
+    peripheral: TIM1
+    timer_channel: 4
+    configurable: true
+    pin_functions:
+      - TIM1_CH4
+      - GPIO
+    typical_uses:
+      - Servo control
+      - PWM output
+    config_examples:
+      - 'switch.aux.output_pin = PWM1_4'
+    hardwired: false
+    pwm_capable: true
+
+  PWM2_1:
+    stm32_pin: PI5
+    bga_position: A3
+    assignment: PWM Timer 8 Channel 1
+    description: >-
+      PWM output using Timer 8, Channel 1. Available on Gadgeteer header GC.
+      In config files, use `PWM2_1` as the pin name.
+    peripheral: TIM8
+    timer_channel: 1
+    configurable: true
+    pin_functions:
+      - TIM8_CH1
+      - GPIO
+    typical_uses:
+      - Servo control
+      - Fan speed control
+    config_examples:
+      - 'switch.fan.output_pin = PWM2_1'
+    hardwired: false
+    pwm_capable: true
+
+  PWM2_2:
+    stm32_pin: PI6
+    bga_position: A2
+    assignment: PWM Timer 8 Channel 2
+    description: >-
+      PWM output using Timer 8, Channel 2. Available on Gadgeteer header GC.
+      In config files, use `PWM2_2` as the pin name.
+    peripheral: TIM8
+    timer_channel: 2
+    configurable: true
+    pin_functions:
+      - TIM8_CH2
+      - GPIO
+    typical_uses:
+      - Servo control
+      - PWM output
+    config_examples:
+      - 'switch.servo2.output_pin = PWM2_2'
+    hardwired: false
+    pwm_capable: true
+
+  PWM2_3:
+    stm32_pin: PI7
+    bga_position: B3
+    assignment: PWM Timer 8 Channel 3
+    description: >-
+      PWM output using Timer 8, Channel 3. Available on Gadgeteer header GC.
+      In config files, use `PWM2_3` as the pin name.
+    peripheral: TIM8
+    timer_channel: 3
+    configurable: true
+    pin_functions:
+      - TIM8_CH3
+      - GPIO
+    typical_uses:
+      - PWM output
+    config_examples:
+      - 'switch.pwm2.output_pin = PWM2_3'
+    hardwired: false
+    pwm_capable: true
+
+  PWM2_4:
+    stm32_pin: PI2
+    bga_position: B15
+    assignment: PWM Timer 8 Channel 4
+    description: >-
+      PWM output using Timer 8, Channel 4. Available on Gadgeteer header GC.
+      In config files, use `PWM2_4` as the pin name.
+    peripheral: TIM8
+    timer_channel: 4
+    configurable: true
+    pin_functions:
+      - TIM8_CH4
+      - GPIO
+    typical_uses:
+      - PWM output
+    config_examples:
+      - 'switch.aux2.output_pin = PWM2_4'
+    hardwired: false
+    pwm_capable: true
 
   # ============================================================================
   # Endstop Inputs

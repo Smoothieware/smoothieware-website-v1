@@ -21,9 +21,10 @@ The following table shows all pin assignments on the STM32H745XIHx microcontroll
 | STM32 Pin | Smoothie Pin | BGA Position | Assignment | Comment |
 | --------- | ------------ | ------------ | ---------- | ------- |
 | <raw>PA0</raw> | {::nomarkdown}<pin>PA0</pin>{:/nomarkdown} | <raw>N5</raw> | GPIO | General purpose |
-| <raw>PA0_C</raw> | {::nomarkdown}<pin>PA0_C</pin>{:/nomarkdown} | <raw>T1</raw> | Thermistor 1 | ADC1_INP16, buffered via LMV324 |
+| <raw>PA0_C</raw> | {::nomarkdown}<pin>ADC1_0</pin>{:/nomarkdown} | <raw>N5</raw> | Board Temp (T4) | Config: `ADC1_0`, buffered via LMV324 |
 | <raw>PA1</raw> | {::nomarkdown}<pin>PA1</pin>{:/nomarkdown} | <raw>N4</raw> | ETH_REFCLK | 50MHz Ethernet reference clock |
-| <raw>PA1_C</raw> | {::nomarkdown}<pin>PA1_C</pin>{:/nomarkdown} | <raw>T2</raw> | Thermistor 2 | ADC1_INP17, buffered via LMV324 |
+| <raw>PF11</raw> | {::nomarkdown}<pin>ADC1_1</pin>{:/nomarkdown} | <raw>P5</raw> | Thermistor 1 (T1) | Config: `ADC1_1`, buffered via LMV324 |
+| <raw>PF12</raw> | {::nomarkdown}<pin>ADC1_2</pin>{:/nomarkdown} | <raw>R7</raw> | Thermistor 2 (T2) | Config: `ADC1_2`, buffered via LMV324 |
 | <raw>PA2</raw> | {::nomarkdown}<pin>PA2</pin>{:/nomarkdown} | <raw>N3</raw> | ETH_MDIO | Ethernet management data I/O |
 | <raw>PA3</raw> | {::nomarkdown}<pin>PA3</pin>{:/nomarkdown} | <raw>U2</raw> | Expansion GH | ADC1_CH15 available |
 | <raw>PA4</raw> | {::nomarkdown}<pin>PA4</pin>{:/nomarkdown} | <raw>U3</raw> | I2C2_SCL | User I2C bus clock |
@@ -56,10 +57,8 @@ The following table shows all pin assignments on the STM32H745XIHx microcontroll
 | <raw>PB15</raw> | {::nomarkdown}<pin>PB15</pin>{:/nomarkdown} | <raw>T15</raw> | USB_HOST_D- | USB host data minus |
 | <raw>PC0</raw> | {::nomarkdown}<pin>PC0</pin>{:/nomarkdown} | <raw>L2</raw> | SSR1 | Solid state relay output 1 |
 | <raw>PC1</raw> | {::nomarkdown}<pin>PC1</pin>{:/nomarkdown} | <raw>M2</raw> | ETH_MDC | Ethernet management clock |
-| <raw>PC2</raw> | {::nomarkdown}<pin>PC2</pin>{:/nomarkdown} | <raw>M3</raw> | GPIO | General purpose |
-| <raw>PC2_C</raw> | {::nomarkdown}<pin>PC2_C</pin>{:/nomarkdown} | <raw>R1</raw> | Thermistor 3 | ADC3_INP0, buffered via LMV324 |
-| <raw>PC3</raw> | {::nomarkdown}<pin>PC3</pin>{:/nomarkdown} | <raw>M4</raw> | GPIO | General purpose |
-| <raw>PC3_C</raw> | {::nomarkdown}<pin>PC3_C</pin>{:/nomarkdown} | <raw>R2</raw> | Thermistor 4 | ADC3_INP1, buffered via LMV324 |
+| <raw>PC2</raw> | {::nomarkdown}<pin>PC2</pin>{:/nomarkdown} | <raw>M3</raw> | Expansion (GH) | ADC1_4 available as `ADC1_4` |
+| <raw>PC3</raw> | {::nomarkdown}<pin>PC3</pin>{:/nomarkdown} | <raw>M4</raw> | Expansion (GH) | ADC1_5 available as `ADC1_5` |
 | <raw>PC4</raw> | {::nomarkdown}<pin>PC4</pin>{:/nomarkdown} | <raw>T4</raw> | VMOT_SENSE | Motor voltage sense (11:1 divider) |
 | <raw>PC5</raw> | {::nomarkdown}<pin>PC5</pin>{:/nomarkdown} | <raw>U4</raw> | VFET_SENSE | MOSFET voltage sense (11:1 divider) |
 | <raw>PC6</raw> | {::nomarkdown}<pin>PC6</pin>{:/nomarkdown} | <raw>F14</raw> | Expansion GC | GPIO |
@@ -232,10 +231,21 @@ The following table shows all pin assignments on the STM32H745XIHx microcontroll
 
 ## Pin Naming Convention
 
-V2 uses STM32-style pin naming:
+V2 uses several pin naming formats depending on the function:
+
+### GPIO Pins
 - Format: <raw>P</raw> + <raw>Port Letter (A-K)</raw> + <raw>Pin Number (0-15)</raw>
 - Example: {::nomarkdown}<pin>PG0</pin>{:/nomarkdown} = Port G, Pin 0
-- Special analog pins end in <raw>_C</raw> (e.g., {::nomarkdown}<pin>PA0_C</pin>{:/nomarkdown}) for dedicated ADC inputs
+
+### ADC/Thermistor Pins
+- Format: <raw>ADC</raw> + <raw>Peripheral (1 or 3)</raw> + <raw>_</raw> + <raw>Channel (0-6)</raw>
+- Example: {::nomarkdown}<pin>ADC1_0</pin>{:/nomarkdown} = ADC1 channel 0 (board temp)
+- Example: {::nomarkdown}<pin>ADC1_1</pin>{:/nomarkdown} = ADC1 channel 1 (thermistor 1)
+- Use this format for thermistor_pin configuration
+
+### PWM Pins
+- Format: <raw>PWM</raw> + <raw>Timer (1 or 2)</raw> + <raw>_</raw> + <raw>Channel (1-4)</raw>
+- Example: {::nomarkdown}<pin>PWM1_1</pin>{:/nomarkdown} = Timer 1, Channel 1
 
 ### Pin Modifiers
 
@@ -295,17 +305,17 @@ V2 Prime has 4 buffered thermistor inputs via an LMV324 op-amp buffer, plus addi
 
 ### Buffered Thermistor Inputs
 
-| Input | Smoothie Pin | BGA Pin | ADC | Connector | Description |
-| ----- | ------------ | ------- | --- | --------- | ----------- |
-| <raw>T1</raw> | {::nomarkdown}<pin>PA0_C</pin>{:/nomarkdown} | <raw>T1</raw> | <raw>ADC1/2</raw> | <raw>J25</raw> | Thermistor 1 (Hotend) |
-| <raw>T2</raw> | {::nomarkdown}<pin>PA1_C</pin>{:/nomarkdown} | <raw>T2</raw> | <raw>ADC1/2</raw> | <raw>J24</raw> | Thermistor 2 (Bed) |
-| <raw>T3</raw> | {::nomarkdown}<pin>PC2_C</pin>{:/nomarkdown} | <raw>R1</raw> | <raw>ADC1/2/3</raw> | <raw>J26</raw> | Thermistor 3 |
-| <raw>T4</raw> | {::nomarkdown}<pin>PC3_C</pin>{:/nomarkdown} | <raw>R2</raw> | <raw>ADC1/2/3</raw> | <raw>J27-J29</raw> | Thermistor 4 |
+| Input | Config Pin | STM32 Pin | Connector | Description |
+| ----- | ---------- | --------- | --------- | ----------- |
+| <raw>T1</raw> | {::nomarkdown}<pin>ADC1_1</pin>{:/nomarkdown} | <raw>PF11</raw> | <raw>J25</raw> | Thermistor 1 (Hotend) |
+| <raw>T2</raw> | {::nomarkdown}<pin>ADC1_2</pin>{:/nomarkdown} | <raw>PF12</raw> | <raw>J24</raw> | Thermistor 2 (Bed) |
+| <raw>T3</raw> | {::nomarkdown}<pin>ADC1_3</pin>{:/nomarkdown} | <raw>PB0</raw> | <raw>J26</raw> | Thermistor 3 |
+| <raw>T4</raw> | {::nomarkdown}<pin>ADC1_0</pin>{:/nomarkdown} | <raw>PA0_C</raw> | <raw>J27-J29</raw> | Board Temperature |
 
 {::nomarkdown}
-<sl-alert variant="neutral" open>
+<sl-alert variant="primary" open>
   <sl-icon slot="icon" name="info-circle"></sl-icon>
-  <strong>Note:</strong> Pins ending in <raw>_C</raw> are dedicated analog inputs on the STM32H7 that bypass the GPIO matrix for improved ADC performance.
+  <strong>Config Format:</strong> Use the ADC channel name (e.g., <code>ADC1_1</code>) in your config file, NOT the STM32 pin name. For example: <code>temperature_control.hotend.thermistor_pin = ADC1_1</code>
 </sl-alert>
 {:/nomarkdown}
 
@@ -783,16 +793,19 @@ All headers follow this pinout:
 
 ## Complete BGA Pin Reference
 
-### Dedicated Analog Pins (_C suffix)
+### ADC Channel Mapping (Thermistors)
 
-These pins are dedicated to analog functions and bypass the GPIO matrix:
+The firmware maps ADC channel names to physical pins. Use the Config Pin in your config files:
 
-| Pin | BGA Position | ADC Channels | Typical Use |
-| --- | ------------ | ------------ | ----------- |
-| {::nomarkdown}<pin>PA0_C</pin>{:/nomarkdown} | <raw>T1</raw> | <raw>ADC1_INP16, ADC2_INP16</raw> | Thermistor 1 |
-| {::nomarkdown}<pin>PA1_C</pin>{:/nomarkdown} | <raw>T2</raw> | <raw>ADC1_INP17, ADC2_INP17</raw> | Thermistor 2 |
-| {::nomarkdown}<pin>PC2_C</pin>{:/nomarkdown} | <raw>R1</raw> | <raw>ADC3_INP0</raw> | Thermistor 3 |
-| {::nomarkdown}<pin>PC3_C</pin>{:/nomarkdown} | <raw>R2</raw> | <raw>ADC3_INP1</raw> | Thermistor 4 |
+| Config Pin | STM32 Pin | ADC Hardware | Typical Use |
+| ---------- | --------- | ------------ | ----------- |
+| {::nomarkdown}<pin>ADC1_0</pin>{:/nomarkdown} | <raw>PA0_C</raw> | <raw>ADC1_INP0</raw> | Board Temperature (T4) |
+| {::nomarkdown}<pin>ADC1_1</pin>{:/nomarkdown} | <raw>PF11</raw> | <raw>ADC1_INP2</raw> | Thermistor 1 (T1) |
+| {::nomarkdown}<pin>ADC1_2</pin>{:/nomarkdown} | <raw>PF12</raw> | <raw>ADC1_INP6</raw> | Thermistor 2 (T2) |
+| {::nomarkdown}<pin>ADC1_3</pin>{:/nomarkdown} | <raw>PB0</raw> | <raw>ADC1_INP9</raw> | Thermistor 3 (T3) |
+| {::nomarkdown}<pin>ADC1_4</pin>{:/nomarkdown} | <raw>PC2</raw> | <raw>ADC1_INP12</raw> | Expansion (GH) |
+| {::nomarkdown}<pin>ADC1_5</pin>{:/nomarkdown} | <raw>PC3</raw> | <raw>ADC1_INP13</raw> | Expansion (GH) |
+| {::nomarkdown}<pin>ADC1_6</pin>{:/nomarkdown} | <raw>PA3</raw> | <raw>ADC1_INP15</raw> | Expansion (GH) |
 
 ### Power Pins Summary
 
@@ -810,17 +823,20 @@ These pins are dedicated to analog functions and bypass the GPIO matrix:
 
 ## STM32H7 ADC Channels Summary
 
-| ADC Channel | Port Pin | Smoothie Pin | Assignment |
-| ----------- | -------- | ------------ | ---------- |
-| <raw>ADC1_INP16</raw> | <raw>PA0_C</raw> | {::nomarkdown}<pin>PA0_C</pin>{:/nomarkdown} | Thermistor 1 |
-| <raw>ADC1_INP17</raw> | <raw>PA1_C</raw> | {::nomarkdown}<pin>PA1_C</pin>{:/nomarkdown} | Thermistor 2 |
-| <raw>ADC1_CH3</raw> | <raw>PA6</raw> | {::nomarkdown}<pin>PA6</pin>{:/nomarkdown} | Expansion (GH) |
-| <raw>ADC1_CH5</raw> | <raw>PB1</raw> | {::nomarkdown}<pin>PB1</pin>{:/nomarkdown} | Expansion (GH) |
-| <raw>ADC1_CH9</raw> | <raw>PB0</raw> | {::nomarkdown}<pin>PB0</pin>{:/nomarkdown} | Expansion (GH) |
-| <raw>ADC1_CH13</raw> | <raw>PC4</raw> | {::nomarkdown}<pin>PC4</pin>{:/nomarkdown} | VMOT sense |
-| <raw>ADC1_CH15</raw> | <raw>PC5</raw> | {::nomarkdown}<pin>PC5</pin>{:/nomarkdown} | VFET sense |
-| <raw>ADC3_INP0</raw> | <raw>PC2_C</raw> | {::nomarkdown}<pin>PC2_C</pin>{:/nomarkdown} | Thermistor 3 |
-| <raw>ADC3_INP1</raw> | <raw>PC3_C</raw> | {::nomarkdown}<pin>PC3_C</pin>{:/nomarkdown} | Thermistor 4 |
+This table shows the relationship between Smoothieware config names and STM32 hardware.
+
+| Config Name | STM32 Pin | ADC Hardware | Assignment |
+| ----------- | --------- | ------------ | ---------- |
+| {::nomarkdown}<pin>ADC1_0</pin>{:/nomarkdown} | <raw>PA0_C</raw> | <raw>ADC1_INP0</raw> | Board Temperature |
+| {::nomarkdown}<pin>ADC1_1</pin>{:/nomarkdown} | <raw>PF11</raw> | <raw>ADC1_INP2</raw> | Thermistor 1 |
+| {::nomarkdown}<pin>ADC1_2</pin>{:/nomarkdown} | <raw>PF12</raw> | <raw>ADC1_INP6</raw> | Thermistor 2 |
+| {::nomarkdown}<pin>ADC1_3</pin>{:/nomarkdown} | <raw>PB0</raw> | <raw>ADC1_INP9</raw> | Thermistor 3 |
+| {::nomarkdown}<pin>ADC1_4</pin>{:/nomarkdown} | <raw>PC2</raw> | <raw>ADC1_INP12</raw> | Expansion (GH) |
+| {::nomarkdown}<pin>ADC1_5</pin>{:/nomarkdown} | <raw>PC3</raw> | <raw>ADC1_INP13</raw> | Expansion (GH) |
+| {::nomarkdown}<pin>ADC1_6</pin>{:/nomarkdown} | <raw>PA3</raw> | <raw>ADC1_INP15</raw> | Expansion (GH) |
+| {::nomarkdown}<pin>ADC3_0</pin>{:/nomarkdown} | <raw>PC0</raw> | <raw>ADC3_INP10</raw> | Voltage Monitor |
+| {::nomarkdown}<pin>PC4</pin>{:/nomarkdown} | <raw>PC4</raw> | <raw>ADC1_INP4</raw> | VMOT sense |
+| {::nomarkdown}<pin>PC5</pin>{:/nomarkdown} | <raw>PC5</raw> | <raw>ADC1_INP8</raw> | VFET sense |
 
 {::nomarkdown}
 <sl-alert variant="warning" open>
@@ -867,8 +883,8 @@ For users migrating from V1, here's how key functions map between versions:
 | <raw>Alpha Step</raw> | {::nomarkdown}<pin>2.0</pin>{:/nomarkdown} | {::nomarkdown}<pin>PG0</pin>{:/nomarkdown} | |
 | <raw>Alpha Dir</raw> | {::nomarkdown}<pin>0.5</pin>{:/nomarkdown} | {::nomarkdown}<pin>PG1</pin>{:/nomarkdown} | |
 | <raw>Alpha Enable</raw> | {::nomarkdown}<pin>0.4</pin>{:/nomarkdown} | {::nomarkdown}<pin>PH13</pin>{:/nomarkdown} | Shared enable in V2 |
-| <raw>Hotend Therm</raw> | {::nomarkdown}<pin>0.23</pin>{:/nomarkdown} | {::nomarkdown}<pin>PA0_C</pin>{:/nomarkdown} | Buffered in V2 |
-| <raw>Bed Therm</raw> | {::nomarkdown}<pin>0.24</pin>{:/nomarkdown} | {::nomarkdown}<pin>PA1_C</pin>{:/nomarkdown} | Buffered in V2 |
+| <raw>Hotend Therm</raw> | {::nomarkdown}<pin>0.23</pin>{:/nomarkdown} | {::nomarkdown}<pin>ADC1_1</pin>{:/nomarkdown} | Buffered in V2, maps to PF11 |
+| <raw>Bed Therm</raw> | {::nomarkdown}<pin>0.24</pin>{:/nomarkdown} | {::nomarkdown}<pin>ADC1_2</pin>{:/nomarkdown} | Buffered in V2, maps to PF12 |
 | <raw>X Min Endstop</raw> | {::nomarkdown}<pin>1.24</pin>{:/nomarkdown} | {::nomarkdown}<pin>PG10</pin>{:/nomarkdown} | |
 | <raw>Hotend Heater</raw> | {::nomarkdown}<pin>2.7</pin>{:/nomarkdown} | {::nomarkdown}<pin>PJ6</pin>{:/nomarkdown} | Via 74HCT541 buffer |
 | <raw>Bed Heater</raw> | {::nomarkdown}<pin>2.5</pin>{:/nomarkdown} | {::nomarkdown}<pin>PJ10</pin>{:/nomarkdown} | Via 74HCT541 buffer |

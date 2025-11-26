@@ -2691,19 +2691,15 @@ var CACHE_TIMESTAMP_KEY = "smoothieware_settings_cache_timestamp";
 var CACHE_TIMESTAMP_CONFIG_KEY = "smoothieware_config_cache_timestamp";
 var CACHE_DURATION_MS = 24 * 60 * 60 * 1000;
 $(() => {
-  console.log("[load-assets.ts] Initializing asset loader");
   load_config_files();
-  console.log("[load-assets.ts] Loading configuration data...");
   load_settings_data();
 });
 async function load_settings_data() {
   if (window.settings_data_loaded) {
-    console.log("[load-assets.ts] Settings data already loaded in this session");
     return;
   }
   const cache_valid = check_cache_validity();
   if (cache_valid) {
-    console.log("[load-assets.ts] Loading settings data from browser cache");
     const v1_cached = localStorage.getItem(CACHE_KEY_V1);
     const v2_cached = localStorage.getItem(CACHE_KEY_V2);
     if (v1_cached && v2_cached) {
@@ -2713,14 +2709,12 @@ async function load_settings_data() {
         window.v1_settings = reconstruct_settings_data(v1_data);
         window.v2_settings = reconstruct_settings_data(v2_data);
         window.settings_data_loaded = true;
-        console.log("[load-assets.ts] Settings data loaded from cache successfully");
         return;
       } catch (error) {
         console.warn("[load-assets.ts] Failed to parse cached data, will fetch fresh:", error);
       }
     }
   }
-  console.log("[load-assets.ts] Fetching fresh settings data from server");
   try {
     const [v1_response, v2_response] = await Promise.all([
       fetch("/assets/data/smoothieware-v1-config.yaml"),
@@ -2739,9 +2733,6 @@ async function load_settings_data() {
     window.v2_settings = process_settings_data(v2_data);
     window.settings_data_loaded = true;
     cache_settings_data(v1_data, v2_data);
-    console.log("[load-assets.ts] Settings data loaded and cached successfully");
-    console.log("[load-assets.ts] v1 settings count:", window.v1_settings.metadata.total_settings);
-    console.log("[load-assets.ts] v2 settings count:", window.v2_settings.metadata.total_settings);
   } catch (error) {
     console.error("[load-assets.ts] Failed to load settings data:", error);
     window.settings_data_loaded = false;
@@ -2817,19 +2808,16 @@ function cache_settings_data(v1_data, v2_data) {
     localStorage.setItem(CACHE_KEY_V1, JSON.stringify(v1_data));
     localStorage.setItem(CACHE_KEY_V2, JSON.stringify(v2_data));
     localStorage.setItem(CACHE_TIMESTAMP_KEY, Date.now().toString());
-    console.log("[load-assets.ts] Settings data cached successfully");
   } catch (error) {
     console.warn("[load-assets.ts] Failed to cache settings data:", error);
   }
 }
 async function load_config_files() {
   if (window.config_files_loaded) {
-    console.log("[load-assets.ts] Config files already loaded in this session");
     return;
   }
   const cache_valid = check_config_cache_validity();
   if (cache_valid) {
-    console.log("[load-assets.ts] Loading config files from browser cache");
     const v1_cached = localStorage.getItem(CACHE_KEY_V1_CONFIG);
     const v2_cached = localStorage.getItem(CACHE_KEY_V2_CONFIG);
     if (v1_cached && v2_cached) {
@@ -2837,14 +2825,12 @@ async function load_config_files() {
         window.v1_config_file = v1_cached;
         window.v2_config_file = v2_cached;
         window.config_files_loaded = true;
-        console.log("[load-assets.ts] Config files loaded from cache successfully");
         return;
       } catch (error) {
         console.warn("[load-assets.ts] Failed to parse cached config files, will fetch fresh:", error);
       }
     }
   }
-  console.log("[load-assets.ts] Fetching fresh config files from server");
   try {
     const [v1_response, v2_response] = await Promise.all([
       fetch("/assets/config/v1/config"),
@@ -2861,9 +2847,6 @@ async function load_config_files() {
     window.v2_config_file = v2_config_text;
     window.config_files_loaded = true;
     cache_config_files(v1_config_text, v2_config_text);
-    console.log("[load-assets.ts] Config files loaded and cached successfully");
-    console.log("[load-assets.ts] v1 config size:", v1_config_text.length, "bytes");
-    console.log("[load-assets.ts] v2 config size:", v2_config_text.length, "bytes");
   } catch (error) {
     console.error("[load-assets.ts] Failed to load config files:", error);
     window.config_files_loaded = false;
@@ -2887,7 +2870,6 @@ function cache_config_files(v1_config, v2_config) {
     localStorage.setItem(CACHE_KEY_V1_CONFIG, v1_config);
     localStorage.setItem(CACHE_KEY_V2_CONFIG, v2_config);
     localStorage.setItem(CACHE_TIMESTAMP_CONFIG_KEY, Date.now().toString());
-    console.log("[load-assets.ts] Config files cached successfully");
   } catch (error) {
     console.warn("[load-assets.ts] Failed to cache config files:", error);
   }

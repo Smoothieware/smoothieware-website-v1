@@ -11,8 +11,19 @@
  *
  * Visibility is controlled by data-display-version attribute set by JavaScript:
  * - No attribute or "nc" or "both": show both v1 and v2 with borders and labels
- * - "v1": show only v1 with no styling (plain content)
- * - "v2": show only v2 with no styling (plain content)
+ * - "v1": show only v1 with no styling (plain content, display:contents)
+ * - "v2": show only v2 with no styling (plain content, display:contents)
+ *
+ * When showing only one version, display:contents is used on both versioned
+ * and v1/v2 elements to ensure content flows naturally without affecting
+ * surrounding layout (e.g., list items remain properly formatted).
+ *
+ * TRANSPARENT MODE (when one version is empty):
+ * When v1 or v2 contains no alphanumeric characters (empty), the tag operates
+ * in "transparent" mode - no borders, labels, or styling. The non-empty
+ * content displays as if the versioned tag wasn't there. If the selected
+ * version matches the empty tag, nothing is displayed at all.
+ * JavaScript sets data-has-empty="v1" or data-has-empty="v2" to enable this.
  */
 
 /* Base versioned tag container */
@@ -28,6 +39,12 @@ versioned {
 
     /* Allow nested tags to work properly */
     position:        relative;
+}
+
+/* When showing only v1 or v2: use display:contents to not affect layout */
+versioned[data-display-version="v1"],
+versioned[data-display-version="v2"] {
+    display:         contents;
 }
 
 /* Add margin only when showing both versions */
@@ -123,6 +140,18 @@ v2 {
 
     /* Position for label */
     position:        relative;
+}
+
+/* When showing only v1 or v2: use display:contents so content flows naturally */
+versioned[data-display-version="v1"] v1,
+versioned[data-display-version="v2"] v2 {
+    display:         contents;
+}
+
+/* Hide labels when showing only one version (no border/background to anchor them) */
+versioned[data-display-version="v1"] v1::before,
+versioned[data-display-version="v2"] v2::before {
+    display:         none;
 }
 
 /* When showing BOTH versions: add styling to distinguish them */
@@ -269,14 +298,173 @@ versioned[data-display-version="v2"] v1 {
 /* versioned[data-display-version="both"] shows both */
 
 /* ============================================================================
+   TRANSPARENT MODE - WHEN ONE VERSION IS EMPTY
+   ============================================================================
+   When v1 or v2 is empty (contains no alphanumeric characters), the versioned
+   tag operates in "transparent" mode:
+   - No borders, labels, or styling on the non-empty content
+   - Content displays as if the versioned tag wasn't there
+   - If the selected version matches the empty tag, nothing is displayed
+
+   JavaScript sets data-has-empty attribute:
+   - data-has-empty="v1": v1 is empty, v2 has content
+   - data-has-empty="v2": v2 is empty, v1 has content
+   ============================================================================ */
+
+/* --- TRANSPARENT MODE: v1 is empty, v2 has content --- */
+
+/* When v1 is empty and user selects v1: hide everything */
+versioned[data-has-empty="v1"][data-display-version="v1"] {
+    display:         none !important;
+}
+
+/* When v1 is empty and user selects v2 or both: show v2 transparently */
+versioned[data-has-empty="v1"][data-display-version="v2"],
+versioned[data-has-empty="v1"][data-display-version="both"],
+versioned[data-has-empty="v1"][data-display-version="nc"],
+versioned[data-has-empty="v1"]:not([data-display-version]) {
+    display:         contents !important;
+    margin:          0 !important;
+}
+
+/* v2 content in transparent mode: no styling, display:contents */
+versioned[data-has-empty="v1"][data-display-version="v2"] v2,
+versioned[data-has-empty="v1"][data-display-version="both"] v2,
+versioned[data-has-empty="v1"][data-display-version="nc"] v2,
+versioned[data-has-empty="v1"]:not([data-display-version]) v2 {
+    display:         contents !important;
+    background:      none !important;
+    border:          none !important;
+    border-radius:   0 !important;
+    padding:         0 !important;
+    margin:          0 !important;
+    box-shadow:      none !important;
+    font-family:     inherit !important;
+    font-size:       inherit !important;
+    line-height:     inherit !important;
+    color:           inherit !important;
+}
+
+/* Also make ul inside v2 transparent (no nesting) */
+versioned[data-has-empty="v1"][data-display-version="v2"] v2 > ul,
+versioned[data-has-empty="v1"][data-display-version="both"] v2 > ul,
+versioned[data-has-empty="v1"][data-display-version="nc"] v2 > ul,
+versioned[data-has-empty="v1"]:not([data-display-version]) v2 > ul {
+    display:         contents !important;
+}
+
+/* Hide v2 label in transparent mode */
+versioned[data-has-empty="v1"] v2::before {
+    display:         none !important;
+    content:         none !important;
+}
+
+/* Hide empty v1 in transparent mode */
+versioned[data-has-empty="v1"] v1 {
+    display:         none !important;
+}
+
+/* Hide v1 label in transparent mode */
+versioned[data-has-empty="v1"] v1::before {
+    display:         none !important;
+    content:         none !important;
+}
+
+/* --- TRANSPARENT MODE: v2 is empty, v1 has content --- */
+
+/* When v2 is empty and user selects v2: hide everything */
+versioned[data-has-empty="v2"][data-display-version="v2"] {
+    display:         none !important;
+}
+
+/* When v2 is empty and user selects v1 or both: show v1 transparently */
+versioned[data-has-empty="v2"][data-display-version="v1"],
+versioned[data-has-empty="v2"][data-display-version="both"],
+versioned[data-has-empty="v2"][data-display-version="nc"],
+versioned[data-has-empty="v2"]:not([data-display-version]) {
+    display:         contents !important;
+    margin:          0 !important;
+}
+
+/* v1 content in transparent mode: no styling, display:contents */
+versioned[data-has-empty="v2"][data-display-version="v1"] v1,
+versioned[data-has-empty="v2"][data-display-version="both"] v1,
+versioned[data-has-empty="v2"][data-display-version="nc"] v1,
+versioned[data-has-empty="v2"]:not([data-display-version]) v1 {
+    display:         contents !important;
+    background:      none !important;
+    border:          none !important;
+    border-radius:   0 !important;
+    padding:         0 !important;
+    margin:          0 !important;
+    box-shadow:      none !important;
+    font-family:     inherit !important;
+    font-size:       inherit !important;
+    line-height:     inherit !important;
+    color:           inherit !important;
+}
+
+/* Also make ul inside v1 transparent (no nesting) */
+versioned[data-has-empty="v2"][data-display-version="v1"] v1 > ul,
+versioned[data-has-empty="v2"][data-display-version="both"] v1 > ul,
+versioned[data-has-empty="v2"][data-display-version="nc"] v1 > ul,
+versioned[data-has-empty="v2"]:not([data-display-version]) v1 > ul {
+    display:         contents !important;
+}
+
+/* Hide v1 label in transparent mode */
+versioned[data-has-empty="v2"] v1::before {
+    display:         none !important;
+    content:         none !important;
+}
+
+/* Hide empty v2 in transparent mode */
+versioned[data-has-empty="v2"] v2 {
+    display:         none !important;
+}
+
+/* Hide v2 label in transparent mode */
+versioned[data-has-empty="v2"] v2::before {
+    display:         none !important;
+    content:         none !important;
+}
+
+/* ============================================================================
+   VERSIONED LIST ITEMS - Styled divs that look like list items
+   ============================================================================ */
+
+.versioned-list-item {
+    display:         list-item;
+    list-style-type: disc;
+    list-style-position: outside;
+    margin-bottom:   0.25em;
+}
+
+/* ============================================================================
+   V2-ONLY LIST ITEMS - Restructured from versioned tags into proper <li> elements
+   These are created by JavaScript when V2-only versioned tags are inside lists
+   ============================================================================ */
+
+/* V2-only list items are visible in v2 and both modes */
+.v2-only-list-item {
+    /* Default: visible */
+}
+
+/* Hide V2-only list items when V1 is selected */
+body[data-display-version="v1"] .v2-only-list-item,
+body[data-display-version="v1"] .v2-only-list-item ul {
+    display:         none !important;
+}
+
+/* ============================================================================
    HOVER EFFECTS IN SINGLE-VERSION MODE
    ============================================================================
    When showing only v1 or v2, hovering over the content area shows a border
    to indicate it's interactive and clickable
    ============================================================================ */
 
-/* Show border when hovering over v1 in v1-only mode */
-versioned[data-display-version="v1"] v1:hover {
+/* Show border when hovering over v1 in v1-only mode (NOT in transparent mode) */
+versioned[data-display-version="v1"]:not([data-has-empty]) v1:hover {
     background:      #1a1a1a;
     border:          1px dotted #ffd966; /* 1px dotted orange */
     border-radius:   6px;
@@ -288,8 +476,8 @@ versioned[data-display-version="v1"] v1:hover {
                      2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-/* Show border when hovering over v2 in v2-only mode */
-versioned[data-display-version="v2"] v2:hover {
+/* Show border when hovering over v2 in v2-only mode (NOT in transparent mode) */
+versioned[data-display-version="v2"]:not([data-has-empty]) v2:hover {
     background:      #1a1a1a;
     border:          1px dotted #7ec8ed; /* 1px dotted blue */
     border-radius:   6px;

@@ -385,29 +385,31 @@ alpha.max_rate = 30000
 
 ### 7.1 Key Setting Mappings
 
-| Setting | V1 | V2 |
-|---------|----|----|
-| **Steps/mm** | {::nomarkdown}<setting v1="alpha_steps_per_mm" v2="actuator.alpha.steps_per_mm"></setting>{:/nomarkdown} | `actuator.alpha.steps_per_mm` |
-| **Max rate** | {::nomarkdown}<setting v1="alpha_max_rate" v2="actuator.alpha.max_rate"></setting>{:/nomarkdown} | `actuator.alpha.max_rate` |
-| **Acceleration** | {::nomarkdown}<setting v1="acceleration" v2="motion control.default_acceleration"></setting>{:/nomarkdown} | `motion control.default_acceleration` |
-| **Junction deviation** | {::nomarkdown}<setting v1="junction_deviation" v2="planner.xy_junction_deviation"></setting>{:/nomarkdown} | `planner.xy_junction_deviation` |
-| **Step pin** | {::nomarkdown}<setting v1="alpha_step_pin" v2="actuator.alpha.step_pin"></setting>{:/nomarkdown} | `actuator.alpha.step_pin` |
-| **Motor current** | {::nomarkdown}<setting v1="alpha_current" v2="tmc2660.alpha.current"></setting>{:/nomarkdown} | `tmc2660.alpha.current` (mA) |
-| **Heater enable** | `temperature_control.hotend.enable` | `[T0 hotend]` section, `enable = true` |
-| **PID P** | `temperature_control.hotend.p_factor` | `pid_p` |
+| Setting | |
+|---------|---|
+| **Steps/mm** | {::nomarkdown}<setting v1="alpha_steps_per_mm" v2="actuator.alpha.steps_per_mm"></setting>{:/nomarkdown} |
+| **Max rate** | {::nomarkdown}<setting v1="alpha_max_rate" v2="actuator.alpha.max_rate"></setting>{:/nomarkdown} |
+| **Acceleration** | {::nomarkdown}<setting v1="acceleration" v2="motion control.default_acceleration"></setting>{:/nomarkdown} |
+| **Junction deviation** | {::nomarkdown}<setting v1="junction_deviation" v2="planner.xy_junction_deviation"></setting>{:/nomarkdown} |
+| **Step pin** | {::nomarkdown}<setting v1="alpha_step_pin" v2="actuator.alpha.step_pin"></setting>{:/nomarkdown} |
+| **Motor current** | {::nomarkdown}<setting v1="alpha_current" v2="tmc2660.alpha.current"></setting>{:/nomarkdown} |
+| **Heater enable** | {::nomarkdown}<setting v1="temperature_control.hotend.enable" v2="hotend.enable"></setting>{:/nomarkdown} |
+| **PID P** | {::nomarkdown}<setting v1="temperature_control.hotend.p_factor" v2="hotend.p_factor"></setting>{:/nomarkdown} |
 
 ### 7.2 V2 Configuration Sections
 
 ```ini
-[system]
 [general]
+[system]
 [motion control]
 [planner]
 [actuator]
-[actuator.alpha]
 [tmc2660] or [tmc2590]
-[alpha endstop]
-[T0 hotend]
+[current control]
+[endstops]
+[zprobe]
+[temperature control]
+[extruder]
 [switch]
 [voltage monitor]
 [network]

@@ -302,7 +302,7 @@ On the v1 board, that port exposes a composite device (Serial + Mass storage) to
 <v2>
 {:/nomarkdown}
 
-The v2 board implements USB with dual ports: USB Device (for serial CDC/ACM and mass storage MSC with improved safety via pushbutton/command mode selection) and USB Host (pins available, not yet firmware-implemented). MTP (Media Transfer Protocol) support is planned as a future enhancement for safer SD card access and virtual file presentation, but is not yet implemented.
+The v2 board implements USB with dual ports: USB Device (for serial CDC/ACM and mass storage MSC with improved safety via pushbutton/command mode selection) and USB Host via a dedicated USB-A connector (J2, not yet firmware-implemented). MTP (Media Transfer Protocol) support is planned as a future enhancement for safer SD card access and virtual file presentation, but is not yet implemented.
 
 {::nomarkdown}
 </v2>

@@ -123,9 +123,15 @@ interface ParsedPin {
  * Parses a pin text to extract the base pin number and any modifiers
  * Modifiers: ! (invert), o (open-drain), ^ (pull-up), v (pull-down), - (no pull), @ (repeater)
  *
- * Supports both V1 and V2 pin formats:
+ * Supports V1, V2 GPIO, and V2 ADC pin formats:
  * - V1 (LPC1769): digit.digit format, e.g., "1.12", "2.5", "0.26"
- * - V2 (STM32H7): PXn format, e.g., "PG0", "PA0_C", "PJ12"
+ * - V2 GPIO (STM32H7): PXn format, e.g., "PG0", "PA0", "PJ12"
+ * - V2 ADC (STM32H7): ADCn_m format, e.g., "ADC1_0", "ADC1_1", "ADC3_0"
+ * - V2 PWM (STM32H7): PWMn_m format, e.g., "PWM1_1", "PWM2_1"
+ *
+ * Note: The _C suffix pins (e.g., PA0_C, PC2_C) are STM32 hardware names for
+ * dedicated analog pins. Users should NOT type these in config files - instead
+ * use the ADCn_m format (e.g., ADC1_0) for thermistor inputs.
  */
 function parse_pin_text(pin_text: string): ParsedPin {
     // Trim whitespace
@@ -135,16 +141,35 @@ function parse_pin_text(pin_text: string): ParsedPin {
     // Pin format: digit(s).digit(s)
     const v1_pin_regex = /^(\d+\.\d+)/;
 
-    // Regular expression to match V2 pin format (e.g., PG0, PA0_C, PJ12)
-    // Pin format: P + port letter (A-K) + pin number (0-15) + optional _C suffix
-    const v2_pin_regex = /^(P[A-K]\d{1,2}(?:_C)?)/i;
+    // Regular expression to match V2 GPIO pin format (e.g., PG0, PA0, PJ12)
+    // Pin format: P + port letter (A-K) + pin number (0-15)
+    // Note: _C suffix is NOT supported - use ADCn_m format for analog inputs
+    const v2_gpio_regex = /^(P[A-K]\d{1,2})/i;
+
+    // Regular expression to match V2 ADC channel format (e.g., ADC1_0, ADC3_1)
+    // Format: ADC + peripheral number (1 or 3) + underscore + channel (0-6)
+    const v2_adc_regex = /^(ADC[13]_\d)/i;
+
+    // Regular expression to match V2 PWM channel format (e.g., PWM1_1, PWM2_4)
+    // Format: PWM + timer number (1 or 2) + underscore + channel (1-4)
+    const v2_pwm_regex = /^(PWM[12]_[1-4])/i;
 
     // Try V1 format first
     let match = trimmed.match(v1_pin_regex);
 
-    // If V1 didn't match, try V2 format
+    // If V1 didn't match, try V2 ADC format
     if (!match) {
-        match = trimmed.match(v2_pin_regex);
+        match = trimmed.match(v2_adc_regex);
+    }
+
+    // If ADC didn't match, try V2 PWM format
+    if (!match) {
+        match = trimmed.match(v2_pwm_regex);
+    }
+
+    // If PWM didn't match, try V2 GPIO format
+    if (!match) {
+        match = trimmed.match(v2_gpio_regex);
     }
 
     if (!match) {
@@ -156,7 +181,7 @@ function parse_pin_text(pin_text: string): ParsedPin {
         };
     }
 
-    // Normalize V2 pins to uppercase for database lookup
+    // Normalize to uppercase for database lookup
     const base_pin = match[1].toUpperCase();
 
     // Everything after the base pin number is considered modifiers
@@ -245,7 +270,7 @@ async function load_and_compile_templates(): Promise<void> {
         Handlebars.registerHelper('markdown', render_markdown);
 
         // Helper to check if value is truthy
-        Handlebars.registerHelper('if_truthy', function(value, options) {
+        Handlebars.registerHelper('if_truthy', function(this: any, value: any, options: any) {
             if (value === true || value === 'true') {
                 return options.fn(this);
             }
@@ -264,8 +289,6 @@ async function load_and_compile_templates(): Promise<void> {
         compiled_pin_popup_template = Handlebars.compile(popup_source);
         compiled_pin_not_found_template = Handlebars.compile(not_found_source);
         compiled_pin_loading_template = Handlebars.compile(loading_source);
-
-        console.log('[pin-tag.ts] Pin templates compiled successfully');
 
     } catch (error) {
         console.error('[pin-tag.ts] Error loading pin templates:', error);
@@ -286,8 +309,6 @@ async function load_pin_database(): Promise<void> {
     is_loading = true;
 
     try {
-        console.log('[pin-tag.ts] Loading pin databases from YAML files...');
-
         // Initialize database
         pin_database = new Map();
 
@@ -306,13 +327,12 @@ async function load_pin_database(): Promise<void> {
                 for (const [pin_name, pin_info] of Object.entries(v1_data.pins)) {
                     pin_database.set(pin_name, pin_info);
                 }
-                console.log(`[pin-tag.ts] Loaded ${Object.keys(v1_data.pins).length} V1 pins`);
             }
         } else {
             console.warn(`[pin-tag.ts] Could not load V1 pins: ${v1_response.status}`);
         }
 
-        // Process V2 pins (STM32 format: PG0, PA0_C, etc.)
+        // Process V2 pins (STM32 GPIO: PG0, PA0; ADC: ADC1_0, ADC3_0; PWM: PWM1_1)
         if (v2_response.ok) {
             const v2_yaml_text = await v2_response.text();
             const v2_data = jsyaml.load(v2_yaml_text) as any;
@@ -322,13 +342,10 @@ async function load_pin_database(): Promise<void> {
                     // Normalize to uppercase for consistent lookups
                     pin_database.set(pin_name.toUpperCase(), pin_info);
                 }
-                console.log(`[pin-tag.ts] Loaded ${Object.keys(v2_data.pins).length} V2 pins`);
             }
         } else {
             console.warn(`[pin-tag.ts] Could not load V2 pins: ${v2_response.status}`);
         }
-
-        console.log(`[pin-tag.ts] Total pins in database: ${pin_database.size}`);
 
     } catch (error) {
         console.error('[pin-tag.ts] Error loading pin database:', error);
@@ -467,17 +484,12 @@ async function initialize_pin_tags(): Promise<void> {
             load_pin_database()
         ]);
 
-        console.log('[pin-tag.ts] Pin tag initialization started');
-
         // Find all <pin> elements
         const $pin_elements = $('pin');
 
         if ($pin_elements.length === 0) {
-            console.log('[pin-tag.ts] No <pin> elements found on page');
             return;
         }
-
-        console.log(`[pin-tag.ts] Found ${$pin_elements.length} pin elements`);
 
         // Process each pin element
         $pin_elements.each((index, element) => {
@@ -503,8 +515,6 @@ async function initialize_pin_tags(): Promise<void> {
             // Create popup tooltip
             create_popup_for_pin($element, pin_name);
         });
-
-        console.log('[pin-tag.ts] Pin tag initialization completed');
 
     } catch (error) {
         console.error('[pin-tag.ts] Error initializing pin tags:', error);

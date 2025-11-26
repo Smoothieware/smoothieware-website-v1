@@ -224,22 +224,20 @@ The Smoothie project is always looking for help. Whatever your skills are, there
   - [Spindle](spindle-module): Control your spindle motor with G-code
   - [Switch](switch): Quickly create custom G-code ⇆ Input/Output mapping without needing to write a custom module, like to control a fan
   - [TemperatureSwitch](temperatureswitch): Automatically turn/on a device based on a threshold temperature
-  - [ZProbe](zprobe): For probing, levelling, and automated calibration
-    - [PCB milling](pcb-milling): For PCB milling
   - [Drillingcycles](drillingcycles): Canned drilling cycles support
   - [Filament-detector](filament-detector): Use an encoder to check filament is pushed correctly
+{::nomarkdown}<versioned><v1></v1><v2><div class="versioned-list-item" style="margin-left:1.25em;"><a href="lathe">Lathe</a>: Spindle-synchronized turning and threading operations</div><div class="versioned-list-item" style="margin-left:2.5em;"><a href="els">ELS</a>: Electronic Leadscrew with TM1638 display interface</div></v2></versioned>{:/nomarkdown}
+  - [ZProbe](zprobe): For probing, levelling, and automated calibration
+    - [PCB milling](pcb-milling): For PCB milling
   - [Utilities](utils)
     - [Smoopi](smoopi): **New and Recommended** drive Smoothie using a color touch screen on [Raspberry Pi](https://www.raspberrypi.com/) 
     - [Player](player): Play files from the SD card
-    - [Currentcontrol](currentcontrol): Digitally control your stepper motors current 
+    - [Currentcontrol](currentcontrol): Digitally control your stepper motors current
     - [AdvancedMotorDriver](advancedmotordriver): For controlling SPI based stepper motor controllers like DRV8711 and TMC26X
-
-
     - [Configurator](configurator): Manipulate configuration using console commands
-
-
     - [Kill Button](killbutton) and [Play LED](play-led): S/W based kill and play activity LED
     - [Panel](panel): Drive smoothie directly without a host using monochrome lcd screens and click encoders
+{::nomarkdown}<versioned><v1></v1><v2><div class="versioned-list-item" style="margin-left:1.25em;"><a href="tm1638-display">TM1638 Display</a>: 7-segment LED display with buttons</div><div class="versioned-list-item" style="margin-left:1.25em;"><a href="button-box">Button Box</a>: Programmable button panel for macros and machine control</div><div class="versioned-list-item" style="margin-left:1.25em;"><a href="mpg">MPG</a>: Manual Pulse Generator hand wheels for axis jogging</div><div class="versioned-list-item" style="margin-left:1.25em;"><a href="voltage-monitor">Voltage Monitor</a>: Monitor power supply voltages</div></v2></versioned>{:/nomarkdown}
     - [on_boot.gcode File](on-boot-gcode): Execute G-codes every time the board boots
 - [Using Smoothie](using-smoothie): General firmware use
   - [Console Commands](console-commands)

@@ -322,7 +322,6 @@ function initialize_review_tags() {
   if ($review_tags.length === 0) {
     return;
   }
-  console.log("[review-tag.ts] Initializing", $review_tags.length, "review tags");
   detect_duplicate_review_ids();
   $review_tags.each(function() {
     build_review_structure($(this));

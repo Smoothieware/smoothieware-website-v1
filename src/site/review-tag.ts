@@ -562,8 +562,6 @@ function initialize_review_tags(): void {
         return;
     }
 
-    console.log('[review-tag.ts] Initializing', $review_tags.length, 'review tags');
-
     // Detect duplicate IDs
     detect_duplicate_review_ids();
 

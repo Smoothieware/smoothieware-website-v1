@@ -47,15 +47,11 @@ $(() => {
     // Audio context for generating tick sounds
     const audio_context = new (window.AudioContext || (window as any).webkitAudioContext)();
 
-    console.log('[animate.ts] AudioContext created, initial state:', audio_context.state);
-
     // Resume audio context once on first interaction (synchronous after first call)
     const ensure_audio_ready = async (): Promise<void> => {
 
         if (!audio_ready && audio_context.state === 'suspended') {
-            console.log('[animate.ts] Resuming suspended AudioContext...');
             await audio_context.resume();
-            console.log('[animate.ts] AudioContext resumed, state:', audio_context.state);
             audio_ready = true;
         }
     };
@@ -81,8 +77,6 @@ $(() => {
 
         // Skip if audio not ready yet
         if (!audio_ready) return;
-
-        console.log('[animate.ts] Playing forward tick sound');
 
         // Create noise buffer source
         const noise_buffer = create_noise_buffer(0.03); // 30ms of noise
@@ -118,8 +112,6 @@ $(() => {
 
         // Skip if audio not ready yet
         if (!audio_ready) return;
-
-        console.log('[animate.ts] Playing return tick sound');
 
         // Create noise buffer source
         const noise_buffer = create_noise_buffer(0.025); // 25ms of noise (shorter/sharper)
@@ -182,8 +174,6 @@ $(() => {
         // Stop any existing tick loop first
         stop_tick_loop();
 
-        console.log(`[animate.ts] Starting ${is_return ? 'return' : 'forward'} tick loop with ${interval_ms}ms interval`);
-
         // Play first tick immediately
         if (is_return) {
             play_return_tick_sound();
@@ -207,7 +197,6 @@ $(() => {
     const stop_tick_loop = (): void => {
 
         if (tick_interval !== null) {
-            console.log('[animate.ts] Stopping tick loop');
             clearInterval(tick_interval);
             tick_interval = null;
         }
