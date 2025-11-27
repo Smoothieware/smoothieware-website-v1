@@ -36,7 +36,7 @@
         <tr>
             <td><setting no-version v1="kill_button_unkill_enable"></setting></td>
             <td class="empty-cell">—</td>
-            <td class="description-cell">Allows the kill button to be used to recover from kill state without requiring power cycle or M999 command. When true, releasing the kill button (or pressing again if in toggle mode) will exit kill state and resume operations. When false (default and recommended for safety), recovery from kill state requires explicit user action (M999 command or power cycle) to ensure the emergency condition has been properly addressed.</td>
+            <td class="description-cell">Allows the kill button to be used to recover from kill state without requiring power cycle or <mcode>M999</mcode> command. When true, releasing the kill button (or pressing again if in toggle mode) will exit kill state and resume operations. When false (default and recommended for safety), recovery from kill state requires explicit user action (<mcode>M999</mcode> command or power cycle) to ensure the emergency condition has been properly addressed.</td>
         </tr>
     </tbody>
 </table>

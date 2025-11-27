@@ -150,6 +150,27 @@ The section you want to update are:
 - Steps per mm accordingly to your measurements (I suggest doing several straight lines, measure them with caliper and make average (for precision reading) for X &Y)
 - Network following your specs.
 
+### Microstepping Capabilities
+
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
+
+Smoothie v1 boards support up to 1/32 microstepping on their stepper drivers. This provides good resolution for most laser cutting applications. The default microstepping setting is typically 1/16, which balances smoothness and performance.
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+Smoothie v2 boards with TMC2660 or TMC2590 drivers support up to 1/256 microstepping, providing significantly finer resolution than v1. This can result in smoother motion and more precise positioning, particularly useful for detailed engravings. The TMC drivers also offer features like StealthChop for quieter operation and SpreadCycle for better torque control.
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
+
 ### My Configuration Example
 
 In my case:
@@ -219,6 +240,134 @@ network.hostname                             SmoothK40             # Some DHCP s
 {:/nomarkdown}
 
 Command: tracing ({::nomarkdown}<gcode>G1</gcode>{:/nomarkdown}) a line from your actual position to (X100, Y100) full laser power (S1)
+
+## Laser G-code Examples
+
+Understanding basic laser-specific G-code commands will help you control your laser cutter effectively:
+
+### Laser Control Commands
+
+**Turn Laser On/Off:**
+```gcode
+M3 S0.5    ; Turn laser on at 50% power (S value 0.0 to 1.0)
+M5         ; Turn laser off
+```
+
+**Movement with Laser:**
+```gcode
+G0 X10 Y10      ; Rapid move to position (laser automatically off during G0)
+G1 X50 Y50 S0.8 ; Linear move with laser at 80% power
+G1 X100 F3000   ; Linear move at 3000mm/min feed rate (laser power unchanged)
+```
+
+### Practical Examples
+
+**Cut a 50mm square at 60% power:**
+```gcode
+G28              ; Home all axes
+G0 X10 Y10       ; Move to start position (laser off)
+M3 S0.6          ; Set laser to 60% power
+G1 X60 F1200     ; Cut right edge at 1200mm/min
+G1 Y60           ; Cut top edge
+G1 X10           ; Cut left edge
+G1 Y10           ; Cut bottom edge
+M5               ; Turn laser off
+```
+
+**Engrave a line with variable power:**
+```gcode
+G0 X0 Y0         ; Move to start
+G1 X50 S0.3      ; Engrave at 30% power
+G1 X100 S0.6     ; Continue at 60% power
+M5               ; Turn laser off
+```
+
+{::nomarkdown}
+<sl-alert variant="warning" open>
+  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+  <strong>Safety Note:</strong> Always ensure your laser's safety interlocks are functioning. Never bypass door switches or safety features. Use appropriate eye protection rated for your laser's wavelength.
+</sl-alert>
+{:/nomarkdown}
+
+## Troubleshooting Common Issues
+
+### Laser Won't Fire
+
+**Check Power Supply Connections:**
+- Verify all PSU connections are secure (G, P, L, IN, 5V)
+- Ensure door switch and laser switch conditions are satisfied
+- Test with manual fire button if available
+- Verify level shifter is working (check 5V output with multimeter)
+
+**Check Smoothie Configuration:**
+- Confirm `laser_module_enable` is set to `true`
+- Verify correct PWM pin (<pin>2.5</pin> or other PWM-capable pin)
+- Check if pin needs inversion (`!` symbol) - try toggling this
+- Test with manual G-code: `M3 S1.0` then `M5`
+
+**Check Wiring:**
+- Verify Pin <pin>2.5</pin> output voltage with multimeter
+- Ensure level shifter is properly powered
+- Check for loose connections at PSU terminals
+
+### Inconsistent Laser Power
+
+**Symptoms:** Laser power varies unexpectedly or doesn't match S values
+
+**Solutions:**
+- Check `laser_module_maximum_power` setting (should be 1.0 for full range)
+- Verify `laser_module_pwm_period` is appropriate (20 microseconds typical)
+- Ensure your G-code includes S values in moves (<gcode>G1</gcode> X10 Y10 S0.5)
+- Check PSU potentiometer setting if equipped
+- Verify clean 5V signal from level shifter
+
+### Positioning Errors
+
+**Steps per mm calibration:**
+- Cut test lines (100mm in X and Y directions)
+- Measure actual distance with calipers
+- Calculate new steps: `new_steps = current_steps * (desired_mm / actual_mm)`
+- Example: If 100mm commanded gives 95mm actual: `157.575 * (100/95) = 165.868`
+
+**Motor current issues:**
+- If motors skip steps: increase current (but stay below motor rating)
+- If motors run hot: decrease current slightly
+- Check motor datasheet for maximum current rating
+
+### Network Connection Issues
+
+**Can't connect to board:**
+- Verify network cable is connected
+- Check if DHCP assigned IP (view on LCD if installed)
+- Try manual IP configuration in config file
+- Ping the hostname: `ping SmoothK40` (or whatever you set)
+- Check router's DHCP client list
+
+**Slow or dropped connections:**
+- Ensure Ethernet cable is CAT5e or better
+- Check for EMI interference (route network cable away from stepper wires)
+- Verify router/switch supports the connection speed
+
+### Stepper Motor Problems
+
+**Motors won't move:**
+- Check enable pins are set correctly
+- Verify motor current is not too low (minimum 0.3A for most motors)
+- Test motors individually with jog commands
+- Check wiring matches motor coil pairs
+
+**Motors vibrate but don't turn:**
+- Incorrect wiring (swap one coil pair)
+- Current too low or too high
+- Microstepping configuration issue
+
+### Endstop Issues
+
+**Endstops not triggering:**
+- Test endstop continuity with multimeter
+- Verify correct pin configuration in config
+- Check if endstop needs pull-up resistor
+- Try inverting endstop pin with `!`
 
 # Software
 

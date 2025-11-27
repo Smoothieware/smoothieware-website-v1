@@ -209,7 +209,7 @@ A common CNC task is finding the center of circular holes or bosses.
 Since this module is deprecated, consider using:
 
 - [ZProbe module](zprobe) - Modern, actively maintained probing system
-- [G30 command](g30) - Built-in probing command
+- [{::nomarkdown}<gcode>G30</gcode>{:/nomarkdown} command](g30) - Built-in probing command
 - [Leveling strategies](leveling-strategy) - For bed leveling and surface mapping
 
 ---
@@ -217,6 +217,6 @@ Since this module is deprecated, consider using:
 ## Further Reading
 
 - [ZProbe module documentation](zprobe)
-- [G30 G-code documentation](g30)
+- [{::nomarkdown}<gcode>G30</gcode>{:/nomarkdown} G-code documentation](g30)
 - [Supported G-codes](supported-g-codes)
 - [Endstops configuration](endstops)

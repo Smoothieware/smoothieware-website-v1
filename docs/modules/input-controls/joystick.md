@@ -166,6 +166,76 @@ It would not make sense to enable for sliders or knobs, since the knob doesn't h
 
 {% include modules/input-controls/joystick-options-for-include.md %}
 
+### Migration from V1 to V2
+
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
+
+When migrating your joystick configuration from Smoothieware v1 to v2, use this checklist:
+
+**V1 Configuration Format:**
+```
+joystick.horizontal.enable                     true
+joystick.horizontal.pin                        1.30
+joystick.horizontal.endpoint                   3.20
+joystick.horizontal.auto_zero                  true
+joystick.horizontal.startup_time               1000
+joystick.horizontal.refresh_rate               100
+joystick.horizontal.start_value                0
+```
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+**V2 Configuration Format:**
+```ini
+[joystick.horizontal]
+enable = true
+pin = ADC1_4              # See pin mapping table above
+endpoint = 3.20
+auto_zero = true
+startup_time = 1000
+refresh_rate = 100
+start_value = 0
+```
+
+**Migration Checklist:**
+
+- [ ] Convert flat config format to INI sections with `[joystick.name]` headers
+- [ ] Change `key value` format to `key = value` format
+- [ ] Update pin assignments from LPC1769 format (e.g. `1.30`) to STM32H745 format (e.g. `ADC1_4`)
+- [ ] Verify analog pin availability (check thermistor usage on your board)
+- [ ] Update physical wiring to match new pin assignments (see pin mapping table)
+- [ ] Adjust voltage calibration values if needed (see note below on ADC differences)
+- [ ] Test auto-zeroing behavior after migration (startup timing may differ)
+- [ ] Update any related jogger or feed override configurations to INI format
+
+**Important Hardware Differences:**
+
+{::nomarkdown}
+<sl-alert variant="warning" open>
+  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+  <strong>ADC Behavior Differences:</strong> The STM32H745 (v2) has different analog-to-digital converter characteristics compared to the LPC1769 (v1):
+  <ul>
+    <li><strong>Resolution:</strong> STM32H745 supports 16-bit ADC vs LPC1769's 12-bit, providing finer position resolution</li>
+    <li><strong>Sampling speed:</strong> STM32H745 has faster ADC conversion times, may affect noise filtering</li>
+    <li><strong>Reference voltage:</strong> Both use 3.3V reference, but internal voltage regulators may differ slightly</li>
+    <li><strong>Input impedance:</strong> STM32H745 has higher input impedance, reducing load on potentiometer</li>
+    <li><strong>Calibration:</strong> You may need to recalibrate <code>endpoint</code> and <code>zero_offset</code> values after migration due to these hardware differences</li>
+  </ul>
+  It is recommended to re-test and re-calibrate your joystick settings after migrating from v1 to v2.
+</sl-alert>
+{:/nomarkdown}
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
+
 ## Usage
 
 ### Jogging 

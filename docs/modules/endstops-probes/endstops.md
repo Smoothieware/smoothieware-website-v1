@@ -7,6 +7,73 @@ permalink: /endstops
 
 ## Configuration
 
+### Quick Migration Guide
+
+Here's a quick reference for migrating endstop configuration from V1 to V2 format:
+
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
+
+**V1 Configuration (flat format):**
+```
+alpha_min_endstop                            1.24^!
+alpha_homing_direction                       home_to_min
+alpha_min                                    0
+alpha_max                                    200
+
+beta_min_endstop                             1.26^!
+beta_homing_direction                        home_to_min
+beta_min                                     0
+beta_max                                     200
+
+gamma_min_endstop                            1.28^!
+gamma_homing_direction                       home_to_min
+gamma_min                                    0
+gamma_max                                    200
+
+alpha_max_travel                             500
+beta_max_travel                              500
+gamma_max_travel                             500
+```
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+**V2 Configuration (INI format):**
+```ini
+[alpha endstop]
+min.pin = 1.24^!
+homing_direction = home_to_min
+min_position = 0
+max_position = 200
+max_travel = 500
+
+[beta endstop]
+min.pin = 1.26^!
+homing_direction = home_to_min
+min_position = 0
+max_position = 200
+max_travel = 500
+
+[gamma endstop]
+min.pin = 1.28^!
+homing_direction = home_to_min
+min_position = 0
+max_position = 200
+max_travel = 500
+```
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
+
+### Configuration Options
+
 The config settings for Endstops are as follows:
 
 {% include modules/endstops-probes/endstops-options-for-include.md %}
@@ -75,7 +142,7 @@ If your axis is moving away from the endstop when homing, you need to invert you
 
 <sl-alert variant="warning" open>
   <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
-  The firmware-cnc.bin is in CNC mode and by default uses grbl compatibility mode in this mode G28 does <strong>not</strong> home, it goes to a predefined park position (defined with G28.1). To home in CNC/GRBL mode you issue $H, (or G28.2).
+  The firmware-cnc.bin is in CNC mode and by default uses grbl compatibility mode in this mode {::nomarkdown}<gcode>G28</gcode>{:/nomarkdown} does <strong>not</strong> home, it goes to a predefined park position (defined with {::nomarkdown}<gcode>G28.1</gcode>{:/nomarkdown}). To home in CNC/GRBL mode you issue $H, (or {::nomarkdown}<gcode>G28.2</gcode>{:/nomarkdown}).
 </sl-alert>
 
 <sl-alert variant="warning" open>

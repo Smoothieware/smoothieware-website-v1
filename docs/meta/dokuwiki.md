@@ -12,7 +12,7 @@ permalink: /dokuwiki
 
 DokuWiki is a simple to use and highly versatile Open Source [wiki](https://en.wikipedia.org/wiki/Wiki) software that doesn't require a database.
 
-It is loved by users for its clean and readable [syntax](syntax).
+It is loved by users for its clean and readable [syntax](editing-the-wiki).
 
 The ease of maintenance, backup and integration makes it an administrator's favorite.
 
@@ -26,7 +26,7 @@ DokuWiki is available at [http://download.dokuwiki.org/](http://download.dokuwik
 
 ## Read More
 
-All documentation and additional information besides the [syntax description](syntax) is maintained in the DokuWiki at [www.dokuwiki.org](http://www.dokuwiki.org).
+All documentation and additional information besides the [syntax description](editing-the-wiki) is maintained in the DokuWiki at [www.dokuwiki.org](http://www.dokuwiki.org).
 
 **About DokuWiki**
 
@@ -46,7 +46,7 @@ All documentation and additional information besides the [syntax description](sy
 
 **Using DokuWiki**
 
-- [Wiki Syntax](syntax)
+- [Wiki Syntax](editing-the-wiki)
 - [The manual](manual) :!:
 - [Frequently Asked Questions (FAQ)](faq)
 - [Glossary](glossary)

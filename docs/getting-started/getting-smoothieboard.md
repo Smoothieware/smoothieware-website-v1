@@ -5,7 +5,7 @@ permalink: /getting-smoothieboard
 
 # Getting Smoothieboard
 
-[Smoothieboard](/smoothieboard) comes in two main versions available for purchase. Choose the version that best fits your needs, then select a reseller in your region.
+[Smoothieboard](/smoothieboards) comes in two main versions available for purchase. Choose the version that best fits your needs, then select a reseller in your region.
 
 
 

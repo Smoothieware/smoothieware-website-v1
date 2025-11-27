@@ -17,7 +17,7 @@
         <tr>
             <td><setting no-version v1="joystick.{name}.pin"></setting></td>
             <td class="not-available">Not available in v2</td>
-            <td class="description-cell">Specifies which SmoothieBoard pin should be used to read the analog joystick value. The pin must be one of the analog-capable pins (typically 0.2, 0.3, 0.23-0.26, 1.30, 1.31). Connect the joystick wiper (output) to this pin, with the potentiometer ends connected to 3.3V and ground.</td>
+            <td class="description-cell">Specifies which SmoothieBoard pin should be used to read the analog joystick value. The pin must be one of the analog-capable pins (typically <pin>0.2</pin>, <pin>0.3</pin>, <pin>0.23</pin>-<pin>0.26</pin>, <pin>1.30</pin>, <pin>1.31</pin>). Connect the joystick wiper (output) to this pin, with the potentiometer ends connected to 3.3V and ground.</td>
         </tr>
         <tr>
             <td><setting no-version v1="joystick.{name}.refresh_rate"></setting></td>

@@ -103,6 +103,260 @@ The following table shows all pin assignments on the LPC1769 microcontroller:
 </sl-alert>
 {:/nomarkdown}
 
+## Pin Format Reference
+
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
+
+**V1 Pin Format:** `port.pin` with optional modifiers
+
+- Basic format: `1.24`, `2.0`, `0.11`
+- Pull-up modifier: `1.24^` (enable internal pull-up)
+- Inverted logic: `1.24!` (invert pin logic)
+- Open-drain: `2.0o` (configure as open-drain)
+- Combined: `1.24^!` (pull-up + inverted)
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+**V2 Pin Format:** Similar `port.pin` format with additional options
+
+- Basic format: `PA.0`, `PB.5`, or numeric `1.24`, `2.0`
+- Named pins: Board-specific named pins may be available
+- Modifiers: Similar to V1 (pull-up `^`, inverted `!`, open-drain `o`)
+- Check board-specific documentation for exact pin names and available features
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
+
+## Migration Guide: V1 to V2 Pin Configuration
+
+This section shows real-world examples of converting V1 pin configurations to V2 format.
+
+### Stepper Motor Pin Configuration
+
+{::nomarkdown}
+<versioned orientation="horizontal">
+<v1>
+{:/nomarkdown}
+
+```
+# Alpha (X) axis motor configuration
+alpha_step_pin                      2.0
+alpha_dir_pin                       0.5
+alpha_en_pin                        0.4
+
+# Beta (Y) axis motor configuration
+beta_step_pin                       2.1
+beta_dir_pin                        0.11
+beta_en_pin                         0.10
+```
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+```
+# Alpha (X) axis motor configuration
+alpha_step_pin                      2.0
+alpha_dir_pin                       0.5
+alpha_en_pin                        0.4
+
+# Beta (Y) axis motor configuration
+beta_step_pin                       2.1
+beta_dir_pin                        0.11
+beta_en_pin                         0.10
+
+# V2 maintains backward compatibility with numeric pin format
+# Named pin aliases may be available depending on board
+```
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
+
+### Endstop Configuration with Modifiers
+
+{::nomarkdown}
+<versioned orientation="horizontal">
+<v1>
+{:/nomarkdown}
+
+```
+# Min endstops with pull-up resistors
+alpha_min_endstop                   1.24^
+beta_min_endstop                    1.26^
+gamma_min_endstop                   1.28^
+
+# Max endstops inverted logic
+alpha_max_endstop                   1.25!
+beta_max_endstop                    1.27!
+gamma_max_endstop                   1.29!
+```
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+```
+# Min endstops with pull-up resistors
+alpha_min_endstop                   1.24^
+beta_min_endstop                    1.26^
+gamma_min_endstop                   1.28^
+
+# Max endstops inverted logic
+alpha_max_endstop                   1.25!
+beta_max_endstop                    1.27!
+gamma_max_endstop                   1.29!
+
+# Modifier syntax remains the same in V2
+```
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
+
+### Heater and Temperature Sensor Configuration
+
+{::nomarkdown}
+<versioned orientation="horizontal">
+<v1>
+{:/nomarkdown}
+
+```
+# Hotend configuration
+temperature_control.hotend.heater_pin    2.7
+temperature_control.hotend.thermistor_pin 0.23
+
+# Heated bed configuration
+temperature_control.bed.heater_pin       2.5
+temperature_control.bed.thermistor_pin   0.24
+```
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+```
+# Hotend configuration
+temperature_control.hotend.heater_pin    2.7
+temperature_control.hotend.thermistor_pin 0.23
+
+# Heated bed configuration
+temperature_control.bed.heater_pin       2.5
+temperature_control.bed.thermistor_pin   0.24
+
+# Pin assignments remain compatible in V2
+```
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
+
+### Fan and Switch Configuration
+
+{::nomarkdown}
+<versioned orientation="horizontal">
+<v1>
+{:/nomarkdown}
+
+```
+# Cooling fan
+switch.fan.output_pin               2.6
+
+# PSU control (inverted, open-drain)
+switch.psu.output_pin               2.4!o
+
+# Auxiliary outputs
+switch.misc.output_pin              1.22
+```
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+```
+# Cooling fan
+switch.fan.output_pin               2.6
+
+# PSU control (inverted, open-drain)
+switch.psu.output_pin               2.4!o
+
+# Auxiliary outputs
+switch.misc.output_pin              1.22
+
+# Modifier combinations (!o) work the same in V2
+```
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
+
+## Pin Format Comparison Table
+
+The following table shows common pin assignments with V1 and V2 format side-by-side:
+
+{::nomarkdown}
+<versioned orientation="horizontal">
+<v1>
+{:/nomarkdown}
+
+| Function | V1 Pin Format | Notes |
+| -------- | ------------- | ----- |
+| Alpha Step | `2.0` | Basic numeric format |
+| Alpha Dir | `0.5` | Port.pin notation |
+| Alpha Enable | `0.4` | Standard output |
+| Alpha Min Endstop | `1.24^` | With pull-up |
+| Alpha Max Endstop | `1.25!` | Inverted logic |
+| Hotend Heater | `2.7` | PWM capable |
+| Hotend Thermistor | `0.23` | ADC input |
+| Bed Heater | `2.5` | PWM capable |
+| Bed Thermistor | `0.24` | ADC input |
+| Fan Output | `2.6` | Standard output |
+| PSU Control | `2.4!o` | Inverted + open-drain |
+| Spare I/O | `1.30^` | With pull-up |
+| LED | `1.18` | PWM capable |
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+| Function | V2 Pin Format | Notes |
+| -------- | ------------- | ----- |
+| Alpha Step | `2.0` or `PA.0` | Numeric or named format |
+| Alpha Dir | `0.5` or `PA.5` | Board-dependent naming |
+| Alpha Enable | `0.4` or `PA.4` | Check board docs |
+| Alpha Min Endstop | `1.24^` | Modifier syntax same |
+| Alpha Max Endstop | `1.25!` | Inverted logic same |
+| Hotend Heater | `2.7` | PWM capable |
+| Hotend Thermistor | `0.23` | ADC input |
+| Bed Heater | `2.5` | PWM capable |
+| Bed Thermistor | `0.24` | ADC input |
+| Fan Output | `2.6` | Standard output |
+| PSU Control | `2.4!o` | Modifiers work same |
+| Spare I/O | `1.30^` | Pull-up syntax same |
+| LED | `1.18` | PWM capable |
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
+
 ## LPC176x ADC channels and pins
 
 | Adc Channel | Port Pin | Pin Functions | Associated PINSEL Register |

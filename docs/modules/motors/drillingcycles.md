@@ -30,7 +30,7 @@ For a complete list/description of G-Code, see [Tormach's G81-G89 Background](ht
 {::nomarkdown}
 <sl-alert variant="danger" open>
   <sl-icon slot="icon" name="exclamation-octagon"></sl-icon>
-  In relative mode G91, drilling holes operations are ignored.
+  In relative mode {::nomarkdown}<gcode>G91</gcode>{:/nomarkdown}, drilling holes operations are ignored.
 </sl-alert>
 {:/nomarkdown}
 

@@ -773,7 +773,7 @@ You also need to wire the endstops so that a trigger is detected when *either* i
 
 And of course, both step and dir pins for the two stepper drivers must be wired in parralel to the same pins on the Smoothieboard.
 
-Finally, when homing, you can't simply issue G28, you have to issue a series of commands, which you can put at the beginning of your gcode files, or in your on_boot.gcode file ( which will be executed at boot time ).
+Finally, when homing, you can't simply issue <gcode>G28</gcode>, you have to issue a series of commands, which you can put at the beginning of your gcode files, or in your on_boot.gcode file ( which will be executed at boot time ).
 
 Here is an example:
 

@@ -184,7 +184,7 @@ G0 X5 Y5     ; Move away from origin
 
 ### Example 5: Loading Saved Settings
 
-You can use `on_boot.gcode` to load settings saved with M500:
+You can use `on_boot.gcode` to load settings saved with {::nomarkdown}<mcode>M500</mcode>{:/nomarkdown}:
 
 ```gcode
 ; Load settings and initialize
@@ -207,7 +207,7 @@ G28          ; Home all axes
 
 ### Don'ts
 
-- **Don't include long delays**: Avoid M0 (pause) or long G4 (dwell) commands
+- **Don't include long delays**: Avoid {::nomarkdown}<mcode>M0</mcode>{:/nomarkdown} (pause) or long {::nomarkdown}<gcode>G4</gcode>{:/nomarkdown} (dwell) commands
 - **Don't assume positions**: Never move without homing first
 - **Don't start tools automatically**: Don't turn on spindles, lasers, or heaters without user confirmation
 - **Don't use complex macros**: Keep logic simple and straightforward

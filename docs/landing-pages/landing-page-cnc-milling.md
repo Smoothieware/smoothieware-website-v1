@@ -56,7 +56,7 @@ Need balance of:
 
 **Milling-Specific Features:**
 - **G-Code Interpreter:** Full RS274/NGC support
-- **Work Coordinate Systems:** G54-G59 (multiple setups)
+- **Work Coordinate Systems:** {::nomarkdown}<gcode>G54</gcode>-<gcode>G59</gcode>{:/nomarkdown} (multiple setups)
 - **Tool Length Offsets:** G43/G49 support
 - **Canned Cycles:** G81-G89 drilling/boring cycles
 - **Probing:** Touch probe support (G38.x)
@@ -210,8 +210,8 @@ delta_max_rate         30000   # Rotary speed
 - Tool wear compensation
 
 ### Work Coordinate Systems:
-- G54-G59 (6 work offsets)
-- G92 temporary offsets
+- {::nomarkdown}<gcode>G54</gcode>-<gcode>G59</gcode>{:/nomarkdown} (6 work offsets)
+- {::nomarkdown}<gcode>G92</gcode>{:/nomarkdown} temporary offsets
 - Multiple part setups
 - Fixture offsets
 

@@ -10,48 +10,41 @@ All Smoothieboards are designed to run on the most powerful hardware in their pr
 
 | Board | Status | Processor | Drivers | Best For |
 |-------|--------|-----------|---------|----------|
-| **v1** | ✅ In Production | LPC1769 (120MHz) | 3-5× A5984 | Budget builds, proven reliability |
 | **v2-prime** | ✅ In Production | STM32H745 (480MHz) | 4× TMC2660/2590 | High-performance, quiet operation |
 | **v2-mini** | ⏸️ Postponed | LPC4330 | 4× Heroic | Budget v2 experience |
 | **v2-pro** | ❌ Never Produced | LPC4330 + FPGA | 5× TMC drivers | High-end experimentation |
+| **v1** | ✅ In Production | LPC1769 (120MHz) | 3-5× A5984 | Budget builds, proven reliability |
 
 ---
 
-## Smoothieboard v1
+## Detailed Specifications Comparison
+
+This table compares all Smoothieboard variants, including the different v1 models (3X, 4X, 5X) and the v2-prime.
+
+| Specification | **v1 (3X)** | **v1 (4X)** | **v1 (5X)** | **v2-prime** |
+|---------------|-------------|-------------|-------------|--------------|
+| **Status** | ✅ In Production | ✅ In Production | ✅ In Production | ✅ In Production |
+| **Microcontroller** | LPC1769 (Cortex-M3) | LPC1769 (Cortex-M3) | LPC1769 (Cortex-M3) | STM32H745 (Dual-core M7+M4) |
+| **Clock Speed** | 120MHz | 120MHz | 120MHz | 480MHz (M7) + 240MHz (M4) |
+| **Flash Memory** | 512kB | 512kB | 512kB | 2MB |
+| **RAM** | 64kB | 64kB | 64kB | 1MB |
+| **Stepper Drivers** | 3× A5984 | 4× A5984 | 5× A5984 | 4× TMC2660/2590 |
+| **Max Microstepping** | 1/32 | 1/32 | 1/32 | 1/256 |
+| **Motor Outputs** | 3 | 4 | 5 | 4 |
+| **Silent Operation** | No | No | No | Yes (StealthChop2) |
+| **MOSFETs (Small)** | 4× (12.5A) | 6× (12.5A) | 6× (12.5A) | Multiple high-power |
+| **MOSFETs (Large)** | 2× (30A) | 0 | 0 | Multiple high-power |
+| **Ethernet** | Yes | Yes | Yes | Yes (Fast Ethernet) |
+| **USB Ports** | 1× USB-B | 1× USB-B | 1× USB-B | 2× (USB-B + USB-A) |
+| **SD Card** | Standard SPI | Standard SPI | Standard SPI | High-speed SDIO |
+| **Expansion Ports** | Standard headers | Standard headers | Standard headers | 8× Gadgeteer (10-pin) |
+| **Form Factor** | Full size | Full size | Full size | Optimized layout |
+| **Best For** | 3-axis machines, deltabots | 3D printers, basic lasers | 5-axis machines, complex setups | High-end builds, quiet operation |
 
 {::nomarkdown}
-<sl-badge variant="success" pill>In Production Since 2013</sl-badge>
-{:/nomarkdown}
-
-Smoothieboard v1 was the first released Smoothieboard and has received several updates over the years.
-
-It has gone from an experimental project to a widely used and acclaimed system trusted by thousands of makers worldwide.
-
-{::nomarkdown}
-<a href="/images/smoothieboard-fritzing.png">
-  <img src="/images/smoothieboard-fritzing.png" alt="Smoothieboard v1" style="width: 640px; height: auto; display: block; margin: 2rem auto;"/>
-</a>
-{:/nomarkdown}
-
-### Features
-
-- 32-bit [Cortex-M3 LPC1769](http://www.nxp.com/products/microcontrollers-and-processors/arm-processors/lpc-cortex-m-mcus/lpc-cortex-m3/lpc1700-cortex-m3/512kb-flash-64kb-sram-ethernet-usb-lqfp100-package:LPC1769FBD100) @ 120MHz with 512kB flash and 64kB RAM
-- 3 to 5 [A5984](http://www.allegromicro.com/en/Products/Motor-Driver-And-Interface-ICs/Bipolar-Stepper-Motor-Drivers/A5984.aspx) stepper drivers with 1/32 microstepping
-- Thermistors and MOSFETs to control heaters and fans
-- Ethernet and USB connections
-- SD card to store configuration and G-code files
-- Various inputs and outputs for extensibility
-- Available in 3 versions: 3X, 4X, and 5X (different peripheral sets)
-
-### Documentation & Purchase
-
-- **Getting Started**: [Smoothieboard v1 Guide](smoothieboard-v1)
-- **Technical Details**: [Smoothieboard v1 Specifications](smoothieboard-v1-specifications)
-
-{::nomarkdown}
-<sl-alert variant="success" open>
-  <sl-icon slot="icon" name="cart"></sl-icon>
-  <strong>Get Smoothieboard v1:</strong> Available at <a href="https://www.robosprout.com/" target="_blank" rel="noopener">RoboSprout</a>
+<sl-alert variant="primary" open>
+  <sl-icon slot="icon" name="info-circle"></sl-icon>
+  <strong>Key Differences:</strong> The v2-prime offers significantly more processing power (4× faster), quieter operation with advanced TMC drivers, and more expansion options via Gadgeteer ports. The v1 boards remain excellent for budget-conscious builds and proven reliability, with the 3X/4X/5X variants offering different numbers of motor outputs to match your specific machine needs.
 </sl-alert>
 {:/nomarkdown}
 
@@ -189,6 +182,46 @@ Currently being designed, see [blog post](blog_15).
 <sl-alert variant="neutral" open>
   <sl-icon slot="icon" name="info-circle"></sl-icon>
   Because v2 is being developed by awesome volunteers, we have no timetable or planned release date, so please stop asking.
+</sl-alert>
+{:/nomarkdown}
+
+---
+
+## Smoothieboard v1
+
+{::nomarkdown}
+<sl-badge variant="success" pill>In Production Since 2013</sl-badge>
+{:/nomarkdown}
+
+Smoothieboard v1 was the first released Smoothieboard and has received several updates over the years.
+
+It has gone from an experimental project to a widely used and acclaimed system trusted by thousands of makers worldwide.
+
+{::nomarkdown}
+<a href="/images/smoothieboard-fritzing.png">
+  <img src="/images/smoothieboard-fritzing.png" alt="Smoothieboard v1" style="width: 640px; height: auto; display: block; margin: 2rem auto;"/>
+</a>
+{:/nomarkdown}
+
+### Features
+
+- 32-bit [Cortex-M3 LPC1769](http://www.nxp.com/products/microcontrollers-and-processors/arm-processors/lpc-cortex-m-mcus/lpc-cortex-m3/lpc1700-cortex-m3/512kb-flash-64kb-sram-ethernet-usb-lqfp100-package:LPC1769FBD100) @ 120MHz with 512kB flash and 64kB RAM
+- 3 to 5 [A5984](http://www.allegromicro.com/en/Products/Motor-Driver-And-Interface-ICs/Bipolar-Stepper-Motor-Drivers/A5984.aspx) stepper drivers with 1/32 microstepping
+- Thermistors and MOSFETs to control heaters and fans
+- Ethernet and USB connections
+- SD card to store configuration and G-code files
+- Various inputs and outputs for extensibility
+- Available in 3 versions: 3X, 4X, and 5X (different peripheral sets)
+
+### Documentation & Purchase
+
+- **Getting Started**: [Smoothieboard v1 Guide](smoothieboard-v1)
+- **Technical Details**: [Smoothieboard v1 Specifications](smoothieboard-v1-specifications)
+
+{::nomarkdown}
+<sl-alert variant="success" open>
+  <sl-icon slot="icon" name="cart"></sl-icon>
+  <strong>Get Smoothieboard v1:</strong> Available at <a href="https://www.robosprout.com/" target="_blank" rel="noopener">RoboSprout</a>
 </sl-alert>
 {:/nomarkdown}
 

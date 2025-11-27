@@ -42,7 +42,7 @@
         <tr>
             <td><setting no-version v1="jogger.max_speed"></setting></td>
             <td class="not-available">Not available in v2</td>
-            <td class="description-cell">Sets the maximum speed the machine will jog in mm/min. This is the speed reached when the joystick is pushed to its maximum extent. If not specified, the Jogger uses the general configuration "default_seek_rate" (G0 speed). Lower values provide finer control, higher values allow faster positioning.</td>
+            <td class="description-cell">Sets the maximum speed the machine will jog in mm/min. This is the speed reached when the joystick is pushed to its maximum extent. If not specified, the Jogger uses the general configuration "default_seek_rate" (<gcode>G0</gcode> speed). Lower values provide finer control, higher values allow faster positioning.</td>
         </tr>
         <tr>
             <td><setting no-version v1="jogger.dead_zone"></setting></td>

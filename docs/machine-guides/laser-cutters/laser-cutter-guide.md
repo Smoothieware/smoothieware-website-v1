@@ -123,7 +123,7 @@ G0 X5 Y5     ; Move away from origin
 {::nomarkdown}
 <sl-alert variant="danger" open>
   <sl-icon slot="icon" name="exclamation-octagon"></sl-icon>
-  <strong>Safety Critical:</strong> Always ensure your on_boot.gcode starts with commands that turn OFF the laser (M5) and set power to zero (M3 S0). Never enable the laser automatically in startup scripts.
+  <strong>Safety Critical:</strong> Always ensure your on_boot.gcode starts with commands that turn OFF the laser (<mcode>M5</mcode>) and set power to zero (<mcode>M3</mcode> S0). Never enable the laser automatically in startup scripts.
 </sl-alert>
 {:/nomarkdown}
 

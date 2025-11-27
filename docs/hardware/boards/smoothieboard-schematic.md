@@ -72,7 +72,7 @@ Make sure you're looking at the schematic for your specific board version.
 
 For understanding and working with the Smoothieboard hardware:
 
-- [Smoothieboard overview](smoothieboard)
+- [Smoothieboard overview](smoothieboards)
 - [Pinout diagrams](pinout)
 - [Pin usage documentation](lpc1769-pin-usage)
 - [Hardware troubleshooting](troubleshooting)

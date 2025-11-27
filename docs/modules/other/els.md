@@ -127,7 +127,7 @@ The ELS module automatically discovers and uses the configured Lathe and TM1638 
 
 1. **Power on** - Display shows current RPM (left) and pitch value (right)
 2. **Adjust pitch** - Use S8 (up) and S6 (down) to set desired pitch in mm/rev
-3. **Start spindle** - Use your spindle control (M3 command or physical switch)
+3. **Start spindle** - Use your spindle control (<mcode>M3</mcode> command or physical switch)
 4. **Engage leadscrew** - Press S2 to start synchronized motion
 5. **Stop** - Press S1 to disengage
 

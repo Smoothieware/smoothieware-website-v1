@@ -9,7 +9,7 @@ title: Smoothieware Home
 {::nomarkdown}
 <sl-alert variant="neutral" open>
   <sl-icon slot="icon" name="info-circle"></sl-icon>
-  <strong>Smoothie</strong> is a <strong><a href="start">free, opensource, high performance</a></strong> and modular <strong>G-code</strong> interpreter and <strong>CNC</strong> control system for the powerful <strong><a href="smoothieboard">SmoothieBoard</a></strong> 32bit controller. It's designed to be very user-friendly and hacker-friendly. The Source code is on <a href="https://github.com/Smoothieware/Smoothieware">GitHub</a>. ヾ(❀◦◡◦)彡
+  <strong>Smoothie</strong> is a <strong><a href="start">free, opensource, high performance</a></strong> and modular <strong>G-code</strong> interpreter and <strong>CNC</strong> control system for the powerful <strong><a href="smoothieboards">SmoothieBoard</a></strong> 32bit controller. It's designed to be very user-friendly and hacker-friendly. The Source code is on <a href="https://github.com/Smoothieware/Smoothieware">GitHub</a>. ヾ(❀◦◡◦)彡
 </sl-alert>
 {:/nomarkdown}
 
@@ -71,9 +71,18 @@ The Smoothie project is always looking for help. Whatever your skills are, there
 
 ## Firmware documentation
 
+{::nomarkdown}
+<a href="/images/sprout-2.png">
+  <img src="/images/sprout-2.png" alt="Tools" style="width: 100px; height: 100px; float: right; margin-left: 1rem;"/>
+</a>
+{:/nomarkdown}
+
 - **[Getting Started](getting-started)**: Complete guide to setting up your Smoothieboard from unboxing to first operation
 - [Basics](basics): Fundamental concepts, terminology, and technical background
 - [Glossary](glossary): Definitions of common terms used in CNC and 3D printing
+- [Migrating](migrating): Migration guides from other firmware
+  - [From GRBL](from-grbl): Porting your GRBL configuration to Smoothie
+  - [From Marlin](from-marlin): Porting your Marlin configuration to Smoothie
 - [Communication](communication)
   - [Network](network)
   - [USB](usb)
@@ -95,8 +104,8 @@ The Smoothie project is always looking for help. Whatever your skills are, there
   - [Grbl mode](grbl-mode): Using Smoothie in CNC-specific mode instead of 3D printing mode
 
 {::nomarkdown}
-<a href="/images/glove.png">
-  <img src="/images/glove.png" alt="Tools" style="width: 100px; height: 100px; float: right; margin-left: 1rem;"/>
+<a href="/images/tool-belt.png">
+  <img src="/images/tool-belt.png" alt="Tools" style="width: 100px; height: 100px; float: right; margin-left: 1rem;"/>
 </a>
 {:/nomarkdown}
 
@@ -113,6 +122,15 @@ The Smoothie project is always looking for help. Whatever your skills are, there
 {::nomarkdown}<versioned><v1></v1><v2><div class="versioned-list-item" style="margin-left:1.25em;"><a href="lathe">Lathe</a>: Spindle-synchronized turning and threading operations</div><div class="versioned-list-item" style="margin-left:2.5em;"><a href="els">ELS</a>: Electronic Leadscrew with TM1638 display interface</div></v2></versioned>{:/nomarkdown}
   - [ZProbe](zprobe): For probing, levelling, and automated calibration
     - [PCB milling](pcb-milling): For PCB milling
+    - [Using FSRs](using-fsrs): Force Sensing Resistors for bed leveling
+
+{::nomarkdown}
+<a href="/images/settings.png">
+  <img src="/images/settings.png" alt="Tools" style="width: 100px; height: 100px; float: right; margin-left: 1rem;"/>
+</a>
+{:/nomarkdown}
+
+
   - [Utilities](utils)
     - [Smoopi](smoopi): **New and Recommended** drive Smoothie using a color touch screen on [Raspberry Pi](https://www.raspberrypi.com/) 
     - [Player](player): Play files from the SD card
@@ -121,12 +139,22 @@ The Smoothie project is always looking for help. Whatever your skills are, there
     - [Configurator](configurator): Manipulate configuration using console commands
     - [Kill Button](killbutton) and [Play LED](play-led): S/W based kill and play activity LED
     - [Panel](panel): Drive smoothie directly without a host using monochrome lcd screens and click encoders
-{::nomarkdown}<versioned><v1></v1><v2><div class="versioned-list-item" style="margin-left:1.25em;"><a href="tm1638-display">TM1638 Display</a>: 7-segment LED display with buttons</div><div class="versioned-list-item" style="margin-left:1.25em;"><a href="button-box">Button Box</a>: Programmable button panel for macros and machine control</div><div class="versioned-list-item" style="margin-left:1.25em;"><a href="mpg">MPG</a>: Manual Pulse Generator hand wheels for axis jogging</div><div class="versioned-list-item" style="margin-left:1.25em;"><a href="voltage-monitor">Voltage Monitor</a>: Monitor power supply voltages</div></v2></versioned>{:/nomarkdown}
+{::nomarkdown}<versioned><v1><div class="versioned-list-item" style="margin-left:1.25em;"><a href="jogger">Jogger</a>: Joystick-based jogging control for manual machine movement</div><div class="versioned-list-item" style="margin-left:1.25em;"><a href="joystick">Joystick</a>: Analog input from joysticks, sliders, and knobs</div></v1><v2><div class="versioned-list-item" style="margin-left:1.25em;"><a href="tm1638-display">TM1638 Display</a>: 7-segment LED display with buttons</div><div class="versioned-list-item" style="margin-left:1.25em;"><a href="button-box">Button Box</a>: Programmable button panel for macros and machine control</div><div class="versioned-list-item" style="margin-left:1.25em;"><a href="mpg">MPG</a>: Manual Pulse Generator hand wheels for axis jogging</div><div class="versioned-list-item" style="margin-left:1.25em;"><a href="voltage-monitor">Voltage Monitor</a>: Monitor power supply voltages</div></v2></versioned>{:/nomarkdown}
     - [on_boot.gcode File](on-boot-gcode): Execute G-codes every time the board boots
+
+{::nomarkdown}
+<a href="/images/console.png">
+  <img src="/images/console.png" alt="Tools" style="width: 100px; height: 100px; float: right; margin-left: 1rem;"/>
+</a>
+{:/nomarkdown}
+
+
+
 - [Using Smoothie](using-smoothie): General firmware use
   - [Console Commands](console-commands)
   - [Supported G-Codes](supported-g-codes)
   - [Stopping Smoothie](stopping-smoothie)
+    - [Emergency Stop](emergencystop)
   - [Software](software)
     - [Smoopi](smoopi): **New and Recommended** drive Smoothie using a color touch screen on [Raspberry Pi](https://www.raspberrypi.com/)
     - [Pronterface](pronterface): Control 3D printers. The OG.
@@ -168,7 +196,7 @@ More: [Windows Drivers](windows-drivers), [Linux Drivers](linux-drivers), [Mac D
 
 ## Hardware documentation
 
-**Available now**: [SmoothieBoard](smoothieboard), the modular and awesome, smoothie-dedicated CNC controller.
+**Available now**: [SmoothieBoard](smoothieboards), the modular and awesome, smoothie-dedicated CNC controller.
 
 - [Smoothieboards](smoothieboards): all versions of the Smoothieboard hardware
 - [Running Smoothie on a Breadboard](smoothie-on-a-breadboard)
@@ -230,7 +258,7 @@ More: [Windows Drivers](windows-drivers), [Linux Drivers](linux-drivers), [Mac D
 - Easy to use and [configure](configuring-smoothie).
 - Smooth, jerk-free motion and enabling higher speeds
 - Can be used for CNC milling, laser cutting, and 3D printing.
-- [Opensource/hardware all-included controller board](smoothieboard)
+- [Opensource/hardware all-included controller board](smoothieboards)
 - [SD-Card](sd-card) support for configuration and executing G-code.
 - Composite USB Mass Storage + Serial interface to host.
 - Free [email support (✿◠‿◠)](mailto:wolf.arthur@gmail.com)
@@ -266,6 +294,7 @@ More: [Windows Drivers](windows-drivers), [Linux Drivers](linux-drivers), [Mac D
 - [Listofevents](listofevents): List of all Events you can register for
 - [Developers-Guide](developers-guide): Information useful to smoothie coders
 - [LPC1769 pin usage](lpc1769-pin-usage): Documents all the pins used and which are spare
+- [STM32H7 pin usage](stm32h7-pin-usage): Pin assignments for the STM32H7 microcontroller (V2)
 - [DebuggingSmoothie](debuggingsmoothie): Using the built-in MRI serial debugger
 - [Coding-Standards](coding-standards)
 - [Contribution Guidelines](contribution-guidlines)

@@ -81,11 +81,36 @@ Disable the detector with {::nomarkdown}<mcode>M405</mcode>{:/nomarkdown}, pull 
 
 Set the <setting v1="filament_detector.pulses_per_mm"></setting> (in config) to the calculated number (e.g., 20mm generated 50 pulses, so pulses/mm is 50/20= 2.5)
 
-You can set the steps per mm temporarily with {::nomarkdown}<mcode>M404</mcode>{:/nomarkdown} P2.5 to check before changing it in config.
+You can set the steps per mm temporarily with {::nomarkdown}<mcode>M404</mcode>{:/nomarkdown} P{::nomarkdown}<pin>2.5</pin>{:/nomarkdown} to check before changing it in config.
 
 Enable the detector with {::nomarkdown}<mcode>M406</mcode>{:/nomarkdown} and test with a small print.
 
 If the detector mis-triggers too often reduce the <setting v1="filament_detector.pulses_per_mm"></setting> and/or increase the check time.
+
+## Interrupt Pin Requirements
+
+The `encoder_pin` must be connected to an interrupt-capable pin on your board. The specific pins that support interrupts vary by board model and variant.
+
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
+
+For Smoothieboard V1, most GPIO pins support interrupts. Common interrupt-capable pins include {::nomarkdown}<pin>2.11</pin>{:/nomarkdown}, {::nomarkdown}<pin>2.12</pin>{:/nomarkdown}, {::nomarkdown}<pin>2.13</pin>{:/nomarkdown}, and others. Consult the [Smoothieboard pinout documentation](/smoothieboard-guide#pinout) for complete details.
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+For Smoothieboard V2, interrupt-capable pins vary by board variant (Prime/Mini). Refer to your specific board's pinout documentation to identify which pins support interrupts:
+- [Smoothieboard Prime pinout documentation](/hardware/boards/smoothieboard-prime)
+- [Smoothieboard Mini pinout documentation](/hardware/boards/smoothieboard-mini)
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
 
 ## Hardware
 
@@ -98,6 +123,19 @@ The module counts the encoder pulses and compares it to how far the filament has
 This is better than a simple switch as it only triggers if the filament was actually extruded, and only triggers if no pulses were detected.
 
 It will not trigger if there was no extrusion.
+
+### Encoder Wheel Specifications
+
+Typical encoder wheels used for filament detection have the following specifications:
+
+- **Tooth count**: Usually 20 slots/teeth per rotation
+- **Pulses per rotation**: 20 pulses per full rotation (one pulse per slot)
+- **Wheel diameter**: Typically 30-40mm for the encoder disk
+- **Resolution**: The actual pulses per mm depends on the diameter of the contact surface with the filament and the encoder's tooth count
+
+For the common R/C car encoder kit mentioned above, a 20-slot wheel is standard. The `pulses_per_mm` setting must be calibrated for your specific setup as described in the Calibration section, as it depends on the effective diameter where the filament contacts the encoder wheel.
+
+### 3D Printable Models
 
 Reference model on **Thingiverse**: [Filament Tracking System](https://www.thingiverse.com/thing:2515750)
 

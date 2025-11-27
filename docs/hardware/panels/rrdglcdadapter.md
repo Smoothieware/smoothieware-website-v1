@@ -2,9 +2,29 @@
 permalink: /rrdglcdadapter
 ---
 
+{::nomarkdown}
+<sl-alert variant="warning" open>
+  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+  <strong>V1 Hardware Only</strong><br>
+  This adapter is designed for Smoothieboard V1 and is NOT compatible with Smoothieware V2.
+</sl-alert>
+{:/nomarkdown}
+
 # RRD GLCD Adapter board
 
 This adapter allows you to connect a [Reprapdiscount GLCD panel](/panel) to a Smoothieboard easily.
+
+## Display Options Comparison
+
+**Smoothieware V1 (Smoothieboard):**
+- Smoothiepanel (recommended)
+- RRD GLCD with this adapter
+- Various LCD character displays
+
+**Smoothieware V2:**
+- ST7920-based displays (built-in support)
+- TM1638-based displays (built-in support)
+- Note: This RRD GLCD adapter is NOT compatible with V2 hardware
 
 {::nomarkdown}
 <div style="text-align: center; margin: 2rem 0;">

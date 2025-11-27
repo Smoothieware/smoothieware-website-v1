@@ -139,6 +139,58 @@ You will find more information on GRBL mode on the [grbl_mode](/grbl-mode) page.
 
 {% include modules/endstops-probes/guide-endstops-for-include.md %}
 
+## Endstop Configuration Differences
+
+When configuring endstops, note that the configuration syntax differs between v1 and v2:
+
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
+
+**V1 Endstop Config:**
+
+In v1, endstops are configured with individual settings for each axis:
+
+```
+alpha_min_endstop                            1.24^!
+alpha_max_endstop                            1.25^
+beta_min_endstop                             1.26^!
+beta_max_endstop                             1.27^
+gamma_min_endstop                            1.28^!
+gamma_max_endstop                            1.29^
+```
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+**V2 Endstop Config:**
+
+In v2, endstops are configured using section syntax:
+
+```ini
+[alpha endstop]
+pin = 1.24^!
+type = min
+
+[beta endstop]
+pin = 1.26^!
+type = min
+
+[gamma endstop]
+pin = 1.28^!
+type = min
+```
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
+
+For more details on motion control configuration differences between v1 and v2, see the [Motion Control documentation](/motion-control).
+
 {% include modules/spindle/spindle-control-for-include.md %}
 
 {% include modules/endstops-probes/z-probe-guide-for-include.md %}

@@ -61,7 +61,7 @@
         <tr>
             <td class="empty-cell">—</td>
             <td><setting no-version v2="general.config-override"></setting></td>
-            <td class="description-cell">Enables config-override functionality allowing runtime configuration changes to be saved with M500 and loaded automatically on boot. When enabled, settings can be overridden and persisted without modifying the main config.ini file. Unlike v1 where the override file was always active if present, v2 requires explicit enabling of this feature. This is useful for storing calibration values, PID tuning, and other runtime-adjustable parameters that should persist across reboots.</td>
+            <td class="description-cell">Enables config-override functionality allowing runtime configuration changes to be saved with <mcode>M500</mcode> and loaded automatically on boot. When enabled, settings can be overridden and persisted without modifying the main config.ini file. Unlike v1 where the override file was always active if present, v2 requires explicit enabling of this feature. This is useful for storing calibration values, PID tuning, and other runtime-adjustable parameters that should persist across reboots.</td>
         </tr>
         <tr>
             <td><setting no-version v1="second_usb_serial_enable"></setting></td>

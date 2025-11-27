@@ -89,7 +89,7 @@ You're using the **new Smoothieware V2** platform with the STM32H745-based Smoot
 
 ### Getting Started
 
-- [Smoothieboard](smoothieboard) - About the Smoothieboard controller
+- [Smoothieboard](smoothieboards) - About the Smoothieboard controller
 - [Getting Smoothieboard](getting-smoothieboard) - Where to buy
 - [Configuring Smoothie](configuring-smoothie) - Configuration guide
 - [Troubleshooting](troubleshooting) - When things don't work

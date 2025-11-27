@@ -1,6 +1,11 @@
-# Smoothieboard Pinout
+# Pinout
 
-This page shows the pinout diagrams for the Smoothieboard.
+This page shows the pinout diagrams for the board.
+
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
 
 ## Wiring Diagram
 
@@ -36,6 +41,24 @@ This page shows the pinout diagrams for the Smoothieboard.
 [View full size pin capabilities diagram](https://github.com/Bouni/smoothieboard-graphics/blob/master/smoothieboard-pin-capabilities.png?raw=true)
 
 Also see the [pin usage table](lpc1769-pin-usage) for detailed information about each pin.
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+{::nomarkdown}
+<sl-alert variant="warning" open>
+  <sl-icon slot="icon" name="tools"></sl-icon>
+  <strong>Work in Progress</strong><br>
+  The V2 pinout diagrams are still being created. Check back soon for updated wiring and pin capability diagrams for V2 boards.
+</sl-alert>
+{:/nomarkdown}
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
 
 ## Important Notes
 

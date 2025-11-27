@@ -294,7 +294,7 @@ Baud rate: 115200 8N1
 
 **MicroSD (SDIO):** High-speed 4-bit interface (10-25 MB/s) vs V1's SPI (~0.5 MB/s).
 
-**Board Detection:** 4-bit ID via PF3, PF5, PF7, PE10 determines driver variant (TMC2590 vs TMC2660).
+**Board Detection:** 4-bit ID via <pin>PF3</pin>, <pin>PF5</pin>, <pin>PF7</pin>, <pin>PE10</pin> determines driver variant (TMC2590 vs TMC2660).
 
 ---
 

@@ -214,6 +214,34 @@ Here is the exact mapping of pin names to inputs on the board:
 | Pin name     | {::nomarkdown}<pin>PG10</pin>{:/nomarkdown} | {::nomarkdown}<pin>PG9</pin>{:/nomarkdown} | {::nomarkdown}<pin>PG11</pin>{:/nomarkdown} | {::nomarkdown}<pin>PG12</pin>{:/nomarkdown} | {::nomarkdown}<pin>PG13</pin>{:/nomarkdown} | {::nomarkdown}<pin>PG14</pin>{:/nomarkdown} |
 
 {::nomarkdown}
+<sl-alert variant="primary" open>
+  <sl-icon slot="icon" name="info-circle"></sl-icon>
+  <strong>Note:</strong> The actual pin names shown above may vary depending on your board variant (Prime vs Mini). Always refer to your specific board's pinout documentation for accurate pin assignments.
+</sl-alert>
+{:/nomarkdown}
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
+
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
+
+For complete pinout information, see the [Smoothieboard Pinout documentation](pinout).
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+For complete pinout information, see your board's pinout documentation:
+- [Prime Board Pinout](smoothieboard-prime-pinout)
+- [Mini Board Pinout](smoothieboard-mini-pinout)
+
+{::nomarkdown}
 </v2>
 </versioned>
 {:/nomarkdown}

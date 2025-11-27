@@ -169,7 +169,7 @@ For single-MPG setups that can control multiple axes, you can use a [Button Box]
 
 The pins you specified don't support interrupts or share the same EXTI line:
 - Choose different pins with unique line numbers
-- EXTI line = last digit of pin number (PA10 and PB10 conflict - both line 10)
+- EXTI line = last digit of pin number (<pin>PA10</pin> and <pin>PB10</pin> conflict - both line 10)
 
 ## Example Complete Setup
 

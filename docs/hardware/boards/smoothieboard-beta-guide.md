@@ -10,10 +10,10 @@ permalink: /smoothieboard-beta-guide
 
   While the information is still useful, newer boards may have different characteristics.
 
-  For current information, see the main <a href="smoothieboard">Smoothieboard</a> documentation.
+  For current information, see the main <a href="smoothieboards">Smoothieboard</a> documentation.
 </sl-alert>
 
-The original beta status of the first batch of [Smoothieboards](smoothieboard) led to new users having many of the same questions, which were not fully answered in the documentation at the time.
+The original beta status of the first batch of [Smoothieboards](smoothieboards) led to new users having many of the same questions, which were not fully answered in the documentation at the time.
 
 This is a guide for new users of Smoothieboard in general, with specific information about what was specific to that first beta batch.
 
@@ -42,7 +42,7 @@ A great way to see what connector options you have for each connection is to loo
 - **Green screw terminals**: 2.54mm screw terminals. They are nice but more difficult to come by.
 - **Black 2.54mm pins**: Much cheaper alternative for 2.54mm connections.
 
-You can find links to buy those connectors on the [Smoothieboard](smoothieboard) page, in the "border connectors" section.
+You can find links to buy those connectors on the [Smoothieboard](smoothieboards) page, in the "border connectors" section.
 
 The cheapest option is simply to use 2.54mm pins for everything (except power), but your choice really depends on what is at the end of the wires on your printer: screw terminals are a more "universal" option.
 

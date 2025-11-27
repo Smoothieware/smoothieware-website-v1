@@ -151,7 +151,7 @@ Smoothieware v2 maintains support for multiple kinematics (Cartesian, Linear Del
 {::nomarkdown}
 <sl-alert variant="success" open>
   <sl-icon slot="icon" name="check-circle"></sl-icon>
-  <strong>PanelDue support</strong> <a href="https://github.com/chrisbrent">Chris Brent</a> is working on implementing support for the <a href="http://www.think3dprint3d.com/PanelDue">Paneldue</a> into Smoothie ( specifically the M408 G-code, which will also be useful for web interface projects ).<br><br>You can follow the progress at <a href="https://github.com/Smoothieware/Smoothieware/pull/798">PanelDue support</a>.
+  <strong>PanelDue support</strong> <a href="https://github.com/chrisbrent">Chris Brent</a> is working on implementing support for the <a href="http://www.think3dprint3d.com/PanelDue">Paneldue</a> into Smoothie ( specifically the <mcode>M408</mcode> G-code, which will also be useful for web interface projects ).<br><br>You can follow the progress at <a href="https://github.com/Smoothieware/Smoothieware/pull/798">PanelDue support</a>.
 </sl-alert>
 {:/nomarkdown}
 

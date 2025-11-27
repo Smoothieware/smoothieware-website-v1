@@ -7,9 +7,25 @@ title: Jogger Module
 # Jogger Module
 
 {::nomarkdown}
+<sl-alert variant="warning" open>
+  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+  <strong>Deprecated in V2</strong><br>
+  The Jogger module is deprecated in Smoothieware V2. For V2, please see the <a href="/mpg">MPG module documentation</a> for jogging functionality.
+</sl-alert>
+{:/nomarkdown}
+
+{::nomarkdown}
 <sl-alert variant="danger" open>
   <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
   <strong>Deprecated:</strong> This module no longer works and has been abandoned, and there are no plans to integrate it.
+</sl-alert>
+{:/nomarkdown}
+
+{::nomarkdown}
+<sl-alert variant="primary" open>
+  <sl-icon slot="icon" name="info-circle"></sl-icon>
+  <strong>Historical V1 Documentation</strong><br>
+  This is historical documentation for Smoothieware V1. This module is not available in V2.
 </sl-alert>
 {:/nomarkdown}
 
@@ -20,6 +36,13 @@ Jogger is a module for SmoothieBoard which adds the ability to move your machine
 This module is different from most jogging tools in that it accepts input from a [joystick](joystick).
 
 This means your machine will move smoothly in the direction of the joystick, rather than take a small step in a certain direction each time a button is pressed.
+
+{::nomarkdown}
+<sl-alert variant="primary" open>
+  <sl-icon slot="icon" name="info-circle"></sl-icon>
+  <strong>V2 Users:</strong> For jogging functionality in Smoothieware V2, use the <a href="/mpg">MPG module</a>, which provides manual pulse generator (MPG) support for jogging operations.
+</sl-alert>
+{:/nomarkdown}
 
 Some possible uses for the Jogger module:
 

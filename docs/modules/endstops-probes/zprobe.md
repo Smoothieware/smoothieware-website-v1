@@ -108,7 +108,24 @@ max_travel = 200            # maximum default travel for the probe command
 </versioned>
 {:/nomarkdown}
 
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
 
+In V1, you need to set the endstop pin to `nc` (not connected) to avoid conflicts when using the same pin for the probe. For example, `gamma_min_endstop nc` prevents conflicts with `zprobe.probe_pin 1.28!^`.
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+**V2 Improvement:** ZProbe no longer conflicts with endstop pins. You can use any available GPIO pin for the probe without worrying about endstop assignment conflicts.
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
 
 {::nomarkdown}
 <sl-alert variant="neutral" open>
@@ -306,7 +323,7 @@ When enabled every move will calculate the Z offset based on interpolating the h
 
 Should be used in conjunction with the delta calibration strategy above.
 
-First calibrate with G32 then if needed do G31 to set the grid compensation. If you want to save the grid, do M374.
+First calibrate with {::nomarkdown}<gcode>G32</gcode>{:/nomarkdown} then if needed do {::nomarkdown}<gcode>G31</gcode>{:/nomarkdown} to set the grid compensation. If you want to save the grid, do M374.
 
 {::nomarkdown}
 <sl-alert variant="warning" open>
@@ -359,7 +376,7 @@ leveling-strategy.delta-grid.do_home         true
 
 This must be set on a Delta printer (although it should default to true).
 
-If you are not using all 3 endstops (or prefer to home manually before G32):
+If you are not using all 3 endstops (or prefer to home manually before {::nomarkdown}<gcode>G32</gcode>{:/nomarkdown}):
 
 ```
 leveling-strategy.delta-grid.do_home        false
@@ -378,7 +395,7 @@ size = 7              # X and Y size of grid (must be odd number, default 7 = 49
 do_home = true        # Must be set on Delta printer (defaults to true)
 ```
 
-If you are not using all 3 endstops (or prefer to home manually before G32):
+If you are not using all 3 endstops (or prefer to home manually before {::nomarkdown}<gcode>G32</gcode>{:/nomarkdown}):
 
 ```ini
 [leveling_strategy.delta_grid]

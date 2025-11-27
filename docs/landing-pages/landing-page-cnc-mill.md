@@ -67,14 +67,14 @@ You need:
 **CNC Milling Features:**
 - Full RS274/NGC G-code interpreter
 - **GRBL Compatibility Mode** - Can parse GRBL-style G-code; works with bCNC, UGS, Candle
-- Work coordinate systems (G54-G59 for multiple setups)
+- Work coordinate systems ({::nomarkdown}<gcode>G54</gcode>{:/nomarkdown}-{::nomarkdown}<gcode>G59</gcode>{:/nomarkdown} for multiple setups)
 - Tool length offsets (G43/G49)
 - Canned drilling cycles (G81-G89)
 - Touch probe support (G38.x for part setup and tool measurement)
 - **Console Commands** - Telnet/USB access for real-time control and debugging
 - **Web Interface** - HTTP server for file upload, job monitoring, and control
 - Spindle control (PWM or relay for VFD)
-- Coolant control (M7/M8/M9)
+- Coolant control (M7/M8/{::nomarkdown}<mcode>M9</mcode>{:/nomarkdown})
 
 **Motion Quality:**
 - Advanced trajectory planning
@@ -248,8 +248,8 @@ delta_max_rate         30000   # A-axis rotary speed
 - Tool wear compensation
 
 **Work Coordinate Systems:**
-- G54-G59 (six work coordinate offsets)
-- G92 temporary coordinate offsets
+- {::nomarkdown}<gcode>G54</gcode>{:/nomarkdown}-{::nomarkdown}<gcode>G59</gcode>{:/nomarkdown} (six work coordinate offsets)
+- {::nomarkdown}<gcode>G92</gcode>{:/nomarkdown} temporary coordinate offsets
 - Multiple part setups on one fixture
 - Fixture offset management
 

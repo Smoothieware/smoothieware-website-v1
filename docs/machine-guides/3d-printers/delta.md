@@ -408,7 +408,7 @@ Here's a manual calibration tutorial video:
 
 ## Advanced Settings
 
-The following settings can be set in the config, or via M665.
+The following settings can be set in the config, or via {::nomarkdown}<mcode>M665</mcode>{:/nomarkdown}.
 
 They are used to compensate for a frame that is not perfectly aligned. **It is recommended the frame be fixed rather than using these to compensate.**
 

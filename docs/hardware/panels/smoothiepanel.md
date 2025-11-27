@@ -2,6 +2,14 @@
 permalink: /smoothiepanel
 ---
 
+{::nomarkdown}
+<sl-alert variant="warning" open>
+  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+  <strong>Historical V1 Documentation</strong><br>
+  This is documentation for V1 hardware. For V2 display options (ST7920, TM1638), see the <a href="/panel">panel documentation</a>.
+</sl-alert>
+{:/nomarkdown}
+
 # SmoothiePanel
 
 SmoothiePanel is an [Open Source Hardware](http://en.wikipedia.org/wiki/Open-source_hardware) control interface for industrial robotic machinery.

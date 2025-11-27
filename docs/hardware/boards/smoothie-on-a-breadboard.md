@@ -112,7 +112,7 @@ The LED and resistor are not necessary, but it's always nice to know you've conn
 ## Buttons
 
 You need a reset button to reset your board connected to pin 4, and a bootloader button connected to pin 51 (shown in the diagram below) to get it to enter bootloader mode in order to flash the SD card bootloader (this only needs to be done once).
-Also, a play/pause button is used to force the bootloader into DFU mode to flash the firmware, this is connected to pin p2.12, and is not shown in the following diagram.
+Also, a play/pause button is used to force the bootloader into DFU mode to flash the firmware, this is connected to pin <pin>2.12</pin>, and is not shown in the following diagram.
 
 <a href="/images/recovered/bb04.jpg">
   <img src="/images/recovered/bb04.jpg" alt="Buttons" style="display: block; margin: 20px auto; min-width: 640px; max-width: 100%; height: auto;"/>

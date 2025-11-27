@@ -45,7 +45,41 @@ Here are the different commands, grouped by module.
 </sl-alert>
 {:/nomarkdown}
 
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
+
+{::nomarkdown}
+<sl-alert variant="neutral" open>
+  <sl-icon slot="icon" name="info-circle"></sl-icon>
+  <strong>V1 Commands:</strong> The V1 firmware uses a module called <code>SimpleShell</code> for command handling. Commands support the traditional flat config file format.
+</sl-alert>
+{:/nomarkdown}
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+{::nomarkdown}
+<sl-alert variant="neutral" open>
+  <sl-icon slot="icon" name="info-circle"></sl-icon>
+  <strong>V2 Commands:</strong> The V2 firmware uses a <code>CommandShell</code> module with several new commands and changes. Commands support the INI-style config format. Type <code>cmd -h</code> to get help on any specific command.
+</sl-alert>
+{:/nomarkdown}
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
+
 ---
+
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
 
 ## SimpleShell
 
@@ -53,9 +87,28 @@ SimpleShell is a small unix-like shell module that allows you to browse the file
 
 This provides a powerful command-line interface for managing files and executing commands.
 
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+## CommandShell
+
+CommandShell is the V2 equivalent of V1's SimpleShell. It provides a unix-like shell for browsing the file system and executing commands, with several enhancements for the V2 architecture.
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
+
 ### help
 
 `help` - Give a list of commands
+
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
 
 Here is an example output (as of March 2019):
 
@@ -91,17 +144,79 @@ thermistors - print out the predefined thermistors
 md5sum file - prints md5 sum of the given file
 ```
 
-Note: Smoothie now also supports GRBL-like commands like `?` and `!` (when in grbl mode): [Configuring Grbl v0.8](https://github.com/grbl/grbl/wiki/Configuring-Grbl-v0.8)
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+In V2, use `help` to see available commands, and `cmd -h` to get help on a specific command.
+
+Example output:
+
+```plaintext
+$#
+$G
+$H
+$I
+$J
+$P
+$S
+break
+cat
+cd
+config-get
+config-set
+cp
+date
+dl
+dfu
+echo
+ed
+flash
+get
+gpio
+help
+load
+ls
+md5sum
+mem
+mkdir
+modules
+msc
+mv
+qspi
+reset
+rm
+ry
+switch
+test
+truncate
+version
+
+use cmd -h to get help on that command
+```
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
+
+Note: Smoothie also supports GRBL-like commands like `?` and `!` (when in grbl mode): [Configuring Grbl v0.8](https://github.com/grbl/grbl/wiki/Configuring-Grbl-v0.8)
 
 ### ls
 
 `ls`
 
+List the files in the current folder (if no folder parameter is passed) or list them in the folder passed as a parameter (can be absolute or relative).
+
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
+
 ```plaintext
 ls [-s] folder
 ```
-
-List the files in the current folder (if no folder parameter is passed) or list them in the folder passed as a parameter (can be absolute or relative).
 
 The `-s` parameter will also return the file sizes.
 
@@ -123,6 +238,49 @@ tt.nc 7500020
 webif/
 linearballbearingmount.nc 20140
 ```
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+```plaintext
+ls [-1] folder
+```
+
+By default, V2 shows file permissions, size, timestamp, and name. The `-1` parameter shows a simple listing (names only).
+
+Examples:
+
+```plaintext
+ls
+ls relative/path
+ls /sd/absolute/path
+ls -1 /sd/
+```
+
+Example output of `ls /sd/`:
+
+```plaintext
+drw-        0 2024-03-15 10:23 firmware/
+-rw-    21080 2024-03-14 09:15 config.ini
+-rw-   284520 2024-03-14 16:30 firmware.bin
+-rw-  7500020 2024-03-12 14:22 tt.nc
+```
+
+Example output of `ls -1 /sd/`:
+
+```plaintext
+firmware/
+config.ini
+firmware.bin
+tt.nc
+```
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
 
 ### cd
 
@@ -212,12 +370,18 @@ Stops an execution of play
 
 `mem`
 
+Returns information about RAM usage
+
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
+
 ```plaintext
-mem -v
-mem
+mem [-v]
 ```
 
-Returns information about RAM usage
+The `-v` parameter shows verbose heap information.
 
 Example output of a `mem` command:
 
@@ -229,6 +393,36 @@ Total Free RAM: 13140 bytes
 Free AHB0: 13152, AHB1: 10440
 ```
 
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+```plaintext
+mem
+```
+
+Shows memory usage including RTOS task information, heap status, and memory regions.
+
+Example output:
+
+```plaintext
+Heap: Total: 524288, Free: 489216, Used: 35072
+DTCMRAM: Total: 131072, Free: 98304, Used: 32768
+SRAM: Free: 262144
+
+RTOS Task List:
+Name            State   Prio    Stack   Num
+IDLE            Ready   0       120     1
+CommandShell    Ready   2       256     4
+Main            Running 3       512     2
+```
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
+
 ### break
 
 `break`
@@ -238,6 +432,11 @@ break
 ```
 
 Breaks into [MRI debugging mode](mri-debugging)
+
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
 
 ### net
 
@@ -260,6 +459,18 @@ IP mask: 255.255.255.0
 MAC Address: 00:1F:11:02:04:20
 ```
 
+{::nomarkdown}
+<sl-alert variant="neutral" open>
+  <sl-icon slot="icon" name="info-circle"></sl-icon>
+  The <code>net</code> command is only available in V1. Network functionality in V2 may be accessed differently depending on the network module implementation.
+</sl-alert>
+{:/nomarkdown}
+
+{::nomarkdown}
+</v1>
+</versioned>
+{:/nomarkdown}
+
 ### rm
 
 `rm`
@@ -276,6 +487,11 @@ Example:
 rm /sd/file.gcode
 ```
 
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
+
 ### pwd
 
 `pwd`
@@ -285,6 +501,18 @@ Shows the current folder
 ```plaintext
 pwd
 ```
+
+{::nomarkdown}
+<sl-alert variant="neutral" open>
+  <sl-icon slot="icon" name="info-circle"></sl-icon>
+  The <code>pwd</code> command is only available in V1. In V2, the current directory is shown in the prompt, or use <code>ls</code> without arguments to see where you are.
+</sl-alert>
+{:/nomarkdown}
+
+{::nomarkdown}
+</v1>
+</versioned>
+{:/nomarkdown}
 
 ---
 
@@ -314,11 +542,47 @@ Will resume a suspended print it does the following...
 3. Restore the position it was at and E and any other saved state
 4. Resume sd print or send resume upstream
 
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
+
 ### thermistors
 
 `thermistors`
 
 Prints a list of thermistor presets known to Smoothie with their numerical IDs.
+
+### calc_thermistor
+
+`calc_thermistor`
+
+```plaintext
+calc_thermistor [-s0] T1,R1,T2,R2,T3,R3
+```
+
+Calculate the Steinhart-Hart coefficients for a thermistor using three temperature/resistance pairs.
+
+Options:
+- `-sN` : Save the calculated coefficients to thermistor preset N
+
+Example:
+
+```plaintext
+calc_thermistor 25,10000,100,950,220,47
+```
+
+{::nomarkdown}
+<sl-alert variant="neutral" open>
+  <sl-icon slot="icon" name="info-circle"></sl-icon>
+  The <code>thermistors</code> and <code>calc_thermistor</code> commands are only available in V1.
+</sl-alert>
+{:/nomarkdown}
+
+{::nomarkdown}
+</v1>
+</versioned>
+{:/nomarkdown}
 
 ---
 
@@ -331,6 +595,11 @@ It also provides a few commands to manipulate those values.
 ### config-get
 
 `config-get`
+
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
 
 ```plaintext
 config-get <configuration_source> <configuration_setting>
@@ -358,9 +627,49 @@ config-get acceleration
 config-get sd alpha_steps_per_mm
 ```
 
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+```plaintext
+config-get [section name] key
+config-get [section name]
+config-get key
+```
+
+Gets configuration values from the INI-style config file. V2 uses sections (in square brackets) to organize settings.
+
+Examples:
+
+```plaintext
+config-get [motion] default_acceleration
+config-get [motion]
+config-get default_acceleration
+```
+
+Example output of `config-get [motion]`:
+
+```plaintext
+[motion]
+default_acceleration = 1000
+default_seek_rate = 100
+junction_deviation = 0.05
+```
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
+
 ### config-set
 
 `config-set`
+
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
 
 ```plaintext
 config-set <configuration_source> <configuration_setting> <value>
@@ -390,6 +699,39 @@ Example:
 config-set sd acceleration 1000
 ```
 
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+```plaintext
+config-set [section name] key = value
+config-set [section name] key value
+config-set key = value
+```
+
+Sets configuration values in the INI-style config file. V2 uses sections (in square brackets) to organize settings.
+
+Note you need to reset your board after changing configuration for changes to take effect.
+
+Examples:
+
+```plaintext
+config-set [motion] default_acceleration = 1500
+config-set [motion] default_acceleration 1500
+config-set default_acceleration = 1500
+```
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
+
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
+
 ### config-load
 
 `config-load`
@@ -406,6 +748,18 @@ config-load load|unload|dump|checksum
 ```plaintext
 config-load dump
 ```
+
+{::nomarkdown}
+<sl-alert variant="neutral" open>
+  <sl-icon slot="icon" name="info-circle"></sl-icon>
+  The <code>config-load</code> command is only available in V1. V2 handles configuration loading differently.
+</sl-alert>
+{:/nomarkdown}
+
+{::nomarkdown}
+</v1>
+</versioned>
+{:/nomarkdown}
 
 ### fire
 
@@ -440,6 +794,245 @@ These are commands designed to return information to a Host program like Smoopi.
 
 `?` instantly returns the current running state, axis positions, feedrates and temperatures eg `<Idle|MPos:0.0000,0.0000,470.7656,85.1522|WPos:0.0000,0.0000,470.5656|F:15000.0,279.0|T:22.2,0.0|B:22.2,0.0>`
 
+{::nomarkdown}
+<versioned orientation="vertical">
+<v2>
+{:/nomarkdown}
+
+`$P` probe command (V2 only) - performs probing operations
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
+
 ### Stopping Smoothie
 
 {% include troubleshooting/stopping-smoothie-for-include.md %}
+
+---
+
+{::nomarkdown}
+<versioned orientation="vertical">
+<v2>
+{:/nomarkdown}
+
+## V2-Only Commands
+
+The following commands are only available in V2 firmware.
+
+### cp
+
+`cp`
+
+```plaintext
+cp source destination
+```
+
+Copy a file from source to destination.
+
+Example:
+
+```plaintext
+cp /sd/config.ini /sd/config.bak
+```
+
+### ry
+
+`ry`
+
+```plaintext
+ry filename
+```
+
+Receive a file using YMODEM protocol. This replaces the V1 `upload` command.
+
+Example:
+
+```plaintext
+ry /sd/newfile.gcode
+```
+
+### dl
+
+`dl`
+
+```plaintext
+dl filename
+```
+
+Fast binary download of a file. Used for high-speed file transfers.
+
+Example:
+
+```plaintext
+dl /sd/firmware.bin
+```
+
+### truncate
+
+`truncate`
+
+```plaintext
+truncate filename size
+```
+
+Truncate a file to the specified size.
+
+Example:
+
+```plaintext
+truncate /sd/log.txt 1000
+```
+
+### date
+
+`date`
+
+```plaintext
+date
+date YYYY-MM-DD HH:MM:SS
+```
+
+Get or set the system date and time. Without arguments, displays the current date/time. With arguments, sets the date/time.
+
+Examples:
+
+```plaintext
+date
+date 2024-03-15 14:30:00
+```
+
+### gpio
+
+`gpio`
+
+```plaintext
+gpio list
+gpio set pin_name value
+gpio get pin_name
+```
+
+Control and query GPIO pins directly.
+
+Examples:
+
+```plaintext
+gpio list
+gpio set PA0 1
+gpio get PA0
+```
+
+### modules
+
+`modules`
+
+```plaintext
+modules
+```
+
+List all loaded modules and their status.
+
+Example output:
+
+```plaintext
+Loaded modules:
+  Motion - enabled
+  TemperatureControl - enabled
+  Laser - disabled
+  Player - enabled
+```
+
+### ed
+
+`ed`
+
+```plaintext
+ed filename
+```
+
+Simple line editor for editing files directly on the SD card.
+
+Example:
+
+```plaintext
+ed /sd/config.ini
+```
+
+### flash
+
+`flash`
+
+```plaintext
+flash
+```
+
+Flash new firmware from the file `flashme.bin` on the SD card. The board will reboot after flashing.
+
+### msc
+
+`msc`
+
+```plaintext
+msc
+```
+
+Enable USB Mass Storage Class mode, allowing the SD card to be accessed as a USB drive from the host computer. This is useful for file transfers without removing the SD card.
+
+### qspi
+
+`qspi`
+
+```plaintext
+qspi read address length
+qspi write address data
+qspi erase address length
+```
+
+Direct access to QSPI flash memory. Used for advanced operations.
+
+{::nomarkdown}
+<sl-alert variant="warning" open>
+  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+  The <code>qspi</code> command is for advanced users. Improper use can corrupt firmware or data.
+</sl-alert>
+{:/nomarkdown}
+
+### get volts
+
+In V2, the `get` command has an additional option:
+
+```plaintext
+get volts
+```
+
+Returns voltage readings from the board's ADC inputs.
+
+Example output:
+
+```plaintext
+VIN: 24.1V
+3V3: 3.31V
+VBAT: 3.12V
+```
+
+### get temp chip
+
+In V2, `get temp` has an additional option:
+
+```plaintext
+get temp chip
+```
+
+Returns the internal chip temperature sensor reading.
+
+Example output:
+
+```plaintext
+Chip temperature: 42.5°C
+```
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}

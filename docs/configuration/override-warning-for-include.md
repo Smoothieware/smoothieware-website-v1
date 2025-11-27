@@ -95,7 +95,7 @@ Config override is most useful for:
 
 - Storing calibration values that you've dialed in
 - Keeping machine-specific settings separate from your main config
-- Allowing M500 command to save settings without editing the main config file
+- Allowing <mcode>M500</mcode> command to save settings without editing the main config file
 
 ## Best Practices
 

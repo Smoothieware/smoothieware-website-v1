@@ -17,6 +17,312 @@ All of the options currently supported by the Extruder module:
   For example where before you used `extruder_steps_per_mm` you must now use <setting v1="extruder.{name}.steps_per_mm" v2="extruder.{name}.steps_per_mm"></setting>.
 </sl-alert>
 
+## Version-Specific Configuration
+
+Smoothieware V1 and V2 use different configuration file formats. Understanding these differences is important when setting up your extruder.
+
+### Configuration File Format Differences
+
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
+
+**Smoothieware V1: Flat Format**
+
+V1 uses a flat configuration format where all settings are on one line with spaces separating the key and value:
+
+```
+# Basic extruder configuration
+extruder.hotend.enable                          true
+extruder.hotend.steps_per_mm                    140
+extruder.hotend.acceleration                    500
+extruder.hotend.max_speed                       50
+
+# Pin assignments
+extruder.hotend.step_pin                        2.3
+extruder.hotend.dir_pin                         0.22
+extruder.hotend.en_pin                          0.21
+
+# Firmware retraction settings
+extruder.hotend.retract_length                  3
+extruder.hotend.retract_feedrate                45
+extruder.hotend.retract_recover_length          0
+extruder.hotend.retract_recover_feedrate        8
+```
+
+**Key characteristics:**
+- Dot-separated hierarchical naming
+- Values separated from keys by whitespace
+- Comments start with `#`
+- No section headers
+- All settings in a single flat namespace
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+**Smoothieware V2: INI Format**
+
+V2 uses an INI-style configuration format with section headers and equals signs:
+
+```ini
+# Basic extruder configuration
+[extruder]
+hotend.enable = true
+hotend.steps_per_mm = 140
+
+[actuator delta]
+acceleration = 500
+
+[motion control]
+max_speed = 50
+
+# Pin assignments
+[extruder]
+hotend.step_pin = 2.3
+hotend.dir_pin = 0.22
+hotend.en_pin = 0.21
+
+# Firmware retraction settings
+[extruder]
+hotend.retract_length = 3
+hotend.retract_feedrate = 45
+hotend.retract_recover_length = 0
+hotend.retract_recover_feedrate = 8
+```
+
+**Key characteristics:**
+- INI-style section headers `[section name]`
+- Settings use `key = value` format
+- Comments start with `#`
+- Settings organized by logical sections
+- Some settings moved to different sections (e.g., acceleration to `[actuator delta]`)
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
+
+### Hotend/Extruder Naming and Enable Flags
+
+When configuring multiple extruders, V1 and V2 handle naming and enable flags differently:
+
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
+
+**V1 Extruder Naming:**
+
+In V1, each extruder is configured by choosing a unique name (like `hotend`, `hotend2`, `extruder1`, etc.) and using that name consistently across all settings:
+
+```
+# First extruder (uses delta/M4 driver)
+extruder.hotend.enable                          true
+extruder.hotend.steps_per_mm                    140
+extruder.hotend.step_pin                        2.3
+extruder.hotend.dir_pin                         0.22
+extruder.hotend.en_pin                          0.21
+
+# Second extruder (uses epsilon/M5 driver)
+extruder.hotend2.enable                         true
+extruder.hotend2.steps_per_mm                   140
+extruder.hotend2.step_pin                       2.8
+extruder.hotend2.dir_pin                        2.13
+extruder.hotend2.en_pin                         4.29
+extruder.hotend2.x_offset                       25.0
+extruder.hotend2.y_offset                       0.0
+extruder.hotend2.z_offset                       0.0
+```
+
+**Important V1 details:**
+- The name you choose (e.g., `hotend`, `hotend2`) is arbitrary but must be unique
+- Each extruder must have `extruder.<name>.enable true` to be activated
+- The order of definition determines tool number (first = T0, second = T1)
+- Common naming conventions: `hotend`/`hotend2`, `extruder`/`extruder2`, `e0`/`e1`
+- All settings for one extruder share the same name: `extruder.<name>.*`
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+**V2 Extruder Naming:**
+
+In V2, extruders are configured within `[extruder]` sections, and the naming follows the INI format:
+
+```ini
+# First extruder (uses delta/M4 driver)
+[extruder]
+hotend.enable = true
+hotend.steps_per_mm = 140
+hotend.step_pin = 2.3
+hotend.dir_pin = 0.22
+hotend.en_pin = 0.21
+
+# Second extruder (uses epsilon/M5 driver)
+[extruder]
+hotend2.enable = true
+hotend2.steps_per_mm = 140
+hotend2.step_pin = 2.8
+hotend2.dir_pin = 2.13
+hotend2.en_pin = 4.29
+hotend2.x_offset = 25.0
+hotend2.y_offset = 0.0
+hotend2.z_offset = 0.0
+```
+
+**Important V2 details:**
+- All extruders are configured under `[extruder]` section headers
+- Each extruder instance uses a unique name (e.g., `hotend`, `hotend2`)
+- The enable flag pattern is `<name>.enable = true`
+- Some settings may be in different sections (acceleration in `[actuator delta]`, max_speed in `[motion control]`)
+- The section-based organization groups related settings together
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
+
+### Complete Single Extruder Example
+
+Here's a complete basic configuration for a single extruder in both formats:
+
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
+
+```
+# Extruder module configuration (V1)
+extruder.hotend.enable                          true
+extruder.hotend.steps_per_mm                    140
+extruder.hotend.acceleration                    500
+extruder.hotend.max_speed                       50
+extruder.hotend.step_pin                        2.3
+extruder.hotend.dir_pin                         0.22
+extruder.hotend.en_pin                          0.21
+
+# Current control for delta driver (M4)
+delta_current                                   1.5
+```
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+```ini
+# Extruder module configuration (V2)
+[extruder]
+hotend.enable = true
+hotend.steps_per_mm = 140
+hotend.step_pin = 2.3
+hotend.dir_pin = 0.22
+hotend.en_pin = 0.21
+
+[actuator delta]
+acceleration = 500
+
+[motion control]
+max_speed = 50
+
+[current control]
+delta = 1.5
+```
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
+
+### Complete Dual Extruder Example
+
+For dual extruder setups, here's how to configure both extruders:
+
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
+
+```
+# First extruder (T0) on delta/M4 driver
+extruder.hotend.enable                          true
+extruder.hotend.steps_per_mm                    140
+extruder.hotend.acceleration                    500
+extruder.hotend.max_speed                       50
+extruder.hotend.step_pin                        2.3
+extruder.hotend.dir_pin                         0.22
+extruder.hotend.en_pin                          0.21
+
+# Second extruder (T1) on epsilon/M5 driver
+extruder.hotend2.enable                         true
+extruder.hotend2.steps_per_mm                   140
+extruder.hotend2.acceleration                   500
+extruder.hotend2.max_speed                      50
+extruder.hotend2.step_pin                       2.8
+extruder.hotend2.dir_pin                        2.13
+extruder.hotend2.en_pin                         4.29
+extruder.hotend2.x_offset                       25.0
+extruder.hotend2.y_offset                       0.0
+extruder.hotend2.z_offset                       0.0
+
+# Current control
+delta_current                                   1.5
+epsilon_current                                 1.5
+```
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+```ini
+# First extruder (T0) on delta/M4 driver
+[extruder]
+hotend.enable = true
+hotend.steps_per_mm = 140
+hotend.step_pin = 2.3
+hotend.dir_pin = 0.22
+hotend.en_pin = 0.21
+
+# Second extruder (T1) on epsilon/M5 driver
+[extruder]
+hotend2.enable = true
+hotend2.steps_per_mm = 140
+hotend2.step_pin = 2.8
+hotend2.dir_pin = 2.13
+hotend2.en_pin = 4.29
+hotend2.x_offset = 25.0
+hotend2.y_offset = 0.0
+hotend2.z_offset = 0.0
+
+[actuator delta]
+acceleration = 500
+
+[actuator epsilon]
+acceleration = 500
+
+[motion control]
+max_speed = 50
+
+[current control]
+delta = 1.5
+epsilon = 1.5
+```
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
+
+<sl-alert variant="primary" open>
+  <sl-icon slot="icon" name="lightbulb"></sl-icon>
+  When migrating from V1 to V2, pay special attention to settings that have moved to different sections. The most common are <code>acceleration</code> (moved to <code>[actuator]</code> sections) and <code>max_speed</code> (moved to <code>[motion control]</code>). Refer to the options table above for the exact V2 location of each setting.
+</sl-alert>
+
 ## G-code
 
 Here are the G-code commands currently supported by the Extruder module:

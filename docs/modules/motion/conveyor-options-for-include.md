@@ -42,7 +42,7 @@
         <tr>
             <td class="empty-cell">—</td>
             <td><setting no-version v2="conveyor.x.dir_pin"></setting></td>
-            <td class="description-cell">X axis: MCU pin that sets the rotation direction for the stepper motor driver. The logic level (high or low) determines whether the motor moves forward or backward. Use the '!' prefix to invert the pin logic if your motor moves in the wrong direction (e.g., '!2.1'). This is hardware-specific and depends on your driver and motor wiring configuration.</td>
+            <td class="description-cell">X axis: MCU pin that sets the rotation direction for the stepper motor driver. The logic level (high or low) determines whether the motor moves forward or backward. Use the '!' prefix to invert the pin logic if your motor moves in the wrong direction (e.g., '!<pin>2.1</pin>'). This is hardware-specific and depends on your driver and motor wiring configuration.</td>
         </tr>
         <tr>
             <td class="empty-cell">—</td>
@@ -95,7 +95,7 @@
         <tr>
             <td class="empty-cell">—</td>
             <td><setting no-version v2="conveyor.y.dir_pin"></setting></td>
-            <td class="description-cell">Y axis: MCU pin that sets the rotation direction for the stepper motor driver. The logic level (high or low) determines whether the motor moves forward or backward. Use the '!' prefix to invert the pin logic if your motor moves in the wrong direction (e.g., '!2.3'). This is hardware-specific and depends on your driver and motor wiring configuration.</td>
+            <td class="description-cell">Y axis: MCU pin that sets the rotation direction for the stepper motor driver. The logic level (high or low) determines whether the motor moves forward or backward. Use the '!' prefix to invert the pin logic if your motor moves in the wrong direction (e.g., '!<pin>2.3</pin>'). This is hardware-specific and depends on your driver and motor wiring configuration.</td>
         </tr>
         <tr>
             <td class="empty-cell">—</td>
@@ -148,7 +148,7 @@
         <tr>
             <td class="empty-cell">—</td>
             <td><setting no-version v2="conveyor.z.dir_pin"></setting></td>
-            <td class="description-cell">Z axis: MCU pin that sets the rotation direction for the stepper motor driver. The logic level (high or low) determines whether the motor moves forward or backward. Use the '!' prefix to invert the pin logic if your motor moves in the wrong direction (e.g., '!2.5'). This is hardware-specific and depends on your driver and motor wiring configuration.</td>
+            <td class="description-cell">Z axis: MCU pin that sets the rotation direction for the stepper motor driver. The logic level (high or low) determines whether the motor moves forward or backward. Use the '!' prefix to invert the pin logic if your motor moves in the wrong direction (e.g., '!<pin>2.5</pin>'). This is hardware-specific and depends on your driver and motor wiring configuration.</td>
         </tr>
         <tr>
             <td class="empty-cell">—</td>

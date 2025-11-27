@@ -132,3 +132,137 @@ The K1 relay is wired to the play/pause button ([see the details here](pausebutt
 This has the effect that if you push an emergency stop button, the Smoothieboard will be stopped as well.
 
 So if you release the button, the machine will not start to move again.
+
+## Hardware vs Software Emergency Stop Methods
+
+It's important to understand the difference between hardware and software emergency stop methods:
+
+**Hardware Emergency Stop (Recommended for Critical Applications):**
+- External circuit that physically cuts power to stepper motors and other components
+- Works independently of the Smoothieboard firmware
+- Most reliable method as it doesn't depend on software functioning correctly
+- Examples: Emergency stop button wired to contactor/relay that interrupts VBB power
+
+**Software Emergency Stop (Kill Button Module):**
+- Uses Smoothieboard firmware to halt operations when a kill button is triggered
+- Configured via the Kill Button Module (see link below)
+- Depends on firmware responding correctly to the kill signal
+- Less reliable than hardware methods for critical safety applications
+- Can be used in combination with hardware methods for defense-in-depth
+
+{::nomarkdown}
+<sl-alert variant="primary" open>
+  <sl-icon slot="icon" name="info-circle"></sl-icon>
+  <strong>Software-Based Emergency Stop</strong><br><br>
+  For software-based emergency stop functionality using the Kill Button Module, see the <a href="/killbutton">Kill Button Module documentation</a>. This provides firmware-level emergency stop that can complement (but should not replace) hardware-based emergency circuits.
+</sl-alert>
+{:/nomarkdown}
+
+## Kill Button Safety Configuration
+
+If you're using the software-based Kill Button Module, the `unkill_enable` configuration option controls whether the board can recover from a kill state:
+
+<setting v1="kill_button.unkill_enable" v2=""></setting>
+
+**When `unkill_enable` is set to `false` (safer option for critical applications):**
+- The board **cannot** recover from a kill state through software commands
+- A physical reset or power cycle is required to resume operations
+- This prevents accidental restart after an emergency stop
+- Recommended for machines where safety is critical
+- Ensures human intervention is required before restart
+
+**When `unkill_enable` is set to `true`:**
+- The board can be "unkilled" through software commands
+- Less safe as the machine could potentially restart without physical intervention
+- May be appropriate for non-critical applications or testing
+
+{::nomarkdown}
+<sl-alert variant="warning" open>
+  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+  <strong>Safety Recommendation</strong><br><br>
+  For critical applications, always set <code>unkill_enable = false</code> to ensure that recovery from an emergency stop requires physical reset or power cycle. This adds an extra layer of safety by requiring human intervention.
+</sl-alert>
+{:/nomarkdown}
+
+## Testing Emergency Stop Functionality
+
+After configuring your emergency stop setup, it's essential to verify that it works correctly:
+
+### Testing Software Kill Button
+
+1. **Check endstop states** using the <mcode>M119</mcode> command in the console
+   - This will show the current state of all configured endstops and kill buttons
+   - Verify that your kill button shows the correct state (triggered/not triggered)
+
+2. **Test software emergency stop** with the `M112` command
+   - Send `M112` from the console to trigger a firmware emergency stop
+   - Verify that all motion stops immediately
+   - If `unkill_enable = false`, verify that you cannot resume without reset/power cycle
+   - If `unkill_enable = true`, test the unkill command to verify recovery works
+
+3. **Test physical kill button**
+   - Press the physical kill button
+   - Verify all motion stops immediately
+   - Check that the board enters kill state
+   - Attempt to send motion commands (they should be rejected)
+   - Test recovery procedure appropriate to your configuration
+
+### Testing Hardware Emergency Stop
+
+1. **Test contactor operation**
+   - Press emergency stop button
+   - Verify that power to motors is immediately cut
+   - Check that contactor releases audibly/visibly
+   - Verify motors are de-energized
+
+2. **Test multiple e-stop buttons** (if applicable)
+   - Test each emergency stop button individually
+   - Verify all buttons trigger the emergency stop circuit
+
+3. **Test recovery procedure**
+   - Release emergency stop button
+   - Verify motors do not restart automatically
+   - Test ON button (if using latching circuit)
+   - Verify clean power restoration
+
+{::nomarkdown}
+<sl-alert variant="primary" open>
+  <sl-icon slot="icon" name="lightbulb"></sl-icon>
+  <strong>Regular Testing</strong><br><br>
+  Emergency stop systems should be tested regularly (weekly or monthly depending on machine usage) to ensure they remain functional. Include emergency stop testing in your machine maintenance checklist.
+</sl-alert>
+{:/nomarkdown}
+
+## Troubleshooting
+
+### Kill Button Not Responding
+
+If your software kill button is not working correctly, check these common causes:
+
+**Wrong Pin Configuration:**
+- Verify the pin specified in your configuration matches the physical connection
+- Check the pin naming convention (format: `2.12`, not `P2.12` or `2_12`)
+- Ensure the pin supports input functionality (refer to pinout diagrams)
+
+**Inverted Logic:**
+- Kill buttons typically use NC (normally closed) wiring for safety
+- If the button appears to work backwards, check the `!` (invert) prefix in your pin configuration
+- NC buttons should typically use `!` prefix (e.g., `kill_button.pin !2.12`)
+
+**Wiring Issues:**
+- Verify NC (normally closed) connection for safety (cable break triggers stop)
+- Check for loose connections or damaged wiring
+- Test continuity with a multimeter
+- Verify pull-up/pull-down resistor configuration if needed
+
+**Configuration Not Loaded:**
+- Verify the Kill Button Module is enabled in your configuration
+- Check that configuration changes were saved to the SD card
+- Confirm the board was reset after configuration changes
+- Look for configuration errors in the console output during boot
+
+**Testing with M119:**
+- Use <mcode>M119</mcode> command to check current kill button state
+- Press and release the button while monitoring <mcode>M119</mcode> output
+- The state should change when button is pressed/released
+- If state doesn't change, there's likely a wiring or configuration issue

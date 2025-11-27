@@ -87,17 +87,17 @@
         <tr>
             <td><setting no-version v1="switch.{name}.failsafe_set_to"></setting></td>
             <td><setting no-version v2="switch.{name}.failsafe_set_to"></setting></td>
-            <td class="description-cell">Defines the pin state (0 or 1) to set during a crash, watchdog reset, or debug halt condition. This is a safety feature to ensure outputs are in a safe state when the system fails. Different from halt_set_to which handles M112 HALT commands. Can be overridden by ignore_on_halt setting. Choose a value that puts your system in a safe state for your hardware.</td>
+            <td class="description-cell">Defines the pin state (0 or 1) to set during a crash, watchdog reset, or debug halt condition. This is a safety feature to ensure outputs are in a safe state when the system fails. Different from halt_set_to which handles <mcode>M112</mcode> HALT commands. Can be overridden by ignore_on_halt setting. Choose a value that puts your system in a safe state for your hardware.</td>
         </tr>
         <tr>
             <td><setting no-version v1="switch.{name}.halt_set_to"></setting></td>
             <td><setting no-version v2="switch.{name}.halt_set_to"></setting></td>
-            <td class="description-cell">Defines the switch state (true or false) to set during a HALT condition (typically triggered by M112 emergency stop or system halt). When a halt occurs, the switch is set to this state unless ignore_on_halt is true. For digital outputs, this boolean directly controls the pin state (high/low). For PWM outputs (hwpwm/swpwm), startup_value is used as the actual value. Different from failsafe_set_to which handles crash/debug conditions.</td>
+            <td class="description-cell">Defines the switch state (true or false) to set during a HALT condition (typically triggered by <mcode>M112</mcode> emergency stop or system halt). When a halt occurs, the switch is set to this state unless ignore_on_halt is true. For digital outputs, this boolean directly controls the pin state (high/low). For PWM outputs (hwpwm/swpwm), startup_value is used as the actual value. Different from failsafe_set_to which handles crash/debug conditions.</td>
         </tr>
         <tr>
             <td><setting no-version v1="switch.{name}.ignore_on_halt"></setting></td>
             <td><setting no-version v2="switch.{name}.ignore_on_halt"></setting></td>
-            <td class="description-cell">When set to true, prevents the switch from changing state during HALT conditions (M112 emergency stop). Set to true to not set the failsafe or startup_value value when a HALT condition is triggered. Automatically set to true for input-pin switches and cannot be overridden. Useful for non-safety-critical outputs (lights, status indicators) that should maintain their state during emergency stops.</td>
+            <td class="description-cell">When set to true, prevents the switch from changing state during HALT conditions (<mcode>M112</mcode> emergency stop). Set to true to not set the failsafe or startup_value value when a HALT condition is triggered. Automatically set to true for input-pin switches and cannot be overridden. Useful for non-safety-critical outputs (lights, status indicators) that should maintain their state during emergency stops.</td>
         </tr>
     </tbody>
 </table>

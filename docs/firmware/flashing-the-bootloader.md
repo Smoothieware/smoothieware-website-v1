@@ -74,7 +74,7 @@ This page documents the v1 SD bootloader. V2 uses different mechanisms - see the
 <v1>
 {:/nomarkdown}
 
-To flash the bootloader you need a Serial-USB (can be a FTDI cable, an Arduino, CP2102, etc.) cable connected to the UART0 pins of the LPC1769 (6-pin connector noted as "Serial" on a [Smoothieboard](smoothieboard)), and the "reset" and "bootloader" (ISP) buttons connected.
+To flash the bootloader you need a Serial-USB (can be a FTDI cable, an Arduino, CP2102, etc.) cable connected to the UART0 pins of the LPC1769 (6-pin connector noted as "Serial" on a [Smoothieboard](smoothieboards)), and the "reset" and "bootloader" (ISP) buttons connected.
 
 If you have a Smoothieboard, all of this is already there, just connect the Serial-USB/FTDI cable.
 

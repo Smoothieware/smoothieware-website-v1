@@ -724,7 +724,7 @@ Connection via USB serial, Telnet, HTTP API, or standalone from SD card.
 
 **CNC Features:**
 - GRBL-mode compatibility (toggle in config for CNC-focused G-code)
-- Work coordinate systems (G54-G59)
+- Work coordinate systems ({::nomarkdown}<gcode>G54</gcode>{:/nomarkdown}-{::nomarkdown}<gcode>G59</gcode>{:/nomarkdown})
 - Tool length offsets
 - Tool change support (manual or ATC)
 - Probing (tool length, work surface, work offsets)

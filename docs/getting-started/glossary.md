@@ -12,6 +12,11 @@ This page provides definitions for common terms used in the Smoothieware documen
   <sl-icon slot="icon" name="info-circle"></sl-icon>
   This glossary is being actively expanded. If you find a term that needs clarification, please <a href="mailto:wolf.arthur@gmail.com">contact us</a>.
 </sl-alert>
+
+<sl-alert variant="primary" open>
+  <sl-icon slot="icon" name="info-circle"></sl-icon>
+  <strong>Version-Specific Terms:</strong> This glossary includes hardware terms specific to both Smoothieboard V1 and V2. As Smoothieboard V2 development progresses, additional V2-specific terminology may be added.
+</sl-alert>
 {:/nomarkdown}
 
 ## A
@@ -21,7 +26,7 @@ This page provides definitions for common terms used in the Smoothieware documen
 
 In AC, the electric current periodically reverses direction and changes its magnitude continuously with time. This creates a sinusoidal waveform.
 
-AC is the type of electricity delivered through wall sockets in homes and businesses. It is used because it can be easily transformed to different voltages for efficient long-distance transmission. Most [PSUs](#psu) convert AC from the wall to DC for use by electronics like [Smoothieboard](/smoothieboard).
+AC is the type of electricity delivered through wall sockets in homes and businesses. It is used because it can be easily transformed to different voltages for efficient long-distance transmission. Most [PSUs](#psu) convert AC from the wall to DC for use by electronics like [Smoothieboard](/smoothieboards).
 
 ### Axis
 An axis represents a direction of movement in a machine. Most machines have three axes: X (left-right), Y (front-back), and Z (up-down). Some machines have additional axes for features like tool rotation or multiple [extruders](#extruder).
@@ -31,7 +36,7 @@ See the [motion control](/motion-control) documentation for configuration option
 ## B
 
 ### Baud Rate
-The speed at which data is transmitted over a serial connection, measured in bits per second. Common baud rates for [Smoothieboard](/smoothieboard) communication include 115200 and 250000. The baud rate must match between the board and the host software for communication to work.
+The speed at which data is transmitted over a serial connection, measured in bits per second. Common baud rates for [Smoothieboard](/smoothieboards) communication include 115200 and 250000. The baud rate must match between the board and the host software for communication to work.
 
 See the [USB](/usb) documentation for more details.
 
@@ -51,7 +56,7 @@ Software that converts designs (from CAD software) into machine instructions ([G
 See the [software](/software) page for a list of compatible CAM applications.
 
 ### Cases/Enclosures
-Protective housings for electronics like [Smoothieboard](/smoothieboard). Cases protect the board from dust, debris, and accidental contact. They also provide mounting points and can help with heat dissipation. Cases can be 3D printed, laser cut from acrylic, or purchased ready-made.
+Protective housings for electronics like [Smoothieboard](/smoothieboards). Cases protect the board from dust, debris, and accidental contact. They also provide mounting points and can help with heat dissipation. Cases can be 3D printed, laser cut from acrylic, or purchased ready-made.
 
 ### CNC
 **Computer Numerical Control**
@@ -59,7 +64,7 @@ Protective housings for electronics like [Smoothieboard](/smoothieboard). Cases 
 CNC refers to the automated control of machining tools by means of a computer. CNC machines read [G-code](#g-code) instructions and precisely control motors to move tools or workpieces. Smoothieware supports various CNC applications including [3D printers](/3d-printer-guide), [laser cutters](/laser-cutter-guide), [CNC mills](/cnc-mill-guide), and [pick-and-place machines](/pick-and-place).
 
 ### Current
-Current is the flow of electric charge (electrons) through a conductor, measured in Amperes (Amps or A). In the context of [Smoothieboard](/smoothieboard), current settings are important for [stepper motors](/stepper-motors) - too little current and the motor won't have enough torque; too much current can overheat and damage the motor.
+Current is the flow of electric charge (electrons) through a conductor, measured in Amperes (Amps or A). In the context of [Smoothieboard](/smoothieboards), current settings are important for [stepper motors](/stepper-motors) - too little current and the motor won't have enough torque; too much current can overheat and damage the motor.
 
 See the [current control](/currentcontrol) documentation for configuration.
 
@@ -68,7 +73,7 @@ See the [current control](/currentcontrol) documentation for configuration.
 ### DC
 **Direct Current**
 
-In DC, electric current flows in only one direction, maintaining a constant polarity. Batteries produce DC power, and most electronics (including [Smoothieboard](/smoothieboard)) operate on DC. A [PSU](#psu) converts [AC](#ac) from the wall outlet into the DC voltage required by the board (typically 12V or 24V).
+In DC, electric current flows in only one direction, maintaining a constant polarity. Batteries produce DC power, and most electronics (including [Smoothieboard](/smoothieboards)) operate on DC. A [PSU](#psu) converts [AC](#ac) from the wall outlet into the DC voltage required by the board (typically 12V or 24V).
 
 ### Delta
 A type of [3D printer](/3d-printer-guide) or robot with three arms connected to a moving platform. Delta printers use trigonometric calculations to convert Cartesian coordinates into arm movements. They can achieve very fast print speeds but require careful calibration.
@@ -87,7 +92,7 @@ Endstops serve two main purposes:
 See the [endstops documentation](/endstops) for wiring and configuration.
 
 ### Ethernet
-A networking standard for wired local area networks. [Smoothieboard](/smoothieboard) includes an Ethernet port for network connectivity, allowing you to control the machine over a local network, access the web interface, and transfer files.
+A networking standard for wired local area networks. [Smoothieboard](/smoothieboards) includes an Ethernet port for network connectivity, allowing you to control the machine over a local network, access the web interface, and transfer files.
 
 See the [network documentation](/network) for setup instructions.
 
@@ -99,12 +104,12 @@ Some printers have multiple extruders for multi-color or multi-material printing
 ## F
 
 ### Firmware
-The software that runs directly on [Smoothieboard](/smoothieboard), interpreting [G-code](#g-code) commands and controlling the hardware. Smoothieware is the firmware, and it can be updated by copying a new `firmware.bin` file to the [SD card](/sd-card).
+The software that runs directly on [Smoothieboard](/smoothieboards), interpreting [G-code](#g-code) commands and controlling the hardware. Smoothieware is the firmware, and it can be updated by copying a new `firmware.bin` file to the [SD card](/sd-card).
 
 See [flashing the firmware](/flashing-smoothie-firmware) for update instructions.
 
 ### Flashing
-The process of updating the [firmware](#firmware) on [Smoothieboard](/smoothieboard). To flash new firmware:
+The process of updating the [firmware](#firmware) on [Smoothieboard](/smoothieboards). To flash new firmware:
 
 1. Download the latest `firmware.bin` file from the [firmware page](/latest-firmware)
 2. Copy it to the [SD card](/sd-card)
@@ -135,7 +140,7 @@ See the [GitHub guide](/github) for how to contribute.
 ### GPIO
 **General Purpose Input/Output**
 
-GPIO pins on [Smoothieboard](/smoothieboard) can be configured as either inputs (to read signals) or outputs (to control devices). They are used for various purposes including [endstops](#endstop), [switches](/switch), fans, and custom sensors.
+GPIO pins on [Smoothieboard](/smoothieboards) can be configured as either inputs (to read signals) or outputs (to control devices). They are used for various purposes including [endstops](#endstop), [switches](/switch), fans, and custom sensors.
 
 See the [pinout](/pinout) and [pin configuration](/pin-configuration) documentation for available pins and how to use them.
 
@@ -155,7 +160,7 @@ Homing is the process of moving each axis until it triggers an [endstop](#endsto
 The `G28` command triggers homing. See the [G28 documentation](/g28) for details.
 
 ### Host Software
-Software running on a computer that communicates with [Smoothieboard](/smoothieboard) to send commands and monitor status. Examples include:
+Software running on a computer that communicates with [Smoothieboard](/smoothieboards) to send commands and monitor status. Examples include:
 
 - **[Pronterface](/pronterface)**: Simple, reliable host for 3D printing
 - **[OctoPrint](/octoprint)**: Web-based print server
@@ -181,6 +186,11 @@ A switch used to define the boundaries of machine movement. While similar to [en
 
 See the [endstops documentation](/endstops) for wiring and configuration.
 
+### LPC1769
+The ARM Cortex-M3 microcontroller used in Smoothieboard V1. This 32-bit microcontroller runs at 120MHz and provides the processing power for interpreting [G-code](#g-code), controlling [stepper motors](#stepper-motor), and managing all board peripherals. The LPC1769 has extensive [GPIO](#gpio) capabilities and built-in peripherals including USB, Ethernet, and [PWM](#pwm) controllers.
+
+See the [LPC1769 pin usage](/lpc1769-pin-usage) documentation for detailed pin mapping.
+
 ## M
 
 ### Module
@@ -191,7 +201,7 @@ Modules can be enabled or disabled through the [configuration file](/configuring
 ### MOSFETs
 **Metal-Oxide-Semiconductor Field-Effect Transistors**
 
-MOSFETs are electronic switches used on [Smoothieboard](/smoothieboard) to control high-current devices. Smoothieboard has two types:
+MOSFETs are electronic switches used on [Smoothieboard](/smoothieboards) to control high-current devices. Smoothieboard has two types:
 
 - **Small MOSFETs**: For lower-power devices like fans and [hotends](#hotend) (typically up to 5A)
 - **Big MOSFETs**: For higher-power devices like [heated beds](#heated-bed) (typically up to 15-20A)
@@ -221,7 +231,7 @@ A simple switch for controlling power to the machine or specific components. Can
 ## P
 
 ### Panel
-An LCD display with buttons or encoder for controlling [Smoothieboard](/smoothieboard) without a computer. Panels allow you to start prints from the [SD card](/sd-card), adjust settings, and monitor status.
+An LCD display with buttons or encoder for controlling [Smoothieboard](/smoothieboards) without a computer. Panels allow you to start prints from the [SD card](/sd-card), adjust settings, and monitor status.
 
 Smoothieboard supports various panel types including RepRap Discount panels and custom SmoothiePanel designs. See the [panel documentation](/panel) for supported models and configuration.
 
@@ -237,7 +247,7 @@ A control algorithm used to maintain temperature stability in [hotends](#hotend)
 See the [PID tuning guide](/temperaturecontrol-pid-autotuning) for automatic tuning.
 
 ### Pinout
-The mapping of functions to specific pins on [Smoothieboard](/smoothieboard). Understanding the pinout is essential for wiring [endstops](#endstop), motors, heaters, and other peripherals.
+The mapping of functions to specific pins on [Smoothieboard](/smoothieboards). Understanding the pinout is essential for wiring [endstops](#endstop), motors, heaters, and other peripherals.
 
 See the [pinout documentation](/pinout) and [LPC1769 pin usage](/lpc1769-pin-usage) for detailed pin maps.
 
@@ -258,7 +268,7 @@ See the [Pronterface documentation](/pronterface) for setup and usage.
 ### PSU
 **Power Supply Unit**
 
-A device that converts mains [AC](#ac) power to low-voltage [DC](#dc) for electronics. [Smoothieboard](/smoothieboard) typically requires 12V or 24V DC power.
+A device that converts mains [AC](#ac) power to low-voltage [DC](#dc) for electronics. [Smoothieboard](/smoothieboards) typically requires 12V or 24V DC power.
 
 Common PSU types:
 - **Brick/Laptop style**: Compact, enclosed units with barrel connectors
@@ -273,7 +283,7 @@ Resistors used to ensure a [GPIO](#gpio) pin has a defined logic state when not 
 - **Pullup resistor**: Connects the pin to the positive voltage, defaulting to HIGH
 - **Pulldown resistor**: Connects the pin to ground, defaulting to LOW
 
-[Smoothieboard](/smoothieboard) has internal pullup resistors that can be enabled in the [pin configuration](/pin-configuration). These are commonly used with [endstop](#endstop) switches.
+[Smoothieboard](/smoothieboards) has internal pullup resistors that can be enabled in the [pin configuration](/pin-configuration). These are commonly used with [endstop](#endstop) switches.
 
 ### PWM
 **Pulse Width Modulation**
@@ -326,11 +336,16 @@ A rotating tool holder used in [CNC mills](/cnc-mill-guide) and routers. Unlike 
 See the [spindle module documentation](/spindle-module) for configuration.
 
 ### Stepper Motor
-A type of motor that moves in discrete steps, allowing precise position control without feedback sensors. [Smoothieboard](/smoothieboard) can control up to 5 stepper motors (or more with external drivers).
+A type of motor that moves in discrete steps, allowing precise position control without feedback sensors. [Smoothieboard](/smoothieboards) can control up to 5 stepper motors (or more with external drivers).
 
 Each step moves the motor a fixed angle (typically 1.8 degrees or 0.9 degrees). Microstepping divides these steps further for smoother motion.
 
 See the [stepper motor documentation](/stepper-motors) for wiring and configuration.
+
+### STM32H745
+The dual-core ARM Cortex-M7/M4 microcontroller used in Smoothieboard V2. This advanced microcontroller features a 480MHz Cortex-M7 core for high-performance processing and a 240MHz Cortex-M4 core for secondary tasks. The STM32H745 provides significantly more processing power than the [LPC1769](#lpc1769), enabling advanced features, faster [G-code](#g-code) processing, and smoother motion control.
+
+See the [Smoothieboard V2 documentation](/smoothieboard-v2) for board-specific information.
 
 ## T
 
@@ -339,12 +354,22 @@ A temperature sensor that changes [resistance](#resistance) with temperature. Th
 
 See the [thermistor choice guide](/temperaturecontrol-thermistor-choice) and [sensor types](/sensor-types) for configuration.
 
+### TMC2590
+An advanced stepper motor driver used in Smoothieboard V2. The TMC2590 is a high-performance driver that supports up to 1/256 microstepping for exceptionally smooth and quiet motor operation. It features [current](#current) control, thermal protection, stall detection, and diagnostics capabilities. The TMC2590's advanced features enable quieter operation and more precise motion control compared to the [TMC2660](#tmc2660) used in V1.
+
+See the [stepper motor documentation](/stepper-motors) for driver configuration.
+
+### TMC2660
+A stepper motor driver used in Smoothieboard V1. The TMC2660 supports up to 1/32 microstepping and provides [current](#current) control for smooth motor operation. It includes features like stallGuard (stall detection) and coolStep (energy-efficient operation). The TMC2660 enables quiet operation and precise motion control for [stepper motors](#stepper-motor).
+
+See the [stepper motor documentation](/stepper-motors) for driver configuration.
+
 ## U
 
 ### USB
 **Universal Serial Bus**
 
-A standard for connecting computers to peripherals. [Smoothieboard](/smoothieboard) appears as a serial device when connected via USB, allowing [host software](#host-software) to communicate with the board.
+A standard for connecting computers to peripherals. [Smoothieboard](/smoothieboards) appears as a serial device when connected via USB, allowing [host software](#host-software) to communicate with the board.
 
 See the [USB documentation](/usb) for drivers and troubleshooting.
 
@@ -353,7 +378,7 @@ See the [USB documentation](/usb) for drivers and troubleshooting.
 ### VBB
 **Voltage Bus for Big (high-power) devices**
 
-The main power input on [Smoothieboard](/smoothieboard) that supplies [stepper motors](/stepper-motors) and high-power outputs. VBB typically accepts 12-24V DC from a [PSU](#psu). The voltage you choose affects motor torque, speed, and heater performance.
+The main power input on [Smoothieboard](/smoothieboards) that supplies [stepper motors](/stepper-motors) and high-power outputs. VBB typically accepts 12-24V DC from a [PSU](#psu). The voltage you choose affects motor torque, speed, and heater performance.
 
 See the [Smoothieboard documentation](/smoothieboard) for power input specifications.
 

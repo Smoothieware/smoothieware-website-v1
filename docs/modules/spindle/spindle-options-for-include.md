@@ -21,7 +21,7 @@
         <tr>
             <td><setting no-version v1="spindle.pwm_pin"></setting></td>
             <td><setting no-version v2="switch.spindle.output_pin"></setting></td>
-            <td class="description-cell">PWM output pin for spindle control. Must be hardware PWM-capable (P2.0-P2.5, P1.18, P1.20, P1.21, P1.23, P1.24, P1.26, P3.25, P3.26 on Smoothieboard). Controls spindle speed either directly (for PWM-capable spindles) or through a VFD's analog input. Pin can be inverted with ! suffix (e.g., 2.4!).</td>
+            <td class="description-cell">PWM output pin for spindle control. Must be hardware PWM-capable (<pin>2.0</pin>-<pin>2.5</pin>, <pin>1.18</pin>, <pin>1.20</pin>, <pin>1.21</pin>, <pin>1.23</pin>, <pin>1.24</pin>, <pin>1.26</pin>, <pin>3.25</pin>, <pin>3.26</pin> on Smoothieboard). Controls spindle speed either directly (for PWM-capable spindles) or through a VFD's analog input. Pin can be inverted with ! suffix (e.g., 2.4!).</td>
         </tr>
         <tr>
             <td><setting no-version v1="spindle.pwm_period"></setting></td>
@@ -76,7 +76,7 @@
         <tr>
             <td><setting no-version v1="spindle.min_rpm"></setting></td>
             <td class="empty-cell">—</td>
-            <td class="description-cell">Minimum RPM when spindle is on (V1 analog mode only). When spindle is enabled, speed cannot go below this value. Prevents stalling and ensures minimum cutting speed. If G-code requests speed below min_rpm (but greater than 0), this minimum will be used instead. M5 or S0 still turns spindle completely off. VFDs typically have minimum frequency requirements. Default 100 RPM. Not available in V2.</td>
+            <td class="description-cell">Minimum RPM when spindle is on (V1 analog mode only). When spindle is enabled, speed cannot go below this value. Prevents stalling and ensures minimum cutting speed. If G-code requests speed below min_rpm (but greater than 0), this minimum will be used instead. <mcode>M5</mcode> or S0 still turns spindle completely off. VFDs typically have minimum frequency requirements. Default 100 RPM. Not available in V2.</td>
         </tr>
         <tr>
             <td><setting no-version v1="spindle.max_rpm"></setting></td>
@@ -86,7 +86,7 @@
         <tr>
             <td><setting no-version v1="spindle.switch_on_pin"></setting></td>
             <td class="empty-cell">—</td>
-            <td class="description-cell">Optional digital output pin to enable VFD/power supply (V1 analog mode only). Typically connected to VFD's RUN/ENABLE input via optocoupler. Goes high when spindle is commanded on (M3), low when commanded off (M5). Provides hardware enable signal separate from the PWM speed control. Not available in V2 (use separate switch instance instead).</td>
+            <td class="description-cell">Optional digital output pin to enable VFD/power supply (V1 analog mode only). Typically connected to VFD's RUN/ENABLE input via optocoupler. Goes high when spindle is commanded on (<mcode>M3</mcode>), low when commanded off (<mcode>M5</mcode>). Provides hardware enable signal separate from the PWM speed control. Not available in V2 (use separate switch instance instead).</td>
         </tr>
         <tr>
             <td><setting no-version v1="spindle.vfd_type"></setting></td>

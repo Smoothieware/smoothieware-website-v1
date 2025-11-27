@@ -26,10 +26,10 @@ This page tests the G-code and M-code popup functionality including the new **re
 
 Hover over these codes to see detailed popups with **related codes**:
 
-- <gcode>G0</gcode> - Rapid movement (related: G1, G90, G91)
-- <gcode>G1</gcode> - Linear movement with tool active (related: G0, G2, G3, G90, G91)
-- <gcode>G28</gcode> - Home axes (related: G28.1, G30, M119, M306, M665)
-- <gcode>G2</gcode> - Clockwise arc (related: G1, G3, G17)
+- <gcode>G0</gcode> - Rapid movement (related: <gcode>G1</gcode>, <gcode>G90</gcode>, <gcode>G91</gcode>)
+- <gcode>G1</gcode> - Linear movement with tool active (related: <gcode>G0</gcode>, <gcode>G2</gcode>, <gcode>G3</gcode>, <gcode>G90</gcode>, <gcode>G91</gcode>)
+- <gcode>G28</gcode> - Home axes (related: <gcode>G28.1</gcode>, <gcode>G30</gcode>, <mcode>M119</mcode>, <mcode>M306</mcode>, <mcode>M665</mcode>)
+- <gcode>G2</gcode> - Clockwise arc (related: <gcode>G1</gcode>, <gcode>G3</gcode>, <gcode>G17</gcode>)
 
 ## G-codes from Source Analysis
 
@@ -44,10 +44,10 @@ These codes were found in source code:
 
 Hover over these codes to see detailed popups with **related codes**:
 
-- <mcode>M112</mcode> - Emergency stop (related: M999)
-- <mcode>M500</mcode> - Save to EEPROM (related: M501, M503, M306, M665)
-- <mcode>M600</mcode> - Filament change (related: M601, M24, M25, M0, M1)
-- <mcode>M306</mcode> - Set homing offset (related: M665, M500, G28, G92, M119)
+- <mcode>M112</mcode> - Emergency stop (related: <mcode>M999</mcode>)
+- <mcode>M500</mcode> - Save to EEPROM (related: <mcode>M501</mcode>, <mcode>M503</mcode>, <mcode>M306</mcode>, <mcode>M665</mcode>)
+- <mcode>M600</mcode> - Filament change (related: <mcode>M601</mcode>, <mcode>M24</mcode>, <mcode>M25</mcode>, <mcode>M0</mcode>, <mcode>M1</mcode>)
+- <mcode>M306</mcode> - Set homing offset (related: <mcode>M665</mcode>, <mcode>M500</mcode>, <gcode>G28</gcode>, <gcode>G92</gcode>, <mcode>M119</mcode>)
 
 ## M-codes from Source Analysis
 
@@ -60,21 +60,21 @@ Hover over these codes to see detailed popups with **related codes**:
 
 Example G-code sequence with cross-referenced codes:
 
-1. Send <gcode>G28</gcode> to home all axes (click to see M119, M306, M665 related codes)
-2. Use <gcode>G0</gcode> to rapid move to start position (click to see G1, G90, G91)
-3. Use <gcode>G1</gcode> with F parameter to cut (click to see G0, G2, G3)
-4. Send <mcode>M114</mcode> to check position (click to see G28, G92)
-5. Use <mcode>M500</mcode> to save settings (click to see M501, M503, M306)
+1. Send <gcode>G28</gcode> to home all axes (click to see <mcode>M119</mcode>, <mcode>M306</mcode>, <mcode>M665</mcode> related codes)
+2. Use <gcode>G0</gcode> to rapid move to start position (click to see <gcode>G1</gcode>, <gcode>G90</gcode>, <gcode>G91</gcode>)
+3. Use <gcode>G1</gcode> with F parameter to cut (click to see <gcode>G0</gcode>, <gcode>G2</gcode>, <gcode>G3</gcode>)
+4. Send <mcode>M114</mcode> to check position (click to see <gcode>G28</gcode>, <gcode>G92</gcode>)
+5. Use <mcode>M500</mcode> to save settings (click to see <mcode>M501</mcode>, <mcode>M503</mcode>, <mcode>M306</mcode>)
 
 ## Test Related Code Navigation
 
 Try this navigation path to test the feature:
 
 1. Hover over <gcode>G10</gcode> (Retract)
-2. Click on related code **G11** in the popup
-3. From G11, click on related code **M207**
-4. From M207, click on related code **M208**
-5. From M208, click back to **G10** to complete the circle
+2. Click on related code **<gcode>G11</gcode>** in the popup
+3. From <gcode>G11</gcode>, click on related code **<mcode>M207</mcode>**
+4. From <mcode>M207</mcode>, click on related code **<mcode>M208</mcode>**
+5. From <mcode>M208</mcode>, click back to **<gcode>G10</gcode>** to complete the circle
 
 This tests that the popup updates correctly and all related code links work bidirectionally.
 

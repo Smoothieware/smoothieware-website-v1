@@ -270,7 +270,7 @@ You need to remove the `#` character and Smoothie will now take the line into ac
 
 #### «  No strategy found to handle G32 »
 
-If you try to run bed leveling or calibration, and the board answers something like «  No strategy found to handle G32 », please do the following : 
+If you try to run bed leveling or calibration, and the board answers something like «  No strategy found to handle <gcode>G32</gcode> », please do the following : 
 
 - Flash the very latest [firmware](flashing-smoothie-firmware)
 - Start your configuration fresh from the very latest [example configuration file](configuring-smoothie)

@@ -57,7 +57,211 @@ only_by_two_corners = true
 </versioned>
 {:/nomarkdown}
 
+---
 
+## PCB Milling Configuration Examples
+
+When setting up Smoothieware for PCB milling, you'll need to configure several key parameters for optimal performance.
+
+### Basic Motion Settings
+
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
+
+**V1 Configuration:**
+```
+# PCB milling specific settings
+alpha_steps_per_mm                           80        # Steps per mm for X axis
+beta_steps_per_mm                            80        # Steps per mm for Y axis
+gamma_steps_per_mm                           800       # Steps per mm for Z axis (higher resolution)
+
+default_feed_rate                            500       # Default rate (mm/minute) for G1/G2/G3 moves
+default_seek_rate                            1000      # Default rate (mm/minute) for G0 moves
+
+alpha_max_rate                               6000      # Maximum rate in mm/min
+beta_max_rate                                6000
+gamma_max_rate                               300       # Slower Z for precision
+```
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+**V2 Configuration:**
+```ini
+[actuator.alpha]
+steps_per_mm = 80        # Steps per mm for X axis
+
+[actuator.beta]
+steps_per_mm = 80        # Steps per mm for Y axis
+
+[actuator.gamma]
+steps_per_mm = 800       # Steps per mm for Z axis (higher resolution)
+
+[motion control]
+default_feed_rate = 500       # Default rate (mm/minute) for G1/G2/G3 moves
+default_seek_rate = 1000      # Default rate (mm/minute) for G0 moves
+
+[actuator.alpha]
+max_rate = 6000      # Maximum rate in mm/min
+
+[actuator.beta]
+max_rate = 6000
+
+[actuator.gamma]
+max_rate = 300       # Slower Z for precision
+```
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
+
+### Z-Probe Configuration
+
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
+
+**V1 Configuration:**
+```
+# Z-probe settings for PCB milling
+zprobe.enable                                true
+zprobe.probe_pin                             1.28!^   # Pin probe is attached to
+zprobe.slow_feedrate                         5        # Mm/sec probe feed rate
+zprobe.fast_feedrate                         100      # Move feedrate
+zprobe.probe_height                          5        # How much above the bed to start probe
+
+# Leveling strategy
+leveling-strategy.rectangular-grid.enable    true
+leveling-strategy.rectangular-grid.x_size    100      # Grid size in X direction
+leveling-strategy.rectangular-grid.y_size    100      # Grid size in Y direction
+leveling-strategy.rectangular-grid.grid_x_size 10     # Number of probe points in X
+leveling-strategy.rectangular-grid.grid_y_size 10     # Number of probe points in Y
+leveling-strategy.rectangular-grid.probe_offsets 0,0,0  # Probe offsets from nozzle/spindle
+leveling-strategy.rectangular-grid.save      false    # Don't save grid to memory
+```
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+**V2 Configuration:**
+```ini
+[zprobe]
+enable = true
+probe_pin = 1.28!^   # Pin probe is attached to
+slow_feedrate = 5        # Mm/sec probe feed rate
+fast_feedrate = 100      # Move feedrate
+probe_height = 5        # How much above the bed to start probe
+
+[cartesian grid leveling strategy]
+enable = true
+x_size = 100      # Grid size in X direction
+y_size = 100      # Grid size in Y direction
+grid_x_size = 10     # Number of probe points in X
+grid_y_size = 10     # Number of probe points in Y
+probe_offsets = 0,0,0  # Probe offsets from nozzle/spindle
+save = false    # Don't save grid to memory
+```
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
+
+### Acceleration and Jerk Settings
+
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
+
+**V1 Configuration:**
+```
+# Acceleration settings for smooth PCB milling
+acceleration                                 500       # Acceleration in mm/second/second
+junction_deviation                           0.01      # Similar to GRBL's "max_jerk" (lower = slower cornering)
+
+# Per-axis acceleration (optional for finer control)
+alpha_acceleration                           500
+beta_acceleration                            500
+gamma_acceleration                           100       # Lower Z acceleration for precision
+```
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+**V2 Configuration:**
+```ini
+[planner]
+acceleration = 500       # Acceleration in mm/second/second
+junction_deviation = 0.01      # Similar to GRBL's "max_jerk" (lower = slower cornering)
+
+[actuator.alpha]
+acceleration = 500
+
+[actuator.beta]
+acceleration = 500
+
+[actuator.gamma]
+acceleration = 100       # Lower Z acceleration for precision
+```
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
+
+### Spindle Control
+
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
+
+**V1 Configuration:**
+```
+# Spindle control for PCB milling
+spindle.enable                               true
+spindle.type                                 pwm       # PWM spindle control
+spindle.max_rpm                              10000     # Maximum spindle RPM
+spindle.pwm_pin                              2.5       # PWM output pin
+spindle.pwm_period                           1000      # PWM period in microseconds
+spindle.feedback_pin                         nc        # No feedback pin
+spindle.switch_on_pin                        nc        # No switch on pin
+```
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+**V2 Configuration:**
+```ini
+[spindle control]
+enable = true
+type = pwm       # PWM spindle control
+max_rpm = 10000     # Maximum spindle RPM
+pwm_pin = 2.5       # PWM output pin
+pwm_period = 1000      # PWM period in microseconds
+feedback_pin = nc        # No feedback pin
+switch_on_pin = nc        # No switch on pin
+```
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
+
+---
 
 Before two corners mode, you had to correct machine (0,0) and bed size according to the desired probing grid position and size.
 

@@ -121,7 +121,7 @@ Emergency stop that instantly halts all operations.
 {::nomarkdown}
 <sl-alert variant="danger" open>
   <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
-  <strong>Warning:</strong> Using the kill button or M112 will cause position loss. You must home all axes before continuing normal operation.
+  <strong>Warning:</strong> Using the kill button or <mcode>M112</mcode> will cause position loss. You must home all axes before continuing normal operation.
 </sl-alert>
 {:/nomarkdown}
 

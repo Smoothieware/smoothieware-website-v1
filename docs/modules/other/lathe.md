@@ -165,7 +165,7 @@ M5
 ### "Spindle must be running" Error
 
 The G33 command requires the spindle to be running (RPM > 0) before execution. Ensure:
-- Spindle is started with M3 command
+- Spindle is started with <mcode>M3</mcode> command
 - Encoder is properly connected and reading pulses
 - Sufficient time has passed for RPM calculation
 

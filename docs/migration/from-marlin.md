@@ -37,9 +37,29 @@ In Marlin that is done with:
 
 while in Smoothie you change:
 
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
+
 ```markdown
 uart0.baud_rate 115200 # Baud rate for the default hardware (UART) serial port
 ```
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+```ini
+[uart0]
+baud_rate = 115200  # Baud rate for the default hardware (UART) serial port
+```
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
 
 ## Extruders
 
@@ -87,12 +107,34 @@ extruder.hotend.z_offset 0 # Z offset from origin in mm
 
 And for the second extruder:
 
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
+
 ```markdown
 # Extruder offset
 extruder.hotend2.x_offset 0 # x offset from origin in mm
 extruder.hotend2.y_offset 25.0 # y offset from origin in mm
 extruder.hotend2.z_offset 0 # z offset from origin in mm
 ```
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+```ini
+[extruder.hotend2]
+x_offset = 0      # x offset from origin in mm
+y_offset = 25.0   # y offset from origin in mm
+z_offset = 0      # z offset from origin in mm
+```
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
 
 ## Power supply
 
@@ -134,9 +176,29 @@ In Smoothie, you go to a specific [Temperaturecontrol](temperaturecontrol) modul
 
 For example:
 
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
+
 ```markdown
 temperature_control.hotend.thermistor EPCOS100K
 ```
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+```ini
+[temperature_control.hotend]
+thermistor = EPCOS100K
+```
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
 
 See the [Temperaturecontrol](temperaturecontrol) page for a list of possible values, and for other ways to specify the sensor's properties.
 
@@ -154,6 +216,11 @@ In Marlin, you set the PID parameters for the hotend this way:
 
 While in Smoothie, you instead configure that value for each [Temperaturecontrol](temperaturecontrol) module, in that module, for example:
 
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
+
 ```markdown
 # PID configuration
 # See /temperaturecontrol#pid
@@ -161,6 +228,25 @@ temperature_control.hotend.p_factor 13.7 # P (proportional) factor
 temperature_control.hotend.i_factor 0.097 # I (integral) factor
 temperature_control.hotend.d_factor 24 # D (derivative) factor
 ```
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+```ini
+[temperature_control.hotend]
+# PID configuration
+# See /temperaturecontrol#pid
+p_factor = 13.7   # P (proportional) factor
+i_factor = 0.097  # I (integral) factor
+d_factor = 24     # D (derivative) factor
+```
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
 
 ## Kinematics
 
@@ -181,6 +267,11 @@ While in Smoothie, you change the value of the `arm_solution` configuration opti
 
 For example:
 
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
+
 ```markdown
 arm_solution linear_delta # Selects the linear delta arm solution
 ```
@@ -191,6 +282,29 @@ You then have to specify the parameters for that arm solution, for example for d
 arm_length 250.0 # This is the length of an arm from hinge to hinge
 arm_radius 124.0 # This is the horizontal distance from hinge to hinge when the effector is centered
 ```
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+```ini
+[motion]
+arm_solution = linear_delta  # Selects the linear delta arm solution
+```
+
+You then have to specify the parameters for that arm solution, for example for delta machines you do:
+
+```ini
+[motion.delta]
+arm_length = 250.0  # This is the length of an arm from hinge to hinge
+arm_radius = 124.0  # This is the horizontal distance from hinge to hinge when the effector is centered
+```
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
 
 See the [Delta](delta) page for more details on setting up a delta machine.
 
@@ -303,6 +417,11 @@ In Marlin, you set the steps per millimeters for each axis by changing:
 
 While in Smoothie, you edit the steps for the primary axes by changing:
 
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
+
 ```markdown
 # Arm solution configuration: Cartesian robot. Translates mm positions into stepper positions
 # See /stepper-motors
@@ -318,6 +437,38 @@ And for the extruders, you edit the value in each Extruder's specific module con
 ```markdown
 extruder.hotend.steps_per_mm 500 # Steps per mm for extruder stepper
 ```
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+```ini
+[alpha]
+# Arm solution configuration: Cartesian robot. Translates mm positions into stepper positions
+# See /stepper-motors
+steps_per_mm = 80    # Steps per mm for alpha (X) stepper
+
+[beta]
+steps_per_mm = 80    # Steps per mm for beta (Y) stepper
+
+[gamma]
+steps_per_mm = 4000  # Steps per mm for gamma (Z) stepper
+```
+
+Where alpha is X, beta is Y, and gamma is Z.
+
+And for the extruders, you edit the value in each Extruder's specific module configuration, for example:
+
+```ini
+[extruder.hotend]
+steps_per_mm = 500  # Steps per mm for extruder stepper
+```
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
 
 ## Default max feed rates
 
@@ -335,6 +486,11 @@ In Marlin, you set the maximum feed rates (speeds) by changing:
 Note the unit is millimeters per seconds.
 
 In Smoothie, we can specify maximum values for the axes and for the actuators, which allows to more finely respecting the machine's limits.
+
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
 
 We change the maximum feed rate for the main axes by changing:
 
@@ -365,6 +521,52 @@ extruder.hotend.max_speed 50 # Maximum speed in mm/s
 
 Note the unit is millimeters per second
 
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+We change the maximum feed rate for the main axes by changing:
+
+```ini
+[motion]
+# Cartesian axis speed limits
+x_axis_max_speed = 30000  # Maximum speed in mm/min
+y_axis_max_speed = 30000  # Maximum speed in mm/min
+z_axis_max_speed = 300    # Maximum speed in mm/min
+```
+
+Note the unit is millimeters per minute.
+
+And the maximum feed rates for the main **actuators** is changed with:
+
+```ini
+[alpha]
+max_rate = 30000.0  # Maximum rate in mm/min
+
+[beta]
+max_rate = 30000.0  # Maxmimum rate in mm/min
+
+[gamma]
+max_rate = 300.0    # Maximum rate in mm/min
+```
+
+Note the unit is millimeters per minute.
+
+We can also set the maximum feedrate for each extruder by modifying each extruder's module configuration:
+
+```ini
+[extruder.hotend]
+max_speed = 50  # Maximum speed in mm/s
+```
+
+Note the unit is millimeters per second
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
+
 ## Acceleration
 
 In Marlin you set the acceleration for each axis by doing:
@@ -375,9 +577,29 @@ In Marlin you set the acceleration for each axis by doing:
 
 While in Smoothie you modify:
 
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
+
 ```markdown
 acceleration 3000
 ```
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+```ini
+[motion]
+acceleration = 3000
+```
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
 
 To set separate values for each axis, see [Motion control](motion-control).
 
@@ -404,9 +626,29 @@ However Smoothie uses a different concept, which more finely allows to regulate 
 
 You need to modify the value:
 
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
+
 ```markdown
 junction_deviation 0.05 # See /motion-control#junction-deviation
 ```
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+```ini
+[motion]
+junction_deviation = 0.05  # See /motion-control#junction-deviation
+```
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
 
 This is not an exact science as smoothie and marlin's methods are different, but if you are looking for a "start" value (that will still likely have to be tuned), you can find your junction_deviation by dividing Marlin's jerk by 60:
 
@@ -433,6 +675,11 @@ In Marlin, you change the direction of an axis by modifying:
 
 While in Smoothie, you do this by adding a `!` to the direction pin of that axis, for example to invert your alpha (X) axis, change its configuration from:
 
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
+
 ```markdown
 # Stepper module configuration
 # Pins are defined as ports, and pin numbers, appending "!" to the number will invert a pin
@@ -457,6 +704,81 @@ alpha_current 1.5 # X stepper motor current
 alpha_max_rate 30000.0 # Maximum rate in mm/min
 ```
 
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+```ini
+[alpha]
+# Stepper module configuration
+# Pins are defined as ports, and pin numbers, appending "!" to the number will invert a pin
+# See /pin-configuration and /pinout
+step_pin = 2.0   # Pin for alpha stepper step signal
+dir_pin = 0.5    # Pin for alpha stepper direction, add '!' to reverse direction
+en_pin = 0.4     # Pin for alpha enable pin
+current = 1.5    # X stepper motor current
+max_rate = 30000.0  # Maximum rate in mm/min
+```
+
+to:
+
+```ini
+[alpha]
+# Stepper module configuration
+# Pins are defined as ports, and pin numbers, appending "!" to the number will invert a pin
+# See /pin-configuration and /pinout
+step_pin = 2.0   # Pin for alpha stepper step signal
+dir_pin = 0.5!   # Pin for alpha stepper direction, add '!' to reverse direction
+en_pin = 0.4     # Pin for alpha enable pin
+current = 1.5    # X stepper motor current
+max_rate = 30000.0  # Maximum rate in mm/min
+```
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
+
+## External drivers
+
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
+
+When using external stepper drivers (like TB6600, DM542, etc.), you configure the step, direction, and enable pins, but set the current to 0 since current control is handled externally:
+
+```markdown
+alpha_step_pin 2.0
+alpha_dir_pin 0.5
+alpha_en_pin 0.4
+alpha_current 0  # Set to 0 for external drivers
+```
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+In V2, external driver configuration is more explicit. You specify the driver type and disable onboard current control:
+
+```ini
+[alpha]
+step_pin = 2.0
+dir_pin = 0.5
+en_pin = 0.4
+driver = external  # Explicitly specify external driver
+# current setting is ignored for external drivers
+```
+
+The V2 configuration makes it clearer that you're using external drivers and prevents accidental current output from onboard drivers.
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
+
 ## Homing direction
 
 In Marlin, you change whether an axis is homed to min or homed to max by modifying:
@@ -469,6 +791,11 @@ In Marlin, you change whether an axis is homed to min or homed to max by modifyi
 
 While in Smoothie, you do this by changing the `homing_direction` parameter for each actuator:
 
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
+
 ```markdown
 alpha_homing_direction home_to_min # Or set to home_to_max and set alpha_max and uncomment the alpha_max_endstop
 ```
@@ -478,6 +805,28 @@ changes to:
 ```markdown
 alpha_homing_direction home_to_max # Or set to home_to_max and set alpha_max and uncomment the alpha_max_endstop
 ```
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+```ini
+[alpha]
+homing_direction = home_to_min  # Or set to home_to_max and set alpha_max and uncomment the alpha_max_endstop
+```
+
+changes to:
+
+```ini
+[alpha]
+homing_direction = home_to_max  # Or set to home_to_max and set alpha_max and uncomment the alpha_max_endstop
+```
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
 
 ## Filament runout sensors
 
@@ -519,4 +868,36 @@ See the [on_boot.gcode documentation](on_boot.gcode) for more details and exampl
 
 ## Bed levelling
 
-For bed levelling and probing, see the [Zprobe](zprobe) documentation.
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
+
+For bed levelling and probing in V1, see the [Zprobe](zprobe) documentation.
+
+Smoothie V1 supports:
+- Manual bed leveling with Z probe
+- Grid bed compensation (mesh bed leveling)
+- 3-point bed leveling
+
+Configuration is done through the zprobe module settings in the config file.
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+For bed levelling and probing in V2, see the [Zprobe](zprobe) documentation.
+
+Smoothie V2 has enhanced bed leveling capabilities compared to V1:
+- Improved mesh bed leveling with higher resolution grids
+- More sophisticated calibration algorithms
+- Better probe repeatability
+- Enhanced configuration options in INI format
+
+The core concepts remain the same, but the configuration syntax uses the V2 INI format. See the [Zprobe](zprobe) documentation for detailed V2 configuration examples.
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}

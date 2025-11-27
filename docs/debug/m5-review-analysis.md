@@ -22,7 +22,7 @@ Three review sections have been added for human approval before finalization.
 
 ### Current State Assessment
 
-The original M5 page was functional but lacked:
+The original <mcode>M5</mcode> page was functional but lacked:
 - Version-specific implementation details
 - Behavioral explanation differences between V1 and V2
 - Information about queue synchronization mechanics
@@ -58,10 +58,10 @@ The original M5 page was functional but lacked:
 #### Behavioral Details
 
 **Both versions:**
-- Speed memory: Last M3 speed is retained after M5
+- Speed memory: Last <mcode>M3</mcode> speed is retained after <mcode>M5</mcode>
 - Queue synchronization: Waits for motion queue to empty
-- Emergency integration: Auto-issued on M112
-- Program end: Auto-issued on M2/M30 in GRBL mode
+- Emergency integration: Auto-issued on <mcode>M112</mcode>
+- Program end: Auto-issued on M2/<mcode>M30</mcode> in GRBL mode
 
 **V1-specific:**
 - Only stops spindle if currently running
@@ -78,9 +78,9 @@ The original M5 page was functional but lacked:
 ### Three Review Sections Added
 
 #### 1. Version-Specific Intro (Review ID: `m5:version-specific-intro`)
-**Added:** Reference to V1-specific additional commands (M4, M957, M958)
+**Added:** Reference to V1-specific additional commands (M4, <mcode>M957</mcode>, <mcode>M958</mcode>)
 **Location:** After "Related Commands" section
-**Rationale:** Mirrors structure from M3 page for consistency
+**Rationale:** Mirrors structure from <mcode>M3</mcode> page for consistency
 
 #### 2. Behavior Section (Review ID: `m5:behavior-section`)
 **Added:** New "Behavior" section with versioned containers
@@ -96,7 +96,7 @@ The original M5 page was functional but lacked:
 **Details:**
 1. **Speed Memory:** Explains retained speed behavior
 2. **Queue Synchronization:** Details motion queue interaction
-3. **Emergency Stop Behavior:** M112 and program-end handling
+3. **Emergency Stop Behavior:** <mcode>M112</mcode> and program-end handling
 4. **Typical G-code Pattern:** Real-world example usage
 
 **Location:** Before "Further reading" section
@@ -171,8 +171,8 @@ New or updated content goes here.
 
 ### High Priority
 
-1. **Coolant Integration:** Note about M7/M8/M9 coolant commands working alongside M5
-2. **V2 Switch Configuration Example:** Specific switch.spindle settings for M5 behavior
+1. **Coolant Integration:** Note about M7/M8/<mcode>M9</mcode> coolant commands working alongside <mcode>M5</mcode>
+2. **V2 Switch Configuration Example:** Specific switch.spindle settings for <mcode>M5</mcode> behavior
 3. **Troubleshooting Section:** Common issues like "spindle won't stop" and solutions
 4. **VFD-Specific Notes:** Analog and Modbus V1 configuration details with examples
 
@@ -181,13 +181,13 @@ New or updated content goes here.
 5. **Spindle Module Documentation Link:** Enhance reference to spindle-module page
 6. **Performance Notes:** Queue synchronization timing impact
 7. **Multi-Spindle Setup:** Advanced configuration with multiple spindles
-8. **PID Feedback:** Closed-loop feedback behavior during M5
+8. **PID Feedback:** Closed-loop feedback behavior during <mcode>M5</mcode>
 
 ### Low Priority
 
 9. **Historical Context:** Why V2 moved from SpindleControl to Switch
 10. **Compatibility Notes:** GRBL mode vs. native Smoothieware behavior
-11. **Debug Commands:** Using M957/M958 to verify spindle behavior
+11. **Debug Commands:** Using <mcode>M957</mcode>/<mcode>M958</mcode> to verify spindle behavior
 
 ---
 
@@ -211,7 +211,7 @@ When reviewing on localhost (http://localhost:4000):
 
 4. **Links:**
    - Verify all internal links work (m3, m4, m957, m958, spindle-module)
-   - Check that references to M2, M30, M112 work correctly
+   - Check that references to M2, <mcode>M30</mcode>, <mcode>M112</mcode> work correctly
 
 ---
 

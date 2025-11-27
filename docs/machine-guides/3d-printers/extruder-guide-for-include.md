@@ -56,9 +56,29 @@ This value depends on your stepper motor, the microstepping on your stepper moto
 
 A very good guide on how to find this value can be found here: [Triffid Hunter's Calibration Guide](http://reprap.org/wiki/Triffid_Hunter%27s_Calibration_Guide#E_steps).
 
-```markdown
-extruder.hotend.steps_per_mm 140
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
+
 ```
+extruder.hotend.steps_per_mm                    140
+```
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+```ini
+[extruder]
+hotend.steps_per_mm = 140
+```
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
 
 ### Filament diameter
 
@@ -70,16 +90,36 @@ Further explanation can be found in Triffid Hunter's guide, linked above.
 
 <sl-alert variant="warning" open>
   <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
-  In the current <strong>edge</strong> builds, when a filament diameter is specified either from M200 Dxxx or the config setting Smoothie expects all E values specified to be in mm³, so when you click extrude 10mm in Pronterface Smoothie will actually extrude 10mm³. And E values in a gcode file will all be expected to be mm³.
+  In the current <strong>edge</strong> builds, when a filament diameter is specified either from {::nomarkdown}<mcode>M200</mcode>{:/nomarkdown} Dxxx or the config setting Smoothie expects all E values specified to be in mm³, so when you click extrude 10mm in Pronterface Smoothie will actually extrude 10mm³. And E values in a gcode file will all be expected to be mm³.
   <br><br>
-  Note that when firmware retraction is specified via M207 the retraction length is still in mm not mm³, but will be converted to mm³ based on the filament diameter at the time of extrusion.
+  Note that when firmware retraction is specified via {::nomarkdown}<mcode>M207</mcode>{:/nomarkdown} the retraction length is still in mm not mm³, but will be converted to mm³ based on the filament diameter at the time of extrusion.
   <br><br>
   In the current <strong>master</strong> builds, only print moves have E specified in mm³, retract or extrude only moves are still in mm. The change in edge is to be more compliant with other firmwares and user expectations.
 </sl-alert>
 
-```markdown
-extruder.hotend.filament_diameter 3.0
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
+
 ```
+extruder.hotend.filament_diameter               3.0
+```
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+```ini
+[extruder]
+hotend.filament_diameter = 3.0
+```
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
 
 The filament diameter can also be saved at runtime with this M code:
 
@@ -100,14 +140,39 @@ The amounts of extrusion and speed can be set with the following M codes:
 
 or can be set in config with the following settings:
 
-```markdown
-extruder.hotend.retract_length 3 # retract length in mm
-extruder.hotend.retract_feedrate 45 # retract feedrate in mm/sec
-extruder.hotend.retract_recover_length 0 # additional length for recover
-extruder.hotend.retract_recover_feedrate 8 # recover feedrate in mm/sec (should be less than retract feedrate)
-extruder.hotend.retract_zlift_length 0 # zlift on retract in mm, 0 disables
-extruder.hotend.retract_zlift_feedrate 6000 # zlift feedrate in mm/min (Note mm/min NOT mm/sec)
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
+
 ```
+extruder.hotend.retract_length                  3       # retract length in mm
+extruder.hotend.retract_feedrate                45      # retract feedrate in mm/sec
+extruder.hotend.retract_recover_length          0       # additional length for recover
+extruder.hotend.retract_recover_feedrate        8       # recover feedrate in mm/sec (should be less than retract feedrate)
+extruder.hotend.retract_zlift_length            0       # zlift on retract in mm, 0 disables
+extruder.hotend.retract_zlift_feedrate          6000    # zlift feedrate in mm/min (Note mm/min NOT mm/sec)
+```
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+```ini
+[extruder]
+hotend.retract_length = 3                       # retract length in mm
+hotend.retract_feedrate = 45                    # retract feedrate in mm/sec
+hotend.retract_recover_length = 0               # additional length for recover
+hotend.retract_recover_feedrate = 8             # recover feedrate in mm/sec (should be less than retract feedrate)
+hotend.retract_zlift_length = 0                 # zlift on retract in mm, 0 disables
+hotend.retract_zlift_feedrate = 6000            # zlift feedrate in mm/min (Note mm/min NOT mm/sec)
+```
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
 
 These can be set differently for each extruder defined.
 
@@ -122,29 +187,84 @@ As all stepper motors, the extruder stepper motor needs 3 pins to be controlled:
 
 **1st Extruder** (delta, or M4)
 
-```markdown
-extruder.hotend.step_pin 2.3
-extruder.hotend.dir_pin 0.22
-extruder.hotend.en_pin 0.21
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
+
+```
+extruder.hotend.step_pin                        2.3
+extruder.hotend.dir_pin                         0.22
+extruder.hotend.en_pin                          0.21
 ```
 
+{::nomarkdown}
 <sl-alert variant="warning" open>
   <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
-  These pins are for the delta (4th) driver on a Smoothieboard. This is what is most commonly used, but in another board or setup, you may have to use other pins.
+  These pins are for the delta (4th) driver on a Smoothieboard V1. This is what is most commonly used, but in another board or setup, you may have to use other pins.
 </sl-alert>
+{:/nomarkdown}
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+```ini
+[extruder]
+hotend.step_pin = PD3
+hotend.dir_pin = PD4
+hotend.en_pin = PD5
+```
+
+{::nomarkdown}
+<sl-alert variant="warning" open>
+  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+  These pins are for the delta (4th) driver on a Smoothieboard V2 Prime. Pin assignments vary by board variant.
+</sl-alert>
+{:/nomarkdown}
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
 
 **2nd Extruder** (epsilon, or M5)
 
-```markdown
-extruder.hotend2.step_pin 2.8
-extruder.hotend2.dir_pin 2.13
-extruder.hotend2.en_pin 4.29
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
+
+```
+extruder.hotend2.step_pin                       2.8
+extruder.hotend2.dir_pin                        2.13
+extruder.hotend2.en_pin                         4.29
 ```
 
+{::nomarkdown}
 <sl-alert variant="warning" open>
   <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
-  These pins are for the epsilon (5th) driver on a Smoothieboard. This is what is most commonly used, but in another board or setup, you may have to use other pins.
+  These pins are for the epsilon (5th) driver on a Smoothieboard V1. This is what is most commonly used, but in another board or setup, you may have to use other pins.
 </sl-alert>
+{:/nomarkdown}
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+{::nomarkdown}
+<sl-alert variant="warning" open>
+  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+  Smoothieboard V2 Prime has 4 onboard stepper drivers. For a 5th driver, use an external driver connected via a Gadgeteer expansion header. See the V2 documentation for details.
+</sl-alert>
+{:/nomarkdown}
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
 
 <sl-alert variant="primary" open>
   <sl-icon slot="icon" name="lightbulb"></sl-icon>
@@ -159,9 +279,36 @@ On boards which feature current control of the stepper motor drivers (Smoothiebo
 
 This is handled by the [Currentcontrol](currentcontrol) module, but usually, the line for the configuration of a given stepper motor is written along with its pins, for clarity.
 
-```markdown
-delta_current 1.5
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
+
 ```
+delta_current                                   1.5
+```
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+```ini
+[tmc2660]
+delta.current = 1500                            # Current in milliamps (mA), not Amps
+```
+
+{::nomarkdown}
+<sl-alert variant="primary" open>
+  <sl-icon slot="icon" name="info-circle"></sl-icon>
+  <strong>V2 Note:</strong> Current is specified in milliamps (mA) in V2, not Amps. So 1.5A becomes 1500mA. The setting is configured in the <code>[tmc2660]</code> or <code>[tmc2590]</code> section depending on your driver type.
+</sl-alert>
+{:/nomarkdown}
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
 
 Set the value to the exact value your stepper motor is rated for (or less, for less noise, but less torque).
 
@@ -181,20 +328,55 @@ The default Smoothie [configuration example](configuring-smoothie) contains an e
 
 The configuration looks like this:
 
-```markdown
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
+
+```
 ## Extruder module configuration
 # See /extruder
-extruder.hotend.enable true # Whether to activate the extruder module at all. All configuration is ignored if false
-extruder.hotend.steps_per_mm 140 # Steps per mm for extruder stepper
-extruder.hotend.acceleration 500 # Acceleration for the stepper motor mm/sec²
-extruder.hotend.max_speed 50 # Maximum speed in mm/s
+extruder.hotend.enable                          true    # Whether to activate the extruder module at all. All configuration is ignored if false
+extruder.hotend.steps_per_mm                    140     # Steps per mm for extruder stepper
+extruder.hotend.acceleration                    500     # Acceleration for the stepper motor mm/sec²
+extruder.hotend.max_speed                       50      # Maximum speed in mm/s
 
-extruder.hotend.step_pin 2.3 # Pin for extruder step signal
-extruder.hotend.dir_pin 0.22 # Pin for extruder dir signal (add '!' to reverse direction)
-extruder.hotend.en_pin 0.21 # Pin for extruder enable signal
+extruder.hotend.step_pin                        2.3     # Pin for extruder step signal
+extruder.hotend.dir_pin                         0.22    # Pin for extruder dir signal (add '!' to reverse direction)
+extruder.hotend.en_pin                          0.21    # Pin for extruder enable signal
 
-delta_current 1.5 # Current setting in Amperes for this motor driver
+delta_current                                   1.5     # Current setting in Amperes for this motor driver
 ```
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+```ini
+## Extruder module configuration
+# See /extruder
+[extruder]
+hotend.enable = true                            # Whether to activate the extruder module at all
+hotend.steps_per_mm = 140                       # Steps per mm for extruder stepper
+hotend.step_pin = PD3                           # Pin for extruder step signal
+hotend.dir_pin = PD4                            # Pin for extruder dir signal (add '!' to reverse direction)
+hotend.en_pin = PD5                             # Pin for extruder enable signal
+
+[actuator delta]
+acceleration = 500                              # Acceleration for the stepper motor mm/sec²
+
+[motion control]
+max_speed = 50                                  # Maximum speed in mm/s
+
+[tmc2660]
+delta.current = 1500                            # Current setting in milliamps for this motor driver
+```
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
 
 Now that your extruder is configured, you can wire it:
 

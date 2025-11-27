@@ -58,7 +58,7 @@ For more information about leveling and probing, see:
 {::nomarkdown}
 <sl-alert variant="primary" open>
   <sl-icon slot="icon" name="lightbulb"></sl-icon>
-  When using <code>only_by_two_corners</code> mode, you must provide XYAB parameters with G29/G31/G32 commands.
+  When using <code>only_by_two_corners</code> mode, you must provide XYAB parameters with <gcode>G29</gcode>/<gcode>G31</gcode>/<gcode>G32</gcode> commands.
   <br><br>
   This is particularly useful for PCB milling where you're working with different board sizes.
 </sl-alert>

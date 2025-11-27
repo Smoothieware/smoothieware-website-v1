@@ -594,10 +594,10 @@ Use a MOSFET output to control spindle speed via PWM, or just on/off. Spindle sp
 
 **CNC Features:**
 - GRBL-mode compatibility (toggle in config)
-- Work coordinate systems (G54-G59)
+- Work coordinate systems ({::nomarkdown}<gcode>G54</gcode>{:/nomarkdown}-{::nomarkdown}<gcode>G59</gcode>{:/nomarkdown})
 - Tool length offsets
 - Probing for tool length and work surface
-- Arc support (G2/G3)
+- Arc support ({::nomarkdown}<gcode>G2</gcode>{:/nomarkdown}/{::nomarkdown}<gcode>G3</gcode>{:/nomarkdown})
 
 ### Pick-and-Place Machines
 

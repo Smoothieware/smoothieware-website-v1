@@ -32,7 +32,7 @@ On a typical 3D printer setup, installing a Smoothieboard will mean you do the f
 * Take a look at the [configuration](configuring-smoothie)
 * Upgrade your [firmware](flashing-smoothie-firmware) to the latest version if you feel like it
 * Wire your power supply and provide it with power
-* Wire the power supply to [Smoothieboard](smoothieboard)'s motor and mosfet power inputs
+* Wire the power supply to [Smoothieboard](smoothieboards)'s motor and mosfet power inputs
 * Connect motors to the stepper motor driver outputs
 * Edit your configuration to match your motors
 * Test the motors, and admire your accomplishment for hours

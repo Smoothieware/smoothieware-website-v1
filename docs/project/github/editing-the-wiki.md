@@ -336,13 +336,13 @@ The configuration file is located at <raw>/etc/smoothie/config</raw>.
 **Code snippets:**
 
 ```html
-Use the command <raw>M114</raw> to query the current position.
+Use the command <mcode>M114</mcode> to query the current position.
 ```
 
 Renders as:
 
 {::nomarkdown}
-Use the command <raw>M114</raw> to query the current position.
+Use the command <mcode>M114</mcode> to query the current position.
 {:/nomarkdown}
 
 **Technical values:**

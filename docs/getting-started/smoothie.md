@@ -130,7 +130,7 @@ Choose your path based on which version of Smoothieware you're using:
 **V1 Users:**
 
 1. [Getting Started Guide](start) - Quick setup instructions
-2. [Smoothieboard Documentation](smoothieboard) - Hardware details
+2. [Smoothieboard Documentation](smoothieboards) - Hardware details
 3. [Configuration Guide](configuring-smoothie) - Software setup
 4. [FAQ](../community/faq) - Common questions answered
 
@@ -142,7 +142,7 @@ Choose your path based on which version of Smoothieware you're using:
 **V2 Users:**
 
 1. [Getting Started Guide](start) - Quick setup instructions (V2-specific)
-2. [Smoothieboard V2 Documentation](smoothieboard) - Hardware details
+2. [Smoothieboard V2 Documentation](smoothieboards) - Hardware details
 3. [Configuration Guide](configuring-smoothie) - Software setup (V2-specific)
 4. [Migration Guide](../migration) - Upgrading from V1 to V2
 

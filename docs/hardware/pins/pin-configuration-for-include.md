@@ -372,6 +372,121 @@ Uses pull-down to keep the pin low by default, then inverts the reading. This me
 | Inverted no-pull | `!-` | External pull resistors with reversed logic |
 | Inverted pull-down | `!v` | Active-high sensors with reversed logic |
 
+## Default Pin Assignments
+
+This table shows the default pin assignments for common functions:
+
+{::nomarkdown}
+
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
+
+| Function | Pin | Notes |
+|----------|-----|-------|
+| X Step | {::nomarkdown}<pin>2.0</pin>{:/nomarkdown} | Alpha stepper |
+| X Dir | {::nomarkdown}<pin>0.5</pin>{:/nomarkdown} | Alpha stepper |
+| Y Step | {::nomarkdown}<pin>2.1</pin>{:/nomarkdown} | Beta stepper |
+| Y Dir | {::nomarkdown}<pin>0.11</pin>{:/nomarkdown} | Beta stepper |
+| Z Step | {::nomarkdown}<pin>2.2</pin>{:/nomarkdown} | Gamma stepper |
+| Z Dir | {::nomarkdown}<pin>0.20</pin>{:/nomarkdown} | Gamma stepper |
+| E0 Step | {::nomarkdown}<pin>2.3</pin>{:/nomarkdown} | Delta stepper / Extruder |
+| E0 Dir | {::nomarkdown}<pin>0.22</pin>{:/nomarkdown} | Delta stepper / Extruder |
+| Min X | {::nomarkdown}<pin>1.24</pin>{:/nomarkdown} | X endstop |
+| Min Y | {::nomarkdown}<pin>1.26</pin>{:/nomarkdown} | Y endstop |
+| Min Z | {::nomarkdown}<pin>1.28</pin>{:/nomarkdown} | Z endstop |
+| Max X | {::nomarkdown}<pin>1.25</pin>{:/nomarkdown} | X max endstop |
+| Max Y | {::nomarkdown}<pin>1.27</pin>{:/nomarkdown} | Y max endstop |
+| Max Z | {::nomarkdown}<pin>1.29</pin>{:/nomarkdown} | Z max endstop |
+| Hotend | {::nomarkdown}<pin>2.7</pin>{:/nomarkdown} | PWM output |
+| Bed | {::nomarkdown}<pin>2.5</pin>{:/nomarkdown} | PWM output |
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+| Function | Pin | Notes |
+|----------|-----|-------|
+| X Step | {::nomarkdown}<pin>PF0</pin>{:/nomarkdown} | Alpha stepper |
+| X Dir | {::nomarkdown}<pin>PF1</pin>{:/nomarkdown} | Alpha stepper |
+| Y Step | {::nomarkdown}<pin>PF2</pin>{:/nomarkdown} | Beta stepper |
+| Y Dir | {::nomarkdown}<pin>PF3</pin>{:/nomarkdown} | Beta stepper |
+| Z Step | {::nomarkdown}<pin>PF4</pin>{:/nomarkdown} | Gamma stepper |
+| Z Dir | {::nomarkdown}<pin>PF5</pin>{:/nomarkdown} | Gamma stepper |
+| E0 Step | {::nomarkdown}<pin>PF6</pin>{:/nomarkdown} | Delta stepper / Extruder |
+| E0 Dir | {::nomarkdown}<pin>PF7</pin>{:/nomarkdown} | Delta stepper / Extruder |
+| Min X | {::nomarkdown}<pin>PG0</pin>{:/nomarkdown} | X endstop |
+| Min Y | {::nomarkdown}<pin>PG1</pin>{:/nomarkdown} | Y endstop |
+| Min Z | {::nomarkdown}<pin>PG2</pin>{:/nomarkdown} | Z endstop |
+| Max X | {::nomarkdown}<pin>PG3</pin>{:/nomarkdown} | X max endstop |
+| Max Y | {::nomarkdown}<pin>PG4</pin>{:/nomarkdown} | Y max endstop |
+| Max Z | {::nomarkdown}<pin>PG5</pin>{:/nomarkdown} | Z max endstop |
+| Hotend | {::nomarkdown}<pin>PE5</pin>{:/nomarkdown} | PWM output |
+| Bed | {::nomarkdown}<pin>PE6</pin>{:/nomarkdown} | PWM output |
+
+{::nomarkdown}
+</v2>
+</versioned>
+
+{:/nomarkdown}
+
+## Configuration Example
+
+Here's a typical configuration showing stepper and endstop pin assignments:
+
+{::nomarkdown}
+
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
+
+```
+# Stepper and endstop configuration
+alpha_step_pin                       2.0
+alpha_dir_pin                        0.5!
+alpha_en_pin                         0.4
+alpha_min_endstop                    1.24^
+alpha_max_endstop                    1.25^
+
+beta_step_pin                        2.1
+beta_dir_pin                         0.11!
+beta_en_pin                          0.10
+beta_min_endstop                     1.26^
+beta_max_endstop                     1.27^
+```
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+```
+# Stepper and endstop configuration
+alpha_step_pin                       PF0
+alpha_dir_pin                        PF1!
+alpha_en_pin                         PC0
+alpha_min_endstop                    PG0^
+alpha_max_endstop                    PG3^
+
+beta_step_pin                        PF2
+beta_dir_pin                         PF3!
+beta_en_pin                          PC3
+beta_min_endstop                     PG1^
+beta_max_endstop                     PG4^
+```
+
+{::nomarkdown}
+</v2>
+</versioned>
+
+{:/nomarkdown}
+
+<sl-alert variant="primary" open>
+  <sl-icon slot="icon" name="info-circle"></sl-icon>
+  <strong>Tip:</strong> Use the example configuration file as a starting point, then customize the settings (like speeds, accelerations, and thermistor values) for your specific machine. This ensures all pin assignments are correct for your hardware.
+</sl-alert>
+
 ---
 
 **Summary:**

@@ -23,7 +23,7 @@ To help maintain this coherence we've put together the following list of things 
 
 ## I want to make my own boards for personal use, or for use by my company only.
 
-Have yourself a good time. The reference designs are available [here](/smoothieboard).
+Have yourself a good time. The reference designs are available [here](/smoothieboards).
 
 All we ask is that you do it safely, and that if you're going to go public, you follow the licenses under which the original board is made.
 

@@ -82,5 +82,5 @@ Related coordinate system commands:
 ## Further reading
 
 These resources are used as references for Gcode:
-- [LinuxCNC Gcode list](http://linuxcnc.org/docs/html/gcode.html) (some of this page's content is taken from their G92 documentation)
+- [LinuxCNC Gcode list](http://linuxcnc.org/docs/html/gcode.html) (some of this page's content is taken from their {::nomarkdown}<gcode>G92</gcode>{:/nomarkdown} documentation)
 - [Reprap Gcode list](http://reprap.org/wiki/G-code)

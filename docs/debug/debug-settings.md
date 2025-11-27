@@ -725,7 +725,7 @@ Examples showing settings that actually changed significantly or were removed/ad
         <tr>
             <td><setting no-version v1="rdelta_homing"></setting></td>
             <td><setting no-version v2="endstops.common.rdelta_homing"></setting></td>
-            <td class="description-cell">Enables rotary delta-specific homing behavior for delta robots with rotational joints instead of linear carriages. Rotary deltas use angular endstops and theta offset calibration (M306) rather than linear position, requiring different homing calculations and position tracking.</td>
+            <td class="description-cell">Enables rotary delta-specific homing behavior for delta robots with rotational joints instead of linear carriages. Rotary deltas use angular endstops and theta offset calibration (<mcode>M306</mcode>) rather than linear position, requiring different homing calculations and position tracking.</td>
         </tr>
         <tr>
             <td><setting no-version v1="endstop.maxx.axis"></setting></td>
@@ -745,7 +745,7 @@ Examples showing settings that actually changed significantly or were removed/ad
         <tr>
             <td><setting no-version v1="endstop.maxx.homing_direction"></setting></td>
             <td><setting no-version v2="endstops.maxx.homing_direction"></setting></td>
-            <td class="description-cell">Specifies the direction the axis moves when homing to this endstop. When a homing command (G28) is issued, the firmware moves the axis in the specifie...</td>
+            <td class="description-cell">Specifies the direction the axis moves when homing to this endstop. When a homing command (<gcode>G28</gcode>) is issued, the firmware moves the axis in the specifie...</td>
         </tr>
         <tr>
             <td><setting no-version v1="endstop.maxx.homing_position"></setting></td>
@@ -795,7 +795,7 @@ Examples showing settings that actually changed significantly or were removed/ad
         <tr>
             <td><setting no-version v1="endstop.maxy.homing_direction"></setting></td>
             <td><setting no-version v2="endstops.maxy.homing_direction"></setting></td>
-            <td class="description-cell">Specifies the direction the axis moves when homing to this endstop. When a homing command (G28) is issued, the firmware moves the axis in the specifie...</td>
+            <td class="description-cell">Specifies the direction the axis moves when homing to this endstop. When a homing command (<gcode>G28</gcode>) is issued, the firmware moves the axis in the specifie...</td>
         </tr>
         <tr>
             <td><setting no-version v1="endstop.maxy.homing_position"></setting></td>
@@ -845,7 +845,7 @@ Examples showing settings that actually changed significantly or were removed/ad
         <tr>
             <td><setting no-version v1="endstop.maxz.homing_direction"></setting></td>
             <td><setting no-version v2="endstops.maxz.homing_direction"></setting></td>
-            <td class="description-cell">Specifies the direction the axis moves when homing to this endstop. When a homing command (G28) is issued, the firmware moves the axis in the specifie...</td>
+            <td class="description-cell">Specifies the direction the axis moves when homing to this endstop. When a homing command (<gcode>G28</gcode>) is issued, the firmware moves the axis in the specifie...</td>
         </tr>
         <tr>
             <td><setting no-version v1="endstop.maxz.homing_position"></setting></td>
@@ -895,7 +895,7 @@ Examples showing settings that actually changed significantly or were removed/ad
         <tr>
             <td><setting no-version v1="endstop.minx.homing_direction"></setting></td>
             <td><setting no-version v2="endstops.minx.homing_direction"></setting></td>
-            <td class="description-cell">Specifies the direction the axis moves when homing to this endstop. When a homing command (G28) is issued, the firmware moves the axis in the specifie...</td>
+            <td class="description-cell">Specifies the direction the axis moves when homing to this endstop. When a homing command (<gcode>G28</gcode>) is issued, the firmware moves the axis in the specifie...</td>
         </tr>
         <tr>
             <td><setting no-version v1="endstop.minx.homing_position"></setting></td>
@@ -945,7 +945,7 @@ Examples showing settings that actually changed significantly or were removed/ad
         <tr>
             <td><setting no-version v1="endstop.miny.homing_direction"></setting></td>
             <td><setting no-version v2="endstops.miny.homing_direction"></setting></td>
-            <td class="description-cell">Specifies the direction the axis moves when homing to this endstop. When a homing command (G28) is issued, the firmware moves the axis in the specifie...</td>
+            <td class="description-cell">Specifies the direction the axis moves when homing to this endstop. When a homing command (<gcode>G28</gcode>) is issued, the firmware moves the axis in the specifie...</td>
         </tr>
         <tr>
             <td><setting no-version v1="endstop.miny.homing_position"></setting></td>
@@ -995,7 +995,7 @@ Examples showing settings that actually changed significantly or were removed/ad
         <tr>
             <td><setting no-version v1="endstop.minz.homing_direction"></setting></td>
             <td><setting no-version v2="endstops.minz.homing_direction"></setting></td>
-            <td class="description-cell">Specifies the direction the axis moves when homing to this endstop. When a homing command (G28) is issued, the firmware moves the axis in the specifie...</td>
+            <td class="description-cell">Specifies the direction the axis moves when homing to this endstop. When a homing command (<gcode>G28</gcode>) is issued, the firmware moves the axis in the specifie...</td>
         </tr>
         <tr>
             <td><setting no-version v1="endstop.minz.homing_position"></setting></td>
@@ -1096,32 +1096,32 @@ Examples showing settings that actually changed significantly or were removed/ad
         <tr>
             <td><setting no-version v1="extruder.hotend.retract_feedrate"></setting></td>
             <td><setting no-version v2="extruder.hotend.retract_feedrate"></setting></td>
-            <td class="description-cell">Speed at which filament is retracted during firmware retraction in mm/s. Used by G10 command. This is stored and used internally in mm/s, but the M207...</td>
+            <td class="description-cell">Speed at which filament is retracted during firmware retraction in mm/s. Used by <gcode>G10</gcode> command. This is stored and used internally in mm/s, but the <mcode>M207</mcode>...</td>
         </tr>
         <tr>
             <td><setting no-version v1="extruder.hotend.retract_length"></setting></td>
             <td><setting no-version v2="extruder.hotend.retract_length"></setting></td>
-            <td class="description-cell">Amount of filament to retract during firmware retraction in millimeters. Used by G10 (retract) and G11 (unretract) commands. Retraction pulls filament...</td>
+            <td class="description-cell">Amount of filament to retract during firmware retraction in millimeters. Used by <gcode>G10</gcode> (retract) and <gcode>G11</gcode> (unretract) commands. Retraction pulls filament...</td>
         </tr>
         <tr>
             <td><setting no-version v1="extruder.hotend.retract_recover_feedrate"></setting></td>
             <td><setting no-version v2="extruder.hotend.retract_recover_feedrate"></setting></td>
-            <td class="description-cell">Speed at which filament is recovered (unretracted) during firmware unretraction in mm/s. Used by G11 command. This is stored and used internally in mm...</td>
+            <td class="description-cell">Speed at which filament is recovered (unretracted) during firmware unretraction in mm/s. Used by <gcode>G11</gcode> command. This is stored and used internally in mm...</td>
         </tr>
         <tr>
             <td><setting no-version v1="extruder.hotend.retract_recover_length"></setting></td>
             <td><setting no-version v2="extruder.hotend.retract_recover_length"></setting></td>
-            <td class="description-cell">Additional length of filament to extrude when recovering (unretract) beyond the retracted amount. Used by G11 command. Total recover distance = retrac...</td>
+            <td class="description-cell">Additional length of filament to extrude when recovering (unretract) beyond the retracted amount. Used by <gcode>G11</gcode> command. Total recover distance = retrac...</td>
         </tr>
         <tr>
             <td><setting no-version v1="extruder.hotend.retract_zlift_feedrate"></setting></td>
             <td><setting no-version v2="extruder.hotend.retract_zlift_feedrate"></setting></td>
-            <td class="description-cell">Speed for Z-axis movement during Z-lift operations in mm/min. Used for both lifting (during G10) and lowering (during G11) moves when retract_zlift_le...</td>
+            <td class="description-cell">Speed for Z-axis movement during Z-lift operations in mm/min. Used for both lifting (during <gcode>G10</gcode>) and lowering (during <gcode>G11</gcode>) moves when retract_zlift_le...</td>
         </tr>
         <tr>
             <td><setting no-version v1="extruder.hotend.retract_zlift_length"></setting></td>
             <td><setting no-version v2="extruder.hotend.retract_zlift_length"></setting></td>
-            <td class="description-cell">Amount to lift the Z-axis during retraction in millimeters (Z-hop or Z-lift feature). When G10 is executed, the nozzle lifts by this amount after retr...</td>
+            <td class="description-cell">Amount to lift the Z-axis during retraction in millimeters (Z-hop or Z-lift feature). When <gcode>G10</gcode> is executed, the nozzle lifts by this amount after retr...</td>
         </tr>
         <tr>
             <td><setting no-version v1="extruder.hotend.step_pin"></setting></td>
@@ -1173,7 +1173,7 @@ Examples showing settings that actually changed significantly or were removed/ad
         <tr>
             <td class="empty-cell">—</td>
             <td><setting no-version v2="general.config-override"></setting></td>
-            <td class="description-cell">Enables config-override functionality allowing runtime configuration changes to be saved with M500 and loaded automatically on boot. When enabled, settings can be overridden and persisted without modifying the main config.ini file. Unlike v1 where the override file was always active if present, v2 requires explicit enabling of this feature.</td>
+            <td class="description-cell">Enables config-override functionality allowing runtime configuration changes to be saved with <mcode>M500</mcode> and loaded automatically on boot. When enabled, settings can be overridden and persisted without modifying the main config.ini file. Unlike v1 where the override file was always active if present, v2 requires explicit enabling of this feature.</td>
         </tr>
         <tr>
             <td class="empty-cell">—</td>
@@ -1299,7 +1299,7 @@ Examples showing settings that actually changed significantly or were removed/ad
         <tr>
             <td><setting no-version v1="laser_module_default_power"></setting></td>
             <td><setting no-version v2="laser.default_power"></setting></td>
-            <td class="description-cell">Default laser power when no S parameter is specified in G-code. When a G1/G2/G3 move is issued without an S parameter, this power level will be used. This value represents the power as a duty cycle fraction where 0.0 = 0% and 1.0 = 100%.</td>
+            <td class="description-cell">Default laser power when no S parameter is specified in G-code. When a <gcode>G1</gcode>/<gcode>G2</gcode>/<gcode>G3</gcode> move is issued without an S parameter, this power level will be used. This value represents the power as a duty cycle fraction where 0.0 = 0% and 1.0 = 100%.</td>
         </tr>
         <tr>
             <td><setting no-version v1="laser_module_proportional_power"></setting></td>
@@ -1920,12 +1920,12 @@ Examples showing settings that actually changed significantly or were removed/ad
         <tr>
             <td><setting no-version v1="default_feed_rate"></setting></td>
             <td><setting no-version v2="motion control.default_feed_rate"></setting></td>
-            <td class="description-cell">Default feed rate for G1 moves when no F parameter is specified. This is the speed at which the machine moves during normal operations (cutting, extru...</td>
+            <td class="description-cell">Default feed rate for <gcode>G1</gcode> moves when no F parameter is specified. This is the speed at which the machine moves during normal operations (cutting, extru...</td>
         </tr>
         <tr>
             <td><setting no-version v1="default_seek_rate"></setting></td>
             <td><setting no-version v2="motion control.default_seek_rate"></setting></td>
-            <td class="description-cell">Default rate for G0 rapid moves. This is the speed for rapid positioning moves when the tool is not active (not cutting, extruding, or engraving). G0...</td>
+            <td class="description-cell">Default rate for <gcode>G0</gcode> rapid moves. This is the speed for rapid positioning moves when the tool is not active (not cutting, extruding, or engraving). <gcode>G0</gcode>...</td>
         </tr>
         <tr>
             <td><setting no-version v1="delta_acceleration"></setting></td>
@@ -2085,7 +2085,7 @@ Examples showing settings that actually changed significantly or were removed/ad
         <tr>
             <td><setting no-version v1="mm_per_arc_segment"></setting></td>
             <td><setting no-version v2="motion control.mm_per_arc_segment"></setting></td>
-            <td class="description-cell">Length of arc segments for G2/G3 circular interpolation moves. When 0 (default), the firmware uses mm_max_arc_error to automatically determine appropr...</td>
+            <td class="description-cell">Length of arc segments for <gcode>G2</gcode>/<gcode>G3</gcode> circular interpolation moves. When 0 (default), the firmware uses mm_max_arc_error to automatically determine appropr...</td>
         </tr>
         <tr>
             <td><setting no-version v1="mm_per_line_segment"></setting></td>
@@ -2140,12 +2140,12 @@ Examples showing settings that actually changed significantly or were removed/ad
         <tr>
             <td><setting no-version v1="save_g54"></setting></td>
             <td><setting no-version v2="motion control.save_wcs"></setting></td>
-            <td class="description-cell">Save G54-G59 work coordinate systems to config-override with M500. When true, all work coordinate system offsets (G54, G55, G56, G57, G58, G59) will b...</td>
+            <td class="description-cell">Save <gcode>G54</gcode>-<gcode>G59</gcode> work coordinate systems to config-override with <mcode>M500</mcode>. When true, all work coordinate system offsets (<gcode>G54</gcode>, <gcode>G55</gcode>, <gcode>G56</gcode>, <gcode>G57</gcode>, <gcode>G58</gcode>, <gcode>G59</gcode>) will b...</td>
         </tr>
         <tr>
             <td><setting no-version v1="save_g92"></setting></td>
             <td><setting no-version v2="motion control.save_g92"></setting></td>
-            <td class="description-cell">Save G92 coordinate offsets to config-override with M500 command. When true, any G92 offset currently in effect will be written to the config-override...</td>
+            <td class="description-cell">Save <gcode>G92</gcode> coordinate offsets to config-override with <mcode>M500</mcode> command. When true, any <gcode>G92</gcode> offset currently in effect will be written to the config-override...</td>
         </tr>
         <tr>
             <td><setting no-version v1="segment_z_moves"></setting></td>
@@ -2155,7 +2155,7 @@ Examples showing settings that actually changed significantly or were removed/ad
         <tr>
             <td><setting no-version v1="set_g92"></setting></td>
             <td><setting no-version v2="motion control.set_g92"></setting></td>
-            <td class="description-cell">Set a fixed G92 offset at startup in format &quot;x,y,z&quot;. This allows defining a permanent coordinate offset that is applied automatically on boot. Useful...</td>
+            <td class="description-cell">Set a fixed <gcode>G92</gcode> offset at startup in format &quot;x,y,z&quot;. This allows defining a permanent coordinate offset that is applied automatically on boot. Useful...</td>
         </tr>
         <tr>
             <td><setting no-version v1="soft_endstop.enable"></setting></td>
@@ -2332,12 +2332,12 @@ Examples showing settings that actually changed significantly or were removed/ad
         <tr>
             <td><setting no-version v1="switch.{name}.halt_set_to"></setting></td>
             <td><setting no-version v2="switch.{name}.halt_set_to"></setting></td>
-            <td class="description-cell">Defines the switch state to set during a HALT condition (typically triggered by M112 emergency stop or system halt). When a halt occurs, the switch is set to this state immediately.</td>
+            <td class="description-cell">Defines the switch state to set during a HALT condition (typically triggered by <mcode>M112</mcode> emergency stop or system halt). When a halt occurs, the switch is set to this state immediately.</td>
         </tr>
         <tr>
             <td><setting no-version v1="switch.{name}.ignore_on_halt"></setting></td>
             <td><setting no-version v2="switch.{name}.ignore_on_halt"></setting></td>
-            <td class="description-cell">When set to `true`, prevents the switch from changing state during HALT conditions (M112 emergency stop). Useful for switches that should maintain their current state during emergency stops.</td>
+            <td class="description-cell">When set to `true`, prevents the switch from changing state during HALT conditions (<mcode>M112</mcode> emergency stop). Useful for switches that should maintain their current state during emergency stops.</td>
         </tr>
         <tr>            <td colspan="3" class="module-header">Temperature Control</td>
         </tr>
@@ -2369,7 +2369,7 @@ Examples showing settings that actually changed significantly or were removed/ad
         <tr>
             <td><setting no-version v1="temperature_control.{name}.designator"></setting></td>
             <td><setting no-version v2="temperature control.designator"></setting></td>
-            <td class="description-cell">The letter/identifier that prefixes this module&#39;s temperature in M105 responses. Allows host software to identify which heater each temperature readin...</td>
+            <td class="description-cell">The letter/identifier that prefixes this module&#39;s temperature in <mcode>M105</mcode> responses. Allows host software to identify which heater each temperature readin...</td>
         </tr>
         <tr>
             <td><setting no-version v1="temperature_control.{name}.e3d_amplifier_pin"></setting></td>
@@ -2384,7 +2384,7 @@ Examples showing settings that actually changed significantly or were removed/ad
         <tr>
             <td><setting no-version v1="temperature_control.{name}.get_m_code"></setting></td>
             <td><setting no-version v2="temperature control.get_m_code"></setting></td>
-            <td class="description-cell">Specifies which M-code reports the current temperature for this module. M105 is standard for temperature reporting and returns data for all temperatur...</td>
+            <td class="description-cell">Specifies which M-code reports the current temperature for this module. <mcode>M105</mcode> is standard for temperature reporting and returns data for all temperatur...</td>
         </tr>
         <tr>
             <td><setting no-version v1="temperature_control.{name}.heater_pin"></setting></td>
@@ -2685,7 +2685,7 @@ Examples showing settings that actually changed significantly or were removed/ad
         <tr>
             <td><setting no-version v1="leveling-strategy.three-point-leveling.home_first"></setting></td>
             <td><setting no-version v2="three point leveling strategy.home_first"></setting></td>
-            <td class="description-cell">Automatically home X and Y axes before running G32 leveling. Ensures consistent and known starting position before probing begins....</td>
+            <td class="description-cell">Automatically home X and Y axes before running <gcode>G32</gcode> leveling. Ensures consistent and known starting position before probing begins....</td>
         </tr>
         <tr>
             <td><setting no-version v1="leveling-strategy.three-point-leveling.point1"></setting></td>
@@ -2710,7 +2710,7 @@ Examples showing settings that actually changed significantly or were removed/ad
         <tr>
             <td><setting no-version v1="leveling-strategy.three-point-leveling.save_plane"></setting></td>
             <td><setting no-version v2="three point leveling strategy.save_plane"></setting></td>
-            <td class="description-cell">Enable saving the calculated plane equation with M500 and restoring it with M561 ABCD parameters....</td>
+            <td class="description-cell">Enable saving the calculated plane equation with <mcode>M500</mcode> and restoring it with M561 ABCD parameters....</td>
         </tr>
         <tr>
             <td><setting no-version v1="leveling-strategy.three-point-leveling.tolerance"></setting></td>
@@ -2759,7 +2759,7 @@ Examples showing settings that actually changed significantly or were removed/ad
         <tr>
             <td><setting no-version v1="leveling-strategy.delta-grid.save"></setting></td>
             <td><setting no-version v2="delta grid leveling strategy.save"></setting></td>
-            <td class="description-cell">When true, M500 saves M375 command to config-override, causing grid to auto-load from /sd/delta.grid on boot....</td>
+            <td class="description-cell">When true, <mcode>M500</mcode> saves M375 command to config-override, causing grid to auto-load from /sd/delta.grid on boot....</td>
         </tr>
         <tr>
             <td><setting no-version v1="leveling-strategy.delta-grid.size"></setting></td>
@@ -2781,7 +2781,7 @@ Examples showing settings that actually changed significantly or were removed/ad
         <tr>
             <td><setting no-version v1="leveling-strategy.rectangular-grid.do_home"></setting></td>
             <td><setting no-version v2="cartesian grid leveling strategy.do_home"></setting></td>
-            <td class="description-cell">Automatically home all axes before probing grid with G32 command. Ensures consistent starting position for repeatable grid probing....</td>
+            <td class="description-cell">Automatically home all axes before probing grid with <gcode>G32</gcode> command. Ensures consistent starting position for repeatable grid probing....</td>
         </tr>
         <tr>
             <td><setting no-version v1="leveling-strategy.rectangular-grid.grid_x_size"></setting></td>
@@ -2816,7 +2816,7 @@ Examples showing settings that actually changed significantly or were removed/ad
         <tr>
             <td><setting no-version v1="leveling-strategy.rectangular-grid.only_by_two_corners"></setting></td>
             <td><setting no-version v2="cartesian grid leveling strategy.only_by_two_corners"></setting></td>
-            <td class="description-cell">When true, requires G32 to specify XYAB parameters defining the grid area instead of using configured x_size/y_size....</td>
+            <td class="description-cell">When true, requires <gcode>G32</gcode> to specify XYAB parameters defining the grid area instead of using configured x_size/y_size....</td>
         </tr>
         <tr>
             <td><setting no-version v1="leveling-strategy.rectangular-grid.probe_offsets"></setting></td>
@@ -2826,7 +2826,7 @@ Examples showing settings that actually changed significantly or were removed/ad
         <tr>
             <td><setting no-version v1="leveling-strategy.rectangular-grid.save"></setting></td>
             <td><setting no-version v2="cartesian grid leveling strategy.save"></setting></td>
-            <td class="description-cell">When true, M500 will save an M375 command to config-override, causing the grid to be automatically loaded from /sd/cartesian.grid on boot....</td>
+            <td class="description-cell">When true, <mcode>M500</mcode> will save an M375 command to config-override, causing the grid to be automatically loaded from /sd/cartesian.grid on boot....</td>
         </tr>
         <tr>
             <td><setting no-version v1="leveling-strategy.rectangular-grid.size"></setting></td>

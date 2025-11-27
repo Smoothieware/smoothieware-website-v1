@@ -63,7 +63,7 @@ The example here will be a laser control module.
 <ul>
 <li>Register itself with the module system using a static create method</li>
 <li>Read configuration from the config file (pin, power settings)</li>
-<li>Handle M-codes via the Dispatcher system (e.g., M221 for power scaling)</li>
+<li>Handle M-codes via the Dispatcher system (e.g., <mcode>M221</mcode> for power scaling)</li>
 <li>Use a timer callback to continuously adjust PWM based on motion speed</li>
 </ul>
 <p>Good examples of existing V2 modules are in the <code>src/modules/</code> directory, particularly <code>Laser</code>, <code>TemperatureControl</code>, and <code>Extruder</code>.</p>
@@ -161,7 +161,7 @@ minimum_power = 0.0</code></pre>
 <h2>On motion and laser power</h2>
 <p>In V2, laser power control works differently than V1. Instead of registering for G-code events, the laser module uses a <strong>timer-based approach</strong>:</p>
 <ol>
-<li>G1/G2/G3 moves include an S-value (power) that's stored in the motion block</li>
+<li><gcode>G1</gcode>/<gcode>G2</gcode>/<gcode>G3</gcode> moves include an S-value (power) that's stored in the motion block</li>
 <li>A timer callback runs periodically (up to 1kHz) to check the current motion block</li>
 <li>The callback reads the block's S-value and current speed ratio to calculate proportional power</li>
 <li>PWM output is adjusted in real-time as the motion accelerates/decelerates</li>
@@ -266,10 +266,10 @@ THEDISPATCHER-&gt;add_handler("fire",
             Gcode* gcode = static_cast&lt;Gcode*&gt;(argument);
             if (gcode-&gt;has_letter('G')) {
                 int code = gcode-&gt;get_value('G');
-                if (code == 0) { // G0
+                if (code == 0) { // <gcode>G0</gcode>
                     this-&gt;laser_pin = 0;
                     this-&gt;laser_on = false;
-                } else if (code &gt; 0 &amp;&amp; code &lt; 4) { // G1, G2, G3
+                } else if (code &gt; 0 &amp;&amp; code &lt; 4) { // <gcode>G1</gcode>, <gcode>G2</gcode>, <gcode>G3</gcode>
                     this-&gt;laser_on = true;
                 }
             }
@@ -288,7 +288,7 @@ THEDISPATCHER-&gt;add_handler("fire",
 };</code></pre>
 <p>And also change a bit the way we instantiate the module:</p>
 <pre><code class="language-cpp">Laser laser = Laser(p21);</code></pre>
-<p>That's it, now the Laser pin will be LOW during G0 moves, and HIGH during G1, G2, and G3 moves.</p>
+<p>That's it, now the Laser pin will be LOW during <gcode>G0</gcode> moves, and HIGH during <gcode>G1</gcode>, <gcode>G2</gcode>, and <gcode>G3</gcode> moves.</p>
 <p>But that's not enough. Because we use acceleration, the speed is not constant. And thus if the power of the laser stays constant, that power will be too much when accelerating and decelerating.</p>
 <p>So we need to have a laser power that is proportional to the instant speed of the robot. That's the kind of thing the <code>on_speed_change</code> event is for.</p>
 </v1>
@@ -301,7 +301,7 @@ void Laser::set_proportional_power()
     // Get the currently executing motion block
     const Block *block = StepTicker::getInstance()-&gt;get_current_block();
 
-    // Check if we have a valid block that's a G1/G2/G3 move
+    // Check if we have a valid block that's a <gcode>G1</gcode>/<gcode>G2</gcode>/<gcode>G3</gcode> move
     if(block != nullptr &amp;&amp; block-&gt;is_ready &amp;&amp; block-&gt;is_g123) {
         // Get requested power from the block's S-value
         float requested_power = block-&gt;s_value / laser_maximum_s_value;
