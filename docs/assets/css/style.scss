@@ -515,3 +515,15 @@ section {
   border: 2px solid #ffcccc !important;
   border-radius: 4px !important;
 }
+
+/* Normalize list spacing - remove extra space only for nested lists */
+.markdown-body li ul,
+.markdown-body li ol {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.markdown-body li li {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}

@@ -83,12 +83,6 @@ The Smoothie project is always looking for help. Whatever your skills are, there
 - [Migrating](migrating): Migration guides from other firmware
   - [From GRBL](from-grbl): Porting your GRBL configuration to Smoothie
   - [From Marlin](from-marlin): Porting your Marlin configuration to Smoothie
-- [Communication](communication)
-  - [Network](network)
-  - [USB](usb)
-  - [UART](uart)
-  - [Bluetooth](bluetooth-serial)
-  - [Wifi](wifi) (new)
 
 {::nomarkdown}
 <a href="/images/board.png">
@@ -167,6 +161,21 @@ The Smoothie project is always looking for help. Whatever your skills are, there
 - [Contributing](contributing): **We need your help!**
   - [Todo](todo): List of the things that are being worked on in the project.
   - [Editing the Wiki](editing-the-wiki): How to edit this documentation and improve it.
+
+
+{::nomarkdown}
+<a href="/images/message.png">
+  <img src="/images/message.png" alt="Binary Code" style="width: 100px; height: 100px; float: right; margin-left: 1rem;"/>
+</a>
+{:/nomarkdown}
+
+
+- [Communication](communication)
+  - [Network](network)
+  - [USB](usb)
+  - [UART](uart)
+  - [Bluetooth](bluetooth-serial)
+  - [Wifi](wifi) (new)
 
 {::nomarkdown}
 <a href="/images/binary-code.png">
