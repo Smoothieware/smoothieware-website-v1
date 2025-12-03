@@ -5,6 +5,13 @@ permalink: /windows-drivers
 # Smoothie Drivers for Windows
 
 {::nomarkdown}
+<sl-alert variant="danger" open>
+  <sl-icon slot="icon" name="exclamation-octagon"></sl-icon>
+  <strong>Important:</strong> Since Windows 10 (released in 2015), USB serial drivers are built into the operating system and work automatically. If you are running Windows 10 or later, you almost certainly do NOT need to install any drivers. The information below is only relevant for users running Windows 8.1 or earlier.
+</sl-alert>
+{:/nomarkdown}
+
+{::nomarkdown}
 
 <p>If you run Windows, you may need to install drivers to use the virtual serial over USB interface. Driver requirements depend on both your Windows version and which Smoothieware version you're using.</p>
 
@@ -42,7 +49,7 @@ permalink: /windows-drivers
 <versioned orientation="vertical">
 <v1>
 <ul>
-<li><strong>Windows 2000/Vista/7/8 (64bit/32bit)</strong>: <a href="windows-drivers/smoothieware-usb-driver-v1.1.exe">smoothieware-usb-driver-v1.1.exe</a></li>
+<li><strong>Windows 2000/Vista/7/8 (64bit/32bit)</strong>: <a href="/images/windows-drivers/smoothieware-usb-driver-v1.1.exe">smoothieware-usb-driver-v1.1.exe</a></li>
 </ul>
 
 <sl-alert variant="neutral" open>
@@ -74,8 +81,8 @@ Download the installer and run it. After that, Smoothieboard's USB serial should
 
 For manual installation:
 
-- **Windows 2000/Vista/7/8 (64bit/32bit)**: [smoothieware-windows-signeddriver-v1.1.zip](http://smoothieware.org/_media/windows-drivers/smoothieware-windows-signeddriver-v1.1.zip)
-- **Windows 8.1**: [smoothieware-windows-signeddriver-v1.0.zip](http://smoothieware.org/_media/windows-drivers/smoothieware-windows-signeddriver-v1.0.zip)
+- **Windows 2000/Vista/7/8 (64bit/32bit)**: [smoothieware-windows-signeddriver-v1.1.zip](/images/windows-drivers/smoothieware-windows-signeddriver-v1.1.zip)
+- **Windows 8.1**: [smoothieware-windows-signeddriver-v1.0.zip](/images/windows-drivers/smoothieware-windows-signeddriver-v1.0.zip)
 
 ## How to Install the Driver Files Manually
 
@@ -102,14 +109,14 @@ If you are using a recent version of Smoothieware, you may find up to two "Smoot
 Here is an example of what you might see on recent firmware:
 
 {::nomarkdown}
-<a href="/images/recovered/cp.jpg">
-  <img src="/images/recovered/cp.jpg" alt="Control Panel" style="width: 640px; height: auto; display: block; margin: 2rem auto;"/>
+<a href="/images/windows-drivers/cp.jpg">
+  <img src="/images/windows-drivers/cp.jpg" alt="Control Panel" style="width: 640px; height: auto; display: block; margin: 2rem auto;"/>
 </a>
 {:/nomarkdown}
 
 {::nomarkdown}
-<a href="/images/recovered/dm.jpg">
-  <img src="/images/recovered/dm.jpg" alt="Device Manager" style="width: 640px; height: auto; display: block; margin: 2rem auto;"/>
+<a href="/images/windows-drivers/dm.jpg">
+  <img src="/images/windows-drivers/dm.jpg" alt="Device Manager" style="width: 640px; height: auto; display: block; margin: 2rem auto;"/>
 </a>
 {:/nomarkdown}
 
@@ -118,8 +125,8 @@ Here is an example of what you might see on recent firmware:
 Right-click the first one and select "Update Driver Software"
 
 {::nomarkdown}
-<a href="/images/recovered/uds.jpg">
-  <img src="/images/recovered/uds.jpg" alt="Update Driver Software" style="width: 640px; height: auto; display: block; margin: 2rem auto;"/>
+<a href="/images/windows-drivers/uds.jpg">
+  <img src="/images/windows-drivers/uds.jpg" alt="Update Driver Software" style="width: 640px; height: auto; display: block; margin: 2rem auto;"/>
 </a>
 {:/nomarkdown}
 
@@ -128,8 +135,8 @@ Right-click the first one and select "Update Driver Software"
 Find where you unzipped the driver to
 
 {::nomarkdown}
-<a href="/images/recovered/findthedriver.jpg">
-  <img src="/images/recovered/findthedriver.jpg" alt="Find the Driver" style="width: 640px; height: auto; display: block; margin: 2rem auto;"/>
+<a href="/images/windows-drivers/findthedriver.jpg">
+  <img src="/images/windows-drivers/findthedriver.jpg" alt="Find the Driver" style="width: 640px; height: auto; display: block; margin: 2rem auto;"/>
 </a>
 {:/nomarkdown}
 
@@ -144,8 +151,8 @@ The port numbering can be changed through the advanced port properties, but you 
 Also, note that "smoothie DFU" is still unrecognized. This is fine. You can ignore that.
 
 {::nomarkdown}
-<a href="/images/recovered/done.jpg">
-  <img src="/images/recovered/done.jpg" alt="Driver Installed" style="width: 640px; height: auto; display: block; margin: 2rem auto;"/>
+<a href="/images/windows-drivers/done.jpg">
+  <img src="/images/windows-drivers/done.jpg" alt="Driver Installed" style="width: 640px; height: auto; display: block; margin: 2rem auto;"/>
 </a>
 {:/nomarkdown}
 

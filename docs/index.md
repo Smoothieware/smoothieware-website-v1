@@ -73,7 +73,7 @@ The Smoothie project is always looking for help. Whatever your skills are, there
 
 {::nomarkdown}
 <a href="/images/sprout-2.png">
-  <img src="/images/sprout-2.png" alt="Tools" style="width: 100px; height: 100px; float: right; margin-left: 1rem;"/>
+  <img src="/images/sprout-2.png" alt="Tools" style="width: 75px; height: 75px; float: right; margin-left: 1rem;"/>
 </a>
 {:/nomarkdown}
 
@@ -86,7 +86,7 @@ The Smoothie project is always looking for help. Whatever your skills are, there
 
 {::nomarkdown}
 <a href="/images/board.png">
-  <img src="/images/board.png" alt="Board" style="width: 100px; height: 100px; float: right; margin-left: 1rem;"/>
+  <img src="/images/board.png" alt="Board" style="width: 75px; height: 75px; float: right; margin-left: 1rem;"/>
 </a>
 {:/nomarkdown}
 
@@ -99,7 +99,7 @@ The Smoothie project is always looking for help. Whatever your skills are, there
 
 {::nomarkdown}
 <a href="/images/tool-belt.png">
-  <img src="/images/tool-belt.png" alt="Tools" style="width: 100px; height: 100px; float: right; margin-left: 1rem;"/>
+  <img src="/images/tool-belt.png" alt="Tools" style="width: 75px; height: 75px; float: right; margin-left: 1rem;"/>
 </a>
 {:/nomarkdown}
 
@@ -120,7 +120,7 @@ The Smoothie project is always looking for help. Whatever your skills are, there
 
 {::nomarkdown}
 <a href="/images/settings.png">
-  <img src="/images/settings.png" alt="Tools" style="width: 100px; height: 100px; float: right; margin-left: 1rem;"/>
+  <img src="/images/settings.png" alt="Tools" style="width: 75px; height: 75px; float: right; margin-left: 1rem;"/>
 </a>
 {:/nomarkdown}
 
@@ -138,7 +138,7 @@ The Smoothie project is always looking for help. Whatever your skills are, there
 
 {::nomarkdown}
 <a href="/images/console.png">
-  <img src="/images/console.png" alt="Tools" style="width: 100px; height: 100px; float: right; margin-left: 1rem;"/>
+  <img src="/images/console.png" alt="Tools" style="width: 75px; height: 75px; float: right; margin-left: 1rem;"/>
 </a>
 {:/nomarkdown}
 
@@ -165,7 +165,7 @@ The Smoothie project is always looking for help. Whatever your skills are, there
 
 {::nomarkdown}
 <a href="/images/message.png">
-  <img src="/images/message.png" alt="Binary Code" style="width: 100px; height: 100px; float: right; margin-left: 1rem;"/>
+  <img src="/images/message.png" alt="Binary Code" style="width: 75px; height: 75px; float: right; margin-left: 1rem;"/>
 </a>
 {:/nomarkdown}
 
@@ -179,7 +179,7 @@ The Smoothie project is always looking for help. Whatever your skills are, there
 
 {::nomarkdown}
 <a href="/images/binary-code.png">
-  <img src="/images/binary-code.png" alt="Binary Code" style="width: 100px; height: 100px; float: right; margin-left: 1rem;"/>
+  <img src="/images/binary-code.png" alt="Binary Code" style="width: 75px; height: 75px; float: right; margin-left: 1rem;"/>
 </a>
 {:/nomarkdown}
 
@@ -259,7 +259,7 @@ More: [Windows Drivers](windows-drivers), [Linux Drivers](linux-drivers), [Mac D
 
 {::nomarkdown}
 <a href="/images/worker.png">
-  <img src="/images/worker.png" alt="Worker" style="width: 100px; height: 100px; float: right; margin-left: 1rem;"/>
+  <img src="/images/worker.png" alt="Worker" style="width: 75px; height: 75px; float: right; margin-left: 1rem;"/>
 </a>
 {:/nomarkdown}
 
@@ -276,7 +276,7 @@ More: [Windows Drivers](windows-drivers), [Linux Drivers](linux-drivers), [Mac D
 
 {::nomarkdown}
 <a href="/images/blueprint-1.png">
-  <img src="/images/blueprint-1.png" alt="Hackers" style="width: 100px; height: 100px; float: right; margin-left: 1rem;"/>
+  <img src="/images/blueprint-1.png" alt="Hackers" style="width: 75px; height: 75px; float: right; margin-left: 1rem;"/>
 </a>
 {:/nomarkdown}
 
@@ -293,7 +293,7 @@ More: [Windows Drivers](windows-drivers), [Linux Drivers](linux-drivers), [Mac D
 
 {::nomarkdown}
 <a href="/images/coding.png">
-  <img src="/images/coding.png" alt="Coding" style="width: 100px; height: 100px; float: right; margin-left: 1rem;"/>
+  <img src="/images/coding.png" alt="Coding" style="width: 75px; height: 75px; float: right; margin-left: 1rem;"/>
 </a>
 {:/nomarkdown}
 
@@ -321,6 +321,6 @@ Current edge build status: [![Build Status](https://app.travis-ci.com/Smoothiewa
 
 {::nomarkdown}
 <a href="/images/oshw-logo.png">
-  <img src="/images/oshw-logo.png" alt="OSHW logo" style="width:100px; height:auto;"/>
+  <img src="/images/oshw-logo.png" alt="OSHW logo" style="width:75px; height:auto;"/>
 </a>
 {:/nomarkdown}
