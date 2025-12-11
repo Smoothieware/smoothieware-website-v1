@@ -1,47 +1,71 @@
-// src/site/page-specific/latest-firmware.ts
-var V1_REPO = "Smoothieware/Smoothieware";
-var V2_REPO = "Smoothieware/SmoothieV2";
+"use strict";
+/**
+ * latest-firmware.ts
+ *
+ * Page-specific functionality for the latest firmware commit display
+ * Works on both /latest-firmware and pages that include the compact version
+ *
+ * Features:
+ * - Fetches recent commits from GitHub API
+ * - Displays commits for V1 (edge/master) and V2 (master) branches
+ * - Supports both full and compact display modes
+ */
+// GitHub repository information
+const V1_REPO = 'Smoothieware/Smoothieware';
+const V2_REPO = 'Smoothieware/SmoothieV2';
+/**
+ * Formats a date string as a relative time (e.g., "2 days ago")
+ */
 function format_relative_time(date_string) {
-  const date = new Date(date_string);
-  const now = new Date;
-  const seconds = Math.floor((now.getTime() - date.getTime()) / 1000);
-  const intervals = {
-    year: 31536000,
-    month: 2592000,
-    week: 604800,
-    day: 86400,
-    hour: 3600,
-    minute: 60
-  };
-  for (const [unit, seconds_in_unit] of Object.entries(intervals)) {
-    const interval = Math.floor(seconds / seconds_in_unit);
-    if (interval >= 1) {
-      return `${interval} ${unit}${interval !== 1 ? "s" : ""} ago`;
+    const date = new Date(date_string);
+    const now = new Date();
+    const seconds = Math.floor((now.getTime() - date.getTime()) / 1000);
+    const intervals = {
+        year: 31536000,
+        month: 2592000,
+        week: 604800,
+        day: 86400,
+        hour: 3600,
+        minute: 60
+    };
+    for (const [unit, seconds_in_unit] of Object.entries(intervals)) {
+        const interval = Math.floor(seconds / seconds_in_unit);
+        if (interval >= 1) {
+            return `${interval} ${unit}${interval !== 1 ? 's' : ''} ago`;
+        }
     }
-  }
-  return "just now";
+    return 'just now';
 }
+/**
+ * Fetches and displays commits in compact mode (5 commits, minimal UI)
+ */
 async function fetch_commits_compact(repo, branch, container_id) {
-  const container = document.getElementById(container_id);
-  if (!container) {
-    return;
-  }
-  try {
-    const response = await fetch(`https://api.github.com/repos/${repo}/commits?sha=${branch}&per_page=5`);
-    if (!response.ok) {
-      throw new Error(`API error ${response.status}`);
+    const container = document.getElementById(container_id);
+    // Guard: container might not exist if version is switched
+    if (!container) {
+        return;
     }
-    const commits = await response.json();
-    let html = '<div style="display: flex; flex-direction: column; gap: 0.5rem;">';
-    for (const commit of commits) {
-      const sha = commit.sha.substring(0, 7);
-      const message = commit.commit.message.split(`
-`)[0];
-      const display_message = message.length > 50 ? message.substring(0, 50) + "..." : message;
-      const author = commit.commit.author.name;
-      const date = commit.commit.author.date;
-      const commit_url = commit.html_url;
-      html += `
+    try {
+        // Fetch commits from GitHub API
+        const response = await fetch(`https://api.github.com/repos/${repo}/commits?sha=${branch}&per_page=5`);
+        // Guard against API errors
+        if (!response.ok) {
+            throw new Error(`API error ${response.status}`);
+        }
+        const commits = await response.json();
+        // Build HTML for commits
+        let html = '<div style="display: flex; flex-direction: column; gap: 0.5rem;">';
+        for (const commit of commits) {
+            const sha = commit.sha.substring(0, 7);
+            const message = commit.commit.message.split('\n')[0];
+            // Truncate long messages
+            const display_message = message.length > 50
+                ? message.substring(0, 50) + '...'
+                : message;
+            const author = commit.commit.author.name;
+            const date = commit.commit.author.date;
+            const commit_url = commit.html_url;
+            html += `
                 <div style="
                     background-color: #2a2a2a;
                     border-left: 3px solid #444;
@@ -72,39 +96,47 @@ async function fetch_commits_compact(repo, branch, container_id) {
                     </div>
                 </div>
             `;
+        }
+        html += '</div>';
+        container.innerHTML = html;
     }
-    html += "</div>";
-    container.innerHTML = html;
-  } catch (error) {
-    container.innerHTML = `
+    catch (error) {
+        // Show error with fallback link
+        container.innerHTML = `
             <div style="color: #ff6b6b; font-size: 0.85em;">
                 Failed to load. <a href="https://github.com/${repo}/commits/${branch}"
                 target="_blank" style="color: #ffcc00; text-decoration: underline;">View on GitHub</a>
             </div>
         `;
-  }
-}
-async function fetch_commits_full(repo, branch, container_id) {
-  const container = document.getElementById(container_id);
-  if (!container) {
-    return;
-  }
-  try {
-    const response = await fetch(`https://api.github.com/repos/${repo}/commits?sha=${branch}&per_page=10`);
-    if (!response.ok) {
-      throw new Error(`GitHub API returned ${response.status}`);
     }
-    const commits = await response.json();
-    let html = '<div style="display: flex; flex-direction: column; gap: 1rem;">';
-    for (const commit of commits) {
-      const sha = commit.sha.substring(0, 7);
-      const message = commit.commit.message.split(`
-`)[0];
-      const author = commit.commit.author.name;
-      const author_url = commit.author?.html_url ?? "#";
-      const date = commit.commit.author.date;
-      const commit_url = commit.html_url;
-      html += `
+}
+/**
+ * Fetches and displays commits in full mode (10 commits, detailed UI)
+ */
+async function fetch_commits_full(repo, branch, container_id) {
+    const container = document.getElementById(container_id);
+    // Guard: container might not exist if version is switched
+    if (!container) {
+        return;
+    }
+    try {
+        // Fetch commits from GitHub API
+        const response = await fetch(`https://api.github.com/repos/${repo}/commits?sha=${branch}&per_page=10`);
+        // Guard against API errors
+        if (!response.ok) {
+            throw new Error(`GitHub API returned ${response.status}`);
+        }
+        const commits = await response.json();
+        // Build HTML for commits
+        let html = '<div style="display: flex; flex-direction: column; gap: 1rem;">';
+        for (const commit of commits) {
+            const sha = commit.sha.substring(0, 7);
+            const message = commit.commit.message.split('\n')[0];
+            const author = commit.commit.author.name;
+            const author_url = commit.author?.html_url ?? '#';
+            const date = commit.commit.author.date;
+            const commit_url = commit.html_url;
+            html += `
                 <div style="
                     background-color: #2a2a2a;
                     border: 1px solid #444;
@@ -150,9 +182,10 @@ async function fetch_commits_full(repo, branch, container_id) {
                     </div>
                 </div>
             `;
-    }
-    html += "</div>";
-    html += `
+        }
+        html += '</div>';
+        // Add link to see all commits
+        html += `
             <div style="margin-top: 1.5rem; text-align: center;">
                 <a href="https://github.com/${repo}/commits/${branch}"
                    target="_blank"
@@ -171,10 +204,12 @@ async function fetch_commits_full(repo, branch, container_id) {
                 </a>
             </div>
         `;
-    container.innerHTML = html;
-  } catch (error) {
-    const error_message = error instanceof Error ? error.message : "Unknown error";
-    container.innerHTML = `
+        container.innerHTML = html;
+    }
+    catch (error) {
+        // Show error with fallback link
+        const error_message = error instanceof Error ? error.message : 'Unknown error';
+        container.innerHTML = `
             <sl-alert variant="danger" open>
                 <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
                 <strong>Failed to load commits</strong><br>
@@ -184,30 +219,54 @@ async function fetch_commits_full(repo, branch, container_id) {
                 </a> directly.
             </sl-alert>
         `;
-  }
+    }
 }
+/**
+ * Initializes the compact commit display
+ * Used in included files like latest-firmware-compact-for-include.md
+ */
 function init_compact_commits() {
-  fetch_commits_compact(V1_REPO, "edge", "v1-edge-commits-compact");
-  fetch_commits_compact(V1_REPO, "master", "v1-master-commits-compact");
-  fetch_commits_compact(V2_REPO, "master", "v2-master-commits-compact");
-  fetch_commits_compact(V1_REPO, "edge", "edge-commits-compact");
-  fetch_commits_compact(V1_REPO, "master", "master-commits-compact");
+    // V1 commits (Smoothieware/Smoothieware)
+    fetch_commits_compact(V1_REPO, 'edge', 'v1-edge-commits-compact');
+    fetch_commits_compact(V1_REPO, 'master', 'v1-master-commits-compact');
+    // V2 commits (Smoothieware/SmoothieV2)
+    fetch_commits_compact(V2_REPO, 'master', 'v2-master-commits-compact');
+    // Original IDs for backward compatibility
+    fetch_commits_compact(V1_REPO, 'edge', 'edge-commits-compact');
+    fetch_commits_compact(V1_REPO, 'master', 'master-commits-compact');
 }
+/**
+ * Initializes the full commit display
+ * Used on /latest-firmware page
+ */
 function init_full_commits() {
-  fetch_commits_full(V1_REPO, "edge", "v1-edge-commits");
-  fetch_commits_full(V1_REPO, "master", "v1-master-commits");
-  fetch_commits_full(V2_REPO, "master", "v2-master-commits");
-  fetch_commits_full(V1_REPO, "edge", "edge-commits");
-  fetch_commits_full(V1_REPO, "master", "master-commits");
+    // V1 commits (Smoothieware/Smoothieware)
+    fetch_commits_full(V1_REPO, 'edge', 'v1-edge-commits');
+    fetch_commits_full(V1_REPO, 'master', 'v1-master-commits');
+    // V2 commits (Smoothieware/SmoothieV2)
+    fetch_commits_full(V2_REPO, 'master', 'v2-master-commits');
+    // Original IDs for backward compatibility
+    fetch_commits_full(V1_REPO, 'edge', 'edge-commits');
+    fetch_commits_full(V1_REPO, 'master', 'master-commits');
 }
+/**
+ * Main initialization function
+ * Detects which containers exist and initializes appropriately
+ */
 function init() {
-  const has_compact = document.getElementById("v1-edge-commits-compact") || document.getElementById("edge-commits-compact");
-  const has_full = document.getElementById("v1-edge-commits") || document.getElementById("edge-commits");
-  if (has_compact) {
-    init_compact_commits();
-  }
-  if (has_full) {
-    init_full_commits();
-  }
+    // Check for compact containers (included via latest-firmware-compact-for-include.md)
+    const has_compact = document.getElementById('v1-edge-commits-compact') ||
+        document.getElementById('edge-commits-compact');
+    // Check for full containers (on /latest-firmware page)
+    const has_full = document.getElementById('v1-edge-commits') ||
+        document.getElementById('edge-commits');
+    // Initialize appropriate displays
+    if (has_compact) {
+        init_compact_commits();
+    }
+    if (has_full) {
+        init_full_commits();
+    }
 }
-document.addEventListener("DOMContentLoaded", init);
+// Run on DOMContentLoaded
+document.addEventListener('DOMContentLoaded', init);

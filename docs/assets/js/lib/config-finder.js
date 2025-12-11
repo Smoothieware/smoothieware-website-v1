@@ -4,15 +4,6 @@
  * Library for finding settings in Smoothieware config files (v1 and v2)
  * Extracts the relevant section/module with context lines for display
  */
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
 // Define all config files to search (in priority order)
 const V1_CONFIG_FILES = [
     { path: 'v1/Smoothieboard/config', github_repo: 'Smoothieware', github_path: 'ConfigSamples/Smoothieboard/config', priority: 1 },
@@ -99,57 +90,62 @@ function apply_syntax_highlighting(line) {
  * Handles both v1 (module-based) and v2 (INI-style sections) formats
  * Now supports searching multiple config files with fallback
  */
-export function find_setting_in_config(request) {
-    return __awaiter(this, void 0, void 0, function* () {
-        var _a;
-        // Legacy support: if config_content is provided, use single-file search
-        if (request.config_content) {
-            const all_lines = request.config_content.split('\n');
+export async function find_setting_in_config(request) {
+    // Legacy support: if config_content is provided, use single-file search
+    if (request.config_content) {
+        const all_lines = request.config_content.split('\n');
+        const result = request.version === 'v1'
+            ? find_setting_v1(request.setting_name, all_lines, request.module_name)
+            : find_setting_v2(request.setting_name, all_lines, request.section_name);
+        // Add placeholder file info for legacy mode
+        return {
+            ...result,
+            file_path: request.version === 'v1' ? 'v1/config' : 'v2/config-3d.ini',
+            github_url: ''
+        };
+    }
+    // Get list of files to search based on version
+    const config_files = request.version === 'v1' ? V1_CONFIG_FILES : V2_CONFIG_FILES;
+    // Try each config file in priority order
+    for (const file_metadata of config_files) {
+        try {
+            // Fetch the config file from the server
+            const response = await fetch(`/assets/config/${file_metadata.path}`);
+            if (!response.ok) {
+                console.warn(`Failed to fetch ${file_metadata.path}: ${response.status}`);
+                continue;
+            }
+            const config_content = await response.text();
+            const all_lines = config_content.split('\n');
+            // Search for the setting in this file
             const result = request.version === 'v1'
                 ? find_setting_v1(request.setting_name, all_lines, request.module_name)
                 : find_setting_v2(request.setting_name, all_lines, request.section_name);
-            // Add placeholder file info for legacy mode
-            return Object.assign(Object.assign({}, result), { file_path: request.version === 'v1' ? 'v1/config' : 'v2/config-3d.ini', github_url: '' });
-        }
-        // Get list of files to search based on version
-        const config_files = request.version === 'v1' ? V1_CONFIG_FILES : V2_CONFIG_FILES;
-        // Try each config file in priority order
-        for (const file_metadata of config_files) {
-            try {
-                // Fetch the config file from the server
-                const response = yield fetch(`/assets/config/${file_metadata.path}`);
-                if (!response.ok) {
-                    console.warn(`Failed to fetch ${file_metadata.path}: ${response.status}`);
-                    continue;
-                }
-                const config_content = yield response.text();
-                const all_lines = config_content.split('\n');
-                // Search for the setting in this file
-                const result = request.version === 'v1'
-                    ? find_setting_v1(request.setting_name, all_lines, request.module_name)
-                    : find_setting_v2(request.setting_name, all_lines, request.section_name);
-                // If found, add file metadata and return
-                if (result.found) {
-                    const target_line_number = ((_a = result.lines[result.target_line_index]) === null || _a === void 0 ? void 0 : _a.line_number) || 0;
-                    return Object.assign(Object.assign({}, result), { file_path: file_metadata.path, github_url: generate_github_url(file_metadata, target_line_number) });
-                }
-            }
-            catch (error) {
-                console.error(`Error loading config file ${file_metadata.path}:`, error);
-                continue;
+            // If found, add file metadata and return
+            if (result.found) {
+                const target_line_number = result.lines[result.target_line_index]?.line_number || 0;
+                return {
+                    ...result,
+                    file_path: file_metadata.path,
+                    github_url: generate_github_url(file_metadata, target_line_number)
+                };
             }
         }
-        // Not found in any file
-        return {
-            found: false,
-            lines: [],
-            target_line_index: -1,
-            section_header_index: -1,
-            file_path: '',
-            github_url: '',
-            error_message: `Setting "${request.setting_name}" not found in any ${request.version} config file`
-        };
-    });
+        catch (error) {
+            console.error(`Error loading config file ${file_metadata.path}:`, error);
+            continue;
+        }
+    }
+    // Not found in any file
+    return {
+        found: false,
+        lines: [],
+        target_line_index: -1,
+        section_header_index: -1,
+        file_path: '',
+        github_url: '',
+        error_message: `Setting "${request.setting_name}" not found in any ${request.version} config file`
+    };
 }
 /**
  * Finds a setting in v1 config format (module-based)

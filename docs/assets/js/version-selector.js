@@ -1,72 +1,54 @@
-// src/site/lib/config.ts
-var CONFIG_STORAGE_KEY = "configuration";
-var DEFAULT_CONFIG = {
-  display_version: "nc"
-};
-function load_configuration() {
-  try {
-    const raw_config = localStorage.getItem(CONFIG_STORAGE_KEY);
-    if (!raw_config) {
-      return { ...DEFAULT_CONFIG };
-    }
-    const parsed_config = JSON.parse(raw_config);
-    return {
-      ...DEFAULT_CONFIG,
-      ...parsed_config
-    };
-  } catch (error) {
-    console.error("[config.ts] Error loading configuration from localStorage:", error);
-    return { ...DEFAULT_CONFIG };
-  }
-}
-function save_configuration(config) {
-  try {
-    const json_config = JSON.stringify(config);
-    localStorage.setItem(CONFIG_STORAGE_KEY, json_config);
-  } catch (error) {
-    console.error("[config.ts] Error saving configuration to localStorage:", error);
-  }
-}
-function get_display_version() {
-  const config = load_configuration();
-  return config.display_version;
-}
-function set_display_version(version) {
-  const config = load_configuration();
-  config.display_version = version;
-  save_configuration(config);
-}
-
-// src/site/version-selector.ts
-import $ from "jquery";
+// Version selector header dropdown functionality
+// Manages the version selector in the site header navigation
+import { get_display_version, set_display_version } from './lib/config.js';
+import $ from 'jquery';
+// Update the version selector button to display the current version state
 function update_version_selector_button() {
-  const display_version = get_display_version();
-  const $button = $("#version-selector-button");
-  $button.attr("data-version", display_version);
-  const $menu_items = $(".version-menu-item");
-  $menu_items.attr("data-current", "false");
-  $menu_items.each(function() {
-    const $item = $(this);
-    const item_version = $item.attr("data-version");
-    if (item_version === display_version) {
-      $item.attr("data-current", "true");
-    }
-  });
+    // Get the current display version setting
+    const display_version = get_display_version();
+    // Find the version selector button
+    const $button = $('#version-selector-button');
+    // Update the data-version attribute to control CSS visibility
+    $button.attr('data-version', display_version);
+    // Update menu items to highlight the current selection
+    const $menu_items = $('.version-menu-item');
+    // Remove current highlighting from all items
+    $menu_items.attr('data-current', 'false');
+    // Highlight the current selection
+    $menu_items.each(function () {
+        const $item = $(this);
+        const item_version = $item.attr('data-version');
+        // Check if this item represents the current version
+        if (item_version === display_version) {
+            $item.attr('data-current', 'true');
+        }
+    });
 }
+// Setup click handlers for version menu items
 function setup_version_selector_handlers() {
-  $(".version-menu-item").on("click", function() {
-    const $item = $(this);
-    const selected_version = $item.attr("data-version");
-    set_display_version(selected_version);
-    update_version_selector_button();
-    const $dropdown = $("#version-selector-dropdown")[0];
-    if ($dropdown && $dropdown.hide) {
-      $dropdown.hide();
-    }
-    $(document).trigger("version-changed", [selected_version]);
-  });
+    // Handle clicks on version menu items
+    $('.version-menu-item').on('click', function () {
+        const $item = $(this);
+        // Get the selected version from data attribute
+        const selected_version = $item.attr('data-version');
+        // Update the display version setting
+        set_display_version(selected_version);
+        // Update the button display
+        update_version_selector_button();
+        // Close the dropdown
+        const $dropdown = $('#version-selector-dropdown')[0];
+        // Use Shoelace API to close the dropdown
+        if ($dropdown && $dropdown.hide) {
+            $dropdown.hide();
+        }
+        // Trigger a custom event that setting-tag.ts can listen to
+        $(document).trigger('version-changed', [selected_version]);
+    });
 }
-$(document).ready(function() {
-  update_version_selector_button();
-  setup_version_selector_handlers();
+// Initialize version selector on page load
+$(document).ready(function () {
+    // Update button display to match current setting
+    update_version_selector_button();
+    // Setup click handlers
+    setup_version_selector_handlers();
 });

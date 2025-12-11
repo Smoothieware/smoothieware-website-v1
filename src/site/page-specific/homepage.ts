@@ -10,7 +10,7 @@
  */
 
 import $ from 'jquery';
-import { get_display_version } from '../lib/config';
+import { get_display_version } from '../lib/config.js';
 
 // Type declaration for the Fireworks library (loaded from CDN)
 declare const Fireworks: {

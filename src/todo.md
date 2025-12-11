@@ -142,6 +142,7 @@
 *_[ ] For the arm_solution setting we should have images for each of the possible values.
 * [ ] CRITICAL: Before we actually replace all the settings with <setting> tags, we need to create a very clear and detailled spec for what settings should look like/be specified at, including adding the full path, including the section for v2 settings etc.
 * [ ] Some places recommend the user edits a page like search «edit it» on http://localhost:4000/draft-laser-cutter-guide , we should fix that with links to github.
+* [ ] Create a from-mach3 migration guide like the from-marlin and from-grbl ones, and look into creating more migration guides.
 
 # Testing.
 

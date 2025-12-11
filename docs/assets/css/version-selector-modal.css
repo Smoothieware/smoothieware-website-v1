@@ -1,0 +1,237 @@
+/* Version Selector Modal Styling */
+/* Hero-style welcome modal for first-time visitors */
+
+/* Dialog overlay and panel styling */
+#version-selector-modal::part(overlay) {
+    background-color: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(4px);
+}
+
+#version-selector-modal::part(panel) {
+    background: linear-gradient(145deg, #1a1a2e 0%, #16213e 100%);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 24px;
+    max-width: 720px;
+    width: 90vw;
+    box-shadow:
+        0 25px 50px -12px rgba(0, 0, 0, 0.5),
+        0 0 0 1px rgba(255, 255, 255, 0.05);
+}
+
+#version-selector-modal::part(body) {
+    padding: 0;
+}
+
+/* Main content container */
+.version-modal-content {
+    padding: 48px 48px 40px;
+    text-align: center;
+}
+
+/* Header section */
+.version-modal-header {
+    margin-bottom: 40px;
+}
+
+.version-modal-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0 0 16px 0;
+    letter-spacing: -0.5px;
+    line-height: 1.2;
+}
+
+.version-modal-subtitle {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+/* Version options container */
+.version-modal-options {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+}
+
+/* Individual version option button */
+.version-modal-option {
+    flex: 1;
+    min-width: 180px;
+    max-width: 200px;
+    padding: 28px 20px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.version-modal-option:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.25);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px -8px rgba(0, 0, 0, 0.4);
+}
+
+.version-modal-option:focus {
+    outline: none;
+    border-color: #ffcc00;
+    box-shadow: 0 0 0 3px rgba(255, 204, 0, 0.3);
+}
+
+.version-modal-option:active {
+    transform: translateY(-2px);
+}
+
+/* Version badge styling */
+.version-option-badge {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    padding: 8px 16px;
+    border-radius: 8px;
+    letter-spacing: 0.5px;
+}
+
+.version-option-badge.v1-badge {
+    background: linear-gradient(135deg, #ffd966 0%, #f5c842 100%);
+    color: #1a1a1a;
+}
+
+.version-option-badge.v2-badge {
+    background: linear-gradient(135deg, #7ec8ed 0%, #5bb5e0 100%);
+    color: #1a1a1a;
+}
+
+.version-option-badge.both-badge {
+    background: linear-gradient(135deg, #ffd966 0%, #7ec8ed 100%);
+    color: #1a1a1a;
+    font-size: 1rem;
+}
+
+/* Option title */
+.version-option-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+/* Option description */
+.version-option-description {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 1.4;
+}
+
+/* Footer section */
+.version-modal-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    padding-top: 24px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Skip button */
+.version-modal-skip {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.5);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 8px 16px;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+}
+
+.version-modal-skip:hover {
+    color: rgba(255, 255, 255, 0.8);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.version-modal-skip:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.2);
+}
+
+/* Hint text */
+.version-modal-hint {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.4);
+    margin: 0;
+}
+
+/* Reset button container - localhost only */
+.version-reset-container {
+    position: fixed;
+    bottom: 16px;
+    right: 16px;
+    z-index: 9999;
+}
+
+#version-reset-button::part(base) {
+    font-size: 0.75rem;
+    opacity: 0.7;
+    transition: opacity 0.2s ease;
+}
+
+#version-reset-button::part(base):hover {
+    opacity: 1;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+
+    .version-modal-content {
+        padding: 32px 24px 28px;
+    }
+
+    .version-modal-title {
+        font-size: 1.75rem;
+    }
+
+    .version-modal-subtitle {
+        font-size: 1rem;
+    }
+
+    .version-modal-options {
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+    }
+
+    .version-modal-option {
+        min-width: 100%;
+        max-width: 100%;
+        padding: 20px 16px;
+    }
+
+    .version-option-badge {
+        font-size: 1.1rem;
+        padding: 6px 14px;
+    }
+
+    .version-option-badge.both-badge {
+        font-size: 0.9rem;
+    }
+
+    #version-selector-modal::part(panel) {
+        width: 95vw;
+        border-radius: 16px;
+    }
+}

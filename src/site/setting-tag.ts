@@ -30,7 +30,7 @@ import $ from 'jquery';
 import Handlebars from 'handlebars';
 
 // Import config finder library
-import { find_setting_in_config, type ConfigSearchRequest } from './lib/config-finder';
+import { find_setting_in_config, type ConfigSearchRequest } from './lib/config-finder.js';
 
 // Import configuration management library
 import {
@@ -39,7 +39,7 @@ import {
     is_version_not_configured,
     should_show_both,
     type DisplayVersion
-} from './lib/config';
+} from './lib/config.js';
 
 // Compiled Handlebars templates (loaded on page load)
 let compiled_setting_panel_template: HandlebarsTemplateDelegate<any> | null = null;

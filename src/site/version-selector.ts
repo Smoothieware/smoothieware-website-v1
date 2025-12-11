@@ -1,7 +1,7 @@
 // Version selector header dropdown functionality
 // Manages the version selector in the site header navigation
 
-import { get_display_version, set_display_version, type DisplayVersion } from './lib/config';
+import { get_display_version, set_display_version, type DisplayVersion } from './lib/config.js';
 import $ from 'jquery';
 
 // Update the version selector button to display the current version state

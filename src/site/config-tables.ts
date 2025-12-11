@@ -30,7 +30,7 @@ import {
     should_show_v2,
     should_show_both,
     type DisplayVersion
-} from './lib/config';
+} from './lib/config.js';
 
 /**
  * Check if an element's content overflows its visible area

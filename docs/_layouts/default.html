@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="{{ '/assets/css/versioned-tag.css' | relative_url }}">
     <link rel="stylesheet" href="{{ '/assets/css/review-tag.css' | relative_url }}">
     <link rel="stylesheet" href="{{ '/assets/css/config-tables.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/css/version-selector-modal.css' | relative_url }}">
     <script src="{{ '/assets/js/respond.js' | relative_url }}"></script>
     <!--[if lt IE 9]>
       <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -43,7 +44,15 @@
     <script type="importmap">
     {
       "imports": {
-        "jquery": "https://cdn.jsdelivr.net/npm/jquery@3.7.1/+esm"
+        "jquery": "https://cdn.jsdelivr.net/npm/jquery@3.7.1/+esm",
+        "js-yaml": "https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/+esm",
+        "handlebars": "https://cdn.jsdelivr.net/npm/handlebars@4.7.8/+esm"
+      },
+      "scopes": {
+        "/assets/js/": {
+          "./lib/config": "/assets/js/lib/config.js",
+          "./lib/config-finder": "/assets/js/lib/config-finder.js"
+        }
       }
     }
     </script>
@@ -51,6 +60,7 @@
     <!-- AUTO-GENERATED TYPESCRIPT SCRIPTS START -->
     <script type="module" src="{{ '/assets/js/config-tables.js' | relative_url }}"></script>
     <script type="module" src="{{ '/assets/js/load-assets.js' | relative_url }}"></script>
+    <script type="module" src="{{ '/assets/js/version-selector-modal.js' | relative_url }}"></script>
     <script type="module" src="{{ '/assets/js/raw-tag.js' | relative_url }}"></script>
     <script type="module" src="{{ '/assets/js/code-tag.js' | relative_url }}"></script>
     <script type="module" src="{{ '/assets/js/setting-tag.js' | relative_url }}"></script>

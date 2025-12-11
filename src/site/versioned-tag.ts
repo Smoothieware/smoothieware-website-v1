@@ -18,7 +18,7 @@ import $ from 'jquery';
 import {
     get_display_version,
     type DisplayVersion
-} from './lib/config';
+} from './lib/config.js';
 
 /**
  * Checks if an element is considered "empty" (contains no alphanumeric characters)
