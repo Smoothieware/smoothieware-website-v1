@@ -138,6 +138,17 @@ permalink: /software
     letter-spacing: 0.5px;
   }
 
+  .host-software-badge {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.2rem 0.5rem;
+    background: #28a745;
+    color: white;
+    border-radius: var(--sl-border-radius-pill);
+    cursor: help;
+  }
+
   @media (max-width: 768px) {
     .software-grid {
       grid-template-columns: 1fr;
@@ -180,7 +191,9 @@ permalink: /software
         <h3 class="software-title">Smoopi</h3>
         <div class="card-badges">
           <span class="recommended-badge">Recommended</span>
-          <span class="software-type">Host Software</span>
+          <sl-tooltip content="Software that can connect to and control Smoothieboard via USB, serial, or network">
+            <span class="host-software-badge">Host</span>
+          </sl-tooltip>
         </div>
       </div>
 
@@ -323,7 +336,11 @@ permalink: /software
 
       <div class="card-header">
         <h3 class="software-title">OctoPrint</h3>
-        <span class="software-type">Host Software</span>
+        <div class="card-badges">
+          <sl-tooltip content="Software that can connect to and control Smoothieboard via USB, serial, or network">
+            <span class="host-software-badge">Host</span>
+          </sl-tooltip>
+        </div>
       </div>
 
       <div class="links-section">
@@ -357,7 +374,11 @@ permalink: /software
 
       <div class="card-header">
         <h3 class="software-title">Pronterface</h3>
-        <span class="software-type">Host Software</span>
+        <div class="card-badges">
+          <sl-tooltip content="Software that can connect to and control Smoothieboard via USB, serial, or network">
+            <span class="host-software-badge">Host</span>
+          </sl-tooltip>
+        </div>
       </div>
 
       <div class="links-section">
@@ -391,7 +412,12 @@ permalink: /software
 
       <div class="card-header">
         <h3 class="software-title">MatterControl</h3>
-        <span class="software-type">All-in-One</span>
+        <div class="card-badges">
+          <span class="software-type">All-in-One</span>
+          <sl-tooltip content="Software that can connect to and control Smoothieboard via USB, serial, or network">
+            <span class="host-software-badge">Host</span>
+          </sl-tooltip>
+        </div>
       </div>
 
       <div class="links-section">
@@ -535,7 +561,12 @@ permalink: /software
 
       <div class="card-header">
         <h3 class="software-title">Fabrica</h3>
-        <span class="software-type">Web Interface</span>
+        <div class="card-badges">
+          <span class="software-type">Web Interface</span>
+          <sl-tooltip content="Software that can connect to and control Smoothieboard via USB, serial, or network">
+            <span class="host-software-badge">Host</span>
+          </sl-tooltip>
+        </div>
       </div>
 
       <div class="links-section">
@@ -603,7 +634,11 @@ permalink: /software
 
       <div class="card-header">
         <h3 class="software-title">3Delta Printer Control</h3>
-        <span class="software-type">Host Software</span>
+        <div class="card-badges">
+          <sl-tooltip content="Software that can connect to and control Smoothieboard via USB, serial, or network">
+            <span class="host-software-badge">Host</span>
+          </sl-tooltip>
+        </div>
       </div>
 
       <div class="links-section">
@@ -675,7 +710,12 @@ permalink: /software
 
       <div class="card-header">
         <h3 class="software-title">OctoPi</h3>
-        <span class="software-type">Distribution</span>
+        <div class="card-badges">
+          <span class="software-type">Distribution</span>
+          <sl-tooltip content="Software that can connect to and control Smoothieboard via USB, serial, or network">
+            <span class="host-software-badge">Host</span>
+          </sl-tooltip>
+        </div>
       </div>
 
       <div class="links-section">
@@ -725,7 +765,11 @@ permalink: /software
 
       <div class="card-header">
         <h3 class="software-title">Repetier-Host</h3>
-        <span class="software-type">Host Software</span>
+        <div class="card-badges">
+          <sl-tooltip content="Software that can connect to and control Smoothieboard via USB, serial, or network">
+            <span class="host-software-badge">Host</span>
+          </sl-tooltip>
+        </div>
       </div>
 
       <div class="links-section">
@@ -761,7 +805,12 @@ permalink: /software
 
       <div class="card-header">
         <h3 class="software-title">Repetier Server</h3>
-        <span class="software-type">Server Software</span>
+        <div class="card-badges">
+          <span class="software-type">Server Software</span>
+          <sl-tooltip content="Software that can connect to and control Smoothieboard via USB, serial, or network">
+            <span class="host-software-badge">Host</span>
+          </sl-tooltip>
+        </div>
       </div>
 
       <div class="links-section">
@@ -797,7 +846,12 @@ permalink: /software
 
       <div class="card-header">
         <h3 class="software-title">ChiliPeppr</h3>
-        <span class="software-type">Web Framework</span>
+        <div class="card-badges">
+          <span class="software-type">Web Framework</span>
+          <sl-tooltip content="Software that can connect to and control Smoothieboard via USB, serial, or network">
+            <span class="host-software-badge">Host</span>
+          </sl-tooltip>
+        </div>
       </div>
 
       <div class="links-section">
@@ -833,7 +887,12 @@ permalink: /software
 
       <div class="card-header">
         <h3 class="software-title">Duet Web Control (DWC)</h3>
-        <span class="software-type">Web Interface</span>
+        <div class="card-badges">
+          <span class="software-type">Web Interface</span>
+          <sl-tooltip content="Software that can connect to and control Smoothieboard via USB, serial, or network">
+            <span class="host-software-badge">Host</span>
+          </sl-tooltip>
+        </div>
       </div>
 
       <div class="links-section">
@@ -885,7 +944,12 @@ permalink: /software
 
       <div class="card-header">
         <h3 class="software-title">CNCjs</h3>
-        <span class="software-type">CNC Controller</span>
+        <div class="card-badges">
+          <span class="software-type">CNC Controller</span>
+          <sl-tooltip content="Software that can connect to and control Smoothieboard via USB, serial, or network">
+            <span class="host-software-badge">Host</span>
+          </sl-tooltip>
+        </div>
       </div>
 
       <div class="links-section">
@@ -943,7 +1007,12 @@ permalink: /software
 
       <div class="card-header">
         <h3 class="software-title">Universal G-Code Sender (UGS)</h3>
-        <span class="software-type">CNC Controller</span>
+        <div class="card-badges">
+          <span class="software-type">CNC Controller</span>
+          <sl-tooltip content="Software that can connect to and control Smoothieboard via USB, serial, or network">
+            <span class="host-software-badge">Host</span>
+          </sl-tooltip>
+        </div>
       </div>
 
       <div class="links-section">
@@ -986,7 +1055,12 @@ permalink: /software
 
       <div class="card-header">
         <h3 class="software-title">bCNC</h3>
-        <span class="software-type">CNC Controller</span>
+        <div class="card-badges">
+          <span class="software-type">CNC Controller</span>
+          <sl-tooltip content="Software that can connect to and control Smoothieboard via USB, serial, or network">
+            <span class="host-software-badge">Host</span>
+          </sl-tooltip>
+        </div>
       </div>
 
       <div class="links-section">
@@ -1027,7 +1101,12 @@ permalink: /software
 
       <div class="card-header">
         <h3 class="software-title">Candle</h3>
-        <span class="software-type">CNC Controller</span>
+        <div class="card-badges">
+          <span class="software-type">CNC Controller</span>
+          <sl-tooltip content="Software that can connect to and control Smoothieboard via USB, serial, or network">
+            <span class="host-software-badge">Host</span>
+          </sl-tooltip>
+        </div>
       </div>
 
       <div class="links-section">
@@ -1312,7 +1391,12 @@ permalink: /software
 
       <div class="card-header">
         <h3 class="software-title">LightBurn</h3>
-        <span class="software-type">Laser Control</span>
+        <div class="card-badges">
+          <span class="software-type">Laser Control</span>
+          <sl-tooltip content="Software that can connect to and control Smoothieboard via USB, serial, or network">
+            <span class="host-software-badge">Host</span>
+          </sl-tooltip>
+        </div>
       </div>
 
       <div class="links-section">
@@ -1364,7 +1448,12 @@ permalink: /software
 
       <div class="card-header">
         <h3 class="software-title">LaserGRBL</h3>
-        <span class="software-type">Laser Control</span>
+        <div class="card-badges">
+          <span class="software-type">Laser Control</span>
+          <sl-tooltip content="Software that can connect to and control Smoothieboard via USB, serial, or network">
+            <span class="host-software-badge">Host</span>
+          </sl-tooltip>
+        </div>
       </div>
 
       <div class="links-section">
@@ -1400,7 +1489,12 @@ permalink: /software
 
       <div class="card-header">
         <h3 class="software-title">LaserWeb</h3>
-        <span class="software-type">Laser Control</span>
+        <div class="card-badges">
+          <span class="software-type">Laser Control</span>
+          <sl-tooltip content="Software that can connect to and control Smoothieboard via USB, serial, or network">
+            <span class="host-software-badge">Host</span>
+          </sl-tooltip>
+        </div>
       </div>
 
       <div class="links-section">
@@ -1434,7 +1528,12 @@ permalink: /software
 
       <div class="card-header">
         <h3 class="software-title">VisiCut</h3>
-        <span class="software-type">Laser Control</span>
+        <div class="card-badges">
+          <span class="software-type">Laser Control</span>
+          <sl-tooltip content="Software that can connect to and control Smoothieboard via USB, serial, or network">
+            <span class="host-software-badge">Host</span>
+          </sl-tooltip>
+        </div>
       </div>
 
       <div class="links-section">
