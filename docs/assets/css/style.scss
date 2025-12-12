@@ -327,7 +327,11 @@ sl-alert[variant="danger"]::part(base) {
 
 .menu-item a {
   text-decoration: none; /* Remove underline */
-  color: inherit; /* Inherit styling */
+  color: #ffcc00; /* Use link color for guide text */
+}
+
+.menu-item a:hover {
+  color: #ffd633; /* Slightly brighter on hover */
 }
 
 /* Base styling for all callouts */
