@@ -17,7 +17,6 @@
     <link rel="stylesheet" href="{{ '/assets/css/review-tag.css' | relative_url }}">
     <link rel="stylesheet" href="{{ '/assets/css/config-tables.css' | relative_url }}">
     <link rel="stylesheet" href="{{ '/assets/css/version-selector-modal.css' | relative_url }}">
-    <script src="{{ '/assets/js/respond.js' | relative_url }}"></script>
     <!--[if lt IE 9]>
       <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
@@ -27,20 +26,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     {% include head-custom.html %}
 
-    <!-- Shoelace Components Library -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/themes/dark.css" />
-    <script type="module">
-      import { setBasePath } from 'https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/utilities/base-path.js';
-      setBasePath('https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/');
-    </script>
-    <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/shoelace-autoloader.js"></script>
-
     <!-- Google Fonts - Montserrat -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
-    <!-- Import map for external dependencies -->
+    <!-- Import map for external dependencies - MUST be before any module scripts -->
     <script type="importmap">
     {
       "imports": {
@@ -56,6 +47,14 @@
       }
     }
     </script>
+
+    <!-- Shoelace Components Library -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/themes/dark.css" />
+    <script type="module">
+      import { setBasePath } from 'https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/utilities/base-path.js';
+      setBasePath('https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/');
+    </script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/shoelace-autoloader.js"></script>
 
     <!-- AUTO-GENERATED TYPESCRIPT SCRIPTS START -->
     <script type="module" src="{{ '/assets/js/config-tables.js' | relative_url }}"></script>
