@@ -86,7 +86,7 @@ If you find errors in the schematic or have improvements to suggest, please:
 
 1. Open an issue on the [Smoothieboard GitHub repository](https://github.com/Smoothieware/Smoothieboard/issues)
 2. Submit a pull request with your proposed changes
-3. Discuss on the [community forums](http://forum.smoothieware.org/)
+3. Discuss on the [community forums]([http://forum.smoothieware.org/](https://smoothieware.org/forum-welcome-mat))
 
 We welcome contributions and bug reports!
 
