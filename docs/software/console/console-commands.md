@@ -861,7 +861,7 @@ ry /sd/newfile.gcode
 dl filename
 ```
 
-Fast binary download of a file. Used for high-speed file transfers.
+Fast binary download of a file. Used for high-speed file transfers. Only over a USB connection.
 
 Example:
 
