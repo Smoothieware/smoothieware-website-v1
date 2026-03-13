@@ -78,14 +78,17 @@ It saves memory and allows you to use more of it for other things.
 
 **V2 Compilation:**
 
-SmoothieV2 has native support for up to 6 axes without special compilation flags. The build system is different from V1:
+SmoothieV2 has native support for up to 4 axes it needs to be rebuiilt to handle 6 axis. The build system is different from V1:
 
 ```bash
-# V2 uses rake instead of make
-rake build
+# V2 uses rake instead of make this will list all the options
+rake help
 ```
 
-Multi-axis support is built-in by default. Check the [SmoothieV2 repository](https://github.com/Smoothieware/SmoothieV2) for the latest build instructions.
+Multi-axis support for more than 4 axis needs to be compiled as follows. Check the [SmoothieV2 repository](https://github.com/Smoothieware/SmoothieV2) for the latest build instructions.
+```bash
+rake axis=6 paxis=4 -m
+```
 
 {::nomarkdown}
 </v2>
