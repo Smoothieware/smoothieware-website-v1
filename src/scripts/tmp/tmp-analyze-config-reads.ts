@@ -16,7 +16,7 @@ import * as fs from 'fs';
 import * as path from 'path';
 
 // Base path for Smoothieware v1 source
-const SOURCE_BASE = '/home/arthur/dev/smoothieware/smoothieware-website-v1/data/github/Smoothieware-v1/src';
+const SOURCE_BASE = '/home/arthur/dev/smoothieware/firmware-source-mirrors/Smoothieware-v1/src';
 
 // Load checksum definitions
 const CHECKSUMS_PATH = path.join(SOURCE_BASE, 'libs/checksumm.h');

@@ -11,7 +11,7 @@
 import * as fs from 'fs';
 import * as path from 'path';
 
-const SOURCE_BASE = '/home/arthur/dev/smoothieware/smoothieware-website-v1/data/github/Smoothieware-v1/src';
+const SOURCE_BASE = '/home/arthur/dev/smoothieware/firmware-source-mirrors/Smoothieware-v1/src';
 
 interface ConfigRead {
     setting_path: string;        // Full path like "network.enable" or "acceleration"
