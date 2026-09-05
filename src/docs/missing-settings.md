@@ -4,7 +4,7 @@ This document lists settings that are defined in the YAML configuration files bu
 
 Generated automatically by `src/site/test/config-finder.test.ts`
 
-Last updated: 2025-11-26T18:11:31.136Z
+Last updated: 2026-09-05T00:35:02.834Z
 
 ## V1 Settings Missing from Example Config
 

@@ -24,6 +24,16 @@ permalink: /rotatable-cartesian
 
 # Rotatable Cartesian Arm Solution
 
+<!-- learning-diagram:38-rotatable-cartesian -->
+{::nomarkdown}
+<figure id="learning-diagram-38-rotatable-cartesian" style="scroll-margin-top: 16vh; "clear: both; max-width: 960px; margin: 2rem auto;">
+  <a href="/images/learning-diagrams/38-rotatable-cartesian.svg">
+    <img src="/images/learning-diagrams/38-rotatable-cartesian.svg" alt="Rotatable Cartesian frame: A rotary axis changes tool orientation." style="display: block; width: 100%; height: auto; border-radius: 0.75rem;"/>
+  </a>
+  <figcaption style="margin-top: 0.6rem; color: #526174; font-size: 0.92rem; text-align: center;">Visual guide: A rotary axis changes tool orientation.</figcaption>
+</figure>
+{:/nomarkdown}
+
 {::nomarkdown}
 <sl-alert variant="warning" open>
   <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>

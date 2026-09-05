@@ -10,6 +10,16 @@ permalink: /g28-reprap
 
 # {::nomarkdown}<gcode>G28</gcode>{:/nomarkdown} G-code
 
+<!-- learning-diagram:14-g28-reprap-homing -->
+{::nomarkdown}
+<figure id="learning-diagram-14-g28-reprap-homing" style="scroll-margin-top: 16vh; "clear: both; max-width: 960px; margin: 2rem auto;">
+  <a href="/images/learning-diagrams/14-g28-reprap-homing.svg">
+    <img src="/images/learning-diagrams/14-g28-reprap-homing.svg" alt="RepRap G28 homing: Seek, back off, then re-approach precisely." style="display: block; width: 100%; height: auto; border-radius: 0.75rem;"/>
+  </a>
+  <figcaption style="margin-top: 0.6rem; color: #526174; font-size: 0.92rem; text-align: center;">Visual guide: Seek, back off, then re-approach precisely.</figcaption>
+</figure>
+{:/nomarkdown}
+
 {::nomarkdown}<gcode>G28</gcode>{:/nomarkdown} means "seek the endstops for each axis, stop once they are found and this position is now the origin for the machine".
 
 This G-code is specific to Reprap and does not conform to the normal G-code standard.

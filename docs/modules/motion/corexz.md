@@ -4,6 +4,16 @@ permalink: /corexz
 
 # CoreXZ Arm Solution
 
+<!-- learning-diagram:35-corexz-mixing -->
+{::nomarkdown}
+<figure id="learning-diagram-35-corexz-mixing" style="scroll-margin-top: 16vh; "clear: both; max-width: 960px; margin: 2rem auto;">
+  <a href="/images/learning-diagrams/35-corexz-mixing.svg">
+    <img src="/images/learning-diagrams/35-corexz-mixing.svg" alt="CoreXZ mixing: The two motors add for X and subtract for Z." style="display: block; width: 100%; height: auto; border-radius: 0.75rem;"/>
+  </a>
+  <figcaption style="margin-top: 0.6rem; color: #526174; font-size: 0.92rem; text-align: center;">Visual guide: The two motors add for X and subtract for Z.</figcaption>
+</figure>
+{:/nomarkdown}
+
 {::nomarkdown}
 <sl-alert variant="neutral" open>
   <sl-icon slot="icon" name="info-circle"></sl-icon>

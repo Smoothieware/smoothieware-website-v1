@@ -5,6 +5,16 @@ permalink: /filament-detector
 
 # Filament detector
 
+<!-- learning-diagram:47-filament-detector -->
+{::nomarkdown}
+<figure id="learning-diagram-47-filament-detector" style="scroll-margin-top: 16vh; "clear: both; max-width: 960px; margin: 2rem auto;">
+  <a href="/images/learning-diagrams/47-filament-detector.svg">
+    <img src="/images/learning-diagrams/47-filament-detector.svg" alt="Filament runout: Absence is detected before the melt zone is starved." style="display: block; width: 100%; height: auto; border-radius: 0.75rem;"/>
+  </a>
+  <figcaption style="margin-top: 0.6rem; color: #526174; font-size: 0.92rem; text-align: center;">Visual guide: Absence is detected before the melt zone is starved.</figcaption>
+</figure>
+{:/nomarkdown}
+
 The filament detector module allows you to add automated hardware to your machine to check that the filament is advancing correctly.
 
 This is done by adding an encoder, that rotates as the filament advances, and sends pulses to the Smoothieboard.

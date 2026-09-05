@@ -5,6 +5,16 @@ permalink: /temperaturecontrol
 
 # Temperaturecontrol
 
+<!-- learning-diagram:42-temperature-control -->
+{::nomarkdown}
+<figure id="learning-diagram-42-temperature-control" style="scroll-margin-top: 16vh; "clear: both; max-width: 960px; margin: 2rem auto;">
+  <a href="/images/learning-diagrams/42-temperature-control.svg">
+    <img src="/images/learning-diagrams/42-temperature-control.svg" alt="Temperature feedback: Sensor feedback corrects heater power toward target." style="display: block; width: 100%; height: auto; border-radius: 0.75rem;"/>
+  </a>
+  <figcaption style="margin-top: 0.6rem; color: #526174; font-size: 0.92rem; text-align: center;">Visual guide: Sensor feedback corrects heater power toward target.</figcaption>
+</figure>
+{:/nomarkdown}
+
 This module reads temperature reading sensors (thermistors) and uses heater and cooler elements to maintain a set temperature.
 
 This is used for example for [extruder](extruder) hotends, or heated beds.

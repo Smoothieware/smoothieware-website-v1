@@ -40,6 +40,16 @@ It uses some math, allowing us to correct those problems by turning the heater o
 
 ---
 
+
+<!-- learning-diagram:43-pid-control -->
+{::nomarkdown}
+<figure id="learning-diagram-43-pid-control" style="scroll-margin-top: 16vh; "clear: both; max-width: 960px; margin: 2rem auto;">
+  <a href="/images/learning-diagrams/43-pid-control.svg">
+    <img src="/images/learning-diagrams/43-pid-control.svg" alt="PID feedback terms: P, I, and D respond to different aspects of error." style="display: block; width: 100%; height: auto; border-radius: 0.75rem;"/>
+  </a>
+  <figcaption style="margin-top: 0.6rem; color: #526174; font-size: 0.92rem; text-align: center;">Visual guide: P, I, and D respond to different aspects of error.</figcaption>
+</figure>
+{:/nomarkdown}
 #### Configuring PID Values
 
 The P, I, and D factors are configured in your config file as follows:

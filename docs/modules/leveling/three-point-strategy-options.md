@@ -4,6 +4,16 @@ permalink: /three-point-strategy-options
 
 # Three Point Leveling Configuration Options
 
+<!-- learning-diagram:31-three-point-plane -->
+{::nomarkdown}
+<figure id="learning-diagram-31-three-point-plane" style="scroll-margin-top: 16vh; "clear: both; max-width: 960px; margin: 2rem auto;">
+  <a href="/images/learning-diagrams/31-three-point-plane.svg">
+    <img src="/images/learning-diagrams/31-three-point-plane.svg" alt="Three-point plane: Three non-collinear points define a leveling plane." style="display: block; width: 100%; height: auto; border-radius: 0.75rem;"/>
+  </a>
+  <figcaption style="margin-top: 0.6rem; color: #526174; font-size: 0.92rem; text-align: center;">Visual guide: Three non-collinear points define a leveling plane.</figcaption>
+</figure>
+{:/nomarkdown}
+
 The three-point leveling strategy in Smoothieware probes three points on your bed to define a plane, then keeps the Z axis parallel to that plane during printing.
 
 This is useful if your Z plate/bed is not perfectly aligned with your XY gantry.

@@ -73,11 +73,50 @@
 .config-options-table .description-cell {
     color: #bbb;
     font-size: 0.85em;
-    line-height: 1.4;
+    line-height: 1.5;
     position: relative;
     max-height: 4.2em;  /* ~3 lines */
     overflow: hidden;
     text-overflow: ellipsis;
+}
+
+/* Let description content breathe: spaced paragraphs and lists instead of one dense block */
+.config-options-table .description-cell p {
+    margin: 0 0 0.75em 0;
+}
+
+.config-options-table .description-cell p:last-child {
+    margin-bottom: 0;
+}
+
+.config-options-table .description-cell ul,
+.config-options-table .description-cell ol {
+    margin: 0 0 0.75em 0;
+    padding-left: 1.25em;
+}
+
+.config-options-table .description-cell ul:last-child,
+.config-options-table .description-cell ol:last-child {
+    margin-bottom: 0;
+}
+
+.config-options-table .description-cell li {
+    margin-bottom: 0.35em;
+}
+
+.config-options-table .description-cell li:last-child {
+    margin-bottom: 0;
+}
+
+.config-options-table .description-cell strong {
+    color: #ddd;
+}
+
+/* Expanded cells get real breathing room instead of the cramped 3-line clamp metrics */
+.config-options-table .description-cell.expanded {
+    line-height: 1.6;
+    padding-top: 12px;
+    padding-bottom: 12px;
 }
 
 /* Expand indicator (+ icon) - shown via JavaScript when content overflows */

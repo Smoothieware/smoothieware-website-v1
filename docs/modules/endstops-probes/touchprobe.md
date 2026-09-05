@@ -6,6 +6,16 @@ title: Using the Touchprobe
 
 # Using the Touchprobe
 
+<!-- learning-diagram:28-touchprobe-two-pass -->
+{::nomarkdown}
+<figure id="learning-diagram-28-touchprobe-two-pass" style="scroll-margin-top: 16vh; "clear: both; max-width: 960px; margin: 2rem auto;">
+  <a href="/images/learning-diagrams/28-touchprobe-two-pass.svg">
+    <img src="/images/learning-diagrams/28-touchprobe-two-pass.svg" alt="Two-pass touch probing: A slow second pass increases accuracy." style="display: block; width: 100%; height: auto; border-radius: 0.75rem;"/>
+  </a>
+  <figcaption style="margin-top: 0.6rem; color: #526174; font-size: 0.92rem; text-align: center;">Visual guide: A slow second pass increases accuracy.</figcaption>
+</figure>
+{:/nomarkdown}
+
 {::nomarkdown}
 <sl-alert variant="warning" open>
   <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>

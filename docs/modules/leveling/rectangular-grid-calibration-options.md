@@ -4,6 +4,16 @@ permalink: /rectangular-grid-calibration-options
 
 # Rectangular Grid Calibration Options
 
+<!-- learning-diagram:30-rectangular-grid -->
+{::nomarkdown}
+<figure id="learning-diagram-30-rectangular-grid" style="scroll-margin-top: 16vh; "clear: both; max-width: 960px; margin: 2rem auto;">
+  <a href="/images/learning-diagrams/30-rectangular-grid.svg">
+    <img src="/images/learning-diagrams/30-rectangular-grid.svg" alt="Rectangular probe grid: An odd grid retains its centre sample." style="display: block; width: 100%; height: auto; border-radius: 0.75rem;"/>
+  </a>
+  <figcaption style="margin-top: 0.6rem; color: #526174; font-size: 0.92rem; text-align: center;">Visual guide: An odd grid retains its centre sample.</figcaption>
+</figure>
+{:/nomarkdown}
+
 This page documents all configuration options for the rectangular grid leveling strategy in Smoothie.
 
 The rectangular grid strategy allows you to probe multiple points on your bed in a grid pattern to compensate for uneven bed surfaces.

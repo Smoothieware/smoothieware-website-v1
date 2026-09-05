@@ -4,6 +4,16 @@ permalink: /g28-cnc
 
 # {::nomarkdown}<gcode>G28</gcode>{:/nomarkdown} G-code
 
+<!-- learning-diagram:13-g28-cnc-intermediate -->
+{::nomarkdown}
+<figure id="learning-diagram-13-g28-cnc-intermediate" style="scroll-margin-top: 16vh; "clear: both; max-width: 960px; margin: 2rem auto;">
+  <a href="/images/learning-diagrams/13-g28-cnc-intermediate.svg">
+    <img src="/images/learning-diagrams/13-g28-cnc-intermediate.svg" alt="CNC G28 safe return: An intermediate move can clear hazards before machine home." style="display: block; width: 100%; height: auto; border-radius: 0.75rem;"/>
+  </a>
+  <figcaption style="margin-top: 0.6rem; color: #526174; font-size: 0.92rem; text-align: center;">Visual guide: An intermediate move can clear hazards before machine home.</figcaption>
+</figure>
+{:/nomarkdown}
+
 {::nomarkdown}
 <a href="/images/temporary/cnc-spindle-generic.jpg">
   <img src="/images/temporary/cnc-spindle-generic.jpg" alt="Returning To Origin" style="width: 200px; height: 200px; float: right; margin-left: 1rem;"/>

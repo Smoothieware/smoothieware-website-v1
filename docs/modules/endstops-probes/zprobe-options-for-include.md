@@ -11,12 +11,18 @@
         <tr>
             <td><setting no-version v1="zprobe.enable"></setting></td>
             <td><setting no-version v2="zprobe.enable"></setting></td>
-            <td class="description-cell">Enables the Z-probe module. When set to true, the probe module is loaded and all probing features become available. Set to false to disable probing entirely and free memory if not using a probe.</td>
+            <td class="description-cell">
+                <p>Enables the Z-probe module. When set to true, the probe module is loaded and all probing features become available.</p>
+                <p>Set to false to disable probing entirely and free memory if not using a probe.</p>
+            </td>
         </tr>
         <tr>
             <td><setting no-version v1="zprobe.probe_pin"></setting></td>
             <td><setting no-version v2="zprobe.probe_pin"></setting></td>
-            <td class="description-cell">Defines the GPIO pin connected to the probe signal. Use <code>!</code> suffix to invert logic (normally-closed vs normally-open) and <code>^</code> to enable internal pull-up resistor. Example: <code>1.28!^</code> means pin 1.28 with inverted logic and pull-up enabled.</td>
+            <td class="description-cell">
+                <p>Defines the GPIO pin connected to the probe signal. Use <code>!</code> suffix to invert logic (normally-closed vs normally-open) and <code>^</code> to enable internal pull-up resistor.</p>
+                <p>Example: <code>1.28!^</code> means pin 1.28 with inverted logic and pull-up enabled.</p>
+            </td>
         </tr>
         <tr>
             <td><setting no-version v1="zprobe.slow_feedrate"></setting></td>
@@ -36,22 +42,34 @@
         <tr>
             <td><setting no-version v1="zprobe.debounce_ms"></setting></td>
             <td><setting no-version v2="zprobe.debounce_ms"></setting></td>
-            <td class="description-cell">Probe signal debounce time in milliseconds. The probe signal must remain continuously triggered for this duration before being considered a valid trigger. Set to 1 or 2 if your probe is noisy and gives false readings. Higher values reduce false triggers but may affect accuracy.</td>
+            <td class="description-cell">
+                <p>Probe signal debounce time in milliseconds. The probe signal must remain continuously triggered for this duration before being considered a valid trigger.</p>
+                <p>Set to 1 or 2 if your probe is noisy and gives false readings. Higher values reduce false triggers but may affect accuracy.</p>
+            </td>
         </tr>
         <tr>
             <td><setting no-version v1="zprobe.probe_height"></setting></td>
             <td><setting no-version v2="zprobe.probe_height"></setting></td>
-            <td class="description-cell">Height above the bed to position the probe before starting each probing move, in millimeters. Once the bed's approximate height is known (after first probe or homing), subsequent probes start from this height. Typical values: 5-10 mm.</td>
+            <td class="description-cell">
+                <p>Height above the bed to position the probe before starting each probing move, in millimeters. Once the bed's approximate height is known (after first probe or homing), subsequent probes start from this height.</p>
+                <p>Typical values: 5-10 mm.</p>
+            </td>
         </tr>
         <tr>
             <td><setting no-version v1="zprobe.max_z"></setting></td>
             <td><setting no-version v2="zprobe.max_travel"></setting></td>
-            <td class="description-cell">Maximum distance the probe will travel downward before giving up on a probe attempt, in millimeters. Safety feature to prevent crashes if probe fails to trigger. If not defined, uses gamma_max value from endstop configuration. Set to slightly less than your build height.</td>
+            <td class="description-cell">
+                <p>Maximum distance the probe will travel downward before giving up on a probe attempt, in millimeters — a safety feature to prevent crashes if the probe fails to trigger.</p>
+                <p>If not defined, uses the gamma_max value from endstop configuration. Set to slightly less than your build height.</p>
+            </td>
         </tr>
         <tr>
             <td><setting no-version v1="zprobe.dwell_before_probing"></setting></td>
             <td><setting no-version v2="zprobe.dwell_before_probing"></setting></td>
-            <td class="description-cell">Time to wait before starting each probe move, in seconds. Allows mechanical settling after XY positioning and before Z probe begins. Particularly useful for piezo Z-probes to avoid false triggers from vibration. Typical values: 0.1-0.5 seconds.</td>
+            <td class="description-cell">
+                <p>Time to wait before starting each probe move, in seconds. Allows mechanical settling after XY positioning and before the Z probe begins.</p>
+                <p>Particularly useful for piezo Z-probes to avoid false triggers from vibration. Typical values: 0.1-0.5 seconds.</p>
+            </td>
         </tr>
         <tr>
             <td><setting no-version v1="zprobe.reverse_z"></setting></td>
@@ -61,22 +79,34 @@
         <tr>
             <td><setting no-version v1="zprobe.before_probe_gcode"></setting></td>
             <td><setting no-version v2="zprobe.before_probe_gcode"></setting></td>
-            <td class="description-cell">G-code command(s) to run before each probe point. Used for deployable probes like BLTouch/3DTouch that need to extend or deploy before probing. Multiple commands can be separated by semicolons. Example: <code>M280 S10</code> to deploy BLTouch pin.</td>
+            <td class="description-cell">
+                <p>G-code command(s) to run before each probe point. Used for deployable probes like BLTouch/3DTouch that need to extend or deploy before probing. Multiple commands can be separated by semicolons.</p>
+                <p>Example: <code>M280 S10</code> to deploy BLTouch pin.</p>
+            </td>
         </tr>
         <tr>
             <td><setting no-version v1="zprobe.after_probe_gcode"></setting></td>
             <td><setting no-version v2="zprobe.after_probe_gcode"></setting></td>
-            <td class="description-cell">G-code command(s) to run after each probe point. Used for deployable probes like BLTouch/3DTouch that need to retract after probing. Multiple commands can be separated by semicolons. Example: <code>M280 S90</code> to retract BLTouch pin.</td>
+            <td class="description-cell">
+                <p>G-code command(s) to run after each probe point. Used for deployable probes like BLTouch/3DTouch that need to retract after probing. Multiple commands can be separated by semicolons.</p>
+                <p>Example: <code>M280 S90</code> to retract BLTouch pin.</p>
+            </td>
         </tr>
         <tr>
             <td><setting no-version v1="zprobe.m_attach"></setting></td>
             <td class="empty-cell">—</td>
-            <td class="description-cell">Enables manual probe attachment mode for removable probes. When enabled, the machine moves to the mount_position and waits for the user to manually attach the probe before probing operations. V2 removed this feature.</td>
+            <td class="description-cell">
+                <p>Enables manual probe attachment mode for removable probes. When enabled, the machine moves to the mount_position and waits for the user to manually attach the probe before probing operations.</p>
+                <p>V2 removed this feature.</p>
+            </td>
         </tr>
         <tr>
             <td><setting no-version v1="zprobe.mount_position"></setting></td>
             <td class="empty-cell">—</td>
-            <td class="description-cell">Position in machine coordinates where the machine moves and waits for manual probe attachment when m_attach is enabled. Specified as comma-separated X,Y,Z coordinates. Only used when m_attach is true. V2 removed this feature.</td>
+            <td class="description-cell">
+                <p>Position in machine coordinates where the machine moves and waits for manual probe attachment when m_attach is enabled. Specified as comma-separated X,Y,Z coordinates. Only used when m_attach is true.</p>
+                <p>V2 removed this feature.</p>
+            </td>
         </tr>
     </tbody>
 </table>

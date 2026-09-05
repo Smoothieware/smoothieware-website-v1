@@ -6,6 +6,16 @@ title: 6 Axis Configuration
 
 # 6 axis
 
+<!-- learning-diagram:37-six-axis -->
+{::nomarkdown}
+<figure id="learning-diagram-37-six-axis" style="scroll-margin-top: 16vh; "clear: both; max-width: 960px; margin: 2rem auto;">
+  <a href="/images/learning-diagrams/37-six-axis.svg">
+    <img src="/images/learning-diagrams/37-six-axis.svg" alt="Six-axis pose: Three linear and three rotary axes define the tool pose." style="display: block; width: 100%; height: auto; border-radius: 0.75rem;"/>
+  </a>
+  <figcaption style="margin-top: 0.6rem; color: #526174; font-size: 0.92rem; text-align: center;">Visual guide: Three linear and three rotary axes define the tool pose.</figcaption>
+</figure>
+{:/nomarkdown}
+
 {::nomarkdown}
 <a href="/images/circuit.png">
   <img src="/images/circuit.png" alt="Circuit diagram" style="width: 300px; height: 300px; float: right; margin-left: 1rem;"/>

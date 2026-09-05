@@ -4,6 +4,16 @@ permalink: /safety-thermistor
 
 # Safety Thermistor
 
+<!-- learning-diagram:45-safety-thermistor -->
+{::nomarkdown}
+<figure id="learning-diagram-45-safety-thermistor" style="scroll-margin-top: 16vh; "clear: both; max-width: 960px; margin: 2rem auto;">
+  <a href="/images/learning-diagrams/45-safety-thermistor.svg">
+    <img src="/images/learning-diagrams/45-safety-thermistor.svg" alt="Safety thermistor: An independent check can cut heat on disagreement." style="display: block; width: 100%; height: auto; border-radius: 0.75rem;"/>
+  </a>
+  <figcaption style="margin-top: 0.6rem; color: #526174; font-size: 0.92rem; text-align: center;">Visual guide: An independent check can cut heat on disagreement.</figcaption>
+</figure>
+{:/nomarkdown}
+
 Hot-ends have a heating element (controlled by a MOSFET) and a thermistor to read its temperature.
 
 When the thermistor is read, the Smoothie calculates the temperature, and then turns the heater on or off depending on whether heat is needed or not.

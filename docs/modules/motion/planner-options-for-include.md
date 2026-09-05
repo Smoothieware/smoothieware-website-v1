@@ -13,8 +13,8 @@
             <td><setting no-version v1="junction_deviation"></setting></td>
             <td><setting no-version v2="planner.junction_deviation"></setting></td>
             <td class="description-cell">
-                Controls cornering speed using the junction deviation algorithm, which replaces traditional jerk-based acceleration control. This value represents the maximum allowable deviation from the true corner path when the toolhead changes direction. The algorithm treats each junction as tangent to a circular arc and uses centripetal acceleration approximation to calculate the maximum safe entry speed at path junctions.
-                <br><br>
+                <p>Controls cornering speed using the junction deviation algorithm, which replaces traditional jerk-based acceleration control. This value represents the maximum allowable deviation from the true corner path when the toolhead changes direction.</p>
+                <p>The algorithm treats each junction as tangent to a circular arc and uses centripetal acceleration approximation to calculate the maximum safe entry speed at path junctions.</p>
                 <strong>Key Points:</strong>
                 <ul>
                     <li>This is Smoothie's replacement for traditional jerk settings</li>
@@ -45,8 +45,8 @@
             <td><setting no-version v1="z_junction_deviation"></setting></td>
             <td><setting no-version v2="planner.z_junction_deviation"></setting></td>
             <td class="description-cell">
-                Separate junction deviation setting specifically for Z-axis-only moves (X=0, Y=0, Z≠0), allowing different cornering behavior for the Z axis which often has different mechanical characteristics than XY axes (lead screws vs. belts). When set to a valid number, allows independent Z-axis cornering control. When set to <raw>NAN</raw> (default), Z-axis uses the global <setting v1="junction_deviation" v2="planner.junction_deviation"></setting> value.
-                <br><br>
+                <p>Separate junction deviation setting specifically for Z-axis-only moves (X=0, Y=0, Z≠0), allowing different cornering behavior for the Z axis, which often has different mechanical characteristics than XY axes (lead screws vs. belts).</p>
+                <p>When set to a valid number, allows independent Z-axis cornering control. When set to <raw>NAN</raw> (default), Z-axis uses the global <setting v1="junction_deviation" v2="planner.junction_deviation"></setting> value.</p>
                 <strong>Key Points:</strong>
                 <ul>
                     <li>When NAN, Z uses the global junction_deviation setting</li>
@@ -74,8 +74,8 @@
             <td><setting no-version v1="minimum_planner_speed"></setting></td>
             <td><setting no-version v2="planner.minimum_planner_speed"></setting></td>
             <td class="description-cell">
-                Minimum speed the planner will allow for any move. A value of <raw>0.0</raw> (default) allows the planner to decelerate to a complete stop at corners when needed for precision. Non-zero values maintain continuous motion flow but may sacrifice dimensional accuracy at sharp corners. Prevents extremely slow movements that could cause stepper stalls or uneven extrusion in 3D printing.
-                <br><br>
+                <p>Minimum speed the planner will allow for any move. A value of <raw>0.0</raw> (default) allows the planner to decelerate to a complete stop at corners when needed for precision. Non-zero values maintain continuous motion flow but may sacrifice dimensional accuracy at sharp corners.</p>
+                <p>Prevents extremely slow movements that could cause stepper stalls or uneven extrusion in 3D printing.</p>
                 <strong>Key Points:</strong>
                 <ul>
                     <li>Default of <raw>0.0</raw> disables the minimum speed limit</li>
@@ -101,8 +101,8 @@
             <td><setting no-version v1="planner_queue_size"></setting></td>
             <td><setting no-version v2="planner.planner_queue_size"></setting></td>
             <td class="description-cell">
-                Number of motion blocks (movements) held in the planner queue for lookahead optimization. The planner performs forward and reverse passes across the entire queue to optimize acceleration profiles and cornering speeds. Larger queues enable smoother motion planning through better lookahead but consume more RAM (DTCM RAM on v2). Each block holds complete motion data for one G-code move including step counts, acceleration parameters, and timing information for all actuators.
-                <br><br>
+                <p>Number of motion blocks (movements) held in the planner queue for lookahead optimization. The planner performs forward and reverse passes across the entire queue to optimize acceleration profiles and cornering speeds.</p>
+                <p>Larger queues enable smoother motion planning through better lookahead but consume more RAM (DTCM RAM on v2). Each block holds complete motion data for one G-code move, including step counts, acceleration parameters, and timing information for all actuators.</p>
                 <strong>Key Points:</strong>
                 <ul>
                     <li>Larger queue = better motion planning and speed optimization</li>
@@ -132,8 +132,8 @@
             <td><setting no-version v1="queue_delay_time_ms"></setting></td>
             <td><setting no-version v2="planner.queue_delay_time_ms"></setting></td>
             <td class="description-cell">
-                Milliseconds to wait when the planner queue is full before checking again. This prevents the CPU from spinning in a tight loop when the queue is full and waiting for space. The delay balances responsiveness versus CPU efficiency. Lower values make the system more responsive to new commands when the queue is full, but use more CPU checking. Higher values reduce CPU overhead but may add latency.
-                <br><br>
+                <p>Milliseconds to wait when the planner queue is full before checking again. This prevents the CPU from spinning in a tight loop when the queue is full and waiting for space.</p>
+                <p>The delay balances responsiveness versus CPU efficiency. Lower values make the system more responsive to new commands when the queue is full, but use more CPU checking. Higher values reduce CPU overhead but may add latency.</p>
                 <strong>Key Points:</strong>
                 <ul>
                     <li>Only matters when queue is completely full</li>

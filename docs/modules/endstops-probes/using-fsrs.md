@@ -4,6 +4,16 @@ permalink: /using-fsrs
 
 # Using FSRs with Smoothieboard
 
+<!-- learning-diagram:29-fsr-stack -->
+{::nomarkdown}
+<figure id="learning-diagram-29-fsr-stack" style="scroll-margin-top: 16vh; "clear: both; max-width: 960px; margin: 2rem auto;">
+  <a href="/images/learning-diagrams/29-fsr-stack.svg">
+    <img src="/images/learning-diagrams/29-fsr-stack.svg" alt="FSR signal chain: Force is converted to a clean digital trigger." style="display: block; width: 100%; height: auto; border-radius: 0.75rem;"/>
+  </a>
+  <figcaption style="margin-top: 0.6rem; color: #526174; font-size: 0.92rem; text-align: center;">Visual guide: Force is converted to a clean digital trigger.</figcaption>
+</figure>
+{:/nomarkdown}
+
 FSRs (Force Sensing Resistors) can be used as bed leveling sensors with Smoothieboard to provide automatic bed leveling for 3D printers.
 
 ## Overview

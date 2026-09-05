@@ -1,4 +1,14 @@
 
+<!-- learning-diagram:44-pid-autotune -->
+{::nomarkdown}
+<figure id="learning-diagram-44-pid-autotune" style="scroll-margin-top: 16vh; "clear: both; max-width: 960px; margin: 2rem auto;">
+  <a href="/images/learning-diagrams/44-pid-autotune.svg">
+    <img src="/images/learning-diagrams/44-pid-autotune.svg" alt="PID autotune response: Controlled oscillation reveals a tunable response." style="display: block; width: 100%; height: auto; border-radius: 0.75rem;"/>
+  </a>
+  <figcaption style="margin-top: 0.6rem; color: #526174; font-size: 0.92rem; text-align: center;">Visual guide: Controlled oscillation reveals a tunable response.</figcaption>
+</figure>
+{:/nomarkdown}
+
 ### PID Autotuning
 
 Smoothie can automatically tune (find) your P, I, and D factors using a process described [here](http://brettbeauregard.com/blog/2012/01/arduino-pid-autotune-library/).

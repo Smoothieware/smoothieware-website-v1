@@ -1,5 +1,15 @@
 # Z-Probe Guide
 
+<!-- learning-diagram:27-zprobe-guide-offset -->
+{::nomarkdown}
+<figure id="learning-diagram-27-zprobe-guide-offset" style="scroll-margin-top: 16vh; "clear: both; max-width: 960px; margin: 2rem auto;">
+  <a href="/images/learning-diagrams/27-zprobe-guide-offset.svg">
+    <img src="/images/learning-diagrams/27-zprobe-guide-offset.svg" alt="Probe offset: The trigger point and nozzle contact point differ." style="display: block; width: 100%; height: auto; border-radius: 0.75rem;"/>
+  </a>
+  <figcaption style="margin-top: 0.6rem; color: #526174; font-size: 0.92rem; text-align: center;">Visual guide: The trigger point and nozzle contact point differ.</figcaption>
+</figure>
+{:/nomarkdown}
+
 Smoothie allows you to use a probe to do a variety of tasks that improve precision and automation in your CNC operations.
 
 ## What is a Z-Probe?

@@ -4,6 +4,16 @@ permalink: /cartesian
 
 # Cartesian Arm Solution
 
+<!-- learning-diagram:34-cartesian-axes -->
+{::nomarkdown}
+<figure id="learning-diagram-34-cartesian-axes" style="scroll-margin-top: 16vh; "clear: both; max-width: 960px; margin: 2rem auto;">
+  <a href="/images/learning-diagrams/34-cartesian-axes.svg">
+    <img src="/images/learning-diagrams/34-cartesian-axes.svg" alt="Cartesian axes: Each linear axis maps directly to an actuator." style="display: block; width: 100%; height: auto; border-radius: 0.75rem;"/>
+  </a>
+  <figcaption style="margin-top: 0.6rem; color: #526174; font-size: 0.92rem; text-align: center;">Visual guide: Each linear axis maps directly to an actuator.</figcaption>
+</figure>
+{:/nomarkdown}
+
 {::nomarkdown}
 <sl-alert variant="neutral" open>
   <sl-icon slot="icon" name="info-circle"></sl-icon>

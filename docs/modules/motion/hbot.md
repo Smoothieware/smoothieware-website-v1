@@ -4,6 +4,16 @@ permalink: /hbot
 
 # H-Bot and CoreXY Configuration
 
+<!-- learning-diagram:36-hbot-racking -->
+{::nomarkdown}
+<figure id="learning-diagram-36-hbot-racking" style="scroll-margin-top: 16vh; "clear: both; max-width: 960px; margin: 2rem auto;">
+  <a href="/images/learning-diagrams/36-hbot-racking.svg">
+    <img src="/images/learning-diagrams/36-hbot-racking.svg" alt="H-bot belt forces: Balanced forces protect the carriage from racking." style="display: block; width: 100%; height: auto; border-radius: 0.75rem;"/>
+  </a>
+  <figcaption style="margin-top: 0.6rem; color: #526174; font-size: 0.92rem; text-align: center;">Visual guide: Balanced forces protect the carriage from racking.</figcaption>
+</figure>
+{:/nomarkdown}
+
 {::nomarkdown}
 <sl-alert variant="neutral" open>
   <sl-icon slot="icon" name="info-circle"></sl-icon>
