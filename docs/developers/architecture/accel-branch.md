@@ -226,8 +226,8 @@ Several optimizations found and applied:
 These are optimizations that are most useful in the case we don't do anything. Applying them gives us the following signals/durations:
 
 {::nomarkdown}
-<a href="/images/accel-branch/optimized-step-generation-graph.png">
-  <img src="/images/accel-branch/optimized-step-generation-graph.png" alt="Optimized step generation graph showing improved performance" style="min-width: 640px; display: block; margin: 2rem auto;"/>
+<a href="/images/accel-branch/optimized-step-generation-graph.svg">
+  <img src="/images/accel-branch/optimized-step-generation-graph.svg" alt="Vector logic-analyzer view of optimized step generation timing" style="min-width: 640px; display: block; margin: 2rem auto;"/>
 </a>
 {:/nomarkdown}
 

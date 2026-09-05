@@ -50,8 +50,8 @@ M500
 Next time you home, the machine will know how high above the bed it is.
 
 {::nomarkdown}
-<a href="/images/height-adjustment.png">
-  <img src="/images/height-adjustment.png" alt="Height adjustment diagram showing the Z axis configuration" style="display: block; margin: 2rem auto; min-width: 640px; width: 80%; max-width: 800px;"/>
+<a href="/images/height-adjustment.svg">
+  <img src="/images/height-adjustment.svg" alt="Z reference diagram showing M306 homing offset and G30 probe offset" style="display: block; margin: 2rem auto; min-width: 640px; width: 80%; max-width: 800px;"/>
 </a>
 {:/nomarkdown}
 

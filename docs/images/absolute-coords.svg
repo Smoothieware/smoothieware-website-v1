@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" role="img" aria-labelledby="title description">
+  <title id="title">G90 absolute coordinates</title><desc id="description">Each point is measured from one fixed work origin.</desc>
+  <rect width="800" height="800" rx="28" fill="#f6f9f5"/>
+  <rect x="45" y="42" width="710" height="92" rx="16" fill="#263443"/>
+  <text x="78" y="100" fill="#f7c948" font-family="system-ui, sans-serif" font-size="46" font-weight="700">G90</text><text x="220" y="100" fill="#ffffff" font-family="system-ui, sans-serif" font-size="34">Absolute coordinates</text>
+  <g stroke="#c8d3c6" stroke-width="2"><path d="M150 220V640M250 220V640M350 220V640M450 220V640M550 220V640M650 220V640"/><path d="M110 270H690M110 370H690M110 470H690M110 570H690"/></g>
+  <g stroke="#263443" stroke-width="7" fill="none"><path d="M110 640H705"/><path d="M110 655V205"/><path d="M705 640l-24-15m24 15-24 15"/><path d="M110 205l-15 24m15-24 15 24"/></g>
+  <text x="700" y="690" fill="#263443" font-family="system-ui, sans-serif" font-size="29">X</text><text x="65" y="222" fill="#263443" font-family="system-ui, sans-serif" font-size="29">Y</text>
+  <path d="M150 640 L350 440 L570 340" fill="none" stroke="#70a800" stroke-width="10" stroke-linejoin="round"/>
+  <g fill="#263443" stroke="#ffffff" stroke-width="7"><circle cx="150" cy="640" r="15"/><circle cx="350" cy="440" r="15"/><circle cx="570" cy="340" r="15"/></g>
+  <g font-family="system-ui, sans-serif"><rect x="115" y="664" width="122" height="48" rx="12" fill="#e6efe3"/><text x="132" y="697" fill="#263443" font-size="25" font-weight="700">Origin 0,0</text><rect x="276" y="375" width="170" height="50" rx="12" fill="#e6efe3"/><text x="293" y="409" fill="#263443" font-size="26" font-weight="700">P1  X4  Y2</text><rect x="495" y="267" width="175" height="50" rx="12" fill="#e6efe3"/><text x="510" y="301" fill="#263443" font-size="26" font-weight="700">P2  X6  Y3</text></g>
+  <rect x="70" y="730" width="660" height="42" rx="12" fill="#e7edf1"/><text x="100" y="759" fill="#263443" font-family="system-ui, sans-serif" font-size="25">Every destination is measured from the same work origin.</text>
+</svg>

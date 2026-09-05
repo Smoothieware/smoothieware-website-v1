@@ -33,7 +33,7 @@ Several variants exist, but the most common "Model 1" type is supported:
 
 {::nomarkdown}
 <a href="/images/tm1638-module.png">
-  <img src="/images/tm1638-module.png" alt="TM1638 Display Module" style="max-width: 400px;"/>
+  <img src="/images/tm1638-module.png" alt="TM1638 display module with transparent background" style="max-width: 400px;"/>
 </a>
 {:/nomarkdown}
 

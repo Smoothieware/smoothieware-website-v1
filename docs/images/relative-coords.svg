@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" role="img" aria-labelledby="title description">
+  <title id="title">G91 relative coordinates</title><desc id="description">Each move is measured from the current position.</desc>
+  <rect width="800" height="800" rx="28" fill="#f6f9f5"/>
+  <rect x="45" y="42" width="710" height="92" rx="16" fill="#263443"/>
+  <text x="78" y="100" fill="#f7c948" font-family="system-ui, sans-serif" font-size="46" font-weight="700">G91</text><text x="220" y="100" fill="#ffffff" font-family="system-ui, sans-serif" font-size="34">Relative coordinates</text>
+  <g stroke="#c8d3c6" stroke-width="2"><path d="M150 220V640M250 220V640M350 220V640M450 220V640M550 220V640M650 220V640"/><path d="M110 270H690M110 370H690M110 470H690M110 570H690"/></g>
+  <g stroke="#263443" stroke-width="7" fill="none"><path d="M110 640H705"/><path d="M110 655V205"/><path d="M705 640l-24-15m24 15-24 15"/><path d="M110 205l-15 24m15-24 15 24"/></g>
+  <path d="M150 640 L350 440 L570 340" fill="none" stroke="#70a800" stroke-width="10" stroke-linejoin="round"/>
+  <g fill="#263443" stroke="#ffffff" stroke-width="7"><circle cx="150" cy="640" r="15"/><circle cx="350" cy="440" r="15"/><circle cx="570" cy="340" r="15"/></g>
+  <g stroke="#f7a33d" stroke-width="5" fill="none"><path d="M165 620h145v-145"/><path d="M365 420h165v-75"/><path d="M310 475l-10-28m10 28 28-10M530 345l-10-28m10 28 28-10"/></g>
+  <g font-family="system-ui, sans-serif"><rect x="178" y="505" width="160" height="48" rx="12" fill="#fff1da"/><text x="192" y="538" fill="#263443" font-size="25" font-weight="700">Move  X+2  Y+2</text><rect x="390" y="355" width="160" height="48" rx="12" fill="#fff1da"/><text x="404" y="388" fill="#263443" font-size="25" font-weight="700">Move  X+2  Y+1</text></g>
+  <rect x="70" y="730" width="660" height="42" rx="12" fill="#e7edf1"/><text x="104" y="759" fill="#263443" font-family="system-ui, sans-serif" font-size="25">Every move starts from the current position.</text>
+</svg>
