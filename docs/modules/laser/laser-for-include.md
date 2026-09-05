@@ -115,11 +115,11 @@ You now need to edit the "config" file on the SD card (the default configuration
 
 <!-- learning-diagram:49-laser-control -->
 {::nomarkdown}
-<figure id="learning-diagram-49-laser-control" style="scroll-margin-top: 16vh; "clear: both; max-width: 960px; margin: 2rem auto;">
+<figure id="learning-diagram-49-laser-control" style="clear: both; max-width: 960px; margin: 2rem auto; scroll-margin-top: 16vh;">
   <a href="/images/learning-diagrams/49-laser-control.svg">
     <img src="/images/learning-diagrams/49-laser-control.svg" alt="Laser power and motion: Power S is coordinated with the active move." style="display: block; width: 100%; height: auto; border-radius: 0.75rem;"/>
   </a>
-  <figcaption style="margin-top: 0.6rem; color: #526174; font-size: 0.92rem; text-align: center;">Visual guide: Power S is coordinated with the active move.</figcaption>
+  <figcaption style="margin-top: 0.6rem; font-size: 0.92rem; opacity: 0.82; text-align: center;">Visual guide: Power S is coordinated with the active move.</figcaption>
 </figure>
 {:/nomarkdown}
 laser_module_enable                          false            # Whether to activate the laser module at all. All configuration is

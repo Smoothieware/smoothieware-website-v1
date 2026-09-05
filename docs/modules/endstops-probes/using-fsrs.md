@@ -6,11 +6,11 @@ permalink: /using-fsrs
 
 <!-- learning-diagram:29-fsr-stack -->
 {::nomarkdown}
-<figure id="learning-diagram-29-fsr-stack" style="scroll-margin-top: 16vh; "clear: both; max-width: 960px; margin: 2rem auto;">
+<figure id="learning-diagram-29-fsr-stack" style="clear: both; max-width: 960px; margin: 2rem auto; scroll-margin-top: 16vh;">
   <a href="/images/learning-diagrams/29-fsr-stack.svg">
     <img src="/images/learning-diagrams/29-fsr-stack.svg" alt="FSR signal chain: Force is converted to a clean digital trigger." style="display: block; width: 100%; height: auto; border-radius: 0.75rem;"/>
   </a>
-  <figcaption style="margin-top: 0.6rem; color: #526174; font-size: 0.92rem; text-align: center;">Visual guide: Force is converted to a clean digital trigger.</figcaption>
+  <figcaption style="margin-top: 0.6rem; font-size: 0.92rem; opacity: 0.82; text-align: center;">Visual guide: Force is converted to a clean digital trigger.</figcaption>
 </figure>
 {:/nomarkdown}
 

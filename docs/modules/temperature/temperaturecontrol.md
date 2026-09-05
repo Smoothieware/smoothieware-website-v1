@@ -7,11 +7,11 @@ permalink: /temperaturecontrol
 
 <!-- learning-diagram:42-temperature-control -->
 {::nomarkdown}
-<figure id="learning-diagram-42-temperature-control" style="scroll-margin-top: 16vh; "clear: both; max-width: 960px; margin: 2rem auto;">
+<figure id="learning-diagram-42-temperature-control" style="clear: both; max-width: 960px; margin: 2rem auto; scroll-margin-top: 16vh;">
   <a href="/images/learning-diagrams/42-temperature-control.svg">
     <img src="/images/learning-diagrams/42-temperature-control.svg" alt="Temperature feedback: Sensor feedback corrects heater power toward target." style="display: block; width: 100%; height: auto; border-radius: 0.75rem;"/>
   </a>
-  <figcaption style="margin-top: 0.6rem; color: #526174; font-size: 0.92rem; text-align: center;">Visual guide: Sensor feedback corrects heater power toward target.</figcaption>
+  <figcaption style="margin-top: 0.6rem; font-size: 0.92rem; opacity: 0.82; text-align: center;">Visual guide: Sensor feedback corrects heater power toward target.</figcaption>
 </figure>
 {:/nomarkdown}
 

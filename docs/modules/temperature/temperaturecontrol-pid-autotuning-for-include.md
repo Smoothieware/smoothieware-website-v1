@@ -1,11 +1,11 @@
 
 <!-- learning-diagram:44-pid-autotune -->
 {::nomarkdown}
-<figure id="learning-diagram-44-pid-autotune" style="scroll-margin-top: 16vh; "clear: both; max-width: 960px; margin: 2rem auto;">
+<figure id="learning-diagram-44-pid-autotune" style="clear: both; max-width: 960px; margin: 2rem auto; scroll-margin-top: 16vh;">
   <a href="/images/learning-diagrams/44-pid-autotune.svg">
     <img src="/images/learning-diagrams/44-pid-autotune.svg" alt="PID autotune response: Controlled oscillation reveals a tunable response." style="display: block; width: 100%; height: auto; border-radius: 0.75rem;"/>
   </a>
-  <figcaption style="margin-top: 0.6rem; color: #526174; font-size: 0.92rem; text-align: center;">Visual guide: Controlled oscillation reveals a tunable response.</figcaption>
+  <figcaption style="margin-top: 0.6rem; font-size: 0.92rem; opacity: 0.82; text-align: center;">Visual guide: Controlled oscillation reveals a tunable response.</figcaption>
 </figure>
 {:/nomarkdown}
 

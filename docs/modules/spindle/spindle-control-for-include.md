@@ -3,11 +3,11 @@
 
 <!-- learning-diagram:50-spindle-module -->
 {::nomarkdown}
-<figure id="learning-diagram-50-spindle-module" style="scroll-margin-top: 16vh; "clear: both; max-width: 960px; margin: 2rem auto;">
+<figure id="learning-diagram-50-spindle-module" style="clear: both; max-width: 960px; margin: 2rem auto; scroll-margin-top: 16vh;">
   <a href="/images/learning-diagrams/50-spindle-module.svg">
     <img src="/images/learning-diagrams/50-spindle-module.svg" alt="Spindle control signal: A speed command becomes a configured output." style="display: block; width: 100%; height: auto; border-radius: 0.75rem;"/>
   </a>
-  <figcaption style="margin-top: 0.6rem; color: #526174; font-size: 0.92rem; text-align: center;">Visual guide: A speed command becomes a configured output.</figcaption>
+  <figcaption style="margin-top: 0.6rem; font-size: 0.92rem; opacity: 0.82; text-align: center;">Visual guide: A speed command becomes a configured output.</figcaption>
 </figure>
 {:/nomarkdown}
 

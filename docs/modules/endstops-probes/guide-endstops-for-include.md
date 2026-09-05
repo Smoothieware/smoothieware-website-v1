@@ -8,11 +8,11 @@
 
 <!-- learning-diagram:25-guide-endstops -->
 {::nomarkdown}
-<figure id="learning-diagram-25-guide-endstops" style="scroll-margin-top: 16vh; "clear: both; max-width: 960px; margin: 2rem auto;">
+<figure id="learning-diagram-25-guide-endstops" style="clear: both; max-width: 960px; margin: 2rem auto; scroll-margin-top: 16vh;">
   <a href="/images/learning-diagrams/25-guide-endstops.svg">
     <img src="/images/learning-diagrams/25-guide-endstops.svg" alt="Endstop placement: Homing direction and physical limit must agree." style="display: block; width: 100%; height: auto; border-radius: 0.75rem;"/>
   </a>
-  <figcaption style="margin-top: 0.6rem; color: #526174; font-size: 0.92rem; text-align: center;">Visual guide: Homing direction and physical limit must agree.</figcaption>
+  <figcaption style="margin-top: 0.6rem; font-size: 0.92rem; opacity: 0.82; text-align: center;">Visual guide: Homing direction and physical limit must agree.</figcaption>
 </figure>
 {:/nomarkdown}
 

@@ -7,11 +7,11 @@ permalink: /filament-detector
 
 <!-- learning-diagram:47-filament-detector -->
 {::nomarkdown}
-<figure id="learning-diagram-47-filament-detector" style="scroll-margin-top: 16vh; "clear: both; max-width: 960px; margin: 2rem auto;">
+<figure id="learning-diagram-47-filament-detector" style="clear: both; max-width: 960px; margin: 2rem auto; scroll-margin-top: 16vh;">
   <a href="/images/learning-diagrams/47-filament-detector.svg">
     <img src="/images/learning-diagrams/47-filament-detector.svg" alt="Filament runout: Absence is detected before the melt zone is starved." style="display: block; width: 100%; height: auto; border-radius: 0.75rem;"/>
   </a>
-  <figcaption style="margin-top: 0.6rem; color: #526174; font-size: 0.92rem; text-align: center;">Visual guide: Absence is detected before the melt zone is starved.</figcaption>
+  <figcaption style="margin-top: 0.6rem; font-size: 0.92rem; opacity: 0.82; text-align: center;">Visual guide: Absence is detected before the melt zone is starved.</figcaption>
 </figure>
 {:/nomarkdown}
 

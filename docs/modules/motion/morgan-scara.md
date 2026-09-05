@@ -6,11 +6,11 @@ permalink: /morgan-scara
 
 <!-- learning-diagram:40-morgan-scara -->
 {::nomarkdown}
-<figure id="learning-diagram-40-morgan-scara" style="scroll-margin-top: 16vh; "clear: both; max-width: 960px; margin: 2rem auto;">
+<figure id="learning-diagram-40-morgan-scara" style="clear: both; max-width: 960px; margin: 2rem auto; scroll-margin-top: 16vh;">
   <a href="/images/learning-diagrams/40-morgan-scara.svg">
     <img src="/images/learning-diagrams/40-morgan-scara.svg" alt="Morgan SCARA links: Two joint angles place a tool in XY." style="display: block; width: 100%; height: auto; border-radius: 0.75rem;"/>
   </a>
-  <figcaption style="margin-top: 0.6rem; color: #526174; font-size: 0.92rem; text-align: center;">Visual guide: Two joint angles place a tool in XY.</figcaption>
+  <figcaption style="margin-top: 0.6rem; font-size: 0.92rem; opacity: 0.82; text-align: center;">Visual guide: Two joint angles place a tool in XY.</figcaption>
 </figure>
 {:/nomarkdown}
 

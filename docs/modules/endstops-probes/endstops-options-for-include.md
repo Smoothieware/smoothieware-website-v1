@@ -1,11 +1,11 @@
 
 <!-- learning-diagram:24-endstops-signal -->
 {::nomarkdown}
-<figure id="learning-diagram-24-endstops-signal" style="scroll-margin-top: 16vh; "clear: both; max-width: 960px; margin: 2rem auto;">
+<figure id="learning-diagram-24-endstops-signal" style="clear: both; max-width: 960px; margin: 2rem auto; scroll-margin-top: 16vh;">
   <a href="/images/learning-diagrams/24-endstops-signal.svg">
     <img src="/images/learning-diagrams/24-endstops-signal.svg" alt="Endstop signal path: A physical switch reaches firmware as a limit event." style="display: block; width: 100%; height: auto; border-radius: 0.75rem;"/>
   </a>
-  <figcaption style="margin-top: 0.6rem; color: #526174; font-size: 0.92rem; text-align: center;">Visual guide: A physical switch reaches firmware as a limit event.</figcaption>
+  <figcaption style="margin-top: 0.6rem; font-size: 0.92rem; opacity: 0.82; text-align: center;">Visual guide: A physical switch reaches firmware as a limit event.</figcaption>
 </figure>
 {:/nomarkdown}
 {::nomarkdown}

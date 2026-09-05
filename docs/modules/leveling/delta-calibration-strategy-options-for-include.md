@@ -1,11 +1,11 @@
 
 <!-- learning-diagram:33-delta-calibration -->
 {::nomarkdown}
-<figure id="learning-diagram-33-delta-calibration" style="scroll-margin-top: 16vh; "clear: both; max-width: 960px; margin: 2rem auto;">
+<figure id="learning-diagram-33-delta-calibration" style="clear: both; max-width: 960px; margin: 2rem auto; scroll-margin-top: 16vh;">
   <a href="/images/learning-diagrams/33-delta-calibration.svg">
     <img src="/images/learning-diagrams/33-delta-calibration.svg" alt="Delta calibration points: Centre and perimeter samples refine geometry." style="display: block; width: 100%; height: auto; border-radius: 0.75rem;"/>
   </a>
-  <figcaption style="margin-top: 0.6rem; color: #526174; font-size: 0.92rem; text-align: center;">Visual guide: Centre and perimeter samples refine geometry.</figcaption>
+  <figcaption style="margin-top: 0.6rem; font-size: 0.92rem; opacity: 0.82; text-align: center;">Visual guide: Centre and perimeter samples refine geometry.</figcaption>
 </figure>
 {:/nomarkdown}
 {::nomarkdown}

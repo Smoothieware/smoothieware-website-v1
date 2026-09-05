@@ -248,6 +248,15 @@ Machines can't instantly change speed - they need to accelerate and decelerate.
 Smoothie handles acceleration planning automatically - you just set the limits in configuration.
 
 ### Steps per millimeter
+<!-- learning-diagram:39-steps-per-millimeter -->
+{::nomarkdown}
+<figure id="learning-diagram-39-steps-per-millimeter" style="clear: both; max-width: 960px; margin: 2rem auto; scroll-margin-top: 16vh;">
+  <a href="/images/learning-diagrams/39-steps-per-millimeter.svg">
+    <img src="/images/learning-diagrams/39-steps-per-millimeter.svg" alt="Steps per millimeter: Motor steps and microstepping are divided by mechanical travel per revolution." style="display: block; width: 100%; height: auto; border-radius: 0.75rem;"/>
+  </a>
+  <figcaption style="margin-top: 0.6rem; font-size: 0.92rem; opacity: 0.82; text-align: center;">Visual guide: Motor steps and microstepping are divided by mechanical travel per revolution.</figcaption>
+</figure>
+{:/nomarkdown}
 
 Stepper motors move in discrete steps, not continuous rotation.
 

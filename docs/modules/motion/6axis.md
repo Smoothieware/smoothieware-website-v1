@@ -8,11 +8,11 @@ title: 6 Axis Configuration
 
 <!-- learning-diagram:37-six-axis -->
 {::nomarkdown}
-<figure id="learning-diagram-37-six-axis" style="scroll-margin-top: 16vh; "clear: both; max-width: 960px; margin: 2rem auto;">
+<figure id="learning-diagram-37-six-axis" style="clear: both; max-width: 960px; margin: 2rem auto; scroll-margin-top: 16vh;">
   <a href="/images/learning-diagrams/37-six-axis.svg">
     <img src="/images/learning-diagrams/37-six-axis.svg" alt="Six-axis pose: Three linear and three rotary axes define the tool pose." style="display: block; width: 100%; height: auto; border-radius: 0.75rem;"/>
   </a>
-  <figcaption style="margin-top: 0.6rem; color: #526174; font-size: 0.92rem; text-align: center;">Visual guide: Three linear and three rotary axes define the tool pose.</figcaption>
+  <figcaption style="margin-top: 0.6rem; font-size: 0.92rem; opacity: 0.82; text-align: center;">Visual guide: Three linear and three rotary axes define the tool pose.</figcaption>
 </figure>
 {:/nomarkdown}
 

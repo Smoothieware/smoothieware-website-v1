@@ -37,11 +37,11 @@ V1 uses a flat configuration format where all settings are on one line with spac
 
 <!-- learning-diagram:46-extruder-path -->
 {::nomarkdown}
-<figure id="learning-diagram-46-extruder-path" style="scroll-margin-top: 16vh; "clear: both; max-width: 960px; margin: 2rem auto;">
+<figure id="learning-diagram-46-extruder-path" style="clear: both; max-width: 960px; margin: 2rem auto; scroll-margin-top: 16vh;">
   <a href="/images/learning-diagrams/46-extruder-path.svg">
     <img src="/images/learning-diagrams/46-extruder-path.svg" alt="Extruder material path: Drive, melt zone, and nozzle form one material path." style="display: block; width: 100%; height: auto; border-radius: 0.75rem;"/>
   </a>
-  <figcaption style="margin-top: 0.6rem; color: #526174; font-size: 0.92rem; text-align: center;">Visual guide: Drive, melt zone, and nozzle form one material path.</figcaption>
+  <figcaption style="margin-top: 0.6rem; font-size: 0.92rem; opacity: 0.82; text-align: center;">Visual guide: Drive, melt zone, and nozzle form one material path.</figcaption>
 </figure>
 {:/nomarkdown}
 extruder.hotend.enable                          true
