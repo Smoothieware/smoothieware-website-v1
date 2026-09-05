@@ -1,4 +1,15 @@
 
+
+
+<!-- learning-diagram:43-pid-control -->
+{::nomarkdown}
+<figure id="learning-diagram-43-pid-control" style="clear: both; max-width: 960px; margin: 2rem auto; scroll-margin-top: 16vh;">
+  <a href="/images/learning-diagrams/43-pid-control.svg">
+    <img src="/images/learning-diagrams/43-pid-control.svg" alt="PID corrects temperature error three ways: P uses present error, I uses accumulated error, and D uses its rate of change." loading="lazy" decoding="async" style="display: block; width: 100%; height: auto; border-radius: 0.1rem;"/>
+  </a>
+  <figcaption style="margin-top: 0.6rem; font-size: 0.92rem; opacity: 0.82; text-align: center;">PID corrects temperature error three ways <a href="#learning-diagram-43-pid-control" aria-label="Permanent link to PID corrects temperature error three ways" style="margin-left: 0.35rem; text-decoration: none;">#</a></figcaption>
+</figure>
+{:/nomarkdown}
 ### Temperature Control PID
 
 {::nomarkdown}
@@ -41,15 +52,6 @@ It uses some math, allowing us to correct those problems by turning the heater o
 ---
 
 
-<!-- learning-diagram:43-pid-control -->
-{::nomarkdown}
-<figure id="learning-diagram-43-pid-control" style="clear: both; max-width: 960px; margin: 2rem auto; scroll-margin-top: 16vh;">
-  <a href="/images/learning-diagrams/43-pid-control.svg">
-    <img src="/images/learning-diagrams/43-pid-control.svg" alt="PID feedback terms: P, I, and D respond to different aspects of error." style="display: block; width: 100%; height: auto; border-radius: 0.75rem;"/>
-  </a>
-  <figcaption style="margin-top: 0.6rem; font-size: 0.92rem; opacity: 0.82; text-align: center;">Visual guide: P, I, and D respond to different aspects of error.</figcaption>
-</figure>
-{:/nomarkdown}
 #### Configuring PID Values
 
 The P, I, and D factors are configured in your config file as follows:

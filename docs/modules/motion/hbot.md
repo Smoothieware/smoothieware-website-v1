@@ -8,11 +8,13 @@ permalink: /hbot
 {::nomarkdown}
 <figure id="learning-diagram-36-hbot-racking" style="clear: both; max-width: 960px; margin: 2rem auto; scroll-margin-top: 16vh;">
   <a href="/images/learning-diagrams/36-hbot-racking.svg">
-    <img src="/images/learning-diagrams/36-hbot-racking.svg" alt="H-bot belt forces: Balanced forces protect the carriage from racking." style="display: block; width: 100%; height: auto; border-radius: 0.75rem;"/>
+    <img src="/images/learning-diagrams/36-hbot-racking.svg" alt="H-Bot uses both motors for X and Y: Unequal belt forces twist the gantry and cause racking." loading="lazy" decoding="async" style="display: block; width: 100%; height: auto; border-radius: 0.1rem;"/>
   </a>
-  <figcaption style="margin-top: 0.6rem; font-size: 0.92rem; opacity: 0.82; text-align: center;">Visual guide: Balanced forces protect the carriage from racking.</figcaption>
+  <figcaption style="margin-top: 0.6rem; font-size: 0.92rem; opacity: 0.82; text-align: center;">H-Bot uses both motors for X and Y <a href="#learning-diagram-36-hbot-racking" aria-label="Permanent link to H-Bot uses both motors for X and Y" style="margin-left: 0.35rem; text-decoration: none;">#</a></figcaption>
 </figure>
 {:/nomarkdown}
+
+
 
 {::nomarkdown}
 <sl-alert variant="neutral" open>

@@ -4,11 +4,13 @@
 {::nomarkdown}
 <figure id="learning-diagram-27-zprobe-guide-offset" style="clear: both; max-width: 960px; margin: 2rem auto; scroll-margin-top: 16vh;">
   <a href="/images/learning-diagrams/27-zprobe-guide-offset.svg">
-    <img src="/images/learning-diagrams/27-zprobe-guide-offset.svg" alt="Probe offset: The trigger point and nozzle contact point differ." style="display: block; width: 100%; height: auto; border-radius: 0.75rem;"/>
+    <img src="/images/learning-diagrams/27-zprobe-guide-offset.svg" alt="The probe and nozzle touch different points: The configured offset tells Smoothie where the nozzle is when the probe triggers." loading="lazy" decoding="async" style="display: block; width: 100%; height: auto; border-radius: 0.1rem;"/>
   </a>
-  <figcaption style="margin-top: 0.6rem; font-size: 0.92rem; opacity: 0.82; text-align: center;">Visual guide: The trigger point and nozzle contact point differ.</figcaption>
+  <figcaption style="margin-top: 0.6rem; font-size: 0.92rem; opacity: 0.82; text-align: center;">The probe and nozzle touch different points <a href="#learning-diagram-27-zprobe-guide-offset" aria-label="Permanent link to The probe and nozzle touch different points" style="margin-left: 0.35rem; text-decoration: none;">#</a></figcaption>
 </figure>
 {:/nomarkdown}
+
+
 
 Smoothie allows you to use a probe to do a variety of tasks that improve precision and automation in your CNC operations.
 

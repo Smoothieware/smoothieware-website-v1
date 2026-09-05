@@ -9,11 +9,13 @@ permalink: /filament-detector
 {::nomarkdown}
 <figure id="learning-diagram-47-filament-detector" style="clear: both; max-width: 960px; margin: 2rem auto; scroll-margin-top: 16vh;">
   <a href="/images/learning-diagrams/47-filament-detector.svg">
-    <img src="/images/learning-diagrams/47-filament-detector.svg" alt="Filament runout: Absence is detected before the melt zone is starved." style="display: block; width: 100%; height: auto; border-radius: 0.75rem;"/>
+    <img src="/images/learning-diagrams/47-filament-detector.svg" alt="The filament detector compares motion with encoder pulses: If the measured feed differs from the commanded feed, Smoothie asks the host to pause." loading="lazy" decoding="async" style="display: block; width: 100%; height: auto; border-radius: 0.1rem;"/>
   </a>
-  <figcaption style="margin-top: 0.6rem; font-size: 0.92rem; opacity: 0.82; text-align: center;">Visual guide: Absence is detected before the melt zone is starved.</figcaption>
+  <figcaption style="margin-top: 0.6rem; font-size: 0.92rem; opacity: 0.82; text-align: center;">The filament detector compares motion with encoder pulses <a href="#learning-diagram-47-filament-detector" aria-label="Permanent link to The filament detector compares motion with encoder pulses" style="margin-left: 0.35rem; text-decoration: none;">#</a></figcaption>
 </figure>
 {:/nomarkdown}
+
+
 
 The filament detector module allows you to add automated hardware to your machine to check that the filament is advancing correctly.
 

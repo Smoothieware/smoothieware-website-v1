@@ -1,3 +1,14 @@
+
+
+<!-- learning-diagram:49-laser-control -->
+{::nomarkdown}
+<figure id="learning-diagram-49-laser-control" style="clear: both; max-width: 960px; margin: 2rem auto; scroll-margin-top: 16vh;">
+  <a href="/images/learning-diagrams/49-laser-control.svg">
+    <img src="/images/learning-diagrams/49-laser-control.svg" alt="Laser power follows the active G1 move: Smoothie coordinates the PWM power signal with the tool path." loading="lazy" decoding="async" style="display: block; width: 100%; height: auto; border-radius: 0.1rem;"/>
+  </a>
+  <figcaption style="margin-top: 0.6rem; font-size: 0.92rem; opacity: 0.82; text-align: center;">Laser power follows the active G1 move <a href="#learning-diagram-49-laser-control" aria-label="Permanent link to Laser power follows the active G1 move" style="margin-left: 0.35rem; text-decoration: none;">#</a></figcaption>
+</figure>
+{:/nomarkdown}
 {::nomarkdown}
 <a href="/images/temporary/laser-cutter-generic.jpg">
   <img src="/images/temporary/laser-cutter-generic.jpg" alt="High Voltage Warning" style="width: 300px; height: 427px; float: right; margin-left: 1rem;"/>
@@ -113,15 +124,6 @@ You now need to edit the "config" file on the SD card (the default configuration
 ```markdown
 # Laser module configuration
 
-<!-- learning-diagram:49-laser-control -->
-{::nomarkdown}
-<figure id="learning-diagram-49-laser-control" style="clear: both; max-width: 960px; margin: 2rem auto; scroll-margin-top: 16vh;">
-  <a href="/images/learning-diagrams/49-laser-control.svg">
-    <img src="/images/learning-diagrams/49-laser-control.svg" alt="Laser power and motion: Power S is coordinated with the active move." style="display: block; width: 100%; height: auto; border-radius: 0.75rem;"/>
-  </a>
-  <figcaption style="margin-top: 0.6rem; font-size: 0.92rem; opacity: 0.82; text-align: center;">Visual guide: Power S is coordinated with the active move.</figcaption>
-</figure>
-{:/nomarkdown}
 laser_module_enable                          false            # Whether to activate the laser module at all. All configuration is
                                                               # ignored if false.
 laser_module_pwm_pin                         2.5              # this pin will be PWMed to control the laser. Only P2.0 - P2.5

@@ -1,14 +1,16 @@
 
+
+
+
 <!-- learning-diagram:41-sensor-types -->
 {::nomarkdown}
 <figure id="learning-diagram-41-sensor-types" style="clear: both; max-width: 960px; margin: 2rem auto; scroll-margin-top: 16vh;">
   <a href="/images/learning-diagrams/41-sensor-types.svg">
-    <img src="/images/learning-diagrams/41-sensor-types.svg" alt="Thermistor conversion: A voltage-divider reading becomes temperature." style="display: block; width: 100%; height: auto; border-radius: 0.75rem;"/>
+    <img src="/images/learning-diagrams/41-sensor-types.svg" alt="Smoothie converts thermistor resistance to temperature: The configured thermistor model determines the conversion." loading="lazy" decoding="async" style="display: block; width: 100%; height: auto; border-radius: 0.1rem;"/>
   </a>
-  <figcaption style="margin-top: 0.6rem; font-size: 0.92rem; opacity: 0.82; text-align: center;">Visual guide: A voltage-divider reading becomes temperature.</figcaption>
+  <figcaption style="margin-top: 0.6rem; font-size: 0.92rem; opacity: 0.82; text-align: center;">Smoothie converts thermistor resistance to temperature <a href="#learning-diagram-41-sensor-types" aria-label="Permanent link to Smoothie converts thermistor resistance to temperature" style="margin-left: 0.35rem; text-decoration: none;">#</a></figcaption>
 </figure>
 {:/nomarkdown}
-
 ### Thermistor Choice
 
 Different models of thermistors are used in hotends or heated beds, and each type translates temperature into resistance differently. It's essential to inform Smoothie about the specific thermistor model you have to ensure accurate temperature readings.

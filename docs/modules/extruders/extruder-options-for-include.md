@@ -1,11 +1,13 @@
 
+
+
 <!-- learning-diagram:48-extruder-options -->
 {::nomarkdown}
 <figure id="learning-diagram-48-extruder-options" style="clear: both; max-width: 960px; margin: 2rem auto; scroll-margin-top: 16vh;">
   <a href="/images/learning-diagrams/48-extruder-options.svg">
-    <img src="/images/learning-diagrams/48-extruder-options.svg" alt="Extruder controls: Material-path settings work together." style="display: block; width: 100%; height: auto; border-radius: 0.75rem;"/>
+    <img src="/images/learning-diagrams/48-extruder-options.svg" alt="Extruder settings control one material path: Steps per millimeter, speed, temperature, and retraction affect different parts of the feed." loading="lazy" decoding="async" style="display: block; width: 100%; height: auto; border-radius: 0.1rem;"/>
   </a>
-  <figcaption style="margin-top: 0.6rem; font-size: 0.92rem; opacity: 0.82; text-align: center;">Visual guide: Material-path settings work together.</figcaption>
+  <figcaption style="margin-top: 0.6rem; font-size: 0.92rem; opacity: 0.82; text-align: center;">Extruder settings control one material path <a href="#learning-diagram-48-extruder-options" aria-label="Permanent link to Extruder settings control one material path" style="margin-left: 0.35rem; text-decoration: none;">#</a></figcaption>
 </figure>
 {:/nomarkdown}
 {::nomarkdown}
@@ -22,175 +24,158 @@
             <td><setting no-version v1="extruder.hotend.enable"></setting></td>
             <td><setting no-version v2="extruder.hotend.enable"></setting></td>
             <td class="description-cell">
-                <p>Whether to activate this extruder instance. All configuration for it is ignored if set to <raw>false</raw>.</p>
-                <p>Each enabled extruder creates a separate extruder module instance that can be controlled with tool change commands (<raw>T0</raw>, <raw>T1</raw>, etc.).</p>
-                <p>Use the <setting no-version v1="extruder.hotend.enable"></setting> pattern to create multiple extruder instances (e.g., <raw>extruder.hotend.enable</raw>, <raw>extruder.hotend2.enable</raw>).</p>
+                <p>This turns the extruder instance on. Set it to <raw>false</raw> and everything else configured for it is ignored.</p>
+                <p>Each extruder you enable gets its own module, and you switch to it with a tool change command like <raw>T0</raw> or <raw>T1</raw>.</p>
+                <p>To add more extruders, repeat the pattern: <raw>extruder.hotend.enable</raw>, <raw>extruder.hotend2.enable</raw>, and so on.</p>
             </td>
         </tr>
         <tr>
             <td><setting no-version v1="extruder.hotend.steps_per_mm"></setting></td>
             <td><setting no-version v2="extruder.hotend.steps_per_mm"></setting></td>
             <td class="description-cell">
-                <p>Number of stepper motor steps required to move one millimeter of filament through the extruder — a critical calibration value.</p>
-                <p>Depends on your stepper motor steps/revolution (typically 200 for 1.8° motors), microstepping setting (e.g. 16x = 3200 steps/rev), and your extruder gear ratio/hobbed bolt diameter. Calculate as: <raw>(motor_steps_per_rev × microstepping) / (hobbed_bolt_circumference × gear_ratio)</raw>. Example: <raw>(200 × 16) / (3.14159 × 7mm × 1) ≈ 145 steps/mm</raw>.</p>
-                <p>Fine-tune by extruding a known length and measuring actual extrusion. Can be adjusted at runtime with <mcode>M92 E&lt;value&gt;</mcode> and saved with <mcode>M500</mcode>. [Learn more](extruder.md#steps_per_millimeter)</p>
+                <p>This is how many stepper motor steps it takes to push one millimeter of filament through the extruder. Get it wrong and every print under- or over-extrudes.</p>
+                <p>It depends on your motor's steps per revolution (200 is typical for 1.8° motors), your microstepping setting (16x microstepping gives 3200 steps/rev), and your hobbed bolt diameter and gear ratio. Work it out as <raw>(motor_steps_per_rev × microstepping) / (hobbed_bolt_circumference × gear_ratio)</raw>. For example, <raw>(200 × 16) / (3.14159 × 7mm × 1) ≈ 145 steps/mm</raw>.</p>
+                <p>Fine-tune it by extruding a known length and measuring what actually came out. You can adjust it live with <mcode>M92 E&lt;value&gt;</mcode> and save it with <mcode>M500</mcode>. [Learn more](extruder.md#steps_per_millimeter)</p>
             </td>
         </tr>
         <tr>
             <td><setting no-version v1="extruder.hotend.filament_diameter"></setting></td>
             <td><setting no-version v2="extruder.hotend.filament_diameter"></setting></td>
             <td class="description-cell">
-                <p>Filament diameter in millimeters for volumetric extrusion mode. When set to a value greater than <raw>0.01mm</raw>, E values in G-code are interpreted as cubic millimeters of filament volume instead of linear millimeters.</p>
-                <ul>
-                    <li>Standard values: <raw>1.75mm</raw> or <raw>3.0mm</raw> (2.85mm)</li>
-                    <li><raw>0</raw>: disables volumetric extrusion, using standard linear E values</li>
-                </ul>
-                <p>Can be changed at runtime with <mcode>M200 D&lt;diameter&gt;</mcode> (e.g., <mcode>M200 D1.75</mcode>) or disabled with <mcode>M200 D0</mcode>. Useful when switching between different filament sizes or when your slicer outputs volumetric E values. [Learn more](extruder.md#filament-diameter)</p>
+                <p>Set your filament diameter here, in millimeters, and Smoothie switches to volumetric extrusion: any value above <raw>0.01mm</raw> makes it read E values in G-code as cubic millimeters of filament instead of linear millimeters.</p>
+                <p>Standard filament is <raw>1.75mm</raw> or <raw>3.0mm</raw> (sometimes 2.85mm). Set it to <raw>0</raw> and volumetric extrusion is off, back to plain linear E values.</p>
+                <p>You can change it at runtime with <mcode>M200 D&lt;diameter&gt;</mcode>, say <mcode>M200 D1.75</mcode>, or turn it off with <mcode>M200 D0</mcode>. Handy if you switch between filament sizes or your slicer already outputs volumetric E values. [Learn more](extruder.md#filament-diameter)</p>
             </td>
         </tr>
         <tr>
             <td><setting no-version v1="extruder.hotend.acceleration"></setting></td>
             <td><setting no-version v2="actuator.delta.acceleration"></setting></td>
             <td class="description-cell">
-                <p>Maximum acceleration for the extruder stepper motor in <raw>mm/s²</raw>, controlling how quickly the extruder can change speed during extrusion moves.</p>
-                <p>Higher values allow faster speed changes but may cause filament grinding or skipped steps if too aggressive; lower values produce smoother extrusion but may cause artifacts during rapid direction changes. Typical values: <raw>500-3000 mm/s²</raw>.</p>
-                <p>Affects extruder-only moves (retractions) and the E-axis component of combined moves. Adjust based on your extruder's mechanical capabilities and filament characteristics. Can be changed at runtime with <mcode>M204 E&lt;value&gt;</mcode>.</p>
+                <p>This is the extruder motor's maximum acceleration, in <raw>mm/s²</raw>. It sets how fast the extruder can change speed during an extrusion move.</p>
+                <p>Push it too high and you'll get filament grinding or skipped steps. Too low and you can get artifacts on rapid direction changes. Most setups sit somewhere between <raw>500</raw> and <raw>3000 mm/s²</raw>.</p>
+                <p>This affects retraction moves and the E-axis part of combined moves, so tune it to what your extruder and filament can handle. You can change it at runtime with <mcode>M204 E&lt;value&gt;</mcode>.</p>
             </td>
         </tr>
         <tr>
             <td><setting no-version v1="extruder.hotend.max_speed"></setting></td>
             <td><setting no-version v2="motion control.max_speed"></setting></td>
             <td class="description-cell">
-                <p>Maximum allowable speed for the extruder stepper motor in <raw>mm/s</raw> — the firmware never moves the extruder faster than this, regardless of what speeds are requested in G-code or calculated during motion planning.</p>
-                <p>Typical values: <raw>50-200 mm/s</raw>, depending on extruder type and hotend capabilities. Direct drive extruders can typically handle higher speeds than Bowden extruders.</p>
-                <p>Too high a value may cause grinding or skipped steps; too low limits print speed. Affects both printing moves and retractions, and can be set per-extruder for multi-extruder setups.</p>
+                <p>This caps how fast the extruder can feed filament, in <raw>mm/s</raw>. Smoothie never pushes the extruder past this speed, no matter what the G-code or motion planner asks for.</p>
+                <p>Most setups run somewhere between <raw>50</raw> and <raw>200 mm/s</raw>, depending on the extruder type and hotend. Direct drive extruders usually handle higher speeds than Bowden ones.</p>
+                <p>Set it too high and you'll get grinding or skipped steps. Set it too low and you're capping your print speed. It applies to both printing moves and retractions, and you can set it separately for each extruder in a multi-extruder setup.</p>
             </td>
         </tr>
         <tr>
             <td><setting no-version v1="extruder.hotend.step_pin"></setting></td>
             <td><setting no-version v2="extruder.hotend.step_pin"></setting></td>
             <td class="description-cell">
-                <p>Pin for the extruder stepper motor driver's step signal. Each step pulse moves the motor one microstep according to the driver's microstepping configuration, toggling high/low to create the pulse train that drives the motor.</p>
-                <ul>
-                    <li>Typical Smoothieboard pins: <pin>2.3</pin> (E0/delta axis), <pin>2.8</pin> (E1/epsilon axis)</li>
-                    <li>Can be inverted by appending <raw>!</raw> (e.g., <raw>2.3!</raw>)</li>
-                </ul>
-                <p>Step frequency equals <raw>speed_mm_s × steps_per_mm</raw>, so a <raw>100mm/s</raw> move with <raw>145 steps/mm</raw> produces <raw>14,500 steps/second</raw>. Ensure your controller can handle the step frequency at maximum speed.</p>
+                <p>This is the pin that sends the step signal to your extruder driver. Every pulse moves the motor one microstep, and the pin toggles high and low to build the pulse train that actually drives it.</p>
+                <p>On a Smoothieboard you'll typically use <pin>2.3</pin> for E0 (delta axis) or <pin>2.8</pin> for E1 (epsilon axis). Append <raw>!</raw> to invert it, like <raw>2.3!</raw>, if you need to.</p>
+                <p>Step frequency works out to <raw>speed_mm_s × steps_per_mm</raw>, so a <raw>100mm/s</raw> move at <raw>145 steps/mm</raw> comes out to <raw>14,500 steps/second</raw>. Make sure your controller can keep up with that at your maximum speed.</p>
             </td>
         </tr>
         <tr>
             <td><setting no-version v1="extruder.hotend.dir_pin"></setting></td>
             <td><setting no-version v2="extruder.hotend.dir_pin"></setting></td>
             <td class="description-cell">
-                <p>Pin for the extruder stepper motor driver's direction signal. Controls whether the motor rotates forward (extrude) or backward (retract); the direction pin must be set before step pulses are sent.</p>
-                <p>Typical Smoothieboard pins: <pin>0.22</pin> (E0/delta axis), <pin>2.13</pin> (E1/epsilon axis). If your extruder moves the wrong way (retracting when it should extrude), invert this pin by appending <raw>!</raw> (e.g., <raw>0.22!</raw>).</p>
-                <p>Test direction by sending <gcode>G1 E10 F100</gcode> and verify filament extrudes forward out of the nozzle.</p>
+                <p>This is the pin that tells the extruder driver which way to turn, forward to extrude or backward to retract. Smoothie sets this pin before it sends any step pulses.</p>
+                <p>On a Smoothieboard that's typically <pin>0.22</pin> for E0 (delta axis) or <pin>2.13</pin> for E1 (epsilon axis). If your extruder moves the wrong way, retracting when it should extrude, invert the pin by appending <raw>!</raw>, like <raw>0.22!</raw>.</p>
+                <p>Test it by sending <gcode>G1 E10 F100</gcode> and checking that filament comes out of the nozzle.</p>
             </td>
         </tr>
         <tr>
             <td><setting no-version v1="extruder.hotend.en_pin"></setting></td>
             <td><setting no-version v2="extruder.hotend.en_pin"></setting></td>
             <td class="description-cell">
-                <p>Pin for the extruder stepper motor driver's enable signal. When active, the motor driver is powered and holds position with full torque; when inactive, the driver is disabled and the motor freewheels (no holding torque).</p>
-                <p>Typical Smoothieboard pins: <pin>0.21</pin> (E0/delta axis), <pin>0.10</pin> (E1/epsilon axis). Most drivers are active-low (enabled when pin is LOW), but some are active-high — append <raw>!</raw> to invert if needed (e.g., <raw>0.21!</raw>).</p>
-                <p>The motor automatically enables before moves and can disable after a timeout (see <setting v1="alpha_stepper_motor.disable_on_halt"></setting>). Manual control: <mcode>M17</mcode> enables, <mcode>M18</mcode>/<mcode>M84</mcode> disables.</p>
+                <p>This is the enable pin for the extruder driver. Make it active and the driver holds the motor with full torque; make it inactive and the motor freewheels, with no holding torque.</p>
+                <p>On a Smoothieboard that's typically <pin>0.21</pin> for E0 (delta axis) or <pin>0.10</pin> for E1 (epsilon axis). Most drivers are active-low, so they enable when the pin goes LOW, but some are active-high. Append <raw>!</raw> to invert if you need to, like <raw>0.21!</raw>.</p>
+                <p>Smoothie enables the motor automatically before a move and can disable it after a timeout (see <setting v1="alpha_stepper_motor.disable_on_halt"></setting>). You can also control it by hand: <mcode>M17</mcode> enables, <mcode>M18</mcode>/<mcode>M84</mcode> disables.</p>
             </td>
         </tr>
         <tr>
             <td><setting no-version v1="extruder.hotend.x_offset"></setting></td>
             <td><setting no-version v2="extruder.hotend2.x_offset"></setting></td>
             <td class="description-cell">
-                <p>X-axis offset of this extruder's nozzle from the primary extruder (T0), in millimeters. Used only in multi-extruder setups to compensate for physical nozzle position differences; the firmware automatically applies these offsets when switching tools with <raw>T1</raw>, <raw>T2</raw>, etc.</p>
-                <p>Positive values mean this extruder's nozzle is to the right of T0. Measure the offset by homing, moving to a reference point with T0, switching to this tool, and measuring the distance needed to return to the same point.</p>
-                <p>The primary extruder (T0) should always have offsets of <raw>0,0,0</raw>; only set offsets for secondary extruders (T1, T2, etc.).</p>
+                <p>This is how far this extruder's nozzle sits from the primary extruder (T0) on the X axis, in millimeters. It only matters in multi-extruder setups, and Smoothie applies it automatically whenever you switch tools with <raw>T1</raw>, <raw>T2</raw>, and so on.</p>
+                <p>A positive value means this nozzle sits to the right of T0. To measure it, home the machine, move to a reference point with T0, switch to this tool, and see how far you need to move to land back on the same point.</p>
+                <p>T0 should always keep its offsets at <raw>0,0,0</raw>. Only set offsets on the secondary extruders (T1, T2, and so on).</p>
             </td>
         </tr>
         <tr>
             <td><setting no-version v1="extruder.hotend.y_offset"></setting></td>
             <td><setting no-version v2="extruder.hotend2.y_offset"></setting></td>
             <td class="description-cell">
-                <p>Y-axis offset of this extruder's nozzle from the primary extruder (T0), in millimeters. Used only in multi-extruder setups to compensate for physical nozzle position differences.</p>
-                <p>Positive values mean this extruder's nozzle is toward the back (away from Y=0) compared to T0. See <setting no-version v1="extruder.hotend.x_offset"></setting> for the calibration procedure and usage details.</p>
-                <p>Must be accurately calibrated for proper layer alignment when switching between extruders during multi-material or multi-color prints.</p>
+                <p>This is how far this extruder's nozzle sits from the primary extruder (T0) on the Y axis, in millimeters. Like the X offset, it only matters in multi-extruder setups.</p>
+                <p>A positive value means this nozzle sits further back (away from Y=0) than T0. See <setting no-version v1="extruder.hotend.x_offset"></setting> for how to measure it and how it's used.</p>
+                <p>Get this right or your layers won't line up when the machine switches extruders mid-print, in multi-material or multi-color jobs.</p>
             </td>
         </tr>
         <tr>
             <td><setting no-version v1="extruder.hotend.z_offset"></setting></td>
             <td><setting no-version v2="extruder.hotend2.z_offset"></setting></td>
             <td class="description-cell">
-                <p>Z-axis offset of this extruder's nozzle from the primary extruder (T0), in millimeters. Used only in multi-extruder setups to compensate for different nozzle heights — critical for proper first layer when switching extruders.</p>
-                <p>Positive values mean this extruder's nozzle is higher (further from the bed) than T0. Calibrate by homing Z, moving to a known position with T0, switching to this tool, and measuring the height difference. Even small differences (0.05mm) can cause first layer problems.</p>
-                <p>Some slicers can compensate for Z-offset in G-code, but it's best to configure it in firmware for consistent behavior across all print jobs.</p>
+                <p>This is how far this extruder's nozzle sits from the primary extruder (T0) on the Z axis, in millimeters. It only matters in multi-extruder setups, and it directly affects your first layer when you switch extruders.</p>
+                <p>A positive value means this nozzle sits higher, further from the bed, than T0. To calibrate it, home Z, move to a known position with T0, switch to this tool, and measure the height difference. Even 0.05mm off can wreck a first layer.</p>
+                <p>Some slicers can compensate for Z offset in the G-code, but it's better to set it in firmware so it's consistent across every print.</p>
             </td>
         </tr>
         <tr>
             <td><setting no-version v1="extruder.hotend.retract_length"></setting></td>
             <td><setting no-version v2="extruder.hotend.retract_length"></setting></td>
             <td class="description-cell">
-                <p>Amount of filament to retract during firmware retraction, in millimeters. Used by <gcode>G10</gcode> (retract) and <gcode>G11</gcode> (unretract) to pull filament back, relieving nozzle pressure and preventing oozing/stringing during travel moves.</p>
-                <ul>
-                    <li>Typical values: <raw>0.5-2mm</raw> for direct drive, <raw>4-7mm</raw> for Bowden</li>
-                </ul>
-                <p>Too little retraction causes stringing; too much can cause clogs or air gaps. The total retract amount includes this length plus <setting no-version v1="extruder.hotend.retract_recover_length"></setting> (if negative). Can be changed at runtime with <mcode>M207 S&lt;length&gt;</mcode> (e.g., <mcode>M207 S1.5</mcode>). Many slicers can use firmware retraction instead of generating explicit E moves. [Learn more about retraction](extruder.md#retract)</p>
+                <p>This is how much filament to pull back during a firmware retraction, in millimeters. <gcode>G10</gcode> retracts by this amount and <gcode>G11</gcode> pushes it back, which relieves pressure in the nozzle and stops oozing and stringing on travel moves.</p>
+                <p>Direct drive extruders usually want <raw>0.5-2mm</raw>. Bowden setups need more, usually <raw>4-7mm</raw>.</p>
+                <p>Too little and you get stringing. Too much and you risk clogs or air gaps. The total retract amount is this value plus <setting no-version v1="extruder.hotend.retract_recover_length"></setting> when that's negative. You can change it at runtime with <mcode>M207 S&lt;length&gt;</mcode>, for example <mcode>M207 S1.5</mcode>. Many slicers can use firmware retraction instead of generating their own E moves. [Learn more about retraction](extruder.md#retract)</p>
             </td>
         </tr>
         <tr>
             <td><setting no-version v1="extruder.hotend.retract_feedrate"></setting></td>
             <td><setting no-version v2="extruder.hotend.retract_feedrate"></setting></td>
             <td class="description-cell">
-                <p>Speed at which filament is retracted during firmware retraction, in <raw>mm/s</raw>. Used by <gcode>G10</gcode>. Stored and used internally in <raw>mm/s</raw>, but the <mcode>M207</mcode> command expects <raw>mm/min</raw> (multiply by 60).</p>
-                <ul>
-                    <li>Typical values: <raw>25-60 mm/s</raw> (<raw>1500-3600 mm/min</raw>)</li>
-                </ul>
-                <p>Faster retractions reduce stringing but may cause grinding or skipped steps if too fast. Direct drive can typically handle faster retractions than Bowden. Speed should be fast enough to quickly relieve pressure but not so fast that it damages filament or causes extruder jamming. Can be changed at runtime with <mcode>M207 F&lt;mm_per_min&gt;</mcode>.</p>
+                <p>This is how fast filament retracts during a firmware retraction, in <raw>mm/s</raw>, used by <gcode>G10</gcode>. Smoothie stores and uses it internally in mm/s, but the <mcode>M207</mcode> command itself expects mm/min, so multiply by 60 when you send it.</p>
+                <p>Typical values run <raw>25-60 mm/s</raw> (<raw>1500-3600 mm/min</raw>).</p>
+                <p>Faster retractions cut down on stringing, but push it too far and you'll get grinding or skipped steps. Direct drive can usually go faster than Bowden. You want it fast enough to relieve pressure quickly, without damaging the filament or jamming the extruder. Change it at runtime with <mcode>M207 F&lt;mm_per_min&gt;</mcode>.</p>
             </td>
         </tr>
         <tr>
             <td><setting no-version v1="extruder.hotend.retract_recover_length"></setting></td>
             <td><setting no-version v2="extruder.hotend.retract_recover_length"></setting></td>
             <td class="description-cell">
-                <p>Additional length of filament to extrude when recovering (unretract) beyond the retracted amount. Used by <gcode>G11</gcode>. Total recover distance = <setting no-version v1="extruder.hotend.retract_length"></setting> + this value.</p>
+                <p>This adds, or removes, filament on top of the retracted amount when the extruder recovers (unretracts), used by <gcode>G11</gcode>. The total recovery distance is <setting no-version v1="extruder.hotend.retract_length"></setting> plus this value.</p>
                 <ul>
-                    <li>Typical values: <raw>-0.2 to +0.2mm</raw></li>
-                    <li>Positive: primes the nozzle (useful after long travels)</li>
-                    <li>Negative: recovers slightly less than retracted (can help with oozy materials)</li>
-                    <li><raw>0</raw>: recovers exactly the retracted amount</li>
+                    <li>Typical range: <raw>-0.2 to +0.2mm</raw></li>
+                    <li>Positive primes the nozzle, useful after long travel moves</li>
+                    <li>Negative recovers a bit less than what was retracted, which can help with oozy materials</li>
+                    <li><raw>0</raw> recovers exactly what was retracted</li>
                 </ul>
-                <p>Compensates for material properties, oozing during travel, or pressure changes in the melt zone. Fine-tune to eliminate blobs (reduce value) or gaps (increase value) after travel moves. Can be changed at runtime with <mcode>M208 S&lt;length&gt;</mcode>.</p>
+                <p>Use it to compensate for oozing during travel or pressure changes in the melt zone. If you're getting blobs after a travel move, turn it down. If you're getting gaps instead, turn it up. Change it at runtime with <mcode>M208 S&lt;length&gt;</mcode>.</p>
             </td>
         </tr>
         <tr>
             <td><setting no-version v1="extruder.hotend.retract_recover_feedrate"></setting></td>
             <td><setting no-version v2="extruder.hotend.retract_recover_feedrate"></setting></td>
             <td class="description-cell">
-                <p>Speed at which filament is recovered (unretracted) during firmware unretraction, in <raw>mm/s</raw>. Used by <gcode>G11</gcode>. Stored and used internally in <raw>mm/s</raw>, but the <mcode>M208</mcode> command expects <raw>mm/min</raw> (multiply by 60).</p>
-                <ul>
-                    <li>Typical values: <raw>10-40 mm/s</raw> (<raw>600-2400 mm/min</raw>), usually slower than retract speed</li>
-                </ul>
-                <p>Slower recovery speeds help prevent blobs and allow time for pressure in the nozzle to build back up smoothly. Too fast can cause blobs; too slow can cause gaps at the start of extrusion. Should generally be less than <setting no-version v1="extruder.hotend.retract_feedrate"></setting>. Can be changed at runtime with <mcode>M208 F&lt;mm_per_min&gt;</mcode>.</p>
+                <p>This is how fast filament comes back during unretraction, in <raw>mm/s</raw>, used by <gcode>G11</gcode>. Like the retract feedrate, Smoothie stores it in mm/s internally but the <mcode>M208</mcode> command expects mm/min, so multiply by 60.</p>
+                <p>Typical values run <raw>10-40 mm/s</raw> (<raw>600-2400 mm/min</raw>), usually slower than the retract speed.</p>
+                <p>A slower recovery gives pressure in the nozzle time to build back up smoothly, which helps avoid blobs. Too slow and you'll get gaps at the start of extrusion instead. Keep it below <setting no-version v1="extruder.hotend.retract_feedrate"></setting>. Change it at runtime with <mcode>M208 F&lt;mm_per_min&gt;</mcode>.</p>
             </td>
         </tr>
         <tr>
             <td><setting no-version v1="extruder.hotend.retract_zlift_length"></setting></td>
             <td><setting no-version v2="extruder.hotend.retract_zlift_length"></setting></td>
             <td class="description-cell">
-                <p>Amount to lift the Z-axis during retraction, in millimeters (Z-hop / Z-lift feature). When <gcode>G10</gcode> runs, the nozzle lifts by this amount after retracting; during <gcode>G11</gcode>, it lowers back to the original height after unretraction.</p>
-                <ul>
-                    <li>Typical values: <raw>0.2-1.0mm</raw></li>
-                    <li><raw>0</raw>: disables Z-lift</li>
-                </ul>
-                <p>Z-hop reduces the chance of the nozzle dragging through or knocking over printed parts during travel moves — especially useful for tall thin features, parts with significant Z-variation, or materials prone to warping. Trade-off: increases print time due to extra Z movements. Can be changed at runtime with <mcode>M207 Z&lt;length&gt;</mcode>.</p>
+                <p>This is Z-hop: how far the nozzle lifts during a retraction, in millimeters. When <gcode>G10</gcode> runs, the nozzle lifts by this amount right after retracting, and on <gcode>G11</gcode> it drops back down to the original height after unretraction.</p>
+                <p>Typical values run <raw>0.2-1.0mm</raw>. Set it to <raw>0</raw> and Z-lift is off.</p>
+                <p>Z-hop keeps the nozzle from dragging through or knocking over printed parts during travel, which matters most on tall thin features, parts with a lot of Z variation, or materials that like to warp. It costs you print time though, since it's extra Z movement. Change it at runtime with <mcode>M207 Z&lt;length&gt;</mcode>.</p>
             </td>
         </tr>
         <tr>
             <td><setting no-version v1="extruder.hotend.retract_zlift_feedrate"></setting></td>
             <td><setting no-version v2="extruder.hotend.retract_zlift_feedrate"></setting></td>
             <td class="description-cell">
-                <p>Speed for Z-axis movement during Z-lift operations, in <raw>mm/min</raw> — used for both lifting (during <gcode>G10</gcode>) and lowering (during <gcode>G11</gcode>) moves when <setting no-version v1="extruder.hotend.retract_zlift_length"></setting> is greater than zero. Note: this is specified in <raw>mm/min</raw> (not <raw>mm/s</raw> like most other extruder speeds).</p>
-                <ul>
-                    <li>Typical values: <raw>3000-9000 mm/min</raw> (<raw>50-150 mm/s</raw>)</li>
-                </ul>
-                <p>Faster Z-lift reduces travel time overhead but may cause ringing or mechanical stress on Z-axis components. Should not exceed the Z-axis maximum speed. Can be changed at runtime with <mcode>M207 Q&lt;mm_per_min&gt;</mcode>.</p>
+                <p>This is the speed for the Z axis during a Z-lift, in <raw>mm/min</raw>, used both when lifting (on <gcode>G10</gcode>) and lowering (on <gcode>G11</gcode>) whenever <setting no-version v1="extruder.hotend.retract_zlift_length"></setting> is above zero. Note it's in mm/min, not mm/s like most other extruder speeds.</p>
+                <p>Typical values run <raw>3000-9000 mm/min</raw> (<raw>50-150 mm/s</raw>).</p>
+                <p>Faster Z-lift cuts travel overhead, but it can cause ringing or put extra stress on your Z axis. Don't push it past your Z axis's maximum speed. Change it at runtime with <mcode>M207 Q&lt;mm_per_min&gt;</mcode>.</p>
             </td>
         </tr>
     </tbody>

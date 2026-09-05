@@ -10,11 +10,13 @@
 {::nomarkdown}
 <figure id="learning-diagram-25-guide-endstops" style="clear: both; max-width: 960px; margin: 2rem auto; scroll-margin-top: 16vh;">
   <a href="/images/learning-diagrams/25-guide-endstops.svg">
-    <img src="/images/learning-diagrams/25-guide-endstops.svg" alt="Endstop placement: Homing direction and physical limit must agree." style="display: block; width: 100%; height: auto; border-radius: 0.75rem;"/>
+    <img src="/images/learning-diagrams/25-guide-endstops.svg" alt="Place the endstop at the homing end: home_to_min uses the minimum endstop. home_to_max uses the maximum endstop." loading="lazy" decoding="async" style="display: block; width: 100%; height: auto; border-radius: 0.1rem;"/>
   </a>
-  <figcaption style="margin-top: 0.6rem; font-size: 0.92rem; opacity: 0.82; text-align: center;">Visual guide: Homing direction and physical limit must agree.</figcaption>
+  <figcaption style="margin-top: 0.6rem; font-size: 0.92rem; opacity: 0.82; text-align: center;">Place the endstop at the homing end <a href="#learning-diagram-25-guide-endstops" aria-label="Permanent link to Place the endstop at the homing end" style="margin-left: 0.35rem; text-decoration: none;">#</a></figcaption>
 </figure>
 {:/nomarkdown}
+
+
 
 *It's essentially just a switch*
 

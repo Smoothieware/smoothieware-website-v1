@@ -28,11 +28,13 @@ permalink: /rotatable-cartesian
 {::nomarkdown}
 <figure id="learning-diagram-38-rotatable-cartesian" style="clear: both; max-width: 960px; margin: 2rem auto; scroll-margin-top: 16vh;">
   <a href="/images/learning-diagrams/38-rotatable-cartesian.svg">
-    <img src="/images/learning-diagrams/38-rotatable-cartesian.svg" alt="Rotatable Cartesian frame: A rotary axis changes tool orientation." style="display: block; width: 100%; height: auto; border-radius: 0.75rem;"/>
+    <img src="/images/learning-diagrams/38-rotatable-cartesian.svg" alt="Rotatable Cartesian turns the XY coordinate system: Smoothie applies a rotation matrix while Z remains unchanged." loading="lazy" decoding="async" style="display: block; width: 100%; height: auto; border-radius: 0.1rem;"/>
   </a>
-  <figcaption style="margin-top: 0.6rem; font-size: 0.92rem; opacity: 0.82; text-align: center;">Visual guide: A rotary axis changes tool orientation.</figcaption>
+  <figcaption style="margin-top: 0.6rem; font-size: 0.92rem; opacity: 0.82; text-align: center;">Rotatable Cartesian turns the XY coordinate system <a href="#learning-diagram-38-rotatable-cartesian" aria-label="Permanent link to Rotatable Cartesian turns the XY coordinate system" style="margin-left: 0.35rem; text-decoration: none;">#</a></figcaption>
 </figure>
 {:/nomarkdown}
+
+
 
 {::nomarkdown}
 <sl-alert variant="warning" open>

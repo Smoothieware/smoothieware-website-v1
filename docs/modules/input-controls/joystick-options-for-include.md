@@ -13,74 +13,68 @@
             <td><setting no-version v1="joystick.{name}.enable"></setting></td>
             <td class="not-available">Not available in v2</td>
             <td class="description-cell">
-                <p>If true, creates and enables a new Joystick module with the specified name.</p>
-                <p>The joystick module reads analog input from joystick devices and uses it to control machine movement via the Jogger module or other control systems.</p>
-                <p>Each joystick instance requires a unique name.</p>
+                <p>Set this to true and Smoothie creates a new Joystick module with the name you give it.</p>
+                <p>The joystick module reads analog input from your joystick and uses it to drive machine movement, through the Jogger module or other control systems.</p>
+                <p>Each instance needs its own unique name.</p>
             </td>
         </tr>
         <tr>
             <td><setting no-version v1="joystick.{name}.pin"></setting></td>
             <td class="not-available">Not available in v2</td>
             <td class="description-cell">
-                <p>Specifies which SmoothieBoard pin should be used to read the analog joystick value.</p>
-                <p>The pin must be one of the analog-capable pins (typically <pin>0.2</pin>, <pin>0.3</pin>, <pin>0.23</pin>-<pin>0.26</pin>, <pin>1.30</pin>, <pin>1.31</pin>).</p>
-                <p>Connect the joystick wiper (output) to this pin, with the potentiometer ends connected to 3.3V and ground.</p>
+                <p>This is the pin Smoothie reads the analog joystick value on.</p>
+                <p>It has to be one of the analog-capable pins, typically <pin>0.2</pin>, <pin>0.3</pin>, <pin>0.23</pin>-<pin>0.26</pin>, <pin>1.30</pin>, or <pin>1.31</pin>.</p>
+                <p>Connect the joystick's wiper (its output) to this pin, and wire the potentiometer ends to 3.3V and ground.</p>
             </td>
         </tr>
         <tr>
             <td><setting no-version v1="joystick.{name}.refresh_rate"></setting></td>
             <td class="not-available">Not available in v2</td>
             <td class="description-cell">
-                <p>Sets how many times per second to update the joystick reading. Higher values give more responsive control but use more CPU time.</p>
-                <ul>
-                    <li>Typical range: 10-100 Hz</li>
-                    <li>Default: 10 Hz if not specified</li>
-                </ul>
+                <p>This sets how many times per second Smoothie updates the joystick reading. Raise it and control feels more responsive, but it costs more CPU time.</p>
+                <p>Typical range is 10-100 Hz. If you don't set it, it defaults to 10 Hz.</p>
             </td>
         </tr>
         <tr>
             <td><setting no-version v1="joystick.{name}.zero_offset"></setting></td>
             <td class="not-available">Not available in v2</td>
             <td class="description-cell">
-                <p>Sets what voltage will map to zero output — typically the center position of the joystick, usually around 1.65V (half of 3.3V).</p>
-                <p>The joystick module subtracts this offset from the measured voltage before scaling. It can also be determined automatically using the auto_zero feature.</p>
+                <p>This is the voltage that maps to zero output, normally the joystick's center position, usually around 1.65V (half of 3.3V).</p>
+                <p>Smoothie subtracts this offset from the measured voltage before scaling it. You can also let the auto_zero feature work this out for you.</p>
             </td>
         </tr>
         <tr>
             <td><setting no-version v1="joystick.{name}.endpoint"></setting></td>
             <td class="not-available">Not available in v2</td>
             <td class="description-cell">
-                <p>Sets what voltage will map to +1 or -1 output, defining the full range of motion for the joystick.</p>
-                <ul>
-                    <li>If endpoint is greater than zero_offset, it specifies what voltage maps to +1</li>
-                    <li>If endpoint is less than zero_offset, it specifies what voltage maps to -1</li>
-                </ul>
-                <p>Typical value is 3.3V (or close to it, like 3.2V) for maximum range.</p>
+                <p>This is the voltage that maps to +1 or -1 output, and it sets the full range of motion for the joystick.</p>
+                <p>If endpoint is above zero_offset, it's the voltage that maps to +1. If it's below zero_offset, it maps to -1.</p>
+                <p>3.3V, or close to it like 3.2V, gives you the maximum range.</p>
             </td>
         </tr>
         <tr>
             <td><setting no-version v1="joystick.{name}.auto_zero"></setting></td>
             <td class="not-available">Not available in v2</td>
             <td class="description-cell">
-                <p>If true, enables the auto-zeroing feature, which automatically determines the zero_offset value at startup by averaging readings during the startup_time period.</p>
-                <p>This is useful for joysticks where the center position voltage may vary slightly between devices.</p>
-                <p>Do not move the joystick during startup when this is enabled.</p>
+                <p>If true, this turns on auto-zeroing, and Smoothie works out zero_offset itself at startup by averaging readings over the startup_time period.</p>
+                <p>This helps because the center position voltage can vary a bit from one joystick to another.</p>
+                <p>Don't touch the joystick while it's starting up if you've got this enabled.</p>
             </td>
         </tr>
         <tr>
             <td><setting no-version v1="joystick.{name}.startup_time"></setting></td>
             <td class="not-available">Not available in v2</td>
             <td class="description-cell">
-                <p>Sets how long (in milliseconds) after SmoothieBoard resets to obtain readings to average for the auto-zero offset calculation.</p>
-                <p>Must be at least 1000 / refresh_rate to ensure sufficient samples, but should not be too long, to avoid the joystick being moved during measurement. Typical value is 1000ms (1 second).</p>
+                <p>This sets how long, in milliseconds, Smoothie spends collecting readings after the board resets, to average for the auto-zero calculation.</p>
+                <p>It needs to be at least 1000 / refresh_rate so you get enough samples, but don't set it too long either, or you risk the joystick getting bumped during measurement. 1000ms (1 second) is a typical value.</p>
             </td>
         </tr>
         <tr>
             <td><setting no-version v1="joystick.{name}.start_value"></setting></td>
             <td class="not-available">Not available in v2</td>
             <td class="description-cell">
-                <p>Sets the default value of the joystick output during the startup_time period when auto-zeroing is active.</p>
-                <p>This value should be between -1 and 1, and is typically 0 to indicate no movement during calibration — preventing unwanted motion while the auto-zero feature is determining the center position.</p>
+                <p>This sets the joystick's output value during the startup_time period, while auto-zeroing is running.</p>
+                <p>It should be between -1 and 1, and you'll normally leave it at 0 so there's no movement while auto-zero is finding the center position.</p>
             </td>
         </tr>
     </tbody>

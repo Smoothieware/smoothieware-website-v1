@@ -3,6 +3,17 @@ permalink: /extruder
 ---
 
 
+
+
+<!-- learning-diagram:46-extruder-path -->
+{::nomarkdown}
+<figure id="learning-diagram-46-extruder-path" style="clear: both; max-width: 960px; margin: 2rem auto; scroll-margin-top: 16vh;">
+  <a href="/images/learning-diagrams/46-extruder-path.svg">
+    <img src="/images/learning-diagrams/46-extruder-path.svg" alt="The extruder pushes filament through the hotend: The drive feeds cold filament into the melt zone and through the nozzle." loading="lazy" decoding="async" style="display: block; width: 100%; height: auto; border-radius: 0.1rem;"/>
+  </a>
+  <figcaption style="margin-top: 0.6rem; font-size: 0.92rem; opacity: 0.82; text-align: center;">The extruder pushes filament through the hotend <a href="#learning-diagram-46-extruder-path" aria-label="Permanent link to The extruder pushes filament through the hotend" style="margin-left: 0.35rem; text-decoration: none;">#</a></figcaption>
+</figure>
+{:/nomarkdown}
 {% include machine-guides/3d-printers/extruder-guide-for-include.md %}
 
 ## All options
@@ -35,15 +46,6 @@ V1 uses a flat configuration format where all settings are on one line with spac
 ```
 # Basic extruder configuration
 
-<!-- learning-diagram:46-extruder-path -->
-{::nomarkdown}
-<figure id="learning-diagram-46-extruder-path" style="clear: both; max-width: 960px; margin: 2rem auto; scroll-margin-top: 16vh;">
-  <a href="/images/learning-diagrams/46-extruder-path.svg">
-    <img src="/images/learning-diagrams/46-extruder-path.svg" alt="Extruder material path: Drive, melt zone, and nozzle form one material path." style="display: block; width: 100%; height: auto; border-radius: 0.75rem;"/>
-  </a>
-  <figcaption style="margin-top: 0.6rem; font-size: 0.92rem; opacity: 0.82; text-align: center;">Visual guide: Drive, melt zone, and nozzle form one material path.</figcaption>
-</figure>
-{:/nomarkdown}
 extruder.hotend.enable                          true
 extruder.hotend.steps_per_mm                    140
 extruder.hotend.acceleration                    500

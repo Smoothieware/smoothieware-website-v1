@@ -33,10 +33,10 @@
             <td><setting no-version v1="temperature_control.{name}.sensor"></setting></td>
             <td><setting no-version v2="temperature control.sensor"></setting></td>
             <td class="description-cell">
-                <p>Set the type of sensor used to read temperature.</p>
+                <p>This sets the type of sensor used to read temperature.</p>
                 <ul>
-                    <li><raw>thermistor</raw> — the usual thermistor reading via ADC method</li>
-                    <li><raw>max31855</raw> — read values from a thermocouple over SPI. See <a href="temperaturecontrol#thermocouple">Reading a thermocouple</a></li>
+                    <li><raw>thermistor</raw>: the usual thermistor reading via ADC</li>
+                    <li><raw>max31855</raw>: read values from a thermocouple over SPI. See <a href="temperaturecontrol#thermocouple">Reading a thermocouple</a></li>
                 </ul>
             </td>
         </tr>
@@ -83,22 +83,22 @@
             <td><setting no-version v1="temperature_control.{name}.coefficients"></setting></td>
             <td><setting no-version v2="temperature control.coefficients"></setting></td>
             <td class="description-cell">
-                <p>Steinhart-Hart equation coefficients (c1, c2, c3) for accurate temperature calculation across the full temperature range. Specify as three comma-separated floats (no spaces).</p>
-                <p>This enables the most accurate temperature measurement method.</p>
+                <p>These are the Steinhart-Hart equation coefficients (c1, c2, c3), for accurate temperature readings across the whole range. Give them as three comma-separated floats, no spaces.</p>
+                <p>This is the most accurate way to measure temperature that Smoothie supports.</p>
             </td>
         </tr>
         <tr>
             <td><setting no-version v1="temperature_control.{name}.rt_curve"></setting></td>
             <td><setting no-version v2="temperature control.rt_curve"></setting></td>
             <td class="description-cell">
-                <p>Three temperature/resistance pairs used to auto-calculate Steinhart-Hart coefficients. Format: <raw>T1,R1,T2,R2,T3,R3</raw>, where T is temperature in °C and R is resistance in ohms.</p>
-                <p>Best practice: use the 25°C, 150°C, and 240°C points from the thermistor datasheet.</p>
+                <p>These are three temperature/resistance pairs, used to auto-calculate the Steinhart-Hart coefficients for you. Format: <raw>T1,R1,T2,R2,T3,R3</raw>, where T is temperature in °C and R is resistance in ohms.</p>
+                <p>Use the 25°C, 150°C, and 240°C points from your thermistor's datasheet.</p>
             </td>
         </tr>
         <tr>
             <td><setting no-version v1="temperature_control.{name}.use_beta_table"></setting></td>
             <td><setting no-version v2="temperature control.use_beta_table"></setting></td>
-            <td class="description-cell">Forces use of beta-based predefined thermistor table instead of Steinhart-Hart coefficients when using a predefined thermistor name. This setting only applies when a predefined thermistor name is specified.</td>
+            <td class="description-cell">Forces Smoothie to use the beta-based predefined thermistor table instead of Steinhart-Hart coefficients, when you're using a predefined thermistor name. Only applies when a predefined thermistor name is specified.</td>
         </tr>
         <tr>
             <td><setting no-version v1="temperature_control.{name}.chip_select_pin"></setting></td>
@@ -119,11 +119,8 @@
             <td><setting no-version v1="temperature_control.{name}.ad8495_offset"></setting></td>
             <td><em>V1 only</em></td>
             <td class="description-cell">
-                <p>Temperature offset in degrees Celsius for AD8495 sensor calibration. Only used when sensor type is <raw>ad8495</raw>.</p>
-                <ul>
-                    <li>Default: 0</li>
-                    <li>Adafruit AD8495 boards typically require an offset of 250</li>
-                </ul>
+                <p>This is a temperature offset in degrees Celsius, for calibrating the AD8495 sensor. Only used when the sensor type is <raw>ad8495</raw>.</p>
+                <p>Default is 0. Adafruit's AD8495 boards typically need an offset of 250.</p>
             </td>
         </tr>
         <tr>
@@ -135,8 +132,8 @@
             <td><setting no-version v1="temperature_control.{name}.readings_per_second"></setting></td>
             <td><setting no-version v2="temperature control.readings_per_second"></setting></td>
             <td class="description-cell">
-                <p>How many times per second to read temperature from the sensor. This setting determines how often the sensor is read and PID calculation is performed.</p>
-                <p>Higher values improve control stability but increase CPU load.</p>
+                <p>How many times per second to read the temperature from the sensor. This is also how often the PID calculation runs.</p>
+                <p>Turn it up and you get more stable control, but it costs more CPU.</p>
             </td>
         </tr>
         <tr>
@@ -148,60 +145,60 @@
             <td><setting no-version v1="temperature_control.{name}.max_pwm"></setting></td>
             <td><setting no-version v2="temperature control.max_pwm"></setting></td>
             <td class="description-cell">
-                <p>Maximum PWM value for the heating element. This can be from <raw>0</raw> to <raw>255</raw>.</p>
+                <p>This is the maximum PWM value for the heating element, from <raw>0</raw> to <raw>255</raw>.</p>
                 <ul>
-                    <li><raw>255</raw> (default) — normal value if using the right voltage for your heating element</li>
-                    <li><raw>64</raw> — a good value if driving a 12v resistor with 24v</li>
+                    <li><raw>255</raw> (default): the normal value if you're running your heating element at the right voltage</li>
+                    <li><raw>64</raw>: a good value if you're driving a 12v resistor with 24v</li>
                 </ul>
             </td>
         </tr>
         <tr>
             <td><setting no-version v1="temperature_control.{name}.bang_bang"></setting></td>
             <td><setting no-version v2="temperature control.bang_bang"></setting></td>
-            <td class="description-cell">Set to true to use bang bang control rather than PID. Bang-bang (on/off) control is suitable for slow-response systems like heated beds with mechanical relays or SSRs.</td>
+            <td class="description-cell">Set to true to use bang bang control instead of PID. Bang-bang (on/off) control works well for slow-response systems like heated beds with mechanical relays or SSRs.</td>
         </tr>
         <tr>
             <td><setting no-version v1="temperature_control.{name}.hysteresis"></setting></td>
             <td><setting no-version v2="temperature control.hysteresis"></setting></td>
-            <td class="description-cell">Set to the temperature in degrees C to use as hysteresis for bang bang control. Creates a deadband of ±hysteresis around the target temperature to prevent rapid heater switching.</td>
+            <td class="description-cell">Set to the temperature in degrees C to use as hysteresis for bang bang control. This creates a deadband of ±hysteresis around the target temperature, so the heater doesn't switch on and off too rapidly.</td>
         </tr>
         <tr>
             <td><setting no-version v1="temperature_control.{name}.p_factor"></setting></td>
             <td><setting no-version v2="temperature control.p_factor"></setting></td>
             <td class="description-cell">
-                <p>P factor for PID temperature regulation. Determines the controller's response to current temperature error.</p>
-                <p>Higher values increase responsiveness but may cause oscillation. Use <mcode>M303</mcode> PID autotune for optimal values.</p>
+                <p>This is the P factor for PID temperature regulation, it's what determines how strongly the controller reacts to the current temperature error.</p>
+                <p>Turn it up and the controller responds faster, but push it too far and you'll get oscillation. Use <mcode>M303</mcode> PID autotune to find good values instead of guessing.</p>
             </td>
         </tr>
         <tr>
             <td><setting no-version v1="temperature_control.{name}.i_factor"></setting></td>
             <td><setting no-version v2="temperature control.i_factor"></setting></td>
             <td class="description-cell">
-                <p>I factor for PID temperature regulation. Eliminates steady-state temperature error over time by accumulating past errors. Internally scaled by PIDdt (1/readings_per_second).</p>
-                <p>Higher values eliminate offset faster but risk overshoot. Use <mcode>M303</mcode> autotune for optimal values.</p>
+                <p>This is the I factor for PID temperature regulation. It eliminates steady-state temperature error over time, by accumulating past errors. It's internally scaled by PIDdt (1/readings_per_second).</p>
+                <p>Turn it up and offset gets eliminated faster, but you risk overshoot. Use <mcode>M303</mcode> autotune to find good values.</p>
             </td>
         </tr>
         <tr>
             <td><setting no-version v1="temperature_control.{name}.d_factor"></setting></td>
             <td><setting no-version v2="temperature control.d_factor"></setting></td>
             <td class="description-cell">
-                <p>D factor for PID temperature regulation. Reduces overshoot by damping the rate of temperature change. Internally scaled by PIDdt.</p>
-                <p>Higher values reduce overshoot but may slow response. Use <mcode>M303</mcode> autotune for optimal values.</p>
+                <p>This is the D factor for PID temperature regulation. It reduces overshoot by damping how fast the temperature is allowed to change, and is internally scaled by PIDdt.</p>
+                <p>Turn it up and you get less overshoot, but the response gets slower. Use <mcode>M303</mcode> autotune to find good values.</p>
             </td>
         </tr>
         <tr>
             <td><setting no-version v1="temperature_control.{name}.i_max"></setting></td>
             <td><setting no-version v2="temperature control.i_max"></setting></td>
             <td class="description-cell">
-                <p>Maximum value for the I variable in the PID control. This should usually be set to about the same value as <setting v1="temperature_control.{name}.max_pwm" v2="temperature control.max_pwm"></setting> (as a rule of thumb — it is not actually a pwm setting). This helps prevent overshoot when initially heating up.</p>
-                <p>If you get a strong (>10°C) overshoot on startup, try setting this to a value lower than <setting v1="temperature_control.{name}.max_pwm" v2="temperature control.max_pwm"></setting>.</p>
+                <p>This is the maximum value for the I variable in the PID control. As a rule of thumb, set it to about the same value as <setting v1="temperature_control.{name}.max_pwm" v2="temperature control.max_pwm"></setting>, even though it isn't actually a PWM setting itself. This helps prevent overshoot when you first start heating up.</p>
+                <p>If you get a strong overshoot (more than 10°C) on startup, try setting this lower than <setting v1="temperature_control.{name}.max_pwm" v2="temperature control.max_pwm"></setting>.</p>
             </td>
         </tr>
         <tr>
             <td><setting no-version v1="temperature_control.{name}.windup"></setting></td>
             <td><setting no-version v2="temperature control.windup"></setting></td>
             <td class="description-cell">
-                <p>Enable alternative integral windup protection behavior.</p>
+                <p>This turns on an alternative integral windup protection behavior.</p>
                 <ul>
                     <li>false (default): I term updates continuously</li>
                     <li>true: I term only updates when PID output is not saturated (anti-windup)</li>
@@ -212,8 +209,8 @@
             <td><em>V2 only</em></td>
             <td><setting no-version v2="temperature control.use_ponm"></setting></td>
             <td class="description-cell">
-                <p>Use Proportional on Measurement instead of Proportional on Error. PonM mode reduces overshoot when changing setpoint by applying the P term to measurement changes rather than error changes.</p>
-                <p>See <a href="http://brettbeauregard.com/blog/2017/06/introducing-proportional-on-measurement/">this article</a> for a detailed explanation.</p>
+                <p>This switches to Proportional on Measurement instead of Proportional on Error. PonM mode reduces overshoot when you change the setpoint, by applying the P term to changes in the measurement rather than changes in the error.</p>
+                <p>See <a href="http://brettbeauregard.com/blog/2017/06/introducing-proportional-on-measurement/">this article</a> for a fuller explanation.</p>
             </td>
         </tr>
         <tr>
@@ -246,7 +243,7 @@
             <td><em>V2 only</em></td>
             <td><setting no-version v2="temperature control.tool_id"></setting></td>
             <td class="description-cell">
-                <p>Tool number for M-code addressing and tool selection. Determines which temperature controller is addressed by T commands and whether the controller responds to tool change commands.</p>
+                <p>This is the tool number used for M-code addressing and tool selection. It determines which temperature controller responds to T commands and to tool change commands.</p>
                 <ul>
                     <li>Auto-assigned: 0 for hotend</li>
                     <li>1 for hotend2</li>
@@ -258,14 +255,14 @@
         <tr>
             <td><setting no-version v1="temperature_control.{name}.max_temp"></setting></td>
             <td><setting no-version v2="temperature control.max_temp"></setting></td>
-            <td class="description-cell">If set, no temperature above this will be accepted and if the temperature exceeds this value the system will be forced into a HALT state. This protects against thermal runaway and prevents damage to the machine and surroundings.</td>
+            <td class="description-cell">If you set this, no temperature above it will be accepted, and if the temperature goes over it the system is forced into a HALT state. This is what protects you against thermal runaway.</td>
         </tr>
         <tr>
             <td><setting no-version v1="temperature_control.{name}.min_temp"></setting></td>
             <td><setting no-version v2="temperature control.min_temp"></setting></td>
             <td class="description-cell">
-                <p>Minimum safe temperature threshold. If the sensor reads below this value (e.g., thermistor disconnected), the system immediately enters HALT state and the heater turns off.</p>
-                <p>This is a critical safety feature that detects sensor failures.</p>
+                <p>This is the minimum safe temperature. If the sensor reads below it, for example because the thermistor got disconnected, the system immediately enters HALT state and turns the heater off.</p>
+                <p>It's what catches a failed sensor.</p>
             </td>
         </tr>
         <tr>
@@ -273,7 +270,7 @@
             <td><setting no-version v2="temperature control.runaway_heating_timeout"></setting></td>
             <td class="description-cell">
                 <p>If we take longer than this many seconds to heat up, the system will be forced into a HALT state. Set to 0 to disable. Default is 900 seconds.</p>
-                <p>Detects heater failure, insufficient power, or a disconnected heater.</p>
+                <p>Catches a failed heater, not enough power, or a heater that's come disconnected.</p>
             </td>
         </tr>
         <tr>
@@ -281,7 +278,7 @@
             <td><setting no-version v2="temperature control.runaway_cooling_timeout"></setting></td>
             <td class="description-cell">
                 <p>If we take longer than this many seconds to cool down, the system will be forced into a HALT state. Set to 0 to disable. Default is disabled.</p>
-                <p>Detects a stuck heater or sensor failures.</p>
+                <p>Catches a heater that's stuck on, or a sensor failure.</p>
             </td>
         </tr>
         <tr>
@@ -289,14 +286,14 @@
             <td><setting no-version v2="temperature control.runaway_range"></setting></td>
             <td class="description-cell">
                 <p>If set to non-zero, and the target temperature is reached, and temperature diverges from the target temperature by more than this, the system will be forced into a HALT state.</p>
-                <p>Detects a heater stuck on, sensor failure, cooling system failure, or a part cooling fan blowing on the thermistor.</p>
+                <p>Catches a heater stuck on, a sensor failure, a cooling system failure, or a part cooling fan blowing directly on the thermistor.</p>
             </td>
         </tr>
         <tr>
             <td><setting no-version v1="temperature_control.{name}.runaway_error_range"></setting></td>
             <td><setting no-version v2="temperature control.runaway_error_range"></setting></td>
             <td class="description-cell">
-                <p>Acceptable temperature tolerance (±°C) for determining when the target temperature has been "reached". Temperature must be within (target ± runaway_error_range) to be considered at target and to satisfy <mcode>M109</mcode> wait conditions.</p>
+                <p>This is the tolerance (±°C) Smoothie uses to decide the target temperature has been "reached". The temperature has to be within target ± runaway_error_range to count as at target, and to satisfy <mcode>M109</mcode>'s wait condition.</p>
                 <p>Default is ±1.0°C.</p>
             </td>
         </tr>

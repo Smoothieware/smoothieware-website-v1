@@ -8,11 +8,13 @@ permalink: /safety-thermistor
 {::nomarkdown}
 <figure id="learning-diagram-45-safety-thermistor" style="clear: both; max-width: 960px; margin: 2rem auto; scroll-margin-top: 16vh;">
   <a href="/images/learning-diagrams/45-safety-thermistor.svg">
-    <img src="/images/learning-diagrams/45-safety-thermistor.svg" alt="Safety thermistor: An independent check can cut heat on disagreement." style="display: block; width: 100%; height: auto; border-radius: 0.75rem;"/>
+    <img src="/images/learning-diagrams/45-safety-thermistor.svg" alt="A second thermistor can shut down the PSU: If the safety reading crosses its threshold, Smoothie turns the PSU off." loading="lazy" decoding="async" style="display: block; width: 100%; height: auto; border-radius: 0.1rem;"/>
   </a>
-  <figcaption style="margin-top: 0.6rem; font-size: 0.92rem; opacity: 0.82; text-align: center;">Visual guide: An independent check can cut heat on disagreement.</figcaption>
+  <figcaption style="margin-top: 0.6rem; font-size: 0.92rem; opacity: 0.82; text-align: center;">A second thermistor can shut down the PSU <a href="#learning-diagram-45-safety-thermistor" aria-label="Permanent link to A second thermistor can shut down the PSU" style="margin-left: 0.35rem; text-decoration: none;">#</a></figcaption>
 </figure>
 {:/nomarkdown}
+
+
 
 Hot-ends have a heating element (controlled by a MOSFET) and a thermistor to read its temperature.
 

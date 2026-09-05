@@ -8,11 +8,13 @@ permalink: /rectangular-grid-calibration-options
 {::nomarkdown}
 <figure id="learning-diagram-30-rectangular-grid" style="clear: both; max-width: 960px; margin: 2rem auto; scroll-margin-top: 16vh;">
   <a href="/images/learning-diagrams/30-rectangular-grid.svg">
-    <img src="/images/learning-diagrams/30-rectangular-grid.svg" alt="Rectangular probe grid: An odd grid retains its centre sample." style="display: block; width: 100%; height: auto; border-radius: 0.75rem;"/>
+    <img src="/images/learning-diagrams/30-rectangular-grid.svg" alt="A rectangular grid maps the bed surface: Use an odd grid size so the probe measures the center point." loading="lazy" decoding="async" style="display: block; width: 100%; height: auto; border-radius: 0.1rem;"/>
   </a>
-  <figcaption style="margin-top: 0.6rem; font-size: 0.92rem; opacity: 0.82; text-align: center;">Visual guide: An odd grid retains its centre sample.</figcaption>
+  <figcaption style="margin-top: 0.6rem; font-size: 0.92rem; opacity: 0.82; text-align: center;">A rectangular grid maps the bed surface <a href="#learning-diagram-30-rectangular-grid" aria-label="Permanent link to A rectangular grid maps the bed surface" style="margin-left: 0.35rem; text-decoration: none;">#</a></figcaption>
 </figure>
 {:/nomarkdown}
+
+
 
 This page documents all configuration options for the rectangular grid leveling strategy in Smoothie.
 

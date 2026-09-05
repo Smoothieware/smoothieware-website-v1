@@ -14,11 +14,13 @@ permalink: /g28-reprap
 {::nomarkdown}
 <figure id="learning-diagram-14-g28-reprap-homing" style="clear: both; max-width: 960px; margin: 2rem auto; scroll-margin-top: 16vh;">
   <a href="/images/learning-diagrams/14-g28-reprap-homing.svg">
-    <img src="/images/learning-diagrams/14-g28-reprap-homing.svg" alt="RepRap G28 homing: Seek, back off, then re-approach precisely." style="display: block; width: 100%; height: auto; border-radius: 0.75rem;"/>
+    <img src="/images/learning-diagrams/14-g28-reprap-homing.svg" alt="Reprap G28 seeks the endstops: Each axis stops at its endstop and uses that point as its origin." loading="lazy" decoding="async" style="display: block; width: 100%; height: auto; border-radius: 0.1rem;"/>
   </a>
-  <figcaption style="margin-top: 0.6rem; font-size: 0.92rem; opacity: 0.82; text-align: center;">Visual guide: Seek, back off, then re-approach precisely.</figcaption>
+  <figcaption style="margin-top: 0.6rem; font-size: 0.92rem; opacity: 0.82; text-align: center;">Reprap G28 seeks the endstops <a href="#learning-diagram-14-g28-reprap-homing" aria-label="Permanent link to Reprap G28 seeks the endstops" style="margin-left: 0.35rem; text-decoration: none;">#</a></figcaption>
 </figure>
 {:/nomarkdown}
+
+
 
 {::nomarkdown}<gcode>G28</gcode>{:/nomarkdown} means "seek the endstops for each axis, stop once they are found and this position is now the origin for the machine".
 

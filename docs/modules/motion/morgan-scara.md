@@ -8,11 +8,13 @@ permalink: /morgan-scara
 {::nomarkdown}
 <figure id="learning-diagram-40-morgan-scara" style="clear: both; max-width: 960px; margin: 2rem auto; scroll-margin-top: 16vh;">
   <a href="/images/learning-diagrams/40-morgan-scara.svg">
-    <img src="/images/learning-diagrams/40-morgan-scara.svg" alt="Morgan SCARA links: Two joint angles place a tool in XY." style="display: block; width: 100%; height: auto; border-radius: 0.75rem;"/>
+    <img src="/images/learning-diagrams/40-morgan-scara.svg" alt="Morgan SCARA uses two rotary joints: The two arm lengths and joint angles place the tool in the XY plane." loading="lazy" decoding="async" style="display: block; width: 100%; height: auto; border-radius: 0.1rem;"/>
   </a>
-  <figcaption style="margin-top: 0.6rem; font-size: 0.92rem; opacity: 0.82; text-align: center;">Visual guide: Two joint angles place a tool in XY.</figcaption>
+  <figcaption style="margin-top: 0.6rem; font-size: 0.92rem; opacity: 0.82; text-align: center;">Morgan SCARA uses two rotary joints <a href="#learning-diagram-40-morgan-scara" aria-label="Permanent link to Morgan SCARA uses two rotary joints" style="margin-left: 0.35rem; text-decoration: none;">#</a></figcaption>
 </figure>
 {:/nomarkdown}
+
+
 
 {::nomarkdown}
 <sl-alert variant="neutral" open>

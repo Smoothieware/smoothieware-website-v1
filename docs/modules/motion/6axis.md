@@ -10,11 +10,13 @@ title: 6 Axis Configuration
 {::nomarkdown}
 <figure id="learning-diagram-37-six-axis" style="clear: both; max-width: 960px; margin: 2rem auto; scroll-margin-top: 16vh;">
   <a href="/images/learning-diagrams/37-six-axis.svg">
-    <img src="/images/learning-diagrams/37-six-axis.svg" alt="Six-axis pose: Three linear and three rotary axes define the tool pose." style="display: block; width: 100%; height: auto; border-radius: 0.75rem;"/>
+    <img src="/images/learning-diagrams/37-six-axis.svg" alt="Six axes add A, B, and C rotation: The three rotary axes are separate from extruder axes." loading="lazy" decoding="async" style="display: block; width: 100%; height: auto; border-radius: 0.1rem;"/>
   </a>
-  <figcaption style="margin-top: 0.6rem; font-size: 0.92rem; opacity: 0.82; text-align: center;">Visual guide: Three linear and three rotary axes define the tool pose.</figcaption>
+  <figcaption style="margin-top: 0.6rem; font-size: 0.92rem; opacity: 0.82; text-align: center;">Six axes add A, B, and C rotation <a href="#learning-diagram-37-six-axis" aria-label="Permanent link to Six axes add A, B, and C rotation" style="margin-left: 0.35rem; text-decoration: none;">#</a></figcaption>
 </figure>
 {:/nomarkdown}
+
+
 
 {::nomarkdown}
 <a href="/images/circuit.png">

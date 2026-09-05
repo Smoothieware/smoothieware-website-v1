@@ -9,11 +9,13 @@ permalink: /temperaturecontrol
 {::nomarkdown}
 <figure id="learning-diagram-42-temperature-control" style="clear: both; max-width: 960px; margin: 2rem auto; scroll-margin-top: 16vh;">
   <a href="/images/learning-diagrams/42-temperature-control.svg">
-    <img src="/images/learning-diagrams/42-temperature-control.svg" alt="Temperature feedback: Sensor feedback corrects heater power toward target." style="display: block; width: 100%; height: auto; border-radius: 0.75rem;"/>
+    <img src="/images/learning-diagrams/42-temperature-control.svg" alt="Temperature control reads a sensor and drives a heater: Smoothie changes heater power to maintain the requested temperature." loading="lazy" decoding="async" style="display: block; width: 100%; height: auto; border-radius: 0.1rem;"/>
   </a>
-  <figcaption style="margin-top: 0.6rem; font-size: 0.92rem; opacity: 0.82; text-align: center;">Visual guide: Sensor feedback corrects heater power toward target.</figcaption>
+  <figcaption style="margin-top: 0.6rem; font-size: 0.92rem; opacity: 0.82; text-align: center;">Temperature control reads a sensor and drives a heater <a href="#learning-diagram-42-temperature-control" aria-label="Permanent link to Temperature control reads a sensor and drives a heater" style="margin-left: 0.35rem; text-decoration: none;">#</a></figcaption>
 </figure>
 {:/nomarkdown}
+
+
 
 This module reads temperature reading sensors (thermistors) and uses heater and cooler elements to maintain a set temperature.
 

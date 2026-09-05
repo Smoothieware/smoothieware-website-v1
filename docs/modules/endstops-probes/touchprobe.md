@@ -10,11 +10,13 @@ title: Using the Touchprobe
 {::nomarkdown}
 <figure id="learning-diagram-28-touchprobe-two-pass" style="clear: both; max-width: 960px; margin: 2rem auto; scroll-margin-top: 16vh;">
   <a href="/images/learning-diagrams/28-touchprobe-two-pass.svg">
-    <img src="/images/learning-diagrams/28-touchprobe-two-pass.svg" alt="Two-pass touch probing: A slow second pass increases accuracy." style="display: block; width: 100%; height: auto; border-radius: 0.75rem;"/>
+    <img src="/images/learning-diagrams/28-touchprobe-two-pass.svg" alt="Touch probing uses a fast pass and a slow pass: The first pass finds the surface. The second pass measures it." loading="lazy" decoding="async" style="display: block; width: 100%; height: auto; border-radius: 0.1rem;"/>
   </a>
-  <figcaption style="margin-top: 0.6rem; font-size: 0.92rem; opacity: 0.82; text-align: center;">Visual guide: A slow second pass increases accuracy.</figcaption>
+  <figcaption style="margin-top: 0.6rem; font-size: 0.92rem; opacity: 0.82; text-align: center;">Touch probing uses a fast pass and a slow pass <a href="#learning-diagram-28-touchprobe-two-pass" aria-label="Permanent link to Touch probing uses a fast pass and a slow pass" style="margin-left: 0.35rem; text-decoration: none;">#</a></figcaption>
 </figure>
 {:/nomarkdown}
+
+
 
 {::nomarkdown}
 <sl-alert variant="warning" open>

@@ -5,11 +5,13 @@
 {::nomarkdown}
 <figure id="learning-diagram-50-spindle-module" style="clear: both; max-width: 960px; margin: 2rem auto; scroll-margin-top: 16vh;">
   <a href="/images/learning-diagrams/50-spindle-module.svg">
-    <img src="/images/learning-diagrams/50-spindle-module.svg" alt="Spindle control signal: A speed command becomes a configured output." style="display: block; width: 100%; height: auto; border-radius: 0.75rem;"/>
+    <img src="/images/learning-diagrams/50-spindle-module.svg" alt="The spindle command becomes a configured output: Smoothie can drive a VFD, PWM output, or digital control signal." loading="lazy" decoding="async" style="display: block; width: 100%; height: auto; border-radius: 0.1rem;"/>
   </a>
-  <figcaption style="margin-top: 0.6rem; font-size: 0.92rem; opacity: 0.82; text-align: center;">Visual guide: A speed command becomes a configured output.</figcaption>
+  <figcaption style="margin-top: 0.6rem; font-size: 0.92rem; opacity: 0.82; text-align: center;">The spindle command becomes a configured output <a href="#learning-diagram-50-spindle-module" aria-label="Permanent link to The spindle command becomes a configured output" style="margin-left: 0.35rem; text-decoration: none;">#</a></figcaption>
 </figure>
 {:/nomarkdown}
+
+
 
 {::nomarkdown}
 <a href="/images/temporary/cnc-spindle-generic.jpg">

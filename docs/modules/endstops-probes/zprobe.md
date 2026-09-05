@@ -9,11 +9,13 @@ permalink: /zprobe
 {::nomarkdown}
 <figure id="learning-diagram-26-zprobe-role-choice" style="clear: both; max-width: 960px; margin: 2rem auto; scroll-margin-top: 16vh;">
   <a href="/images/learning-diagrams/26-zprobe-role-choice.svg">
-    <img src="/images/learning-diagrams/26-zprobe-role-choice.svg" alt="Probe or endstop role: Configure a sensor in one module role." style="display: block; width: 100%; height: auto; border-radius: 0.75rem;"/>
+    <img src="/images/learning-diagrams/26-zprobe-role-choice.svg" alt="Configure the sensor as a probe or an endstop: Use G30 with a probe. Use G28 with an endstop." loading="lazy" decoding="async" style="display: block; width: 100%; height: auto; border-radius: 0.1rem;"/>
   </a>
-  <figcaption style="margin-top: 0.6rem; font-size: 0.92rem; opacity: 0.82; text-align: center;">Visual guide: Configure a sensor in one module role.</figcaption>
+  <figcaption style="margin-top: 0.6rem; font-size: 0.92rem; opacity: 0.82; text-align: center;">Configure the sensor as a probe or an endstop <a href="#learning-diagram-26-zprobe-role-choice" aria-label="Permanent link to Configure the sensor as a probe or an endstop" style="margin-left: 0.35rem; text-decoration: none;">#</a></figcaption>
 </figure>
 {:/nomarkdown}
+
+
 
 A probe is a switch (much like an Endstop) used to find where something is located automatically.
 

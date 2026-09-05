@@ -1,11 +1,13 @@
 
+
+
 <!-- learning-diagram:32-delta-grid -->
 {::nomarkdown}
 <figure id="learning-diagram-32-delta-grid" style="clear: both; max-width: 960px; margin: 2rem auto; scroll-margin-top: 16vh;">
   <a href="/images/learning-diagrams/32-delta-grid.svg">
-    <img src="/images/learning-diagrams/32-delta-grid.svg" alt="Delta grid: Probe points cover the circular reachable bed." style="display: block; width: 100%; height: auto; border-radius: 0.75rem;"/>
+    <img src="/images/learning-diagrams/32-delta-grid.svg" alt="Delta grid probes the reachable circular bed: Points outside the configured radius are skipped." loading="lazy" decoding="async" style="display: block; width: 100%; height: auto; border-radius: 0.1rem;"/>
   </a>
-  <figcaption style="margin-top: 0.6rem; font-size: 0.92rem; opacity: 0.82; text-align: center;">Visual guide: Probe points cover the circular reachable bed.</figcaption>
+  <figcaption style="margin-top: 0.6rem; font-size: 0.92rem; opacity: 0.82; text-align: center;">Delta grid probes the reachable circular bed <a href="#learning-diagram-32-delta-grid" aria-label="Permanent link to Delta grid probes the reachable circular bed" style="margin-left: 0.35rem; text-decoration: none;">#</a></figcaption>
 </figure>
 {:/nomarkdown}
 {::nomarkdown}
@@ -22,8 +24,8 @@
             <td><setting no-version v1="leveling-strategy.delta-grid.enable"></setting></td>
             <td><setting no-version v2="zprobe.leveling"></setting></td>
             <td class="description-cell">
-                <p>Enables the delta grid leveling strategy for height mapping across circular delta printer beds.</p>
-                <p>The strategy probes a grid of points in a circular pattern (skipping corners outside the radius) and stores height offsets. During printing, the firmware interpolates between the nearest four grid points to calculate Z compensation for any XY position.</p>
+                <p>This turns on the delta grid leveling strategy, which maps bed height across a circular delta printer bed.</p>
+                <p>It probes a grid of points in a circular pattern, skipping the corners outside the radius, and stores the height offsets it finds. While printing, Smoothie interpolates between the nearest four grid points to work out Z compensation for any XY position.</p>
                 <p>In v2, set <code>zprobe.leveling</code> to <code>"delta grid"</code>.</p>
             </td>
         </tr>
@@ -31,8 +33,8 @@
             <td><setting no-version v1="leveling-strategy.delta-grid.radius"></setting></td>
             <td><setting no-version v2="delta grid leveling strategy.radius"></setting></td>
             <td class="description-cell">
-                <p>Radius of the circular bed area to probe and compensate, in millimeters.</p>
-                <p>The grid probes a square region, but points outside this radius are skipped, creating a circular probe pattern. This radius should be at least as large as the maximum printing radius, to ensure full bed compensation coverage.</p>
+                <p>This is the radius, in millimeters, of the circular bed area Smoothie probes and compensates for.</p>
+                <p>The grid probes a square region, but any point outside this radius gets skipped, which is what gives you the circular pattern. Make it at least as large as your maximum printing radius, or you won't get full bed coverage.</p>
                 <p>Default: <code>50</code> mm</p>
             </td>
         </tr>
@@ -40,8 +42,8 @@
             <td><setting no-version v1="leveling-strategy.delta-grid.size"></setting></td>
             <td><setting no-version v2="delta grid leveling strategy.size"></setting></td>
             <td class="description-cell">
-                <p>Grid size in both X and Y dimensions, determining the total number of probe points. A size of 7 creates a 7×7 grid = 49 potential probe points (points outside the radius are automatically skipped).</p>
-                <p>Larger grids give more accurate compensation but increase probing time significantly. Must be an odd number.</p>
+                <p>This is the grid size in both X and Y, which sets the total number of probe points. A size of 7 gives you a 7×7 grid, so 49 potential probe points (points outside the radius get skipped automatically).</p>
+                <p>Bigger grids give you more accurate compensation, but probing takes a lot longer. Has to be an odd number.</p>
                 <p>Default: <code>7</code></p>
             </td>
         </tr>
@@ -49,8 +51,8 @@
             <td><setting no-version v1="leveling-strategy.delta-grid.probe_offsets"></setting></td>
             <td><setting no-version v2="delta grid leveling strategy.probe_offsets"></setting></td>
             <td class="description-cell">
-                <p>Offset of the probe tip from the nozzle tip in X, Y, and Z dimensions — compensating for the physical displacement between where the probe triggers and where the nozzle actually is.</p>
-                <p>Correct offsets are essential for accurate bed compensation.</p>
+                <p>This is the offset of the probe tip from the nozzle tip, in X, Y, and Z. It tells Smoothie the physical distance between where the probe triggers and where the nozzle actually sits.</p>
+                <p>Get these offsets wrong and your bed compensation will be wrong too.</p>
                 <p>Format: <code>X,Y,Z</code> (default: <code>0,0,0</code>)</p>
             </td>
         </tr>
@@ -58,8 +60,8 @@
             <td><setting no-version v1="leveling-strategy.delta-grid.initial_height"></setting></td>
             <td><setting no-version v2="delta grid leveling strategy.initial_height"></setting></td>
             <td class="description-cell">
-                <p>Absolute Z machine position in millimeters to move to after homing, before starting the grid probe sequence.</p>
-                <p>This safety parameter prevents the probe from crashing into the bed during the initial descent. Must be high enough to clear the bed surface.</p>
+                <p>This is the absolute Z machine position, in millimeters, Smoothie moves to after homing, before it starts the grid probe sequence.</p>
+                <p>It's there to stop the probe crashing into the bed on the initial descent, so set it high enough to clear the bed surface.</p>
                 <p>Default: <code>10</code> mm</p>
             </td>
         </tr>
@@ -67,8 +69,8 @@
             <td><setting no-version v1="leveling-strategy.delta-grid.do_home"></setting></td>
             <td><setting no-version v2="delta grid leveling strategy.do_home"></setting></td>
             <td class="description-cell">
-                <p>Automatically homes all axes before running the <code>G31</code> grid probing sequence.</p>
-                <p>Homing ensures the machine is at a known position before probing, which is essential for repeatable and accurate grid generation. Disable only if you want manual control over the homing process.</p>
+                <p>This homes all axes automatically before running the <code>G31</code> grid probing sequence.</p>
+                <p>You want the machine at a known position before probing starts, or the grid won't be repeatable. Turn this off only if you want to handle homing yourself.</p>
                 <p>Default: <code>true</code></p>
             </td>
         </tr>
@@ -76,8 +78,8 @@
             <td><setting no-version v1="leveling-strategy.delta-grid.save"></setting></td>
             <td><setting no-version v2="delta grid leveling strategy.save"></setting></td>
             <td class="description-cell">
-                <p>Automatically saves the <code>M375</code> command to config-override when <code>M500</code> is issued, causing the grid to be loaded from <code>/sd/delta.grid</code> on boot and compensation to be enabled automatically.</p>
-                <p>This allows persistent bed leveling across power cycles without re-probing.</p>
+                <p>This saves the <code>M375</code> command to config-override automatically when you issue <code>M500</code>, so the grid gets loaded from <code>/sd/delta.grid</code> on boot and compensation turns on by itself.</p>
+                <p>That way your bed leveling survives a power cycle without you having to re-probe.</p>
                 <p>Default: <code>false</code></p>
             </td>
         </tr>
@@ -85,7 +87,7 @@
             <td><setting no-version v1="leveling-strategy.delta-grid.tolerance"></setting></td>
             <td><setting no-version v2="delta grid leveling strategy.tolerance"></setting></td>
             <td class="description-cell">
-                <p>Probe tolerance for repeatability checks and validation during grid creation — used to confirm that probe measurements are consistent and repeatable across multiple probes of the same point.</p>
+                <p>This is the probe tolerance Smoothie uses for repeatability checks while building the grid. It confirms that probing the same point multiple times gives consistent measurements.</p>
                 <p>Default: <code>0.03</code> mm</p>
             </td>
         </tr>
