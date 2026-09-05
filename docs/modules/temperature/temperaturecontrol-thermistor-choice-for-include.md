@@ -2,6 +2,7 @@
 
 
 
+
 <!-- learning-diagram:41-sensor-types -->
 {::nomarkdown}
 <figure id="learning-diagram-41-sensor-types" style="clear: both; max-width: 960px; margin: 2rem auto; scroll-margin-top: 16vh;">

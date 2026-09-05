@@ -1,6 +1,5 @@
 
 
-
 <!-- learning-diagram:24-endstops-signal -->
 {::nomarkdown}
 <figure id="learning-diagram-24-endstops-signal" style="clear: both; max-width: 960px; margin: 2rem auto; scroll-margin-top: 16vh;">
@@ -24,71 +23,78 @@
             <td><setting no-version v1="endstops_enable"></setting></td>
             <td><em>Always enabled if configured in v2</em></td>
             <td class="description-cell">
-                <p>This turns on the traditional, root-level way of configuring endstops.</p>
-                <p>Set it to <raw>true</raw> and Smoothie loads your endstop configuration using the <setting no-version v1="alpha_*"></setting>, <setting no-version v1="beta_*"></setting>, <setting no-version v1="gamma_*"></setting> syntax.</p>
-                <p>In v2 you don't need this: endstops are always enabled once you've configured them.</p>
+                <p>Master enable switch for the traditional root-level endstop configuration method.</p>
+                <p>When set to <raw>true</raw>, Smoothieware loads endstop configuration using the <setting no-version v1="alpha_*"></setting>, <setting no-version v1="beta_*"></setting>, <setting no-version v1="gamma_*"></setting> syntax.</p>
+                <p>In v2, endstops are always enabled if configured.</p>
             </td>
         </tr>
         <tr>
             <td><setting no-version v1="corexy_homing"></setting></td>
             <td><setting no-version v2="endstops.common.corexy_homing"></setting></td>
             <td class="description-cell">
-                <p>If you have a CoreXY or H-Bot, this needs to be on, or homing won't work right.</p>
-                <p>With it on, X and Y home one at a time instead of together, and both motors stop as soon as either endstop triggers.</p>
+                <p>Enables CoreXY-specific homing behavior. When enabled, X and Y axes home individually (one at a time) rather than simultaneously, and both motors stop when either endstop is triggered.</p>
+                <p><strong>CRITICAL:</strong> Must be enabled for CoreXY and H-Bot kinematics to prevent incorrect homing behavior.</p>
             </td>
         </tr>
         <tr>
             <td><setting no-version v1="delta_homing"></setting></td>
             <td><setting no-version v2="endstops.common.delta_homing"></setting></td>
             <td class="description-cell">
-                <p>Linear deltas need this on. With it enabled, <gcode>G28</gcode> homes all three towers at once by moving the Z axis, and all three tower endstops (alpha, beta, gamma) have to trigger during the move.</p>
-                <p>Trim values then get applied to correct for small differences between the towers' endstop positions.</p>
+                <p>Enables linear delta robot homing behavior. When enabled, <gcode>G28</gcode> homes all three towers simultaneously by moving the Z axis, and all three tower endstops (alpha, beta, gamma) must trigger during homing.</p>
+                <p>Applies trim values to correct for endstop position variations.</p>
+                <p><strong>CRITICAL:</strong> Must be enabled for linear delta kinematics.</p>
             </td>
         </tr>
         <tr>
             <td><setting no-version v1="rdelta_homing"></setting></td>
             <td><setting no-version v2="endstops.common.rdelta_homing"></setting></td>
             <td class="description-cell">
-                <p>Rotary deltas need this on. It works like linear delta homing, except the endstop positions are actuator angles in degrees, not cartesian coordinates.</p>
+                <p>Enables rotary delta robot homing behavior. Similar to linear delta, but endstop positions represent actuator angles (in degrees), not cartesian coordinates.</p>
+                <p><strong>CRITICAL:</strong> Must be enabled for rotary delta kinematics.</p>
             </td>
         </tr>
         <tr>
             <td><setting no-version v1="scara_homing"></setting></td>
             <td><setting no-version v2="endstops.common.scara_homing"></setting></td>
             <td class="description-cell">
-                <p>Set this to true on a SCARA. It switches off the arm solution during homing, so the machine homes in actuator space instead of cartesian space.</p>
-                <p>Before homing starts, the arms reset to safe minimum angles (-30, 30, 0) so they don't end up somewhere extreme.</p>
+                <p>Enables SCARA robot arm homing behavior. When enabled, disables the arm solution during homing (homes in actuator space, not cartesian space).</p>
+                <p>Resets arms to plausible minimum angles (-30, 30, 0) before homing to prevent extreme positions.</p>
+                <p><strong>CRITICAL:</strong> Must be enabled for SCARA kinematics.</p>
             </td>
         </tr>
         <tr>
             <td><setting no-version v1="homing_order"></setting></td>
             <td><setting no-version v2="endstops.common.homing_order"></setting></td>
             <td class="description-cell">
-                <p>This lets you force axes to home one at a time, in a custom order. Give it 3 to 6 characters naming the axes (XYZABC) in the order you want them homed.</p>
-                <p>So <raw>XYZ</raw> homes X, then Y, then Z. <raw>ZXY</raw> homes Z first. <raw>XYZAB</raw> works for machines with A and B axes too.</p>
-                <p><strong>IMPORTANT:</strong> any axis you leave out of the string won't get homed at all.</p>
+                <p>Specifies a custom homing order, forcing axes to home one at a time in the specified sequence. Must be 3-6 characters specifying axis letters (XYZABC) in the desired order.</p>
+                <p><strong>IMPORTANT:</strong> Any axis not specified in the string will NOT be homed.</p>
+                <ul>
+                    <li><raw>XYZ</raw> — home X, then Y, then Z</li>
+                    <li><raw>ZXY</raw> — Z first</li>
+                    <li><raw>XYZAB</raw> — for machines with A and B axes</li>
+                </ul>
             </td>
         </tr>
         <tr>
             <td><setting no-version v1="home_z_first"></setting></td>
             <td><setting no-version v2="endstops.common.home_z_first"></setting></td>
             <td class="description-cell">
-                <p>This controls whether Z homes before or after X and Y.</p>
+                <p>Controls whether the Z axis homes before or after the X and Y axes.</p>
                 <ul>
-                    <li><raw>false</raw> (default): X and Y home first, together, then Z homes.</li>
-                    <li><raw>true</raw>: Z homes first, then X and Y home together.</li>
+                    <li><raw>false</raw> (default): X and Y home first (simultaneously), then Z homes.</li>
+                    <li><raw>true</raw>: Z homes first, then X and Y home (simultaneously).</li>
                 </ul>
-                <p>If you've got a bed probe that needs Z clearance before it can move over the bed, set this to true.</p>
+                <p>Useful for machines with auto bed leveling probes that need Z clearance before XY movement.</p>
             </td>
         </tr>
         <tr>
             <td><setting no-version v1="move_to_origin_after_home"></setting></td>
             <td><setting no-version v2="endstops.common.move_to_origin_after_home"></setting></td>
             <td class="description-cell">
-                <p>This controls whether the machine moves to the origin (0,0 or 0,0,0) automatically once homing is done.</p>
+                <p>Controls whether the machine automatically moves to the origin (0,0 or 0,0,0) after homing completes.</p>
                 <ul>
-                    <li>Cartesian machines default to <raw>false</raw>: the machine just stays where it homed, at the endstop.</li>
-                    <li>Delta machines default to <raw>true</raw>: the machine moves to the origin, since trim usually means deltas don't end up at 0,0 after homing.</li>
+                    <li>Cartesian default: <raw>false</raw> — stay at homed position (endstop location)</li>
+                    <li>Delta default: <raw>true</raw> — move to origin (deltas are typically not at 0,0 after homing due to trim)</li>
                 </ul>
             </td>
         </tr>
@@ -96,54 +102,66 @@
             <td><setting no-version v1="park_after_home"></setting></td>
             <td><em>Not documented in v2</em></td>
             <td class="description-cell">
-                <p>If you enable this, the machine moves to a predefined park position after homing instead of moving to the origin. You set that park position with <gcode>G28.1</gcode>.</p>
-                <p><strong>IMPORTANT:</strong> you can't use this together with <setting no-version v1="move_to_origin_after_home"></setting>.</p>
-                <p>Run <mcode>M500</mcode> after <gcode>G28.1</gcode> and the park position gets saved to config-override.</p>
+                <p>If enabled, moves to a predefined park position after homing instead of moving to origin. The park position is set using <gcode>G28.1</gcode>.</p>
+                <p><strong>IMPORTANT:</strong> Mutually exclusive with <setting no-version v1="move_to_origin_after_home"></setting>.</p>
+                <p>Position is saved to config-override if <mcode>M500</mcode> is used after <gcode>G28.1</gcode>.</p>
             </td>
         </tr>
         <tr>
             <td><setting no-version v1="endstop_debounce_count"></setting></td>
             <td><setting no-version v2="endstops.common.debounce_count"></setting></td>
             <td class="description-cell">
-                <p>This sets how many consecutive reads have to confirm a trigger before Smoothie accepts it. That's what debounces your limit switches (not the homing endstops).</p>
-                <p><strong>IMPORTANT:</strong> this only applies to limit switches, when <raw>&lt;axis&gt;_limit_enable</raw> is true.</p>
-                <p>Raise it and you get more filtering, but a slower response when a limit switch actually triggers. The default of 100 works fine for most mechanical switches.</p>
+                <p>Number of consecutive reads required to confirm a limit switch trigger — provides debouncing for limit switches (not homing endstops).</p>
+                <p><strong>IMPORTANT:</strong> Only used for limit switches (when <raw>&lt;axis&gt;_limit_enable</raw> is true).</p>
+                <p>Higher values provide more filtering but slower response to limit triggers. Default of 100 is suitable for most mechanical switches.</p>
             </td>
         </tr>
         <tr>
             <td><setting no-version v1="endstop_debounce_ms"></setting></td>
             <td><setting no-version v2="endstops.common.debounce_ms"></setting></td>
             <td class="description-cell">
-                <p>This is the debounce time, in milliseconds, for homing endstops. When an endstop triggers during homing, it has to stay triggered for this long before Smoothie accepts it.</p>
-                <p><strong>IMPORTANT:</strong> this only applies to homing endstops, during <gcode>G28</gcode>.</p>
-                <p>Optical endstops switch cleanly, so 0 is usually fine. Mechanical switches usually need 1-5ms.</p>
+                <p>Debounce time in milliseconds for homing endstops. When an endstop is triggered during homing, it must remain triggered for this duration before being accepted as a valid trigger.</p>
+                <p><strong>IMPORTANT:</strong> Only used for homing endstops during <gcode>G28</gcode>.</p>
+                <ul>
+                    <li>Optical endstops typically use 0 (no debounce needed due to clean switching)</li>
+                    <li>Mechanical switches typically use 1-5ms</li>
+                </ul>
             </td>
         </tr>
         <tr>
             <td><setting no-version v1="alpha_trim_mm"></setting></td>
             <td><setting no-version v2="endstops.common.alpha_trim_mm"></setting></td>
             <td class="description-cell">
-                <p>DELTA/SCARA ONLY. This is the software trim for the alpha tower (or joint, on a SCARA) endstop, and it compensates for small differences in endstop position between towers.</p>
-                <p>Positive values shorten the tower, moving the effective endstop position toward the endstop. Negative values lengthen it, moving away from the endstop.</p>
-                <p>Units are millimeters on linear deltas, degrees on rotary deltas. Set it with <mcode>M666</mcode> X##.</p>
+                <p>DELTA/SCARA ONLY. Software trim for the alpha tower/joint endstop, compensating for small variations in endstop positions between towers.</p>
+                <ul>
+                    <li>Positive values move the effective endstop position toward the endstop (shortens the tower)</li>
+                    <li>Negative values move away from the endstop (lengthens the tower)</li>
+                </ul>
+                <p>Units are millimeters for linear deltas, degrees for rotary deltas. Set via <mcode>M666</mcode> X## command.</p>
             </td>
         </tr>
         <tr>
             <td><setting no-version v1="beta_trim_mm"></setting></td>
             <td><setting no-version v2="endstops.common.beta_trim_mm"></setting></td>
             <td class="description-cell">
-                <p>DELTA/SCARA ONLY. This is the software trim for the beta tower (or joint, on a SCARA) endstop, and it compensates for small differences in endstop position between towers.</p>
-                <p>Positive values shorten the tower, moving the effective endstop position toward the endstop. Negative values lengthen it, moving away from the endstop.</p>
-                <p>Units are millimeters on linear deltas, degrees on rotary deltas. Set it with <mcode>M666</mcode> Y##.</p>
+                <p>DELTA/SCARA ONLY. Software trim for the beta tower/joint endstop, compensating for small variations in endstop positions between towers.</p>
+                <ul>
+                    <li>Positive values move the effective endstop position toward the endstop (shortens the tower)</li>
+                    <li>Negative values move away from the endstop (lengthens the tower)</li>
+                </ul>
+                <p>Units are millimeters for linear deltas, degrees for rotary deltas. Set via <mcode>M666</mcode> Y## command.</p>
             </td>
         </tr>
         <tr>
             <td><setting no-version v1="gamma_trim_mm"></setting></td>
             <td><setting no-version v2="endstops.common.gamma_trim_mm"></setting></td>
             <td class="description-cell">
-                <p>DELTA/SCARA ONLY. This is the software trim for the gamma tower (or joint, on a SCARA) endstop, and it compensates for small differences in endstop position between towers.</p>
-                <p>Positive values shorten the tower, moving the effective endstop position toward the endstop. Negative values lengthen it, moving away from the endstop.</p>
-                <p>Units are millimeters on linear deltas, degrees on rotary deltas. Set it with <mcode>M666</mcode> Z##.</p>
+                <p>DELTA/SCARA ONLY. Software trim for the gamma tower/joint endstop, compensating for small variations in endstop positions between towers.</p>
+                <ul>
+                    <li>Positive values move the effective endstop position toward the endstop (shortens the tower)</li>
+                    <li>Negative values move away from the endstop (lengthens the tower)</li>
+                </ul>
+                <p>Units are millimeters for linear deltas, degrees for rotary deltas. Set via <mcode>M666</mcode> Z## command.</p>
             </td>
         </tr>
         <tr>
@@ -185,7 +203,7 @@
             <td><setting no-version v2="endstops.minx.max_travel"></setting></td>
             <td class="description-cell">
                 <p>This determines how far the X axis can travel looking for the endstop before it gives up.</p>
-                <p><strong>CRITICAL:</strong> set this bigger than your actual travel distance, or you'll get false failures.</p>
+                <p><strong>CRITICAL:</strong> Set this value larger than your actual machine travel distance to prevent false failures.</p>
             </td>
         </tr>
         <tr>
@@ -202,8 +220,8 @@
             <td><setting no-version v1="alpha_slow_homing_rate_mm_s"></setting></td>
             <td><setting no-version v2="endstops.minx.slow_rate"></setting></td>
             <td class="description-cell">
-                <p>Speed, in millimetres/second, at which to re-home the alpha actuator (X axis or alpha tower) once it's hit the endstop the first time. This is the precision phase of the two-stage homing process.</p>
-                <p>The slower you go, the more accurate and repeatable your homing gets.</p>
+                <p>Speed, in millimetres/second, at which to re-home for the alpha actuator (X axis or alpha tower) once the endstop has been hit once — the precision phase of the two-stage homing process.</p>
+                <p>Slower speeds provide more accurate and repeatable homing positions.</p>
             </td>
         </tr>
         <tr>
@@ -247,7 +265,7 @@
             <td><setting no-version v2="endstops.miny.max_travel"></setting></td>
             <td class="description-cell">
                 <p>This determines how far the Y axis can travel looking for the endstop before it gives up.</p>
-                <p><strong>CRITICAL:</strong> set this bigger than your actual travel distance, or you'll get false failures.</p>
+                <p><strong>CRITICAL:</strong> Set this value larger than your actual machine travel distance to prevent false failures.</p>
             </td>
         </tr>
         <tr>
@@ -264,8 +282,8 @@
             <td><setting no-version v1="beta_slow_homing_rate_mm_s"></setting></td>
             <td><setting no-version v2="endstops.miny.slow_rate"></setting></td>
             <td class="description-cell">
-                <p>Speed, in millimetres/second, at which to re-home the beta actuator (Y axis or beta tower) once it's hit the endstop the first time. This is the precision phase of the two-stage homing process.</p>
-                <p>The slower you go, the more accurate and repeatable your homing gets.</p>
+                <p>Speed, in millimetres/second, at which to re-home for the beta actuator (Y axis or beta tower) once the endstop has been hit once — the precision phase of the two-stage homing process.</p>
+                <p>Slower speeds provide more accurate and repeatable homing positions.</p>
             </td>
         </tr>
         <tr>
@@ -309,7 +327,7 @@
             <td><setting no-version v2="endstops.minz.max_travel"></setting></td>
             <td class="description-cell">
                 <p>This determines how far the Z axis can travel looking for the endstop before it gives up.</p>
-                <p><strong>CRITICAL:</strong> set this bigger than your actual travel distance, or you'll get false failures.</p>
+                <p><strong>CRITICAL:</strong> Set this value larger than your actual machine travel distance to prevent false failures.</p>
             </td>
         </tr>
         <tr>
@@ -321,16 +339,16 @@
             <td><setting no-version v1="gamma_fast_homing_rate_mm_s"></setting></td>
             <td><setting no-version v2="endstops.minz.fast_rate"></setting></td>
             <td class="description-cell">
-                <p>Speed, in millimetres/second, at which to home the gamma actuator (Z axis or gamma tower). This is the first phase of the two-stage homing process.</p>
-                <p>The Z axis usually wants a slower rate here (4-10 mm/s), so you don't crash it into the bed.</p>
+                <p>Speed, in millimetres/second, at which to home for the gamma actuator (Z axis or gamma tower) — the first phase of the two-stage homing process.</p>
+                <p>The Z-axis typically uses a slower rate (4-10 mm/s) for safety, to prevent bed crashes.</p>
             </td>
         </tr>
         <tr>
             <td><setting no-version v1="gamma_slow_homing_rate_mm_s"></setting></td>
             <td><setting no-version v2="endstops.minz.slow_rate"></setting></td>
             <td class="description-cell">
-                <p>Speed, in millimetres/second, at which to re-home the gamma actuator (Z axis or gamma tower) once it's hit the endstop the first time. This is the precision phase of the two-stage homing process.</p>
-                <p>The Z axis often uses the slowest rate here (1-5 mm/s), for the best precision.</p>
+                <p>Speed, in millimetres/second, at which to re-home for the gamma actuator (Z axis or gamma tower) once the endstop has been hit once — the precision phase of the two-stage homing process.</p>
+                <p>The Z-axis often uses the slowest rate (1-5 mm/s) for maximum precision.</p>
             </td>
         </tr>
         <tr>

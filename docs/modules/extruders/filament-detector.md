@@ -17,6 +17,7 @@ permalink: /filament-detector
 
 
 
+
 The filament detector module allows you to add automated hardware to your machine to check that the filament is advancing correctly.
 
 This is done by adding an encoder, that rotates as the filament advances, and sends pulses to the Smoothieboard.

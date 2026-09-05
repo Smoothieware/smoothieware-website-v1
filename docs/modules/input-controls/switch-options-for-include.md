@@ -13,26 +13,26 @@
             <td><setting no-version v1="switch.{name}.enable"></setting></td>
             <td><setting no-version v2="switch.{name}.enable"></setting></td>
             <td class="description-cell">
-                <p>Set this to true and it creates a new Switch module instance, active and responding to whatever inputs and outputs you've configured for it.</p>
-                <p>Set it to false and the switch is disabled, but its configuration stays in the file. Each switch instance needs its own unique name.</p>
+                <p>Creates and enables a new Switch module instance — when set to true, the switch is active and responds to configured inputs and controls outputs.</p>
+                <p>Set to false to disable the switch instance without removing its configuration. Each switch instance requires a unique name.</p>
             </td>
         </tr>
         <tr>
             <td><setting no-version v1="switch.{name}.input_pin"></setting></td>
             <td><setting no-version v2="switch.{name}.input_pin"></setting></td>
             <td class="description-cell">
-                <p>This is the GPIO pin that drives the switch from hardware. When the pin goes high the switch turns ON, and when it goes low it turns OFF (the exact behavior depends on input_pin_behavior).</p>
-                <p>Smoothie polls input pins every 100ms. You can add a pullup (^) or invert (!) modifier to the pin name if you need one.</p>
+                <p>Specifies a GPIO pin that controls the switch state through hardware input. When the pin becomes high the switch changes to ON, and when it becomes low it changes to OFF (exact behavior depends on input_pin_behavior).</p>
+                <p>Input pins are polled at 100ms intervals. The pin can be configured with pullup (^) or inverted (!) modifiers.</p>
             </td>
         </tr>
         <tr>
             <td><setting no-version v1="switch.{name}.input_pin_behavior"></setting></td>
             <td><setting no-version v2="switch.{name}.input_pin_behavior"></setting></td>
             <td class="description-cell">
-                <p>This decides how the input pin drives the switch.</p>
+                <p>Defines how the input pin controls the switch state.</p>
                 <ul>
-                    <li>momentary (default): the switch just follows the pin. High means ON, low means OFF.</li>
-                    <li>toggle: each time the pin goes from low to high, the switch flips between ON and OFF.</li>
+                    <li>momentary (default): the switch state tracks the pin state directly — high means ON, low means OFF.</li>
+                    <li>toggle: each low-to-high pin transition flips the switch state between ON and OFF.</li>
                 </ul>
             </td>
         </tr>
@@ -40,46 +40,46 @@
             <td><setting no-version v1="switch.{name}.input_on_command"></setting></td>
             <td><setting no-version v2="switch.{name}.input_on_command"></setting></td>
             <td class="description-cell">
-                <p>This is the G-code or M-code command that turns the switch ON. Send it, and the switch turns on.</p>
-                <p>You can match on a subcode with switch.{name}.subcode. If the output is PWM-type, the S parameter in the command sets the PWM value.</p>
-                <p>Commands are queued and run in sync with motion, not immediately on receipt.</p>
+                <p>Specifies a G-code or M-code command that sets the switch to the ON state — when this command is received, the switch turns ON.</p>
+                <p>Supports optional subcode matching via switch.{name}.subcode. The S parameter can control the PWM value for PWM-type outputs.</p>
+                <p>Commands are queued and executed synchronously with motion.</p>
             </td>
         </tr>
         <tr>
             <td><setting no-version v1="switch.{name}.input_off_command"></setting></td>
             <td><setting no-version v2="switch.{name}.input_off_command"></setting></td>
             <td class="description-cell">
-                <p>This is the G-code or M-code command that turns the switch OFF. Send it, and the switch turns off.</p>
-                <p>You can match on a subcode with switch.{name}.subcode. Commands are queued and run in sync with motion.</p>
+                <p>Specifies a G-code or M-code command that sets the switch to the OFF state — when this command is received, the switch turns OFF.</p>
+                <p>Supports optional subcode matching via switch.{name}.subcode. Commands are queued and executed synchronously with motion.</p>
             </td>
         </tr>
         <tr>
             <td><setting no-version v1="switch.{name}.subcode"></setting></td>
             <td><setting no-version v2="switch.{name}.subcode"></setting></td>
             <td class="description-cell">
-                <p>This sets a subcode for matching input commands, so you can have several switch instances respond to different subcodes of the same base command, like M106.1 versus M106.2.</p>
-                <p>Subcode 0 is the default and matches commands that don't specify one. It's only checked if input_on_command and/or input_off_command are set.</p>
+                <p>Specifies a subcode for input command matching, allowing multiple switch instances to respond to different subcodes of the same base command (e.g., M106.1 vs M106.2).</p>
+                <p>Subcode 0 is the default and matches commands without explicit subcodes. Only evaluated when input_on_command and/or input_off_command are set.</p>
             </td>
         </tr>
         <tr>
             <td><setting no-version v1="switch.{name}.output_pin"></setting></td>
             <td><setting no-version v2="switch.{name}.output_pin"></setting></td>
             <td class="description-cell">
-                <p>This is the GPIO pin the switch controls. It goes low when the switch is OFF and high when it's ON.</p>
-                <p>What actually happens on the pin depends on output_type: digital on/off, PWM, hardware PWM, or software PWM. If you use hardware PWM (hwpwm), the pin has to be PWM-capable.</p>
+                <p>Specifies the GPIO pin controlled by the switch — set low when the switch is OFF, and high when it is ON.</p>
+                <p>The pin's exact behavior depends on output_type (digital on/off, PWM, hardware PWM, or software PWM). For hardware PWM (hwpwm), the pin must be PWM-capable.</p>
             </td>
         </tr>
         <tr>
             <td><setting no-version v1="switch.{name}.output_type"></setting></td>
             <td><setting no-version v2="switch.{name}.output_type"></setting></td>
             <td class="description-cell">
-                <p>This sets the type of output on the switch pin.</p>
+                <p>Sets the type of output for the switch output pin.</p>
                 <ul>
                     <li>digital: the pin can only be low or high.</li>
-                    <li>pwm (default): Sigma-Delta PWM. The S parameter sets any value from 0 to 255.</li>
-                    <li>hwpwm: real PWM, needs a PWM-capable pin. The S value is a duty cycle percentage.</li>
-                    <li>swpwm: software-emulated PWM, won't interfere with the hardware PWM peripherals.</li>
-                    <li>none: turns the output off entirely.</li>
+                    <li>pwm (default): Sigma-Delta PWM, pin set to any value 0-255 via the S parameter.</li>
+                    <li>hwpwm: Real PWM (requires a PWM-capable pin), with the S value as a duty cycle percentage.</li>
+                    <li>swpwm: software-emulated PWM that won't interfere with hardware PWM peripherals.</li>
+                    <li>none: disables the output entirely.</li>
                 </ul>
             </td>
         </tr>
@@ -87,82 +87,93 @@
             <td><setting no-version v1="switch.{name}.output_on_command"></setting></td>
             <td><setting no-version v2="switch.{name}.output_on_command"></setting></td>
             <td class="description-cell">
-                <p>This G-code command runs when the switch turns ON. Smoothie sends it straight to the G-code parser.</p>
-                <p>If you need a multi-word command, use underscores and Smoothie turns them into spaces, so M117_Hello_World becomes M117 Hello World. It runs in the main loop the moment the switch turns ON.</p>
+                <p>Specifies a G-code command to execute when the switch transitions to the ON state. The command is sent to the G-code parser and executed.</p>
+                <p>Underscores in the command are replaced with spaces to allow multi-word commands (e.g., M117_Hello_World becomes M117 Hello World). Commands execute in the main loop when the switch state changes to ON.</p>
             </td>
         </tr>
         <tr>
             <td><setting no-version v1="switch.{name}.output_off_command"></setting></td>
             <td><setting no-version v2="switch.{name}.output_off_command"></setting></td>
             <td class="description-cell">
-                <p>Same idea as output_on_command, but for when the switch turns OFF. Smoothie sends it to the G-code parser, with underscores turned into spaces.</p>
-                <p>It runs in the main loop the moment the switch turns OFF.</p>
-                <p>One special case: $J STOP triggers an emergency stop for continuous jog. This only works with input pins.</p>
+                <p>Specifies a G-code command to execute when the switch transitions to the OFF state. The command is sent to the G-code parser and executed, with underscores replaced by spaces before execution.</p>
+                <p>Commands execute in the main loop when the switch state changes to OFF.</p>
+                <p>Special handling: $J STOP triggers an emergency stop request for continuous jog (only works with input pins).</p>
             </td>
         </tr>
         <tr>
             <td><setting no-version v1="switch.{name}.startup_state"></setting></td>
             <td><setting no-version v2="switch.{name}.startup_state"></setting></td>
             <td class="description-cell">
-                <p>This sets what state the switch is in when the board boots. False (the default) means it starts OFF, true means it starts ON.</p>
-                <p>If the output is PWM and startup_state is true, Smoothie uses default_on_value instead of startup_value. For input-pin switches in momentary mode, the pin itself decides the initial state and overrides this setting.</p>
+                <p>Sets the initial state of the switch when the system boots.</p>
+                <ul>
+                    <li>false (default): module initialized OFF.</li>
+                    <li>true: module initialized ON.</li>
+                </ul>
+                <p>For PWM outputs with startup_state true, default_on_value is used instead of startup_value. For input-pin switches (momentary mode), the initial state is read from the pin and overrides this setting.</p>
             </td>
         </tr>
         <tr>
             <td><setting no-version v1="switch.{name}.startup_value"></setting></td>
             <td><setting no-version v2="switch.{name}.startup_value"></setting></td>
             <td class="description-cell">
-                <p>This sets the PWM value used when the switch is OFF, or at startup if startup_state is false. For Sigma-Delta PWM it's a 0-255 value, for hardware/software PWM (hwpwm/swpwm) it's a 0-100 percentage.</p>
-                <p>It's also the value used on HALT for hwpwm and swpwm. startup_state needs to be false for this setting to matter.</p>
+                <p>Sets the PWM value when the switch is OFF, or at startup if startup_state is false.</p>
+                <ul>
+                    <li>SIGMADELTA PWM: 0-255 value.</li>
+                    <li>Hardware/software PWM (hwpwm/swpwm): 0-100 percentage.</li>
+                </ul>
+                <p>Also used as the PWM value on HALT for HWPWM and SWPWM. startup_state must be false for this to take effect.</p>
             </td>
         </tr>
         <tr>
             <td><setting no-version v1="switch.{name}.default_on_value"></setting></td>
             <td><setting no-version v2="switch.{name}.default_on_value"></setting></td>
             <td class="description-cell">
-                <p>This sets the duty cycle percentage used when the switch turns ON without an explicit S parameter. It only applies to hardware PWM (hwpwm) and software PWM (swpwm), and takes a value from 0 to 100.</p>
-                <p>Smoothie uses it when the switch turns on via command, or when startup_state is true. An S parameter in the command overrides it, so M106 S75 sets it to 75%.</p>
+                <p>Sets the PWM duty cycle percentage when the switch is turned ON without an explicit S parameter. Only applies to hardware PWM (hwpwm) and software PWM (swpwm) output types. Value range is 0-100 (percentage).</p>
+                <p>Used when the switch is turned on via command, or when startup_state is true. Can be overridden by an S parameter in commands (e.g., M106 S75 sets to 75%).</p>
             </td>
         </tr>
         <tr>
             <td><setting no-version v1="switch.{name}.max_pwm"></setting></td>
             <td><setting no-version v2="switch.{name}.max_pwm"></setting></td>
             <td class="description-cell">
-                <p>This caps the PWM value for Sigma-Delta output, so you can limit the maximum power or speed. The S parameter in commands gets scaled from 0-255 down to 0-max_pwm.</p>
-                <p>It only applies to the SIGMADELTA (pwm) output type, not hwpwm or swpwm. The default is 255, which means no limit at all.</p>
+                <p>Sets the maximum PWM value for sigma-delta PWM output, allowing the maximum output power/speed to be limited when using PWM mode. The S parameter in commands is scaled from 0-255 to 0-max_pwm.</p>
+                <p>Only applies to the SIGMADELTA (pwm) output type, not hwpwm or swpwm. Default is 255, meaning no limiting (full range).</p>
             </td>
         </tr>
         <tr>
             <td><setting no-version v1="switch.{name}.pwm_period_ms"></setting></td>
             <td><setting no-version v2="[pwm1] frequency"></setting></td>
             <td class="description-cell">
-                <p>This sets the PWM period in milliseconds for hardware and software PWM outputs, which is just another way of setting the frequency. It only applies to HWPWM and SWPWM. A lower period means a higher frequency and faster switching.</p>
-                <p>Servos usually want 20ms (50Hz), though some support 10ms (100Hz). For LEDs, go with a higher frequency to avoid visible flicker.</p>
+                <p>Sets the PWM period in milliseconds for hardware PWM and software PWM outputs — this determines the PWM frequency. Only applies to HWPWM and SWPWM output types. A lower period means higher frequency and faster PWM switching.</p>
+                <ul>
+                    <li>Servos: standard is 20ms (50Hz); some servos support 10ms (100Hz).</li>
+                    <li>LEDs: higher frequencies prevent visible flicker.</li>
+                </ul>
             </td>
         </tr>
         <tr>
             <td><setting no-version v1="switch.{name}.failsafe_set_to"></setting></td>
             <td><setting no-version v2="switch.{name}.failsafe_set_to"></setting></td>
             <td class="description-cell">
-                <p>This sets the pin state, 0 or 1, that Smoothie forces during a crash, a watchdog reset, or a debug halt, so your outputs land in a safe state if something goes wrong.</p>
-                <p>This is different from halt_set_to, which only handles <mcode>M112</mcode> HALT commands. ignore_on_halt can override it. Pick a value that's actually safe for your hardware.</p>
+                <p>Defines the pin state (0 or 1) to set during a crash, watchdog reset, or debug halt condition — a safety feature ensuring outputs are in a safe state when the system fails.</p>
+                <p>Different from halt_set_to, which handles <mcode>M112</mcode> HALT commands specifically. Can be overridden by the ignore_on_halt setting. Choose a value that puts your system in a safe state for your hardware.</p>
             </td>
         </tr>
         <tr>
             <td><setting no-version v1="switch.{name}.halt_set_to"></setting></td>
             <td><setting no-version v2="switch.{name}.halt_set_to"></setting></td>
             <td class="description-cell">
-                <p>This sets the switch state, true or false, that Smoothie forces on a HALT (usually triggered by <mcode>M112</mcode> or a system halt). When a halt happens, the switch goes to this state unless ignore_on_halt is true.</p>
-                <p>For digital outputs this boolean sets the pin high or low directly. For PWM outputs (hwpwm/swpwm), Smoothie uses startup_value instead.</p>
-                <p>This is different from failsafe_set_to, which handles crashes and debug halts.</p>
+                <p>Defines the switch state (true or false) to set during a HALT condition (typically triggered by <mcode>M112</mcode> emergency stop or system halt). When a halt occurs, the switch is set to this state unless ignore_on_halt is true.</p>
+                <p>For digital outputs, this boolean directly controls the pin state (high/low). For PWM outputs (hwpwm/swpwm), startup_value is used as the actual value instead.</p>
+                <p>Different from failsafe_set_to, which handles crash/debug conditions.</p>
             </td>
         </tr>
         <tr>
             <td><setting no-version v1="switch.{name}.ignore_on_halt"></setting></td>
             <td><setting no-version v2="switch.{name}.ignore_on_halt"></setting></td>
             <td class="description-cell">
-                <p>Set this to true and the switch won't change state on a HALT (triggered by <mcode>M112</mcode>). The failsafe or startup_value setting just gets skipped.</p>
-                <p>It's forced to true for input-pin switches, you can't override that. Useful for things like lights or status indicators that don't need to change when you hit emergency stop.</p>
+                <p>When set to true, prevents the switch from changing state during HALT conditions (<mcode>M112</mcode> emergency stop) — the failsafe or startup_value is not applied when a HALT is triggered.</p>
+                <p>Automatically set to true for input-pin switches and cannot be overridden. Useful for non-safety-critical outputs (lights, status indicators) that should maintain their state during emergency stops.</p>
             </td>
         </tr>
     </tbody>

@@ -18,6 +18,7 @@ title: 6 Axis Configuration
 
 
 
+
 {::nomarkdown}
 <a href="/images/circuit.png">
   <img src="/images/circuit.png" alt="Circuit diagram" style="width: 300px; height: 300px; float: right; margin-left: 1rem;"/>

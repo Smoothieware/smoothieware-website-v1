@@ -17,6 +17,7 @@ permalink: /temperaturecontrol
 
 
 
+
 This module reads temperature reading sensors (thermistors) and uses heater and cooler elements to maintain a set temperature.
 
 This is used for example for [extruder](extruder) hotends, or heated beds.

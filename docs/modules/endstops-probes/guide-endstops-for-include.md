@@ -18,6 +18,7 @@
 
 
 
+
 *It's essentially just a switch*
 
 End-stops are small interrupters that you put at the end of each of your axes.

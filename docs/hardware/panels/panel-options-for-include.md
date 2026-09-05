@@ -15,9 +15,9 @@
             <td class="description-cell">
                 <tag type="critical">Master enable</tag>
                 <tag type="module">Panel</tag>
-                <p>This turns on the panel module. A panel gives you a screen, an encoder wheel and/or some buttons, so you can control your machine without a computer attached.</p>
-                <p>Turn it on and Smoothie loads the LCD driver, sets up your input devices, and starts listening for system events so it can show machine status and take your input.</p>
-                <p>Turn it off and the panel module is removed from memory entirely.</p>
+                <p>Enables the panel interface module. Panels provide a screen, an encoder wheel and/or a set of buttons, used to control your machine without requiring a computer connection.</p>
+                <p>When enabled, the panel module initializes the LCD driver, configures input devices, and registers for system events to display machine status and accept user input.</p>
+                <p>If disabled, the panel module is completely removed from memory.</p>
             </td>
         </tr>
         <tr>
@@ -26,8 +26,8 @@
             <td class="description-cell">
                 <tag type="critical">Required</tag>
                 <tag type="enum">reprap_discount_glcd, st7565_glcd, ssd1306_oled, viki2, mini_viki2, universal_adapter</tag>
-                <p>This tells Smoothie which panel you've got connected. Each panel needs its own interface and driver, so you have to set the right type here.</p>
-                <p>This value decides which driver gets loaded. Different panels need different pins, buttons, and have different display capabilities.</p>
+                <p>Specifies the type of panel connected to the Smoothieboard. Each panel has specific interface and driver requirements, so the correct panel type must be set.</p>
+                <p>The value determines which panel driver is loaded and initialized. Different panels have different pin requirements, button configurations, and display capabilities.</p>
                 <tag type="note">RRD GLCD does not support SPI CS pin sharing</tag>
             </td>
         </tr>
@@ -37,8 +37,8 @@
             <td class="description-cell">
                 <tag type="hardware">SPI</tag>
                 <tag type="default">0</tag>
-                <p>This picks which SPI channel the panel talks over. The Smoothieboard has two SPI channels, each with its own pins.</p>
-                <p>Change it and you change which physical pins carry MOSI, MISO, and SCLK. Most panels use channel 0.</p>
+                <p>Selects which SPI channel to use for panel communication. The Smoothieboard has two SPI channels with different pin assignments.</p>
+                <p>Channel selection affects which physical pins are used for MOSI, MISO, and SCLK signals. Most panels use channel 0 by default.</p>
             </td>
         </tr>
         <tr>
@@ -47,8 +47,8 @@
             <td class="description-cell">
                 <tag type="hardware">Pin</tag>
                 <tag type="default">nc</tag>
-                <p>This is the CS (Chip Select) pin, used to pick the panel out on the SPI bus. CS is what lets several devices share the same SPI port, since only the selected device responds.</p>
-                <p>Pull CS low and the panel responds to SPI commands. Leave it high and the panel ignores everything on the bus.</p>
+                <p>Specifies the CS (Chip Select) pin used to select the panel device on the SPI bus. CS allows multiple devices to share the same SPI port by activating only the selected device.</p>
+                <p>When CS is low (active), the panel responds to SPI commands; when high (inactive), the panel ignores SPI traffic.</p>
                 <tag type="critical">RRD GLCD does not support CS and requires being alone on its SPI port</tag>
             </td>
         </tr>
@@ -58,7 +58,7 @@
             <td class="description-cell">
                 <tag type="hardware">SPI</tag>
                 <tag type="performance">Speed</tag>
-                This sets the SPI port frequency. Some panels need it set explicitly, and it controls how fast the Smoothieboard talks to the panel.
+                SPI port frequency - some panels need it explicitly set. This setting controls the communication speed between the Smoothieboard and the panel.
             </td>
         </tr>
         <tr>
@@ -67,7 +67,7 @@
             <td class="description-cell">
                 <tag type="display">Visual</tag>
                 <tag type="default">9</tag>
-                This sets the contrast, for panels that support it: <code>viki2</code>, <code>mini_viki2</code>, and <code>st7565_glcd</code>. If your display looks too faint or too dark, adjust this.
+                Contrast value for panels that support it. Supported panels: <code>viki2</code>, <code>mini_viki2</code>, and <code>st7565_glcd</code>. Adjust this value if the display appears too faint or too dark.
             </td>
         </tr>
         <tr>
@@ -76,7 +76,7 @@
             <td class="description-cell">
                 <tag type="display">Visual</tag>
                 <tag type="default">false</tag>
-                Set this to <code>true</code> and the screen orientation flips. Use it if your panel ends up mounted upside down.
+                If set to <code>true</code>, reverse the screen orientation. Use this if your panel is mounted upside down.
             </td>
         </tr>
         <tr>
@@ -85,8 +85,8 @@
             <td class="description-cell">
                 <tag type="display">Visual</tag>
                 <tag type="default">0</tag>
-                <p>This is how many lines to offset the menu by on screen. Some panels need this set to <code>1</code>.</p>
-                <p>If your menu items aren't lining up right on your display, adjust this value.</p>
+                <p>Number of lines to offset the menu lines by on screen. On some panels, this value must be set to <code>1</code>.</p>
+                <p>Adjust if menu items don't align properly on your display.</p>
             </td>
         </tr>
         <tr>
@@ -95,8 +95,8 @@
             <td class="description-cell">
                 <tag type="hardware">Pin</tag>
                 <tag type="input">Encoder</tag>
-                <p>This is the A pin for your encoder wheel. Encoders have two pins, A and B. If you're not using an encoder, set this to <code>nc</code>.</p>
-                <p>Use the <code>^</code> modifier to set which way the menu moves, <code>!</code> for pull-up/pull-down, and <code>^</code> to invert.</p>
+                <p>A pin for the encoder wheel. Encoders have two pins, A and B; set this to <code>nc</code> if you use no encoder.</p>
+                <p>The <code>^</code> modifier defines menu move direction. Use <code>!</code> for pull-up/pull-down and <code>^</code> to invert.</p>
             </td>
         </tr>
         <tr>
@@ -105,8 +105,8 @@
             <td class="description-cell">
                 <tag type="hardware">Pin</tag>
                 <tag type="input">Encoder</tag>
-                <p>This is the B pin for your encoder wheel. Encoders have two pins, A and B. If you're not using an encoder, set this to <code>nc</code>.</p>
-                <p>Use the <code>^</code> modifier to set which way the menu moves, <code>!</code> for pull-up/pull-down, and <code>^</code> to invert.</p>
+                <p>B pin for the encoder wheel. Encoders have two pins, A and B; set this to <code>nc</code> if you use no encoder.</p>
+                <p>The <code>^</code> modifier defines menu move direction. Use <code>!</code> for pull-up/pull-down and <code>^</code> to invert.</p>
             </td>
         </tr>
         <tr>
@@ -115,7 +115,7 @@
             <td class="description-cell">
                 <tag type="input">Encoder</tag>
                 <tag type="default">2</tag>
-                This is how many pulses your encoder emits per detent, per click. If menu navigation feels too sensitive or not sensitive enough, adjust this.
+                The number of pulses the encoder emits per detent/click. Adjust this if the encoder is too sensitive or not sensitive enough for menu navigation.
             </td>
         </tr>
         <tr>
@@ -124,8 +124,8 @@
             <td class="description-cell">
                 <tag type="hardware">Pin</tag>
                 <tag type="input">Button</tag>
-                <p>This is the pin for the click button, "enter" or "select", the one you press to pick menu items, confirm actions, and accept value changes.</p>
-                <p>Use the <code>!</code> modifier to invert the signal polarity, for active-low buttons.</p>
+                <p>Pin for the click ("enter" or "select") button, typically pressed to select menu items, confirm actions, and accept value changes.</p>
+                <p>The <code>!</code> modifier inverts the signal polarity (use for active-low buttons).</p>
             </td>
         </tr>
         <tr>
@@ -134,8 +134,8 @@
             <td class="description-cell">
                 <tag type="hardware">Pin</tag>
                 <tag type="input">Button</tag>
-                <p>This is the pin for the back button, "escape" or "cancel". It takes you back to the previous menu level or cancels what you're doing.</p>
-                <p>On Viki2 panels, this same pin can be used for the back button or the pause button.</p>
+                <p>Pin for the back ("escape" or "cancel") button, which returns to the previous menu level or cancels the current operation.</p>
+                <p>On Viki2 panels, this pin may be used for either back button or pause button functionality.</p>
             </td>
         </tr>
         <tr>
@@ -144,7 +144,7 @@
             <td class="description-cell">
                 <tag type="hardware">Pin</tag>
                 <tag type="input">Button</tag>
-                This is the pin for the up button, used for menu navigation when you don't have an encoder. Use the <code>!</code> modifier to invert the signal polarity.
+                Pin for the up button. Used for menu navigation when no encoder is present. The <code>!</code> modifier inverts the signal polarity.
             </td>
         </tr>
         <tr>
@@ -153,7 +153,7 @@
             <td class="description-cell">
                 <tag type="hardware">Pin</tag>
                 <tag type="input">Button</tag>
-                This is the pin for the down button, used for menu navigation when you don't have an encoder. Use the <code>!</code> modifier to invert the signal polarity.
+                Pin for the down button. Used for menu navigation when no encoder is present. The <code>!</code> modifier inverts the signal polarity.
             </td>
         </tr>
         <tr>
@@ -162,7 +162,7 @@
             <td class="description-cell">
                 <tag type="hardware">Pin</tag>
                 <tag type="input">Button</tag>
-                This is the pin for the pause button, so you can pause the current operation immediately without digging through a menu.
+                Pin for the pause button. Allows immediate pause of the current operation. This is a convenience feature for quick access to pause functionality.
             </td>
         </tr>
         <tr>
@@ -171,7 +171,7 @@
             <td class="description-cell">
                 <tag type="input">Button</tag>
                 <tag type="timing">Delay</tag>
-                This is the delay in milliseconds before a button press counts as a long press. Long presses can trigger different menu functions than short ones.
+                Delay in milliseconds before a button press is considered a "long press". Long press actions may trigger different menu functions than short presses.
             </td>
         </tr>
         <tr>
@@ -180,8 +180,8 @@
             <td class="description-cell">
                 <tag type="hardware">Pin</tag>
                 <tag type="output">Buzzer</tag>
-                <p>This is the pin for the buzzer, which gives you audio feedback on button presses and alerts.</p>
-                <p>Some panels have a buzzer built in, and it needs this pin set to work.</p>
+                <p>Pin for the buzzer, which provides audio feedback for button presses and alerts.</p>
+                <p>Some panels have a built-in buzzer that requires this pin to be configured.</p>
             </td>
         </tr>
         <tr>
@@ -190,8 +190,8 @@
             <td class="description-cell">
                 <tag type="hardware">Pin</tag>
                 <tag type="output">LED</tag>
-                <p>This is the pin for the red LED on Viki2 panels. It's usually used to show heating status or errors.</p>
-                <p>Only Viki2 and similar panels with status LEDs have this.</p>
+                <p>Pin for the red LED on Viki2 panels, which typically indicates heating status or errors.</p>
+                <p>Only available on Viki2 and similar panels with status LEDs.</p>
             </td>
         </tr>
         <tr>
@@ -200,8 +200,8 @@
             <td class="description-cell">
                 <tag type="hardware">Pin</tag>
                 <tag type="output">LED</tag>
-                <p>This is the pin for the blue LED on Viki2 panels. It's usually used to show cooling or idle status.</p>
-                <p>Only Viki2 and similar panels with status LEDs have this.</p>
+                <p>Pin for the blue LED on Viki2 panels, which typically indicates cooling or idle status.</p>
+                <p>Only available on Viki2 and similar panels with status LEDs.</p>
             </td>
         </tr>
         <tr>
@@ -211,8 +211,8 @@
                 <tag type="hardware">Pin</tag>
                 <tag type="display">Control</tag>
                 <tag type="default">nc</tag>
-                <p>If you're using a Viki or an SSD1306, this pin drives the display's C/D (Command/Data) pin.</p>
-                <p>It's how the display tells command bytes apart from data bytes over SPI.</p>
+                <p>If using a Viki or SSD1306, this pin drives the C/D (Command/Data) pin on the display.</p>
+                <p>It distinguishes between command and data bytes in the SPI communication.</p>
             </td>
         </tr>
         <tr>
@@ -222,8 +222,8 @@
                 <tag type="hardware">Pin</tag>
                 <tag type="display">Control</tag>
                 <tag type="default">nc</tag>
-                <p>If you're using an SSD1306, this pin is sometimes needed and connects to the display's reset pin.</p>
-                <p>It's used to initialize the display controller.</p>
+                <p>If using an SSD1306, this pin is sometimes required and connects to the reset pin on the display.</p>
+                <p>The reset pin is used to initialize the display controller.</p>
             </td>
         </tr>
         <tr>
@@ -232,8 +232,8 @@
             <td class="description-cell">
                 <tag type="hardware">Pin</tag>
                 <tag type="default">nc</tag>
-                <p>If you're using the <code>universal_adapter</code>, connect this pin to the adapter to ask whether it's busy.</p>
-                <p>The universal adapter uses this pin for daisy-chaining several devices together.</p>
+                <p>If using the <code>universal_adapter</code>, this pin can be connected to the adapter to ask whether it is busy.</p>
+                <p>The universal adapter uses this pin for daisy-chaining multiple devices.</p>
             </td>
         </tr>
         <tr>
@@ -243,8 +243,8 @@
                 <tag type="motion">Jogging</tag>
                 <tag type="axis">X/Alpha</tag>
                 <tag type="default">6000</tag>
-                <p>This is the X (Alpha) axis jogging feedrate, in millimeters per minute, used when you jog from the panel screen.</p>
-                <p>Set it based on what your machine can handle and how fast you want to jog.</p>
+                <p>X (Alpha) axis jogging feedrate in millimeters/minute, used when jogging from the panel screen.</p>
+                <p>Adjust based on your machine's capabilities and desired jogging speed.</p>
             </td>
         </tr>
         <tr>
@@ -254,8 +254,8 @@
                 <tag type="motion">Jogging</tag>
                 <tag type="axis">Y/Beta</tag>
                 <tag type="default">6000</tag>
-                <p>This is the Y (Beta) axis jogging feedrate, in millimeters per minute, used when you jog from the panel screen.</p>
-                <p>Set it based on what your machine can handle and how fast you want to jog.</p>
+                <p>Y (Beta) axis jogging feedrate in millimeters/minute, used when jogging from the panel screen.</p>
+                <p>Adjust based on your machine's capabilities and desired jogging speed.</p>
             </td>
         </tr>
         <tr>
@@ -265,8 +265,8 @@
                 <tag type="motion">Jogging</tag>
                 <tag type="axis">Z/Gamma</tag>
                 <tag type="default">200</tag>
-                <p>This is the Z (Gamma) axis jogging feedrate, in millimeters per minute, used when you jog from the panel screen.</p>
-                <p>It's usually slower than XY jogging, for precision and safety.</p>
+                <p>Z (Gamma) axis jogging feedrate in millimeters/minute, used when jogging from the panel screen.</p>
+                <p>Typically slower than XY jogging, for precision and safety.</p>
             </td>
         </tr>
         <tr>
@@ -276,8 +276,8 @@
                 <tag type="temperature">Preset</tag>
                 <tag type="3d-printer">Hotend</tag>
                 <tag type="default">185</tag>
-                <p>This is the temperature the hotend goes to when you use the pre-heating menu item on the panel. It's a one-button preset for heating to whatever temperature you use most.</p>
-                <p>Set it to match the filament you use most often.</p>
+                <p>Temperature to set the hotend to when using the pre-heating menu item on the panel — a quick-access, one-button preset for heating to a commonly used temperature.</p>
+                <p>Set this to match your most commonly used filament type.</p>
             </td>
         </tr>
         <tr>
@@ -287,8 +287,8 @@
                 <tag type="temperature">Preset</tag>
                 <tag type="3d-printer">Heated bed</tag>
                 <tag type="default">60</tag>
-                <p>This is the temperature the bed goes to when you use the pre-heating menu item on the panel. It's a one-button preset for heating to whatever temperature you use most.</p>
-                <p>Set it to match the filament you use most often.</p>
+                <p>Temperature to set the bed to when using the pre-heating menu item on the panel — a quick-access, one-button preset for heating to a commonly used temperature.</p>
+                <p>Set this to match your most commonly used filament type.</p>
             </td>
         </tr>
         <tr>
@@ -297,8 +297,8 @@
             <td class="description-cell">
                 <tag type="storage">SD card</tag>
                 <tag type="default">false</tag>
-                <p>Set this to <code>true</code> if your panel has an external SD card slot, or if you want to hook up a second SD card slot to one of the Smoothieboard's SPI ports.</p>
-                <p>This gives you an SD card interface on top of the onboard one.</p>
+                <p>Set to <code>true</code> if your panel has an external SD card slot, or if you want to connect a second SD card slot to one of your Smoothieboard's SPI ports.</p>
+                <p>Enables an additional SD card interface beyond the onboard SD slot.</p>
                 <tag type="warning">External SD cards over SPI cables can be unreliable - NOT recommended for printing</tag>
             </td>
         </tr>
@@ -309,8 +309,8 @@
                 <tag type="hardware">SPI</tag>
                 <tag type="storage">SD card</tag>
                 <tag type="default">0</tag>
-                <p>This sets which SPI channel the external SD card is on.</p>
-                <p>If the SD card shares the panel's SPI port, this has to match the panel's channel. If it's on its own port, it can be a different channel.</p>
+                <p>Set the SPI channel the external SD card is on.</p>
+                <p>This must match the SPI channel used by the panel if they share the same SPI port, or can be a different channel if separate.</p>
             </td>
         </tr>
         <tr>
@@ -319,8 +319,8 @@
             <td class="description-cell">
                 <tag type="hardware">Pin</tag>
                 <tag type="storage">SD card</tag>
-                <p>This sets the CS (Chip Select) pin for the external SD card.</p>
-                <p>It's how several devices can share the same SPI port, as long as each one has its own CS pin.</p>
+                <p>Set the CS (Chip Select) pin for the external SD card.</p>
+                <p>This allows multiple devices to share the same SPI port, as long as each has a unique CS pin.</p>
             </td>
         </tr>
         <tr>
@@ -330,8 +330,8 @@
                 <tag type="hardware">Pin</tag>
                 <tag type="storage">SD card</tag>
                 <tag type="default">nc</tag>
-                <p>This is the SD card detect pin, which tells Smoothie when a card is inserted or removed.</p>
-                <p>If you're not using card detect, set it to <code>nc</code>.</p>
+                <p>SD card detect signal pin, which detects when an SD card is inserted or removed.</p>
+                <p>Set to <code>nc</code> if you don't use an SD card detect signal.</p>
             </td>
         </tr>
         <tr>
@@ -340,7 +340,7 @@
             <td class="description-cell">
                 <tag type="display">Visual</tag>
                 <tag type="3d-printer">Multi-extruder</tag>
-                This sets which extruder's temperature shows on the panel. Handy on multi-extruder setups, so you see the status of whichever extruder is active.
+                Controls which extruder's temperature is displayed on panels. Useful for multi-extruder setups to show the currently active extruder's status.
             </td>
         </tr>
         <tr>
@@ -349,8 +349,8 @@
             <td class="description-cell">
                 <tag type="menu">Custom</tag>
                 <tag type="critical">Required for custom menu</tag>
-                <p>Set this to <code>true</code> and it creates a new custom menu entry for the panel, named <code>{name}</code>. Replace <code>{name}</code> with whatever you want to call it.</p>
-                <p>You can add as many custom entries as you like, as long as each one has a different name.</p>
+                <p>When set to <code>true</code>, creates a new custom menu entry for the panel with the name <code>{name}</code>. Replace <code>{name}</code> with your menu identifier.</p>
+                <p>You can create any number of custom entries, as long as each has a different name.</p>
                 <tag type="note">{name} is case sensitive</tag>
             </td>
         </tr>
@@ -359,8 +359,8 @@
             <td><tag type="unavailable">Not in V2</tag></td>
             <td class="description-cell">
                 <tag type="menu">Custom</tag>
-                <p>This is the name shown in the panel's menus, what you see when browsing.</p>
-                <p>Underscores (<code>_</code>) get converted to spaces when displayed.</p>
+                <p>The name displayed in the panel's menus — what the user sees when browsing the menu.</p>
+                <p>Underscores (<code>_</code>) are converted to spaces when displayed.</p>
             </td>
         </tr>
         <tr>
@@ -369,8 +369,8 @@
             <td class="description-cell">
                 <tag type="menu">Custom</tag>
                 <tag type="gcode">Commands</tag>
-                <p>This is the command that runs when you select this menu entry.</p>
-                <p>Use <code>_</code> instead of a literal space, both in the menu name and in the command, since it gets converted to a space. Use <code>|</code> to separate multiple commands to run one after another.</p>
+                <p>The command executed when the menu entry is selected and clicked.</p>
+                <p>The <code>_</code> character is converted to a space in both the menu name and the command (use <code>_</code> instead of a literal space), and <code>|</code> separates multiple commands to run in sequence.</p>
                 <tag type="example">M80_S30|G1_X10 executes M80 S30 followed by G1 X10</tag>
             </td>
         </tr>

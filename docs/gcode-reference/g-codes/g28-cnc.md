@@ -16,6 +16,7 @@ permalink: /g28-cnc
 
 
 
+
 {::nomarkdown}
 <a href="/images/temporary/cnc-spindle-generic.jpg">
   <img src="/images/temporary/cnc-spindle-generic.jpg" alt="Returning To Origin" style="width: 200px; height: 200px; float: right; margin-left: 1rem;"/>

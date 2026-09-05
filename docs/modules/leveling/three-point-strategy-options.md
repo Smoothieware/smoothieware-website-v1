@@ -16,6 +16,7 @@ permalink: /three-point-strategy-options
 
 
 
+
 The three-point leveling strategy in Smoothieware probes three points on your bed to define a plane, then keeps the Z axis parallel to that plane during printing.
 
 This is useful if your Z plate/bed is not perfectly aligned with your XY gantry.

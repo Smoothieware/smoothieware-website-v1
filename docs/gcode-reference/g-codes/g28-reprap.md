@@ -22,6 +22,7 @@ permalink: /g28-reprap
 
 
 
+
 {::nomarkdown}<gcode>G28</gcode>{:/nomarkdown} means "seek the endstops for each axis, stop once they are found and this position is now the origin for the machine".
 
 This G-code is specific to Reprap and does not conform to the normal G-code standard.

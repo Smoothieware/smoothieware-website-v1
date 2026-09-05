@@ -13,6 +13,7 @@
 
 
 
+
 {::nomarkdown}
 <a href="/images/temporary/cnc-spindle-generic.jpg">
   <img src="/images/temporary/cnc-spindle-generic.jpg" alt="A spindle motor" style="width: 350px; height: auto; float: right; margin-left: 1rem;"/>

@@ -16,6 +16,7 @@ permalink: /safety-thermistor
 
 
 
+
 Hot-ends have a heating element (controlled by a MOSFET) and a thermistor to read its temperature.
 
 When the thermistor is read, the Smoothie calculates the temperature, and then turns the heater on or off depending on whether heat is needed or not.

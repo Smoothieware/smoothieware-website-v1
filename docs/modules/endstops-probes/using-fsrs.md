@@ -16,6 +16,7 @@ permalink: /using-fsrs
 
 
 
+
 FSRs (Force Sensing Resistors) can be used as bed leveling sensors with Smoothieboard to provide automatic bed leveling for 3D printers.
 
 ## Overview

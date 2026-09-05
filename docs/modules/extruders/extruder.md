@@ -4,7 +4,6 @@ permalink: /extruder
 
 
 
-
 <!-- learning-diagram:46-extruder-path -->
 {::nomarkdown}
 <figure id="learning-diagram-46-extruder-path" style="clear: both; max-width: 960px; margin: 2rem auto; scroll-margin-top: 16vh;">

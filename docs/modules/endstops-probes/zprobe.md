@@ -17,6 +17,7 @@ permalink: /zprobe
 
 
 
+
 A probe is a switch (much like an Endstop) used to find where something is located automatically.
 
 Smoothie will use it to move until the probe is "triggered" and stop there.

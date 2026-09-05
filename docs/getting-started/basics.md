@@ -260,6 +260,7 @@ Smoothie handles acceleration planning automatically - you just set the limits i
 {:/nomarkdown}
 
 
+
 Stepper motors move in discrete steps, not continuous rotation.
 
 **Steps per mm** tells Smoothie: "How many motor steps = 1mm of motion?"

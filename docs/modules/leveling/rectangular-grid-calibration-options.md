@@ -16,6 +16,7 @@ permalink: /rectangular-grid-calibration-options
 
 
 
+
 This page documents all configuration options for the rectangular grid leveling strategy in Smoothie.
 
 The rectangular grid strategy allows you to probe multiple points on your bed in a grid pattern to compensate for uneven bed surfaces.
