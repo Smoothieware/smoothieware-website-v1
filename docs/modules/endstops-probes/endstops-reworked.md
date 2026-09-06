@@ -5,39 +5,15 @@ title: "Endstops — reworked"
 
 > **Temporary comparison page:** this is the reworked version. [Open the current Endstops page in another tab](/endstops){:target="_blank" rel="noopener"} to compare them side by side.
 
-# Endstops
-
-Endstops give Smoothie a repeatable machine position. The same physical inputs can also stop travel at a limit, while software limits can reject moves outside a known work area after homing.
-
-Use this page in order for a first setup:
-
-1. Choose the job of each switch.
-2. Wire one mechanical switch and prove its state with {::nomarkdown}<mcode>M119</mcode>{:/nomarkdown}.
-3. Configure and home one axis under control.
-4. Set the coordinate established by homing.
-5. Add hard or software limits only after homing works.
-
-## Choose what each stop will do
-
-| Job | What happens | When it is active |
-| --- | --- | --- |
-| Homing switch | The axis finds a repeatable reference point | During a homing cycle |
-| Hard limit | Motion halts when an enabled switch triggers | During normal motion |
-| Software limit | A move beyond the configured coordinates is rejected or halted | After the machine has homed |
-
-One switch may be used for homing and as a hard limit, but those behaviors are configured separately. A Z probe also has a separate configuration role; see [Probing with Smoothie](zprobe) for probe setup.
-
 {% include modules/endstops-probes/guide-endstops-reworked-for-include.md %}
 
-<span id="configuration"></span>
+## Configuration
 
-## Configure a home-to-min axis
+Wire and test the switch with {::nomarkdown}<mcode>M119</mcode>{:/nomarkdown} first. Once Smoothie reliably sees it change between pressed and released, tell the firmware which direction to home, what coordinate it has found, and how far it may travel while looking for the switch.
 
-The input needs a real pin assignment before {::nomarkdown}<mcode>M119</mcode>{:/nomarkdown} can report it. If the input is absent, set its pin, restart, and repeat the released/pressed test. Set the homing direction and travel only after that electrical test passes. The examples below describe the same three-axis, home-to-min setup in each firmware's configuration format.
+### Quick migration guide
 
-<span id="quick-migration-guide"></span>
-
-### V1 and V2 working forms
+Here is the same basic three-axis, home-to-min setup in V1 and V2 format:
 
 {::nomarkdown}
 <versioned orientation="vertical">
@@ -97,108 +73,89 @@ minz.axis = Z
 minz.max_travel = 500
 ```
 
-These pins match the bundled V2 reference configurations. Confirm them against the pinout and configuration supplied for your exact board before copying the block.
+Those pins are the ones used by the bundled V2 reference configurations. Confirm them against the configuration and pinout for your exact board before copying the block.
 
 {::nomarkdown}
 </v2>
 </versioned>
 {:/nomarkdown}
 
-Set `home_to_max` and configure the maximum input instead when the switch is at the far end of an axis. Do not enable homing for an axis that has no homing switch.
+Set `home_to_max` and configure the maximum input instead if the switch is at the far end of the axis. Do not enable homing on an axis which has no homing switch.
 
 <span id="configuration-options"></span>
 
-### Use the option reference for exact settings
+### All configuration options
 
-The [endstop option reference](endstops-options) contains the complete V1/V2 setting catalogue. Use it for rates, retract distances, debounce, trim, kinematics-specific behavior, and less common axes. Keeping that table on its reference page leaves this procedure readable without deleting the details.
+The large setting table has been split into the [complete Endstop configuration reference](endstops-options). It contains every V1 and V2 setting from the original page: homing modes and order, debounce, delta and SCARA trim, all six input pins, positions, maximum travel, hard limits, fast and slow rates, and retract distances. It also contains the endstop signal diagram. Nothing in that table has been summarized away.
+
+Use the short example above to get the ordinary case running. Open the full table when you need to change rates, retract distance, debounce, trim, a maximum switch, or a less common kinematics setup.
 
 ## Homing
 
-The input test above is the gate for motion. Do not use a homing command to discover whether the switch is wired correctly.
+Once {::nomarkdown}<mcode>M119</mcode>{:/nomarkdown} changes correctly when you press the switch, you can test homing with motor power on. Stay ready to cut the power the first time.
 
-{::nomarkdown}
-<sl-alert variant="warning" open>
-  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
-  <strong>Check the command dialect first.</strong><br><br>
-  In RepRap mode, <gcode>G28</gcode> homes. In CNC/GRBL mode, <gcode>G28</gcode> moves to the position stored with <gcode>G28.1</gcode>. Use <code>$H</code> or <gcode>G28.2</gcode> to home in CNC/GRBL mode. See the <a href="g28">G28 reference</a> for the full distinction.
-</sl-alert>
-{:/nomarkdown}
-
-In RepRap mode, home one axis first:
+In RepRap mode, home one axis first. For example:
 
 ```
 G28 Z0
 ```
 
-After each axis passes on its own, home all configured axes:
+will home the Z axis.
+
+And:
 
 ```
 G28
 ```
 
-A successful homing cycle approaches the switch quickly, stops, retracts, approaches more slowly, and stops on the switch again. If the axis moves away from the switch, correct either the homing direction or the motor direction before trying again.
+will home all axes which have endstops enabled, which is all three in the standard V1 configuration.
+
+If your axis moves until it hits the end-stop, stops, moves a small distance back, then goes a bit slower back to the end-stop and stops again, that end-stop is working fine.
+
+If the axis moves a small distance in the wrong direction and stops, Smoothie most probably thinks the endstop is already pressed. Check {::nomarkdown}<mcode>M119</mcode>{:/nomarkdown}; if the reading is inverted, add or remove `!` on the pin.
+
+If the axis moves and never stops, even after the end-stop is physically hit, Smoothie never sees the end-stop as pressed. Cut motor power and go back to the wiring and {::nomarkdown}<mcode>M119</mcode>{:/nomarkdown} test.
+
+If the axis moves away from the switch, correct the homing direction or the motor direction before trying again.
 
 {::nomarkdown}
 <sl-alert variant="warning" open>
   <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
-  Configure either the minimum or the maximum endstop for homing on an axis, not both. Leave homing disabled on axes that must not home.
+  The <code>firmware-cnc.bin</code> firmware is in CNC mode and uses GRBL compatibility mode by default. In that mode <gcode>G28</gcode> does <strong>not</strong> home; it goes to a predefined park position set with <gcode>G28.1</gcode>. To home in CNC/GRBL mode, issue <code>$H</code> or <gcode>G28.2</gcode>. See the <a href="g28">G28 page</a> for the complete distinction.
 </sl-alert>
 {:/nomarkdown}
 
 {::nomarkdown}
 <sl-alert variant="warning" open>
   <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
-  <strong>Delta machines using M666 trim:</strong><br><br>
-  Non-zero trim values can leave X and Y non-zero immediately after homing. Setting <setting v1="move_to_origin_after_home" v2="endstops.common.move_to_origin_after_home"></setting> to <code>true</code> moves the effector to 0,0 after homing and trim. Make sure the carriages can leave the switches safely before enabling that move.
+  Currently only the minimum <strong>or</strong> maximum endstop can be used for homing an axis. Do not set endstops for axes that shall not be homed.
 </sl-alert>
 {:/nomarkdown}
 
-<span id="changing-the-origin"></span>
+{::nomarkdown}
+<sl-alert variant="warning" open>
+  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+  <strong>Note for deltas using M666 to set soft trim:</strong><br><br>
+  When you home a delta that has non-zero trim values, you will find that X and Y are not 0 after homing. This is normal.<br><br>
+  If you want X0 Y0 after homing, set <setting v1="move_to_origin_after_home" v2="endstops.common.move_to_origin_after_home"></setting> to <code>true</code>. This moves the effector to 0,0 after homing and applying the trim. Make absolutely sure the carriages can come off the switches and make that move safely; otherwise it may crash into your endstops.
+</sl-alert>
+{:/nomarkdown}
 
-## Set the coordinate after homing
+## Limit switches
 
-The homing position is the coordinate Smoothie assigns when the switch triggers. It does not have to be 0.
+Endstops may also act as limit switches. During normal operation, triggering any enabled limit switch halts the system and stops all operations. Smoothie sends `!!` to the host so it stops sending more data; recent development versions of OctoPrint and [Pronterface](pronterface) support this.
 
-- If X homes to a maximum switch 200 mm from the desired origin, V1 can assign `alpha_max 200`.
-- If X homes to a minimum switch on a 200 mm-wide Cartesian machine and the desired origin is the center, V1 can assign `alpha_min -100`.
-- A typical delta configuration assigns the homed tower position and can then move the effector to the bed center.
-
-By default, homing assigns the configured coordinate without necessarily moving the tool to 0,0. Use `move_to_origin_after_home` only after confirming the path from the switches to the origin is clear.
-
-<span id="usage-example-with-home-offsets"></span>
-
-### V1 printer example: set the Z home offset
-
-This sequence is for a V1 printer whose bed and nozzle clearances have already been checked:
-
-```
-G28
-G0 Z5
-; Jog down until the nozzle just traps a thin sheet of paper
-M306 Z0
-G28
-G0 Z0
-; Confirm the nozzle still traps the paper
-M500
-```
-
-Repeat it only when the bed or endstop position changes. See [Gamma max](gamma-max) for the full Z-height procedure.
-
-## Optional protection after homing
-
-### Limit switches
-
-An enabled hard limit halts the machine when its switch triggers during normal motion. Smoothie sends `!!` to a compatible host and requires `$X`, {::nomarkdown}<mcode>M999</mcode>{:/nomarkdown}, or a reset before work can continue.
+Sending `$X`, sending {::nomarkdown}<mcode>M999</mcode>{:/nomarkdown}, or resetting the board is required to continue.
 
 {::nomarkdown}
 <sl-alert variant="danger" open>
   <sl-icon slot="icon" name="exclamation-octagon"></sl-icon>
-  <strong>Recovery temporarily permits motion while the switch is held.</strong><br><br>
-  Clear the halt, then jog only away from the triggered switch. A move farther into the stop can damage the machine. Keep travel slow and stay ready to cut motor power.
+  <strong>Jog away from the switch, not farther into it.</strong><br><br>
+  While a limit switch is still triggered, the limits are disabled so that you can jog off it. This is far from perfect but it is a compromise: otherwise the only option would be to push the axis off the switch by hand. Jog slowly and be ready to cut motor power, because a move in the wrong direction can crash the machine into the limit.
 </sl-alert>
 {:/nomarkdown}
 
-Enable limits only on inputs that are physically installed and have passed the {::nomarkdown}<mcode>M119</mcode>{:/nomarkdown} test:
+To enable hard limits, use the following options. They are disabled by default.
 
 {::nomarkdown}
 <versioned orientation="vertical">
@@ -206,10 +163,12 @@ Enable limits only on inputs that are physically installed and have passed the {
 {:/nomarkdown}
 
 ```
-alpha_limit_enable   true
-beta_limit_enable    true
-gamma_limit_enable   true
+alpha_limit_enable   true   # enable X min and max limit switches
+beta_limit_enable    true   # enable Y min and max limit switches
+gamma_limit_enable   true   # enable Z min and max limit switches
 ```
+
+In V1, enabling an axis enables both its minimum and maximum inputs as limits. Set an absent input pin to `nc` to disable that end.
 
 {::nomarkdown}
 </v1>
@@ -223,93 +182,170 @@ miny.limit_enable = true
 minz.limit_enable = true
 ```
 
-V2 enables the limit role per configured input. Enable `maxx.limit_enable`, `maxy.limit_enable`, or `maxz.limit_enable` only when that corresponding maximum input is configured.
+V2 enables the limit role per input. Enable `maxx.limit_enable`, `maxy.limit_enable`, or `maxz.limit_enable` only if that maximum input is configured and physically present.
 
 {::nomarkdown}
 </v2>
 </versioned>
 {:/nomarkdown}
 
-After homing, Smoothie retracts by <setting v1="{axis}_homing_retract_mm" v2="endstops.{min/max}{axis}.retract"></setting> so the switch can release. If coordinate 0 still presses the switch, use an appropriate home offset or minimum coordinate so a move to 0 does not retrigger the limit.
+After homing, the axis is usually left pressing the switch. When limits are enabled, Smoothie backs off by <setting v1="{axis}_homing_retract_mm" v2="endstops.{min/max}{axis}.retract"></setting> so it can release.
 
-Boards with only three endstop connectors can still use two switches per axis: wire two NC switches in series, or two NO switches in parallel. NC series wiring retains the broken-wire fail-safe behavior.
+The downside is that if you home to 0 and the switch is still triggered at 0, moving to 0,0 will fire the limit again. Set a homing offset such as `M206 X-5 Y-5`, using enough distance to come off the switch. An alternative is to set the minimum or maximum X and Y coordinates to -5 instead of 0. That way you can home and still safely go to 0 without triggering another limit event.
 
-### Soft endstops
-
-Software limits compare each commanded destination with the configured work-area coordinates. They only become meaningful after the machine has homed and established its position.
-
-For V1, start with the maintained sample form:
-
-```
-soft_endstop.enable   true
-soft_endstop.halt     true
-soft_endstop.x_min    0.0
-soft_endstop.y_min    0.0
-soft_endstop.x_max    500.0
-soft_endstop.y_max    500.0
-```
-
-Leave an axis boundary absent when that axis should not be checked. Send {::nomarkdown}<mcode>M211</mcode>{:/nomarkdown} to inspect the current state, {::nomarkdown}<mcode>M211 S0</mcode>{:/nomarkdown} to disable it temporarily, and {::nomarkdown}<mcode>M211 S1</mcode>{:/nomarkdown} to enable it again.
+You can also enable software endstops and configure them to refuse moves beyond the work area. This makes the recovery compromise a bit safer, but it only helps after the machine has homed and knows where it is.
 
 {::nomarkdown}
-<sl-alert variant="warning" open>
-  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
-  Keep <code>soft_endstop.halt</code> enabled. Silently ignoring an out-of-bounds move can make later commands continue from a position the host did not expect.
+<sl-alert variant="primary" open>
+  <sl-icon slot="icon" name="lightbulb"></sl-icon>
+  <strong>Boards with few endstop connectors:</strong><br><br>
+  Some boards have only three connectors, which is not enough for one switch at each end of all three axes. You can still put two switches on one connector:
+  <ul>
+    <li>Connect two normally-closed switches in series</li>
+    <li>Or connect two normally-open switches in parallel</li>
+  </ul>
+  This allows minimum and maximum limit switches to work from the same input. Normally-closed series wiring keeps the useful broken-wire behavior described above.
 </sl-alert>
 {:/nomarkdown}
 
-The bundled V2 configurations document per-input hard limits but do not provide a V2 software-limit block. Do not translate the V1 keys by spelling alone; use a firmware version that documents the feature or verify it against the V2 firmware in use.
+## Soft endstops
 
-<span id="powered-endstops-wiring"></span>
+Soft(ware) endstops allow the board to refuse any command that would put the tool outside the bounds of the work area.
 
-## Powered and unusual sensors
+This only functions once the machine has been homed; until then it cannot know where it is. After homing, send {::nomarkdown}<mcode>M211</mcode>{:/nomarkdown} to see the current state. Use {::nomarkdown}<mcode>M211 S0</mcode>{:/nomarkdown} to disable soft endstops temporarily and {::nomarkdown}<mcode>M211 S1</mcode>{:/nomarkdown} to enable them again.
 
-Optical, Hall-effect, inductive, and capacitive sensors need more care than a bare switch. Before connecting one, verify all three items in its data sheet:
-
-1. Supply voltage
-2. Output voltage and output type
-3. Whether the board input needs a pull-up, pull-down, inversion, or external level protection
-
-Do not assume every powered sensor uses 5 V or produces a board-safe signal. Inductive and capacitive sensors commonly need a higher supply and may require an interface circuit.
-
-On a V1 Smoothieboard, an X-min example changes pull behavior like this:
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
 
 ```
-alpha_min_endstop   1.24^   # pull-up
-alpha_min_endstop   1.24    # no internal pull
-alpha_min_endstop   1.24v   # pull-down
+soft_endstop.enable   true   # enable soft endstops
+soft_endstop.xmin     1      # minimum X position
+soft_endstop.xmax     999    # maximum X position
+soft_endstop.ymin     1      # minimum Y position
+soft_endstop.ymax     499    # maximum Y position
+soft_endstop.zmin     1      # minimum Z position
+soft_endstop.zmax     199    # maximum Z position
+soft_endstop.halt     true   # halt instead of ignoring an out-of-bounds command
 ```
 
-If the endstop connector's input circuit does not suit the sensor, use a compatible free GPIO only after checking the [pinout](pinout) and [pin configuration rules](pin-configuration).
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
 
-<span id="types-of-endstops"></span>
+The old page contained a V2 `[soft_endstop]` block obtained by translating the V1 names. The bundled V2 configurations do not contain that block, so it is not reproduced here as working configuration. Do not guess configuration syntax on a machine that can damage itself: use a V2 firmware version which documents software limits, or verify the feature against the exact firmware you are running.
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
+
+It is highly recommended that you always enable HALT when a soft endstop is hit. The “ignore command” option is VERY dangerous: later commands inside the limits continue from a position the host did not expect, which can cause untold damage.
+
+## Usage example with home offsets
+
+Here is a common sequence you may use to set bed height. This need not be repeated unless the bed changes.
+
+```
+; Home
+G28
+; move to 5mm above bed
+G0 Z5
+; then manually jog down until nozzle is on bed or just traps a sheet of thin paper
+; sets the Z homing offset based on current position
+M306 Z0
+G28
+G0 Z0
+; check nozzle still captures thin sheet of paper
+M500
+; saves the results in EEPROM equivalent
+```
+
+See [Gamma max](gamma-max) for the complete Z-height procedure.
+
+## Changing the origin
+
+The homing position, or origin, is the 0,0 position relative to which the machine moves.
+
+On a delta, the homing position is automatically the center of the bed.
+
+On a Cartesian machine, however, it is the point at which the end-stops are hit, generally a corner of the machine. You might want to have a different origin point though.
+
+For example, if your X axis homes to the maximum endstop, and that endstop is 200 mm away from the machine origin, tell Smoothie where that switch is with:
+
+```
+alpha_max   200
+```
+
+If X homes to the minimum endstop, the work area is 200 mm wide, and you want the origin at the center, use:
+
+```
+alpha_min   -100
+```
+
+By default, the machine homes and sets the current position as configured, but does not move to 0,0 afterward. Set `move_to_origin_after_home` to `true` if you want that move, once you have made sure the path is clear.
+
+## Powered endstops wiring
+
+Mechanical endstops are simple switches: they let a signal pass through, or not. They have no intelligence of their own.
+
+There are more sophisticated endstops, for example Hall-effect or optical sensors. These are powered endstops. Besides Signal and Ground, they need a power supply—but not necessarily 5 V. Check the data sheet for the required supply voltage, the output voltage, and the output type before connecting anything.
+
+Different powered endstops behave differently. Some pull Signal to Ground when triggered; others produce a high voltage. Some have open-collector outputs and need a pull-up. To know exactly what your endstop does, see its documentation. In particular, do not assume that an inductive or capacitive sensor powered at 24 V produces a voltage which is safe for a Smoothieboard input.
+
+If {::nomarkdown}<mcode>M119</mcode>{:/nomarkdown} reports the opposite of what it should, invert the input with `!` just as you would for a mechanical switch.
+
+Some powered endstops need the internal pull-up removed. On V1 X min, change:
+
+```
+alpha_min_endstop   1.24^
+```
+
+to:
+
+```
+alpha_min_endstop   1.24
+```
+
+If the input needs a pull-down, use:
+
+```
+alpha_min_endstop   1.24v
+```
+
+In some very rare cases, the endstop reading circuit on the Smoothieboard will not suit the sensor. Use a compatible free GPIO only after checking the [pinout](pinout) and [pin configuration rules](pin-configuration).
+
 <span id="sensor-types"></span>
 <span id="recommendations"></span>
 
-## Choose a sensor type
+## Types of endstops
 
-For most machines, begin with a mechanical microswitch: it is inexpensive, repeatable, easy to diagnose, and does not need a power supply. Optical and Hall-effect sensors can be useful when contact is unsuitable. Inductive, capacitive, force-sensitive, and retractable probes have additional electrical or mechanical requirements.
+The sensor comparison has been split into the [complete Endstop and probe sensor types table](sensor-types). It keeps all eight original rows—mechanical, optical, Hall effect, inductive, capacitive, force-sensitive resistor, IR probe, and BLTouch—with their uses, pros, cons, ratings, advice, and the Reprap Z-probe link.
 
-Use the [endstop and probe sensor comparison](sensor-types) before choosing a powered or non-contact device.
+The short version is that mechanical switches are the simplest, cheapest, and most reliable option. Don't use anything else unless you have a very good reason to. Just getting a fancier sensor because it feels cool to do so is most likely going to bite you in the back quickly. For a retractable Z probe, BLTouch is essentially a servo-mounted mechanical switch and is also a good option.
 
 <span id="additional-resources"></span>
 <span id="external-resources"></span>
 
-## Reference and further reading
+## Going further
 
-- [Complete endstop option reference](endstops-options)
-- [G28 and homing command reference](g28)
+Smoothie is Open Source, so if you are curious how the module works, you can simply [look at the V1 endstop code](https://github.com/Smoothieware/Smoothieware/blob/edge/src/modules/tools/endstops/Endstops.cpp).
+
+Useful pages to keep nearby:
+
+- [Complete Endstop configuration reference](endstops-options)
+- [Endstop and probe sensor types](sensor-types)
+- [G28 command reference](g28)
 - [Smoothieboard V1 pinout](pinout)
 - [Smoothieboard V2 Prime board page](smoothieboard-v2-prime)
 - [STM32H7 pin-use reference](stm32h7-pin-usage)
-- [Z-probe setup](zprobe)
-- [V1 endstop firmware source](https://github.com/Smoothieware/Smoothieware/blob/edge/src/modules/tools/endstops/Endstops.cpp)
+- [Z probe setup](zprobe)
 
-<span id="general-video-about-mechanical-endstops"></span>
+### General video about mechanical endstops
 
-### Mechanical endstop video
-
-The written procedure above is the source of truth for wiring and testing. This external video provides an additional visual explanation.
+If you would rather see a mechanical endstop explained, this video may help:
 
 {::nomarkdown}
 <div style="max-width: 720px; margin: 1.5rem auto; aspect-ratio: 16 / 9;">
