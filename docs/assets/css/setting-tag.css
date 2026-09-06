@@ -28,6 +28,7 @@ setting {
     /* Compact container sizing */
     height:          auto;
     min-height:      22px;
+    max-width:       100%;
     margin:          0 3px;
 
     /* Black background to hide wrapping artifacts */
@@ -1388,11 +1389,15 @@ sl-alert::part(base) {
 /* Wrapper containers for v1 and v2 content sections */
 /* Used for dynamic showing/hiding based on display_version setting */
 /* Must maintain flex layout to avoid breaking tag appearance */
+/* flex-wrap + auto height let long module.{name}.property paths wrap onto a second line
+   instead of overflowing past the fixed-width table column, where they used to get
+   silently clipped by the tag's own overflow:hidden (no ellipsis, just a hard cut) */
 .setting-v1-content,
 .setting-v2-content {
     display:         inline-flex;
     align-items:     stretch;
-    height:          22px;
+    flex-wrap:       wrap;
+    height:          auto;
     min-height:      22px;
-    white-space:     nowrap;
+    white-space:     normal;
 }

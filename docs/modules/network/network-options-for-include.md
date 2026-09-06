@@ -17,7 +17,7 @@
                 <tag type="module">Network</tag>
                 <p>Master enable switch for the entire Ethernet network functionality.</p>
                 <p>When disabled, the network module is completely unloaded to free system resources (approximately 8KB RAM).</p>
-                <p>Must be set to <code>true</code> to use any network features, including webserver, telnet, Plan9, or SFTP services.</p>
+                <p>Must be set to <raw>true</raw> to use any network features, including webserver, telnet, Plan9, or SFTP services.</p>
                 <tag type="performance">Frees ~8KB RAM when disabled</tag>
             </td>
         </tr>
@@ -27,7 +27,7 @@
             <td class="description-cell">
                 <tag type="service">HTTP</tag>
                 <tag type="default">false</tag>
-                <p>If set to <code>true</code>, enables the web server service on port 80, which provides a control and upload web interface.</p>
+                <p>If set to <raw>true</raw>, enables the web server service on port 80, which provides a control and upload web interface.</p>
                 <p>The web interface lets you control the machine, upload files, and monitor status from any web browser on your network.</p>
                 <tag type="note">Sample configurations commonly set this to true</tag>
             </td>
@@ -38,7 +38,7 @@
             <td class="description-cell">
                 <tag type="service">Telnet</tag>
                 <tag type="default">false</tag>
-                <p>If set to <code>true</code>, enables the telnet service on port 23, which behaves much like a Serial interface.</p>
+                <p>If set to <raw>true</raw>, enables the telnet service on port 23, which behaves much like a Serial interface.</p>
                 <p>Telnet provides command-line access to Smoothie over the network, useful for streaming G-code or running console commands remotely.</p>
                 <tag type="note">Sample configurations commonly set this to true</tag>
                 <tag type="note">Renamed to shell_enable in V2</tag>
@@ -51,7 +51,7 @@
                 <tag type="service">Plan9</tag>
                 <tag type="default">false</tag>
                 <tag type="advanced">Requires custom build</tag>
-                <p>If set to <code>true</code>, enables the Plan9 (9P/Styx) network filesystem on port 564, which allows mounting the Smoothieboard SD card as a network filesystem on Linux systems.</p>
+                <p>If set to <raw>true</raw>, enables the Plan9 (9P/Styx) network filesystem on port 564, which allows mounting the Smoothieboard SD card as a network filesystem on Linux systems.</p>
                 <p>Provides direct filesystem access similar to NFS or SMB.</p>
                 <tag type="critical">NOT built into Smoothie by default - requires rebuild with PLAN9=1</tag>
             </td>
@@ -63,8 +63,8 @@
                 <tag type="network">IP Configuration</tag>
                 <tag type="default">auto</tag>
                 <p>Configures the IP address assignment method for the Smoothieboard.</p>
-                <p>Set to <code>auto</code> to use DHCP for automatic configuration, or specify a static IP address (e.g., <code>192.168.1.100</code>).</p>
-                <p>When using a static IP, you must also configure <code>network.ip_mask</code> and <code>network.ip_gateway</code>.</p>
+                <p>Set to <raw>auto</raw> to use DHCP for automatic configuration, or specify a static IP address (e.g., <raw>192.168.1.100</raw>).</p>
+                <p>When using a static IP, you must also configure <setting v1="network.ip_mask" v2="network.ip_mask"></setting> and <setting v1="network.ip_gateway" v2="network.ip_gateway"></setting>.</p>
                 <tag type="note">If shows 173.222.239.190, DHCP failed - use static IP instead</tag>
             </td>
         </tr>
@@ -75,7 +75,7 @@
                 <tag type="network">IP Configuration</tag>
                 <tag type="default">255.255.255.0</tag>
                 <p>Defines the subnet mask for static IP configuration — the netmask determines which portion of the IP address identifies the network and which portion identifies the host.</p>
-                <p>Only used when <code>network.ip_address</code> is set to a static IP (not <code>auto</code>).</p>
+                <p>Only used when <setting v1="network.ip_address" v2="network.ip_address"></setting> is set to a static IP (not <raw>auto</raw>).</p>
                 <p>With DHCP, this setting is ignored and the subnet mask is provided automatically by the DHCP server.</p>
                 <tag type="example">255.255.255.0 = Class C network (254 hosts)</tag>
             </td>
@@ -87,7 +87,7 @@
                 <tag type="network">IP Configuration</tag>
                 <tag type="default">192.168.1.254</tag>
                 <p>Specifies the default gateway (router) IP address for static IP configuration — used for routing traffic outside the local network.</p>
-                <p>Only used when <code>network.ip_address</code> is set to a static IP (not <code>auto</code>).</p>
+                <p>Only used when <setting v1="network.ip_address" v2="network.ip_address"></setting> is set to a static IP (not <raw>auto</raw>).</p>
                 <p>With DHCP, the gateway is provided automatically by the DHCP server.</p>
                 <tag type="example">Common home router: 192.168.1.1</tag>
             </td>
@@ -112,8 +112,8 @@
                 <tag type="network">DHCP</tag>
                 <tag type="convenience">DNS Name</tag>
                 <p>Sets a hostname that is sent to the DHCP server during IP address requests.</p>
-                <p>Some DHCP servers register this hostname in local DNS, letting you access the Smoothieboard by name (e.g., <code>http://smoothie-cnc/</code>) instead of by IP address.</p>
-                <p>Only used when <code>network.ip_address</code> is set to <code>auto</code> (DHCP mode); has no effect with static IP configuration.</p>
+                <p>Some DHCP servers register this hostname in local DNS, letting you access the Smoothieboard by name (e.g., <raw>http://smoothie-cnc/</raw>) instead of by IP address.</p>
+                <p>Only used when <setting v1="network.ip_address" v2="network.ip_address"></setting> is set to <raw>auto</raw> (DHCP mode); has no effect with static IP configuration.</p>
                 <tag type="note">Hostname support depends on DHCP server capabilities</tag>
                 <tag type="example">smoothie-cnc, laser-cutter, printer3d</tag>
             </td>

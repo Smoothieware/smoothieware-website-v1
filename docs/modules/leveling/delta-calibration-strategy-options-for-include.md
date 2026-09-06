@@ -25,7 +25,7 @@
             <td class="description-cell">
                 <p>Enables the delta calibration strategy for automatically calibrating linear delta printer geometry.</p>
                 <p>The strategy probes seven points (three at towers, three between towers, one at center) and adjusts endstop trim values and delta radius to minimize height differences.</p>
-                <p>This strategy is specifically for delta kinematics and is automatically loaded for delta printers if no other strategy is specified. In v2, set <code>zprobe.calibration</code> to <code>"delta"</code>.</p>
+                <p>This strategy is specifically for delta kinematics and is automatically loaded for delta printers if no other strategy is specified. In v2, set <setting v2="zprobe.calibration"></setting> to <raw>"delta"</raw>.</p>
             </td>
         </tr>
         <tr>
@@ -38,7 +38,7 @@
                     <li>Three points between towers, on this radius</li>
                     <li>One point at center (radius 0)</li>
                 </ul>
-                <p>The radius should be as large as possible while staying within the printable area. Default: <code>100</code> mm</p>
+                <p>The radius should be as large as possible while staying within the printable area. Default: <raw>100</raw> mm</p>
             </td>
         </tr>
         <tr>
@@ -47,7 +47,7 @@
             <td class="description-cell">
                 <p>Absolute Z machine position in millimeters to move to after homing and before starting the initial bed probe.</p>
                 <p>This height must be high enough that the probe will not hit the bed during the rapid descent phase — a critical safety parameter that prevents crashes during the first probe approach.</p>
-                <p>Default: <code>10</code> mm</p>
+                <p>Default: <raw>10</raw> mm</p>
             </td>
         </tr>
     </tbody>

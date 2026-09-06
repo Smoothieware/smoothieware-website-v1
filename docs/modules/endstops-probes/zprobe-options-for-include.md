@@ -20,8 +20,8 @@
             <td><setting no-version v1="zprobe.probe_pin"></setting></td>
             <td><setting no-version v2="zprobe.probe_pin"></setting></td>
             <td class="description-cell">
-                <p>Defines the GPIO pin connected to the probe signal. Use <code>!</code> suffix to invert logic (normally-closed vs normally-open) and <code>^</code> to enable internal pull-up resistor.</p>
-                <p>Example: <code>1.28!^</code> means pin 1.28 with inverted logic and pull-up enabled.</p>
+                <p>Defines the GPIO pin connected to the probe signal. Use <raw>!</raw> suffix to invert logic (normally-closed vs normally-open) and <raw>^</raw> to enable internal pull-up resistor.</p>
+                <p>Example: <pin>1.28!^</pin> means pin 1.28 with inverted logic and pull-up enabled.</p>
             </td>
         </tr>
         <tr>
@@ -81,7 +81,7 @@
             <td><setting no-version v2="zprobe.before_probe_gcode"></setting></td>
             <td class="description-cell">
                 <p>G-code command(s) to run before each probe point. Used for deployable probes like BLTouch/3DTouch that need to extend or deploy before probing. Multiple commands can be separated by semicolons.</p>
-                <p>Example: <code>M280 S10</code> to deploy BLTouch pin.</p>
+                <p>Example: <mcode>M280 S10</mcode> to deploy BLTouch pin.</p>
             </td>
         </tr>
         <tr>
@@ -89,7 +89,7 @@
             <td><setting no-version v2="zprobe.after_probe_gcode"></setting></td>
             <td class="description-cell">
                 <p>G-code command(s) to run after each probe point. Used for deployable probes like BLTouch/3DTouch that need to retract after probing. Multiple commands can be separated by semicolons.</p>
-                <p>Example: <code>M280 S90</code> to retract BLTouch pin.</p>
+                <p>Example: <mcode>M280 S90</mcode> to retract BLTouch pin.</p>
             </td>
         </tr>
         <tr>

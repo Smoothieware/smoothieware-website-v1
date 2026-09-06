@@ -67,7 +67,7 @@
             <td class="description-cell">
                 <tag type="display">Visual</tag>
                 <tag type="default">9</tag>
-                Contrast value for panels that support it. Supported panels: <code>viki2</code>, <code>mini_viki2</code>, and <code>st7565_glcd</code>. Adjust this value if the display appears too faint or too dark.
+                Contrast value for panels that support it. Supported panels: <raw>viki2</raw>, <raw>mini_viki2</raw>, and <raw>st7565_glcd</raw>. Adjust this value if the display appears too faint or too dark.
             </td>
         </tr>
         <tr>
@@ -76,7 +76,7 @@
             <td class="description-cell">
                 <tag type="display">Visual</tag>
                 <tag type="default">false</tag>
-                If set to <code>true</code>, reverse the screen orientation. Use this if your panel is mounted upside down.
+                If set to <raw>true</raw>, reverse the screen orientation. Use this if your panel is mounted upside down.
             </td>
         </tr>
         <tr>
@@ -85,7 +85,7 @@
             <td class="description-cell">
                 <tag type="display">Visual</tag>
                 <tag type="default">0</tag>
-                <p>Number of lines to offset the menu lines by on screen. On some panels, this value must be set to <code>1</code>.</p>
+                <p>Number of lines to offset the menu lines by on screen. On some panels, this value must be set to <raw>1</raw>.</p>
                 <p>Adjust if menu items don't align properly on your display.</p>
             </td>
         </tr>
@@ -95,8 +95,8 @@
             <td class="description-cell">
                 <tag type="hardware">Pin</tag>
                 <tag type="input">Encoder</tag>
-                <p>A pin for the encoder wheel. Encoders have two pins, A and B; set this to <code>nc</code> if you use no encoder.</p>
-                <p>The <code>^</code> modifier defines menu move direction. Use <code>!</code> for pull-up/pull-down and <code>^</code> to invert.</p>
+                <p>A pin for the encoder wheel. Encoders have two pins, A and B; set this to <raw>nc</raw> if you use no encoder.</p>
+                <p>The <raw>^</raw> modifier defines menu move direction. Use <raw>!</raw> for pull-up/pull-down and <raw>^</raw> to invert.</p>
             </td>
         </tr>
         <tr>
@@ -105,8 +105,8 @@
             <td class="description-cell">
                 <tag type="hardware">Pin</tag>
                 <tag type="input">Encoder</tag>
-                <p>B pin for the encoder wheel. Encoders have two pins, A and B; set this to <code>nc</code> if you use no encoder.</p>
-                <p>The <code>^</code> modifier defines menu move direction. Use <code>!</code> for pull-up/pull-down and <code>^</code> to invert.</p>
+                <p>B pin for the encoder wheel. Encoders have two pins, A and B; set this to <raw>nc</raw> if you use no encoder.</p>
+                <p>The <raw>^</raw> modifier defines menu move direction. Use <raw>!</raw> for pull-up/pull-down and <raw>^</raw> to invert.</p>
             </td>
         </tr>
         <tr>
@@ -125,7 +125,7 @@
                 <tag type="hardware">Pin</tag>
                 <tag type="input">Button</tag>
                 <p>Pin for the click ("enter" or "select") button, typically pressed to select menu items, confirm actions, and accept value changes.</p>
-                <p>The <code>!</code> modifier inverts the signal polarity (use for active-low buttons).</p>
+                <p>The <raw>!</raw> modifier inverts the signal polarity (use for active-low buttons).</p>
             </td>
         </tr>
         <tr>
@@ -144,7 +144,7 @@
             <td class="description-cell">
                 <tag type="hardware">Pin</tag>
                 <tag type="input">Button</tag>
-                Pin for the up button. Used for menu navigation when no encoder is present. The <code>!</code> modifier inverts the signal polarity.
+                Pin for the up button. Used for menu navigation when no encoder is present. The <raw>!</raw> modifier inverts the signal polarity.
             </td>
         </tr>
         <tr>
@@ -153,7 +153,7 @@
             <td class="description-cell">
                 <tag type="hardware">Pin</tag>
                 <tag type="input">Button</tag>
-                Pin for the down button. Used for menu navigation when no encoder is present. The <code>!</code> modifier inverts the signal polarity.
+                Pin for the down button. Used for menu navigation when no encoder is present. The <raw>!</raw> modifier inverts the signal polarity.
             </td>
         </tr>
         <tr>
@@ -232,7 +232,7 @@
             <td class="description-cell">
                 <tag type="hardware">Pin</tag>
                 <tag type="default">nc</tag>
-                <p>If using the <code>universal_adapter</code>, this pin can be connected to the adapter to ask whether it is busy.</p>
+                <p>If using the <raw>universal_adapter</raw>, this pin can be connected to the adapter to ask whether it is busy.</p>
                 <p>The universal adapter uses this pin for daisy-chaining multiple devices.</p>
             </td>
         </tr>
@@ -297,7 +297,7 @@
             <td class="description-cell">
                 <tag type="storage">SD card</tag>
                 <tag type="default">false</tag>
-                <p>Set to <code>true</code> if your panel has an external SD card slot, or if you want to connect a second SD card slot to one of your Smoothieboard's SPI ports.</p>
+                <p>Set to <raw>true</raw> if your panel has an external SD card slot, or if you want to connect a second SD card slot to one of your Smoothieboard's SPI ports.</p>
                 <p>Enables an additional SD card interface beyond the onboard SD slot.</p>
                 <tag type="warning">External SD cards over SPI cables can be unreliable - NOT recommended for printing</tag>
             </td>
@@ -331,7 +331,7 @@
                 <tag type="storage">SD card</tag>
                 <tag type="default">nc</tag>
                 <p>SD card detect signal pin, which detects when an SD card is inserted or removed.</p>
-                <p>Set to <code>nc</code> if you don't use an SD card detect signal.</p>
+                <p>Set to <raw>nc</raw> if you don't use an SD card detect signal.</p>
             </td>
         </tr>
         <tr>
@@ -349,7 +349,7 @@
             <td class="description-cell">
                 <tag type="menu">Custom</tag>
                 <tag type="critical">Required for custom menu</tag>
-                <p>When set to <code>true</code>, creates a new custom menu entry for the panel with the name <code>{name}</code>. Replace <code>{name}</code> with your menu identifier.</p>
+                <p>When set to <raw>true</raw>, creates a new custom menu entry for the panel with the name <raw>{name}</raw>. Replace <raw>{name}</raw> with your menu identifier.</p>
                 <p>You can create any number of custom entries, as long as each has a different name.</p>
                 <tag type="note">{name} is case sensitive</tag>
             </td>
@@ -360,7 +360,7 @@
             <td class="description-cell">
                 <tag type="menu">Custom</tag>
                 <p>The name displayed in the panel's menus — what the user sees when browsing the menu.</p>
-                <p>Underscores (<code>_</code>) are converted to spaces when displayed.</p>
+                <p>Underscores (<raw>_</raw>) are converted to spaces when displayed.</p>
             </td>
         </tr>
         <tr>
@@ -370,7 +370,7 @@
                 <tag type="menu">Custom</tag>
                 <tag type="gcode">Commands</tag>
                 <p>The command executed when the menu entry is selected and clicked.</p>
-                <p>The <code>_</code> character is converted to a space in both the menu name and the command (use <code>_</code> instead of a literal space), and <code>|</code> separates multiple commands to run in sequence.</p>
+                <p>The <raw>_</raw> character is converted to a space in both the menu name and the command (use <raw>_</raw> instead of a literal space), and <raw>|</raw> separates multiple commands to run in sequence.</p>
                 <tag type="example">M80_S30|G1_X10 executes M80 S30 followed by G1 X10</tag>
             </td>
         </tr>

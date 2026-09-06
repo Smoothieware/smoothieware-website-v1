@@ -22,9 +22,9 @@
             <td><setting no-version v2="temperature switch.{name}.designator"></setting></td>
             <td class="description-cell">
                 <p>Specifies which TemperatureControl module to monitor by matching its designator character. The temperature switch reads the current temperature from the temperature control module with this designator and uses it to determine when to trigger the switch.</p>
-                <p>If multiple temperature control modules share the same designator, the highest temperature among them is used for comparison. Matching is case-sensitive — <code>T</code> and <code>t</code> are different designators.</p>
+                <p>If multiple temperature control modules share the same designator, the highest temperature among them is used for comparison. Matching is case-sensitive — <raw>T</raw> and <raw>t</raw> are different designators.</p>
                 <ul>
-                    <li>For backward compatibility, <code>temperatureswitch.hotend</code> defaults to designator <code>T</code> if not specified (deprecated behavior)</li>
+                    <li>For backward compatibility, <raw>temperatureswitch.hotend</raw> defaults to designator <raw>T</raw> if not specified (deprecated behavior)</li>
                     <li>An empty designator string causes the temperature switch to be considered invalid and non-functional</li>
                 </ul>
                 <p>The temperature reading is polled at intervals defined by the heatup_poll and cooldown_poll settings.</p>
@@ -43,8 +43,8 @@
             <td><setting no-version v1="temperatureswitch.{name}.type"></setting></td>
             <td><setting no-version v2="temperature switch.{name}.switch"></setting></td>
             <td class="description-cell">
-                <p>Legacy parameter name for specifying the switch module to control. Functionally identical to the <code>temperatureswitch.{name}.switch</code> parameter, and only used as a fallback if that parameter is not defined.</p>
-                <p>This parameter has been replaced by <code>temperatureswitch.switch</code>, but is still supported for backward compatibility with older Smoothieware configurations. Not recommended for new configurations — use the <code>switch</code> parameter instead, for clarity.</p>
+                <p>Legacy parameter name for specifying the switch module to control. Functionally identical to the <setting v1="temperatureswitch.{name}.switch" v2="temperature switch.{name}.switch"></setting> parameter, and only used as a fallback if that parameter is not defined.</p>
+                <p>This parameter has been replaced by <setting v1="temperatureswitch.{name}.switch" v2="temperature switch.{name}.switch"></setting>, but is still supported for backward compatibility with older Smoothieware configurations. Not recommended for new configurations — use the <raw>switch</raw> parameter instead, for clarity.</p>
             </td>
         </tr>
         <tr>
@@ -57,7 +57,7 @@
                     <li><strong>rising</strong> mode: switch triggers when crossing upward through this threshold</li>
                     <li><strong>falling</strong> mode: switch triggers when crossing downward through this threshold</li>
                 </ul>
-                <p>Temperature comparison uses <code>current_temp >= threshold_temp</code> for HIGH_TEMP state determination. Temperature is read from the highest value among all temperature controllers matching the configured designator.</p>
+                <p>Temperature comparison uses <raw>current_temp >= threshold_temp</raw> for HIGH_TEMP state determination. Temperature is read from the highest value among all temperature controllers matching the configured designator.</p>
                 <p>For typical hotend cooling applications, set this 10-20°C below the hotend operating temperature. Inverted mode reverses the on/off logic but uses the same threshold comparison — the threshold applies regardless of whether the switch is inverted or not, since inversion only affects the final switch output state.</p>
             </td>
         </tr>
@@ -105,7 +105,7 @@
                     <li><strong>Normal mode (false):</strong> temperature >= threshold → switch on; temperature &lt; threshold → switch off</li>
                     <li><strong>Inverted mode (true):</strong> temperature >= threshold → switch off; temperature &lt; threshold → switch on</li>
                 </ul>
-                <p>The inversion occurs at the final switch control stage, applied in the <code>set_switch()</code> function after trigger logic has determined the desired state — it works with all trigger modes (level, rising, falling). Temperature threshold comparison logic is unchanged; only the final switch output is inverted.</p>
+                <p>The inversion occurs at the final switch control stage, applied in the <raw>set_switch()</raw> function after trigger logic has determined the desired state — it works with all trigger modes (level, rising, falling). Temperature threshold comparison logic is unchanged; only the final switch output is inverted.</p>
                 <p>Useful for controlling heating elements that should turn off when target temperature is reached. Common use case: emergency cooling systems that activate when temperature drops too low.</p>
             </td>
         </tr>
@@ -117,8 +117,8 @@
                 <ul>
                     <li><strong>When set to 0:</strong> the arming requirement is disabled; the switch is always armed and operates automatically based on temperature (module does not register for G-code events)</li>
                     <li><strong>When set to an M-code:</strong> the switch starts disarmed and requires manual arming via G-code command</li>
-                    <li><strong>Arming command:</strong> <code>M&lt;code&gt; S1</code> arms the switch (e.g., <code>M1100 S1</code>)</li>
-                    <li><strong>Disarming command:</strong> <code>M&lt;code&gt; S0</code> disarms the switch (e.g., <code>M1100 S0</code>)</li>
+                    <li><strong>Arming command:</strong> <raw>M&lt;code&gt; S1</raw> arms the switch (e.g., <mcode>M1100 S1</mcode>)</li>
+                    <li><strong>Disarming command:</strong> <raw>M&lt;code&gt; S0</raw> disarms the switch (e.g., <mcode>M1100 S0</mcode>)</li>
                     <li><strong>Level trigger mode:</strong> the switch remains armed and continues operating while armed</li>
                     <li><strong>Edge trigger modes (rising/falling):</strong> the switch automatically disarms after triggering once, requiring re-arming for subsequent triggers</li>
                 </ul>

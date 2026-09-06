@@ -53,9 +53,7 @@
 .config-options-table td:nth-child(1),
 .config-options-table td:nth-child(2) {
     width: 25%;
-    white-space: nowrap;
     overflow: hidden;
-    text-overflow: ellipsis;
 }
 
 .config-options-table td:nth-child(3) {

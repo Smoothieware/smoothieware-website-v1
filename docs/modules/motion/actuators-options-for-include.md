@@ -37,7 +37,7 @@
             <td><setting no-version v2="actuator.x.acceleration"></setting></td>
             <td class="description-cell">
                 <p>X axis: per-axis acceleration override, letting this actuator use a different acceleration value independent of the global default.</p>
-                <p>When set to <raw>-1</raw> (default), the motor uses the global <setting>motion control.default_acceleration</setting> value instead.</p>
+                <p>When set to <raw>-1</raw> (default), the motor uses the global <setting v1="acceleration" v2="motion control.default_acceleration"></setting> value instead.</p>
             </td>
         </tr>
         <tr>
@@ -45,7 +45,7 @@
             <td><setting no-version v2="actuator.x.dir_pin"></setting></td>
             <td class="description-cell">
                 <p>X axis: GPIO pin used to control the direction signal to the stepper motor driver, determining whether the motor rotates clockwise or counter-clockwise.</p>
-                <p>Direction can be inverted by appending <raw>!</raw> to the pin specification, or by using the <setting>actuator.x.reversed</setting> setting instead.</p>
+                <p>Direction can be inverted by appending <raw>!</raw> to the pin specification, or by using the <setting v2="actuator.x.reversed"></setting> setting instead.</p>
             </td>
         </tr>
         <tr>
@@ -63,7 +63,7 @@
             <td><setting no-version v2="actuator.x.en_pin"></setting></td>
             <td class="description-cell">
                 <p>X axis: individual enable signal output pin for this specific stepper motor driver — when set, it controls whether the driver is enabled or disabled independently of other motors.</p>
-                <p>Most configurations set this to <raw>nc</raw> and use the global <setting>actuator.common.motors_enable_pin</setting> instead.</p>
+                <p>Most configurations set this to <raw>nc</raw> and use the global <setting v2="actuator.common.motors_enable_pin"></setting> instead.</p>
             </td>
         </tr>
         <tr>
@@ -83,7 +83,7 @@
                 <ul>
                     <li>Common values: <raw>16</raw> or <raw>32</raw></li>
                 </ul>
-                <p>Directly affects the <setting>actuator.x.steps_per_mm</setting> calculation.</p>
+                <p>Directly affects the <setting v1="alpha_steps_per_mm" v2="actuator.x.steps_per_mm"></setting> calculation.</p>
             </td>
         </tr>
         <tr>
@@ -91,7 +91,7 @@
             <td><setting no-version v2="actuator.x.reversed"></setting></td>
             <td class="description-cell">
                 <p>X axis: reverses the motor direction by inverting the direction signal, without modifying the pin definition.</p>
-                <p>A cleaner, more readable way to reverse direction than using the <raw>!</raw> modifier on the <setting>actuator.x.dir_pin</setting> setting.</p>
+                <p>A cleaner, more readable way to reverse direction than using the <raw>!</raw> modifier on the <setting v1="alpha_dir_pin" v2="actuator.x.dir_pin"></setting> setting.</p>
             </td>
         </tr>
         <tr>
@@ -123,7 +123,7 @@
             <td><setting no-version v2="actuator.y.acceleration"></setting></td>
             <td class="description-cell">
                 <p>Y axis: per-axis acceleration override, letting this actuator use a different acceleration value independent of the global default.</p>
-                <p>When set to <raw>-1</raw> (default), the motor uses the global <setting>motion control.default_acceleration</setting> value instead.</p>
+                <p>When set to <raw>-1</raw> (default), the motor uses the global <setting v1="acceleration" v2="motion control.default_acceleration"></setting> value instead.</p>
             </td>
         </tr>
         <tr>
@@ -131,7 +131,7 @@
             <td><setting no-version v2="actuator.y.dir_pin"></setting></td>
             <td class="description-cell">
                 <p>Y axis: GPIO pin used to control the direction signal to the stepper motor driver, determining whether the motor rotates clockwise or counter-clockwise.</p>
-                <p>Direction can be inverted by appending <raw>!</raw> to the pin specification, or by using the <setting>actuator.y.reversed</setting> setting instead.</p>
+                <p>Direction can be inverted by appending <raw>!</raw> to the pin specification, or by using the <setting v2="actuator.y.reversed"></setting> setting instead.</p>
             </td>
         </tr>
         <tr>
@@ -149,7 +149,7 @@
             <td><setting no-version v2="actuator.y.en_pin"></setting></td>
             <td class="description-cell">
                 <p>Y axis: individual enable signal output pin for this specific stepper motor driver — when set, it controls whether the driver is enabled or disabled independently of other motors.</p>
-                <p>Most configurations set this to <raw>nc</raw> and use the global <setting>actuator.common.motors_enable_pin</setting> instead.</p>
+                <p>Most configurations set this to <raw>nc</raw> and use the global <setting v2="actuator.common.motors_enable_pin"></setting> instead.</p>
             </td>
         </tr>
         <tr>
@@ -169,7 +169,7 @@
                 <ul>
                     <li>Common values: <raw>16</raw> or <raw>32</raw></li>
                 </ul>
-                <p>Directly affects the <setting>actuator.y.steps_per_mm</setting> calculation.</p>
+                <p>Directly affects the <setting v1="beta_steps_per_mm" v2="actuator.y.steps_per_mm"></setting> calculation.</p>
             </td>
         </tr>
         <tr>
@@ -177,7 +177,7 @@
             <td><setting no-version v2="actuator.y.reversed"></setting></td>
             <td class="description-cell">
                 <p>Y axis: reverses the motor direction by inverting the direction signal, without modifying the pin definition.</p>
-                <p>A cleaner, more readable way to reverse direction than using the <raw>!</raw> modifier on the <setting>actuator.y.dir_pin</setting> setting.</p>
+                <p>A cleaner, more readable way to reverse direction than using the <raw>!</raw> modifier on the <setting v1="beta_dir_pin" v2="actuator.y.dir_pin"></setting> setting.</p>
             </td>
         </tr>
         <tr>
@@ -209,7 +209,7 @@
             <td><setting no-version v2="actuator.z.acceleration"></setting></td>
             <td class="description-cell">
                 <p>Z axis: per-axis acceleration override, letting this actuator use a different acceleration value independent of the global default.</p>
-                <p>When set to <raw>-1</raw> (default), the motor uses the global <setting>motion control.default_acceleration</setting> value instead.</p>
+                <p>When set to <raw>-1</raw> (default), the motor uses the global <setting v1="acceleration" v2="motion control.default_acceleration"></setting> value instead.</p>
             </td>
         </tr>
         <tr>
@@ -217,7 +217,7 @@
             <td><setting no-version v2="actuator.z.dir_pin"></setting></td>
             <td class="description-cell">
                 <p>Z axis: GPIO pin used to control the direction signal to the stepper motor driver, determining whether the motor rotates clockwise or counter-clockwise.</p>
-                <p>Direction can be inverted by appending <raw>!</raw> to the pin specification, or by using the <setting>actuator.z.reversed</setting> setting instead.</p>
+                <p>Direction can be inverted by appending <raw>!</raw> to the pin specification, or by using the <setting v2="actuator.z.reversed"></setting> setting instead.</p>
             </td>
         </tr>
         <tr>
@@ -235,7 +235,7 @@
             <td><setting no-version v2="actuator.z.en_pin"></setting></td>
             <td class="description-cell">
                 <p>Z axis: individual enable signal output pin for this specific stepper motor driver — when set, it controls whether the driver is enabled or disabled independently of other motors.</p>
-                <p>Most configurations set this to <raw>nc</raw> and use the global <setting>actuator.common.motors_enable_pin</setting> instead.</p>
+                <p>Most configurations set this to <raw>nc</raw> and use the global <setting v2="actuator.common.motors_enable_pin"></setting> instead.</p>
             </td>
         </tr>
         <tr>
@@ -257,7 +257,7 @@
                 <ul>
                     <li>Common values: <raw>16</raw> or <raw>32</raw></li>
                 </ul>
-                <p>Directly affects the <setting>actuator.z.steps_per_mm</setting> calculation.</p>
+                <p>Directly affects the <setting v1="gamma_steps_per_mm" v2="actuator.z.steps_per_mm"></setting> calculation.</p>
             </td>
         </tr>
         <tr>
@@ -265,7 +265,7 @@
             <td><setting no-version v2="actuator.z.reversed"></setting></td>
             <td class="description-cell">
                 <p>Z axis: reverses the motor direction by inverting the direction signal, without modifying the pin definition.</p>
-                <p>A cleaner, more readable way to reverse direction than using the <raw>!</raw> modifier on the <setting>actuator.z.dir_pin</setting> setting.</p>
+                <p>A cleaner, more readable way to reverse direction than using the <raw>!</raw> modifier on the <setting v1="gamma_dir_pin" v2="actuator.z.dir_pin"></setting> setting.</p>
             </td>
         </tr>
         <tr>
