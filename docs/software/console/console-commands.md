@@ -184,6 +184,8 @@ mkdir
 modules
 msc
 mv
+le
+o
 qspi
 reset
 rm
@@ -201,7 +203,13 @@ use cmd -h to get help on that command
 </versioned>
 {:/nomarkdown}
 
-Note: Smoothie also supports GRBL-like commands like `?` and `!` (when in grbl mode): [Configuring Grbl v0.8](https://github.com/grbl/grbl/wiki/Configuring-Grbl-v0.8)
+### echo
+
+{% include modules/network/echo-uart-for-include.md %}
+
+Use this command when Smoothie must notify a serially connected device, such as a feeder controller or a PLC-style peripheral. The [UART port](/uart) page describes the physical connection, and the [Switch](/switch) and [Button Box](/button-box) pages show how a GPIO input can trigger a message.
+
+SmoothieV2 also recognizes the real-time `!` feed-hold and `~` cycle-start characters. See [Feed Hold and Cycle Start](/feed-hold) for their behavior and limits.
 
 ### ls
 
@@ -945,19 +953,67 @@ Loaded modules:
 
 ### ed
 
-`ed`
+`ed` starts the ECCE streaming line editor. It writes the edited content to a different file instead of loading the full input file into RAM.
 
 ```plaintext
-ed filename
+ed infile outfile
 ```
 
-Simple line editor for editing files directly on the SD card.
+The input and output paths must differ, and the output file must not exist. Smoothie refuses to start the editor while a job is running or any heater is on.
 
 Example:
 
 ```plaintext
-ed /sd/config.ini
+ed /sd/config.ini /sd/config.edited
 ```
+
+Inside the editor, enter `%h` for its command help and `%c` to write the output and finish. ECCE reads forward through the source with a small buffer. You can move to the next line with `m` and back a limited distance with `m-1`; it cannot move freely through the whole file.
+
+A common edit finds a string and removes its leading comment marker:
+
+```plaintext
+f/#default_power/
+s/default_power/
+```
+
+Inspect the new file before replacing the original:
+
+```plaintext
+cat /sd/config.edited
+cp /sd/config.ini /sd/config.before-ed
+rm /sd/config.ini
+mv /sd/config.edited /sd/config.ini
+```
+
+Choose a backup name that does not contain an older file you need, because `cp` truncates an existing destination. If the edit fails, Smoothie removes the incomplete output file.
+
+The [ECCE manual](https://history.dcs.ed.ac.uk/archive/apps/ecce/hmd/ldsecce.html) describes the editor language.
+
+### le
+
+`le` enables interactive command-line editing on the current console connection:
+
+```plaintext
+le
+```
+
+The prompt changes to `cmd> `. Type and submit commands as usual. Use Left and Right to move within the line, Home and End to jump, Backspace or Delete to remove a character, and Up or Down to browse up to 16 distinct commands from this session.
+
+Press Control-D to leave line-editor mode. History belongs to this connection and disappears when you exit the mode or disconnect. While `le` captures console input, real-time single-character handlers such as `!` and `~` do not receive those characters.
+
+### o
+
+`o` defines and calls the limited SmoothieV2 O-word subroutines:
+
+```plaintext
+o park sub
+G0 Z20
+G0 X0 Y0
+o park endsub
+o park call
+```
+
+See [O-word Subroutines](/subroutines) for persistence, supported subcommands, and the differences from LinuxCNC O-code.
 
 ### flash
 

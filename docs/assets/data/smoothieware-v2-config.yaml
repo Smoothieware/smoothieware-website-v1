@@ -1673,19 +1673,18 @@ modules:
     - motion-control
     - advancedmotordriver
     - stepper-motors
-  - name: x.slaved_to
+  - name: delta.slaved_to
     type: string
     default: '"" (not slaved)'
     module: actuator
     context: Per-actuator setting
     defined_in: Firmware/src/robot/Robot.cpp:319
     section: '[actuator]'
-    description: 'X axis: Slaves this actuator to mirror another axis for dual motor setups. Commonly used for dual Y motors
-      (gantry systems) or dual X motors. Only A/B/C axes (delta, epsilon, zeta) can be slaved to X/Y/Z axes (alpha, beta,
-      gamma). The slave motor exactly mirrors the master''s movements. This is a TMC driver-only feature and requires both
-      master and slave to use TMC drivers.'
+    description: 'A/delta actuator: Slaves this secondary motor to alpha, beta, or gamma for a dual-motor X, Y, or Z axis.
+      Only A/B/C actuators can be slaves, one slave is allowed per primary, and software slaving requires an internal TMC2590
+      or TMC2660 driver. The secondary actuator must be last in the contiguous actuator list.'
     corresponding_v1: none (new feature in v2)
-    corresponding_v2: actuator.delta.slaved_to, etc.
+    corresponding_v2: actuator.delta.slaved_to
     valid_values:
     - value: alpha
       description: ''
@@ -1698,21 +1697,20 @@ modules:
     related_settings:
     - <axis>.driver
     related_pages:
-    - motion-control
+    - actuator-slaving
     - stepper-motors
-  - name: y.slaved_to
+  - name: epsilon.slaved_to
     type: string
     default: '"" (not slaved)'
     module: actuator
     context: Per-actuator setting
     defined_in: Firmware/src/robot/Robot.cpp:319
     section: '[actuator]'
-    description: 'Y axis: Slaves this actuator to mirror another axis for dual motor setups. Commonly used for dual Y motors
-      (gantry systems) or dual X motors. Only A/B/C axes (delta, epsilon, zeta) can be slaved to X/Y/Z axes (alpha, beta,
-      gamma). The slave motor exactly mirrors the master''s movements. This is a TMC driver-only feature and requires both
-      master and slave to use TMC drivers.'
+    description: 'B/epsilon actuator: Slaves this secondary motor to alpha, beta, or gamma for a dual-motor X, Y, or Z axis.
+      Use epsilon when delta remains an independent A axis or is otherwise unavailable. The internal-TMC and actuator-ordering
+      restrictions documented on the Slaved Axes page still apply.'
     corresponding_v1: none (new feature in v2)
-    corresponding_v2: actuator.delta.slaved_to, etc.
+    corresponding_v2: actuator.epsilon.slaved_to
     valid_values:
     - value: alpha
       description: ''
@@ -1725,21 +1723,20 @@ modules:
     related_settings:
     - <axis>.driver
     related_pages:
-    - motion-control
+    - actuator-slaving
     - stepper-motors
-  - name: z.slaved_to
+  - name: zeta.slaved_to
     type: string
     default: '"" (not slaved)'
     module: actuator
     context: Per-actuator setting
     defined_in: Firmware/src/robot/Robot.cpp:319
     section: '[actuator]'
-    description: 'Z axis: Slaves this actuator to mirror another axis for dual motor setups. Commonly used for dual Y motors
-      (gantry systems) or dual X motors. Only A/B/C axes (delta, epsilon, zeta) can be slaved to X/Y/Z axes (alpha, beta,
-      gamma). The slave motor exactly mirrors the master''s movements. This is a TMC driver-only feature and requires both
-      master and slave to use TMC drivers.'
+    description: 'C/zeta actuator: Slaves this secondary motor to alpha, beta, or gamma for a dual-motor X, Y, or Z axis.
+      Use zeta when preceding actuator slots are occupied. The internal-TMC, one-slave, and contiguous-order restrictions
+      documented on the Slaved Axes page still apply.'
     corresponding_v1: none (new feature in v2)
-    corresponding_v2: actuator.delta.slaved_to, etc.
+    corresponding_v2: actuator.zeta.slaved_to
     valid_values:
     - value: alpha
       description: ''
@@ -1752,7 +1749,7 @@ modules:
     related_settings:
     - <axis>.driver
     related_pages:
-    - motion-control
+    - actuator-slaving
     - stepper-motors
   - name: common.check_driver_errors
     type: bool
@@ -2658,25 +2655,23 @@ modules:
     - <axis>.dir_pin
     related_pages:
     - stepper-motors
-  - name: x.slaved_to
+  - name: delta.slaved_to
     type: enum
     default: '"" (empty string = not slaved)'
     module: actuator
     context: Per-actuator dual-motor configuration (advanced)
     defined_in: Firmware/src/robot/Robot.cpp:319
-    description: 'X axis: Configures this actuator to move in sync with another axis for dual-motor configurations. Only A/B/C
-      axes (delta/epsilon/zeta) can be slaved to X/Y/Z axes (alpha/beta/gamma). When slaved, the slave motor moves identically
-      to the master motor, enabling dual Y-axis gantries or dual Z-axis lead screws. Both master and slave must have identical
-      driver type, microstepping, and steps_per_mm settings. The slaved actuator is not registered in the actuators array
-      - it is controlled entirely by its master.'
+    description: 'A/delta actuator: Configures this secondary internal-TMC motor to mirror alpha, beta, or gamma. It ceases
+      to be an independent A axis. Match the motor calibration and follow the one-slave and actuator-ordering restrictions
+      on the Slaved Axes page.'
     corresponding_v1: none (v1 did not support axis slaving)
-    corresponding_v2: x.slaved_to
+    corresponding_v2: delta.slaved_to
     valid_values:
-    - value: X
+    - value: alpha
       description: ''
-    - value: Y
+    - value: beta
       description: ''
-    - value: Z
+    - value: gamma
       description: ''
     - value: '"" (or none)'
       description: ''
@@ -2685,26 +2680,24 @@ modules:
     - <axis>.microsteps
     - <axis>.driver
     related_pages:
-    - hbot
-  - name: y.slaved_to
+    - actuator-slaving
+  - name: epsilon.slaved_to
     type: enum
     default: '"" (empty string = not slaved)'
     module: actuator
     context: Per-actuator dual-motor configuration (advanced)
     defined_in: Firmware/src/robot/Robot.cpp:319
-    description: 'Y axis: Configures this actuator to move in sync with another axis for dual-motor configurations. Only A/B/C
-      axes (delta/epsilon/zeta) can be slaved to X/Y/Z axes (alpha/beta/gamma). When slaved, the slave motor moves identically
-      to the master motor, enabling dual Y-axis gantries or dual Z-axis lead screws. Both master and slave must have identical
-      driver type, microstepping, and steps_per_mm settings. The slaved actuator is not registered in the actuators array
-      - it is controlled entirely by its master.'
+    description: 'B/epsilon actuator: Configures this secondary internal-TMC motor to mirror alpha, beta, or gamma. It ceases
+      to be an independent B axis. Use it when delta remains independent, and follow the ordering restrictions on the Slaved
+      Axes page.'
     corresponding_v1: none (v1 did not support axis slaving)
-    corresponding_v2: y.slaved_to
+    corresponding_v2: epsilon.slaved_to
     valid_values:
-    - value: X
+    - value: alpha
       description: ''
-    - value: Y
+    - value: beta
       description: ''
-    - value: Z
+    - value: gamma
       description: ''
     - value: '"" (or none)'
       description: ''
@@ -2713,26 +2706,24 @@ modules:
     - <axis>.microsteps
     - <axis>.driver
     related_pages:
-    - hbot
-  - name: z.slaved_to
+    - actuator-slaving
+  - name: zeta.slaved_to
     type: enum
     default: '"" (empty string = not slaved)'
     module: actuator
     context: Per-actuator dual-motor configuration (advanced)
     defined_in: Firmware/src/robot/Robot.cpp:319
-    description: 'Z axis: Configures this actuator to move in sync with another axis for dual-motor configurations. Only A/B/C
-      axes (delta/epsilon/zeta) can be slaved to X/Y/Z axes (alpha/beta/gamma). When slaved, the slave motor moves identically
-      to the master motor, enabling dual Y-axis gantries or dual Z-axis lead screws. Both master and slave must have identical
-      driver type, microstepping, and steps_per_mm settings. The slaved actuator is not registered in the actuators array
-      - it is controlled entirely by its master.'
+    description: 'C/zeta actuator: Configures this secondary internal-TMC motor to mirror alpha, beta, or gamma. It ceases
+      to be an independent C axis. Use it when earlier actuator slots are occupied, and follow the ordering restrictions on
+      the Slaved Axes page.'
     corresponding_v1: none (v1 did not support axis slaving)
-    corresponding_v2: z.slaved_to
+    corresponding_v2: zeta.slaved_to
     valid_values:
-    - value: X
+    - value: alpha
       description: ''
-    - value: Y
+    - value: beta
       description: ''
-    - value: Z
+    - value: gamma
       description: ''
     - value: '"" (or none)'
       description: ''
@@ -2741,7 +2732,7 @@ modules:
     - <axis>.microsteps
     - <axis>.driver
     related_pages:
-    - hbot
+    - actuator-slaving
   - name: common.check_driver_errors
     type: bool
     default: true
@@ -7815,9 +7806,8 @@ modules:
     module: mpg
     context: Per-encoder configuration (module instance setting)
     defined_in: Firmware/src/modules/utils/mpg/mpg.cpp:41
-    description: Enables this specific MPG (Manual Pulse Generator) instance. When set to true, this encoder will be initialized
-      and will control the axis specified in the axis setting. Multiple MPG instances can be configured for different axes
-      by creating separate named sub-sections (e.g., xaxis, yaxis, zaxis).
+    description: Enables this MPG (Manual Pulse Generator) instance. The subsection name selects x, y, z, a, b, c, or shared;
+      arbitrary names are rejected. Configure separate axis instances or one shared instance, but do not mix both forms.
     corresponding_v1: panel.encoder_a_pin + panel.encoder_b_pin (v1 had unified panel module, v2 separates MPG functionality)
     corresponding_v2: mpg.<name>.enable
     valid_values:
@@ -7828,7 +7818,7 @@ modules:
     related_settings:
     - mpg.<name>.enca_pin
     - mpg.<name>.encb_pin
-    - mpg.<name>.axis
+    - mpg.<name>.mmperpulse
     related_pages:
     - panel
     - panel-guide
@@ -7849,7 +7839,7 @@ modules:
       description: ''
     related_settings:
     - mpg.<name>.encb_pin
-    - mpg.<name>.axis
+    - mpg.<name>.mmperpulse
     - mpg.<name>.enable
     related_pages:
     - panel
@@ -7874,7 +7864,7 @@ modules:
       description: ''
     related_settings:
     - mpg.<name>.enca_pin
-    - mpg.<name>.axis
+    - mpg.<name>.mmperpulse
     - mpg.<name>.enable
     related_pages:
     - panel
@@ -7882,39 +7872,27 @@ modules:
     - pin-configuration
     - endstops
     - smoothieboard-v2-prime
-  - name: mpg.<name>.axis
+  - name: mpg.<name>.mmperpulse
     type: number
-    default: -1 (invalid, must be set)
+    default: Axis motor resolution, rounded to four decimal places
     module: mpg
-    context: Axis assignment (per-instance setting)
-    defined_in: Firmware/src/modules/utils/mpg/mpg.cpp:62
-    description: Specifies which actuator axis this encoder controls for manual pulse generation. The encoder directly steps
-      the specified motor, allowing manual positioning when the machine is idle. Each rotation click of the encoder advances
-      or reverses the motor by one microstep based on direction. This provides precise manual control for machine setup, workpiece
-      alignment, and manual machining operations.
-    corresponding_v1: none (v1 panel encoder had no axis assignment, typically controlled menu navigation)
-    corresponding_v2: mpg.<name>.axis
+    context: Per-axis encoder movement distance
+    defined_in: Firmware/src/modules/utils/mpg/mpg.cpp:91
+    description: Sets the positive movement distance in millimetres for each encoder count on an x, y, z, a, b, or c instance.
+      When omitted or non-positive in configuration, Smoothie derives the value from the actuator steps per millimetre and
+      rounds it to four decimal places. A shared MPG receives its axis and distance at runtime through M922 instead.
+    corresponding_v1: none (v1 panel encoder had no direct axis control)
+    corresponding_v2: mpg.<name>.mmperpulse
     valid_values:
-    - value: 0 (X/alpha)
-      description: ''
-    - value: 1 (Y/beta)
-      description: ''
-    - value: 2 (Z/gamma)
-      description: ''
-    - value: 3 (E0/delta)
-      description: ''
-    - value: 4 (E1/epsilon)
-      description: ''
-    - value: 5 (E2/zeta)
-      description: ''
+    - value: Positive distance in millimetres
+      description: Each encoder count requests this much motion.
     related_settings:
     - mpg.<name>.enca_pin
     - mpg.<name>.encb_pin
     - mpg.<name>.enable
     related_pages:
-    - panel
-    - panel-guide
-    - endstops
+    - mpg
+    - button-box
     - motion-control
     - smoothieboard-v2-prime
 - name: Network

@@ -38,6 +38,12 @@ These modules handle system-level features like file playback, current control, 
 
 ### User Interface
 
+- **[Button Box](button-box)** - V2 programmable GPIO controls, macros, and named fault inputs
+
+- **[MPG](mpg)** - V2 direct or shared manual-pulse-generator control
+
+- **[MAX7219 DRO](max7219-dro)** - V2 multi-axis positions on seven-segment displays
+
 - **[Kill Button](killbutton)** - Software-based emergency stop button
   - Provides instant machine halt capability
   - Can be wired to physical emergency stop button
@@ -53,6 +59,12 @@ These modules handle system-level features like file playback, current control, 
 - **[Smoopi](smoopi)** - Modern touchscreen control interface
   - Color touchscreen on Raspberry Pi
   - Web-based graphical interface
+
+### Console Utilities
+
+- **[`ed` file editor](console-commands#ed)** - V2 streaming file editing with separate input and output files
+- **[`le` command-line editor](console-commands#le)** - V2 cursor editing and per-session command history
+- **[O-word subroutines](subroutines)** - V2 named command sequences stored in RAM
 
 ## Configuration
 

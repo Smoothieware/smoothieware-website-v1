@@ -1852,7 +1852,7 @@ pins:
       - PWM output
       - Analog input
     config_examples:
-      - 'yaxis.enca_pin = PA3^'
+      - 'y.enca_pin = PA3^'
     hardwired: false
     pwm_capable: true
 
@@ -2065,7 +2065,7 @@ pins:
       - I2C alternate
       - Heater control
     config_examples:
-      - 'zaxis.enca_pin = PB8^'
+      - 'z.enca_pin = PB8^'
       - 'temperature_control.hotend2.heater_pin = PB8'
     hardwired: false
     pwm_capable: true
@@ -2090,7 +2090,7 @@ pins:
       - CAN bus
       - I2C alternate
     config_examples:
-      - 'zaxis.encb_pin = PB9^'
+      - 'z.encb_pin = PB9^'
     hardwired: false
     pwm_capable: true
 
@@ -2622,7 +2622,7 @@ pins:
       - Encoder input
       - Timer capture
     config_examples:
-      - 'xaxis.encb_pin = PF6^'
+      - 'x.encb_pin = PF6^'
     hardwired: false
     pwm_capable: true
 
@@ -2686,7 +2686,7 @@ pins:
       - Encoder input
       - Timer break input
     config_examples:
-      - 'xaxis.enca_pin = PF10^'
+      - 'x.enca_pin = PF10^'
     hardwired: false
     pwm_capable: false
 

@@ -66,9 +66,10 @@ table td:nth-child(3) {
 | <gcode>G28.4</gcode> | **V2 Only** - Manual Homing based on actuator position. This allows you to set a home position manually based on actuator position (used for rotary delta) | <gcode>G28.4</gcode> |
 | <gcode>G28.5</gcode> | Clears the homed flag for the specified axis, or all if not specifed | <gcode>G28.5</gcode> <gcode>G28.5</gcode> Z0 |
 | <gcode>G28.6</gcode> | Shows the homing status of each axis | <gcode>G28.6</gcode> |
-| <gcode>G28.7</gcode> | **V2 Only** - Home slaved axis. For dual-motor axes (e.g., dual Z motors), homes the secondary motor independently | <gcode>G28.7</gcode> Z |
+| <gcode>G28.7</gcode> [→](actuator-slaving) | **V2 only**: home and align the secondary motor of an internal-driver slaved axis | <gcode>G28.7</gcode> Z1 |
 | <gcode>G29</gcode> | Bed probe test - probes bed and reports heights. Behavior depends on levelling strategy (ThreePoint/DeltaGrid/CartGrid), see [ZProbe](zprobe)  | <gcode>G29</gcode> |
-| <gcode>G30</gcode> [→](g30) | Simple Z probe at current XY, reports distance moved down until probe triggers. optional F parameter defines the speed of probing, zprobe.slow_feedrate is used when not supplied | <gcode>G30</gcode> <gcode>G30</gcode> F100 |
+| <gcode>G30</gcode> [→](g30) | Simple Z probe by default. In V2 GRBL mode with `nist_G30`, move to the position stored by G30.1; adding P keeps probe behavior | <gcode>G30</gcode> P1 F100 |
+| <gcode>G30.1</gcode> [→](g30#nist-stored-position-in-v2-grbl-mode) | **V2 GRBL mode with `nist_G30`**: save the current homed machine position for G30 | <gcode>G30.1</gcode> |
 | <gcode>G31</gcode> | Leveling strategy command - probes grid and activates compensation, or reports status (ThreePoint). Depends on levelling strategy, see [ZProbe](zprobe)  | <gcode>G31</gcode> |
 | <gcode>G32</gcode> | Depends on levelling strategy selected, see [ZProbe](zprobe). For calibration on delta, uses Z probe to calibrate delta endstops and arm radius, use R parameter to select only arm radius calibration and E to select only endstop calibration. I to set target precision, J to set probe_radius, K to keep current endstop trim settings.  In Zgrid module, it starts the grid probing | <gcode>G32</gcode> <gcode>G32</gcode> R <gcode>G32</gcode> E <gcode>G32</gcode> EK <gcode>G32</gcode> I0.02 |
 | <gcode>G33</gcode> | **V2 Only** - Lathe threading with spindle synchronization. For CNC lathe operations, synchronizes tool feed with spindle rotation for cutting uniform threads | <gcode>G33</gcode> Z10 K2.0 |

@@ -306,11 +306,11 @@ V2 introduces 9 standardized Gadgeteer headers (GA through GI):
 | **Throughput** | ~1 Mbps | ~10 Mbps |
 
 **V2 Network Services:**
-- HTTP (port 80): Web interface, file upload, RESTful API
-- Telnet (port 23): G-code over network
-- SFTP (port 115): File transfer
-- **Auto-Update (NEW):** Network firmware updates
-- **NTP (NEW):** Time synchronization
+- [HTTP and WebSocket](/network#v2-http-and-websocket-server) (port 80): static web files plus command and upload sockets
+- [Network shell](/network#v2-network-shell) (port 23): G-code and console commands
+- [FTP](/network#v2-ftp-server) (port 21): unencrypted standard file transfer, not SFTP
+- **Auto-Update:** Network firmware update commands
+- [NTP](/network#v2-ntp-clock-setup) (outbound UDP port 123): real-time-clock synchronization
 
 ---
 
@@ -457,12 +457,19 @@ Example: {::nomarkdown}<pin>PG10^</pin>{:/nomarkdown} (PG10 with pullup enabled)
 | Feature | Description |
 |---------|-------------|
 | **Display Drivers** | ST7920, TM1638 support |
-| **Buttonbox** | Input switches, matrix keypads |
-| **Lathe Module** | G33 threading, spindle sync |
-| **MPG** | Manual Pulse Generator support |
+| **[Button Box](/button-box)** | Individual input switches, macros, and FAULT inputs. Matrix scanning remains unimplemented in the checked source |
+| **[Lathe Module](/lathe)** | G33 threading and spindle synchronization |
+| **[ELS](/els)** | Electronic Leadscrew controls with a TM1638; upstream notes label parts work in progress |
+| **[MPG](/mpg)** | Direct per-axis control or one shared hand wheel selected with M922 |
 | **Silent Steppers** | StealthChop2 |
 | **OTA Updates** | Network firmware updates |
-| **Dual Motors/Axis** | Software parallel motor support |
+| **[Slaved Axes](/actuator-slaving)** | Software-parallel internal TMC motors and independent G28.7 alignment |
+| **[Auxiliary UART target](/uart#send-text-to-a-connected-device-v2-only)** | Send device messages with `echo -1` |
+| **[NIST G30/G30.1](/g30#nist-stored-position-in-v2-grbl-mode)** | Stored machine position in GRBL mode |
+| **[`ed` and `le`](/console-commands#ed)** | Streaming file editor plus interactive line editing and session history |
+| **[O-word Subroutines](/subroutines)** | Limited named subroutine definitions and calls |
+| **[MAX7219 DRO](/max7219-dro)** | X/Y/Z/A/B/C positions on seven-segment displays |
+| **[Feed Hold](/feed-hold)** | Real-time `!` hold and `~` cycle start; announced as work in progress |
 
 ### 8.3 Not Yet Ported
 

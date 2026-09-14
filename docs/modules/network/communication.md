@@ -7,9 +7,13 @@ permalink: /communication
 
 Communication modules are modules used to represent/control ways of communication between the Smoothieboard and the rest of the world.
 
-This can include a UART or USB serial port.
+This includes USB serial, hardware UARTs, and Ethernet services.
 
-For a list of communication modules and documentation on their use and configuration, please look at the list on the [homepage](index).
+- [Network](/network#v2-network-services): V2 shell, FTP, HTTP/WebSocket, and NTP; the page also documents the different V1 services
+- [UART](/uart): serial command consoles and V2 auxiliary `echo -1` output targeting
+- [USB](/usb): USB serial and mass-storage communication
+
+The [homepage](index) links the rest of the communication documentation.
 
 ## Understanding the Protocol
 

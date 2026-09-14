@@ -19,6 +19,15 @@ Understanding these methods is important for safe operation and troubleshooting.
   <th>Documentation</th>
 </tr>
 <tr>
+  <td>Feed hold / cycle start</td>
+  <td><code>!</code> / <code>~</code></td>
+  <td>V2 reduces the step rate to a stop without draining the queue</td>
+  <td>Not affected; laser output turns off during the hold</td>
+  <td>Paused while held</td>
+  <td>Yes, with <code>~</code></td>
+  <td><a href="feed-hold">Feed Hold</a></td>
+</tr>
+<tr>
   <td>abort</td>
   <td><mcode>M26</mcode></td>
   <td>Stops SDCARD print immediately</td>
@@ -59,6 +68,12 @@ Understanding these methods is important for safe operation and troubleshooting.
 ---
 
 ## Detailed Method Descriptions
+
+### Feed Hold and Cycle Start (`!` / `~`, V2)
+
+Send the real-time character `!` to start a controlled deceleration without waiting for the planner queue to empty. Send `~` to accelerate and resume the interrupted motion. The Fall 2026 announcement describes this implemented V2 feature as work in progress.
+
+Feed hold preserves the active move. It does not clear a halt, stop continuous jog mode, or replace `M600`/`M601` suspend and resume. See [Feed Hold and Cycle Start](feed-hold) for console-mode limits and laser behavior.
 
 ### Abort Command (abort / `M26`)
 
@@ -178,7 +193,7 @@ The Halt state can be cleared by:
 {::nomarkdown}
 <sl-alert variant="primary" open>
   <sl-icon slot="icon" name="lightbulb"></sl-icon>
-  <strong>Tip:</strong> All stop commands can be triggered by a button or a sensor if a <a href="switch">Switch module</a> is configured to do so. This allows for physical emergency stop buttons or automatic stopping based on sensor conditions.
+  <strong>Tip:</strong> A <a href="switch">Switch module</a> or V2 <a href="button-box">Button Box</a> can trigger queued stop-related commands such as suspend or kill. The V2 feed-hold characters <code>!</code> and <code>~</code> use a real-time console path and are not ordinary queued G-code commands.
 </sl-alert>
 {:/nomarkdown}
 
@@ -211,4 +226,5 @@ The Halt state can be cleared by:
 - [Kill Button setup](killbutton)
 - [Switch module](switch) - For configuring buttons and sensors
 - [Supported G-codes](supported-g-codes)
+- [Feed Hold and Cycle Start](feed-hold)
 - [Power Supply Control](power-supply-control) - PSU shutdown on halt

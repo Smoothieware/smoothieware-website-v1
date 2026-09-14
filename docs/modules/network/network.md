@@ -51,6 +51,8 @@ network.ip_address                           auto             # use dhcp to get 
 enable = true            # enable the ethernet network services
 webserver_enable = false # enable the webserver
 shell_enable = false     # enable the telnet server (renamed from telnet.enable)
+ftp_enable = false       # enable standard FTP on port 21
+ntp_enable = true        # set the real-time clock from NTP at network startup
 ip_address = auto        # use dhcp to get ip address
 ```
 
@@ -80,7 +82,7 @@ network.telnet.enable                        false            # enable the telne
 network.plan9.enable                         true             # enable the plan9 network filesystem
 network.ip_address                           192.168.3.222    # the IP address
 network.ip_mask                              255.255.255.0    # the ip mask
-network.ip_gateway                           192.168.1.254    # the gateway address
+network.ip_gateway                           192.168.3.1      # the gateway address
 ```
 
 {::nomarkdown}
@@ -95,9 +97,11 @@ network.ip_gateway                           192.168.1.254    # the gateway addr
 enable = true             # enable the ethernet network services
 webserver_enable = false  # enable the webserver
 shell_enable = false      # enable the telnet server (renamed from telnet.enable)
+ftp_enable = false        # enable standard FTP on port 21
+ntp_enable = true         # set the real-time clock from NTP at network startup
 ip_address = 192.168.3.222    # the IP address
 ip_mask = 255.255.255.0       # the ip mask
-ip_gateway = 192.168.1.254    # the gateway address
+ip_gateway = 192.168.3.1      # the gateway address
 ```
 
 {::nomarkdown}
@@ -107,7 +111,7 @@ ip_gateway = 192.168.1.254    # the gateway address
 
 
 
-The basic network configuration options can be seen at the end of the [Config Sample](https://github.com/arthurwolf/Smoothie/blob/edge/ConfigSamples/Smoothieboard/config#L312).
+The basic network configuration options appear in the V1 [configuration sample](https://github.com/Smoothieware/Smoothieware/blob/edge/ConfigSamples/Smoothieboard/config) and the V2 [CNC sample](https://github.com/Smoothieware/SmoothieV2/blob/master/ConfigSamples/config-cnc.ini).
 
 If your configuration file does not contain the network section, it probably means the version of Smoothie that shipped with your board is too old.
 
@@ -141,14 +145,73 @@ To access Smoothie over the network, you first need to know its IP address. If y
 - If you are running Linux, you can use a command like `nmap -sn 192.168.0.0/24` to find all accessible peripherals on the network.
 - **NOTE**: If the IP address shows `173.222.239.190`, then it means that DHCP did not get an IP address assigned. (Try a static IP instead).
 
-You can access Smoothie by using its network services:
+## V2 network services
+
+Smoothieware V2 uses the FreeRTOS+TCP stack and controls each service from `[network]`:
+
+```ini
+[network]
+enable = true
+shell_enable = true
+ftp_enable = true
+webserver_enable = true
+ntp_enable = true
+ntp_server = pool.ntp.org
+timezone = 1
+ip_address = auto
+dns_server = auto
+```
+
+| Service | Port | Setting | Purpose |
+|---------|------|---------|---------|
+| Network shell | TCP 23 | `shell_enable` | Run G-code and [console commands](/console-commands) over a raw terminal connection |
+| FTP | TCP 21 | `ftp_enable` | Transfer files with an FTP client such as FileZilla |
+| HTTP and WebSocket | TCP 80 | `webserver_enable` | Serve files from `/sd/www` and provide WebSocket command and upload endpoints |
+| NTP client | UDP 123 outbound | `ntp_enable` | Set the real-time clock from `ntp_server` when the network starts |
+
+These services provide no encryption. Keep the board on a trusted machine network and do not expose its ports to the public Internet.
+
+### V2 network shell
+
+The shell listens on TCP port 23 and accepts the same G-code and console commands as a serial console. Connect with a Telnet or raw TCP client:
+
+```plaintext
+telnet ip_of_smoothie 23
+```
+
+The server accepts up to three shell clients. It behaves like a command stream, not a full Unix login shell.
+
+### V2 FTP server
+
+Enable `ftp_enable` and connect an FTP client to port 21. This is standard FTP, not SFTP and not V1's Simple File Transfer Protocol on port 115. FTP sends commands and file data without encryption.
+
+### V2 HTTP and WebSocket server
+
+The HTTP server serves `/sd/www/index.html` at `/` and other files relative to `/sd/www`. It accepts WebSocket upgrades on two paths:
+
+| WebSocket path | Purpose |
+|----------------|---------|
+| `/command` | Send command lines and receive their output |
+| `/upload` | Upload a named file using the V2 web interface protocol |
+
+The current WebSocket implementation requires each incoming frame to set the FIN bit; fragmented messages are rejected. The command receive buffer is 132 bytes and the upload receive buffer is 1024 bytes, so clients must split their application data into complete frames that fit those buffers.
+
+### V2 NTP clock setup
+
+With `ntp_enable = true`, Smoothie resolves `ntp_server`, sends one request when the network starts, applies the integer `timezone` offset in hours, and sets the real-time clock. The default server is `pool.ntp.org` and the default timezone is `0`.
+
+The timezone setting does not apply daylight-saving rules or half-hour offsets. Set it to the required fixed UTC offset and update it when local civil time changes, or keep the clock on UTC with `timezone = 0`. The `ntp` console command requests another synchronization.
+
+## V1 network services
+
+Smoothieware V1 provides a different network stack and service set:
 
 - Telnet (port 23) to run commands, stream G-code to Smoothie, or connect from [Pronterface](pronterface) (see below)
 - HTTP web server (port 80) allows control from your web browser
-- Simple File Transfer Protocol (port 115) allows uploading of files from an SFTP client.
+- Simple File Transfer Protocol (port 115) allows uploading files with a compatible client. It is not SSH File Transfer Protocol.
 - (**NOT SUPPORTED** needs to be enabled and compiled) Plan9 (9P/Styx) (port 564) provides remote access to the file system from compatible clients (typically Linux)
 
-#### Telnet (port 23)
+### V1 Telnet (port 23)
 
 You can use a terminal to connect to your board via telnet by typing in a terminal:
 
@@ -160,7 +223,7 @@ telnet ip_of_smoothie:23
 
 Raw telnet provides console access to run [console commands](console-commands) or G-code, useful network commands here are `net` and `netstat`. See the [smoothie-stream.py example](https://github.com/arthurwolf/Smoothie/blob/edge/smoothie-stream.py) for streaming.
 
-#### Web Server (port 80)
+### V1 Web Server (port 80)
 
 You can access the default user interface by going to this address in your web browser:
 
@@ -211,11 +274,11 @@ http://ip_of_smoothie/sd/webif/index.html
 </div>
 {:/nomarkdown}
 
-#### Simple File Transfer Protocol (port 115)
+### V1 Simple File Transfer Protocol (port 115)
 
 Note: [Simple File Transfer Protocol](http://en.wikipedia.org/wiki/Simple_File_Transfer_Protocol) (NOT secure file transfer!) allows uploading of files. See the [smoothie-upload.py example](https://github.com/Smoothieware/Smoothieware/blob/edge/smoothie-upload.py).
 
-#### Plan9 Network Filesystem (port 564)
+### V1 Plan9 Network Filesystem (port 564)
 
 **NOTE**: Plan9 is not built into Smoothie by default. To include it, rebuild Smoothie with `make PLAN9=1`. See [Compiling Smoothie](compiling-smoothie).
 
@@ -238,7 +301,7 @@ If you want, you can also add the filesystem to your `/etc/fstab` as follows:
 192.168.1.6     /mnt/smoothie 9p     user,noauto,dfltuid=1000,dfltgid=1000 0      0
 ```
 
-#### Using a Hosts File
+### Using a Hosts File
 
 If IP addresses are getting you down, you can address your Smoothie by name if you add a line to your computer's [hosts file](http://en.wikipedia.org/wiki/Hosts_file). For example, assuming your Smoothie's address is 192.168.2.120, you could add:
 
@@ -321,7 +384,7 @@ IP mask: 255.255.255.0
 MAC Address: 00:1F:11:02:04:C9
 ```
 
-## API
+## V1 HTTP API
 
 Creating a custom interface, a script that talks to a Smoothieboard, or helping with Smoothie's web interface (please do!)?
 

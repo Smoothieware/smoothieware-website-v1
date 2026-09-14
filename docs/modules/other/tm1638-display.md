@@ -237,6 +237,7 @@ If you need a different display type, consider:
 
 - [Panel](/panel) - LCD with encoder (V1 compatible)
 - [ST7920](/st7920) - Graphical LCD (V2)
+- [MAX7219 DRO](/max7219-dro) - Multi-axis seven-segment readout (V2)
 - Network interface - Web-based display
 
 ## Related Modules

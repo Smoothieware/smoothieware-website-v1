@@ -84,10 +84,14 @@ Typical differences between 3D mode and CNC mode are:
 2. {::nomarkdown}<gcode>G28</gcode>{:/nomarkdown} goes to park position and is NOT home, {::nomarkdown}<raw>$H</raw>{:/nomarkdown} homes in CNC mode
 3. Many GCodes may be differently interpreted in CNC mode than in 3D mode, please check your gcode references (Linuxcnc has a [good GCode reference](https://linuxcnc.org/docs/html/gcode/g-code.html), do not use the reprap gcode reference for CNC mode)
 
+Smoothieware V2 also provides two GRBL-oriented controls:
+
+- [NIST `G30` and `G30.1`](/g30#nist-stored-position-in-v2-grbl-mode) when `[motion control] nist_G30 = true`
+- [Real-time `!` feed hold and `~` cycle start](/feed-hold), currently labelled work in progress
+
 <sl-alert variant="warning" open>
   <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
   <strong>Pronterface Compatibility</strong><br><br>
 
   You cannot generally use pronterface to control CNC/grbl mode, as Pronterface is for 3D printers and uses a different dialect of gcode. It also does not allow you to send commands such as <raw>$H</raw> to home. It also tends to truncate commands like <gcode>G28.2</gcode> by not sending the <raw>.2</raw> part.
 </sl-alert>
-

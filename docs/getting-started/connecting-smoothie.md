@@ -104,7 +104,7 @@ Smoothie supports several ways to connect and communicate:
 1. **Enable network** - Set <setting v2="network.enable"></setting> to `true` in your config
 2. **Configure IP** - Use `network.ip_address = auto` for DHCP or specify static IP
 3. **Connect cable** - Plug Ethernet cable into Smoothieboard and your router
-4. **Access board** - Use web interface (port 80), Telnet (port 23), or SFTP (port 115)
+4. **Access board** - Use HTTP/WebSocket (port 80), the network shell (port 23), or standard FTP (port 21); see [V2 network services](/network#v2-network-services)
 5. **Find IP address** - Check router's interface, use network scanner, or enable serial console
 
 **V2 Network Advantages:**

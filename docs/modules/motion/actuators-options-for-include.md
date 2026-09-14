@@ -95,14 +95,6 @@
             </td>
         </tr>
         <tr>
-            <td class="empty-cell">—</td>
-            <td><setting no-version v2="actuator.x.slaved_to"></setting></td>
-            <td class="description-cell">
-                <p>X axis: configures this actuator to be slaved to another axis, for dual-motor configurations such as dual Y-axis motors on gantry machines.</p>
-                <p>Only axes A, B, C (delta, epsilon, zeta) can be slaved to X, Y, Z (alpha, beta, gamma).</p>
-            </td>
-        </tr>
-        <tr>
             <td><setting no-version v1="alpha_step_pin"></setting></td>
             <td><setting no-version v2="actuator.x.step_pin"></setting></td>
             <td class="description-cell">
@@ -178,14 +170,6 @@
             <td class="description-cell">
                 <p>Y axis: reverses the motor direction by inverting the direction signal, without modifying the pin definition.</p>
                 <p>A cleaner, more readable way to reverse direction than using the <raw>!</raw> modifier on the <setting v1="beta_dir_pin" v2="actuator.y.dir_pin"></setting> setting.</p>
-            </td>
-        </tr>
-        <tr>
-            <td class="empty-cell">—</td>
-            <td><setting no-version v2="actuator.y.slaved_to"></setting></td>
-            <td class="description-cell">
-                <p>Y axis: configures this actuator to be slaved to another axis, for dual-motor configurations such as dual Y-axis motors on gantry machines.</p>
-                <p>Only axes A, B, C (delta, epsilon, zeta) can be slaved to X, Y, Z (alpha, beta, gamma).</p>
             </td>
         </tr>
         <tr>
@@ -269,14 +253,6 @@
             </td>
         </tr>
         <tr>
-            <td class="empty-cell">—</td>
-            <td><setting no-version v2="actuator.z.slaved_to"></setting></td>
-            <td class="description-cell">
-                <p>Z axis: configures this actuator to be slaved to another axis, for dual-motor configurations such as dual Y-axis motors on gantry machines.</p>
-                <p>Only axes A, B, C (delta, epsilon, zeta) can be slaved to X, Y, Z (alpha, beta, gamma).</p>
-            </td>
-        </tr>
-        <tr>
             <td><setting no-version v1="gamma_step_pin"></setting></td>
             <td><setting no-version v2="actuator.z.step_pin"></setting></td>
             <td class="description-cell">
@@ -298,3 +274,7 @@
     </tbody>
 </table>
 {:/nomarkdown}
+
+## Slaved actuators (V2 only)
+
+The `slaved_to` option belongs on a secondary A, B, or C actuator, not on X, Y, or Z. For example, `delta.slaved_to = beta` makes the A actuator mirror Y. This currently works only with internal TMC2590 or TMC2660 drivers and has ordering constraints. See [Slaved Axes](/actuator-slaving) for the complete configuration and second-endstop alignment procedure.

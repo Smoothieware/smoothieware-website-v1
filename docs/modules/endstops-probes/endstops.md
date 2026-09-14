@@ -275,6 +275,8 @@ You can test/debug the feature by issuing the `M211` M-code, which will tell you
 
 ## Usage example with home offsets
 
+Smoothieboard V2 machines with a software-slaved gantry motor can use a second endstop and `G28.7` to measure or apply the motor alignment offset. See [Slaved Axes](/actuator-slaving#squaring-with-a-second-endstop) before assigning that endstop: it must not also be enabled as a hard limit.
+
 Here is a common sequence that you may do to set bed height, this need not be repeated unless the bed changes.
 
 ```

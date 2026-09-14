@@ -9753,9 +9753,9 @@ TM1638-based 7-segment LED display module with 8 buttons and 8 bi-color (red/gre
 
 ## [mpg] - Manual Pulse Generator (Rotary Encoder)
 
-Manual Pulse Generator for rotary encoder-based manual control. Supports multiple independent encoders for different axes. Each encoder instance requires its own named sub-section configuration.
+Manual Pulse Generator for rotary encoder-based manual control. It supports fixed `x`, `y`, `z`, `a`, `b`, and `c` axis subsections, or one `shared` subsection selected at runtime with `M922`.
 
-**Configuration Pattern:** `mpg.<name>.setting` where `<name>` is a user-chosen identifier (e.g., `xaxis`, `yaxis`, `zaxis`)
+**Configuration Pattern:** `mpg.<name>.setting` where `<name>` is `x`, `y`, `z`, `a`, `b`, `c`, or `shared`. Arbitrary subsection names are rejected.
 
 ---
 
@@ -9770,19 +9770,18 @@ Manual Pulse Generator for rotary encoder-based manual control. Supports multipl
 * Required: yes (encoder instance will not initialize without this)
 * Corresponding v1 setting: `panel.encoder_a_pin` + `panel.encoder_b_pin` (v1 had unified panel module, v2 separates MPG functionality)
 * Corresponding v2 setting: `mpg.<name>.enable`
-* Description: Enables this specific MPG (Manual Pulse Generator) instance. When set to true, this encoder will be initialized and will control the axis specified in the axis setting. Multiple MPG instances can be configured for different axes by creating separate named sub-sections (e.g., xaxis, yaxis, zaxis).
+* Description: Enables this MPG instance. For an axis subsection, its fixed subsection name selects the actuator. A `shared` subsection receives the selected axis and distance through `M922`.
   * Each enabled instance requires unique encoder pins (enca_pin and encb_pin).
-  * Each instance controls one actuator axis (0-5).
-  * Multiple instances can run simultaneously for multi-axis manual control.
+  * Configure separate axis instances or a shared instance, not both forms.
   * Each instance creates its own FreeRTOS task with priority 3.
-  * Encoder input is ignored when the block queue is not idle (safety feature).
+  * The checked implementation does not enforce an idle-state guard, so machine integration must prevent unintended use during commanded motion.
   * CRITICAL: Encoder pins must be interrupt-capable with unique line numbers.
-* Related settings: `mpg.<name>.enca_pin`, `mpg.<name>.encb_pin`, `mpg.<name>.axis`
+* Related settings: `mpg.<name>.enca_pin`, `mpg.<name>.encb_pin`, `mpg.<name>.mmperpulse`
 * Related pages: panel, panel-guide, smoothieboard-v2-prime
 * Example configuration:
-  * mpg.xaxis.enable = true  # Enable encoder for X-axis manual control
-  * mpg.yaxis.enable = true  # Enable encoder for Y-axis manual control
-  * mpg.zaxis.enable = true  # Enable encoder for Z-axis manual control
+  * mpg.x.enable = true  # Enable encoder for X-axis manual control
+  * mpg.y.enable = true  # Enable encoder for Y-axis manual control
+  * mpg.shared.enable = true  # Enable one runtime-selectable shared encoder instead
 
 ---
 
@@ -9809,12 +9808,12 @@ Manual Pulse Generator for rotary encoder-based manual control. Supports multipl
   * Works with encb_pin for quadrature decoding (direction detection).
   * Each encoder edge triggers an interrupt that signals the handler task.
   * If pin setup fails, the module will not initialize and will report an error.
-* Related settings: `mpg.<name>.encb_pin`, `mpg.<name>.axis`, `mpg.<name>.enable`
+* Related settings: `mpg.<name>.encb_pin`, `mpg.<name>.mmperpulse`, `mpg.<name>.enable`
 * Related pages: panel, pinout, pin-configuration, endstops, smoothieboard-v2-prime
 * Example configuration:
-  * mpg.xaxis.enca_pin = PF10^  # Encoder phase A with pullup (line 10)
-  * mpg.yaxis.enca_pin = PA3^  # Y-axis encoder phase A (line 3)
-  * mpg.zaxis.enca_pin = PB8^  # Z-axis encoder phase A (line 8)
+  * mpg.x.enca_pin = PF10^  # Encoder phase A with pullup (line 10)
+  * mpg.y.enca_pin = PA3^  # Y-axis encoder phase A (line 3)
+  * mpg.shared.enca_pin = PB8^  # Shared encoder phase A (line 8)
 
 ---
 
@@ -9843,52 +9842,33 @@ Manual Pulse Generator for rotary encoder-based manual control. Supports multipl
   * Pullup resistor (`^` modifier) is strongly recommended for encoder stability.
   * Both A and B phases are required for quadrature decoding.
   * If pin setup fails with "not valid interrupt pins" error, check line number conflicts.
-* Related settings: `mpg.<name>.enca_pin`, `mpg.<name>.axis`, `mpg.<name>.enable`
+* Related settings: `mpg.<name>.enca_pin`, `mpg.<name>.mmperpulse`, `mpg.<name>.enable`
 * Related pages: panel, pinout, pin-configuration, endstops, smoothieboard-v2-prime
 * Example configuration:
-  * mpg.xaxis.encb_pin = PF6^  # Encoder phase B with pullup (line 6 - different from line 10)
-  * mpg.yaxis.encb_pin = PA4^  # Y-axis encoder phase B (line 4 - different from line 3)
-  * mpg.zaxis.encb_pin = PB9^  # Z-axis encoder phase B (line 9 - different from line 8)
+  * mpg.x.encb_pin = PF6^  # Encoder phase B with pullup (line 6 - different from line 10)
+  * mpg.y.encb_pin = PA4^  # Y-axis encoder phase B (line 4 - different from line 3)
+  * mpg.shared.encb_pin = PB9^  # Shared encoder phase B (line 9 - different from line 8)
 
 ---
 
-#### `mpg.<name>.axis`
+#### `mpg.<name>.mmperpulse`
 
 * Type: `number`
-* Default: `-1` (invalid, must be set)
+* Default: axis motor resolution, rounded to four decimal places
 * Module: `mpg`
-* Context: Axis assignment (per-instance setting)
-* Defined in: `Firmware/src/modules/utils/mpg/mpg.cpp:62`
-* Minimum value: `0` (validated in mpg.cpp:63)
-* Maximum value: `5` (validated in mpg.cpp:63)
-* Valid values: `0` (X/alpha), `1` (Y/beta), `2` (Z/gamma), `3` (E0/delta), `4` (E1/epsilon), `5` (E2/zeta)
-  * `0` - X-axis (alpha actuator)
-  * `1` - Y-axis (beta actuator)
-  * `2` - Z-axis (gamma actuator)
-  * `3` - E0 extruder or A-axis (delta actuator)
-  * `4` - E1 extruder or B-axis (epsilon actuator)
-  * `5` - E2 extruder or C-axis (zeta actuator)
-* Required: yes (encoder will not initialize without valid axis assignment)
-* Corresponding v1 setting: none (v1 panel encoder had no axis assignment, typically controlled menu navigation)
-* Corresponding v2 setting: `mpg.<name>.axis`
-* Description: Specifies which actuator axis this encoder controls for manual pulse generation. The encoder directly steps the specified motor, allowing manual positioning when the machine is idle. Each rotation click of the encoder advances or reverses the motor by one microstep based on direction. This provides precise manual control for machine setup, workpiece alignment, and manual machining operations.
-  * Axis number maps directly to Robot actuator array index.
-  * Encoder input is only processed when the block queue is idle (safety feature).
-  * Each encoder pulse manually steps the motor in the specified direction.
-  * Position is reset based on current actuator position after each movement.
-  * Typical use: axis 0-2 for X/Y/Z positioning, axis 3-5 for rotary axes.
-  * ERROR: If axis is not 0-5, module will fail to initialize.
-  * The encoder is effectively ignored during G-code execution.
+* Context: Per-axis encoder movement distance
+* Defined in: `Firmware/src/modules/utils/mpg/mpg.cpp:91`
+* Valid values: positive distance in millimetres
+* Required: no; an omitted or non-positive value is derived from actuator steps per millimetre and rounded to four decimal places
+* Corresponding v1 setting: none (v1 panel encoder had no direct axis control)
+* Corresponding v2 setting: `mpg.<name>.mmperpulse`
+* Description: Sets the movement distance requested for each encoder count on an axis instance. A shared MPG receives both the selected axis and movement distance at runtime through `M922`.
 * Related M-Codes:
-  * M114 - Get current position (reflects MPG movements)
-  * G92 - Set position (can be used after MPG positioning)
-  * G28 - Home axis (recommended before using MPG)
+  * M922 - Select an axis and pulse distance for a shared MPG
 * Related settings: `mpg.<name>.enca_pin`, `mpg.<name>.encb_pin`, `mpg.<name>.enable`
-* Related pages: panel, panel-guide, endstops, motion-control, smoothieboard-v2-prime
+* Related pages: mpg, button-box, motion-control, smoothieboard-v2-prime
 * Example configuration:
-  * mpg.xaxis.axis = 0  # Control X-axis (alpha) with this encoder
-  * mpg.yaxis.axis = 1  # Control Y-axis (beta) with this encoder
-  * mpg.zaxis.axis = 2  # Control Z-axis (gamma) with this encoder
+  * mpg.x.mmperpulse = 0.01  # Move X by 0.01 mm per encoder count
 
 ---
 
@@ -9941,20 +9921,14 @@ strobe_pin = PJ9              # on GA pin 4
 
 ```ini
 [mpg]
-xaxis.enable = true
-xaxis.enca_pin = PF10^  # Interrupt pin with pullup (line 10)
-xaxis.encb_pin = PF6^   # Interrupt pin with pullup (line 6)
-xaxis.axis = 0          # Control X-axis (alpha)
+x.enable = true
+x.enca_pin = PF10^       # Interrupt pin with pullup (line 10)
+x.encb_pin = PF6^        # Interrupt pin with pullup (line 6)
+x.mmperpulse = 0.01      # X movement per encoder count
 
-yaxis.enable = true
-yaxis.enca_pin = PA3^   # Interrupt pin with pullup (line 3)
-yaxis.encb_pin = PA4^   # Interrupt pin with pullup (line 4)
-yaxis.axis = 1          # Control Y-axis (beta)
-
-zaxis.enable = true
-zaxis.enca_pin = PB8^   # Interrupt pin with pullup (line 8)
-zaxis.encb_pin = PB9^   # Interrupt pin with pullup (line 9)
-zaxis.axis = 2          # Control Z-axis (gamma)
+shared.enable = true
+shared.enca_pin = PA3^   # Shared encoder phase A
+shared.encb_pin = PA4^   # Shared encoder phase B; select axis and distance with M922
 ```
 
 **Hardware:** Standard quadrature rotary encoders (100-600 PPR recommended)
@@ -9971,7 +9945,7 @@ zaxis.axis = 2          # Control Z-axis (gamma)
 - Type: Quadrature (2-phase)
 - Resolution: Full 32-bit counter with wrap-around handling
 - Operation: Interrupt-based for real-time response
-- Safety: Ignores input when block queue is active
+- Safety: The checked source does not enforce an idle-state guard; the machine integration must prevent unintended use during commanded motion
 
 ---
 
@@ -10009,7 +9983,7 @@ zaxis.axis = 2          # Control Z-axis (gamma)
 - **Encoder Type:** Quadrature (2-phase) incremental encoder
 - **Resolution:** Full 32-bit counter with automatic wrap-around handling
 - **Response:** Interrupt-based for real-time position tracking
-- **Safety:** Ignores encoder input when block queue is active (prevents interference)
+- **Motion coordination:** The checked source does not enforce an idle-state guard
 - **Multiple Axes:** Each encoder gets dedicated FreeRTOS task for handling
 - **Task Priority:** FreeRTOS task priority 3 (high priority for responsive control)
 - **Direction:** Automatically determined from phase relationship (A leads B or B leads A)
@@ -10191,10 +10165,9 @@ Common      → GND
 - Add `^` modifier: `PF10^` enables internal pullup
 - External pullups (4.7kΩ-10kΩ) can also be used
 
-**Cause 5: MPG Used During G-code Execution**
-- By design, MPG is disabled when system is executing G-code (safety feature)
-- Encoder only works when block queue is idle
-- This is NOT a bug, it prevents operator interference during automatic operation
+**Cause 5: Shared MPG Not Selected**
+- A `shared` instance needs `M922` to select the active axis and movement distance
+- Reissue the selector command after firmware startup before testing the encoder
 
 **Solution Steps:**
 1. Check pin interrupt capability in STM32 datasheet
@@ -10205,7 +10178,7 @@ Common      → GND
    - Y-axis: PA3 (line 3), PA4 (line 4)
    - Z-axis: PB8 (line 8), PB9 (line 9)
 5. Ensure pullups are enabled (` ^` modifier)
-6. Verify machine is idle (not executing G-code) when testing
+6. For a shared MPG, send the required `M922` selector command before testing
 
 ---
 
@@ -10252,7 +10225,7 @@ Common      → GND
 | `panel.encoder_b_pin` | `mpg.<name>.encb_pin` | Requires interrupt-capable pins with unique line numbers |
 | `panel.click_button_pin` | **Not implemented** | No built-in button in v2 base firmware |
 | `panel.menu_offset` | **Not implemented** | No menu system in v2 base firmware |
-| `panel.encoder_resolution` | **Hardware-based** | Detected automatically from encoder hardware |
+| `panel.encoder_resolution` | `mpg.<name>.mmperpulse` | Set movement per count, or allow the axis instance to derive it from motor resolution |
 | `panel.buzz_pin` | **Not implemented** | No buzzer support in base v2 firmware |
 | `panel.back_button_pin` | **Not implemented** | No menu navigation in v2 |
 | Various LCD types | `st7920.enable` only | v2 supports fewer display types in base firmware |
@@ -10269,11 +10242,11 @@ Common      → GND
    - TM1638 displays numbers and can read buttons, but no menu system built-in
    - Control logic must be implemented separately if needed
 
-3. **MPG is Manual Control:** Encoder directly steps motors, not menu navigation
+3. **MPG is Manual Control:** Encoder requests axis motion, not menu navigation
    - v1 encoder typically controlled menu navigation
    - v2 MPG encoder provides direct manual positioning control
-   - Each encoder rotation advances or reverses motor by one microstep
-   - Only works when machine is idle (safety feature)
+   - Each encoder count requests the configured `mmperpulse` distance
+   - A shared wheel uses `M922` to select its axis and distance
 
 4. **Interrupt Requirements:** V2 MPG encoders must use interrupt-capable pins with unique line numbers
    - v1 had more flexible pin assignment
@@ -10340,7 +10313,7 @@ Common      → GND
 | `mpg.<name>.enable` | `mpg.cpp` | 41 |
 | `mpg.<name>.enca_pin` | `mpg.cpp` | 72 |
 | `mpg.<name>.encb_pin` | `mpg.cpp` | 73 |
-| `mpg.<name>.axis` | `mpg.cpp` | 62 |
+| `mpg.<name>.mmperpulse` | `mpg.cpp` | 91 |
 
 **Source Code Locations:**
 - ST7920: `Firmware/src/modules/utils/display/st7920/`
@@ -10352,7 +10325,7 @@ Common      → GND
 ## Additional Resources
 
 - **Sample Configuration:** `ConfigSamples/config-lathe.ini` (TM1638 example at lines 281-285)
-- **MPG Configuration Example:** `Firmware/src/modules/utils/mpg/mpg.cpp:153-166`
+- **MPG Configuration:** `Firmware/src/modules/utils/mpg/mpg.cpp`
 - **ST7920 Driver Documentation:** `Firmware/src/modules/utils/display/st7920/`
 - **TM1638 Driver Documentation:** `Firmware/src/modules/utils/display/tm1638/`
 - **Rotary Encoder Implementation:** Based on quadrature decoding with interrupt handling

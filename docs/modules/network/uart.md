@@ -2,9 +2,9 @@
 permalink: /uart
 ---
 
-# UART port
+# UART ports
 
-Smoothieboard has a [UART](https://en.wikipedia.org/wiki/Universal_asynchronous_receiver/transmitter) port.
+Smoothieboard has hardware [UART](https://en.wikipedia.org/wiki/Universal_asynchronous_receiver/transmitter) serial ports independent from USB serial.
 
 This is a hardware "serial" port independent from the main "USB" serial port.
 
@@ -17,15 +17,36 @@ You can connect to this serial port using a "USB to UART" adapter, such as an FT
 </sl-alert>
 {:/nomarkdown}
 
-This port is used at boot time to send a lot of debugging information from the Smoothieboard to you.
+The debug UART sends boot messages, errors, and warnings. Smoothieware V2 also lets you select one of two auxiliary UART channels as a command console or a serial-output target.
 
 If you are running into trouble, this can sometimes be useful as errors and warnings are displayed there.
 
-Once this is done, you can then use the UART port the same way you would use the USB/Serial or the Telnet port: you send it commands or G-codes, and you get answers.
+With a UART configured as a console, you can use it like USB serial or the network shell: send commands or G-code and read the responses.
 
 As the UART has NO FLOW CONTROL, you MUST rigidly use the ping-pong protocol, sending ONE line of G-code per `ok` received.
 
-You configure the baud rate for the UART port in the [configuration file](configuring-smoothie) by changing the <setting v1="uart0.baud_rate" v2="uart console.baudrate"></setting> configuration option.
+You configure the baud rate in the [configuration file](configuring-smoothie) with <setting v1="uart0.baud_rate" v2="uart console.baudrate"></setting>.
+
+## V2 auxiliary UART configuration
+
+```ini
+[uart console]
+enable = true
+console = true
+channel = 0
+baudrate = 115200
+bits = 8
+stop_bits = 1
+parity = none
+```
+
+`console = true` enables command input and output. Set it to `false` when an external device should receive only messages sent through `echo -1`.
+
+## Send text to a connected device (V2 only)
+
+{% include modules/network/echo-uart-for-include.md %}
+
+This lets Smoothie act as a simple serial-output controller: a command, GPIO input, or button can send a short command to a connected feeder, Arduino, PLC, or other serial device. For input-triggered examples, see [Switch](/switch) and [Button Box](/button-box).
 
 {::nomarkdown}
 <sl-alert variant="warning" open>

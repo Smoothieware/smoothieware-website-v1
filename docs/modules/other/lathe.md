@@ -12,6 +12,13 @@ title: Lathe Module
 </sl-alert>
 {:/nomarkdown}
 
+{::nomarkdown}
+<sl-alert variant="warning" open>
+  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+  <strong>Work in progress:</strong> Lathe support is present in the current V2 source, but its direct-synchronization path still has documented limitations. Prove direction, stopping, and thread registration at low speed before using it on a machine.
+</sl-alert>
+{:/nomarkdown}
+
 The Lathe module enables spindle-synchronized turning operations on CNC lathes. It allows the carriage (typically Z-axis) to move in precise synchronization with the spindle rotation, enabling threading and other turning operations.
 
 ## Overview
@@ -22,64 +29,61 @@ The Lathe module uses a quadrature encoder attached to the spindle to track its 
 - **Spindle-synchronized feeds** - Move the tool at a rate proportional to spindle speed
 - **Manual "half-nut" mode** - Engage/disengage the electronic leadscrew like a traditional lathe
 
-## G-Code Support
+## G-code support
 
-The Lathe module implements the **G33** command for spindle-synchronized motion:
+The current firmware has two different motion paths. They are not interchangeable:
 
-### G33 - Spindle Synchronized Motion
+| Command | Encoder | Behaviour |
+|---------|---------|-----------|
+| `G33 K... Z...` | Index pulse required | Measures RPM, waits for two index pulses, rejects a speed change greater than 5%, then runs an ordinary accelerated Z move at the calculated feed rate. It does not correct for later spindle-speed changes during that move. |
+| `G33.1 K... Z...` | Quadrature encoder required | Drives Z directly from encoder position. An index pin, if configured, aligns the start. The current finite-distance implementation is marked in source as working only for negative-Z moves. |
+| `G33.1 K...` | Quadrature encoder required | Engages direct synchronization without a distance. Send a console stop request, normally Ctrl+Y, to disengage. This test/manual mode may change or be removed. |
+
+### Syntax
 
 ```gcode
-G33 K<pitch> [Z<distance>]
+G33 K<pitch> Z<distance>
+G33.1 K<pitch> [Z<distance>]
 ```
 
 | Parameter | Description |
 |-----------|-------------|
 | `K` | Distance per revolution in mm (required). Negative values reverse direction. |
-| `Z` | Distance to travel in mm. If omitted, enters manual mode. |
+| `Z` | Relative Z distance in mm. It may be omitted only from `G33.1` manual mode. |
 
-#### Threading Mode (with Z parameter)
+#### RPM-derived move
 
 ```gcode
 G33 K1.5 Z-20    ; Thread 20mm at 1.5mm pitch
-G33 K-2.0 Z15    ; Thread in reverse direction
 ```
 
-In threading mode:
-- The spindle must be running before executing G33
-- The carriage moves the specified distance synchronized to spindle rotation
-- If an index pin is configured, threading starts at a consistent angular position
-- Motion completes when the target distance is reached
+Use this path when acceleration and deceleration matter more than correction for changing spindle speed. The spindle must be running, an index pin is mandatory, and the requested feed must remain within the Z actuator's maximum rate.
 
-#### Manual Mode (without Z parameter)
+#### Direct quadrature synchronization
 
 ```gcode
-G33 K1.0    ; Start manual half-nut engagement at 1.0mm/rev
+G33.1 K1.5 Z-20  ; Directly synchronized finite negative-Z move
+G33.1 K1.0       ; Manual electronic half-nut mode
 ```
 
-In manual mode:
-- The electronic leadscrew engages like a traditional half-nut
-- Press Ctrl+Y or send a stop request to disengage
-- Useful for facing operations or manual threading control
+`G33.1` follows the encoder position rather than taking one RPM measurement. The code begins and ends this direct mode abruptly, without the planner's acceleration profile. The finite-distance path currently has a known positive-Z stopping defect; treat negative-Z as the only supported finite direction until that source limitation is removed.
 
 ## Hardware Requirements
 
 ### Spindle Encoder
 
-A quadrature encoder must be attached to the spindle to track rotation. The encoder connects to the hardware quadrature encoder interface on the STM32H7.
+A quadrature encoder is required for `G33.1`. On Smoothieboard V2 Prime it uses the fixed hardware quadrature inputs `PJ8` and `PJ10`; defining PWM2 conflicts with that hardware timer and must be avoided.
 
 | Specification | Recommended Value |
 |---------------|-------------------|
 | **Type** | Incremental quadrature encoder |
-| **Resolution** | 100-2000 PPR (pulses per revolution) |
+| **Resolution** | Set the effective resolution with `encoder_ppr` |
 | **Output** | A, B channels (and optionally Index/Z) |
 | **Voltage** | 3.3V or 5V with level shifting |
 
 ### Index Pin (Optional)
 
-An index pin provides a once-per-revolution reference pulse. When configured:
-- Threading always starts at the same angular position
-- Essential for multi-pass threading operations
-- Allows consistent thread engagement
+An index pin provides a once-per-revolution reference pulse. It is mandatory for `G33 K... Z...` and optional for `G33.1`. With direct synchronization, it aligns the beginning of repeated moves only when the spindle and encoder have a suitable 1:1 or integer relationship.
 
 ## Configuration
 
@@ -87,7 +91,12 @@ An index pin provides a once-per-revolution reference pulse. When configured:
 [lathe]
 enable = true              # Enable the lathe module
 encoder_ppr = 1000         # Encoder pulses per revolution (after any gearing)
-index_pin = PF10^          # Optional index pulse pin (use ^ for pull-up)
+use_qe = true              # Use the fixed PJ8/PJ10 quadrature inputs
+qe_pullup = false          # Enable pull-ups on the quadrature inputs
+index_pin = PD15-          # Optional index pulse pin
+index_edge = rising        # rising, falling, or both
+index_debounce_us = 300    # Reject index edges closer than this
+index_minimum_us = 0       # With both edges, requested minimum pulse width
 ```
 
 ### Configuration Options
@@ -97,6 +106,11 @@ index_pin = PF10^          # Optional index pulse pin (use ^ for pull-up)
 | `enable` | Enable the lathe module | `false` |
 | `encoder_ppr` | Encoder pulses per revolution (including any gearing ratio) | `1000` |
 | `index_pin` | Pin for index/Z channel pulse | `nc` |
+| `index_edge` | Index interrupt edge: `rising`, `falling`, or `both` | `falling` |
+| `index_debounce_us` | Minimum interval between accepted index edges | `300` |
+| `index_minimum_us` | Intended minimum pulse width when both edges are selected; enforcement is still a source TODO | `0` |
+| `use_qe` | Use the hardware quadrature encoder | `true` |
+| `qe_pullup` | Enable pull-ups on the fixed quadrature inputs | `false` |
 
 ### Encoder PPR Calculation
 
@@ -126,27 +140,27 @@ The RPM is calculated from the encoder pulses. If an index pin is configured and
 
 ## Example Workflow
 
-### Single-Pass External Thread
+### RPM-derived Z move
 
 ```gcode
 G28 Z0          ; Home Z axis
 G0 X10          ; Position tool
 M3 S1000        ; Start spindle at 1000 RPM
-G33 K1.5 Z-25   ; Cut thread at 1.5mm pitch, 25mm length
+G33 K1.5 Z-25   ; Measure RPM, then run an accelerated Z move
 M5              ; Stop spindle
 G0 X15 Z5       ; Retract
 ```
 
-### Multi-Pass Thread (using index pin)
+### Direct synchronized negative-Z move
 
 ```gcode
 G28 Z0
 G0 X10.2        ; First pass depth
 M3 S800
-G33 K2.0 Z-30   ; First pass
+G33.1 K2.0 Z-30 ; First pass
 G0 X15 Z5       ; Retract
 G0 X10.0        ; Second pass depth
-G33 K2.0 Z-30   ; Second pass (starts at same angular position)
+G33.1 K2.0 Z-30 ; Second pass, aligned by the index pulse
 G0 X15 Z5
 M5
 ```
@@ -155,33 +169,33 @@ M5
 
 ```gcode
 M3 S600         ; Start spindle
-G33 K1.0        ; Engage electronic leadscrew
+G33.1 K1.0      ; Engage electronic leadscrew
                 ; Press Ctrl+Y to disengage
 M5
 ```
 
 ## Troubleshooting
 
-### "Spindle must be running" Error
+### "Spindle must be running" error
 
-The G33 command requires the spindle to be running (RPM > 0) before execution. Ensure:
+Finite `G33` and `G33.1` moves require a non-zero RPM reading. Ensure:
 - Spindle is started with <mcode>M3</mcode> command
 - Encoder is properly connected and reading pulses
 - Sufficient time has passed for RPM calculation
 
-### Inconsistent Thread Start Position
+### Inconsistent thread start position
 
 If threads don't align on multi-pass operations:
 - Configure and verify the index pin
 - Check index pulse is generating once per revolution
 - Ensure encoder PPR setting matches your hardware
 
-### RPM Reading is Zero or Erratic
+### RPM reading is zero or erratic
 
 - Verify encoder connections (A, B channels)
 - Check encoder PPR setting
 - Ensure spindle is actually rotating
-- Try adjusting the RPM calculation averaging (in source code)
+- Confirm PWM2 is not configured when using the hardware quadrature encoder
 
 ## Related Modules
 
@@ -192,6 +206,6 @@ If threads don't align on multi-pass operations:
 {::nomarkdown}
 <sl-alert variant="neutral" open>
   <sl-icon slot="icon" name="info-circle"></sl-icon>
-  If you want to learn more about this module, or are curious how it works, Smoothie is Open-Source and you can simply go look at the code, <a href="https://github.com/Smoothieware/SmoothieV2/blob/master/Firmware/src/modules/tools/lathe/Lathe.cpp">here</a>.
+  Verify evolving behaviour in the <a href="https://github.com/Smoothieware/SmoothieV2/blob/2a21c0108b1d095ecd8b2b9358e94055f053c003/Firmware/src/modules/tools/lathe/Lathe.cpp">Lathe source</a> and the <a href="https://github.com/Smoothieware/SmoothieV2/blob/2a21c0108b1d095ecd8b2b9358e94055f053c003/ConfigSamples/config-lathe.ini">V2 sample configuration</a> used for this page.
 </sl-alert>
 {:/nomarkdown}

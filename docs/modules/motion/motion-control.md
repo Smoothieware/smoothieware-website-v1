@@ -11,6 +11,12 @@ While that might sound pretty trivial to do, the laws of physics actually make t
 
 This page explains how to configure the different motion control parameters you can tune in Smoothie.
 
+Related motion features:
+
+- [Feed Hold and Cycle Start](/feed-hold), the V2 work-in-progress real-time `!` and `~` controls
+- [Slaved Axes](/actuator-slaving), dual internal-driver motors with independent alignment
+- [Backlash Compensation](/backlash-compensation), experimental code confined to an unmerged V1 branch
+
 
 {::nomarkdown}
 <sl-alert variant="warning" open>

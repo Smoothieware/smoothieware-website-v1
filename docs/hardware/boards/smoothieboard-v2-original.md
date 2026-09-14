@@ -158,7 +158,7 @@ The TMC2260 testing on LPC4330 prototypes was valuable - it proved the driver in
 **Ethernet:**
 - 10/100 Mbps
 - On-board PHY
-- HTTP, Telnet, SFTP (port 115)
+- HTTP, Telnet, and the V1-style Simple File Transfer Protocol planned for port 115
 
 **USB:**
 - USB Device (MSD + CDC) definitely planned

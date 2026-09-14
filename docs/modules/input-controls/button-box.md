@@ -12,6 +12,8 @@ title: Button Box
 </sl-alert>
 {:/nomarkdown}
 
+> Need general-purpose input/output control, or support for Smoothieware V1? See the [Switch module](/switch). Button Box is the V2-focused choice for programmable button panels.
+
 The Button Box module allows you to create programmable button panels for your CNC machine. Each button can execute G-code commands, M-codes, or special actions when pressed or released. This is ideal for:
 
 - **Jogging controls** - Buttons for X+, X-, Y+, Y-, Z+, Z-
@@ -87,6 +89,32 @@ xminus.release = $J STOP
 - Use `!` suffix for inverted logic (normally-closed buttons)
 - Use `external` instead of a pin for buttons provided by other modules
 
+### Matrix keypads
+
+{::nomarkdown}
+<sl-alert variant="warning" open>
+  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+  <strong>Matrix scanning is not implemented in the checked V2 source.</strong> The sample <code>button-box.ini</code> contains a 4-by-4 keypad example, but the Button Box implementation still marks matrix scanning as TODO at commit <a href="https://github.com/Smoothieware/SmoothieV2/commit/2a21c0108b1d095ecd8b2b9358e94055f053c003"><code>2a21c010</code></a>. Use one GPIO input per button. Sample configuration alone does not establish firmware support.
+</sl-alert>
+{:/nomarkdown}
+
+## Send text to the auxiliary UART (V2 only)
+
+With the V2 auxiliary UART configured as described on the [UART port](/uart) page, a Button Box can send a distinct serial message on press and release. This is useful for giving an external feeder, PLC, or another controller a simple command interface.
+
+```ini
+[button box]
+# PA5 is illustrative: choose a free GPIO appropriate for your board.
+feeder_request.enable = true
+feeder_request.pin = PA5^!
+feeder_request.press = echo -1 feeder advance
+feeder_request.release = echo -1 feeder idle
+```
+
+Connect a normally open button between the selected input and GND. `^` enables the internal pull-up and `!` makes the grounded pressed state active. `press` and `release` run the shown commands through `echo -1`, which sends them only to the configured auxiliary UART. Do not configure this Button Box and a Switch to use the same GPIO pin.
+
+For the `echo -1` option, auxiliary-UART setup, newline control, and channel limits, see the [echo command](/console-commands#echo).
+
 ## Special Commands
 
 The Button Box module recognizes several special commands:
@@ -95,9 +123,25 @@ The Button Box module recognizes several special commands:
 |---------|--------|
 | `$J STOP` | Stop jogging motion |
 | `KILL` | Halt the machine (emergency stop) |
+| `FAULT` | Halt the machine and report the name of the input that detected the fault |
 | `SUSPEND` | Toggle suspend/resume (M600/M601) |
 
 Standard G-code and M-code commands are also supported and queued for execution.
+
+### Fault inputs
+
+Use `FAULT` for fault outputs from servo drives and other controllers. The input causes a software halt and sends `FAULT detected: <button-name>` to every console, which identifies the device that reported the fault.
+
+```ini
+[button box]
+x_servo_fault.enable = true
+x_servo_fault.pin = PG0^!
+x_servo_fault.press = FAULT
+```
+
+Choose pull-up and inversion suffixes that match the external device's output circuit. Test the inactive, faulted, disconnected-wire, and power-off states before depending on the input.
+
+`FAULT` is a polled software input. It does not replace a hard-wired emergency-stop circuit or a safety-rated drive chain. Set `common.poll_frequency_hz` according to the response time your non-safety monitoring needs.
 
 ## Examples
 
@@ -213,13 +257,13 @@ The external module must call the Button Box API to register and trigger these v
 ### Command Not Executing
 
 1. **Machine busy**: Commands queue if machine is running
-2. **Queue full**: Command dropped if queue is full
+2. **Queue full**: A normal queued command is retried on the next poll while the button remains in its triggering state
 3. **Invalid command**: Check G-code/M-code syntax
 4. **Check console**: Error messages appear in console output
 
 ### Button Triggers Multiple Times
 
-- Mechanical bounce - increase `poll_frequency_hz` or add hardware debouncing
+- Mechanical bounce - add hardware debouncing or reduce `poll_frequency_hz` after checking the required response time
 - Electrical noise - use shorter wires or shielded cable
 - Floating pin - ensure pull-up is enabled with `^`
 
@@ -238,7 +282,8 @@ The Button Box module differs from the [Switch module](/switch):
 | V2 only | Yes | V1 and V2 |
 | Multiple buttons | Yes, unlimited | Yes, multiple instances |
 | Output control | No | Yes (PWM, digital) |
-| Special actions | $J STOP, KILL, SUSPEND | Limited |
+| Special actions | `$J STOP`, `KILL`, `FAULT`, `SUSPEND` | Limited |
+| Matrix keypads | Not implemented in checked source | No |
 | External buttons | Yes | No |
 | Polling | Configurable rate | Fixed |
 
@@ -255,6 +300,6 @@ Use Button Box for input-only button panels on V2. Use Switch for input/output c
 {::nomarkdown}
 <sl-alert variant="neutral" open>
   <sl-icon slot="icon" name="info-circle"></sl-icon>
-  If you want to learn more about this module, or are curious how it works, Smoothie is Open-Source and you can simply go look at the code, <a href="https://github.com/Smoothieware/SmoothieV2/blob/master/Firmware/src/modules/utils/buttonbox/buttonbox.cpp">here</a>.
+  Verify button state handling and special actions in the checked <a href="https://github.com/Smoothieware/SmoothieV2/blob/2a21c0108b1d095ecd8b2b9358e94055f053c003/Firmware/src/modules/utils/buttonbox/buttonbox.cpp">V2 Button Box source</a>.
 </sl-alert>
 {:/nomarkdown}

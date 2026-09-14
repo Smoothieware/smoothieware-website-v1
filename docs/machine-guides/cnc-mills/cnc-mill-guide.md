@@ -75,6 +75,8 @@ This guide will walk through everything you need to accomplish to successfully p
 
 At the end of this guide, you should have a fully working machine.
 
+Smoothieware V2 CNC installations can also use [slaved axes](/actuator-slaving), [shared MPG hand wheels](/mpg#axis-selector-optional), [NIST G30/G30.1](/g30#nist-stored-position-in-v2-grbl-mode), and [real-time feed hold](/feed-hold). [Backlash compensation](/backlash-compensation) remains confined to an unmerged experimental V1 branch; normal V1 and V2 firmware builds do not include it.
+
 {% include getting-started/unboxing-for-include.md %}
 
 {% include migration/migrating-for-include.md %}

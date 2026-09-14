@@ -4,7 +4,7 @@ This document lists settings that are defined in the YAML configuration files bu
 
 Generated automatically by `src/site/test/config-finder.test.ts`
 
-Last updated: 2026-09-06T11:07:47.536Z
+Last updated: 2026-09-14T02:17:06.121Z
 
 ## V1 Settings Missing from Example Config
 
@@ -237,9 +237,9 @@ Total missing: 178
 | `z.en_pin` | Motion Control | Searched for "z.en_pin" - Setting "gamma.en_pin" not found in v2 config file |
 | `y.driver` | Motion Control | Searched for "y.driver" - Setting "beta.driver" not found in v2 config file |
 | `z.driver` | Motion Control | Searched for "z.driver" - Setting "gamma.driver" not found in v2 config file |
-| `x.slaved_to` | Motion Control | Searched for "x.slaved_to" - Setting "alpha.slaved_to" not found in v2 config file |
-| `y.slaved_to` | Motion Control | Searched for "y.slaved_to" - Setting "beta.slaved_to" not found in v2 config file |
-| `z.slaved_to` | Motion Control | Searched for "z.slaved_to" - Setting "gamma.slaved_to" not found in v2 config file |
+| `delta.slaved_to` | Motion Control | Searched for "delta.slaved_to" - Setting "delta.slaved_to" not found in v2 config file |
+| `epsilon.slaved_to` | Motion Control | Searched for "epsilon.slaved_to" - Setting "epsilon.slaved_to" not found in v2 config file |
+| `zeta.slaved_to` | Motion Control | Searched for "zeta.slaved_to" - Setting "zeta.slaved_to" not found in v2 config file |
 | `arm_length` | Motion Control | Searched for "arm_length" - Setting "arm_length" not found in v2 config file |
 | `arm_radius` | Motion Control | Searched for "arm_radius" - Setting "arm_radius" not found in v2 config file |
 | `queue_delay_time_ms` | Conveyor | Searched for "queue_delay_time_ms" - Setting "queue_delay_time_ms" not found in v2 config file |
@@ -253,9 +253,9 @@ Total missing: 178
 | `z.en_pin` | Conveyor | Searched for "z.en_pin" - Setting "gamma.en_pin" not found in v2 config file |
 | `y.driver` | Conveyor | Searched for "y.driver" - Setting "beta.driver" not found in v2 config file |
 | `z.driver` | Conveyor | Searched for "z.driver" - Setting "gamma.driver" not found in v2 config file |
-| `x.slaved_to` | Conveyor | Searched for "x.slaved_to" - Setting "alpha.slaved_to" not found in v2 config file |
-| `y.slaved_to` | Conveyor | Searched for "y.slaved_to" - Setting "beta.slaved_to" not found in v2 config file |
-| `z.slaved_to` | Conveyor | Searched for "z.slaved_to" - Setting "gamma.slaved_to" not found in v2 config file |
+| `delta.slaved_to` | Conveyor | Searched for "delta.slaved_to" - Setting "slaved_to" not found in v2 config file |
+| `epsilon.slaved_to` | Conveyor | Searched for "epsilon.slaved_to" - Setting "slaved_to" not found in v2 config file |
+| `zeta.slaved_to` | Conveyor | Searched for "zeta.slaved_to" - Setting "slaved_to" not found in v2 config file |
 | `common.check_driver_errors` | Conveyor | Searched for "common.check_driver_errors" - Setting "check_driver_errors" found but not in expected section "common" |
 | `common.halt_on_driver_alarm` | Conveyor | Searched for "common.halt_on_driver_alarm" - Setting "halt_on_driver_alarm" found but not in expected section "common" |
 | `common.motors_enable_pin` | Conveyor | Searched for "common.motors_enable_pin" - Setting "motors_enable_pin" found but not in expected section "common" |
@@ -379,7 +379,7 @@ Total missing: 178
 | `mpg.<name>.enable` | Panel | Searched for "mpg.<name>.enable" - Setting "<name>.enable" not found in v2 config file |
 | `mpg.<name>.enca_pin` | Panel | Searched for "mpg.<name>.enca_pin" - Setting "<name>.enca_pin" not found in v2 config file |
 | `mpg.<name>.encb_pin` | Panel | Searched for "mpg.<name>.encb_pin" - Setting "<name>.encb_pin" not found in v2 config file |
-| `mpg.<name>.axis` | Panel | Searched for "mpg.<name>.axis" - Setting "<name>.axis" not found in v2 config file |
+| `mpg.<name>.mmperpulse` | Panel | Searched for "mpg.<name>.mmperpulse" - Setting "<name>.mmperpulse" not found in v2 config file |
 | `network.enable` | Network | Searched for "network.enable" - Setting "enable" found but not in expected section "network" |
 | `laser.enable` | Laser | Searched for "laser.enable" - Setting "enable" found but not in expected section "laser" |
 | `laser.maximum_s_value` | Laser | Searched for "laser.maximum_s_value" - Setting "maximum_s_value" not found in v2 config file |

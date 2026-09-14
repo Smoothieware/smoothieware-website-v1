@@ -6178,9 +6178,8 @@ modules:
     module: mpg
     context: Per-encoder configuration (module instance setting)
     defined_in: Firmware/src/modules/utils/mpg/mpg.cpp:41
-    description: Enables this specific MPG (Manual Pulse Generator) instance. When set to true, this encoder will be initialized
-      and will control the axis specified in the axis setting. Multiple MPG instances can be configured for different axes
-      by creating separate named sub-sections (e.g., xaxis, yaxis, zaxis).
+    description: Enables this MPG (Manual Pulse Generator) instance. The subsection name selects x, y, z, a, b, c, or shared;
+      arbitrary names are rejected. Configure separate axis instances or one shared instance, but do not mix both forms.
     corresponding_v1: panel.encoder_a_pin + panel.encoder_b_pin (v1 had unified panel module, v2 separates MPG functionality)
     corresponding_v2: mpg.<name>.enable
     valid_values:
@@ -6191,7 +6190,7 @@ modules:
     related_settings:
     - mpg.<name>.enca_pin
     - mpg.<name>.encb_pin
-    - mpg.<name>.axis
+    - mpg.<name>.mmperpulse
     related_pages:
     - panel
     - panel-guide
@@ -6212,7 +6211,7 @@ modules:
       description: ''
     related_settings:
     - mpg.<name>.encb_pin
-    - mpg.<name>.axis
+    - mpg.<name>.mmperpulse
     - mpg.<name>.enable
     related_pages:
     - panel
@@ -6237,7 +6236,7 @@ modules:
       description: ''
     related_settings:
     - mpg.<name>.enca_pin
-    - mpg.<name>.axis
+    - mpg.<name>.mmperpulse
     - mpg.<name>.enable
     related_pages:
     - panel
@@ -6245,39 +6244,27 @@ modules:
     - pin-configuration
     - endstops
     - smoothieboard-v2-prime
-  - name: mpg.<name>.axis
+  - name: mpg.<name>.mmperpulse
     type: number
-    default: -1 (invalid, must be set)
+    default: Axis motor resolution, rounded to four decimal places
     module: mpg
-    context: Axis assignment (per-instance setting)
-    defined_in: Firmware/src/modules/utils/mpg/mpg.cpp:62
-    description: Specifies which actuator axis this encoder controls for manual pulse generation. The encoder directly steps
-      the specified motor, allowing manual positioning when the machine is idle. Each rotation click of the encoder advances
-      or reverses the motor by one microstep based on direction. This provides precise manual control for machine setup, workpiece
-      alignment, and manual machining operations.
-    corresponding_v1: none (v1 panel encoder had no axis assignment, typically controlled menu navigation)
-    corresponding_v2: mpg.<name>.axis
+    context: Per-axis encoder movement distance
+    defined_in: Firmware/src/modules/utils/mpg/mpg.cpp:91
+    description: Sets the positive movement distance in millimetres for each encoder count on an x, y, z, a, b, or c instance.
+      When omitted or non-positive in configuration, Smoothie derives the value from the actuator steps per millimetre and
+      rounds it to four decimal places. A shared MPG receives its axis and distance at runtime through M922 instead.
+    corresponding_v1: none (v1 panel encoder had no direct axis control)
+    corresponding_v2: mpg.<name>.mmperpulse
     valid_values:
-    - value: 0 (X/alpha)
-      description: ''
-    - value: 1 (Y/beta)
-      description: ''
-    - value: 2 (Z/gamma)
-      description: ''
-    - value: 3 (E0/delta)
-      description: ''
-    - value: 4 (E1/epsilon)
-      description: ''
-    - value: 5 (E2/zeta)
-      description: ''
+    - value: Positive distance in millimetres
+      description: Each encoder count requests this much motion.
     related_settings:
     - mpg.<name>.enca_pin
     - mpg.<name>.encb_pin
     - mpg.<name>.enable
     related_pages:
-    - panel
-    - panel-guide
-    - endstops
+    - mpg
+    - button-box
     - motion-control
     - smoothieboard-v2-prime
 - name: Network

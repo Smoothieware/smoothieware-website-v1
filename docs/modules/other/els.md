@@ -12,6 +12,13 @@ title: ELS (Electronic Leadscrew)
 </sl-alert>
 {:/nomarkdown}
 
+{::nomarkdown}
+<sl-alert variant="warning" open>
+  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+  <strong>Work in progress:</strong> The Fall 2026 announcement and current source both treat this interface as experimental. Button S3 still uses a fixed 20 mm move, and the underlying direct-synchronization path has the limits documented on the <a href="/lathe">Lathe page</a>.
+</sl-alert>
+{:/nomarkdown}
+
 The ELS (Electronic Leadscrew) module provides a user-friendly interface for lathe operations, inspired by projects like the [Clough42 Electronic Leadscrew](https://github.com/clough42/electronic-leadscrew). It combines the [Lathe module](/lathe) with a [TM1638 display](/tm1638-display) to create a standalone lathe control interface.
 
 ## Overview
@@ -69,17 +76,20 @@ These are widely available from electronics suppliers and provide an excellent i
 | LED 1 | Lathe operation is running |
 | LED 2 | Distance mode (G33 Z specified) |
 | LED 3 | Reversed direction |
-| LED 4-8 | Reserved for future use |
+| LED 4 | Unused |
+| LED 5-8 | Selected digit while editing the pitch |
 
 ### Button Functions
 
 | Button | Function |
 |--------|----------|
 | S1 | Stop current operation |
-| S2 | Start threading (G33 K{pitch}) |
-| S8 | Increase pitch value |
-| S6 | Decrease pitch value |
-| S3-S5, S7 | Reserved for future use |
+| S2 | Start manual direct synchronization with `G33.1 K{pitch}` |
+| S3 | Start `G33.1 K{pitch} Z20`; the 20 mm distance is currently hard-coded |
+| S4 | Enter pitch-edit mode, advance through its four digits, then finish editing |
+| S6 | Decrease the selected digit while editing, or decrease the value by 0.1 mm/rev outside edit mode |
+| S8 | Increase the selected digit while editing, or increase the value by 0.1 mm/rev outside edit mode |
+| S5, S7 | No implemented action in the current source |
 
 ## Configuration
 
@@ -99,14 +109,17 @@ The ELS module requires both the Lathe and TM1638 modules to be configured:
 [lathe]
 enable = true
 encoder_ppr = 1000
-index_pin = PF10^
+use_qe = true
+qe_pullup = false
+index_pin = PD15-
+index_edge = rising
 
 # TM1638 display configuration
 [tm1638]
 enable = true
-clock_pin = PG1
-data_pin = PG0
-strobe_pin = PG2
+clock_pin = PJ11
+data_pin = PJ6
+strobe_pin = PJ9
 
 # ELS module configuration
 [els]
@@ -126,25 +139,26 @@ The ELS module automatically discovers and uses the configured Lathe and TM1638 
 ### Basic Usage
 
 1. **Power on** - Display shows current RPM (left) and pitch value (right)
-2. **Adjust pitch** - Use S8 (up) and S6 (down) to set desired pitch in mm/rev
+2. **Adjust pitch** - Use S8 and S6 for 0.1 mm/rev changes, or use S4 to edit one of the four digits
 3. **Start spindle** - Use your spindle control (<mcode>M3</mcode> command or physical switch)
 4. **Engage leadscrew** - Press S2 to start synchronized motion
 5. **Stop** - Press S1 to disengage
 
-### Threading Workflow
+### Manual electronic leadscrew workflow
 
 1. Set up your workpiece and tool
 2. Adjust the pitch value on the display (e.g., 1.5 for 1.5mm pitch thread)
 3. Start the spindle at appropriate RPM
 4. Position the tool at the thread start position
 5. Press S2 to engage the electronic leadscrew
-6. The carriage will move synchronized to the spindle
+6. The carriage follows the spindle quadrature encoder without a preset distance
 7. Press S1 to stop when threading is complete
 
 ### Manual Mode vs Distance Mode
 
-- **Manual Mode**: Press S2 to engage, S1 to disengage (like a traditional half-nut)
-- **Distance Mode**: Requires using G-code commands directly (G33 K... Z...)
+- **Manual mode**: Press S2 to issue `G33.1 K...`; press S1 to send its stop request.
+- **Fixed test move**: S3 issues `G33.1 K... Z20`. The direction and distance are not configurable in the current ELS interface, so do not treat this as a finished threading cycle.
+- **Command-line distance mode**: Issue a supported `G33` or `G33.1` form directly, following the distinctions and limits on the [Lathe page](/lathe#g-code-support).
 
 LED 2 indicates whether distance mode is active (specified via G-code).
 
@@ -162,7 +176,7 @@ LED 2 indicates whether distance mode is active (specified via G-code).
 - Check Lathe module configuration (encoder_ppr)
 - Ensure spindle is actually rotating
 
-### S2 Button Doesn't Start Threading
+### S2 button does not start synchronization
 
 - Spindle must be running (RPM > 0)
 - Lathe module must be properly configured
@@ -188,6 +202,6 @@ LED 2 indicates whether distance mode is active (specified via G-code).
 {::nomarkdown}
 <sl-alert variant="neutral" open>
   <sl-icon slot="icon" name="info-circle"></sl-icon>
-  If you want to learn more about this module, or are curious how it works, Smoothie is Open-Source and you can simply go look at the code, <a href="https://github.com/Smoothieware/SmoothieV2/blob/master/Firmware/src/modules/tools/lathe/els/els.cpp">here</a>.
+  Verify evolving behaviour in the <a href="https://github.com/Smoothieware/SmoothieV2/blob/2a21c0108b1d095ecd8b2b9358e94055f053c003/Firmware/src/modules/tools/lathe/els/els.cpp">ELS source</a> and the <a href="https://github.com/Smoothieware/SmoothieV2/blob/2a21c0108b1d095ecd8b2b9358e94055f053c003/ConfigSamples/config-lathe.ini">V2 sample configuration</a> used for this page.
 </sl-alert>
 {:/nomarkdown}

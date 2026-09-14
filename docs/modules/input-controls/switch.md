@@ -7,6 +7,8 @@ permalink: /switch
 
 The Switch module takes care of basic input from things like buttons and switches and controls simple devices like fans and pumps.
 
+> For a V2-only panel of programmable input buttons, see the [Button Box module](/button-box). Button Box is focused on button inputs and actions; use Switch when you also need general-purpose input/output control.
+
 It is an incredibly versatile tool that allows you to setup a lot of on-off type systems. It listens to input pins and outputs custom G/M-codes or accepts custom G/M-codes and set outputs to GPIO pins.
 
 This allows you to do one of the following:
@@ -236,6 +238,34 @@ Note that `pwm` is actually SigmaDelta Modulation and will allow you to set PWM 
 `hwpwm` is PWM controlled by the Hardware, and is PWM compatible with Hobby servos/bltouch and ESCs. The `S` parameter specifies the duty cycle in percent, and for a typical servo will be between 5% and 10% (1ms to 2ms when running at 50Hz) for a 180° turn. the default frequency is 50Hz but can be set with the `pwm_period_ms` config setting.
 
 `swpwm` is PWM emulated by the software, and is PWM compatible with Hobby servos/bltouch and ESCs. And is otherwise similar to hwpwm. This is useful if your hwpwm clock must be set to a very high value for example for the laser module, as this would mean a hwpwm switch would need to have the same high value which can be incompatible with some hardware. Having a lower frequency swpwm allows for both the laser module and servos/bltouch control.
+
+### Send text to the auxiliary UART from a GPIO input (V2 only)
+
+{::nomarkdown}
+<versioned orientation="vertical">
+<v2>
+{:/nomarkdown}
+
+With the V2 auxiliary UART configured as described on the [UART port](/uart) page, an input-only Switch instance can turn a pin transition into a serial message. This is useful when a machine signal must command an external feeder, PLC, or other serial controller.
+
+```ini
+[switch]
+# PA5 is illustrative: choose a free GPIO appropriate for your board.
+feeder_request.enable = true
+feeder_request.input_pin = PA5^!
+feeder_request.input_pin_behavior = momentary
+feeder_request.output_on_command = echo -1 feeder advance
+feeder_request.output_off_command = echo -1 feeder idle
+```
+
+Connect a normally open button or signal between the selected input and GND. `^` enables the internal pull-up and `!` makes the grounded active state trigger `output_on_command`. The command is sent when the input becomes active; the second message is sent when it becomes inactive.
+
+Use ordinary spaces in these serial messages. Switch translates underscores in `output_on_command` and `output_off_command` into spaces before it runs them. This configuration reacts to a GPIO input; it is not an M-code-to-echo mapping.
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
 
 ### Commands and Gcodes
 

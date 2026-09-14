@@ -97,6 +97,16 @@ The Smoothie project is always looking for help. Whatever your skills are, there
   - [6axis](6axis): Using A, B and C axes, for 4, 5 or 6 axis motion.
   - [Grbl mode](grbl-mode): Using Smoothie in CNC-specific mode instead of 3D printing mode
 
+### Fall 2026 feature documentation
+
+The [Fall 2026 feature inventory](new-features#fall-2026) records source and maturity status for this set.
+
+- **Motion:** [real-time feed hold and cycle start](feed-hold), [slaved internal-driver axes](actuator-slaving), [NIST G30/G30.1](g30#nist-stored-position-in-v2-grbl-mode), [Lathe G33](lathe), and [Electronic Leadscrew](els)
+- **Machine controls:** [direct and shared MPG control](mpg#axis-selector-optional), [Button Box macros](button-box), [FAULT inputs](button-box#fault-inputs), and the current [matrix-keypad limitation](button-box#matrix-keypads)
+- **Console and programs:** [`ed` file editing](console-commands#ed), [`le` command-line editing and history](console-commands#le), and [O-word subroutines](subroutines)
+- **Communication and display:** [auxiliary UART targeting](uart#send-text-to-a-connected-device-v2-only), [V2 network services](network#v2-network-services), and [MAX7219 DRO displays](max7219-dro)
+- **Experimental V1 branch:** [backlash compensation](backlash-compensation), which has not been merged into a normal V1 or V2 release
+
 {::nomarkdown}
 <a href="/images/tool-belt.png">
   <img src="/images/tool-belt.png" alt="Tools" style="width: 75px; height: 75px; float: right; margin-left: 1rem;"/>

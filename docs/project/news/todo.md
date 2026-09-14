@@ -332,7 +332,7 @@ We need Ethernet, TCP/IP, a web and telnet server, to be implemented in the v2 f
 <v2>
 {:/nomarkdown}
 
-Ethernet has been fully implemented in Smoothieware v2 with significant improvements over v1. The v2 firmware includes FreeRTOS+TCP stack (vs v1's uIP), HTTP web interface (hosted on SD), Telnet access for remote G-code sending, SFTP file transfer, NTP time synchronization, auto-update capability over the network, and mDNS hostname resolution (smoothieboard.local). The 10/100 Mbps interface provides fast network control and file management.
+Ethernet is implemented in Smoothieware V2 with the FreeRTOS+TCP stack. Current services include an SD-backed HTTP server with command and upload WebSockets on port 80, a network shell on port 23, standard unencrypted FTP on port 21, NTP synchronization, and firmware download/update commands. See the [Network page](/network#v2-network-services) for the current configuration and protocol limits.
 
 {::nomarkdown}
 </v2>
@@ -362,7 +362,7 @@ SD card support in v1 uses SPI interface with typical speeds of 400-500 KB/s, wh
 <v2>
 {:/nomarkdown}
 
-SD card support in v2 is fully implemented with SDIO interface, providing 10-25 MB/s typical speeds (20-50× faster than v1). The v2 firmware supports standard microSD cards up to 32 GB (FAT32 formatted) and includes a pre-loaded SD card with firmware and configuration. Cards can hold G-code files, web interface files, documentation, and logs, with operations including boot configuration, runtime G-code playback, direct computer access via MSD mode, and network access via HTTP/SFTP. Adam Green did initial work on this: <a href="https://github.com/adamgreen/SDCard">SDCard</a>
+SD card support in v2 is fully implemented with SDIO interface, providing 10-25 MB/s typical speeds (20-50× faster than v1). The v2 firmware supports standard microSD cards up to 32 GB (FAT32 formatted) and includes a pre-loaded SD card with firmware and configuration. Cards can hold G-code files, web interface files, documentation, and logs, with operations including boot configuration, runtime G-code playback, direct computer access via MSD mode, and network access via HTTP or FTP. Adam Green did initial work on this: <a href="https://github.com/adamgreen/SDCard">SDCard</a>
 
 {::nomarkdown}
 </v2>

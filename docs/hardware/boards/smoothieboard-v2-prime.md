@@ -352,15 +352,15 @@ Requires firmware development but the hardware capability is there.
 
 10/100 Mbps Ethernet with on-board PHY and auto-negotiation:
 
-**HTTP (Port 80):** Web interface served from SD card. Upload files, send commands, monitor status, view temperature graphs. RESTful API for custom applications. The web interface runs entirely on the board - no external server needed.
+**HTTP and WebSocket (Port 80):** Static web files are served from `/sd/www`. WebSocket endpoints at `/command` and `/upload` provide command and file-upload channels for a compatible web interface.
 
-**Telnet (Port 23):** Send G-code over network. Multiple concurrent connections supported. Like USB serial but over Ethernet.
+**Network shell (Port 23):** Send G-code and console commands over a raw terminal connection. The implementation accepts up to three clients.
 
-**Simple FTP (Port 115):** Legacy file transfer protocol from v1. Upload/download files to SD card. This is Simple File Transfer Protocol (not SSH SFTP) - runs on port 115.
+**FTP (Port 21):** Upload and download SD-card files with a standard FTP client. This V2 service is unencrypted and differs from the V1 Simple File Transfer Protocol on port 115.
 
 **Auto-Update Feature:** Send `update` command via network. The board checks for firmware on SD card, verifies integrity (checksum), flashes new firmware, reboots automatically. Zero manual intervention for firmware updates over the network. Huge convenience for headless setups.
 
-Network configuration (DHCP or static IP) is in the config file. mDNS/Bonjour hostname resolution is supported - access the board as `smoothieboard.local` instead of memorizing IP addresses.
+Network configuration, including DHCP or a static address, DNS, service switches, NTP, and the firmware update URL, is in the config file. See [V2 network services](/network#v2-network-services) for the current settings and security limits.
 
 ### SD Card
 
@@ -610,7 +610,7 @@ The layout is designed to minimize noise - power circuitry separated from sensit
 - Probe/Z-probe
 - Laser control
 - Extruder control
-- Network stack (HTTP, Telnet, SFTP)
+- Network stack (HTTP/WebSocket, network shell, FTP, and NTP)
 - SD card file system
 - Configuration parser
 - G-code interpreter
