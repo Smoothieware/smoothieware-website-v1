@@ -1,5 +1,7 @@
 ---
 permalink: /laser-cutter-guide
+title: Smoothieboard Laser Cutter Installation Guide
+description: "Install and configure Smoothieboard in a laser cutter: controller wiring, power, motors, endstops, laser control, software, and safety checks."
 ---
 
 
@@ -11,13 +13,13 @@ permalink: /laser-cutter-guide
 </a>
 {:/nomarkdown}
 
-A Laser Cutter is pretty much a [CNC router](cnc-mill-guide) with a weird and very very thin tool.
-
-As far as installing Smoothieboard in a machine goes, they are probably the simplest machine to set up.
-
-They can also be quite dangerous, so, be cautious.
+A laser cutter uses CNC motion, but its laser power supply and safety interlocks require separate attention. Identify the exact board, firmware, and laser power supply before following a wiring example.
 
 This is a step-by-step guide to connecting your board to the various components of the laser cutter, configuring everything, from the beginning to actually cutting material.
+
+For a K40 or blue box laser, read the [K40 controller upgrade overview](/landing-page-k40-laser-upgrade) and the [blue box installation guide](/bluebox-guide). Identify your machine's controller and power supply before following any wiring instructions.
+
+See the [Smoothieboard hardware documentation](/smoothieboards) for board identification and the [laser module documentation](/laser) for firmware configuration.
 
 This guide is a [community](irc) effort, and this page is a Wiki.
 
@@ -40,27 +42,25 @@ On a typical laser cutter setup, installing a Smoothieboard will mean you do the
 - Install the [Windows drivers](windows-drivers) if using that OS
 - Connect your board via [USB](usb) and practice talking to it
 - Take a look at the [configuration](configuring-smoothie)
-- Upgrade your [firmware](flashing-smoothie-firmware) to the latest version if you feel like it
-- Wire your power supply and provide it with power
-- Wire the power supply to Smoothieboard's motor input
+- Review the [firmware flashing instructions](/flashing-smoothie-firmware) for your board before changing firmware
+- With power isolated, have a qualified installer verify and connect a compatible motor power supply to the board
 - Connect motors to the stepper motor driver outputs
 - Edit your configuration to match your motors
-- Test the motors, and admire your accomplishment for hours
+- Test the motors with laser power disabled
 - Connect [Endstops](guide-endstops) to the endstop inputs
 - Edit your configuration to match your endstops
-- Test your endstops by homing the machine
-- Connect your laser power supply and your Smoothieboard together
-- Configure it so you can control the power supply's output, and test
+- Verify endstop behavior before any supervised homing test with laser power disabled
+- Have a qualified installer connect and verify the laser power supply control interface and hardware interlocks
+- Configure laser control for the exact firmware and test it only after the interlocks have been verified
 - Connect, configure and test any probes you may have
 - Setup leveling if relevant
 - Configure your CAM [software](software) and generate a G-code file
 - Use your host [software](software) to send your new G-code file to the Smoothieboard
-- Watch as the machine cuts using your new Smoothieboard system
-- Be happy
+- Conduct supervised cutting tests after the complete installation has been checked
 
 This guide will walk through everything you need to accomplish to successfully perform these steps.
 
-At the end of this guide, you should have a fully working machine.
+This guide is an installation outline, not a safety approval. Check the finished machine and its protective controls before operation.
 
 
 
@@ -103,38 +103,11 @@ At the end of this guide, you should have a fully working machine.
 
 {% include hardware/panels/panel-guide-for-include.md %}
 
-# Startup Automation
+# Startup behavior and interlocks
 
-For laser cutters, safety is paramount. You can use startup automation to ensure your laser is in a safe state every time the machine boots.
+Do not use a startup G-code file as the laser's safety system. The laser power supply and door interlock must prevent unintended firing independently of firmware commands. Verify the inactive laser output and every interlock on your specific machine before enabling laser power.
 
-## Safe Laser Startup
-
-Create a file called `on_boot.gcode` in the root of your SD card with safe default commands:
-
-```gcode
-G21          ; Metric units
-G90          ; Absolute positioning
-M5           ; Laser OFF (critical for safety!)
-M3 S0        ; Set laser power to 0
-G28 X Y      ; Home X and Y (typically don't home Z for lasers)
-G0 X5 Y5     ; Move away from origin
-```
-
-{::nomarkdown}
-<sl-alert variant="danger" open>
-  <sl-icon slot="icon" name="exclamation-octagon"></sl-icon>
-  <strong>Safety Critical:</strong> Always ensure your on_boot.gcode starts with commands that turn OFF the laser (<mcode>M5</mcode>) and set power to zero (<mcode>M3</mcode> S0). Never enable the laser automatically in startup scripts.
-</sl-alert>
-{:/nomarkdown}
-
-Enable the on_boot.gcode file in your config:
-
-```
-on_boot_gcode_enable true
-on_boot_gcode /sd/on_boot.gcode
-```
-
-For more information and examples, see the [on_boot.gcode documentation](on_boot.gcode).
+Avoid automatic laser arming, homing, or travel moves at boot. These depend on the machine's wiring and can be hazardous before its state has been checked. If you use startup G-code for non-motion settings, review the [on_boot.gcode documentation](/on-boot-gcode) for your firmware version and test with laser power disabled.
 
 # Appendixes
 

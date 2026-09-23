@@ -1,7 +1,8 @@
 ---
 permalink: /
 layout: default
-title: Smoothieware Home
+title: Smoothieware and Smoothieboard Documentation
+description: "Set up Smoothieboard with Smoothieware for laser cutters, CNC mills, 3D printers, and other machines. Find wiring, configuration, and firmware guides."
 ---
 
 # Smoothieware
@@ -68,6 +69,8 @@ The Smoothie project is always looking for help. Whatever your skills are, there
     </a>
   </div>
 </div>
+
+Retrofitting a K40 laser cutter? Start with the [K40 controller upgrade overview](/landing-page-k40-laser-upgrade) and the [laser cutter installation guide](/laser-cutter-guide).
 
 ## Firmware documentation
 

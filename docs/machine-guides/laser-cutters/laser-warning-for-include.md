@@ -24,13 +24,13 @@ Eyes cannot be replaced.
 
 Work on lasers should be done by informed and well trained professionals, in safe environments. There are no second chances here, if you are not trained, get help from a professional.
 
-Eye protection of insufficient quality is sold very commonly, test your eye protection by firing the laser at it to make sure it's actually capable of what it claims. 
+Use laser safety eyewear marked for your laser's wavelength and with optical density appropriate to its output. Have a qualified laser safety professional help select and inspect it. Never test eyewear by firing a laser at it. See [OSHA's laser eye protection guidance](https://www.osha.gov/laws-regs/regulations/standardnumber/1926/1926.102).
 
 Eye protection alone isn't enough, laser safety is an ensemble of procedures, knowledge and attention that must be paid. Improvisation has no place here.
 
 Always make sure fire extinguishers of the adequate type are present on site.
 
-A bucket of sand and a mini-shovel (which does not replace a fire extinguisher) can be a good tool to extinguish small "paper" fires in the machine without having to waste a fire extinguisher or wet the machine's internals.
+Follow the machine manufacturer's fire-response instructions and keep suitable firefighting equipment accessible. Do not delay an appropriate emergency response to avoid using an extinguisher or damaging the machine. See [LightBurn's fire-safety guidance](https://docs.lightburnsoftware.com/latest/Safety/FireSafety/).
 
 ### Door Safety Switch
 

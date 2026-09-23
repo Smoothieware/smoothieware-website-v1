@@ -168,28 +168,17 @@ G53 G0 Z-5   ; Move to machine coordinates Z safe height
 M0           ; Pause for user to verify before homing XY
 ```
 
-### Example 4: Laser Cutter Safe Startup
+### Example 4: Laser Cutter Startup
 
-For laser cutters, safety is critical:
-
-```gcode
-; Laser cutter safe startup
-G21          ; Metric units
-G90          ; Absolute positioning
-M5           ; Laser OFF
-M3 S0        ; Set laser power to 0
-G28 X Y      ; Home X and Y only (not Z for laser)
-G0 X5 Y5     ; Move away from origin
-```
+Do not rely on startup G-code to keep a laser safe. Avoid automatic laser arming, homing, and travel moves at boot. Have a qualified person verify the machine's laser output and independent door and other safety interlocks before enabling laser power. See the [laser cutter installation guide](/laser-cutter-guide) for more context.
 
 ### Example 5: Loading Saved Settings
 
 You can use `on_boot.gcode` to load settings saved with {::nomarkdown}<mcode>M500</mcode>{:/nomarkdown}:
 
 ```gcode
-; Load settings and initialize
+; Load saved settings
 M501         ; Load settings from config-override
-G28          ; Home all axes
 ```
 
 ---
