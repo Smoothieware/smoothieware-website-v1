@@ -1,0 +1,25 @@
+{
+  "id": "forum-v1e-viirus-cologne-mpcnc",
+  "sources": {
+    "forum-peripheral-evidence.json": {
+      "id": "forum-v1e-viirus-cologne-mpcnc",
+      "dossier": "src/docs/machine-research/v1e-viirus-cologne-mpcnc.md",
+      "reported_fitted_or_used": [
+        {
+          "name": "Makita RT0700C router",
+          "contacts": [],
+          "source_line_number": 13,
+          "source_line": "| Router | Makita RT0700C | Owner says they were happy with its performance; no speed or bit details for the aluminum cut are supplied. |",
+          "evidence": "Makita RT0700C.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        }
+      ],
+      "listed_for_build_unverified": [],
+      "historical_reference": [],
+      "planned_only": [],
+      "open_function_group": [],
+      "exclusions": [],
+      "source_gap": "Dossier does not establish an as-built SmoothieBox route or a complete physical contact schedule for the listed peripherals."
+    }
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "id": "mill-h5",
+  "sources": {
+    "machine-side-graph-snapshot.json": {
+      "source_graph": "020-mill-h5.json",
+      "source_sha256": "04d302d1aceebc6f6c333977005af35aa7c60ff90ee87ce8f18f97f179ecb460",
+      "graph": {
+        "profile_id": "mill-h5",
+        "devices": [
+          {
+            "id": "group-device-001",
+            "role": "peripheral"
+          },
+          {
+            "id": "group-device-002",
+            "role": "peripheral"
+          },
+          {
+            "id": "group-device-003",
+            "role": "peripheral"
+          }
+        ],
+        "connectors": [
+          {
+            "id": "machine-group-001",
+            "device": "group-device-001",
+            "refdes": "DSLS control box",
+            "form": "source-described cable / connector group",
+            "scope": "Source names this group, but provides no source-scoped physical contact map. Availability and exact housing are unverified. exact atlas group labels; open until contact mapping is established",
+            "contacts": []
+          },
+          {
+            "id": "machine-group-002",
+            "device": "group-device-002",
+            "refdes": "E-stop",
+            "form": "source-described cable / connector group",
+            "scope": "Source names this group, but provides no source-scoped physical contact map. Availability and exact housing are unverified. exact atlas group labels; open until contact mapping is established",
+            "contacts": []
+          },
+          {
+            "id": "machine-group-003",
+            "device": "group-device-003",
+            "refdes": "index",
+            "form": "source-described cable / connector group",
+            "scope": "Source names this group, but provides no source-scoped physical contact map. Availability and exact housing are unverified. exact atlas group labels; open until contact mapping is established",
+            "contacts": []
+          }
+        ],
+        "wires": []
+      }
+    }
+  }
+}

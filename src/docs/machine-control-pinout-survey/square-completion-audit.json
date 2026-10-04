@@ -1,0 +1,61 @@
+{
+  "type": "completion-audit",
+  "current_svg_hashes": [
+    {
+      "id": "wiki-205",
+      "sha256": "0c9068aaf671a3fd588fb1ee4ace87fb6ce88ec3caf35f267aa899ceffe3d3b2"
+    },
+    {
+      "id": "laserplot-02",
+      "sha256": "773ecd08ed4eb4128a6fe9c052a5601ccf190b3f4bd59cea5d1c11bb6a7f33bd"
+    },
+    {
+      "id": "base-11",
+      "sha256": "752eedc54779de9ac38088a0118716e70a8567be4a212691c026d7be3a4cd39d"
+    },
+    {
+      "id": "wiki-132",
+      "sha256": "e848781ea90d6900ec48618afa8b7564cd7649833fde8626881ec9ceb80b7e18"
+    },
+    {
+      "id": "wiki-134",
+      "sha256": "1f34ca6f4c60cd1506cc6a33d542fe831bcf688b78dedbc7e4b113ddd44e3b26"
+    },
+    {
+      "id": "wiki-135",
+      "sha256": "2458a4a9dcb0c62d8c76d13b33c4c47b95f1ee71deedf644d7bb5618b8b4e875"
+    },
+    {
+      "id": "mill-g2",
+      "sha256": "79631310f134bc1b61bd6510aa450e4a2f29090cb761f8c860be3e300d7043f1"
+    },
+    {
+      "id": "mill-avid-ex-3",
+      "sha256": "174a802f3d31f24638f2976d12f22dc1b52711c800604bdc09816d7dcaacec9a"
+    },
+    {
+      "id": "wiki-206",
+      "sha256": "c60a70ff856d8311892df734c57f86edf0c5ce06a615131f17def5279a2d7d9a"
+    },
+    {
+      "id": "wiki-222",
+      "sha256": "3223c244551154b6184f98a75000d4f7a0c2f7ae71725ec05c3c22db54bb6c45"
+    },
+    {
+      "id": "forum-linuxcnc-optimill-mh50v-unlogic",
+      "sha256": "d9d1ad2313cb97ce859ab0e53549dc54f9c28fea7387ae159feaddda720da037"
+    },
+    {
+      "id": "forum-linuxcnc-rotarysmp-schaublin-125-cnc-retrofit",
+      "sha256": "3ddee8be3a253ab7a4aaf5bfab13960cddaafa39aacdd3e2b4d299cd75ec0d9d"
+    }
+  ],
+  "all_twelve_current": true,
+  "public_receipt": "square-public-reconciled-readback.json",
+  "links_receipt": "square-final-link-readback.json",
+  "unverified": [
+    "Final public viewer fit, zoom, pan, keyboard and detail navigation: browser page actions time out.",
+    "Already submitted advisor response extraction: parked tab security policy requires user restoration."
+  ],
+  "goal_complete": false
+}

@@ -1,0 +1,23 @@
+{
+  "id": "forum-v1e-burbonhillibilly-36x36-mpcnc",
+  "sources": {
+    "forum-peripheral-evidence.json": {
+      "id": "forum-v1e-burbonhillibilly-36x36-mpcnc",
+      "dossier": "src/docs/machine-research/v1e-burbonhillibilly-36x36-mpcnc.md",
+      "reported_fitted_or_used": [],
+      "listed_for_build_unverified": [],
+      "historical_reference": [],
+      "planned_only": [],
+      "open_function_group": [],
+      "exclusions": [
+        {
+          "name": "DeWalt DW660 rotary tool",
+          "reason": "The selected dossier line is an absence/novelty statement, not positive device evidence.",
+          "source_line_number": 9,
+          "source_line": "The owner says he printed the MPCNC components, built the table from an old bunk bed, and mounted a DeWalt DW660 rotary tool with a 1/8 in bit. He used a Raspberry Pi and says he could control the machine from a tablet or remotely from his office. The thread does not name the Pi control software, stepper-driver board, motor model, firmware, or exact MPCNC revision."
+        }
+      ],
+      "source_gap": "Dossier does not establish an as-built SmoothieBox route or a complete physical contact schedule for the listed peripherals."
+    }
+  }
+}

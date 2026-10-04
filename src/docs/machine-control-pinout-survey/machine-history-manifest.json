@@ -1,0 +1,53 @@
+{
+  "page": "history.html",
+  "sha256": "8fa48e41df5bdfdcfd248a71860abaebd2f9d875ee84658036b739fde951b487",
+  "assets": [
+    {
+      "path": "history/machine-control-pinout-survey/retrofit-diagram-guide.md",
+      "source_sha256": "5c506835a41f9b6ba5caef23d4a21afd8e0cac931df093ecf276bd232a50ba14",
+      "sha256": "5c506835a41f9b6ba5caef23d4a21afd8e0cac931df093ecf276bd232a50ba14"
+    },
+    {
+      "path": "history/machine-control-pinout-survey/signal-domains.svg",
+      "source_sha256": "175b4b4944ae4753746e0f3aed498db6ecbc16609d715d004e92e57279ad22c8",
+      "sha256": "175b4b4944ae4753746e0f3aed498db6ecbc16609d715d004e92e57279ad22c8"
+    },
+    {
+      "path": "history/machine-control-pinout-survey/smoothiebox-machine-wiring/wiki-138.svg",
+      "source_sha256": "369c90907885657536b6db956d8b8fc075eaebbd92f9222a1e070ea64b8e85f5",
+      "sha256": "369c90907885657536b6db956d8b8fc075eaebbd92f9222a1e070ea64b8e85f5"
+    },
+    {
+      "path": "history/machine-research/wiki/elegoo-mars-2p.md",
+      "source_sha256": "f27efe217eb28edeff609d71bce4d0a02728141c712367c46c3e6cf824424939",
+      "sha256": "f27efe217eb28edeff609d71bce4d0a02728141c712367c46c3e6cf824424939"
+    },
+    {
+      "path": "history/machine-control-pinout-survey/smoothiebox-machine-wiring/wiki-139.svg",
+      "source_sha256": "6988116d0d6f0358ddf78a5109dc0894aa63b9a848d00b21797b4b0509d6d2d5",
+      "sha256": "6988116d0d6f0358ddf78a5109dc0894aa63b9a848d00b21797b4b0509d6d2d5"
+    },
+    {
+      "path": "history/machine-research/wiki/elegoo-mars3-4k.md",
+      "source_sha256": "669db6e1838e40446cb179606e9dac94f1dea94ca03dbb14b9b913576155b381",
+      "sha256": "669db6e1838e40446cb179606e9dac94f1dea94ca03dbb14b9b913576155b381"
+    },
+    {
+      "path": "history/machine-control-pinout-survey/retrofit-source-contact-history/wiki-134.svg",
+      "source_sha256": "656d0e25df953a07b264c19c8cab1e8bf3eaa9ad5eb5247efb5f52a1bfa8a3ce",
+      "sha256": "656d0e25df953a07b264c19c8cab1e8bf3eaa9ad5eb5247efb5f52a1bfa8a3ce"
+    },
+    {
+      "path": "history/machine-control-pinout-survey/smoothiebox-machine-wiring/wiki-134-manufacturer-open-no-route-2026-09-27.svg",
+      "source_sha256": "73aa229f3c9af4222e9326ab9149a4805087b077a69c833bd11961a5bc3a6acc",
+      "sha256": "73aa229f3c9af4222e9326ab9149a4805087b077a69c833bd11961a5bc3a6acc"
+    },
+    {
+      "path": "history/machine-control-pinout-survey/smoothiebox-machine-wiring/wiki-129.svg",
+      "source_sha256": "7cb420e4fe8e37555875a71c275df0954104778bde56650b60007ff53c142ef0",
+      "sha256": "7cb420e4fe8e37555875a71c275df0954104778bde56650b60007ff53c142ef0"
+    }
+  ],
+  "missing": [],
+  "main_landmarks": 1
+}

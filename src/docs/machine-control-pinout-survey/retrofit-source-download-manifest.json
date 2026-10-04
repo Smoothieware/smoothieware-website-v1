@@ -1,0 +1,46 @@
+{
+  "type": "source_download_manifest",
+  "files": [
+    {
+      "path": "IMG_8138_small-1024x768.jpg",
+      "bytes": 96128,
+      "sha256": "e8938a02448101a12ad07ba2d53555060448d0a31074fe4a129dfe08aa4fcadc"
+    },
+    {
+      "path": "IMG_8141_small_txt-1024x768.jpg",
+      "bytes": 171365,
+      "sha256": "9a3d98ba6d3af9e747428d28b1613d359efbc4142d43b4c629851760dd0ccd39"
+    },
+    {
+      "path": "IMG_8141_small_txt.jpg",
+      "bytes": 476888,
+      "sha256": "543cfbe7a8a658358ac22fb0a96b64a521595bbb2bba45adeb6ba62e2d5c56f6"
+    },
+    {
+      "path": "IMG_8142_small-1024x768.jpg",
+      "bytes": 149976,
+      "sha256": "531ef4b0bbf469fd52c597836c4e552e7c110b732f604df2452cb42fd8524348"
+    },
+    {
+      "path": "IMG_8142_small.jpg",
+      "bytes": 207042,
+      "sha256": "6034cb04239902e6dbb19e069dc7968a732c12b7b992c16c5976f1c85b1a8872"
+    },
+    {
+      "path": "cloudray-myjg40nw-manual.pdf",
+      "bytes": 1150753,
+      "sha256": "4b5a0efc6e435195c4f2bd56fb7a69e7dd9181f4a33e5134a65f37dc1812695a"
+    },
+    {
+      "path": "panasonic-aqy212gs-actual-pages56-59.pdf",
+      "bytes": 11157299,
+      "sha256": "3c2973f58c8531f2ac454b29baeb4ec8fc654b9acb3abdd05b6b5677abd13166"
+    },
+    {
+      "path": "ti-sn74ahct125.pdf",
+      "bytes": 3496073,
+      "sha256": "d4686809d3c75759f465b07d7a0d3796bbd38e4e6d1265361a6b30d0a6972175"
+    }
+  ],
+  "note": "File identity only; source revisions and supported claims are specified per guide. Panasonic catalog extraction uses actual downloaded PDF pages56\u201359, printed81\u201384; indexed page numbering differed."
+}

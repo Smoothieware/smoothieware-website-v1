@@ -1,0 +1,8 @@
+{
+  "job_id": "smoothieware-atlas-twelve-retrofit-20261001",
+  "status": "done",
+  "percent": 100,
+  "message": "Twelve researched retrofit diagrams integrated; keyboard 12/330 filter and 25 published assets verified. Hardware qualification remains as explicitly documented.",
+  "verification": "machine-control-pinout-survey/retrofit-final-verification.json",
+  "public_readback": "machine-control-pinout-survey/retrofit-public-readback.json"
+}

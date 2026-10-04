@@ -1,0 +1,90 @@
+{
+  "id": "wiki-152",
+  "sources": {
+    "machine-side-graph-snapshot.json": {
+      "source_graph": "152-wiki-152.json",
+      "source_sha256": "3550261b50ac00c4806c5bf8a7fd6f3ce4a3bec84951824c5e936090495ea1c4",
+      "graph": {
+        "profile_id": "wiki-152",
+        "devices": [
+          {
+            "id": "huxley-nema14-axis-motors",
+            "role": "peripheral"
+          },
+          {
+            "id": "huxley-nema17-extruder-motor",
+            "role": "peripheral"
+          },
+          {
+            "id": "huxley-ris1-electronics",
+            "role": "reference"
+          },
+          {
+            "id": "huxley-ris2-endstop-reference",
+            "role": "reference"
+          }
+        ],
+        "connectors": [
+          {
+            "id": "nema14-axis-motors",
+            "device": "huxley-nema14-axis-motors",
+            "refdes": "Axis stepper motors \u00b7 quantity 3 \u00b7 NEMA14 \u00b7 axis assignments unspecified",
+            "form": "Motor contact count, connector type and coil pairs not documented",
+            "scope": "The RepRap Huxley design page specifies three NEMA14 stepper motors but does not map them individually to axes, publish motor terminal counts or show coil order. These are design peripherals, not a fitted-unit harness map. Every motor route remains OPEN.",
+            "contacts": []
+          },
+          {
+            "id": "nema17-extruder-motor",
+            "device": "huxley-nema17-extruder-motor",
+            "refdes": "Bowden extruder stepper motor \u00b7 quantity 1 \u00b7 NEMA17",
+            "form": "Motor contact count, connector type and coil pairs not documented",
+            "scope": "The RepRap Huxley page specifies one NEMA17 stepper for the Bowden extruder. Motor terminals, coil pairs, harness and installed controller are not shown. Every route remains OPEN.",
+            "contacts": []
+          },
+          {
+            "id": "ris1-electronics",
+            "device": "huxley-ris1-electronics",
+            "refdes": "Electronics must meet RepRap Interface Standard RIS 1 \u00b7 implementation alternatives retained",
+            "form": "Standard feature set, not a named or fitted board connector map",
+            "scope": "The Huxley design page says any electronics meeting RIS 1 can be used. RIS 1 defines controller capabilities (including support for at least four steppers, at least three RIS 2 endstops, one thermistor and one heater) but explicitly does not define single-board versus distributed implementation, operating voltage or particular installed wiring. This context does not prove a fitted controller or Huxley machine pinout.",
+            "contacts": []
+          },
+          {
+            "id": "ris2-endstop-header",
+            "device": "huxley-ris2-endstop-reference",
+            "refdes": "RIS 2 endstop connector reference \u00b7 conditional on RIS 1-compliant electronics",
+            "form": "Molex KK100-compatible 3-pin header reference; 2.54 mm spacing; not a fitted board view",
+            "scope": "The Huxley page accepts any electronics meeting RIS 1, which requires at least three RIS 2-compliant endstop interfaces. RIS 2 shows the standard reference order Vs | GND | Vcc but does not assign numeric pin numbers. The Huxley page does not identify a fitted controller, axis-to-header map, switches, harnesses or conductor continuity. These are conditional standard reference labels only; all SmoothieBox routes remain OPEN.",
+            "contacts": [
+              {
+                "id": "1",
+                "mark": "Vs",
+                "label": "RIS 2 reference \u00b7 First diagram-order label \u00b7 Vs \u00b7 Huxley fit and route OPEN; standard assigns no numeric pin number"
+              },
+              {
+                "id": "2",
+                "mark": "GND",
+                "label": "RIS 2 reference \u00b7 Second diagram-order label \u00b7 GND \u00b7 Huxley fit and route OPEN; standard assigns no numeric pin number"
+              },
+              {
+                "id": "3",
+                "mark": "Vcc",
+                "label": "RIS 2 reference \u00b7 Third diagram-order label \u00b7 Vcc \u00b7 Huxley fit and route OPEN; standard assigns no numeric pin number"
+              }
+            ]
+          }
+        ],
+        "wires": [],
+        "evidence": {
+          "primary": "RepRap Huxley design page and RepRap Interface Standard RIS 1/RIS 2",
+          "sources": [
+            "https://reprap.org/wiki/Huxley",
+            "https://reprap.com/wiki/RepRap_Interface_Standard",
+            "https://reprap.org/wiki/RepRapPro_Huxley_wiring"
+          ],
+          "scope_note": "This profile is the community Huxley design, not the distinct RepRapPro Huxley kit wiring guide or eMaker fork. The design permits alternative RIS 1-compliant electronics. Only motor types/counts and conditional RIS 2 connector reference positions are sourced; no fitted board, machine-specific contact schedule, switch harness or SmoothieBox route is established. No guesses or DB25 peripheral."
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "id": "mill-g1",
+  "sources": {
+    "machine-side-graph-snapshot.json": {
+      "source_graph": "040-mill-g1.json",
+      "source_sha256": "de154959dff1c035ae413ae2c699036f4d4e24a18802b31df06792f50f6f138a",
+      "graph": {
+        "profile_id": "mill-g1",
+        "devices": [
+          {
+            "id": "group-device-001",
+            "role": "peripheral"
+          },
+          {
+            "id": "group-device-002",
+            "role": "peripheral"
+          },
+          {
+            "id": "group-device-003",
+            "role": "peripheral"
+          }
+        ],
+        "connectors": [
+          {
+            "id": "machine-group-001",
+            "device": "group-device-001",
+            "refdes": "motor headers",
+            "form": "source-described cable / connector group",
+            "scope": "Source names this group, but provides no source-scoped physical contact map. Availability and exact housing are unverified. exact atlas group labels; open until contact mapping is established",
+            "contacts": []
+          },
+          {
+            "id": "machine-group-002",
+            "device": "group-device-002",
+            "refdes": "limit headers",
+            "form": "source-described cable / connector group",
+            "scope": "Source names this group, but provides no source-scoped physical contact map. Availability and exact housing are unverified. exact atlas group labels; open until contact mapping is established",
+            "contacts": []
+          },
+          {
+            "id": "machine-group-003",
+            "device": "group-device-003",
+            "refdes": "spindle/laser",
+            "form": "source-described cable / connector group",
+            "scope": "Source names this group, but provides no source-scoped physical contact map. Availability and exact housing are unverified. exact atlas group labels; open until contact mapping is established",
+            "contacts": []
+          }
+        ],
+        "wires": []
+      }
+    }
+  }
+}

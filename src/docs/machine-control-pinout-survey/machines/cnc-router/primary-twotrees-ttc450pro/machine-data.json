@@ -1,0 +1,113 @@
+{
+  "id": "primary-twotrees-ttc450pro",
+  "sources": {
+    "machine-side-graph-snapshot.json": {
+      "source_graph": "058-primary-twotrees-ttc450pro.json",
+      "source_sha256": "0644b9b844e13ae99282232f2f69f6d49abf7dc9b92e3f1fef41392a5d182cc6",
+      "graph": {
+        "profile_id": "primary-twotrees-ttc450pro",
+        "devices": [
+          {
+            "id": "group-device-001",
+            "role": "peripheral"
+          },
+          {
+            "id": "group-device-002",
+            "role": "peripheral"
+          },
+          {
+            "id": "group-device-003",
+            "role": "peripheral"
+          },
+          {
+            "id": "group-device-004",
+            "role": "peripheral"
+          },
+          {
+            "id": "group-device-005",
+            "role": "peripheral"
+          },
+          {
+            "id": "group-device-006",
+            "role": "peripheral"
+          },
+          {
+            "id": "group-device-007",
+            "role": "peripheral"
+          },
+          {
+            "id": "group-device-008",
+            "role": "peripheral"
+          }
+        ],
+        "connectors": [
+          {
+            "id": "machine-group-001",
+            "device": "group-device-001",
+            "refdes": "X/Y/Z/A motor",
+            "form": "source-described cable / connector group",
+            "scope": "Source names this group, but provides no source-scoped physical contact map. Availability and exact housing are unverified. exact atlas group labels; open until contact mapping is established",
+            "contacts": []
+          },
+          {
+            "id": "machine-group-002",
+            "device": "group-device-002",
+            "refdes": "X/Y/Z/A limits",
+            "form": "source-described cable / connector group",
+            "scope": "Source names this group, but provides no source-scoped physical contact map. Availability and exact housing are unverified. exact atlas group labels; open until contact mapping is established",
+            "contacts": []
+          },
+          {
+            "id": "machine-group-003",
+            "device": "group-device-003",
+            "refdes": "tool-setting input",
+            "form": "source-described cable / connector group",
+            "scope": "Source names this group, but provides no source-scoped physical contact map. Availability and exact housing are unverified. exact atlas group labels; open until contact mapping is established",
+            "contacts": []
+          },
+          {
+            "id": "machine-group-004",
+            "device": "group-device-004",
+            "refdes": "air pump",
+            "form": "source-described cable / connector group",
+            "scope": "Source names this group, but provides no source-scoped physical contact map. Availability and exact housing are unverified. exact atlas group labels; open until contact mapping is established",
+            "contacts": []
+          },
+          {
+            "id": "machine-group-005",
+            "device": "group-device-005",
+            "refdes": "laser",
+            "form": "source-described cable / connector group",
+            "scope": "Source names this group, but provides no source-scoped physical contact map. Availability and exact housing are unverified. exact atlas group labels; open until contact mapping is established",
+            "contacts": []
+          },
+          {
+            "id": "machine-group-006",
+            "device": "group-device-006",
+            "refdes": "spindle",
+            "form": "source-described cable / connector group",
+            "scope": "Source names this group, but provides no source-scoped physical contact map. Availability and exact housing are unverified. exact atlas group labels; open until contact mapping is established",
+            "contacts": []
+          },
+          {
+            "id": "machine-group-007",
+            "device": "group-device-007",
+            "refdes": "screen",
+            "form": "source-described cable / connector group",
+            "scope": "Source names this group, but provides no source-scoped physical contact map. Availability and exact housing are unverified. exact atlas group labels; open until contact mapping is established",
+            "contacts": []
+          },
+          {
+            "id": "machine-group-008",
+            "device": "group-device-008",
+            "refdes": "24 V power",
+            "form": "source-described cable / connector group",
+            "scope": "Source names this group, but provides no source-scoped physical contact map. Availability and exact housing are unverified. exact atlas group labels; open until contact mapping is established",
+            "contacts": []
+          }
+        ],
+        "wires": []
+      }
+    }
+  }
+}

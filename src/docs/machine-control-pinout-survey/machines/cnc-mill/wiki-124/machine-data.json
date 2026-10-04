@@ -1,0 +1,101 @@
+{
+  "id": "wiki-124",
+  "sources": {
+    "machine-side-graph-snapshot.json": {
+      "source_graph": "124-wiki-124.json",
+      "source_sha256": "b39a526ee22a9c69425ffb63ab0456e08af86f6314213e61058e9551a04c4563",
+      "graph": {
+        "profile_id": "wiki-124",
+        "devices": [
+          {
+            "id": "group-device-001",
+            "role": "peripheral"
+          },
+          {
+            "id": "group-device-002",
+            "role": "peripheral"
+          },
+          {
+            "id": "group-device-003",
+            "role": "peripheral"
+          },
+          {
+            "id": "group-device-004",
+            "role": "peripheral"
+          },
+          {
+            "id": "group-device-005",
+            "role": "peripheral"
+          },
+          {
+            "id": "group-device-006",
+            "role": "peripheral"
+          },
+          {
+            "id": "group-device-007",
+            "role": "peripheral"
+          }
+        ],
+        "connectors": [
+          {
+            "id": "machine-group-001",
+            "device": "group-device-001",
+            "refdes": "Machine \u201cNXY Main Bundle\u201d \u2192 control box \u201cN X Y\u201d",
+            "form": "source-described cable / connector group",
+            "scope": "Source names this group, but provides no source-scoped physical contact map. Availability and exact housing are unverified. Connection evidence transcribed from the diagram \u00b7 This is a cable-role diagram , not a numbered electrical pinout. All physical contact numbers, mating-face orientation, signal directions, logic polarity, voltage and current ratings are unknown .",
+            "contacts": []
+          },
+          {
+            "id": "machine-group-002",
+            "device": "group-device-002",
+            "refdes": "Control \u201cPWR\u201d, \u201cCntrl\u201d",
+            "form": "source-described cable / connector group",
+            "scope": "Source names this group, but provides no source-scoped physical contact map. Availability and exact housing are unverified. Connection evidence transcribed from the diagram \u00b7 This is a cable-role diagram , not a numbered electrical pinout. All physical contact numbers, mating-face orientation, signal directions, logic polarity, voltage and current ratings are unknown .",
+            "contacts": []
+          },
+          {
+            "id": "machine-group-003",
+            "device": "group-device-003",
+            "refdes": "Control \u201cusb\u201d \u2192 PC USB",
+            "form": "source-described cable / connector group",
+            "scope": "Source names this group, but provides no source-scoped physical contact map. Availability and exact housing are unverified. Connection evidence transcribed from the diagram \u00b7 This is a cable-role diagram , not a numbered electrical pinout. All physical contact numbers, mating-face orientation, signal directions, logic polarity, voltage and current ratings are unknown .",
+            "contacts": []
+          },
+          {
+            "id": "machine-group-004",
+            "device": "group-device-004",
+            "refdes": "Machine \u201cCamera Plug1\u201d \u2192 PC camera USB / yellow AV",
+            "form": "source-described cable / connector group",
+            "scope": "Source names this group, but provides no source-scoped physical contact map. Availability and exact housing are unverified. Connection evidence transcribed from the diagram \u00b7 This is a cable-role diagram , not a numbered electrical pinout. All physical contact numbers, mating-face orientation, signal directions, logic polarity, voltage and current ratings are unknown .",
+            "contacts": []
+          },
+          {
+            "id": "machine-group-005",
+            "device": "group-device-005",
+            "refdes": "\u201cZsensor = Red\u201d; \u201cBlack\u201d; \u201cCam = Yellow\u201d",
+            "form": "source-described cable / connector group",
+            "scope": "Source names this group, but provides no source-scoped physical contact map. Availability and exact housing are unverified. Connection evidence transcribed from the diagram \u00b7 This is a cable-role diagram , not a numbered electrical pinout. All physical contact numbers, mating-face orientation, signal directions, logic polarity, voltage and current ratings are unknown .",
+            "contacts": []
+          },
+          {
+            "id": "machine-group-006",
+            "device": "group-device-006",
+            "refdes": "Control \u201cZsensor\u201d, \u201cWhite\u201d, \u201cCam\u201d",
+            "form": "source-described cable / connector group",
+            "scope": "Source names this group, but provides no source-scoped physical contact map. Availability and exact housing are unverified. Connection evidence transcribed from the diagram \u00b7 This is a cable-role diagram , not a numbered electrical pinout. All physical contact numbers, mating-face orientation, signal directions, logic polarity, voltage and current ratings are unknown .",
+            "contacts": []
+          },
+          {
+            "id": "machine-group-007",
+            "device": "group-device-007",
+            "refdes": "PC \u201cRED AV: Not attached\u201d",
+            "form": "source-described cable / connector group",
+            "scope": "Source names this group, but provides no source-scoped physical contact map. Availability and exact housing are unverified. Connection evidence transcribed from the diagram \u00b7 This is a cable-role diagram , not a numbered electrical pinout. All physical contact numbers, mating-face orientation, signal directions, logic polarity, voltage and current ratings are unknown .",
+            "contacts": []
+          }
+        ],
+        "wires": []
+      }
+    }
+  }
+}

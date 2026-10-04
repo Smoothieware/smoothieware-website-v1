@@ -1,0 +1,60 @@
+{
+  "id": "forum-v1e-mordiev-aaryn-colorado-mpcnc",
+  "sources": {
+    "forum-peripheral-evidence.json": {
+      "id": "forum-v1e-mordiev-aaryn-colorado-mpcnc",
+      "dossier": "src/docs/machine-research/v1e-mordiev-aaryn-colorado-mpcnc.md",
+      "reported_fitted_or_used": [
+        {
+          "name": "Endurance 5.6 W laser module",
+          "contacts": [],
+          "source_line_number": 21,
+          "source_line": "The owner reported replacing an older inexpensive 15 W laser module, described as having poor optics, with an Endurance 5.6 W module. In the 2019-12-03 post, the laser was described as powered through the controller's \u201cSecond Extruder MOSFET\u201d; the owner's firmware configuration treated that output as a second fan controlled with `M106 P1 SXXX`. The laser cooling fan was modified to run whenever the machine was powered. The owner also said \u201cFan pin #1\u201d was wired toward a Z-axis air-assist/blower, but that blower was not yet connected. Two IoT relays were reported: one for the spindle and one for a box fan intended eventually to be replaced with dust collection. The spoilboard had a laser-burned 100 mm placement grid.",
+          "evidence": "The owner reported replacing an older inexpensive 15 W laser module, described as having poor optics, with an Endurance 5.6 W module. In the 2019-12-03 post, the laser was described as powered through the controller's \u201cSecond Extruder MOSFET\u201d; the owner's firmware configuration treated that output as a second fan controlled with `M106 P1 SXXX`.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        },
+        {
+          "name": "Always-on laser cooling fan",
+          "contacts": [],
+          "source_line_number": 45,
+          "source_line": "The posts give useful functional assignments for the owner's second-extruder MOSFET, reported fan command, always-on laser cooling fan, unfinished air-assist connection, spindle relay, and box-fan relay. They do not give connector-level terminal or RJ45 pin assignments. The enclosure was still incomplete in the dated update, and step loss was not shown resolved in the inspected thread. This is a historical build record, not a current-condition report, safety review, or wiring instruction.",
+          "evidence": "The posts give useful functional assignments for the owner's second-extruder MOSFET, reported fan command, always-on laser cooling fan, unfinished air-assist connection, spindle relay, and box-fan relay. They do not give connector-level terminal or RJ45 pin assignments.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        }
+      ],
+      "listed_for_build_unverified": [],
+      "historical_reference": [
+        {
+          "name": "Spindle power limit switch",
+          "contacts": [],
+          "source_line_number": 11,
+          "source_line": "For spindle power, Aaryn described wiring a light switch to interrupt spindle power, positioned so X travel physically tripped it at the end of a job. The owner called this crude and temporary. The post does not identify it as an emergency stop or provide a rated safety circuit; do not treat it as one. A salvaged 12 V server fan, estimated by the owner at about 3 A, was used to clear chips and dust, though the owner had not settled on a mounting position.",
+          "evidence": "For spindle power, Aaryn described wiring a light switch to interrupt spindle power, positioned so X travel physically tripped it at the end of a job. The owner called this crude and temporary.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        },
+        {
+          "name": "Salvaged 12 V chip-clearing fan",
+          "contacts": [],
+          "source_line_number": 11,
+          "source_line": "For spindle power, Aaryn described wiring a light switch to interrupt spindle power, positioned so X travel physically tripped it at the end of a job. The owner called this crude and temporary. The post does not identify it as an emergency stop or provide a rated safety circuit; do not treat it as one. A salvaged 12 V server fan, estimated by the owner at about 3 A, was used to clear chips and dust, though the owner had not settled on a mounting position.",
+          "evidence": "A salvaged 12 V server fan, estimated by the owner at about 3 A, was used to clear chips and dust, though the owner had not settled on a mounting position.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        }
+      ],
+      "planned_only": [],
+      "open_function_group": [],
+      "exclusions": [
+        {
+          "name": "Laser control through second-extruder MOSFET",
+          "contacts": [],
+          "source_line_number": 45,
+          "source_line": "The posts give useful functional assignments for the owner's second-extruder MOSFET, reported fan command, always-on laser cooling fan, unfinished air-assist connection, spindle relay, and box-fan relay. They do not give connector-level terminal or RJ45 pin assignments. The enclosure was still incomplete in the dated update, and step loss was not shown resolved in the inspected thread. This is a historical build record, not a current-condition report, safety review, or wiring instruction.",
+          "evidence": "The posts give useful functional assignments for the owner's second-extruder MOSFET, reported fan command, always-on laser cooling fan, unfinished air-assist connection, spindle relay, and box-fan relay. They do not give connector-level terminal or RJ45 pin assignments.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route",
+          "reason": "Controller-local configuration or hardware, without a separate machine-side input for SmoothieBox."
+        }
+      ],
+      "source_gap": "Dossier does not establish an as-built SmoothieBox route or a complete physical contact schedule for the listed peripherals."
+    }
+  }
+}

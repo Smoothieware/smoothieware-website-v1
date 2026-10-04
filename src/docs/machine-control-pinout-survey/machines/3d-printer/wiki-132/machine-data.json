@@ -1,0 +1,3473 @@
+{
+  "id": "wiki-132",
+  "sources": {
+    "centered-guides.json": {
+      "id": "wiki-132",
+      "title": "CubeFactory 2 printer + recycler",
+      "target": "Use Prime P12 for printer motor phases, heater/fan power and qualified temperature inputs. Retain the recycler ESCON 70/10 power stage; its proposed setpoint/run interface uses Prime P12, not a separate Core board.",
+      "plan": "Original motion-driver electronics are on the board being replaced. Use Prime integrated phase outputs directly to measured winding pairs; do not connect STEP/DIR signal outputs to motor windings. Confirm installed board, motor current and power rating from the cited machine source. Selected architecture: Prime P12 with integrated motor drivers. The main diagram and connection-ID schedule define the current proposed routes. Dotted function-coloured GUESS routes need the named commissioning checks; OPEN routes remain disconnected until the missing terminal, rating or interface is established. Previous Core alternatives remain only in the superseded historical architecture record.",
+      "circuits": [
+        [
+          "Printer X stepper \u00b7 integrated Prime driver channel A",
+          "Smoothieboard V2 Prime \u00b7 driver A outputs \u00b7 J5.4 COIL_A1 \u2192 Printer X stepper motor \u00b7 lead labels must be measured \u00b7 X motor A1 measured lead (Prime J5.4 COIL_A1 to X motor winding lead A1); Smoothieboard V2 Prime \u00b7 driver A outputs \u00b7 J5.3 COIL_A2 \u2192 Printer X stepper motor \u00b7 lead labels must be measured \u00b7 X motor A2 measured lead (Prime J5.3 COIL_A2 to X motor winding lead A2); Smoothieboard V2 Prime \u00b7 driver A outputs \u00b7 J5.2 COIL_B1 \u2192 Printer X stepper motor \u00b7 lead labels must be measured \u00b7 X motor B1 measured lead (Prime J5.2 COIL_B1 to X motor winding lead B1); Smoothieboard V2 Prime \u00b7 driver A outputs \u00b7 J5.1 COIL_B2 \u2192 Printer X stepper motor \u00b7 lead labels must be measured \u00b7 X motor B2 measured lead (Prime J5.1 COIL_B2 to X motor winding lead B2)",
+          "GUESS",
+          "Four phase conductors are shown separately. The Prime PCB exposes these phase outputs, but CubeFactory installed motor cable colours, winding pairs, and board revision are not documented. Verify current/supply limits before connecting."
+        ],
+        [
+          "Printer Y stepper \u00b7 integrated Prime driver channel B",
+          "Smoothieboard V2 Prime \u00b7 driver B outputs \u00b7 J6.4 COIL_A1 \u2192 Printer Y stepper motor \u00b7 lead labels must be measured \u00b7 Y motor A1 measured lead (Prime J6.4 COIL_A1 to Y motor winding lead A1); Smoothieboard V2 Prime \u00b7 driver B outputs \u00b7 J6.3 COIL_A2 \u2192 Printer Y stepper motor \u00b7 lead labels must be measured \u00b7 Y motor A2 measured lead (Prime J6.3 COIL_A2 to Y motor winding lead A2); Smoothieboard V2 Prime \u00b7 driver B outputs \u00b7 J6.2 COIL_B1 \u2192 Printer Y stepper motor \u00b7 lead labels must be measured \u00b7 Y motor B1 measured lead (Prime J6.2 COIL_B1 to Y motor winding lead B1); Smoothieboard V2 Prime \u00b7 driver B outputs \u00b7 J6.1 COIL_B2 \u2192 Printer Y stepper motor \u00b7 lead labels must be measured \u00b7 Y motor B2 measured lead (Prime J6.1 COIL_B2 to Y motor winding lead B2)",
+          "GUESS",
+          "Four phase conductors are shown separately. The Prime PCB exposes these phase outputs, but CubeFactory installed motor cable colours, winding pairs, and board revision are not documented. Verify current/supply limits before connecting."
+        ],
+        [
+          "Printer Z stepper \u00b7 integrated Prime driver channel C",
+          "Smoothieboard V2 Prime \u00b7 driver C outputs \u00b7 J7.4 COIL_A1 \u2192 Printer Z stepper motor \u00b7 lead labels must be measured \u00b7 Z motor A1 measured lead (Prime J7.4 COIL_A1 to Z motor winding lead A1); Smoothieboard V2 Prime \u00b7 driver C outputs \u00b7 J7.3 COIL_A2 \u2192 Printer Z stepper motor \u00b7 lead labels must be measured \u00b7 Z motor A2 measured lead (Prime J7.3 COIL_A2 to Z motor winding lead A2); Smoothieboard V2 Prime \u00b7 driver C outputs \u00b7 J7.2 COIL_B1 \u2192 Printer Z stepper motor \u00b7 lead labels must be measured \u00b7 Z motor B1 measured lead (Prime J7.2 COIL_B1 to Z motor winding lead B1); Smoothieboard V2 Prime \u00b7 driver C outputs \u00b7 J7.1 COIL_B2 \u2192 Printer Z stepper motor \u00b7 lead labels must be measured \u00b7 Z motor B2 measured lead (Prime J7.1 COIL_B2 to Z motor winding lead B2)",
+          "GUESS",
+          "Four phase conductors are shown separately. The Prime PCB exposes these phase outputs, but CubeFactory installed motor cable colours, winding pairs, and board revision are not documented. Verify current/supply limits before connecting."
+        ],
+        [
+          "Printer E stepper \u00b7 integrated Prime driver channel D",
+          "Smoothieboard V2 Prime \u00b7 driver D outputs \u00b7 J8.4 COIL_A1 \u2192 Printer E stepper motor \u00b7 lead labels must be measured \u00b7 E motor A1 measured lead (Prime J8.4 COIL_A1 to E motor winding lead A1); Smoothieboard V2 Prime \u00b7 driver D outputs \u00b7 J8.3 COIL_A2 \u2192 Printer E stepper motor \u00b7 lead labels must be measured \u00b7 E motor A2 measured lead (Prime J8.3 COIL_A2 to E motor winding lead A2); Smoothieboard V2 Prime \u00b7 driver D outputs \u00b7 J8.2 COIL_B1 \u2192 Printer E stepper motor \u00b7 lead labels must be measured \u00b7 E motor B1 measured lead (Prime J8.2 COIL_B1 to E motor winding lead B1); Smoothieboard V2 Prime \u00b7 driver D outputs \u00b7 J8.1 COIL_B2 \u2192 Printer E stepper motor \u00b7 lead labels must be measured \u00b7 E motor B2 measured lead (Prime J8.1 COIL_B2 to E motor winding lead B2)",
+          "GUESS",
+          "Four phase conductors are shown separately. The Prime PCB exposes these phase outputs, but CubeFactory installed motor cable colours, winding pairs, and board revision are not documented. Verify current/supply limits before connecting."
+        ],
+        [
+          "Recycler \u00b7 configured PWM setpoint and independent run input",
+          "SmoothieBox V2 Prime P12 \u00b7 P1 J35 \u00b7 J35.6 \u00b7 TIM1_CH1 PWM \u2192 Maxon ESCON 70/10 \u00b7 J5 control terminals \u00b7 J5.1 \u00b7 DigIN1 (PWM command to configured ESCON DigIN1 set-value input); SmoothieBox V2 Prime P12 \u00b7 P1 J35 \u00b7 J35.10 \u00b7 GND \u2192 Maxon ESCON 70/10 \u00b7 J5 control terminals \u00b7 J5.5 \u00b7 signal GND (PWM signal reference); SmoothieBox V2 Prime P12 \u00b7 P1 J35 \u00b7 J35.7 \u00b7 TIM1_CH2 / TTL candidate \u2192 Maxon ESCON 70/10 \u00b7 J5 control terminals \u00b7 J5.2 \u00b7 DigIN2 (Separate run/stop request)",
+          "GUESS",
+          "Use the actual contact labels and per-wire qualification in the current main diagram. Any older Core/header reference in retained source context is not the selected controller endpoint."
+        ],
+        [
+          "Recycler \u00b7 retain motor power stage and feedback on ESCON",
+          "Existing recycler 24 V supply (nameplate/source reported) \u00b7 +24 V output \u2192 ESCON 70/10 power / motor / Hall connectors \u00b7 J1 + \u00b7 +VCC (10\u201370 VDC family input) (24 V DC feed to ESCON); Existing recycler 24 V supply (nameplate/source reported) \u00b7 0 V return \u2192 ESCON 70/10 power / motor / Hall connectors \u00b7 J1 \u2212 \u00b7 Power_GND (24 V return); ESCON 70/10 power / motor / Hall connectors \u00b7 J2.1 \u00b7 EC winding 1 \u2192 RS Pro BLDC shredder motor and Hall harness \u00b7 verified motor phase U lead (ESCON phase U to measured motor phase); ESCON 70/10 power / motor / Hall connectors \u00b7 J2.2 \u00b7 EC winding 2 \u2192 RS Pro BLDC shredder motor and Hall harness \u00b7 verified motor phase V lead (ESCON phase V to measured motor phase); ESCON 70/10 power / motor / Hall connectors \u00b7 J2.3 \u00b7 EC winding 3 \u2192 RS Pro BLDC shredder motor and Hall harness \u00b7 verified motor phase W lead (ESCON phase W to measured motor phase); ESCON 70/10 power / motor / Hall connectors \u00b7 J3.1 Hall 1 \u2192 RS Pro BLDC shredder motor and Hall harness \u00b7 Hall 1 lead (ESCON J3.1 Hall 1 to Hall harness); ESCON 70/10 power / motor / Hall connectors \u00b7 J3.2 Hall 2 \u2192 RS Pro BLDC shredder motor and Hall harness \u00b7 Hall 2 lead (ESCON J3.2 Hall 2 to Hall harness); ESCON 70/10 power / motor / Hall connectors \u00b7 J3.3 Hall 3 \u2192 RS Pro BLDC shredder motor and Hall harness \u00b7 Hall 3 lead (ESCON J3.3 Hall 3 to Hall harness); ESCON 70/10 power / motor / Hall connectors \u00b7 J3.4 +5 V Hall supply \u2192 RS Pro BLDC shredder motor and Hall harness \u00b7 Hall +5 V (ESCON J3.4 +5 V to Hall harness); ESCON 70/10 power / motor / Hall connectors \u00b7 J3.5 GND Hall return \u2192 RS Pro BLDC shredder motor and Hall harness \u00b7 Hall signal return (ESCON J3.5 GND to Hall harness); ESCON 70/10 power / motor / Hall connectors \u00b7 J2.4 \u00b7 motor cable shield \u2192 RS Pro BLDC shredder motor and Hall harness \u00b7 motor cable shield lead (J2.4 motor shield to verified motor cable screen)",
+          "GUESS, OPEN",
+          "Maxon J3 Hall schedule: 1 Hall1, 2 Hall2, 3 Hall3, 4 +5 V Hall supply (\u226430 mA), 5 GND. J3 motor/Hall wiring is source-specific but the CubeFactory harness is unreported; OPEN breaks prevent fabricated phase/color assignments. ESCON 70/10 current rating must be reconciled with project claim of 10 A normal / 40 A maximum before use."
+        ],
+        [
+          "Recycler heater and original controller \u00b7 do not splice yet",
+          "Retained recycler heater control \u00b7 no Prime heater channel assigned \u00b7 heater MOSFET output candidate \u2192 Controller shown in project text/photo \u00b7 exact rear terminals unknown \u00b7 controller heater demand / input \u00b7 terminal unknown (Controller command input); Controller shown in project text/photo \u00b7 exact rear terminals unknown \u00b7 heater switching output \u00b7 terminal unknown \u2192 24 V, 150 W sleeve \u00b7 nominal 6.25 A \u00b7 heater lead 1 (Rated heater supply switching); Controller shown in project text/photo \u00b7 exact rear terminals unknown \u00b7 sensor input \u00b7 model/terminal unknown \u2192 Existing temperature sensor \u00b7 type and pair unknown \u00b7 sensor lead 1 (unidentified) (Controller sensor input to measured sensor lead)",
+          "OPEN",
+          "Project text says Inkbird D1S-2R-24, but the visible photograph only shows INKBIRD/ITC front branding. Identify rear label, sensor, supply, output rating and the 24 V supply branch; then add exact contacts."
+        ],
+        [
+          "Prime selected \u00b7 separate logic and motor supplies",
+          "Regulated 5 V logic supply \u00b7 +5 V regulated \u2192 Prime P12 \u00b7 confirm exact revision \u00b7 J42.1 \u00b7 5V_PORTIN (Prime regulated logic supply); Regulated 5 V logic supply \u00b7 0 V logic return \u2192 Prime P12 \u00b7 confirm exact revision \u00b7 J42.2 \u00b7 GND (Prime logic supply return); Verified motor supply \u00b7 voltage/current TBD \u00b7 DC + \u00b7 before fuse \u2192 Motor branch fuse \u00b7 rating selected after measurement \u00b7 fuse input (Protected motor branch input); Motor branch fuse \u00b7 rating selected after measurement \u00b7 fuse output \u2192 Prime P12 \u00b7 confirm exact revision \u00b7 J9.1 \u00b7 VMOT (Prime VMOT power); Verified motor supply \u00b7 voltage/current TBD \u00b7 0 V motor return \u2192 Prime P12 \u00b7 confirm exact revision \u00b7 J9.2 \u00b7 GND (Prime motor supply return)",
+          "GUESS",
+          "This is the selected Prime P12 integrated-driver architecture. Use the current P12 PCB-derived contact labels; other board revisions require their own verified pinout and driver ratings. Use one verified power-entry arrangement; J10 parallels VMOT and is left unused here. Board ground is shared internally; route motor current directly to power distribution, not through logic wiring. Determine actual allowed voltage/current before choosing a supply; no machine-source adapter automatically qualifies."
+        ],
+        [
+          "Printer home inputs \u00b7 X, Y and Z switch pairs",
+          "Prime P12 \u00b7 X minimum/home candidate \u00b7 J24.3 \u00b7 X home input \u2192 X switch \u00b7 measured passive contact \u00b7 X measured contact lead A (X home signal); Prime P12 \u00b7 X minimum/home candidate \u00b7 J24.2 \u00b7 X home GND \u2192 X switch \u00b7 measured passive contact \u00b7 X measured return lead B (X home return); Prime P12 \u00b7 Y minimum/home candidate \u00b7 J26.3 \u00b7 Y home input \u2192 Y switch \u00b7 measured passive contact \u00b7 Y measured contact lead A (Y home signal); Prime P12 \u00b7 Y minimum/home candidate \u00b7 J26.2 \u00b7 Y home GND \u2192 Y switch \u00b7 measured passive contact \u00b7 Y measured return lead B (Y home return); Prime P12 \u00b7 Z minimum/home candidate \u00b7 J28.3 \u00b7 Z home input \u2192 Z switch \u00b7 measured passive contact \u00b7 Z measured contact lead A (Z home signal); Prime P12 \u00b7 Z minimum/home candidate \u00b7 J28.2 \u00b7 Z home GND \u2192 Z switch \u00b7 measured passive contact \u00b7 Z measured return lead B (Z home return)",
+          "GUESS",
+          "Prusa/Hephestos family reference does not establish the fitted CubeFactory harness. This proposal uses newly identified passive switch leads; confirm each NO/NC state and firmware axis assignment with power isolated. Pin1 supply selectors stay unused. Powered sensors need an electrically matched interface, not this passive-contact circuit. Optional max inputs J25/J27/J29 remain unconnected unless actual additional switches are fitted and mapped."
+        ],
+        [
+          "Prime P12 \u00b7 Hotend A \u00b7 complete external power and load circuit",
+          "Heater-matched DC supply \u00b7 rating measured \u00b7 DC + before branch fuse \u2192 Individual heater branch fuse \u00b7 rating TBD \u00b7 input from supply + (Heater branch fuse feed); Individual heater branch fuse \u00b7 rating TBD \u00b7 output to VFET input \u2192 Prime P12 \u00b7 2590 revision ONLY \u00b7 J12.1 \u00b7 VFET \u00b7 XT30 power entry (VFET power entry); Heater-matched DC supply \u00b7 rating measured \u00b7 0 V power return \u2192 Prime P12 \u00b7 2590 revision ONLY \u00b7 J12.2 \u00b7 GND_FET \u00b7 XT30 return (Heater power return); Prime P12 \u00b7 2590 revision ONLY \u00b7 J17.1 \u00b7 shared cutoff-switched VFET \u2192 Independent thermal cutoff \u00b7 DC/load rated \u00b7 series contact lead A (Positive heater feed); Independent thermal cutoff \u00b7 DC/load rated \u00b7 series contact lead B \u2192 Measured hotend heater \u00b7 never infer rating \u00b7 heater lead A (Thermally protected heater feed); Measured hotend heater \u00b7 never infer rating \u00b7 heater lead B \u2192 Prime P12 \u00b7 2590 revision ONLY \u00b7 J17.2 \u00b7 Hotend A switched return (Hotend A switched heater return)",
+          "GUESS",
+          "Board-side evidence: exact P12 schematic/PCB at commit7dc4f9a identifies J17 Hotend A, J18 Hotend B, J19 Fan1, J20 Fan2. J17.1 receives shared Q25 cutoff-controlled VFET; J17.2 is Q19 switched return. These are factory internal circuits, not user soldering instructions. PE0 / HOTEND_A_FET and PF14 / OUTPUTENABLE come from the exact P12 source; a general documentation PJ6 label conflicts and must not override this revision. Heater/sensor fitment and connector-safe current are unknown: measure, qualify firmware and prove thermal shutdown before connecting heat. No guaranteed 5A terminal rating is asserted."
+        ],
+        [
+          "Prime P12 \u00b7 individual fan outputs and spare Hotend B",
+          "Prime P12 \u00b7 powered by preceding J12 circuit \u00b7 J19.1 \u00b7 cutoff-switched VFET \u2192 Installed fan1 \u00b7 identify voltage/current and use \u00b7 measured positive lead (Fan1 positive feed); Installed fan1 \u00b7 identify voltage/current and use \u00b7 measured return lead \u2192 Prime P12 \u00b7 powered by preceding J12 circuit \u00b7 J19.2 \u00b7 Fan1 switched return (Fan1 switched return); Prime P12 \u00b7 powered by preceding J12 circuit \u00b7 J20.1 \u00b7 cutoff-switched VFET \u2192 Optional fan2 \u00b7 identify fitment and ratings \u00b7 measured positive lead (Fan2 positive feed); Optional fan2 \u00b7 identify fitment and ratings \u00b7 measured return lead \u2192 Prime P12 \u00b7 powered by preceding J12 circuit \u00b7 J20.2 \u00b7 Fan2 switched return (Fan2 switched return)",
+          "GUESS",
+          "J19/J20 pin1 share the same VFET output from factory Q25; pin2 returns switch through Q21/Q22. No second power supply is connected to the fan outputs. Leave both J18 contacts unconnected in this one-hotend option. Actual hotend heatsink cooling must be maintained; do not assume an original fan is VFET-voltage rated."
+        ],
+        [
+          "Printer hotend temperature \u00b7 feedback required before any heat",
+          "Fitted printer hotend sensor \u00b7 identify technology \u00b7 Identified sensor signal / matched converter output \u2192 Prime P12 \u00b7 temperature input 1 \u00b7 J21.1 \u00b7 sensor input (Hotend temperature feedback signal); Fitted printer hotend sensor \u00b7 identify technology \u00b7 Identified sensor return \u2192 Prime P12 \u00b7 temperature input 1 \u00b7 J21.2 \u00b7 GND (Separate temperature feedback return)",
+          "OPEN",
+          "BQ reference names temperature sensing, but fitted sensor type/lead pairs are not identified. Prime J21.1/.2 supports the board temperature input and return; establish NTC/PT100/thermocouple identity and configure a compatible sensor circuit and firmware. Heater power must remain disabled until feedback, fault detection and independent cutoff are proved. The recycler Inkbird heater remains an independent controller system."
+        ]
+      ],
+      "pins": [
+        "Current contacts below are copied from the selected wire-panel endpoint labels. They are proposed controller assignments, not verified installed harness continuity.",
+        "Prime P12 \u00b7 J35.6 \u00b7 TIM1_CH1 PWM",
+        "Prime P12 \u00b7 J35.7 \u00b7 TIM1_CH2 / TTL candidate",
+        "Prime P12 \u00b7 J35.10 \u00b7 GND",
+        "Prime P12 \u00b7 J42.1 \u00b7 5V_PORTIN",
+        "Prime P12 \u00b7 J42.2 \u00b7 GND",
+        "Prime P12 \u00b7 J9.1 \u00b7 VMOT",
+        "Prime P12 \u00b7 J9.2 \u00b7 GND",
+        "Prime P12 \u00b7 J10.1 \u00b7 VMOT parallel \u00b7 unused",
+        "Prime P12 \u00b7 J10.2 \u00b7 GND parallel \u00b7 unused",
+        "Prime P12 \u00b7 J12.1 \u00b7 VFET \u00b7 XT30 power entry",
+        "Prime P12 \u00b7 J12.2 \u00b7 GND_FET \u00b7 XT30 return",
+        "Prime P12 \u00b7 J17.1 \u00b7 shared cutoff-switched VFET",
+        "Prime P12 \u00b7 J17.2 \u00b7 Hotend A switched return",
+        "Prime P12 \u00b7 J11.1 \u00b7 auxiliary VFET \u00b7 unused",
+        "Prime P12 \u00b7 J11.2 \u00b7 auxiliary GND_FET \u00b7 unused",
+        "Prime P12 \u00b7 J19.1 \u00b7 cutoff-switched VFET",
+        "Prime P12 \u00b7 J19.2 \u00b7 Fan1 switched return",
+        "Prime P12 \u00b7 J20.1 \u00b7 cutoff-switched VFET",
+        "Prime P12 \u00b7 J20.2 \u00b7 Fan2 switched return",
+        "Prime P12 \u00b7 J18.1 \u00b7 Hotend B + \u00b7 unused",
+        "Prime P12 \u00b7 J18.2 \u00b7 Hotend B return \u00b7 unused",
+        "Prime P12 \u00b7 J21.1 \u00b7 sensor input",
+        "Prime P12 \u00b7 J21.2 \u00b7 GND",
+        "Conditional Hephestos hotend NTC: J21.1 is the Prime P12 TEMP.1 sensor input with source-board 4.7 k\u03a9 pull-up to 3.3 V; J21.2 is GND. The fitted two sensor leads have no established cable cavity number or colour."
+      ],
+      "sources": [
+        [
+          "CubeFactory2 printer README",
+          "https://github.com/CubeFactory2/cubefactory/blob/master/3d_printer/README.md"
+        ],
+        [
+          "CubeFactory2 powertrain notes",
+          "https://github.com/CubeFactory2/cubefactory/blob/master/recycler/Powertrain_Info.md"
+        ],
+        [
+          "BQ ZUM Mega 3D reference schematic Rev 1.2, 2015-08-26",
+          "https://github.com/bq/zum/blob/master/zum-mega3d/Zum%20Mega%203D.PDF"
+        ],
+        [
+          "Maxon ESCON 70/10 Hardware Reference",
+          "https://www.maxongroup.com/medias/sys_master/root/9350562709534/422969-ESCON-70-10-Hardware-Reference-En.pdf"
+        ],
+        [
+          "Smoothieboard V2 Prime official specifications",
+          "https://smoothieware.org/smoothieboard-v2-prime"
+        ],
+        [
+          "Exact Prime P12 MOSFET schematic at pinned revision",
+          "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/mosfets.kicad_sch"
+        ],
+        [
+          "bq Hephestos Marlin Configuration.h \u00b7 historical TEMP_SENSOR_0=99",
+          "https://raw.githubusercontent.com/bq/Marlin/master/Marlin/config/hephestos/Configuration.h"
+        ],
+        [
+          "bq Marlin thermistortables.h \u00b7 exact table 99 reference curve",
+          "https://raw.githubusercontent.com/bq/Marlin/master/Marlin/thermistortables.h"
+        ],
+        [
+          "Prime P12 pinned inputs.kicad_sch \u00b7 J21 pull-up, filter and LMV324 path",
+          "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/inputs.kicad_sch"
+        ]
+      ],
+      "wire_panels": [
+        {
+          "title": "Printer X stepper \u00b7 integrated Prime driver channel A",
+          "nodes": [
+            {
+              "id": "prime_x",
+              "title": "Smoothieboard V2 Prime \u00b7 driver A outputs",
+              "column": 0,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "p1",
+                  "label": "J5.1 COIL_B2",
+                  "side": "right"
+                },
+                {
+                  "id": "p2",
+                  "label": "J5.2 COIL_B1",
+                  "side": "right"
+                },
+                {
+                  "id": "p3",
+                  "label": "J5.3 COIL_A2",
+                  "side": "right"
+                },
+                {
+                  "id": "p4",
+                  "label": "J5.4 COIL_A1",
+                  "side": "right"
+                }
+              ]
+            },
+            {
+              "id": "motor_x",
+              "title": "Printer X stepper motor \u00b7 lead labels must be measured",
+              "column": 2,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "x_A1",
+                  "label": "X motor A1 measured lead",
+                  "side": "left"
+                },
+                {
+                  "id": "x_A2",
+                  "label": "X motor A2 measured lead",
+                  "side": "left"
+                },
+                {
+                  "id": "x_B1",
+                  "label": "X motor B1 measured lead",
+                  "side": "left"
+                },
+                {
+                  "id": "x_B2",
+                  "label": "X motor B2 measured lead",
+                  "side": "left"
+                }
+              ]
+            }
+          ],
+          "edges": [
+            {
+              "from": "prime_x.p4",
+              "to": "motor_x.x_A1",
+              "state": "guess",
+              "function": "Prime J5.4 COIL_A1 to X motor winding lead A1",
+              "check": "Confirm Prime driver current setting, motor phase current and PSU rating; identify winding pairs by continuity with power isolated. Axis/channel pairing is proposed.",
+              "direction": true,
+              "electrical_role": "power"
+            },
+            {
+              "from": "prime_x.p3",
+              "to": "motor_x.x_A2",
+              "state": "guess",
+              "function": "Prime J5.3 COIL_A2 to X motor winding lead A2",
+              "check": "Confirm Prime driver current setting, motor phase current and PSU rating; identify winding pairs by continuity with power isolated. Axis/channel pairing is proposed.",
+              "direction": true,
+              "electrical_role": "power"
+            },
+            {
+              "from": "prime_x.p2",
+              "to": "motor_x.x_B1",
+              "state": "guess",
+              "function": "Prime J5.2 COIL_B1 to X motor winding lead B1",
+              "check": "Confirm Prime driver current setting, motor phase current and PSU rating; identify winding pairs by continuity with power isolated. Axis/channel pairing is proposed.",
+              "direction": true,
+              "electrical_role": "power"
+            },
+            {
+              "from": "prime_x.p1",
+              "to": "motor_x.x_B2",
+              "state": "guess",
+              "function": "Prime J5.1 COIL_B2 to X motor winding lead B2",
+              "check": "Confirm Prime driver current setting, motor phase current and PSU rating; identify winding pairs by continuity with power isolated. Axis/channel pairing is proposed.",
+              "direction": true,
+              "electrical_role": "power"
+            }
+          ],
+          "note": "Four phase conductors are shown separately. The Prime PCB exposes these phase outputs, but CubeFactory installed motor cable colours, winding pairs, and board revision are not documented. Verify current/supply limits before connecting.",
+          "original_panel_index": 1
+        },
+        {
+          "title": "Printer Y stepper \u00b7 integrated Prime driver channel B",
+          "nodes": [
+            {
+              "id": "prime_y",
+              "title": "Smoothieboard V2 Prime \u00b7 driver B outputs",
+              "column": 0,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "p1",
+                  "label": "J6.1 COIL_B2",
+                  "side": "right"
+                },
+                {
+                  "id": "p2",
+                  "label": "J6.2 COIL_B1",
+                  "side": "right"
+                },
+                {
+                  "id": "p3",
+                  "label": "J6.3 COIL_A2",
+                  "side": "right"
+                },
+                {
+                  "id": "p4",
+                  "label": "J6.4 COIL_A1",
+                  "side": "right"
+                }
+              ]
+            },
+            {
+              "id": "motor_y",
+              "title": "Printer Y stepper motor \u00b7 lead labels must be measured",
+              "column": 2,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "y_A1",
+                  "label": "Y motor A1 measured lead",
+                  "side": "left"
+                },
+                {
+                  "id": "y_A2",
+                  "label": "Y motor A2 measured lead",
+                  "side": "left"
+                },
+                {
+                  "id": "y_B1",
+                  "label": "Y motor B1 measured lead",
+                  "side": "left"
+                },
+                {
+                  "id": "y_B2",
+                  "label": "Y motor B2 measured lead",
+                  "side": "left"
+                }
+              ]
+            }
+          ],
+          "edges": [
+            {
+              "from": "prime_y.p4",
+              "to": "motor_y.y_A1",
+              "state": "guess",
+              "function": "Prime J6.4 COIL_A1 to Y motor winding lead A1",
+              "check": "Confirm Prime driver current setting, motor phase current and PSU rating; identify winding pairs by continuity with power isolated. Axis/channel pairing is proposed.",
+              "direction": true,
+              "electrical_role": "power"
+            },
+            {
+              "from": "prime_y.p3",
+              "to": "motor_y.y_A2",
+              "state": "guess",
+              "function": "Prime J6.3 COIL_A2 to Y motor winding lead A2",
+              "check": "Confirm Prime driver current setting, motor phase current and PSU rating; identify winding pairs by continuity with power isolated. Axis/channel pairing is proposed.",
+              "direction": true,
+              "electrical_role": "power"
+            },
+            {
+              "from": "prime_y.p2",
+              "to": "motor_y.y_B1",
+              "state": "guess",
+              "function": "Prime J6.2 COIL_B1 to Y motor winding lead B1",
+              "check": "Confirm Prime driver current setting, motor phase current and PSU rating; identify winding pairs by continuity with power isolated. Axis/channel pairing is proposed.",
+              "direction": true,
+              "electrical_role": "power"
+            },
+            {
+              "from": "prime_y.p1",
+              "to": "motor_y.y_B2",
+              "state": "guess",
+              "function": "Prime J6.1 COIL_B2 to Y motor winding lead B2",
+              "check": "Confirm Prime driver current setting, motor phase current and PSU rating; identify winding pairs by continuity with power isolated. Axis/channel pairing is proposed.",
+              "direction": true,
+              "electrical_role": "power"
+            }
+          ],
+          "note": "Four phase conductors are shown separately. The Prime PCB exposes these phase outputs, but CubeFactory installed motor cable colours, winding pairs, and board revision are not documented. Verify current/supply limits before connecting.",
+          "original_panel_index": 2
+        },
+        {
+          "title": "Printer Z stepper \u00b7 integrated Prime driver channel C",
+          "nodes": [
+            {
+              "id": "prime_z",
+              "title": "Smoothieboard V2 Prime \u00b7 driver C outputs",
+              "column": 0,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "p1",
+                  "label": "J7.1 COIL_B2",
+                  "side": "right"
+                },
+                {
+                  "id": "p2",
+                  "label": "J7.2 COIL_B1",
+                  "side": "right"
+                },
+                {
+                  "id": "p3",
+                  "label": "J7.3 COIL_A2",
+                  "side": "right"
+                },
+                {
+                  "id": "p4",
+                  "label": "J7.4 COIL_A1",
+                  "side": "right"
+                }
+              ]
+            },
+            {
+              "id": "motor_z",
+              "title": "Printer Z stepper motor \u00b7 lead labels must be measured",
+              "column": 2,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "z_A1",
+                  "label": "Z motor A1 measured lead",
+                  "side": "left"
+                },
+                {
+                  "id": "z_A2",
+                  "label": "Z motor A2 measured lead",
+                  "side": "left"
+                },
+                {
+                  "id": "z_B1",
+                  "label": "Z motor B1 measured lead",
+                  "side": "left"
+                },
+                {
+                  "id": "z_B2",
+                  "label": "Z motor B2 measured lead",
+                  "side": "left"
+                }
+              ]
+            }
+          ],
+          "edges": [
+            {
+              "from": "prime_z.p4",
+              "to": "motor_z.z_A1",
+              "state": "guess",
+              "function": "Prime J7.4 COIL_A1 to Z motor winding lead A1",
+              "check": "Confirm Prime driver current setting, motor phase current and PSU rating; identify winding pairs by continuity with power isolated. Axis/channel pairing is proposed.",
+              "direction": true,
+              "electrical_role": "power"
+            },
+            {
+              "from": "prime_z.p3",
+              "to": "motor_z.z_A2",
+              "state": "guess",
+              "function": "Prime J7.3 COIL_A2 to Z motor winding lead A2",
+              "check": "Confirm Prime driver current setting, motor phase current and PSU rating; identify winding pairs by continuity with power isolated. Axis/channel pairing is proposed.",
+              "direction": true,
+              "electrical_role": "power"
+            },
+            {
+              "from": "prime_z.p2",
+              "to": "motor_z.z_B1",
+              "state": "guess",
+              "function": "Prime J7.2 COIL_B1 to Z motor winding lead B1",
+              "check": "Confirm Prime driver current setting, motor phase current and PSU rating; identify winding pairs by continuity with power isolated. Axis/channel pairing is proposed.",
+              "direction": true,
+              "electrical_role": "power"
+            },
+            {
+              "from": "prime_z.p1",
+              "to": "motor_z.z_B2",
+              "state": "guess",
+              "function": "Prime J7.1 COIL_B2 to Z motor winding lead B2",
+              "check": "Confirm Prime driver current setting, motor phase current and PSU rating; identify winding pairs by continuity with power isolated. Axis/channel pairing is proposed.",
+              "direction": true,
+              "electrical_role": "power"
+            }
+          ],
+          "note": "Four phase conductors are shown separately. The Prime PCB exposes these phase outputs, but CubeFactory installed motor cable colours, winding pairs, and board revision are not documented. Verify current/supply limits before connecting.",
+          "original_panel_index": 3
+        },
+        {
+          "title": "Printer E stepper \u00b7 integrated Prime driver channel D",
+          "nodes": [
+            {
+              "id": "prime_e",
+              "title": "Smoothieboard V2 Prime \u00b7 driver D outputs",
+              "column": 0,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "p1",
+                  "label": "J8.1 COIL_B2",
+                  "side": "right"
+                },
+                {
+                  "id": "p2",
+                  "label": "J8.2 COIL_B1",
+                  "side": "right"
+                },
+                {
+                  "id": "p3",
+                  "label": "J8.3 COIL_A2",
+                  "side": "right"
+                },
+                {
+                  "id": "p4",
+                  "label": "J8.4 COIL_A1",
+                  "side": "right"
+                }
+              ]
+            },
+            {
+              "id": "motor_e",
+              "title": "Printer E stepper motor \u00b7 lead labels must be measured",
+              "column": 2,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "e_A1",
+                  "label": "E motor A1 measured lead",
+                  "side": "left"
+                },
+                {
+                  "id": "e_A2",
+                  "label": "E motor A2 measured lead",
+                  "side": "left"
+                },
+                {
+                  "id": "e_B1",
+                  "label": "E motor B1 measured lead",
+                  "side": "left"
+                },
+                {
+                  "id": "e_B2",
+                  "label": "E motor B2 measured lead",
+                  "side": "left"
+                }
+              ]
+            }
+          ],
+          "edges": [
+            {
+              "from": "prime_e.p4",
+              "to": "motor_e.e_A1",
+              "state": "guess",
+              "function": "Prime J8.4 COIL_A1 to E motor winding lead A1",
+              "check": "Confirm Prime driver current setting, motor phase current and PSU rating; identify winding pairs by continuity with power isolated. Axis/channel pairing is proposed.",
+              "direction": true,
+              "electrical_role": "power"
+            },
+            {
+              "from": "prime_e.p3",
+              "to": "motor_e.e_A2",
+              "state": "guess",
+              "function": "Prime J8.3 COIL_A2 to E motor winding lead A2",
+              "check": "Confirm Prime driver current setting, motor phase current and PSU rating; identify winding pairs by continuity with power isolated. Axis/channel pairing is proposed.",
+              "direction": true,
+              "electrical_role": "power"
+            },
+            {
+              "from": "prime_e.p2",
+              "to": "motor_e.e_B1",
+              "state": "guess",
+              "function": "Prime J8.2 COIL_B1 to E motor winding lead B1",
+              "check": "Confirm Prime driver current setting, motor phase current and PSU rating; identify winding pairs by continuity with power isolated. Axis/channel pairing is proposed.",
+              "direction": true,
+              "electrical_role": "power"
+            },
+            {
+              "from": "prime_e.p1",
+              "to": "motor_e.e_B2",
+              "state": "guess",
+              "function": "Prime J8.1 COIL_B2 to E motor winding lead B2",
+              "check": "Confirm Prime driver current setting, motor phase current and PSU rating; identify winding pairs by continuity with power isolated. Axis/channel pairing is proposed.",
+              "direction": true,
+              "electrical_role": "power"
+            }
+          ],
+          "note": "Four phase conductors are shown separately. The Prime PCB exposes these phase outputs, but CubeFactory installed motor cable colours, winding pairs, and board revision are not documented. Verify current/supply limits before connecting.",
+          "original_panel_index": 4
+        },
+        {
+          "title": "Recycler \u00b7 configured PWM setpoint and independent run input",
+          "nodes": [
+            {
+              "id": "core_pwm",
+              "title": "Smoothieboard V2 Prime P12 \u00b7 J35",
+              "column": 0,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "pwm",
+                  "label": "J35.6 \u00b7 TIM1_CH1 PWM",
+                  "side": "right"
+                },
+                {
+                  "id": "run",
+                  "label": "J35.7 \u00b7 TIM1_CH2 / TTL candidate",
+                  "side": "right"
+                },
+                {
+                  "id": "gnd",
+                  "label": "J35.10 \u00b7 GND",
+                  "side": "right"
+                }
+              ]
+            },
+            {
+              "id": "escon_j5",
+              "title": "Maxon ESCON 70/10 \u00b7 J5 control terminals",
+              "column": 2,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "din1",
+                  "label": "J5.1 \u00b7 DigIN1",
+                  "side": "left"
+                },
+                {
+                  "id": "din2",
+                  "label": "J5.2 \u00b7 DigIN2",
+                  "side": "left"
+                },
+                {
+                  "id": "gnd",
+                  "label": "J5.5 \u00b7 signal GND",
+                  "side": "left"
+                },
+                {
+                  "id": "aux",
+                  "label": "J5.6 \u00b7 +5 V aux \u226410 mA",
+                  "side": "left"
+                }
+              ]
+            }
+          ],
+          "edges": [
+            {
+              "from": "core_pwm.pwm",
+              "to": "escon_j5.din1",
+              "state": "guess",
+              "function": "PWM command to configured ESCON DigIN1 set-value input",
+              "check": "ESCON manual supports 10 Hz\u20135 kHz, 10\u201390% PWM and logic high >2.4 V typical. Verify set-value mode, frequency, scaling, polarity and failsafe against exact controller configuration.",
+              "direction": true
+            },
+            {
+              "from": "core_pwm.gnd",
+              "to": "escon_j5.gnd",
+              "state": "guess",
+              "function": "PWM signal reference",
+              "check": "The ESCON names J5.5 signal GND; Core-to-ESCON common is a proposed non-isolated reference. Verify grounds and noise before connection.",
+              "direction": true
+            },
+            {
+              "from": "core_pwm.run",
+              "to": "escon_j5.din2",
+              "state": "guess",
+              "function": "Separate run/stop request",
+              "check": "Configure DigIN2 function and active polarity; deassertion is not a substitute for the physical E-stop.",
+              "direction": true,
+              "electrical_role": "control"
+            }
+          ],
+          "note": "This is a signal proposal only. Maxon J5.1 accepts configurable digital/PWM input; J5.5 is signal return. Never use J5.6 auxiliary +5 V to power the interface or feed a Prime GPIO. ESCON remains between 24 V supply and recycler BLDC motor.",
+          "original_panel_index": 5
+        },
+        {
+          "title": "Recycler \u00b7 retain motor power stage and feedback on ESCON",
+          "nodes": [
+            {
+              "id": "supply24",
+              "title": "Existing recycler 24 V supply (nameplate/source reported)",
+              "column": 0,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "plus",
+                  "label": "+24 V output",
+                  "side": "right"
+                },
+                {
+                  "id": "minus",
+                  "label": "0 V return",
+                  "side": "right"
+                }
+              ]
+            },
+            {
+              "id": "escon_power",
+              "title": "ESCON 70/10 power / motor / Hall connectors",
+              "column": 1,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "dcplus",
+                  "label": "J1 + \u00b7 +VCC (10\u201370 VDC family input)",
+                  "side": "left"
+                },
+                {
+                  "id": "dcminus",
+                  "label": "J1 \u2212 \u00b7 Power_GND",
+                  "side": "left"
+                },
+                {
+                  "id": "u",
+                  "label": "J2.1 \u00b7 EC winding 1",
+                  "side": "right"
+                },
+                {
+                  "id": "v",
+                  "label": "J2.2 \u00b7 EC winding 2",
+                  "side": "right"
+                },
+                {
+                  "id": "w",
+                  "label": "J2.3 \u00b7 EC winding 3",
+                  "side": "right"
+                },
+                {
+                  "id": "h1",
+                  "label": "J3.1 Hall 1",
+                  "side": "right"
+                },
+                {
+                  "id": "h2",
+                  "label": "J3.2 Hall 2",
+                  "side": "right"
+                },
+                {
+                  "id": "h3",
+                  "label": "J3.3 Hall 3",
+                  "side": "right"
+                },
+                {
+                  "id": "h5",
+                  "label": "J3.4 +5 V Hall supply",
+                  "side": "right"
+                },
+                {
+                  "id": "hret",
+                  "label": "J3.5 GND Hall return",
+                  "side": "right"
+                },
+                {
+                  "id": "shield",
+                  "label": "J2.4 \u00b7 motor cable shield",
+                  "side": "right"
+                }
+              ]
+            },
+            {
+              "id": "load",
+              "title": "RS Pro BLDC shredder motor and Hall harness",
+              "column": 2,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "u",
+                  "label": "verified motor phase U lead",
+                  "side": "left"
+                },
+                {
+                  "id": "v",
+                  "label": "verified motor phase V lead",
+                  "side": "left"
+                },
+                {
+                  "id": "w",
+                  "label": "verified motor phase W lead",
+                  "side": "left"
+                },
+                {
+                  "id": "h1",
+                  "label": "Hall 1 lead",
+                  "side": "left"
+                },
+                {
+                  "id": "h2",
+                  "label": "Hall 2 lead",
+                  "side": "left"
+                },
+                {
+                  "id": "h3",
+                  "label": "Hall 3 lead",
+                  "side": "left"
+                },
+                {
+                  "id": "h5",
+                  "label": "Hall +5 V",
+                  "side": "left"
+                },
+                {
+                  "id": "hret",
+                  "label": "Hall signal return",
+                  "side": "left"
+                },
+                {
+                  "id": "shield",
+                  "label": "motor cable shield lead",
+                  "side": "left"
+                }
+              ]
+            }
+          ],
+          "edges": [
+            {
+              "from": "supply24.plus",
+              "to": "escon_power.dcplus",
+              "state": "guess",
+              "function": "24 V DC feed to ESCON",
+              "check": "Source names 24 V but fitted ESCON power terminal identifiers/current sizing and exact motor load must be checked.",
+              "direction": true
+            },
+            {
+              "from": "supply24.minus",
+              "to": "escon_power.dcminus",
+              "state": "guess",
+              "function": "24 V return",
+              "check": "Confirm polarity and current rating; source does not give installed supply contact labels.",
+              "direction": false
+            },
+            {
+              "from": "escon_power.u",
+              "to": "load.u",
+              "state": "open",
+              "function": "ESCON phase U to measured motor phase",
+              "check": "Exact motor phase pin/color mapping is not published; trace by motor/drive matching documentation before wiring.",
+              "direction": true,
+              "electrical_role": "power"
+            },
+            {
+              "from": "escon_power.v",
+              "to": "load.v",
+              "state": "open",
+              "function": "ESCON phase V to measured motor phase",
+              "check": "Exact motor phase pin/color mapping is not published; trace by motor/drive matching documentation before wiring.",
+              "direction": true,
+              "electrical_role": "power"
+            },
+            {
+              "from": "escon_power.w",
+              "to": "load.w",
+              "state": "open",
+              "function": "ESCON phase W to measured motor phase",
+              "check": "Exact motor phase pin/color mapping is not published; trace by motor/drive matching documentation before wiring.",
+              "direction": true,
+              "electrical_role": "power"
+            },
+            {
+              "from": "escon_power.h1",
+              "to": "load.h1",
+              "state": "open",
+              "function": "ESCON J3.1 Hall 1 to Hall harness",
+              "check": "Motor/Hall cable contacts and Hall phase order are not documented; verify exact motor datasheet and continuity.",
+              "direction": true
+            },
+            {
+              "from": "escon_power.h2",
+              "to": "load.h2",
+              "state": "open",
+              "function": "ESCON J3.2 Hall 2 to Hall harness",
+              "check": "Motor/Hall cable contacts and Hall phase order are not documented; verify exact motor datasheet and continuity.",
+              "direction": true
+            },
+            {
+              "from": "escon_power.h3",
+              "to": "load.h3",
+              "state": "open",
+              "function": "ESCON J3.3 Hall 3 to Hall harness",
+              "check": "Motor/Hall cable contacts and Hall phase order are not documented; verify exact motor datasheet and continuity.",
+              "direction": true
+            },
+            {
+              "from": "escon_power.h5",
+              "to": "load.h5",
+              "state": "open",
+              "function": "ESCON J3.4 +5 V to Hall harness",
+              "check": "Motor/Hall cable contacts and Hall phase order are not documented; verify exact motor datasheet and continuity.",
+              "direction": true
+            },
+            {
+              "from": "escon_power.hret",
+              "to": "load.hret",
+              "state": "open",
+              "function": "ESCON J3.5 GND to Hall harness",
+              "check": "Motor/Hall cable contacts and Hall phase order are not documented; verify exact motor datasheet and continuity.",
+              "direction": true
+            },
+            {
+              "from": "escon_power.shield",
+              "to": "load.shield",
+              "state": "open",
+              "function": "J2.4 motor shield to verified motor cable screen",
+              "check": "Check Maxon grounding/shield termination instructions and installed cable; do not infer shield-to-PE bond.",
+              "direction": true
+            }
+          ],
+          "note": "Maxon J3 Hall schedule: 1 Hall1, 2 Hall2, 3 Hall3, 4 +5 V Hall supply (\u226430 mA), 5 GND. J3 motor/Hall wiring is source-specific but the CubeFactory harness is unreported; OPEN breaks prevent fabricated phase/color assignments. ESCON 70/10 current rating must be reconciled with project claim of 10 A normal / 40 A maximum before use.",
+          "original_panel_index": 6
+        },
+        {
+          "title": "Recycler heater and original controller \u00b7 do not splice yet",
+          "nodes": [
+            {
+              "id": "heater_source",
+              "title": "Retained recycler heater control \u00b7 no Prime heater channel assigned",
+              "column": 0,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "out",
+                  "label": "heater MOSFET output candidate",
+                  "side": "right"
+                },
+                {
+                  "id": "gnd",
+                  "label": "board ground",
+                  "side": "right"
+                }
+              ]
+            },
+            {
+              "id": "heater_ctrl",
+              "title": "Controller shown in project text/photo \u00b7 exact rear terminals unknown",
+              "column": 1,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "in",
+                  "label": "controller heater demand / input \u00b7 terminal unknown",
+                  "side": "left"
+                },
+                {
+                  "id": "sensor",
+                  "label": "sensor input \u00b7 model/terminal unknown",
+                  "side": "right"
+                },
+                {
+                  "id": "out",
+                  "label": "heater switching output \u00b7 terminal unknown",
+                  "side": "right"
+                }
+              ]
+            },
+            {
+              "id": "heater",
+              "title": "24 V, 150 W sleeve \u00b7 nominal 6.25 A",
+              "column": 2,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "a",
+                  "label": "heater lead 1",
+                  "side": "left"
+                },
+                {
+                  "id": "b",
+                  "label": "heater lead 2",
+                  "side": "left"
+                }
+              ]
+            },
+            {
+              "id": "sensor_unknown",
+              "title": "Existing temperature sensor \u00b7 type and pair unknown",
+              "column": 2,
+              "offset": 220,
+              "contacts": [
+                {
+                  "id": "s1",
+                  "label": "sensor lead 1 (unidentified)",
+                  "side": "left"
+                },
+                {
+                  "id": "s2",
+                  "label": "sensor lead 2 (unidentified)",
+                  "side": "left"
+                }
+              ]
+            }
+          ],
+          "edges": [
+            {
+              "from": "heater_source.out",
+              "to": "heater_ctrl.in",
+              "state": "open",
+              "function": "Controller command input",
+              "check": "Controller exact model/rear terminal/rating unresolved; do not connect GPIO or heater load until identified.",
+              "direction": true
+            },
+            {
+              "from": "heater_ctrl.out",
+              "to": "heater.a",
+              "state": "open",
+              "function": "Rated heater supply switching",
+              "check": "Controller output and harness unknown; identify model, output rating and sensor type. Do not switch 6.25 A nominal from unverified board stage.",
+              "direction": true
+            },
+            {
+              "from": "heater_ctrl.sensor",
+              "to": "sensor_unknown.s1",
+              "state": "open",
+              "function": "Controller sensor input to measured sensor lead",
+              "check": "Thermistor/RTD type, polarity/curve and terminal mapping are unknown; identify before wiring.",
+              "direction": true
+            }
+          ],
+          "note": "Project text says Inkbird D1S-2R-24, but the visible photograph only shows INKBIRD/ITC front branding. Identify rear label, sensor, supply, output rating and the 24 V supply branch; then add exact contacts.",
+          "original_panel_index": 7
+        },
+        {
+          "title": "Prime selected \u00b7 separate logic and motor supplies",
+          "nodes": [
+            {
+              "id": "logic",
+              "title": "Regulated 5 V logic supply",
+              "column": 0,
+              "contacts": [
+                {
+                  "id": "v",
+                  "label": "+5 V regulated",
+                  "side": "right"
+                },
+                {
+                  "id": "g",
+                  "label": "0 V logic return",
+                  "side": "right"
+                }
+              ]
+            },
+            {
+              "id": "motor",
+              "title": "Verified motor supply \u00b7 voltage/current TBD",
+              "column": 0,
+              "contacts": [
+                {
+                  "id": "v",
+                  "label": "DC + \u00b7 before fuse",
+                  "side": "right"
+                },
+                {
+                  "id": "g",
+                  "label": "0 V motor return",
+                  "side": "right"
+                }
+              ]
+            },
+            {
+              "id": "fuse",
+              "title": "Motor branch fuse \u00b7 rating selected after measurement",
+              "column": 1,
+              "contacts": [
+                {
+                  "id": "in",
+                  "label": "fuse input",
+                  "side": "left"
+                },
+                {
+                  "id": "out",
+                  "label": "fuse output",
+                  "side": "left"
+                }
+              ]
+            },
+            {
+              "id": "prime",
+              "title": "Prime P12 \u00b7 confirm exact revision",
+              "column": 2,
+              "contacts": [
+                {
+                  "id": "v5",
+                  "label": "J42.1 \u00b7 5V_PORTIN",
+                  "side": "left"
+                },
+                {
+                  "id": "lg",
+                  "label": "J42.2 \u00b7 GND",
+                  "side": "left"
+                },
+                {
+                  "id": "vm",
+                  "label": "J9.1 \u00b7 VMOT",
+                  "side": "left"
+                },
+                {
+                  "id": "mg",
+                  "label": "J9.2 \u00b7 GND",
+                  "side": "left"
+                },
+                {
+                  "id": "aux1",
+                  "label": "J10.1 \u00b7 VMOT parallel \u00b7 unused",
+                  "side": "left"
+                },
+                {
+                  "id": "aux2",
+                  "label": "J10.2 \u00b7 GND parallel \u00b7 unused",
+                  "side": "left"
+                }
+              ]
+            }
+          ],
+          "edges": [
+            {
+              "from": "logic.v",
+              "to": "prime.v5",
+              "function": "Prime regulated logic supply",
+              "state": "guess",
+              "check": "Prime alternative only. Confirm fitted P11/P12 revision, input-voltage/current limits, supply sequencing and fuse/conductor ratings. Never connect both Core external drivers and Prime winding outputs to the same motor."
+            },
+            {
+              "from": "logic.g",
+              "to": "prime.lg",
+              "function": "Prime logic supply return",
+              "state": "guess",
+              "check": "Prime alternative only. Confirm fitted P11/P12 revision, input-voltage/current limits, supply sequencing and fuse/conductor ratings. Never connect both Core external drivers and Prime winding outputs to the same motor."
+            },
+            {
+              "from": "motor.v",
+              "to": "fuse.in",
+              "function": "Protected motor branch input",
+              "state": "guess",
+              "check": "Prime alternative only. Confirm fitted P11/P12 revision, input-voltage/current limits, supply sequencing and fuse/conductor ratings. Never connect both Core external drivers and Prime winding outputs to the same motor."
+            },
+            {
+              "from": "fuse.out",
+              "to": "prime.vm",
+              "function": "Prime VMOT power",
+              "state": "guess",
+              "check": "Prime alternative only. Confirm fitted P11/P12 revision, input-voltage/current limits, supply sequencing and fuse/conductor ratings. Never connect both Core external drivers and Prime winding outputs to the same motor."
+            },
+            {
+              "from": "motor.g",
+              "to": "prime.mg",
+              "function": "Prime motor supply return",
+              "state": "guess",
+              "check": "Prime alternative only. Confirm fitted P11/P12 revision, input-voltage/current limits, supply sequencing and fuse/conductor ratings. Never connect both Core external drivers and Prime winding outputs to the same motor."
+            }
+          ],
+          "note": "This is the selected Prime P12 integrated-driver architecture. Use the current P12 PCB-derived contact labels; other board revisions require their own verified pinout and driver ratings. Use one verified power-entry arrangement; J10 parallels VMOT and is left unused here. Board ground is shared internally; route motor current directly to power distribution, not through logic wiring. Determine actual allowed voltage/current before choosing a supply; no machine-source adapter automatically qualifies.",
+          "original_panel_index": 8
+        },
+        {
+          "title": "Printer home inputs \u00b7 X, Y and Z switch pairs",
+          "nodes": [
+            {
+              "id": "Xboard",
+              "title": "Prime P12 \u00b7 X minimum/home candidate",
+              "column": 0,
+              "contacts": [
+                {
+                  "id": "s",
+                  "label": "J24.1 \u00b7 selector supply \u00b7 NC",
+                  "side": "right"
+                },
+                {
+                  "id": "g",
+                  "label": "J24.2 \u00b7 X home GND",
+                  "side": "right"
+                },
+                {
+                  "id": "i",
+                  "label": "J24.3 \u00b7 X home input",
+                  "side": "right"
+                }
+              ]
+            },
+            {
+              "id": "Xswitch",
+              "title": "X switch \u00b7 measured passive contact",
+              "column": 2,
+              "contacts": [
+                {
+                  "id": "a",
+                  "label": "X measured contact lead A",
+                  "side": "left"
+                },
+                {
+                  "id": "b",
+                  "label": "X measured return lead B",
+                  "side": "left"
+                }
+              ]
+            },
+            {
+              "id": "Yboard",
+              "title": "Prime P12 \u00b7 Y minimum/home candidate",
+              "column": 0,
+              "contacts": [
+                {
+                  "id": "s",
+                  "label": "J26.1 \u00b7 selector supply \u00b7 NC",
+                  "side": "right"
+                },
+                {
+                  "id": "g",
+                  "label": "J26.2 \u00b7 Y home GND",
+                  "side": "right"
+                },
+                {
+                  "id": "i",
+                  "label": "J26.3 \u00b7 Y home input",
+                  "side": "right"
+                }
+              ]
+            },
+            {
+              "id": "Yswitch",
+              "title": "Y switch \u00b7 measured passive contact",
+              "column": 2,
+              "contacts": [
+                {
+                  "id": "a",
+                  "label": "Y measured contact lead A",
+                  "side": "left"
+                },
+                {
+                  "id": "b",
+                  "label": "Y measured return lead B",
+                  "side": "left"
+                }
+              ]
+            },
+            {
+              "id": "Zboard",
+              "title": "Prime P12 \u00b7 Z minimum/home candidate",
+              "column": 0,
+              "contacts": [
+                {
+                  "id": "s",
+                  "label": "J28.1 \u00b7 selector supply \u00b7 NC",
+                  "side": "right"
+                },
+                {
+                  "id": "g",
+                  "label": "J28.2 \u00b7 Z home GND",
+                  "side": "right"
+                },
+                {
+                  "id": "i",
+                  "label": "J28.3 \u00b7 Z home input",
+                  "side": "right"
+                }
+              ]
+            },
+            {
+              "id": "Zswitch",
+              "title": "Z switch \u00b7 measured passive contact",
+              "column": 2,
+              "contacts": [
+                {
+                  "id": "a",
+                  "label": "Z measured contact lead A",
+                  "side": "left"
+                },
+                {
+                  "id": "b",
+                  "label": "Z measured return lead B",
+                  "side": "left"
+                }
+              ]
+            }
+          ],
+          "edges": [
+            {
+              "from": "Xboard.i",
+              "to": "Xswitch.a",
+              "function": "X home signal",
+              "state": "guess",
+              "check": "Trace actual switch pair, prove passive dry contact and NO/NC operation; verify input pull-up and firmware home direction."
+            },
+            {
+              "from": "Xboard.g",
+              "to": "Xswitch.b",
+              "function": "X home return",
+              "state": "guess",
+              "check": "Trace actual switch pair, prove passive dry contact and NO/NC operation; verify input pull-up and firmware home direction."
+            },
+            {
+              "from": "Yboard.i",
+              "to": "Yswitch.a",
+              "function": "Y home signal",
+              "state": "guess",
+              "check": "Trace actual switch pair, prove passive dry contact and NO/NC operation; verify input pull-up and firmware home direction."
+            },
+            {
+              "from": "Yboard.g",
+              "to": "Yswitch.b",
+              "function": "Y home return",
+              "state": "guess",
+              "check": "Trace actual switch pair, prove passive dry contact and NO/NC operation; verify input pull-up and firmware home direction."
+            },
+            {
+              "from": "Zboard.i",
+              "to": "Zswitch.a",
+              "function": "Z home signal",
+              "state": "guess",
+              "check": "Trace actual switch pair, prove passive dry contact and NO/NC operation; verify input pull-up and firmware home direction."
+            },
+            {
+              "from": "Zboard.g",
+              "to": "Zswitch.b",
+              "function": "Z home return",
+              "state": "guess",
+              "check": "Trace actual switch pair, prove passive dry contact and NO/NC operation; verify input pull-up and firmware home direction."
+            }
+          ],
+          "note": "Prusa/Hephestos family reference does not establish the fitted CubeFactory harness. This proposal uses newly identified passive switch leads; confirm each NO/NC state and firmware axis assignment with power isolated. Pin1 supply selectors stay unused. Powered sensors need an electrically matched interface, not this passive-contact circuit. Optional max inputs J25/J27/J29 remain unconnected unless actual additional switches are fitted and mapped.",
+          "original_panel_index": 9
+        },
+        {
+          "title": "Prime P12 \u00b7 Hotend A \u00b7 complete external power and load circuit",
+          "nodes": [
+            {
+              "id": "supply",
+              "title": "Heater-matched DC supply \u00b7 rating measured",
+              "column": 0,
+              "contacts": [
+                {
+                  "id": "v",
+                  "label": "DC + before branch fuse",
+                  "side": "right"
+                },
+                {
+                  "id": "g",
+                  "label": "0 V power return",
+                  "side": "right"
+                }
+              ]
+            },
+            {
+              "id": "fuse",
+              "title": "Individual heater branch fuse \u00b7 rating TBD",
+              "column": 0,
+              "contacts": [
+                {
+                  "id": "a",
+                  "label": "input from supply +",
+                  "side": "right"
+                },
+                {
+                  "id": "b",
+                  "label": "output to VFET input",
+                  "side": "right"
+                }
+              ]
+            },
+            {
+              "id": "prime",
+              "title": "Prime P12 \u00b7 2590 revision ONLY",
+              "column": 1,
+              "contacts": [
+                {
+                  "id": "v",
+                  "label": "J12.1 \u00b7 VFET \u00b7 XT30 power entry",
+                  "side": "left"
+                },
+                {
+                  "id": "g",
+                  "label": "J12.2 \u00b7 GND_FET \u00b7 XT30 return",
+                  "side": "left"
+                },
+                {
+                  "id": "hplus",
+                  "label": "J17.1 \u00b7 shared cutoff-switched VFET",
+                  "side": "right"
+                },
+                {
+                  "id": "hminus",
+                  "label": "J17.2 \u00b7 Hotend A switched return",
+                  "side": "right"
+                },
+                {
+                  "id": "aux1",
+                  "label": "J11.1 \u00b7 auxiliary VFET \u00b7 unused",
+                  "side": "left"
+                },
+                {
+                  "id": "aux2",
+                  "label": "J11.2 \u00b7 auxiliary GND_FET \u00b7 unused",
+                  "side": "left"
+                }
+              ]
+            },
+            {
+              "id": "cutoff",
+              "title": "Independent thermal cutoff \u00b7 DC/load rated",
+              "column": 2,
+              "contacts": [
+                {
+                  "id": "a",
+                  "label": "series contact lead A",
+                  "side": "left"
+                },
+                {
+                  "id": "b",
+                  "label": "series contact lead B",
+                  "side": "left"
+                }
+              ]
+            },
+            {
+              "id": "heater",
+              "title": "Measured hotend heater \u00b7 never infer rating",
+              "column": 2,
+              "contacts": [
+                {
+                  "id": "a",
+                  "label": "heater lead A",
+                  "side": "left"
+                },
+                {
+                  "id": "b",
+                  "label": "heater lead B",
+                  "side": "left"
+                }
+              ]
+            }
+          ],
+          "edges": [
+            {
+              "from": "supply.v",
+              "to": "fuse.a",
+              "function": "Heater branch fuse feed",
+              "state": "guess",
+              "check": "Select fuse DC voltage/current/interrupt rating and conductor protection from actual heater/supply."
+            },
+            {
+              "from": "fuse.b",
+              "to": "prime.v",
+              "function": "VFET power entry",
+              "state": "guess",
+              "check": "Use XT30 J12, not small 2.54mm J11 auxiliary header; verify exact board, connector, PCB and load current limits."
+            },
+            {
+              "from": "supply.g",
+              "to": "prime.g",
+              "function": "Heater power return",
+              "state": "guess",
+              "check": "Separate from logic supply/VMOT; verify return topology and protective earth as applicable."
+            },
+            {
+              "from": "prime.hplus",
+              "to": "cutoff.a",
+              "function": "Positive heater feed",
+              "state": "guess",
+              "check": "J17.1 is downstream of factory Q25 high-side cutoff. Match heater voltage/current and output connector rating.",
+              "electrical_role": "power"
+            },
+            {
+              "from": "cutoff.b",
+              "to": "heater.a",
+              "function": "Thermally protected heater feed",
+              "state": "guess",
+              "check": "Install rated cutoff mechanically/electrically according to its manufacturer and heater location.",
+              "electrical_role": "power"
+            },
+            {
+              "from": "heater.b",
+              "to": "prime.hminus",
+              "function": "Hotend A switched heater return",
+              "state": "guess",
+              "check": "J17.2 is Q19 drain; configured output, tested startup-off and validated temperature feedback are mandatory before enabling heat."
+            }
+          ],
+          "note": "Board-side evidence: exact P12 schematic/PCB at commit7dc4f9a identifies J17 Hotend A, J18 Hotend B, J19 Fan1, J20 Fan2. J17.1 receives shared Q25 cutoff-controlled VFET; J17.2 is Q19 switched return. These are factory internal circuits, not user soldering instructions. PE0 / HOTEND_A_FET and PF14 / OUTPUTENABLE come from the exact P12 source; a general documentation PJ6 label conflicts and must not override this revision. Heater/sensor fitment and connector-safe current are unknown: measure, qualify firmware and prove thermal shutdown before connecting heat. No guaranteed 5A terminal rating is asserted.",
+          "original_panel_index": 10
+        },
+        {
+          "title": "Prime P12 \u00b7 individual fan outputs and spare Hotend B",
+          "nodes": [
+            {
+              "id": "prime",
+              "title": "Prime P12 \u00b7 powered by preceding J12 circuit",
+              "column": 0,
+              "contacts": [
+                {
+                  "id": "f1p",
+                  "label": "J19.1 \u00b7 cutoff-switched VFET",
+                  "side": "right"
+                },
+                {
+                  "id": "f1m",
+                  "label": "J19.2 \u00b7 Fan1 switched return",
+                  "side": "right"
+                },
+                {
+                  "id": "f2p",
+                  "label": "J20.1 \u00b7 cutoff-switched VFET",
+                  "side": "right"
+                },
+                {
+                  "id": "f2m",
+                  "label": "J20.2 \u00b7 Fan2 switched return",
+                  "side": "right"
+                },
+                {
+                  "id": "hbp",
+                  "label": "J18.1 \u00b7 Hotend B + \u00b7 unused",
+                  "side": "right"
+                },
+                {
+                  "id": "hbm",
+                  "label": "J18.2 \u00b7 Hotend B return \u00b7 unused",
+                  "side": "right"
+                }
+              ]
+            },
+            {
+              "id": "fan1",
+              "title": "Installed fan1 \u00b7 identify voltage/current and use",
+              "column": 2,
+              "contacts": [
+                {
+                  "id": "p",
+                  "label": "measured positive lead",
+                  "side": "left"
+                },
+                {
+                  "id": "m",
+                  "label": "measured return lead",
+                  "side": "left"
+                }
+              ]
+            },
+            {
+              "id": "fan2",
+              "title": "Optional fan2 \u00b7 identify fitment and ratings",
+              "column": 2,
+              "contacts": [
+                {
+                  "id": "p",
+                  "label": "measured positive lead",
+                  "side": "left"
+                },
+                {
+                  "id": "m",
+                  "label": "measured return lead",
+                  "side": "left"
+                }
+              ]
+            }
+          ],
+          "edges": [
+            {
+              "from": "prime.f1p",
+              "to": "fan1.p",
+              "function": "Fan1 positive feed",
+              "state": "guess",
+              "check": "Fan receives VFET rail, not a separately inferred 5V/12V supply. Match actual fan voltage/current.",
+              "electrical_role": "power"
+            },
+            {
+              "from": "fan1.m",
+              "to": "prime.f1m",
+              "function": "Fan1 switched return",
+              "state": "guess",
+              "check": "Q21 internal low-side stage; configure fan function and prove cooling whenever heater is enabled."
+            },
+            {
+              "from": "prime.f2p",
+              "to": "fan2.p",
+              "function": "Fan2 positive feed",
+              "state": "guess",
+              "check": "Connect only if fitted or deliberately added, electrically matched and firmware configured.",
+              "electrical_role": "power"
+            },
+            {
+              "from": "fan2.m",
+              "to": "prime.f2m",
+              "function": "Fan2 switched return",
+              "state": "guess",
+              "check": "Q22 internal low-side stage; verify rated load and startup state."
+            }
+          ],
+          "note": "J19/J20 pin1 share the same VFET output from factory Q25; pin2 returns switch through Q21/Q22. No second power supply is connected to the fan outputs. Leave both J18 contacts unconnected in this one-hotend option. Actual hotend heatsink cooling must be maintained; do not assume an original fan is VFET-voltage rated.",
+          "original_panel_index": 11
+        },
+        {
+          "title": "Printer hotend temperature \u00b7 feedback required before any heat",
+          "note": "BQ reference names temperature sensing, but fitted sensor type/lead pairs are not identified. Prime J21.1/.2 supports the board temperature input and return; establish NTC/PT100/thermocouple identity and configure a compatible sensor circuit and firmware. Heater power must remain disabled until feedback, fault detection and independent cutoff are proved. The recycler Inkbird heater remains an independent controller system.",
+          "original_panel_index": null,
+          "nodes": [
+            {
+              "id": "prime",
+              "title": "Prime P12 \u00b7 temperature input 1",
+              "column": 0,
+              "contacts": [
+                {
+                  "id": "s",
+                  "label": "J21.1 \u00b7 sensor input",
+                  "side": "right"
+                },
+                {
+                  "id": "g",
+                  "label": "J21.2 \u00b7 GND",
+                  "side": "right"
+                }
+              ]
+            },
+            {
+              "id": "sensor",
+              "title": "Fitted printer hotend sensor \u00b7 identify technology",
+              "column": 2,
+              "contacts": [
+                {
+                  "id": "s",
+                  "label": "Identified sensor signal / matched converter output",
+                  "side": "left"
+                },
+                {
+                  "id": "g",
+                  "label": "Identified sensor return",
+                  "side": "left"
+                }
+              ]
+            }
+          ],
+          "edges": [
+            {
+              "from": "sensor.s",
+              "to": "prime.s",
+              "function": "Hotend temperature feedback signal",
+              "state": "open"
+            },
+            {
+              "from": "sensor.g",
+              "to": "prime.g",
+              "function": "Separate temperature feedback return",
+              "state": "open"
+            }
+          ],
+          "evidence_sources": [
+            {
+              "title": "CubeFactory printer README",
+              "url": "https://github.com/CubeFactory2/cubefactory/blob/master/3d_printer/README.md",
+              "claim": "Establishes original printer subassembly; does not establish the fitted heater/sensor revision."
+            },
+            {
+              "title": "ZUM Mega3D reference schematic",
+              "url": "https://github.com/bq/zum/blob/master/zum-mega3d/Zum%20Mega%203D.PDF",
+              "claim": "Reference printer design includes thermistor input, subject to installed/DNP revision checks."
+            },
+            {
+              "title": "Prime P12 inputs source",
+              "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/inputs.kicad_sch",
+              "claim": "Provides J21 temperature input and return circuit; does not imply compatibility with unidentified sensor."
+            }
+          ]
+        },
+        {
+          "title": "BQ Hephestos hotend \u00b7 conditional matched two-lead NTC temperature feedback",
+          "diagram_variant": "current-conditional",
+          "diagram_group": "wiki132-printer-hotend-temperature",
+          "original_panel_index": null,
+          "note": "CONDITIONAL REFERENCE ONLY, not verified CubeFactory fitted hotend sensor or cable. CubeFactory identifies a BQ Prusa i3 Hephestos printer. The bq Hephestos Marlin Configuration.h selects TEMP_SENSOR_0 99; its matching thermistortables.h table 99 is a 100 k\u03a9 curve (historically commented as a bed thermistor), not generic Marlin table 1 and not proof of this machine's installed sensor. Connect a physically identified, measured matching two-lead NTC only: one lead to Prime P12 J21.1 temperature sensor input, the other to J21.2 GND. Lead A/B are logical names, not source-assigned harness cavities; an NTC is nonpolar. The pinned Prime P12 schematic/netlist and BOM put RN3 4.7 k\u03a9 pull-up from J21.1 to /3V3, C49 1 \u00b5F from J21.1 to GND, RN4 4.7 k\u03a9 series toward U12 LMV324 conditioning, and J21.2 on GND. The specified source hardware does not prove fitted component population, controller firmware sensor channel, ADC transfer, sensor curve or safe heater behavior. Do not add an external pull-up by assumption; inspect the actual board and calculate/configure the complete front-end transfer for the measured sensor. Keep J17 Hotend A heater power disabled until ambient and independently checked heated-point readings, open/short faults, firmware thermal shutdown and an independently rated thermal cutoff pass. The recycler Inkbird heater stays a separate control system.",
+          "source_contracts": [
+            "CubeFactory printer README identifies BQ Prusa i3 Hephestos but no fitted thermistor revision",
+            "bq Marlin Hephestos Configuration.h TEMP_SENSOR_0 99; thermistortables.h table 99 100 k\u03a9 curve, not table 1",
+            "Pinned Prime P12 inputs.kicad_sch plus BOM: J21.1 RN3 4.7 k\u03a9 pull-up to /3V3, C49 1 \u00b5F to GND, RN4 4.7 k\u03a9 to U12 LMV324; J21.2 GND"
+          ],
+          "nodes": [
+            {
+              "id": "heph_ntc",
+              "title": "Conditionally matched fitted Hephestos hotend NTC \u00b7 model/harness UNVERIFIED",
+              "column": 2,
+              "contacts": [
+                {
+                  "id": "lead_a",
+                  "label": "Measured NTC lead A \u00b7 signal side; no fitted cavity number",
+                  "side": "left"
+                },
+                {
+                  "id": "lead_b",
+                  "label": "Measured NTC lead B \u00b7 return side; no fitted cavity number",
+                  "side": "left"
+                }
+              ]
+            },
+            {
+              "id": "prime_temp",
+              "title": "Prime P12 native J21 temperature connector",
+              "column": 0,
+              "role": "controller",
+              "contacts": [
+                {
+                  "id": "input",
+                  "label": "J21.1 \u00b7 TEMP.1 sensor input \u00b7 4.7 k\u03a9 pull-up on source board",
+                  "side": "right"
+                },
+                {
+                  "id": "return",
+                  "label": "J21.2 \u00b7 temperature GND \u00b7 sensor return",
+                  "side": "right"
+                }
+              ]
+            }
+          ],
+          "edges": [
+            {
+              "from": "heph_ntc.lead_a",
+              "to": "prime_temp.input",
+              "function": "Measured matching two-lead hotend NTC signal to Prime J21.1 temperature input",
+              "state": "guess",
+              "electrical_role": "signal",
+              "check": "Only if the actual installed device is a passive NTC with measured resistance\u2013temperature curve matching the historical bq table 99 and the Prime input transfer. Verify the J21.1 3.3 V/4.7 k\u03a9 pull-up and LMV324 path on the fitted P12 revision; no external sensor power or extra pull-up is assumed.",
+              "source_reference": "CubeFactory printer README; bq Hephestos Configuration.h TEMP_SENSOR_0=99; thermistortables.h table 99; pinned Prime P12 inputs.kicad_sch",
+              "source_url": "https://raw.githubusercontent.com/bq/Marlin/master/Marlin/config/hephestos/Configuration.h"
+            },
+            {
+              "from": "heph_ntc.lead_b",
+              "to": "prime_temp.return",
+              "function": "Separate measured NTC return lead to Prime J21.2 temperature GND",
+              "state": "guess",
+              "electrical_role": "ground",
+              "check": "Verify actual two-wire continuity, insulation from heater conductors, fitted connector orientation and J21.2 GND on the installed board. Passive NTC A/B orientation is arbitrary; no cable cavity number or color is asserted.",
+              "source_reference": "Pinned Prime P12 inputs.kicad_sch J21.2 and CubeFactory Hephestos reference",
+              "source_url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/inputs.kicad_sch"
+            }
+          ],
+          "evidence_sources": [
+            {
+              "title": "CubeFactory2 printer README, original machine subassembly",
+              "url": "https://raw.githubusercontent.com/CubeFactory2/cubefactory/master/3d_printer/README.md",
+              "claim": "Names BQ Prusa i3 Hephestos printer; does not identify this machine's thermistor or harness.",
+              "sha256": "1dcd40d3d77ecd241b5c243991bae93951b0c76e00545f6771735a1c55db8225"
+            },
+            {
+              "title": "bq Marlin Hephestos Configuration.h",
+              "url": "https://raw.githubusercontent.com/bq/Marlin/master/Marlin/config/hephestos/Configuration.h",
+              "claim": "Historical bq Hephestos firmware sets TEMP_SENSOR_0 to 99; not a Smoothie firmware preset or fitted sensor proof.",
+              "sha256": "2cb9bafea3b9db9d477b248d50bb00353af1002a5abd87845573c6732c36ba4a"
+            },
+            {
+              "title": "bq Marlin thermistortables.h table 99",
+              "url": "https://raw.githubusercontent.com/bq/Marlin/master/Marlin/thermistortables.h",
+              "claim": "Actual 100 k\u03a9 reference lookup curve for selected table 99; comment says bed thermistor. Do not substitute generic table 1.",
+              "sha256": "362a7b922482a1c70681caefaa86d86bbc409d416debe8009e0f2c26a42f64d9"
+            },
+            {
+              "title": "Smoothieboard V2 Prime P12 pinned inputs.kicad_sch",
+              "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/inputs.kicad_sch",
+              "claim": "J21.1 joins RN3 4.7 k\u03a9 to /3V3, C49 1 \u00b5F to GND and RN4 4.7 k\u03a9 toward LMV324 U12; J21.2 is GND. Confirm fitted population.",
+              "sha256": "d4d81063494076011db8171d1cd2f356e7adb9528b3d13dfc50878ff049cebb8"
+            },
+            {
+              "title": "Prime P12 real controller source-contact contract",
+              "url": "/machine-control-pinout-survey/centered-sources/real-controller-source-contact-contract.json",
+              "claim": "Native J21.1 SENSOR 1 and J21.2 GND source anchors.",
+              "sha256": "d0601f10c77b1a57a3af030dcd7854f2695c9bd683168d79018d076e8499cdf3"
+            }
+          ]
+        }
+      ],
+      "target_options": {
+        "smoothiebox": "Use a SmoothieBox carrying V2 Prime for the four printer steppers only after matching rated motor current, motor supply, heater and sensor types. The box/carrier itself is not the motion controller.",
+        "core": "V2 Core has no integrated stepper power stages; add four selected external stepper drivers and measure each motor winding/current. Core J5 A\u2013D STEP/DIR are logical signals; slash-prefixed net names do not mean active-low.",
+        "prime": "Selected main reference: Prime P12 integrated four printer motor channels and researched P12 heater/fan/temperature candidates. Retain recycler ESCON and independently controlled sleeve heater; verify fitted harness, motor/heater/sensor ratings and firmware support."
+      },
+      "parts": [
+        "The following are the depicted retained, required or unresolved peripherals; a drawing label does not establish fitment or electrical compatibility. Select ratings and installed revisions from the per-connection evidence.",
+        "Smoothieboard V2 Prime \u00b7 driver A outputs",
+        "Printer X stepper motor \u00b7 lead labels must be measured",
+        "Smoothieboard V2 Prime \u00b7 driver B outputs",
+        "Printer Y stepper motor \u00b7 lead labels must be measured",
+        "Smoothieboard V2 Prime \u00b7 driver C outputs",
+        "Printer Z stepper motor \u00b7 lead labels must be measured",
+        "Smoothieboard V2 Prime \u00b7 driver D outputs",
+        "Printer E stepper motor \u00b7 lead labels must be measured",
+        "Maxon ESCON 70/10 \u00b7 J5 control terminals",
+        "Existing recycler 24 V supply (nameplate/source reported)",
+        "ESCON 70/10 power / motor / Hall connectors",
+        "RS Pro BLDC shredder motor and Hall harness",
+        "Retained recycler heater control \u00b7 no Prime heater channel assigned",
+        "Controller shown in project text/photo \u00b7 exact rear terminals unknown",
+        "24 V, 150 W sleeve \u00b7 nominal 6.25 A",
+        "Existing temperature sensor \u00b7 type and pair unknown",
+        "Regulated 5 V logic supply",
+        "Verified motor supply \u00b7 voltage/current TBD",
+        "Motor branch fuse \u00b7 rating selected after measurement",
+        "Prime P12 \u00b7 X minimum/home candidate",
+        "X switch \u00b7 measured passive contact",
+        "Prime P12 \u00b7 Y minimum/home candidate",
+        "Y switch \u00b7 measured passive contact",
+        "Prime P12 \u00b7 Z minimum/home candidate",
+        "Z switch \u00b7 measured passive contact",
+        "Heater-matched DC supply \u00b7 rating measured",
+        "Individual heater branch fuse \u00b7 rating TBD",
+        "Independent thermal cutoff \u00b7 DC/load rated",
+        "Measured hotend heater \u00b7 never infer rating",
+        "Installed fan1 \u00b7 identify voltage/current and use",
+        "Optional fan2 \u00b7 identify fitment and ratings",
+        "Fitted printer hotend sensor \u00b7 identify technology",
+        "Only a physically identified passive two-lead hotend NTC whose measured resistance\u2013temperature curve is matched to a configured Prime/P12 front end; no generic 100 k\u03a9 or Marlin table 1 substitution.",
+        "Prime P12 source design uses RN3 4.7 k\u03a9, C49 1 \u00b5F, RN4 4.7 k\u03a9 and U12 LMV324 in the temperature channel; inspect actual board population before any direct connection. Independent thermal cutoff remains required."
+      ],
+      "instructions": [
+        "Match the actual machine and controller revisions, trace the unpowered harness and verify all signal/reference, power and independent safety boundaries before energising. Follow the current connection IDs rather than the superseded architecture prose.",
+        "Printer X stepper \u00b7 integrated Prime driver channel A: Four phase conductors are shown separately. The Prime PCB exposes these phase outputs, but CubeFactory installed motor cable colours, winding pairs, and board revision are not documented. Verify current/supply limits before connecting.",
+        "Printer Y stepper \u00b7 integrated Prime driver channel B: Four phase conductors are shown separately. The Prime PCB exposes these phase outputs, but CubeFactory installed motor cable colours, winding pairs, and board revision are not documented. Verify current/supply limits before connecting.",
+        "Printer Z stepper \u00b7 integrated Prime driver channel C: Four phase conductors are shown separately. The Prime PCB exposes these phase outputs, but CubeFactory installed motor cable colours, winding pairs, and board revision are not documented. Verify current/supply limits before connecting.",
+        "Printer E stepper \u00b7 integrated Prime driver channel D: Four phase conductors are shown separately. The Prime PCB exposes these phase outputs, but CubeFactory installed motor cable colours, winding pairs, and board revision are not documented. Verify current/supply limits before connecting.",
+        "Recycler \u00b7 configured PWM setpoint and independent run input: Use the actual contact labels and per-wire qualification in the current main diagram. Any older Core/header reference in retained source context is not the selected controller endpoint.",
+        "Recycler \u00b7 retain motor power stage and feedback on ESCON: Maxon J3 Hall schedule: 1 Hall1, 2 Hall2, 3 Hall3, 4 +5 V Hall supply (\u226430 mA), 5 GND. J3 motor/Hall wiring is source-specific but the CubeFactory harness is unreported; OPEN breaks prevent fabricated phase/color assignments. ESCON 70/10 current rating must be reconciled with project claim of 10 A normal / 40 A maximum before use.",
+        "Recycler heater and original controller \u00b7 do not splice yet: Project text says Inkbird D1S-2R-24, but the visible photograph only shows INKBIRD/ITC front branding. Identify rear label, sensor, supply, output rating and the 24 V supply branch; then add exact contacts.",
+        "Prime selected \u00b7 separate logic and motor supplies: This is the selected Prime P12 integrated-driver architecture. Use the current P12 PCB-derived contact labels; other board revisions require their own verified pinout and driver ratings. Use one verified power-entry arrangement; J10 parallels VMOT and is left unused here. Board ground is shared internally; route motor current directly to power distribution, not through logic wiring. Determine actual allowed voltage/current before choosing a supply; no machine-source adapter automatically qualifies.",
+        "Printer home inputs \u00b7 X, Y and Z switch pairs: Prusa/Hephestos family reference does not establish the fitted CubeFactory harness. This proposal uses newly identified passive switch leads; confirm each NO/NC state and firmware axis assignment with power isolated. Pin1 supply selectors stay unused. Powered sensors need an electrically matched interface, not this passive-contact circuit. Optional max inputs J25/J27/J29 remain unconnected unless actual additional switches are fitted and mapped.",
+        "Prime P12 \u00b7 Hotend A \u00b7 complete external power and load circuit: Board-side evidence: exact P12 schematic/PCB at commit7dc4f9a identifies J17 Hotend A, J18 Hotend B, J19 Fan1, J20 Fan2. J17.1 receives shared Q25 cutoff-controlled VFET; J17.2 is Q19 switched return. These are factory internal circuits, not user soldering instructions. PE0 / HOTEND_A_FET and PF14 / OUTPUTENABLE come from the exact P12 source; a general documentation PJ6 label conflicts and must not override this revision. Heater/sensor fitment and connector-safe current are unknown: measure, qualify firmware and prove thermal shutdown before connecting heat. No guaranteed 5A terminal rating is asserted.",
+        "Prime P12 \u00b7 individual fan outputs and spare Hotend B: J19/J20 pin1 share the same VFET output from factory Q25; pin2 returns switch through Q21/Q22. No second power supply is connected to the fan outputs. Leave both J18 contacts unconnected in this one-hotend option. Actual hotend heatsink cooling must be maintained; do not assume an original fan is VFET-voltage rated.",
+        "Printer hotend temperature \u00b7 feedback required before any heat: BQ reference names temperature sensing, but fitted sensor type/lead pairs are not identified. Prime J21.1/.2 supports the board temperature input and return; establish NTC/PT100/thermocouple identity and configure a compatible sensor circuit and firmware. Heater power must remain disabled until feedback, fault detection and independent cutoff are proved. The recycler Inkbird heater remains an independent controller system.",
+        "Conditional J21 thermistor reference: with heater power isolated, trace both hotend sensor leads, measure resistance at ambient and at an independently known safe temperature, and compare the full curve against bq table 99. Confirm fitted Prime P12 J21.1/J21.2, RN3/RN4/C49/U12 population, input voltage and firmware ADC transfer; configure the actual Smoothie sensor curve and channel rather than copying Marlin TEMP_SENSOR_0=99 as a preset.",
+        "Only after plausible ambient and two independent temperature points are established, verify disconnected/shorted sensor faults and independent thermal cutoff with heater power still isolated. Keep J17 Hotend A power disabled until the fitted heater, sensor, controller firmware and fault shutdown have been separately qualified. The recycler Inkbird loop is independent."
+      ],
+      "controller_title": "Smoothieboard V2 Prime",
+      "selected_controller": "prime",
+      "classification_note": "Original motion-driver electronics are on the board being replaced. Use Prime integrated phase outputs directly to measured winding pairs; do not connect STEP/DIR signal outputs to motor windings. Confirm installed board, motor current and power rating from the cited machine source.",
+      "historical_architecture": {
+        "status": "Superseded architecture prose; retained verbatim. Core/external-driver alternatives here are older conditional options, not instructions for the selected current main diagram.",
+        "fields": {
+          "target": "Use Prime for the printer only after motor/heater/sensor ratings are confirmed; retain the ESCON 70/10 on the recycler and use Core PWM as a configured setpoint/run command. The heater controller remains unidentified.",
+          "plan": "The printer and recycler are separate systems. Prime provides four integrated stepper stages, so a measured printer motor winding pair can connect directly to the matching Prime phase outputs when the motor current and supply ratings fit. Core instead needs four selected external stepper drivers. The recycler BLDC phases and Hall feedback remain on the ESCON. Every dashed route is a proposed axis or software mapping, not a fitted-harness assertion.",
+          "circuits": [
+            [
+              "Prime motor outputs\nX/Y/Z/E if ratings fit",
+              "Integrated stepper power stages\nverify current and harness",
+              "Printer stepper motors",
+              "[GUESS] board revision and motor phases/current unverified"
+            ],
+            [
+              "Core P1 J5 pin 16 \u00b7 /STEP_A \u00b7 candidate X STEP",
+              "Select rated external driver; verify logic threshold, timing, power stage and reference",
+              "printer X external driver input; driver not identified STEP",
+              "[OPEN] No installed/matching external-driver input terminals or complete harness are established by the cited source."
+            ],
+            [
+              "Core P1 J5 pin 18 \u00b7 /DIR_A \u00b7 candidate X DIR",
+              "Select rated external driver; verify logic threshold, timing, power stage and reference",
+              "printer X external driver input; driver not identified DIR",
+              "[OPEN] No installed/matching external-driver input terminals or complete harness are established by the cited source."
+            ],
+            [
+              "Core P1 J5 pin 22 \u00b7 /STEP_B \u00b7 candidate Y STEP",
+              "Select rated external driver; verify logic threshold, timing, power stage and reference",
+              "printer Y external driver input; driver not identified STEP",
+              "[OPEN] No installed/matching external-driver input terminals or complete harness are established by the cited source."
+            ],
+            [
+              "Core P1 J5 pin 24 \u00b7 /DIR_B \u00b7 candidate Y DIR",
+              "Select rated external driver; verify logic threshold, timing, power stage and reference",
+              "printer Y external driver input; driver not identified DIR",
+              "[OPEN] No installed/matching external-driver input terminals or complete harness are established by the cited source."
+            ],
+            [
+              "Core P1 J5 pin 28 \u00b7 /STEP_C \u00b7 candidate Z STEP",
+              "Select rated external driver; verify logic threshold, timing, power stage and reference",
+              "printer Z external driver input; driver not identified STEP",
+              "[OPEN] No installed/matching external-driver input terminals or complete harness are established by the cited source."
+            ],
+            [
+              "Core P1 J5 pin 30 \u00b7 /DIR_C \u00b7 candidate Z DIR",
+              "Select rated external driver; verify logic threshold, timing, power stage and reference",
+              "printer Z external driver input; driver not identified DIR",
+              "[OPEN] No installed/matching external-driver input terminals or complete harness are established by the cited source."
+            ],
+            [
+              "Core P1 J5 pin 34 \u00b7 /STEP_D \u00b7 candidate E STEP",
+              "Select rated external driver; verify logic threshold, timing, power stage and reference",
+              "printer E external driver input; driver not identified STEP",
+              "[OPEN] No installed/matching external-driver input terminals or complete harness are established by the cited source."
+            ],
+            [
+              "Core P1 J5 pin 36 \u00b7 /DIR_D \u00b7 candidate E DIR",
+              "Select rated external driver; verify logic threshold, timing, power stage and reference",
+              "printer E external driver input; driver not identified DIR",
+              "[OPEN] No installed/matching external-driver input terminals or complete harness are established by the cited source."
+            ],
+            [
+              "Smoothie PWM output",
+              "Level / polarity / fail-safe interface\nvalidate ESCON configuration",
+              "ESCON J5.1 DigIN1\nJ5.5 signal GND",
+              "[GUESS] manual supports 10 Hz\u20135 kHz, 10\u201390% PWM mode; installed config/reference unknown"
+            ],
+            [
+              "24 V supply \u2192 ESCON \u2192 BLDC motor",
+              "ESCON motor outputs and feedback",
+              "Recycler motor",
+              "[OPEN] Keep motor power on ESCON; owner-reported 10 A normal / 40 A max needs reconciliation"
+            ],
+            [
+              "150 W / 24 V heater",
+              "Verified rated switching stage + temperature controller\nnot identified",
+              "Recycler heating sleeve",
+              "[OPEN] OPEN: controller/sensor and terminals not established; 6.25 A nominal"
+            ]
+          ],
+          "pins": [
+            "Prime P11 source schedule: J5/J6/J7/J8 each 4 phase outputs; J5 channel A: pin1 COIL_B2, 2 COIL_B1, 3 COIL_A2, 4 COIL_A1; repeated connector-specific schedules are listed in source board contacts. These are phase outputs only, not logic STEP/DIR.",
+            "Core P1 source nets: J5.16 STEP_A, .18 DIR_A, .22 STEP_B, .24 DIR_B, .28 STEP_C, .30 DIR_C, .34 STEP_D, .36 DIR_D, .13 shared MOT_EN; J35.6 TIM1_CH1, .7 TIM1_CH2, .10 GND. Slash is namespace syntax, not polarity proof.",
+            "ESCON J5: 1 DigIN1, 2 DigIN2, 3 configurable DigIN/DigOUT3, 4 configurable DigIN/DigOUT4, 5 signal GND, 6 +5 V \u226410 mA. J6: 1/2 differential AnIN1, 3/4 AnIN2, 5/6 analog outputs, 7 GND. J3 Hall: 1/2/3 H1/H2/H3, 4 +5 V \u226430mA, 5 GND.",
+            "CubeFactory motor lead cavities, printer thermistor/heater/switch contacts, fitted ZUM revision, heater controller rear terminal schedule and installed supply contacts remain unknown."
+          ],
+          "parts": [
+            "Retain Maxon ESCON 70/10 for recycler BLDC; verify current capability and exact model/configuration first.",
+            "Retain identified 24 V DC supply only if its measured/nameplate rating fits the ESCON and load.",
+            "Prime option: four motor phase outputs J5\u2013J8; no external driver required if rating matches. Core option: four rated external drivers; exact driver model not documented.",
+            "Keep the separate heater controller until its rear label, output and sensor terminals are identified.",
+            "Conditional Prime P12 heater/fan stages: use J12 XT30 VFET entry, J17 Hotend A, J19/J20 fans only with measured matching loads, branch fuse and independent thermal cutoff; temperature feedback/firmware is a blocking qualification gate."
+          ],
+          "instructions": [
+            "Photograph and transcribe fitted controller, ESCON, motor, supply, printer board and heater-controller labels.",
+            "Isolate power. Check ESCON current limit and motor rating against 10 A normal / 40 A maximum project statements; do not assume the 70/10 model can sustain 40 A.",
+            "For Prime, continuity-test each printer motor to identify A/B winding pairs and verify phase current and supply range; connect only to J5/J6/J7/J8 after rating check. For Core, select matching external drivers and preserve the separate driver power stage.",
+            "Verify ESCON DigIN1 PWM configuration, frequency, setpoint scaling, DigIN2 run function, reference and stop behavior before signal connection.",
+            "Leave heater, sensors and limit switches OPEN until exact fitted device and terminal function are identified. Prove physical E-stop and guards independently of Smoothie."
+          ]
+        }
+      },
+      "superseded_main_panel_indices": [
+        12
+      ]
+    },
+    "retrofit-guides.json": {
+      "id": "wiki-132",
+      "title": "CubeFactory 2 printer + recycler",
+      "target": "Use Prime for the printer only after motor/heater/sensor ratings are confirmed; retain the ESCON 70/10 on the recycler and use Core PWM as a configured setpoint/run command. The heater controller remains unidentified.",
+      "plan": "The printer and recycler are separate systems. Prime provides four integrated stepper stages, so a measured printer motor winding pair can connect directly to the matching Prime phase outputs when the motor current and supply ratings fit. Core instead needs four selected external stepper drivers. The recycler BLDC phases and Hall feedback remain on the ESCON. Every dashed route is a proposed axis or software mapping, not a fitted-harness assertion.",
+      "circuits": [
+        [
+          "Prime motor outputs\nX/Y/Z/E if ratings fit",
+          "Integrated stepper power stages\nverify current and harness",
+          "Printer stepper motors",
+          "[GUESS] board revision and motor phases/current unverified"
+        ],
+        [
+          "Core P1 J5 pin 16 \u00b7 /STEP_A \u00b7 candidate X STEP",
+          "Select rated external driver; verify logic threshold, timing, power stage and reference",
+          "printer X external driver input; driver not identified STEP",
+          "[OPEN] No installed/matching external-driver input terminals or complete harness are established by the cited source."
+        ],
+        [
+          "Core P1 J5 pin 18 \u00b7 /DIR_A \u00b7 candidate X DIR",
+          "Select rated external driver; verify logic threshold, timing, power stage and reference",
+          "printer X external driver input; driver not identified DIR",
+          "[OPEN] No installed/matching external-driver input terminals or complete harness are established by the cited source."
+        ],
+        [
+          "Core P1 J5 pin 22 \u00b7 /STEP_B \u00b7 candidate Y STEP",
+          "Select rated external driver; verify logic threshold, timing, power stage and reference",
+          "printer Y external driver input; driver not identified STEP",
+          "[OPEN] No installed/matching external-driver input terminals or complete harness are established by the cited source."
+        ],
+        [
+          "Core P1 J5 pin 24 \u00b7 /DIR_B \u00b7 candidate Y DIR",
+          "Select rated external driver; verify logic threshold, timing, power stage and reference",
+          "printer Y external driver input; driver not identified DIR",
+          "[OPEN] No installed/matching external-driver input terminals or complete harness are established by the cited source."
+        ],
+        [
+          "Core P1 J5 pin 28 \u00b7 /STEP_C \u00b7 candidate Z STEP",
+          "Select rated external driver; verify logic threshold, timing, power stage and reference",
+          "printer Z external driver input; driver not identified STEP",
+          "[OPEN] No installed/matching external-driver input terminals or complete harness are established by the cited source."
+        ],
+        [
+          "Core P1 J5 pin 30 \u00b7 /DIR_C \u00b7 candidate Z DIR",
+          "Select rated external driver; verify logic threshold, timing, power stage and reference",
+          "printer Z external driver input; driver not identified DIR",
+          "[OPEN] No installed/matching external-driver input terminals or complete harness are established by the cited source."
+        ],
+        [
+          "Core P1 J5 pin 34 \u00b7 /STEP_D \u00b7 candidate E STEP",
+          "Select rated external driver; verify logic threshold, timing, power stage and reference",
+          "printer E external driver input; driver not identified STEP",
+          "[OPEN] No installed/matching external-driver input terminals or complete harness are established by the cited source."
+        ],
+        [
+          "Core P1 J5 pin 36 \u00b7 /DIR_D \u00b7 candidate E DIR",
+          "Select rated external driver; verify logic threshold, timing, power stage and reference",
+          "printer E external driver input; driver not identified DIR",
+          "[OPEN] No installed/matching external-driver input terminals or complete harness are established by the cited source."
+        ],
+        [
+          "Smoothie PWM output",
+          "Level / polarity / fail-safe interface\nvalidate ESCON configuration",
+          "ESCON J5.1 DigIN1\nJ5.5 signal GND",
+          "[GUESS] manual supports 10 Hz\u20135 kHz, 10\u201390% PWM mode; installed config/reference unknown"
+        ],
+        [
+          "24 V supply \u2192 ESCON \u2192 BLDC motor",
+          "ESCON motor outputs and feedback",
+          "Recycler motor",
+          "[OPEN] Keep motor power on ESCON; owner-reported 10 A normal / 40 A max needs reconciliation"
+        ],
+        [
+          "150 W / 24 V heater",
+          "Verified rated switching stage + temperature controller\nnot identified",
+          "Recycler heating sleeve",
+          "[OPEN] OPEN: controller/sensor and terminals not established; 6.25 A nominal"
+        ]
+      ],
+      "pins": [
+        "Prime P11 source schedule: J5/J6/J7/J8 each 4 phase outputs; J5 channel A: pin1 COIL_B2, 2 COIL_B1, 3 COIL_A2, 4 COIL_A1; repeated connector-specific schedules are listed in source board contacts. These are phase outputs only, not logic STEP/DIR.",
+        "Core P1 source nets: J5.16 STEP_A, .18 DIR_A, .22 STEP_B, .24 DIR_B, .28 STEP_C, .30 DIR_C, .34 STEP_D, .36 DIR_D, .13 shared MOT_EN; J35.6 TIM1_CH1, .7 TIM1_CH2, .10 GND. Slash is namespace syntax, not polarity proof.",
+        "ESCON J5: 1 DigIN1, 2 DigIN2, 3 configurable DigIN/DigOUT3, 4 configurable DigIN/DigOUT4, 5 signal GND, 6 +5 V \u226410 mA. J6: 1/2 differential AnIN1, 3/4 AnIN2, 5/6 analog outputs, 7 GND. J3 Hall: 1/2/3 H1/H2/H3, 4 +5 V \u226430mA, 5 GND.",
+        "CubeFactory motor lead cavities, printer thermistor/heater/switch contacts, fitted ZUM revision, heater controller rear terminal schedule and installed supply contacts remain unknown."
+      ],
+      "sources": [
+        [
+          "CubeFactory2 printer README",
+          "https://github.com/CubeFactory2/cubefactory/blob/master/3d_printer/README.md"
+        ],
+        [
+          "CubeFactory2 powertrain notes",
+          "https://github.com/CubeFactory2/cubefactory/blob/master/recycler/Powertrain_Info.md"
+        ],
+        [
+          "BQ ZUM Mega 3D reference schematic Rev 1.2, 2015-08-26",
+          "https://github.com/bq/zum/blob/master/zum-mega3d/Zum%20Mega%203D.PDF"
+        ],
+        [
+          "Maxon ESCON 70/10 Hardware Reference",
+          "https://www.maxongroup.com/medias/sys_master/root/9350562709534/422969-ESCON-70-10-Hardware-Reference-En.pdf"
+        ],
+        [
+          "Smoothieboard V2 Prime official specifications",
+          "https://smoothieware.org/smoothieboard-v2-prime"
+        ],
+        [
+          "Exact Prime P12 MOSFET schematic at pinned revision",
+          "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/mosfets.kicad_sch"
+        ]
+      ],
+      "wire_panels": [
+        {
+          "title": "Controller logic supply \u00b7 separate from motor power",
+          "nodes": [
+            {
+              "id": "supply",
+              "title": "Regulated logic distribution",
+              "column": 0,
+              "contacts": [
+                {
+                  "id": "v5",
+                  "label": "+5 V regulated",
+                  "side": "right"
+                },
+                {
+                  "id": "return",
+                  "label": "0 V logic return",
+                  "side": "right"
+                }
+              ]
+            },
+            {
+              "id": "core",
+              "title": "Core P1 \u00b7 logic power",
+              "column": 1,
+              "contacts": [
+                {
+                  "id": "v5",
+                  "label": "J42.1 \u00b7 5V input",
+                  "side": "left"
+                },
+                {
+                  "id": "gnd",
+                  "label": "J42.2 \u00b7 GND",
+                  "side": "left"
+                }
+              ]
+            }
+          ],
+          "edges": [
+            {
+              "from": "supply.v5",
+              "to": "core.v5",
+              "state": "guess",
+              "function": "Core 5 V power",
+              "check": "Verify exact board supply path and rail ratings; motor current uses separate wiring and fuses."
+            },
+            {
+              "from": "supply.return",
+              "to": "core.gnd",
+              "state": "guess",
+              "function": "Core supply return",
+              "check": "Verify exact board supply path and rail ratings; motor current uses separate wiring and fuses."
+            }
+          ],
+          "note": "Verify exact board supply path and rail ratings; motor current uses separate wiring and fuses."
+        },
+        {
+          "title": "Printer X stepper \u00b7 integrated Prime driver channel A",
+          "nodes": [
+            {
+              "id": "prime_x",
+              "title": "Smoothieboard V2 Prime \u00b7 driver A outputs",
+              "column": 0,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "p1",
+                  "label": "J5.1 COIL_B2",
+                  "side": "right"
+                },
+                {
+                  "id": "p2",
+                  "label": "J5.2 COIL_B1",
+                  "side": "right"
+                },
+                {
+                  "id": "p3",
+                  "label": "J5.3 COIL_A2",
+                  "side": "right"
+                },
+                {
+                  "id": "p4",
+                  "label": "J5.4 COIL_A1",
+                  "side": "right"
+                }
+              ]
+            },
+            {
+              "id": "motor_x",
+              "title": "Printer X stepper motor \u00b7 lead labels must be measured",
+              "column": 2,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "x_A1",
+                  "label": "X motor A1 measured lead",
+                  "side": "left"
+                },
+                {
+                  "id": "x_A2",
+                  "label": "X motor A2 measured lead",
+                  "side": "left"
+                },
+                {
+                  "id": "x_B1",
+                  "label": "X motor B1 measured lead",
+                  "side": "left"
+                },
+                {
+                  "id": "x_B2",
+                  "label": "X motor B2 measured lead",
+                  "side": "left"
+                }
+              ]
+            }
+          ],
+          "edges": [
+            {
+              "from": "prime_x.p4",
+              "to": "motor_x.x_A1",
+              "state": "guess",
+              "function": "Prime J5.4 COIL_A1 to X motor winding lead A1",
+              "check": "Confirm Prime driver current setting, motor phase current and PSU rating; identify winding pairs by continuity with power isolated. Axis/channel pairing is proposed.",
+              "direction": true
+            },
+            {
+              "from": "prime_x.p3",
+              "to": "motor_x.x_A2",
+              "state": "guess",
+              "function": "Prime J5.3 COIL_A2 to X motor winding lead A2",
+              "check": "Confirm Prime driver current setting, motor phase current and PSU rating; identify winding pairs by continuity with power isolated. Axis/channel pairing is proposed.",
+              "direction": true
+            },
+            {
+              "from": "prime_x.p2",
+              "to": "motor_x.x_B1",
+              "state": "guess",
+              "function": "Prime J5.2 COIL_B1 to X motor winding lead B1",
+              "check": "Confirm Prime driver current setting, motor phase current and PSU rating; identify winding pairs by continuity with power isolated. Axis/channel pairing is proposed.",
+              "direction": true
+            },
+            {
+              "from": "prime_x.p1",
+              "to": "motor_x.x_B2",
+              "state": "guess",
+              "function": "Prime J5.1 COIL_B2 to X motor winding lead B2",
+              "check": "Confirm Prime driver current setting, motor phase current and PSU rating; identify winding pairs by continuity with power isolated. Axis/channel pairing is proposed.",
+              "direction": true
+            }
+          ],
+          "note": "Four phase conductors are shown separately. The Prime PCB exposes these phase outputs, but CubeFactory installed motor cable colours, winding pairs, and board revision are not documented. Verify current/supply limits before connecting."
+        },
+        {
+          "title": "Printer Y stepper \u00b7 integrated Prime driver channel B",
+          "nodes": [
+            {
+              "id": "prime_y",
+              "title": "Smoothieboard V2 Prime \u00b7 driver B outputs",
+              "column": 0,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "p1",
+                  "label": "J6.1 COIL_B2",
+                  "side": "right"
+                },
+                {
+                  "id": "p2",
+                  "label": "J6.2 COIL_B1",
+                  "side": "right"
+                },
+                {
+                  "id": "p3",
+                  "label": "J6.3 COIL_A2",
+                  "side": "right"
+                },
+                {
+                  "id": "p4",
+                  "label": "J6.4 COIL_A1",
+                  "side": "right"
+                }
+              ]
+            },
+            {
+              "id": "motor_y",
+              "title": "Printer Y stepper motor \u00b7 lead labels must be measured",
+              "column": 2,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "y_A1",
+                  "label": "Y motor A1 measured lead",
+                  "side": "left"
+                },
+                {
+                  "id": "y_A2",
+                  "label": "Y motor A2 measured lead",
+                  "side": "left"
+                },
+                {
+                  "id": "y_B1",
+                  "label": "Y motor B1 measured lead",
+                  "side": "left"
+                },
+                {
+                  "id": "y_B2",
+                  "label": "Y motor B2 measured lead",
+                  "side": "left"
+                }
+              ]
+            }
+          ],
+          "edges": [
+            {
+              "from": "prime_y.p4",
+              "to": "motor_y.y_A1",
+              "state": "guess",
+              "function": "Prime J6.4 COIL_A1 to Y motor winding lead A1",
+              "check": "Confirm Prime driver current setting, motor phase current and PSU rating; identify winding pairs by continuity with power isolated. Axis/channel pairing is proposed.",
+              "direction": true
+            },
+            {
+              "from": "prime_y.p3",
+              "to": "motor_y.y_A2",
+              "state": "guess",
+              "function": "Prime J6.3 COIL_A2 to Y motor winding lead A2",
+              "check": "Confirm Prime driver current setting, motor phase current and PSU rating; identify winding pairs by continuity with power isolated. Axis/channel pairing is proposed.",
+              "direction": true
+            },
+            {
+              "from": "prime_y.p2",
+              "to": "motor_y.y_B1",
+              "state": "guess",
+              "function": "Prime J6.2 COIL_B1 to Y motor winding lead B1",
+              "check": "Confirm Prime driver current setting, motor phase current and PSU rating; identify winding pairs by continuity with power isolated. Axis/channel pairing is proposed.",
+              "direction": true
+            },
+            {
+              "from": "prime_y.p1",
+              "to": "motor_y.y_B2",
+              "state": "guess",
+              "function": "Prime J6.1 COIL_B2 to Y motor winding lead B2",
+              "check": "Confirm Prime driver current setting, motor phase current and PSU rating; identify winding pairs by continuity with power isolated. Axis/channel pairing is proposed.",
+              "direction": true
+            }
+          ],
+          "note": "Four phase conductors are shown separately. The Prime PCB exposes these phase outputs, but CubeFactory installed motor cable colours, winding pairs, and board revision are not documented. Verify current/supply limits before connecting."
+        },
+        {
+          "title": "Printer Z stepper \u00b7 integrated Prime driver channel C",
+          "nodes": [
+            {
+              "id": "prime_z",
+              "title": "Smoothieboard V2 Prime \u00b7 driver C outputs",
+              "column": 0,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "p1",
+                  "label": "J7.1 COIL_B2",
+                  "side": "right"
+                },
+                {
+                  "id": "p2",
+                  "label": "J7.2 COIL_B1",
+                  "side": "right"
+                },
+                {
+                  "id": "p3",
+                  "label": "J7.3 COIL_A2",
+                  "side": "right"
+                },
+                {
+                  "id": "p4",
+                  "label": "J7.4 COIL_A1",
+                  "side": "right"
+                }
+              ]
+            },
+            {
+              "id": "motor_z",
+              "title": "Printer Z stepper motor \u00b7 lead labels must be measured",
+              "column": 2,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "z_A1",
+                  "label": "Z motor A1 measured lead",
+                  "side": "left"
+                },
+                {
+                  "id": "z_A2",
+                  "label": "Z motor A2 measured lead",
+                  "side": "left"
+                },
+                {
+                  "id": "z_B1",
+                  "label": "Z motor B1 measured lead",
+                  "side": "left"
+                },
+                {
+                  "id": "z_B2",
+                  "label": "Z motor B2 measured lead",
+                  "side": "left"
+                }
+              ]
+            }
+          ],
+          "edges": [
+            {
+              "from": "prime_z.p4",
+              "to": "motor_z.z_A1",
+              "state": "guess",
+              "function": "Prime J7.4 COIL_A1 to Z motor winding lead A1",
+              "check": "Confirm Prime driver current setting, motor phase current and PSU rating; identify winding pairs by continuity with power isolated. Axis/channel pairing is proposed.",
+              "direction": true
+            },
+            {
+              "from": "prime_z.p3",
+              "to": "motor_z.z_A2",
+              "state": "guess",
+              "function": "Prime J7.3 COIL_A2 to Z motor winding lead A2",
+              "check": "Confirm Prime driver current setting, motor phase current and PSU rating; identify winding pairs by continuity with power isolated. Axis/channel pairing is proposed.",
+              "direction": true
+            },
+            {
+              "from": "prime_z.p2",
+              "to": "motor_z.z_B1",
+              "state": "guess",
+              "function": "Prime J7.2 COIL_B1 to Z motor winding lead B1",
+              "check": "Confirm Prime driver current setting, motor phase current and PSU rating; identify winding pairs by continuity with power isolated. Axis/channel pairing is proposed.",
+              "direction": true
+            },
+            {
+              "from": "prime_z.p1",
+              "to": "motor_z.z_B2",
+              "state": "guess",
+              "function": "Prime J7.1 COIL_B2 to Z motor winding lead B2",
+              "check": "Confirm Prime driver current setting, motor phase current and PSU rating; identify winding pairs by continuity with power isolated. Axis/channel pairing is proposed.",
+              "direction": true
+            }
+          ],
+          "note": "Four phase conductors are shown separately. The Prime PCB exposes these phase outputs, but CubeFactory installed motor cable colours, winding pairs, and board revision are not documented. Verify current/supply limits before connecting."
+        },
+        {
+          "title": "Printer E stepper \u00b7 integrated Prime driver channel D",
+          "nodes": [
+            {
+              "id": "prime_e",
+              "title": "Smoothieboard V2 Prime \u00b7 driver D outputs",
+              "column": 0,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "p1",
+                  "label": "J8.1 COIL_B2",
+                  "side": "right"
+                },
+                {
+                  "id": "p2",
+                  "label": "J8.2 COIL_B1",
+                  "side": "right"
+                },
+                {
+                  "id": "p3",
+                  "label": "J8.3 COIL_A2",
+                  "side": "right"
+                },
+                {
+                  "id": "p4",
+                  "label": "J8.4 COIL_A1",
+                  "side": "right"
+                }
+              ]
+            },
+            {
+              "id": "motor_e",
+              "title": "Printer E stepper motor \u00b7 lead labels must be measured",
+              "column": 2,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "e_A1",
+                  "label": "E motor A1 measured lead",
+                  "side": "left"
+                },
+                {
+                  "id": "e_A2",
+                  "label": "E motor A2 measured lead",
+                  "side": "left"
+                },
+                {
+                  "id": "e_B1",
+                  "label": "E motor B1 measured lead",
+                  "side": "left"
+                },
+                {
+                  "id": "e_B2",
+                  "label": "E motor B2 measured lead",
+                  "side": "left"
+                }
+              ]
+            }
+          ],
+          "edges": [
+            {
+              "from": "prime_e.p4",
+              "to": "motor_e.e_A1",
+              "state": "guess",
+              "function": "Prime J8.4 COIL_A1 to E motor winding lead A1",
+              "check": "Confirm Prime driver current setting, motor phase current and PSU rating; identify winding pairs by continuity with power isolated. Axis/channel pairing is proposed.",
+              "direction": true
+            },
+            {
+              "from": "prime_e.p3",
+              "to": "motor_e.e_A2",
+              "state": "guess",
+              "function": "Prime J8.3 COIL_A2 to E motor winding lead A2",
+              "check": "Confirm Prime driver current setting, motor phase current and PSU rating; identify winding pairs by continuity with power isolated. Axis/channel pairing is proposed.",
+              "direction": true
+            },
+            {
+              "from": "prime_e.p2",
+              "to": "motor_e.e_B1",
+              "state": "guess",
+              "function": "Prime J8.2 COIL_B1 to E motor winding lead B1",
+              "check": "Confirm Prime driver current setting, motor phase current and PSU rating; identify winding pairs by continuity with power isolated. Axis/channel pairing is proposed.",
+              "direction": true
+            },
+            {
+              "from": "prime_e.p1",
+              "to": "motor_e.e_B2",
+              "state": "guess",
+              "function": "Prime J8.1 COIL_B2 to E motor winding lead B2",
+              "check": "Confirm Prime driver current setting, motor phase current and PSU rating; identify winding pairs by continuity with power isolated. Axis/channel pairing is proposed.",
+              "direction": true
+            }
+          ],
+          "note": "Four phase conductors are shown separately. The Prime PCB exposes these phase outputs, but CubeFactory installed motor cable colours, winding pairs, and board revision are not documented. Verify current/supply limits before connecting."
+        },
+        {
+          "title": "Recycler \u00b7 configured PWM setpoint and independent run input",
+          "nodes": [
+            {
+              "id": "core_pwm",
+              "title": "SmoothieBox V2 Core \u00b7 P1 J35",
+              "column": 0,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "pwm",
+                  "label": "J35.6 \u00b7 TIM1_CH1 PWM",
+                  "side": "right"
+                },
+                {
+                  "id": "run",
+                  "label": "J35.7 \u00b7 TIM1_CH2 / TTL candidate",
+                  "side": "right"
+                },
+                {
+                  "id": "gnd",
+                  "label": "J35.10 \u00b7 GND",
+                  "side": "right"
+                }
+              ]
+            },
+            {
+              "id": "escon_j5",
+              "title": "Maxon ESCON 70/10 \u00b7 J5 control terminals",
+              "column": 2,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "din1",
+                  "label": "J5.1 \u00b7 DigIN1",
+                  "side": "left"
+                },
+                {
+                  "id": "din2",
+                  "label": "J5.2 \u00b7 DigIN2",
+                  "side": "left"
+                },
+                {
+                  "id": "gnd",
+                  "label": "J5.5 \u00b7 signal GND",
+                  "side": "left"
+                },
+                {
+                  "id": "aux",
+                  "label": "J5.6 \u00b7 +5 V aux \u226410 mA",
+                  "side": "left"
+                }
+              ]
+            }
+          ],
+          "edges": [
+            {
+              "from": "core_pwm.pwm",
+              "to": "escon_j5.din1",
+              "state": "guess",
+              "function": "PWM command to configured ESCON DigIN1 set-value input",
+              "check": "ESCON manual supports 10 Hz\u20135 kHz, 10\u201390% PWM and logic high >2.4 V typical. Verify set-value mode, frequency, scaling, polarity and failsafe against exact controller configuration.",
+              "direction": true
+            },
+            {
+              "from": "core_pwm.gnd",
+              "to": "escon_j5.gnd",
+              "state": "guess",
+              "function": "PWM signal reference",
+              "check": "The ESCON names J5.5 signal GND; Core-to-ESCON common is a proposed non-isolated reference. Verify grounds and noise before connection.",
+              "direction": true
+            },
+            {
+              "from": "core_pwm.run",
+              "to": "escon_j5.din2",
+              "state": "guess",
+              "function": "Separate run/stop request",
+              "check": "Configure DigIN2 function and active polarity; deassertion is not a substitute for the physical E-stop.",
+              "direction": true
+            }
+          ],
+          "note": "This is a signal proposal only. Maxon J5.1 accepts configurable digital/PWM input; J5.5 is signal return. Never use J5.6 auxiliary +5 V to power the interface or feed a Core GPIO. ESCON remains between 24 V supply and recycler BLDC motor."
+        },
+        {
+          "title": "Recycler \u00b7 retain motor power stage and feedback on ESCON",
+          "nodes": [
+            {
+              "id": "supply24",
+              "title": "Existing recycler 24 V supply (nameplate/source reported)",
+              "column": 0,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "plus",
+                  "label": "+24 V output",
+                  "side": "right"
+                },
+                {
+                  "id": "minus",
+                  "label": "0 V return",
+                  "side": "right"
+                }
+              ]
+            },
+            {
+              "id": "escon_power",
+              "title": "ESCON 70/10 power / motor / Hall connectors",
+              "column": 1,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "dcplus",
+                  "label": "J1 + \u00b7 +VCC (10\u201370 VDC family input)",
+                  "side": "left"
+                },
+                {
+                  "id": "dcminus",
+                  "label": "J1 \u2212 \u00b7 Power_GND",
+                  "side": "left"
+                },
+                {
+                  "id": "u",
+                  "label": "J2.1 \u00b7 EC winding 1",
+                  "side": "right"
+                },
+                {
+                  "id": "v",
+                  "label": "J2.2 \u00b7 EC winding 2",
+                  "side": "right"
+                },
+                {
+                  "id": "w",
+                  "label": "J2.3 \u00b7 EC winding 3",
+                  "side": "right"
+                },
+                {
+                  "id": "h1",
+                  "label": "J3.1 Hall 1",
+                  "side": "right"
+                },
+                {
+                  "id": "h2",
+                  "label": "J3.2 Hall 2",
+                  "side": "right"
+                },
+                {
+                  "id": "h3",
+                  "label": "J3.3 Hall 3",
+                  "side": "right"
+                },
+                {
+                  "id": "h5",
+                  "label": "J3.4 +5 V Hall supply",
+                  "side": "right"
+                },
+                {
+                  "id": "hret",
+                  "label": "J3.5 GND Hall return",
+                  "side": "right"
+                },
+                {
+                  "id": "shield",
+                  "label": "J2.4 \u00b7 motor cable shield",
+                  "side": "right"
+                }
+              ]
+            },
+            {
+              "id": "load",
+              "title": "RS Pro BLDC shredder motor and Hall harness",
+              "column": 2,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "u",
+                  "label": "verified motor phase U lead",
+                  "side": "left"
+                },
+                {
+                  "id": "v",
+                  "label": "verified motor phase V lead",
+                  "side": "left"
+                },
+                {
+                  "id": "w",
+                  "label": "verified motor phase W lead",
+                  "side": "left"
+                },
+                {
+                  "id": "h1",
+                  "label": "Hall 1 lead",
+                  "side": "left"
+                },
+                {
+                  "id": "h2",
+                  "label": "Hall 2 lead",
+                  "side": "left"
+                },
+                {
+                  "id": "h3",
+                  "label": "Hall 3 lead",
+                  "side": "left"
+                },
+                {
+                  "id": "h5",
+                  "label": "Hall +5 V",
+                  "side": "left"
+                },
+                {
+                  "id": "hret",
+                  "label": "Hall signal return",
+                  "side": "left"
+                },
+                {
+                  "id": "shield",
+                  "label": "motor cable shield lead",
+                  "side": "left"
+                }
+              ]
+            }
+          ],
+          "edges": [
+            {
+              "from": "supply24.plus",
+              "to": "escon_power.dcplus",
+              "state": "guess",
+              "function": "24 V DC feed to ESCON",
+              "check": "Source names 24 V but fitted ESCON power terminal identifiers/current sizing and exact motor load must be checked.",
+              "direction": true
+            },
+            {
+              "from": "supply24.minus",
+              "to": "escon_power.dcminus",
+              "state": "guess",
+              "function": "24 V return",
+              "check": "Confirm polarity and current rating; source does not give installed supply contact labels.",
+              "direction": false
+            },
+            {
+              "from": "escon_power.u",
+              "to": "load.u",
+              "state": "open",
+              "function": "ESCON phase U to measured motor phase",
+              "check": "Exact motor phase pin/color mapping is not published; trace by motor/drive matching documentation before wiring.",
+              "direction": true
+            },
+            {
+              "from": "escon_power.v",
+              "to": "load.v",
+              "state": "open",
+              "function": "ESCON phase V to measured motor phase",
+              "check": "Exact motor phase pin/color mapping is not published; trace by motor/drive matching documentation before wiring.",
+              "direction": true
+            },
+            {
+              "from": "escon_power.w",
+              "to": "load.w",
+              "state": "open",
+              "function": "ESCON phase W to measured motor phase",
+              "check": "Exact motor phase pin/color mapping is not published; trace by motor/drive matching documentation before wiring.",
+              "direction": true
+            },
+            {
+              "from": "escon_power.h1",
+              "to": "load.h1",
+              "state": "open",
+              "function": "ESCON J3.1 Hall 1 to Hall harness",
+              "check": "Motor/Hall cable contacts and Hall phase order are not documented; verify exact motor datasheet and continuity.",
+              "direction": true
+            },
+            {
+              "from": "escon_power.h2",
+              "to": "load.h2",
+              "state": "open",
+              "function": "ESCON J3.2 Hall 2 to Hall harness",
+              "check": "Motor/Hall cable contacts and Hall phase order are not documented; verify exact motor datasheet and continuity.",
+              "direction": true
+            },
+            {
+              "from": "escon_power.h3",
+              "to": "load.h3",
+              "state": "open",
+              "function": "ESCON J3.3 Hall 3 to Hall harness",
+              "check": "Motor/Hall cable contacts and Hall phase order are not documented; verify exact motor datasheet and continuity.",
+              "direction": true
+            },
+            {
+              "from": "escon_power.h5",
+              "to": "load.h5",
+              "state": "open",
+              "function": "ESCON J3.4 +5 V to Hall harness",
+              "check": "Motor/Hall cable contacts and Hall phase order are not documented; verify exact motor datasheet and continuity.",
+              "direction": true
+            },
+            {
+              "from": "escon_power.hret",
+              "to": "load.hret",
+              "state": "open",
+              "function": "ESCON J3.5 GND to Hall harness",
+              "check": "Motor/Hall cable contacts and Hall phase order are not documented; verify exact motor datasheet and continuity.",
+              "direction": true
+            },
+            {
+              "from": "escon_power.shield",
+              "to": "load.shield",
+              "state": "open",
+              "function": "J2.4 motor shield to verified motor cable screen",
+              "check": "Check Maxon grounding/shield termination instructions and installed cable; do not infer shield-to-PE bond.",
+              "direction": true
+            }
+          ],
+          "note": "Maxon J3 Hall schedule: 1 Hall1, 2 Hall2, 3 Hall3, 4 +5 V Hall supply (\u226430 mA), 5 GND. J3 motor/Hall wiring is source-specific but the CubeFactory harness is unreported; OPEN breaks prevent fabricated phase/color assignments. ESCON 70/10 current rating must be reconciled with project claim of 10 A normal / 40 A maximum before use."
+        },
+        {
+          "title": "Recycler heater and original controller \u00b7 do not splice yet",
+          "nodes": [
+            {
+              "id": "heater_source",
+              "title": "Core or Prime heater output (not selected)",
+              "column": 0,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "out",
+                  "label": "heater MOSFET output candidate",
+                  "side": "right"
+                },
+                {
+                  "id": "gnd",
+                  "label": "board ground",
+                  "side": "right"
+                }
+              ]
+            },
+            {
+              "id": "heater_ctrl",
+              "title": "Controller shown in project text/photo \u00b7 exact rear terminals unknown",
+              "column": 1,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "in",
+                  "label": "controller heater demand / input \u00b7 terminal unknown",
+                  "side": "left"
+                },
+                {
+                  "id": "sensor",
+                  "label": "sensor input \u00b7 model/terminal unknown",
+                  "side": "right"
+                },
+                {
+                  "id": "out",
+                  "label": "heater switching output \u00b7 terminal unknown",
+                  "side": "right"
+                }
+              ]
+            },
+            {
+              "id": "heater",
+              "title": "24 V, 150 W sleeve \u00b7 nominal 6.25 A",
+              "column": 2,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "a",
+                  "label": "heater lead 1",
+                  "side": "left"
+                },
+                {
+                  "id": "b",
+                  "label": "heater lead 2",
+                  "side": "left"
+                }
+              ]
+            },
+            {
+              "id": "sensor_unknown",
+              "title": "Existing temperature sensor \u00b7 type and pair unknown",
+              "column": 2,
+              "offset": 220,
+              "contacts": [
+                {
+                  "id": "s1",
+                  "label": "sensor lead 1 (unidentified)",
+                  "side": "left"
+                },
+                {
+                  "id": "s2",
+                  "label": "sensor lead 2 (unidentified)",
+                  "side": "left"
+                }
+              ]
+            }
+          ],
+          "edges": [
+            {
+              "from": "heater_source.out",
+              "to": "heater_ctrl.in",
+              "state": "open",
+              "function": "Controller command input",
+              "check": "Controller exact model/rear terminal/rating unresolved; do not connect GPIO or heater load until identified.",
+              "direction": true
+            },
+            {
+              "from": "heater_ctrl.out",
+              "to": "heater.a",
+              "state": "open",
+              "function": "Rated heater supply switching",
+              "check": "Controller output and harness unknown; identify model, output rating and sensor type. Do not switch 6.25 A nominal from unverified board stage.",
+              "direction": true
+            },
+            {
+              "from": "heater_ctrl.sensor",
+              "to": "sensor_unknown.s1",
+              "state": "open",
+              "function": "Controller sensor input to measured sensor lead",
+              "check": "Thermistor/RTD type, polarity/curve and terminal mapping are unknown; identify before wiring.",
+              "direction": true
+            }
+          ],
+          "note": "Project text says Inkbird D1S-2R-24, but the visible photograph only shows INKBIRD/ITC front branding. Identify rear label, sensor, supply, output rating and the 24 V supply branch; then add exact contacts."
+        },
+        {
+          "title": "Prime alternative \u00b7 separate logic and motor supplies",
+          "nodes": [
+            {
+              "id": "logic",
+              "title": "Regulated 5 V logic supply",
+              "column": 0,
+              "contacts": [
+                {
+                  "id": "v",
+                  "label": "+5 V regulated",
+                  "side": "right"
+                },
+                {
+                  "id": "g",
+                  "label": "0 V logic return",
+                  "side": "right"
+                }
+              ]
+            },
+            {
+              "id": "motor",
+              "title": "Verified motor supply \u00b7 voltage/current TBD",
+              "column": 0,
+              "contacts": [
+                {
+                  "id": "v",
+                  "label": "DC + \u00b7 before fuse",
+                  "side": "right"
+                },
+                {
+                  "id": "g",
+                  "label": "0 V motor return",
+                  "side": "right"
+                }
+              ]
+            },
+            {
+              "id": "fuse",
+              "title": "Motor branch fuse \u00b7 rating selected after measurement",
+              "column": 1,
+              "contacts": [
+                {
+                  "id": "in",
+                  "label": "fuse input",
+                  "side": "left"
+                },
+                {
+                  "id": "out",
+                  "label": "fuse output",
+                  "side": "left"
+                }
+              ]
+            },
+            {
+              "id": "prime",
+              "title": "Prime P11/P12 \u00b7 confirm exact revision",
+              "column": 2,
+              "contacts": [
+                {
+                  "id": "v5",
+                  "label": "J42.1 \u00b7 5V_PORTIN",
+                  "side": "left"
+                },
+                {
+                  "id": "lg",
+                  "label": "J42.2 \u00b7 GND",
+                  "side": "left"
+                },
+                {
+                  "id": "vm",
+                  "label": "J9.1 \u00b7 VMOT",
+                  "side": "left"
+                },
+                {
+                  "id": "mg",
+                  "label": "J9.2 \u00b7 GND",
+                  "side": "left"
+                },
+                {
+                  "id": "aux1",
+                  "label": "J10.1 \u00b7 VMOT parallel \u00b7 unused",
+                  "side": "left"
+                },
+                {
+                  "id": "aux2",
+                  "label": "J10.2 \u00b7 GND parallel \u00b7 unused",
+                  "side": "left"
+                }
+              ]
+            }
+          ],
+          "edges": [
+            {
+              "from": "logic.v",
+              "to": "prime.v5",
+              "function": "Prime regulated logic supply",
+              "state": "guess",
+              "check": "Prime alternative only. Confirm fitted P11/P12 revision, input-voltage/current limits, supply sequencing and fuse/conductor ratings. Never connect both Core external drivers and Prime winding outputs to the same motor."
+            },
+            {
+              "from": "logic.g",
+              "to": "prime.lg",
+              "function": "Prime logic supply return",
+              "state": "guess",
+              "check": "Prime alternative only. Confirm fitted P11/P12 revision, input-voltage/current limits, supply sequencing and fuse/conductor ratings. Never connect both Core external drivers and Prime winding outputs to the same motor."
+            },
+            {
+              "from": "motor.v",
+              "to": "fuse.in",
+              "function": "Protected motor branch input",
+              "state": "guess",
+              "check": "Prime alternative only. Confirm fitted P11/P12 revision, input-voltage/current limits, supply sequencing and fuse/conductor ratings. Never connect both Core external drivers and Prime winding outputs to the same motor."
+            },
+            {
+              "from": "fuse.out",
+              "to": "prime.vm",
+              "function": "Prime VMOT power",
+              "state": "guess",
+              "check": "Prime alternative only. Confirm fitted P11/P12 revision, input-voltage/current limits, supply sequencing and fuse/conductor ratings. Never connect both Core external drivers and Prime winding outputs to the same motor."
+            },
+            {
+              "from": "motor.g",
+              "to": "prime.mg",
+              "function": "Prime motor supply return",
+              "state": "guess",
+              "check": "Prime alternative only. Confirm fitted P11/P12 revision, input-voltage/current limits, supply sequencing and fuse/conductor ratings. Never connect both Core external drivers and Prime winding outputs to the same motor."
+            }
+          ],
+          "note": "This is the alternative integrated-driver architecture. The same PCB-derived contact labels occur on P11/P12, but driver type, rating and current configuration differ. Use one verified power-entry arrangement; J10 parallels VMOT and is left unused here. Board ground is shared internally; route motor current directly to power distribution, not through logic wiring. Determine actual allowed voltage/current before choosing a supply; no machine-source adapter automatically qualifies."
+        },
+        {
+          "title": "Printer home inputs \u00b7 X, Y and Z switch pairs",
+          "nodes": [
+            {
+              "id": "Xboard",
+              "title": "Prime P12 \u00b7 X minimum/home candidate",
+              "column": 0,
+              "contacts": [
+                {
+                  "id": "s",
+                  "label": "J24.1 \u00b7 selector supply \u00b7 NC",
+                  "side": "right"
+                },
+                {
+                  "id": "g",
+                  "label": "J24.2 \u00b7 X home GND",
+                  "side": "right"
+                },
+                {
+                  "id": "i",
+                  "label": "J24.3 \u00b7 X home input",
+                  "side": "right"
+                }
+              ]
+            },
+            {
+              "id": "Xswitch",
+              "title": "X switch \u00b7 measured passive contact",
+              "column": 2,
+              "contacts": [
+                {
+                  "id": "a",
+                  "label": "X measured contact lead A",
+                  "side": "left"
+                },
+                {
+                  "id": "b",
+                  "label": "X measured return lead B",
+                  "side": "left"
+                }
+              ]
+            },
+            {
+              "id": "Yboard",
+              "title": "Prime P12 \u00b7 Y minimum/home candidate",
+              "column": 0,
+              "contacts": [
+                {
+                  "id": "s",
+                  "label": "J26.1 \u00b7 selector supply \u00b7 NC",
+                  "side": "right"
+                },
+                {
+                  "id": "g",
+                  "label": "J26.2 \u00b7 Y home GND",
+                  "side": "right"
+                },
+                {
+                  "id": "i",
+                  "label": "J26.3 \u00b7 Y home input",
+                  "side": "right"
+                }
+              ]
+            },
+            {
+              "id": "Yswitch",
+              "title": "Y switch \u00b7 measured passive contact",
+              "column": 2,
+              "contacts": [
+                {
+                  "id": "a",
+                  "label": "Y measured contact lead A",
+                  "side": "left"
+                },
+                {
+                  "id": "b",
+                  "label": "Y measured return lead B",
+                  "side": "left"
+                }
+              ]
+            },
+            {
+              "id": "Zboard",
+              "title": "Prime P12 \u00b7 Z minimum/home candidate",
+              "column": 0,
+              "contacts": [
+                {
+                  "id": "s",
+                  "label": "J28.1 \u00b7 selector supply \u00b7 NC",
+                  "side": "right"
+                },
+                {
+                  "id": "g",
+                  "label": "J28.2 \u00b7 Z home GND",
+                  "side": "right"
+                },
+                {
+                  "id": "i",
+                  "label": "J28.3 \u00b7 Z home input",
+                  "side": "right"
+                }
+              ]
+            },
+            {
+              "id": "Zswitch",
+              "title": "Z switch \u00b7 measured passive contact",
+              "column": 2,
+              "contacts": [
+                {
+                  "id": "a",
+                  "label": "Z measured contact lead A",
+                  "side": "left"
+                },
+                {
+                  "id": "b",
+                  "label": "Z measured return lead B",
+                  "side": "left"
+                }
+              ]
+            }
+          ],
+          "edges": [
+            {
+              "from": "Xboard.i",
+              "to": "Xswitch.a",
+              "function": "X home signal",
+              "state": "guess",
+              "check": "Trace actual switch pair, prove passive dry contact and NO/NC operation; verify input pull-up and firmware home direction."
+            },
+            {
+              "from": "Xboard.g",
+              "to": "Xswitch.b",
+              "function": "X home return",
+              "state": "guess",
+              "check": "Trace actual switch pair, prove passive dry contact and NO/NC operation; verify input pull-up and firmware home direction."
+            },
+            {
+              "from": "Yboard.i",
+              "to": "Yswitch.a",
+              "function": "Y home signal",
+              "state": "guess",
+              "check": "Trace actual switch pair, prove passive dry contact and NO/NC operation; verify input pull-up and firmware home direction."
+            },
+            {
+              "from": "Yboard.g",
+              "to": "Yswitch.b",
+              "function": "Y home return",
+              "state": "guess",
+              "check": "Trace actual switch pair, prove passive dry contact and NO/NC operation; verify input pull-up and firmware home direction."
+            },
+            {
+              "from": "Zboard.i",
+              "to": "Zswitch.a",
+              "function": "Z home signal",
+              "state": "guess",
+              "check": "Trace actual switch pair, prove passive dry contact and NO/NC operation; verify input pull-up and firmware home direction."
+            },
+            {
+              "from": "Zboard.g",
+              "to": "Zswitch.b",
+              "function": "Z home return",
+              "state": "guess",
+              "check": "Trace actual switch pair, prove passive dry contact and NO/NC operation; verify input pull-up and firmware home direction."
+            }
+          ],
+          "note": "Prusa/Hephestos family reference does not establish the fitted CubeFactory harness. This proposal uses newly identified passive switch leads; confirm each NO/NC state and firmware axis assignment with power isolated. Pin1 supply selectors stay unused. Powered sensors need an electrically matched interface, not this passive-contact circuit. Optional max inputs J25/J27/J29 remain unconnected unless actual additional switches are fitted and mapped."
+        },
+        {
+          "title": "Prime P12 \u00b7 Hotend A \u00b7 complete external power and load circuit",
+          "nodes": [
+            {
+              "id": "supply",
+              "title": "Heater-matched DC supply \u00b7 rating measured",
+              "column": 0,
+              "contacts": [
+                {
+                  "id": "v",
+                  "label": "DC + before branch fuse",
+                  "side": "right"
+                },
+                {
+                  "id": "g",
+                  "label": "0 V power return",
+                  "side": "right"
+                }
+              ]
+            },
+            {
+              "id": "fuse",
+              "title": "Individual heater branch fuse \u00b7 rating TBD",
+              "column": 0,
+              "contacts": [
+                {
+                  "id": "a",
+                  "label": "input from supply +",
+                  "side": "right"
+                },
+                {
+                  "id": "b",
+                  "label": "output to VFET input",
+                  "side": "right"
+                }
+              ]
+            },
+            {
+              "id": "prime",
+              "title": "Prime P12 \u00b7 2590 revision ONLY",
+              "column": 1,
+              "contacts": [
+                {
+                  "id": "v",
+                  "label": "J12.1 \u00b7 VFET \u00b7 XT30 power entry",
+                  "side": "left"
+                },
+                {
+                  "id": "g",
+                  "label": "J12.2 \u00b7 GND_FET \u00b7 XT30 return",
+                  "side": "left"
+                },
+                {
+                  "id": "hplus",
+                  "label": "J17.1 \u00b7 shared cutoff-switched VFET",
+                  "side": "right"
+                },
+                {
+                  "id": "hminus",
+                  "label": "J17.2 \u00b7 Hotend A switched return",
+                  "side": "right"
+                },
+                {
+                  "id": "aux1",
+                  "label": "J11.1 \u00b7 auxiliary VFET \u00b7 unused",
+                  "side": "left"
+                },
+                {
+                  "id": "aux2",
+                  "label": "J11.2 \u00b7 auxiliary GND_FET \u00b7 unused",
+                  "side": "left"
+                }
+              ]
+            },
+            {
+              "id": "cutoff",
+              "title": "Independent thermal cutoff \u00b7 DC/load rated",
+              "column": 2,
+              "contacts": [
+                {
+                  "id": "a",
+                  "label": "series contact lead A",
+                  "side": "left"
+                },
+                {
+                  "id": "b",
+                  "label": "series contact lead B",
+                  "side": "left"
+                }
+              ]
+            },
+            {
+              "id": "heater",
+              "title": "Measured hotend heater \u00b7 never infer rating",
+              "column": 2,
+              "contacts": [
+                {
+                  "id": "a",
+                  "label": "heater lead A",
+                  "side": "left"
+                },
+                {
+                  "id": "b",
+                  "label": "heater lead B",
+                  "side": "left"
+                }
+              ]
+            }
+          ],
+          "edges": [
+            {
+              "from": "supply.v",
+              "to": "fuse.a",
+              "function": "Heater branch fuse feed",
+              "state": "guess",
+              "check": "Select fuse DC voltage/current/interrupt rating and conductor protection from actual heater/supply."
+            },
+            {
+              "from": "fuse.b",
+              "to": "prime.v",
+              "function": "VFET power entry",
+              "state": "guess",
+              "check": "Use XT30 J12, not small 2.54mm J11 auxiliary header; verify exact board, connector, PCB and load current limits."
+            },
+            {
+              "from": "supply.g",
+              "to": "prime.g",
+              "function": "Heater power return",
+              "state": "guess",
+              "check": "Separate from logic supply/VMOT; verify return topology and protective earth as applicable."
+            },
+            {
+              "from": "prime.hplus",
+              "to": "cutoff.a",
+              "function": "Positive heater feed",
+              "state": "guess",
+              "check": "J17.1 is downstream of factory Q25 high-side cutoff. Match heater voltage/current and output connector rating."
+            },
+            {
+              "from": "cutoff.b",
+              "to": "heater.a",
+              "function": "Thermally protected heater feed",
+              "state": "guess",
+              "check": "Install rated cutoff mechanically/electrically according to its manufacturer and heater location."
+            },
+            {
+              "from": "heater.b",
+              "to": "prime.hminus",
+              "function": "Hotend A switched heater return",
+              "state": "guess",
+              "check": "J17.2 is Q19 drain; configured output, tested startup-off and validated temperature feedback are mandatory before enabling heat."
+            }
+          ],
+          "note": "Board-side evidence: exact P12 schematic/PCB at commit7dc4f9a identifies J17 Hotend A, J18 Hotend B, J19 Fan1, J20 Fan2. J17.1 receives shared Q25 cutoff-controlled VFET; J17.2 is Q19 switched return. These are factory internal circuits, not user soldering instructions. PE0 / HOTEND_A_FET and PF14 / OUTPUTENABLE come from the exact P12 source; a general documentation PJ6 label conflicts and must not override this revision. Heater/sensor fitment and connector-safe current are unknown: measure, qualify firmware and prove thermal shutdown before connecting heat. No guaranteed 5A terminal rating is asserted."
+        },
+        {
+          "title": "Prime P12 \u00b7 individual fan outputs and spare Hotend B",
+          "nodes": [
+            {
+              "id": "prime",
+              "title": "Prime P12 \u00b7 powered by preceding J12 circuit",
+              "column": 0,
+              "contacts": [
+                {
+                  "id": "f1p",
+                  "label": "J19.1 \u00b7 cutoff-switched VFET",
+                  "side": "right"
+                },
+                {
+                  "id": "f1m",
+                  "label": "J19.2 \u00b7 Fan1 switched return",
+                  "side": "right"
+                },
+                {
+                  "id": "f2p",
+                  "label": "J20.1 \u00b7 cutoff-switched VFET",
+                  "side": "right"
+                },
+                {
+                  "id": "f2m",
+                  "label": "J20.2 \u00b7 Fan2 switched return",
+                  "side": "right"
+                },
+                {
+                  "id": "hbp",
+                  "label": "J18.1 \u00b7 Hotend B + \u00b7 unused",
+                  "side": "right"
+                },
+                {
+                  "id": "hbm",
+                  "label": "J18.2 \u00b7 Hotend B return \u00b7 unused",
+                  "side": "right"
+                }
+              ]
+            },
+            {
+              "id": "fan1",
+              "title": "Installed fan1 \u00b7 identify voltage/current and use",
+              "column": 2,
+              "contacts": [
+                {
+                  "id": "p",
+                  "label": "measured positive lead",
+                  "side": "left"
+                },
+                {
+                  "id": "m",
+                  "label": "measured return lead",
+                  "side": "left"
+                }
+              ]
+            },
+            {
+              "id": "fan2",
+              "title": "Optional fan2 \u00b7 identify fitment and ratings",
+              "column": 2,
+              "contacts": [
+                {
+                  "id": "p",
+                  "label": "measured positive lead",
+                  "side": "left"
+                },
+                {
+                  "id": "m",
+                  "label": "measured return lead",
+                  "side": "left"
+                }
+              ]
+            }
+          ],
+          "edges": [
+            {
+              "from": "prime.f1p",
+              "to": "fan1.p",
+              "function": "Fan1 positive feed",
+              "state": "guess",
+              "check": "Fan receives VFET rail, not a separately inferred 5V/12V supply. Match actual fan voltage/current."
+            },
+            {
+              "from": "fan1.m",
+              "to": "prime.f1m",
+              "function": "Fan1 switched return",
+              "state": "guess",
+              "check": "Q21 internal low-side stage; configure fan function and prove cooling whenever heater is enabled."
+            },
+            {
+              "from": "prime.f2p",
+              "to": "fan2.p",
+              "function": "Fan2 positive feed",
+              "state": "guess",
+              "check": "Connect only if fitted or deliberately added, electrically matched and firmware configured."
+            },
+            {
+              "from": "fan2.m",
+              "to": "prime.f2m",
+              "function": "Fan2 switched return",
+              "state": "guess",
+              "check": "Q22 internal low-side stage; verify rated load and startup state."
+            }
+          ],
+          "note": "J19/J20 pin1 share the same VFET output from factory Q25; pin2 returns switch through Q21/Q22. No second power supply is connected to the fan outputs. Leave both J18 contacts unconnected in this one-hotend option. Actual hotend heatsink cooling must be maintained; do not assume an original fan is VFET-voltage rated."
+        }
+      ],
+      "target_options": {
+        "smoothiebox": "Use a SmoothieBox carrying V2 Prime for the four printer steppers only after matching rated motor current, motor supply, heater and sensor types. The box/carrier itself is not the motion controller.",
+        "core": "V2 Core has no integrated stepper power stages; add four selected external stepper drivers and measure each motor winding/current. Core J5 A\u2013D STEP/DIR are logical signals; slash-prefixed net names do not mean active-low.",
+        "prime": "Preferred printer candidate because four integrated channels match the design-family X/Y/Z/E arrangement. Exact Prime connector J5/J6/J7/J8 phases are drawn; CubeFactory harness/polarity/current remains unverified. Keep recycler on ESCON. Thermal/fan proposal below is specifically the researched Prime P12 2590 variant, not a transferable P11 thermal pinout. Recycler sleeve heater remains on its independently controlled original system."
+      },
+      "parts": [
+        "Retain Maxon ESCON 70/10 for recycler BLDC; verify current capability and exact model/configuration first.",
+        "Retain identified 24 V DC supply only if its measured/nameplate rating fits the ESCON and load.",
+        "Prime option: four motor phase outputs J5\u2013J8; no external driver required if rating matches. Core option: four rated external drivers; exact driver model not documented.",
+        "Keep the separate heater controller until its rear label, output and sensor terminals are identified.",
+        "Conditional Prime P12 heater/fan stages: use J12 XT30 VFET entry, J17 Hotend A, J19/J20 fans only with measured matching loads, branch fuse and independent thermal cutoff; temperature feedback/firmware is a blocking qualification gate."
+      ],
+      "instructions": [
+        "Photograph and transcribe fitted controller, ESCON, motor, supply, printer board and heater-controller labels.",
+        "Isolate power. Check ESCON current limit and motor rating against 10 A normal / 40 A maximum project statements; do not assume the 70/10 model can sustain 40 A.",
+        "For Prime, continuity-test each printer motor to identify A/B winding pairs and verify phase current and supply range; connect only to J5/J6/J7/J8 after rating check. For Core, select matching external drivers and preserve the separate driver power stage.",
+        "Verify ESCON DigIN1 PWM configuration, frequency, setpoint scaling, DigIN2 run function, reference and stop behavior before signal connection.",
+        "Leave heater, sensors and limit switches OPEN until exact fitted device and terminal function are identified. Prove physical E-stop and guards independently of Smoothie."
+      ]
+    },
+    "machine-side-graph-snapshot.json": {
+      "source_graph": "132-wiki-132.json",
+      "source_sha256": "0b5ec52a7053d6a3e2dc8f27705a943ae463a1fe4935220756c0d0e4903ac302",
+      "graph": {
+        "profile_id": "wiki-132",
+        "devices": [
+          {
+            "id": "unidentified-machine",
+            "role": "peripheral"
+          }
+        ],
+        "connectors": [
+          {
+            "id": "machine-unidentified",
+            "device": "unidentified-machine",
+            "refdes": "No source-scoped connector identity",
+            "form": "unknown",
+            "scope": "Captured profile lacks a numbered machine connector or source-scoped cable-group identity.",
+            "contacts": []
+          }
+        ],
+        "wires": []
+      }
+    }
+  }
+}

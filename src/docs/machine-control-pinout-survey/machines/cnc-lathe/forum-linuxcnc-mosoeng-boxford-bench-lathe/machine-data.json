@@ -1,0 +1,34 @@
+{
+  "id": "forum-linuxcnc-mosoeng-boxford-bench-lathe",
+  "sources": {
+    "forum-peripheral-evidence.json": {
+      "id": "forum-linuxcnc-mosoeng-boxford-bench-lathe",
+      "dossier": "src/docs/machine-research/linuxcnc-mosoeng-boxford-bench-lathe.md",
+      "reported_fitted_or_used": [],
+      "listed_for_build_unverified": [
+        {
+          "name": "PronetT-04A servo drives",
+          "contacts": [],
+          "source_line_number": 5,
+          "source_line": "LinuxCNC Forum member mosoeng reports attempting to retrofit a Boxford bench lathe with new servo drives and AC motors. The owner says the kit included PronetT-04A servo drives and a Mesa 7i97 Ethernet motion-control card. The post asks whether to configure the drives for analog speed or position control and whether motor encoders should be wired to Mesa. The inspected thread presents this as an active project and question; it does not specify a Boxford model or report a working machine.",
+          "evidence": "The owner says the kit included PronetT-04A servo drives and a Mesa 7i97 Ethernet motion-control card. The post asks whether to configure the drives for analog speed or position control and whether motor encoders should be wired to Mesa.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        }
+      ],
+      "historical_reference": [],
+      "planned_only": [],
+      "open_function_group": [
+        {
+          "name": "Motor-power and encoder cables",
+          "contacts": [],
+          "source_line_number": 5,
+          "source_line": "LinuxCNC Forum member mosoeng reports attempting to retrofit a Boxford bench lathe with new servo drives and AC motors. The owner says the kit included PronetT-04A servo drives and a Mesa 7i97 Ethernet motion-control card. The post asks whether to configure the drives for analog speed or position control and whether motor encoders should be wired to Mesa. The inspected thread presents this as an active project and question; it does not specify a Boxford model or report a working machine.",
+          "evidence": "The post asks whether to configure the drives for analog speed or position control and whether motor encoders should be wired to Mesa. The inspected thread presents this as an active project and question; it does not specify a Boxford model or report a working machine.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        }
+      ],
+      "exclusions": [],
+      "source_gap": "Dossier does not establish an as-built SmoothieBox route or a complete physical contact schedule for the listed peripherals."
+    }
+  }
+}

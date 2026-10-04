@@ -1,0 +1,65 @@
+{
+  "id": "parent-07",
+  "sources": {
+    "machine-side-graph-snapshot.json": {
+      "source_graph": "052-parent-07.json",
+      "source_sha256": "da153e2d40bcb4e477bf575940476d0944d802ee94a11a86a33a60f64963baee",
+      "graph": {
+        "profile_id": "parent-07",
+        "devices": [
+          {
+            "id": "group-device-001",
+            "role": "peripheral"
+          },
+          {
+            "id": "group-device-002",
+            "role": "peripheral"
+          },
+          {
+            "id": "group-device-003",
+            "role": "peripheral"
+          },
+          {
+            "id": "group-device-004",
+            "role": "peripheral"
+          }
+        ],
+        "connectors": [
+          {
+            "id": "machine-group-001",
+            "device": "group-device-001",
+            "refdes": "HDM-W1",
+            "form": "source-described cable / connector group",
+            "scope": "Source names this group, but provides no source-scoped physical contact map. Availability and exact housing are unverified. exact atlas group labels; open until contact mapping is established",
+            "contacts": []
+          },
+          {
+            "id": "machine-group-002",
+            "device": "group-device-002",
+            "refdes": "HDM-W2",
+            "form": "source-described cable / connector group",
+            "scope": "Source names this group, but provides no source-scoped physical contact map. Availability and exact housing are unverified. exact atlas group labels; open until contact mapping is established",
+            "contacts": []
+          },
+          {
+            "id": "machine-group-003",
+            "device": "group-device-003",
+            "refdes": "spindle",
+            "form": "source-described cable / connector group",
+            "scope": "Source names this group, but provides no source-scoped physical contact map. Availability and exact housing are unverified. exact atlas group labels; open until contact mapping is established",
+            "contacts": []
+          },
+          {
+            "id": "machine-group-004",
+            "device": "group-device-004",
+            "refdes": "6-pin pendant",
+            "form": "source-described cable / connector group",
+            "scope": "Source names this group, but provides no source-scoped physical contact map. Availability and exact housing are unverified. exact atlas group labels; open until contact mapping is established",
+            "contacts": []
+          }
+        ],
+        "wires": []
+      }
+    }
+  }
+}

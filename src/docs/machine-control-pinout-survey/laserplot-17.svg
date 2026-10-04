@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 800 800" width="800" height="800" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="laserplot-17-svg-title laserplot-17-svg-desc"><style>.wire{fill:none;stroke-width:3}.wire-proposed{stroke:#086e75;stroke-dasharray:9 6}.wire-reference{display:none}.wire-machine{stroke:#102b35;stroke-width:5}.wire-unresolved{stroke:#49616a;stroke-width:5;stroke-dasharray:3 6}.wire-power{stroke:#945126;stroke-width:5}
+.diagram-block{fill:#fff;stroke:#102b35;stroke-width:2}.diagram-core{fill:#0c3541;stroke:#0b6d73;stroke-width:7}.diagram-power{fill:#fff;stroke:#945126;stroke-width:2}.diagram-safety-boundary{fill:#fff;stroke:#9d352b;stroke-width:2;stroke-dasharray:4 4}
+.diagram-kicker,.diagram-index{font:800 13px ui-monospace,Consolas,monospace;fill:#086e75}.diagram-main{font:800 19px Arial,sans-serif;fill:#102b35}.diagram-note{font:14px ui-monospace,Consolas,monospace;fill:#49616a}.diagram-divider{stroke:#a7b8bb}.diagram-safety{font:800 11px ui-monospace,Consolas,monospace;fill:#9d352b}
+.diagram-core-name{font:900 54px Arial,sans-serif;fill:white}.diagram-core-sub{font:16px ui-monospace,Consolas,monospace;fill:#aee3e0}.diagram-core-top,.diagram-core-bottom,.diagram-core-side{font:800 14px ui-monospace,Consolas,monospace;fill:#b6e6e3}.diagram-warning{font:900 15px ui-monospace,Consolas,monospace;fill:#9d352b}
+.diagram-machine-label{font:700 14px Arial,sans-serif;fill:#102b35}</style>
+        <title id="laserplot-17-svg-title">LightObject Titan + Ruida hybrid controller · abstract V2 Core interface</title>
+        <desc id="laserplot-17-svg-desc">Abstract V2 Core retrofit layout for LightObject Titan + Ruida hybrid controller. Top input group: water/door protection. Right source logic or connector group: Source motion group · role TBD; external drive stage: Stepper drive stage; post-drive motor side: Motor harness not mapped. Bottom process group: laser PSU through a separate Laser PSU adapter interface. All paths from V2 Core are proposed and require electrical verification. Square V2 Core at centre. Dashed paths are design proposals, not verified connections.</desc>
+        <rect x="1" y="1" width="798" height="798" fill="#ffffff" stroke="#a7b8bb" stroke-width="2"/>
+        <path class="wire wire-proposed" d="M400 164V220 M190 390H220 M580 390H610 M400 580V638"/>
+        <path class="wire wire-unresolved" d="M690 445V470"/>
+        <path class="wire wire-reference" d="M670 700H655"/>
+        <rect class="diagram-safety-boundary" x="670" y="34" width="105" height="130"/><text class="diagram-safety" x="680" y="63">SAFETY</text><text class="diagram-note" x="680" y="90">Separate</text><text class="diagram-note" x="680" y="114">circuit</text><text class="diagram-note" x="680" y="138">TBD</text>
+        <rect class="diagram-block" x="145" y="34" width="510" height="130"/>
+        <text class="diagram-kicker" x="165" y="62">INPUTS · SENSORS / INTERLOCKS</text>
+        <text class="diagram-main" x="165" y="99">water/door protection</text>
+        <text class="diagram-note" x="165" y="132">Return, levels, loop behaviour · verify</text>
+        <rect class="diagram-block" x="25" y="327" width="165" height="126"/>
+        <text class="diagram-kicker" x="40" y="354">HOST</text>
+        <text class="diagram-main" x="40" y="388">USB / network</text>
+        <text class="diagram-note" x="40" y="419">Interface TBD</text>
+        <rect class="diagram-core" x="220" y="220" width="360" height="360"/>
+        <text class="diagram-core-top" x="400" y="252" text-anchor="middle">INPUTS · PROBE · SAFETY SENSE</text>
+        <text class="diagram-core-side" x="233" y="399" transform="rotate(-90 233 399)" text-anchor="middle">COMMUNICATIONS</text>
+        <text class="diagram-core-name" x="400" y="385" text-anchor="middle">V2 CORE</text>
+        <text class="diagram-core-sub" x="400" y="420" text-anchor="middle">functional plan</text>
+        <text class="diagram-core-side" x="567" y="399" transform="rotate(90 567 399)" text-anchor="middle">STEP · DIR · ENABLE</text>
+        <text class="diagram-core-bottom" x="400" y="549" text-anchor="middle">PWM · RUN · SWITCH COMMAND</text>
+        <text class="diagram-warning" x="400" y="613" text-anchor="middle">RESEARCH — NOT FOR WIRING</text>
+        <rect class="diagram-block" x="610" y="278" width="165" height="167"/>
+        <text class="diagram-kicker" x="625" y="307">SOURCE LOGIC</text>
+        <text class="diagram-machine-label"><tspan x="625" y="340">Source motion group</tspan><tspan x="625" y="357">· role TBD</tspan></text>
+        <line class="diagram-divider" x1="625" y1="383" x2="760" y2="383"/>
+        <text class="diagram-kicker" x="625" y="404">DRIVE STAGE</text>
+        <text class="diagram-machine-label" x="625" y="427">Stepper drive stage</text>
+        <rect class="diagram-block" x="610" y="470" width="165" height="100"/>
+        <text class="diagram-kicker" x="625" y="494">MOTOR SIDE</text>
+        <text class="diagram-machine-label"><tspan x="625" y="525">Motor harness not</tspan><tspan x="625" y="542">mapped</tspan></text>
+        <rect class="diagram-block" x="145" y="638" width="510" height="124"/>
+        <text class="diagram-kicker" x="165" y="665">OUTPUT STAGE · SEPARATE POWER / COMMON</text>
+        <text class="diagram-main" x="165" y="691">Output interface unverified</text>
+        <text class="diagram-main" x="165" y="716">→ laser PSU</text>
+        <text class="diagram-note" x="165" y="746">No source-backed installed output stage</text>
+        
+        <text class="diagram-index" x="25" y="789">068 / 107 · MACHINE-SIDE GROUPS FROM CITED SOURCES</text>
+      </svg>

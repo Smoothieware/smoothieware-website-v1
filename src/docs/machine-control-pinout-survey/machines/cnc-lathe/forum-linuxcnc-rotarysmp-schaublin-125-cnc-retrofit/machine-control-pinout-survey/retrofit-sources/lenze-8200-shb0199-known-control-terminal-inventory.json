@@ -1,0 +1,175 @@
+{
+  "schema": "lenze-8200-shb0199-indexed-control-terminal-source-inventory",
+  "manufacturer_source_url": "https://assets.euautomation.com/uploads/parts/pdf/338201e.pdf",
+  "manufacturer_identity": "Lenze 8200 SHB 0199 system manual for 8200/8210/8220/8240; indexed text printed pp.4-38/4-40/4-41 only",
+  "source_recovery": "Direct manufacturer PDF download returned HTTP403. Indexed manufacturer text was inspected by root, but original PDF bytes, native hash and page pixels were not recovered. Treat OCR/table-versus-overview conflict and variant applicability explicitly.",
+  "owner_source_url": "https://www.forum.linuxcnc.org/26-turning/41498-schaublin-125-cnc-retrofit?start=600#post338649",
+  "owner_post": 338649,
+  "scope": "All analog/digital/K1/K2/thermal control terminal names and groups recovered in the root source review. This is not a complete cabinet terminal census or connector-face map, and does not prove fitted physical terminal population.",
+  "contacts": [
+    {
+      "group": "analog",
+      "terminal": "7",
+      "label": "GND1",
+      "function": "analog signal reference; separate potential from digital GND2",
+      "owner_report": "owner reports connected to analog reference",
+      "qualification": "known manufacturer table; fitted continuity unverified"
+    },
+    {
+      "group": "analog",
+      "terminal": "8",
+      "label": "analog setpoint input",
+      "function": "0–10 V if fitted jumper selects 1–2; 0–5 V or current modes possible, voltage input >100 kΩ; verify physical jumper",
+      "owner_report": "owner reports connected, 0–10 V jumper selected",
+      "qualification": "known manufacturer table; fitted mode unverified"
+    },
+    {
+      "group": "analog",
+      "terminal": "9",
+      "label": "potentiometer supply",
+      "function": "5.2 V / 6 mA source output",
+      "owner_report": "owner reports NC",
+      "qualification": "known manufacturer table; do not use as process supply"
+    },
+    {
+      "group": "analog",
+      "terminal": "62",
+      "label": "frequency field output",
+      "function": "0–6 V / 2 mA in indexed family table; 0–10 V only HVACV020 variant",
+      "owner_report": "owner reports NC",
+      "qualification": "family/variant dependent output range"
+    },
+    {
+      "group": "digital",
+      "terminal": "20",
+      "label": "internal digital-input supply",
+      "function": "821X/822X/824X 15 V / 20 mA; 820X 12 V / 20 mA, do not transpose",
+      "owner_report": "owner reports NC",
+      "qualification": "known family distinction; unused in proposed external-supply circuit"
+    },
+    {
+      "group": "digital",
+      "terminal": "28",
+      "label": "controller enable",
+      "function": "HIGH 12–30 V, LOW 0–3 V; external process RUN candidate",
+      "owner_report": "owner reports connected to Mesa DO",
+      "qualification": "manufacturer function/fitted continuity and source ratings require check"
+    },
+    {
+      "group": "digital",
+      "terminal": "E1",
+      "label": "programmable digital input",
+      "function": "factory JOG frequency selection candidate shared with E2; indexed binary 20/30/40 Hz values require parameter verification",
+      "owner_report": "owner reports NC",
+      "qualification": "programmable function, no route selected"
+    },
+    {
+      "group": "digital",
+      "terminal": "E2",
+      "label": "programmable digital input",
+      "function": "factory JOG frequency selection candidate shared with E1; indexed binary 20/30/40 Hz values require parameter verification",
+      "owner_report": "owner reports NC",
+      "qualification": "programmable function, no route selected"
+    },
+    {
+      "group": "digital",
+      "terminal": "E3",
+      "label": "programmable digital input",
+      "function": "factory DC injection brake when HIGH, parameter dependent",
+      "owner_report": "owner reports NC",
+      "qualification": "do not substitute spindle safety/brake without fitted settings"
+    },
+    {
+      "group": "digital",
+      "terminal": "E4",
+      "label": "programmable digital input",
+      "function": "factory CW LOW / CCW HIGH direction candidate; HIGH 12–30 V, LOW 0–3 V",
+      "owner_report": "owner reports connected to Mesa DO",
+      "qualification": "verify fitted function and actual rotation"
+    },
+    {
+      "group": "digital",
+      "terminal": "39",
+      "label": "GND2",
+      "function": "digital input reference for external 12–30 V control source, separate potential from analog GND1 terminal7",
+      "owner_report": "owner reports connected",
+      "qualification": "used only as FIELD digital return in proposed panel"
+    },
+    {
+      "group": "K1 relay",
+      "terminal": "K11",
+      "label": "K1 contact NC in indexed manual table",
+      "function": "TRIP relay NC contact in manufacturer indexed table; owner calls K11 NO",
+      "owner_report": "owner reports K11 NO to Mesa input",
+      "qualification": "DIRECT SOURCE CONFLICT; do not route alarm/ready feedback"
+    },
+    {
+      "group": "K1 relay",
+      "terminal": "K12",
+      "label": "K1 common per printed strip overview",
+      "function": "indexed table OCR erroneously uses K22 within K1 section; overview says K12",
+      "owner_report": "owner reports K12 COM to Mesa input",
+      "qualification": "OVERVIEW/TABLE OCR CONFLICT; trace fitted relay and continuity"
+    },
+    {
+      "group": "K1 relay",
+      "terminal": "K14",
+      "label": "K1 NO per printed strip overview",
+      "function": "indexed table OCR erroneously uses K24 within K1 section; overview says K14",
+      "owner_report": "not specifically reported by owner",
+      "qualification": "OVERVIEW/TABLE OCR CONFLICT; no route"
+    },
+    {
+      "group": "K2 relay",
+      "terminal": "K21",
+      "label": "K2 NC ready contact",
+      "function": "K2 ready relay group shown in 822X/824X diagrams; physical presence on 8214 not established",
+      "owner_report": "not reported by owner",
+      "qualification": "MODEL DEPENDENT; do not depict as fitted 8214 contact"
+    },
+    {
+      "group": "K2 relay",
+      "terminal": "K22",
+      "label": "K2 common ready contact",
+      "function": "K2 ready relay group shown in 822X/824X diagrams; physical presence on 8214 not established",
+      "owner_report": "not reported by owner",
+      "qualification": "MODEL DEPENDENT; do not depict as fitted 8214 contact"
+    },
+    {
+      "group": "K2 relay",
+      "terminal": "K24",
+      "label": "K2 NO ready contact",
+      "function": "K2 ready relay group shown in 822X/824X diagrams; physical presence on 8214 not established",
+      "owner_report": "not reported by owner",
+      "qualification": "MODEL DEPENDENT; do not depict as fitted 8214 contact"
+    },
+    {
+      "group": "thermal",
+      "terminal": "T1",
+      "label": "motor temperature monitor terminal 1",
+      "function": "PTC or thermal-contact input; optional on 820X/821X and standard on 822X/824X family source",
+      "owner_report": "not reported by owner",
+      "qualification": "OPTIONAL/MODEL DEPENDENT; actual 8214 population unknown"
+    },
+    {
+      "group": "thermal",
+      "terminal": "T2",
+      "label": "motor temperature monitor terminal 2",
+      "function": "PTC or thermal-contact input; optional on 820X/821X and standard on 822X/824X family source",
+      "owner_report": "not reported by owner",
+      "qualification": "OPTIONAL/MODEL DEPENDENT; actual 8214 population unknown"
+    }
+  ],
+  "source_separation": [
+    "7 GND1 analog reference",
+    "39 GND2 digital return",
+    "20 internal 821X 15 V /20 mA source, unused by owner and by external-supply proposal"
+  ],
+  "conflict_register": [
+    "K11: indexed manual table says NC/TRIP, owner says NO. Do not assign relay fault signal until fitted model and continuity established.",
+    "K1 table OCR uses K22/K24 inside K1 block, but printed strip overview labels K11/K12/K14. Retain both readings, do not normalize without original PDF/pixel or fitted unit.",
+    "K2 K21/K22/K24 and thermal T1/T2 are family/model dependent. Do not depict them as populated on the owner's Lenze8214.",
+    "Terminal8 jumper 0–10V selection is owner reported and manufacturer indexed; verify actual jumper and drive input range.",
+    "The manual notes C119=0 when thermal input unused, but this inventory does not recommend disabling motor thermal protection."
+  ]
+}

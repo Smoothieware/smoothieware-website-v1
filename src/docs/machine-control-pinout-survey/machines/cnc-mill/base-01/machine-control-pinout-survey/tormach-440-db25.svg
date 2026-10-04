@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 740" role="img" aria-labelledby="title desc">
+  <title id="title">Tormach PCNC 440 DB25 pins 1 through 17</title>
+  <desc id="desc">Original two-column signal function chart transcribed from the manufacturer's PCNC 440 DB25 J4 and J10 pinout page.</desc>
+  <rect width="1100" height="740" rx="24" fill="#f3f0e8"/>
+  <text x="48" y="58" font-family="system-ui,sans-serif" font-size="25" font-weight="800" fill="#123247">PCNC 440 · DB25 machine-side function labels</text>
+  <text x="48" y="88" font-family="system-ui,sans-serif" font-size="14" fill="#455a63">Function names only — signal ratings are not implied.</text>
+  <g font-family="system-ui,sans-serif" font-size="15">
+    <g transform="translate(48 128)">
+      <rect width="480" height="540" rx="14" fill="#fffdf8" stroke="#aebbb9" stroke-width="2"/>
+      <text x="22" y="34" font-size="13" font-weight="800" fill="#52636b">PIN</text><text x="100" y="34" font-size="13" font-weight="800" fill="#52636b">FUNCTION</text>
+      <g fill="#123247">
+        <text x="22" y="80" font-weight="800" fill="#bc652e">01</text><text x="100" y="80">Spindle Enable</text>
+        <text x="22" y="132" font-weight="800" fill="#bc652e">02</text><text x="100" y="132">X Step</text>
+        <text x="22" y="184" font-weight="800" fill="#bc652e">03</text><text x="100" y="184">X Direction</text>
+        <text x="22" y="236" font-weight="800" fill="#bc652e">04</text><text x="100" y="236">Y Step</text>
+        <text x="22" y="288" font-weight="800" fill="#bc652e">05</text><text x="100" y="288">Y Direction</text>
+        <text x="22" y="340" font-weight="800" fill="#bc652e">06</text><text x="100" y="340">Z Step</text>
+        <text x="22" y="392" font-weight="800" fill="#bc652e">07</text><text x="100" y="392">Z Direction</text>
+        <text x="22" y="444" font-weight="800" fill="#bc652e">08</text><text x="100" y="444">A Step</text>
+        <text x="22" y="496" font-weight="800" fill="#bc652e">09</text><text x="100" y="496">A Direction</text>
+      </g>
+      <path d="M20 54h440M20 104h440M20 156h440M20 208h440M20 260h440M20 312h440M20 364h440M20 416h440M20 468h440" stroke="#d5dcda"/>
+    </g>
+    <g transform="translate(572 128)">
+      <rect width="480" height="540" rx="14" fill="#fffdf8" stroke="#aebbb9" stroke-width="2"/>
+      <text x="22" y="34" font-size="13" font-weight="800" fill="#52636b">PIN</text><text x="100" y="34" font-size="13" font-weight="800" fill="#52636b">FUNCTION</text>
+      <g fill="#123247">
+        <text x="22" y="80" font-weight="800" fill="#bc652e">10</text><text x="100" y="80">X Limit / enclosure door switch</text>
+        <text x="22" y="132" font-weight="800" fill="#bc652e">11</text><text x="100" y="132">Y Limit</text>
+        <text x="22" y="184" font-weight="800" fill="#bc652e">12</text><text x="100" y="184">Z Limit</text>
+        <text x="22" y="236" font-weight="800" fill="#bc652e">13</text><text x="100" y="236">Probe In</text>
+        <text x="22" y="288" font-weight="800" fill="#bc652e">14</text><text x="100" y="288">Spindle Speed</text>
+        <text x="22" y="340" font-weight="800" fill="#bc652e">15</text><text x="100" y="340">Estop Reset</text>
+        <text x="22" y="392" font-weight="800" fill="#bc652e">16</text><text x="100" y="392">Charge Pump</text>
+        <text x="22" y="444" font-weight="800" fill="#bc652e">17</text><text x="100" y="444">Coolant</text>
+        <text x="22" y="496" font-weight="800" fill="#9c3e35">18–25</text><text x="100" y="496">Not stated on cited page</text>
+      </g>
+      <path d="M20 54h440M20 104h440M20 156h440M20 208h440M20 260h440M20 312h440M20 364h440M20 416h440M20 468h440" stroke="#d5dcda"/>
+    </g>
+  </g>
+</svg>

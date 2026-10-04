@@ -1,0 +1,53 @@
+{
+  "id": "wiki-150",
+  "sources": {
+    "machine-side-graph-snapshot.json": {
+      "source_graph": "150-wiki-150.json",
+      "source_sha256": "7b2b96473f03c9d4c6aa81826f997fe4c530bb4189ba37950c8ea61ddd79c091",
+      "graph": {
+        "profile_id": "wiki-150",
+        "devices": [
+          {
+            "id": "group-device-001",
+            "role": "peripheral"
+          },
+          {
+            "id": "group-device-002",
+            "role": "peripheral"
+          },
+          {
+            "id": "group-device-003",
+            "role": "peripheral"
+          }
+        ],
+        "connectors": [
+          {
+            "id": "machine-group-001",
+            "device": "group-device-001",
+            "refdes": "Rotary accessory",
+            "form": "source-described cable / connector group",
+            "scope": "Source names this group, but provides no source-scoped physical contact map. Availability and exact housing are unverified. Connections and pinout",
+            "contacts": []
+          },
+          {
+            "id": "machine-group-002",
+            "device": "group-device-002",
+            "refdes": "PC / USB",
+            "form": "source-described cable / connector group",
+            "scope": "Source names this group, but provides no source-scoped physical contact map. Availability and exact housing are unverified. Connections and pinout",
+            "contacts": []
+          },
+          {
+            "id": "machine-group-003",
+            "device": "group-device-003",
+            "refdes": "Laser, chiller, exhaust, air assist",
+            "form": "source-described cable / connector group",
+            "scope": "Source names this group, but provides no source-scoped physical contact map. Availability and exact housing are unverified. Connections and pinout",
+            "contacts": []
+          }
+        ],
+        "wires": []
+      }
+    }
+  }
+}

@@ -1,0 +1,195 @@
+{
+  "type": "verification",
+  "base_url": "https://smoothie-box-pinout-research.pages.dev",
+  "assets": [
+    {
+      "path": "/machine-control-pinout-survey.html",
+      "curl_exit": 0,
+      "bytes": 9332885,
+      "sha256": "38200877395057a7a93d538eec86dd27df6a7b3e7c21534e75e093d8f43c8c91",
+      "matches_local": true
+    },
+    {
+      "path": "/machine-control-pinout-survey/smoothiebox-machine-wiring/centered-wiki-205.svg",
+      "curl_exit": 0,
+      "bytes": 72834,
+      "sha256": "7c5caff6c065f33dcf5b115fe9031f1b8127d8804eaead83723a33d27eec3958",
+      "matches_local": true
+    },
+    {
+      "path": "/machine-control-pinout-survey/smoothiebox-machine-wiring/centered-laserplot-02.svg",
+      "curl_exit": 0,
+      "bytes": 72201,
+      "sha256": "79f44e182bac53fcb367cdc32704fc29fa4916e6c7e7cab0e51146b3537247db",
+      "matches_local": true
+    },
+    {
+      "path": "/machine-control-pinout-survey/smoothiebox-machine-wiring/centered-base-11.svg",
+      "curl_exit": 0,
+      "bytes": 122671,
+      "sha256": "91914e78a38b690e5b18fda68c36fca7686a6ca6ce4d3d3f32ec25bdba2ab744",
+      "matches_local": true
+    },
+    {
+      "path": "/machine-control-pinout-survey/smoothiebox-machine-wiring/centered-wiki-132.svg",
+      "curl_exit": 0,
+      "bytes": 146601,
+      "sha256": "b182acdcf74daf1709288ee3e379e057c8d197726ee46b354069d51f9642a753",
+      "matches_local": true
+    },
+    {
+      "path": "/machine-control-pinout-survey/smoothiebox-machine-wiring/centered-wiki-134.svg",
+      "curl_exit": 0,
+      "bytes": 361799,
+      "sha256": "f1b75339b7c49a7f8c67dd2b9e0e31d0f5ed7e2856699ef4f1f8b706d16513a0",
+      "matches_local": true
+    },
+    {
+      "path": "/machine-control-pinout-survey/smoothiebox-machine-wiring/centered-wiki-135.svg",
+      "curl_exit": 0,
+      "bytes": 266404,
+      "sha256": "e83d587dc105928904b5df59bb9c2e5fcb332bb085652b38daf332c4ca541119",
+      "matches_local": true
+    },
+    {
+      "path": "/machine-control-pinout-survey/smoothiebox-machine-wiring/centered-mill-g2.svg",
+      "curl_exit": 0,
+      "bytes": 149793,
+      "sha256": "952be30d7e0815344093d92953dfc43d903fea7781ff3253b933b3fc0e8488ab",
+      "matches_local": true
+    },
+    {
+      "path": "/machine-control-pinout-survey/smoothiebox-machine-wiring/centered-mill-avid-ex-3.svg",
+      "curl_exit": 0,
+      "bytes": 439911,
+      "sha256": "03b85f947029c55708adc5f8492731fa795582518b60b67d3c67acf87b3390fb",
+      "matches_local": true
+    },
+    {
+      "path": "/machine-control-pinout-survey/smoothiebox-machine-wiring/centered-wiki-206.svg",
+      "curl_exit": 0,
+      "bytes": 102005,
+      "sha256": "f66a79114cbdf48e86bfc822c1489c50cb3045a15e95fb820699980e4ff11abd",
+      "matches_local": true
+    },
+    {
+      "path": "/machine-control-pinout-survey/smoothiebox-machine-wiring/centered-wiki-222.svg",
+      "curl_exit": 0,
+      "bytes": 155357,
+      "sha256": "9634420e1d3e46469831f256b86221efb62b53f6b5043571cf7f31d3695e2251",
+      "matches_local": true
+    },
+    {
+      "path": "/machine-control-pinout-survey/smoothiebox-machine-wiring/centered-forum-linuxcnc-optimill-mh50v-unlogic.svg",
+      "curl_exit": 0,
+      "bytes": 400223,
+      "sha256": "7ec5d414167fea9faf136152fed8602ec57112295f2d3c84502a4e4b6ef5d3a4",
+      "matches_local": true
+    },
+    {
+      "path": "/machine-control-pinout-survey/smoothiebox-machine-wiring/centered-forum-linuxcnc-rotarysmp-schaublin-125-cnc-retrofit.svg",
+      "curl_exit": 0,
+      "bytes": 102068,
+      "sha256": "bc32db87916bc57c714c774132ad0a7cd8142e9be995d6d2e5b9c30f6eb6c217",
+      "matches_local": true
+    },
+    {
+      "path": "/machine-control-pinout-survey/centered-connections-wiki-205.json",
+      "curl_exit": 0,
+      "bytes": 43225,
+      "sha256": "16e90cf10ec46ac69ad67af54fc254bd6e70288bb5f1e4c2f6de137e0a5b5f9b",
+      "matches_local": true
+    },
+    {
+      "path": "/machine-control-pinout-survey/centered-connections-laserplot-02.json",
+      "curl_exit": 0,
+      "bytes": 43240,
+      "sha256": "7c357b32372b2974f1ea4017f13f92b0adc86646ac3b02d6d7f53607ab0bec9d",
+      "matches_local": true
+    },
+    {
+      "path": "/machine-control-pinout-survey/centered-connections-base-11.json",
+      "curl_exit": 0,
+      "bytes": 111021,
+      "sha256": "e379a60c14b9bdf11193aeae8872fccf02b314a010b1a74994a9e020ac70aa56",
+      "matches_local": true
+    },
+    {
+      "path": "/machine-control-pinout-survey/centered-connections-wiki-132.json",
+      "curl_exit": 0,
+      "bytes": 101942,
+      "sha256": "4f3ade79abb5af8667c5783cb3d5b33990ca9f42477e58ea38b2bb0310617d1a",
+      "matches_local": true
+    },
+    {
+      "path": "/machine-control-pinout-survey/centered-connections-wiki-134.json",
+      "curl_exit": 0,
+      "bytes": 400962,
+      "sha256": "8c2838c462f8547ff72c03c526a4340e357f194f5387223c26244c0749696d56",
+      "matches_local": true
+    },
+    {
+      "path": "/machine-control-pinout-survey/centered-connections-wiki-135.json",
+      "curl_exit": 0,
+      "bytes": 263959,
+      "sha256": "8694eb2d8f5cab3c0b46cb15f204b9b8d33735c7e7101ae6026637ef5707b921",
+      "matches_local": true
+    },
+    {
+      "path": "/machine-control-pinout-survey/centered-connections-mill-g2.json",
+      "curl_exit": 0,
+      "bytes": 106868,
+      "sha256": "6fc997d2f5011708fa4a2ef083a5be5a8bc1283e235952c60fcf44ff877485ca",
+      "matches_local": true
+    },
+    {
+      "path": "/machine-control-pinout-survey/centered-connections-mill-avid-ex-3.json",
+      "curl_exit": 0,
+      "bytes": 422791,
+      "sha256": "08fecb3269654eaf35711091c81ce900065324185a6027926c9c2ceb340cbf94",
+      "matches_local": true
+    },
+    {
+      "path": "/machine-control-pinout-survey/centered-connections-wiki-206.json",
+      "curl_exit": 0,
+      "bytes": 62216,
+      "sha256": "400f7bd5d07c91cd65d509d335262b8613583e86110a522b0709c86aea8e6e30",
+      "matches_local": true
+    },
+    {
+      "path": "/machine-control-pinout-survey/centered-connections-wiki-222.json",
+      "curl_exit": 0,
+      "bytes": 113591,
+      "sha256": "ba89d5c452a26996de8a355ececb554bb14f32c3b904d004eb249ebff677f4ef",
+      "matches_local": true
+    },
+    {
+      "path": "/machine-control-pinout-survey/centered-connections-forum-linuxcnc-optimill-mh50v-unlogic.json",
+      "curl_exit": 0,
+      "bytes": 374856,
+      "sha256": "cbc910e19e6deb1bf7ae80ac32d4be69892fe36f3de60edaf661f4d12f1b588c",
+      "matches_local": true
+    },
+    {
+      "path": "/machine-control-pinout-survey/centered-connections-forum-linuxcnc-rotarysmp-schaublin-125-cnc-retrofit.json",
+      "curl_exit": 0,
+      "bytes": 55463,
+      "sha256": "2ffb44576628112662442ed9d0b8bec7d0aba32ed94c254093ef5fb1332e3732",
+      "matches_local": true
+    },
+    {
+      "path": "/machine-control-pinout-survey/centered-sources/smoothiebox-chapter18-field-reference.svg",
+      "curl_exit": 0,
+      "bytes": 310493,
+      "sha256": "6807a6ddc6ce9600e17b18afccc84d985eb41576df7be099255ee3ee48e6983c",
+      "matches_local": true
+    },
+    {
+      "path": "/machine-control-pinout-survey/retrofit-diagram-guide.md",
+      "curl_exit": 0,
+      "bytes": 8670,
+      "sha256": "5c506835a41f9b6ba5caef23d4a21afd8e0cac931df093ecf276bd232a50ba14",
+      "matches_local": true
+    }
+  ]
+}

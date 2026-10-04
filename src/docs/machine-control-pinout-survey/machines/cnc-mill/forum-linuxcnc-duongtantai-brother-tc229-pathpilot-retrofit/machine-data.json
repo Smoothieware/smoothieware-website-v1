@@ -1,0 +1,42 @@
+{
+  "id": "forum-linuxcnc-duongtantai-brother-tc229-pathpilot-retrofit",
+  "sources": {
+    "forum-peripheral-evidence.json": {
+      "id": "forum-linuxcnc-duongtantai-brother-tc229-pathpilot-retrofit",
+      "dossier": "src/docs/machine-research/linuxcnc-duongtantai-brother-tc229-pathpilot-retrofit.md",
+      "reported_fitted_or_used": [
+        {
+          "name": "Spindle encoder",
+          "contacts": [],
+          "source_line_number": 7,
+          "source_line": "The owner reports a mixed axis drive arrangement: a servo on Z and step motors on X and Y. They added an encoder to the spindle motor for an index signal and state that the VFD has a built-in index function. The forum post links owner demonstration videos for a G-code test run and an ATC test run; the post's wording and linked demonstrations are evidence of reported test activity, not a complete commissioning record.",
+          "evidence": "They added an encoder to the spindle motor for an index signal and state that the VFD has a built-in index function. The forum post links owner demonstration videos for a G-code test run and an ATC test run; the post's wording and linked demonstrations are evidence of reported test activity, not a complete commissioning record.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        }
+      ],
+      "listed_for_build_unverified": [],
+      "historical_reference": [],
+      "planned_only": [],
+      "open_function_group": [
+        {
+          "name": "Z-axis servo and X/Y step motors",
+          "contacts": [],
+          "source_line_number": 7,
+          "source_line": "The owner reports a mixed axis drive arrangement: a servo on Z and step motors on X and Y. They added an encoder to the spindle motor for an index signal and state that the VFD has a built-in index function. The forum post links owner demonstration videos for a G-code test run and an ATC test run; the post's wording and linked demonstrations are evidence of reported test activity, not a complete commissioning record.",
+          "evidence": "A servo on Z and step motors on X and Y are reported, but models and terminals are not identified.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        },
+        {
+          "name": "VFD index and ATC control interfaces",
+          "contacts": [],
+          "source_line_number": 11,
+          "source_line": "The forum post includes an electrical-cabinet photograph and several machine photographs. The cabinet image shows installed control/electrical equipment, but the labels are not legible enough to identify component models or trace terminals. The machine photos show the work area and tool changer; they do not establish electrical connections.",
+          "evidence": "The VFD index and ATC activity are reported, but the cabinet photograph does not provide legible terminals or a control sequence.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        }
+      ],
+      "exclusions": [],
+      "source_gap": "Dossier does not establish an as-built SmoothieBox route or a complete physical contact schedule for the listed peripherals."
+    }
+  }
+}

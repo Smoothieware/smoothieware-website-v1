@@ -1,0 +1,57 @@
+{
+  "id": "forum-linuxcnc-becksvill-12-ton-fil-horizontal-vertical-mill",
+  "sources": {
+    "forum-peripheral-evidence.json": {
+      "id": "forum-linuxcnc-becksvill-12-ton-fil-horizontal-vertical-mill",
+      "dossier": "src/docs/machine-research/linuxcnc-becksvill-12-ton-fil-horizontal-vertical-mill.md",
+      "reported_fitted_or_used": [
+        {
+          "name": "Tool-change hydraulic pump and pressure switch",
+          "contacts": [],
+          "source_line_number": 25,
+          "source_line": "The owner says the tool-change hydraulics use an accumulator and pressure switch. His described operating logic is to start the hydraulic pump, wait for the pressure switch to indicate the accumulator is charged, then turn the pump off; the machine needs hydraulic oil for tool changes rather than continuous circulation. He implemented the control in LinuxCNC ClassicLadder and calls the arrangement easy to set up after understanding it. A forum photo shows the hydraulic assembly, and a ladder screenshot shows a rung with a `%KWO` symbol and compare logic. The screenshot does not expose a complete readable ladder program or a hydraulic schematic, so exact sensors, valve outputs, thresholds, and interlocks remain unknown.",
+          "evidence": "His described operating logic is to start the hydraulic pump, wait for the pressure switch to indicate the accumulator is charged, then turn the pump off; the machine needs hydraulic oil for tool changes rather than continuous circulation. He implemented the control in LinuxCNC ClassicLadder and calls the arrangement easy to set up after understanding it.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        },
+        {
+          "name": "Spindle gear-change VFDs",
+          "source_line_number": 27,
+          "source_line": "The owner describes an 11 kW VFD for the spindle and a spindle gear-change circuit. He also says he uses inexpensive 400 W VFDs in place of contactors in the gear-change setup to get overload protection, variable speed, and electrical braking. The thread does not identify the small VFD model, motor load, control parameters, or the full circuit, so this is an owner-reported design choice and not a wiring recommendation.",
+          "evidence": "He also says he uses inexpensive 400 W VFDs in place of contactors in the gear-change setup to get overload protection, variable speed, and electrical braking. The thread does not identify the small VFD model, motor load, control parameters, or the full circuit, so this is an owner-reported design choice and not a wiring recommendation.",
+          "contacts": [],
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        },
+        {
+          "name": "Linear scales",
+          "contacts": [],
+          "source_line_number": 19,
+          "source_line": "For each axis, the owner describes combining motor-encoder velocity feedback with linear-scale position feedback. He says using one combined PID loop with the scale for position and motor encoder for velocity made index homing work but gave worse tuning, noisier motion, and visible backlash take-up. His preferred arrangement used two PID loops combined through a sum component; he reports smoother motion and that, after a stop, the servo moved rapidly to within about 0.01\u20130.02 mm before creeping the last 0.02 mm using integral action, taking about one second. He says the final position was within 0.005 mm or less. These are the owner's reported drive/scale observations, not a general tuning recipe or a certified accuracy figure.",
+          "evidence": "For each axis, the owner describes combining motor-encoder velocity feedback with linear-scale position feedback. He says using one combined PID loop with the scale for position and motor encoder for velocity made index homing work but gave worse tuning, noisier motion, and visible backlash take-up.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        },
+        {
+          "name": "Spindle 11 kW VFD",
+          "contacts": [],
+          "source_line_number": 17,
+          "source_line": "The retrofit cabinet photo shows Mesa cards, separate servo drives, a spindle VFD, and substantial cabinet wiring. In the post, the owner identifies the control as Mesa 7i92M, 7i77, and 7i84 with Chinese Yuhai servo drives that he describes as 3.5 kW, plus an 11 kW spindle VFD. The exact drive SKU, motor ratings per axis, and the axis-to-card channel assignments are not specified. The image labels are not sharp enough to derive pin assignments, and no terminal-to-function schedule appears in the thread.",
+          "evidence": "The retrofit cabinet photo shows Mesa cards, separate servo drives, a spindle VFD, and substantial cabinet wiring. In the post, the owner identifies the control as Mesa 7i92M, 7i77, and 7i84 with Chinese Yuhai servo drives that he describes as 3.5 kW, plus an 11 kW spindle VFD.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        },
+        {
+          "name": "Yuhai-branded servo drives (axis assignment unreported)",
+          "contacts": [],
+          "source_line_number": 17,
+          "source_line": "The retrofit cabinet photo shows Mesa cards, separate servo drives, a spindle VFD, and substantial cabinet wiring. In the post, the owner identifies the control as Mesa 7i92M, 7i77, and 7i84 with Chinese Yuhai servo drives that he describes as 3.5 kW, plus an 11 kW spindle VFD. The exact drive SKU, motor ratings per axis, and the axis-to-card channel assignments are not specified. The image labels are not sharp enough to derive pin assignments, and no terminal-to-function schedule appears in the thread.",
+          "evidence": "In the post, the owner identifies the control as Mesa 7i92M, 7i77, and 7i84 with Chinese Yuhai servo drives that he describes as 3.5 kW, plus an 11 kW spindle VFD. The exact drive SKU, motor ratings per axis, and the axis-to-card channel assignments are not specified.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        }
+      ],
+      "listed_for_build_unverified": [],
+      "historical_reference": [],
+      "planned_only": [],
+      "open_function_group": [],
+      "exclusions": [],
+      "source_gap": "Dossier does not establish an as-built SmoothieBox route or a complete physical contact schedule for the listed peripherals."
+    }
+  }
+}

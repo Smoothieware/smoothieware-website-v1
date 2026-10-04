@@ -1,0 +1,33 @@
+{
+  "id": "forum-v1e-chewy7097-mpcnc-80w-co2-laser",
+  "sources": {
+    "forum-peripheral-evidence.json": {
+      "id": "forum-v1e-chewy7097-mpcnc-80w-co2-laser",
+      "dossier": "src/docs/machine-research/v1e-chewy7097-mpcnc-80w-co2-laser.md",
+      "reported_fitted_or_used": [
+        {
+          "name": "CW5200 chiller",
+          "contacts": [],
+          "source_line_number": 22,
+          "source_line": "- The initial post lists incomplete work: finish the enclosure, install a flexible exhaust duct and 240 CFM fan, adjust the laser-head mount, replace printed tube mounts, and improve cooling for hot-weather use. He mentioned a passive CW3000 chiller initially, then on August 5 said he had upgraded to a CW5200 and that cooling was \u201call well.\u201d The forum evidence does not confirm completion of the listed enclosure/exhaust work.",
+          "evidence": "He mentioned a passive CW3000 chiller initially, then on August 5 said he had upgraded to a CW5200 and that cooling was \u201call well.\u201d The forum evidence does not confirm completion of the listed enclosure/exhaust work.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        },
+        {
+          "name": "80 W nominal CO2 tube and PSU",
+          "contacts": [],
+          "source_line_number": 18,
+          "source_line": "- For the CO\u2082 conversion, he says he ordered an 80 W tube, high-voltage power supply, chiller, mirrors, lenses and hoses, along with a BigTreeTech SKR 1.4 board. The thread does not identify the tube or PSU make/model or publish a wiring diagram.",
+          "evidence": "For the CO\u2082 conversion, he says he ordered an 80 W tube, high-voltage power supply, chiller, mirrors, lenses and hoses, along with a BigTreeTech SKR 1.4 board. The thread does not identify the tube or PSU make/model or publish a wiring diagram.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        }
+      ],
+      "listed_for_build_unverified": [],
+      "historical_reference": [],
+      "planned_only": [],
+      "open_function_group": [],
+      "exclusions": [],
+      "source_gap": "Dossier does not establish an as-built SmoothieBox route or a complete physical contact schedule for the listed peripherals."
+    }
+  }
+}

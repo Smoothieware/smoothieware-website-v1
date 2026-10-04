@@ -1,0 +1,1100 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3620 7327" width="3620" height="7327" role="img" aria-labelledby="title desc" data-profile="wiki-145">
+<title id="title">FoldaRap 4.0 → SmoothieBox exterior connection study</title>
+<desc id="desc">82 proposed exterior contacts, four SmoothieBox service ports, 14 source positions, 0 source-named wire references, 0 source-named physical attachments, 0 nominal form-inventory positions, 4 dotted function guesses and 10 unrouted positions. All machine connectors are exterior peripherals or explicitly marked source references. No installed wiring is claimed.</desc>
+<metadata id="contact-inventory">{&quot;counts&quot;: {&quot;context_devices&quot;: 0, &quot;guesses&quot;: 4, &quot;machine_contacts&quot;: 14, &quot;open_contacts&quot;: 10, &quot;peripherals&quot;: 16, &quot;reference_contacts&quot;: 10}, &quot;exterior&quot;: [{&quot;id&quot;: &quot;sb-POWER-1&quot;, &quot;role&quot;: &quot;Load power input LOAD + pin&quot;, &quot;source_label&quot;: &quot;LOAD +&quot;, &quot;terminal&quot;: &quot;POWER.1&quot;, &quot;x&quot;: 220, &quot;y&quot;: 360}, {&quot;id&quot;: &quot;sb-POWER-2&quot;, &quot;role&quot;: &quot;Load power input GND pin&quot;, &quot;source_label&quot;: &quot;GND&quot;, &quot;terminal&quot;: &quot;POWER.2&quot;, &quot;x&quot;: 268, &quot;y&quot;: 360}, {&quot;id&quot;: &quot;sb-FIVEIN-1&quot;, &quot;role&quot;: &quot;5 V input +5V pin&quot;, &quot;source_label&quot;: &quot;+5V&quot;, &quot;terminal&quot;: &quot;FIVEIN.1&quot;, &quot;x&quot;: 420, &quot;y&quot;: 360}, {&quot;id&quot;: &quot;sb-FIVEIN-2&quot;, &quot;role&quot;: &quot;5 V input GND pin&quot;, &quot;source_label&quot;: &quot;GND&quot;, &quot;terminal&quot;: &quot;FIVEIN.2&quot;, &quot;x&quot;: 468, &quot;y&quot;: 360}, {&quot;id&quot;: &quot;sb-FIVEOUT-1&quot;, &quot;role&quot;: &quot;5 V accessory output +5V pin&quot;, &quot;source_label&quot;: &quot;+5V&quot;, &quot;terminal&quot;: &quot;FIVEOUT.1&quot;, &quot;x&quot;: 620, &quot;y&quot;: 360}, {&quot;id&quot;: &quot;sb-FIVEOUT-2&quot;, &quot;role&quot;: &quot;5 V accessory output GND pin&quot;, &quot;source_label&quot;: &quot;GND&quot;, &quot;terminal&quot;: &quot;FIVEOUT.2&quot;, &quot;x&quot;: 668, &quot;y&quot;: 360}, {&quot;id&quot;: &quot;sb-AUX-1&quot;, &quot;role&quot;: &quot;Analog input 1 signal pin&quot;, &quot;source_label&quot;: &quot;ANALOG 1&quot;, &quot;terminal&quot;: &quot;AUX.1&quot;, &quot;x&quot;: 1500, &quot;y&quot;: 360}, {&quot;id&quot;: &quot;sb-AUX-2&quot;, &quot;role&quot;: &quot;Analog input 1 GND pin&quot;, &quot;source_label&quot;: &quot;GND&quot;, &quot;terminal&quot;: &quot;AUX.2&quot;, &quot;x&quot;: 1548, &quot;y&quot;: 360}, {&quot;id&quot;: &quot;sb-AUX-3&quot;, &quot;role&quot;: &quot;Analog input 2 signal pin&quot;, &quot;source_label&quot;: &quot;ANALOG 2&quot;, &quot;terminal&quot;: &quot;AUX.3&quot;, &quot;x&quot;: 1596, &quot;y&quot;: 360}, {&quot;id&quot;: &quot;sb-AUX-4&quot;, &quot;role&quot;: &quot;Analog input 2 GND pin&quot;, &quot;source_label&quot;: &quot;GND&quot;, &quot;terminal&quot;: &quot;AUX.4&quot;, &quot;x&quot;: 1644, &quot;y&quot;: 360}, {&quot;id&quot;: &quot;sb-AUX-5&quot;, &quot;role&quot;: &quot;Analog input 3 signal pin&quot;, &quot;source_label&quot;: &quot;ANALOG 3&quot;, &quot;terminal&quot;: &quot;AUX.5&quot;, &quot;x&quot;: 1692, &quot;y&quot;: 360}, {&quot;id&quot;: &quot;sb-AUX-6&quot;, &quot;role&quot;: &quot;Analog input 3 GND pin&quot;, &quot;source_label&quot;: &quot;GND&quot;, &quot;terminal&quot;: &quot;AUX.6&quot;, &quot;x&quot;: 1740, &quot;y&quot;: 360}, {&quot;id&quot;: &quot;sb-XMIN-1&quot;, &quot;role&quot;: &quot;X axis min endstop sensor + pin&quot;, &quot;source_label&quot;: &quot;SENSOR +&quot;, &quot;terminal&quot;: &quot;XMIN.1&quot;, &quot;x&quot;: 1860, &quot;y&quot;: 730}, {&quot;id&quot;: &quot;sb-XMIN-2&quot;, &quot;role&quot;: &quot;X axis min endstop GND pin&quot;, &quot;source_label&quot;: &quot;GND&quot;, &quot;terminal&quot;: &quot;XMIN.2&quot;, &quot;x&quot;: 1860, &quot;y&quot;: 760}, {&quot;id&quot;: &quot;sb-XMIN-3&quot;, &quot;role&quot;: &quot;X axis min endstop signal pin&quot;, &quot;source_label&quot;: &quot;SIGNAL&quot;, &quot;terminal&quot;: &quot;XMIN.3&quot;, &quot;x&quot;: 1860, &quot;y&quot;: 790}, {&quot;id&quot;: &quot;sb-XMAX-1&quot;, &quot;role&quot;: &quot;X axis max endstop sensor + pin&quot;, &quot;source_label&quot;: &quot;SENSOR +&quot;, &quot;terminal&quot;: &quot;XMAX.1&quot;, &quot;x&quot;: 1860, &quot;y&quot;: 850}, {&quot;id&quot;: &quot;sb-XMAX-2&quot;, &quot;role&quot;: &quot;X axis max endstop GND pin&quot;, &quot;source_label&quot;: &quot;GND&quot;, &quot;terminal&quot;: &quot;XMAX.2&quot;, &quot;x&quot;: 1860, &quot;y&quot;: 880}, {&quot;id&quot;: &quot;sb-XMAX-3&quot;, &quot;role&quot;: &quot;X axis max endstop signal pin&quot;, &quot;source_label&quot;: &quot;SIGNAL&quot;, &quot;terminal&quot;: &quot;XMAX.3&quot;, &quot;x&quot;: 1860, &quot;y&quot;: 910}, {&quot;id&quot;: &quot;sb-YMIN-1&quot;, &quot;role&quot;: &quot;Y axis min endstop sensor + pin&quot;, &quot;source_label&quot;: &quot;SENSOR +&quot;, &quot;terminal&quot;: &quot;YMIN.1&quot;, &quot;x&quot;: 1860, &quot;y&quot;: 970}, {&quot;id&quot;: &quot;sb-YMIN-2&quot;, &quot;role&quot;: &quot;Y axis min endstop GND pin&quot;, &quot;source_label&quot;: &quot;GND&quot;, &quot;terminal&quot;: &quot;YMIN.2&quot;, &quot;x&quot;: 1860, &quot;y&quot;: 1000}, {&quot;id&quot;: &quot;sb-YMIN-3&quot;, &quot;role&quot;: &quot;Y axis min endstop signal pin&quot;, &quot;source_label&quot;: &quot;SIGNAL&quot;, &quot;terminal&quot;: &quot;YMIN.3&quot;, &quot;x&quot;: 1860, &quot;y&quot;: 1030}, {&quot;id&quot;: &quot;sb-YMAX-1&quot;, &quot;role&quot;: &quot;Y axis max endstop sensor + pin&quot;, &quot;source_label&quot;: &quot;SENSOR +&quot;, &quot;terminal&quot;: &quot;YMAX.1&quot;, &quot;x&quot;: 1860, &quot;y&quot;: 1090}, {&quot;id&quot;: &quot;sb-YMAX-2&quot;, &quot;role&quot;: &quot;Y axis max endstop GND pin&quot;, &quot;source_label&quot;: &quot;GND&quot;, &quot;terminal&quot;: &quot;YMAX.2&quot;, &quot;x&quot;: 1860, &quot;y&quot;: 1120}, {&quot;id&quot;: &quot;sb-YMAX-3&quot;, &quot;role&quot;: &quot;Y axis max endstop signal pin&quot;, &quot;source_label&quot;: &quot;SIGNAL&quot;, &quot;terminal&quot;: &quot;YMAX.3&quot;, &quot;x&quot;: 1860, &quot;y&quot;: 1150}, {&quot;id&quot;: &quot;sb-ZMIN-1&quot;, &quot;role&quot;: &quot;Z axis min endstop sensor + pin&quot;, &quot;source_label&quot;: &quot;SENSOR +&quot;, &quot;terminal&quot;: &quot;ZMIN.1&quot;, &quot;x&quot;: 1860, &quot;y&quot;: 1210}, {&quot;id&quot;: &quot;sb-ZMIN-2&quot;, &quot;role&quot;: &quot;Z axis min endstop GND pin&quot;, &quot;source_label&quot;: &quot;GND&quot;, &quot;terminal&quot;: &quot;ZMIN.2&quot;, &quot;x&quot;: 1860, &quot;y&quot;: 1240}, {&quot;id&quot;: &quot;sb-ZMIN-3&quot;, &quot;role&quot;: &quot;Z axis min endstop signal pin&quot;, &quot;source_label&quot;: &quot;SIGNAL&quot;, &quot;terminal&quot;: &quot;ZMIN.3&quot;, &quot;x&quot;: 1860, &quot;y&quot;: 1270}, {&quot;id&quot;: &quot;sb-ZMAX-1&quot;, &quot;role&quot;: &quot;Z axis max endstop sensor + pin&quot;, &quot;source_label&quot;: &quot;SENSOR +&quot;, &quot;terminal&quot;: &quot;ZMAX.1&quot;, &quot;x&quot;: 1860, &quot;y&quot;: 1330}, {&quot;id&quot;: &quot;sb-ZMAX-2&quot;, &quot;role&quot;: &quot;Z axis max endstop GND pin&quot;, &quot;source_label&quot;: &quot;GND&quot;, &quot;terminal&quot;: &quot;ZMAX.2&quot;, &quot;x&quot;: 1860, &quot;y&quot;: 1360}, {&quot;id&quot;: &quot;sb-ZMAX-3&quot;, &quot;role&quot;: &quot;Z axis max endstop signal pin&quot;, &quot;source_label&quot;: &quot;SIGNAL&quot;, &quot;terminal&quot;: &quot;ZMAX.3&quot;, &quot;x&quot;: 1860, &quot;y&quot;: 1390}, {&quot;id&quot;: &quot;sb-PROBE-1&quot;, &quot;role&quot;: &quot;Probe / servo +5V pin&quot;, &quot;source_label&quot;: &quot;+5V&quot;, &quot;terminal&quot;: &quot;PROBE.1&quot;, &quot;x&quot;: 1860, &quot;y&quot;: 1450}, {&quot;id&quot;: &quot;sb-PROBE-2&quot;, &quot;role&quot;: &quot;Probe / servo GND pin&quot;, &quot;source_label&quot;: &quot;GND&quot;, &quot;terminal&quot;: &quot;PROBE.2&quot;, &quot;x&quot;: 1860, &quot;y&quot;: 1480}, {&quot;id&quot;: &quot;sb-PROBE-3&quot;, &quot;role&quot;: &quot;Probe / servo SERVO pin&quot;, &quot;source_label&quot;: &quot;SERVO&quot;, &quot;terminal&quot;: &quot;PROBE.3&quot;, &quot;x&quot;: 1860, &quot;y&quot;: 1510}, {&quot;id&quot;: &quot;sb-PROBE-4&quot;, &quot;role&quot;: &quot;Probe / servo PROBE IN pin&quot;, &quot;source_label&quot;: &quot;PROBE IN&quot;, &quot;terminal&quot;: &quot;PROBE.4&quot;, &quot;x&quot;: 1860, &quot;y&quot;: 1540}, {&quot;id&quot;: &quot;sb-TEMP-1&quot;, &quot;role&quot;: &quot;Temperature 1 sensor pin&quot;, &quot;source_label&quot;: &quot;SENSOR 1&quot;, &quot;terminal&quot;: &quot;TEMP.1&quot;, &quot;x&quot;: 1860, &quot;y&quot;: 1610}, {&quot;id&quot;: &quot;sb-TEMP-2&quot;, &quot;role&quot;: &quot;Temperature 1 GND pin&quot;, &quot;source_label&quot;: &quot;GND&quot;, &quot;terminal&quot;: &quot;TEMP.2&quot;, &quot;x&quot;: 1860, &quot;y&quot;: 1640}, {&quot;id&quot;: &quot;sb-TEMP-3&quot;, &quot;role&quot;: &quot;Temperature 2 sensor pin&quot;, &quot;source_label&quot;: &quot;SENSOR 2&quot;, &quot;terminal&quot;: &quot;TEMP.3&quot;, &quot;x&quot;: 1860, &quot;y&quot;: 1670}, {&quot;id&quot;: &quot;sb-TEMP-4&quot;, &quot;role&quot;: &quot;Temperature 2 GND pin&quot;, &quot;source_label&quot;: &quot;GND&quot;, &quot;terminal&quot;: &quot;TEMP.4&quot;, &quot;x&quot;: 1860, &quot;y&quot;: 1700}, {&quot;id&quot;: &quot;sb-TEMP-5&quot;, &quot;role&quot;: &quot;Temperature 3 sensor pin&quot;, &quot;source_label&quot;: &quot;SENSOR 3&quot;, &quot;terminal&quot;: &quot;TEMP.5&quot;, &quot;x&quot;: 1860, &quot;y&quot;: 1730}, {&quot;id&quot;: &quot;sb-TEMP-6&quot;, &quot;role&quot;: &quot;Temperature 3 GND pin&quot;, &quot;source_label&quot;: &quot;GND&quot;, &quot;terminal&quot;: &quot;TEMP.6&quot;, &quot;x&quot;: 1860, &quot;y&quot;: 1760}, {&quot;id&quot;: &quot;sb-HEA-1&quot;, &quot;role&quot;: &quot;Hotend A LOAD + pin&quot;, &quot;source_label&quot;: &quot;LOAD +&quot;, &quot;terminal&quot;: &quot;HEA.1&quot;, &quot;x&quot;: 60, &quot;y&quot;: 730}, {&quot;id&quot;: &quot;sb-HEA-2&quot;, &quot;role&quot;: &quot;Hotend A SWITCHED − pin&quot;, &quot;source_label&quot;: &quot;SWITCHED −&quot;, &quot;terminal&quot;: &quot;HEA.2&quot;, &quot;x&quot;: 60, &quot;y&quot;: 760}, {&quot;id&quot;: &quot;sb-HEB-1&quot;, &quot;role&quot;: &quot;Hotend B LOAD + pin&quot;, &quot;source_label&quot;: &quot;LOAD +&quot;, &quot;terminal&quot;: &quot;HEB.1&quot;, &quot;x&quot;: 60, &quot;y&quot;: 850}, {&quot;id&quot;: &quot;sb-HEB-2&quot;, &quot;role&quot;: &quot;Hotend B SWITCHED − pin&quot;, &quot;source_label&quot;: &quot;SWITCHED −&quot;, &quot;terminal&quot;: &quot;HEB.2&quot;, &quot;x&quot;: 60, &quot;y&quot;: 880}, {&quot;id&quot;: &quot;sb-BED-1&quot;, &quot;role&quot;: &quot;Bed switch control CONTROL + pin&quot;, &quot;source_label&quot;: &quot;CONTROL +&quot;, &quot;terminal&quot;: &quot;BED.1&quot;, &quot;x&quot;: 60, &quot;y&quot;: 970}, {&quot;id&quot;: &quot;sb-BED-2&quot;, &quot;role&quot;: &quot;Bed switch control SWITCHED − pin&quot;, &quot;source_label&quot;: &quot;SWITCHED −&quot;, &quot;terminal&quot;: &quot;BED.2&quot;, &quot;x&quot;: 60, &quot;y&quot;: 1000}, {&quot;id&quot;: &quot;sb-FANA-1&quot;, &quot;role&quot;: &quot;Fan A LOAD + pin&quot;, &quot;source_label&quot;: &quot;LOAD +&quot;, &quot;terminal&quot;: &quot;FANA.1&quot;, &quot;x&quot;: 60, &quot;y&quot;: 1090}, {&quot;id&quot;: &quot;sb-FANA-2&quot;, &quot;role&quot;: &quot;Fan A SWITCHED − pin&quot;, &quot;source_label&quot;: &quot;SWITCHED −&quot;, &quot;terminal&quot;: &quot;FANA.2&quot;, &quot;x&quot;: 60, &quot;y&quot;: 1120}, {&quot;id&quot;: &quot;sb-FANB-1&quot;, &quot;role&quot;: &quot;Fan B LOAD + pin&quot;, &quot;source_label&quot;: &quot;LOAD +&quot;, &quot;terminal&quot;: &quot;FANB.1&quot;, &quot;x&quot;: 60, &quot;y&quot;: 1210}, {&quot;id&quot;: &quot;sb-FANB-2&quot;, &quot;role&quot;: &quot;Fan B SWITCHED − pin&quot;, &quot;source_label&quot;: &quot;SWITCHED −&quot;, &quot;terminal&quot;: &quot;FANB.2&quot;, &quot;x&quot;: 60, &quot;y&quot;: 1240}, {&quot;id&quot;: &quot;sb-SSR1-1&quot;, &quot;role&quot;: &quot;SSR 1 control 5V SWITCH pin&quot;, &quot;source_label&quot;: &quot;5V SWITCH&quot;, &quot;terminal&quot;: &quot;SSR1.1&quot;, &quot;x&quot;: 60, &quot;y&quot;: 1330}, {&quot;id&quot;: &quot;sb-SSR1-2&quot;, &quot;role&quot;: &quot;SSR 1 control GND pin&quot;, &quot;source_label&quot;: &quot;GND&quot;, &quot;terminal&quot;: &quot;SSR1.2&quot;, &quot;x&quot;: 60, &quot;y&quot;: 1360}, {&quot;id&quot;: &quot;sb-SSR2-1&quot;, &quot;role&quot;: &quot;SSR 2 control 5V SWITCH pin&quot;, &quot;source_label&quot;: &quot;5V SWITCH&quot;, &quot;terminal&quot;: &quot;SSR2.1&quot;, &quot;x&quot;: 60, &quot;y&quot;: 1450}, {&quot;id&quot;: &quot;sb-SSR2-2&quot;, &quot;role&quot;: &quot;SSR 2 control GND pin&quot;, &quot;source_label&quot;: &quot;GND&quot;, &quot;terminal&quot;: &quot;SSR2.2&quot;, &quot;x&quot;: 60, &quot;y&quot;: 1480}, {&quot;id&quot;: &quot;sb-PWM-1&quot;, &quot;role&quot;: &quot;PWM / laser control PWM pin&quot;, &quot;source_label&quot;: &quot;PWM&quot;, &quot;terminal&quot;: &quot;PWM.1&quot;, &quot;x&quot;: 60, &quot;y&quot;: 1570}, {&quot;id&quot;: &quot;sb-PWM-2&quot;, &quot;role&quot;: &quot;PWM / laser control TTL pin&quot;, &quot;source_label&quot;: &quot;TTL&quot;, &quot;terminal&quot;: &quot;PWM.2&quot;, &quot;x&quot;: 60, &quot;y&quot;: 1600}, {&quot;id&quot;: &quot;sb-PWM-3&quot;, &quot;role&quot;: &quot;PWM / laser control GND pin&quot;, &quot;source_label&quot;: &quot;GND&quot;, &quot;terminal&quot;: &quot;PWM.3&quot;, &quot;x&quot;: 60, &quot;y&quot;: 1630}, {&quot;id&quot;: &quot;sb-PWM-4&quot;, &quot;role&quot;: &quot;PWM / laser control 5V LIMITED pin&quot;, &quot;source_label&quot;: &quot;5V LIMITED&quot;, &quot;terminal&quot;: &quot;PWM.4&quot;, &quot;x&quot;: 60, &quot;y&quot;: 1660}, {&quot;id&quot;: &quot;sb-DRVX-1&quot;, &quot;role&quot;: &quot;X axis step pin&quot;, &quot;source_label&quot;: &quot;STEP&quot;, &quot;terminal&quot;: &quot;DRVX.1&quot;, &quot;x&quot;: 240, &quot;y&quot;: 2160}, {&quot;id&quot;: &quot;sb-DRVX-2&quot;, &quot;role&quot;: &quot;X axis step return GND pin&quot;, &quot;source_label&quot;: &quot;GND&quot;, &quot;terminal&quot;: &quot;DRVX.2&quot;, &quot;x&quot;: 288, &quot;y&quot;: 2160}, {&quot;id&quot;: &quot;sb-DRVX-3&quot;, &quot;role&quot;: &quot;X axis direction pin&quot;, &quot;source_label&quot;: &quot;DIR&quot;, &quot;terminal&quot;: &quot;DRVX.3&quot;, &quot;x&quot;: 336, &quot;y&quot;: 2160}, {&quot;id&quot;: &quot;sb-DRVX-4&quot;, &quot;role&quot;: &quot;X axis direction return GND pin&quot;, &quot;source_label&quot;: &quot;GND&quot;, &quot;terminal&quot;: &quot;DRVX.4&quot;, &quot;x&quot;: 384, &quot;y&quot;: 2160}, {&quot;id&quot;: &quot;sb-DRVX-5&quot;, &quot;role&quot;: &quot;X axis enable pin&quot;, &quot;source_label&quot;: &quot;ENABLE&quot;, &quot;terminal&quot;: &quot;DRVX.5&quot;, &quot;x&quot;: 432, &quot;y&quot;: 2160}, {&quot;id&quot;: &quot;sb-DRVX-6&quot;, &quot;role&quot;: &quot;X axis enable return GND pin&quot;, &quot;source_label&quot;: &quot;GND&quot;, &quot;terminal&quot;: &quot;DRVX.6&quot;, &quot;x&quot;: 480, &quot;y&quot;: 2160}, {&quot;id&quot;: &quot;sb-DRVY-1&quot;, &quot;role&quot;: &quot;Y axis step pin&quot;, &quot;source_label&quot;: &quot;STEP&quot;, &quot;terminal&quot;: &quot;DRVY.1&quot;, &quot;x&quot;: 660, &quot;y&quot;: 2160}, {&quot;id&quot;: &quot;sb-DRVY-2&quot;, &quot;role&quot;: &quot;Y axis step return GND pin&quot;, &quot;source_label&quot;: &quot;GND&quot;, &quot;terminal&quot;: &quot;DRVY.2&quot;, &quot;x&quot;: 708, &quot;y&quot;: 2160}, {&quot;id&quot;: &quot;sb-DRVY-3&quot;, &quot;role&quot;: &quot;Y axis direction pin&quot;, &quot;source_label&quot;: &quot;DIR&quot;, &quot;terminal&quot;: &quot;DRVY.3&quot;, &quot;x&quot;: 756, &quot;y&quot;: 2160}, {&quot;id&quot;: &quot;sb-DRVY-4&quot;, &quot;role&quot;: &quot;Y axis direction return GND pin&quot;, &quot;source_label&quot;: &quot;GND&quot;, &quot;terminal&quot;: &quot;DRVY.4&quot;, &quot;x&quot;: 804, &quot;y&quot;: 2160}, {&quot;id&quot;: &quot;sb-DRVY-5&quot;, &quot;role&quot;: &quot;Y axis enable pin&quot;, &quot;source_label&quot;: &quot;ENABLE&quot;, &quot;terminal&quot;: &quot;DRVY.5&quot;, &quot;x&quot;: 852, &quot;y&quot;: 2160}, {&quot;id&quot;: &quot;sb-DRVY-6&quot;, &quot;role&quot;: &quot;Y axis enable return GND pin&quot;, &quot;source_label&quot;: &quot;GND&quot;, &quot;terminal&quot;: &quot;DRVY.6&quot;, &quot;x&quot;: 900, &quot;y&quot;: 2160}, {&quot;id&quot;: &quot;sb-DRVZ-1&quot;, &quot;role&quot;: &quot;Z axis step pin&quot;, &quot;source_label&quot;: &quot;STEP&quot;, &quot;terminal&quot;: &quot;DRVZ.1&quot;, &quot;x&quot;: 1080, &quot;y&quot;: 2160}, {&quot;id&quot;: &quot;sb-DRVZ-2&quot;, &quot;role&quot;: &quot;Z axis step return GND pin&quot;, &quot;source_label&quot;: &quot;GND&quot;, &quot;terminal&quot;: &quot;DRVZ.2&quot;, &quot;x&quot;: 1128, &quot;y&quot;: 2160}, {&quot;id&quot;: &quot;sb-DRVZ-3&quot;, &quot;role&quot;: &quot;Z axis direction pin&quot;, &quot;source_label&quot;: &quot;DIR&quot;, &quot;terminal&quot;: &quot;DRVZ.3&quot;, &quot;x&quot;: 1176, &quot;y&quot;: 2160}, {&quot;id&quot;: &quot;sb-DRVZ-4&quot;, &quot;role&quot;: &quot;Z axis direction return GND pin&quot;, &quot;source_label&quot;: &quot;GND&quot;, &quot;terminal&quot;: &quot;DRVZ.4&quot;, &quot;x&quot;: 1224, &quot;y&quot;: 2160}, {&quot;id&quot;: &quot;sb-DRVZ-5&quot;, &quot;role&quot;: &quot;Z axis enable pin&quot;, &quot;source_label&quot;: &quot;ENABLE&quot;, &quot;terminal&quot;: &quot;DRVZ.5&quot;, &quot;x&quot;: 1272, &quot;y&quot;: 2160}, {&quot;id&quot;: &quot;sb-DRVZ-6&quot;, &quot;role&quot;: &quot;Z axis enable return GND pin&quot;, &quot;source_label&quot;: &quot;GND&quot;, &quot;terminal&quot;: &quot;DRVZ.6&quot;, &quot;x&quot;: 1320, &quot;y&quot;: 2160}, {&quot;id&quot;: &quot;sb-DRVA-1&quot;, &quot;role&quot;: &quot;A axis step pin&quot;, &quot;source_label&quot;: &quot;STEP&quot;, &quot;terminal&quot;: &quot;DRVA.1&quot;, &quot;x&quot;: 1500, &quot;y&quot;: 2160}, {&quot;id&quot;: &quot;sb-DRVA-2&quot;, &quot;role&quot;: &quot;A axis step return GND pin&quot;, &quot;source_label&quot;: &quot;GND&quot;, &quot;terminal&quot;: &quot;DRVA.2&quot;, &quot;x&quot;: 1548, &quot;y&quot;: 2160}, {&quot;id&quot;: &quot;sb-DRVA-3&quot;, &quot;role&quot;: &quot;A axis direction pin&quot;, &quot;source_label&quot;: &quot;DIR&quot;, &quot;terminal&quot;: &quot;DRVA.3&quot;, &quot;x&quot;: 1596, &quot;y&quot;: 2160}, {&quot;id&quot;: &quot;sb-DRVA-4&quot;, &quot;role&quot;: &quot;A axis direction return GND pin&quot;, &quot;source_label&quot;: &quot;GND&quot;, &quot;terminal&quot;: &quot;DRVA.4&quot;, &quot;x&quot;: 1644, &quot;y&quot;: 2160}, {&quot;id&quot;: &quot;sb-DRVA-5&quot;, &quot;role&quot;: &quot;A axis enable pin&quot;, &quot;source_label&quot;: &quot;ENABLE&quot;, &quot;terminal&quot;: &quot;DRVA.5&quot;, &quot;x&quot;: 1692, &quot;y&quot;: 2160}, {&quot;id&quot;: &quot;sb-DRVA-6&quot;, &quot;role&quot;: &quot;A axis enable return GND pin&quot;, &quot;source_label&quot;: &quot;GND&quot;, &quot;terminal&quot;: &quot;DRVA.6&quot;, &quot;x&quot;: 1740, &quot;y&quot;: 2160}], &quot;peripherals&quot;: [{&quot;connector_id&quot;: &quot;motor-x&quot;, &quot;contacts&quot;: [], &quot;kind&quot;: &quot;reported&quot;, &quot;name&quot;: &quot;X axis stepper motor · NEMA17 22 mm · 0.8 A&quot;, &quot;numbering&quot;: &quot;Source marks/order only; physical mating view unverified&quot;, &quot;origin_path&quot;: &quot;145-wiki-145.json&quot;, &quot;origin_sha256&quot;: &quot;bd63350f74bd494649a6e3dd81c9dfbdb6ef3a7bc268c9e3443c7cce84bbd053&quot;, &quot;revision&quot;: &quot;&quot;, &quot;source&quot;: &quot;Reported machine interface; fit unverified · Named X-axis stepper motor in the maker Item F 4.0 BOM. Connector identity, terminal count, coil pairs, installed motor, and driver interface are not published in the reviewed sources.&quot;, &quot;source_urls&quot;: [], &quot;upstream_function_hints&quot;: []}, {&quot;connector_id&quot;: &quot;motor-y&quot;, &quot;contacts&quot;: [], &quot;kind&quot;: &quot;reported&quot;, &quot;name&quot;: &quot;Y axis stepper motor · NEMA17 40 mm · 1.20 A&quot;, &quot;numbering&quot;: &quot;Source marks/order only; physical mating view unverified&quot;, &quot;origin_path&quot;: &quot;145-wiki-145.json&quot;, &quot;origin_sha256&quot;: &quot;bd63350f74bd494649a6e3dd81c9dfbdb6ef3a7bc268c9e3443c7cce84bbd053&quot;, &quot;revision&quot;: &quot;&quot;, &quot;source&quot;: &quot;Reported machine interface; fit unverified · Named Y-axis stepper motor in the maker Item F 4.0 BOM. Connector identity, terminal count, coil pairs, installed motor, and driver interface are not published in the reviewed sources.&quot;, &quot;source_urls&quot;: [], &quot;upstream_function_hints&quot;: []}, {&quot;connector_id&quot;: &quot;motors-z&quot;, &quot;contacts&quot;: [], &quot;kind&quot;: &quot;reported&quot;, &quot;name&quot;: &quot;Z-axis stepper motors · quantity 2 · NEMA17 40 mm · 1.20 A each&quot;, &quot;numbering&quot;: &quot;Source marks/order only; physical mating view unverified&quot;, &quot;origin_path&quot;: &quot;145-wiki-145.json&quot;, &quot;origin_sha256&quot;: &quot;bd63350f74bd494649a6e3dd81c9dfbdb6ef3a7bc268c9e3443c7cce84bbd053&quot;, &quot;revision&quot;: &quot;&quot;, &quot;source&quot;: &quot;Reported machine interface; fit unverified · The maker Item F 4.0 BOM lists two Z motor positions. Separate physical locations, connector identities, terminal count, coil pairs, and whether one or two drivers are used are not established.&quot;, &quot;source_urls&quot;: [], &quot;upstream_function_hints&quot;: []}, {&quot;connector_id&quot;: &quot;motor-e&quot;, &quot;contacts&quot;: [], &quot;kind&quot;: &quot;reported&quot;, &quot;name&quot;: &quot;Extruder stepper motor · NEMA17 40 mm · 1.20 A&quot;, &quot;numbering&quot;: &quot;Source marks/order only; physical mating view unverified&quot;, &quot;origin_path&quot;: &quot;145-wiki-145.json&quot;, &quot;origin_sha256&quot;: &quot;bd63350f74bd494649a6e3dd81c9dfbdb6ef3a7bc268c9e3443c7cce84bbd053&quot;, &quot;revision&quot;: &quot;&quot;, &quot;source&quot;: &quot;Reported machine interface; fit unverified · Named extruder-drive motor in the maker Item F 4.0 BOM. Motor connector, terminal count, coil pairs, installed motor, and driver interface are not published in the reviewed sources.&quot;, &quot;source_urls&quot;: [], &quot;upstream_function_hints&quot;: []}, {&quot;connector_id&quot;: &quot;hotend&quot;, &quot;contacts&quot;: [], &quot;kind&quot;: &quot;reported&quot;, &quot;name&quot;: &quot;E3D Lite6 hotend assembly&quot;, &quot;numbering&quot;: &quot;Source marks/order only; physical mating view unverified&quot;, &quot;origin_path&quot;: &quot;145-wiki-145.json&quot;, &quot;origin_sha256&quot;: &quot;bd63350f74bd494649a6e3dd81c9dfbdb6ef3a7bc268c9e3443c7cce84bbd053&quot;, &quot;revision&quot;: &quot;&quot;, &quot;source&quot;: &quot;Reported machine interface; fit unverified · The maker Item F 4.0 BOM names an E3D Lite6 hotend. Heater and thermistor terminal schedules, ratings, connector identities, and installed revision are not established by the reviewed sources.&quot;, &quot;source_urls&quot;: [], &quot;upstream_function_hints&quot;: []}, {&quot;connector_id&quot;: &quot;fans&quot;, &quot;contacts&quot;: [], &quot;kind&quot;: &quot;reported&quot;, &quot;name&quot;: &quot;Cooling fan assemblies · quantity 2 · 30 × 30 × 10 mm&quot;, &quot;numbering&quot;: &quot;Source marks/order only; physical mating view unverified&quot;, &quot;origin_path&quot;: &quot;145-wiki-145.json&quot;, &quot;origin_sha256&quot;: &quot;bd63350f74bd494649a6e3dd81c9dfbdb6ef3a7bc268c9e3443c7cce84bbd053&quot;, &quot;revision&quot;: &quot;&quot;, &quot;source&quot;: &quot;Reported machine interface; fit unverified · The maker Item F 4.0 BOM lists two fans. Their individual function assignment, connector positions, polarity, and voltage are not established. One 2-pin fan lead is listed separately; which fan it serves is unspecified.&quot;, &quot;source_urls&quot;: [], &quot;upstream_function_hints&quot;: []}, {&quot;connector_id&quot;: &quot;eu-power-cord&quot;, &quot;contacts&quot;: [], &quot;kind&quot;: &quot;reported&quot;, &quot;name&quot;: &quot;EU power cord · quantity 1 in Item F 4.0 BOM&quot;, &quot;numbering&quot;: &quot;Source marks/order only; physical mating view unverified&quot;, &quot;origin_path&quot;: &quot;145-wiki-145.json&quot;, &quot;origin_sha256&quot;: &quot;bd63350f74bd494649a6e3dd81c9dfbdb6ef3a7bc268c9e3443c7cce84bbd053&quot;, &quot;revision&quot;: &quot;&quot;, &quot;source&quot;: &quot;Reported machine interface; fit unverified · The maker Item F 4.0 BOM lists one EU power cord at the rear-plate assembly location. It gives no plug/inlet subtype, individual conductor termination, contact count, polarity, voltage, or connection to the listed PSU/jack. No electrical route is inferred.&quot;, &quot;source_urls&quot;: [], &quot;upstream_function_hints&quot;: []}, {&quot;connector_id&quot;: &quot;lcd&quot;, &quot;contacts&quot;: [], &quot;kind&quot;: &quot;reported&quot;, &quot;name&quot;: &quot;LCD screen for Minitronics · quantity 1 in Item F 4.0 BOM&quot;, &quot;numbering&quot;: &quot;Source marks/order only; physical mating view unverified&quot;, &quot;origin_path&quot;: &quot;145-wiki-145.json&quot;, &quot;origin_sha256&quot;: &quot;bd63350f74bd494649a6e3dd81c9dfbdb6ef3a7bc268c9e3443c7cce84bbd053&quot;, &quot;revision&quot;: &quot;&quot;, &quot;source&quot;: &quot;Reported machine interface; fit unverified · The maker Item F 4.0 BOM lists one LCD screen for Minitronics at the board assembly location. Its interface, cable, connector, positions, and controller fitment are not established. This does not prove a Minitronics board is fitted.&quot;, &quot;source_urls&quot;: [], &quot;upstream_function_hints&quot;: []}, {&quot;connector_id&quot;: &quot;usb-cable&quot;, &quot;contacts&quot;: [], &quot;kind&quot;: &quot;reported&quot;, &quot;name&quot;: &quot;USB cable · quantity 1 in Item F 4.0 BOM&quot;, &quot;numbering&quot;: &quot;Source marks/order only; physical mating view unverified&quot;, &quot;origin_path&quot;: &quot;145-wiki-145.json&quot;, &quot;origin_sha256&quot;: &quot;bd63350f74bd494649a6e3dd81c9dfbdb6ef3a7bc268c9e3443c7cce84bbd053&quot;, &quot;revision&quot;: &quot;&quot;, &quot;source&quot;: &quot;Reported machine interface; fit unverified · The maker Item F 4.0 BOM lists one USB cable at the board assembly location but does not specify either connector subtype, contact view, or assignment. No USB pin count or route is inferred.&quot;, &quot;source_urls&quot;: [], &quot;upstream_function_hints&quot;: []}, {&quot;connector_id&quot;: &quot;psu&quot;, &quot;contacts&quot;: [], &quot;kind&quot;: &quot;reference&quot;, &quot;name&quot;: &quot;Power-supply arrangements · alternative configurations&quot;, &quot;numbering&quot;: &quot;Source marks/order only; physical mating view unverified&quot;, &quot;origin_path&quot;: &quot;145-wiki-145.json&quot;, &quot;origin_sha256&quot;: &quot;bd63350f74bd494649a6e3dd81c9dfbdb6ef3a7bc268c9e3443c7cce84bbd053&quot;, &quot;revision&quot;: &quot;&quot;, &quot;source&quot;: &quot;Source reference only · The RepRap FoldaRap 4.0 page describes external 12 V or 24 V rear-plate PSU choices and an internal-supply option. The maker Item F 4.0 BOM assigns quantity one to an external 12 V 138 W Meanwell unit; its external 24 V 160 W Meanwell entries have no quantity. These sources do not establish a fitted supply or its terminals, polarity, or wiring.&quot;, &quot;source_urls&quot;: [], &quot;upstream_function_hints&quot;: []}, {&quot;connector_id&quot;: &quot;controllers&quot;, &quot;contacts&quot;: [], &quot;kind&quot;: &quot;reference&quot;, &quot;name&quot;: &quot;Controller/firmware alternatives · Minitronics, Melzi, Duet 2 WiFi&quot;, &quot;numbering&quot;: &quot;Source marks/order only; physical mating view unverified&quot;, &quot;origin_path&quot;: &quot;145-wiki-145.json&quot;, &quot;origin_sha256&quot;: &quot;bd63350f74bd494649a6e3dd81c9dfbdb6ef3a7bc268c9e3443c7cce84bbd053&quot;, &quot;revision&quot;: &quot;&quot;, &quot;source&quot;: &quot;Source reference only · Separate repository firmware configurations establish design examples only. The specific controller, board revision, and firmware fitted to any machine are not identified by the evidence bundle.&quot;, &quot;source_urls&quot;: [], &quot;upstream_function_hints&quot;: []}, {&quot;connector_id&quot;: &quot;ref-sensor-x&quot;, &quot;contacts&quot;: [{&quot;fact&quot;: &quot;source&quot;, &quot;id&quot;: &quot;machine-p012-c001&quot;, &quot;label&quot;: &quot;X sensor harness position A · function/order unknown&quot;, &quot;mark&quot;: &quot;A&quot;, &quot;source_id&quot;: &quot;A&quot;, &quot;source_relation&quot;: &quot;&quot;}, {&quot;fact&quot;: &quot;source&quot;, &quot;id&quot;: &quot;machine-p012-c002&quot;, &quot;label&quot;: &quot;X sensor harness position B · function/order unknown&quot;, &quot;mark&quot;: &quot;B&quot;, &quot;source_id&quot;: &quot;B&quot;, &quot;source_relation&quot;: &quot;&quot;}], &quot;kind&quot;: &quot;reference&quot;, &quot;name&quot;: &quot;X sensor 2-pin harness&quot;, &quot;numbering&quot;: &quot;Two BOM-counted lead positions. A/B are editorial display indexes only; physical contact numbers and mating-face order are not published.&quot;, &quot;origin_path&quot;: &quot;smoothiebox-reference-contacts.json#wiki-145/ref-sensor-x; captured dossier machine-research/wiki/foldarap-4.md sha256=9a913aaeb8d36c22d5bb6c6825d423ec7f79dfdb2243ca6b221adb462eb273c1&quot;, &quot;origin_sha256&quot;: &quot;ff22926af6a0752c3e84461c7edfecaed220ff46da78946e1aebb76a05bf8118&quot;, &quot;revision&quot;: &quot;FoldaRap 4.0 maker design evidence; exact machine/controller fitment unverified; checked 2026-09-27&quot;, &quot;source&quot;: &quot;FoldaRap 4.0 maker design evidence; exact machine/controller fitment unverified; checked 2026-09-27 · X sensor cable pair only. X/minimum-endstop intent is a dotted function hypothesis; exact switch terminals, harness order, installed controller, signal logic, and electrical compatibility are unknown. A/B are display indexes only; this route does not define physical pin numbering or polarity.&quot;, &quot;source_urls&quot;: [&quot;https://reprap.org/wiki/FoldaRap&quot;, &quot;https://github.com/EmmanuelG/Foldarap&quot;, &quot;https://github.com/EmmanuelG/Foldarap/blob/master/Bill%20Of%20Materials.ods&quot;, &quot;https://github.com/EmmanuelG/Foldarap/blob/master/firmware/Marlin-10sep2018_FR4_Minitronics_RRW-LCD/Configuration.h&quot;, &quot;https://github.com/EmmanuelG/Foldarap/blob/master/firmware/Marlin-25jan2018_FR4_Melzi/Configuration.h&quot;, &quot;https://github.com/EmmanuelG/Foldarap/blob/master/firmware/Duet2_Wifi/config.g&quot;, &quot;https://www.kycon.com/Pub_Eng_Draw/KPJX-PM-4S-S.pdf&quot;], &quot;upstream_function_hints&quot;: [{&quot;checks&quot;: [&quot;Confirm the exact FoldaRap version, fitted controller, firmware configuration, and X/Y minimum-endstop assignment on the target machine.&quot;, &quot;With all power disconnected, trace both harness conductors and identify which lever-switch terminals they actually use; establish COM/NO/NC and actuation behavior.&quot;, &quot;Confirm the two physical harness positions and switch continuity through the full travel before assigning any connector role.&quot;, &quot;Verify SmoothieBox X/Y MIN SIGNAL/GND input polarity, voltage, pull-up/current behavior, and common reference against the fitted input circuit; do not connect SENSOR +.&quot;, &quot;Verify fail-safe stop behavior and machine travel limits before energizing or moving the machine.&quot;], &quot;contact_id&quot;: &quot;A&quot;, &quot;fanout_group&quot;: &quot;&quot;, &quot;interface&quot;: &quot;X-minimum mechanical switch-loop function guess only; source contact identity and electrical interface unverified.&quot;, &quot;reason&quot;: &quot;GUESS: the maker Item F 4.0 BOM associates a two-pin sensor lead and lever microswitch with the X axis, while alternative repository configurations show negative X/Y homing. That supports only a candidate passive X-minimum switch loop. A/B are display-only labels; no source identifies either conductor, switch terminal, fitted controller, circuit polarity, or direct compatibility. This dotted route is not a wiring instruction.&quot;, &quot;wire_id&quot;: &quot;wiki-145-design-guess-01&quot;}, {&quot;checks&quot;: [&quot;Confirm the exact FoldaRap version, fitted controller, firmware configuration, and X/Y minimum-endstop assignment on the target machine.&quot;, &quot;With all power disconnected, trace both harness conductors and identify which lever-switch terminals they actually use; establish COM/NO/NC and actuation behavior.&quot;, &quot;Confirm the two physical harness positions and switch continuity through the full travel before assigning any connector role.&quot;, &quot;Verify SmoothieBox X/Y MIN SIGNAL/GND input polarity, voltage, pull-up/current behavior, and common reference against the fitted input circuit; do not connect SENSOR +.&quot;, &quot;Verify fail-safe stop behavior and machine travel limits before energizing or moving the machine.&quot;], &quot;contact_id&quot;: &quot;B&quot;, &quot;fanout_group&quot;: &quot;&quot;, &quot;interface&quot;: &quot;X-minimum mechanical switch-loop function guess only; source contact identity and electrical interface unverified.&quot;, &quot;reason&quot;: &quot;GUESS: the maker Item F 4.0 BOM associates a two-pin sensor lead and lever microswitch with the X axis, while alternative repository configurations show negative X/Y homing. That supports only a candidate passive X-minimum switch loop. A/B are display-only labels; no source identifies either conductor, switch terminal, fitted controller, circuit polarity, or direct compatibility. This dotted route is not a wiring instruction.&quot;, &quot;wire_id&quot;: &quot;wiki-145-design-guess-02&quot;}]}, {&quot;connector_id&quot;: &quot;ref-sensor-y&quot;, &quot;contacts&quot;: [{&quot;fact&quot;: &quot;source&quot;, &quot;id&quot;: &quot;machine-p013-c001&quot;, &quot;label&quot;: &quot;Y sensor harness position A · function/order unknown&quot;, &quot;mark&quot;: &quot;A&quot;, &quot;source_id&quot;: &quot;A&quot;, &quot;source_relation&quot;: &quot;&quot;}, {&quot;fact&quot;: &quot;source&quot;, &quot;id&quot;: &quot;machine-p013-c002&quot;, &quot;label&quot;: &quot;Y sensor harness position B · function/order unknown&quot;, &quot;mark&quot;: &quot;B&quot;, &quot;source_id&quot;: &quot;B&quot;, &quot;source_relation&quot;: &quot;&quot;}], &quot;kind&quot;: &quot;reference&quot;, &quot;name&quot;: &quot;Y sensor 2-pin harness&quot;, &quot;numbering&quot;: &quot;Two BOM-counted lead positions. A/B are editorial display indexes only; physical contact numbers and mating-face order are not published.&quot;, &quot;origin_path&quot;: &quot;smoothiebox-reference-contacts.json#wiki-145/ref-sensor-y; captured dossier machine-research/wiki/foldarap-4.md sha256=9a913aaeb8d36c22d5bb6c6825d423ec7f79dfdb2243ca6b221adb462eb273c1&quot;, &quot;origin_sha256&quot;: &quot;ff22926af6a0752c3e84461c7edfecaed220ff46da78946e1aebb76a05bf8118&quot;, &quot;revision&quot;: &quot;FoldaRap 4.0 maker design evidence; exact machine/controller fitment unverified; checked 2026-09-27&quot;, &quot;source&quot;: &quot;FoldaRap 4.0 maker design evidence; exact machine/controller fitment unverified; checked 2026-09-27 · Y sensor cable pair only. Y/minimum-endstop intent is a dotted function hypothesis; exact switch terminals, harness order, installed controller, signal logic, and electrical compatibility are unknown. A/B are display indexes only; this route does not define physical pin numbering or polarity.&quot;, &quot;source_urls&quot;: [&quot;https://reprap.org/wiki/FoldaRap&quot;, &quot;https://github.com/EmmanuelG/Foldarap&quot;, &quot;https://github.com/EmmanuelG/Foldarap/blob/master/Bill%20Of%20Materials.ods&quot;, &quot;https://github.com/EmmanuelG/Foldarap/blob/master/firmware/Marlin-10sep2018_FR4_Minitronics_RRW-LCD/Configuration.h&quot;, &quot;https://github.com/EmmanuelG/Foldarap/blob/master/firmware/Marlin-25jan2018_FR4_Melzi/Configuration.h&quot;, &quot;https://github.com/EmmanuelG/Foldarap/blob/master/firmware/Duet2_Wifi/config.g&quot;, &quot;https://www.kycon.com/Pub_Eng_Draw/KPJX-PM-4S-S.pdf&quot;], &quot;upstream_function_hints&quot;: [{&quot;checks&quot;: [&quot;Confirm the exact FoldaRap version, fitted controller, firmware configuration, and X/Y minimum-endstop assignment on the target machine.&quot;, &quot;With all power disconnected, trace both harness conductors and identify which lever-switch terminals they actually use; establish COM/NO/NC and actuation behavior.&quot;, &quot;Confirm the two physical harness positions and switch continuity through the full travel before assigning any connector role.&quot;, &quot;Verify SmoothieBox X/Y MIN SIGNAL/GND input polarity, voltage, pull-up/current behavior, and common reference against the fitted input circuit; do not connect SENSOR +.&quot;, &quot;Verify fail-safe stop behavior and machine travel limits before energizing or moving the machine.&quot;], &quot;contact_id&quot;: &quot;A&quot;, &quot;fanout_group&quot;: &quot;&quot;, &quot;interface&quot;: &quot;Y-minimum mechanical switch-loop function guess only; source contact identity and electrical interface unverified.&quot;, &quot;reason&quot;: &quot;GUESS: the maker Item F 4.0 BOM associates a two-pin sensor lead and lever microswitch with the Y axis, while alternative repository configurations show negative X/Y homing. That supports only a candidate passive Y-minimum switch loop. A/B are display-only labels; no source identifies either conductor, switch terminal, fitted controller, circuit polarity, or direct compatibility. This dotted route is not a wiring instruction.&quot;, &quot;wire_id&quot;: &quot;wiki-145-design-guess-03&quot;}, {&quot;checks&quot;: [&quot;Confirm the exact FoldaRap version, fitted controller, firmware configuration, and X/Y minimum-endstop assignment on the target machine.&quot;, &quot;With all power disconnected, trace both harness conductors and identify which lever-switch terminals they actually use; establish COM/NO/NC and actuation behavior.&quot;, &quot;Confirm the two physical harness positions and switch continuity through the full travel before assigning any connector role.&quot;, &quot;Verify SmoothieBox X/Y MIN SIGNAL/GND input polarity, voltage, pull-up/current behavior, and common reference against the fitted input circuit; do not connect SENSOR +.&quot;, &quot;Verify fail-safe stop behavior and machine travel limits before energizing or moving the machine.&quot;], &quot;contact_id&quot;: &quot;B&quot;, &quot;fanout_group&quot;: &quot;&quot;, &quot;interface&quot;: &quot;Y-minimum mechanical switch-loop function guess only; source contact identity and electrical interface unverified.&quot;, &quot;reason&quot;: &quot;GUESS: the maker Item F 4.0 BOM associates a two-pin sensor lead and lever microswitch with the Y axis, while alternative repository configurations show negative X/Y homing. That supports only a candidate passive Y-minimum switch loop. A/B are display-only labels; no source identifies either conductor, switch terminal, fitted controller, circuit polarity, or direct compatibility. This dotted route is not a wiring instruction.&quot;, &quot;wire_id&quot;: &quot;wiki-145-design-guess-04&quot;}]}, {&quot;connector_id&quot;: &quot;fan-harness&quot;, &quot;contacts&quot;: [{&quot;fact&quot;: &quot;source&quot;, &quot;id&quot;: &quot;machine-p014-c001&quot;, &quot;label&quot;: &quot;Fan-lead contact A · display index only; polarity/function unknown&quot;, &quot;mark&quot;: &quot;A&quot;, &quot;source_id&quot;: &quot;A&quot;, &quot;source_relation&quot;: &quot;&quot;}, {&quot;fact&quot;: &quot;source&quot;, &quot;id&quot;: &quot;machine-p014-c002&quot;, &quot;label&quot;: &quot;Fan-lead contact B · display index only; polarity/function unknown&quot;, &quot;mark&quot;: &quot;B&quot;, &quot;source_id&quot;: &quot;B&quot;, &quot;source_relation&quot;: &quot;&quot;}], &quot;kind&quot;: &quot;reported&quot;, &quot;name&quot;: &quot;Fan 2-pin lead · which of two fans unassigned&quot;, &quot;numbering&quot;: &quot;Source marks/order only; physical mating view unverified&quot;, &quot;origin_path&quot;: &quot;145-wiki-145.json&quot;, &quot;origin_sha256&quot;: &quot;bd63350f74bd494649a6e3dd81c9dfbdb6ef3a7bc268c9e3443c7cce84bbd053&quot;, &quot;revision&quot;: &quot;&quot;, &quot;source&quot;: &quot;Reported machine interface; fit unverified · The maker Item F 4.0 BOM lists one two-pin fan lead and two small fans, without associating that lead with a particular fan. A/B are display-only labels for the two source-counted lead positions, not source markings, polarity, or verified order.&quot;, &quot;source_urls&quot;: [], &quot;upstream_function_hints&quot;: []}, {&quot;connector_id&quot;: &quot;bed-molex&quot;, &quot;contacts&quot;: [{&quot;fact&quot;: &quot;source&quot;, &quot;id&quot;: &quot;machine-p015-c001&quot;, &quot;label&quot;: &quot;Molex position A · display index only; heater/probe function unknown&quot;, &quot;mark&quot;: &quot;A&quot;, &quot;source_id&quot;: &quot;A&quot;, &quot;source_relation&quot;: &quot;&quot;}, {&quot;fact&quot;: &quot;source&quot;, &quot;id&quot;: &quot;machine-p015-c002&quot;, &quot;label&quot;: &quot;Molex position B · display index only; heater/probe function unknown&quot;, &quot;mark&quot;: &quot;B&quot;, &quot;source_id&quot;: &quot;B&quot;, &quot;source_relation&quot;: &quot;&quot;}], &quot;kind&quot;: &quot;reported&quot;, &quot;name&quot;: &quot;Bed assembly · listed Molex 2-pin termination&quot;, &quot;numbering&quot;: &quot;Source marks/order only; physical mating view unverified&quot;, &quot;origin_path&quot;: &quot;145-wiki-145.json&quot;, &quot;origin_sha256&quot;: &quot;bd63350f74bd494649a6e3dd81c9dfbdb6ef3a7bc268c9e3443c7cce84bbd053&quot;, &quot;revision&quot;: &quot;&quot;, &quot;source&quot;: &quot;Reported machine interface; fit unverified · The maker Item F 4.0 BOM lists a 100 × 100 mm 90 W bed film with 100 kΩ probe and a Molex 2-pin termination, but does not identify whether this connector serves the heater or probe, nor the role/order of its two positions. A/B are display-only labels, not source marks.&quot;, &quot;source_urls&quot;: [], &quot;upstream_function_hints&quot;: []}, {&quot;connector_id&quot;: &quot;power-jack&quot;, &quot;contacts&quot;: [{&quot;fact&quot;: &quot;source&quot;, &quot;id&quot;: &quot;machine-p016-c001&quot;, &quot;label&quot;: &quot;Kycon numbered jack contact 1 · FoldaRap circuit function OPEN&quot;, &quot;mark&quot;: &quot;1&quot;, &quot;source_id&quot;: &quot;1&quot;, &quot;source_relation&quot;: &quot;&quot;}, {&quot;fact&quot;: &quot;source&quot;, &quot;id&quot;: &quot;machine-p016-c002&quot;, &quot;label&quot;: &quot;Kycon numbered jack contact 2 · FoldaRap circuit function OPEN&quot;, &quot;mark&quot;: &quot;2&quot;, &quot;source_id&quot;: &quot;2&quot;, &quot;source_relation&quot;: &quot;&quot;}, {&quot;fact&quot;: &quot;source&quot;, &quot;id&quot;: &quot;machine-p016-c003&quot;, &quot;label&quot;: &quot;Kycon numbered jack contact 3 · FoldaRap circuit function OPEN&quot;, &quot;mark&quot;: &quot;3&quot;, &quot;source_id&quot;: &quot;3&quot;, &quot;source_relation&quot;: &quot;&quot;}, {&quot;fact&quot;: &quot;source&quot;, &quot;id&quot;: &quot;machine-p016-c004&quot;, &quot;label&quot;: &quot;Kycon numbered jack contact 4 · FoldaRap circuit function OPEN&quot;, &quot;mark&quot;: &quot;4&quot;, &quot;source_id&quot;: &quot;4&quot;, &quot;source_relation&quot;: &quot;&quot;}, {&quot;fact&quot;: &quot;source&quot;, &quot;id&quot;: &quot;machine-p016-c005&quot;, &quot;label&quot;: &quot;Shielded -S option tab A · manufacturer ground/shield tab; FoldaRap connection OPEN&quot;, &quot;mark&quot;: &quot;Tab A&quot;, &quot;source_id&quot;: &quot;shield-tab-a&quot;, &quot;source_relation&quot;: &quot;&quot;}, {&quot;fact&quot;: &quot;source&quot;, &quot;id&quot;: &quot;machine-p016-c006&quot;, &quot;label&quot;: &quot;Shielded -S option tab B · manufacturer ground/shield tab; FoldaRap connection OPEN&quot;, &quot;mark&quot;: &quot;Tab B&quot;, &quot;source_id&quot;: &quot;shield-tab-b&quot;, &quot;source_relation&quot;: &quot;&quot;}], &quot;kind&quot;: &quot;reference&quot;, &quot;name&quot;: &quot;Rear-plate power jack · Kycon KPJX-PM-4S; shielded -S variant also listed&quot;, &quot;numbering&quot;: &quot;Source marks/order only; physical mating view unverified&quot;, &quot;origin_path&quot;: &quot;145-wiki-145.json&quot;, &quot;origin_sha256&quot;: &quot;bd63350f74bd494649a6e3dd81c9dfbdb6ef3a7bc268c9e3443c7cce84bbd053&quot;, &quot;revision&quot;: &quot;&quot;, &quot;source&quot;: &quot;Source reference only · The maker F4.0 BOM lists one KPJX-PM-4S panel jack under the rear plate and also lists a shielded KPJX-PM-4S-S variant without a quantity. Kycon documents four numbered contacts; its shielded drawing shows two shield/ground tabs. The FoldaRap BOM assigns no function, supply polarity, electrical connection, harness, or fitted jack variant. All positions here are source-reference positions only and OPEN.&quot;, &quot;source_urls&quot;: [], &quot;upstream_function_hints&quot;: []}], &quot;prior_profile_route_note&quot;: &quot;OPEN interface: board and source-scoped opposing connector inventories are shown on opposite sides with no conductor between them. CONTACT POSITIONS UNKNOWN identifies unnumbered machine groups; every known position is listed individually just below. Open this diagram at full size&quot;, &quot;profile_id&quot;: &quot;wiki-145&quot;, &quot;routes&quot;: [{&quot;from&quot;: &quot;sb-XMIN-2&quot;, &quot;id&quot;: &quot;G01&quot;, &quot;kind&quot;: &quot;function&quot;, &quot;points&quot;: [[1860, 760], [1930, 760], [1930, 839], [2220, 839]], &quot;source_graph_hints&quot;: [{&quot;alternative_set&quot;: &quot;&quot;, &quot;axis_binding&quot;: &quot;&quot;, &quot;axis_option&quot;: &quot;&quot;, &quot;checks&quot;: [&quot;Confirm the exact FoldaRap version, fitted controller, firmware configuration, and X/Y minimum-endstop assignment on the target machine.&quot;, &quot;With all power disconnected, trace both harness conductors and identify which lever-switch terminals they actually use; establish COM/NO/NC and actuation behavior.&quot;, &quot;Confirm the two physical harness positions and switch continuity through the full travel before assigning any connector role.&quot;, &quot;Verify SmoothieBox X/Y MIN SIGNAL/GND input polarity, voltage, pull-up/current behavior, and common reference against the fitted input circuit; do not connect SENSOR +.&quot;, &quot;Verify fail-safe stop behavior and machine travel limits before energizing or moving the machine.&quot;], &quot;exterior_terminal&quot;: &quot;XMIN.2&quot;, &quot;fanout_group&quot;: &quot;&quot;, &quot;interface&quot;: &quot;X-minimum mechanical switch-loop function guess only; source contact identity and electrical interface unverified.&quot;, &quot;mutually_exclusive&quot;: false, &quot;reason&quot;: &quot;GUESS: the maker Item F 4.0 BOM associates a two-pin sensor lead and lever microswitch with the X axis, while alternative repository configurations show negative X/Y homing. That supports only a candidate passive X-minimum switch loop. A/B are display-only labels; no source identifies either conductor, switch terminal, fitted controller, circuit polarity, or direct compatibility. This dotted route is not a wiring instruction.&quot;, &quot;wire_id&quot;: &quot;wiki-145-design-guess-01&quot;}], &quot;state&quot;: &quot;inferred&quot;, &quot;to&quot;: &quot;machine-p012-c001&quot;}, {&quot;from&quot;: &quot;sb-XMIN-3&quot;, &quot;id&quot;: &quot;G02&quot;, &quot;kind&quot;: &quot;function&quot;, &quot;points&quot;: [[1860, 790], [1956, 790], [1956, 904], [2220, 904]], &quot;source_graph_hints&quot;: [{&quot;alternative_set&quot;: &quot;&quot;, &quot;axis_binding&quot;: &quot;&quot;, &quot;axis_option&quot;: &quot;&quot;, &quot;checks&quot;: [&quot;Confirm the exact FoldaRap version, fitted controller, firmware configuration, and X/Y minimum-endstop assignment on the target machine.&quot;, &quot;With all power disconnected, trace both harness conductors and identify which lever-switch terminals they actually use; establish COM/NO/NC and actuation behavior.&quot;, &quot;Confirm the two physical harness positions and switch continuity through the full travel before assigning any connector role.&quot;, &quot;Verify SmoothieBox X/Y MIN SIGNAL/GND input polarity, voltage, pull-up/current behavior, and common reference against the fitted input circuit; do not connect SENSOR +.&quot;, &quot;Verify fail-safe stop behavior and machine travel limits before energizing or moving the machine.&quot;], &quot;exterior_terminal&quot;: &quot;XMIN.3&quot;, &quot;fanout_group&quot;: &quot;&quot;, &quot;interface&quot;: &quot;X-minimum mechanical switch-loop function guess only; source contact identity and electrical interface unverified.&quot;, &quot;mutually_exclusive&quot;: false, &quot;reason&quot;: &quot;GUESS: the maker Item F 4.0 BOM associates a two-pin sensor lead and lever microswitch with the X axis, while alternative repository configurations show negative X/Y homing. That supports only a candidate passive X-minimum switch loop. A/B are display-only labels; no source identifies either conductor, switch terminal, fitted controller, circuit polarity, or direct compatibility. This dotted route is not a wiring instruction.&quot;, &quot;wire_id&quot;: &quot;wiki-145-design-guess-02&quot;}], &quot;state&quot;: &quot;inferred&quot;, &quot;to&quot;: &quot;machine-p012-c002&quot;}, {&quot;from&quot;: &quot;sb-YMIN-2&quot;, &quot;id&quot;: &quot;G03&quot;, &quot;kind&quot;: &quot;function&quot;, &quot;points&quot;: [[1860, 1000], [1982, 1000], [1982, 1267], [2220, 1267]], &quot;source_graph_hints&quot;: [{&quot;alternative_set&quot;: &quot;&quot;, &quot;axis_binding&quot;: &quot;&quot;, &quot;axis_option&quot;: &quot;&quot;, &quot;checks&quot;: [&quot;Confirm the exact FoldaRap version, fitted controller, firmware configuration, and X/Y minimum-endstop assignment on the target machine.&quot;, &quot;With all power disconnected, trace both harness conductors and identify which lever-switch terminals they actually use; establish COM/NO/NC and actuation behavior.&quot;, &quot;Confirm the two physical harness positions and switch continuity through the full travel before assigning any connector role.&quot;, &quot;Verify SmoothieBox X/Y MIN SIGNAL/GND input polarity, voltage, pull-up/current behavior, and common reference against the fitted input circuit; do not connect SENSOR +.&quot;, &quot;Verify fail-safe stop behavior and machine travel limits before energizing or moving the machine.&quot;], &quot;exterior_terminal&quot;: &quot;YMIN.2&quot;, &quot;fanout_group&quot;: &quot;&quot;, &quot;interface&quot;: &quot;Y-minimum mechanical switch-loop function guess only; source contact identity and electrical interface unverified.&quot;, &quot;mutually_exclusive&quot;: false, &quot;reason&quot;: &quot;GUESS: the maker Item F 4.0 BOM associates a two-pin sensor lead and lever microswitch with the Y axis, while alternative repository configurations show negative X/Y homing. That supports only a candidate passive Y-minimum switch loop. A/B are display-only labels; no source identifies either conductor, switch terminal, fitted controller, circuit polarity, or direct compatibility. This dotted route is not a wiring instruction.&quot;, &quot;wire_id&quot;: &quot;wiki-145-design-guess-03&quot;}], &quot;state&quot;: &quot;inferred&quot;, &quot;to&quot;: &quot;machine-p013-c001&quot;}, {&quot;from&quot;: &quot;sb-YMIN-3&quot;, &quot;id&quot;: &quot;G04&quot;, &quot;kind&quot;: &quot;function&quot;, &quot;points&quot;: [[1860, 1030], [2008, 1030], [2008, 1332], [2220, 1332]], &quot;source_graph_hints&quot;: [{&quot;alternative_set&quot;: &quot;&quot;, &quot;axis_binding&quot;: &quot;&quot;, &quot;axis_option&quot;: &quot;&quot;, &quot;checks&quot;: [&quot;Confirm the exact FoldaRap version, fitted controller, firmware configuration, and X/Y minimum-endstop assignment on the target machine.&quot;, &quot;With all power disconnected, trace both harness conductors and identify which lever-switch terminals they actually use; establish COM/NO/NC and actuation behavior.&quot;, &quot;Confirm the two physical harness positions and switch continuity through the full travel before assigning any connector role.&quot;, &quot;Verify SmoothieBox X/Y MIN SIGNAL/GND input polarity, voltage, pull-up/current behavior, and common reference against the fitted input circuit; do not connect SENSOR +.&quot;, &quot;Verify fail-safe stop behavior and machine travel limits before energizing or moving the machine.&quot;], &quot;exterior_terminal&quot;: &quot;YMIN.3&quot;, &quot;fanout_group&quot;: &quot;&quot;, &quot;interface&quot;: &quot;Y-minimum mechanical switch-loop function guess only; source contact identity and electrical interface unverified.&quot;, &quot;mutually_exclusive&quot;: false, &quot;reason&quot;: &quot;GUESS: the maker Item F 4.0 BOM associates a two-pin sensor lead and lever microswitch with the Y axis, while alternative repository configurations show negative X/Y homing. That supports only a candidate passive Y-minimum switch loop. A/B are display-only labels; no source identifies either conductor, switch terminal, fitted controller, circuit polarity, or direct compatibility. This dotted route is not a wiring instruction.&quot;, &quot;wire_id&quot;: &quot;wiki-145-design-guess-04&quot;}], &quot;state&quot;: &quot;inferred&quot;, &quot;to&quot;: &quot;machine-p013-c002&quot;}]}</metadata>
+<metadata id="source-provenance">{&quot;exterior_schedule&quot;: &quot;Smoothie Central Chapter 18 proposed carrier field contacts&quot;, &quot;machine_source&quot;: {&quot;kind&quot;: &quot;typed_graph_projection&quot;, &quot;snapshot&quot;: &quot;machine-side-graph-snapshot.json&quot;, &quot;snapshot_sha256&quot;: &quot;ab39ac1142254918497ff13fcb4998c1d0daf33eee3782b97bbac3304b1b3977&quot;, &quot;source_graph&quot;: &quot;145-wiki-145.json&quot;, &quot;source_sha256&quot;: &quot;bd63350f74bd494649a6e3dd81c9dfbdb6ef3a7bc268c9e3443c7cce84bbd053&quot;}, &quot;profile_id&quot;: &quot;wiki-145&quot;, &quot;reference_additions&quot;: {&quot;path&quot;: &quot;smoothiebox-reference-contacts.json&quot;, &quot;sha256&quot;: &quot;ff22926af6a0752c3e84461c7edfecaed220ff46da78946e1aebb76a05bf8118&quot;}}</metadata>
+<style>
+text{font-family:Arial,Helvetica,sans-serif;fill:#21382d}
+.background{fill:#edf2ec}.title{font-size:38px;font-weight:800}
+.subtitle{font-size:23px;fill:#4e6758}.eyebrow{font-size:18px;font-weight:800;fill:#087b60}
+.case{fill:#fffef9;stroke:#29513e;stroke-width:4}.carrier-header{fill:#e6efe8;stroke:#4d8065;stroke-width:2}.carrier-header-title{font-size:28px;font-weight:850;letter-spacing:1px}.carrier-header-note{font-size:15px;fill:#526a5b;letter-spacing:.5px}.connector-shell{fill:#d9e6dc;stroke:#4d8065;stroke-width:2}.case-title{font-size:44px;font-weight:800}
+.case-note{font-size:20px;fill:#526a5b}.terminal{fill:#35ba58;stroke:#1b6338;stroke-width:2}
+.terminal-candidate{stroke:#7443a4;stroke-width:4}.screw{fill:#c8d2d3;stroke:#496367;stroke-width:2}
+.bank-title{font-size:19px;font-weight:800}.pin-label{font-size:20px;font-weight:650}
+.pin-number{font-size:18px;font-weight:800}.service{fill:#26373b;stroke:#72898c;stroke-width:3}
+.service-label{font-size:17px;font-weight:800}.small{font-size:16px;fill:#526a5b}
+.peripheral-card{fill:#fffef9;stroke:#83a18b;stroke-width:2}.peripheral-accent-reported{fill:#277552}.peripheral-accent-reference{fill:#9b6b1e}.peripheral-accent-context{fill:#75837d}.connector-badge{fill:#e6efe8;stroke:#4d8065;stroke-width:1.5}.connector-badge-text{font-size:14px;font-weight:800;fill:#2f654d;letter-spacing:.5px}
+.context-card{fill:#e8eceb;stroke:#72817b;stroke-width:2}
+.evidence-label{font-size:17px;font-weight:800;fill:#526a5b}
+.peripheral-name{font-size:28px;font-weight:800}.source-line{font-size:18px;fill:#526a5b}
+.boundary-text{font-size:23px;font-weight:700;fill:#526a5b}
+.open-socket{fill:#fffef9;stroke:#526a5b;stroke-width:2}
+.candidate-socket{fill:#fffef9;stroke:#7443a4;stroke-width:4}
+.number-pill{fill:#26373b}.number-text{font-size:18px;font-weight:800;fill:white}
+.machine-contact{font-size:22px;font-weight:650}.open-status{font-size:17px;fill:#64716a}
+.guess-status{font-size:17px;font-weight:800;fill:#613d85}
+.guess-wire{fill:none;stroke:#7443a4;stroke-width:4;stroke-dasharray:2 10;stroke-linecap:round;stroke-linejoin:round}
+.route-clearance{fill:none;stroke:#edf2ec;stroke-width:12;stroke-linecap:round;stroke-linejoin:round}
+.legend-title{font-size:25px;font-weight:800}.legend{font-size:22px;fill:#42584b}
+</style>
+<rect x="0" y="0" width="3620" height="7327" class="background"/>
+<text x="60" y="55" class="eyebrow">MACHINE 145 · 3D PRINTER · SOURCE-SCOPED EVIDENCE</text>
+<text x="60" y="105" class="title" text-anchor="start">FoldaRap 4.0 → SmoothieBox exterior connection study</text>
+<text x="60" y="173" class="subtitle">Proposed exterior terminals → dotted function candidates or explicit OPEN boundaries; no installed harness claim</text>
+<g class="candidate-route" data-state="inferred" data-kind="function" data-route-id="G01" data-from="sb-XMIN-2" data-to="machine-p012-c001">
+<title>G01: explicit design-schematic function guess to X sensor 2-pin harness position A (X sensor harness position A · function/order unknown). FUNCTION GUESS ONLY, not a direct cable or a fitted conductor. Basis: GUESS: the maker Item F 4.0 BOM associates a two-pin sensor lead and lever microswitch with the X axis, while alternative repository configurations show negative X/Y homing. That supports only a candidate passive X-minimum switch loop. A/B are display-only labels; no source identifies either conductor, switch terminal, fitted controller, circuit polarity, or direct compatibility. This dotted route is not a wiring instruction. Interface: X-minimum mechanical switch-loop function guess only; source contact identity and electrical interface unverified. Checks: Confirm the exact FoldaRap version, fitted controller, firmware configuration, and X/Y minimum-endstop assignment on the target machine.; With all power disconnected, trace both harness conductors and identify which lever-switch terminals they actually use; establish COM/NO/NC and actuation behavior.; Confirm the two physical harness positions and switch continuity through the full travel before assigning any connector role.; Verify SmoothieBox X/Y MIN SIGNAL/GND input polarity, voltage, pull-up/current behavior, and common reference against the fitted input circuit; do not connect SENSOR +.; Verify fail-safe stop behavior and machine travel limits before energizing or moving the machine.</title>
+<path d="M1860 760 H1930 V839 H2220" class="route-clearance" data-decoration="crossing-clearance" aria-hidden="true"/>
+<path d="M1860 760 H1930 V839 H2220" class="guess-wire" data-guess="G01"/>
+</g>
+<g class="candidate-route" data-state="inferred" data-kind="function" data-route-id="G02" data-from="sb-XMIN-3" data-to="machine-p012-c002">
+<title>G02: explicit design-schematic function guess to X sensor 2-pin harness position B (X sensor harness position B · function/order unknown). FUNCTION GUESS ONLY, not a direct cable or a fitted conductor. Basis: GUESS: the maker Item F 4.0 BOM associates a two-pin sensor lead and lever microswitch with the X axis, while alternative repository configurations show negative X/Y homing. That supports only a candidate passive X-minimum switch loop. A/B are display-only labels; no source identifies either conductor, switch terminal, fitted controller, circuit polarity, or direct compatibility. This dotted route is not a wiring instruction. Interface: X-minimum mechanical switch-loop function guess only; source contact identity and electrical interface unverified. Checks: Confirm the exact FoldaRap version, fitted controller, firmware configuration, and X/Y minimum-endstop assignment on the target machine.; With all power disconnected, trace both harness conductors and identify which lever-switch terminals they actually use; establish COM/NO/NC and actuation behavior.; Confirm the two physical harness positions and switch continuity through the full travel before assigning any connector role.; Verify SmoothieBox X/Y MIN SIGNAL/GND input polarity, voltage, pull-up/current behavior, and common reference against the fitted input circuit; do not connect SENSOR +.; Verify fail-safe stop behavior and machine travel limits before energizing or moving the machine.</title>
+<path d="M1860 790 H1956 V904 H2220" class="route-clearance" data-decoration="crossing-clearance" aria-hidden="true"/>
+<path d="M1860 790 H1956 V904 H2220" class="guess-wire" data-guess="G02"/>
+</g>
+<g class="candidate-route" data-state="inferred" data-kind="function" data-route-id="G03" data-from="sb-YMIN-2" data-to="machine-p013-c001">
+<title>G03: explicit design-schematic function guess to Y sensor 2-pin harness position A (Y sensor harness position A · function/order unknown). FUNCTION GUESS ONLY, not a direct cable or a fitted conductor. Basis: GUESS: the maker Item F 4.0 BOM associates a two-pin sensor lead and lever microswitch with the Y axis, while alternative repository configurations show negative X/Y homing. That supports only a candidate passive Y-minimum switch loop. A/B are display-only labels; no source identifies either conductor, switch terminal, fitted controller, circuit polarity, or direct compatibility. This dotted route is not a wiring instruction. Interface: Y-minimum mechanical switch-loop function guess only; source contact identity and electrical interface unverified. Checks: Confirm the exact FoldaRap version, fitted controller, firmware configuration, and X/Y minimum-endstop assignment on the target machine.; With all power disconnected, trace both harness conductors and identify which lever-switch terminals they actually use; establish COM/NO/NC and actuation behavior.; Confirm the two physical harness positions and switch continuity through the full travel before assigning any connector role.; Verify SmoothieBox X/Y MIN SIGNAL/GND input polarity, voltage, pull-up/current behavior, and common reference against the fitted input circuit; do not connect SENSOR +.; Verify fail-safe stop behavior and machine travel limits before energizing or moving the machine.</title>
+<path d="M1860 1000 H1982 V1267 H2220" class="route-clearance" data-decoration="crossing-clearance" aria-hidden="true"/>
+<path d="M1860 1000 H1982 V1267 H2220" class="guess-wire" data-guess="G03"/>
+</g>
+<g class="candidate-route" data-state="inferred" data-kind="function" data-route-id="G04" data-from="sb-YMIN-3" data-to="machine-p013-c002">
+<title>G04: explicit design-schematic function guess to Y sensor 2-pin harness position B (Y sensor harness position B · function/order unknown). FUNCTION GUESS ONLY, not a direct cable or a fitted conductor. Basis: GUESS: the maker Item F 4.0 BOM associates a two-pin sensor lead and lever microswitch with the Y axis, while alternative repository configurations show negative X/Y homing. That supports only a candidate passive Y-minimum switch loop. A/B are display-only labels; no source identifies either conductor, switch terminal, fitted controller, circuit polarity, or direct compatibility. This dotted route is not a wiring instruction. Interface: Y-minimum mechanical switch-loop function guess only; source contact identity and electrical interface unverified. Checks: Confirm the exact FoldaRap version, fitted controller, firmware configuration, and X/Y minimum-endstop assignment on the target machine.; With all power disconnected, trace both harness conductors and identify which lever-switch terminals they actually use; establish COM/NO/NC and actuation behavior.; Confirm the two physical harness positions and switch continuity through the full travel before assigning any connector role.; Verify SmoothieBox X/Y MIN SIGNAL/GND input polarity, voltage, pull-up/current behavior, and common reference against the fitted input circuit; do not connect SENSOR +.; Verify fail-safe stop behavior and machine travel limits before energizing or moving the machine.</title>
+<path d="M1860 1030 H2008 V1332 H2220" class="route-clearance" data-decoration="crossing-clearance" aria-hidden="true"/>
+<path d="M1860 1030 H2008 V1332 H2220" class="guess-wire" data-guess="G04"/>
+</g>
+<g id="smoothiebox-exterior" data-controller="smoothiebox-exterior-only">
+<rect x="60" y="360" width="1800" height="1800" rx="18" class="case"/>
+<rect x="170" y="630" width="1580" height="74" rx="12" class="carrier-header"/>
+<text x="960" y="663" class="carrier-header-title" text-anchor="middle">SMOOTHIEBOX · EXTERIOR FIELD PERIMETER</text>
+<text x="960" y="688" class="carrier-header-note" text-anchor="middle">INTERNAL BOARD, DRIVER CIRCUIT AND SAFETY LOGIC OMITTED · ONLY OUTSIDE CONNECTORS SHOWN</text>
+<g class="bank" data-exterior-bank="POWER" data-side="north">
+<rect x="190" y="720" width="108" height="42" rx="8" class="connector-shell"/>
+<text x="244" y="298" class="bank-title" text-anchor="middle">VFET POWER IN</text>
+<g id="sb-POWER-1" data-exterior-contact="POWER.1" data-role="Load power input LOAD + pin" data-source-label="LOAD +" data-x="220" data-y="360">
+<title>POWER.1 · Load power input LOAD + pin · proposed carrier contact; not a mating view</title>
+<rect x="205" y="346" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="220" cy="360" r="7" class="screw" style="fill:#806700"/>
+<text x="220" y="336" class="pin-number" text-anchor="middle">1</text>
+<text x="220" y="398" transform="rotate(90 220 398)" class="pin-label" style="fill:#806700">Load power input LOAD + pin</text>
+</g>
+<g id="sb-POWER-2" data-exterior-contact="POWER.2" data-role="Load power input GND pin" data-source-label="GND" data-x="268" data-y="360">
+<title>POWER.2 · Load power input GND pin · proposed carrier contact; not a mating view</title>
+<rect x="253" y="346" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="268" cy="360" r="7" class="screw" style="fill:#111717"/>
+<text x="268" y="336" class="pin-number" text-anchor="middle">2</text>
+<text x="268" y="398" transform="rotate(90 268 398)" class="pin-label" style="fill:#111717">Load power input GND pin</text>
+</g>
+</g>
+<g class="bank" data-exterior-bank="FIVEIN" data-side="north">
+<rect x="390" y="720" width="108" height="42" rx="8" class="connector-shell"/>
+<text x="444" y="298" class="bank-title" text-anchor="middle">5V POWER IN</text>
+<g id="sb-FIVEIN-1" data-exterior-contact="FIVEIN.1" data-role="5 V input +5V pin" data-source-label="+5V" data-x="420" data-y="360">
+<title>FIVEIN.1 · 5 V input +5V pin · proposed carrier contact; not a mating view</title>
+<rect x="405" y="346" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="420" cy="360" r="7" class="screw" style="fill:#b85e00"/>
+<text x="420" y="336" class="pin-number" text-anchor="middle">1</text>
+<text x="420" y="398" transform="rotate(90 420 398)" class="pin-label" style="fill:#b85e00">5 V input +5V pin</text>
+</g>
+<g id="sb-FIVEIN-2" data-exterior-contact="FIVEIN.2" data-role="5 V input GND pin" data-source-label="GND" data-x="468" data-y="360">
+<title>FIVEIN.2 · 5 V input GND pin · proposed carrier contact; not a mating view</title>
+<rect x="453" y="346" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="468" cy="360" r="7" class="screw" style="fill:#111717"/>
+<text x="468" y="336" class="pin-number" text-anchor="middle">2</text>
+<text x="468" y="398" transform="rotate(90 468 398)" class="pin-label" style="fill:#111717">5 V input GND pin</text>
+</g>
+</g>
+<g class="bank" data-exterior-bank="FIVEOUT" data-side="north">
+<rect x="590" y="720" width="108" height="42" rx="8" class="connector-shell"/>
+<text x="644" y="298" class="bank-title" text-anchor="middle">5V ACCESSORY OUT</text>
+<g id="sb-FIVEOUT-1" data-exterior-contact="FIVEOUT.1" data-role="5 V accessory output +5V pin" data-source-label="+5V" data-x="620" data-y="360">
+<title>FIVEOUT.1 · 5 V accessory output +5V pin · proposed carrier contact; not a mating view</title>
+<rect x="605" y="346" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="620" cy="360" r="7" class="screw" style="fill:#b85e00"/>
+<text x="620" y="336" class="pin-number" text-anchor="middle">1</text>
+<text x="620" y="398" transform="rotate(90 620 398)" class="pin-label" style="fill:#b85e00">5 V accessory output +5V pin</text>
+</g>
+<g id="sb-FIVEOUT-2" data-exterior-contact="FIVEOUT.2" data-role="5 V accessory output GND pin" data-source-label="GND" data-x="668" data-y="360">
+<title>FIVEOUT.2 · 5 V accessory output GND pin · proposed carrier contact; not a mating view</title>
+<rect x="653" y="346" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="668" cy="360" r="7" class="screw" style="fill:#111717"/>
+<text x="668" y="336" class="pin-number" text-anchor="middle">2</text>
+<text x="668" y="398" transform="rotate(90 668 398)" class="pin-label" style="fill:#111717">5 V accessory output GND pin</text>
+</g>
+</g>
+<g class="bank" data-exterior-bank="AUX" data-side="north">
+<rect x="1470" y="720" width="300" height="42" rx="8" class="connector-shell"/>
+<text x="1620" y="298" class="bank-title" text-anchor="middle">ANALOG INPUTS</text>
+<g id="sb-AUX-1" data-exterior-contact="AUX.1" data-role="Analog input 1 signal pin" data-source-label="ANALOG 1" data-x="1500" data-y="360">
+<title>AUX.1 · Analog input 1 signal pin · proposed carrier contact; not a mating view</title>
+<rect x="1485" y="346" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="1500" cy="360" r="7" class="screw" style="fill:#087361"/>
+<text x="1500" y="336" class="pin-number" text-anchor="middle">1</text>
+<text x="1500" y="398" transform="rotate(90 1500 398)" class="pin-label" style="fill:#087361">Analog input 1 signal pin</text>
+</g>
+<g id="sb-AUX-2" data-exterior-contact="AUX.2" data-role="Analog input 1 GND pin" data-source-label="GND" data-x="1548" data-y="360">
+<title>AUX.2 · Analog input 1 GND pin · proposed carrier contact; not a mating view</title>
+<rect x="1533" y="346" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="1548" cy="360" r="7" class="screw" style="fill:#111717"/>
+<text x="1548" y="336" class="pin-number" text-anchor="middle">2</text>
+<text x="1548" y="398" transform="rotate(90 1548 398)" class="pin-label" style="fill:#111717">Analog input 1 GND pin</text>
+</g>
+<g id="sb-AUX-3" data-exterior-contact="AUX.3" data-role="Analog input 2 signal pin" data-source-label="ANALOG 2" data-x="1596" data-y="360">
+<title>AUX.3 · Analog input 2 signal pin · proposed carrier contact; not a mating view</title>
+<rect x="1581" y="346" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="1596" cy="360" r="7" class="screw" style="fill:#087361"/>
+<text x="1596" y="336" class="pin-number" text-anchor="middle">3</text>
+<text x="1596" y="398" transform="rotate(90 1596 398)" class="pin-label" style="fill:#087361">Analog input 2 signal pin</text>
+</g>
+<g id="sb-AUX-4" data-exterior-contact="AUX.4" data-role="Analog input 2 GND pin" data-source-label="GND" data-x="1644" data-y="360">
+<title>AUX.4 · Analog input 2 GND pin · proposed carrier contact; not a mating view</title>
+<rect x="1629" y="346" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="1644" cy="360" r="7" class="screw" style="fill:#111717"/>
+<text x="1644" y="336" class="pin-number" text-anchor="middle">4</text>
+<text x="1644" y="398" transform="rotate(90 1644 398)" class="pin-label" style="fill:#111717">Analog input 2 GND pin</text>
+</g>
+<g id="sb-AUX-5" data-exterior-contact="AUX.5" data-role="Analog input 3 signal pin" data-source-label="ANALOG 3" data-x="1692" data-y="360">
+<title>AUX.5 · Analog input 3 signal pin · proposed carrier contact; not a mating view</title>
+<rect x="1677" y="346" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="1692" cy="360" r="7" class="screw" style="fill:#087361"/>
+<text x="1692" y="336" class="pin-number" text-anchor="middle">5</text>
+<text x="1692" y="398" transform="rotate(90 1692 398)" class="pin-label" style="fill:#087361">Analog input 3 signal pin</text>
+</g>
+<g id="sb-AUX-6" data-exterior-contact="AUX.6" data-role="Analog input 3 GND pin" data-source-label="GND" data-x="1740" data-y="360">
+<title>AUX.6 · Analog input 3 GND pin · proposed carrier contact; not a mating view</title>
+<rect x="1725" y="346" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="1740" cy="360" r="7" class="screw" style="fill:#111717"/>
+<text x="1740" y="336" class="pin-number" text-anchor="middle">6</text>
+<text x="1740" y="398" transform="rotate(90 1740 398)" class="pin-label" style="fill:#111717">Analog input 3 GND pin</text>
+</g>
+</g>
+<g class="bank" data-exterior-bank="XMIN" data-side="east">
+<rect x="1798" y="708" width="42" height="104" rx="8" class="connector-shell"/>
+<text x="1824" y="701" class="bank-title" text-anchor="end">X MIN</text>
+<g id="sb-XMIN-1" data-exterior-contact="XMIN.1" data-role="X axis min endstop sensor + pin" data-source-label="SENSOR +" data-x="1860" data-y="730">
+<title>XMIN.1 · X axis min endstop sensor + pin · proposed carrier contact; not a mating view</title>
+<rect x="1845" y="716" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="1860" cy="730" r="7" class="screw" style="fill:#416b7e"/>
+<text x="1824" y="737" class="pin-label" text-anchor="end" style="fill:#416b7e">1 · X axis min endstop sensor + pin</text>
+</g>
+<g id="sb-XMIN-2" data-exterior-contact="XMIN.2" data-role="X axis min endstop GND pin" data-source-label="GND" data-x="1860" data-y="760">
+<title>XMIN.2 · X axis min endstop GND pin · proposed carrier contact; not a mating view</title>
+<rect x="1845" y="746" width="30" height="28" rx="4" class="terminal terminal-candidate"/>
+<circle cx="1860" cy="760" r="7" class="screw" style="fill:#111717"/>
+<text x="1824" y="767" class="pin-label" text-anchor="end" style="fill:#111717">2 · X axis min endstop GND pin</text>
+</g>
+<g id="sb-XMIN-3" data-exterior-contact="XMIN.3" data-role="X axis min endstop signal pin" data-source-label="SIGNAL" data-x="1860" data-y="790">
+<title>XMIN.3 · X axis min endstop signal pin · proposed carrier contact; not a mating view</title>
+<rect x="1845" y="776" width="30" height="28" rx="4" class="terminal terminal-candidate"/>
+<circle cx="1860" cy="790" r="7" class="screw" style="fill:#087361"/>
+<text x="1824" y="797" class="pin-label" text-anchor="end" style="fill:#087361">3 · X axis min endstop signal pin</text>
+</g>
+</g>
+<g class="bank" data-exterior-bank="XMAX" data-side="east">
+<rect x="1798" y="828" width="42" height="104" rx="8" class="connector-shell"/>
+<text x="1824" y="821" class="bank-title" text-anchor="end">X MAX</text>
+<g id="sb-XMAX-1" data-exterior-contact="XMAX.1" data-role="X axis max endstop sensor + pin" data-source-label="SENSOR +" data-x="1860" data-y="850">
+<title>XMAX.1 · X axis max endstop sensor + pin · proposed carrier contact; not a mating view</title>
+<rect x="1845" y="836" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="1860" cy="850" r="7" class="screw" style="fill:#416b7e"/>
+<text x="1824" y="857" class="pin-label" text-anchor="end" style="fill:#416b7e">1 · X axis max endstop sensor + pin</text>
+</g>
+<g id="sb-XMAX-2" data-exterior-contact="XMAX.2" data-role="X axis max endstop GND pin" data-source-label="GND" data-x="1860" data-y="880">
+<title>XMAX.2 · X axis max endstop GND pin · proposed carrier contact; not a mating view</title>
+<rect x="1845" y="866" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="1860" cy="880" r="7" class="screw" style="fill:#111717"/>
+<text x="1824" y="887" class="pin-label" text-anchor="end" style="fill:#111717">2 · X axis max endstop GND pin</text>
+</g>
+<g id="sb-XMAX-3" data-exterior-contact="XMAX.3" data-role="X axis max endstop signal pin" data-source-label="SIGNAL" data-x="1860" data-y="910">
+<title>XMAX.3 · X axis max endstop signal pin · proposed carrier contact; not a mating view</title>
+<rect x="1845" y="896" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="1860" cy="910" r="7" class="screw" style="fill:#087361"/>
+<text x="1824" y="917" class="pin-label" text-anchor="end" style="fill:#087361">3 · X axis max endstop signal pin</text>
+</g>
+</g>
+<g class="bank" data-exterior-bank="YMIN" data-side="east">
+<rect x="1798" y="948" width="42" height="104" rx="8" class="connector-shell"/>
+<text x="1824" y="941" class="bank-title" text-anchor="end">Y MIN</text>
+<g id="sb-YMIN-1" data-exterior-contact="YMIN.1" data-role="Y axis min endstop sensor + pin" data-source-label="SENSOR +" data-x="1860" data-y="970">
+<title>YMIN.1 · Y axis min endstop sensor + pin · proposed carrier contact; not a mating view</title>
+<rect x="1845" y="956" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="1860" cy="970" r="7" class="screw" style="fill:#416b7e"/>
+<text x="1824" y="977" class="pin-label" text-anchor="end" style="fill:#416b7e">1 · Y axis min endstop sensor + pin</text>
+</g>
+<g id="sb-YMIN-2" data-exterior-contact="YMIN.2" data-role="Y axis min endstop GND pin" data-source-label="GND" data-x="1860" data-y="1000">
+<title>YMIN.2 · Y axis min endstop GND pin · proposed carrier contact; not a mating view</title>
+<rect x="1845" y="986" width="30" height="28" rx="4" class="terminal terminal-candidate"/>
+<circle cx="1860" cy="1000" r="7" class="screw" style="fill:#111717"/>
+<text x="1824" y="1007" class="pin-label" text-anchor="end" style="fill:#111717">2 · Y axis min endstop GND pin</text>
+</g>
+<g id="sb-YMIN-3" data-exterior-contact="YMIN.3" data-role="Y axis min endstop signal pin" data-source-label="SIGNAL" data-x="1860" data-y="1030">
+<title>YMIN.3 · Y axis min endstop signal pin · proposed carrier contact; not a mating view</title>
+<rect x="1845" y="1016" width="30" height="28" rx="4" class="terminal terminal-candidate"/>
+<circle cx="1860" cy="1030" r="7" class="screw" style="fill:#087361"/>
+<text x="1824" y="1037" class="pin-label" text-anchor="end" style="fill:#087361">3 · Y axis min endstop signal pin</text>
+</g>
+</g>
+<g class="bank" data-exterior-bank="YMAX" data-side="east">
+<rect x="1798" y="1068" width="42" height="104" rx="8" class="connector-shell"/>
+<text x="1824" y="1061" class="bank-title" text-anchor="end">Y MAX</text>
+<g id="sb-YMAX-1" data-exterior-contact="YMAX.1" data-role="Y axis max endstop sensor + pin" data-source-label="SENSOR +" data-x="1860" data-y="1090">
+<title>YMAX.1 · Y axis max endstop sensor + pin · proposed carrier contact; not a mating view</title>
+<rect x="1845" y="1076" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="1860" cy="1090" r="7" class="screw" style="fill:#416b7e"/>
+<text x="1824" y="1097" class="pin-label" text-anchor="end" style="fill:#416b7e">1 · Y axis max endstop sensor + pin</text>
+</g>
+<g id="sb-YMAX-2" data-exterior-contact="YMAX.2" data-role="Y axis max endstop GND pin" data-source-label="GND" data-x="1860" data-y="1120">
+<title>YMAX.2 · Y axis max endstop GND pin · proposed carrier contact; not a mating view</title>
+<rect x="1845" y="1106" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="1860" cy="1120" r="7" class="screw" style="fill:#111717"/>
+<text x="1824" y="1127" class="pin-label" text-anchor="end" style="fill:#111717">2 · Y axis max endstop GND pin</text>
+</g>
+<g id="sb-YMAX-3" data-exterior-contact="YMAX.3" data-role="Y axis max endstop signal pin" data-source-label="SIGNAL" data-x="1860" data-y="1150">
+<title>YMAX.3 · Y axis max endstop signal pin · proposed carrier contact; not a mating view</title>
+<rect x="1845" y="1136" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="1860" cy="1150" r="7" class="screw" style="fill:#087361"/>
+<text x="1824" y="1157" class="pin-label" text-anchor="end" style="fill:#087361">3 · Y axis max endstop signal pin</text>
+</g>
+</g>
+<g class="bank" data-exterior-bank="ZMIN" data-side="east">
+<rect x="1798" y="1188" width="42" height="104" rx="8" class="connector-shell"/>
+<text x="1824" y="1181" class="bank-title" text-anchor="end">Z MIN</text>
+<g id="sb-ZMIN-1" data-exterior-contact="ZMIN.1" data-role="Z axis min endstop sensor + pin" data-source-label="SENSOR +" data-x="1860" data-y="1210">
+<title>ZMIN.1 · Z axis min endstop sensor + pin · proposed carrier contact; not a mating view</title>
+<rect x="1845" y="1196" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="1860" cy="1210" r="7" class="screw" style="fill:#416b7e"/>
+<text x="1824" y="1217" class="pin-label" text-anchor="end" style="fill:#416b7e">1 · Z axis min endstop sensor + pin</text>
+</g>
+<g id="sb-ZMIN-2" data-exterior-contact="ZMIN.2" data-role="Z axis min endstop GND pin" data-source-label="GND" data-x="1860" data-y="1240">
+<title>ZMIN.2 · Z axis min endstop GND pin · proposed carrier contact; not a mating view</title>
+<rect x="1845" y="1226" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="1860" cy="1240" r="7" class="screw" style="fill:#111717"/>
+<text x="1824" y="1247" class="pin-label" text-anchor="end" style="fill:#111717">2 · Z axis min endstop GND pin</text>
+</g>
+<g id="sb-ZMIN-3" data-exterior-contact="ZMIN.3" data-role="Z axis min endstop signal pin" data-source-label="SIGNAL" data-x="1860" data-y="1270">
+<title>ZMIN.3 · Z axis min endstop signal pin · proposed carrier contact; not a mating view</title>
+<rect x="1845" y="1256" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="1860" cy="1270" r="7" class="screw" style="fill:#087361"/>
+<text x="1824" y="1277" class="pin-label" text-anchor="end" style="fill:#087361">3 · Z axis min endstop signal pin</text>
+</g>
+</g>
+<g class="bank" data-exterior-bank="ZMAX" data-side="east">
+<rect x="1798" y="1308" width="42" height="104" rx="8" class="connector-shell"/>
+<text x="1824" y="1301" class="bank-title" text-anchor="end">Z MAX</text>
+<g id="sb-ZMAX-1" data-exterior-contact="ZMAX.1" data-role="Z axis max endstop sensor + pin" data-source-label="SENSOR +" data-x="1860" data-y="1330">
+<title>ZMAX.1 · Z axis max endstop sensor + pin · proposed carrier contact; not a mating view</title>
+<rect x="1845" y="1316" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="1860" cy="1330" r="7" class="screw" style="fill:#416b7e"/>
+<text x="1824" y="1337" class="pin-label" text-anchor="end" style="fill:#416b7e">1 · Z axis max endstop sensor + pin</text>
+</g>
+<g id="sb-ZMAX-2" data-exterior-contact="ZMAX.2" data-role="Z axis max endstop GND pin" data-source-label="GND" data-x="1860" data-y="1360">
+<title>ZMAX.2 · Z axis max endstop GND pin · proposed carrier contact; not a mating view</title>
+<rect x="1845" y="1346" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="1860" cy="1360" r="7" class="screw" style="fill:#111717"/>
+<text x="1824" y="1367" class="pin-label" text-anchor="end" style="fill:#111717">2 · Z axis max endstop GND pin</text>
+</g>
+<g id="sb-ZMAX-3" data-exterior-contact="ZMAX.3" data-role="Z axis max endstop signal pin" data-source-label="SIGNAL" data-x="1860" data-y="1390">
+<title>ZMAX.3 · Z axis max endstop signal pin · proposed carrier contact; not a mating view</title>
+<rect x="1845" y="1376" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="1860" cy="1390" r="7" class="screw" style="fill:#087361"/>
+<text x="1824" y="1397" class="pin-label" text-anchor="end" style="fill:#087361">3 · Z axis max endstop signal pin</text>
+</g>
+</g>
+<g class="bank" data-exterior-bank="PROBE" data-side="east">
+<rect x="1798" y="1428" width="42" height="134" rx="8" class="connector-shell"/>
+<text x="1824" y="1421" class="bank-title" text-anchor="end">PROBE + SERVO</text>
+<g id="sb-PROBE-1" data-exterior-contact="PROBE.1" data-role="Probe / servo +5V pin" data-source-label="+5V" data-x="1860" data-y="1450">
+<title>PROBE.1 · Probe / servo +5V pin · proposed carrier contact; not a mating view</title>
+<rect x="1845" y="1436" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="1860" cy="1450" r="7" class="screw" style="fill:#b85e00"/>
+<text x="1824" y="1457" class="pin-label" text-anchor="end" style="fill:#b85e00">1 · Probe / servo +5V pin</text>
+</g>
+<g id="sb-PROBE-2" data-exterior-contact="PROBE.2" data-role="Probe / servo GND pin" data-source-label="GND" data-x="1860" data-y="1480">
+<title>PROBE.2 · Probe / servo GND pin · proposed carrier contact; not a mating view</title>
+<rect x="1845" y="1466" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="1860" cy="1480" r="7" class="screw" style="fill:#111717"/>
+<text x="1824" y="1487" class="pin-label" text-anchor="end" style="fill:#111717">2 · Probe / servo GND pin</text>
+</g>
+<g id="sb-PROBE-3" data-exterior-contact="PROBE.3" data-role="Probe / servo SERVO pin" data-source-label="SERVO" data-x="1860" data-y="1510">
+<title>PROBE.3 · Probe / servo SERVO pin · proposed carrier contact; not a mating view</title>
+<rect x="1845" y="1496" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="1860" cy="1510" r="7" class="screw" style="fill:#6246a3"/>
+<text x="1824" y="1517" class="pin-label" text-anchor="end" style="fill:#6246a3">3 · Probe / servo SERVO pin</text>
+</g>
+<g id="sb-PROBE-4" data-exterior-contact="PROBE.4" data-role="Probe / servo PROBE IN pin" data-source-label="PROBE IN" data-x="1860" data-y="1540">
+<title>PROBE.4 · Probe / servo PROBE IN pin · proposed carrier contact; not a mating view</title>
+<rect x="1845" y="1526" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="1860" cy="1540" r="7" class="screw" style="fill:#087361"/>
+<text x="1824" y="1547" class="pin-label" text-anchor="end" style="fill:#087361">4 · Probe / servo PROBE IN pin</text>
+</g>
+</g>
+<g class="bank" data-exterior-bank="TEMP" data-side="east">
+<rect x="1798" y="1588" width="42" height="194" rx="8" class="connector-shell"/>
+<text x="1824" y="1581" class="bank-title" text-anchor="end">TEMPERATURE 1–3</text>
+<g id="sb-TEMP-1" data-exterior-contact="TEMP.1" data-role="Temperature 1 sensor pin" data-source-label="SENSOR 1" data-x="1860" data-y="1610">
+<title>TEMP.1 · Temperature 1 sensor pin · proposed carrier contact; not a mating view</title>
+<rect x="1845" y="1596" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="1860" cy="1610" r="7" class="screw" style="fill:#416b7e"/>
+<text x="1824" y="1617" class="pin-label" text-anchor="end" style="fill:#416b7e">1 · Temperature 1 sensor pin</text>
+</g>
+<g id="sb-TEMP-2" data-exterior-contact="TEMP.2" data-role="Temperature 1 GND pin" data-source-label="GND" data-x="1860" data-y="1640">
+<title>TEMP.2 · Temperature 1 GND pin · proposed carrier contact; not a mating view</title>
+<rect x="1845" y="1626" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="1860" cy="1640" r="7" class="screw" style="fill:#111717"/>
+<text x="1824" y="1647" class="pin-label" text-anchor="end" style="fill:#111717">2 · Temperature 1 GND pin</text>
+</g>
+<g id="sb-TEMP-3" data-exterior-contact="TEMP.3" data-role="Temperature 2 sensor pin" data-source-label="SENSOR 2" data-x="1860" data-y="1670">
+<title>TEMP.3 · Temperature 2 sensor pin · proposed carrier contact; not a mating view</title>
+<rect x="1845" y="1656" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="1860" cy="1670" r="7" class="screw" style="fill:#416b7e"/>
+<text x="1824" y="1677" class="pin-label" text-anchor="end" style="fill:#416b7e">3 · Temperature 2 sensor pin</text>
+</g>
+<g id="sb-TEMP-4" data-exterior-contact="TEMP.4" data-role="Temperature 2 GND pin" data-source-label="GND" data-x="1860" data-y="1700">
+<title>TEMP.4 · Temperature 2 GND pin · proposed carrier contact; not a mating view</title>
+<rect x="1845" y="1686" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="1860" cy="1700" r="7" class="screw" style="fill:#111717"/>
+<text x="1824" y="1707" class="pin-label" text-anchor="end" style="fill:#111717">4 · Temperature 2 GND pin</text>
+</g>
+<g id="sb-TEMP-5" data-exterior-contact="TEMP.5" data-role="Temperature 3 sensor pin" data-source-label="SENSOR 3" data-x="1860" data-y="1730">
+<title>TEMP.5 · Temperature 3 sensor pin · proposed carrier contact; not a mating view</title>
+<rect x="1845" y="1716" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="1860" cy="1730" r="7" class="screw" style="fill:#416b7e"/>
+<text x="1824" y="1737" class="pin-label" text-anchor="end" style="fill:#416b7e">5 · Temperature 3 sensor pin</text>
+</g>
+<g id="sb-TEMP-6" data-exterior-contact="TEMP.6" data-role="Temperature 3 GND pin" data-source-label="GND" data-x="1860" data-y="1760">
+<title>TEMP.6 · Temperature 3 GND pin · proposed carrier contact; not a mating view</title>
+<rect x="1845" y="1746" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="1860" cy="1760" r="7" class="screw" style="fill:#111717"/>
+<text x="1824" y="1767" class="pin-label" text-anchor="end" style="fill:#111717">6 · Temperature 3 GND pin</text>
+</g>
+</g>
+<g class="bank" data-exterior-bank="HEA" data-side="west">
+<rect x="80" y="708" width="42" height="74" rx="8" class="connector-shell"/>
+<text x="96" y="701" class="bank-title" text-anchor="start">HOTEND A</text>
+<g id="sb-HEA-1" data-exterior-contact="HEA.1" data-role="Hotend A LOAD + pin" data-source-label="LOAD +" data-x="60" data-y="730">
+<title>HEA.1 · Hotend A LOAD + pin · proposed carrier contact; not a mating view</title>
+<rect x="45" y="716" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="60" cy="730" r="7" class="screw" style="fill:#806700"/>
+<text x="96" y="737" class="pin-label" text-anchor="start" style="fill:#806700">1 · Hotend A LOAD + pin</text>
+</g>
+<g id="sb-HEA-2" data-exterior-contact="HEA.2" data-role="Hotend A SWITCHED − pin" data-source-label="SWITCHED −" data-x="60" data-y="760">
+<title>HEA.2 · Hotend A SWITCHED − pin · proposed carrier contact; not a mating view</title>
+<rect x="45" y="746" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="60" cy="760" r="7" class="screw" style="fill:#a13273"/>
+<text x="96" y="767" class="pin-label" text-anchor="start" style="fill:#a13273">2 · Hotend A SWITCHED − pin</text>
+</g>
+</g>
+<g class="bank" data-exterior-bank="HEB" data-side="west">
+<rect x="80" y="828" width="42" height="74" rx="8" class="connector-shell"/>
+<text x="96" y="821" class="bank-title" text-anchor="start">HOTEND B</text>
+<g id="sb-HEB-1" data-exterior-contact="HEB.1" data-role="Hotend B LOAD + pin" data-source-label="LOAD +" data-x="60" data-y="850">
+<title>HEB.1 · Hotend B LOAD + pin · proposed carrier contact; not a mating view</title>
+<rect x="45" y="836" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="60" cy="850" r="7" class="screw" style="fill:#806700"/>
+<text x="96" y="857" class="pin-label" text-anchor="start" style="fill:#806700">1 · Hotend B LOAD + pin</text>
+</g>
+<g id="sb-HEB-2" data-exterior-contact="HEB.2" data-role="Hotend B SWITCHED − pin" data-source-label="SWITCHED −" data-x="60" data-y="880">
+<title>HEB.2 · Hotend B SWITCHED − pin · proposed carrier contact; not a mating view</title>
+<rect x="45" y="866" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="60" cy="880" r="7" class="screw" style="fill:#a13273"/>
+<text x="96" y="887" class="pin-label" text-anchor="start" style="fill:#a13273">2 · Hotend B SWITCHED − pin</text>
+</g>
+</g>
+<g class="bank" data-exterior-bank="BED" data-side="west">
+<rect x="80" y="948" width="42" height="74" rx="8" class="connector-shell"/>
+<text x="96" y="941" class="bank-title" text-anchor="start">BED SWITCH CONTROL</text>
+<g id="sb-BED-1" data-exterior-contact="BED.1" data-role="Bed switch control CONTROL + pin" data-source-label="CONTROL +" data-x="60" data-y="970">
+<title>BED.1 · Bed switch control CONTROL + pin · proposed carrier contact; not a mating view</title>
+<rect x="45" y="956" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="60" cy="970" r="7" class="screw" style="fill:#806700"/>
+<text x="96" y="977" class="pin-label" text-anchor="start" style="fill:#806700">1 · Bed switch control CONTROL + pin</text>
+</g>
+<g id="sb-BED-2" data-exterior-contact="BED.2" data-role="Bed switch control SWITCHED − pin" data-source-label="SWITCHED −" data-x="60" data-y="1000">
+<title>BED.2 · Bed switch control SWITCHED − pin · proposed carrier contact; not a mating view</title>
+<rect x="45" y="986" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="60" cy="1000" r="7" class="screw" style="fill:#a13273"/>
+<text x="96" y="1007" class="pin-label" text-anchor="start" style="fill:#a13273">2 · Bed switch control SWITCHED − pin</text>
+</g>
+</g>
+<g class="bank" data-exterior-bank="FANA" data-side="west">
+<rect x="80" y="1068" width="42" height="74" rx="8" class="connector-shell"/>
+<text x="96" y="1061" class="bank-title" text-anchor="start">FAN A</text>
+<g id="sb-FANA-1" data-exterior-contact="FANA.1" data-role="Fan A LOAD + pin" data-source-label="LOAD +" data-x="60" data-y="1090">
+<title>FANA.1 · Fan A LOAD + pin · proposed carrier contact; not a mating view</title>
+<rect x="45" y="1076" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="60" cy="1090" r="7" class="screw" style="fill:#806700"/>
+<text x="96" y="1097" class="pin-label" text-anchor="start" style="fill:#806700">1 · Fan A LOAD + pin</text>
+</g>
+<g id="sb-FANA-2" data-exterior-contact="FANA.2" data-role="Fan A SWITCHED − pin" data-source-label="SWITCHED −" data-x="60" data-y="1120">
+<title>FANA.2 · Fan A SWITCHED − pin · proposed carrier contact; not a mating view</title>
+<rect x="45" y="1106" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="60" cy="1120" r="7" class="screw" style="fill:#a13273"/>
+<text x="96" y="1127" class="pin-label" text-anchor="start" style="fill:#a13273">2 · Fan A SWITCHED − pin</text>
+</g>
+</g>
+<g class="bank" data-exterior-bank="FANB" data-side="west">
+<rect x="80" y="1188" width="42" height="74" rx="8" class="connector-shell"/>
+<text x="96" y="1181" class="bank-title" text-anchor="start">FAN B</text>
+<g id="sb-FANB-1" data-exterior-contact="FANB.1" data-role="Fan B LOAD + pin" data-source-label="LOAD +" data-x="60" data-y="1210">
+<title>FANB.1 · Fan B LOAD + pin · proposed carrier contact; not a mating view</title>
+<rect x="45" y="1196" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="60" cy="1210" r="7" class="screw" style="fill:#806700"/>
+<text x="96" y="1217" class="pin-label" text-anchor="start" style="fill:#806700">1 · Fan B LOAD + pin</text>
+</g>
+<g id="sb-FANB-2" data-exterior-contact="FANB.2" data-role="Fan B SWITCHED − pin" data-source-label="SWITCHED −" data-x="60" data-y="1240">
+<title>FANB.2 · Fan B SWITCHED − pin · proposed carrier contact; not a mating view</title>
+<rect x="45" y="1226" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="60" cy="1240" r="7" class="screw" style="fill:#a13273"/>
+<text x="96" y="1247" class="pin-label" text-anchor="start" style="fill:#a13273">2 · Fan B SWITCHED − pin</text>
+</g>
+</g>
+<g class="bank" data-exterior-bank="SSR1" data-side="west">
+<rect x="80" y="1308" width="42" height="74" rx="8" class="connector-shell"/>
+<text x="96" y="1301" class="bank-title" text-anchor="start">SSR 1 CONTROL</text>
+<g id="sb-SSR1-1" data-exterior-contact="SSR1.1" data-role="SSR 1 control 5V SWITCH pin" data-source-label="5V SWITCH" data-x="60" data-y="1330">
+<title>SSR1.1 · SSR 1 control 5V SWITCH pin · proposed carrier contact; not a mating view</title>
+<rect x="45" y="1316" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="60" cy="1330" r="7" class="screw" style="fill:#b85e00"/>
+<text x="96" y="1337" class="pin-label" text-anchor="start" style="fill:#b85e00">1 · SSR 1 control 5V SWITCH pin</text>
+</g>
+<g id="sb-SSR1-2" data-exterior-contact="SSR1.2" data-role="SSR 1 control GND pin" data-source-label="GND" data-x="60" data-y="1360">
+<title>SSR1.2 · SSR 1 control GND pin · proposed carrier contact; not a mating view</title>
+<rect x="45" y="1346" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="60" cy="1360" r="7" class="screw" style="fill:#111717"/>
+<text x="96" y="1367" class="pin-label" text-anchor="start" style="fill:#111717">2 · SSR 1 control GND pin</text>
+</g>
+</g>
+<g class="bank" data-exterior-bank="SSR2" data-side="west">
+<rect x="80" y="1428" width="42" height="74" rx="8" class="connector-shell"/>
+<text x="96" y="1421" class="bank-title" text-anchor="start">SSR 2 CONTROL</text>
+<g id="sb-SSR2-1" data-exterior-contact="SSR2.1" data-role="SSR 2 control 5V SWITCH pin" data-source-label="5V SWITCH" data-x="60" data-y="1450">
+<title>SSR2.1 · SSR 2 control 5V SWITCH pin · proposed carrier contact; not a mating view</title>
+<rect x="45" y="1436" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="60" cy="1450" r="7" class="screw" style="fill:#b85e00"/>
+<text x="96" y="1457" class="pin-label" text-anchor="start" style="fill:#b85e00">1 · SSR 2 control 5V SWITCH pin</text>
+</g>
+<g id="sb-SSR2-2" data-exterior-contact="SSR2.2" data-role="SSR 2 control GND pin" data-source-label="GND" data-x="60" data-y="1480">
+<title>SSR2.2 · SSR 2 control GND pin · proposed carrier contact; not a mating view</title>
+<rect x="45" y="1466" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="60" cy="1480" r="7" class="screw" style="fill:#111717"/>
+<text x="96" y="1487" class="pin-label" text-anchor="start" style="fill:#111717">2 · SSR 2 control GND pin</text>
+</g>
+</g>
+<g class="bank" data-exterior-bank="PWM" data-side="west">
+<rect x="80" y="1548" width="42" height="134" rx="8" class="connector-shell"/>
+<text x="96" y="1541" class="bank-title" text-anchor="start">PWM / LASER CONTROL</text>
+<g id="sb-PWM-1" data-exterior-contact="PWM.1" data-role="PWM / laser control PWM pin" data-source-label="PWM" data-x="60" data-y="1570">
+<title>PWM.1 · PWM / laser control PWM pin · proposed carrier contact; not a mating view</title>
+<rect x="45" y="1556" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="60" cy="1570" r="7" class="screw" style="fill:#6246a3"/>
+<text x="96" y="1577" class="pin-label" text-anchor="start" style="fill:#6246a3">1 · PWM / laser control PWM pin</text>
+</g>
+<g id="sb-PWM-2" data-exterior-contact="PWM.2" data-role="PWM / laser control TTL pin" data-source-label="TTL" data-x="60" data-y="1600">
+<title>PWM.2 · PWM / laser control TTL pin · proposed carrier contact; not a mating view</title>
+<rect x="45" y="1586" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="60" cy="1600" r="7" class="screw" style="fill:#6246a3"/>
+<text x="96" y="1607" class="pin-label" text-anchor="start" style="fill:#6246a3">2 · PWM / laser control TTL pin</text>
+</g>
+<g id="sb-PWM-3" data-exterior-contact="PWM.3" data-role="PWM / laser control GND pin" data-source-label="GND" data-x="60" data-y="1630">
+<title>PWM.3 · PWM / laser control GND pin · proposed carrier contact; not a mating view</title>
+<rect x="45" y="1616" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="60" cy="1630" r="7" class="screw" style="fill:#111717"/>
+<text x="96" y="1637" class="pin-label" text-anchor="start" style="fill:#111717">3 · PWM / laser control GND pin</text>
+</g>
+<g id="sb-PWM-4" data-exterior-contact="PWM.4" data-role="PWM / laser control 5V LIMITED pin" data-source-label="5V LIMITED" data-x="60" data-y="1660">
+<title>PWM.4 · PWM / laser control 5V LIMITED pin · proposed carrier contact; not a mating view</title>
+<rect x="45" y="1646" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="60" cy="1660" r="7" class="screw" style="fill:#b85e00"/>
+<text x="96" y="1667" class="pin-label" text-anchor="start" style="fill:#b85e00">4 · PWM / laser control 5V LIMITED pin</text>
+</g>
+</g>
+<g class="bank" data-exterior-bank="DRVX" data-side="south">
+<rect x="210" y="2098" width="300" height="42" rx="8" class="connector-shell"/>
+<text x="360" y="1795" class="bank-title" text-anchor="middle">MOTOR CONTROL X</text>
+<text x="360" y="1819" class="small" text-anchor="middle">CONTROL TO EXTERNAL DRIVER</text>
+<g id="sb-DRVX-1" data-exterior-contact="DRVX.1" data-role="X axis step pin" data-source-label="STEP" data-x="240" data-y="2160">
+<title>DRVX.1 · X axis step pin · proposed carrier contact; not a mating view</title>
+<rect x="225" y="2146" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="240" cy="2160" r="7" class="screw" style="fill:#136da7"/>
+<text x="240" y="2140" class="pin-number" text-anchor="middle">1</text>
+<text x="240" y="2110" transform="rotate(-90 240 2110)" class="pin-label" style="fill:#136da7">X axis step pin</text>
+</g>
+<g id="sb-DRVX-2" data-exterior-contact="DRVX.2" data-role="X axis step return GND pin" data-source-label="GND" data-x="288" data-y="2160">
+<title>DRVX.2 · X axis step return GND pin · proposed carrier contact; not a mating view</title>
+<rect x="273" y="2146" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="288" cy="2160" r="7" class="screw" style="fill:#111717"/>
+<text x="288" y="2140" class="pin-number" text-anchor="middle">2</text>
+<text x="288" y="2110" transform="rotate(-90 288 2110)" class="pin-label" style="fill:#111717">X axis step return GND pin</text>
+</g>
+<g id="sb-DRVX-3" data-exterior-contact="DRVX.3" data-role="X axis direction pin" data-source-label="DIR" data-x="336" data-y="2160">
+<title>DRVX.3 · X axis direction pin · proposed carrier contact; not a mating view</title>
+<rect x="321" y="2146" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="336" cy="2160" r="7" class="screw" style="fill:#7443a4"/>
+<text x="336" y="2140" class="pin-number" text-anchor="middle">3</text>
+<text x="336" y="2110" transform="rotate(-90 336 2110)" class="pin-label" style="fill:#7443a4">X axis direction pin</text>
+</g>
+<g id="sb-DRVX-4" data-exterior-contact="DRVX.4" data-role="X axis direction return GND pin" data-source-label="GND" data-x="384" data-y="2160">
+<title>DRVX.4 · X axis direction return GND pin · proposed carrier contact; not a mating view</title>
+<rect x="369" y="2146" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="384" cy="2160" r="7" class="screw" style="fill:#111717"/>
+<text x="384" y="2140" class="pin-number" text-anchor="middle">4</text>
+<text x="384" y="2110" transform="rotate(-90 384 2110)" class="pin-label" style="fill:#111717">X axis direction return GND pin</text>
+</g>
+<g id="sb-DRVX-5" data-exterior-contact="DRVX.5" data-role="X axis enable pin" data-source-label="ENABLE" data-x="432" data-y="2160">
+<title>DRVX.5 · X axis enable pin · proposed carrier contact; not a mating view</title>
+<rect x="417" y="2146" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="432" cy="2160" r="7" class="screw" style="fill:#087b60"/>
+<text x="432" y="2140" class="pin-number" text-anchor="middle">5</text>
+<text x="432" y="2110" transform="rotate(-90 432 2110)" class="pin-label" style="fill:#087b60">X axis enable pin</text>
+</g>
+<g id="sb-DRVX-6" data-exterior-contact="DRVX.6" data-role="X axis enable return GND pin" data-source-label="GND" data-x="480" data-y="2160">
+<title>DRVX.6 · X axis enable return GND pin · proposed carrier contact; not a mating view</title>
+<rect x="465" y="2146" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="480" cy="2160" r="7" class="screw" style="fill:#111717"/>
+<text x="480" y="2140" class="pin-number" text-anchor="middle">6</text>
+<text x="480" y="2110" transform="rotate(-90 480 2110)" class="pin-label" style="fill:#111717">X axis enable return GND pin</text>
+</g>
+</g>
+<g class="bank" data-exterior-bank="DRVY" data-side="south">
+<rect x="630" y="2098" width="300" height="42" rx="8" class="connector-shell"/>
+<text x="780" y="1795" class="bank-title" text-anchor="middle">MOTOR CONTROL Y</text>
+<text x="780" y="1819" class="small" text-anchor="middle">CONTROL TO EXTERNAL DRIVER</text>
+<g id="sb-DRVY-1" data-exterior-contact="DRVY.1" data-role="Y axis step pin" data-source-label="STEP" data-x="660" data-y="2160">
+<title>DRVY.1 · Y axis step pin · proposed carrier contact; not a mating view</title>
+<rect x="645" y="2146" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="660" cy="2160" r="7" class="screw" style="fill:#136da7"/>
+<text x="660" y="2140" class="pin-number" text-anchor="middle">1</text>
+<text x="660" y="2110" transform="rotate(-90 660 2110)" class="pin-label" style="fill:#136da7">Y axis step pin</text>
+</g>
+<g id="sb-DRVY-2" data-exterior-contact="DRVY.2" data-role="Y axis step return GND pin" data-source-label="GND" data-x="708" data-y="2160">
+<title>DRVY.2 · Y axis step return GND pin · proposed carrier contact; not a mating view</title>
+<rect x="693" y="2146" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="708" cy="2160" r="7" class="screw" style="fill:#111717"/>
+<text x="708" y="2140" class="pin-number" text-anchor="middle">2</text>
+<text x="708" y="2110" transform="rotate(-90 708 2110)" class="pin-label" style="fill:#111717">Y axis step return GND pin</text>
+</g>
+<g id="sb-DRVY-3" data-exterior-contact="DRVY.3" data-role="Y axis direction pin" data-source-label="DIR" data-x="756" data-y="2160">
+<title>DRVY.3 · Y axis direction pin · proposed carrier contact; not a mating view</title>
+<rect x="741" y="2146" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="756" cy="2160" r="7" class="screw" style="fill:#7443a4"/>
+<text x="756" y="2140" class="pin-number" text-anchor="middle">3</text>
+<text x="756" y="2110" transform="rotate(-90 756 2110)" class="pin-label" style="fill:#7443a4">Y axis direction pin</text>
+</g>
+<g id="sb-DRVY-4" data-exterior-contact="DRVY.4" data-role="Y axis direction return GND pin" data-source-label="GND" data-x="804" data-y="2160">
+<title>DRVY.4 · Y axis direction return GND pin · proposed carrier contact; not a mating view</title>
+<rect x="789" y="2146" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="804" cy="2160" r="7" class="screw" style="fill:#111717"/>
+<text x="804" y="2140" class="pin-number" text-anchor="middle">4</text>
+<text x="804" y="2110" transform="rotate(-90 804 2110)" class="pin-label" style="fill:#111717">Y axis direction return GND pin</text>
+</g>
+<g id="sb-DRVY-5" data-exterior-contact="DRVY.5" data-role="Y axis enable pin" data-source-label="ENABLE" data-x="852" data-y="2160">
+<title>DRVY.5 · Y axis enable pin · proposed carrier contact; not a mating view</title>
+<rect x="837" y="2146" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="852" cy="2160" r="7" class="screw" style="fill:#087b60"/>
+<text x="852" y="2140" class="pin-number" text-anchor="middle">5</text>
+<text x="852" y="2110" transform="rotate(-90 852 2110)" class="pin-label" style="fill:#087b60">Y axis enable pin</text>
+</g>
+<g id="sb-DRVY-6" data-exterior-contact="DRVY.6" data-role="Y axis enable return GND pin" data-source-label="GND" data-x="900" data-y="2160">
+<title>DRVY.6 · Y axis enable return GND pin · proposed carrier contact; not a mating view</title>
+<rect x="885" y="2146" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="900" cy="2160" r="7" class="screw" style="fill:#111717"/>
+<text x="900" y="2140" class="pin-number" text-anchor="middle">6</text>
+<text x="900" y="2110" transform="rotate(-90 900 2110)" class="pin-label" style="fill:#111717">Y axis enable return GND pin</text>
+</g>
+</g>
+<g class="bank" data-exterior-bank="DRVZ" data-side="south">
+<rect x="1050" y="2098" width="300" height="42" rx="8" class="connector-shell"/>
+<text x="1200" y="1795" class="bank-title" text-anchor="middle">MOTOR CONTROL Z</text>
+<text x="1200" y="1819" class="small" text-anchor="middle">CONTROL TO EXTERNAL DRIVER</text>
+<g id="sb-DRVZ-1" data-exterior-contact="DRVZ.1" data-role="Z axis step pin" data-source-label="STEP" data-x="1080" data-y="2160">
+<title>DRVZ.1 · Z axis step pin · proposed carrier contact; not a mating view</title>
+<rect x="1065" y="2146" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="1080" cy="2160" r="7" class="screw" style="fill:#136da7"/>
+<text x="1080" y="2140" class="pin-number" text-anchor="middle">1</text>
+<text x="1080" y="2110" transform="rotate(-90 1080 2110)" class="pin-label" style="fill:#136da7">Z axis step pin</text>
+</g>
+<g id="sb-DRVZ-2" data-exterior-contact="DRVZ.2" data-role="Z axis step return GND pin" data-source-label="GND" data-x="1128" data-y="2160">
+<title>DRVZ.2 · Z axis step return GND pin · proposed carrier contact; not a mating view</title>
+<rect x="1113" y="2146" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="1128" cy="2160" r="7" class="screw" style="fill:#111717"/>
+<text x="1128" y="2140" class="pin-number" text-anchor="middle">2</text>
+<text x="1128" y="2110" transform="rotate(-90 1128 2110)" class="pin-label" style="fill:#111717">Z axis step return GND pin</text>
+</g>
+<g id="sb-DRVZ-3" data-exterior-contact="DRVZ.3" data-role="Z axis direction pin" data-source-label="DIR" data-x="1176" data-y="2160">
+<title>DRVZ.3 · Z axis direction pin · proposed carrier contact; not a mating view</title>
+<rect x="1161" y="2146" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="1176" cy="2160" r="7" class="screw" style="fill:#7443a4"/>
+<text x="1176" y="2140" class="pin-number" text-anchor="middle">3</text>
+<text x="1176" y="2110" transform="rotate(-90 1176 2110)" class="pin-label" style="fill:#7443a4">Z axis direction pin</text>
+</g>
+<g id="sb-DRVZ-4" data-exterior-contact="DRVZ.4" data-role="Z axis direction return GND pin" data-source-label="GND" data-x="1224" data-y="2160">
+<title>DRVZ.4 · Z axis direction return GND pin · proposed carrier contact; not a mating view</title>
+<rect x="1209" y="2146" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="1224" cy="2160" r="7" class="screw" style="fill:#111717"/>
+<text x="1224" y="2140" class="pin-number" text-anchor="middle">4</text>
+<text x="1224" y="2110" transform="rotate(-90 1224 2110)" class="pin-label" style="fill:#111717">Z axis direction return GND pin</text>
+</g>
+<g id="sb-DRVZ-5" data-exterior-contact="DRVZ.5" data-role="Z axis enable pin" data-source-label="ENABLE" data-x="1272" data-y="2160">
+<title>DRVZ.5 · Z axis enable pin · proposed carrier contact; not a mating view</title>
+<rect x="1257" y="2146" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="1272" cy="2160" r="7" class="screw" style="fill:#087b60"/>
+<text x="1272" y="2140" class="pin-number" text-anchor="middle">5</text>
+<text x="1272" y="2110" transform="rotate(-90 1272 2110)" class="pin-label" style="fill:#087b60">Z axis enable pin</text>
+</g>
+<g id="sb-DRVZ-6" data-exterior-contact="DRVZ.6" data-role="Z axis enable return GND pin" data-source-label="GND" data-x="1320" data-y="2160">
+<title>DRVZ.6 · Z axis enable return GND pin · proposed carrier contact; not a mating view</title>
+<rect x="1305" y="2146" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="1320" cy="2160" r="7" class="screw" style="fill:#111717"/>
+<text x="1320" y="2140" class="pin-number" text-anchor="middle">6</text>
+<text x="1320" y="2110" transform="rotate(-90 1320 2110)" class="pin-label" style="fill:#111717">Z axis enable return GND pin</text>
+</g>
+</g>
+<g class="bank" data-exterior-bank="DRVA" data-side="south">
+<rect x="1470" y="2098" width="300" height="42" rx="8" class="connector-shell"/>
+<text x="1620" y="1795" class="bank-title" text-anchor="middle">MOTOR CONTROL A</text>
+<text x="1620" y="1819" class="small" text-anchor="middle">CONTROL TO EXTERNAL DRIVER</text>
+<g id="sb-DRVA-1" data-exterior-contact="DRVA.1" data-role="A axis step pin" data-source-label="STEP" data-x="1500" data-y="2160">
+<title>DRVA.1 · A axis step pin · proposed carrier contact; not a mating view</title>
+<rect x="1485" y="2146" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="1500" cy="2160" r="7" class="screw" style="fill:#136da7"/>
+<text x="1500" y="2140" class="pin-number" text-anchor="middle">1</text>
+<text x="1500" y="2110" transform="rotate(-90 1500 2110)" class="pin-label" style="fill:#136da7">A axis step pin</text>
+</g>
+<g id="sb-DRVA-2" data-exterior-contact="DRVA.2" data-role="A axis step return GND pin" data-source-label="GND" data-x="1548" data-y="2160">
+<title>DRVA.2 · A axis step return GND pin · proposed carrier contact; not a mating view</title>
+<rect x="1533" y="2146" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="1548" cy="2160" r="7" class="screw" style="fill:#111717"/>
+<text x="1548" y="2140" class="pin-number" text-anchor="middle">2</text>
+<text x="1548" y="2110" transform="rotate(-90 1548 2110)" class="pin-label" style="fill:#111717">A axis step return GND pin</text>
+</g>
+<g id="sb-DRVA-3" data-exterior-contact="DRVA.3" data-role="A axis direction pin" data-source-label="DIR" data-x="1596" data-y="2160">
+<title>DRVA.3 · A axis direction pin · proposed carrier contact; not a mating view</title>
+<rect x="1581" y="2146" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="1596" cy="2160" r="7" class="screw" style="fill:#7443a4"/>
+<text x="1596" y="2140" class="pin-number" text-anchor="middle">3</text>
+<text x="1596" y="2110" transform="rotate(-90 1596 2110)" class="pin-label" style="fill:#7443a4">A axis direction pin</text>
+</g>
+<g id="sb-DRVA-4" data-exterior-contact="DRVA.4" data-role="A axis direction return GND pin" data-source-label="GND" data-x="1644" data-y="2160">
+<title>DRVA.4 · A axis direction return GND pin · proposed carrier contact; not a mating view</title>
+<rect x="1629" y="2146" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="1644" cy="2160" r="7" class="screw" style="fill:#111717"/>
+<text x="1644" y="2140" class="pin-number" text-anchor="middle">4</text>
+<text x="1644" y="2110" transform="rotate(-90 1644 2110)" class="pin-label" style="fill:#111717">A axis direction return GND pin</text>
+</g>
+<g id="sb-DRVA-5" data-exterior-contact="DRVA.5" data-role="A axis enable pin" data-source-label="ENABLE" data-x="1692" data-y="2160">
+<title>DRVA.5 · A axis enable pin · proposed carrier contact; not a mating view</title>
+<rect x="1677" y="2146" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="1692" cy="2160" r="7" class="screw" style="fill:#087b60"/>
+<text x="1692" y="2140" class="pin-number" text-anchor="middle">5</text>
+<text x="1692" y="2110" transform="rotate(-90 1692 2110)" class="pin-label" style="fill:#087b60">A axis enable pin</text>
+</g>
+<g id="sb-DRVA-6" data-exterior-contact="DRVA.6" data-role="A axis enable return GND pin" data-source-label="GND" data-x="1740" data-y="2160">
+<title>DRVA.6 · A axis enable return GND pin · proposed carrier contact; not a mating view</title>
+<rect x="1725" y="2146" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="1740" cy="2160" r="7" class="screw" style="fill:#111717"/>
+<text x="1740" y="2140" class="pin-number" text-anchor="middle">6</text>
+<text x="1740" y="2110" transform="rotate(-90 1740 2110)" class="pin-label" style="fill:#111717">A axis enable return GND pin</text>
+</g>
+</g>
+<g data-service-port="USB DEVICE"><title>USB DEVICE · separate service port; no machine route specified</title>
+<rect x="829" y="342" width="102" height="38" rx="5" class="service"/>
+<text x="880" y="322" class="service-label" text-anchor="middle">USB DEVICE</text></g>
+<g data-service-port="USB HOST"><title>USB HOST · separate service port; no machine route specified</title>
+<rect x="979" y="342" width="102" height="38" rx="5" class="service"/>
+<text x="1030" y="322" class="service-label" text-anchor="middle">USB HOST</text></g>
+<g data-service-port="ETHERNET"><title>ETHERNET · separate service port; no machine route specified</title>
+<rect x="1129" y="342" width="102" height="38" rx="5" class="service"/>
+<text x="1180" y="322" class="service-label" text-anchor="middle">ETHERNET</text></g>
+<g data-service-port="microSD"><title>microSD · separate service port; no machine route specified</title>
+<rect x="1279" y="342" width="102" height="38" rx="5" class="service"/>
+<text x="1330" y="322" class="service-label" text-anchor="middle">microSD</text></g>
+<text x="960" y="1025" class="case-title" text-anchor="middle">SMOOTHIEBOX</text>
+<text x="960" y="1070" class="case-note" text-anchor="middle">EXTERIOR CONTACT STUDY</text>
+<text x="960" y="1108" class="case-note" text-anchor="middle">82 proposed contacts · 24 banks · 4 service ports</text>
+<text x="960" y="1146" class="case-note" text-anchor="middle">Chapter 18 functional groups; illustrative layout</text>
+<text x="960" y="1184" class="case-note" text-anchor="middle">14 source positions · 4 dotted function candidates</text>
+<text x="960" y="1222" class="case-note" text-anchor="middle">10 source-reference positions; only explicit dotted guesses are routed</text>
+<text x="960" y="1260" class="case-note" text-anchor="middle">NO INSTALLED SMOOTHIEBOX WIRING ESTABLISHED</text>
+<text x="960" y="1298" class="case-note" text-anchor="middle">No Core board, internal driver or safety circuit is depicted.</text>
+<text x="960" y="1336" class="case-note" text-anchor="middle">Rail selection, ratings, returns and fitted carrier remain unqualified.</text>
+</g>
+<g class="peripheral" data-machine-peripheral="X sensor 2-pin harness" data-evidence-kind="reference" data-connector-id="ref-sensor-x" data-connector-form="source-described">
+<title>X sensor 2-pin harness · FoldaRap 4.0 maker design evidence; exact machine/controller fitment unverified; checked 2026-09-27 · X sensor cable pair only. X/minimum-endstop intent is a dotted function hypothesis; exact switch terminals, harness order, installed controller, signal logic, and electrical compatibility are unknown. A/B are display indexes only; this route does not define physical pin numbering or polarity.</title>
+<rect x="2220" y="577" width="1340" height="396" rx="12" class="peripheral-card"/>
+<rect x="2220" y="577" width="10" height="396" rx="5" class="peripheral-accent-reference"/>
+<text x="2244" y="607" class="evidence-label">SOURCE REFERENCE ONLY · INSTALLED REVISION NOT ESTABLISHED</text>
+<rect x="3318" y="591" width="218" height="30" rx="15" class="connector-badge"/>
+<text x="3427" y="612" class="connector-badge-text" text-anchor="middle">MACHINE INTERFACE</text>
+<text x="2244" y="644" class="peripheral-name" text-anchor="start">X sensor 2-pin harness</text>
+<text x="2244" y="678" class="source-line" text-anchor="start">FoldaRap 4.0 maker design evidence; exact machine/controller fitment unverified; checked 2026-09-27 · X</text>
+<text x="2244" y="701" class="source-line" text-anchor="start">sensor cable pair only. X/minimum-endstop intent is a dotted function hypothesis; exact switch terminals,</text>
+<text x="2244" y="724" class="source-line" text-anchor="start">harness order, installed controller, signal logic, and electrical compatibility are unknown. A/B are</text>
+<text x="2244" y="747" class="source-line" text-anchor="start">display indexes only; this route does not define physical pin numbering or polarity.</text>
+<text x="2244" y="770" class="source-line" text-anchor="start">Two BOM-counted lead positions. A/B are editorial display indexes only; physical contact numbers and</text>
+<text x="2244" y="793" class="source-line" text-anchor="start">mating-face order are not published.</text>
+<text x="2244" y="817" class="small">MACHINE INTERFACE · EXPANDED SOURCE-ORDER CONTACTS, NOT PHYSICAL PIN-ROW GEOMETRY</text>
+<g id="machine-p012-c001" data-machine-contact="A" data-contact-mark="A" data-contact-fact="source" data-route-state="guess" data-x="2220" data-y="839">
+<title>X sensor 2-pin harness · source position A · X sensor harness position A · function/order unknown · </title>
+<circle cx="2220" cy="839" r="8" class="candidate-socket"/>
+<rect x="2236" y="822" width="90" height="30" rx="8" class="number-pill"/>
+<text x="2281" y="844" class="number-text" text-anchor="middle">A</text>
+<text x="2340" y="844" class="machine-contact" text-anchor="start">X sensor harness position A · function/order unknown</text>
+<text x="2340" y="871" class="guess-status" text-anchor="start">G01 · GUESS · explicit design-schematic function guess</text>
+</g>
+<g id="machine-p012-c002" data-machine-contact="B" data-contact-mark="B" data-contact-fact="source" data-route-state="guess" data-x="2220" data-y="904">
+<title>X sensor 2-pin harness · source position B · X sensor harness position B · function/order unknown · </title>
+<circle cx="2220" cy="904" r="8" class="candidate-socket"/>
+<rect x="2236" y="887" width="90" height="30" rx="8" class="number-pill"/>
+<text x="2281" y="909" class="number-text" text-anchor="middle">B</text>
+<text x="2340" y="909" class="machine-contact" text-anchor="start">X sensor harness position B · function/order unknown</text>
+<text x="2340" y="936" class="guess-status" text-anchor="start">G02 · GUESS · explicit design-schematic function guess</text>
+</g>
+</g>
+<g class="peripheral" data-machine-peripheral="Y sensor 2-pin harness" data-evidence-kind="reference" data-connector-id="ref-sensor-y" data-connector-form="source-described">
+<title>Y sensor 2-pin harness · FoldaRap 4.0 maker design evidence; exact machine/controller fitment unverified; checked 2026-09-27 · Y sensor cable pair only. Y/minimum-endstop intent is a dotted function hypothesis; exact switch terminals, harness order, installed controller, signal logic, and electrical compatibility are unknown. A/B are display indexes only; this route does not define physical pin numbering or polarity.</title>
+<rect x="2220" y="1005" width="1340" height="396" rx="12" class="peripheral-card"/>
+<rect x="2220" y="1005" width="10" height="396" rx="5" class="peripheral-accent-reference"/>
+<text x="2244" y="1035" class="evidence-label">SOURCE REFERENCE ONLY · INSTALLED REVISION NOT ESTABLISHED</text>
+<rect x="3318" y="1019" width="218" height="30" rx="15" class="connector-badge"/>
+<text x="3427" y="1040" class="connector-badge-text" text-anchor="middle">MACHINE INTERFACE</text>
+<text x="2244" y="1072" class="peripheral-name" text-anchor="start">Y sensor 2-pin harness</text>
+<text x="2244" y="1106" class="source-line" text-anchor="start">FoldaRap 4.0 maker design evidence; exact machine/controller fitment unverified; checked 2026-09-27 · Y</text>
+<text x="2244" y="1129" class="source-line" text-anchor="start">sensor cable pair only. Y/minimum-endstop intent is a dotted function hypothesis; exact switch terminals,</text>
+<text x="2244" y="1152" class="source-line" text-anchor="start">harness order, installed controller, signal logic, and electrical compatibility are unknown. A/B are</text>
+<text x="2244" y="1175" class="source-line" text-anchor="start">display indexes only; this route does not define physical pin numbering or polarity.</text>
+<text x="2244" y="1198" class="source-line" text-anchor="start">Two BOM-counted lead positions. A/B are editorial display indexes only; physical contact numbers and</text>
+<text x="2244" y="1221" class="source-line" text-anchor="start">mating-face order are not published.</text>
+<text x="2244" y="1245" class="small">MACHINE INTERFACE · EXPANDED SOURCE-ORDER CONTACTS, NOT PHYSICAL PIN-ROW GEOMETRY</text>
+<g id="machine-p013-c001" data-machine-contact="A" data-contact-mark="A" data-contact-fact="source" data-route-state="guess" data-x="2220" data-y="1267">
+<title>Y sensor 2-pin harness · source position A · Y sensor harness position A · function/order unknown · </title>
+<circle cx="2220" cy="1267" r="8" class="candidate-socket"/>
+<rect x="2236" y="1250" width="90" height="30" rx="8" class="number-pill"/>
+<text x="2281" y="1272" class="number-text" text-anchor="middle">A</text>
+<text x="2340" y="1272" class="machine-contact" text-anchor="start">Y sensor harness position A · function/order unknown</text>
+<text x="2340" y="1299" class="guess-status" text-anchor="start">G03 · GUESS · explicit design-schematic function guess</text>
+</g>
+<g id="machine-p013-c002" data-machine-contact="B" data-contact-mark="B" data-contact-fact="source" data-route-state="guess" data-x="2220" data-y="1332">
+<title>Y sensor 2-pin harness · source position B · Y sensor harness position B · function/order unknown · </title>
+<circle cx="2220" cy="1332" r="8" class="candidate-socket"/>
+<rect x="2236" y="1315" width="90" height="30" rx="8" class="number-pill"/>
+<text x="2281" y="1337" class="number-text" text-anchor="middle">B</text>
+<text x="2340" y="1337" class="machine-contact" text-anchor="start">Y sensor harness position B · function/order unknown</text>
+<text x="2340" y="1364" class="guess-status" text-anchor="start">G04 · GUESS · explicit design-schematic function guess</text>
+</g>
+</g>
+<g class="peripheral" data-machine-peripheral="X axis stepper motor · NEMA17 22 mm · 0.8 A" data-evidence-kind="reported" data-connector-id="motor-x" data-connector-form="source-described">
+<title>X axis stepper motor · NEMA17 22 mm · 0.8 A · Reported machine interface; fit unverified · Named X-axis stepper motor in the maker Item F 4.0 BOM. Connector identity, terminal count, coil pairs, installed motor, and driver interface are not published in the reviewed sources.</title>
+<rect x="2220" y="1433" width="1340" height="316" rx="12" class="peripheral-card"/>
+<rect x="2220" y="1433" width="10" height="316" rx="5" class="peripheral-accent-reported"/>
+<text x="2244" y="1463" class="evidence-label">REPORTED MACHINE INTERFACE · FIT / ELECTRICAL CONTRACT UNVERIFIED</text>
+<rect x="3318" y="1447" width="218" height="30" rx="15" class="connector-badge"/>
+<text x="3427" y="1468" class="connector-badge-text" text-anchor="middle">MACHINE INTERFACE</text>
+<text x="2244" y="1500" class="peripheral-name" text-anchor="start">X axis stepper motor · NEMA17 22 mm · 0.8 A</text>
+<text x="2244" y="1534" class="source-line" text-anchor="start">Reported machine interface; fit unverified · Named X-axis stepper motor in the maker Item F 4.0 BOM.</text>
+<text x="2244" y="1557" class="source-line" text-anchor="start">Connector identity, terminal count, coil pairs, installed motor, and driver interface are not published</text>
+<text x="2244" y="1580" class="source-line" text-anchor="start">in the reviewed sources.</text>
+<text x="2244" y="1603" class="source-line" text-anchor="start">Source marks/order only; physical mating view unverified</text>
+<g data-boundary-state="open">
+<text x="2260" y="1661" class="boundary-text" text-anchor="start">OPEN BOUNDARY — no individual contact map in current atlas evidence. Named</text>
+<text x="2260" y="1691" class="boundary-text" text-anchor="start">hardware is not a pinout; no route is drawn.</text>
+</g>
+</g>
+<g class="peripheral" data-machine-peripheral="Y axis stepper motor · NEMA17 40 mm · 1.20 A" data-evidence-kind="reported" data-connector-id="motor-y" data-connector-form="source-described">
+<title>Y axis stepper motor · NEMA17 40 mm · 1.20 A · Reported machine interface; fit unverified · Named Y-axis stepper motor in the maker Item F 4.0 BOM. Connector identity, terminal count, coil pairs, installed motor, and driver interface are not published in the reviewed sources.</title>
+<rect x="2220" y="1781" width="1340" height="316" rx="12" class="peripheral-card"/>
+<rect x="2220" y="1781" width="10" height="316" rx="5" class="peripheral-accent-reported"/>
+<text x="2244" y="1811" class="evidence-label">REPORTED MACHINE INTERFACE · FIT / ELECTRICAL CONTRACT UNVERIFIED</text>
+<rect x="3318" y="1795" width="218" height="30" rx="15" class="connector-badge"/>
+<text x="3427" y="1816" class="connector-badge-text" text-anchor="middle">MACHINE INTERFACE</text>
+<text x="2244" y="1848" class="peripheral-name" text-anchor="start">Y axis stepper motor · NEMA17 40 mm · 1.20 A</text>
+<text x="2244" y="1882" class="source-line" text-anchor="start">Reported machine interface; fit unverified · Named Y-axis stepper motor in the maker Item F 4.0 BOM.</text>
+<text x="2244" y="1905" class="source-line" text-anchor="start">Connector identity, terminal count, coil pairs, installed motor, and driver interface are not published</text>
+<text x="2244" y="1928" class="source-line" text-anchor="start">in the reviewed sources.</text>
+<text x="2244" y="1951" class="source-line" text-anchor="start">Source marks/order only; physical mating view unverified</text>
+<g data-boundary-state="open">
+<text x="2260" y="2009" class="boundary-text" text-anchor="start">OPEN BOUNDARY — no individual contact map in current atlas evidence. Named</text>
+<text x="2260" y="2039" class="boundary-text" text-anchor="start">hardware is not a pinout; no route is drawn.</text>
+</g>
+</g>
+<g class="peripheral" data-machine-peripheral="Z-axis stepper motors · quantity 2 · NEMA17 40 mm · 1.20 A each" data-evidence-kind="reported" data-connector-id="motors-z" data-connector-form="source-described">
+<title>Z-axis stepper motors · quantity 2 · NEMA17 40 mm · 1.20 A each · Reported machine interface; fit unverified · The maker Item F 4.0 BOM lists two Z motor positions. Separate physical locations, connector identities, terminal count, coil pairs, and whether one or two drivers are used are not established.</title>
+<rect x="2220" y="2129" width="1340" height="316" rx="12" class="peripheral-card"/>
+<rect x="2220" y="2129" width="10" height="316" rx="5" class="peripheral-accent-reported"/>
+<text x="2244" y="2159" class="evidence-label">REPORTED MACHINE INTERFACE · FIT / ELECTRICAL CONTRACT UNVERIFIED</text>
+<rect x="3318" y="2143" width="218" height="30" rx="15" class="connector-badge"/>
+<text x="3427" y="2164" class="connector-badge-text" text-anchor="middle">MACHINE INTERFACE</text>
+<text x="2244" y="2196" class="peripheral-name" text-anchor="start">Z-axis stepper motors · quantity 2 · NEMA17 40 mm · 1.20 A each</text>
+<text x="2244" y="2230" class="source-line" text-anchor="start">Reported machine interface; fit unverified · The maker Item F 4.0 BOM lists two Z motor positions.</text>
+<text x="2244" y="2253" class="source-line" text-anchor="start">Separate physical locations, connector identities, terminal count, coil pairs, and whether one or two</text>
+<text x="2244" y="2276" class="source-line" text-anchor="start">drivers are used are not established.</text>
+<text x="2244" y="2299" class="source-line" text-anchor="start">Source marks/order only; physical mating view unverified</text>
+<g data-boundary-state="open">
+<text x="2260" y="2357" class="boundary-text" text-anchor="start">OPEN BOUNDARY — no individual contact map in current atlas evidence. Named</text>
+<text x="2260" y="2387" class="boundary-text" text-anchor="start">hardware is not a pinout; no route is drawn.</text>
+</g>
+</g>
+<g class="peripheral" data-machine-peripheral="Extruder stepper motor · NEMA17 40 mm · 1.20 A" data-evidence-kind="reported" data-connector-id="motor-e" data-connector-form="source-described">
+<title>Extruder stepper motor · NEMA17 40 mm · 1.20 A · Reported machine interface; fit unverified · Named extruder-drive motor in the maker Item F 4.0 BOM. Motor connector, terminal count, coil pairs, installed motor, and driver interface are not published in the reviewed sources.</title>
+<rect x="2220" y="2477" width="1340" height="316" rx="12" class="peripheral-card"/>
+<rect x="2220" y="2477" width="10" height="316" rx="5" class="peripheral-accent-reported"/>
+<text x="2244" y="2507" class="evidence-label">REPORTED MACHINE INTERFACE · FIT / ELECTRICAL CONTRACT UNVERIFIED</text>
+<rect x="3318" y="2491" width="218" height="30" rx="15" class="connector-badge"/>
+<text x="3427" y="2512" class="connector-badge-text" text-anchor="middle">MACHINE INTERFACE</text>
+<text x="2244" y="2544" class="peripheral-name" text-anchor="start">Extruder stepper motor · NEMA17 40 mm · 1.20 A</text>
+<text x="2244" y="2578" class="source-line" text-anchor="start">Reported machine interface; fit unverified · Named extruder-drive motor in the maker Item F 4.0 BOM.</text>
+<text x="2244" y="2601" class="source-line" text-anchor="start">Motor connector, terminal count, coil pairs, installed motor, and driver interface are not published in</text>
+<text x="2244" y="2624" class="source-line" text-anchor="start">the reviewed sources.</text>
+<text x="2244" y="2647" class="source-line" text-anchor="start">Source marks/order only; physical mating view unverified</text>
+<g data-boundary-state="open">
+<text x="2260" y="2705" class="boundary-text" text-anchor="start">OPEN BOUNDARY — no individual contact map in current atlas evidence. Named</text>
+<text x="2260" y="2735" class="boundary-text" text-anchor="start">hardware is not a pinout; no route is drawn.</text>
+</g>
+</g>
+<g class="peripheral" data-machine-peripheral="E3D Lite6 hotend assembly" data-evidence-kind="reported" data-connector-id="hotend" data-connector-form="source-described">
+<title>E3D Lite6 hotend assembly · Reported machine interface; fit unverified · The maker Item F 4.0 BOM names an E3D Lite6 hotend. Heater and thermistor terminal schedules, ratings, connector identities, and installed revision are not established by the reviewed sources.</title>
+<rect x="2220" y="2825" width="1340" height="316" rx="12" class="peripheral-card"/>
+<rect x="2220" y="2825" width="10" height="316" rx="5" class="peripheral-accent-reported"/>
+<text x="2244" y="2855" class="evidence-label">REPORTED MACHINE INTERFACE · FIT / ELECTRICAL CONTRACT UNVERIFIED</text>
+<rect x="3318" y="2839" width="218" height="30" rx="15" class="connector-badge"/>
+<text x="3427" y="2860" class="connector-badge-text" text-anchor="middle">MACHINE INTERFACE</text>
+<text x="2244" y="2892" class="peripheral-name" text-anchor="start">E3D Lite6 hotend assembly</text>
+<text x="2244" y="2926" class="source-line" text-anchor="start">Reported machine interface; fit unverified · The maker Item F 4.0 BOM names an E3D Lite6 hotend. Heater</text>
+<text x="2244" y="2949" class="source-line" text-anchor="start">and thermistor terminal schedules, ratings, connector identities, and installed revision are not</text>
+<text x="2244" y="2972" class="source-line" text-anchor="start">established by the reviewed sources.</text>
+<text x="2244" y="2995" class="source-line" text-anchor="start">Source marks/order only; physical mating view unverified</text>
+<g data-boundary-state="open">
+<text x="2260" y="3053" class="boundary-text" text-anchor="start">OPEN BOUNDARY — no individual contact map in current atlas evidence. Named</text>
+<text x="2260" y="3083" class="boundary-text" text-anchor="start">hardware is not a pinout; no route is drawn.</text>
+</g>
+</g>
+<g class="peripheral" data-machine-peripheral="Cooling fan assemblies · quantity 2 · 30 × 30 × 10 mm" data-evidence-kind="reported" data-connector-id="fans" data-connector-form="source-described">
+<title>Cooling fan assemblies · quantity 2 · 30 × 30 × 10 mm · Reported machine interface; fit unverified · The maker Item F 4.0 BOM lists two fans. Their individual function assignment, connector positions, polarity, and voltage are not established. One 2-pin fan lead is listed separately; which fan it serves is unspecified.</title>
+<rect x="2220" y="3173" width="1340" height="316" rx="12" class="peripheral-card"/>
+<rect x="2220" y="3173" width="10" height="316" rx="5" class="peripheral-accent-reported"/>
+<text x="2244" y="3203" class="evidence-label">REPORTED MACHINE INTERFACE · FIT / ELECTRICAL CONTRACT UNVERIFIED</text>
+<rect x="3318" y="3187" width="218" height="30" rx="15" class="connector-badge"/>
+<text x="3427" y="3208" class="connector-badge-text" text-anchor="middle">MACHINE INTERFACE</text>
+<text x="2244" y="3240" class="peripheral-name" text-anchor="start">Cooling fan assemblies · quantity 2 · 30 × 30 × 10 mm</text>
+<text x="2244" y="3274" class="source-line" text-anchor="start">Reported machine interface; fit unverified · The maker Item F 4.0 BOM lists two fans. Their individual</text>
+<text x="2244" y="3297" class="source-line" text-anchor="start">function assignment, connector positions, polarity, and voltage are not established. One 2-pin fan lead</text>
+<text x="2244" y="3320" class="source-line" text-anchor="start">is listed separately; which fan it serves is unspecified.</text>
+<text x="2244" y="3343" class="source-line" text-anchor="start">Source marks/order only; physical mating view unverified</text>
+<g data-boundary-state="open">
+<text x="2260" y="3401" class="boundary-text" text-anchor="start">OPEN BOUNDARY — no individual contact map in current atlas evidence. Named</text>
+<text x="2260" y="3431" class="boundary-text" text-anchor="start">hardware is not a pinout; no route is drawn.</text>
+</g>
+</g>
+<g class="peripheral" data-machine-peripheral="EU power cord · quantity 1 in Item F 4.0 BOM" data-evidence-kind="reported" data-connector-id="eu-power-cord" data-connector-form="source-described">
+<title>EU power cord · quantity 1 in Item F 4.0 BOM · Reported machine interface; fit unverified · The maker Item F 4.0 BOM lists one EU power cord at the rear-plate assembly location. It gives no plug/inlet subtype, individual conductor termination, contact count, polarity, voltage, or connection to the listed PSU/jack. No electrical route is inferred.</title>
+<rect x="2220" y="3521" width="1340" height="316" rx="12" class="peripheral-card"/>
+<rect x="2220" y="3521" width="10" height="316" rx="5" class="peripheral-accent-reported"/>
+<text x="2244" y="3551" class="evidence-label">REPORTED MACHINE INTERFACE · FIT / ELECTRICAL CONTRACT UNVERIFIED</text>
+<rect x="3318" y="3535" width="218" height="30" rx="15" class="connector-badge"/>
+<text x="3427" y="3556" class="connector-badge-text" text-anchor="middle">MACHINE INTERFACE</text>
+<text x="2244" y="3588" class="peripheral-name" text-anchor="start">EU power cord · quantity 1 in Item F 4.0 BOM</text>
+<text x="2244" y="3622" class="source-line" text-anchor="start">Reported machine interface; fit unverified · The maker Item F 4.0 BOM lists one EU power cord at the</text>
+<text x="2244" y="3645" class="source-line" text-anchor="start">rear-plate assembly location. It gives no plug/inlet subtype, individual conductor termination, contact</text>
+<text x="2244" y="3668" class="source-line" text-anchor="start">count, polarity, voltage, or connection to the listed PSU/jack. No electrical route is inferred.</text>
+<text x="2244" y="3691" class="source-line" text-anchor="start">Source marks/order only; physical mating view unverified</text>
+<g data-boundary-state="open">
+<text x="2260" y="3749" class="boundary-text" text-anchor="start">OPEN BOUNDARY — no individual contact map in current atlas evidence. Named</text>
+<text x="2260" y="3779" class="boundary-text" text-anchor="start">hardware is not a pinout; no route is drawn.</text>
+</g>
+</g>
+<g class="peripheral" data-machine-peripheral="LCD screen for Minitronics · quantity 1 in Item F 4.0 BOM" data-evidence-kind="reported" data-connector-id="lcd" data-connector-form="source-described">
+<title>LCD screen for Minitronics · quantity 1 in Item F 4.0 BOM · Reported machine interface; fit unverified · The maker Item F 4.0 BOM lists one LCD screen for Minitronics at the board assembly location. Its interface, cable, connector, positions, and controller fitment are not established. This does not prove a Minitronics board is fitted.</title>
+<rect x="2220" y="3869" width="1340" height="316" rx="12" class="peripheral-card"/>
+<rect x="2220" y="3869" width="10" height="316" rx="5" class="peripheral-accent-reported"/>
+<text x="2244" y="3899" class="evidence-label">REPORTED MACHINE INTERFACE · FIT / ELECTRICAL CONTRACT UNVERIFIED</text>
+<rect x="3318" y="3883" width="218" height="30" rx="15" class="connector-badge"/>
+<text x="3427" y="3904" class="connector-badge-text" text-anchor="middle">MACHINE INTERFACE</text>
+<text x="2244" y="3936" class="peripheral-name" text-anchor="start">LCD screen for Minitronics · quantity 1 in Item F 4.0 BOM</text>
+<text x="2244" y="3970" class="source-line" text-anchor="start">Reported machine interface; fit unverified · The maker Item F 4.0 BOM lists one LCD screen for</text>
+<text x="2244" y="3993" class="source-line" text-anchor="start">Minitronics at the board assembly location. Its interface, cable, connector, positions, and controller</text>
+<text x="2244" y="4016" class="source-line" text-anchor="start">fitment are not established. This does not prove a Minitronics board is fitted.</text>
+<text x="2244" y="4039" class="source-line" text-anchor="start">Source marks/order only; physical mating view unverified</text>
+<g data-boundary-state="open">
+<text x="2260" y="4097" class="boundary-text" text-anchor="start">OPEN BOUNDARY — no individual contact map in current atlas evidence. Named</text>
+<text x="2260" y="4127" class="boundary-text" text-anchor="start">hardware is not a pinout; no route is drawn.</text>
+</g>
+</g>
+<g class="peripheral" data-machine-peripheral="USB cable · quantity 1 in Item F 4.0 BOM" data-evidence-kind="reported" data-connector-id="usb-cable" data-connector-form="source-described">
+<title>USB cable · quantity 1 in Item F 4.0 BOM · Reported machine interface; fit unverified · The maker Item F 4.0 BOM lists one USB cable at the board assembly location but does not specify either connector subtype, contact view, or assignment. No USB pin count or route is inferred.</title>
+<rect x="2220" y="4217" width="1340" height="316" rx="12" class="peripheral-card"/>
+<rect x="2220" y="4217" width="10" height="316" rx="5" class="peripheral-accent-reported"/>
+<text x="2244" y="4247" class="evidence-label">REPORTED MACHINE INTERFACE · FIT / ELECTRICAL CONTRACT UNVERIFIED</text>
+<rect x="3318" y="4231" width="218" height="30" rx="15" class="connector-badge"/>
+<text x="3427" y="4252" class="connector-badge-text" text-anchor="middle">MACHINE INTERFACE</text>
+<text x="2244" y="4284" class="peripheral-name" text-anchor="start">USB cable · quantity 1 in Item F 4.0 BOM</text>
+<text x="2244" y="4318" class="source-line" text-anchor="start">Reported machine interface; fit unverified · The maker Item F 4.0 BOM lists one USB cable at the board</text>
+<text x="2244" y="4341" class="source-line" text-anchor="start">assembly location but does not specify either connector subtype, contact view, or assignment. No USB pin</text>
+<text x="2244" y="4364" class="source-line" text-anchor="start">count or route is inferred.</text>
+<text x="2244" y="4387" class="source-line" text-anchor="start">Source marks/order only; physical mating view unverified</text>
+<g data-boundary-state="open">
+<text x="2260" y="4445" class="boundary-text" text-anchor="start">OPEN BOUNDARY — no individual contact map in current atlas evidence. Named</text>
+<text x="2260" y="4475" class="boundary-text" text-anchor="start">hardware is not a pinout; no route is drawn.</text>
+</g>
+</g>
+<g class="peripheral" data-machine-peripheral="Power-supply arrangements · alternative configurations" data-evidence-kind="reference" data-connector-id="psu" data-connector-form="source-described">
+<title>Power-supply arrangements · alternative configurations · Source reference only · The RepRap FoldaRap 4.0 page describes external 12 V or 24 V rear-plate PSU choices and an internal-supply option. The maker Item F 4.0 BOM assigns quantity one to an external 12 V 138 W Meanwell unit; its external 24 V 160 W Meanwell entries have no quantity. These sources do not establish a fitted supply or its terminals, polarity, or wiring.</title>
+<rect x="2220" y="4565" width="1340" height="339" rx="12" class="peripheral-card"/>
+<rect x="2220" y="4565" width="10" height="339" rx="5" class="peripheral-accent-reference"/>
+<text x="2244" y="4595" class="evidence-label">SOURCE REFERENCE ONLY · INSTALLED REVISION NOT ESTABLISHED</text>
+<rect x="3318" y="4579" width="218" height="30" rx="15" class="connector-badge"/>
+<text x="3427" y="4600" class="connector-badge-text" text-anchor="middle">MACHINE INTERFACE</text>
+<text x="2244" y="4632" class="peripheral-name" text-anchor="start">Power-supply arrangements · alternative configurations</text>
+<text x="2244" y="4666" class="source-line" text-anchor="start">Source reference only · The RepRap FoldaRap 4.0 page describes external 12 V or 24 V rear-plate PSU</text>
+<text x="2244" y="4689" class="source-line" text-anchor="start">choices and an internal-supply option. The maker Item F 4.0 BOM assigns quantity one to an external 12 V</text>
+<text x="2244" y="4712" class="source-line" text-anchor="start">138 W Meanwell unit; its external 24 V 160 W Meanwell entries have no quantity. These sources do not</text>
+<text x="2244" y="4735" class="source-line" text-anchor="start">establish a fitted supply or its terminals, polarity, or wiring.</text>
+<text x="2244" y="4758" class="source-line" text-anchor="start">Source marks/order only; physical mating view unverified</text>
+<g data-boundary-state="open">
+<text x="2260" y="4816" class="boundary-text" text-anchor="start">OPEN BOUNDARY — no individual contact map in current atlas evidence. Named</text>
+<text x="2260" y="4846" class="boundary-text" text-anchor="start">hardware is not a pinout; no route is drawn.</text>
+</g>
+</g>
+<g class="peripheral" data-machine-peripheral="Controller/firmware alternatives · Minitronics, Melzi, Duet 2 WiFi" data-evidence-kind="reference" data-connector-id="controllers" data-connector-form="source-described">
+<title>Controller/firmware alternatives · Minitronics, Melzi, Duet 2 WiFi · Source reference only · Separate repository firmware configurations establish design examples only. The specific controller, board revision, and firmware fitted to any machine are not identified by the evidence bundle.</title>
+<rect x="2220" y="4936" width="1340" height="316" rx="12" class="peripheral-card"/>
+<rect x="2220" y="4936" width="10" height="316" rx="5" class="peripheral-accent-reference"/>
+<text x="2244" y="4966" class="evidence-label">SOURCE REFERENCE ONLY · INSTALLED REVISION NOT ESTABLISHED</text>
+<rect x="3318" y="4950" width="218" height="30" rx="15" class="connector-badge"/>
+<text x="3427" y="4971" class="connector-badge-text" text-anchor="middle">MACHINE INTERFACE</text>
+<text x="2244" y="5003" class="peripheral-name" text-anchor="start">Controller/firmware alternatives · Minitronics, Melzi, Duet 2 WiFi</text>
+<text x="2244" y="5037" class="source-line" text-anchor="start">Source reference only · Separate repository firmware configurations establish design examples only. The</text>
+<text x="2244" y="5060" class="source-line" text-anchor="start">specific controller, board revision, and firmware fitted to any machine are not identified by the</text>
+<text x="2244" y="5083" class="source-line" text-anchor="start">evidence bundle.</text>
+<text x="2244" y="5106" class="source-line" text-anchor="start">Source marks/order only; physical mating view unverified</text>
+<g data-boundary-state="open">
+<text x="2260" y="5164" class="boundary-text" text-anchor="start">OPEN BOUNDARY — no individual contact map in current atlas evidence. Named</text>
+<text x="2260" y="5194" class="boundary-text" text-anchor="start">hardware is not a pinout; no route is drawn.</text>
+</g>
+</g>
+<g class="peripheral" data-machine-peripheral="Fan 2-pin lead · which of two fans unassigned" data-evidence-kind="reported" data-connector-id="fan-harness" data-connector-form="source-described">
+<title>Fan 2-pin lead · which of two fans unassigned · Reported machine interface; fit unverified · The maker Item F 4.0 BOM lists one two-pin fan lead and two small fans, without associating that lead with a particular fan. A/B are display-only labels for the two source-counted lead positions, not source markings, polarity, or verified order.</title>
+<rect x="2220" y="5284" width="1340" height="350" rx="12" class="peripheral-card"/>
+<rect x="2220" y="5284" width="10" height="350" rx="5" class="peripheral-accent-reported"/>
+<text x="2244" y="5314" class="evidence-label">REPORTED MACHINE INTERFACE · FIT / ELECTRICAL CONTRACT UNVERIFIED</text>
+<rect x="3318" y="5298" width="218" height="30" rx="15" class="connector-badge"/>
+<text x="3427" y="5319" class="connector-badge-text" text-anchor="middle">MACHINE INTERFACE</text>
+<text x="2244" y="5351" class="peripheral-name" text-anchor="start">Fan 2-pin lead · which of two fans unassigned</text>
+<text x="2244" y="5385" class="source-line" text-anchor="start">Reported machine interface; fit unverified · The maker Item F 4.0 BOM lists one two-pin fan lead and two</text>
+<text x="2244" y="5408" class="source-line" text-anchor="start">small fans, without associating that lead with a particular fan. A/B are display-only labels for the two</text>
+<text x="2244" y="5431" class="source-line" text-anchor="start">source-counted lead positions, not source markings, polarity, or verified order.</text>
+<text x="2244" y="5454" class="source-line" text-anchor="start">Source marks/order only; physical mating view unverified</text>
+<text x="2244" y="5478" class="small">MACHINE INTERFACE · EXPANDED SOURCE-ORDER CONTACTS, NOT PHYSICAL PIN-ROW GEOMETRY</text>
+<g id="machine-p014-c001" data-machine-contact="A" data-contact-mark="A" data-contact-fact="source" data-route-state="open" data-x="2220" data-y="5500">
+<title>Fan 2-pin lead · which of two fans unassigned · source position A · Fan-lead contact A · display index only; polarity/function unknown · </title>
+<circle cx="2220" cy="5500" r="8" class="open-socket"/>
+<rect x="2236" y="5483" width="90" height="30" rx="8" class="number-pill"/>
+<text x="2281" y="5505" class="number-text" text-anchor="middle">A</text>
+<text x="2340" y="5505" class="machine-contact" text-anchor="start">Fan-lead contact A · display index only; polarity/function unknown</text>
+<text x="2340" y="5532" class="open-status" text-anchor="start">OPEN · no SmoothieBox route selected</text>
+</g>
+<g id="machine-p014-c002" data-machine-contact="B" data-contact-mark="B" data-contact-fact="source" data-route-state="open" data-x="2220" data-y="5565">
+<title>Fan 2-pin lead · which of two fans unassigned · source position B · Fan-lead contact B · display index only; polarity/function unknown · </title>
+<circle cx="2220" cy="5565" r="8" class="open-socket"/>
+<rect x="2236" y="5548" width="90" height="30" rx="8" class="number-pill"/>
+<text x="2281" y="5570" class="number-text" text-anchor="middle">B</text>
+<text x="2340" y="5570" class="machine-contact" text-anchor="start">Fan-lead contact B · display index only; polarity/function unknown</text>
+<text x="2340" y="5597" class="open-status" text-anchor="start">OPEN · no SmoothieBox route selected</text>
+</g>
+</g>
+<g class="peripheral" data-machine-peripheral="Bed assembly · listed Molex 2-pin termination" data-evidence-kind="reported" data-connector-id="bed-molex" data-connector-form="source-described">
+<title>Bed assembly · listed Molex 2-pin termination · Reported machine interface; fit unverified · The maker Item F 4.0 BOM lists a 100 × 100 mm 90 W bed film with 100 kΩ probe and a Molex 2-pin termination, but does not identify whether this connector serves the heater or probe, nor the role/order of its two positions. A/B are display-only labels, not source marks.</title>
+<rect x="2220" y="5666" width="1340" height="350" rx="12" class="peripheral-card"/>
+<rect x="2220" y="5666" width="10" height="350" rx="5" class="peripheral-accent-reported"/>
+<text x="2244" y="5696" class="evidence-label">REPORTED MACHINE INTERFACE · FIT / ELECTRICAL CONTRACT UNVERIFIED</text>
+<rect x="3318" y="5680" width="218" height="30" rx="15" class="connector-badge"/>
+<text x="3427" y="5701" class="connector-badge-text" text-anchor="middle">MACHINE INTERFACE</text>
+<text x="2244" y="5733" class="peripheral-name" text-anchor="start">Bed assembly · listed Molex 2-pin termination</text>
+<text x="2244" y="5767" class="source-line" text-anchor="start">Reported machine interface; fit unverified · The maker Item F 4.0 BOM lists a 100 × 100 mm 90 W bed film</text>
+<text x="2244" y="5790" class="source-line" text-anchor="start">with 100 kΩ probe and a Molex 2-pin termination, but does not identify whether this connector serves the</text>
+<text x="2244" y="5813" class="source-line" text-anchor="start">heater or probe, nor the role/order of its two positions. A/B are display-only labels, not source marks.</text>
+<text x="2244" y="5836" class="source-line" text-anchor="start">Source marks/order only; physical mating view unverified</text>
+<text x="2244" y="5860" class="small">MACHINE INTERFACE · EXPANDED SOURCE-ORDER CONTACTS, NOT PHYSICAL PIN-ROW GEOMETRY</text>
+<g id="machine-p015-c001" data-machine-contact="A" data-contact-mark="A" data-contact-fact="source" data-route-state="open" data-x="2220" data-y="5882">
+<title>Bed assembly · listed Molex 2-pin termination · source position A · Molex position A · display index only; heater/probe function unknown · </title>
+<circle cx="2220" cy="5882" r="8" class="open-socket"/>
+<rect x="2236" y="5865" width="90" height="30" rx="8" class="number-pill"/>
+<text x="2281" y="5887" class="number-text" text-anchor="middle">A</text>
+<text x="2340" y="5887" class="machine-contact" text-anchor="start">Molex position A · display index only; heater/probe function unknown</text>
+<text x="2340" y="5914" class="open-status" text-anchor="start">OPEN · no SmoothieBox route selected</text>
+</g>
+<g id="machine-p015-c002" data-machine-contact="B" data-contact-mark="B" data-contact-fact="source" data-route-state="open" data-x="2220" data-y="5947">
+<title>Bed assembly · listed Molex 2-pin termination · source position B · Molex position B · display index only; heater/probe function unknown · </title>
+<circle cx="2220" cy="5947" r="8" class="open-socket"/>
+<rect x="2236" y="5930" width="90" height="30" rx="8" class="number-pill"/>
+<text x="2281" y="5952" class="number-text" text-anchor="middle">B</text>
+<text x="2340" y="5952" class="machine-contact" text-anchor="start">Molex position B · display index only; heater/probe function unknown</text>
+<text x="2340" y="5979" class="open-status" text-anchor="start">OPEN · no SmoothieBox route selected</text>
+</g>
+</g>
+<g class="peripheral" data-machine-peripheral="Rear-plate power jack · Kycon KPJX-PM-4S; shielded -S variant also listed" data-evidence-kind="reference" data-connector-id="power-jack" data-connector-form="source-described">
+<title>Rear-plate power jack · Kycon KPJX-PM-4S; shielded -S variant also listed · Source reference only · The maker F4.0 BOM lists one KPJX-PM-4S panel jack under the rear plate and also lists a shielded KPJX-PM-4S-S variant without a quantity. Kycon documents four numbered contacts; its shielded drawing shows two shield/ground tabs. The FoldaRap BOM assigns no function, supply polarity, electrical connection, harness, or fitted jack variant. All positions here are source-reference positions only and OPEN.</title>
+<rect x="2220" y="6048" width="1340" height="744" rx="12" class="peripheral-card"/>
+<rect x="2220" y="6048" width="10" height="744" rx="5" class="peripheral-accent-reference"/>
+<text x="2244" y="6078" class="evidence-label">SOURCE REFERENCE ONLY · INSTALLED REVISION NOT ESTABLISHED</text>
+<rect x="3318" y="6062" width="218" height="30" rx="15" class="connector-badge"/>
+<text x="3427" y="6083" class="connector-badge-text" text-anchor="middle">MACHINE INTERFACE</text>
+<text x="2244" y="6115" class="peripheral-name" text-anchor="start">Rear-plate power jack · Kycon KPJX-PM-4S; shielded -S variant also</text>
+<text x="2244" y="6149" class="peripheral-name" text-anchor="start">listed</text>
+<text x="2244" y="6183" class="source-line" text-anchor="start">Source reference only · The maker F4.0 BOM lists one KPJX-PM-4S panel jack under the rear plate and also</text>
+<text x="2244" y="6206" class="source-line" text-anchor="start">lists a shielded KPJX-PM-4S-S variant without a quantity. Kycon documents four numbered contacts; its</text>
+<text x="2244" y="6229" class="source-line" text-anchor="start">shielded drawing shows two shield/ground tabs. The FoldaRap BOM assigns no function, supply polarity,</text>
+<text x="2244" y="6252" class="source-line" text-anchor="start">electrical connection, harness, or fitted jack variant. All positions here are source-reference positions</text>
+<text x="2244" y="6275" class="source-line" text-anchor="start">only and OPEN.</text>
+<text x="2244" y="6298" class="source-line" text-anchor="start">Source marks/order only; physical mating view unverified</text>
+<text x="2244" y="6322" class="small">MACHINE INTERFACE · EXPANDED SOURCE-ORDER CONTACTS, NOT PHYSICAL PIN-ROW GEOMETRY</text>
+<g id="machine-p016-c001" data-machine-contact="1" data-contact-mark="1" data-contact-fact="source" data-route-state="open" data-x="2220" data-y="6344">
+<title>Rear-plate power jack · Kycon KPJX-PM-4S; shielded -S variant also listed · source position 1 · Kycon numbered jack contact 1 · FoldaRap circuit function OPEN · </title>
+<circle cx="2220" cy="6344" r="8" class="open-socket"/>
+<rect x="2236" y="6327" width="90" height="30" rx="8" class="number-pill"/>
+<text x="2281" y="6349" class="number-text" text-anchor="middle">1</text>
+<text x="2340" y="6349" class="machine-contact" text-anchor="start">Kycon numbered jack contact 1 · FoldaRap circuit function OPEN</text>
+<text x="2340" y="6376" class="open-status" text-anchor="start">OPEN · no SmoothieBox route selected</text>
+</g>
+<g id="machine-p016-c002" data-machine-contact="2" data-contact-mark="2" data-contact-fact="source" data-route-state="open" data-x="2220" data-y="6409">
+<title>Rear-plate power jack · Kycon KPJX-PM-4S; shielded -S variant also listed · source position 2 · Kycon numbered jack contact 2 · FoldaRap circuit function OPEN · </title>
+<circle cx="2220" cy="6409" r="8" class="open-socket"/>
+<rect x="2236" y="6392" width="90" height="30" rx="8" class="number-pill"/>
+<text x="2281" y="6414" class="number-text" text-anchor="middle">2</text>
+<text x="2340" y="6414" class="machine-contact" text-anchor="start">Kycon numbered jack contact 2 · FoldaRap circuit function OPEN</text>
+<text x="2340" y="6441" class="open-status" text-anchor="start">OPEN · no SmoothieBox route selected</text>
+</g>
+<g id="machine-p016-c003" data-machine-contact="3" data-contact-mark="3" data-contact-fact="source" data-route-state="open" data-x="2220" data-y="6474">
+<title>Rear-plate power jack · Kycon KPJX-PM-4S; shielded -S variant also listed · source position 3 · Kycon numbered jack contact 3 · FoldaRap circuit function OPEN · </title>
+<circle cx="2220" cy="6474" r="8" class="open-socket"/>
+<rect x="2236" y="6457" width="90" height="30" rx="8" class="number-pill"/>
+<text x="2281" y="6479" class="number-text" text-anchor="middle">3</text>
+<text x="2340" y="6479" class="machine-contact" text-anchor="start">Kycon numbered jack contact 3 · FoldaRap circuit function OPEN</text>
+<text x="2340" y="6506" class="open-status" text-anchor="start">OPEN · no SmoothieBox route selected</text>
+</g>
+<g id="machine-p016-c004" data-machine-contact="4" data-contact-mark="4" data-contact-fact="source" data-route-state="open" data-x="2220" data-y="6539">
+<title>Rear-plate power jack · Kycon KPJX-PM-4S; shielded -S variant also listed · source position 4 · Kycon numbered jack contact 4 · FoldaRap circuit function OPEN · </title>
+<circle cx="2220" cy="6539" r="8" class="open-socket"/>
+<rect x="2236" y="6522" width="90" height="30" rx="8" class="number-pill"/>
+<text x="2281" y="6544" class="number-text" text-anchor="middle">4</text>
+<text x="2340" y="6544" class="machine-contact" text-anchor="start">Kycon numbered jack contact 4 · FoldaRap circuit function OPEN</text>
+<text x="2340" y="6571" class="open-status" text-anchor="start">OPEN · no SmoothieBox route selected</text>
+</g>
+<g id="machine-p016-c005" data-machine-contact="shield-tab-a" data-contact-mark="Tab A" data-contact-fact="source" data-route-state="open" data-x="2220" data-y="6604">
+<title>Rear-plate power jack · Kycon KPJX-PM-4S; shielded -S variant also listed · source position Tab A · Shielded -S option tab A · manufacturer ground/shield tab; FoldaRap connection OPEN · </title>
+<circle cx="2220" cy="6604" r="8" class="open-socket"/>
+<rect x="2236" y="6587" width="90" height="30" rx="8" class="number-pill"/>
+<text x="2281" y="6609" class="number-text" text-anchor="middle">Tab A</text>
+<text x="2340" y="6609" class="machine-contact" text-anchor="start">Shielded -S option tab A · manufacturer ground/shield tab; FoldaRap</text>
+<text x="2340" y="6636" class="machine-contact" text-anchor="start">connection OPEN</text>
+<text x="2340" y="6663" class="open-status" text-anchor="start">OPEN · no SmoothieBox route selected</text>
+</g>
+<g id="machine-p016-c006" data-machine-contact="shield-tab-b" data-contact-mark="Tab B" data-contact-fact="source" data-route-state="open" data-x="2220" data-y="6696">
+<title>Rear-plate power jack · Kycon KPJX-PM-4S; shielded -S variant also listed · source position Tab B · Shielded -S option tab B · manufacturer ground/shield tab; FoldaRap connection OPEN · </title>
+<circle cx="2220" cy="6696" r="8" class="open-socket"/>
+<rect x="2236" y="6679" width="90" height="30" rx="8" class="number-pill"/>
+<text x="2281" y="6701" class="number-text" text-anchor="middle">Tab B</text>
+<text x="2340" y="6701" class="machine-contact" text-anchor="start">Shielded -S option tab B · manufacturer ground/shield tab; FoldaRap</text>
+<text x="2340" y="6728" class="machine-contact" text-anchor="start">connection OPEN</text>
+<text x="2340" y="6755" class="open-status" text-anchor="start">OPEN · no SmoothieBox route selected</text>
+</g>
+</g>
+<text x="60" y="6836" class="legend-title">CONNECTION / EVIDENCE KEY</text>
+<path d="M65 6869H165" class="guess-wire" data-decoration="legend-sample"/>
+<text x="190" y="6876" class="legend" text-anchor="start">DOTTED VIOLET = FUNCTION GUESS ONLY. Paths start at the actual drawn exterior screw and end at the named machine contact. No installed continuity or direct cable is established.</text>
+<text x="60" y="6923" class="legend" text-anchor="start">OPEN / hollow contact = no SmoothieBox route selected in this study. This does not mean an electrically open circuit, unused pin or NC in the source. Source-empty, unlisted and untranscribed roles remain distinct in their labels.</text>
+<text x="60" y="6970" class="legend" text-anchor="start">REFERENCE ONLY = a named source revision, not the installed machine. Reference contacts stay OPEN unless an individually cited dotted function guess is shown. Named hardware with no contact map has an OPEN boundary, not invented &#x27;?&#x27;</text>
+<text x="60" y="6999" class="legend" text-anchor="start">pins.</text>
+<text x="60" y="7046" class="legend" text-anchor="start">Paths may cross without joining; pale crossing clearance means NO JUNCTION. Multiple guesses from one screw are alternatives unless each shares an explicit FAN-OUT tag. A tagged fan-out still needs separate buffers and load</text>
+<text x="60" y="7075" class="legend" text-anchor="start">validation. No return bus is inferred.</text>
+<text x="60" y="7122" class="legend" text-anchor="start">Exterior label colors: black = circuit GND; red = 3.3 V; orange = 5 V; yellow/gold = load/control feed; blue/violet/green = STEP/DIR/ENABLE. Dotted violet is an evidence state, not a reported cable color. Protective earth is not</text>
+<text x="60" y="7151" class="legend" text-anchor="start">circuit GND.</text>
+<text x="60" y="7198" class="legend" text-anchor="start">DB25, DB44 and 15-contact D-sub housings are outside SmoothieBox. Contact strips preserve source order, not physical pin-row geometry. USB device, USB host, Ethernet and microSD are separate service ports.</text>
+<text x="60" y="7245" class="legend" text-anchor="start">RESEARCH DIAGRAM — NOT QUALIFIED FOR PHYSICAL WIRING. Confirm the actual carrier, machine revision, mating view, electrical interface, protection, returns and safety design before construction.</text>
+</svg>

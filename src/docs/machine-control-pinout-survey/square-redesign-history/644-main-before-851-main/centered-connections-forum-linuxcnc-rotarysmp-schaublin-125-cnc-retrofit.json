@@ -1,0 +1,1215 @@
+{
+  "profile_id": "forum-linuxcnc-rotarysmp-schaublin-125-cnc-retrofit",
+  "controller": "SmoothieBox",
+  "classification": "Original machine uses separate motor power stages. Keep their motor-power/phase/encoder wiring; connect SmoothieBox exterior command contacts through the shown qualified interfaces. Chapter 18 is a proposed case harness, not an as-built rating certificate.",
+  "connections": [
+    {
+      "id": "C01-001",
+      "panel_index": 0,
+      "edge_index": 0,
+      "from": "LinuxCNC control configuration · spindle speed command",
+      "to": "Mesa 7i83 (owner reported) · analogout0",
+      "state": "SOURCE",
+      "view": "DETAILED CIRCUIT",
+      "rationale": "reported LinuxCNC-to-7i83 spindle speed assignment: LinuxCNC control configuration · spindle speed command → Mesa 7i83 (owner reported) · analogout0. This path is reported by the cited original source; it is retained context, not proof of a completed Smoothie retrofit.",
+      "qualification": "Owner report establishes 7i83 analogout0 role; exact as-built wiring and VFD behavior are not independently verified.",
+      "sources": [
+        {
+          "title": "SmoothieBox Chapter 18 field-contact drawing",
+          "url": "/machine-control-pinout-survey/centered-sources/smoothiebox-chapter18-field-reference.svg",
+          "claim": "Defines proposed exterior STEP/DIR/ENABLE, ground and accessory contact names. These field contacts are not Core header numbers. The drawing does not certify an assembled case or its output ratings."
+        },
+        {
+          "title": "RotarySMP owner thread page 44, post #259199 (JMC drives in analog mode)",
+          "url": "https://forum.linuxcnc.org/26-turning/41498-schaublin-125-cnc-retrofit?start=430",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C01-002",
+      "panel_index": 0,
+      "edge_index": 1,
+      "from": "Mesa 7i83 (owner reported) · analog output",
+      "to": "Installed VFD (model unknown) · analog speed input?",
+      "state": "OPEN",
+      "view": "DETAILED CIRCUIT",
+      "rationale": "VFD analog speed-reference route: Mesa 7i83 (owner reported) · analog output → Installed VFD (model unknown) · analog speed input?. The fitted interface or electrical contract is unresolved. The broken path is a boundary to identify, not a wire to install.",
+      "qualification": "OPEN: VFD exact model, input range/terminal names, physical connector and current wire route unknown.",
+      "sources": [
+        {
+          "title": "SmoothieBox Chapter 18 field-contact drawing",
+          "url": "/machine-control-pinout-survey/centered-sources/smoothiebox-chapter18-field-reference.svg",
+          "claim": "Defines proposed exterior STEP/DIR/ENABLE, ground and accessory contact names. These field contacts are not Core header numbers. The drawing does not certify an assembled case or its output ratings."
+        },
+        {
+          "title": "RotarySMP owner thread page 44, post #259199 (JMC drives in analog mode)",
+          "url": "https://forum.linuxcnc.org/26-turning/41498-schaublin-125-cnc-retrofit?start=430",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C01-003",
+      "panel_index": 0,
+      "edge_index": 2,
+      "from": "Mesa 7i83 (owner reported) · analog common",
+      "to": "Installed VFD (model unknown) · analog common?",
+      "state": "OPEN",
+      "view": "DETAILED CIRCUIT",
+      "rationale": "analog-reference return: Mesa 7i83 (owner reported) · analog common → Installed VFD (model unknown) · analog common?. The fitted interface or electrical contract is unresolved. The broken path is a boundary to identify, not a wire to install.",
+      "qualification": "OPEN: VFD analog common and isolation/reference unknown.",
+      "sources": [
+        {
+          "title": "SmoothieBox Chapter 18 field-contact drawing",
+          "url": "/machine-control-pinout-survey/centered-sources/smoothiebox-chapter18-field-reference.svg",
+          "claim": "Defines proposed exterior STEP/DIR/ENABLE, ground and accessory contact names. These field contacts are not Core header numbers. The drawing does not certify an assembled case or its output ratings."
+        },
+        {
+          "title": "RotarySMP owner thread page 44, post #259199 (JMC drives in analog mode)",
+          "url": "https://forum.linuxcnc.org/26-turning/41498-schaublin-125-cnc-retrofit?start=430",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C01-004",
+      "panel_index": 0,
+      "edge_index": 3,
+      "from": "LinuxCNC control configuration · M3/M4 command",
+      "to": "Installed VFD (model unknown) · Pin 28: owner says VFD enable",
+      "state": "OPEN",
+      "view": "DETAILED CIRCUIT",
+      "rationale": "run/enable reference (physical Pin 28): LinuxCNC control configuration · M3/M4 command → Installed VFD (model unknown) · Pin 28: owner says VFD enable. The fitted interface or electrical contract is unresolved. The broken path is a boundary to identify, not a wire to install.",
+      "qualification": "Owner page 62/#339351 calls VFD Pin 28 the drive enable; model, pin schedule and current routing are still unknown.",
+      "sources": [
+        {
+          "title": "SmoothieBox Chapter 18 field-contact drawing",
+          "url": "/machine-control-pinout-survey/centered-sources/smoothiebox-chapter18-field-reference.svg",
+          "claim": "Defines proposed exterior STEP/DIR/ENABLE, ground and accessory contact names. These field contacts are not Core header numbers. The drawing does not certify an assembled case or its output ratings."
+        },
+        {
+          "title": "RotarySMP owner thread page 44, post #259199 (JMC drives in analog mode)",
+          "url": "https://forum.linuxcnc.org/26-turning/41498-schaublin-125-cnc-retrofit?start=430",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C02-001",
+      "panel_index": 1,
+      "edge_index": 0,
+      "from": "Spindle encoder (model/wiring unknown) · A phase",
+      "to": "Mesa encoder input (hardware model not stated) · encoder A input",
+      "state": "SOURCE",
+      "view": "DETAILED CIRCUIT",
+      "rationale": "reported spindle encoder feedback channel: Spindle encoder (model/wiring unknown) · A phase → Mesa encoder input (hardware model not stated) · encoder A input. This path is reported by the cited original source; it is retained context, not proof of a completed Smoothie retrofit.",
+      "qualification": "Owner reports Mesa encoder feedback; phase/level/connector schedule absent.",
+      "sources": [
+        {
+          "title": "SmoothieBox Chapter 18 field-contact drawing",
+          "url": "/machine-control-pinout-survey/centered-sources/smoothiebox-chapter18-field-reference.svg",
+          "claim": "Defines proposed exterior STEP/DIR/ENABLE, ground and accessory contact names. These field contacts are not Core header numbers. The drawing does not certify an assembled case or its output ratings."
+        },
+        {
+          "title": "RotarySMP owner thread page 44, post #259199 (JMC drives in analog mode)",
+          "url": "https://forum.linuxcnc.org/26-turning/41498-schaublin-125-cnc-retrofit?start=430",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C02-002",
+      "panel_index": 1,
+      "edge_index": 1,
+      "from": "Spindle encoder (model/wiring unknown) · B phase",
+      "to": "Mesa encoder input (hardware model not stated) · encoder B input",
+      "state": "SOURCE",
+      "view": "DETAILED CIRCUIT",
+      "rationale": "reported spindle encoder feedback channel: Spindle encoder (model/wiring unknown) · B phase → Mesa encoder input (hardware model not stated) · encoder B input. This path is reported by the cited original source; it is retained context, not proof of a completed Smoothie retrofit.",
+      "qualification": "Owner reports Mesa encoder feedback; phase/level/connector schedule absent.",
+      "sources": [
+        {
+          "title": "SmoothieBox Chapter 18 field-contact drawing",
+          "url": "/machine-control-pinout-survey/centered-sources/smoothiebox-chapter18-field-reference.svg",
+          "claim": "Defines proposed exterior STEP/DIR/ENABLE, ground and accessory contact names. These field contacts are not Core header numbers. The drawing does not certify an assembled case or its output ratings."
+        },
+        {
+          "title": "RotarySMP owner thread page 44, post #259199 (JMC drives in analog mode)",
+          "url": "https://forum.linuxcnc.org/26-turning/41498-schaublin-125-cnc-retrofit?start=430",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C02-003",
+      "panel_index": 1,
+      "edge_index": 2,
+      "from": "Spindle encoder (model/wiring unknown) · index",
+      "to": "Mesa encoder input (hardware model not stated) · index input",
+      "state": "OPEN",
+      "view": "DETAILED CIRCUIT",
+      "rationale": "index feedback candidate: Spindle encoder (model/wiring unknown) · index → Mesa encoder input (hardware model not stated) · index input. The fitted interface or electrical contract is unresolved. The broken path is a boundary to identify, not a wire to install.",
+      "qualification": "No specific index wiring established in cited owner report.",
+      "sources": [
+        {
+          "title": "SmoothieBox Chapter 18 field-contact drawing",
+          "url": "/machine-control-pinout-survey/centered-sources/smoothiebox-chapter18-field-reference.svg",
+          "claim": "Defines proposed exterior STEP/DIR/ENABLE, ground and accessory contact names. These field contacts are not Core header numbers. The drawing does not certify an assembled case or its output ratings."
+        },
+        {
+          "title": "RotarySMP owner thread page 44, post #259199 (JMC drives in analog mode)",
+          "url": "https://forum.linuxcnc.org/26-turning/41498-schaublin-125-cnc-retrofit?start=430",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C02-004",
+      "panel_index": 1,
+      "edge_index": 3,
+      "from": "Spindle encoder (model/wiring unknown) · A phase",
+      "to": "SmoothieBox · exterior terminals · compatible receiver/input?",
+      "state": "OPEN",
+      "view": "MAIN",
+      "rationale": "possible Smoothie feedback conversion: Spindle encoder (model/wiring unknown) · A phase → SmoothieBox · exterior terminals · compatible receiver/input?. The fitted interface or electrical contract is unresolved. The broken path is a boundary to identify, not a wire to install.",
+      "qualification": "OPEN: exact encoder/receiver model and Smoothie firmware support unknown.",
+      "sources": [
+        {
+          "title": "SmoothieBox Chapter 18 field-contact drawing",
+          "url": "/machine-control-pinout-survey/centered-sources/smoothiebox-chapter18-field-reference.svg",
+          "claim": "Defines proposed exterior STEP/DIR/ENABLE, ground and accessory contact names. These field contacts are not Core header numbers. The drawing does not certify an assembled case or its output ratings."
+        },
+        {
+          "title": "RotarySMP owner thread page 44, post #259199 (JMC drives in analog mode)",
+          "url": "https://forum.linuxcnc.org/26-turning/41498-schaublin-125-cnc-retrofit?start=430",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C03-001",
+      "panel_index": 2,
+      "edge_index": 0,
+      "from": "SmoothieBox · X independent command fields · DRVX.1 · STEP",
+      "to": "X JMC external servo drive · analog mode reported · Pulse-position STEP input? · physical terminal unresolved",
+      "state": "OPEN",
+      "view": "MAIN",
+      "rationale": "X STEP compatibility boundary: SmoothieBox · X independent command fields · DRVX.1 · STEP → X JMC external servo drive · analog mode reported · Pulse-position STEP input? · physical terminal unresolved. The fitted interface or electrical contract is unresolved. The broken path is a boundary to identify, not a wire to install.",
+      "qualification": "Owner explicitly reports analog mode. Determine exact fitted JMC model and whether pulse-position mode exists; locate each physical input and reference in that manual before wiring. If unsupported, retain the closed-loop controller or change the drive. No digital-to-analog position-loop equivalence is claimed.",
+      "sources": [
+        {
+          "title": "SmoothieBox Chapter 18 field-contact drawing",
+          "url": "/machine-control-pinout-survey/centered-sources/smoothiebox-chapter18-field-reference.svg",
+          "claim": "Defines proposed exterior STEP/DIR/ENABLE, ground and accessory contact names. These field contacts are not Core header numbers. The drawing does not certify an assembled case or its output ratings."
+        },
+        {
+          "title": "RotarySMP owner thread page 44, post #259199 (JMC drives in analog mode)",
+          "url": "https://forum.linuxcnc.org/26-turning/41498-schaublin-125-cnc-retrofit?start=430",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C03-002",
+      "panel_index": 2,
+      "edge_index": 1,
+      "from": "SmoothieBox · X independent command fields · DRVX.2 · STEP GND",
+      "to": "X JMC external servo drive · analog mode reported · STEP reference? · physical terminal unresolved",
+      "state": "OPEN",
+      "view": "MAIN",
+      "rationale": "X STEP GND compatibility boundary: SmoothieBox · X independent command fields · DRVX.2 · STEP GND → X JMC external servo drive · analog mode reported · STEP reference? · physical terminal unresolved. The fitted interface or electrical contract is unresolved. The broken path is a boundary to identify, not a wire to install.",
+      "qualification": "Owner explicitly reports analog mode. Determine exact fitted JMC model and whether pulse-position mode exists; locate each physical input and reference in that manual before wiring. If unsupported, retain the closed-loop controller or change the drive. No digital-to-analog position-loop equivalence is claimed.",
+      "sources": [
+        {
+          "title": "SmoothieBox Chapter 18 field-contact drawing",
+          "url": "/machine-control-pinout-survey/centered-sources/smoothiebox-chapter18-field-reference.svg",
+          "claim": "Defines proposed exterior STEP/DIR/ENABLE, ground and accessory contact names. These field contacts are not Core header numbers. The drawing does not certify an assembled case or its output ratings."
+        },
+        {
+          "title": "RotarySMP owner thread page 44, post #259199 (JMC drives in analog mode)",
+          "url": "https://forum.linuxcnc.org/26-turning/41498-schaublin-125-cnc-retrofit?start=430",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C03-003",
+      "panel_index": 2,
+      "edge_index": 2,
+      "from": "SmoothieBox · X independent command fields · DRVX.3 · DIR",
+      "to": "X JMC external servo drive · analog mode reported · Pulse-position DIR input? · physical terminal unresolved",
+      "state": "OPEN",
+      "view": "MAIN",
+      "rationale": "X DIR compatibility boundary: SmoothieBox · X independent command fields · DRVX.3 · DIR → X JMC external servo drive · analog mode reported · Pulse-position DIR input? · physical terminal unresolved. The fitted interface or electrical contract is unresolved. The broken path is a boundary to identify, not a wire to install.",
+      "qualification": "Owner explicitly reports analog mode. Determine exact fitted JMC model and whether pulse-position mode exists; locate each physical input and reference in that manual before wiring. If unsupported, retain the closed-loop controller or change the drive. No digital-to-analog position-loop equivalence is claimed.",
+      "sources": [
+        {
+          "title": "SmoothieBox Chapter 18 field-contact drawing",
+          "url": "/machine-control-pinout-survey/centered-sources/smoothiebox-chapter18-field-reference.svg",
+          "claim": "Defines proposed exterior STEP/DIR/ENABLE, ground and accessory contact names. These field contacts are not Core header numbers. The drawing does not certify an assembled case or its output ratings."
+        },
+        {
+          "title": "RotarySMP owner thread page 44, post #259199 (JMC drives in analog mode)",
+          "url": "https://forum.linuxcnc.org/26-turning/41498-schaublin-125-cnc-retrofit?start=430",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C03-004",
+      "panel_index": 2,
+      "edge_index": 3,
+      "from": "SmoothieBox · X independent command fields · DRVX.4 · DIR GND",
+      "to": "X JMC external servo drive · analog mode reported · DIR reference? · physical terminal unresolved",
+      "state": "OPEN",
+      "view": "MAIN",
+      "rationale": "X DIR GND compatibility boundary: SmoothieBox · X independent command fields · DRVX.4 · DIR GND → X JMC external servo drive · analog mode reported · DIR reference? · physical terminal unresolved. The fitted interface or electrical contract is unresolved. The broken path is a boundary to identify, not a wire to install.",
+      "qualification": "Owner explicitly reports analog mode. Determine exact fitted JMC model and whether pulse-position mode exists; locate each physical input and reference in that manual before wiring. If unsupported, retain the closed-loop controller or change the drive. No digital-to-analog position-loop equivalence is claimed.",
+      "sources": [
+        {
+          "title": "SmoothieBox Chapter 18 field-contact drawing",
+          "url": "/machine-control-pinout-survey/centered-sources/smoothiebox-chapter18-field-reference.svg",
+          "claim": "Defines proposed exterior STEP/DIR/ENABLE, ground and accessory contact names. These field contacts are not Core header numbers. The drawing does not certify an assembled case or its output ratings."
+        },
+        {
+          "title": "RotarySMP owner thread page 44, post #259199 (JMC drives in analog mode)",
+          "url": "https://forum.linuxcnc.org/26-turning/41498-schaublin-125-cnc-retrofit?start=430",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C03-005",
+      "panel_index": 2,
+      "edge_index": 4,
+      "from": "SmoothieBox · X independent command fields · DRVX.5 · ENABLE",
+      "to": "X JMC external servo drive · analog mode reported · Drive-enable input? · physical terminal unresolved",
+      "state": "OPEN",
+      "view": "MAIN",
+      "rationale": "X ENABLE compatibility boundary: SmoothieBox · X independent command fields · DRVX.5 · ENABLE → X JMC external servo drive · analog mode reported · Drive-enable input? · physical terminal unresolved. The fitted interface or electrical contract is unresolved. The broken path is a boundary to identify, not a wire to install.",
+      "qualification": "Owner explicitly reports analog mode. Determine exact fitted JMC model and whether pulse-position mode exists; locate each physical input and reference in that manual before wiring. If unsupported, retain the closed-loop controller or change the drive. No digital-to-analog position-loop equivalence is claimed.",
+      "sources": [
+        {
+          "title": "SmoothieBox Chapter 18 field-contact drawing",
+          "url": "/machine-control-pinout-survey/centered-sources/smoothiebox-chapter18-field-reference.svg",
+          "claim": "Defines proposed exterior STEP/DIR/ENABLE, ground and accessory contact names. These field contacts are not Core header numbers. The drawing does not certify an assembled case or its output ratings."
+        },
+        {
+          "title": "RotarySMP owner thread page 44, post #259199 (JMC drives in analog mode)",
+          "url": "https://forum.linuxcnc.org/26-turning/41498-schaublin-125-cnc-retrofit?start=430",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C03-006",
+      "panel_index": 2,
+      "edge_index": 5,
+      "from": "SmoothieBox · X independent command fields · DRVX.6 · ENABLE GND",
+      "to": "X JMC external servo drive · analog mode reported · Enable reference? · physical terminal unresolved",
+      "state": "OPEN",
+      "view": "MAIN",
+      "rationale": "X ENABLE GND compatibility boundary: SmoothieBox · X independent command fields · DRVX.6 · ENABLE GND → X JMC external servo drive · analog mode reported · Enable reference? · physical terminal unresolved. The fitted interface or electrical contract is unresolved. The broken path is a boundary to identify, not a wire to install.",
+      "qualification": "Owner explicitly reports analog mode. Determine exact fitted JMC model and whether pulse-position mode exists; locate each physical input and reference in that manual before wiring. If unsupported, retain the closed-loop controller or change the drive. No digital-to-analog position-loop equivalence is claimed.",
+      "sources": [
+        {
+          "title": "SmoothieBox Chapter 18 field-contact drawing",
+          "url": "/machine-control-pinout-survey/centered-sources/smoothiebox-chapter18-field-reference.svg",
+          "claim": "Defines proposed exterior STEP/DIR/ENABLE, ground and accessory contact names. These field contacts are not Core header numbers. The drawing does not certify an assembled case or its output ratings."
+        },
+        {
+          "title": "RotarySMP owner thread page 44, post #259199 (JMC drives in analog mode)",
+          "url": "https://forum.linuxcnc.org/26-turning/41498-schaublin-125-cnc-retrofit?start=430",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C03-007",
+      "panel_index": 2,
+      "edge_index": 6,
+      "from": "SmoothieBox · Z independent command fields · DRVZ.1 · STEP",
+      "to": "Z JMC external servo drive · analog mode reported · Pulse-position STEP input? · physical terminal unresolved",
+      "state": "OPEN",
+      "view": "MAIN",
+      "rationale": "Z STEP compatibility boundary: SmoothieBox · Z independent command fields · DRVZ.1 · STEP → Z JMC external servo drive · analog mode reported · Pulse-position STEP input? · physical terminal unresolved. The fitted interface or electrical contract is unresolved. The broken path is a boundary to identify, not a wire to install.",
+      "qualification": "Owner explicitly reports analog mode. Determine exact fitted JMC model and whether pulse-position mode exists; locate each physical input and reference in that manual before wiring. If unsupported, retain the closed-loop controller or change the drive. No digital-to-analog position-loop equivalence is claimed.",
+      "sources": [
+        {
+          "title": "SmoothieBox Chapter 18 field-contact drawing",
+          "url": "/machine-control-pinout-survey/centered-sources/smoothiebox-chapter18-field-reference.svg",
+          "claim": "Defines proposed exterior STEP/DIR/ENABLE, ground and accessory contact names. These field contacts are not Core header numbers. The drawing does not certify an assembled case or its output ratings."
+        },
+        {
+          "title": "RotarySMP owner thread page 44, post #259199 (JMC drives in analog mode)",
+          "url": "https://forum.linuxcnc.org/26-turning/41498-schaublin-125-cnc-retrofit?start=430",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C03-008",
+      "panel_index": 2,
+      "edge_index": 7,
+      "from": "SmoothieBox · Z independent command fields · DRVZ.2 · STEP GND",
+      "to": "Z JMC external servo drive · analog mode reported · STEP reference? · physical terminal unresolved",
+      "state": "OPEN",
+      "view": "MAIN",
+      "rationale": "Z STEP GND compatibility boundary: SmoothieBox · Z independent command fields · DRVZ.2 · STEP GND → Z JMC external servo drive · analog mode reported · STEP reference? · physical terminal unresolved. The fitted interface or electrical contract is unresolved. The broken path is a boundary to identify, not a wire to install.",
+      "qualification": "Owner explicitly reports analog mode. Determine exact fitted JMC model and whether pulse-position mode exists; locate each physical input and reference in that manual before wiring. If unsupported, retain the closed-loop controller or change the drive. No digital-to-analog position-loop equivalence is claimed.",
+      "sources": [
+        {
+          "title": "SmoothieBox Chapter 18 field-contact drawing",
+          "url": "/machine-control-pinout-survey/centered-sources/smoothiebox-chapter18-field-reference.svg",
+          "claim": "Defines proposed exterior STEP/DIR/ENABLE, ground and accessory contact names. These field contacts are not Core header numbers. The drawing does not certify an assembled case or its output ratings."
+        },
+        {
+          "title": "RotarySMP owner thread page 44, post #259199 (JMC drives in analog mode)",
+          "url": "https://forum.linuxcnc.org/26-turning/41498-schaublin-125-cnc-retrofit?start=430",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C03-009",
+      "panel_index": 2,
+      "edge_index": 8,
+      "from": "SmoothieBox · Z independent command fields · DRVZ.3 · DIR",
+      "to": "Z JMC external servo drive · analog mode reported · Pulse-position DIR input? · physical terminal unresolved",
+      "state": "OPEN",
+      "view": "MAIN",
+      "rationale": "Z DIR compatibility boundary: SmoothieBox · Z independent command fields · DRVZ.3 · DIR → Z JMC external servo drive · analog mode reported · Pulse-position DIR input? · physical terminal unresolved. The fitted interface or electrical contract is unresolved. The broken path is a boundary to identify, not a wire to install.",
+      "qualification": "Owner explicitly reports analog mode. Determine exact fitted JMC model and whether pulse-position mode exists; locate each physical input and reference in that manual before wiring. If unsupported, retain the closed-loop controller or change the drive. No digital-to-analog position-loop equivalence is claimed.",
+      "sources": [
+        {
+          "title": "SmoothieBox Chapter 18 field-contact drawing",
+          "url": "/machine-control-pinout-survey/centered-sources/smoothiebox-chapter18-field-reference.svg",
+          "claim": "Defines proposed exterior STEP/DIR/ENABLE, ground and accessory contact names. These field contacts are not Core header numbers. The drawing does not certify an assembled case or its output ratings."
+        },
+        {
+          "title": "RotarySMP owner thread page 44, post #259199 (JMC drives in analog mode)",
+          "url": "https://forum.linuxcnc.org/26-turning/41498-schaublin-125-cnc-retrofit?start=430",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C03-010",
+      "panel_index": 2,
+      "edge_index": 9,
+      "from": "SmoothieBox · Z independent command fields · DRVZ.4 · DIR GND",
+      "to": "Z JMC external servo drive · analog mode reported · DIR reference? · physical terminal unresolved",
+      "state": "OPEN",
+      "view": "MAIN",
+      "rationale": "Z DIR GND compatibility boundary: SmoothieBox · Z independent command fields · DRVZ.4 · DIR GND → Z JMC external servo drive · analog mode reported · DIR reference? · physical terminal unresolved. The fitted interface or electrical contract is unresolved. The broken path is a boundary to identify, not a wire to install.",
+      "qualification": "Owner explicitly reports analog mode. Determine exact fitted JMC model and whether pulse-position mode exists; locate each physical input and reference in that manual before wiring. If unsupported, retain the closed-loop controller or change the drive. No digital-to-analog position-loop equivalence is claimed.",
+      "sources": [
+        {
+          "title": "SmoothieBox Chapter 18 field-contact drawing",
+          "url": "/machine-control-pinout-survey/centered-sources/smoothiebox-chapter18-field-reference.svg",
+          "claim": "Defines proposed exterior STEP/DIR/ENABLE, ground and accessory contact names. These field contacts are not Core header numbers. The drawing does not certify an assembled case or its output ratings."
+        },
+        {
+          "title": "RotarySMP owner thread page 44, post #259199 (JMC drives in analog mode)",
+          "url": "https://forum.linuxcnc.org/26-turning/41498-schaublin-125-cnc-retrofit?start=430",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C03-011",
+      "panel_index": 2,
+      "edge_index": 10,
+      "from": "SmoothieBox · Z independent command fields · DRVZ.5 · ENABLE",
+      "to": "Z JMC external servo drive · analog mode reported · Drive-enable input? · physical terminal unresolved",
+      "state": "OPEN",
+      "view": "MAIN",
+      "rationale": "Z ENABLE compatibility boundary: SmoothieBox · Z independent command fields · DRVZ.5 · ENABLE → Z JMC external servo drive · analog mode reported · Drive-enable input? · physical terminal unresolved. The fitted interface or electrical contract is unresolved. The broken path is a boundary to identify, not a wire to install.",
+      "qualification": "Owner explicitly reports analog mode. Determine exact fitted JMC model and whether pulse-position mode exists; locate each physical input and reference in that manual before wiring. If unsupported, retain the closed-loop controller or change the drive. No digital-to-analog position-loop equivalence is claimed.",
+      "sources": [
+        {
+          "title": "SmoothieBox Chapter 18 field-contact drawing",
+          "url": "/machine-control-pinout-survey/centered-sources/smoothiebox-chapter18-field-reference.svg",
+          "claim": "Defines proposed exterior STEP/DIR/ENABLE, ground and accessory contact names. These field contacts are not Core header numbers. The drawing does not certify an assembled case or its output ratings."
+        },
+        {
+          "title": "RotarySMP owner thread page 44, post #259199 (JMC drives in analog mode)",
+          "url": "https://forum.linuxcnc.org/26-turning/41498-schaublin-125-cnc-retrofit?start=430",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C03-012",
+      "panel_index": 2,
+      "edge_index": 11,
+      "from": "SmoothieBox · Z independent command fields · DRVZ.6 · ENABLE GND",
+      "to": "Z JMC external servo drive · analog mode reported · Enable reference? · physical terminal unresolved",
+      "state": "OPEN",
+      "view": "MAIN",
+      "rationale": "Z ENABLE GND compatibility boundary: SmoothieBox · Z independent command fields · DRVZ.6 · ENABLE GND → Z JMC external servo drive · analog mode reported · Enable reference? · physical terminal unresolved. The fitted interface or electrical contract is unresolved. The broken path is a boundary to identify, not a wire to install.",
+      "qualification": "Owner explicitly reports analog mode. Determine exact fitted JMC model and whether pulse-position mode exists; locate each physical input and reference in that manual before wiring. If unsupported, retain the closed-loop controller or change the drive. No digital-to-analog position-loop equivalence is claimed.",
+      "sources": [
+        {
+          "title": "SmoothieBox Chapter 18 field-contact drawing",
+          "url": "/machine-control-pinout-survey/centered-sources/smoothiebox-chapter18-field-reference.svg",
+          "claim": "Defines proposed exterior STEP/DIR/ENABLE, ground and accessory contact names. These field contacts are not Core header numbers. The drawing does not certify an assembled case or its output ratings."
+        },
+        {
+          "title": "RotarySMP owner thread page 44, post #259199 (JMC drives in analog mode)",
+          "url": "https://forum.linuxcnc.org/26-turning/41498-schaublin-125-cnc-retrofit?start=430",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C04-001",
+      "panel_index": 3,
+      "edge_index": 0,
+      "from": "SmoothieBox · exterior terminals · SSR2.1 · 5V SWITCH · candidate valve command",
+      "to": "rated isolated coil interface (not selected) · logic input",
+      "state": "OPEN",
+      "view": "MAIN",
+      "rationale": "candidate valve command: SmoothieBox · exterior terminals · SSR2.1 · 5V SWITCH · candidate valve command → rated isolated coil interface (not selected) · logic input. The fitted interface or electrical contract is unresolved. The broken path is a boundary to identify, not a wire to install.",
+      "qualification": "Owner described proposed backgear control only; no confirmed SmoothieBox use, coil voltage or station terminal.",
+      "sources": [
+        {
+          "title": "SmoothieBox Chapter 18 field-contact drawing",
+          "url": "/machine-control-pinout-survey/centered-sources/smoothiebox-chapter18-field-reference.svg",
+          "claim": "Defines proposed exterior STEP/DIR/ENABLE, ground and accessory contact names. These field contacts are not Core header numbers. The drawing does not certify an assembled case or its output ratings."
+        },
+        {
+          "title": "RotarySMP owner thread page 44, post #259199 (JMC drives in analog mode)",
+          "url": "https://forum.linuxcnc.org/26-turning/41498-schaublin-125-cnc-retrofit?start=430",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C04-002",
+      "panel_index": 3,
+      "edge_index": 1,
+      "from": "rated isolated coil interface (not selected) · switched coil feed",
+      "to": "Festo CPV backgear valve (exact station/coil unknown) · coil lead +?",
+      "state": "OPEN",
+      "view": "DETAILED CIRCUIT",
+      "rationale": "possible valve actuation: rated isolated coil interface (not selected) · switched coil feed → Festo CPV backgear valve (exact station/coil unknown) · coil lead +?. The fitted interface or electrical contract is unresolved. The broken path is a boundary to identify, not a wire to install.",
+      "qualification": "OPEN until CPV valve/manifold/station and coil ratings are physically identified.",
+      "sources": [
+        {
+          "title": "SmoothieBox Chapter 18 field-contact drawing",
+          "url": "/machine-control-pinout-survey/centered-sources/smoothiebox-chapter18-field-reference.svg",
+          "claim": "Defines proposed exterior STEP/DIR/ENABLE, ground and accessory contact names. These field contacts are not Core header numbers. The drawing does not certify an assembled case or its output ratings."
+        },
+        {
+          "title": "RotarySMP owner thread page 44, post #259199 (JMC drives in analog mode)",
+          "url": "https://forum.linuxcnc.org/26-turning/41498-schaublin-125-cnc-retrofit?start=430",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C04-003",
+      "panel_index": 3,
+      "edge_index": 2,
+      "from": "SmoothieBox · exterior terminals · SSR2.2 · GND · command reference",
+      "to": "rated isolated coil interface (not selected) · Logic input reference · isolated from coil circuit",
+      "state": "OPEN",
+      "view": "MAIN",
+      "rationale": "valve command reference to matched isolated interface: SmoothieBox · exterior terminals · SSR2.2 · GND · command reference → rated isolated coil interface (not selected) · Logic input reference · isolated from coil circuit. The fitted interface or electrical contract is unresolved. The broken path is a boundary to identify, not a wire to install.",
+      "qualification": "Do not bond the controller signal ground to an unidentified valve power or position circuit.",
+      "sources": [
+        {
+          "title": "SmoothieBox Chapter 18 field-contact drawing",
+          "url": "/machine-control-pinout-survey/centered-sources/smoothiebox-chapter18-field-reference.svg",
+          "claim": "Defines proposed exterior STEP/DIR/ENABLE, ground and accessory contact names. These field contacts are not Core header numbers. The drawing does not certify an assembled case or its output ratings."
+        },
+        {
+          "title": "RotarySMP owner thread page 44, post #259199 (JMC drives in analog mode)",
+          "url": "https://forum.linuxcnc.org/26-turning/41498-schaublin-125-cnc-retrofit?start=430",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C04-004",
+      "panel_index": 3,
+      "edge_index": 3,
+      "from": "rated isolated coil interface (not selected) · coil return",
+      "to": "Festo CPV backgear valve (exact station/coil unknown) · coil lead -?",
+      "state": "OPEN",
+      "view": "DETAILED CIRCUIT",
+      "rationale": "valve coil return through matched power stage: rated isolated coil interface (not selected) · coil return → Festo CPV backgear valve (exact station/coil unknown) · coil lead -?. The fitted interface or electrical contract is unresolved. The broken path is a boundary to identify, not a wire to install.",
+      "qualification": "Identify valve/manifold voltage, current and supply reference before connection.",
+      "sources": [
+        {
+          "title": "SmoothieBox Chapter 18 field-contact drawing",
+          "url": "/machine-control-pinout-survey/centered-sources/smoothiebox-chapter18-field-reference.svg",
+          "claim": "Defines proposed exterior STEP/DIR/ENABLE, ground and accessory contact names. These field contacts are not Core header numbers. The drawing does not certify an assembled case or its output ratings."
+        },
+        {
+          "title": "RotarySMP owner thread page 44, post #259199 (JMC drives in analog mode)",
+          "url": "https://forum.linuxcnc.org/26-turning/41498-schaublin-125-cnc-retrofit?start=430",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C06-001",
+      "panel_index": 5,
+      "edge_index": 0,
+      "from": "SmoothieBox · separate spindle fields · PWM.1 · speed PWM",
+      "to": "Matched spindle analog + isolated run interface · select fitted-VFD design · PWM logic input",
+      "state": "OPEN",
+      "view": "MAIN",
+      "rationale": "Spindle PWM setpoint: SmoothieBox · separate spindle fields · PWM.1 · speed PWM → Matched spindle analog + isolated run interface · select fitted-VFD design · PWM logic input. The fitted interface or electrical contract is unresolved. The broken path is a boundary to identify, not a wire to install.",
+      "qualification": "Owner reports original 0–10V speed mode and VFD Pin28 enable. Identify fitted VFD model, analog range/return, enable circuit and safe stop behavior. Proposed PWM-to-0–10V conversion and isolated run contact are process control only; not a replacement for the retained spindle safety and closed-loop axis control.",
+      "sources": [
+        {
+          "title": "SmoothieBox Chapter 18 field-contact drawing",
+          "url": "/machine-control-pinout-survey/centered-sources/smoothiebox-chapter18-field-reference.svg",
+          "claim": "Defines proposed exterior STEP/DIR/ENABLE, ground and accessory contact names. These field contacts are not Core header numbers. The drawing does not certify an assembled case or its output ratings."
+        },
+        {
+          "title": "RotarySMP owner thread page 62, post #339351 (VFD Pin 28 enable; 0-10V spindle command/stop discussion)",
+          "url": "https://forum.linuxcnc.org/26-turning/41498-schaublin-125-cnc-retrofit?start=610",
+          "claim": "Owner reports spindle analog speed and Pin28 enable; no exact VFD pinout or qualified replacement interface is supplied."
+        }
+      ]
+    },
+    {
+      "id": "C06-002",
+      "panel_index": 5,
+      "edge_index": 1,
+      "from": "SmoothieBox · separate spindle fields · PWM.3 · signal GND",
+      "to": "Matched spindle analog + isolated run interface · select fitted-VFD design · Logic reference",
+      "state": "OPEN",
+      "view": "MAIN",
+      "rationale": "Spindle PWM return: SmoothieBox · separate spindle fields · PWM.3 · signal GND → Matched spindle analog + isolated run interface · select fitted-VFD design · Logic reference. The fitted interface or electrical contract is unresolved. The broken path is a boundary to identify, not a wire to install.",
+      "qualification": "Owner reports original 0–10V speed mode and VFD Pin28 enable. Identify fitted VFD model, analog range/return, enable circuit and safe stop behavior. Proposed PWM-to-0–10V conversion and isolated run contact are process control only; not a replacement for the retained spindle safety and closed-loop axis control.",
+      "sources": [
+        {
+          "title": "SmoothieBox Chapter 18 field-contact drawing",
+          "url": "/machine-control-pinout-survey/centered-sources/smoothiebox-chapter18-field-reference.svg",
+          "claim": "Defines proposed exterior STEP/DIR/ENABLE, ground and accessory contact names. These field contacts are not Core header numbers. The drawing does not certify an assembled case or its output ratings."
+        },
+        {
+          "title": "RotarySMP owner thread page 62, post #339351 (VFD Pin 28 enable; 0-10V spindle command/stop discussion)",
+          "url": "https://forum.linuxcnc.org/26-turning/41498-schaublin-125-cnc-retrofit?start=610",
+          "claim": "Owner reports spindle analog speed and Pin28 enable; no exact VFD pinout or qualified replacement interface is supplied."
+        }
+      ]
+    },
+    {
+      "id": "C06-003",
+      "panel_index": 5,
+      "edge_index": 2,
+      "from": "Matched spindle analog + isolated run interface · select fitted-VFD design · Qualified 0–10V output",
+      "to": "Fitted spindle VFD · exact model required · Identify 0–10V speed input",
+      "state": "OPEN",
+      "view": "DETAILED CIRCUIT",
+      "rationale": "Converted analog speed reference: Matched spindle analog + isolated run interface · select fitted-VFD design · Qualified 0–10V output → Fitted spindle VFD · exact model required · Identify 0–10V speed input. The fitted interface or electrical contract is unresolved. The broken path is a boundary to identify, not a wire to install.",
+      "qualification": "Owner reports original 0–10V speed mode and VFD Pin28 enable. Identify fitted VFD model, analog range/return, enable circuit and safe stop behavior. Proposed PWM-to-0–10V conversion and isolated run contact are process control only; not a replacement for the retained spindle safety and closed-loop axis control.",
+      "sources": [
+        {
+          "title": "SmoothieBox Chapter 18 field-contact drawing",
+          "url": "/machine-control-pinout-survey/centered-sources/smoothiebox-chapter18-field-reference.svg",
+          "claim": "Defines proposed exterior STEP/DIR/ENABLE, ground and accessory contact names. These field contacts are not Core header numbers. The drawing does not certify an assembled case or its output ratings."
+        },
+        {
+          "title": "RotarySMP owner thread page 62, post #339351 (VFD Pin 28 enable; 0-10V spindle command/stop discussion)",
+          "url": "https://forum.linuxcnc.org/26-turning/41498-schaublin-125-cnc-retrofit?start=610",
+          "claim": "Owner reports spindle analog speed and Pin28 enable; no exact VFD pinout or qualified replacement interface is supplied."
+        }
+      ]
+    },
+    {
+      "id": "C06-004",
+      "panel_index": 5,
+      "edge_index": 3,
+      "from": "Matched spindle analog + isolated run interface · select fitted-VFD design · Isolated analog common",
+      "to": "Fitted spindle VFD · exact model required · Identify analog common",
+      "state": "OPEN",
+      "view": "DETAILED CIRCUIT",
+      "rationale": "Analog reference return: Matched spindle analog + isolated run interface · select fitted-VFD design · Isolated analog common → Fitted spindle VFD · exact model required · Identify analog common. The fitted interface or electrical contract is unresolved. The broken path is a boundary to identify, not a wire to install.",
+      "qualification": "Owner reports original 0–10V speed mode and VFD Pin28 enable. Identify fitted VFD model, analog range/return, enable circuit and safe stop behavior. Proposed PWM-to-0–10V conversion and isolated run contact are process control only; not a replacement for the retained spindle safety and closed-loop axis control.",
+      "sources": [
+        {
+          "title": "SmoothieBox Chapter 18 field-contact drawing",
+          "url": "/machine-control-pinout-survey/centered-sources/smoothiebox-chapter18-field-reference.svg",
+          "claim": "Defines proposed exterior STEP/DIR/ENABLE, ground and accessory contact names. These field contacts are not Core header numbers. The drawing does not certify an assembled case or its output ratings."
+        },
+        {
+          "title": "RotarySMP owner thread page 62, post #339351 (VFD Pin 28 enable; 0-10V spindle command/stop discussion)",
+          "url": "https://forum.linuxcnc.org/26-turning/41498-schaublin-125-cnc-retrofit?start=610",
+          "claim": "Owner reports spindle analog speed and Pin28 enable; no exact VFD pinout or qualified replacement interface is supplied."
+        }
+      ]
+    },
+    {
+      "id": "C06-005",
+      "panel_index": 5,
+      "edge_index": 4,
+      "from": "SmoothieBox · separate spindle fields · SSR1.1 · 5V SWITCH",
+      "to": "Matched spindle analog + isolated run interface · select fitted-VFD design · Process run-stage input",
+      "state": "OPEN",
+      "view": "MAIN",
+      "rationale": "Run interface logic: SmoothieBox · separate spindle fields · SSR1.1 · 5V SWITCH → Matched spindle analog + isolated run interface · select fitted-VFD design · Process run-stage input. The fitted interface or electrical contract is unresolved. The broken path is a boundary to identify, not a wire to install.",
+      "qualification": "Owner reports original 0–10V speed mode and VFD Pin28 enable. Identify fitted VFD model, analog range/return, enable circuit and safe stop behavior. Proposed PWM-to-0–10V conversion and isolated run contact are process control only; not a replacement for the retained spindle safety and closed-loop axis control.",
+      "sources": [
+        {
+          "title": "SmoothieBox Chapter 18 field-contact drawing",
+          "url": "/machine-control-pinout-survey/centered-sources/smoothiebox-chapter18-field-reference.svg",
+          "claim": "Defines proposed exterior STEP/DIR/ENABLE, ground and accessory contact names. These field contacts are not Core header numbers. The drawing does not certify an assembled case or its output ratings."
+        },
+        {
+          "title": "RotarySMP owner thread page 62, post #339351 (VFD Pin 28 enable; 0-10V spindle command/stop discussion)",
+          "url": "https://forum.linuxcnc.org/26-turning/41498-schaublin-125-cnc-retrofit?start=610",
+          "claim": "Owner reports spindle analog speed and Pin28 enable; no exact VFD pinout or qualified replacement interface is supplied."
+        }
+      ]
+    },
+    {
+      "id": "C06-006",
+      "panel_index": 5,
+      "edge_index": 5,
+      "from": "SmoothieBox · separate spindle fields · SSR1.2 · GND",
+      "to": "Matched spindle analog + isolated run interface · select fitted-VFD design · Process run-stage return",
+      "state": "OPEN",
+      "view": "MAIN",
+      "rationale": "Run logic return: SmoothieBox · separate spindle fields · SSR1.2 · GND → Matched spindle analog + isolated run interface · select fitted-VFD design · Process run-stage return. The fitted interface or electrical contract is unresolved. The broken path is a boundary to identify, not a wire to install.",
+      "qualification": "Owner reports original 0–10V speed mode and VFD Pin28 enable. Identify fitted VFD model, analog range/return, enable circuit and safe stop behavior. Proposed PWM-to-0–10V conversion and isolated run contact are process control only; not a replacement for the retained spindle safety and closed-loop axis control.",
+      "sources": [
+        {
+          "title": "SmoothieBox Chapter 18 field-contact drawing",
+          "url": "/machine-control-pinout-survey/centered-sources/smoothiebox-chapter18-field-reference.svg",
+          "claim": "Defines proposed exterior STEP/DIR/ENABLE, ground and accessory contact names. These field contacts are not Core header numbers. The drawing does not certify an assembled case or its output ratings."
+        },
+        {
+          "title": "RotarySMP owner thread page 62, post #339351 (VFD Pin 28 enable; 0-10V spindle command/stop discussion)",
+          "url": "https://forum.linuxcnc.org/26-turning/41498-schaublin-125-cnc-retrofit?start=610",
+          "claim": "Owner reports spindle analog speed and Pin28 enable; no exact VFD pinout or qualified replacement interface is supplied."
+        }
+      ]
+    },
+    {
+      "id": "C06-007",
+      "panel_index": 5,
+      "edge_index": 6,
+      "from": "Matched spindle analog + isolated run interface · select fitted-VFD design · Rated isolated contact A",
+      "to": "Fitted spindle VFD · exact model required · Pin28 · owner-reported enable",
+      "state": "OPEN",
+      "view": "DETAILED CIRCUIT",
+      "rationale": "Isolated enable contact to reported Pin28: Matched spindle analog + isolated run interface · select fitted-VFD design · Rated isolated contact A → Fitted spindle VFD · exact model required · Pin28 · owner-reported enable. The fitted interface or electrical contract is unresolved. The broken path is a boundary to identify, not a wire to install.",
+      "qualification": "Owner reports original 0–10V speed mode and VFD Pin28 enable. Identify fitted VFD model, analog range/return, enable circuit and safe stop behavior. Proposed PWM-to-0–10V conversion and isolated run contact are process control only; not a replacement for the retained spindle safety and closed-loop axis control.",
+      "sources": [
+        {
+          "title": "SmoothieBox Chapter 18 field-contact drawing",
+          "url": "/machine-control-pinout-survey/centered-sources/smoothiebox-chapter18-field-reference.svg",
+          "claim": "Defines proposed exterior STEP/DIR/ENABLE, ground and accessory contact names. These field contacts are not Core header numbers. The drawing does not certify an assembled case or its output ratings."
+        },
+        {
+          "title": "RotarySMP owner thread page 62, post #339351 (VFD Pin 28 enable; 0-10V spindle command/stop discussion)",
+          "url": "https://forum.linuxcnc.org/26-turning/41498-schaublin-125-cnc-retrofit?start=610",
+          "claim": "Owner reports spindle analog speed and Pin28 enable; no exact VFD pinout or qualified replacement interface is supplied."
+        }
+      ]
+    },
+    {
+      "id": "C06-008",
+      "panel_index": 5,
+      "edge_index": 7,
+      "from": "Matched spindle analog + isolated run interface · select fitted-VFD design · Rated isolated contact B",
+      "to": "Fitted spindle VFD · exact model required · Identify enable input supply/reference",
+      "state": "OPEN",
+      "view": "DETAILED CIRCUIT",
+      "rationale": "Enable supply/reference contact: Matched spindle analog + isolated run interface · select fitted-VFD design · Rated isolated contact B → Fitted spindle VFD · exact model required · Identify enable input supply/reference. The fitted interface or electrical contract is unresolved. The broken path is a boundary to identify, not a wire to install.",
+      "qualification": "Owner reports original 0–10V speed mode and VFD Pin28 enable. Identify fitted VFD model, analog range/return, enable circuit and safe stop behavior. Proposed PWM-to-0–10V conversion and isolated run contact are process control only; not a replacement for the retained spindle safety and closed-loop axis control.",
+      "sources": [
+        {
+          "title": "SmoothieBox Chapter 18 field-contact drawing",
+          "url": "/machine-control-pinout-survey/centered-sources/smoothiebox-chapter18-field-reference.svg",
+          "claim": "Defines proposed exterior STEP/DIR/ENABLE, ground and accessory contact names. These field contacts are not Core header numbers. The drawing does not certify an assembled case or its output ratings."
+        },
+        {
+          "title": "RotarySMP owner thread page 62, post #339351 (VFD Pin 28 enable; 0-10V spindle command/stop discussion)",
+          "url": "https://forum.linuxcnc.org/26-turning/41498-schaublin-125-cnc-retrofit?start=610",
+          "claim": "Owner reports spindle analog speed and Pin28 enable; no exact VFD pinout or qualified replacement interface is supplied."
+        }
+      ]
+    }
+  ],
+  "main_visible_connections": [
+    "C02-004",
+    "C03-001",
+    "C03-002",
+    "C03-003",
+    "C03-004",
+    "C03-005",
+    "C03-006",
+    "C03-007",
+    "C03-008",
+    "C03-009",
+    "C03-010",
+    "C03-011",
+    "C03-012",
+    "C04-001",
+    "C04-003",
+    "C06-001",
+    "C06-002",
+    "C06-005",
+    "C06-006"
+  ],
+  "detailed_only_connections": [
+    "C01-001",
+    "C01-002",
+    "C01-003",
+    "C01-004",
+    "C02-001",
+    "C02-002",
+    "C02-003",
+    "C04-002",
+    "C04-004",
+    "C06-003",
+    "C06-004",
+    "C06-007",
+    "C06-008"
+  ],
+  "main_route_manifest": [
+    {
+      "connection_id": "C06-005",
+      "controller_identity": [
+        "SSR1",
+        "1"
+      ],
+      "controller_anchor": [
+        1000,
+        1207.8095238095239
+      ],
+      "assembly": [
+        "west",
+        "switching"
+      ],
+      "assembly_anchor": [
+        765,
+        347.5
+      ],
+      "assembly_port_index": 1,
+      "receiver_node": "Matched spindle analog + isolated run interface · select fitted-VFD design",
+      "receiver_contact": "Process run-stage input"
+    },
+    {
+      "connection_id": "C06-006",
+      "controller_identity": [
+        "SSR1",
+        "2"
+      ],
+      "controller_anchor": [
+        1000,
+        1309.5238095238096
+      ],
+      "assembly": [
+        "west",
+        "switching"
+      ],
+      "assembly_anchor": [
+        765,
+        462.5
+      ],
+      "assembly_port_index": 2,
+      "receiver_node": "Matched spindle analog + isolated run interface · select fitted-VFD design",
+      "receiver_contact": "Process run-stage return"
+    },
+    {
+      "connection_id": "C04-001",
+      "controller_identity": [
+        "SSR2",
+        "1"
+      ],
+      "controller_anchor": [
+        1000,
+        1449.142857142857
+      ],
+      "assembly": [
+        "west",
+        "switching"
+      ],
+      "assembly_anchor": [
+        765,
+        577.5
+      ],
+      "assembly_port_index": 3,
+      "receiver_node": "rated isolated coil interface (not selected)",
+      "receiver_contact": "logic input"
+    },
+    {
+      "connection_id": "C04-003",
+      "controller_identity": [
+        "SSR2",
+        "2"
+      ],
+      "controller_anchor": [
+        1000,
+        1550.857142857143
+      ],
+      "assembly": [
+        "west",
+        "switching"
+      ],
+      "assembly_anchor": [
+        765,
+        692.5
+      ],
+      "assembly_port_index": 4,
+      "receiver_node": "rated isolated coil interface (not selected)",
+      "receiver_contact": "Logic input reference · isolated from coil circuit"
+    },
+    {
+      "connection_id": "C06-001",
+      "controller_identity": [
+        "PWM",
+        "1"
+      ],
+      "controller_anchor": [
+        1000,
+        1690.4761904761904
+      ],
+      "assembly": [
+        "west",
+        "process"
+      ],
+      "assembly_anchor": [
+        765,
+        1142.5
+      ],
+      "assembly_port_index": 1,
+      "receiver_node": "Matched spindle analog + isolated run interface · select fitted-VFD design",
+      "receiver_contact": "PWM logic input"
+    },
+    {
+      "connection_id": "C06-002",
+      "controller_identity": [
+        "PWM",
+        "3"
+      ],
+      "controller_anchor": [
+        1000,
+        1792.1904761904761
+      ],
+      "assembly": [
+        "west",
+        "process"
+      ],
+      "assembly_anchor": [
+        765,
+        1377.5
+      ],
+      "assembly_port_index": 2,
+      "receiver_node": "Matched spindle analog + isolated run interface · select fitted-VFD design",
+      "receiver_contact": "Logic reference"
+    },
+    {
+      "connection_id": "C02-004",
+      "controller_identity": [
+        "UNRESOLVED",
+        "1:sch_smoothieenc:in"
+      ],
+      "controller_anchor": [
+        2000,
+        1500.0
+      ],
+      "assembly": [
+        "east",
+        "extension"
+      ],
+      "assembly_anchor": [
+        2235,
+        1365.0
+      ],
+      "assembly_port_index": 1,
+      "receiver_node": "Spindle encoder (model/wiring unknown)",
+      "receiver_contact": "A phase"
+    },
+    {
+      "connection_id": "C03-001",
+      "controller_identity": [
+        "DRVX",
+        "1"
+      ],
+      "controller_anchor": [
+        1177.6842105263158,
+        2000
+      ],
+      "assembly": [
+        "south",
+        "DRVX"
+      ],
+      "assembly_anchor": [
+        164.28571428571428,
+        2200
+      ],
+      "assembly_port_index": 1,
+      "receiver_node": "X JMC external servo drive · analog mode reported",
+      "receiver_contact": "Pulse-position STEP input? · physical terminal unresolved"
+    },
+    {
+      "connection_id": "C03-002",
+      "controller_identity": [
+        "DRVX",
+        "2"
+      ],
+      "controller_anchor": [
+        1234.2105263157896,
+        2000
+      ],
+      "assembly": [
+        "south",
+        "DRVX"
+      ],
+      "assembly_anchor": [
+        263.57142857142856,
+        2200
+      ],
+      "assembly_port_index": 2,
+      "receiver_node": "X JMC external servo drive · analog mode reported",
+      "receiver_contact": "STEP reference? · physical terminal unresolved"
+    },
+    {
+      "connection_id": "C03-003",
+      "controller_identity": [
+        "DRVX",
+        "3"
+      ],
+      "controller_anchor": [
+        1290.7368421052631,
+        2000
+      ],
+      "assembly": [
+        "south",
+        "DRVX"
+      ],
+      "assembly_anchor": [
+        362.85714285714283,
+        2200
+      ],
+      "assembly_port_index": 3,
+      "receiver_node": "X JMC external servo drive · analog mode reported",
+      "receiver_contact": "Pulse-position DIR input? · physical terminal unresolved"
+    },
+    {
+      "connection_id": "C03-004",
+      "controller_identity": [
+        "DRVX",
+        "4"
+      ],
+      "controller_anchor": [
+        1347.2631578947369,
+        2000
+      ],
+      "assembly": [
+        "south",
+        "DRVX"
+      ],
+      "assembly_anchor": [
+        462.14285714285717,
+        2200
+      ],
+      "assembly_port_index": 4,
+      "receiver_node": "X JMC external servo drive · analog mode reported",
+      "receiver_contact": "DIR reference? · physical terminal unresolved"
+    },
+    {
+      "connection_id": "C03-005",
+      "controller_identity": [
+        "DRVX",
+        "5"
+      ],
+      "controller_anchor": [
+        1403.7894736842104,
+        2000
+      ],
+      "assembly": [
+        "south",
+        "DRVX"
+      ],
+      "assembly_anchor": [
+        561.4285714285714,
+        2200
+      ],
+      "assembly_port_index": 5,
+      "receiver_node": "X JMC external servo drive · analog mode reported",
+      "receiver_contact": "Drive-enable input? · physical terminal unresolved"
+    },
+    {
+      "connection_id": "C03-006",
+      "controller_identity": [
+        "DRVX",
+        "6"
+      ],
+      "controller_anchor": [
+        1460.3157894736842,
+        2000
+      ],
+      "assembly": [
+        "south",
+        "DRVX"
+      ],
+      "assembly_anchor": [
+        660.7142857142857,
+        2200
+      ],
+      "assembly_port_index": 6,
+      "receiver_node": "X JMC external servo drive · analog mode reported",
+      "receiver_contact": "Enable reference? · physical terminal unresolved"
+    },
+    {
+      "connection_id": "C03-007",
+      "controller_identity": [
+        "DRVZ",
+        "1"
+      ],
+      "controller_anchor": [
+        1539.6842105263158,
+        2000
+      ],
+      "assembly": [
+        "south",
+        "DRVZ"
+      ],
+      "assembly_anchor": [
+        889.2857142857143,
+        2200
+      ],
+      "assembly_port_index": 1,
+      "receiver_node": "Z JMC external servo drive · analog mode reported",
+      "receiver_contact": "Pulse-position STEP input? · physical terminal unresolved"
+    },
+    {
+      "connection_id": "C03-008",
+      "controller_identity": [
+        "DRVZ",
+        "2"
+      ],
+      "controller_anchor": [
+        1596.2105263157896,
+        2000
+      ],
+      "assembly": [
+        "south",
+        "DRVZ"
+      ],
+      "assembly_anchor": [
+        988.5714285714286,
+        2200
+      ],
+      "assembly_port_index": 2,
+      "receiver_node": "Z JMC external servo drive · analog mode reported",
+      "receiver_contact": "STEP reference? · physical terminal unresolved"
+    },
+    {
+      "connection_id": "C03-009",
+      "controller_identity": [
+        "DRVZ",
+        "3"
+      ],
+      "controller_anchor": [
+        1652.7368421052631,
+        2000
+      ],
+      "assembly": [
+        "south",
+        "DRVZ"
+      ],
+      "assembly_anchor": [
+        1087.857142857143,
+        2200
+      ],
+      "assembly_port_index": 3,
+      "receiver_node": "Z JMC external servo drive · analog mode reported",
+      "receiver_contact": "Pulse-position DIR input? · physical terminal unresolved"
+    },
+    {
+      "connection_id": "C03-010",
+      "controller_identity": [
+        "DRVZ",
+        "4"
+      ],
+      "controller_anchor": [
+        1709.2631578947369,
+        2000
+      ],
+      "assembly": [
+        "south",
+        "DRVZ"
+      ],
+      "assembly_anchor": [
+        1187.142857142857,
+        2200
+      ],
+      "assembly_port_index": 4,
+      "receiver_node": "Z JMC external servo drive · analog mode reported",
+      "receiver_contact": "DIR reference? · physical terminal unresolved"
+    },
+    {
+      "connection_id": "C03-011",
+      "controller_identity": [
+        "DRVZ",
+        "5"
+      ],
+      "controller_anchor": [
+        1765.7894736842104,
+        2000
+      ],
+      "assembly": [
+        "south",
+        "DRVZ"
+      ],
+      "assembly_anchor": [
+        1286.4285714285716,
+        2200
+      ],
+      "assembly_port_index": 5,
+      "receiver_node": "Z JMC external servo drive · analog mode reported",
+      "receiver_contact": "Drive-enable input? · physical terminal unresolved"
+    },
+    {
+      "connection_id": "C03-012",
+      "controller_identity": [
+        "DRVZ",
+        "6"
+      ],
+      "controller_anchor": [
+        1822.3157894736842,
+        2000
+      ],
+      "assembly": [
+        "south",
+        "DRVZ"
+      ],
+      "assembly_anchor": [
+        1385.7142857142858,
+        2200
+      ],
+      "assembly_port_index": 6,
+      "receiver_node": "Z JMC external servo drive · analog mode reported",
+      "receiver_contact": "Enable reference? · physical terminal unresolved"
+    }
+  ],
+  "geometry": {
+    "viewbox": [
+      0,
+      0,
+      3000,
+      3000
+    ],
+    "controller": [
+      1000,
+      1000,
+      1000,
+      1000
+    ],
+    "controller_area_fraction": 0.1111111111111111
+  },
+  "svg_sha256": "3ddee8be3a253ab7a4aaf5bfab13960cddaafa39aacdd3e2b4d299cd75ec0d9d"
+}

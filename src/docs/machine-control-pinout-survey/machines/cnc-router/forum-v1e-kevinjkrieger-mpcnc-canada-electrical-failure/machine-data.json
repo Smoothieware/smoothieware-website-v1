@@ -1,0 +1,32 @@
+{
+  "id": "forum-v1e-kevinjkrieger-mpcnc-canada-electrical-failure",
+  "sources": {
+    "forum-peripheral-evidence.json": {
+      "id": "forum-v1e-kevinjkrieger-mpcnc-canada-electrical-failure",
+      "dossier": "src/docs/machine-research/v1e-kevinjkrieger-mpcnc-canada-electrical-failure.md",
+      "reported_fitted_or_used": [],
+      "listed_for_build_unverified": [],
+      "historical_reference": [],
+      "planned_only": [],
+      "open_function_group": [],
+      "exclusions": [
+        {
+          "name": "SKR Pro is existing controller",
+          "reason": "Existing or proposed controller belongs to the replaced control system, not the machine periphery.",
+          "source_line_number": 11,
+          "source_line": "- On April 8, 2024, the owner described an MPCNC project begun after finding V1 Engineering in 2023. He reports that he printed the parts on a Prusa i3 MK3S and decided on the SKR Pro v1.2 bundle from the V1 store."
+        },
+        {
+          "name": "TMC2209 driver modules",
+          "contacts": [],
+          "source_line_number": 13,
+          "source_line": "- The owner\u2019s forum post identifies TMC2209 motor drivers and states that he had jumpered the board\u2019s input voltage to the motor-input voltage. His post discusses his own diagnosis of possible damage to the power-conversion stage, 7812 regulator, drivers and 3.3 V rail. These are his reported observations and hypotheses, not a verified teardown or general electrical reference.",
+          "evidence": "- The owner\u2019s forum post identifies TMC2209 motor drivers and states that he had jumpered the board\u2019s input voltage to the motor-input voltage. His post discusses his own diagnosis of possible damage to the power-conversion stage, 7812 regulator, drivers and 3.3 V rail.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route",
+          "reason": "Excluded: no separate externally addressable interface, existing control hardware, absent tooling, or inadequate positive device evidence in this dossier."
+        }
+      ],
+      "source_gap": "Dossier does not establish an as-built SmoothieBox route or a complete physical contact schedule for the listed peripherals."
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "interfaces": [
+    {
+      "source": "/home/arthur/dev/smoothieware/extension-boards/src/bouni-spindle-module-boards/attempt/versions/v01/renders/envelope/analog-populated-top.png",
+      "owned_asset": "src/docs/machine-control-pinout-survey/centered-sources/bouni-spindle-analog-v01-top.png",
+      "sha256": "8267844bd5ce060d615dac83f9d47ad941eb489ed843b737495e258cca137c7b",
+      "bytes": 69153,
+      "qualification_status": "recovered-saved-cad-diagnostic-unqualified",
+      "use": "Source top view for proposed interface drawings; no assembled electrical qualification asserted."
+    },
+    {
+      "source": "/home/arthur/dev/smoothieware/extension-boards/src/inductive-proximity-sensor-adapter/attempt/versions/v01/renders/populated-top-fit.png",
+      "owned_asset": "src/docs/machine-control-pinout-survey/centered-sources/isolated-proximity-sensor-v01-top.png",
+      "sha256": "8034ef0c89c56821c7e08a6b80d23ac88981b824eb6587b9ea26ca5c51fd32f1",
+      "bytes": 66214,
+      "qualification_status": "cad-clean-unqualified",
+      "use": "Source top view for proposed interface drawings; no assembled electrical qualification asserted."
+    }
+  ],
+  "integration_status": "staged; current machine diagrams still unchanged"
+}

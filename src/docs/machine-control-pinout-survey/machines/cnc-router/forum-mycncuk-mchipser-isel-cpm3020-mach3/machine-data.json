@@ -1,0 +1,271 @@
+{
+  "id": "forum-mycncuk-mchipser-isel-cpm3020-mach3",
+  "sources": {
+    "forum-peripheral-evidence.json": {
+      "id": "forum-mycncuk-mchipser-isel-cpm3020-mach3",
+      "dossier": "src/docs/machine-research/mycncuk-mchipser-isel-cpm3020-mach3.md",
+      "reported_fitted_or_used": [
+        {
+          "name": "Owner-reported machine DB9 cable connection",
+          "contacts": [
+            {
+              "number": "1",
+              "label": "Contact 1 \u00b7 function OPEN",
+              "source_line_number": 18,
+              "source_line": "| Machine cable connector | The owner reports that four stepper leads entered a DB9 connection and that the remaining bundled leads were limit-switch wires. | The post does not give a cavity map, connector gender/mating view, axis assignment, motor phase assignment, or limit-switch pin functions. Show all nine numbered DB9 cavities OPEN. |",
+              "fact": "form_inventory_only"
+            },
+            {
+              "number": "2",
+              "label": "Contact 2 \u00b7 function OPEN",
+              "source_line_number": 18,
+              "source_line": "| Machine cable connector | The owner reports that four stepper leads entered a DB9 connection and that the remaining bundled leads were limit-switch wires. | The post does not give a cavity map, connector gender/mating view, axis assignment, motor phase assignment, or limit-switch pin functions. Show all nine numbered DB9 cavities OPEN. |",
+              "fact": "form_inventory_only"
+            },
+            {
+              "number": "3",
+              "label": "Contact 3 \u00b7 function OPEN",
+              "source_line_number": 18,
+              "source_line": "| Machine cable connector | The owner reports that four stepper leads entered a DB9 connection and that the remaining bundled leads were limit-switch wires. | The post does not give a cavity map, connector gender/mating view, axis assignment, motor phase assignment, or limit-switch pin functions. Show all nine numbered DB9 cavities OPEN. |",
+              "fact": "form_inventory_only"
+            },
+            {
+              "number": "4",
+              "label": "Contact 4 \u00b7 function OPEN",
+              "source_line_number": 18,
+              "source_line": "| Machine cable connector | The owner reports that four stepper leads entered a DB9 connection and that the remaining bundled leads were limit-switch wires. | The post does not give a cavity map, connector gender/mating view, axis assignment, motor phase assignment, or limit-switch pin functions. Show all nine numbered DB9 cavities OPEN. |",
+              "fact": "form_inventory_only"
+            },
+            {
+              "number": "5",
+              "label": "Contact 5 \u00b7 function OPEN",
+              "source_line_number": 18,
+              "source_line": "| Machine cable connector | The owner reports that four stepper leads entered a DB9 connection and that the remaining bundled leads were limit-switch wires. | The post does not give a cavity map, connector gender/mating view, axis assignment, motor phase assignment, or limit-switch pin functions. Show all nine numbered DB9 cavities OPEN. |",
+              "fact": "form_inventory_only"
+            },
+            {
+              "number": "6",
+              "label": "Contact 6 \u00b7 function OPEN",
+              "source_line_number": 18,
+              "source_line": "| Machine cable connector | The owner reports that four stepper leads entered a DB9 connection and that the remaining bundled leads were limit-switch wires. | The post does not give a cavity map, connector gender/mating view, axis assignment, motor phase assignment, or limit-switch pin functions. Show all nine numbered DB9 cavities OPEN. |",
+              "fact": "form_inventory_only"
+            },
+            {
+              "number": "7",
+              "label": "Contact 7 \u00b7 function OPEN",
+              "source_line_number": 18,
+              "source_line": "| Machine cable connector | The owner reports that four stepper leads entered a DB9 connection and that the remaining bundled leads were limit-switch wires. | The post does not give a cavity map, connector gender/mating view, axis assignment, motor phase assignment, or limit-switch pin functions. Show all nine numbered DB9 cavities OPEN. |",
+              "fact": "form_inventory_only"
+            },
+            {
+              "number": "8",
+              "label": "Contact 8 \u00b7 function OPEN",
+              "source_line_number": 18,
+              "source_line": "| Machine cable connector | The owner reports that four stepper leads entered a DB9 connection and that the remaining bundled leads were limit-switch wires. | The post does not give a cavity map, connector gender/mating view, axis assignment, motor phase assignment, or limit-switch pin functions. Show all nine numbered DB9 cavities OPEN. |",
+              "fact": "form_inventory_only"
+            },
+            {
+              "number": "9",
+              "label": "Contact 9 \u00b7 function OPEN",
+              "source_line_number": 18,
+              "source_line": "| Machine cable connector | The owner reports that four stepper leads entered a DB9 connection and that the remaining bundled leads were limit-switch wires. | The post does not give a cavity map, connector gender/mating view, axis assignment, motor phase assignment, or limit-switch pin functions. Show all nine numbered DB9 cavities OPEN. |",
+              "fact": "form_inventory_only"
+            }
+          ],
+          "numbering": "Standard nine-position DB9 contact numbering; connector gender, mating view and installed cavity use are unverified",
+          "source_line_number": 18,
+          "source_line": "| Machine cable connector | The owner reports that four stepper leads entered a DB9 connection and that the remaining bundled leads were limit-switch wires. | The post does not give a cavity map, connector gender/mating view, axis assignment, motor phase assignment, or limit-switch pin functions. Show all nine numbered DB9 cavities OPEN. |",
+          "evidence": "Owner reports four stepper leads entering a DB9 connection and remaining bundled leads used for limit switches; no cavity functions are assigned.",
+          "wiring_status": "OPEN: all nine cavity functions unassigned; no SmoothieBox route"
+        }
+      ],
+      "listed_for_build_unverified": [
+        {
+          "name": "LETOUR 36 V 350 W supply",
+          "contacts": [],
+          "source_line_number": 15,
+          "source_line": "| New drivers and supply | Owner\u2019s parts list: three StepperOnline stepper drivers, 1.0\u20134.2 A and 20\u201350 V; a LETOUR 36 V, 350 W supply rated by the listing at 9.7 A. | No installed current/microstep DIP settings, measured supply behavior, fuses, or wiring diagram is included. |",
+          "evidence": "Owner\u2019s parts list: three StepperOnline stepper drivers, 1.0\u20134.2 A and 20\u201350 V; a LETOUR 36 V, 350 W supply rated by the listing at 9.7 A.",
+          "wiring_status": "OPEN: parts-list item only; installed supply contacts and wiring are unreported"
+        }
+      ],
+      "historical_reference": [],
+      "planned_only": [],
+      "open_function_group": [
+        {
+          "name": "Owner-stated generic stepper-driver input labels \u00b7 instance and axis unassigned",
+          "contacts": [
+            {
+              "number": "PUL+",
+              "source_id": "driver-PUL+",
+              "label": "PUL+",
+              "source_line_number": 17,
+              "source_line": "| Driver signal discussion | In June 2018 the owner says the breakout board labels were +5 V, EN, DIR, STEP; drivers used PUL+/\u2212, DIR+/\u2212, ENA+/\u2212. He proposed EN\u2192ENA, DIR\u2192DIR+, STEP\u2192PUL+ and asked where the breakout board\u2019s extra +5 V should go. | The thread\u2019s question is unresolved in the inspected excerpt; do not treat this proposed mapping as verified wiring. Polarity/common wiring and electrical compatibility remain unknown. |"
+            },
+            {
+              "number": "PUL-",
+              "source_id": "driver-PUL-",
+              "label": "PUL-",
+              "source_line_number": 17,
+              "source_line": "| Driver signal discussion | In June 2018 the owner says the breakout board labels were +5 V, EN, DIR, STEP; drivers used PUL+/\u2212, DIR+/\u2212, ENA+/\u2212. He proposed EN\u2192ENA, DIR\u2192DIR+, STEP\u2192PUL+ and asked where the breakout board\u2019s extra +5 V should go. | The thread\u2019s question is unresolved in the inspected excerpt; do not treat this proposed mapping as verified wiring. Polarity/common wiring and electrical compatibility remain unknown. |"
+            },
+            {
+              "number": "DIR+",
+              "source_id": "driver-DIR+",
+              "label": "DIR+",
+              "source_line_number": 17,
+              "source_line": "| Driver signal discussion | In June 2018 the owner says the breakout board labels were +5 V, EN, DIR, STEP; drivers used PUL+/\u2212, DIR+/\u2212, ENA+/\u2212. He proposed EN\u2192ENA, DIR\u2192DIR+, STEP\u2192PUL+ and asked where the breakout board\u2019s extra +5 V should go. | The thread\u2019s question is unresolved in the inspected excerpt; do not treat this proposed mapping as verified wiring. Polarity/common wiring and electrical compatibility remain unknown. |"
+            },
+            {
+              "number": "DIR-",
+              "source_id": "driver-DIR-",
+              "label": "DIR-",
+              "source_line_number": 17,
+              "source_line": "| Driver signal discussion | In June 2018 the owner says the breakout board labels were +5 V, EN, DIR, STEP; drivers used PUL+/\u2212, DIR+/\u2212, ENA+/\u2212. He proposed EN\u2192ENA, DIR\u2192DIR+, STEP\u2192PUL+ and asked where the breakout board\u2019s extra +5 V should go. | The thread\u2019s question is unresolved in the inspected excerpt; do not treat this proposed mapping as verified wiring. Polarity/common wiring and electrical compatibility remain unknown. |"
+            },
+            {
+              "number": "ENA+",
+              "source_id": "driver-ENA+",
+              "label": "ENA+",
+              "source_line_number": 17,
+              "source_line": "| Driver signal discussion | In June 2018 the owner says the breakout board labels were +5 V, EN, DIR, STEP; drivers used PUL+/\u2212, DIR+/\u2212, ENA+/\u2212. He proposed EN\u2192ENA, DIR\u2192DIR+, STEP\u2192PUL+ and asked where the breakout board\u2019s extra +5 V should go. | The thread\u2019s question is unresolved in the inspected excerpt; do not treat this proposed mapping as verified wiring. Polarity/common wiring and electrical compatibility remain unknown. |"
+            },
+            {
+              "number": "ENA-",
+              "source_id": "driver-ENA-",
+              "label": "ENA-",
+              "source_line_number": 17,
+              "source_line": "| Driver signal discussion | In June 2018 the owner says the breakout board labels were +5 V, EN, DIR, STEP; drivers used PUL+/\u2212, DIR+/\u2212, ENA+/\u2212. He proposed EN\u2192ENA, DIR\u2192DIR+, STEP\u2192PUL+ and asked where the breakout board\u2019s extra +5 V should go. | The thread\u2019s question is unresolved in the inspected excerpt; do not treat this proposed mapping as verified wiring. Polarity/common wiring and electrical compatibility remain unknown. |"
+            }
+          ],
+          "source_line_number": 17,
+          "source_line": "| Driver signal discussion | In June 2018 the owner says the breakout board labels were +5 V, EN, DIR, STEP; drivers used PUL+/\u2212, DIR+/\u2212, ENA+/\u2212. He proposed EN\u2192ENA, DIR\u2192DIR+, STEP\u2192PUL+ and asked where the breakout board\u2019s extra +5 V should go. | The thread\u2019s question is unresolved in the inspected excerpt; do not treat this proposed mapping as verified wiring. Polarity/common wiring and electrical compatibility remain unknown. |",
+          "evidence": "The owner names PUL+/\u2212, DIR+/\u2212 and ENA+/\u2212 driver input labels and proposes STEP\u2192PUL+ and DIR\u2192DIR+; this does not identify which of the three listed drivers serves each axis.",
+          "wiring_status": "OPEN except for dotted, mutually exclusive STEP/DIR function and axis alternatives; no fitted wiring established",
+          "candidate_contacts": [
+            "driver-PUL+",
+            "driver-DIR+"
+          ],
+          "connector_id": "isel-mchipser-driver-function-guesses",
+          "numbering": "Six owner-described terminal labels; physical terminal order and selected driver instance unverified",
+          "candidate_evidence": [
+            {
+              "contact_id": "driver-PUL+",
+              "wire_id": "isel-x-step-to-PUL+-option",
+              "reason": "The owner proposed STEP to PUL+; assigning the generic, unassigned driver input bank to X is one candidate axis option.",
+              "interface": "The selected physical driver, axis assignment, exact model, input polarity, signal return, output compatibility and installed conductor are unverified.",
+              "checks": [
+                "Identify the exact driver model and verify its input voltage, current, polarity and terminal functions",
+                "Confirm which physical driver is assigned to the selected SmoothieBox axis",
+                "Verify SmoothieBox output compatibility, return path and actual cable continuity before wiring"
+              ],
+              "exterior_terminal": "DRVX.1",
+              "alternative_set": "isel293-unassigned-unit-axis",
+              "axis_option": "X",
+              "axis_binding": "unassigned",
+              "mutually_exclusive": true
+            },
+            {
+              "contact_id": "driver-DIR+",
+              "wire_id": "isel-x-dir-to-DIR+-option",
+              "reason": "The owner proposed DIR to DIR+; assigning the generic, unassigned driver input bank to X is one candidate axis option.",
+              "interface": "The selected physical driver, axis assignment, exact model, input polarity, signal return, output compatibility and installed conductor are unverified.",
+              "checks": [
+                "Identify the exact driver model and verify its input voltage, current, polarity and terminal functions",
+                "Confirm which physical driver is assigned to the selected SmoothieBox axis",
+                "Verify SmoothieBox output compatibility, return path and actual cable continuity before wiring"
+              ],
+              "exterior_terminal": "DRVX.3",
+              "alternative_set": "isel293-unassigned-unit-axis",
+              "axis_option": "X",
+              "axis_binding": "unassigned",
+              "mutually_exclusive": true
+            },
+            {
+              "contact_id": "driver-PUL+",
+              "wire_id": "isel-y-step-to-PUL+-option",
+              "reason": "The owner proposed STEP to PUL+; assigning the generic, unassigned driver input bank to Y is one candidate axis option.",
+              "interface": "The selected physical driver, axis assignment, exact model, input polarity, signal return, output compatibility and installed conductor are unverified.",
+              "checks": [
+                "Identify the exact driver model and verify its input voltage, current, polarity and terminal functions",
+                "Confirm which physical driver is assigned to the selected SmoothieBox axis",
+                "Verify SmoothieBox output compatibility, return path and actual cable continuity before wiring"
+              ],
+              "exterior_terminal": "DRVY.1",
+              "alternative_set": "isel293-unassigned-unit-axis",
+              "axis_option": "Y",
+              "axis_binding": "unassigned",
+              "mutually_exclusive": true
+            },
+            {
+              "contact_id": "driver-DIR+",
+              "wire_id": "isel-y-dir-to-DIR+-option",
+              "reason": "The owner proposed DIR to DIR+; assigning the generic, unassigned driver input bank to Y is one candidate axis option.",
+              "interface": "The selected physical driver, axis assignment, exact model, input polarity, signal return, output compatibility and installed conductor are unverified.",
+              "checks": [
+                "Identify the exact driver model and verify its input voltage, current, polarity and terminal functions",
+                "Confirm which physical driver is assigned to the selected SmoothieBox axis",
+                "Verify SmoothieBox output compatibility, return path and actual cable continuity before wiring"
+              ],
+              "exterior_terminal": "DRVY.3",
+              "alternative_set": "isel293-unassigned-unit-axis",
+              "axis_option": "Y",
+              "axis_binding": "unassigned",
+              "mutually_exclusive": true
+            },
+            {
+              "contact_id": "driver-PUL+",
+              "wire_id": "isel-z-step-to-PUL+-option",
+              "reason": "The owner proposed STEP to PUL+; assigning the generic, unassigned driver input bank to Z is one candidate axis option.",
+              "interface": "The selected physical driver, axis assignment, exact model, input polarity, signal return, output compatibility and installed conductor are unverified.",
+              "checks": [
+                "Identify the exact driver model and verify its input voltage, current, polarity and terminal functions",
+                "Confirm which physical driver is assigned to the selected SmoothieBox axis",
+                "Verify SmoothieBox output compatibility, return path and actual cable continuity before wiring"
+              ],
+              "exterior_terminal": "DRVZ.1",
+              "alternative_set": "isel293-unassigned-unit-axis",
+              "axis_option": "Z",
+              "axis_binding": "unassigned",
+              "mutually_exclusive": true
+            },
+            {
+              "contact_id": "driver-DIR+",
+              "wire_id": "isel-z-dir-to-DIR+-option",
+              "reason": "The owner proposed DIR to DIR+; assigning the generic, unassigned driver input bank to Z is one candidate axis option.",
+              "interface": "The selected physical driver, axis assignment, exact model, input polarity, signal return, output compatibility and installed conductor are unverified.",
+              "checks": [
+                "Identify the exact driver model and verify its input voltage, current, polarity and terminal functions",
+                "Confirm which physical driver is assigned to the selected SmoothieBox axis",
+                "Verify SmoothieBox output compatibility, return path and actual cable continuity before wiring"
+              ],
+              "exterior_terminal": "DRVZ.3",
+              "alternative_set": "isel293-unassigned-unit-axis",
+              "axis_option": "Z",
+              "axis_binding": "unassigned",
+              "mutually_exclusive": true
+            }
+          ]
+        }
+      ],
+      "exclusions": [
+        {
+          "name": "SainSmart breakout board and ESS are existing control",
+          "reason": "Existing or proposed controller belongs to the replaced control system, not the machine periphery.",
+          "source_line_number": 16,
+          "source_line": "| Motion controller | Owner lists a SainSmart five-axis breakout board and an Ethernet SmoothStepper he already owned. He also references a DB25 parallel adapter cable. | The final controller wiring/topology and exact motion-controller model/revision are not fully detailed. |"
+        },
+        {
+          "name": "C2G 10338 DB25 female parallel Add-A-Port adapter",
+          "reason": "Owner lists this as former-controller host-card hardware. Manufacturer documentation identifies a motherboard/I-O ribbon adapter with a DB25 female bracket connector and 26-pin IDC end; it is not established as a machine-mounted peripheral.",
+          "source_line_number": 19,
+          "source_line": "| Controller-side DB25 adapter | The owner\u2019s parts list names a C2G DB25 female parallel Add-A-Port cable. C2G describes part 10338 as a motherboard/I/O-card ribbon adapter with a DB25 female panel connector and 26-pin IDC end. | This is a host/controller mounting adapter, not evidence of a machine-mounted DB25. Keep it in retrofit context; do not draw it as a machine peripheral or infer a SmoothieBox route through it. |",
+          "source_urls": [
+            "https://www.cablestogo.com/p/print/CG-10338.pdf"
+          ]
+        }
+      ],
+      "source_gap": "Dossier does not establish an as-built SmoothieBox route or a complete physical contact schedule for the listed peripherals."
+    }
+  }
+}

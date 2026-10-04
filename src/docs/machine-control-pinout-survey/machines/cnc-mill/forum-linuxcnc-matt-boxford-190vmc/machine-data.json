@@ -1,0 +1,25 @@
+{
+  "id": "forum-linuxcnc-matt-boxford-190vmc",
+  "sources": {
+    "forum-peripheral-evidence.json": {
+      "id": "forum-linuxcnc-matt-boxford-190vmc",
+      "dossier": "src/docs/machine-research/linuxcnc-matt-boxford-190vmc.md",
+      "reported_fitted_or_used": [],
+      "listed_for_build_unverified": [],
+      "historical_reference": [],
+      "planned_only": [],
+      "open_function_group": [
+        {
+          "name": "Operator jog and spindle switches",
+          "contacts": [],
+          "source_line_number": 11,
+          "source_line": "The owner names panel functions\u2014manual jog for each axis and spindle forward/reverse\u2014and planned Mesa card models. No physical switch contact or machine connector mapping is supplied. Moderator replies discuss software-level feasibility rather than a wiring schedule.",
+          "evidence": "The owner names panel functions\u2014manual jog for each axis and spindle forward/reverse\u2014and planned Mesa card models. No physical switch contact or machine connector mapping is supplied.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        }
+      ],
+      "exclusions": [],
+      "source_gap": "Dossier does not establish an as-built SmoothieBox route or a complete physical contact schedule for the listed peripherals."
+    }
+  }
+}

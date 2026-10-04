@@ -1,0 +1,148 @@
+{
+  "id": "base-19",
+  "sources": {
+    "machine-side-graph-snapshot.json": {
+      "source_graph": "105-base-19.json",
+      "source_sha256": "b66a1e53bface0225a0e9371810ae8d2bb4bf7120c5946f840b181beb7ffcb7c",
+      "graph": {
+        "profile_id": "base-19",
+        "devices": [
+          {
+            "id": "peripheral-01",
+            "role": "reference"
+          },
+          {
+            "id": "peripheral-02",
+            "role": "reference"
+          },
+          {
+            "id": "peripheral-03",
+            "role": "reference"
+          },
+          {
+            "id": "group-device-001",
+            "role": "peripheral"
+          }
+        ],
+        "connectors": [
+          {
+            "id": "machine-01",
+            "device": "peripheral-01",
+            "refdes": "Acorn Rev4 \u00b7 H4",
+            "form": "source-described connector",
+            "scope": "Rev 4 specification PDF pages 6\u20137; do not transfer positions to Rev 3; Source connector revision only; no installed harness, mating view, electrical compatibility or V2 route is proven; Rev4 only; do not transfer to Rev3 Original/reference connector availability unresolved; do not infer retained installation.",
+            "contacts": [
+              {
+                "id": "5",
+                "mark": "5",
+                "label": "Input 1"
+              },
+              {
+                "id": "4",
+                "mark": "4",
+                "label": "Input 2"
+              },
+              {
+                "id": "3",
+                "mark": "3",
+                "label": "Input 3"
+              },
+              {
+                "id": "2",
+                "mark": "2",
+                "label": "Input 4"
+              }
+            ]
+          },
+          {
+            "id": "machine-02",
+            "device": "peripheral-02",
+            "refdes": "Acorn Rev4 \u00b7 H1",
+            "form": "source-described connector",
+            "scope": "Rev 4 specification PDF pages 6\u20137; do not transfer positions to Rev 3; Source connector revision only; no installed harness, mating view, electrical compatibility or V2 route is proven; Rev4 only; do not transfer to Rev3 Original/reference connector availability unresolved; do not infer retained installation.",
+            "contacts": [
+              {
+                "id": "5",
+                "mark": "5",
+                "label": "Input 5"
+              },
+              {
+                "id": "4",
+                "mark": "4",
+                "label": "Input 6"
+              },
+              {
+                "id": "3",
+                "mark": "3",
+                "label": "Input 7"
+              },
+              {
+                "id": "2",
+                "mark": "2",
+                "label": "Input 8"
+              }
+            ]
+          },
+          {
+            "id": "machine-03",
+            "device": "peripheral-03",
+            "refdes": "Acorn Rev4 \u00b7 H10",
+            "form": "source-described connector",
+            "scope": "Rev 4 specification PDF pages 6\u20137; do not transfer positions to Rev 3; Source connector revision only; no installed harness, mating view, electrical compatibility or V2 route is proven; Rev4 only; do not transfer to Rev3 Original/reference connector availability unresolved; do not infer retained installation.",
+            "contacts": [
+              {
+                "id": "2",
+                "mark": "2",
+                "label": "Open-collector output 1"
+              },
+              {
+                "id": "3",
+                "mark": "3",
+                "label": "Open-collector output 2"
+              },
+              {
+                "id": "4",
+                "mark": "4",
+                "label": "Open-collector output 3"
+              },
+              {
+                "id": "5",
+                "mark": "5",
+                "label": "Open-collector output 4"
+              },
+              {
+                "id": "6",
+                "mark": "6",
+                "label": "Open-collector output 5"
+              },
+              {
+                "id": "7",
+                "mark": "7",
+                "label": "Open-collector output 6"
+              },
+              {
+                "id": "8",
+                "mark": "8",
+                "label": "Open-collector output 7"
+              },
+              {
+                "id": "9",
+                "mark": "9",
+                "label": "Open-collector output 8"
+              }
+            ]
+          },
+          {
+            "id": "machine-group-001",
+            "device": "group-device-001",
+            "refdes": "H1/H4 inputs; H2/H3 motion; H6 DB25; H8 analog; H9 power",
+            "form": "source-described cable / connector group",
+            "scope": "Source names this group, but provides no source-scoped physical contact map. Availability and exact housing are unverified. exact atlas group labels; open until contact mapping is established",
+            "contacts": []
+          }
+        ],
+        "wires": []
+      }
+    }
+  }
+}

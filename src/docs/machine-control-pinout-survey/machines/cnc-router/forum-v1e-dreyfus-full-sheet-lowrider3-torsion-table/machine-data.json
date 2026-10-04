@@ -1,0 +1,23 @@
+{
+  "id": "forum-v1e-dreyfus-full-sheet-lowrider3-torsion-table",
+  "sources": {
+    "forum-peripheral-evidence.json": {
+      "id": "forum-v1e-dreyfus-full-sheet-lowrider3-torsion-table",
+      "dossier": "src/docs/machine-research/v1e-dreyfus-full-sheet-lowrider3-torsion-table.md",
+      "reported_fitted_or_used": [],
+      "listed_for_build_unverified": [],
+      "historical_reference": [],
+      "planned_only": [],
+      "open_function_group": [],
+      "exclusions": [
+        {
+          "name": "Makita router",
+          "reason": "The selected dossier line is an absence/novelty statement, not positive device evidence.",
+          "source_line_number": 27,
+          "source_line": "The first photo shows the gantry with a Makita router over a sheet while cutting long torsion-box parts; a dust hose and skirt are visible. The image supports the reported cut-in-progress and broad machine arrangement. It does not establish any controller wiring or pin assignments."
+        }
+      ],
+      "source_gap": "Dossier does not establish an as-built SmoothieBox route or a complete physical contact schedule for the listed peripherals."
+    }
+  }
+}

@@ -1,0 +1,180 @@
+{
+  "id": "base-09",
+  "sources": {
+    "machine-side-graph-snapshot.json": {
+      "source_graph": "016-base-09.json",
+      "source_sha256": "6bd7dfa161234bacfc84c022d98b0c7cf0593644997e126705a78afe0a335049",
+      "graph": {
+        "profile_id": "base-09",
+        "devices": [
+          {
+            "id": "peripheral-01",
+            "role": "peripheral"
+          }
+        ],
+        "connectors": [
+          {
+            "id": "machine-01",
+            "device": "peripheral-01",
+            "refdes": "DB25 \u00b7 Tormach 15L",
+            "form": "DB25",
+            "scope": "Slant-PRO lathe, not mill map; numbered contact register, face unverified Machine/peripheral-side contact schedule; fitted presence unverified.",
+            "contacts": [
+              {
+                "id": "1",
+                "mark": "1",
+                "label": "Speed/enable; source reports 2.5 V DC and 0\u201310 kHz"
+              },
+              {
+                "id": "2",
+                "mark": "2",
+                "label": "X direction"
+              },
+              {
+                "id": "3",
+                "mark": "3",
+                "label": "X \u00b1 observation; not proven STEP"
+              },
+              {
+                "id": "4",
+                "mark": "4",
+                "label": "Z direction"
+              },
+              {
+                "id": "5",
+                "mark": "5",
+                "label": "Z \u00b1 observation; not proven STEP"
+              },
+              {
+                "id": "6",
+                "mark": "6",
+                "label": "Spindle direction"
+              },
+              {
+                "id": "7",
+                "mark": "7",
+                "label": "ATC turret switch"
+              },
+              {
+                "id": "8",
+                "mark": "8",
+                "label": "ATC forward"
+              },
+              {
+                "id": "9",
+                "mark": "9",
+                "label": "Collet closer"
+              },
+              {
+                "id": "10",
+                "mark": "10",
+                "label": "Z encoder label"
+              },
+              {
+                "id": "11",
+                "mark": "11",
+                "label": "A encoder label"
+              },
+              {
+                "id": "12",
+                "mark": "12",
+                "label": "B encoder label"
+              },
+              {
+                "id": "13",
+                "mark": "13",
+                "label": "Accessory input"
+              },
+              {
+                "id": "14",
+                "mark": "14",
+                "label": "Coolant; source questions voltage"
+              },
+              {
+                "id": "15",
+                "mark": "15",
+                "label": "Machine OK"
+              },
+              {
+                "id": "16",
+                "mark": "16",
+                "label": "Frequency data; source marks uncertain"
+              },
+              {
+                "id": "17",
+                "mark": "17",
+                "label": "Function not established for this scoped connector/revision"
+              },
+              {
+                "id": "18",
+                "mark": "18",
+                "label": "Function not established for this scoped connector/revision"
+              },
+              {
+                "id": "19",
+                "mark": "19",
+                "label": "Function not established for this scoped connector/revision"
+              },
+              {
+                "id": "20",
+                "mark": "20",
+                "label": "Function not established for this scoped connector/revision"
+              },
+              {
+                "id": "21",
+                "mark": "21",
+                "label": "Function not established for this scoped connector/revision"
+              },
+              {
+                "id": "22",
+                "mark": "22",
+                "label": "Function not established for this scoped connector/revision"
+              },
+              {
+                "id": "23",
+                "mark": "23",
+                "label": "Function not established for this scoped connector/revision"
+              },
+              {
+                "id": "24",
+                "mark": "24",
+                "label": "Function not established for this scoped connector/revision"
+              },
+              {
+                "id": "25",
+                "mark": "25",
+                "label": "Function not established for this scoped connector/revision"
+              }
+            ]
+          }
+        ],
+        "wires": [
+          {
+            "state": "inferred",
+            "kind": "function",
+            "a": {
+              "connector": "v2-j5",
+              "contact": "18"
+            },
+            "b": {
+              "connector": "machine-01",
+              "contact": "2"
+            }
+          },
+          {
+            "state": "inferred",
+            "kind": "function",
+            "a": {
+              "connector": "v2-j5",
+              "contact": "30"
+            },
+            "b": {
+              "connector": "machine-01",
+              "contact": "4"
+            }
+          }
+        ]
+      }
+    }
+  }
+}

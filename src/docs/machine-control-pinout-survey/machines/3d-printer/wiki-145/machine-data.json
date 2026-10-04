@@ -1,0 +1,297 @@
+{
+  "id": "wiki-145",
+  "sources": {
+    "machine-side-graph-snapshot.json": {
+      "source_graph": "145-wiki-145.json",
+      "source_sha256": "bd63350f74bd494649a6e3dd81c9dfbdb6ef3a7bc268c9e3443c7cce84bbd053",
+      "graph": {
+        "profile_id": "wiki-145",
+        "devices": [
+          {
+            "id": "foldarap-motor-x",
+            "role": "peripheral"
+          },
+          {
+            "id": "foldarap-motor-y",
+            "role": "peripheral"
+          },
+          {
+            "id": "foldarap-motors-z",
+            "role": "peripheral"
+          },
+          {
+            "id": "foldarap-motor-e",
+            "role": "peripheral"
+          },
+          {
+            "id": "foldarap-hotend",
+            "role": "peripheral"
+          },
+          {
+            "id": "foldarap-fans",
+            "role": "peripheral"
+          },
+          {
+            "id": "foldarap-sensor-x",
+            "role": "peripheral"
+          },
+          {
+            "id": "foldarap-sensor-y",
+            "role": "peripheral"
+          },
+          {
+            "id": "foldarap-fan-harness",
+            "role": "peripheral"
+          },
+          {
+            "id": "foldarap-bed",
+            "role": "peripheral"
+          },
+          {
+            "id": "foldarap-eu-power-cord",
+            "role": "peripheral"
+          },
+          {
+            "id": "foldarap-lcd",
+            "role": "peripheral"
+          },
+          {
+            "id": "foldarap-usb-cable",
+            "role": "peripheral"
+          },
+          {
+            "id": "foldarap-psu-options",
+            "role": "reference"
+          },
+          {
+            "id": "foldarap-controller-options",
+            "role": "reference"
+          },
+          {
+            "id": "foldarap-power-jack",
+            "role": "reference"
+          }
+        ],
+        "connectors": [
+          {
+            "id": "motor-x",
+            "device": "foldarap-motor-x",
+            "refdes": "X axis stepper motor \u00b7 NEMA17 22 mm \u00b7 0.8 A",
+            "form": "unknown motor terminal count and coil map; no external driver input identified",
+            "scope": "Named X-axis stepper motor in the maker Item F 4.0 BOM. Connector identity, terminal count, coil pairs, installed motor, and driver interface are not published in the reviewed sources.",
+            "contacts": []
+          },
+          {
+            "id": "motor-y",
+            "device": "foldarap-motor-y",
+            "refdes": "Y axis stepper motor \u00b7 NEMA17 40 mm \u00b7 1.20 A",
+            "form": "unknown motor terminal count and coil map; no external driver input identified",
+            "scope": "Named Y-axis stepper motor in the maker Item F 4.0 BOM. Connector identity, terminal count, coil pairs, installed motor, and driver interface are not published in the reviewed sources.",
+            "contacts": []
+          },
+          {
+            "id": "motors-z",
+            "device": "foldarap-motors-z",
+            "refdes": "Z-axis stepper motors \u00b7 quantity 2 \u00b7 NEMA17 40 mm \u00b7 1.20 A each",
+            "form": "two motors in source BOM; connector positions and coil maps unknown",
+            "scope": "The maker Item F 4.0 BOM lists two Z motor positions. Separate physical locations, connector identities, terminal count, coil pairs, and whether one or two drivers are used are not established.",
+            "contacts": []
+          },
+          {
+            "id": "motor-e",
+            "device": "foldarap-motor-e",
+            "refdes": "Extruder stepper motor \u00b7 NEMA17 40 mm \u00b7 1.20 A",
+            "form": "unknown motor terminal count and coil map; no external driver input identified",
+            "scope": "Named extruder-drive motor in the maker Item F 4.0 BOM. Motor connector, terminal count, coil pairs, installed motor, and driver interface are not published in the reviewed sources.",
+            "contacts": []
+          },
+          {
+            "id": "hotend",
+            "device": "foldarap-hotend",
+            "refdes": "E3D Lite6 hotend assembly",
+            "form": "hotend leads and contact positions unknown",
+            "scope": "The maker Item F 4.0 BOM names an E3D Lite6 hotend. Heater and thermistor terminal schedules, ratings, connector identities, and installed revision are not established by the reviewed sources.",
+            "contacts": []
+          },
+          {
+            "id": "fans",
+            "device": "foldarap-fans",
+            "refdes": "Cooling fan assemblies \u00b7 quantity 2 \u00b7 30 \u00d7 30 \u00d7 10 mm",
+            "form": "fan terminal positions and ratings unknown",
+            "scope": "The maker Item F 4.0 BOM lists two fans. Their individual function assignment, connector positions, polarity, and voltage are not established. One 2-pin fan lead is listed separately; which fan it serves is unspecified.",
+            "contacts": []
+          },
+          {
+            "id": "eu-power-cord",
+            "device": "foldarap-eu-power-cord",
+            "refdes": "EU power cord \u00b7 quantity 1 in Item F 4.0 BOM",
+            "form": "connector ends and conductor/contact schedule unknown",
+            "scope": "The maker Item F 4.0 BOM lists one EU power cord at the rear-plate assembly location. It gives no plug/inlet subtype, individual conductor termination, contact count, polarity, voltage, or connection to the listed PSU/jack. No electrical route is inferred.",
+            "contacts": []
+          },
+          {
+            "id": "lcd",
+            "device": "foldarap-lcd",
+            "refdes": "LCD screen for Minitronics \u00b7 quantity 1 in Item F 4.0 BOM",
+            "form": "display interface/cable contacts unknown",
+            "scope": "The maker Item F 4.0 BOM lists one LCD screen for Minitronics at the board assembly location. Its interface, cable, connector, positions, and controller fitment are not established. This does not prove a Minitronics board is fitted.",
+            "contacts": []
+          },
+          {
+            "id": "usb-cable",
+            "device": "foldarap-usb-cable",
+            "refdes": "USB cable \u00b7 quantity 1 in Item F 4.0 BOM",
+            "form": "USB subtype and end connectors unknown",
+            "scope": "The maker Item F 4.0 BOM lists one USB cable at the board assembly location but does not specify either connector subtype, contact view, or assignment. No USB pin count or route is inferred.",
+            "contacts": []
+          },
+          {
+            "id": "psu",
+            "device": "foldarap-psu-options",
+            "refdes": "Power-supply arrangements \u00b7 alternative configurations",
+            "form": "option context only; no connector positions published",
+            "scope": "The RepRap FoldaRap 4.0 page describes external 12 V or 24 V rear-plate PSU choices and an internal-supply option. The maker Item F 4.0 BOM assigns quantity one to an external 12 V 138 W Meanwell unit; its external 24 V 160 W Meanwell entries have no quantity. These sources do not establish a fitted supply or its terminals, polarity, or wiring.",
+            "contacts": []
+          },
+          {
+            "id": "controllers",
+            "device": "foldarap-controller-options",
+            "refdes": "Controller/firmware alternatives \u00b7 Minitronics, Melzi, Duet 2 WiFi",
+            "form": "reference configuration only; no installed board contact schedule",
+            "scope": "Separate repository firmware configurations establish design examples only. The specific controller, board revision, and firmware fitted to any machine are not identified by the evidence bundle.",
+            "contacts": []
+          },
+          {
+            "id": "sensor-x",
+            "device": "foldarap-sensor-x",
+            "refdes": "X sensor 2-pin harness",
+            "form": "2-pin Dupont sensor lead; mating-face view and physical position marks unknown",
+            "scope": "The maker Item F 4.0 BOM associates one two-pin lead with the X sensor and lists a lever microswitch for that axis. A/B are display-only labels for the two source-counted lead positions, not source markings, polarity, switch terminals, or verified order. Switch COM/NO/NC and cable endpoints remain unknown.",
+            "contacts": [
+              {
+                "id": "A",
+                "mark": "A",
+                "label": "X sensor harness contact A \u00b7 display index only; conductor function/orientation unknown"
+              },
+              {
+                "id": "B",
+                "mark": "B",
+                "label": "X sensor harness contact B \u00b7 display index only; conductor function/orientation unknown"
+              }
+            ]
+          },
+          {
+            "id": "sensor-y",
+            "device": "foldarap-sensor-y",
+            "refdes": "Y sensor 2-pin harness",
+            "form": "2-pin Dupont sensor lead; mating-face view and physical position marks unknown",
+            "scope": "The maker Item F 4.0 BOM associates one two-pin lead with the Y sensor and lists a lever microswitch for that axis. A/B are display-only labels for the two source-counted lead positions, not source markings, polarity, switch terminals, or verified order. Switch COM/NO/NC and cable endpoints remain unknown.",
+            "contacts": [
+              {
+                "id": "A",
+                "mark": "A",
+                "label": "Y sensor harness contact A \u00b7 display index only; conductor function/orientation unknown"
+              },
+              {
+                "id": "B",
+                "mark": "B",
+                "label": "Y sensor harness contact B \u00b7 display index only; conductor function/orientation unknown"
+              }
+            ]
+          },
+          {
+            "id": "fan-harness",
+            "device": "foldarap-fan-harness",
+            "refdes": "Fan 2-pin lead \u00b7 which of two fans unassigned",
+            "form": "2-pin Dupont lead; connector view and physical position marks unknown",
+            "scope": "The maker Item F 4.0 BOM lists one two-pin fan lead and two small fans, without associating that lead with a particular fan. A/B are display-only labels for the two source-counted lead positions, not source markings, polarity, or verified order.",
+            "contacts": [
+              {
+                "id": "A",
+                "mark": "A",
+                "label": "Fan-lead contact A \u00b7 display index only; polarity/function unknown"
+              },
+              {
+                "id": "B",
+                "mark": "B",
+                "label": "Fan-lead contact B \u00b7 display index only; polarity/function unknown"
+              }
+            ]
+          },
+          {
+            "id": "bed-molex",
+            "device": "foldarap-bed",
+            "refdes": "Bed assembly \u00b7 listed Molex 2-pin termination",
+            "form": "Two-position Molex termination; housing, mating view, and position marks unknown",
+            "scope": "The maker Item F 4.0 BOM lists a 100 \u00d7 100 mm 90 W bed film with 100 k\u03a9 probe and a Molex 2-pin termination, but does not identify whether this connector serves the heater or probe, nor the role/order of its two positions. A/B are display-only labels, not source marks.",
+            "contacts": [
+              {
+                "id": "A",
+                "mark": "A",
+                "label": "Molex position A \u00b7 display index only; heater/probe function unknown"
+              },
+              {
+                "id": "B",
+                "mark": "B",
+                "label": "Molex position B \u00b7 display index only; heater/probe function unknown"
+              }
+            ]
+          },
+          {
+            "id": "power-jack",
+            "device": "foldarap-power-jack",
+            "refdes": "Rear-plate power jack \u00b7 Kycon KPJX-PM-4S; shielded -S variant also listed",
+            "form": "Four numbered socket contacts; the separately listed shielded -S variant has two additional shield/ground tabs. Installed variant and mating view unknown.",
+            "scope": "The maker F4.0 BOM lists one KPJX-PM-4S panel jack under the rear plate and also lists a shielded KPJX-PM-4S-S variant without a quantity. Kycon documents four numbered contacts; its shielded drawing shows two shield/ground tabs. The FoldaRap BOM assigns no function, supply polarity, electrical connection, harness, or fitted jack variant. All positions here are source-reference positions only and OPEN.",
+            "contacts": [
+              {
+                "id": "1",
+                "mark": "1",
+                "label": "Kycon numbered jack contact 1 \u00b7 FoldaRap circuit function OPEN"
+              },
+              {
+                "id": "2",
+                "mark": "2",
+                "label": "Kycon numbered jack contact 2 \u00b7 FoldaRap circuit function OPEN"
+              },
+              {
+                "id": "3",
+                "mark": "3",
+                "label": "Kycon numbered jack contact 3 \u00b7 FoldaRap circuit function OPEN"
+              },
+              {
+                "id": "4",
+                "mark": "4",
+                "label": "Kycon numbered jack contact 4 \u00b7 FoldaRap circuit function OPEN"
+              },
+              {
+                "id": "shield-tab-a",
+                "mark": "Tab A",
+                "label": "Shielded -S option tab A \u00b7 manufacturer ground/shield tab; FoldaRap connection OPEN"
+              },
+              {
+                "id": "shield-tab-b",
+                "mark": "Tab B",
+                "label": "Shielded -S option tab B \u00b7 manufacturer ground/shield tab; FoldaRap connection OPEN"
+              }
+            ]
+          }
+        ],
+        "wires": [],
+        "evidence": {
+          "primary": "FoldaRap 4.0 maker repository BOM and version-specific RepRap FoldaRap entry",
+          "urls": [
+            "https://reprap.org/wiki/FoldaRap",
+            "https://github.com/EmmanuelG/Foldarap",
+            "https://github.com/EmmanuelG/Foldarap/blob/master/Bill%20Of%20Materials.ods",
+            "https://github.com/EmmanuelG/Foldarap/blob/master/firmware/Marlin-10sep2018_FR4_Minitronics_RRW-LCD/Configuration.h",
+            "https://github.com/EmmanuelG/Foldarap/blob/master/firmware/Marlin-25jan2018_FR4_Melzi/Configuration.h",
+            "https://github.com/EmmanuelG/Foldarap/blob/master/firmware/Duet2_Wifi/config.g",
+            "https://www.kycon.com/Pub_Eng_Draw/KPJX-PM-4S-S.pdf"
+          ],
+          "scope_note": "This profile graph was newly normalized from the source-scoped dossier because the graph file cited by the inherited snapshot was missing. The maker BOM is a design inventory, not proof of the specific unit\u2019s installed controller, power configuration, connector faces, switch pole selection, conductor order, motor coils, or electrical compatibility. A/B labels on source-counted two-pin groups are display indexes only. Firmware sources are alternate configuration examples; do not combine them into a fitted board pinout. The BOM lists a KPJX-PM-4S jack and a shielded -S alternative; Kycon contact positions are shown as reference only with all FoldaRap functions and routes OPEN. No source-verified FoldaRap 4.0 DB25 peripheral or SmoothieBox route is established here."
+        }
+      }
+    }
+  }
+}

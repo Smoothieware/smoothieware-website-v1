@@ -1,0 +1,65 @@
+{
+  "id": "wiki-120",
+  "sources": {
+    "machine-side-graph-snapshot.json": {
+      "source_graph": "120-wiki-120.json",
+      "source_sha256": "69d869005edae3113e1b4e29a5bd97ce138211017346e86f733c9b256c950b23",
+      "graph": {
+        "profile_id": "wiki-120",
+        "devices": [
+          {
+            "id": "group-device-001",
+            "role": "reference"
+          },
+          {
+            "id": "group-device-002",
+            "role": "reference"
+          },
+          {
+            "id": "group-device-003",
+            "role": "reference"
+          },
+          {
+            "id": "group-device-004",
+            "role": "reference"
+          }
+        ],
+        "connectors": [
+          {
+            "id": "machine-group-001",
+            "device": "group-device-001",
+            "refdes": "Factory 15-pin cable A",
+            "form": "source-described cable / connector group; 15-contact factory cable; contact functions unknown",
+            "scope": "Source names this group, but provides no source-scoped physical contact map. Availability and exact housing are unverified. Source-documented cable or connector groups only; endpoints are functional labels, not numbered contacts. Installed machine revision and electrical contract remain unverified. Bristol Hackspace replaced its controller, so factory cable groups are historical references, not claims about the modified installation. Independent supplemental source: One of two distinct noninterchangeable controller-to-mechanics cables. Factory MTC/ATC reference only; Bristol machine has a replacement controller and its fitted harness is unverified. Cable 1 cannot be merged with its mate.",
+            "contacts": []
+          },
+          {
+            "id": "machine-group-002",
+            "device": "group-device-002",
+            "refdes": "Factory 15-pin cable B",
+            "form": "source-described cable / connector group; 15-contact factory cable; contact functions unknown",
+            "scope": "Source names this group, but provides no source-scoped physical contact map. Availability and exact housing are unverified. Source-documented cable or connector groups only; endpoints are functional labels, not numbered contacts. Installed machine revision and electrical contract remain unverified. Bristol Hackspace replaced its controller, so factory cable groups are historical references, not claims about the modified installation. Independent supplemental source: One of two distinct noninterchangeable controller-to-mechanics cables. Factory MTC/ATC reference only; Bristol machine has a replacement controller and its fitted harness is unverified. Cable 2 cannot be merged with its mate.",
+            "contacts": []
+          },
+          {
+            "id": "machine-group-003",
+            "device": "group-device-003",
+            "refdes": "Factory spindle cable",
+            "form": "source-described cable / connector group; spindle cable; contacts unknown",
+            "scope": "Source names this group, but provides no source-scoped physical contact map. Availability and exact housing are unverified. Source-documented cable or connector groups only; endpoints are functional labels, not numbered contacts. Installed machine revision and electrical contract remain unverified. Bristol Hackspace replaced its controller, so factory cable groups are historical references, not claims about the modified installation. Independent supplemental source: Separate spindle cable described beside the two mechanics cables; factory reference, current Bristol machine harness unverified.",
+            "contacts": []
+          },
+          {
+            "id": "machine-group-004",
+            "device": "group-device-004",
+            "refdes": "Factory controller USB cable",
+            "form": "source-described cable / connector group; USB host link; contacts unknown",
+            "scope": "Source names this group, but provides no source-scoped physical contact map. Availability and exact housing are unverified. Source-documented cable or connector groups only; endpoints are functional labels, not numbered contacts. Installed machine revision and electrical contract remain unverified. Bristol Hackspace replaced its controller, so factory cable groups are historical references, not claims about the modified installation. Independent supplemental source: Factory controller-to-PC link. Replacement controller identity and current Bristol link are unverified.",
+            "contacts": []
+          }
+        ],
+        "wires": []
+      }
+    }
+  }
+}

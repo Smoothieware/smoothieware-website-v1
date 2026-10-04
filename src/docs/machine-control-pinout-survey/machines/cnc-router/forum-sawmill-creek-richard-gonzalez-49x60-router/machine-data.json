@@ -1,0 +1,34 @@
+{
+  "id": "forum-sawmill-creek-richard-gonzalez-49x60-router",
+  "sources": {
+    "forum-peripheral-evidence.json": {
+      "id": "forum-sawmill-creek-richard-gonzalez-49x60-router",
+      "dossier": "src/docs/machine-research/sawmill-creek-richard-gonzalez-49x60-router.md",
+      "reported_fitted_or_used": [
+        {
+          "name": "2.2 kW water-cooled spindle",
+          "contacts": [],
+          "source_line_number": 11,
+          "source_line": "The machine uses a 2.2 kW water-cooled spindle and Mach4 on a dedicated computer. Gonzalez reports 600 in/min rapids and says he cuts at over 200 in/min for long work sessions. Those speeds and the \u201call day\u201d operating description are owner-reported; the thread does not provide instrumented accuracy, repeatability, or duty-cycle measurements.",
+          "evidence": "The machine uses a 2.2 kW water-cooled spindle and Mach4 on a dedicated computer. Gonzalez reports 600 in/min rapids and says he cuts at over 200 in/min for long work sessions.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        }
+      ],
+      "listed_for_build_unverified": [],
+      "historical_reference": [],
+      "planned_only": [],
+      "open_function_group": [
+        {
+          "name": "Spindle VFD unspecified",
+          "contacts": [],
+          "source_line_number": 13,
+          "source_line": "The forum posts do not identify the motion controller, motor or driver models, power supplies, axis transmission, spindle VFD model, toolholding, or the machine's full mechanical drawings. Do not infer these from the design family or photographs.",
+          "evidence": "The forum posts do not identify the motion controller, motor or driver models, power supplies, axis transmission, spindle VFD model, toolholding, or the machine's full mechanical drawings. Do not infer these from the design family or photographs.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        }
+      ],
+      "exclusions": [],
+      "source_gap": "Dossier does not establish an as-built SmoothieBox route or a complete physical contact schedule for the listed peripherals."
+    }
+  }
+}

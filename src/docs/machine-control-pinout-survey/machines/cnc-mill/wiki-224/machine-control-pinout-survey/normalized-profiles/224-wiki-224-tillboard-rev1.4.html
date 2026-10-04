@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1" name="viewport"/><title>VolksFraese VF1 · Tillboard Rev 1.4 source contacts</title><style>body{font:16px/1.5 system-ui,sans-serif;margin:0;background:#101a20;color:#e9f0f2}main{max-width:1100px;margin:auto;padding:24px}a{color:#69d4e6}table{border-collapse:collapse;width:100%;margin:1rem 0}th,td{padding:.55rem;border:1px solid #62747b;text-align:left;vertical-align:top}th{background:#20343e}details{border:1px solid #586b72;margin:1rem 0;padding:.6rem}summary{cursor:pointer;font-weight:700}.notice{border-left:4px solid #e8bb62;padding:12px;background:#20272a}.open{font-weight:700;color:#e7c975}.service{color:#a9d9a3}.tablewrap{overflow:auto}</style><style id="atlas-viewer-style">.atlas-zoom-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+
+.atlas-zoom-controls label {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.atlas-zoom-controls input[type="range"] {
+  width: min(18vw, 12rem);
+  min-width: 7rem;
+}
+
+.atlas-zoom-controls output {
+  min-width: 3.5rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.atlas-minimap {
+  position: relative;
+  width: 10rem;
+  height: 6rem;
+  overflow: hidden;
+  border: 1px solid #b8cbd0;
+  background: #0b1f26;
+  touch-action: none;
+}
+
+.atlas-minimap > img {
+  position: absolute;
+  max-width: none;
+  object-fit: fill;
+  opacity: 0.78;
+  user-select: none;
+  pointer-events: none;
+}
+
+.atlas-minimap-window {
+  position: absolute;
+  box-sizing: border-box;
+  min-width: 8px;
+  min-height: 8px;
+  padding: 0;
+  border: 2px solid #ffd37f;
+  background: #ffd37f30;
+  cursor: move;
+  touch-action: none;
+}
+
+.atlas-viewer-toolbar .atlas-zoom-controls .atlas-minimap-window,
+.machine-image-toolbar .atlas-zoom-controls .atlas-minimap-window {
+  padding: 0;
+  border: 2px solid #ffd37f;
+  background: #ffd37f30;
+  cursor: move;
+}
+
+.atlas-minimap-window:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+
+#dialog-image,
+#machine-image-full {
+  position: absolute;
+  top: 0;
+  left: 0;
+  max-width: none;
+  max-height: none;
+  object-fit: fill;
+  transform-origin: top left;
+  will-change: transform;
+  user-select: none;
+  cursor: grab;
+}
+
+#dialog-stage,
+#machine-image-viewport {
+  position: relative;
+  overflow: hidden;
+  touch-action: none;
+}
+
+.atlas-viewer-toolbar,
+.machine-image-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.atlas-viewer-toolbar .atlas-zoom-controls button {
+  padding: 0.35rem 0.65rem;
+  border: 1px solid #83a1a5;
+  border-radius: 0.3rem;
+  color: #fff;
+  background: #193d48;
+  cursor: pointer;
+  font: inherit;
+}
+
+.machine-image-toolbar .atlas-zoom-controls button {
+  padding: 0.35rem 0.65rem;
+  border: 1px solid var(--rule, #73858a);
+  border-radius: 0.3rem;
+  color: var(--ink, #eef5f3);
+  background: var(--panel, #193d48);
+  cursor: pointer;
+  font: inherit;
+}
+
+.machine-image-toolbar > button {
+  padding: 0.35rem 0.65rem;
+  border: 1px solid var(--rule, #73858a);
+  border-radius: 0.3rem;
+  color: var(--ink, #eef5f3);
+  background: var(--panel, #193d48);
+  cursor: pointer;
+  font: inherit;
+}
+
+.atlas-zoom-controls button:focus-visible,
+.atlas-zoom-controls input:focus-visible {
+  outline: 3px solid #ffd37f;
+  outline-offset: 2px;
+}
+
+.atlas-viewer-toolbar .atlas-zoom-controls input[type="range"] {
+  accent-color: #ffd37f;
+}
+
+.machine-image-toolbar .atlas-zoom-controls input[type="range"] {
+  accent-color: #007d88;
+}
+
+.machine-image-toolbar #machine-image-fit {
+  order: 0;
+}
+
+.machine-image-toolbar .atlas-zoom-controls {
+  order: 1;
+}
+
+.machine-image-toolbar span {
+  order: 2;
+  flex: 1 1 10rem;
+}
+
+.machine-image-toolbar {
+  z-index: 2;
+}
+
+.machine-image-toolbar #machine-image-close {
+  position: static;
+  order: 3;
+  margin-left: auto;
+}
+
+.atlas-viewer-hint {
+  flex: 1 1 12rem;
+}
+
+@media (max-width: 650px) {
+  .atlas-minimap {
+    width: 7rem;
+    height: 4.2rem;
+  }
+
+  .atlas-zoom-controls input[type="range"] {
+    width: 22vw;
+    min-width: 5rem;
+  }
+}
+
+#figure-dialog #dialog-image,#machine-image-dialog #machine-image-full{position:absolute;inset:0 auto auto 0;display:block;max-width:none;max-height:none;margin:0;object-fit:fill;transform-origin:top left}
+#figure-dialog #dialog-stage,#machine-image-dialog #machine-image-viewport{position:relative;flex:1;min-height:0;height:0;width:100%;overflow:hidden;touch-action:none}
+#machine-image-dialog{position:fixed;inset:0;width:100vw;height:100dvh;max-width:none;max-height:none;margin:0;padding:0;border:0;overflow:hidden;background:var(--paper, #0b1f26);color:var(--ink, #eef5f3)}
+#machine-image-dialog[open]{display:flex;flex-direction:column}
+#machine-image-dialog .machine-image-toolbar{position:relative;inset:auto;flex:none;padding:.55rem .8rem;background:var(--paper, #0b1f26);color:var(--ink, #eef5f3)}
+#machine-image-dialog #machine-image-close{position:static;inset:auto}
+#figure-dialog .atlas-viewer-toolbar,#machine-image-dialog .machine-image-toolbar{flex-shrink:0}
+#figure-dialog .atlas-viewer-toolbar .atlas-zoom-controls .atlas-minimap-window,#machine-image-dialog .machine-image-toolbar .atlas-zoom-controls .atlas-minimap-window{padding:0;border:2px solid #ffd37f;background:#ffd37f30;cursor:move;border-radius:0;min-width:0;min-height:0}
+#machine-image-dialog::backdrop{background:rgb(0 0 0 / 85%)}
+@media print{#machine-image-dialog{display:none!important}}
+</style></head><body><main>
+<h1>VolksFraese VF1 · Tillboard Rev 1.4 source contact schedule</h1>
+<p class="notice"><strong>Reference-only schedule.</strong> This is the author schematic contact schedule for the MPCNC Nano Estlcam Shield Rev 1.4, not evidence that this board is installed in the local VF1. Sorotec lists the controller, motors, reference sensors/cables and spindle among items excluded from its VF1 kit. Every listed Tillboard contact is OPEN to SmoothieBox. Dotted = GUESS in the legend; no routes are guessed here. J2:3 alone has an explicit source NoConn mark.</p>
+<p>29 separate J connectors · 94 numbered positions. J3 and J15 contribute 12 board service-header positions; the other 82 are reference connector positions. Schematic pin order is not a mating-face view. No DB25 appears in the cited board schematic.</p>
+<p><a href="224-wiki-224-tillboard-rev1.4/machine-control-pinout-survey/smoothiebox-machine-wiring/wiki-224.svg">Open the full-size two-sided drawing</a></p>
+<h2>Complete connector and pin inventory</h2>
+<div class="tablewrap"><table><thead><tr><th>Board connector</th><th>Contact</th><th>Source net / function label</th><th>Route status</th><th>Evidence notes</th></tr></thead><tbody>
+<tr class=""><td>Tillboard Rev 1.4 reference · J1 · VDC supply · J1 · 2-pin screw terminal</td><td>J1:1</td><td>DC supply input (source net VDC)</td><td class="open">OPEN</td><td>Author schematic Rev 1.4 J1:1; number checked against cached connector symbol. Board reference only; local fitment and mating view unknown.</td></tr>
+<tr class=""><td>Tillboard Rev 1.4 reference · J1 · VDC supply · J1 · 2-pin screw terminal</td><td>J1:2</td><td>Ground (source net GND)</td><td class="open">OPEN</td><td>Author schematic Rev 1.4 J1:2; number checked against cached connector symbol. Board reference only; local fitment and mating view unknown.</td></tr>
+<tr class=""><td>Tillboard Rev 1.4 reference · J2 · 12V fan/power header · J2 · 3-pin</td><td>J2:1</td><td>Ground (source net GND)</td><td class="open">OPEN</td><td>Author schematic Rev 1.4 J2:1; number checked against cached connector symbol. Board reference only; local fitment and mating view unknown.</td></tr>
+<tr class=""><td>Tillboard Rev 1.4 reference · J2 · 12V fan/power header · J2 · 3-pin</td><td>J2:2</td><td>Source net +12V</td><td class="open">OPEN</td><td>Author schematic Rev 1.4 J2:2; number checked against cached connector symbol. Board reference only; local fitment and mating view unknown.</td></tr>
+<tr class=""><td>Tillboard Rev 1.4 reference · J2 · 12V fan/power header · J2 · 3-pin</td><td>J2:3</td><td>Explicit schematic no-connect (NC)</td><td class="open">OPEN</td><td>Author schematic Rev 1.4 J2:3; number checked against cached connector symbol. Board reference only; local fitment and mating view unknown. Explicit NoConn.</td></tr>
+<tr class="service"><td>Board service header · J3 · Serial / reset service header · J3 · 6-pin</td><td>J3:1</td><td>Serial transmit (source net TX)</td><td class="open">OPEN</td><td>Author schematic Rev 1.4 J3:1; number checked against cached connector symbol. Board reference only; local fitment and mating view unknown.</td></tr>
+<tr class="service"><td>Board service header · J3 · Serial / reset service header · J3 · 6-pin</td><td>J3:2</td><td>Serial receive (source net RX)</td><td class="open">OPEN</td><td>Author schematic Rev 1.4 J3:2; number checked against cached connector symbol. Board reference only; local fitment and mating view unknown.</td></tr>
+<tr class="service"><td>Board service header · J3 · Serial / reset service header · J3 · 6-pin</td><td>J3:3</td><td>Ground (source net GND)</td><td class="open">OPEN</td><td>Author schematic Rev 1.4 J3:3; number checked against cached connector symbol. Board reference only; local fitment and mating view unknown.</td></tr>
+<tr class="service"><td>Board service header · J3 · Serial / reset service header · J3 · 6-pin</td><td>J3:4</td><td>5 V supply (source net +5V)</td><td class="open">OPEN</td><td>Author schematic Rev 1.4 J3:4; number checked against cached connector symbol. Board reference only; local fitment and mating view unknown.</td></tr>
+<tr class="service"><td>Board service header · J3 · Serial / reset service header · J3 · 6-pin</td><td>J3:5</td><td>Reset (source net RESET)</td><td class="open">OPEN</td><td>Author schematic Rev 1.4 J3:5; number checked against cached connector symbol. Board reference only; local fitment and mating view unknown.</td></tr>
+<tr class="service"><td>Board service header · J3 · Serial / reset service header · J3 · 6-pin</td><td>J3:6</td><td>Ground (source net GND)</td><td class="open">OPEN</td><td>Author schematic Rev 1.4 J3:6; number checked against cached connector symbol. Board reference only; local fitment and mating view unknown.</td></tr>
+<tr class=""><td>Tillboard Rev 1.4 reference · J4 · Mot_Driver_X · J4 · 3-pin screw terminal</td><td>J4:1</td><td>Ground (source net GND)</td><td class="open">OPEN</td><td>Author schematic Rev 1.4 J4:1; number checked against cached connector symbol. Board reference only; local fitment and mating view unknown. Existing board driver output; no compatible SmoothieBox input established.</td></tr>
+<tr class=""><td>Tillboard Rev 1.4 reference · J4 · Mot_Driver_X · J4 · 3-pin screw terminal</td><td>J4:2</td><td>X axis step output (source net X_STEP)</td><td class="open">OPEN</td><td>Author schematic Rev 1.4 J4:2; number checked against cached connector symbol. Board reference only; local fitment and mating view unknown. Existing board driver output; no compatible SmoothieBox input established.</td></tr>
+<tr class=""><td>Tillboard Rev 1.4 reference · J4 · Mot_Driver_X · J4 · 3-pin screw terminal</td><td>J4:3</td><td>X axis direction output (source net X_DIR)</td><td class="open">OPEN</td><td>Author schematic Rev 1.4 J4:3; number checked against cached connector symbol. Board reference only; local fitment and mating view unknown. Existing board driver output; no compatible SmoothieBox input established.</td></tr>
+<tr class=""><td>Tillboard Rev 1.4 reference · J5 · Mot_Driver_Y · J5 · 3-pin screw terminal</td><td>J5:1</td><td>Ground (source net GND)</td><td class="open">OPEN</td><td>Author schematic Rev 1.4 J5:1; number checked against cached connector symbol. Board reference only; local fitment and mating view unknown. Existing board driver output; no compatible SmoothieBox input established.</td></tr>
+<tr class=""><td>Tillboard Rev 1.4 reference · J5 · Mot_Driver_Y · J5 · 3-pin screw terminal</td><td>J5:2</td><td>Y axis step output (source net Y_STEP)</td><td class="open">OPEN</td><td>Author schematic Rev 1.4 J5:2; number checked against cached connector symbol. Board reference only; local fitment and mating view unknown. Existing board driver output; no compatible SmoothieBox input established.</td></tr>
+<tr class=""><td>Tillboard Rev 1.4 reference · J5 · Mot_Driver_Y · J5 · 3-pin screw terminal</td><td>J5:3</td><td>Y axis direction output (source net Y_DIR)</td><td class="open">OPEN</td><td>Author schematic Rev 1.4 J5:3; number checked against cached connector symbol. Board reference only; local fitment and mating view unknown. Existing board driver output; no compatible SmoothieBox input established.</td></tr>
+<tr class=""><td>Tillboard Rev 1.4 reference · J6 · Mot_Driver_Z · J6 · 3-pin screw terminal</td><td>J6:1</td><td>Ground (source net GND)</td><td class="open">OPEN</td><td>Author schematic Rev 1.4 J6:1; number checked against cached connector symbol. Board reference only; local fitment and mating view unknown. Existing board driver output; no compatible SmoothieBox input established.</td></tr>
+<tr class=""><td>Tillboard Rev 1.4 reference · J6 · Mot_Driver_Z · J6 · 3-pin screw terminal</td><td>J6:2</td><td>Z axis step output (source net Z_STEP)</td><td class="open">OPEN</td><td>Author schematic Rev 1.4 J6:2; number checked against cached connector symbol. Board reference only; local fitment and mating view unknown. Existing board driver output; no compatible SmoothieBox input established.</td></tr>
+<tr class=""><td>Tillboard Rev 1.4 reference · J6 · Mot_Driver_Z · J6 · 3-pin screw terminal</td><td>J6:3</td><td>Z axis direction output (source net Z_DIR)</td><td class="open">OPEN</td><td>Author schematic Rev 1.4 J6:3; number checked against cached connector symbol. Board reference only; local fitment and mating view unknown. Existing board driver output; no compatible SmoothieBox input established.</td></tr>
+<tr class=""><td>Tillboard Rev 1.4 reference · J7 · Stepper1_X · J7 · 4-pin driver socket</td><td>J7:1</td><td>Motor-side source net A2X1</td><td class="open">OPEN</td><td>Author schematic Rev 1.4 J7:1; number checked against cached connector symbol. Board reference only; local fitment and mating view unknown.</td></tr>
+<tr class=""><td>Tillboard Rev 1.4 reference · J7 · Stepper1_X · J7 · 4-pin driver socket</td><td>J7:2</td><td>Motor-side source net A1X1</td><td class="open">OPEN</td><td>Author schematic Rev 1.4 J7:2; number checked against cached connector symbol. Board reference only; local fitment and mating view unknown.</td></tr>
+<tr class=""><td>Tillboard Rev 1.4 reference · J7 · Stepper1_X · J7 · 4-pin driver socket</td><td>J7:3</td><td>Motor-side source net B1X1</td><td class="open">OPEN</td><td>Author schematic Rev 1.4 J7:3; number checked against cached connector symbol. Board reference only; local fitment and mating view unknown.</td></tr>
+<tr class=""><td>Tillboard Rev 1.4 reference · J7 · Stepper1_X · J7 · 4-pin driver socket</td><td>J7:4</td><td>Motor-side source net B2X1</td><td class="open">OPEN</td><td>Author schematic Rev 1.4 J7:4; number checked against cached connector symbol. Board reference only; local fitment and mating view unknown.</td></tr>
+<tr class=""><td>Tillboard Rev 1.4 reference · J8 · Stepper2_X · J8 · 4-pin driver socket</td><td>J8:1</td><td>Motor-side source net B2X2</td><td class="open">OPEN</td><td>Author schematic Rev 1.4 J8:1; number checked against cached connector symbol. Board reference only; local fitment and mating view unknown. Exact source series-motor net order retained.</td></tr>
+<tr class=""><td>Tillboard Rev 1.4 reference · J8 · Stepper2_X · J8 · 4-pin driver socket</td><td>J8:2</td><td>Motor-side source net B2X1</td><td class="open">OPEN</td><td>Author schematic Rev 1.4 J8:2; number checked against cached connector symbol. Board reference only; local fitment and mating view unknown. Exact source series-motor net order retained.</td></tr>
+<tr class=""><td>Tillboard Rev 1.4 reference · J8 · Stepper2_X · J8 · 4-pin driver socket</td><td>J8:3</td><td>Motor-side source net A1X2</td><td class="open">OPEN</td><td>Author schematic Rev 1.4 J8:3; number checked against cached connector symbol. Board reference only; local fitment and mating view unknown. Exact source series-motor net order retained.</td></tr>
+<tr class=""><td>Tillboard Rev 1.4 reference · J8 · Stepper2_X · J8 · 4-pin driver socket</td><td>J8:4</td><td>Motor-side source net A1X1</td><td class="open">OPEN</td><td>Author schematic Rev 1.4 J8:4; number checked against cached connector symbol. Board reference only; local fitment and mating view unknown. Exact source series-motor net order retained.</td></tr>
+<tr class=""><td>Tillboard Rev 1.4 reference · J9 · Stepper1_Y · J9 · 4-pin driver socket</td><td>J9:1</td><td>Motor-side source net A2Y1</td><td class="open">OPEN</td><td>Author schematic Rev 1.4 J9:1; number checked against cached connector symbol. Board reference only; local fitment and mating view unknown.</td></tr>
+<tr class=""><td>Tillboard Rev 1.4 reference · J9 · Stepper1_Y · J9 · 4-pin driver socket</td><td>J9:2</td><td>Motor-side source net A1Y1</td><td class="open">OPEN</td><td>Author schematic Rev 1.4 J9:2; number checked against cached connector symbol. Board reference only; local fitment and mating view unknown.</td></tr>
+<tr class=""><td>Tillboard Rev 1.4 reference · J9 · Stepper1_Y · J9 · 4-pin driver socket</td><td>J9:3</td><td>Motor-side source net B1Y1</td><td class="open">OPEN</td><td>Author schematic Rev 1.4 J9:3; number checked against cached connector symbol. Board reference only; local fitment and mating view unknown.</td></tr>
+<tr class=""><td>Tillboard Rev 1.4 reference · J9 · Stepper1_Y · J9 · 4-pin driver socket</td><td>J9:4</td><td>Motor-side source net B2Y1</td><td class="open">OPEN</td><td>Author schematic Rev 1.4 J9:4; number checked against cached connector symbol. Board reference only; local fitment and mating view unknown.</td></tr>
+<tr class=""><td>Tillboard Rev 1.4 reference · J10 · Stepper2_X function field; Y-family nets · J10 · 4-pin driver socket</td><td>J10:1</td><td>Motor-side source net B2Y2</td><td class="open">OPEN</td><td>Author schematic Rev 1.4 J10:1; number checked against cached connector symbol. Board reference only; local fitment and mating view unknown. Function-field X / nets Y discrepancy is source-authored. Exact source series-motor net order retained.</td></tr>
+<tr class=""><td>Tillboard Rev 1.4 reference · J10 · Stepper2_X function field; Y-family nets · J10 · 4-pin driver socket</td><td>J10:2</td><td>Motor-side source net B2Y1</td><td class="open">OPEN</td><td>Author schematic Rev 1.4 J10:2; number checked against cached connector symbol. Board reference only; local fitment and mating view unknown. Function-field X / nets Y discrepancy is source-authored. Exact source series-motor net order retained.</td></tr>
+<tr class=""><td>Tillboard Rev 1.4 reference · J10 · Stepper2_X function field; Y-family nets · J10 · 4-pin driver socket</td><td>J10:3</td><td>Motor-side source net A1Y2</td><td class="open">OPEN</td><td>Author schematic Rev 1.4 J10:3; number checked against cached connector symbol. Board reference only; local fitment and mating view unknown. Function-field X / nets Y discrepancy is source-authored. Exact source series-motor net order retained.</td></tr>
+<tr class=""><td>Tillboard Rev 1.4 reference · J10 · Stepper2_X function field; Y-family nets · J10 · 4-pin driver socket</td><td>J10:4</td><td>Motor-side source net A1Y1</td><td class="open">OPEN</td><td>Author schematic Rev 1.4 J10:4; number checked against cached connector symbol. Board reference only; local fitment and mating view unknown. Function-field X / nets Y discrepancy is source-authored. Exact source series-motor net order retained.</td></tr>
+<tr class=""><td>Tillboard Rev 1.4 reference · J11 · Stepper_Z · J11 · 4-pin driver socket</td><td>J11:1</td><td>Motor-side source net A2Z</td><td class="open">OPEN</td><td>Author schematic Rev 1.4 J11:1; number checked against cached connector symbol. Board reference only; local fitment and mating view unknown.</td></tr>
+<tr class=""><td>Tillboard Rev 1.4 reference · J11 · Stepper_Z · J11 · 4-pin driver socket</td><td>J11:2</td><td>Motor-side source net A1Z</td><td class="open">OPEN</td><td>Author schematic Rev 1.4 J11:2; number checked against cached connector symbol. Board reference only; local fitment and mating view unknown.</td></tr>
+<tr class=""><td>Tillboard Rev 1.4 reference · J11 · Stepper_Z · J11 · 4-pin driver socket</td><td>J11:3</td><td>Motor-side source net B1Z</td><td class="open">OPEN</td><td>Author schematic Rev 1.4 J11:3; number checked against cached connector symbol. Board reference only; local fitment and mating view unknown.</td></tr>
+<tr class=""><td>Tillboard Rev 1.4 reference · J11 · Stepper_Z · J11 · 4-pin driver socket</td><td>J11:4</td><td>Motor-side source net B2Z</td><td class="open">OPEN</td><td>Author schematic Rev 1.4 J11:4; number checked against cached connector symbol. Board reference only; local fitment and mating view unknown.</td></tr>
+<tr class=""><td>Tillboard Rev 1.4 reference · J12 · OUT1 · J12 · 3-pin screw terminal</td><td>J12:1</td><td>Common COM (configuration-dependent source net)</td><td class="open">OPEN</td><td>Author schematic Rev 1.4 J12:1; number checked against cached connector symbol. Board reference only; local fitment and mating view unknown.</td></tr>
+<tr class=""><td>Tillboard Rev 1.4 reference · J12 · OUT1 · J12 · 3-pin screw terminal</td><td>J12:2</td><td>Board output OUT1</td><td class="open">OPEN</td><td>Author schematic Rev 1.4 J12:2; number checked against cached connector symbol. Board reference only; local fitment and mating view unknown.</td></tr>
+<tr class=""><td>Tillboard Rev 1.4 reference · J12 · OUT1 · J12 · 3-pin screw terminal</td><td>J12:3</td><td>Ground (source net GND)</td><td class="open">OPEN</td><td>Author schematic Rev 1.4 J12:3; number checked against cached connector symbol. Board reference only; local fitment and mating view unknown.</td></tr>
+<tr class=""><td>Tillboard Rev 1.4 reference · J13 · OUT2 · J13 · 3-pin screw terminal</td><td>J13:1</td><td>Common COM (configuration-dependent source net)</td><td class="open">OPEN</td><td>Author schematic Rev 1.4 J13:1; number checked against cached connector symbol. Board reference only; local fitment and mating view unknown.</td></tr>
+<tr class=""><td>Tillboard Rev 1.4 reference · J13 · OUT2 · J13 · 3-pin screw terminal</td><td>J13:2</td><td>Board output OUT2</td><td class="open">OPEN</td><td>Author schematic Rev 1.4 J13:2; number checked against cached connector symbol. Board reference only; local fitment and mating view unknown.</td></tr>
+<tr class=""><td>Tillboard Rev 1.4 reference · J13 · OUT2 · J13 · 3-pin screw terminal</td><td>J13:3</td><td>Ground (source net GND)</td><td class="open">OPEN</td><td>Author schematic Rev 1.4 J13:3; number checked against cached connector symbol. Board reference only; local fitment and mating view unknown.</td></tr>
+<tr class=""><td>Tillboard Rev 1.4 reference · J14 · OUT3 · J14 · 3-pin screw terminal</td><td>J14:1</td><td>Common COM (configuration-dependent source net)</td><td class="open">OPEN</td><td>Author schematic Rev 1.4 J14:1; number checked against cached connector symbol. Board reference only; local fitment and mating view unknown.</td></tr>
+<tr class=""><td>Tillboard Rev 1.4 reference · J14 · OUT3 · J14 · 3-pin screw terminal</td><td>J14:2</td><td>Board output OUT3</td><td class="open">OPEN</td><td>Author schematic Rev 1.4 J14:2; number checked against cached connector symbol. Board reference only; local fitment and mating view unknown.</td></tr>
+<tr class=""><td>Tillboard Rev 1.4 reference · J14 · OUT3 · J14 · 3-pin screw terminal</td><td>J14:3</td><td>Ground (source net GND)</td><td class="open">OPEN</td><td>Author schematic Rev 1.4 J14:3; number checked against cached connector symbol. Board reference only; local fitment and mating view unknown.</td></tr>
+<tr class="service"><td>Board service header · J15 · ATtiny ISP service header · J15 · 6-pin</td><td>J15:1</td><td>ISP data to controller MISO</td><td class="open">OPEN</td><td>Author schematic Rev 1.4 J15:1; number checked against cached connector symbol. Board reference only; local fitment and mating view unknown.</td></tr>
+<tr class="service"><td>Board service header · J15 · ATtiny ISP service header · J15 · 6-pin</td><td>J15:2</td><td>5 V supply (source net +5V)</td><td class="open">OPEN</td><td>Author schematic Rev 1.4 J15:2; number checked against cached connector symbol. Board reference only; local fitment and mating view unknown.</td></tr>
+<tr class="service"><td>Board service header · J15 · ATtiny ISP service header · J15 · 6-pin</td><td>J15:3</td><td>ISP serial clock SCK</td><td class="open">OPEN</td><td>Author schematic Rev 1.4 J15:3; number checked against cached connector symbol. Board reference only; local fitment and mating view unknown.</td></tr>
+<tr class="service"><td>Board service header · J15 · ATtiny ISP service header · J15 · 6-pin</td><td>J15:4</td><td>ISP data from controller MOSI</td><td class="open">OPEN</td><td>Author schematic Rev 1.4 J15:4; number checked against cached connector symbol. Board reference only; local fitment and mating view unknown.</td></tr>
+<tr class="service"><td>Board service header · J15 · ATtiny ISP service header · J15 · 6-pin</td><td>J15:5</td><td>ATtiny reset RESET_ATtiny</td><td class="open">OPEN</td><td>Author schematic Rev 1.4 J15:5; number checked against cached connector symbol. Board reference only; local fitment and mating view unknown.</td></tr>
+<tr class="service"><td>Board service header · J15 · ATtiny ISP service header · J15 · 6-pin</td><td>J15:6</td><td>Ground (source net GND)</td><td class="open">OPEN</td><td>Author schematic Rev 1.4 J15:6; number checked against cached connector symbol. Board reference only; local fitment and mating view unknown.</td></tr>
+<tr class=""><td>Tillboard Rev 1.4 reference · J16 · VI / ACM VFD reference · J16 · 2-pin screw terminal</td><td>J16:1</td><td>VFD analog input VI (source net VI)</td><td class="open">OPEN</td><td>Author schematic Rev 1.4 J16:1; number checked against cached connector symbol. Board reference only; local fitment and mating view unknown.</td></tr>
+<tr class=""><td>Tillboard Rev 1.4 reference · J16 · VI / ACM VFD reference · J16 · 2-pin screw terminal</td><td>J16:2</td><td>VFD analog common ACM (schematic-connected to GND)</td><td class="open">OPEN</td><td>Author schematic Rev 1.4 J16:2; number checked against cached connector symbol. Board reference only; local fitment and mating view unknown. ACM is connected to GND in this schematic.</td></tr>
+<tr class=""><td>Tillboard Rev 1.4 reference · J17 · FOR / DCM VFD reference · J17 · 2-pin screw terminal</td><td>J17:1</td><td>VFD forward command FOR (source net FOR)</td><td class="open">OPEN</td><td>Author schematic Rev 1.4 J17:1; number checked against cached connector symbol. Board reference only; local fitment and mating view unknown.</td></tr>
+<tr class=""><td>Tillboard Rev 1.4 reference · J17 · FOR / DCM VFD reference · J17 · 2-pin screw terminal</td><td>J17:2</td><td>VFD digital common DCM (source net DCM; kept distinct from GND)</td><td class="open">OPEN</td><td>Author schematic Rev 1.4 J17:2; number checked against cached connector symbol. Board reference only; local fitment and mating view unknown. DCM is kept distinct from GND.</td></tr>
+<tr class=""><td>Tillboard Rev 1.4 reference · J18 · IN1 · J18 · 3-pin screw terminal</td><td>J18:1</td><td>5 V supply (source net +5V)</td><td class="open">OPEN</td><td>Author schematic Rev 1.4 J18:1; number checked against cached connector symbol. Board reference only; local fitment and mating view unknown.</td></tr>
+<tr class=""><td>Tillboard Rev 1.4 reference · J18 · IN1 · J18 · 3-pin screw terminal</td><td>J18:2</td><td>Unassigned controller input IN1 (axis/function unknown)</td><td class="open">OPEN</td><td>Author schematic Rev 1.4 J18:2; number checked against cached connector symbol. Board reference only; local fitment and mating view unknown.</td></tr>
+<tr class=""><td>Tillboard Rev 1.4 reference · J18 · IN1 · J18 · 3-pin screw terminal</td><td>J18:3</td><td>Ground (source net GND)</td><td class="open">OPEN</td><td>Author schematic Rev 1.4 J18:3; number checked against cached connector symbol. Board reference only; local fitment and mating view unknown.</td></tr>
+<tr class=""><td>Tillboard Rev 1.4 reference · J19 · IN2 · J19 · 3-pin screw terminal</td><td>J19:1</td><td>5 V supply (source net +5V)</td><td class="open">OPEN</td><td>Author schematic Rev 1.4 J19:1; number checked against cached connector symbol. Board reference only; local fitment and mating view unknown.</td></tr>
+<tr class=""><td>Tillboard Rev 1.4 reference · J19 · IN2 · J19 · 3-pin screw terminal</td><td>J19:2</td><td>Unassigned controller input IN2 (axis/function unknown)</td><td class="open">OPEN</td><td>Author schematic Rev 1.4 J19:2; number checked against cached connector symbol. Board reference only; local fitment and mating view unknown.</td></tr>
+<tr class=""><td>Tillboard Rev 1.4 reference · J19 · IN2 · J19 · 3-pin screw terminal</td><td>J19:3</td><td>Ground (source net GND)</td><td class="open">OPEN</td><td>Author schematic Rev 1.4 J19:3; number checked against cached connector symbol. Board reference only; local fitment and mating view unknown.</td></tr>
+<tr class=""><td>Tillboard Rev 1.4 reference · J20 · IN3 · J20 · 3-pin screw terminal</td><td>J20:1</td><td>5 V supply (source net +5V)</td><td class="open">OPEN</td><td>Author schematic Rev 1.4 J20:1; number checked against cached connector symbol. Board reference only; local fitment and mating view unknown.</td></tr>
+<tr class=""><td>Tillboard Rev 1.4 reference · J20 · IN3 · J20 · 3-pin screw terminal</td><td>J20:2</td><td>Unassigned controller input IN3 (axis/function unknown)</td><td class="open">OPEN</td><td>Author schematic Rev 1.4 J20:2; number checked against cached connector symbol. Board reference only; local fitment and mating view unknown.</td></tr>
+<tr class=""><td>Tillboard Rev 1.4 reference · J20 · IN3 · J20 · 3-pin screw terminal</td><td>J20:3</td><td>Ground (source net GND)</td><td class="open">OPEN</td><td>Author schematic Rev 1.4 J20:3; number checked against cached connector symbol. Board reference only; local fitment and mating view unknown.</td></tr>
+<tr class=""><td>Tillboard Rev 1.4 reference · J21 · IN4 · J21 · 3-pin screw terminal</td><td>J21:1</td><td>5 V supply (source net +5V)</td><td class="open">OPEN</td><td>Author schematic Rev 1.4 J21:1; number checked against cached connector symbol. Board reference only; local fitment and mating view unknown.</td></tr>
+<tr class=""><td>Tillboard Rev 1.4 reference · J21 · IN4 · J21 · 3-pin screw terminal</td><td>J21:2</td><td>Unassigned controller input IN4 (axis/function unknown)</td><td class="open">OPEN</td><td>Author schematic Rev 1.4 J21:2; number checked against cached connector symbol. Board reference only; local fitment and mating view unknown.</td></tr>
+<tr class=""><td>Tillboard Rev 1.4 reference · J21 · IN4 · J21 · 3-pin screw terminal</td><td>J21:3</td><td>Ground (source net GND)</td><td class="open">OPEN</td><td>Author schematic Rev 1.4 J21:3; number checked against cached connector symbol. Board reference only; local fitment and mating view unknown.</td></tr>
+<tr class=""><td>Tillboard Rev 1.4 reference · J22 · IN5 · J22 · 3-pin screw terminal</td><td>J22:1</td><td>5 V supply (source net +5V)</td><td class="open">OPEN</td><td>Author schematic Rev 1.4 J22:1; number checked against cached connector symbol. Board reference only; local fitment and mating view unknown.</td></tr>
+<tr class=""><td>Tillboard Rev 1.4 reference · J22 · IN5 · J22 · 3-pin screw terminal</td><td>J22:2</td><td>Unassigned controller input IN5 (axis/function unknown)</td><td class="open">OPEN</td><td>Author schematic Rev 1.4 J22:2; number checked against cached connector symbol. Board reference only; local fitment and mating view unknown.</td></tr>
+<tr class=""><td>Tillboard Rev 1.4 reference · J22 · IN5 · J22 · 3-pin screw terminal</td><td>J22:3</td><td>Ground (source net GND)</td><td class="open">OPEN</td><td>Author schematic Rev 1.4 J22:3; number checked against cached connector symbol. Board reference only; local fitment and mating view unknown.</td></tr>
+<tr class=""><td>Tillboard Rev 1.4 reference · J23 · IN6 · J23 · 3-pin screw terminal</td><td>J23:1</td><td>5 V supply (source net +5V)</td><td class="open">OPEN</td><td>Author schematic Rev 1.4 J23:1; number checked against cached connector symbol. Board reference only; local fitment and mating view unknown.</td></tr>
+<tr class=""><td>Tillboard Rev 1.4 reference · J23 · IN6 · J23 · 3-pin screw terminal</td><td>J23:2</td><td>Unassigned controller input IN6 (axis/function unknown)</td><td class="open">OPEN</td><td>Author schematic Rev 1.4 J23:2; number checked against cached connector symbol. Board reference only; local fitment and mating view unknown.</td></tr>
+<tr class=""><td>Tillboard Rev 1.4 reference · J23 · IN6 · J23 · 3-pin screw terminal</td><td>J23:3</td><td>Ground (source net GND)</td><td class="open">OPEN</td><td>Author schematic Rev 1.4 J23:3; number checked against cached connector symbol. Board reference only; local fitment and mating view unknown.</td></tr>
+<tr class=""><td>Tillboard Rev 1.4 reference · J24 · IN7 · J24 · 3-pin screw terminal</td><td>J24:1</td><td>5 V supply (source net +5V)</td><td class="open">OPEN</td><td>Author schematic Rev 1.4 J24:1; number checked against cached connector symbol. Board reference only; local fitment and mating view unknown.</td></tr>
+<tr class=""><td>Tillboard Rev 1.4 reference · J24 · IN7 · J24 · 3-pin screw terminal</td><td>J24:2</td><td>Unassigned controller input IN7 (axis/function unknown)</td><td class="open">OPEN</td><td>Author schematic Rev 1.4 J24:2; number checked against cached connector symbol. Board reference only; local fitment and mating view unknown.</td></tr>
+<tr class=""><td>Tillboard Rev 1.4 reference · J24 · IN7 · J24 · 3-pin screw terminal</td><td>J24:3</td><td>Ground (source net GND)</td><td class="open">OPEN</td><td>Author schematic Rev 1.4 J24:3; number checked against cached connector symbol. Board reference only; local fitment and mating view unknown.</td></tr>
+<tr class=""><td>Tillboard Rev 1.4 reference · J25 · IN8 · J25 · 3-pin screw terminal</td><td>J25:1</td><td>5 V supply (source net +5V)</td><td class="open">OPEN</td><td>Author schematic Rev 1.4 J25:1; number checked against cached connector symbol. Board reference only; local fitment and mating view unknown.</td></tr>
+<tr class=""><td>Tillboard Rev 1.4 reference · J25 · IN8 · J25 · 3-pin screw terminal</td><td>J25:2</td><td>Unassigned controller input IN8 (axis/function unknown)</td><td class="open">OPEN</td><td>Author schematic Rev 1.4 J25:2; number checked against cached connector symbol. Board reference only; local fitment and mating view unknown.</td></tr>
+<tr class=""><td>Tillboard Rev 1.4 reference · J25 · IN8 · J25 · 3-pin screw terminal</td><td>J25:3</td><td>Ground (source net GND)</td><td class="open">OPEN</td><td>Author schematic Rev 1.4 J25:3; number checked against cached connector symbol. Board reference only; local fitment and mating view unknown.</td></tr>
+<tr class=""><td>Tillboard Rev 1.4 reference · J26 · Feedrate Adjust · J26 · 3-pin screw terminal</td><td>J26:1</td><td>Ground (source net GND)</td><td class="open">OPEN</td><td>Author schematic Rev 1.4 J26:1; number checked against cached connector symbol. Board reference only; local fitment and mating view unknown.</td></tr>
+<tr class=""><td>Tillboard Rev 1.4 reference · J26 · Feedrate Adjust · J26 · 3-pin screw terminal</td><td>J26:2</td><td>Feedrate potentiometer wiper (source net Feedrate)</td><td class="open">OPEN</td><td>Author schematic Rev 1.4 J26:2; number checked against cached connector symbol. Board reference only; local fitment and mating view unknown.</td></tr>
+<tr class=""><td>Tillboard Rev 1.4 reference · J26 · Feedrate Adjust · J26 · 3-pin screw terminal</td><td>J26:3</td><td>5 V supply (source net +5V)</td><td class="open">OPEN</td><td>Author schematic Rev 1.4 J26:3; number checked against cached connector symbol. Board reference only; local fitment and mating view unknown.</td></tr>
+<tr class=""><td>Tillboard Rev 1.4 reference · J27 · Rot. Speed Adjust · J27 · 3-pin screw terminal</td><td>J27:1</td><td>Ground (source net GND)</td><td class="open">OPEN</td><td>Author schematic Rev 1.4 J27:1; number checked against cached connector symbol. Board reference only; local fitment and mating view unknown.</td></tr>
+<tr class=""><td>Tillboard Rev 1.4 reference · J27 · Rot. Speed Adjust · J27 · 3-pin screw terminal</td><td>J27:2</td><td>Rotational-speed potentiometer wiper (source net Rot.Speed)</td><td class="open">OPEN</td><td>Author schematic Rev 1.4 J27:2; number checked against cached connector symbol. Board reference only; local fitment and mating view unknown.</td></tr>
+<tr class=""><td>Tillboard Rev 1.4 reference · J27 · Rot. Speed Adjust · J27 · 3-pin screw terminal</td><td>J27:3</td><td>5 V supply (source net +5V)</td><td class="open">OPEN</td><td>Author schematic Rev 1.4 J27:3; number checked against cached connector symbol. Board reference only; local fitment and mating view unknown.</td></tr>
+<tr class=""><td>Tillboard Rev 1.4 reference · J28 · Servo · J28 · 3-pin header</td><td>J28:1</td><td>Servo pulse signal SERVO_PPM</td><td class="open">OPEN</td><td>Author schematic Rev 1.4 J28:1; number checked against cached connector symbol. Board reference only; local fitment and mating view unknown.</td></tr>
+<tr class=""><td>Tillboard Rev 1.4 reference · J28 · Servo · J28 · 3-pin header</td><td>J28:2</td><td>5 V supply (source net +5V)</td><td class="open">OPEN</td><td>Author schematic Rev 1.4 J28:2; number checked against cached connector symbol. Board reference only; local fitment and mating view unknown.</td></tr>
+<tr class=""><td>Tillboard Rev 1.4 reference · J28 · Servo · J28 · 3-pin header</td><td>J28:3</td><td>Ground (source net GND)</td><td class="open">OPEN</td><td>Author schematic Rev 1.4 J28:3; number checked against cached connector symbol. Board reference only; local fitment and mating view unknown.</td></tr>
+<tr class=""><td>Tillboard Rev 1.4 reference · J29 · 3.3 V auxiliary header · J29 · 2-pin</td><td>J29:1</td><td>3.3 V supply (source net +3.3V)</td><td class="open">OPEN</td><td>Author schematic Rev 1.4 J29:1; number checked against cached connector symbol. Board reference only; local fitment and mating view unknown.</td></tr>
+<tr class=""><td>Tillboard Rev 1.4 reference · J29 · 3.3 V auxiliary header · J29 · 2-pin</td><td>J29:2</td><td>Ground (source net GND)</td><td class="open">OPEN</td><td>Author schematic Rev 1.4 J29:2; number checked against cached connector symbol. Board reference only; local fitment and mating view unknown.</td></tr>
+</tbody></table></div>
+<h2>Revision and source limits</h2><p>The exact author schematic bytes have SHA-256 <code>f94130dd9144fa39d78b09ae7d9e361e92997c8a017004d4a03ffe6bdb24c566</code>. Its title block says Rev 1.4, 2019-04-16; cached connector symbols provide pin numbering. J10’s function field says Stepper2_X while its actual connected nets are Y-family. J8 and J10 retain the exact authored net order. J4–J6 are original controller output connectors; matching STEP/DIR labels do not establish compatible SmoothieBox connections.</p>
+<ul><li><a href="https://github.com/tnn85/MPCNC-Nano-Estlcam-Shield/blob/6fd34eff57dfbbca657e646c6dd619017d9a0119/MPCNC%20Nano%20Estlcam%20Shield.sch">Author schematic at pinned commit</a></li><li><a href="https://github.com/tnn85/MPCNC-Nano-Estlcam-Shield/blob/6fd34eff57dfbbca657e646c6dd619017d9a0119/MPCNC%20Nano%20Estlcam%20Shield-cache.lib">Matching cached symbols</a></li><li><a href="https://github.com/tnn85/MPCNC-Nano-Estlcam-Shield/blob/6fd34eff57dfbbca657e646c6dd619017d9a0119/changelog.txt">Author changelog</a></li><li><a href="https://www.sorotec.de/shop/Volksfraese-VF1-12186.html?language=de">Official VF1 kit exclusions</a></li><li><a href="https://blog.seidel-philipp.de/volksfraese-vf1-tillboard-anschlussplan/">Example VF1/Tillboard plan (simplified; local fitment unverified)</a></li></ul>
+</main><!-- atlas-viewer:start --><dialog id="machine-image-dialog" aria-label="Full-size diagram"><div class="machine-image-toolbar"><button id="machine-image-fit" type="button">Fit</button><button id="machine-image-close" type="button" aria-label="Close image">Close</button><span></span></div><div id="machine-image-viewport" role="button" tabindex="0" aria-label="Diagram: click or scroll to zoom, drag or use arrow keys to pan"><img id="machine-image-full" alt="" draggable="false"></div></dialog><script>(() => {
+  const dialog = document.querySelector('#figure-dialog, #machine-image-dialog');
+  const stage = document.querySelector('#dialog-stage, #machine-image-viewport');
+  const image = document.querySelector('#dialog-image, #machine-image-full');
+  if (!dialog || !stage || !image) return;
+
+  const toolbar = dialog.querySelector('.atlas-viewer-toolbar, .machine-image-toolbar');
+  const controls = document.createElement('div');
+  controls.className = 'atlas-zoom-controls';
+  controls.innerHTML = '<button type="button" data-zoom="out" aria-label="Zoom out">−</button><label>Zoom <input data-zoom="range" type="range" min="0" max="1" step="0.001" value="0" aria-label="Diagram zoom, logarithmic scale from fit to readable detail"></label><output data-zoom="value" aria-live="polite">100%</output><button type="button" data-zoom="in" aria-label="Zoom in">+</button><div class="atlas-minimap" role="group" aria-label="Diagram minimap"><img alt="" draggable="false"><button type="button" class="atlas-minimap-window" aria-label="Minimap viewport. Use arrow keys to pan."></button></div></div>';
+  const hint = toolbar.querySelector('.atlas-viewer-hint, span');
+  toolbar.insertBefore(controls, hint || null);
+  if (hint) hint.textContent = 'Click or scroll to zoom; drag to pan. Use the slider or minimap to navigate. 100% is fit. Escape closes.';
+  const range = controls.querySelector('[data-zoom="range"]');
+  const output = controls.querySelector('[data-zoom="value"]');
+  const map = controls.querySelector('.atlas-minimap');
+  const map_image = map.querySelector('img');
+  const map_window = map.querySelector('.atlas-minimap-window');
+  map.setAttribute('aria-label', 'Diagram minimap. Drag the outlined window or click a location to navigate.');
+  let fit_scale = 1;
+  let zoom = 1;
+  let maximum_zoom = 8;
+  let offset_x = 0;
+  let offset_y = 0;
+  let drag = null;
+  let suppress_click_until = 0;
+  let opener = null;
+  let object_url = null;
+
+  function open_image(source, trigger, caption) {
+    opener = trigger;
+    image.src = source;
+    image.alt = trigger instanceof HTMLImageElement ? trigger.alt : caption;
+    const caption_node = dialog.querySelector('#dialog-caption');
+    if (caption_node) caption_node.textContent = caption || image.alt;
+    dialog.showModal();
+    const close_button = dialog.querySelector('#close-dialog, #machine-image-close');
+    close_button?.focus();
+    if (image.complete && image.naturalWidth) requestAnimationFrame(fit);
+    else image.addEventListener('load', fit, { once:true });
+  }
+
+  function clamp_offsets() {
+    const width = image.naturalWidth * fit_scale * zoom;
+    const height = image.naturalHeight * fit_scale * zoom;
+    offset_x = width <= stage.clientWidth ? (stage.clientWidth - width) / 2 : Math.min(0, Math.max(stage.clientWidth - width, offset_x));
+    offset_y = height <= stage.clientHeight ? (stage.clientHeight - height) / 2 : Math.min(0, Math.max(stage.clientHeight - height, offset_y));
+  }
+
+  function sync() {
+    clamp_offsets();
+    const scale = fit_scale * zoom;
+    image.style.width = `${image.naturalWidth}px`;
+    image.style.height = `${image.naturalHeight}px`;
+    image.style.transform = `translate(${offset_x}px, ${offset_y}px) scale(${scale})`;
+    range.value = String(Math.log(zoom) / Math.log(maximum_zoom));
+    output.value = `${Math.round(zoom * 100)}%`;
+    output.textContent = output.value;
+    update_minimap();
+  }
+
+  function update_minimap() {
+    if (!image.naturalWidth || !image.naturalHeight) return;
+    const bounds = map.getBoundingClientRect();
+    const scale = Math.min(bounds.width / image.naturalWidth, bounds.height / image.naturalHeight);
+    const drawn_width = image.naturalWidth * scale;
+    const drawn_height = image.naturalHeight * scale;
+    const inset_x = (bounds.width - drawn_width) / 2;
+    const inset_y = (bounds.height - drawn_height) / 2;
+    map_image.style.width = `${drawn_width}px`;
+    map_image.style.height = `${drawn_height}px`;
+    map_image.style.left = `${inset_x}px`;
+    map_image.style.top = `${inset_y}px`;
+    const view_width = Math.min(drawn_width, stage.clientWidth / (fit_scale * zoom) * scale);
+    const view_height = Math.min(drawn_height, stage.clientHeight / (fit_scale * zoom) * scale);
+    map_window.style.width = `${view_width}px`;
+    map_window.style.height = `${view_height}px`;
+    map_window.style.left = `${inset_x + (-offset_x / (image.naturalWidth * fit_scale * zoom)) * drawn_width}px`;
+    map_window.style.top = `${inset_y + (-offset_y / (image.naturalHeight * fit_scale * zoom)) * drawn_height}px`;
+  }
+
+  function fit() {
+    if (!image.naturalWidth || !image.naturalHeight) return;
+    fit_scale = Math.min(stage.clientWidth / image.naturalWidth, stage.clientHeight / image.naturalHeight);
+    // Reach at least 1.5 rendered pixels per source unit even for very tall schedules.
+    maximum_zoom = Math.max(8, 1.5 / fit_scale);
+    zoom = 1;
+    offset_x = (stage.clientWidth - image.naturalWidth * fit_scale) / 2;
+    offset_y = (stage.clientHeight - image.naturalHeight * fit_scale) / 2;
+    map_image.src = image.currentSrc || image.src;
+    sync();
+  }
+
+  function zoom_at(next_zoom, client_x, client_y) {
+    const rect = stage.getBoundingClientRect();
+    const x = client_x - rect.left;
+    const y = client_y - rect.top;
+    const old_scale = fit_scale * zoom;
+    const image_x = (x - offset_x) / old_scale;
+    const image_y = (y - offset_y) / old_scale;
+    zoom = Math.min(maximum_zoom, Math.max(1, next_zoom));
+    const new_scale = fit_scale * zoom;
+    offset_x = x - image_x * new_scale;
+    offset_y = y - image_y * new_scale;
+    sync();
+  }
+
+  image.addEventListener('load', fit);
+  stage.addEventListener('wheel', event => {
+    if (!image.naturalWidth) return;
+    event.preventDefault();
+    zoom_at(zoom * Math.exp(-event.deltaY * 0.0015), event.clientX, event.clientY);
+  }, { passive: false });
+  stage.addEventListener('click', event => {
+    if (performance.now() < suppress_click_until) return;
+    zoom_at(zoom > 1 ? 1 : 2.5, event.clientX, event.clientY);
+  });
+  range.addEventListener('input', () => zoom_at(Math.exp(Number(range.value) * Math.log(maximum_zoom)), stage.getBoundingClientRect().left + stage.clientWidth / 2, stage.getBoundingClientRect().top + stage.clientHeight / 2));
+  controls.querySelector('[data-zoom="in"]').addEventListener('click', () => zoom_at(zoom * 1.25, stage.getBoundingClientRect().left + stage.clientWidth / 2, stage.getBoundingClientRect().top + stage.clientHeight / 2));
+  controls.querySelector('[data-zoom="out"]').addEventListener('click', () => zoom_at(zoom / 1.25, stage.getBoundingClientRect().left + stage.clientWidth / 2, stage.getBoundingClientRect().top + stage.clientHeight / 2));
+  stage.addEventListener('pointerdown', event => {
+    if (event.button !== 0 || zoom <= 1) return;
+    drag = { x: event.clientX, y: event.clientY, offset_x, offset_y, id: event.pointerId, moved:false };
+    stage.setPointerCapture(event.pointerId);
+  });
+  stage.addEventListener('pointermove', event => {
+    if (!drag || drag.id !== event.pointerId) return;
+    if (Math.abs(event.clientX - drag.x) + Math.abs(event.clientY - drag.y) > 4) drag.moved = true;
+    offset_x = drag.offset_x + event.clientX - drag.x;
+    offset_y = drag.offset_y + event.clientY - drag.y;
+    sync();
+  });
+  for (const name of ['pointerup', 'pointercancel']) stage.addEventListener(name, event => {
+    if (drag?.id !== event.pointerId) return;
+    if (drag.moved) suppress_click_until = performance.now() + 120;
+    drag = null;
+  });
+  stage.addEventListener('keydown', event => {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      zoom_at(zoom > 1 ? 1 : 2.5,
+        stage.getBoundingClientRect().left + stage.clientWidth / 2,
+        stage.getBoundingClientRect().top + stage.clientHeight / 2);
+      return;
+    }
+    const step = 48;
+    const moves = { ArrowLeft:[step, 0], ArrowRight:[-step, 0], ArrowUp:[0, step], ArrowDown:[0, -step] };
+    const move = moves[event.key];
+    if (!move) return;
+    event.preventDefault();
+    offset_x += move[0]; offset_y += move[1]; sync();
+  });
+  map_window.addEventListener('keydown', event => {
+    const move = { ArrowLeft:[-24, 0], ArrowRight:[24, 0], ArrowUp:[0, -24], ArrowDown:[0, 24] }[event.key];
+    if (!move) return;
+    event.preventDefault(); offset_x -= move[0]; offset_y -= move[1]; sync();
+  });
+  map.addEventListener('pointerdown', event => {
+    if (event.target === map_window) return;
+    const rect = map_image.getBoundingClientRect();
+    const natural_x = (event.clientX - rect.left) / rect.width * image.naturalWidth;
+    const natural_y = (event.clientY - rect.top) / rect.height * image.naturalHeight;
+    offset_x = stage.clientWidth / 2 - natural_x * fit_scale * zoom;
+    offset_y = stage.clientHeight / 2 - natural_y * fit_scale * zoom;
+    sync();
+  });
+  map_window.addEventListener('pointerdown', event => {
+    drag = { map: true, x:event.clientX, y:event.clientY, offset_x, offset_y, id:event.pointerId };
+    map_window.setPointerCapture(event.pointerId);
+    event.stopPropagation();
+  });
+  map_window.addEventListener('pointermove', event => {
+    if (!drag?.map || drag.id !== event.pointerId) return;
+    const rect = map_image.getBoundingClientRect();
+    const factor_x = image.naturalWidth * fit_scale * zoom / rect.width;
+    const factor_y = image.naturalHeight * fit_scale * zoom / rect.height;
+    offset_x = drag.offset_x - (event.clientX - drag.x) * factor_x;
+    offset_y = drag.offset_y - (event.clientY - drag.y) * factor_y;
+    sync();
+  });
+  for (const name of ['pointerup', 'pointercancel']) map_window.addEventListener(name, () => { drag = null; });
+  document.addEventListener('click', event => {
+    if (!(event.target instanceof Element)) return;
+    if (dialog.contains(event.target)) return;
+    const link = event.target.closest('main a[href]');
+    if (link) {
+      // Keep navigation, explicit downloads and browser new-tab gestures native.
+      if (event.defaultPrevented || event.button !== 0 || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey || link.hasAttribute('download')) return;
+      let linked_image;
+      try { linked_image = new URL(link.href, document.baseURI); }
+      catch { return; }
+      if (!['http:', 'https:', 'file:'].includes(linked_image.protocol) || linked_image.origin !== location.origin || linked_image.protocol !== location.protocol || !/\.(?:apng|avif|bmp|gif|ico|jpe?g|png|svg|webp)$/i.test(linked_image.pathname)) return;
+      event.preventDefault();
+      event.stopPropagation();
+      open_image(linked_image.href, link, link.dataset.caption || link.textContent.trim());
+      return;
+    }
+    const trigger = event.target.closest('.zoom-figure') || event.target.closest('main img');
+    if (!trigger) return;
+    event.preventDefault();
+    event.stopPropagation();
+    const source = trigger.matches('img') ? trigger : trigger.querySelector('img');
+    if (!source) return;
+    open_image(source.currentSrc || source.src, trigger,
+      trigger.dataset.caption || source.alt);
+  });
+  document.querySelectorAll('main img').forEach(source => {
+    if (dialog.contains(source)) return;
+    const trigger = source.closest('.zoom-figure') || source;
+    if (trigger instanceof HTMLButtonElement) return;
+    source.tabIndex = 0;
+    source.setAttribute('role', 'button');
+    source.addEventListener('keydown', event => {
+      if (event.key !== 'Enter' && event.key !== ' ') return;
+      event.preventDefault();
+      source.click();
+    });
+  });
+  document.querySelectorAll('main svg').forEach(svg => {
+    const trigger = svg.closest('button.zoom-figure') || svg;
+    if (trigger === svg) {
+      svg.tabIndex = 0;
+      svg.setAttribute('role', 'button');
+      svg.addEventListener('keydown', event => {
+        if (event.key !== 'Enter' && event.key !== ' ') return;
+        event.preventDefault();
+        svg.dispatchEvent(new MouseEvent('click', { bubbles:true, cancelable:true, view:window }));
+      });
+    }
+    trigger.addEventListener('click', event => {
+      event.preventDefault();
+      event.stopPropagation();
+      if (object_url) URL.revokeObjectURL(object_url);
+      const copy = svg.cloneNode(true);
+      copy.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
+      object_url = URL.createObjectURL(new Blob(
+        [new XMLSerializer().serializeToString(copy)], { type:'image/svg+xml' }));
+      open_image(object_url, trigger,
+        trigger.dataset.caption || svg.getAttribute('aria-label') || 'Diagram');
+    });
+  });
+  const fit_button = dialog.querySelector('#fit-dialog, #machine-image-fit');
+  fit_button?.addEventListener('click', fit);
+  const close_button = dialog.querySelector('#close-dialog, #machine-image-close');
+  close_button?.addEventListener('click', () => dialog.close());
+  dialog.addEventListener('click', event => {
+    if (event.target === dialog) dialog.close();
+  });
+  dialog.addEventListener('close', () => {
+    if (dialog.open) return;
+    image.removeAttribute('src');
+    map_image.removeAttribute('src');
+    if (object_url) URL.revokeObjectURL(object_url);
+    object_url = null;
+    opener?.focus();
+    opener = null;
+  });
+  window.addEventListener('resize', () => { if (dialog.open) fit(); });
+})();
+</script><!-- atlas-viewer:end --></body></html>

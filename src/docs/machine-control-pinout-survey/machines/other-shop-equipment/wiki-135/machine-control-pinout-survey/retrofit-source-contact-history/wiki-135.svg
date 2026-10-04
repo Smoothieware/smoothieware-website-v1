@@ -1,0 +1,1581 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4996 5904" width="4996" height="5904" role="img" aria-labelledby="title desc" data-profile="wiki-135">
+<title id="title">Denford CNC 2600 Pro — London Hackspace → SmoothieBox exterior connection study</title>
+<desc id="desc">82 proposed exterior contacts, four SmoothieBox service ports, 80 source positions, 0 source-named wire references, 0 source-named physical attachments, 0 nominal form-inventory positions, 0 dotted function guesses and 80 unrouted positions. All machine connectors are exterior peripherals or explicitly marked source references. No installed wiring is claimed.</desc>
+<metadata id="contact-inventory">{"counts": {"context_devices": 0, "guesses": 0, "machine_contacts": 80, "open_contacts": 80, "peripherals": 17, "reference_contacts": 80}, "exterior": [{"id": "sb-POWER-1", "role": "Load power input LOAD + pin", "source_label": "LOAD +", "terminal": "POWER.1", "x": 220, "y": 360}, {"id": "sb-POWER-2", "role": "Load power input GND pin", "source_label": "GND", "terminal": "POWER.2", "x": 268, "y": 360}, {"id": "sb-FIVEIN-1", "role": "5 V input +5V pin", "source_label": "+5V", "terminal": "FIVEIN.1", "x": 420, "y": 360}, {"id": "sb-FIVEIN-2", "role": "5 V input GND pin", "source_label": "GND", "terminal": "FIVEIN.2", "x": 468, "y": 360}, {"id": "sb-FIVEOUT-1", "role": "5 V accessory output +5V pin", "source_label": "+5V", "terminal": "FIVEOUT.1", "x": 620, "y": 360}, {"id": "sb-FIVEOUT-2", "role": "5 V accessory output GND pin", "source_label": "GND", "terminal": "FIVEOUT.2", "x": 668, "y": 360}, {"id": "sb-AUX-1", "role": "Analog input 1 signal pin", "source_label": "ANALOG 1", "terminal": "AUX.1", "x": 1500, "y": 360}, {"id": "sb-AUX-2", "role": "Analog input 1 GND pin", "source_label": "GND", "terminal": "AUX.2", "x": 1548, "y": 360}, {"id": "sb-AUX-3", "role": "Analog input 2 signal pin", "source_label": "ANALOG 2", "terminal": "AUX.3", "x": 1596, "y": 360}, {"id": "sb-AUX-4", "role": "Analog input 2 GND pin", "source_label": "GND", "terminal": "AUX.4", "x": 1644, "y": 360}, {"id": "sb-AUX-5", "role": "Analog input 3 signal pin", "source_label": "ANALOG 3", "terminal": "AUX.5", "x": 1692, "y": 360}, {"id": "sb-AUX-6", "role": "Analog input 3 GND pin", "source_label": "GND", "terminal": "AUX.6", "x": 1740, "y": 360}, {"id": "sb-XMIN-1", "role": "X axis min endstop sensor + pin", "source_label": "SENSOR +", "terminal": "XMIN.1", "x": 1860, "y": 730}, {"id": "sb-XMIN-2", "role": "X axis min endstop GND pin", "source_label": "GND", "terminal": "XMIN.2", "x": 1860, "y": 760}, {"id": "sb-XMIN-3", "role": "X axis min endstop signal pin", "source_label": "SIGNAL", "terminal": "XMIN.3", "x": 1860, "y": 790}, {"id": "sb-XMAX-1", "role": "X axis max endstop sensor + pin", "source_label": "SENSOR +", "terminal": "XMAX.1", "x": 1860, "y": 850}, {"id": "sb-XMAX-2", "role": "X axis max endstop GND pin", "source_label": "GND", "terminal": "XMAX.2", "x": 1860, "y": 880}, {"id": "sb-XMAX-3", "role": "X axis max endstop signal pin", "source_label": "SIGNAL", "terminal": "XMAX.3", "x": 1860, "y": 910}, {"id": "sb-YMIN-1", "role": "Y axis min endstop sensor + pin", "source_label": "SENSOR +", "terminal": "YMIN.1", "x": 1860, "y": 970}, {"id": "sb-YMIN-2", "role": "Y axis min endstop GND pin", "source_label": "GND", "terminal": "YMIN.2", "x": 1860, "y": 1000}, {"id": "sb-YMIN-3", "role": "Y axis min endstop signal pin", "source_label": "SIGNAL", "terminal": "YMIN.3", "x": 1860, "y": 1030}, {"id": "sb-YMAX-1", "role": "Y axis max endstop sensor + pin", "source_label": "SENSOR +", "terminal": "YMAX.1", "x": 1860, "y": 1090}, {"id": "sb-YMAX-2", "role": "Y axis max endstop GND pin", "source_label": "GND", "terminal": "YMAX.2", "x": 1860, "y": 1120}, {"id": "sb-YMAX-3", "role": "Y axis max endstop signal pin", "source_label": "SIGNAL", "terminal": "YMAX.3", "x": 1860, "y": 1150}, {"id": "sb-ZMIN-1", "role": "Z axis min endstop sensor + pin", "source_label": "SENSOR +", "terminal": "ZMIN.1", "x": 1860, "y": 1210}, {"id": "sb-ZMIN-2", "role": "Z axis min endstop GND pin", "source_label": "GND", "terminal": "ZMIN.2", "x": 1860, "y": 1240}, {"id": "sb-ZMIN-3", "role": "Z axis min endstop signal pin", "source_label": "SIGNAL", "terminal": "ZMIN.3", "x": 1860, "y": 1270}, {"id": "sb-ZMAX-1", "role": "Z axis max endstop sensor + pin", "source_label": "SENSOR +", "terminal": "ZMAX.1", "x": 1860, "y": 1330}, {"id": "sb-ZMAX-2", "role": "Z axis max endstop GND pin", "source_label": "GND", "terminal": "ZMAX.2", "x": 1860, "y": 1360}, {"id": "sb-ZMAX-3", "role": "Z axis max endstop signal pin", "source_label": "SIGNAL", "terminal": "ZMAX.3", "x": 1860, "y": 1390}, {"id": "sb-PROBE-1", "role": "Probe / servo +5V pin", "source_label": "+5V", "terminal": "PROBE.1", "x": 1860, "y": 1450}, {"id": "sb-PROBE-2", "role": "Probe / servo GND pin", "source_label": "GND", "terminal": "PROBE.2", "x": 1860, "y": 1480}, {"id": "sb-PROBE-3", "role": "Probe / servo SERVO pin", "source_label": "SERVO", "terminal": "PROBE.3", "x": 1860, "y": 1510}, {"id": "sb-PROBE-4", "role": "Probe / servo PROBE IN pin", "source_label": "PROBE IN", "terminal": "PROBE.4", "x": 1860, "y": 1540}, {"id": "sb-TEMP-1", "role": "Temperature 1 sensor pin", "source_label": "SENSOR 1", "terminal": "TEMP.1", "x": 1860, "y": 1610}, {"id": "sb-TEMP-2", "role": "Temperature 1 GND pin", "source_label": "GND", "terminal": "TEMP.2", "x": 1860, "y": 1640}, {"id": "sb-TEMP-3", "role": "Temperature 2 sensor pin", "source_label": "SENSOR 2", "terminal": "TEMP.3", "x": 1860, "y": 1670}, {"id": "sb-TEMP-4", "role": "Temperature 2 GND pin", "source_label": "GND", "terminal": "TEMP.4", "x": 1860, "y": 1700}, {"id": "sb-TEMP-5", "role": "Temperature 3 sensor pin", "source_label": "SENSOR 3", "terminal": "TEMP.5", "x": 1860, "y": 1730}, {"id": "sb-TEMP-6", "role": "Temperature 3 GND pin", "source_label": "GND", "terminal": "TEMP.6", "x": 1860, "y": 1760}, {"id": "sb-HEA-1", "role": "Hotend A LOAD + pin", "source_label": "LOAD +", "terminal": "HEA.1", "x": 60, "y": 730}, {"id": "sb-HEA-2", "role": "Hotend A SWITCHED − pin", "source_label": "SWITCHED −", "terminal": "HEA.2", "x": 60, "y": 760}, {"id": "sb-HEB-1", "role": "Hotend B LOAD + pin", "source_label": "LOAD +", "terminal": "HEB.1", "x": 60, "y": 850}, {"id": "sb-HEB-2", "role": "Hotend B SWITCHED − pin", "source_label": "SWITCHED −", "terminal": "HEB.2", "x": 60, "y": 880}, {"id": "sb-BED-1", "role": "Bed switch control CONTROL + pin", "source_label": "CONTROL +", "terminal": "BED.1", "x": 60, "y": 970}, {"id": "sb-BED-2", "role": "Bed switch control SWITCHED − pin", "source_label": "SWITCHED −", "terminal": "BED.2", "x": 60, "y": 1000}, {"id": "sb-FANA-1", "role": "Fan A LOAD + pin", "source_label": "LOAD +", "terminal": "FANA.1", "x": 60, "y": 1090}, {"id": "sb-FANA-2", "role": "Fan A SWITCHED − pin", "source_label": "SWITCHED −", "terminal": "FANA.2", "x": 60, "y": 1120}, {"id": "sb-FANB-1", "role": "Fan B LOAD + pin", "source_label": "LOAD +", "terminal": "FANB.1", "x": 60, "y": 1210}, {"id": "sb-FANB-2", "role": "Fan B SWITCHED − pin", "source_label": "SWITCHED −", "terminal": "FANB.2", "x": 60, "y": 1240}, {"id": "sb-SSR1-1", "role": "SSR 1 control 5V SWITCH pin", "source_label": "5V SWITCH", "terminal": "SSR1.1", "x": 60, "y": 1330}, {"id": "sb-SSR1-2", "role": "SSR 1 control GND pin", "source_label": "GND", "terminal": "SSR1.2", "x": 60, "y": 1360}, {"id": "sb-SSR2-1", "role": "SSR 2 control 5V SWITCH pin", "source_label": "5V SWITCH", "terminal": "SSR2.1", "x": 60, "y": 1450}, {"id": "sb-SSR2-2", "role": "SSR 2 control GND pin", "source_label": "GND", "terminal": "SSR2.2", "x": 60, "y": 1480}, {"id": "sb-PWM-1", "role": "PWM / laser control PWM pin", "source_label": "PWM", "terminal": "PWM.1", "x": 60, "y": 1570}, {"id": "sb-PWM-2", "role": "PWM / laser control TTL pin", "source_label": "TTL", "terminal": "PWM.2", "x": 60, "y": 1600}, {"id": "sb-PWM-3", "role": "PWM / laser control GND pin", "source_label": "GND", "terminal": "PWM.3", "x": 60, "y": 1630}, {"id": "sb-PWM-4", "role": "PWM / laser control 5V LIMITED pin", "source_label": "5V LIMITED", "terminal": "PWM.4", "x": 60, "y": 1660}, {"id": "sb-DRVX-1", "role": "X axis step pin", "source_label": "STEP", "terminal": "DRVX.1", "x": 240, "y": 2160}, {"id": "sb-DRVX-2", "role": "X axis step return GND pin", "source_label": "GND", "terminal": "DRVX.2", "x": 288, "y": 2160}, {"id": "sb-DRVX-3", "role": "X axis direction pin", "source_label": "DIR", "terminal": "DRVX.3", "x": 336, "y": 2160}, {"id": "sb-DRVX-4", "role": "X axis direction return GND pin", "source_label": "GND", "terminal": "DRVX.4", "x": 384, "y": 2160}, {"id": "sb-DRVX-5", "role": "X axis enable pin", "source_label": "ENABLE", "terminal": "DRVX.5", "x": 432, "y": 2160}, {"id": "sb-DRVX-6", "role": "X axis enable return GND pin", "source_label": "GND", "terminal": "DRVX.6", "x": 480, "y": 2160}, {"id": "sb-DRVY-1", "role": "Y axis step pin", "source_label": "STEP", "terminal": "DRVY.1", "x": 660, "y": 2160}, {"id": "sb-DRVY-2", "role": "Y axis step return GND pin", "source_label": "GND", "terminal": "DRVY.2", "x": 708, "y": 2160}, {"id": "sb-DRVY-3", "role": "Y axis direction pin", "source_label": "DIR", "terminal": "DRVY.3", "x": 756, "y": 2160}, {"id": "sb-DRVY-4", "role": "Y axis direction return GND pin", "source_label": "GND", "terminal": "DRVY.4", "x": 804, "y": 2160}, {"id": "sb-DRVY-5", "role": "Y axis enable pin", "source_label": "ENABLE", "terminal": "DRVY.5", "x": 852, "y": 2160}, {"id": "sb-DRVY-6", "role": "Y axis enable return GND pin", "source_label": "GND", "terminal": "DRVY.6", "x": 900, "y": 2160}, {"id": "sb-DRVZ-1", "role": "Z axis step pin", "source_label": "STEP", "terminal": "DRVZ.1", "x": 1080, "y": 2160}, {"id": "sb-DRVZ-2", "role": "Z axis step return GND pin", "source_label": "GND", "terminal": "DRVZ.2", "x": 1128, "y": 2160}, {"id": "sb-DRVZ-3", "role": "Z axis direction pin", "source_label": "DIR", "terminal": "DRVZ.3", "x": 1176, "y": 2160}, {"id": "sb-DRVZ-4", "role": "Z axis direction return GND pin", "source_label": "GND", "terminal": "DRVZ.4", "x": 1224, "y": 2160}, {"id": "sb-DRVZ-5", "role": "Z axis enable pin", "source_label": "ENABLE", "terminal": "DRVZ.5", "x": 1272, "y": 2160}, {"id": "sb-DRVZ-6", "role": "Z axis enable return GND pin", "source_label": "GND", "terminal": "DRVZ.6", "x": 1320, "y": 2160}, {"id": "sb-DRVA-1", "role": "A axis step pin", "source_label": "STEP", "terminal": "DRVA.1", "x": 1500, "y": 2160}, {"id": "sb-DRVA-2", "role": "A axis step return GND pin", "source_label": "GND", "terminal": "DRVA.2", "x": 1548, "y": 2160}, {"id": "sb-DRVA-3", "role": "A axis direction pin", "source_label": "DIR", "terminal": "DRVA.3", "x": 1596, "y": 2160}, {"id": "sb-DRVA-4", "role": "A axis direction return GND pin", "source_label": "GND", "terminal": "DRVA.4", "x": 1644, "y": 2160}, {"id": "sb-DRVA-5", "role": "A axis enable pin", "source_label": "ENABLE", "terminal": "DRVA.5", "x": 1692, "y": 2160}, {"id": "sb-DRVA-6", "role": "A axis enable return GND pin", "source_label": "GND", "terminal": "DRVA.6", "x": 1740, "y": 2160}], "peripherals": [{"connector_id": "denford-original-baldor-j1", "contacts": [{"fact": "source", "id": "machine-p001-c001", "label": "BLACK · 0V to power board J6", "mark": "1", "source_id": "1", "source_relation": ""}, {"fact": "source", "id": "machine-p001-c002", "label": "RED · +24 V logic supply from power board J6", "mark": "2", "source_id": "2", "source_relation": ""}, {"fact": "source", "id": "machine-p001-c003", "label": "0V to power board J6", "mark": "4", "source_id": "4", "source_relation": ""}, {"fact": "source", "id": "machine-p001-c004", "label": "YELLOW · +37 V stepper supply, noted redundant with external drives fitted", "mark": "5", "source_id": "5", "source_relation": ""}], "kind": "reference", "name": "Original Baldor control board · J1 power", "numbering": "Cabinet Wiring labels selected J1 terminals; its clockwise numbering starts at bottom-right power pin 1. No mating-face drawing.", "origin_path": "smoothiebox-reference-contacts.json#wiki-135/denford-original-baldor-j1; captured dossier machine-research/wiki/denford-cnc-2600-pro.md sha256=10e6712d6a7f5143ff3499e14ec1d755e8e3ed8383f54df54d72ea2376e8f841", "origin_sha256": "ff22926af6a0752c3e84461c7edfecaed220ff46da78946e1aebb76a05bf8118", "revision": "Cabinet Wiring page revision 54936, 2022-03-14T23:19:26Z; original Baldor controller, relay/power board, spindle drive and stepper-drive wiring tables", "source": "Cabinet Wiring page revision 54936, 2022-03-14T23:19:26Z; original Baldor controller, relay/power board, spindle drive and stepper-drive wiring tables · Original-controller reference contacts. Current installed control board/revision is not confirmed.", "source_urls": ["https://wiki.london.hackspace.org.uk/view/Cabinet_Wiring"], "upstream_function_hints": []}, {"connector_id": "denford-original-baldor-j2", "contacts": [{"fact": "source", "id": "machine-p002-c001", "label": "GREEN/YELLOW · front-panel pot shield", "mark": "1", "source_id": "1", "source_relation": ""}, {"fact": "source", "id": "machine-p002-c002", "label": "BLUE · 0V to front-panel pots", "mark": "5", "source_id": "5", "source_relation": ""}, {"fact": "source", "id": "machine-p002-c003", "label": "RED · +5 V to pots and stepper opto-input common +", "mark": "6", "source_id": "6", "source_relation": ""}], "kind": "reference", "name": "Original Baldor control board · J2 pots / driver common", "numbering": "Selected numbered J2 contacts from Cabinet Wiring; no mating-face drawing.", "origin_path": "smoothiebox-reference-contacts.json#wiki-135/denford-original-baldor-j2; captured dossier machine-research/wiki/denford-cnc-2600-pro.md sha256=10e6712d6a7f5143ff3499e14ec1d755e8e3ed8383f54df54d72ea2376e8f841", "origin_sha256": "ff22926af6a0752c3e84461c7edfecaed220ff46da78946e1aebb76a05bf8118", "revision": "Cabinet Wiring page revision 54936, 2022-03-14T23:19:26Z; original Baldor controller, relay/power board, spindle drive and stepper-drive wiring tables", "source": "Cabinet Wiring page revision 54936, 2022-03-14T23:19:26Z; original Baldor controller, relay/power board, spindle drive and stepper-drive wiring tables · Original-controller reference. J2 pin 6 is documented as +5 V to pots and MSD556 opto input common; individual driver assignment is not stated.", "source_urls": ["https://wiki.london.hackspace.org.uk/view/Cabinet_Wiring"], "upstream_function_hints": []}, {"connector_id": "denford-original-baldor-j3", "contacts": [{"fact": "source", "id": "machine-p003-c001", "label": "GREY · DGnd to power board J11", "mark": "2", "source_id": "2", "source_relation": ""}, {"fact": "source", "id": "machine-p003-c002", "label": "GREY · Din 6, door-guard switch state", "mark": "4", "source_id": "4", "source_relation": ""}, {"fact": "source", "id": "machine-p003-c003", "label": "PURPLE · Din 1, front-panel vacuum switch state", "mark": "9", "source_id": "9", "source_relation": ""}, {"fact": "source", "id": "machine-p003-c004", "label": "PURPLE · DGnd to power board J11", "mark": "11", "source_id": "11", "source_relation": ""}], "kind": "reference", "name": "Original Baldor control board · J3 inputs", "numbering": "Selected numbered J3 contacts from Cabinet Wiring; no mating-face drawing.", "origin_path": "smoothiebox-reference-contacts.json#wiki-135/denford-original-baldor-j3; captured dossier machine-research/wiki/denford-cnc-2600-pro.md sha256=10e6712d6a7f5143ff3499e14ec1d755e8e3ed8383f54df54d72ea2376e8f841", "origin_sha256": "ff22926af6a0752c3e84461c7edfecaed220ff46da78946e1aebb76a05bf8118", "revision": "Cabinet Wiring page revision 54936, 2022-03-14T23:19:26Z; original Baldor controller, relay/power board, spindle drive and stepper-drive wiring tables", "source": "Cabinet Wiring page revision 54936, 2022-03-14T23:19:26Z; original Baldor controller, relay/power board, spindle drive and stepper-drive wiring tables · Original-controller reference inputs. Door-guard and front-vac-switch assignments are stated by the wiki.", "source_urls": ["https://wiki.london.hackspace.org.uk/view/Cabinet_Wiring"], "upstream_function_hints": []}, {"connector_id": "denford-original-baldor-j5", "contacts": [{"fact": "source", "id": "machine-p004-c001", "label": "GREY · DGnd, power board J6 pin 7", "mark": "2", "source_id": "2", "source_relation": ""}, {"fact": "source", "id": "machine-p004-c002", "label": "PURPLE · DGnd, power board J6 pin 9", "mark": "9", "source_id": "9", "source_relation": ""}, {"fact": "source", "id": "machine-p004-c003", "label": "BLUE · analog ground, VS1ST pin 7", "mark": "11", "source_id": "11", "source_relation": ""}, {"fact": "source", "id": "machine-p004-c004", "label": "RED · analog spindle-speed output, VS1ST pin 6", "mark": "12", "source_id": "12", "source_relation": ""}], "kind": "reference", "name": "Original Baldor control board · J5 analog / ground", "numbering": "Selected numbered J5 contacts from Cabinet Wiring; no mating-face drawing.", "origin_path": "smoothiebox-reference-contacts.json#wiki-135/denford-original-baldor-j5; captured dossier machine-research/wiki/denford-cnc-2600-pro.md sha256=10e6712d6a7f5143ff3499e14ec1d755e8e3ed8383f54df54d72ea2376e8f841", "origin_sha256": "ff22926af6a0752c3e84461c7edfecaed220ff46da78946e1aebb76a05bf8118", "revision": "Cabinet Wiring page revision 54936, 2022-03-14T23:19:26Z; original Baldor controller, relay/power board, spindle drive and stepper-drive wiring tables", "source": "Cabinet Wiring page revision 54936, 2022-03-14T23:19:26Z; original Baldor controller, relay/power board, spindle drive and stepper-drive wiring tables · Original-controller reference; wiki maps analog spindle reference to the VS1ST and grounds to power board J6.", "source_urls": ["https://wiki.london.hackspace.org.uk/view/Cabinet_Wiring"], "upstream_function_hints": []}, {"connector_id": "denford-original-baldor-j6", "contacts": [{"fact": "source", "id": "machine-p005-c001", "label": "BLUE · DGnd in E-stop chain", "mark": "2", "source_id": "2", "source_relation": ""}, {"fact": "source", "id": "machine-p005-c002", "label": "RED · Din 11, E-stop chain input", "mark": "6", "source_id": "6", "source_relation": ""}, {"fact": "source", "id": "machine-p005-c003", "label": "GREY · Din 12, limit contact assignment marked ??", "mark": "7", "source_id": "7", "source_relation": ""}, {"fact": "source", "id": "machine-p005-c004", "label": "PINK · Din 13, limit contact assignment marked ??", "mark": "8", "source_id": "8", "source_relation": ""}, {"fact": "source", "id": "machine-p005-c005", "label": "PURPLE · Din 14, limit contact assignment marked ??", "mark": "9", "source_id": "9", "source_relation": ""}, {"fact": "source", "id": "machine-p005-c006", "label": "PINK · DGnd", "mark": "11", "source_id": "11", "source_relation": ""}], "kind": "reference", "name": "Original Baldor control board · J6 E-stop / limit inputs", "numbering": "Selected numbered J6 contacts from Cabinet Wiring; no mating-face drawing.", "origin_path": "smoothiebox-reference-contacts.json#wiki-135/denford-original-baldor-j6; captured dossier machine-research/wiki/denford-cnc-2600-pro.md sha256=10e6712d6a7f5143ff3499e14ec1d755e8e3ed8383f54df54d72ea2376e8f841", "origin_sha256": "ff22926af6a0752c3e84461c7edfecaed220ff46da78946e1aebb76a05bf8118", "revision": "Cabinet Wiring page revision 54936, 2022-03-14T23:19:26Z; original Baldor controller, relay/power board, spindle drive and stepper-drive wiring tables", "source": "Cabinet Wiring page revision 54936, 2022-03-14T23:19:26Z; original Baldor controller, relay/power board, spindle drive and stepper-drive wiring tables · Original-controller reference. Limit-to-input assignment is explicitly marked ?? by the source; preserve it as unknown.", "source_urls": ["https://wiki.london.hackspace.org.uk/view/Cabinet_Wiring"], "upstream_function_hints": []}, {"connector_id": "denford-original-baldor-j7", "contacts": [{"fact": "source", "id": "machine-p006-c001", "label": "RED · Dout 15, low to free Z-axis brake", "mark": "9", "source_id": "9", "source_relation": ""}], "kind": "reference", "name": "Original Baldor control board · J7 brake control", "numbering": "Only the numbered contact listed in Cabinet Wiring; connector view unavailable.", "origin_path": "smoothiebox-reference-contacts.json#wiki-135/denford-original-baldor-j7; captured dossier machine-research/wiki/denford-cnc-2600-pro.md sha256=10e6712d6a7f5143ff3499e14ec1d755e8e3ed8383f54df54d72ea2376e8f841", "origin_sha256": "ff22926af6a0752c3e84461c7edfecaed220ff46da78946e1aebb76a05bf8118", "revision": "Cabinet Wiring page revision 54936, 2022-03-14T23:19:26Z; original Baldor controller, relay/power board, spindle drive and stepper-drive wiring tables", "source": "Cabinet Wiring page revision 54936, 2022-03-14T23:19:26Z; original Baldor controller, relay/power board, spindle drive and stepper-drive wiring tables · Original-controller reference; active-low Z-axis brake-release function is source-described, but board installation is unverified.", "source_urls": ["https://wiki.london.hackspace.org.uk/view/Cabinet_Wiring"], "upstream_function_hints": []}, {"connector_id": "denford-original-baldor-j8", "contacts": [{"fact": "source", "id": "machine-p007-c001", "label": "WHITE · to power J10 pin 1; disable Z-axis brake when low (source includes ??)", "mark": "2", "source_id": "2", "source_relation": ""}, {"fact": "source", "id": "machine-p007-c002", "label": "YELLOW · to power J10 pin 2; vacuum pump enabled when low", "mark": "8", "source_id": "8", "source_relation": ""}, {"fact": "source", "id": "machine-p007-c003", "label": "PURPLE · to power J10 pin 3; door unlock when low", "mark": "9", "source_id": "9", "source_relation": ""}, {"fact": "source", "id": "machine-p007-c004", "label": "RED · to power J10 pin 4; relay common +ve", "mark": "10", "source_id": "10", "source_relation": ""}, {"fact": "source", "id": "machine-p007-c005", "label": "BLACK · DGnd to power J10 pin 5", "mark": "11", "source_id": "11", "source_relation": ""}], "kind": "reference", "name": "Original Baldor control board · J8 outputs", "numbering": "Selected numbered J8 contacts from Cabinet Wiring; no mating-face drawing.", "origin_path": "smoothiebox-reference-contacts.json#wiki-135/denford-original-baldor-j8; captured dossier machine-research/wiki/denford-cnc-2600-pro.md sha256=10e6712d6a7f5143ff3499e14ec1d755e8e3ed8383f54df54d72ea2376e8f841", "origin_sha256": "ff22926af6a0752c3e84461c7edfecaed220ff46da78946e1aebb76a05bf8118", "revision": "Cabinet Wiring page revision 54936, 2022-03-14T23:19:26Z; original Baldor controller, relay/power board, spindle drive and stepper-drive wiring tables", "source": "Cabinet Wiring page revision 54936, 2022-03-14T23:19:26Z; original Baldor controller, relay/power board, spindle drive and stepper-drive wiring tables · Original-controller reference outputs to power-board J10. The wiki marks several mappings uncertain.", "source_urls": ["https://wiki.london.hackspace.org.uk/view/Cabinet_Wiring"], "upstream_function_hints": []}, {"connector_id": "denford-original-baldor-j9", "contacts": [{"fact": "source", "id": "machine-p008-c001", "label": "GREEN/YELLOW · front-panel pot shield", "mark": "1", "source_id": "1", "source_relation": ""}, {"fact": "source", "id": "machine-p008-c002", "label": "GREEN · spindle-pot slider, Ain0", "mark": "2", "source_id": "2", "source_relation": ""}, {"fact": "source", "id": "machine-p008-c003", "label": "BLUE · analog ground", "mark": "3", "source_id": "3", "source_relation": ""}, {"fact": "source", "id": "machine-p008-c004", "label": "YELLOW · feed-rate-pot slider, Ain1", "mark": "4", "source_id": "4", "source_relation": ""}, {"fact": "source", "id": "machine-p008-c005", "label": "BLUE · analog ground", "mark": "5", "source_id": "5", "source_relation": ""}, {"fact": "source", "id": "machine-p008-c006", "label": "BLUE · analog ground", "mark": "6", "source_id": "6", "source_relation": ""}], "kind": "reference", "name": "Original Baldor control board · J9 panel pots", "numbering": "All six numbered J9 contacts are listed by Cabinet Wiring; no mating-face drawing.", "origin_path": "smoothiebox-reference-contacts.json#wiki-135/denford-original-baldor-j9; captured dossier machine-research/wiki/denford-cnc-2600-pro.md sha256=10e6712d6a7f5143ff3499e14ec1d755e8e3ed8383f54df54d72ea2376e8f841", "origin_sha256": "ff22926af6a0752c3e84461c7edfecaed220ff46da78946e1aebb76a05bf8118", "revision": "Cabinet Wiring page revision 54936, 2022-03-14T23:19:26Z; original Baldor controller, relay/power board, spindle drive and stepper-drive wiring tables", "source": "Cabinet Wiring page revision 54936, 2022-03-14T23:19:26Z; original Baldor controller, relay/power board, spindle drive and stepper-drive wiring tables · Original-controller reference analog input and common group.", "source_urls": ["https://wiki.london.hackspace.org.uk/view/Cabinet_Wiring"], "upstream_function_hints": []}, {"connector_id": "denford-relay-j1", "contacts": [{"fact": "source", "id": "machine-p009-c001", "label": "Mains input from mains filter", "mark": "1", "source_id": "1", "source_relation": ""}], "kind": "reference", "name": "E-stop/power relay board · J1 mains-filter boundary", "numbering": "Only J1 pin 1 has a numbered entry in the Cabinet Wiring table; remaining positions are not counted.", "origin_path": "smoothiebox-reference-contacts.json#wiki-135/denford-relay-j1; captured dossier machine-research/wiki/denford-cnc-2600-pro.md sha256=10e6712d6a7f5143ff3499e14ec1d755e8e3ed8383f54df54d72ea2376e8f841", "origin_sha256": "ff22926af6a0752c3e84461c7edfecaed220ff46da78946e1aebb76a05bf8118", "revision": "Cabinet Wiring page revision 54936, 2022-03-14T23:19:26Z; original Baldor controller, relay/power board, spindle drive and stepper-drive wiring tables", "source": "Cabinet Wiring page revision 54936, 2022-03-14T23:19:26Z; original Baldor controller, relay/power board, spindle drive and stepper-drive wiring tables · Reference power-boundary label only. High-voltage wiring is not a SmoothieBox connection.", "source_urls": ["https://wiki.london.hackspace.org.uk/view/Cabinet_Wiring"], "upstream_function_hints": []}, {"connector_id": "denford-relay-j8", "contacts": [{"fact": "source", "id": "machine-p010-c001", "label": "RED · E-stop harness", "mark": "1", "source_id": "1", "source_relation": ""}, {"fact": "source", "id": "machine-p010-c002", "label": "RED · E-stop harness", "mark": "2", "source_id": "2", "source_relation": ""}, {"fact": "source", "id": "machine-p010-c003", "label": "WHITE · guard switch / door lock", "mark": "3", "source_id": "3", "source_relation": ""}, {"fact": "source", "id": "machine-p010-c004", "label": "PURPLE · guard switch / door lock", "mark": "4", "source_id": "4", "source_relation": ""}, {"fact": "source", "id": "machine-p010-c005", "label": "BLACK · guard switch / door lock", "mark": "5", "source_id": "5", "source_relation": ""}, {"fact": "source", "id": "machine-p010-c006", "label": "BROWN · guard switch / door lock", "mark": "6", "source_id": "6", "source_relation": ""}, {"fact": "source", "id": "machine-p010-c007", "label": "YELLOW · guard switch / door lock", "mark": "7", "source_id": "7", "source_relation": ""}, {"fact": "source", "id": "machine-p010-c008", "label": "RED · guard switch / door lock", "mark": "8", "source_id": "8", "source_relation": ""}], "kind": "reference", "name": "E-stop/power relay board · J8 safety harness", "numbering": "Cabinet Wiring explicitly lists pins 1–8; schematic MRP-0850B revision B is not treated as installed revision.", "origin_path": "smoothiebox-reference-contacts.json#wiki-135/denford-relay-j8; captured dossier machine-research/wiki/denford-cnc-2600-pro.md sha256=10e6712d6a7f5143ff3499e14ec1d755e8e3ed8383f54df54d72ea2376e8f841", "origin_sha256": "ff22926af6a0752c3e84461c7edfecaed220ff46da78946e1aebb76a05bf8118", "revision": "Cabinet Wiring page revision 54936, 2022-03-14T23:19:26Z; original Baldor controller, relay/power board, spindle drive and stepper-drive wiring tables", "source": "Cabinet Wiring page revision 54936, 2022-03-14T23:19:26Z; original Baldor controller, relay/power board, spindle drive and stepper-drive wiring tables · Reference E-stop / guard / door-lock boundary. Contact state and installed revision are unverified.", "source_urls": ["https://wiki.london.hackspace.org.uk/view/Cabinet_Wiring"], "upstream_function_hints": []}, {"connector_id": "denford-relay-j10", "contacts": [{"fact": "source", "id": "machine-p011-c001", "label": "WHITE · controller J8; input ?? disable Z-axis brake when low", "mark": "1", "source_id": "1", "source_relation": ""}, {"fact": "source", "id": "machine-p011-c002", "label": "GREY · vacuum pump enable input, active low", "mark": "2", "source_id": "2", "source_relation": ""}, {"fact": "source", "id": "machine-p011-c003", "label": "Unlock-door input, active low; color not stated", "mark": "3", "source_id": "3", "source_relation": ""}, {"fact": "source", "id": "machine-p011-c004", "label": "E-stop chain", "mark": "5", "source_id": "5", "source_relation": ""}, {"fact": "source", "id": "machine-p011-c005", "label": "E-stop chain", "mark": "6", "source_id": "6", "source_relation": ""}], "kind": "reference", "name": "E-stop/power relay board · J10 controller / E-stop", "numbering": "Only numbered positions listed in Cabinet Wiring are shown; pin 4 has no source row and is not invented.", "origin_path": "smoothiebox-reference-contacts.json#wiki-135/denford-relay-j10; captured dossier machine-research/wiki/denford-cnc-2600-pro.md sha256=10e6712d6a7f5143ff3499e14ec1d755e8e3ed8383f54df54d72ea2376e8f841", "origin_sha256": "ff22926af6a0752c3e84461c7edfecaed220ff46da78946e1aebb76a05bf8118", "revision": "Cabinet Wiring page revision 54936, 2022-03-14T23:19:26Z; original Baldor controller, relay/power board, spindle drive and stepper-drive wiring tables", "source": "Cabinet Wiring page revision 54936, 2022-03-14T23:19:26Z; original Baldor controller, relay/power board, spindle drive and stepper-drive wiring tables · Reference controller outputs and E-stop chain. Active-low functions and `??` are retained literally.", "source_urls": ["https://wiki.london.hackspace.org.uk/view/Cabinet_Wiring"], "upstream_function_hints": []}, {"connector_id": "denford-relay-j11", "contacts": [{"fact": "source", "id": "machine-p012-c001", "label": "GREY · controller J3", "mark": "1", "source_id": "1", "source_relation": ""}, {"fact": "source", "id": "machine-p012-c002", "label": "GREY · controller J3", "mark": "2", "source_id": "2", "source_relation": ""}, {"fact": "source", "id": "machine-p012-c003", "label": "PURPLE · controller J3", "mark": "3", "source_id": "3", "source_relation": ""}, {"fact": "source", "id": "machine-p012-c004", "label": "PURPLE · controller J3", "mark": "4", "source_id": "4", "source_relation": ""}], "kind": "reference", "name": "E-stop/power relay board · J11 controller J3 link", "numbering": "Cabinet Wiring lists four numbered positions; no mating-face drawing.", "origin_path": "smoothiebox-reference-contacts.json#wiki-135/denford-relay-j11; captured dossier machine-research/wiki/denford-cnc-2600-pro.md sha256=10e6712d6a7f5143ff3499e14ec1d755e8e3ed8383f54df54d72ea2376e8f841", "origin_sha256": "ff22926af6a0752c3e84461c7edfecaed220ff46da78946e1aebb76a05bf8118", "revision": "Cabinet Wiring page revision 54936, 2022-03-14T23:19:26Z; original Baldor controller, relay/power board, spindle drive and stepper-drive wiring tables", "source": "Cabinet Wiring page revision 54936, 2022-03-14T23:19:26Z; original Baldor controller, relay/power board, spindle drive and stepper-drive wiring tables · Reference board interconnect only.", "source_urls": ["https://wiki.london.hackspace.org.uk/view/Cabinet_Wiring"], "upstream_function_hints": []}, {"connector_id": "denford-relay-j12", "contacts": [{"fact": "source", "id": "machine-p013-c001", "label": "Brake actuator · brake releases when energized", "mark": "1", "source_id": "1", "source_relation": ""}, {"fact": "source", "id": "machine-p013-c002", "label": "Brake actuator · 0V", "mark": "2", "source_id": "2", "source_relation": ""}, {"fact": "source", "id": "machine-p013-c003", "label": "Brake actuator · +24 V", "mark": "4", "source_id": "4", "source_relation": ""}], "kind": "reference", "name": "E-stop/power relay board · J12 Z brake actuator", "numbering": "Only numbered positions listed in Cabinet Wiring are shown.", "origin_path": "smoothiebox-reference-contacts.json#wiki-135/denford-relay-j12; captured dossier machine-research/wiki/denford-cnc-2600-pro.md sha256=10e6712d6a7f5143ff3499e14ec1d755e8e3ed8383f54df54d72ea2376e8f841", "origin_sha256": "ff22926af6a0752c3e84461c7edfecaed220ff46da78946e1aebb76a05bf8118", "revision": "Cabinet Wiring page revision 54936, 2022-03-14T23:19:26Z; original Baldor controller, relay/power board, spindle drive and stepper-drive wiring tables", "source": "Cabinet Wiring page revision 54936, 2022-03-14T23:19:26Z; original Baldor controller, relay/power board, spindle drive and stepper-drive wiring tables · Reference actuator power boundary; not an I/O route.", "source_urls": ["https://wiki.london.hackspace.org.uk/view/Cabinet_Wiring"], "upstream_function_hints": []}, {"connector_id": "denford-relay-j13", "contacts": [{"fact": "source", "id": "machine-p014-c001", "label": "Linked to J13 pin 4", "mark": "1", "source_id": "1", "source_relation": ""}, {"fact": "source", "id": "machine-p014-c002", "label": "VFD pins 1/2 · spindle enable path", "mark": "2", "source_id": "2", "source_relation": ""}, {"fact": "source", "id": "machine-p014-c003", "label": "VFD pins 1/2 · spindle enable path", "mark": "3", "source_id": "3", "source_relation": ""}, {"fact": "source", "id": "machine-p014-c004", "label": "Linked to J13 pin 1", "mark": "4", "source_id": "4", "source_relation": ""}, {"fact": "source", "id": "machine-p014-c005", "label": "Controller J7 · grounded to energize/release Z-axis brake", "mark": "5", "source_id": "5", "source_relation": ""}], "kind": "reference", "name": "E-stop/power relay board · J13 brake / VFD enable", "numbering": "Cabinet Wiring explicitly lists J13 pins 1–5.", "origin_path": "smoothiebox-reference-contacts.json#wiki-135/denford-relay-j13; captured dossier machine-research/wiki/denford-cnc-2600-pro.md sha256=10e6712d6a7f5143ff3499e14ec1d755e8e3ed8383f54df54d72ea2376e8f841", "origin_sha256": "ff22926af6a0752c3e84461c7edfecaed220ff46da78946e1aebb76a05bf8118", "revision": "Cabinet Wiring page revision 54936, 2022-03-14T23:19:26Z; original Baldor controller, relay/power board, spindle drive and stepper-drive wiring tables", "source": "Cabinet Wiring page revision 54936, 2022-03-14T23:19:26Z; original Baldor controller, relay/power board, spindle drive and stepper-drive wiring tables · Reference relay links and spindle enable; current safety circuit revision unknown.", "source_urls": ["https://wiki.london.hackspace.org.uk/view/Cabinet_Wiring"], "upstream_function_hints": []}, {"connector_id": "denford-baldor-vs1st-control", "contacts": [{"fact": "source", "id": "machine-p015-c001", "label": "+24 V output", "mark": "1", "source_id": "1", "source_relation": ""}, {"fact": "source", "id": "machine-p015-c002", "label": "Digital In1 · Cabinet Wiring says connect to pin 1 to enable drive", "mark": "2", "source_id": "2", "source_relation": ""}, {"fact": "source", "id": "machine-p015-c003", "label": "Digital In2", "mark": "3", "source_id": "3", "source_relation": ""}, {"fact": "source", "id": "machine-p015-c004", "label": "Digital In3 / Analog In2", "mark": "4", "source_id": "4", "source_relation": ""}, {"fact": "source", "id": "machine-p015-c005", "label": "+10VDC reference for potentiometer · 1 kohm minimum", "mark": "5", "source_id": "5", "source_relation": ""}, {"fact": "source", "id": "machine-p015-c006", "label": "An IN 1 · speed-control voltage from Baldor board J5 pin 12", "mark": "6", "source_id": "6", "source_relation": ""}, {"fact": "source", "id": "machine-p015-c007", "label": "0V / analog ground from Baldor board J5 pin 11", "mark": "7", "source_id": "7", "source_relation": ""}, {"fact": "source", "id": "machine-p015-c008", "label": "Analog output 0–10VDC @ 10mA / Digital output 0–24VDC", "mark": "8", "source_id": "8", "source_relation": ""}, {"fact": "source", "id": "machine-p015-c009", "label": "Common · connected to terminal 7", "mark": "9", "source_id": "9", "source_relation": ""}, {"fact": "source", "id": "machine-p015-c010", "label": "Relay Common", "mark": "10", "source_id": "10", "source_relation": ""}, {"fact": "source", "id": "machine-p015-c011", "label": "Relay N.O. Contact · rated 250VAC @ 6A; 30VDC @ 5A", "mark": "11", "source_id": "11", "source_relation": ""}], "kind": "reference", "name": "Baldor VS1ST · control terminal strip", "numbering": "All 11 control-strip terminals from Baldor VS1ST Micro-Series Manual MN767, Table 1-1, pp. 1-4; Cabinet Wiring table cross-references selected terminals.", "origin_path": "smoothiebox-reference-contacts.json#wiki-135/denford-baldor-vs1st-control; captured dossier machine-research/wiki/denford-cnc-2600-pro.md sha256=10e6712d6a7f5143ff3499e14ec1d755e8e3ed8383f54df54d72ea2376e8f841", "origin_sha256": "ff22926af6a0752c3e84461c7edfecaed220ff46da78946e1aebb76a05bf8118", "revision": "Cabinet Wiring page revision 54936, 2022-03-14T23:19:26Z; original Baldor controller, relay/power board, spindle drive and stepper-drive wiring tables", "source": "Cabinet Wiring page revision 54936, 2022-03-14T23:19:26Z; original Baldor controller, relay/power board, spindle drive and stepper-drive wiring tables · Reference low-voltage drive-control contacts. Terminal function and ratings are model-manual evidence; installed variant/continuity unverified. Do not infer mains or motor-conductor connections.", "source_urls": ["https://wiki.london.hackspace.org.uk/view/Cabinet_Wiring"], "upstream_function_hints": []}, {"connector_id": "denford-msd556-p1", "contacts": [{"fact": "source", "id": "machine-p016-c001", "label": "+5 V opto common in", "mark": "1", "source_id": "1", "source_relation": ""}, {"fact": "source", "id": "machine-p016-c002", "label": "Step opto input · low to assert", "mark": "2", "source_id": "2", "source_relation": ""}, {"fact": "source", "id": "machine-p016-c003", "label": "+5 V opto common in", "mark": "3", "source_id": "3", "source_relation": ""}, {"fact": "source", "id": "machine-p016-c004", "label": "Direction opto input · low to assert", "mark": "4", "source_id": "4", "source_relation": ""}], "kind": "reference", "name": "MSD556-V2.0 · P1 control contacts, axis unassigned", "numbering": "Pins 1–4 are numbered in the Cabinet Wiring drive table; signal names corroborated by the V2.0 datasheet. No drive-to-axis assignment or view is supplied.", "origin_path": "smoothiebox-reference-contacts.json#wiki-135/denford-msd556-p1; captured dossier machine-research/wiki/denford-cnc-2600-pro.md sha256=10e6712d6a7f5143ff3499e14ec1d755e8e3ed8383f54df54d72ea2376e8f841", "origin_sha256": "ff22926af6a0752c3e84461c7edfecaed220ff46da78946e1aebb76a05bf8118", "revision": "MSD556-V2.0 stepper drive datasheet Rev. 3.0 hosted by London Hackspace; downloaded PDF SHA-256 3baa3a65a776bd9479f40444201393b71f64d3c47f497e153c21431e8f5f674b", "source": "MSD556-V2.0 stepper drive datasheet Rev. 3.0 hosted by London Hackspace; downloaded PDF SHA-256 3baa3a65a776bd9479f40444201393b71f64d3c47f497e153c21431e8f5f674b · Reference stepper-drive input contact group. Do not assume the same physical drive serves a named axis.", "source_urls": ["https://wiki.london.hackspace.org.uk/view/File:MSD556-V2.0_stepper-drive-datasheet-v3.0.pdf"], "upstream_function_hints": []}, {"connector_id": "denford-msd556-p2", "contacts": [{"fact": "source", "id": "machine-p017-c001", "label": "RED · +37 V from power J6", "mark": "1", "source_id": "1", "source_relation": ""}, {"fact": "source", "id": "machine-p017-c002", "label": "BLACK · 0V from power J6", "mark": "2", "source_id": "2", "source_relation": ""}, {"fact": "source", "id": "machine-p017-c003", "label": "BLACK · motor lead; phase unknown", "mark": "3", "source_id": "3", "source_relation": ""}, {"fact": "source", "id": "machine-p017-c004", "label": "ORANGE · motor lead; phase unknown", "mark": "4", "source_id": "4", "source_relation": ""}, {"fact": "source", "id": "machine-p017-c005", "label": "RED · motor lead; phase unknown", "mark": "5", "source_id": "5", "source_relation": ""}, {"fact": "source", "id": "machine-p017-c006", "label": "YELLOW · motor lead; phase unknown", "mark": "6", "source_id": "6", "source_relation": ""}], "kind": "reference", "name": "MSD556-V2.0 · P2 supply / motor contacts, axis unassigned", "numbering": "Pins 1–6 and wire colors are listed in the Cabinet Wiring drive table; motor phase assignment is not stated.", "origin_path": "smoothiebox-reference-contacts.json#wiki-135/denford-msd556-p2; captured dossier machine-research/wiki/denford-cnc-2600-pro.md sha256=10e6712d6a7f5143ff3499e14ec1d755e8e3ed8383f54df54d72ea2376e8f841", "origin_sha256": "ff22926af6a0752c3e84461c7edfecaed220ff46da78946e1aebb76a05bf8118", "revision": "MSD556-V2.0 stepper drive datasheet Rev. 3.0 hosted by London Hackspace; downloaded PDF SHA-256 3baa3a65a776bd9479f40444201393b71f64d3c47f497e153c21431e8f5f674b", "source": "MSD556-V2.0 stepper drive datasheet Rev. 3.0 hosted by London Hackspace; downloaded PDF SHA-256 3baa3a65a776bd9479f40444201393b71f64d3c47f497e153c21431e8f5f674b · Reference stepper-drive power and motor boundary. P2 pin 1 is the listed +37 V feed; no route to SmoothieBox.", "source_urls": ["https://wiki.london.hackspace.org.uk/view/File:MSD556-V2.0_stepper-drive-datasheet-v3.0.pdf"], "upstream_function_hints": []}], "prior_profile_route_note": "OPEN interface: board and source-scoped opposing connector inventories are shown on opposite sides with no conductor between them. CONTACT POSITIONS UNKNOWN identifies unnumbered machine groups; every known position is listed individually just below. Open this diagram at full size", "profile_id": "wiki-135", "routes": []}</metadata>
+<metadata id="source-provenance">{"exterior_schedule": "Smoothie Central Chapter 18 proposed carrier field contacts", "machine_source": {"kind": "typed_graph_projection", "snapshot": "machine-side-graph-snapshot.json", "snapshot_sha256": "ab39ac1142254918497ff13fcb4998c1d0daf33eee3782b97bbac3304b1b3977", "source_graph": "135-wiki-135.json", "source_sha256": "74426d2ed4b3de78713d194f07e92e090e3262b35c22c38f826ee5fb723b75d4"}, "profile_id": "wiki-135", "reference_additions": {"path": "smoothiebox-reference-contacts.json", "sha256": "ff22926af6a0752c3e84461c7edfecaed220ff46da78946e1aebb76a05bf8118"}}</metadata>
+<style>
+text{font-family:Arial,Helvetica,sans-serif;fill:#21382d}
+.background{fill:#edf2ec}.title{font-size:38px;font-weight:800}
+.subtitle{font-size:23px;fill:#4e6758}.eyebrow{font-size:18px;font-weight:800;fill:#087b60}
+.case{fill:#fffef9;stroke:#29513e;stroke-width:4}.carrier-header{fill:#e6efe8;stroke:#4d8065;stroke-width:2}.carrier-header-title{font-size:28px;font-weight:850;letter-spacing:1px}.carrier-header-note{font-size:15px;fill:#526a5b;letter-spacing:.5px}.connector-shell{fill:#d9e6dc;stroke:#4d8065;stroke-width:2}.case-title{font-size:44px;font-weight:800}
+.case-note{font-size:20px;fill:#526a5b}.terminal{fill:#35ba58;stroke:#1b6338;stroke-width:2}
+.terminal-candidate{stroke:#7443a4;stroke-width:4}.screw{fill:#c8d2d3;stroke:#496367;stroke-width:2}
+.bank-title{font-size:19px;font-weight:800}.pin-label{font-size:20px;font-weight:650}
+.pin-number{font-size:18px;font-weight:800}.service{fill:#26373b;stroke:#72898c;stroke-width:3}
+.service-label{font-size:17px;font-weight:800}.small{font-size:16px;fill:#526a5b}
+.peripheral-card{fill:#fffef9;stroke:#83a18b;stroke-width:2}.peripheral-accent-reported{fill:#277552}.peripheral-accent-reference{fill:#9b6b1e}.peripheral-accent-context{fill:#75837d}.connector-badge{fill:#e6efe8;stroke:#4d8065;stroke-width:1.5}.connector-badge-text{font-size:14px;font-weight:800;fill:#2f654d;letter-spacing:.5px}
+.context-card{fill:#e8eceb;stroke:#72817b;stroke-width:2}
+.evidence-label{font-size:17px;font-weight:800;fill:#526a5b}
+.peripheral-name{font-size:28px;font-weight:800}.source-line{font-size:18px;fill:#526a5b}
+.boundary-text{font-size:23px;font-weight:700;fill:#526a5b}
+.open-socket{fill:#fffef9;stroke:#526a5b;stroke-width:2}
+.candidate-socket{fill:#fffef9;stroke:#7443a4;stroke-width:4}
+.number-pill{fill:#26373b}.number-text{font-size:18px;font-weight:800;fill:white}
+.machine-contact{font-size:22px;font-weight:650}.open-status{font-size:17px;fill:#64716a}
+.guess-status{font-size:17px;font-weight:800;fill:#613d85}
+.guess-wire{fill:none;stroke:#7443a4;stroke-width:4;stroke-dasharray:2 10;stroke-linecap:round;stroke-linejoin:round}
+.route-clearance{fill:none;stroke:#edf2ec;stroke-width:12;stroke-linecap:round;stroke-linejoin:round}
+.legend-title{font-size:25px;font-weight:800}.legend{font-size:22px;fill:#42584b}
+</style>
+<rect x="0" y="0" width="4996" height="5904" class="background"/>
+<text x="60" y="55" class="eyebrow">MACHINE 135 · OTHER SHOP EQUIPMENT · SOURCE-SCOPED EVIDENCE</text>
+<text x="60" y="105" class="title" text-anchor="start">Denford CNC 2600 Pro — London Hackspace → SmoothieBox exterior connection study</text>
+<text x="60" y="173" class="subtitle">Proposed exterior terminals → dotted function candidates or explicit OPEN boundaries; no installed harness claim</text>
+<g id="smoothiebox-exterior" data-controller="smoothiebox-exterior-only">
+<rect x="60" y="360" width="1800" height="1800" rx="18" class="case"/>
+<rect x="170" y="630" width="1580" height="74" rx="12" class="carrier-header"/>
+<text x="960" y="663" class="carrier-header-title" text-anchor="middle">SMOOTHIEBOX · EXTERIOR FIELD PERIMETER</text>
+<text x="960" y="688" class="carrier-header-note" text-anchor="middle">INTERNAL BOARD, DRIVER CIRCUIT AND SAFETY LOGIC OMITTED · ONLY OUTSIDE CONNECTORS SHOWN</text>
+<g class="bank" data-exterior-bank="POWER" data-side="north">
+<rect x="190" y="720" width="108" height="42" rx="8" class="connector-shell"/>
+<text x="244" y="298" class="bank-title" text-anchor="middle">VFET POWER IN</text>
+<g id="sb-POWER-1" data-exterior-contact="POWER.1" data-role="Load power input LOAD + pin" data-source-label="LOAD +" data-x="220" data-y="360">
+<title>POWER.1 · Load power input LOAD + pin · proposed carrier contact; not a mating view</title>
+<rect x="205" y="346" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="220" cy="360" r="7" class="screw" style="fill:#806700"/>
+<text x="220" y="336" class="pin-number" text-anchor="middle">1</text>
+<text x="220" y="398" transform="rotate(90 220 398)" class="pin-label" style="fill:#806700">Load power input LOAD + pin</text>
+</g>
+<g id="sb-POWER-2" data-exterior-contact="POWER.2" data-role="Load power input GND pin" data-source-label="GND" data-x="268" data-y="360">
+<title>POWER.2 · Load power input GND pin · proposed carrier contact; not a mating view</title>
+<rect x="253" y="346" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="268" cy="360" r="7" class="screw" style="fill:#111717"/>
+<text x="268" y="336" class="pin-number" text-anchor="middle">2</text>
+<text x="268" y="398" transform="rotate(90 268 398)" class="pin-label" style="fill:#111717">Load power input GND pin</text>
+</g>
+</g>
+<g class="bank" data-exterior-bank="FIVEIN" data-side="north">
+<rect x="390" y="720" width="108" height="42" rx="8" class="connector-shell"/>
+<text x="444" y="298" class="bank-title" text-anchor="middle">5V POWER IN</text>
+<g id="sb-FIVEIN-1" data-exterior-contact="FIVEIN.1" data-role="5 V input +5V pin" data-source-label="+5V" data-x="420" data-y="360">
+<title>FIVEIN.1 · 5 V input +5V pin · proposed carrier contact; not a mating view</title>
+<rect x="405" y="346" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="420" cy="360" r="7" class="screw" style="fill:#b85e00"/>
+<text x="420" y="336" class="pin-number" text-anchor="middle">1</text>
+<text x="420" y="398" transform="rotate(90 420 398)" class="pin-label" style="fill:#b85e00">5 V input +5V pin</text>
+</g>
+<g id="sb-FIVEIN-2" data-exterior-contact="FIVEIN.2" data-role="5 V input GND pin" data-source-label="GND" data-x="468" data-y="360">
+<title>FIVEIN.2 · 5 V input GND pin · proposed carrier contact; not a mating view</title>
+<rect x="453" y="346" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="468" cy="360" r="7" class="screw" style="fill:#111717"/>
+<text x="468" y="336" class="pin-number" text-anchor="middle">2</text>
+<text x="468" y="398" transform="rotate(90 468 398)" class="pin-label" style="fill:#111717">5 V input GND pin</text>
+</g>
+</g>
+<g class="bank" data-exterior-bank="FIVEOUT" data-side="north">
+<rect x="590" y="720" width="108" height="42" rx="8" class="connector-shell"/>
+<text x="644" y="298" class="bank-title" text-anchor="middle">5V ACCESSORY OUT</text>
+<g id="sb-FIVEOUT-1" data-exterior-contact="FIVEOUT.1" data-role="5 V accessory output +5V pin" data-source-label="+5V" data-x="620" data-y="360">
+<title>FIVEOUT.1 · 5 V accessory output +5V pin · proposed carrier contact; not a mating view</title>
+<rect x="605" y="346" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="620" cy="360" r="7" class="screw" style="fill:#b85e00"/>
+<text x="620" y="336" class="pin-number" text-anchor="middle">1</text>
+<text x="620" y="398" transform="rotate(90 620 398)" class="pin-label" style="fill:#b85e00">5 V accessory output +5V pin</text>
+</g>
+<g id="sb-FIVEOUT-2" data-exterior-contact="FIVEOUT.2" data-role="5 V accessory output GND pin" data-source-label="GND" data-x="668" data-y="360">
+<title>FIVEOUT.2 · 5 V accessory output GND pin · proposed carrier contact; not a mating view</title>
+<rect x="653" y="346" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="668" cy="360" r="7" class="screw" style="fill:#111717"/>
+<text x="668" y="336" class="pin-number" text-anchor="middle">2</text>
+<text x="668" y="398" transform="rotate(90 668 398)" class="pin-label" style="fill:#111717">5 V accessory output GND pin</text>
+</g>
+</g>
+<g class="bank" data-exterior-bank="AUX" data-side="north">
+<rect x="1470" y="720" width="300" height="42" rx="8" class="connector-shell"/>
+<text x="1620" y="298" class="bank-title" text-anchor="middle">ANALOG INPUTS</text>
+<g id="sb-AUX-1" data-exterior-contact="AUX.1" data-role="Analog input 1 signal pin" data-source-label="ANALOG 1" data-x="1500" data-y="360">
+<title>AUX.1 · Analog input 1 signal pin · proposed carrier contact; not a mating view</title>
+<rect x="1485" y="346" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="1500" cy="360" r="7" class="screw" style="fill:#087361"/>
+<text x="1500" y="336" class="pin-number" text-anchor="middle">1</text>
+<text x="1500" y="398" transform="rotate(90 1500 398)" class="pin-label" style="fill:#087361">Analog input 1 signal pin</text>
+</g>
+<g id="sb-AUX-2" data-exterior-contact="AUX.2" data-role="Analog input 1 GND pin" data-source-label="GND" data-x="1548" data-y="360">
+<title>AUX.2 · Analog input 1 GND pin · proposed carrier contact; not a mating view</title>
+<rect x="1533" y="346" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="1548" cy="360" r="7" class="screw" style="fill:#111717"/>
+<text x="1548" y="336" class="pin-number" text-anchor="middle">2</text>
+<text x="1548" y="398" transform="rotate(90 1548 398)" class="pin-label" style="fill:#111717">Analog input 1 GND pin</text>
+</g>
+<g id="sb-AUX-3" data-exterior-contact="AUX.3" data-role="Analog input 2 signal pin" data-source-label="ANALOG 2" data-x="1596" data-y="360">
+<title>AUX.3 · Analog input 2 signal pin · proposed carrier contact; not a mating view</title>
+<rect x="1581" y="346" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="1596" cy="360" r="7" class="screw" style="fill:#087361"/>
+<text x="1596" y="336" class="pin-number" text-anchor="middle">3</text>
+<text x="1596" y="398" transform="rotate(90 1596 398)" class="pin-label" style="fill:#087361">Analog input 2 signal pin</text>
+</g>
+<g id="sb-AUX-4" data-exterior-contact="AUX.4" data-role="Analog input 2 GND pin" data-source-label="GND" data-x="1644" data-y="360">
+<title>AUX.4 · Analog input 2 GND pin · proposed carrier contact; not a mating view</title>
+<rect x="1629" y="346" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="1644" cy="360" r="7" class="screw" style="fill:#111717"/>
+<text x="1644" y="336" class="pin-number" text-anchor="middle">4</text>
+<text x="1644" y="398" transform="rotate(90 1644 398)" class="pin-label" style="fill:#111717">Analog input 2 GND pin</text>
+</g>
+<g id="sb-AUX-5" data-exterior-contact="AUX.5" data-role="Analog input 3 signal pin" data-source-label="ANALOG 3" data-x="1692" data-y="360">
+<title>AUX.5 · Analog input 3 signal pin · proposed carrier contact; not a mating view</title>
+<rect x="1677" y="346" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="1692" cy="360" r="7" class="screw" style="fill:#087361"/>
+<text x="1692" y="336" class="pin-number" text-anchor="middle">5</text>
+<text x="1692" y="398" transform="rotate(90 1692 398)" class="pin-label" style="fill:#087361">Analog input 3 signal pin</text>
+</g>
+<g id="sb-AUX-6" data-exterior-contact="AUX.6" data-role="Analog input 3 GND pin" data-source-label="GND" data-x="1740" data-y="360">
+<title>AUX.6 · Analog input 3 GND pin · proposed carrier contact; not a mating view</title>
+<rect x="1725" y="346" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="1740" cy="360" r="7" class="screw" style="fill:#111717"/>
+<text x="1740" y="336" class="pin-number" text-anchor="middle">6</text>
+<text x="1740" y="398" transform="rotate(90 1740 398)" class="pin-label" style="fill:#111717">Analog input 3 GND pin</text>
+</g>
+</g>
+<g class="bank" data-exterior-bank="XMIN" data-side="east">
+<rect x="1798" y="708" width="42" height="104" rx="8" class="connector-shell"/>
+<text x="1824" y="701" class="bank-title" text-anchor="end">X MIN</text>
+<g id="sb-XMIN-1" data-exterior-contact="XMIN.1" data-role="X axis min endstop sensor + pin" data-source-label="SENSOR +" data-x="1860" data-y="730">
+<title>XMIN.1 · X axis min endstop sensor + pin · proposed carrier contact; not a mating view</title>
+<rect x="1845" y="716" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="1860" cy="730" r="7" class="screw" style="fill:#416b7e"/>
+<text x="1824" y="737" class="pin-label" text-anchor="end" style="fill:#416b7e">1 · X axis min endstop sensor + pin</text>
+</g>
+<g id="sb-XMIN-2" data-exterior-contact="XMIN.2" data-role="X axis min endstop GND pin" data-source-label="GND" data-x="1860" data-y="760">
+<title>XMIN.2 · X axis min endstop GND pin · proposed carrier contact; not a mating view</title>
+<rect x="1845" y="746" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="1860" cy="760" r="7" class="screw" style="fill:#111717"/>
+<text x="1824" y="767" class="pin-label" text-anchor="end" style="fill:#111717">2 · X axis min endstop GND pin</text>
+</g>
+<g id="sb-XMIN-3" data-exterior-contact="XMIN.3" data-role="X axis min endstop signal pin" data-source-label="SIGNAL" data-x="1860" data-y="790">
+<title>XMIN.3 · X axis min endstop signal pin · proposed carrier contact; not a mating view</title>
+<rect x="1845" y="776" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="1860" cy="790" r="7" class="screw" style="fill:#087361"/>
+<text x="1824" y="797" class="pin-label" text-anchor="end" style="fill:#087361">3 · X axis min endstop signal pin</text>
+</g>
+</g>
+<g class="bank" data-exterior-bank="XMAX" data-side="east">
+<rect x="1798" y="828" width="42" height="104" rx="8" class="connector-shell"/>
+<text x="1824" y="821" class="bank-title" text-anchor="end">X MAX</text>
+<g id="sb-XMAX-1" data-exterior-contact="XMAX.1" data-role="X axis max endstop sensor + pin" data-source-label="SENSOR +" data-x="1860" data-y="850">
+<title>XMAX.1 · X axis max endstop sensor + pin · proposed carrier contact; not a mating view</title>
+<rect x="1845" y="836" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="1860" cy="850" r="7" class="screw" style="fill:#416b7e"/>
+<text x="1824" y="857" class="pin-label" text-anchor="end" style="fill:#416b7e">1 · X axis max endstop sensor + pin</text>
+</g>
+<g id="sb-XMAX-2" data-exterior-contact="XMAX.2" data-role="X axis max endstop GND pin" data-source-label="GND" data-x="1860" data-y="880">
+<title>XMAX.2 · X axis max endstop GND pin · proposed carrier contact; not a mating view</title>
+<rect x="1845" y="866" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="1860" cy="880" r="7" class="screw" style="fill:#111717"/>
+<text x="1824" y="887" class="pin-label" text-anchor="end" style="fill:#111717">2 · X axis max endstop GND pin</text>
+</g>
+<g id="sb-XMAX-3" data-exterior-contact="XMAX.3" data-role="X axis max endstop signal pin" data-source-label="SIGNAL" data-x="1860" data-y="910">
+<title>XMAX.3 · X axis max endstop signal pin · proposed carrier contact; not a mating view</title>
+<rect x="1845" y="896" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="1860" cy="910" r="7" class="screw" style="fill:#087361"/>
+<text x="1824" y="917" class="pin-label" text-anchor="end" style="fill:#087361">3 · X axis max endstop signal pin</text>
+</g>
+</g>
+<g class="bank" data-exterior-bank="YMIN" data-side="east">
+<rect x="1798" y="948" width="42" height="104" rx="8" class="connector-shell"/>
+<text x="1824" y="941" class="bank-title" text-anchor="end">Y MIN</text>
+<g id="sb-YMIN-1" data-exterior-contact="YMIN.1" data-role="Y axis min endstop sensor + pin" data-source-label="SENSOR +" data-x="1860" data-y="970">
+<title>YMIN.1 · Y axis min endstop sensor + pin · proposed carrier contact; not a mating view</title>
+<rect x="1845" y="956" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="1860" cy="970" r="7" class="screw" style="fill:#416b7e"/>
+<text x="1824" y="977" class="pin-label" text-anchor="end" style="fill:#416b7e">1 · Y axis min endstop sensor + pin</text>
+</g>
+<g id="sb-YMIN-2" data-exterior-contact="YMIN.2" data-role="Y axis min endstop GND pin" data-source-label="GND" data-x="1860" data-y="1000">
+<title>YMIN.2 · Y axis min endstop GND pin · proposed carrier contact; not a mating view</title>
+<rect x="1845" y="986" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="1860" cy="1000" r="7" class="screw" style="fill:#111717"/>
+<text x="1824" y="1007" class="pin-label" text-anchor="end" style="fill:#111717">2 · Y axis min endstop GND pin</text>
+</g>
+<g id="sb-YMIN-3" data-exterior-contact="YMIN.3" data-role="Y axis min endstop signal pin" data-source-label="SIGNAL" data-x="1860" data-y="1030">
+<title>YMIN.3 · Y axis min endstop signal pin · proposed carrier contact; not a mating view</title>
+<rect x="1845" y="1016" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="1860" cy="1030" r="7" class="screw" style="fill:#087361"/>
+<text x="1824" y="1037" class="pin-label" text-anchor="end" style="fill:#087361">3 · Y axis min endstop signal pin</text>
+</g>
+</g>
+<g class="bank" data-exterior-bank="YMAX" data-side="east">
+<rect x="1798" y="1068" width="42" height="104" rx="8" class="connector-shell"/>
+<text x="1824" y="1061" class="bank-title" text-anchor="end">Y MAX</text>
+<g id="sb-YMAX-1" data-exterior-contact="YMAX.1" data-role="Y axis max endstop sensor + pin" data-source-label="SENSOR +" data-x="1860" data-y="1090">
+<title>YMAX.1 · Y axis max endstop sensor + pin · proposed carrier contact; not a mating view</title>
+<rect x="1845" y="1076" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="1860" cy="1090" r="7" class="screw" style="fill:#416b7e"/>
+<text x="1824" y="1097" class="pin-label" text-anchor="end" style="fill:#416b7e">1 · Y axis max endstop sensor + pin</text>
+</g>
+<g id="sb-YMAX-2" data-exterior-contact="YMAX.2" data-role="Y axis max endstop GND pin" data-source-label="GND" data-x="1860" data-y="1120">
+<title>YMAX.2 · Y axis max endstop GND pin · proposed carrier contact; not a mating view</title>
+<rect x="1845" y="1106" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="1860" cy="1120" r="7" class="screw" style="fill:#111717"/>
+<text x="1824" y="1127" class="pin-label" text-anchor="end" style="fill:#111717">2 · Y axis max endstop GND pin</text>
+</g>
+<g id="sb-YMAX-3" data-exterior-contact="YMAX.3" data-role="Y axis max endstop signal pin" data-source-label="SIGNAL" data-x="1860" data-y="1150">
+<title>YMAX.3 · Y axis max endstop signal pin · proposed carrier contact; not a mating view</title>
+<rect x="1845" y="1136" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="1860" cy="1150" r="7" class="screw" style="fill:#087361"/>
+<text x="1824" y="1157" class="pin-label" text-anchor="end" style="fill:#087361">3 · Y axis max endstop signal pin</text>
+</g>
+</g>
+<g class="bank" data-exterior-bank="ZMIN" data-side="east">
+<rect x="1798" y="1188" width="42" height="104" rx="8" class="connector-shell"/>
+<text x="1824" y="1181" class="bank-title" text-anchor="end">Z MIN</text>
+<g id="sb-ZMIN-1" data-exterior-contact="ZMIN.1" data-role="Z axis min endstop sensor + pin" data-source-label="SENSOR +" data-x="1860" data-y="1210">
+<title>ZMIN.1 · Z axis min endstop sensor + pin · proposed carrier contact; not a mating view</title>
+<rect x="1845" y="1196" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="1860" cy="1210" r="7" class="screw" style="fill:#416b7e"/>
+<text x="1824" y="1217" class="pin-label" text-anchor="end" style="fill:#416b7e">1 · Z axis min endstop sensor + pin</text>
+</g>
+<g id="sb-ZMIN-2" data-exterior-contact="ZMIN.2" data-role="Z axis min endstop GND pin" data-source-label="GND" data-x="1860" data-y="1240">
+<title>ZMIN.2 · Z axis min endstop GND pin · proposed carrier contact; not a mating view</title>
+<rect x="1845" y="1226" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="1860" cy="1240" r="7" class="screw" style="fill:#111717"/>
+<text x="1824" y="1247" class="pin-label" text-anchor="end" style="fill:#111717">2 · Z axis min endstop GND pin</text>
+</g>
+<g id="sb-ZMIN-3" data-exterior-contact="ZMIN.3" data-role="Z axis min endstop signal pin" data-source-label="SIGNAL" data-x="1860" data-y="1270">
+<title>ZMIN.3 · Z axis min endstop signal pin · proposed carrier contact; not a mating view</title>
+<rect x="1845" y="1256" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="1860" cy="1270" r="7" class="screw" style="fill:#087361"/>
+<text x="1824" y="1277" class="pin-label" text-anchor="end" style="fill:#087361">3 · Z axis min endstop signal pin</text>
+</g>
+</g>
+<g class="bank" data-exterior-bank="ZMAX" data-side="east">
+<rect x="1798" y="1308" width="42" height="104" rx="8" class="connector-shell"/>
+<text x="1824" y="1301" class="bank-title" text-anchor="end">Z MAX</text>
+<g id="sb-ZMAX-1" data-exterior-contact="ZMAX.1" data-role="Z axis max endstop sensor + pin" data-source-label="SENSOR +" data-x="1860" data-y="1330">
+<title>ZMAX.1 · Z axis max endstop sensor + pin · proposed carrier contact; not a mating view</title>
+<rect x="1845" y="1316" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="1860" cy="1330" r="7" class="screw" style="fill:#416b7e"/>
+<text x="1824" y="1337" class="pin-label" text-anchor="end" style="fill:#416b7e">1 · Z axis max endstop sensor + pin</text>
+</g>
+<g id="sb-ZMAX-2" data-exterior-contact="ZMAX.2" data-role="Z axis max endstop GND pin" data-source-label="GND" data-x="1860" data-y="1360">
+<title>ZMAX.2 · Z axis max endstop GND pin · proposed carrier contact; not a mating view</title>
+<rect x="1845" y="1346" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="1860" cy="1360" r="7" class="screw" style="fill:#111717"/>
+<text x="1824" y="1367" class="pin-label" text-anchor="end" style="fill:#111717">2 · Z axis max endstop GND pin</text>
+</g>
+<g id="sb-ZMAX-3" data-exterior-contact="ZMAX.3" data-role="Z axis max endstop signal pin" data-source-label="SIGNAL" data-x="1860" data-y="1390">
+<title>ZMAX.3 · Z axis max endstop signal pin · proposed carrier contact; not a mating view</title>
+<rect x="1845" y="1376" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="1860" cy="1390" r="7" class="screw" style="fill:#087361"/>
+<text x="1824" y="1397" class="pin-label" text-anchor="end" style="fill:#087361">3 · Z axis max endstop signal pin</text>
+</g>
+</g>
+<g class="bank" data-exterior-bank="PROBE" data-side="east">
+<rect x="1798" y="1428" width="42" height="134" rx="8" class="connector-shell"/>
+<text x="1824" y="1421" class="bank-title" text-anchor="end">PROBE + SERVO</text>
+<g id="sb-PROBE-1" data-exterior-contact="PROBE.1" data-role="Probe / servo +5V pin" data-source-label="+5V" data-x="1860" data-y="1450">
+<title>PROBE.1 · Probe / servo +5V pin · proposed carrier contact; not a mating view</title>
+<rect x="1845" y="1436" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="1860" cy="1450" r="7" class="screw" style="fill:#b85e00"/>
+<text x="1824" y="1457" class="pin-label" text-anchor="end" style="fill:#b85e00">1 · Probe / servo +5V pin</text>
+</g>
+<g id="sb-PROBE-2" data-exterior-contact="PROBE.2" data-role="Probe / servo GND pin" data-source-label="GND" data-x="1860" data-y="1480">
+<title>PROBE.2 · Probe / servo GND pin · proposed carrier contact; not a mating view</title>
+<rect x="1845" y="1466" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="1860" cy="1480" r="7" class="screw" style="fill:#111717"/>
+<text x="1824" y="1487" class="pin-label" text-anchor="end" style="fill:#111717">2 · Probe / servo GND pin</text>
+</g>
+<g id="sb-PROBE-3" data-exterior-contact="PROBE.3" data-role="Probe / servo SERVO pin" data-source-label="SERVO" data-x="1860" data-y="1510">
+<title>PROBE.3 · Probe / servo SERVO pin · proposed carrier contact; not a mating view</title>
+<rect x="1845" y="1496" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="1860" cy="1510" r="7" class="screw" style="fill:#6246a3"/>
+<text x="1824" y="1517" class="pin-label" text-anchor="end" style="fill:#6246a3">3 · Probe / servo SERVO pin</text>
+</g>
+<g id="sb-PROBE-4" data-exterior-contact="PROBE.4" data-role="Probe / servo PROBE IN pin" data-source-label="PROBE IN" data-x="1860" data-y="1540">
+<title>PROBE.4 · Probe / servo PROBE IN pin · proposed carrier contact; not a mating view</title>
+<rect x="1845" y="1526" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="1860" cy="1540" r="7" class="screw" style="fill:#087361"/>
+<text x="1824" y="1547" class="pin-label" text-anchor="end" style="fill:#087361">4 · Probe / servo PROBE IN pin</text>
+</g>
+</g>
+<g class="bank" data-exterior-bank="TEMP" data-side="east">
+<rect x="1798" y="1588" width="42" height="194" rx="8" class="connector-shell"/>
+<text x="1824" y="1581" class="bank-title" text-anchor="end">TEMPERATURE 1–3</text>
+<g id="sb-TEMP-1" data-exterior-contact="TEMP.1" data-role="Temperature 1 sensor pin" data-source-label="SENSOR 1" data-x="1860" data-y="1610">
+<title>TEMP.1 · Temperature 1 sensor pin · proposed carrier contact; not a mating view</title>
+<rect x="1845" y="1596" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="1860" cy="1610" r="7" class="screw" style="fill:#416b7e"/>
+<text x="1824" y="1617" class="pin-label" text-anchor="end" style="fill:#416b7e">1 · Temperature 1 sensor pin</text>
+</g>
+<g id="sb-TEMP-2" data-exterior-contact="TEMP.2" data-role="Temperature 1 GND pin" data-source-label="GND" data-x="1860" data-y="1640">
+<title>TEMP.2 · Temperature 1 GND pin · proposed carrier contact; not a mating view</title>
+<rect x="1845" y="1626" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="1860" cy="1640" r="7" class="screw" style="fill:#111717"/>
+<text x="1824" y="1647" class="pin-label" text-anchor="end" style="fill:#111717">2 · Temperature 1 GND pin</text>
+</g>
+<g id="sb-TEMP-3" data-exterior-contact="TEMP.3" data-role="Temperature 2 sensor pin" data-source-label="SENSOR 2" data-x="1860" data-y="1670">
+<title>TEMP.3 · Temperature 2 sensor pin · proposed carrier contact; not a mating view</title>
+<rect x="1845" y="1656" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="1860" cy="1670" r="7" class="screw" style="fill:#416b7e"/>
+<text x="1824" y="1677" class="pin-label" text-anchor="end" style="fill:#416b7e">3 · Temperature 2 sensor pin</text>
+</g>
+<g id="sb-TEMP-4" data-exterior-contact="TEMP.4" data-role="Temperature 2 GND pin" data-source-label="GND" data-x="1860" data-y="1700">
+<title>TEMP.4 · Temperature 2 GND pin · proposed carrier contact; not a mating view</title>
+<rect x="1845" y="1686" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="1860" cy="1700" r="7" class="screw" style="fill:#111717"/>
+<text x="1824" y="1707" class="pin-label" text-anchor="end" style="fill:#111717">4 · Temperature 2 GND pin</text>
+</g>
+<g id="sb-TEMP-5" data-exterior-contact="TEMP.5" data-role="Temperature 3 sensor pin" data-source-label="SENSOR 3" data-x="1860" data-y="1730">
+<title>TEMP.5 · Temperature 3 sensor pin · proposed carrier contact; not a mating view</title>
+<rect x="1845" y="1716" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="1860" cy="1730" r="7" class="screw" style="fill:#416b7e"/>
+<text x="1824" y="1737" class="pin-label" text-anchor="end" style="fill:#416b7e">5 · Temperature 3 sensor pin</text>
+</g>
+<g id="sb-TEMP-6" data-exterior-contact="TEMP.6" data-role="Temperature 3 GND pin" data-source-label="GND" data-x="1860" data-y="1760">
+<title>TEMP.6 · Temperature 3 GND pin · proposed carrier contact; not a mating view</title>
+<rect x="1845" y="1746" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="1860" cy="1760" r="7" class="screw" style="fill:#111717"/>
+<text x="1824" y="1767" class="pin-label" text-anchor="end" style="fill:#111717">6 · Temperature 3 GND pin</text>
+</g>
+</g>
+<g class="bank" data-exterior-bank="HEA" data-side="west">
+<rect x="80" y="708" width="42" height="74" rx="8" class="connector-shell"/>
+<text x="96" y="701" class="bank-title" text-anchor="start">HOTEND A</text>
+<g id="sb-HEA-1" data-exterior-contact="HEA.1" data-role="Hotend A LOAD + pin" data-source-label="LOAD +" data-x="60" data-y="730">
+<title>HEA.1 · Hotend A LOAD + pin · proposed carrier contact; not a mating view</title>
+<rect x="45" y="716" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="60" cy="730" r="7" class="screw" style="fill:#806700"/>
+<text x="96" y="737" class="pin-label" text-anchor="start" style="fill:#806700">1 · Hotend A LOAD + pin</text>
+</g>
+<g id="sb-HEA-2" data-exterior-contact="HEA.2" data-role="Hotend A SWITCHED − pin" data-source-label="SWITCHED −" data-x="60" data-y="760">
+<title>HEA.2 · Hotend A SWITCHED − pin · proposed carrier contact; not a mating view</title>
+<rect x="45" y="746" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="60" cy="760" r="7" class="screw" style="fill:#a13273"/>
+<text x="96" y="767" class="pin-label" text-anchor="start" style="fill:#a13273">2 · Hotend A SWITCHED − pin</text>
+</g>
+</g>
+<g class="bank" data-exterior-bank="HEB" data-side="west">
+<rect x="80" y="828" width="42" height="74" rx="8" class="connector-shell"/>
+<text x="96" y="821" class="bank-title" text-anchor="start">HOTEND B</text>
+<g id="sb-HEB-1" data-exterior-contact="HEB.1" data-role="Hotend B LOAD + pin" data-source-label="LOAD +" data-x="60" data-y="850">
+<title>HEB.1 · Hotend B LOAD + pin · proposed carrier contact; not a mating view</title>
+<rect x="45" y="836" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="60" cy="850" r="7" class="screw" style="fill:#806700"/>
+<text x="96" y="857" class="pin-label" text-anchor="start" style="fill:#806700">1 · Hotend B LOAD + pin</text>
+</g>
+<g id="sb-HEB-2" data-exterior-contact="HEB.2" data-role="Hotend B SWITCHED − pin" data-source-label="SWITCHED −" data-x="60" data-y="880">
+<title>HEB.2 · Hotend B SWITCHED − pin · proposed carrier contact; not a mating view</title>
+<rect x="45" y="866" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="60" cy="880" r="7" class="screw" style="fill:#a13273"/>
+<text x="96" y="887" class="pin-label" text-anchor="start" style="fill:#a13273">2 · Hotend B SWITCHED − pin</text>
+</g>
+</g>
+<g class="bank" data-exterior-bank="BED" data-side="west">
+<rect x="80" y="948" width="42" height="74" rx="8" class="connector-shell"/>
+<text x="96" y="941" class="bank-title" text-anchor="start">BED SWITCH CONTROL</text>
+<g id="sb-BED-1" data-exterior-contact="BED.1" data-role="Bed switch control CONTROL + pin" data-source-label="CONTROL +" data-x="60" data-y="970">
+<title>BED.1 · Bed switch control CONTROL + pin · proposed carrier contact; not a mating view</title>
+<rect x="45" y="956" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="60" cy="970" r="7" class="screw" style="fill:#806700"/>
+<text x="96" y="977" class="pin-label" text-anchor="start" style="fill:#806700">1 · Bed switch control CONTROL + pin</text>
+</g>
+<g id="sb-BED-2" data-exterior-contact="BED.2" data-role="Bed switch control SWITCHED − pin" data-source-label="SWITCHED −" data-x="60" data-y="1000">
+<title>BED.2 · Bed switch control SWITCHED − pin · proposed carrier contact; not a mating view</title>
+<rect x="45" y="986" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="60" cy="1000" r="7" class="screw" style="fill:#a13273"/>
+<text x="96" y="1007" class="pin-label" text-anchor="start" style="fill:#a13273">2 · Bed switch control SWITCHED − pin</text>
+</g>
+</g>
+<g class="bank" data-exterior-bank="FANA" data-side="west">
+<rect x="80" y="1068" width="42" height="74" rx="8" class="connector-shell"/>
+<text x="96" y="1061" class="bank-title" text-anchor="start">FAN A</text>
+<g id="sb-FANA-1" data-exterior-contact="FANA.1" data-role="Fan A LOAD + pin" data-source-label="LOAD +" data-x="60" data-y="1090">
+<title>FANA.1 · Fan A LOAD + pin · proposed carrier contact; not a mating view</title>
+<rect x="45" y="1076" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="60" cy="1090" r="7" class="screw" style="fill:#806700"/>
+<text x="96" y="1097" class="pin-label" text-anchor="start" style="fill:#806700">1 · Fan A LOAD + pin</text>
+</g>
+<g id="sb-FANA-2" data-exterior-contact="FANA.2" data-role="Fan A SWITCHED − pin" data-source-label="SWITCHED −" data-x="60" data-y="1120">
+<title>FANA.2 · Fan A SWITCHED − pin · proposed carrier contact; not a mating view</title>
+<rect x="45" y="1106" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="60" cy="1120" r="7" class="screw" style="fill:#a13273"/>
+<text x="96" y="1127" class="pin-label" text-anchor="start" style="fill:#a13273">2 · Fan A SWITCHED − pin</text>
+</g>
+</g>
+<g class="bank" data-exterior-bank="FANB" data-side="west">
+<rect x="80" y="1188" width="42" height="74" rx="8" class="connector-shell"/>
+<text x="96" y="1181" class="bank-title" text-anchor="start">FAN B</text>
+<g id="sb-FANB-1" data-exterior-contact="FANB.1" data-role="Fan B LOAD + pin" data-source-label="LOAD +" data-x="60" data-y="1210">
+<title>FANB.1 · Fan B LOAD + pin · proposed carrier contact; not a mating view</title>
+<rect x="45" y="1196" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="60" cy="1210" r="7" class="screw" style="fill:#806700"/>
+<text x="96" y="1217" class="pin-label" text-anchor="start" style="fill:#806700">1 · Fan B LOAD + pin</text>
+</g>
+<g id="sb-FANB-2" data-exterior-contact="FANB.2" data-role="Fan B SWITCHED − pin" data-source-label="SWITCHED −" data-x="60" data-y="1240">
+<title>FANB.2 · Fan B SWITCHED − pin · proposed carrier contact; not a mating view</title>
+<rect x="45" y="1226" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="60" cy="1240" r="7" class="screw" style="fill:#a13273"/>
+<text x="96" y="1247" class="pin-label" text-anchor="start" style="fill:#a13273">2 · Fan B SWITCHED − pin</text>
+</g>
+</g>
+<g class="bank" data-exterior-bank="SSR1" data-side="west">
+<rect x="80" y="1308" width="42" height="74" rx="8" class="connector-shell"/>
+<text x="96" y="1301" class="bank-title" text-anchor="start">SSR 1 CONTROL</text>
+<g id="sb-SSR1-1" data-exterior-contact="SSR1.1" data-role="SSR 1 control 5V SWITCH pin" data-source-label="5V SWITCH" data-x="60" data-y="1330">
+<title>SSR1.1 · SSR 1 control 5V SWITCH pin · proposed carrier contact; not a mating view</title>
+<rect x="45" y="1316" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="60" cy="1330" r="7" class="screw" style="fill:#b85e00"/>
+<text x="96" y="1337" class="pin-label" text-anchor="start" style="fill:#b85e00">1 · SSR 1 control 5V SWITCH pin</text>
+</g>
+<g id="sb-SSR1-2" data-exterior-contact="SSR1.2" data-role="SSR 1 control GND pin" data-source-label="GND" data-x="60" data-y="1360">
+<title>SSR1.2 · SSR 1 control GND pin · proposed carrier contact; not a mating view</title>
+<rect x="45" y="1346" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="60" cy="1360" r="7" class="screw" style="fill:#111717"/>
+<text x="96" y="1367" class="pin-label" text-anchor="start" style="fill:#111717">2 · SSR 1 control GND pin</text>
+</g>
+</g>
+<g class="bank" data-exterior-bank="SSR2" data-side="west">
+<rect x="80" y="1428" width="42" height="74" rx="8" class="connector-shell"/>
+<text x="96" y="1421" class="bank-title" text-anchor="start">SSR 2 CONTROL</text>
+<g id="sb-SSR2-1" data-exterior-contact="SSR2.1" data-role="SSR 2 control 5V SWITCH pin" data-source-label="5V SWITCH" data-x="60" data-y="1450">
+<title>SSR2.1 · SSR 2 control 5V SWITCH pin · proposed carrier contact; not a mating view</title>
+<rect x="45" y="1436" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="60" cy="1450" r="7" class="screw" style="fill:#b85e00"/>
+<text x="96" y="1457" class="pin-label" text-anchor="start" style="fill:#b85e00">1 · SSR 2 control 5V SWITCH pin</text>
+</g>
+<g id="sb-SSR2-2" data-exterior-contact="SSR2.2" data-role="SSR 2 control GND pin" data-source-label="GND" data-x="60" data-y="1480">
+<title>SSR2.2 · SSR 2 control GND pin · proposed carrier contact; not a mating view</title>
+<rect x="45" y="1466" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="60" cy="1480" r="7" class="screw" style="fill:#111717"/>
+<text x="96" y="1487" class="pin-label" text-anchor="start" style="fill:#111717">2 · SSR 2 control GND pin</text>
+</g>
+</g>
+<g class="bank" data-exterior-bank="PWM" data-side="west">
+<rect x="80" y="1548" width="42" height="134" rx="8" class="connector-shell"/>
+<text x="96" y="1541" class="bank-title" text-anchor="start">PWM / LASER CONTROL</text>
+<g id="sb-PWM-1" data-exterior-contact="PWM.1" data-role="PWM / laser control PWM pin" data-source-label="PWM" data-x="60" data-y="1570">
+<title>PWM.1 · PWM / laser control PWM pin · proposed carrier contact; not a mating view</title>
+<rect x="45" y="1556" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="60" cy="1570" r="7" class="screw" style="fill:#6246a3"/>
+<text x="96" y="1577" class="pin-label" text-anchor="start" style="fill:#6246a3">1 · PWM / laser control PWM pin</text>
+</g>
+<g id="sb-PWM-2" data-exterior-contact="PWM.2" data-role="PWM / laser control TTL pin" data-source-label="TTL" data-x="60" data-y="1600">
+<title>PWM.2 · PWM / laser control TTL pin · proposed carrier contact; not a mating view</title>
+<rect x="45" y="1586" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="60" cy="1600" r="7" class="screw" style="fill:#6246a3"/>
+<text x="96" y="1607" class="pin-label" text-anchor="start" style="fill:#6246a3">2 · PWM / laser control TTL pin</text>
+</g>
+<g id="sb-PWM-3" data-exterior-contact="PWM.3" data-role="PWM / laser control GND pin" data-source-label="GND" data-x="60" data-y="1630">
+<title>PWM.3 · PWM / laser control GND pin · proposed carrier contact; not a mating view</title>
+<rect x="45" y="1616" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="60" cy="1630" r="7" class="screw" style="fill:#111717"/>
+<text x="96" y="1637" class="pin-label" text-anchor="start" style="fill:#111717">3 · PWM / laser control GND pin</text>
+</g>
+<g id="sb-PWM-4" data-exterior-contact="PWM.4" data-role="PWM / laser control 5V LIMITED pin" data-source-label="5V LIMITED" data-x="60" data-y="1660">
+<title>PWM.4 · PWM / laser control 5V LIMITED pin · proposed carrier contact; not a mating view</title>
+<rect x="45" y="1646" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="60" cy="1660" r="7" class="screw" style="fill:#b85e00"/>
+<text x="96" y="1667" class="pin-label" text-anchor="start" style="fill:#b85e00">4 · PWM / laser control 5V LIMITED pin</text>
+</g>
+</g>
+<g class="bank" data-exterior-bank="DRVX" data-side="south">
+<rect x="210" y="2098" width="300" height="42" rx="8" class="connector-shell"/>
+<text x="360" y="1795" class="bank-title" text-anchor="middle">MOTOR CONTROL X</text>
+<text x="360" y="1819" class="small" text-anchor="middle">CONTROL TO EXTERNAL DRIVER</text>
+<g id="sb-DRVX-1" data-exterior-contact="DRVX.1" data-role="X axis step pin" data-source-label="STEP" data-x="240" data-y="2160">
+<title>DRVX.1 · X axis step pin · proposed carrier contact; not a mating view</title>
+<rect x="225" y="2146" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="240" cy="2160" r="7" class="screw" style="fill:#136da7"/>
+<text x="240" y="2140" class="pin-number" text-anchor="middle">1</text>
+<text x="240" y="2110" transform="rotate(-90 240 2110)" class="pin-label" style="fill:#136da7">X axis step pin</text>
+</g>
+<g id="sb-DRVX-2" data-exterior-contact="DRVX.2" data-role="X axis step return GND pin" data-source-label="GND" data-x="288" data-y="2160">
+<title>DRVX.2 · X axis step return GND pin · proposed carrier contact; not a mating view</title>
+<rect x="273" y="2146" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="288" cy="2160" r="7" class="screw" style="fill:#111717"/>
+<text x="288" y="2140" class="pin-number" text-anchor="middle">2</text>
+<text x="288" y="2110" transform="rotate(-90 288 2110)" class="pin-label" style="fill:#111717">X axis step return GND pin</text>
+</g>
+<g id="sb-DRVX-3" data-exterior-contact="DRVX.3" data-role="X axis direction pin" data-source-label="DIR" data-x="336" data-y="2160">
+<title>DRVX.3 · X axis direction pin · proposed carrier contact; not a mating view</title>
+<rect x="321" y="2146" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="336" cy="2160" r="7" class="screw" style="fill:#7443a4"/>
+<text x="336" y="2140" class="pin-number" text-anchor="middle">3</text>
+<text x="336" y="2110" transform="rotate(-90 336 2110)" class="pin-label" style="fill:#7443a4">X axis direction pin</text>
+</g>
+<g id="sb-DRVX-4" data-exterior-contact="DRVX.4" data-role="X axis direction return GND pin" data-source-label="GND" data-x="384" data-y="2160">
+<title>DRVX.4 · X axis direction return GND pin · proposed carrier contact; not a mating view</title>
+<rect x="369" y="2146" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="384" cy="2160" r="7" class="screw" style="fill:#111717"/>
+<text x="384" y="2140" class="pin-number" text-anchor="middle">4</text>
+<text x="384" y="2110" transform="rotate(-90 384 2110)" class="pin-label" style="fill:#111717">X axis direction return GND pin</text>
+</g>
+<g id="sb-DRVX-5" data-exterior-contact="DRVX.5" data-role="X axis enable pin" data-source-label="ENABLE" data-x="432" data-y="2160">
+<title>DRVX.5 · X axis enable pin · proposed carrier contact; not a mating view</title>
+<rect x="417" y="2146" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="432" cy="2160" r="7" class="screw" style="fill:#087b60"/>
+<text x="432" y="2140" class="pin-number" text-anchor="middle">5</text>
+<text x="432" y="2110" transform="rotate(-90 432 2110)" class="pin-label" style="fill:#087b60">X axis enable pin</text>
+</g>
+<g id="sb-DRVX-6" data-exterior-contact="DRVX.6" data-role="X axis enable return GND pin" data-source-label="GND" data-x="480" data-y="2160">
+<title>DRVX.6 · X axis enable return GND pin · proposed carrier contact; not a mating view</title>
+<rect x="465" y="2146" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="480" cy="2160" r="7" class="screw" style="fill:#111717"/>
+<text x="480" y="2140" class="pin-number" text-anchor="middle">6</text>
+<text x="480" y="2110" transform="rotate(-90 480 2110)" class="pin-label" style="fill:#111717">X axis enable return GND pin</text>
+</g>
+</g>
+<g class="bank" data-exterior-bank="DRVY" data-side="south">
+<rect x="630" y="2098" width="300" height="42" rx="8" class="connector-shell"/>
+<text x="780" y="1795" class="bank-title" text-anchor="middle">MOTOR CONTROL Y</text>
+<text x="780" y="1819" class="small" text-anchor="middle">CONTROL TO EXTERNAL DRIVER</text>
+<g id="sb-DRVY-1" data-exterior-contact="DRVY.1" data-role="Y axis step pin" data-source-label="STEP" data-x="660" data-y="2160">
+<title>DRVY.1 · Y axis step pin · proposed carrier contact; not a mating view</title>
+<rect x="645" y="2146" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="660" cy="2160" r="7" class="screw" style="fill:#136da7"/>
+<text x="660" y="2140" class="pin-number" text-anchor="middle">1</text>
+<text x="660" y="2110" transform="rotate(-90 660 2110)" class="pin-label" style="fill:#136da7">Y axis step pin</text>
+</g>
+<g id="sb-DRVY-2" data-exterior-contact="DRVY.2" data-role="Y axis step return GND pin" data-source-label="GND" data-x="708" data-y="2160">
+<title>DRVY.2 · Y axis step return GND pin · proposed carrier contact; not a mating view</title>
+<rect x="693" y="2146" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="708" cy="2160" r="7" class="screw" style="fill:#111717"/>
+<text x="708" y="2140" class="pin-number" text-anchor="middle">2</text>
+<text x="708" y="2110" transform="rotate(-90 708 2110)" class="pin-label" style="fill:#111717">Y axis step return GND pin</text>
+</g>
+<g id="sb-DRVY-3" data-exterior-contact="DRVY.3" data-role="Y axis direction pin" data-source-label="DIR" data-x="756" data-y="2160">
+<title>DRVY.3 · Y axis direction pin · proposed carrier contact; not a mating view</title>
+<rect x="741" y="2146" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="756" cy="2160" r="7" class="screw" style="fill:#7443a4"/>
+<text x="756" y="2140" class="pin-number" text-anchor="middle">3</text>
+<text x="756" y="2110" transform="rotate(-90 756 2110)" class="pin-label" style="fill:#7443a4">Y axis direction pin</text>
+</g>
+<g id="sb-DRVY-4" data-exterior-contact="DRVY.4" data-role="Y axis direction return GND pin" data-source-label="GND" data-x="804" data-y="2160">
+<title>DRVY.4 · Y axis direction return GND pin · proposed carrier contact; not a mating view</title>
+<rect x="789" y="2146" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="804" cy="2160" r="7" class="screw" style="fill:#111717"/>
+<text x="804" y="2140" class="pin-number" text-anchor="middle">4</text>
+<text x="804" y="2110" transform="rotate(-90 804 2110)" class="pin-label" style="fill:#111717">Y axis direction return GND pin</text>
+</g>
+<g id="sb-DRVY-5" data-exterior-contact="DRVY.5" data-role="Y axis enable pin" data-source-label="ENABLE" data-x="852" data-y="2160">
+<title>DRVY.5 · Y axis enable pin · proposed carrier contact; not a mating view</title>
+<rect x="837" y="2146" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="852" cy="2160" r="7" class="screw" style="fill:#087b60"/>
+<text x="852" y="2140" class="pin-number" text-anchor="middle">5</text>
+<text x="852" y="2110" transform="rotate(-90 852 2110)" class="pin-label" style="fill:#087b60">Y axis enable pin</text>
+</g>
+<g id="sb-DRVY-6" data-exterior-contact="DRVY.6" data-role="Y axis enable return GND pin" data-source-label="GND" data-x="900" data-y="2160">
+<title>DRVY.6 · Y axis enable return GND pin · proposed carrier contact; not a mating view</title>
+<rect x="885" y="2146" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="900" cy="2160" r="7" class="screw" style="fill:#111717"/>
+<text x="900" y="2140" class="pin-number" text-anchor="middle">6</text>
+<text x="900" y="2110" transform="rotate(-90 900 2110)" class="pin-label" style="fill:#111717">Y axis enable return GND pin</text>
+</g>
+</g>
+<g class="bank" data-exterior-bank="DRVZ" data-side="south">
+<rect x="1050" y="2098" width="300" height="42" rx="8" class="connector-shell"/>
+<text x="1200" y="1795" class="bank-title" text-anchor="middle">MOTOR CONTROL Z</text>
+<text x="1200" y="1819" class="small" text-anchor="middle">CONTROL TO EXTERNAL DRIVER</text>
+<g id="sb-DRVZ-1" data-exterior-contact="DRVZ.1" data-role="Z axis step pin" data-source-label="STEP" data-x="1080" data-y="2160">
+<title>DRVZ.1 · Z axis step pin · proposed carrier contact; not a mating view</title>
+<rect x="1065" y="2146" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="1080" cy="2160" r="7" class="screw" style="fill:#136da7"/>
+<text x="1080" y="2140" class="pin-number" text-anchor="middle">1</text>
+<text x="1080" y="2110" transform="rotate(-90 1080 2110)" class="pin-label" style="fill:#136da7">Z axis step pin</text>
+</g>
+<g id="sb-DRVZ-2" data-exterior-contact="DRVZ.2" data-role="Z axis step return GND pin" data-source-label="GND" data-x="1128" data-y="2160">
+<title>DRVZ.2 · Z axis step return GND pin · proposed carrier contact; not a mating view</title>
+<rect x="1113" y="2146" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="1128" cy="2160" r="7" class="screw" style="fill:#111717"/>
+<text x="1128" y="2140" class="pin-number" text-anchor="middle">2</text>
+<text x="1128" y="2110" transform="rotate(-90 1128 2110)" class="pin-label" style="fill:#111717">Z axis step return GND pin</text>
+</g>
+<g id="sb-DRVZ-3" data-exterior-contact="DRVZ.3" data-role="Z axis direction pin" data-source-label="DIR" data-x="1176" data-y="2160">
+<title>DRVZ.3 · Z axis direction pin · proposed carrier contact; not a mating view</title>
+<rect x="1161" y="2146" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="1176" cy="2160" r="7" class="screw" style="fill:#7443a4"/>
+<text x="1176" y="2140" class="pin-number" text-anchor="middle">3</text>
+<text x="1176" y="2110" transform="rotate(-90 1176 2110)" class="pin-label" style="fill:#7443a4">Z axis direction pin</text>
+</g>
+<g id="sb-DRVZ-4" data-exterior-contact="DRVZ.4" data-role="Z axis direction return GND pin" data-source-label="GND" data-x="1224" data-y="2160">
+<title>DRVZ.4 · Z axis direction return GND pin · proposed carrier contact; not a mating view</title>
+<rect x="1209" y="2146" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="1224" cy="2160" r="7" class="screw" style="fill:#111717"/>
+<text x="1224" y="2140" class="pin-number" text-anchor="middle">4</text>
+<text x="1224" y="2110" transform="rotate(-90 1224 2110)" class="pin-label" style="fill:#111717">Z axis direction return GND pin</text>
+</g>
+<g id="sb-DRVZ-5" data-exterior-contact="DRVZ.5" data-role="Z axis enable pin" data-source-label="ENABLE" data-x="1272" data-y="2160">
+<title>DRVZ.5 · Z axis enable pin · proposed carrier contact; not a mating view</title>
+<rect x="1257" y="2146" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="1272" cy="2160" r="7" class="screw" style="fill:#087b60"/>
+<text x="1272" y="2140" class="pin-number" text-anchor="middle">5</text>
+<text x="1272" y="2110" transform="rotate(-90 1272 2110)" class="pin-label" style="fill:#087b60">Z axis enable pin</text>
+</g>
+<g id="sb-DRVZ-6" data-exterior-contact="DRVZ.6" data-role="Z axis enable return GND pin" data-source-label="GND" data-x="1320" data-y="2160">
+<title>DRVZ.6 · Z axis enable return GND pin · proposed carrier contact; not a mating view</title>
+<rect x="1305" y="2146" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="1320" cy="2160" r="7" class="screw" style="fill:#111717"/>
+<text x="1320" y="2140" class="pin-number" text-anchor="middle">6</text>
+<text x="1320" y="2110" transform="rotate(-90 1320 2110)" class="pin-label" style="fill:#111717">Z axis enable return GND pin</text>
+</g>
+</g>
+<g class="bank" data-exterior-bank="DRVA" data-side="south">
+<rect x="1470" y="2098" width="300" height="42" rx="8" class="connector-shell"/>
+<text x="1620" y="1795" class="bank-title" text-anchor="middle">MOTOR CONTROL A</text>
+<text x="1620" y="1819" class="small" text-anchor="middle">CONTROL TO EXTERNAL DRIVER</text>
+<g id="sb-DRVA-1" data-exterior-contact="DRVA.1" data-role="A axis step pin" data-source-label="STEP" data-x="1500" data-y="2160">
+<title>DRVA.1 · A axis step pin · proposed carrier contact; not a mating view</title>
+<rect x="1485" y="2146" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="1500" cy="2160" r="7" class="screw" style="fill:#136da7"/>
+<text x="1500" y="2140" class="pin-number" text-anchor="middle">1</text>
+<text x="1500" y="2110" transform="rotate(-90 1500 2110)" class="pin-label" style="fill:#136da7">A axis step pin</text>
+</g>
+<g id="sb-DRVA-2" data-exterior-contact="DRVA.2" data-role="A axis step return GND pin" data-source-label="GND" data-x="1548" data-y="2160">
+<title>DRVA.2 · A axis step return GND pin · proposed carrier contact; not a mating view</title>
+<rect x="1533" y="2146" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="1548" cy="2160" r="7" class="screw" style="fill:#111717"/>
+<text x="1548" y="2140" class="pin-number" text-anchor="middle">2</text>
+<text x="1548" y="2110" transform="rotate(-90 1548 2110)" class="pin-label" style="fill:#111717">A axis step return GND pin</text>
+</g>
+<g id="sb-DRVA-3" data-exterior-contact="DRVA.3" data-role="A axis direction pin" data-source-label="DIR" data-x="1596" data-y="2160">
+<title>DRVA.3 · A axis direction pin · proposed carrier contact; not a mating view</title>
+<rect x="1581" y="2146" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="1596" cy="2160" r="7" class="screw" style="fill:#7443a4"/>
+<text x="1596" y="2140" class="pin-number" text-anchor="middle">3</text>
+<text x="1596" y="2110" transform="rotate(-90 1596 2110)" class="pin-label" style="fill:#7443a4">A axis direction pin</text>
+</g>
+<g id="sb-DRVA-4" data-exterior-contact="DRVA.4" data-role="A axis direction return GND pin" data-source-label="GND" data-x="1644" data-y="2160">
+<title>DRVA.4 · A axis direction return GND pin · proposed carrier contact; not a mating view</title>
+<rect x="1629" y="2146" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="1644" cy="2160" r="7" class="screw" style="fill:#111717"/>
+<text x="1644" y="2140" class="pin-number" text-anchor="middle">4</text>
+<text x="1644" y="2110" transform="rotate(-90 1644 2110)" class="pin-label" style="fill:#111717">A axis direction return GND pin</text>
+</g>
+<g id="sb-DRVA-5" data-exterior-contact="DRVA.5" data-role="A axis enable pin" data-source-label="ENABLE" data-x="1692" data-y="2160">
+<title>DRVA.5 · A axis enable pin · proposed carrier contact; not a mating view</title>
+<rect x="1677" y="2146" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="1692" cy="2160" r="7" class="screw" style="fill:#087b60"/>
+<text x="1692" y="2140" class="pin-number" text-anchor="middle">5</text>
+<text x="1692" y="2110" transform="rotate(-90 1692 2110)" class="pin-label" style="fill:#087b60">A axis enable pin</text>
+</g>
+<g id="sb-DRVA-6" data-exterior-contact="DRVA.6" data-role="A axis enable return GND pin" data-source-label="GND" data-x="1740" data-y="2160">
+<title>DRVA.6 · A axis enable return GND pin · proposed carrier contact; not a mating view</title>
+<rect x="1725" y="2146" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="1740" cy="2160" r="7" class="screw" style="fill:#111717"/>
+<text x="1740" y="2140" class="pin-number" text-anchor="middle">6</text>
+<text x="1740" y="2110" transform="rotate(-90 1740 2110)" class="pin-label" style="fill:#111717">A axis enable return GND pin</text>
+</g>
+</g>
+<g data-service-port="USB DEVICE"><title>USB DEVICE · separate service port; no machine route specified</title>
+<rect x="829" y="342" width="102" height="38" rx="5" class="service"/>
+<text x="880" y="322" class="service-label" text-anchor="middle">USB DEVICE</text></g>
+<g data-service-port="USB HOST"><title>USB HOST · separate service port; no machine route specified</title>
+<rect x="979" y="342" width="102" height="38" rx="5" class="service"/>
+<text x="1030" y="322" class="service-label" text-anchor="middle">USB HOST</text></g>
+<g data-service-port="ETHERNET"><title>ETHERNET · separate service port; no machine route specified</title>
+<rect x="1129" y="342" width="102" height="38" rx="5" class="service"/>
+<text x="1180" y="322" class="service-label" text-anchor="middle">ETHERNET</text></g>
+<g data-service-port="microSD"><title>microSD · separate service port; no machine route specified</title>
+<rect x="1279" y="342" width="102" height="38" rx="5" class="service"/>
+<text x="1330" y="322" class="service-label" text-anchor="middle">microSD</text></g>
+<text x="960" y="1025" class="case-title" text-anchor="middle">SMOOTHIEBOX</text>
+<text x="960" y="1070" class="case-note" text-anchor="middle">EXTERIOR CONTACT STUDY</text>
+<text x="960" y="1108" class="case-note" text-anchor="middle">82 proposed contacts · 24 banks · 4 service ports</text>
+<text x="960" y="1146" class="case-note" text-anchor="middle">Chapter 18 functional groups; illustrative layout</text>
+<text x="960" y="1184" class="case-note" text-anchor="middle">80 source positions · 0 dotted function candidates</text>
+<text x="960" y="1222" class="case-note" text-anchor="middle">80 source-reference positions; only explicit dotted guesses are routed</text>
+<text x="960" y="1260" class="case-note" text-anchor="middle">NO INSTALLED SMOOTHIEBOX WIRING ESTABLISHED</text>
+<text x="960" y="1298" class="case-note" text-anchor="middle">No Core board, internal driver or safety circuit is depicted.</text>
+<text x="960" y="1336" class="case-note" text-anchor="middle">Rail selection, ratings, returns and fitted carrier remain unqualified.</text>
+</g>
+<g class="peripheral" data-machine-peripheral="Original Baldor control board · J1 power" data-evidence-kind="reference" data-connector-id="denford-original-baldor-j1" data-connector-form="source-described">
+<title>Original Baldor control board · J1 power · Cabinet Wiring page revision 54936, 2022-03-14T23:19:26Z; original Baldor controller, relay/power board, spindle drive and stepper-drive wiring tables · Original-controller reference contacts. Current installed control board/revision is not confirmed.</title>
+<rect x="2220" y="360" width="1340" height="503" rx="12" class="peripheral-card"/>
+<rect x="2220" y="360" width="10" height="503" rx="5" class="peripheral-accent-reference"/>
+<text x="2244" y="390" class="evidence-label">SOURCE REFERENCE ONLY · INSTALLED REVISION NOT ESTABLISHED</text>
+<rect x="3318" y="374" width="218" height="30" rx="15" class="connector-badge"/>
+<text x="3427" y="395" class="connector-badge-text" text-anchor="middle">MACHINE INTERFACE</text>
+<text x="2244" y="427" class="peripheral-name" text-anchor="start">Original Baldor control board · J1 power</text>
+<text x="2244" y="461" class="source-line" text-anchor="start">Cabinet Wiring page revision 54936, 2022-03-14T23:19:26Z; original Baldor controller, relay/power board,</text>
+<text x="2244" y="484" class="source-line" text-anchor="start">spindle drive and stepper-drive wiring tables · Original-controller reference contacts. Current installed</text>
+<text x="2244" y="507" class="source-line" text-anchor="start">control board/revision is not confirmed.</text>
+<text x="2244" y="530" class="source-line" text-anchor="start">Cabinet Wiring labels selected J1 terminals; its clockwise numbering starts at bottom-right power pin 1.</text>
+<text x="2244" y="553" class="source-line" text-anchor="start">No mating-face drawing.</text>
+<text x="2244" y="577" class="small">MACHINE INTERFACE · EXPANDED SOURCE-ORDER CONTACTS, NOT PHYSICAL PIN-ROW GEOMETRY</text>
+<g id="machine-p001-c001" data-machine-contact="1" data-contact-mark="1" data-contact-fact="source" data-route-state="open" data-x="2220" data-y="599">
+<title>Original Baldor control board · J1 power · source position 1 · BLACK · 0V to power board J6 · </title>
+<circle cx="2220" cy="599" r="8" class="open-socket"/>
+<rect x="2236" y="582" width="90" height="30" rx="8" class="number-pill"/>
+<text x="2281" y="604" class="number-text" text-anchor="middle">1</text>
+<text x="2340" y="604" class="machine-contact" text-anchor="start">BLACK · 0V to power board J6</text>
+<text x="2340" y="631" class="open-status" text-anchor="start">OPEN · no SmoothieBox route selected</text>
+</g>
+<g id="machine-p001-c002" data-machine-contact="2" data-contact-mark="2" data-contact-fact="source" data-route-state="open" data-x="2220" data-y="664">
+<title>Original Baldor control board · J1 power · source position 2 · RED · +24 V logic supply from power board J6 · </title>
+<circle cx="2220" cy="664" r="8" class="open-socket"/>
+<rect x="2236" y="647" width="90" height="30" rx="8" class="number-pill"/>
+<text x="2281" y="669" class="number-text" text-anchor="middle">2</text>
+<text x="2340" y="669" class="machine-contact" text-anchor="start">RED · +24 V logic supply from power board J6</text>
+<text x="2340" y="696" class="open-status" text-anchor="start">OPEN · no SmoothieBox route selected</text>
+</g>
+<g id="machine-p001-c003" data-machine-contact="4" data-contact-mark="4" data-contact-fact="source" data-route-state="open" data-x="2220" data-y="729">
+<title>Original Baldor control board · J1 power · source position 4 · 0V to power board J6 · </title>
+<circle cx="2220" cy="729" r="8" class="open-socket"/>
+<rect x="2236" y="712" width="90" height="30" rx="8" class="number-pill"/>
+<text x="2281" y="734" class="number-text" text-anchor="middle">4</text>
+<text x="2340" y="734" class="machine-contact" text-anchor="start">0V to power board J6</text>
+<text x="2340" y="761" class="open-status" text-anchor="start">OPEN · no SmoothieBox route selected</text>
+</g>
+<g id="machine-p001-c004" data-machine-contact="5" data-contact-mark="5" data-contact-fact="source" data-route-state="open" data-x="2220" data-y="794">
+<title>Original Baldor control board · J1 power · source position 5 · YELLOW · +37 V stepper supply, noted redundant with external drives fitted · </title>
+<circle cx="2220" cy="794" r="8" class="open-socket"/>
+<rect x="2236" y="777" width="90" height="30" rx="8" class="number-pill"/>
+<text x="2281" y="799" class="number-text" text-anchor="middle">5</text>
+<text x="2340" y="799" class="machine-contact" text-anchor="start">YELLOW · +37 V stepper supply, noted redundant with external drives fitted</text>
+<text x="2340" y="826" class="open-status" text-anchor="start">OPEN · no SmoothieBox route selected</text>
+</g>
+</g>
+<g class="peripheral" data-machine-peripheral="Original Baldor control board · J2 pots / driver common" data-evidence-kind="reference" data-connector-id="denford-original-baldor-j2" data-connector-form="source-described">
+<title>Original Baldor control board · J2 pots / driver common · Cabinet Wiring page revision 54936, 2022-03-14T23:19:26Z; original Baldor controller, relay/power board, spindle drive and stepper-drive wiring tables · Original-controller reference. J2 pin 6 is documented as +5 V to pots and MSD556 opto input common; individual driver assignment is not stated.</title>
+<rect x="3596" y="360" width="1340" height="415" rx="12" class="peripheral-card"/>
+<rect x="3596" y="360" width="10" height="415" rx="5" class="peripheral-accent-reference"/>
+<text x="3620" y="390" class="evidence-label">SOURCE REFERENCE ONLY · INSTALLED REVISION NOT ESTABLISHED</text>
+<rect x="4694" y="374" width="218" height="30" rx="15" class="connector-badge"/>
+<text x="4803" y="395" class="connector-badge-text" text-anchor="middle">MACHINE INTERFACE</text>
+<text x="3620" y="427" class="peripheral-name" text-anchor="start">Original Baldor control board · J2 pots / driver common</text>
+<text x="3620" y="461" class="source-line" text-anchor="start">Cabinet Wiring page revision 54936, 2022-03-14T23:19:26Z; original Baldor controller, relay/power board,</text>
+<text x="3620" y="484" class="source-line" text-anchor="start">spindle drive and stepper-drive wiring tables · Original-controller reference. J2 pin 6 is documented as</text>
+<text x="3620" y="507" class="source-line" text-anchor="start">+5 V to pots and MSD556 opto input common; individual driver assignment is not stated.</text>
+<text x="3620" y="530" class="source-line" text-anchor="start">Selected numbered J2 contacts from Cabinet Wiring; no mating-face drawing.</text>
+<text x="3620" y="554" class="small">MACHINE INTERFACE · EXPANDED SOURCE-ORDER CONTACTS, NOT PHYSICAL PIN-ROW GEOMETRY</text>
+<g id="machine-p002-c001" data-machine-contact="1" data-contact-mark="1" data-contact-fact="source" data-route-state="open" data-x="3596" data-y="576">
+<title>Original Baldor control board · J2 pots / driver common · source position 1 · GREEN/YELLOW · front-panel pot shield · </title>
+<circle cx="3596" cy="576" r="8" class="open-socket"/>
+<rect x="3612" y="559" width="90" height="30" rx="8" class="number-pill"/>
+<text x="3657" y="581" class="number-text" text-anchor="middle">1</text>
+<text x="3716" y="581" class="machine-contact" text-anchor="start">GREEN/YELLOW · front-panel pot shield</text>
+<text x="3716" y="608" class="open-status" text-anchor="start">OPEN · no SmoothieBox route selected</text>
+</g>
+<g id="machine-p002-c002" data-machine-contact="5" data-contact-mark="5" data-contact-fact="source" data-route-state="open" data-x="3596" data-y="641">
+<title>Original Baldor control board · J2 pots / driver common · source position 5 · BLUE · 0V to front-panel pots · </title>
+<circle cx="3596" cy="641" r="8" class="open-socket"/>
+<rect x="3612" y="624" width="90" height="30" rx="8" class="number-pill"/>
+<text x="3657" y="646" class="number-text" text-anchor="middle">5</text>
+<text x="3716" y="646" class="machine-contact" text-anchor="start">BLUE · 0V to front-panel pots</text>
+<text x="3716" y="673" class="open-status" text-anchor="start">OPEN · no SmoothieBox route selected</text>
+</g>
+<g id="machine-p002-c003" data-machine-contact="6" data-contact-mark="6" data-contact-fact="source" data-route-state="open" data-x="3596" data-y="706">
+<title>Original Baldor control board · J2 pots / driver common · source position 6 · RED · +5 V to pots and stepper opto-input common + · </title>
+<circle cx="3596" cy="706" r="8" class="open-socket"/>
+<rect x="3612" y="689" width="90" height="30" rx="8" class="number-pill"/>
+<text x="3657" y="711" class="number-text" text-anchor="middle">6</text>
+<text x="3716" y="711" class="machine-contact" text-anchor="start">RED · +5 V to pots and stepper opto-input common +</text>
+<text x="3716" y="738" class="open-status" text-anchor="start">OPEN · no SmoothieBox route selected</text>
+</g>
+</g>
+<g class="peripheral" data-machine-peripheral="Original Baldor control board · J3 inputs" data-evidence-kind="reference" data-connector-id="denford-original-baldor-j3" data-connector-form="source-described">
+<title>Original Baldor control board · J3 inputs · Cabinet Wiring page revision 54936, 2022-03-14T23:19:26Z; original Baldor controller, relay/power board, spindle drive and stepper-drive wiring tables · Original-controller reference inputs. Door-guard and front-vac-switch assignments are stated by the wiki.</title>
+<rect x="3596" y="807" width="1340" height="480" rx="12" class="peripheral-card"/>
+<rect x="3596" y="807" width="10" height="480" rx="5" class="peripheral-accent-reference"/>
+<text x="3620" y="837" class="evidence-label">SOURCE REFERENCE ONLY · INSTALLED REVISION NOT ESTABLISHED</text>
+<rect x="4694" y="821" width="218" height="30" rx="15" class="connector-badge"/>
+<text x="4803" y="842" class="connector-badge-text" text-anchor="middle">MACHINE INTERFACE</text>
+<text x="3620" y="874" class="peripheral-name" text-anchor="start">Original Baldor control board · J3 inputs</text>
+<text x="3620" y="908" class="source-line" text-anchor="start">Cabinet Wiring page revision 54936, 2022-03-14T23:19:26Z; original Baldor controller, relay/power board,</text>
+<text x="3620" y="931" class="source-line" text-anchor="start">spindle drive and stepper-drive wiring tables · Original-controller reference inputs. Door-guard and</text>
+<text x="3620" y="954" class="source-line" text-anchor="start">front-vac-switch assignments are stated by the wiki.</text>
+<text x="3620" y="977" class="source-line" text-anchor="start">Selected numbered J3 contacts from Cabinet Wiring; no mating-face drawing.</text>
+<text x="3620" y="1001" class="small">MACHINE INTERFACE · EXPANDED SOURCE-ORDER CONTACTS, NOT PHYSICAL PIN-ROW GEOMETRY</text>
+<g id="machine-p003-c001" data-machine-contact="2" data-contact-mark="2" data-contact-fact="source" data-route-state="open" data-x="3596" data-y="1023">
+<title>Original Baldor control board · J3 inputs · source position 2 · GREY · DGnd to power board J11 · </title>
+<circle cx="3596" cy="1023" r="8" class="open-socket"/>
+<rect x="3612" y="1006" width="90" height="30" rx="8" class="number-pill"/>
+<text x="3657" y="1028" class="number-text" text-anchor="middle">2</text>
+<text x="3716" y="1028" class="machine-contact" text-anchor="start">GREY · DGnd to power board J11</text>
+<text x="3716" y="1055" class="open-status" text-anchor="start">OPEN · no SmoothieBox route selected</text>
+</g>
+<g id="machine-p003-c002" data-machine-contact="4" data-contact-mark="4" data-contact-fact="source" data-route-state="open" data-x="3596" data-y="1088">
+<title>Original Baldor control board · J3 inputs · source position 4 · GREY · Din 6, door-guard switch state · </title>
+<circle cx="3596" cy="1088" r="8" class="open-socket"/>
+<rect x="3612" y="1071" width="90" height="30" rx="8" class="number-pill"/>
+<text x="3657" y="1093" class="number-text" text-anchor="middle">4</text>
+<text x="3716" y="1093" class="machine-contact" text-anchor="start">GREY · Din 6, door-guard switch state</text>
+<text x="3716" y="1120" class="open-status" text-anchor="start">OPEN · no SmoothieBox route selected</text>
+</g>
+<g id="machine-p003-c003" data-machine-contact="9" data-contact-mark="9" data-contact-fact="source" data-route-state="open" data-x="3596" data-y="1153">
+<title>Original Baldor control board · J3 inputs · source position 9 · PURPLE · Din 1, front-panel vacuum switch state · </title>
+<circle cx="3596" cy="1153" r="8" class="open-socket"/>
+<rect x="3612" y="1136" width="90" height="30" rx="8" class="number-pill"/>
+<text x="3657" y="1158" class="number-text" text-anchor="middle">9</text>
+<text x="3716" y="1158" class="machine-contact" text-anchor="start">PURPLE · Din 1, front-panel vacuum switch state</text>
+<text x="3716" y="1185" class="open-status" text-anchor="start">OPEN · no SmoothieBox route selected</text>
+</g>
+<g id="machine-p003-c004" data-machine-contact="11" data-contact-mark="11" data-contact-fact="source" data-route-state="open" data-x="3596" data-y="1218">
+<title>Original Baldor control board · J3 inputs · source position 11 · PURPLE · DGnd to power board J11 · </title>
+<circle cx="3596" cy="1218" r="8" class="open-socket"/>
+<rect x="3612" y="1201" width="90" height="30" rx="8" class="number-pill"/>
+<text x="3657" y="1223" class="number-text" text-anchor="middle">11</text>
+<text x="3716" y="1223" class="machine-contact" text-anchor="start">PURPLE · DGnd to power board J11</text>
+<text x="3716" y="1250" class="open-status" text-anchor="start">OPEN · no SmoothieBox route selected</text>
+</g>
+</g>
+<g class="peripheral" data-machine-peripheral="Original Baldor control board · J5 analog / ground" data-evidence-kind="reference" data-connector-id="denford-original-baldor-j5" data-connector-form="source-described">
+<title>Original Baldor control board · J5 analog / ground · Cabinet Wiring page revision 54936, 2022-03-14T23:19:26Z; original Baldor controller, relay/power board, spindle drive and stepper-drive wiring tables · Original-controller reference; wiki maps analog spindle reference to the VS1ST and grounds to power board J6.</title>
+<rect x="2220" y="895" width="1340" height="480" rx="12" class="peripheral-card"/>
+<rect x="2220" y="895" width="10" height="480" rx="5" class="peripheral-accent-reference"/>
+<text x="2244" y="925" class="evidence-label">SOURCE REFERENCE ONLY · INSTALLED REVISION NOT ESTABLISHED</text>
+<rect x="3318" y="909" width="218" height="30" rx="15" class="connector-badge"/>
+<text x="3427" y="930" class="connector-badge-text" text-anchor="middle">MACHINE INTERFACE</text>
+<text x="2244" y="962" class="peripheral-name" text-anchor="start">Original Baldor control board · J5 analog / ground</text>
+<text x="2244" y="996" class="source-line" text-anchor="start">Cabinet Wiring page revision 54936, 2022-03-14T23:19:26Z; original Baldor controller, relay/power board,</text>
+<text x="2244" y="1019" class="source-line" text-anchor="start">spindle drive and stepper-drive wiring tables · Original-controller reference; wiki maps analog spindle</text>
+<text x="2244" y="1042" class="source-line" text-anchor="start">reference to the VS1ST and grounds to power board J6.</text>
+<text x="2244" y="1065" class="source-line" text-anchor="start">Selected numbered J5 contacts from Cabinet Wiring; no mating-face drawing.</text>
+<text x="2244" y="1089" class="small">MACHINE INTERFACE · EXPANDED SOURCE-ORDER CONTACTS, NOT PHYSICAL PIN-ROW GEOMETRY</text>
+<g id="machine-p004-c001" data-machine-contact="2" data-contact-mark="2" data-contact-fact="source" data-route-state="open" data-x="2220" data-y="1111">
+<title>Original Baldor control board · J5 analog / ground · source position 2 · GREY · DGnd, power board J6 pin 7 · </title>
+<circle cx="2220" cy="1111" r="8" class="open-socket"/>
+<rect x="2236" y="1094" width="90" height="30" rx="8" class="number-pill"/>
+<text x="2281" y="1116" class="number-text" text-anchor="middle">2</text>
+<text x="2340" y="1116" class="machine-contact" text-anchor="start">GREY · DGnd, power board J6 pin 7</text>
+<text x="2340" y="1143" class="open-status" text-anchor="start">OPEN · no SmoothieBox route selected</text>
+</g>
+<g id="machine-p004-c002" data-machine-contact="9" data-contact-mark="9" data-contact-fact="source" data-route-state="open" data-x="2220" data-y="1176">
+<title>Original Baldor control board · J5 analog / ground · source position 9 · PURPLE · DGnd, power board J6 pin 9 · </title>
+<circle cx="2220" cy="1176" r="8" class="open-socket"/>
+<rect x="2236" y="1159" width="90" height="30" rx="8" class="number-pill"/>
+<text x="2281" y="1181" class="number-text" text-anchor="middle">9</text>
+<text x="2340" y="1181" class="machine-contact" text-anchor="start">PURPLE · DGnd, power board J6 pin 9</text>
+<text x="2340" y="1208" class="open-status" text-anchor="start">OPEN · no SmoothieBox route selected</text>
+</g>
+<g id="machine-p004-c003" data-machine-contact="11" data-contact-mark="11" data-contact-fact="source" data-route-state="open" data-x="2220" data-y="1241">
+<title>Original Baldor control board · J5 analog / ground · source position 11 · BLUE · analog ground, VS1ST pin 7 · </title>
+<circle cx="2220" cy="1241" r="8" class="open-socket"/>
+<rect x="2236" y="1224" width="90" height="30" rx="8" class="number-pill"/>
+<text x="2281" y="1246" class="number-text" text-anchor="middle">11</text>
+<text x="2340" y="1246" class="machine-contact" text-anchor="start">BLUE · analog ground, VS1ST pin 7</text>
+<text x="2340" y="1273" class="open-status" text-anchor="start">OPEN · no SmoothieBox route selected</text>
+</g>
+<g id="machine-p004-c004" data-machine-contact="12" data-contact-mark="12" data-contact-fact="source" data-route-state="open" data-x="2220" data-y="1306">
+<title>Original Baldor control board · J5 analog / ground · source position 12 · RED · analog spindle-speed output, VS1ST pin 6 · </title>
+<circle cx="2220" cy="1306" r="8" class="open-socket"/>
+<rect x="2236" y="1289" width="90" height="30" rx="8" class="number-pill"/>
+<text x="2281" y="1311" class="number-text" text-anchor="middle">12</text>
+<text x="2340" y="1311" class="machine-contact" text-anchor="start">RED · analog spindle-speed output, VS1ST pin 6</text>
+<text x="2340" y="1338" class="open-status" text-anchor="start">OPEN · no SmoothieBox route selected</text>
+</g>
+</g>
+<g class="peripheral" data-machine-peripheral="Original Baldor control board · J6 E-stop / limit inputs" data-evidence-kind="reference" data-connector-id="denford-original-baldor-j6" data-connector-form="source-described">
+<title>Original Baldor control board · J6 E-stop / limit inputs · Cabinet Wiring page revision 54936, 2022-03-14T23:19:26Z; original Baldor controller, relay/power board, spindle drive and stepper-drive wiring tables · Original-controller reference. Limit-to-input assignment is explicitly marked ?? by the source; preserve it as unknown.</title>
+<rect x="3596" y="1319" width="1340" height="610" rx="12" class="peripheral-card"/>
+<rect x="3596" y="1319" width="10" height="610" rx="5" class="peripheral-accent-reference"/>
+<text x="3620" y="1349" class="evidence-label">SOURCE REFERENCE ONLY · INSTALLED REVISION NOT ESTABLISHED</text>
+<rect x="4694" y="1333" width="218" height="30" rx="15" class="connector-badge"/>
+<text x="4803" y="1354" class="connector-badge-text" text-anchor="middle">MACHINE INTERFACE</text>
+<text x="3620" y="1386" class="peripheral-name" text-anchor="start">Original Baldor control board · J6 E-stop / limit inputs</text>
+<text x="3620" y="1420" class="source-line" text-anchor="start">Cabinet Wiring page revision 54936, 2022-03-14T23:19:26Z; original Baldor controller, relay/power board,</text>
+<text x="3620" y="1443" class="source-line" text-anchor="start">spindle drive and stepper-drive wiring tables · Original-controller reference. Limit-to-input assignment</text>
+<text x="3620" y="1466" class="source-line" text-anchor="start">is explicitly marked ?? by the source; preserve it as unknown.</text>
+<text x="3620" y="1489" class="source-line" text-anchor="start">Selected numbered J6 contacts from Cabinet Wiring; no mating-face drawing.</text>
+<text x="3620" y="1513" class="small">MACHINE INTERFACE · EXPANDED SOURCE-ORDER CONTACTS, NOT PHYSICAL PIN-ROW GEOMETRY</text>
+<g id="machine-p005-c001" data-machine-contact="2" data-contact-mark="2" data-contact-fact="source" data-route-state="open" data-x="3596" data-y="1535">
+<title>Original Baldor control board · J6 E-stop / limit inputs · source position 2 · BLUE · DGnd in E-stop chain · </title>
+<circle cx="3596" cy="1535" r="8" class="open-socket"/>
+<rect x="3612" y="1518" width="90" height="30" rx="8" class="number-pill"/>
+<text x="3657" y="1540" class="number-text" text-anchor="middle">2</text>
+<text x="3716" y="1540" class="machine-contact" text-anchor="start">BLUE · DGnd in E-stop chain</text>
+<text x="3716" y="1567" class="open-status" text-anchor="start">OPEN · no SmoothieBox route selected</text>
+</g>
+<g id="machine-p005-c002" data-machine-contact="6" data-contact-mark="6" data-contact-fact="source" data-route-state="open" data-x="3596" data-y="1600">
+<title>Original Baldor control board · J6 E-stop / limit inputs · source position 6 · RED · Din 11, E-stop chain input · </title>
+<circle cx="3596" cy="1600" r="8" class="open-socket"/>
+<rect x="3612" y="1583" width="90" height="30" rx="8" class="number-pill"/>
+<text x="3657" y="1605" class="number-text" text-anchor="middle">6</text>
+<text x="3716" y="1605" class="machine-contact" text-anchor="start">RED · Din 11, E-stop chain input</text>
+<text x="3716" y="1632" class="open-status" text-anchor="start">OPEN · no SmoothieBox route selected</text>
+</g>
+<g id="machine-p005-c003" data-machine-contact="7" data-contact-mark="7" data-contact-fact="source" data-route-state="open" data-x="3596" data-y="1665">
+<title>Original Baldor control board · J6 E-stop / limit inputs · source position 7 · GREY · Din 12, limit contact assignment marked ?? · </title>
+<circle cx="3596" cy="1665" r="8" class="open-socket"/>
+<rect x="3612" y="1648" width="90" height="30" rx="8" class="number-pill"/>
+<text x="3657" y="1670" class="number-text" text-anchor="middle">7</text>
+<text x="3716" y="1670" class="machine-contact" text-anchor="start">GREY · Din 12, limit contact assignment marked ??</text>
+<text x="3716" y="1697" class="open-status" text-anchor="start">OPEN · no SmoothieBox route selected</text>
+</g>
+<g id="machine-p005-c004" data-machine-contact="8" data-contact-mark="8" data-contact-fact="source" data-route-state="open" data-x="3596" data-y="1730">
+<title>Original Baldor control board · J6 E-stop / limit inputs · source position 8 · PINK · Din 13, limit contact assignment marked ?? · </title>
+<circle cx="3596" cy="1730" r="8" class="open-socket"/>
+<rect x="3612" y="1713" width="90" height="30" rx="8" class="number-pill"/>
+<text x="3657" y="1735" class="number-text" text-anchor="middle">8</text>
+<text x="3716" y="1735" class="machine-contact" text-anchor="start">PINK · Din 13, limit contact assignment marked ??</text>
+<text x="3716" y="1762" class="open-status" text-anchor="start">OPEN · no SmoothieBox route selected</text>
+</g>
+<g id="machine-p005-c005" data-machine-contact="9" data-contact-mark="9" data-contact-fact="source" data-route-state="open" data-x="3596" data-y="1795">
+<title>Original Baldor control board · J6 E-stop / limit inputs · source position 9 · PURPLE · Din 14, limit contact assignment marked ?? · </title>
+<circle cx="3596" cy="1795" r="8" class="open-socket"/>
+<rect x="3612" y="1778" width="90" height="30" rx="8" class="number-pill"/>
+<text x="3657" y="1800" class="number-text" text-anchor="middle">9</text>
+<text x="3716" y="1800" class="machine-contact" text-anchor="start">PURPLE · Din 14, limit contact assignment marked ??</text>
+<text x="3716" y="1827" class="open-status" text-anchor="start">OPEN · no SmoothieBox route selected</text>
+</g>
+<g id="machine-p005-c006" data-machine-contact="11" data-contact-mark="11" data-contact-fact="source" data-route-state="open" data-x="3596" data-y="1860">
+<title>Original Baldor control board · J6 E-stop / limit inputs · source position 11 · PINK · DGnd · </title>
+<circle cx="3596" cy="1860" r="8" class="open-socket"/>
+<rect x="3612" y="1843" width="90" height="30" rx="8" class="number-pill"/>
+<text x="3657" y="1865" class="number-text" text-anchor="middle">11</text>
+<text x="3716" y="1865" class="machine-contact" text-anchor="start">PINK · DGnd</text>
+<text x="3716" y="1892" class="open-status" text-anchor="start">OPEN · no SmoothieBox route selected</text>
+</g>
+</g>
+<g class="peripheral" data-machine-peripheral="Original Baldor control board · J7 brake control" data-evidence-kind="reference" data-connector-id="denford-original-baldor-j7" data-connector-form="source-described">
+<title>Original Baldor control board · J7 brake control · Cabinet Wiring page revision 54936, 2022-03-14T23:19:26Z; original Baldor controller, relay/power board, spindle drive and stepper-drive wiring tables · Original-controller reference; active-low Z-axis brake-release function is source-described, but board installation is unverified.</title>
+<rect x="2220" y="1407" width="1340" height="285" rx="12" class="peripheral-card"/>
+<rect x="2220" y="1407" width="10" height="285" rx="5" class="peripheral-accent-reference"/>
+<text x="2244" y="1437" class="evidence-label">SOURCE REFERENCE ONLY · INSTALLED REVISION NOT ESTABLISHED</text>
+<rect x="3318" y="1421" width="218" height="30" rx="15" class="connector-badge"/>
+<text x="3427" y="1442" class="connector-badge-text" text-anchor="middle">MACHINE INTERFACE</text>
+<text x="2244" y="1474" class="peripheral-name" text-anchor="start">Original Baldor control board · J7 brake control</text>
+<text x="2244" y="1508" class="source-line" text-anchor="start">Cabinet Wiring page revision 54936, 2022-03-14T23:19:26Z; original Baldor controller, relay/power board,</text>
+<text x="2244" y="1531" class="source-line" text-anchor="start">spindle drive and stepper-drive wiring tables · Original-controller reference; active-low Z-axis</text>
+<text x="2244" y="1554" class="source-line" text-anchor="start">brake-release function is source-described, but board installation is unverified.</text>
+<text x="2244" y="1577" class="source-line" text-anchor="start">Only the numbered contact listed in Cabinet Wiring; connector view unavailable.</text>
+<text x="2244" y="1601" class="small">MACHINE INTERFACE · EXPANDED SOURCE-ORDER CONTACTS, NOT PHYSICAL PIN-ROW GEOMETRY</text>
+<g id="machine-p006-c001" data-machine-contact="9" data-contact-mark="9" data-contact-fact="source" data-route-state="open" data-x="2220" data-y="1623">
+<title>Original Baldor control board · J7 brake control · source position 9 · RED · Dout 15, low to free Z-axis brake · </title>
+<circle cx="2220" cy="1623" r="8" class="open-socket"/>
+<rect x="2236" y="1606" width="90" height="30" rx="8" class="number-pill"/>
+<text x="2281" y="1628" class="number-text" text-anchor="middle">9</text>
+<text x="2340" y="1628" class="machine-contact" text-anchor="start">RED · Dout 15, low to free Z-axis brake</text>
+<text x="2340" y="1655" class="open-status" text-anchor="start">OPEN · no SmoothieBox route selected</text>
+</g>
+</g>
+<g class="peripheral" data-machine-peripheral="Original Baldor control board · J8 outputs" data-evidence-kind="reference" data-connector-id="denford-original-baldor-j8" data-connector-form="source-described">
+<title>Original Baldor control board · J8 outputs · Cabinet Wiring page revision 54936, 2022-03-14T23:19:26Z; original Baldor controller, relay/power board, spindle drive and stepper-drive wiring tables · Original-controller reference outputs to power-board J10. The wiki marks several mappings uncertain.</title>
+<rect x="2220" y="1724" width="1340" height="572" rx="12" class="peripheral-card"/>
+<rect x="2220" y="1724" width="10" height="572" rx="5" class="peripheral-accent-reference"/>
+<text x="2244" y="1754" class="evidence-label">SOURCE REFERENCE ONLY · INSTALLED REVISION NOT ESTABLISHED</text>
+<rect x="3318" y="1738" width="218" height="30" rx="15" class="connector-badge"/>
+<text x="3427" y="1759" class="connector-badge-text" text-anchor="middle">MACHINE INTERFACE</text>
+<text x="2244" y="1791" class="peripheral-name" text-anchor="start">Original Baldor control board · J8 outputs</text>
+<text x="2244" y="1825" class="source-line" text-anchor="start">Cabinet Wiring page revision 54936, 2022-03-14T23:19:26Z; original Baldor controller, relay/power board,</text>
+<text x="2244" y="1848" class="source-line" text-anchor="start">spindle drive and stepper-drive wiring tables · Original-controller reference outputs to power-board J10.</text>
+<text x="2244" y="1871" class="source-line" text-anchor="start">The wiki marks several mappings uncertain.</text>
+<text x="2244" y="1894" class="source-line" text-anchor="start">Selected numbered J8 contacts from Cabinet Wiring; no mating-face drawing.</text>
+<text x="2244" y="1918" class="small">MACHINE INTERFACE · EXPANDED SOURCE-ORDER CONTACTS, NOT PHYSICAL PIN-ROW GEOMETRY</text>
+<g id="machine-p007-c001" data-machine-contact="2" data-contact-mark="2" data-contact-fact="source" data-route-state="open" data-x="2220" data-y="1940">
+<title>Original Baldor control board · J8 outputs · source position 2 · WHITE · to power J10 pin 1; disable Z-axis brake when low (source includes ??) · </title>
+<circle cx="2220" cy="1940" r="8" class="open-socket"/>
+<rect x="2236" y="1923" width="90" height="30" rx="8" class="number-pill"/>
+<text x="2281" y="1945" class="number-text" text-anchor="middle">2</text>
+<text x="2340" y="1945" class="machine-contact" text-anchor="start">WHITE · to power J10 pin 1; disable Z-axis brake when low (source includes</text>
+<text x="2340" y="1972" class="machine-contact" text-anchor="start">??)</text>
+<text x="2340" y="1999" class="open-status" text-anchor="start">OPEN · no SmoothieBox route selected</text>
+</g>
+<g id="machine-p007-c002" data-machine-contact="8" data-contact-mark="8" data-contact-fact="source" data-route-state="open" data-x="2220" data-y="2032">
+<title>Original Baldor control board · J8 outputs · source position 8 · YELLOW · to power J10 pin 2; vacuum pump enabled when low · </title>
+<circle cx="2220" cy="2032" r="8" class="open-socket"/>
+<rect x="2236" y="2015" width="90" height="30" rx="8" class="number-pill"/>
+<text x="2281" y="2037" class="number-text" text-anchor="middle">8</text>
+<text x="2340" y="2037" class="machine-contact" text-anchor="start">YELLOW · to power J10 pin 2; vacuum pump enabled when low</text>
+<text x="2340" y="2064" class="open-status" text-anchor="start">OPEN · no SmoothieBox route selected</text>
+</g>
+<g id="machine-p007-c003" data-machine-contact="9" data-contact-mark="9" data-contact-fact="source" data-route-state="open" data-x="2220" data-y="2097">
+<title>Original Baldor control board · J8 outputs · source position 9 · PURPLE · to power J10 pin 3; door unlock when low · </title>
+<circle cx="2220" cy="2097" r="8" class="open-socket"/>
+<rect x="2236" y="2080" width="90" height="30" rx="8" class="number-pill"/>
+<text x="2281" y="2102" class="number-text" text-anchor="middle">9</text>
+<text x="2340" y="2102" class="machine-contact" text-anchor="start">PURPLE · to power J10 pin 3; door unlock when low</text>
+<text x="2340" y="2129" class="open-status" text-anchor="start">OPEN · no SmoothieBox route selected</text>
+</g>
+<g id="machine-p007-c004" data-machine-contact="10" data-contact-mark="10" data-contact-fact="source" data-route-state="open" data-x="2220" data-y="2162">
+<title>Original Baldor control board · J8 outputs · source position 10 · RED · to power J10 pin 4; relay common +ve · </title>
+<circle cx="2220" cy="2162" r="8" class="open-socket"/>
+<rect x="2236" y="2145" width="90" height="30" rx="8" class="number-pill"/>
+<text x="2281" y="2167" class="number-text" text-anchor="middle">10</text>
+<text x="2340" y="2167" class="machine-contact" text-anchor="start">RED · to power J10 pin 4; relay common +ve</text>
+<text x="2340" y="2194" class="open-status" text-anchor="start">OPEN · no SmoothieBox route selected</text>
+</g>
+<g id="machine-p007-c005" data-machine-contact="11" data-contact-mark="11" data-contact-fact="source" data-route-state="open" data-x="2220" data-y="2227">
+<title>Original Baldor control board · J8 outputs · source position 11 · BLACK · DGnd to power J10 pin 5 · </title>
+<circle cx="2220" cy="2227" r="8" class="open-socket"/>
+<rect x="2236" y="2210" width="90" height="30" rx="8" class="number-pill"/>
+<text x="2281" y="2232" class="number-text" text-anchor="middle">11</text>
+<text x="2340" y="2232" class="machine-contact" text-anchor="start">BLACK · DGnd to power J10 pin 5</text>
+<text x="2340" y="2259" class="open-status" text-anchor="start">OPEN · no SmoothieBox route selected</text>
+</g>
+</g>
+<g class="peripheral" data-machine-peripheral="Original Baldor control board · J9 panel pots" data-evidence-kind="reference" data-connector-id="denford-original-baldor-j9" data-connector-form="source-described">
+<title>Original Baldor control board · J9 panel pots · Cabinet Wiring page revision 54936, 2022-03-14T23:19:26Z; original Baldor controller, relay/power board, spindle drive and stepper-drive wiring tables · Original-controller reference analog input and common group.</title>
+<rect x="3596" y="1961" width="1340" height="610" rx="12" class="peripheral-card"/>
+<rect x="3596" y="1961" width="10" height="610" rx="5" class="peripheral-accent-reference"/>
+<text x="3620" y="1991" class="evidence-label">SOURCE REFERENCE ONLY · INSTALLED REVISION NOT ESTABLISHED</text>
+<rect x="4694" y="1975" width="218" height="30" rx="15" class="connector-badge"/>
+<text x="4803" y="1996" class="connector-badge-text" text-anchor="middle">MACHINE INTERFACE</text>
+<text x="3620" y="2028" class="peripheral-name" text-anchor="start">Original Baldor control board · J9 panel pots</text>
+<text x="3620" y="2062" class="source-line" text-anchor="start">Cabinet Wiring page revision 54936, 2022-03-14T23:19:26Z; original Baldor controller, relay/power board,</text>
+<text x="3620" y="2085" class="source-line" text-anchor="start">spindle drive and stepper-drive wiring tables · Original-controller reference analog input and common</text>
+<text x="3620" y="2108" class="source-line" text-anchor="start">group.</text>
+<text x="3620" y="2131" class="source-line" text-anchor="start">All six numbered J9 contacts are listed by Cabinet Wiring; no mating-face drawing.</text>
+<text x="3620" y="2155" class="small">MACHINE INTERFACE · EXPANDED SOURCE-ORDER CONTACTS, NOT PHYSICAL PIN-ROW GEOMETRY</text>
+<g id="machine-p008-c001" data-machine-contact="1" data-contact-mark="1" data-contact-fact="source" data-route-state="open" data-x="3596" data-y="2177">
+<title>Original Baldor control board · J9 panel pots · source position 1 · GREEN/YELLOW · front-panel pot shield · </title>
+<circle cx="3596" cy="2177" r="8" class="open-socket"/>
+<rect x="3612" y="2160" width="90" height="30" rx="8" class="number-pill"/>
+<text x="3657" y="2182" class="number-text" text-anchor="middle">1</text>
+<text x="3716" y="2182" class="machine-contact" text-anchor="start">GREEN/YELLOW · front-panel pot shield</text>
+<text x="3716" y="2209" class="open-status" text-anchor="start">OPEN · no SmoothieBox route selected</text>
+</g>
+<g id="machine-p008-c002" data-machine-contact="2" data-contact-mark="2" data-contact-fact="source" data-route-state="open" data-x="3596" data-y="2242">
+<title>Original Baldor control board · J9 panel pots · source position 2 · GREEN · spindle-pot slider, Ain0 · </title>
+<circle cx="3596" cy="2242" r="8" class="open-socket"/>
+<rect x="3612" y="2225" width="90" height="30" rx="8" class="number-pill"/>
+<text x="3657" y="2247" class="number-text" text-anchor="middle">2</text>
+<text x="3716" y="2247" class="machine-contact" text-anchor="start">GREEN · spindle-pot slider, Ain0</text>
+<text x="3716" y="2274" class="open-status" text-anchor="start">OPEN · no SmoothieBox route selected</text>
+</g>
+<g id="machine-p008-c003" data-machine-contact="3" data-contact-mark="3" data-contact-fact="source" data-route-state="open" data-x="3596" data-y="2307">
+<title>Original Baldor control board · J9 panel pots · source position 3 · BLUE · analog ground · </title>
+<circle cx="3596" cy="2307" r="8" class="open-socket"/>
+<rect x="3612" y="2290" width="90" height="30" rx="8" class="number-pill"/>
+<text x="3657" y="2312" class="number-text" text-anchor="middle">3</text>
+<text x="3716" y="2312" class="machine-contact" text-anchor="start">BLUE · analog ground</text>
+<text x="3716" y="2339" class="open-status" text-anchor="start">OPEN · no SmoothieBox route selected</text>
+</g>
+<g id="machine-p008-c004" data-machine-contact="4" data-contact-mark="4" data-contact-fact="source" data-route-state="open" data-x="3596" data-y="2372">
+<title>Original Baldor control board · J9 panel pots · source position 4 · YELLOW · feed-rate-pot slider, Ain1 · </title>
+<circle cx="3596" cy="2372" r="8" class="open-socket"/>
+<rect x="3612" y="2355" width="90" height="30" rx="8" class="number-pill"/>
+<text x="3657" y="2377" class="number-text" text-anchor="middle">4</text>
+<text x="3716" y="2377" class="machine-contact" text-anchor="start">YELLOW · feed-rate-pot slider, Ain1</text>
+<text x="3716" y="2404" class="open-status" text-anchor="start">OPEN · no SmoothieBox route selected</text>
+</g>
+<g id="machine-p008-c005" data-machine-contact="5" data-contact-mark="5" data-contact-fact="source" data-route-state="open" data-x="3596" data-y="2437">
+<title>Original Baldor control board · J9 panel pots · source position 5 · BLUE · analog ground · </title>
+<circle cx="3596" cy="2437" r="8" class="open-socket"/>
+<rect x="3612" y="2420" width="90" height="30" rx="8" class="number-pill"/>
+<text x="3657" y="2442" class="number-text" text-anchor="middle">5</text>
+<text x="3716" y="2442" class="machine-contact" text-anchor="start">BLUE · analog ground</text>
+<text x="3716" y="2469" class="open-status" text-anchor="start">OPEN · no SmoothieBox route selected</text>
+</g>
+<g id="machine-p008-c006" data-machine-contact="6" data-contact-mark="6" data-contact-fact="source" data-route-state="open" data-x="3596" data-y="2502">
+<title>Original Baldor control board · J9 panel pots · source position 6 · BLUE · analog ground · </title>
+<circle cx="3596" cy="2502" r="8" class="open-socket"/>
+<rect x="3612" y="2485" width="90" height="30" rx="8" class="number-pill"/>
+<text x="3657" y="2507" class="number-text" text-anchor="middle">6</text>
+<text x="3716" y="2507" class="machine-contact" text-anchor="start">BLUE · analog ground</text>
+<text x="3716" y="2534" class="open-status" text-anchor="start">OPEN · no SmoothieBox route selected</text>
+</g>
+</g>
+<g class="peripheral" data-machine-peripheral="E-stop/power relay board · J1 mains-filter boundary" data-evidence-kind="reference" data-connector-id="denford-relay-j1" data-connector-form="source-described">
+<title>E-stop/power relay board · J1 mains-filter boundary · Cabinet Wiring page revision 54936, 2022-03-14T23:19:26Z; original Baldor controller, relay/power board, spindle drive and stepper-drive wiring tables · Reference power-boundary label only. High-voltage wiring is not a SmoothieBox connection.</title>
+<rect x="2220" y="2328" width="1340" height="285" rx="12" class="peripheral-card"/>
+<rect x="2220" y="2328" width="10" height="285" rx="5" class="peripheral-accent-reference"/>
+<text x="2244" y="2358" class="evidence-label">SOURCE REFERENCE ONLY · INSTALLED REVISION NOT ESTABLISHED</text>
+<rect x="3318" y="2342" width="218" height="30" rx="15" class="connector-badge"/>
+<text x="3427" y="2363" class="connector-badge-text" text-anchor="middle">MACHINE INTERFACE</text>
+<text x="2244" y="2395" class="peripheral-name" text-anchor="start">E-stop/power relay board · J1 mains-filter boundary</text>
+<text x="2244" y="2429" class="source-line" text-anchor="start">Cabinet Wiring page revision 54936, 2022-03-14T23:19:26Z; original Baldor controller, relay/power board,</text>
+<text x="2244" y="2452" class="source-line" text-anchor="start">spindle drive and stepper-drive wiring tables · Reference power-boundary label only. High-voltage wiring</text>
+<text x="2244" y="2475" class="source-line" text-anchor="start">is not a SmoothieBox connection.</text>
+<text x="2244" y="2498" class="source-line" text-anchor="start">Only J1 pin 1 has a numbered entry in the Cabinet Wiring table; remaining positions are not counted.</text>
+<text x="2244" y="2522" class="small">MACHINE INTERFACE · EXPANDED SOURCE-ORDER CONTACTS, NOT PHYSICAL PIN-ROW GEOMETRY</text>
+<g id="machine-p009-c001" data-machine-contact="1" data-contact-mark="1" data-contact-fact="source" data-route-state="open" data-x="2220" data-y="2544">
+<title>E-stop/power relay board · J1 mains-filter boundary · source position 1 · Mains input from mains filter · </title>
+<circle cx="2220" cy="2544" r="8" class="open-socket"/>
+<rect x="2236" y="2527" width="90" height="30" rx="8" class="number-pill"/>
+<text x="2281" y="2549" class="number-text" text-anchor="middle">1</text>
+<text x="2340" y="2549" class="machine-contact" text-anchor="start">Mains input from mains filter</text>
+<text x="2340" y="2576" class="open-status" text-anchor="start">OPEN · no SmoothieBox route selected</text>
+</g>
+</g>
+<g class="peripheral" data-machine-peripheral="E-stop/power relay board · J8 safety harness" data-evidence-kind="reference" data-connector-id="denford-relay-j8" data-connector-form="source-described">
+<title>E-stop/power relay board · J8 safety harness · Cabinet Wiring page revision 54936, 2022-03-14T23:19:26Z; original Baldor controller, relay/power board, spindle drive and stepper-drive wiring tables · Reference E-stop / guard / door-lock boundary. Contact state and installed revision are unverified.</title>
+<rect x="3596" y="2603" width="1340" height="763" rx="12" class="peripheral-card"/>
+<rect x="3596" y="2603" width="10" height="763" rx="5" class="peripheral-accent-reference"/>
+<text x="3620" y="2633" class="evidence-label">SOURCE REFERENCE ONLY · INSTALLED REVISION NOT ESTABLISHED</text>
+<rect x="4694" y="2617" width="218" height="30" rx="15" class="connector-badge"/>
+<text x="4803" y="2638" class="connector-badge-text" text-anchor="middle">MACHINE INTERFACE</text>
+<text x="3620" y="2670" class="peripheral-name" text-anchor="start">E-stop/power relay board · J8 safety harness</text>
+<text x="3620" y="2704" class="source-line" text-anchor="start">Cabinet Wiring page revision 54936, 2022-03-14T23:19:26Z; original Baldor controller, relay/power board,</text>
+<text x="3620" y="2727" class="source-line" text-anchor="start">spindle drive and stepper-drive wiring tables · Reference E-stop / guard / door-lock boundary. Contact</text>
+<text x="3620" y="2750" class="source-line" text-anchor="start">state and installed revision are unverified.</text>
+<text x="3620" y="2773" class="source-line" text-anchor="start">Cabinet Wiring explicitly lists pins 1–8; schematic MRP-0850B revision B is not treated as installed</text>
+<text x="3620" y="2796" class="source-line" text-anchor="start">revision.</text>
+<text x="3620" y="2820" class="small">MACHINE INTERFACE · EXPANDED SOURCE-ORDER CONTACTS, NOT PHYSICAL PIN-ROW GEOMETRY</text>
+<g id="machine-p010-c001" data-machine-contact="1" data-contact-mark="1" data-contact-fact="source" data-route-state="open" data-x="3596" data-y="2842">
+<title>E-stop/power relay board · J8 safety harness · source position 1 · RED · E-stop harness · </title>
+<circle cx="3596" cy="2842" r="8" class="open-socket"/>
+<rect x="3612" y="2825" width="90" height="30" rx="8" class="number-pill"/>
+<text x="3657" y="2847" class="number-text" text-anchor="middle">1</text>
+<text x="3716" y="2847" class="machine-contact" text-anchor="start">RED · E-stop harness</text>
+<text x="3716" y="2874" class="open-status" text-anchor="start">OPEN · no SmoothieBox route selected</text>
+</g>
+<g id="machine-p010-c002" data-machine-contact="2" data-contact-mark="2" data-contact-fact="source" data-route-state="open" data-x="3596" data-y="2907">
+<title>E-stop/power relay board · J8 safety harness · source position 2 · RED · E-stop harness · </title>
+<circle cx="3596" cy="2907" r="8" class="open-socket"/>
+<rect x="3612" y="2890" width="90" height="30" rx="8" class="number-pill"/>
+<text x="3657" y="2912" class="number-text" text-anchor="middle">2</text>
+<text x="3716" y="2912" class="machine-contact" text-anchor="start">RED · E-stop harness</text>
+<text x="3716" y="2939" class="open-status" text-anchor="start">OPEN · no SmoothieBox route selected</text>
+</g>
+<g id="machine-p010-c003" data-machine-contact="3" data-contact-mark="3" data-contact-fact="source" data-route-state="open" data-x="3596" data-y="2972">
+<title>E-stop/power relay board · J8 safety harness · source position 3 · WHITE · guard switch / door lock · </title>
+<circle cx="3596" cy="2972" r="8" class="open-socket"/>
+<rect x="3612" y="2955" width="90" height="30" rx="8" class="number-pill"/>
+<text x="3657" y="2977" class="number-text" text-anchor="middle">3</text>
+<text x="3716" y="2977" class="machine-contact" text-anchor="start">WHITE · guard switch / door lock</text>
+<text x="3716" y="3004" class="open-status" text-anchor="start">OPEN · no SmoothieBox route selected</text>
+</g>
+<g id="machine-p010-c004" data-machine-contact="4" data-contact-mark="4" data-contact-fact="source" data-route-state="open" data-x="3596" data-y="3037">
+<title>E-stop/power relay board · J8 safety harness · source position 4 · PURPLE · guard switch / door lock · </title>
+<circle cx="3596" cy="3037" r="8" class="open-socket"/>
+<rect x="3612" y="3020" width="90" height="30" rx="8" class="number-pill"/>
+<text x="3657" y="3042" class="number-text" text-anchor="middle">4</text>
+<text x="3716" y="3042" class="machine-contact" text-anchor="start">PURPLE · guard switch / door lock</text>
+<text x="3716" y="3069" class="open-status" text-anchor="start">OPEN · no SmoothieBox route selected</text>
+</g>
+<g id="machine-p010-c005" data-machine-contact="5" data-contact-mark="5" data-contact-fact="source" data-route-state="open" data-x="3596" data-y="3102">
+<title>E-stop/power relay board · J8 safety harness · source position 5 · BLACK · guard switch / door lock · </title>
+<circle cx="3596" cy="3102" r="8" class="open-socket"/>
+<rect x="3612" y="3085" width="90" height="30" rx="8" class="number-pill"/>
+<text x="3657" y="3107" class="number-text" text-anchor="middle">5</text>
+<text x="3716" y="3107" class="machine-contact" text-anchor="start">BLACK · guard switch / door lock</text>
+<text x="3716" y="3134" class="open-status" text-anchor="start">OPEN · no SmoothieBox route selected</text>
+</g>
+<g id="machine-p010-c006" data-machine-contact="6" data-contact-mark="6" data-contact-fact="source" data-route-state="open" data-x="3596" data-y="3167">
+<title>E-stop/power relay board · J8 safety harness · source position 6 · BROWN · guard switch / door lock · </title>
+<circle cx="3596" cy="3167" r="8" class="open-socket"/>
+<rect x="3612" y="3150" width="90" height="30" rx="8" class="number-pill"/>
+<text x="3657" y="3172" class="number-text" text-anchor="middle">6</text>
+<text x="3716" y="3172" class="machine-contact" text-anchor="start">BROWN · guard switch / door lock</text>
+<text x="3716" y="3199" class="open-status" text-anchor="start">OPEN · no SmoothieBox route selected</text>
+</g>
+<g id="machine-p010-c007" data-machine-contact="7" data-contact-mark="7" data-contact-fact="source" data-route-state="open" data-x="3596" data-y="3232">
+<title>E-stop/power relay board · J8 safety harness · source position 7 · YELLOW · guard switch / door lock · </title>
+<circle cx="3596" cy="3232" r="8" class="open-socket"/>
+<rect x="3612" y="3215" width="90" height="30" rx="8" class="number-pill"/>
+<text x="3657" y="3237" class="number-text" text-anchor="middle">7</text>
+<text x="3716" y="3237" class="machine-contact" text-anchor="start">YELLOW · guard switch / door lock</text>
+<text x="3716" y="3264" class="open-status" text-anchor="start">OPEN · no SmoothieBox route selected</text>
+</g>
+<g id="machine-p010-c008" data-machine-contact="8" data-contact-mark="8" data-contact-fact="source" data-route-state="open" data-x="3596" data-y="3297">
+<title>E-stop/power relay board · J8 safety harness · source position 8 · RED · guard switch / door lock · </title>
+<circle cx="3596" cy="3297" r="8" class="open-socket"/>
+<rect x="3612" y="3280" width="90" height="30" rx="8" class="number-pill"/>
+<text x="3657" y="3302" class="number-text" text-anchor="middle">8</text>
+<text x="3716" y="3302" class="machine-contact" text-anchor="start">RED · guard switch / door lock</text>
+<text x="3716" y="3329" class="open-status" text-anchor="start">OPEN · no SmoothieBox route selected</text>
+</g>
+</g>
+<g class="peripheral" data-machine-peripheral="E-stop/power relay board · J10 controller / E-stop" data-evidence-kind="reference" data-connector-id="denford-relay-j10" data-connector-form="source-described">
+<title>E-stop/power relay board · J10 controller / E-stop · Cabinet Wiring page revision 54936, 2022-03-14T23:19:26Z; original Baldor controller, relay/power board, spindle drive and stepper-drive wiring tables · Reference controller outputs and E-stop chain. Active-low functions and `??` are retained literally.</title>
+<rect x="2220" y="2645" width="1340" height="545" rx="12" class="peripheral-card"/>
+<rect x="2220" y="2645" width="10" height="545" rx="5" class="peripheral-accent-reference"/>
+<text x="2244" y="2675" class="evidence-label">SOURCE REFERENCE ONLY · INSTALLED REVISION NOT ESTABLISHED</text>
+<rect x="3318" y="2659" width="218" height="30" rx="15" class="connector-badge"/>
+<text x="3427" y="2680" class="connector-badge-text" text-anchor="middle">MACHINE INTERFACE</text>
+<text x="2244" y="2712" class="peripheral-name" text-anchor="start">E-stop/power relay board · J10 controller / E-stop</text>
+<text x="2244" y="2746" class="source-line" text-anchor="start">Cabinet Wiring page revision 54936, 2022-03-14T23:19:26Z; original Baldor controller, relay/power board,</text>
+<text x="2244" y="2769" class="source-line" text-anchor="start">spindle drive and stepper-drive wiring tables · Reference controller outputs and E-stop chain. Active-low</text>
+<text x="2244" y="2792" class="source-line" text-anchor="start">functions and `??` are retained literally.</text>
+<text x="2244" y="2815" class="source-line" text-anchor="start">Only numbered positions listed in Cabinet Wiring are shown; pin 4 has no source row and is not invented.</text>
+<text x="2244" y="2839" class="small">MACHINE INTERFACE · EXPANDED SOURCE-ORDER CONTACTS, NOT PHYSICAL PIN-ROW GEOMETRY</text>
+<g id="machine-p011-c001" data-machine-contact="1" data-contact-mark="1" data-contact-fact="source" data-route-state="open" data-x="2220" data-y="2861">
+<title>E-stop/power relay board · J10 controller / E-stop · source position 1 · WHITE · controller J8; input ?? disable Z-axis brake when low · </title>
+<circle cx="2220" cy="2861" r="8" class="open-socket"/>
+<rect x="2236" y="2844" width="90" height="30" rx="8" class="number-pill"/>
+<text x="2281" y="2866" class="number-text" text-anchor="middle">1</text>
+<text x="2340" y="2866" class="machine-contact" text-anchor="start">WHITE · controller J8; input ?? disable Z-axis brake when low</text>
+<text x="2340" y="2893" class="open-status" text-anchor="start">OPEN · no SmoothieBox route selected</text>
+</g>
+<g id="machine-p011-c002" data-machine-contact="2" data-contact-mark="2" data-contact-fact="source" data-route-state="open" data-x="2220" data-y="2926">
+<title>E-stop/power relay board · J10 controller / E-stop · source position 2 · GREY · vacuum pump enable input, active low · </title>
+<circle cx="2220" cy="2926" r="8" class="open-socket"/>
+<rect x="2236" y="2909" width="90" height="30" rx="8" class="number-pill"/>
+<text x="2281" y="2931" class="number-text" text-anchor="middle">2</text>
+<text x="2340" y="2931" class="machine-contact" text-anchor="start">GREY · vacuum pump enable input, active low</text>
+<text x="2340" y="2958" class="open-status" text-anchor="start">OPEN · no SmoothieBox route selected</text>
+</g>
+<g id="machine-p011-c003" data-machine-contact="3" data-contact-mark="3" data-contact-fact="source" data-route-state="open" data-x="2220" data-y="2991">
+<title>E-stop/power relay board · J10 controller / E-stop · source position 3 · Unlock-door input, active low; color not stated · </title>
+<circle cx="2220" cy="2991" r="8" class="open-socket"/>
+<rect x="2236" y="2974" width="90" height="30" rx="8" class="number-pill"/>
+<text x="2281" y="2996" class="number-text" text-anchor="middle">3</text>
+<text x="2340" y="2996" class="machine-contact" text-anchor="start">Unlock-door input, active low; color not stated</text>
+<text x="2340" y="3023" class="open-status" text-anchor="start">OPEN · no SmoothieBox route selected</text>
+</g>
+<g id="machine-p011-c004" data-machine-contact="5" data-contact-mark="5" data-contact-fact="source" data-route-state="open" data-x="2220" data-y="3056">
+<title>E-stop/power relay board · J10 controller / E-stop · source position 5 · E-stop chain · </title>
+<circle cx="2220" cy="3056" r="8" class="open-socket"/>
+<rect x="2236" y="3039" width="90" height="30" rx="8" class="number-pill"/>
+<text x="2281" y="3061" class="number-text" text-anchor="middle">5</text>
+<text x="2340" y="3061" class="machine-contact" text-anchor="start">E-stop chain</text>
+<text x="2340" y="3088" class="open-status" text-anchor="start">OPEN · no SmoothieBox route selected</text>
+</g>
+<g id="machine-p011-c005" data-machine-contact="6" data-contact-mark="6" data-contact-fact="source" data-route-state="open" data-x="2220" data-y="3121">
+<title>E-stop/power relay board · J10 controller / E-stop · source position 6 · E-stop chain · </title>
+<circle cx="2220" cy="3121" r="8" class="open-socket"/>
+<rect x="2236" y="3104" width="90" height="30" rx="8" class="number-pill"/>
+<text x="2281" y="3126" class="number-text" text-anchor="middle">6</text>
+<text x="2340" y="3126" class="machine-contact" text-anchor="start">E-stop chain</text>
+<text x="2340" y="3153" class="open-status" text-anchor="start">OPEN · no SmoothieBox route selected</text>
+</g>
+</g>
+<g class="peripheral" data-machine-peripheral="E-stop/power relay board · J11 controller J3 link" data-evidence-kind="reference" data-connector-id="denford-relay-j11" data-connector-form="source-described">
+<title>E-stop/power relay board · J11 controller J3 link · Cabinet Wiring page revision 54936, 2022-03-14T23:19:26Z; original Baldor controller, relay/power board, spindle drive and stepper-drive wiring tables · Reference board interconnect only.</title>
+<rect x="2220" y="3222" width="1340" height="457" rx="12" class="peripheral-card"/>
+<rect x="2220" y="3222" width="10" height="457" rx="5" class="peripheral-accent-reference"/>
+<text x="2244" y="3252" class="evidence-label">SOURCE REFERENCE ONLY · INSTALLED REVISION NOT ESTABLISHED</text>
+<rect x="3318" y="3236" width="218" height="30" rx="15" class="connector-badge"/>
+<text x="3427" y="3257" class="connector-badge-text" text-anchor="middle">MACHINE INTERFACE</text>
+<text x="2244" y="3289" class="peripheral-name" text-anchor="start">E-stop/power relay board · J11 controller J3 link</text>
+<text x="2244" y="3323" class="source-line" text-anchor="start">Cabinet Wiring page revision 54936, 2022-03-14T23:19:26Z; original Baldor controller, relay/power board,</text>
+<text x="2244" y="3346" class="source-line" text-anchor="start">spindle drive and stepper-drive wiring tables · Reference board interconnect only.</text>
+<text x="2244" y="3369" class="source-line" text-anchor="start">Cabinet Wiring lists four numbered positions; no mating-face drawing.</text>
+<text x="2244" y="3393" class="small">MACHINE INTERFACE · EXPANDED SOURCE-ORDER CONTACTS, NOT PHYSICAL PIN-ROW GEOMETRY</text>
+<g id="machine-p012-c001" data-machine-contact="1" data-contact-mark="1" data-contact-fact="source" data-route-state="open" data-x="2220" data-y="3415">
+<title>E-stop/power relay board · J11 controller J3 link · source position 1 · GREY · controller J3 · </title>
+<circle cx="2220" cy="3415" r="8" class="open-socket"/>
+<rect x="2236" y="3398" width="90" height="30" rx="8" class="number-pill"/>
+<text x="2281" y="3420" class="number-text" text-anchor="middle">1</text>
+<text x="2340" y="3420" class="machine-contact" text-anchor="start">GREY · controller J3</text>
+<text x="2340" y="3447" class="open-status" text-anchor="start">OPEN · no SmoothieBox route selected</text>
+</g>
+<g id="machine-p012-c002" data-machine-contact="2" data-contact-mark="2" data-contact-fact="source" data-route-state="open" data-x="2220" data-y="3480">
+<title>E-stop/power relay board · J11 controller J3 link · source position 2 · GREY · controller J3 · </title>
+<circle cx="2220" cy="3480" r="8" class="open-socket"/>
+<rect x="2236" y="3463" width="90" height="30" rx="8" class="number-pill"/>
+<text x="2281" y="3485" class="number-text" text-anchor="middle">2</text>
+<text x="2340" y="3485" class="machine-contact" text-anchor="start">GREY · controller J3</text>
+<text x="2340" y="3512" class="open-status" text-anchor="start">OPEN · no SmoothieBox route selected</text>
+</g>
+<g id="machine-p012-c003" data-machine-contact="3" data-contact-mark="3" data-contact-fact="source" data-route-state="open" data-x="2220" data-y="3545">
+<title>E-stop/power relay board · J11 controller J3 link · source position 3 · PURPLE · controller J3 · </title>
+<circle cx="2220" cy="3545" r="8" class="open-socket"/>
+<rect x="2236" y="3528" width="90" height="30" rx="8" class="number-pill"/>
+<text x="2281" y="3550" class="number-text" text-anchor="middle">3</text>
+<text x="2340" y="3550" class="machine-contact" text-anchor="start">PURPLE · controller J3</text>
+<text x="2340" y="3577" class="open-status" text-anchor="start">OPEN · no SmoothieBox route selected</text>
+</g>
+<g id="machine-p012-c004" data-machine-contact="4" data-contact-mark="4" data-contact-fact="source" data-route-state="open" data-x="2220" data-y="3610">
+<title>E-stop/power relay board · J11 controller J3 link · source position 4 · PURPLE · controller J3 · </title>
+<circle cx="2220" cy="3610" r="8" class="open-socket"/>
+<rect x="2236" y="3593" width="90" height="30" rx="8" class="number-pill"/>
+<text x="2281" y="3615" class="number-text" text-anchor="middle">4</text>
+<text x="2340" y="3615" class="machine-contact" text-anchor="start">PURPLE · controller J3</text>
+<text x="2340" y="3642" class="open-status" text-anchor="start">OPEN · no SmoothieBox route selected</text>
+</g>
+</g>
+<g class="peripheral" data-machine-peripheral="E-stop/power relay board · J12 Z brake actuator" data-evidence-kind="reference" data-connector-id="denford-relay-j12" data-connector-form="source-described">
+<title>E-stop/power relay board · J12 Z brake actuator · Cabinet Wiring page revision 54936, 2022-03-14T23:19:26Z; original Baldor controller, relay/power board, spindle drive and stepper-drive wiring tables · Reference actuator power boundary; not an I/O route.</title>
+<rect x="3596" y="3398" width="1340" height="392" rx="12" class="peripheral-card"/>
+<rect x="3596" y="3398" width="10" height="392" rx="5" class="peripheral-accent-reference"/>
+<text x="3620" y="3428" class="evidence-label">SOURCE REFERENCE ONLY · INSTALLED REVISION NOT ESTABLISHED</text>
+<rect x="4694" y="3412" width="218" height="30" rx="15" class="connector-badge"/>
+<text x="4803" y="3433" class="connector-badge-text" text-anchor="middle">MACHINE INTERFACE</text>
+<text x="3620" y="3465" class="peripheral-name" text-anchor="start">E-stop/power relay board · J12 Z brake actuator</text>
+<text x="3620" y="3499" class="source-line" text-anchor="start">Cabinet Wiring page revision 54936, 2022-03-14T23:19:26Z; original Baldor controller, relay/power board,</text>
+<text x="3620" y="3522" class="source-line" text-anchor="start">spindle drive and stepper-drive wiring tables · Reference actuator power boundary; not an I/O route.</text>
+<text x="3620" y="3545" class="source-line" text-anchor="start">Only numbered positions listed in Cabinet Wiring are shown.</text>
+<text x="3620" y="3569" class="small">MACHINE INTERFACE · EXPANDED SOURCE-ORDER CONTACTS, NOT PHYSICAL PIN-ROW GEOMETRY</text>
+<g id="machine-p013-c001" data-machine-contact="1" data-contact-mark="1" data-contact-fact="source" data-route-state="open" data-x="3596" data-y="3591">
+<title>E-stop/power relay board · J12 Z brake actuator · source position 1 · Brake actuator · brake releases when energized · </title>
+<circle cx="3596" cy="3591" r="8" class="open-socket"/>
+<rect x="3612" y="3574" width="90" height="30" rx="8" class="number-pill"/>
+<text x="3657" y="3596" class="number-text" text-anchor="middle">1</text>
+<text x="3716" y="3596" class="machine-contact" text-anchor="start">Brake actuator · brake releases when energized</text>
+<text x="3716" y="3623" class="open-status" text-anchor="start">OPEN · no SmoothieBox route selected</text>
+</g>
+<g id="machine-p013-c002" data-machine-contact="2" data-contact-mark="2" data-contact-fact="source" data-route-state="open" data-x="3596" data-y="3656">
+<title>E-stop/power relay board · J12 Z brake actuator · source position 2 · Brake actuator · 0V · </title>
+<circle cx="3596" cy="3656" r="8" class="open-socket"/>
+<rect x="3612" y="3639" width="90" height="30" rx="8" class="number-pill"/>
+<text x="3657" y="3661" class="number-text" text-anchor="middle">2</text>
+<text x="3716" y="3661" class="machine-contact" text-anchor="start">Brake actuator · 0V</text>
+<text x="3716" y="3688" class="open-status" text-anchor="start">OPEN · no SmoothieBox route selected</text>
+</g>
+<g id="machine-p013-c003" data-machine-contact="4" data-contact-mark="4" data-contact-fact="source" data-route-state="open" data-x="3596" data-y="3721">
+<title>E-stop/power relay board · J12 Z brake actuator · source position 4 · Brake actuator · +24 V · </title>
+<circle cx="3596" cy="3721" r="8" class="open-socket"/>
+<rect x="3612" y="3704" width="90" height="30" rx="8" class="number-pill"/>
+<text x="3657" y="3726" class="number-text" text-anchor="middle">4</text>
+<text x="3716" y="3726" class="machine-contact" text-anchor="start">Brake actuator · +24 V</text>
+<text x="3716" y="3753" class="open-status" text-anchor="start">OPEN · no SmoothieBox route selected</text>
+</g>
+</g>
+<g class="peripheral" data-machine-peripheral="E-stop/power relay board · J13 brake / VFD enable" data-evidence-kind="reference" data-connector-id="denford-relay-j13" data-connector-form="source-described">
+<title>E-stop/power relay board · J13 brake / VFD enable · Cabinet Wiring page revision 54936, 2022-03-14T23:19:26Z; original Baldor controller, relay/power board, spindle drive and stepper-drive wiring tables · Reference relay links and spindle enable; current safety circuit revision unknown.</title>
+<rect x="2220" y="3711" width="1340" height="545" rx="12" class="peripheral-card"/>
+<rect x="2220" y="3711" width="10" height="545" rx="5" class="peripheral-accent-reference"/>
+<text x="2244" y="3741" class="evidence-label">SOURCE REFERENCE ONLY · INSTALLED REVISION NOT ESTABLISHED</text>
+<rect x="3318" y="3725" width="218" height="30" rx="15" class="connector-badge"/>
+<text x="3427" y="3746" class="connector-badge-text" text-anchor="middle">MACHINE INTERFACE</text>
+<text x="2244" y="3778" class="peripheral-name" text-anchor="start">E-stop/power relay board · J13 brake / VFD enable</text>
+<text x="2244" y="3812" class="source-line" text-anchor="start">Cabinet Wiring page revision 54936, 2022-03-14T23:19:26Z; original Baldor controller, relay/power board,</text>
+<text x="2244" y="3835" class="source-line" text-anchor="start">spindle drive and stepper-drive wiring tables · Reference relay links and spindle enable; current safety</text>
+<text x="2244" y="3858" class="source-line" text-anchor="start">circuit revision unknown.</text>
+<text x="2244" y="3881" class="source-line" text-anchor="start">Cabinet Wiring explicitly lists J13 pins 1–5.</text>
+<text x="2244" y="3905" class="small">MACHINE INTERFACE · EXPANDED SOURCE-ORDER CONTACTS, NOT PHYSICAL PIN-ROW GEOMETRY</text>
+<g id="machine-p014-c001" data-machine-contact="1" data-contact-mark="1" data-contact-fact="source" data-route-state="open" data-x="2220" data-y="3927">
+<title>E-stop/power relay board · J13 brake / VFD enable · source position 1 · Linked to J13 pin 4 · </title>
+<circle cx="2220" cy="3927" r="8" class="open-socket"/>
+<rect x="2236" y="3910" width="90" height="30" rx="8" class="number-pill"/>
+<text x="2281" y="3932" class="number-text" text-anchor="middle">1</text>
+<text x="2340" y="3932" class="machine-contact" text-anchor="start">Linked to J13 pin 4</text>
+<text x="2340" y="3959" class="open-status" text-anchor="start">OPEN · no SmoothieBox route selected</text>
+</g>
+<g id="machine-p014-c002" data-machine-contact="2" data-contact-mark="2" data-contact-fact="source" data-route-state="open" data-x="2220" data-y="3992">
+<title>E-stop/power relay board · J13 brake / VFD enable · source position 2 · VFD pins 1/2 · spindle enable path · </title>
+<circle cx="2220" cy="3992" r="8" class="open-socket"/>
+<rect x="2236" y="3975" width="90" height="30" rx="8" class="number-pill"/>
+<text x="2281" y="3997" class="number-text" text-anchor="middle">2</text>
+<text x="2340" y="3997" class="machine-contact" text-anchor="start">VFD pins 1/2 · spindle enable path</text>
+<text x="2340" y="4024" class="open-status" text-anchor="start">OPEN · no SmoothieBox route selected</text>
+</g>
+<g id="machine-p014-c003" data-machine-contact="3" data-contact-mark="3" data-contact-fact="source" data-route-state="open" data-x="2220" data-y="4057">
+<title>E-stop/power relay board · J13 brake / VFD enable · source position 3 · VFD pins 1/2 · spindle enable path · </title>
+<circle cx="2220" cy="4057" r="8" class="open-socket"/>
+<rect x="2236" y="4040" width="90" height="30" rx="8" class="number-pill"/>
+<text x="2281" y="4062" class="number-text" text-anchor="middle">3</text>
+<text x="2340" y="4062" class="machine-contact" text-anchor="start">VFD pins 1/2 · spindle enable path</text>
+<text x="2340" y="4089" class="open-status" text-anchor="start">OPEN · no SmoothieBox route selected</text>
+</g>
+<g id="machine-p014-c004" data-machine-contact="4" data-contact-mark="4" data-contact-fact="source" data-route-state="open" data-x="2220" data-y="4122">
+<title>E-stop/power relay board · J13 brake / VFD enable · source position 4 · Linked to J13 pin 1 · </title>
+<circle cx="2220" cy="4122" r="8" class="open-socket"/>
+<rect x="2236" y="4105" width="90" height="30" rx="8" class="number-pill"/>
+<text x="2281" y="4127" class="number-text" text-anchor="middle">4</text>
+<text x="2340" y="4127" class="machine-contact" text-anchor="start">Linked to J13 pin 1</text>
+<text x="2340" y="4154" class="open-status" text-anchor="start">OPEN · no SmoothieBox route selected</text>
+</g>
+<g id="machine-p014-c005" data-machine-contact="5" data-contact-mark="5" data-contact-fact="source" data-route-state="open" data-x="2220" data-y="4187">
+<title>E-stop/power relay board · J13 brake / VFD enable · source position 5 · Controller J7 · grounded to energize/release Z-axis brake · </title>
+<circle cx="2220" cy="4187" r="8" class="open-socket"/>
+<rect x="2236" y="4170" width="90" height="30" rx="8" class="number-pill"/>
+<text x="2281" y="4192" class="number-text" text-anchor="middle">5</text>
+<text x="2340" y="4192" class="machine-contact" text-anchor="start">Controller J7 · grounded to energize/release Z-axis brake</text>
+<text x="2340" y="4219" class="open-status" text-anchor="start">OPEN · no SmoothieBox route selected</text>
+</g>
+</g>
+<g class="peripheral" data-machine-peripheral="Baldor VS1ST · control terminal strip" data-evidence-kind="reference" data-connector-id="denford-baldor-vs1st-control" data-connector-form="source-described">
+<title>Baldor VS1ST · control terminal strip · Cabinet Wiring page revision 54936, 2022-03-14T23:19:26Z; original Baldor controller, relay/power board, spindle drive and stepper-drive wiring tables · Reference low-voltage drive-control contacts. Terminal function and ratings are model-manual evidence; installed variant/continuity unverified. Do not infer mains or motor-conductor connections.</title>
+<rect x="3596" y="3822" width="1340" height="981" rx="12" class="peripheral-card"/>
+<rect x="3596" y="3822" width="10" height="981" rx="5" class="peripheral-accent-reference"/>
+<text x="3620" y="3852" class="evidence-label">SOURCE REFERENCE ONLY · INSTALLED REVISION NOT ESTABLISHED</text>
+<rect x="4694" y="3836" width="218" height="30" rx="15" class="connector-badge"/>
+<text x="4803" y="3857" class="connector-badge-text" text-anchor="middle">MACHINE INTERFACE</text>
+<text x="3620" y="3889" class="peripheral-name" text-anchor="start">Baldor VS1ST · control terminal strip</text>
+<text x="3620" y="3923" class="source-line" text-anchor="start">Cabinet Wiring page revision 54936, 2022-03-14T23:19:26Z; original Baldor controller, relay/power board,</text>
+<text x="3620" y="3946" class="source-line" text-anchor="start">spindle drive and stepper-drive wiring tables · Reference low-voltage drive-control contacts. Terminal</text>
+<text x="3620" y="3969" class="source-line" text-anchor="start">function and ratings are model-manual evidence; installed variant/continuity unverified. Do not infer</text>
+<text x="3620" y="3992" class="source-line" text-anchor="start">mains or motor-conductor connections.</text>
+<text x="3620" y="4015" class="source-line" text-anchor="start">All 11 control-strip terminals from Baldor VS1ST Micro-Series Manual MN767, Table 1-1, pp. 1-4; Cabinet</text>
+<text x="3620" y="4038" class="source-line" text-anchor="start">Wiring table cross-references selected terminals.</text>
+<text x="3620" y="4062" class="small">MACHINE INTERFACE · EXPANDED SOURCE-ORDER CONTACTS, NOT PHYSICAL PIN-ROW GEOMETRY</text>
+<g id="machine-p015-c001" data-machine-contact="1" data-contact-mark="1" data-contact-fact="source" data-route-state="open" data-x="3596" data-y="4084">
+<title>Baldor VS1ST · control terminal strip · source position 1 · +24 V output · </title>
+<circle cx="3596" cy="4084" r="8" class="open-socket"/>
+<rect x="3612" y="4067" width="90" height="30" rx="8" class="number-pill"/>
+<text x="3657" y="4089" class="number-text" text-anchor="middle">1</text>
+<text x="3716" y="4089" class="machine-contact" text-anchor="start">+24 V output</text>
+<text x="3716" y="4116" class="open-status" text-anchor="start">OPEN · no SmoothieBox route selected</text>
+</g>
+<g id="machine-p015-c002" data-machine-contact="2" data-contact-mark="2" data-contact-fact="source" data-route-state="open" data-x="3596" data-y="4149">
+<title>Baldor VS1ST · control terminal strip · source position 2 · Digital In1 · Cabinet Wiring says connect to pin 1 to enable drive · </title>
+<circle cx="3596" cy="4149" r="8" class="open-socket"/>
+<rect x="3612" y="4132" width="90" height="30" rx="8" class="number-pill"/>
+<text x="3657" y="4154" class="number-text" text-anchor="middle">2</text>
+<text x="3716" y="4154" class="machine-contact" text-anchor="start">Digital In1 · Cabinet Wiring says connect to pin 1 to enable drive</text>
+<text x="3716" y="4181" class="open-status" text-anchor="start">OPEN · no SmoothieBox route selected</text>
+</g>
+<g id="machine-p015-c003" data-machine-contact="3" data-contact-mark="3" data-contact-fact="source" data-route-state="open" data-x="3596" data-y="4214">
+<title>Baldor VS1ST · control terminal strip · source position 3 · Digital In2 · </title>
+<circle cx="3596" cy="4214" r="8" class="open-socket"/>
+<rect x="3612" y="4197" width="90" height="30" rx="8" class="number-pill"/>
+<text x="3657" y="4219" class="number-text" text-anchor="middle">3</text>
+<text x="3716" y="4219" class="machine-contact" text-anchor="start">Digital In2</text>
+<text x="3716" y="4246" class="open-status" text-anchor="start">OPEN · no SmoothieBox route selected</text>
+</g>
+<g id="machine-p015-c004" data-machine-contact="4" data-contact-mark="4" data-contact-fact="source" data-route-state="open" data-x="3596" data-y="4279">
+<title>Baldor VS1ST · control terminal strip · source position 4 · Digital In3 / Analog In2 · </title>
+<circle cx="3596" cy="4279" r="8" class="open-socket"/>
+<rect x="3612" y="4262" width="90" height="30" rx="8" class="number-pill"/>
+<text x="3657" y="4284" class="number-text" text-anchor="middle">4</text>
+<text x="3716" y="4284" class="machine-contact" text-anchor="start">Digital In3 / Analog In2</text>
+<text x="3716" y="4311" class="open-status" text-anchor="start">OPEN · no SmoothieBox route selected</text>
+</g>
+<g id="machine-p015-c005" data-machine-contact="5" data-contact-mark="5" data-contact-fact="source" data-route-state="open" data-x="3596" data-y="4344">
+<title>Baldor VS1ST · control terminal strip · source position 5 · +10VDC reference for potentiometer · 1 kohm minimum · </title>
+<circle cx="3596" cy="4344" r="8" class="open-socket"/>
+<rect x="3612" y="4327" width="90" height="30" rx="8" class="number-pill"/>
+<text x="3657" y="4349" class="number-text" text-anchor="middle">5</text>
+<text x="3716" y="4349" class="machine-contact" text-anchor="start">+10VDC reference for potentiometer · 1 kohm minimum</text>
+<text x="3716" y="4376" class="open-status" text-anchor="start">OPEN · no SmoothieBox route selected</text>
+</g>
+<g id="machine-p015-c006" data-machine-contact="6" data-contact-mark="6" data-contact-fact="source" data-route-state="open" data-x="3596" data-y="4409">
+<title>Baldor VS1ST · control terminal strip · source position 6 · An IN 1 · speed-control voltage from Baldor board J5 pin 12 · </title>
+<circle cx="3596" cy="4409" r="8" class="open-socket"/>
+<rect x="3612" y="4392" width="90" height="30" rx="8" class="number-pill"/>
+<text x="3657" y="4414" class="number-text" text-anchor="middle">6</text>
+<text x="3716" y="4414" class="machine-contact" text-anchor="start">An IN 1 · speed-control voltage from Baldor board J5 pin 12</text>
+<text x="3716" y="4441" class="open-status" text-anchor="start">OPEN · no SmoothieBox route selected</text>
+</g>
+<g id="machine-p015-c007" data-machine-contact="7" data-contact-mark="7" data-contact-fact="source" data-route-state="open" data-x="3596" data-y="4474">
+<title>Baldor VS1ST · control terminal strip · source position 7 · 0V / analog ground from Baldor board J5 pin 11 · </title>
+<circle cx="3596" cy="4474" r="8" class="open-socket"/>
+<rect x="3612" y="4457" width="90" height="30" rx="8" class="number-pill"/>
+<text x="3657" y="4479" class="number-text" text-anchor="middle">7</text>
+<text x="3716" y="4479" class="machine-contact" text-anchor="start">0V / analog ground from Baldor board J5 pin 11</text>
+<text x="3716" y="4506" class="open-status" text-anchor="start">OPEN · no SmoothieBox route selected</text>
+</g>
+<g id="machine-p015-c008" data-machine-contact="8" data-contact-mark="8" data-contact-fact="source" data-route-state="open" data-x="3596" data-y="4539">
+<title>Baldor VS1ST · control terminal strip · source position 8 · Analog output 0–10VDC @ 10mA / Digital output 0–24VDC · </title>
+<circle cx="3596" cy="4539" r="8" class="open-socket"/>
+<rect x="3612" y="4522" width="90" height="30" rx="8" class="number-pill"/>
+<text x="3657" y="4544" class="number-text" text-anchor="middle">8</text>
+<text x="3716" y="4544" class="machine-contact" text-anchor="start">Analog output 0–10VDC @ 10mA / Digital output 0–24VDC</text>
+<text x="3716" y="4571" class="open-status" text-anchor="start">OPEN · no SmoothieBox route selected</text>
+</g>
+<g id="machine-p015-c009" data-machine-contact="9" data-contact-mark="9" data-contact-fact="source" data-route-state="open" data-x="3596" data-y="4604">
+<title>Baldor VS1ST · control terminal strip · source position 9 · Common · connected to terminal 7 · </title>
+<circle cx="3596" cy="4604" r="8" class="open-socket"/>
+<rect x="3612" y="4587" width="90" height="30" rx="8" class="number-pill"/>
+<text x="3657" y="4609" class="number-text" text-anchor="middle">9</text>
+<text x="3716" y="4609" class="machine-contact" text-anchor="start">Common · connected to terminal 7</text>
+<text x="3716" y="4636" class="open-status" text-anchor="start">OPEN · no SmoothieBox route selected</text>
+</g>
+<g id="machine-p015-c010" data-machine-contact="10" data-contact-mark="10" data-contact-fact="source" data-route-state="open" data-x="3596" data-y="4669">
+<title>Baldor VS1ST · control terminal strip · source position 10 · Relay Common · </title>
+<circle cx="3596" cy="4669" r="8" class="open-socket"/>
+<rect x="3612" y="4652" width="90" height="30" rx="8" class="number-pill"/>
+<text x="3657" y="4674" class="number-text" text-anchor="middle">10</text>
+<text x="3716" y="4674" class="machine-contact" text-anchor="start">Relay Common</text>
+<text x="3716" y="4701" class="open-status" text-anchor="start">OPEN · no SmoothieBox route selected</text>
+</g>
+<g id="machine-p015-c011" data-machine-contact="11" data-contact-mark="11" data-contact-fact="source" data-route-state="open" data-x="3596" data-y="4734">
+<title>Baldor VS1ST · control terminal strip · source position 11 · Relay N.O. Contact · rated 250VAC @ 6A; 30VDC @ 5A · </title>
+<circle cx="3596" cy="4734" r="8" class="open-socket"/>
+<rect x="3612" y="4717" width="90" height="30" rx="8" class="number-pill"/>
+<text x="3657" y="4739" class="number-text" text-anchor="middle">11</text>
+<text x="3716" y="4739" class="machine-contact" text-anchor="start">Relay N.O. Contact · rated 250VAC @ 6A; 30VDC @ 5A</text>
+<text x="3716" y="4766" class="open-status" text-anchor="start">OPEN · no SmoothieBox route selected</text>
+</g>
+</g>
+<g class="peripheral" data-machine-peripheral="MSD556-V2.0 · P1 control contacts, axis unassigned" data-evidence-kind="reference" data-connector-id="denford-msd556-p1" data-connector-form="source-described">
+<title>MSD556-V2.0 · P1 control contacts, axis unassigned · MSD556-V2.0 stepper drive datasheet Rev. 3.0 hosted by London Hackspace; downloaded PDF SHA-256 3baa3a65a776bd9479f40444201393b71f64d3c47f497e153c21431e8f5f674b · Reference stepper-drive input contact group. Do not assume the same physical drive serves a named axis.</title>
+<rect x="2220" y="4288" width="1340" height="503" rx="12" class="peripheral-card"/>
+<rect x="2220" y="4288" width="10" height="503" rx="5" class="peripheral-accent-reference"/>
+<text x="2244" y="4318" class="evidence-label">SOURCE REFERENCE ONLY · INSTALLED REVISION NOT ESTABLISHED</text>
+<rect x="3318" y="4302" width="218" height="30" rx="15" class="connector-badge"/>
+<text x="3427" y="4323" class="connector-badge-text" text-anchor="middle">MACHINE INTERFACE</text>
+<text x="2244" y="4355" class="peripheral-name" text-anchor="start">MSD556-V2.0 · P1 control contacts, axis unassigned</text>
+<text x="2244" y="4389" class="source-line" text-anchor="start">MSD556-V2.0 stepper drive datasheet Rev. 3.0 hosted by London Hackspace; downloaded PDF SHA-256</text>
+<text x="2244" y="4412" class="source-line" text-anchor="start">3baa3a65a776bd9479f40444201393b71f64d3c47f497e153c21431e8f5f674b · Reference stepper-drive input contact</text>
+<text x="2244" y="4435" class="source-line" text-anchor="start">group. Do not assume the same physical drive serves a named axis.</text>
+<text x="2244" y="4458" class="source-line" text-anchor="start">Pins 1–4 are numbered in the Cabinet Wiring drive table; signal names corroborated by the V2.0 datasheet.</text>
+<text x="2244" y="4481" class="source-line" text-anchor="start">No drive-to-axis assignment or view is supplied.</text>
+<text x="2244" y="4505" class="small">MACHINE INTERFACE · EXPANDED SOURCE-ORDER CONTACTS, NOT PHYSICAL PIN-ROW GEOMETRY</text>
+<g id="machine-p016-c001" data-machine-contact="1" data-contact-mark="1" data-contact-fact="source" data-route-state="open" data-x="2220" data-y="4527">
+<title>MSD556-V2.0 · P1 control contacts, axis unassigned · source position 1 · +5 V opto common in · </title>
+<circle cx="2220" cy="4527" r="8" class="open-socket"/>
+<rect x="2236" y="4510" width="90" height="30" rx="8" class="number-pill"/>
+<text x="2281" y="4532" class="number-text" text-anchor="middle">1</text>
+<text x="2340" y="4532" class="machine-contact" text-anchor="start">+5 V opto common in</text>
+<text x="2340" y="4559" class="open-status" text-anchor="start">OPEN · no SmoothieBox route selected</text>
+</g>
+<g id="machine-p016-c002" data-machine-contact="2" data-contact-mark="2" data-contact-fact="source" data-route-state="open" data-x="2220" data-y="4592">
+<title>MSD556-V2.0 · P1 control contacts, axis unassigned · source position 2 · Step opto input · low to assert · </title>
+<circle cx="2220" cy="4592" r="8" class="open-socket"/>
+<rect x="2236" y="4575" width="90" height="30" rx="8" class="number-pill"/>
+<text x="2281" y="4597" class="number-text" text-anchor="middle">2</text>
+<text x="2340" y="4597" class="machine-contact" text-anchor="start">Step opto input · low to assert</text>
+<text x="2340" y="4624" class="open-status" text-anchor="start">OPEN · no SmoothieBox route selected</text>
+</g>
+<g id="machine-p016-c003" data-machine-contact="3" data-contact-mark="3" data-contact-fact="source" data-route-state="open" data-x="2220" data-y="4657">
+<title>MSD556-V2.0 · P1 control contacts, axis unassigned · source position 3 · +5 V opto common in · </title>
+<circle cx="2220" cy="4657" r="8" class="open-socket"/>
+<rect x="2236" y="4640" width="90" height="30" rx="8" class="number-pill"/>
+<text x="2281" y="4662" class="number-text" text-anchor="middle">3</text>
+<text x="2340" y="4662" class="machine-contact" text-anchor="start">+5 V opto common in</text>
+<text x="2340" y="4689" class="open-status" text-anchor="start">OPEN · no SmoothieBox route selected</text>
+</g>
+<g id="machine-p016-c004" data-machine-contact="4" data-contact-mark="4" data-contact-fact="source" data-route-state="open" data-x="2220" data-y="4722">
+<title>MSD556-V2.0 · P1 control contacts, axis unassigned · source position 4 · Direction opto input · low to assert · </title>
+<circle cx="2220" cy="4722" r="8" class="open-socket"/>
+<rect x="2236" y="4705" width="90" height="30" rx="8" class="number-pill"/>
+<text x="2281" y="4727" class="number-text" text-anchor="middle">4</text>
+<text x="2340" y="4727" class="machine-contact" text-anchor="start">Direction opto input · low to assert</text>
+<text x="2340" y="4754" class="open-status" text-anchor="start">OPEN · no SmoothieBox route selected</text>
+</g>
+</g>
+<g class="peripheral" data-machine-peripheral="MSD556-V2.0 · P2 supply / motor contacts, axis unassigned" data-evidence-kind="reference" data-connector-id="denford-msd556-p2" data-connector-form="source-described">
+<title>MSD556-V2.0 · P2 supply / motor contacts, axis unassigned · MSD556-V2.0 stepper drive datasheet Rev. 3.0 hosted by London Hackspace; downloaded PDF SHA-256 3baa3a65a776bd9479f40444201393b71f64d3c47f497e153c21431e8f5f674b · Reference stepper-drive power and motor boundary. P2 pin 1 is the listed +37 V feed; no route to SmoothieBox.</title>
+<rect x="2220" y="4823" width="1340" height="633" rx="12" class="peripheral-card"/>
+<rect x="2220" y="4823" width="10" height="633" rx="5" class="peripheral-accent-reference"/>
+<text x="2244" y="4853" class="evidence-label">SOURCE REFERENCE ONLY · INSTALLED REVISION NOT ESTABLISHED</text>
+<rect x="3318" y="4837" width="218" height="30" rx="15" class="connector-badge"/>
+<text x="3427" y="4858" class="connector-badge-text" text-anchor="middle">MACHINE INTERFACE</text>
+<text x="2244" y="4890" class="peripheral-name" text-anchor="start">MSD556-V2.0 · P2 supply / motor contacts, axis unassigned</text>
+<text x="2244" y="4924" class="source-line" text-anchor="start">MSD556-V2.0 stepper drive datasheet Rev. 3.0 hosted by London Hackspace; downloaded PDF SHA-256</text>
+<text x="2244" y="4947" class="source-line" text-anchor="start">3baa3a65a776bd9479f40444201393b71f64d3c47f497e153c21431e8f5f674b · Reference stepper-drive power and</text>
+<text x="2244" y="4970" class="source-line" text-anchor="start">motor boundary. P2 pin 1 is the listed +37 V feed; no route to SmoothieBox.</text>
+<text x="2244" y="4993" class="source-line" text-anchor="start">Pins 1–6 and wire colors are listed in the Cabinet Wiring drive table; motor phase assignment is not</text>
+<text x="2244" y="5016" class="source-line" text-anchor="start">stated.</text>
+<text x="2244" y="5040" class="small">MACHINE INTERFACE · EXPANDED SOURCE-ORDER CONTACTS, NOT PHYSICAL PIN-ROW GEOMETRY</text>
+<g id="machine-p017-c001" data-machine-contact="1" data-contact-mark="1" data-contact-fact="source" data-route-state="open" data-x="2220" data-y="5062">
+<title>MSD556-V2.0 · P2 supply / motor contacts, axis unassigned · source position 1 · RED · +37 V from power J6 · </title>
+<circle cx="2220" cy="5062" r="8" class="open-socket"/>
+<rect x="2236" y="5045" width="90" height="30" rx="8" class="number-pill"/>
+<text x="2281" y="5067" class="number-text" text-anchor="middle">1</text>
+<text x="2340" y="5067" class="machine-contact" text-anchor="start">RED · +37 V from power J6</text>
+<text x="2340" y="5094" class="open-status" text-anchor="start">OPEN · no SmoothieBox route selected</text>
+</g>
+<g id="machine-p017-c002" data-machine-contact="2" data-contact-mark="2" data-contact-fact="source" data-route-state="open" data-x="2220" data-y="5127">
+<title>MSD556-V2.0 · P2 supply / motor contacts, axis unassigned · source position 2 · BLACK · 0V from power J6 · </title>
+<circle cx="2220" cy="5127" r="8" class="open-socket"/>
+<rect x="2236" y="5110" width="90" height="30" rx="8" class="number-pill"/>
+<text x="2281" y="5132" class="number-text" text-anchor="middle">2</text>
+<text x="2340" y="5132" class="machine-contact" text-anchor="start">BLACK · 0V from power J6</text>
+<text x="2340" y="5159" class="open-status" text-anchor="start">OPEN · no SmoothieBox route selected</text>
+</g>
+<g id="machine-p017-c003" data-machine-contact="3" data-contact-mark="3" data-contact-fact="source" data-route-state="open" data-x="2220" data-y="5192">
+<title>MSD556-V2.0 · P2 supply / motor contacts, axis unassigned · source position 3 · BLACK · motor lead; phase unknown · </title>
+<circle cx="2220" cy="5192" r="8" class="open-socket"/>
+<rect x="2236" y="5175" width="90" height="30" rx="8" class="number-pill"/>
+<text x="2281" y="5197" class="number-text" text-anchor="middle">3</text>
+<text x="2340" y="5197" class="machine-contact" text-anchor="start">BLACK · motor lead; phase unknown</text>
+<text x="2340" y="5224" class="open-status" text-anchor="start">OPEN · no SmoothieBox route selected</text>
+</g>
+<g id="machine-p017-c004" data-machine-contact="4" data-contact-mark="4" data-contact-fact="source" data-route-state="open" data-x="2220" data-y="5257">
+<title>MSD556-V2.0 · P2 supply / motor contacts, axis unassigned · source position 4 · ORANGE · motor lead; phase unknown · </title>
+<circle cx="2220" cy="5257" r="8" class="open-socket"/>
+<rect x="2236" y="5240" width="90" height="30" rx="8" class="number-pill"/>
+<text x="2281" y="5262" class="number-text" text-anchor="middle">4</text>
+<text x="2340" y="5262" class="machine-contact" text-anchor="start">ORANGE · motor lead; phase unknown</text>
+<text x="2340" y="5289" class="open-status" text-anchor="start">OPEN · no SmoothieBox route selected</text>
+</g>
+<g id="machine-p017-c005" data-machine-contact="5" data-contact-mark="5" data-contact-fact="source" data-route-state="open" data-x="2220" data-y="5322">
+<title>MSD556-V2.0 · P2 supply / motor contacts, axis unassigned · source position 5 · RED · motor lead; phase unknown · </title>
+<circle cx="2220" cy="5322" r="8" class="open-socket"/>
+<rect x="2236" y="5305" width="90" height="30" rx="8" class="number-pill"/>
+<text x="2281" y="5327" class="number-text" text-anchor="middle">5</text>
+<text x="2340" y="5327" class="machine-contact" text-anchor="start">RED · motor lead; phase unknown</text>
+<text x="2340" y="5354" class="open-status" text-anchor="start">OPEN · no SmoothieBox route selected</text>
+</g>
+<g id="machine-p017-c006" data-machine-contact="6" data-contact-mark="6" data-contact-fact="source" data-route-state="open" data-x="2220" data-y="5387">
+<title>MSD556-V2.0 · P2 supply / motor contacts, axis unassigned · source position 6 · YELLOW · motor lead; phase unknown · </title>
+<circle cx="2220" cy="5387" r="8" class="open-socket"/>
+<rect x="2236" y="5370" width="90" height="30" rx="8" class="number-pill"/>
+<text x="2281" y="5392" class="number-text" text-anchor="middle">6</text>
+<text x="2340" y="5392" class="machine-contact" text-anchor="start">YELLOW · motor lead; phase unknown</text>
+<text x="2340" y="5419" class="open-status" text-anchor="start">OPEN · no SmoothieBox route selected</text>
+</g>
+</g>
+<text x="60" y="5500" class="legend-title">CONNECTION / EVIDENCE KEY</text>
+<path d="M65 5533H165" class="guess-wire" data-decoration="legend-sample"/>
+<text x="190" y="5540" class="legend" text-anchor="start">DOTTED VIOLET = FUNCTION GUESS ONLY. Paths start at the actual drawn exterior screw and end at the named machine contact. No installed continuity or direct cable is established.</text>
+<text x="60" y="5587" class="legend" text-anchor="start">OPEN / hollow contact = no SmoothieBox route selected in this study. This does not mean an electrically open circuit, unused pin or NC in the source. Source-empty, unlisted and untranscribed roles remain distinct in their labels.</text>
+<text x="60" y="5634" class="legend" text-anchor="start">REFERENCE ONLY = a named source revision, not the installed machine. Reference contacts stay OPEN unless an individually cited dotted function guess is shown. Named hardware with no contact map has an OPEN boundary, not invented '?' pins.</text>
+<text x="60" y="5681" class="legend" text-anchor="start">Paths may cross without joining; pale crossing clearance means NO JUNCTION. Multiple guesses from one screw are alternatives unless each shares an explicit FAN-OUT tag. A tagged fan-out still needs separate buffers and load validation. No return bus is inferred.</text>
+<text x="60" y="5728" class="legend" text-anchor="start">Exterior label colors: black = circuit GND; red = 3.3 V; orange = 5 V; yellow/gold = load/control feed; blue/violet/green = STEP/DIR/ENABLE. Dotted violet is an evidence state, not a reported cable color. Protective earth is not circuit GND.</text>
+<text x="60" y="5775" class="legend" text-anchor="start">DB25, DB44 and 15-contact D-sub housings are outside SmoothieBox. Contact strips preserve source order, not physical pin-row geometry. USB device, USB host, Ethernet and microSD are separate service ports.</text>
+<text x="60" y="5822" class="legend" text-anchor="start">RESEARCH DIAGRAM — NOT QUALIFIED FOR PHYSICAL WIRING. Confirm the actual carrier, machine revision, mating view, electrical interface, protection, returns and safety design before construction.</text>
+</svg>

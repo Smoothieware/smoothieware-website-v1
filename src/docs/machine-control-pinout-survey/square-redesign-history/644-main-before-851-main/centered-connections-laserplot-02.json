@@ -1,0 +1,1145 @@
+{
+  "profile_id": "laserplot-02",
+  "controller": "Smoothieboard V2 Prime",
+  "classification": "Original motion-driver electronics are on the board being replaced. Use Prime integrated phase outputs directly to measured winding pairs; do not connect STEP/DIR signal outputs to motor windings. Confirm installed board, motor current and power rating from the cited machine source.",
+  "connections": [
+    {
+      "id": "C01-001",
+      "panel_index": 0,
+      "edge_index": 0,
+      "from": "X min limit · traced switch · Traced X switch signal",
+      "to": "Prime P12 · X min endstop · J24.3 · input",
+      "state": "GUESS",
+      "view": "MAIN",
+      "rationale": "X min endstop signal: X min limit · traced switch · Traced X switch signal → Prime P12 · X min endstop · J24.3 · input. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Trace cable with power isolated; confirm dry contact and NO/NC state. Leave selector pin 1 unused for passive switches; powered sensors require a matched interface.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · inputs.kicad_sch",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/inputs.kicad_sch",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "Awesome Tech Mini Gerbil on K40 Type 2",
+          "url": "https://awesome.tech/installing-mini-gerbil-on-the-k40-type2/",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C01-002",
+      "panel_index": 0,
+      "edge_index": 1,
+      "from": "Prime P12 · X min endstop · J24.2 · GND",
+      "to": "X min limit · traced switch · Traced X switch return",
+      "state": "GUESS",
+      "view": "MAIN",
+      "rationale": "X min endstop GND: Prime P12 · X min endstop · J24.2 · GND → X min limit · traced switch · Traced X switch return. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Trace cable with power isolated; confirm dry contact and NO/NC state. Leave selector pin 1 unused for passive switches; powered sensors require a matched interface.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · inputs.kicad_sch",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/inputs.kicad_sch",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "Awesome Tech Mini Gerbil on K40 Type 2",
+          "url": "https://awesome.tech/installing-mini-gerbil-on-the-k40-type2/",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C02-001",
+      "panel_index": 1,
+      "edge_index": 0,
+      "from": "Y min limit · traced switch · Traced Y switch signal",
+      "to": "Prime P12 · Y min endstop · J26.3 · input",
+      "state": "GUESS",
+      "view": "MAIN",
+      "rationale": "Y min endstop signal: Y min limit · traced switch · Traced Y switch signal → Prime P12 · Y min endstop · J26.3 · input. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Trace cable with power isolated; confirm dry contact and NO/NC state. Leave selector pin 1 unused for passive switches; powered sensors require a matched interface.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · inputs.kicad_sch",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/inputs.kicad_sch",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "Awesome Tech Mini Gerbil on K40 Type 2",
+          "url": "https://awesome.tech/installing-mini-gerbil-on-the-k40-type2/",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C02-002",
+      "panel_index": 1,
+      "edge_index": 1,
+      "from": "Prime P12 · Y min endstop · J26.2 · GND",
+      "to": "Y min limit · traced switch · Traced Y switch return",
+      "state": "GUESS",
+      "view": "MAIN",
+      "rationale": "Y min endstop GND: Prime P12 · Y min endstop · J26.2 · GND → Y min limit · traced switch · Traced Y switch return. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Trace cable with power isolated; confirm dry contact and NO/NC state. Leave selector pin 1 unused for passive switches; powered sensors require a matched interface.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · inputs.kicad_sch",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/inputs.kicad_sch",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "Awesome Tech Mini Gerbil on K40 Type 2",
+          "url": "https://awesome.tech/installing-mini-gerbil-on-the-k40-type2/",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C03-001",
+      "panel_index": 2,
+      "edge_index": 0,
+      "from": "V2 Prime P12 · proposed signals · J35.6 · PWM candidate",
+      "to": "Retained machine peripheral · IN · intensity input",
+      "state": "OPEN",
+      "view": "MAIN",
+      "rationale": "J35.6 · PWM candidate: V2 Prime P12 · proposed signals · J35.6 · PWM candidate → Retained machine peripheral · IN · intensity input. The fitted interface or electrical contract is unresolved. The broken path is a boundary to identify, not a wire to install.",
+      "qualification": "G/IN/5V are source labels. Confirm the fitted PSU model, input threshold and compatible level interface; the Mini Gerbil installation is not evidence of direct Core 3.3 V compatibility. Laser firing enable is a separate circuit, not supplied by intensity PWM.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · smoothiev2-prime.kicad_pcb",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/smoothiev2-prime.kicad_pcb",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "Awesome Tech Mini Gerbil on K40 Type 2",
+          "url": "https://awesome.tech/installing-mini-gerbil-on-the-k40-type2/",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C03-002",
+      "panel_index": 2,
+      "edge_index": 1,
+      "from": "V2 Prime P12 · proposed signals · J35.10 · GND",
+      "to": "Retained machine peripheral · G · control reference",
+      "state": "OPEN",
+      "view": "MAIN",
+      "rationale": "J35.10 · GND: V2 Prime P12 · proposed signals · J35.10 · GND → Retained machine peripheral · G · control reference. The fitted interface or electrical contract is unresolved. The broken path is a boundary to identify, not a wire to install.",
+      "qualification": "G/IN/5V are source labels. Confirm the fitted PSU model, input threshold and compatible level interface; the Mini Gerbil installation is not evidence of direct Core 3.3 V compatibility. Laser firing enable is a separate circuit, not supplied by intensity PWM.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · smoothiev2-prime.kicad_pcb",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/smoothiev2-prime.kicad_pcb",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "Awesome Tech Mini Gerbil on K40 Type 2",
+          "url": "https://awesome.tech/installing-mini-gerbil-on-the-k40-type2/",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C04-001",
+      "panel_index": 3,
+      "edge_index": 0,
+      "from": "V2 Prime P12 · proposed signals · J35.7 · run request candidate",
+      "to": "Retained machine peripheral · L / LO · only if matching PSU labels",
+      "state": "OPEN",
+      "view": "MAIN",
+      "rationale": "J35.7 · run request candidate: V2 Prime P12 · proposed signals · J35.7 · run request candidate → Retained machine peripheral · L / LO · only if matching PSU labels. The fitted interface or electrical contract is unresolved. The broken path is a boundary to identify, not a wire to install.",
+      "qualification": "Identify active level, firing terminal and water/door/key/E-stop contacts from the fitted PSU manual. Retain the independent hardware inhibition chain; do not bridge an interlock. PSU 5V is an output/reference, not a Core PWM pin.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · smoothiev2-prime.kicad_pcb",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/smoothiev2-prime.kicad_pcb",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "Awesome Tech Mini Gerbil on K40 Type 2",
+          "url": "https://awesome.tech/installing-mini-gerbil-on-the-k40-type2/",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C05-001",
+      "panel_index": 4,
+      "edge_index": 0,
+      "from": "Prime P12 · X · J5.1 · B2",
+      "to": "X · measured winding leads · Winding B · lead 2",
+      "state": "GUESS",
+      "view": "MAIN",
+      "rationale": "X motor phase B2: Prime P12 · X · J5.1 · B2 → X · measured winding leads · Winding B · lead 2. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Alternative to the external-driver circuit, never simultaneously connected. Verify selected Prime revision, current settings, supply rating and winding pairs.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · smoothiev2-prime.kicad_pcb",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/smoothiev2-prime.kicad_pcb",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "Awesome Tech Mini Gerbil on K40 Type 2",
+          "url": "https://awesome.tech/installing-mini-gerbil-on-the-k40-type2/",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C05-002",
+      "panel_index": 4,
+      "edge_index": 1,
+      "from": "Prime P12 · X · J5.2 · B1",
+      "to": "X · measured winding leads · Winding B · lead 1",
+      "state": "GUESS",
+      "view": "MAIN",
+      "rationale": "X motor phase B1: Prime P12 · X · J5.2 · B1 → X · measured winding leads · Winding B · lead 1. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Alternative to the external-driver circuit, never simultaneously connected. Verify selected Prime revision, current settings, supply rating and winding pairs.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · smoothiev2-prime.kicad_pcb",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/smoothiev2-prime.kicad_pcb",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "Awesome Tech Mini Gerbil on K40 Type 2",
+          "url": "https://awesome.tech/installing-mini-gerbil-on-the-k40-type2/",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C05-003",
+      "panel_index": 4,
+      "edge_index": 2,
+      "from": "Prime P12 · X · J5.3 · A2",
+      "to": "X · measured winding leads · Winding A · lead 2",
+      "state": "GUESS",
+      "view": "MAIN",
+      "rationale": "X motor phase A2: Prime P12 · X · J5.3 · A2 → X · measured winding leads · Winding A · lead 2. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Alternative to the external-driver circuit, never simultaneously connected. Verify selected Prime revision, current settings, supply rating and winding pairs.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · smoothiev2-prime.kicad_pcb",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/smoothiev2-prime.kicad_pcb",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "Awesome Tech Mini Gerbil on K40 Type 2",
+          "url": "https://awesome.tech/installing-mini-gerbil-on-the-k40-type2/",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C05-004",
+      "panel_index": 4,
+      "edge_index": 3,
+      "from": "Prime P12 · X · J5.4 · A1",
+      "to": "X · measured winding leads · Winding A · lead 1",
+      "state": "GUESS",
+      "view": "MAIN",
+      "rationale": "X motor phase A1: Prime P12 · X · J5.4 · A1 → X · measured winding leads · Winding A · lead 1. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Alternative to the external-driver circuit, never simultaneously connected. Verify selected Prime revision, current settings, supply rating and winding pairs.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · smoothiev2-prime.kicad_pcb",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/smoothiev2-prime.kicad_pcb",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "Awesome Tech Mini Gerbil on K40 Type 2",
+          "url": "https://awesome.tech/installing-mini-gerbil-on-the-k40-type2/",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C06-001",
+      "panel_index": 5,
+      "edge_index": 0,
+      "from": "Prime P12 · Y · J6.1 · B2",
+      "to": "Y · measured winding leads · Winding B · lead 2",
+      "state": "GUESS",
+      "view": "MAIN",
+      "rationale": "Y motor phase B2: Prime P12 · Y · J6.1 · B2 → Y · measured winding leads · Winding B · lead 2. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Alternative to the external-driver circuit, never simultaneously connected. Verify selected Prime revision, current settings, supply rating and winding pairs.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · smoothiev2-prime.kicad_pcb",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/smoothiev2-prime.kicad_pcb",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "Awesome Tech Mini Gerbil on K40 Type 2",
+          "url": "https://awesome.tech/installing-mini-gerbil-on-the-k40-type2/",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C06-002",
+      "panel_index": 5,
+      "edge_index": 1,
+      "from": "Prime P12 · Y · J6.2 · B1",
+      "to": "Y · measured winding leads · Winding B · lead 1",
+      "state": "GUESS",
+      "view": "MAIN",
+      "rationale": "Y motor phase B1: Prime P12 · Y · J6.2 · B1 → Y · measured winding leads · Winding B · lead 1. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Alternative to the external-driver circuit, never simultaneously connected. Verify selected Prime revision, current settings, supply rating and winding pairs.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · smoothiev2-prime.kicad_pcb",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/smoothiev2-prime.kicad_pcb",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "Awesome Tech Mini Gerbil on K40 Type 2",
+          "url": "https://awesome.tech/installing-mini-gerbil-on-the-k40-type2/",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C06-003",
+      "panel_index": 5,
+      "edge_index": 2,
+      "from": "Prime P12 · Y · J6.3 · A2",
+      "to": "Y · measured winding leads · Winding A · lead 2",
+      "state": "GUESS",
+      "view": "MAIN",
+      "rationale": "Y motor phase A2: Prime P12 · Y · J6.3 · A2 → Y · measured winding leads · Winding A · lead 2. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Alternative to the external-driver circuit, never simultaneously connected. Verify selected Prime revision, current settings, supply rating and winding pairs.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · smoothiev2-prime.kicad_pcb",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/smoothiev2-prime.kicad_pcb",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "Awesome Tech Mini Gerbil on K40 Type 2",
+          "url": "https://awesome.tech/installing-mini-gerbil-on-the-k40-type2/",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C06-004",
+      "panel_index": 5,
+      "edge_index": 3,
+      "from": "Prime P12 · Y · J6.4 · A1",
+      "to": "Y · measured winding leads · Winding A · lead 1",
+      "state": "GUESS",
+      "view": "MAIN",
+      "rationale": "Y motor phase A1: Prime P12 · Y · J6.4 · A1 → Y · measured winding leads · Winding A · lead 1. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Alternative to the external-driver circuit, never simultaneously connected. Verify selected Prime revision, current settings, supply rating and winding pairs.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · smoothiev2-prime.kicad_pcb",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/smoothiev2-prime.kicad_pcb",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "Awesome Tech Mini Gerbil on K40 Type 2",
+          "url": "https://awesome.tech/installing-mini-gerbil-on-the-k40-type2/",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C07-001",
+      "panel_index": 6,
+      "edge_index": 0,
+      "from": "Regulated 5 V logic supply · +5 V regulated",
+      "to": "Prime P12 · confirm exact revision · J42.1 · 5V_PORTIN",
+      "state": "GUESS",
+      "view": "MAIN",
+      "rationale": "Prime regulated logic supply: Regulated 5 V logic supply · +5 V regulated → Prime P12 · confirm exact revision · J42.1 · 5V_PORTIN. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Prime alternative only. Confirm fitted P11/P12 revision, input-voltage/current limits, supply sequencing and fuse/conductor ratings. Never connect both Core external drivers and Prime winding outputs to the same motor.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · smoothiev2-prime.kicad_pcb",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/smoothiev2-prime.kicad_pcb",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "Awesome Tech Mini Gerbil on K40 Type 2",
+          "url": "https://awesome.tech/installing-mini-gerbil-on-the-k40-type2/",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C07-002",
+      "panel_index": 6,
+      "edge_index": 1,
+      "from": "Regulated 5 V logic supply · 0 V logic return",
+      "to": "Prime P12 · confirm exact revision · J42.2 · GND",
+      "state": "GUESS",
+      "view": "MAIN",
+      "rationale": "Prime logic supply return: Regulated 5 V logic supply · 0 V logic return → Prime P12 · confirm exact revision · J42.2 · GND. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Prime alternative only. Confirm fitted P11/P12 revision, input-voltage/current limits, supply sequencing and fuse/conductor ratings. Never connect both Core external drivers and Prime winding outputs to the same motor.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · smoothiev2-prime.kicad_pcb",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/smoothiev2-prime.kicad_pcb",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "Awesome Tech Mini Gerbil on K40 Type 2",
+          "url": "https://awesome.tech/installing-mini-gerbil-on-the-k40-type2/",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C07-003",
+      "panel_index": 6,
+      "edge_index": 2,
+      "from": "Verified motor supply · voltage/current TBD · DC + · before fuse",
+      "to": "Motor branch fuse · rating selected after measurement · fuse input",
+      "state": "GUESS",
+      "view": "DETAILED CIRCUIT",
+      "rationale": "Protected motor branch input: Verified motor supply · voltage/current TBD · DC + · before fuse → Motor branch fuse · rating selected after measurement · fuse input. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Prime alternative only. Confirm fitted P11/P12 revision, input-voltage/current limits, supply sequencing and fuse/conductor ratings. Never connect both Core external drivers and Prime winding outputs to the same motor.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · smoothiev2-prime.kicad_pcb",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/smoothiev2-prime.kicad_pcb",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "Awesome Tech Mini Gerbil on K40 Type 2",
+          "url": "https://awesome.tech/installing-mini-gerbil-on-the-k40-type2/",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C07-004",
+      "panel_index": 6,
+      "edge_index": 3,
+      "from": "Motor branch fuse · rating selected after measurement · fuse output",
+      "to": "Prime P12 · confirm exact revision · J9.1 · VMOT",
+      "state": "GUESS",
+      "view": "MAIN",
+      "rationale": "Prime VMOT power: Motor branch fuse · rating selected after measurement · fuse output → Prime P12 · confirm exact revision · J9.1 · VMOT. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Prime alternative only. Confirm fitted P11/P12 revision, input-voltage/current limits, supply sequencing and fuse/conductor ratings. Never connect both Core external drivers and Prime winding outputs to the same motor.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · smoothiev2-prime.kicad_pcb",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/smoothiev2-prime.kicad_pcb",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "Awesome Tech Mini Gerbil on K40 Type 2",
+          "url": "https://awesome.tech/installing-mini-gerbil-on-the-k40-type2/",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C07-005",
+      "panel_index": 6,
+      "edge_index": 4,
+      "from": "Verified motor supply · voltage/current TBD · 0 V motor return",
+      "to": "Prime P12 · confirm exact revision · J9.2 · GND",
+      "state": "GUESS",
+      "view": "MAIN",
+      "rationale": "Prime motor supply return: Verified motor supply · voltage/current TBD · 0 V motor return → Prime P12 · confirm exact revision · J9.2 · GND. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Prime alternative only. Confirm fitted P11/P12 revision, input-voltage/current limits, supply sequencing and fuse/conductor ratings. Never connect both Core external drivers and Prime winding outputs to the same motor.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · smoothiev2-prime.kicad_pcb",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/smoothiev2-prime.kicad_pcb",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "Awesome Tech Mini Gerbil on K40 Type 2",
+          "url": "https://awesome.tech/installing-mini-gerbil-on-the-k40-type2/",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C08-001",
+      "panel_index": 7,
+      "edge_index": 0,
+      "from": "Fitted independent water / door / E-stop chain · Identify protected enable output",
+      "to": "Reference PSU protection / firing · fitted model unresolved · WP · water/fan protection input",
+      "state": "OPEN",
+      "view": "DETAILED CIRCUIT",
+      "rationale": "Independent water/door protection input: Fitted independent water / door / E-stop chain · Identify protected enable output → Reference PSU protection / firing · fitted model unresolved · WP · water/fan protection input. The fitted interface or electrical contract is unresolved. The broken path is a boundary to identify, not a wire to install.",
+      "qualification": "Cloudray MYJG-40 NW is a reference variant only, not proof of installed PSU. Its manual distinguishes TH/TL firing, WP water/fan protection, G reference and IN intensity. Follow matching manufacturer isolation and active-level requirements; do not bridge WP or remove water/door/E-stop checks. Existing L/LO labels elsewhere describe other possible PSU variants.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · mosfets.kicad_sch",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/mosfets.kicad_sch",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "Awesome Tech Mini Gerbil on K40 Type 2",
+          "url": "https://awesome.tech/installing-mini-gerbil-on-the-k40-type2/",
+          "claim": "Documents the machine component/function; new interface wiring requires the stated fitted-device checks."
+        },
+        {
+          "title": "Cloudray MYJG-40 NW manual · pp.3–5",
+          "url": "https://m.media-amazon.com/images/I/A1%2BEcPi700L.pdf",
+          "claim": "Names TH/TL/WP/G/IN and reference input conditions, with documented inconsistencies; verify the exact fitted PSU before use."
+        }
+      ]
+    },
+    {
+      "id": "C08-002",
+      "panel_index": 7,
+      "edge_index": 1,
+      "from": "Fitted independent water / door / E-stop chain · Identify protection reference",
+      "to": "Reference PSU protection / firing · fitted model unresolved · G · control reference",
+      "state": "OPEN",
+      "view": "DETAILED CIRCUIT",
+      "rationale": "Protection reference: Fitted independent water / door / E-stop chain · Identify protection reference → Reference PSU protection / firing · fitted model unresolved · G · control reference. The fitted interface or electrical contract is unresolved. The broken path is a boundary to identify, not a wire to install.",
+      "qualification": "Cloudray MYJG-40 NW is a reference variant only, not proof of installed PSU. Its manual distinguishes TH/TL firing, WP water/fan protection, G reference and IN intensity. Follow matching manufacturer isolation and active-level requirements; do not bridge WP or remove water/door/E-stop checks. Existing L/LO labels elsewhere describe other possible PSU variants.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · mosfets.kicad_sch",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/mosfets.kicad_sch",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "Awesome Tech Mini Gerbil on K40 Type 2",
+          "url": "https://awesome.tech/installing-mini-gerbil-on-the-k40-type2/",
+          "claim": "Documents the machine component/function; new interface wiring requires the stated fitted-device checks."
+        },
+        {
+          "title": "Cloudray MYJG-40 NW manual · pp.3–5",
+          "url": "https://m.media-amazon.com/images/I/A1%2BEcPi700L.pdf",
+          "claim": "Names TH/TL/WP/G/IN and reference input conditions, with documented inconsistencies; verify the exact fitted PSU before use."
+        }
+      ]
+    },
+    {
+      "id": "C08-003",
+      "panel_index": 7,
+      "edge_index": 2,
+      "from": "Prime P12 · firing command candidate · J35.7 · process TTL GPIO candidate",
+      "to": "Firing level / isolation interface · model-specific · Logic command input",
+      "state": "OPEN",
+      "view": "MAIN",
+      "rationale": "Firing command into matched interface: Prime P12 · firing command candidate · J35.7 · process TTL GPIO candidate → Firing level / isolation interface · model-specific · Logic command input. The fitted interface or electrical contract is unresolved. The broken path is a boundary to identify, not a wire to install.",
+      "qualification": "Cloudray MYJG-40 NW is a reference variant only, not proof of installed PSU. Its manual distinguishes TH/TL firing, WP water/fan protection, G reference and IN intensity. Follow matching manufacturer isolation and active-level requirements; do not bridge WP or remove water/door/E-stop checks. Existing L/LO labels elsewhere describe other possible PSU variants.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · mosfets.kicad_sch",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/mosfets.kicad_sch",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "Awesome Tech Mini Gerbil on K40 Type 2",
+          "url": "https://awesome.tech/installing-mini-gerbil-on-the-k40-type2/",
+          "claim": "Documents the machine component/function; new interface wiring requires the stated fitted-device checks."
+        },
+        {
+          "title": "Cloudray MYJG-40 NW manual · pp.3–5",
+          "url": "https://m.media-amazon.com/images/I/A1%2BEcPi700L.pdf",
+          "claim": "Names TH/TL/WP/G/IN and reference input conditions, with documented inconsistencies; verify the exact fitted PSU before use."
+        }
+      ]
+    },
+    {
+      "id": "C08-004",
+      "panel_index": 7,
+      "edge_index": 3,
+      "from": "Prime P12 · firing command candidate · J35.10 · signal GND",
+      "to": "Firing level / isolation interface · model-specific · Logic input reference",
+      "state": "OPEN",
+      "view": "MAIN",
+      "rationale": "Firing logic reference: Prime P12 · firing command candidate · J35.10 · signal GND → Firing level / isolation interface · model-specific · Logic input reference. The fitted interface or electrical contract is unresolved. The broken path is a boundary to identify, not a wire to install.",
+      "qualification": "Cloudray MYJG-40 NW is a reference variant only, not proof of installed PSU. Its manual distinguishes TH/TL firing, WP water/fan protection, G reference and IN intensity. Follow matching manufacturer isolation and active-level requirements; do not bridge WP or remove water/door/E-stop checks. Existing L/LO labels elsewhere describe other possible PSU variants.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · mosfets.kicad_sch",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/mosfets.kicad_sch",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "Awesome Tech Mini Gerbil on K40 Type 2",
+          "url": "https://awesome.tech/installing-mini-gerbil-on-the-k40-type2/",
+          "claim": "Documents the machine component/function; new interface wiring requires the stated fitted-device checks."
+        },
+        {
+          "title": "Cloudray MYJG-40 NW manual · pp.3–5",
+          "url": "https://m.media-amazon.com/images/I/A1%2BEcPi700L.pdf",
+          "claim": "Names TH/TL/WP/G/IN and reference input conditions, with documented inconsistencies; verify the exact fitted PSU before use."
+        }
+      ]
+    },
+    {
+      "id": "C08-005",
+      "panel_index": 7,
+      "edge_index": 4,
+      "from": "Firing level / isolation interface · model-specific · Isolated firing output",
+      "to": "Reference PSU protection / firing · fitted model unresolved · TL · low-active firing input",
+      "state": "OPEN",
+      "view": "DETAILED CIRCUIT",
+      "rationale": "Low-active firing candidate · never both TH and TL: Firing level / isolation interface · model-specific · Isolated firing output → Reference PSU protection / firing · fitted model unresolved · TL · low-active firing input. The fitted interface or electrical contract is unresolved. The broken path is a boundary to identify, not a wire to install.",
+      "qualification": "Cloudray MYJG-40 NW is a reference variant only, not proof of installed PSU. Its manual distinguishes TH/TL firing, WP water/fan protection, G reference and IN intensity. Follow matching manufacturer isolation and active-level requirements; do not bridge WP or remove water/door/E-stop checks. Existing L/LO labels elsewhere describe other possible PSU variants.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · mosfets.kicad_sch",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/mosfets.kicad_sch",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "Awesome Tech Mini Gerbil on K40 Type 2",
+          "url": "https://awesome.tech/installing-mini-gerbil-on-the-k40-type2/",
+          "claim": "Documents the machine component/function; new interface wiring requires the stated fitted-device checks."
+        },
+        {
+          "title": "Cloudray MYJG-40 NW manual · pp.3–5",
+          "url": "https://m.media-amazon.com/images/I/A1%2BEcPi700L.pdf",
+          "claim": "Names TH/TL/WP/G/IN and reference input conditions, with documented inconsistencies; verify the exact fitted PSU before use."
+        }
+      ]
+    },
+    {
+      "id": "C08-006",
+      "panel_index": 7,
+      "edge_index": 5,
+      "from": "Firing level / isolation interface · model-specific · Isolated PSU-side reference",
+      "to": "Reference PSU protection / firing · fitted model unresolved · G · control reference",
+      "state": "OPEN",
+      "view": "DETAILED CIRCUIT",
+      "rationale": "PSU-side firing reference: Firing level / isolation interface · model-specific · Isolated PSU-side reference → Reference PSU protection / firing · fitted model unresolved · G · control reference. The fitted interface or electrical contract is unresolved. The broken path is a boundary to identify, not a wire to install.",
+      "qualification": "Cloudray MYJG-40 NW is a reference variant only, not proof of installed PSU. Its manual distinguishes TH/TL firing, WP water/fan protection, G reference and IN intensity. Follow matching manufacturer isolation and active-level requirements; do not bridge WP or remove water/door/E-stop checks. Existing L/LO labels elsewhere describe other possible PSU variants.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · mosfets.kicad_sch",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/mosfets.kicad_sch",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "Awesome Tech Mini Gerbil on K40 Type 2",
+          "url": "https://awesome.tech/installing-mini-gerbil-on-the-k40-type2/",
+          "claim": "Documents the machine component/function; new interface wiring requires the stated fitted-device checks."
+        },
+        {
+          "title": "Cloudray MYJG-40 NW manual · pp.3–5",
+          "url": "https://m.media-amazon.com/images/I/A1%2BEcPi700L.pdf",
+          "claim": "Names TH/TL/WP/G/IN and reference input conditions, with documented inconsistencies; verify the exact fitted PSU before use."
+        }
+      ]
+    }
+  ],
+  "main_visible_connections": [
+    "C01-001",
+    "C01-002",
+    "C02-001",
+    "C02-002",
+    "C03-001",
+    "C03-002",
+    "C04-001",
+    "C05-001",
+    "C05-002",
+    "C05-003",
+    "C05-004",
+    "C06-001",
+    "C06-002",
+    "C06-003",
+    "C06-004",
+    "C07-001",
+    "C07-002",
+    "C07-004",
+    "C07-005",
+    "C08-003",
+    "C08-004"
+  ],
+  "detailed_only_connections": [
+    "C07-003",
+    "C08-001",
+    "C08-002",
+    "C08-005",
+    "C08-006"
+  ],
+  "main_route_manifest": [
+    {
+      "connection_id": "C07-001",
+      "controller_identity": [
+        "J42",
+        "1"
+      ],
+      "controller_anchor": [
+        1207.8095238095239,
+        1000
+      ],
+      "assembly": [
+        "north",
+        "power"
+      ],
+      "assembly_anchor": [
+        1200.0,
+        820
+      ],
+      "assembly_port_index": 1,
+      "receiver_node": "Regulated 5 V logic supply",
+      "receiver_contact": "+5 V regulated"
+    },
+    {
+      "connection_id": "C07-002",
+      "controller_identity": [
+        "J42",
+        "2"
+      ],
+      "controller_anchor": [
+        1309.5238095238096,
+        1000
+      ],
+      "assembly": [
+        "north",
+        "power"
+      ],
+      "assembly_anchor": [
+        1400.0,
+        820
+      ],
+      "assembly_port_index": 2,
+      "receiver_node": "Regulated 5 V logic supply",
+      "receiver_contact": "0 V logic return"
+    },
+    {
+      "connection_id": "C07-004",
+      "controller_identity": [
+        "J9",
+        "1"
+      ],
+      "controller_anchor": [
+        1449.142857142857,
+        1000
+      ],
+      "assembly": [
+        "north",
+        "power"
+      ],
+      "assembly_anchor": [
+        1600.0,
+        820
+      ],
+      "assembly_port_index": 3,
+      "receiver_node": "Motor branch fuse · rating selected after measurement",
+      "receiver_contact": "fuse output"
+    },
+    {
+      "connection_id": "C07-005",
+      "controller_identity": [
+        "J9",
+        "2"
+      ],
+      "controller_anchor": [
+        1550.857142857143,
+        1000
+      ],
+      "assembly": [
+        "north",
+        "power"
+      ],
+      "assembly_anchor": [
+        1800.0,
+        820
+      ],
+      "assembly_port_index": 4,
+      "receiver_node": "Verified motor supply · voltage/current TBD",
+      "receiver_contact": "0 V motor return"
+    },
+    {
+      "connection_id": "C03-001",
+      "controller_identity": [
+        "J35",
+        "6"
+      ],
+      "controller_anchor": [
+        1000,
+        1259.0082644628098
+      ],
+      "assembly": [
+        "west",
+        "process"
+      ],
+      "assembly_anchor": [
+        765,
+        1181.0
+      ],
+      "assembly_port_index": 1,
+      "receiver_node": "Retained machine peripheral",
+      "receiver_contact": "IN · intensity input"
+    },
+    {
+      "connection_id": "C04-001",
+      "controller_identity": [
+        "J35",
+        "7"
+      ],
+      "controller_anchor": [
+        1000,
+        1500.0
+      ],
+      "assembly": [
+        "west",
+        "process"
+      ],
+      "assembly_anchor": [
+        765,
+        1273.0
+      ],
+      "assembly_port_index": 2,
+      "receiver_node": "Retained machine peripheral",
+      "receiver_contact": "L / LO · only if matching PSU labels"
+    },
+    {
+      "connection_id": "C08-003",
+      "controller_identity": [
+        "J35",
+        "7"
+      ],
+      "controller_anchor": [
+        1000,
+        1500.0
+      ],
+      "assembly": [
+        "west",
+        "process"
+      ],
+      "assembly_anchor": [
+        765,
+        1365.0
+      ],
+      "assembly_port_index": 3,
+      "receiver_node": "Firing level / isolation interface · model-specific",
+      "receiver_contact": "Logic command input"
+    },
+    {
+      "connection_id": "C03-002",
+      "controller_identity": [
+        "J35",
+        "10"
+      ],
+      "controller_anchor": [
+        1000,
+        1740.99173553719
+      ],
+      "assembly": [
+        "west",
+        "process"
+      ],
+      "assembly_anchor": [
+        765,
+        1457.0
+      ],
+      "assembly_port_index": 4,
+      "receiver_node": "Retained machine peripheral",
+      "receiver_contact": "G · control reference"
+    },
+    {
+      "connection_id": "C08-004",
+      "controller_identity": [
+        "J35",
+        "10"
+      ],
+      "controller_anchor": [
+        1000,
+        1740.99173553719
+      ],
+      "assembly": [
+        "west",
+        "process"
+      ],
+      "assembly_anchor": [
+        765,
+        1549.0
+      ],
+      "assembly_port_index": 5,
+      "receiver_node": "Firing level / isolation interface · model-specific",
+      "receiver_contact": "Logic input reference"
+    },
+    {
+      "connection_id": "C01-002",
+      "controller_identity": [
+        "J24",
+        "2"
+      ],
+      "controller_anchor": [
+        2000,
+        1319.0
+      ],
+      "assembly": [
+        "east",
+        "inputs"
+      ],
+      "assembly_anchor": [
+        2235,
+        1192.5
+      ],
+      "assembly_port_index": 1,
+      "receiver_node": "X min limit · traced switch",
+      "receiver_contact": "Traced X switch return"
+    },
+    {
+      "connection_id": "C01-001",
+      "controller_identity": [
+        "J24",
+        "3"
+      ],
+      "controller_anchor": [
+        2000,
+        1426.4
+      ],
+      "assembly": [
+        "east",
+        "inputs"
+      ],
+      "assembly_anchor": [
+        2235,
+        1307.5
+      ],
+      "assembly_port_index": 2,
+      "receiver_node": "X min limit · traced switch",
+      "receiver_contact": "Traced X switch signal"
+    },
+    {
+      "connection_id": "C02-002",
+      "controller_identity": [
+        "J26",
+        "2"
+      ],
+      "controller_anchor": [
+        2000,
+        1681.0
+      ],
+      "assembly": [
+        "east",
+        "inputs"
+      ],
+      "assembly_anchor": [
+        2235,
+        1422.5
+      ],
+      "assembly_port_index": 3,
+      "receiver_node": "Y min limit · traced switch",
+      "receiver_contact": "Traced Y switch return"
+    },
+    {
+      "connection_id": "C02-001",
+      "controller_identity": [
+        "J26",
+        "3"
+      ],
+      "controller_anchor": [
+        2000,
+        1788.4
+      ],
+      "assembly": [
+        "east",
+        "inputs"
+      ],
+      "assembly_anchor": [
+        2235,
+        1537.5
+      ],
+      "assembly_port_index": 4,
+      "receiver_node": "Y min limit · traced switch",
+      "receiver_contact": "Traced Y switch signal"
+    },
+    {
+      "connection_id": "C05-001",
+      "controller_identity": [
+        "J5",
+        "1"
+      ],
+      "controller_anchor": [
+        1195.076923076923,
+        2000
+      ],
+      "assembly": [
+        "south",
+        "J5"
+      ],
+      "assembly_anchor": [
+        204.0,
+        2200
+      ],
+      "assembly_port_index": 1,
+      "receiver_node": "X · measured winding leads",
+      "receiver_contact": "Winding B · lead 2"
+    },
+    {
+      "connection_id": "C05-002",
+      "controller_identity": [
+        "J5",
+        "2"
+      ],
+      "controller_anchor": [
+        1277.6923076923076,
+        2000
+      ],
+      "assembly": [
+        "south",
+        "J5"
+      ],
+      "assembly_anchor": [
+        343.0,
+        2200
+      ],
+      "assembly_port_index": 2,
+      "receiver_node": "X · measured winding leads",
+      "receiver_contact": "Winding B · lead 1"
+    },
+    {
+      "connection_id": "C05-003",
+      "controller_identity": [
+        "J5",
+        "3"
+      ],
+      "controller_anchor": [
+        1360.3076923076924,
+        2000
+      ],
+      "assembly": [
+        "south",
+        "J5"
+      ],
+      "assembly_anchor": [
+        482.0,
+        2200
+      ],
+      "assembly_port_index": 3,
+      "receiver_node": "X · measured winding leads",
+      "receiver_contact": "Winding A · lead 2"
+    },
+    {
+      "connection_id": "C05-004",
+      "controller_identity": [
+        "J5",
+        "4"
+      ],
+      "controller_anchor": [
+        1442.923076923077,
+        2000
+      ],
+      "assembly": [
+        "south",
+        "J5"
+      ],
+      "assembly_anchor": [
+        621.0,
+        2200
+      ],
+      "assembly_port_index": 4,
+      "receiver_node": "X · measured winding leads",
+      "receiver_contact": "Winding A · lead 1"
+    },
+    {
+      "connection_id": "C06-001",
+      "controller_identity": [
+        "J6",
+        "1"
+      ],
+      "controller_anchor": [
+        1557.076923076923,
+        2000
+      ],
+      "assembly": [
+        "south",
+        "J6"
+      ],
+      "assembly_anchor": [
+        929.0,
+        2200
+      ],
+      "assembly_port_index": 1,
+      "receiver_node": "Y · measured winding leads",
+      "receiver_contact": "Winding B · lead 2"
+    },
+    {
+      "connection_id": "C06-002",
+      "controller_identity": [
+        "J6",
+        "2"
+      ],
+      "controller_anchor": [
+        1639.6923076923076,
+        2000
+      ],
+      "assembly": [
+        "south",
+        "J6"
+      ],
+      "assembly_anchor": [
+        1068.0,
+        2200
+      ],
+      "assembly_port_index": 2,
+      "receiver_node": "Y · measured winding leads",
+      "receiver_contact": "Winding B · lead 1"
+    },
+    {
+      "connection_id": "C06-003",
+      "controller_identity": [
+        "J6",
+        "3"
+      ],
+      "controller_anchor": [
+        1722.3076923076924,
+        2000
+      ],
+      "assembly": [
+        "south",
+        "J6"
+      ],
+      "assembly_anchor": [
+        1207.0,
+        2200
+      ],
+      "assembly_port_index": 3,
+      "receiver_node": "Y · measured winding leads",
+      "receiver_contact": "Winding A · lead 2"
+    },
+    {
+      "connection_id": "C06-004",
+      "controller_identity": [
+        "J6",
+        "4"
+      ],
+      "controller_anchor": [
+        1804.923076923077,
+        2000
+      ],
+      "assembly": [
+        "south",
+        "J6"
+      ],
+      "assembly_anchor": [
+        1346.0,
+        2200
+      ],
+      "assembly_port_index": 4,
+      "receiver_node": "Y · measured winding leads",
+      "receiver_contact": "Winding A · lead 1"
+    }
+  ],
+  "geometry": {
+    "viewbox": [
+      0,
+      0,
+      3000,
+      3000
+    ],
+    "controller": [
+      1000,
+      1000,
+      1000,
+      1000
+    ],
+    "controller_area_fraction": 0.1111111111111111
+  },
+  "svg_sha256": "773ecd08ed4eb4128a6fe9c052a5601ccf190b3f4bd59cea5d1c11bb6a7f33bd"
+}

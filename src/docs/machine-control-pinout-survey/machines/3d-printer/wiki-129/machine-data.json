@@ -1,0 +1,97 @@
+{
+  "id": "wiki-129",
+  "sources": {
+    "machine-side-graph-snapshot.json": {
+      "source_graph": "129-wiki-129.json",
+      "source_sha256": "4d6d364a3db27ccf3f2c856804030230d757b0213f3d4e4cb58fb02163d611fb",
+      "graph": {
+        "profile_id": "wiki-129",
+        "devices": [
+          {
+            "id": "cr30-lcd-module",
+            "role": "peripheral"
+          }
+        ],
+        "connectors": [
+          {
+            "id": "cr30-lcd-serial-idc",
+            "device": "cr30-lcd-module",
+            "refdes": "LCD module cable \u00b7 optional USART3 direct-serial breakout",
+            "form": "10-position IDC cable; installed header/view unknown",
+            "scope": "Klipper upstream CR-30 2021 sample config describes an optional USART3 breakout on the 10-pin IDC cable used by the LCD module: source positions 3 Tx, 4 Rx, 9 GND and 10 VCC. The 2021 configuration and installed controller are not verified; VCC voltage, other position functions, mating-face orientation and external SmoothieBox compatibility are unknown.",
+            "contacts": [
+              {
+                "id": "1",
+                "mark": "1",
+                "label": "Function not listed in source; OPEN, not NC",
+                "fact": "source_unlisted"
+              },
+              {
+                "id": "2",
+                "mark": "2",
+                "label": "Function not listed in source; OPEN, not NC",
+                "fact": "source_unlisted"
+              },
+              {
+                "id": "3",
+                "mark": "3",
+                "label": "USART3 Tx",
+                "fact": "source"
+              },
+              {
+                "id": "4",
+                "mark": "4",
+                "label": "USART3 Rx",
+                "fact": "source"
+              },
+              {
+                "id": "5",
+                "mark": "5",
+                "label": "Function not listed in source; OPEN, not NC",
+                "fact": "source_unlisted"
+              },
+              {
+                "id": "6",
+                "mark": "6",
+                "label": "Function not listed in source; OPEN, not NC",
+                "fact": "source_unlisted"
+              },
+              {
+                "id": "7",
+                "mark": "7",
+                "label": "Function not listed in source; OPEN, not NC",
+                "fact": "source_unlisted"
+              },
+              {
+                "id": "8",
+                "mark": "8",
+                "label": "Function not listed in source; OPEN, not NC",
+                "fact": "source_unlisted"
+              },
+              {
+                "id": "9",
+                "mark": "9",
+                "label": "GND",
+                "fact": "source"
+              },
+              {
+                "id": "10",
+                "mark": "10",
+                "label": "VCC \u00b7 voltage unspecified in source comment",
+                "fact": "source"
+              }
+            ]
+          }
+        ],
+        "wires": [],
+        "evidence": {
+          "primary": "Klipper3d/klipper config/printer-creality-cr30-2021.cfg at commit ce7002bedf37e938bb483572949f3703ac6476cb; exact file SHA-256 c62e69383975e264d91b8916630efeacd3537a5c2aebd862906c83afb8f7b89b",
+          "urls": [
+            "https://github.com/Klipper3d/klipper/blob/ce7002bedf37e938bb483572949f3703ac6476cb/config/printer-creality-cr30-2021.cfg"
+          ],
+          "scope_note": "The Klipper MCU-to-driver mappings are controller firmware nets, not external motor/heater connector pinouts. No connection is selected between any of these machine-side cable positions and SmoothieBox. No DB25 or fitted stock-controller revision is established."
+        }
+      }
+    }
+  }
+}

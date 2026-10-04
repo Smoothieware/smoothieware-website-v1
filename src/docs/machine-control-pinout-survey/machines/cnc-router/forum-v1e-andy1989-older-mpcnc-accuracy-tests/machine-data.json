@@ -1,0 +1,26 @@
+{
+  "id": "forum-v1e-andy1989-older-mpcnc-accuracy-tests",
+  "sources": {
+    "forum-peripheral-evidence.json": {
+      "id": "forum-v1e-andy1989-older-mpcnc-accuracy-tests",
+      "dossier": "src/docs/machine-research/v1e-andy1989-older-mpcnc-accuracy-tests.md",
+      "reported_fitted_or_used": [],
+      "listed_for_build_unverified": [],
+      "historical_reference": [],
+      "planned_only": [],
+      "open_function_group": [],
+      "exclusions": [
+        {
+          "name": "Cutting tool model unidentified",
+          "contacts": [],
+          "source_line_number": 41,
+          "source_line": "The thread does not identify a complete controller setup, firmware, connector-level pinout, motor wiring, switch wiring, tested cutting feed/depth, or later status of proposed roller modifications. The measurement prose and attached image contain an unresolved mismatch; no precision rating should be inferred from them. Do not use this dossier as wiring, calibration, or machine setup instructions.",
+          "evidence": "The thread does not identify a complete controller setup, firmware, connector-level pinout, motor wiring, switch wiring, tested cutting feed/depth, or later status of proposed roller modifications. The measurement prose and attached image contain an unresolved mismatch; no precision rating should be inferred from them.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route",
+          "reason": "Excluded: no separate externally addressable interface, existing control hardware, absent tooling, or inadequate positive device evidence in this dossier."
+        }
+      ],
+      "source_gap": "Dossier does not establish an as-built SmoothieBox route or a complete physical contact schedule for the listed peripherals."
+    }
+  }
+}

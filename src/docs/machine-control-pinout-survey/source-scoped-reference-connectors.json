@@ -1,0 +1,218 @@
+{
+  "schema_version": 1,
+  "purpose": "Add only contacts absent from the earlier typed machine graphs. Existing source-scoped bed, DB15, Nutmeg and FarmBot v1.5 rows remain in those graphs; no installed SmoothieBox route or electrical compatibility is asserted.",
+  "profiles": {
+    "wiki-171": {
+      "replaces_connector_ids": [],
+      "connectors": [
+        {
+          "name": "Mendel90 X/extruder 20-way ribbon",
+          "evidence_class": "reference_revision_only",
+          "scope": "Build-manual conductor order only; not DB15 cavity numbering; connector view unverified",
+          "source_url": "https://reprap.org/wiki/Mendel90_Build_Manual",
+          "contacts": [
+            {
+              "number": "1",
+              "label": "X limit signal · 20-way X/extruder ribbon wire"
+            },
+            {
+              "number": "2",
+              "label": "X limit GND · 20-way X/extruder ribbon wire"
+            },
+            {
+              "number": "3",
+              "label": "Thermistor signal → DB15 pin 1 · 20-way X/extruder ribbon wire"
+            },
+            {
+              "number": "4",
+              "label": "Thermistor GND → DB15 pin 9 · 20-way X/extruder ribbon wire"
+            },
+            {
+              "number": "5",
+              "label": "Spare → DB15 pin 2 · 20-way X/extruder ribbon wire"
+            },
+            {
+              "number": "6",
+              "label": "+12 V → DB15 pin 10 · 20-way X/extruder ribbon wire"
+            },
+            {
+              "number": "7",
+              "label": "+12 V → DB15 pin 3 · 20-way X/extruder ribbon wire"
+            },
+            {
+              "number": "8",
+              "label": "+12 V → DB15 pin 11 · 20-way X/extruder ribbon wire"
+            },
+            {
+              "number": "9",
+              "label": "Heater negative → DB15 pin 4 · 20-way X/extruder ribbon wire"
+            },
+            {
+              "number": "10",
+              "label": "Heater negative → DB15 pin 12 · 20-way X/extruder ribbon wire"
+            },
+            {
+              "number": "11",
+              "label": "Heater negative → DB15 pin 5 · 20-way X/extruder ribbon wire"
+            },
+            {
+              "number": "12",
+              "label": "Fan negative → DB15 pin 13 · 20-way X/extruder ribbon wire"
+            },
+            {
+              "number": "13",
+              "label": "Extruder motor red → DB15 pin 6 · 20-way X/extruder ribbon wire"
+            },
+            {
+              "number": "14",
+              "label": "Extruder motor blue → DB15 pin 14 · 20-way X/extruder ribbon wire"
+            },
+            {
+              "number": "15",
+              "label": "Extruder motor green → DB15 pin 7 · 20-way X/extruder ribbon wire"
+            },
+            {
+              "number": "16",
+              "label": "Extruder motor black → DB15 pin 15 · 20-way X/extruder ribbon wire"
+            },
+            {
+              "number": "17",
+              "label": "X motor red · 20-way X/extruder ribbon wire"
+            },
+            {
+              "number": "18",
+              "label": "X motor blue · 20-way X/extruder ribbon wire"
+            },
+            {
+              "number": "19",
+              "label": "X motor green · 20-way X/extruder ribbon wire"
+            },
+            {
+              "number": "20",
+              "label": "X motor black · 20-way X/extruder ribbon wire"
+            }
+          ]
+        }
+      ]
+    },
+    "wiki-144": {
+      "replaces_connector_ids": [
+        "supplement-connector-002"
+      ],
+      "connectors": [
+        {
+          "name": "FarmBot Genesis v1.7 UTM 12-contact reference",
+          "evidence_class": "reference_revision_only",
+          "scope": "v1.7 generation A–L map only; local Appropedia machine generation and mating view unknown",
+          "source_url": "https://genesis.farm.bot/v1.7/extras/reference/utm-pin-mapping",
+          "contacts": [
+            {
+              "number": "A",
+              "label": "red wire · +5 V · soil sensor power"
+            },
+            {
+              "number": "B",
+              "label": "yellow wire · GND (0 V)"
+            },
+            {
+              "number": "C",
+              "label": "green wire · D63 digital-in · tool verification"
+            },
+            {
+              "number": "D",
+              "label": "black wire · D59 (A5) analog-in · soil sensing"
+            },
+            {
+              "number": "E",
+              "label": "white wire · BDC2 (GND or 24 V via DRV8876) · rotary tool motor"
+            },
+            {
+              "number": "F",
+              "label": "brown wire · Unassigned in v1.7 table"
+            },
+            {
+              "number": "G",
+              "label": "blue wire · Unassigned in v1.7 table"
+            },
+            {
+              "number": "H",
+              "label": "grey wire · BDC1 (GND or 24 V via DRV8876) · rotary tool motor"
+            },
+            {
+              "number": "I",
+              "label": "orange wire · I2C SCL"
+            },
+            {
+              "number": "J",
+              "label": "purple wire · I2C SDA"
+            },
+            {
+              "number": "K",
+              "label": "pink wire · Unassigned in v1.7 table"
+            },
+            {
+              "number": "L",
+              "label": "cyan wire · PE protective earth · shield shunt"
+            }
+          ]
+        },
+        {
+          "name": "FarmBot Genesis v1.8 UTM 12-contact reference",
+          "evidence_class": "reference_revision_only",
+          "scope": "v1.8 generation only; not interchangeable with v1.5/v1.7; local machine generation unknown",
+          "source_url": "https://genesis.farm.bot/v1.8/extras/reference/utm-pin-mapping.html",
+          "contacts": [
+            {
+              "number": "A",
+              "label": "red wire · +5 V · soil sensor power"
+            },
+            {
+              "number": "B",
+              "label": "yellow wire · GND (0 V)"
+            },
+            {
+              "number": "C",
+              "label": "green wire · D63 digital-in · tool verification"
+            },
+            {
+              "number": "D",
+              "label": "black wire · D59 (A5) analog-in · soil sensing"
+            },
+            {
+              "number": "E",
+              "label": "white wire · BDC2 (GND or 24 V via DRV8876) · rotary tool motor"
+            },
+            {
+              "number": "F",
+              "label": "brown wire · Unassigned in v1.8 table"
+            },
+            {
+              "number": "G",
+              "label": "blue wire · Unassigned in v1.8 table"
+            },
+            {
+              "number": "H",
+              "label": "grey wire · BDC1 (GND or 24 V via DRV8876) · rotary tool motor"
+            },
+            {
+              "number": "I",
+              "label": "orange wire · I2C SCL"
+            },
+            {
+              "number": "J",
+              "label": "purple wire · I2C SDA"
+            },
+            {
+              "number": "K",
+              "label": "pink wire · Unassigned in v1.8 table"
+            },
+            {
+              "number": "L",
+              "label": "cyan wire · PE protective earth · shield shunt"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

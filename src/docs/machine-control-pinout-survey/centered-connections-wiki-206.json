@@ -1,0 +1,5569 @@
+{
+  "profile_id": "wiki-206",
+  "controller": "Smoothieboard V2 Prime",
+  "classification": "Original motion-driver electronics are on the board being replaced. Use Prime integrated phase outputs directly to measured winding pairs; do not connect STEP/DIR signal outputs to motor windings. Confirm installed board, motor current and power rating from the cited machine source.",
+  "connections": [
+    {
+      "id": "C01-001",
+      "panel_index": 0,
+      "edge_index": 0,
+      "from": "X min limit · traced switch · 8-pin contact 2 · X min",
+      "to": "Prime P12 · X min endstop · J24.3 · input",
+      "state": "GUESS",
+      "function": "X min endstop signal",
+      "view": "MAIN",
+      "rationale": "X min endstop signal: X min limit · traced switch · 8-pin contact 2 · X min → Prime P12 · X min endstop · J24.3 · input. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Trace cable with power isolated; confirm dry contact and NO/NC state. Leave selector pin 1 unused for passive switches; powered sensors require a matched interface.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · inputs.kicad_sch",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/inputs.kicad_sch",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "Shapeoko 2 pinned revision 16813",
+          "url": "https://wiki.raumzeitlabor.de/index.php?title=Shapeoko_2&oldid=16813",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C01-002",
+      "panel_index": 0,
+      "edge_index": 1,
+      "from": "Prime P12 · X min endstop · J24.2 · GND",
+      "to": "X min limit · traced switch · 8-pin sensor socket contact 1 · GND",
+      "state": "GUESS",
+      "function": "X min endstop GND",
+      "view": "MAIN",
+      "rationale": "X min endstop GND: Prime P12 · X min endstop · J24.2 · GND → X min limit · traced switch · 8-pin sensor socket contact 1 · GND. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Trace cable with power isolated; confirm dry contact and NO/NC state. Leave selector pin 1 unused for passive switches; powered sensors require a matched interface.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · inputs.kicad_sch",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/inputs.kicad_sch",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "Shapeoko 2 pinned revision 16813",
+          "url": "https://wiki.raumzeitlabor.de/index.php?title=Shapeoko_2&oldid=16813",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C02-001",
+      "panel_index": 1,
+      "edge_index": 0,
+      "from": "X max limit · traced switch · 8-pin contact 3 · X max",
+      "to": "Prime P12 · X max endstop · J25.3 · input",
+      "state": "GUESS",
+      "function": "X max endstop signal",
+      "view": "MAIN",
+      "rationale": "X max endstop signal: X max limit · traced switch · 8-pin contact 3 · X max → Prime P12 · X max endstop · J25.3 · input. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Trace cable with power isolated; confirm dry contact and NO/NC state. Leave selector pin 1 unused for passive switches; powered sensors require a matched interface.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · inputs.kicad_sch",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/inputs.kicad_sch",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "Shapeoko 2 pinned revision 16813",
+          "url": "https://wiki.raumzeitlabor.de/index.php?title=Shapeoko_2&oldid=16813",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C02-002",
+      "panel_index": 1,
+      "edge_index": 1,
+      "from": "Prime P12 · X max endstop · J25.2 · GND",
+      "to": "X max limit · traced switch · 8-pin sensor socket contact 1 · GND",
+      "state": "GUESS",
+      "function": "X max endstop GND",
+      "view": "MAIN",
+      "rationale": "X max endstop GND: Prime P12 · X max endstop · J25.2 · GND → X max limit · traced switch · 8-pin sensor socket contact 1 · GND. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Trace cable with power isolated; confirm dry contact and NO/NC state. Leave selector pin 1 unused for passive switches; powered sensors require a matched interface.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · inputs.kicad_sch",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/inputs.kicad_sch",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "Shapeoko 2 pinned revision 16813",
+          "url": "https://wiki.raumzeitlabor.de/index.php?title=Shapeoko_2&oldid=16813",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C03-001",
+      "panel_index": 2,
+      "edge_index": 0,
+      "from": "Y min limit · traced switch · 8-pin contact 4 · Y min",
+      "to": "Prime P12 · Y min endstop · J26.3 · input",
+      "state": "GUESS",
+      "function": "Y min endstop signal",
+      "view": "MAIN",
+      "rationale": "Y min endstop signal: Y min limit · traced switch · 8-pin contact 4 · Y min → Prime P12 · Y min endstop · J26.3 · input. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Trace cable with power isolated; confirm dry contact and NO/NC state. Leave selector pin 1 unused for passive switches; powered sensors require a matched interface.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · inputs.kicad_sch",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/inputs.kicad_sch",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "Shapeoko 2 pinned revision 16813",
+          "url": "https://wiki.raumzeitlabor.de/index.php?title=Shapeoko_2&oldid=16813",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C03-002",
+      "panel_index": 2,
+      "edge_index": 1,
+      "from": "Prime P12 · Y min endstop · J26.2 · GND",
+      "to": "Y min limit · traced switch · 8-pin sensor socket contact 1 · GND",
+      "state": "GUESS",
+      "function": "Y min endstop GND",
+      "view": "MAIN",
+      "rationale": "Y min endstop GND: Prime P12 · Y min endstop · J26.2 · GND → Y min limit · traced switch · 8-pin sensor socket contact 1 · GND. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Trace cable with power isolated; confirm dry contact and NO/NC state. Leave selector pin 1 unused for passive switches; powered sensors require a matched interface.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · inputs.kicad_sch",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/inputs.kicad_sch",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "Shapeoko 2 pinned revision 16813",
+          "url": "https://wiki.raumzeitlabor.de/index.php?title=Shapeoko_2&oldid=16813",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C04-001",
+      "panel_index": 3,
+      "edge_index": 0,
+      "from": "Y max limit · traced switch · 8-pin contact 5 · Y max",
+      "to": "Prime P12 · Y max endstop · J27.3 · input",
+      "state": "GUESS",
+      "function": "Y max endstop signal",
+      "view": "MAIN",
+      "rationale": "Y max endstop signal: Y max limit · traced switch · 8-pin contact 5 · Y max → Prime P12 · Y max endstop · J27.3 · input. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Trace cable with power isolated; confirm dry contact and NO/NC state. Leave selector pin 1 unused for passive switches; powered sensors require a matched interface.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · inputs.kicad_sch",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/inputs.kicad_sch",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "Shapeoko 2 pinned revision 16813",
+          "url": "https://wiki.raumzeitlabor.de/index.php?title=Shapeoko_2&oldid=16813",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C04-002",
+      "panel_index": 3,
+      "edge_index": 1,
+      "from": "Prime P12 · Y max endstop · J27.2 · GND",
+      "to": "Y max limit · traced switch · 8-pin sensor socket contact 1 · GND",
+      "state": "GUESS",
+      "function": "Y max endstop GND",
+      "view": "MAIN",
+      "rationale": "Y max endstop GND: Prime P12 · Y max endstop · J27.2 · GND → Y max limit · traced switch · 8-pin sensor socket contact 1 · GND. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Trace cable with power isolated; confirm dry contact and NO/NC state. Leave selector pin 1 unused for passive switches; powered sensors require a matched interface.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · inputs.kicad_sch",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/inputs.kicad_sch",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "Shapeoko 2 pinned revision 16813",
+          "url": "https://wiki.raumzeitlabor.de/index.php?title=Shapeoko_2&oldid=16813",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C05-001",
+      "panel_index": 4,
+      "edge_index": 0,
+      "from": "Z min / probe limit · traced switch · alternative to Z-min on shared socket 7 · 8-pin contact 7 · mode-dependent",
+      "to": "Prime P12 · Z min / probe endstop · alternative to Z-min on shared socket 7 · J28.3 · input",
+      "state": "GUESS",
+      "function": "Z min / probe endstop signal",
+      "view": "MAIN",
+      "rationale": "Z min / probe endstop signal: Z min / probe limit · traced switch · alternative to Z-min on shared socket 7 · 8-pin contact 7 · mode-dependent → Prime P12 · Z min / probe endstop · alternative to Z-min on shared socket 7 · J28.3 · input. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Trace cable with power isolated; confirm dry contact and NO/NC state. Leave selector pin 1 unused for passive switches; powered sensors require a matched interface.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · inputs.kicad_sch",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/inputs.kicad_sch",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "Shapeoko 2 pinned revision 16813",
+          "url": "https://wiki.raumzeitlabor.de/index.php?title=Shapeoko_2&oldid=16813",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C05-002",
+      "panel_index": 4,
+      "edge_index": 1,
+      "from": "Prime P12 · Z min / probe endstop · alternative to Z-min on shared socket 7 · J28.2 · GND",
+      "to": "Z min / probe limit · traced switch · alternative to Z-min on shared socket 7 · 8-pin sensor socket contact 1 · GND",
+      "state": "GUESS",
+      "function": "Z min / probe endstop GND",
+      "view": "MAIN",
+      "rationale": "Z min / probe endstop GND: Prime P12 · Z min / probe endstop · alternative to Z-min on shared socket 7 · J28.2 · GND → Z min / probe limit · traced switch · alternative to Z-min on shared socket 7 · 8-pin sensor socket contact 1 · GND. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Trace cable with power isolated; confirm dry contact and NO/NC state. Leave selector pin 1 unused for passive switches; powered sensors require a matched interface.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · inputs.kicad_sch",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/inputs.kicad_sch",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "Shapeoko 2 pinned revision 16813",
+          "url": "https://wiki.raumzeitlabor.de/index.php?title=Shapeoko_2&oldid=16813",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C06-001",
+      "panel_index": 5,
+      "edge_index": 0,
+      "from": "Z max limit · traced switch · 8-pin contact 6 · Z max",
+      "to": "Prime P12 · Z max endstop · J29.3 · input",
+      "state": "GUESS",
+      "function": "Z max endstop signal",
+      "view": "MAIN",
+      "rationale": "Z max endstop signal: Z max limit · traced switch · 8-pin contact 6 · Z max → Prime P12 · Z max endstop · J29.3 · input. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Trace cable with power isolated; confirm dry contact and NO/NC state. Leave selector pin 1 unused for passive switches; powered sensors require a matched interface.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · inputs.kicad_sch",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/inputs.kicad_sch",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "Shapeoko 2 pinned revision 16813",
+          "url": "https://wiki.raumzeitlabor.de/index.php?title=Shapeoko_2&oldid=16813",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C06-002",
+      "panel_index": 5,
+      "edge_index": 1,
+      "from": "Prime P12 · Z max endstop · J29.2 · GND",
+      "to": "Z max limit · traced switch · 8-pin sensor socket contact 1 · GND",
+      "state": "GUESS",
+      "function": "Z max endstop GND",
+      "view": "MAIN",
+      "rationale": "Z max endstop GND: Prime P12 · Z max endstop · J29.2 · GND → Z max limit · traced switch · 8-pin sensor socket contact 1 · GND. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Trace cable with power isolated; confirm dry contact and NO/NC state. Leave selector pin 1 unused for passive switches; powered sensors require a matched interface.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · inputs.kicad_sch",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/inputs.kicad_sch",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "Shapeoko 2 pinned revision 16813",
+          "url": "https://wiki.raumzeitlabor.de/index.php?title=Shapeoko_2&oldid=16813",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C07-001",
+      "panel_index": 6,
+      "edge_index": 0,
+      "from": "V2 Prime P12 · proposed signals · J35.6 · PWM",
+      "to": "Inventables Quiet Cut speed control · PWM screw terminal · signal",
+      "state": "OPEN",
+      "function": "J35.6 · PWM",
+      "view": "MAIN",
+      "rationale": "J35.6 · PWM: V2 Prime P12 · proposed signals · J35.6 · PWM → Inventables Quiet Cut speed control · PWM screw terminal · signal. The fitted interface or electrical contract is unresolved. The broken path is a boundary to identify, not a wire to install.",
+      "qualification": "Manufacturer documents separate PWM/GND speed-control screws and PWM-mode jumper position, but no input threshold/current here. Match the fitted controller; qualify Core 3.3 V input compatibility or a 5 V buffer before connecting. Spindle power uses the controller power stage, never Core GPIO.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · smoothiev2-prime.kicad_pcb",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/smoothiev2-prime.kicad_pcb",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "Shapeoko 2 pinned revision 16813",
+          "url": "https://wiki.raumzeitlabor.de/index.php?title=Shapeoko_2&oldid=16813",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        },
+        {
+          "title": "Inventables manufacturer spindle PWM terminal instructions",
+          "url": "https://inventables.github.io/xcarve2-instructions/upgrade/step3/2usage/",
+          "claim": "Device/source reference supplies its original contact functions or electrical interface limits. Match the cited revision before applying the proposed route."
+        }
+      ]
+    },
+    {
+      "id": "C07-002",
+      "panel_index": 6,
+      "edge_index": 1,
+      "from": "V2 Prime P12 · proposed signals · J35.10 · GND",
+      "to": "Inventables Quiet Cut speed control · PWM screw terminal · GND",
+      "state": "OPEN",
+      "function": "J35.10 · GND",
+      "view": "MAIN",
+      "rationale": "J35.10 · GND: V2 Prime P12 · proposed signals · J35.10 · GND → Inventables Quiet Cut speed control · PWM screw terminal · GND. The fitted interface or electrical contract is unresolved. The broken path is a boundary to identify, not a wire to install.",
+      "qualification": "Manufacturer documents separate PWM/GND speed-control screws and PWM-mode jumper position, but no input threshold/current here. Match the fitted controller; qualify Core 3.3 V input compatibility or a 5 V buffer before connecting. Spindle power uses the controller power stage, never Core GPIO.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · smoothiev2-prime.kicad_pcb",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/smoothiev2-prime.kicad_pcb",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "Shapeoko 2 pinned revision 16813",
+          "url": "https://wiki.raumzeitlabor.de/index.php?title=Shapeoko_2&oldid=16813",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        },
+        {
+          "title": "Inventables manufacturer spindle PWM terminal instructions",
+          "url": "https://inventables.github.io/xcarve2-instructions/upgrade/step3/2usage/",
+          "claim": "Device/source reference supplies its original contact functions or electrical interface limits. Match the cited revision before applying the proposed route."
+        }
+      ]
+    },
+    {
+      "id": "C08-001",
+      "panel_index": 7,
+      "edge_index": 0,
+      "from": "Prime P12 · X · J5.1 · B2",
+      "to": "X · measured winding leads · Winding B · lead 2",
+      "state": "GUESS",
+      "function": "X motor phase B2",
+      "view": "MAIN",
+      "rationale": "X motor phase B2: Prime P12 · X · J5.1 · B2 → X · measured winding leads · Winding B · lead 2. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Alternative to the external-driver circuit, never simultaneously connected. Verify selected Prime revision, current settings, supply rating and winding pairs.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · smoothiev2-prime.kicad_pcb",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/smoothiev2-prime.kicad_pcb",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "Shapeoko 2 pinned revision 16813",
+          "url": "https://wiki.raumzeitlabor.de/index.php?title=Shapeoko_2&oldid=16813",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C08-002",
+      "panel_index": 7,
+      "edge_index": 1,
+      "from": "Prime P12 · X · J5.2 · B1",
+      "to": "X · measured winding leads · Winding B · lead 1",
+      "state": "GUESS",
+      "function": "X motor phase B1",
+      "view": "MAIN",
+      "rationale": "X motor phase B1: Prime P12 · X · J5.2 · B1 → X · measured winding leads · Winding B · lead 1. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Alternative to the external-driver circuit, never simultaneously connected. Verify selected Prime revision, current settings, supply rating and winding pairs.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · smoothiev2-prime.kicad_pcb",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/smoothiev2-prime.kicad_pcb",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "Shapeoko 2 pinned revision 16813",
+          "url": "https://wiki.raumzeitlabor.de/index.php?title=Shapeoko_2&oldid=16813",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C08-003",
+      "panel_index": 7,
+      "edge_index": 2,
+      "from": "Prime P12 · X · J5.3 · A2",
+      "to": "X · measured winding leads · Winding A · lead 2",
+      "state": "GUESS",
+      "function": "X motor phase A2",
+      "view": "MAIN",
+      "rationale": "X motor phase A2: Prime P12 · X · J5.3 · A2 → X · measured winding leads · Winding A · lead 2. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Alternative to the external-driver circuit, never simultaneously connected. Verify selected Prime revision, current settings, supply rating and winding pairs.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · smoothiev2-prime.kicad_pcb",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/smoothiev2-prime.kicad_pcb",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "Shapeoko 2 pinned revision 16813",
+          "url": "https://wiki.raumzeitlabor.de/index.php?title=Shapeoko_2&oldid=16813",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C08-004",
+      "panel_index": 7,
+      "edge_index": 3,
+      "from": "Prime P12 · X · J5.4 · A1",
+      "to": "X · measured winding leads · Winding A · lead 1",
+      "state": "GUESS",
+      "function": "X motor phase A1",
+      "view": "MAIN",
+      "rationale": "X motor phase A1: Prime P12 · X · J5.4 · A1 → X · measured winding leads · Winding A · lead 1. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Alternative to the external-driver circuit, never simultaneously connected. Verify selected Prime revision, current settings, supply rating and winding pairs.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · smoothiev2-prime.kicad_pcb",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/smoothiev2-prime.kicad_pcb",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "Shapeoko 2 pinned revision 16813",
+          "url": "https://wiki.raumzeitlabor.de/index.php?title=Shapeoko_2&oldid=16813",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C09-001",
+      "panel_index": 8,
+      "edge_index": 0,
+      "from": "Prime P12 · Y left · J6.1 · B2",
+      "to": "Y left · measured winding leads · Winding B · lead 2",
+      "state": "GUESS",
+      "function": "Y left motor phase B2",
+      "view": "MAIN",
+      "rationale": "Y left motor phase B2: Prime P12 · Y left · J6.1 · B2 → Y left · measured winding leads · Winding B · lead 2. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Alternative to the external-driver circuit, never simultaneously connected. Verify selected Prime revision, current settings, supply rating and winding pairs.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · smoothiev2-prime.kicad_pcb",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/smoothiev2-prime.kicad_pcb",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "Shapeoko 2 pinned revision 16813",
+          "url": "https://wiki.raumzeitlabor.de/index.php?title=Shapeoko_2&oldid=16813",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C09-002",
+      "panel_index": 8,
+      "edge_index": 1,
+      "from": "Prime P12 · Y left · J6.2 · B1",
+      "to": "Y left · measured winding leads · Winding B · lead 1",
+      "state": "GUESS",
+      "function": "Y left motor phase B1",
+      "view": "MAIN",
+      "rationale": "Y left motor phase B1: Prime P12 · Y left · J6.2 · B1 → Y left · measured winding leads · Winding B · lead 1. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Alternative to the external-driver circuit, never simultaneously connected. Verify selected Prime revision, current settings, supply rating and winding pairs.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · smoothiev2-prime.kicad_pcb",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/smoothiev2-prime.kicad_pcb",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "Shapeoko 2 pinned revision 16813",
+          "url": "https://wiki.raumzeitlabor.de/index.php?title=Shapeoko_2&oldid=16813",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C09-003",
+      "panel_index": 8,
+      "edge_index": 2,
+      "from": "Prime P12 · Y left · J6.3 · A2",
+      "to": "Y left · measured winding leads · Winding A · lead 2",
+      "state": "GUESS",
+      "function": "Y left motor phase A2",
+      "view": "MAIN",
+      "rationale": "Y left motor phase A2: Prime P12 · Y left · J6.3 · A2 → Y left · measured winding leads · Winding A · lead 2. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Alternative to the external-driver circuit, never simultaneously connected. Verify selected Prime revision, current settings, supply rating and winding pairs.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · smoothiev2-prime.kicad_pcb",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/smoothiev2-prime.kicad_pcb",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "Shapeoko 2 pinned revision 16813",
+          "url": "https://wiki.raumzeitlabor.de/index.php?title=Shapeoko_2&oldid=16813",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C09-004",
+      "panel_index": 8,
+      "edge_index": 3,
+      "from": "Prime P12 · Y left · J6.4 · A1",
+      "to": "Y left · measured winding leads · Winding A · lead 1",
+      "state": "GUESS",
+      "function": "Y left motor phase A1",
+      "view": "MAIN",
+      "rationale": "Y left motor phase A1: Prime P12 · Y left · J6.4 · A1 → Y left · measured winding leads · Winding A · lead 1. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Alternative to the external-driver circuit, never simultaneously connected. Verify selected Prime revision, current settings, supply rating and winding pairs.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · smoothiev2-prime.kicad_pcb",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/smoothiev2-prime.kicad_pcb",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "Shapeoko 2 pinned revision 16813",
+          "url": "https://wiki.raumzeitlabor.de/index.php?title=Shapeoko_2&oldid=16813",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C10-001",
+      "panel_index": 9,
+      "edge_index": 0,
+      "from": "Prime P12 · Y right · J7.1 · B2",
+      "to": "Y right · measured winding leads · Winding B · lead 2",
+      "state": "GUESS",
+      "function": "Y right motor phase B2",
+      "view": "MAIN",
+      "rationale": "Y right motor phase B2: Prime P12 · Y right · J7.1 · B2 → Y right · measured winding leads · Winding B · lead 2. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Alternative to the external-driver circuit, never simultaneously connected. Verify selected Prime revision, current settings, supply rating and winding pairs.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · smoothiev2-prime.kicad_pcb",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/smoothiev2-prime.kicad_pcb",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "Shapeoko 2 pinned revision 16813",
+          "url": "https://wiki.raumzeitlabor.de/index.php?title=Shapeoko_2&oldid=16813",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C10-002",
+      "panel_index": 9,
+      "edge_index": 1,
+      "from": "Prime P12 · Y right · J7.2 · B1",
+      "to": "Y right · measured winding leads · Winding B · lead 1",
+      "state": "GUESS",
+      "function": "Y right motor phase B1",
+      "view": "MAIN",
+      "rationale": "Y right motor phase B1: Prime P12 · Y right · J7.2 · B1 → Y right · measured winding leads · Winding B · lead 1. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Alternative to the external-driver circuit, never simultaneously connected. Verify selected Prime revision, current settings, supply rating and winding pairs.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · smoothiev2-prime.kicad_pcb",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/smoothiev2-prime.kicad_pcb",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "Shapeoko 2 pinned revision 16813",
+          "url": "https://wiki.raumzeitlabor.de/index.php?title=Shapeoko_2&oldid=16813",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C10-003",
+      "panel_index": 9,
+      "edge_index": 2,
+      "from": "Prime P12 · Y right · J7.3 · A2",
+      "to": "Y right · measured winding leads · Winding A · lead 2",
+      "state": "GUESS",
+      "function": "Y right motor phase A2",
+      "view": "MAIN",
+      "rationale": "Y right motor phase A2: Prime P12 · Y right · J7.3 · A2 → Y right · measured winding leads · Winding A · lead 2. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Alternative to the external-driver circuit, never simultaneously connected. Verify selected Prime revision, current settings, supply rating and winding pairs.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · smoothiev2-prime.kicad_pcb",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/smoothiev2-prime.kicad_pcb",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "Shapeoko 2 pinned revision 16813",
+          "url": "https://wiki.raumzeitlabor.de/index.php?title=Shapeoko_2&oldid=16813",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C10-004",
+      "panel_index": 9,
+      "edge_index": 3,
+      "from": "Prime P12 · Y right · J7.4 · A1",
+      "to": "Y right · measured winding leads · Winding A · lead 1",
+      "state": "GUESS",
+      "function": "Y right motor phase A1",
+      "view": "MAIN",
+      "rationale": "Y right motor phase A1: Prime P12 · Y right · J7.4 · A1 → Y right · measured winding leads · Winding A · lead 1. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Alternative to the external-driver circuit, never simultaneously connected. Verify selected Prime revision, current settings, supply rating and winding pairs.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · smoothiev2-prime.kicad_pcb",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/smoothiev2-prime.kicad_pcb",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "Shapeoko 2 pinned revision 16813",
+          "url": "https://wiki.raumzeitlabor.de/index.php?title=Shapeoko_2&oldid=16813",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C11-001",
+      "panel_index": 10,
+      "edge_index": 0,
+      "from": "Prime P12 · Z · J8.1 · B2",
+      "to": "Z · measured winding leads · Winding B · lead 2",
+      "state": "GUESS",
+      "function": "Z motor phase B2",
+      "view": "MAIN",
+      "rationale": "Z motor phase B2: Prime P12 · Z · J8.1 · B2 → Z · measured winding leads · Winding B · lead 2. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Alternative to the external-driver circuit, never simultaneously connected. Verify selected Prime revision, current settings, supply rating and winding pairs.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · smoothiev2-prime.kicad_pcb",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/smoothiev2-prime.kicad_pcb",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "Shapeoko 2 pinned revision 16813",
+          "url": "https://wiki.raumzeitlabor.de/index.php?title=Shapeoko_2&oldid=16813",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C11-002",
+      "panel_index": 10,
+      "edge_index": 1,
+      "from": "Prime P12 · Z · J8.2 · B1",
+      "to": "Z · measured winding leads · Winding B · lead 1",
+      "state": "GUESS",
+      "function": "Z motor phase B1",
+      "view": "MAIN",
+      "rationale": "Z motor phase B1: Prime P12 · Z · J8.2 · B1 → Z · measured winding leads · Winding B · lead 1. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Alternative to the external-driver circuit, never simultaneously connected. Verify selected Prime revision, current settings, supply rating and winding pairs.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · smoothiev2-prime.kicad_pcb",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/smoothiev2-prime.kicad_pcb",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "Shapeoko 2 pinned revision 16813",
+          "url": "https://wiki.raumzeitlabor.de/index.php?title=Shapeoko_2&oldid=16813",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C11-003",
+      "panel_index": 10,
+      "edge_index": 2,
+      "from": "Prime P12 · Z · J8.3 · A2",
+      "to": "Z · measured winding leads · Winding A · lead 2",
+      "state": "GUESS",
+      "function": "Z motor phase A2",
+      "view": "MAIN",
+      "rationale": "Z motor phase A2: Prime P12 · Z · J8.3 · A2 → Z · measured winding leads · Winding A · lead 2. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Alternative to the external-driver circuit, never simultaneously connected. Verify selected Prime revision, current settings, supply rating and winding pairs.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · smoothiev2-prime.kicad_pcb",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/smoothiev2-prime.kicad_pcb",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "Shapeoko 2 pinned revision 16813",
+          "url": "https://wiki.raumzeitlabor.de/index.php?title=Shapeoko_2&oldid=16813",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C11-004",
+      "panel_index": 10,
+      "edge_index": 3,
+      "from": "Prime P12 · Z · J8.4 · A1",
+      "to": "Z · measured winding leads · Winding A · lead 1",
+      "state": "GUESS",
+      "function": "Z motor phase A1",
+      "view": "MAIN",
+      "rationale": "Z motor phase A1: Prime P12 · Z · J8.4 · A1 → Z · measured winding leads · Winding A · lead 1. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Alternative to the external-driver circuit, never simultaneously connected. Verify selected Prime revision, current settings, supply rating and winding pairs.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · smoothiev2-prime.kicad_pcb",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/smoothiev2-prime.kicad_pcb",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "Shapeoko 2 pinned revision 16813",
+          "url": "https://wiki.raumzeitlabor.de/index.php?title=Shapeoko_2&oldid=16813",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C12-001",
+      "panel_index": 11,
+      "edge_index": 0,
+      "from": "Regulated 5 V logic supply · +5 V regulated",
+      "to": "Prime P12 · confirm exact revision · J42.1 · 5V_PORTIN",
+      "state": "GUESS",
+      "function": "Prime regulated logic supply",
+      "view": "MAIN",
+      "rationale": "Prime regulated logic supply: Regulated 5 V logic supply · +5 V regulated → Prime P12 · confirm exact revision · J42.1 · 5V_PORTIN. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Prime alternative only. Confirm fitted P11/P12 revision, input-voltage/current limits, supply sequencing and fuse/conductor ratings. Never connect both Core external drivers and Prime winding outputs to the same motor.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · smoothiev2-prime.kicad_pcb",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/smoothiev2-prime.kicad_pcb",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "Shapeoko 2 pinned revision 16813",
+          "url": "https://wiki.raumzeitlabor.de/index.php?title=Shapeoko_2&oldid=16813",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C12-002",
+      "panel_index": 11,
+      "edge_index": 1,
+      "from": "Regulated 5 V logic supply · 0 V logic return",
+      "to": "Prime P12 · confirm exact revision · J42.2 · GND",
+      "state": "GUESS",
+      "function": "Prime logic supply return",
+      "view": "MAIN",
+      "rationale": "Prime logic supply return: Regulated 5 V logic supply · 0 V logic return → Prime P12 · confirm exact revision · J42.2 · GND. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Prime alternative only. Confirm fitted P11/P12 revision, input-voltage/current limits, supply sequencing and fuse/conductor ratings. Never connect both Core external drivers and Prime winding outputs to the same motor.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · smoothiev2-prime.kicad_pcb",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/smoothiev2-prime.kicad_pcb",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "Shapeoko 2 pinned revision 16813",
+          "url": "https://wiki.raumzeitlabor.de/index.php?title=Shapeoko_2&oldid=16813",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C12-003",
+      "panel_index": 11,
+      "edge_index": 2,
+      "from": "Verified motor supply · voltage/current TBD · DC + · before fuse",
+      "to": "Motor branch fuse · rating selected after measurement · fuse input",
+      "state": "GUESS",
+      "function": "Protected motor branch input",
+      "view": "MAIN",
+      "rationale": "Protected motor branch input: Verified motor supply · voltage/current TBD · DC + · before fuse → Motor branch fuse · rating selected after measurement · fuse input. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Prime alternative only. Confirm fitted P11/P12 revision, input-voltage/current limits, supply sequencing and fuse/conductor ratings. Never connect both Core external drivers and Prime winding outputs to the same motor.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · smoothiev2-prime.kicad_pcb",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/smoothiev2-prime.kicad_pcb",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "Shapeoko 2 pinned revision 16813",
+          "url": "https://wiki.raumzeitlabor.de/index.php?title=Shapeoko_2&oldid=16813",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C12-004",
+      "panel_index": 11,
+      "edge_index": 3,
+      "from": "Motor branch fuse · rating selected after measurement · fuse output",
+      "to": "Prime P12 · confirm exact revision · J9.1 · VMOT",
+      "state": "GUESS",
+      "function": "Prime VMOT power",
+      "view": "MAIN",
+      "rationale": "Prime VMOT power: Motor branch fuse · rating selected after measurement · fuse output → Prime P12 · confirm exact revision · J9.1 · VMOT. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Prime alternative only. Confirm fitted P11/P12 revision, input-voltage/current limits, supply sequencing and fuse/conductor ratings. Never connect both Core external drivers and Prime winding outputs to the same motor.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · smoothiev2-prime.kicad_pcb",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/smoothiev2-prime.kicad_pcb",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "Shapeoko 2 pinned revision 16813",
+          "url": "https://wiki.raumzeitlabor.de/index.php?title=Shapeoko_2&oldid=16813",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C12-005",
+      "panel_index": 11,
+      "edge_index": 4,
+      "from": "Verified motor supply · voltage/current TBD · 0 V motor return",
+      "to": "Prime P12 · confirm exact revision · J9.2 · GND",
+      "state": "GUESS",
+      "function": "Prime motor supply return",
+      "view": "MAIN",
+      "rationale": "Prime motor supply return: Verified motor supply · voltage/current TBD · 0 V motor return → Prime P12 · confirm exact revision · J9.2 · GND. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Prime alternative only. Confirm fitted P11/P12 revision, input-voltage/current limits, supply sequencing and fuse/conductor ratings. Never connect both Core external drivers and Prime winding outputs to the same motor.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · smoothiev2-prime.kicad_pcb",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/smoothiev2-prime.kicad_pcb",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "Shapeoko 2 pinned revision 16813",
+          "url": "https://wiki.raumzeitlabor.de/index.php?title=Shapeoko_2&oldid=16813",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C13-001",
+      "panel_index": 12,
+      "edge_index": 0,
+      "from": "Prime P12 · probe input candidate · alternative to Z-min on shared socket 7 · J31.4 · conditioned PROBE input",
+      "to": "Original 8-pin limit / probe peripheral · alternative to Z-min on shared socket 7 · 7 · Z-min/probe · shared function",
+      "state": "GUESS",
+      "function": "Alternative probe function on shared socket",
+      "view": "MAIN",
+      "rationale": "Alternative probe function on shared socket: Prime P12 · probe input candidate · alternative to Z-min on shared socket 7 · J31.4 · conditioned PROBE input → Original 8-pin limit / probe peripheral · alternative to Z-min on shared socket 7 · 7 · Z-min/probe · shared function. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Pinned source lists an E-stop while planning text also asks for one at the machine. Retain or engineer independent spindle/motion energy inhibition; no firmware-only safe stop is promised. Socket rear-view pin7 is Z-min/probe and pin1 GND; its saved configuration disables Z-min, so a new probe assignment requires firmware and physical fitment checks. Sensor socket pin 7 is shared Z-min/probe: select one function in firmware and wiring. Do not install both Z-min and probe signal routes simultaneously.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · inputs.kicad_sch",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/inputs.kicad_sch",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "Shapeoko 2 pinned revision 16813",
+          "url": "https://wiki.raumzeitlabor.de/index.php?title=Shapeoko_2&oldid=16813",
+          "claim": "Documents the machine component/function; new interface wiring requires the stated fitted-device checks."
+        }
+      ]
+    },
+    {
+      "id": "C13-002",
+      "panel_index": 12,
+      "edge_index": 1,
+      "from": "Prime P12 · probe input candidate · alternative to Z-min on shared socket 7 · J31.3 · GND",
+      "to": "Original 8-pin limit / probe peripheral · alternative to Z-min on shared socket 7 · 1 · GND",
+      "state": "GUESS",
+      "function": "Separate probe reference",
+      "view": "MAIN",
+      "rationale": "Separate probe reference: Prime P12 · probe input candidate · alternative to Z-min on shared socket 7 · J31.3 · GND → Original 8-pin limit / probe peripheral · alternative to Z-min on shared socket 7 · 1 · GND. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Pinned source lists an E-stop while planning text also asks for one at the machine. Retain or engineer independent spindle/motion energy inhibition; no firmware-only safe stop is promised. Socket rear-view pin7 is Z-min/probe and pin1 GND; its saved configuration disables Z-min, so a new probe assignment requires firmware and physical fitment checks. Sensor socket pin 7 is shared Z-min/probe: select one function in firmware and wiring. Do not install both Z-min and probe signal routes simultaneously.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · inputs.kicad_sch",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/inputs.kicad_sch",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "Shapeoko 2 pinned revision 16813",
+          "url": "https://wiki.raumzeitlabor.de/index.php?title=Shapeoko_2&oldid=16813",
+          "claim": "Documents the machine component/function; new interface wiring requires the stated fitted-device checks."
+        }
+      ]
+    },
+    {
+      "id": "C13-003",
+      "panel_index": 12,
+      "edge_index": 2,
+      "from": "Identified machine E-stop hardware · Stop-chain contact A · identify",
+      "to": "Independent hardware spindle/motion inhibition · Monitored stop-loop input",
+      "state": "OPEN",
+      "function": "Independent emergency-stop input",
+      "view": "MAIN",
+      "rationale": "Independent emergency-stop input: Identified machine E-stop hardware · Stop-chain contact A · identify → Independent hardware spindle/motion inhibition · Monitored stop-loop input. The fitted interface or electrical contract is unresolved. The broken path is a boundary to identify, not a wire to install.",
+      "qualification": "Pinned source lists an E-stop while planning text also asks for one at the machine. Retain or engineer independent spindle/motion energy inhibition; no firmware-only safe stop is promised. Socket rear-view pin7 is Z-min/probe and pin1 GND; its saved configuration disables Z-min, so a new probe assignment requires firmware and physical fitment checks. Sensor socket pin 7 is shared Z-min/probe: select one function in firmware and wiring. Do not install both Z-min and probe signal routes simultaneously.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · inputs.kicad_sch",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/inputs.kicad_sch",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "Shapeoko 2 pinned revision 16813",
+          "url": "https://wiki.raumzeitlabor.de/index.php?title=Shapeoko_2&oldid=16813",
+          "claim": "Documents the machine component/function; new interface wiring requires the stated fitted-device checks."
+        }
+      ]
+    },
+    {
+      "id": "C13-004",
+      "panel_index": 12,
+      "edge_index": 3,
+      "from": "Identified machine E-stop hardware · Stop-chain contact B · identify",
+      "to": "Independent hardware spindle/motion inhibition · Monitored stop-loop return",
+      "state": "OPEN",
+      "function": "Emergency-stop loop return",
+      "view": "MAIN",
+      "rationale": "Emergency-stop loop return: Identified machine E-stop hardware · Stop-chain contact B · identify → Independent hardware spindle/motion inhibition · Monitored stop-loop return. The fitted interface or electrical contract is unresolved. The broken path is a boundary to identify, not a wire to install.",
+      "qualification": "Pinned source lists an E-stop while planning text also asks for one at the machine. Retain or engineer independent spindle/motion energy inhibition; no firmware-only safe stop is promised. Socket rear-view pin7 is Z-min/probe and pin1 GND; its saved configuration disables Z-min, so a new probe assignment requires firmware and physical fitment checks. Sensor socket pin 7 is shared Z-min/probe: select one function in firmware and wiring. Do not install both Z-min and probe signal routes simultaneously.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · inputs.kicad_sch",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/inputs.kicad_sch",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "Shapeoko 2 pinned revision 16813",
+          "url": "https://wiki.raumzeitlabor.de/index.php?title=Shapeoko_2&oldid=16813",
+          "claim": "Documents the machine component/function; new interface wiring requires the stated fitted-device checks."
+        }
+      ]
+    },
+    {
+      "id": "C14-001",
+      "panel_index": 13,
+      "edge_index": 0,
+      "from": "2014 tutorial PSU30353-03 · 48V DC reference only · 48V output positive · confirm actual supply terminal",
+      "to": "Exact 2014 pictured speed controller · not all Quiet Cut variants · AC/DC input · photo48V pair red-lead position",
+      "state": "GUESS",
+      "function": "48V DC supply → pictured AC/DC input",
+      "view": "MAIN",
+      "rationale": "48V DC supply → pictured AC/DC input: 2014 tutorial PSU30353-03 · 48V DC reference only · 48V output positive · confirm actual supply terminal → Exact 2014 pictured speed controller · not all Quiet Cut variants · AC/DC input · photo48V pair red-lead position. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Conditional 2014 photographed-unit reference only; identify exact fitted speed controller, spindle and ratings. Preserve existing safety/protection and do not substitute later X-Carve hardware.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · smoothiev2-prime.kicad_pcb",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/smoothiev2-prime.kicad_pcb",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "Inventables David Ditzler 2014-07-08 tutorial, original photographs; text recovered through RSS mirror",
+          "url": "https://blog.inventables.com/2014/07/shapeoko-upgrade-quiet-cut-spindle-with.html",
+          "claim": "Exact pictured historical power and spindle pairs only; fitted hardware and electrical interface remain unqualified."
+        },
+        {
+          "title": "TI SN74AHCT125 SCLS264R February 2024",
+          "url": "https://www.ti.com/lit/ds/symlink/sn74ahct125.pdf",
+          "claim": "N-package fourteen-pin functions and recommended supply/input conditions; no receiving controller qualification."
+        }
+      ]
+    },
+    {
+      "id": "C14-002",
+      "panel_index": 13,
+      "edge_index": 1,
+      "from": "2014 tutorial PSU30353-03 · 48V DC reference only · 48V output return · confirm actual supply terminal",
+      "to": "Exact 2014 pictured speed controller · not all Quiet Cut variants · AC/DC input · photo48V pair black-lead position",
+      "state": "GUESS",
+      "function": "48V DC return → pictured AC/DC input",
+      "view": "MAIN",
+      "rationale": "48V DC return → pictured AC/DC input: 2014 tutorial PSU30353-03 · 48V DC reference only · 48V output return · confirm actual supply terminal → Exact 2014 pictured speed controller · not all Quiet Cut variants · AC/DC input · photo48V pair black-lead position. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Conditional 2014 photographed-unit reference only; identify exact fitted speed controller, spindle and ratings. Preserve existing safety/protection and do not substitute later X-Carve hardware.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · smoothiev2-prime.kicad_pcb",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/smoothiev2-prime.kicad_pcb",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "Inventables David Ditzler 2014-07-08 tutorial, original photographs; text recovered through RSS mirror",
+          "url": "https://blog.inventables.com/2014/07/shapeoko-upgrade-quiet-cut-spindle-with.html",
+          "claim": "Exact pictured historical power and spindle pairs only; fitted hardware and electrical interface remain unqualified."
+        },
+        {
+          "title": "TI SN74AHCT125 SCLS264R February 2024",
+          "url": "https://www.ti.com/lit/ds/symlink/sn74ahct125.pdf",
+          "claim": "N-package fourteen-pin functions and recommended supply/input conditions; no receiving controller qualification."
+        }
+      ]
+    },
+    {
+      "id": "C14-003",
+      "panel_index": 13,
+      "edge_index": 2,
+      "from": "Exact 2014 pictured speed controller · not all Quiet Cut variants · Spindle output positive · photo red lead",
+      "to": "Matched Quiet Cut DC spindle · Red positive motor lead · verify fitted cable",
+      "state": "GUESS",
+      "function": "Spindle output positive → red motor lead",
+      "view": "MAIN",
+      "rationale": "Spindle output positive → red motor lead: Exact 2014 pictured speed controller · not all Quiet Cut variants · Spindle output positive · photo red lead → Matched Quiet Cut DC spindle · Red positive motor lead · verify fitted cable. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Conditional 2014 photographed-unit reference only; identify exact fitted speed controller, spindle and ratings. Preserve existing safety/protection and do not substitute later X-Carve hardware.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · smoothiev2-prime.kicad_pcb",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/smoothiev2-prime.kicad_pcb",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "Inventables David Ditzler 2014-07-08 tutorial, original photographs; text recovered through RSS mirror",
+          "url": "https://blog.inventables.com/2014/07/shapeoko-upgrade-quiet-cut-spindle-with.html",
+          "claim": "Exact pictured historical power and spindle pairs only; fitted hardware and electrical interface remain unqualified."
+        },
+        {
+          "title": "TI SN74AHCT125 SCLS264R February 2024",
+          "url": "https://www.ti.com/lit/ds/symlink/sn74ahct125.pdf",
+          "claim": "N-package fourteen-pin functions and recommended supply/input conditions; no receiving controller qualification."
+        }
+      ]
+    },
+    {
+      "id": "C14-004",
+      "panel_index": 13,
+      "edge_index": 3,
+      "from": "Exact 2014 pictured speed controller · not all Quiet Cut variants · Spindle output negative · photo black lead",
+      "to": "Matched Quiet Cut DC spindle · Black negative motor lead · verify fitted cable",
+      "state": "GUESS",
+      "function": "Spindle output negative → black motor lead",
+      "view": "MAIN",
+      "rationale": "Spindle output negative → black motor lead: Exact 2014 pictured speed controller · not all Quiet Cut variants · Spindle output negative · photo black lead → Matched Quiet Cut DC spindle · Black negative motor lead · verify fitted cable. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Conditional 2014 photographed-unit reference only; identify exact fitted speed controller, spindle and ratings. Preserve existing safety/protection and do not substitute later X-Carve hardware.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · smoothiev2-prime.kicad_pcb",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/smoothiev2-prime.kicad_pcb",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "Inventables David Ditzler 2014-07-08 tutorial, original photographs; text recovered through RSS mirror",
+          "url": "https://blog.inventables.com/2014/07/shapeoko-upgrade-quiet-cut-spindle-with.html",
+          "claim": "Exact pictured historical power and spindle pairs only; fitted hardware and electrical interface remain unqualified."
+        },
+        {
+          "title": "TI SN74AHCT125 SCLS264R February 2024",
+          "url": "https://www.ti.com/lit/ds/symlink/sn74ahct125.pdf",
+          "claim": "N-package fourteen-pin functions and recommended supply/input conditions; no receiving controller qualification."
+        }
+      ]
+    }
+  ],
+  "main_visible_connections": [
+    "C01-001",
+    "C01-002",
+    "C02-001",
+    "C02-002",
+    "C03-001",
+    "C03-002",
+    "C04-001",
+    "C04-002",
+    "C05-001",
+    "C05-002",
+    "C06-001",
+    "C06-002",
+    "C07-001",
+    "C07-002",
+    "C08-001",
+    "C08-002",
+    "C08-003",
+    "C08-004",
+    "C09-001",
+    "C09-002",
+    "C09-003",
+    "C09-004",
+    "C10-001",
+    "C10-002",
+    "C10-003",
+    "C10-004",
+    "C11-001",
+    "C11-002",
+    "C11-003",
+    "C11-004",
+    "C12-001",
+    "C12-002",
+    "C12-003",
+    "C12-004",
+    "C12-005",
+    "C13-001",
+    "C13-002",
+    "C13-003",
+    "C13-004",
+    "C14-001",
+    "C14-002",
+    "C14-003",
+    "C14-004"
+  ],
+  "detailed_only_connections": [
+    "C15-001",
+    "C15-002",
+    "C15-003",
+    "C15-004",
+    "C15-005",
+    "C15-006",
+    "C15-007",
+    "C15-008",
+    "C15-009",
+    "C15-010",
+    "C15-011",
+    "C15-012",
+    "C15-013",
+    "C15-014",
+    "C15-015",
+    "C15-016",
+    "C15-017"
+  ],
+  "main_route_manifest": [
+    {
+      "connection_id": "C01-001",
+      "display_label": "X min endstop signal",
+      "state": "guess",
+      "electrical_role": "signal",
+      "color": "#128c68",
+      "display_form": "wire",
+      "visual_evidence_style": "dotted",
+      "points": [
+        [
+          3300.0,
+          1140.75
+        ],
+        [
+          3082.0,
+          1140.75
+        ],
+        [
+          3082.0,
+          3169.15
+        ],
+        [
+          995.0006454111267,
+          3169.15
+        ],
+        [
+          995.0006454111267,
+          4737.218594294566
+        ]
+      ],
+      "paths": [
+        "M3300 1140.75 H3090 Q3082 1140.75 3082 1148.75 V3161.15 Q3082 3169.15 3074 3169.15 H1003.00065 Q995.000645 3169.15 995.000645 3177.15 V4737.21859"
+      ],
+      "visible_caption_required": true,
+      "caption_status": "GUESS — proposed, unverified",
+      "panel_index": 0,
+      "diagram_variant": "current",
+      "graph_state": "guess",
+      "render_state": "guess",
+      "role_basis": "fallback-signal-review",
+      "net_id": "panel-1:switch.signal",
+      "graph_net_id": "panel-1:switch.signal",
+      "from_endpoint": "switch.signal",
+      "to_endpoint": "core.signal",
+      "from_contact_label": "8-pin contact 2 · X min",
+      "to_contact_label": "J24.3 · input",
+      "from_device": "X min limit · traced switch",
+      "to_device": "Prime P12 · X min endstop",
+      "from_controller_reference": null,
+      "to_controller_reference": "J24.3",
+      "from_geometry": "device-contact",
+      "to_geometry": "sourced-controller",
+      "junctions_and_crossings": [],
+      "router_expansions": 1773,
+      "main_selected": true
+    },
+    {
+      "connection_id": "C01-002",
+      "display_label": "X min endstop GND",
+      "state": "guess",
+      "electrical_role": "ground",
+      "color": "#111717",
+      "display_form": "wire",
+      "visual_evidence_style": "dotted",
+      "points": [
+        [
+          1054.01703885375,
+          4737.218594294566
+        ],
+        [
+          1054.01703885375,
+          3730.45
+        ],
+        [
+          3193.0,
+          3730.45
+        ],
+        [
+          3193.0,
+          1258.75
+        ],
+        [
+          3300.0,
+          1258.75
+        ]
+      ],
+      "paths": [
+        "M1054.01704 4737.21859 V3738.45 Q1054.01704 3730.45 1062.01704 3730.45 H3185 Q3193 3730.45 3193 3722.45 V1266.75 Q3193 1258.75 3201 1258.75 H3300"
+      ],
+      "visible_caption_required": true,
+      "caption_status": "GUESS — proposed, unverified",
+      "panel_index": 0,
+      "diagram_variant": "current",
+      "graph_state": "guess",
+      "render_state": "guess",
+      "role_basis": "function-inferred",
+      "net_id": "controller:J24.2",
+      "graph_net_id": "controller:J24.2",
+      "from_endpoint": "core.ground",
+      "to_endpoint": "switch.ground",
+      "from_contact_label": "J24.2 · GND",
+      "to_contact_label": "8-pin sensor socket contact 1 · GND",
+      "from_device": "Prime P12 · X min endstop",
+      "to_device": "X min limit · traced switch",
+      "from_controller_reference": "J24.2",
+      "to_controller_reference": null,
+      "from_geometry": "sourced-controller",
+      "to_geometry": "device-contact",
+      "junctions_and_crossings": [],
+      "router_expansions": 1276,
+      "main_selected": true
+    },
+    {
+      "connection_id": "C02-001",
+      "display_label": "X max endstop signal",
+      "state": "guess",
+      "electrical_role": "signal",
+      "color": "#128c68",
+      "display_form": "wire",
+      "visual_evidence_style": "dotted",
+      "points": [
+        [
+          4250.0,
+          1140.75
+        ],
+        [
+          4032.0,
+          1140.75
+        ],
+        [
+          4032.0,
+          2167.75
+        ],
+        [
+          3211.0,
+          2167.75
+        ],
+        [
+          3211.0,
+          3905.825409836066
+        ],
+        [
+          1470.758228991868,
+          3905.825409836066
+        ],
+        [
+          1470.758228991868,
+          4494.825409836066
+        ],
+        [
+          1202.9521104943847,
+          4494.825409836066
+        ],
+        [
+          1202.9521104943847,
+          4737.218594294566
+        ]
+      ],
+      "paths": [
+        "M4250 1140.75 H4040 Q4032 1140.75 4032 1148.75 V2159.75 Q4032 2167.75 4024 2167.75 H3219 Q3211 2167.75 3211 2175.75 V3897.82541 Q3211 3905.82541 3203 3905.82541 H1478.75823 Q1470.75823 3905.82541 1470.75823 3913.82541 V4486.82541 Q1470.75823 4494.82541 1462.75823 4494.82541 H1210.95211 Q1202.95211 4494.82541 1202.95211 4502.82541 V4737.21859"
+      ],
+      "visible_caption_required": true,
+      "caption_status": "GUESS — proposed, unverified",
+      "panel_index": 1,
+      "diagram_variant": "current",
+      "graph_state": "guess",
+      "render_state": "guess",
+      "role_basis": "fallback-signal-review",
+      "net_id": "panel-2:switch.signal",
+      "graph_net_id": "panel-2:switch.signal",
+      "from_endpoint": "switch.signal",
+      "to_endpoint": "core.signal",
+      "from_contact_label": "8-pin contact 3 · X max",
+      "to_contact_label": "J25.3 · input",
+      "from_device": "X max limit · traced switch",
+      "to_device": "Prime P12 · X max endstop",
+      "from_controller_reference": null,
+      "to_controller_reference": "J25.3",
+      "from_geometry": "device-contact",
+      "to_geometry": "sourced-controller",
+      "junctions_and_crossings": [],
+      "router_expansions": 2003,
+      "main_selected": true
+    },
+    {
+      "connection_id": "C02-002",
+      "display_label": "X max endstop GND",
+      "state": "guess",
+      "electrical_role": "ground",
+      "color": "#111717",
+      "display_form": "wire",
+      "visual_evidence_style": "dotted",
+      "points": [
+        [
+          1261.9685039370079,
+          4737.218594294566
+        ],
+        [
+          1261.9685039370079,
+          4512.825409836066
+        ],
+        [
+          1400.0,
+          4512.825409836066
+        ],
+        [
+          1400.0,
+          4529.825409836066
+        ],
+        [
+          1598.5315606041045,
+          4529.825409836066
+        ],
+        [
+          1598.5315606041045,
+          4312.825409836066
+        ],
+        [
+          2494.968503937008,
+          4312.825409836066
+        ],
+        [
+          2494.968503937008,
+          4216.825409836066
+        ],
+        [
+          3643.0,
+          4216.825409836066
+        ],
+        [
+          3643.0,
+          1741.15
+        ],
+        [
+          4143.0,
+          1741.15
+        ],
+        [
+          4143.0,
+          1258.75
+        ],
+        [
+          4250.0,
+          1258.75
+        ]
+      ],
+      "paths": [
+        "M1261.9685 4737.21859 V4520.82541 Q1261.9685 4512.82541 1269.9685 4512.82541 H1392 Q1400 4512.82541 1400 4520.82541 V4521.82541 Q1400 4529.82541 1408 4529.82541 H1590.53156 Q1598.53156 4529.82541 1598.53156 4521.82541 V4320.82541 Q1598.53156 4312.82541 1606.53156 4312.82541 H2486.9685 Q2494.9685 4312.82541 2494.9685 4304.82541 V4224.82541 Q2494.9685 4216.82541 2502.9685 4216.82541 H3635 Q3643 4216.82541 3643 4208.82541 V1749.15 Q3643 1741.15 3651 1741.15 H4135 Q4143 1741.15 4143 1733.15 V1266.75 Q4143 1258.75 4151 1258.75 H4250"
+      ],
+      "visible_caption_required": true,
+      "caption_status": "GUESS — proposed, unverified",
+      "panel_index": 1,
+      "diagram_variant": "current",
+      "graph_state": "guess",
+      "render_state": "guess",
+      "role_basis": "function-inferred",
+      "net_id": "controller:J25.2",
+      "graph_net_id": "controller:J25.2",
+      "from_endpoint": "core.ground",
+      "to_endpoint": "switch.ground",
+      "from_contact_label": "J25.2 · GND",
+      "to_contact_label": "8-pin sensor socket contact 1 · GND",
+      "from_device": "Prime P12 · X max endstop",
+      "to_device": "X max limit · traced switch",
+      "from_controller_reference": "J25.2",
+      "to_controller_reference": null,
+      "from_geometry": "sourced-controller",
+      "to_geometry": "device-contact",
+      "junctions_and_crossings": [
+        {
+          "point": [
+            1261.9685039370079,
+            4512.825409836066
+          ],
+          "other": "C02-002-source-escape",
+          "junction": true
+        },
+        {
+          "point": [
+            1409.7418355492446,
+            4529.825409836066
+          ],
+          "other": "planned-controller:J26.3",
+          "junction": false
+        },
+        {
+          "point": [
+            3643.0,
+            2167.75
+          ],
+          "other": "C02-001",
+          "junction": false
+        },
+        {
+          "point": [
+            4032.0,
+            1741.15
+          ],
+          "other": "C02-001",
+          "junction": false
+        }
+      ],
+      "router_expansions": 4733,
+      "main_selected": true
+    },
+    {
+      "connection_id": "C03-001",
+      "display_label": "Y min endstop signal",
+      "state": "guess",
+      "electrical_role": "signal",
+      "color": "#128c68",
+      "display_form": "wire",
+      "visual_evidence_style": "dotted",
+      "points": [
+        [
+          5650.0,
+          1140.75
+        ],
+        [
+          5457.0,
+          1140.75
+        ],
+        [
+          5457.0,
+          4266.825409836066
+        ],
+        [
+          2828.968503937008,
+          4266.825409836066
+        ],
+        [
+          2828.968503937008,
+          4529.825409836066
+        ],
+        [
+          2300.0,
+          4529.825409836066
+        ],
+        [
+          2300.0,
+          4511.825409836066
+        ],
+        [
+          1409.7418355492446,
+          4511.825409836066
+        ],
+        [
+          1409.7418355492446,
+          4737.218594294566
+        ]
+      ],
+      "paths": [
+        "M5650 1140.75 H5465 Q5457 1140.75 5457 1148.75 V4258.82541 Q5457 4266.82541 5449 4266.82541 H2836.9685 Q2828.9685 4266.82541 2828.9685 4274.82541 V4521.82541 Q2828.9685 4529.82541 2820.9685 4529.82541 H2308 Q2300 4529.82541 2300 4521.82541 V4519.82541 Q2300 4511.82541 2292 4511.82541 H1417.74184 Q1409.74184 4511.82541 1409.74184 4519.82541 V4737.21859"
+      ],
+      "visible_caption_required": true,
+      "caption_status": "GUESS — proposed, unverified",
+      "panel_index": 2,
+      "diagram_variant": "current",
+      "graph_state": "guess",
+      "render_state": "guess",
+      "role_basis": "fallback-signal-review",
+      "net_id": "panel-3:switch.signal",
+      "graph_net_id": "panel-3:switch.signal",
+      "from_endpoint": "switch.signal",
+      "to_endpoint": "core.signal",
+      "from_contact_label": "8-pin contact 4 · Y min",
+      "to_contact_label": "J26.3 · input",
+      "from_device": "Y min limit · traced switch",
+      "to_device": "Prime P12 · Y min endstop",
+      "from_controller_reference": null,
+      "to_controller_reference": "J26.3",
+      "from_geometry": "device-contact",
+      "to_geometry": "sourced-controller",
+      "junctions_and_crossings": [
+        {
+          "point": [
+            1598.5315606041045,
+            4511.825409836066
+          ],
+          "other": "C02-002",
+          "junction": false
+        }
+      ],
+      "router_expansions": 5271,
+      "main_selected": true
+    },
+    {
+      "connection_id": "C03-002",
+      "display_label": "Y min endstop GND",
+      "state": "guess",
+      "electrical_role": "ground",
+      "color": "#111717",
+      "display_form": "wire",
+      "visual_evidence_style": "dotted",
+      "points": [
+        [
+          1468.758228991868,
+          4737.218594294566
+        ],
+        [
+          1468.758228991868,
+          4512.825409836066
+        ],
+        [
+          1580.5315606041045,
+          4512.825409836066
+        ],
+        [
+          1580.5315606041045,
+          4494.825409836066
+        ],
+        [
+          2494.968503937008,
+          4494.825409836066
+        ],
+        [
+          2494.968503937008,
+          4530.825409836066
+        ],
+        [
+          4393.0,
+          4530.825409836066
+        ],
+        [
+          4393.0,
+          4284.825409836066
+        ],
+        [
+          5543.0,
+          4284.825409836066
+        ],
+        [
+          5543.0,
+          1258.75
+        ],
+        [
+          5650.0,
+          1258.75
+        ]
+      ],
+      "paths": [
+        "M1468.75823 4737.21859 V4520.82541 Q1468.75823 4512.82541 1476.75823 4512.82541 H1572.53156 Q1580.53156 4512.82541 1580.53156 4504.82541 V4502.82541 Q1580.53156 4494.82541 1588.53156 4494.82541 H2486.9685 Q2494.9685 4494.82541 2494.9685 4502.82541 V4522.82541 Q2494.9685 4530.82541 2502.9685 4530.82541 H4385 Q4393 4530.82541 4393 4522.82541 V4292.82541 Q4393 4284.82541 4401 4284.82541 H5535 Q5543 4284.82541 5543 4276.82541 V1266.75 Q5543 1258.75 5551 1258.75 H5650"
+      ],
+      "visible_caption_required": true,
+      "caption_status": "GUESS — proposed, unverified",
+      "panel_index": 2,
+      "diagram_variant": "current",
+      "graph_state": "guess",
+      "render_state": "guess",
+      "role_basis": "function-inferred",
+      "net_id": "controller:J26.2",
+      "graph_net_id": "controller:J26.2",
+      "from_endpoint": "core.ground",
+      "to_endpoint": "switch.ground",
+      "from_contact_label": "J26.2 · GND",
+      "to_contact_label": "8-pin sensor socket contact 1 · GND",
+      "from_device": "Prime P12 · Y min endstop",
+      "to_device": "Y min limit · traced switch",
+      "from_controller_reference": "J26.2",
+      "to_controller_reference": null,
+      "from_geometry": "sourced-controller",
+      "to_geometry": "device-contact",
+      "junctions_and_crossings": [
+        {
+          "point": [
+            1468.758228991868,
+            4512.825409836066
+          ],
+          "other": "C03-002-source-escape",
+          "junction": true
+        },
+        {
+          "point": [
+            1580.5315606041045,
+            4511.825409836066
+          ],
+          "other": "C03-001",
+          "junction": false
+        },
+        {
+          "point": [
+            1598.5315606041045,
+            4494.825409836066
+          ],
+          "other": "C02-002",
+          "junction": false
+        },
+        {
+          "point": [
+            2494.968503937008,
+            4529.825409836066
+          ],
+          "other": "C03-001",
+          "junction": false
+        }
+      ],
+      "router_expansions": 6033,
+      "main_selected": true
+    },
+    {
+      "connection_id": "C04-001",
+      "display_label": "Y max endstop signal",
+      "state": "guess",
+      "electrical_role": "signal",
+      "color": "#128c68",
+      "display_form": "wire",
+      "visual_evidence_style": "dotted",
+      "points": [
+        [
+          7050.0,
+          1140.75
+        ],
+        [
+          6382.0,
+          1140.75
+        ],
+        [
+          6382.0,
+          2167.75
+        ],
+        [
+          4507.0,
+          2167.75
+        ],
+        [
+          4507.0,
+          4264.825409836066
+        ],
+        [
+          1824.5913256744543,
+          4264.825409836066
+        ],
+        [
+          1824.5913256744543,
+          4493.825409836066
+        ],
+        [
+          1616.5315606041045,
+          4493.825409836066
+        ],
+        [
+          1616.5315606041045,
+          4737.218594294566
+        ]
+      ],
+      "paths": [
+        "M7050 1140.75 H6390 Q6382 1140.75 6382 1148.75 V2159.75 Q6382 2167.75 6374 2167.75 H4515 Q4507 2167.75 4507 2175.75 V4256.82541 Q4507 4264.82541 4499 4264.82541 H1832.59133 Q1824.59133 4264.82541 1824.59133 4272.82541 V4485.82541 Q1824.59133 4493.82541 1816.59133 4493.82541 H1624.53156 Q1616.53156 4493.82541 1616.53156 4501.82541 V4737.21859"
+      ],
+      "visible_caption_required": true,
+      "caption_status": "GUESS — proposed, unverified",
+      "panel_index": 3,
+      "diagram_variant": "current",
+      "graph_state": "guess",
+      "render_state": "guess",
+      "role_basis": "fallback-signal-review",
+      "net_id": "panel-4:switch.signal",
+      "graph_net_id": "panel-4:switch.signal",
+      "from_endpoint": "switch.signal",
+      "to_endpoint": "core.signal",
+      "from_contact_label": "8-pin contact 5 · Y max",
+      "to_contact_label": "J27.3 · input",
+      "from_device": "Y max limit · traced switch",
+      "to_device": "Prime P12 · Y max endstop",
+      "from_controller_reference": null,
+      "to_controller_reference": "J27.3",
+      "from_geometry": "device-contact",
+      "to_geometry": "sourced-controller",
+      "junctions_and_crossings": [
+        {
+          "point": [
+            5457.0,
+            2167.75
+          ],
+          "other": "C03-001",
+          "junction": false
+        },
+        {
+          "point": [
+            5543.0,
+            2167.75
+          ],
+          "other": "C03-002",
+          "junction": false
+        },
+        {
+          "point": [
+            2494.968503937008,
+            4264.825409836066
+          ],
+          "other": "C02-002",
+          "junction": false
+        },
+        {
+          "point": [
+            1824.5913256744543,
+            4312.825409836066
+          ],
+          "other": "C02-002",
+          "junction": false
+        },
+        {
+          "point": [
+            1616.5315606041045,
+            4511.825409836066
+          ],
+          "other": "C03-001",
+          "junction": false
+        },
+        {
+          "point": [
+            1616.5315606041045,
+            4494.825409836066
+          ],
+          "other": "C03-002",
+          "junction": false
+        }
+      ],
+      "router_expansions": 11792,
+      "main_selected": true
+    },
+    {
+      "connection_id": "C04-002",
+      "display_label": "Y max endstop GND",
+      "state": "guess",
+      "electrical_role": "ground",
+      "color": "#111717",
+      "display_form": "wire",
+      "visual_evidence_style": "dotted",
+      "points": [
+        [
+          1675.5479540467281,
+          4737.218594294566
+        ],
+        [
+          1675.5479540467281,
+          4512.825409836066
+        ],
+        [
+          1806.5913256744543,
+          4512.825409836066
+        ],
+        [
+          1806.5913256744543,
+          4537.825409836066
+        ],
+        [
+          4375.0,
+          4537.825409836066
+        ],
+        [
+          4375.0,
+          4282.825409836066
+        ],
+        [
+          5525.0,
+          4282.825409836066
+        ],
+        [
+          5525.0,
+          1741.15
+        ],
+        [
+          6943.0,
+          1741.15
+        ],
+        [
+          6943.0,
+          1258.75
+        ],
+        [
+          7050.0,
+          1258.75
+        ]
+      ],
+      "paths": [
+        "M1675.54795 4737.21859 V4520.82541 Q1675.54795 4512.82541 1683.54795 4512.82541 H1798.59133 Q1806.59133 4512.82541 1806.59133 4520.82541 V4529.82541 Q1806.59133 4537.82541 1814.59133 4537.82541 H4367 Q4375 4537.82541 4375 4529.82541 V4290.82541 Q4375 4282.82541 4383 4282.82541 H5517 Q5525 4282.82541 5525 4274.82541 V1749.15 Q5525 1741.15 5533 1741.15 H6935 Q6943 1741.15 6943 1733.15 V1266.75 Q6943 1258.75 6951 1258.75 H7050"
+      ],
+      "visible_caption_required": true,
+      "caption_status": "GUESS — proposed, unverified",
+      "panel_index": 3,
+      "diagram_variant": "current",
+      "graph_state": "guess",
+      "render_state": "guess",
+      "role_basis": "function-inferred",
+      "net_id": "controller:J27.2",
+      "graph_net_id": "controller:J27.2",
+      "from_endpoint": "core.ground",
+      "to_endpoint": "switch.ground",
+      "from_contact_label": "J27.2 · GND",
+      "to_contact_label": "8-pin sensor socket contact 1 · GND",
+      "from_device": "Prime P12 · Y max endstop",
+      "to_device": "Y max limit · traced switch",
+      "from_controller_reference": "J27.2",
+      "to_controller_reference": null,
+      "from_geometry": "sourced-controller",
+      "to_geometry": "device-contact",
+      "junctions_and_crossings": [
+        {
+          "point": [
+            1675.5479540467281,
+            4512.825409836066
+          ],
+          "other": "C04-002-source-escape",
+          "junction": true
+        },
+        {
+          "point": [
+            2296.149477216987,
+            4537.825409836066
+          ],
+          "other": "planned-controller:J31.3",
+          "junction": false
+        },
+        {
+          "point": [
+            1823.3212856589648,
+            4537.825409836066
+          ],
+          "other": "planned-controller:J28.3",
+          "junction": false
+        },
+        {
+          "point": [
+            2028.9492706854264,
+            4537.825409836066
+          ],
+          "other": "planned-controller:J29.3",
+          "junction": false
+        },
+        {
+          "point": [
+            2237.1330837743644,
+            4537.825409836066
+          ],
+          "other": "planned-controller:J31.4",
+          "junction": false
+        },
+        {
+          "point": [
+            4375.0,
+            4530.825409836066
+          ],
+          "other": "C03-002",
+          "junction": false
+        },
+        {
+          "point": [
+            5525.0,
+            2167.75
+          ],
+          "other": "C04-001",
+          "junction": false
+        },
+        {
+          "point": [
+            5543.0,
+            1741.15
+          ],
+          "other": "C03-002",
+          "junction": false
+        },
+        {
+          "point": [
+            6382.0,
+            1741.15
+          ],
+          "other": "C04-001",
+          "junction": false
+        }
+      ],
+      "router_expansions": 10305,
+      "main_selected": true
+    },
+    {
+      "connection_id": "C05-001",
+      "display_label": "Z min / probe endstop signal",
+      "state": "guess",
+      "electrical_role": "signal",
+      "color": "#128c68",
+      "display_form": "wire",
+      "visual_evidence_style": "dotted",
+      "points": [
+        [
+          1925.0,
+          2568.75
+        ],
+        [
+          1818.0,
+          2568.75
+        ],
+        [
+          1818.0,
+          4097.825409836066
+        ],
+        [
+          1839.0,
+          4097.825409836066
+        ],
+        [
+          1839.0,
+          4512.825409836066
+        ],
+        [
+          1823.3212856589648,
+          4512.825409836066
+        ],
+        [
+          1823.3212856589648,
+          4737.218594294566
+        ]
+      ],
+      "paths": [
+        "M1925 2568.75 H1826 Q1818 2568.75 1818 2576.75 V4089.82541 Q1818 4097.82541 1826 4097.82541 H1831 Q1839 4097.82541 1839 4105.82541 V4504.98605 Q1839 4512.82541 1831.16064 4512.82541 Q1823.32129 4512.82541 1823.32129 4520.66477 V4737.21859"
+      ],
+      "visible_caption_required": true,
+      "caption_status": "GUESS — proposed, unverified",
+      "panel_index": 4,
+      "diagram_variant": "current",
+      "graph_state": "guess",
+      "render_state": "guess",
+      "role_basis": "fallback-signal-review",
+      "net_id": "panel-5:switch.signal",
+      "graph_net_id": "panel-5:switch.signal",
+      "from_endpoint": "switch.signal",
+      "to_endpoint": "core.signal",
+      "from_contact_label": "8-pin contact 7 · mode-dependent",
+      "to_contact_label": "J28.3 · input",
+      "from_device": "Z min / probe limit · traced switch · alternative to Z-min on shared socket 7",
+      "to_device": "Prime P12 · Z min / probe endstop · alternative to Z-min on shared socket 7",
+      "from_controller_reference": null,
+      "to_controller_reference": "J28.3",
+      "from_geometry": "device-contact",
+      "to_geometry": "sourced-controller",
+      "junctions_and_crossings": [
+        {
+          "point": [
+            1818.0,
+            3169.15
+          ],
+          "other": "C01-001",
+          "junction": false
+        },
+        {
+          "point": [
+            1818.0,
+            3730.45
+          ],
+          "other": "C01-002",
+          "junction": false
+        },
+        {
+          "point": [
+            1818.0,
+            3905.825409836066
+          ],
+          "other": "C02-001",
+          "junction": false
+        },
+        {
+          "point": [
+            1839.0,
+            4312.825409836066
+          ],
+          "other": "C02-002",
+          "junction": false
+        },
+        {
+          "point": [
+            1839.0,
+            4511.825409836066
+          ],
+          "other": "C03-001",
+          "junction": false
+        },
+        {
+          "point": [
+            1839.0,
+            4494.825409836066
+          ],
+          "other": "C03-002",
+          "junction": false
+        },
+        {
+          "point": [
+            1839.0,
+            4264.825409836066
+          ],
+          "other": "C04-001",
+          "junction": false
+        },
+        {
+          "point": [
+            1823.3212856589648,
+            4512.825409836066
+          ],
+          "other": "planned-controller:J28.3",
+          "junction": true
+        },
+        {
+          "point": [
+            1823.3212856589648,
+            4512.825409836066
+          ],
+          "other": "C05-001-target-escape",
+          "junction": true
+        }
+      ],
+      "router_expansions": 2840,
+      "main_selected": true
+    },
+    {
+      "connection_id": "C05-002",
+      "display_label": "Z min / probe endstop GND",
+      "state": "guess",
+      "electrical_role": "ground",
+      "color": "#111717",
+      "display_form": "wire",
+      "visual_evidence_style": "dotted",
+      "points": [
+        [
+          1882.3376791015876,
+          4737.218594294566
+        ],
+        [
+          1882.3376791015876,
+          3145.15
+        ],
+        [
+          1806.5913256744543,
+          3145.15
+        ],
+        [
+          1806.5913256744543,
+          2686.75
+        ],
+        [
+          1925.0,
+          2686.75
+        ]
+      ],
+      "paths": [
+        "M1882.33768 4737.21859 V3153.15 Q1882.33768 3145.15 1874.33768 3145.15 H1814.59133 Q1806.59133 3145.15 1806.59133 3137.15 V2694.75 Q1806.59133 2686.75 1814.59133 2686.75 H1925"
+      ],
+      "visible_caption_required": true,
+      "caption_status": "GUESS — proposed, unverified",
+      "panel_index": 4,
+      "diagram_variant": "current",
+      "graph_state": "guess",
+      "render_state": "guess",
+      "role_basis": "function-inferred",
+      "net_id": "controller:J28.2",
+      "graph_net_id": "controller:J28.2",
+      "from_endpoint": "core.ground",
+      "to_endpoint": "switch.ground",
+      "from_contact_label": "J28.2 · GND",
+      "to_contact_label": "8-pin sensor socket contact 1 · GND",
+      "from_device": "Prime P12 · Z min / probe endstop · alternative to Z-min on shared socket 7",
+      "to_device": "Z min / probe limit · traced switch · alternative to Z-min on shared socket 7",
+      "from_controller_reference": "J28.2",
+      "to_controller_reference": null,
+      "from_geometry": "sourced-controller",
+      "to_geometry": "device-contact",
+      "junctions_and_crossings": [
+        {
+          "point": [
+            1882.3376791015876,
+            3169.15
+          ],
+          "other": "C01-001",
+          "junction": false
+        },
+        {
+          "point": [
+            1882.3376791015876,
+            3730.45
+          ],
+          "other": "C01-002",
+          "junction": false
+        },
+        {
+          "point": [
+            1882.3376791015876,
+            3905.825409836066
+          ],
+          "other": "C02-001",
+          "junction": false
+        },
+        {
+          "point": [
+            1882.3376791015876,
+            4312.825409836066
+          ],
+          "other": "C02-002",
+          "junction": false
+        },
+        {
+          "point": [
+            1882.3376791015876,
+            4511.825409836066
+          ],
+          "other": "C03-001",
+          "junction": false
+        },
+        {
+          "point": [
+            1882.3376791015876,
+            4494.825409836066
+          ],
+          "other": "C03-002",
+          "junction": false
+        },
+        {
+          "point": [
+            1882.3376791015876,
+            4264.825409836066
+          ],
+          "other": "C04-001",
+          "junction": false
+        },
+        {
+          "point": [
+            1818.0,
+            3145.15
+          ],
+          "other": "C05-001",
+          "junction": false
+        },
+        {
+          "point": [
+            1818.0,
+            2686.75
+          ],
+          "other": "C05-001",
+          "junction": false
+        }
+      ],
+      "router_expansions": 2723,
+      "main_selected": true
+    },
+    {
+      "connection_id": "C06-001",
+      "display_label": "Z max endstop signal",
+      "state": "guess",
+      "electrical_role": "signal",
+      "color": "#128c68",
+      "display_form": "wire",
+      "visual_evidence_style": "dotted",
+      "points": [
+        [
+          4725.0,
+          2568.75
+        ],
+        [
+          4525.0,
+          2568.75
+        ],
+        [
+          4525.0,
+          4248.825409836066
+        ],
+        [
+          2254.96566412805,
+          4248.825409836066
+        ],
+        [
+          2254.96566412805,
+          4493.825409836066
+        ],
+        [
+          2028.9492706854264,
+          4493.825409836066
+        ],
+        [
+          2028.9492706854264,
+          4737.218594294566
+        ]
+      ],
+      "paths": [
+        "M4725 2568.75 H4533 Q4525 2568.75 4525 2576.75 V4240.82541 Q4525 4248.82541 4517 4248.82541 H2262.96566 Q2254.96566 4248.82541 2254.96566 4256.82541 V4485.82541 Q2254.96566 4493.82541 2246.96566 4493.82541 H2036.94927 Q2028.94927 4493.82541 2028.94927 4501.82541 V4737.21859"
+      ],
+      "visible_caption_required": true,
+      "caption_status": "GUESS — proposed, unverified",
+      "panel_index": 5,
+      "diagram_variant": "current",
+      "graph_state": "guess",
+      "render_state": "guess",
+      "role_basis": "fallback-signal-review",
+      "net_id": "panel-6:switch.signal",
+      "graph_net_id": "panel-6:switch.signal",
+      "from_endpoint": "switch.signal",
+      "to_endpoint": "core.signal",
+      "from_contact_label": "8-pin contact 6 · Z max",
+      "to_contact_label": "J29.3 · input",
+      "from_device": "Z max limit · traced switch",
+      "to_device": "Prime P12 · Z max endstop",
+      "from_controller_reference": null,
+      "to_controller_reference": "J29.3",
+      "from_geometry": "device-contact",
+      "to_geometry": "sourced-controller",
+      "junctions_and_crossings": [
+        {
+          "point": [
+            2494.968503937008,
+            4248.825409836066
+          ],
+          "other": "C02-002",
+          "junction": false
+        },
+        {
+          "point": [
+            4507.0,
+            4248.825409836066
+          ],
+          "other": "C04-001",
+          "junction": false
+        },
+        {
+          "point": [
+            2254.96566412805,
+            4312.825409836066
+          ],
+          "other": "C02-002",
+          "junction": false
+        },
+        {
+          "point": [
+            2254.96566412805,
+            4264.825409836066
+          ],
+          "other": "C04-001",
+          "junction": false
+        },
+        {
+          "point": [
+            2028.9492706854264,
+            4511.825409836066
+          ],
+          "other": "C03-001",
+          "junction": false
+        },
+        {
+          "point": [
+            2028.9492706854264,
+            4494.825409836066
+          ],
+          "other": "C03-002",
+          "junction": false
+        }
+      ],
+      "router_expansions": 6607,
+      "main_selected": true
+    },
+    {
+      "connection_id": "C06-002",
+      "display_label": "Z max endstop GND",
+      "state": "guess",
+      "electrical_role": "ground",
+      "color": "#111717",
+      "display_form": "wire",
+      "visual_evidence_style": "dotted",
+      "points": [
+        [
+          2087.96566412805,
+          4737.218594294566
+        ],
+        [
+          2087.96566412805,
+          4512.825409836066
+        ],
+        [
+          2236.96566412805,
+          4512.825409836066
+        ],
+        [
+          2236.96566412805,
+          4519.825409836066
+        ],
+        [
+          2294.149477216987,
+          4519.825409836066
+        ],
+        [
+          2294.149477216987,
+          4230.825409836066
+        ],
+        [
+          4618.0,
+          4230.825409836066
+        ],
+        [
+          4618.0,
+          2686.75
+        ],
+        [
+          4725.0,
+          2686.75
+        ]
+      ],
+      "paths": [
+        "M2087.96566 4737.21859 V4520.82541 Q2087.96566 4512.82541 2095.96566 4512.82541 H2233.46566 Q2236.96566 4512.82541 2236.96566 4516.32541 Q2236.96566 4519.82541 2240.46566 4519.82541 H2286.14948 Q2294.14948 4519.82541 2294.14948 4511.82541 V4238.82541 Q2294.14948 4230.82541 2302.14948 4230.82541 H4610 Q4618 4230.82541 4618 4222.82541 V2694.75 Q4618 2686.75 4626 2686.75 H4725"
+      ],
+      "visible_caption_required": true,
+      "caption_status": "GUESS — proposed, unverified",
+      "panel_index": 5,
+      "diagram_variant": "current",
+      "graph_state": "guess",
+      "render_state": "guess",
+      "role_basis": "function-inferred",
+      "net_id": "controller:J29.2",
+      "graph_net_id": "controller:J29.2",
+      "from_endpoint": "core.ground",
+      "to_endpoint": "switch.ground",
+      "from_contact_label": "J29.2 · GND",
+      "to_contact_label": "8-pin sensor socket contact 1 · GND",
+      "from_device": "Prime P12 · Z max endstop",
+      "to_device": "Z max limit · traced switch",
+      "from_controller_reference": "J29.2",
+      "to_controller_reference": null,
+      "from_geometry": "sourced-controller",
+      "to_geometry": "device-contact",
+      "junctions_and_crossings": [
+        {
+          "point": [
+            2087.96566412805,
+            4512.825409836066
+          ],
+          "other": "C06-002-source-escape",
+          "junction": true
+        },
+        {
+          "point": [
+            2237.1330837743644,
+            4519.825409836066
+          ],
+          "other": "planned-controller:J31.4",
+          "junction": false
+        },
+        {
+          "point": [
+            2294.149477216987,
+            4312.825409836066
+          ],
+          "other": "C02-002",
+          "junction": false
+        },
+        {
+          "point": [
+            2294.149477216987,
+            4511.825409836066
+          ],
+          "other": "C03-001",
+          "junction": false
+        },
+        {
+          "point": [
+            2294.149477216987,
+            4494.825409836066
+          ],
+          "other": "C03-002",
+          "junction": false
+        },
+        {
+          "point": [
+            2294.149477216987,
+            4264.825409836066
+          ],
+          "other": "C04-001",
+          "junction": false
+        },
+        {
+          "point": [
+            2294.149477216987,
+            4248.825409836066
+          ],
+          "other": "C06-001",
+          "junction": false
+        },
+        {
+          "point": [
+            2494.968503937008,
+            4230.825409836066
+          ],
+          "other": "C02-002",
+          "junction": false
+        },
+        {
+          "point": [
+            4507.0,
+            4230.825409836066
+          ],
+          "other": "C04-001",
+          "junction": false
+        },
+        {
+          "point": [
+            4525.0,
+            4230.825409836066
+          ],
+          "other": "C06-001",
+          "junction": false
+        }
+      ],
+      "router_expansions": 5602,
+      "main_selected": true
+    },
+    {
+      "connection_id": "C07-001",
+      "display_label": "J35.6 · PWM",
+      "state": "open",
+      "electrical_role": "control",
+      "color": "#6550b1",
+      "display_form": "open-boundary",
+      "points": [],
+      "paths": [
+        "M1928.57 5573.67 L1928.57 5551.67",
+        "M3775.00 2568.75 L3753.00 2568.75"
+      ],
+      "visible_stub_segments": [
+        [
+          [
+            1928.5749322318316,
+            5573.67141474119
+          ],
+          [
+            1928.5749322318316,
+            5551.67141474119
+          ]
+        ],
+        [
+          [
+            3775.0,
+            2568.75
+          ],
+          [
+            3753.0,
+            2568.75
+          ]
+        ]
+      ],
+      "open_terminal_ids": {
+        "from": "controller:J35.6",
+        "to": "panel-7:machine.speed"
+      },
+      "open_endpoint_context": {
+        "from": {
+          "terminal_id": "controller:J35.6",
+          "anchor": [
+            1928.5749322318316,
+            5573.67141474119
+          ],
+          "disposition": "visible-open-stub"
+        },
+        "to": {
+          "terminal_id": "panel-7:machine.speed",
+          "anchor": [
+            3775.0,
+            2568.75
+          ],
+          "disposition": "visible-open-stub"
+        }
+      },
+      "reused_terminal_context": [],
+      "from_anchor": [
+        1928.5749322318316,
+        5573.67141474119
+      ],
+      "to_anchor": [
+        3775.0,
+        2568.75
+      ],
+      "visible_caption_required": true,
+      "caption_status": "OPEN — no wire to install; terminals are not joined",
+      "panel_index": 6,
+      "diagram_variant": "current",
+      "graph_state": "open",
+      "render_state": "open",
+      "open_reason": "authored-open",
+      "role_basis": "function-inferred",
+      "net_id": null,
+      "graph_net_id": null,
+      "from_endpoint": "core.pwm",
+      "to_endpoint": "machine.speed",
+      "from_contact_label": "J35.6 · PWM",
+      "to_contact_label": "PWM screw terminal · signal",
+      "from_device": "V2 Prime P12 · proposed signals",
+      "to_device": "Inventables Quiet Cut speed control",
+      "from_controller_reference": "J35.6",
+      "to_controller_reference": null,
+      "from_geometry": "sourced-controller",
+      "to_geometry": "device-contact",
+      "junctions_and_crossings": [],
+      "router_expansions": 0,
+      "main_selected": true,
+      "external_conductor": false
+    },
+    {
+      "connection_id": "C07-002",
+      "display_label": "J35.10 · GND",
+      "state": "open",
+      "electrical_role": "ground",
+      "color": "#111717",
+      "display_form": "open-boundary",
+      "points": [],
+      "paths": [
+        "M1987.59 5573.67 L2009.59 5573.67",
+        "M3775.00 2686.75 L3753.00 2686.75"
+      ],
+      "visible_stub_segments": [
+        [
+          [
+            1987.5913256744543,
+            5573.67141474119
+          ],
+          [
+            2009.5913256744543,
+            5573.67141474119
+          ]
+        ],
+        [
+          [
+            3775.0,
+            2686.75
+          ],
+          [
+            3753.0,
+            2686.75
+          ]
+        ]
+      ],
+      "open_terminal_ids": {
+        "from": "controller:J35.10",
+        "to": "panel-7:machine.return"
+      },
+      "open_endpoint_context": {
+        "from": {
+          "terminal_id": "controller:J35.10",
+          "anchor": [
+            1987.5913256744543,
+            5573.67141474119
+          ],
+          "disposition": "visible-open-stub"
+        },
+        "to": {
+          "terminal_id": "panel-7:machine.return",
+          "anchor": [
+            3775.0,
+            2686.75
+          ],
+          "disposition": "visible-open-stub"
+        }
+      },
+      "reused_terminal_context": [],
+      "from_anchor": [
+        1987.5913256744543,
+        5573.67141474119
+      ],
+      "to_anchor": [
+        3775.0,
+        2686.75
+      ],
+      "visible_caption_required": true,
+      "caption_status": "OPEN — no wire to install; terminals are not joined",
+      "panel_index": 6,
+      "diagram_variant": "current",
+      "graph_state": "open",
+      "render_state": "open",
+      "open_reason": "authored-open",
+      "role_basis": "function-inferred",
+      "net_id": null,
+      "graph_net_id": null,
+      "from_endpoint": "core.gnd",
+      "to_endpoint": "machine.return",
+      "from_contact_label": "J35.10 · GND",
+      "to_contact_label": "PWM screw terminal · GND",
+      "from_device": "V2 Prime P12 · proposed signals",
+      "to_device": "Inventables Quiet Cut speed control",
+      "from_controller_reference": "J35.10",
+      "to_controller_reference": null,
+      "from_geometry": "sourced-controller",
+      "to_geometry": "device-contact",
+      "junctions_and_crossings": [],
+      "router_expansions": 0,
+      "main_selected": true,
+      "external_conductor": false
+    },
+    {
+      "connection_id": "C08-001",
+      "display_label": "X motor phase B2",
+      "state": "guess",
+      "electrical_role": "power",
+      "color": "#e2bb00",
+      "display_form": "wire",
+      "visual_evidence_style": "dotted",
+      "points": [
+        [
+          3128.884729572738,
+          5134.533684006712
+        ],
+        [
+          3671.0,
+          5134.533684006712
+        ],
+        [
+          3671.0,
+          4747.45
+        ],
+        [
+          4525.0,
+          4747.45
+        ]
+      ],
+      "paths": [
+        "M3128.88473 5134.53368 H3663 Q3671 5134.53368 3671 5126.53368 V4755.45 Q3671 4747.45 3679 4747.45 H4525"
+      ],
+      "visible_caption_required": true,
+      "caption_status": "GUESS — proposed, unverified",
+      "panel_index": 7,
+      "diagram_variant": "current",
+      "graph_state": "guess",
+      "render_state": "guess",
+      "role_basis": "explicit",
+      "net_id": "controller:J5.1",
+      "graph_net_id": "controller:J5.1",
+      "from_endpoint": "prime.b2",
+      "to_endpoint": "motor.b2",
+      "from_contact_label": "J5.1 · B2",
+      "to_contact_label": "Winding B · lead 2",
+      "from_device": "Prime P12 · X",
+      "to_device": "X · measured winding leads",
+      "from_controller_reference": "J5.1",
+      "to_controller_reference": null,
+      "from_geometry": "sourced-controller",
+      "to_geometry": "device-contact",
+      "junctions_and_crossings": [],
+      "router_expansions": 303,
+      "main_selected": true
+    },
+    {
+      "connection_id": "C08-002",
+      "display_label": "X motor phase B1",
+      "state": "guess",
+      "electrical_role": "power",
+      "color": "#e2bb00",
+      "display_form": "wire",
+      "visual_evidence_style": "dotted",
+      "points": [
+        [
+          3128.884729572738,
+          5053.211882018846
+        ],
+        [
+          3669.0,
+          5053.211882018846
+        ],
+        [
+          3669.0,
+          4818.711882018846
+        ],
+        [
+          4457.0,
+          4818.711882018846
+        ],
+        [
+          4457.0,
+          4865.45
+        ],
+        [
+          4525.0,
+          4865.45
+        ]
+      ],
+      "paths": [
+        "M3128.88473 5053.21188 H3661 Q3669 5053.21188 3669 5045.21188 V4826.71188 Q3669 4818.71188 3677 4818.71188 H4449 Q4457 4818.71188 4457 4826.71188 V4857.45 Q4457 4865.45 4465 4865.45 H4525"
+      ],
+      "visible_caption_required": true,
+      "caption_status": "GUESS — proposed, unverified",
+      "panel_index": 7,
+      "diagram_variant": "current",
+      "graph_state": "guess",
+      "render_state": "guess",
+      "role_basis": "explicit",
+      "net_id": "controller:J5.2",
+      "graph_net_id": "controller:J5.2",
+      "from_endpoint": "prime.b1",
+      "to_endpoint": "motor.b1",
+      "from_contact_label": "J5.2 · B1",
+      "to_contact_label": "Winding B · lead 1",
+      "from_device": "Prime P12 · X",
+      "to_device": "X · measured winding leads",
+      "from_controller_reference": "J5.2",
+      "to_controller_reference": null,
+      "from_geometry": "sourced-controller",
+      "to_geometry": "device-contact",
+      "junctions_and_crossings": [
+        {
+          "point": [
+            3671.0,
+            4818.711882018846
+          ],
+          "other": "C08-001",
+          "junction": false
+        },
+        {
+          "point": [
+            4457.0,
+            4865.45
+          ],
+          "other": "future-device:7:motor.b1",
+          "junction": true
+        },
+        {
+          "point": [
+            4457.0,
+            4865.45
+          ],
+          "other": "C08-002-target-escape",
+          "junction": true
+        }
+      ],
+      "router_expansions": 456,
+      "main_selected": true
+    },
+    {
+      "connection_id": "C08-003",
+      "display_label": "X motor phase A2",
+      "state": "guess",
+      "electrical_role": "power",
+      "color": "#e2bb00",
+      "display_form": "wire",
+      "visual_evidence_style": "dotted",
+      "points": [
+        [
+          3128.884729572738,
+          4971.89008003098
+        ],
+        [
+          3661.0,
+          4971.89008003098
+        ],
+        [
+          3661.0,
+          4800.711882018846
+        ],
+        [
+          4439.0,
+          4800.711882018846
+        ],
+        [
+          4439.0,
+          4983.45
+        ],
+        [
+          4525.0,
+          4983.45
+        ]
+      ],
+      "paths": [
+        "M3128.88473 4971.89008 H3653 Q3661 4971.89008 3661 4963.89008 V4808.71188 Q3661 4800.71188 3669 4800.71188 H4431 Q4439 4800.71188 4439 4808.71188 V4975.45 Q4439 4983.45 4447 4983.45 H4525"
+      ],
+      "visible_caption_required": true,
+      "caption_status": "GUESS — proposed, unverified",
+      "panel_index": 7,
+      "diagram_variant": "current",
+      "graph_state": "guess",
+      "render_state": "guess",
+      "role_basis": "explicit",
+      "net_id": "controller:J5.3",
+      "graph_net_id": "controller:J5.3",
+      "from_endpoint": "prime.a2",
+      "to_endpoint": "motor.a2",
+      "from_contact_label": "J5.3 · A2",
+      "to_contact_label": "Winding A · lead 2",
+      "from_device": "Prime P12 · X",
+      "to_device": "X · measured winding leads",
+      "from_controller_reference": "J5.3",
+      "to_controller_reference": null,
+      "from_geometry": "sourced-controller",
+      "to_geometry": "device-contact",
+      "junctions_and_crossings": [
+        {
+          "point": [
+            3671.0,
+            4800.711882018846
+          ],
+          "other": "C08-001",
+          "junction": false
+        },
+        {
+          "point": [
+            4439.0,
+            4818.711882018846
+          ],
+          "other": "C08-002",
+          "junction": false
+        }
+      ],
+      "router_expansions": 1386,
+      "main_selected": true
+    },
+    {
+      "connection_id": "C08-004",
+      "display_label": "X motor phase A1",
+      "state": "guess",
+      "electrical_role": "power",
+      "color": "#e2bb00",
+      "display_form": "wire",
+      "visual_evidence_style": "dotted",
+      "points": [
+        [
+          3128.884729572738,
+          4890.568278043113
+        ],
+        [
+          3653.0,
+          4890.568278043113
+        ],
+        [
+          3653.0,
+          5287.711882018846
+        ],
+        [
+          4418.0,
+          5287.711882018846
+        ],
+        [
+          4418.0,
+          5101.45
+        ],
+        [
+          4525.0,
+          5101.45
+        ]
+      ],
+      "paths": [
+        "M3128.88473 4890.56828 H3645 Q3653 4890.56828 3653 4898.56828 V5279.71188 Q3653 5287.71188 3661 5287.71188 H4410 Q4418 5287.71188 4418 5279.71188 V5109.45 Q4418 5101.45 4426 5101.45 H4525"
+      ],
+      "visible_caption_required": true,
+      "caption_status": "GUESS — proposed, unverified",
+      "panel_index": 7,
+      "diagram_variant": "current",
+      "graph_state": "guess",
+      "render_state": "guess",
+      "role_basis": "explicit",
+      "net_id": "controller:J5.4",
+      "graph_net_id": "controller:J5.4",
+      "from_endpoint": "prime.a1",
+      "to_endpoint": "motor.a1",
+      "from_contact_label": "J5.4 · A1",
+      "to_contact_label": "Winding A · lead 1",
+      "from_device": "Prime P12 · X",
+      "to_device": "X · measured winding leads",
+      "from_controller_reference": "J5.4",
+      "to_controller_reference": null,
+      "from_geometry": "sourced-controller",
+      "to_geometry": "device-contact",
+      "junctions_and_crossings": [
+        {
+          "point": [
+            3653.0,
+            5134.533684006712
+          ],
+          "other": "C08-001",
+          "junction": false
+        },
+        {
+          "point": [
+            3653.0,
+            5053.211882018846
+          ],
+          "other": "C08-002",
+          "junction": false
+        },
+        {
+          "point": [
+            3653.0,
+            4971.89008003098
+          ],
+          "other": "C08-003",
+          "junction": false
+        }
+      ],
+      "router_expansions": 1537,
+      "main_selected": true
+    },
+    {
+      "connection_id": "C09-001",
+      "display_label": "Y left motor phase B2",
+      "state": "guess",
+      "electrical_role": "power",
+      "color": "#e2bb00",
+      "display_form": "wire",
+      "visual_evidence_style": "dotted",
+      "points": [
+        [
+          3113.7821092035624,
+          5541.142693946043
+        ],
+        [
+          3671.0,
+          5541.142693946043
+        ],
+        [
+          3671.0,
+          5804.3208919581775
+        ],
+        [
+          5818.0,
+          5804.3208919581775
+        ],
+        [
+          5818.0,
+          4747.45
+        ],
+        [
+          5925.0,
+          4747.45
+        ]
+      ],
+      "paths": [
+        "M3113.78211 5541.14269 H3663 Q3671 5541.14269 3671 5549.14269 V5796.32089 Q3671 5804.32089 3679 5804.32089 H5810 Q5818 5804.32089 5818 5796.32089 V4755.45 Q5818 4747.45 5826 4747.45 H5925"
+      ],
+      "visible_caption_required": true,
+      "caption_status": "GUESS — proposed, unverified",
+      "panel_index": 8,
+      "diagram_variant": "current",
+      "graph_state": "guess",
+      "render_state": "guess",
+      "role_basis": "explicit",
+      "net_id": "controller:J6.1",
+      "graph_net_id": "controller:J6.1",
+      "from_endpoint": "prime.b2",
+      "to_endpoint": "motor.b2",
+      "from_contact_label": "J6.1 · B2",
+      "to_contact_label": "Winding B · lead 2",
+      "from_device": "Prime P12 · Y left",
+      "to_device": "Y left · measured winding leads",
+      "from_controller_reference": "J6.1",
+      "to_controller_reference": null,
+      "from_geometry": "sourced-controller",
+      "to_geometry": "device-contact",
+      "junctions_and_crossings": [],
+      "router_expansions": 4581,
+      "main_selected": true
+    },
+    {
+      "connection_id": "C09-002",
+      "display_label": "Y left motor phase B1",
+      "state": "guess",
+      "electrical_role": "power",
+      "color": "#e2bb00",
+      "display_form": "wire",
+      "visual_evidence_style": "dotted",
+      "points": [
+        [
+          3113.7821092035624,
+          5459.8208919581775
+        ],
+        [
+          3671.0,
+          5459.8208919581775
+        ],
+        [
+          3671.0,
+          5335.3208919581775
+        ],
+        [
+          4393.0,
+          5335.3208919581775
+        ],
+        [
+          4393.0,
+          5759.25
+        ],
+        [
+          5800.0,
+          5759.25
+        ],
+        [
+          5800.0,
+          4865.45
+        ],
+        [
+          5925.0,
+          4865.45
+        ]
+      ],
+      "paths": [
+        "M3113.78211 5459.82089 H3663 Q3671 5459.82089 3671 5451.82089 V5343.32089 Q3671 5335.32089 3679 5335.32089 H4385 Q4393 5335.32089 4393 5343.32089 V5751.25 Q4393 5759.25 4401 5759.25 H5792 Q5800 5759.25 5800 5751.25 V4873.45 Q5800 4865.45 5808 4865.45 H5925"
+      ],
+      "visible_caption_required": true,
+      "caption_status": "GUESS — proposed, unverified",
+      "panel_index": 8,
+      "diagram_variant": "current",
+      "graph_state": "guess",
+      "render_state": "guess",
+      "role_basis": "explicit",
+      "net_id": "controller:J6.2",
+      "graph_net_id": "controller:J6.2",
+      "from_endpoint": "prime.b1",
+      "to_endpoint": "motor.b1",
+      "from_contact_label": "J6.2 · B1",
+      "to_contact_label": "Winding B · lead 1",
+      "from_device": "Prime P12 · Y left",
+      "to_device": "Y left · measured winding leads",
+      "from_controller_reference": "J6.2",
+      "to_controller_reference": null,
+      "from_geometry": "sourced-controller",
+      "to_geometry": "device-contact",
+      "junctions_and_crossings": [
+        {
+          "point": [
+            5818.0,
+            4865.45
+          ],
+          "other": "C09-001",
+          "junction": false
+        }
+      ],
+      "router_expansions": 5511,
+      "main_selected": true
+    },
+    {
+      "connection_id": "C09-003",
+      "display_label": "Y left motor phase A2",
+      "state": "guess",
+      "electrical_role": "power",
+      "color": "#e2bb00",
+      "display_form": "wire",
+      "visual_evidence_style": "dotted",
+      "points": [
+        [
+          3113.7821092035624,
+          5378.499089970312
+        ],
+        [
+          3352.0,
+          5378.499089970312
+        ],
+        [
+          3352.0,
+          5317.3208919581775
+        ],
+        [
+          4375.0,
+          5317.3208919581775
+        ],
+        [
+          4375.0,
+          5768.269839938041
+        ],
+        [
+          5782.0,
+          5768.269839938041
+        ],
+        [
+          5782.0,
+          4983.45
+        ],
+        [
+          5925.0,
+          4983.45
+        ]
+      ],
+      "paths": [
+        "M3113.78211 5378.49909 H3344 Q3352 5378.49909 3352 5370.49909 V5325.32089 Q3352 5317.32089 3360 5317.32089 H4367 Q4375 5317.32089 4375 5325.32089 V5760.26984 Q4375 5768.26984 4383 5768.26984 H5774 Q5782 5768.26984 5782 5760.26984 V4991.45 Q5782 4983.45 5790 4983.45 H5925"
+      ],
+      "visible_caption_required": true,
+      "caption_status": "GUESS — proposed, unverified",
+      "panel_index": 8,
+      "diagram_variant": "current",
+      "graph_state": "guess",
+      "render_state": "guess",
+      "role_basis": "explicit",
+      "net_id": "controller:J6.3",
+      "graph_net_id": "controller:J6.3",
+      "from_endpoint": "prime.a2",
+      "to_endpoint": "motor.a2",
+      "from_contact_label": "J6.3 · A2",
+      "to_contact_label": "Winding A · lead 2",
+      "from_device": "Prime P12 · Y left",
+      "to_device": "Y left · measured winding leads",
+      "from_controller_reference": "J6.3",
+      "to_controller_reference": null,
+      "from_geometry": "sourced-controller",
+      "to_geometry": "device-contact",
+      "junctions_and_crossings": [
+        {
+          "point": [
+            3352.0,
+            5378.499089970312
+          ],
+          "other": "planned-controller:J6.3",
+          "junction": true
+        },
+        {
+          "point": [
+            3352.0,
+            5378.499089970312
+          ],
+          "other": "C09-003-source-escape",
+          "junction": true
+        },
+        {
+          "point": [
+            4375.0,
+            5335.3208919581775
+          ],
+          "other": "C09-002",
+          "junction": false
+        },
+        {
+          "point": [
+            5782.0,
+            5759.25
+          ],
+          "other": "C09-002",
+          "junction": false
+        },
+        {
+          "point": [
+            5818.0,
+            4983.45
+          ],
+          "other": "C09-001",
+          "junction": false
+        },
+        {
+          "point": [
+            5800.0,
+            4983.45
+          ],
+          "other": "C09-002",
+          "junction": false
+        }
+      ],
+      "router_expansions": 6201,
+      "main_selected": true
+    },
+    {
+      "connection_id": "C09-004",
+      "display_label": "Y left motor phase A1",
+      "state": "guess",
+      "electrical_role": "power",
+      "color": "#e2bb00",
+      "display_form": "wire",
+      "visual_evidence_style": "dotted",
+      "points": [
+        [
+          3113.7821092035624,
+          5297.177287982445
+        ],
+        [
+          4357.0,
+          5297.177287982445
+        ],
+        [
+          4357.0,
+          5777.25
+        ],
+        [
+          5764.0,
+          5777.25
+        ],
+        [
+          5764.0,
+          5101.45
+        ],
+        [
+          5925.0,
+          5101.45
+        ]
+      ],
+      "paths": [
+        "M3113.78211 5297.17729 H4349 Q4357 5297.17729 4357 5305.17729 V5769.25 Q4357 5777.25 4365 5777.25 H5756 Q5764 5777.25 5764 5769.25 V5109.45 Q5764 5101.45 5772 5101.45 H5925"
+      ],
+      "visible_caption_required": true,
+      "caption_status": "GUESS — proposed, unverified",
+      "panel_index": 8,
+      "diagram_variant": "current",
+      "graph_state": "guess",
+      "render_state": "guess",
+      "role_basis": "explicit",
+      "net_id": "controller:J6.4",
+      "graph_net_id": "controller:J6.4",
+      "from_endpoint": "prime.a1",
+      "to_endpoint": "motor.a1",
+      "from_contact_label": "J6.4 · A1",
+      "to_contact_label": "Winding A · lead 1",
+      "from_device": "Prime P12 · Y left",
+      "to_device": "Y left · measured winding leads",
+      "from_controller_reference": "J6.4",
+      "to_controller_reference": null,
+      "from_geometry": "sourced-controller",
+      "to_geometry": "device-contact",
+      "junctions_and_crossings": [
+        {
+          "point": [
+            4357.0,
+            5335.3208919581775
+          ],
+          "other": "C09-002",
+          "junction": false
+        },
+        {
+          "point": [
+            4357.0,
+            5317.3208919581775
+          ],
+          "other": "C09-003",
+          "junction": false
+        },
+        {
+          "point": [
+            5764.0,
+            5759.25
+          ],
+          "other": "C09-002",
+          "junction": false
+        },
+        {
+          "point": [
+            5764.0,
+            5768.269839938041
+          ],
+          "other": "C09-003",
+          "junction": false
+        },
+        {
+          "point": [
+            5818.0,
+            5101.45
+          ],
+          "other": "C09-001",
+          "junction": false
+        },
+        {
+          "point": [
+            5800.0,
+            5101.45
+          ],
+          "other": "C09-002",
+          "junction": false
+        },
+        {
+          "point": [
+            5782.0,
+            5101.45
+          ],
+          "other": "C09-003",
+          "junction": false
+        }
+      ],
+      "router_expansions": 7233,
+      "main_selected": true
+    },
+    {
+      "connection_id": "C10-001",
+      "display_label": "Y right motor phase B2",
+      "state": "guess",
+      "electrical_role": "power",
+      "color": "#e2bb00",
+      "display_form": "wire",
+      "visual_evidence_style": "dotted",
+      "points": [
+        [
+          3103.0941009423004,
+          6356.684193881502
+        ],
+        [
+          3671.0,
+          6356.684193881502
+        ],
+        [
+          3671.0,
+          5822.3208919581775
+        ],
+        [
+          6768.0,
+          5822.3208919581775
+        ],
+        [
+          6768.0,
+          4747.45
+        ],
+        [
+          6875.0,
+          4747.45
+        ]
+      ],
+      "paths": [
+        "M3103.0941 6356.68419 H3663 Q3671 6356.68419 3671 6348.68419 V5830.32089 Q3671 5822.32089 3679 5822.32089 H6760 Q6768 5822.32089 6768 5814.32089 V4755.45 Q6768 4747.45 6776 4747.45 H6875"
+      ],
+      "visible_caption_required": true,
+      "caption_status": "GUESS — proposed, unverified",
+      "panel_index": 9,
+      "diagram_variant": "current",
+      "graph_state": "guess",
+      "render_state": "guess",
+      "role_basis": "explicit",
+      "net_id": "controller:J7.1",
+      "graph_net_id": "controller:J7.1",
+      "from_endpoint": "prime.b2",
+      "to_endpoint": "motor.b2",
+      "from_contact_label": "J7.1 · B2",
+      "to_contact_label": "Winding B · lead 2",
+      "from_device": "Prime P12 · Y right",
+      "to_device": "Y right · measured winding leads",
+      "from_controller_reference": "J7.1",
+      "to_controller_reference": null,
+      "from_geometry": "sourced-controller",
+      "to_geometry": "device-contact",
+      "junctions_and_crossings": [],
+      "router_expansions": 1595,
+      "main_selected": true
+    },
+    {
+      "connection_id": "C10-002",
+      "display_label": "Y right motor phase B1",
+      "state": "guess",
+      "electrical_role": "power",
+      "color": "#e2bb00",
+      "display_form": "wire",
+      "visual_evidence_style": "dotted",
+      "points": [
+        [
+          3103.0941009423004,
+          6275.362391893636
+        ],
+        [
+          3669.0,
+          6275.362391893636
+        ],
+        [
+          3669.0,
+          5835.94384277785
+        ],
+        [
+          6750.0,
+          5835.94384277785
+        ],
+        [
+          6750.0,
+          4865.45
+        ],
+        [
+          6875.0,
+          4865.45
+        ]
+      ],
+      "paths": [
+        "M3103.0941 6275.36239 H3661 Q3669 6275.36239 3669 6267.36239 V5843.94384 Q3669 5835.94384 3677 5835.94384 H6742 Q6750 5835.94384 6750 5827.94384 V4873.45 Q6750 4865.45 6758 4865.45 H6875"
+      ],
+      "visible_caption_required": true,
+      "caption_status": "GUESS — proposed, unverified",
+      "panel_index": 9,
+      "diagram_variant": "current",
+      "graph_state": "guess",
+      "render_state": "guess",
+      "role_basis": "explicit",
+      "net_id": "controller:J7.2",
+      "graph_net_id": "controller:J7.2",
+      "from_endpoint": "prime.b1",
+      "to_endpoint": "motor.b1",
+      "from_contact_label": "J7.2 · B1",
+      "to_contact_label": "Winding B · lead 1",
+      "from_device": "Prime P12 · Y right",
+      "to_device": "Y right · measured winding leads",
+      "from_controller_reference": "J7.2",
+      "to_controller_reference": null,
+      "from_geometry": "sourced-controller",
+      "to_geometry": "device-contact",
+      "junctions_and_crossings": [
+        {
+          "point": [
+            3671.0,
+            5835.94384277785
+          ],
+          "other": "C10-001",
+          "junction": false
+        },
+        {
+          "point": [
+            6750.0,
+            5822.3208919581775
+          ],
+          "other": "C10-001",
+          "junction": false
+        },
+        {
+          "point": [
+            6768.0,
+            4865.45
+          ],
+          "other": "C10-001",
+          "junction": false
+        }
+      ],
+      "router_expansions": 4132,
+      "main_selected": true
+    },
+    {
+      "connection_id": "C10-003",
+      "display_label": "Y right motor phase A2",
+      "state": "guess",
+      "electrical_role": "power",
+      "color": "#e2bb00",
+      "display_form": "wire",
+      "visual_evidence_style": "dotted",
+      "points": [
+        [
+          3103.0941009423004,
+          6194.04058990577
+        ],
+        [
+          3370.0,
+          6194.04058990577
+        ],
+        [
+          3370.0,
+          6078.94384277785
+        ],
+        [
+          3335.0,
+          6078.94384277785
+        ],
+        [
+          3335.0,
+          5817.94384277785
+        ],
+        [
+          6732.0,
+          5817.94384277785
+        ],
+        [
+          6732.0,
+          4983.45
+        ],
+        [
+          6875.0,
+          4983.45
+        ]
+      ],
+      "paths": [
+        "M3103.0941 6194.04059 H3362 Q3370 6194.04059 3370 6186.04059 V6086.94384 Q3370 6078.94384 3362 6078.94384 H3343 Q3335 6078.94384 3335 6070.94384 V5825.94384 Q3335 5817.94384 3343 5817.94384 H6724 Q6732 5817.94384 6732 5809.94384 V4991.45 Q6732 4983.45 6740 4983.45 H6875"
+      ],
+      "visible_caption_required": true,
+      "caption_status": "GUESS — proposed, unverified",
+      "panel_index": 9,
+      "diagram_variant": "current",
+      "graph_state": "guess",
+      "render_state": "guess",
+      "role_basis": "explicit",
+      "net_id": "controller:J7.3",
+      "graph_net_id": "controller:J7.3",
+      "from_endpoint": "prime.a2",
+      "to_endpoint": "motor.a2",
+      "from_contact_label": "J7.3 · A2",
+      "to_contact_label": "Winding A · lead 2",
+      "from_device": "Prime P12 · Y right",
+      "to_device": "Y right · measured winding leads",
+      "from_controller_reference": "J7.3",
+      "to_controller_reference": null,
+      "from_geometry": "sourced-controller",
+      "to_geometry": "device-contact",
+      "junctions_and_crossings": [
+        {
+          "point": [
+            6768.0,
+            4983.45
+          ],
+          "other": "C10-001",
+          "junction": false
+        },
+        {
+          "point": [
+            6750.0,
+            4983.45
+          ],
+          "other": "C10-002",
+          "junction": false
+        }
+      ],
+      "router_expansions": 3280,
+      "main_selected": true
+    },
+    {
+      "connection_id": "C10-004",
+      "display_label": "Y right motor phase A1",
+      "state": "guess",
+      "electrical_role": "power",
+      "color": "#e2bb00",
+      "display_form": "wire",
+      "visual_evidence_style": "dotted",
+      "points": [
+        [
+          3103.0941009423004,
+          6112.718787917904
+        ],
+        [
+          3353.0,
+          6112.718787917904
+        ],
+        [
+          3353.0,
+          6509.862391893636
+        ],
+        [
+          4418.0,
+          6509.862391893636
+        ],
+        [
+          4418.0,
+          5840.3208919581775
+        ],
+        [
+          6714.0,
+          5840.3208919581775
+        ],
+        [
+          6714.0,
+          5101.45
+        ],
+        [
+          6875.0,
+          5101.45
+        ]
+      ],
+      "paths": [
+        "M3103.0941 6112.71879 H3345 Q3353 6112.71879 3353 6120.71879 V6501.86239 Q3353 6509.86239 3361 6509.86239 H4410 Q4418 6509.86239 4418 6501.86239 V5848.32089 Q4418 5840.32089 4426 5840.32089 H6706 Q6714 5840.32089 6714 5832.32089 V5109.45 Q6714 5101.45 6722 5101.45 H6875"
+      ],
+      "visible_caption_required": true,
+      "caption_status": "GUESS — proposed, unverified",
+      "panel_index": 9,
+      "diagram_variant": "current",
+      "graph_state": "guess",
+      "render_state": "guess",
+      "role_basis": "explicit",
+      "net_id": "controller:J7.4",
+      "graph_net_id": "controller:J7.4",
+      "from_endpoint": "prime.a1",
+      "to_endpoint": "motor.a1",
+      "from_contact_label": "J7.4 · A1",
+      "to_contact_label": "Winding A · lead 1",
+      "from_device": "Prime P12 · Y right",
+      "to_device": "Y right · measured winding leads",
+      "from_controller_reference": "J7.4",
+      "to_controller_reference": null,
+      "from_geometry": "sourced-controller",
+      "to_geometry": "device-contact",
+      "junctions_and_crossings": [
+        {
+          "point": [
+            3353.0,
+            6356.684193881502
+          ],
+          "other": "C10-001",
+          "junction": false
+        },
+        {
+          "point": [
+            3353.0,
+            6275.362391893636
+          ],
+          "other": "C10-002",
+          "junction": false
+        },
+        {
+          "point": [
+            3353.0,
+            6194.04058990577
+          ],
+          "other": "C10-003",
+          "junction": false
+        },
+        {
+          "point": [
+            6714.0,
+            5822.3208919581775
+          ],
+          "other": "C10-001",
+          "junction": false
+        },
+        {
+          "point": [
+            6714.0,
+            5835.94384277785
+          ],
+          "other": "C10-002",
+          "junction": false
+        },
+        {
+          "point": [
+            6714.0,
+            5817.94384277785
+          ],
+          "other": "C10-003",
+          "junction": false
+        },
+        {
+          "point": [
+            6768.0,
+            5101.45
+          ],
+          "other": "C10-001",
+          "junction": false
+        },
+        {
+          "point": [
+            6750.0,
+            5101.45
+          ],
+          "other": "C10-002",
+          "junction": false
+        },
+        {
+          "point": [
+            6732.0,
+            5101.45
+          ],
+          "other": "C10-003",
+          "junction": false
+        }
+      ],
+      "router_expansions": 9014,
+      "main_selected": true
+    },
+    {
+      "connection_id": "C11-001",
+      "display_label": "Z motor phase B2",
+      "state": "guess",
+      "electrical_role": "power",
+      "color": "#e2bb00",
+      "display_form": "wire",
+      "visual_evidence_style": "dotted",
+      "points": [
+        [
+          3107.044017038854,
+          6908.278359364916
+        ],
+        [
+          3352.0,
+          6908.278359364916
+        ],
+        [
+          3352.0,
+          7460.25
+        ],
+        [
+          6293.0,
+          7460.25
+        ],
+        [
+          6293.0,
+          6246.25
+        ],
+        [
+          6400.0,
+          6246.25
+        ]
+      ],
+      "paths": [
+        "M3107.04402 6908.27836 H3344 Q3352 6908.27836 3352 6916.27836 V7452.25 Q3352 7460.25 3360 7460.25 H6285 Q6293 7460.25 6293 7452.25 V6254.25 Q6293 6246.25 6301 6246.25 H6400"
+      ],
+      "visible_caption_required": true,
+      "caption_status": "GUESS — proposed, unverified",
+      "panel_index": 10,
+      "diagram_variant": "current",
+      "graph_state": "guess",
+      "render_state": "guess",
+      "role_basis": "explicit",
+      "net_id": "controller:J8.1",
+      "graph_net_id": "controller:J8.1",
+      "from_endpoint": "prime.b2",
+      "to_endpoint": "motor.b2",
+      "from_contact_label": "J8.1 · B2",
+      "to_contact_label": "Winding B · lead 2",
+      "from_device": "Prime P12 · Z",
+      "to_device": "Z · measured winding leads",
+      "from_controller_reference": "J8.1",
+      "to_controller_reference": null,
+      "from_geometry": "sourced-controller",
+      "to_geometry": "device-contact",
+      "junctions_and_crossings": [
+        {
+          "point": [
+            3352.0,
+            6908.278359364916
+          ],
+          "other": "planned-controller:J8.1",
+          "junction": true
+        },
+        {
+          "point": [
+            3352.0,
+            6908.278359364916
+          ],
+          "other": "C11-001-source-escape",
+          "junction": true
+        }
+      ],
+      "router_expansions": 3750,
+      "main_selected": true
+    },
+    {
+      "connection_id": "C11-002",
+      "display_label": "Z motor phase B1",
+      "state": "guess",
+      "electrical_role": "power",
+      "color": "#e2bb00",
+      "display_form": "wire",
+      "visual_evidence_style": "dotted",
+      "points": [
+        [
+          3107.044017038854,
+          6826.956557377049
+        ],
+        [
+          3671.0,
+          6826.956557377049
+        ],
+        [
+          3671.0,
+          6527.862391893636
+        ],
+        [
+          4411.0,
+          6527.862391893636
+        ],
+        [
+          4411.0,
+          5845.25
+        ],
+        [
+          6293.0,
+          5845.25
+        ],
+        [
+          6293.0,
+          6228.25
+        ],
+        [
+          6315.0,
+          6228.25
+        ],
+        [
+          6315.0,
+          6364.25
+        ],
+        [
+          6400.0,
+          6364.25
+        ]
+      ],
+      "paths": [
+        "M3107.04402 6826.95656 H3663 Q3671 6826.95656 3671 6818.95656 V6535.86239 Q3671 6527.86239 3679 6527.86239 H4403 Q4411 6527.86239 4411 6519.86239 V5853.25 Q4411 5845.25 4419 5845.25 H6285 Q6293 5845.25 6293 5853.25 V6220.25 Q6293 6228.25 6301 6228.25 H6307 Q6315 6228.25 6315 6236.25 V6356.25 Q6315 6364.25 6323 6364.25 H6400"
+      ],
+      "visible_caption_required": true,
+      "caption_status": "GUESS — proposed, unverified",
+      "panel_index": 10,
+      "diagram_variant": "current",
+      "graph_state": "guess",
+      "render_state": "guess",
+      "role_basis": "explicit",
+      "net_id": "controller:J8.2",
+      "graph_net_id": "controller:J8.2",
+      "from_endpoint": "prime.b1",
+      "to_endpoint": "motor.b1",
+      "from_contact_label": "J8.2 · B1",
+      "to_contact_label": "Winding B · lead 1",
+      "from_device": "Prime P12 · Z",
+      "to_device": "Z · measured winding leads",
+      "from_controller_reference": "J8.2",
+      "to_controller_reference": null,
+      "from_geometry": "sourced-controller",
+      "to_geometry": "device-contact",
+      "junctions_and_crossings": [
+        {
+          "point": [
+            4411.0,
+            6509.862391893636
+          ],
+          "other": "C10-004",
+          "junction": false
+        },
+        {
+          "point": [
+            4418.0,
+            5845.25
+          ],
+          "other": "C10-004",
+          "junction": false
+        },
+        {
+          "point": [
+            6315.0,
+            6246.25
+          ],
+          "other": "C11-001",
+          "junction": false
+        }
+      ],
+      "router_expansions": 4212,
+      "main_selected": true
+    },
+    {
+      "connection_id": "C11-003",
+      "display_label": "Z motor phase A2",
+      "state": "guess",
+      "electrical_role": "power",
+      "color": "#e2bb00",
+      "display_form": "wire",
+      "visual_evidence_style": "dotted",
+      "points": [
+        [
+          3107.044017038854,
+          6745.634755389183
+        ],
+        [
+          3669.0,
+          6745.634755389183
+        ],
+        [
+          3669.0,
+          7478.25
+        ],
+        [
+          6279.0,
+          7478.25
+        ],
+        [
+          6279.0,
+          6482.25
+        ],
+        [
+          6400.0,
+          6482.25
+        ]
+      ],
+      "paths": [
+        "M3107.04402 6745.63476 H3661 Q3669 6745.63476 3669 6753.63476 V7470.25 Q3669 7478.25 3677 7478.25 H6271 Q6279 7478.25 6279 7470.25 V6490.25 Q6279 6482.25 6287 6482.25 H6400"
+      ],
+      "visible_caption_required": true,
+      "caption_status": "GUESS — proposed, unverified",
+      "panel_index": 10,
+      "diagram_variant": "current",
+      "graph_state": "guess",
+      "render_state": "guess",
+      "role_basis": "explicit",
+      "net_id": "controller:J8.3",
+      "graph_net_id": "controller:J8.3",
+      "from_endpoint": "prime.a2",
+      "to_endpoint": "motor.a2",
+      "from_contact_label": "J8.3 · A2",
+      "to_contact_label": "Winding A · lead 2",
+      "from_device": "Prime P12 · Z",
+      "to_device": "Z · measured winding leads",
+      "from_controller_reference": "J8.3",
+      "to_controller_reference": null,
+      "from_geometry": "sourced-controller",
+      "to_geometry": "device-contact",
+      "junctions_and_crossings": [
+        {
+          "point": [
+            3669.0,
+            7460.25
+          ],
+          "other": "C11-001",
+          "junction": false
+        },
+        {
+          "point": [
+            3669.0,
+            6826.956557377049
+          ],
+          "other": "C11-002",
+          "junction": false
+        },
+        {
+          "point": [
+            6279.0,
+            7460.25
+          ],
+          "other": "C11-001",
+          "junction": false
+        },
+        {
+          "point": [
+            6293.0,
+            6482.25
+          ],
+          "other": "C11-001",
+          "junction": false
+        }
+      ],
+      "router_expansions": 4814,
+      "main_selected": true
+    },
+    {
+      "connection_id": "C11-004",
+      "display_label": "Z motor phase A1",
+      "state": "guess",
+      "electrical_role": "power",
+      "color": "#e2bb00",
+      "display_form": "wire",
+      "visual_evidence_style": "dotted",
+      "points": [
+        [
+          3107.044017038854,
+          6664.312953401317
+        ],
+        [
+          3661.0,
+          6664.312953401317
+        ],
+        [
+          3661.0,
+          7496.25
+        ],
+        [
+          6275.0,
+          7496.25
+        ],
+        [
+          6275.0,
+          6600.25
+        ],
+        [
+          6400.0,
+          6600.25
+        ]
+      ],
+      "paths": [
+        "M3107.04402 6664.31295 H3653 Q3661 6664.31295 3661 6672.31295 V7488.25 Q3661 7496.25 3669 7496.25 H6267 Q6275 7496.25 6275 7488.25 V6608.25 Q6275 6600.25 6283 6600.25 H6400"
+      ],
+      "visible_caption_required": true,
+      "caption_status": "GUESS — proposed, unverified",
+      "panel_index": 10,
+      "diagram_variant": "current",
+      "graph_state": "guess",
+      "render_state": "guess",
+      "role_basis": "explicit",
+      "net_id": "controller:J8.4",
+      "graph_net_id": "controller:J8.4",
+      "from_endpoint": "prime.a1",
+      "to_endpoint": "motor.a1",
+      "from_contact_label": "J8.4 · A1",
+      "to_contact_label": "Winding A · lead 1",
+      "from_device": "Prime P12 · Z",
+      "to_device": "Z · measured winding leads",
+      "from_controller_reference": "J8.4",
+      "to_controller_reference": null,
+      "from_geometry": "sourced-controller",
+      "to_geometry": "device-contact",
+      "junctions_and_crossings": [
+        {
+          "point": [
+            3661.0,
+            7460.25
+          ],
+          "other": "C11-001",
+          "junction": false
+        },
+        {
+          "point": [
+            3661.0,
+            6826.956557377049
+          ],
+          "other": "C11-002",
+          "junction": false
+        },
+        {
+          "point": [
+            3661.0,
+            6745.634755389183
+          ],
+          "other": "C11-003",
+          "junction": false
+        },
+        {
+          "point": [
+            6275.0,
+            7460.25
+          ],
+          "other": "C11-001",
+          "junction": false
+        },
+        {
+          "point": [
+            6275.0,
+            7478.25
+          ],
+          "other": "C11-003",
+          "junction": false
+        },
+        {
+          "point": [
+            6293.0,
+            6600.25
+          ],
+          "other": "C11-001",
+          "junction": false
+        },
+        {
+          "point": [
+            6279.0,
+            6600.25
+          ],
+          "other": "C11-003",
+          "junction": false
+        }
+      ],
+      "router_expansions": 6205,
+      "main_selected": true
+    },
+    {
+      "connection_id": "C12-001",
+      "display_label": "Prime regulated logic supply",
+      "state": "guess",
+      "electrical_role": "five",
+      "color": "#d76a00",
+      "display_form": "wire",
+      "visual_evidence_style": "dotted",
+      "points": [
+        [
+          5150.0,
+          6246.25
+        ],
+        [
+          5236.0,
+          6246.25
+        ],
+        [
+          5236.0,
+          6912.25
+        ],
+        [
+          4005.0,
+          6912.25
+        ],
+        [
+          4005.0,
+          7268.874590163934
+        ],
+        [
+          585.0,
+          7268.874590163934
+        ],
+        [
+          585.0,
+          6374.684193881502
+        ],
+        [
+          568.0,
+          6374.684193881502
+        ],
+        [
+          568.0,
+          6362.492894023493
+        ],
+        [
+          950.3898283206404,
+          6362.492894023493
+        ]
+      ],
+      "paths": [
+        "M5150 6246.25 H5228 Q5236 6246.25 5236 6254.25 V6904.25 Q5236 6912.25 5228 6912.25 H4013 Q4005 6912.25 4005 6920.25 V7260.87459 Q4005 7268.87459 3997 7268.87459 H593 Q585 7268.87459 585 7260.87459 V6382.68419 Q585 6374.68419 577 6374.68419 H574.09565 Q568 6374.68419 568 6368.58854 Q568 6362.49289 574.09565 6362.49289 H950.389828"
+      ],
+      "visible_caption_required": true,
+      "caption_status": "GUESS — proposed, unverified",
+      "panel_index": 11,
+      "diagram_variant": "current",
+      "graph_state": "guess",
+      "render_state": "guess",
+      "role_basis": "positive-source-endpoint",
+      "net_id": "panel-12:logic.v",
+      "graph_net_id": "panel-12:logic.v",
+      "from_endpoint": "logic.v",
+      "to_endpoint": "prime.v5",
+      "from_contact_label": "+5 V regulated",
+      "to_contact_label": "J42.1 · 5V_PORTIN",
+      "from_device": "Regulated 5 V logic supply",
+      "to_device": "Prime P12 · confirm exact revision",
+      "from_controller_reference": null,
+      "to_controller_reference": "J42.1",
+      "from_geometry": "device-contact",
+      "to_geometry": "sourced-controller",
+      "junctions_and_crossings": [
+        {
+          "point": [
+            3352.0,
+            7268.874590163934
+          ],
+          "other": "C11-001",
+          "junction": false
+        },
+        {
+          "point": [
+            3669.0,
+            7268.874590163934
+          ],
+          "other": "C11-003",
+          "junction": false
+        },
+        {
+          "point": [
+            3661.0,
+            7268.874590163934
+          ],
+          "other": "C11-004",
+          "junction": false
+        },
+        {
+          "point": [
+            568.0,
+            6362.492894023493
+          ],
+          "other": "planned-controller:J42.1",
+          "junction": true
+        },
+        {
+          "point": [
+            568.0,
+            6362.492894023493
+          ],
+          "other": "C12-001-target-escape",
+          "junction": true
+        }
+      ],
+      "router_expansions": 6853,
+      "main_selected": true
+    },
+    {
+      "connection_id": "C12-002",
+      "display_label": "Prime logic supply return",
+      "state": "guess",
+      "electrical_role": "ground",
+      "color": "#111717",
+      "display_form": "wire",
+      "visual_evidence_style": "dotted",
+      "points": [
+        [
+          5150.0,
+          6364.25
+        ],
+        [
+          5218.0,
+          6364.25
+        ],
+        [
+          5218.0,
+          6682.312953401317
+        ],
+        [
+          5195.0,
+          6682.312953401317
+        ],
+        [
+          5195.0,
+          6907.25
+        ],
+        [
+          4014.0,
+          6907.25
+        ],
+        [
+          4014.0,
+          7286.874590163934
+        ],
+        [
+          586.0,
+          7286.874590163934
+        ],
+        [
+          586.0,
+          6326.492894023493
+        ],
+        [
+          568.0,
+          6326.492894023493
+        ],
+        [
+          568.0,
+          6308.492894023493
+        ],
+        [
+          1031.7116303085068,
+          6308.492894023493
+        ],
+        [
+          1031.7116303085068,
+          6362.492894023493
+        ]
+      ],
+      "paths": [
+        "M5150 6364.25 H5210 Q5218 6364.25 5218 6372.25 V6674.31295 Q5218 6682.31295 5210 6682.31295 H5203 Q5195 6682.31295 5195 6690.31295 V6899.25 Q5195 6907.25 5187 6907.25 H4022 Q4014 6907.25 4014 6915.25 V7278.87459 Q4014 7286.87459 4006 7286.87459 H594 Q586 7286.87459 586 7278.87459 V6334.49289 Q586 6326.49289 578 6326.49289 H576 Q568 6326.49289 568 6318.49289 V6316.49289 Q568 6308.49289 576 6308.49289 H1023.71163 Q1031.71163 6308.49289 1031.71163 6316.49289 V6362.49289"
+      ],
+      "visible_caption_required": true,
+      "caption_status": "GUESS — proposed, unverified",
+      "panel_index": 11,
+      "diagram_variant": "current",
+      "graph_state": "guess",
+      "render_state": "guess",
+      "role_basis": "function-inferred",
+      "net_id": "panel-12:logic.g",
+      "graph_net_id": "panel-12:logic.g",
+      "from_endpoint": "logic.g",
+      "to_endpoint": "prime.lg",
+      "from_contact_label": "0 V logic return",
+      "to_contact_label": "J42.2 · GND",
+      "from_device": "Regulated 5 V logic supply",
+      "to_device": "Prime P12 · confirm exact revision",
+      "from_controller_reference": null,
+      "to_controller_reference": "J42.2",
+      "from_geometry": "device-contact",
+      "to_geometry": "sourced-controller",
+      "junctions_and_crossings": [
+        {
+          "point": [
+            5218.0,
+            6364.25
+          ],
+          "other": "C12-002-source-escape",
+          "junction": true
+        },
+        {
+          "point": [
+            5195.0,
+            6685.25
+          ],
+          "other": "future-device:11:motor.v",
+          "junction": false
+        },
+        {
+          "point": [
+            4014.0,
+            6912.25
+          ],
+          "other": "C12-001",
+          "junction": false
+        },
+        {
+          "point": [
+            3352.0,
+            7286.874590163934
+          ],
+          "other": "C11-001",
+          "junction": false
+        },
+        {
+          "point": [
+            3669.0,
+            7286.874590163934
+          ],
+          "other": "C11-003",
+          "junction": false
+        },
+        {
+          "point": [
+            3661.0,
+            7286.874590163934
+          ],
+          "other": "C11-004",
+          "junction": false
+        },
+        {
+          "point": [
+            586.0,
+            6362.492894023493
+          ],
+          "other": "planned-controller:J42.1",
+          "junction": false
+        },
+        {
+          "point": [
+            586.0,
+            7268.874590163934
+          ],
+          "other": "C12-001",
+          "junction": false
+        },
+        {
+          "point": [
+            586.0,
+            6362.492894023493
+          ],
+          "other": "C12-001",
+          "junction": false
+        },
+        {
+          "point": [
+            568.0,
+            6308.492894023493
+          ],
+          "other": "C12-002-target-escape",
+          "junction": true
+        }
+      ],
+      "router_expansions": 9918,
+      "main_selected": true
+    },
+    {
+      "connection_id": "C12-003",
+      "display_label": "Protected motor branch input",
+      "state": "guess",
+      "electrical_role": "power",
+      "color": "#e2bb00",
+      "display_form": "wire",
+      "visual_evidence_style": "dotted",
+      "points": [
+        [
+          5150.0,
+          6685.25
+        ],
+        [
+          5364.0,
+          6685.25
+        ],
+        [
+          5364.0,
+          6246.25
+        ],
+        [
+          5450.0,
+          6246.25
+        ]
+      ],
+      "paths": [
+        "M5150 6685.25 H5356 Q5364 6685.25 5364 6677.25 V6254.25 Q5364 6246.25 5372 6246.25 H5450"
+      ],
+      "visible_caption_required": true,
+      "caption_status": "GUESS — proposed, unverified",
+      "panel_index": 11,
+      "diagram_variant": "current",
+      "graph_state": "guess",
+      "render_state": "guess",
+      "role_basis": "function-inferred",
+      "net_id": "panel-12:motor.v",
+      "graph_net_id": "panel-12:motor.v",
+      "from_endpoint": "motor.v",
+      "to_endpoint": "fuse.in",
+      "from_contact_label": "DC + · before fuse",
+      "to_contact_label": "fuse input",
+      "from_device": "Verified motor supply · voltage/current TBD",
+      "to_device": "Motor branch fuse · rating selected after measurement",
+      "from_controller_reference": null,
+      "to_controller_reference": null,
+      "from_geometry": "device-contact",
+      "to_geometry": "device-contact",
+      "junctions_and_crossings": [
+        {
+          "point": [
+            5236.0,
+            6685.25
+          ],
+          "other": "C12-001",
+          "junction": false
+        }
+      ],
+      "router_expansions": 257,
+      "main_selected": true
+    },
+    {
+      "connection_id": "C12-004",
+      "display_label": "Prime VMOT power",
+      "state": "guess",
+      "electrical_role": "power",
+      "color": "#e2bb00",
+      "display_form": "wire",
+      "visual_evidence_style": "dotted",
+      "points": [
+        [
+          5450.0,
+          6364.25
+        ],
+        [
+          5382.0,
+          6364.25
+        ],
+        [
+          5382.0,
+          6468.25
+        ],
+        [
+          6157.0,
+          6468.25
+        ],
+        [
+          6157.0,
+          5853.94384277785
+        ],
+        [
+          3679.0,
+          5853.94384277785
+        ],
+        [
+          3679.0,
+          5827.25
+        ],
+        [
+          3352.0,
+          5827.25
+        ],
+        [
+          3352.0,
+          5786.269839938041
+        ],
+        [
+          3083.3445204595323,
+          5786.269839938041
+        ]
+      ],
+      "paths": [
+        "M5450 6364.25 H5390 Q5382 6364.25 5382 6372.25 V6460.25 Q5382 6468.25 5390 6468.25 H6149 Q6157 6468.25 6157 6460.25 V5861.94384 Q6157 5853.94384 6149 5853.94384 H3687 Q3679 5853.94384 3679 5845.94384 V5835.25 Q3679 5827.25 3671 5827.25 H3360 Q3352 5827.25 3352 5819.25 V5794.26984 Q3352 5786.26984 3344 5786.26984 H3083.34452"
+      ],
+      "visible_caption_required": true,
+      "caption_status": "GUESS — proposed, unverified",
+      "panel_index": 11,
+      "diagram_variant": "current",
+      "graph_state": "guess",
+      "render_state": "guess",
+      "role_basis": "function-inferred",
+      "net_id": "panel-12:fuse.out",
+      "graph_net_id": "panel-12:fuse.out",
+      "from_endpoint": "fuse.out",
+      "to_endpoint": "prime.vm",
+      "from_contact_label": "fuse output",
+      "to_contact_label": "J9.1 · VMOT",
+      "from_device": "Motor branch fuse · rating selected after measurement",
+      "to_device": "Prime P12 · confirm exact revision",
+      "from_controller_reference": null,
+      "to_controller_reference": "J9.1",
+      "from_geometry": "device-contact",
+      "to_geometry": "sourced-controller",
+      "junctions_and_crossings": [
+        {
+          "point": [
+            5382.0,
+            6364.25
+          ],
+          "other": "future-device:11:fuse.out",
+          "junction": true
+        },
+        {
+          "point": [
+            5382.0,
+            6364.25
+          ],
+          "other": "C12-004-source-escape",
+          "junction": true
+        },
+        {
+          "point": [
+            4418.0,
+            5853.94384277785
+          ],
+          "other": "C10-004",
+          "junction": false
+        },
+        {
+          "point": [
+            4411.0,
+            5853.94384277785
+          ],
+          "other": "C11-002",
+          "junction": false
+        },
+        {
+          "point": [
+            3679.0,
+            5835.94384277785
+          ],
+          "other": "C10-002",
+          "junction": false
+        },
+        {
+          "point": [
+            3671.0,
+            5827.25
+          ],
+          "other": "C10-001",
+          "junction": false
+        },
+        {
+          "point": [
+            3352.0,
+            5786.269839938041
+          ],
+          "other": "planned-controller:J9.1",
+          "junction": true
+        },
+        {
+          "point": [
+            3352.0,
+            5817.94384277785
+          ],
+          "other": "C10-003",
+          "junction": false
+        },
+        {
+          "point": [
+            3352.0,
+            5786.269839938041
+          ],
+          "other": "C12-004-target-escape",
+          "junction": true
+        }
+      ],
+      "router_expansions": 4910,
+      "main_selected": true
+    },
+    {
+      "connection_id": "C12-005",
+      "display_label": "Prime motor supply return",
+      "state": "guess",
+      "electrical_role": "ground",
+      "color": "#111717",
+      "display_form": "wire",
+      "visual_evidence_style": "dotted",
+      "points": [
+        [
+          5150.0,
+          6803.25
+        ],
+        [
+          6175.0,
+          6803.25
+        ],
+        [
+          6175.0,
+          5809.25
+        ],
+        [
+          3353.0,
+          5809.25
+        ],
+        [
+          3353.0,
+          5742.44384277785
+        ],
+        [
+          3175.842003356138,
+          5742.44384277785
+        ],
+        [
+          3175.842003356138,
+          5902.44384277785
+        ],
+        [
+          3083.3445204595323,
+          5902.44384277785
+        ]
+      ],
+      "paths": [
+        "M5150 6803.25 H6167 Q6175 6803.25 6175 6795.25 V5817.25 Q6175 5809.25 6167 5809.25 H3361 Q3353 5809.25 3353 5801.25 V5750.44384 Q3353 5742.44384 3345 5742.44384 H3183.842 Q3175.842 5742.44384 3175.842 5750.44384 V5894.44384 Q3175.842 5902.44384 3167.842 5902.44384 H3083.34452"
+      ],
+      "visible_caption_required": true,
+      "caption_status": "GUESS — proposed, unverified",
+      "panel_index": 11,
+      "diagram_variant": "current",
+      "graph_state": "guess",
+      "render_state": "guess",
+      "role_basis": "function-inferred",
+      "net_id": "panel-12:motor.g",
+      "graph_net_id": "panel-12:motor.g",
+      "from_endpoint": "motor.g",
+      "to_endpoint": "prime.mg",
+      "from_contact_label": "0 V motor return",
+      "to_contact_label": "J9.2 · GND",
+      "from_device": "Verified motor supply · voltage/current TBD",
+      "to_device": "Prime P12 · confirm exact revision",
+      "from_controller_reference": null,
+      "to_controller_reference": "J9.2",
+      "from_geometry": "device-contact",
+      "to_geometry": "sourced-controller",
+      "junctions_and_crossings": [
+        {
+          "point": [
+            5236.0,
+            6803.25
+          ],
+          "other": "C12-001",
+          "junction": false
+        },
+        {
+          "point": [
+            6175.0,
+            5822.3208919581775
+          ],
+          "other": "C10-001",
+          "junction": false
+        },
+        {
+          "point": [
+            6175.0,
+            5835.94384277785
+          ],
+          "other": "C10-002",
+          "junction": false
+        },
+        {
+          "point": [
+            6175.0,
+            5817.94384277785
+          ],
+          "other": "C10-003",
+          "junction": false
+        },
+        {
+          "point": [
+            6175.0,
+            5840.3208919581775
+          ],
+          "other": "C10-004",
+          "junction": false
+        },
+        {
+          "point": [
+            6175.0,
+            5845.25
+          ],
+          "other": "C11-002",
+          "junction": false
+        }
+      ],
+      "router_expansions": 6020,
+      "main_selected": true
+    },
+    {
+      "connection_id": "C13-001",
+      "display_label": "Alternative probe function on shared socket",
+      "state": "guess",
+      "electrical_role": "signal",
+      "color": "#128c68",
+      "display_form": "wire",
+      "visual_evidence_style": "dotted",
+      "points": [
+        [
+          2237.1330837743644,
+          4696.557693300632
+        ],
+        [
+          2237.1330837743644,
+          4512.825409836066
+        ],
+        [
+          2282.0,
+          4512.825409836066
+        ],
+        [
+          2282.0,
+          4234.825409836066
+        ],
+        [
+          5568.0,
+          4234.825409836066
+        ],
+        [
+          5568.0,
+          2790.75
+        ],
+        [
+          6489.0,
+          2790.75
+        ],
+        [
+          6489.0,
+          2568.75
+        ],
+        [
+          6575.0,
+          2568.75
+        ]
+      ],
+      "paths": [
+        "M2237.13308 4696.55769 V4520.82541 Q2237.13308 4512.82541 2245.13308 4512.82541 H2274 Q2282 4512.82541 2282 4504.82541 V4242.82541 Q2282 4234.82541 2290 4234.82541 H5560 Q5568 4234.82541 5568 4226.82541 V2798.75 Q5568 2790.75 5576 2790.75 H6481 Q6489 2790.75 6489 2782.75 V2576.75 Q6489 2568.75 6497 2568.75 H6575"
+      ],
+      "visible_caption_required": true,
+      "caption_status": "GUESS — proposed, unverified",
+      "panel_index": 12,
+      "diagram_variant": "current",
+      "graph_state": "guess",
+      "render_state": "guess",
+      "role_basis": "fallback-signal-review",
+      "net_id": "controller:J31.4",
+      "graph_net_id": "controller:J31.4",
+      "from_endpoint": "prime.signal",
+      "to_endpoint": "socket.7",
+      "from_contact_label": "J31.4 · conditioned PROBE input",
+      "to_contact_label": "7 · Z-min/probe · shared function",
+      "from_device": "Prime P12 · probe input candidate · alternative to Z-min on shared socket 7",
+      "to_device": "Original 8-pin limit / probe peripheral · alternative to Z-min on shared socket 7",
+      "from_controller_reference": "J31.4",
+      "to_controller_reference": null,
+      "from_geometry": "sourced-controller",
+      "to_geometry": "device-contact",
+      "junctions_and_crossings": [
+        {
+          "point": [
+            2237.1330837743644,
+            4512.825409836066
+          ],
+          "other": "planned-controller:J31.4",
+          "junction": true
+        },
+        {
+          "point": [
+            2237.1330837743644,
+            4512.825409836066
+          ],
+          "other": "C13-001-source-escape",
+          "junction": true
+        },
+        {
+          "point": [
+            2282.0,
+            4312.825409836066
+          ],
+          "other": "C02-002",
+          "junction": false
+        },
+        {
+          "point": [
+            2282.0,
+            4511.825409836066
+          ],
+          "other": "C03-001",
+          "junction": false
+        },
+        {
+          "point": [
+            2282.0,
+            4494.825409836066
+          ],
+          "other": "C03-002",
+          "junction": false
+        },
+        {
+          "point": [
+            2282.0,
+            4264.825409836066
+          ],
+          "other": "C04-001",
+          "junction": false
+        },
+        {
+          "point": [
+            2282.0,
+            4248.825409836066
+          ],
+          "other": "C06-001",
+          "junction": false
+        },
+        {
+          "point": [
+            2494.968503937008,
+            4234.825409836066
+          ],
+          "other": "C02-002",
+          "junction": false
+        },
+        {
+          "point": [
+            5457.0,
+            4234.825409836066
+          ],
+          "other": "C03-001",
+          "junction": false
+        },
+        {
+          "point": [
+            5543.0,
+            4234.825409836066
+          ],
+          "other": "C03-002",
+          "junction": false
+        },
+        {
+          "point": [
+            4507.0,
+            4234.825409836066
+          ],
+          "other": "C04-001",
+          "junction": false
+        },
+        {
+          "point": [
+            5525.0,
+            4234.825409836066
+          ],
+          "other": "C04-002",
+          "junction": false
+        },
+        {
+          "point": [
+            4525.0,
+            4234.825409836066
+          ],
+          "other": "C06-001",
+          "junction": false
+        },
+        {
+          "point": [
+            2294.149477216987,
+            4234.825409836066
+          ],
+          "other": "C06-002",
+          "junction": false
+        }
+      ],
+      "router_expansions": 13714,
+      "main_selected": true
+    },
+    {
+      "connection_id": "C13-002",
+      "display_label": "Separate probe reference",
+      "state": "guess",
+      "electrical_role": "ground",
+      "color": "#111717",
+      "display_form": "wire",
+      "visual_evidence_style": "dotted",
+      "points": [
+        [
+          2296.149477216987,
+          4696.557693300632
+        ],
+        [
+          2296.149477216987,
+          4252.825409836066
+        ],
+        [
+          5564.0,
+          4252.825409836066
+        ],
+        [
+          5564.0,
+          2808.75
+        ],
+        [
+          6507.0,
+          2808.75
+        ],
+        [
+          6507.0,
+          2686.75
+        ],
+        [
+          6575.0,
+          2686.75
+        ]
+      ],
+      "paths": [
+        "M2296.14948 4696.55769 V4260.82541 Q2296.14948 4252.82541 2304.14948 4252.82541 H5556 Q5564 4252.82541 5564 4244.82541 V2816.75 Q5564 2808.75 5572 2808.75 H6499 Q6507 2808.75 6507 2800.75 V2694.75 Q6507 2686.75 6515 2686.75 H6575"
+      ],
+      "visible_caption_required": true,
+      "caption_status": "GUESS — proposed, unverified",
+      "panel_index": 12,
+      "diagram_variant": "current",
+      "graph_state": "guess",
+      "render_state": "guess",
+      "role_basis": "function-inferred",
+      "net_id": "controller:J31.3",
+      "graph_net_id": "controller:J31.3",
+      "from_endpoint": "prime.gnd",
+      "to_endpoint": "socket.1",
+      "from_contact_label": "J31.3 · GND",
+      "to_contact_label": "1 · GND",
+      "from_device": "Prime P12 · probe input candidate · alternative to Z-min on shared socket 7",
+      "to_device": "Original 8-pin limit / probe peripheral · alternative to Z-min on shared socket 7",
+      "from_controller_reference": "J31.3",
+      "to_controller_reference": null,
+      "from_geometry": "sourced-controller",
+      "to_geometry": "device-contact",
+      "junctions_and_crossings": [
+        {
+          "point": [
+            2296.149477216987,
+            4312.825409836066
+          ],
+          "other": "C02-002",
+          "junction": false
+        },
+        {
+          "point": [
+            2296.149477216987,
+            4511.825409836066
+          ],
+          "other": "C03-001",
+          "junction": false
+        },
+        {
+          "point": [
+            2296.149477216987,
+            4494.825409836066
+          ],
+          "other": "C03-002",
+          "junction": false
+        },
+        {
+          "point": [
+            2296.149477216987,
+            4264.825409836066
+          ],
+          "other": "C04-001",
+          "junction": false
+        },
+        {
+          "point": [
+            2494.968503937008,
+            4252.825409836066
+          ],
+          "other": "C02-002",
+          "junction": false
+        },
+        {
+          "point": [
+            5457.0,
+            4252.825409836066
+          ],
+          "other": "C03-001",
+          "junction": false
+        },
+        {
+          "point": [
+            5543.0,
+            4252.825409836066
+          ],
+          "other": "C03-002",
+          "junction": false
+        },
+        {
+          "point": [
+            4507.0,
+            4252.825409836066
+          ],
+          "other": "C04-001",
+          "junction": false
+        },
+        {
+          "point": [
+            5525.0,
+            4252.825409836066
+          ],
+          "other": "C04-002",
+          "junction": false
+        },
+        {
+          "point": [
+            5564.0,
+            4234.825409836066
+          ],
+          "other": "C13-001",
+          "junction": false
+        },
+        {
+          "point": [
+            5568.0,
+            2808.75
+          ],
+          "other": "C13-001",
+          "junction": false
+        },
+        {
+          "point": [
+            6507.0,
+            2686.75
+          ],
+          "other": "future-device:12:socket.1",
+          "junction": true
+        },
+        {
+          "point": [
+            6507.0,
+            2686.75
+          ],
+          "other": "C13-002-target-escape",
+          "junction": true
+        }
+      ],
+      "router_expansions": 15211,
+      "main_selected": true
+    },
+    {
+      "connection_id": "C13-003",
+      "display_label": "Independent emergency-stop input",
+      "state": "open",
+      "electrical_role": "signal",
+      "color": "#128c68",
+      "display_form": "open-boundary",
+      "points": [],
+      "paths": [
+        "M6275.00 2568.75 L6297.00 2568.75",
+        "M6575.00 3007.75 L6553.00 3007.75"
+      ],
+      "visible_stub_segments": [
+        [
+          [
+            6275.0,
+            2568.75
+          ],
+          [
+            6297.0,
+            2568.75
+          ]
+        ],
+        [
+          [
+            6575.0,
+            3007.75
+          ],
+          [
+            6553.0,
+            3007.75
+          ]
+        ]
+      ],
+      "open_terminal_ids": {
+        "from": "panel-13:estop.a",
+        "to": "panel-13:stopchain.in"
+      },
+      "open_endpoint_context": {
+        "from": {
+          "terminal_id": "panel-13:estop.a",
+          "anchor": [
+            6275.0,
+            2568.75
+          ],
+          "disposition": "visible-open-stub"
+        },
+        "to": {
+          "terminal_id": "panel-13:stopchain.in",
+          "anchor": [
+            6575.0,
+            3007.75
+          ],
+          "disposition": "visible-open-stub"
+        }
+      },
+      "reused_terminal_context": [],
+      "from_anchor": [
+        6275.0,
+        2568.75
+      ],
+      "to_anchor": [
+        6575.0,
+        3007.75
+      ],
+      "visible_caption_required": true,
+      "caption_status": "OPEN — no wire to install; terminals are not joined",
+      "panel_index": 12,
+      "diagram_variant": "current",
+      "graph_state": "open",
+      "render_state": "open",
+      "open_reason": "authored-open",
+      "role_basis": "fallback-signal-review",
+      "net_id": null,
+      "graph_net_id": null,
+      "from_endpoint": "estop.a",
+      "to_endpoint": "stopchain.in",
+      "from_contact_label": "Stop-chain contact A · identify",
+      "to_contact_label": "Monitored stop-loop input",
+      "from_device": "Identified machine E-stop hardware",
+      "to_device": "Independent hardware spindle/motion inhibition",
+      "from_controller_reference": null,
+      "to_controller_reference": null,
+      "from_geometry": "device-contact",
+      "to_geometry": "device-contact",
+      "junctions_and_crossings": [],
+      "router_expansions": 0,
+      "main_selected": true,
+      "external_conductor": false
+    },
+    {
+      "connection_id": "C13-004",
+      "display_label": "Emergency-stop loop return",
+      "state": "open",
+      "electrical_role": "ground",
+      "color": "#111717",
+      "display_form": "open-boundary",
+      "points": [],
+      "paths": [
+        "M6275.00 2686.75 L6297.00 2686.75",
+        "M6575.00 3125.75 L6553.00 3125.75"
+      ],
+      "visible_stub_segments": [
+        [
+          [
+            6275.0,
+            2686.75
+          ],
+          [
+            6297.0,
+            2686.75
+          ]
+        ],
+        [
+          [
+            6575.0,
+            3125.75
+          ],
+          [
+            6553.0,
+            3125.75
+          ]
+        ]
+      ],
+      "open_terminal_ids": {
+        "from": "panel-13:estop.b",
+        "to": "panel-13:stopchain.return"
+      },
+      "open_endpoint_context": {
+        "from": {
+          "terminal_id": "panel-13:estop.b",
+          "anchor": [
+            6275.0,
+            2686.75
+          ],
+          "disposition": "visible-open-stub"
+        },
+        "to": {
+          "terminal_id": "panel-13:stopchain.return",
+          "anchor": [
+            6575.0,
+            3125.75
+          ],
+          "disposition": "visible-open-stub"
+        }
+      },
+      "reused_terminal_context": [],
+      "from_anchor": [
+        6275.0,
+        2686.75
+      ],
+      "to_anchor": [
+        6575.0,
+        3125.75
+      ],
+      "visible_caption_required": true,
+      "caption_status": "OPEN — no wire to install; terminals are not joined",
+      "panel_index": 12,
+      "diagram_variant": "current",
+      "graph_state": "open",
+      "render_state": "open",
+      "open_reason": "authored-open",
+      "role_basis": "function-inferred",
+      "net_id": null,
+      "graph_net_id": null,
+      "from_endpoint": "estop.b",
+      "to_endpoint": "stopchain.return",
+      "from_contact_label": "Stop-chain contact B · identify",
+      "to_contact_label": "Monitored stop-loop return",
+      "from_device": "Identified machine E-stop hardware",
+      "to_device": "Independent hardware spindle/motion inhibition",
+      "from_controller_reference": null,
+      "to_controller_reference": null,
+      "from_geometry": "device-contact",
+      "to_geometry": "device-contact",
+      "junctions_and_crossings": [],
+      "router_expansions": 0,
+      "main_selected": true,
+      "external_conductor": false
+    },
+    {
+      "connection_id": "C14-001",
+      "display_label": "48V DC supply → pictured AC/DC input",
+      "state": "guess",
+      "electrical_role": "power",
+      "color": "#e2bb00",
+      "display_form": "wire",
+      "visual_evidence_style": "dotted",
+      "points": [
+        [
+          1150.0,
+          1140.75
+        ],
+        [
+          1450.0,
+          1140.75
+        ]
+      ],
+      "paths": [
+        "M1150 1140.75 H1450"
+      ],
+      "visible_caption_required": true,
+      "caption_status": "GUESS — proposed, unverified",
+      "panel_index": 13,
+      "diagram_variant": "current-conditional",
+      "graph_state": "guess",
+      "render_state": "guess",
+      "role_basis": "function-inferred",
+      "net_id": "panel-14:psu.p",
+      "graph_net_id": "panel-14:psu.p",
+      "from_endpoint": "psu.p",
+      "to_endpoint": "stage.in_a",
+      "from_contact_label": "48V output positive · confirm actual supply terminal",
+      "to_contact_label": "AC/DC input · photo48V pair red-lead position",
+      "from_device": "2014 tutorial PSU30353-03 · 48V DC reference only",
+      "to_device": "Exact 2014 pictured speed controller · not all Quiet Cut variants",
+      "from_controller_reference": null,
+      "to_controller_reference": null,
+      "from_geometry": "device-contact",
+      "to_geometry": "device-contact",
+      "junctions_and_crossings": [],
+      "router_expansions": 6,
+      "main_selected": true
+    },
+    {
+      "connection_id": "C14-002",
+      "display_label": "48V DC return → pictured AC/DC input",
+      "state": "guess",
+      "electrical_role": "ground",
+      "color": "#111717",
+      "display_form": "wire",
+      "visual_evidence_style": "dotted",
+      "points": [
+        [
+          1150.0,
+          1258.75
+        ],
+        [
+          1450.0,
+          1258.75
+        ]
+      ],
+      "paths": [
+        "M1150 1258.75 H1450"
+      ],
+      "visible_caption_required": true,
+      "caption_status": "GUESS — proposed, unverified",
+      "panel_index": 13,
+      "diagram_variant": "current-conditional",
+      "graph_state": "guess",
+      "render_state": "guess",
+      "role_basis": "function-inferred",
+      "net_id": "panel-14:psu.r",
+      "graph_net_id": "panel-14:psu.r",
+      "from_endpoint": "psu.r",
+      "to_endpoint": "stage.in_b",
+      "from_contact_label": "48V output return · confirm actual supply terminal",
+      "to_contact_label": "AC/DC input · photo48V pair black-lead position",
+      "from_device": "2014 tutorial PSU30353-03 · 48V DC reference only",
+      "to_device": "Exact 2014 pictured speed controller · not all Quiet Cut variants",
+      "from_controller_reference": null,
+      "to_controller_reference": null,
+      "from_geometry": "device-contact",
+      "to_geometry": "device-contact",
+      "junctions_and_crossings": [],
+      "router_expansions": 6,
+      "main_selected": true
+    },
+    {
+      "connection_id": "C14-003",
+      "display_label": "Spindle output positive → red motor lead",
+      "state": "guess",
+      "electrical_role": "power",
+      "color": "#e2bb00",
+      "display_form": "wire",
+      "visual_evidence_style": "dotted",
+      "points": [
+        [
+          1450.0,
+          1376.75
+        ],
+        [
+          1364.0,
+          1376.75
+        ],
+        [
+          1364.0,
+          1598.75
+        ],
+        [
+          2278.149477216987,
+          1598.75
+        ],
+        [
+          2278.149477216987,
+          1140.75
+        ],
+        [
+          2350.0,
+          1140.75
+        ]
+      ],
+      "paths": [
+        "M1450 1376.75 H1372 Q1364 1376.75 1364 1384.75 V1590.75 Q1364 1598.75 1372 1598.75 H2270.14948 Q2278.14948 1598.75 2278.14948 1590.75 V1148.75 Q2278.14948 1140.75 2286.14948 1140.75 H2350"
+      ],
+      "visible_caption_required": true,
+      "caption_status": "GUESS — proposed, unverified",
+      "panel_index": 13,
+      "diagram_variant": "current-conditional",
+      "graph_state": "guess",
+      "render_state": "guess",
+      "role_basis": "explicit",
+      "net_id": "panel-14:stage.out_p",
+      "graph_net_id": "panel-14:stage.out_p",
+      "from_endpoint": "stage.out_p",
+      "to_endpoint": "spindle.red",
+      "from_contact_label": "Spindle output positive · photo red lead",
+      "to_contact_label": "Red positive motor lead · verify fitted cable",
+      "from_device": "Exact 2014 pictured speed controller · not all Quiet Cut variants",
+      "to_device": "Matched Quiet Cut DC spindle",
+      "from_controller_reference": null,
+      "to_controller_reference": null,
+      "from_geometry": "device-contact",
+      "to_geometry": "device-contact",
+      "junctions_and_crossings": [],
+      "router_expansions": 698,
+      "main_selected": true
+    },
+    {
+      "connection_id": "C14-004",
+      "display_label": "Spindle output negative → black motor lead",
+      "state": "guess",
+      "electrical_role": "power",
+      "color": "#e2bb00",
+      "display_form": "wire",
+      "visual_evidence_style": "dotted",
+      "points": [
+        [
+          1450.0,
+          1494.75
+        ],
+        [
+          1382.0,
+          1494.75
+        ],
+        [
+          1382.0,
+          1603.75
+        ],
+        [
+          2282.0,
+          1603.75
+        ],
+        [
+          2282.0,
+          1258.75
+        ],
+        [
+          2350.0,
+          1258.75
+        ]
+      ],
+      "paths": [
+        "M1450 1494.75 H1390 Q1382 1494.75 1382 1502.75 V1595.75 Q1382 1603.75 1390 1603.75 H2274 Q2282 1603.75 2282 1595.75 V1266.75 Q2282 1258.75 2290 1258.75 H2350"
+      ],
+      "visible_caption_required": true,
+      "caption_status": "GUESS — proposed, unverified",
+      "panel_index": 13,
+      "diagram_variant": "current-conditional",
+      "graph_state": "guess",
+      "render_state": "guess",
+      "role_basis": "explicit",
+      "net_id": "panel-14:stage.out_r",
+      "graph_net_id": "panel-14:stage.out_r",
+      "from_endpoint": "stage.out_r",
+      "to_endpoint": "spindle.black",
+      "from_contact_label": "Spindle output negative · photo black lead",
+      "to_contact_label": "Black negative motor lead · verify fitted cable",
+      "from_device": "Exact 2014 pictured speed controller · not all Quiet Cut variants",
+      "to_device": "Matched Quiet Cut DC spindle",
+      "from_controller_reference": null,
+      "to_controller_reference": null,
+      "from_geometry": "device-contact",
+      "to_geometry": "device-contact",
+      "junctions_and_crossings": [
+        {
+          "point": [
+            1382.0,
+            1494.75
+          ],
+          "other": "future-device:13:stage.out_r",
+          "junction": true
+        },
+        {
+          "point": [
+            1382.0,
+            1598.75
+          ],
+          "other": "C14-003",
+          "junction": false
+        },
+        {
+          "point": [
+            1382.0,
+            1494.75
+          ],
+          "other": "C14-004-source-escape",
+          "junction": true
+        },
+        {
+          "point": [
+            2282.0,
+            1258.75
+          ],
+          "other": "future-device:13:spindle.black",
+          "junction": true
+        },
+        {
+          "point": [
+            2282.0,
+            1258.75
+          ],
+          "other": "C14-004-target-escape",
+          "junction": true
+        }
+      ],
+      "router_expansions": 183,
+      "main_selected": true
+    }
+  ],
+  "primary_reference_connections": [],
+  "conditional_complete_figures": [],
+  "geometry": {
+    "viewbox": [
+      0,
+      0,
+      9080.0,
+      9080.0
+    ],
+    "controller": [
+      610.0,
+      4554.825409836066,
+      2700.0,
+      2697.0491803278687
+    ]
+  },
+  "svg_sha256": "92ce9add09c4ae963fbb831281ade809de7c67769155a05a8f812ed9e357d321",
+  "main_additional_connection_ids": [],
+  "main_integration": {
+    "main_baseline_sha256": "6744ac9e2cf3bd18925c21617fb35a869ff3bf728f86e92db43c2ce02cee7d8e",
+    "render_data_path": "/home/arthur/dev/.astra-calls/atlas12-long-detour-durable-render-20261003/centered-guides.json",
+    "render_data_sha256": "56ab2ea680c7432892c4dc2b0eddfd4f5069ef4b0e7786a8b3d076808076534e",
+    "frozen_guide_sha256": "6ee878ad560b8738b7dbfa40476b3aa504c0aa3f25d689836638564b330ab618",
+    "native_geometry_sha256": "a1403f3d3f9c5a18635d3134bee326d62181589b6829454b2dd7882a791c79ba",
+    "original_main_connection_ids": [
+      "C01-001",
+      "C01-002",
+      "C02-001",
+      "C02-002",
+      "C03-001",
+      "C03-002",
+      "C04-001",
+      "C04-002",
+      "C05-001",
+      "C05-002",
+      "C06-001",
+      "C06-002",
+      "C07-001",
+      "C07-002",
+      "C08-001",
+      "C08-002",
+      "C08-003",
+      "C08-004",
+      "C09-001",
+      "C09-002",
+      "C09-003",
+      "C09-004",
+      "C10-001",
+      "C10-002",
+      "C10-003",
+      "C10-004",
+      "C11-001",
+      "C11-002",
+      "C11-003",
+      "C11-004",
+      "C12-001",
+      "C12-002",
+      "C12-003",
+      "C12-004",
+      "C12-005",
+      "C13-001",
+      "C13-002",
+      "C13-003",
+      "C13-004"
+    ],
+    "connection_ids": [
+      "C01-001",
+      "C01-002",
+      "C02-001",
+      "C02-002",
+      "C03-001",
+      "C03-002",
+      "C04-001",
+      "C04-002",
+      "C05-001",
+      "C05-002",
+      "C06-001",
+      "C06-002",
+      "C07-001",
+      "C07-002",
+      "C08-001",
+      "C08-002",
+      "C08-003",
+      "C08-004",
+      "C09-001",
+      "C09-002",
+      "C09-003",
+      "C09-004",
+      "C10-001",
+      "C10-002",
+      "C10-003",
+      "C10-004",
+      "C11-001",
+      "C11-002",
+      "C11-003",
+      "C11-004",
+      "C12-001",
+      "C12-002",
+      "C12-003",
+      "C12-004",
+      "C12-005",
+      "C13-001",
+      "C13-002",
+      "C13-003",
+      "C13-004",
+      "C14-001",
+      "C14-002",
+      "C14-003",
+      "C14-004"
+    ],
+    "added_canonical_connection_ids": [
+      "C14-001",
+      "C14-002",
+      "C14-003",
+      "C14-004"
+    ],
+    "canonical_main_baseline_sha256": "6744ac9e2cf3bd18925c21617fb35a869ff3bf728f86e92db43c2ce02cee7d8e",
+    "canonical_guide_sha256": "6ee878ad560b8738b7dbfa40476b3aa504c0aa3f25d689836638564b330ab618",
+    "artifact_acceptance": "supplied accepted manifest",
+    "public_acceptance": "pending",
+    "preserved_existing_electrical_and_source_records": true,
+    "selected_view_badges": "MAIN",
+    "preserved_supplementary_and_history_blocks_except_stale_main_notice": true
+  }
+}

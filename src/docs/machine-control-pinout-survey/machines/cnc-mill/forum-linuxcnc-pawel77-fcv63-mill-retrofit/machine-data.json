@@ -1,0 +1,34 @@
+{
+  "id": "forum-linuxcnc-pawel77-fcv63-mill-retrofit",
+  "sources": {
+    "forum-peripheral-evidence.json": {
+      "id": "forum-linuxcnc-pawel77-fcv63-mill-retrofit",
+      "dossier": "src/docs/machine-research/linuxcnc-pawel77-fcv63-mill-retrofit.md",
+      "reported_fitted_or_used": [
+        {
+          "name": "Spindle gearbox PLC interface",
+          "contacts": [],
+          "source_line_number": 7,
+          "source_line": "The spindle gearbox has two stages. The owner reports that its gear-change program runs separately in the PLC and the PLC signals LinuxCNC when the gearbox is ready. At the time of the post, the owner said the gearbox could still be troublesome because of its solenoid valves and mechanical gears. The owner also says a forum-linked video shows the mill cutting under load, with the demonstration described as a test.",
+          "evidence": "The spindle gearbox has two stages. The owner reports that its gear-change program runs separately in the PLC and the PLC signals LinuxCNC when the gearbox is ready.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        }
+      ],
+      "listed_for_build_unverified": [],
+      "historical_reference": [],
+      "planned_only": [],
+      "open_function_group": [
+        {
+          "name": "Home and limit switches",
+          "contacts": [],
+          "source_line_number": 15,
+          "source_line": "| X home | `hm2_7i97.0.7i84.0.0.input-31-not` |",
+          "evidence": "`hm2_7i97.0.7i84.0.0.input-31-not`.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        }
+      ],
+      "exclusions": [],
+      "source_gap": "Dossier does not establish an as-built SmoothieBox route or a complete physical contact schedule for the listed peripherals."
+    }
+  }
+}

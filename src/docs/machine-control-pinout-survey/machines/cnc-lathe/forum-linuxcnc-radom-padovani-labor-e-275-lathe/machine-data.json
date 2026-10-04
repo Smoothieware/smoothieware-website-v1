@@ -1,0 +1,34 @@
+{
+  "id": "forum-linuxcnc-radom-padovani-labor-e-275-lathe",
+  "sources": {
+    "forum-peripheral-evidence.json": {
+      "id": "forum-linuxcnc-radom-padovani-labor-e-275-lathe",
+      "dossier": "src/docs/machine-research/linuxcnc-radom-padovani-labor-e-275-lathe.md",
+      "reported_fitted_or_used": [
+        {
+          "name": "Shielded six-wire analog command cable",
+          "contacts": [],
+          "source_line_number": 13,
+          "source_line": "The owner says the existing shielded six-wire cable carried differential analog inputs for X, Z, and spindle together, with the shield formerly connected only at the old controller end. A LinuxCNC forum moderator provided a generic Mesa 7i77-to-drive analog-output recommendation in the thread:",
+          "evidence": "The owner says the existing shielded six-wire cable carried differential analog inputs for X, Z, and spindle together, with the shield formerly connected only at the old controller end. A LinuxCNC forum moderator provided a generic Mesa 7i77-to-drive analog-output recommendation in the thread:.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        }
+      ],
+      "listed_for_build_unverified": [],
+      "historical_reference": [],
+      "planned_only": [],
+      "open_function_group": [
+        {
+          "name": "X/Z/spindle analog-input servo drives",
+          "contacts": [],
+          "source_line_number": 13,
+          "source_line": "The owner says the existing shielded six-wire cable carried differential analog inputs for X, Z, and spindle together, with the shield formerly connected only at the old controller end. A LinuxCNC forum moderator provided a generic Mesa 7i77-to-drive analog-output recommendation in the thread:",
+          "evidence": "The owner says the existing shielded six-wire cable carried differential analog inputs for X, Z, and spindle together, with the shield formerly connected only at the old controller end. A LinuxCNC forum moderator provided a generic Mesa 7i77-to-drive analog-output recommendation in the thread:.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        }
+      ],
+      "exclusions": [],
+      "source_gap": "Dossier does not establish an as-built SmoothieBox route or a complete physical contact schedule for the listed peripherals."
+    }
+  }
+}

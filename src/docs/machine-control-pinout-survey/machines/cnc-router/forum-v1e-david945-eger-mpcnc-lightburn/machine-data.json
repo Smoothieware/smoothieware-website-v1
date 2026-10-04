@@ -1,0 +1,44 @@
+{
+  "id": "forum-v1e-david945-eger-mpcnc-lightburn",
+  "sources": {
+    "forum-peripheral-evidence.json": {
+      "id": "forum-v1e-david945-eger-mpcnc-lightburn",
+      "dossier": "src/docs/machine-research/v1e-david945-eger-mpcnc-lightburn.md",
+      "reported_fitted_or_used": [],
+      "listed_for_build_unverified": [],
+      "historical_reference": [],
+      "planned_only": [],
+      "open_function_group": [],
+      "exclusions": [
+        {
+          "name": "Five NEMA 17 stepper motors",
+          "contacts": [],
+          "source_line_number": 16,
+          "source_line": "| Motors and controller | Five NEMA 17 steppers, listed as 0.6 N\u00b7m (84 oz\u00b7in); Arduino Mega 2560 clone with RAMPS 1.4 and five DRV8825 modules purchased, two explicitly held as spares. | Which motors share drivers, active driver placement, current limits, supply voltage, firmware/configuration and the actual IO map are not given. The post lists wires and a power supply as owner-supplied but does not specify them. |",
+          "evidence": "Five NEMA 17 steppers, listed as 0.6 N\u00b7m (84 oz\u00b7in); Arduino Mega 2560 clone with RAMPS 1.4 and five DRV8825 modules purchased, two explicitly held as spares.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route",
+          "reason": "Excluded: no separate externally addressable interface, existing control hardware, absent tooling, or inadequate positive device evidence in this dossier."
+        },
+        {
+          "name": "Five RAMPS stepper drivers",
+          "contacts": [],
+          "source_line_number": 16,
+          "source_line": "| Motors and controller | Five NEMA 17 steppers, listed as 0.6 N\u00b7m (84 oz\u00b7in); Arduino Mega 2560 clone with RAMPS 1.4 and five DRV8825 modules purchased, two explicitly held as spares. | Which motors share drivers, active driver placement, current limits, supply voltage, firmware/configuration and the actual IO map are not given. The post lists wires and a power supply as owner-supplied but does not specify them. |",
+          "evidence": "Five NEMA 17 steppers, listed as 0.6 N\u00b7m (84 oz\u00b7in); Arduino Mega 2560 clone with RAMPS 1.4 and five DRV8825 modules purchased, two explicitly held as spares.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route",
+          "reason": "No separate supported machine-side electrical interface or positive fitted-device identity in this dossier."
+        },
+        {
+          "name": "Laser or router tool identity unresolved",
+          "contacts": [],
+          "source_line_number": 13,
+          "source_line": "| Rails | 6 m of 25 mm precision hydraulic tube, 2 mm wall. The owner says the supplier's diameter tolerance was at most 0.03 mm along the tube. The tube was not galvanized; the owner raised rust protection as an unresolved concern. | The stated tolerance is the owner's report; no measurement certificate or material grade is included. |",
+          "evidence": "6 m of 25 mm precision hydraulic tube, 2 mm wall. The owner says the supplier's diameter tolerance was at most 0.03 mm along the tube.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route",
+          "reason": "No separate supported machine-side electrical interface or positive fitted-device identity in this dossier."
+        }
+      ],
+      "source_gap": "Dossier does not establish an as-built SmoothieBox route or a complete physical contact schedule for the listed peripherals."
+    }
+  }
+}

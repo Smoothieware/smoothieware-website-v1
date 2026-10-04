@@ -1,0 +1,35 @@
+{
+  "id": "forum-linuxcnc-bassblaster-luxturn-lti-wakako-lathe",
+  "sources": {
+    "forum-peripheral-evidence.json": {
+      "id": "forum-linuxcnc-bassblaster-luxturn-lti-wakako-lathe",
+      "dossier": "src/docs/machine-research/linuxcnc-bassblaster-luxturn-lti-wakako-lathe.md",
+      "reported_fitted_or_used": [],
+      "listed_for_build_unverified": [],
+      "historical_reference": [],
+      "planned_only": [],
+      "open_function_group": [
+        {
+          "name": "Spindle drive and encoder interface unidentified",
+          "contacts": [],
+          "source_line_number": 7,
+          "source_line": "The owner reports using a Mesa 7i96 Ethernet card with a Dell Optiplex running Debian 10 and LinuxCNC 2.8. Initial X and Z motion was working. A later update says the PNCconf-generated setup had the limit switches and coolant pump working. The owner also retained the original spindle encoder, which they identify as single-ended: it had eight wires, four of which the owner says needed to be grounded. They changed Mesa jumpers according to the 7i96 manual and verified the encoder in HAL Show.",
+          "evidence": "The owner also retained the original spindle encoder, which they identify as single-ended: it had eight wires, four of which the owner says needed to be grounded. They changed Mesa jumpers according to the 7i96 manual and verified the encoder in HAL Show.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        }
+      ],
+      "exclusions": [
+        {
+          "name": "Flood-coolant output load unidentified",
+          "contacts": [],
+          "source_line_number": 17,
+          "source_line": "| Flood coolant | `hm2_7i96.0.ssr.00.out-00` |",
+          "evidence": "`hm2_7i96.0.ssr.00.out-00`",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route",
+          "reason": "No separate supported machine-side electrical interface or positive fitted-device identity in this dossier."
+        }
+      ],
+      "source_gap": "Dossier does not establish an as-built SmoothieBox route or a complete physical contact schedule for the listed peripherals."
+    }
+  }
+}

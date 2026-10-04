@@ -1,0 +1,33 @@
+{
+  "id": "forum-linuxcnc-becksvill-mazak-fh6800-five-axis-mill",
+  "sources": {
+    "forum-peripheral-evidence.json": {
+      "id": "forum-linuxcnc-becksvill-mazak-fh6800-five-axis-mill",
+      "dossier": "src/docs/machine-research/linuxcnc-becksvill-mazak-fh6800-five-axis-mill.md",
+      "reported_fitted_or_used": [],
+      "listed_for_build_unverified": [],
+      "historical_reference": [],
+      "planned_only": [],
+      "open_function_group": [
+        {
+          "name": "SSCNET axis servo drives",
+          "contacts": [],
+          "source_line_number": 7,
+          "source_line": "The owner says the retrofit uses Dmitry's SSCNET card for servo control and Mesa boards for other I/O. As of July 2024, the owner reported using Mesa 7i92 and 7i77 cards, with 7i71 and 7i70 cards still planned for more I/O. The owner said the 888 \u00b5s servo-thread setup and Mesa combination were running well at that stage. A possible Mesa PCI card change was being considered to leave Ethernet available for internet access; it was not reported as completed.",
+          "evidence": "The owner says the retrofit uses Dmitry's SSCNET card for servo control and Mesa boards for other I/O. As of July 2024, the owner reported using Mesa 7i92 and 7i77 cards, with 7i71 and 7i70 cards still planned for more I/O.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        },
+        {
+          "name": "Hydraulic actuators and sensors",
+          "contacts": [],
+          "source_line_number": 13,
+          "source_line": "In a July 2024 update, the owner said original diagrams had been worked out and much of the hydraulics connected for basic operation. They reported correcting hydraulic-pump rotation, using HAL commands to actuate Mesa outputs through relays, and reaching a state where the hydraulic spindle tool could be removed. The pallet changer still needed its motor to rotate pallets and perform swaps; automatic sequencing in ClassicLadder and timeout handling were future work in that update.",
+          "evidence": "In a July 2024 update, the owner said original diagrams had been worked out and much of the hydraulics connected for basic operation. They reported correcting hydraulic-pump rotation, using HAL commands to actuate Mesa outputs through relays, and reaching a state where the hydraulic spindle tool could be removed.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        }
+      ],
+      "exclusions": [],
+      "source_gap": "Dossier does not establish an as-built SmoothieBox route or a complete physical contact schedule for the listed peripherals."
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "id": "forum-cnczone-chain-drive-plasma-table",
+  "sources": {
+    "forum-peripheral-evidence.json": {
+      "id": "forum-cnczone-chain-drive-plasma-table",
+      "dossier": "src/docs/machine-research/cnczone-chain-drive-plasma-table.md",
+      "reported_fitted_or_used": [],
+      "listed_for_build_unverified": [],
+      "historical_reference": [],
+      "planned_only": [],
+      "open_function_group": [
+        {
+          "name": "Two 24 V wheelchair motion motors",
+          "contacts": [],
+          "source_line_number": 9,
+          "source_line": "The initial builder describes an approximately 3 ft square (914 mm) XY table, two 24 V wheelchair motors, and an intention to construct an inexpensive CNC plasma cutter for metal sculpture. The machine was initially crude and the author was still choosing control electronics and software. Later posts in the thread document recycled construction parts, skateboard bearings, threaded rod/lead screws, a web-purchased controller, and a test in which a motor was made to turn.",
+          "evidence": "The initial builder describes an approximately 3 ft square (914 mm) XY table, two 24 V wheelchair motors, and an intention to construct an inexpensive CNC plasma cutter for metal sculpture. The machine was initially crude and the author was still choosing control electronics and software.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        }
+      ],
+      "exclusions": [],
+      "source_gap": "Dossier does not establish an as-built SmoothieBox route or a complete physical contact schedule for the listed peripherals."
+    }
+  }
+}

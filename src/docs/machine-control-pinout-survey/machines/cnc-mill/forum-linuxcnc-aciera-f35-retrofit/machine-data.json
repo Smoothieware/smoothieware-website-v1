@@ -1,0 +1,51 @@
+{
+  "id": "forum-linuxcnc-aciera-f35-retrofit",
+  "sources": {
+    "forum-peripheral-evidence.json": {
+      "id": "forum-linuxcnc-aciera-f35-retrofit",
+      "dossier": "src/docs/machine-research/linuxcnc-aciera-f35-retrofit.md",
+      "reported_fitted_or_used": [
+        {
+          "name": "Rotary encoders",
+          "contacts": [],
+          "source_line_number": 16,
+          "source_line": "| Command and feedback | Owner says the Mesa 7i95 sends step/direction to the Argons. New 5000-count rotary encoders were fitted to the servos. | Connector, step/dir timing, encoder wiring/polarity, scale factors for each axis, and electrical levels are not established by this dossier. |",
+          "evidence": "New 5000-count rotary encoders were fitted to the servos.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        },
+        {
+          "name": "Linear glass scales and SIN/COS converter",
+          "contacts": [],
+          "source_line_number": 17,
+          "source_line": "| Linear feedback | Original glass scales pass through a SIN/COS signal converter to the Mesa 7i95; the owner\u2019s goal was dual-loop control. | Converter make/model, signal levels, pin/channel assignment, and final dual-loop configuration are not specified. |",
+          "evidence": "Original glass scales pass through a SIN/COS signal converter to the Mesa 7i95; the owner\u2019s goal was dual-loop control.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        },
+        {
+          "name": "Three Granite Devices Argon servo drives",
+          "contacts": [],
+          "source_line_number": 15,
+          "source_line": "| Servo drives | Three Granite Devices Argon drives. Owner said he tuned in torque and velocity modes and could move smoothly in the vendor software. | The owner initially considered velocity mode, but forum advice says the Mesa 7i95 path requires position mode and 7i77 is the velocity-mode route. The thread does not independently validate drive parameters. |",
+          "evidence": "Three Granite Devices Argon drives. Owner said he tuned in torque and velocity modes and could move smoothly in the vendor software.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        }
+      ],
+      "listed_for_build_unverified": [],
+      "historical_reference": [],
+      "planned_only": [],
+      "open_function_group": [],
+      "exclusions": [
+        {
+          "name": "BBC/CEM brushed DC axis servos",
+          "contacts": [],
+          "source_line_number": 14,
+          "source_line": "| Servos | Three original fitted BBC/CEM FDE T4C4B3 brushed DC servos; owner gives 200 V, 12.8 A, approximately 2.5 kW. | Which value applies per motor and the exact motor/drive wiring are not mapped in the post. These are owner-reported nameplate details. |",
+          "evidence": "Three original fitted BBC/CEM FDE T4C4B3 brushed DC servos; owner gives 200 V, 12.8 A, approximately 2.5 kW.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route",
+          "reason": "Excluded: no separate externally addressable interface, existing control hardware, absent tooling, or inadequate positive device evidence in this dossier."
+        }
+      ],
+      "source_gap": "Dossier does not establish an as-built SmoothieBox route or a complete physical contact schedule for the listed peripherals."
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "id": "forum-v1e-a8ksh4-sacramento-mpcnc-primo-build",
+  "sources": {
+    "forum-peripheral-evidence.json": {
+      "id": "forum-v1e-a8ksh4-sacramento-mpcnc-primo-build",
+      "dossier": "src/docs/machine-research/v1e-a8ksh4-sacramento-mpcnc-primo-build.md",
+      "reported_fitted_or_used": [],
+      "listed_for_build_unverified": [],
+      "historical_reference": [],
+      "planned_only": [
+        {
+          "name": "DeWalt 611 router planned only",
+          "contacts": [],
+          "source_line_number": 11,
+          "source_line": "Dan was targeting a usable area of about 14 \u00d7 24 inches. He planned to use a DeWalt 611 router he already owned and reasoned that a 15 \u00d7 25 inch work area might be needed to accommodate it; this is a planning estimate, not a measured finished area. He was considering whether to use a spindle instead. He described intended future work including a wooden electromechanical board game, hardwood cases, keyboard plates, and possible aluminum e-bike parts. These are goals, not reported machine output.",
+          "evidence": "He planned to use a DeWalt 611 router he already owned and reasoned that a 15 \u00d7 25 inch work area might be needed to accommodate it; this is a planning estimate, not a measured finished area. He was considering whether to use a spindle instead.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        }
+      ],
+      "open_function_group": [],
+      "exclusions": [
+        {
+          "name": "Axis motors and drivers not commissioned",
+          "reason": "The selected dossier line is an absence/novelty statement, not positive device evidence.",
+          "source_line_number": 3,
+          "source_line": "**Machine identity:** Dan (`a8ksh4`)'s individual MPCNC Primo project, documented on V1E from January to March 2024. He separately mentioned an older \u201chalf working\u201d LowRider that was too large for his workspace; the Primo is a new, downsized build and is the subject of this dossier. The thread does not identify or fully document the older LowRider, so it is not counted as another dossier here."
+        }
+      ],
+      "source_gap": "Dossier does not establish an as-built SmoothieBox route or a complete physical contact schedule for the listed peripherals."
+    }
+  }
+}

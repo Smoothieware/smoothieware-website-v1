@@ -1,0 +1,64 @@
+{
+  "profiles": [
+    {
+      "id": "wiki-205",
+      "inspected_preview_matches": true,
+      "sha256": "28056a36ed884c880b6e21d8876e099f4e03756cf099f0b5c88f1ac141179e65"
+    },
+    {
+      "id": "laserplot-02",
+      "inspected_preview_matches": true,
+      "sha256": "eb513ad20aa30e0c88c713684a589fca73c802c537f86a1d4af7a9bd7ea76cd3"
+    },
+    {
+      "id": "base-11",
+      "inspected_preview_matches": true,
+      "sha256": "99250032a12d0861b1e9eda214b976e2b615f97fba8804c3a563340c90384d3c"
+    },
+    {
+      "id": "wiki-132",
+      "inspected_preview_matches": true,
+      "sha256": "45e81f4867050731b255f90aadee00bf33630fc5f40283d48e0b7f37794ce585"
+    },
+    {
+      "id": "wiki-134",
+      "inspected_preview_matches": true,
+      "sha256": "95fc2e1f7dc65e57130711a43319bb7d308800aa33f58e87e655777d4b8f2c8b"
+    },
+    {
+      "id": "wiki-135",
+      "inspected_preview_matches": true,
+      "sha256": "8e6091a415f873640ee09dec74d70ac553caef0babd5322af16a34f3993be37e"
+    },
+    {
+      "id": "mill-g2",
+      "inspected_preview_matches": true,
+      "sha256": "e6473ca78a224631790094b2f9d429949f185f01546b334e5e6738aa7eae9506"
+    },
+    {
+      "id": "mill-avid-ex-3",
+      "inspected_preview_matches": false,
+      "sha256": "3d8d4ba0ba7b35d8a43fa11b83aa5dc264928fb0e9050f3bb341b2f997eb0067"
+    },
+    {
+      "id": "wiki-206",
+      "inspected_preview_matches": false,
+      "sha256": "368005177e1dd2f0f45ee038b4d875415240aa0cf805789e43c7b6ccc3513c9f"
+    },
+    {
+      "id": "wiki-222",
+      "inspected_preview_matches": true,
+      "sha256": "9333ca30c7b9148645b1a77fa58f83a9b989ece2dad8a05f1086ad2ee09d4ce5"
+    },
+    {
+      "id": "forum-linuxcnc-optimill-mh50v-unlogic",
+      "inspected_preview_matches": true,
+      "sha256": "337cbe57ceb9e1abbd927c396f01340b9734b1d7a5a2fb61dec6296ed3ff245e"
+    },
+    {
+      "id": "forum-linuxcnc-rotarysmp-schaublin-125-cnc-retrofit",
+      "inspected_preview_matches": true,
+      "sha256": "296135889e880b9810916fe70671c2dc9a5005a3aac69e69661c133d247ebf26"
+    }
+  ]
+}

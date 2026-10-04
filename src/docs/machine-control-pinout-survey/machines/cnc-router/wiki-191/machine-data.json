@@ -1,0 +1,253 @@
+{
+  "id": "wiki-191",
+  "sources": {
+    "machine-side-graph-snapshot.json": {
+      "source_graph": "source-dossiers/191-wiki-191.json",
+      "source_sha256": "c05adb26593755d1655b3b6c0132cb1e7b6556393ed52a3f0207cfc5ab808c9b",
+      "graph": {
+        "profile_id": "wiki-191",
+        "devices": [
+          {
+            "id": "group-device-001",
+            "role": "peripheral"
+          },
+          {
+            "id": "group-device-002",
+            "role": "peripheral"
+          },
+          {
+            "id": "group-device-003",
+            "role": "peripheral"
+          },
+          {
+            "id": "group-device-004",
+            "role": "peripheral"
+          },
+          {
+            "id": "probotix-optional-driver-kit",
+            "role": "peripheral"
+          }
+        ],
+        "connectors": [
+          {
+            "id": "machine-group-001",
+            "device": "group-device-001",
+            "refdes": "Limit switches",
+            "form": "source-described cable / connector group",
+            "scope": "Source names this group, but provides no source-scoped physical contact map. Availability and exact housing are unverified. Connections and pinout",
+            "contacts": []
+          },
+          {
+            "id": "machine-group-002",
+            "device": "group-device-002",
+            "refdes": "E-stop",
+            "form": "source-described cable / connector group",
+            "scope": "Source names this group, but provides no source-scoped physical contact map. Availability and exact housing are unverified. Connections and pinout",
+            "contacts": []
+          },
+          {
+            "id": "machine-group-003",
+            "device": "group-device-003",
+            "refdes": "Router power/speed",
+            "form": "source-described cable / connector group",
+            "scope": "Source names this group, but provides no source-scoped physical contact map. Availability and exact housing are unverified. Connections and pinout",
+            "contacts": []
+          },
+          {
+            "id": "machine-group-004",
+            "device": "group-device-004",
+            "refdes": "Stepper drivers",
+            "form": "source-described cable / connector group",
+            "scope": "Source names this group, but provides no source-scoped physical contact map. Availability and exact housing are unverified. Connections and pinout",
+            "contacts": []
+          },
+          {
+            "id": "probotix-optional-driver-db25",
+            "device": "probotix-optional-driver-kit",
+            "refdes": "Optional Probotix motor/driver kit \u00b7 DB25 parallel-control cable",
+            "form": "DB25 cable named in legacy V90 motor/driver-kit guide; connector ends and mating view unspecified",
+            "scope": "Reference-only optional motor/driver kit described by the Probotix V90 guide. The MakeICT retired V90 is not shown to have this kit. The guide says the kit includes a DB25 cable and separately says a complete machine needs a PC with a parallel port; it gives no DB25 pin functions, connector-end direction, board revision, or fitted-machine correspondence. The 25 numbered entries below are nominal DB25 positions only, not an electrical pinout. This is an external peripheral endpoint beside the SmoothieBox; every contact is OPEN and no route is assigned.",
+            "contacts": [
+              {
+                "id": "1",
+                "mark": "1",
+                "label": "DB25 pin 1 \u00b7 function and cable-end direction undocumented",
+                "fact": "form_inventory_only",
+                "source_relation": "Nominal numbered positions for the optional kit cable form; not source-assigned signal pins"
+              },
+              {
+                "id": "2",
+                "mark": "2",
+                "label": "DB25 pin 2 \u00b7 function and cable-end direction undocumented",
+                "fact": "form_inventory_only",
+                "source_relation": "Nominal numbered positions for the optional kit cable form; not source-assigned signal pins"
+              },
+              {
+                "id": "3",
+                "mark": "3",
+                "label": "DB25 pin 3 \u00b7 function and cable-end direction undocumented",
+                "fact": "form_inventory_only",
+                "source_relation": "Nominal numbered positions for the optional kit cable form; not source-assigned signal pins"
+              },
+              {
+                "id": "4",
+                "mark": "4",
+                "label": "DB25 pin 4 \u00b7 function and cable-end direction undocumented",
+                "fact": "form_inventory_only",
+                "source_relation": "Nominal numbered positions for the optional kit cable form; not source-assigned signal pins"
+              },
+              {
+                "id": "5",
+                "mark": "5",
+                "label": "DB25 pin 5 \u00b7 function and cable-end direction undocumented",
+                "fact": "form_inventory_only",
+                "source_relation": "Nominal numbered positions for the optional kit cable form; not source-assigned signal pins"
+              },
+              {
+                "id": "6",
+                "mark": "6",
+                "label": "DB25 pin 6 \u00b7 function and cable-end direction undocumented",
+                "fact": "form_inventory_only",
+                "source_relation": "Nominal numbered positions for the optional kit cable form; not source-assigned signal pins"
+              },
+              {
+                "id": "7",
+                "mark": "7",
+                "label": "DB25 pin 7 \u00b7 function and cable-end direction undocumented",
+                "fact": "form_inventory_only",
+                "source_relation": "Nominal numbered positions for the optional kit cable form; not source-assigned signal pins"
+              },
+              {
+                "id": "8",
+                "mark": "8",
+                "label": "DB25 pin 8 \u00b7 function and cable-end direction undocumented",
+                "fact": "form_inventory_only",
+                "source_relation": "Nominal numbered positions for the optional kit cable form; not source-assigned signal pins"
+              },
+              {
+                "id": "9",
+                "mark": "9",
+                "label": "DB25 pin 9 \u00b7 function and cable-end direction undocumented",
+                "fact": "form_inventory_only",
+                "source_relation": "Nominal numbered positions for the optional kit cable form; not source-assigned signal pins"
+              },
+              {
+                "id": "10",
+                "mark": "10",
+                "label": "DB25 pin 10 \u00b7 function and cable-end direction undocumented",
+                "fact": "form_inventory_only",
+                "source_relation": "Nominal numbered positions for the optional kit cable form; not source-assigned signal pins"
+              },
+              {
+                "id": "11",
+                "mark": "11",
+                "label": "DB25 pin 11 \u00b7 function and cable-end direction undocumented",
+                "fact": "form_inventory_only",
+                "source_relation": "Nominal numbered positions for the optional kit cable form; not source-assigned signal pins"
+              },
+              {
+                "id": "12",
+                "mark": "12",
+                "label": "DB25 pin 12 \u00b7 function and cable-end direction undocumented",
+                "fact": "form_inventory_only",
+                "source_relation": "Nominal numbered positions for the optional kit cable form; not source-assigned signal pins"
+              },
+              {
+                "id": "13",
+                "mark": "13",
+                "label": "DB25 pin 13 \u00b7 function and cable-end direction undocumented",
+                "fact": "form_inventory_only",
+                "source_relation": "Nominal numbered positions for the optional kit cable form; not source-assigned signal pins"
+              },
+              {
+                "id": "14",
+                "mark": "14",
+                "label": "DB25 pin 14 \u00b7 function and cable-end direction undocumented",
+                "fact": "form_inventory_only",
+                "source_relation": "Nominal numbered positions for the optional kit cable form; not source-assigned signal pins"
+              },
+              {
+                "id": "15",
+                "mark": "15",
+                "label": "DB25 pin 15 \u00b7 function and cable-end direction undocumented",
+                "fact": "form_inventory_only",
+                "source_relation": "Nominal numbered positions for the optional kit cable form; not source-assigned signal pins"
+              },
+              {
+                "id": "16",
+                "mark": "16",
+                "label": "DB25 pin 16 \u00b7 function and cable-end direction undocumented",
+                "fact": "form_inventory_only",
+                "source_relation": "Nominal numbered positions for the optional kit cable form; not source-assigned signal pins"
+              },
+              {
+                "id": "17",
+                "mark": "17",
+                "label": "DB25 pin 17 \u00b7 function and cable-end direction undocumented",
+                "fact": "form_inventory_only",
+                "source_relation": "Nominal numbered positions for the optional kit cable form; not source-assigned signal pins"
+              },
+              {
+                "id": "18",
+                "mark": "18",
+                "label": "DB25 pin 18 \u00b7 function and cable-end direction undocumented",
+                "fact": "form_inventory_only",
+                "source_relation": "Nominal numbered positions for the optional kit cable form; not source-assigned signal pins"
+              },
+              {
+                "id": "19",
+                "mark": "19",
+                "label": "DB25 pin 19 \u00b7 function and cable-end direction undocumented",
+                "fact": "form_inventory_only",
+                "source_relation": "Nominal numbered positions for the optional kit cable form; not source-assigned signal pins"
+              },
+              {
+                "id": "20",
+                "mark": "20",
+                "label": "DB25 pin 20 \u00b7 function and cable-end direction undocumented",
+                "fact": "form_inventory_only",
+                "source_relation": "Nominal numbered positions for the optional kit cable form; not source-assigned signal pins"
+              },
+              {
+                "id": "21",
+                "mark": "21",
+                "label": "DB25 pin 21 \u00b7 function and cable-end direction undocumented",
+                "fact": "form_inventory_only",
+                "source_relation": "Nominal numbered positions for the optional kit cable form; not source-assigned signal pins"
+              },
+              {
+                "id": "22",
+                "mark": "22",
+                "label": "DB25 pin 22 \u00b7 function and cable-end direction undocumented",
+                "fact": "form_inventory_only",
+                "source_relation": "Nominal numbered positions for the optional kit cable form; not source-assigned signal pins"
+              },
+              {
+                "id": "23",
+                "mark": "23",
+                "label": "DB25 pin 23 \u00b7 function and cable-end direction undocumented",
+                "fact": "form_inventory_only",
+                "source_relation": "Nominal numbered positions for the optional kit cable form; not source-assigned signal pins"
+              },
+              {
+                "id": "24",
+                "mark": "24",
+                "label": "DB25 pin 24 \u00b7 function and cable-end direction undocumented",
+                "fact": "form_inventory_only",
+                "source_relation": "Nominal numbered positions for the optional kit cable form; not source-assigned signal pins"
+              },
+              {
+                "id": "25",
+                "mark": "25",
+                "label": "DB25 pin 25 \u00b7 function and cable-end direction undocumented",
+                "fact": "form_inventory_only",
+                "source_relation": "Nominal numbered positions for the optional kit cable form; not source-assigned signal pins"
+              }
+            ]
+          }
+        ],
+        "wires": []
+      }
+    }
+  }
+}

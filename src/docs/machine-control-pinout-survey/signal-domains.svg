@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 610" role="img" aria-labelledby="title desc">
+  <title id="title">Machine-control wiring domains</title>
+  <desc id="desc">Separate logic signals, field I/O, motor driver power, spindle power, mains, protective earth, and safety circuits.</desc>
+  <rect width="1100" height="610" rx="24" fill="#f3f0e8"/>
+  <text x="48" y="58" font-family="system-ui,sans-serif" font-size="25" font-weight="800" fill="#123247">A pin label must name its electrical domain</text>
+  <text x="48" y="88" font-family="system-ui,sans-serif" font-size="15" fill="#455a63">Illustrative boundaries only — colors are not a wiring standard.</text>
+  <g font-family="system-ui,sans-serif">
+    <rect x="48" y="125" width="300" height="144" rx="16" fill="#d8efec" stroke="#087e82" stroke-width="3"/>
+    <text x="72" y="162" font-size="18" font-weight="800" fill="#123247">CONTROL LOGIC</text>
+    <text x="72" y="195" font-size="16" fill="#123247">STEP · DIR · ENABLE · PWM</text>
+    <text x="72" y="225" font-size="14" fill="#455a63">V2-Core I/O rating must be verified</text>
+    <rect x="400" y="125" width="300" height="144" rx="16" fill="#e6e1f2" stroke="#6b5aa6" stroke-width="3"/>
+    <text x="424" y="162" font-size="18" font-weight="800" fill="#123247">FIELD I/O</text>
+    <text x="424" y="195" font-size="16" fill="#123247">LIMITS · PROBE · ENCODER</text>
+    <text x="424" y="225" font-size="14" fill="#455a63">Voltage, polarity, common, isolation</text>
+    <rect x="752" y="125" width="300" height="144" rx="16" fill="#fff0d8" stroke="#bc652e" stroke-width="3"/>
+    <text x="776" y="162" font-size="18" font-weight="800" fill="#123247">DRIVER INPUT</text>
+    <text x="776" y="195" font-size="16" fill="#123247">STEP± · DIR± · EN±</text>
+    <text x="776" y="225" font-size="14" fill="#455a63">Match input circuit and signal polarity</text>
+    <path d="M350 196h42M702 196h42" fill="none" stroke="#123247" stroke-width="4"/>
+    <path d="m384 188 10 8-10 8M736 188l10 8-10 8" fill="#123247"/>
+    <rect x="48" y="327" width="300" height="144" rx="16" fill="#f6ded9" stroke="#9c3e35" stroke-width="3"/>
+    <text x="72" y="364" font-size="18" font-weight="800" fill="#123247">MOTOR POWER</text>
+    <text x="72" y="397" font-size="16" fill="#123247">DC BUS · PHASE WIRES</text>
+    <text x="72" y="427" font-size="14" fill="#455a63">Connect only at the driver/power boundary</text>
+    <rect x="400" y="327" width="300" height="144" rx="16" fill="#ece5d8" stroke="#806b47" stroke-width="3"/>
+    <text x="424" y="364" font-size="18" font-weight="800" fill="#123247">SPINDLE / LASER</text>
+    <text x="424" y="397" font-size="16" fill="#123247">ENABLE · PWM · ANALOG REF</text>
+    <text x="424" y="427" font-size="14" fill="#455a63">Keep control separate from output power</text>
+    <rect x="752" y="327" width="300" height="144" rx="16" fill="#dfe8dd" stroke="#3f704d" stroke-width="3"/>
+    <text x="776" y="364" font-size="18" font-weight="800" fill="#123247">SAFETY / PE</text>
+    <text x="776" y="397" font-size="16" fill="#123247">E-STOP · INTERLOCK · CHASSIS</text>
+    <text x="776" y="427" font-size="14" fill="#455a63">Independent chain and protective bond</text>
+    <rect x="48" y="520" width="1004" height="54" rx="12" fill="#123247"/>
+    <text x="76" y="554" font-size="16" font-weight="700" fill="#ffffff">Mains, PE, spindle output, laser high voltage, and motor phases are never GPIO.</text>
+  </g>
+</svg>

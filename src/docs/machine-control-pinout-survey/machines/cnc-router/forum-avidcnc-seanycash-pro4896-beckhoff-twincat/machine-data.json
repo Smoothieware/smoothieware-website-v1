@@ -1,0 +1,136 @@
+{
+  "id": "forum-avidcnc-seanycash-pro4896-beckhoff-twincat",
+  "sources": {
+    "forum-peripheral-evidence.json": {
+      "id": "forum-avidcnc-seanycash-pro4896-beckhoff-twincat",
+      "dossier": "src/docs/machine-research/avidcnc-seanycash-pro4896-beckhoff-twincat.md",
+      "reported_fitted_or_used": [
+        {
+          "name": "Beckhoff EL7040 stepper drive cards",
+          "contacts": [],
+          "source_line_number": 15,
+          "source_line": "| Fieldbus and motion | Beckhoff EK1100 EtherCAT bus coupler; EL7040 stepper motor control cards; Beckhoff NEMA 34 stepper motors | Axis/channel assignments, motor wiring, card counts, current settings, and EtherCAT topology are not mapped in the post. |",
+          "evidence": "Beckhoff EK1100 EtherCAT bus coupler; EL7040 stepper motor control cards; Beckhoff NEMA 34 stepper motors.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        },
+        {
+          "name": "Beckhoff proximity and limit sensors",
+          "contacts": [],
+          "source_line_number": 16,
+          "source_line": "| Sensors and digital IO | Beckhoff EP module(s) for proximity sensors; an IP-rated input module with up to 16 inputs; an 8-channel output module | Exact EP model and terminal assignments are not given. The owner says the proximity sensors/limit switches use the input module, but does not publish a point-by-point map. |",
+          "evidence": "Beckhoff EP module(s) for proximity sensors; an IP-rated input module with up to 16 inputs; an 8-channel output module.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        },
+        {
+          "name": "Invertek Optidrive E3 VFD",
+          "contacts": [],
+          "source_line_number": 17,
+          "source_line": "| Spindle and VFD | Avid GMT 3 HP spindle; Invertek Optidrive E3 3 HP VFD; Beckhoff EL6020 serial card for VFD control | The owner reports using Modbus to start/stop and set spindle speed. Register addresses, serial settings, spindle parameters, and fault handling are not shown. |",
+          "evidence": "Avid GMT 3 HP spindle; Invertek Optidrive E3 3 HP VFD; Beckhoff EL6020 serial card for VFD control.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        },
+        {
+          "name": "Avid GMT 3 HP spindle",
+          "contacts": [],
+          "source_line_number": 17,
+          "source_line": "| Spindle and VFD | Avid GMT 3 HP spindle; Invertek Optidrive E3 3 HP VFD; Beckhoff EL6020 serial card for VFD control | The owner reports using Modbus to start/stop and set spindle speed. Register addresses, serial settings, spindle parameters, and fault handling are not shown. |",
+          "evidence": "Avid GMT 3 HP spindle; Invertek Optidrive E3 3 HP VFD; Beckhoff EL6020 serial card for VFD control.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        },
+        {
+          "name": "Pilz E-stop safety relay",
+          "contacts": [],
+          "source_line_number": 18,
+          "source_line": "| Power and emergency stop | 48 V supplies for steppers, 24 V for logic and IO, Pilz safety relay with redundant normally closed contacts | Owner says the E-stop removes power from all steppers; motors remain unpowered until the E-stop is released and the white control-power button is pressed to reset the safety circuit. The post is not a schematic and does not specify the exact safety relay or contactor model. |",
+          "evidence": "48 V supplies for steppers, 24 V for logic and IO, Pilz safety relay with redundant normally closed contacts.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        },
+        {
+          "name": "Dust collector switching relay",
+          "contacts": [],
+          "source_line_number": 20,
+          "source_line": "| Dust collection | Collector motor under the table; ductwork arranged along the wall. TwinCAT switches a relay output automatically during program execution; the HMI can also toggle it. | No relay model, collector specification, or extraction measurements are given. |",
+          "evidence": "Collector motor under the table; ductwork arranged along the wall. TwinCAT switches a relay output automatically during program execution; the HMI can also toggle it.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        }
+      ],
+      "listed_for_build_unverified": [],
+      "historical_reference": [],
+      "planned_only": [],
+      "open_function_group": [
+        {
+          "name": "Dell OptiPlex 7020 control computer / TwinCAT 3 and HMI",
+          "contacts": [],
+          "source_line_number": 14,
+          "source_line": "| Control computer | Dell OptiPlex 7020 with quad-core CPU and SSD | Exact CPU and operating-system version are not stated. |",
+          "evidence": "Owner names the Dell OptiPlex 7020 and TwinCAT control environment; no external machine connector or host interface is mapped.",
+          "wiring_status": "OPEN: source identifies the computer and software boundary only"
+        },
+        {
+          "name": "Beckhoff EK1100 EtherCAT bus coupler",
+          "contacts": [],
+          "source_line_number": 15,
+          "source_line": "| Fieldbus and motion | Beckhoff EK1100 EtherCAT bus coupler; EL7040 stepper motor control cards; Beckhoff NEMA 34 stepper motors | Axis/channel assignments, motor wiring, card counts, current settings, and EtherCAT topology are not mapped in the post. |",
+          "evidence": "The owner reports an EK1100; the separate manufacturer reference card lists family contacts without asserting the installed revision or harness.",
+          "wiring_status": "OPEN: no as-built EtherCAT or SmoothieBox route"
+        },
+        {
+          "name": "Beckhoff EL6020 serial interface for VFD Modbus",
+          "contacts": [],
+          "source_line_number": 17,
+          "source_line": "| Spindle and VFD | Avid GMT 3 HP spindle; Invertek Optidrive E3 3 HP VFD; Beckhoff EL6020 serial card for VFD control | The owner reports using Modbus to start/stop and set spindle speed. Register addresses, serial settings, spindle parameters, and fault handling are not shown. |",
+          "evidence": "Owner states that the EL6020 controls the E3 by Modbus; EL6020 connector contacts and serial settings are not published.",
+          "wiring_status": "OPEN: functional relationship only; no EL6020 contact map"
+        },
+        {
+          "name": "Beckhoff NEMA 34 motor set / axis assignments",
+          "contacts": [],
+          "source_line_number": 15,
+          "source_line": "| Fieldbus and motion | Beckhoff EK1100 EtherCAT bus coupler; EL7040 stepper motor control cards; Beckhoff NEMA 34 stepper motors | Axis/channel assignments, motor wiring, card counts, current settings, and EtherCAT topology are not mapped in the post. |",
+          "evidence": "Owner names NEMA 34 motors but gives no axis count, phase connector, or motor-cable schedule.",
+          "wiring_status": "OPEN: no motor contact schedule or axis binding"
+        },
+        {
+          "name": "48 V stepper / 24 V logic and IO supplies",
+          "contacts": [],
+          "source_line_number": 18,
+          "source_line": "| Power and emergency stop | 48 V supplies for steppers, 24 V for logic and IO, Pilz safety relay with redundant normally closed contacts | Owner says the E-stop removes power from all steppers; motors remain unpowered until the E-stop is released and the white control-power button is pressed to reset the safety circuit. The post is not a schematic and does not specify the exact safety relay or contactor model. |",
+          "evidence": "Owner reports supply rails and reset behavior, but no supply connector, fuse, return, or field termination is provided.",
+          "wiring_status": "OPEN: no power or return contact map"
+        },
+        {
+          "name": "IP-rated input module \u00b7 up to 16 proximity/limit inputs",
+          "contacts": [],
+          "source_line_number": 16,
+          "source_line": "| Sensors and digital IO | Beckhoff EP module(s) for proximity sensors; an IP-rated input module with up to 16 inputs; an 8-channel output module | Exact EP model and terminal assignments are not given. The owner says the proximity sensors/limit switches use the input module, but does not publish a point-by-point map. |",
+          "evidence": "Capacity and use are reported; exact module model, channel numbering and sensor wiring are absent.",
+          "wiring_status": "OPEN: capacity is not converted into invented pins"
+        },
+        {
+          "name": "8-channel output module \u00b7 relay and auxiliary outputs",
+          "contacts": [],
+          "source_line_number": 16,
+          "source_line": "| Sensors and digital IO | Beckhoff EP module(s) for proximity sensors; an IP-rated input module with up to 16 inputs; an 8-channel output module | Exact EP model and terminal assignments are not given. The owner says the proximity sensors/limit switches use the input module, but does not publish a point-by-point map. |",
+          "evidence": "The owner reports an eight-channel output module and a relay-controlled dust collector, but no channel assignment or output terminal schedule.",
+          "wiring_status": "OPEN: no output channel or relay contact map"
+        }
+      ],
+      "exclusions": [
+        {
+          "name": "Beckhoff NEMA 34 stepper motors",
+          "contacts": [],
+          "source_line_number": 15,
+          "source_line": "| Fieldbus and motion | Beckhoff EK1100 EtherCAT bus coupler; EL7040 stepper motor control cards; Beckhoff NEMA 34 stepper motors | Axis/channel assignments, motor wiring, card counts, current settings, and EtherCAT topology are not mapped in the post. |",
+          "evidence": "Beckhoff EK1100 EtherCAT bus coupler; EL7040 stepper motor control cards; Beckhoff NEMA 34 stepper motors",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route",
+          "reason": "Excluded: no separate externally addressable interface, existing control hardware, absent tooling, or inadequate positive device evidence in this dossier."
+        },
+        {
+          "name": "Beckhoff EK1100 EtherCAT bus coupler and EL6020 serial card",
+          "reason": "Existing fieldbus/control infrastructure, not a machine-side peripheral."
+        }
+      ],
+      "source_gap": "Dossier does not establish an as-built SmoothieBox route or a complete physical contact schedule for the listed peripherals."
+    }
+  }
+}

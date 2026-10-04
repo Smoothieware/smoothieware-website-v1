@@ -1,0 +1,25 @@
+{
+  "id": "forum-v1e-hififlash1986-600x800-mpcnc",
+  "sources": {
+    "forum-peripheral-evidence.json": {
+      "id": "forum-v1e-hififlash1986-600x800-mpcnc",
+      "dossier": "src/docs/machine-research/v1e-hififlash1986-600x800-mpcnc.md",
+      "reported_fitted_or_used": [
+        {
+          "name": "Katsu router",
+          "contacts": [],
+          "source_line_number": 14,
+          "source_line": "| Router | A Katsu router, described by the owner as a Makita clone, with a substantial printed mount. | Router model, mount revision, collet, speed calibration, and retention details are absent. |",
+          "evidence": "A Katsu router, described by the owner as a Makita clone, with a substantial printed mount.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        }
+      ],
+      "listed_for_build_unverified": [],
+      "historical_reference": [],
+      "planned_only": [],
+      "open_function_group": [],
+      "exclusions": [],
+      "source_gap": "Dossier does not establish an as-built SmoothieBox route or a complete physical contact schedule for the listed peripherals."
+    }
+  }
+}

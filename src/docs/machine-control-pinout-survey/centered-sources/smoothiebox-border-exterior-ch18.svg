@@ -1,0 +1,411 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2932 3250" role="img"><style>
+text{font-family:Arial,Helvetica,sans-serif;fill:#20372c}.title{font-size:36px;font-weight:800}.subtitle{font-size:17px;fill:#526a5b}.side-title{font-size:21px;font-weight:800;letter-spacing:1px}.bank-title{font-size:17px;font-weight:800;paint-order:stroke fill;stroke:#fffef9;stroke-width:5px}.pin{font-size:11px;font-weight:800;paint-order:stroke fill;stroke:#fffef9;stroke-width:3px}.board-title{font-size:16px;font-weight:800;paint-order:stroke fill;stroke:#fffef9;stroke-width:5px}.source-pin{font-size:12px;font-weight:700;paint-order:stroke fill;stroke:#fffef9;stroke-width:4px}.tiny-pin{font-size:11px;font-weight:700;paint-order:stroke fill;stroke:#fffef9;stroke-width:3px}.note{font-size:15px;fill:#42584b}.service-title{font-size:13px;font-weight:800;paint-order:stroke fill;stroke:#fffef9;stroke-width:4px}.fet-rating{font-size:13px;font-weight:800;fill:#465351}.rating-note{font-size:13px;fill:#465351}.pill-text{font-size:12px;fill:#fff;font-weight:800;text-anchor:middle;letter-spacing:.15px}.pwm-mark{font-size:22px;fill:#fff;font-weight:800;text-anchor:middle}.pin-pill[data-pill-kind="power"] .pill-role{fill:#262108}.fet-letter{font-size:12px;fill:#fff;font-weight:800;text-anchor:middle}.fet-terminal{font-size:11px;fill:#2b3940;font-weight:800;text-anchor:middle}.case{fill:#fffef9;stroke:#29513e;stroke-width:5}.terminal{fill:#35ba58;stroke:#1b6338;stroke-width:3}.divider{stroke:#1b6338;stroke-width:2}.entry{fill:#1a7838}.wire-gap{fill:none;stroke:#fffef9;stroke-width:8;stroke-linecap:round;stroke-linejoin:round}.wire{fill:none;stroke-width:3.7;stroke-linecap:round;stroke-linejoin:round}.wire.power{stroke:#e2bb00}.wire.three{stroke:#db2525}.wire.five{stroke:#d76a00}.wire.sensor{stroke:#4c748a}.wire.ground{stroke:#111717}.wire.signal{stroke:#128c68}.wire.control{stroke:#6550b1}.wire.switched{stroke:#a23384}.wire.step{stroke:#136da7}.wire.direction{stroke:#7443a4}.wire.enable{stroke:#087b60}.ribbon-track{fill:none;stroke-width:6.2;stroke-linecap:square;stroke-linejoin:round}.ribbon-track.step{stroke:#136da7}.ribbon-track.direction{stroke:#7443a4}.ribbon-track.enable{stroke:#087b60}.pin-anchor{fill:none;stroke:none}.callout{fill:#f2f6ef;stroke:#83a18b;stroke-width:1.5}
+.limit-caption{font-size:11px;font-weight:800;fill:#465351;text-anchor:middle;letter-spacing:.6px}.limit-white{font-size:12px;fill:#fffef9;font-weight:800;text-anchor:middle}.limit-black{font-size:12px;fill:#111717;font-weight:800;text-anchor:middle}
+</style>
+<rect class="case" x="170" y="180" width="2592" height="2880" rx="12" />
+<g class="field-bank" data-bank="POWER" data-side="north" data-contact-pitch="44">
+<rect class="terminal" x="364.0" y="249.39999999999998" width="88" height="58" rx="5" />
+<rect class="entry" x="374.0" y="299.4" width="24" height="10" rx="2" />
+<circle cx="386.0" cy="273.4" r="17" fill="#153623" /><circle cx="386.0" cy="273.4" r="14" fill="#c8d2d3" stroke="#73888d" stroke-width="2" /><path d="M377.0 279.4l18 -12" stroke="#35484b" stroke-width="3" stroke-linecap="round" />
+<path class="divider" d="M408.0 250.39999999999998v56" />
+<rect class="entry" x="418.0" y="299.4" width="24" height="10" rx="2" />
+<circle cx="430.0" cy="273.4" r="17" fill="#153623" /><circle cx="430.0" cy="273.4" r="14" fill="#c8d2d3" stroke="#73888d" stroke-width="2" /><path d="M421.0 279.4l18 -12" stroke="#35484b" stroke-width="3" stroke-linecap="round" />
+</g>
+<g class="field-bank" data-bank="FIVEIN" data-side="north" data-contact-pitch="44">
+<rect class="terminal" x="586.0" y="249.39999999999998" width="88" height="58" rx="5" />
+<rect class="entry" x="596.0" y="299.4" width="24" height="10" rx="2" />
+<circle cx="608.0" cy="273.4" r="17" fill="#153623" /><circle cx="608.0" cy="273.4" r="14" fill="#c8d2d3" stroke="#73888d" stroke-width="2" /><path d="M599.0 279.4l18 -12" stroke="#35484b" stroke-width="3" stroke-linecap="round" />
+<path class="divider" d="M630.0 250.39999999999998v56" />
+<rect class="entry" x="640.0" y="299.4" width="24" height="10" rx="2" />
+<circle cx="652.0" cy="273.4" r="17" fill="#153623" /><circle cx="652.0" cy="273.4" r="14" fill="#c8d2d3" stroke="#73888d" stroke-width="2" /><path d="M643.0 279.4l18 -12" stroke="#35484b" stroke-width="3" stroke-linecap="round" />
+</g>
+<g class="field-bank" data-bank="FIVEOUT" data-side="north" data-contact-pitch="44">
+<rect class="terminal" x="808.0" y="249.39999999999998" width="88" height="58" rx="5" />
+<rect class="entry" x="818.0" y="299.4" width="24" height="10" rx="2" />
+<circle cx="830.0" cy="273.4" r="17" fill="#153623" /><circle cx="830.0" cy="273.4" r="14" fill="#c8d2d3" stroke="#73888d" stroke-width="2" /><path d="M821.0 279.4l18 -12" stroke="#35484b" stroke-width="3" stroke-linecap="round" />
+<path class="divider" d="M852.0 250.39999999999998v56" />
+<rect class="entry" x="862.0" y="299.4" width="24" height="10" rx="2" />
+<circle cx="874.0" cy="273.4" r="17" fill="#153623" /><circle cx="874.0" cy="273.4" r="14" fill="#c8d2d3" stroke="#73888d" stroke-width="2" /><path d="M865.0 279.4l18 -12" stroke="#35484b" stroke-width="3" stroke-linecap="round" />
+</g>
+<g class="field-bank" data-bank="AUX" data-side="north" data-contact-pitch="44">
+<rect class="terminal" x="1672.0" y="249.39999999999998" width="264" height="58" rx="5" />
+<rect class="entry" x="1682.0" y="299.4" width="24" height="10" rx="2" />
+<circle cx="1694.0" cy="273.4" r="17" fill="#153623" /><circle cx="1694.0" cy="273.4" r="14" fill="#c8d2d3" stroke="#73888d" stroke-width="2" /><path d="M1685.0 279.4l18 -12" stroke="#35484b" stroke-width="3" stroke-linecap="round" />
+<path class="divider" d="M1716.0 250.39999999999998v56" />
+<rect class="entry" x="1726.0" y="299.4" width="24" height="10" rx="2" />
+<circle cx="1738.0" cy="273.4" r="17" fill="#153623" /><circle cx="1738.0" cy="273.4" r="14" fill="#c8d2d3" stroke="#73888d" stroke-width="2" /><path d="M1729.0 279.4l18 -12" stroke="#35484b" stroke-width="3" stroke-linecap="round" />
+<path class="divider" d="M1760.0 250.39999999999998v56" />
+<rect class="entry" x="1770.0" y="299.4" width="24" height="10" rx="2" />
+<circle cx="1782.0" cy="273.4" r="17" fill="#153623" /><circle cx="1782.0" cy="273.4" r="14" fill="#c8d2d3" stroke="#73888d" stroke-width="2" /><path d="M1773.0 279.4l18 -12" stroke="#35484b" stroke-width="3" stroke-linecap="round" />
+<path class="divider" d="M1804.0 250.39999999999998v56" />
+<rect class="entry" x="1814.0" y="299.4" width="24" height="10" rx="2" />
+<circle cx="1826.0" cy="273.4" r="17" fill="#153623" /><circle cx="1826.0" cy="273.4" r="14" fill="#c8d2d3" stroke="#73888d" stroke-width="2" /><path d="M1817.0 279.4l18 -12" stroke="#35484b" stroke-width="3" stroke-linecap="round" />
+<path class="divider" d="M1848.0 250.39999999999998v56" />
+<rect class="entry" x="1858.0" y="299.4" width="24" height="10" rx="2" />
+<circle cx="1870.0" cy="273.4" r="17" fill="#153623" /><circle cx="1870.0" cy="273.4" r="14" fill="#c8d2d3" stroke="#73888d" stroke-width="2" /><path d="M1861.0 279.4l18 -12" stroke="#35484b" stroke-width="3" stroke-linecap="round" />
+<path class="divider" d="M1892.0 250.39999999999998v56" />
+<rect class="entry" x="1902.0" y="299.4" width="24" height="10" rx="2" />
+<circle cx="1914.0" cy="273.4" r="17" fill="#153623" /><circle cx="1914.0" cy="273.4" r="14" fill="#c8d2d3" stroke="#73888d" stroke-width="2" /><path d="M1905.0 279.4l18 -12" stroke="#35484b" stroke-width="3" stroke-linecap="round" />
+</g>
+<g class="field-bank" data-bank="XMIN" data-side="east" data-contact-pitch="44">
+<rect class="terminal" x="2634.6" y="350.0" width="58" height="132" rx="5" />
+<rect class="entry" x="2632.6" y="360.0" width="10" height="24" rx="2" />
+<circle cx="2663.6" cy="372.0" r="17" fill="#153623" /><circle cx="2663.6" cy="372.0" r="14" fill="#c8d2d3" stroke="#73888d" stroke-width="2" /><path d="M2654.6 378.0l18 -12" stroke="#35484b" stroke-width="3" stroke-linecap="round" />
+<path class="divider" d="M2635.6 394.0h44" />
+<rect class="entry" x="2632.6" y="404.0" width="10" height="24" rx="2" />
+<circle cx="2663.6" cy="416.0" r="17" fill="#153623" /><circle cx="2663.6" cy="416.0" r="14" fill="#c8d2d3" stroke="#73888d" stroke-width="2" /><path d="M2654.6 422.0l18 -12" stroke="#35484b" stroke-width="3" stroke-linecap="round" />
+<path class="divider" d="M2635.6 438.0h44" />
+<rect class="entry" x="2632.6" y="448.0" width="10" height="24" rx="2" />
+<circle cx="2663.6" cy="460.0" r="17" fill="#153623" /><circle cx="2663.6" cy="460.0" r="14" fill="#c8d2d3" stroke="#73888d" stroke-width="2" /><path d="M2654.6 466.0l18 -12" stroke="#35484b" stroke-width="3" stroke-linecap="round" />
+</g>
+<g class="field-bank" data-bank="XMAX" data-side="east" data-contact-pitch="44">
+<rect class="terminal" x="2634.6" y="602.0" width="58" height="132" rx="5" />
+<rect class="entry" x="2632.6" y="612.0" width="10" height="24" rx="2" />
+<circle cx="2663.6" cy="624.0" r="17" fill="#153623" /><circle cx="2663.6" cy="624.0" r="14" fill="#c8d2d3" stroke="#73888d" stroke-width="2" /><path d="M2654.6 630.0l18 -12" stroke="#35484b" stroke-width="3" stroke-linecap="round" />
+<path class="divider" d="M2635.6 646.0h44" />
+<rect class="entry" x="2632.6" y="656.0" width="10" height="24" rx="2" />
+<circle cx="2663.6" cy="668.0" r="17" fill="#153623" /><circle cx="2663.6" cy="668.0" r="14" fill="#c8d2d3" stroke="#73888d" stroke-width="2" /><path d="M2654.6 674.0l18 -12" stroke="#35484b" stroke-width="3" stroke-linecap="round" />
+<path class="divider" d="M2635.6 690.0h44" />
+<rect class="entry" x="2632.6" y="700.0" width="10" height="24" rx="2" />
+<circle cx="2663.6" cy="712.0" r="17" fill="#153623" /><circle cx="2663.6" cy="712.0" r="14" fill="#c8d2d3" stroke="#73888d" stroke-width="2" /><path d="M2654.6 718.0l18 -12" stroke="#35484b" stroke-width="3" stroke-linecap="round" />
+</g>
+<g class="field-bank" data-bank="YMIN" data-side="east" data-contact-pitch="44">
+<rect class="terminal" x="2634.6" y="854.0" width="58" height="132" rx="5" />
+<rect class="entry" x="2632.6" y="864.0" width="10" height="24" rx="2" />
+<circle cx="2663.6" cy="876.0" r="17" fill="#153623" /><circle cx="2663.6" cy="876.0" r="14" fill="#c8d2d3" stroke="#73888d" stroke-width="2" /><path d="M2654.6 882.0l18 -12" stroke="#35484b" stroke-width="3" stroke-linecap="round" />
+<path class="divider" d="M2635.6 898.0h44" />
+<rect class="entry" x="2632.6" y="908.0" width="10" height="24" rx="2" />
+<circle cx="2663.6" cy="920.0" r="17" fill="#153623" /><circle cx="2663.6" cy="920.0" r="14" fill="#c8d2d3" stroke="#73888d" stroke-width="2" /><path d="M2654.6 926.0l18 -12" stroke="#35484b" stroke-width="3" stroke-linecap="round" />
+<path class="divider" d="M2635.6 942.0h44" />
+<rect class="entry" x="2632.6" y="952.0" width="10" height="24" rx="2" />
+<circle cx="2663.6" cy="964.0" r="17" fill="#153623" /><circle cx="2663.6" cy="964.0" r="14" fill="#c8d2d3" stroke="#73888d" stroke-width="2" /><path d="M2654.6 970.0l18 -12" stroke="#35484b" stroke-width="3" stroke-linecap="round" />
+</g>
+<g class="field-bank" data-bank="YMAX" data-side="east" data-contact-pitch="44">
+<rect class="terminal" x="2634.6" y="1106.0" width="58" height="132" rx="5" />
+<rect class="entry" x="2632.6" y="1116.0" width="10" height="24" rx="2" />
+<circle cx="2663.6" cy="1128.0" r="17" fill="#153623" /><circle cx="2663.6" cy="1128.0" r="14" fill="#c8d2d3" stroke="#73888d" stroke-width="2" /><path d="M2654.6 1134.0l18 -12" stroke="#35484b" stroke-width="3" stroke-linecap="round" />
+<path class="divider" d="M2635.6 1150.0h44" />
+<rect class="entry" x="2632.6" y="1160.0" width="10" height="24" rx="2" />
+<circle cx="2663.6" cy="1172.0" r="17" fill="#153623" /><circle cx="2663.6" cy="1172.0" r="14" fill="#c8d2d3" stroke="#73888d" stroke-width="2" /><path d="M2654.6 1178.0l18 -12" stroke="#35484b" stroke-width="3" stroke-linecap="round" />
+<path class="divider" d="M2635.6 1194.0h44" />
+<rect class="entry" x="2632.6" y="1204.0" width="10" height="24" rx="2" />
+<circle cx="2663.6" cy="1216.0" r="17" fill="#153623" /><circle cx="2663.6" cy="1216.0" r="14" fill="#c8d2d3" stroke="#73888d" stroke-width="2" /><path d="M2654.6 1222.0l18 -12" stroke="#35484b" stroke-width="3" stroke-linecap="round" />
+</g>
+<g class="field-bank" data-bank="ZMIN" data-side="east" data-contact-pitch="44">
+<rect class="terminal" x="2634.6" y="1358.0" width="58" height="132" rx="5" />
+<rect class="entry" x="2632.6" y="1368.0" width="10" height="24" rx="2" />
+<circle cx="2663.6" cy="1380.0" r="17" fill="#153623" /><circle cx="2663.6" cy="1380.0" r="14" fill="#c8d2d3" stroke="#73888d" stroke-width="2" /><path d="M2654.6 1386.0l18 -12" stroke="#35484b" stroke-width="3" stroke-linecap="round" />
+<path class="divider" d="M2635.6 1402.0h44" />
+<rect class="entry" x="2632.6" y="1412.0" width="10" height="24" rx="2" />
+<circle cx="2663.6" cy="1424.0" r="17" fill="#153623" /><circle cx="2663.6" cy="1424.0" r="14" fill="#c8d2d3" stroke="#73888d" stroke-width="2" /><path d="M2654.6 1430.0l18 -12" stroke="#35484b" stroke-width="3" stroke-linecap="round" />
+<path class="divider" d="M2635.6 1446.0h44" />
+<rect class="entry" x="2632.6" y="1456.0" width="10" height="24" rx="2" />
+<circle cx="2663.6" cy="1468.0" r="17" fill="#153623" /><circle cx="2663.6" cy="1468.0" r="14" fill="#c8d2d3" stroke="#73888d" stroke-width="2" /><path d="M2654.6 1474.0l18 -12" stroke="#35484b" stroke-width="3" stroke-linecap="round" />
+</g>
+<g class="field-bank" data-bank="ZMAX" data-side="east" data-contact-pitch="44">
+<rect class="terminal" x="2634.6" y="1610.0" width="58" height="132" rx="5" />
+<rect class="entry" x="2632.6" y="1620.0" width="10" height="24" rx="2" />
+<circle cx="2663.6" cy="1632.0" r="17" fill="#153623" /><circle cx="2663.6" cy="1632.0" r="14" fill="#c8d2d3" stroke="#73888d" stroke-width="2" /><path d="M2654.6 1638.0l18 -12" stroke="#35484b" stroke-width="3" stroke-linecap="round" />
+<path class="divider" d="M2635.6 1654.0h44" />
+<rect class="entry" x="2632.6" y="1664.0" width="10" height="24" rx="2" />
+<circle cx="2663.6" cy="1676.0" r="17" fill="#153623" /><circle cx="2663.6" cy="1676.0" r="14" fill="#c8d2d3" stroke="#73888d" stroke-width="2" /><path d="M2654.6 1682.0l18 -12" stroke="#35484b" stroke-width="3" stroke-linecap="round" />
+<path class="divider" d="M2635.6 1698.0h44" />
+<rect class="entry" x="2632.6" y="1708.0" width="10" height="24" rx="2" />
+<circle cx="2663.6" cy="1720.0" r="17" fill="#153623" /><circle cx="2663.6" cy="1720.0" r="14" fill="#c8d2d3" stroke="#73888d" stroke-width="2" /><path d="M2654.6 1726.0l18 -12" stroke="#35484b" stroke-width="3" stroke-linecap="round" />
+</g>
+<g class="field-bank" data-bank="PROBE" data-side="east" data-contact-pitch="44">
+<rect class="terminal" x="2634.6" y="1910.0" width="58" height="176" rx="5" />
+<rect class="entry" x="2632.6" y="1920.0" width="10" height="24" rx="2" />
+<circle cx="2663.6" cy="1932.0" r="17" fill="#153623" /><circle cx="2663.6" cy="1932.0" r="14" fill="#c8d2d3" stroke="#73888d" stroke-width="2" /><path d="M2654.6 1938.0l18 -12" stroke="#35484b" stroke-width="3" stroke-linecap="round" />
+<path class="divider" d="M2635.6 1954.0h44" />
+<rect class="entry" x="2632.6" y="1964.0" width="10" height="24" rx="2" />
+<circle cx="2663.6" cy="1976.0" r="17" fill="#153623" /><circle cx="2663.6" cy="1976.0" r="14" fill="#c8d2d3" stroke="#73888d" stroke-width="2" /><path d="M2654.6 1982.0l18 -12" stroke="#35484b" stroke-width="3" stroke-linecap="round" />
+<path class="divider" d="M2635.6 1998.0h44" />
+<rect class="entry" x="2632.6" y="2008.0" width="10" height="24" rx="2" />
+<circle cx="2663.6" cy="2020.0" r="17" fill="#153623" /><circle cx="2663.6" cy="2020.0" r="14" fill="#c8d2d3" stroke="#73888d" stroke-width="2" /><path d="M2654.6 2026.0l18 -12" stroke="#35484b" stroke-width="3" stroke-linecap="round" />
+<path class="divider" d="M2635.6 2042.0h44" />
+<rect class="entry" x="2632.6" y="2052.0" width="10" height="24" rx="2" />
+<circle cx="2663.6" cy="2064.0" r="17" fill="#153623" /><circle cx="2663.6" cy="2064.0" r="14" fill="#c8d2d3" stroke="#73888d" stroke-width="2" /><path d="M2654.6 2070.0l18 -12" stroke="#35484b" stroke-width="3" stroke-linecap="round" />
+</g>
+<g class="field-bank" data-bank="TEMP" data-side="east" data-contact-pitch="44">
+<rect class="terminal" x="2634.6" y="2228.0" width="58" height="264" rx="5" />
+<rect class="entry" x="2632.6" y="2238.0" width="10" height="24" rx="2" />
+<circle cx="2663.6" cy="2250.0" r="17" fill="#153623" /><circle cx="2663.6" cy="2250.0" r="14" fill="#c8d2d3" stroke="#73888d" stroke-width="2" /><path d="M2654.6 2256.0l18 -12" stroke="#35484b" stroke-width="3" stroke-linecap="round" />
+<path class="divider" d="M2635.6 2272.0h44" />
+<rect class="entry" x="2632.6" y="2282.0" width="10" height="24" rx="2" />
+<circle cx="2663.6" cy="2294.0" r="17" fill="#153623" /><circle cx="2663.6" cy="2294.0" r="14" fill="#c8d2d3" stroke="#73888d" stroke-width="2" /><path d="M2654.6 2300.0l18 -12" stroke="#35484b" stroke-width="3" stroke-linecap="round" />
+<path class="divider" d="M2635.6 2316.0h44" />
+<rect class="entry" x="2632.6" y="2326.0" width="10" height="24" rx="2" />
+<circle cx="2663.6" cy="2338.0" r="17" fill="#153623" /><circle cx="2663.6" cy="2338.0" r="14" fill="#c8d2d3" stroke="#73888d" stroke-width="2" /><path d="M2654.6 2344.0l18 -12" stroke="#35484b" stroke-width="3" stroke-linecap="round" />
+<path class="divider" d="M2635.6 2360.0h44" />
+<rect class="entry" x="2632.6" y="2370.0" width="10" height="24" rx="2" />
+<circle cx="2663.6" cy="2382.0" r="17" fill="#153623" /><circle cx="2663.6" cy="2382.0" r="14" fill="#c8d2d3" stroke="#73888d" stroke-width="2" /><path d="M2654.6 2388.0l18 -12" stroke="#35484b" stroke-width="3" stroke-linecap="round" />
+<path class="divider" d="M2635.6 2404.0h44" />
+<rect class="entry" x="2632.6" y="2414.0" width="10" height="24" rx="2" />
+<circle cx="2663.6" cy="2426.0" r="17" fill="#153623" /><circle cx="2663.6" cy="2426.0" r="14" fill="#c8d2d3" stroke="#73888d" stroke-width="2" /><path d="M2654.6 2432.0l18 -12" stroke="#35484b" stroke-width="3" stroke-linecap="round" />
+<path class="divider" d="M2635.6 2448.0h44" />
+<rect class="entry" x="2632.6" y="2458.0" width="10" height="24" rx="2" />
+<circle cx="2663.6" cy="2470.0" r="17" fill="#153623" /><circle cx="2663.6" cy="2470.0" r="14" fill="#c8d2d3" stroke="#73888d" stroke-width="2" /><path d="M2654.6 2476.0l18 -12" stroke="#35484b" stroke-width="3" stroke-linecap="round" />
+</g>
+<g class="field-bank" data-bank="HEA" data-side="west" data-contact-pitch="44">
+<rect class="terminal" x="239.39999999999998" y="488.0" width="58" height="88" rx="5" />
+<rect class="entry" x="289.4" y="498.0" width="10" height="24" rx="2" />
+<circle cx="268.4" cy="510.0" r="17" fill="#153623" /><circle cx="268.4" cy="510.0" r="14" fill="#c8d2d3" stroke="#73888d" stroke-width="2" /><path d="M259.4 516.0l18 -12" stroke="#35484b" stroke-width="3" stroke-linecap="round" />
+<path class="divider" d="M240.39999999999998 532.0h44" />
+<rect class="entry" x="289.4" y="542.0" width="10" height="24" rx="2" />
+<circle cx="268.4" cy="554.0" r="17" fill="#153623" /><circle cx="268.4" cy="554.0" r="14" fill="#c8d2d3" stroke="#73888d" stroke-width="2" /><path d="M259.4 560.0l18 -12" stroke="#35484b" stroke-width="3" stroke-linecap="round" />
+</g>
+<g class="field-bank" data-bank="HEB" data-side="west" data-contact-pitch="44">
+<rect class="terminal" x="239.39999999999998" y="722.0" width="58" height="88" rx="5" />
+<rect class="entry" x="289.4" y="732.0" width="10" height="24" rx="2" />
+<circle cx="268.4" cy="744.0" r="17" fill="#153623" /><circle cx="268.4" cy="744.0" r="14" fill="#c8d2d3" stroke="#73888d" stroke-width="2" /><path d="M259.4 750.0l18 -12" stroke="#35484b" stroke-width="3" stroke-linecap="round" />
+<path class="divider" d="M240.39999999999998 766.0h44" />
+<rect class="entry" x="289.4" y="776.0" width="10" height="24" rx="2" />
+<circle cx="268.4" cy="788.0" r="17" fill="#153623" /><circle cx="268.4" cy="788.0" r="14" fill="#c8d2d3" stroke="#73888d" stroke-width="2" /><path d="M259.4 794.0l18 -12" stroke="#35484b" stroke-width="3" stroke-linecap="round" />
+</g>
+<g class="field-bank" data-bank="BED" data-side="west" data-contact-pitch="44">
+<rect class="terminal" x="239.39999999999998" y="956.0" width="58" height="88" rx="5" />
+<rect class="entry" x="289.4" y="966.0" width="10" height="24" rx="2" />
+<circle cx="268.4" cy="978.0" r="17" fill="#153623" /><circle cx="268.4" cy="978.0" r="14" fill="#c8d2d3" stroke="#73888d" stroke-width="2" /><path d="M259.4 984.0l18 -12" stroke="#35484b" stroke-width="3" stroke-linecap="round" />
+<path class="divider" d="M240.39999999999998 1000.0h44" />
+<rect class="entry" x="289.4" y="1010.0" width="10" height="24" rx="2" />
+<circle cx="268.4" cy="1022.0" r="17" fill="#153623" /><circle cx="268.4" cy="1022.0" r="14" fill="#c8d2d3" stroke="#73888d" stroke-width="2" /><path d="M259.4 1028.0l18 -12" stroke="#35484b" stroke-width="3" stroke-linecap="round" />
+</g>
+<g class="field-bank" data-bank="FANA" data-side="west" data-contact-pitch="44">
+<rect class="terminal" x="239.39999999999998" y="1190.0" width="58" height="88" rx="5" />
+<rect class="entry" x="289.4" y="1200.0" width="10" height="24" rx="2" />
+<circle cx="268.4" cy="1212.0" r="17" fill="#153623" /><circle cx="268.4" cy="1212.0" r="14" fill="#c8d2d3" stroke="#73888d" stroke-width="2" /><path d="M259.4 1218.0l18 -12" stroke="#35484b" stroke-width="3" stroke-linecap="round" />
+<path class="divider" d="M240.39999999999998 1234.0h44" />
+<rect class="entry" x="289.4" y="1244.0" width="10" height="24" rx="2" />
+<circle cx="268.4" cy="1256.0" r="17" fill="#153623" /><circle cx="268.4" cy="1256.0" r="14" fill="#c8d2d3" stroke="#73888d" stroke-width="2" /><path d="M259.4 1262.0l18 -12" stroke="#35484b" stroke-width="3" stroke-linecap="round" />
+</g>
+<g class="field-bank" data-bank="FANB" data-side="west" data-contact-pitch="44">
+<rect class="terminal" x="239.39999999999998" y="1424.0" width="58" height="88" rx="5" />
+<rect class="entry" x="289.4" y="1434.0" width="10" height="24" rx="2" />
+<circle cx="268.4" cy="1446.0" r="17" fill="#153623" /><circle cx="268.4" cy="1446.0" r="14" fill="#c8d2d3" stroke="#73888d" stroke-width="2" /><path d="M259.4 1452.0l18 -12" stroke="#35484b" stroke-width="3" stroke-linecap="round" />
+<path class="divider" d="M240.39999999999998 1468.0h44" />
+<rect class="entry" x="289.4" y="1478.0" width="10" height="24" rx="2" />
+<circle cx="268.4" cy="1490.0" r="17" fill="#153623" /><circle cx="268.4" cy="1490.0" r="14" fill="#c8d2d3" stroke="#73888d" stroke-width="2" /><path d="M259.4 1496.0l18 -12" stroke="#35484b" stroke-width="3" stroke-linecap="round" />
+</g>
+<g class="field-bank" data-bank="SSR1" data-side="west" data-contact-pitch="44">
+<rect class="terminal" x="239.39999999999998" y="1718.0" width="58" height="88" rx="5" />
+<rect class="entry" x="289.4" y="1728.0" width="10" height="24" rx="2" />
+<circle cx="268.4" cy="1740.0" r="17" fill="#153623" /><circle cx="268.4" cy="1740.0" r="14" fill="#c8d2d3" stroke="#73888d" stroke-width="2" /><path d="M259.4 1746.0l18 -12" stroke="#35484b" stroke-width="3" stroke-linecap="round" />
+<path class="divider" d="M240.39999999999998 1762.0h44" />
+<rect class="entry" x="289.4" y="1772.0" width="10" height="24" rx="2" />
+<circle cx="268.4" cy="1784.0" r="17" fill="#153623" /><circle cx="268.4" cy="1784.0" r="14" fill="#c8d2d3" stroke="#73888d" stroke-width="2" /><path d="M259.4 1790.0l18 -12" stroke="#35484b" stroke-width="3" stroke-linecap="round" />
+</g>
+<g class="field-bank" data-bank="SSR2" data-side="west" data-contact-pitch="44">
+<rect class="terminal" x="239.39999999999998" y="1958.0" width="58" height="88" rx="5" />
+<rect class="entry" x="289.4" y="1968.0" width="10" height="24" rx="2" />
+<circle cx="268.4" cy="1980.0" r="17" fill="#153623" /><circle cx="268.4" cy="1980.0" r="14" fill="#c8d2d3" stroke="#73888d" stroke-width="2" /><path d="M259.4 1986.0l18 -12" stroke="#35484b" stroke-width="3" stroke-linecap="round" />
+<path class="divider" d="M240.39999999999998 2002.0h44" />
+<rect class="entry" x="289.4" y="2012.0" width="10" height="24" rx="2" />
+<circle cx="268.4" cy="2024.0" r="17" fill="#153623" /><circle cx="268.4" cy="2024.0" r="14" fill="#c8d2d3" stroke="#73888d" stroke-width="2" /><path d="M259.4 2030.0l18 -12" stroke="#35484b" stroke-width="3" stroke-linecap="round" />
+</g>
+<g class="field-bank" data-bank="PWM" data-side="west" data-contact-pitch="44">
+<rect class="terminal" x="239.39999999999998" y="2198.0" width="58" height="176" rx="5" />
+<rect class="entry" x="289.4" y="2208.0" width="10" height="24" rx="2" />
+<circle cx="268.4" cy="2220.0" r="17" fill="#153623" /><circle cx="268.4" cy="2220.0" r="14" fill="#c8d2d3" stroke="#73888d" stroke-width="2" /><path d="M259.4 2226.0l18 -12" stroke="#35484b" stroke-width="3" stroke-linecap="round" />
+<path class="divider" d="M240.39999999999998 2242.0h44" />
+<rect class="entry" x="289.4" y="2252.0" width="10" height="24" rx="2" />
+<circle cx="268.4" cy="2264.0" r="17" fill="#153623" /><circle cx="268.4" cy="2264.0" r="14" fill="#c8d2d3" stroke="#73888d" stroke-width="2" /><path d="M259.4 2270.0l18 -12" stroke="#35484b" stroke-width="3" stroke-linecap="round" />
+<path class="divider" d="M240.39999999999998 2286.0h44" />
+<rect class="entry" x="289.4" y="2296.0" width="10" height="24" rx="2" />
+<circle cx="268.4" cy="2308.0" r="17" fill="#153623" /><circle cx="268.4" cy="2308.0" r="14" fill="#c8d2d3" stroke="#73888d" stroke-width="2" /><path d="M259.4 2314.0l18 -12" stroke="#35484b" stroke-width="3" stroke-linecap="round" />
+<path class="divider" d="M240.39999999999998 2330.0h44" />
+<rect class="entry" x="289.4" y="2340.0" width="10" height="24" rx="2" />
+<circle cx="268.4" cy="2352.0" r="17" fill="#153623" /><circle cx="268.4" cy="2352.0" r="14" fill="#c8d2d3" stroke="#73888d" stroke-width="2" /><path d="M259.4 2358.0l18 -12" stroke="#35484b" stroke-width="3" stroke-linecap="round" />
+</g>
+<g class="field-bank" data-bank="DRVX" data-side="south" data-contact-pitch="44">
+<rect class="terminal" x="358.0" y="2875.0" width="264" height="58" rx="5" />
+<rect class="entry" x="368.0" y="2873.0" width="24" height="10" rx="2" />
+<circle cx="380.0" cy="2899.0" r="17" fill="#153623" /><circle cx="380.0" cy="2899.0" r="14" fill="#c8d2d3" stroke="#73888d" stroke-width="2" /><path d="M371.0 2905.0l18 -12" stroke="#35484b" stroke-width="3" stroke-linecap="round" />
+<path class="divider" d="M402.0 2876.0v56" />
+<rect class="entry" x="412.0" y="2873.0" width="24" height="10" rx="2" />
+<circle cx="424.0" cy="2899.0" r="17" fill="#153623" /><circle cx="424.0" cy="2899.0" r="14" fill="#c8d2d3" stroke="#73888d" stroke-width="2" /><path d="M415.0 2905.0l18 -12" stroke="#35484b" stroke-width="3" stroke-linecap="round" />
+<path class="divider" d="M446.0 2876.0v56" />
+<rect class="entry" x="456.0" y="2873.0" width="24" height="10" rx="2" />
+<circle cx="468.0" cy="2899.0" r="17" fill="#153623" /><circle cx="468.0" cy="2899.0" r="14" fill="#c8d2d3" stroke="#73888d" stroke-width="2" /><path d="M459.0 2905.0l18 -12" stroke="#35484b" stroke-width="3" stroke-linecap="round" />
+<path class="divider" d="M490.0 2876.0v56" />
+<rect class="entry" x="500.0" y="2873.0" width="24" height="10" rx="2" />
+<circle cx="512.0" cy="2899.0" r="17" fill="#153623" /><circle cx="512.0" cy="2899.0" r="14" fill="#c8d2d3" stroke="#73888d" stroke-width="2" /><path d="M503.0 2905.0l18 -12" stroke="#35484b" stroke-width="3" stroke-linecap="round" />
+<path class="divider" d="M534.0 2876.0v56" />
+<rect class="entry" x="544.0" y="2873.0" width="24" height="10" rx="2" />
+<circle cx="556.0" cy="2899.0" r="17" fill="#153623" /><circle cx="556.0" cy="2899.0" r="14" fill="#c8d2d3" stroke="#73888d" stroke-width="2" /><path d="M547.0 2905.0l18 -12" stroke="#35484b" stroke-width="3" stroke-linecap="round" />
+<path class="divider" d="M578.0 2876.0v56" />
+<rect class="entry" x="588.0" y="2873.0" width="24" height="10" rx="2" />
+<circle cx="600.0" cy="2899.0" r="17" fill="#153623" /><circle cx="600.0" cy="2899.0" r="14" fill="#c8d2d3" stroke="#73888d" stroke-width="2" /><path d="M591.0 2905.0l18 -12" stroke="#35484b" stroke-width="3" stroke-linecap="round" />
+</g>
+<g class="field-bank" data-bank="DRVY" data-side="south" data-contact-pitch="44">
+<rect class="terminal" x="856.0" y="2875.0" width="264" height="58" rx="5" />
+<rect class="entry" x="866.0" y="2873.0" width="24" height="10" rx="2" />
+<circle cx="878.0" cy="2899.0" r="17" fill="#153623" /><circle cx="878.0" cy="2899.0" r="14" fill="#c8d2d3" stroke="#73888d" stroke-width="2" /><path d="M869.0 2905.0l18 -12" stroke="#35484b" stroke-width="3" stroke-linecap="round" />
+<path class="divider" d="M900.0 2876.0v56" />
+<rect class="entry" x="910.0" y="2873.0" width="24" height="10" rx="2" />
+<circle cx="922.0" cy="2899.0" r="17" fill="#153623" /><circle cx="922.0" cy="2899.0" r="14" fill="#c8d2d3" stroke="#73888d" stroke-width="2" /><path d="M913.0 2905.0l18 -12" stroke="#35484b" stroke-width="3" stroke-linecap="round" />
+<path class="divider" d="M944.0 2876.0v56" />
+<rect class="entry" x="954.0" y="2873.0" width="24" height="10" rx="2" />
+<circle cx="966.0" cy="2899.0" r="17" fill="#153623" /><circle cx="966.0" cy="2899.0" r="14" fill="#c8d2d3" stroke="#73888d" stroke-width="2" /><path d="M957.0 2905.0l18 -12" stroke="#35484b" stroke-width="3" stroke-linecap="round" />
+<path class="divider" d="M988.0 2876.0v56" />
+<rect class="entry" x="998.0" y="2873.0" width="24" height="10" rx="2" />
+<circle cx="1010.0" cy="2899.0" r="17" fill="#153623" /><circle cx="1010.0" cy="2899.0" r="14" fill="#c8d2d3" stroke="#73888d" stroke-width="2" /><path d="M1001.0 2905.0l18 -12" stroke="#35484b" stroke-width="3" stroke-linecap="round" />
+<path class="divider" d="M1032.0 2876.0v56" />
+<rect class="entry" x="1042.0" y="2873.0" width="24" height="10" rx="2" />
+<circle cx="1054.0" cy="2899.0" r="17" fill="#153623" /><circle cx="1054.0" cy="2899.0" r="14" fill="#c8d2d3" stroke="#73888d" stroke-width="2" /><path d="M1045.0 2905.0l18 -12" stroke="#35484b" stroke-width="3" stroke-linecap="round" />
+<path class="divider" d="M1076.0 2876.0v56" />
+<rect class="entry" x="1086.0" y="2873.0" width="24" height="10" rx="2" />
+<circle cx="1098.0" cy="2899.0" r="17" fill="#153623" /><circle cx="1098.0" cy="2899.0" r="14" fill="#c8d2d3" stroke="#73888d" stroke-width="2" /><path d="M1089.0 2905.0l18 -12" stroke="#35484b" stroke-width="3" stroke-linecap="round" />
+</g>
+<g class="field-bank" data-bank="DRVZ" data-side="south" data-contact-pitch="44">
+<rect class="terminal" x="1768.0" y="2875.0" width="264" height="58" rx="5" />
+<rect class="entry" x="1778.0" y="2873.0" width="24" height="10" rx="2" />
+<circle cx="1790.0" cy="2899.0" r="17" fill="#153623" /><circle cx="1790.0" cy="2899.0" r="14" fill="#c8d2d3" stroke="#73888d" stroke-width="2" /><path d="M1781.0 2905.0l18 -12" stroke="#35484b" stroke-width="3" stroke-linecap="round" />
+<path class="divider" d="M1812.0 2876.0v56" />
+<rect class="entry" x="1822.0" y="2873.0" width="24" height="10" rx="2" />
+<circle cx="1834.0" cy="2899.0" r="17" fill="#153623" /><circle cx="1834.0" cy="2899.0" r="14" fill="#c8d2d3" stroke="#73888d" stroke-width="2" /><path d="M1825.0 2905.0l18 -12" stroke="#35484b" stroke-width="3" stroke-linecap="round" />
+<path class="divider" d="M1856.0 2876.0v56" />
+<rect class="entry" x="1866.0" y="2873.0" width="24" height="10" rx="2" />
+<circle cx="1878.0" cy="2899.0" r="17" fill="#153623" /><circle cx="1878.0" cy="2899.0" r="14" fill="#c8d2d3" stroke="#73888d" stroke-width="2" /><path d="M1869.0 2905.0l18 -12" stroke="#35484b" stroke-width="3" stroke-linecap="round" />
+<path class="divider" d="M1900.0 2876.0v56" />
+<rect class="entry" x="1910.0" y="2873.0" width="24" height="10" rx="2" />
+<circle cx="1922.0" cy="2899.0" r="17" fill="#153623" /><circle cx="1922.0" cy="2899.0" r="14" fill="#c8d2d3" stroke="#73888d" stroke-width="2" /><path d="M1913.0 2905.0l18 -12" stroke="#35484b" stroke-width="3" stroke-linecap="round" />
+<path class="divider" d="M1944.0 2876.0v56" />
+<rect class="entry" x="1954.0" y="2873.0" width="24" height="10" rx="2" />
+<circle cx="1966.0" cy="2899.0" r="17" fill="#153623" /><circle cx="1966.0" cy="2899.0" r="14" fill="#c8d2d3" stroke="#73888d" stroke-width="2" /><path d="M1957.0 2905.0l18 -12" stroke="#35484b" stroke-width="3" stroke-linecap="round" />
+<path class="divider" d="M1988.0 2876.0v56" />
+<rect class="entry" x="1998.0" y="2873.0" width="24" height="10" rx="2" />
+<circle cx="2010.0" cy="2899.0" r="17" fill="#153623" /><circle cx="2010.0" cy="2899.0" r="14" fill="#c8d2d3" stroke="#73888d" stroke-width="2" /><path d="M2001.0 2905.0l18 -12" stroke="#35484b" stroke-width="3" stroke-linecap="round" />
+</g>
+<g class="field-bank" data-bank="DRVA" data-side="south" data-contact-pitch="44">
+<rect class="terminal" x="2266.0" y="2875.0" width="264" height="58" rx="5" />
+<rect class="entry" x="2276.0" y="2873.0" width="24" height="10" rx="2" />
+<circle cx="2288.0" cy="2899.0" r="17" fill="#153623" /><circle cx="2288.0" cy="2899.0" r="14" fill="#c8d2d3" stroke="#73888d" stroke-width="2" /><path d="M2279.0 2905.0l18 -12" stroke="#35484b" stroke-width="3" stroke-linecap="round" />
+<path class="divider" d="M2310.0 2876.0v56" />
+<rect class="entry" x="2320.0" y="2873.0" width="24" height="10" rx="2" />
+<circle cx="2332.0" cy="2899.0" r="17" fill="#153623" /><circle cx="2332.0" cy="2899.0" r="14" fill="#c8d2d3" stroke="#73888d" stroke-width="2" /><path d="M2323.0 2905.0l18 -12" stroke="#35484b" stroke-width="3" stroke-linecap="round" />
+<path class="divider" d="M2354.0 2876.0v56" />
+<rect class="entry" x="2364.0" y="2873.0" width="24" height="10" rx="2" />
+<circle cx="2376.0" cy="2899.0" r="17" fill="#153623" /><circle cx="2376.0" cy="2899.0" r="14" fill="#c8d2d3" stroke="#73888d" stroke-width="2" /><path d="M2367.0 2905.0l18 -12" stroke="#35484b" stroke-width="3" stroke-linecap="round" />
+<path class="divider" d="M2398.0 2876.0v56" />
+<rect class="entry" x="2408.0" y="2873.0" width="24" height="10" rx="2" />
+<circle cx="2420.0" cy="2899.0" r="17" fill="#153623" /><circle cx="2420.0" cy="2899.0" r="14" fill="#c8d2d3" stroke="#73888d" stroke-width="2" /><path d="M2411.0 2905.0l18 -12" stroke="#35484b" stroke-width="3" stroke-linecap="round" />
+<path class="divider" d="M2442.0 2876.0v56" />
+<rect class="entry" x="2452.0" y="2873.0" width="24" height="10" rx="2" />
+<circle cx="2464.0" cy="2899.0" r="17" fill="#153623" /><circle cx="2464.0" cy="2899.0" r="14" fill="#c8d2d3" stroke="#73888d" stroke-width="2" /><path d="M2455.0 2905.0l18 -12" stroke="#35484b" stroke-width="3" stroke-linecap="round" />
+<path class="divider" d="M2486.0 2876.0v56" />
+<rect class="entry" x="2496.0" y="2873.0" width="24" height="10" rx="2" />
+<circle cx="2508.0" cy="2899.0" r="17" fill="#153623" /><circle cx="2508.0" cy="2899.0" r="14" fill="#c8d2d3" stroke="#73888d" stroke-width="2" /><path d="M2499.0 2905.0l18 -12" stroke="#35484b" stroke-width="3" stroke-linecap="round" />
+</g>
+<text x="1466.0" y="159" class="side-title" text-anchor="middle">NORTH / POWER + AUX</text>
+<text x="1466.0" y="3168.0" class="side-title" text-anchor="middle">SOUTH / MOTOR CONTROL OUTPUTS</text>
+<text x="170" y="162" class="side-title" text-anchor="start">WEST / LOADS + CONTROL</text>
+<text x="2762" y="162" class="side-title" text-anchor="end">EAST / SENSORS</text>
+<g class="pin-pill" data-pill-kind="power" data-pwm-capable="false" aria-label="+"><rect x="366.0" y="323.4" width="40" height="24" rx="12.0" fill="#f0c51a" /><text x="386.0" y="339.4" class="pill-text pill-role">+</text></g>
+<g class="pin-pill" data-pill-kind="ground" data-pwm-capable="false" aria-label="GND"><rect x="410.0" y="323.4" width="40" height="24" rx="12.0" fill="#111717" /><text x="430.0" y="339.4" class="pill-text pill-role">GND</text></g>
+<text x="408.0" y="231.39999999999998" class="bank-title" text-anchor="middle">VFET POWER IN</text>
+<g class="pin-pill" data-pill-kind="five" data-pwm-capable="false" aria-label="+5V"><rect x="588.0" y="323.4" width="40" height="24" rx="12.0" fill="#b85e00" /><text x="608.0" y="339.4" class="pill-text pill-role">+5V</text></g>
+<g class="pin-pill" data-pill-kind="ground" data-pwm-capable="false" aria-label="GND"><rect x="632.0" y="323.4" width="40" height="24" rx="12.0" fill="#111717" /><text x="652.0" y="339.4" class="pill-text pill-role">GND</text></g>
+<text x="630.0" y="231.39999999999998" class="bank-title" text-anchor="middle">5V POWER IN</text>
+<g class="pin-pill" data-pill-kind="five" data-pwm-capable="false" aria-label="+5V"><rect x="810.0" y="323.4" width="40" height="24" rx="12.0" fill="#b85e00" /><text x="830.0" y="339.4" class="pill-text pill-role">+5V</text></g>
+<g class="pin-pill" data-pill-kind="ground" data-pwm-capable="false" aria-label="GND"><rect x="854.0" y="323.4" width="40" height="24" rx="12.0" fill="#111717" /><text x="874.0" y="339.4" class="pill-text pill-role">GND</text></g>
+<text x="852.0" y="231.39999999999998" class="bank-title" text-anchor="middle">5V ACCESSORY OUT</text>
+<g class="pin-pill" data-pill-kind="signal" data-pwm-capable="false" aria-label="A1"><rect x="1674.0" y="323.4" width="40" height="24" rx="12.0" fill="#087361" /><text x="1694.0" y="339.4" class="pill-text pill-role">A1</text></g>
+<g class="pin-pill" data-pill-kind="ground" data-pwm-capable="false" aria-label="GND"><rect x="1718.0" y="323.4" width="40" height="24" rx="12.0" fill="#111717" /><text x="1738.0" y="339.4" class="pill-text pill-role">GND</text></g>
+<g class="pin-pill" data-pill-kind="signal" data-pwm-capable="false" aria-label="A2"><rect x="1762.0" y="323.4" width="40" height="24" rx="12.0" fill="#087361" /><text x="1782.0" y="339.4" class="pill-text pill-role">A2</text></g>
+<g class="pin-pill" data-pill-kind="ground" data-pwm-capable="false" aria-label="GND"><rect x="1806.0" y="323.4" width="40" height="24" rx="12.0" fill="#111717" /><text x="1826.0" y="339.4" class="pill-text pill-role">GND</text></g>
+<g class="pin-pill" data-pill-kind="signal" data-pwm-capable="false" aria-label="A3"><rect x="1850.0" y="323.4" width="40" height="24" rx="12.0" fill="#087361" /><text x="1870.0" y="339.4" class="pill-text pill-role">A3</text></g>
+<g class="pin-pill" data-pill-kind="ground" data-pwm-capable="false" aria-label="GND"><rect x="1894.0" y="323.4" width="40" height="24" rx="12.0" fill="#111717" /><text x="1914.0" y="339.4" class="pill-text pill-role">GND</text></g>
+<text x="1804.0" y="231.39999999999998" class="bank-title" text-anchor="middle">ANALOG INPUTS</text>
+<g class="pin-pill" data-pill-kind="sensor" data-pwm-capable="false" aria-label="SENSOR + 1"><rect x="2705.6" y="358.5" width="150" height="27" rx="13.5" fill="#416b7e" /><rect x="2705.6" y="358.5" width="48" height="27" rx="13.5" fill="#203135" /><path d="M2753.6 361.5v21" stroke="#ffffff70" stroke-width="1" /><text x="2804.6" y="376.0" class="pill-text pill-role">SENSOR +</text><text x="2729.6" y="376.0" class="pill-text">1</text></g>
+<g class="pin-pill" data-pill-kind="ground" data-pwm-capable="false" aria-label="GND 2"><rect x="2705.6" y="402.5" width="150" height="27" rx="13.5" fill="#111717" /><rect x="2705.6" y="402.5" width="48" height="27" rx="13.5" fill="#203135" /><path d="M2753.6 405.5v21" stroke="#ffffff70" stroke-width="1" /><text x="2804.6" y="420.0" class="pill-text pill-role">GND</text><text x="2729.6" y="420.0" class="pill-text">2</text></g>
+<g class="pin-pill" data-pill-kind="signal" data-pwm-capable="false" aria-label="SIGNAL 3"><rect x="2705.6" y="446.5" width="150" height="27" rx="13.5" fill="#087361" /><rect x="2705.6" y="446.5" width="48" height="27" rx="13.5" fill="#203135" /><path d="M2753.6 449.5v21" stroke="#ffffff70" stroke-width="1" /><text x="2804.6" y="464.0" class="pill-text pill-role">SIGNAL</text><text x="2729.6" y="464.0" class="pill-text">3</text></g>
+<text x="2872" y="344.0" class="bank-title" text-anchor="end">X MIN</text>
+<g class="pin-pill" data-pill-kind="sensor" data-pwm-capable="false" aria-label="SENSOR + 1"><rect x="2705.6" y="610.5" width="150" height="27" rx="13.5" fill="#416b7e" /><rect x="2705.6" y="610.5" width="48" height="27" rx="13.5" fill="#203135" /><path d="M2753.6 613.5v21" stroke="#ffffff70" stroke-width="1" /><text x="2804.6" y="628.0" class="pill-text pill-role">SENSOR +</text><text x="2729.6" y="628.0" class="pill-text">1</text></g>
+<g class="pin-pill" data-pill-kind="ground" data-pwm-capable="false" aria-label="GND 2"><rect x="2705.6" y="654.5" width="150" height="27" rx="13.5" fill="#111717" /><rect x="2705.6" y="654.5" width="48" height="27" rx="13.5" fill="#203135" /><path d="M2753.6 657.5v21" stroke="#ffffff70" stroke-width="1" /><text x="2804.6" y="672.0" class="pill-text pill-role">GND</text><text x="2729.6" y="672.0" class="pill-text">2</text></g>
+<g class="pin-pill" data-pill-kind="signal" data-pwm-capable="false" aria-label="SIGNAL 3"><rect x="2705.6" y="698.5" width="150" height="27" rx="13.5" fill="#087361" /><rect x="2705.6" y="698.5" width="48" height="27" rx="13.5" fill="#203135" /><path d="M2753.6 701.5v21" stroke="#ffffff70" stroke-width="1" /><text x="2804.6" y="716.0" class="pill-text pill-role">SIGNAL</text><text x="2729.6" y="716.0" class="pill-text">3</text></g>
+<text x="2872" y="596.0" class="bank-title" text-anchor="end">X MAX</text>
+<g class="pin-pill" data-pill-kind="sensor" data-pwm-capable="false" aria-label="SENSOR + 1"><rect x="2705.6" y="862.5" width="150" height="27" rx="13.5" fill="#416b7e" /><rect x="2705.6" y="862.5" width="48" height="27" rx="13.5" fill="#203135" /><path d="M2753.6 865.5v21" stroke="#ffffff70" stroke-width="1" /><text x="2804.6" y="880.0" class="pill-text pill-role">SENSOR +</text><text x="2729.6" y="880.0" class="pill-text">1</text></g>
+<g class="pin-pill" data-pill-kind="ground" data-pwm-capable="false" aria-label="GND 2"><rect x="2705.6" y="906.5" width="150" height="27" rx="13.5" fill="#111717" /><rect x="2705.6" y="906.5" width="48" height="27" rx="13.5" fill="#203135" /><path d="M2753.6 909.5v21" stroke="#ffffff70" stroke-width="1" /><text x="2804.6" y="924.0" class="pill-text pill-role">GND</text><text x="2729.6" y="924.0" class="pill-text">2</text></g>
+<g class="pin-pill" data-pill-kind="signal" data-pwm-capable="false" aria-label="SIGNAL 3"><rect x="2705.6" y="950.5" width="150" height="27" rx="13.5" fill="#087361" /><rect x="2705.6" y="950.5" width="48" height="27" rx="13.5" fill="#203135" /><path d="M2753.6 953.5v21" stroke="#ffffff70" stroke-width="1" /><text x="2804.6" y="968.0" class="pill-text pill-role">SIGNAL</text><text x="2729.6" y="968.0" class="pill-text">3</text></g>
+<text x="2872" y="848.0" class="bank-title" text-anchor="end">Y MIN</text>
+<g class="pin-pill" data-pill-kind="sensor" data-pwm-capable="false" aria-label="SENSOR + 1"><rect x="2705.6" y="1114.5" width="150" height="27" rx="13.5" fill="#416b7e" /><rect x="2705.6" y="1114.5" width="48" height="27" rx="13.5" fill="#203135" /><path d="M2753.6 1117.5v21" stroke="#ffffff70" stroke-width="1" /><text x="2804.6" y="1132.0" class="pill-text pill-role">SENSOR +</text><text x="2729.6" y="1132.0" class="pill-text">1</text></g>
+<g class="pin-pill" data-pill-kind="ground" data-pwm-capable="false" aria-label="GND 2"><rect x="2705.6" y="1158.5" width="150" height="27" rx="13.5" fill="#111717" /><rect x="2705.6" y="1158.5" width="48" height="27" rx="13.5" fill="#203135" /><path d="M2753.6 1161.5v21" stroke="#ffffff70" stroke-width="1" /><text x="2804.6" y="1176.0" class="pill-text pill-role">GND</text><text x="2729.6" y="1176.0" class="pill-text">2</text></g>
+<g class="pin-pill" data-pill-kind="signal" data-pwm-capable="false" aria-label="SIGNAL 3"><rect x="2705.6" y="1202.5" width="150" height="27" rx="13.5" fill="#087361" /><rect x="2705.6" y="1202.5" width="48" height="27" rx="13.5" fill="#203135" /><path d="M2753.6 1205.5v21" stroke="#ffffff70" stroke-width="1" /><text x="2804.6" y="1220.0" class="pill-text pill-role">SIGNAL</text><text x="2729.6" y="1220.0" class="pill-text">3</text></g>
+<text x="2872" y="1100.0" class="bank-title" text-anchor="end">Y MAX</text>
+<g class="pin-pill" data-pill-kind="sensor" data-pwm-capable="false" aria-label="SENSOR + 1"><rect x="2705.6" y="1366.5" width="150" height="27" rx="13.5" fill="#416b7e" /><rect x="2705.6" y="1366.5" width="48" height="27" rx="13.5" fill="#203135" /><path d="M2753.6 1369.5v21" stroke="#ffffff70" stroke-width="1" /><text x="2804.6" y="1384.0" class="pill-text pill-role">SENSOR +</text><text x="2729.6" y="1384.0" class="pill-text">1</text></g>
+<g class="pin-pill" data-pill-kind="ground" data-pwm-capable="false" aria-label="GND 2"><rect x="2705.6" y="1410.5" width="150" height="27" rx="13.5" fill="#111717" /><rect x="2705.6" y="1410.5" width="48" height="27" rx="13.5" fill="#203135" /><path d="M2753.6 1413.5v21" stroke="#ffffff70" stroke-width="1" /><text x="2804.6" y="1428.0" class="pill-text pill-role">GND</text><text x="2729.6" y="1428.0" class="pill-text">2</text></g>
+<g class="pin-pill" data-pill-kind="signal" data-pwm-capable="false" aria-label="SIGNAL 3"><rect x="2705.6" y="1454.5" width="150" height="27" rx="13.5" fill="#087361" /><rect x="2705.6" y="1454.5" width="48" height="27" rx="13.5" fill="#203135" /><path d="M2753.6 1457.5v21" stroke="#ffffff70" stroke-width="1" /><text x="2804.6" y="1472.0" class="pill-text pill-role">SIGNAL</text><text x="2729.6" y="1472.0" class="pill-text">3</text></g>
+<text x="2872" y="1352.0" class="bank-title" text-anchor="end">Z MIN</text>
+<g class="pin-pill" data-pill-kind="sensor" data-pwm-capable="false" aria-label="SENSOR + 1"><rect x="2705.6" y="1618.5" width="150" height="27" rx="13.5" fill="#416b7e" /><rect x="2705.6" y="1618.5" width="48" height="27" rx="13.5" fill="#203135" /><path d="M2753.6 1621.5v21" stroke="#ffffff70" stroke-width="1" /><text x="2804.6" y="1636.0" class="pill-text pill-role">SENSOR +</text><text x="2729.6" y="1636.0" class="pill-text">1</text></g>
+<g class="pin-pill" data-pill-kind="ground" data-pwm-capable="false" aria-label="GND 2"><rect x="2705.6" y="1662.5" width="150" height="27" rx="13.5" fill="#111717" /><rect x="2705.6" y="1662.5" width="48" height="27" rx="13.5" fill="#203135" /><path d="M2753.6 1665.5v21" stroke="#ffffff70" stroke-width="1" /><text x="2804.6" y="1680.0" class="pill-text pill-role">GND</text><text x="2729.6" y="1680.0" class="pill-text">2</text></g>
+<g class="pin-pill" data-pill-kind="signal" data-pwm-capable="false" aria-label="SIGNAL 3"><rect x="2705.6" y="1706.5" width="150" height="27" rx="13.5" fill="#087361" /><rect x="2705.6" y="1706.5" width="48" height="27" rx="13.5" fill="#203135" /><path d="M2753.6 1709.5v21" stroke="#ffffff70" stroke-width="1" /><text x="2804.6" y="1724.0" class="pill-text pill-role">SIGNAL</text><text x="2729.6" y="1724.0" class="pill-text">3</text></g>
+<text x="2872" y="1604.0" class="bank-title" text-anchor="end">Z MAX</text>
+<g class="pin-pill" data-pill-kind="five" data-pwm-capable="false" aria-label="+5V 1"><rect x="2705.6" y="1918.5" width="150" height="27" rx="13.5" fill="#b85e00" /><rect x="2705.6" y="1918.5" width="48" height="27" rx="13.5" fill="#203135" /><path d="M2753.6 1921.5v21" stroke="#ffffff70" stroke-width="1" /><text x="2804.6" y="1936.0" class="pill-text pill-role">+5V</text><text x="2729.6" y="1936.0" class="pill-text">1</text></g>
+<g class="pin-pill" data-pill-kind="ground" data-pwm-capable="false" aria-label="GND 2"><rect x="2705.6" y="1962.5" width="150" height="27" rx="13.5" fill="#111717" /><rect x="2705.6" y="1962.5" width="48" height="27" rx="13.5" fill="#203135" /><path d="M2753.6 1965.5v21" stroke="#ffffff70" stroke-width="1" /><text x="2804.6" y="1980.0" class="pill-text pill-role">GND</text><text x="2729.6" y="1980.0" class="pill-text">2</text></g>
+<g class="pin-pill" data-pill-kind="control" data-pwm-capable="false" aria-label="SERVO 3"><rect x="2705.6" y="2006.5" width="150" height="27" rx="13.5" fill="#6246a3" /><rect x="2705.6" y="2006.5" width="48" height="27" rx="13.5" fill="#203135" /><path d="M2753.6 2009.5v21" stroke="#ffffff70" stroke-width="1" /><text x="2804.6" y="2024.0" class="pill-text pill-role">SERVO</text><text x="2729.6" y="2024.0" class="pill-text">3</text></g>
+<g class="pin-pill" data-pill-kind="signal" data-pwm-capable="false" aria-label="PROBE IN 4"><rect x="2705.6" y="2050.5" width="150" height="27" rx="13.5" fill="#087361" /><rect x="2705.6" y="2050.5" width="48" height="27" rx="13.5" fill="#203135" /><path d="M2753.6 2053.5v21" stroke="#ffffff70" stroke-width="1" /><text x="2804.6" y="2068.0" class="pill-text pill-role">PROBE IN</text><text x="2729.6" y="2068.0" class="pill-text">4</text></g>
+<text x="2872" y="1904.0" class="bank-title" text-anchor="end">PROBE + SERVO</text>
+<g class="pin-pill" data-pill-kind="signal" data-pwm-capable="false" aria-label="SENSOR 1 1"><rect x="2705.6" y="2236.5" width="150" height="27" rx="13.5" fill="#087361" /><rect x="2705.6" y="2236.5" width="48" height="27" rx="13.5" fill="#203135" /><path d="M2753.6 2239.5v21" stroke="#ffffff70" stroke-width="1" /><text x="2804.6" y="2254.0" class="pill-text pill-role">SENSOR 1</text><text x="2729.6" y="2254.0" class="pill-text">1</text></g>
+<g class="pin-pill" data-pill-kind="ground" data-pwm-capable="false" aria-label="GND 2"><rect x="2705.6" y="2280.5" width="150" height="27" rx="13.5" fill="#111717" /><rect x="2705.6" y="2280.5" width="48" height="27" rx="13.5" fill="#203135" /><path d="M2753.6 2283.5v21" stroke="#ffffff70" stroke-width="1" /><text x="2804.6" y="2298.0" class="pill-text pill-role">GND</text><text x="2729.6" y="2298.0" class="pill-text">2</text></g>
+<g class="pin-pill" data-pill-kind="signal" data-pwm-capable="false" aria-label="SENSOR 2 3"><rect x="2705.6" y="2324.5" width="150" height="27" rx="13.5" fill="#087361" /><rect x="2705.6" y="2324.5" width="48" height="27" rx="13.5" fill="#203135" /><path d="M2753.6 2327.5v21" stroke="#ffffff70" stroke-width="1" /><text x="2804.6" y="2342.0" class="pill-text pill-role">SENSOR 2</text><text x="2729.6" y="2342.0" class="pill-text">3</text></g>
+<g class="pin-pill" data-pill-kind="ground" data-pwm-capable="false" aria-label="GND 4"><rect x="2705.6" y="2368.5" width="150" height="27" rx="13.5" fill="#111717" /><rect x="2705.6" y="2368.5" width="48" height="27" rx="13.5" fill="#203135" /><path d="M2753.6 2371.5v21" stroke="#ffffff70" stroke-width="1" /><text x="2804.6" y="2386.0" class="pill-text pill-role">GND</text><text x="2729.6" y="2386.0" class="pill-text">4</text></g>
+<g class="pin-pill" data-pill-kind="signal" data-pwm-capable="false" aria-label="SENSOR 3 5"><rect x="2705.6" y="2412.5" width="150" height="27" rx="13.5" fill="#087361" /><rect x="2705.6" y="2412.5" width="48" height="27" rx="13.5" fill="#203135" /><path d="M2753.6 2415.5v21" stroke="#ffffff70" stroke-width="1" /><text x="2804.6" y="2430.0" class="pill-text pill-role">SENSOR 3</text><text x="2729.6" y="2430.0" class="pill-text">5</text></g>
+<g class="pin-pill" data-pill-kind="ground" data-pwm-capable="false" aria-label="GND 6"><rect x="2705.6" y="2456.5" width="150" height="27" rx="13.5" fill="#111717" /><rect x="2705.6" y="2456.5" width="48" height="27" rx="13.5" fill="#203135" /><path d="M2753.6 2459.5v21" stroke="#ffffff70" stroke-width="1" /><text x="2804.6" y="2474.0" class="pill-text pill-role">GND</text><text x="2729.6" y="2474.0" class="pill-text">6</text></g>
+<text x="2872" y="2222.0" class="bank-title" text-anchor="end">TEMPERATURE 1–3</text>
+<g class="pin-pill" data-pill-kind="power" data-pwm-capable="false" aria-label="LOAD + 1"><rect x="76.39999999999998" y="496.5" width="150" height="27" rx="13.5" fill="#f0c51a" /><rect x="178.39999999999998" y="496.5" width="48" height="27" rx="13.5" fill="#203135" /><path d="M178.39999999999998 499.5v21" stroke="#ffffff70" stroke-width="1" /><text x="127.39999999999998" y="514.0" class="pill-text pill-role">LOAD +</text><text x="202.39999999999998" y="514.0" class="pill-text">1</text></g>
+<g class="pin-pill" data-pill-kind="switched" data-pwm-capable="false" aria-label="SWITCHED − 2"><rect x="76.39999999999998" y="540.5" width="150" height="27" rx="13.5" fill="#a13273" /><rect x="178.39999999999998" y="540.5" width="48" height="27" rx="13.5" fill="#203135" /><path d="M178.39999999999998 543.5v21" stroke="#ffffff70" stroke-width="1" /><text x="127.39999999999998" y="558.0" class="pill-text pill-role">SWITCHED −</text><text x="202.39999999999998" y="558.0" class="pill-text">2</text></g>
+<text x="60" y="482.0" class="bank-title" text-anchor="start">HOTEND A</text>
+<g class="pin-pill" data-pill-kind="power" data-pwm-capable="false" aria-label="LOAD + 1"><rect x="76.39999999999998" y="730.5" width="150" height="27" rx="13.5" fill="#f0c51a" /><rect x="178.39999999999998" y="730.5" width="48" height="27" rx="13.5" fill="#203135" /><path d="M178.39999999999998 733.5v21" stroke="#ffffff70" stroke-width="1" /><text x="127.39999999999998" y="748.0" class="pill-text pill-role">LOAD +</text><text x="202.39999999999998" y="748.0" class="pill-text">1</text></g>
+<g class="pin-pill" data-pill-kind="switched" data-pwm-capable="false" aria-label="SWITCHED − 2"><rect x="76.39999999999998" y="774.5" width="150" height="27" rx="13.5" fill="#a13273" /><rect x="178.39999999999998" y="774.5" width="48" height="27" rx="13.5" fill="#203135" /><path d="M178.39999999999998 777.5v21" stroke="#ffffff70" stroke-width="1" /><text x="127.39999999999998" y="792.0" class="pill-text pill-role">SWITCHED −</text><text x="202.39999999999998" y="792.0" class="pill-text">2</text></g>
+<text x="60" y="716.0" class="bank-title" text-anchor="start">HOTEND B</text>
+<g class="pin-pill" data-pill-kind="power" data-pwm-capable="false" aria-label="CONTROL + 1"><rect x="76.39999999999998" y="964.5" width="150" height="27" rx="13.5" fill="#f0c51a" /><rect x="178.39999999999998" y="964.5" width="48" height="27" rx="13.5" fill="#203135" /><path d="M178.39999999999998 967.5v21" stroke="#ffffff70" stroke-width="1" /><text x="127.39999999999998" y="982.0" class="pill-text pill-role">CONTROL +</text><text x="202.39999999999998" y="982.0" class="pill-text">1</text></g>
+<g class="pin-pill" data-pill-kind="switched" data-pwm-capable="false" aria-label="SWITCHED − 2"><rect x="76.39999999999998" y="1008.5" width="150" height="27" rx="13.5" fill="#a13273" /><rect x="178.39999999999998" y="1008.5" width="48" height="27" rx="13.5" fill="#203135" /><path d="M178.39999999999998 1011.5v21" stroke="#ffffff70" stroke-width="1" /><text x="127.39999999999998" y="1026.0" class="pill-text pill-role">SWITCHED −</text><text x="202.39999999999998" y="1026.0" class="pill-text">2</text></g>
+<text x="60" y="950.0" class="bank-title" text-anchor="start">BED SWITCH CONTROL</text>
+<g class="pin-pill" data-pill-kind="power" data-pwm-capable="false" aria-label="LOAD + 1"><rect x="76.39999999999998" y="1198.5" width="150" height="27" rx="13.5" fill="#f0c51a" /><rect x="178.39999999999998" y="1198.5" width="48" height="27" rx="13.5" fill="#203135" /><path d="M178.39999999999998 1201.5v21" stroke="#ffffff70" stroke-width="1" /><text x="127.39999999999998" y="1216.0" class="pill-text pill-role">LOAD +</text><text x="202.39999999999998" y="1216.0" class="pill-text">1</text></g>
+<g class="pin-pill" data-pill-kind="switched" data-pwm-capable="false" aria-label="SWITCHED − 2"><rect x="76.39999999999998" y="1242.5" width="150" height="27" rx="13.5" fill="#a13273" /><rect x="178.39999999999998" y="1242.5" width="48" height="27" rx="13.5" fill="#203135" /><path d="M178.39999999999998 1245.5v21" stroke="#ffffff70" stroke-width="1" /><text x="127.39999999999998" y="1260.0" class="pill-text pill-role">SWITCHED −</text><text x="202.39999999999998" y="1260.0" class="pill-text">2</text></g>
+<text x="60" y="1184.0" class="bank-title" text-anchor="start">FAN A</text>
+<g class="pin-pill" data-pill-kind="power" data-pwm-capable="false" aria-label="LOAD + 1"><rect x="76.39999999999998" y="1432.5" width="150" height="27" rx="13.5" fill="#f0c51a" /><rect x="178.39999999999998" y="1432.5" width="48" height="27" rx="13.5" fill="#203135" /><path d="M178.39999999999998 1435.5v21" stroke="#ffffff70" stroke-width="1" /><text x="127.39999999999998" y="1450.0" class="pill-text pill-role">LOAD +</text><text x="202.39999999999998" y="1450.0" class="pill-text">1</text></g>
+<g class="pin-pill" data-pill-kind="switched" data-pwm-capable="false" aria-label="SWITCHED − 2"><rect x="76.39999999999998" y="1476.5" width="150" height="27" rx="13.5" fill="#a13273" /><rect x="178.39999999999998" y="1476.5" width="48" height="27" rx="13.5" fill="#203135" /><path d="M178.39999999999998 1479.5v21" stroke="#ffffff70" stroke-width="1" /><text x="127.39999999999998" y="1494.0" class="pill-text pill-role">SWITCHED −</text><text x="202.39999999999998" y="1494.0" class="pill-text">2</text></g>
+<text x="60" y="1418.0" class="bank-title" text-anchor="start">FAN B</text>
+<g class="pin-pill" data-pill-kind="five" data-pwm-capable="false" aria-label="5V SWITCH 1"><rect x="76.39999999999998" y="1726.5" width="150" height="27" rx="13.5" fill="#b85e00" /><rect x="178.39999999999998" y="1726.5" width="48" height="27" rx="13.5" fill="#203135" /><path d="M178.39999999999998 1729.5v21" stroke="#ffffff70" stroke-width="1" /><text x="127.39999999999998" y="1744.0" class="pill-text pill-role">5V SWITCH</text><text x="202.39999999999998" y="1744.0" class="pill-text">1</text></g>
+<g class="pin-pill" data-pill-kind="ground" data-pwm-capable="false" aria-label="GND 2"><rect x="76.39999999999998" y="1770.5" width="150" height="27" rx="13.5" fill="#111717" /><rect x="178.39999999999998" y="1770.5" width="48" height="27" rx="13.5" fill="#203135" /><path d="M178.39999999999998 1773.5v21" stroke="#ffffff70" stroke-width="1" /><text x="127.39999999999998" y="1788.0" class="pill-text pill-role">GND</text><text x="202.39999999999998" y="1788.0" class="pill-text">2</text></g>
+<text x="60" y="1712.0" class="bank-title" text-anchor="start">SSR 1 CONTROL</text>
+<g class="pin-pill" data-pill-kind="five" data-pwm-capable="false" aria-label="5V SWITCH 1"><rect x="76.39999999999998" y="1966.5" width="150" height="27" rx="13.5" fill="#b85e00" /><rect x="178.39999999999998" y="1966.5" width="48" height="27" rx="13.5" fill="#203135" /><path d="M178.39999999999998 1969.5v21" stroke="#ffffff70" stroke-width="1" /><text x="127.39999999999998" y="1984.0" class="pill-text pill-role">5V SWITCH</text><text x="202.39999999999998" y="1984.0" class="pill-text">1</text></g>
+<g class="pin-pill" data-pill-kind="ground" data-pwm-capable="false" aria-label="GND 2"><rect x="76.39999999999998" y="2010.5" width="150" height="27" rx="13.5" fill="#111717" /><rect x="178.39999999999998" y="2010.5" width="48" height="27" rx="13.5" fill="#203135" /><path d="M178.39999999999998 2013.5v21" stroke="#ffffff70" stroke-width="1" /><text x="127.39999999999998" y="2028.0" class="pill-text pill-role">GND</text><text x="202.39999999999998" y="2028.0" class="pill-text">2</text></g>
+<text x="60" y="1952.0" class="bank-title" text-anchor="start">SSR 2 CONTROL</text>
+<g class="pin-pill" data-pill-kind="control" data-pwm-capable="true" aria-label="PWM-capable PWM 1"><rect x="76.39999999999998" y="2206.5" width="150" height="27" rx="13.5" fill="#6246a3" /><rect x="178.39999999999998" y="2206.5" width="48" height="27" rx="13.5" fill="#203135" /><path d="M178.39999999999998 2209.5v21" stroke="#ffffff70" stroke-width="1" /><text x="91.39999999999998" y="2226.0" class="pwm-mark">~</text><text x="134.39999999999998" y="2224.0" class="pill-text pill-role">PWM</text><text x="202.39999999999998" y="2224.0" class="pill-text">1</text></g>
+<g class="pin-pill" data-pill-kind="control" data-pwm-capable="false" aria-label="TTL 2"><rect x="76.39999999999998" y="2250.5" width="150" height="27" rx="13.5" fill="#6246a3" /><rect x="178.39999999999998" y="2250.5" width="48" height="27" rx="13.5" fill="#203135" /><path d="M178.39999999999998 2253.5v21" stroke="#ffffff70" stroke-width="1" /><text x="127.39999999999998" y="2268.0" class="pill-text pill-role">TTL</text><text x="202.39999999999998" y="2268.0" class="pill-text">2</text></g>
+<g class="pin-pill" data-pill-kind="ground" data-pwm-capable="false" aria-label="GND 3"><rect x="76.39999999999998" y="2294.5" width="150" height="27" rx="13.5" fill="#111717" /><rect x="178.39999999999998" y="2294.5" width="48" height="27" rx="13.5" fill="#203135" /><path d="M178.39999999999998 2297.5v21" stroke="#ffffff70" stroke-width="1" /><text x="127.39999999999998" y="2312.0" class="pill-text pill-role">GND</text><text x="202.39999999999998" y="2312.0" class="pill-text">3</text></g>
+<g class="pin-pill" data-pill-kind="five" data-pwm-capable="false" aria-label="5V LIMITED 4"><rect x="76.39999999999998" y="2338.5" width="150" height="27" rx="13.5" fill="#b85e00" /><rect x="178.39999999999998" y="2338.5" width="48" height="27" rx="13.5" fill="#203135" /><path d="M178.39999999999998 2341.5v21" stroke="#ffffff70" stroke-width="1" /><text x="127.39999999999998" y="2356.0" class="pill-text pill-role">5V LIMITED</text><text x="202.39999999999998" y="2356.0" class="pill-text">4</text></g>
+<text x="60" y="2192.0" class="bank-title" text-anchor="start">PWM / LASER CONTROL</text>
+<g class="pin-pill" data-pill-kind="step" data-pwm-capable="false" aria-label="STEP"><rect x="359.0" y="2959.5" width="42" height="25" rx="12.5" fill="#136da7" /><text x="380.0" y="2976.0" class="pill-text pill-role">STEP</text></g>
+<g class="pin-pill" data-pill-kind="ground" data-pwm-capable="false" aria-label="GND"><rect x="403.0" y="2959.5" width="42" height="25" rx="12.5" fill="#111717" /><text x="424.0" y="2976.0" class="pill-text pill-role">GND</text></g>
+<g class="pin-pill" data-pill-kind="direction" data-pwm-capable="false" aria-label="DIR"><rect x="447.0" y="2959.5" width="42" height="25" rx="12.5" fill="#7443a4" /><text x="468.0" y="2976.0" class="pill-text pill-role">DIR</text></g>
+<g class="pin-pill" data-pill-kind="ground" data-pwm-capable="false" aria-label="GND"><rect x="491.0" y="2959.5" width="42" height="25" rx="12.5" fill="#111717" /><text x="512.0" y="2976.0" class="pill-text pill-role">GND</text></g>
+<g class="pin-pill" data-pill-kind="enable" data-pwm-capable="false" aria-label="EN"><rect x="535.0" y="2959.5" width="42" height="25" rx="12.5" fill="#087b60" /><text x="556.0" y="2976.0" class="pill-text pill-role">EN</text></g>
+<g class="pin-pill" data-pill-kind="ground" data-pwm-capable="false" aria-label="GND"><rect x="579.0" y="2959.5" width="42" height="25" rx="12.5" fill="#111717" /><text x="600.0" y="2976.0" class="pill-text pill-role">GND</text></g>
+<text x="490.0" y="3034.0" class="bank-title" text-anchor="middle">MOTOR CONTROL X</text>
+<g class="pin-pill" data-pill-kind="step" data-pwm-capable="false" aria-label="STEP"><rect x="857.0" y="2959.5" width="42" height="25" rx="12.5" fill="#136da7" /><text x="878.0" y="2976.0" class="pill-text pill-role">STEP</text></g>
+<g class="pin-pill" data-pill-kind="ground" data-pwm-capable="false" aria-label="GND"><rect x="901.0" y="2959.5" width="42" height="25" rx="12.5" fill="#111717" /><text x="922.0" y="2976.0" class="pill-text pill-role">GND</text></g>
+<g class="pin-pill" data-pill-kind="direction" data-pwm-capable="false" aria-label="DIR"><rect x="945.0" y="2959.5" width="42" height="25" rx="12.5" fill="#7443a4" /><text x="966.0" y="2976.0" class="pill-text pill-role">DIR</text></g>
+<g class="pin-pill" data-pill-kind="ground" data-pwm-capable="false" aria-label="GND"><rect x="989.0" y="2959.5" width="42" height="25" rx="12.5" fill="#111717" /><text x="1010.0" y="2976.0" class="pill-text pill-role">GND</text></g>
+<g class="pin-pill" data-pill-kind="enable" data-pwm-capable="false" aria-label="EN"><rect x="1033.0" y="2959.5" width="42" height="25" rx="12.5" fill="#087b60" /><text x="1054.0" y="2976.0" class="pill-text pill-role">EN</text></g>
+<g class="pin-pill" data-pill-kind="ground" data-pwm-capable="false" aria-label="GND"><rect x="1077.0" y="2959.5" width="42" height="25" rx="12.5" fill="#111717" /><text x="1098.0" y="2976.0" class="pill-text pill-role">GND</text></g>
+<text x="988.0" y="3034.0" class="bank-title" text-anchor="middle">MOTOR CONTROL Y</text>
+<g class="pin-pill" data-pill-kind="step" data-pwm-capable="false" aria-label="STEP"><rect x="1769.0" y="2959.5" width="42" height="25" rx="12.5" fill="#136da7" /><text x="1790.0" y="2976.0" class="pill-text pill-role">STEP</text></g>
+<g class="pin-pill" data-pill-kind="ground" data-pwm-capable="false" aria-label="GND"><rect x="1813.0" y="2959.5" width="42" height="25" rx="12.5" fill="#111717" /><text x="1834.0" y="2976.0" class="pill-text pill-role">GND</text></g>
+<g class="pin-pill" data-pill-kind="direction" data-pwm-capable="false" aria-label="DIR"><rect x="1857.0" y="2959.5" width="42" height="25" rx="12.5" fill="#7443a4" /><text x="1878.0" y="2976.0" class="pill-text pill-role">DIR</text></g>
+<g class="pin-pill" data-pill-kind="ground" data-pwm-capable="false" aria-label="GND"><rect x="1901.0" y="2959.5" width="42" height="25" rx="12.5" fill="#111717" /><text x="1922.0" y="2976.0" class="pill-text pill-role">GND</text></g>
+<g class="pin-pill" data-pill-kind="enable" data-pwm-capable="false" aria-label="EN"><rect x="1945.0" y="2959.5" width="42" height="25" rx="12.5" fill="#087b60" /><text x="1966.0" y="2976.0" class="pill-text pill-role">EN</text></g>
+<g class="pin-pill" data-pill-kind="ground" data-pwm-capable="false" aria-label="GND"><rect x="1989.0" y="2959.5" width="42" height="25" rx="12.5" fill="#111717" /><text x="2010.0" y="2976.0" class="pill-text pill-role">GND</text></g>
+<text x="1900.0" y="3034.0" class="bank-title" text-anchor="middle">MOTOR CONTROL Z</text>
+<g class="pin-pill" data-pill-kind="step" data-pwm-capable="false" aria-label="STEP"><rect x="2267.0" y="2959.5" width="42" height="25" rx="12.5" fill="#136da7" /><text x="2288.0" y="2976.0" class="pill-text pill-role">STEP</text></g>
+<g class="pin-pill" data-pill-kind="ground" data-pwm-capable="false" aria-label="GND"><rect x="2311.0" y="2959.5" width="42" height="25" rx="12.5" fill="#111717" /><text x="2332.0" y="2976.0" class="pill-text pill-role">GND</text></g>
+<g class="pin-pill" data-pill-kind="direction" data-pwm-capable="false" aria-label="DIR"><rect x="2355.0" y="2959.5" width="42" height="25" rx="12.5" fill="#7443a4" /><text x="2376.0" y="2976.0" class="pill-text pill-role">DIR</text></g>
+<g class="pin-pill" data-pill-kind="ground" data-pwm-capable="false" aria-label="GND"><rect x="2399.0" y="2959.5" width="42" height="25" rx="12.5" fill="#111717" /><text x="2420.0" y="2976.0" class="pill-text pill-role">GND</text></g>
+<g class="pin-pill" data-pill-kind="enable" data-pwm-capable="false" aria-label="EN"><rect x="2443.0" y="2959.5" width="42" height="25" rx="12.5" fill="#087b60" /><text x="2464.0" y="2976.0" class="pill-text pill-role">EN</text></g>
+<g class="pin-pill" data-pill-kind="ground" data-pwm-capable="false" aria-label="GND"><rect x="2487.0" y="2959.5" width="42" height="25" rx="12.5" fill="#111717" /><text x="2508.0" y="2976.0" class="pill-text pill-role">GND</text></g>
+<text x="2398.0" y="3034.0" class="bank-title" text-anchor="middle">MOTOR CONTROL A</text>
+</svg>

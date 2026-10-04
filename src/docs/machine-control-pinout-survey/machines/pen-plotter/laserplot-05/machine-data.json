@@ -1,0 +1,29 @@
+{
+  "id": "laserplot-05",
+  "sources": {
+    "machine-side-graph-snapshot.json": {
+      "source_graph": "092-laserplot-05.json",
+      "source_sha256": "7ce51925fdc85bed630d3222dd8444f173eb24dda61587e2346f0fd84affe95c",
+      "graph": {
+        "profile_id": "laserplot-05",
+        "devices": [
+          {
+            "id": "group-device-001",
+            "role": "peripheral"
+          }
+        ],
+        "connectors": [
+          {
+            "id": "machine-group-001",
+            "device": "group-device-001",
+            "refdes": "Arduino D2\u2013D5 and D6\u2013D9 four-signal sets; motor association disputed",
+            "form": "source-described cable / connector group",
+            "scope": "Source names this group, but provides no source-scoped physical contact map. Availability and exact housing are unverified. exact atlas group labels; open until contact mapping is established",
+            "contacts": []
+          }
+        ],
+        "wires": []
+      }
+    }
+  }
+}

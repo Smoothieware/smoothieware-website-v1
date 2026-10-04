@@ -1,0 +1,218 @@
+{
+  "id": "base-13",
+  "sources": {
+    "machine-side-graph-snapshot.json": {
+      "source_graph": "018-base-13.json",
+      "source_sha256": "d535b1219054710457f97c91267f408a58c256a46602d2ccd2ca035c30a09854",
+      "graph": {
+        "profile_id": "base-13",
+        "devices": [
+          {
+            "id": "peripheral-01",
+            "role": "peripheral"
+          },
+          {
+            "id": "peripheral-02",
+            "role": "peripheral"
+          }
+        ],
+        "connectors": [
+          {
+            "id": "machine-01",
+            "device": "peripheral-01",
+            "refdes": "DB25 \u00b7 8760 driver-box input",
+            "form": "DB25",
+            "scope": "downstream machine peripheral; Acorn H6 remains an upstream reference in #009/#018; numbered contact register, face unverified; Acorn lathe remaps machine Z to 8760 X channel, X to Y channel; source also contradicts Y use, so disputed Y and unused Z/A channels remain open Machine/peripheral-side contact schedule; fitted presence unverified.",
+            "contacts": [
+              {
+                "id": "1",
+                "mark": "1",
+                "label": "Input from LinuxCNC to driver box"
+              },
+              {
+                "id": "2",
+                "mark": "2",
+                "label": "X direction"
+              },
+              {
+                "id": "3",
+                "mark": "3",
+                "label": "X step"
+              },
+              {
+                "id": "4",
+                "mark": "4",
+                "label": "Y direction"
+              },
+              {
+                "id": "5",
+                "mark": "5",
+                "label": "Y step"
+              },
+              {
+                "id": "6",
+                "mark": "6",
+                "label": "Z direction"
+              },
+              {
+                "id": "7",
+                "mark": "7",
+                "label": "Z step"
+              },
+              {
+                "id": "8",
+                "mark": "8",
+                "label": "A direction"
+              },
+              {
+                "id": "9",
+                "mark": "9",
+                "label": "A step"
+              },
+              {
+                "id": "10",
+                "mark": "10",
+                "label": "NC"
+              },
+              {
+                "id": "11",
+                "mark": "11",
+                "label": "Output from 8760 to controller"
+              },
+              {
+                "id": "12",
+                "mark": "12",
+                "label": "XYZ home output from 8760"
+              },
+              {
+                "id": "13",
+                "mark": "13",
+                "label": "NC"
+              },
+              {
+                "id": "14",
+                "mark": "14",
+                "label": "Input from controller to 8760"
+              },
+              {
+                "id": "15",
+                "mark": "15",
+                "label": "Function not established for this scoped connector/revision"
+              },
+              {
+                "id": "16",
+                "mark": "16",
+                "label": "Input from controller to 8760"
+              },
+              {
+                "id": "17",
+                "mark": "17",
+                "label": "NC"
+              },
+              {
+                "id": "18",
+                "mark": "18",
+                "label": "GND per Sherline 8760 source; no V2 bond selected"
+              },
+              {
+                "id": "19",
+                "mark": "19",
+                "label": "GND per Sherline 8760 source; no V2 bond selected"
+              },
+              {
+                "id": "20",
+                "mark": "20",
+                "label": "GND per Sherline 8760 source; no V2 bond selected"
+              },
+              {
+                "id": "21",
+                "mark": "21",
+                "label": "GND per Sherline 8760 source; no V2 bond selected"
+              },
+              {
+                "id": "22",
+                "mark": "22",
+                "label": "GND per Sherline 8760 source; no V2 bond selected"
+              },
+              {
+                "id": "23",
+                "mark": "23",
+                "label": "GND per Sherline 8760 source; no V2 bond selected"
+              },
+              {
+                "id": "24",
+                "mark": "24",
+                "label": "GND per Sherline 8760 source; no V2 bond selected"
+              },
+              {
+                "id": "25",
+                "mark": "25",
+                "label": "GND per Sherline 8760 source; no V2 bond selected"
+              }
+            ]
+          },
+          {
+            "id": "machine-02",
+            "device": "peripheral-02",
+            "refdes": "Sherline 67126 motor, male 5-pin DIN view [SOURCE TABLE 2]",
+            "form": "DIN",
+            "scope": "Sherline 67126 motor, male 5-pin DIN view; not every Sherline motor Machine/peripheral-side contact schedule; fitted presence unverified.",
+            "contacts": [
+              {
+                "id": "1",
+                "mark": "1",
+                "label": "1 | Orange, phase C"
+              },
+              {
+                "id": "2",
+                "mark": "2",
+                "label": "2 | Blue, phase A"
+              },
+              {
+                "id": "3",
+                "mark": "3",
+                "label": "3 | Joined brown and green center taps"
+              },
+              {
+                "id": "4",
+                "mark": "4",
+                "label": "4 | Yellow, phase B"
+              },
+              {
+                "id": "5",
+                "mark": "5",
+                "label": "5 | Red, phase D"
+              }
+            ]
+          }
+        ],
+        "wires": [
+          {
+            "state": "inferred",
+            "kind": "function",
+            "a": {
+              "connector": "v2-j5",
+              "contact": "30"
+            },
+            "b": {
+              "connector": "machine-01",
+              "contact": "2"
+            }
+          },
+          {
+            "state": "inferred",
+            "kind": "function",
+            "a": {
+              "connector": "v2-j5",
+              "contact": "28"
+            },
+            "b": {
+              "connector": "machine-01",
+              "contact": "3"
+            }
+          }
+        ]
+      }
+    }
+  }
+}

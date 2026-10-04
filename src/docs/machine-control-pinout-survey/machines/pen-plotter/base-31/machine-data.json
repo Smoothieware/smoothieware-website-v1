@@ -1,0 +1,149 @@
+{
+  "id": "base-31",
+  "sources": {
+    "machine-side-graph-snapshot.json": {
+      "source_graph": "090-base-31.json",
+      "source_sha256": "1067799d0e5c65d30a1873b1b4cb5e4dab6255798caa56937808be31acda2e9e",
+      "graph": {
+        "profile_id": "base-31",
+        "devices": [
+          {
+            "id": "peripheral-01",
+            "role": "reference"
+          },
+          {
+            "id": "peripheral-02",
+            "role": "reference"
+          },
+          {
+            "id": "peripheral-03",
+            "role": "reference"
+          },
+          {
+            "id": "peripheral-04",
+            "role": "reference"
+          },
+          {
+            "id": "peripheral-05",
+            "role": "reference"
+          },
+          {
+            "id": "group-device-001",
+            "role": "peripheral"
+          }
+        ],
+        "connectors": [
+          {
+            "id": "machine-01",
+            "device": "peripheral-01",
+            "refdes": "EBB v2.4 \u00b7 JP13",
+            "form": "source-described connector",
+            "scope": "EBB v2.4 schematic nets, with connector reference and numbered contacts; Source connector revision only; no installed harness, mating view, electrical compatibility or V2 route is proven; motor pins are driver outputs, not STEP/DIR inputs Original/reference connector availability unresolved; do not infer retained installation.",
+            "contacts": [
+              {
+                "id": "1",
+                "mark": "1",
+                "label": "M1_OUT1B"
+              },
+              {
+                "id": "2",
+                "mark": "2",
+                "label": "M1_OUT1A"
+              }
+            ]
+          },
+          {
+            "id": "machine-02",
+            "device": "peripheral-02",
+            "refdes": "EBB v2.4 \u00b7 JP16",
+            "form": "source-described connector",
+            "scope": "EBB v2.4 schematic nets, with connector reference and numbered contacts; Source connector revision only; no installed harness, mating view, electrical compatibility or V2 route is proven; motor pins are driver outputs, not STEP/DIR inputs Original/reference connector availability unresolved; do not infer retained installation.",
+            "contacts": [
+              {
+                "id": "1",
+                "mark": "1",
+                "label": "M1_OUT2A"
+              },
+              {
+                "id": "2",
+                "mark": "2",
+                "label": "M1_OUT2B"
+              }
+            ]
+          },
+          {
+            "id": "machine-03",
+            "device": "peripheral-03",
+            "refdes": "EBB v2.4 \u00b7 JP17",
+            "form": "source-described connector",
+            "scope": "EBB v2.4 schematic nets, with connector reference and numbered contacts; Source connector revision only; no installed harness, mating view, electrical compatibility or V2 route is proven; motor pins are driver outputs, not STEP/DIR inputs Original/reference connector availability unresolved; do not infer retained installation.",
+            "contacts": [
+              {
+                "id": "1",
+                "mark": "1",
+                "label": "M2_OUT1B"
+              },
+              {
+                "id": "2",
+                "mark": "2",
+                "label": "M2_OUT1A"
+              }
+            ]
+          },
+          {
+            "id": "machine-04",
+            "device": "peripheral-04",
+            "refdes": "EBB v2.4 \u00b7 JP18",
+            "form": "source-described connector",
+            "scope": "EBB v2.4 schematic nets, with connector reference and numbered contacts; Source connector revision only; no installed harness, mating view, electrical compatibility or V2 route is proven; motor pins are driver outputs, not STEP/DIR inputs Original/reference connector availability unresolved; do not infer retained installation.",
+            "contacts": [
+              {
+                "id": "1",
+                "mark": "1",
+                "label": "M2_OUT2A"
+              },
+              {
+                "id": "2",
+                "mark": "2",
+                "label": "M2_OUT2B"
+              }
+            ]
+          },
+          {
+            "id": "machine-05",
+            "device": "peripheral-05",
+            "refdes": "EBB v2.4 \u00b7 JP1",
+            "form": "source-described connector",
+            "scope": "EBB v2.4 schematic nets, with connector reference and numbered contacts; Source connector revision only; no installed harness, mating view, electrical compatibility or V2 route is proven; motor pins are driver outputs, not STEP/DIR inputs Original/reference connector availability unresolved; do not infer retained installation.",
+            "contacts": [
+              {
+                "id": "1",
+                "mark": "1",
+                "label": "GND"
+              },
+              {
+                "id": "2",
+                "mark": "2",
+                "label": "Servo 5 V"
+              },
+              {
+                "id": "3",
+                "mark": "3",
+                "label": "RB1 pen-servo signal"
+              }
+            ]
+          },
+          {
+            "id": "machine-group-001",
+            "device": "group-device-001",
+            "refdes": "JP1 servo",
+            "form": "source-described cable / connector group",
+            "scope": "Source names this group, but provides no source-scoped physical contact map. Availability and exact housing are unverified. exact atlas group labels; open until contact mapping is established",
+            "contacts": []
+          }
+        ],
+        "wires": []
+      }
+    }
+  }
+}

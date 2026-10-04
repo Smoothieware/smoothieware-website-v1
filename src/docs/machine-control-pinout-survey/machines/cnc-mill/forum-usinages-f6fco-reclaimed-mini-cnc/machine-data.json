@@ -1,0 +1,34 @@
+{
+  "id": "forum-usinages-f6fco-reclaimed-mini-cnc",
+  "sources": {
+    "forum-peripheral-evidence.json": {
+      "id": "forum-usinages-f6fco-reclaimed-mini-cnc",
+      "dossier": "src/docs/machine-research/usinages-f6fco-reclaimed-mini-cnc.md",
+      "reported_fitted_or_used": [],
+      "listed_for_build_unverified": [
+        {
+          "name": "Rebuilt photocopier-parts spindle",
+          "contacts": [],
+          "source_line_number": 9,
+          "source_line": "The owner describes a 10 mm MDF frame, M8 lead screws, NEMA 23 stepper motors, and linear guides recovered from photocopiers. A PC power supply is also listed among the reused parts. The machine's original control approach included an Arduino, but the owner later says a purchased controller replaced it. The thread uses inconsistent four-axis/five-axis descriptions; this dossier therefore does not assign an exact axis/controller configuration beyond noting that the control electronics changed.",
+          "evidence": "The owner describes a 10 mm MDF frame, M8 lead screws, NEMA 23 stepper motors, and linear guides recovered from photocopiers. A PC power supply is also listed among the reused parts.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        }
+      ],
+      "historical_reference": [],
+      "planned_only": [],
+      "open_function_group": [
+        {
+          "name": "NEMA 23 stepper motors",
+          "contacts": [],
+          "source_line_number": 9,
+          "source_line": "The owner describes a 10 mm MDF frame, M8 lead screws, NEMA 23 stepper motors, and linear guides recovered from photocopiers. A PC power supply is also listed among the reused parts. The machine's original control approach included an Arduino, but the owner later says a purchased controller replaced it. The thread uses inconsistent four-axis/five-axis descriptions; this dossier therefore does not assign an exact axis/controller configuration beyond noting that the control electronics changed.",
+          "evidence": "The owner describes a 10 mm MDF frame, M8 lead screws, NEMA 23 stepper motors, and linear guides recovered from photocopiers. A PC power supply is also listed among the reused parts.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        }
+      ],
+      "exclusions": [],
+      "source_gap": "Dossier does not establish an as-built SmoothieBox route or a complete physical contact schedule for the listed peripherals."
+    }
+  }
+}

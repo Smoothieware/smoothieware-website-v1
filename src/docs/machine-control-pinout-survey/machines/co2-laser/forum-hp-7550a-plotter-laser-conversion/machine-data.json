@@ -1,0 +1,50 @@
+{
+  "id": "forum-hp-7550a-plotter-laser-conversion",
+  "sources": {
+    "forum-peripheral-evidence.json": {
+      "id": "forum-hp-7550a-plotter-laser-conversion",
+      "dossier": "src/docs/machine-research/hp-7550a-plotter-laser-conversion.md",
+      "reported_fitted_or_used": [
+        {
+          "name": "Synrad J48-1 laser",
+          "contacts": [],
+          "source_line_number": 13,
+          "source_line": "The initial laser is reported as a Synrad J48-1 RF-excited CO\u2082 unit, described by the author as nominally 10 W, air-cooled, on a 30 V, 7 A DC supply. The same post says it measured over 16 W at 95% duty while testing; the discrepancy is retained as a forum claim and must not be treated as a rated output. The forum post describes a hand-held balsa cutting demonstration, not a complete safe operating procedure.",
+          "evidence": "The initial laser is reported as a Synrad J48-1 RF-excited CO\u2082 unit, described by the author as nominally 10 W, air-cooled, on a 30 V, 7 A DC supply. The same post says it measured over 16 W at 95% duty while testing; the discrepancy is retained as a forum claim and must not be treated as a rated output.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        },
+        {
+          "name": "AMC servo amplifier",
+          "source_line_number": 30,
+          "source_line": "| Pixie P100 \u2192 AMC servo amplifier \u2192 Pittman servo | Motion chain described; no terminal numbers or connector pin map supplied | Reported topology only |",
+          "evidence": "Motion chain described; no terminal numbers or connector pin map supplied.",
+          "contacts": [],
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        },
+        {
+          "name": "30 V / 7 A supply for Synrad laser",
+          "contacts": [],
+          "source_line_number": 13,
+          "source_line": "The initial laser is reported as a Synrad J48-1 RF-excited CO\u2082 unit, described by the author as nominally 10 W, air-cooled, on a 30 V, 7 A DC supply. The same post says it measured over 16 W at 95% duty while testing; the discrepancy is retained as a forum claim and must not be treated as a rated output. The forum post describes a hand-held balsa cutting demonstration, not a complete safe operating procedure.",
+          "evidence": "The initial laser is reported as a Synrad J48-1 RF-excited CO\u2082 unit, described by the author as nominally 10 W, air-cooled, on a 30 V, 7 A DC supply. The same post says it measured over 16 W at 95% duty while testing; the discrepancy is retained as a forum claim and must not be treated as a rated output.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        }
+      ],
+      "listed_for_build_unverified": [],
+      "historical_reference": [],
+      "planned_only": [],
+      "open_function_group": [
+        {
+          "name": "Pittman servo",
+          "contacts": [],
+          "source_line_number": 30,
+          "source_line": "| Pixie P100 \u2192 AMC servo amplifier \u2192 Pittman servo | Motion chain described; no terminal numbers or connector pin map supplied | Reported topology only |",
+          "evidence": "Motion chain described; no terminal numbers or connector pin map supplied.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        }
+      ],
+      "exclusions": [],
+      "source_gap": "Dossier does not establish an as-built SmoothieBox route or a complete physical contact schedule for the listed peripherals."
+    }
+  }
+}

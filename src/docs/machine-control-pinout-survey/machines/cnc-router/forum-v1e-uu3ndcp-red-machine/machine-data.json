@@ -1,0 +1,35 @@
+{
+  "id": "forum-v1e-uu3ndcp-red-machine",
+  "sources": {
+    "forum-peripheral-evidence.json": {
+      "id": "forum-v1e-uu3ndcp-red-machine",
+      "dossier": "src/docs/machine-research/v1e-uu3ndcp-red-machine.md",
+      "reported_fitted_or_used": [],
+      "listed_for_build_unverified": [
+        {
+          "name": "Five endstop switches",
+          "contacts": [],
+          "source_line_number": 17,
+          "source_line": "- His bill of materials lists 6 m of precision steel rail/tube at 30 mm outside diameter; five NEMA 17 steppers; one Jackpot 3 controller; five endstops; 10 m of 10 mm GT2 belt; 16-tooth pulleys and smooth idlers; two T8 leadscrews/nuts; 14 608-2RS bearings; MGN linear rails; and a touch plate. The forum BOM\u2019s hyperlink labels for the T8 and MGN rows appear mismatched, so this summary preserves the owner\u2019s row names and quantities without relying on the outbound shop listings.",
+          "evidence": "His bill of materials lists 6 m of precision steel rail/tube at 30 mm outside diameter; five NEMA 17 steppers; one Jackpot 3 controller; five endstops; 10 m of 10 mm GT2 belt; 16-tooth pulleys and smooth idlers; two T8 leadscrews/nuts; 14 608-2RS bearings; MGN linear rails; and a touch plate. The forum BOM\u2019s hyperlink labels for the T8 and MGN rows appear mismatched, so this summary preserves the owner\u2019s row names and quantities without relying on the outbound shop listings.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        }
+      ],
+      "historical_reference": [],
+      "planned_only": [],
+      "open_function_group": [],
+      "exclusions": [
+        {
+          "name": "Five NEMA 17 steppers",
+          "contacts": [],
+          "source_line_number": 17,
+          "source_line": "- His bill of materials lists 6 m of precision steel rail/tube at 30 mm outside diameter; five NEMA 17 steppers; one Jackpot 3 controller; five endstops; 10 m of 10 mm GT2 belt; 16-tooth pulleys and smooth idlers; two T8 leadscrews/nuts; 14 608-2RS bearings; MGN linear rails; and a touch plate. The forum BOM\u2019s hyperlink labels for the T8 and MGN rows appear mismatched, so this summary preserves the owner\u2019s row names and quantities without relying on the outbound shop listings.",
+          "evidence": "- His bill of materials lists 6 m of precision steel rail/tube at 30 mm outside diameter; five NEMA 17 steppers; one Jackpot 3 controller; five endstops; 10 m of 10 mm GT2 belt; 16-tooth pulleys and smooth idlers; two T8 leadscrews/nuts; 14 608-2RS bearings; MGN linear rails; and a touch plate. The forum BOM\u2019s hyperlink labels for the T8 and MGN rows appear mismatched, so this summary preserves the owner\u2019s row names and quantities without rely\u2026",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route",
+          "reason": "Excluded: no separate externally addressable interface, existing control hardware, absent tooling, or inadequate positive device evidence in this dossier."
+        }
+      ],
+      "source_gap": "Dossier does not establish an as-built SmoothieBox route or a complete physical contact schedule for the listed peripherals."
+    }
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "id": "forum-linuxcnc-btminpa-shizuoka-ans",
+  "sources": {
+    "forum-peripheral-evidence.json": {
+      "id": "forum-linuxcnc-btminpa-shizuoka-ans",
+      "dossier": "src/docs/machine-research/linuxcnc-btminpa-shizuoka-ans.md",
+      "reported_fitted_or_used": [
+        {
+          "name": "Westamp drives",
+          "contacts": [],
+          "source_line_number": 11,
+          "source_line": "The forum mentions motor encoders, tachometers, 120 V DC motors, and the Westamp drives, but it does not give connector or terminal contact assignments. The servo nameplate was attached but its contact map was not transcribed in the inspected page. No machine pinout is established.",
+          "evidence": "The forum mentions motor encoders, tachometers, 120 V DC motors, and the Westamp drives, but it does not give connector or terminal contact assignments. The servo nameplate was attached but its contact map was not transcribed in the inspected page.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        }
+      ],
+      "listed_for_build_unverified": [],
+      "historical_reference": [],
+      "planned_only": [],
+      "open_function_group": [
+        {
+          "name": "Baldor Big-MHO DC servos",
+          "contacts": [],
+          "source_line_number": 5,
+          "source_line": "LinuxCNC Forum member BtmInPa identifies a Shizuoka AN-S three-axis CNC knee mill with a failed Allen-Bradley control. The owner reports that its Baldor Big-MHO DC servos were in good condition, that the machine was mechanically excellent, and that the motors had encoders and tachometers. The installed late-1980s Westamp servo drives were being considered for replacement; the owner had not selected suitable drives in the inspected September 2019 posts. The mill was used in a professional shop and the owner wanted a Linux conversion. No completed retrofit is documented in the inspected thread.",
+          "evidence": "The owner reports that its Baldor Big-MHO DC servos were in good condition, that the machine was mechanically excellent, and that the motors had encoders and tachometers. The installed late-1980s Westamp servo drives were being considered for replacement; the owner had not selected suitable drives in the inspected September 2019 posts.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        },
+        {
+          "name": "Motor encoders and tachometers",
+          "contacts": [],
+          "source_line_number": 5,
+          "source_line": "LinuxCNC Forum member BtmInPa identifies a Shizuoka AN-S three-axis CNC knee mill with a failed Allen-Bradley control. The owner reports that its Baldor Big-MHO DC servos were in good condition, that the machine was mechanically excellent, and that the motors had encoders and tachometers. The installed late-1980s Westamp servo drives were being considered for replacement; the owner had not selected suitable drives in the inspected September 2019 posts. The mill was used in a professional shop and the owner wanted a Linux conversion. No completed retrofit is documented in the inspected thread.",
+          "evidence": "The owner reports that its Baldor Big-MHO DC servos were in good condition, that the machine was mechanically excellent, and that the motors had encoders and tachometers. The installed late-1980s Westamp servo drives were being considered for replacement; the owner had not selected suitable drives in the inspected September 2019 posts.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        }
+      ],
+      "exclusions": [],
+      "source_gap": "Dossier does not establish an as-built SmoothieBox route or a complete physical contact schedule for the listed peripherals."
+    }
+  }
+}

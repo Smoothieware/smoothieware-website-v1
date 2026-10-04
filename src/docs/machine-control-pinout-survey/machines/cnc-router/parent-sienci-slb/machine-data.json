@@ -1,0 +1,302 @@
+{
+  "id": "parent-sienci-slb",
+  "sources": {
+    "machine-side-graph-snapshot.json": {
+      "source_graph": "057-parent-sienci-slb.json",
+      "source_sha256": "876b467b89f125fd2387a49bf280b06686418d68936e9d8cfa482d12ab49a7bd",
+      "graph": {
+        "profile_id": "parent-sienci-slb",
+        "devices": [
+          {
+            "id": "peripheral-01",
+            "role": "reference"
+          },
+          {
+            "id": "peripheral-02",
+            "role": "reference"
+          },
+          {
+            "id": "peripheral-03",
+            "role": "reference"
+          },
+          {
+            "id": "peripheral-04",
+            "role": "reference"
+          },
+          {
+            "id": "peripheral-05",
+            "role": "reference"
+          },
+          {
+            "id": "peripheral-06",
+            "role": "reference"
+          },
+          {
+            "id": "group-device-001",
+            "role": "peripheral"
+          },
+          {
+            "id": "group-device-002",
+            "role": "peripheral"
+          },
+          {
+            "id": "group-device-003",
+            "role": "peripheral"
+          },
+          {
+            "id": "group-device-004",
+            "role": "peripheral"
+          },
+          {
+            "id": "group-device-005",
+            "role": "peripheral"
+          },
+          {
+            "id": "group-device-006",
+            "role": "peripheral"
+          }
+        ],
+        "connectors": [
+          {
+            "id": "machine-01",
+            "device": "peripheral-01",
+            "refdes": "regular SLB limit screw terminal",
+            "form": "source-described connector",
+            "scope": "Regular SLB only; terminal left-to-right in manufacturer view; installed PCB revision unconfirmed Original/reference connector availability unresolved; do not infer retained installation.",
+            "contacts": [
+              {
+                "id": "1",
+                "mark": "1",
+                "label": "VCC"
+              },
+              {
+                "id": "2",
+                "mark": "2",
+                "label": "X limit input"
+              },
+              {
+                "id": "3",
+                "mark": "3",
+                "label": "Y1 limit input"
+              },
+              {
+                "id": "4",
+                "mark": "4",
+                "label": "Y2 limit input; manual says do not use in regular setup"
+              },
+              {
+                "id": "5",
+                "mark": "5",
+                "label": "Z limit input"
+              },
+              {
+                "id": "6",
+                "mark": "6",
+                "label": "A limit input"
+              },
+              {
+                "id": "7",
+                "mark": "7",
+                "label": "GND"
+              }
+            ]
+          },
+          {
+            "id": "machine-02",
+            "device": "peripheral-02",
+            "refdes": "regular SLB limit JST reference",
+            "form": "source-described connector",
+            "scope": "Representative four-contact JST, top-to-bottom in manufacturer view; not a particular installed X/Y/Z harness Original/reference connector availability unresolved; do not infer retained installation.",
+            "contacts": [
+              {
+                "id": "1",
+                "mark": "1",
+                "label": "VCC"
+              },
+              {
+                "id": "2",
+                "mark": "2",
+                "label": "GND"
+              },
+              {
+                "id": "3",
+                "mark": "3",
+                "label": "N/A"
+              },
+              {
+                "id": "4",
+                "mark": "4",
+                "label": "LIM"
+              }
+            ]
+          },
+          {
+            "id": "machine-03",
+            "device": "peripheral-03",
+            "refdes": "MK2.5 regular SLB X motor plug",
+            "form": "source-described connector",
+            "scope": "Regular SLB motor plug; screw-head side, left-to-right; colours do not establish winding phase polarity Original/reference connector availability unresolved; do not infer retained installation.",
+            "contacts": [
+              {
+                "id": "1",
+                "mark": "1",
+                "label": "Blue lead"
+              },
+              {
+                "id": "2",
+                "mark": "2",
+                "label": "Yellow lead"
+              },
+              {
+                "id": "3",
+                "mark": "3",
+                "label": "Green lead"
+              },
+              {
+                "id": "4",
+                "mark": "4",
+                "label": "Red lead"
+              }
+            ]
+          },
+          {
+            "id": "machine-04",
+            "device": "peripheral-04",
+            "refdes": "MK2.5 regular SLB Y1 motor plug",
+            "form": "source-described connector",
+            "scope": "Regular SLB motor plug; screw-head side, left-to-right; colours do not establish winding phase polarity Original/reference connector availability unresolved; do not infer retained installation.",
+            "contacts": [
+              {
+                "id": "1",
+                "mark": "1",
+                "label": "Blue lead"
+              },
+              {
+                "id": "2",
+                "mark": "2",
+                "label": "Yellow lead"
+              },
+              {
+                "id": "3",
+                "mark": "3",
+                "label": "Green lead"
+              },
+              {
+                "id": "4",
+                "mark": "4",
+                "label": "Red lead"
+              }
+            ]
+          },
+          {
+            "id": "machine-05",
+            "device": "peripheral-05",
+            "refdes": "MK2.5 regular SLB Y2 motor plug",
+            "form": "source-described connector",
+            "scope": "Regular SLB motor plug; screw-head side, left-to-right; colours do not establish winding phase polarity Original/reference connector availability unresolved; do not infer retained installation.",
+            "contacts": [
+              {
+                "id": "1",
+                "mark": "1",
+                "label": "Blue lead"
+              },
+              {
+                "id": "2",
+                "mark": "2",
+                "label": "Yellow lead"
+              },
+              {
+                "id": "3",
+                "mark": "3",
+                "label": "Green lead"
+              },
+              {
+                "id": "4",
+                "mark": "4",
+                "label": "Red lead"
+              }
+            ]
+          },
+          {
+            "id": "machine-06",
+            "device": "peripheral-06",
+            "refdes": "MK2.5 regular SLB Z motor plug",
+            "form": "source-described connector",
+            "scope": "Regular SLB motor plug; screw-head side, left-to-right; colours do not establish winding phase polarity Original/reference connector availability unresolved; do not infer retained installation.",
+            "contacts": [
+              {
+                "id": "1",
+                "mark": "1",
+                "label": "Blue lead"
+              },
+              {
+                "id": "2",
+                "mark": "2",
+                "label": "Yellow lead"
+              },
+              {
+                "id": "3",
+                "mark": "3",
+                "label": "Green lead"
+              },
+              {
+                "id": "4",
+                "mark": "4",
+                "label": "Red lead"
+              }
+            ]
+          },
+          {
+            "id": "machine-group-001",
+            "device": "group-device-001",
+            "refdes": "X",
+            "form": "source-described cable / connector group",
+            "scope": "Source names this group, but provides no source-scoped physical contact map. Availability and exact housing are unverified. exact atlas group labels; open until contact mapping is established",
+            "contacts": []
+          },
+          {
+            "id": "machine-group-002",
+            "device": "group-device-002",
+            "refdes": "Y1",
+            "form": "source-described cable / connector group",
+            "scope": "Source names this group, but provides no source-scoped physical contact map. Availability and exact housing are unverified. exact atlas group labels; open until contact mapping is established",
+            "contacts": []
+          },
+          {
+            "id": "machine-group-003",
+            "device": "group-device-003",
+            "refdes": "Y2",
+            "form": "source-described cable / connector group",
+            "scope": "Source names this group, but provides no source-scoped physical contact map. Availability and exact housing are unverified. exact atlas group labels; open until contact mapping is established",
+            "contacts": []
+          },
+          {
+            "id": "machine-group-004",
+            "device": "group-device-004",
+            "refdes": "Z motors",
+            "form": "source-described cable / connector group",
+            "scope": "Source names this group, but provides no source-scoped physical contact map. Availability and exact housing are unverified. exact atlas group labels; open until contact mapping is established",
+            "contacts": []
+          },
+          {
+            "id": "machine-group-005",
+            "device": "group-device-005",
+            "refdes": "E-stop",
+            "form": "source-described cable / connector group",
+            "scope": "Source names this group, but provides no source-scoped physical contact map. Availability and exact housing are unverified. exact atlas group labels; open until contact mapping is established",
+            "contacts": []
+          },
+          {
+            "id": "machine-group-006",
+            "device": "group-device-006",
+            "refdes": "probe",
+            "form": "source-described cable / connector group",
+            "scope": "Source names this group, but provides no source-scoped physical contact map. Availability and exact housing are unverified. exact atlas group labels; open until contact mapping is established",
+            "contacts": []
+          }
+        ],
+        "wires": []
+      }
+    }
+  }
+}

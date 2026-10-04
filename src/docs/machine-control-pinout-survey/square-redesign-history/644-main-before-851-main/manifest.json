@@ -1,0 +1,126 @@
+{
+  "type": "retained-revision",
+  "revision": "644-main-before-851-main",
+  "files": [
+    {
+      "source": "/home/arthur/dev/smoothieware/smoothieware-website-v1/src/docs/machine-control-pinout-survey/smoothiebox-machine-wiring/centered-wiki-205.svg",
+      "retained": "/home/arthur/dev/smoothieware/smoothieware-website-v1/src/docs/machine-control-pinout-survey/square-redesign-history/644-main-before-851-main/centered-wiki-205.svg",
+      "sha256": "0c9068aaf671a3fd588fb1ee4ace87fb6ce88ec3caf35f267aa899ceffe3d3b2"
+    },
+    {
+      "source": "/home/arthur/dev/smoothieware/smoothieware-website-v1/src/docs/machine-control-pinout-survey/centered-connections-wiki-205.json",
+      "retained": "/home/arthur/dev/smoothieware/smoothieware-website-v1/src/docs/machine-control-pinout-survey/square-redesign-history/644-main-before-851-main/centered-connections-wiki-205.json",
+      "sha256": "13224e26be4717e3565df1a7f1487a9b5d781f177f09e7797d291b981b3f1ab2"
+    },
+    {
+      "source": "/home/arthur/dev/smoothieware/smoothieware-website-v1/src/docs/machine-control-pinout-survey/smoothiebox-machine-wiring/centered-laserplot-02.svg",
+      "retained": "/home/arthur/dev/smoothieware/smoothieware-website-v1/src/docs/machine-control-pinout-survey/square-redesign-history/644-main-before-851-main/centered-laserplot-02.svg",
+      "sha256": "773ecd08ed4eb4128a6fe9c052a5601ccf190b3f4bd59cea5d1c11bb6a7f33bd"
+    },
+    {
+      "source": "/home/arthur/dev/smoothieware/smoothieware-website-v1/src/docs/machine-control-pinout-survey/centered-connections-laserplot-02.json",
+      "retained": "/home/arthur/dev/smoothieware/smoothieware-website-v1/src/docs/machine-control-pinout-survey/square-redesign-history/644-main-before-851-main/centered-connections-laserplot-02.json",
+      "sha256": "3b75bf976ea0754035be68bce01398c37e2e8427c350d30ae80c933346e3ee35"
+    },
+    {
+      "source": "/home/arthur/dev/smoothieware/smoothieware-website-v1/src/docs/machine-control-pinout-survey/smoothiebox-machine-wiring/centered-base-11.svg",
+      "retained": "/home/arthur/dev/smoothieware/smoothieware-website-v1/src/docs/machine-control-pinout-survey/square-redesign-history/644-main-before-851-main/centered-base-11.svg",
+      "sha256": "752eedc54779de9ac38088a0118716e70a8567be4a212691c026d7be3a4cd39d"
+    },
+    {
+      "source": "/home/arthur/dev/smoothieware/smoothieware-website-v1/src/docs/machine-control-pinout-survey/centered-connections-base-11.json",
+      "retained": "/home/arthur/dev/smoothieware/smoothieware-website-v1/src/docs/machine-control-pinout-survey/square-redesign-history/644-main-before-851-main/centered-connections-base-11.json",
+      "sha256": "fe037eaa301b4dbd61b5661b8633f8a3abaa48a95e6ddd12f2b03a568eac5529"
+    },
+    {
+      "source": "/home/arthur/dev/smoothieware/smoothieware-website-v1/src/docs/machine-control-pinout-survey/smoothiebox-machine-wiring/centered-wiki-132.svg",
+      "retained": "/home/arthur/dev/smoothieware/smoothieware-website-v1/src/docs/machine-control-pinout-survey/square-redesign-history/644-main-before-851-main/centered-wiki-132.svg",
+      "sha256": "e848781ea90d6900ec48618afa8b7564cd7649833fde8626881ec9ceb80b7e18"
+    },
+    {
+      "source": "/home/arthur/dev/smoothieware/smoothieware-website-v1/src/docs/machine-control-pinout-survey/centered-connections-wiki-132.json",
+      "retained": "/home/arthur/dev/smoothieware/smoothieware-website-v1/src/docs/machine-control-pinout-survey/square-redesign-history/644-main-before-851-main/centered-connections-wiki-132.json",
+      "sha256": "2c4888985a4d209f3319627b5e578b87de86053eadc27559a777e058162fb7bf"
+    },
+    {
+      "source": "/home/arthur/dev/smoothieware/smoothieware-website-v1/src/docs/machine-control-pinout-survey/smoothiebox-machine-wiring/centered-wiki-134.svg",
+      "retained": "/home/arthur/dev/smoothieware/smoothieware-website-v1/src/docs/machine-control-pinout-survey/square-redesign-history/644-main-before-851-main/centered-wiki-134.svg",
+      "sha256": "1f34ca6f4c60cd1506cc6a33d542fe831bcf688b78dedbc7e4b113ddd44e3b26"
+    },
+    {
+      "source": "/home/arthur/dev/smoothieware/smoothieware-website-v1/src/docs/machine-control-pinout-survey/centered-connections-wiki-134.json",
+      "retained": "/home/arthur/dev/smoothieware/smoothieware-website-v1/src/docs/machine-control-pinout-survey/square-redesign-history/644-main-before-851-main/centered-connections-wiki-134.json",
+      "sha256": "1b08d4e45e295d3f7c19fc447d7957dcf001f9f94bfd2b229bb68bef4ede1cf0"
+    },
+    {
+      "source": "/home/arthur/dev/smoothieware/smoothieware-website-v1/src/docs/machine-control-pinout-survey/smoothiebox-machine-wiring/centered-wiki-135.svg",
+      "retained": "/home/arthur/dev/smoothieware/smoothieware-website-v1/src/docs/machine-control-pinout-survey/square-redesign-history/644-main-before-851-main/centered-wiki-135.svg",
+      "sha256": "2458a4a9dcb0c62d8c76d13b33c4c47b95f1ee71deedf644d7bb5618b8b4e875"
+    },
+    {
+      "source": "/home/arthur/dev/smoothieware/smoothieware-website-v1/src/docs/machine-control-pinout-survey/centered-connections-wiki-135.json",
+      "retained": "/home/arthur/dev/smoothieware/smoothieware-website-v1/src/docs/machine-control-pinout-survey/square-redesign-history/644-main-before-851-main/centered-connections-wiki-135.json",
+      "sha256": "6077d7995f43a50121b5bb1fedaed021916f31cc54e3117f2ca73cdde0ba99b7"
+    },
+    {
+      "source": "/home/arthur/dev/smoothieware/smoothieware-website-v1/src/docs/machine-control-pinout-survey/smoothiebox-machine-wiring/centered-mill-g2.svg",
+      "retained": "/home/arthur/dev/smoothieware/smoothieware-website-v1/src/docs/machine-control-pinout-survey/square-redesign-history/644-main-before-851-main/centered-mill-g2.svg",
+      "sha256": "79631310f134bc1b61bd6510aa450e4a2f29090cb761f8c860be3e300d7043f1"
+    },
+    {
+      "source": "/home/arthur/dev/smoothieware/smoothieware-website-v1/src/docs/machine-control-pinout-survey/centered-connections-mill-g2.json",
+      "retained": "/home/arthur/dev/smoothieware/smoothieware-website-v1/src/docs/machine-control-pinout-survey/square-redesign-history/644-main-before-851-main/centered-connections-mill-g2.json",
+      "sha256": "a7613aa41b27bb3c2d6ccef2b6397e0064d5a99f42d5eafdbf74853e2a665c2a"
+    },
+    {
+      "source": "/home/arthur/dev/smoothieware/smoothieware-website-v1/src/docs/machine-control-pinout-survey/smoothiebox-machine-wiring/centered-mill-avid-ex-3.svg",
+      "retained": "/home/arthur/dev/smoothieware/smoothieware-website-v1/src/docs/machine-control-pinout-survey/square-redesign-history/644-main-before-851-main/centered-mill-avid-ex-3.svg",
+      "sha256": "174a802f3d31f24638f2976d12f22dc1b52711c800604bdc09816d7dcaacec9a"
+    },
+    {
+      "source": "/home/arthur/dev/smoothieware/smoothieware-website-v1/src/docs/machine-control-pinout-survey/centered-connections-mill-avid-ex-3.json",
+      "retained": "/home/arthur/dev/smoothieware/smoothieware-website-v1/src/docs/machine-control-pinout-survey/square-redesign-history/644-main-before-851-main/centered-connections-mill-avid-ex-3.json",
+      "sha256": "8acefe30f0c23b892aaef7bfc7a289e7b721b8b077016947d4afee7ecfc440cb"
+    },
+    {
+      "source": "/home/arthur/dev/smoothieware/smoothieware-website-v1/src/docs/machine-control-pinout-survey/smoothiebox-machine-wiring/centered-wiki-206.svg",
+      "retained": "/home/arthur/dev/smoothieware/smoothieware-website-v1/src/docs/machine-control-pinout-survey/square-redesign-history/644-main-before-851-main/centered-wiki-206.svg",
+      "sha256": "c60a70ff856d8311892df734c57f86edf0c5ce06a615131f17def5279a2d7d9a"
+    },
+    {
+      "source": "/home/arthur/dev/smoothieware/smoothieware-website-v1/src/docs/machine-control-pinout-survey/centered-connections-wiki-206.json",
+      "retained": "/home/arthur/dev/smoothieware/smoothieware-website-v1/src/docs/machine-control-pinout-survey/square-redesign-history/644-main-before-851-main/centered-connections-wiki-206.json",
+      "sha256": "e701223aeb64abf6849023c4c0be84ae0711617cb5c293f5ac0bd23689dd114d"
+    },
+    {
+      "source": "/home/arthur/dev/smoothieware/smoothieware-website-v1/src/docs/machine-control-pinout-survey/smoothiebox-machine-wiring/centered-wiki-222.svg",
+      "retained": "/home/arthur/dev/smoothieware/smoothieware-website-v1/src/docs/machine-control-pinout-survey/square-redesign-history/644-main-before-851-main/centered-wiki-222.svg",
+      "sha256": "3223c244551154b6184f98a75000d4f7a0c2f7ae71725ec05c3c22db54bb6c45"
+    },
+    {
+      "source": "/home/arthur/dev/smoothieware/smoothieware-website-v1/src/docs/machine-control-pinout-survey/centered-connections-wiki-222.json",
+      "retained": "/home/arthur/dev/smoothieware/smoothieware-website-v1/src/docs/machine-control-pinout-survey/square-redesign-history/644-main-before-851-main/centered-connections-wiki-222.json",
+      "sha256": "1a68e13a8cac3c148563785f3e617f2d1499448a792d147988f7a4ec0fb14815"
+    },
+    {
+      "source": "/home/arthur/dev/smoothieware/smoothieware-website-v1/src/docs/machine-control-pinout-survey/smoothiebox-machine-wiring/centered-forum-linuxcnc-optimill-mh50v-unlogic.svg",
+      "retained": "/home/arthur/dev/smoothieware/smoothieware-website-v1/src/docs/machine-control-pinout-survey/square-redesign-history/644-main-before-851-main/centered-forum-linuxcnc-optimill-mh50v-unlogic.svg",
+      "sha256": "d9d1ad2313cb97ce859ab0e53549dc54f9c28fea7387ae159feaddda720da037"
+    },
+    {
+      "source": "/home/arthur/dev/smoothieware/smoothieware-website-v1/src/docs/machine-control-pinout-survey/centered-connections-forum-linuxcnc-optimill-mh50v-unlogic.json",
+      "retained": "/home/arthur/dev/smoothieware/smoothieware-website-v1/src/docs/machine-control-pinout-survey/square-redesign-history/644-main-before-851-main/centered-connections-forum-linuxcnc-optimill-mh50v-unlogic.json",
+      "sha256": "56db28dd544d6676d9d26652e4c0abad994ed7686d74b6d371051ed2d5e8c4da"
+    },
+    {
+      "source": "/home/arthur/dev/smoothieware/smoothieware-website-v1/src/docs/machine-control-pinout-survey/smoothiebox-machine-wiring/centered-forum-linuxcnc-rotarysmp-schaublin-125-cnc-retrofit.svg",
+      "retained": "/home/arthur/dev/smoothieware/smoothieware-website-v1/src/docs/machine-control-pinout-survey/square-redesign-history/644-main-before-851-main/centered-forum-linuxcnc-rotarysmp-schaublin-125-cnc-retrofit.svg",
+      "sha256": "3ddee8be3a253ab7a4aaf5bfab13960cddaafa39aacdd3e2b4d299cd75ec0d9d"
+    },
+    {
+      "source": "/home/arthur/dev/smoothieware/smoothieware-website-v1/src/docs/machine-control-pinout-survey/centered-connections-forum-linuxcnc-rotarysmp-schaublin-125-cnc-retrofit.json",
+      "retained": "/home/arthur/dev/smoothieware/smoothieware-website-v1/src/docs/machine-control-pinout-survey/square-redesign-history/644-main-before-851-main/centered-connections-forum-linuxcnc-rotarysmp-schaublin-125-cnc-retrofit.json",
+      "sha256": "9541ca03adf6f81388ce87e0235a21628559546455727cda23d0e5503246e94b"
+    }
+  ]
+}

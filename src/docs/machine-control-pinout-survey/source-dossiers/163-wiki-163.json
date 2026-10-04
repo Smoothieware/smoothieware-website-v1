@@ -1,0 +1,109 @@
+{
+  "profile_id": "wiki-163",
+  "devices": [
+    {
+      "id": "lulzbot-taz-3-0-reference",
+      "role": "peripheral"
+    }
+  ],
+  "connectors": [
+    {
+      "id": "taz30-y-stepper",
+      "device": "lulzbot-taz-3-0-reference",
+      "refdes": "TAZ 3.0 manual · Y-axis stepper motor connector",
+      "form": "4-position plug pair; exact face and contact order not shown",
+      "scope": "TAZ 3.0 User Manual, 2013Q4, setup §1.1 and Fig. 1.6 (printed p. 20). The manual identifies the Y-axis motor plug as a four-position stepper-motor connector pair. The letters A–D below are local schedule locators only; they are not printed connector numbering and do not establish physical cavity order, winding polarity, cable continuity, fit to the unversioned SoMakeIt SMI TAZ 5, or a SmoothieBox route. All positions OPEN.",
+      "contacts": [
+        {"id": "a", "mark": "A", "label": "TAZ 3.0 reference · Y-axis stepper plug · local locator A · conductor/function unknown · route OPEN"},
+        {"id": "b", "mark": "B", "label": "TAZ 3.0 reference · Y-axis stepper plug · local locator B · conductor/function unknown · route OPEN"},
+        {"id": "c", "mark": "C", "label": "TAZ 3.0 reference · Y-axis stepper plug · local locator C · conductor/function unknown · route OPEN"},
+        {"id": "d", "mark": "D", "label": "TAZ 3.0 reference · Y-axis stepper plug · local locator D · conductor/function unknown · route OPEN"}
+      ]
+    },
+    {
+      "id": "taz30-y-endstop",
+      "device": "lulzbot-taz-3-0-reference",
+      "refdes": "TAZ 3.0 manual · Y-axis endstop connector",
+      "form": "2-position plug pair; exact face and contact order not shown",
+      "scope": "TAZ 3.0 User Manual, 2013Q4, setup §1.1 and Fig. 1.6 (printed p. 20). The manual identifies the matching Y-axis endstop connector as two-position. The letters A–B below are local schedule locators, not source numbering. No switch terminal role, polarity, connector face, or fitted-machine continuity is given. All positions OPEN.",
+      "contacts": [
+        {"id": "a", "mark": "A", "label": "TAZ 3.0 reference · Y-axis endstop plug · local locator A · switch contact role unknown · route OPEN"},
+        {"id": "b", "mark": "B", "label": "TAZ 3.0 reference · Y-axis endstop plug · local locator B · switch contact role unknown · route OPEN"}
+      ]
+    },
+    {
+      "id": "taz30-bed-heater",
+      "device": "lulzbot-taz-3-0-reference",
+      "refdes": "TAZ 3.0 manual · heated-bed heater connector",
+      "form": "Large 2-position plug pair; exact face and contact order not shown",
+      "scope": "TAZ 3.0 User Manual, 2013Q4, setup §1.1 and Fig. 1.8 (printed p. 22). The manual calls this the large two-pin heat-bed connector. A–B are local locators only. Polarity, voltage at these cavities, numbering, orientation, continuity, and a SmoothieBox route are not established here. All positions OPEN.",
+      "contacts": [
+        {"id": "a", "mark": "A", "label": "TAZ 3.0 reference · heated-bed heater plug · local locator A · electrical role/polarity unknown · route OPEN"},
+        {"id": "b", "mark": "B", "label": "TAZ 3.0 reference · heated-bed heater plug · local locator B · electrical role/polarity unknown · route OPEN"}
+      ]
+    },
+    {
+      "id": "taz30-bed-thermistor",
+      "device": "lulzbot-taz-3-0-reference",
+      "refdes": "TAZ 3.0 manual · heated-bed thermistor connector",
+      "form": "Small 2-position plug pair; exact face and contact order not shown",
+      "scope": "TAZ 3.0 User Manual, 2013Q4, setup §1.1 and Fig. 1.8 (printed p. 22). The manual identifies a small two-pin thermistor plug at the print bed. A–B are local locators only; no cavity numbering, orientation, signal polarity, resistance, fit, continuity, or SmoothieBox route is established. All positions OPEN.",
+      "contacts": [
+        {"id": "a", "mark": "A", "label": "TAZ 3.0 reference · bed thermistor plug · local locator A · conductor role unknown · route OPEN"},
+        {"id": "b", "mark": "B", "label": "TAZ 3.0 reference · bed thermistor plug · local locator B · conductor role unknown · route OPEN"}
+      ]
+    },
+    {
+      "id": "taz30-hotend",
+      "device": "lulzbot-taz-3-0-reference",
+      "refdes": "TAZ 3.0 manual · toolhead hot-end connector",
+      "form": "4-position plug pair; manual distinguishes the orange/red-wire connector pair",
+      "scope": "TAZ 3.0 User Manual, 2013Q4, setup §1.1 and Fig. 1.13 (printed p. 25). The manual distinguishes one four-pin toolhead pair by its orange/red wires as the hot-end connection. It supplies no per-cavity wire-color order or heater/thermistor cavity map. A–D are local schedule locators only. All positions OPEN; machine fit and V2 route unestablished.",
+      "contacts": [
+        {"id": "a", "mark": "A", "label": "TAZ 3.0 reference · hot-end plug · local locator A · wire/function unknown · route OPEN"},
+        {"id": "b", "mark": "B", "label": "TAZ 3.0 reference · hot-end plug · local locator B · wire/function unknown · route OPEN"},
+        {"id": "c", "mark": "C", "label": "TAZ 3.0 reference · hot-end plug · local locator C · wire/function unknown · route OPEN"},
+        {"id": "d", "mark": "D", "label": "TAZ 3.0 reference · hot-end plug · local locator D · wire/function unknown · route OPEN"}
+      ]
+    },
+    {
+      "id": "taz30-extruder-stepper",
+      "device": "lulzbot-taz-3-0-reference",
+      "refdes": "TAZ 3.0 manual · extruder stepper connector",
+      "form": "4-position plug pair; mixed-color wires, exact colors/order not stated",
+      "scope": "TAZ 3.0 User Manual, 2013Q4, setup §1.1 and Fig. 1.13 (printed p. 25). The manual distinguishes the other four-pin toolhead pair as the extruder stepper connection and describes its wires as mixed colors. It does not provide individual cavity colors or winding assignments. A–D are local schedule locators only. All positions OPEN; no fitted-machine or SmoothieBox route established.",
+      "contacts": [
+        {"id": "a", "mark": "A", "label": "TAZ 3.0 reference · extruder stepper plug · local locator A · winding/function unknown · route OPEN"},
+        {"id": "b", "mark": "B", "label": "TAZ 3.0 reference · extruder stepper plug · local locator B · winding/function unknown · route OPEN"},
+        {"id": "c", "mark": "C", "label": "TAZ 3.0 reference · extruder stepper plug · local locator C · winding/function unknown · route OPEN"},
+        {"id": "d", "mark": "D", "label": "TAZ 3.0 reference · extruder stepper plug · local locator D · winding/function unknown · route OPEN"}
+      ]
+    },
+    {
+      "id": "taz30-usb",
+      "device": "lulzbot-taz-3-0-reference",
+      "refdes": "TAZ 3.0 electronics enclosure · USB receptacle",
+      "form": "USB receptacle; manual does not enumerate receptacle contacts",
+      "scope": "TAZ 3.0 User Manual, 2013Q4, setup §1.1 and Fig. 1.14 (printed p. 27). The manual labels a USB receptacle used with a computer cable. No receptacle revision, physical contact map, machine fit, or SmoothieBox route is established. Contact positions not enumerated.",
+      "contacts": []
+    },
+    {
+      "id": "taz30-24v-input",
+      "device": "lulzbot-taz-3-0-reference",
+      "refdes": "TAZ 3.0 electronics enclosure · keyed DC supply receptacle",
+      "form": "Keyed locking DC plug/receptacle; contact count and pinout not given",
+      "scope": "TAZ 3.0 User Manual, 2013Q4, setup §1.1 and Figs. 1.14–1.17 (printed pp. 27–28). The manual describes a keyed locking DC cable from the supply and a 24 V DC power-supply illustration. This is model-guide context only; its receptacle contacts are not counted or assigned, and supply fit and SmoothieBox compatibility are unknown.",
+      "contacts": []
+    }
+  ],
+  "wires": [],
+  "evidence": {
+    "primary": "LulzBot TAZ 3.0 User Manual, 2013Q4, setup §1.1, Figs. 1.6, 1.8, 1.13–1.17",
+    "sources": [
+      "https://download.lulzbot.com/TAZ/3.0/documentation/2013Q4/LulzBot_TAZ_3.0-User_Manual-ebook.pdf",
+      "https://devel.lulzbot.com/TAZ/",
+      "https://ohai.lulzbot.com/project/743276e7-f248-47f5-b4b8-7874f0f355bb/taz_3/"
+    ],
+    "scope_note": "The atlas entry is an unversioned SoMakeIt machine instance, not a confirmed TAZ 3.0 or 3.1. Official LulzBot source identifies TAZ 3.0 and 3.1 as distinct revisions; this evidence is a separate TAZ 3.0 reference only. The OHAI URL containing taz_3 has a workflow titled TAZ 2.1 Final Assembly and was excluded as TAZ 3 pinout evidence. The official TAZ 3.0 manual supplies six connector groups with counts (18 total local schedule positions), but no numbered cavities, face orientation, contact-role map, continuity, or machine fit. Local A–D locators are editorial aids, not source pin numbers. USB and DC supply contact schedules remain unknown. Every known reference position is OPEN; there are zero routed or guessed connections and no DB25 evidence."
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "id": "forum-maslowcnc-mattd-maslow4-94x46-workbench",
+  "sources": {
+    "forum-peripheral-evidence.json": {
+      "id": "forum-maslowcnc-mattd-maslow4-94x46-workbench",
+      "dossier": "src/docs/machine-research/maslowcnc-mattd-maslow4-94x46-workbench.md",
+      "reported_fitted_or_used": [],
+      "listed_for_build_unverified": [],
+      "historical_reference": [],
+      "planned_only": [],
+      "open_function_group": [],
+      "exclusions": [
+        {
+          "name": "Maslow 4 belt-drive motors unspecified",
+          "contacts": [],
+          "source_line_number": 1,
+          "source_line": "# Matt D.'s Maslow 4 on a 94.5 \u00d7 46 in. Workbench Frame",
+          "evidence": "# Matt D.'s Maslow 4 on a 94.5 \u00d7 46 in. Workbench Frame",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route",
+          "reason": "Excluded: no separate externally addressable interface, existing control hardware, absent tooling, or inadequate positive device evidence in this dossier."
+        }
+      ],
+      "source_gap": "Dossier does not establish an as-built SmoothieBox route or a complete physical contact schedule for the listed peripherals."
+    }
+  }
+}

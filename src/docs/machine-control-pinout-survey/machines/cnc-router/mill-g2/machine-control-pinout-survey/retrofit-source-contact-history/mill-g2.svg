@@ -1,0 +1,1336 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4996 4498" width="4996" height="4498" role="img" aria-labelledby="title desc" data-profile="mill-g2">
+<title id="title">Genmitsu 3018-PROVer V2 + bundled GRBL 1.1h, 32-bit/TB67S109 board → SmoothieBox exterior connection study</title>
+<desc id="desc">82 proposed exterior contacts, four SmoothieBox service ports, 52 source positions, 0 source-named wire references, 0 source-named physical attachments, 0 nominal form-inventory positions, 0 dotted function guesses and 52 unrouted positions. All machine connectors are exterior peripherals or explicitly marked source references. No installed wiring is claimed.</desc>
+<metadata id="contact-inventory">{"counts": {"context_devices": 0, "guesses": 0, "machine_contacts": 52, "open_contacts": 52, "peripherals": 15, "reference_contacts": 52}, "exterior": [{"id": "sb-POWER-1", "role": "Load power input LOAD + pin", "source_label": "LOAD +", "terminal": "POWER.1", "x": 220, "y": 360}, {"id": "sb-POWER-2", "role": "Load power input GND pin", "source_label": "GND", "terminal": "POWER.2", "x": 268, "y": 360}, {"id": "sb-FIVEIN-1", "role": "5 V input +5V pin", "source_label": "+5V", "terminal": "FIVEIN.1", "x": 420, "y": 360}, {"id": "sb-FIVEIN-2", "role": "5 V input GND pin", "source_label": "GND", "terminal": "FIVEIN.2", "x": 468, "y": 360}, {"id": "sb-FIVEOUT-1", "role": "5 V accessory output +5V pin", "source_label": "+5V", "terminal": "FIVEOUT.1", "x": 620, "y": 360}, {"id": "sb-FIVEOUT-2", "role": "5 V accessory output GND pin", "source_label": "GND", "terminal": "FIVEOUT.2", "x": 668, "y": 360}, {"id": "sb-AUX-1", "role": "Analog input 1 signal pin", "source_label": "ANALOG 1", "terminal": "AUX.1", "x": 1500, "y": 360}, {"id": "sb-AUX-2", "role": "Analog input 1 GND pin", "source_label": "GND", "terminal": "AUX.2", "x": 1548, "y": 360}, {"id": "sb-AUX-3", "role": "Analog input 2 signal pin", "source_label": "ANALOG 2", "terminal": "AUX.3", "x": 1596, "y": 360}, {"id": "sb-AUX-4", "role": "Analog input 2 GND pin", "source_label": "GND", "terminal": "AUX.4", "x": 1644, "y": 360}, {"id": "sb-AUX-5", "role": "Analog input 3 signal pin", "source_label": "ANALOG 3", "terminal": "AUX.5", "x": 1692, "y": 360}, {"id": "sb-AUX-6", "role": "Analog input 3 GND pin", "source_label": "GND", "terminal": "AUX.6", "x": 1740, "y": 360}, {"id": "sb-XMIN-1", "role": "X axis min endstop sensor + pin", "source_label": "SENSOR +", "terminal": "XMIN.1", "x": 1860, "y": 730}, {"id": "sb-XMIN-2", "role": "X axis min endstop GND pin", "source_label": "GND", "terminal": "XMIN.2", "x": 1860, "y": 760}, {"id": "sb-XMIN-3", "role": "X axis min endstop signal pin", "source_label": "SIGNAL", "terminal": "XMIN.3", "x": 1860, "y": 790}, {"id": "sb-XMAX-1", "role": "X axis max endstop sensor + pin", "source_label": "SENSOR +", "terminal": "XMAX.1", "x": 1860, "y": 850}, {"id": "sb-XMAX-2", "role": "X axis max endstop GND pin", "source_label": "GND", "terminal": "XMAX.2", "x": 1860, "y": 880}, {"id": "sb-XMAX-3", "role": "X axis max endstop signal pin", "source_label": "SIGNAL", "terminal": "XMAX.3", "x": 1860, "y": 910}, {"id": "sb-YMIN-1", "role": "Y axis min endstop sensor + pin", "source_label": "SENSOR +", "terminal": "YMIN.1", "x": 1860, "y": 970}, {"id": "sb-YMIN-2", "role": "Y axis min endstop GND pin", "source_label": "GND", "terminal": "YMIN.2", "x": 1860, "y": 1000}, {"id": "sb-YMIN-3", "role": "Y axis min endstop signal pin", "source_label": "SIGNAL", "terminal": "YMIN.3", "x": 1860, "y": 1030}, {"id": "sb-YMAX-1", "role": "Y axis max endstop sensor + pin", "source_label": "SENSOR +", "terminal": "YMAX.1", "x": 1860, "y": 1090}, {"id": "sb-YMAX-2", "role": "Y axis max endstop GND pin", "source_label": "GND", "terminal": "YMAX.2", "x": 1860, "y": 1120}, {"id": "sb-YMAX-3", "role": "Y axis max endstop signal pin", "source_label": "SIGNAL", "terminal": "YMAX.3", "x": 1860, "y": 1150}, {"id": "sb-ZMIN-1", "role": "Z axis min endstop sensor + pin", "source_label": "SENSOR +", "terminal": "ZMIN.1", "x": 1860, "y": 1210}, {"id": "sb-ZMIN-2", "role": "Z axis min endstop GND pin", "source_label": "GND", "terminal": "ZMIN.2", "x": 1860, "y": 1240}, {"id": "sb-ZMIN-3", "role": "Z axis min endstop signal pin", "source_label": "SIGNAL", "terminal": "ZMIN.3", "x": 1860, "y": 1270}, {"id": "sb-ZMAX-1", "role": "Z axis max endstop sensor + pin", "source_label": "SENSOR +", "terminal": "ZMAX.1", "x": 1860, "y": 1330}, {"id": "sb-ZMAX-2", "role": "Z axis max endstop GND pin", "source_label": "GND", "terminal": "ZMAX.2", "x": 1860, "y": 1360}, {"id": "sb-ZMAX-3", "role": "Z axis max endstop signal pin", "source_label": "SIGNAL", "terminal": "ZMAX.3", "x": 1860, "y": 1390}, {"id": "sb-PROBE-1", "role": "Probe / servo +5V pin", "source_label": "+5V", "terminal": "PROBE.1", "x": 1860, "y": 1450}, {"id": "sb-PROBE-2", "role": "Probe / servo GND pin", "source_label": "GND", "terminal": "PROBE.2", "x": 1860, "y": 1480}, {"id": "sb-PROBE-3", "role": "Probe / servo SERVO pin", "source_label": "SERVO", "terminal": "PROBE.3", "x": 1860, "y": 1510}, {"id": "sb-PROBE-4", "role": "Probe / servo PROBE IN pin", "source_label": "PROBE IN", "terminal": "PROBE.4", "x": 1860, "y": 1540}, {"id": "sb-TEMP-1", "role": "Temperature 1 sensor pin", "source_label": "SENSOR 1", "terminal": "TEMP.1", "x": 1860, "y": 1610}, {"id": "sb-TEMP-2", "role": "Temperature 1 GND pin", "source_label": "GND", "terminal": "TEMP.2", "x": 1860, "y": 1640}, {"id": "sb-TEMP-3", "role": "Temperature 2 sensor pin", "source_label": "SENSOR 2", "terminal": "TEMP.3", "x": 1860, "y": 1670}, {"id": "sb-TEMP-4", "role": "Temperature 2 GND pin", "source_label": "GND", "terminal": "TEMP.4", "x": 1860, "y": 1700}, {"id": "sb-TEMP-5", "role": "Temperature 3 sensor pin", "source_label": "SENSOR 3", "terminal": "TEMP.5", "x": 1860, "y": 1730}, {"id": "sb-TEMP-6", "role": "Temperature 3 GND pin", "source_label": "GND", "terminal": "TEMP.6", "x": 1860, "y": 1760}, {"id": "sb-HEA-1", "role": "Hotend A LOAD + pin", "source_label": "LOAD +", "terminal": "HEA.1", "x": 60, "y": 730}, {"id": "sb-HEA-2", "role": "Hotend A SWITCHED − pin", "source_label": "SWITCHED −", "terminal": "HEA.2", "x": 60, "y": 760}, {"id": "sb-HEB-1", "role": "Hotend B LOAD + pin", "source_label": "LOAD +", "terminal": "HEB.1", "x": 60, "y": 850}, {"id": "sb-HEB-2", "role": "Hotend B SWITCHED − pin", "source_label": "SWITCHED −", "terminal": "HEB.2", "x": 60, "y": 880}, {"id": "sb-BED-1", "role": "Bed switch control CONTROL + pin", "source_label": "CONTROL +", "terminal": "BED.1", "x": 60, "y": 970}, {"id": "sb-BED-2", "role": "Bed switch control SWITCHED − pin", "source_label": "SWITCHED −", "terminal": "BED.2", "x": 60, "y": 1000}, {"id": "sb-FANA-1", "role": "Fan A LOAD + pin", "source_label": "LOAD +", "terminal": "FANA.1", "x": 60, "y": 1090}, {"id": "sb-FANA-2", "role": "Fan A SWITCHED − pin", "source_label": "SWITCHED −", "terminal": "FANA.2", "x": 60, "y": 1120}, {"id": "sb-FANB-1", "role": "Fan B LOAD + pin", "source_label": "LOAD +", "terminal": "FANB.1", "x": 60, "y": 1210}, {"id": "sb-FANB-2", "role": "Fan B SWITCHED − pin", "source_label": "SWITCHED −", "terminal": "FANB.2", "x": 60, "y": 1240}, {"id": "sb-SSR1-1", "role": "SSR 1 control 5V SWITCH pin", "source_label": "5V SWITCH", "terminal": "SSR1.1", "x": 60, "y": 1330}, {"id": "sb-SSR1-2", "role": "SSR 1 control GND pin", "source_label": "GND", "terminal": "SSR1.2", "x": 60, "y": 1360}, {"id": "sb-SSR2-1", "role": "SSR 2 control 5V SWITCH pin", "source_label": "5V SWITCH", "terminal": "SSR2.1", "x": 60, "y": 1450}, {"id": "sb-SSR2-2", "role": "SSR 2 control GND pin", "source_label": "GND", "terminal": "SSR2.2", "x": 60, "y": 1480}, {"id": "sb-PWM-1", "role": "PWM / laser control PWM pin", "source_label": "PWM", "terminal": "PWM.1", "x": 60, "y": 1570}, {"id": "sb-PWM-2", "role": "PWM / laser control TTL pin", "source_label": "TTL", "terminal": "PWM.2", "x": 60, "y": 1600}, {"id": "sb-PWM-3", "role": "PWM / laser control GND pin", "source_label": "GND", "terminal": "PWM.3", "x": 60, "y": 1630}, {"id": "sb-PWM-4", "role": "PWM / laser control 5V LIMITED pin", "source_label": "5V LIMITED", "terminal": "PWM.4", "x": 60, "y": 1660}, {"id": "sb-DRVX-1", "role": "X axis step pin", "source_label": "STEP", "terminal": "DRVX.1", "x": 240, "y": 2160}, {"id": "sb-DRVX-2", "role": "X axis step return GND pin", "source_label": "GND", "terminal": "DRVX.2", "x": 288, "y": 2160}, {"id": "sb-DRVX-3", "role": "X axis direction pin", "source_label": "DIR", "terminal": "DRVX.3", "x": 336, "y": 2160}, {"id": "sb-DRVX-4", "role": "X axis direction return GND pin", "source_label": "GND", "terminal": "DRVX.4", "x": 384, "y": 2160}, {"id": "sb-DRVX-5", "role": "X axis enable pin", "source_label": "ENABLE", "terminal": "DRVX.5", "x": 432, "y": 2160}, {"id": "sb-DRVX-6", "role": "X axis enable return GND pin", "source_label": "GND", "terminal": "DRVX.6", "x": 480, "y": 2160}, {"id": "sb-DRVY-1", "role": "Y axis step pin", "source_label": "STEP", "terminal": "DRVY.1", "x": 660, "y": 2160}, {"id": "sb-DRVY-2", "role": "Y axis step return GND pin", "source_label": "GND", "terminal": "DRVY.2", "x": 708, "y": 2160}, {"id": "sb-DRVY-3", "role": "Y axis direction pin", "source_label": "DIR", "terminal": "DRVY.3", "x": 756, "y": 2160}, {"id": "sb-DRVY-4", "role": "Y axis direction return GND pin", "source_label": "GND", "terminal": "DRVY.4", "x": 804, "y": 2160}, {"id": "sb-DRVY-5", "role": "Y axis enable pin", "source_label": "ENABLE", "terminal": "DRVY.5", "x": 852, "y": 2160}, {"id": "sb-DRVY-6", "role": "Y axis enable return GND pin", "source_label": "GND", "terminal": "DRVY.6", "x": 900, "y": 2160}, {"id": "sb-DRVZ-1", "role": "Z axis step pin", "source_label": "STEP", "terminal": "DRVZ.1", "x": 1080, "y": 2160}, {"id": "sb-DRVZ-2", "role": "Z axis step return GND pin", "source_label": "GND", "terminal": "DRVZ.2", "x": 1128, "y": 2160}, {"id": "sb-DRVZ-3", "role": "Z axis direction pin", "source_label": "DIR", "terminal": "DRVZ.3", "x": 1176, "y": 2160}, {"id": "sb-DRVZ-4", "role": "Z axis direction return GND pin", "source_label": "GND", "terminal": "DRVZ.4", "x": 1224, "y": 2160}, {"id": "sb-DRVZ-5", "role": "Z axis enable pin", "source_label": "ENABLE", "terminal": "DRVZ.5", "x": 1272, "y": 2160}, {"id": "sb-DRVZ-6", "role": "Z axis enable return GND pin", "source_label": "GND", "terminal": "DRVZ.6", "x": 1320, "y": 2160}, {"id": "sb-DRVA-1", "role": "A axis step pin", "source_label": "STEP", "terminal": "DRVA.1", "x": 1500, "y": 2160}, {"id": "sb-DRVA-2", "role": "A axis step return GND pin", "source_label": "GND", "terminal": "DRVA.2", "x": 1548, "y": 2160}, {"id": "sb-DRVA-3", "role": "A axis direction pin", "source_label": "DIR", "terminal": "DRVA.3", "x": 1596, "y": 2160}, {"id": "sb-DRVA-4", "role": "A axis direction return GND pin", "source_label": "GND", "terminal": "DRVA.4", "x": 1644, "y": 2160}, {"id": "sb-DRVA-5", "role": "A axis enable pin", "source_label": "ENABLE", "terminal": "DRVA.5", "x": 1692, "y": 2160}, {"id": "sb-DRVA-6", "role": "A axis enable return GND pin", "source_label": "GND", "terminal": "DRVA.6", "x": 1740, "y": 2160}], "peripherals": [{"connector_id": "ref-prover-v2-ymotor", "contacts": [{"fact": "source", "id": "machine-p001-c001", "label": "Y motor output position 1 · role unverified", "mark": "1", "source_id": "1", "source_relation": ""}, {"fact": "source", "id": "machine-p001-c002", "label": "Y motor output position 2 · role unverified", "mark": "2", "source_id": "2", "source_relation": ""}, {"fact": "source", "id": "machine-p001-c003", "label": "Y motor output position 3 · role unverified", "mark": "3", "source_id": "3", "source_relation": ""}, {"fact": "source", "id": "machine-p001-c004", "label": "Y motor output position 4 · role unverified", "mark": "4", "source_id": "4", "source_relation": ""}], "kind": "reference", "name": "3018-PROVer V2 Y motor socket · former-controller winding output", "numbering": "1–4 enumerate board-view positions; motor-end cavity and coil phase mapping unknown", "origin_path": "smoothiebox-reference-contacts.json#mill-g2/ref-prover-v2-ymotor; captured dossier machine-research/genmitsu-3018-prover-v2-board-contacts.md sha256=638c71f7566b0426c7f5a0ec9cbc0b174a0e00dd9c0634043aae8f74bb86681a", "origin_sha256": "ff22926af6a0752c3e84461c7edfecaed220ff46da78946e1aebb76a05bf8118", "revision": "3018-PROVer V2 manufacturer manual v1.0 September 2022 and hosted GC3D3-V4.3 example review; installed subrevision unverified", "source": "3018-PROVer V2 manufacturer manual v1.0 September 2022 and hosted GC3D3-V4.3 example review; installed subrevision unverified · Manual printed pp. 16, 19 shows four-wire/position motor sockets after on-board drivers. Fitted cable and SmoothieBox driver qualification OPEN.", "source_urls": ["https://genmitsu.s3.us-east-1.amazonaws.com/101-60-3018PV2/3018-PROVer_V2_User_Manual_%E3%80%90EN%2BDE%2BJP_V1.0_20220906_1.pdf", "https://www.sainsmart.com/blogs/news/review-of-genmitsu-3018-prover-v2-cnc-router", "https://cdn.shopify.com/s/files/1/1978/9859/files/Frame_3387.png?v=1667361164"], "upstream_function_hints": []}, {"connector_id": "ref-prover-v2-ylimit-a", "contacts": [{"fact": "source", "id": "machine-p002-c001", "label": "Y limit A position 1 · role unverified", "mark": "1", "source_id": "1", "source_relation": ""}, {"fact": "source", "id": "machine-p002-c002", "label": "Y limit A position 2 · role unverified", "mark": "2", "source_id": "2", "source_relation": ""}, {"fact": "source", "id": "machine-p002-c003", "label": "Y limit A position 3 · role unverified", "mark": "3", "source_id": "3", "source_relation": ""}], "kind": "reference", "name": "3018-PROVer V2 Y limit board socket A · former-controller input", "numbering": "A/B distinguish the two source-drawn housings on one axis; 1–3 enumerate positions, not cavity numbers or min/max assignments", "origin_path": "smoothiebox-reference-contacts.json#mill-g2/ref-prover-v2-ylimit-a; captured dossier machine-research/genmitsu-3018-prover-v2-board-contacts.md sha256=638c71f7566b0426c7f5a0ec9cbc0b174a0e00dd9c0634043aae8f74bb86681a", "origin_sha256": "ff22926af6a0752c3e84461c7edfecaed220ff46da78946e1aebb76a05bf8118", "revision": "3018-PROVer V2 manufacturer manual v1.0 September 2022 and hosted GC3D3-V4.3 example review; installed subrevision unverified", "source": "3018-PROVer V2 manufacturer manual v1.0 September 2022 and hosted GC3D3-V4.3 example review; installed subrevision unverified · Manual printed pp. 16, 19 shows three-wire Y cable and paired X/Y/Z board sockets. Hosted review observed only one occupied socket per axis with switches in parallel; which socket, pin roles and fitted topology OPEN.", "source_urls": ["https://genmitsu.s3.us-east-1.amazonaws.com/101-60-3018PV2/3018-PROVer_V2_User_Manual_%E3%80%90EN%2BDE%2BJP_V1.0_20220906_1.pdf", "https://www.sainsmart.com/blogs/news/review-of-genmitsu-3018-prover-v2-cnc-router", "https://cdn.shopify.com/s/files/1/1978/9859/files/Frame_3387.png?v=1667361164"], "upstream_function_hints": []}, {"connector_id": "ref-prover-v2-spindle", "contacts": [{"fact": "source", "id": "machine-p003-c001", "label": "Spindle motor red conductor · positive", "mark": "RED", "source_id": "RED", "source_relation": ""}, {"fact": "source", "id": "machine-p003-c002", "label": "Spindle motor black conductor · negative", "mark": "BLACK", "source_id": "BLACK", "source_relation": ""}], "kind": "reference", "name": "3018-PROVer V2 DC spindle motor lead pair · manual reference", "numbering": "RED/BLACK are conductor colours, not cavity numbers", "origin_path": "smoothiebox-reference-contacts.json#mill-g2/ref-prover-v2-spindle; captured dossier machine-research/genmitsu-3018-prover-v2-board-contacts.md sha256=638c71f7566b0426c7f5a0ec9cbc0b174a0e00dd9c0634043aae8f74bb86681a", "origin_sha256": "ff22926af6a0752c3e84461c7edfecaed220ff46da78946e1aebb76a05bf8118", "revision": "3018-PROVer V2 manufacturer manual v1.0 September 2022 and hosted GC3D3-V4.3 example review; installed subrevision unverified", "source": "3018-PROVer V2 manufacturer manual v1.0 September 2022 and hosted GC3D3-V4.3 example review; installed subrevision unverified · Manual printed p. 15 identifies motor red positive and black negative. Motor power stage, protection and direct SmoothieBox connection unqualified; OPEN.", "source_urls": ["https://genmitsu.s3.us-east-1.amazonaws.com/101-60-3018PV2/3018-PROVer_V2_User_Manual_%E3%80%90EN%2BDE%2BJP_V1.0_20220906_1.pdf", "https://www.sainsmart.com/blogs/news/review-of-genmitsu-3018-prover-v2-cnc-router", "https://cdn.shopify.com/s/files/1/1978/9859/files/Frame_3387.png?v=1667361164"], "upstream_function_hints": []}, {"connector_id": "ref-prover-v2-xmotor", "contacts": [{"fact": "source", "id": "machine-p004-c001", "label": "X motor output position 1 · role unverified", "mark": "1", "source_id": "1", "source_relation": ""}, {"fact": "source", "id": "machine-p004-c002", "label": "X motor output position 2 · role unverified", "mark": "2", "source_id": "2", "source_relation": ""}, {"fact": "source", "id": "machine-p004-c003", "label": "X motor output position 3 · role unverified", "mark": "3", "source_id": "3", "source_relation": ""}, {"fact": "source", "id": "machine-p004-c004", "label": "X motor output position 4 · role unverified", "mark": "4", "source_id": "4", "source_relation": ""}], "kind": "reference", "name": "3018-PROVer V2 X motor socket · former-controller winding output", "numbering": "1–4 enumerate board-view positions; motor-end cavity and coil phase mapping unknown", "origin_path": "smoothiebox-reference-contacts.json#mill-g2/ref-prover-v2-xmotor; captured dossier machine-research/genmitsu-3018-prover-v2-board-contacts.md sha256=638c71f7566b0426c7f5a0ec9cbc0b174a0e00dd9c0634043aae8f74bb86681a", "origin_sha256": "ff22926af6a0752c3e84461c7edfecaed220ff46da78946e1aebb76a05bf8118", "revision": "3018-PROVer V2 manufacturer manual v1.0 September 2022 and hosted GC3D3-V4.3 example review; installed subrevision unverified", "source": "3018-PROVer V2 manufacturer manual v1.0 September 2022 and hosted GC3D3-V4.3 example review; installed subrevision unverified · Manual printed pp. 16, 19 shows four-wire/position motor sockets after on-board drivers. Fitted cable and SmoothieBox driver qualification OPEN.", "source_urls": ["https://genmitsu.s3.us-east-1.amazonaws.com/101-60-3018PV2/3018-PROVer_V2_User_Manual_%E3%80%90EN%2BDE%2BJP_V1.0_20220906_1.pdf", "https://www.sainsmart.com/blogs/news/review-of-genmitsu-3018-prover-v2-cnc-router", "https://cdn.shopify.com/s/files/1/1978/9859/files/Frame_3387.png?v=1667361164"], "upstream_function_hints": []}, {"connector_id": "ref-prover-v2-zmotor", "contacts": [{"fact": "source", "id": "machine-p005-c001", "label": "Z motor output position 1 · role unverified", "mark": "1", "source_id": "1", "source_relation": ""}, {"fact": "source", "id": "machine-p005-c002", "label": "Z motor output position 2 · role unverified", "mark": "2", "source_id": "2", "source_relation": ""}, {"fact": "source", "id": "machine-p005-c003", "label": "Z motor output position 3 · role unverified", "mark": "3", "source_id": "3", "source_relation": ""}, {"fact": "source", "id": "machine-p005-c004", "label": "Z motor output position 4 · role unverified", "mark": "4", "source_id": "4", "source_relation": ""}], "kind": "reference", "name": "3018-PROVer V2 Z motor socket · former-controller winding output", "numbering": "1–4 enumerate board-view positions; motor-end cavity and coil phase mapping unknown", "origin_path": "smoothiebox-reference-contacts.json#mill-g2/ref-prover-v2-zmotor; captured dossier machine-research/genmitsu-3018-prover-v2-board-contacts.md sha256=638c71f7566b0426c7f5a0ec9cbc0b174a0e00dd9c0634043aae8f74bb86681a", "origin_sha256": "ff22926af6a0752c3e84461c7edfecaed220ff46da78946e1aebb76a05bf8118", "revision": "3018-PROVer V2 manufacturer manual v1.0 September 2022 and hosted GC3D3-V4.3 example review; installed subrevision unverified", "source": "3018-PROVer V2 manufacturer manual v1.0 September 2022 and hosted GC3D3-V4.3 example review; installed subrevision unverified · Manual printed pp. 16, 19 shows four-wire/position motor sockets after on-board drivers. Fitted cable and SmoothieBox driver qualification OPEN.", "source_urls": ["https://genmitsu.s3.us-east-1.amazonaws.com/101-60-3018PV2/3018-PROVer_V2_User_Manual_%E3%80%90EN%2BDE%2BJP_V1.0_20220906_1.pdf", "https://www.sainsmart.com/blogs/news/review-of-genmitsu-3018-prover-v2-cnc-router", "https://cdn.shopify.com/s/files/1/1978/9859/files/Frame_3387.png?v=1667361164"], "upstream_function_hints": []}, {"connector_id": "ref-prover-v2-xlimit-a", "contacts": [{"fact": "source", "id": "machine-p006-c001", "label": "X limit A position 1 · role unverified", "mark": "1", "source_id": "1", "source_relation": ""}, {"fact": "source", "id": "machine-p006-c002", "label": "X limit A position 2 · role unverified", "mark": "2", "source_id": "2", "source_relation": ""}, {"fact": "source", "id": "machine-p006-c003", "label": "X limit A position 3 · role unverified", "mark": "3", "source_id": "3", "source_relation": ""}], "kind": "reference", "name": "3018-PROVer V2 X limit board socket A · former-controller input", "numbering": "A/B distinguish the two source-drawn housings on one axis; 1–3 enumerate positions, not cavity numbers or min/max assignments", "origin_path": "smoothiebox-reference-contacts.json#mill-g2/ref-prover-v2-xlimit-a; captured dossier machine-research/genmitsu-3018-prover-v2-board-contacts.md sha256=638c71f7566b0426c7f5a0ec9cbc0b174a0e00dd9c0634043aae8f74bb86681a", "origin_sha256": "ff22926af6a0752c3e84461c7edfecaed220ff46da78946e1aebb76a05bf8118", "revision": "3018-PROVer V2 manufacturer manual v1.0 September 2022 and hosted GC3D3-V4.3 example review; installed subrevision unverified", "source": "3018-PROVer V2 manufacturer manual v1.0 September 2022 and hosted GC3D3-V4.3 example review; installed subrevision unverified · Manual printed pp. 16, 19 shows three-wire Y cable and paired X/Y/Z board sockets. Hosted review observed only one occupied socket per axis with switches in parallel; which socket, pin roles and fitted topology OPEN.", "source_urls": ["https://genmitsu.s3.us-east-1.amazonaws.com/101-60-3018PV2/3018-PROVer_V2_User_Manual_%E3%80%90EN%2BDE%2BJP_V1.0_20220906_1.pdf", "https://www.sainsmart.com/blogs/news/review-of-genmitsu-3018-prover-v2-cnc-router", "https://cdn.shopify.com/s/files/1/1978/9859/files/Frame_3387.png?v=1667361164"], "upstream_function_hints": []}, {"connector_id": "ref-prover-v2-xlimit-b", "contacts": [{"fact": "source", "id": "machine-p007-c001", "label": "X limit B position 1 · role unverified", "mark": "1", "source_id": "1", "source_relation": ""}, {"fact": "source", "id": "machine-p007-c002", "label": "X limit B position 2 · role unverified", "mark": "2", "source_id": "2", "source_relation": ""}, {"fact": "source", "id": "machine-p007-c003", "label": "X limit B position 3 · role unverified", "mark": "3", "source_id": "3", "source_relation": ""}], "kind": "reference", "name": "3018-PROVer V2 X limit board socket B · former-controller input", "numbering": "A/B distinguish the two source-drawn housings on one axis; 1–3 enumerate positions, not cavity numbers or min/max assignments", "origin_path": "smoothiebox-reference-contacts.json#mill-g2/ref-prover-v2-xlimit-b; captured dossier machine-research/genmitsu-3018-prover-v2-board-contacts.md sha256=638c71f7566b0426c7f5a0ec9cbc0b174a0e00dd9c0634043aae8f74bb86681a", "origin_sha256": "ff22926af6a0752c3e84461c7edfecaed220ff46da78946e1aebb76a05bf8118", "revision": "3018-PROVer V2 manufacturer manual v1.0 September 2022 and hosted GC3D3-V4.3 example review; installed subrevision unverified", "source": "3018-PROVer V2 manufacturer manual v1.0 September 2022 and hosted GC3D3-V4.3 example review; installed subrevision unverified · Manual printed pp. 16, 19 shows three-wire Y cable and paired X/Y/Z board sockets. Hosted review observed only one occupied socket per axis with switches in parallel; which socket, pin roles and fitted topology OPEN.", "source_urls": ["https://genmitsu.s3.us-east-1.amazonaws.com/101-60-3018PV2/3018-PROVer_V2_User_Manual_%E3%80%90EN%2BDE%2BJP_V1.0_20220906_1.pdf", "https://www.sainsmart.com/blogs/news/review-of-genmitsu-3018-prover-v2-cnc-router", "https://cdn.shopify.com/s/files/1/1978/9859/files/Frame_3387.png?v=1667361164"], "upstream_function_hints": []}, {"connector_id": "ref-prover-v2-ylimit-b", "contacts": [{"fact": "source", "id": "machine-p008-c001", "label": "Y limit B position 1 · role unverified", "mark": "1", "source_id": "1", "source_relation": ""}, {"fact": "source", "id": "machine-p008-c002", "label": "Y limit B position 2 · role unverified", "mark": "2", "source_id": "2", "source_relation": ""}, {"fact": "source", "id": "machine-p008-c003", "label": "Y limit B position 3 · role unverified", "mark": "3", "source_id": "3", "source_relation": ""}], "kind": "reference", "name": "3018-PROVer V2 Y limit board socket B · former-controller input", "numbering": "A/B distinguish the two source-drawn housings on one axis; 1–3 enumerate positions, not cavity numbers or min/max assignments", "origin_path": "smoothiebox-reference-contacts.json#mill-g2/ref-prover-v2-ylimit-b; captured dossier machine-research/genmitsu-3018-prover-v2-board-contacts.md sha256=638c71f7566b0426c7f5a0ec9cbc0b174a0e00dd9c0634043aae8f74bb86681a", "origin_sha256": "ff22926af6a0752c3e84461c7edfecaed220ff46da78946e1aebb76a05bf8118", "revision": "3018-PROVer V2 manufacturer manual v1.0 September 2022 and hosted GC3D3-V4.3 example review; installed subrevision unverified", "source": "3018-PROVer V2 manufacturer manual v1.0 September 2022 and hosted GC3D3-V4.3 example review; installed subrevision unverified · Manual printed pp. 16, 19 shows three-wire Y cable and paired X/Y/Z board sockets. Hosted review observed only one occupied socket per axis with switches in parallel; which socket, pin roles and fitted topology OPEN.", "source_urls": ["https://genmitsu.s3.us-east-1.amazonaws.com/101-60-3018PV2/3018-PROVer_V2_User_Manual_%E3%80%90EN%2BDE%2BJP_V1.0_20220906_1.pdf", "https://www.sainsmart.com/blogs/news/review-of-genmitsu-3018-prover-v2-cnc-router", "https://cdn.shopify.com/s/files/1/1978/9859/files/Frame_3387.png?v=1667361164"], "upstream_function_hints": []}, {"connector_id": "ref-prover-v2-zlimit-a", "contacts": [{"fact": "source", "id": "machine-p009-c001", "label": "Z limit A position 1 · role unverified", "mark": "1", "source_id": "1", "source_relation": ""}, {"fact": "source", "id": "machine-p009-c002", "label": "Z limit A position 2 · role unverified", "mark": "2", "source_id": "2", "source_relation": ""}, {"fact": "source", "id": "machine-p009-c003", "label": "Z limit A position 3 · role unverified", "mark": "3", "source_id": "3", "source_relation": ""}], "kind": "reference", "name": "3018-PROVer V2 Z limit board socket A · former-controller input", "numbering": "A/B distinguish the two source-drawn housings on one axis; 1–3 enumerate positions, not cavity numbers or min/max assignments", "origin_path": "smoothiebox-reference-contacts.json#mill-g2/ref-prover-v2-zlimit-a; captured dossier machine-research/genmitsu-3018-prover-v2-board-contacts.md sha256=638c71f7566b0426c7f5a0ec9cbc0b174a0e00dd9c0634043aae8f74bb86681a", "origin_sha256": "ff22926af6a0752c3e84461c7edfecaed220ff46da78946e1aebb76a05bf8118", "revision": "3018-PROVer V2 manufacturer manual v1.0 September 2022 and hosted GC3D3-V4.3 example review; installed subrevision unverified", "source": "3018-PROVer V2 manufacturer manual v1.0 September 2022 and hosted GC3D3-V4.3 example review; installed subrevision unverified · Manual printed pp. 16, 19 shows three-wire Y cable and paired X/Y/Z board sockets. Hosted review observed only one occupied socket per axis with switches in parallel; which socket, pin roles and fitted topology OPEN.", "source_urls": ["https://genmitsu.s3.us-east-1.amazonaws.com/101-60-3018PV2/3018-PROVer_V2_User_Manual_%E3%80%90EN%2BDE%2BJP_V1.0_20220906_1.pdf", "https://www.sainsmart.com/blogs/news/review-of-genmitsu-3018-prover-v2-cnc-router", "https://cdn.shopify.com/s/files/1/1978/9859/files/Frame_3387.png?v=1667361164"], "upstream_function_hints": []}, {"connector_id": "ref-prover-v2-zlimit-b", "contacts": [{"fact": "source", "id": "machine-p010-c001", "label": "Z limit B position 1 · role unverified", "mark": "1", "source_id": "1", "source_relation": ""}, {"fact": "source", "id": "machine-p010-c002", "label": "Z limit B position 2 · role unverified", "mark": "2", "source_id": "2", "source_relation": ""}, {"fact": "source", "id": "machine-p010-c003", "label": "Z limit B position 3 · role unverified", "mark": "3", "source_id": "3", "source_relation": ""}], "kind": "reference", "name": "3018-PROVer V2 Z limit board socket B · former-controller input", "numbering": "A/B distinguish the two source-drawn housings on one axis; 1–3 enumerate positions, not cavity numbers or min/max assignments", "origin_path": "smoothiebox-reference-contacts.json#mill-g2/ref-prover-v2-zlimit-b; captured dossier machine-research/genmitsu-3018-prover-v2-board-contacts.md sha256=638c71f7566b0426c7f5a0ec9cbc0b174a0e00dd9c0634043aae8f74bb86681a", "origin_sha256": "ff22926af6a0752c3e84461c7edfecaed220ff46da78946e1aebb76a05bf8118", "revision": "3018-PROVer V2 manufacturer manual v1.0 September 2022 and hosted GC3D3-V4.3 example review; installed subrevision unverified", "source": "3018-PROVer V2 manufacturer manual v1.0 September 2022 and hosted GC3D3-V4.3 example review; installed subrevision unverified · Manual printed pp. 16, 19 shows three-wire Y cable and paired X/Y/Z board sockets. Hosted review observed only one occupied socket per axis with switches in parallel; which socket, pin roles and fitted topology OPEN.", "source_urls": ["https://genmitsu.s3.us-east-1.amazonaws.com/101-60-3018PV2/3018-PROVer_V2_User_Manual_%E3%80%90EN%2BDE%2BJP_V1.0_20220906_1.pdf", "https://www.sainsmart.com/blogs/news/review-of-genmitsu-3018-prover-v2-cnc-router", "https://cdn.shopify.com/s/files/1/1978/9859/files/Frame_3387.png?v=1667361164"], "upstream_function_hints": []}, {"connector_id": "ref-prover-v2-probe", "contacts": [{"fact": "source", "id": "machine-p011-c001", "label": "Z-probe board position 1 · role unverified", "mark": "1", "source_id": "1", "source_relation": ""}, {"fact": "source", "id": "machine-p011-c002", "label": "Z-probe board position 2 · role unverified", "mark": "2", "source_id": "2", "source_relation": ""}, {"fact": "source", "id": "machine-p011-c003", "label": "Z-probe board position 3 · role unverified", "mark": "3", "source_id": "3", "source_relation": ""}], "kind": "reference", "name": "3018-PROVer V2 three-position illuminated Z-probe socket", "numbering": "1–3 are inventory ordinals; signal/power/return and mating-face order unknown", "origin_path": "smoothiebox-reference-contacts.json#mill-g2/ref-prover-v2-probe; captured dossier machine-research/genmitsu-3018-prover-v2-board-contacts.md sha256=638c71f7566b0426c7f5a0ec9cbc0b174a0e00dd9c0634043aae8f74bb86681a", "origin_sha256": "ff22926af6a0752c3e84461c7edfecaed220ff46da78946e1aebb76a05bf8118", "revision": "3018-PROVer V2 manufacturer manual v1.0 September 2022 and hosted GC3D3-V4.3 example review; installed subrevision unverified", "source": "3018-PROVer V2 manufacturer manual v1.0 September 2022 and hosted GC3D3-V4.3 example review; installed subrevision unverified · Manual board diagram labels PROBE and hosted review explicitly reports three-pin illuminated probe. First-generation two-position map does not apply; OPEN.", "source_urls": ["https://genmitsu.s3.us-east-1.amazonaws.com/101-60-3018PV2/3018-PROVer_V2_User_Manual_%E3%80%90EN%2BDE%2BJP_V1.0_20220906_1.pdf", "https://www.sainsmart.com/blogs/news/review-of-genmitsu-3018-prover-v2-cnc-router", "https://cdn.shopify.com/s/files/1/1978/9859/files/Frame_3387.png?v=1667361164"], "upstream_function_hints": []}, {"connector_id": "ref-prover-v2-estop", "contacts": [{"fact": "source", "id": "machine-p012-c001", "label": "EStop board position 1 · role unverified", "mark": "1", "source_id": "1", "source_relation": ""}, {"fact": "source", "id": "machine-p012-c002", "label": "EStop board position 2 · role unverified", "mark": "2", "source_id": "2", "source_relation": ""}], "kind": "reference", "name": "3018-PROVer V2 two-position EStop board input", "numbering": "1–2 are inventory ordinals; NC/NO and mating-face order unknown", "origin_path": "smoothiebox-reference-contacts.json#mill-g2/ref-prover-v2-estop; captured dossier machine-research/genmitsu-3018-prover-v2-board-contacts.md sha256=638c71f7566b0426c7f5a0ec9cbc0b174a0e00dd9c0634043aae8f74bb86681a", "origin_sha256": "ff22926af6a0752c3e84461c7edfecaed220ff46da78946e1aebb76a05bf8118", "revision": "3018-PROVer V2 manufacturer manual v1.0 September 2022 and hosted GC3D3-V4.3 example review; installed subrevision unverified", "source": "3018-PROVer V2 manufacturer manual v1.0 September 2022 and hosted GC3D3-V4.3 example review; installed subrevision unverified · Manual shows emergency button; hosted review identifies two-pin board socket. No safety-rated SmoothieBox E-stop circuit established; OPEN.", "source_urls": ["https://genmitsu.s3.us-east-1.amazonaws.com/101-60-3018PV2/3018-PROVer_V2_User_Manual_%E3%80%90EN%2BDE%2BJP_V1.0_20220906_1.pdf", "https://www.sainsmart.com/blogs/news/review-of-genmitsu-3018-prover-v2-cnc-router", "https://cdn.shopify.com/s/files/1/1978/9859/files/Frame_3387.png?v=1667361164"], "upstream_function_hints": []}, {"connector_id": "ref-prover-v2-offline", "contacts": [{"fact": "source", "id": "machine-p013-c001", "label": "Offline-controller board position 1 · role unverified", "mark": "1", "source_id": "1", "source_relation": ""}, {"fact": "source", "id": "machine-p013-c002", "label": "Offline-controller board position 2 · role unverified", "mark": "2", "source_id": "2", "source_relation": ""}, {"fact": "source", "id": "machine-p013-c003", "label": "Offline-controller board position 3 · role unverified", "mark": "3", "source_id": "3", "source_relation": ""}, {"fact": "source", "id": "machine-p013-c004", "label": "Offline-controller board position 4 · role unverified", "mark": "4", "source_id": "4", "source_relation": ""}, {"fact": "source", "id": "machine-p013-c005", "label": "Offline-controller board position 5 · role unverified", "mark": "5", "source_id": "5", "source_relation": ""}, {"fact": "source", "id": "machine-p013-c006", "label": "Offline-controller board position 6 · role unverified", "mark": "6", "source_id": "6", "source_relation": ""}, {"fact": "source", "id": "machine-p013-c007", "label": "Offline-controller board position 7 · role unverified", "mark": "7", "source_id": "7", "source_relation": ""}, {"fact": "source", "id": "machine-p013-c008", "label": "Offline-controller board position 8 · role unverified", "mark": "8", "source_id": "8", "source_relation": ""}, {"fact": "source", "id": "machine-p013-c009", "label": "Offline-controller board position 9 · role unverified", "mark": "9", "source_id": "9", "source_relation": ""}, {"fact": "source", "id": "machine-p013-c010", "label": "Offline-controller board position 10 · role unverified", "mark": "10", "source_id": "10", "source_relation": ""}], "kind": "reference", "name": "3018-PROVer V2 ten-position offline-controller header", "numbering": "1–10 are inventory ordinals; 2×5 mating-face numbering and signal roles unknown", "origin_path": "smoothiebox-reference-contacts.json#mill-g2/ref-prover-v2-offline; captured dossier machine-research/genmitsu-3018-prover-v2-board-contacts.md sha256=638c71f7566b0426c7f5a0ec9cbc0b174a0e00dd9c0634043aae8f74bb86681a", "origin_sha256": "ff22926af6a0752c3e84461c7edfecaed220ff46da78946e1aebb76a05bf8118", "revision": "3018-PROVer V2 manufacturer manual v1.0 September 2022 and hosted GC3D3-V4.3 example review; installed subrevision unverified", "source": "3018-PROVer V2 manufacturer manual v1.0 September 2022 and hosted GC3D3-V4.3 example review; installed subrevision unverified · Manual board drawing and hosted review identify 10-pin accessory header. Former-controller interface, no SmoothieBox route; OPEN.", "source_urls": ["https://genmitsu.s3.us-east-1.amazonaws.com/101-60-3018PV2/3018-PROVer_V2_User_Manual_%E3%80%90EN%2BDE%2BJP_V1.0_20220906_1.pdf", "https://www.sainsmart.com/blogs/news/review-of-genmitsu-3018-prover-v2-cnc-router", "https://cdn.shopify.com/s/files/1/1978/9859/files/Frame_3387.png?v=1667361164"], "upstream_function_hints": []}, {"connector_id": "ref-prover-v2-laser", "contacts": [{"fact": "source", "id": "machine-p014-c001", "label": "Laser board position 1 · role unverified", "mark": "1", "source_id": "1", "source_relation": ""}, {"fact": "source", "id": "machine-p014-c002", "label": "Laser board position 2 · role unverified", "mark": "2", "source_id": "2", "source_relation": ""}, {"fact": "source", "id": "machine-p014-c003", "label": "Laser board position 3 · role unverified", "mark": "3", "source_id": "3", "source_relation": ""}], "kind": "reference", "name": "3018-PROVer V2 optional three-position laser module socket", "numbering": "1–3 enumerate board positions; voltage/signal/return cavity mapping unverified", "origin_path": "smoothiebox-reference-contacts.json#mill-g2/ref-prover-v2-laser; captured dossier machine-research/genmitsu-3018-prover-v2-board-contacts.md sha256=638c71f7566b0426c7f5a0ec9cbc0b174a0e00dd9c0634043aae8f74bb86681a", "origin_sha256": "ff22926af6a0752c3e84461c7edfecaed220ff46da78946e1aebb76a05bf8118", "revision": "3018-PROVer V2 manufacturer manual v1.0 September 2022 and hosted GC3D3-V4.3 example review; installed subrevision unverified", "source": "3018-PROVer V2 manufacturer manual v1.0 September 2022 and hosted GC3D3-V4.3 example review; installed subrevision unverified · Manual labels LASER and hosted review calls it 3-pin 12 V/PWM. A laser is not proved fitted and no SmoothieBox electrical contract is established; OPEN.", "source_urls": ["https://genmitsu.s3.us-east-1.amazonaws.com/101-60-3018PV2/3018-PROVer_V2_User_Manual_%E3%80%90EN%2BDE%2BJP_V1.0_20220906_1.pdf", "https://www.sainsmart.com/blogs/news/review-of-genmitsu-3018-prover-v2-cnc-router", "https://cdn.shopify.com/s/files/1/1978/9859/files/Frame_3387.png?v=1667361164"], "upstream_function_hints": []}, {"connector_id": "ref-prover-v2-air", "contacts": [{"fact": "source", "id": "machine-p015-c001", "label": "AIR board position 1 · role unverified", "mark": "1", "source_id": "1", "source_relation": ""}, {"fact": "source", "id": "machine-p015-c002", "label": "AIR board position 2 · role unverified", "mark": "2", "source_id": "2", "source_relation": ""}], "kind": "reference", "name": "3018-PROVer V2 optional two-position AIR socket", "numbering": "1–2 enumerate source-visible positions; electrical roles unknown", "origin_path": "smoothiebox-reference-contacts.json#mill-g2/ref-prover-v2-air; captured dossier machine-research/genmitsu-3018-prover-v2-board-contacts.md sha256=638c71f7566b0426c7f5a0ec9cbc0b174a0e00dd9c0634043aae8f74bb86681a", "origin_sha256": "ff22926af6a0752c3e84461c7edfecaed220ff46da78946e1aebb76a05bf8118", "revision": "3018-PROVer V2 manufacturer manual v1.0 September 2022 and hosted GC3D3-V4.3 example review; installed subrevision unverified", "source": "3018-PROVer V2 manufacturer manual v1.0 September 2022 and hosted GC3D3-V4.3 example review; installed subrevision unverified · Manual board diagram labels AIR; hosted review identifies two-pin air-assist control, with pump use uncertain. No rating or fitted cable; OPEN.", "source_urls": ["https://genmitsu.s3.us-east-1.amazonaws.com/101-60-3018PV2/3018-PROVer_V2_User_Manual_%E3%80%90EN%2BDE%2BJP_V1.0_20220906_1.pdf", "https://www.sainsmart.com/blogs/news/review-of-genmitsu-3018-prover-v2-cnc-router", "https://cdn.shopify.com/s/files/1/1978/9859/files/Frame_3387.png?v=1667361164"], "upstream_function_hints": []}], "prior_profile_route_note": "OPEN interface: board and source-scoped opposing connector inventories are shown on opposite sides with no conductor between them. CONTACT POSITIONS UNKNOWN identifies unnumbered machine groups; every known position is listed individually just below. Open this diagram at full size", "profile_id": "mill-g2", "routes": []}</metadata>
+<metadata id="source-provenance">{"exterior_schedule": "Smoothie Central Chapter 18 proposed carrier field contacts", "machine_source": {"kind": "typed_graph_projection", "snapshot": "machine-side-graph-snapshot.json", "snapshot_sha256": "ab39ac1142254918497ff13fcb4998c1d0daf33eee3782b97bbac3304b1b3977", "source_graph": "041-mill-g2.json", "source_sha256": "4927fe93123a58c52b3360aad80a7e74be48da7cb7dcfd3329206c600e7db71a"}, "profile_id": "mill-g2", "reference_additions": {"path": "smoothiebox-reference-contacts.json", "sha256": "ff22926af6a0752c3e84461c7edfecaed220ff46da78946e1aebb76a05bf8118"}}</metadata>
+<style>
+text{font-family:Arial,Helvetica,sans-serif;fill:#21382d}
+.background{fill:#edf2ec}.title{font-size:38px;font-weight:800}
+.subtitle{font-size:23px;fill:#4e6758}.eyebrow{font-size:18px;font-weight:800;fill:#087b60}
+.case{fill:#fffef9;stroke:#29513e;stroke-width:4}.carrier-header{fill:#e6efe8;stroke:#4d8065;stroke-width:2}.carrier-header-title{font-size:28px;font-weight:850;letter-spacing:1px}.carrier-header-note{font-size:15px;fill:#526a5b;letter-spacing:.5px}.connector-shell{fill:#d9e6dc;stroke:#4d8065;stroke-width:2}.case-title{font-size:44px;font-weight:800}
+.case-note{font-size:20px;fill:#526a5b}.terminal{fill:#35ba58;stroke:#1b6338;stroke-width:2}
+.terminal-candidate{stroke:#7443a4;stroke-width:4}.screw{fill:#c8d2d3;stroke:#496367;stroke-width:2}
+.bank-title{font-size:19px;font-weight:800}.pin-label{font-size:20px;font-weight:650}
+.pin-number{font-size:18px;font-weight:800}.service{fill:#26373b;stroke:#72898c;stroke-width:3}
+.service-label{font-size:17px;font-weight:800}.small{font-size:16px;fill:#526a5b}
+.peripheral-card{fill:#fffef9;stroke:#83a18b;stroke-width:2}.peripheral-accent-reported{fill:#277552}.peripheral-accent-reference{fill:#9b6b1e}.peripheral-accent-context{fill:#75837d}.connector-badge{fill:#e6efe8;stroke:#4d8065;stroke-width:1.5}.connector-badge-text{font-size:14px;font-weight:800;fill:#2f654d;letter-spacing:.5px}
+.context-card{fill:#e8eceb;stroke:#72817b;stroke-width:2}
+.evidence-label{font-size:17px;font-weight:800;fill:#526a5b}
+.peripheral-name{font-size:28px;font-weight:800}.source-line{font-size:18px;fill:#526a5b}
+.boundary-text{font-size:23px;font-weight:700;fill:#526a5b}
+.open-socket{fill:#fffef9;stroke:#526a5b;stroke-width:2}
+.candidate-socket{fill:#fffef9;stroke:#7443a4;stroke-width:4}
+.number-pill{fill:#26373b}.number-text{font-size:18px;font-weight:800;fill:white}
+.machine-contact{font-size:22px;font-weight:650}.open-status{font-size:17px;fill:#64716a}
+.guess-status{font-size:17px;font-weight:800;fill:#613d85}
+.guess-wire{fill:none;stroke:#7443a4;stroke-width:4;stroke-dasharray:2 10;stroke-linecap:round;stroke-linejoin:round}
+.route-clearance{fill:none;stroke:#edf2ec;stroke-width:12;stroke-linecap:round;stroke-linejoin:round}
+.legend-title{font-size:25px;font-weight:800}.legend{font-size:22px;fill:#42584b}
+</style>
+<rect x="0" y="0" width="4996" height="4498" class="background"/>
+<text x="60" y="55" class="eyebrow">MACHINE 041 · CNC ROUTER · SOURCE-SCOPED EVIDENCE</text>
+<text x="60" y="105" class="title" text-anchor="start">Genmitsu 3018-PROVer V2 + bundled GRBL 1.1h, 32-bit/TB67S109 board → SmoothieBox exterior connection study</text>
+<text x="60" y="173" class="subtitle">Proposed exterior terminals → dotted function candidates or explicit OPEN boundaries; no installed harness claim</text>
+<g id="smoothiebox-exterior" data-controller="smoothiebox-exterior-only">
+<rect x="60" y="360" width="1800" height="1800" rx="18" class="case"/>
+<rect x="170" y="630" width="1580" height="74" rx="12" class="carrier-header"/>
+<text x="960" y="663" class="carrier-header-title" text-anchor="middle">SMOOTHIEBOX · EXTERIOR FIELD PERIMETER</text>
+<text x="960" y="688" class="carrier-header-note" text-anchor="middle">INTERNAL BOARD, DRIVER CIRCUIT AND SAFETY LOGIC OMITTED · ONLY OUTSIDE CONNECTORS SHOWN</text>
+<g class="bank" data-exterior-bank="POWER" data-side="north">
+<rect x="190" y="720" width="108" height="42" rx="8" class="connector-shell"/>
+<text x="244" y="298" class="bank-title" text-anchor="middle">VFET POWER IN</text>
+<g id="sb-POWER-1" data-exterior-contact="POWER.1" data-role="Load power input LOAD + pin" data-source-label="LOAD +" data-x="220" data-y="360">
+<title>POWER.1 · Load power input LOAD + pin · proposed carrier contact; not a mating view</title>
+<rect x="205" y="346" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="220" cy="360" r="7" class="screw" style="fill:#806700"/>
+<text x="220" y="336" class="pin-number" text-anchor="middle">1</text>
+<text x="220" y="398" transform="rotate(90 220 398)" class="pin-label" style="fill:#806700">Load power input LOAD + pin</text>
+</g>
+<g id="sb-POWER-2" data-exterior-contact="POWER.2" data-role="Load power input GND pin" data-source-label="GND" data-x="268" data-y="360">
+<title>POWER.2 · Load power input GND pin · proposed carrier contact; not a mating view</title>
+<rect x="253" y="346" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="268" cy="360" r="7" class="screw" style="fill:#111717"/>
+<text x="268" y="336" class="pin-number" text-anchor="middle">2</text>
+<text x="268" y="398" transform="rotate(90 268 398)" class="pin-label" style="fill:#111717">Load power input GND pin</text>
+</g>
+</g>
+<g class="bank" data-exterior-bank="FIVEIN" data-side="north">
+<rect x="390" y="720" width="108" height="42" rx="8" class="connector-shell"/>
+<text x="444" y="298" class="bank-title" text-anchor="middle">5V POWER IN</text>
+<g id="sb-FIVEIN-1" data-exterior-contact="FIVEIN.1" data-role="5 V input +5V pin" data-source-label="+5V" data-x="420" data-y="360">
+<title>FIVEIN.1 · 5 V input +5V pin · proposed carrier contact; not a mating view</title>
+<rect x="405" y="346" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="420" cy="360" r="7" class="screw" style="fill:#b85e00"/>
+<text x="420" y="336" class="pin-number" text-anchor="middle">1</text>
+<text x="420" y="398" transform="rotate(90 420 398)" class="pin-label" style="fill:#b85e00">5 V input +5V pin</text>
+</g>
+<g id="sb-FIVEIN-2" data-exterior-contact="FIVEIN.2" data-role="5 V input GND pin" data-source-label="GND" data-x="468" data-y="360">
+<title>FIVEIN.2 · 5 V input GND pin · proposed carrier contact; not a mating view</title>
+<rect x="453" y="346" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="468" cy="360" r="7" class="screw" style="fill:#111717"/>
+<text x="468" y="336" class="pin-number" text-anchor="middle">2</text>
+<text x="468" y="398" transform="rotate(90 468 398)" class="pin-label" style="fill:#111717">5 V input GND pin</text>
+</g>
+</g>
+<g class="bank" data-exterior-bank="FIVEOUT" data-side="north">
+<rect x="590" y="720" width="108" height="42" rx="8" class="connector-shell"/>
+<text x="644" y="298" class="bank-title" text-anchor="middle">5V ACCESSORY OUT</text>
+<g id="sb-FIVEOUT-1" data-exterior-contact="FIVEOUT.1" data-role="5 V accessory output +5V pin" data-source-label="+5V" data-x="620" data-y="360">
+<title>FIVEOUT.1 · 5 V accessory output +5V pin · proposed carrier contact; not a mating view</title>
+<rect x="605" y="346" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="620" cy="360" r="7" class="screw" style="fill:#b85e00"/>
+<text x="620" y="336" class="pin-number" text-anchor="middle">1</text>
+<text x="620" y="398" transform="rotate(90 620 398)" class="pin-label" style="fill:#b85e00">5 V accessory output +5V pin</text>
+</g>
+<g id="sb-FIVEOUT-2" data-exterior-contact="FIVEOUT.2" data-role="5 V accessory output GND pin" data-source-label="GND" data-x="668" data-y="360">
+<title>FIVEOUT.2 · 5 V accessory output GND pin · proposed carrier contact; not a mating view</title>
+<rect x="653" y="346" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="668" cy="360" r="7" class="screw" style="fill:#111717"/>
+<text x="668" y="336" class="pin-number" text-anchor="middle">2</text>
+<text x="668" y="398" transform="rotate(90 668 398)" class="pin-label" style="fill:#111717">5 V accessory output GND pin</text>
+</g>
+</g>
+<g class="bank" data-exterior-bank="AUX" data-side="north">
+<rect x="1470" y="720" width="300" height="42" rx="8" class="connector-shell"/>
+<text x="1620" y="298" class="bank-title" text-anchor="middle">ANALOG INPUTS</text>
+<g id="sb-AUX-1" data-exterior-contact="AUX.1" data-role="Analog input 1 signal pin" data-source-label="ANALOG 1" data-x="1500" data-y="360">
+<title>AUX.1 · Analog input 1 signal pin · proposed carrier contact; not a mating view</title>
+<rect x="1485" y="346" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="1500" cy="360" r="7" class="screw" style="fill:#087361"/>
+<text x="1500" y="336" class="pin-number" text-anchor="middle">1</text>
+<text x="1500" y="398" transform="rotate(90 1500 398)" class="pin-label" style="fill:#087361">Analog input 1 signal pin</text>
+</g>
+<g id="sb-AUX-2" data-exterior-contact="AUX.2" data-role="Analog input 1 GND pin" data-source-label="GND" data-x="1548" data-y="360">
+<title>AUX.2 · Analog input 1 GND pin · proposed carrier contact; not a mating view</title>
+<rect x="1533" y="346" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="1548" cy="360" r="7" class="screw" style="fill:#111717"/>
+<text x="1548" y="336" class="pin-number" text-anchor="middle">2</text>
+<text x="1548" y="398" transform="rotate(90 1548 398)" class="pin-label" style="fill:#111717">Analog input 1 GND pin</text>
+</g>
+<g id="sb-AUX-3" data-exterior-contact="AUX.3" data-role="Analog input 2 signal pin" data-source-label="ANALOG 2" data-x="1596" data-y="360">
+<title>AUX.3 · Analog input 2 signal pin · proposed carrier contact; not a mating view</title>
+<rect x="1581" y="346" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="1596" cy="360" r="7" class="screw" style="fill:#087361"/>
+<text x="1596" y="336" class="pin-number" text-anchor="middle">3</text>
+<text x="1596" y="398" transform="rotate(90 1596 398)" class="pin-label" style="fill:#087361">Analog input 2 signal pin</text>
+</g>
+<g id="sb-AUX-4" data-exterior-contact="AUX.4" data-role="Analog input 2 GND pin" data-source-label="GND" data-x="1644" data-y="360">
+<title>AUX.4 · Analog input 2 GND pin · proposed carrier contact; not a mating view</title>
+<rect x="1629" y="346" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="1644" cy="360" r="7" class="screw" style="fill:#111717"/>
+<text x="1644" y="336" class="pin-number" text-anchor="middle">4</text>
+<text x="1644" y="398" transform="rotate(90 1644 398)" class="pin-label" style="fill:#111717">Analog input 2 GND pin</text>
+</g>
+<g id="sb-AUX-5" data-exterior-contact="AUX.5" data-role="Analog input 3 signal pin" data-source-label="ANALOG 3" data-x="1692" data-y="360">
+<title>AUX.5 · Analog input 3 signal pin · proposed carrier contact; not a mating view</title>
+<rect x="1677" y="346" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="1692" cy="360" r="7" class="screw" style="fill:#087361"/>
+<text x="1692" y="336" class="pin-number" text-anchor="middle">5</text>
+<text x="1692" y="398" transform="rotate(90 1692 398)" class="pin-label" style="fill:#087361">Analog input 3 signal pin</text>
+</g>
+<g id="sb-AUX-6" data-exterior-contact="AUX.6" data-role="Analog input 3 GND pin" data-source-label="GND" data-x="1740" data-y="360">
+<title>AUX.6 · Analog input 3 GND pin · proposed carrier contact; not a mating view</title>
+<rect x="1725" y="346" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="1740" cy="360" r="7" class="screw" style="fill:#111717"/>
+<text x="1740" y="336" class="pin-number" text-anchor="middle">6</text>
+<text x="1740" y="398" transform="rotate(90 1740 398)" class="pin-label" style="fill:#111717">Analog input 3 GND pin</text>
+</g>
+</g>
+<g class="bank" data-exterior-bank="XMIN" data-side="east">
+<rect x="1798" y="708" width="42" height="104" rx="8" class="connector-shell"/>
+<text x="1824" y="701" class="bank-title" text-anchor="end">X MIN</text>
+<g id="sb-XMIN-1" data-exterior-contact="XMIN.1" data-role="X axis min endstop sensor + pin" data-source-label="SENSOR +" data-x="1860" data-y="730">
+<title>XMIN.1 · X axis min endstop sensor + pin · proposed carrier contact; not a mating view</title>
+<rect x="1845" y="716" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="1860" cy="730" r="7" class="screw" style="fill:#416b7e"/>
+<text x="1824" y="737" class="pin-label" text-anchor="end" style="fill:#416b7e">1 · X axis min endstop sensor + pin</text>
+</g>
+<g id="sb-XMIN-2" data-exterior-contact="XMIN.2" data-role="X axis min endstop GND pin" data-source-label="GND" data-x="1860" data-y="760">
+<title>XMIN.2 · X axis min endstop GND pin · proposed carrier contact; not a mating view</title>
+<rect x="1845" y="746" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="1860" cy="760" r="7" class="screw" style="fill:#111717"/>
+<text x="1824" y="767" class="pin-label" text-anchor="end" style="fill:#111717">2 · X axis min endstop GND pin</text>
+</g>
+<g id="sb-XMIN-3" data-exterior-contact="XMIN.3" data-role="X axis min endstop signal pin" data-source-label="SIGNAL" data-x="1860" data-y="790">
+<title>XMIN.3 · X axis min endstop signal pin · proposed carrier contact; not a mating view</title>
+<rect x="1845" y="776" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="1860" cy="790" r="7" class="screw" style="fill:#087361"/>
+<text x="1824" y="797" class="pin-label" text-anchor="end" style="fill:#087361">3 · X axis min endstop signal pin</text>
+</g>
+</g>
+<g class="bank" data-exterior-bank="XMAX" data-side="east">
+<rect x="1798" y="828" width="42" height="104" rx="8" class="connector-shell"/>
+<text x="1824" y="821" class="bank-title" text-anchor="end">X MAX</text>
+<g id="sb-XMAX-1" data-exterior-contact="XMAX.1" data-role="X axis max endstop sensor + pin" data-source-label="SENSOR +" data-x="1860" data-y="850">
+<title>XMAX.1 · X axis max endstop sensor + pin · proposed carrier contact; not a mating view</title>
+<rect x="1845" y="836" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="1860" cy="850" r="7" class="screw" style="fill:#416b7e"/>
+<text x="1824" y="857" class="pin-label" text-anchor="end" style="fill:#416b7e">1 · X axis max endstop sensor + pin</text>
+</g>
+<g id="sb-XMAX-2" data-exterior-contact="XMAX.2" data-role="X axis max endstop GND pin" data-source-label="GND" data-x="1860" data-y="880">
+<title>XMAX.2 · X axis max endstop GND pin · proposed carrier contact; not a mating view</title>
+<rect x="1845" y="866" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="1860" cy="880" r="7" class="screw" style="fill:#111717"/>
+<text x="1824" y="887" class="pin-label" text-anchor="end" style="fill:#111717">2 · X axis max endstop GND pin</text>
+</g>
+<g id="sb-XMAX-3" data-exterior-contact="XMAX.3" data-role="X axis max endstop signal pin" data-source-label="SIGNAL" data-x="1860" data-y="910">
+<title>XMAX.3 · X axis max endstop signal pin · proposed carrier contact; not a mating view</title>
+<rect x="1845" y="896" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="1860" cy="910" r="7" class="screw" style="fill:#087361"/>
+<text x="1824" y="917" class="pin-label" text-anchor="end" style="fill:#087361">3 · X axis max endstop signal pin</text>
+</g>
+</g>
+<g class="bank" data-exterior-bank="YMIN" data-side="east">
+<rect x="1798" y="948" width="42" height="104" rx="8" class="connector-shell"/>
+<text x="1824" y="941" class="bank-title" text-anchor="end">Y MIN</text>
+<g id="sb-YMIN-1" data-exterior-contact="YMIN.1" data-role="Y axis min endstop sensor + pin" data-source-label="SENSOR +" data-x="1860" data-y="970">
+<title>YMIN.1 · Y axis min endstop sensor + pin · proposed carrier contact; not a mating view</title>
+<rect x="1845" y="956" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="1860" cy="970" r="7" class="screw" style="fill:#416b7e"/>
+<text x="1824" y="977" class="pin-label" text-anchor="end" style="fill:#416b7e">1 · Y axis min endstop sensor + pin</text>
+</g>
+<g id="sb-YMIN-2" data-exterior-contact="YMIN.2" data-role="Y axis min endstop GND pin" data-source-label="GND" data-x="1860" data-y="1000">
+<title>YMIN.2 · Y axis min endstop GND pin · proposed carrier contact; not a mating view</title>
+<rect x="1845" y="986" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="1860" cy="1000" r="7" class="screw" style="fill:#111717"/>
+<text x="1824" y="1007" class="pin-label" text-anchor="end" style="fill:#111717">2 · Y axis min endstop GND pin</text>
+</g>
+<g id="sb-YMIN-3" data-exterior-contact="YMIN.3" data-role="Y axis min endstop signal pin" data-source-label="SIGNAL" data-x="1860" data-y="1030">
+<title>YMIN.3 · Y axis min endstop signal pin · proposed carrier contact; not a mating view</title>
+<rect x="1845" y="1016" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="1860" cy="1030" r="7" class="screw" style="fill:#087361"/>
+<text x="1824" y="1037" class="pin-label" text-anchor="end" style="fill:#087361">3 · Y axis min endstop signal pin</text>
+</g>
+</g>
+<g class="bank" data-exterior-bank="YMAX" data-side="east">
+<rect x="1798" y="1068" width="42" height="104" rx="8" class="connector-shell"/>
+<text x="1824" y="1061" class="bank-title" text-anchor="end">Y MAX</text>
+<g id="sb-YMAX-1" data-exterior-contact="YMAX.1" data-role="Y axis max endstop sensor + pin" data-source-label="SENSOR +" data-x="1860" data-y="1090">
+<title>YMAX.1 · Y axis max endstop sensor + pin · proposed carrier contact; not a mating view</title>
+<rect x="1845" y="1076" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="1860" cy="1090" r="7" class="screw" style="fill:#416b7e"/>
+<text x="1824" y="1097" class="pin-label" text-anchor="end" style="fill:#416b7e">1 · Y axis max endstop sensor + pin</text>
+</g>
+<g id="sb-YMAX-2" data-exterior-contact="YMAX.2" data-role="Y axis max endstop GND pin" data-source-label="GND" data-x="1860" data-y="1120">
+<title>YMAX.2 · Y axis max endstop GND pin · proposed carrier contact; not a mating view</title>
+<rect x="1845" y="1106" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="1860" cy="1120" r="7" class="screw" style="fill:#111717"/>
+<text x="1824" y="1127" class="pin-label" text-anchor="end" style="fill:#111717">2 · Y axis max endstop GND pin</text>
+</g>
+<g id="sb-YMAX-3" data-exterior-contact="YMAX.3" data-role="Y axis max endstop signal pin" data-source-label="SIGNAL" data-x="1860" data-y="1150">
+<title>YMAX.3 · Y axis max endstop signal pin · proposed carrier contact; not a mating view</title>
+<rect x="1845" y="1136" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="1860" cy="1150" r="7" class="screw" style="fill:#087361"/>
+<text x="1824" y="1157" class="pin-label" text-anchor="end" style="fill:#087361">3 · Y axis max endstop signal pin</text>
+</g>
+</g>
+<g class="bank" data-exterior-bank="ZMIN" data-side="east">
+<rect x="1798" y="1188" width="42" height="104" rx="8" class="connector-shell"/>
+<text x="1824" y="1181" class="bank-title" text-anchor="end">Z MIN</text>
+<g id="sb-ZMIN-1" data-exterior-contact="ZMIN.1" data-role="Z axis min endstop sensor + pin" data-source-label="SENSOR +" data-x="1860" data-y="1210">
+<title>ZMIN.1 · Z axis min endstop sensor + pin · proposed carrier contact; not a mating view</title>
+<rect x="1845" y="1196" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="1860" cy="1210" r="7" class="screw" style="fill:#416b7e"/>
+<text x="1824" y="1217" class="pin-label" text-anchor="end" style="fill:#416b7e">1 · Z axis min endstop sensor + pin</text>
+</g>
+<g id="sb-ZMIN-2" data-exterior-contact="ZMIN.2" data-role="Z axis min endstop GND pin" data-source-label="GND" data-x="1860" data-y="1240">
+<title>ZMIN.2 · Z axis min endstop GND pin · proposed carrier contact; not a mating view</title>
+<rect x="1845" y="1226" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="1860" cy="1240" r="7" class="screw" style="fill:#111717"/>
+<text x="1824" y="1247" class="pin-label" text-anchor="end" style="fill:#111717">2 · Z axis min endstop GND pin</text>
+</g>
+<g id="sb-ZMIN-3" data-exterior-contact="ZMIN.3" data-role="Z axis min endstop signal pin" data-source-label="SIGNAL" data-x="1860" data-y="1270">
+<title>ZMIN.3 · Z axis min endstop signal pin · proposed carrier contact; not a mating view</title>
+<rect x="1845" y="1256" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="1860" cy="1270" r="7" class="screw" style="fill:#087361"/>
+<text x="1824" y="1277" class="pin-label" text-anchor="end" style="fill:#087361">3 · Z axis min endstop signal pin</text>
+</g>
+</g>
+<g class="bank" data-exterior-bank="ZMAX" data-side="east">
+<rect x="1798" y="1308" width="42" height="104" rx="8" class="connector-shell"/>
+<text x="1824" y="1301" class="bank-title" text-anchor="end">Z MAX</text>
+<g id="sb-ZMAX-1" data-exterior-contact="ZMAX.1" data-role="Z axis max endstop sensor + pin" data-source-label="SENSOR +" data-x="1860" data-y="1330">
+<title>ZMAX.1 · Z axis max endstop sensor + pin · proposed carrier contact; not a mating view</title>
+<rect x="1845" y="1316" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="1860" cy="1330" r="7" class="screw" style="fill:#416b7e"/>
+<text x="1824" y="1337" class="pin-label" text-anchor="end" style="fill:#416b7e">1 · Z axis max endstop sensor + pin</text>
+</g>
+<g id="sb-ZMAX-2" data-exterior-contact="ZMAX.2" data-role="Z axis max endstop GND pin" data-source-label="GND" data-x="1860" data-y="1360">
+<title>ZMAX.2 · Z axis max endstop GND pin · proposed carrier contact; not a mating view</title>
+<rect x="1845" y="1346" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="1860" cy="1360" r="7" class="screw" style="fill:#111717"/>
+<text x="1824" y="1367" class="pin-label" text-anchor="end" style="fill:#111717">2 · Z axis max endstop GND pin</text>
+</g>
+<g id="sb-ZMAX-3" data-exterior-contact="ZMAX.3" data-role="Z axis max endstop signal pin" data-source-label="SIGNAL" data-x="1860" data-y="1390">
+<title>ZMAX.3 · Z axis max endstop signal pin · proposed carrier contact; not a mating view</title>
+<rect x="1845" y="1376" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="1860" cy="1390" r="7" class="screw" style="fill:#087361"/>
+<text x="1824" y="1397" class="pin-label" text-anchor="end" style="fill:#087361">3 · Z axis max endstop signal pin</text>
+</g>
+</g>
+<g class="bank" data-exterior-bank="PROBE" data-side="east">
+<rect x="1798" y="1428" width="42" height="134" rx="8" class="connector-shell"/>
+<text x="1824" y="1421" class="bank-title" text-anchor="end">PROBE + SERVO</text>
+<g id="sb-PROBE-1" data-exterior-contact="PROBE.1" data-role="Probe / servo +5V pin" data-source-label="+5V" data-x="1860" data-y="1450">
+<title>PROBE.1 · Probe / servo +5V pin · proposed carrier contact; not a mating view</title>
+<rect x="1845" y="1436" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="1860" cy="1450" r="7" class="screw" style="fill:#b85e00"/>
+<text x="1824" y="1457" class="pin-label" text-anchor="end" style="fill:#b85e00">1 · Probe / servo +5V pin</text>
+</g>
+<g id="sb-PROBE-2" data-exterior-contact="PROBE.2" data-role="Probe / servo GND pin" data-source-label="GND" data-x="1860" data-y="1480">
+<title>PROBE.2 · Probe / servo GND pin · proposed carrier contact; not a mating view</title>
+<rect x="1845" y="1466" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="1860" cy="1480" r="7" class="screw" style="fill:#111717"/>
+<text x="1824" y="1487" class="pin-label" text-anchor="end" style="fill:#111717">2 · Probe / servo GND pin</text>
+</g>
+<g id="sb-PROBE-3" data-exterior-contact="PROBE.3" data-role="Probe / servo SERVO pin" data-source-label="SERVO" data-x="1860" data-y="1510">
+<title>PROBE.3 · Probe / servo SERVO pin · proposed carrier contact; not a mating view</title>
+<rect x="1845" y="1496" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="1860" cy="1510" r="7" class="screw" style="fill:#6246a3"/>
+<text x="1824" y="1517" class="pin-label" text-anchor="end" style="fill:#6246a3">3 · Probe / servo SERVO pin</text>
+</g>
+<g id="sb-PROBE-4" data-exterior-contact="PROBE.4" data-role="Probe / servo PROBE IN pin" data-source-label="PROBE IN" data-x="1860" data-y="1540">
+<title>PROBE.4 · Probe / servo PROBE IN pin · proposed carrier contact; not a mating view</title>
+<rect x="1845" y="1526" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="1860" cy="1540" r="7" class="screw" style="fill:#087361"/>
+<text x="1824" y="1547" class="pin-label" text-anchor="end" style="fill:#087361">4 · Probe / servo PROBE IN pin</text>
+</g>
+</g>
+<g class="bank" data-exterior-bank="TEMP" data-side="east">
+<rect x="1798" y="1588" width="42" height="194" rx="8" class="connector-shell"/>
+<text x="1824" y="1581" class="bank-title" text-anchor="end">TEMPERATURE 1–3</text>
+<g id="sb-TEMP-1" data-exterior-contact="TEMP.1" data-role="Temperature 1 sensor pin" data-source-label="SENSOR 1" data-x="1860" data-y="1610">
+<title>TEMP.1 · Temperature 1 sensor pin · proposed carrier contact; not a mating view</title>
+<rect x="1845" y="1596" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="1860" cy="1610" r="7" class="screw" style="fill:#416b7e"/>
+<text x="1824" y="1617" class="pin-label" text-anchor="end" style="fill:#416b7e">1 · Temperature 1 sensor pin</text>
+</g>
+<g id="sb-TEMP-2" data-exterior-contact="TEMP.2" data-role="Temperature 1 GND pin" data-source-label="GND" data-x="1860" data-y="1640">
+<title>TEMP.2 · Temperature 1 GND pin · proposed carrier contact; not a mating view</title>
+<rect x="1845" y="1626" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="1860" cy="1640" r="7" class="screw" style="fill:#111717"/>
+<text x="1824" y="1647" class="pin-label" text-anchor="end" style="fill:#111717">2 · Temperature 1 GND pin</text>
+</g>
+<g id="sb-TEMP-3" data-exterior-contact="TEMP.3" data-role="Temperature 2 sensor pin" data-source-label="SENSOR 2" data-x="1860" data-y="1670">
+<title>TEMP.3 · Temperature 2 sensor pin · proposed carrier contact; not a mating view</title>
+<rect x="1845" y="1656" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="1860" cy="1670" r="7" class="screw" style="fill:#416b7e"/>
+<text x="1824" y="1677" class="pin-label" text-anchor="end" style="fill:#416b7e">3 · Temperature 2 sensor pin</text>
+</g>
+<g id="sb-TEMP-4" data-exterior-contact="TEMP.4" data-role="Temperature 2 GND pin" data-source-label="GND" data-x="1860" data-y="1700">
+<title>TEMP.4 · Temperature 2 GND pin · proposed carrier contact; not a mating view</title>
+<rect x="1845" y="1686" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="1860" cy="1700" r="7" class="screw" style="fill:#111717"/>
+<text x="1824" y="1707" class="pin-label" text-anchor="end" style="fill:#111717">4 · Temperature 2 GND pin</text>
+</g>
+<g id="sb-TEMP-5" data-exterior-contact="TEMP.5" data-role="Temperature 3 sensor pin" data-source-label="SENSOR 3" data-x="1860" data-y="1730">
+<title>TEMP.5 · Temperature 3 sensor pin · proposed carrier contact; not a mating view</title>
+<rect x="1845" y="1716" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="1860" cy="1730" r="7" class="screw" style="fill:#416b7e"/>
+<text x="1824" y="1737" class="pin-label" text-anchor="end" style="fill:#416b7e">5 · Temperature 3 sensor pin</text>
+</g>
+<g id="sb-TEMP-6" data-exterior-contact="TEMP.6" data-role="Temperature 3 GND pin" data-source-label="GND" data-x="1860" data-y="1760">
+<title>TEMP.6 · Temperature 3 GND pin · proposed carrier contact; not a mating view</title>
+<rect x="1845" y="1746" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="1860" cy="1760" r="7" class="screw" style="fill:#111717"/>
+<text x="1824" y="1767" class="pin-label" text-anchor="end" style="fill:#111717">6 · Temperature 3 GND pin</text>
+</g>
+</g>
+<g class="bank" data-exterior-bank="HEA" data-side="west">
+<rect x="80" y="708" width="42" height="74" rx="8" class="connector-shell"/>
+<text x="96" y="701" class="bank-title" text-anchor="start">HOTEND A</text>
+<g id="sb-HEA-1" data-exterior-contact="HEA.1" data-role="Hotend A LOAD + pin" data-source-label="LOAD +" data-x="60" data-y="730">
+<title>HEA.1 · Hotend A LOAD + pin · proposed carrier contact; not a mating view</title>
+<rect x="45" y="716" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="60" cy="730" r="7" class="screw" style="fill:#806700"/>
+<text x="96" y="737" class="pin-label" text-anchor="start" style="fill:#806700">1 · Hotend A LOAD + pin</text>
+</g>
+<g id="sb-HEA-2" data-exterior-contact="HEA.2" data-role="Hotend A SWITCHED − pin" data-source-label="SWITCHED −" data-x="60" data-y="760">
+<title>HEA.2 · Hotend A SWITCHED − pin · proposed carrier contact; not a mating view</title>
+<rect x="45" y="746" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="60" cy="760" r="7" class="screw" style="fill:#a13273"/>
+<text x="96" y="767" class="pin-label" text-anchor="start" style="fill:#a13273">2 · Hotend A SWITCHED − pin</text>
+</g>
+</g>
+<g class="bank" data-exterior-bank="HEB" data-side="west">
+<rect x="80" y="828" width="42" height="74" rx="8" class="connector-shell"/>
+<text x="96" y="821" class="bank-title" text-anchor="start">HOTEND B</text>
+<g id="sb-HEB-1" data-exterior-contact="HEB.1" data-role="Hotend B LOAD + pin" data-source-label="LOAD +" data-x="60" data-y="850">
+<title>HEB.1 · Hotend B LOAD + pin · proposed carrier contact; not a mating view</title>
+<rect x="45" y="836" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="60" cy="850" r="7" class="screw" style="fill:#806700"/>
+<text x="96" y="857" class="pin-label" text-anchor="start" style="fill:#806700">1 · Hotend B LOAD + pin</text>
+</g>
+<g id="sb-HEB-2" data-exterior-contact="HEB.2" data-role="Hotend B SWITCHED − pin" data-source-label="SWITCHED −" data-x="60" data-y="880">
+<title>HEB.2 · Hotend B SWITCHED − pin · proposed carrier contact; not a mating view</title>
+<rect x="45" y="866" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="60" cy="880" r="7" class="screw" style="fill:#a13273"/>
+<text x="96" y="887" class="pin-label" text-anchor="start" style="fill:#a13273">2 · Hotend B SWITCHED − pin</text>
+</g>
+</g>
+<g class="bank" data-exterior-bank="BED" data-side="west">
+<rect x="80" y="948" width="42" height="74" rx="8" class="connector-shell"/>
+<text x="96" y="941" class="bank-title" text-anchor="start">BED SWITCH CONTROL</text>
+<g id="sb-BED-1" data-exterior-contact="BED.1" data-role="Bed switch control CONTROL + pin" data-source-label="CONTROL +" data-x="60" data-y="970">
+<title>BED.1 · Bed switch control CONTROL + pin · proposed carrier contact; not a mating view</title>
+<rect x="45" y="956" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="60" cy="970" r="7" class="screw" style="fill:#806700"/>
+<text x="96" y="977" class="pin-label" text-anchor="start" style="fill:#806700">1 · Bed switch control CONTROL + pin</text>
+</g>
+<g id="sb-BED-2" data-exterior-contact="BED.2" data-role="Bed switch control SWITCHED − pin" data-source-label="SWITCHED −" data-x="60" data-y="1000">
+<title>BED.2 · Bed switch control SWITCHED − pin · proposed carrier contact; not a mating view</title>
+<rect x="45" y="986" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="60" cy="1000" r="7" class="screw" style="fill:#a13273"/>
+<text x="96" y="1007" class="pin-label" text-anchor="start" style="fill:#a13273">2 · Bed switch control SWITCHED − pin</text>
+</g>
+</g>
+<g class="bank" data-exterior-bank="FANA" data-side="west">
+<rect x="80" y="1068" width="42" height="74" rx="8" class="connector-shell"/>
+<text x="96" y="1061" class="bank-title" text-anchor="start">FAN A</text>
+<g id="sb-FANA-1" data-exterior-contact="FANA.1" data-role="Fan A LOAD + pin" data-source-label="LOAD +" data-x="60" data-y="1090">
+<title>FANA.1 · Fan A LOAD + pin · proposed carrier contact; not a mating view</title>
+<rect x="45" y="1076" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="60" cy="1090" r="7" class="screw" style="fill:#806700"/>
+<text x="96" y="1097" class="pin-label" text-anchor="start" style="fill:#806700">1 · Fan A LOAD + pin</text>
+</g>
+<g id="sb-FANA-2" data-exterior-contact="FANA.2" data-role="Fan A SWITCHED − pin" data-source-label="SWITCHED −" data-x="60" data-y="1120">
+<title>FANA.2 · Fan A SWITCHED − pin · proposed carrier contact; not a mating view</title>
+<rect x="45" y="1106" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="60" cy="1120" r="7" class="screw" style="fill:#a13273"/>
+<text x="96" y="1127" class="pin-label" text-anchor="start" style="fill:#a13273">2 · Fan A SWITCHED − pin</text>
+</g>
+</g>
+<g class="bank" data-exterior-bank="FANB" data-side="west">
+<rect x="80" y="1188" width="42" height="74" rx="8" class="connector-shell"/>
+<text x="96" y="1181" class="bank-title" text-anchor="start">FAN B</text>
+<g id="sb-FANB-1" data-exterior-contact="FANB.1" data-role="Fan B LOAD + pin" data-source-label="LOAD +" data-x="60" data-y="1210">
+<title>FANB.1 · Fan B LOAD + pin · proposed carrier contact; not a mating view</title>
+<rect x="45" y="1196" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="60" cy="1210" r="7" class="screw" style="fill:#806700"/>
+<text x="96" y="1217" class="pin-label" text-anchor="start" style="fill:#806700">1 · Fan B LOAD + pin</text>
+</g>
+<g id="sb-FANB-2" data-exterior-contact="FANB.2" data-role="Fan B SWITCHED − pin" data-source-label="SWITCHED −" data-x="60" data-y="1240">
+<title>FANB.2 · Fan B SWITCHED − pin · proposed carrier contact; not a mating view</title>
+<rect x="45" y="1226" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="60" cy="1240" r="7" class="screw" style="fill:#a13273"/>
+<text x="96" y="1247" class="pin-label" text-anchor="start" style="fill:#a13273">2 · Fan B SWITCHED − pin</text>
+</g>
+</g>
+<g class="bank" data-exterior-bank="SSR1" data-side="west">
+<rect x="80" y="1308" width="42" height="74" rx="8" class="connector-shell"/>
+<text x="96" y="1301" class="bank-title" text-anchor="start">SSR 1 CONTROL</text>
+<g id="sb-SSR1-1" data-exterior-contact="SSR1.1" data-role="SSR 1 control 5V SWITCH pin" data-source-label="5V SWITCH" data-x="60" data-y="1330">
+<title>SSR1.1 · SSR 1 control 5V SWITCH pin · proposed carrier contact; not a mating view</title>
+<rect x="45" y="1316" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="60" cy="1330" r="7" class="screw" style="fill:#b85e00"/>
+<text x="96" y="1337" class="pin-label" text-anchor="start" style="fill:#b85e00">1 · SSR 1 control 5V SWITCH pin</text>
+</g>
+<g id="sb-SSR1-2" data-exterior-contact="SSR1.2" data-role="SSR 1 control GND pin" data-source-label="GND" data-x="60" data-y="1360">
+<title>SSR1.2 · SSR 1 control GND pin · proposed carrier contact; not a mating view</title>
+<rect x="45" y="1346" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="60" cy="1360" r="7" class="screw" style="fill:#111717"/>
+<text x="96" y="1367" class="pin-label" text-anchor="start" style="fill:#111717">2 · SSR 1 control GND pin</text>
+</g>
+</g>
+<g class="bank" data-exterior-bank="SSR2" data-side="west">
+<rect x="80" y="1428" width="42" height="74" rx="8" class="connector-shell"/>
+<text x="96" y="1421" class="bank-title" text-anchor="start">SSR 2 CONTROL</text>
+<g id="sb-SSR2-1" data-exterior-contact="SSR2.1" data-role="SSR 2 control 5V SWITCH pin" data-source-label="5V SWITCH" data-x="60" data-y="1450">
+<title>SSR2.1 · SSR 2 control 5V SWITCH pin · proposed carrier contact; not a mating view</title>
+<rect x="45" y="1436" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="60" cy="1450" r="7" class="screw" style="fill:#b85e00"/>
+<text x="96" y="1457" class="pin-label" text-anchor="start" style="fill:#b85e00">1 · SSR 2 control 5V SWITCH pin</text>
+</g>
+<g id="sb-SSR2-2" data-exterior-contact="SSR2.2" data-role="SSR 2 control GND pin" data-source-label="GND" data-x="60" data-y="1480">
+<title>SSR2.2 · SSR 2 control GND pin · proposed carrier contact; not a mating view</title>
+<rect x="45" y="1466" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="60" cy="1480" r="7" class="screw" style="fill:#111717"/>
+<text x="96" y="1487" class="pin-label" text-anchor="start" style="fill:#111717">2 · SSR 2 control GND pin</text>
+</g>
+</g>
+<g class="bank" data-exterior-bank="PWM" data-side="west">
+<rect x="80" y="1548" width="42" height="134" rx="8" class="connector-shell"/>
+<text x="96" y="1541" class="bank-title" text-anchor="start">PWM / LASER CONTROL</text>
+<g id="sb-PWM-1" data-exterior-contact="PWM.1" data-role="PWM / laser control PWM pin" data-source-label="PWM" data-x="60" data-y="1570">
+<title>PWM.1 · PWM / laser control PWM pin · proposed carrier contact; not a mating view</title>
+<rect x="45" y="1556" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="60" cy="1570" r="7" class="screw" style="fill:#6246a3"/>
+<text x="96" y="1577" class="pin-label" text-anchor="start" style="fill:#6246a3">1 · PWM / laser control PWM pin</text>
+</g>
+<g id="sb-PWM-2" data-exterior-contact="PWM.2" data-role="PWM / laser control TTL pin" data-source-label="TTL" data-x="60" data-y="1600">
+<title>PWM.2 · PWM / laser control TTL pin · proposed carrier contact; not a mating view</title>
+<rect x="45" y="1586" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="60" cy="1600" r="7" class="screw" style="fill:#6246a3"/>
+<text x="96" y="1607" class="pin-label" text-anchor="start" style="fill:#6246a3">2 · PWM / laser control TTL pin</text>
+</g>
+<g id="sb-PWM-3" data-exterior-contact="PWM.3" data-role="PWM / laser control GND pin" data-source-label="GND" data-x="60" data-y="1630">
+<title>PWM.3 · PWM / laser control GND pin · proposed carrier contact; not a mating view</title>
+<rect x="45" y="1616" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="60" cy="1630" r="7" class="screw" style="fill:#111717"/>
+<text x="96" y="1637" class="pin-label" text-anchor="start" style="fill:#111717">3 · PWM / laser control GND pin</text>
+</g>
+<g id="sb-PWM-4" data-exterior-contact="PWM.4" data-role="PWM / laser control 5V LIMITED pin" data-source-label="5V LIMITED" data-x="60" data-y="1660">
+<title>PWM.4 · PWM / laser control 5V LIMITED pin · proposed carrier contact; not a mating view</title>
+<rect x="45" y="1646" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="60" cy="1660" r="7" class="screw" style="fill:#b85e00"/>
+<text x="96" y="1667" class="pin-label" text-anchor="start" style="fill:#b85e00">4 · PWM / laser control 5V LIMITED pin</text>
+</g>
+</g>
+<g class="bank" data-exterior-bank="DRVX" data-side="south">
+<rect x="210" y="2098" width="300" height="42" rx="8" class="connector-shell"/>
+<text x="360" y="1795" class="bank-title" text-anchor="middle">MOTOR CONTROL X</text>
+<text x="360" y="1819" class="small" text-anchor="middle">CONTROL TO EXTERNAL DRIVER</text>
+<g id="sb-DRVX-1" data-exterior-contact="DRVX.1" data-role="X axis step pin" data-source-label="STEP" data-x="240" data-y="2160">
+<title>DRVX.1 · X axis step pin · proposed carrier contact; not a mating view</title>
+<rect x="225" y="2146" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="240" cy="2160" r="7" class="screw" style="fill:#136da7"/>
+<text x="240" y="2140" class="pin-number" text-anchor="middle">1</text>
+<text x="240" y="2110" transform="rotate(-90 240 2110)" class="pin-label" style="fill:#136da7">X axis step pin</text>
+</g>
+<g id="sb-DRVX-2" data-exterior-contact="DRVX.2" data-role="X axis step return GND pin" data-source-label="GND" data-x="288" data-y="2160">
+<title>DRVX.2 · X axis step return GND pin · proposed carrier contact; not a mating view</title>
+<rect x="273" y="2146" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="288" cy="2160" r="7" class="screw" style="fill:#111717"/>
+<text x="288" y="2140" class="pin-number" text-anchor="middle">2</text>
+<text x="288" y="2110" transform="rotate(-90 288 2110)" class="pin-label" style="fill:#111717">X axis step return GND pin</text>
+</g>
+<g id="sb-DRVX-3" data-exterior-contact="DRVX.3" data-role="X axis direction pin" data-source-label="DIR" data-x="336" data-y="2160">
+<title>DRVX.3 · X axis direction pin · proposed carrier contact; not a mating view</title>
+<rect x="321" y="2146" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="336" cy="2160" r="7" class="screw" style="fill:#7443a4"/>
+<text x="336" y="2140" class="pin-number" text-anchor="middle">3</text>
+<text x="336" y="2110" transform="rotate(-90 336 2110)" class="pin-label" style="fill:#7443a4">X axis direction pin</text>
+</g>
+<g id="sb-DRVX-4" data-exterior-contact="DRVX.4" data-role="X axis direction return GND pin" data-source-label="GND" data-x="384" data-y="2160">
+<title>DRVX.4 · X axis direction return GND pin · proposed carrier contact; not a mating view</title>
+<rect x="369" y="2146" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="384" cy="2160" r="7" class="screw" style="fill:#111717"/>
+<text x="384" y="2140" class="pin-number" text-anchor="middle">4</text>
+<text x="384" y="2110" transform="rotate(-90 384 2110)" class="pin-label" style="fill:#111717">X axis direction return GND pin</text>
+</g>
+<g id="sb-DRVX-5" data-exterior-contact="DRVX.5" data-role="X axis enable pin" data-source-label="ENABLE" data-x="432" data-y="2160">
+<title>DRVX.5 · X axis enable pin · proposed carrier contact; not a mating view</title>
+<rect x="417" y="2146" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="432" cy="2160" r="7" class="screw" style="fill:#087b60"/>
+<text x="432" y="2140" class="pin-number" text-anchor="middle">5</text>
+<text x="432" y="2110" transform="rotate(-90 432 2110)" class="pin-label" style="fill:#087b60">X axis enable pin</text>
+</g>
+<g id="sb-DRVX-6" data-exterior-contact="DRVX.6" data-role="X axis enable return GND pin" data-source-label="GND" data-x="480" data-y="2160">
+<title>DRVX.6 · X axis enable return GND pin · proposed carrier contact; not a mating view</title>
+<rect x="465" y="2146" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="480" cy="2160" r="7" class="screw" style="fill:#111717"/>
+<text x="480" y="2140" class="pin-number" text-anchor="middle">6</text>
+<text x="480" y="2110" transform="rotate(-90 480 2110)" class="pin-label" style="fill:#111717">X axis enable return GND pin</text>
+</g>
+</g>
+<g class="bank" data-exterior-bank="DRVY" data-side="south">
+<rect x="630" y="2098" width="300" height="42" rx="8" class="connector-shell"/>
+<text x="780" y="1795" class="bank-title" text-anchor="middle">MOTOR CONTROL Y</text>
+<text x="780" y="1819" class="small" text-anchor="middle">CONTROL TO EXTERNAL DRIVER</text>
+<g id="sb-DRVY-1" data-exterior-contact="DRVY.1" data-role="Y axis step pin" data-source-label="STEP" data-x="660" data-y="2160">
+<title>DRVY.1 · Y axis step pin · proposed carrier contact; not a mating view</title>
+<rect x="645" y="2146" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="660" cy="2160" r="7" class="screw" style="fill:#136da7"/>
+<text x="660" y="2140" class="pin-number" text-anchor="middle">1</text>
+<text x="660" y="2110" transform="rotate(-90 660 2110)" class="pin-label" style="fill:#136da7">Y axis step pin</text>
+</g>
+<g id="sb-DRVY-2" data-exterior-contact="DRVY.2" data-role="Y axis step return GND pin" data-source-label="GND" data-x="708" data-y="2160">
+<title>DRVY.2 · Y axis step return GND pin · proposed carrier contact; not a mating view</title>
+<rect x="693" y="2146" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="708" cy="2160" r="7" class="screw" style="fill:#111717"/>
+<text x="708" y="2140" class="pin-number" text-anchor="middle">2</text>
+<text x="708" y="2110" transform="rotate(-90 708 2110)" class="pin-label" style="fill:#111717">Y axis step return GND pin</text>
+</g>
+<g id="sb-DRVY-3" data-exterior-contact="DRVY.3" data-role="Y axis direction pin" data-source-label="DIR" data-x="756" data-y="2160">
+<title>DRVY.3 · Y axis direction pin · proposed carrier contact; not a mating view</title>
+<rect x="741" y="2146" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="756" cy="2160" r="7" class="screw" style="fill:#7443a4"/>
+<text x="756" y="2140" class="pin-number" text-anchor="middle">3</text>
+<text x="756" y="2110" transform="rotate(-90 756 2110)" class="pin-label" style="fill:#7443a4">Y axis direction pin</text>
+</g>
+<g id="sb-DRVY-4" data-exterior-contact="DRVY.4" data-role="Y axis direction return GND pin" data-source-label="GND" data-x="804" data-y="2160">
+<title>DRVY.4 · Y axis direction return GND pin · proposed carrier contact; not a mating view</title>
+<rect x="789" y="2146" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="804" cy="2160" r="7" class="screw" style="fill:#111717"/>
+<text x="804" y="2140" class="pin-number" text-anchor="middle">4</text>
+<text x="804" y="2110" transform="rotate(-90 804 2110)" class="pin-label" style="fill:#111717">Y axis direction return GND pin</text>
+</g>
+<g id="sb-DRVY-5" data-exterior-contact="DRVY.5" data-role="Y axis enable pin" data-source-label="ENABLE" data-x="852" data-y="2160">
+<title>DRVY.5 · Y axis enable pin · proposed carrier contact; not a mating view</title>
+<rect x="837" y="2146" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="852" cy="2160" r="7" class="screw" style="fill:#087b60"/>
+<text x="852" y="2140" class="pin-number" text-anchor="middle">5</text>
+<text x="852" y="2110" transform="rotate(-90 852 2110)" class="pin-label" style="fill:#087b60">Y axis enable pin</text>
+</g>
+<g id="sb-DRVY-6" data-exterior-contact="DRVY.6" data-role="Y axis enable return GND pin" data-source-label="GND" data-x="900" data-y="2160">
+<title>DRVY.6 · Y axis enable return GND pin · proposed carrier contact; not a mating view</title>
+<rect x="885" y="2146" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="900" cy="2160" r="7" class="screw" style="fill:#111717"/>
+<text x="900" y="2140" class="pin-number" text-anchor="middle">6</text>
+<text x="900" y="2110" transform="rotate(-90 900 2110)" class="pin-label" style="fill:#111717">Y axis enable return GND pin</text>
+</g>
+</g>
+<g class="bank" data-exterior-bank="DRVZ" data-side="south">
+<rect x="1050" y="2098" width="300" height="42" rx="8" class="connector-shell"/>
+<text x="1200" y="1795" class="bank-title" text-anchor="middle">MOTOR CONTROL Z</text>
+<text x="1200" y="1819" class="small" text-anchor="middle">CONTROL TO EXTERNAL DRIVER</text>
+<g id="sb-DRVZ-1" data-exterior-contact="DRVZ.1" data-role="Z axis step pin" data-source-label="STEP" data-x="1080" data-y="2160">
+<title>DRVZ.1 · Z axis step pin · proposed carrier contact; not a mating view</title>
+<rect x="1065" y="2146" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="1080" cy="2160" r="7" class="screw" style="fill:#136da7"/>
+<text x="1080" y="2140" class="pin-number" text-anchor="middle">1</text>
+<text x="1080" y="2110" transform="rotate(-90 1080 2110)" class="pin-label" style="fill:#136da7">Z axis step pin</text>
+</g>
+<g id="sb-DRVZ-2" data-exterior-contact="DRVZ.2" data-role="Z axis step return GND pin" data-source-label="GND" data-x="1128" data-y="2160">
+<title>DRVZ.2 · Z axis step return GND pin · proposed carrier contact; not a mating view</title>
+<rect x="1113" y="2146" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="1128" cy="2160" r="7" class="screw" style="fill:#111717"/>
+<text x="1128" y="2140" class="pin-number" text-anchor="middle">2</text>
+<text x="1128" y="2110" transform="rotate(-90 1128 2110)" class="pin-label" style="fill:#111717">Z axis step return GND pin</text>
+</g>
+<g id="sb-DRVZ-3" data-exterior-contact="DRVZ.3" data-role="Z axis direction pin" data-source-label="DIR" data-x="1176" data-y="2160">
+<title>DRVZ.3 · Z axis direction pin · proposed carrier contact; not a mating view</title>
+<rect x="1161" y="2146" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="1176" cy="2160" r="7" class="screw" style="fill:#7443a4"/>
+<text x="1176" y="2140" class="pin-number" text-anchor="middle">3</text>
+<text x="1176" y="2110" transform="rotate(-90 1176 2110)" class="pin-label" style="fill:#7443a4">Z axis direction pin</text>
+</g>
+<g id="sb-DRVZ-4" data-exterior-contact="DRVZ.4" data-role="Z axis direction return GND pin" data-source-label="GND" data-x="1224" data-y="2160">
+<title>DRVZ.4 · Z axis direction return GND pin · proposed carrier contact; not a mating view</title>
+<rect x="1209" y="2146" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="1224" cy="2160" r="7" class="screw" style="fill:#111717"/>
+<text x="1224" y="2140" class="pin-number" text-anchor="middle">4</text>
+<text x="1224" y="2110" transform="rotate(-90 1224 2110)" class="pin-label" style="fill:#111717">Z axis direction return GND pin</text>
+</g>
+<g id="sb-DRVZ-5" data-exterior-contact="DRVZ.5" data-role="Z axis enable pin" data-source-label="ENABLE" data-x="1272" data-y="2160">
+<title>DRVZ.5 · Z axis enable pin · proposed carrier contact; not a mating view</title>
+<rect x="1257" y="2146" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="1272" cy="2160" r="7" class="screw" style="fill:#087b60"/>
+<text x="1272" y="2140" class="pin-number" text-anchor="middle">5</text>
+<text x="1272" y="2110" transform="rotate(-90 1272 2110)" class="pin-label" style="fill:#087b60">Z axis enable pin</text>
+</g>
+<g id="sb-DRVZ-6" data-exterior-contact="DRVZ.6" data-role="Z axis enable return GND pin" data-source-label="GND" data-x="1320" data-y="2160">
+<title>DRVZ.6 · Z axis enable return GND pin · proposed carrier contact; not a mating view</title>
+<rect x="1305" y="2146" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="1320" cy="2160" r="7" class="screw" style="fill:#111717"/>
+<text x="1320" y="2140" class="pin-number" text-anchor="middle">6</text>
+<text x="1320" y="2110" transform="rotate(-90 1320 2110)" class="pin-label" style="fill:#111717">Z axis enable return GND pin</text>
+</g>
+</g>
+<g class="bank" data-exterior-bank="DRVA" data-side="south">
+<rect x="1470" y="2098" width="300" height="42" rx="8" class="connector-shell"/>
+<text x="1620" y="1795" class="bank-title" text-anchor="middle">MOTOR CONTROL A</text>
+<text x="1620" y="1819" class="small" text-anchor="middle">CONTROL TO EXTERNAL DRIVER</text>
+<g id="sb-DRVA-1" data-exterior-contact="DRVA.1" data-role="A axis step pin" data-source-label="STEP" data-x="1500" data-y="2160">
+<title>DRVA.1 · A axis step pin · proposed carrier contact; not a mating view</title>
+<rect x="1485" y="2146" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="1500" cy="2160" r="7" class="screw" style="fill:#136da7"/>
+<text x="1500" y="2140" class="pin-number" text-anchor="middle">1</text>
+<text x="1500" y="2110" transform="rotate(-90 1500 2110)" class="pin-label" style="fill:#136da7">A axis step pin</text>
+</g>
+<g id="sb-DRVA-2" data-exterior-contact="DRVA.2" data-role="A axis step return GND pin" data-source-label="GND" data-x="1548" data-y="2160">
+<title>DRVA.2 · A axis step return GND pin · proposed carrier contact; not a mating view</title>
+<rect x="1533" y="2146" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="1548" cy="2160" r="7" class="screw" style="fill:#111717"/>
+<text x="1548" y="2140" class="pin-number" text-anchor="middle">2</text>
+<text x="1548" y="2110" transform="rotate(-90 1548 2110)" class="pin-label" style="fill:#111717">A axis step return GND pin</text>
+</g>
+<g id="sb-DRVA-3" data-exterior-contact="DRVA.3" data-role="A axis direction pin" data-source-label="DIR" data-x="1596" data-y="2160">
+<title>DRVA.3 · A axis direction pin · proposed carrier contact; not a mating view</title>
+<rect x="1581" y="2146" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="1596" cy="2160" r="7" class="screw" style="fill:#7443a4"/>
+<text x="1596" y="2140" class="pin-number" text-anchor="middle">3</text>
+<text x="1596" y="2110" transform="rotate(-90 1596 2110)" class="pin-label" style="fill:#7443a4">A axis direction pin</text>
+</g>
+<g id="sb-DRVA-4" data-exterior-contact="DRVA.4" data-role="A axis direction return GND pin" data-source-label="GND" data-x="1644" data-y="2160">
+<title>DRVA.4 · A axis direction return GND pin · proposed carrier contact; not a mating view</title>
+<rect x="1629" y="2146" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="1644" cy="2160" r="7" class="screw" style="fill:#111717"/>
+<text x="1644" y="2140" class="pin-number" text-anchor="middle">4</text>
+<text x="1644" y="2110" transform="rotate(-90 1644 2110)" class="pin-label" style="fill:#111717">A axis direction return GND pin</text>
+</g>
+<g id="sb-DRVA-5" data-exterior-contact="DRVA.5" data-role="A axis enable pin" data-source-label="ENABLE" data-x="1692" data-y="2160">
+<title>DRVA.5 · A axis enable pin · proposed carrier contact; not a mating view</title>
+<rect x="1677" y="2146" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="1692" cy="2160" r="7" class="screw" style="fill:#087b60"/>
+<text x="1692" y="2140" class="pin-number" text-anchor="middle">5</text>
+<text x="1692" y="2110" transform="rotate(-90 1692 2110)" class="pin-label" style="fill:#087b60">A axis enable pin</text>
+</g>
+<g id="sb-DRVA-6" data-exterior-contact="DRVA.6" data-role="A axis enable return GND pin" data-source-label="GND" data-x="1740" data-y="2160">
+<title>DRVA.6 · A axis enable return GND pin · proposed carrier contact; not a mating view</title>
+<rect x="1725" y="2146" width="30" height="28" rx="4" class="terminal"/>
+<circle cx="1740" cy="2160" r="7" class="screw" style="fill:#111717"/>
+<text x="1740" y="2140" class="pin-number" text-anchor="middle">6</text>
+<text x="1740" y="2110" transform="rotate(-90 1740 2110)" class="pin-label" style="fill:#111717">A axis enable return GND pin</text>
+</g>
+</g>
+<g data-service-port="USB DEVICE"><title>USB DEVICE · separate service port; no machine route specified</title>
+<rect x="829" y="342" width="102" height="38" rx="5" class="service"/>
+<text x="880" y="322" class="service-label" text-anchor="middle">USB DEVICE</text></g>
+<g data-service-port="USB HOST"><title>USB HOST · separate service port; no machine route specified</title>
+<rect x="979" y="342" width="102" height="38" rx="5" class="service"/>
+<text x="1030" y="322" class="service-label" text-anchor="middle">USB HOST</text></g>
+<g data-service-port="ETHERNET"><title>ETHERNET · separate service port; no machine route specified</title>
+<rect x="1129" y="342" width="102" height="38" rx="5" class="service"/>
+<text x="1180" y="322" class="service-label" text-anchor="middle">ETHERNET</text></g>
+<g data-service-port="microSD"><title>microSD · separate service port; no machine route specified</title>
+<rect x="1279" y="342" width="102" height="38" rx="5" class="service"/>
+<text x="1330" y="322" class="service-label" text-anchor="middle">microSD</text></g>
+<text x="960" y="1025" class="case-title" text-anchor="middle">SMOOTHIEBOX</text>
+<text x="960" y="1070" class="case-note" text-anchor="middle">EXTERIOR CONTACT STUDY</text>
+<text x="960" y="1108" class="case-note" text-anchor="middle">82 proposed contacts · 24 banks · 4 service ports</text>
+<text x="960" y="1146" class="case-note" text-anchor="middle">Chapter 18 functional groups; illustrative layout</text>
+<text x="960" y="1184" class="case-note" text-anchor="middle">52 source positions · 0 dotted function candidates</text>
+<text x="960" y="1222" class="case-note" text-anchor="middle">52 source-reference positions; only explicit dotted guesses are routed</text>
+<text x="960" y="1260" class="case-note" text-anchor="middle">NO INSTALLED SMOOTHIEBOX WIRING ESTABLISHED</text>
+<text x="960" y="1298" class="case-note" text-anchor="middle">No Core board, internal driver or safety circuit is depicted.</text>
+<text x="960" y="1336" class="case-note" text-anchor="middle">Rail selection, ratings, returns and fitted carrier remain unqualified.</text>
+</g>
+<g class="peripheral" data-machine-peripheral="3018-PROVer V2 Y motor socket · former-controller winding output" data-evidence-kind="reference" data-connector-id="ref-prover-v2-ymotor" data-connector-form="source-described">
+<title>3018-PROVer V2 Y motor socket · former-controller winding output · 3018-PROVer V2 manufacturer manual v1.0 September 2022 and hosted GC3D3-V4.3 example review; installed subrevision unverified · Manual printed pp. 16, 19 shows four-wire/position motor sockets after on-board drivers. Fitted cable and SmoothieBox driver qualification OPEN.</title>
+<rect x="2220" y="360" width="1340" height="480" rx="12" class="peripheral-card"/>
+<rect x="2220" y="360" width="10" height="480" rx="5" class="peripheral-accent-reference"/>
+<text x="2244" y="390" class="evidence-label">SOURCE REFERENCE ONLY · INSTALLED REVISION NOT ESTABLISHED</text>
+<rect x="3318" y="374" width="218" height="30" rx="15" class="connector-badge"/>
+<text x="3427" y="395" class="connector-badge-text" text-anchor="middle">MACHINE INTERFACE</text>
+<text x="2244" y="427" class="peripheral-name" text-anchor="start">3018-PROVer V2 Y motor socket · former-controller winding output</text>
+<text x="2244" y="461" class="source-line" text-anchor="start">3018-PROVer V2 manufacturer manual v1.0 September 2022 and hosted GC3D3-V4.3 example review; installed</text>
+<text x="2244" y="484" class="source-line" text-anchor="start">subrevision unverified · Manual printed pp. 16, 19 shows four-wire/position motor sockets after on-board</text>
+<text x="2244" y="507" class="source-line" text-anchor="start">drivers. Fitted cable and SmoothieBox driver qualification OPEN.</text>
+<text x="2244" y="530" class="source-line" text-anchor="start">1–4 enumerate board-view positions; motor-end cavity and coil phase mapping unknown</text>
+<text x="2244" y="554" class="small">MACHINE INTERFACE · EXPANDED SOURCE-ORDER CONTACTS, NOT PHYSICAL PIN-ROW GEOMETRY</text>
+<g id="machine-p001-c001" data-machine-contact="1" data-contact-mark="1" data-contact-fact="source" data-route-state="open" data-x="2220" data-y="576">
+<title>3018-PROVer V2 Y motor socket · former-controller winding output · source position 1 · Y motor output position 1 · role unverified · </title>
+<circle cx="2220" cy="576" r="8" class="open-socket"/>
+<rect x="2236" y="559" width="90" height="30" rx="8" class="number-pill"/>
+<text x="2281" y="581" class="number-text" text-anchor="middle">1</text>
+<text x="2340" y="581" class="machine-contact" text-anchor="start">Y motor output position 1 · role unverified</text>
+<text x="2340" y="608" class="open-status" text-anchor="start">OPEN · no SmoothieBox route selected</text>
+</g>
+<g id="machine-p001-c002" data-machine-contact="2" data-contact-mark="2" data-contact-fact="source" data-route-state="open" data-x="2220" data-y="641">
+<title>3018-PROVer V2 Y motor socket · former-controller winding output · source position 2 · Y motor output position 2 · role unverified · </title>
+<circle cx="2220" cy="641" r="8" class="open-socket"/>
+<rect x="2236" y="624" width="90" height="30" rx="8" class="number-pill"/>
+<text x="2281" y="646" class="number-text" text-anchor="middle">2</text>
+<text x="2340" y="646" class="machine-contact" text-anchor="start">Y motor output position 2 · role unverified</text>
+<text x="2340" y="673" class="open-status" text-anchor="start">OPEN · no SmoothieBox route selected</text>
+</g>
+<g id="machine-p001-c003" data-machine-contact="3" data-contact-mark="3" data-contact-fact="source" data-route-state="open" data-x="2220" data-y="706">
+<title>3018-PROVer V2 Y motor socket · former-controller winding output · source position 3 · Y motor output position 3 · role unverified · </title>
+<circle cx="2220" cy="706" r="8" class="open-socket"/>
+<rect x="2236" y="689" width="90" height="30" rx="8" class="number-pill"/>
+<text x="2281" y="711" class="number-text" text-anchor="middle">3</text>
+<text x="2340" y="711" class="machine-contact" text-anchor="start">Y motor output position 3 · role unverified</text>
+<text x="2340" y="738" class="open-status" text-anchor="start">OPEN · no SmoothieBox route selected</text>
+</g>
+<g id="machine-p001-c004" data-machine-contact="4" data-contact-mark="4" data-contact-fact="source" data-route-state="open" data-x="2220" data-y="771">
+<title>3018-PROVer V2 Y motor socket · former-controller winding output · source position 4 · Y motor output position 4 · role unverified · </title>
+<circle cx="2220" cy="771" r="8" class="open-socket"/>
+<rect x="2236" y="754" width="90" height="30" rx="8" class="number-pill"/>
+<text x="2281" y="776" class="number-text" text-anchor="middle">4</text>
+<text x="2340" y="776" class="machine-contact" text-anchor="start">Y motor output position 4 · role unverified</text>
+<text x="2340" y="803" class="open-status" text-anchor="start">OPEN · no SmoothieBox route selected</text>
+</g>
+</g>
+<g class="peripheral" data-machine-peripheral="3018-PROVer V2 Y limit board socket A · former-controller input" data-evidence-kind="reference" data-connector-id="ref-prover-v2-ylimit-a" data-connector-form="source-described">
+<title>3018-PROVer V2 Y limit board socket A · former-controller input · 3018-PROVer V2 manufacturer manual v1.0 September 2022 and hosted GC3D3-V4.3 example review; installed subrevision unverified · Manual printed pp. 16, 19 shows three-wire Y cable and paired X/Y/Z board sockets. Hosted review observed only one occupied socket per axis with switches in parallel; which socket, pin roles and fitted topology OPEN.</title>
+<rect x="3596" y="360" width="1340" height="461" rx="12" class="peripheral-card"/>
+<rect x="3596" y="360" width="10" height="461" rx="5" class="peripheral-accent-reference"/>
+<text x="3620" y="390" class="evidence-label">SOURCE REFERENCE ONLY · INSTALLED REVISION NOT ESTABLISHED</text>
+<rect x="4694" y="374" width="218" height="30" rx="15" class="connector-badge"/>
+<text x="4803" y="395" class="connector-badge-text" text-anchor="middle">MACHINE INTERFACE</text>
+<text x="3620" y="427" class="peripheral-name" text-anchor="start">3018-PROVer V2 Y limit board socket A · former-controller input</text>
+<text x="3620" y="461" class="source-line" text-anchor="start">3018-PROVer V2 manufacturer manual v1.0 September 2022 and hosted GC3D3-V4.3 example review; installed</text>
+<text x="3620" y="484" class="source-line" text-anchor="start">subrevision unverified · Manual printed pp. 16, 19 shows three-wire Y cable and paired X/Y/Z board</text>
+<text x="3620" y="507" class="source-line" text-anchor="start">sockets. Hosted review observed only one occupied socket per axis with switches in parallel; which</text>
+<text x="3620" y="530" class="source-line" text-anchor="start">socket, pin roles and fitted topology OPEN.</text>
+<text x="3620" y="553" class="source-line" text-anchor="start">A/B distinguish the two source-drawn housings on one axis; 1–3 enumerate positions, not cavity numbers or</text>
+<text x="3620" y="576" class="source-line" text-anchor="start">min/max assignments</text>
+<text x="3620" y="600" class="small">MACHINE INTERFACE · EXPANDED SOURCE-ORDER CONTACTS, NOT PHYSICAL PIN-ROW GEOMETRY</text>
+<g id="machine-p002-c001" data-machine-contact="1" data-contact-mark="1" data-contact-fact="source" data-route-state="open" data-x="3596" data-y="622">
+<title>3018-PROVer V2 Y limit board socket A · former-controller input · source position 1 · Y limit A position 1 · role unverified · </title>
+<circle cx="3596" cy="622" r="8" class="open-socket"/>
+<rect x="3612" y="605" width="90" height="30" rx="8" class="number-pill"/>
+<text x="3657" y="627" class="number-text" text-anchor="middle">1</text>
+<text x="3716" y="627" class="machine-contact" text-anchor="start">Y limit A position 1 · role unverified</text>
+<text x="3716" y="654" class="open-status" text-anchor="start">OPEN · no SmoothieBox route selected</text>
+</g>
+<g id="machine-p002-c002" data-machine-contact="2" data-contact-mark="2" data-contact-fact="source" data-route-state="open" data-x="3596" data-y="687">
+<title>3018-PROVer V2 Y limit board socket A · former-controller input · source position 2 · Y limit A position 2 · role unverified · </title>
+<circle cx="3596" cy="687" r="8" class="open-socket"/>
+<rect x="3612" y="670" width="90" height="30" rx="8" class="number-pill"/>
+<text x="3657" y="692" class="number-text" text-anchor="middle">2</text>
+<text x="3716" y="692" class="machine-contact" text-anchor="start">Y limit A position 2 · role unverified</text>
+<text x="3716" y="719" class="open-status" text-anchor="start">OPEN · no SmoothieBox route selected</text>
+</g>
+<g id="machine-p002-c003" data-machine-contact="3" data-contact-mark="3" data-contact-fact="source" data-route-state="open" data-x="3596" data-y="752">
+<title>3018-PROVer V2 Y limit board socket A · former-controller input · source position 3 · Y limit A position 3 · role unverified · </title>
+<circle cx="3596" cy="752" r="8" class="open-socket"/>
+<rect x="3612" y="735" width="90" height="30" rx="8" class="number-pill"/>
+<text x="3657" y="757" class="number-text" text-anchor="middle">3</text>
+<text x="3716" y="757" class="machine-contact" text-anchor="start">Y limit A position 3 · role unverified</text>
+<text x="3716" y="784" class="open-status" text-anchor="start">OPEN · no SmoothieBox route selected</text>
+</g>
+</g>
+<g class="peripheral" data-machine-peripheral="3018-PROVer V2 DC spindle motor lead pair · manual reference" data-evidence-kind="reference" data-connector-id="ref-prover-v2-spindle" data-connector-form="source-described">
+<title>3018-PROVer V2 DC spindle motor lead pair · manual reference · 3018-PROVer V2 manufacturer manual v1.0 September 2022 and hosted GC3D3-V4.3 example review; installed subrevision unverified · Manual printed p. 15 identifies motor red positive and black negative. Motor power stage, protection and direct SmoothieBox connection unqualified; OPEN.</title>
+<rect x="3596" y="853" width="1340" height="350" rx="12" class="peripheral-card"/>
+<rect x="3596" y="853" width="10" height="350" rx="5" class="peripheral-accent-reference"/>
+<text x="3620" y="883" class="evidence-label">SOURCE REFERENCE ONLY · INSTALLED REVISION NOT ESTABLISHED</text>
+<rect x="4694" y="867" width="218" height="30" rx="15" class="connector-badge"/>
+<text x="4803" y="888" class="connector-badge-text" text-anchor="middle">MACHINE INTERFACE</text>
+<text x="3620" y="920" class="peripheral-name" text-anchor="start">3018-PROVer V2 DC spindle motor lead pair · manual reference</text>
+<text x="3620" y="954" class="source-line" text-anchor="start">3018-PROVer V2 manufacturer manual v1.0 September 2022 and hosted GC3D3-V4.3 example review; installed</text>
+<text x="3620" y="977" class="source-line" text-anchor="start">subrevision unverified · Manual printed p. 15 identifies motor red positive and black negative. Motor</text>
+<text x="3620" y="1000" class="source-line" text-anchor="start">power stage, protection and direct SmoothieBox connection unqualified; OPEN.</text>
+<text x="3620" y="1023" class="source-line" text-anchor="start">RED/BLACK are conductor colours, not cavity numbers</text>
+<text x="3620" y="1047" class="small">MACHINE INTERFACE · EXPANDED SOURCE-ORDER CONTACTS, NOT PHYSICAL PIN-ROW GEOMETRY</text>
+<g id="machine-p003-c001" data-machine-contact="RED" data-contact-mark="RED" data-contact-fact="source" data-route-state="open" data-x="3596" data-y="1069">
+<title>3018-PROVer V2 DC spindle motor lead pair · manual reference · source position RED · Spindle motor red conductor · positive · </title>
+<circle cx="3596" cy="1069" r="8" class="open-socket"/>
+<rect x="3612" y="1052" width="90" height="30" rx="8" class="number-pill"/>
+<text x="3657" y="1074" class="number-text" text-anchor="middle">RED</text>
+<text x="3716" y="1074" class="machine-contact" text-anchor="start">Spindle motor red conductor · positive</text>
+<text x="3716" y="1101" class="open-status" text-anchor="start">OPEN · no SmoothieBox route selected</text>
+</g>
+<g id="machine-p003-c002" data-machine-contact="BLACK" data-contact-mark="BLACK" data-contact-fact="source" data-route-state="open" data-x="3596" data-y="1134">
+<title>3018-PROVer V2 DC spindle motor lead pair · manual reference · source position BLACK · Spindle motor black conductor · negative · </title>
+<circle cx="3596" cy="1134" r="8" class="open-socket"/>
+<rect x="3612" y="1117" width="90" height="30" rx="8" class="number-pill"/>
+<text x="3657" y="1139" class="number-text" text-anchor="middle">BLACK</text>
+<text x="3716" y="1139" class="machine-contact" text-anchor="start">Spindle motor black conductor · negative</text>
+<text x="3716" y="1166" class="open-status" text-anchor="start">OPEN · no SmoothieBox route selected</text>
+</g>
+</g>
+<g class="peripheral" data-machine-peripheral="3018-PROVer V2 X motor socket · former-controller winding output" data-evidence-kind="reference" data-connector-id="ref-prover-v2-xmotor" data-connector-form="source-described">
+<title>3018-PROVer V2 X motor socket · former-controller winding output · 3018-PROVer V2 manufacturer manual v1.0 September 2022 and hosted GC3D3-V4.3 example review; installed subrevision unverified · Manual printed pp. 16, 19 shows four-wire/position motor sockets after on-board drivers. Fitted cable and SmoothieBox driver qualification OPEN.</title>
+<rect x="2220" y="872" width="1340" height="480" rx="12" class="peripheral-card"/>
+<rect x="2220" y="872" width="10" height="480" rx="5" class="peripheral-accent-reference"/>
+<text x="2244" y="902" class="evidence-label">SOURCE REFERENCE ONLY · INSTALLED REVISION NOT ESTABLISHED</text>
+<rect x="3318" y="886" width="218" height="30" rx="15" class="connector-badge"/>
+<text x="3427" y="907" class="connector-badge-text" text-anchor="middle">MACHINE INTERFACE</text>
+<text x="2244" y="939" class="peripheral-name" text-anchor="start">3018-PROVer V2 X motor socket · former-controller winding output</text>
+<text x="2244" y="973" class="source-line" text-anchor="start">3018-PROVer V2 manufacturer manual v1.0 September 2022 and hosted GC3D3-V4.3 example review; installed</text>
+<text x="2244" y="996" class="source-line" text-anchor="start">subrevision unverified · Manual printed pp. 16, 19 shows four-wire/position motor sockets after on-board</text>
+<text x="2244" y="1019" class="source-line" text-anchor="start">drivers. Fitted cable and SmoothieBox driver qualification OPEN.</text>
+<text x="2244" y="1042" class="source-line" text-anchor="start">1–4 enumerate board-view positions; motor-end cavity and coil phase mapping unknown</text>
+<text x="2244" y="1066" class="small">MACHINE INTERFACE · EXPANDED SOURCE-ORDER CONTACTS, NOT PHYSICAL PIN-ROW GEOMETRY</text>
+<g id="machine-p004-c001" data-machine-contact="1" data-contact-mark="1" data-contact-fact="source" data-route-state="open" data-x="2220" data-y="1088">
+<title>3018-PROVer V2 X motor socket · former-controller winding output · source position 1 · X motor output position 1 · role unverified · </title>
+<circle cx="2220" cy="1088" r="8" class="open-socket"/>
+<rect x="2236" y="1071" width="90" height="30" rx="8" class="number-pill"/>
+<text x="2281" y="1093" class="number-text" text-anchor="middle">1</text>
+<text x="2340" y="1093" class="machine-contact" text-anchor="start">X motor output position 1 · role unverified</text>
+<text x="2340" y="1120" class="open-status" text-anchor="start">OPEN · no SmoothieBox route selected</text>
+</g>
+<g id="machine-p004-c002" data-machine-contact="2" data-contact-mark="2" data-contact-fact="source" data-route-state="open" data-x="2220" data-y="1153">
+<title>3018-PROVer V2 X motor socket · former-controller winding output · source position 2 · X motor output position 2 · role unverified · </title>
+<circle cx="2220" cy="1153" r="8" class="open-socket"/>
+<rect x="2236" y="1136" width="90" height="30" rx="8" class="number-pill"/>
+<text x="2281" y="1158" class="number-text" text-anchor="middle">2</text>
+<text x="2340" y="1158" class="machine-contact" text-anchor="start">X motor output position 2 · role unverified</text>
+<text x="2340" y="1185" class="open-status" text-anchor="start">OPEN · no SmoothieBox route selected</text>
+</g>
+<g id="machine-p004-c003" data-machine-contact="3" data-contact-mark="3" data-contact-fact="source" data-route-state="open" data-x="2220" data-y="1218">
+<title>3018-PROVer V2 X motor socket · former-controller winding output · source position 3 · X motor output position 3 · role unverified · </title>
+<circle cx="2220" cy="1218" r="8" class="open-socket"/>
+<rect x="2236" y="1201" width="90" height="30" rx="8" class="number-pill"/>
+<text x="2281" y="1223" class="number-text" text-anchor="middle">3</text>
+<text x="2340" y="1223" class="machine-contact" text-anchor="start">X motor output position 3 · role unverified</text>
+<text x="2340" y="1250" class="open-status" text-anchor="start">OPEN · no SmoothieBox route selected</text>
+</g>
+<g id="machine-p004-c004" data-machine-contact="4" data-contact-mark="4" data-contact-fact="source" data-route-state="open" data-x="2220" data-y="1283">
+<title>3018-PROVer V2 X motor socket · former-controller winding output · source position 4 · X motor output position 4 · role unverified · </title>
+<circle cx="2220" cy="1283" r="8" class="open-socket"/>
+<rect x="2236" y="1266" width="90" height="30" rx="8" class="number-pill"/>
+<text x="2281" y="1288" class="number-text" text-anchor="middle">4</text>
+<text x="2340" y="1288" class="machine-contact" text-anchor="start">X motor output position 4 · role unverified</text>
+<text x="2340" y="1315" class="open-status" text-anchor="start">OPEN · no SmoothieBox route selected</text>
+</g>
+</g>
+<g class="peripheral" data-machine-peripheral="3018-PROVer V2 Z motor socket · former-controller winding output" data-evidence-kind="reference" data-connector-id="ref-prover-v2-zmotor" data-connector-form="source-described">
+<title>3018-PROVer V2 Z motor socket · former-controller winding output · 3018-PROVer V2 manufacturer manual v1.0 September 2022 and hosted GC3D3-V4.3 example review; installed subrevision unverified · Manual printed pp. 16, 19 shows four-wire/position motor sockets after on-board drivers. Fitted cable and SmoothieBox driver qualification OPEN.</title>
+<rect x="3596" y="1235" width="1340" height="480" rx="12" class="peripheral-card"/>
+<rect x="3596" y="1235" width="10" height="480" rx="5" class="peripheral-accent-reference"/>
+<text x="3620" y="1265" class="evidence-label">SOURCE REFERENCE ONLY · INSTALLED REVISION NOT ESTABLISHED</text>
+<rect x="4694" y="1249" width="218" height="30" rx="15" class="connector-badge"/>
+<text x="4803" y="1270" class="connector-badge-text" text-anchor="middle">MACHINE INTERFACE</text>
+<text x="3620" y="1302" class="peripheral-name" text-anchor="start">3018-PROVer V2 Z motor socket · former-controller winding output</text>
+<text x="3620" y="1336" class="source-line" text-anchor="start">3018-PROVer V2 manufacturer manual v1.0 September 2022 and hosted GC3D3-V4.3 example review; installed</text>
+<text x="3620" y="1359" class="source-line" text-anchor="start">subrevision unverified · Manual printed pp. 16, 19 shows four-wire/position motor sockets after on-board</text>
+<text x="3620" y="1382" class="source-line" text-anchor="start">drivers. Fitted cable and SmoothieBox driver qualification OPEN.</text>
+<text x="3620" y="1405" class="source-line" text-anchor="start">1–4 enumerate board-view positions; motor-end cavity and coil phase mapping unknown</text>
+<text x="3620" y="1429" class="small">MACHINE INTERFACE · EXPANDED SOURCE-ORDER CONTACTS, NOT PHYSICAL PIN-ROW GEOMETRY</text>
+<g id="machine-p005-c001" data-machine-contact="1" data-contact-mark="1" data-contact-fact="source" data-route-state="open" data-x="3596" data-y="1451">
+<title>3018-PROVer V2 Z motor socket · former-controller winding output · source position 1 · Z motor output position 1 · role unverified · </title>
+<circle cx="3596" cy="1451" r="8" class="open-socket"/>
+<rect x="3612" y="1434" width="90" height="30" rx="8" class="number-pill"/>
+<text x="3657" y="1456" class="number-text" text-anchor="middle">1</text>
+<text x="3716" y="1456" class="machine-contact" text-anchor="start">Z motor output position 1 · role unverified</text>
+<text x="3716" y="1483" class="open-status" text-anchor="start">OPEN · no SmoothieBox route selected</text>
+</g>
+<g id="machine-p005-c002" data-machine-contact="2" data-contact-mark="2" data-contact-fact="source" data-route-state="open" data-x="3596" data-y="1516">
+<title>3018-PROVer V2 Z motor socket · former-controller winding output · source position 2 · Z motor output position 2 · role unverified · </title>
+<circle cx="3596" cy="1516" r="8" class="open-socket"/>
+<rect x="3612" y="1499" width="90" height="30" rx="8" class="number-pill"/>
+<text x="3657" y="1521" class="number-text" text-anchor="middle">2</text>
+<text x="3716" y="1521" class="machine-contact" text-anchor="start">Z motor output position 2 · role unverified</text>
+<text x="3716" y="1548" class="open-status" text-anchor="start">OPEN · no SmoothieBox route selected</text>
+</g>
+<g id="machine-p005-c003" data-machine-contact="3" data-contact-mark="3" data-contact-fact="source" data-route-state="open" data-x="3596" data-y="1581">
+<title>3018-PROVer V2 Z motor socket · former-controller winding output · source position 3 · Z motor output position 3 · role unverified · </title>
+<circle cx="3596" cy="1581" r="8" class="open-socket"/>
+<rect x="3612" y="1564" width="90" height="30" rx="8" class="number-pill"/>
+<text x="3657" y="1586" class="number-text" text-anchor="middle">3</text>
+<text x="3716" y="1586" class="machine-contact" text-anchor="start">Z motor output position 3 · role unverified</text>
+<text x="3716" y="1613" class="open-status" text-anchor="start">OPEN · no SmoothieBox route selected</text>
+</g>
+<g id="machine-p005-c004" data-machine-contact="4" data-contact-mark="4" data-contact-fact="source" data-route-state="open" data-x="3596" data-y="1646">
+<title>3018-PROVer V2 Z motor socket · former-controller winding output · source position 4 · Z motor output position 4 · role unverified · </title>
+<circle cx="3596" cy="1646" r="8" class="open-socket"/>
+<rect x="3612" y="1629" width="90" height="30" rx="8" class="number-pill"/>
+<text x="3657" y="1651" class="number-text" text-anchor="middle">4</text>
+<text x="3716" y="1651" class="machine-contact" text-anchor="start">Z motor output position 4 · role unverified</text>
+<text x="3716" y="1678" class="open-status" text-anchor="start">OPEN · no SmoothieBox route selected</text>
+</g>
+</g>
+<g class="peripheral" data-machine-peripheral="3018-PROVer V2 X limit board socket A · former-controller input" data-evidence-kind="reference" data-connector-id="ref-prover-v2-xlimit-a" data-connector-form="source-described">
+<title>3018-PROVer V2 X limit board socket A · former-controller input · 3018-PROVer V2 manufacturer manual v1.0 September 2022 and hosted GC3D3-V4.3 example review; installed subrevision unverified · Manual printed pp. 16, 19 shows three-wire Y cable and paired X/Y/Z board sockets. Hosted review observed only one occupied socket per axis with switches in parallel; which socket, pin roles and fitted topology OPEN.</title>
+<rect x="2220" y="1384" width="1340" height="461" rx="12" class="peripheral-card"/>
+<rect x="2220" y="1384" width="10" height="461" rx="5" class="peripheral-accent-reference"/>
+<text x="2244" y="1414" class="evidence-label">SOURCE REFERENCE ONLY · INSTALLED REVISION NOT ESTABLISHED</text>
+<rect x="3318" y="1398" width="218" height="30" rx="15" class="connector-badge"/>
+<text x="3427" y="1419" class="connector-badge-text" text-anchor="middle">MACHINE INTERFACE</text>
+<text x="2244" y="1451" class="peripheral-name" text-anchor="start">3018-PROVer V2 X limit board socket A · former-controller input</text>
+<text x="2244" y="1485" class="source-line" text-anchor="start">3018-PROVer V2 manufacturer manual v1.0 September 2022 and hosted GC3D3-V4.3 example review; installed</text>
+<text x="2244" y="1508" class="source-line" text-anchor="start">subrevision unverified · Manual printed pp. 16, 19 shows three-wire Y cable and paired X/Y/Z board</text>
+<text x="2244" y="1531" class="source-line" text-anchor="start">sockets. Hosted review observed only one occupied socket per axis with switches in parallel; which</text>
+<text x="2244" y="1554" class="source-line" text-anchor="start">socket, pin roles and fitted topology OPEN.</text>
+<text x="2244" y="1577" class="source-line" text-anchor="start">A/B distinguish the two source-drawn housings on one axis; 1–3 enumerate positions, not cavity numbers or</text>
+<text x="2244" y="1600" class="source-line" text-anchor="start">min/max assignments</text>
+<text x="2244" y="1624" class="small">MACHINE INTERFACE · EXPANDED SOURCE-ORDER CONTACTS, NOT PHYSICAL PIN-ROW GEOMETRY</text>
+<g id="machine-p006-c001" data-machine-contact="1" data-contact-mark="1" data-contact-fact="source" data-route-state="open" data-x="2220" data-y="1646">
+<title>3018-PROVer V2 X limit board socket A · former-controller input · source position 1 · X limit A position 1 · role unverified · </title>
+<circle cx="2220" cy="1646" r="8" class="open-socket"/>
+<rect x="2236" y="1629" width="90" height="30" rx="8" class="number-pill"/>
+<text x="2281" y="1651" class="number-text" text-anchor="middle">1</text>
+<text x="2340" y="1651" class="machine-contact" text-anchor="start">X limit A position 1 · role unverified</text>
+<text x="2340" y="1678" class="open-status" text-anchor="start">OPEN · no SmoothieBox route selected</text>
+</g>
+<g id="machine-p006-c002" data-machine-contact="2" data-contact-mark="2" data-contact-fact="source" data-route-state="open" data-x="2220" data-y="1711">
+<title>3018-PROVer V2 X limit board socket A · former-controller input · source position 2 · X limit A position 2 · role unverified · </title>
+<circle cx="2220" cy="1711" r="8" class="open-socket"/>
+<rect x="2236" y="1694" width="90" height="30" rx="8" class="number-pill"/>
+<text x="2281" y="1716" class="number-text" text-anchor="middle">2</text>
+<text x="2340" y="1716" class="machine-contact" text-anchor="start">X limit A position 2 · role unverified</text>
+<text x="2340" y="1743" class="open-status" text-anchor="start">OPEN · no SmoothieBox route selected</text>
+</g>
+<g id="machine-p006-c003" data-machine-contact="3" data-contact-mark="3" data-contact-fact="source" data-route-state="open" data-x="2220" data-y="1776">
+<title>3018-PROVer V2 X limit board socket A · former-controller input · source position 3 · X limit A position 3 · role unverified · </title>
+<circle cx="2220" cy="1776" r="8" class="open-socket"/>
+<rect x="2236" y="1759" width="90" height="30" rx="8" class="number-pill"/>
+<text x="2281" y="1781" class="number-text" text-anchor="middle">3</text>
+<text x="2340" y="1781" class="machine-contact" text-anchor="start">X limit A position 3 · role unverified</text>
+<text x="2340" y="1808" class="open-status" text-anchor="start">OPEN · no SmoothieBox route selected</text>
+</g>
+</g>
+<g class="peripheral" data-machine-peripheral="3018-PROVer V2 X limit board socket B · former-controller input" data-evidence-kind="reference" data-connector-id="ref-prover-v2-xlimit-b" data-connector-form="source-described">
+<title>3018-PROVer V2 X limit board socket B · former-controller input · 3018-PROVer V2 manufacturer manual v1.0 September 2022 and hosted GC3D3-V4.3 example review; installed subrevision unverified · Manual printed pp. 16, 19 shows three-wire Y cable and paired X/Y/Z board sockets. Hosted review observed only one occupied socket per axis with switches in parallel; which socket, pin roles and fitted topology OPEN.</title>
+<rect x="3596" y="1747" width="1340" height="461" rx="12" class="peripheral-card"/>
+<rect x="3596" y="1747" width="10" height="461" rx="5" class="peripheral-accent-reference"/>
+<text x="3620" y="1777" class="evidence-label">SOURCE REFERENCE ONLY · INSTALLED REVISION NOT ESTABLISHED</text>
+<rect x="4694" y="1761" width="218" height="30" rx="15" class="connector-badge"/>
+<text x="4803" y="1782" class="connector-badge-text" text-anchor="middle">MACHINE INTERFACE</text>
+<text x="3620" y="1814" class="peripheral-name" text-anchor="start">3018-PROVer V2 X limit board socket B · former-controller input</text>
+<text x="3620" y="1848" class="source-line" text-anchor="start">3018-PROVer V2 manufacturer manual v1.0 September 2022 and hosted GC3D3-V4.3 example review; installed</text>
+<text x="3620" y="1871" class="source-line" text-anchor="start">subrevision unverified · Manual printed pp. 16, 19 shows three-wire Y cable and paired X/Y/Z board</text>
+<text x="3620" y="1894" class="source-line" text-anchor="start">sockets. Hosted review observed only one occupied socket per axis with switches in parallel; which</text>
+<text x="3620" y="1917" class="source-line" text-anchor="start">socket, pin roles and fitted topology OPEN.</text>
+<text x="3620" y="1940" class="source-line" text-anchor="start">A/B distinguish the two source-drawn housings on one axis; 1–3 enumerate positions, not cavity numbers or</text>
+<text x="3620" y="1963" class="source-line" text-anchor="start">min/max assignments</text>
+<text x="3620" y="1987" class="small">MACHINE INTERFACE · EXPANDED SOURCE-ORDER CONTACTS, NOT PHYSICAL PIN-ROW GEOMETRY</text>
+<g id="machine-p007-c001" data-machine-contact="1" data-contact-mark="1" data-contact-fact="source" data-route-state="open" data-x="3596" data-y="2009">
+<title>3018-PROVer V2 X limit board socket B · former-controller input · source position 1 · X limit B position 1 · role unverified · </title>
+<circle cx="3596" cy="2009" r="8" class="open-socket"/>
+<rect x="3612" y="1992" width="90" height="30" rx="8" class="number-pill"/>
+<text x="3657" y="2014" class="number-text" text-anchor="middle">1</text>
+<text x="3716" y="2014" class="machine-contact" text-anchor="start">X limit B position 1 · role unverified</text>
+<text x="3716" y="2041" class="open-status" text-anchor="start">OPEN · no SmoothieBox route selected</text>
+</g>
+<g id="machine-p007-c002" data-machine-contact="2" data-contact-mark="2" data-contact-fact="source" data-route-state="open" data-x="3596" data-y="2074">
+<title>3018-PROVer V2 X limit board socket B · former-controller input · source position 2 · X limit B position 2 · role unverified · </title>
+<circle cx="3596" cy="2074" r="8" class="open-socket"/>
+<rect x="3612" y="2057" width="90" height="30" rx="8" class="number-pill"/>
+<text x="3657" y="2079" class="number-text" text-anchor="middle">2</text>
+<text x="3716" y="2079" class="machine-contact" text-anchor="start">X limit B position 2 · role unverified</text>
+<text x="3716" y="2106" class="open-status" text-anchor="start">OPEN · no SmoothieBox route selected</text>
+</g>
+<g id="machine-p007-c003" data-machine-contact="3" data-contact-mark="3" data-contact-fact="source" data-route-state="open" data-x="3596" data-y="2139">
+<title>3018-PROVer V2 X limit board socket B · former-controller input · source position 3 · X limit B position 3 · role unverified · </title>
+<circle cx="3596" cy="2139" r="8" class="open-socket"/>
+<rect x="3612" y="2122" width="90" height="30" rx="8" class="number-pill"/>
+<text x="3657" y="2144" class="number-text" text-anchor="middle">3</text>
+<text x="3716" y="2144" class="machine-contact" text-anchor="start">X limit B position 3 · role unverified</text>
+<text x="3716" y="2171" class="open-status" text-anchor="start">OPEN · no SmoothieBox route selected</text>
+</g>
+</g>
+<g class="peripheral" data-machine-peripheral="3018-PROVer V2 Y limit board socket B · former-controller input" data-evidence-kind="reference" data-connector-id="ref-prover-v2-ylimit-b" data-connector-form="source-described">
+<title>3018-PROVer V2 Y limit board socket B · former-controller input · 3018-PROVer V2 manufacturer manual v1.0 September 2022 and hosted GC3D3-V4.3 example review; installed subrevision unverified · Manual printed pp. 16, 19 shows three-wire Y cable and paired X/Y/Z board sockets. Hosted review observed only one occupied socket per axis with switches in parallel; which socket, pin roles and fitted topology OPEN.</title>
+<rect x="2220" y="1877" width="1340" height="461" rx="12" class="peripheral-card"/>
+<rect x="2220" y="1877" width="10" height="461" rx="5" class="peripheral-accent-reference"/>
+<text x="2244" y="1907" class="evidence-label">SOURCE REFERENCE ONLY · INSTALLED REVISION NOT ESTABLISHED</text>
+<rect x="3318" y="1891" width="218" height="30" rx="15" class="connector-badge"/>
+<text x="3427" y="1912" class="connector-badge-text" text-anchor="middle">MACHINE INTERFACE</text>
+<text x="2244" y="1944" class="peripheral-name" text-anchor="start">3018-PROVer V2 Y limit board socket B · former-controller input</text>
+<text x="2244" y="1978" class="source-line" text-anchor="start">3018-PROVer V2 manufacturer manual v1.0 September 2022 and hosted GC3D3-V4.3 example review; installed</text>
+<text x="2244" y="2001" class="source-line" text-anchor="start">subrevision unverified · Manual printed pp. 16, 19 shows three-wire Y cable and paired X/Y/Z board</text>
+<text x="2244" y="2024" class="source-line" text-anchor="start">sockets. Hosted review observed only one occupied socket per axis with switches in parallel; which</text>
+<text x="2244" y="2047" class="source-line" text-anchor="start">socket, pin roles and fitted topology OPEN.</text>
+<text x="2244" y="2070" class="source-line" text-anchor="start">A/B distinguish the two source-drawn housings on one axis; 1–3 enumerate positions, not cavity numbers or</text>
+<text x="2244" y="2093" class="source-line" text-anchor="start">min/max assignments</text>
+<text x="2244" y="2117" class="small">MACHINE INTERFACE · EXPANDED SOURCE-ORDER CONTACTS, NOT PHYSICAL PIN-ROW GEOMETRY</text>
+<g id="machine-p008-c001" data-machine-contact="1" data-contact-mark="1" data-contact-fact="source" data-route-state="open" data-x="2220" data-y="2139">
+<title>3018-PROVer V2 Y limit board socket B · former-controller input · source position 1 · Y limit B position 1 · role unverified · </title>
+<circle cx="2220" cy="2139" r="8" class="open-socket"/>
+<rect x="2236" y="2122" width="90" height="30" rx="8" class="number-pill"/>
+<text x="2281" y="2144" class="number-text" text-anchor="middle">1</text>
+<text x="2340" y="2144" class="machine-contact" text-anchor="start">Y limit B position 1 · role unverified</text>
+<text x="2340" y="2171" class="open-status" text-anchor="start">OPEN · no SmoothieBox route selected</text>
+</g>
+<g id="machine-p008-c002" data-machine-contact="2" data-contact-mark="2" data-contact-fact="source" data-route-state="open" data-x="2220" data-y="2204">
+<title>3018-PROVer V2 Y limit board socket B · former-controller input · source position 2 · Y limit B position 2 · role unverified · </title>
+<circle cx="2220" cy="2204" r="8" class="open-socket"/>
+<rect x="2236" y="2187" width="90" height="30" rx="8" class="number-pill"/>
+<text x="2281" y="2209" class="number-text" text-anchor="middle">2</text>
+<text x="2340" y="2209" class="machine-contact" text-anchor="start">Y limit B position 2 · role unverified</text>
+<text x="2340" y="2236" class="open-status" text-anchor="start">OPEN · no SmoothieBox route selected</text>
+</g>
+<g id="machine-p008-c003" data-machine-contact="3" data-contact-mark="3" data-contact-fact="source" data-route-state="open" data-x="2220" data-y="2269">
+<title>3018-PROVer V2 Y limit board socket B · former-controller input · source position 3 · Y limit B position 3 · role unverified · </title>
+<circle cx="2220" cy="2269" r="8" class="open-socket"/>
+<rect x="2236" y="2252" width="90" height="30" rx="8" class="number-pill"/>
+<text x="2281" y="2274" class="number-text" text-anchor="middle">3</text>
+<text x="2340" y="2274" class="machine-contact" text-anchor="start">Y limit B position 3 · role unverified</text>
+<text x="2340" y="2301" class="open-status" text-anchor="start">OPEN · no SmoothieBox route selected</text>
+</g>
+</g>
+<g class="peripheral" data-machine-peripheral="3018-PROVer V2 Z limit board socket A · former-controller input" data-evidence-kind="reference" data-connector-id="ref-prover-v2-zlimit-a" data-connector-form="source-described">
+<title>3018-PROVer V2 Z limit board socket A · former-controller input · 3018-PROVer V2 manufacturer manual v1.0 September 2022 and hosted GC3D3-V4.3 example review; installed subrevision unverified · Manual printed pp. 16, 19 shows three-wire Y cable and paired X/Y/Z board sockets. Hosted review observed only one occupied socket per axis with switches in parallel; which socket, pin roles and fitted topology OPEN.</title>
+<rect x="3596" y="2240" width="1340" height="461" rx="12" class="peripheral-card"/>
+<rect x="3596" y="2240" width="10" height="461" rx="5" class="peripheral-accent-reference"/>
+<text x="3620" y="2270" class="evidence-label">SOURCE REFERENCE ONLY · INSTALLED REVISION NOT ESTABLISHED</text>
+<rect x="4694" y="2254" width="218" height="30" rx="15" class="connector-badge"/>
+<text x="4803" y="2275" class="connector-badge-text" text-anchor="middle">MACHINE INTERFACE</text>
+<text x="3620" y="2307" class="peripheral-name" text-anchor="start">3018-PROVer V2 Z limit board socket A · former-controller input</text>
+<text x="3620" y="2341" class="source-line" text-anchor="start">3018-PROVer V2 manufacturer manual v1.0 September 2022 and hosted GC3D3-V4.3 example review; installed</text>
+<text x="3620" y="2364" class="source-line" text-anchor="start">subrevision unverified · Manual printed pp. 16, 19 shows three-wire Y cable and paired X/Y/Z board</text>
+<text x="3620" y="2387" class="source-line" text-anchor="start">sockets. Hosted review observed only one occupied socket per axis with switches in parallel; which</text>
+<text x="3620" y="2410" class="source-line" text-anchor="start">socket, pin roles and fitted topology OPEN.</text>
+<text x="3620" y="2433" class="source-line" text-anchor="start">A/B distinguish the two source-drawn housings on one axis; 1–3 enumerate positions, not cavity numbers or</text>
+<text x="3620" y="2456" class="source-line" text-anchor="start">min/max assignments</text>
+<text x="3620" y="2480" class="small">MACHINE INTERFACE · EXPANDED SOURCE-ORDER CONTACTS, NOT PHYSICAL PIN-ROW GEOMETRY</text>
+<g id="machine-p009-c001" data-machine-contact="1" data-contact-mark="1" data-contact-fact="source" data-route-state="open" data-x="3596" data-y="2502">
+<title>3018-PROVer V2 Z limit board socket A · former-controller input · source position 1 · Z limit A position 1 · role unverified · </title>
+<circle cx="3596" cy="2502" r="8" class="open-socket"/>
+<rect x="3612" y="2485" width="90" height="30" rx="8" class="number-pill"/>
+<text x="3657" y="2507" class="number-text" text-anchor="middle">1</text>
+<text x="3716" y="2507" class="machine-contact" text-anchor="start">Z limit A position 1 · role unverified</text>
+<text x="3716" y="2534" class="open-status" text-anchor="start">OPEN · no SmoothieBox route selected</text>
+</g>
+<g id="machine-p009-c002" data-machine-contact="2" data-contact-mark="2" data-contact-fact="source" data-route-state="open" data-x="3596" data-y="2567">
+<title>3018-PROVer V2 Z limit board socket A · former-controller input · source position 2 · Z limit A position 2 · role unverified · </title>
+<circle cx="3596" cy="2567" r="8" class="open-socket"/>
+<rect x="3612" y="2550" width="90" height="30" rx="8" class="number-pill"/>
+<text x="3657" y="2572" class="number-text" text-anchor="middle">2</text>
+<text x="3716" y="2572" class="machine-contact" text-anchor="start">Z limit A position 2 · role unverified</text>
+<text x="3716" y="2599" class="open-status" text-anchor="start">OPEN · no SmoothieBox route selected</text>
+</g>
+<g id="machine-p009-c003" data-machine-contact="3" data-contact-mark="3" data-contact-fact="source" data-route-state="open" data-x="3596" data-y="2632">
+<title>3018-PROVer V2 Z limit board socket A · former-controller input · source position 3 · Z limit A position 3 · role unverified · </title>
+<circle cx="3596" cy="2632" r="8" class="open-socket"/>
+<rect x="3612" y="2615" width="90" height="30" rx="8" class="number-pill"/>
+<text x="3657" y="2637" class="number-text" text-anchor="middle">3</text>
+<text x="3716" y="2637" class="machine-contact" text-anchor="start">Z limit A position 3 · role unverified</text>
+<text x="3716" y="2664" class="open-status" text-anchor="start">OPEN · no SmoothieBox route selected</text>
+</g>
+</g>
+<g class="peripheral" data-machine-peripheral="3018-PROVer V2 Z limit board socket B · former-controller input" data-evidence-kind="reference" data-connector-id="ref-prover-v2-zlimit-b" data-connector-form="source-described">
+<title>3018-PROVer V2 Z limit board socket B · former-controller input · 3018-PROVer V2 manufacturer manual v1.0 September 2022 and hosted GC3D3-V4.3 example review; installed subrevision unverified · Manual printed pp. 16, 19 shows three-wire Y cable and paired X/Y/Z board sockets. Hosted review observed only one occupied socket per axis with switches in parallel; which socket, pin roles and fitted topology OPEN.</title>
+<rect x="2220" y="2370" width="1340" height="461" rx="12" class="peripheral-card"/>
+<rect x="2220" y="2370" width="10" height="461" rx="5" class="peripheral-accent-reference"/>
+<text x="2244" y="2400" class="evidence-label">SOURCE REFERENCE ONLY · INSTALLED REVISION NOT ESTABLISHED</text>
+<rect x="3318" y="2384" width="218" height="30" rx="15" class="connector-badge"/>
+<text x="3427" y="2405" class="connector-badge-text" text-anchor="middle">MACHINE INTERFACE</text>
+<text x="2244" y="2437" class="peripheral-name" text-anchor="start">3018-PROVer V2 Z limit board socket B · former-controller input</text>
+<text x="2244" y="2471" class="source-line" text-anchor="start">3018-PROVer V2 manufacturer manual v1.0 September 2022 and hosted GC3D3-V4.3 example review; installed</text>
+<text x="2244" y="2494" class="source-line" text-anchor="start">subrevision unverified · Manual printed pp. 16, 19 shows three-wire Y cable and paired X/Y/Z board</text>
+<text x="2244" y="2517" class="source-line" text-anchor="start">sockets. Hosted review observed only one occupied socket per axis with switches in parallel; which</text>
+<text x="2244" y="2540" class="source-line" text-anchor="start">socket, pin roles and fitted topology OPEN.</text>
+<text x="2244" y="2563" class="source-line" text-anchor="start">A/B distinguish the two source-drawn housings on one axis; 1–3 enumerate positions, not cavity numbers or</text>
+<text x="2244" y="2586" class="source-line" text-anchor="start">min/max assignments</text>
+<text x="2244" y="2610" class="small">MACHINE INTERFACE · EXPANDED SOURCE-ORDER CONTACTS, NOT PHYSICAL PIN-ROW GEOMETRY</text>
+<g id="machine-p010-c001" data-machine-contact="1" data-contact-mark="1" data-contact-fact="source" data-route-state="open" data-x="2220" data-y="2632">
+<title>3018-PROVer V2 Z limit board socket B · former-controller input · source position 1 · Z limit B position 1 · role unverified · </title>
+<circle cx="2220" cy="2632" r="8" class="open-socket"/>
+<rect x="2236" y="2615" width="90" height="30" rx="8" class="number-pill"/>
+<text x="2281" y="2637" class="number-text" text-anchor="middle">1</text>
+<text x="2340" y="2637" class="machine-contact" text-anchor="start">Z limit B position 1 · role unverified</text>
+<text x="2340" y="2664" class="open-status" text-anchor="start">OPEN · no SmoothieBox route selected</text>
+</g>
+<g id="machine-p010-c002" data-machine-contact="2" data-contact-mark="2" data-contact-fact="source" data-route-state="open" data-x="2220" data-y="2697">
+<title>3018-PROVer V2 Z limit board socket B · former-controller input · source position 2 · Z limit B position 2 · role unverified · </title>
+<circle cx="2220" cy="2697" r="8" class="open-socket"/>
+<rect x="2236" y="2680" width="90" height="30" rx="8" class="number-pill"/>
+<text x="2281" y="2702" class="number-text" text-anchor="middle">2</text>
+<text x="2340" y="2702" class="machine-contact" text-anchor="start">Z limit B position 2 · role unverified</text>
+<text x="2340" y="2729" class="open-status" text-anchor="start">OPEN · no SmoothieBox route selected</text>
+</g>
+<g id="machine-p010-c003" data-machine-contact="3" data-contact-mark="3" data-contact-fact="source" data-route-state="open" data-x="2220" data-y="2762">
+<title>3018-PROVer V2 Z limit board socket B · former-controller input · source position 3 · Z limit B position 3 · role unverified · </title>
+<circle cx="2220" cy="2762" r="8" class="open-socket"/>
+<rect x="2236" y="2745" width="90" height="30" rx="8" class="number-pill"/>
+<text x="2281" y="2767" class="number-text" text-anchor="middle">3</text>
+<text x="2340" y="2767" class="machine-contact" text-anchor="start">Z limit B position 3 · role unverified</text>
+<text x="2340" y="2794" class="open-status" text-anchor="start">OPEN · no SmoothieBox route selected</text>
+</g>
+</g>
+<g class="peripheral" data-machine-peripheral="3018-PROVer V2 three-position illuminated Z-probe socket" data-evidence-kind="reference" data-connector-id="ref-prover-v2-probe" data-connector-form="source-described">
+<title>3018-PROVer V2 three-position illuminated Z-probe socket · 3018-PROVer V2 manufacturer manual v1.0 September 2022 and hosted GC3D3-V4.3 example review; installed subrevision unverified · Manual board diagram labels PROBE and hosted review explicitly reports three-pin illuminated probe. First-generation two-position map does not apply; OPEN.</title>
+<rect x="3596" y="2733" width="1340" height="415" rx="12" class="peripheral-card"/>
+<rect x="3596" y="2733" width="10" height="415" rx="5" class="peripheral-accent-reference"/>
+<text x="3620" y="2763" class="evidence-label">SOURCE REFERENCE ONLY · INSTALLED REVISION NOT ESTABLISHED</text>
+<rect x="4694" y="2747" width="218" height="30" rx="15" class="connector-badge"/>
+<text x="4803" y="2768" class="connector-badge-text" text-anchor="middle">MACHINE INTERFACE</text>
+<text x="3620" y="2800" class="peripheral-name" text-anchor="start">3018-PROVer V2 three-position illuminated Z-probe socket</text>
+<text x="3620" y="2834" class="source-line" text-anchor="start">3018-PROVer V2 manufacturer manual v1.0 September 2022 and hosted GC3D3-V4.3 example review; installed</text>
+<text x="3620" y="2857" class="source-line" text-anchor="start">subrevision unverified · Manual board diagram labels PROBE and hosted review explicitly reports three-pin</text>
+<text x="3620" y="2880" class="source-line" text-anchor="start">illuminated probe. First-generation two-position map does not apply; OPEN.</text>
+<text x="3620" y="2903" class="source-line" text-anchor="start">1–3 are inventory ordinals; signal/power/return and mating-face order unknown</text>
+<text x="3620" y="2927" class="small">MACHINE INTERFACE · EXPANDED SOURCE-ORDER CONTACTS, NOT PHYSICAL PIN-ROW GEOMETRY</text>
+<g id="machine-p011-c001" data-machine-contact="1" data-contact-mark="1" data-contact-fact="source" data-route-state="open" data-x="3596" data-y="2949">
+<title>3018-PROVer V2 three-position illuminated Z-probe socket · source position 1 · Z-probe board position 1 · role unverified · </title>
+<circle cx="3596" cy="2949" r="8" class="open-socket"/>
+<rect x="3612" y="2932" width="90" height="30" rx="8" class="number-pill"/>
+<text x="3657" y="2954" class="number-text" text-anchor="middle">1</text>
+<text x="3716" y="2954" class="machine-contact" text-anchor="start">Z-probe board position 1 · role unverified</text>
+<text x="3716" y="2981" class="open-status" text-anchor="start">OPEN · no SmoothieBox route selected</text>
+</g>
+<g id="machine-p011-c002" data-machine-contact="2" data-contact-mark="2" data-contact-fact="source" data-route-state="open" data-x="3596" data-y="3014">
+<title>3018-PROVer V2 three-position illuminated Z-probe socket · source position 2 · Z-probe board position 2 · role unverified · </title>
+<circle cx="3596" cy="3014" r="8" class="open-socket"/>
+<rect x="3612" y="2997" width="90" height="30" rx="8" class="number-pill"/>
+<text x="3657" y="3019" class="number-text" text-anchor="middle">2</text>
+<text x="3716" y="3019" class="machine-contact" text-anchor="start">Z-probe board position 2 · role unverified</text>
+<text x="3716" y="3046" class="open-status" text-anchor="start">OPEN · no SmoothieBox route selected</text>
+</g>
+<g id="machine-p011-c003" data-machine-contact="3" data-contact-mark="3" data-contact-fact="source" data-route-state="open" data-x="3596" data-y="3079">
+<title>3018-PROVer V2 three-position illuminated Z-probe socket · source position 3 · Z-probe board position 3 · role unverified · </title>
+<circle cx="3596" cy="3079" r="8" class="open-socket"/>
+<rect x="3612" y="3062" width="90" height="30" rx="8" class="number-pill"/>
+<text x="3657" y="3084" class="number-text" text-anchor="middle">3</text>
+<text x="3716" y="3084" class="machine-contact" text-anchor="start">Z-probe board position 3 · role unverified</text>
+<text x="3716" y="3111" class="open-status" text-anchor="start">OPEN · no SmoothieBox route selected</text>
+</g>
+</g>
+<g class="peripheral" data-machine-peripheral="3018-PROVer V2 two-position EStop board input" data-evidence-kind="reference" data-connector-id="ref-prover-v2-estop" data-connector-form="source-described">
+<title>3018-PROVer V2 two-position EStop board input · 3018-PROVer V2 manufacturer manual v1.0 September 2022 and hosted GC3D3-V4.3 example review; installed subrevision unverified · Manual shows emergency button; hosted review identifies two-pin board socket. No safety-rated SmoothieBox E-stop circuit established; OPEN.</title>
+<rect x="2220" y="2863" width="1340" height="350" rx="12" class="peripheral-card"/>
+<rect x="2220" y="2863" width="10" height="350" rx="5" class="peripheral-accent-reference"/>
+<text x="2244" y="2893" class="evidence-label">SOURCE REFERENCE ONLY · INSTALLED REVISION NOT ESTABLISHED</text>
+<rect x="3318" y="2877" width="218" height="30" rx="15" class="connector-badge"/>
+<text x="3427" y="2898" class="connector-badge-text" text-anchor="middle">MACHINE INTERFACE</text>
+<text x="2244" y="2930" class="peripheral-name" text-anchor="start">3018-PROVer V2 two-position EStop board input</text>
+<text x="2244" y="2964" class="source-line" text-anchor="start">3018-PROVer V2 manufacturer manual v1.0 September 2022 and hosted GC3D3-V4.3 example review; installed</text>
+<text x="2244" y="2987" class="source-line" text-anchor="start">subrevision unverified · Manual shows emergency button; hosted review identifies two-pin board socket. No</text>
+<text x="2244" y="3010" class="source-line" text-anchor="start">safety-rated SmoothieBox E-stop circuit established; OPEN.</text>
+<text x="2244" y="3033" class="source-line" text-anchor="start">1–2 are inventory ordinals; NC/NO and mating-face order unknown</text>
+<text x="2244" y="3057" class="small">MACHINE INTERFACE · EXPANDED SOURCE-ORDER CONTACTS, NOT PHYSICAL PIN-ROW GEOMETRY</text>
+<g id="machine-p012-c001" data-machine-contact="1" data-contact-mark="1" data-contact-fact="source" data-route-state="open" data-x="2220" data-y="3079">
+<title>3018-PROVer V2 two-position EStop board input · source position 1 · EStop board position 1 · role unverified · </title>
+<circle cx="2220" cy="3079" r="8" class="open-socket"/>
+<rect x="2236" y="3062" width="90" height="30" rx="8" class="number-pill"/>
+<text x="2281" y="3084" class="number-text" text-anchor="middle">1</text>
+<text x="2340" y="3084" class="machine-contact" text-anchor="start">EStop board position 1 · role unverified</text>
+<text x="2340" y="3111" class="open-status" text-anchor="start">OPEN · no SmoothieBox route selected</text>
+</g>
+<g id="machine-p012-c002" data-machine-contact="2" data-contact-mark="2" data-contact-fact="source" data-route-state="open" data-x="2220" data-y="3144">
+<title>3018-PROVer V2 two-position EStop board input · source position 2 · EStop board position 2 · role unverified · </title>
+<circle cx="2220" cy="3144" r="8" class="open-socket"/>
+<rect x="2236" y="3127" width="90" height="30" rx="8" class="number-pill"/>
+<text x="2281" y="3149" class="number-text" text-anchor="middle">2</text>
+<text x="2340" y="3149" class="machine-contact" text-anchor="start">EStop board position 2 · role unverified</text>
+<text x="2340" y="3176" class="open-status" text-anchor="start">OPEN · no SmoothieBox route selected</text>
+</g>
+</g>
+<g class="peripheral" data-machine-peripheral="3018-PROVer V2 ten-position offline-controller header" data-evidence-kind="reference" data-connector-id="ref-prover-v2-offline" data-connector-form="source-described">
+<title>3018-PROVer V2 ten-position offline-controller header · 3018-PROVer V2 manufacturer manual v1.0 September 2022 and hosted GC3D3-V4.3 example review; installed subrevision unverified · Manual board drawing and hosted review identify 10-pin accessory header. Former-controller interface, no SmoothieBox route; OPEN.</title>
+<rect x="3596" y="3180" width="1340" height="870" rx="12" class="peripheral-card"/>
+<rect x="3596" y="3180" width="10" height="870" rx="5" class="peripheral-accent-reference"/>
+<text x="3620" y="3210" class="evidence-label">SOURCE REFERENCE ONLY · INSTALLED REVISION NOT ESTABLISHED</text>
+<rect x="4694" y="3194" width="218" height="30" rx="15" class="connector-badge"/>
+<text x="4803" y="3215" class="connector-badge-text" text-anchor="middle">MACHINE INTERFACE</text>
+<text x="3620" y="3247" class="peripheral-name" text-anchor="start">3018-PROVer V2 ten-position offline-controller header</text>
+<text x="3620" y="3281" class="source-line" text-anchor="start">3018-PROVer V2 manufacturer manual v1.0 September 2022 and hosted GC3D3-V4.3 example review; installed</text>
+<text x="3620" y="3304" class="source-line" text-anchor="start">subrevision unverified · Manual board drawing and hosted review identify 10-pin accessory header.</text>
+<text x="3620" y="3327" class="source-line" text-anchor="start">Former-controller interface, no SmoothieBox route; OPEN.</text>
+<text x="3620" y="3350" class="source-line" text-anchor="start">1–10 are inventory ordinals; 2×5 mating-face numbering and signal roles unknown</text>
+<text x="3620" y="3374" class="small">MACHINE INTERFACE · EXPANDED SOURCE-ORDER CONTACTS, NOT PHYSICAL PIN-ROW GEOMETRY</text>
+<g id="machine-p013-c001" data-machine-contact="1" data-contact-mark="1" data-contact-fact="source" data-route-state="open" data-x="3596" data-y="3396">
+<title>3018-PROVer V2 ten-position offline-controller header · source position 1 · Offline-controller board position 1 · role unverified · </title>
+<circle cx="3596" cy="3396" r="8" class="open-socket"/>
+<rect x="3612" y="3379" width="90" height="30" rx="8" class="number-pill"/>
+<text x="3657" y="3401" class="number-text" text-anchor="middle">1</text>
+<text x="3716" y="3401" class="machine-contact" text-anchor="start">Offline-controller board position 1 · role unverified</text>
+<text x="3716" y="3428" class="open-status" text-anchor="start">OPEN · no SmoothieBox route selected</text>
+</g>
+<g id="machine-p013-c002" data-machine-contact="2" data-contact-mark="2" data-contact-fact="source" data-route-state="open" data-x="3596" data-y="3461">
+<title>3018-PROVer V2 ten-position offline-controller header · source position 2 · Offline-controller board position 2 · role unverified · </title>
+<circle cx="3596" cy="3461" r="8" class="open-socket"/>
+<rect x="3612" y="3444" width="90" height="30" rx="8" class="number-pill"/>
+<text x="3657" y="3466" class="number-text" text-anchor="middle">2</text>
+<text x="3716" y="3466" class="machine-contact" text-anchor="start">Offline-controller board position 2 · role unverified</text>
+<text x="3716" y="3493" class="open-status" text-anchor="start">OPEN · no SmoothieBox route selected</text>
+</g>
+<g id="machine-p013-c003" data-machine-contact="3" data-contact-mark="3" data-contact-fact="source" data-route-state="open" data-x="3596" data-y="3526">
+<title>3018-PROVer V2 ten-position offline-controller header · source position 3 · Offline-controller board position 3 · role unverified · </title>
+<circle cx="3596" cy="3526" r="8" class="open-socket"/>
+<rect x="3612" y="3509" width="90" height="30" rx="8" class="number-pill"/>
+<text x="3657" y="3531" class="number-text" text-anchor="middle">3</text>
+<text x="3716" y="3531" class="machine-contact" text-anchor="start">Offline-controller board position 3 · role unverified</text>
+<text x="3716" y="3558" class="open-status" text-anchor="start">OPEN · no SmoothieBox route selected</text>
+</g>
+<g id="machine-p013-c004" data-machine-contact="4" data-contact-mark="4" data-contact-fact="source" data-route-state="open" data-x="3596" data-y="3591">
+<title>3018-PROVer V2 ten-position offline-controller header · source position 4 · Offline-controller board position 4 · role unverified · </title>
+<circle cx="3596" cy="3591" r="8" class="open-socket"/>
+<rect x="3612" y="3574" width="90" height="30" rx="8" class="number-pill"/>
+<text x="3657" y="3596" class="number-text" text-anchor="middle">4</text>
+<text x="3716" y="3596" class="machine-contact" text-anchor="start">Offline-controller board position 4 · role unverified</text>
+<text x="3716" y="3623" class="open-status" text-anchor="start">OPEN · no SmoothieBox route selected</text>
+</g>
+<g id="machine-p013-c005" data-machine-contact="5" data-contact-mark="5" data-contact-fact="source" data-route-state="open" data-x="3596" data-y="3656">
+<title>3018-PROVer V2 ten-position offline-controller header · source position 5 · Offline-controller board position 5 · role unverified · </title>
+<circle cx="3596" cy="3656" r="8" class="open-socket"/>
+<rect x="3612" y="3639" width="90" height="30" rx="8" class="number-pill"/>
+<text x="3657" y="3661" class="number-text" text-anchor="middle">5</text>
+<text x="3716" y="3661" class="machine-contact" text-anchor="start">Offline-controller board position 5 · role unverified</text>
+<text x="3716" y="3688" class="open-status" text-anchor="start">OPEN · no SmoothieBox route selected</text>
+</g>
+<g id="machine-p013-c006" data-machine-contact="6" data-contact-mark="6" data-contact-fact="source" data-route-state="open" data-x="3596" data-y="3721">
+<title>3018-PROVer V2 ten-position offline-controller header · source position 6 · Offline-controller board position 6 · role unverified · </title>
+<circle cx="3596" cy="3721" r="8" class="open-socket"/>
+<rect x="3612" y="3704" width="90" height="30" rx="8" class="number-pill"/>
+<text x="3657" y="3726" class="number-text" text-anchor="middle">6</text>
+<text x="3716" y="3726" class="machine-contact" text-anchor="start">Offline-controller board position 6 · role unverified</text>
+<text x="3716" y="3753" class="open-status" text-anchor="start">OPEN · no SmoothieBox route selected</text>
+</g>
+<g id="machine-p013-c007" data-machine-contact="7" data-contact-mark="7" data-contact-fact="source" data-route-state="open" data-x="3596" data-y="3786">
+<title>3018-PROVer V2 ten-position offline-controller header · source position 7 · Offline-controller board position 7 · role unverified · </title>
+<circle cx="3596" cy="3786" r="8" class="open-socket"/>
+<rect x="3612" y="3769" width="90" height="30" rx="8" class="number-pill"/>
+<text x="3657" y="3791" class="number-text" text-anchor="middle">7</text>
+<text x="3716" y="3791" class="machine-contact" text-anchor="start">Offline-controller board position 7 · role unverified</text>
+<text x="3716" y="3818" class="open-status" text-anchor="start">OPEN · no SmoothieBox route selected</text>
+</g>
+<g id="machine-p013-c008" data-machine-contact="8" data-contact-mark="8" data-contact-fact="source" data-route-state="open" data-x="3596" data-y="3851">
+<title>3018-PROVer V2 ten-position offline-controller header · source position 8 · Offline-controller board position 8 · role unverified · </title>
+<circle cx="3596" cy="3851" r="8" class="open-socket"/>
+<rect x="3612" y="3834" width="90" height="30" rx="8" class="number-pill"/>
+<text x="3657" y="3856" class="number-text" text-anchor="middle">8</text>
+<text x="3716" y="3856" class="machine-contact" text-anchor="start">Offline-controller board position 8 · role unverified</text>
+<text x="3716" y="3883" class="open-status" text-anchor="start">OPEN · no SmoothieBox route selected</text>
+</g>
+<g id="machine-p013-c009" data-machine-contact="9" data-contact-mark="9" data-contact-fact="source" data-route-state="open" data-x="3596" data-y="3916">
+<title>3018-PROVer V2 ten-position offline-controller header · source position 9 · Offline-controller board position 9 · role unverified · </title>
+<circle cx="3596" cy="3916" r="8" class="open-socket"/>
+<rect x="3612" y="3899" width="90" height="30" rx="8" class="number-pill"/>
+<text x="3657" y="3921" class="number-text" text-anchor="middle">9</text>
+<text x="3716" y="3921" class="machine-contact" text-anchor="start">Offline-controller board position 9 · role unverified</text>
+<text x="3716" y="3948" class="open-status" text-anchor="start">OPEN · no SmoothieBox route selected</text>
+</g>
+<g id="machine-p013-c010" data-machine-contact="10" data-contact-mark="10" data-contact-fact="source" data-route-state="open" data-x="3596" data-y="3981">
+<title>3018-PROVer V2 ten-position offline-controller header · source position 10 · Offline-controller board position 10 · role unverified · </title>
+<circle cx="3596" cy="3981" r="8" class="open-socket"/>
+<rect x="3612" y="3964" width="90" height="30" rx="8" class="number-pill"/>
+<text x="3657" y="3986" class="number-text" text-anchor="middle">10</text>
+<text x="3716" y="3986" class="machine-contact" text-anchor="start">Offline-controller board position 10 · role unverified</text>
+<text x="3716" y="4013" class="open-status" text-anchor="start">OPEN · no SmoothieBox route selected</text>
+</g>
+</g>
+<g class="peripheral" data-machine-peripheral="3018-PROVer V2 optional three-position laser module socket" data-evidence-kind="reference" data-connector-id="ref-prover-v2-laser" data-connector-form="source-described">
+<title>3018-PROVer V2 optional three-position laser module socket · 3018-PROVer V2 manufacturer manual v1.0 September 2022 and hosted GC3D3-V4.3 example review; installed subrevision unverified · Manual labels LASER and hosted review calls it 3-pin 12 V/PWM. A laser is not proved fitted and no SmoothieBox electrical contract is established; OPEN.</title>
+<rect x="2220" y="3245" width="1340" height="415" rx="12" class="peripheral-card"/>
+<rect x="2220" y="3245" width="10" height="415" rx="5" class="peripheral-accent-reference"/>
+<text x="2244" y="3275" class="evidence-label">SOURCE REFERENCE ONLY · INSTALLED REVISION NOT ESTABLISHED</text>
+<rect x="3318" y="3259" width="218" height="30" rx="15" class="connector-badge"/>
+<text x="3427" y="3280" class="connector-badge-text" text-anchor="middle">MACHINE INTERFACE</text>
+<text x="2244" y="3312" class="peripheral-name" text-anchor="start">3018-PROVer V2 optional three-position laser module socket</text>
+<text x="2244" y="3346" class="source-line" text-anchor="start">3018-PROVer V2 manufacturer manual v1.0 September 2022 and hosted GC3D3-V4.3 example review; installed</text>
+<text x="2244" y="3369" class="source-line" text-anchor="start">subrevision unverified · Manual labels LASER and hosted review calls it 3-pin 12 V/PWM. A laser is not</text>
+<text x="2244" y="3392" class="source-line" text-anchor="start">proved fitted and no SmoothieBox electrical contract is established; OPEN.</text>
+<text x="2244" y="3415" class="source-line" text-anchor="start">1–3 enumerate board positions; voltage/signal/return cavity mapping unverified</text>
+<text x="2244" y="3439" class="small">MACHINE INTERFACE · EXPANDED SOURCE-ORDER CONTACTS, NOT PHYSICAL PIN-ROW GEOMETRY</text>
+<g id="machine-p014-c001" data-machine-contact="1" data-contact-mark="1" data-contact-fact="source" data-route-state="open" data-x="2220" data-y="3461">
+<title>3018-PROVer V2 optional three-position laser module socket · source position 1 · Laser board position 1 · role unverified · </title>
+<circle cx="2220" cy="3461" r="8" class="open-socket"/>
+<rect x="2236" y="3444" width="90" height="30" rx="8" class="number-pill"/>
+<text x="2281" y="3466" class="number-text" text-anchor="middle">1</text>
+<text x="2340" y="3466" class="machine-contact" text-anchor="start">Laser board position 1 · role unverified</text>
+<text x="2340" y="3493" class="open-status" text-anchor="start">OPEN · no SmoothieBox route selected</text>
+</g>
+<g id="machine-p014-c002" data-machine-contact="2" data-contact-mark="2" data-contact-fact="source" data-route-state="open" data-x="2220" data-y="3526">
+<title>3018-PROVer V2 optional three-position laser module socket · source position 2 · Laser board position 2 · role unverified · </title>
+<circle cx="2220" cy="3526" r="8" class="open-socket"/>
+<rect x="2236" y="3509" width="90" height="30" rx="8" class="number-pill"/>
+<text x="2281" y="3531" class="number-text" text-anchor="middle">2</text>
+<text x="2340" y="3531" class="machine-contact" text-anchor="start">Laser board position 2 · role unverified</text>
+<text x="2340" y="3558" class="open-status" text-anchor="start">OPEN · no SmoothieBox route selected</text>
+</g>
+<g id="machine-p014-c003" data-machine-contact="3" data-contact-mark="3" data-contact-fact="source" data-route-state="open" data-x="2220" data-y="3591">
+<title>3018-PROVer V2 optional three-position laser module socket · source position 3 · Laser board position 3 · role unverified · </title>
+<circle cx="2220" cy="3591" r="8" class="open-socket"/>
+<rect x="2236" y="3574" width="90" height="30" rx="8" class="number-pill"/>
+<text x="2281" y="3596" class="number-text" text-anchor="middle">3</text>
+<text x="2340" y="3596" class="machine-contact" text-anchor="start">Laser board position 3 · role unverified</text>
+<text x="2340" y="3623" class="open-status" text-anchor="start">OPEN · no SmoothieBox route selected</text>
+</g>
+</g>
+<g class="peripheral" data-machine-peripheral="3018-PROVer V2 optional two-position AIR socket" data-evidence-kind="reference" data-connector-id="ref-prover-v2-air" data-connector-form="source-described">
+<title>3018-PROVer V2 optional two-position AIR socket · 3018-PROVer V2 manufacturer manual v1.0 September 2022 and hosted GC3D3-V4.3 example review; installed subrevision unverified · Manual board diagram labels AIR; hosted review identifies two-pin air-assist control, with pump use uncertain. No rating or fitted cable; OPEN.</title>
+<rect x="2220" y="3692" width="1340" height="350" rx="12" class="peripheral-card"/>
+<rect x="2220" y="3692" width="10" height="350" rx="5" class="peripheral-accent-reference"/>
+<text x="2244" y="3722" class="evidence-label">SOURCE REFERENCE ONLY · INSTALLED REVISION NOT ESTABLISHED</text>
+<rect x="3318" y="3706" width="218" height="30" rx="15" class="connector-badge"/>
+<text x="3427" y="3727" class="connector-badge-text" text-anchor="middle">MACHINE INTERFACE</text>
+<text x="2244" y="3759" class="peripheral-name" text-anchor="start">3018-PROVer V2 optional two-position AIR socket</text>
+<text x="2244" y="3793" class="source-line" text-anchor="start">3018-PROVer V2 manufacturer manual v1.0 September 2022 and hosted GC3D3-V4.3 example review; installed</text>
+<text x="2244" y="3816" class="source-line" text-anchor="start">subrevision unverified · Manual board diagram labels AIR; hosted review identifies two-pin air-assist</text>
+<text x="2244" y="3839" class="source-line" text-anchor="start">control, with pump use uncertain. No rating or fitted cable; OPEN.</text>
+<text x="2244" y="3862" class="source-line" text-anchor="start">1–2 enumerate source-visible positions; electrical roles unknown</text>
+<text x="2244" y="3886" class="small">MACHINE INTERFACE · EXPANDED SOURCE-ORDER CONTACTS, NOT PHYSICAL PIN-ROW GEOMETRY</text>
+<g id="machine-p015-c001" data-machine-contact="1" data-contact-mark="1" data-contact-fact="source" data-route-state="open" data-x="2220" data-y="3908">
+<title>3018-PROVer V2 optional two-position AIR socket · source position 1 · AIR board position 1 · role unverified · </title>
+<circle cx="2220" cy="3908" r="8" class="open-socket"/>
+<rect x="2236" y="3891" width="90" height="30" rx="8" class="number-pill"/>
+<text x="2281" y="3913" class="number-text" text-anchor="middle">1</text>
+<text x="2340" y="3913" class="machine-contact" text-anchor="start">AIR board position 1 · role unverified</text>
+<text x="2340" y="3940" class="open-status" text-anchor="start">OPEN · no SmoothieBox route selected</text>
+</g>
+<g id="machine-p015-c002" data-machine-contact="2" data-contact-mark="2" data-contact-fact="source" data-route-state="open" data-x="2220" data-y="3973">
+<title>3018-PROVer V2 optional two-position AIR socket · source position 2 · AIR board position 2 · role unverified · </title>
+<circle cx="2220" cy="3973" r="8" class="open-socket"/>
+<rect x="2236" y="3956" width="90" height="30" rx="8" class="number-pill"/>
+<text x="2281" y="3978" class="number-text" text-anchor="middle">2</text>
+<text x="2340" y="3978" class="machine-contact" text-anchor="start">AIR board position 2 · role unverified</text>
+<text x="2340" y="4005" class="open-status" text-anchor="start">OPEN · no SmoothieBox route selected</text>
+</g>
+</g>
+<text x="60" y="4094" class="legend-title">CONNECTION / EVIDENCE KEY</text>
+<path d="M65 4127H165" class="guess-wire" data-decoration="legend-sample"/>
+<text x="190" y="4134" class="legend" text-anchor="start">DOTTED VIOLET = FUNCTION GUESS ONLY. Paths start at the actual drawn exterior screw and end at the named machine contact. No installed continuity or direct cable is established.</text>
+<text x="60" y="4181" class="legend" text-anchor="start">OPEN / hollow contact = no SmoothieBox route selected in this study. This does not mean an electrically open circuit, unused pin or NC in the source. Source-empty, unlisted and untranscribed roles remain distinct in their labels.</text>
+<text x="60" y="4228" class="legend" text-anchor="start">REFERENCE ONLY = a named source revision, not the installed machine. Reference contacts stay OPEN unless an individually cited dotted function guess is shown. Named hardware with no contact map has an OPEN boundary, not invented '?' pins.</text>
+<text x="60" y="4275" class="legend" text-anchor="start">Paths may cross without joining; pale crossing clearance means NO JUNCTION. Multiple guesses from one screw are alternatives unless each shares an explicit FAN-OUT tag. A tagged fan-out still needs separate buffers and load validation. No return bus is inferred.</text>
+<text x="60" y="4322" class="legend" text-anchor="start">Exterior label colors: black = circuit GND; red = 3.3 V; orange = 5 V; yellow/gold = load/control feed; blue/violet/green = STEP/DIR/ENABLE. Dotted violet is an evidence state, not a reported cable color. Protective earth is not circuit GND.</text>
+<text x="60" y="4369" class="legend" text-anchor="start">DB25, DB44 and 15-contact D-sub housings are outside SmoothieBox. Contact strips preserve source order, not physical pin-row geometry. USB device, USB host, Ethernet and microSD are separate service ports.</text>
+<text x="60" y="4416" class="legend" text-anchor="start">RESEARCH DIAGRAM — NOT QUALIFIED FOR PHYSICAL WIRING. Confirm the actual carrier, machine revision, mating view, electrical interface, protection, returns and safety design before construction.</text>
+</svg>

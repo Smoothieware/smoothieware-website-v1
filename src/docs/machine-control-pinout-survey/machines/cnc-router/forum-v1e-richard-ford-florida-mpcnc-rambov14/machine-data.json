@@ -1,0 +1,41 @@
+{
+  "id": "forum-v1e-richard-ford-florida-mpcnc-rambov14",
+  "sources": {
+    "forum-peripheral-evidence.json": {
+      "id": "forum-v1e-richard-ford-florida-mpcnc-rambov14",
+      "dossier": "src/docs/machine-research/v1e-richard-ford-florida-mpcnc-rambov14.md",
+      "reported_fitted_or_used": [
+        {
+          "name": "Dual X/Y endstop switches",
+          "contacts": [],
+          "source_line_number": 11,
+          "source_line": "Ford documented the mismatch by comparing firmware behavior: with regular firmware, his `M119` report showed `x`, `y`, and `z`; with dual-endstop firmware, it showed `x1`, `y1`, `x2`, `y2`, and `z`. When he used dual-endstop wiring with ordinary firmware, open switches appeared as triggered. He also found that he had initially wired one of the paired X or Y motors in a way that activated one motor but not both. After flashing the correct firmware and troubleshooting, he reported that he had successfully resolved the wiring.",
+          "evidence": "Ford documented the mismatch by comparing firmware behavior: with regular firmware, his `M119` report showed `x`, `y`, and `z`; with dual-endstop firmware, it showed `x1`, `y1`, `x2`, `y2`, and `z`. When he used dual-endstop wiring with ordinary firmware, open switches appeared as triggered.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        }
+      ],
+      "listed_for_build_unverified": [],
+      "historical_reference": [],
+      "planned_only": [],
+      "open_function_group": [
+        {
+          "name": "Single Z stepper motor",
+          "contacts": [],
+          "source_line_number": 15,
+          "source_line": "For the single Z stepper, Ford used the third connector from the left in the Rambo photo, while he was uncertain whether the third or fourth from the left was intended. A forum respondent said those two plugs are wired in parallel and share one driver; that is a reply from another user, not independently verified in this dossier. Do not use this note as a board wiring instruction.",
+          "evidence": "For the single Z stepper, Ford used the third connector from the left in the Rambo photo, while he was uncertain whether the third or fourth from the left was intended. A forum respondent said those two plugs are wired in parallel and share one driver; that is a reply from another user, not independently verified in this dossier.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        }
+      ],
+      "exclusions": [
+        {
+          "name": "RAMBo v1.4 is existing controller",
+          "reason": "Existing or proposed controller belongs to the replaced control system, not the machine periphery.",
+          "source_line_number": 1,
+          "source_line": "# Richard Ford's Florida MPCNC with Rambo 1.4 Dual Endstops"
+        }
+      ],
+      "source_gap": "Dossier does not establish an as-built SmoothieBox route or a complete physical contact schedule for the listed peripherals."
+    }
+  }
+}

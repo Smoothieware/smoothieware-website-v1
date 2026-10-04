@@ -1,0 +1,25 @@
+{
+  "id": "forum-linuxcnc-orpheus-hurco-km3-retrofit",
+  "sources": {
+    "forum-peripheral-evidence.json": {
+      "id": "forum-linuxcnc-orpheus-hurco-km3-retrofit",
+      "dossier": "src/docs/machine-research/linuxcnc-orpheus-hurco-km3-retrofit.md",
+      "reported_fitted_or_used": [
+        {
+          "name": "New spindle encoder",
+          "contacts": [],
+          "source_line_number": 7,
+          "source_line": "The owner reports using Mesa 5i20, 7i33, 7i42, and 7i37 hardware. A new spindle encoder was added for rigid tapping. Most of the left-hand control panel was retained, leaving much of the machine hardware-controlled. A sealed kiosk keyboard and mouse were added, primarily for NativeCAM. The owner also describes a LinuxCNC trajectory-planner change that exposed which axis was moving, so an independent Z feed override could reproduce a feature of the Hurco control that his father valued.",
+          "evidence": "A new spindle encoder was added for rigid tapping. Most of the left-hand control panel was retained, leaving much of the machine hardware-controlled.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        }
+      ],
+      "listed_for_build_unverified": [],
+      "historical_reference": [],
+      "planned_only": [],
+      "open_function_group": [],
+      "exclusions": [],
+      "source_gap": "Dossier does not establish an as-built SmoothieBox route or a complete physical contact schedule for the listed peripherals."
+    }
+  }
+}

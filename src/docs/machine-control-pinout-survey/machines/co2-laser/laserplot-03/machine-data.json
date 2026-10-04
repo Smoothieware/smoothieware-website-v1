@@ -1,0 +1,148 @@
+{
+  "id": "laserplot-03",
+  "sources": {
+    "machine-side-graph-snapshot.json": {
+      "source_graph": "063-laserplot-03.json",
+      "source_sha256": "be5d7b5b5d58e62f2bf202f4e948c587e3248f53eb01e9ed073b426647a13363",
+      "graph": {
+        "profile_id": "laserplot-03",
+        "devices": [
+          {
+            "id": "peripheral-01",
+            "role": "reference"
+          },
+          {
+            "id": "peripheral-02",
+            "role": "reference"
+          },
+          {
+            "id": "group-device-001",
+            "role": "peripheral"
+          },
+          {
+            "id": "group-device-002",
+            "role": "peripheral"
+          },
+          {
+            "id": "group-device-003",
+            "role": "peripheral"
+          },
+          {
+            "id": "group-device-004",
+            "role": "peripheral"
+          },
+          {
+            "id": "group-device-005",
+            "role": "peripheral"
+          }
+        ],
+        "connectors": [
+          {
+            "id": "machine-01",
+            "device": "peripheral-01",
+            "refdes": "MG3 J2",
+            "form": "source-described connector",
+            "scope": "Mini Gerbil 3 controller J2; not proof of a K40 cabinet harness or safety-rated circuit Original/reference connector availability unresolved; do not infer retained installation.",
+            "contacts": [
+              {
+                "id": "1",
+                "mark": "1",
+                "label": "Air assist SSR signal; 5 V logic, max 150 mA"
+              },
+              {
+                "id": "2",
+                "mark": "2",
+                "label": "GND"
+              },
+              {
+                "id": "3",
+                "mark": "3",
+                "label": "Lid input"
+              },
+              {
+                "id": "4",
+                "mark": "4",
+                "label": "Abort input"
+              }
+            ]
+          },
+          {
+            "id": "machine-02",
+            "device": "peripheral-02",
+            "refdes": "MG3 J5",
+            "form": "source-described connector",
+            "scope": "Mini Gerbil 3 controller J5; numbered contacts govern, physical board-edge orientation unresolved Original/reference connector availability unresolved; do not infer retained installation.",
+            "contacts": [
+              {
+                "id": "1",
+                "mark": "1",
+                "label": "+5 V"
+              },
+              {
+                "id": "2",
+                "mark": "2",
+                "label": "GND"
+              },
+              {
+                "id": "3",
+                "mark": "3",
+                "label": "X limit"
+              },
+              {
+                "id": "4",
+                "mark": "4",
+                "label": "Y limit"
+              },
+              {
+                "id": "5",
+                "mark": "5",
+                "label": "GND"
+              }
+            ]
+          },
+          {
+            "id": "machine-group-001",
+            "device": "group-device-001",
+            "refdes": "J3",
+            "form": "source-described cable / connector group",
+            "scope": "Source names this group, but provides no source-scoped physical contact map. Availability and exact housing are unverified. exact atlas group labels; open until contact mapping is established",
+            "contacts": []
+          },
+          {
+            "id": "machine-group-002",
+            "device": "group-device-002",
+            "refdes": "J5",
+            "form": "source-described cable / connector group",
+            "scope": "Source names this group, but provides no source-scoped physical contact map. Availability and exact housing are unverified. exact atlas group labels; open until contact mapping is established",
+            "contacts": []
+          },
+          {
+            "id": "machine-group-003",
+            "device": "group-device-003",
+            "refdes": "J6 Y",
+            "form": "source-described cable / connector group",
+            "scope": "Source names this group, but provides no source-scoped physical contact map. Availability and exact housing are unverified. exact atlas group labels; open until contact mapping is established",
+            "contacts": []
+          },
+          {
+            "id": "machine-group-004",
+            "device": "group-device-004",
+            "refdes": "J7 X",
+            "form": "source-described cable / connector group",
+            "scope": "Source names this group, but provides no source-scoped physical contact map. Availability and exact housing are unverified. exact atlas group labels; open until contact mapping is established",
+            "contacts": []
+          },
+          {
+            "id": "machine-group-005",
+            "device": "group-device-005",
+            "refdes": "PWM",
+            "form": "source-described cable / connector group",
+            "scope": "Source names this group, but provides no source-scoped physical contact map. Availability and exact housing are unverified. exact atlas group labels; open until contact mapping is established",
+            "contacts": []
+          }
+        ],
+        "wires": []
+      }
+    }
+  }
+}

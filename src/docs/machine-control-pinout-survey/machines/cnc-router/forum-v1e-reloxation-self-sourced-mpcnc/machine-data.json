@@ -1,0 +1,44 @@
+{
+  "id": "forum-v1e-reloxation-self-sourced-mpcnc",
+  "sources": {
+    "forum-peripheral-evidence.json": {
+      "id": "forum-v1e-reloxation-self-sourced-mpcnc",
+      "dossier": "src/docs/machine-research/v1e-reloxation-self-sourced-mpcnc.md",
+      "reported_fitted_or_used": [],
+      "listed_for_build_unverified": [],
+      "historical_reference": [],
+      "planned_only": [
+        {
+          "name": "Dual endstops intended",
+          "contacts": [],
+          "source_line_number": 11,
+          "source_line": "The owner initially considered adding endstops later, then selected a dual-endstop configuration. This decision was made during discussion and should not be read as proof that the final build wired every endstop as planned. Another member warned of past pinout issues on cloned Mini-RAMBo boards, but Lachlan was considering a full-size RAMBo 1.4 clone; those comments do not establish a fault or exact wiring on his machine.",
+          "evidence": "The owner initially considered adding endstops later, then selected a dual-endstop configuration. This decision was made during discussion and should not be read as proof that the final build wired every endstop as planned.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        }
+      ],
+      "open_function_group": [],
+      "exclusions": [
+        {
+          "name": "Rewired stepper motors",
+          "contacts": [],
+          "source_line_number": 17,
+          "source_line": "In December 2020, the owner says he had been unable to access the machine for a while, rewired the steppers, mounted the spindle, and completed a first cut. He identifies the material as styrofoam and notes that some material chipped away. The post establishes first operation, but not a finished part, measured accuracy, or success with wood/aluminium.",
+          "evidence": "In December 2020, the owner says he had been unable to access the machine for a while, rewired the steppers, mounted the spindle, and completed a first cut. He identifies the material as styrofoam and notes that some material chipped away.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route",
+          "reason": "Excluded: no separate externally addressable interface, existing control hardware, absent tooling, or inadequate positive device evidence in this dossier."
+        },
+        {
+          "name": "Mounted spindle model unreported",
+          "contacts": [],
+          "source_line_number": 17,
+          "source_line": "In December 2020, the owner says he had been unable to access the machine for a while, rewired the steppers, mounted the spindle, and completed a first cut. He identifies the material as styrofoam and notes that some material chipped away. The post establishes first operation, but not a finished part, measured accuracy, or success with wood/aluminium.",
+          "evidence": "In December 2020, the owner says he had been unable to access the machine for a while, rewired the steppers, mounted the spindle, and completed a first cut. He identifies the material as styrofoam and notes that some material chipped away.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route",
+          "reason": "No separate supported machine-side electrical interface or positive fitted-device identity in this dossier."
+        }
+      ],
+      "source_gap": "Dossier does not establish an as-built SmoothieBox route or a complete physical contact schedule for the listed peripherals."
+    }
+  }
+}

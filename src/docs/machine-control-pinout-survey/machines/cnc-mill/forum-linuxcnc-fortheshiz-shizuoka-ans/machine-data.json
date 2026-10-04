@@ -1,0 +1,25 @@
+{
+  "id": "forum-linuxcnc-fortheshiz-shizuoka-ans",
+  "sources": {
+    "forum-peripheral-evidence.json": {
+      "id": "forum-linuxcnc-fortheshiz-shizuoka-ans",
+      "dossier": "src/docs/machine-research/linuxcnc-fortheshiz-shizuoka-ans.md",
+      "reported_fitted_or_used": [],
+      "listed_for_build_unverified": [],
+      "historical_reference": [],
+      "planned_only": [],
+      "open_function_group": [
+        {
+          "name": "Original Shizuoka servo motors",
+          "contacts": [],
+          "source_line_number": 1,
+          "source_line": "# FortheShiz's separate Shizuoka AN-S retrofit project",
+          "evidence": "# FortheShiz's separate Shizuoka AN-S retrofit project.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        }
+      ],
+      "exclusions": [],
+      "source_gap": "Dossier does not establish an as-built SmoothieBox route or a complete physical contact schedule for the listed peripherals."
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "id": "forum-maslowcnc-lthomas987-maslow4-v085-first-dog-cut",
+  "sources": {
+    "forum-peripheral-evidence.json": {
+      "id": "forum-maslowcnc-lthomas987-maslow4-v085-first-dog-cut",
+      "dossier": "src/docs/machine-research/maslowcnc-lthomas987-maslow4-v085-first-dog-cut.md",
+      "reported_fitted_or_used": [
+        {
+          "name": "DeWalt 611 router",
+          "contacts": [],
+          "source_line_number": 19,
+          "source_line": "- Router: DeWalt 611, speed dial at 5; RPM was unknown.",
+          "evidence": "Router: DeWalt 611, speed dial at 5; RPM was unknown.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        }
+      ],
+      "listed_for_build_unverified": [],
+      "historical_reference": [],
+      "planned_only": [],
+      "open_function_group": [],
+      "exclusions": [
+        {
+          "name": "Maslow 4 belt-drive motors unspecified",
+          "contacts": [],
+          "source_line_number": 1,
+          "source_line": "# L. Thomas's Maslow 4 and First Dog-Profile Cuts",
+          "evidence": "# L. Thomas's Maslow 4 and First Dog-Profile Cuts",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route",
+          "reason": "Excluded: no separate externally addressable interface, existing control hardware, absent tooling, or inadequate positive device evidence in this dossier."
+        }
+      ],
+      "source_gap": "Dossier does not establish an as-built SmoothieBox route or a complete physical contact schedule for the listed peripherals."
+    }
+  }
+}

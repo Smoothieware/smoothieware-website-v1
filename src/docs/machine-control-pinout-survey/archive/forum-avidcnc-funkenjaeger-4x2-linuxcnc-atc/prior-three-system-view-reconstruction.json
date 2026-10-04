@@ -1,0 +1,30 @@
+{
+  "artifact": "src/docs/machine-control-pinout-survey/archive/forum-avidcnc-funkenjaeger-4x2-linuxcnc-atc/prior-three-system-view-reconstructed.svg",
+  "status": "historical rendering reconstructed; not byte-identical to the overwritten selected SVG",
+  "limitations": "The former selected SVG bytes and SHA-256 were not archived before the current diagram was generated. This retained variant reconstructs the earlier three-card scope from the prior profile-evidence state and earlier dossier wording; it is not a forensic copy.",
+  "reconstructed_scope": [
+    "Tool setter",
+    "Optical beam-break sensor",
+    "ATC rack tool-present leaf switches"
+  ],
+  "source_contact_rows": 0,
+  "routes": 0,
+  "guesses": 0,
+  "generator": "src/docs/machine-control-pinout-survey/build_smoothiebox_machine_wiring.py",
+  "generator_result_jsonl": [
+    "{\"type\": \"artifact\", \"id\": \"forum-avidcnc-funkenjaeger-4x2-linuxcnc-atc\", \"path\": \"/home/arthur/dev/smoothieware/smoothieware-website-v1/src/docs/machine-control-pinout-survey/smoothiebox-machine-wiring/forum-avidcnc-funkenjaeger-4x2-linuxcnc-atc.svg\", \"bytes\": 81279, \"peripherals\": 3, \"machine_contacts\": 0, \"guesses\": 0, \"reference_contacts\": 0, \"context_devices\": 0, \"open_contacts\": 0}",
+    "{\"type\": \"summary\", \"profiles\": 1, \"total_profiles\": 330, \"written\": 1}"
+  ],
+  "reconstruction_created_by": "temporary restoration of pre-expansion profile inputs; current inputs were restored afterward",
+  "reconstruction_inputs": [
+    {
+      "path": "src/docs/machine-control-pinout-survey/archive/forum-avidcnc-funkenjaeger-4x2-linuxcnc-atc/prior-three-system-forum-peripheral-evidence.json",
+      "sha256": "793420193190385149d9b929c7ac6f59f343b48fba1d66ddcb28f03acc369dc3"
+    },
+    {
+      "path": "src/docs/machine-control-pinout-survey/archive/forum-avidcnc-funkenjaeger-4x2-linuxcnc-atc/prior-three-system-dossier.md",
+      "sha256": "2cbd7c99b912d6330d0d256b857b84fb252313f4a00123d57c89ebbd904a1065"
+    }
+  ],
+  "reconstruction_inputs_verified_against_svg_provenance": true
+}

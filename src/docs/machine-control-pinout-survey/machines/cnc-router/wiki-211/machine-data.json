@@ -1,0 +1,173 @@
+{
+  "id": "wiki-211",
+  "sources": {
+    "machine-side-graph-snapshot.json": {
+      "source_graph": "211-wiki-211.json",
+      "source_sha256": "6bd9128aa8c25fb1d1bf19336884fd93ecdf57e5a1bfc786d1d6acb528d1c130",
+      "graph": {
+        "profile_id": "wiki-211",
+        "devices": [
+          {
+            "id": "supplement-device-001",
+            "role": "reference"
+          },
+          {
+            "id": "supplement-device-002",
+            "role": "reference"
+          }
+        ],
+        "connectors": [
+          {
+            "id": "supplement-connector-001",
+            "device": "supplement-device-001",
+            "refdes": "STEPCRAFT 2 v4 controller X2 external signals for 2/600",
+            "form": "SUB-D 15 X2 plus separate PE shield; mating view unknown",
+            "scope": "STEPCRAFT 2 operating manual v4 applies to size 2/600 but does not establish the controller card fitted to the archived/local machine. X2 external signals and optional X101 4th-axis connector are separate interfaces; shield is not signal pin 16 or 10. No V2 route. This is a reference for the named source revision; installed-machine correspondence is not established.",
+            "contacts": [
+              {
+                "id": "1",
+                "mark": "1",
+                "label": "19 V / 30 V VCC"
+              },
+              {
+                "id": "2",
+                "mark": "2",
+                "label": "GND"
+              },
+              {
+                "id": "3",
+                "mark": "3",
+                "label": "+5 V / VCC Logic"
+              },
+              {
+                "id": "4",
+                "mark": "4",
+                "label": "Direction, 4th axis"
+              },
+              {
+                "id": "5",
+                "mark": "5",
+                "label": "Step, 4th axis"
+              },
+              {
+                "id": "6",
+                "mark": "6",
+                "label": "Relay 2"
+              },
+              {
+                "id": "7",
+                "mark": "7",
+                "label": "PWM"
+              },
+              {
+                "id": "8",
+                "mark": "8",
+                "label": "Tool-length sensor"
+              },
+              {
+                "id": "9",
+                "mark": "9",
+                "label": "19 V / 30 V VCC"
+              },
+              {
+                "id": "10",
+                "mark": "10",
+                "label": "GND"
+              },
+              {
+                "id": "11",
+                "mark": "11",
+                "label": "Disable"
+              },
+              {
+                "id": "12",
+                "mark": "12",
+                "label": "4th-axis limit switch"
+              },
+              {
+                "id": "13",
+                "mark": "13",
+                "label": "Relay 1"
+              },
+              {
+                "id": "14",
+                "mark": "14",
+                "label": "Relay 2"
+              },
+              {
+                "id": "15",
+                "mark": "15",
+                "label": "Enclosure"
+              },
+              {
+                "id": "shield",
+                "mark": "shield",
+                "label": "PE shield"
+              }
+            ]
+          },
+          {
+            "id": "supplement-connector-002",
+            "device": "supplement-device-002",
+            "refdes": "STEPCRAFT 2 v4 optional controller X101 fourth axis for 2/600",
+            "form": "SUB-D 9 X101 plus separate PE shield; mating view unknown",
+            "scope": "STEPCRAFT 2 operating manual v4 applies to size 2/600 but does not establish the controller card fitted to the archived/local machine. X2 external signals and optional X101 4th-axis connector are separate interfaces; shield is not signal pin 16 or 10. No V2 route. X101 contacts 3, 4, 8 are explicitly not connected in the manual. This is a reference for the named source revision; installed-machine correspondence is not established.",
+            "contacts": [
+              {
+                "id": "1",
+                "mark": "1",
+                "label": "Winding 1A"
+              },
+              {
+                "id": "2",
+                "mark": "2",
+                "label": "Winding 1B"
+              },
+              {
+                "id": "3",
+                "mark": "3",
+                "label": "Not connected (source NC)"
+              },
+              {
+                "id": "4",
+                "mark": "4",
+                "label": "Not connected (source NC)"
+              },
+              {
+                "id": "5",
+                "mark": "5",
+                "label": "4th-axis limit switch"
+              },
+              {
+                "id": "6",
+                "mark": "6",
+                "label": "Winding 2A"
+              },
+              {
+                "id": "7",
+                "mark": "7",
+                "label": "Winding 2B"
+              },
+              {
+                "id": "8",
+                "mark": "8",
+                "label": "Not connected (source NC)"
+              },
+              {
+                "id": "9",
+                "mark": "9",
+                "label": "GND"
+              },
+              {
+                "id": "shield",
+                "mark": "shield",
+                "label": "PE shield"
+              }
+            ]
+          }
+        ],
+        "wires": []
+      }
+    }
+  }
+}

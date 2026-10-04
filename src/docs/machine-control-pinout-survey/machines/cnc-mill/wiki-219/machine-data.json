@@ -1,0 +1,586 @@
+{
+  "id": "wiki-219",
+  "sources": {
+    "machine-side-graph-snapshot.json": {
+      "source_graph": "219-wiki-219.json",
+      "source_sha256": "f1027a6aeb1ff245631604274348fd7da2536d3b8207423979079af365fc65ef",
+      "graph": {
+        "profile_id": "wiki-219",
+        "devices": [
+          {
+            "id": "hildi-controller",
+            "role": "peripheral"
+          }
+        ],
+        "connectors": [
+          {
+            "id": "hildi-tb2",
+            "device": "hildi-controller",
+            "refdes": "Mesa 7i76E \u00b7 TB2",
+            "form": "Manufacturer numbered terminal contacts 1\u201324; reference pinout, not a mating-view drawing",
+            "scope": "24-position step/dir terminal block; manual board-family pin schedule and HILDI dated software assignments where named. Installed board revision, current configuration and external harness termination are unverified. No terminal-to-SmoothieBox route is established.",
+            "contacts": [
+              {
+                "mark": "1",
+                "name": "GND",
+                "fact": "source"
+              },
+              {
+                "mark": "2",
+                "name": "STEP0\u2212 \u00b7 X axis step \u2212",
+                "fact": "source"
+              },
+              {
+                "mark": "3",
+                "name": "STEP0+ \u00b7 X axis step +",
+                "fact": "source"
+              },
+              {
+                "mark": "4",
+                "name": "DIR0\u2212 \u00b7 X axis direction \u2212",
+                "fact": "source"
+              },
+              {
+                "mark": "5",
+                "name": "DIR0+ \u00b7 X axis direction +",
+                "fact": "source"
+              },
+              {
+                "mark": "6",
+                "name": "+5VP",
+                "fact": "source"
+              },
+              {
+                "mark": "7",
+                "name": "GND",
+                "fact": "source"
+              },
+              {
+                "mark": "8",
+                "name": "STEP1\u2212 \u00b7 Y axis step \u2212",
+                "fact": "source"
+              },
+              {
+                "mark": "9",
+                "name": "STEP1+ \u00b7 Y axis step +",
+                "fact": "source"
+              },
+              {
+                "mark": "10",
+                "name": "DIR1\u2212 \u00b7 Y axis direction \u2212",
+                "fact": "source"
+              },
+              {
+                "mark": "11",
+                "name": "DIR1+ \u00b7 Y axis direction +",
+                "fact": "source"
+              },
+              {
+                "mark": "12",
+                "name": "+5VP",
+                "fact": "source"
+              },
+              {
+                "mark": "13",
+                "name": "GND",
+                "fact": "source"
+              },
+              {
+                "mark": "14",
+                "name": "STEP2\u2212 \u00b7 Z axis step \u2212",
+                "fact": "source"
+              },
+              {
+                "mark": "15",
+                "name": "STEP2+ \u00b7 Z axis step +",
+                "fact": "source"
+              },
+              {
+                "mark": "16",
+                "name": "DIR2\u2212 \u00b7 Z axis direction \u2212",
+                "fact": "source"
+              },
+              {
+                "mark": "17",
+                "name": "DIR2+ \u00b7 Z axis direction +",
+                "fact": "source"
+              },
+              {
+                "mark": "18",
+                "name": "+5VP",
+                "fact": "source"
+              },
+              {
+                "mark": "19",
+                "name": "GND",
+                "fact": "source"
+              },
+              {
+                "mark": "20",
+                "name": "STEP3\u2212",
+                "fact": "source"
+              },
+              {
+                "mark": "21",
+                "name": "STEP3+",
+                "fact": "source"
+              },
+              {
+                "mark": "22",
+                "name": "DIR3\u2212",
+                "fact": "source"
+              },
+              {
+                "mark": "23",
+                "name": "DIR3+",
+                "fact": "source"
+              },
+              {
+                "mark": "24",
+                "name": "+5VP",
+                "fact": "source"
+              }
+            ]
+          },
+          {
+            "id": "hildi-tb3",
+            "device": "hildi-controller",
+            "refdes": "Mesa 7i76E \u00b7 TB3",
+            "form": "Manufacturer numbered terminal contacts 1\u201324; reference pinout, not a mating-view drawing",
+            "scope": "24-position step/dir, encoder and serial terminal block; manual board-family pin schedule and HILDI dated software assignments where named. Installed board revision, current configuration and external harness termination are unverified. No terminal-to-SmoothieBox route is established.",
+            "contacts": [
+              {
+                "mark": "1",
+                "name": "GND",
+                "fact": "source"
+              },
+              {
+                "mark": "2",
+                "name": "STEP4\u2212",
+                "fact": "source"
+              },
+              {
+                "mark": "3",
+                "name": "STEP4+",
+                "fact": "source"
+              },
+              {
+                "mark": "4",
+                "name": "DIR4\u2212",
+                "fact": "source"
+              },
+              {
+                "mark": "5",
+                "name": "DIR4+",
+                "fact": "source"
+              },
+              {
+                "mark": "6",
+                "name": "+5VP",
+                "fact": "source"
+              },
+              {
+                "mark": "7",
+                "name": "ENCA+",
+                "fact": "source"
+              },
+              {
+                "mark": "8",
+                "name": "ENCA\u2212",
+                "fact": "source"
+              },
+              {
+                "mark": "9",
+                "name": "GND",
+                "fact": "source"
+              },
+              {
+                "mark": "10",
+                "name": "ENCB+",
+                "fact": "source"
+              },
+              {
+                "mark": "11",
+                "name": "ENCB\u2212",
+                "fact": "source"
+              },
+              {
+                "mark": "12",
+                "name": "+5VP",
+                "fact": "source"
+              },
+              {
+                "mark": "13",
+                "name": "IDX+",
+                "fact": "source"
+              },
+              {
+                "mark": "14",
+                "name": "IDX\u2212",
+                "fact": "source"
+              },
+              {
+                "mark": "15",
+                "name": "GND",
+                "fact": "source"
+              },
+              {
+                "mark": "16",
+                "name": "RS-422 RX+",
+                "fact": "source"
+              },
+              {
+                "mark": "17",
+                "name": "RS-422 RX\u2212",
+                "fact": "source"
+              },
+              {
+                "mark": "18",
+                "name": "RS-422 TX+",
+                "fact": "source"
+              },
+              {
+                "mark": "19",
+                "name": "RS-422 TX\u2212",
+                "fact": "source"
+              },
+              {
+                "mark": "20",
+                "name": "+5VP",
+                "fact": "source"
+              },
+              {
+                "mark": "21",
+                "name": "Unregulated logic power + input",
+                "fact": "source"
+              },
+              {
+                "mark": "22",
+                "name": "Unregulated logic power + input",
+                "fact": "source"
+              },
+              {
+                "mark": "23",
+                "name": "GND",
+                "fact": "source"
+              },
+              {
+                "mark": "24",
+                "name": "GND",
+                "fact": "source"
+              }
+            ]
+          },
+          {
+            "id": "hildi-tb4",
+            "device": "hildi-controller",
+            "refdes": "Mesa 7i76E \u00b7 TB4",
+            "form": "Manufacturer numbered terminal contacts 1\u20138; reference pinout, not a mating-view drawing",
+            "scope": "8-position spindle terminal block; manual board-family pin schedule and HILDI dated software assignments where named. Installed board revision, current configuration and external harness termination are unverified. No terminal-to-SmoothieBox route is established.",
+            "contacts": [
+              {
+                "mark": "1",
+                "name": "SPINDLE\u2212",
+                "fact": "source"
+              },
+              {
+                "mark": "2",
+                "name": "SPINDLE OUT (analog)",
+                "fact": "source"
+              },
+              {
+                "mark": "3",
+                "name": "SPINDLE+",
+                "fact": "source"
+              },
+              {
+                "mark": "4",
+                "name": "NC",
+                "fact": "source"
+              },
+              {
+                "mark": "5",
+                "name": "SPINDLE ENA\u2212",
+                "fact": "source"
+              },
+              {
+                "mark": "6",
+                "name": "SPINDLE ENA+",
+                "fact": "source"
+              },
+              {
+                "mark": "7",
+                "name": "SPINDLE DIR\u2212",
+                "fact": "source"
+              },
+              {
+                "mark": "8",
+                "name": "SPINDLE DIR+",
+                "fact": "source"
+              }
+            ]
+          },
+          {
+            "id": "hildi-tb5",
+            "device": "hildi-controller",
+            "refdes": "Mesa 7i76E \u00b7 TB5",
+            "form": "Manufacturer numbered terminal contacts 1\u201324; reference pinout, not a mating-view drawing",
+            "scope": "24-position field I/O terminal block; manual board-family pin schedule and HILDI dated software assignments where named. Installed board revision, current configuration and external harness termination are unverified. No terminal-to-SmoothieBox route is established.",
+            "contacts": [
+              {
+                "mark": "1",
+                "name": "INPUT16",
+                "fact": "source"
+              },
+              {
+                "mark": "2",
+                "name": "INPUT17",
+                "fact": "source"
+              },
+              {
+                "mark": "3",
+                "name": "INPUT18",
+                "fact": "source"
+              },
+              {
+                "mark": "4",
+                "name": "INPUT19",
+                "fact": "source"
+              },
+              {
+                "mark": "5",
+                "name": "INPUT20",
+                "fact": "source"
+              },
+              {
+                "mark": "6",
+                "name": "INPUT21",
+                "fact": "source"
+              },
+              {
+                "mark": "7",
+                "name": "INPUT22",
+                "fact": "source"
+              },
+              {
+                "mark": "8",
+                "name": "INPUT23",
+                "fact": "source"
+              },
+              {
+                "mark": "9",
+                "name": "INPUT24",
+                "fact": "source"
+              },
+              {
+                "mark": "10",
+                "name": "INPUT25",
+                "fact": "source"
+              },
+              {
+                "mark": "11",
+                "name": "INPUT26",
+                "fact": "source"
+              },
+              {
+                "mark": "12",
+                "name": "INPUT27",
+                "fact": "source"
+              },
+              {
+                "mark": "13",
+                "name": "INPUT28",
+                "fact": "source"
+              },
+              {
+                "mark": "14",
+                "name": "INPUT29",
+                "fact": "source"
+              },
+              {
+                "mark": "15",
+                "name": "INPUT30",
+                "fact": "source"
+              },
+              {
+                "mark": "16",
+                "name": "INPUT31",
+                "fact": "source"
+              },
+              {
+                "mark": "17",
+                "name": "OUTPUT8 \u00b7 Green status light command (output-08)",
+                "fact": "source"
+              },
+              {
+                "mark": "18",
+                "name": "OUTPUT9 \u00b7 Yellow status light command (output-09)",
+                "fact": "source"
+              },
+              {
+                "mark": "19",
+                "name": "OUTPUT10 \u00b7 Red status light command (output-10)",
+                "fact": "source"
+              },
+              {
+                "mark": "20",
+                "name": "OUTPUT11",
+                "fact": "source"
+              },
+              {
+                "mark": "21",
+                "name": "OUTPUT12",
+                "fact": "source"
+              },
+              {
+                "mark": "22",
+                "name": "OUTPUT13",
+                "fact": "source"
+              },
+              {
+                "mark": "23",
+                "name": "OUTPUT14",
+                "fact": "source"
+              },
+              {
+                "mark": "24",
+                "name": "OUTPUT15",
+                "fact": "source"
+              }
+            ]
+          },
+          {
+            "id": "hildi-tb6",
+            "device": "hildi-controller",
+            "refdes": "Mesa 7i76E \u00b7 TB6",
+            "form": "Manufacturer numbered terminal contacts 1\u201324; reference pinout, not a mating-view drawing",
+            "scope": "24-position field I/O terminal block; manual board-family pin schedule and HILDI dated software assignments where named. Installed board revision, current configuration and external harness termination are unverified. No terminal-to-SmoothieBox route is established.",
+            "contacts": [
+              {
+                "mark": "1",
+                "name": "INPUT0 \u00b7 X home switch input (input-00)",
+                "fact": "source"
+              },
+              {
+                "mark": "2",
+                "name": "INPUT1 \u00b7 Y home switch input (input-01)",
+                "fact": "source"
+              },
+              {
+                "mark": "3",
+                "name": "INPUT2 \u00b7 Z home switch input (input-02)",
+                "fact": "source"
+              },
+              {
+                "mark": "4",
+                "name": "INPUT3 \u00b7 Tool probe input (input-03-not)",
+                "fact": "source"
+              },
+              {
+                "mark": "5",
+                "name": "INPUT4",
+                "fact": "source"
+              },
+              {
+                "mark": "6",
+                "name": "INPUT5",
+                "fact": "source"
+              },
+              {
+                "mark": "7",
+                "name": "INPUT6",
+                "fact": "source"
+              },
+              {
+                "mark": "8",
+                "name": "INPUT7 \u00b7 MPG X axis select (input-07)",
+                "fact": "source"
+              },
+              {
+                "mark": "9",
+                "name": "INPUT8 \u00b7 MPG Y axis select (input-08)",
+                "fact": "source"
+              },
+              {
+                "mark": "10",
+                "name": "INPUT9 \u00b7 MPG Z axis select (input-09)",
+                "fact": "source"
+              },
+              {
+                "mark": "11",
+                "name": "INPUT10 \u00b7 MPG step-scale select 1 (input-10)",
+                "fact": "source"
+              },
+              {
+                "mark": "12",
+                "name": "INPUT11 \u00b7 MPG step-scale select 2 (input-11)",
+                "fact": "source"
+              },
+              {
+                "mark": "13",
+                "name": "INPUT12",
+                "fact": "source"
+              },
+              {
+                "mark": "14",
+                "name": "INPUT13",
+                "fact": "source"
+              },
+              {
+                "mark": "15",
+                "name": "INPUT14",
+                "fact": "source"
+              },
+              {
+                "mark": "16",
+                "name": "INPUT15",
+                "fact": "source"
+              },
+              {
+                "mark": "17",
+                "name": "OUTPUT0",
+                "fact": "source"
+              },
+              {
+                "mark": "18",
+                "name": "OUTPUT1",
+                "fact": "source"
+              },
+              {
+                "mark": "19",
+                "name": "OUTPUT2",
+                "fact": "source"
+              },
+              {
+                "mark": "20",
+                "name": "OUTPUT3",
+                "fact": "source"
+              },
+              {
+                "mark": "21",
+                "name": "OUTPUT4",
+                "fact": "source"
+              },
+              {
+                "mark": "22",
+                "name": "OUTPUT5 \u00b7 Spindle enable command (output-05)",
+                "fact": "source"
+              },
+              {
+                "mark": "23",
+                "name": "OUTPUT6 \u00b7 Coolant-flood command (output-06)",
+                "fact": "source"
+              },
+              {
+                "mark": "24",
+                "name": "OUTPUT7",
+                "fact": "source"
+              }
+            ]
+          }
+        ],
+        "wires": []
+      }
+    }
+  }
+}

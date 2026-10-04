@@ -1,0 +1,25 @@
+{
+  "id": "forum-linuxcnc-rune-cnc-boxford-260-cmc-phil",
+  "sources": {
+    "forum-peripheral-evidence.json": {
+      "id": "forum-linuxcnc-rune-cnc-boxford-260-cmc-phil",
+      "dossier": "src/docs/machine-research/linuxcnc-rune-cnc-boxford-260-cmc-phil.md",
+      "reported_fitted_or_used": [],
+      "listed_for_build_unverified": [],
+      "historical_reference": [],
+      "planned_only": [
+        {
+          "name": "E-stop and limit sensors pending",
+          "contacts": [],
+          "source_line_number": 5,
+          "source_line": "LinuxCNC Forum member Rune_cnc describes restoring a Boxford 260 CMC training machine nicknamed \u201cPhil,\u201d which had been unused for six years at a school in Norway. In December 2024, the owner said the machine had been got working again and that a Mesa card was being installed as a replacement controller. A later post said safety additions, including an E-stop and limit sensors, still needed to be added. The inspected thread does not establish completed commissioning with LinuxCNC or the status of those safety changes.",
+          "evidence": "A later post said safety additions, including an E-stop and limit sensors, still needed to be added. The inspected thread does not establish completed commissioning with LinuxCNC or the status of those safety changes.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        }
+      ],
+      "open_function_group": [],
+      "exclusions": [],
+      "source_gap": "Dossier does not establish an as-built SmoothieBox route or a complete physical contact schedule for the listed peripherals."
+    }
+  }
+}

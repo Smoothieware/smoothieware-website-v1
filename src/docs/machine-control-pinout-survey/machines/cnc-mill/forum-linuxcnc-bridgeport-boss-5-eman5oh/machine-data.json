@@ -1,0 +1,41 @@
+{
+  "id": "forum-linuxcnc-bridgeport-boss-5-eman5oh",
+  "sources": {
+    "forum-peripheral-evidence.json": {
+      "id": "forum-linuxcnc-bridgeport-boss-5-eman5oh",
+      "dossier": "src/docs/machine-research/linuxcnc-bridgeport-boss-5-eman5oh.md",
+      "reported_fitted_or_used": [
+        {
+          "name": "Original drive-power transformer and capacitors",
+          "contacts": [],
+          "source_line_number": 14,
+          "source_line": "| Drive power | Owner says the supply uses the machine\u2019s original transformer and capacitors. | No voltage, rectifier/filter schematic, fuse ratings, or inspection of the old supply is supplied. |",
+          "evidence": "Owner says the supply uses the machine\u2019s original transformer and capacitors.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        },
+        {
+          "name": "Gecko stepper drives",
+          "contacts": [],
+          "source_line_number": 13,
+          "source_line": "| Motion | Original machine stepper motors retained; Gecko drives added. | Motor/drive models, axis assignments, step scales, voltage/current settings, and wiring are not provided. |",
+          "evidence": "Original machine stepper motors retained; Gecko drives added.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        },
+        {
+          "name": "Spindle VFD",
+          "contacts": [],
+          "source_line_number": 15,
+          "source_line": "| Spindle | Spindle run through a VFD. | VFD make/model, motor ratings, speed range, control interface, and whether the owner\u2019s planned pulley changes were completed are unspecified. |",
+          "evidence": "Spindle run through a VFD.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        }
+      ],
+      "listed_for_build_unverified": [],
+      "historical_reference": [],
+      "planned_only": [],
+      "open_function_group": [],
+      "exclusions": [],
+      "source_gap": "Dossier does not establish an as-built SmoothieBox route or a complete physical contact schedule for the listed peripherals."
+    }
+  }
+}

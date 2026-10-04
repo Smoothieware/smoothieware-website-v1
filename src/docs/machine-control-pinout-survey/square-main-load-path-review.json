@@ -1,0 +1,22 @@
+{
+  "renderer_sha": "9edee671705f8cc7f3a7811f5a3b8736c920bbc3a33b39cfde24d884edcd0e83",
+  "source_sha": "961078eedfea957a7d9b2df16b24738b62db13806f8addf719ca90671931a88f",
+  "source_edges": 1016,
+  "main_visible": 644,
+  "detailed_only": 372,
+  "required_main_ids_missing": [],
+  "changed_images_inspected": [
+    "forum-linuxcnc-optimill-mh50v-unlogic",
+    "mill-g2",
+    "wiki-205",
+    "wiki-132",
+    "wiki-222"
+  ],
+  "notes": [
+    "Main MH servo phase/power/STO/brake endpoints now visible individually. Unknowns remain OPEN.",
+    "UM shared VFET source edge is inside controller and explicitly factory internal net.",
+    "Cube/UM branch fuse and thermal cutoff external edges visible.",
+    "Existing central UM J35 limited3V3 qualification is still dense; root may compact that independent label."
+  ],
+  "ownership": "renderer and temporary preview artifacts only"
+}

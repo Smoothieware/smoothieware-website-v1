@@ -1,0 +1,105 @@
+{
+  "type": "verification",
+  "profiles_retained": 330,
+  "guides": [
+    {
+      "profile_id": "wiki-205",
+      "contacts": 126,
+      "conductors": 59,
+      "svg_sha256": "9cd7516afcfaed6aa95afc2d1e7b2eaab4696af1ea0203d465d22936eed63c05",
+      "render_matched": true,
+      "canonical_alias_matched": true
+    },
+    {
+      "profile_id": "laserplot-02",
+      "contacts": 118,
+      "conductors": 56,
+      "svg_sha256": "cf3adad4a62abc2a38b52711011ed4a606f1eea8055e48cd8426e8c4f3373f1e",
+      "render_matched": true,
+      "canonical_alias_matched": true
+    },
+    {
+      "profile_id": "base-11",
+      "contacts": 54,
+      "conductors": 31,
+      "svg_sha256": "fb7a0582ca1607cf79c4ed00b33ef487109c38aad4b2a426ac8453cc6f2adc51",
+      "render_matched": true,
+      "canonical_alias_matched": true
+    },
+    {
+      "profile_id": "wiki-132",
+      "contacts": 125,
+      "conductors": 56,
+      "svg_sha256": "f654b70bec6d1a72ee7fe415b7845802b5fd4b02fdbf7f3dbdb66afc3f136e02",
+      "render_matched": true,
+      "canonical_alias_matched": true
+    },
+    {
+      "profile_id": "wiki-134",
+      "contacts": 255,
+      "conductors": 129,
+      "svg_sha256": "6bff477e6f295da4da570bd676614928723a44fa483ee30203a5fed186c121d0",
+      "render_matched": true,
+      "canonical_alias_matched": true
+    },
+    {
+      "profile_id": "wiki-135",
+      "contacts": 205,
+      "conductors": 101,
+      "svg_sha256": "d18c07acdb6b80a7c428fae0761acb6a6db222e79d6ad67eb900edb1e76c7181",
+      "render_matched": true,
+      "canonical_alias_matched": true
+    },
+    {
+      "profile_id": "mill-g2",
+      "contacts": 171,
+      "conductors": 81,
+      "svg_sha256": "baeda7d7c7d3a51159656114199e93e3851c936b7c0d8a9ff78bc48bb5250d00",
+      "render_matched": true,
+      "canonical_alias_matched": true
+    },
+    {
+      "profile_id": "mill-avid-ex-3",
+      "contacts": 193,
+      "conductors": 116,
+      "svg_sha256": "017d5ca4af07b1fd3439c63fb243478e672f65e3b6fc01a210f943067e0e6640",
+      "render_matched": true,
+      "canonical_alias_matched": true
+    },
+    {
+      "profile_id": "wiki-206",
+      "contacts": 214,
+      "conductors": 101,
+      "svg_sha256": "d7ba139e8cb8fd071c747d5941241104316c718fe189f96f9a3d46e3eef9cf0b",
+      "render_matched": true,
+      "canonical_alias_matched": true
+    },
+    {
+      "profile_id": "wiki-222",
+      "contacts": 137,
+      "conductors": 64,
+      "svg_sha256": "a459dcb3ee49e51198765fcc1e52af26063c7ab93a12486894a4f6fa816acc96",
+      "render_matched": true,
+      "canonical_alias_matched": true
+    },
+    {
+      "profile_id": "forum-linuxcnc-optimill-mh50v-unlogic",
+      "contacts": 186,
+      "conductors": 100,
+      "svg_sha256": "48737cdecfa4aa8a45226f6001fa54393b9fc0268b51cbb06d6c347c4f67f802",
+      "render_matched": true,
+      "canonical_alias_matched": true
+    },
+    {
+      "profile_id": "forum-linuxcnc-rotarysmp-schaublin-125-cnc-retrofit",
+      "contacts": 43,
+      "conductors": 15,
+      "svg_sha256": "5e7153d6a428cf6f03b365ca8f9e319e2417d741f3367c99c7bc2bd4e4af1165",
+      "render_matched": true,
+      "canonical_alias_matched": true
+    }
+  ],
+  "keyboard_receipt": "retrofit-focus-keyboard-readback.json",
+  "limitations": "No hardware energized; machine revision, electrical and firmware qualification gates remain as documented.",
+  "independent_review": "research_set_b: DQ860, Denford opto returns and Prime P12 thermal reviewed; U2 label corrected."
+}

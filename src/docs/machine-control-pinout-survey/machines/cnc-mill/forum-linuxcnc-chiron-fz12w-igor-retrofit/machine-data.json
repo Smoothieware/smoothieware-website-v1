@@ -1,0 +1,43 @@
+{
+  "id": "forum-linuxcnc-chiron-fz12w-igor-retrofit",
+  "sources": {
+    "forum-peripheral-evidence.json": {
+      "id": "forum-linuxcnc-chiron-fz12w-igor-retrofit",
+      "dossier": "src/docs/machine-research/linuxcnc-chiron-fz12w-igor-retrofit.md",
+      "reported_fitted_or_used": [
+        {
+          "name": "Wireless jog handwheel",
+          "source_line_number": 20,
+          "source_line": "| Handwheel and WCS | In August 2020 he reported adding a wireless handwheel; he said he no longer used the keyboard/touchscreen for jogging and used macros for WCS setting. | Handwheel make, connection method, safety behavior, macro details, and WCS accuracy are not specified. |",
+          "evidence": "In August 2020 he reported adding a wireless handwheel; he said he no longer used the keyboard/touchscreen for jogging and used macros for WCS setting.",
+          "contacts": [],
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        }
+      ],
+      "listed_for_build_unverified": [],
+      "historical_reference": [],
+      "planned_only": [
+        {
+          "name": "Tool probe planned only",
+          "contacts": [],
+          "source_line_number": 16,
+          "source_line": "| Operator interface | He first used Gmoccapy, then changed to Probe Basic. He reused and adapted macros/scripts, including a tool-change script with the Probe Basic dynamic tool-change widget. | LinuxCNC version, full configuration, macro source, and exact setup procedure are not published in the inspected posts. |",
+          "evidence": "He reused and adapted macros/scripts, including a tool-change script with the Probe Basic dynamic tool-change widget.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        }
+      ],
+      "open_function_group": [
+        {
+          "name": "Tool-changer actuators and sensors",
+          "contacts": [],
+          "source_line_number": 7,
+          "source_line": "**Operating state:** The owner first restored the undocumented original control sufficiently to power up, then replaced it with Mesa hardware and LinuxCNC. He reports obtaining machine movement, getting the tool changer and table working, and making first chips. Later he reported using a wireless handwheel and macros to jog and set work coordinate systems (WCS). The thread does not identify the workpiece, tooling, cut parameters, accuracy, or production history.",
+          "evidence": "He reports obtaining machine movement, getting the tool changer and table working, and making first chips. Later he reported using a wireless handwheel and macros to jog and set work coordinate systems (WCS).",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        }
+      ],
+      "exclusions": [],
+      "source_gap": "Dossier does not establish an as-built SmoothieBox route or a complete physical contact schedule for the listed peripherals."
+    }
+  }
+}

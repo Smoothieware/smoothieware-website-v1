@@ -1,0 +1,43 @@
+{
+  "id": "forum-linuxcnc-dudelbert-schaublin-125-cnc",
+  "sources": {
+    "forum-peripheral-evidence.json": {
+      "id": "forum-linuxcnc-dudelbert-schaublin-125-cnc",
+      "dossier": "src/docs/machine-research/linuxcnc-dudelbert-schaublin-125-cnc.md",
+      "reported_fitted_or_used": [
+        {
+          "name": "Spindle encoder",
+          "contacts": [],
+          "source_line_number": 17,
+          "source_line": "On 2025-11-28, the owner identified the current motion-control interface as a CSMIO/IP-S. They said the spindle encoder belt had sections with missing plastic and needed replacement. The post discusses possibly removing and reinstalling the spindle but does not document a completed belt replacement, LinuxCNC commissioning, or a successful turning cut.",
+          "evidence": "They said the spindle encoder belt had sections with missing plastic and needed replacement. The post discusses possibly removing and reinstalling the spindle but does not document a completed belt replacement, LinuxCNC commissioning, or a successful turning cut.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        }
+      ],
+      "listed_for_build_unverified": [],
+      "historical_reference": [],
+      "planned_only": [
+        {
+          "name": "AASD Z drive and 1 kW motor proposed",
+          "contacts": [],
+          "source_line_number": 11,
+          "source_line": "The owner described the wiring as messy and undocumented, with no schematics. They considered using the existing system after tidying it, but decided to transition to LinuxCNC because they wanted to understand and document the electrical system. On 2025-11-27, they proposed leaving most machine-internal cabling in place while rebuilding the control cabinet. This was a plan, not a completed rewire.",
+          "evidence": "The owner described the wiring as messy and undocumented, with no schematics. They considered using the existing system after tidying it, but decided to transition to LinuxCNC because they wanted to understand and document the electrical system.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        }
+      ],
+      "open_function_group": [
+        {
+          "name": "Inherited AC servo drives and motors",
+          "contacts": [],
+          "source_line_number": 5,
+          "source_line": "**Evidence state:** In the opening post on 2025-11-26, the owner described the inherited Mach3 system as basically working. In a follow-up the same day, they clarified that they had used it for about 15 minutes, had not run a program, and had only jogged it and tried simple checks. By 2025-11-27 the owner had decided to move to LinuxCNC and remake the electrical cabinet. In the latest owner post retrieved (2025-11-28), the control was still Mach3/CSMIO/IP-S and the spindle encoder belt needed replacement before the owner expected the machine to be fully usable. The thread's later page contains other members' discussion but no later owner update in the retrieved material.",
+          "evidence": "**Evidence state:** In the opening post on 2025-11-26, the owner described the inherited Mach3 system as basically working. In a follow-up the same day, they clarified that they had used it for about 15 minutes, had not run a program, and had only jogged it and tried simple checks.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        }
+      ],
+      "exclusions": [],
+      "source_gap": "Dossier does not establish an as-built SmoothieBox route or a complete physical contact schedule for the listed peripherals."
+    }
+  }
+}

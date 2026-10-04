@@ -1,0 +1,7004 @@
+{
+  "status": "read-only discovery complete",
+  "sources": [
+    {
+      "path": "/home/arthur/dev/smoothieware/smoothie-box/docs/smoothie-central.html",
+      "bytes": 296862,
+      "sha256": "c8138622a7ad1258da4d0bab15bde0a99f3c3f20513197eba177a9d5c5b07437"
+    },
+    {
+      "path": "/home/arthur/dev/smoothieware/smoothie-box/docs/smoothie-central/v2-central-compact-gadgeteer-wiring.svg",
+      "bytes": 310493,
+      "sha256": "6807a6ddc6ce9600e17b18afccc84d985eb41576df7be099255ee3ee48e6983c"
+    },
+    {
+      "path": "/home/arthur/dev/smoothieware/smoothie-box/docs/smoothie-central/build_compact_gadgeteer_wiring.py",
+      "bytes": 67889,
+      "sha256": "360aceb956da02d1ca2c911daf8e6f7173c930afc2852545e3f7012bc9a457ab"
+    },
+    {
+      "path": "/home/arthur/dev/smoothieware/smoothie-diagrams/docs/smoothieboard-v2-pcb-explorer.html",
+      "bytes": 17432850,
+      "sha256": "6e9020b5047803be1a0f860c72ffd5c8168702e2cba72dfb7a93989a404ea9ff"
+    },
+    {
+      "path": "/home/arthur/dev/smoothieware/smoothie-diagrams/src/pcb-explorer/build.ts",
+      "bytes": 18678,
+      "sha256": "3a42412138f0d776f453d738aa869905a14323710f24d319dee7df3d73e0226a"
+    },
+    {
+      "path": "/home/arthur/dev/smoothieware/smoothie-diagrams/src/pcb-explorer/kicad_pcb.ts",
+      "bytes": 13657,
+      "sha256": "47b5b96fd0cc6b3c827481c98d5789863436d9fdd104cef7805b32addfac865a"
+    },
+    {
+      "path": "/home/arthur/dev/smoothieware/smoothieware-website-v1/src/docs/machine-control-pinout-survey/render_centered_wiring.py",
+      "bytes": 63689,
+      "sha256": "45f45708c91a1fde1d04771317b715fa786671006406858ea472097bc999b5e5"
+    },
+    {
+      "path": "/home/arthur/dev/smoothieware/smoothie-diagrams/data/pcb-source/V2_P11_Prime2660/smoothiev2-prime-2660.kicad_pcb",
+      "bytes": 8435954,
+      "sha256": "c0d77f1fac1859ba3b03a6476ba8354763c09edc0a758fb0fc9c5fcf91af4627"
+    },
+    {
+      "path": "/home/arthur/dev/smoothieware/Smoothieboard2/V2_P12_Prime2590/smoothiev2-prime.kicad_pcb",
+      "bytes": 9180255,
+      "sha256": "a7e84b8fb403d9b64fd7f0e09c6aa245f00525ba894bfe9a008093fe73626b29"
+    }
+  ],
+  "smoothiebox": {
+    "viewbox": "0 0 2932 4940",
+    "case": [
+      170,
+      180,
+      2592,
+      2880
+    ],
+    "border_bank_count": 24,
+    "border_contact_count": 82,
+    "banks": [
+      {
+        "bank": "POWER",
+        "side": "north",
+        "title": "VFET POWER IN",
+        "contacts": [
+          {
+            "contact": "POWER.1",
+            "pin": 1,
+            "function": "LOAD +",
+            "anchor": [
+              386.0,
+              278.4
+            ],
+            "screw_center": [
+              386.0,
+              273.4
+            ],
+            "source_relations": [
+              {
+                "class": "wire power",
+                "d": "M386.0 278.4L386.0 372.0",
+                "data-field": "POWER.1",
+                "data-source": "J9.1"
+              }
+            ]
+          },
+          {
+            "contact": "POWER.2",
+            "pin": 2,
+            "function": "GND",
+            "anchor": [
+              430.0,
+              278.4
+            ],
+            "screw_center": [
+              430.0,
+              273.4
+            ],
+            "source_relations": [
+              {
+                "data-field": "POWER.2",
+                "data-source": "J9.2",
+                "data-ground-net": "GND"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "bank": "FIVEIN",
+        "side": "north",
+        "title": "5V POWER IN",
+        "contacts": [
+          {
+            "contact": "FIVEIN.1",
+            "pin": 1,
+            "function": "+5V",
+            "anchor": [
+              608.0,
+              278.4
+            ],
+            "screw_center": [
+              608.0,
+              273.4
+            ],
+            "source_relations": [
+              {
+                "class": "wire five",
+                "d": "M608.0 278.4L608.0 372.0",
+                "data-field": "FIVEIN.1",
+                "data-source": "J42.1"
+              }
+            ]
+          },
+          {
+            "contact": "FIVEIN.2",
+            "pin": 2,
+            "function": "GND",
+            "anchor": [
+              652.0,
+              278.4
+            ],
+            "screw_center": [
+              652.0,
+              273.4
+            ],
+            "source_relations": [
+              {
+                "data-field": "FIVEIN.2",
+                "data-source": "J42.2",
+                "data-ground-net": "GND"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "bank": "FIVEOUT",
+        "side": "north",
+        "title": "5V ACCESSORY OUT",
+        "contacts": [
+          {
+            "contact": "FIVEOUT.1",
+            "pin": 1,
+            "function": "+5V",
+            "anchor": [
+              830.0,
+              278.4
+            ],
+            "screw_center": [
+              830.0,
+              273.4
+            ],
+            "source_relations": [
+              {
+                "class": "wire five",
+                "d": "M830.0 278.4L830.0 372.0",
+                "data-field": "FIVEOUT.1",
+                "data-source": "J43.1"
+              }
+            ]
+          },
+          {
+            "contact": "FIVEOUT.2",
+            "pin": 2,
+            "function": "GND",
+            "anchor": [
+              874.0,
+              278.4
+            ],
+            "screw_center": [
+              874.0,
+              273.4
+            ],
+            "source_relations": [
+              {
+                "data-field": "FIVEOUT.2",
+                "data-source": "J43.2",
+                "data-ground-net": "GND"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "bank": "AUX",
+        "side": "north",
+        "title": "ANALOG INPUTS",
+        "contacts": [
+          {
+            "contact": "AUX.1",
+            "pin": 1,
+            "function": "ANALOG 1",
+            "anchor": [
+              1694.0,
+              278.4
+            ],
+            "screw_center": [
+              1694.0,
+              273.4
+            ],
+            "source_relations": [
+              {
+                "class": "wire signal",
+                "d": "M1694.0 278.4L1694.0 412.0Q1694.0 420.0 1686.0 420.0L1686.0 420.0Q1678.0 420.0 1678.0 428.0L1678.0 824.0Q1678.0 834.0 1688.0 834.0L1706.0 834.0",
+                "data-field": "AUX.1",
+                "data-source": "J39.3"
+              }
+            ]
+          },
+          {
+            "contact": "AUX.2",
+            "pin": 2,
+            "function": "GND",
+            "anchor": [
+              1738.0,
+              278.4
+            ],
+            "screw_center": [
+              1738.0,
+              273.4
+            ],
+            "source_relations": [
+              {
+                "data-field": "AUX.2",
+                "data-source": "J39.10",
+                "data-ground-net": "GND"
+              }
+            ]
+          },
+          {
+            "contact": "AUX.3",
+            "pin": 3,
+            "function": "ANALOG 2",
+            "anchor": [
+              1782.0,
+              278.4
+            ],
+            "screw_center": [
+              1782.0,
+              273.4
+            ],
+            "source_relations": [
+              {
+                "class": "wire signal",
+                "d": "M1782.0 278.4L1782.0 660.0Q1782.0 670.0 1792.0 670.0L2018.0 670.0Q2028.0 670.0 2028.0 680.0L2028.0 824.0Q2028.0 834.0 2018.0 834.0L1748.0 834.0",
+                "data-field": "AUX.3",
+                "data-source": "J39.4"
+              }
+            ]
+          },
+          {
+            "contact": "AUX.4",
+            "pin": 4,
+            "function": "GND",
+            "anchor": [
+              1826.0,
+              278.4
+            ],
+            "screw_center": [
+              1826.0,
+              273.4
+            ],
+            "source_relations": [
+              {
+                "data-field": "AUX.4",
+                "data-source": "J39.10",
+                "data-ground-net": "GND"
+              }
+            ]
+          },
+          {
+            "contact": "AUX.5",
+            "pin": 5,
+            "function": "ANALOG 3",
+            "anchor": [
+              1870.0,
+              278.4
+            ],
+            "screw_center": [
+              1870.0,
+              273.4
+            ],
+            "source_relations": [
+              {
+                "class": "wire signal",
+                "d": "M1870.0 278.4L1870.0 640.0Q1870.0 650.0 1880.0 650.0L2030.0 650.0Q2040.0 650.0 2040.0 660.0L2040.0 1040.0Q2040.0 1050.0 2030.0 1050.0L1610.0 1050.0Q1600.0 1050.0 1600.0 1040.0L1600.0 886.0Q1600.0 876.0 1610.0 876.0L1706.0 876.0",
+                "data-field": "AUX.5",
+                "data-source": "J39.5"
+              }
+            ]
+          },
+          {
+            "contact": "AUX.6",
+            "pin": 6,
+            "function": "GND",
+            "anchor": [
+              1914.0,
+              278.4
+            ],
+            "screw_center": [
+              1914.0,
+              273.4
+            ],
+            "source_relations": [
+              {
+                "data-field": "AUX.6",
+                "data-source": "J39.10",
+                "data-ground-net": "GND"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "bank": "XMIN",
+        "side": "east",
+        "title": "X MIN",
+        "contacts": [
+          {
+            "contact": "XMIN.1",
+            "pin": 1,
+            "function": "SENSOR +",
+            "anchor": [
+              2663.6,
+              372.0
+            ],
+            "screw_center": [
+              2663.6,
+              372.0
+            ],
+            "source_relations": [
+              {
+                "class": "wire sensor",
+                "d": "M2663.6 372.0L2318.0 372.0",
+                "data-field": "XMIN.1",
+                "data-source": "J24.1"
+              }
+            ]
+          },
+          {
+            "contact": "XMIN.2",
+            "pin": 2,
+            "function": "GND",
+            "anchor": [
+              2663.6,
+              416.0
+            ],
+            "screw_center": [
+              2663.6,
+              416.0
+            ],
+            "source_relations": [
+              {
+                "data-field": "XMIN.2",
+                "data-source": "J24.2",
+                "data-ground-net": "GND"
+              }
+            ]
+          },
+          {
+            "contact": "XMIN.3",
+            "pin": 3,
+            "function": "SIGNAL",
+            "anchor": [
+              2663.6,
+              460.0
+            ],
+            "screw_center": [
+              2663.6,
+              460.0
+            ],
+            "source_relations": [
+              {
+                "class": "wire signal",
+                "d": "M2663.6 460.0L2318.0 460.0",
+                "data-field": "XMIN.3",
+                "data-source": "J24.3"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "bank": "XMAX",
+        "side": "east",
+        "title": "X MAX",
+        "contacts": [
+          {
+            "contact": "XMAX.1",
+            "pin": 1,
+            "function": "SENSOR +",
+            "anchor": [
+              2663.6,
+              624.0
+            ],
+            "screw_center": [
+              2663.6,
+              624.0
+            ],
+            "source_relations": [
+              {
+                "class": "wire sensor",
+                "d": "M2663.6 624.0L2318.0 624.0",
+                "data-field": "XMAX.1",
+                "data-source": "J25.1"
+              }
+            ]
+          },
+          {
+            "contact": "XMAX.2",
+            "pin": 2,
+            "function": "GND",
+            "anchor": [
+              2663.6,
+              668.0
+            ],
+            "screw_center": [
+              2663.6,
+              668.0
+            ],
+            "source_relations": [
+              {
+                "data-field": "XMAX.2",
+                "data-source": "J25.2",
+                "data-ground-net": "GND"
+              }
+            ]
+          },
+          {
+            "contact": "XMAX.3",
+            "pin": 3,
+            "function": "SIGNAL",
+            "anchor": [
+              2663.6,
+              712.0
+            ],
+            "screw_center": [
+              2663.6,
+              712.0
+            ],
+            "source_relations": [
+              {
+                "class": "wire signal",
+                "d": "M2663.6 712.0L2318.0 712.0",
+                "data-field": "XMAX.3",
+                "data-source": "J25.3"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "bank": "YMIN",
+        "side": "east",
+        "title": "Y MIN",
+        "contacts": [
+          {
+            "contact": "YMIN.1",
+            "pin": 1,
+            "function": "SENSOR +",
+            "anchor": [
+              2663.6,
+              876.0
+            ],
+            "screw_center": [
+              2663.6,
+              876.0
+            ],
+            "source_relations": [
+              {
+                "class": "wire sensor",
+                "d": "M2663.6 876.0L2318.0 876.0",
+                "data-field": "YMIN.1",
+                "data-source": "J26.1"
+              }
+            ]
+          },
+          {
+            "contact": "YMIN.2",
+            "pin": 2,
+            "function": "GND",
+            "anchor": [
+              2663.6,
+              920.0
+            ],
+            "screw_center": [
+              2663.6,
+              920.0
+            ],
+            "source_relations": [
+              {
+                "data-field": "YMIN.2",
+                "data-source": "J26.2",
+                "data-ground-net": "GND"
+              }
+            ]
+          },
+          {
+            "contact": "YMIN.3",
+            "pin": 3,
+            "function": "SIGNAL",
+            "anchor": [
+              2663.6,
+              964.0
+            ],
+            "screw_center": [
+              2663.6,
+              964.0
+            ],
+            "source_relations": [
+              {
+                "class": "wire signal",
+                "d": "M2663.6 964.0L2318.0 964.0",
+                "data-field": "YMIN.3",
+                "data-source": "J26.3"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "bank": "YMAX",
+        "side": "east",
+        "title": "Y MAX",
+        "contacts": [
+          {
+            "contact": "YMAX.1",
+            "pin": 1,
+            "function": "SENSOR +",
+            "anchor": [
+              2663.6,
+              1128.0
+            ],
+            "screw_center": [
+              2663.6,
+              1128.0
+            ],
+            "source_relations": [
+              {
+                "class": "wire sensor",
+                "d": "M2663.6 1128.0L2318.0 1128.0",
+                "data-field": "YMAX.1",
+                "data-source": "J27.1"
+              }
+            ]
+          },
+          {
+            "contact": "YMAX.2",
+            "pin": 2,
+            "function": "GND",
+            "anchor": [
+              2663.6,
+              1172.0
+            ],
+            "screw_center": [
+              2663.6,
+              1172.0
+            ],
+            "source_relations": [
+              {
+                "data-field": "YMAX.2",
+                "data-source": "J27.2",
+                "data-ground-net": "GND"
+              }
+            ]
+          },
+          {
+            "contact": "YMAX.3",
+            "pin": 3,
+            "function": "SIGNAL",
+            "anchor": [
+              2663.6,
+              1216.0
+            ],
+            "screw_center": [
+              2663.6,
+              1216.0
+            ],
+            "source_relations": [
+              {
+                "class": "wire signal",
+                "d": "M2663.6 1216.0L2318.0 1216.0",
+                "data-field": "YMAX.3",
+                "data-source": "J27.3"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "bank": "ZMIN",
+        "side": "east",
+        "title": "Z MIN",
+        "contacts": [
+          {
+            "contact": "ZMIN.1",
+            "pin": 1,
+            "function": "SENSOR +",
+            "anchor": [
+              2663.6,
+              1380.0
+            ],
+            "screw_center": [
+              2663.6,
+              1380.0
+            ],
+            "source_relations": [
+              {
+                "class": "wire sensor",
+                "d": "M2663.6 1380.0L2318.0 1380.0",
+                "data-field": "ZMIN.1",
+                "data-source": "J28.1"
+              }
+            ]
+          },
+          {
+            "contact": "ZMIN.2",
+            "pin": 2,
+            "function": "GND",
+            "anchor": [
+              2663.6,
+              1424.0
+            ],
+            "screw_center": [
+              2663.6,
+              1424.0
+            ],
+            "source_relations": [
+              {
+                "data-field": "ZMIN.2",
+                "data-source": "J28.2",
+                "data-ground-net": "GND"
+              }
+            ]
+          },
+          {
+            "contact": "ZMIN.3",
+            "pin": 3,
+            "function": "SIGNAL",
+            "anchor": [
+              2663.6,
+              1468.0
+            ],
+            "screw_center": [
+              2663.6,
+              1468.0
+            ],
+            "source_relations": [
+              {
+                "class": "wire signal",
+                "d": "M2663.6 1468.0L2318.0 1468.0",
+                "data-field": "ZMIN.3",
+                "data-source": "J28.3"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "bank": "ZMAX",
+        "side": "east",
+        "title": "Z MAX",
+        "contacts": [
+          {
+            "contact": "ZMAX.1",
+            "pin": 1,
+            "function": "SENSOR +",
+            "anchor": [
+              2663.6,
+              1632.0
+            ],
+            "screw_center": [
+              2663.6,
+              1632.0
+            ],
+            "source_relations": [
+              {
+                "class": "wire sensor",
+                "d": "M2663.6 1632.0L2318.0 1632.0",
+                "data-field": "ZMAX.1",
+                "data-source": "J29.1"
+              }
+            ]
+          },
+          {
+            "contact": "ZMAX.2",
+            "pin": 2,
+            "function": "GND",
+            "anchor": [
+              2663.6,
+              1676.0
+            ],
+            "screw_center": [
+              2663.6,
+              1676.0
+            ],
+            "source_relations": [
+              {
+                "data-field": "ZMAX.2",
+                "data-source": "J29.2",
+                "data-ground-net": "GND"
+              }
+            ]
+          },
+          {
+            "contact": "ZMAX.3",
+            "pin": 3,
+            "function": "SIGNAL",
+            "anchor": [
+              2663.6,
+              1720.0
+            ],
+            "screw_center": [
+              2663.6,
+              1720.0
+            ],
+            "source_relations": [
+              {
+                "class": "wire signal",
+                "d": "M2663.6 1720.0L2318.0 1720.0",
+                "data-field": "ZMAX.3",
+                "data-source": "J29.3"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "bank": "PROBE",
+        "side": "east",
+        "title": "PROBE + SERVO",
+        "contacts": [
+          {
+            "contact": "PROBE.1",
+            "pin": 1,
+            "function": "+5V",
+            "anchor": [
+              2663.6,
+              1932.0
+            ],
+            "screw_center": [
+              2663.6,
+              1932.0
+            ],
+            "source_relations": [
+              {
+                "class": "wire five",
+                "d": "M2663.6 1932.0L2354.0 1932.0",
+                "data-field": "PROBE.1",
+                "data-source": "J6.1"
+              }
+            ]
+          },
+          {
+            "contact": "PROBE.2",
+            "pin": 2,
+            "function": "GND",
+            "anchor": [
+              2663.6,
+              1976.0
+            ],
+            "screw_center": [
+              2663.6,
+              1976.0
+            ],
+            "source_relations": [
+              {
+                "data-field": "PROBE.2",
+                "data-source": "J6.2",
+                "data-ground-net": "GND"
+              },
+              {
+                "data-field": "PROBE.2",
+                "data-source": "J7.2",
+                "data-ground-net": "GND"
+              }
+            ]
+          },
+          {
+            "contact": "PROBE.3",
+            "pin": 3,
+            "function": "SERVO",
+            "anchor": [
+              2663.6,
+              2020.0
+            ],
+            "screw_center": [
+              2663.6,
+              2020.0
+            ],
+            "source_relations": [
+              {
+                "class": "wire control",
+                "d": "M2663.6 2020.0L2354.0 2020.0",
+                "data-field": "PROBE.3",
+                "data-source": "J6.3"
+              }
+            ]
+          },
+          {
+            "contact": "PROBE.4",
+            "pin": 4,
+            "function": "PROBE IN",
+            "anchor": [
+              2663.6,
+              2064.0
+            ],
+            "screw_center": [
+              2663.6,
+              2064.0
+            ],
+            "source_relations": [
+              {
+                "class": "wire signal",
+                "d": "M2663.6 2064.0L2196.0 2064.0Q2186.0 2064.0 2186.0 2074.0L2186.0 2090.4",
+                "data-field": "PROBE.4",
+                "data-source": "J7.1"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "bank": "TEMP",
+        "side": "east",
+        "title": "TEMPERATURE 1\u20133",
+        "contacts": [
+          {
+            "contact": "TEMP.1",
+            "pin": 1,
+            "function": "SENSOR 1",
+            "anchor": [
+              2663.6,
+              2250.0
+            ],
+            "screw_center": [
+              2663.6,
+              2250.0
+            ],
+            "source_relations": [
+              {
+                "class": "wire signal",
+                "d": "M2663.6 2250.0L2348.0 2250.0",
+                "data-field": "TEMP.1",
+                "data-source": "J21.1"
+              }
+            ]
+          },
+          {
+            "contact": "TEMP.2",
+            "pin": 2,
+            "function": "GND",
+            "anchor": [
+              2663.6,
+              2294.0
+            ],
+            "screw_center": [
+              2663.6,
+              2294.0
+            ],
+            "source_relations": [
+              {
+                "data-field": "TEMP.2",
+                "data-source": "J21.2",
+                "data-ground-net": "GND"
+              }
+            ]
+          },
+          {
+            "contact": "TEMP.3",
+            "pin": 3,
+            "function": "SENSOR 2",
+            "anchor": [
+              2663.6,
+              2338.0
+            ],
+            "screw_center": [
+              2663.6,
+              2338.0
+            ],
+            "source_relations": [
+              {
+                "class": "wire signal",
+                "d": "M2663.6 2338.0L2356.8 2338.0Q2348.0 2338.0 2348.0 2346.8L2348.0 2355.6",
+                "data-field": "TEMP.3",
+                "data-source": "J22.1"
+              }
+            ]
+          },
+          {
+            "contact": "TEMP.4",
+            "pin": 4,
+            "function": "GND",
+            "anchor": [
+              2663.6,
+              2382.0
+            ],
+            "screw_center": [
+              2663.6,
+              2382.0
+            ],
+            "source_relations": [
+              {
+                "data-field": "TEMP.4",
+                "data-source": "J22.2",
+                "data-ground-net": "GND"
+              }
+            ]
+          },
+          {
+            "contact": "TEMP.5",
+            "pin": 5,
+            "function": "SENSOR 3",
+            "anchor": [
+              2663.6,
+              2426.0
+            ],
+            "screw_center": [
+              2663.6,
+              2426.0
+            ],
+            "source_relations": [
+              {
+                "class": "wire signal",
+                "d": "M2663.6 2426.0L2358.0 2426.0Q2348.0 2426.0 2348.0 2436.0L2348.0 2461.2",
+                "data-field": "TEMP.5",
+                "data-source": "J23.1"
+              }
+            ]
+          },
+          {
+            "contact": "TEMP.6",
+            "pin": 6,
+            "function": "GND",
+            "anchor": [
+              2663.6,
+              2470.0
+            ],
+            "screw_center": [
+              2663.6,
+              2470.0
+            ],
+            "source_relations": [
+              {
+                "data-field": "TEMP.6",
+                "data-source": "J23.2",
+                "data-ground-net": "GND"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "bank": "HEA",
+        "side": "west",
+        "title": "HOTEND A",
+        "contacts": [
+          {
+            "contact": "HEA.1",
+            "pin": 1,
+            "function": "LOAD +",
+            "anchor": [
+              268.4,
+              510.0
+            ],
+            "screw_center": [
+              268.4,
+              510.0
+            ],
+            "source_relations": [
+              {
+                "class": "wire power",
+                "d": "M268.4 510.0L614.0 510.0",
+                "data-field": "HEA.1",
+                "data-source": "J8.1"
+              }
+            ]
+          },
+          {
+            "contact": "HEA.2",
+            "pin": 2,
+            "function": "SWITCHED \u2212",
+            "anchor": [
+              268.4,
+              554.0
+            ],
+            "screw_center": [
+              268.4,
+              554.0
+            ],
+            "source_relations": [
+              {
+                "class": "wire switched",
+                "d": "M268.4 554.0L614.0 554.0",
+                "data-field": "HEA.2",
+                "data-source": "J8.2"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "bank": "HEB",
+        "side": "west",
+        "title": "HOTEND B",
+        "contacts": [
+          {
+            "contact": "HEB.1",
+            "pin": 1,
+            "function": "LOAD +",
+            "anchor": [
+              268.4,
+              744.0
+            ],
+            "screw_center": [
+              268.4,
+              744.0
+            ],
+            "source_relations": [
+              {
+                "class": "wire power",
+                "d": "M268.4 744.0L614.0 744.0",
+                "data-field": "HEB.1",
+                "data-source": "J10.1"
+              }
+            ]
+          },
+          {
+            "contact": "HEB.2",
+            "pin": 2,
+            "function": "SWITCHED \u2212",
+            "anchor": [
+              268.4,
+              788.0
+            ],
+            "screw_center": [
+              268.4,
+              788.0
+            ],
+            "source_relations": [
+              {
+                "class": "wire switched",
+                "d": "M268.4 788.0L614.0 788.0",
+                "data-field": "HEB.2",
+                "data-source": "J10.2"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "bank": "BED",
+        "side": "west",
+        "title": "BED SWITCH CONTROL",
+        "contacts": [
+          {
+            "contact": "BED.1",
+            "pin": 1,
+            "function": "CONTROL +",
+            "anchor": [
+              268.4,
+              978.0
+            ],
+            "screw_center": [
+              268.4,
+              978.0
+            ],
+            "source_relations": [
+              {
+                "class": "wire power",
+                "d": "M268.4 978.0L614.0 978.0",
+                "data-field": "BED.1",
+                "data-source": "J11.1"
+              }
+            ]
+          },
+          {
+            "contact": "BED.2",
+            "pin": 2,
+            "function": "SWITCHED \u2212",
+            "anchor": [
+              268.4,
+              1022.0
+            ],
+            "screw_center": [
+              268.4,
+              1022.0
+            ],
+            "source_relations": [
+              {
+                "class": "wire switched",
+                "d": "M268.4 1022.0L614.0 1022.0",
+                "data-field": "BED.2",
+                "data-source": "J11.2"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "bank": "FANA",
+        "side": "west",
+        "title": "FAN A",
+        "contacts": [
+          {
+            "contact": "FANA.1",
+            "pin": 1,
+            "function": "LOAD +",
+            "anchor": [
+              268.4,
+              1212.0
+            ],
+            "screw_center": [
+              268.4,
+              1212.0
+            ],
+            "source_relations": [
+              {
+                "class": "wire power",
+                "d": "M268.4 1212.0L614.0 1212.0",
+                "data-field": "FANA.1",
+                "data-source": "J12.1"
+              }
+            ]
+          },
+          {
+            "contact": "FANA.2",
+            "pin": 2,
+            "function": "SWITCHED \u2212",
+            "anchor": [
+              268.4,
+              1256.0
+            ],
+            "screw_center": [
+              268.4,
+              1256.0
+            ],
+            "source_relations": [
+              {
+                "class": "wire switched",
+                "d": "M268.4 1256.0L614.0 1256.0",
+                "data-field": "FANA.2",
+                "data-source": "J12.2"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "bank": "FANB",
+        "side": "west",
+        "title": "FAN B",
+        "contacts": [
+          {
+            "contact": "FANB.1",
+            "pin": 1,
+            "function": "LOAD +",
+            "anchor": [
+              268.4,
+              1446.0
+            ],
+            "screw_center": [
+              268.4,
+              1446.0
+            ],
+            "source_relations": [
+              {
+                "class": "wire power",
+                "d": "M268.4 1446.0L614.0 1446.0",
+                "data-field": "FANB.1",
+                "data-source": "J16.1"
+              }
+            ]
+          },
+          {
+            "contact": "FANB.2",
+            "pin": 2,
+            "function": "SWITCHED \u2212",
+            "anchor": [
+              268.4,
+              1490.0
+            ],
+            "screw_center": [
+              268.4,
+              1490.0
+            ],
+            "source_relations": [
+              {
+                "class": "wire switched",
+                "d": "M268.4 1490.0L614.0 1490.0",
+                "data-field": "FANB.2",
+                "data-source": "J16.2"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "bank": "SSR1",
+        "side": "west",
+        "title": "SSR 1 CONTROL",
+        "contacts": [
+          {
+            "contact": "SSR1.1",
+            "pin": 1,
+            "function": "5V SWITCH",
+            "anchor": [
+              268.4,
+              1740.0
+            ],
+            "screw_center": [
+              268.4,
+              1740.0
+            ],
+            "source_relations": [
+              {
+                "class": "wire five",
+                "d": "M268.4 1740.0L614.0 1740.0",
+                "data-field": "SSR1.1",
+                "data-source": "J44.1"
+              }
+            ]
+          },
+          {
+            "contact": "SSR1.2",
+            "pin": 2,
+            "function": "GND",
+            "anchor": [
+              268.4,
+              1784.0
+            ],
+            "screw_center": [
+              268.4,
+              1784.0
+            ],
+            "source_relations": [
+              {
+                "data-field": "SSR1.2",
+                "data-source": "J44.2",
+                "data-ground-net": "GND"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "bank": "SSR2",
+        "side": "west",
+        "title": "SSR 2 CONTROL",
+        "contacts": [
+          {
+            "contact": "SSR2.1",
+            "pin": 1,
+            "function": "5V SWITCH",
+            "anchor": [
+              268.4,
+              1980.0
+            ],
+            "screw_center": [
+              268.4,
+              1980.0
+            ],
+            "source_relations": [
+              {
+                "class": "wire five",
+                "d": "M268.4 1980.0L614.0 1980.0",
+                "data-field": "SSR2.1",
+                "data-source": "J45.1"
+              }
+            ]
+          },
+          {
+            "contact": "SSR2.2",
+            "pin": 2,
+            "function": "GND",
+            "anchor": [
+              268.4,
+              2024.0
+            ],
+            "screw_center": [
+              268.4,
+              2024.0
+            ],
+            "source_relations": [
+              {
+                "data-field": "SSR2.2",
+                "data-source": "J45.2",
+                "data-ground-net": "GND"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "bank": "PWM",
+        "side": "west",
+        "title": "PWM / LASER CONTROL",
+        "contacts": [
+          {
+            "contact": "PWM.1",
+            "pin": 1,
+            "function": "PWM",
+            "anchor": [
+              268.4,
+              2220.0
+            ],
+            "screw_center": [
+              268.4,
+              2220.0
+            ],
+            "source_relations": [
+              {
+                "class": "wire control",
+                "d": "M268.4 2220.0L777.0 2220.0",
+                "data-field": "PWM.1",
+                "data-source": "J35.6",
+                "data-laser-output": "PWM",
+                "data-laser-field": "PWM.1",
+                "data-through": "external-5V-laser-stage",
+                "data-relation": "signal-chain-not-direct-net"
+              }
+            ]
+          },
+          {
+            "contact": "PWM.2",
+            "pin": 2,
+            "function": "TTL",
+            "anchor": [
+              268.4,
+              2264.0
+            ],
+            "screw_center": [
+              268.4,
+              2264.0
+            ],
+            "source_relations": [
+              {
+                "class": "wire control",
+                "d": "M268.4 2264.0L350.0 2264.0Q360.0 2264.0 360.0 2274.0L360.0 2370.0Q360.0 2380.0 370.0 2380.0L777.0 2380.0",
+                "data-field": "PWM.2",
+                "data-source": "J35.7",
+                "data-laser-output": "TTL",
+                "data-laser-field": "PWM.2",
+                "data-through": "external-5V-laser-stage",
+                "data-relation": "signal-chain-not-direct-net"
+              }
+            ]
+          },
+          {
+            "contact": "PWM.3",
+            "pin": 3,
+            "function": "GND",
+            "anchor": [
+              268.4,
+              2308.0
+            ],
+            "screw_center": [
+              268.4,
+              2308.0
+            ],
+            "source_relations": [
+              {
+                "data-field": "PWM.3",
+                "data-source": "J35.10",
+                "data-ground-net": "GND"
+              }
+            ]
+          },
+          {
+            "contact": "PWM.4",
+            "pin": 4,
+            "function": "5V LIMITED",
+            "anchor": [
+              268.4,
+              2352.0
+            ],
+            "screw_center": [
+              268.4,
+              2352.0
+            ],
+            "source_relations": [
+              {
+                "class": "wire five",
+                "d": "M268.4 2352.0L328.4 2352.0Q338.4 2352.0 338.4 2362.0L338.4 2466.0Q338.4 2476.0 348.4 2476.0L1520.0 2476.0Q1530.0 2476.0 1530.0 2466.0L1530.0 2280.0",
+                "data-field": "PWM.4",
+                "data-source": "J35.2"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "bank": "DRVX",
+        "side": "south",
+        "title": "MOTOR CONTROL X",
+        "contacts": [
+          {
+            "contact": "DRVX.1",
+            "pin": 1,
+            "function": "STEP",
+            "anchor": [
+              380.0,
+              2904.0
+            ],
+            "screw_center": [
+              380.0,
+              2899.0
+            ],
+            "source_relations": [
+              {
+                "class": "ribbon-track step",
+                "d": "M462.0 2784.0L462.0 2704.0Q462.0 2694.0 472.0 2694.0L1615.0 2694.0Q1625.0 2694.0 1625.0 2684.0L1625.0 2670.0",
+                "data-field": "DRVX.1",
+                "data-source": "J5.16",
+                "data-motor": "X"
+              }
+            ]
+          },
+          {
+            "contact": "DRVX.2",
+            "pin": 2,
+            "function": "GND",
+            "anchor": [
+              424.0,
+              2904.0
+            ],
+            "screw_center": [
+              424.0,
+              2899.0
+            ],
+            "source_relations": [
+              {
+                "data-field": "DRVX.2",
+                "data-source": "J5.20",
+                "data-ground-net": "GND"
+              }
+            ]
+          },
+          {
+            "contact": "DRVX.3",
+            "pin": 3,
+            "function": "DIR",
+            "anchor": [
+              468.0,
+              2904.0
+            ],
+            "screw_center": [
+              468.0,
+              2899.0
+            ],
+            "source_relations": [
+              {
+                "class": "ribbon-track direction",
+                "d": "M468.0 2784.0L468.0 2710.0Q468.0 2700.0 478.0 2700.0L1621.0 2700.0Q1631.0 2700.0 1631.0 2690.0L1631.0 2670.0",
+                "data-field": "DRVX.3",
+                "data-source": "J5.18",
+                "data-motor": "X"
+              }
+            ]
+          },
+          {
+            "contact": "DRVX.4",
+            "pin": 4,
+            "function": "GND",
+            "anchor": [
+              512.0,
+              2904.0
+            ],
+            "screw_center": [
+              512.0,
+              2899.0
+            ],
+            "source_relations": [
+              {
+                "data-field": "DRVX.4",
+                "data-source": "J5.20",
+                "data-ground-net": "GND"
+              }
+            ]
+          },
+          {
+            "contact": "DRVX.5",
+            "pin": 5,
+            "function": "ENABLE",
+            "anchor": [
+              556.0,
+              2904.0
+            ],
+            "screw_center": [
+              556.0,
+              2899.0
+            ],
+            "source_relations": [
+              {
+                "class": "ribbon-track enable",
+                "d": "M474.0 2784.0L474.0 2716.0Q474.0 2706.0 484.0 2706.0L1627.0 2706.0Q1637.0 2706.0 1637.0 2696.0L1637.0 2670.0",
+                "data-field": "DRVX.5",
+                "data-source": "J5.17",
+                "data-motor": "X"
+              }
+            ]
+          },
+          {
+            "contact": "DRVX.6",
+            "pin": 6,
+            "function": "GND",
+            "anchor": [
+              600.0,
+              2904.0
+            ],
+            "screw_center": [
+              600.0,
+              2899.0
+            ],
+            "source_relations": [
+              {
+                "data-field": "DRVX.6",
+                "data-source": "J5.20",
+                "data-ground-net": "GND"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "bank": "DRVY",
+        "side": "south",
+        "title": "MOTOR CONTROL Y",
+        "contacts": [
+          {
+            "contact": "DRVY.1",
+            "pin": 1,
+            "function": "STEP",
+            "anchor": [
+              878.0,
+              2904.0
+            ],
+            "screw_center": [
+              878.0,
+              2899.0
+            ],
+            "source_relations": [
+              {
+                "class": "ribbon-track step",
+                "d": "M960.0 2784.0L960.0 2734.0Q960.0 2724.0 970.0 2724.0L1705.0 2724.0Q1715.0 2724.0 1715.0 2714.0L1715.0 2670.0",
+                "data-field": "DRVY.1",
+                "data-source": "J5.22",
+                "data-motor": "Y"
+              }
+            ]
+          },
+          {
+            "contact": "DRVY.2",
+            "pin": 2,
+            "function": "GND",
+            "anchor": [
+              922.0,
+              2904.0
+            ],
+            "screw_center": [
+              922.0,
+              2899.0
+            ],
+            "source_relations": [
+              {
+                "data-field": "DRVY.2",
+                "data-source": "J5.26",
+                "data-ground-net": "GND"
+              }
+            ]
+          },
+          {
+            "contact": "DRVY.3",
+            "pin": 3,
+            "function": "DIR",
+            "anchor": [
+              966.0,
+              2904.0
+            ],
+            "screw_center": [
+              966.0,
+              2899.0
+            ],
+            "source_relations": [
+              {
+                "class": "ribbon-track direction",
+                "d": "M966.0 2784.0L966.0 2740.0Q966.0 2730.0 976.0 2730.0L1711.0 2730.0Q1721.0 2730.0 1721.0 2720.0L1721.0 2670.0",
+                "data-field": "DRVY.3",
+                "data-source": "J5.24",
+                "data-motor": "Y"
+              }
+            ]
+          },
+          {
+            "contact": "DRVY.4",
+            "pin": 4,
+            "function": "GND",
+            "anchor": [
+              1010.0,
+              2904.0
+            ],
+            "screw_center": [
+              1010.0,
+              2899.0
+            ],
+            "source_relations": [
+              {
+                "data-field": "DRVY.4",
+                "data-source": "J5.26",
+                "data-ground-net": "GND"
+              }
+            ]
+          },
+          {
+            "contact": "DRVY.5",
+            "pin": 5,
+            "function": "ENABLE",
+            "anchor": [
+              1054.0,
+              2904.0
+            ],
+            "screw_center": [
+              1054.0,
+              2899.0
+            ],
+            "source_relations": [
+              {
+                "class": "ribbon-track enable",
+                "d": "M972.0 2784.0L972.0 2746.0Q972.0 2736.0 982.0 2736.0L1717.0 2736.0Q1727.0 2736.0 1727.0 2726.0L1727.0 2670.0",
+                "data-field": "DRVY.5",
+                "data-source": "J5.23",
+                "data-motor": "Y"
+              }
+            ]
+          },
+          {
+            "contact": "DRVY.6",
+            "pin": 6,
+            "function": "GND",
+            "anchor": [
+              1098.0,
+              2904.0
+            ],
+            "screw_center": [
+              1098.0,
+              2899.0
+            ],
+            "source_relations": [
+              {
+                "data-field": "DRVY.6",
+                "data-source": "J5.26",
+                "data-ground-net": "GND"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "bank": "DRVZ",
+        "side": "south",
+        "title": "MOTOR CONTROL Z",
+        "contacts": [
+          {
+            "contact": "DRVZ.1",
+            "pin": 1,
+            "function": "STEP",
+            "anchor": [
+              1790.0,
+              2904.0
+            ],
+            "screw_center": [
+              1790.0,
+              2899.0
+            ],
+            "source_relations": [
+              {
+                "class": "ribbon-track step",
+                "d": "M1872.0 2784.0L1872.0 2775.0Q1872.0 2766.0 1863.0 2766.0L1815.0 2766.0Q1805.0 2766.0 1805.0 2756.0L1805.0 2670.0",
+                "data-field": "DRVZ.1",
+                "data-source": "J5.28",
+                "data-motor": "Z"
+              }
+            ]
+          },
+          {
+            "contact": "DRVZ.2",
+            "pin": 2,
+            "function": "GND",
+            "anchor": [
+              1834.0,
+              2904.0
+            ],
+            "screw_center": [
+              1834.0,
+              2899.0
+            ],
+            "source_relations": [
+              {
+                "data-field": "DRVZ.2",
+                "data-source": "J5.32",
+                "data-ground-net": "GND"
+              }
+            ]
+          },
+          {
+            "contact": "DRVZ.3",
+            "pin": 3,
+            "function": "DIR",
+            "anchor": [
+              1878.0,
+              2904.0
+            ],
+            "screw_center": [
+              1878.0,
+              2899.0
+            ],
+            "source_relations": [
+              {
+                "class": "ribbon-track direction",
+                "d": "M1878.0 2784.0L1878.0 2770.0Q1878.0 2760.0 1868.0 2760.0L1821.0 2760.0Q1811.0 2760.0 1811.0 2750.0L1811.0 2670.0",
+                "data-field": "DRVZ.3",
+                "data-source": "J5.30",
+                "data-motor": "Z"
+              }
+            ]
+          },
+          {
+            "contact": "DRVZ.4",
+            "pin": 4,
+            "function": "GND",
+            "anchor": [
+              1922.0,
+              2904.0
+            ],
+            "screw_center": [
+              1922.0,
+              2899.0
+            ],
+            "source_relations": [
+              {
+                "data-field": "DRVZ.4",
+                "data-source": "J5.32",
+                "data-ground-net": "GND"
+              }
+            ]
+          },
+          {
+            "contact": "DRVZ.5",
+            "pin": 5,
+            "function": "ENABLE",
+            "anchor": [
+              1966.0,
+              2904.0
+            ],
+            "screw_center": [
+              1966.0,
+              2899.0
+            ],
+            "source_relations": [
+              {
+                "class": "ribbon-track enable",
+                "d": "M1884.0 2784.0L1884.0 2764.0Q1884.0 2754.0 1874.0 2754.0L1827.0 2754.0Q1817.0 2754.0 1817.0 2744.0L1817.0 2670.0",
+                "data-field": "DRVZ.5",
+                "data-source": "J5.29",
+                "data-motor": "Z"
+              }
+            ]
+          },
+          {
+            "contact": "DRVZ.6",
+            "pin": 6,
+            "function": "GND",
+            "anchor": [
+              2010.0,
+              2904.0
+            ],
+            "screw_center": [
+              2010.0,
+              2899.0
+            ],
+            "source_relations": [
+              {
+                "data-field": "DRVZ.6",
+                "data-source": "J5.32",
+                "data-ground-net": "GND"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "bank": "DRVA",
+        "side": "south",
+        "title": "MOTOR CONTROL A",
+        "contacts": [
+          {
+            "contact": "DRVA.1",
+            "pin": 1,
+            "function": "STEP",
+            "anchor": [
+              2288.0,
+              2904.0
+            ],
+            "screw_center": [
+              2288.0,
+              2899.0
+            ],
+            "source_relations": [
+              {
+                "class": "ribbon-track step",
+                "d": "M2370.0 2784.0L2370.0 2746.0Q2370.0 2736.0 2360.0 2736.0L1905.0 2736.0Q1895.0 2736.0 1895.0 2726.0L1895.0 2670.0",
+                "data-field": "DRVA.1",
+                "data-source": "J5.34",
+                "data-motor": "A"
+              }
+            ]
+          },
+          {
+            "contact": "DRVA.2",
+            "pin": 2,
+            "function": "GND",
+            "anchor": [
+              2332.0,
+              2904.0
+            ],
+            "screw_center": [
+              2332.0,
+              2899.0
+            ],
+            "source_relations": [
+              {
+                "data-field": "DRVA.2",
+                "data-source": "J5.38",
+                "data-ground-net": "GND"
+              }
+            ]
+          },
+          {
+            "contact": "DRVA.3",
+            "pin": 3,
+            "function": "DIR",
+            "anchor": [
+              2376.0,
+              2904.0
+            ],
+            "screw_center": [
+              2376.0,
+              2899.0
+            ],
+            "source_relations": [
+              {
+                "class": "ribbon-track direction",
+                "d": "M2376.0 2784.0L2376.0 2740.0Q2376.0 2730.0 2366.0 2730.0L1911.0 2730.0Q1901.0 2730.0 1901.0 2720.0L1901.0 2670.0",
+                "data-field": "DRVA.3",
+                "data-source": "J5.36",
+                "data-motor": "A"
+              }
+            ]
+          },
+          {
+            "contact": "DRVA.4",
+            "pin": 4,
+            "function": "GND",
+            "anchor": [
+              2420.0,
+              2904.0
+            ],
+            "screw_center": [
+              2420.0,
+              2899.0
+            ],
+            "source_relations": [
+              {
+                "data-field": "DRVA.4",
+                "data-source": "J5.38",
+                "data-ground-net": "GND"
+              }
+            ]
+          },
+          {
+            "contact": "DRVA.5",
+            "pin": 5,
+            "function": "ENABLE",
+            "anchor": [
+              2464.0,
+              2904.0
+            ],
+            "screw_center": [
+              2464.0,
+              2899.0
+            ],
+            "source_relations": [
+              {
+                "class": "ribbon-track enable",
+                "d": "M2382.0 2784.0L2382.0 2734.0Q2382.0 2724.0 2372.0 2724.0L1917.0 2724.0Q1907.0 2724.0 1907.0 2714.0L1907.0 2670.0",
+                "data-field": "DRVA.5",
+                "data-source": "J5.35",
+                "data-motor": "A"
+              }
+            ]
+          },
+          {
+            "contact": "DRVA.6",
+            "pin": 6,
+            "function": "GND",
+            "anchor": [
+              2508.0,
+              2904.0
+            ],
+            "screw_center": [
+              2508.0,
+              2899.0
+            ],
+            "source_relations": [
+              {
+                "data-field": "DRVA.6",
+                "data-source": "J5.38",
+                "data-ground-net": "GND"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "pin_palette": {
+      "power": "#f0c51a",
+      "three": "#db2525",
+      "five": "#b85e00",
+      "sensor": "#416b7e",
+      "signal": "#087361",
+      "control": "#6246a3",
+      "switched": "#a13273",
+      "ground": "#111717",
+      "step": "#136da7",
+      "direction": "#7443a4",
+      "enable": "#087b60",
+      "neutral": "#52636b"
+    },
+    "wire_palette": {
+      "power": "#e2bb00",
+      "three": "#db2525",
+      "five": "#d76a00",
+      "sensor": "#4c748a",
+      "ground": "#111717",
+      "signal": "#128c68",
+      "control": "#6550b1",
+      "switched": "#a23384",
+      "step": "#136da7",
+      "direction": "#7443a4",
+      "enable": "#087b60"
+    },
+    "gadgeteer_headers": [
+      {
+        "class": "gadgeteer-pin-card",
+        "data-header": "J32",
+        "data-socket": "GA",
+        "data-socket-type": "S",
+        "data-pin-count": "10"
+      },
+      {
+        "class": "gadgeteer-pin-card",
+        "data-header": "J33",
+        "data-socket": "GB",
+        "data-socket-type": "I",
+        "data-pin-count": "10"
+      },
+      {
+        "class": "gadgeteer-pin-card",
+        "data-header": "J34",
+        "data-socket": "GC",
+        "data-socket-type": "P",
+        "data-pin-count": "10"
+      },
+      {
+        "class": "gadgeteer-pin-card",
+        "data-header": "J35",
+        "data-socket": "GD",
+        "data-socket-type": "P",
+        "data-pin-count": "10"
+      },
+      {
+        "class": "gadgeteer-pin-card",
+        "data-header": "J36",
+        "data-socket": "GE",
+        "data-socket-type": "S",
+        "data-pin-count": "10"
+      },
+      {
+        "class": "gadgeteer-pin-card",
+        "data-header": "J37",
+        "data-socket": "GF",
+        "data-socket-type": "Y",
+        "data-pin-count": "10"
+      },
+      {
+        "class": "gadgeteer-pin-card",
+        "data-header": "J38",
+        "data-socket": "GG",
+        "data-socket-type": "I",
+        "data-pin-count": "10"
+      },
+      {
+        "class": "gadgeteer-pin-card",
+        "data-header": "J39",
+        "data-socket": "GH",
+        "data-socket-type": "A",
+        "data-pin-count": "10"
+      },
+      {
+        "class": "gadgeteer-pin-card",
+        "data-header": "J40",
+        "data-socket": "GI",
+        "data-socket-type": "A",
+        "data-pin-count": "10"
+      }
+    ],
+    "extraction": {
+      "keep": "case rect; 24 field-bank groups; associated exterior pin-pill labels; 24 bank-title labels; four side-title labels; required definitions/styles",
+      "omit": "internal board-connector groups, internal paths, stage components, rating pills, internal labels, source anchors, below-case supplemental pinout sheets; service ports excluded by green-border-only request",
+      "pill_warning": "pin pills and titles are appended as independent root siblings; select by computed per-bank anchor/label geometry, not field-bank descendants",
+      "crop": [
+        0,
+        0,
+        2932,
+        3250
+      ],
+      "gadgeteer": "GA\u2013GI are nine separate J32\u2013J40 ten-pin header cards, not exterior green terminals. Show source-backed separate extension cards when used."
+    },
+    "geometry_readback": [
+      {
+        "bank": "POWER",
+        "exact_screw_centers_match": true,
+        "count": 2
+      },
+      {
+        "bank": "FIVEIN",
+        "exact_screw_centers_match": true,
+        "count": 2
+      },
+      {
+        "bank": "FIVEOUT",
+        "exact_screw_centers_match": true,
+        "count": 2
+      },
+      {
+        "bank": "AUX",
+        "exact_screw_centers_match": true,
+        "count": 6
+      },
+      {
+        "bank": "XMIN",
+        "exact_screw_centers_match": true,
+        "count": 3
+      },
+      {
+        "bank": "XMAX",
+        "exact_screw_centers_match": true,
+        "count": 3
+      },
+      {
+        "bank": "YMIN",
+        "exact_screw_centers_match": true,
+        "count": 3
+      },
+      {
+        "bank": "YMAX",
+        "exact_screw_centers_match": true,
+        "count": 3
+      },
+      {
+        "bank": "ZMIN",
+        "exact_screw_centers_match": true,
+        "count": 3
+      },
+      {
+        "bank": "ZMAX",
+        "exact_screw_centers_match": true,
+        "count": 3
+      },
+      {
+        "bank": "PROBE",
+        "exact_screw_centers_match": true,
+        "count": 4
+      },
+      {
+        "bank": "TEMP",
+        "exact_screw_centers_match": true,
+        "count": 6
+      },
+      {
+        "bank": "HEA",
+        "exact_screw_centers_match": true,
+        "count": 2
+      },
+      {
+        "bank": "HEB",
+        "exact_screw_centers_match": true,
+        "count": 2
+      },
+      {
+        "bank": "BED",
+        "exact_screw_centers_match": true,
+        "count": 2
+      },
+      {
+        "bank": "FANA",
+        "exact_screw_centers_match": true,
+        "count": 2
+      },
+      {
+        "bank": "FANB",
+        "exact_screw_centers_match": true,
+        "count": 2
+      },
+      {
+        "bank": "SSR1",
+        "exact_screw_centers_match": true,
+        "count": 2
+      },
+      {
+        "bank": "SSR2",
+        "exact_screw_centers_match": true,
+        "count": 2
+      },
+      {
+        "bank": "PWM",
+        "exact_screw_centers_match": true,
+        "count": 4
+      },
+      {
+        "bank": "DRVX",
+        "exact_screw_centers_match": true,
+        "count": 6
+      },
+      {
+        "bank": "DRVY",
+        "exact_screw_centers_match": true,
+        "count": 6
+      },
+      {
+        "bank": "DRVZ",
+        "exact_screw_centers_match": true,
+        "count": 6
+      },
+      {
+        "bank": "DRVA",
+        "exact_screw_centers_match": true,
+        "count": 6
+      }
+    ]
+  },
+  "prime": {
+    "svg_id": "pcb-svg",
+    "viewbox": "0.0000 0.0000 116.2050 116.0780",
+    "layers": [
+      {
+        "id": "layer-board-substrate",
+        "class": "pcb-layer",
+        "data-label": "Board substrate",
+        "data-masked": "true",
+        "mask": "url(#holes-cutout-mask)",
+        "x": "4.329999999999998",
+        "y": "2.780000000000001",
+        "width": "110.00000000000001",
+        "height": "110",
+        "rx": "5",
+        "fill": "#1f1f22",
+        "stroke": "#dfe4ee",
+        "stroke-width": "0.3",
+        "style": "display:inline"
+      },
+      {
+        "id": "layer-b-fab",
+        "class": "pcb-layer",
+        "data-label": "B.Fab (bottom fabrication)",
+        "data-masked": "true",
+        "mask": "url(#holes-cutout-mask)",
+        "opacity": "0.85",
+        "style": "display:none;--lc:#4b5570"
+      },
+      {
+        "id": "layer-b-crtyd",
+        "class": "pcb-layer",
+        "data-label": "B.Courtyard (bottom)",
+        "data-masked": "true",
+        "mask": "url(#holes-cutout-mask)",
+        "opacity": "0.55",
+        "style": "display:none;--lc:#2fd6e0"
+      },
+      {
+        "id": "layer-components-b",
+        "class": "pcb-layer",
+        "data-label": "Footprints (bottom)",
+        "opacity": "1",
+        "style": "display:none"
+      },
+      {
+        "id": "layer-illustrated-b",
+        "class": "pcb-layer",
+        "data-label": "Illustrated components (bottom)",
+        "opacity": "1",
+        "style": "display:none"
+      },
+      {
+        "id": "layer-invented-b",
+        "class": "pcb-layer",
+        "data-label": "Provisional package placeholders (bottom)",
+        "opacity": "1",
+        "style": "display:none"
+      },
+      {
+        "id": "layer-b-silks",
+        "class": "pcb-layer",
+        "data-label": "B.Silkscreen (bottom)",
+        "data-masked": "true",
+        "mask": "url(#holes-cutout-mask)",
+        "opacity": "0.9",
+        "style": "display:none;--lc:#d8c9a8"
+      },
+      {
+        "id": "layer-b-mask",
+        "class": "pcb-layer",
+        "data-label": "B.Mask (bottom soldermask)",
+        "data-masked": "true",
+        "mask": "url(#holes-cutout-mask)",
+        "opacity": "0.85",
+        "style": "display:none;--lc:#1fae9c"
+      },
+      {
+        "id": "layer-b-cu",
+        "class": "pcb-layer",
+        "data-label": "B.Cu (bottom copper)",
+        "data-masked": "true",
+        "mask": "url(#holes-cutout-mask)",
+        "opacity": "0.8",
+        "style": "display:none;--lc:#4d8fe8"
+      },
+      {
+        "id": "layer-in2-cu",
+        "class": "pcb-layer",
+        "data-label": "In2.Cu (inner layer 2)",
+        "data-masked": "true",
+        "mask": "url(#holes-cutout-mask)",
+        "opacity": "0.7",
+        "style": "display:none;--lc:#3dbfa0"
+      },
+      {
+        "id": "layer-in1-cu",
+        "class": "pcb-layer",
+        "data-label": "In1.Cu (inner layer 1)",
+        "data-masked": "true",
+        "mask": "url(#holes-cutout-mask)",
+        "opacity": "0.7",
+        "style": "display:none;--lc:#f2c14e"
+      },
+      {
+        "id": "layer-f-cu",
+        "class": "pcb-layer",
+        "data-label": "F.Cu (top copper)",
+        "data-masked": "true",
+        "mask": "url(#holes-cutout-mask)",
+        "opacity": "0.85",
+        "style": "display:none;--lc:#e8a33d"
+      },
+      {
+        "id": "layer-f-mask",
+        "class": "pcb-layer",
+        "data-label": "F.Mask (top soldermask)",
+        "data-masked": "true",
+        "mask": "url(#holes-cutout-mask)",
+        "opacity": "0.85",
+        "style": "display:none;--lc:#f2b84a"
+      },
+      {
+        "id": "layer-f-silks",
+        "class": "pcb-layer",
+        "data-label": "F.Silkscreen (top)",
+        "data-masked": "true",
+        "mask": "url(#holes-cutout-mask)",
+        "opacity": "0.95",
+        "style": "display:inline;--lc:#ffffff"
+      },
+      {
+        "id": "layer-f-fab",
+        "class": "pcb-layer",
+        "data-label": "F.Fab (top fabrication)",
+        "data-masked": "true",
+        "mask": "url(#holes-cutout-mask)",
+        "opacity": "0.85",
+        "style": "display:none;--lc:#c7ccd6"
+      },
+      {
+        "id": "layer-f-crtyd",
+        "class": "pcb-layer",
+        "data-label": "F.Courtyard (top)",
+        "data-masked": "true",
+        "mask": "url(#holes-cutout-mask)",
+        "opacity": "0.55",
+        "style": "display:none;--lc:#ff4fd8"
+      },
+      {
+        "id": "layer-components-f",
+        "class": "pcb-layer",
+        "data-label": "Footprints (top)",
+        "opacity": "1",
+        "style": "display:none"
+      },
+      {
+        "id": "layer-illustrated-f",
+        "class": "pcb-layer",
+        "data-label": "Illustrated components (top)",
+        "opacity": "1",
+        "style": "display:inline"
+      },
+      {
+        "id": "layer-invented-f",
+        "class": "pcb-layer",
+        "data-label": "Provisional package placeholders (top)",
+        "opacity": "1",
+        "style": "display:inline"
+      },
+      {
+        "id": "layer-edge-holes",
+        "class": "pcb-layer",
+        "data-label": "Holes (drills, dots)",
+        "data-masked": "true",
+        "mask": "url(#holes-cutout-mask)",
+        "opacity": "0.55",
+        "style": "display:none;--lc:#ff5c5c"
+      }
+    ],
+    "illustrated_connectors": [
+      {
+        "class": "pcb-part",
+        "data-instance-id": "00000000-0000-0000-0000-0000608dd35f",
+        "data-ref": "J2",
+        "data-value": "USB_A",
+        "data-library": "Connector_USB:USB_A_Wuerth_614004134726_Horizontal",
+        "data-slug": "usb_port_a",
+        "data-side": "F",
+        "data-x": "17.0000",
+        "data-y": "16.3500",
+        "data-rot": "0",
+        "data-mirror": "1",
+        "data-dx": "0",
+        "data-dy": "0",
+        "data-extra-rot": "0",
+        "data-source": "usb_port_a/v1/component.svg",
+        "data-viewbox": "0 0 20.68 8.6",
+        "data-box-w": "20.680",
+        "data-box-h": "8.600",
+        "transform": "translate(17.0000 16.3500) rotate(0) scale(1 1)"
+      },
+      {
+        "class": "pcb-part",
+        "data-instance-id": "00000000-0000-0000-0000-000060d6b543",
+        "data-ref": "J4",
+        "data-value": "RJ45_Hanrun_HR911105A",
+        "data-library": "Connector_RJ:RJ45_Hanrun_HR911105A",
+        "data-slug": "ethernet_rj45",
+        "data-side": "F",
+        "data-x": "21.7500",
+        "data-y": "58.6500",
+        "data-rot": "90",
+        "data-mirror": "1",
+        "data-dx": "0",
+        "data-dy": "0",
+        "data-extra-rot": "0",
+        "data-source": "ethernet_rj45/v3/component.svg",
+        "data-viewbox": "0 0 21.995 18.55",
+        "data-box-w": "18.500",
+        "data-box-h": "21.910",
+        "transform": "translate(21.7500 58.6500) rotate(90) scale(1 1)"
+      },
+      {
+        "class": "pcb-part",
+        "data-instance-id": "00000000-0000-0000-0000-000060d7b995",
+        "data-ref": "J1",
+        "data-value": "USB_B",
+        "data-library": "Connector_USB:USB_B_OST_USB-B1HSxx_Horizontal",
+        "data-slug": "usb_port",
+        "data-side": "F",
+        "data-x": "19.9000",
+        "data-y": "30.2500",
+        "data-rot": "-180",
+        "data-mirror": "1",
+        "data-dx": "0",
+        "data-dy": "0",
+        "data-extra-rot": "0",
+        "data-source": "usb_port/v3/component.svg",
+        "data-viewbox": "0 0 17.915 16.59",
+        "data-box-w": "17.500",
+        "data-box-h": "16.540",
+        "transform": "translate(19.9000 30.2500) rotate(-180) scale(1 1)"
+      },
+      {
+        "class": "pcb-part",
+        "data-instance-id": "00000000-0000-0000-0000-000060d8578f",
+        "data-ref": "J5",
+        "data-value": "Screw_Terminal_01x04",
+        "data-library": "smoothieparts:CONN_MOTOR2",
+        "data-slug": "motor_connector",
+        "data-side": "F",
+        "data-x": "110.9500",
+        "data-y": "19.7000",
+        "data-rot": "-90",
+        "data-mirror": "1",
+        "data-dx": "0",
+        "data-dy": "0",
+        "data-extra-rot": "0",
+        "data-source": "motor_connector/v5/component.svg",
+        "data-viewbox": "4.37 -0.075 6.65 15.465",
+        "data-box-w": "15.240",
+        "data-box-h": "13.335",
+        "transform": "translate(110.9500 19.7000) rotate(-90) scale(1 1)"
+      },
+      {
+        "class": "pcb-part",
+        "data-instance-id": "00000000-0000-0000-0000-000060d857a3",
+        "data-ref": "J6",
+        "data-value": "Screw_Terminal_01x04",
+        "data-library": "smoothieparts:CONN_MOTOR2",
+        "data-slug": "motor_connector",
+        "data-side": "F",
+        "data-x": "110.3000",
+        "data-y": "37.2000",
+        "data-rot": "-90",
+        "data-mirror": "1",
+        "data-dx": "0",
+        "data-dy": "0",
+        "data-extra-rot": "0",
+        "data-source": "motor_connector/v5/component.svg",
+        "data-viewbox": "4.37 -0.075 6.65 15.465",
+        "data-box-w": "15.240",
+        "data-box-h": "13.335",
+        "transform": "translate(110.3000 37.2000) rotate(-90) scale(1 1)"
+      },
+      {
+        "class": "pcb-part",
+        "data-instance-id": "00000000-0000-0000-0000-000060d857c1",
+        "data-ref": "J7",
+        "data-value": "Screw_Terminal_01x04",
+        "data-library": "smoothieparts:CONN_MOTOR2",
+        "data-slug": "motor_connector",
+        "data-side": "F",
+        "data-x": "109.8400",
+        "data-y": "72.3000",
+        "data-rot": "-90",
+        "data-mirror": "1",
+        "data-dx": "0",
+        "data-dy": "0",
+        "data-extra-rot": "0",
+        "data-source": "motor_connector/v5/component.svg",
+        "data-viewbox": "4.37 -0.075 6.65 15.465",
+        "data-box-w": "15.240",
+        "data-box-h": "13.335",
+        "transform": "translate(109.8400 72.3000) rotate(-90) scale(1 1)"
+      },
+      {
+        "class": "pcb-part",
+        "data-instance-id": "00000000-0000-0000-0000-000060d857d5",
+        "data-ref": "J8",
+        "data-value": "Screw_Terminal_01x04",
+        "data-library": "smoothieparts:CONN_MOTOR2",
+        "data-slug": "motor_connector",
+        "data-side": "F",
+        "data-x": "110.0100",
+        "data-y": "96.0400",
+        "data-rot": "-90",
+        "data-mirror": "1",
+        "data-dx": "0",
+        "data-dy": "0",
+        "data-extra-rot": "0",
+        "data-source": "motor_connector/v5/component.svg",
+        "data-viewbox": "4.37 -0.075 6.65 15.465",
+        "data-box-w": "15.240",
+        "data-box-h": "13.335",
+        "transform": "translate(110.0100 96.0400) rotate(-90) scale(1 1)"
+      },
+      {
+        "class": "pcb-part",
+        "data-instance-id": "00000000-0000-0000-0000-000060db789f",
+        "data-ref": "J12",
+        "data-value": "Conn_01x02",
+        "data-library": "smoothieparts:XT30",
+        "data-slug": "power_screw_terminal_round",
+        "data-side": "F",
+        "data-x": "55.9000",
+        "data-y": "103.7500",
+        "data-rot": "90",
+        "data-mirror": "1",
+        "data-dx": "0",
+        "data-dy": "0",
+        "data-extra-rot": "0",
+        "data-source": "power_screw_terminal_round/v3/component.svg",
+        "data-viewbox": "0 0 6.62 14.12",
+        "data-box-w": "11.500",
+        "data-box-h": "6.500",
+        "transform": "translate(55.9000 103.7500) rotate(90) scale(1 1)"
+      },
+      {
+        "class": "pcb-part",
+        "data-instance-id": "00000000-0000-0000-0000-000060db78b5",
+        "data-ref": "J13",
+        "data-value": "Conn_01x02",
+        "data-library": "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical",
+        "data-slug": "ssr_header",
+        "data-side": "F",
+        "data-x": "64.9500",
+        "data-y": "96.1500",
+        "data-rot": "-90",
+        "data-mirror": "1",
+        "data-dx": "0",
+        "data-dy": "0",
+        "data-extra-rot": "0",
+        "data-source": "ssr_header/v5/component.svg",
+        "data-viewbox": "1.08 1.09 4.04 1.5",
+        "data-box-w": "3.600",
+        "data-box-h": "6.150",
+        "transform": "translate(64.9500 96.1500) rotate(-90) scale(1 1)"
+      },
+      {
+        "class": "pcb-part",
+        "data-instance-id": "00000000-0000-0000-0000-000060db78dc",
+        "data-ref": "J14",
+        "data-value": "Conn_01x02",
+        "data-library": "smoothieparts:XT30",
+        "data-slug": "power_screw_terminal_round",
+        "data-side": "F",
+        "data-x": "66.4500",
+        "data-y": "104.0500",
+        "data-rot": "90",
+        "data-mirror": "1",
+        "data-dx": "0",
+        "data-dy": "0",
+        "data-extra-rot": "0",
+        "data-source": "power_screw_terminal_round/v3/component.svg",
+        "data-viewbox": "0 0 6.62 14.12",
+        "data-box-w": "11.500",
+        "data-box-h": "6.500",
+        "transform": "translate(66.4500 104.0500) rotate(90) scale(1 1)"
+      },
+      {
+        "class": "pcb-part",
+        "data-instance-id": "00000000-0000-0000-0000-000060de882b",
+        "data-ref": "J9",
+        "data-value": "Conn_01x02",
+        "data-library": "smoothieparts:XT30",
+        "data-slug": "vmot_terminal",
+        "data-side": "F",
+        "data-x": "106.4500",
+        "data-y": "55.5000",
+        "data-rot": "-90",
+        "data-mirror": "1",
+        "data-dx": "0",
+        "data-dy": "0",
+        "data-extra-rot": "0",
+        "data-source": "vmot_terminal/v3/component.svg",
+        "data-viewbox": "0 0 6.62 14.12",
+        "data-box-w": "14.000",
+        "data-box-h": "6.500",
+        "transform": "translate(106.4500 55.5000) rotate(-90) scale(1 1)"
+      },
+      {
+        "class": "pcb-part",
+        "data-instance-id": "00000000-0000-0000-0000-000060de888c",
+        "data-ref": "J10",
+        "data-value": "Conn_01x02",
+        "data-library": "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical",
+        "data-slug": "ssr_header",
+        "data-side": "F",
+        "data-x": "111.5500",
+        "data-y": "54.4500",
+        "data-rot": "0",
+        "data-mirror": "1",
+        "data-dx": "0",
+        "data-dy": "0",
+        "data-extra-rot": "0",
+        "data-source": "ssr_header/v5/component.svg",
+        "data-viewbox": "1.08 1.09 4.04 1.5",
+        "data-box-w": "3.600",
+        "data-box-h": "6.150",
+        "transform": "translate(111.5500 54.4500) rotate(0) scale(1 1)"
+      },
+      {
+        "class": "pcb-part",
+        "data-instance-id": "00000000-0000-0000-0000-000060dea5b8",
+        "data-ref": "J11",
+        "data-value": "Conn_01x02",
+        "data-library": "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical",
+        "data-slug": "ssr_header",
+        "data-side": "F",
+        "data-x": "54.2000",
+        "data-y": "96.2000",
+        "data-rot": "-90",
+        "data-mirror": "1",
+        "data-dx": "0",
+        "data-dy": "0",
+        "data-extra-rot": "0",
+        "data-source": "ssr_header/v5/component.svg",
+        "data-viewbox": "1.08 1.09 4.04 1.5",
+        "data-box-w": "3.600",
+        "data-box-h": "6.150",
+        "transform": "translate(54.2000 96.2000) rotate(-90) scale(1 1)"
+      },
+      {
+        "class": "pcb-part",
+        "data-instance-id": "00000000-0000-0000-0000-000060df8fba",
+        "data-ref": "J18",
+        "data-value": "Conn_01x02",
+        "data-library": "smoothieparts:CONN_SFET",
+        "data-slug": "heat_terminal",
+        "data-side": "F",
+        "data-x": "41.7000",
+        "data-y": "102.1500",
+        "data-rot": "-180",
+        "data-mirror": "1",
+        "data-dx": "0",
+        "data-dy": "0",
+        "data-extra-rot": "0",
+        "data-source": "heat_terminal/v3/component.svg",
+        "data-viewbox": "0 0 7.77 9.04",
+        "data-box-w": "7.620",
+        "data-box-h": "8.890",
+        "transform": "translate(41.7000 102.1500) rotate(-180) scale(1 1)"
+      },
+      {
+        "class": "pcb-part",
+        "data-instance-id": "00000000-0000-0000-0000-000060dfa515",
+        "data-ref": "J17",
+        "data-value": "Conn_01x02",
+        "data-library": "smoothieparts:CONN_SFET",
+        "data-slug": "heat_terminal",
+        "data-side": "F",
+        "data-x": "33.4000",
+        "data-y": "102.1500",
+        "data-rot": "-180",
+        "data-mirror": "1",
+        "data-dx": "0",
+        "data-dy": "0",
+        "data-extra-rot": "0",
+        "data-source": "heat_terminal/v3/component.svg",
+        "data-viewbox": "0 0 7.77 9.04",
+        "data-box-w": "7.620",
+        "data-box-h": "8.890",
+        "transform": "translate(33.4000 102.1500) rotate(-180) scale(1 1)"
+      },
+      {
+        "class": "pcb-part",
+        "data-instance-id": "00000000-0000-0000-0000-000060dfa84c",
+        "data-ref": "J20",
+        "data-value": "Conn_01x02",
+        "data-library": "Connector_Molex:Molex_KK-254_AE-6410-02A_1x02_P2.54mm_Vertical",
+        "data-slug": "fan_connector",
+        "data-side": "F",
+        "data-x": "26.6500",
+        "data-y": "106.6000",
+        "data-rot": "-180",
+        "data-mirror": "1",
+        "data-dx": "0",
+        "data-dy": "0",
+        "data-extra-rot": "0",
+        "data-source": "fan_connector/v3/component.svg",
+        "data-viewbox": "0 0 6.13 6.85",
+        "data-box-w": "6.080",
+        "data-box-h": "6.800",
+        "transform": "translate(26.6500 106.6000) rotate(-180) scale(1 1)"
+      },
+      {
+        "class": "pcb-part",
+        "data-instance-id": "00000000-0000-0000-0000-000060dfac8d",
+        "data-ref": "J19",
+        "data-value": "Conn_01x02",
+        "data-library": "Connector_Molex:Molex_KK-254_AE-6410-02A_1x02_P2.54mm_Vertical",
+        "data-slug": "fan_connector",
+        "data-side": "F",
+        "data-x": "20.0000",
+        "data-y": "106.6000",
+        "data-rot": "-180",
+        "data-mirror": "1",
+        "data-dx": "0",
+        "data-dy": "0",
+        "data-extra-rot": "0",
+        "data-source": "fan_connector/v3/component.svg",
+        "data-viewbox": "0 0 6.13 6.85",
+        "data-box-w": "6.080",
+        "data-box-h": "6.800",
+        "transform": "translate(20.0000 106.6000) rotate(-180) scale(1 1)"
+      },
+      {
+        "class": "pcb-part",
+        "data-instance-id": "00000000-0000-0000-0000-000060e548d4",
+        "data-ref": "J21",
+        "data-value": "Conn_01x02",
+        "data-library": "Connector_Molex:Molex_KK-254_AE-6410-02A_1x02_P2.54mm_Vertical",
+        "data-slug": "fan_connector",
+        "data-side": "F",
+        "data-x": "9.3000",
+        "data-y": "89.1000",
+        "data-rot": "-90",
+        "data-mirror": "1",
+        "data-dx": "0",
+        "data-dy": "0",
+        "data-extra-rot": "0",
+        "data-source": "fan_connector/v3/component.svg",
+        "data-viewbox": "0 0 6.13 6.85",
+        "data-box-w": "6.080",
+        "data-box-h": "6.800",
+        "transform": "translate(9.3000 89.1000) rotate(-90) scale(1 1)"
+      },
+      {
+        "class": "pcb-part",
+        "data-instance-id": "00000000-0000-0000-0000-000060e548f8",
+        "data-ref": "J22",
+        "data-value": "Conn_01x02",
+        "data-library": "Connector_Molex:Molex_KK-254_AE-6410-02A_1x02_P2.54mm_Vertical",
+        "data-slug": "fan_connector",
+        "data-side": "F",
+        "data-x": "9.3000",
+        "data-y": "95.5000",
+        "data-rot": "-90",
+        "data-mirror": "1",
+        "data-dx": "0",
+        "data-dy": "0",
+        "data-extra-rot": "0",
+        "data-source": "fan_connector/v3/component.svg",
+        "data-viewbox": "0 0 6.13 6.85",
+        "data-box-w": "6.080",
+        "data-box-h": "6.800",
+        "transform": "translate(9.3000 95.5000) rotate(-90) scale(1 1)"
+      },
+      {
+        "class": "pcb-part",
+        "data-instance-id": "00000000-0000-0000-0000-000060e5491c",
+        "data-ref": "J23",
+        "data-value": "Conn_01x02",
+        "data-library": "Connector_Molex:Molex_KK-254_AE-6410-02A_1x02_P2.54mm_Vertical",
+        "data-slug": "fan_connector",
+        "data-side": "F",
+        "data-x": "9.3500",
+        "data-y": "101.9500",
+        "data-rot": "-90",
+        "data-mirror": "1",
+        "data-dx": "0",
+        "data-dy": "0",
+        "data-extra-rot": "0",
+        "data-source": "fan_connector/v3/component.svg",
+        "data-viewbox": "0 0 6.13 6.85",
+        "data-box-w": "6.080",
+        "data-box-h": "6.800",
+        "transform": "translate(9.3500 101.9500) rotate(-90) scale(1 1)"
+      },
+      {
+        "class": "pcb-part",
+        "data-instance-id": "00000000-0000-0000-0000-000060e81bd2",
+        "data-ref": "J24",
+        "data-value": "Conn_01x03",
+        "data-library": "Connector_Molex:Molex_KK-254_AE-6410-03A_1x03_P2.54mm_Vertical",
+        "data-slug": "top_connector_header",
+        "data-side": "F",
+        "data-x": "21.6500",
+        "data-y": "7.8500",
+        "data-rot": "-180",
+        "data-mirror": "1",
+        "data-dx": "0",
+        "data-dy": "0",
+        "data-extra-rot": "0",
+        "data-source": "top_connector_header/v3/component.svg",
+        "data-viewbox": "0 0 8.67 6.85",
+        "data-box-w": "8.620",
+        "data-box-h": "6.800",
+        "transform": "translate(21.6500 7.8500) rotate(-180) scale(1 1)"
+      },
+      {
+        "class": "pcb-part",
+        "data-instance-id": "00000000-0000-0000-0000-000060e81bfa",
+        "data-ref": "J25",
+        "data-value": "Conn_01x03",
+        "data-library": "Connector_Molex:Molex_KK-254_AE-6410-03A_1x03_P2.54mm_Vertical",
+        "data-slug": "top_connector_header",
+        "data-side": "F",
+        "data-x": "30.6000",
+        "data-y": "7.8500",
+        "data-rot": "-180",
+        "data-mirror": "1",
+        "data-dx": "0",
+        "data-dy": "0",
+        "data-extra-rot": "0",
+        "data-source": "top_connector_header/v3/component.svg",
+        "data-viewbox": "0 0 8.67 6.85",
+        "data-box-w": "8.620",
+        "data-box-h": "6.800",
+        "transform": "translate(30.6000 7.8500) rotate(-180) scale(1 1)"
+      },
+      {
+        "class": "pcb-part",
+        "data-instance-id": "00000000-0000-0000-0000-000060e81c72",
+        "data-ref": "J28",
+        "data-value": "Conn_01x03",
+        "data-library": "Connector_Molex:Molex_KK-254_AE-6410-03A_1x03_P2.54mm_Vertical",
+        "data-slug": "top_connector_header",
+        "data-side": "F",
+        "data-x": "57.3000",
+        "data-y": "7.8500",
+        "data-rot": "-180",
+        "data-mirror": "1",
+        "data-dx": "0",
+        "data-dy": "0",
+        "data-extra-rot": "0",
+        "data-source": "top_connector_header/v3/component.svg",
+        "data-viewbox": "0 0 8.67 6.85",
+        "data-box-w": "8.620",
+        "data-box-h": "6.800",
+        "transform": "translate(57.3000 7.8500) rotate(-180) scale(1 1)"
+      },
+      {
+        "class": "pcb-part",
+        "data-instance-id": "00000000-0000-0000-0000-000060e81c9a",
+        "data-ref": "J29",
+        "data-value": "Conn_01x03",
+        "data-library": "Connector_Molex:Molex_KK-254_AE-6410-03A_1x03_P2.54mm_Vertical",
+        "data-slug": "top_connector_header",
+        "data-side": "F",
+        "data-x": "66.1500",
+        "data-y": "7.8500",
+        "data-rot": "-180",
+        "data-mirror": "1",
+        "data-dx": "0",
+        "data-dy": "0",
+        "data-extra-rot": "0",
+        "data-source": "top_connector_header/v3/component.svg",
+        "data-viewbox": "0 0 8.67 6.85",
+        "data-box-w": "8.620",
+        "data-box-h": "6.800",
+        "transform": "translate(66.1500 7.8500) rotate(-180) scale(1 1)"
+      },
+      {
+        "class": "pcb-part",
+        "data-instance-id": "00000000-0000-0000-0000-000060e81cc6",
+        "data-ref": "J31",
+        "data-value": "Conn_01x04",
+        "data-library": "Connector_Molex:Molex_KK-254_AE-6410-04A_1x04_P2.54mm_Vertical",
+        "data-slug": "probe_connector",
+        "data-side": "F",
+        "data-x": "77.6500",
+        "data-y": "6.1000",
+        "data-rot": "-180",
+        "data-mirror": "1",
+        "data-dx": "0",
+        "data-dy": "0",
+        "data-extra-rot": "0",
+        "data-source": "probe_connector/v3/component.svg",
+        "data-viewbox": "0 0 11.21 6.85",
+        "data-box-w": "11.160",
+        "data-box-h": "6.800",
+        "transform": "translate(77.6500 6.1000) rotate(-180) scale(1 1)"
+      },
+      {
+        "class": "pcb-part",
+        "data-instance-id": "00000000-0000-0000-0000-000060e8372b",
+        "data-ref": "J26",
+        "data-value": "Conn_01x03",
+        "data-library": "Connector_Molex:Molex_KK-254_AE-6410-03A_1x03_P2.54mm_Vertical",
+        "data-slug": "top_connector_header",
+        "data-side": "F",
+        "data-x": "39.5000",
+        "data-y": "7.8500",
+        "data-rot": "-180",
+        "data-mirror": "1",
+        "data-dx": "0",
+        "data-dy": "0",
+        "data-extra-rot": "0",
+        "data-source": "top_connector_header/v3/component.svg",
+        "data-viewbox": "0 0 8.67 6.85",
+        "data-box-w": "8.620",
+        "data-box-h": "6.800",
+        "transform": "translate(39.5000 7.8500) rotate(-180) scale(1 1)"
+      },
+      {
+        "class": "pcb-part",
+        "data-instance-id": "00000000-0000-0000-0000-000060e837c8",
+        "data-ref": "J27",
+        "data-value": "Conn_01x03",
+        "data-library": "Connector_Molex:Molex_KK-254_AE-6410-03A_1x03_P2.54mm_Vertical",
+        "data-slug": "top_connector_header",
+        "data-side": "F",
+        "data-x": "48.4000",
+        "data-y": "7.8500",
+        "data-rot": "-180",
+        "data-mirror": "1",
+        "data-dx": "0",
+        "data-dy": "0",
+        "data-extra-rot": "0",
+        "data-source": "top_connector_header/v3/component.svg",
+        "data-viewbox": "0 0 8.67 6.85",
+        "data-box-w": "8.620",
+        "data-box-h": "6.800",
+        "transform": "translate(48.4000 7.8500) rotate(-180) scale(1 1)"
+      },
+      {
+        "class": "pcb-part",
+        "data-instance-id": "00000000-0000-0000-0000-000060ef2d01",
+        "data-ref": "J32",
+        "data-value": "Conn_02x05_Odd_Even",
+        "data-library": "Connector_PinHeader_1.27mm:PinHeader_2x05_P1.27mm_Vertical_SMD",
+        "data-slug": "gadgeteer_header",
+        "data-side": "F",
+        "data-x": "56.7500",
+        "data-y": "19.9000",
+        "data-rot": "-90",
+        "data-mirror": "1",
+        "data-dx": "0",
+        "data-dy": "0",
+        "data-extra-rot": "0",
+        "data-source": "gadgeteer_header/v5/component.svg",
+        "data-viewbox": "0 0 7.45 8.65",
+        "data-box-w": "8.600",
+        "data-box-h": "7.400",
+        "transform": "translate(56.7500 19.9000) rotate(-90) scale(1 1)"
+      },
+      {
+        "class": "pcb-part",
+        "data-instance-id": "00000000-0000-0000-0000-000060ef2d3e",
+        "data-ref": "J33",
+        "data-value": "Conn_02x05_Odd_Even",
+        "data-library": "Connector_PinHeader_1.27mm:PinHeader_2x05_P1.27mm_Vertical_SMD",
+        "data-slug": "gadgeteer_header",
+        "data-side": "F",
+        "data-x": "56.7500",
+        "data-y": "28.5500",
+        "data-rot": "-90",
+        "data-mirror": "1",
+        "data-dx": "0",
+        "data-dy": "0",
+        "data-extra-rot": "0",
+        "data-source": "gadgeteer_header/v5/component.svg",
+        "data-viewbox": "0 0 7.45 8.65",
+        "data-box-w": "8.600",
+        "data-box-h": "7.400",
+        "transform": "translate(56.7500 28.5500) rotate(-90) scale(1 1)"
+      },
+      {
+        "class": "pcb-part",
+        "data-instance-id": "00000000-0000-0000-0000-000060ef2d7b",
+        "data-ref": "J34",
+        "data-value": "Conn_02x05_Odd_Even",
+        "data-library": "Connector_PinHeader_1.27mm:PinHeader_2x05_P1.27mm_Vertical_SMD",
+        "data-slug": "gadgeteer_header",
+        "data-side": "F",
+        "data-x": "56.7500",
+        "data-y": "37.1500",
+        "data-rot": "-90",
+        "data-mirror": "1",
+        "data-dx": "0",
+        "data-dy": "0",
+        "data-extra-rot": "0",
+        "data-source": "gadgeteer_header/v5/component.svg",
+        "data-viewbox": "0 0 7.45 8.65",
+        "data-box-w": "8.600",
+        "data-box-h": "7.400",
+        "transform": "translate(56.7500 37.1500) rotate(-90) scale(1 1)"
+      },
+      {
+        "class": "pcb-part",
+        "data-instance-id": "00000000-0000-0000-0000-000060ef2db8",
+        "data-ref": "J35",
+        "data-value": "Conn_02x05_Odd_Even",
+        "data-library": "Connector_PinHeader_1.27mm:PinHeader_2x05_P1.27mm_Vertical_SMD",
+        "data-slug": "gadgeteer_header",
+        "data-side": "F",
+        "data-x": "56.7500",
+        "data-y": "45.8000",
+        "data-rot": "-90",
+        "data-mirror": "1",
+        "data-dx": "0",
+        "data-dy": "0",
+        "data-extra-rot": "0",
+        "data-source": "gadgeteer_header/v5/component.svg",
+        "data-viewbox": "0 0 7.45 8.65",
+        "data-box-w": "8.600",
+        "data-box-h": "7.400",
+        "transform": "translate(56.7500 45.8000) rotate(-90) scale(1 1)"
+      },
+      {
+        "class": "pcb-part",
+        "data-instance-id": "00000000-0000-0000-0000-000060ef2df5",
+        "data-ref": "J36",
+        "data-value": "Conn_02x05_Odd_Even",
+        "data-library": "Connector_PinHeader_1.27mm:PinHeader_2x05_P1.27mm_Vertical_SMD",
+        "data-slug": "gadgeteer_header",
+        "data-side": "F",
+        "data-x": "56.7500",
+        "data-y": "54.4500",
+        "data-rot": "-90",
+        "data-mirror": "1",
+        "data-dx": "0",
+        "data-dy": "0",
+        "data-extra-rot": "0",
+        "data-source": "gadgeteer_header/v5/component.svg",
+        "data-viewbox": "0 0 7.45 8.65",
+        "data-box-w": "8.600",
+        "data-box-h": "7.400",
+        "transform": "translate(56.7500 54.4500) rotate(-90) scale(1 1)"
+      },
+      {
+        "class": "pcb-part",
+        "data-instance-id": "00000000-0000-0000-0000-000060ef2e32",
+        "data-ref": "J37",
+        "data-value": "Conn_02x05_Odd_Even",
+        "data-library": "Connector_PinHeader_1.27mm:PinHeader_2x05_P1.27mm_Vertical_SMD",
+        "data-slug": "gadgeteer_header",
+        "data-side": "F",
+        "data-x": "56.7500",
+        "data-y": "63.1000",
+        "data-rot": "-90",
+        "data-mirror": "1",
+        "data-dx": "0",
+        "data-dy": "0",
+        "data-extra-rot": "0",
+        "data-source": "gadgeteer_header/v5/component.svg",
+        "data-viewbox": "0 0 7.45 8.65",
+        "data-box-w": "8.600",
+        "data-box-h": "7.400",
+        "transform": "translate(56.7500 63.1000) rotate(-90) scale(1 1)"
+      },
+      {
+        "class": "pcb-part",
+        "data-instance-id": "00000000-0000-0000-0000-000060ef2e6f",
+        "data-ref": "J38",
+        "data-value": "Conn_02x05_Odd_Even",
+        "data-library": "Connector_PinHeader_1.27mm:PinHeader_2x05_P1.27mm_Vertical_SMD",
+        "data-slug": "gadgeteer_header",
+        "data-side": "F",
+        "data-x": "56.7500",
+        "data-y": "71.7500",
+        "data-rot": "-90",
+        "data-mirror": "1",
+        "data-dx": "0",
+        "data-dy": "0",
+        "data-extra-rot": "0",
+        "data-source": "gadgeteer_header/v5/component.svg",
+        "data-viewbox": "0 0 7.45 8.65",
+        "data-box-w": "8.600",
+        "data-box-h": "7.400",
+        "transform": "translate(56.7500 71.7500) rotate(-90) scale(1 1)"
+      },
+      {
+        "class": "pcb-part",
+        "data-instance-id": "00000000-0000-0000-0000-000060ef2eac",
+        "data-ref": "J39",
+        "data-value": "Conn_02x05_Odd_Even",
+        "data-library": "Connector_PinHeader_1.27mm:PinHeader_2x05_P1.27mm_Vertical_SMD",
+        "data-slug": "gadgeteer_header",
+        "data-side": "F",
+        "data-x": "56.7500",
+        "data-y": "80.4000",
+        "data-rot": "-90",
+        "data-mirror": "1",
+        "data-dx": "0",
+        "data-dy": "0",
+        "data-extra-rot": "0",
+        "data-source": "gadgeteer_header/v5/component.svg",
+        "data-viewbox": "0 0 7.45 8.65",
+        "data-box-w": "8.600",
+        "data-box-h": "7.400",
+        "transform": "translate(56.7500 80.4000) rotate(-90) scale(1 1)"
+      },
+      {
+        "class": "pcb-part",
+        "data-instance-id": "00000000-0000-0000-0000-000060ef2ee9",
+        "data-ref": "J40",
+        "data-value": "Conn_02x05_Odd_Even",
+        "data-library": "Connector_PinHeader_1.27mm:PinHeader_2x05_P1.27mm_Vertical_SMD",
+        "data-slug": "gadgeteer_header",
+        "data-side": "F",
+        "data-x": "56.7500",
+        "data-y": "89.0500",
+        "data-rot": "-90",
+        "data-mirror": "1",
+        "data-dx": "0",
+        "data-dy": "0",
+        "data-extra-rot": "0",
+        "data-source": "gadgeteer_header/v5/component.svg",
+        "data-viewbox": "0 0 7.45 8.65",
+        "data-box-w": "8.600",
+        "data-box-h": "7.400",
+        "transform": "translate(56.7500 89.0500) rotate(-90) scale(1 1)"
+      },
+      {
+        "class": "pcb-part",
+        "data-instance-id": "00000000-0000-0000-0000-000060f3aeed",
+        "data-ref": "J41",
+        "data-value": "Conn_ARM_JTAG_SWD_10",
+        "data-library": "Connector_PinHeader_1.27mm:PinHeader_2x05_P1.27mm_Vertical",
+        "data-slug": "swd_header",
+        "data-side": "F",
+        "data-x": "27.1750",
+        "data-y": "51.0900",
+        "data-rot": "-180",
+        "data-mirror": "1",
+        "data-dx": "0",
+        "data-dy": "0",
+        "data-extra-rot": "0",
+        "data-source": "swd_header/v5/component.svg",
+        "data-viewbox": "0 0 4.5 7.45",
+        "data-box-w": "4.450",
+        "data-box-h": "7.400",
+        "transform": "translate(27.1750 51.0900) rotate(-180) scale(1 1)"
+      },
+      {
+        "class": "pcb-part",
+        "data-instance-id": "00000000-0000-0000-0000-000060f72a18",
+        "data-ref": "J30",
+        "data-value": "Conn_01x03_Male",
+        "data-library": "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical",
+        "data-slug": "debug_uart_header",
+        "data-side": "F",
+        "data-x": "38.5400",
+        "data-y": "19.6100",
+        "data-rot": "-90",
+        "data-mirror": "1",
+        "data-dx": "0",
+        "data-dy": "0",
+        "data-extra-rot": "0",
+        "data-source": "debug_uart_header/v1/component.svg",
+        "data-viewbox": "0 0 8.7 3.65",
+        "data-box-w": "3.600",
+        "data-box-h": "8.650",
+        "transform": "translate(38.5400 19.6100) rotate(-90) scale(1 1)"
+      },
+      {
+        "class": "pcb-part",
+        "data-instance-id": "00000000-0000-0000-0000-000061268908",
+        "data-ref": "J43",
+        "data-value": "Conn_01x02",
+        "data-library": "TerminalBlock_4Ucon:TerminalBlock_4Ucon_1x02_P3.50mm_Vertical",
+        "data-slug": "terminal_block_2pin",
+        "data-side": "F",
+        "data-x": "23.7500",
+        "data-y": "77.8000",
+        "data-rot": "0",
+        "data-mirror": "1",
+        "data-dx": "0",
+        "data-dy": "0",
+        "data-extra-rot": "0",
+        "data-source": "terminal_block_2pin/v1/component.svg",
+        "data-viewbox": "0 0 6.65 8.80",
+        "data-box-w": "9.000",
+        "data-box-h": "9.310",
+        "transform": "translate(23.7500 77.8000) rotate(0) scale(1 1)"
+      },
+      {
+        "class": "pcb-part",
+        "data-instance-id": "00000000-0000-0000-0000-00006138c421",
+        "data-ref": "J42",
+        "data-value": "Conn_01x02",
+        "data-library": "TerminalBlock_4Ucon:TerminalBlock_4Ucon_1x02_P3.50mm_Vertical",
+        "data-slug": "terminal_block_2pin",
+        "data-side": "F",
+        "data-x": "14.6500",
+        "data-y": "77.8000",
+        "data-rot": "0",
+        "data-mirror": "1",
+        "data-dx": "0",
+        "data-dy": "0",
+        "data-extra-rot": "0",
+        "data-source": "terminal_block_2pin/v1/component.svg",
+        "data-viewbox": "0 0 6.65 8.80",
+        "data-box-w": "9.000",
+        "data-box-h": "9.310",
+        "transform": "translate(14.6500 77.8000) rotate(0) scale(1 1)"
+      },
+      {
+        "class": "pcb-part",
+        "data-instance-id": "00000000-0000-0000-0000-0000615ae125",
+        "data-ref": "J44",
+        "data-value": "Conn_01x02",
+        "data-library": "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical",
+        "data-slug": "ssr_header",
+        "data-side": "F",
+        "data-x": "26.5250",
+        "data-y": "91.4000",
+        "data-rot": "-90",
+        "data-mirror": "1",
+        "data-dx": "0",
+        "data-dy": "0",
+        "data-extra-rot": "0",
+        "data-source": "ssr_header/v5/component.svg",
+        "data-viewbox": "1.08 1.09 4.04 1.5",
+        "data-box-w": "3.600",
+        "data-box-h": "6.150",
+        "transform": "translate(26.5250 91.4000) rotate(-90) scale(1 1)"
+      },
+      {
+        "class": "pcb-part",
+        "data-instance-id": "00000000-0000-0000-0000-0000615ae13b",
+        "data-ref": "J45",
+        "data-value": "Conn_01x02",
+        "data-library": "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical",
+        "data-slug": "ssr_header",
+        "data-side": "F",
+        "data-x": "38.1500",
+        "data-y": "91.2750",
+        "data-rot": "-90",
+        "data-mirror": "1",
+        "data-dx": "0",
+        "data-dy": "0",
+        "data-extra-rot": "0",
+        "data-source": "ssr_header/v5/component.svg",
+        "data-viewbox": "1.08 1.09 4.04 1.5",
+        "data-box-w": "3.600",
+        "data-box-h": "6.150",
+        "transform": "translate(38.1500 91.2750) rotate(-90) scale(1 1)"
+      },
+      {
+        "class": "pcb-part",
+        "data-instance-id": "00000000-0000-0000-0000-0000615dea11",
+        "data-ref": "J3",
+        "data-value": "Micro_SD_Card_Det",
+        "data-library": "smoothieparts:TF-01A",
+        "data-slug": "microsd_slot",
+        "data-side": "F",
+        "data-x": "12.7500",
+        "data-y": "46.0000",
+        "data-rot": "0",
+        "data-mirror": "1",
+        "data-dx": "0",
+        "data-dy": "0",
+        "data-extra-rot": "0",
+        "data-source": "microsd_slot/v3/component.svg",
+        "data-viewbox": "0 0 18.695 17.445",
+        "data-box-w": "18.575",
+        "data-box-h": "17.325",
+        "transform": "translate(12.7500 46.0000) rotate(0) scale(1 1)"
+      },
+      {
+        "class": "pcb-part",
+        "data-instance-id": "00000000-0000-0000-0000-00006175b6e7",
+        "data-ref": "J15",
+        "data-value": "Conn_01x02",
+        "data-library": "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical",
+        "data-slug": "ssr_header",
+        "data-side": "F",
+        "data-x": "66.4000",
+        "data-y": "28.3500",
+        "data-rot": "-90",
+        "data-mirror": "1",
+        "data-dx": "0",
+        "data-dy": "0",
+        "data-extra-rot": "0",
+        "data-source": "ssr_header/v5/component.svg",
+        "data-viewbox": "1.08 1.09 4.04 1.5",
+        "data-box-w": "3.600",
+        "data-box-h": "6.150",
+        "transform": "translate(66.4000 28.3500) rotate(-90) scale(1 1)"
+      },
+      {
+        "class": "pcb-part",
+        "data-instance-id": "00000000-0000-0000-0000-000063930766",
+        "data-ref": "J16",
+        "data-value": "Conn_01x02",
+        "data-library": "smoothieparts:XT30",
+        "data-slug": "power_screw_terminal_round",
+        "data-side": "F",
+        "data-x": "49.9750",
+        "data-y": "103.7250",
+        "data-rot": "90",
+        "data-mirror": "1",
+        "data-dx": "0",
+        "data-dy": "0",
+        "data-extra-rot": "0",
+        "data-source": "power_screw_terminal_round/v3/component.svg",
+        "data-viewbox": "0 0 6.62 14.12",
+        "data-box-w": "14.000",
+        "data-box-h": "6.500",
+        "transform": "translate(49.9750 103.7250) rotate(90) scale(1 1)"
+      }
+    ],
+    "pcb_to_explorer_translation_mm": [
+      -95.5,
+      -35.25
+    ],
+    "observed_translation_set": [
+      [
+        -95.5,
+        -35.25
+      ]
+    ],
+    "electrical_revision": "P12 Prime2590; explorer artwork P11 Prime2660",
+    "comparison_artifact": "/tmp/atlas-prime-p11-p12-contact-comparison.json",
+    "contact_contract": {
+      "J2": {
+        "x_mm": 112.5,
+        "y_mm": 51.6,
+        "rotation": 0.0,
+        "library": "Connector_USB:USB_A_Wuerth_614004134726_Horizontal",
+        "pads": [
+          {
+            "pin": "1",
+            "x_mm": 112.5,
+            "y_mm": 51.6,
+            "net": "/USB_PWR",
+            "explorer_coordinate_mm": [
+              17.0,
+              16.35
+            ]
+          },
+          {
+            "pin": "2",
+            "x_mm": 114.5,
+            "y_mm": 51.6,
+            "net": "/USB_HOST_D-",
+            "explorer_coordinate_mm": [
+              19.0,
+              16.35
+            ]
+          },
+          {
+            "pin": "3",
+            "x_mm": 116.5,
+            "y_mm": 51.6,
+            "net": "/USB_HOST_D+",
+            "explorer_coordinate_mm": [
+              21.0,
+              16.35
+            ]
+          },
+          {
+            "pin": "4",
+            "x_mm": 118.5,
+            "y_mm": 51.6,
+            "net": "GND",
+            "explorer_coordinate_mm": [
+              23.0,
+              16.35
+            ]
+          },
+          {
+            "pin": "5",
+            "x_mm": 111.77,
+            "y_mm": 48.88,
+            "net": "Net-(J1-Shield)",
+            "explorer_coordinate_mm": [
+              16.27,
+              13.63
+            ]
+          },
+          {
+            "pin": "5",
+            "x_mm": 111.77,
+            "y_mm": 54.32,
+            "net": "Net-(J1-Shield)",
+            "explorer_coordinate_mm": [
+              16.27,
+              19.07
+            ]
+          },
+          {
+            "pin": "5",
+            "x_mm": 118.77,
+            "y_mm": 48.88,
+            "net": "Net-(J1-Shield)",
+            "explorer_coordinate_mm": [
+              23.27,
+              13.63
+            ]
+          },
+          {
+            "pin": "5",
+            "x_mm": 118.77,
+            "y_mm": 54.32,
+            "net": "Net-(J1-Shield)",
+            "explorer_coordinate_mm": [
+              23.27,
+              19.07
+            ]
+          }
+        ]
+      },
+      "J4": {
+        "x_mm": 117.25,
+        "y_mm": 93.9,
+        "rotation": -90.0,
+        "library": "Connector_RJ:RJ45_Hanrun_HR911105A",
+        "pads": [
+          {
+            "pin": "1",
+            "x_mm": 117.25,
+            "y_mm": 93.9,
+            "net": "Net-(J4-TD+)",
+            "explorer_coordinate_mm": [
+              21.75,
+              58.65
+            ]
+          },
+          {
+            "pin": "10",
+            "x_mm": 105.99,
+            "y_mm": 94.255,
+            "net": "Net-(J4-Pad10)",
+            "explorer_coordinate_mm": [
+              10.49,
+              59.005
+            ]
+          },
+          {
+            "pin": "11",
+            "x_mm": 105.99,
+            "y_mm": 102.425,
+            "net": "Net-(J4-Pad11)",
+            "explorer_coordinate_mm": [
+              10.49,
+              67.175
+            ]
+          },
+          {
+            "pin": "12",
+            "x_mm": 105.99,
+            "y_mm": 104.965,
+            "net": "/ethernet/LED1",
+            "explorer_coordinate_mm": [
+              10.49,
+              69.715
+            ]
+          },
+          {
+            "pin": "2",
+            "x_mm": 119.79,
+            "y_mm": 95.16,
+            "net": "Net-(J4-TD-)",
+            "explorer_coordinate_mm": [
+              24.29,
+              59.91
+            ]
+          },
+          {
+            "pin": "3",
+            "x_mm": 117.25,
+            "y_mm": 96.44,
+            "net": "Net-(J4-RD+)",
+            "explorer_coordinate_mm": [
+              21.75,
+              61.19
+            ]
+          },
+          {
+            "pin": "4",
+            "x_mm": 119.79,
+            "y_mm": 97.7,
+            "net": "Net-(J4-RCT)",
+            "explorer_coordinate_mm": [
+              24.29,
+              62.45
+            ]
+          },
+          {
+            "pin": "5",
+            "x_mm": 117.25,
+            "y_mm": 98.98,
+            "net": "Net-(J4-RCT)",
+            "explorer_coordinate_mm": [
+              21.75,
+              63.73
+            ]
+          },
+          {
+            "pin": "6",
+            "x_mm": 119.79,
+            "y_mm": 100.24,
+            "net": "Net-(J4-RD-)",
+            "explorer_coordinate_mm": [
+              24.29,
+              64.99
+            ]
+          },
+          {
+            "pin": "7",
+            "x_mm": 117.25,
+            "y_mm": 101.52,
+            "net": "",
+            "explorer_coordinate_mm": [
+              21.75,
+              66.27
+            ]
+          },
+          {
+            "pin": "8",
+            "x_mm": 119.79,
+            "y_mm": 102.78,
+            "net": "/ethernet/ETH_REFGND",
+            "explorer_coordinate_mm": [
+              24.29,
+              67.53
+            ]
+          },
+          {
+            "pin": "9",
+            "x_mm": 105.99,
+            "y_mm": 91.715,
+            "net": "/ethernet/LED2",
+            "explorer_coordinate_mm": [
+              10.49,
+              56.465
+            ]
+          },
+          {
+            "pin": "SH",
+            "x_mm": 113.94,
+            "y_mm": 90.595,
+            "net": "/ethernet/ETH_REFGND",
+            "explorer_coordinate_mm": [
+              18.44,
+              55.345
+            ]
+          },
+          {
+            "pin": "SH",
+            "x_mm": 113.94,
+            "y_mm": 106.085,
+            "net": "/ethernet/ETH_REFGND",
+            "explorer_coordinate_mm": [
+              18.44,
+              70.835
+            ]
+          }
+        ]
+      },
+      "J1": {
+        "x_mm": 115.4,
+        "y_mm": 65.5,
+        "rotation": 180.0,
+        "library": "Connector_USB:USB_B_OST_USB-B1HSxx_Horizontal",
+        "pads": [
+          {
+            "pin": "1",
+            "x_mm": 115.4,
+            "y_mm": 65.5,
+            "net": "Net-(J1-VBUS)",
+            "explorer_coordinate_mm": [
+              19.9,
+              30.25
+            ]
+          },
+          {
+            "pin": "2",
+            "x_mm": 115.4,
+            "y_mm": 63.0,
+            "net": "/USB_DEV_D-",
+            "explorer_coordinate_mm": [
+              19.9,
+              27.75
+            ]
+          },
+          {
+            "pin": "3",
+            "x_mm": 113.4,
+            "y_mm": 63.0,
+            "net": "/USB_DEV_D+",
+            "explorer_coordinate_mm": [
+              17.9,
+              27.75
+            ]
+          },
+          {
+            "pin": "4",
+            "x_mm": 113.4,
+            "y_mm": 65.5,
+            "net": "GND",
+            "explorer_coordinate_mm": [
+              17.9,
+              30.25
+            ]
+          },
+          {
+            "pin": "5",
+            "x_mm": 110.69,
+            "y_mm": 70.27,
+            "net": "Net-(J1-Shield)",
+            "explorer_coordinate_mm": [
+              15.19,
+              35.02
+            ]
+          },
+          {
+            "pin": "5",
+            "x_mm": 110.69,
+            "y_mm": 58.23,
+            "net": "Net-(J1-Shield)",
+            "explorer_coordinate_mm": [
+              15.19,
+              22.98
+            ]
+          }
+        ]
+      },
+      "J5": {
+        "x_mm": 206.45,
+        "y_mm": 54.95,
+        "rotation": 90.0,
+        "library": "smoothieparts:CONN_MOTOR",
+        "pads": [
+          {
+            "pin": "1",
+            "x_mm": 203.91,
+            "y_mm": 60.2,
+            "net": "/driver-a/COIL_B2",
+            "explorer_coordinate_mm": [
+              108.41,
+              24.95
+            ]
+          },
+          {
+            "pin": "1",
+            "x_mm": 206.45,
+            "y_mm": 58.76,
+            "net": "/driver-a/COIL_B2",
+            "explorer_coordinate_mm": [
+              110.95,
+              23.51
+            ]
+          },
+          {
+            "pin": "2",
+            "x_mm": 203.91,
+            "y_mm": 56.7,
+            "net": "/driver-a/COIL_B1",
+            "explorer_coordinate_mm": [
+              108.41,
+              21.45
+            ]
+          },
+          {
+            "pin": "2",
+            "x_mm": 206.45,
+            "y_mm": 56.22,
+            "net": "/driver-a/COIL_B1",
+            "explorer_coordinate_mm": [
+              110.95,
+              20.97
+            ]
+          },
+          {
+            "pin": "3",
+            "x_mm": 206.45,
+            "y_mm": 53.68,
+            "net": "/driver-a/COIL_A2",
+            "explorer_coordinate_mm": [
+              110.95,
+              18.43
+            ]
+          },
+          {
+            "pin": "3",
+            "x_mm": 203.91,
+            "y_mm": 53.2,
+            "net": "/driver-a/COIL_A2",
+            "explorer_coordinate_mm": [
+              108.41,
+              17.95
+            ]
+          },
+          {
+            "pin": "4",
+            "x_mm": 206.45,
+            "y_mm": 51.14,
+            "net": "/driver-a/COIL_A1",
+            "explorer_coordinate_mm": [
+              110.95,
+              15.89
+            ]
+          },
+          {
+            "pin": "4",
+            "x_mm": 203.91,
+            "y_mm": 49.7,
+            "net": "/driver-a/COIL_A1",
+            "explorer_coordinate_mm": [
+              108.41,
+              14.45
+            ]
+          }
+        ]
+      },
+      "J6": {
+        "x_mm": 205.8,
+        "y_mm": 72.45,
+        "rotation": 90.0,
+        "library": "smoothieparts:CONN_MOTOR2",
+        "pads": [
+          {
+            "pin": "1",
+            "x_mm": 203.26,
+            "y_mm": 77.7,
+            "net": "/driver-b/COIL_B2",
+            "explorer_coordinate_mm": [
+              107.76,
+              42.45
+            ]
+          },
+          {
+            "pin": "1",
+            "x_mm": 198.18,
+            "y_mm": 76.26,
+            "net": "/driver-b/COIL_B2",
+            "explorer_coordinate_mm": [
+              102.68,
+              41.01
+            ]
+          },
+          {
+            "pin": "1",
+            "x_mm": 205.8,
+            "y_mm": 76.26,
+            "net": "/driver-b/COIL_B2",
+            "explorer_coordinate_mm": [
+              110.3,
+              41.01
+            ]
+          },
+          {
+            "pin": "2",
+            "x_mm": 203.26,
+            "y_mm": 74.2,
+            "net": "/driver-b/COIL_B1",
+            "explorer_coordinate_mm": [
+              107.76,
+              38.95
+            ]
+          },
+          {
+            "pin": "2",
+            "x_mm": 198.18,
+            "y_mm": 73.72,
+            "net": "/driver-b/COIL_B1",
+            "explorer_coordinate_mm": [
+              102.68,
+              38.47
+            ]
+          },
+          {
+            "pin": "2",
+            "x_mm": 205.8,
+            "y_mm": 73.72,
+            "net": "/driver-b/COIL_B1",
+            "explorer_coordinate_mm": [
+              110.3,
+              38.47
+            ]
+          },
+          {
+            "pin": "3",
+            "x_mm": 198.18,
+            "y_mm": 71.18,
+            "net": "/driver-b/COIL_A2",
+            "explorer_coordinate_mm": [
+              102.68,
+              35.93
+            ]
+          },
+          {
+            "pin": "3",
+            "x_mm": 205.8,
+            "y_mm": 71.18,
+            "net": "/driver-b/COIL_A2",
+            "explorer_coordinate_mm": [
+              110.3,
+              35.93
+            ]
+          },
+          {
+            "pin": "3",
+            "x_mm": 203.26,
+            "y_mm": 70.7,
+            "net": "/driver-b/COIL_A2",
+            "explorer_coordinate_mm": [
+              107.76,
+              35.45
+            ]
+          },
+          {
+            "pin": "4",
+            "x_mm": 198.18,
+            "y_mm": 68.64,
+            "net": "/driver-b/COIL_A1",
+            "explorer_coordinate_mm": [
+              102.68,
+              33.39
+            ]
+          },
+          {
+            "pin": "4",
+            "x_mm": 205.8,
+            "y_mm": 68.64,
+            "net": "/driver-b/COIL_A1",
+            "explorer_coordinate_mm": [
+              110.3,
+              33.39
+            ]
+          },
+          {
+            "pin": "4",
+            "x_mm": 203.26,
+            "y_mm": 67.2,
+            "net": "/driver-b/COIL_A1",
+            "explorer_coordinate_mm": [
+              107.76,
+              31.95
+            ]
+          }
+        ]
+      },
+      "J7": {
+        "x_mm": 205.34,
+        "y_mm": 107.55,
+        "rotation": 90.0,
+        "library": "smoothieparts:CONN_MOTOR2",
+        "pads": [
+          {
+            "pin": "1",
+            "x_mm": 202.8,
+            "y_mm": 112.8,
+            "net": "/driver-c/COIL_B2",
+            "explorer_coordinate_mm": [
+              107.3,
+              77.55
+            ]
+          },
+          {
+            "pin": "1",
+            "x_mm": 197.72,
+            "y_mm": 111.36,
+            "net": "/driver-c/COIL_B2",
+            "explorer_coordinate_mm": [
+              102.22,
+              76.11
+            ]
+          },
+          {
+            "pin": "1",
+            "x_mm": 205.34,
+            "y_mm": 111.36,
+            "net": "/driver-c/COIL_B2",
+            "explorer_coordinate_mm": [
+              109.84,
+              76.11
+            ]
+          },
+          {
+            "pin": "2",
+            "x_mm": 202.8,
+            "y_mm": 109.3,
+            "net": "/driver-c/COIL_B1",
+            "explorer_coordinate_mm": [
+              107.3,
+              74.05
+            ]
+          },
+          {
+            "pin": "2",
+            "x_mm": 197.72,
+            "y_mm": 108.82,
+            "net": "/driver-c/COIL_B1",
+            "explorer_coordinate_mm": [
+              102.22,
+              73.57
+            ]
+          },
+          {
+            "pin": "2",
+            "x_mm": 205.34,
+            "y_mm": 108.82,
+            "net": "/driver-c/COIL_B1",
+            "explorer_coordinate_mm": [
+              109.84,
+              73.57
+            ]
+          },
+          {
+            "pin": "3",
+            "x_mm": 197.72,
+            "y_mm": 106.28,
+            "net": "/driver-c/COIL_A2",
+            "explorer_coordinate_mm": [
+              102.22,
+              71.03
+            ]
+          },
+          {
+            "pin": "3",
+            "x_mm": 205.34,
+            "y_mm": 106.28,
+            "net": "/driver-c/COIL_A2",
+            "explorer_coordinate_mm": [
+              109.84,
+              71.03
+            ]
+          },
+          {
+            "pin": "3",
+            "x_mm": 202.8,
+            "y_mm": 105.8,
+            "net": "/driver-c/COIL_A2",
+            "explorer_coordinate_mm": [
+              107.3,
+              70.55
+            ]
+          },
+          {
+            "pin": "4",
+            "x_mm": 197.72,
+            "y_mm": 103.74,
+            "net": "/driver-c/COIL_A1",
+            "explorer_coordinate_mm": [
+              102.22,
+              68.49
+            ]
+          },
+          {
+            "pin": "4",
+            "x_mm": 205.34,
+            "y_mm": 103.74,
+            "net": "/driver-c/COIL_A1",
+            "explorer_coordinate_mm": [
+              109.84,
+              68.49
+            ]
+          },
+          {
+            "pin": "4",
+            "x_mm": 202.8,
+            "y_mm": 102.3,
+            "net": "/driver-c/COIL_A1",
+            "explorer_coordinate_mm": [
+              107.3,
+              67.05
+            ]
+          }
+        ]
+      },
+      "J8": {
+        "x_mm": 205.51,
+        "y_mm": 131.29,
+        "rotation": 90.0,
+        "library": "smoothieparts:CONN_MOTOR2",
+        "pads": [
+          {
+            "pin": "1",
+            "x_mm": 202.97,
+            "y_mm": 136.54,
+            "net": "/driver-d/COIL_B2",
+            "explorer_coordinate_mm": [
+              107.47,
+              101.29
+            ]
+          },
+          {
+            "pin": "1",
+            "x_mm": 197.89,
+            "y_mm": 135.1,
+            "net": "/driver-d/COIL_B2",
+            "explorer_coordinate_mm": [
+              102.39,
+              99.85
+            ]
+          },
+          {
+            "pin": "1",
+            "x_mm": 205.51,
+            "y_mm": 135.1,
+            "net": "/driver-d/COIL_B2",
+            "explorer_coordinate_mm": [
+              110.01,
+              99.85
+            ]
+          },
+          {
+            "pin": "2",
+            "x_mm": 202.97,
+            "y_mm": 133.04,
+            "net": "/driver-d/COIL_B1",
+            "explorer_coordinate_mm": [
+              107.47,
+              97.79
+            ]
+          },
+          {
+            "pin": "2",
+            "x_mm": 197.89,
+            "y_mm": 132.56,
+            "net": "/driver-d/COIL_B1",
+            "explorer_coordinate_mm": [
+              102.39,
+              97.31
+            ]
+          },
+          {
+            "pin": "2",
+            "x_mm": 205.51,
+            "y_mm": 132.56,
+            "net": "/driver-d/COIL_B1",
+            "explorer_coordinate_mm": [
+              110.01,
+              97.31
+            ]
+          },
+          {
+            "pin": "3",
+            "x_mm": 197.89,
+            "y_mm": 130.02,
+            "net": "/driver-d/COIL_A2",
+            "explorer_coordinate_mm": [
+              102.39,
+              94.77
+            ]
+          },
+          {
+            "pin": "3",
+            "x_mm": 205.51,
+            "y_mm": 130.02,
+            "net": "/driver-d/COIL_A2",
+            "explorer_coordinate_mm": [
+              110.01,
+              94.77
+            ]
+          },
+          {
+            "pin": "3",
+            "x_mm": 202.97,
+            "y_mm": 129.54,
+            "net": "/driver-d/COIL_A2",
+            "explorer_coordinate_mm": [
+              107.47,
+              94.29
+            ]
+          },
+          {
+            "pin": "4",
+            "x_mm": 197.89,
+            "y_mm": 127.48,
+            "net": "/driver-d/COIL_A1",
+            "explorer_coordinate_mm": [
+              102.39,
+              92.23
+            ]
+          },
+          {
+            "pin": "4",
+            "x_mm": 205.51,
+            "y_mm": 127.48,
+            "net": "/driver-d/COIL_A1",
+            "explorer_coordinate_mm": [
+              110.01,
+              92.23
+            ]
+          },
+          {
+            "pin": "4",
+            "x_mm": 202.97,
+            "y_mm": 126.04,
+            "net": "/driver-d/COIL_A1",
+            "explorer_coordinate_mm": [
+              107.47,
+              90.79
+            ]
+          }
+        ]
+      },
+      "J14": {
+        "x_mm": 161.95,
+        "y_mm": 139.3,
+        "rotation": -90.0,
+        "library": "smoothieparts:XT30",
+        "pads": [
+          {
+            "pin": "1",
+            "x_mm": 161.85,
+            "y_mm": 140.0,
+            "net": "/mosfets/VFET",
+            "explorer_coordinate_mm": [
+              66.35,
+              104.75
+            ]
+          },
+          {
+            "pin": "1",
+            "x_mm": 163.152082,
+            "y_mm": 140.456497,
+            "net": "/mosfets/VFET",
+            "explorer_coordinate_mm": [
+              67.652082,
+              105.206497
+            ]
+          },
+          {
+            "pin": "1",
+            "x_mm": 160.606497,
+            "y_mm": 140.597918,
+            "net": "/mosfets/VFET",
+            "explorer_coordinate_mm": [
+              65.106497,
+              105.347918
+            ]
+          },
+          {
+            "pin": "1",
+            "x_mm": 161.95,
+            "y_mm": 141.55,
+            "net": "/mosfets/VFET",
+            "explorer_coordinate_mm": [
+              66.45,
+              106.3
+            ]
+          },
+          {
+            "pin": "1",
+            "x_mm": 163.75,
+            "y_mm": 141.7,
+            "net": "/mosfets/VFET",
+            "explorer_coordinate_mm": [
+              68.25,
+              106.45
+            ]
+          },
+          {
+            "pin": "1",
+            "x_mm": 161.95,
+            "y_mm": 141.8,
+            "net": "/mosfets/VFET",
+            "explorer_coordinate_mm": [
+              66.45,
+              106.55
+            ]
+          },
+          {
+            "pin": "1",
+            "x_mm": 160.15,
+            "y_mm": 141.9,
+            "net": "/mosfets/VFET",
+            "explorer_coordinate_mm": [
+              64.65,
+              106.65
+            ]
+          },
+          {
+            "pin": "1",
+            "x_mm": 163.293503,
+            "y_mm": 143.002082,
+            "net": "/mosfets/VFET",
+            "explorer_coordinate_mm": [
+              67.793503,
+              107.752082
+            ]
+          },
+          {
+            "pin": "1",
+            "x_mm": 160.747918,
+            "y_mm": 143.143503,
+            "net": "/mosfets/VFET",
+            "explorer_coordinate_mm": [
+              65.247918,
+              107.893503
+            ]
+          },
+          {
+            "pin": "1",
+            "x_mm": 162.05,
+            "y_mm": 143.6,
+            "net": "/mosfets/VFET",
+            "explorer_coordinate_mm": [
+              66.55,
+              108.35
+            ]
+          },
+          {
+            "pin": "2",
+            "x_mm": 162.05,
+            "y_mm": 135.1,
+            "net": "/mosfets/SW_BED",
+            "explorer_coordinate_mm": [
+              66.55,
+              99.85
+            ]
+          },
+          {
+            "pin": "2",
+            "x_mm": 160.818629,
+            "y_mm": 135.527208,
+            "net": "/mosfets/SW_BED",
+            "explorer_coordinate_mm": [
+              65.318629,
+              100.277208
+            ]
+          },
+          {
+            "pin": "2",
+            "x_mm": 163.222792,
+            "y_mm": 135.668629,
+            "net": "/mosfets/SW_BED",
+            "explorer_coordinate_mm": [
+              67.722792,
+              100.418629
+            ]
+          },
+          {
+            "pin": "2",
+            "x_mm": 160.25,
+            "y_mm": 136.7,
+            "net": "/mosfets/SW_BED",
+            "explorer_coordinate_mm": [
+              64.75,
+              101.45
+            ]
+          },
+          {
+            "pin": "2",
+            "x_mm": 161.95,
+            "y_mm": 136.8,
+            "net": "/mosfets/SW_BED",
+            "explorer_coordinate_mm": [
+              66.45,
+              101.55
+            ]
+          },
+          {
+            "pin": "2",
+            "x_mm": 163.65,
+            "y_mm": 136.9,
+            "net": "/mosfets/SW_BED",
+            "explorer_coordinate_mm": [
+              68.15,
+              101.65
+            ]
+          },
+          {
+            "pin": "2",
+            "x_mm": 161.95,
+            "y_mm": 137.05,
+            "net": "/mosfets/SW_BED",
+            "explorer_coordinate_mm": [
+              66.45,
+              101.8
+            ]
+          },
+          {
+            "pin": "2",
+            "x_mm": 160.677208,
+            "y_mm": 137.931371,
+            "net": "/mosfets/SW_BED",
+            "explorer_coordinate_mm": [
+              65.177208,
+              102.681371
+            ]
+          },
+          {
+            "pin": "2",
+            "x_mm": 163.081371,
+            "y_mm": 138.072792,
+            "net": "/mosfets/SW_BED",
+            "explorer_coordinate_mm": [
+              67.581371,
+              102.822792
+            ]
+          },
+          {
+            "pin": "2",
+            "x_mm": 161.85,
+            "y_mm": 138.5,
+            "net": "/mosfets/SW_BED",
+            "explorer_coordinate_mm": [
+              66.35,
+              103.25
+            ]
+          }
+        ]
+      },
+      "J9": {
+        "x_mm": 201.95,
+        "y_mm": 90.75,
+        "rotation": 90.0,
+        "library": "smoothieparts:XT30",
+        "pads": [
+          {
+            "pin": "1",
+            "x_mm": 202.05,
+            "y_mm": 90.05,
+            "net": "/VMOT",
+            "explorer_coordinate_mm": [
+              106.55,
+              54.8
+            ]
+          },
+          {
+            "pin": "1",
+            "x_mm": 200.747918,
+            "y_mm": 89.593503,
+            "net": "/VMOT",
+            "explorer_coordinate_mm": [
+              105.247918,
+              54.343503
+            ]
+          },
+          {
+            "pin": "1",
+            "x_mm": 203.293503,
+            "y_mm": 89.452082,
+            "net": "/VMOT",
+            "explorer_coordinate_mm": [
+              107.793503,
+              54.202082
+            ]
+          },
+          {
+            "pin": "1",
+            "x_mm": 201.95,
+            "y_mm": 88.5,
+            "net": "/VMOT",
+            "explorer_coordinate_mm": [
+              106.45,
+              53.25
+            ]
+          },
+          {
+            "pin": "1",
+            "x_mm": 200.15,
+            "y_mm": 88.35,
+            "net": "/VMOT",
+            "explorer_coordinate_mm": [
+              104.65,
+              53.1
+            ]
+          },
+          {
+            "pin": "1",
+            "x_mm": 201.95,
+            "y_mm": 88.25,
+            "net": "/VMOT",
+            "explorer_coordinate_mm": [
+              106.45,
+              53.0
+            ]
+          },
+          {
+            "pin": "1",
+            "x_mm": 203.75,
+            "y_mm": 88.15,
+            "net": "/VMOT",
+            "explorer_coordinate_mm": [
+              108.25,
+              52.9
+            ]
+          },
+          {
+            "pin": "1",
+            "x_mm": 200.606497,
+            "y_mm": 87.047918,
+            "net": "/VMOT",
+            "explorer_coordinate_mm": [
+              105.106497,
+              51.797918
+            ]
+          },
+          {
+            "pin": "1",
+            "x_mm": 203.152082,
+            "y_mm": 86.906497,
+            "net": "/VMOT",
+            "explorer_coordinate_mm": [
+              107.652082,
+              51.656497
+            ]
+          },
+          {
+            "pin": "1",
+            "x_mm": 201.85,
+            "y_mm": 86.45,
+            "net": "/VMOT",
+            "explorer_coordinate_mm": [
+              106.35,
+              51.2
+            ]
+          },
+          {
+            "pin": "2",
+            "x_mm": 201.85,
+            "y_mm": 94.95,
+            "net": "GND",
+            "explorer_coordinate_mm": [
+              106.35,
+              59.7
+            ]
+          },
+          {
+            "pin": "2",
+            "x_mm": 203.081371,
+            "y_mm": 94.522792,
+            "net": "GND",
+            "explorer_coordinate_mm": [
+              107.581371,
+              59.272792
+            ]
+          },
+          {
+            "pin": "2",
+            "x_mm": 200.677208,
+            "y_mm": 94.381371,
+            "net": "GND",
+            "explorer_coordinate_mm": [
+              105.177208,
+              59.131371
+            ]
+          },
+          {
+            "pin": "2",
+            "x_mm": 203.65,
+            "y_mm": 93.35,
+            "net": "GND",
+            "explorer_coordinate_mm": [
+              108.15,
+              58.1
+            ]
+          },
+          {
+            "pin": "2",
+            "x_mm": 201.95,
+            "y_mm": 93.25,
+            "net": "GND",
+            "explorer_coordinate_mm": [
+              106.45,
+              58.0
+            ]
+          },
+          {
+            "pin": "2",
+            "x_mm": 200.25,
+            "y_mm": 93.15,
+            "net": "GND",
+            "explorer_coordinate_mm": [
+              104.75,
+              57.9
+            ]
+          },
+          {
+            "pin": "2",
+            "x_mm": 201.95,
+            "y_mm": 93.0,
+            "net": "GND",
+            "explorer_coordinate_mm": [
+              106.45,
+              57.75
+            ]
+          },
+          {
+            "pin": "2",
+            "x_mm": 203.222792,
+            "y_mm": 92.118629,
+            "net": "GND",
+            "explorer_coordinate_mm": [
+              107.722792,
+              56.868629
+            ]
+          },
+          {
+            "pin": "2",
+            "x_mm": 200.818629,
+            "y_mm": 91.977208,
+            "net": "GND",
+            "explorer_coordinate_mm": [
+              105.318629,
+              56.727208
+            ]
+          },
+          {
+            "pin": "2",
+            "x_mm": 202.05,
+            "y_mm": 91.55,
+            "net": "GND",
+            "explorer_coordinate_mm": [
+              106.55,
+              56.3
+            ]
+          }
+        ]
+      },
+      "J10": {
+        "x_mm": 207.05,
+        "y_mm": 89.7,
+        "rotation": 0.0,
+        "library": "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical",
+        "pads": [
+          {
+            "pin": "1",
+            "x_mm": 207.05,
+            "y_mm": 89.7,
+            "net": "/VMOT",
+            "explorer_coordinate_mm": [
+              111.55,
+              54.45
+            ]
+          },
+          {
+            "pin": "2",
+            "x_mm": 207.05,
+            "y_mm": 92.24,
+            "net": "GND",
+            "explorer_coordinate_mm": [
+              111.55,
+              56.99
+            ]
+          }
+        ]
+      },
+      "J18": {
+        "x_mm": 137.2,
+        "y_mm": 137.4,
+        "rotation": 180.0,
+        "library": "smoothieparts:CONN_SFET",
+        "pads": [
+          {
+            "pin": "1",
+            "x_mm": 138.95,
+            "y_mm": 141.845,
+            "net": "Net-(J17-Pin_1)",
+            "explorer_coordinate_mm": [
+              43.45,
+              106.595
+            ]
+          },
+          {
+            "pin": "1",
+            "x_mm": 138.47,
+            "y_mm": 137.4,
+            "net": "Net-(J17-Pin_1)",
+            "explorer_coordinate_mm": [
+              42.97,
+              102.15
+            ]
+          },
+          {
+            "pin": "2",
+            "x_mm": 135.93,
+            "y_mm": 137.4,
+            "net": "Net-(D50-K)",
+            "explorer_coordinate_mm": [
+              40.43,
+              102.15
+            ]
+          },
+          {
+            "pin": "2",
+            "x_mm": 135.45,
+            "y_mm": 141.845,
+            "net": "Net-(D50-K)",
+            "explorer_coordinate_mm": [
+              39.95,
+              106.595
+            ]
+          }
+        ]
+      },
+      "J17": {
+        "x_mm": 128.9,
+        "y_mm": 137.4,
+        "rotation": 180.0,
+        "library": "smoothieparts:CONN_SFET",
+        "pads": [
+          {
+            "pin": "1",
+            "x_mm": 130.65,
+            "y_mm": 141.845,
+            "net": "Net-(J17-Pin_1)",
+            "explorer_coordinate_mm": [
+              35.15,
+              106.595
+            ]
+          },
+          {
+            "pin": "1",
+            "x_mm": 130.17,
+            "y_mm": 137.4,
+            "net": "Net-(J17-Pin_1)",
+            "explorer_coordinate_mm": [
+              34.67,
+              102.15
+            ]
+          },
+          {
+            "pin": "2",
+            "x_mm": 127.63,
+            "y_mm": 137.4,
+            "net": "Net-(D48-K)",
+            "explorer_coordinate_mm": [
+              32.13,
+              102.15
+            ]
+          },
+          {
+            "pin": "2",
+            "x_mm": 127.15,
+            "y_mm": 141.845,
+            "net": "Net-(D48-K)",
+            "explorer_coordinate_mm": [
+              31.65,
+              106.595
+            ]
+          }
+        ]
+      },
+      "J20": {
+        "x_mm": 122.15,
+        "y_mm": 141.85,
+        "rotation": 180.0,
+        "library": "Connector_Molex:Molex_KK-254_AE-6410-02A_1x02_P2.54mm_Vertical",
+        "pads": [
+          {
+            "pin": "1",
+            "x_mm": 122.15,
+            "y_mm": 141.85,
+            "net": "Net-(J17-Pin_1)",
+            "explorer_coordinate_mm": [
+              26.65,
+              106.6
+            ]
+          },
+          {
+            "pin": "2",
+            "x_mm": 119.61,
+            "y_mm": 141.85,
+            "net": "Net-(D52-K)",
+            "explorer_coordinate_mm": [
+              24.11,
+              106.6
+            ]
+          }
+        ]
+      },
+      "J19": {
+        "x_mm": 115.5,
+        "y_mm": 141.85,
+        "rotation": 180.0,
+        "library": "Connector_Molex:Molex_KK-254_AE-6410-02A_1x02_P2.54mm_Vertical",
+        "pads": [
+          {
+            "pin": "1",
+            "x_mm": 115.5,
+            "y_mm": 141.85,
+            "net": "Net-(J17-Pin_1)",
+            "explorer_coordinate_mm": [
+              20.0,
+              106.6
+            ]
+          },
+          {
+            "pin": "2",
+            "x_mm": 112.96,
+            "y_mm": 141.85,
+            "net": "Net-(D51-K)",
+            "explorer_coordinate_mm": [
+              17.46,
+              106.6
+            ]
+          }
+        ]
+      },
+      "J21": {
+        "x_mm": 104.8,
+        "y_mm": 124.35,
+        "rotation": 90.0,
+        "library": "Connector_Molex:Molex_KK-254_AE-6410-02A_1x02_P2.54mm_Vertical",
+        "pads": [
+          {
+            "pin": "1",
+            "x_mm": 104.8,
+            "y_mm": 124.35,
+            "net": "Net-(J21-Pin_1)",
+            "explorer_coordinate_mm": [
+              9.3,
+              89.1
+            ]
+          },
+          {
+            "pin": "2",
+            "x_mm": 104.8,
+            "y_mm": 121.81,
+            "net": "GND",
+            "explorer_coordinate_mm": [
+              9.3,
+              86.56
+            ]
+          }
+        ]
+      },
+      "J22": {
+        "x_mm": 104.8,
+        "y_mm": 130.75,
+        "rotation": 90.0,
+        "library": "Connector_Molex:Molex_KK-254_AE-6410-02A_1x02_P2.54mm_Vertical",
+        "pads": [
+          {
+            "pin": "1",
+            "x_mm": 104.8,
+            "y_mm": 130.75,
+            "net": "Net-(J22-Pin_1)",
+            "explorer_coordinate_mm": [
+              9.3,
+              95.5
+            ]
+          },
+          {
+            "pin": "2",
+            "x_mm": 104.8,
+            "y_mm": 128.21,
+            "net": "GND",
+            "explorer_coordinate_mm": [
+              9.3,
+              92.96
+            ]
+          }
+        ]
+      },
+      "J23": {
+        "x_mm": 104.85,
+        "y_mm": 137.2,
+        "rotation": 90.0,
+        "library": "Connector_Molex:Molex_KK-254_AE-6410-02A_1x02_P2.54mm_Vertical",
+        "pads": [
+          {
+            "pin": "1",
+            "x_mm": 104.85,
+            "y_mm": 137.2,
+            "net": "Net-(J23-Pin_1)",
+            "explorer_coordinate_mm": [
+              9.35,
+              101.95
+            ]
+          },
+          {
+            "pin": "2",
+            "x_mm": 104.85,
+            "y_mm": 134.66,
+            "net": "GND",
+            "explorer_coordinate_mm": [
+              9.35,
+              99.41
+            ]
+          }
+        ]
+      },
+      "J24": {
+        "x_mm": 117.15,
+        "y_mm": 43.1,
+        "rotation": 180.0,
+        "library": "Connector_Molex:Molex_KK-254_AE-6410-03A_1x03_P2.54mm_Vertical",
+        "pads": [
+          {
+            "pin": "1",
+            "x_mm": 117.15,
+            "y_mm": 43.1,
+            "net": "Net-(J24-Pin_1)",
+            "explorer_coordinate_mm": [
+              21.65,
+              7.85
+            ]
+          },
+          {
+            "pin": "2",
+            "x_mm": 114.61,
+            "y_mm": 43.1,
+            "net": "GND",
+            "explorer_coordinate_mm": [
+              19.11,
+              7.85
+            ]
+          },
+          {
+            "pin": "3",
+            "x_mm": 112.07,
+            "y_mm": 43.1,
+            "net": "Net-(J24-Pin_3)",
+            "explorer_coordinate_mm": [
+              16.57,
+              7.85
+            ]
+          }
+        ]
+      },
+      "J25": {
+        "x_mm": 126.1,
+        "y_mm": 43.1,
+        "rotation": 180.0,
+        "library": "Connector_Molex:Molex_KK-254_AE-6410-03A_1x03_P2.54mm_Vertical",
+        "pads": [
+          {
+            "pin": "1",
+            "x_mm": 126.1,
+            "y_mm": 43.1,
+            "net": "Net-(J25-Pin_1)",
+            "explorer_coordinate_mm": [
+              30.6,
+              7.85
+            ]
+          },
+          {
+            "pin": "2",
+            "x_mm": 123.56,
+            "y_mm": 43.1,
+            "net": "GND",
+            "explorer_coordinate_mm": [
+              28.06,
+              7.85
+            ]
+          },
+          {
+            "pin": "3",
+            "x_mm": 121.02,
+            "y_mm": 43.1,
+            "net": "Net-(J25-Pin_3)",
+            "explorer_coordinate_mm": [
+              25.52,
+              7.85
+            ]
+          }
+        ]
+      },
+      "J28": {
+        "x_mm": 152.8,
+        "y_mm": 43.1,
+        "rotation": 180.0,
+        "library": "Connector_Molex:Molex_KK-254_AE-6410-03A_1x03_P2.54mm_Vertical",
+        "pads": [
+          {
+            "pin": "1",
+            "x_mm": 152.8,
+            "y_mm": 43.1,
+            "net": "Net-(J28-Pin_1)",
+            "explorer_coordinate_mm": [
+              57.3,
+              7.85
+            ]
+          },
+          {
+            "pin": "2",
+            "x_mm": 150.26,
+            "y_mm": 43.1,
+            "net": "GND",
+            "explorer_coordinate_mm": [
+              54.76,
+              7.85
+            ]
+          },
+          {
+            "pin": "3",
+            "x_mm": 147.72,
+            "y_mm": 43.1,
+            "net": "Net-(J28-Pin_3)",
+            "explorer_coordinate_mm": [
+              52.22,
+              7.85
+            ]
+          }
+        ]
+      },
+      "J29": {
+        "x_mm": 161.65,
+        "y_mm": 43.1,
+        "rotation": 180.0,
+        "library": "Connector_Molex:Molex_KK-254_AE-6410-03A_1x03_P2.54mm_Vertical",
+        "pads": [
+          {
+            "pin": "1",
+            "x_mm": 161.65,
+            "y_mm": 43.1,
+            "net": "Net-(J29-Pin_1)",
+            "explorer_coordinate_mm": [
+              66.15,
+              7.85
+            ]
+          },
+          {
+            "pin": "2",
+            "x_mm": 159.11,
+            "y_mm": 43.1,
+            "net": "GND",
+            "explorer_coordinate_mm": [
+              63.61,
+              7.85
+            ]
+          },
+          {
+            "pin": "3",
+            "x_mm": 156.57,
+            "y_mm": 43.1,
+            "net": "Net-(J29-Pin_3)",
+            "explorer_coordinate_mm": [
+              61.07,
+              7.85
+            ]
+          }
+        ]
+      },
+      "J31": {
+        "x_mm": 173.15,
+        "y_mm": 41.35,
+        "rotation": 180.0,
+        "library": "Connector_Molex:Molex_KK-254_AE-6410-04A_1x04_P2.54mm_Vertical",
+        "pads": [
+          {
+            "pin": "1",
+            "x_mm": 173.15,
+            "y_mm": 41.35,
+            "net": "/VMOT",
+            "explorer_coordinate_mm": [
+              77.65,
+              6.1
+            ]
+          },
+          {
+            "pin": "2",
+            "x_mm": 170.61,
+            "y_mm": 41.35,
+            "net": "Net-(J31-Pin_2)",
+            "explorer_coordinate_mm": [
+              75.11,
+              6.1
+            ]
+          },
+          {
+            "pin": "3",
+            "x_mm": 168.07,
+            "y_mm": 41.35,
+            "net": "GND",
+            "explorer_coordinate_mm": [
+              72.57,
+              6.1
+            ]
+          },
+          {
+            "pin": "4",
+            "x_mm": 165.53,
+            "y_mm": 41.35,
+            "net": "Net-(J31-Pin_4)",
+            "explorer_coordinate_mm": [
+              70.03,
+              6.1
+            ]
+          }
+        ]
+      },
+      "J26": {
+        "x_mm": 135.0,
+        "y_mm": 43.1,
+        "rotation": 180.0,
+        "library": "Connector_Molex:Molex_KK-254_AE-6410-03A_1x03_P2.54mm_Vertical",
+        "pads": [
+          {
+            "pin": "1",
+            "x_mm": 135.0,
+            "y_mm": 43.1,
+            "net": "Net-(J26-Pin_1)",
+            "explorer_coordinate_mm": [
+              39.5,
+              7.85
+            ]
+          },
+          {
+            "pin": "2",
+            "x_mm": 132.46,
+            "y_mm": 43.1,
+            "net": "GND",
+            "explorer_coordinate_mm": [
+              36.96,
+              7.85
+            ]
+          },
+          {
+            "pin": "3",
+            "x_mm": 129.92,
+            "y_mm": 43.1,
+            "net": "Net-(J26-Pin_3)",
+            "explorer_coordinate_mm": [
+              34.42,
+              7.85
+            ]
+          }
+        ]
+      },
+      "J27": {
+        "x_mm": 143.9,
+        "y_mm": 43.1,
+        "rotation": 180.0,
+        "library": "Connector_Molex:Molex_KK-254_AE-6410-03A_1x03_P2.54mm_Vertical",
+        "pads": [
+          {
+            "pin": "1",
+            "x_mm": 143.9,
+            "y_mm": 43.1,
+            "net": "Net-(J27-Pin_1)",
+            "explorer_coordinate_mm": [
+              48.4,
+              7.85
+            ]
+          },
+          {
+            "pin": "2",
+            "x_mm": 141.36,
+            "y_mm": 43.1,
+            "net": "GND",
+            "explorer_coordinate_mm": [
+              45.86,
+              7.85
+            ]
+          },
+          {
+            "pin": "3",
+            "x_mm": 138.82,
+            "y_mm": 43.1,
+            "net": "Net-(J27-Pin_3)",
+            "explorer_coordinate_mm": [
+              43.32,
+              7.85
+            ]
+          }
+        ]
+      },
+      "J32": {
+        "x_mm": 152.25,
+        "y_mm": 55.15,
+        "rotation": 90.0,
+        "library": "Connector_PinHeader_1.27mm:PinHeader_2x05_P1.27mm_Vertical_SMD",
+        "pads": [
+          {
+            "pin": "1",
+            "x_mm": 149.71,
+            "y_mm": 57.1,
+            "net": "/3V3_LIMIT",
+            "explorer_coordinate_mm": [
+              54.21,
+              21.85
+            ]
+          },
+          {
+            "pin": "10",
+            "x_mm": 154.79,
+            "y_mm": 53.2,
+            "net": "GND",
+            "explorer_coordinate_mm": [
+              59.29,
+              17.95
+            ]
+          },
+          {
+            "pin": "2",
+            "x_mm": 149.71,
+            "y_mm": 53.2,
+            "net": "/5V_LIMIT",
+            "explorer_coordinate_mm": [
+              54.21,
+              17.95
+            ]
+          },
+          {
+            "pin": "3",
+            "x_mm": 150.98,
+            "y_mm": 57.1,
+            "net": "/PJ6",
+            "explorer_coordinate_mm": [
+              55.48,
+              21.85
+            ]
+          },
+          {
+            "pin": "4",
+            "x_mm": 150.98,
+            "y_mm": 53.2,
+            "net": "/PJ9",
+            "explorer_coordinate_mm": [
+              55.48,
+              17.95
+            ]
+          },
+          {
+            "pin": "5",
+            "x_mm": 152.25,
+            "y_mm": 57.1,
+            "net": "/PJ10",
+            "explorer_coordinate_mm": [
+              56.75,
+              21.85
+            ]
+          },
+          {
+            "pin": "6",
+            "x_mm": 152.25,
+            "y_mm": 53.2,
+            "net": "/PJ11",
+            "explorer_coordinate_mm": [
+              56.75,
+              17.95
+            ]
+          },
+          {
+            "pin": "7",
+            "x_mm": 153.52,
+            "y_mm": 57.1,
+            "net": "/MOTSPI_COPI",
+            "explorer_coordinate_mm": [
+              58.02,
+              21.85
+            ]
+          },
+          {
+            "pin": "8",
+            "x_mm": 153.52,
+            "y_mm": 53.2,
+            "net": "/MOTSPI_CIPO",
+            "explorer_coordinate_mm": [
+              58.02,
+              17.95
+            ]
+          },
+          {
+            "pin": "9",
+            "x_mm": 154.79,
+            "y_mm": 57.1,
+            "net": "/MOTSPI_SCK",
+            "explorer_coordinate_mm": [
+              59.29,
+              21.85
+            ]
+          }
+        ]
+      },
+      "J33": {
+        "x_mm": 152.25,
+        "y_mm": 63.8,
+        "rotation": 90.0,
+        "library": "Connector_PinHeader_1.27mm:PinHeader_2x05_P1.27mm_Vertical_SMD",
+        "pads": [
+          {
+            "pin": "1",
+            "x_mm": 149.71,
+            "y_mm": 65.75,
+            "net": "/3V3_LIMIT",
+            "explorer_coordinate_mm": [
+              54.21,
+              30.5
+            ]
+          },
+          {
+            "pin": "10",
+            "x_mm": 154.79,
+            "y_mm": 61.85,
+            "net": "GND",
+            "explorer_coordinate_mm": [
+              59.29,
+              26.6
+            ]
+          },
+          {
+            "pin": "2",
+            "x_mm": 149.71,
+            "y_mm": 61.85,
+            "net": "/5V_LIMIT",
+            "explorer_coordinate_mm": [
+              54.21,
+              26.6
+            ]
+          },
+          {
+            "pin": "3",
+            "x_mm": 150.98,
+            "y_mm": 65.75,
+            "net": "/PD9",
+            "explorer_coordinate_mm": [
+              55.48,
+              30.5
+            ]
+          },
+          {
+            "pin": "4",
+            "x_mm": 150.98,
+            "y_mm": 61.85,
+            "net": "/expansion/GB_4",
+            "explorer_coordinate_mm": [
+              55.48,
+              26.6
+            ]
+          },
+          {
+            "pin": "5",
+            "x_mm": 152.25,
+            "y_mm": 65.75,
+            "net": "/expansion/GB_5",
+            "explorer_coordinate_mm": [
+              56.75,
+              30.5
+            ]
+          },
+          {
+            "pin": "6",
+            "x_mm": 152.25,
+            "y_mm": 61.85,
+            "net": "/PK0",
+            "explorer_coordinate_mm": [
+              56.75,
+              26.6
+            ]
+          },
+          {
+            "pin": "7",
+            "x_mm": 153.52,
+            "y_mm": 65.75,
+            "net": "/PK1",
+            "explorer_coordinate_mm": [
+              58.02,
+              30.5
+            ]
+          },
+          {
+            "pin": "8",
+            "x_mm": 153.52,
+            "y_mm": 61.85,
+            "net": "/I2C3_SDA",
+            "explorer_coordinate_mm": [
+              58.02,
+              26.6
+            ]
+          },
+          {
+            "pin": "9",
+            "x_mm": 154.79,
+            "y_mm": 65.75,
+            "net": "/I2C3_SCL",
+            "explorer_coordinate_mm": [
+              59.29,
+              30.5
+            ]
+          }
+        ]
+      },
+      "J34": {
+        "x_mm": 152.25,
+        "y_mm": 72.4,
+        "rotation": 90.0,
+        "library": "Connector_PinHeader_1.27mm:PinHeader_2x05_P1.27mm_Vertical_SMD",
+        "pads": [
+          {
+            "pin": "1",
+            "x_mm": 149.71,
+            "y_mm": 74.35,
+            "net": "/3V3_LIMIT",
+            "explorer_coordinate_mm": [
+              54.21,
+              39.1
+            ]
+          },
+          {
+            "pin": "10",
+            "x_mm": 154.79,
+            "y_mm": 70.45,
+            "net": "GND",
+            "explorer_coordinate_mm": [
+              59.29,
+              35.2
+            ]
+          },
+          {
+            "pin": "2",
+            "x_mm": 149.71,
+            "y_mm": 70.45,
+            "net": "/5V_LIMIT",
+            "explorer_coordinate_mm": [
+              54.21,
+              35.2
+            ]
+          },
+          {
+            "pin": "3",
+            "x_mm": 150.98,
+            "y_mm": 74.35,
+            "net": "/PD14",
+            "explorer_coordinate_mm": [
+              55.48,
+              39.1
+            ]
+          },
+          {
+            "pin": "4",
+            "x_mm": 150.98,
+            "y_mm": 70.45,
+            "net": "/PD12",
+            "explorer_coordinate_mm": [
+              55.48,
+              35.2
+            ]
+          },
+          {
+            "pin": "5",
+            "x_mm": 152.25,
+            "y_mm": 74.35,
+            "net": "/PD10",
+            "explorer_coordinate_mm": [
+              56.75,
+              39.1
+            ]
+          },
+          {
+            "pin": "6",
+            "x_mm": 152.25,
+            "y_mm": 70.45,
+            "net": "/TIM8_CH1",
+            "explorer_coordinate_mm": [
+              56.75,
+              35.2
+            ]
+          },
+          {
+            "pin": "7",
+            "x_mm": 153.52,
+            "y_mm": 74.35,
+            "net": "/TIM8_CH2",
+            "explorer_coordinate_mm": [
+              58.02,
+              39.1
+            ]
+          },
+          {
+            "pin": "8",
+            "x_mm": 153.52,
+            "y_mm": 70.45,
+            "net": "/TIM8_CH3",
+            "explorer_coordinate_mm": [
+              58.02,
+              35.2
+            ]
+          },
+          {
+            "pin": "9",
+            "x_mm": 154.79,
+            "y_mm": 74.35,
+            "net": "/TIM8_CH4",
+            "explorer_coordinate_mm": [
+              59.29,
+              39.1
+            ]
+          }
+        ]
+      },
+      "J35": {
+        "x_mm": 152.25,
+        "y_mm": 81.05,
+        "rotation": 90.0,
+        "library": "Connector_PinHeader_1.27mm:PinHeader_2x05_P1.27mm_Vertical_SMD",
+        "pads": [
+          {
+            "pin": "1",
+            "x_mm": 149.71,
+            "y_mm": 83.0,
+            "net": "/3V3_LIMIT",
+            "explorer_coordinate_mm": [
+              54.21,
+              47.75
+            ]
+          },
+          {
+            "pin": "10",
+            "x_mm": 154.79,
+            "y_mm": 79.1,
+            "net": "GND",
+            "explorer_coordinate_mm": [
+              59.29,
+              43.85
+            ]
+          },
+          {
+            "pin": "2",
+            "x_mm": 149.71,
+            "y_mm": 79.1,
+            "net": "/5V_LIMIT",
+            "explorer_coordinate_mm": [
+              54.21,
+              43.85
+            ]
+          },
+          {
+            "pin": "3",
+            "x_mm": 150.98,
+            "y_mm": 83.0,
+            "net": "/PE7",
+            "explorer_coordinate_mm": [
+              55.48,
+              47.75
+            ]
+          },
+          {
+            "pin": "4",
+            "x_mm": 150.98,
+            "y_mm": 79.1,
+            "net": "/expansion/GD_4",
+            "explorer_coordinate_mm": [
+              55.48,
+              43.85
+            ]
+          },
+          {
+            "pin": "5",
+            "x_mm": 152.25,
+            "y_mm": 83.0,
+            "net": "/expansion/GD_5",
+            "explorer_coordinate_mm": [
+              56.75,
+              47.75
+            ]
+          },
+          {
+            "pin": "6",
+            "x_mm": 152.25,
+            "y_mm": 79.1,
+            "net": "/TIM1_CH1",
+            "explorer_coordinate_mm": [
+              56.75,
+              43.85
+            ]
+          },
+          {
+            "pin": "7",
+            "x_mm": 153.52,
+            "y_mm": 83.0,
+            "net": "/TIM1_CH2",
+            "explorer_coordinate_mm": [
+              58.02,
+              47.75
+            ]
+          },
+          {
+            "pin": "8",
+            "x_mm": 153.52,
+            "y_mm": 79.1,
+            "net": "/TIM1_CH3",
+            "explorer_coordinate_mm": [
+              58.02,
+              43.85
+            ]
+          },
+          {
+            "pin": "9",
+            "x_mm": 154.79,
+            "y_mm": 83.0,
+            "net": "/TIM1_CH4",
+            "explorer_coordinate_mm": [
+              59.29,
+              47.75
+            ]
+          }
+        ]
+      },
+      "J36": {
+        "x_mm": 152.25,
+        "y_mm": 89.7,
+        "rotation": 90.0,
+        "library": "Connector_PinHeader_1.27mm:PinHeader_2x05_P1.27mm_Vertical_SMD",
+        "pads": [
+          {
+            "pin": "1",
+            "x_mm": 149.71,
+            "y_mm": 91.65,
+            "net": "/3V3_LIMIT",
+            "explorer_coordinate_mm": [
+              54.21,
+              56.4
+            ]
+          },
+          {
+            "pin": "10",
+            "x_mm": 154.79,
+            "y_mm": 87.75,
+            "net": "GND",
+            "explorer_coordinate_mm": [
+              59.29,
+              52.5
+            ]
+          },
+          {
+            "pin": "2",
+            "x_mm": 149.71,
+            "y_mm": 87.75,
+            "net": "/5V_LIMIT",
+            "explorer_coordinate_mm": [
+              54.21,
+              52.5
+            ]
+          },
+          {
+            "pin": "3",
+            "x_mm": 150.98,
+            "y_mm": 91.65,
+            "net": "/PE8",
+            "explorer_coordinate_mm": [
+              55.48,
+              56.4
+            ]
+          },
+          {
+            "pin": "4",
+            "x_mm": 150.98,
+            "y_mm": 87.75,
+            "net": "/PJ7",
+            "explorer_coordinate_mm": [
+              55.48,
+              52.5
+            ]
+          },
+          {
+            "pin": "5",
+            "x_mm": 152.25,
+            "y_mm": 91.65,
+            "net": "/PJ8",
+            "explorer_coordinate_mm": [
+              56.75,
+              56.4
+            ]
+          },
+          {
+            "pin": "6",
+            "x_mm": 152.25,
+            "y_mm": 87.75,
+            "net": "/PD15",
+            "explorer_coordinate_mm": [
+              56.75,
+              52.5
+            ]
+          },
+          {
+            "pin": "7",
+            "x_mm": 153.52,
+            "y_mm": 91.65,
+            "net": "/SPI1_COPI",
+            "explorer_coordinate_mm": [
+              58.02,
+              56.4
+            ]
+          },
+          {
+            "pin": "8",
+            "x_mm": 153.52,
+            "y_mm": 87.75,
+            "net": "/SPI1_CIPO",
+            "explorer_coordinate_mm": [
+              58.02,
+              52.5
+            ]
+          },
+          {
+            "pin": "9",
+            "x_mm": 154.79,
+            "y_mm": 91.65,
+            "net": "/SPI1_SCK",
+            "explorer_coordinate_mm": [
+              59.29,
+              56.4
+            ]
+          }
+        ]
+      },
+      "J37": {
+        "x_mm": 152.25,
+        "y_mm": 98.35,
+        "rotation": 90.0,
+        "library": "Connector_PinHeader_1.27mm:PinHeader_2x05_P1.27mm_Vertical_SMD",
+        "pads": [
+          {
+            "pin": "1",
+            "x_mm": 149.71,
+            "y_mm": 100.3,
+            "net": "/3V3_LIMIT",
+            "explorer_coordinate_mm": [
+              54.21,
+              65.05
+            ]
+          },
+          {
+            "pin": "10",
+            "x_mm": 154.79,
+            "y_mm": 96.4,
+            "net": "GND",
+            "explorer_coordinate_mm": [
+              59.29,
+              61.15
+            ]
+          },
+          {
+            "pin": "2",
+            "x_mm": 149.71,
+            "y_mm": 96.4,
+            "net": "/5V_LIMIT",
+            "explorer_coordinate_mm": [
+              54.21,
+              61.15
+            ]
+          },
+          {
+            "pin": "3",
+            "x_mm": 150.98,
+            "y_mm": 100.3,
+            "net": "/PB1",
+            "explorer_coordinate_mm": [
+              55.48,
+              65.05
+            ]
+          },
+          {
+            "pin": "4",
+            "x_mm": 150.98,
+            "y_mm": 96.4,
+            "net": "/PJ4",
+            "explorer_coordinate_mm": [
+              55.48,
+              61.15
+            ]
+          },
+          {
+            "pin": "5",
+            "x_mm": 152.25,
+            "y_mm": 100.3,
+            "net": "/PA4",
+            "explorer_coordinate_mm": [
+              56.75,
+              65.05
+            ]
+          },
+          {
+            "pin": "6",
+            "x_mm": 152.25,
+            "y_mm": 96.4,
+            "net": "/PG0",
+            "explorer_coordinate_mm": [
+              56.75,
+              61.15
+            ]
+          },
+          {
+            "pin": "7",
+            "x_mm": 153.52,
+            "y_mm": 100.3,
+            "net": "/PJ3",
+            "explorer_coordinate_mm": [
+              58.02,
+              65.05
+            ]
+          },
+          {
+            "pin": "8",
+            "x_mm": 153.52,
+            "y_mm": 96.4,
+            "net": "/PG1",
+            "explorer_coordinate_mm": [
+              58.02,
+              61.15
+            ]
+          },
+          {
+            "pin": "9",
+            "x_mm": 154.79,
+            "y_mm": 100.3,
+            "net": "/PJ2",
+            "explorer_coordinate_mm": [
+              59.29,
+              65.05
+            ]
+          }
+        ]
+      },
+      "J38": {
+        "x_mm": 152.25,
+        "y_mm": 107.0,
+        "rotation": 90.0,
+        "library": "Connector_PinHeader_1.27mm:PinHeader_2x05_P1.27mm_Vertical_SMD",
+        "pads": [
+          {
+            "pin": "1",
+            "x_mm": 149.71,
+            "y_mm": 108.95,
+            "net": "/3V3_LIMIT",
+            "explorer_coordinate_mm": [
+              54.21,
+              73.7
+            ]
+          },
+          {
+            "pin": "10",
+            "x_mm": 154.79,
+            "y_mm": 105.05,
+            "net": "GND",
+            "explorer_coordinate_mm": [
+              59.29,
+              69.8
+            ]
+          },
+          {
+            "pin": "2",
+            "x_mm": 149.71,
+            "y_mm": 105.05,
+            "net": "/5V_LIMIT",
+            "explorer_coordinate_mm": [
+              54.21,
+              69.8
+            ]
+          },
+          {
+            "pin": "3",
+            "x_mm": 150.98,
+            "y_mm": 108.95,
+            "net": "/PH2",
+            "explorer_coordinate_mm": [
+              55.48,
+              73.7
+            ]
+          },
+          {
+            "pin": "4",
+            "x_mm": 150.98,
+            "y_mm": 105.05,
+            "net": "/PH4",
+            "explorer_coordinate_mm": [
+              55.48,
+              69.8
+            ]
+          },
+          {
+            "pin": "5",
+            "x_mm": 152.25,
+            "y_mm": 108.95,
+            "net": "/PC0",
+            "explorer_coordinate_mm": [
+              56.75,
+              73.7
+            ]
+          },
+          {
+            "pin": "6",
+            "x_mm": 152.25,
+            "y_mm": 105.05,
+            "net": "/PF15",
+            "explorer_coordinate_mm": [
+              56.75,
+              69.8
+            ]
+          },
+          {
+            "pin": "7",
+            "x_mm": 153.52,
+            "y_mm": 108.95,
+            "net": "/PH3",
+            "explorer_coordinate_mm": [
+              58.02,
+              73.7
+            ]
+          },
+          {
+            "pin": "8",
+            "x_mm": 153.52,
+            "y_mm": 105.05,
+            "net": "/I2C2_SDA",
+            "explorer_coordinate_mm": [
+              58.02,
+              69.8
+            ]
+          },
+          {
+            "pin": "9",
+            "x_mm": 154.79,
+            "y_mm": 108.95,
+            "net": "/I2C2_SCL",
+            "explorer_coordinate_mm": [
+              59.29,
+              73.7
+            ]
+          }
+        ]
+      },
+      "J39": {
+        "x_mm": 152.25,
+        "y_mm": 115.65,
+        "rotation": 90.0,
+        "library": "Connector_PinHeader_1.27mm:PinHeader_2x05_P1.27mm_Vertical_SMD",
+        "pads": [
+          {
+            "pin": "1",
+            "x_mm": 149.71,
+            "y_mm": 117.6,
+            "net": "/3V3_LIMIT",
+            "explorer_coordinate_mm": [
+              54.21,
+              82.35
+            ]
+          },
+          {
+            "pin": "10",
+            "x_mm": 154.79,
+            "y_mm": 113.7,
+            "net": "GND",
+            "explorer_coordinate_mm": [
+              59.29,
+              78.45
+            ]
+          },
+          {
+            "pin": "2",
+            "x_mm": 149.71,
+            "y_mm": 113.7,
+            "net": "/5V_LIMIT",
+            "explorer_coordinate_mm": [
+              54.21,
+              78.45
+            ]
+          },
+          {
+            "pin": "3",
+            "x_mm": 150.98,
+            "y_mm": 117.6,
+            "net": "/ADC1_CH13",
+            "explorer_coordinate_mm": [
+              55.48,
+              82.35
+            ]
+          },
+          {
+            "pin": "4",
+            "x_mm": 150.98,
+            "y_mm": 113.7,
+            "net": "/ADC1_CH15",
+            "explorer_coordinate_mm": [
+              55.48,
+              78.45
+            ]
+          },
+          {
+            "pin": "5",
+            "x_mm": 152.25,
+            "y_mm": 117.6,
+            "net": "/ADC1_CH12",
+            "explorer_coordinate_mm": [
+              56.75,
+              82.35
+            ]
+          },
+          {
+            "pin": "6",
+            "x_mm": 152.25,
+            "y_mm": 113.7,
+            "net": "/PF2",
+            "explorer_coordinate_mm": [
+              56.75,
+              78.45
+            ]
+          },
+          {
+            "pin": "7",
+            "x_mm": 153.52,
+            "y_mm": 117.6,
+            "net": "/PI10",
+            "explorer_coordinate_mm": [
+              58.02,
+              82.35
+            ]
+          },
+          {
+            "pin": "8",
+            "x_mm": 153.52,
+            "y_mm": 113.7,
+            "net": "/PH7",
+            "explorer_coordinate_mm": [
+              58.02,
+              78.45
+            ]
+          },
+          {
+            "pin": "9",
+            "x_mm": 154.79,
+            "y_mm": 117.6,
+            "net": "/PB12",
+            "explorer_coordinate_mm": [
+              59.29,
+              82.35
+            ]
+          }
+        ]
+      },
+      "J40": {
+        "x_mm": 152.25,
+        "y_mm": 124.3,
+        "rotation": 90.0,
+        "library": "Connector_PinHeader_1.27mm:PinHeader_2x05_P1.27mm_Vertical_SMD",
+        "pads": [
+          {
+            "pin": "1",
+            "x_mm": 149.71,
+            "y_mm": 126.25,
+            "net": "/3V3_LIMIT",
+            "explorer_coordinate_mm": [
+              54.21,
+              91.0
+            ]
+          },
+          {
+            "pin": "10",
+            "x_mm": 154.79,
+            "y_mm": 122.35,
+            "net": "GND",
+            "explorer_coordinate_mm": [
+              59.29,
+              87.1
+            ]
+          },
+          {
+            "pin": "2",
+            "x_mm": 149.71,
+            "y_mm": 122.35,
+            "net": "/5V_LIMIT",
+            "explorer_coordinate_mm": [
+              54.21,
+              87.1
+            ]
+          },
+          {
+            "pin": "3",
+            "x_mm": 150.98,
+            "y_mm": 126.25,
+            "net": "/ADC3_CH6",
+            "explorer_coordinate_mm": [
+              55.48,
+              91.0
+            ]
+          },
+          {
+            "pin": "4",
+            "x_mm": 150.98,
+            "y_mm": 122.35,
+            "net": "/ADC3_CH8",
+            "explorer_coordinate_mm": [
+              55.48,
+              87.1
+            ]
+          },
+          {
+            "pin": "5",
+            "x_mm": 152.25,
+            "y_mm": 126.25,
+            "net": "/ADC3_CH9",
+            "explorer_coordinate_mm": [
+              56.75,
+              91.0
+            ]
+          },
+          {
+            "pin": "6",
+            "x_mm": 152.25,
+            "y_mm": 122.35,
+            "net": "/PI8",
+            "explorer_coordinate_mm": [
+              56.75,
+              87.1
+            ]
+          },
+          {
+            "pin": "7",
+            "x_mm": 153.52,
+            "y_mm": 126.25,
+            "net": "/PE4",
+            "explorer_coordinate_mm": [
+              58.02,
+              91.0
+            ]
+          },
+          {
+            "pin": "8",
+            "x_mm": 153.52,
+            "y_mm": 122.35,
+            "net": "/PI9",
+            "explorer_coordinate_mm": [
+              58.02,
+              87.1
+            ]
+          },
+          {
+            "pin": "9",
+            "x_mm": 154.79,
+            "y_mm": 126.25,
+            "net": "/PC13",
+            "explorer_coordinate_mm": [
+              59.29,
+              91.0
+            ]
+          }
+        ]
+      },
+      "J41": {
+        "x_mm": 122.675,
+        "y_mm": 86.34,
+        "rotation": 180.0,
+        "library": "Connector_PinHeader_1.27mm:PinHeader_2x05_P1.27mm_Vertical",
+        "pads": [
+          {
+            "pin": "1",
+            "x_mm": 122.675,
+            "y_mm": 86.34,
+            "net": "/3V3",
+            "explorer_coordinate_mm": [
+              27.175,
+              51.09
+            ]
+          },
+          {
+            "pin": "10",
+            "x_mm": 121.405,
+            "y_mm": 81.26,
+            "net": "/MCU_RESET",
+            "explorer_coordinate_mm": [
+              25.905,
+              46.01
+            ]
+          },
+          {
+            "pin": "2",
+            "x_mm": 121.405,
+            "y_mm": 86.34,
+            "net": "/SWDIO",
+            "explorer_coordinate_mm": [
+              25.905,
+              51.09
+            ]
+          },
+          {
+            "pin": "3",
+            "x_mm": 122.675,
+            "y_mm": 85.07,
+            "net": "GND",
+            "explorer_coordinate_mm": [
+              27.175,
+              49.82
+            ]
+          },
+          {
+            "pin": "4",
+            "x_mm": 121.405,
+            "y_mm": 85.07,
+            "net": "/SWCLK",
+            "explorer_coordinate_mm": [
+              25.905,
+              49.82
+            ]
+          },
+          {
+            "pin": "5",
+            "x_mm": 122.675,
+            "y_mm": 83.8,
+            "net": "GND",
+            "explorer_coordinate_mm": [
+              27.175,
+              48.55
+            ]
+          },
+          {
+            "pin": "6",
+            "x_mm": 121.405,
+            "y_mm": 83.8,
+            "net": "/SWO",
+            "explorer_coordinate_mm": [
+              25.905,
+              48.55
+            ]
+          },
+          {
+            "pin": "7",
+            "x_mm": 122.675,
+            "y_mm": 82.53,
+            "net": "unconnected-(J41-KEY-Pad7)",
+            "explorer_coordinate_mm": [
+              27.175,
+              47.28
+            ]
+          },
+          {
+            "pin": "8",
+            "x_mm": 121.405,
+            "y_mm": 82.53,
+            "net": "/TDI",
+            "explorer_coordinate_mm": [
+              25.905,
+              47.28
+            ]
+          },
+          {
+            "pin": "9",
+            "x_mm": 122.675,
+            "y_mm": 81.26,
+            "net": "GND",
+            "explorer_coordinate_mm": [
+              27.175,
+              46.01
+            ]
+          }
+        ]
+      },
+      "J30": {
+        "x_mm": 134.04,
+        "y_mm": 54.86,
+        "rotation": 90.0,
+        "library": "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical",
+        "pads": [
+          {
+            "pin": "1",
+            "x_mm": 134.04,
+            "y_mm": 54.86,
+            "net": "GND",
+            "explorer_coordinate_mm": [
+              38.54,
+              19.61
+            ]
+          },
+          {
+            "pin": "2",
+            "x_mm": 136.58,
+            "y_mm": 54.86,
+            "net": "Net-(J30-Pin_2)",
+            "explorer_coordinate_mm": [
+              41.08,
+              19.61
+            ]
+          },
+          {
+            "pin": "3",
+            "x_mm": 139.12,
+            "y_mm": 54.86,
+            "net": "Net-(J30-Pin_3)",
+            "explorer_coordinate_mm": [
+              43.62,
+              19.61
+            ]
+          }
+        ]
+      },
+      "J43": {
+        "x_mm": 119.25,
+        "y_mm": 113.05,
+        "rotation": 0.0,
+        "library": "TerminalBlock_4Ucon:TerminalBlock_4Ucon_1x02_P3.50mm_Vertical",
+        "pads": [
+          {
+            "pin": "1",
+            "x_mm": 119.25,
+            "y_mm": 113.05,
+            "net": "/5V",
+            "explorer_coordinate_mm": [
+              23.75,
+              77.8
+            ]
+          },
+          {
+            "pin": "2",
+            "x_mm": 122.75,
+            "y_mm": 113.05,
+            "net": "GND",
+            "explorer_coordinate_mm": [
+              27.25,
+              77.8
+            ]
+          }
+        ]
+      },
+      "J42": {
+        "x_mm": 110.15,
+        "y_mm": 113.05,
+        "rotation": 0.0,
+        "library": "TerminalBlock_4Ucon:TerminalBlock_4Ucon_1x02_P3.50mm_Vertical",
+        "pads": [
+          {
+            "pin": "1",
+            "x_mm": 110.15,
+            "y_mm": 113.05,
+            "net": "/5V_PORTIN",
+            "explorer_coordinate_mm": [
+              14.65,
+              77.8
+            ]
+          },
+          {
+            "pin": "2",
+            "x_mm": 113.65,
+            "y_mm": 113.05,
+            "net": "GND",
+            "explorer_coordinate_mm": [
+              18.15,
+              77.8
+            ]
+          }
+        ]
+      },
+      "J44": {
+        "x_mm": 122.025,
+        "y_mm": 126.65,
+        "rotation": 90.0,
+        "library": "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical",
+        "pads": [
+          {
+            "pin": "1",
+            "x_mm": 122.025,
+            "y_mm": 126.65,
+            "net": "Net-(J44-Pin_1)",
+            "explorer_coordinate_mm": [
+              26.525,
+              91.4
+            ]
+          },
+          {
+            "pin": "2",
+            "x_mm": 124.565,
+            "y_mm": 126.65,
+            "net": "GND",
+            "explorer_coordinate_mm": [
+              29.065,
+              91.4
+            ]
+          }
+        ]
+      },
+      "J45": {
+        "x_mm": 133.65,
+        "y_mm": 126.525,
+        "rotation": 90.0,
+        "library": "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical",
+        "pads": [
+          {
+            "pin": "1",
+            "x_mm": 133.65,
+            "y_mm": 126.525,
+            "net": "Net-(J45-Pin_1)",
+            "explorer_coordinate_mm": [
+              38.15,
+              91.275
+            ]
+          },
+          {
+            "pin": "2",
+            "x_mm": 136.19,
+            "y_mm": 126.525,
+            "net": "GND",
+            "explorer_coordinate_mm": [
+              40.69,
+              91.275
+            ]
+          }
+        ]
+      },
+      "J3": {
+        "x_mm": 108.25,
+        "y_mm": 81.25,
+        "rotation": 0.0,
+        "library": "smoothieparts:TF-01A",
+        "pads": [
+          {
+            "pin": "1",
+            "x_mm": 115.3062,
+            "y_mm": 83.49528,
+            "net": "/SD_D2",
+            "explorer_coordinate_mm": [
+              19.8062,
+              48.24528
+            ]
+          },
+          {
+            "pin": "10",
+            "x_mm": 114.5062,
+            "y_mm": 73.59528,
+            "net": "GND",
+            "explorer_coordinate_mm": [
+              19.0062,
+              38.34528
+            ]
+          },
+          {
+            "pin": "11",
+            "x_mm": 104.67,
+            "y_mm": 89.08,
+            "net": "GND",
+            "explorer_coordinate_mm": [
+              9.17,
+              53.83
+            ]
+          },
+          {
+            "pin": "11",
+            "x_mm": 104.68,
+            "y_mm": 73.594,
+            "net": "GND",
+            "explorer_coordinate_mm": [
+              9.18,
+              38.344
+            ]
+          },
+          {
+            "pin": "11",
+            "x_mm": 114.5,
+            "y_mm": 88.17,
+            "net": "GND",
+            "explorer_coordinate_mm": [
+              19.0,
+              52.92
+            ]
+          },
+          {
+            "pin": "2",
+            "x_mm": 115.3062,
+            "y_mm": 82.39528,
+            "net": "/SD_D3",
+            "explorer_coordinate_mm": [
+              19.8062,
+              47.14528
+            ]
+          },
+          {
+            "pin": "3",
+            "x_mm": 115.3062,
+            "y_mm": 81.29528,
+            "net": "/SD_CMD",
+            "explorer_coordinate_mm": [
+              19.8062,
+              46.04528
+            ]
+          },
+          {
+            "pin": "4",
+            "x_mm": 115.3062,
+            "y_mm": 80.19528,
+            "net": "/3V3",
+            "explorer_coordinate_mm": [
+              19.8062,
+              44.94528
+            ]
+          },
+          {
+            "pin": "5",
+            "x_mm": 115.3062,
+            "y_mm": 79.09528,
+            "net": "/SD_CK",
+            "explorer_coordinate_mm": [
+              19.8062,
+              43.84528
+            ]
+          },
+          {
+            "pin": "6",
+            "x_mm": 115.3062,
+            "y_mm": 77.99528,
+            "net": "GND",
+            "explorer_coordinate_mm": [
+              19.8062,
+              42.74528
+            ]
+          },
+          {
+            "pin": "7",
+            "x_mm": 115.3062,
+            "y_mm": 76.89528,
+            "net": "/SD_D0",
+            "explorer_coordinate_mm": [
+              19.8062,
+              41.64528
+            ]
+          },
+          {
+            "pin": "8",
+            "x_mm": 115.3062,
+            "y_mm": 75.79528,
+            "net": "/SD_D1",
+            "explorer_coordinate_mm": [
+              19.8062,
+              40.54528
+            ]
+          },
+          {
+            "pin": "9",
+            "x_mm": 115.3062,
+            "y_mm": 74.69528,
+            "net": "/CARD_DET",
+            "explorer_coordinate_mm": [
+              19.8062,
+              39.44528
+            ]
+          }
+        ]
+      },
+      "J15": {
+        "x_mm": 161.9,
+        "y_mm": 63.6,
+        "rotation": 90.0,
+        "library": "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical",
+        "pads": [
+          {
+            "pin": "1",
+            "x_mm": 161.9,
+            "y_mm": 63.6,
+            "net": "/3V3",
+            "explorer_coordinate_mm": [
+              66.4,
+              28.35
+            ]
+          },
+          {
+            "pin": "2",
+            "x_mm": 164.44,
+            "y_mm": 63.6,
+            "net": "GND",
+            "explorer_coordinate_mm": [
+              68.94,
+              28.35
+            ]
+          }
+        ]
+      },
+      "J13": {
+        "x_mm": 160.45,
+        "y_mm": 131.4,
+        "rotation": 90.0,
+        "library": "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical",
+        "pads": [
+          {
+            "pin": "1",
+            "x_mm": 160.45,
+            "y_mm": 131.4,
+            "net": "/mosfets/VFET",
+            "explorer_coordinate_mm": [
+              64.95,
+              96.15
+            ]
+          },
+          {
+            "pin": "2",
+            "x_mm": 162.99,
+            "y_mm": 131.4,
+            "net": "/mosfets/SW_BED",
+            "explorer_coordinate_mm": [
+              67.49,
+              96.15
+            ]
+          }
+        ]
+      },
+      "J11": {
+        "x_mm": 149.7,
+        "y_mm": 131.45,
+        "rotation": 90.0,
+        "library": "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical",
+        "pads": [
+          {
+            "pin": "1",
+            "x_mm": 149.7,
+            "y_mm": 131.45,
+            "net": "/mosfets/VFET",
+            "explorer_coordinate_mm": [
+              54.2,
+              96.2
+            ]
+          },
+          {
+            "pin": "2",
+            "x_mm": 152.24,
+            "y_mm": 131.45,
+            "net": "/mosfets/GND_FET",
+            "explorer_coordinate_mm": [
+              56.74,
+              96.2
+            ]
+          }
+        ]
+      },
+      "J12": {
+        "x_mm": 151.4,
+        "y_mm": 139.0,
+        "rotation": -90.0,
+        "library": "smoothieparts:XT30",
+        "pads": [
+          {
+            "pin": "1",
+            "x_mm": 151.3,
+            "y_mm": 139.7,
+            "net": "/mosfets/VFET",
+            "explorer_coordinate_mm": [
+              55.8,
+              104.45
+            ]
+          },
+          {
+            "pin": "1",
+            "x_mm": 152.602082,
+            "y_mm": 140.156497,
+            "net": "/mosfets/VFET",
+            "explorer_coordinate_mm": [
+              57.102082,
+              104.906497
+            ]
+          },
+          {
+            "pin": "1",
+            "x_mm": 150.056497,
+            "y_mm": 140.297918,
+            "net": "/mosfets/VFET",
+            "explorer_coordinate_mm": [
+              54.556497,
+              105.047918
+            ]
+          },
+          {
+            "pin": "1",
+            "x_mm": 151.4,
+            "y_mm": 141.25,
+            "net": "/mosfets/VFET",
+            "explorer_coordinate_mm": [
+              55.9,
+              106.0
+            ]
+          },
+          {
+            "pin": "1",
+            "x_mm": 153.2,
+            "y_mm": 141.4,
+            "net": "/mosfets/VFET",
+            "explorer_coordinate_mm": [
+              57.7,
+              106.15
+            ]
+          },
+          {
+            "pin": "1",
+            "x_mm": 151.4,
+            "y_mm": 141.5,
+            "net": "/mosfets/VFET",
+            "explorer_coordinate_mm": [
+              55.9,
+              106.25
+            ]
+          },
+          {
+            "pin": "1",
+            "x_mm": 149.6,
+            "y_mm": 141.6,
+            "net": "/mosfets/VFET",
+            "explorer_coordinate_mm": [
+              54.1,
+              106.35
+            ]
+          },
+          {
+            "pin": "1",
+            "x_mm": 152.743503,
+            "y_mm": 142.702082,
+            "net": "/mosfets/VFET",
+            "explorer_coordinate_mm": [
+              57.243503,
+              107.452082
+            ]
+          },
+          {
+            "pin": "1",
+            "x_mm": 150.197918,
+            "y_mm": 142.843503,
+            "net": "/mosfets/VFET",
+            "explorer_coordinate_mm": [
+              54.697918,
+              107.593503
+            ]
+          },
+          {
+            "pin": "1",
+            "x_mm": 151.5,
+            "y_mm": 143.3,
+            "net": "/mosfets/VFET",
+            "explorer_coordinate_mm": [
+              56.0,
+              108.05
+            ]
+          },
+          {
+            "pin": "2",
+            "x_mm": 151.5,
+            "y_mm": 134.8,
+            "net": "/mosfets/GND_FET",
+            "explorer_coordinate_mm": [
+              56.0,
+              99.55
+            ]
+          },
+          {
+            "pin": "2",
+            "x_mm": 150.268629,
+            "y_mm": 135.227208,
+            "net": "/mosfets/GND_FET",
+            "explorer_coordinate_mm": [
+              54.768629,
+              99.977208
+            ]
+          },
+          {
+            "pin": "2",
+            "x_mm": 152.672792,
+            "y_mm": 135.368629,
+            "net": "/mosfets/GND_FET",
+            "explorer_coordinate_mm": [
+              57.172792,
+              100.118629
+            ]
+          },
+          {
+            "pin": "2",
+            "x_mm": 149.7,
+            "y_mm": 136.4,
+            "net": "/mosfets/GND_FET",
+            "explorer_coordinate_mm": [
+              54.2,
+              101.15
+            ]
+          },
+          {
+            "pin": "2",
+            "x_mm": 151.4,
+            "y_mm": 136.5,
+            "net": "/mosfets/GND_FET",
+            "explorer_coordinate_mm": [
+              55.9,
+              101.25
+            ]
+          },
+          {
+            "pin": "2",
+            "x_mm": 153.1,
+            "y_mm": 136.6,
+            "net": "/mosfets/GND_FET",
+            "explorer_coordinate_mm": [
+              57.6,
+              101.35
+            ]
+          },
+          {
+            "pin": "2",
+            "x_mm": 151.4,
+            "y_mm": 136.75,
+            "net": "/mosfets/GND_FET",
+            "explorer_coordinate_mm": [
+              55.9,
+              101.5
+            ]
+          },
+          {
+            "pin": "2",
+            "x_mm": 150.127208,
+            "y_mm": 137.631371,
+            "net": "/mosfets/GND_FET",
+            "explorer_coordinate_mm": [
+              54.627208,
+              102.381371
+            ]
+          },
+          {
+            "pin": "2",
+            "x_mm": 152.531371,
+            "y_mm": 137.772792,
+            "net": "/mosfets/GND_FET",
+            "explorer_coordinate_mm": [
+              57.031371,
+              102.522792
+            ]
+          },
+          {
+            "pin": "2",
+            "x_mm": 151.3,
+            "y_mm": 138.2,
+            "net": "/mosfets/GND_FET",
+            "explorer_coordinate_mm": [
+              55.8,
+              102.95
+            ]
+          }
+        ]
+      },
+      "J16": {
+        "x_mm": 145.5,
+        "y_mm": 138.95,
+        "rotation": -90.0,
+        "library": "smoothieparts:XT30",
+        "pads": [
+          {
+            "pin": "1",
+            "x_mm": 145.4,
+            "y_mm": 139.65,
+            "net": "/mosfets/VFET",
+            "explorer_coordinate_mm": [
+              49.9,
+              104.4
+            ]
+          },
+          {
+            "pin": "1",
+            "x_mm": 146.702082,
+            "y_mm": 140.106497,
+            "net": "/mosfets/VFET",
+            "explorer_coordinate_mm": [
+              51.202082,
+              104.856497
+            ]
+          },
+          {
+            "pin": "1",
+            "x_mm": 144.156497,
+            "y_mm": 140.247918,
+            "net": "/mosfets/VFET",
+            "explorer_coordinate_mm": [
+              48.656497,
+              104.997918
+            ]
+          },
+          {
+            "pin": "1",
+            "x_mm": 145.5,
+            "y_mm": 141.2,
+            "net": "/mosfets/VFET",
+            "explorer_coordinate_mm": [
+              50.0,
+              105.95
+            ]
+          },
+          {
+            "pin": "1",
+            "x_mm": 147.3,
+            "y_mm": 141.35,
+            "net": "/mosfets/VFET",
+            "explorer_coordinate_mm": [
+              51.8,
+              106.1
+            ]
+          },
+          {
+            "pin": "1",
+            "x_mm": 145.5,
+            "y_mm": 141.45,
+            "net": "/mosfets/VFET",
+            "explorer_coordinate_mm": [
+              50.0,
+              106.2
+            ]
+          },
+          {
+            "pin": "1",
+            "x_mm": 143.7,
+            "y_mm": 141.55,
+            "net": "/mosfets/VFET",
+            "explorer_coordinate_mm": [
+              48.2,
+              106.3
+            ]
+          },
+          {
+            "pin": "1",
+            "x_mm": 146.843503,
+            "y_mm": 142.652082,
+            "net": "/mosfets/VFET",
+            "explorer_coordinate_mm": [
+              51.343503,
+              107.402082
+            ]
+          },
+          {
+            "pin": "1",
+            "x_mm": 144.297918,
+            "y_mm": 142.793503,
+            "net": "/mosfets/VFET",
+            "explorer_coordinate_mm": [
+              48.797918,
+              107.543503
+            ]
+          },
+          {
+            "pin": "1",
+            "x_mm": 145.6,
+            "y_mm": 143.25,
+            "net": "/mosfets/VFET",
+            "explorer_coordinate_mm": [
+              50.1,
+              108.0
+            ]
+          },
+          {
+            "pin": "2",
+            "x_mm": 145.6,
+            "y_mm": 134.75,
+            "net": "/mosfets/GND_FET",
+            "explorer_coordinate_mm": [
+              50.1,
+              99.5
+            ]
+          },
+          {
+            "pin": "2",
+            "x_mm": 144.368629,
+            "y_mm": 135.177208,
+            "net": "/mosfets/GND_FET",
+            "explorer_coordinate_mm": [
+              48.868629,
+              99.927208
+            ]
+          },
+          {
+            "pin": "2",
+            "x_mm": 146.772792,
+            "y_mm": 135.318629,
+            "net": "/mosfets/GND_FET",
+            "explorer_coordinate_mm": [
+              51.272792,
+              100.068629
+            ]
+          },
+          {
+            "pin": "2",
+            "x_mm": 143.8,
+            "y_mm": 136.35,
+            "net": "/mosfets/GND_FET",
+            "explorer_coordinate_mm": [
+              48.3,
+              101.1
+            ]
+          },
+          {
+            "pin": "2",
+            "x_mm": 145.5,
+            "y_mm": 136.45,
+            "net": "/mosfets/GND_FET",
+            "explorer_coordinate_mm": [
+              50.0,
+              101.2
+            ]
+          },
+          {
+            "pin": "2",
+            "x_mm": 147.2,
+            "y_mm": 136.55,
+            "net": "/mosfets/GND_FET",
+            "explorer_coordinate_mm": [
+              51.7,
+              101.3
+            ]
+          },
+          {
+            "pin": "2",
+            "x_mm": 145.5,
+            "y_mm": 136.7,
+            "net": "/mosfets/GND_FET",
+            "explorer_coordinate_mm": [
+              50.0,
+              101.45
+            ]
+          },
+          {
+            "pin": "2",
+            "x_mm": 144.227208,
+            "y_mm": 137.581371,
+            "net": "/mosfets/GND_FET",
+            "explorer_coordinate_mm": [
+              48.727208,
+              102.331371
+            ]
+          },
+          {
+            "pin": "2",
+            "x_mm": 146.631371,
+            "y_mm": 137.722792,
+            "net": "/mosfets/GND_FET",
+            "explorer_coordinate_mm": [
+              51.131371,
+              102.472792
+            ]
+          },
+          {
+            "pin": "2",
+            "x_mm": 145.4,
+            "y_mm": 138.15,
+            "net": "/mosfets/GND_FET",
+            "explorer_coordinate_mm": [
+              49.9,
+              102.9
+            ]
+          }
+        ]
+      }
+    },
+    "reuse": "Keep board substrate/mask and only actual illustrated connector pcb-part groups from layer-illustrated-f with original transforms. Hide silks; exclude layer-invented-f and synthetic layer-components-f. Prefix SVG IDs and references before embedding. Use P12 pad coordinates translated to explorer frame; correct J16 +0.025/\u22120.025 mm if claiming P12 positions.",
+    "correspondence_summary": "45 J references exist both revisions; all contact function suffixes match. Only J16 center changes. J5 library string differs; pad positions match. J42 spelling and J5\u2013J8 hierarchy changes do not change physical functions. This is connector-level correspondence, not full-board equivalence.",
+    "J5_library_qualification": {
+      "ref": "J5",
+      "net_differences": [
+        {
+          "pin": "1",
+          "p11": "/driver-a-2660/COIL_B2",
+          "p12": "/driver-a/COIL_B2"
+        },
+        {
+          "pin": "2",
+          "p11": "/driver-a-2660/COIL_B1",
+          "p12": "/driver-a/COIL_B1"
+        },
+        {
+          "pin": "3",
+          "p11": "/driver-a-2660/COIL_A2",
+          "p12": "/driver-a/COIL_A2"
+        },
+        {
+          "pin": "4",
+          "p11": "/driver-a-2660/COIL_A1",
+          "p12": "/driver-a/COIL_A1"
+        }
+      ],
+      "position_delta_mm": [
+        0.0,
+        0.0
+      ],
+      "rotation_equal": true,
+      "library_equal": false,
+      "pad_position_differences": {},
+      "physical_functions_equal": true,
+      "libraries": [
+        "smoothieparts:CONN_MOTOR2",
+        "smoothieparts:CONN_MOTOR"
+      ],
+      "pin_function_correspondence": {
+        "p11": {
+          "1": [
+            "COIL_B2"
+          ],
+          "2": [
+            "COIL_B1"
+          ],
+          "3": [
+            "COIL_A2"
+          ],
+          "4": [
+            "COIL_A1"
+          ]
+        },
+        "p12": {
+          "1": [
+            "COIL_B2"
+          ],
+          "2": [
+            "COIL_B1"
+          ],
+          "3": [
+            "COIL_A2"
+          ],
+          "4": [
+            "COIL_A1"
+          ]
+        }
+      }
+    },
+    "contact_function_readback": {
+      "all_45_refs_match": true,
+      "method": "Compare net function sets by physical pin number, retaining repeated-number pad geometry separately."
+    }
+  },
+  "renderer_affected": [
+    "BOX_SIDES, PRIME_SIDES, BANK_ORDER: replace invented bank placement with source coordinate registry",
+    "_terminal_identity and _controller_label: map exact border contracts, preserve full physical identities",
+    "render_centered_wiring: central shell and banks, unused banks, orientation-dependent peripheral placement, orthogonal tracks, solid functional color styling, conflict notes",
+    "_paired_cells: descriptive functional wire labels primary, connection IDs secondary grey",
+    "_promotion_group / _assembly_title: physical terminal grouping and actual source device assembly placement"
+  ],
+  "risks": [
+    "Source SmoothieBox is proposed carrier/harness artwork, not certification of installed hardware; preserve provenance qualification.",
+    "1000px central-cell scaling makes original 12px source pill type about 4px; preserve relative geometry but plan readable annotations/output scale rather than silently shrinking labels.",
+    "PWM bank has four terminals; PROBE combines servo and probe with shared ground; do not restore old simplified banks.",
+    "Ground symbols must retain isolated/domain identities.",
+    "Solid styling requires explicit textual GUESS/OPEN evidence states elsewhere; no electrical evidence upgrade.",
+    "Alternative operating modes need separate subdiagrams; connector location alone is not electrical suitability.",
+    "P11 connector artwork reuse does not imply P11 driver circuitry matches P12."
+  ]
+}

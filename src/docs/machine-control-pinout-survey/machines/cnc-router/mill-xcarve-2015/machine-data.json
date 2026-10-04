@@ -1,0 +1,169 @@
+{
+  "id": "mill-xcarve-2015",
+  "sources": {
+    "machine-side-graph-snapshot.json": {
+      "source_graph": "031-mill-xcarve-2015.json",
+      "source_sha256": "2d6c80c62dd3167662c569be50e8060d516321d5ace01d9f3764266801f9304a",
+      "graph": {
+        "profile_id": "mill-xcarve-2015",
+        "devices": [
+          {
+            "id": "peripheral-01",
+            "role": "reference"
+          },
+          {
+            "id": "peripheral-02",
+            "role": "reference"
+          },
+          {
+            "id": "peripheral-03",
+            "role": "reference"
+          },
+          {
+            "id": "peripheral-04",
+            "role": "reference"
+          }
+        ],
+        "connectors": [
+          {
+            "id": "machine-01",
+            "device": "peripheral-01",
+            "refdes": "gShield V5 X motor block",
+            "form": "source-described connector",
+            "scope": "Inventables 2015 assembly, screw-head view, left-to-right; installed gShield V5 and motor winding polarity must be confirmed Original/reference connector availability unresolved; do not infer retained installation.",
+            "contacts": [
+              {
+                "id": "1",
+                "mark": "1",
+                "label": "Black lead"
+              },
+              {
+                "id": "2",
+                "mark": "2",
+                "label": "Green lead"
+              },
+              {
+                "id": "3",
+                "mark": "3",
+                "label": "White lead"
+              },
+              {
+                "id": "4",
+                "mark": "4",
+                "label": "Red lead"
+              }
+            ]
+          },
+          {
+            "id": "machine-02",
+            "device": "peripheral-02",
+            "refdes": "gShield V5 Y motor block",
+            "form": "source-described connector",
+            "scope": "Inventables 2015 assembly, screw-head view, left-to-right; installed gShield V5 and motor winding polarity must be confirmed Original/reference connector availability unresolved; do not infer retained installation.",
+            "contacts": [
+              {
+                "id": "1",
+                "mark": "1",
+                "label": "Black lead"
+              },
+              {
+                "id": "2",
+                "mark": "2",
+                "label": "Green lead"
+              },
+              {
+                "id": "3",
+                "mark": "3",
+                "label": "White lead"
+              },
+              {
+                "id": "4",
+                "mark": "4",
+                "label": "Red lead"
+              }
+            ]
+          },
+          {
+            "id": "machine-03",
+            "device": "peripheral-03",
+            "refdes": "gShield V5 Z motor block",
+            "form": "source-described connector",
+            "scope": "Inventables 2015 assembly, screw-head view, left-to-right; installed gShield V5 and motor winding polarity must be confirmed Original/reference connector availability unresolved; do not infer retained installation.",
+            "contacts": [
+              {
+                "id": "1",
+                "mark": "1",
+                "label": "Black lead"
+              },
+              {
+                "id": "2",
+                "mark": "2",
+                "label": "Green lead"
+              },
+              {
+                "id": "3",
+                "mark": "3",
+                "label": "White lead"
+              },
+              {
+                "id": "4",
+                "mark": "4",
+                "label": "Red lead"
+              }
+            ]
+          },
+          {
+            "id": "machine-04",
+            "device": "peripheral-04",
+            "refdes": "gShield V5 eight-position limit header",
+            "form": "source-described connector",
+            "scope": "Documented positions only; manufacturer page does not establish a mating-face view for assigning X/Y/Z by arithmetic Original/reference connector availability unresolved; do not infer retained installation.",
+            "contacts": [
+              {
+                "id": "1",
+                "mark": "1",
+                "label": "Empty in Inventables 2015 assembly"
+              },
+              {
+                "id": "2",
+                "mark": "2",
+                "label": "Limit-header position; X/Y/Z white-lead assignment not established by pin number"
+              },
+              {
+                "id": "3",
+                "mark": "3",
+                "label": "Limit-header position; X/Y/Z white-lead assignment not established by pin number"
+              },
+              {
+                "id": "4",
+                "mark": "4",
+                "label": "Limit-header position; X/Y/Z white-lead assignment not established by pin number"
+              },
+              {
+                "id": "5",
+                "mark": "5",
+                "label": "Limit-header position; X/Y/Z white-lead assignment not established by pin number"
+              },
+              {
+                "id": "6",
+                "mark": "6",
+                "label": "Empty in Inventables 2015 assembly"
+              },
+              {
+                "id": "7",
+                "mark": "7",
+                "label": "Limit-header position; X/Y/Z white-lead assignment not established by pin number"
+              },
+              {
+                "id": "8",
+                "mark": "8",
+                "label": "Empty in Inventables 2015 assembly"
+              }
+            ]
+          }
+        ],
+        "wires": []
+      }
+    }
+  }
+}

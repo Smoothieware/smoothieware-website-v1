@@ -1,0 +1,98 @@
+{
+  "id": "forum-avidcnc-funkenjaeger-4x2-linuxcnc-atc",
+  "sources": {
+    "forum-peripheral-evidence.json": {
+      "id": "forum-avidcnc-funkenjaeger-4x2-linuxcnc-atc",
+      "dossier": "src/docs/machine-research/avidcnc-funkenjaeger-4x2-linuxcnc-atc.md",
+      "reported_fitted_or_used": [
+        {
+          "name": "Tool setter",
+          "contacts": [],
+          "source_line_number": 16,
+          "source_line": "| Tool setter | An inexpensive commercial tool setter plus an optical beam-break sensor above it. The owner uses the beam-break to permit a rapid approach and then a slower final approach without pre-entering estimated tool lengths in the tool table. | Sensor model and electrical interface are not given. Owner notes the rigidly mounted setter consumes some working area and was still a candidate for redesign. |",
+          "evidence": "An inexpensive commercial tool setter plus an optical beam-break sensor above it. The owner uses the beam-break to permit a rapid approach and then a slower final approach without pre-entering estimated tool lengths in the tool table.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        },
+        {
+          "name": "Optical beam-break sensor",
+          "contacts": [],
+          "source_line_number": 16,
+          "source_line": "| Tool setter | An inexpensive commercial tool setter plus an optical beam-break sensor above it. The owner uses the beam-break to permit a rapid approach and then a slower final approach without pre-entering estimated tool lengths in the tool table. | Sensor model and electrical interface are not given. Owner notes the rigidly mounted setter consumes some working area and was still a candidate for redesign. |",
+          "evidence": "An inexpensive commercial tool setter plus an optical beam-break sensor above it. The owner uses the beam-break to permit a rapid approach and then a slower final approach without pre-entering estimated tool lengths in the tool table.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        },
+        {
+          "name": "ATC rack tool-present leaf switches",
+          "contacts": [],
+          "source_line_number": 15,
+          "source_line": "| Automatic tool change | Pneumatically actuated rack. Tool holders project over the bed only when the rack extends. Cylinders are angled to avoid protruding behind the frame. The rack attaches to linear bearings through rubber isolators for some compliance. The owner wired a leaf switch at each fork to detect tool presence. | Pneumatic pressure, valve model, sensor circuit, tool count, and PLC/IO assignment are not stated. These details are not sufficient to reproduce the system wiring. |",
+          "evidence": "Tool holders project over the bed only when the rack extends. Cylinders are angled to avoid protruding behind the frame.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        },
+        {
+          "name": "Avid drive units \u00b7 model, axis assignment and terminals unknown",
+          "contacts": [],
+          "source_line_number": 13,
+          "source_line": "| Overall machine | Self-designed/self-built 4 \u00d7 2-class router; Avid racks, drives, and Z axis; Y rails protrude beyond the front of the bed so the spindle can reach a vertically held workpiece. | No exact travel dimensions, frame material, spindle model, or full bill of materials are supplied in the thread. \u201c4 \u00d7 2\u201d is the owner\u2019s class description, not a measured travel specification. |",
+          "evidence": "The owner reports Avid drives; the thread does not map them to axes or describe electrical terminals.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        },
+        {
+          "name": "Spindle assembly \u00b7 model and electrical interface unknown",
+          "contacts": [],
+          "source_line_number": 13,
+          "source_line": "| Overall machine | Self-designed/self-built 4 \u00d7 2-class router; Avid racks, drives, and Z axis; Y rails protrude beyond the front of the bed so the spindle can reach a vertically held workpiece. | No exact travel dimensions, frame material, spindle model, or full bill of materials are supplied in the thread. \u201c4 \u00d7 2\u201d is the owner\u2019s class description, not a measured travel specification. |",
+          "evidence": "The owner describes spindle access/fitment, but gives no spindle model or electrical interface.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        },
+        {
+          "name": "Pneumatic automatic tool-change rack \u00b7 valve and air connections unknown",
+          "contacts": [],
+          "source_line_number": 15,
+          "source_line": "| Automatic tool change | Pneumatically actuated rack. Tool holders project over the bed only when the rack extends. Cylinders are angled to avoid protruding behind the frame. The rack attaches to linear bearings through rubber isolators for some compliance. The owner wired a leaf switch at each fork to detect tool presence. | Pneumatic pressure, valve model, sensor circuit, tool count, and PLC/IO assignment are not stated. These details are not sufficient to reproduce the system wiring. |",
+          "evidence": "The rack is pneumatically actuated; cylinder details are mechanical and no valve/air connection schedule is supplied.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        },
+        {
+          "name": "Dust extraction path and equipment options \u00b7 configuration varies by job",
+          "contacts": [],
+          "source_line_number": 17,
+          "source_line": "| Dust shoe and collection | Compact, high-static-pressure collection approach for the owner\u2019s packed metal-shop garage bay, using small-diameter extraction rather than a conventional 4-inch system. The short foam skirt is inspired by the DATRON CleanCut; TPU/TPE printed bellows can seal the shoe to the spindle. Depending on the job, the owner uses a powerful shop vacuum with a one- or two-stage dust separator, or connects directly to a Fein/Festool dust extractor. | The branded products are design references or owner-reported extraction choices, not a machine-specific electrical schedule. Extractor model, hose fitting, power switching, airflow and pressure measurements are not stated. |",
+          "evidence": "The owner uses small-diameter, high-static-pressure extraction; depending on the job, either a powerful shop vacuum with a one- or two-stage separator or a direct Fein/Festool extractor connection. Electrical switching and exact hose fittings are unspecified.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        },
+        {
+          "name": "Dust-shoe pneumatic actuator pair \u00b7 two vertical cylinders",
+          "contacts": [],
+          "source_line_number": 18,
+          "source_line": "| Shoe actuation | Two vertical cylinders, hinge, and bellcrank move the shoe aside and retract it for tool changes. The bellcrank goes over-center when the shoe is under the spindle. Lift-off hinge and quick-release ball linkages allow removal in about 10 seconds. | This is the owner\u2019s description; no force, cycle-life, or interlock details are supplied. |",
+          "evidence": "The shoe moves using two vertical cylinders, a hinge and a bellcrank; pneumatic/electrical connections are not specified.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        },
+        {
+          "name": "Dust-shoe to chassis static ground strap \u00b7 endpoints unlocated",
+          "contacts": [],
+          "source_line_number": 20,
+          "source_line": "| Static observation | In a July 2026 follow-up, the owner reported that the shoe body was electrically isolated from the machine chassis by the printed plenum and needed a ground strap because static charge could build up. | Preserve as a machine-specific owner observation; the thread does not describe measurement or a validated grounding design. |",
+          "evidence": "The owner reports adding a ground strap because the printed plenum electrically isolated the shoe from the machine chassis; attachment points and validation are not given.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        }
+      ],
+      "listed_for_build_unverified": [],
+      "historical_reference": [],
+      "planned_only": [],
+      "open_function_group": [
+        {
+          "name": "Existing LinuxCNC + Mesa controller boundary \u00b7 exact card and IO unknown",
+          "contacts": [],
+          "source_line_number": 14,
+          "source_line": "| Motion control | LinuxCNC and a Mesa FPGA board; owner links personal LinuxCNC configuration files. | The forum post does not identify the Mesa card model, IO pin mapping, field wiring, motor/drive interface, or full configuration. The linked GitHub repository is not used here as a factual source. |",
+          "evidence": "LinuxCNC and a Mesa FPGA board are reported; the card model, IO mapping and field wiring are absent from the inspected thread.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        }
+      ],
+      "exclusions": [],
+      "source_gap": "The forum gives named equipment and mechanisms but no exact machine-side electrical contact schedules or as-built SmoothieBox routes. Preserve the separate LinuxCNC/Mesa controller boundary and unknown card/IO; keep the reported tool setter, optical beam-break sensor, ATC leaf switches, Avid drives, spindle, pneumatic mechanisms, extraction path and static strap visible as OPEN groups. The linked personal configuration repository is outside this forum-only evidence scope."
+    }
+  }
+}

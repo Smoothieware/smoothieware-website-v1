@@ -1,0 +1,49 @@
+{
+  "id": "forum-openbuilds-jonathon-duerig-contrariwise-cbeam-router",
+  "sources": {
+    "forum-peripheral-evidence.json": {
+      "id": "forum-openbuilds-jonathon-duerig-contrariwise-cbeam-router",
+      "dossier": "src/docs/machine-research/openbuilds-jonathon-duerig-contrariwise-cbeam-router.md",
+      "reported_fitted_or_used": [
+        {
+          "name": "300 W DC spindle",
+          "contacts": [],
+          "source_line_number": 17,
+          "source_line": "The build page lists an xPro v2 controller, NEMA 23 motors and a 300 W DC spindle. Acrylic mounts carry the controller board, fan and two power supplies, with an aluminum extrusion frame supporting the electronics assembly. The owner described barrel jacks as connectors: two jacks per motor, one per sensor, and additional connections for fan power, Z touch plate and spindle control. This is a connector-count/function description only; the page does not state jack polarity, contact order, controller terminal assignments, or a complete electrical pinout.",
+          "evidence": "The build page lists an xPro v2 controller, NEMA 23 motors and a 300 W DC spindle. Acrylic mounts carry the controller board, fan and two power supplies, with an aluminum extrusion frame supporting the electronics assembly.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        },
+        {
+          "name": "Two power supplies",
+          "contacts": [],
+          "source_line_number": 17,
+          "source_line": "The build page lists an xPro v2 controller, NEMA 23 motors and a 300 W DC spindle. Acrylic mounts carry the controller board, fan and two power supplies, with an aluminum extrusion frame supporting the electronics assembly. The owner described barrel jacks as connectors: two jacks per motor, one per sensor, and additional connections for fan power, Z touch plate and spindle control. This is a connector-count/function description only; the page does not state jack polarity, contact order, controller terminal assignments, or a complete electrical pinout.",
+          "evidence": "Acrylic mounts carry the controller board, fan and two power supplies, with an aluminum extrusion frame supporting the electronics assembly. The owner described barrel jacks as connectors: two jacks per motor, one per sensor, and additional connections for fan power, Z touch plate and spindle control.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        }
+      ],
+      "listed_for_build_unverified": [],
+      "historical_reference": [],
+      "planned_only": [],
+      "open_function_group": [],
+      "exclusions": [
+        {
+          "name": "Machine xPro v2 is existing controller",
+          "reason": "Existing or proposed controller belongs to the replaced control system, not the machine periphery.",
+          "source_line_number": 17,
+          "source_line": "The build page lists an xPro v2 controller, NEMA 23 motors and a 300 W DC spindle. Acrylic mounts carry the controller board, fan and two power supplies, with an aluminum extrusion frame supporting the electronics assembly. The owner described barrel jacks as connectors: two jacks per motor, one per sensor, and additional connections for fan power, Z touch plate and spindle control. This is a connector-count/function description only; the page does not state jack polarity, contact order, controller terminal assignments, or a complete electrical pinout."
+        },
+        {
+          "name": "NEMA 23 motors",
+          "contacts": [],
+          "source_line_number": 17,
+          "source_line": "The build page lists an xPro v2 controller, NEMA 23 motors and a 300 W DC spindle. Acrylic mounts carry the controller board, fan and two power supplies, with an aluminum extrusion frame supporting the electronics assembly. The owner described barrel jacks as connectors: two jacks per motor, one per sensor, and additional connections for fan power, Z touch plate and spindle control. This is a connector-count/function description only; the page does not state jack polarity, contact order, controller terminal assignments, or a complete electrical pinout.",
+          "evidence": "The build page lists an xPro v2 controller, NEMA 23 motors and a 300 W DC spindle. Acrylic mounts carry the controller board, fan and two power supplies, with an aluminum extrusion frame supporting the electronics assembly.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route",
+          "reason": "Excluded: no separate externally addressable interface, existing control hardware, absent tooling, or inadequate positive device evidence in this dossier."
+        }
+      ],
+      "source_gap": "Dossier does not establish an as-built SmoothieBox route or a complete physical contact schedule for the listed peripherals."
+    }
+  }
+}

@@ -1,0 +1,110 @@
+{
+  "id": "wiki-164",
+  "sources": {
+    "machine-side-graph-snapshot.json": {
+      "source_graph": "164-wiki-164.json",
+      "source_sha256": "bce52724583b9e8082120ac8acda2227c3fabcb8ab83c9b9117bd257a91f8cc1",
+      "graph": {
+        "profile_id": "wiki-164",
+        "devices": [
+          {
+            "id": "supplement-device-001",
+            "role": "reference"
+          }
+        ],
+        "connectors": [
+          {
+            "id": "supplement-connector-001",
+            "device": "supplement-device-001",
+            "refdes": "TAZ 6 Nutmeg toolhead Molex positions 1\u201316",
+            "form": "16-position Molex toolhead connector; mating view unknown",
+            "scope": "Official Nutmeg Generation extruder assembly. Local TAZ toolhead generation and fitted connector unverified. The separately documented 20-contact controller-box harness is a different revision/housing. This is a reference for the named source revision; installed-machine correspondence is not established.",
+            "contacts": [
+              {
+                "id": "1",
+                "mark": "1",
+                "label": "Red extruder motor conductor; phase unknown"
+              },
+              {
+                "id": "2",
+                "mark": "2",
+                "label": "White extruder motor conductor; phase unknown"
+              },
+              {
+                "id": "3",
+                "mark": "3",
+                "label": "Green extruder motor conductor; phase unknown"
+              },
+              {
+                "id": "4",
+                "mark": "4",
+                "label": "Black extruder motor conductor; phase unknown"
+              },
+              {
+                "id": "5",
+                "mark": "5",
+                "label": "Red heater cartridge conductor; polarity unknown"
+              },
+              {
+                "id": "6",
+                "mark": "6",
+                "label": "Red heater cartridge conductor; polarity unknown"
+              },
+              {
+                "id": "7",
+                "mark": "7",
+                "label": "White dual-fan conductor; polarity unknown"
+              },
+              {
+                "id": "8",
+                "mark": "8",
+                "label": "Blue dual-fan conductor; polarity unknown"
+              },
+              {
+                "id": "9",
+                "mark": "9",
+                "label": "Red heat-sink-fan conductor; polarity unknown"
+              },
+              {
+                "id": "10",
+                "mark": "10",
+                "label": "Black heat-sink-fan conductor; polarity unknown"
+              },
+              {
+                "id": "11",
+                "mark": "11",
+                "label": "Purple switch conductor; switch state unknown"
+              },
+              {
+                "id": "12",
+                "mark": "12",
+                "label": "Purple switch conductor; switch state unknown"
+              },
+              {
+                "id": "13",
+                "mark": "13",
+                "label": "Empty in plugging order"
+              },
+              {
+                "id": "14",
+                "mark": "14",
+                "label": "Red ground wire as source labels it; electrical termination unverified"
+              },
+              {
+                "id": "15",
+                "mark": "15",
+                "label": "Red thermistor conductor; polarity unknown"
+              },
+              {
+                "id": "16",
+                "mark": "16",
+                "label": "Black thermistor conductor; polarity unknown"
+              }
+            ]
+          }
+        ],
+        "wires": []
+      }
+    }
+  }
+}

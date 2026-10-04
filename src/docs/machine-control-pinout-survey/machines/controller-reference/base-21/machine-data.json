@@ -1,0 +1,327 @@
+{
+  "id": "base-21",
+  "sources": {
+    "machine-side-graph-snapshot.json": {
+      "source_graph": "106-base-21.json",
+      "source_sha256": "d33e9926c1cbac8b59ee9a377d4870a98a78147da5a449427d8571a74fa10bc3",
+      "graph": {
+        "profile_id": "base-21",
+        "devices": [
+          {
+            "id": "peripheral-01",
+            "role": "reference"
+          },
+          {
+            "id": "peripheral-02",
+            "role": "reference"
+          },
+          {
+            "id": "peripheral-03",
+            "role": "reference"
+          },
+          {
+            "id": "peripheral-04",
+            "role": "reference"
+          },
+          {
+            "id": "peripheral-05",
+            "role": "reference"
+          },
+          {
+            "id": "peripheral-06",
+            "role": "reference"
+          },
+          {
+            "id": "peripheral-07",
+            "role": "reference"
+          },
+          {
+            "id": "peripheral-08",
+            "role": "reference"
+          },
+          {
+            "id": "group-device-001",
+            "role": "peripheral"
+          },
+          {
+            "id": "group-device-002",
+            "role": "peripheral"
+          },
+          {
+            "id": "group-device-003",
+            "role": "peripheral"
+          }
+        ],
+        "connectors": [
+          {
+            "id": "machine-01",
+            "device": "peripheral-01",
+            "refdes": "Ruida V1.5 \u00b7 CN1",
+            "form": "source-described connector",
+            "scope": "RDC6445G/S V1.5 selected manual contacts; G-only V1.2 remains a separate source; Source connector revision only; no installed harness, mating view, electrical compatibility or V2 route is proven; G-only V1.2 is a separate revision Original/reference connector availability unresolved; do not infer retained installation.",
+            "contacts": [
+              {
+                "id": "1",
+                "mark": "1",
+                "label": "GND"
+              },
+              {
+                "id": "2",
+                "mark": "2",
+                "label": "Out2 system error"
+              },
+              {
+                "id": "3",
+                "mark": "3",
+                "label": "Out1 standby"
+              },
+              {
+                "id": "4",
+                "mark": "4",
+                "label": "Status"
+              },
+              {
+                "id": "5",
+                "mark": "5",
+                "label": "Wind blower"
+              },
+              {
+                "id": "6",
+                "mark": "6",
+                "label": "+24 V"
+              }
+            ]
+          },
+          {
+            "id": "machine-02",
+            "device": "peripheral-02",
+            "refdes": "Ruida V1.5 \u00b7 CN2",
+            "form": "source-described connector",
+            "scope": "RDC6445G/S V1.5 selected manual contacts; G-only V1.2 remains a separate source; Source connector revision only; no installed harness, mating view, electrical compatibility or V2 route is proven; G-only V1.2 is a separate revision Original/reference connector availability unresolved; do not infer retained installation.",
+            "contacts": [
+              {
+                "id": "1",
+                "mark": "1",
+                "label": "GND"
+              },
+              {
+                "id": "2",
+                "mark": "2",
+                "label": "FootSW"
+              },
+              {
+                "id": "3",
+                "mark": "3",
+                "label": "DrProc door protection"
+              },
+              {
+                "id": "4",
+                "mark": "4",
+                "label": "Shot manual laser"
+              },
+              {
+                "id": "5",
+                "mark": "5",
+                "label": "IN1"
+              }
+            ]
+          },
+          {
+            "id": "machine-03",
+            "device": "peripheral-03",
+            "refdes": "Ruida V1.5 \u00b7 CN4",
+            "form": "source-described connector",
+            "scope": "RDC6445G/S V1.5 selected manual contacts; G-only V1.2 remains a separate source; Source connector revision only; no installed harness, mating view, electrical compatibility or V2 route is proven; G-only V1.2 is a separate revision Original/reference connector availability unresolved; do not infer retained installation.",
+            "contacts": [
+              {
+                "id": "1",
+                "mark": "1",
+                "label": "GND"
+              },
+              {
+                "id": "2",
+                "mark": "2",
+                "label": "Y\u2212"
+              },
+              {
+                "id": "3",
+                "mark": "3",
+                "label": "Y+"
+              },
+              {
+                "id": "4",
+                "mark": "4",
+                "label": "X\u2212"
+              },
+              {
+                "id": "5",
+                "mark": "5",
+                "label": "X+"
+              },
+              {
+                "id": "6",
+                "mark": "6",
+                "label": "+5 V"
+              }
+            ]
+          },
+          {
+            "id": "machine-04",
+            "device": "peripheral-04",
+            "refdes": "Ruida V1.5 \u00b7 AXIS X",
+            "form": "source-described connector",
+            "scope": "RDC6445G/S V1.5 selected manual contacts; G-only V1.2 remains a separate source; Source connector revision only; no installed harness, mating view, electrical compatibility or V2 route is proven; source describes open-collector common-anode drive interface Original/reference connector availability unresolved; do not infer retained installation.",
+            "contacts": [
+              {
+                "id": "1",
+                "mark": "1",
+                "label": "DIR"
+              },
+              {
+                "id": "2",
+                "mark": "2",
+                "label": "PUL"
+              },
+              {
+                "id": "3",
+                "mark": "3",
+                "label": "+5 V"
+              }
+            ]
+          },
+          {
+            "id": "machine-05",
+            "device": "peripheral-05",
+            "refdes": "Ruida V1.5 \u00b7 AXIS Y",
+            "form": "source-described connector",
+            "scope": "RDC6445G/S V1.5 selected manual contacts; G-only V1.2 remains a separate source; Source connector revision only; no installed harness, mating view, electrical compatibility or V2 route is proven; source describes open-collector common-anode drive interface Original/reference connector availability unresolved; do not infer retained installation.",
+            "contacts": [
+              {
+                "id": "1",
+                "mark": "1",
+                "label": "DIR"
+              },
+              {
+                "id": "2",
+                "mark": "2",
+                "label": "PUL"
+              },
+              {
+                "id": "3",
+                "mark": "3",
+                "label": "+5 V"
+              }
+            ]
+          },
+          {
+            "id": "machine-06",
+            "device": "peripheral-06",
+            "refdes": "Ruida V1.5 \u00b7 AXIS Z",
+            "form": "source-described connector",
+            "scope": "RDC6445G/S V1.5 selected manual contacts; G-only V1.2 remains a separate source; Source connector revision only; no installed harness, mating view, electrical compatibility or V2 route is proven; source describes open-collector common-anode drive interface Original/reference connector availability unresolved; do not infer retained installation.",
+            "contacts": [
+              {
+                "id": "1",
+                "mark": "1",
+                "label": "DIR"
+              },
+              {
+                "id": "2",
+                "mark": "2",
+                "label": "PUL"
+              },
+              {
+                "id": "3",
+                "mark": "3",
+                "label": "+5 V"
+              }
+            ]
+          },
+          {
+            "id": "machine-07",
+            "device": "peripheral-07",
+            "refdes": "Ruida V1.5 \u00b7 AXIS U",
+            "form": "source-described connector",
+            "scope": "RDC6445G/S V1.5 selected manual contacts; G-only V1.2 remains a separate source; Source connector revision only; no installed harness, mating view, electrical compatibility or V2 route is proven; source describes open-collector common-anode drive interface Original/reference connector availability unresolved; do not infer retained installation.",
+            "contacts": [
+              {
+                "id": "1",
+                "mark": "1",
+                "label": "DIR"
+              },
+              {
+                "id": "2",
+                "mark": "2",
+                "label": "PUL"
+              },
+              {
+                "id": "3",
+                "mark": "3",
+                "label": "+5 V"
+              }
+            ]
+          },
+          {
+            "id": "machine-08",
+            "device": "peripheral-08",
+            "refdes": "Ruida V1.5 \u00b7 CN5",
+            "form": "source-described connector",
+            "scope": "RDC6445G/S V1.5 selected manual contacts; G-only V1.2 remains a separate source; Source connector revision only; no installed harness, mating view, electrical compatibility or V2 route is proven; G-only V1.2 is a separate revision Original/reference connector availability unresolved; do not infer retained installation.",
+            "contacts": [
+              {
+                "id": "1",
+                "mark": "1",
+                "label": "GND"
+              },
+              {
+                "id": "2",
+                "mark": "2",
+                "label": "L-ON1"
+              },
+              {
+                "id": "3",
+                "mark": "3",
+                "label": "LPWM1"
+              },
+              {
+                "id": "4",
+                "mark": "4",
+                "label": "WP1 water protection"
+              },
+              {
+                "id": "5",
+                "mark": "5",
+                "label": "L-AN1"
+              }
+            ]
+          },
+          {
+            "id": "machine-group-001",
+            "device": "group-device-001",
+            "refdes": "CN5",
+            "form": "source-described cable / connector group",
+            "scope": "Source names this group, but provides no source-scoped physical contact map. Availability and exact housing are unverified. exact atlas group labels; open until contact mapping is established",
+            "contacts": []
+          },
+          {
+            "id": "machine-group-002",
+            "device": "group-device-002",
+            "refdes": "CN6",
+            "form": "source-described cable / connector group",
+            "scope": "Source names this group, but provides no source-scoped physical contact map. Availability and exact housing are unverified. exact atlas group labels; open until contact mapping is established",
+            "contacts": []
+          },
+          {
+            "id": "machine-group-003",
+            "device": "group-device-003",
+            "refdes": "axis outputs",
+            "form": "source-described cable / connector group",
+            "scope": "Source names this group, but provides no source-scoped physical contact map. Availability and exact housing are unverified. exact atlas group labels; open until contact mapping is established",
+            "contacts": []
+          }
+        ],
+        "wires": []
+      }
+    }
+  }
+}

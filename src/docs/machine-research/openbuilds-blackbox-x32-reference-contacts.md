@@ -1,0 +1,17 @@
+# OpenBuilds BlackBox X32 reference contacts for three router profiles
+
+**Atlas scope:** `mill-openbuilds-1` (MiniMill), `mill-openbuilds-2` (LEAD CNC 1010), and `mill-openbuilds-3` (LEAD CNC 1515). Their atlas records describe a BlackBox X32 control path as an option. The cited X32 documents specify the *controller* contacts below; they do not establish the controller revision or cable terminations on any individual installed machine. `parent-acro-blackbox` is excluded because its source does not establish the X32 generation.
+
+## Directly marked contacts on the X32 reference controller
+
+The OpenBuilds [NEMA23 connection drawing](https://github.com/OpenBuilds/docs-migrated/wiki/media/nema23.png), linked from its [X32 NEMA23 guide](https://github.com/OpenBuilds/docs-migrated/wiki/docs_blackbox-x32_connect-nema23), labels four stepper **outputs** `Z-MOTOR`, `Y2-MOTOR`, `Y-MOTOR`, and `X-MOTOR`. Each four-screw output is marked, left to right in the published drawing, `A+`, `A−`, `B+`, `B−`. These are winding outputs after the X32's integrated drivers, **not STEP/DIR/ENABLE inputs**. The red/blue/green/yellow conductors in the drawing apply only to OpenBuilds motors; the installed motor coils, wire colors, intermediate cable and connector mating view remain unverified for these three profiles. The separate [Y2-reversal guide](https://github.com/OpenBuilds/docs-migrated/wiki/docs_blackbox-x32_connect-nema23-reversed-y2) describes a conditional belt-machine wiring variant; no Y2 reversal is inferred here.
+
+The same controller drawing marks `X-LIMIT`, `Y-LIMIT`, `Z-LIMIT` and `PROBE` as three-screw **inputs**, each `GND`, `V+`, `SIG` left to right in the published drawing. OpenBuilds' [Xtension limit guide](https://github.com/OpenBuilds/docs-migrated/wiki/docs_blackbox-x32_connect-xtension-limit) depicts three-core GND/V+/SIG wiring and explicitly allows Min and Max switches for one axis to be connected in parallel. Neither guide establishes which switches or probe, if any, were actually fitted to the three atlas machines, or their electrical compatibility with SmoothieBox.
+
+The [X32 layout guide](https://github.com/OpenBuilds/docs-migrated/wiki/docs_blackbox-x32_layout) identifies a separate door input, 0–10 V spindle output, and other tool controls, but these are controller facilities, not proof of a door sensor, VFD or tool on any of the three machines. This pass does not assign those peripheral contacts. A BlackBox output must never be presented as a SmoothieBox motor-control input or wired to its STEP/DIR output.
+
+## Atlas transcription contract
+
+The reference cards enumerate **all four contacts of each selected motor output** and **all three contacts of each selected limit/probe input**. `1` through `4` and `1` through `3` are drawing-order indexes from the cited image, not manufacturer-stamped cavity numbers. All 28 positions are marked **REFERENCE ONLY / OPEN**: 16 motor-output screws plus 12 input screws. No SmoothieBox-to-X32 or SmoothieBox-to-machine conductor is established. The original graph's group cards remain where they describe still-unresolved fitted machine peripherals.
+
+The image captures used for transcription were fetched on 2026-09-26: `nema23.png` SHA-256 `2ee642b5756040b9edb9d2e57f78bd8f8b4cab6fd375172874b29e30f94091a1`; `xtension_limits_wiring.png` SHA-256 `d71c808bb13d5207baa33e17118eac63832c1ace08611f0b45d7edaa8b7d71c2`. These bytes are evidence for the *reference controller* only, not the exact fitted machine build.

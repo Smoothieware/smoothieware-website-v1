@@ -1,0 +1,29 @@
+{
+  "id": "mill-g3",
+  "sources": {
+    "machine-side-graph-snapshot.json": {
+      "source_graph": "042-mill-g3.json",
+      "source_sha256": "a2769293d4ac0cf641b622d3d015f98fc6ad381b14d79336da2a89c73bfe95e2",
+      "graph": {
+        "profile_id": "mill-g3",
+        "devices": [
+          {
+            "id": "group-device-001",
+            "role": "peripheral"
+          }
+        ],
+        "connectors": [
+          {
+            "id": "machine-group-001",
+            "device": "group-device-001",
+            "refdes": "laser header 12 V/GND/PWM",
+            "form": "source-described cable / connector group",
+            "scope": "Source names this group, but provides no source-scoped physical contact map. Availability and exact housing are unverified. exact atlas group labels; open until contact mapping is established",
+            "contacts": []
+          }
+        ],
+        "wires": []
+      }
+    }
+  }
+}

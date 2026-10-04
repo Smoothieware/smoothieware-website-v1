@@ -1,0 +1,52 @@
+{
+  "id": "forum-openbuilds-kenneth-witthuhn-xklbr-1s-cnc",
+  "sources": {
+    "forum-peripheral-evidence.json": {
+      "id": "forum-openbuilds-kenneth-witthuhn-xklbr-1s-cnc",
+      "dossier": "src/docs/machine-research/openbuilds-kenneth-witthuhn-xklbr-1s-cnc.md",
+      "reported_fitted_or_used": [
+        {
+          "name": "DeWalt D26200 router",
+          "contacts": [],
+          "source_line_number": 23,
+          "source_line": "| Router | DeWalt D26200, 240 V, mounted in a 71 mm holder |",
+          "evidence": "DeWalt D26200, 240 V, mounted in a 71 mm holder.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        },
+        {
+          "name": "Kill switches",
+          "contacts": [],
+          "source_line_number": 29,
+          "source_line": "| Noise / safety features | Polyurethane feet; kill switches described as turning off the router and pausing G-code |",
+          "evidence": "Polyurethane feet; kill switches described as turning off the router and pausing G-code.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        }
+      ],
+      "listed_for_build_unverified": [
+        {
+          "name": "24 V 300 W supply",
+          "contacts": [],
+          "source_line_number": 26,
+          "source_line": "| Power supply | Transformer listed as 300 W, 12.5 A at 24 V |",
+          "evidence": "Transformer listed as 300 W, 12.5 A at 24 V.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        }
+      ],
+      "historical_reference": [],
+      "planned_only": [],
+      "open_function_group": [],
+      "exclusions": [
+        {
+          "name": "NEMA 23 3 A axis motors",
+          "contacts": [],
+          "source_line_number": 22,
+          "source_line": "| Motors | NEMA 23, listed as 3 A and 270 oz-in; hand wheels on X, Y and Z for adjustment/calibration |",
+          "evidence": "NEMA 23, listed as 3 A and 270 oz-in; hand wheels on X, Y and Z for adjustment/calibration",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route",
+          "reason": "Excluded: no separate externally addressable interface, existing control hardware, absent tooling, or inadequate positive device evidence in this dossier."
+        }
+      ],
+      "source_gap": "Dossier does not establish an as-built SmoothieBox route or a complete physical contact schedule for the listed peripherals."
+    }
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "id": "forum-linuxcnc-project-pegasus-benchman-xt",
+  "sources": {
+    "forum-peripheral-evidence.json": {
+      "id": "forum-linuxcnc-project-pegasus-benchman-xt",
+      "dossier": "src/docs/machine-research/linuxcnc-project-pegasus-benchman-xt.md",
+      "reported_fitted_or_used": [],
+      "listed_for_build_unverified": [],
+      "historical_reference": [
+        {
+          "name": "Benchman XT micro-EBO relay and supply connector reference",
+          "contacts": [],
+          "source_line_number": 9,
+          "source_line": "The forum-hosted [nine-page Benchman XT \u00b5EBO schematic (drawing 81-100-0052, Rev A)](https://forum.linuxcnc.org/media/kunena/attachments/23446/BenchmanElectricalSchematic.pdf) was attached by project-pegasus in the retrofit discussion. Its title blocks identify pages 1\u20138 as relay, power supply, servo amplifier interface, encoder/axis, spindle/interface, I/O, and header-configuration sheets; page 9 is a NextMove J1 pinout and J35 connector schedule. The drawing's exact machine, serial-number, and options applicability is not established; treat it as the forum-posted Rev A \u00b5EBO board drawing rather than a universal Benchman wiring guide.",
+          "evidence": "Its title blocks identify pages 1\u20138 as relay, power supply, servo amplifier interface, encoder/axis, spindle/interface, I/O, and header-configuration sheets; page 9 is a NextMove J1 pinout and J35 connector schedule. The drawing's exact machine, serial-number, and options applicability is not established; treat it as the forum-posted Rev A \u00b5EBO board drawing rather than a universal Benchman wiring guide.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        },
+        {
+          "name": "Machine drive-power relay",
+          "contacts": [
+            {
+              "number": "J1-98",
+              "label": "CR_DRV_PWR relay common",
+              "source_line_number": 13,
+              "source_line": "x-Intelitek Engineer explains the power-enable circuit against the attached drawing. J1-98 is labelled `CR_DRV_PWR` and is the NextMove relay common; J1-100 is the relay normally-open contact and is labelled `ESTOP`. The engineer says the PCB produces 24 V, routes it through the E-stop switch, and the NextMove relay switches it; the switched signal operates K4, which enables the servo-supply transformer path shown on schematic page 1. The engineer identifies J2-5/J2-6 as 240 VAC input and describes the J3 transformer connection."
+            },
+            {
+              "number": "J1-100",
+              "label": "ESTOP relay normally-open contact",
+              "source_line_number": 13,
+              "source_line": "x-Intelitek Engineer explains the power-enable circuit against the attached drawing. J1-98 is labelled `CR_DRV_PWR` and is the NextMove relay common; J1-100 is the relay normally-open contact and is labelled `ESTOP`. The engineer says the PCB produces 24 V, routes it through the E-stop switch, and the NextMove relay switches it; the switched signal operates K4, which enables the servo-supply transformer path shown on schematic page 1. The engineer identifies J2-5/J2-6 as 240 VAC input and describes the J3 transformer connection."
+            },
+            {
+              "number": "J2-5",
+              "label": "240 VAC input",
+              "source_line_number": 13,
+              "source_line": "x-Intelitek Engineer explains the power-enable circuit against the attached drawing. J1-98 is labelled `CR_DRV_PWR` and is the NextMove relay common; J1-100 is the relay normally-open contact and is labelled `ESTOP`. The engineer says the PCB produces 24 V, routes it through the E-stop switch, and the NextMove relay switches it; the switched signal operates K4, which enables the servo-supply transformer path shown on schematic page 1. The engineer identifies J2-5/J2-6 as 240 VAC input and describes the J3 transformer connection."
+            },
+            {
+              "number": "J2-6",
+              "label": "240 VAC input",
+              "source_line_number": 13,
+              "source_line": "x-Intelitek Engineer explains the power-enable circuit against the attached drawing. J1-98 is labelled `CR_DRV_PWR` and is the NextMove relay common; J1-100 is the relay normally-open contact and is labelled `ESTOP`. The engineer says the PCB produces 24 V, routes it through the E-stop switch, and the NextMove relay switches it; the switched signal operates K4, which enables the servo-supply transformer path shown on schematic page 1. The engineer identifies J2-5/J2-6 as 240 VAC input and describes the J3 transformer connection."
+            }
+          ],
+          "source_line_number": 13,
+          "source_line": "x-Intelitek Engineer explains the power-enable circuit against the attached drawing. J1-98 is labelled `CR_DRV_PWR` and is the NextMove relay common; J1-100 is the relay normally-open contact and is labelled `ESTOP`. The engineer says the PCB produces 24 V, routes it through the E-stop switch, and the NextMove relay switches it; the switched signal operates K4, which enables the servo-supply transformer path shown on schematic page 1. The engineer identifies J2-5/J2-6 as 240 VAC input and describes the J3 transformer connection.",
+          "evidence": "J1-98 is labelled `CR_DRV_PWR` and is the NextMove relay common; J1-100 is the relay normally-open contact and is labelled `ESTOP`. The engineer says the PCB produces 24 V, routes it through the E-stop switch, and the NextMove relay switches it; the switched signal operates K4, which enables the servo-supply transformer path shown on schematic page 1.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        }
+      ],
+      "planned_only": [],
+      "open_function_group": [],
+      "exclusions": [],
+      "source_gap": "Dossier does not establish an as-built SmoothieBox route or a complete physical contact schedule for the listed peripherals."
+    }
+  }
+}

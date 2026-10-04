@@ -1,0 +1,32 @@
+{
+  "id": "forum-v1e-astrolump-lowrider3-prop-router",
+  "sources": {
+    "forum-peripheral-evidence.json": {
+      "id": "forum-v1e-astrolump-lowrider3-prop-router",
+      "dossier": "src/docs/machine-research/v1e-astrolump-lowrider3-prop-router.md",
+      "reported_fitted_or_used": [],
+      "listed_for_build_unverified": [],
+      "historical_reference": [],
+      "planned_only": [
+        {
+          "name": "20 W laser head considered only",
+          "contacts": [],
+          "source_line_number": 20,
+          "source_line": "| Laser | The owner was considering a 20 W or larger laser head for the LR3 | The thread records this as a future plan; it does not establish that a laser was installed on this machine. |",
+          "evidence": "The owner was considering a 20 W or larger laser head for the LR3.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        }
+      ],
+      "open_function_group": [],
+      "exclusions": [
+        {
+          "name": "Jackpot board is existing controller",
+          "reason": "Existing or proposed controller belongs to the replaced control system, not the machine periphery.",
+          "source_line_number": 9,
+          "source_line": "The owner reports a 4 \u00d7 5 ft live area (approximately 1,219 \u00d7 1,524 mm) and a V1 Jackpot controller. They said the first two cuts covered the machine's cost because a current prop project otherwise would have required outsourcing CNC work. The owner makes sets and props, and described the machine as taking on much of the CNC work they had previously paid shops to do. This is an owner-reported business outcome, not a measured machine capability or accuracy test."
+        }
+      ],
+      "source_gap": "Dossier does not establish an as-built SmoothieBox route or a complete physical contact schedule for the listed peripherals."
+    }
+  }
+}

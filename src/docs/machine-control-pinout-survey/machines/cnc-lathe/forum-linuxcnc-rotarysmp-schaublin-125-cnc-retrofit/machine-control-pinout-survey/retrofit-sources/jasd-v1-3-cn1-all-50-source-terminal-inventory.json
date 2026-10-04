@@ -1,0 +1,310 @@
+{
+  "schema": "source-terminal-inventory-no-connector-face",
+  "source": "JMC JASD v1.3 manufacturer-authored manual mirror, printed pp.20–21, CN1 table",
+  "source_url": "https://www.cncwiki.org/images/a/ab/JMC_JASD_Series_Servo_Drive_User_Manual_%28v1.3%29.pdf",
+  "pdf_sha256": "3920628412c544570449a05296fe7b6319ee371850f905fcfa76cbaf0bc26a84",
+  "contact_count": 50,
+  "interpretation": "Exact manufacturer table terminal numbers and descriptive functions only. No SCSI50 mating-face orientation, cavity geometry, fitted drive revision, actual harness population or cabinet use is inferred. 'not_selected_in_reference' does not mean absent or disconnected on the actual machine.",
+  "contacts": [
+    {
+      "pin": 1,
+      "label": "DO4+",
+      "description": "programmable digital output 4 positive",
+      "proposed_disposition": "not_selected_in_reference_as_built_unknown"
+    },
+    {
+      "pin": 2,
+      "label": "DO3-",
+      "description": "programmable digital output 3 negative",
+      "proposed_disposition": "not_selected_in_reference_as_built_unknown"
+    },
+    {
+      "pin": 3,
+      "label": "DO3+",
+      "description": "programmable digital output 3 positive",
+      "proposed_disposition": "not_selected_in_reference_as_built_unknown"
+    },
+    {
+      "pin": 4,
+      "label": "DO2-",
+      "description": "programmable digital output 2 negative",
+      "proposed_disposition": "not_selected_in_reference_as_built_unknown"
+    },
+    {
+      "pin": 5,
+      "label": "DO2+",
+      "description": "programmable digital output 2 positive",
+      "proposed_disposition": "not_selected_in_reference_as_built_unknown"
+    },
+    {
+      "pin": 6,
+      "label": "DO1-",
+      "description": "programmable digital output 1 negative",
+      "proposed_disposition": "not_selected_in_reference_as_built_unknown"
+    },
+    {
+      "pin": 7,
+      "label": "DO1+",
+      "description": "programmable digital output 1 positive",
+      "proposed_disposition": "not_selected_in_reference_as_built_unknown"
+    },
+    {
+      "pin": 8,
+      "label": "DI4-",
+      "description": "programmable digital input 4 negative",
+      "proposed_disposition": "not_selected_in_reference_as_built_unknown"
+    },
+    {
+      "pin": 9,
+      "label": "DI1-",
+      "description": "programmable digital input 1 negative; Servo ON only if P06-01=1",
+      "proposed_disposition": "used_only_if_JASD_v1_3_conditional_branch_selected"
+    },
+    {
+      "pin": 10,
+      "label": "DI2-",
+      "description": "programmable digital input 2 negative",
+      "proposed_disposition": "not_selected_in_reference_as_built_unknown"
+    },
+    {
+      "pin": 11,
+      "label": "COM+",
+      "description": "24 V digital-input common positive",
+      "proposed_disposition": "used_only_if_JASD_v1_3_conditional_branch_selected"
+    },
+    {
+      "pin": 12,
+      "label": "GNDA",
+      "description": "analog/emulation ground",
+      "proposed_disposition": "not_selected_in_reference_as_built_unknown"
+    },
+    {
+      "pin": 13,
+      "label": "GNDA",
+      "description": "analog/emulation ground",
+      "proposed_disposition": "not_selected_in_reference_as_built_unknown"
+    },
+    {
+      "pin": 14,
+      "label": "NC",
+      "description": "manufacturer no connection",
+      "proposed_disposition": "manufacturer_NC"
+    },
+    {
+      "pin": 15,
+      "label": "MON2",
+      "description": "analog monitor output 2; manual says not currently supported",
+      "proposed_disposition": "not_selected_in_reference_as_built_unknown"
+    },
+    {
+      "pin": 16,
+      "label": "MON1",
+      "description": "analog monitor output 1; manual says not currently supported",
+      "proposed_disposition": "not_selected_in_reference_as_built_unknown"
+    },
+    {
+      "pin": 17,
+      "label": "+24V",
+      "description": "+24 V auxiliary output, maximum 150 mA; not used as proposed supply",
+      "proposed_disposition": "not_selected_in_reference_as_built_unknown"
+    },
+    {
+      "pin": 18,
+      "label": "T_REF",
+      "description": "torque analog command positive",
+      "proposed_disposition": "not_selected_in_reference_as_built_unknown"
+    },
+    {
+      "pin": 19,
+      "label": "GNDA",
+      "description": "analog/emulation ground",
+      "proposed_disposition": "not_selected_in_reference_as_built_unknown"
+    },
+    {
+      "pin": 20,
+      "label": "+12V",
+      "description": "+12 V analog-command auxiliary output, maximum 50 mA",
+      "proposed_disposition": "not_selected_in_reference_as_built_unknown"
+    },
+    {
+      "pin": 21,
+      "label": "OA+",
+      "description": "encoder A differential positive output",
+      "proposed_disposition": "not_selected_in_reference_as_built_unknown"
+    },
+    {
+      "pin": 22,
+      "label": "OA-",
+      "description": "encoder A differential negative output",
+      "proposed_disposition": "not_selected_in_reference_as_built_unknown"
+    },
+    {
+      "pin": 23,
+      "label": "OB-",
+      "description": "encoder B differential negative output",
+      "proposed_disposition": "not_selected_in_reference_as_built_unknown"
+    },
+    {
+      "pin": 24,
+      "label": "OZ-",
+      "description": "encoder Z differential negative output",
+      "proposed_disposition": "not_selected_in_reference_as_built_unknown"
+    },
+    {
+      "pin": 25,
+      "label": "OB+",
+      "description": "encoder B differential positive output",
+      "proposed_disposition": "not_selected_in_reference_as_built_unknown"
+    },
+    {
+      "pin": 26,
+      "label": "DO4-",
+      "description": "programmable digital output 4 negative",
+      "proposed_disposition": "not_selected_in_reference_as_built_unknown"
+    },
+    {
+      "pin": 27,
+      "label": "DO5-",
+      "description": "programmable digital output 5 negative",
+      "proposed_disposition": "not_selected_in_reference_as_built_unknown"
+    },
+    {
+      "pin": 28,
+      "label": "DO5+",
+      "description": "programmable digital output 5 positive",
+      "proposed_disposition": "not_selected_in_reference_as_built_unknown"
+    },
+    {
+      "pin": 29,
+      "label": "HPUL-",
+      "description": "high-speed pulse negative input",
+      "proposed_disposition": "not_selected_in_reference_as_built_unknown"
+    },
+    {
+      "pin": 30,
+      "label": "DI8-",
+      "description": "programmable digital input 8 negative",
+      "proposed_disposition": "not_selected_in_reference_as_built_unknown"
+    },
+    {
+      "pin": 31,
+      "label": "DI7-",
+      "description": "programmable digital input 7 negative",
+      "proposed_disposition": "not_selected_in_reference_as_built_unknown"
+    },
+    {
+      "pin": 32,
+      "label": "DI6-",
+      "description": "programmable digital input 6 negative",
+      "proposed_disposition": "not_selected_in_reference_as_built_unknown"
+    },
+    {
+      "pin": 33,
+      "label": "DI5-",
+      "description": "programmable digital input 5 negative",
+      "proposed_disposition": "not_selected_in_reference_as_built_unknown"
+    },
+    {
+      "pin": 34,
+      "label": "DI3-",
+      "description": "programmable digital input 3 negative",
+      "proposed_disposition": "not_selected_in_reference_as_built_unknown"
+    },
+    {
+      "pin": 35,
+      "label": "24V SIGN+",
+      "description": "24 V direction positive alternative; not used with 5 V SIGN+",
+      "proposed_disposition": "unused_alternative_24V_positive_input"
+    },
+    {
+      "pin": 36,
+      "label": "SIGN+",
+      "description": "5 V direction positive input",
+      "proposed_disposition": "used_only_if_JASD_v1_3_conditional_branch_selected"
+    },
+    {
+      "pin": 37,
+      "label": "SIGN-",
+      "description": "direction negative input",
+      "proposed_disposition": "used_only_if_JASD_v1_3_conditional_branch_selected"
+    },
+    {
+      "pin": 38,
+      "label": "HPUL+",
+      "description": "high-speed pulse positive input",
+      "proposed_disposition": "not_selected_in_reference_as_built_unknown"
+    },
+    {
+      "pin": 39,
+      "label": "24V PULS+",
+      "description": "24 V pulse positive alternative; not used with 5 V PULS+",
+      "proposed_disposition": "unused_alternative_24V_positive_input"
+    },
+    {
+      "pin": 40,
+      "label": "HSIGN-",
+      "description": "high-speed direction negative input",
+      "proposed_disposition": "not_selected_in_reference_as_built_unknown"
+    },
+    {
+      "pin": 41,
+      "label": "PULS-",
+      "description": "pulse negative input",
+      "proposed_disposition": "used_only_if_JASD_v1_3_conditional_branch_selected"
+    },
+    {
+      "pin": 42,
+      "label": "V_REF",
+      "description": "velocity analog command positive",
+      "proposed_disposition": "not_selected_in_reference_as_built_unknown"
+    },
+    {
+      "pin": 43,
+      "label": "PULS+",
+      "description": "5 V pulse positive input",
+      "proposed_disposition": "used_only_if_JASD_v1_3_conditional_branch_selected"
+    },
+    {
+      "pin": 44,
+      "label": "GND",
+      "description": "digital ground; not paired with differential pulse negatives",
+      "proposed_disposition": "not_selected_in_reference_as_built_unknown"
+    },
+    {
+      "pin": 45,
+      "label": "COM",
+      "description": "+24 V auxiliary-output ground; not pulse negative",
+      "proposed_disposition": "not_selected_in_reference_as_built_unknown"
+    },
+    {
+      "pin": 46,
+      "label": "HSIGN+",
+      "description": "high-speed direction positive input",
+      "proposed_disposition": "not_selected_in_reference_as_built_unknown"
+    },
+    {
+      "pin": 47,
+      "label": "COM",
+      "description": "+24 V auxiliary-output ground; not pulse negative",
+      "proposed_disposition": "not_selected_in_reference_as_built_unknown"
+    },
+    {
+      "pin": 48,
+      "label": "OCZ",
+      "description": "encoder Z open-collector output",
+      "proposed_disposition": "not_selected_in_reference_as_built_unknown"
+    },
+    {
+      "pin": 49,
+      "label": "COM",
+      "description": "+24 V auxiliary-output ground; not pulse negative",
+      "proposed_disposition": "not_selected_in_reference_as_built_unknown"
+    },
+    {
+      "pin": 50,
+      "label": "OZ+",
+      "description": "encoder Z differential positive output",
+      "proposed_disposition": "not_selected_in_reference_as_built_unknown"
+    }
+  ]
+}

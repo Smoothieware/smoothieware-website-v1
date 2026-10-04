@@ -1,0 +1,42 @@
+{
+  "id": "forum-masso-guvna-diy-atc-router",
+  "sources": {
+    "forum-peripheral-evidence.json": {
+      "id": "forum-masso-guvna-diy-atc-router",
+      "dossier": "src/docs/machine-research/masso-guvna-diy-atc-router.md",
+      "reported_fitted_or_used": [
+        {
+          "name": "Jianken 1.5 kW spindle",
+          "contacts": [],
+          "source_line_number": 16,
+          "source_line": "| Spindle | Jianken 1.5 kW spindle. | Spindle variant, VFD model, spindle speed range, and VFD command wiring are not stated. |",
+          "evidence": "Jianken 1.5 kW spindle.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        }
+      ],
+      "listed_for_build_unverified": [],
+      "historical_reference": [],
+      "planned_only": [],
+      "open_function_group": [
+        {
+          "name": "Stepper Online closed-loop motors and matching drives",
+          "contacts": [],
+          "source_line_number": 15,
+          "source_line": "| Motors | Stepper Online closed-loop stepper motors. | Motor/drive models, supply voltage, current, encoder feedback wiring, and axis assignments are not stated. |",
+          "evidence": "Stepper Online closed-loop stepper motors.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        },
+        {
+          "name": "ATC actuator interface unspecified",
+          "contacts": [],
+          "source_line_number": 1,
+          "source_line": "# guvna\u2019s DIY MASSO router with ATC and sliding tool rack",
+          "evidence": "# guvna\u2019s DIY MASSO router with ATC and sliding tool rack.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        }
+      ],
+      "exclusions": [],
+      "source_gap": "Dossier does not establish an as-built SmoothieBox route or a complete physical contact schedule for the listed peripherals."
+    }
+  }
+}

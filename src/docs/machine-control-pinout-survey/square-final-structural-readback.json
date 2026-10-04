@@ -1,0 +1,117 @@
+{
+  "type": "verification",
+  "profiles": [
+    {
+      "id": "wiki-205",
+      "connections": 34,
+      "main": 30,
+      "detail": 4,
+      "page": "/home/arthur/dev/smoothieware/smoothieware-website-v1/src/docs/machine-control-pinout-survey/machines/diode-laser/wiki-205.html",
+      "svg_sha256": "0c9068aaf671a3fd588fb1ee4ace87fb6ce88ec3caf35f267aa899ceffe3d3b2",
+      "errors": []
+    },
+    {
+      "id": "laserplot-02",
+      "connections": 26,
+      "main": 21,
+      "detail": 5,
+      "page": "/home/arthur/dev/smoothieware/smoothieware-website-v1/src/docs/machine-control-pinout-survey/machines/co2-laser/laserplot-02.html",
+      "svg_sha256": "773ecd08ed4eb4128a6fe9c052a5601ccf190b3f4bd59cea5d1c11bb6a7f33bd",
+      "errors": []
+    },
+    {
+      "id": "base-11",
+      "connections": 55,
+      "main": 47,
+      "detail": 8,
+      "page": "/home/arthur/dev/smoothieware/smoothieware-website-v1/src/docs/machine-control-pinout-survey/machines/cnc-lathe/base-11.html",
+      "svg_sha256": "752eedc54779de9ac38088a0118716e70a8567be4a212691c026d7be3a4cd39d",
+      "errors": []
+    },
+    {
+      "id": "wiki-132",
+      "connections": 56,
+      "main": 41,
+      "detail": 15,
+      "page": "/home/arthur/dev/smoothieware/smoothieware-website-v1/src/docs/machine-control-pinout-survey/machines/3d-printer/wiki-132.html",
+      "svg_sha256": "e848781ea90d6900ec48618afa8b7564cd7649833fde8626881ec9ceb80b7e18",
+      "errors": []
+    },
+    {
+      "id": "wiki-134",
+      "connections": 160,
+      "main": 85,
+      "detail": 75,
+      "page": "/home/arthur/dev/smoothieware/smoothieware-website-v1/src/docs/machine-control-pinout-survey/machines/cnc-mill/wiki-134.html",
+      "svg_sha256": "1f34ca6f4c60cd1506cc6a33d542fe831bcf688b78dedbc7e4b113ddd44e3b26",
+      "errors": []
+    },
+    {
+      "id": "wiki-135",
+      "connections": 117,
+      "main": 56,
+      "detail": 61,
+      "page": "/home/arthur/dev/smoothieware/smoothieware-website-v1/src/docs/machine-control-pinout-survey/machines/other-shop-equipment/wiki-135.html",
+      "svg_sha256": "2458a4a9dcb0c62d8c76d13b33c4c47b95f1ee71deedf644d7bb5618b8b4e875",
+      "errors": []
+    },
+    {
+      "id": "mill-g2",
+      "connections": 57,
+      "main": 49,
+      "detail": 8,
+      "page": "/home/arthur/dev/smoothieware/smoothieware-website-v1/src/docs/machine-control-pinout-survey/machines/cnc-router/mill-g2.html",
+      "svg_sha256": "79631310f134bc1b61bd6510aa450e4a2f29090cb761f8c860be3e300d7043f1",
+      "errors": []
+    },
+    {
+      "id": "mill-avid-ex-3",
+      "connections": 213,
+      "main": 109,
+      "detail": 104,
+      "page": "/home/arthur/dev/smoothieware/smoothieware-website-v1/src/docs/machine-control-pinout-survey/machines/cnc-router/mill-avid-ex-3.html",
+      "svg_sha256": "174a802f3d31f24638f2976d12f22dc1b52711c800604bdc09816d7dcaacec9a",
+      "errors": []
+    },
+    {
+      "id": "wiki-206",
+      "connections": 39,
+      "main": 36,
+      "detail": 3,
+      "page": "/home/arthur/dev/smoothieware/smoothieware-website-v1/src/docs/machine-control-pinout-survey/machines/cnc-router/wiki-206.html",
+      "svg_sha256": "c60a70ff856d8311892df734c57f86edf0c5ce06a615131f17def5279a2d7d9a",
+      "errors": []
+    },
+    {
+      "id": "wiki-222",
+      "connections": 66,
+      "main": 61,
+      "detail": 5,
+      "page": "/home/arthur/dev/smoothieware/smoothieware-website-v1/src/docs/machine-control-pinout-survey/machines/3d-printer/wiki-222.html",
+      "svg_sha256": "3223c244551154b6184f98a75000d4f7a0c2f7ae71725ec05c3c22db54bb6c45",
+      "errors": []
+    },
+    {
+      "id": "forum-linuxcnc-optimill-mh50v-unlogic",
+      "connections": 161,
+      "main": 90,
+      "detail": 71,
+      "page": "/home/arthur/dev/smoothieware/smoothieware-website-v1/src/docs/machine-control-pinout-survey/machines/cnc-mill/forum-linuxcnc-optimill-mh50v-unlogic.html",
+      "svg_sha256": "d9d1ad2313cb97ce859ab0e53549dc54f9c28fea7387ae159feaddda720da037",
+      "errors": []
+    },
+    {
+      "id": "forum-linuxcnc-rotarysmp-schaublin-125-cnc-retrofit",
+      "connections": 32,
+      "main": 19,
+      "detail": 13,
+      "page": "/home/arthur/dev/smoothieware/smoothieware-website-v1/src/docs/machine-control-pinout-survey/machines/cnc-lathe/forum-linuxcnc-rotarysmp-schaublin-125-cnc-retrofit.html",
+      "svg_sha256": "3ddee8be3a253ab7a4aaf5bfab13960cddaafa39aacdd3e2b4d299cd75ec0d9d",
+      "errors": []
+    }
+  ],
+  "total_connections": 1016,
+  "main": 644,
+  "detail": 372,
+  "errors": []
+}

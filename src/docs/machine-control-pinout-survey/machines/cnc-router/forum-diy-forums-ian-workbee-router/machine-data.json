@@ -1,0 +1,58 @@
+{
+  "id": "forum-diy-forums-ian-workbee-router",
+  "sources": {
+    "forum-peripheral-evidence.json": {
+      "id": "forum-diy-forums-ian-workbee-router",
+      "dossier": "src/docs/machine-research/diy-forums-ian-workbee-router.md",
+      "reported_fitted_or_used": [
+        {
+          "name": "Huanyang VFD",
+          "contacts": [],
+          "source_line_number": 15,
+          "source_line": "The machine was built around a 1.5 kW spindle and a Huanyang VFD. Ian says the spindle's four-pin connector did not earth the spindle, so he opened it and corrected that issue. This owner-reported intervention is specific to the spindle he had; it should not be generalized to all spindles or treated as a wiring procedure.",
+          "evidence": "The machine was built around a 1.5 kW spindle and a Huanyang VFD. Ian says the spindle's four-pin connector did not earth the spindle, so he opened it and corrected that issue.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        },
+        {
+          "name": "1.5 kW spindle",
+          "contacts": [],
+          "source_line_number": 15,
+          "source_line": "The machine was built around a 1.5 kW spindle and a Huanyang VFD. Ian says the spindle's four-pin connector did not earth the spindle, so he opened it and corrected that issue. This owner-reported intervention is specific to the spindle he had; it should not be generalized to all spindles or treated as a wiring procedure.",
+          "evidence": "The machine was built around a 1.5 kW spindle and a Huanyang VFD. Ian says the spindle's four-pin connector did not earth the spindle, so he opened it and corrected that issue.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        }
+      ],
+      "listed_for_build_unverified": [],
+      "historical_reference": [],
+      "planned_only": [],
+      "open_function_group": [
+        {
+          "name": "Stepper drivers and motors unidentified",
+          "contacts": [],
+          "source_line_number": 17,
+          "source_line": "Ian reports an electronics bay containing the VFD, Arduino controllers, Raspberry Pi, power supplies, and stepper drivers. The exterior has motor, probe, and endstop connection points, plus status indicators. The front panel includes start/hold/stop buttons, emergency stop, spindle-enable switch, touchscreen for job progress and control, and jogging joysticks. Two filter housings and exhaust fans are described as an airflow path intended to keep dust out; the owner was still evaluating the design.",
+          "evidence": "Ian reports an electronics bay containing the VFD, Arduino controllers, Raspberry Pi, power supplies, and stepper drivers. The exterior has motor, probe, and endstop connection points, plus status indicators.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        },
+        {
+          "name": "Exterior motor/probe/endstop connectors",
+          "contacts": [],
+          "source_line_number": 17,
+          "source_line": "Ian reports an electronics bay containing the VFD, Arduino controllers, Raspberry Pi, power supplies, and stepper drivers. The exterior has motor, probe, and endstop connection points, plus status indicators. The front panel includes start/hold/stop buttons, emergency stop, spindle-enable switch, touchscreen for job progress and control, and jogging joysticks. Two filter housings and exhaust fans are described as an airflow path intended to keep dust out; the owner was still evaluating the design.",
+          "evidence": "The exterior has motor, probe, and endstop connection points, plus status indicators. The front panel includes start/hold/stop buttons, emergency stop, spindle-enable switch, touchscreen for job progress and control, and jogging joysticks.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        },
+        {
+          "name": "Machine probe and endstops",
+          "contacts": [],
+          "source_line_number": 17,
+          "source_line": "Ian reports an electronics bay containing the VFD, Arduino controllers, Raspberry Pi, power supplies, and stepper drivers. The exterior has motor, probe, and endstop connection points, plus status indicators. The front panel includes start/hold/stop buttons, emergency stop, spindle-enable switch, touchscreen for job progress and control, and jogging joysticks. Two filter housings and exhaust fans are described as an airflow path intended to keep dust out; the owner was still evaluating the design.",
+          "evidence": "Ian reports an electronics bay containing the VFD, Arduino controllers, Raspberry Pi, power supplies, and stepper drivers. The exterior has motor, probe, and endstop connection points, plus status indicators.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        }
+      ],
+      "exclusions": [],
+      "source_gap": "Dossier does not establish an as-built SmoothieBox route or a complete physical contact schedule for the listed peripherals."
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "id": "forum-ukworkshop-fecn-drawer-slide-router",
+  "sources": {
+    "forum-peripheral-evidence.json": {
+      "id": "forum-ukworkshop-fecn-drawer-slide-router",
+      "dossier": "src/docs/machine-research/ukworkshop-fecn-drawer-slide-router.md",
+      "reported_fitted_or_used": [],
+      "listed_for_build_unverified": [],
+      "historical_reference": [
+        {
+          "name": "Initial Proxxon rotary tool",
+          "source_line_number": 13,
+          "source_line": "Fecn initially used a Proxxon tool as the spindle. The thread does not establish whether it remained installed for later work, nor does it give a spindle-speed range, collet, tool model, or electrical interface.",
+          "evidence": "Fecn initially used a Proxxon tool as the spindle. The thread does not establish whether it remained installed for later work, nor does it give a spindle-speed range, collet, tool model, or electrical interface.",
+          "contacts": [],
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        }
+      ],
+      "planned_only": [],
+      "open_function_group": [
+        {
+          "name": "Axis steppers and drivers unreported",
+          "contacts": [],
+          "source_line_number": 9,
+          "source_line": "Fecn describes making a CNC router from MDF and repurposed heavy-duty server-rack slides. The build used threaded rod identified in the forum as M8 \u00d7 1.5 and bearings. The builder says he used three drawer slides per axis orientation to reduce play. The posts describe stepper motors and drivers but do not identify their models, the exact slide model, full travel, or measured stiffness and backlash.",
+          "evidence": "The posts describe stepper motors and drivers but do not identify their models, the exact slide model, full travel, or measured stiffness and backlash.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        }
+      ],
+      "exclusions": [],
+      "source_gap": "Dossier does not establish an as-built SmoothieBox route or a complete physical contact schedule for the listed peripherals."
+    }
+  }
+}

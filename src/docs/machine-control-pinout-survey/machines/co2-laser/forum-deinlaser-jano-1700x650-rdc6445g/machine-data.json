@@ -1,0 +1,53 @@
+{
+  "id": "forum-deinlaser-jano-1700x650-rdc6445g",
+  "sources": {
+    "forum-peripheral-evidence.json": {
+      "id": "forum-deinlaser-jano-1700x650-rdc6445g",
+      "dossier": "src/docs/machine-research/deinlaser-jano-1700x650-rdc6445g.md",
+      "reported_fitted_or_used": [
+        {
+          "name": "CW-5200 chiller",
+          "contacts": [],
+          "source_line_number": 4,
+          "source_line": "**Evidence state:** owner reports motion and a program run by 2021-01-02; later posts discuss a 1700 \u00d7 650 mm travel envelope, a Ruida RDC6445G, a CW-5200 chiller, and adapting a K40-style CO\u2082 PSU. Rated tube power was unresolved; 40 W was a tentative question.  ",
+          "evidence": "**Evidence state:** owner reports motion and a program run by 2021-01-02; later posts discuss a 1700 \u00d7 650 mm travel envelope, a Ruida RDC6445G, a CW-5200 chiller, and adapting a K40-style CO\u2082 PSU. Rated tube power was unresolved; 40 W was a tentative question.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        }
+      ],
+      "listed_for_build_unverified": [
+        {
+          "name": "IHSV-57 servo",
+          "contacts": [],
+          "source_line_number": 17,
+          "source_line": "In a later post in the same thread, GawlyttJ describes the 1700 \u00d7 650 mm machine as using the repaired Festo axis on X, an IHSV-57 servo identified as the Sorotec 600 version, and a Y drive described as a belt, central 20 mm shaft, and geared Berger Lahr three-phase motor. Preserve the forum's \"25-er Zahnriemen\" wording if more exact belt dimensions matter; this transcription does not resolve what that size designation means.",
+          "evidence": "In a later post in the same thread, GawlyttJ describes the 1700 \u00d7 650 mm machine as using the repaired Festo axis on X, an IHSV-57 servo identified as the Sorotec 600 version, and a Y drive described as a belt, central 20 mm shaft, and geared Berger Lahr three-phase motor. Preserve the forum's \"25-er Zahnriemen\" wording if more exact belt dimensions matter; this transcription does not resolve what that size designation means.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        }
+      ],
+      "historical_reference": [],
+      "planned_only": [],
+      "open_function_group": [
+        {
+          "name": "K40-style laser power supply P2/P3 blocks",
+          "contacts": [],
+          "source_line_number": 11,
+          "source_line": "The controller is identified as Ruida RDC6445G. The owner discusses a K40-style laser supply with P2/P3 output blocks, water-protect (WP), and the controller's L-On input. One forum reply says P3 was not needed for the Ruida in the discussed arrangement and advises against connecting WP simultaneously to the PSU and controller because it might cause false behavior. That is forum advice about an unspecified PSU variant. This dossier does not turn it into wiring guidance.",
+          "evidence": "The owner discusses a K40-style laser supply with P2/P3 output blocks, water-protect (WP), and the controller's L-On input. One forum reply says P3 was not needed for the Ruida in the discussed arrangement and advises against connecting WP simultaneously to the PSU and controller because it might cause false behavior.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        }
+      ],
+      "exclusions": [
+        {
+          "name": "Festo X linear axis motor",
+          "contacts": [],
+          "source_line_number": 3,
+          "source_line": "**Identity:** owner-built laser machine using a repaired Festo linear axis; forum posts call it the builder's new laser, not a commercial model.  ",
+          "evidence": "**Identity:** owner-built laser machine using a repaired Festo linear axis; forum posts call it the builder's new laser, not a commercial model.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route",
+          "reason": "Excluded: no separate externally addressable interface, existing control hardware, absent tooling, or inadequate positive device evidence in this dossier."
+        }
+      ],
+      "source_gap": "Dossier does not establish an as-built SmoothieBox route or a complete physical contact schedule for the listed peripherals."
+    }
+  }
+}

@@ -1,0 +1,3703 @@
+{
+  "id": "wiki-222",
+  "sources": {
+    "centered-guides.json": {
+      "id": "wiki-222",
+      "title": "MakeICT Ultimaker 2 retrofit",
+      "target": "Replace the integrated printer motion board with Prime P12 motor-phase outputs. Use the depicted XT30 J12 VFET power entry and qualified heater, fan and temperature circuits; the optional RTD interface is firmware-gated.",
+      "plan": "Original motion-driver electronics are on the board being replaced. Use Prime integrated phase outputs directly to measured winding pairs; do not connect STEP/DIR signal outputs to motor windings. Confirm installed board, motor current and power rating from the cited machine source. Selected architecture: Prime P12 with integrated motor drivers. The main diagram and connection-ID schedule define the current proposed routes. Solid function-coloured GUESS routes need the named commissioning checks; OPEN routes remain disconnected until the missing terminal, rating or interface is established. Previous Core alternatives remain only in the superseded historical architecture record.",
+      "circuits": [
+        [
+          "X motor path: Prime integrated driver",
+          "V2 Prime J5 \u00b7 J5.1 \u00b7 B2 \u2192 X stepper harness (actual contacts unknown) \u00b7 New measured winding lead B2 (candidate X winding connection); V2 Prime J5 \u00b7 J5.2 \u00b7 B1 \u2192 X stepper harness (actual contacts unknown) \u00b7 New measured winding lead B1 (candidate X winding connection); V2 Prime J5 \u00b7 J5.3 \u00b7 A2 \u2192 X stepper harness (actual contacts unknown) \u00b7 New measured winding lead A2 (candidate X winding connection); V2 Prime J5 \u00b7 J5.4 \u00b7 A1 \u2192 X stepper harness (actual contacts unknown) \u00b7 New measured winding lead A1 (candidate X winding connection)",
+          "GUESS",
+          "MakeICT page documents E3D V6/Titan modification, not motor wiring or current. Do not copy Ultimaker 2.1.1 family board motor-phase pin numbers into the actual machine."
+        ],
+        [
+          "Y motor path: Prime integrated driver",
+          "V2 Prime J6 \u00b7 J6.1 \u00b7 B2 \u2192 Y stepper harness (actual contacts unknown) \u00b7 New measured winding lead B2 (candidate Y winding connection); V2 Prime J6 \u00b7 J6.2 \u00b7 B1 \u2192 Y stepper harness (actual contacts unknown) \u00b7 New measured winding lead B1 (candidate Y winding connection); V2 Prime J6 \u00b7 J6.3 \u00b7 A2 \u2192 Y stepper harness (actual contacts unknown) \u00b7 New measured winding lead A2 (candidate Y winding connection); V2 Prime J6 \u00b7 J6.4 \u00b7 A1 \u2192 Y stepper harness (actual contacts unknown) \u00b7 New measured winding lead A1 (candidate Y winding connection)",
+          "GUESS",
+          "MakeICT page documents E3D V6/Titan modification, not motor wiring or current. Do not copy Ultimaker 2.1.1 family board motor-phase pin numbers into the actual machine."
+        ],
+        [
+          "Z motor path: Prime integrated driver",
+          "V2 Prime J7 \u00b7 J7.1 \u00b7 B2 \u2192 Z stepper harness (actual contacts unknown) \u00b7 New measured winding lead B2 (candidate Z winding connection); V2 Prime J7 \u00b7 J7.2 \u00b7 B1 \u2192 Z stepper harness (actual contacts unknown) \u00b7 New measured winding lead B1 (candidate Z winding connection); V2 Prime J7 \u00b7 J7.3 \u00b7 A2 \u2192 Z stepper harness (actual contacts unknown) \u00b7 New measured winding lead A2 (candidate Z winding connection); V2 Prime J7 \u00b7 J7.4 \u00b7 A1 \u2192 Z stepper harness (actual contacts unknown) \u00b7 New measured winding lead A1 (candidate Z winding connection)",
+          "GUESS",
+          "MakeICT page documents E3D V6/Titan modification, not motor wiring or current. Do not copy Ultimaker 2.1.1 family board motor-phase pin numbers into the actual machine."
+        ],
+        [
+          "E / Titan motor path: Prime integrated driver",
+          "V2 Prime J8 \u00b7 J8.1 \u00b7 B2 \u2192 E / Titan stepper harness (actual contacts unknown) \u00b7 New measured winding lead B2 (candidate E / Titan winding connection); V2 Prime J8 \u00b7 J8.2 \u00b7 B1 \u2192 E / Titan stepper harness (actual contacts unknown) \u00b7 New measured winding lead B1 (candidate E / Titan winding connection); V2 Prime J8 \u00b7 J8.3 \u00b7 A2 \u2192 E / Titan stepper harness (actual contacts unknown) \u00b7 New measured winding lead A2 (candidate E / Titan winding connection); V2 Prime J8 \u00b7 J8.4 \u00b7 A1 \u2192 E / Titan stepper harness (actual contacts unknown) \u00b7 New measured winding lead A1 (candidate E / Titan winding connection)",
+          "GUESS",
+          "MakeICT page documents E3D V6/Titan modification, not motor wiring or current. Do not copy Ultimaker 2.1.1 family board motor-phase pin numbers into the actual machine."
+        ],
+        [
+          "Hotend temperature feedback: identify the sensor before hookup",
+          "Prime P12 J21 temperature input \u00b7 pin 1 sensor input \u2192 Installed Hotend sensor (model unknown) \u00b7 sensor lead(s) (Hotend temperature candidate); Prime P12 J21 temperature input \u00b7 pin 2 GND \u2192 Installed Hotend sensor (model unknown) \u00b7 sensor return (Hotend sensor return)",
+          "GUESS",
+          "P12 J21-J23 contact schedule: pin1 input, pin2 GND. The MakeICT page says E3D V6 but does not identify its installed sensor. No heater should be enabled until ambient reading is plausible."
+        ],
+        [
+          "Bed temperature feedback: identify the sensor before hookup",
+          "Prime P12 J22 temperature input \u00b7 pin 1 sensor input \u2192 Installed Bed sensor (model unknown) \u00b7 sensor lead(s) (Bed temperature candidate); Prime P12 J22 temperature input \u00b7 pin 2 GND \u2192 Installed Bed sensor (model unknown) \u00b7 sensor return (Bed sensor return)",
+          "GUESS",
+          "P12 J21-J23 contact schedule: pin1 input, pin2 GND. The MakeICT page says E3D V6 but does not identify its installed sensor. No heater should be enabled until ambient reading is plausible."
+        ],
+        [
+          "Prime bed-heater output: exact P12 supply/output contact nets",
+          "Measured fused heater supply \u00b7 supply + \u2192 Smoothieboard V2 Prime P12 \u00b7 J12.1 \u00b7 VFET \u00b7 XT30 power entry (heater-load supply to Prime VFET rail); Measured fused heater supply \u00b7 return \u2192 Smoothieboard V2 Prime P12 \u00b7 J12.2 \u00b7 GND_FET \u00b7 XT30 return (heater-load return supply); Smoothieboard V2 Prime P12 \u00b7 J12.1 \u00b7 VFET \u00b7 XT30 power entry \u2192 Smoothieboard V2 Prime P12 \u00b7 J13.1 \u00b7 VFET bed positive (shared VFET bed-supply net); Smoothieboard V2 Prime P12 \u00b7 J13.1 \u00b7 VFET bed positive \u2192 Installed bed heater (rating unknown) \u00b7 heater lead + (bed heater positive feed); Smoothieboard V2 Prime P12 \u00b7 J13.2 \u00b7 SW_BED switched return \u2192 Installed bed heater (rating unknown) \u00b7 heater lead - (bed heater switched return)",
+          "GUESS, SOURCE",
+          "Use the actual contact labels and per-wire qualification in the current main diagram. Any older Core/header reference in retained source context is not the selected controller endpoint."
+        ],
+        [
+          "Conditional PT100 path: Prime J36 SPI \u2192 ADI MAX31865PMB1 peripheral",
+          "Smoothieboard V2 Prime P12 J36 \u00b7 J36.6 PD15 candidate CS \u2192 Analog Devices MAX31865PMB1 12-pin Pmod J1 / CON1 \u00b7 J1.1 SS / CS (candidate SPI chip select to Pmod SS); Smoothieboard V2 Prime P12 J36 \u00b7 J36.7 SPI1_COPI \u2192 Analog Devices MAX31865PMB1 12-pin Pmod J1 / CON1 \u00b7 J1.2 MOSI / SDI (SPI1 COPI to MAX31865 MOSI); Analog Devices MAX31865PMB1 12-pin Pmod J1 / CON1 \u00b7 J1.3 MISO / SDO \u2192 Smoothieboard V2 Prime P12 J36 \u00b7 J36.8 SPI1_CIPO (MAX31865 MISO to SPI1 CIPO); Smoothieboard V2 Prime P12 J36 \u00b7 J36.9 SPI1_SCK \u2192 Analog Devices MAX31865PMB1 12-pin Pmod J1 / CON1 \u00b7 J1.4 SCLK / SCK (SPI clock to MAX31865 SCLK); Smoothieboard V2 Prime P12 J36 \u00b7 J36.10 GND \u2192 Analog Devices MAX31865PMB1 12-pin Pmod J1 / CON1 \u00b7 J1.5 GND (digital ground reference); Analog Devices MAX31865PMB1 12-pin Pmod J1 / CON1 \u00b7 CON1.1 FORCE+ / FORCE2 \u2192 Installed sensor only if confirmed 2-wire PT100 \u00b7 RTD lead A (measured) (RTD lead A to CON1.1 FORCE+); Analog Devices MAX31865PMB1 12-pin Pmod J1 / CON1 \u00b7 CON1.4 FORCE\u2212 \u2192 Installed sensor only if confirmed 2-wire PT100 \u00b7 RTD lead B (measured) (RTD lead B to CON1.4 FORCE\u2212); Smoothieboard V2 Prime P12 J5 power contact \u00b7 J35.1 3V3 output \u00b7 verify limited 3V3 load \u2192 Analog Devices MAX31865PMB1 12-pin Pmod J1 / CON1 \u00b7 J1.6 VCC +3.3V (3.3V module supply to Pmod VCC pin6); Smoothieboard V2 Prime P12 J5 power contact \u00b7 J35.1 3V3 output \u00b7 verify limited 3V3 load \u2192 Analog Devices MAX31865PMB1 12-pin Pmod J1 / CON1 \u00b7 J1.12 VCC +3.3V (3.3V module supply to Pmod VCC pin12); Smoothieboard V2 Prime P12 J36 \u00b7 J36.10 GND \u2192 Analog Devices MAX31865PMB1 12-pin Pmod J1 / CON1 \u00b7 J1.11 GND (Pmod secondary GND contact pin11); ADI Pmod J2 two-wire configuration \u00b7 J2.1 \u00b7 jumper header contact \u2192 ADI Pmod J2 two-wire configuration \u00b7 J2.2 \u00b7 jumper header contact (Fit 2-wire PT100 jumper J2.1\u20132); ADI Pmod J2 two-wire configuration \u00b7 J2.3 \u00b7 jumper header contact \u2192 ADI Pmod J2 two-wire configuration \u00b7 J2.4 \u00b7 jumper header contact (Fit 2-wire PT100 jumper J2.3\u20134)",
+          "GUESS",
+          "Analog Devices MAX31865PMB1 data sheet Rev 0 (Jan 2014), Table 1: all 12-pin J1 positions: 1=SS/CS, 2=MOSI, 3=MISO, 4=SCLK, 5 and 11=GND, 6 and 12=+3.3V, 7=DRDY active-low, 8\u201310=NC. Installed BOM R7 is 400\u03a9 \u00b10.1% RREF for the board PT100 configuration. The MAX31865 BIAS node is internal to the module (not a user terminal). CON1.1=FORCE+/FORCE2, .2=RTDIN+, .3=RTDIN\u2212, .4=FORCE\u2212. Install both J2 jumpers 1\u20132 and 3\u20134 for 2-wire RTD; connect the two sensor leads to CON1.1 and CON1.4. J1.6 is the proposed board supply contact; J1.5 is GND. Prime J36 SPI signal contacts are source-derived, but PD15 CS is only a candidate. Smoothieware docs state MAX31865 is a future possibility, not an existing temperature-control driver, so this circuit remains unusable for closed-loop heater control until firmware support and the board 3.3V output are verified. R7 and BIAS are factory-internal details noted here, not external user wiring terminals. The diagram shows every J2 pin separately with two physical jumpers; no invented J2-to-screw-terminal cable is required."
+        ],
+        [
+          "MAX31865PMB1 host supply \u00b7 J1.6/.12 VCC, .5/.11 GND",
+          "Smoothieboard V2 Prime P12 J5 \u00b7 J35.1 3V3 output \u00b7 verify limited 3V3 load \u2192 Analog Devices MAX31865PMB1 J1 supply contacts \u00b7 J1.6 VCC +3.3V (Core 3.3V to PMB1 VCC contact J1.6); Smoothieboard V2 Prime P12 J5 \u00b7 J35.1 3V3 output \u00b7 verify limited 3V3 load \u2192 Analog Devices MAX31865PMB1 J1 supply contacts \u00b7 J1.12 VCC +3.3V (Core 3.3V to duplicate PMB1 VCC contact J1.12); Smoothieboard V2 Prime P12 J5 \u00b7 J35.10 GND \u2192 Analog Devices MAX31865PMB1 J1 supply contacts \u00b7 J1.5 GND (Core return to PMB1 GND J1.5); Smoothieboard V2 Prime P12 J5 \u00b7 J35.10 GND \u2192 Analog Devices MAX31865PMB1 J1 supply contacts \u00b7 J1.11 GND (Core return to PMB1 GND J1.11)",
+          "GUESS",
+          "Use the actual contact labels and per-wire qualification in the current main diagram. Any older Core/header reference in retained source context is not the selected controller endpoint."
+        ],
+        [
+          "X limit candidate: Prime input to actual switch",
+          "Prime P12 J24 endstop input \u00b7 pin 3 input \u2192 Actual X limit switch / sensor \u00b7 signal unknown (X endstop signal); Prime P12 J24 endstop input \u00b7 pin 2 GND \u2192 Actual X limit switch / sensor \u00b7 return unknown (X endstop return)",
+          "GUESS",
+          "MakeICT installation harness is not mapped. Candidate P12 J24/J26/J28 only; verify all six min/max sockets and sensor contacts from actual board revision before wiring."
+        ],
+        [
+          "Y limit candidate: Prime input to actual switch",
+          "Prime P12 J26 endstop input \u00b7 pin 3 input \u2192 Actual Y limit switch / sensor \u00b7 signal unknown (Y endstop signal); Prime P12 J26 endstop input \u00b7 pin 2 GND \u2192 Actual Y limit switch / sensor \u00b7 return unknown (Y endstop return)",
+          "GUESS",
+          "MakeICT installation harness is not mapped. Candidate P12 J24/J26/J28 only; verify all six min/max sockets and sensor contacts from actual board revision before wiring."
+        ],
+        [
+          "Z limit candidate: Prime input to actual switch",
+          "Prime P12 J28 endstop input \u00b7 pin 3 input \u2192 Actual Z limit switch / sensor \u00b7 signal unknown (Z endstop signal); Prime P12 J28 endstop input \u00b7 pin 2 GND \u2192 Actual Z limit switch / sensor \u00b7 return unknown (Z endstop return)",
+          "GUESS",
+          "MakeICT installation harness is not mapped. Candidate P12 J24/J26/J28 only; verify all six min/max sockets and sensor contacts from actual board revision before wiring."
+        ],
+        [
+          "Prime selected \u00b7 separate logic and motor supplies",
+          "Regulated 5 V logic supply \u00b7 +5 V regulated \u2192 Prime P12 \u00b7 confirm exact revision \u00b7 J42.1 \u00b7 5V_PORTIN (Prime regulated logic supply); Regulated 5 V logic supply \u00b7 0 V logic return \u2192 Prime P12 \u00b7 confirm exact revision \u00b7 J42.2 \u00b7 GND (Prime logic supply return); Verified motor supply \u00b7 voltage/current TBD \u00b7 DC + \u00b7 before fuse \u2192 Motor branch fuse \u00b7 rating selected after measurement \u00b7 fuse input (Protected motor branch input); Motor branch fuse \u00b7 rating selected after measurement \u00b7 fuse output \u2192 Prime P12 \u00b7 confirm exact revision \u00b7 J9.1 \u00b7 VMOT (Prime VMOT power); Verified motor supply \u00b7 voltage/current TBD \u00b7 0 V motor return \u2192 Prime P12 \u00b7 confirm exact revision \u00b7 J9.2 \u00b7 GND (Prime motor supply return)",
+          "GUESS",
+          "This is the alternative integrated-driver architecture. The same PCB-derived contact labels occur on P121/P12, but driver type, rating and current configuration differ. Use one verified power-entry arrangement; J10 parallels VMOT and is left unused here. Board ground is shared internally; route motor current directly to power distribution, not through logic wiring. Determine actual allowed voltage/current before choosing a supply; no machine-source adapter automatically qualifies."
+        ],
+        [
+          "Prime P12 \u00b7 Hotend A \u00b7 complete external power and load circuit",
+          "Heater-matched DC supply \u00b7 rating measured \u00b7 DC + before branch fuse \u2192 Individual heater branch fuse \u00b7 rating TBD \u00b7 input from supply + (Heater branch fuse feed); Individual heater branch fuse \u00b7 rating TBD \u00b7 output to VFET input \u2192 Prime P12 \u00b7 2590 revision ONLY \u00b7 J12.1 \u00b7 VFET \u00b7 XT30 power entry (VFET power entry); Heater-matched DC supply \u00b7 rating measured \u00b7 0 V power return \u2192 Prime P12 \u00b7 2590 revision ONLY \u00b7 J12.2 \u00b7 GND_FET \u00b7 XT30 return (Heater power return); Prime P12 \u00b7 2590 revision ONLY \u00b7 J17.1 \u00b7 shared cutoff-switched VFET \u2192 Independent thermal cutoff \u00b7 DC/load rated \u00b7 series contact lead A (Positive heater feed); Independent thermal cutoff \u00b7 DC/load rated \u00b7 series contact lead B \u2192 Measured hotend heater \u00b7 never infer rating \u00b7 heater lead A (Thermally protected heater feed); Measured hotend heater \u00b7 never infer rating \u00b7 heater lead B \u2192 Prime P12 \u00b7 2590 revision ONLY \u00b7 J17.2 \u00b7 Hotend A switched return (Hotend A switched heater return)",
+          "GUESS",
+          "Board-side evidence: exact P12 schematic/PCB at commit7dc4f9a identifies J17 Hotend A, J18 Hotend B, J19 Fan1, J20 Fan2. J17.1 receives shared Q25 cutoff-controlled VFET; J17.2 is Q19 switched return. These are factory internal circuits, not user soldering instructions. PE0 / HOTEND_A_FET and PF14 / OUTPUTENABLE come from the exact P12 source; a general documentation PJ6 label conflicts and must not override this revision. Heater/sensor fitment and connector-safe current are unknown: measure, qualify firmware and prove thermal shutdown before connecting heat. No guaranteed 5A terminal rating is asserted."
+        ],
+        [
+          "Prime P12 \u00b7 individual fan outputs and spare Hotend B",
+          "Prime P12 \u00b7 powered by preceding J12 circuit \u00b7 J19.1 \u00b7 cutoff-switched VFET \u2192 Installed fan1 \u00b7 identify voltage/current and use \u00b7 measured positive lead (Fan1 positive feed); Installed fan1 \u00b7 identify voltage/current and use \u00b7 measured return lead \u2192 Prime P12 \u00b7 powered by preceding J12 circuit \u00b7 J19.2 \u00b7 Fan1 switched return (Fan1 switched return); Prime P12 \u00b7 powered by preceding J12 circuit \u00b7 J20.1 \u00b7 cutoff-switched VFET \u2192 Optional fan2 \u00b7 identify fitment and ratings \u00b7 measured positive lead (Fan2 positive feed); Optional fan2 \u00b7 identify fitment and ratings \u00b7 measured return lead \u2192 Prime P12 \u00b7 powered by preceding J12 circuit \u00b7 J20.2 \u00b7 Fan2 switched return (Fan2 switched return)",
+          "GUESS",
+          "J19/J20 pin1 share the same VFET output from factory Q25; pin2 returns switch through Q21/Q22. No second power supply is connected to the fan outputs. Leave both J18 contacts unconnected in this one-hotend option. Actual hotend heatsink cooling must be maintained; do not assume an original fan is VFET-voltage rated."
+        ],
+        [
+          "Original display, knob and SD/USB user interface \u00b7 replacement decision",
+          "Prime P12 \u00b7 user interface compatibility boundary \u00b7 Supported display/host interface \u00b7 verify firmware \u2192 Original UM2 user interface \u00b7 exact connector unresolved \u00b7 Display interface (Retained display compatibility); Prime P12 \u00b7 user interface compatibility boundary \u00b7 Supported display/host interface \u00b7 verify firmware \u2192 Original UM2 user interface \u00b7 exact connector unresolved \u00b7 Rotary/push control interface (Retained rotary control compatibility); Prime P12 \u00b7 user interface compatibility boundary \u00b7 Supported display/host interface \u00b7 verify firmware \u2192 Original UM2 user interface \u00b7 exact connector unresolved \u00b7 Original SD slot / controller protocol (Retained SD printing compatibility); Prime P12 \u00b7 user interface compatibility boundary \u00b7 Supported display/host interface \u00b7 verify firmware \u2192 Original UM2 user interface \u00b7 exact connector unresolved \u00b7 Original USB firmware-update workflow (Retained USB host compatibility)",
+          "OPEN",
+          "Stock manual pp.11\u201316 names display, rotary input, SD printing and USB firmware update. MakeICT modified machine does not publish its retained panel wiring. Select a Prime-supported display/host workflow or identify exact panel protocol and connector before retaining it; debug UART is not an assumed panel adapter."
+        ]
+      ],
+      "pins": [
+        "Current contacts below are copied from the selected wire-panel endpoint labels. They are proposed controller assignments, not verified installed harness continuity.",
+        "Prime P12 \u00b7 J42.1 \u00b7 5V_PORTIN",
+        "Prime P12 \u00b7 J42.2 \u00b7 GND",
+        "Prime P12 \u00b7 J9.1 \u00b7 VMOT",
+        "Prime P12 \u00b7 J9.2 \u00b7 GND",
+        "Prime P12 \u00b7 J10.1 \u00b7 VMOT parallel \u00b7 unused",
+        "Prime P12 \u00b7 J10.2 \u00b7 GND parallel \u00b7 unused",
+        "Prime P12 \u00b7 J12.1 \u00b7 VFET \u00b7 XT30 power entry",
+        "Prime P12 \u00b7 J12.2 \u00b7 GND_FET \u00b7 XT30 return",
+        "Prime P12 \u00b7 J17.1 \u00b7 shared cutoff-switched VFET",
+        "Prime P12 \u00b7 J17.2 \u00b7 Hotend A switched return",
+        "Prime P12 \u00b7 J11.1 \u00b7 auxiliary VFET \u00b7 unused",
+        "Prime P12 \u00b7 J11.2 \u00b7 auxiliary GND_FET \u00b7 unused",
+        "Prime P12 \u00b7 J19.1 \u00b7 cutoff-switched VFET",
+        "Prime P12 \u00b7 J19.2 \u00b7 Fan1 switched return",
+        "Prime P12 \u00b7 J20.1 \u00b7 cutoff-switched VFET",
+        "Prime P12 \u00b7 J20.2 \u00b7 Fan2 switched return",
+        "Prime P12 \u00b7 J18.1 \u00b7 Hotend B + \u00b7 unused",
+        "Prime P12 \u00b7 J18.2 \u00b7 Hotend B return \u00b7 unused",
+        "Prime P12 \u00b7 Supported display/host interface \u00b7 verify firmware"
+      ],
+      "sources": [
+        [
+          "MakeICT Ultimaker 2 equipment page (modified hotend/extruder)",
+          "https://wiki.makeict.org/wiki/Ultimaker_2"
+        ],
+        [
+          "Ultimaker 2 Main Board V2.1.1 source directory, reference only",
+          "https://github.com/Ultimaker/Ultimaker2/tree/master/1091_Main_board_v2.1.1_%28x1%29"
+        ],
+        [
+          "Ultimaker Main Board V2.1.1 schematic PDF, 2013-07-03, reference only",
+          "https://raw.githubusercontent.com/Ultimaker/Ultimaker2/master/1091_Main_board_v2.1.1_%28x1%29/Main%20Board%20V2.1.1.pdf"
+        ],
+        [
+          "Analog Devices MAX31865 datasheet, SPI platinum RTD converter",
+          "https://www.analog.com/media/en/technical-documentation/data-sheets/MAX31865.pdf"
+        ],
+        [
+          "Analog Devices MAX31865PMB1 Peripheral Module datasheet Rev 0 (Jan 2014)",
+          "https://www.analog.com/media/en/technical-documentation/data-sheets/max31865pmb1.pdf"
+        ],
+        [
+          "Smoothieware temperature control / PT100 documentation",
+          "https://smoothieware.org/temperaturecontrol"
+        ],
+        [
+          "Exact Prime P12 MOSFET schematic at pinned revision",
+          "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/mosfets.kicad_sch"
+        ]
+      ],
+      "target_options": {
+        "smoothiebox": "Enclosure only. Select and verify Core or Prime controller within it; no heater or sensor schedule can be inferred from the enclosure.",
+        "core": "Four external motor drivers needed for X/Y/Z/E. Heater outputs require separately specified rated stages; no installed harness pinout is known.",
+        "prime": "Four integrated motor drivers can suit X/Y/Z/Titan if actual current ratings fit; Prime bed output contacts J13.1 VFET and J13.2 SW_BED are source-derived. Prime temperature input is usable only with correct sensor type/conditioning. P12 schematic now establishes J17 Hotend A and J19/J20 fan outputs; these conditional circuits require actual heater/sensor/fan and firmware qualification."
+      },
+      "parts": [
+        "The following are the depicted retained, required or unresolved peripherals; a drawing label does not establish fitment or electrical compatibility. Select ratings and installed revisions from the per-connection evidence.",
+        "Prime P12 board contact groups; use the specific motor-phase and J35 logic labels in the connection schedule",
+        "X stepper harness (actual contacts unknown)",
+        "V2 Prime J6",
+        "Y stepper harness (actual contacts unknown)",
+        "V2 Prime J7",
+        "Z stepper harness (actual contacts unknown)",
+        "V2 Prime J8",
+        "E / Titan stepper harness (actual contacts unknown)",
+        "Prime P12 J21 temperature input",
+        "Installed Hotend sensor (model unknown)",
+        "Prime P12 J22 temperature input",
+        "Installed Bed sensor (model unknown)",
+        "Measured fused heater supply",
+        "Smoothieboard V2 Prime P12",
+        "Installed bed heater (rating unknown)",
+        "Smoothieboard V2 Prime P12 J36",
+        "Analog Devices MAX31865PMB1 12-pin Pmod J1 / CON1",
+        "Installed sensor only if confirmed 2-wire PT100",
+        "ADI Pmod J2 two-wire configuration",
+        "Smoothieboard V2 Prime P12 J5 power contact",
+        "Smoothieboard V2 Prime P12 J5",
+        "Analog Devices MAX31865PMB1 J1 supply contacts",
+        "Prime P12 J24 endstop input",
+        "Actual X limit switch / sensor",
+        "Prime P12 J26 endstop input",
+        "Actual Y limit switch / sensor",
+        "Prime P12 J28 endstop input",
+        "Actual Z limit switch / sensor",
+        "Regulated 5 V logic supply",
+        "Verified motor supply \u00b7 voltage/current TBD",
+        "Motor branch fuse \u00b7 rating selected after measurement",
+        "Heater-matched DC supply \u00b7 rating measured",
+        "Individual heater branch fuse \u00b7 rating TBD",
+        "Independent thermal cutoff \u00b7 DC/load rated",
+        "Measured hotend heater \u00b7 never infer rating",
+        "Installed fan1 \u00b7 identify voltage/current and use",
+        "Optional fan2 \u00b7 identify fitment and ratings",
+        "Original UM2 user interface \u00b7 exact connector unresolved"
+      ],
+      "instructions": [
+        "Match the actual machine and controller revisions, trace the unpowered harness and verify all signal/reference, power and independent safety boundaries before energising. Follow the current connection IDs rather than the superseded architecture prose.",
+        "X motor path: Prime integrated driver: MakeICT page documents E3D V6/Titan modification, not motor wiring or current. Do not copy Ultimaker 2.1.1 family board motor-phase pin numbers into the actual machine.",
+        "Y motor path: Prime integrated driver: MakeICT page documents E3D V6/Titan modification, not motor wiring or current. Do not copy Ultimaker 2.1.1 family board motor-phase pin numbers into the actual machine.",
+        "Z motor path: Prime integrated driver: MakeICT page documents E3D V6/Titan modification, not motor wiring or current. Do not copy Ultimaker 2.1.1 family board motor-phase pin numbers into the actual machine.",
+        "E / Titan motor path: Prime integrated driver: MakeICT page documents E3D V6/Titan modification, not motor wiring or current. Do not copy Ultimaker 2.1.1 family board motor-phase pin numbers into the actual machine.",
+        "Hotend temperature feedback: identify the sensor before hookup: P12 J21-J23 contact schedule: pin1 input, pin2 GND. The MakeICT page says E3D V6 but does not identify its installed sensor. No heater should be enabled until ambient reading is plausible.",
+        "Bed temperature feedback: identify the sensor before hookup: P12 J21-J23 contact schedule: pin1 input, pin2 GND. The MakeICT page says E3D V6 but does not identify its installed sensor. No heater should be enabled until ambient reading is plausible.",
+        "Prime bed-heater output: exact P12 supply/output contact nets: Use the actual contact labels and per-wire qualification in the current main diagram. Any older Core/header reference in retained source context is not the selected controller endpoint.",
+        "Conditional PT100 path: Prime J36 SPI \u2192 ADI MAX31865PMB1 peripheral: Analog Devices MAX31865PMB1 data sheet Rev 0 (Jan 2014), Table 1: all 12-pin J1 positions: 1=SS/CS, 2=MOSI, 3=MISO, 4=SCLK, 5 and 11=GND, 6 and 12=+3.3V, 7=DRDY active-low, 8\u201310=NC. Installed BOM R7 is 400\u03a9 \u00b10.1% RREF for the board PT100 configuration. The MAX31865 BIAS node is internal to the module (not a user terminal). CON1.1=FORCE+/FORCE2, .2=RTDIN+, .3=RTDIN\u2212, .4=FORCE\u2212. Install both J2 jumpers 1\u20132 and 3\u20134 for 2-wire RTD; connect the two sensor leads to CON1.1 and CON1.4. J1.6 is the proposed board supply contact; J1.5 is GND. Prime J36 SPI signal contacts are source-derived, but PD15 CS is only a candidate. Smoothieware docs state MAX31865 is a future possibility, not an existing temperature-control driver, so this circuit remains unusable for closed-loop heater control until firmware support and the board 3.3V output are verified. R7 and BIAS are factory-internal details noted here, not external user wiring terminals. The diagram shows every J2 pin separately with two physical jumpers; no invented J2-to-screw-terminal cable is required.",
+        "MAX31865PMB1 host supply \u00b7 J1.6/.12 VCC, .5/.11 GND: Use the actual contact labels and per-wire qualification in the current main diagram. Any older Core/header reference in retained source context is not the selected controller endpoint.",
+        "X limit candidate: Prime input to actual switch: MakeICT installation harness is not mapped. Candidate P12 J24/J26/J28 only; verify all six min/max sockets and sensor contacts from actual board revision before wiring.",
+        "Y limit candidate: Prime input to actual switch: MakeICT installation harness is not mapped. Candidate P12 J24/J26/J28 only; verify all six min/max sockets and sensor contacts from actual board revision before wiring.",
+        "Z limit candidate: Prime input to actual switch: MakeICT installation harness is not mapped. Candidate P12 J24/J26/J28 only; verify all six min/max sockets and sensor contacts from actual board revision before wiring.",
+        "Prime selected \u00b7 separate logic and motor supplies: This is the alternative integrated-driver architecture. The same PCB-derived contact labels occur on P121/P12, but driver type, rating and current configuration differ. Use one verified power-entry arrangement; J10 parallels VMOT and is left unused here. Board ground is shared internally; route motor current directly to power distribution, not through logic wiring. Determine actual allowed voltage/current before choosing a supply; no machine-source adapter automatically qualifies.",
+        "Prime P12 \u00b7 Hotend A \u00b7 complete external power and load circuit: Board-side evidence: exact P12 schematic/PCB at commit7dc4f9a identifies J17 Hotend A, J18 Hotend B, J19 Fan1, J20 Fan2. J17.1 receives shared Q25 cutoff-controlled VFET; J17.2 is Q19 switched return. These are factory internal circuits, not user soldering instructions. PE0 / HOTEND_A_FET and PF14 / OUTPUTENABLE come from the exact P12 source; a general documentation PJ6 label conflicts and must not override this revision. Heater/sensor fitment and connector-safe current are unknown: measure, qualify firmware and prove thermal shutdown before connecting heat. No guaranteed 5A terminal rating is asserted.",
+        "Prime P12 \u00b7 individual fan outputs and spare Hotend B: J19/J20 pin1 share the same VFET output from factory Q25; pin2 returns switch through Q21/Q22. No second power supply is connected to the fan outputs. Leave both J18 contacts unconnected in this one-hotend option. Actual hotend heatsink cooling must be maintained; do not assume an original fan is VFET-voltage rated.",
+        "Original display, knob and SD/USB user interface \u00b7 replacement decision: Stock manual pp.11\u201316 names display, rotary input, SD printing and USB firmware update. MakeICT modified machine does not publish its retained panel wiring. Select a Prime-supported display/host workflow or identify exact panel protocol and connector before retaining it; debug UART is not an assumed panel adapter."
+      ],
+      "wire_panels": [
+        {
+          "title": "X motor path: Prime integrated driver",
+          "nodes": [
+            {
+              "id": "um_x_board",
+              "title": "V2 Prime J5",
+              "column": 0,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "1",
+                  "label": "J5.1 \u00b7 B2",
+                  "side": "right"
+                },
+                {
+                  "id": "2",
+                  "label": "J5.2 \u00b7 B1",
+                  "side": "right"
+                },
+                {
+                  "id": "3",
+                  "label": "J5.3 \u00b7 A2",
+                  "side": "right"
+                },
+                {
+                  "id": "4",
+                  "label": "J5.4 \u00b7 A1",
+                  "side": "right"
+                }
+              ]
+            },
+            {
+              "id": "um_x_machine",
+              "title": "X stepper harness (actual contacts unknown)",
+              "column": 2,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "1",
+                  "label": "New measured winding lead B2",
+                  "side": "left"
+                },
+                {
+                  "id": "2",
+                  "label": "New measured winding lead B1",
+                  "side": "left"
+                },
+                {
+                  "id": "3",
+                  "label": "New measured winding lead A2",
+                  "side": "left"
+                },
+                {
+                  "id": "4",
+                  "label": "New measured winding lead A1",
+                  "side": "left"
+                }
+              ]
+            }
+          ],
+          "edges": [
+            {
+              "from": "um_x_board.1",
+              "to": "um_x_machine.1",
+              "state": "guess",
+              "function": "candidate X winding connection",
+              "check": "Prime output pin order is source-derived; machine cavity/coil pairing and current remain unverified. Meter coil pairs and read motor ratings first."
+            },
+            {
+              "from": "um_x_board.2",
+              "to": "um_x_machine.2",
+              "state": "guess",
+              "function": "candidate X winding connection",
+              "check": "Prime output pin order is source-derived; machine cavity/coil pairing and current remain unverified. Meter coil pairs and read motor ratings first."
+            },
+            {
+              "from": "um_x_board.3",
+              "to": "um_x_machine.3",
+              "state": "guess",
+              "function": "candidate X winding connection",
+              "check": "Prime output pin order is source-derived; machine cavity/coil pairing and current remain unverified. Meter coil pairs and read motor ratings first."
+            },
+            {
+              "from": "um_x_board.4",
+              "to": "um_x_machine.4",
+              "state": "guess",
+              "function": "candidate X winding connection",
+              "check": "Prime output pin order is source-derived; machine cavity/coil pairing and current remain unverified. Meter coil pairs and read motor ratings first."
+            }
+          ],
+          "note": "MakeICT page documents E3D V6/Titan modification, not motor wiring or current. Do not copy Ultimaker 2.1.1 family board motor-phase pin numbers into the actual machine.",
+          "original_panel_index": 1
+        },
+        {
+          "title": "Y motor path: Prime integrated driver",
+          "nodes": [
+            {
+              "id": "um_y_board",
+              "title": "V2 Prime J6",
+              "column": 0,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "1",
+                  "label": "J6.1 \u00b7 B2",
+                  "side": "right"
+                },
+                {
+                  "id": "2",
+                  "label": "J6.2 \u00b7 B1",
+                  "side": "right"
+                },
+                {
+                  "id": "3",
+                  "label": "J6.3 \u00b7 A2",
+                  "side": "right"
+                },
+                {
+                  "id": "4",
+                  "label": "J6.4 \u00b7 A1",
+                  "side": "right"
+                }
+              ]
+            },
+            {
+              "id": "um_y_machine",
+              "title": "Y stepper harness (actual contacts unknown)",
+              "column": 2,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "1",
+                  "label": "New measured winding lead B2",
+                  "side": "left"
+                },
+                {
+                  "id": "2",
+                  "label": "New measured winding lead B1",
+                  "side": "left"
+                },
+                {
+                  "id": "3",
+                  "label": "New measured winding lead A2",
+                  "side": "left"
+                },
+                {
+                  "id": "4",
+                  "label": "New measured winding lead A1",
+                  "side": "left"
+                }
+              ]
+            }
+          ],
+          "edges": [
+            {
+              "from": "um_y_board.1",
+              "to": "um_y_machine.1",
+              "state": "guess",
+              "function": "candidate Y winding connection",
+              "check": "Prime output pin order is source-derived; machine cavity/coil pairing and current remain unverified. Meter coil pairs and read motor ratings first."
+            },
+            {
+              "from": "um_y_board.2",
+              "to": "um_y_machine.2",
+              "state": "guess",
+              "function": "candidate Y winding connection",
+              "check": "Prime output pin order is source-derived; machine cavity/coil pairing and current remain unverified. Meter coil pairs and read motor ratings first."
+            },
+            {
+              "from": "um_y_board.3",
+              "to": "um_y_machine.3",
+              "state": "guess",
+              "function": "candidate Y winding connection",
+              "check": "Prime output pin order is source-derived; machine cavity/coil pairing and current remain unverified. Meter coil pairs and read motor ratings first."
+            },
+            {
+              "from": "um_y_board.4",
+              "to": "um_y_machine.4",
+              "state": "guess",
+              "function": "candidate Y winding connection",
+              "check": "Prime output pin order is source-derived; machine cavity/coil pairing and current remain unverified. Meter coil pairs and read motor ratings first."
+            }
+          ],
+          "note": "MakeICT page documents E3D V6/Titan modification, not motor wiring or current. Do not copy Ultimaker 2.1.1 family board motor-phase pin numbers into the actual machine.",
+          "original_panel_index": 2
+        },
+        {
+          "title": "Z motor path: Prime integrated driver",
+          "nodes": [
+            {
+              "id": "um_z_board",
+              "title": "V2 Prime J7",
+              "column": 0,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "1",
+                  "label": "J7.1 \u00b7 B2",
+                  "side": "right"
+                },
+                {
+                  "id": "2",
+                  "label": "J7.2 \u00b7 B1",
+                  "side": "right"
+                },
+                {
+                  "id": "3",
+                  "label": "J7.3 \u00b7 A2",
+                  "side": "right"
+                },
+                {
+                  "id": "4",
+                  "label": "J7.4 \u00b7 A1",
+                  "side": "right"
+                }
+              ]
+            },
+            {
+              "id": "um_z_machine",
+              "title": "Z stepper harness (actual contacts unknown)",
+              "column": 2,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "1",
+                  "label": "New measured winding lead B2",
+                  "side": "left"
+                },
+                {
+                  "id": "2",
+                  "label": "New measured winding lead B1",
+                  "side": "left"
+                },
+                {
+                  "id": "3",
+                  "label": "New measured winding lead A2",
+                  "side": "left"
+                },
+                {
+                  "id": "4",
+                  "label": "New measured winding lead A1",
+                  "side": "left"
+                }
+              ]
+            }
+          ],
+          "edges": [
+            {
+              "from": "um_z_board.1",
+              "to": "um_z_machine.1",
+              "state": "guess",
+              "function": "candidate Z winding connection",
+              "check": "Prime output pin order is source-derived; machine cavity/coil pairing and current remain unverified. Meter coil pairs and read motor ratings first."
+            },
+            {
+              "from": "um_z_board.2",
+              "to": "um_z_machine.2",
+              "state": "guess",
+              "function": "candidate Z winding connection",
+              "check": "Prime output pin order is source-derived; machine cavity/coil pairing and current remain unverified. Meter coil pairs and read motor ratings first."
+            },
+            {
+              "from": "um_z_board.3",
+              "to": "um_z_machine.3",
+              "state": "guess",
+              "function": "candidate Z winding connection",
+              "check": "Prime output pin order is source-derived; machine cavity/coil pairing and current remain unverified. Meter coil pairs and read motor ratings first."
+            },
+            {
+              "from": "um_z_board.4",
+              "to": "um_z_machine.4",
+              "state": "guess",
+              "function": "candidate Z winding connection",
+              "check": "Prime output pin order is source-derived; machine cavity/coil pairing and current remain unverified. Meter coil pairs and read motor ratings first."
+            }
+          ],
+          "note": "MakeICT page documents E3D V6/Titan modification, not motor wiring or current. Do not copy Ultimaker 2.1.1 family board motor-phase pin numbers into the actual machine.",
+          "original_panel_index": 3
+        },
+        {
+          "title": "E / Titan motor path: Prime integrated driver",
+          "nodes": [
+            {
+              "id": "um_e_/_titan_board",
+              "title": "V2 Prime J8",
+              "column": 0,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "1",
+                  "label": "J8.1 \u00b7 B2",
+                  "side": "right"
+                },
+                {
+                  "id": "2",
+                  "label": "J8.2 \u00b7 B1",
+                  "side": "right"
+                },
+                {
+                  "id": "3",
+                  "label": "J8.3 \u00b7 A2",
+                  "side": "right"
+                },
+                {
+                  "id": "4",
+                  "label": "J8.4 \u00b7 A1",
+                  "side": "right"
+                }
+              ]
+            },
+            {
+              "id": "um_e_/_titan_machine",
+              "title": "E / Titan stepper harness (actual contacts unknown)",
+              "column": 2,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "1",
+                  "label": "New measured winding lead B2",
+                  "side": "left"
+                },
+                {
+                  "id": "2",
+                  "label": "New measured winding lead B1",
+                  "side": "left"
+                },
+                {
+                  "id": "3",
+                  "label": "New measured winding lead A2",
+                  "side": "left"
+                },
+                {
+                  "id": "4",
+                  "label": "New measured winding lead A1",
+                  "side": "left"
+                }
+              ]
+            }
+          ],
+          "edges": [
+            {
+              "from": "um_e_/_titan_board.1",
+              "to": "um_e_/_titan_machine.1",
+              "state": "guess",
+              "function": "candidate E / Titan winding connection",
+              "check": "Prime output pin order is source-derived; machine cavity/coil pairing and current remain unverified. Meter coil pairs and read motor ratings first."
+            },
+            {
+              "from": "um_e_/_titan_board.2",
+              "to": "um_e_/_titan_machine.2",
+              "state": "guess",
+              "function": "candidate E / Titan winding connection",
+              "check": "Prime output pin order is source-derived; machine cavity/coil pairing and current remain unverified. Meter coil pairs and read motor ratings first."
+            },
+            {
+              "from": "um_e_/_titan_board.3",
+              "to": "um_e_/_titan_machine.3",
+              "state": "guess",
+              "function": "candidate E / Titan winding connection",
+              "check": "Prime output pin order is source-derived; machine cavity/coil pairing and current remain unverified. Meter coil pairs and read motor ratings first."
+            },
+            {
+              "from": "um_e_/_titan_board.4",
+              "to": "um_e_/_titan_machine.4",
+              "state": "guess",
+              "function": "candidate E / Titan winding connection",
+              "check": "Prime output pin order is source-derived; machine cavity/coil pairing and current remain unverified. Meter coil pairs and read motor ratings first."
+            }
+          ],
+          "note": "MakeICT page documents E3D V6/Titan modification, not motor wiring or current. Do not copy Ultimaker 2.1.1 family board motor-phase pin numbers into the actual machine.",
+          "original_panel_index": 4
+        },
+        {
+          "title": "Hotend temperature feedback: identify the sensor before hookup",
+          "nodes": [
+            {
+              "id": "um_hotend_prime",
+              "title": "Prime P12 J21 temperature input",
+              "column": 0,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "IN",
+                  "label": "pin 1 sensor input",
+                  "side": "right"
+                },
+                {
+                  "id": "GND",
+                  "label": "pin 2 GND",
+                  "side": "right"
+                }
+              ]
+            },
+            {
+              "id": "um_hotend_sensor",
+              "title": "Installed Hotend sensor (model unknown)",
+              "column": 2,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "S",
+                  "label": "sensor lead(s)",
+                  "side": "left"
+                },
+                {
+                  "id": "R",
+                  "label": "sensor return",
+                  "side": "left"
+                }
+              ]
+            }
+          ],
+          "edges": [
+            {
+              "from": "um_hotend_prime.IN",
+              "to": "um_hotend_sensor.S",
+              "state": "guess",
+              "function": "Hotend temperature candidate",
+              "check": "Identify thermistor/PT100/PT1000 part number and match ADC configuration/amplifier; no sensor type inferred."
+            },
+            {
+              "from": "um_hotend_prime.GND",
+              "to": "um_hotend_sensor.R",
+              "state": "guess",
+              "function": "Hotend sensor return",
+              "check": "Only if sensor topology is compatible and actual harness contacts are traced."
+            }
+          ],
+          "note": "P12 J21-J23 contact schedule: pin1 input, pin2 GND. The MakeICT page says E3D V6 but does not identify its installed sensor. No heater should be enabled until ambient reading is plausible.",
+          "original_panel_index": 5
+        },
+        {
+          "title": "Bed temperature feedback: identify the sensor before hookup",
+          "nodes": [
+            {
+              "id": "um_bed_prime",
+              "title": "Prime P12 J22 temperature input",
+              "column": 0,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "IN",
+                  "label": "pin 1 sensor input",
+                  "side": "right"
+                },
+                {
+                  "id": "GND",
+                  "label": "pin 2 GND",
+                  "side": "right"
+                }
+              ]
+            },
+            {
+              "id": "um_bed_sensor",
+              "title": "Installed Bed sensor (model unknown)",
+              "column": 2,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "S",
+                  "label": "sensor lead(s)",
+                  "side": "left"
+                },
+                {
+                  "id": "R",
+                  "label": "sensor return",
+                  "side": "left"
+                }
+              ]
+            }
+          ],
+          "edges": [
+            {
+              "from": "um_bed_prime.IN",
+              "to": "um_bed_sensor.S",
+              "state": "guess",
+              "function": "Bed temperature candidate",
+              "check": "Identify thermistor/PT100/PT1000 part number and match ADC configuration/amplifier; no sensor type inferred."
+            },
+            {
+              "from": "um_bed_prime.GND",
+              "to": "um_bed_sensor.R",
+              "state": "guess",
+              "function": "Bed sensor return",
+              "check": "Only if sensor topology is compatible and actual harness contacts are traced."
+            }
+          ],
+          "note": "P12 J21-J23 contact schedule: pin1 input, pin2 GND. The MakeICT page says E3D V6 but does not identify its installed sensor. No heater should be enabled until ambient reading is plausible.",
+          "original_panel_index": 6
+        },
+        {
+          "title": "Prime bed-heater output: exact P12 supply/output contact nets",
+          "nodes": [
+            {
+              "id": "um_bed_psu",
+              "title": "Measured fused heater supply",
+              "column": 0,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "+",
+                  "label": "supply +",
+                  "side": "right"
+                },
+                {
+                  "id": "-",
+                  "label": "return",
+                  "side": "right"
+                }
+              ]
+            },
+            {
+              "id": "um_bed_prime",
+              "title": "Smoothieboard V2 Prime P12",
+              "column": 1,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "J12.1",
+                  "label": "J12.1 \u00b7 VFET \u00b7 XT30 power entry",
+                  "side": "left"
+                },
+                {
+                  "id": "J12.2",
+                  "label": "J12.2 \u00b7 GND_FET \u00b7 XT30 return",
+                  "side": "left"
+                },
+                {
+                  "id": "J13.1",
+                  "label": "J13.1 \u00b7 VFET bed positive",
+                  "side": "right"
+                },
+                {
+                  "id": "J13.2",
+                  "label": "J13.2 \u00b7 SW_BED switched return",
+                  "side": "right"
+                }
+              ]
+            },
+            {
+              "id": "um_bed",
+              "title": "Installed bed heater (rating unknown)",
+              "column": 2,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "H+",
+                  "label": "heater lead +",
+                  "side": "left"
+                },
+                {
+                  "id": "H-",
+                  "label": "heater lead -",
+                  "side": "left"
+                }
+              ]
+            }
+          ],
+          "edges": [
+            {
+              "from": "um_bed_psu.+",
+              "to": "um_bed_prime.J12.1",
+              "state": "guess",
+              "function": "heater-load supply to Prime VFET rail",
+              "check": "Use only after measuring bed voltage/current and selecting the correct fuse, connector, and supply capacity."
+            },
+            {
+              "from": "um_bed_psu.-",
+              "to": "um_bed_prime.J12.2",
+              "state": "guess",
+              "function": "heater-load return supply",
+              "check": "Confirm exact power-supply return and protective/logic-ground strategy."
+            },
+            {
+              "from": "um_bed_prime.J12.1",
+              "to": "um_bed_prime.J13.1",
+              "state": "source",
+              "function": "shared VFET bed-supply net",
+              "check": "Exact P12 schematic/netlist shows both connector contacts on VFET."
+            },
+            {
+              "from": "um_bed_prime.J13.1",
+              "to": "um_bed.H+",
+              "state": "guess",
+              "function": "bed heater positive feed",
+              "check": "GUESS machine endpoint until actual bed voltage, current and harness cavity are identified.",
+              "electrical_role": "power"
+            },
+            {
+              "from": "um_bed_prime.J13.2",
+              "to": "um_bed.H-",
+              "state": "guess",
+              "function": "bed heater switched return",
+              "check": "GUESS machine endpoint; confirm heater channel configuration, current and thermal protections."
+            }
+          ],
+          "note": "Exact P12 schematic/PCB: J12.1 VFET and J12.2 GND_FET are XT30 power entry; J13.1 VFET and J13.2 SW_BED are bed output. J11 is only an auxiliary 2.54mm header, not selected for heater current. Confirm fitted bed voltage/current, output terminal ratings, branch fuse, independent thermal protection, firmware and sensor before heat. The shared VFET line within the board is factory internal, not a user wire.",
+          "original_panel_index": 7
+        },
+        {
+          "title": "Conditional PT100 path: Prime J36 SPI \u2192 ADI MAX31865PMB1 peripheral",
+          "nodes": [
+            {
+              "id": "um_core_j36",
+              "title": "Smoothieboard V2 Prime P12 J36",
+              "column": 0,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "CS",
+                  "label": "J36.6 PD15 candidate CS",
+                  "side": "right"
+                },
+                {
+                  "id": "COPI",
+                  "label": "J36.7 SPI1_COPI",
+                  "side": "right"
+                },
+                {
+                  "id": "CIPO",
+                  "label": "J36.8 SPI1_CIPO",
+                  "side": "right"
+                },
+                {
+                  "id": "SCK",
+                  "label": "J36.9 SPI1_SCK",
+                  "side": "right"
+                },
+                {
+                  "id": "GND",
+                  "label": "J36.10 GND",
+                  "side": "right"
+                }
+              ]
+            },
+            {
+              "id": "um_adi_max",
+              "title": "Analog Devices MAX31865PMB1 12-pin Pmod J1 / CON1",
+              "column": 1,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "J1.1",
+                  "label": "J1.1 SS / CS",
+                  "side": "left"
+                },
+                {
+                  "id": "J1.2",
+                  "label": "J1.2 MOSI / SDI",
+                  "side": "left"
+                },
+                {
+                  "id": "J1.3",
+                  "label": "J1.3 MISO / SDO",
+                  "side": "left"
+                },
+                {
+                  "id": "J1.4",
+                  "label": "J1.4 SCLK / SCK",
+                  "side": "left"
+                },
+                {
+                  "id": "J1.5",
+                  "label": "J1.5 GND",
+                  "side": "left"
+                },
+                {
+                  "id": "J1.6",
+                  "label": "J1.6 VCC +3.3V",
+                  "side": "left"
+                },
+                {
+                  "id": "CON1.1",
+                  "label": "CON1.1 FORCE+ / FORCE2",
+                  "side": "right"
+                },
+                {
+                  "id": "CON1.2",
+                  "label": "CON1.2 RTDIN+",
+                  "side": "right"
+                },
+                {
+                  "id": "CON1.3",
+                  "label": "CON1.3 RTDIN\u2212",
+                  "side": "right"
+                },
+                {
+                  "id": "CON1.4",
+                  "label": "CON1.4 FORCE\u2212",
+                  "side": "right"
+                },
+                {
+                  "id": "J1.7",
+                  "label": "J1.7 DRDY active-low",
+                  "side": "right"
+                },
+                {
+                  "id": "J1.8",
+                  "label": "J1.8 NC",
+                  "side": "right"
+                },
+                {
+                  "id": "J1.9",
+                  "label": "J1.9 NC",
+                  "side": "right"
+                },
+                {
+                  "id": "J1.10",
+                  "label": "J1.10 NC",
+                  "side": "right"
+                },
+                {
+                  "id": "J1.11",
+                  "label": "J1.11 GND",
+                  "side": "left"
+                },
+                {
+                  "id": "J1.12",
+                  "label": "J1.12 VCC +3.3V",
+                  "side": "left"
+                }
+              ]
+            },
+            {
+              "id": "um_rtd",
+              "title": "Installed sensor only if confirmed 2-wire PT100",
+              "column": 2,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "rtd1",
+                  "label": "RTD lead A (measured)",
+                  "side": "left"
+                },
+                {
+                  "id": "rtd2",
+                  "label": "RTD lead B (measured)",
+                  "side": "left"
+                }
+              ]
+            },
+            {
+              "id": "um_adi_j2",
+              "title": "ADI Pmod J2 two-wire configuration",
+              "column": 1,
+              "offset": 1,
+              "contacts": [
+                {
+                  "id": "1",
+                  "label": "J2.1 \u00b7 jumper header contact",
+                  "side": "left"
+                },
+                {
+                  "id": "2",
+                  "label": "J2.2 \u00b7 jumper header contact",
+                  "side": "left"
+                },
+                {
+                  "id": "3",
+                  "label": "J2.3 \u00b7 jumper header contact",
+                  "side": "left"
+                },
+                {
+                  "id": "4",
+                  "label": "J2.4 \u00b7 jumper header contact",
+                  "side": "left"
+                }
+              ]
+            },
+            {
+              "id": "um_core_j5_power",
+              "title": "Smoothieboard V2 Prime P12 J35 power contact",
+              "column": 0,
+              "offset": 1,
+              "contacts": [
+                {
+                  "id": "10",
+                  "label": "J35.1 3V3 output \u00b7 verify limited 3V3 load",
+                  "side": "right"
+                }
+              ]
+            }
+          ],
+          "edges": [
+            {
+              "from": "um_core_j36.CS",
+              "to": "um_adi_max.J1.1",
+              "state": "guess",
+              "function": "candidate SPI chip select to Pmod SS",
+              "check": "Prime J36.6 is PD15 candidate CS; verify firmware CS mapping."
+            },
+            {
+              "from": "um_core_j36.COPI",
+              "to": "um_adi_max.J1.2",
+              "state": "guess",
+              "function": "SPI1 COPI to MAX31865 MOSI",
+              "check": "Confirm Prime pin nets/logic levels and firmware driver."
+            },
+            {
+              "from": "um_adi_max.J1.3",
+              "to": "um_core_j36.CIPO",
+              "state": "guess",
+              "function": "MAX31865 MISO to SPI1 CIPO",
+              "check": "Confirm direction/logic levels on exact board revision."
+            },
+            {
+              "from": "um_core_j36.SCK",
+              "to": "um_adi_max.J1.4",
+              "state": "guess",
+              "function": "SPI clock to MAX31865 SCLK",
+              "check": "Confirm firmware SPI configuration and timing."
+            },
+            {
+              "from": "um_core_j36.GND",
+              "to": "um_adi_max.J1.5",
+              "state": "guess",
+              "function": "digital ground reference",
+              "check": "J36.10 is GND; verify 3.3V logic reference."
+            },
+            {
+              "from": "um_adi_max.CON1.1",
+              "to": "um_rtd.rtd1",
+              "state": "guess",
+              "function": "RTD lead A to CON1.1 FORCE+",
+              "check": "Use measured two-wire PT100 terminals; J2 jumper bridges FORCE+ with RTDIN+."
+            },
+            {
+              "from": "um_adi_max.CON1.4",
+              "to": "um_rtd.rtd2",
+              "state": "guess",
+              "function": "RTD lead B to CON1.4 FORCE\u2212",
+              "check": "Use measured two-wire PT100 terminals; J2 jumper bridges FORCE\u2212 with RTDIN\u2212."
+            },
+            {
+              "from": "um_core_j5_power.10",
+              "to": "um_adi_max.J1.6",
+              "state": "guess",
+              "function": "3.3V module supply to Pmod VCC pin6",
+              "check": "Verify Prime 3V3 power budget and J35.1 rating; module data sheet identifies J1.6 as +3.3V."
+            },
+            {
+              "from": "um_core_j5_power.10",
+              "to": "um_adi_max.J1.12",
+              "state": "guess",
+              "function": "3.3V module supply to Pmod VCC pin12",
+              "check": "J1.12 is a second Pmod +3.3V contact; use the same verified host 3V3 rail."
+            },
+            {
+              "from": "um_core_j36.GND",
+              "to": "um_adi_max.J1.11",
+              "state": "guess",
+              "function": "Pmod secondary GND contact pin11",
+              "check": "ADI data sheet identifies J1.11 as GND; tie to the same verified signal return."
+            },
+            {
+              "from": "um_adi_j2.1",
+              "to": "um_adi_j2.2",
+              "function": "Fit 2-wire PT100 jumper J2.1\u20132",
+              "state": "guess",
+              "check": "ADI PMB1 Rev0 user guide requires both jumpers for 2-wire mode; jumper is fitted on the module, not a cable to an RTD screw terminal."
+            },
+            {
+              "from": "um_adi_j2.3",
+              "to": "um_adi_j2.4",
+              "function": "Fit 2-wire PT100 jumper J2.3\u20134",
+              "state": "guess",
+              "check": "ADI PMB1 Rev0 user guide requires both jumpers for 2-wire mode; jumper is fitted on the module, not a cable to an RTD screw terminal."
+            }
+          ],
+          "note": "Analog Devices MAX31865PMB1 data sheet Rev 0 (Jan 2014), Table 1: all 12-pin J1 positions: 1=SS/CS, 2=MOSI, 3=MISO, 4=SCLK, 5 and 11=GND, 6 and 12=+3.3V, 7=DRDY active-low, 8\u201310=NC. Installed BOM R7 is 400\u03a9 \u00b10.1% RREF for the board PT100 configuration. The MAX31865 BIAS node is internal to the module (not a user terminal). CON1.1=FORCE+/FORCE2, .2=RTDIN+, .3=RTDIN\u2212, .4=FORCE\u2212. Install both J2 jumpers 1\u20132 and 3\u20134 for 2-wire RTD; connect the two sensor leads to CON1.1 and CON1.4. J1.6 is the proposed board supply contact; J1.5 is GND. Prime J36 SPI signal contacts are source-derived, but PD15 CS is only a candidate. Smoothieware docs state MAX31865 is a future possibility, not an existing temperature-control driver, so this circuit remains unusable for closed-loop heater control until firmware support and the board 3.3V output are verified. R7 and BIAS are factory-internal details noted here, not external user wiring terminals. The diagram shows every J2 pin separately with two physical jumpers; no invented J2-to-screw-terminal cable is required. Pinned P12 PCB pad readback verifies J35.1 /3V3_LIMIT and J35.10 GND; available current and fitted revision remain qualification gates.",
+          "original_panel_index": 8
+        },
+        {
+          "title": "MAX31865PMB1 host supply \u00b7 J1.6/.12 VCC, .5/.11 GND",
+          "nodes": [
+            {
+              "id": "um_core_3v3_supply",
+              "title": "Smoothieboard V2 Prime P12 J35",
+              "column": 0,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "10",
+                  "label": "J35.1 3V3 output \u00b7 verify limited 3V3 load",
+                  "side": "right"
+                },
+                {
+                  "id": "19",
+                  "label": "J35.10 GND",
+                  "side": "right"
+                }
+              ]
+            },
+            {
+              "id": "um_pmod_power",
+              "title": "Analog Devices MAX31865PMB1 J1 supply contacts",
+              "column": 1,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "6",
+                  "label": "J1.6 VCC +3.3V",
+                  "side": "left"
+                },
+                {
+                  "id": "12",
+                  "label": "J1.12 VCC +3.3V",
+                  "side": "left"
+                },
+                {
+                  "id": "5",
+                  "label": "J1.5 GND",
+                  "side": "left"
+                },
+                {
+                  "id": "11",
+                  "label": "J1.11 GND",
+                  "side": "left"
+                }
+              ]
+            }
+          ],
+          "edges": [
+            {
+              "from": "um_core_3v3_supply.10",
+              "to": "um_pmod_power.6",
+              "state": "guess",
+              "function": "Prime 3.3V to PMB1 VCC contact J1.6",
+              "check": "Verify Prime J35.1 is an available output with enough current budget for module."
+            },
+            {
+              "from": "um_core_3v3_supply.10",
+              "to": "um_pmod_power.12",
+              "state": "guess",
+              "function": "Prime 3.3V to duplicate PMB1 VCC contact J1.12",
+              "check": "Same supply net contact, confirm Pmod board revision."
+            },
+            {
+              "from": "um_core_3v3_supply.19",
+              "to": "um_pmod_power.5",
+              "state": "guess",
+              "function": "Prime return to PMB1 GND J1.5",
+              "check": "Verify actual J35.10 GND net on board export."
+            },
+            {
+              "from": "um_core_3v3_supply.19",
+              "to": "um_pmod_power.11",
+              "state": "guess",
+              "function": "Prime return to PMB1 GND J1.11",
+              "check": "Same Pmod ground net, keep a low-impedance return."
+            }
+          ],
+          "note": "ADI PMB1 datasheet Table 1 identifies J1.5/J1.11 as GND and J1.6/J1.12 as +3.3V. Candidate Prime source J35.1 is /3V3_LIMIT in the exported contact map; check available current capacity and actual board revision before using it. The Prime contact export identifies J35.10 as GND; check available current capacity and exact board revision before use. Pinned P12 PCB pad readback verifies J35.1 /3V3_LIMIT and J35.10 GND; available current and fitted revision remain qualification gates.",
+          "original_panel_index": 9
+        },
+        {
+          "title": "X limit candidate: Prime input to actual switch",
+          "nodes": [
+            {
+              "id": "um_x_input",
+              "title": "Prime P12 J24 endstop input",
+              "column": 0,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "IN",
+                  "label": "pin 3 input",
+                  "side": "right"
+                },
+                {
+                  "id": "GND",
+                  "label": "pin 2 GND",
+                  "side": "right"
+                },
+                {
+                  "id": "SEL",
+                  "label": "pin 1 selector",
+                  "side": "right"
+                }
+              ]
+            },
+            {
+              "id": "um_x_switch",
+              "title": "Actual X limit switch / sensor",
+              "column": 2,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "SIG",
+                  "label": "signal unknown",
+                  "side": "left"
+                },
+                {
+                  "id": "RET",
+                  "label": "return unknown",
+                  "side": "left"
+                }
+              ]
+            }
+          ],
+          "edges": [
+            {
+              "from": "um_x_input.IN",
+              "to": "um_x_switch.SIG",
+              "state": "guess",
+              "function": "X endstop signal",
+              "check": "Trace actual cable, sensor output, NO/NC and level before assigning; J-number-to-axis is only a candidate."
+            },
+            {
+              "from": "um_x_input.GND",
+              "to": "um_x_switch.RET",
+              "state": "guess",
+              "function": "X endstop return",
+              "check": "Verify common/return; selector pin must stay open until voltage requirement is known."
+            }
+          ],
+          "note": "MakeICT installation harness is not mapped. Candidate P12 J24/J26/J28 only; verify all six min/max sockets and sensor contacts from actual board revision before wiring.",
+          "original_panel_index": 10
+        },
+        {
+          "title": "Y limit candidate: Prime input to actual switch",
+          "nodes": [
+            {
+              "id": "um_y_input",
+              "title": "Prime P12 J26 endstop input",
+              "column": 0,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "IN",
+                  "label": "pin 3 input",
+                  "side": "right"
+                },
+                {
+                  "id": "GND",
+                  "label": "pin 2 GND",
+                  "side": "right"
+                },
+                {
+                  "id": "SEL",
+                  "label": "pin 1 selector",
+                  "side": "right"
+                }
+              ]
+            },
+            {
+              "id": "um_y_switch",
+              "title": "Actual Y limit switch / sensor",
+              "column": 2,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "SIG",
+                  "label": "signal unknown",
+                  "side": "left"
+                },
+                {
+                  "id": "RET",
+                  "label": "return unknown",
+                  "side": "left"
+                }
+              ]
+            }
+          ],
+          "edges": [
+            {
+              "from": "um_y_input.IN",
+              "to": "um_y_switch.SIG",
+              "state": "guess",
+              "function": "Y endstop signal",
+              "check": "Trace actual cable, sensor output, NO/NC and level before assigning; J-number-to-axis is only a candidate."
+            },
+            {
+              "from": "um_y_input.GND",
+              "to": "um_y_switch.RET",
+              "state": "guess",
+              "function": "Y endstop return",
+              "check": "Verify common/return; selector pin must stay open until voltage requirement is known."
+            }
+          ],
+          "note": "MakeICT installation harness is not mapped. Candidate P12 J24/J26/J28 only; verify all six min/max sockets and sensor contacts from actual board revision before wiring.",
+          "original_panel_index": 11
+        },
+        {
+          "title": "Z limit candidate: Prime input to actual switch",
+          "nodes": [
+            {
+              "id": "um_z_input",
+              "title": "Prime P12 J28 endstop input",
+              "column": 0,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "IN",
+                  "label": "pin 3 input",
+                  "side": "right"
+                },
+                {
+                  "id": "GND",
+                  "label": "pin 2 GND",
+                  "side": "right"
+                },
+                {
+                  "id": "SEL",
+                  "label": "pin 1 selector",
+                  "side": "right"
+                }
+              ]
+            },
+            {
+              "id": "um_z_switch",
+              "title": "Actual Z limit switch / sensor",
+              "column": 2,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "SIG",
+                  "label": "signal unknown",
+                  "side": "left"
+                },
+                {
+                  "id": "RET",
+                  "label": "return unknown",
+                  "side": "left"
+                }
+              ]
+            }
+          ],
+          "edges": [
+            {
+              "from": "um_z_input.IN",
+              "to": "um_z_switch.SIG",
+              "state": "guess",
+              "function": "Z endstop signal",
+              "check": "Trace actual cable, sensor output, NO/NC and level before assigning; J-number-to-axis is only a candidate."
+            },
+            {
+              "from": "um_z_input.GND",
+              "to": "um_z_switch.RET",
+              "state": "guess",
+              "function": "Z endstop return",
+              "check": "Verify common/return; selector pin must stay open until voltage requirement is known."
+            }
+          ],
+          "note": "MakeICT installation harness is not mapped. Candidate P12 J24/J26/J28 only; verify all six min/max sockets and sensor contacts from actual board revision before wiring.",
+          "original_panel_index": 12
+        },
+        {
+          "title": "Prime selected \u00b7 separate logic and motor supplies",
+          "nodes": [
+            {
+              "id": "logic",
+              "title": "Regulated 5 V logic supply",
+              "column": 0,
+              "contacts": [
+                {
+                  "id": "v",
+                  "label": "+5 V regulated",
+                  "side": "right"
+                },
+                {
+                  "id": "g",
+                  "label": "0 V logic return",
+                  "side": "right"
+                }
+              ]
+            },
+            {
+              "id": "motor",
+              "title": "Verified motor supply \u00b7 voltage/current TBD",
+              "column": 0,
+              "contacts": [
+                {
+                  "id": "v",
+                  "label": "DC + \u00b7 before fuse",
+                  "side": "right"
+                },
+                {
+                  "id": "g",
+                  "label": "0 V motor return",
+                  "side": "right"
+                }
+              ]
+            },
+            {
+              "id": "fuse",
+              "title": "Motor branch fuse \u00b7 rating selected after measurement",
+              "column": 1,
+              "contacts": [
+                {
+                  "id": "in",
+                  "label": "fuse input",
+                  "side": "left"
+                },
+                {
+                  "id": "out",
+                  "label": "fuse output",
+                  "side": "left"
+                }
+              ]
+            },
+            {
+              "id": "prime",
+              "title": "Prime P12 \u00b7 confirm exact revision",
+              "column": 2,
+              "contacts": [
+                {
+                  "id": "v5",
+                  "label": "J42.1 \u00b7 5V_PORTIN",
+                  "side": "left"
+                },
+                {
+                  "id": "lg",
+                  "label": "J42.2 \u00b7 GND",
+                  "side": "left"
+                },
+                {
+                  "id": "vm",
+                  "label": "J9.1 \u00b7 VMOT",
+                  "side": "left"
+                },
+                {
+                  "id": "mg",
+                  "label": "J9.2 \u00b7 GND",
+                  "side": "left"
+                },
+                {
+                  "id": "aux1",
+                  "label": "J10.1 \u00b7 VMOT parallel \u00b7 unused",
+                  "side": "left"
+                },
+                {
+                  "id": "aux2",
+                  "label": "J10.2 \u00b7 GND parallel \u00b7 unused",
+                  "side": "left"
+                }
+              ]
+            }
+          ],
+          "edges": [
+            {
+              "from": "logic.v",
+              "to": "prime.v5",
+              "function": "Prime regulated logic supply",
+              "state": "guess",
+              "check": "Prime alternative only. Confirm fitted P11/P12 revision, input-voltage/current limits, supply sequencing and fuse/conductor ratings. Never connect both Core external drivers and Prime winding outputs to the same motor."
+            },
+            {
+              "from": "logic.g",
+              "to": "prime.lg",
+              "function": "Prime logic supply return",
+              "state": "guess",
+              "check": "Prime alternative only. Confirm fitted P11/P12 revision, input-voltage/current limits, supply sequencing and fuse/conductor ratings. Never connect both Core external drivers and Prime winding outputs to the same motor."
+            },
+            {
+              "from": "motor.v",
+              "to": "fuse.in",
+              "function": "Protected motor branch input",
+              "state": "guess",
+              "check": "Prime alternative only. Confirm fitted P11/P12 revision, input-voltage/current limits, supply sequencing and fuse/conductor ratings. Never connect both Core external drivers and Prime winding outputs to the same motor."
+            },
+            {
+              "from": "fuse.out",
+              "to": "prime.vm",
+              "function": "Prime VMOT power",
+              "state": "guess",
+              "check": "Prime alternative only. Confirm fitted P11/P12 revision, input-voltage/current limits, supply sequencing and fuse/conductor ratings. Never connect both Core external drivers and Prime winding outputs to the same motor."
+            },
+            {
+              "from": "motor.g",
+              "to": "prime.mg",
+              "function": "Prime motor supply return",
+              "state": "guess",
+              "check": "Prime alternative only. Confirm fitted P11/P12 revision, input-voltage/current limits, supply sequencing and fuse/conductor ratings. Never connect both Core external drivers and Prime winding outputs to the same motor."
+            }
+          ],
+          "note": "This is the alternative integrated-driver architecture. The same PCB-derived contact labels occur on P121/P12, but driver type, rating and current configuration differ. Use one verified power-entry arrangement; J10 parallels VMOT and is left unused here. Board ground is shared internally; route motor current directly to power distribution, not through logic wiring. Determine actual allowed voltage/current before choosing a supply; no machine-source adapter automatically qualifies.",
+          "original_panel_index": 13
+        },
+        {
+          "title": "Prime P12 \u00b7 Hotend A \u00b7 complete external power and load circuit",
+          "nodes": [
+            {
+              "id": "supply",
+              "title": "Heater-matched DC supply \u00b7 rating measured",
+              "column": 0,
+              "contacts": [
+                {
+                  "id": "v",
+                  "label": "DC + before branch fuse",
+                  "side": "right"
+                },
+                {
+                  "id": "g",
+                  "label": "0 V power return",
+                  "side": "right"
+                }
+              ]
+            },
+            {
+              "id": "fuse",
+              "title": "Individual heater branch fuse \u00b7 rating TBD",
+              "column": 0,
+              "contacts": [
+                {
+                  "id": "a",
+                  "label": "input from supply +",
+                  "side": "right"
+                },
+                {
+                  "id": "b",
+                  "label": "output to VFET input",
+                  "side": "right"
+                }
+              ]
+            },
+            {
+              "id": "prime",
+              "title": "Prime P12 \u00b7 2590 revision ONLY",
+              "column": 1,
+              "contacts": [
+                {
+                  "id": "v",
+                  "label": "J12.1 \u00b7 VFET \u00b7 XT30 power entry",
+                  "side": "left"
+                },
+                {
+                  "id": "g",
+                  "label": "J12.2 \u00b7 GND_FET \u00b7 XT30 return",
+                  "side": "left"
+                },
+                {
+                  "id": "hplus",
+                  "label": "J17.1 \u00b7 shared cutoff-switched VFET",
+                  "side": "right"
+                },
+                {
+                  "id": "hminus",
+                  "label": "J17.2 \u00b7 Hotend A switched return",
+                  "side": "right"
+                },
+                {
+                  "id": "aux1",
+                  "label": "J11.1 \u00b7 auxiliary VFET \u00b7 unused",
+                  "side": "left"
+                },
+                {
+                  "id": "aux2",
+                  "label": "J11.2 \u00b7 auxiliary GND_FET \u00b7 unused",
+                  "side": "left"
+                }
+              ]
+            },
+            {
+              "id": "cutoff",
+              "title": "Independent thermal cutoff \u00b7 DC/load rated",
+              "column": 2,
+              "contacts": [
+                {
+                  "id": "a",
+                  "label": "series contact lead A",
+                  "side": "left"
+                },
+                {
+                  "id": "b",
+                  "label": "series contact lead B",
+                  "side": "left"
+                }
+              ]
+            },
+            {
+              "id": "heater",
+              "title": "Measured hotend heater \u00b7 never infer rating",
+              "column": 2,
+              "contacts": [
+                {
+                  "id": "a",
+                  "label": "heater lead A",
+                  "side": "left"
+                },
+                {
+                  "id": "b",
+                  "label": "heater lead B",
+                  "side": "left"
+                }
+              ]
+            }
+          ],
+          "edges": [
+            {
+              "from": "supply.v",
+              "to": "fuse.a",
+              "function": "Heater branch fuse feed",
+              "state": "guess",
+              "check": "Select fuse DC voltage/current/interrupt rating and conductor protection from actual heater/supply."
+            },
+            {
+              "from": "fuse.b",
+              "to": "prime.v",
+              "function": "VFET power entry",
+              "state": "guess",
+              "check": "Use XT30 J12, not small 2.54mm J11 auxiliary header; verify exact board, connector, PCB and load current limits."
+            },
+            {
+              "from": "supply.g",
+              "to": "prime.g",
+              "function": "Heater power return",
+              "state": "guess",
+              "check": "Separate from logic supply/VMOT; verify return topology and protective earth as applicable."
+            },
+            {
+              "from": "prime.hplus",
+              "to": "cutoff.a",
+              "function": "Positive heater feed",
+              "state": "guess",
+              "check": "J17.1 is downstream of factory Q25 high-side cutoff. Match heater voltage/current and output connector rating."
+            },
+            {
+              "from": "cutoff.b",
+              "to": "heater.a",
+              "function": "Thermally protected heater feed",
+              "state": "guess",
+              "check": "Install rated cutoff mechanically/electrically according to its manufacturer and heater location."
+            },
+            {
+              "from": "heater.b",
+              "to": "prime.hminus",
+              "function": "Hotend A switched heater return",
+              "state": "guess",
+              "check": "J17.2 is Q19 drain; configured output, tested startup-off and validated temperature feedback are mandatory before enabling heat."
+            }
+          ],
+          "note": "Board-side evidence: exact P12 schematic/PCB at commit7dc4f9a identifies J17 Hotend A, J18 Hotend B, J19 Fan1, J20 Fan2. J17.1 receives shared Q25 cutoff-controlled VFET; J17.2 is Q19 switched return. These are factory internal circuits, not user soldering instructions. PE0 / HOTEND_A_FET and PF14 / OUTPUTENABLE come from the exact P12 source; a general documentation PJ6 label conflicts and must not override this revision. Heater/sensor fitment and connector-safe current are unknown: measure, qualify firmware and prove thermal shutdown before connecting heat. No guaranteed 5A terminal rating is asserted.",
+          "original_panel_index": 14
+        },
+        {
+          "title": "Prime P12 \u00b7 individual fan outputs and spare Hotend B",
+          "nodes": [
+            {
+              "id": "prime",
+              "title": "Prime P12 \u00b7 powered by preceding J12 circuit",
+              "column": 0,
+              "contacts": [
+                {
+                  "id": "f1p",
+                  "label": "J19.1 \u00b7 cutoff-switched VFET",
+                  "side": "right"
+                },
+                {
+                  "id": "f1m",
+                  "label": "J19.2 \u00b7 Fan1 switched return",
+                  "side": "right"
+                },
+                {
+                  "id": "f2p",
+                  "label": "J20.1 \u00b7 cutoff-switched VFET",
+                  "side": "right"
+                },
+                {
+                  "id": "f2m",
+                  "label": "J20.2 \u00b7 Fan2 switched return",
+                  "side": "right"
+                },
+                {
+                  "id": "hbp",
+                  "label": "J18.1 \u00b7 Hotend B + \u00b7 unused",
+                  "side": "right"
+                },
+                {
+                  "id": "hbm",
+                  "label": "J18.2 \u00b7 Hotend B return \u00b7 unused",
+                  "side": "right"
+                }
+              ]
+            },
+            {
+              "id": "fan1",
+              "title": "Installed fan1 \u00b7 identify voltage/current and use",
+              "column": 2,
+              "contacts": [
+                {
+                  "id": "p",
+                  "label": "measured positive lead",
+                  "side": "left"
+                },
+                {
+                  "id": "m",
+                  "label": "measured return lead",
+                  "side": "left"
+                }
+              ]
+            },
+            {
+              "id": "fan2",
+              "title": "Optional fan2 \u00b7 identify fitment and ratings",
+              "column": 2,
+              "contacts": [
+                {
+                  "id": "p",
+                  "label": "measured positive lead",
+                  "side": "left"
+                },
+                {
+                  "id": "m",
+                  "label": "measured return lead",
+                  "side": "left"
+                }
+              ]
+            }
+          ],
+          "edges": [
+            {
+              "from": "prime.f1p",
+              "to": "fan1.p",
+              "function": "Fan1 positive feed",
+              "state": "guess",
+              "check": "Fan receives VFET rail, not a separately inferred 5V/12V supply. Match actual fan voltage/current.",
+              "electrical_role": "power"
+            },
+            {
+              "from": "fan1.m",
+              "to": "prime.f1m",
+              "function": "Fan1 switched return",
+              "state": "guess",
+              "check": "Q21 internal low-side stage; configure fan function and prove cooling whenever heater is enabled."
+            },
+            {
+              "from": "prime.f2p",
+              "to": "fan2.p",
+              "function": "Fan2 positive feed",
+              "state": "guess",
+              "check": "Connect only if fitted or deliberately added, electrically matched and firmware configured.",
+              "electrical_role": "power"
+            },
+            {
+              "from": "fan2.m",
+              "to": "prime.f2m",
+              "function": "Fan2 switched return",
+              "state": "guess",
+              "check": "Q22 internal low-side stage; verify rated load and startup state."
+            }
+          ],
+          "note": "J19/J20 pin1 share the same VFET output from factory Q25; pin2 returns switch through Q21/Q22. No second power supply is connected to the fan outputs. Leave both J18 contacts unconnected in this one-hotend option. Actual hotend heatsink cooling must be maintained; do not assume an original fan is VFET-voltage rated.",
+          "original_panel_index": 15
+        },
+        {
+          "title": "Original display, knob and SD/USB user interface \u00b7 replacement decision",
+          "note": "Stock manual pp.11\u201316 names display, rotary input, SD printing and USB firmware update. MakeICT modified machine does not publish its retained panel wiring. Select a Prime-supported display/host workflow or identify exact panel protocol and connector before retaining it; debug UART is not an assumed panel adapter.",
+          "nodes": [
+            {
+              "id": "prime",
+              "title": "Prime P12 \u00b7 user interface compatibility boundary",
+              "column": 0,
+              "contacts": [
+                {
+                  "id": "ui",
+                  "label": "Supported display/host interface \u00b7 verify firmware",
+                  "side": "right"
+                }
+              ]
+            },
+            {
+              "id": "ui",
+              "title": "Original UM2 user interface \u00b7 exact connector unresolved",
+              "column": 2,
+              "contacts": [
+                {
+                  "id": "lcd",
+                  "label": "Display interface",
+                  "side": "left"
+                },
+                {
+                  "id": "knob",
+                  "label": "Rotary/push control interface",
+                  "side": "left"
+                },
+                {
+                  "id": "sd",
+                  "label": "Original SD slot / controller protocol",
+                  "side": "left"
+                },
+                {
+                  "id": "usb",
+                  "label": "Original USB firmware-update workflow",
+                  "side": "left"
+                }
+              ]
+            }
+          ],
+          "edges": [
+            {
+              "from": "prime.ui",
+              "to": "ui.lcd",
+              "function": "Retained display compatibility",
+              "state": "open"
+            },
+            {
+              "from": "prime.ui",
+              "to": "ui.knob",
+              "function": "Retained rotary control compatibility",
+              "state": "open"
+            },
+            {
+              "from": "prime.ui",
+              "to": "ui.sd",
+              "function": "Retained SD printing compatibility",
+              "state": "open"
+            },
+            {
+              "from": "prime.ui",
+              "to": "ui.usb",
+              "function": "Retained USB host compatibility",
+              "state": "open"
+            }
+          ],
+          "original_panel_index": null,
+          "evidence_sources": [
+            {
+              "title": "Ultimaker 2 User Manual v1.13 \u00b7 pp.11\u201316",
+              "url": "https://wiki.makeict.org/images/f/f9/Ultimaker_2_-_User_Manual_v1.13.pdf",
+              "claim": "Describes factory UI/power workflow; does not provide a Prime-compatible retained panel pinout."
+            },
+            {
+              "title": "MakeICT Ultimaker 2 equipment page (modified hotend/extruder)",
+              "url": "https://wiki.makeict.org/wiki/Ultimaker_2",
+              "claim": "MakeICT modification inventory identifies E3D V6/Titan/1.75mm, not installed UI, supply or harness revision."
+            }
+          ]
+        }
+      ],
+      "controller_title": "Smoothieboard V2 Prime",
+      "selected_controller": "prime",
+      "classification_note": "Original motion-driver electronics are on the board being replaced. Use Prime integrated phase outputs directly to measured winding pairs; do not connect STEP/DIR signal outputs to motor windings. Confirm installed board, motor current and power rating from the cited machine source.",
+      "historical_architecture": {
+        "status": "Superseded architecture prose; retained verbatim. Core/external-driver alternatives here are older conditional options, not instructions for the selected current main diagram.",
+        "fields": {
+          "target": "Prime is a possible four-motor printer replacement after rating checks; Core needs external drivers. Map actual modified hotend/sensor and bed loads before reconnecting heaters.",
+          "plan": "The drawing provides individual motor, command, power and peripheral conductors. Select one controller architecture from the target assessment; alternatives must not be wired at the same time. Retain only matching, measured machine harnesses and commission each circuit against its listed gate.",
+          "circuits": [
+            [
+              "Prime X/Y/Z/E outputs\nif motor ratings fit",
+              "Integrated drivers; verify each current",
+              "Printer stepper motors",
+              "[GUESS] installed motor ratings/harness and board revision unknown"
+            ],
+            [
+              "Core P1 J5 pin 16 \u00b7 /STEP_A \u00b7 candidate X STEP",
+              "Select rated external driver; verify logic threshold, timing, power stage and reference",
+              "printer X external driver input; driver not identified STEP",
+              "[OPEN] No installed/matching external-driver input terminals or complete harness are established by the cited source."
+            ],
+            [
+              "Core P1 J5 pin 18 \u00b7 /DIR_A \u00b7 candidate X DIR",
+              "Select rated external driver; verify logic threshold, timing, power stage and reference",
+              "printer X external driver input; driver not identified DIR",
+              "[OPEN] No installed/matching external-driver input terminals or complete harness are established by the cited source."
+            ],
+            [
+              "Core P1 J5 pin 22 \u00b7 /STEP_B \u00b7 candidate Y STEP",
+              "Select rated external driver; verify logic threshold, timing, power stage and reference",
+              "printer Y external driver input; driver not identified STEP",
+              "[OPEN] No installed/matching external-driver input terminals or complete harness are established by the cited source."
+            ],
+            [
+              "Core P1 J5 pin 24 \u00b7 /DIR_B \u00b7 candidate Y DIR",
+              "Select rated external driver; verify logic threshold, timing, power stage and reference",
+              "printer Y external driver input; driver not identified DIR",
+              "[OPEN] No installed/matching external-driver input terminals or complete harness are established by the cited source."
+            ],
+            [
+              "Core P1 J5 pin 28 \u00b7 /STEP_C \u00b7 candidate Z STEP",
+              "Select rated external driver; verify logic threshold, timing, power stage and reference",
+              "printer Z external driver input; driver not identified STEP",
+              "[OPEN] No installed/matching external-driver input terminals or complete harness are established by the cited source."
+            ],
+            [
+              "Core P1 J5 pin 30 \u00b7 /DIR_C \u00b7 candidate Z DIR",
+              "Select rated external driver; verify logic threshold, timing, power stage and reference",
+              "printer Z external driver input; driver not identified DIR",
+              "[OPEN] No installed/matching external-driver input terminals or complete harness are established by the cited source."
+            ],
+            [
+              "Core P1 J5 pin 34 \u00b7 /STEP_D \u00b7 candidate E STEP",
+              "Select rated external driver; verify logic threshold, timing, power stage and reference",
+              "printer E external driver input; driver not identified STEP",
+              "[OPEN] No installed/matching external-driver input terminals or complete harness are established by the cited source."
+            ],
+            [
+              "Core P1 J5 pin 36 \u00b7 /DIR_D \u00b7 candidate E DIR",
+              "Select rated external driver; verify logic threshold, timing, power stage and reference",
+              "printer E external driver input; driver not identified DIR",
+              "[OPEN] No installed/matching external-driver input terminals or complete harness are established by the cited source."
+            ],
+            [
+              "Temperature sensor input",
+              "Sensor-matched interface; installed sensor unknown",
+              "E3D V6 hotend and bed sensors",
+              "[OPEN] OPEN: PT100 reference schematic does not prove fitted sensor type"
+            ],
+            [
+              "Heater / fan outputs",
+              "Rated switches / independent thermal protection",
+              "Hotend, bed and fans",
+              "[OPEN] OPEN: installed voltages, current, connectors and cutoff path unverified"
+            ]
+          ],
+          "pins": [
+            "V2 Prime P12 motor outputs J5/J6/J7/J8 each: 1=B2,2=B1,3=A2,4=A1. Candidate mapping X/Y/Z/Titan E; actual motor lead contacts 1-4 and winding pairs unknown.",
+            "Prime P12 J21/J22/J23 temp contacts: pin1 sensor input, pin2 GND. Sensor model/type unknown for E3D V6 and bed.",
+            "Prime P12: J12/J16 pins1=VFET,2=GND_FET are XT30 rail supply contacts; J11 is a small auxiliary header. J13 pins1=VFET,2=SW_BED are bed output. Exact schematic resolves J17 Hotend A, J18 Hotend B, J19 Fan1, J20 Fan2: each pin1 is shared cutoff-switched VFET, pin2 its low-side switched return. This assignment is specific to the pinned P12 revision.",
+            "Prime J24-J29 contacts: pin2 GND, pin3 signal input, pin1 selector. Which maps to X/Y/Z MIN/MAX and sensor electrical type remain unknown; diagram labels candidate J24/J26/J28 only, not fact.",
+            "Core P1 J36: pin6 PD15 candidate CS, pin7 SPI1_COPI, pin8 SPI1_CIPO, pin9 SPI1_SCK, pin10 GND. Proposed MAX31865 path is conditional on PT100 confirmation, module voltage-level match and firmware support.",
+            "No hotend/fan output schedule is assigned because installed machine ratings and exact compatible output are undocumented. Ultimaker Main Board V2.1.1 schematic is a family design reference only, not this machine connector map."
+          ],
+          "parts": [
+            "Identify installed controller and record motor, sensor, heater, bed, fan and supply labels before removal.",
+            "For Core: four named external stepper drivers matched to measured motor nameplates; rated heater switching peripheral(s) and sensor conditioning where required.",
+            "Conditional Core PT100 option: MAX31865 SPI RTD converter with ADI MAX31865PMB1 (3.3V Pmod, J2 2-wire jumpers) only after sensor identification and firmware driver support; Smoothieware MAX31865 support is not verified.",
+            "Independent thermal cutoff and fusing for each heater, retained protective earth and a hardware-safe power disconnect.",
+            "Conditional Prime P12 heater/fan stages: use J12 XT30 VFET entry, J17 Hotend A, J19/J20 fans only with measured matching loads, branch fuse and independent thermal cutoff; temperature feedback/firmware is a blocking qualification gate."
+          ],
+          "instructions": [
+            "Confirm actual board revision and photograph both PCB sides/cable headers before changing wiring.",
+            "Measure each motor winding pair and identify each cavity; set current and test one axis at a time.",
+            "Read E3D sensor and heater part markings; measure cold sensor resistance and heater resistance. Match firmware curve/amplifier and heater voltage/current before applying heat.",
+            "For Prime bed switching, use source-derived P12 J11.1 VFET/J11.2 GND_FET supply-distribution contacts and J13.1 VFET/J13.2 SW_BED output only after bed load rating and fuse checks. J11/J12/J16 are supply distribution, not switched heater outputs.",
+            "For a confirmed PT100/PT1000 on Core, verify J36 SPI nets and choose an exact MAX31865 module/logic level plus firmware driver before wiring; otherwise select a sensor-matched thermistor ADC interface.",
+            "Keep hotend heater power OPEN until its board output, rail, wiring, fuse, thermal fuse and connector ratings are source-verified.",
+            "Identify every fan voltage/current and all six limit/probe contacts; test NO/NC and signal range. Verify plausible ambient temperature, then test one heater with independent cutoff/current monitoring.",
+            "MAX31865PMB1 datasheet BOM lists installed R7=400\u03a9 \u00b10.1% as its PT100 reference resistor; BIAS is internal, not a separate wiring terminal. Verify module revision and resistor population before connecting an RTD."
+          ]
+        }
+      }
+    },
+    "retrofit-guides.json": {
+      "id": "wiki-222",
+      "title": "MakeICT Ultimaker 2 retrofit",
+      "target": "Prime is a possible four-motor printer replacement after rating checks; Core needs external drivers. Map actual modified hotend/sensor and bed loads before reconnecting heaters.",
+      "plan": "The drawing provides individual motor, command, power and peripheral conductors. Select one controller architecture from the target assessment; alternatives must not be wired at the same time. Retain only matching, measured machine harnesses and commission each circuit against its listed gate.",
+      "circuits": [
+        [
+          "Prime X/Y/Z/E outputs\nif motor ratings fit",
+          "Integrated drivers; verify each current",
+          "Printer stepper motors",
+          "[GUESS] installed motor ratings/harness and board revision unknown"
+        ],
+        [
+          "Core P1 J5 pin 16 \u00b7 /STEP_A \u00b7 candidate X STEP",
+          "Select rated external driver; verify logic threshold, timing, power stage and reference",
+          "printer X external driver input; driver not identified STEP",
+          "[OPEN] No installed/matching external-driver input terminals or complete harness are established by the cited source."
+        ],
+        [
+          "Core P1 J5 pin 18 \u00b7 /DIR_A \u00b7 candidate X DIR",
+          "Select rated external driver; verify logic threshold, timing, power stage and reference",
+          "printer X external driver input; driver not identified DIR",
+          "[OPEN] No installed/matching external-driver input terminals or complete harness are established by the cited source."
+        ],
+        [
+          "Core P1 J5 pin 22 \u00b7 /STEP_B \u00b7 candidate Y STEP",
+          "Select rated external driver; verify logic threshold, timing, power stage and reference",
+          "printer Y external driver input; driver not identified STEP",
+          "[OPEN] No installed/matching external-driver input terminals or complete harness are established by the cited source."
+        ],
+        [
+          "Core P1 J5 pin 24 \u00b7 /DIR_B \u00b7 candidate Y DIR",
+          "Select rated external driver; verify logic threshold, timing, power stage and reference",
+          "printer Y external driver input; driver not identified DIR",
+          "[OPEN] No installed/matching external-driver input terminals or complete harness are established by the cited source."
+        ],
+        [
+          "Core P1 J5 pin 28 \u00b7 /STEP_C \u00b7 candidate Z STEP",
+          "Select rated external driver; verify logic threshold, timing, power stage and reference",
+          "printer Z external driver input; driver not identified STEP",
+          "[OPEN] No installed/matching external-driver input terminals or complete harness are established by the cited source."
+        ],
+        [
+          "Core P1 J5 pin 30 \u00b7 /DIR_C \u00b7 candidate Z DIR",
+          "Select rated external driver; verify logic threshold, timing, power stage and reference",
+          "printer Z external driver input; driver not identified DIR",
+          "[OPEN] No installed/matching external-driver input terminals or complete harness are established by the cited source."
+        ],
+        [
+          "Core P1 J5 pin 34 \u00b7 /STEP_D \u00b7 candidate E STEP",
+          "Select rated external driver; verify logic threshold, timing, power stage and reference",
+          "printer E external driver input; driver not identified STEP",
+          "[OPEN] No installed/matching external-driver input terminals or complete harness are established by the cited source."
+        ],
+        [
+          "Core P1 J5 pin 36 \u00b7 /DIR_D \u00b7 candidate E DIR",
+          "Select rated external driver; verify logic threshold, timing, power stage and reference",
+          "printer E external driver input; driver not identified DIR",
+          "[OPEN] No installed/matching external-driver input terminals or complete harness are established by the cited source."
+        ],
+        [
+          "Temperature sensor input",
+          "Sensor-matched interface; installed sensor unknown",
+          "E3D V6 hotend and bed sensors",
+          "[OPEN] OPEN: PT100 reference schematic does not prove fitted sensor type"
+        ],
+        [
+          "Heater / fan outputs",
+          "Rated switches / independent thermal protection",
+          "Hotend, bed and fans",
+          "[OPEN] OPEN: installed voltages, current, connectors and cutoff path unverified"
+        ]
+      ],
+      "pins": [
+        "V2 Prime P12 motor outputs J5/J6/J7/J8 each: 1=B2,2=B1,3=A2,4=A1. Candidate mapping X/Y/Z/Titan E; actual motor lead contacts 1-4 and winding pairs unknown.",
+        "Prime P12 J21/J22/J23 temp contacts: pin1 sensor input, pin2 GND. Sensor model/type unknown for E3D V6 and bed.",
+        "Prime P12: J12/J16 pins1=VFET,2=GND_FET are XT30 rail supply contacts; J11 is a small auxiliary header. J13 pins1=VFET,2=SW_BED are bed output. Exact schematic resolves J17 Hotend A, J18 Hotend B, J19 Fan1, J20 Fan2: each pin1 is shared cutoff-switched VFET, pin2 its low-side switched return. This assignment is specific to the pinned P12 revision.",
+        "Prime J24-J29 contacts: pin2 GND, pin3 signal input, pin1 selector. Which maps to X/Y/Z MIN/MAX and sensor electrical type remain unknown; diagram labels candidate J24/J26/J28 only, not fact.",
+        "Core P1 J36: pin6 PD15 candidate CS, pin7 SPI1_COPI, pin8 SPI1_CIPO, pin9 SPI1_SCK, pin10 GND. Proposed MAX31865 path is conditional on PT100 confirmation, module voltage-level match and firmware support.",
+        "No hotend/fan output schedule is assigned because installed machine ratings and exact compatible output are undocumented. Ultimaker Main Board V2.1.1 schematic is a family design reference only, not this machine connector map."
+      ],
+      "sources": [
+        [
+          "MakeICT Ultimaker 2 equipment page (modified hotend/extruder)",
+          "https://wiki.makeict.org/wiki/Ultimaker_2"
+        ],
+        [
+          "Ultimaker 2 Main Board V2.1.1 source directory, reference only",
+          "https://github.com/Ultimaker/Ultimaker2/tree/master/1091_Main_board_v2.1.1_%28x1%29"
+        ],
+        [
+          "Ultimaker Main Board V2.1.1 schematic PDF, 2013-07-03, reference only",
+          "https://raw.githubusercontent.com/Ultimaker/Ultimaker2/master/1091_Main_board_v2.1.1_%28x1%29/Main%20Board%20V2.1.1.pdf"
+        ],
+        [
+          "Analog Devices MAX31865 datasheet, SPI platinum RTD converter",
+          "https://www.analog.com/media/en/technical-documentation/data-sheets/MAX31865.pdf"
+        ],
+        [
+          "Analog Devices MAX31865PMB1 Peripheral Module datasheet Rev 0 (Jan 2014)",
+          "https://www.analog.com/media/en/technical-documentation/data-sheets/max31865pmb1.pdf"
+        ],
+        [
+          "Smoothieware temperature control / PT100 documentation",
+          "https://smoothieware.org/temperaturecontrol"
+        ],
+        [
+          "Exact Prime P12 MOSFET schematic at pinned revision",
+          "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/mosfets.kicad_sch"
+        ]
+      ],
+      "target_options": {
+        "smoothiebox": "Enclosure only. Select and verify Core or Prime controller within it; no heater or sensor schedule can be inferred from the enclosure.",
+        "core": "Four external motor drivers needed for X/Y/Z/E. Heater outputs require separately specified rated stages; no installed harness pinout is known.",
+        "prime": "Four integrated motor drivers can suit X/Y/Z/Titan if actual current ratings fit; Prime bed output contacts J13.1 VFET and J13.2 SW_BED are source-derived. Prime temperature input is usable only with correct sensor type/conditioning. P12 schematic now establishes J17 Hotend A and J19/J20 fan outputs; these conditional circuits require actual heater/sensor/fan and firmware qualification."
+      },
+      "parts": [
+        "Identify installed controller and record motor, sensor, heater, bed, fan and supply labels before removal.",
+        "For Core: four named external stepper drivers matched to measured motor nameplates; rated heater switching peripheral(s) and sensor conditioning where required.",
+        "Conditional Core PT100 option: MAX31865 SPI RTD converter with ADI MAX31865PMB1 (3.3V Pmod, J2 2-wire jumpers) only after sensor identification and firmware driver support; Smoothieware MAX31865 support is not verified.",
+        "Independent thermal cutoff and fusing for each heater, retained protective earth and a hardware-safe power disconnect.",
+        "Conditional Prime P12 heater/fan stages: use J12 XT30 VFET entry, J17 Hotend A, J19/J20 fans only with measured matching loads, branch fuse and independent thermal cutoff; temperature feedback/firmware is a blocking qualification gate."
+      ],
+      "instructions": [
+        "Confirm actual board revision and photograph both PCB sides/cable headers before changing wiring.",
+        "Measure each motor winding pair and identify each cavity; set current and test one axis at a time.",
+        "Read E3D sensor and heater part markings; measure cold sensor resistance and heater resistance. Match firmware curve/amplifier and heater voltage/current before applying heat.",
+        "For Prime bed switching, use source-derived P12 J11.1 VFET/J11.2 GND_FET supply-distribution contacts and J13.1 VFET/J13.2 SW_BED output only after bed load rating and fuse checks. J11/J12/J16 are supply distribution, not switched heater outputs.",
+        "For a confirmed PT100/PT1000 on Core, verify J36 SPI nets and choose an exact MAX31865 module/logic level plus firmware driver before wiring; otherwise select a sensor-matched thermistor ADC interface.",
+        "Keep hotend heater power OPEN until its board output, rail, wiring, fuse, thermal fuse and connector ratings are source-verified.",
+        "Identify every fan voltage/current and all six limit/probe contacts; test NO/NC and signal range. Verify plausible ambient temperature, then test one heater with independent cutoff/current monitoring.",
+        "MAX31865PMB1 datasheet BOM lists installed R7=400\u03a9 \u00b10.1% as its PT100 reference resistor; BIAS is internal, not a separate wiring terminal. Verify module revision and resistor population before connecting an RTD."
+      ],
+      "wire_panels": [
+        {
+          "title": "Controller logic supply \u00b7 separate from motor power",
+          "nodes": [
+            {
+              "id": "supply",
+              "title": "Regulated logic distribution",
+              "column": 0,
+              "contacts": [
+                {
+                  "id": "v5",
+                  "label": "+5 V regulated",
+                  "side": "right"
+                },
+                {
+                  "id": "return",
+                  "label": "0 V logic return",
+                  "side": "right"
+                }
+              ]
+            },
+            {
+              "id": "core",
+              "title": "Core P1 \u00b7 logic power",
+              "column": 1,
+              "contacts": [
+                {
+                  "id": "v5",
+                  "label": "J42.1 \u00b7 5V input",
+                  "side": "left"
+                },
+                {
+                  "id": "gnd",
+                  "label": "J42.2 \u00b7 GND",
+                  "side": "left"
+                }
+              ]
+            }
+          ],
+          "edges": [
+            {
+              "from": "supply.v5",
+              "to": "core.v5",
+              "state": "guess",
+              "function": "Core 5 V power",
+              "check": "Verify exact board supply path and rail ratings; motor current uses separate wiring and fuses."
+            },
+            {
+              "from": "supply.return",
+              "to": "core.gnd",
+              "state": "guess",
+              "function": "Core supply return",
+              "check": "Verify exact board supply path and rail ratings; motor current uses separate wiring and fuses."
+            }
+          ],
+          "note": "Verify exact board supply path and rail ratings; motor current uses separate wiring and fuses."
+        },
+        {
+          "title": "X motor path: Prime integrated driver",
+          "nodes": [
+            {
+              "id": "um_x_board",
+              "title": "V2 Prime J5",
+              "column": 0,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "1",
+                  "label": "J5.1 \u00b7 B2",
+                  "side": "right"
+                },
+                {
+                  "id": "2",
+                  "label": "J5.2 \u00b7 B1",
+                  "side": "right"
+                },
+                {
+                  "id": "3",
+                  "label": "J5.3 \u00b7 A2",
+                  "side": "right"
+                },
+                {
+                  "id": "4",
+                  "label": "J5.4 \u00b7 A1",
+                  "side": "right"
+                }
+              ]
+            },
+            {
+              "id": "um_x_machine",
+              "title": "X stepper harness (actual contacts unknown)",
+              "column": 2,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "1",
+                  "label": "New measured winding lead B2",
+                  "side": "left"
+                },
+                {
+                  "id": "2",
+                  "label": "New measured winding lead B1",
+                  "side": "left"
+                },
+                {
+                  "id": "3",
+                  "label": "New measured winding lead A2",
+                  "side": "left"
+                },
+                {
+                  "id": "4",
+                  "label": "New measured winding lead A1",
+                  "side": "left"
+                }
+              ]
+            }
+          ],
+          "edges": [
+            {
+              "from": "um_x_board.1",
+              "to": "um_x_machine.1",
+              "state": "guess",
+              "function": "candidate X winding connection",
+              "check": "Prime output pin order is source-derived; machine cavity/coil pairing and current remain unverified. Meter coil pairs and read motor ratings first."
+            },
+            {
+              "from": "um_x_board.2",
+              "to": "um_x_machine.2",
+              "state": "guess",
+              "function": "candidate X winding connection",
+              "check": "Prime output pin order is source-derived; machine cavity/coil pairing and current remain unverified. Meter coil pairs and read motor ratings first."
+            },
+            {
+              "from": "um_x_board.3",
+              "to": "um_x_machine.3",
+              "state": "guess",
+              "function": "candidate X winding connection",
+              "check": "Prime output pin order is source-derived; machine cavity/coil pairing and current remain unverified. Meter coil pairs and read motor ratings first."
+            },
+            {
+              "from": "um_x_board.4",
+              "to": "um_x_machine.4",
+              "state": "guess",
+              "function": "candidate X winding connection",
+              "check": "Prime output pin order is source-derived; machine cavity/coil pairing and current remain unverified. Meter coil pairs and read motor ratings first."
+            }
+          ],
+          "note": "MakeICT page documents E3D V6/Titan modification, not motor wiring or current. Do not copy Ultimaker 2.1.1 family board motor-phase pin numbers into the actual machine."
+        },
+        {
+          "title": "Y motor path: Prime integrated driver",
+          "nodes": [
+            {
+              "id": "um_y_board",
+              "title": "V2 Prime J6",
+              "column": 0,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "1",
+                  "label": "J6.1 \u00b7 B2",
+                  "side": "right"
+                },
+                {
+                  "id": "2",
+                  "label": "J6.2 \u00b7 B1",
+                  "side": "right"
+                },
+                {
+                  "id": "3",
+                  "label": "J6.3 \u00b7 A2",
+                  "side": "right"
+                },
+                {
+                  "id": "4",
+                  "label": "J6.4 \u00b7 A1",
+                  "side": "right"
+                }
+              ]
+            },
+            {
+              "id": "um_y_machine",
+              "title": "Y stepper harness (actual contacts unknown)",
+              "column": 2,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "1",
+                  "label": "New measured winding lead B2",
+                  "side": "left"
+                },
+                {
+                  "id": "2",
+                  "label": "New measured winding lead B1",
+                  "side": "left"
+                },
+                {
+                  "id": "3",
+                  "label": "New measured winding lead A2",
+                  "side": "left"
+                },
+                {
+                  "id": "4",
+                  "label": "New measured winding lead A1",
+                  "side": "left"
+                }
+              ]
+            }
+          ],
+          "edges": [
+            {
+              "from": "um_y_board.1",
+              "to": "um_y_machine.1",
+              "state": "guess",
+              "function": "candidate Y winding connection",
+              "check": "Prime output pin order is source-derived; machine cavity/coil pairing and current remain unverified. Meter coil pairs and read motor ratings first."
+            },
+            {
+              "from": "um_y_board.2",
+              "to": "um_y_machine.2",
+              "state": "guess",
+              "function": "candidate Y winding connection",
+              "check": "Prime output pin order is source-derived; machine cavity/coil pairing and current remain unverified. Meter coil pairs and read motor ratings first."
+            },
+            {
+              "from": "um_y_board.3",
+              "to": "um_y_machine.3",
+              "state": "guess",
+              "function": "candidate Y winding connection",
+              "check": "Prime output pin order is source-derived; machine cavity/coil pairing and current remain unverified. Meter coil pairs and read motor ratings first."
+            },
+            {
+              "from": "um_y_board.4",
+              "to": "um_y_machine.4",
+              "state": "guess",
+              "function": "candidate Y winding connection",
+              "check": "Prime output pin order is source-derived; machine cavity/coil pairing and current remain unverified. Meter coil pairs and read motor ratings first."
+            }
+          ],
+          "note": "MakeICT page documents E3D V6/Titan modification, not motor wiring or current. Do not copy Ultimaker 2.1.1 family board motor-phase pin numbers into the actual machine."
+        },
+        {
+          "title": "Z motor path: Prime integrated driver",
+          "nodes": [
+            {
+              "id": "um_z_board",
+              "title": "V2 Prime J7",
+              "column": 0,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "1",
+                  "label": "J7.1 \u00b7 B2",
+                  "side": "right"
+                },
+                {
+                  "id": "2",
+                  "label": "J7.2 \u00b7 B1",
+                  "side": "right"
+                },
+                {
+                  "id": "3",
+                  "label": "J7.3 \u00b7 A2",
+                  "side": "right"
+                },
+                {
+                  "id": "4",
+                  "label": "J7.4 \u00b7 A1",
+                  "side": "right"
+                }
+              ]
+            },
+            {
+              "id": "um_z_machine",
+              "title": "Z stepper harness (actual contacts unknown)",
+              "column": 2,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "1",
+                  "label": "New measured winding lead B2",
+                  "side": "left"
+                },
+                {
+                  "id": "2",
+                  "label": "New measured winding lead B1",
+                  "side": "left"
+                },
+                {
+                  "id": "3",
+                  "label": "New measured winding lead A2",
+                  "side": "left"
+                },
+                {
+                  "id": "4",
+                  "label": "New measured winding lead A1",
+                  "side": "left"
+                }
+              ]
+            }
+          ],
+          "edges": [
+            {
+              "from": "um_z_board.1",
+              "to": "um_z_machine.1",
+              "state": "guess",
+              "function": "candidate Z winding connection",
+              "check": "Prime output pin order is source-derived; machine cavity/coil pairing and current remain unverified. Meter coil pairs and read motor ratings first."
+            },
+            {
+              "from": "um_z_board.2",
+              "to": "um_z_machine.2",
+              "state": "guess",
+              "function": "candidate Z winding connection",
+              "check": "Prime output pin order is source-derived; machine cavity/coil pairing and current remain unverified. Meter coil pairs and read motor ratings first."
+            },
+            {
+              "from": "um_z_board.3",
+              "to": "um_z_machine.3",
+              "state": "guess",
+              "function": "candidate Z winding connection",
+              "check": "Prime output pin order is source-derived; machine cavity/coil pairing and current remain unverified. Meter coil pairs and read motor ratings first."
+            },
+            {
+              "from": "um_z_board.4",
+              "to": "um_z_machine.4",
+              "state": "guess",
+              "function": "candidate Z winding connection",
+              "check": "Prime output pin order is source-derived; machine cavity/coil pairing and current remain unverified. Meter coil pairs and read motor ratings first."
+            }
+          ],
+          "note": "MakeICT page documents E3D V6/Titan modification, not motor wiring or current. Do not copy Ultimaker 2.1.1 family board motor-phase pin numbers into the actual machine."
+        },
+        {
+          "title": "E / Titan motor path: Prime integrated driver",
+          "nodes": [
+            {
+              "id": "um_e_/_titan_board",
+              "title": "V2 Prime J8",
+              "column": 0,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "1",
+                  "label": "J8.1 \u00b7 B2",
+                  "side": "right"
+                },
+                {
+                  "id": "2",
+                  "label": "J8.2 \u00b7 B1",
+                  "side": "right"
+                },
+                {
+                  "id": "3",
+                  "label": "J8.3 \u00b7 A2",
+                  "side": "right"
+                },
+                {
+                  "id": "4",
+                  "label": "J8.4 \u00b7 A1",
+                  "side": "right"
+                }
+              ]
+            },
+            {
+              "id": "um_e_/_titan_machine",
+              "title": "E / Titan stepper harness (actual contacts unknown)",
+              "column": 2,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "1",
+                  "label": "New measured winding lead B2",
+                  "side": "left"
+                },
+                {
+                  "id": "2",
+                  "label": "New measured winding lead B1",
+                  "side": "left"
+                },
+                {
+                  "id": "3",
+                  "label": "New measured winding lead A2",
+                  "side": "left"
+                },
+                {
+                  "id": "4",
+                  "label": "New measured winding lead A1",
+                  "side": "left"
+                }
+              ]
+            }
+          ],
+          "edges": [
+            {
+              "from": "um_e_/_titan_board.1",
+              "to": "um_e_/_titan_machine.1",
+              "state": "guess",
+              "function": "candidate E / Titan winding connection",
+              "check": "Prime output pin order is source-derived; machine cavity/coil pairing and current remain unverified. Meter coil pairs and read motor ratings first."
+            },
+            {
+              "from": "um_e_/_titan_board.2",
+              "to": "um_e_/_titan_machine.2",
+              "state": "guess",
+              "function": "candidate E / Titan winding connection",
+              "check": "Prime output pin order is source-derived; machine cavity/coil pairing and current remain unverified. Meter coil pairs and read motor ratings first."
+            },
+            {
+              "from": "um_e_/_titan_board.3",
+              "to": "um_e_/_titan_machine.3",
+              "state": "guess",
+              "function": "candidate E / Titan winding connection",
+              "check": "Prime output pin order is source-derived; machine cavity/coil pairing and current remain unverified. Meter coil pairs and read motor ratings first."
+            },
+            {
+              "from": "um_e_/_titan_board.4",
+              "to": "um_e_/_titan_machine.4",
+              "state": "guess",
+              "function": "candidate E / Titan winding connection",
+              "check": "Prime output pin order is source-derived; machine cavity/coil pairing and current remain unverified. Meter coil pairs and read motor ratings first."
+            }
+          ],
+          "note": "MakeICT page documents E3D V6/Titan modification, not motor wiring or current. Do not copy Ultimaker 2.1.1 family board motor-phase pin numbers into the actual machine."
+        },
+        {
+          "title": "Hotend temperature feedback: identify the sensor before hookup",
+          "nodes": [
+            {
+              "id": "um_hotend_prime",
+              "title": "Prime P12 J21 temperature input",
+              "column": 0,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "IN",
+                  "label": "pin 1 sensor input",
+                  "side": "right"
+                },
+                {
+                  "id": "GND",
+                  "label": "pin 2 GND",
+                  "side": "right"
+                }
+              ]
+            },
+            {
+              "id": "um_hotend_sensor",
+              "title": "Installed Hotend sensor (model unknown)",
+              "column": 2,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "S",
+                  "label": "sensor lead(s)",
+                  "side": "left"
+                },
+                {
+                  "id": "R",
+                  "label": "sensor return",
+                  "side": "left"
+                }
+              ]
+            }
+          ],
+          "edges": [
+            {
+              "from": "um_hotend_prime.IN",
+              "to": "um_hotend_sensor.S",
+              "state": "guess",
+              "function": "Hotend temperature candidate",
+              "check": "Identify thermistor/PT100/PT1000 part number and match ADC configuration/amplifier; no sensor type inferred."
+            },
+            {
+              "from": "um_hotend_prime.GND",
+              "to": "um_hotend_sensor.R",
+              "state": "guess",
+              "function": "Hotend sensor return",
+              "check": "Only if sensor topology is compatible and actual harness contacts are traced."
+            }
+          ],
+          "note": "P12 J21-J23 contact schedule: pin1 input, pin2 GND. The MakeICT page says E3D V6 but does not identify its installed sensor. No heater should be enabled until ambient reading is plausible."
+        },
+        {
+          "title": "Bed temperature feedback: identify the sensor before hookup",
+          "nodes": [
+            {
+              "id": "um_bed_prime",
+              "title": "Prime P12 J22 temperature input",
+              "column": 0,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "IN",
+                  "label": "pin 1 sensor input",
+                  "side": "right"
+                },
+                {
+                  "id": "GND",
+                  "label": "pin 2 GND",
+                  "side": "right"
+                }
+              ]
+            },
+            {
+              "id": "um_bed_sensor",
+              "title": "Installed Bed sensor (model unknown)",
+              "column": 2,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "S",
+                  "label": "sensor lead(s)",
+                  "side": "left"
+                },
+                {
+                  "id": "R",
+                  "label": "sensor return",
+                  "side": "left"
+                }
+              ]
+            }
+          ],
+          "edges": [
+            {
+              "from": "um_bed_prime.IN",
+              "to": "um_bed_sensor.S",
+              "state": "guess",
+              "function": "Bed temperature candidate",
+              "check": "Identify thermistor/PT100/PT1000 part number and match ADC configuration/amplifier; no sensor type inferred."
+            },
+            {
+              "from": "um_bed_prime.GND",
+              "to": "um_bed_sensor.R",
+              "state": "guess",
+              "function": "Bed sensor return",
+              "check": "Only if sensor topology is compatible and actual harness contacts are traced."
+            }
+          ],
+          "note": "P12 J21-J23 contact schedule: pin1 input, pin2 GND. The MakeICT page says E3D V6 but does not identify its installed sensor. No heater should be enabled until ambient reading is plausible."
+        },
+        {
+          "title": "Prime bed-heater output: exact P12 supply/output contact nets",
+          "nodes": [
+            {
+              "id": "um_bed_psu",
+              "title": "Measured fused heater supply",
+              "column": 0,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "+",
+                  "label": "supply +",
+                  "side": "right"
+                },
+                {
+                  "id": "-",
+                  "label": "return",
+                  "side": "right"
+                }
+              ]
+            },
+            {
+              "id": "um_bed_prime",
+              "title": "Smoothieboard V2 Prime P12",
+              "column": 1,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "J12.1",
+                  "label": "J12.1 \u00b7 VFET \u00b7 XT30 power entry",
+                  "side": "left"
+                },
+                {
+                  "id": "J12.2",
+                  "label": "J12.2 \u00b7 GND_FET \u00b7 XT30 return",
+                  "side": "left"
+                },
+                {
+                  "id": "J13.1",
+                  "label": "J13.1 \u00b7 VFET bed positive",
+                  "side": "right"
+                },
+                {
+                  "id": "J13.2",
+                  "label": "J13.2 \u00b7 SW_BED switched return",
+                  "side": "right"
+                }
+              ]
+            },
+            {
+              "id": "um_bed",
+              "title": "Installed bed heater (rating unknown)",
+              "column": 2,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "H+",
+                  "label": "heater lead +",
+                  "side": "left"
+                },
+                {
+                  "id": "H-",
+                  "label": "heater lead -",
+                  "side": "left"
+                }
+              ]
+            }
+          ],
+          "edges": [
+            {
+              "from": "um_bed_psu.+",
+              "to": "um_bed_prime.J12.1",
+              "state": "guess",
+              "function": "heater-load supply to Prime VFET rail",
+              "check": "Use only after measuring bed voltage/current and selecting the correct fuse, connector, and supply capacity."
+            },
+            {
+              "from": "um_bed_psu.-",
+              "to": "um_bed_prime.J12.2",
+              "state": "guess",
+              "function": "heater-load return supply",
+              "check": "Confirm exact power-supply return and protective/logic-ground strategy."
+            },
+            {
+              "from": "um_bed_prime.J12.1",
+              "to": "um_bed_prime.J13.1",
+              "state": "source",
+              "function": "shared VFET bed-supply net",
+              "check": "Exact P12 schematic/netlist shows both connector contacts on VFET."
+            },
+            {
+              "from": "um_bed_prime.J13.1",
+              "to": "um_bed.H+",
+              "state": "guess",
+              "function": "bed heater positive feed",
+              "check": "Dotted machine endpoint until actual bed voltage, current and harness cavity are identified."
+            },
+            {
+              "from": "um_bed_prime.J13.2",
+              "to": "um_bed.H-",
+              "state": "guess",
+              "function": "bed heater switched return",
+              "check": "Dotted machine endpoint; confirm heater channel configuration, current and thermal protections."
+            }
+          ],
+          "note": "Exact P12 schematic/PCB: J12.1 VFET and J12.2 GND_FET are XT30 power entry; J13.1 VFET and J13.2 SW_BED are bed output. J11 is only an auxiliary 2.54mm header, not selected for heater current. Confirm fitted bed voltage/current, output terminal ratings, branch fuse, independent thermal protection, firmware and sensor before heat. The shared VFET line within the board is factory internal, not a user wire."
+        },
+        {
+          "title": "Conditional PT100 path: Core J36 SPI \u2192 ADI MAX31865PMB1 peripheral",
+          "nodes": [
+            {
+              "id": "um_core_j36",
+              "title": "Smoothieboard V2 Core P1 J36",
+              "column": 0,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "CS",
+                  "label": "J36.6 PD15 candidate CS",
+                  "side": "right"
+                },
+                {
+                  "id": "COPI",
+                  "label": "J36.7 SPI1_COPI",
+                  "side": "right"
+                },
+                {
+                  "id": "CIPO",
+                  "label": "J36.8 SPI1_CIPO",
+                  "side": "right"
+                },
+                {
+                  "id": "SCK",
+                  "label": "J36.9 SPI1_SCK",
+                  "side": "right"
+                },
+                {
+                  "id": "GND",
+                  "label": "J36.10 GND",
+                  "side": "right"
+                }
+              ]
+            },
+            {
+              "id": "um_adi_max",
+              "title": "Analog Devices MAX31865PMB1 12-pin Pmod J1 / CON1",
+              "column": 1,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "J1.1",
+                  "label": "J1.1 SS / CS",
+                  "side": "left"
+                },
+                {
+                  "id": "J1.2",
+                  "label": "J1.2 MOSI / SDI",
+                  "side": "left"
+                },
+                {
+                  "id": "J1.3",
+                  "label": "J1.3 MISO / SDO",
+                  "side": "left"
+                },
+                {
+                  "id": "J1.4",
+                  "label": "J1.4 SCLK / SCK",
+                  "side": "left"
+                },
+                {
+                  "id": "J1.5",
+                  "label": "J1.5 GND",
+                  "side": "left"
+                },
+                {
+                  "id": "J1.6",
+                  "label": "J1.6 VCC +3.3V",
+                  "side": "left"
+                },
+                {
+                  "id": "CON1.1",
+                  "label": "CON1.1 FORCE+ / FORCE2",
+                  "side": "right"
+                },
+                {
+                  "id": "CON1.2",
+                  "label": "CON1.2 RTDIN+",
+                  "side": "right"
+                },
+                {
+                  "id": "CON1.3",
+                  "label": "CON1.3 RTDIN\u2212",
+                  "side": "right"
+                },
+                {
+                  "id": "CON1.4",
+                  "label": "CON1.4 FORCE\u2212",
+                  "side": "right"
+                },
+                {
+                  "id": "J1.7",
+                  "label": "J1.7 DRDY active-low",
+                  "side": "right"
+                },
+                {
+                  "id": "J1.8",
+                  "label": "J1.8 NC",
+                  "side": "right"
+                },
+                {
+                  "id": "J1.9",
+                  "label": "J1.9 NC",
+                  "side": "right"
+                },
+                {
+                  "id": "J1.10",
+                  "label": "J1.10 NC",
+                  "side": "right"
+                },
+                {
+                  "id": "J1.11",
+                  "label": "J1.11 GND",
+                  "side": "left"
+                },
+                {
+                  "id": "J1.12",
+                  "label": "J1.12 VCC +3.3V",
+                  "side": "left"
+                }
+              ]
+            },
+            {
+              "id": "um_rtd",
+              "title": "Installed sensor only if confirmed 2-wire PT100",
+              "column": 2,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "rtd1",
+                  "label": "RTD lead A (measured)",
+                  "side": "left"
+                },
+                {
+                  "id": "rtd2",
+                  "label": "RTD lead B (measured)",
+                  "side": "left"
+                }
+              ]
+            },
+            {
+              "id": "um_adi_j2",
+              "title": "ADI Pmod J2 two-wire configuration",
+              "column": 1,
+              "offset": 1,
+              "contacts": [
+                {
+                  "id": "1",
+                  "label": "J2.1 \u00b7 jumper header contact",
+                  "side": "left"
+                },
+                {
+                  "id": "2",
+                  "label": "J2.2 \u00b7 jumper header contact",
+                  "side": "left"
+                },
+                {
+                  "id": "3",
+                  "label": "J2.3 \u00b7 jumper header contact",
+                  "side": "left"
+                },
+                {
+                  "id": "4",
+                  "label": "J2.4 \u00b7 jumper header contact",
+                  "side": "left"
+                }
+              ]
+            },
+            {
+              "id": "um_core_j5_power",
+              "title": "Smoothieboard V2 Core P1 J5 power contact",
+              "column": 0,
+              "offset": 1,
+              "contacts": [
+                {
+                  "id": "10",
+                  "label": "J5.10 3V3 output",
+                  "side": "right"
+                }
+              ]
+            }
+          ],
+          "edges": [
+            {
+              "from": "um_core_j36.CS",
+              "to": "um_adi_max.J1.1",
+              "state": "guess",
+              "function": "candidate SPI chip select to Pmod SS",
+              "check": "Core J36.6 is PD15 candidate CS; verify firmware CS mapping."
+            },
+            {
+              "from": "um_core_j36.COPI",
+              "to": "um_adi_max.J1.2",
+              "state": "guess",
+              "function": "SPI1 COPI to MAX31865 MOSI",
+              "check": "Confirm Core pin nets/logic levels and firmware driver."
+            },
+            {
+              "from": "um_adi_max.J1.3",
+              "to": "um_core_j36.CIPO",
+              "state": "guess",
+              "function": "MAX31865 MISO to SPI1 CIPO",
+              "check": "Confirm direction/logic levels on exact board revision."
+            },
+            {
+              "from": "um_core_j36.SCK",
+              "to": "um_adi_max.J1.4",
+              "state": "guess",
+              "function": "SPI clock to MAX31865 SCLK",
+              "check": "Confirm firmware SPI configuration and timing."
+            },
+            {
+              "from": "um_core_j36.GND",
+              "to": "um_adi_max.J1.5",
+              "state": "guess",
+              "function": "digital ground reference",
+              "check": "J36.10 is GND; verify 3.3V logic reference."
+            },
+            {
+              "from": "um_adi_max.CON1.1",
+              "to": "um_rtd.rtd1",
+              "state": "guess",
+              "function": "RTD lead A to CON1.1 FORCE+",
+              "check": "Use measured two-wire PT100 terminals; J2 jumper bridges FORCE+ with RTDIN+."
+            },
+            {
+              "from": "um_adi_max.CON1.4",
+              "to": "um_rtd.rtd2",
+              "state": "guess",
+              "function": "RTD lead B to CON1.4 FORCE\u2212",
+              "check": "Use measured two-wire PT100 terminals; J2 jumper bridges FORCE\u2212 with RTDIN\u2212."
+            },
+            {
+              "from": "um_core_j5_power.10",
+              "to": "um_adi_max.J1.6",
+              "state": "guess",
+              "function": "3.3V module supply to Pmod VCC pin6",
+              "check": "Verify Core 3V3 power budget and J5.10 rating; module data sheet identifies J1.6 as +3.3V."
+            },
+            {
+              "from": "um_core_j5_power.10",
+              "to": "um_adi_max.J1.12",
+              "state": "guess",
+              "function": "3.3V module supply to Pmod VCC pin12",
+              "check": "J1.12 is a second Pmod +3.3V contact; use the same verified host 3V3 rail."
+            },
+            {
+              "from": "um_core_j36.GND",
+              "to": "um_adi_max.J1.11",
+              "state": "guess",
+              "function": "Pmod secondary GND contact pin11",
+              "check": "ADI data sheet identifies J1.11 as GND; tie to the same verified signal return."
+            },
+            {
+              "from": "um_adi_j2.1",
+              "to": "um_adi_j2.2",
+              "function": "Fit 2-wire PT100 jumper J2.1\u20132",
+              "state": "guess",
+              "check": "ADI PMB1 Rev0 user guide requires both jumpers for 2-wire mode; jumper is fitted on the module, not a cable to an RTD screw terminal."
+            },
+            {
+              "from": "um_adi_j2.3",
+              "to": "um_adi_j2.4",
+              "function": "Fit 2-wire PT100 jumper J2.3\u20134",
+              "state": "guess",
+              "check": "ADI PMB1 Rev0 user guide requires both jumpers for 2-wire mode; jumper is fitted on the module, not a cable to an RTD screw terminal."
+            }
+          ],
+          "note": "Analog Devices MAX31865PMB1 data sheet Rev 0 (Jan 2014), Table 1: all 12-pin J1 positions: 1=SS/CS, 2=MOSI, 3=MISO, 4=SCLK, 5 and 11=GND, 6 and 12=+3.3V, 7=DRDY active-low, 8\u201310=NC. Installed BOM R7 is 400\u03a9 \u00b10.1% RREF for the board PT100 configuration. The MAX31865 BIAS node is internal to the module (not a user terminal). CON1.1=FORCE+/FORCE2, .2=RTDIN+, .3=RTDIN\u2212, .4=FORCE\u2212. Install both J2 jumpers 1\u20132 and 3\u20134 for 2-wire RTD; connect the two sensor leads to CON1.1 and CON1.4. J1.6 is the proposed board supply contact; J1.5 is GND. Core J36 SPI signal contacts are source-derived, but PD15 CS is only a candidate. Smoothieware docs state MAX31865 is a future possibility, not an existing temperature-control driver, so this circuit remains unusable for closed-loop heater control until firmware support and the board 3.3V output are verified. R7 and BIAS are factory-internal details noted here, not external user wiring terminals. The diagram shows every J2 pin separately with two physical jumpers; no invented J2-to-screw-terminal cable is required."
+        },
+        {
+          "title": "MAX31865PMB1 host supply \u00b7 J1.6/.12 VCC, .5/.11 GND",
+          "nodes": [
+            {
+              "id": "um_core_3v3_supply",
+              "title": "Smoothieboard V2 Core P1 J5",
+              "column": 0,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "10",
+                  "label": "J5.10 3V3 output",
+                  "side": "right"
+                },
+                {
+                  "id": "19",
+                  "label": "J5.19 GND",
+                  "side": "right"
+                }
+              ]
+            },
+            {
+              "id": "um_pmod_power",
+              "title": "Analog Devices MAX31865PMB1 J1 supply contacts",
+              "column": 1,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "6",
+                  "label": "J1.6 VCC +3.3V",
+                  "side": "left"
+                },
+                {
+                  "id": "12",
+                  "label": "J1.12 VCC +3.3V",
+                  "side": "left"
+                },
+                {
+                  "id": "5",
+                  "label": "J1.5 GND",
+                  "side": "left"
+                },
+                {
+                  "id": "11",
+                  "label": "J1.11 GND",
+                  "side": "left"
+                }
+              ]
+            }
+          ],
+          "edges": [
+            {
+              "from": "um_core_3v3_supply.10",
+              "to": "um_pmod_power.6",
+              "state": "guess",
+              "function": "Core 3.3V to PMB1 VCC contact J1.6",
+              "check": "Verify Core J5.10 is an available output with enough current budget for module."
+            },
+            {
+              "from": "um_core_3v3_supply.10",
+              "to": "um_pmod_power.12",
+              "state": "guess",
+              "function": "Core 3.3V to duplicate PMB1 VCC contact J1.12",
+              "check": "Same supply net contact, confirm Pmod board revision."
+            },
+            {
+              "from": "um_core_3v3_supply.19",
+              "to": "um_pmod_power.5",
+              "state": "guess",
+              "function": "Core return to PMB1 GND J1.5",
+              "check": "Verify actual J5.19 GND net on board export."
+            },
+            {
+              "from": "um_core_3v3_supply.19",
+              "to": "um_pmod_power.11",
+              "state": "guess",
+              "function": "Core return to PMB1 GND J1.11",
+              "check": "Same Pmod ground net, keep a low-impedance return."
+            }
+          ],
+          "note": "ADI PMB1 datasheet Table 1 identifies J1.5/J1.11 as GND and J1.6/J1.12 as +3.3V. Candidate Core source J5.10 is 3V3 in the exported contact map; check available current capacity and actual board revision before using it. The Core contact export identifies J5.19 as GND; check available current capacity and exact board revision before use."
+        },
+        {
+          "title": "X limit candidate: Prime input to actual switch",
+          "nodes": [
+            {
+              "id": "um_x_input",
+              "title": "Prime P12 J24 endstop input",
+              "column": 0,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "IN",
+                  "label": "pin 3 input",
+                  "side": "right"
+                },
+                {
+                  "id": "GND",
+                  "label": "pin 2 GND",
+                  "side": "right"
+                },
+                {
+                  "id": "SEL",
+                  "label": "pin 1 selector",
+                  "side": "right"
+                }
+              ]
+            },
+            {
+              "id": "um_x_switch",
+              "title": "Actual X limit switch / sensor",
+              "column": 2,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "SIG",
+                  "label": "signal unknown",
+                  "side": "left"
+                },
+                {
+                  "id": "RET",
+                  "label": "return unknown",
+                  "side": "left"
+                }
+              ]
+            }
+          ],
+          "edges": [
+            {
+              "from": "um_x_input.IN",
+              "to": "um_x_switch.SIG",
+              "state": "guess",
+              "function": "X endstop signal",
+              "check": "Trace actual cable, sensor output, NO/NC and level before assigning; J-number-to-axis is only a candidate."
+            },
+            {
+              "from": "um_x_input.GND",
+              "to": "um_x_switch.RET",
+              "state": "guess",
+              "function": "X endstop return",
+              "check": "Verify common/return; selector pin must stay open until voltage requirement is known."
+            }
+          ],
+          "note": "MakeICT installation harness is not mapped. Candidate P12 J24/J26/J28 only; verify all six min/max sockets and sensor contacts from actual board revision before wiring."
+        },
+        {
+          "title": "Y limit candidate: Prime input to actual switch",
+          "nodes": [
+            {
+              "id": "um_y_input",
+              "title": "Prime P12 J26 endstop input",
+              "column": 0,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "IN",
+                  "label": "pin 3 input",
+                  "side": "right"
+                },
+                {
+                  "id": "GND",
+                  "label": "pin 2 GND",
+                  "side": "right"
+                },
+                {
+                  "id": "SEL",
+                  "label": "pin 1 selector",
+                  "side": "right"
+                }
+              ]
+            },
+            {
+              "id": "um_y_switch",
+              "title": "Actual Y limit switch / sensor",
+              "column": 2,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "SIG",
+                  "label": "signal unknown",
+                  "side": "left"
+                },
+                {
+                  "id": "RET",
+                  "label": "return unknown",
+                  "side": "left"
+                }
+              ]
+            }
+          ],
+          "edges": [
+            {
+              "from": "um_y_input.IN",
+              "to": "um_y_switch.SIG",
+              "state": "guess",
+              "function": "Y endstop signal",
+              "check": "Trace actual cable, sensor output, NO/NC and level before assigning; J-number-to-axis is only a candidate."
+            },
+            {
+              "from": "um_y_input.GND",
+              "to": "um_y_switch.RET",
+              "state": "guess",
+              "function": "Y endstop return",
+              "check": "Verify common/return; selector pin must stay open until voltage requirement is known."
+            }
+          ],
+          "note": "MakeICT installation harness is not mapped. Candidate P12 J24/J26/J28 only; verify all six min/max sockets and sensor contacts from actual board revision before wiring."
+        },
+        {
+          "title": "Z limit candidate: Prime input to actual switch",
+          "nodes": [
+            {
+              "id": "um_z_input",
+              "title": "Prime P12 J28 endstop input",
+              "column": 0,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "IN",
+                  "label": "pin 3 input",
+                  "side": "right"
+                },
+                {
+                  "id": "GND",
+                  "label": "pin 2 GND",
+                  "side": "right"
+                },
+                {
+                  "id": "SEL",
+                  "label": "pin 1 selector",
+                  "side": "right"
+                }
+              ]
+            },
+            {
+              "id": "um_z_switch",
+              "title": "Actual Z limit switch / sensor",
+              "column": 2,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "SIG",
+                  "label": "signal unknown",
+                  "side": "left"
+                },
+                {
+                  "id": "RET",
+                  "label": "return unknown",
+                  "side": "left"
+                }
+              ]
+            }
+          ],
+          "edges": [
+            {
+              "from": "um_z_input.IN",
+              "to": "um_z_switch.SIG",
+              "state": "guess",
+              "function": "Z endstop signal",
+              "check": "Trace actual cable, sensor output, NO/NC and level before assigning; J-number-to-axis is only a candidate."
+            },
+            {
+              "from": "um_z_input.GND",
+              "to": "um_z_switch.RET",
+              "state": "guess",
+              "function": "Z endstop return",
+              "check": "Verify common/return; selector pin must stay open until voltage requirement is known."
+            }
+          ],
+          "note": "MakeICT installation harness is not mapped. Candidate P12 J24/J26/J28 only; verify all six min/max sockets and sensor contacts from actual board revision before wiring."
+        },
+        {
+          "title": "Prime alternative \u00b7 separate logic and motor supplies",
+          "nodes": [
+            {
+              "id": "logic",
+              "title": "Regulated 5 V logic supply",
+              "column": 0,
+              "contacts": [
+                {
+                  "id": "v",
+                  "label": "+5 V regulated",
+                  "side": "right"
+                },
+                {
+                  "id": "g",
+                  "label": "0 V logic return",
+                  "side": "right"
+                }
+              ]
+            },
+            {
+              "id": "motor",
+              "title": "Verified motor supply \u00b7 voltage/current TBD",
+              "column": 0,
+              "contacts": [
+                {
+                  "id": "v",
+                  "label": "DC + \u00b7 before fuse",
+                  "side": "right"
+                },
+                {
+                  "id": "g",
+                  "label": "0 V motor return",
+                  "side": "right"
+                }
+              ]
+            },
+            {
+              "id": "fuse",
+              "title": "Motor branch fuse \u00b7 rating selected after measurement",
+              "column": 1,
+              "contacts": [
+                {
+                  "id": "in",
+                  "label": "fuse input",
+                  "side": "left"
+                },
+                {
+                  "id": "out",
+                  "label": "fuse output",
+                  "side": "left"
+                }
+              ]
+            },
+            {
+              "id": "prime",
+              "title": "Prime P11/P12 \u00b7 confirm exact revision",
+              "column": 2,
+              "contacts": [
+                {
+                  "id": "v5",
+                  "label": "J42.1 \u00b7 5V_PORTIN",
+                  "side": "left"
+                },
+                {
+                  "id": "lg",
+                  "label": "J42.2 \u00b7 GND",
+                  "side": "left"
+                },
+                {
+                  "id": "vm",
+                  "label": "J9.1 \u00b7 VMOT",
+                  "side": "left"
+                },
+                {
+                  "id": "mg",
+                  "label": "J9.2 \u00b7 GND",
+                  "side": "left"
+                },
+                {
+                  "id": "aux1",
+                  "label": "J10.1 \u00b7 VMOT parallel \u00b7 unused",
+                  "side": "left"
+                },
+                {
+                  "id": "aux2",
+                  "label": "J10.2 \u00b7 GND parallel \u00b7 unused",
+                  "side": "left"
+                }
+              ]
+            }
+          ],
+          "edges": [
+            {
+              "from": "logic.v",
+              "to": "prime.v5",
+              "function": "Prime regulated logic supply",
+              "state": "guess",
+              "check": "Prime alternative only. Confirm fitted P11/P12 revision, input-voltage/current limits, supply sequencing and fuse/conductor ratings. Never connect both Core external drivers and Prime winding outputs to the same motor."
+            },
+            {
+              "from": "logic.g",
+              "to": "prime.lg",
+              "function": "Prime logic supply return",
+              "state": "guess",
+              "check": "Prime alternative only. Confirm fitted P11/P12 revision, input-voltage/current limits, supply sequencing and fuse/conductor ratings. Never connect both Core external drivers and Prime winding outputs to the same motor."
+            },
+            {
+              "from": "motor.v",
+              "to": "fuse.in",
+              "function": "Protected motor branch input",
+              "state": "guess",
+              "check": "Prime alternative only. Confirm fitted P11/P12 revision, input-voltage/current limits, supply sequencing and fuse/conductor ratings. Never connect both Core external drivers and Prime winding outputs to the same motor."
+            },
+            {
+              "from": "fuse.out",
+              "to": "prime.vm",
+              "function": "Prime VMOT power",
+              "state": "guess",
+              "check": "Prime alternative only. Confirm fitted P11/P12 revision, input-voltage/current limits, supply sequencing and fuse/conductor ratings. Never connect both Core external drivers and Prime winding outputs to the same motor."
+            },
+            {
+              "from": "motor.g",
+              "to": "prime.mg",
+              "function": "Prime motor supply return",
+              "state": "guess",
+              "check": "Prime alternative only. Confirm fitted P11/P12 revision, input-voltage/current limits, supply sequencing and fuse/conductor ratings. Never connect both Core external drivers and Prime winding outputs to the same motor."
+            }
+          ],
+          "note": "This is the alternative integrated-driver architecture. The same PCB-derived contact labels occur on P11/P12, but driver type, rating and current configuration differ. Use one verified power-entry arrangement; J10 parallels VMOT and is left unused here. Board ground is shared internally; route motor current directly to power distribution, not through logic wiring. Determine actual allowed voltage/current before choosing a supply; no machine-source adapter automatically qualifies."
+        },
+        {
+          "title": "Prime P12 \u00b7 Hotend A \u00b7 complete external power and load circuit",
+          "nodes": [
+            {
+              "id": "supply",
+              "title": "Heater-matched DC supply \u00b7 rating measured",
+              "column": 0,
+              "contacts": [
+                {
+                  "id": "v",
+                  "label": "DC + before branch fuse",
+                  "side": "right"
+                },
+                {
+                  "id": "g",
+                  "label": "0 V power return",
+                  "side": "right"
+                }
+              ]
+            },
+            {
+              "id": "fuse",
+              "title": "Individual heater branch fuse \u00b7 rating TBD",
+              "column": 0,
+              "contacts": [
+                {
+                  "id": "a",
+                  "label": "input from supply +",
+                  "side": "right"
+                },
+                {
+                  "id": "b",
+                  "label": "output to VFET input",
+                  "side": "right"
+                }
+              ]
+            },
+            {
+              "id": "prime",
+              "title": "Prime P12 \u00b7 2590 revision ONLY",
+              "column": 1,
+              "contacts": [
+                {
+                  "id": "v",
+                  "label": "J12.1 \u00b7 VFET \u00b7 XT30 power entry",
+                  "side": "left"
+                },
+                {
+                  "id": "g",
+                  "label": "J12.2 \u00b7 GND_FET \u00b7 XT30 return",
+                  "side": "left"
+                },
+                {
+                  "id": "hplus",
+                  "label": "J17.1 \u00b7 shared cutoff-switched VFET",
+                  "side": "right"
+                },
+                {
+                  "id": "hminus",
+                  "label": "J17.2 \u00b7 Hotend A switched return",
+                  "side": "right"
+                },
+                {
+                  "id": "aux1",
+                  "label": "J11.1 \u00b7 auxiliary VFET \u00b7 unused",
+                  "side": "left"
+                },
+                {
+                  "id": "aux2",
+                  "label": "J11.2 \u00b7 auxiliary GND_FET \u00b7 unused",
+                  "side": "left"
+                }
+              ]
+            },
+            {
+              "id": "cutoff",
+              "title": "Independent thermal cutoff \u00b7 DC/load rated",
+              "column": 2,
+              "contacts": [
+                {
+                  "id": "a",
+                  "label": "series contact lead A",
+                  "side": "left"
+                },
+                {
+                  "id": "b",
+                  "label": "series contact lead B",
+                  "side": "left"
+                }
+              ]
+            },
+            {
+              "id": "heater",
+              "title": "Measured hotend heater \u00b7 never infer rating",
+              "column": 2,
+              "contacts": [
+                {
+                  "id": "a",
+                  "label": "heater lead A",
+                  "side": "left"
+                },
+                {
+                  "id": "b",
+                  "label": "heater lead B",
+                  "side": "left"
+                }
+              ]
+            }
+          ],
+          "edges": [
+            {
+              "from": "supply.v",
+              "to": "fuse.a",
+              "function": "Heater branch fuse feed",
+              "state": "guess",
+              "check": "Select fuse DC voltage/current/interrupt rating and conductor protection from actual heater/supply."
+            },
+            {
+              "from": "fuse.b",
+              "to": "prime.v",
+              "function": "VFET power entry",
+              "state": "guess",
+              "check": "Use XT30 J12, not small 2.54mm J11 auxiliary header; verify exact board, connector, PCB and load current limits."
+            },
+            {
+              "from": "supply.g",
+              "to": "prime.g",
+              "function": "Heater power return",
+              "state": "guess",
+              "check": "Separate from logic supply/VMOT; verify return topology and protective earth as applicable."
+            },
+            {
+              "from": "prime.hplus",
+              "to": "cutoff.a",
+              "function": "Positive heater feed",
+              "state": "guess",
+              "check": "J17.1 is downstream of factory Q25 high-side cutoff. Match heater voltage/current and output connector rating."
+            },
+            {
+              "from": "cutoff.b",
+              "to": "heater.a",
+              "function": "Thermally protected heater feed",
+              "state": "guess",
+              "check": "Install rated cutoff mechanically/electrically according to its manufacturer and heater location."
+            },
+            {
+              "from": "heater.b",
+              "to": "prime.hminus",
+              "function": "Hotend A switched heater return",
+              "state": "guess",
+              "check": "J17.2 is Q19 drain; configured output, tested startup-off and validated temperature feedback are mandatory before enabling heat."
+            }
+          ],
+          "note": "Board-side evidence: exact P12 schematic/PCB at commit7dc4f9a identifies J17 Hotend A, J18 Hotend B, J19 Fan1, J20 Fan2. J17.1 receives shared Q25 cutoff-controlled VFET; J17.2 is Q19 switched return. These are factory internal circuits, not user soldering instructions. PE0 / HOTEND_A_FET and PF14 / OUTPUTENABLE come from the exact P12 source; a general documentation PJ6 label conflicts and must not override this revision. Heater/sensor fitment and connector-safe current are unknown: measure, qualify firmware and prove thermal shutdown before connecting heat. No guaranteed 5A terminal rating is asserted."
+        },
+        {
+          "title": "Prime P12 \u00b7 individual fan outputs and spare Hotend B",
+          "nodes": [
+            {
+              "id": "prime",
+              "title": "Prime P12 \u00b7 powered by preceding J12 circuit",
+              "column": 0,
+              "contacts": [
+                {
+                  "id": "f1p",
+                  "label": "J19.1 \u00b7 cutoff-switched VFET",
+                  "side": "right"
+                },
+                {
+                  "id": "f1m",
+                  "label": "J19.2 \u00b7 Fan1 switched return",
+                  "side": "right"
+                },
+                {
+                  "id": "f2p",
+                  "label": "J20.1 \u00b7 cutoff-switched VFET",
+                  "side": "right"
+                },
+                {
+                  "id": "f2m",
+                  "label": "J20.2 \u00b7 Fan2 switched return",
+                  "side": "right"
+                },
+                {
+                  "id": "hbp",
+                  "label": "J18.1 \u00b7 Hotend B + \u00b7 unused",
+                  "side": "right"
+                },
+                {
+                  "id": "hbm",
+                  "label": "J18.2 \u00b7 Hotend B return \u00b7 unused",
+                  "side": "right"
+                }
+              ]
+            },
+            {
+              "id": "fan1",
+              "title": "Installed fan1 \u00b7 identify voltage/current and use",
+              "column": 2,
+              "contacts": [
+                {
+                  "id": "p",
+                  "label": "measured positive lead",
+                  "side": "left"
+                },
+                {
+                  "id": "m",
+                  "label": "measured return lead",
+                  "side": "left"
+                }
+              ]
+            },
+            {
+              "id": "fan2",
+              "title": "Optional fan2 \u00b7 identify fitment and ratings",
+              "column": 2,
+              "contacts": [
+                {
+                  "id": "p",
+                  "label": "measured positive lead",
+                  "side": "left"
+                },
+                {
+                  "id": "m",
+                  "label": "measured return lead",
+                  "side": "left"
+                }
+              ]
+            }
+          ],
+          "edges": [
+            {
+              "from": "prime.f1p",
+              "to": "fan1.p",
+              "function": "Fan1 positive feed",
+              "state": "guess",
+              "check": "Fan receives VFET rail, not a separately inferred 5V/12V supply. Match actual fan voltage/current."
+            },
+            {
+              "from": "fan1.m",
+              "to": "prime.f1m",
+              "function": "Fan1 switched return",
+              "state": "guess",
+              "check": "Q21 internal low-side stage; configure fan function and prove cooling whenever heater is enabled."
+            },
+            {
+              "from": "prime.f2p",
+              "to": "fan2.p",
+              "function": "Fan2 positive feed",
+              "state": "guess",
+              "check": "Connect only if fitted or deliberately added, electrically matched and firmware configured."
+            },
+            {
+              "from": "fan2.m",
+              "to": "prime.f2m",
+              "function": "Fan2 switched return",
+              "state": "guess",
+              "check": "Q22 internal low-side stage; verify rated load and startup state."
+            }
+          ],
+          "note": "J19/J20 pin1 share the same VFET output from factory Q25; pin2 returns switch through Q21/Q22. No second power supply is connected to the fan outputs. Leave both J18 contacts unconnected in this one-hotend option. Actual hotend heatsink cooling must be maintained; do not assume an original fan is VFET-voltage rated."
+        }
+      ]
+    },
+    "machine-side-graph-snapshot.json": {
+      "source_graph": "222-wiki-222.json",
+      "source_sha256": "c6deecd10d005601ddecfebf553ac5aa1a288c2c566eab9bd98f710eb70006bd",
+      "graph": {
+        "profile_id": "wiki-222",
+        "devices": [
+          {
+            "id": "unidentified-machine",
+            "role": "peripheral"
+          }
+        ],
+        "connectors": [
+          {
+            "id": "machine-unidentified",
+            "device": "unidentified-machine",
+            "refdes": "No source-scoped connector identity",
+            "form": "unknown",
+            "scope": "Captured profile lacks a numbered machine connector or source-scoped cable-group identity.",
+            "contacts": []
+          }
+        ],
+        "wires": []
+      }
+    }
+  }
+}

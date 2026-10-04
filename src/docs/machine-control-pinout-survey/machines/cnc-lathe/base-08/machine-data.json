@@ -1,0 +1,29 @@
+{
+  "id": "base-08",
+  "sources": {
+    "machine-side-graph-snapshot.json": {
+      "source_graph": "015-base-08.json",
+      "source_sha256": "9262c1882122cf410cc1f7d36f14014968e49acba76fe72882d710247df4bdad",
+      "graph": {
+        "profile_id": "base-08",
+        "devices": [
+          {
+            "id": "group-device-001",
+            "role": "reference"
+          }
+        ],
+        "connectors": [
+          {
+            "id": "machine-group-001",
+            "device": "group-device-001",
+            "refdes": "Machine Control Board, Control Terminal Strip, Limit Switches Terminal Strip, Controller Communications, Emergency Stop port, accessory power",
+            "form": "source-described cable / connector group",
+            "scope": "Source names this group, but provides no source-scoped physical contact map. Availability and exact housing are unverified. exact atlas group labels; open until contact mapping is established",
+            "contacts": []
+          }
+        ],
+        "wires": []
+      }
+    }
+  }
+}

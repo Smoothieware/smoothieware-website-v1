@@ -1,0 +1,54 @@
+{
+  "type": "verification",
+  "profiles": [
+    {
+      "id": "wiki-205",
+      "preserved": true
+    },
+    {
+      "id": "laserplot-02",
+      "preserved": true
+    },
+    {
+      "id": "base-11",
+      "preserved": true
+    },
+    {
+      "id": "wiki-132",
+      "preserved": true
+    },
+    {
+      "id": "wiki-134",
+      "preserved": true
+    },
+    {
+      "id": "wiki-135",
+      "preserved": true
+    },
+    {
+      "id": "mill-g2",
+      "preserved": true
+    },
+    {
+      "id": "mill-avid-ex-3",
+      "preserved": true
+    },
+    {
+      "id": "wiki-206",
+      "preserved": true
+    },
+    {
+      "id": "wiki-222",
+      "preserved": true
+    },
+    {
+      "id": "forum-linuxcnc-optimill-mh50v-unlogic",
+      "preserved": true
+    },
+    {
+      "id": "forum-linuxcnc-rotarysmp-schaublin-125-cnc-retrofit",
+      "preserved": true
+    }
+  ],
+  "all_preserved": true
+}

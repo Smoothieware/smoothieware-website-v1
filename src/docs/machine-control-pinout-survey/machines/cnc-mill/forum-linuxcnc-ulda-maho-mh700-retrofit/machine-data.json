@@ -1,0 +1,25 @@
+{
+  "id": "forum-linuxcnc-ulda-maho-mh700-retrofit",
+  "sources": {
+    "forum-peripheral-evidence.json": {
+      "id": "forum-linuxcnc-ulda-maho-mh700-retrofit",
+      "dossier": "src/docs/machine-research/linuxcnc-ulda-maho-mh700-retrofit.md",
+      "reported_fitted_or_used": [
+        {
+          "name": "Axis servo amplifiers with \u00b110 V command",
+          "contacts": [],
+          "source_line_number": 11,
+          "source_line": "The source describes high-level control functions and the amplifier's \u00b110 V velocity interface, but supplies no contact numbers, connector view, terminal assignment, signal voltage/polarity table, or complete wiring schedule. The five-relay gearbox discussion is functional evidence only, not a pinout.",
+          "evidence": "The source describes high-level control functions and the amplifier's \u00b110 V velocity interface, but supplies no contact numbers, connector view, terminal assignment, signal voltage/polarity table, or complete wiring schedule. The five-relay gearbox discussion is functional evidence only, not a pinout.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        }
+      ],
+      "listed_for_build_unverified": [],
+      "historical_reference": [],
+      "planned_only": [],
+      "open_function_group": [],
+      "exclusions": [],
+      "source_gap": "Dossier does not establish an as-built SmoothieBox route or a complete physical contact schedule for the listed peripherals."
+    }
+  }
+}

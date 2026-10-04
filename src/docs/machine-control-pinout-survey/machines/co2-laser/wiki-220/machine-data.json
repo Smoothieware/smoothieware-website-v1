@@ -1,0 +1,113 @@
+{
+  "id": "wiki-220",
+  "sources": {
+    "machine-side-graph-snapshot.json": {
+      "source_graph": "220-wiki-220.json",
+      "source_sha256": "c82178e86cdfc3191d680e7f2f0e1cdda450db097066bb2b8fa66d3d7db30af2",
+      "graph": {
+        "profile_id": "wiki-220",
+        "devices": [
+          {
+            "id": "speedy400-machine-interfaces",
+            "role": "peripheral"
+          }
+        ],
+        "connectors": [
+          {
+            "id": "speedy400-panel-usb-charge",
+            "device": "speedy400-machine-interfaces",
+            "refdes": "Speedy 400 family \u00b7 control-panel USB charging port",
+            "form": "USB interface identified by the manufacturer; connector type and contacts unspecified",
+            "scope": "Two control-panel USB ports are documented; this is the charging port (manual p. 56). The Happylab unit/revision and physical connector type are unverified. No cavity pinout supplied.",
+            "contacts": [
+              {
+                "mark": "CHARGE",
+                "name": "Charging port \u00b7 up to 2 A",
+                "fact": "source_function_reference"
+              }
+            ]
+          },
+          {
+            "id": "speedy400-panel-usb-data",
+            "device": "speedy400-machine-interfaces",
+            "refdes": "Speedy 400 family \u00b7 control-panel USB data port",
+            "form": "USB interface identified by the manufacturer; connector type and contacts unspecified",
+            "scope": "Two control-panel USB ports are documented; this is the data port for USB storage (manual p. 56). The Happylab unit/revision and physical connector type are unverified. No cavity pinout supplied.",
+            "contacts": [
+              {
+                "mark": "DATA",
+                "name": "Data port \u00b7 manual states USB stick/HDD use and 500 mA",
+                "fact": "source_function_reference"
+              }
+            ]
+          },
+          {
+            "id": "speedy400-lan",
+            "device": "speedy400-machine-interfaces",
+            "refdes": "Speedy 400 family \u00b7 rear LAN",
+            "form": "LAN port; connector type/contact map unspecified in the accessible manual text",
+            "scope": "Manufacturer diagram identifies rear LAN (manual pp. 34\u201335). No physical cavity map or Happylab-installed port revision documented.",
+            "contacts": []
+          },
+          {
+            "id": "speedy400-wifi-dongle",
+            "device": "speedy400-machine-interfaces",
+            "refdes": "Speedy 400 family \u00b7 rear Wi-Fi dongle receptacle",
+            "form": "Optional Wi-Fi dongle interface; receptacle/contact map unspecified",
+            "scope": "Manufacturer diagram identifies Wi-Fi dongle position (manual pp. 34\u201335); optional fitment on Happylab machine unknown.",
+            "contacts": []
+          },
+          {
+            "id": "speedy400-io-interface",
+            "device": "speedy400-machine-interfaces",
+            "refdes": "Speedy 400 family \u00b7 rear I/O interface",
+            "form": "I/O interface named; connector form, contact count, order and function map unspecified",
+            "scope": "Manufacturer rear-panel figure names an I/O interface (manual pp. 34\u201335), but no pin/contact schedule was found. Do not assume a DB25 or other connector form.",
+            "contacts": []
+          },
+          {
+            "id": "speedy400-service-plug",
+            "device": "speedy400-machine-interfaces",
+            "refdes": "Speedy 400 family \u00b7 rear service plug connector",
+            "form": "Service connector named; physical form/contact schedule unspecified",
+            "scope": "Manufacturer rear-panel figure names a service plug connector (manual pp. 34\u201335). Service use and fitted applicability unverified; no pin map supplied.",
+            "contacts": []
+          },
+          {
+            "id": "speedy400-rotary-socket",
+            "device": "speedy400-machine-interfaces",
+            "refdes": "Speedy 400 family \u00b7 rotary attachment socket",
+            "form": "Optional rotary attachment interface; physical contact schedule unspecified",
+            "scope": "Family manual identifies the rotary attachment connection (manual \u00a78.9); option fitment and machine revision unverified. Manufacturer instructs shutdown before connecting/disconnecting.",
+            "contacts": []
+          },
+          {
+            "id": "speedy400-exhaust-working-area",
+            "device": "speedy400-machine-interfaces",
+            "refdes": "Speedy 400 family \u00b7 exhaust-tube connector \u00b7 working area",
+            "form": "Mechanical duct connector; not an electrical pin group",
+            "scope": "Manufacturer names an exhaust-tube connector for the working area (manual pp. 33\u201334). Hose interface only; no electrical contacts.",
+            "contacts": []
+          },
+          {
+            "id": "speedy400-exhaust-working-table",
+            "device": "speedy400-machine-interfaces",
+            "refdes": "Speedy 400 family \u00b7 exhaust-tube connector \u00b7 working table",
+            "form": "Mechanical duct connector; not an electrical pin group",
+            "scope": "Manufacturer names an exhaust-tube connector for the working table (manual pp. 33\u201334). Hose interface only; no electrical contacts.",
+            "contacts": []
+          },
+          {
+            "id": "speedy400-exhaust-rear",
+            "device": "speedy400-machine-interfaces",
+            "refdes": "Speedy 400 family \u00b7 rear exhaust-tube connector",
+            "form": "Mechanical duct connector; not an electrical pin group",
+            "scope": "Manufacturer rear-panel figure names an exhaust-tube connector (manual pp. 34\u201335). Hose interface only; no electrical contacts.",
+            "contacts": []
+          }
+        ],
+        "wires": []
+      }
+    }
+  }
+}

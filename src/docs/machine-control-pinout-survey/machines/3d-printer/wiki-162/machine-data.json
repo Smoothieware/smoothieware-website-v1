@@ -1,0 +1,1010 @@
+{
+  "id": "wiki-162",
+  "sources": {
+    "machine-side-graph-snapshot.json": {
+      "source_graph": "162-wiki-162.json",
+      "source_sha256": "ad77a718ce35271f11b3c924864cf0dcb9093a794d359555f0c769a0f24b5d0e",
+      "graph": {
+        "profile_id": "wiki-162",
+        "devices": [
+          {
+            "id": "unidentified-machine",
+            "role": "peripheral"
+          },
+          {
+            "id": "mini10-assembly-reference",
+            "role": "reference",
+            "label": "Mini 1.0 printhead assembly reference only",
+            "source_ids": [
+              "mini10-printhead",
+              "mini10-diagram"
+            ],
+            "installed_fit": "unverified"
+          },
+          {
+            "id": "mini101-assembly-reference",
+            "role": "reference",
+            "label": "Mini 1.01 electrical assembly reference only; source installs MiniRAMBo",
+            "source_ids": [
+              "mini101-final"
+            ],
+            "installed_fit": "unverified"
+          }
+        ],
+        "connectors": [
+          {
+            "id": "machine-unidentified",
+            "device": "unidentified-machine",
+            "refdes": "No source-scoped connector identity",
+            "form": "unknown",
+            "scope": "SoMakeIt Mini 1 and Mini 2 installation evidence only: no connector identity, controller revision, harness generation or contact map established. The separate official reference additions below do not identify either fitted machine.",
+            "contacts": [],
+            "source_ids": [
+              "somakeit-oldid-325"
+            ],
+            "route_state": "open"
+          },
+          {
+            "id": "mini10-printhead-20pos",
+            "device": "mini10-assembly-reference",
+            "refdes": "Mini 1.0 reference ONLY | printhead 20 POS connector",
+            "form": "Source-described 20-position connector; manufacturer, part number, pitch and gender not established",
+            "scope": "Mini 1.0 printhead workflow steps 5-6 and linked wire diagram ONLY. Triangle identifies position #1; the original drawing shows odd numbers above even numbers. This rendered list is not a mating-face view. Red/black/etc. are source wire colors, not polarity. 11-15 are source-empty. Position 16 is source-named nozzle ground, not a qualified GND/PE/probe path. Motor phases, fan/heater ratings, thermistor electrical roles and limit axis/min/max remain unknown. No Mini 1.01 assignments apply here. Neither SoMakeIt Mini 1 nor Mini 2 is identified with this harness. All 20 routes OPEN. https://download.lulzbot.com/Mini/1.0/ohai-kit/printhead_assembly.html#step_6",
+            "source_ids": [
+              "mini10-printhead",
+              "mini10-diagram"
+            ],
+            "revision_scope": "Mini/1.0",
+            "installed_fit": "unverified",
+            "declared_position_count": 20,
+            "source_view": {
+              "pin_one_marker": "triangle",
+              "top_row": [
+                1,
+                3,
+                5,
+                7,
+                9,
+                11,
+                13,
+                15,
+                17,
+                19
+              ],
+              "bottom_row": [
+                2,
+                4,
+                6,
+                8,
+                10,
+                12,
+                14,
+                16,
+                18,
+                20
+              ],
+              "mating_or_wire_entry_view": "not established; no mirroring or installed orientation is assumed"
+            },
+            "route_state": "open",
+            "contacts": [
+              {
+                "id": "mini10-printhead-pos-01",
+                "mark": "1",
+                "label": "Red Motor",
+                "fact": "source",
+                "domain": "source_revision_only",
+                "source_ids": [
+                  "mini10-diagram"
+                ],
+                "source_locator": "Wire diagram position 1",
+                "source_wire_color": "red",
+                "source_function_text": "Motor",
+                "inferred_electrical_role": null,
+                "electrical_role_limit": "Winding pairs, phase names, driver terminals and current rating are not established. Not a STEP/DIR/ENABLE assignment.",
+                "route_state": "open",
+                "smoothiebox_terminal": null,
+                "route_reason": "No qualified installed-machine or SmoothieBox-to-harness path is established."
+              },
+              {
+                "id": "mini10-printhead-pos-02",
+                "mark": "2",
+                "label": "Blue Motor",
+                "fact": "source",
+                "domain": "source_revision_only",
+                "source_ids": [
+                  "mini10-diagram"
+                ],
+                "source_locator": "Wire diagram position 2",
+                "source_wire_color": "blue",
+                "source_function_text": "Motor",
+                "inferred_electrical_role": null,
+                "electrical_role_limit": "Winding pairs, phase names, driver terminals and current rating are not established. Not a STEP/DIR/ENABLE assignment.",
+                "route_state": "open",
+                "smoothiebox_terminal": null,
+                "route_reason": "No qualified installed-machine or SmoothieBox-to-harness path is established."
+              },
+              {
+                "id": "mini10-printhead-pos-03",
+                "mark": "3",
+                "label": "Green Motor",
+                "fact": "source",
+                "domain": "source_revision_only",
+                "source_ids": [
+                  "mini10-diagram"
+                ],
+                "source_locator": "Wire diagram position 3",
+                "source_wire_color": "green",
+                "source_function_text": "Motor",
+                "inferred_electrical_role": null,
+                "electrical_role_limit": "Winding pairs, phase names, driver terminals and current rating are not established. Not a STEP/DIR/ENABLE assignment.",
+                "route_state": "open",
+                "smoothiebox_terminal": null,
+                "route_reason": "No qualified installed-machine or SmoothieBox-to-harness path is established."
+              },
+              {
+                "id": "mini10-printhead-pos-04",
+                "mark": "4",
+                "label": "Black Motor",
+                "fact": "source",
+                "domain": "source_revision_only",
+                "source_ids": [
+                  "mini10-diagram"
+                ],
+                "source_locator": "Wire diagram position 4",
+                "source_wire_color": "black",
+                "source_function_text": "Motor",
+                "inferred_electrical_role": null,
+                "electrical_role_limit": "Winding pairs, phase names, driver terminals and current rating are not established. Not a STEP/DIR/ENABLE assignment.",
+                "route_state": "open",
+                "smoothiebox_terminal": null,
+                "route_reason": "No qualified installed-machine or SmoothieBox-to-harness path is established."
+              },
+              {
+                "id": "mini10-printhead-pos-05",
+                "mark": "5",
+                "label": "Heater Cartridge",
+                "fact": "source",
+                "domain": "source_revision_only",
+                "source_ids": [
+                  "mini10-diagram"
+                ],
+                "source_locator": "Wire diagram position 5",
+                "source_wire_color": null,
+                "source_function_text": "Heater Cartridge",
+                "inferred_electrical_role": null,
+                "electrical_role_limit": "The source permits exchanging positions 5 and 6 only. No supply, switched-return assignment, voltage or power rating is established.",
+                "route_state": "open",
+                "smoothiebox_terminal": null,
+                "route_reason": "No qualified installed-machine or SmoothieBox-to-harness path is established."
+              },
+              {
+                "id": "mini10-printhead-pos-06",
+                "mark": "6",
+                "label": "Heater Cartridge (5,6 can be switched around)",
+                "fact": "source",
+                "domain": "source_revision_only",
+                "source_ids": [
+                  "mini10-diagram"
+                ],
+                "source_locator": "Wire diagram position 6",
+                "source_wire_color": null,
+                "source_function_text": "Heater Cartridge",
+                "inferred_electrical_role": null,
+                "electrical_role_limit": "The source permits exchanging positions 5 and 6 only. No supply, switched-return assignment, voltage or power rating is established.",
+                "route_state": "open",
+                "smoothiebox_terminal": null,
+                "route_reason": "No qualified installed-machine or SmoothieBox-to-harness path is established."
+              },
+              {
+                "id": "mini10-printhead-pos-07",
+                "mark": "7",
+                "label": "Red Extrusion Fan",
+                "fact": "source",
+                "domain": "source_revision_only",
+                "source_ids": [
+                  "mini10-diagram"
+                ],
+                "source_locator": "Wire diagram position 7",
+                "source_wire_color": "red",
+                "source_function_text": "Extrusion Fan",
+                "inferred_electrical_role": null,
+                "electrical_role_limit": "Wire color does not establish supply polarity, switched return, voltage or control mode.",
+                "route_state": "open",
+                "smoothiebox_terminal": null,
+                "route_reason": "No qualified installed-machine or SmoothieBox-to-harness path is established."
+              },
+              {
+                "id": "mini10-printhead-pos-08",
+                "mark": "8",
+                "label": "Black Extrusion Fan",
+                "fact": "source",
+                "domain": "source_revision_only",
+                "source_ids": [
+                  "mini10-diagram"
+                ],
+                "source_locator": "Wire diagram position 8",
+                "source_wire_color": "black",
+                "source_function_text": "Extrusion Fan",
+                "inferred_electrical_role": null,
+                "electrical_role_limit": "Wire color does not establish supply polarity, switched return, voltage or control mode.",
+                "route_state": "open",
+                "smoothiebox_terminal": null,
+                "route_reason": "No qualified installed-machine or SmoothieBox-to-harness path is established."
+              },
+              {
+                "id": "mini10-printhead-pos-09",
+                "mark": "9",
+                "label": "Red Blower Fan",
+                "fact": "source",
+                "domain": "source_revision_only",
+                "source_ids": [
+                  "mini10-diagram"
+                ],
+                "source_locator": "Wire diagram position 9",
+                "source_wire_color": "red",
+                "source_function_text": "Blower Fan",
+                "inferred_electrical_role": null,
+                "electrical_role_limit": "Wire color does not establish supply polarity, switched return, voltage or control mode.",
+                "route_state": "open",
+                "smoothiebox_terminal": null,
+                "route_reason": "No qualified installed-machine or SmoothieBox-to-harness path is established."
+              },
+              {
+                "id": "mini10-printhead-pos-10",
+                "mark": "10",
+                "label": "Black Blower Fan",
+                "fact": "source",
+                "domain": "source_revision_only",
+                "source_ids": [
+                  "mini10-diagram"
+                ],
+                "source_locator": "Wire diagram position 10",
+                "source_wire_color": "black",
+                "source_function_text": "Blower Fan",
+                "inferred_electrical_role": null,
+                "electrical_role_limit": "Wire color does not establish supply polarity, switched return, voltage or control mode.",
+                "route_state": "open",
+                "smoothiebox_terminal": null,
+                "route_reason": "No qualified installed-machine or SmoothieBox-to-harness path is established."
+              },
+              {
+                "id": "mini10-printhead-pos-11",
+                "mark": "11",
+                "label": "Empty",
+                "fact": "source_empty",
+                "domain": "source_revision_only",
+                "source_ids": [
+                  "mini10-diagram"
+                ],
+                "source_locator": "Wire diagram position 11",
+                "source_wire_color": null,
+                "source_function_text": "Empty",
+                "inferred_electrical_role": null,
+                "electrical_role_limit": "Explicitly empty in the source diagram. This is not a spare-function assignment and does not follow merely from route state OPEN.",
+                "route_state": "open",
+                "smoothiebox_terminal": null,
+                "route_reason": "No qualified installed-machine or SmoothieBox-to-harness path is established."
+              },
+              {
+                "id": "mini10-printhead-pos-12",
+                "mark": "12",
+                "label": "Empty",
+                "fact": "source_empty",
+                "domain": "source_revision_only",
+                "source_ids": [
+                  "mini10-diagram"
+                ],
+                "source_locator": "Wire diagram position 12",
+                "source_wire_color": null,
+                "source_function_text": "Empty",
+                "inferred_electrical_role": null,
+                "electrical_role_limit": "Explicitly empty in the source diagram. This is not a spare-function assignment and does not follow merely from route state OPEN.",
+                "route_state": "open",
+                "smoothiebox_terminal": null,
+                "route_reason": "No qualified installed-machine or SmoothieBox-to-harness path is established."
+              },
+              {
+                "id": "mini10-printhead-pos-13",
+                "mark": "13",
+                "label": "Empty",
+                "fact": "source_empty",
+                "domain": "source_revision_only",
+                "source_ids": [
+                  "mini10-diagram"
+                ],
+                "source_locator": "Wire diagram position 13",
+                "source_wire_color": null,
+                "source_function_text": "Empty",
+                "inferred_electrical_role": null,
+                "electrical_role_limit": "Explicitly empty in the source diagram. This is not a spare-function assignment and does not follow merely from route state OPEN.",
+                "route_state": "open",
+                "smoothiebox_terminal": null,
+                "route_reason": "No qualified installed-machine or SmoothieBox-to-harness path is established."
+              },
+              {
+                "id": "mini10-printhead-pos-14",
+                "mark": "14",
+                "label": "Empty",
+                "fact": "source_empty",
+                "domain": "source_revision_only",
+                "source_ids": [
+                  "mini10-diagram"
+                ],
+                "source_locator": "Wire diagram position 14",
+                "source_wire_color": null,
+                "source_function_text": "Empty",
+                "inferred_electrical_role": null,
+                "electrical_role_limit": "Explicitly empty in the source diagram. This is not a spare-function assignment and does not follow merely from route state OPEN.",
+                "route_state": "open",
+                "smoothiebox_terminal": null,
+                "route_reason": "No qualified installed-machine or SmoothieBox-to-harness path is established."
+              },
+              {
+                "id": "mini10-printhead-pos-15",
+                "mark": "15",
+                "label": "Empty",
+                "fact": "source_empty",
+                "domain": "source_revision_only",
+                "source_ids": [
+                  "mini10-diagram"
+                ],
+                "source_locator": "Wire diagram position 15",
+                "source_wire_color": null,
+                "source_function_text": "Empty",
+                "inferred_electrical_role": null,
+                "electrical_role_limit": "Explicitly empty in the source diagram. This is not a spare-function assignment and does not follow merely from route state OPEN.",
+                "route_state": "open",
+                "smoothiebox_terminal": null,
+                "route_reason": "No qualified installed-machine or SmoothieBox-to-harness path is established."
+              },
+              {
+                "id": "mini10-printhead-pos-16",
+                "mark": "16",
+                "label": "Red Extruder Nozzle Ground",
+                "fact": "source",
+                "domain": "source_revision_only",
+                "source_ids": [
+                  "mini10-diagram"
+                ],
+                "source_locator": "Wire diagram position 16",
+                "source_wire_color": "red",
+                "source_function_text": "Extruder Nozzle Ground",
+                "inferred_electrical_role": null,
+                "electrical_role_limit": "The source names nozzle ground; it does not establish circuit GND, protective earth, a probe input, bonding topology or a SmoothieBox return.",
+                "route_state": "open",
+                "smoothiebox_terminal": null,
+                "route_reason": "No qualified installed-machine or SmoothieBox-to-harness path is established."
+              },
+              {
+                "id": "mini10-printhead-pos-17",
+                "mark": "17",
+                "label": "Red Thermistor",
+                "fact": "source",
+                "domain": "source_revision_only",
+                "source_ids": [
+                  "mini10-diagram"
+                ],
+                "source_locator": "Wire diagram position 17",
+                "source_wire_color": "red",
+                "source_function_text": "Thermistor",
+                "inferred_electrical_role": null,
+                "electrical_role_limit": "Sensor lead identity only; no SENSOR/GND assignment, sensor model, calibration or controller cavity is established.",
+                "route_state": "open",
+                "smoothiebox_terminal": null,
+                "route_reason": "No qualified installed-machine or SmoothieBox-to-harness path is established."
+              },
+              {
+                "id": "mini10-printhead-pos-18",
+                "mark": "18",
+                "label": "Black Thermistor",
+                "fact": "source",
+                "domain": "source_revision_only",
+                "source_ids": [
+                  "mini10-diagram"
+                ],
+                "source_locator": "Wire diagram position 18",
+                "source_wire_color": "black",
+                "source_function_text": "Thermistor",
+                "inferred_electrical_role": null,
+                "electrical_role_limit": "Sensor lead identity only; no SENSOR/GND assignment, sensor model, calibration or controller cavity is established.",
+                "route_state": "open",
+                "smoothiebox_terminal": null,
+                "route_reason": "No qualified installed-machine or SmoothieBox-to-harness path is established."
+              },
+              {
+                "id": "mini10-printhead-pos-19",
+                "mark": "19",
+                "label": "Purple Limit Switch",
+                "fact": "source",
+                "domain": "source_revision_only",
+                "source_ids": [
+                  "mini10-diagram"
+                ],
+                "source_locator": "Wire diagram position 19",
+                "source_wire_color": "purple",
+                "source_function_text": "Limit Switch",
+                "inferred_electrical_role": null,
+                "electrical_role_limit": "Limit-switch lead identity only; axis, min/max, COM/NO/NC, signal/GND and controller position are not established by this Mini 1.0 source.",
+                "route_state": "open",
+                "smoothiebox_terminal": null,
+                "route_reason": "No qualified installed-machine or SmoothieBox-to-harness path is established."
+              },
+              {
+                "id": "mini10-printhead-pos-20",
+                "mark": "20",
+                "label": "Black Limit Switch",
+                "fact": "source",
+                "domain": "source_revision_only",
+                "source_ids": [
+                  "mini10-diagram"
+                ],
+                "source_locator": "Wire diagram position 20",
+                "source_wire_color": "black",
+                "source_function_text": "Limit Switch",
+                "inferred_electrical_role": null,
+                "electrical_role_limit": "Limit-switch lead identity only; axis, min/max, COM/NO/NC, signal/GND and controller position are not established by this Mini 1.0 source.",
+                "route_state": "open",
+                "smoothiebox_terminal": null,
+                "route_reason": "No qualified installed-machine or SmoothieBox-to-harness path is established."
+              }
+            ]
+          },
+          {
+            "id": "mini101-motor-x",
+            "device": "mini101-assembly-reference",
+            "refdes": "Mini 1.01 reference ONLY | X motor / X motor slot",
+            "form": "Source-described assembly group; no complete connector pin schedule",
+            "scope": "Mini 1.01 archive ONLY; not a Mini 1.0 assignment or a SoMakeIt fitted-machine claim. Step 18 names the X motor slot; step 3 names ferrite jumper 1 for the X motor slot. Ferrite item 1 is not a contact number. Individual contact order, electrical roles, ratings and mating view are not established. All SmoothieBox paths OPEN. https://download.lulzbot.com/Mini/1.01/production_docs/ohai-kit/electrical_final_assembly.html#step_18",
+            "source_ids": [
+              "mini101-final"
+            ],
+            "source_locator": "step_18",
+            "revision_scope": "Mini/1.01",
+            "installed_fit": "unverified",
+            "source_group_description": "Step 18 names the X motor slot; step 3 names ferrite jumper 1 for the X motor slot. Ferrite item 1 is not a contact number.",
+            "declared_position_count": null,
+            "contact_inventory_scope": "Only explicitly located or source-named connection points are enumerated; an empty list is not a zero-contact claim.",
+            "route_state": "open",
+            "contacts": []
+          },
+          {
+            "id": "mini101-motor-y",
+            "device": "mini101-assembly-reference",
+            "refdes": "Mini 1.01 reference ONLY | Y motor extension / Y motor slot",
+            "form": "Source-described assembly group; no complete connector pin schedule",
+            "scope": "Mini 1.01 archive ONLY; not a Mini 1.0 assignment or a SoMakeIt fitted-machine claim. Steps 20-21 install the Y motor extension and connect it to Rambo; step 3 names ferrite jumper 2 for the Y motor slot. The motor end of the extension is the end without the ground lug. No conductor order is given. Individual contact order, electrical roles, ratings and mating view are not established. All SmoothieBox paths OPEN. https://download.lulzbot.com/Mini/1.01/production_docs/ohai-kit/electrical_final_assembly.html#step_21",
+            "source_ids": [
+              "mini101-final"
+            ],
+            "source_locator": "step_21",
+            "revision_scope": "Mini/1.01",
+            "installed_fit": "unverified",
+            "source_group_description": "Steps 20-21 install the Y motor extension and connect it to Rambo; step 3 names ferrite jumper 2 for the Y motor slot. The motor end of the extension is the end without the ground lug. No conductor order is given.",
+            "declared_position_count": null,
+            "contact_inventory_scope": "Only explicitly located or source-named connection points are enumerated; an empty list is not a zero-contact claim.",
+            "route_state": "open",
+            "contacts": []
+          },
+          {
+            "id": "mini101-motor-z-left",
+            "device": "mini101-assembly-reference",
+            "refdes": "Mini 1.01 reference ONLY | Z left motor / Z motor 1 slot",
+            "form": "Source-described assembly group; no complete connector pin schedule",
+            "scope": "Mini 1.01 archive ONLY; not a Mini 1.0 assignment or a SoMakeIt fitted-machine claim. Step 23 sends the Z left motor wire group to the Z motor 1 slot. Step 3 uses ferrite jumpers 3 and 4 for the two Z slots and explicitly allows either Z slot for jumper 4. Motor-slot and ferrite item numbers are not contact numbers. Individual contact order, electrical roles, ratings and mating view are not established. All SmoothieBox paths OPEN. https://download.lulzbot.com/Mini/1.01/production_docs/ohai-kit/electrical_final_assembly.html#step_23",
+            "source_ids": [
+              "mini101-final"
+            ],
+            "source_locator": "step_23",
+            "revision_scope": "Mini/1.01",
+            "installed_fit": "unverified",
+            "source_group_description": "Step 23 sends the Z left motor wire group to the Z motor 1 slot. Step 3 uses ferrite jumpers 3 and 4 for the two Z slots and explicitly allows either Z slot for jumper 4. Motor-slot and ferrite item numbers are not contact numbers.",
+            "declared_position_count": null,
+            "contact_inventory_scope": "Only explicitly located or source-named connection points are enumerated; an empty list is not a zero-contact claim.",
+            "route_state": "open",
+            "contacts": []
+          },
+          {
+            "id": "mini101-motor-z-right",
+            "device": "mini101-assembly-reference",
+            "refdes": "Mini 1.01 reference ONLY | Z right motor extension / Z motor 2 slot",
+            "form": "Source-described assembly group; no complete connector pin schedule",
+            "scope": "Mini 1.01 archive ONLY; not a Mini 1.0 assignment or a SoMakeIt fitted-machine claim. Steps 19 and 22 install the Z right motor extension and name Z motor 2 as its slot; the motor end lacks the ground lug. Step 3 does not establish a fixed 3/4 ferrite-to-left/right contact mapping. Individual contact order, electrical roles, ratings and mating view are not established. All SmoothieBox paths OPEN. https://download.lulzbot.com/Mini/1.01/production_docs/ohai-kit/electrical_final_assembly.html#step_22",
+            "source_ids": [
+              "mini101-final"
+            ],
+            "source_locator": "step_22",
+            "revision_scope": "Mini/1.01",
+            "installed_fit": "unverified",
+            "source_group_description": "Steps 19 and 22 install the Z right motor extension and name Z motor 2 as its slot; the motor end lacks the ground lug. Step 3 does not establish a fixed 3/4 ferrite-to-left/right contact mapping.",
+            "declared_position_count": null,
+            "contact_inventory_scope": "Only explicitly located or source-named connection points are enumerated; an empty list is not a zero-contact claim.",
+            "route_state": "open",
+            "contacts": []
+          },
+          {
+            "id": "mini101-motor-e",
+            "device": "mini101-assembly-reference",
+            "refdes": "Mini 1.01 reference ONLY | Extruder motor / E motor slot",
+            "form": "Source-described assembly group; no complete connector pin schedule",
+            "scope": "Mini 1.01 archive ONLY; not a Mini 1.0 assignment or a SoMakeIt fitted-machine claim. Step 17 identifies the extruder motor wire group by tape/black marker and names the E motor slot. Step 3 names ferrite jumper 5 for the extruder slot. The marker is not a wire-color or phase assignment. Individual contact order, electrical roles, ratings and mating view are not established. All SmoothieBox paths OPEN. https://download.lulzbot.com/Mini/1.01/production_docs/ohai-kit/electrical_final_assembly.html#step_17",
+            "source_ids": [
+              "mini101-final"
+            ],
+            "source_locator": "step_17",
+            "revision_scope": "Mini/1.01",
+            "installed_fit": "unverified",
+            "source_group_description": "Step 17 identifies the extruder motor wire group by tape/black marker and names the E motor slot. Step 3 names ferrite jumper 5 for the extruder slot. The marker is not a wire-color or phase assignment.",
+            "declared_position_count": null,
+            "contact_inventory_scope": "Only explicitly located or source-named connection points are enumerated; an empty list is not a zero-contact claim.",
+            "route_state": "open",
+            "contacts": []
+          },
+          {
+            "id": "mini101-bed-power",
+            "device": "mini101-assembly-reference",
+            "refdes": "Mini 1.01 reference ONLY | Heat bed power / 2 POS terminal block",
+            "form": "Source-described assembly group; no complete connector pin schedule",
+            "scope": "Mini 1.01 archive ONLY; not a Mini 1.0 assignment or a SoMakeIt fitted-machine claim. Source names a 2 POS terminal block and purple heat bed power wires. Two positions are established, but their marks, order, individual roles and polarity are not; no invented 1/2 or +/- rows are added. All SmoothieBox paths OPEN. https://download.lulzbot.com/Mini/1.01/production_docs/ohai-kit/electrical_final_assembly.html#step_4",
+            "source_ids": [
+              "mini101-final"
+            ],
+            "source_locator": "step_4",
+            "revision_scope": "Mini/1.01",
+            "installed_fit": "unverified",
+            "source_group_description": "Source names a 2 POS terminal block and purple heat bed power wires.",
+            "declared_position_count": 2,
+            "contact_inventory_scope": "Only explicitly located or source-named connection points are enumerated; an empty list is not a zero-contact claim.",
+            "route_state": "open",
+            "contacts": []
+          },
+          {
+            "id": "mini101-thermistor-t2",
+            "device": "mini101-assembly-reference",
+            "refdes": "Mini 1.01 reference ONLY | Yellow thermistor / T2 slot",
+            "form": "Source-described assembly group; no complete connector pin schedule",
+            "scope": "Mini 1.01 archive ONLY; not a Mini 1.0 assignment or a SoMakeIt fitted-machine claim. Source names the yellow thermistor wire and T2 slot. T2 is a group label, not a contact number or an assigned SmoothieBox sensor channel. Individual contact order, electrical roles, ratings and mating view are not established. All SmoothieBox paths OPEN. https://download.lulzbot.com/Mini/1.01/production_docs/ohai-kit/electrical_final_assembly.html#step_5",
+            "source_ids": [
+              "mini101-final"
+            ],
+            "source_locator": "step_5",
+            "revision_scope": "Mini/1.01",
+            "installed_fit": "unverified",
+            "source_group_description": "Source names the yellow thermistor wire and T2 slot. T2 is a group label, not a contact number or an assigned SmoothieBox sensor channel.",
+            "declared_position_count": null,
+            "contact_inventory_scope": "Only explicitly located or source-named connection points are enumerated; an empty list is not a zero-contact claim.",
+            "route_state": "open",
+            "contacts": []
+          },
+          {
+            "id": "mini101-limit-x-min",
+            "device": "mini101-assembly-reference",
+            "refdes": "Mini 1.01 reference ONLY | X min slot / green and black X limit wires",
+            "form": "Source-described assembly group; no complete connector pin schedule",
+            "scope": "Mini 1.01 archive ONLY; not a Mini 1.0 assignment or a SoMakeIt fitted-machine claim. Source names green and black X limit switch wires going to the X min slot. Neither wire is assigned SIG/GND or a cavity. Individual contact order, electrical roles, ratings and mating view are not established. All SmoothieBox paths OPEN. https://download.lulzbot.com/Mini/1.01/production_docs/ohai-kit/electrical_final_assembly.html#step_6",
+            "source_ids": [
+              "mini101-final"
+            ],
+            "source_locator": "step_6",
+            "revision_scope": "Mini/1.01",
+            "installed_fit": "unverified",
+            "source_group_description": "Source names green and black X limit switch wires going to the X min slot. Neither wire is assigned SIG/GND or a cavity.",
+            "declared_position_count": null,
+            "contact_inventory_scope": "Only explicitly located or source-named connection points are enumerated; an empty list is not a zero-contact claim.",
+            "route_state": "open",
+            "contacts": [
+              {
+                "id": "x-min-green-1",
+                "mark": "wire \u00b7 green",
+                "label": "Green wire \u00b7 source-named conductor; no cavity, SIG/GND role or electrical polarity assigned \u00b7 OPEN",
+                "fact": "source_wire_reference",
+                "domain": "source_revision_only",
+                "source_ids": [
+                  "mini101-final"
+                ],
+                "source_locator": "step_6",
+                "route_state": "open",
+                "smoothiebox_terminal": null
+              },
+              {
+                "id": "x-min-black-2",
+                "mark": "wire \u00b7 black",
+                "label": "Black wire \u00b7 source-named conductor; no cavity, SIG/GND role or electrical polarity assigned \u00b7 OPEN",
+                "fact": "source_wire_reference",
+                "domain": "source_revision_only",
+                "source_ids": [
+                  "mini101-final"
+                ],
+                "source_locator": "step_6",
+                "route_state": "open",
+                "smoothiebox_terminal": null
+              }
+            ]
+          },
+          {
+            "id": "mini101-limit-x-max",
+            "device": "mini101-assembly-reference",
+            "refdes": "Mini 1.01 reference ONLY | X max slot / purple and black X limit wires",
+            "form": "Source-described assembly group; no complete connector pin schedule",
+            "scope": "Mini 1.01 archive ONLY; not a Mini 1.0 assignment or a SoMakeIt fitted-machine claim. Source names purple and black X limit switch wires going to the X max slot. This does not identify Mini 1.0 printhead positions 19/20 as X-max. Individual contact order, electrical roles, ratings and mating view are not established. All SmoothieBox paths OPEN. https://download.lulzbot.com/Mini/1.01/production_docs/ohai-kit/electrical_final_assembly.html#step_7",
+            "source_ids": [
+              "mini101-final"
+            ],
+            "source_locator": "step_7",
+            "revision_scope": "Mini/1.01",
+            "installed_fit": "unverified",
+            "source_group_description": "Source names purple and black X limit switch wires going to the X max slot. This does not identify Mini 1.0 printhead positions 19/20 as X-max.",
+            "declared_position_count": null,
+            "contact_inventory_scope": "Only explicitly located or source-named connection points are enumerated; an empty list is not a zero-contact claim.",
+            "route_state": "open",
+            "contacts": [
+              {
+                "id": "x-max-purple-1",
+                "mark": "wire \u00b7 purple",
+                "label": "Purple wire \u00b7 source-named conductor; no cavity, SIG/GND role or electrical polarity assigned \u00b7 OPEN",
+                "fact": "source_wire_reference",
+                "domain": "source_revision_only",
+                "source_ids": [
+                  "mini101-final"
+                ],
+                "source_locator": "step_7",
+                "route_state": "open",
+                "smoothiebox_terminal": null
+              },
+              {
+                "id": "x-max-black-2",
+                "mark": "wire \u00b7 black",
+                "label": "Black wire \u00b7 source-named conductor; no cavity, SIG/GND role or electrical polarity assigned \u00b7 OPEN",
+                "fact": "source_wire_reference",
+                "domain": "source_revision_only",
+                "source_ids": [
+                  "mini101-final"
+                ],
+                "source_locator": "step_7",
+                "route_state": "open",
+                "smoothiebox_terminal": null
+              }
+            ]
+          },
+          {
+            "id": "mini101-limit-y-min",
+            "device": "mini101-assembly-reference",
+            "refdes": "Mini 1.01 reference ONLY | Y Min slot / red and black Y limit wires",
+            "form": "Source-described assembly group; no complete connector pin schedule",
+            "scope": "Mini 1.01 archive ONLY; not a Mini 1.0 assignment or a SoMakeIt fitted-machine claim. Source names red and black Y limit switch wires going to the Y Min slot. Color does not identify SIG/GND or a cavity. Individual contact order, electrical roles, ratings and mating view are not established. All SmoothieBox paths OPEN. https://download.lulzbot.com/Mini/1.01/production_docs/ohai-kit/electrical_final_assembly.html#step_8",
+            "source_ids": [
+              "mini101-final"
+            ],
+            "source_locator": "step_8",
+            "revision_scope": "Mini/1.01",
+            "installed_fit": "unverified",
+            "source_group_description": "Source names red and black Y limit switch wires going to the Y Min slot. Color does not identify SIG/GND or a cavity.",
+            "declared_position_count": null,
+            "contact_inventory_scope": "Only explicitly located or source-named connection points are enumerated; an empty list is not a zero-contact claim.",
+            "route_state": "open",
+            "contacts": [
+              {
+                "id": "y-min-red-1",
+                "mark": "wire \u00b7 red",
+                "label": "Red wire \u00b7 source-named conductor; no cavity, SIG/GND role or electrical polarity assigned \u00b7 OPEN",
+                "fact": "source_wire_reference",
+                "domain": "source_revision_only",
+                "source_ids": [
+                  "mini101-final"
+                ],
+                "source_locator": "step_8",
+                "route_state": "open",
+                "smoothiebox_terminal": null
+              },
+              {
+                "id": "y-min-black-2",
+                "mark": "wire \u00b7 black",
+                "label": "Black wire \u00b7 source-named conductor; no cavity, SIG/GND role or electrical polarity assigned \u00b7 OPEN",
+                "fact": "source_wire_reference",
+                "domain": "source_revision_only",
+                "source_ids": [
+                  "mini101-final"
+                ],
+                "source_locator": "step_8",
+                "route_state": "open",
+                "smoothiebox_terminal": null
+              }
+            ]
+          },
+          {
+            "id": "mini101-limit-y-max",
+            "device": "mini101-assembly-reference",
+            "refdes": "Mini 1.01 reference ONLY | Y max slot / black Y limit wire",
+            "form": "Source-described assembly group; no complete connector pin schedule",
+            "scope": "Mini 1.01 archive ONLY; not a Mini 1.0 assignment or a SoMakeIt fitted-machine claim. Source calls this the black Y limit switch wire going to Y max. This wording is not a complete conductor-count, pin-count or circuit-role statement. Individual contact order, electrical roles, ratings and mating view are not established. All SmoothieBox paths OPEN. https://download.lulzbot.com/Mini/1.01/production_docs/ohai-kit/electrical_final_assembly.html#step_9",
+            "source_ids": [
+              "mini101-final"
+            ],
+            "source_locator": "step_9",
+            "revision_scope": "Mini/1.01",
+            "installed_fit": "unverified",
+            "source_group_description": "Source calls this the black Y limit switch wire going to Y max. This wording is not a complete conductor-count, pin-count or circuit-role statement.",
+            "declared_position_count": null,
+            "contact_inventory_scope": "Only explicitly located or source-named connection points are enumerated; an empty list is not a zero-contact claim.",
+            "route_state": "open",
+            "contacts": [
+              {
+                "id": "y-max-black-1",
+                "mark": "wire \u00b7 black",
+                "label": "Black wire \u00b7 source-named conductor; no cavity, SIG/GND role or electrical polarity assigned \u00b7 OPEN",
+                "fact": "source_wire_reference",
+                "domain": "source_revision_only",
+                "source_ids": [
+                  "mini101-final"
+                ],
+                "source_locator": "step_9",
+                "route_state": "open",
+                "smoothiebox_terminal": null
+              }
+            ]
+          },
+          {
+            "id": "mini101-limit-z-min",
+            "device": "mini101-assembly-reference",
+            "refdes": "Mini 1.01 reference ONLY | Z min wire group / cable-connector slot #1",
+            "form": "Source-described assembly group; no complete connector pin schedule",
+            "scope": "Mini 1.01 archive ONLY; not a Mini 1.0 assignment or a SoMakeIt fitted-machine claim. Source inserts the single red wire into cable-connector slot #1, marked by a triangle, then connects the red/black Z limit wire group to Z min. The existing black wire is known but has no source-stated cavity number. One cable-connector position is explicit. This is not MiniRAMBo pin 1, a complete cable schedule, or a SIG/GND assignment. All SmoothieBox paths OPEN. https://download.lulzbot.com/Mini/1.01/production_docs/ohai-kit/electrical_final_assembly.html#step_10",
+            "source_ids": [
+              "mini101-final"
+            ],
+            "source_locator": "step_10",
+            "revision_scope": "Mini/1.01",
+            "installed_fit": "unverified",
+            "source_group_description": "Source inserts the single red wire into cable-connector slot #1, marked by a triangle, then connects the red/black Z limit wire group to Z min. The existing black wire is known but has no source-stated cavity number.",
+            "declared_position_count": null,
+            "contact_inventory_scope": "Only explicitly located or source-named connection points are enumerated; an empty list is not a zero-contact claim.",
+            "route_state": "open",
+            "contacts": [
+              {
+                "id": "mini101-zmin-cable-slot-1",
+                "mark": "slot #1 \u00b7 red wire",
+                "label": "Red wire \u00b7 cable-connector slot #1 marked by triangle; not MiniRAMBo pin 1 \u00b7 no electrical role assigned \u00b7 OPEN",
+                "fact": "source",
+                "domain": "source_revision_only",
+                "source_ids": [
+                  "mini101-final"
+                ],
+                "source_locator": "step_10",
+                "source_wire_color": "red",
+                "source_function_text": "Z limit switch wire",
+                "inferred_electrical_role": null,
+                "electrical_role_limit": "Slot #1 belongs to the cable connector assembled in step 10. The black wire cavity, full contact count, SIG/GND and controller numbering are not established.",
+                "route_state": "open",
+                "smoothiebox_terminal": null,
+                "route_reason": "Source assembly relationship only; no verified installed-machine or SmoothieBox path."
+              },
+              {
+                "id": "z-min-black-2",
+                "mark": "wire \u00b7 black",
+                "label": "Black wire \u00b7 source-named conductor; no cavity, SIG/GND role or electrical polarity assigned \u00b7 OPEN",
+                "fact": "source_wire_reference",
+                "domain": "source_revision_only",
+                "source_ids": [
+                  "mini101-final"
+                ],
+                "source_locator": "step_10",
+                "route_state": "open",
+                "smoothiebox_terminal": null
+              }
+            ]
+          },
+          {
+            "id": "mini101-limit-z-max",
+            "device": "mini101-assembly-reference",
+            "refdes": "Mini 1.01 reference ONLY | Z max slot / orange and black Z limit wires",
+            "form": "Source-described assembly group; no complete connector pin schedule",
+            "scope": "Mini 1.01 archive ONLY; not a Mini 1.0 assignment or a SoMakeIt fitted-machine claim. Source names orange and black Z limit switch wires going to Z max. No conductor-to-pin role map is given. Individual contact order, electrical roles, ratings and mating view are not established. All SmoothieBox paths OPEN. https://download.lulzbot.com/Mini/1.01/production_docs/ohai-kit/electrical_final_assembly.html#step_11",
+            "source_ids": [
+              "mini101-final"
+            ],
+            "source_locator": "step_11",
+            "revision_scope": "Mini/1.01",
+            "installed_fit": "unverified",
+            "source_group_description": "Source names orange and black Z limit switch wires going to Z max. No conductor-to-pin role map is given.",
+            "declared_position_count": null,
+            "contact_inventory_scope": "Only explicitly located or source-named connection points are enumerated; an empty list is not a zero-contact claim.",
+            "route_state": "open",
+            "contacts": [
+              {
+                "id": "z-max-orange-1",
+                "mark": "wire \u00b7 orange",
+                "label": "Orange wire \u00b7 source-named conductor; no cavity, SIG/GND role or electrical polarity assigned \u00b7 OPEN",
+                "fact": "source_wire_reference",
+                "domain": "source_revision_only",
+                "source_ids": [
+                  "mini101-final"
+                ],
+                "source_locator": "step_11",
+                "route_state": "open",
+                "smoothiebox_terminal": null
+              },
+              {
+                "id": "z-max-black-2",
+                "mark": "wire \u00b7 black",
+                "label": "Black wire \u00b7 source-named conductor; no cavity, SIG/GND role or electrical polarity assigned \u00b7 OPEN",
+                "fact": "source_wire_reference",
+                "domain": "source_revision_only",
+                "source_ids": [
+                  "mini101-final"
+                ],
+                "source_locator": "step_11",
+                "route_state": "open",
+                "smoothiebox_terminal": null
+              }
+            ]
+          },
+          {
+            "id": "mini101-above-z-max",
+            "device": "mini101-assembly-reference",
+            "refdes": "Mini 1.01 reference ONLY | Bank above Z max / two explicitly used locations",
+            "form": "Source-described assembly group; no complete connector pin schedule",
+            "scope": "Mini 1.01 archive ONLY; not a Mini 1.0 assignment or a SoMakeIt fitted-machine claim. Source places blue on the far left bottom pin and black on the bottom middle pin in the bank above Z max. Two used locations are explicit; the bank is NOT established as a two-pin connector. Total bank size, refdes, numerical pin IDs and electrical roles remain unknown. All SmoothieBox paths OPEN. https://download.lulzbot.com/Mini/1.01/production_docs/ohai-kit/electrical_final_assembly.html#step_12",
+            "source_ids": [
+              "mini101-final"
+            ],
+            "source_locator": "step_12",
+            "revision_scope": "Mini/1.01",
+            "installed_fit": "unverified",
+            "source_group_description": "Source places blue on the far left bottom pin and black on the bottom middle pin in the bank above Z max.",
+            "declared_position_count": null,
+            "contact_inventory_scope": "Only explicitly located or source-named connection points are enumerated; an empty list is not a zero-contact claim.",
+            "route_state": "open",
+            "contacts": [
+              {
+                "id": "mini101-above-zmax-blue",
+                "mark": "far left bottom pin",
+                "label": "Blue wire | source-described far left bottom pin",
+                "fact": "source",
+                "domain": "source_revision_only",
+                "source_ids": [
+                  "mini101-final"
+                ],
+                "source_locator": "step_12",
+                "source_wire_color": "blue",
+                "source_function_text": "Z limit switch wire",
+                "inferred_electrical_role": null,
+                "electrical_role_limit": "Positional description in the guide view only; no numbered header pin, signal function, voltage or installed orientation is established.",
+                "route_state": "open",
+                "smoothiebox_terminal": null,
+                "route_reason": "Source assembly relationship only; no verified installed-machine or SmoothieBox path."
+              },
+              {
+                "id": "mini101-above-zmax-black",
+                "mark": "bottom middle pin",
+                "label": "Black wire | source-described bottom middle pin",
+                "fact": "source",
+                "domain": "source_revision_only",
+                "source_ids": [
+                  "mini101-final"
+                ],
+                "source_locator": "step_12",
+                "source_wire_color": "black",
+                "source_function_text": "Z limit switch wire",
+                "inferred_electrical_role": null,
+                "electrical_role_limit": "Positional description in the guide view only; no numbered header pin, GND function, voltage or installed orientation is established.",
+                "route_state": "open",
+                "smoothiebox_terminal": null,
+                "route_reason": "Source assembly relationship only; no verified installed-machine or SmoothieBox path."
+              }
+            ]
+          },
+          {
+            "id": "mini101-extruder-power",
+            "device": "mini101-assembly-reference",
+            "refdes": "Mini 1.01 reference ONLY | Extruder power / 2 POS terminal block",
+            "form": "Source-described assembly group; no complete connector pin schedule",
+            "scope": "Mini 1.01 archive ONLY; not a Mini 1.0 assignment or a SoMakeIt fitted-machine claim. Source names the 2 POS terminal block extruder power wires. Two positions are established; individual marks, colors, polarity, ratings and order are not. Do not borrow Mini 1.0 heater positions 5/6. All SmoothieBox paths OPEN. https://download.lulzbot.com/Mini/1.01/production_docs/ohai-kit/electrical_final_assembly.html#step_13",
+            "source_ids": [
+              "mini101-final"
+            ],
+            "source_locator": "step_13",
+            "revision_scope": "Mini/1.01",
+            "installed_fit": "unverified",
+            "source_group_description": "Source names the 2 POS terminal block extruder power wires.",
+            "declared_position_count": 2,
+            "contact_inventory_scope": "Only explicitly located or source-named connection points are enumerated; an empty list is not a zero-contact claim.",
+            "route_state": "open",
+            "contacts": []
+          },
+          {
+            "id": "mini101-extrusion-fan",
+            "device": "mini101-assembly-reference",
+            "refdes": "Mini 1.01 reference ONLY | Extrusion fan / black-white 2 POS connector",
+            "form": "Source-described assembly group; no complete connector pin schedule",
+            "scope": "Mini 1.01 archive ONLY; not a Mini 1.0 assignment or a SoMakeIt fitted-machine claim. Source names a black and white 2 POS extrusion fan connector. Two positions and the wire colors are known; no cavity-to-color order, polarity, voltage or fan-control mode is established. Do not substitute Mini 1.0 red/black colors. All SmoothieBox paths OPEN. https://download.lulzbot.com/Mini/1.01/production_docs/ohai-kit/electrical_final_assembly.html#step_14",
+            "source_ids": [
+              "mini101-final"
+            ],
+            "source_locator": "step_14",
+            "revision_scope": "Mini/1.01",
+            "installed_fit": "unverified",
+            "source_group_description": "Source names a black and white 2 POS extrusion fan connector.",
+            "declared_position_count": 2,
+            "contact_inventory_scope": "Only explicitly located or source-named connection points are enumerated; an empty list is not a zero-contact claim.",
+            "route_state": "open",
+            "contacts": []
+          },
+          {
+            "id": "mini101-thermistor-t0",
+            "device": "mini101-assembly-reference",
+            "refdes": "Mini 1.01 reference ONLY | Orange thermistor / T0 slot",
+            "form": "Source-described assembly group; no complete connector pin schedule",
+            "scope": "Mini 1.01 archive ONLY; not a Mini 1.0 assignment or a SoMakeIt fitted-machine claim. Source names orange thermistor wires going to T0. The text does not give a pin-by-pin sensor/return assignment; do not borrow Mini 1.0 red/black colors. Individual contact order, electrical roles, ratings and mating view are not established. All SmoothieBox paths OPEN. https://download.lulzbot.com/Mini/1.01/production_docs/ohai-kit/electrical_final_assembly.html#step_15",
+            "source_ids": [
+              "mini101-final"
+            ],
+            "source_locator": "step_15",
+            "revision_scope": "Mini/1.01",
+            "installed_fit": "unverified",
+            "source_group_description": "Source names orange thermistor wires going to T0. The text does not give a pin-by-pin sensor/return assignment; do not borrow Mini 1.0 red/black colors.",
+            "declared_position_count": null,
+            "contact_inventory_scope": "Only explicitly located or source-named connection points are enumerated; an empty list is not a zero-contact claim.",
+            "route_state": "open",
+            "contacts": []
+          },
+          {
+            "id": "mini101-blower-fan",
+            "device": "mini101-assembly-reference",
+            "refdes": "Mini 1.01 reference ONLY | Blower fan / yellow and black wire group",
+            "form": "Source-described assembly group; no complete connector pin schedule",
+            "scope": "Mini 1.01 archive ONLY; not a Mini 1.0 assignment or a SoMakeIt fitted-machine claim. Source names yellow and black blower fan wires and refers to a picture for the connection. No numbered slot or individual electrical roles are established. Individual contact order, electrical roles, ratings and mating view are not established. All SmoothieBox paths OPEN. https://download.lulzbot.com/Mini/1.01/production_docs/ohai-kit/electrical_final_assembly.html#step_16",
+            "source_ids": [
+              "mini101-final"
+            ],
+            "source_locator": "step_16",
+            "revision_scope": "Mini/1.01",
+            "installed_fit": "unverified",
+            "source_group_description": "Source names yellow and black blower fan wires and refers to a picture for the connection. No numbered slot or individual electrical roles are established.",
+            "declared_position_count": null,
+            "contact_inventory_scope": "Only explicitly located or source-named connection points are enumerated; an empty list is not a zero-contact claim.",
+            "route_state": "open",
+            "contacts": []
+          },
+          {
+            "id": "mini101-ground-post",
+            "device": "mini101-assembly-reference",
+            "refdes": "Mini 1.01 reference ONLY | Ground lug post / four motor-wire ground lugs",
+            "form": "Source-described assembly group; no complete connector pin schedule",
+            "scope": "Mini 1.01 archive ONLY; not a Mini 1.0 assignment or a SoMakeIt fitted-machine claim. Source places a ground lug post through the inside left frame plate and attaches four ground lugs from motor wires; it does not identify the four lugs individually. The post is a named physical attachment point, not a numbered controller pin. Lug identities, bonding qualification and circuit-GND/PE relationships remain OPEN. All SmoothieBox paths OPEN. https://download.lulzbot.com/Mini/1.01/production_docs/ohai-kit/electrical_final_assembly.html#step_24",
+            "source_ids": [
+              "mini101-final"
+            ],
+            "source_locator": "step_24",
+            "revision_scope": "Mini/1.01",
+            "installed_fit": "unverified",
+            "source_group_description": "Source places a ground lug post through the inside left frame plate and attaches four ground lugs from motor wires; it does not identify the four lugs individually.",
+            "declared_position_count": null,
+            "contact_inventory_scope": "Only explicitly located or source-named connection points are enumerated; an empty list is not a zero-contact claim.",
+            "route_state": "open",
+            "contacts": [
+              {
+                "id": "mini101-ground-lug-post",
+                "mark": "ground lug post",
+                "label": "Ground lug post | source-named attachment point on left frame plate",
+                "fact": "source_nonpin_reference",
+                "domain": "source_revision_only",
+                "source_ids": [
+                  "mini101-final"
+                ],
+                "source_locator": "step_24",
+                "source_wire_color": null,
+                "source_function_text": "ground lug post",
+                "inferred_electrical_role": null,
+                "electrical_role_limit": "Four motor-wire ground lugs are named collectively, not assigned four invented IDs or axes. No qualified protective-earth, circuit-GND or SmoothieBox return topology follows.",
+                "route_state": "open",
+                "smoothiebox_terminal": null,
+                "route_reason": "Source assembly relationship only; no verified installed-machine or SmoothieBox path."
+              }
+            ],
+            "source_reported_ground_lug_count": 4
+          }
+        ],
+        "wires": []
+      }
+    }
+  }
+}

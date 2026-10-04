@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><title>xTool S1 diode laser — Bristol Hackspace configuration · source contact schedule</title><style>body{font:16px/1.5 system-ui,sans-serif;max-width:1200px;margin:auto;padding:1rem;color:#102b35}.warning{border-left:5px solid #9d352b;background:#fff4ef;padding:.8rem}.scroll{overflow:auto;border:1px solid #a7b8bb}table{border-collapse:collapse;width:100%;min-width:700px}td,th{border:1px solid #9aaebf;padding:.55rem;text-align:left;vertical-align:top}thead{background:#e8f0f6}img{width:100%;height:auto}details{margin:1rem 0}a{color:#005f86}</style><style>body{overflow-wrap:anywhere}.machine-page-nav{display:flex;gap:1rem;flex-wrap:wrap;padding:1rem;border-bottom:1px solid var(--rule)}.machine-page-title{font-size:clamp(1.7rem,4vw,3rem);line-height:1.1;margin:1.5rem 0}.machine-profile{display:block!important}.machine-page-history{margin-top:2rem}#machine-image-dialog{width:98vw;height:96vh;max-width:none;max-height:none;background:var(--paper);color:var(--ink);border:1px solid var(--rule);padding:2.5rem 1rem 1rem}#machine-image-dialog::backdrop{background:rgb(0 0 0 / 85%)}#machine-image-viewport{height:100%;width:100%;overflow:auto}#machine-image-full{display:block;width:100%;height:100%;max-width:none;object-fit:contain;cursor:zoom-in;user-select:none;-webkit-user-drag:none}.is-zoomed #machine-image-full{max-height:none;height:auto;object-fit:initial;cursor:grab;touch-action:none}.machine-image-toolbar{position:absolute;inset:.35rem 1rem auto;display:flex;gap:.6rem;align-items:center;background:var(--paper)}.machine-image-toolbar span{font-size:.8rem}#machine-image-close{position:absolute;right:1rem;top:.5rem}main img{max-width:100%;cursor:zoom-in}.table-wrap{overflow:auto}details:not([open])>:not(summary){display:none}</style><style id="atlas-viewer-style">.atlas-zoom-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+
+.atlas-zoom-controls label {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.atlas-zoom-controls input[type="range"] {
+  width: min(18vw, 12rem);
+  min-width: 7rem;
+}
+
+.atlas-zoom-controls output {
+  min-width: 3.5rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.atlas-minimap {
+  position: relative;
+  width: 10rem;
+  height: 6rem;
+  overflow: hidden;
+  border: 1px solid #b8cbd0;
+  background: #0b1f26;
+  touch-action: none;
+}
+
+.atlas-minimap > img {
+  position: absolute;
+  max-width: none;
+  object-fit: fill;
+  opacity: 0.78;
+  user-select: none;
+  pointer-events: none;
+}
+
+.atlas-minimap-window {
+  position: absolute;
+  box-sizing: border-box;
+  min-width: 8px;
+  min-height: 8px;
+  padding: 0;
+  border: 2px solid #ffd37f;
+  background: #ffd37f30;
+  cursor: move;
+  touch-action: none;
+}
+
+.atlas-viewer-toolbar .atlas-zoom-controls .atlas-minimap-window,
+.machine-image-toolbar .atlas-zoom-controls .atlas-minimap-window {
+  padding: 0;
+  border: 2px solid #ffd37f;
+  background: #ffd37f30;
+  cursor: move;
+}
+
+.atlas-minimap-window:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+
+#dialog-image,
+#machine-image-full {
+  position: absolute;
+  top: 0;
+  left: 0;
+  max-width: none;
+  max-height: none;
+  object-fit: fill;
+  transform-origin: top left;
+  will-change: transform;
+  user-select: none;
+  cursor: grab;
+}
+
+#dialog-stage,
+#machine-image-viewport {
+  position: relative;
+  overflow: hidden;
+  touch-action: none;
+}
+
+.atlas-viewer-toolbar,
+.machine-image-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.atlas-viewer-toolbar .atlas-zoom-controls button {
+  padding: 0.35rem 0.65rem;
+  border: 1px solid #83a1a5;
+  border-radius: 0.3rem;
+  color: #fff;
+  background: #193d48;
+  cursor: pointer;
+  font: inherit;
+}
+
+.machine-image-toolbar .atlas-zoom-controls button {
+  padding: 0.35rem 0.65rem;
+  border: 1px solid var(--rule, #73858a);
+  border-radius: 0.3rem;
+  color: var(--ink, #eef5f3);
+  background: var(--panel, #193d48);
+  cursor: pointer;
+  font: inherit;
+}
+
+.machine-image-toolbar > button {
+  padding: 0.35rem 0.65rem;
+  border: 1px solid var(--rule, #73858a);
+  border-radius: 0.3rem;
+  color: var(--ink, #eef5f3);
+  background: var(--panel, #193d48);
+  cursor: pointer;
+  font: inherit;
+}
+
+.atlas-zoom-controls button:focus-visible,
+.atlas-zoom-controls input:focus-visible {
+  outline: 3px solid #ffd37f;
+  outline-offset: 2px;
+}
+
+.atlas-viewer-toolbar .atlas-zoom-controls input[type="range"] {
+  accent-color: #ffd37f;
+}
+
+.machine-image-toolbar .atlas-zoom-controls input[type="range"] {
+  accent-color: #007d88;
+}
+
+.machine-image-toolbar #machine-image-fit {
+  order: 0;
+}
+
+.machine-image-toolbar .atlas-zoom-controls {
+  order: 1;
+}
+
+.machine-image-toolbar span {
+  order: 2;
+  flex: 1 1 10rem;
+}
+
+.machine-image-toolbar {
+  z-index: 2;
+}
+
+.machine-image-toolbar #machine-image-close {
+  position: static;
+  order: 3;
+  margin-left: auto;
+}
+
+.atlas-viewer-hint {
+  flex: 1 1 12rem;
+}
+
+@media (max-width: 650px) {
+  .atlas-minimap {
+    width: 7rem;
+    height: 4.2rem;
+  }
+
+  .atlas-zoom-controls input[type="range"] {
+    width: 22vw;
+    min-width: 5rem;
+  }
+}
+
+#figure-dialog #dialog-image,#machine-image-dialog #machine-image-full{position:absolute;inset:0 auto auto 0;display:block;max-width:none;max-height:none;margin:0;object-fit:fill;transform-origin:top left}
+#figure-dialog #dialog-stage,#machine-image-dialog #machine-image-viewport{position:relative;flex:1;min-height:0;height:0;width:100%;overflow:hidden;touch-action:none}
+#machine-image-dialog{position:fixed;inset:0;width:100vw;height:100dvh;max-width:none;max-height:none;margin:0;padding:0;border:0;overflow:hidden;background:var(--paper, #0b1f26);color:var(--ink, #eef5f3)}
+#machine-image-dialog[open]{display:flex;flex-direction:column}
+#machine-image-dialog .machine-image-toolbar{position:relative;inset:auto;flex:none;padding:.55rem .8rem;background:var(--paper, #0b1f26);color:var(--ink, #eef5f3)}
+#machine-image-dialog #machine-image-close{position:static;inset:auto}
+#figure-dialog .atlas-viewer-toolbar,#machine-image-dialog .machine-image-toolbar{flex-shrink:0}
+#figure-dialog .atlas-viewer-toolbar .atlas-zoom-controls .atlas-minimap-window,#machine-image-dialog .machine-image-toolbar .atlas-zoom-controls .atlas-minimap-window{padding:0;border:2px solid #ffd37f;background:#ffd37f30;cursor:move;border-radius:0;min-width:0;min-height:0}
+#machine-image-dialog::backdrop{background:rgb(0 0 0 / 85%)}
+@media print{#machine-image-dialog{display:none!important}}
+</style></head><body><main><h1>xTool S1 diode laser — Bristol Hackspace configuration</h1><p class="warning"><strong>Research reference only — not wiring instructions.</strong> DOTTED = GUESS; any dotted guess requires an explicit evidence-backed route row. OPEN = no connection established. This profile has zero SmoothieBox routes and zero guesses. The family-level pin chart does not prove Bristol unit fitment.</p><h2>Current complete interface diagram</h2><p>The exterior drawing individually labels all 82 SmoothieBox contacts (including axis STEP, direction, enable, endstop GND and signal positions). It separately shows the 12 numbered xTool module contacts and the 15 named mainboard port groups plus nine visibly separate rear-cover interface items across seven manufacturer callouts, three diagnostic test locations, and the unresolved fitted-unit boundary. Mainboard and rear contacts remain unspecified.</p><figure><div aria-label="Scrollable complete SmoothieBox and xTool interface diagram" class="scroll" role="region" tabindex="0"><img alt="82 SmoothieBox exterior contacts; 12 S1-family module contacts; 15 mainboard groups; nine rear-cover items from seven callouts; three diagnostic references; unresolved Bristol fitted-unit boundary. No routes or guesses; OPEN means no established SmoothieBox connection." src="226-wiki-226/machine-control-pinout-survey/smoothiebox-machine-wiring/wiki-226.svg"/></div><figcaption><a href="226-wiki-226/machine-control-pinout-survey/smoothiebox-machine-wiring/wiki-226.svg">Open full-size SVG</a></figcaption></figure><h2>Laser module · 12 numbered positions</h2><p>Labels transcribed from xTool’s S1 family-level chart. The numbered layout and label chart are separate source images; they do not establish Bristol module/cable fitment, the mainboard mating view, or compatibility with SmoothieBox. Labels such as VCC3, BL_T_SW and #TXD/#RXD are retained literally.</p><div class="scroll"><table><thead><tr><th>Manufacturer position</th><th>Manufacturer label</th><th>Connection status</th></tr></thead><tbody><tr><th scope="row">1</th><td>24V</td><td>OPEN — manufacturer family-level module reference; Bristol fitment and mating orientation unverified.</td></tr><tr><th scope="row">2</th><td>VCC3</td><td>OPEN — manufacturer family-level module reference; Bristol fitment and mating orientation unverified.</td></tr><tr><th scope="row">3</th><td>24V</td><td>OPEN — manufacturer family-level module reference; Bristol fitment and mating orientation unverified.</td></tr><tr><th scope="row">4</th><td>BL_T_SW</td><td>OPEN — manufacturer family-level module reference; Bristol fitment and mating orientation unverified.</td></tr><tr><th scope="row">5</th><td>24V</td><td>OPEN — manufacturer family-level module reference; Bristol fitment and mating orientation unverified.</td></tr><tr><th scope="row">6</th><td>GND</td><td>OPEN — manufacturer family-level module reference; Bristol fitment and mating orientation unverified.</td></tr><tr><th scope="row">7</th><td>GND</td><td>OPEN — manufacturer family-level module reference; Bristol fitment and mating orientation unverified.</td></tr><tr><th scope="row">8</th><td>#TXD</td><td>OPEN — manufacturer family-level module reference; Bristol fitment and mating orientation unverified.</td></tr><tr><th scope="row">9</th><td>PWM</td><td>OPEN — manufacturer family-level module reference; Bristol fitment and mating orientation unverified.</td></tr><tr><th scope="row">10</th><td>GND</td><td>OPEN — manufacturer family-level module reference; Bristol fitment and mating orientation unverified.</td></tr><tr><th scope="row">11</th><td>GND</td><td>OPEN — manufacturer family-level module reference; Bristol fitment and mating orientation unverified.</td></tr><tr><th scope="row">12</th><td>#RXD</td><td>OPEN — manufacturer family-level module reference; Bristol fitment and mating orientation unverified.</td></tr></tbody></table></div><h2>Main control board · 15 named port groups</h2><p>xTool’s port guide identifies these groups by number and name only. No electrical pins or contact counts are supplied by that source, so no individual contacts are invented.</p><ol><li>Port 1: Baseplate Detection — group name only; contact count, numbering and pin functions not published.</li><li>Port 2: Z-Axis Limit Sensor — group name only; contact count, numbering and pin functions not published.</li><li>Port 3: Y-Axis Limit Sensor — group name only; contact count, numbering and pin functions not published.</li><li>Port 4: X-Axis Limit Sensor — group name only; contact count, numbering and pin functions not published.</li><li>Port 5: Y-Axis Motor Coder — group name only; contact count, numbering and pin functions not published.</li><li>Port 6: X-Axis Motor Coder — group name only; contact count, numbering and pin functions not published.</li><li>Port 7: Rear Light Panel — group name only; contact count, numbering and pin functions not published.</li><li>Port 8: Front Light Panel — group name only; contact count, numbering and pin functions not published.</li><li>Port 9: Laser Module — group name only; contact count, numbering and pin functions not published.</li><li>Port 10: Z-Axis Motor — group name only; contact count, numbering and pin functions not published.</li><li>Port 11: Y-Axis Motor — group name only; contact count, numbering and pin functions not published.</li><li>Port 12: X-Axis Motor — group name only; contact count, numbering and pin functions not published.</li><li>Port 13: Rear Interface Board — group name only; contact count, numbering and pin functions not published.</li><li>Port 14: Front Interface Board — group name only; contact count, numbering and pin functions not published.</li><li>Port 15: Exhaust Fan — group name only; contact count, numbering and pin functions not published.</li></ol><h2>Rear cover · seven source callouts / nine visible interface items</h2><p>The guide names seven callouts. Its photograph shows three separate receptacles beneath the plural extension-ports callout; upper, middle and lower here describe only their visible positions and are not manufacturer connector names or pin numbering.</p><ul><li>Power switch — contact count and pinout not published.</li><li>Power port — contact count and pinout not published.</li><li>USB port — contact count and pinout not published.</li><li>Key port — contact count and pinout not published.</li><li>Extension-port callout, upper receptacle in photograph — location description only; contacts unknown.</li><li>Extension-port callout, middle receptacle in photograph — location description only; contacts unknown.</li><li>Extension-port callout, lower receptacle in photograph — location description only; contacts unknown.</li><li>Air-assist tube fitting — mechanical, not an electrical pin group.</li><li>Fire-safety tube fitting — mechanical, not an electrical pin group.</li></ul><h2>Sources and limits</h2><ul><li><a href="https://support.xtool.com/article/1098">xTool S1 Won’t Fire Laser</a> — family-level 12-position module numbering/function chart and board test-pad illustration.</li><li><a href="https://support.xtool.com/article/1086">xTool S1 main-control-board ports</a> — 15 named board port groups.</li><li><a href="https://support.xtool.com/article/1102">xTool S1 rear-cover ports</a> — rear controls, ports and tube fittings.</li><li><a href="https://wiki.bristolhackspace.org/equipment/laser/laser-xtool-s1/home">Bristol Hackspace xTool S1 page</a> — local machine and safety description; no pinout.</li></ul><h2>Board test points · separate from connector pins</h2><p>The troubleshooting article shows three distinct diagnostic references: PWM test location, 24V test location, and GND measurement at a mounting-hole reference. These are not numbered connector contacts. Under the article’s stated 100% processing-power diagnostic procedure, expected readings are 3.2–3.3 V from PWM to GND and about 24 V from 24V to GND; these are diagnostic readings, not input ratings or tolerances.</p><ul><li>PWM test location — no machine-to-SmoothieBox route established.</li><li>24V test location — no machine-to-SmoothieBox route established.</li><li>GND mounting-hole reference — exact number and full set of physical locations not inventoried.</li></ul><p>The Bristol wiki does not identify the fitted controller/module/cable interface; the diagram retains it as an empty OPEN boundary. No SmoothieBox route is justified by these sources. DB25 is not evidenced.</p><details><summary>Legacy captured 181-position Core P1 schedule (retained)</summary><p>This earlier 181-row Core P1 contact schedule is preserved byte-for-byte. It is distinct from the current 82 SmoothieBox exterior contacts and the 12 xTool module positions above; its old machine-side inventory is not adopted as current evidence.</p><iframe loading="lazy" src="226-wiki-226/machine-control-pinout-survey/archive/wiki-226-2026-09-29/prior-detail.html" style="width:100%;height:70vh;border:1px solid #9aaebf" title="Collapsed legacy 181-position Core P1 schedule"></iframe><p><a href="226-wiki-226/machine-control-pinout-survey/archive/wiki-226-2026-09-29/prior-detail.html">Open legacy schedule in a new page</a></p></details></main><!-- atlas-viewer:start --><dialog id="machine-image-dialog" aria-label="Full-size diagram"><div class="machine-image-toolbar"><button id="machine-image-fit" type="button">Fit</button><button id="machine-image-close" type="button" aria-label="Close image">Close</button><span></span></div><div id="machine-image-viewport" role="button" tabindex="0" aria-label="Diagram: click or scroll to zoom, drag or use arrow keys to pan"><img id="machine-image-full" alt="" draggable="false"></div></dialog><script>(() => {
+  const dialog = document.querySelector('#figure-dialog, #machine-image-dialog');
+  const stage = document.querySelector('#dialog-stage, #machine-image-viewport');
+  const image = document.querySelector('#dialog-image, #machine-image-full');
+  if (!dialog || !stage || !image) return;
+
+  const toolbar = dialog.querySelector('.atlas-viewer-toolbar, .machine-image-toolbar');
+  const controls = document.createElement('div');
+  controls.className = 'atlas-zoom-controls';
+  controls.innerHTML = '<button type="button" data-zoom="out" aria-label="Zoom out">−</button><label>Zoom <input data-zoom="range" type="range" min="0" max="1" step="0.001" value="0" aria-label="Diagram zoom, logarithmic scale from fit to readable detail"></label><output data-zoom="value" aria-live="polite">100%</output><button type="button" data-zoom="in" aria-label="Zoom in">+</button><div class="atlas-minimap" role="group" aria-label="Diagram minimap"><img alt="" draggable="false"><button type="button" class="atlas-minimap-window" aria-label="Minimap viewport. Use arrow keys to pan."></button></div></div>';
+  const hint = toolbar.querySelector('.atlas-viewer-hint, span');
+  toolbar.insertBefore(controls, hint || null);
+  if (hint) hint.textContent = 'Click or scroll to zoom; drag to pan. Use the slider or minimap to navigate. 100% is fit. Escape closes.';
+  const range = controls.querySelector('[data-zoom="range"]');
+  const output = controls.querySelector('[data-zoom="value"]');
+  const map = controls.querySelector('.atlas-minimap');
+  const map_image = map.querySelector('img');
+  const map_window = map.querySelector('.atlas-minimap-window');
+  map.setAttribute('aria-label', 'Diagram minimap. Drag the outlined window or click a location to navigate.');
+  let fit_scale = 1;
+  let zoom = 1;
+  let maximum_zoom = 8;
+  let offset_x = 0;
+  let offset_y = 0;
+  let drag = null;
+  let suppress_click_until = 0;
+  let opener = null;
+  let object_url = null;
+
+  function open_image(source, trigger, caption) {
+    opener = trigger;
+    image.src = source;
+    image.alt = trigger instanceof HTMLImageElement ? trigger.alt : caption;
+    const caption_node = dialog.querySelector('#dialog-caption');
+    if (caption_node) caption_node.textContent = caption || image.alt;
+    dialog.showModal();
+    const close_button = dialog.querySelector('#close-dialog, #machine-image-close');
+    close_button?.focus();
+    if (image.complete && image.naturalWidth) requestAnimationFrame(fit);
+    else image.addEventListener('load', fit, { once:true });
+  }
+
+  function clamp_offsets() {
+    const width = image.naturalWidth * fit_scale * zoom;
+    const height = image.naturalHeight * fit_scale * zoom;
+    offset_x = width <= stage.clientWidth ? (stage.clientWidth - width) / 2 : Math.min(0, Math.max(stage.clientWidth - width, offset_x));
+    offset_y = height <= stage.clientHeight ? (stage.clientHeight - height) / 2 : Math.min(0, Math.max(stage.clientHeight - height, offset_y));
+  }
+
+  function sync() {
+    clamp_offsets();
+    const scale = fit_scale * zoom;
+    image.style.width = `${image.naturalWidth}px`;
+    image.style.height = `${image.naturalHeight}px`;
+    image.style.transform = `translate(${offset_x}px, ${offset_y}px) scale(${scale})`;
+    range.value = String(Math.log(zoom) / Math.log(maximum_zoom));
+    output.value = `${Math.round(zoom * 100)}%`;
+    output.textContent = output.value;
+    update_minimap();
+  }
+
+  function update_minimap() {
+    if (!image.naturalWidth || !image.naturalHeight) return;
+    const bounds = map.getBoundingClientRect();
+    const scale = Math.min(bounds.width / image.naturalWidth, bounds.height / image.naturalHeight);
+    const drawn_width = image.naturalWidth * scale;
+    const drawn_height = image.naturalHeight * scale;
+    const inset_x = (bounds.width - drawn_width) / 2;
+    const inset_y = (bounds.height - drawn_height) / 2;
+    map_image.style.width = `${drawn_width}px`;
+    map_image.style.height = `${drawn_height}px`;
+    map_image.style.left = `${inset_x}px`;
+    map_image.style.top = `${inset_y}px`;
+    const view_width = Math.min(drawn_width, stage.clientWidth / (fit_scale * zoom) * scale);
+    const view_height = Math.min(drawn_height, stage.clientHeight / (fit_scale * zoom) * scale);
+    map_window.style.width = `${view_width}px`;
+    map_window.style.height = `${view_height}px`;
+    map_window.style.left = `${inset_x + (-offset_x / (image.naturalWidth * fit_scale * zoom)) * drawn_width}px`;
+    map_window.style.top = `${inset_y + (-offset_y / (image.naturalHeight * fit_scale * zoom)) * drawn_height}px`;
+  }
+
+  function fit() {
+    if (!image.naturalWidth || !image.naturalHeight) return;
+    fit_scale = Math.min(stage.clientWidth / image.naturalWidth, stage.clientHeight / image.naturalHeight);
+    // Reach at least 1.5 rendered pixels per source unit even for very tall schedules.
+    maximum_zoom = Math.max(8, 1.5 / fit_scale);
+    zoom = 1;
+    offset_x = (stage.clientWidth - image.naturalWidth * fit_scale) / 2;
+    offset_y = (stage.clientHeight - image.naturalHeight * fit_scale) / 2;
+    map_image.src = image.currentSrc || image.src;
+    sync();
+  }
+
+  function zoom_at(next_zoom, client_x, client_y) {
+    const rect = stage.getBoundingClientRect();
+    const x = client_x - rect.left;
+    const y = client_y - rect.top;
+    const old_scale = fit_scale * zoom;
+    const image_x = (x - offset_x) / old_scale;
+    const image_y = (y - offset_y) / old_scale;
+    zoom = Math.min(maximum_zoom, Math.max(1, next_zoom));
+    const new_scale = fit_scale * zoom;
+    offset_x = x - image_x * new_scale;
+    offset_y = y - image_y * new_scale;
+    sync();
+  }
+
+  image.addEventListener('load', fit);
+  stage.addEventListener('wheel', event => {
+    if (!image.naturalWidth) return;
+    event.preventDefault();
+    zoom_at(zoom * Math.exp(-event.deltaY * 0.0015), event.clientX, event.clientY);
+  }, { passive: false });
+  stage.addEventListener('click', event => {
+    if (performance.now() < suppress_click_until) return;
+    zoom_at(zoom > 1 ? 1 : 2.5, event.clientX, event.clientY);
+  });
+  range.addEventListener('input', () => zoom_at(Math.exp(Number(range.value) * Math.log(maximum_zoom)), stage.getBoundingClientRect().left + stage.clientWidth / 2, stage.getBoundingClientRect().top + stage.clientHeight / 2));
+  controls.querySelector('[data-zoom="in"]').addEventListener('click', () => zoom_at(zoom * 1.25, stage.getBoundingClientRect().left + stage.clientWidth / 2, stage.getBoundingClientRect().top + stage.clientHeight / 2));
+  controls.querySelector('[data-zoom="out"]').addEventListener('click', () => zoom_at(zoom / 1.25, stage.getBoundingClientRect().left + stage.clientWidth / 2, stage.getBoundingClientRect().top + stage.clientHeight / 2));
+  stage.addEventListener('pointerdown', event => {
+    if (event.button !== 0 || zoom <= 1) return;
+    drag = { x: event.clientX, y: event.clientY, offset_x, offset_y, id: event.pointerId, moved:false };
+    stage.setPointerCapture(event.pointerId);
+  });
+  stage.addEventListener('pointermove', event => {
+    if (!drag || drag.id !== event.pointerId) return;
+    if (Math.abs(event.clientX - drag.x) + Math.abs(event.clientY - drag.y) > 4) drag.moved = true;
+    offset_x = drag.offset_x + event.clientX - drag.x;
+    offset_y = drag.offset_y + event.clientY - drag.y;
+    sync();
+  });
+  for (const name of ['pointerup', 'pointercancel']) stage.addEventListener(name, event => {
+    if (drag?.id !== event.pointerId) return;
+    if (drag.moved) suppress_click_until = performance.now() + 120;
+    drag = null;
+  });
+  stage.addEventListener('keydown', event => {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      zoom_at(zoom > 1 ? 1 : 2.5,
+        stage.getBoundingClientRect().left + stage.clientWidth / 2,
+        stage.getBoundingClientRect().top + stage.clientHeight / 2);
+      return;
+    }
+    const step = 48;
+    const moves = { ArrowLeft:[step, 0], ArrowRight:[-step, 0], ArrowUp:[0, step], ArrowDown:[0, -step] };
+    const move = moves[event.key];
+    if (!move) return;
+    event.preventDefault();
+    offset_x += move[0]; offset_y += move[1]; sync();
+  });
+  map_window.addEventListener('keydown', event => {
+    const move = { ArrowLeft:[-24, 0], ArrowRight:[24, 0], ArrowUp:[0, -24], ArrowDown:[0, 24] }[event.key];
+    if (!move) return;
+    event.preventDefault(); offset_x -= move[0]; offset_y -= move[1]; sync();
+  });
+  map.addEventListener('pointerdown', event => {
+    if (event.target === map_window) return;
+    const rect = map_image.getBoundingClientRect();
+    const natural_x = (event.clientX - rect.left) / rect.width * image.naturalWidth;
+    const natural_y = (event.clientY - rect.top) / rect.height * image.naturalHeight;
+    offset_x = stage.clientWidth / 2 - natural_x * fit_scale * zoom;
+    offset_y = stage.clientHeight / 2 - natural_y * fit_scale * zoom;
+    sync();
+  });
+  map_window.addEventListener('pointerdown', event => {
+    drag = { map: true, x:event.clientX, y:event.clientY, offset_x, offset_y, id:event.pointerId };
+    map_window.setPointerCapture(event.pointerId);
+    event.stopPropagation();
+  });
+  map_window.addEventListener('pointermove', event => {
+    if (!drag?.map || drag.id !== event.pointerId) return;
+    const rect = map_image.getBoundingClientRect();
+    const factor_x = image.naturalWidth * fit_scale * zoom / rect.width;
+    const factor_y = image.naturalHeight * fit_scale * zoom / rect.height;
+    offset_x = drag.offset_x - (event.clientX - drag.x) * factor_x;
+    offset_y = drag.offset_y - (event.clientY - drag.y) * factor_y;
+    sync();
+  });
+  for (const name of ['pointerup', 'pointercancel']) map_window.addEventListener(name, () => { drag = null; });
+  document.addEventListener('click', event => {
+    if (!(event.target instanceof Element)) return;
+    if (dialog.contains(event.target)) return;
+    const link = event.target.closest('main a[href]');
+    if (link) {
+      // Keep navigation, explicit downloads and browser new-tab gestures native.
+      if (event.defaultPrevented || event.button !== 0 || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey || link.hasAttribute('download')) return;
+      let linked_image;
+      try { linked_image = new URL(link.href, document.baseURI); }
+      catch { return; }
+      if (!['http:', 'https:', 'file:'].includes(linked_image.protocol) || linked_image.origin !== location.origin || linked_image.protocol !== location.protocol || !/\.(?:apng|avif|bmp|gif|ico|jpe?g|png|svg|webp)$/i.test(linked_image.pathname)) return;
+      event.preventDefault();
+      event.stopPropagation();
+      open_image(linked_image.href, link, link.dataset.caption || link.textContent.trim());
+      return;
+    }
+    const trigger = event.target.closest('.zoom-figure') || event.target.closest('main img');
+    if (!trigger) return;
+    event.preventDefault();
+    event.stopPropagation();
+    const source = trigger.matches('img') ? trigger : trigger.querySelector('img');
+    if (!source) return;
+    open_image(source.currentSrc || source.src, trigger,
+      trigger.dataset.caption || source.alt);
+  });
+  document.querySelectorAll('main img').forEach(source => {
+    if (dialog.contains(source)) return;
+    const trigger = source.closest('.zoom-figure') || source;
+    if (trigger instanceof HTMLButtonElement) return;
+    source.tabIndex = 0;
+    source.setAttribute('role', 'button');
+    source.addEventListener('keydown', event => {
+      if (event.key !== 'Enter' && event.key !== ' ') return;
+      event.preventDefault();
+      source.click();
+    });
+  });
+  document.querySelectorAll('main svg').forEach(svg => {
+    const trigger = svg.closest('button.zoom-figure') || svg;
+    if (trigger === svg) {
+      svg.tabIndex = 0;
+      svg.setAttribute('role', 'button');
+      svg.addEventListener('keydown', event => {
+        if (event.key !== 'Enter' && event.key !== ' ') return;
+        event.preventDefault();
+        svg.dispatchEvent(new MouseEvent('click', { bubbles:true, cancelable:true, view:window }));
+      });
+    }
+    trigger.addEventListener('click', event => {
+      event.preventDefault();
+      event.stopPropagation();
+      if (object_url) URL.revokeObjectURL(object_url);
+      const copy = svg.cloneNode(true);
+      copy.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
+      object_url = URL.createObjectURL(new Blob(
+        [new XMLSerializer().serializeToString(copy)], { type:'image/svg+xml' }));
+      open_image(object_url, trigger,
+        trigger.dataset.caption || svg.getAttribute('aria-label') || 'Diagram');
+    });
+  });
+  const fit_button = dialog.querySelector('#fit-dialog, #machine-image-fit');
+  fit_button?.addEventListener('click', fit);
+  const close_button = dialog.querySelector('#close-dialog, #machine-image-close');
+  close_button?.addEventListener('click', () => dialog.close());
+  dialog.addEventListener('click', event => {
+    if (event.target === dialog) dialog.close();
+  });
+  dialog.addEventListener('close', () => {
+    if (dialog.open) return;
+    image.removeAttribute('src');
+    map_image.removeAttribute('src');
+    if (object_url) URL.revokeObjectURL(object_url);
+    object_url = null;
+    opener?.focus();
+    opener = null;
+  });
+  window.addEventListener('resize', () => { if (dialog.open) fit(); });
+})();
+</script><!-- atlas-viewer:end --></body></html>

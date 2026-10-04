@@ -1,0 +1,25 @@
+{
+  "id": "forum-v1e-bigfoot16-lowrider4-wyoming",
+  "sources": {
+    "forum-peripheral-evidence.json": {
+      "id": "forum-v1e-bigfoot16-lowrider4-wyoming",
+      "dossier": "src/docs/machine-research/v1e-bigfoot16-lowrider4-wyoming.md",
+      "reported_fitted_or_used": [
+        {
+          "name": "Fluid Dial pendant",
+          "contacts": [],
+          "source_line_number": 4,
+          "source_line": "**Evidence state:** Harley reported first cuts on 17 January 2025, described the LR4 as complete on 28 January, measured a 1 mm difference between 1200 mm and 2550 mm diagonals the next day, and later reported a Fluid Dial pendant working.  ",
+          "evidence": "**Evidence state:** Harley reported first cuts on 17 January 2025, described the LR4 as complete on 28 January, measured a 1 mm difference between 1200 mm and 2550 mm diagonals the next day, and later reported a Fluid Dial pendant working.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        }
+      ],
+      "listed_for_build_unverified": [],
+      "historical_reference": [],
+      "planned_only": [],
+      "open_function_group": [],
+      "exclusions": [],
+      "source_gap": "Dossier does not establish an as-built SmoothieBox route or a complete physical contact schedule for the listed peripherals."
+    }
+  }
+}

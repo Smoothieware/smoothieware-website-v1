@@ -1,0 +1,32 @@
+{
+  "id": "forum-cnczone-large-format-diy-laser-gav",
+  "sources": {
+    "forum-peripheral-evidence.json": {
+      "id": "forum-cnczone-large-format-diy-laser-gav",
+      "dossier": "src/docs/machine-research/cnczone-large-format-diy-laser-gav.md",
+      "reported_fitted_or_used": [],
+      "listed_for_build_unverified": [
+        {
+          "name": "CO2 laser tube power disputed",
+          "contacts": [],
+          "source_line_number": 11,
+          "source_line": "A responder disputes the tube's stated power based on its visible/estimated length and challenges the axis-rod size and direct stepper drive arrangement. The builder accepts that the Y drive shafts and transmission should be revisited and mentions possible Panasonic servo motors. Other participants disagree with the responder's tube-power inference and discuss tube length/output variability. Therefore, tube identity and power are **contested/unknown**, not settled as 40 W, 80 W, or 100 W.",
+          "evidence": "A responder disputes the tube's stated power based on its visible/estimated length and challenges the axis-rod size and direct stepper drive arrangement. The builder accepts that the Y drive shafts and transmission should be revisited and mentions possible Panasonic servo motors.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        }
+      ],
+      "historical_reference": [],
+      "planned_only": [],
+      "open_function_group": [],
+      "exclusions": [
+        {
+          "name": "LightObject DSP planned only",
+          "reason": "Existing or proposed controller belongs to the replaced control system, not the machine periphery.",
+          "source_line_number": 9,
+          "source_line": "The builder calls this a second laser-cutter attempt, after building an early Buildlog.net design. The author reports about one month of design/build time and an estimated \u00a31,500\u2013\u00a32,000 cost. At the thread's opening, the builder describes it as a 40 W machine and says a LightObject DSP would control the laser and steppers; upgrading to 80 W or 100 W was only a possibility."
+        }
+      ],
+      "source_gap": "Dossier does not establish an as-built SmoothieBox route or a complete physical contact schedule for the listed peripherals."
+    }
+  }
+}

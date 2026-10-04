@@ -1,0 +1,168 @@
+{
+  "id": "base-02",
+  "sources": {
+    "machine-side-graph-snapshot.json": {
+      "source_graph": "002-base-02.json",
+      "source_sha256": "8d8837e8b772aadac21579d90d0d143040982e9db442e3909b048fca01aedcd6",
+      "graph": {
+        "profile_id": "base-02",
+        "devices": [
+          {
+            "id": "peripheral-01",
+            "role": "peripheral"
+          }
+        ],
+        "connectors": [
+          {
+            "id": "machine-01",
+            "device": "peripheral-01",
+            "refdes": "DB25 \u00b7 PCNC 770/1100 legacy",
+            "form": "DB25",
+            "scope": "legacy model-specific observations; not PCNC 440; numbered contact register, face unverified Machine/peripheral-side contact schedule; fitted presence unverified.",
+            "contacts": [
+              {
+                "id": "1",
+                "mark": "1",
+                "label": "Speed/enable; source reports 2.5 V DC and 0\u201310 kHz"
+              },
+              {
+                "id": "2",
+                "mark": "2",
+                "label": "X direction observation"
+              },
+              {
+                "id": "3",
+                "mark": "3",
+                "label": "X \u00b1 observation; not proven STEP"
+              },
+              {
+                "id": "4",
+                "mark": "4",
+                "label": "Y direction observation; source prints X\u2212"
+              },
+              {
+                "id": "5",
+                "mark": "5",
+                "label": "Y \u00b1 observation; not proven STEP"
+              },
+              {
+                "id": "6",
+                "mark": "6",
+                "label": "Z direction observation; source prints X\u2212"
+              },
+              {
+                "id": "7",
+                "mark": "7",
+                "label": "Z \u00b1 observation; not proven STEP"
+              },
+              {
+                "id": "8",
+                "mark": "8",
+                "label": "A direction observation; source prints X\u2212"
+              },
+              {
+                "id": "9",
+                "mark": "9",
+                "label": "A \u00b1 observation; not proven STEP"
+              },
+              {
+                "id": "10",
+                "mark": "10",
+                "label": "X limit"
+              },
+              {
+                "id": "11",
+                "mark": "11",
+                "label": "Y limit"
+              },
+              {
+                "id": "12",
+                "mark": "12",
+                "label": "Z limit"
+              },
+              {
+                "id": "13",
+                "mark": "13",
+                "label": "Accessory input"
+              },
+              {
+                "id": "14",
+                "mark": "14",
+                "label": "Coolant"
+              },
+              {
+                "id": "15",
+                "mark": "15",
+                "label": "Machine OK"
+              },
+              {
+                "id": "16",
+                "mark": "16",
+                "label": "Forward/reverse level"
+              },
+              {
+                "id": "17",
+                "mark": "17",
+                "label": "Function not established for this scoped connector/revision"
+              },
+              {
+                "id": "18",
+                "mark": "18",
+                "label": "Function not established for this scoped connector/revision"
+              },
+              {
+                "id": "19",
+                "mark": "19",
+                "label": "Function not established for this scoped connector/revision"
+              },
+              {
+                "id": "20",
+                "mark": "20",
+                "label": "Function not established for this scoped connector/revision"
+              },
+              {
+                "id": "21",
+                "mark": "21",
+                "label": "Function not established for this scoped connector/revision"
+              },
+              {
+                "id": "22",
+                "mark": "22",
+                "label": "Function not established for this scoped connector/revision"
+              },
+              {
+                "id": "23",
+                "mark": "23",
+                "label": "Function not established for this scoped connector/revision"
+              },
+              {
+                "id": "24",
+                "mark": "24",
+                "label": "Function not established for this scoped connector/revision"
+              },
+              {
+                "id": "25",
+                "mark": "25",
+                "label": "Function not established for this scoped connector/revision"
+              }
+            ]
+          }
+        ],
+        "wires": [
+          {
+            "state": "inferred",
+            "kind": "function",
+            "a": {
+              "connector": "v2-j5",
+              "contact": "18"
+            },
+            "b": {
+              "connector": "machine-01",
+              "contact": "2"
+            }
+          }
+        ]
+      }
+    }
+  }
+}

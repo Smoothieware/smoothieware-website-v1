@@ -1,0 +1,429 @@
+{
+  "id": "wiki-171",
+  "sources": {
+    "machine-side-graph-snapshot.json": {
+      "source_graph": "171-wiki-171.json",
+      "source_sha256": "06800f48bf087aa42be02e81025a80f4cb09e8181886d6f9eec1ed722b297d7d",
+      "graph": {
+        "profile_id": "wiki-171",
+        "devices": [
+          {
+            "id": "supplement-device-001",
+            "role": "reference"
+          },
+          {
+            "id": "supplement-device-002",
+            "role": "reference"
+          },
+          {
+            "id": "supplement-device-003",
+            "role": "reference"
+          }
+        ],
+        "connectors": [
+          {
+            "id": "supplement-connector-001",
+            "device": "supplement-device-001",
+            "refdes": "Mendel90 heated-bed 26-way ribbon positions 1\u201326",
+            "form": "26-way heated-bed ribbon; mating view unknown",
+            "scope": "Manual loom assignment only. Controller electronics and fitted Mendel90 variant unknown; these ribbon positions are not generic board pins. This is a reference for the named source revision; installed-machine correspondence is not established.",
+            "contacts": [
+              {
+                "id": "1",
+                "mark": "1",
+                "label": "Heated-bed heater negative; manual loom assignment, connector mating view unknown"
+              },
+              {
+                "id": "2",
+                "mark": "2",
+                "label": "Heated-bed heater negative; manual loom assignment, connector mating view unknown"
+              },
+              {
+                "id": "3",
+                "mark": "3",
+                "label": "Heated-bed heater negative; manual loom assignment, connector mating view unknown"
+              },
+              {
+                "id": "4",
+                "mark": "4",
+                "label": "Heated-bed heater negative; manual loom assignment, connector mating view unknown"
+              },
+              {
+                "id": "5",
+                "mark": "5",
+                "label": "Heated-bed heater negative; manual loom assignment, connector mating view unknown"
+              },
+              {
+                "id": "6",
+                "mark": "6",
+                "label": "Heated-bed heater negative; manual loom assignment, connector mating view unknown"
+              },
+              {
+                "id": "7",
+                "mark": "7",
+                "label": "Heated-bed heater negative; manual loom assignment, connector mating view unknown"
+              },
+              {
+                "id": "8",
+                "mark": "8",
+                "label": "Heated-bed heater negative; manual loom assignment, connector mating view unknown"
+              },
+              {
+                "id": "9",
+                "mark": "9",
+                "label": "Heated-bed heater negative; manual loom assignment, connector mating view unknown"
+              },
+              {
+                "id": "10",
+                "mark": "10",
+                "label": "Heated-bed heater negative; manual loom assignment, connector mating view unknown"
+              },
+              {
+                "id": "11",
+                "mark": "11",
+                "label": "Heated-bed heater negative; manual loom assignment, connector mating view unknown"
+              },
+              {
+                "id": "12",
+                "mark": "12",
+                "label": "Heated-bed heater negative; manual loom assignment, connector mating view unknown"
+              },
+              {
+                "id": "13",
+                "mark": "13",
+                "label": "Thermistor ground; manual loom assignment, connector mating view unknown"
+              },
+              {
+                "id": "14",
+                "mark": "14",
+                "label": "Thermistor signal; manual loom assignment, connector mating view unknown"
+              },
+              {
+                "id": "15",
+                "mark": "15",
+                "label": "Heated-bed +12 V; manual loom assignment, connector mating view unknown"
+              },
+              {
+                "id": "16",
+                "mark": "16",
+                "label": "Heated-bed +12 V; manual loom assignment, connector mating view unknown"
+              },
+              {
+                "id": "17",
+                "mark": "17",
+                "label": "Heated-bed +12 V; manual loom assignment, connector mating view unknown"
+              },
+              {
+                "id": "18",
+                "mark": "18",
+                "label": "Heated-bed +12 V; manual loom assignment, connector mating view unknown"
+              },
+              {
+                "id": "19",
+                "mark": "19",
+                "label": "Heated-bed +12 V; manual loom assignment, connector mating view unknown"
+              },
+              {
+                "id": "20",
+                "mark": "20",
+                "label": "Heated-bed +12 V; manual loom assignment, connector mating view unknown"
+              },
+              {
+                "id": "21",
+                "mark": "21",
+                "label": "Heated-bed +12 V; manual loom assignment, connector mating view unknown"
+              },
+              {
+                "id": "22",
+                "mark": "22",
+                "label": "Heated-bed +12 V; manual loom assignment, connector mating view unknown"
+              },
+              {
+                "id": "23",
+                "mark": "23",
+                "label": "Heated-bed +12 V; manual loom assignment, connector mating view unknown"
+              },
+              {
+                "id": "24",
+                "mark": "24",
+                "label": "Heated-bed +12 V; manual loom assignment, connector mating view unknown"
+              },
+              {
+                "id": "25",
+                "mark": "25",
+                "label": "Heated-bed +12 V; manual loom assignment, connector mating view unknown"
+              },
+              {
+                "id": "26",
+                "mark": "26",
+                "label": "Heated-bed +12 V; manual loom assignment, connector mating view unknown"
+              }
+            ]
+          },
+          {
+            "id": "supplement-connector-002",
+            "device": "supplement-device-002",
+            "refdes": "Mendel90 extruder male 15-contact D-sub positions 1\u201315",
+            "form": "male 15-contact D-sub on extruder assembly; mating view unknown",
+            "scope": "Source revision oldid 186913 gives this male extruder-side connector the listed 14 contact roles; contact 8 is not listed and stays OPEN. Its mating cable-side female D-sub is a separate housing below. Controller electronics, fitted Mendel90 build, connector face and V2 routes remain unverified. This is a reference for the named source revision; installed-machine correspondence is not established.",
+            "contacts": [
+              {
+                "id": "1",
+                "mark": "1",
+                "label": "Thermistor signal"
+              },
+              {
+                "id": "2",
+                "mark": "2",
+                "label": "Spare"
+              },
+              {
+                "id": "3",
+                "mark": "3",
+                "label": "+12 V"
+              },
+              {
+                "id": "4",
+                "mark": "4",
+                "label": "Heater negative"
+              },
+              {
+                "id": "5",
+                "mark": "5",
+                "label": "Heater negative"
+              },
+              {
+                "id": "6",
+                "mark": "6",
+                "label": "Extruder motor red"
+              },
+              {
+                "id": "7",
+                "mark": "7",
+                "label": "Extruder motor green"
+              },
+              {
+                "id": "8",
+                "mark": "8",
+                "label": "Function not listed in source; OPEN, not NC"
+              },
+              {
+                "id": "9",
+                "mark": "9",
+                "label": "Thermistor GND"
+              },
+              {
+                "id": "10",
+                "mark": "10",
+                "label": "+12 V"
+              },
+              {
+                "id": "11",
+                "mark": "11",
+                "label": "+12 V"
+              },
+              {
+                "id": "12",
+                "mark": "12",
+                "label": "Heater negative"
+              },
+              {
+                "id": "13",
+                "mark": "13",
+                "label": "Fan negative"
+              },
+              {
+                "id": "14",
+                "mark": "14",
+                "label": "Extruder motor blue"
+              },
+              {
+                "id": "15",
+                "mark": "15",
+                "label": "Extruder motor black"
+              }
+            ]
+          },
+          {
+            "id": "supplement-connector-003",
+            "device": "supplement-device-003",
+            "refdes": "Mendel90 X-axis ribbon female 15-contact D-sub cable end",
+            "form": "female 15-contact D-sub terminated by ribbon; mating view unknown",
+            "scope": "Source revision oldid 186913 instructs terminating fourteen of the twenty X-axis ribbon cores at this female D-sub cable end. Its source contact schedule is distinct from the male extruder assembly connector. Core ordinals are not D-sub pin numbers; no mating-face geometry or fitted V2 path is established. This is a reference for the named source revision; installed-machine correspondence is not established.",
+            "contacts": [
+              {
+                "id": "1",
+                "mark": "1",
+                "label": "Thermistor signal"
+              },
+              {
+                "id": "2",
+                "mark": "2",
+                "label": "Spare"
+              },
+              {
+                "id": "3",
+                "mark": "3",
+                "label": "+12 V"
+              },
+              {
+                "id": "4",
+                "mark": "4",
+                "label": "Heater negative"
+              },
+              {
+                "id": "5",
+                "mark": "5",
+                "label": "Heater negative"
+              },
+              {
+                "id": "6",
+                "mark": "6",
+                "label": "Extruder motor red"
+              },
+              {
+                "id": "7",
+                "mark": "7",
+                "label": "Extruder motor green"
+              },
+              {
+                "id": "8",
+                "mark": "8",
+                "label": "Function not listed in source; OPEN, not NC"
+              },
+              {
+                "id": "9",
+                "mark": "9",
+                "label": "Thermistor GND"
+              },
+              {
+                "id": "10",
+                "mark": "10",
+                "label": "+12 V"
+              },
+              {
+                "id": "11",
+                "mark": "11",
+                "label": "+12 V"
+              },
+              {
+                "id": "12",
+                "mark": "12",
+                "label": "Heater negative"
+              },
+              {
+                "id": "13",
+                "mark": "13",
+                "label": "Fan negative"
+              },
+              {
+                "id": "14",
+                "mark": "14",
+                "label": "Extruder motor blue"
+              },
+              {
+                "id": "15",
+                "mark": "15",
+                "label": "Extruder motor black"
+              }
+            ]
+          }
+        ],
+        "wires": []
+      }
+    },
+    "source-scoped-reference-connectors.json": {
+      "replaces_connector_ids": [],
+      "connectors": [
+        {
+          "name": "Mendel90 X/extruder 20-way ribbon",
+          "evidence_class": "reference_revision_only",
+          "scope": "Build-manual conductor order only; not DB15 cavity numbering; connector view unverified",
+          "source_url": "https://reprap.org/wiki/Mendel90_Build_Manual",
+          "contacts": [
+            {
+              "number": "1",
+              "label": "X limit signal \u00b7 20-way X/extruder ribbon wire"
+            },
+            {
+              "number": "2",
+              "label": "X limit GND \u00b7 20-way X/extruder ribbon wire"
+            },
+            {
+              "number": "3",
+              "label": "Thermistor signal \u2192 DB15 pin 1 \u00b7 20-way X/extruder ribbon wire"
+            },
+            {
+              "number": "4",
+              "label": "Thermistor GND \u2192 DB15 pin 9 \u00b7 20-way X/extruder ribbon wire"
+            },
+            {
+              "number": "5",
+              "label": "Spare \u2192 DB15 pin 2 \u00b7 20-way X/extruder ribbon wire"
+            },
+            {
+              "number": "6",
+              "label": "+12 V \u2192 DB15 pin 10 \u00b7 20-way X/extruder ribbon wire"
+            },
+            {
+              "number": "7",
+              "label": "+12 V \u2192 DB15 pin 3 \u00b7 20-way X/extruder ribbon wire"
+            },
+            {
+              "number": "8",
+              "label": "+12 V \u2192 DB15 pin 11 \u00b7 20-way X/extruder ribbon wire"
+            },
+            {
+              "number": "9",
+              "label": "Heater negative \u2192 DB15 pin 4 \u00b7 20-way X/extruder ribbon wire"
+            },
+            {
+              "number": "10",
+              "label": "Heater negative \u2192 DB15 pin 12 \u00b7 20-way X/extruder ribbon wire"
+            },
+            {
+              "number": "11",
+              "label": "Heater negative \u2192 DB15 pin 5 \u00b7 20-way X/extruder ribbon wire"
+            },
+            {
+              "number": "12",
+              "label": "Fan negative \u2192 DB15 pin 13 \u00b7 20-way X/extruder ribbon wire"
+            },
+            {
+              "number": "13",
+              "label": "Extruder motor red \u2192 DB15 pin 6 \u00b7 20-way X/extruder ribbon wire"
+            },
+            {
+              "number": "14",
+              "label": "Extruder motor blue \u2192 DB15 pin 14 \u00b7 20-way X/extruder ribbon wire"
+            },
+            {
+              "number": "15",
+              "label": "Extruder motor green \u2192 DB15 pin 7 \u00b7 20-way X/extruder ribbon wire"
+            },
+            {
+              "number": "16",
+              "label": "Extruder motor black \u2192 DB15 pin 15 \u00b7 20-way X/extruder ribbon wire"
+            },
+            {
+              "number": "17",
+              "label": "X motor red \u00b7 20-way X/extruder ribbon wire"
+            },
+            {
+              "number": "18",
+              "label": "X motor blue \u00b7 20-way X/extruder ribbon wire"
+            },
+            {
+              "number": "19",
+              "label": "X motor green \u00b7 20-way X/extruder ribbon wire"
+            },
+            {
+              "number": "20",
+              "label": "X motor black \u00b7 20-way X/extruder ribbon wire"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

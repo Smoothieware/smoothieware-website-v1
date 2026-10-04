@@ -1,0 +1,18 @@
+{
+  "type": "artifact",
+  "applied": true,
+  "profiles": 330,
+  "bytes": 996119,
+  "retained_full_source_sha256": "38200877395057a7a93d538eec86dd27df6a7b3e7c21534e75e093d8f43c8c91",
+  "removed_index_history_ids": [
+    "forum-machine-build-records",
+    "wiki-138-elegoo-external-interfaces-2026-09-27",
+    "wiki-139-elegoo-mars3-interfaces-2026-09-27",
+    "wiki-134-dotted-mach3-stepdir-example-2026-09-27",
+    "atlas-smoothiebox-chapter",
+    "centered-wiring-request",
+    "wiki-129-source-update-2026-09-27",
+    "atlas-field-perimeter-redesign-2026-09-29"
+  ],
+  "sha256": "2a1cf9397ff5063f99bf5a65558eb1e6bbd58e5ecc40ab5815e6ea36a8625f95"
+}

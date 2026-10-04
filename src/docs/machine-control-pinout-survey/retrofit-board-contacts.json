@@ -1,0 +1,4272 @@
+{
+  "repository": "https://github.com/Smoothieware/Smoothieboard2",
+  "revision": "7dc4f9a972ad3e3587952171e63b278ee9997f10",
+  "boards": {
+    "core-p1": {
+      "path": "V2_Core_P1/V2 Core.kicad_pcb",
+      "sha256": "f4933e2ead6347a4ccc0b9d2cd51cc0609811af9db970b8cf5ade571345fc2e5",
+      "connectors": {
+        "J2": {
+          "value": "USB_A",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "/USB_PWR"
+            },
+            {
+              "mark": "2",
+              "net": "/USB_HOST_D-"
+            },
+            {
+              "mark": "3",
+              "net": "/USB_HOST_D+"
+            },
+            {
+              "mark": "4",
+              "net": "GND"
+            },
+            {
+              "mark": "5",
+              "net": "Net-(J1-Shield)"
+            }
+          ],
+          "pcb_pad_count": 8
+        },
+        "J4": {
+          "value": "RJ45_Hanrun_HR911105A",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "Net-(J4-TD+)"
+            },
+            {
+              "mark": "2",
+              "net": "Net-(J4-TD-)"
+            },
+            {
+              "mark": "3",
+              "net": "Net-(J4-RD+)"
+            },
+            {
+              "mark": "4",
+              "net": "Net-(J4-RCT)"
+            },
+            {
+              "mark": "5",
+              "net": "Net-(J4-RCT)"
+            },
+            {
+              "mark": "6",
+              "net": "Net-(J4-RD-)"
+            },
+            {
+              "mark": "7",
+              "net": ""
+            },
+            {
+              "mark": "8",
+              "net": "/ethernet/ETH_REFGND"
+            },
+            {
+              "mark": "9",
+              "net": "/ethernet/LED2"
+            },
+            {
+              "mark": "10",
+              "net": "Net-(J4-Pad10)"
+            },
+            {
+              "mark": "11",
+              "net": "Net-(J4-Pad11)"
+            },
+            {
+              "mark": "12",
+              "net": "/ethernet/LED1"
+            },
+            {
+              "mark": "",
+              "net": ""
+            },
+            {
+              "mark": "SH",
+              "net": "/ethernet/ETH_REFGND"
+            }
+          ],
+          "pcb_pad_count": 16
+        },
+        "J1": {
+          "value": "USB_B",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "Net-(J1-VBUS)"
+            },
+            {
+              "mark": "2",
+              "net": "/USB_DEV_D-"
+            },
+            {
+              "mark": "3",
+              "net": "/USB_DEV_D+"
+            },
+            {
+              "mark": "4",
+              "net": "GND"
+            },
+            {
+              "mark": "5",
+              "net": "Net-(J1-Shield)"
+            }
+          ],
+          "pcb_pad_count": 6
+        },
+        "J21": {
+          "value": "Conn_01x02",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "Net-(J21-Pin_1)"
+            },
+            {
+              "mark": "2",
+              "net": "GND"
+            }
+          ],
+          "pcb_pad_count": 2
+        },
+        "J22": {
+          "value": "Conn_01x02",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "Net-(J22-Pin_1)"
+            },
+            {
+              "mark": "2",
+              "net": "GND"
+            }
+          ],
+          "pcb_pad_count": 2
+        },
+        "J23": {
+          "value": "Conn_01x02",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "Net-(J23-Pin_1)"
+            },
+            {
+              "mark": "2",
+              "net": "GND"
+            }
+          ],
+          "pcb_pad_count": 2
+        },
+        "J24": {
+          "value": "Conn_01x03",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "Net-(J24-Pin_1)"
+            },
+            {
+              "mark": "2",
+              "net": "GND"
+            },
+            {
+              "mark": "3",
+              "net": "Net-(J24-Pin_3)"
+            }
+          ],
+          "pcb_pad_count": 3
+        },
+        "J25": {
+          "value": "Conn_01x03",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "Net-(J25-Pin_1)"
+            },
+            {
+              "mark": "2",
+              "net": "GND"
+            },
+            {
+              "mark": "3",
+              "net": "Net-(J25-Pin_3)"
+            }
+          ],
+          "pcb_pad_count": 3
+        },
+        "J28": {
+          "value": "Conn_01x03",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "Net-(J28-Pin_1)"
+            },
+            {
+              "mark": "2",
+              "net": "GND"
+            },
+            {
+              "mark": "3",
+              "net": "Net-(J28-Pin_3)"
+            }
+          ],
+          "pcb_pad_count": 3
+        },
+        "J29": {
+          "value": "Conn_01x03",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "Net-(J29-Pin_1)"
+            },
+            {
+              "mark": "2",
+              "net": "GND"
+            },
+            {
+              "mark": "3",
+              "net": "Net-(J29-Pin_3)"
+            }
+          ],
+          "pcb_pad_count": 3
+        },
+        "J26": {
+          "value": "Conn_01x03",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "Net-(J26-Pin_1)"
+            },
+            {
+              "mark": "2",
+              "net": "GND"
+            },
+            {
+              "mark": "3",
+              "net": "Net-(J26-Pin_3)"
+            }
+          ],
+          "pcb_pad_count": 3
+        },
+        "J27": {
+          "value": "Conn_01x03",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "Net-(J27-Pin_1)"
+            },
+            {
+              "mark": "2",
+              "net": "GND"
+            },
+            {
+              "mark": "3",
+              "net": "Net-(J27-Pin_3)"
+            }
+          ],
+          "pcb_pad_count": 3
+        },
+        "J32": {
+          "value": "Conn_02x05_Odd_Even",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "/3V3_LIMIT"
+            },
+            {
+              "mark": "2",
+              "net": "/5V_LIMIT"
+            },
+            {
+              "mark": "3",
+              "net": "/PJ6"
+            },
+            {
+              "mark": "4",
+              "net": "/PJ9"
+            },
+            {
+              "mark": "5",
+              "net": "/PJ10"
+            },
+            {
+              "mark": "6",
+              "net": "/PJ11"
+            },
+            {
+              "mark": "7",
+              "net": "/MOTSPI_COPI"
+            },
+            {
+              "mark": "8",
+              "net": "/MOTSPI_CIPO"
+            },
+            {
+              "mark": "9",
+              "net": "/MOTSPI_SCK"
+            },
+            {
+              "mark": "10",
+              "net": "GND"
+            }
+          ],
+          "pcb_pad_count": 10
+        },
+        "J33": {
+          "value": "Conn_02x05_Odd_Even",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "/3V3_LIMIT"
+            },
+            {
+              "mark": "2",
+              "net": "/5V_LIMIT"
+            },
+            {
+              "mark": "3",
+              "net": "/PD9"
+            },
+            {
+              "mark": "4",
+              "net": "/expansion/GB_4"
+            },
+            {
+              "mark": "5",
+              "net": "/expansion/GB_5"
+            },
+            {
+              "mark": "6",
+              "net": "/PK0"
+            },
+            {
+              "mark": "7",
+              "net": "/PK1"
+            },
+            {
+              "mark": "8",
+              "net": "/I2C3_SDA"
+            },
+            {
+              "mark": "9",
+              "net": "/I2C3_SCL"
+            },
+            {
+              "mark": "10",
+              "net": "GND"
+            }
+          ],
+          "pcb_pad_count": 10
+        },
+        "J34": {
+          "value": "Conn_02x05_Odd_Even",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "/3V3_LIMIT"
+            },
+            {
+              "mark": "2",
+              "net": "/5V_LIMIT"
+            },
+            {
+              "mark": "3",
+              "net": "/PD14"
+            },
+            {
+              "mark": "4",
+              "net": "/PD12"
+            },
+            {
+              "mark": "5",
+              "net": "/PD10"
+            },
+            {
+              "mark": "6",
+              "net": "/TIM8_CH1"
+            },
+            {
+              "mark": "7",
+              "net": "/TIM8_CH2"
+            },
+            {
+              "mark": "8",
+              "net": "/TIM8_CH3"
+            },
+            {
+              "mark": "9",
+              "net": "/TIM8_CH4"
+            },
+            {
+              "mark": "10",
+              "net": "GND"
+            }
+          ],
+          "pcb_pad_count": 10
+        },
+        "J35": {
+          "value": "Conn_02x05_Odd_Even",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "/3V3_LIMIT"
+            },
+            {
+              "mark": "2",
+              "net": "/5V_LIMIT"
+            },
+            {
+              "mark": "3",
+              "net": "/PE7"
+            },
+            {
+              "mark": "4",
+              "net": "/expansion/GD_4"
+            },
+            {
+              "mark": "5",
+              "net": "/expansion/GD_5"
+            },
+            {
+              "mark": "6",
+              "net": "/TIM1_CH1"
+            },
+            {
+              "mark": "7",
+              "net": "/TIM1_CH2"
+            },
+            {
+              "mark": "8",
+              "net": "/TIM1_CH3"
+            },
+            {
+              "mark": "9",
+              "net": "/TIM1_CH4"
+            },
+            {
+              "mark": "10",
+              "net": "GND"
+            }
+          ],
+          "pcb_pad_count": 10
+        },
+        "J36": {
+          "value": "Conn_02x05_Odd_Even",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "/3V3_LIMIT"
+            },
+            {
+              "mark": "2",
+              "net": "/5V_LIMIT"
+            },
+            {
+              "mark": "3",
+              "net": "/PE8"
+            },
+            {
+              "mark": "4",
+              "net": "/PJ7"
+            },
+            {
+              "mark": "5",
+              "net": "/PJ8"
+            },
+            {
+              "mark": "6",
+              "net": "/PD15"
+            },
+            {
+              "mark": "7",
+              "net": "/SPI1_COPI"
+            },
+            {
+              "mark": "8",
+              "net": "/SPI1_CIPO"
+            },
+            {
+              "mark": "9",
+              "net": "/SPI1_SCK"
+            },
+            {
+              "mark": "10",
+              "net": "GND"
+            }
+          ],
+          "pcb_pad_count": 10
+        },
+        "J37": {
+          "value": "Conn_02x05_Odd_Even",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "/3V3_LIMIT"
+            },
+            {
+              "mark": "2",
+              "net": "/5V_LIMIT"
+            },
+            {
+              "mark": "3",
+              "net": "/PB1"
+            },
+            {
+              "mark": "4",
+              "net": "/PJ4"
+            },
+            {
+              "mark": "5",
+              "net": "/PA4"
+            },
+            {
+              "mark": "6",
+              "net": "/PG0"
+            },
+            {
+              "mark": "7",
+              "net": "/PJ3"
+            },
+            {
+              "mark": "8",
+              "net": "/PG1"
+            },
+            {
+              "mark": "9",
+              "net": "/PJ2"
+            },
+            {
+              "mark": "10",
+              "net": "GND"
+            }
+          ],
+          "pcb_pad_count": 10
+        },
+        "J38": {
+          "value": "Conn_02x05_Odd_Even",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "/3V3_LIMIT"
+            },
+            {
+              "mark": "2",
+              "net": "/5V_LIMIT"
+            },
+            {
+              "mark": "3",
+              "net": "/PH2"
+            },
+            {
+              "mark": "4",
+              "net": "/PH4"
+            },
+            {
+              "mark": "5",
+              "net": "/PC0"
+            },
+            {
+              "mark": "6",
+              "net": "/PF15"
+            },
+            {
+              "mark": "7",
+              "net": "/PH3"
+            },
+            {
+              "mark": "8",
+              "net": "/I2C2_SDA"
+            },
+            {
+              "mark": "9",
+              "net": "/I2C2_SCL"
+            },
+            {
+              "mark": "10",
+              "net": "GND"
+            }
+          ],
+          "pcb_pad_count": 10
+        },
+        "J39": {
+          "value": "Conn_02x05_Odd_Even",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "/3V3_LIMIT"
+            },
+            {
+              "mark": "2",
+              "net": "/5V_LIMIT"
+            },
+            {
+              "mark": "3",
+              "net": "/ADC1_CH13"
+            },
+            {
+              "mark": "4",
+              "net": "/ADC1_CH15"
+            },
+            {
+              "mark": "5",
+              "net": "/ADC1_CH12"
+            },
+            {
+              "mark": "6",
+              "net": "/PF2"
+            },
+            {
+              "mark": "7",
+              "net": "/PI10"
+            },
+            {
+              "mark": "8",
+              "net": "/PH7"
+            },
+            {
+              "mark": "9",
+              "net": "/PB12"
+            },
+            {
+              "mark": "10",
+              "net": "GND"
+            }
+          ],
+          "pcb_pad_count": 10
+        },
+        "J40": {
+          "value": "Conn_02x05_Odd_Even",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "/3V3_LIMIT"
+            },
+            {
+              "mark": "2",
+              "net": "/5V_LIMIT"
+            },
+            {
+              "mark": "3",
+              "net": "/ADC3_CH6"
+            },
+            {
+              "mark": "4",
+              "net": "/ADC3_CH8"
+            },
+            {
+              "mark": "5",
+              "net": "/ADC3_CH9"
+            },
+            {
+              "mark": "6",
+              "net": "/PI8"
+            },
+            {
+              "mark": "7",
+              "net": "/PE4"
+            },
+            {
+              "mark": "8",
+              "net": "/PI9"
+            },
+            {
+              "mark": "9",
+              "net": "/PC13"
+            },
+            {
+              "mark": "10",
+              "net": "GND"
+            }
+          ],
+          "pcb_pad_count": 10
+        },
+        "J41": {
+          "value": "Conn_ARM_JTAG_SWD_10",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "/3V3"
+            },
+            {
+              "mark": "2",
+              "net": "/SWDIO"
+            },
+            {
+              "mark": "3",
+              "net": "GND"
+            },
+            {
+              "mark": "4",
+              "net": "/SWCLK"
+            },
+            {
+              "mark": "5",
+              "net": "GND"
+            },
+            {
+              "mark": "6",
+              "net": "/SWO"
+            },
+            {
+              "mark": "7",
+              "net": "unconnected-(J41-KEY-Pad7)"
+            },
+            {
+              "mark": "8",
+              "net": "/TDI"
+            },
+            {
+              "mark": "9",
+              "net": "GND"
+            },
+            {
+              "mark": "10",
+              "net": "/MCU_RESET"
+            }
+          ],
+          "pcb_pad_count": 10
+        },
+        "J30": {
+          "value": "Conn_01x03_Male",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "GND"
+            },
+            {
+              "mark": "2",
+              "net": "Net-(J30-Pin_2)"
+            },
+            {
+              "mark": "3",
+              "net": "Net-(J30-Pin_3)"
+            }
+          ],
+          "pcb_pad_count": 3
+        },
+        "J43": {
+          "value": "Conn_01x02",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "/5V"
+            },
+            {
+              "mark": "2",
+              "net": "GND"
+            }
+          ],
+          "pcb_pad_count": 2
+        },
+        "J42": {
+          "value": "Conn_01x02",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "/5VPORTIN"
+            },
+            {
+              "mark": "2",
+              "net": "GND"
+            }
+          ],
+          "pcb_pad_count": 2
+        },
+        "J44": {
+          "value": "Conn_01x02",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "Net-(J44-Pin_1)"
+            },
+            {
+              "mark": "2",
+              "net": "GND"
+            }
+          ],
+          "pcb_pad_count": 2
+        },
+        "J45": {
+          "value": "Conn_01x02",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "Net-(J45-Pin_1)"
+            },
+            {
+              "mark": "2",
+              "net": "GND"
+            }
+          ],
+          "pcb_pad_count": 2
+        },
+        "J3": {
+          "value": "Micro_SD_Card_Det",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "/SD_D2"
+            },
+            {
+              "mark": "2",
+              "net": "/SD_D3"
+            },
+            {
+              "mark": "3",
+              "net": "/SD_CMD"
+            },
+            {
+              "mark": "4",
+              "net": "/3V3"
+            },
+            {
+              "mark": "5",
+              "net": "/SD_CK"
+            },
+            {
+              "mark": "6",
+              "net": "GND"
+            },
+            {
+              "mark": "7",
+              "net": "/SD_D0"
+            },
+            {
+              "mark": "8",
+              "net": "/SD_D1"
+            },
+            {
+              "mark": "9",
+              "net": "/CARD_DET"
+            },
+            {
+              "mark": "10",
+              "net": "GND"
+            },
+            {
+              "mark": "11",
+              "net": "GND"
+            },
+            {
+              "mark": "",
+              "net": ""
+            }
+          ],
+          "pcb_pad_count": 15
+        },
+        "J15": {
+          "value": "Conn_01x02",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "/3V3"
+            },
+            {
+              "mark": "2",
+              "net": "GND"
+            }
+          ],
+          "pcb_pad_count": 2
+        },
+        "JP16": {
+          "value": "SolderJumper_2_Open",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "GND"
+            },
+            {
+              "mark": "2",
+              "net": "/power/UVLO"
+            }
+          ],
+          "pcb_pad_count": 2
+        },
+        "J16": {
+          "value": "Conn_01x02",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "FET_CUT"
+            },
+            {
+              "mark": "2",
+              "net": "Net-(J16-Pin_2)"
+            }
+          ],
+          "pcb_pad_count": 2
+        },
+        "J12": {
+          "value": "Conn_01x02",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "FET_CUT"
+            },
+            {
+              "mark": "2",
+              "net": "Net-(J12-Pin_2)"
+            }
+          ],
+          "pcb_pad_count": 2
+        },
+        "J9": {
+          "value": "Conn_01x02",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "VFET"
+            },
+            {
+              "mark": "2",
+              "net": "GND"
+            }
+          ],
+          "pcb_pad_count": 2
+        },
+        "JP18": {
+          "value": "Jumper_SolderJumper_3_Bridged12",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "Net-(JP18-A)"
+            },
+            {
+              "mark": "2",
+              "net": "VMOTSENSE_in"
+            },
+            {
+              "mark": "3",
+              "net": "/VMOTSENSE"
+            }
+          ],
+          "pcb_pad_count": 3
+        },
+        "J10": {
+          "value": "Conn_01x02",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "FET_CUT"
+            },
+            {
+              "mark": "2",
+              "net": "Net-(D33-K)"
+            }
+          ],
+          "pcb_pad_count": 2
+        },
+        "J7": {
+          "value": "Conn_01x02",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "Net-(J7-Pin_1)"
+            },
+            {
+              "mark": "2",
+              "net": "GND"
+            }
+          ],
+          "pcb_pad_count": 2
+        },
+        "J6": {
+          "value": "Conn_01x03",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "/5V"
+            },
+            {
+              "mark": "2",
+              "net": "GND"
+            },
+            {
+              "mark": "3",
+              "net": "Net-(J6-Pin_3)"
+            }
+          ],
+          "pcb_pad_count": 3
+        },
+        "J8": {
+          "value": "Conn_01x02",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "FET_CUT"
+            },
+            {
+              "mark": "2",
+              "net": "Net-(D8-K)"
+            }
+          ],
+          "pcb_pad_count": 2
+        },
+        "J11": {
+          "value": "Conn_01x02",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "VFET"
+            },
+            {
+              "mark": "2",
+              "net": "Net-(J11-Pin_2)"
+            }
+          ],
+          "pcb_pad_count": 2
+        },
+        "J5": {
+          "value": "Conn_02x20_Odd_Even",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "/5V"
+            },
+            {
+              "mark": "2",
+              "net": "/5V"
+            },
+            {
+              "mark": "3",
+              "net": "/5V"
+            },
+            {
+              "mark": "4",
+              "net": "/5V"
+            },
+            {
+              "mark": "5",
+              "net": "GND"
+            },
+            {
+              "mark": "6",
+              "net": "GND"
+            },
+            {
+              "mark": "7",
+              "net": "GND"
+            },
+            {
+              "mark": "8",
+              "net": "GND"
+            },
+            {
+              "mark": "9",
+              "net": "GND"
+            },
+            {
+              "mark": "10",
+              "net": "/3V3"
+            },
+            {
+              "mark": "11",
+              "net": "/MOTSPI_CIPO"
+            },
+            {
+              "mark": "12",
+              "net": "/MOTSPI_COPI"
+            },
+            {
+              "mark": "13",
+              "net": "/MOT_EN"
+            },
+            {
+              "mark": "14",
+              "net": "/MOTSPI_SCK"
+            },
+            {
+              "mark": "15",
+              "net": "/CS_A"
+            },
+            {
+              "mark": "16",
+              "net": "/STEP_A"
+            },
+            {
+              "mark": "17",
+              "net": "/SG_A"
+            },
+            {
+              "mark": "18",
+              "net": "/DIR_A"
+            },
+            {
+              "mark": "19",
+              "net": "GND"
+            },
+            {
+              "mark": "20",
+              "net": "GND"
+            },
+            {
+              "mark": "21",
+              "net": "/CS_B"
+            },
+            {
+              "mark": "22",
+              "net": "/STEP_B"
+            },
+            {
+              "mark": "23",
+              "net": "/SG_B"
+            },
+            {
+              "mark": "24",
+              "net": "/DIR_B"
+            },
+            {
+              "mark": "25",
+              "net": "GND"
+            },
+            {
+              "mark": "26",
+              "net": "GND"
+            },
+            {
+              "mark": "27",
+              "net": "/CS_C"
+            },
+            {
+              "mark": "28",
+              "net": "/STEP_C"
+            },
+            {
+              "mark": "29",
+              "net": "/SG_C"
+            },
+            {
+              "mark": "30",
+              "net": "/DIR_C"
+            },
+            {
+              "mark": "31",
+              "net": "VMOTSENSE_in"
+            },
+            {
+              "mark": "32",
+              "net": "GND"
+            },
+            {
+              "mark": "33",
+              "net": "/CS_D"
+            },
+            {
+              "mark": "34",
+              "net": "/STEP_D"
+            },
+            {
+              "mark": "35",
+              "net": "/SG_D"
+            },
+            {
+              "mark": "36",
+              "net": "/DIR_D"
+            },
+            {
+              "mark": "37",
+              "net": "GND"
+            },
+            {
+              "mark": "38",
+              "net": "GND"
+            },
+            {
+              "mark": "39",
+              "net": "GND"
+            },
+            {
+              "mark": "40",
+              "net": "BRD_TMP_in"
+            }
+          ],
+          "pcb_pad_count": 40
+        },
+        "JP1": {
+          "value": "SolderJumper_3_Bridged12",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "/5V_LIMIT"
+            },
+            {
+              "mark": "2",
+              "net": "Net-(J24-Pin_1)"
+            },
+            {
+              "mark": "3",
+              "net": "/3V3_LIMIT"
+            }
+          ],
+          "pcb_pad_count": 3
+        },
+        "JP2": {
+          "value": "SolderJumper_3_Bridged12",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "/5V_LIMIT"
+            },
+            {
+              "mark": "2",
+              "net": "Net-(J25-Pin_1)"
+            },
+            {
+              "mark": "3",
+              "net": "/3V3_LIMIT"
+            }
+          ],
+          "pcb_pad_count": 3
+        },
+        "JP3": {
+          "value": "SolderJumper_3_Bridged12",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "/5V_LIMIT"
+            },
+            {
+              "mark": "2",
+              "net": "Net-(J26-Pin_1)"
+            },
+            {
+              "mark": "3",
+              "net": "/3V3_LIMIT"
+            }
+          ],
+          "pcb_pad_count": 3
+        },
+        "JP4": {
+          "value": "SolderJumper_3_Bridged12",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "/5V_LIMIT"
+            },
+            {
+              "mark": "2",
+              "net": "Net-(J27-Pin_1)"
+            },
+            {
+              "mark": "3",
+              "net": "/3V3_LIMIT"
+            }
+          ],
+          "pcb_pad_count": 3
+        },
+        "JP5": {
+          "value": "SolderJumper_3_Bridged12",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "/5V_LIMIT"
+            },
+            {
+              "mark": "2",
+              "net": "Net-(J28-Pin_1)"
+            },
+            {
+              "mark": "3",
+              "net": "/3V3_LIMIT"
+            }
+          ],
+          "pcb_pad_count": 3
+        },
+        "JP6": {
+          "value": "SolderJumper_3_Bridged12",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "/5V_LIMIT"
+            },
+            {
+              "mark": "2",
+              "net": "Net-(J29-Pin_1)"
+            },
+            {
+              "mark": "3",
+              "net": "/3V3_LIMIT"
+            }
+          ],
+          "pcb_pad_count": 3
+        },
+        "JP10": {
+          "value": "SolderJumper_2_Bridged",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "Net-(J25-Pin_1)"
+            },
+            {
+              "mark": "2",
+              "net": "Net-(JP10-B)"
+            }
+          ],
+          "pcb_pad_count": 2
+        },
+        "JP11": {
+          "value": "SolderJumper_2_Bridged",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "Net-(J26-Pin_1)"
+            },
+            {
+              "mark": "2",
+              "net": "Net-(JP11-B)"
+            }
+          ],
+          "pcb_pad_count": 2
+        },
+        "JP12": {
+          "value": "SolderJumper_2_Bridged",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "Net-(J27-Pin_1)"
+            },
+            {
+              "mark": "2",
+              "net": "Net-(JP12-B)"
+            }
+          ],
+          "pcb_pad_count": 2
+        },
+        "JP14": {
+          "value": "SolderJumper_2_Bridged",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "Net-(J29-Pin_1)"
+            },
+            {
+              "mark": "2",
+              "net": "Net-(JP14-B)"
+            }
+          ],
+          "pcb_pad_count": 2
+        },
+        "JP9": {
+          "value": "SolderJumper_2_Bridged",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "Net-(J24-Pin_1)"
+            },
+            {
+              "mark": "2",
+              "net": "Net-(JP9-B)"
+            }
+          ],
+          "pcb_pad_count": 2
+        },
+        "JP13": {
+          "value": "SolderJumper_2_Bridged",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "Net-(J28-Pin_1)"
+            },
+            {
+              "mark": "2",
+              "net": "Net-(JP13-B)"
+            }
+          ],
+          "pcb_pad_count": 2
+        },
+        "JP15": {
+          "value": "SolderJumper_2_Open",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "Net-(JP15-A)"
+            },
+            {
+              "mark": "2",
+              "net": "GND"
+            }
+          ],
+          "pcb_pad_count": 2
+        },
+        "JP17": {
+          "value": "SolderJumper_2_Bridged",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "Net-(J1-VBUS)"
+            },
+            {
+              "mark": "2",
+              "net": "/5V_IN"
+            }
+          ],
+          "pcb_pad_count": 2
+        },
+        "JP8": {
+          "value": "Jumper_NC_Small",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "Net-(J7-Pin_1)"
+            },
+            {
+              "mark": "2",
+              "net": "Net-(JP8-B)"
+            }
+          ],
+          "pcb_pad_count": 2
+        },
+        "JP7": {
+          "value": "SolderJumper_2_Bridged",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "/5V_LIMIT"
+            },
+            {
+              "mark": "2",
+              "net": "Net-(D31-A)"
+            }
+          ],
+          "pcb_pad_count": 2
+        }
+      }
+    },
+    "prime-p11-2660": {
+      "path": "V2_P11_Prime2660/smoothiev2-prime.kicad_pcb",
+      "sha256": "8a36f1a09c345b5d1ee04a3dcee0fdeea6f3f039b4c9ad8448f12a7e423b5ce1",
+      "connectors": {
+        "JP18": {
+          "value": "Jumper_NC_Small",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "Net-(C60-Pad1)"
+            },
+            {
+              "mark": "2",
+              "net": "Net-(JP18-Pad2)"
+            }
+          ],
+          "pcb_pad_count": 2
+        },
+        "JP7": {
+          "value": "SolderJumper_2_Bridged",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "/5V_LIMIT"
+            },
+            {
+              "mark": "2",
+              "net": "Net-(D31-Pad2)"
+            }
+          ],
+          "pcb_pad_count": 2
+        },
+        "J16": {
+          "value": "Conn_01x02",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "/mosfets/VFET"
+            },
+            {
+              "mark": "2",
+              "net": "/mosfets/GND_FET"
+            }
+          ],
+          "pcb_pad_count": 20
+        },
+        "JP17": {
+          "value": "SolderJumper_2_Bridged",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "Net-(C117-Pad1)"
+            },
+            {
+              "mark": "2",
+              "net": "/5V_IN"
+            }
+          ],
+          "pcb_pad_count": 2
+        },
+        "JP16": {
+          "value": "SolderJumper_2_Open",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "GND"
+            },
+            {
+              "mark": "2",
+              "net": "/power/UVLO"
+            }
+          ],
+          "pcb_pad_count": 2
+        },
+        "JP15": {
+          "value": "SolderJumper_2_Open",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "Net-(JP15-Pad1)"
+            },
+            {
+              "mark": "2",
+              "net": "GND"
+            }
+          ],
+          "pcb_pad_count": 2
+        },
+        "J14": {
+          "value": "Conn_01x02",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "/mosfets/VFET"
+            },
+            {
+              "mark": "2",
+              "net": "/mosfets/SW_BED"
+            }
+          ],
+          "pcb_pad_count": 20
+        },
+        "J12": {
+          "value": "Conn_01x02",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "/mosfets/VFET"
+            },
+            {
+              "mark": "2",
+              "net": "/mosfets/GND_FET"
+            }
+          ],
+          "pcb_pad_count": 20
+        },
+        "J30": {
+          "value": "Conn_01x03_Male",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "GND"
+            },
+            {
+              "mark": "2",
+              "net": "Net-(J30-Pad2)"
+            },
+            {
+              "mark": "3",
+              "net": "Net-(J30-Pad3)"
+            }
+          ],
+          "pcb_pad_count": 3
+        },
+        "J41": {
+          "value": "Conn_ARM_JTAG_SWD_10",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "/3V3"
+            },
+            {
+              "mark": "2",
+              "net": "/SWDIO"
+            },
+            {
+              "mark": "3",
+              "net": "GND"
+            },
+            {
+              "mark": "4",
+              "net": "/SWCLK"
+            },
+            {
+              "mark": "5",
+              "net": "GND"
+            },
+            {
+              "mark": "6",
+              "net": "/SWO"
+            },
+            {
+              "mark": "7",
+              "net": "Net-(J41-Pad7)"
+            },
+            {
+              "mark": "8",
+              "net": "/TDI"
+            },
+            {
+              "mark": "9",
+              "net": "GND"
+            },
+            {
+              "mark": "10",
+              "net": "/MCU_RESET"
+            }
+          ],
+          "pcb_pad_count": 10
+        },
+        "J8": {
+          "value": "Screw_Terminal_01x04",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "/driver-d/COIL_B2"
+            },
+            {
+              "mark": "2",
+              "net": "/driver-d/COIL_B1"
+            },
+            {
+              "mark": "3",
+              "net": "/driver-d/COIL_A2"
+            },
+            {
+              "mark": "4",
+              "net": "/driver-d/COIL_A1"
+            }
+          ],
+          "pcb_pad_count": 12
+        },
+        "J5": {
+          "value": "Screw_Terminal_01x04",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "/driver-a/COIL_B2"
+            },
+            {
+              "mark": "2",
+              "net": "/driver-a/COIL_B1"
+            },
+            {
+              "mark": "3",
+              "net": "/driver-a/COIL_A2"
+            },
+            {
+              "mark": "4",
+              "net": "/driver-a/COIL_A1"
+            }
+          ],
+          "pcb_pad_count": 8
+        },
+        "J6": {
+          "value": "Screw_Terminal_01x04",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "/driver-b/COIL_B2"
+            },
+            {
+              "mark": "2",
+              "net": "/driver-b/COIL_B1"
+            },
+            {
+              "mark": "3",
+              "net": "/driver-b/COIL_A2"
+            },
+            {
+              "mark": "4",
+              "net": "/driver-b/COIL_A1"
+            }
+          ],
+          "pcb_pad_count": 12
+        },
+        "J15": {
+          "value": "Conn_01x02",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "/3V3"
+            },
+            {
+              "mark": "2",
+              "net": "GND"
+            }
+          ],
+          "pcb_pad_count": 2
+        },
+        "J45": {
+          "value": "Conn_01x02",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "Net-(J45-Pad1)"
+            },
+            {
+              "mark": "2",
+              "net": "GND"
+            }
+          ],
+          "pcb_pad_count": 2
+        },
+        "J44": {
+          "value": "Conn_01x02",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "Net-(J44-Pad1)"
+            },
+            {
+              "mark": "2",
+              "net": "GND"
+            }
+          ],
+          "pcb_pad_count": 2
+        },
+        "J3": {
+          "value": "Micro_SD_Card_Det",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "/SD_D2"
+            },
+            {
+              "mark": "2",
+              "net": "/SD_D3"
+            },
+            {
+              "mark": "3",
+              "net": "/SD_CMD"
+            },
+            {
+              "mark": "4",
+              "net": "/3V3"
+            },
+            {
+              "mark": "5",
+              "net": "/SD_CK"
+            },
+            {
+              "mark": "6",
+              "net": "GND"
+            },
+            {
+              "mark": "7",
+              "net": "/SD_D0"
+            },
+            {
+              "mark": "8",
+              "net": "/SD_D1"
+            },
+            {
+              "mark": "9",
+              "net": "/CARD_DET"
+            },
+            {
+              "mark": "10",
+              "net": "GND"
+            },
+            {
+              "mark": "11",
+              "net": "GND"
+            },
+            {
+              "mark": "",
+              "net": ""
+            }
+          ],
+          "pcb_pad_count": 15
+        },
+        "J43": {
+          "value": "Conn_01x02",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "/5V"
+            },
+            {
+              "mark": "2",
+              "net": "GND"
+            }
+          ],
+          "pcb_pad_count": 2
+        },
+        "J42": {
+          "value": "Conn_01x02",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "/5V_PORTIN"
+            },
+            {
+              "mark": "2",
+              "net": "GND"
+            }
+          ],
+          "pcb_pad_count": 2
+        },
+        "J40": {
+          "value": "Conn_02x05_Odd_Even",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "/3V3_LIMIT"
+            },
+            {
+              "mark": "2",
+              "net": "/5V_LIMIT"
+            },
+            {
+              "mark": "3",
+              "net": "/ADC3_CH6"
+            },
+            {
+              "mark": "4",
+              "net": "/ADC3_CH8"
+            },
+            {
+              "mark": "5",
+              "net": "/ADC3_CH9"
+            },
+            {
+              "mark": "6",
+              "net": "/PI8"
+            },
+            {
+              "mark": "7",
+              "net": "/PE4"
+            },
+            {
+              "mark": "8",
+              "net": "/PI9"
+            },
+            {
+              "mark": "9",
+              "net": "/PC13"
+            },
+            {
+              "mark": "10",
+              "net": "GND"
+            }
+          ],
+          "pcb_pad_count": 10
+        },
+        "J39": {
+          "value": "Conn_02x05_Odd_Even",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "/3V3_LIMIT"
+            },
+            {
+              "mark": "2",
+              "net": "/5V_LIMIT"
+            },
+            {
+              "mark": "3",
+              "net": "/ADC1_CH13"
+            },
+            {
+              "mark": "4",
+              "net": "/ADC1_CH15"
+            },
+            {
+              "mark": "5",
+              "net": "/ADC1_CH12"
+            },
+            {
+              "mark": "6",
+              "net": "/PF2"
+            },
+            {
+              "mark": "7",
+              "net": "/PI10"
+            },
+            {
+              "mark": "8",
+              "net": "/PH7"
+            },
+            {
+              "mark": "9",
+              "net": "/PB12"
+            },
+            {
+              "mark": "10",
+              "net": "GND"
+            }
+          ],
+          "pcb_pad_count": 10
+        },
+        "J38": {
+          "value": "Conn_02x05_Odd_Even",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "/3V3_LIMIT"
+            },
+            {
+              "mark": "2",
+              "net": "/5V_LIMIT"
+            },
+            {
+              "mark": "3",
+              "net": "/PH2"
+            },
+            {
+              "mark": "4",
+              "net": "/PH4"
+            },
+            {
+              "mark": "5",
+              "net": "/PC0"
+            },
+            {
+              "mark": "6",
+              "net": "/PF15"
+            },
+            {
+              "mark": "7",
+              "net": "/PH3"
+            },
+            {
+              "mark": "8",
+              "net": "/I2C2_SDA"
+            },
+            {
+              "mark": "9",
+              "net": "/I2C2_SCL"
+            },
+            {
+              "mark": "10",
+              "net": "GND"
+            }
+          ],
+          "pcb_pad_count": 10
+        },
+        "J37": {
+          "value": "Conn_02x05_Odd_Even",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "/3V3_LIMIT"
+            },
+            {
+              "mark": "2",
+              "net": "/5V_LIMIT"
+            },
+            {
+              "mark": "3",
+              "net": "/PB1"
+            },
+            {
+              "mark": "4",
+              "net": "/PJ4"
+            },
+            {
+              "mark": "5",
+              "net": "/PA4"
+            },
+            {
+              "mark": "6",
+              "net": "/PG0"
+            },
+            {
+              "mark": "7",
+              "net": "/PJ3"
+            },
+            {
+              "mark": "8",
+              "net": "/PG1"
+            },
+            {
+              "mark": "9",
+              "net": "/PJ2"
+            },
+            {
+              "mark": "10",
+              "net": "GND"
+            }
+          ],
+          "pcb_pad_count": 10
+        },
+        "J36": {
+          "value": "Conn_02x05_Odd_Even",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "/3V3_LIMIT"
+            },
+            {
+              "mark": "2",
+              "net": "/5V_LIMIT"
+            },
+            {
+              "mark": "3",
+              "net": "/PE8"
+            },
+            {
+              "mark": "4",
+              "net": "/PJ7"
+            },
+            {
+              "mark": "5",
+              "net": "/PJ8"
+            },
+            {
+              "mark": "6",
+              "net": "/PD15"
+            },
+            {
+              "mark": "7",
+              "net": "/SPI1_COPI"
+            },
+            {
+              "mark": "8",
+              "net": "/SPI1_CIPO"
+            },
+            {
+              "mark": "9",
+              "net": "/SPI1_SCK"
+            },
+            {
+              "mark": "10",
+              "net": "GND"
+            }
+          ],
+          "pcb_pad_count": 10
+        },
+        "J35": {
+          "value": "Conn_02x05_Odd_Even",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "/3V3_LIMIT"
+            },
+            {
+              "mark": "2",
+              "net": "/5V_LIMIT"
+            },
+            {
+              "mark": "3",
+              "net": "/PE7"
+            },
+            {
+              "mark": "4",
+              "net": "/expansion/GD_4"
+            },
+            {
+              "mark": "5",
+              "net": "/expansion/GD_5"
+            },
+            {
+              "mark": "6",
+              "net": "/TIM1_CH1"
+            },
+            {
+              "mark": "7",
+              "net": "/TIM1_CH2"
+            },
+            {
+              "mark": "8",
+              "net": "/TIM1_CH3"
+            },
+            {
+              "mark": "9",
+              "net": "/TIM1_CH4"
+            },
+            {
+              "mark": "10",
+              "net": "GND"
+            }
+          ],
+          "pcb_pad_count": 10
+        },
+        "J34": {
+          "value": "Conn_02x05_Odd_Even",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "/3V3_LIMIT"
+            },
+            {
+              "mark": "2",
+              "net": "/5V_LIMIT"
+            },
+            {
+              "mark": "3",
+              "net": "/PD14"
+            },
+            {
+              "mark": "4",
+              "net": "/PD12"
+            },
+            {
+              "mark": "5",
+              "net": "/PD10"
+            },
+            {
+              "mark": "6",
+              "net": "/TIM8_CH1"
+            },
+            {
+              "mark": "7",
+              "net": "/TIM8_CH2"
+            },
+            {
+              "mark": "8",
+              "net": "/TIM8_CH3"
+            },
+            {
+              "mark": "9",
+              "net": "/TIM8_CH4"
+            },
+            {
+              "mark": "10",
+              "net": "GND"
+            }
+          ],
+          "pcb_pad_count": 10
+        },
+        "J33": {
+          "value": "Conn_02x05_Odd_Even",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "/3V3_LIMIT"
+            },
+            {
+              "mark": "2",
+              "net": "/5V_LIMIT"
+            },
+            {
+              "mark": "3",
+              "net": "/PD9"
+            },
+            {
+              "mark": "4",
+              "net": "/expansion/GB_4"
+            },
+            {
+              "mark": "5",
+              "net": "/expansion/GB_5"
+            },
+            {
+              "mark": "6",
+              "net": "/PK0"
+            },
+            {
+              "mark": "7",
+              "net": "/PK1"
+            },
+            {
+              "mark": "8",
+              "net": "/I2C3_SDA"
+            },
+            {
+              "mark": "9",
+              "net": "/I2C3_SCL"
+            },
+            {
+              "mark": "10",
+              "net": "GND"
+            }
+          ],
+          "pcb_pad_count": 10
+        },
+        "J32": {
+          "value": "Conn_02x05_Odd_Even",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "/3V3_LIMIT"
+            },
+            {
+              "mark": "2",
+              "net": "/5V_LIMIT"
+            },
+            {
+              "mark": "3",
+              "net": "/PJ6"
+            },
+            {
+              "mark": "4",
+              "net": "/PJ9"
+            },
+            {
+              "mark": "5",
+              "net": "/PJ10"
+            },
+            {
+              "mark": "6",
+              "net": "/PJ11"
+            },
+            {
+              "mark": "7",
+              "net": "/MOTSPI_COPI"
+            },
+            {
+              "mark": "8",
+              "net": "/MOTSPI_CIPO"
+            },
+            {
+              "mark": "9",
+              "net": "/MOTSPI_SCK"
+            },
+            {
+              "mark": "10",
+              "net": "GND"
+            }
+          ],
+          "pcb_pad_count": 10
+        },
+        "JP14": {
+          "value": "SolderJumper_2_Bridged",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "Net-(J29-Pad1)"
+            },
+            {
+              "mark": "2",
+              "net": "Net-(JP14-Pad2)"
+            }
+          ],
+          "pcb_pad_count": 2
+        },
+        "JP13": {
+          "value": "SolderJumper_2_Bridged",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "Net-(J28-Pad1)"
+            },
+            {
+              "mark": "2",
+              "net": "Net-(JP13-Pad2)"
+            }
+          ],
+          "pcb_pad_count": 2
+        },
+        "JP12": {
+          "value": "SolderJumper_2_Bridged",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "Net-(J27-Pad1)"
+            },
+            {
+              "mark": "2",
+              "net": "Net-(JP12-Pad2)"
+            }
+          ],
+          "pcb_pad_count": 2
+        },
+        "JP11": {
+          "value": "SolderJumper_2_Bridged",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "Net-(J26-Pad1)"
+            },
+            {
+              "mark": "2",
+              "net": "Net-(JP11-Pad2)"
+            }
+          ],
+          "pcb_pad_count": 2
+        },
+        "JP10": {
+          "value": "SolderJumper_2_Bridged",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "Net-(J25-Pad1)"
+            },
+            {
+              "mark": "2",
+              "net": "Net-(JP10-Pad2)"
+            }
+          ],
+          "pcb_pad_count": 2
+        },
+        "JP9": {
+          "value": "SolderJumper_2_Bridged",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "Net-(J24-Pad1)"
+            },
+            {
+              "mark": "2",
+              "net": "Net-(JP9-Pad2)"
+            }
+          ],
+          "pcb_pad_count": 2
+        },
+        "JP8": {
+          "value": "SolderJumper_3_Bridged12",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "/5V_LIMIT"
+            },
+            {
+              "mark": "2",
+              "net": "Net-(J31-Pad2)"
+            },
+            {
+              "mark": "3",
+              "net": "/3V3_LIMIT"
+            }
+          ],
+          "pcb_pad_count": 3
+        },
+        "JP6": {
+          "value": "SolderJumper_3_Bridged12",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "/5V_LIMIT"
+            },
+            {
+              "mark": "2",
+              "net": "Net-(J29-Pad1)"
+            },
+            {
+              "mark": "3",
+              "net": "/3V3_LIMIT"
+            }
+          ],
+          "pcb_pad_count": 3
+        },
+        "JP5": {
+          "value": "SolderJumper_3_Bridged12",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "/5V_LIMIT"
+            },
+            {
+              "mark": "2",
+              "net": "Net-(J28-Pad1)"
+            },
+            {
+              "mark": "3",
+              "net": "/3V3_LIMIT"
+            }
+          ],
+          "pcb_pad_count": 3
+        },
+        "JP4": {
+          "value": "SolderJumper_3_Bridged12",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "/5V_LIMIT"
+            },
+            {
+              "mark": "2",
+              "net": "Net-(J27-Pad1)"
+            },
+            {
+              "mark": "3",
+              "net": "/3V3_LIMIT"
+            }
+          ],
+          "pcb_pad_count": 3
+        },
+        "JP3": {
+          "value": "SolderJumper_3_Bridged12",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "/5V_LIMIT"
+            },
+            {
+              "mark": "2",
+              "net": "Net-(J26-Pad1)"
+            },
+            {
+              "mark": "3",
+              "net": "/3V3_LIMIT"
+            }
+          ],
+          "pcb_pad_count": 3
+        },
+        "JP2": {
+          "value": "SolderJumper_3_Bridged12",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "/5V_LIMIT"
+            },
+            {
+              "mark": "2",
+              "net": "Net-(J25-Pad1)"
+            },
+            {
+              "mark": "3",
+              "net": "/3V3_LIMIT"
+            }
+          ],
+          "pcb_pad_count": 3
+        },
+        "JP1": {
+          "value": "SolderJumper_3_Bridged12",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "/5V_LIMIT"
+            },
+            {
+              "mark": "2",
+              "net": "Net-(J24-Pad1)"
+            },
+            {
+              "mark": "3",
+              "net": "/3V3_LIMIT"
+            }
+          ],
+          "pcb_pad_count": 3
+        },
+        "J31": {
+          "value": "Conn_01x04",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "/VMOT"
+            },
+            {
+              "mark": "2",
+              "net": "Net-(J31-Pad2)"
+            },
+            {
+              "mark": "3",
+              "net": "GND"
+            },
+            {
+              "mark": "4",
+              "net": "Net-(C60-Pad1)"
+            }
+          ],
+          "pcb_pad_count": 4
+        },
+        "J29": {
+          "value": "Conn_01x03",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "Net-(J29-Pad1)"
+            },
+            {
+              "mark": "2",
+              "net": "GND"
+            },
+            {
+              "mark": "3",
+              "net": "Net-(C59-Pad1)"
+            }
+          ],
+          "pcb_pad_count": 3
+        },
+        "J28": {
+          "value": "Conn_01x03",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "Net-(J28-Pad1)"
+            },
+            {
+              "mark": "2",
+              "net": "GND"
+            },
+            {
+              "mark": "3",
+              "net": "Net-(C58-Pad1)"
+            }
+          ],
+          "pcb_pad_count": 3
+        },
+        "J27": {
+          "value": "Conn_01x03",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "Net-(J27-Pad1)"
+            },
+            {
+              "mark": "2",
+              "net": "GND"
+            },
+            {
+              "mark": "3",
+              "net": "Net-(C57-Pad1)"
+            }
+          ],
+          "pcb_pad_count": 3
+        },
+        "J26": {
+          "value": "Conn_01x03",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "Net-(J26-Pad1)"
+            },
+            {
+              "mark": "2",
+              "net": "GND"
+            },
+            {
+              "mark": "3",
+              "net": "Net-(C56-Pad1)"
+            }
+          ],
+          "pcb_pad_count": 3
+        },
+        "J25": {
+          "value": "Conn_01x03",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "Net-(J25-Pad1)"
+            },
+            {
+              "mark": "2",
+              "net": "GND"
+            },
+            {
+              "mark": "3",
+              "net": "Net-(C55-Pad1)"
+            }
+          ],
+          "pcb_pad_count": 3
+        },
+        "J24": {
+          "value": "Conn_01x03",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "Net-(J24-Pad1)"
+            },
+            {
+              "mark": "2",
+              "net": "GND"
+            },
+            {
+              "mark": "3",
+              "net": "Net-(C54-Pad1)"
+            }
+          ],
+          "pcb_pad_count": 3
+        },
+        "J23": {
+          "value": "Conn_01x02",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "Net-(C51-Pad1)"
+            },
+            {
+              "mark": "2",
+              "net": "GND"
+            }
+          ],
+          "pcb_pad_count": 2
+        },
+        "J22": {
+          "value": "Conn_01x02",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "Net-(C50-Pad1)"
+            },
+            {
+              "mark": "2",
+              "net": "GND"
+            }
+          ],
+          "pcb_pad_count": 2
+        },
+        "J21": {
+          "value": "Conn_01x02",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "Net-(C49-Pad1)"
+            },
+            {
+              "mark": "2",
+              "net": "GND"
+            }
+          ],
+          "pcb_pad_count": 2
+        },
+        "J20": {
+          "value": "Conn_01x02",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "Net-(J17-Pad1)"
+            },
+            {
+              "mark": "2",
+              "net": "Net-(D52-Pad1)"
+            }
+          ],
+          "pcb_pad_count": 2
+        },
+        "J19": {
+          "value": "Conn_01x02",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "Net-(J17-Pad1)"
+            },
+            {
+              "mark": "2",
+              "net": "Net-(D51-Pad1)"
+            }
+          ],
+          "pcb_pad_count": 2
+        },
+        "J18": {
+          "value": "Conn_01x02",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "Net-(J17-Pad1)"
+            },
+            {
+              "mark": "2",
+              "net": "Net-(D50-Pad1)"
+            }
+          ],
+          "pcb_pad_count": 4
+        },
+        "J17": {
+          "value": "Conn_01x02",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "Net-(J17-Pad1)"
+            },
+            {
+              "mark": "2",
+              "net": "Net-(D48-Pad1)"
+            }
+          ],
+          "pcb_pad_count": 4
+        },
+        "J13": {
+          "value": "Conn_01x02",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "/mosfets/VFET"
+            },
+            {
+              "mark": "2",
+              "net": "/mosfets/SW_BED"
+            }
+          ],
+          "pcb_pad_count": 2
+        },
+        "J11": {
+          "value": "Conn_01x02",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "/mosfets/VFET"
+            },
+            {
+              "mark": "2",
+              "net": "/mosfets/GND_FET"
+            }
+          ],
+          "pcb_pad_count": 2
+        },
+        "J10": {
+          "value": "Conn_01x02",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "/VMOT"
+            },
+            {
+              "mark": "2",
+              "net": "GND"
+            }
+          ],
+          "pcb_pad_count": 2
+        },
+        "J9": {
+          "value": "Conn_01x02",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "/VMOT"
+            },
+            {
+              "mark": "2",
+              "net": "GND"
+            }
+          ],
+          "pcb_pad_count": 20
+        },
+        "J7": {
+          "value": "Screw_Terminal_01x04",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "/driver-c/COIL_B2"
+            },
+            {
+              "mark": "2",
+              "net": "/driver-c/COIL_B1"
+            },
+            {
+              "mark": "3",
+              "net": "/driver-c/COIL_A2"
+            },
+            {
+              "mark": "4",
+              "net": "/driver-c/COIL_A1"
+            }
+          ],
+          "pcb_pad_count": 12
+        },
+        "J4": {
+          "value": "RJ45_Hanrun_HR911105A",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "Net-(J4-Pad1)"
+            },
+            {
+              "mark": "2",
+              "net": "Net-(J4-Pad2)"
+            },
+            {
+              "mark": "3",
+              "net": "Net-(J4-Pad3)"
+            },
+            {
+              "mark": "4",
+              "net": "Net-(C2-Pad1)"
+            },
+            {
+              "mark": "5",
+              "net": "Net-(C2-Pad1)"
+            },
+            {
+              "mark": "6",
+              "net": "Net-(J4-Pad6)"
+            },
+            {
+              "mark": "7",
+              "net": ""
+            },
+            {
+              "mark": "8",
+              "net": "/ethernet/ETH_REFGND"
+            },
+            {
+              "mark": "9",
+              "net": "/ethernet/LED2"
+            },
+            {
+              "mark": "10",
+              "net": "Net-(J4-Pad10)"
+            },
+            {
+              "mark": "11",
+              "net": "Net-(J4-Pad11)"
+            },
+            {
+              "mark": "12",
+              "net": "/ethernet/LED1"
+            },
+            {
+              "mark": "",
+              "net": ""
+            },
+            {
+              "mark": "SH",
+              "net": "/ethernet/ETH_REFGND"
+            }
+          ],
+          "pcb_pad_count": 16
+        },
+        "J2": {
+          "value": "USB_A",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "/USB_PWR"
+            },
+            {
+              "mark": "2",
+              "net": "/USB_HOST_D-"
+            },
+            {
+              "mark": "3",
+              "net": "/USB_HOST_D+"
+            },
+            {
+              "mark": "4",
+              "net": "GND"
+            },
+            {
+              "mark": "5",
+              "net": "Net-(C46-Pad1)"
+            }
+          ],
+          "pcb_pad_count": 8
+        },
+        "J1": {
+          "value": "USB_B",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "Net-(C117-Pad1)"
+            },
+            {
+              "mark": "2",
+              "net": "/USB_DEV_D-"
+            },
+            {
+              "mark": "3",
+              "net": "/USB_DEV_D+"
+            },
+            {
+              "mark": "4",
+              "net": "GND"
+            },
+            {
+              "mark": "5",
+              "net": "Net-(C46-Pad1)"
+            }
+          ],
+          "pcb_pad_count": 6
+        }
+      }
+    },
+    "prime-p12-2590": {
+      "path": "V2_P12_Prime2590/smoothiev2-prime.kicad_pcb",
+      "sha256": "a7e84b8fb403d9b64fd7f0e09c6aa245f00525ba894bfe9a008093fe73626b29",
+      "connectors": {
+        "J2": {
+          "value": "USB_A",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "/USB_PWR"
+            },
+            {
+              "mark": "2",
+              "net": "/USB_HOST_D-"
+            },
+            {
+              "mark": "3",
+              "net": "/USB_HOST_D+"
+            },
+            {
+              "mark": "4",
+              "net": "GND"
+            },
+            {
+              "mark": "5",
+              "net": "Net-(J1-Shield)"
+            }
+          ],
+          "pcb_pad_count": 8
+        },
+        "J4": {
+          "value": "RJ45_Hanrun_HR911105A",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "Net-(J4-TD+)"
+            },
+            {
+              "mark": "2",
+              "net": "Net-(J4-TD-)"
+            },
+            {
+              "mark": "3",
+              "net": "Net-(J4-RD+)"
+            },
+            {
+              "mark": "4",
+              "net": "Net-(J4-RCT)"
+            },
+            {
+              "mark": "5",
+              "net": "Net-(J4-RCT)"
+            },
+            {
+              "mark": "6",
+              "net": "Net-(J4-RD-)"
+            },
+            {
+              "mark": "7",
+              "net": ""
+            },
+            {
+              "mark": "8",
+              "net": "/ethernet/ETH_REFGND"
+            },
+            {
+              "mark": "9",
+              "net": "/ethernet/LED2"
+            },
+            {
+              "mark": "10",
+              "net": "Net-(J4-Pad10)"
+            },
+            {
+              "mark": "11",
+              "net": "Net-(J4-Pad11)"
+            },
+            {
+              "mark": "12",
+              "net": "/ethernet/LED1"
+            },
+            {
+              "mark": "",
+              "net": ""
+            },
+            {
+              "mark": "SH",
+              "net": "/ethernet/ETH_REFGND"
+            }
+          ],
+          "pcb_pad_count": 16
+        },
+        "J1": {
+          "value": "USB_B",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "Net-(J1-VBUS)"
+            },
+            {
+              "mark": "2",
+              "net": "/USB_DEV_D-"
+            },
+            {
+              "mark": "3",
+              "net": "/USB_DEV_D+"
+            },
+            {
+              "mark": "4",
+              "net": "GND"
+            },
+            {
+              "mark": "5",
+              "net": "Net-(J1-Shield)"
+            }
+          ],
+          "pcb_pad_count": 6
+        },
+        "J5": {
+          "value": "Screw_Terminal_01x04",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "/driver-a/COIL_B2"
+            },
+            {
+              "mark": "2",
+              "net": "/driver-a/COIL_B1"
+            },
+            {
+              "mark": "3",
+              "net": "/driver-a/COIL_A2"
+            },
+            {
+              "mark": "4",
+              "net": "/driver-a/COIL_A1"
+            }
+          ],
+          "pcb_pad_count": 8
+        },
+        "J6": {
+          "value": "Screw_Terminal_01x04",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "/driver-b/COIL_B2"
+            },
+            {
+              "mark": "2",
+              "net": "/driver-b/COIL_B1"
+            },
+            {
+              "mark": "3",
+              "net": "/driver-b/COIL_A2"
+            },
+            {
+              "mark": "4",
+              "net": "/driver-b/COIL_A1"
+            }
+          ],
+          "pcb_pad_count": 12
+        },
+        "J7": {
+          "value": "Screw_Terminal_01x04",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "/driver-c/COIL_B2"
+            },
+            {
+              "mark": "2",
+              "net": "/driver-c/COIL_B1"
+            },
+            {
+              "mark": "3",
+              "net": "/driver-c/COIL_A2"
+            },
+            {
+              "mark": "4",
+              "net": "/driver-c/COIL_A1"
+            }
+          ],
+          "pcb_pad_count": 12
+        },
+        "J8": {
+          "value": "Screw_Terminal_01x04",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "/driver-d/COIL_B2"
+            },
+            {
+              "mark": "2",
+              "net": "/driver-d/COIL_B1"
+            },
+            {
+              "mark": "3",
+              "net": "/driver-d/COIL_A2"
+            },
+            {
+              "mark": "4",
+              "net": "/driver-d/COIL_A1"
+            }
+          ],
+          "pcb_pad_count": 12
+        },
+        "J14": {
+          "value": "Conn_01x02",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "/mosfets/VFET"
+            },
+            {
+              "mark": "2",
+              "net": "/mosfets/SW_BED"
+            }
+          ],
+          "pcb_pad_count": 20
+        },
+        "J9": {
+          "value": "Conn_01x02",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "/VMOT"
+            },
+            {
+              "mark": "2",
+              "net": "GND"
+            }
+          ],
+          "pcb_pad_count": 20
+        },
+        "J10": {
+          "value": "Conn_01x02",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "/VMOT"
+            },
+            {
+              "mark": "2",
+              "net": "GND"
+            }
+          ],
+          "pcb_pad_count": 2
+        },
+        "J18": {
+          "value": "Conn_01x02",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "Net-(J17-Pin_1)"
+            },
+            {
+              "mark": "2",
+              "net": "Net-(D50-K)"
+            }
+          ],
+          "pcb_pad_count": 4
+        },
+        "J17": {
+          "value": "Conn_01x02",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "Net-(J17-Pin_1)"
+            },
+            {
+              "mark": "2",
+              "net": "Net-(D48-K)"
+            }
+          ],
+          "pcb_pad_count": 4
+        },
+        "J20": {
+          "value": "Conn_01x02",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "Net-(J17-Pin_1)"
+            },
+            {
+              "mark": "2",
+              "net": "Net-(D52-K)"
+            }
+          ],
+          "pcb_pad_count": 2
+        },
+        "J19": {
+          "value": "Conn_01x02",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "Net-(J17-Pin_1)"
+            },
+            {
+              "mark": "2",
+              "net": "Net-(D51-K)"
+            }
+          ],
+          "pcb_pad_count": 2
+        },
+        "J21": {
+          "value": "Conn_01x02",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "Net-(J21-Pin_1)"
+            },
+            {
+              "mark": "2",
+              "net": "GND"
+            }
+          ],
+          "pcb_pad_count": 2
+        },
+        "J22": {
+          "value": "Conn_01x02",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "Net-(J22-Pin_1)"
+            },
+            {
+              "mark": "2",
+              "net": "GND"
+            }
+          ],
+          "pcb_pad_count": 2
+        },
+        "J23": {
+          "value": "Conn_01x02",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "Net-(J23-Pin_1)"
+            },
+            {
+              "mark": "2",
+              "net": "GND"
+            }
+          ],
+          "pcb_pad_count": 2
+        },
+        "J24": {
+          "value": "Conn_01x03",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "Net-(J24-Pin_1)"
+            },
+            {
+              "mark": "2",
+              "net": "GND"
+            },
+            {
+              "mark": "3",
+              "net": "Net-(J24-Pin_3)"
+            }
+          ],
+          "pcb_pad_count": 3
+        },
+        "J25": {
+          "value": "Conn_01x03",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "Net-(J25-Pin_1)"
+            },
+            {
+              "mark": "2",
+              "net": "GND"
+            },
+            {
+              "mark": "3",
+              "net": "Net-(J25-Pin_3)"
+            }
+          ],
+          "pcb_pad_count": 3
+        },
+        "J28": {
+          "value": "Conn_01x03",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "Net-(J28-Pin_1)"
+            },
+            {
+              "mark": "2",
+              "net": "GND"
+            },
+            {
+              "mark": "3",
+              "net": "Net-(J28-Pin_3)"
+            }
+          ],
+          "pcb_pad_count": 3
+        },
+        "J29": {
+          "value": "Conn_01x03",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "Net-(J29-Pin_1)"
+            },
+            {
+              "mark": "2",
+              "net": "GND"
+            },
+            {
+              "mark": "3",
+              "net": "Net-(J29-Pin_3)"
+            }
+          ],
+          "pcb_pad_count": 3
+        },
+        "J31": {
+          "value": "Conn_01x04",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "/VMOT"
+            },
+            {
+              "mark": "2",
+              "net": "Net-(J31-Pin_2)"
+            },
+            {
+              "mark": "3",
+              "net": "GND"
+            },
+            {
+              "mark": "4",
+              "net": "Net-(J31-Pin_4)"
+            }
+          ],
+          "pcb_pad_count": 4
+        },
+        "J26": {
+          "value": "Conn_01x03",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "Net-(J26-Pin_1)"
+            },
+            {
+              "mark": "2",
+              "net": "GND"
+            },
+            {
+              "mark": "3",
+              "net": "Net-(J26-Pin_3)"
+            }
+          ],
+          "pcb_pad_count": 3
+        },
+        "J27": {
+          "value": "Conn_01x03",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "Net-(J27-Pin_1)"
+            },
+            {
+              "mark": "2",
+              "net": "GND"
+            },
+            {
+              "mark": "3",
+              "net": "Net-(J27-Pin_3)"
+            }
+          ],
+          "pcb_pad_count": 3
+        },
+        "J32": {
+          "value": "Conn_02x05_Odd_Even",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "/3V3_LIMIT"
+            },
+            {
+              "mark": "2",
+              "net": "/5V_LIMIT"
+            },
+            {
+              "mark": "3",
+              "net": "/PJ6"
+            },
+            {
+              "mark": "4",
+              "net": "/PJ9"
+            },
+            {
+              "mark": "5",
+              "net": "/PJ10"
+            },
+            {
+              "mark": "6",
+              "net": "/PJ11"
+            },
+            {
+              "mark": "7",
+              "net": "/MOTSPI_COPI"
+            },
+            {
+              "mark": "8",
+              "net": "/MOTSPI_CIPO"
+            },
+            {
+              "mark": "9",
+              "net": "/MOTSPI_SCK"
+            },
+            {
+              "mark": "10",
+              "net": "GND"
+            }
+          ],
+          "pcb_pad_count": 10
+        },
+        "J33": {
+          "value": "Conn_02x05_Odd_Even",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "/3V3_LIMIT"
+            },
+            {
+              "mark": "2",
+              "net": "/5V_LIMIT"
+            },
+            {
+              "mark": "3",
+              "net": "/PD9"
+            },
+            {
+              "mark": "4",
+              "net": "/expansion/GB_4"
+            },
+            {
+              "mark": "5",
+              "net": "/expansion/GB_5"
+            },
+            {
+              "mark": "6",
+              "net": "/PK0"
+            },
+            {
+              "mark": "7",
+              "net": "/PK1"
+            },
+            {
+              "mark": "8",
+              "net": "/I2C3_SDA"
+            },
+            {
+              "mark": "9",
+              "net": "/I2C3_SCL"
+            },
+            {
+              "mark": "10",
+              "net": "GND"
+            }
+          ],
+          "pcb_pad_count": 10
+        },
+        "J34": {
+          "value": "Conn_02x05_Odd_Even",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "/3V3_LIMIT"
+            },
+            {
+              "mark": "2",
+              "net": "/5V_LIMIT"
+            },
+            {
+              "mark": "3",
+              "net": "/PD14"
+            },
+            {
+              "mark": "4",
+              "net": "/PD12"
+            },
+            {
+              "mark": "5",
+              "net": "/PD10"
+            },
+            {
+              "mark": "6",
+              "net": "/TIM8_CH1"
+            },
+            {
+              "mark": "7",
+              "net": "/TIM8_CH2"
+            },
+            {
+              "mark": "8",
+              "net": "/TIM8_CH3"
+            },
+            {
+              "mark": "9",
+              "net": "/TIM8_CH4"
+            },
+            {
+              "mark": "10",
+              "net": "GND"
+            }
+          ],
+          "pcb_pad_count": 10
+        },
+        "J35": {
+          "value": "Conn_02x05_Odd_Even",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "/3V3_LIMIT"
+            },
+            {
+              "mark": "2",
+              "net": "/5V_LIMIT"
+            },
+            {
+              "mark": "3",
+              "net": "/PE7"
+            },
+            {
+              "mark": "4",
+              "net": "/expansion/GD_4"
+            },
+            {
+              "mark": "5",
+              "net": "/expansion/GD_5"
+            },
+            {
+              "mark": "6",
+              "net": "/TIM1_CH1"
+            },
+            {
+              "mark": "7",
+              "net": "/TIM1_CH2"
+            },
+            {
+              "mark": "8",
+              "net": "/TIM1_CH3"
+            },
+            {
+              "mark": "9",
+              "net": "/TIM1_CH4"
+            },
+            {
+              "mark": "10",
+              "net": "GND"
+            }
+          ],
+          "pcb_pad_count": 10
+        },
+        "J36": {
+          "value": "Conn_02x05_Odd_Even",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "/3V3_LIMIT"
+            },
+            {
+              "mark": "2",
+              "net": "/5V_LIMIT"
+            },
+            {
+              "mark": "3",
+              "net": "/PE8"
+            },
+            {
+              "mark": "4",
+              "net": "/PJ7"
+            },
+            {
+              "mark": "5",
+              "net": "/PJ8"
+            },
+            {
+              "mark": "6",
+              "net": "/PD15"
+            },
+            {
+              "mark": "7",
+              "net": "/SPI1_COPI"
+            },
+            {
+              "mark": "8",
+              "net": "/SPI1_CIPO"
+            },
+            {
+              "mark": "9",
+              "net": "/SPI1_SCK"
+            },
+            {
+              "mark": "10",
+              "net": "GND"
+            }
+          ],
+          "pcb_pad_count": 10
+        },
+        "J37": {
+          "value": "Conn_02x05_Odd_Even",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "/3V3_LIMIT"
+            },
+            {
+              "mark": "2",
+              "net": "/5V_LIMIT"
+            },
+            {
+              "mark": "3",
+              "net": "/PB1"
+            },
+            {
+              "mark": "4",
+              "net": "/PJ4"
+            },
+            {
+              "mark": "5",
+              "net": "/PA4"
+            },
+            {
+              "mark": "6",
+              "net": "/PG0"
+            },
+            {
+              "mark": "7",
+              "net": "/PJ3"
+            },
+            {
+              "mark": "8",
+              "net": "/PG1"
+            },
+            {
+              "mark": "9",
+              "net": "/PJ2"
+            },
+            {
+              "mark": "10",
+              "net": "GND"
+            }
+          ],
+          "pcb_pad_count": 10
+        },
+        "J38": {
+          "value": "Conn_02x05_Odd_Even",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "/3V3_LIMIT"
+            },
+            {
+              "mark": "2",
+              "net": "/5V_LIMIT"
+            },
+            {
+              "mark": "3",
+              "net": "/PH2"
+            },
+            {
+              "mark": "4",
+              "net": "/PH4"
+            },
+            {
+              "mark": "5",
+              "net": "/PC0"
+            },
+            {
+              "mark": "6",
+              "net": "/PF15"
+            },
+            {
+              "mark": "7",
+              "net": "/PH3"
+            },
+            {
+              "mark": "8",
+              "net": "/I2C2_SDA"
+            },
+            {
+              "mark": "9",
+              "net": "/I2C2_SCL"
+            },
+            {
+              "mark": "10",
+              "net": "GND"
+            }
+          ],
+          "pcb_pad_count": 10
+        },
+        "J39": {
+          "value": "Conn_02x05_Odd_Even",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "/3V3_LIMIT"
+            },
+            {
+              "mark": "2",
+              "net": "/5V_LIMIT"
+            },
+            {
+              "mark": "3",
+              "net": "/ADC1_CH13"
+            },
+            {
+              "mark": "4",
+              "net": "/ADC1_CH15"
+            },
+            {
+              "mark": "5",
+              "net": "/ADC1_CH12"
+            },
+            {
+              "mark": "6",
+              "net": "/PF2"
+            },
+            {
+              "mark": "7",
+              "net": "/PI10"
+            },
+            {
+              "mark": "8",
+              "net": "/PH7"
+            },
+            {
+              "mark": "9",
+              "net": "/PB12"
+            },
+            {
+              "mark": "10",
+              "net": "GND"
+            }
+          ],
+          "pcb_pad_count": 10
+        },
+        "J40": {
+          "value": "Conn_02x05_Odd_Even",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "/3V3_LIMIT"
+            },
+            {
+              "mark": "2",
+              "net": "/5V_LIMIT"
+            },
+            {
+              "mark": "3",
+              "net": "/ADC3_CH6"
+            },
+            {
+              "mark": "4",
+              "net": "/ADC3_CH8"
+            },
+            {
+              "mark": "5",
+              "net": "/ADC3_CH9"
+            },
+            {
+              "mark": "6",
+              "net": "/PI8"
+            },
+            {
+              "mark": "7",
+              "net": "/PE4"
+            },
+            {
+              "mark": "8",
+              "net": "/PI9"
+            },
+            {
+              "mark": "9",
+              "net": "/PC13"
+            },
+            {
+              "mark": "10",
+              "net": "GND"
+            }
+          ],
+          "pcb_pad_count": 10
+        },
+        "J41": {
+          "value": "Conn_ARM_JTAG_SWD_10",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "/3V3"
+            },
+            {
+              "mark": "2",
+              "net": "/SWDIO"
+            },
+            {
+              "mark": "3",
+              "net": "GND"
+            },
+            {
+              "mark": "4",
+              "net": "/SWCLK"
+            },
+            {
+              "mark": "5",
+              "net": "GND"
+            },
+            {
+              "mark": "6",
+              "net": "/SWO"
+            },
+            {
+              "mark": "7",
+              "net": "unconnected-(J41-KEY-Pad7)"
+            },
+            {
+              "mark": "8",
+              "net": "/TDI"
+            },
+            {
+              "mark": "9",
+              "net": "GND"
+            },
+            {
+              "mark": "10",
+              "net": "/MCU_RESET"
+            }
+          ],
+          "pcb_pad_count": 10
+        },
+        "J30": {
+          "value": "Conn_01x03_Male",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "GND"
+            },
+            {
+              "mark": "2",
+              "net": "Net-(J30-Pin_2)"
+            },
+            {
+              "mark": "3",
+              "net": "Net-(J30-Pin_3)"
+            }
+          ],
+          "pcb_pad_count": 3
+        },
+        "J43": {
+          "value": "Conn_01x02",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "/5V"
+            },
+            {
+              "mark": "2",
+              "net": "GND"
+            }
+          ],
+          "pcb_pad_count": 2
+        },
+        "J42": {
+          "value": "Conn_01x02",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "/5V_PORTIN"
+            },
+            {
+              "mark": "2",
+              "net": "GND"
+            }
+          ],
+          "pcb_pad_count": 2
+        },
+        "J44": {
+          "value": "Conn_01x02",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "Net-(J44-Pin_1)"
+            },
+            {
+              "mark": "2",
+              "net": "GND"
+            }
+          ],
+          "pcb_pad_count": 2
+        },
+        "J45": {
+          "value": "Conn_01x02",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "Net-(J45-Pin_1)"
+            },
+            {
+              "mark": "2",
+              "net": "GND"
+            }
+          ],
+          "pcb_pad_count": 2
+        },
+        "J3": {
+          "value": "Micro_SD_Card_Det",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "/SD_D2"
+            },
+            {
+              "mark": "2",
+              "net": "/SD_D3"
+            },
+            {
+              "mark": "3",
+              "net": "/SD_CMD"
+            },
+            {
+              "mark": "4",
+              "net": "/3V3"
+            },
+            {
+              "mark": "5",
+              "net": "/SD_CK"
+            },
+            {
+              "mark": "6",
+              "net": "GND"
+            },
+            {
+              "mark": "7",
+              "net": "/SD_D0"
+            },
+            {
+              "mark": "8",
+              "net": "/SD_D1"
+            },
+            {
+              "mark": "9",
+              "net": "/CARD_DET"
+            },
+            {
+              "mark": "10",
+              "net": "GND"
+            },
+            {
+              "mark": "11",
+              "net": "GND"
+            },
+            {
+              "mark": "",
+              "net": ""
+            }
+          ],
+          "pcb_pad_count": 15
+        },
+        "J15": {
+          "value": "Conn_01x02",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "/3V3"
+            },
+            {
+              "mark": "2",
+              "net": "GND"
+            }
+          ],
+          "pcb_pad_count": 2
+        },
+        "JP16": {
+          "value": "SolderJumper_2_Open",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "GND"
+            },
+            {
+              "mark": "2",
+              "net": "/power/UVLO"
+            }
+          ],
+          "pcb_pad_count": 2
+        },
+        "J13": {
+          "value": "Conn_01x02",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "/mosfets/VFET"
+            },
+            {
+              "mark": "2",
+              "net": "/mosfets/SW_BED"
+            }
+          ],
+          "pcb_pad_count": 2
+        },
+        "J11": {
+          "value": "Conn_01x02",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "/mosfets/VFET"
+            },
+            {
+              "mark": "2",
+              "net": "/mosfets/GND_FET"
+            }
+          ],
+          "pcb_pad_count": 2
+        },
+        "J12": {
+          "value": "Conn_01x02",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "/mosfets/VFET"
+            },
+            {
+              "mark": "2",
+              "net": "/mosfets/GND_FET"
+            }
+          ],
+          "pcb_pad_count": 20
+        },
+        "J16": {
+          "value": "Conn_01x02",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "/mosfets/VFET"
+            },
+            {
+              "mark": "2",
+              "net": "/mosfets/GND_FET"
+            }
+          ],
+          "pcb_pad_count": 20
+        },
+        "JP1": {
+          "value": "SolderJumper_3_Bridged12",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "/5V_LIMIT"
+            },
+            {
+              "mark": "2",
+              "net": "Net-(J24-Pin_1)"
+            },
+            {
+              "mark": "3",
+              "net": "/3V3_LIMIT"
+            }
+          ],
+          "pcb_pad_count": 3
+        },
+        "JP2": {
+          "value": "SolderJumper_3_Bridged12",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "/5V_LIMIT"
+            },
+            {
+              "mark": "2",
+              "net": "Net-(J25-Pin_1)"
+            },
+            {
+              "mark": "3",
+              "net": "/3V3_LIMIT"
+            }
+          ],
+          "pcb_pad_count": 3
+        },
+        "JP3": {
+          "value": "SolderJumper_3_Bridged12",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "/5V_LIMIT"
+            },
+            {
+              "mark": "2",
+              "net": "Net-(J26-Pin_1)"
+            },
+            {
+              "mark": "3",
+              "net": "/3V3_LIMIT"
+            }
+          ],
+          "pcb_pad_count": 3
+        },
+        "JP4": {
+          "value": "SolderJumper_3_Bridged12",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "/5V_LIMIT"
+            },
+            {
+              "mark": "2",
+              "net": "Net-(J27-Pin_1)"
+            },
+            {
+              "mark": "3",
+              "net": "/3V3_LIMIT"
+            }
+          ],
+          "pcb_pad_count": 3
+        },
+        "JP5": {
+          "value": "SolderJumper_3_Bridged12",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "/5V_LIMIT"
+            },
+            {
+              "mark": "2",
+              "net": "Net-(J28-Pin_1)"
+            },
+            {
+              "mark": "3",
+              "net": "/3V3_LIMIT"
+            }
+          ],
+          "pcb_pad_count": 3
+        },
+        "JP6": {
+          "value": "SolderJumper_3_Bridged12",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "/5V_LIMIT"
+            },
+            {
+              "mark": "2",
+              "net": "Net-(J29-Pin_1)"
+            },
+            {
+              "mark": "3",
+              "net": "/3V3_LIMIT"
+            }
+          ],
+          "pcb_pad_count": 3
+        },
+        "JP8": {
+          "value": "SolderJumper_3_Bridged12",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "/5V_LIMIT"
+            },
+            {
+              "mark": "2",
+              "net": "Net-(J31-Pin_2)"
+            },
+            {
+              "mark": "3",
+              "net": "/3V3_LIMIT"
+            }
+          ],
+          "pcb_pad_count": 3
+        },
+        "JP10": {
+          "value": "SolderJumper_2_Bridged",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "Net-(J25-Pin_1)"
+            },
+            {
+              "mark": "2",
+              "net": "Net-(JP10-B)"
+            }
+          ],
+          "pcb_pad_count": 2
+        },
+        "JP11": {
+          "value": "SolderJumper_2_Bridged",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "Net-(J26-Pin_1)"
+            },
+            {
+              "mark": "2",
+              "net": "Net-(JP11-B)"
+            }
+          ],
+          "pcb_pad_count": 2
+        },
+        "JP12": {
+          "value": "SolderJumper_2_Bridged",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "Net-(J27-Pin_1)"
+            },
+            {
+              "mark": "2",
+              "net": "Net-(JP12-B)"
+            }
+          ],
+          "pcb_pad_count": 2
+        },
+        "JP14": {
+          "value": "SolderJumper_2_Bridged",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "Net-(J29-Pin_1)"
+            },
+            {
+              "mark": "2",
+              "net": "Net-(JP14-B)"
+            }
+          ],
+          "pcb_pad_count": 2
+        },
+        "JP9": {
+          "value": "SolderJumper_2_Bridged",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "Net-(J24-Pin_1)"
+            },
+            {
+              "mark": "2",
+              "net": "Net-(JP9-B)"
+            }
+          ],
+          "pcb_pad_count": 2
+        },
+        "JP13": {
+          "value": "SolderJumper_2_Bridged",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "Net-(J28-Pin_1)"
+            },
+            {
+              "mark": "2",
+              "net": "Net-(JP13-B)"
+            }
+          ],
+          "pcb_pad_count": 2
+        },
+        "JP17": {
+          "value": "SolderJumper_2_Bridged",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "Net-(J1-VBUS)"
+            },
+            {
+              "mark": "2",
+              "net": "/5V_IN"
+            }
+          ],
+          "pcb_pad_count": 2
+        },
+        "JP15": {
+          "value": "SolderJumper_2_Open",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "Net-(JP15-A)"
+            },
+            {
+              "mark": "2",
+              "net": "GND"
+            }
+          ],
+          "pcb_pad_count": 2
+        },
+        "JP7": {
+          "value": "SolderJumper_2_Bridged",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "/5V_LIMIT"
+            },
+            {
+              "mark": "2",
+              "net": "Net-(D31-A)"
+            }
+          ],
+          "pcb_pad_count": 2
+        },
+        "JP18": {
+          "value": "Jumper_NC_Small",
+          "pads": [
+            {
+              "mark": "1",
+              "net": "Net-(J31-Pin_4)"
+            },
+            {
+              "mark": "2",
+              "net": "Net-(JP18-Pad2)"
+            }
+          ],
+          "pcb_pad_count": 2
+        }
+      }
+    }
+  }
+}

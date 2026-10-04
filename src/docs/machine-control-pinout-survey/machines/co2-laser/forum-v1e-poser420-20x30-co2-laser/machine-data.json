@@ -1,0 +1,25 @@
+{
+  "id": "forum-v1e-poser420-20x30-co2-laser",
+  "sources": {
+    "forum-peripheral-evidence.json": {
+      "id": "forum-v1e-poser420-20x30-co2-laser",
+      "dossier": "src/docs/machine-research/v1e-poser420-20x30-co2-laser.md",
+      "reported_fitted_or_used": [],
+      "listed_for_build_unverified": [],
+      "historical_reference": [],
+      "planned_only": [],
+      "open_function_group": [
+        {
+          "name": "CO2 laser tube and PSU identities unreported",
+          "contacts": [],
+          "source_line_number": 11,
+          "source_line": "The posts inspected do not identify the tube wattage, laser power supply, controller, firmware, motion electronics, cutting material, speed, or tested work envelope. Do not infer any of these from the pictures or from another user's discussion of their own laser.",
+          "evidence": "The posts inspected do not identify the tube wattage, laser power supply, controller, firmware, motion electronics, cutting material, speed, or tested work envelope. Do not infer any of these from the pictures or from another user's discussion of their own laser.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        }
+      ],
+      "exclusions": [],
+      "source_gap": "Dossier does not establish an as-built SmoothieBox route or a complete physical contact schedule for the listed peripherals."
+    }
+  }
+}

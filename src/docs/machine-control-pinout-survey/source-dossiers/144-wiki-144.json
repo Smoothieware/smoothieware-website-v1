@@ -1,0 +1,243 @@
+{
+  "profile_id": "wiki-144",
+  "devices": [
+    {
+      "id": "supplement-device-001",
+      "role": "reference"
+    },
+    {
+      "id": "supplement-device-002",
+      "role": "reference"
+    },
+    {
+      "id": "supplement-device-003",
+      "role": "reference"
+    }
+  ],
+  "connectors": [
+    {
+      "id": "supplement-connector-001",
+      "device": "supplement-device-001",
+      "refdes": "FarmBot Genesis v1.5 UTM A\u2013L",
+      "form": "12-position Universal Tool Mount (UTM) letter-position schedule; mating-face orientation unknown",
+      "scope": "Official Genesis v1.5 UTM map only. E is D48 and configurable; F-L are labeled \u201cYour choice\u201d. Appropedia machine generation, installed UTM fitment, mating view, and SmoothieBox route remain unknown.",
+      "contacts": [
+        {
+          "id": "A",
+          "mark": "A",
+          "label": "red wire \u00b7 +5 V soil-sensor supply"
+        },
+        {
+          "id": "B",
+          "mark": "B",
+          "label": "yellow wire \u00b7 GND (0 V)"
+        },
+        {
+          "id": "C",
+          "mark": "C",
+          "label": "green wire \u00b7 D63 digital input \u00b7 tool verification"
+        },
+        {
+          "id": "D",
+          "mark": "D",
+          "label": "black wire \u00b7 D59/A5 analog input \u00b7 soil sensing"
+        },
+        {
+          "id": "E",
+          "mark": "E",
+          "label": "white wire \u00b7 D48 \u00b7 configurable tool function (\u201cAnything you want\u201d)"
+        },
+        {
+          "id": "F",
+          "mark": "F",
+          "label": "brown wire \u00b7 User-choice function \u00b7 not fixed in v1.5"
+        },
+        {
+          "id": "G",
+          "mark": "G",
+          "label": "blue wire \u00b7 User-choice function \u00b7 not fixed in v1.5"
+        },
+        {
+          "id": "H",
+          "mark": "H",
+          "label": "grey wire \u00b7 User-choice function \u00b7 not fixed in v1.5"
+        },
+        {
+          "id": "I",
+          "mark": "I",
+          "label": "orange wire \u00b7 User-choice function \u00b7 not fixed in v1.5"
+        },
+        {
+          "id": "J",
+          "mark": "J",
+          "label": "purple wire \u00b7 User-choice function \u00b7 not fixed in v1.5"
+        },
+        {
+          "id": "K",
+          "mark": "K",
+          "label": "pink wire \u00b7 User-choice function \u00b7 not fixed in v1.5"
+        },
+        {
+          "id": "L",
+          "mark": "L",
+          "label": "cyan wire \u00b7 User-choice function \u00b7 not fixed in v1.5"
+        }
+      ]
+    },
+    {
+      "id": "supplement-connector-002",
+      "device": "supplement-device-002",
+      "refdes": "FarmBot Genesis v1.7 UTM A\u2013L",
+      "form": "12-position Universal Tool Mount (UTM) letter-position schedule; mating-face orientation unknown",
+      "scope": "Official Genesis v1.7 UTM map only. \u201cUnassigned\u201d table entries are not claims about the unidentified Appropedia machine. E/H BDC output polarity is conditional; L is protective earth/shield, not circuit GND. Installed fitment and SmoothieBox route remain unknown.",
+      "contacts": [
+        {
+          "id": "A",
+          "mark": "A",
+          "label": "red wire \u00b7 +5 V \u00b7 soil-sensor power"
+        },
+        {
+          "id": "B",
+          "mark": "B",
+          "label": "yellow wire \u00b7 GND (0 V)"
+        },
+        {
+          "id": "C",
+          "mark": "C",
+          "label": "green wire \u00b7 D63 digital input \u00b7 tool verification"
+        },
+        {
+          "id": "D",
+          "mark": "D",
+          "label": "black wire \u00b7 D59/A5 analog input \u00b7 soil sensing"
+        },
+        {
+          "id": "E",
+          "mark": "E",
+          "label": "white wire \u00b7 BDC2 rotary-tool motor output \u00b7 DRV8876 switches GND or 24 V"
+        },
+        {
+          "id": "F",
+          "mark": "F",
+          "label": "brown wire \u00b7 Unassigned in v1.7 table",
+          "fact": "source_empty"
+        },
+        {
+          "id": "G",
+          "mark": "G",
+          "label": "blue wire \u00b7 Unassigned in v1.7 table",
+          "fact": "source_empty"
+        },
+        {
+          "id": "H",
+          "mark": "H",
+          "label": "grey wire \u00b7 BDC1 rotary-tool motor output \u00b7 DRV8876 switches GND or 24 V"
+        },
+        {
+          "id": "I",
+          "mark": "I",
+          "label": "orange wire \u00b7 I2C SCL"
+        },
+        {
+          "id": "J",
+          "mark": "J",
+          "label": "purple wire \u00b7 I2C SDA"
+        },
+        {
+          "id": "K",
+          "mark": "K",
+          "label": "pink wire \u00b7 Unassigned in v1.7 table",
+          "fact": "source_empty"
+        },
+        {
+          "id": "L",
+          "mark": "L",
+          "label": "cyan wire \u00b7 Shield shunted to protective earth (PE) \u00b7 not circuit GND"
+        }
+      ]
+    },
+    {
+      "id": "supplement-connector-003",
+      "device": "supplement-device-003",
+      "refdes": "FarmBot Genesis v1.8 UTM A\u2013L",
+      "form": "12-position Universal Tool Mount (UTM) letter-position schedule; mating-face orientation unknown",
+      "scope": "Official Genesis v1.8 UTM map only. \u201cUnassigned\u201d table entries are not claims about the unidentified Appropedia machine. E/H BDC output polarity is conditional; L is protective earth/shield, not circuit GND. Installed fitment and SmoothieBox route remain unknown.",
+      "contacts": [
+        {
+          "id": "A",
+          "mark": "A",
+          "label": "red wire \u00b7 +5 V \u00b7 soil-sensor power"
+        },
+        {
+          "id": "B",
+          "mark": "B",
+          "label": "yellow wire \u00b7 GND (0 V)"
+        },
+        {
+          "id": "C",
+          "mark": "C",
+          "label": "green wire \u00b7 D63 digital input \u00b7 tool verification"
+        },
+        {
+          "id": "D",
+          "mark": "D",
+          "label": "black wire \u00b7 D59/A5 analog input \u00b7 soil sensing"
+        },
+        {
+          "id": "E",
+          "mark": "E",
+          "label": "white wire \u00b7 BDC2 rotary-tool motor output \u00b7 DRV8876 switches GND or 24 V"
+        },
+        {
+          "id": "F",
+          "mark": "F",
+          "label": "brown wire \u00b7 Unassigned in v1.8 table",
+          "fact": "source_empty"
+        },
+        {
+          "id": "G",
+          "mark": "G",
+          "label": "blue wire \u00b7 Unassigned in v1.8 table",
+          "fact": "source_empty"
+        },
+        {
+          "id": "H",
+          "mark": "H",
+          "label": "grey wire \u00b7 BDC1 rotary-tool motor output \u00b7 DRV8876 switches GND or 24 V"
+        },
+        {
+          "id": "I",
+          "mark": "I",
+          "label": "orange wire \u00b7 I2C SCL"
+        },
+        {
+          "id": "J",
+          "mark": "J",
+          "label": "purple wire \u00b7 I2C SDA"
+        },
+        {
+          "id": "K",
+          "mark": "K",
+          "label": "pink wire \u00b7 Unassigned in v1.8 table",
+          "fact": "source_empty"
+        },
+        {
+          "id": "L",
+          "mark": "L",
+          "label": "cyan wire \u00b7 Shield shunted to protective earth (PE) \u00b7 not circuit GND"
+        }
+      ]
+    }
+  ],
+  "wires": [],
+  "evidence": {
+    "primary": "Official FarmBot Genesis versioned UTM maps",
+    "urls": [
+      "https://genesis.farm.bot/v1.5/FarmBot-Genesis-V1.5/tools/utm.html",
+      "https://genesis.farm.bot/v1.7/extras/reference/utm-pin-mapping",
+      "https://genesis.farm.bot/v1.7/bom/electronics-and-wiring/farmduino",
+      "https://genesis.farm.bot/v1.8/extras/reference/utm-pin-mapping.html"
+    ],
+    "scope_note": "This is a newly normalized source graph reconstructed from the retained wiki-144 graph projection, whose former source file was missing, and checked against the cited official versioned maps. Its SHA-256 identifies only these new normalized bytes; it does not recover or attest the former source-file bytes or hash. Appropedia machine generation and installed wiring remain unknown."
+  }
+}

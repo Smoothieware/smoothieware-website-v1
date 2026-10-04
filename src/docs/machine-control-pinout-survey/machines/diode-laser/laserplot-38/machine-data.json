@@ -1,0 +1,29 @@
+{
+  "id": "laserplot-38",
+  "sources": {
+    "machine-side-graph-snapshot.json": {
+      "source_graph": "084-laserplot-38.json",
+      "source_sha256": "17e4ee98d8361bb2bd42ea1bac8ecc25d4dd31caedb780aba9e5fb2d35189e86",
+      "graph": {
+        "profile_id": "laserplot-38",
+        "devices": [
+          {
+            "id": "group-device-001",
+            "role": "peripheral"
+          }
+        ],
+        "connectors": [
+          {
+            "id": "machine-group-001",
+            "device": "group-device-001",
+            "refdes": "Internal X/Y/laser harness",
+            "form": "source-described cable / connector group",
+            "scope": "Source names this group, but provides no source-scoped physical contact map. Availability and exact housing are unverified. exact atlas group labels; open until contact mapping is established",
+            "contacts": []
+          }
+        ],
+        "wires": []
+      }
+    }
+  }
+}

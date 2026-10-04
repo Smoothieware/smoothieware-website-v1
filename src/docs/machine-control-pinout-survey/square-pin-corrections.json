@@ -1,0 +1,164 @@
+{
+  "type": "source_correction",
+  "source_url": "https://www.ti.com/lit/ds/symlink/sn74lvc07a.pdf#page=4",
+  "source_revision": "SCAS595W, October 2016",
+  "changes": [
+    {
+      "profile": "wiki-134",
+      "panel": 1,
+      "node": "u",
+      "contact": "a4",
+      "before": "8 · 4A unused input",
+      "after": "9 · 4A unused input"
+    },
+    {
+      "profile": "wiki-134",
+      "panel": 1,
+      "node": "u",
+      "contact": "y4",
+      "before": "9 · 4Y NC",
+      "after": "8 · 4Y NC"
+    },
+    {
+      "profile": "wiki-134",
+      "panel": 2,
+      "node": "u",
+      "contact": "a4",
+      "before": "8 · 4A unused input",
+      "after": "9 · 4A unused input"
+    },
+    {
+      "profile": "wiki-134",
+      "panel": 2,
+      "node": "u",
+      "contact": "y4",
+      "before": "9 · 4Y NC",
+      "after": "8 · 4Y NC"
+    },
+    {
+      "profile": "wiki-134",
+      "panel": 3,
+      "node": "u",
+      "contact": "a4",
+      "before": "8 · 4A unused input",
+      "after": "9 · 4A unused input"
+    },
+    {
+      "profile": "wiki-134",
+      "panel": 3,
+      "node": "u",
+      "contact": "y4",
+      "before": "9 · 4Y NC",
+      "after": "8 · 4Y NC"
+    },
+    {
+      "profile": "wiki-134",
+      "panel": 4,
+      "node": "u",
+      "contact": "a4",
+      "before": "8 · 4A unused input",
+      "after": "9 · 4A unused input"
+    },
+    {
+      "profile": "wiki-134",
+      "panel": 4,
+      "node": "u",
+      "contact": "y4",
+      "before": "9 · 4Y NC",
+      "after": "8 · 4Y NC"
+    },
+    {
+      "profile": "wiki-135",
+      "panel": 1,
+      "node": "u",
+      "contact": "a4",
+      "before": "8 · 4A unused input",
+      "after": "9 · 4A unused input"
+    },
+    {
+      "profile": "wiki-135",
+      "panel": 1,
+      "node": "u",
+      "contact": "y4",
+      "before": "9 · 4Y NC",
+      "after": "8 · 4Y NC"
+    },
+    {
+      "profile": "wiki-135",
+      "panel": 3,
+      "node": "u",
+      "contact": "a4",
+      "before": "8 · 4A unused input",
+      "after": "9 · 4A unused input"
+    },
+    {
+      "profile": "wiki-135",
+      "panel": 3,
+      "node": "u",
+      "contact": "y4",
+      "before": "9 · 4Y NC",
+      "after": "8 · 4Y NC"
+    },
+    {
+      "profile": "wiki-135",
+      "panel": 5,
+      "node": "u",
+      "contact": "a4",
+      "before": "8 · 4A unused input",
+      "after": "9 · 4A unused input"
+    },
+    {
+      "profile": "wiki-135",
+      "panel": 5,
+      "node": "u",
+      "contact": "y4",
+      "before": "9 · 4Y NC",
+      "after": "8 · 4Y NC"
+    }
+  ],
+  "before_sha256": "c6fa465d18260f94cdac6bb155a51d8870c0fa30d793f27fa50de64b368d0589",
+  "after_sha256": "d7a4f24f1e45aa011e339507f1118072bd810fe8d95cb1b00d5612abae2f506d",
+  "edge_ids_preserved": true,
+  "sf_a9_motor_coverage": {
+    "profile": "wiki-205",
+    "added_panels": [
+      "X motor · Prime onboard channel A · measured winding pairs",
+      "Y motor · Prime onboard channel B · measured winding pairs"
+    ],
+    "added_connections": 8,
+    "preserved_previous_connection_ids": 988,
+    "pcb_url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/smoothiev2-prime.kicad_pcb",
+    "pcb_sha256": "a7e84b8fb403d9b64fd7f0e09c6aa245f00525ba894bfe9a008093fe73626b29",
+    "pad_readback": {
+      "J5": {
+        "1": "/driver-a/COIL_B2",
+        "2": "/driver-a/COIL_B1",
+        "3": "/driver-a/COIL_A2",
+        "4": "/driver-a/COIL_A1"
+      },
+      "J6": {
+        "1": "/driver-b/COIL_B2",
+        "2": "/driver-b/COIL_B1",
+        "3": "/driver-b/COIL_A2",
+        "4": "/driver-b/COIL_A1"
+      }
+    },
+    "qualification": "Board connector pin functions verified; X/Y channel assignment and fitted motor cable positions are proposed, shown dotted and require winding/current/configuration checks."
+  },
+  "selected_prime_labels": {
+    "wiki-222": "MAX31865 host is Prime J35.1 /3V3_LIMIT and J35.10 GND, not motor connector J5; node identities and checks corrected, stable edge IDs retained.",
+    "wiki-132": "Recycler command source names Smoothieboard V2 Prime J35, not a combined SmoothieBox/Prime/Core."
+  },
+  "avid_dc_power_boundary": {
+    "added_connections": 20,
+    "motors": [
+      "X",
+      "Y1",
+      "Y2",
+      "Z",
+      "A"
+    ],
+    "reference": "Teknic ClearPath MC/SD manual Rev3.30 printed p38; wire-entry view POWER1/3 V+, POWER2/4 GND",
+    "state": "OPEN fitted distribution terminals and orientation unverified; separate8pincommand harness not motorpower"
+  }
+}

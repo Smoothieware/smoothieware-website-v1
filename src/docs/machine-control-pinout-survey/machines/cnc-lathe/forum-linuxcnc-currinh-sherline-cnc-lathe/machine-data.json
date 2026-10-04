@@ -1,0 +1,33 @@
+{
+  "id": "forum-linuxcnc-currinh-sherline-cnc-lathe",
+  "sources": {
+    "forum-peripheral-evidence.json": {
+      "id": "forum-linuxcnc-currinh-sherline-cnc-lathe",
+      "dossier": "src/docs/machine-research/linuxcnc-currinh-sherline-cnc-lathe.md",
+      "reported_fitted_or_used": [
+        {
+          "name": "Gecko G540 stepper drive",
+          "contacts": [],
+          "source_line_number": 11,
+          "source_line": "The owner tested slotted optical switches using a 5 V supply and 250 \u03a9 resistor on the LED side, then connected the open-collector output to a G540 input and its ground. LinuxCNC HALmeter showed the parallel-port input switching. The owner had ordered an Omron E6C2-CWZ6C 60 P/R encoder and was designing a spindle mounting arrangement; a completed encoder installation is not established by the first-cut post.",
+          "evidence": "The owner tested slotted optical switches using a 5 V supply and 250 \u03a9 resistor on the LED side, then connected the open-collector output to a G540 input and its ground. LinuxCNC HALmeter showed the parallel-port input switching.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        },
+        {
+          "name": "Slotted optical switches",
+          "contacts": [],
+          "source_line_number": 11,
+          "source_line": "The owner tested slotted optical switches using a 5 V supply and 250 \u03a9 resistor on the LED side, then connected the open-collector output to a G540 input and its ground. LinuxCNC HALmeter showed the parallel-port input switching. The owner had ordered an Omron E6C2-CWZ6C 60 P/R encoder and was designing a spindle mounting arrangement; a completed encoder installation is not established by the first-cut post.",
+          "evidence": "The owner tested slotted optical switches using a 5 V supply and 250 \u03a9 resistor on the LED side, then connected the open-collector output to a G540 input and its ground. LinuxCNC HALmeter showed the parallel-port input switching.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        }
+      ],
+      "listed_for_build_unverified": [],
+      "historical_reference": [],
+      "planned_only": [],
+      "open_function_group": [],
+      "exclusions": [],
+      "source_gap": "Dossier does not establish an as-built SmoothieBox route or a complete physical contact schedule for the listed peripherals."
+    }
+  }
+}

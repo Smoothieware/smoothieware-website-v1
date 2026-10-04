@@ -1,0 +1,154 @@
+{
+  "type": "verification",
+  "scope": "Controller-centered main wiring and per-connection source explanations for the exact twelve selected machines",
+  "profiles_retained": 330,
+  "guides": 12,
+  "connections": 988,
+  "controllers": {
+    "box": 0,
+    "prime": 6
+  },
+  "data_sha256": "c6fa465d18260f94cdac6bb155a51d8870c0fa30d793f27fa50de64b368d0589",
+  "html_sha256": "38200877395057a7a93d538eec86dd27df6a7b3e7c21534e75e093d8f43c8c91",
+  "renders": [
+    {
+      "id": "wiki-205",
+      "svg_sha256": "7c5caff6c065f33dcf5b115fe9031f1b8127d8804eaead83723a33d27eec3958",
+      "png": "/tmp/atlas12-centered-final-render/wiki-205.png",
+      "size": [
+        1800,
+        2322
+      ]
+    },
+    {
+      "id": "laserplot-02",
+      "svg_sha256": "79f44e182bac53fcb367cdc32704fc29fa4916e6c7e7cab0e51146b3537247db",
+      "png": "/tmp/atlas12-centered-final-render/laserplot-02.png",
+      "size": [
+        1800,
+        1906
+      ]
+    },
+    {
+      "id": "base-11",
+      "svg_sha256": "91914e78a38b690e5b18fda68c36fca7686a6ca6ce4d3d3f32ec25bdba2ab744",
+      "png": "/tmp/atlas12-centered-final-render/base-11.png",
+      "size": [
+        1800,
+        3254
+      ]
+    },
+    {
+      "id": "wiki-132",
+      "svg_sha256": "b182acdcf74daf1709288ee3e379e057c8d197726ee46b354069d51f9642a753",
+      "png": "/tmp/atlas12-centered-final-render/wiki-132.png",
+      "size": [
+        1800,
+        4082
+      ]
+    },
+    {
+      "id": "wiki-134",
+      "svg_sha256": "f1b75339b7c49a7f8c67dd2b9e0e31d0f5ed7e2856699ef4f1f8b706d16513a0",
+      "png": "/tmp/atlas12-centered-final-render/wiki-134.png",
+      "size": [
+        1800,
+        10786
+      ]
+    },
+    {
+      "id": "wiki-135",
+      "svg_sha256": "e83d587dc105928904b5df59bb9c2e5fcb332bb085652b38daf332c4ca541119",
+      "png": "/tmp/atlas12-centered-final-render/wiki-135.png",
+      "size": [
+        1800,
+        7945
+      ]
+    },
+    {
+      "id": "mill-g2",
+      "svg_sha256": "952be30d7e0815344093d92953dfc43d903fea7781ff3253b933b3fc0e8488ab",
+      "png": "/tmp/atlas12-centered-final-render/mill-g2.png",
+      "size": [
+        1800,
+        4160
+      ]
+    },
+    {
+      "id": "mill-avid-ex-3",
+      "svg_sha256": "03b85f947029c55708adc5f8492731fa795582518b60b67d3c67acf87b3390fb",
+      "png": "/tmp/atlas12-centered-final-render/mill-avid-ex-3.png",
+      "size": [
+        1800,
+        11248
+      ]
+    },
+    {
+      "id": "wiki-206",
+      "svg_sha256": "f66a79114cbdf48e86bfc822c1489c50cb3045a15e95fb820699980e4ff11abd",
+      "png": "/tmp/atlas12-centered-final-render/wiki-206.png",
+      "size": [
+        1800,
+        2626
+      ]
+    },
+    {
+      "id": "wiki-222",
+      "svg_sha256": "9634420e1d3e46469831f256b86221efb62b53f6b5043571cf7f31d3695e2251",
+      "png": "/tmp/atlas12-centered-final-render/wiki-222.png",
+      "size": [
+        1800,
+        4075
+      ]
+    },
+    {
+      "id": "forum-linuxcnc-optimill-mh50v-unlogic",
+      "svg_sha256": "7ec5d414167fea9faf136152fed8602ec57112295f2d3c84502a4e4b6ef5d3a4",
+      "png": "/tmp/atlas12-centered-final-render/forum-linuxcnc-optimill-mh50v-unlogic.png",
+      "size": [
+        1800,
+        11084
+      ]
+    },
+    {
+      "id": "forum-linuxcnc-rotarysmp-schaublin-125-cnc-retrofit",
+      "svg_sha256": "bc32db87916bc57c714c774132ad0a7cd8142e9be995d6d2e5b9c30f6eb6c217",
+      "png": "/tmp/atlas12-centered-final-render/forum-linuxcnc-rotarysmp-schaublin-125-cnc-retrofit.png",
+      "size": [
+        1800,
+        2626
+      ]
+    }
+  ],
+  "browser": {
+    "initial": 330,
+    "focused": 12,
+    "restored": 330,
+    "main_diagrams": 12,
+    "first_figures": 12,
+    "dialog_opened": true,
+    "escape_closed": true
+  },
+  "independent_reviews": [
+    "/tmp/centered-current-semantic-review.json",
+    "/tmp/centered-sherline-8760-review.json"
+  ],
+  "review_corrections": [
+    "Unique MH per-axis resistor designators",
+    "Internal Prime factory net stays inside center enclosure",
+    "8760 source separated from unrelated G540 conversion",
+    "Schaublin inappropriate safety/position pseudo-connections removed",
+    "Duplicate Prime motion and logic supply panels removed"
+  ],
+  "publication": {
+    "matched": 27,
+    "total": 27,
+    "receipt": "centered-public-readback.json"
+  },
+  "limitations": [
+    "No hardware energized or physical harness continuity measured",
+    "Proposed SmoothieBox field harness is not certified assembled hardware",
+    "Unidentified fitted devices, laser PSU variants, analog-only servo compatibility and unsupported sensor/UI firmware remain explicit OPEN boundaries",
+    "Existing detailed alternatives and original source-contact history preserved"
+  ]
+}

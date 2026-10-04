@@ -1,0 +1,33 @@
+{
+  "id": "forum-linuxcnc-petmakris-maho-mh500w",
+  "sources": {
+    "forum-peripheral-evidence.json": {
+      "id": "forum-linuxcnc-petmakris-maho-mh500w",
+      "dossier": "src/docs/machine-research/linuxcnc-petmakris-maho-mh500w.md",
+      "reported_fitted_or_used": [
+        {
+          "name": "Indramat servo drives",
+          "contacts": [],
+          "source_line_number": 5,
+          "source_line": "LinuxCNC Forum member petmakris describes retrofitting an approximately 1989\u20131990 MAHO MH500W with about 500 \u00d7 350 \u00d7 380 mm axis travel. The machine uses Indramat servos and a 3TRM2 amplifier, and has a 2.2 kW three-phase spindle motor with variable-pulley speed control. The retrofit uses Mesa 7i97 and 7i84 boards and a MinisForum GK41 computer.",
+          "evidence": "The machine uses Indramat servos and a 3TRM2 amplifier, and has a 2.2 kW three-phase spindle motor with variable-pulley speed control. The retrofit uses Mesa 7i97 and 7i84 boards and a MinisForum GK41 computer.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        },
+        {
+          "name": "K1 relay and /ESTOP interface",
+          "source_line_number": 11,
+          "source_line": "The owner distinguishes `/ESTOP`, described as an external E-stop input, from `P_ON`, used to control relay K1. The owner says `/ESTOP` going low deactivates the amplifier and that handwheel-related amplifier deactivation can be done through 8K1, 9K1, and 10K1. The 8K1/9K1/10K1 outputs are described as directly driven by LinuxCNC outputs. These are forum-described logical/control roles only; the inspected source does not establish Mesa physical terminal numbers, connector positions, wiring polarity/voltage at every interface, or a complete harness map.",
+          "evidence": "The owner distinguishes `/ESTOP`, described as an external E-stop input, from `P_ON`, used to control relay K1. The owner says `/ESTOP` going low deactivates the amplifier and that handwheel-related amplifier deactivation can be done through 8K1, 9K1, and 10K1.",
+          "contacts": [],
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        }
+      ],
+      "listed_for_build_unverified": [],
+      "historical_reference": [],
+      "planned_only": [],
+      "open_function_group": [],
+      "exclusions": [],
+      "source_gap": "Dossier does not establish an as-built SmoothieBox route or a complete physical contact schedule for the listed peripherals."
+    }
+  }
+}

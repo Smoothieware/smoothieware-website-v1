@@ -1,0 +1,2716 @@
+{
+  "id": "wiki-205",
+  "sources": {
+    "centered-guides.json": {
+      "id": "wiki-205",
+      "title": "Sculpfun SF-A9 diode laser",
+      "target": "Replace the integrated motion board with Prime P12; wire X/Y motor windings directly to its integrated driver outputs. Identify the fitted SF-A9 laser head, power and hardware inhibit interfaces before connecting them.",
+      "plan": "Original motion-driver electronics are on the board being replaced. Use Prime integrated phase outputs directly to measured winding pairs; do not connect STEP/DIR signal outputs to motor windings. Confirm installed board, motor current and power rating from the cited machine source. Selected architecture: Prime P12 with integrated motor drivers. The main diagram and connection-ID schedule define the current proposed routes. Dotted function-coloured GUESS routes need the named commissioning checks; OPEN routes remain disconnected until the missing terminal, rating or interface is established. Previous Core alternatives remain only in the superseded historical architecture record.",
+      "circuits": [
+        [
+          "X min limit \u00b7 signal and ground separately",
+          "X min limit \u00b7 traced switch \u00b7 Printed Xmin \u00b7 photo revision only \u2192 Prime P12 \u00b7 X min endstop \u00b7 J24.3 \u00b7 input (X min endstop signal); Prime P12 \u00b7 X min endstop \u00b7 J24.2 \u00b7 GND \u2192 X min limit \u00b7 traced switch \u00b7 Printed G \u00b7 photo revision only (X min endstop GND)",
+          "GUESS",
+          "Trace cable with power isolated; confirm dry contact and NO/NC state. Leave selector pin 1 unused for passive switches; powered sensors require a matched interface."
+        ],
+        [
+          "Y min limit \u00b7 signal and ground separately",
+          "Y min limit \u00b7 traced switch \u00b7 Traced Y switch signal \u2192 Prime P12 \u00b7 Y min endstop \u00b7 J26.3 \u00b7 input (Y min endstop signal); Prime P12 \u00b7 Y min endstop \u00b7 J26.2 \u00b7 GND \u2192 Y min limit \u00b7 traced switch \u00b7 Traced Y switch return (Y min endstop GND)",
+          "GUESS",
+          "Trace cable with power isolated; confirm dry contact and NO/NC state. Leave selector pin 1 unused for passive switches; powered sensors require a matched interface."
+        ],
+        [
+          "Original SF-A9 head \u00b7 laser interface must be identified",
+          "V2 Prime P12 \u00b7 proposed signals \u00b7 J35.6 \u00b7 PWM candidate \u2192 Retained machine peripheral \u00b7 Head command \u00b7 not source-mapped (J35.6 \u00b7 PWM candidate); V2 Prime P12 \u00b7 proposed signals \u00b7 J35.10 \u00b7 reference candidate \u2192 Retained machine peripheral \u00b7 Head reference \u00b7 not source-mapped (J35.10 \u00b7 reference candidate)",
+          "OPEN",
+          "Teardown photo board 20231103 is a reference, not proof of the 20 W fitted board. Laser connector conductors are not assigned from red/black/yellow colours. Obtain matching head/controller pinout, command threshold and flame/tilt/key/E-stop circuit before laser operation."
+        ],
+        [
+          "X max \u00b7 separately traced limit",
+          "X max dry-contact switch \u00b7 Identified signal lead \u2192 Prime P12 \u00b7 proposed X max \u00b7 J25.3 \u00b7 input (X max signal); Prime P12 \u00b7 proposed X max \u00b7 J25.2 \u00b7 GND \u2192 X max dry-contact switch \u00b7 Identified return lead (X max GND)",
+          "GUESS",
+          "Firsthand SF-A9 reference reports switches at both ends. Trace this individual switch and return; combined original harness ordering is not assigned from photographs."
+        ],
+        [
+          "Y max \u00b7 separately traced limit",
+          "Y max dry-contact switch \u00b7 Identified signal lead \u2192 Prime P12 \u00b7 proposed Y max \u00b7 J27.3 \u00b7 input (Y max signal); Prime P12 \u00b7 proposed Y max \u00b7 J27.2 \u00b7 GND \u2192 Y max dry-contact switch \u00b7 Identified return lead (Y max GND)",
+          "GUESS",
+          "Firsthand SF-A9 reference reports switches at both ends. Trace this individual switch and return; combined original harness ordering is not assigned from photographs."
+        ],
+        [
+          "Prime selected \u00b7 separate logic and motor supplies",
+          "Regulated 5 V logic supply \u00b7 +5 V regulated \u2192 Prime P12 \u00b7 confirm exact revision \u00b7 J42.1 \u00b7 5V_PORTIN (Prime regulated logic supply); Regulated 5 V logic supply \u00b7 0 V logic return \u2192 Prime P12 \u00b7 confirm exact revision \u00b7 J42.2 \u00b7 GND (Prime logic supply return); Verified motor supply \u00b7 voltage/current TBD \u00b7 DC + \u00b7 before fuse \u2192 Motor branch fuse \u00b7 rating selected after measurement \u00b7 fuse input (Protected motor branch input); Motor branch fuse \u00b7 rating selected after measurement \u00b7 fuse output \u2192 Prime P12 \u00b7 confirm exact revision \u00b7 J9.1 \u00b7 VMOT (Prime VMOT power); Verified motor supply \u00b7 voltage/current TBD \u00b7 0 V motor return \u2192 Prime P12 \u00b7 confirm exact revision \u00b7 J9.2 \u00b7 GND (Prime motor supply return)",
+          "GUESS",
+          "This is the selected Prime P12 integrated-driver architecture. Use the current P12 PCB-derived contact labels; other board revisions require their own verified pinout and driver ratings. Use one verified power-entry arrangement; J10 parallels VMOT and is left unused here. Board ground is shared internally; route motor current directly to power distribution, not through logic wiring. Determine actual allowed voltage/current before choosing a supply; no machine-source adapter automatically qualifies."
+        ],
+        [
+          "Air-assist pump \u00b7 separate rated output stage",
+          "Prime P12 \u00b7 conditional DC pump output \u00b7 J20.1 \u00b7 cutoff-switched VFET \u2192 Rated pump protection/interface \u00b7 identify load \u00b7 Pump-stage supply + (Conditional pump power-stage supply); Prime P12 \u00b7 conditional DC pump output \u00b7 J20.2 \u00b7 switched return Q22 \u2192 Rated pump protection/interface \u00b7 identify load \u00b7 Pump-stage switched return (Conditional pump power-stage return); Rated pump protection/interface \u00b7 identify load \u00b7 Pump-stage supply + \u2192 Original SF-A9 air pump \u00b7 label/rating required \u00b7 Identify pump supply lead (Rated air-pump supply); Rated pump protection/interface \u00b7 identify load \u00b7 Pump-stage switched return \u2192 Original SF-A9 air pump \u00b7 label/rating required \u00b7 Identify pump return lead (Rated air-pump return)",
+          "OPEN",
+          "Manufacturer manual pp.3\u20136 names air-pump port but gives no pump rating or terminal map. Identify DC/AC pump supply and installed connector before choosing a rated isolated switching stage. J20 Fan2 is a conditional DC load candidate only at matched VFET/current rating; existing laser-head command resource remains separate."
+        ],
+        [
+          "Optional rotary accessory \u00b7 fourth onboard motor channel",
+          "Prime P12 \u00b7 motor channel D \u00b7 J8.1 \u00b7 B2 \u2192 Optional rotary motor \u00b7 measured winding identities \u00b7 B winding lead 2 (Rotary measured winding conductor 1); Prime P12 \u00b7 motor channel D \u00b7 J8.2 \u00b7 B1 \u2192 Optional rotary motor \u00b7 measured winding identities \u00b7 B winding lead 1 (Rotary measured winding conductor 2); Prime P12 \u00b7 motor channel D \u00b7 J8.3 \u00b7 A2 \u2192 Optional rotary motor \u00b7 measured winding identities \u00b7 A winding lead 2 (Rotary measured winding conductor 3); Prime P12 \u00b7 motor channel D \u00b7 J8.4 \u00b7 A1 \u2192 Optional rotary motor \u00b7 measured winding identities \u00b7 A winding lead 1 (Rotary measured winding conductor 4)",
+          "GUESS",
+          "Manufacturer package names rotary-axis motor cable. Fitted rotary attachment is not established. Prime J8 phases are a candidate only after motor winding pairs/current, cable contacts, motor power and rotary firmware mode are identified. Do not connect an independent fourth axis at the same time as a conflicting resource."
+        ],
+        [
+          "Laser-head power and independent flame/tilt/key/E-stop inhibition",
+          "Verified laser-head fused supply \u00b7 rating unknown \u00b7 Head supply + \u2192 Original SF-A9 laser head \u00b7 exact connector needed \u00b7 Identify head power + (Laser-head stage supply); Verified laser-head fused supply \u00b7 rating unknown \u00b7 Head power return \u2192 Original SF-A9 laser head \u00b7 exact connector needed \u00b7 Identify head power return (Laser-head power return); Key + E-stop + flame/tilt hardware chain \u00b7 Identify independent inhibition input \u2192 Original SF-A9 laser head \u00b7 exact connector needed \u00b7 Identify flame/tilt inhibition interface (Independent laser inhibition chain)",
+          "OPEN",
+          "Manual names mounted head, key switch and E-stop. The teardown reports integrated flame/tilt logic; exact fitted board/head revision and internal safety signalling remain unresolved. Retain the original hardware inhibition functions; replacing controller firmware must not silently remove them."
+        ],
+        [
+          "X motor \u00b7 Prime onboard channel A \u00b7 measured winding pairs",
+          "Prime P12 \u00b7 motor channel A \u00b7 J5.1 \u00b7 B2 \u2192 X motor \u00b7 measured winding identities \u00b7 B winding lead 2 (X motor measured winding conductor 1); Prime P12 \u00b7 motor channel A \u00b7 J5.2 \u00b7 B1 \u2192 X motor \u00b7 measured winding identities \u00b7 B winding lead 1 (X motor measured winding conductor 2); Prime P12 \u00b7 motor channel A \u00b7 J5.3 \u00b7 A2 \u2192 X motor \u00b7 measured winding identities \u00b7 A winding lead 2 (X motor measured winding conductor 3); Prime P12 \u00b7 motor channel A \u00b7 J5.4 \u00b7 A1 \u2192 X motor \u00b7 measured winding identities \u00b7 A winding lead 1 (X motor measured winding conductor 4)",
+          "GUESS",
+          "Proposed X axis assignment to Prime channel A. PCB source establishes J5 pin 1 B2, pin 2 B1, pin 3 A2, pin 4 A1. Identify the actual motor winding pairs by continuity with power disconnected; machine connector cavity numbers and colours are not established. Confirm motor current, onboard driver rating and firmware axis mapping before installation. Never connect these winding outputs to a laser or logic input."
+        ],
+        [
+          "Y motor \u00b7 Prime onboard channel B \u00b7 measured winding pairs",
+          "Prime P12 \u00b7 motor channel B \u00b7 J6.1 \u00b7 B2 \u2192 Y motor \u00b7 measured winding identities \u00b7 B winding lead 2 (Y motor measured winding conductor 1); Prime P12 \u00b7 motor channel B \u00b7 J6.2 \u00b7 B1 \u2192 Y motor \u00b7 measured winding identities \u00b7 B winding lead 1 (Y motor measured winding conductor 2); Prime P12 \u00b7 motor channel B \u00b7 J6.3 \u00b7 A2 \u2192 Y motor \u00b7 measured winding identities \u00b7 A winding lead 2 (Y motor measured winding conductor 3); Prime P12 \u00b7 motor channel B \u00b7 J6.4 \u00b7 A1 \u2192 Y motor \u00b7 measured winding identities \u00b7 A winding lead 1 (Y motor measured winding conductor 4)",
+          "GUESS",
+          "Proposed Y axis assignment to Prime channel B. PCB source establishes J6 pin 1 B2, pin 2 B1, pin 3 A2, pin 4 A1. Identify the actual motor winding pairs by continuity with power disconnected; machine connector cavity numbers and colours are not established. Confirm motor current, onboard driver rating and firmware axis mapping before installation. Never connect these winding outputs to a laser or logic input."
+        ]
+      ],
+      "pins": [
+        "Current contacts below are copied from the selected wire-panel endpoint labels. They are proposed controller assignments, not verified installed harness continuity.",
+        "Prime P12 \u00b7 J24.1 \u00b7 selector supply \u00b7 NC",
+        "Prime P12 \u00b7 J24.3 \u00b7 input",
+        "Prime P12 \u00b7 J24.2 \u00b7 GND",
+        "Prime P12 \u00b7 J26.1 \u00b7 selector supply \u00b7 NC",
+        "Prime P12 \u00b7 J26.3 \u00b7 input",
+        "Prime P12 \u00b7 J26.2 \u00b7 GND",
+        "Prime P12 \u00b7 J35.6 \u00b7 PWM candidate",
+        "Prime P12 \u00b7 J35.10 \u00b7 reference candidate",
+        "Prime P12 \u00b7 J25.1 \u00b7 selector supply \u00b7 NC",
+        "Prime P12 \u00b7 J25.3 \u00b7 input",
+        "Prime P12 \u00b7 J25.2 \u00b7 GND",
+        "Prime P12 \u00b7 J27.1 \u00b7 selector supply \u00b7 NC",
+        "Prime P12 \u00b7 J27.3 \u00b7 input",
+        "Prime P12 \u00b7 J27.2 \u00b7 GND",
+        "Prime P12 \u00b7 J42.1 \u00b7 5V_PORTIN",
+        "Prime P12 \u00b7 J42.2 \u00b7 GND",
+        "Prime P12 \u00b7 J9.1 \u00b7 VMOT",
+        "Prime P12 \u00b7 J9.2 \u00b7 GND",
+        "Prime P12 \u00b7 J10.1 \u00b7 VMOT parallel \u00b7 unused",
+        "Prime P12 \u00b7 J10.2 \u00b7 GND parallel \u00b7 unused",
+        "Prime P12 \u00b7 J20.1 \u00b7 cutoff-switched VFET",
+        "Prime P12 \u00b7 J20.2 \u00b7 switched return Q22",
+        "Prime P12 \u00b7 J8.1 \u00b7 B2",
+        "Prime P12 \u00b7 J8.2 \u00b7 B1",
+        "Prime P12 \u00b7 J8.3 \u00b7 A2",
+        "Prime P12 \u00b7 J8.4 \u00b7 A1",
+        "Prime P12 \u00b7 J5.1 \u00b7 B2",
+        "Prime P12 \u00b7 J5.2 \u00b7 B1",
+        "Prime P12 \u00b7 J5.3 \u00b7 A2",
+        "Prime P12 \u00b7 J5.4 \u00b7 A1",
+        "Prime P12 \u00b7 J6.1 \u00b7 B2",
+        "Prime P12 \u00b7 J6.2 \u00b7 B1",
+        "Prime P12 \u00b7 J6.3 \u00b7 A2",
+        "Prime P12 \u00b7 J6.4 \u00b7 A1"
+      ],
+      "sources": [
+        [
+          "Sculpfun SF-A9 20W manual (Version A)",
+          "https://cdn.shopify.com/s/files/1/0628/0695/0066/files/SCULPFUN_SF-A9_20W_User_Manual_1.pdf?v=1780023301"
+        ],
+        [
+          "Sculpfun download center",
+          "https://www.sculpfun.com/pages/download-center"
+        ],
+        [
+          "Pololu 2133 wiring, pin names and current limits",
+          "https://www.pololu.com/product/2133/"
+        ],
+        [
+          "SF-A9 firsthand controller teardown and photographs",
+          "https://diode-laser-wiki.com/documentation/sculpfun-sf-a9/"
+        ],
+        [
+          "SF-A9 20 W manufacturer specifications",
+          "https://eu.sculpfun.com/products/sculpfun-sf-a9-20w-laser-engraving"
+        ]
+      ],
+      "wire_panels": [
+        {
+          "title": "X min limit \u00b7 signal and ground separately",
+          "nodes": [
+            {
+              "id": "core",
+              "title": "Prime P12 \u00b7 X min endstop",
+              "column": 0,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "supply_unused_24",
+                  "label": "J24.1 \u00b7 selector supply \u00b7 NC",
+                  "side": "right"
+                },
+                {
+                  "id": "signal",
+                  "label": "J24.3 \u00b7 input",
+                  "side": "right"
+                },
+                {
+                  "id": "ground",
+                  "label": "J24.2 \u00b7 GND",
+                  "side": "right"
+                }
+              ]
+            },
+            {
+              "id": "switch",
+              "title": "X min limit \u00b7 traced switch",
+              "column": 2,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "signal",
+                  "label": "Printed Xmin \u00b7 photo revision only",
+                  "side": "left"
+                },
+                {
+                  "id": "ground",
+                  "label": "Printed G \u00b7 photo revision only",
+                  "side": "left"
+                }
+              ]
+            }
+          ],
+          "edges": [
+            {
+              "from": "switch.signal",
+              "to": "core.signal",
+              "function": "X min endstop signal",
+              "check": "Trace cable with power isolated; confirm dry contact and NO/NC state. Leave selector pin 1 unused for passive switches; powered sensors require a matched interface.",
+              "state": "guess"
+            },
+            {
+              "from": "core.ground",
+              "to": "switch.ground",
+              "function": "X min endstop GND",
+              "check": "Trace cable with power isolated; confirm dry contact and NO/NC state. Leave selector pin 1 unused for passive switches; powered sensors require a matched interface.",
+              "state": "guess"
+            }
+          ],
+          "note": "Trace cable with power isolated; confirm dry contact and NO/NC state. Leave selector pin 1 unused for passive switches; powered sensors require a matched interface.",
+          "original_panel_index": 4
+        },
+        {
+          "title": "Y min limit \u00b7 signal and ground separately",
+          "nodes": [
+            {
+              "id": "core",
+              "title": "Prime P12 \u00b7 Y min endstop",
+              "column": 0,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "supply_unused_26",
+                  "label": "J26.1 \u00b7 selector supply \u00b7 NC",
+                  "side": "right"
+                },
+                {
+                  "id": "signal",
+                  "label": "J26.3 \u00b7 input",
+                  "side": "right"
+                },
+                {
+                  "id": "ground",
+                  "label": "J26.2 \u00b7 GND",
+                  "side": "right"
+                }
+              ]
+            },
+            {
+              "id": "switch",
+              "title": "Y min limit \u00b7 traced switch",
+              "column": 2,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "signal",
+                  "label": "Traced Y switch signal",
+                  "side": "left"
+                },
+                {
+                  "id": "ground",
+                  "label": "Traced Y switch return",
+                  "side": "left"
+                }
+              ]
+            }
+          ],
+          "edges": [
+            {
+              "from": "switch.signal",
+              "to": "core.signal",
+              "function": "Y min endstop signal",
+              "check": "Trace cable with power isolated; confirm dry contact and NO/NC state. Leave selector pin 1 unused for passive switches; powered sensors require a matched interface.",
+              "state": "guess"
+            },
+            {
+              "from": "core.ground",
+              "to": "switch.ground",
+              "function": "Y min endstop GND",
+              "check": "Trace cable with power isolated; confirm dry contact and NO/NC state. Leave selector pin 1 unused for passive switches; powered sensors require a matched interface.",
+              "state": "guess"
+            }
+          ],
+          "note": "Trace cable with power isolated; confirm dry contact and NO/NC state. Leave selector pin 1 unused for passive switches; powered sensors require a matched interface.",
+          "original_panel_index": 5
+        },
+        {
+          "title": "Original SF-A9 head \u00b7 laser interface must be identified",
+          "nodes": [
+            {
+              "id": "core",
+              "title": "V2 Prime P12 \u00b7 proposed signals",
+              "column": 0,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "pwm",
+                  "label": "J35.6 \u00b7 PWM candidate",
+                  "side": "right"
+                },
+                {
+                  "id": "gnd",
+                  "label": "J35.10 \u00b7 reference candidate",
+                  "side": "right"
+                }
+              ]
+            },
+            {
+              "id": "machine",
+              "title": "Retained machine peripheral",
+              "column": 2,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "command",
+                  "label": "Head command \u00b7 not source-mapped",
+                  "side": "left"
+                },
+                {
+                  "id": "ground",
+                  "label": "Head reference \u00b7 not source-mapped",
+                  "side": "left"
+                }
+              ]
+            }
+          ],
+          "edges": [
+            {
+              "from": "core.pwm",
+              "to": "machine.command",
+              "function": "J35.6 \u00b7 PWM candidate",
+              "check": "Teardown photo board 20231103 is a reference, not proof of the 20 W fitted board. Laser connector conductors are not assigned from red/black/yellow colours. Obtain matching head/controller pinout, command threshold and flame/tilt/key/E-stop circuit before laser operation.",
+              "state": "open"
+            },
+            {
+              "from": "core.gnd",
+              "to": "machine.ground",
+              "function": "J35.10 \u00b7 reference candidate",
+              "check": "Teardown photo board 20231103 is a reference, not proof of the 20 W fitted board. Laser connector conductors are not assigned from red/black/yellow colours. Obtain matching head/controller pinout, command threshold and flame/tilt/key/E-stop circuit before laser operation.",
+              "state": "open"
+            }
+          ],
+          "note": "Teardown photo board 20231103 is a reference, not proof of the 20 W fitted board. Laser connector conductors are not assigned from red/black/yellow colours. Obtain matching head/controller pinout, command threshold and flame/tilt/key/E-stop circuit before laser operation.",
+          "original_panel_index": 6
+        },
+        {
+          "title": "X max \u00b7 separately traced limit",
+          "nodes": [
+            {
+              "id": "core",
+              "title": "Prime P12 \u00b7 proposed X max",
+              "column": 0,
+              "contacts": [
+                {
+                  "id": "supply_unused_25",
+                  "label": "J25.1 \u00b7 selector supply \u00b7 NC",
+                  "side": "right"
+                },
+                {
+                  "id": "in",
+                  "label": "J25.3 \u00b7 input",
+                  "side": "right"
+                },
+                {
+                  "id": "gnd",
+                  "label": "J25.2 \u00b7 GND",
+                  "side": "right"
+                }
+              ]
+            },
+            {
+              "id": "switch",
+              "title": "X max dry-contact switch",
+              "column": 2,
+              "contacts": [
+                {
+                  "id": "in",
+                  "label": "Identified signal lead",
+                  "side": "left"
+                },
+                {
+                  "id": "gnd",
+                  "label": "Identified return lead",
+                  "side": "left"
+                }
+              ]
+            }
+          ],
+          "edges": [
+            {
+              "from": "switch.in",
+              "to": "core.in",
+              "state": "guess",
+              "function": "X max signal",
+              "check": "Firsthand SF-A9 reference reports switches at both ends. Trace this individual switch and return; combined original harness ordering is not assigned from photographs."
+            },
+            {
+              "from": "core.gnd",
+              "to": "switch.gnd",
+              "state": "guess",
+              "function": "X max GND",
+              "check": "Firsthand SF-A9 reference reports switches at both ends. Trace this individual switch and return; combined original harness ordering is not assigned from photographs."
+            }
+          ],
+          "note": "Firsthand SF-A9 reference reports switches at both ends. Trace this individual switch and return; combined original harness ordering is not assigned from photographs.",
+          "original_panel_index": 7
+        },
+        {
+          "title": "Y max \u00b7 separately traced limit",
+          "nodes": [
+            {
+              "id": "core",
+              "title": "Prime P12 \u00b7 proposed Y max",
+              "column": 0,
+              "contacts": [
+                {
+                  "id": "supply_unused_27",
+                  "label": "J27.1 \u00b7 selector supply \u00b7 NC",
+                  "side": "right"
+                },
+                {
+                  "id": "in",
+                  "label": "J27.3 \u00b7 input",
+                  "side": "right"
+                },
+                {
+                  "id": "gnd",
+                  "label": "J27.2 \u00b7 GND",
+                  "side": "right"
+                }
+              ]
+            },
+            {
+              "id": "switch",
+              "title": "Y max dry-contact switch",
+              "column": 2,
+              "contacts": [
+                {
+                  "id": "in",
+                  "label": "Identified signal lead",
+                  "side": "left"
+                },
+                {
+                  "id": "gnd",
+                  "label": "Identified return lead",
+                  "side": "left"
+                }
+              ]
+            }
+          ],
+          "edges": [
+            {
+              "from": "switch.in",
+              "to": "core.in",
+              "state": "guess",
+              "function": "Y max signal",
+              "check": "Firsthand SF-A9 reference reports switches at both ends. Trace this individual switch and return; combined original harness ordering is not assigned from photographs."
+            },
+            {
+              "from": "core.gnd",
+              "to": "switch.gnd",
+              "state": "guess",
+              "function": "Y max GND",
+              "check": "Firsthand SF-A9 reference reports switches at both ends. Trace this individual switch and return; combined original harness ordering is not assigned from photographs."
+            }
+          ],
+          "note": "Firsthand SF-A9 reference reports switches at both ends. Trace this individual switch and return; combined original harness ordering is not assigned from photographs.",
+          "original_panel_index": 8
+        },
+        {
+          "title": "Prime selected \u00b7 separate logic and motor supplies",
+          "nodes": [
+            {
+              "id": "logic",
+              "title": "Regulated 5 V logic supply",
+              "column": 0,
+              "contacts": [
+                {
+                  "id": "v",
+                  "label": "+5 V regulated",
+                  "side": "right"
+                },
+                {
+                  "id": "g",
+                  "label": "0 V logic return",
+                  "side": "right"
+                }
+              ]
+            },
+            {
+              "id": "motor",
+              "title": "Verified motor supply \u00b7 voltage/current TBD",
+              "column": 0,
+              "contacts": [
+                {
+                  "id": "v",
+                  "label": "DC + \u00b7 before fuse",
+                  "side": "right"
+                },
+                {
+                  "id": "g",
+                  "label": "0 V motor return",
+                  "side": "right"
+                }
+              ]
+            },
+            {
+              "id": "fuse",
+              "title": "Motor branch fuse \u00b7 rating selected after measurement",
+              "column": 1,
+              "contacts": [
+                {
+                  "id": "in",
+                  "label": "fuse input",
+                  "side": "left"
+                },
+                {
+                  "id": "out",
+                  "label": "fuse output",
+                  "side": "left"
+                }
+              ]
+            },
+            {
+              "id": "prime",
+              "title": "Prime P12 \u00b7 confirm exact revision",
+              "column": 2,
+              "contacts": [
+                {
+                  "id": "v5",
+                  "label": "J42.1 \u00b7 5V_PORTIN",
+                  "side": "left"
+                },
+                {
+                  "id": "lg",
+                  "label": "J42.2 \u00b7 GND",
+                  "side": "left"
+                },
+                {
+                  "id": "vm",
+                  "label": "J9.1 \u00b7 VMOT",
+                  "side": "left"
+                },
+                {
+                  "id": "mg",
+                  "label": "J9.2 \u00b7 GND",
+                  "side": "left"
+                },
+                {
+                  "id": "aux1",
+                  "label": "J10.1 \u00b7 VMOT parallel \u00b7 unused",
+                  "side": "left"
+                },
+                {
+                  "id": "aux2",
+                  "label": "J10.2 \u00b7 GND parallel \u00b7 unused",
+                  "side": "left"
+                }
+              ]
+            }
+          ],
+          "edges": [
+            {
+              "from": "logic.v",
+              "to": "prime.v5",
+              "function": "Prime regulated logic supply",
+              "state": "guess",
+              "check": "Prime alternative only. Confirm fitted P11/P12 revision, input-voltage/current limits, supply sequencing and fuse/conductor ratings. Never connect both Core external drivers and Prime winding outputs to the same motor."
+            },
+            {
+              "from": "logic.g",
+              "to": "prime.lg",
+              "function": "Prime logic supply return",
+              "state": "guess",
+              "check": "Prime alternative only. Confirm fitted P11/P12 revision, input-voltage/current limits, supply sequencing and fuse/conductor ratings. Never connect both Core external drivers and Prime winding outputs to the same motor."
+            },
+            {
+              "from": "motor.v",
+              "to": "fuse.in",
+              "function": "Protected motor branch input",
+              "state": "guess",
+              "check": "Prime alternative only. Confirm fitted P11/P12 revision, input-voltage/current limits, supply sequencing and fuse/conductor ratings. Never connect both Core external drivers and Prime winding outputs to the same motor."
+            },
+            {
+              "from": "fuse.out",
+              "to": "prime.vm",
+              "function": "Prime VMOT power",
+              "state": "guess",
+              "check": "Prime alternative only. Confirm fitted P11/P12 revision, input-voltage/current limits, supply sequencing and fuse/conductor ratings. Never connect both Core external drivers and Prime winding outputs to the same motor."
+            },
+            {
+              "from": "motor.g",
+              "to": "prime.mg",
+              "function": "Prime motor supply return",
+              "state": "guess",
+              "check": "Prime alternative only. Confirm fitted P11/P12 revision, input-voltage/current limits, supply sequencing and fuse/conductor ratings. Never connect both Core external drivers and Prime winding outputs to the same motor."
+            }
+          ],
+          "note": "This is the selected Prime P12 integrated-driver architecture. Use the current P12 PCB-derived contact labels; other board revisions require their own verified pinout and driver ratings. Use one verified power-entry arrangement; J10 parallels VMOT and is left unused here. Board ground is shared internally; route motor current directly to power distribution, not through logic wiring. Determine actual allowed voltage/current before choosing a supply; no machine-source adapter automatically qualifies.",
+          "original_panel_index": 12
+        },
+        {
+          "title": "Air-assist pump \u00b7 separate rated output stage",
+          "note": "Manufacturer manual pp.3\u20136 names air-pump port but gives no pump rating or terminal map. Identify DC/AC pump supply and installed connector before choosing a rated isolated switching stage. J20 Fan2 is a conditional DC load candidate only at matched VFET/current rating; existing laser-head command resource remains separate.",
+          "nodes": [
+            {
+              "id": "prime",
+              "title": "Prime P12 \u00b7 conditional DC pump output",
+              "column": 0,
+              "contacts": [
+                {
+                  "id": "p",
+                  "label": "J20.1 \u00b7 cutoff-switched VFET",
+                  "side": "right"
+                },
+                {
+                  "id": "m",
+                  "label": "J20.2 \u00b7 switched return Q22",
+                  "side": "right"
+                }
+              ]
+            },
+            {
+              "id": "stage",
+              "title": "Rated pump protection/interface \u00b7 identify load",
+              "column": 1,
+              "contacts": [
+                {
+                  "id": "p",
+                  "label": "Pump-stage supply +",
+                  "side": "left"
+                },
+                {
+                  "id": "m",
+                  "label": "Pump-stage switched return",
+                  "side": "left"
+                }
+              ]
+            },
+            {
+              "id": "pump",
+              "title": "Original SF-A9 air pump \u00b7 label/rating required",
+              "column": 2,
+              "contacts": [
+                {
+                  "id": "p",
+                  "label": "Identify pump supply lead",
+                  "side": "left"
+                },
+                {
+                  "id": "m",
+                  "label": "Identify pump return lead",
+                  "side": "left"
+                }
+              ]
+            }
+          ],
+          "edges": [
+            {
+              "from": "prime.p",
+              "to": "stage.p",
+              "function": "Conditional pump power-stage supply",
+              "state": "open"
+            },
+            {
+              "from": "prime.m",
+              "to": "stage.m",
+              "function": "Conditional pump power-stage return",
+              "state": "open"
+            },
+            {
+              "from": "stage.p",
+              "to": "pump.p",
+              "function": "Rated air-pump supply",
+              "state": "open"
+            },
+            {
+              "from": "stage.m",
+              "to": "pump.m",
+              "function": "Rated air-pump return",
+              "state": "open"
+            }
+          ],
+          "original_panel_index": null,
+          "evidence_sources": [
+            {
+              "title": "Sculpfun SF-A9 20W manual (Version A)",
+              "url": "https://cdn.shopify.com/s/files/1/0628/0695/0066/files/SCULPFUN_SF-A9_20W_User_Manual_1.pdf?v=1780023301",
+              "claim": "Documents the machine component/function; new interface wiring requires the stated fitted-device checks."
+            }
+          ]
+        },
+        {
+          "title": "Optional rotary accessory \u00b7 fourth onboard motor channel",
+          "note": "Manufacturer package names rotary-axis motor cable. Fitted rotary attachment is not established. Prime J8 phases are a candidate only after motor winding pairs/current, cable contacts, motor power and rotary firmware mode are identified. Do not connect an independent fourth axis at the same time as a conflicting resource.",
+          "nodes": [
+            {
+              "id": "prime",
+              "title": "Prime P12 \u00b7 motor channel D",
+              "column": 0,
+              "contacts": [
+                {
+                  "id": "1",
+                  "label": "J8.1 \u00b7 B2",
+                  "side": "right"
+                },
+                {
+                  "id": "2",
+                  "label": "J8.2 \u00b7 B1",
+                  "side": "right"
+                },
+                {
+                  "id": "3",
+                  "label": "J8.3 \u00b7 A2",
+                  "side": "right"
+                },
+                {
+                  "id": "4",
+                  "label": "J8.4 \u00b7 A1",
+                  "side": "right"
+                }
+              ]
+            },
+            {
+              "id": "rotary",
+              "title": "Optional rotary motor \u00b7 measured winding identities",
+              "column": 2,
+              "contacts": [
+                {
+                  "id": "1",
+                  "label": "B winding lead 2",
+                  "side": "left"
+                },
+                {
+                  "id": "2",
+                  "label": "B winding lead 1",
+                  "side": "left"
+                },
+                {
+                  "id": "3",
+                  "label": "A winding lead 2",
+                  "side": "left"
+                },
+                {
+                  "id": "4",
+                  "label": "A winding lead 1",
+                  "side": "left"
+                }
+              ]
+            }
+          ],
+          "edges": [
+            {
+              "from": "prime.1",
+              "to": "rotary.1",
+              "function": "Rotary measured winding conductor 1",
+              "state": "guess",
+              "electrical_role": "power"
+            },
+            {
+              "from": "prime.2",
+              "to": "rotary.2",
+              "function": "Rotary measured winding conductor 2",
+              "state": "guess",
+              "electrical_role": "power"
+            },
+            {
+              "from": "prime.3",
+              "to": "rotary.3",
+              "function": "Rotary measured winding conductor 3",
+              "state": "guess",
+              "electrical_role": "power"
+            },
+            {
+              "from": "prime.4",
+              "to": "rotary.4",
+              "function": "Rotary measured winding conductor 4",
+              "state": "guess",
+              "electrical_role": "power"
+            }
+          ],
+          "original_panel_index": null,
+          "evidence_sources": [
+            {
+              "title": "Sculpfun SF-A9 20W manual (Version A)",
+              "url": "https://cdn.shopify.com/s/files/1/0628/0695/0066/files/SCULPFUN_SF-A9_20W_User_Manual_1.pdf?v=1780023301",
+              "claim": "Documents the machine component/function; new interface wiring requires the stated fitted-device checks."
+            }
+          ]
+        },
+        {
+          "title": "Laser-head power and independent flame/tilt/key/E-stop inhibition",
+          "note": "Manual names mounted head, key switch and E-stop. The teardown reports integrated flame/tilt logic; exact fitted board/head revision and internal safety signalling remain unresolved. Retain the original hardware inhibition functions; replacing controller firmware must not silently remove them.",
+          "nodes": [
+            {
+              "id": "power",
+              "title": "Verified laser-head fused supply \u00b7 rating unknown",
+              "column": 0,
+              "contacts": [
+                {
+                  "id": "p",
+                  "label": "Head supply +",
+                  "side": "right"
+                },
+                {
+                  "id": "m",
+                  "label": "Head power return",
+                  "side": "right"
+                }
+              ]
+            },
+            {
+              "id": "head",
+              "title": "Original SF-A9 laser head \u00b7 exact connector needed",
+              "column": 2,
+              "contacts": [
+                {
+                  "id": "p",
+                  "label": "Identify head power +",
+                  "side": "left"
+                },
+                {
+                  "id": "m",
+                  "label": "Identify head power return",
+                  "side": "left"
+                },
+                {
+                  "id": "safe",
+                  "label": "Identify flame/tilt inhibition interface",
+                  "side": "left"
+                }
+              ]
+            },
+            {
+              "id": "stop",
+              "title": "Key + E-stop + flame/tilt hardware chain",
+              "column": 0,
+              "contacts": [
+                {
+                  "id": "in",
+                  "label": "Identify independent inhibition input",
+                  "side": "right"
+                },
+                {
+                  "id": "return",
+                  "label": "Identify inhibition return",
+                  "side": "right"
+                }
+              ]
+            }
+          ],
+          "edges": [
+            {
+              "from": "power.p",
+              "to": "head.p",
+              "function": "Laser-head stage supply",
+              "state": "open"
+            },
+            {
+              "from": "power.m",
+              "to": "head.m",
+              "function": "Laser-head power return",
+              "state": "open"
+            },
+            {
+              "from": "stop.in",
+              "to": "head.safe",
+              "function": "Independent laser inhibition chain",
+              "state": "open"
+            }
+          ],
+          "original_panel_index": null,
+          "evidence_sources": [
+            {
+              "title": "Sculpfun SF-A9 20W manual (Version A)",
+              "url": "https://cdn.shopify.com/s/files/1/0628/0695/0066/files/SCULPFUN_SF-A9_20W_User_Manual_1.pdf?v=1780023301",
+              "claim": "Documents the machine component/function; new interface wiring requires the stated fitted-device checks."
+            }
+          ]
+        },
+        {
+          "title": "X motor \u00b7 Prime onboard channel A \u00b7 measured winding pairs",
+          "note": "Proposed X axis assignment to Prime channel A. PCB source establishes J5 pin 1 B2, pin 2 B1, pin 3 A2, pin 4 A1. Identify the actual motor winding pairs by continuity with power disconnected; machine connector cavity numbers and colours are not established. Confirm motor current, onboard driver rating and firmware axis mapping before installation. Never connect these winding outputs to a laser or logic input.",
+          "nodes": [
+            {
+              "id": "prime",
+              "title": "Prime P12 \u00b7 motor channel A",
+              "column": 0,
+              "contacts": [
+                {
+                  "id": "1",
+                  "label": "J5.1 \u00b7 B2",
+                  "side": "right"
+                },
+                {
+                  "id": "2",
+                  "label": "J5.2 \u00b7 B1",
+                  "side": "right"
+                },
+                {
+                  "id": "3",
+                  "label": "J5.3 \u00b7 A2",
+                  "side": "right"
+                },
+                {
+                  "id": "4",
+                  "label": "J5.4 \u00b7 A1",
+                  "side": "right"
+                }
+              ]
+            },
+            {
+              "id": "motor",
+              "title": "X motor \u00b7 measured winding identities",
+              "column": 2,
+              "contacts": [
+                {
+                  "id": "1",
+                  "label": "B winding lead 2",
+                  "side": "left"
+                },
+                {
+                  "id": "2",
+                  "label": "B winding lead 1",
+                  "side": "left"
+                },
+                {
+                  "id": "3",
+                  "label": "A winding lead 2",
+                  "side": "left"
+                },
+                {
+                  "id": "4",
+                  "label": "A winding lead 1",
+                  "side": "left"
+                }
+              ]
+            }
+          ],
+          "edges": [
+            {
+              "from": "prime.1",
+              "to": "motor.1",
+              "function": "X motor measured winding conductor 1",
+              "state": "guess",
+              "check": "Proposed X axis assignment to Prime channel A. PCB source establishes J5 pin 1 B2, pin 2 B1, pin 3 A2, pin 4 A1. Identify the actual motor winding pairs by continuity with power disconnected; machine connector cavity numbers and colours are not established. Confirm motor current, onboard driver rating and firmware axis mapping before installation. Never connect these winding outputs to a laser or logic input.",
+              "electrical_role": "power"
+            },
+            {
+              "from": "prime.2",
+              "to": "motor.2",
+              "function": "X motor measured winding conductor 2",
+              "state": "guess",
+              "check": "Proposed X axis assignment to Prime channel A. PCB source establishes J5 pin 1 B2, pin 2 B1, pin 3 A2, pin 4 A1. Identify the actual motor winding pairs by continuity with power disconnected; machine connector cavity numbers and colours are not established. Confirm motor current, onboard driver rating and firmware axis mapping before installation. Never connect these winding outputs to a laser or logic input.",
+              "electrical_role": "power"
+            },
+            {
+              "from": "prime.3",
+              "to": "motor.3",
+              "function": "X motor measured winding conductor 3",
+              "state": "guess",
+              "check": "Proposed X axis assignment to Prime channel A. PCB source establishes J5 pin 1 B2, pin 2 B1, pin 3 A2, pin 4 A1. Identify the actual motor winding pairs by continuity with power disconnected; machine connector cavity numbers and colours are not established. Confirm motor current, onboard driver rating and firmware axis mapping before installation. Never connect these winding outputs to a laser or logic input.",
+              "electrical_role": "power"
+            },
+            {
+              "from": "prime.4",
+              "to": "motor.4",
+              "function": "X motor measured winding conductor 4",
+              "state": "guess",
+              "check": "Proposed X axis assignment to Prime channel A. PCB source establishes J5 pin 1 B2, pin 2 B1, pin 3 A2, pin 4 A1. Identify the actual motor winding pairs by continuity with power disconnected; machine connector cavity numbers and colours are not established. Confirm motor current, onboard driver rating and firmware axis mapping before installation. Never connect these winding outputs to a laser or logic input.",
+              "electrical_role": "power"
+            }
+          ],
+          "original_panel_index": null,
+          "evidence_sources": [
+            {
+              "title": "Sculpfun SF-A9 20W manual (Version A)",
+              "url": "https://cdn.shopify.com/s/files/1/0628/0695/0066/files/SCULPFUN_SF-A9_20W_User_Manual_1.pdf?v=1780023301",
+              "claim": "Documents the machine component/function; new interface wiring requires the stated fitted-device checks."
+            },
+            {
+              "title": "Prime P12 PCB at pinned revision 7dc4f9a",
+              "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/smoothiev2-prime.kicad_pcb",
+              "claim": "J5 physical pads establish B2, B1, A2, A1 in positions 1\u20134. Axis mapping and fitted machine cable positions remain proposals."
+            }
+          ]
+        },
+        {
+          "title": "Y motor \u00b7 Prime onboard channel B \u00b7 measured winding pairs",
+          "note": "Proposed Y axis assignment to Prime channel B. PCB source establishes J6 pin 1 B2, pin 2 B1, pin 3 A2, pin 4 A1. Identify the actual motor winding pairs by continuity with power disconnected; machine connector cavity numbers and colours are not established. Confirm motor current, onboard driver rating and firmware axis mapping before installation. Never connect these winding outputs to a laser or logic input.",
+          "nodes": [
+            {
+              "id": "prime",
+              "title": "Prime P12 \u00b7 motor channel B",
+              "column": 0,
+              "contacts": [
+                {
+                  "id": "1",
+                  "label": "J6.1 \u00b7 B2",
+                  "side": "right"
+                },
+                {
+                  "id": "2",
+                  "label": "J6.2 \u00b7 B1",
+                  "side": "right"
+                },
+                {
+                  "id": "3",
+                  "label": "J6.3 \u00b7 A2",
+                  "side": "right"
+                },
+                {
+                  "id": "4",
+                  "label": "J6.4 \u00b7 A1",
+                  "side": "right"
+                }
+              ]
+            },
+            {
+              "id": "motor",
+              "title": "Y motor \u00b7 measured winding identities",
+              "column": 2,
+              "contacts": [
+                {
+                  "id": "1",
+                  "label": "B winding lead 2",
+                  "side": "left"
+                },
+                {
+                  "id": "2",
+                  "label": "B winding lead 1",
+                  "side": "left"
+                },
+                {
+                  "id": "3",
+                  "label": "A winding lead 2",
+                  "side": "left"
+                },
+                {
+                  "id": "4",
+                  "label": "A winding lead 1",
+                  "side": "left"
+                }
+              ]
+            }
+          ],
+          "edges": [
+            {
+              "from": "prime.1",
+              "to": "motor.1",
+              "function": "Y motor measured winding conductor 1",
+              "state": "guess",
+              "check": "Proposed Y axis assignment to Prime channel B. PCB source establishes J6 pin 1 B2, pin 2 B1, pin 3 A2, pin 4 A1. Identify the actual motor winding pairs by continuity with power disconnected; machine connector cavity numbers and colours are not established. Confirm motor current, onboard driver rating and firmware axis mapping before installation. Never connect these winding outputs to a laser or logic input.",
+              "electrical_role": "power"
+            },
+            {
+              "from": "prime.2",
+              "to": "motor.2",
+              "function": "Y motor measured winding conductor 2",
+              "state": "guess",
+              "check": "Proposed Y axis assignment to Prime channel B. PCB source establishes J6 pin 1 B2, pin 2 B1, pin 3 A2, pin 4 A1. Identify the actual motor winding pairs by continuity with power disconnected; machine connector cavity numbers and colours are not established. Confirm motor current, onboard driver rating and firmware axis mapping before installation. Never connect these winding outputs to a laser or logic input.",
+              "electrical_role": "power"
+            },
+            {
+              "from": "prime.3",
+              "to": "motor.3",
+              "function": "Y motor measured winding conductor 3",
+              "state": "guess",
+              "check": "Proposed Y axis assignment to Prime channel B. PCB source establishes J6 pin 1 B2, pin 2 B1, pin 3 A2, pin 4 A1. Identify the actual motor winding pairs by continuity with power disconnected; machine connector cavity numbers and colours are not established. Confirm motor current, onboard driver rating and firmware axis mapping before installation. Never connect these winding outputs to a laser or logic input.",
+              "electrical_role": "power"
+            },
+            {
+              "from": "prime.4",
+              "to": "motor.4",
+              "function": "Y motor measured winding conductor 4",
+              "state": "guess",
+              "check": "Proposed Y axis assignment to Prime channel B. PCB source establishes J6 pin 1 B2, pin 2 B1, pin 3 A2, pin 4 A1. Identify the actual motor winding pairs by continuity with power disconnected; machine connector cavity numbers and colours are not established. Confirm motor current, onboard driver rating and firmware axis mapping before installation. Never connect these winding outputs to a laser or logic input.",
+              "electrical_role": "power"
+            }
+          ],
+          "original_panel_index": null,
+          "evidence_sources": [
+            {
+              "title": "Sculpfun SF-A9 20W manual (Version A)",
+              "url": "https://cdn.shopify.com/s/files/1/0628/0695/0066/files/SCULPFUN_SF-A9_20W_User_Manual_1.pdf?v=1780023301",
+              "claim": "Documents the machine component/function; new interface wiring requires the stated fitted-device checks."
+            },
+            {
+              "title": "Prime P12 PCB at pinned revision 7dc4f9a",
+              "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/smoothiev2-prime.kicad_pcb",
+              "claim": "J6 physical pads establish B2, B1, A2, A1 in positions 1\u20134. Axis mapping and fitted machine cable positions remain proposals."
+            }
+          ]
+        }
+      ],
+      "parts": [
+        "The following are the depicted retained, required or unresolved peripherals; a drawing label does not establish fitment or electrical compatibility. Select ratings and installed revisions from the per-connection evidence.",
+        "X min limit \u00b7 traced switch",
+        "Y min limit \u00b7 traced switch",
+        "Retained machine peripheral",
+        "X max dry-contact switch",
+        "Y max dry-contact switch",
+        "Regulated 5 V logic supply",
+        "Verified motor supply \u00b7 voltage/current TBD",
+        "Motor branch fuse \u00b7 rating selected after measurement",
+        "Rated pump protection/interface \u00b7 identify load",
+        "Original SF-A9 air pump \u00b7 label/rating required",
+        "Optional rotary motor \u00b7 measured winding identities",
+        "Verified laser-head fused supply \u00b7 rating unknown",
+        "Original SF-A9 laser head \u00b7 exact connector needed",
+        "Key + E-stop + flame/tilt hardware chain",
+        "X motor \u00b7 measured winding identities",
+        "Y motor \u00b7 measured winding identities"
+      ],
+      "instructions": [
+        "Match the actual machine and controller revisions, trace the unpowered harness and verify all signal/reference, power and independent safety boundaries before energising. Follow the current connection IDs rather than the superseded architecture prose.",
+        "X min limit \u00b7 signal and ground separately: Trace cable with power isolated; confirm dry contact and NO/NC state. Leave selector pin 1 unused for passive switches; powered sensors require a matched interface.",
+        "Y min limit \u00b7 signal and ground separately: Trace cable with power isolated; confirm dry contact and NO/NC state. Leave selector pin 1 unused for passive switches; powered sensors require a matched interface.",
+        "Original SF-A9 head \u00b7 laser interface must be identified: Teardown photo board 20231103 is a reference, not proof of the 20 W fitted board. Laser connector conductors are not assigned from red/black/yellow colours. Obtain matching head/controller pinout, command threshold and flame/tilt/key/E-stop circuit before laser operation.",
+        "X max \u00b7 separately traced limit: Firsthand SF-A9 reference reports switches at both ends. Trace this individual switch and return; combined original harness ordering is not assigned from photographs.",
+        "Y max \u00b7 separately traced limit: Firsthand SF-A9 reference reports switches at both ends. Trace this individual switch and return; combined original harness ordering is not assigned from photographs.",
+        "Prime selected \u00b7 separate logic and motor supplies: This is the selected Prime P12 integrated-driver architecture. Use the current P12 PCB-derived contact labels; other board revisions require their own verified pinout and driver ratings. Use one verified power-entry arrangement; J10 parallels VMOT and is left unused here. Board ground is shared internally; route motor current directly to power distribution, not through logic wiring. Determine actual allowed voltage/current before choosing a supply; no machine-source adapter automatically qualifies.",
+        "Air-assist pump \u00b7 separate rated output stage: Manufacturer manual pp.3\u20136 names air-pump port but gives no pump rating or terminal map. Identify DC/AC pump supply and installed connector before choosing a rated isolated switching stage. J20 Fan2 is a conditional DC load candidate only at matched VFET/current rating; existing laser-head command resource remains separate.",
+        "Optional rotary accessory \u00b7 fourth onboard motor channel: Manufacturer package names rotary-axis motor cable. Fitted rotary attachment is not established. Prime J8 phases are a candidate only after motor winding pairs/current, cable contacts, motor power and rotary firmware mode are identified. Do not connect an independent fourth axis at the same time as a conflicting resource.",
+        "Laser-head power and independent flame/tilt/key/E-stop inhibition: Manual names mounted head, key switch and E-stop. The teardown reports integrated flame/tilt logic; exact fitted board/head revision and internal safety signalling remain unresolved. Retain the original hardware inhibition functions; replacing controller firmware must not silently remove them.",
+        "X motor \u00b7 Prime onboard channel A \u00b7 measured winding pairs: Proposed X axis assignment to Prime channel A. PCB source establishes J5 pin 1 B2, pin 2 B1, pin 3 A2, pin 4 A1. Identify the actual motor winding pairs by continuity with power disconnected; machine connector cavity numbers and colours are not established. Confirm motor current, onboard driver rating and firmware axis mapping before installation. Never connect these winding outputs to a laser or logic input.",
+        "Y motor \u00b7 Prime onboard channel B \u00b7 measured winding pairs: Proposed Y axis assignment to Prime channel B. PCB source establishes J6 pin 1 B2, pin 2 B1, pin 3 A2, pin 4 A1. Identify the actual motor winding pairs by continuity with power disconnected; machine connector cavity numbers and colours are not established. Confirm motor current, onboard driver rating and firmware axis mapping before installation. Never connect these winding outputs to a laser or logic input."
+      ],
+      "target_options": {
+        "core": "Historical alternative: Core P1 logic with external drivers; it is not the selected Prime main wiring. Use only when measured motor current and supply fit the carrier; otherwise select a suitably rated driver and redraw its exact terminals.",
+        "prime": "Selected main reference: Prime P12 integrated X/Y winding outputs J5/J6, with individually traced limits and separate unresolved laser/pump interfaces. Match motor winding pairs/current, power and firmware mapping; optional rotary remains separately qualified.",
+        "smoothiebox": "A separate SmoothieBox conversion requires an explicitly qualified exterior-contact and driver interface design. The selected main drawing uses Prime P12 directly; do not infer board-to-case harness contacts or move motor phases to logic inputs."
+      },
+      "controller_title": "Smoothieboard V2 Prime",
+      "selected_controller": "prime",
+      "classification_note": "Original motion-driver electronics are on the board being replaced. Use Prime integrated phase outputs directly to measured winding pairs; do not connect STEP/DIR signal outputs to motor windings. Confirm installed board, motor current and power rating from the cited machine source.",
+      "historical_architecture": {
+        "status": "Superseded architecture prose; retained verbatim. Core/external-driver alternatives here are older conditional options, not instructions for the selected current main diagram.",
+        "fields": {
+          "target": "V2 Core + external axis drivers; retain the identified laser controller only after its exact revision is confirmed.",
+          "plan": "The motion replacement is now an individual-conductor Core-to-driver-to-motor plan, including both motor coils and separate supply/return circuits. Manufacturer 20 W supply reference is 24 V/7 A; total replacement load capacity must still be measured. Original head command and integrated flame/tilt safety are not electrically documented, so the specific laser boundary stays disconnected rather than inventing a pin map.",
+          "circuits": [
+            [
+              "Core P1 J5 pin 16 \u00b7 /STEP_A \u00b7 candidate X STEP",
+              "Select rated external driver; verify logic threshold, timing, power stage and reference",
+              "X external driver input; controller revision unknown STEP",
+              "[OPEN] No installed/matching external-driver input terminals or complete harness are established by the cited source."
+            ],
+            [
+              "Core P1 J5 pin 18 \u00b7 /DIR_A \u00b7 candidate X DIR",
+              "Select rated external driver; verify logic threshold, timing, power stage and reference",
+              "X external driver input; controller revision unknown DIR",
+              "[OPEN] No installed/matching external-driver input terminals or complete harness are established by the cited source."
+            ],
+            [
+              "Core P1 J5 pin 22 \u00b7 /STEP_B \u00b7 candidate Y STEP",
+              "Select rated external driver; verify logic threshold, timing, power stage and reference",
+              "Y external driver input; controller revision unknown STEP",
+              "[OPEN] No installed/matching external-driver input terminals or complete harness are established by the cited source."
+            ],
+            [
+              "Core P1 J5 pin 24 \u00b7 /DIR_B \u00b7 candidate Y DIR",
+              "Select rated external driver; verify logic threshold, timing, power stage and reference",
+              "Y external driver input; controller revision unknown DIR",
+              "[OPEN] No installed/matching external-driver input terminals or complete harness are established by the cited source."
+            ],
+            [
+              "V2 Core laser PWM / enable\nexact output pin TBD",
+              "Required isolated / level-matched interface\nnot specified by manual",
+              "SF-A9 laser controller input\nterminal and polarity unknown",
+              "[OPEN] BLOCKED: manual does not expose laser command terminals"
+            ],
+            [
+              "Existing key / E-stop chain",
+              "Retain independent hardware chain\ninspect actual machine",
+              "Laser enable / power interlock",
+              "[OPEN] Do not replace with firmware control; source does not show circuit"
+            ]
+          ],
+          "pins": [
+            "Manual labels: USB data via CH340; air-pump interface and cord; power interface; key switch; emergency stop; antenna.",
+            "Controller board connector pins, laser-head pins, stepper driver pins, sensor signal/return and supply pins are not published in the cited manual; each remains individually unassigned pending exact-board documentation.",
+            "Core P1 J5 signal pin assignments for this proposed driver option are listed per conductor in the main diagram; the full carrier and machine-side contact inventories remain in the retained contact reference. The A\u2013D channel-to-machine-axis pairings shown as proposals must be set in configuration and verified at the exact machine revision."
+          ],
+          "parts": [
+            "A separate documented driver per motor, branch fuses and enclosed terminal distribution; never connect Core STEP/DIR pins to motor windings.",
+            "Identify each winding pair by continuity with power isolated. Label the newly terminated leads A1/A2/B1/B2; do not infer original cavity numbering or wire colours.",
+            "Core logic power: regulated 5 V to J42.1, return to J42.2, with exact board revision and supply-path checks. Motor power uses its own fused distribution."
+          ],
+          "instructions": [
+            "Photograph nameplates, connector orientation and existing safety wiring before disconnecting anything. Match the fitted board revision to the linked hardware source.",
+            "Disconnect the old motor-controller outputs before connecting the new drivers. Identify each coil pair and trace every endstop signal and return.",
+            "Set driver current from the motor rating, verify supplies and pull-ups, and configure channels and enable polarity. Initial MODE pins open means full step; update firmware steps/mm when selecting microsteps.",
+            "With process power disconnected, verify reset keeps drives disabled, test one motor at a time, then check endstop status, homing direction and travel. Enable the process only after its separate interface and hardware safety chain are proven."
+          ]
+        }
+      },
+      "conditional_complete_figures": [],
+      "conditional_source_figures": [
+        {
+          "id": "optional-rotary-fourth-channel-open-boundary",
+          "title": "Optional rotary accessory \u00b7 unresolved fourth motor channel",
+          "panel_indices": [
+            7
+          ],
+          "status": "open-boundary",
+          "requires": "Only if a rotary attachment is fitted. The four candidate phase edges are GUESS; identify the fitted attachment, motor winding/current requirements, cable contacts and firmware resource. This is an OPEN boundary reference, not a complete wiring diagram."
+        }
+      ]
+    },
+    "retrofit-guides.json": {
+      "id": "wiki-205",
+      "title": "Sculpfun SF-A9 diode laser",
+      "target": "V2 Core + external axis drivers; retain the identified laser controller only after its exact revision is confirmed.",
+      "plan": "The motion replacement is now an individual-conductor Core-to-driver-to-motor plan, including both motor coils and separate supply/return circuits. Manufacturer 20 W supply reference is 24 V/7 A; total replacement load capacity must still be measured. Original head command and integrated flame/tilt safety are not electrically documented, so the specific laser boundary stays disconnected rather than inventing a pin map.",
+      "circuits": [
+        [
+          "Core P1 J5 pin 16 \u00b7 /STEP_A \u00b7 candidate X STEP",
+          "Select rated external driver; verify logic threshold, timing, power stage and reference",
+          "X external driver input; controller revision unknown STEP",
+          "[OPEN] No installed/matching external-driver input terminals or complete harness are established by the cited source."
+        ],
+        [
+          "Core P1 J5 pin 18 \u00b7 /DIR_A \u00b7 candidate X DIR",
+          "Select rated external driver; verify logic threshold, timing, power stage and reference",
+          "X external driver input; controller revision unknown DIR",
+          "[OPEN] No installed/matching external-driver input terminals or complete harness are established by the cited source."
+        ],
+        [
+          "Core P1 J5 pin 22 \u00b7 /STEP_B \u00b7 candidate Y STEP",
+          "Select rated external driver; verify logic threshold, timing, power stage and reference",
+          "Y external driver input; controller revision unknown STEP",
+          "[OPEN] No installed/matching external-driver input terminals or complete harness are established by the cited source."
+        ],
+        [
+          "Core P1 J5 pin 24 \u00b7 /DIR_B \u00b7 candidate Y DIR",
+          "Select rated external driver; verify logic threshold, timing, power stage and reference",
+          "Y external driver input; controller revision unknown DIR",
+          "[OPEN] No installed/matching external-driver input terminals or complete harness are established by the cited source."
+        ],
+        [
+          "V2 Core laser PWM / enable\nexact output pin TBD",
+          "Required isolated / level-matched interface\nnot specified by manual",
+          "SF-A9 laser controller input\nterminal and polarity unknown",
+          "[OPEN] BLOCKED: manual does not expose laser command terminals"
+        ],
+        [
+          "Existing key / E-stop chain",
+          "Retain independent hardware chain\ninspect actual machine",
+          "Laser enable / power interlock",
+          "[OPEN] Do not replace with firmware control; source does not show circuit"
+        ]
+      ],
+      "pins": [
+        "Manual labels: USB data via CH340; air-pump interface and cord; power interface; key switch; emergency stop; antenna.",
+        "Controller board connector pins, laser-head pins, stepper driver pins, sensor signal/return and supply pins are not published in the cited manual; each remains individually unassigned pending exact-board documentation.",
+        "Core P1 J5 signal pin assignments for this proposed driver option are listed per conductor in the main diagram; the full carrier and machine-side contact inventories remain in the retained contact reference. The A\u2013D channel-to-machine-axis pairings shown as proposals must be set in configuration and verified at the exact machine revision."
+      ],
+      "sources": [
+        [
+          "Sculpfun SF-A9 20W manual (Version A)",
+          "https://cdn.shopify.com/s/files/1/0628/0695/0066/files/SCULPFUN_SF-A9_20W_User_Manual_1.pdf?v=1780023301"
+        ],
+        [
+          "Sculpfun download center",
+          "https://www.sculpfun.com/pages/download-center"
+        ],
+        [
+          "Pololu 2133 wiring, pin names and current limits",
+          "https://www.pololu.com/product/2133/"
+        ],
+        [
+          "SF-A9 firsthand controller teardown and photographs",
+          "https://diode-laser-wiki.com/documentation/sculpfun-sf-a9/"
+        ],
+        [
+          "SF-A9 20 W manufacturer specifications",
+          "https://eu.sculpfun.com/products/sculpfun-sf-a9-20w-laser-engraving"
+        ]
+      ],
+      "wire_panels": [
+        {
+          "title": "Controller logic supply \u00b7 separate from motor power",
+          "nodes": [
+            {
+              "id": "supply",
+              "title": "Regulated logic distribution",
+              "column": 0,
+              "contacts": [
+                {
+                  "id": "v5",
+                  "label": "+5 V regulated",
+                  "side": "right"
+                },
+                {
+                  "id": "return",
+                  "label": "0 V logic return",
+                  "side": "right"
+                }
+              ]
+            },
+            {
+              "id": "core",
+              "title": "Core P1 \u00b7 logic power",
+              "column": 1,
+              "contacts": [
+                {
+                  "id": "v5",
+                  "label": "J42.1 \u00b7 5V input",
+                  "side": "left"
+                },
+                {
+                  "id": "gnd",
+                  "label": "J42.2 \u00b7 GND",
+                  "side": "left"
+                }
+              ]
+            }
+          ],
+          "edges": [
+            {
+              "from": "supply.v5",
+              "to": "core.v5",
+              "state": "guess",
+              "function": "Core 5 V power",
+              "check": "Verify exact board supply path and rail ratings; motor current uses separate wiring and fuses."
+            },
+            {
+              "from": "supply.return",
+              "to": "core.gnd",
+              "state": "guess",
+              "function": "Core supply return",
+              "check": "Verify exact board supply path and rail ratings; motor current uses separate wiring and fuses."
+            }
+          ],
+          "note": "Verify exact board supply path and rail ratings; motor current uses separate wiring and fuses."
+        },
+        {
+          "title": "Shared driver enable bias \u00b7 inactive at reset",
+          "nodes": [
+            {
+              "id": "core",
+              "title": "Core P1 \u00b7 all selected DRV8825 enables",
+              "column": 0,
+              "contacts": [
+                {
+                  "id": "v33",
+                  "label": "J5.10 \u00b7 3V3",
+                  "side": "right"
+                },
+                {
+                  "id": "en",
+                  "label": "J5.13 \u00b7 shared MOT_EN",
+                  "side": "right"
+                }
+              ]
+            },
+            {
+              "id": "r_enable",
+              "title": "R_EN \u00b7 4.7 k\u03a9 pull-up",
+              "column": 1,
+              "contacts": [
+                {
+                  "id": "a",
+                  "label": "terminal A",
+                  "side": "left"
+                },
+                {
+                  "id": "b",
+                  "label": "terminal B",
+                  "side": "left"
+                }
+              ]
+            }
+          ],
+          "edges": [
+            {
+              "from": "core.v33",
+              "to": "r_enable.a",
+              "function": "Enable pull-up supply",
+              "check": "Use 3V3 only; check total enable pin pull-down load.",
+              "state": "guess"
+            },
+            {
+              "from": "r_enable.b",
+              "to": "core.en",
+              "function": "Disable drivers while GPIO floats",
+              "check": "DRV8825 ENBL active LOW. Verify loaded high level and firmware reset/startup; GPIO must actively drive correct polarity.",
+              "state": "guess"
+            }
+          ],
+          "note": "One pull-up is fitted to the shared enable net, not one independently switched enable per motor. Each driver ENBL connection is shown in its axis panel. If the loaded voltage cannot meet the datasheet high threshold, redesign bias before connecting motors. Proposed 4.7 k\u03a9 bias improves high-level margin against the combined driver input pull-downs; verify actual datasheet limits, rail tolerance and all connected drivers. The Core GPIO must sink the combined bias current safely."
+        },
+        {
+          "title": "X \u00b7 command, driver and all four motor leads",
+          "nodes": [
+            {
+              "id": "core",
+              "title": "V2 Core P1 \u00b7 X assignment",
+              "column": 0,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "step",
+                  "label": "J5.16 \u00b7 X STEP",
+                  "side": "right"
+                },
+                {
+                  "id": "dir",
+                  "label": "J5.18 \u00b7 X DIR",
+                  "side": "right"
+                },
+                {
+                  "id": "gnd",
+                  "label": "J5.20 \u00b7 signal GND",
+                  "side": "right"
+                },
+                {
+                  "id": "v33",
+                  "label": "J5.10 \u00b7 3V3",
+                  "side": "right"
+                },
+                {
+                  "id": "enable",
+                  "label": "J5.13 \u00b7 shared MOT_EN",
+                  "side": "right"
+                }
+              ]
+            },
+            {
+              "id": "driver",
+              "title": "Pololu 2133 \u00b7 DRV8825",
+              "column": 1,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "step",
+                  "label": "STEP",
+                  "side": "left"
+                },
+                {
+                  "id": "dir",
+                  "label": "DIR",
+                  "side": "left"
+                },
+                {
+                  "id": "gnd",
+                  "label": "GND \u00b7 logic",
+                  "side": "left"
+                },
+                {
+                  "id": "rst",
+                  "label": "RESET",
+                  "side": "left"
+                },
+                {
+                  "id": "slp",
+                  "label": "SLEEP",
+                  "side": "left"
+                },
+                {
+                  "id": "en",
+                  "label": "ENBL",
+                  "side": "left"
+                },
+                {
+                  "id": "m0",
+                  "label": "MODE0 \u00b7 NC / full step",
+                  "side": "left"
+                },
+                {
+                  "id": "m1",
+                  "label": "MODE1 \u00b7 NC / full step",
+                  "side": "left"
+                },
+                {
+                  "id": "m2",
+                  "label": "MODE2 \u00b7 NC / full step",
+                  "side": "left"
+                },
+                {
+                  "id": "a1",
+                  "label": "A1",
+                  "side": "right"
+                },
+                {
+                  "id": "a2",
+                  "label": "A2",
+                  "side": "right"
+                },
+                {
+                  "id": "b1",
+                  "label": "B1",
+                  "side": "right"
+                },
+                {
+                  "id": "b2",
+                  "label": "B2",
+                  "side": "right"
+                },
+                {
+                  "id": "vmot",
+                  "label": "VMOT",
+                  "side": "right"
+                },
+                {
+                  "id": "pgnd",
+                  "label": "GND \u00b7 motor",
+                  "side": "right"
+                },
+                {
+                  "id": "fault",
+                  "label": "FAULT \u00b7 unused output",
+                  "side": "right"
+                }
+              ]
+            },
+            {
+              "id": "motor",
+              "title": "X motor \u00b7 newly identified leads",
+              "column": 2,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "a1",
+                  "label": "Winding A \u00b7 lead 1",
+                  "side": "left"
+                },
+                {
+                  "id": "a2",
+                  "label": "Winding A \u00b7 lead 2",
+                  "side": "left"
+                },
+                {
+                  "id": "b1",
+                  "label": "Winding B \u00b7 lead 1",
+                  "side": "left"
+                },
+                {
+                  "id": "b2",
+                  "label": "Winding B \u00b7 lead 2",
+                  "side": "left"
+                }
+              ]
+            },
+            {
+              "id": "supply",
+              "title": "Fused motor supply \u00b7 24 V / SF-A9 20 W source",
+              "column": 2,
+              "offset": 350,
+              "contacts": [
+                {
+                  "id": "plus",
+                  "label": "DC + \u00b7 before branch fuse",
+                  "side": "left"
+                },
+                {
+                  "id": "minus",
+                  "label": "DC return",
+                  "side": "left"
+                }
+              ]
+            },
+            {
+              "id": "fuse",
+              "title": "Individual branch fuse \u00b7 rating TBD",
+              "column": 0,
+              "contacts": [
+                {
+                  "id": "in",
+                  "label": "input from DC +",
+                  "side": "right"
+                },
+                {
+                  "id": "out",
+                  "label": "output to VMOT",
+                  "side": "right"
+                }
+              ]
+            },
+            {
+              "id": "bulk",
+              "title": "Local bulk capacitor \u00b7 \u226547 \u00b5F",
+              "column": 0,
+              "contacts": [
+                {
+                  "id": "plus",
+                  "label": "positive \u00b7 VMOT rail",
+                  "side": "right"
+                },
+                {
+                  "id": "minus",
+                  "label": "negative \u00b7 motor return",
+                  "side": "right"
+                }
+              ]
+            }
+          ],
+          "edges": [
+            {
+              "from": "core.step",
+              "to": "driver.step",
+              "function": "X step pulses",
+              "check": "Verify motor nameplate current, supply rating, cooling and coil pairs. New lead labels are continuity-test results, not original connector cavity numbers.",
+              "state": "guess"
+            },
+            {
+              "from": "core.dir",
+              "to": "driver.dir",
+              "function": "X direction",
+              "check": "Verify motor nameplate current, supply rating, cooling and coil pairs. New lead labels are continuity-test results, not original connector cavity numbers.",
+              "state": "guess"
+            },
+            {
+              "from": "core.gnd",
+              "to": "driver.gnd",
+              "function": "X signal reference",
+              "check": "Bond logic and motor returns at defined distribution point; no motor current through Core.",
+              "state": "guess"
+            },
+            {
+              "from": "core.v33",
+              "to": "driver.rst",
+              "function": "Release driver reset",
+              "check": "RESET and SLEEP must be high; confirm 3V3 rail budget.",
+              "state": "guess"
+            },
+            {
+              "from": "core.v33",
+              "to": "driver.slp",
+              "function": "Wake driver",
+              "check": "Confirm supply and start-up sequence.",
+              "state": "guess"
+            },
+            {
+              "from": "core.enable",
+              "to": "driver.en",
+              "function": "Shared active-low driver enable",
+              "check": "Configure polarity; add pull-up to disable during reset. Slash net prefix is not polarity evidence.",
+              "state": "guess"
+            },
+            {
+              "from": "driver.a1",
+              "to": "motor.a1",
+              "function": "X phase A1",
+              "check": "Verify motor nameplate current, supply rating, cooling and coil pairs. New lead labels are continuity-test results, not original connector cavity numbers.",
+              "state": "guess"
+            },
+            {
+              "from": "driver.a2",
+              "to": "motor.a2",
+              "function": "X phase A2",
+              "check": "Verify motor nameplate current, supply rating, cooling and coil pairs. New lead labels are continuity-test results, not original connector cavity numbers.",
+              "state": "guess"
+            },
+            {
+              "from": "driver.b1",
+              "to": "motor.b1",
+              "function": "X phase B1",
+              "check": "Verify motor nameplate current, supply rating, cooling and coil pairs. New lead labels are continuity-test results, not original connector cavity numbers.",
+              "state": "guess"
+            },
+            {
+              "from": "driver.b2",
+              "to": "motor.b2",
+              "function": "X phase B2",
+              "check": "Verify motor nameplate current, supply rating, cooling and coil pairs. New lead labels are continuity-test results, not original connector cavity numbers.",
+              "state": "guess"
+            },
+            {
+              "from": "supply.minus",
+              "to": "driver.pgnd",
+              "function": "X motor power return",
+              "check": "Verify motor nameplate current, supply rating, cooling and coil pairs. New lead labels are continuity-test results, not original connector cavity numbers.",
+              "state": "guess"
+            },
+            {
+              "from": "supply.plus",
+              "to": "fuse.in",
+              "function": "Individual fused branch input",
+              "check": "Choose DC voltage/current/interrupt rating from measured load and conductor protection; locate near distribution.",
+              "state": "guess"
+            },
+            {
+              "from": "fuse.out",
+              "to": "driver.vmot",
+              "function": "Fused motor power",
+              "check": "Verify motor current setting, cooling, supply and wiring capacity.",
+              "state": "guess"
+            },
+            {
+              "from": "fuse.out",
+              "to": "bulk.plus",
+              "function": "Local VMOT bypass positive",
+              "check": "At least 47 \u00b5F electrolytic close to driver; voltage rating above worst supply/transient, verify polarity.",
+              "state": "guess"
+            },
+            {
+              "from": "supply.minus",
+              "to": "bulk.minus",
+              "function": "Local VMOT bypass return",
+              "check": "Short loop to motor GND; no motor current through Core logic return.",
+              "state": "guess"
+            }
+          ],
+          "note": "Proposed replacement driver, not an original-machine component. 8.2\u201345 V driver supply; about 1.5 A/phase without extra cooling, at most 2.2 A with suitable cooling. Set current limit from motor rating. Fit at least 47 \u00b5F across VMOT/GND at each carrier; leave MODE0/1/2 open for initial full-step test and FAULT unconnected. Never unplug energized motor. Individual branch fuse and local \u226547 \u00b5F VMOT bulk capacitor are drawn; choose voltage/current ratings after measurement."
+        },
+        {
+          "title": "Y \u00b7 command, driver and all four motor leads",
+          "nodes": [
+            {
+              "id": "core",
+              "title": "V2 Core P1 \u00b7 Y assignment",
+              "column": 0,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "step",
+                  "label": "J5.22 \u00b7 Y STEP",
+                  "side": "right"
+                },
+                {
+                  "id": "dir",
+                  "label": "J5.24 \u00b7 Y DIR",
+                  "side": "right"
+                },
+                {
+                  "id": "gnd",
+                  "label": "J5.26 \u00b7 signal GND",
+                  "side": "right"
+                },
+                {
+                  "id": "v33",
+                  "label": "J5.10 \u00b7 3V3",
+                  "side": "right"
+                },
+                {
+                  "id": "enable",
+                  "label": "J5.13 \u00b7 shared MOT_EN",
+                  "side": "right"
+                }
+              ]
+            },
+            {
+              "id": "driver",
+              "title": "Pololu 2133 \u00b7 DRV8825",
+              "column": 1,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "step",
+                  "label": "STEP",
+                  "side": "left"
+                },
+                {
+                  "id": "dir",
+                  "label": "DIR",
+                  "side": "left"
+                },
+                {
+                  "id": "gnd",
+                  "label": "GND \u00b7 logic",
+                  "side": "left"
+                },
+                {
+                  "id": "rst",
+                  "label": "RESET",
+                  "side": "left"
+                },
+                {
+                  "id": "slp",
+                  "label": "SLEEP",
+                  "side": "left"
+                },
+                {
+                  "id": "en",
+                  "label": "ENBL",
+                  "side": "left"
+                },
+                {
+                  "id": "m0",
+                  "label": "MODE0 \u00b7 NC / full step",
+                  "side": "left"
+                },
+                {
+                  "id": "m1",
+                  "label": "MODE1 \u00b7 NC / full step",
+                  "side": "left"
+                },
+                {
+                  "id": "m2",
+                  "label": "MODE2 \u00b7 NC / full step",
+                  "side": "left"
+                },
+                {
+                  "id": "a1",
+                  "label": "A1",
+                  "side": "right"
+                },
+                {
+                  "id": "a2",
+                  "label": "A2",
+                  "side": "right"
+                },
+                {
+                  "id": "b1",
+                  "label": "B1",
+                  "side": "right"
+                },
+                {
+                  "id": "b2",
+                  "label": "B2",
+                  "side": "right"
+                },
+                {
+                  "id": "vmot",
+                  "label": "VMOT",
+                  "side": "right"
+                },
+                {
+                  "id": "pgnd",
+                  "label": "GND \u00b7 motor",
+                  "side": "right"
+                },
+                {
+                  "id": "fault",
+                  "label": "FAULT \u00b7 unused output",
+                  "side": "right"
+                }
+              ]
+            },
+            {
+              "id": "motor",
+              "title": "Y motor \u00b7 newly identified leads",
+              "column": 2,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "a1",
+                  "label": "Winding A \u00b7 lead 1",
+                  "side": "left"
+                },
+                {
+                  "id": "a2",
+                  "label": "Winding A \u00b7 lead 2",
+                  "side": "left"
+                },
+                {
+                  "id": "b1",
+                  "label": "Winding B \u00b7 lead 1",
+                  "side": "left"
+                },
+                {
+                  "id": "b2",
+                  "label": "Winding B \u00b7 lead 2",
+                  "side": "left"
+                }
+              ]
+            },
+            {
+              "id": "supply",
+              "title": "Fused motor supply \u00b7 24 V / SF-A9 20 W source",
+              "column": 2,
+              "offset": 350,
+              "contacts": [
+                {
+                  "id": "plus",
+                  "label": "DC + \u00b7 before branch fuse",
+                  "side": "left"
+                },
+                {
+                  "id": "minus",
+                  "label": "DC return",
+                  "side": "left"
+                }
+              ]
+            },
+            {
+              "id": "fuse",
+              "title": "Individual branch fuse \u00b7 rating TBD",
+              "column": 0,
+              "contacts": [
+                {
+                  "id": "in",
+                  "label": "input from DC +",
+                  "side": "right"
+                },
+                {
+                  "id": "out",
+                  "label": "output to VMOT",
+                  "side": "right"
+                }
+              ]
+            },
+            {
+              "id": "bulk",
+              "title": "Local bulk capacitor \u00b7 \u226547 \u00b5F",
+              "column": 0,
+              "contacts": [
+                {
+                  "id": "plus",
+                  "label": "positive \u00b7 VMOT rail",
+                  "side": "right"
+                },
+                {
+                  "id": "minus",
+                  "label": "negative \u00b7 motor return",
+                  "side": "right"
+                }
+              ]
+            }
+          ],
+          "edges": [
+            {
+              "from": "core.step",
+              "to": "driver.step",
+              "function": "Y step pulses",
+              "check": "Verify motor nameplate current, supply rating, cooling and coil pairs. New lead labels are continuity-test results, not original connector cavity numbers.",
+              "state": "guess"
+            },
+            {
+              "from": "core.dir",
+              "to": "driver.dir",
+              "function": "Y direction",
+              "check": "Verify motor nameplate current, supply rating, cooling and coil pairs. New lead labels are continuity-test results, not original connector cavity numbers.",
+              "state": "guess"
+            },
+            {
+              "from": "core.gnd",
+              "to": "driver.gnd",
+              "function": "Y signal reference",
+              "check": "Bond logic and motor returns at defined distribution point; no motor current through Core.",
+              "state": "guess"
+            },
+            {
+              "from": "core.v33",
+              "to": "driver.rst",
+              "function": "Release driver reset",
+              "check": "RESET and SLEEP must be high; confirm 3V3 rail budget.",
+              "state": "guess"
+            },
+            {
+              "from": "core.v33",
+              "to": "driver.slp",
+              "function": "Wake driver",
+              "check": "Confirm supply and start-up sequence.",
+              "state": "guess"
+            },
+            {
+              "from": "core.enable",
+              "to": "driver.en",
+              "function": "Shared active-low driver enable",
+              "check": "Configure polarity; add pull-up to disable during reset. Slash net prefix is not polarity evidence.",
+              "state": "guess"
+            },
+            {
+              "from": "driver.a1",
+              "to": "motor.a1",
+              "function": "Y phase A1",
+              "check": "Verify motor nameplate current, supply rating, cooling and coil pairs. New lead labels are continuity-test results, not original connector cavity numbers.",
+              "state": "guess"
+            },
+            {
+              "from": "driver.a2",
+              "to": "motor.a2",
+              "function": "Y phase A2",
+              "check": "Verify motor nameplate current, supply rating, cooling and coil pairs. New lead labels are continuity-test results, not original connector cavity numbers.",
+              "state": "guess"
+            },
+            {
+              "from": "driver.b1",
+              "to": "motor.b1",
+              "function": "Y phase B1",
+              "check": "Verify motor nameplate current, supply rating, cooling and coil pairs. New lead labels are continuity-test results, not original connector cavity numbers.",
+              "state": "guess"
+            },
+            {
+              "from": "driver.b2",
+              "to": "motor.b2",
+              "function": "Y phase B2",
+              "check": "Verify motor nameplate current, supply rating, cooling and coil pairs. New lead labels are continuity-test results, not original connector cavity numbers.",
+              "state": "guess"
+            },
+            {
+              "from": "supply.minus",
+              "to": "driver.pgnd",
+              "function": "Y motor power return",
+              "check": "Verify motor nameplate current, supply rating, cooling and coil pairs. New lead labels are continuity-test results, not original connector cavity numbers.",
+              "state": "guess"
+            },
+            {
+              "from": "supply.plus",
+              "to": "fuse.in",
+              "function": "Individual fused branch input",
+              "check": "Choose DC voltage/current/interrupt rating from measured load and conductor protection; locate near distribution.",
+              "state": "guess"
+            },
+            {
+              "from": "fuse.out",
+              "to": "driver.vmot",
+              "function": "Fused motor power",
+              "check": "Verify motor current setting, cooling, supply and wiring capacity.",
+              "state": "guess"
+            },
+            {
+              "from": "fuse.out",
+              "to": "bulk.plus",
+              "function": "Local VMOT bypass positive",
+              "check": "At least 47 \u00b5F electrolytic close to driver; voltage rating above worst supply/transient, verify polarity.",
+              "state": "guess"
+            },
+            {
+              "from": "supply.minus",
+              "to": "bulk.minus",
+              "function": "Local VMOT bypass return",
+              "check": "Short loop to motor GND; no motor current through Core logic return.",
+              "state": "guess"
+            }
+          ],
+          "note": "Proposed replacement driver, not an original-machine component. 8.2\u201345 V driver supply; about 1.5 A/phase without extra cooling, at most 2.2 A with suitable cooling. Set current limit from motor rating. Fit at least 47 \u00b5F across VMOT/GND at each carrier; leave MODE0/1/2 open for initial full-step test and FAULT unconnected. Never unplug energized motor. Individual branch fuse and local \u226547 \u00b5F VMOT bulk capacitor are drawn; choose voltage/current ratings after measurement."
+        },
+        {
+          "title": "X min limit \u00b7 signal and ground separately",
+          "nodes": [
+            {
+              "id": "core",
+              "title": "Core P1 \u00b7 X min endstop",
+              "column": 0,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "supply_unused_24",
+                  "label": "J24.1 \u00b7 selector supply \u00b7 NC",
+                  "side": "right"
+                },
+                {
+                  "id": "signal",
+                  "label": "J24.3 \u00b7 input",
+                  "side": "right"
+                },
+                {
+                  "id": "ground",
+                  "label": "J24.2 \u00b7 GND",
+                  "side": "right"
+                }
+              ]
+            },
+            {
+              "id": "switch",
+              "title": "X min limit \u00b7 traced switch",
+              "column": 2,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "signal",
+                  "label": "Printed Xmin \u00b7 photo revision only",
+                  "side": "left"
+                },
+                {
+                  "id": "ground",
+                  "label": "Printed G \u00b7 photo revision only",
+                  "side": "left"
+                }
+              ]
+            }
+          ],
+          "edges": [
+            {
+              "from": "switch.signal",
+              "to": "core.signal",
+              "function": "X min endstop signal",
+              "check": "Trace cable with power isolated; confirm dry contact and NO/NC state. Leave selector pin 1 unused for passive switches; powered sensors require a matched interface.",
+              "state": "guess"
+            },
+            {
+              "from": "core.ground",
+              "to": "switch.ground",
+              "function": "X min endstop GND",
+              "check": "Trace cable with power isolated; confirm dry contact and NO/NC state. Leave selector pin 1 unused for passive switches; powered sensors require a matched interface.",
+              "state": "guess"
+            }
+          ],
+          "note": "Trace cable with power isolated; confirm dry contact and NO/NC state. Leave selector pin 1 unused for passive switches; powered sensors require a matched interface."
+        },
+        {
+          "title": "Y min limit \u00b7 signal and ground separately",
+          "nodes": [
+            {
+              "id": "core",
+              "title": "Core P1 \u00b7 Y min endstop",
+              "column": 0,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "supply_unused_26",
+                  "label": "J26.1 \u00b7 selector supply \u00b7 NC",
+                  "side": "right"
+                },
+                {
+                  "id": "signal",
+                  "label": "J26.3 \u00b7 input",
+                  "side": "right"
+                },
+                {
+                  "id": "ground",
+                  "label": "J26.2 \u00b7 GND",
+                  "side": "right"
+                }
+              ]
+            },
+            {
+              "id": "switch",
+              "title": "Y min limit \u00b7 traced switch",
+              "column": 2,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "signal",
+                  "label": "Traced Y switch signal",
+                  "side": "left"
+                },
+                {
+                  "id": "ground",
+                  "label": "Traced Y switch return",
+                  "side": "left"
+                }
+              ]
+            }
+          ],
+          "edges": [
+            {
+              "from": "switch.signal",
+              "to": "core.signal",
+              "function": "Y min endstop signal",
+              "check": "Trace cable with power isolated; confirm dry contact and NO/NC state. Leave selector pin 1 unused for passive switches; powered sensors require a matched interface.",
+              "state": "guess"
+            },
+            {
+              "from": "core.ground",
+              "to": "switch.ground",
+              "function": "Y min endstop GND",
+              "check": "Trace cable with power isolated; confirm dry contact and NO/NC state. Leave selector pin 1 unused for passive switches; powered sensors require a matched interface.",
+              "state": "guess"
+            }
+          ],
+          "note": "Trace cable with power isolated; confirm dry contact and NO/NC state. Leave selector pin 1 unused for passive switches; powered sensors require a matched interface."
+        },
+        {
+          "title": "Original SF-A9 head \u00b7 laser interface must be identified",
+          "nodes": [
+            {
+              "id": "core",
+              "title": "V2 Core P1 \u00b7 proposed signals",
+              "column": 0,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "pwm",
+                  "label": "J35.6 \u00b7 PWM candidate",
+                  "side": "right"
+                },
+                {
+                  "id": "gnd",
+                  "label": "J35.10 \u00b7 reference candidate",
+                  "side": "right"
+                }
+              ]
+            },
+            {
+              "id": "machine",
+              "title": "Retained machine peripheral",
+              "column": 2,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "command",
+                  "label": "Head command \u00b7 not source-mapped",
+                  "side": "left"
+                },
+                {
+                  "id": "ground",
+                  "label": "Head reference \u00b7 not source-mapped",
+                  "side": "left"
+                }
+              ]
+            }
+          ],
+          "edges": [
+            {
+              "from": "core.pwm",
+              "to": "machine.command",
+              "function": "J35.6 \u00b7 PWM candidate",
+              "check": "Teardown photo board 20231103 is a reference, not proof of the 20 W fitted board. Laser connector conductors are not assigned from red/black/yellow colours. Obtain matching head/controller pinout, command threshold and flame/tilt/key/E-stop circuit before laser operation.",
+              "state": "open"
+            },
+            {
+              "from": "core.gnd",
+              "to": "machine.ground",
+              "function": "J35.10 \u00b7 reference candidate",
+              "check": "Teardown photo board 20231103 is a reference, not proof of the 20 W fitted board. Laser connector conductors are not assigned from red/black/yellow colours. Obtain matching head/controller pinout, command threshold and flame/tilt/key/E-stop circuit before laser operation.",
+              "state": "open"
+            }
+          ],
+          "note": "Teardown photo board 20231103 is a reference, not proof of the 20 W fitted board. Laser connector conductors are not assigned from red/black/yellow colours. Obtain matching head/controller pinout, command threshold and flame/tilt/key/E-stop circuit before laser operation."
+        },
+        {
+          "title": "X max \u00b7 separately traced limit",
+          "nodes": [
+            {
+              "id": "core",
+              "title": "Core P1 \u00b7 proposed X max",
+              "column": 0,
+              "contacts": [
+                {
+                  "id": "supply_unused_25",
+                  "label": "J25.1 \u00b7 selector supply \u00b7 NC",
+                  "side": "right"
+                },
+                {
+                  "id": "in",
+                  "label": "J25.3 \u00b7 input",
+                  "side": "right"
+                },
+                {
+                  "id": "gnd",
+                  "label": "J25.2 \u00b7 GND",
+                  "side": "right"
+                }
+              ]
+            },
+            {
+              "id": "switch",
+              "title": "X max dry-contact switch",
+              "column": 2,
+              "contacts": [
+                {
+                  "id": "in",
+                  "label": "Identified signal lead",
+                  "side": "left"
+                },
+                {
+                  "id": "gnd",
+                  "label": "Identified return lead",
+                  "side": "left"
+                }
+              ]
+            }
+          ],
+          "edges": [
+            {
+              "from": "switch.in",
+              "to": "core.in",
+              "state": "guess",
+              "function": "X max signal",
+              "check": "Firsthand SF-A9 reference reports switches at both ends. Trace this individual switch and return; combined original harness ordering is not assigned from photographs."
+            },
+            {
+              "from": "core.gnd",
+              "to": "switch.gnd",
+              "state": "guess",
+              "function": "X max GND",
+              "check": "Firsthand SF-A9 reference reports switches at both ends. Trace this individual switch and return; combined original harness ordering is not assigned from photographs."
+            }
+          ],
+          "note": "Firsthand SF-A9 reference reports switches at both ends. Trace this individual switch and return; combined original harness ordering is not assigned from photographs."
+        },
+        {
+          "title": "Y max \u00b7 separately traced limit",
+          "nodes": [
+            {
+              "id": "core",
+              "title": "Core P1 \u00b7 proposed Y max",
+              "column": 0,
+              "contacts": [
+                {
+                  "id": "supply_unused_27",
+                  "label": "J27.1 \u00b7 selector supply \u00b7 NC",
+                  "side": "right"
+                },
+                {
+                  "id": "in",
+                  "label": "J27.3 \u00b7 input",
+                  "side": "right"
+                },
+                {
+                  "id": "gnd",
+                  "label": "J27.2 \u00b7 GND",
+                  "side": "right"
+                }
+              ]
+            },
+            {
+              "id": "switch",
+              "title": "Y max dry-contact switch",
+              "column": 2,
+              "contacts": [
+                {
+                  "id": "in",
+                  "label": "Identified signal lead",
+                  "side": "left"
+                },
+                {
+                  "id": "gnd",
+                  "label": "Identified return lead",
+                  "side": "left"
+                }
+              ]
+            }
+          ],
+          "edges": [
+            {
+              "from": "switch.in",
+              "to": "core.in",
+              "state": "guess",
+              "function": "Y max signal",
+              "check": "Firsthand SF-A9 reference reports switches at both ends. Trace this individual switch and return; combined original harness ordering is not assigned from photographs."
+            },
+            {
+              "from": "core.gnd",
+              "to": "switch.gnd",
+              "state": "guess",
+              "function": "Y max GND",
+              "check": "Firsthand SF-A9 reference reports switches at both ends. Trace this individual switch and return; combined original harness ordering is not assigned from photographs."
+            }
+          ],
+          "note": "Firsthand SF-A9 reference reports switches at both ends. Trace this individual switch and return; combined original harness ordering is not assigned from photographs."
+        },
+        {
+          "title": "Prime alternative \u00b7 X onboard driver output",
+          "nodes": [
+            {
+              "id": "prime",
+              "title": "Prime P11/P12 \u00b7 X",
+              "column": 0,
+              "contacts": [
+                {
+                  "id": "b2",
+                  "label": "J5.1 \u00b7 B2",
+                  "side": "right"
+                },
+                {
+                  "id": "b1",
+                  "label": "J5.2 \u00b7 B1",
+                  "side": "right"
+                },
+                {
+                  "id": "a2",
+                  "label": "J5.3 \u00b7 A2",
+                  "side": "right"
+                },
+                {
+                  "id": "a1",
+                  "label": "J5.4 \u00b7 A1",
+                  "side": "right"
+                }
+              ]
+            },
+            {
+              "id": "motor",
+              "title": "X \u00b7 measured winding leads",
+              "column": 2,
+              "contacts": [
+                {
+                  "id": "b2",
+                  "label": "Winding B \u00b7 lead 2",
+                  "side": "left"
+                },
+                {
+                  "id": "b1",
+                  "label": "Winding B \u00b7 lead 1",
+                  "side": "left"
+                },
+                {
+                  "id": "a2",
+                  "label": "Winding A \u00b7 lead 2",
+                  "side": "left"
+                },
+                {
+                  "id": "a1",
+                  "label": "Winding A \u00b7 lead 1",
+                  "side": "left"
+                }
+              ]
+            }
+          ],
+          "edges": [
+            {
+              "from": "prime.b2",
+              "to": "motor.b2",
+              "state": "guess",
+              "function": "X motor phase B2",
+              "check": "Alternative to the external-driver circuit, never simultaneously connected. Verify selected Prime revision, current settings, supply rating and winding pairs."
+            },
+            {
+              "from": "prime.b1",
+              "to": "motor.b1",
+              "state": "guess",
+              "function": "X motor phase B1",
+              "check": "Alternative to the external-driver circuit, never simultaneously connected. Verify selected Prime revision, current settings, supply rating and winding pairs."
+            },
+            {
+              "from": "prime.a2",
+              "to": "motor.a2",
+              "state": "guess",
+              "function": "X motor phase A2",
+              "check": "Alternative to the external-driver circuit, never simultaneously connected. Verify selected Prime revision, current settings, supply rating and winding pairs."
+            },
+            {
+              "from": "prime.a1",
+              "to": "motor.a1",
+              "state": "guess",
+              "function": "X motor phase A1",
+              "check": "Alternative to the external-driver circuit, never simultaneously connected. Verify selected Prime revision, current settings, supply rating and winding pairs."
+            }
+          ],
+          "note": "Alternative to the external-driver circuit, never simultaneously connected. Verify selected Prime revision, current settings, supply rating and winding pairs."
+        },
+        {
+          "title": "Prime alternative \u00b7 Y onboard driver output",
+          "nodes": [
+            {
+              "id": "prime",
+              "title": "Prime P11/P12 \u00b7 Y",
+              "column": 0,
+              "contacts": [
+                {
+                  "id": "b2",
+                  "label": "J6.1 \u00b7 B2",
+                  "side": "right"
+                },
+                {
+                  "id": "b1",
+                  "label": "J6.2 \u00b7 B1",
+                  "side": "right"
+                },
+                {
+                  "id": "a2",
+                  "label": "J6.3 \u00b7 A2",
+                  "side": "right"
+                },
+                {
+                  "id": "a1",
+                  "label": "J6.4 \u00b7 A1",
+                  "side": "right"
+                }
+              ]
+            },
+            {
+              "id": "motor",
+              "title": "Y \u00b7 measured winding leads",
+              "column": 2,
+              "contacts": [
+                {
+                  "id": "b2",
+                  "label": "Winding B \u00b7 lead 2",
+                  "side": "left"
+                },
+                {
+                  "id": "b1",
+                  "label": "Winding B \u00b7 lead 1",
+                  "side": "left"
+                },
+                {
+                  "id": "a2",
+                  "label": "Winding A \u00b7 lead 2",
+                  "side": "left"
+                },
+                {
+                  "id": "a1",
+                  "label": "Winding A \u00b7 lead 1",
+                  "side": "left"
+                }
+              ]
+            }
+          ],
+          "edges": [
+            {
+              "from": "prime.b2",
+              "to": "motor.b2",
+              "state": "guess",
+              "function": "Y motor phase B2",
+              "check": "Alternative to the external-driver circuit, never simultaneously connected. Verify selected Prime revision, current settings, supply rating and winding pairs."
+            },
+            {
+              "from": "prime.b1",
+              "to": "motor.b1",
+              "state": "guess",
+              "function": "Y motor phase B1",
+              "check": "Alternative to the external-driver circuit, never simultaneously connected. Verify selected Prime revision, current settings, supply rating and winding pairs."
+            },
+            {
+              "from": "prime.a2",
+              "to": "motor.a2",
+              "state": "guess",
+              "function": "Y motor phase A2",
+              "check": "Alternative to the external-driver circuit, never simultaneously connected. Verify selected Prime revision, current settings, supply rating and winding pairs."
+            },
+            {
+              "from": "prime.a1",
+              "to": "motor.a1",
+              "state": "guess",
+              "function": "Y motor phase A1",
+              "check": "Alternative to the external-driver circuit, never simultaneously connected. Verify selected Prime revision, current settings, supply rating and winding pairs."
+            }
+          ],
+          "note": "Alternative to the external-driver circuit, never simultaneously connected. Verify selected Prime revision, current settings, supply rating and winding pairs."
+        },
+        {
+          "title": "Prime alternative \u00b7 motor supply",
+          "nodes": [
+            {
+              "id": "supply",
+              "title": "Fused verified motor supply",
+              "column": 0,
+              "contacts": [
+                {
+                  "id": "plus",
+                  "label": "DC +",
+                  "side": "right"
+                },
+                {
+                  "id": "minus",
+                  "label": "DC return",
+                  "side": "right"
+                }
+              ]
+            },
+            {
+              "id": "prime",
+              "title": "Prime P11/P12 motor rail",
+              "column": 2,
+              "contacts": [
+                {
+                  "id": "plus",
+                  "label": "J9.1 \u00b7 VMOT",
+                  "side": "left"
+                },
+                {
+                  "id": "minus",
+                  "label": "J9.2 \u00b7 GND",
+                  "side": "left"
+                }
+              ]
+            }
+          ],
+          "edges": [
+            {
+              "from": "supply.plus",
+              "to": "prime.plus",
+              "state": "guess",
+              "function": "Prime motor rail",
+              "check": "Verify selected P11/P12 voltage/current and cooling; motor rail is not Core logic power."
+            },
+            {
+              "from": "supply.minus",
+              "to": "prime.minus",
+              "state": "guess",
+              "function": "Prime motor power return",
+              "check": "Use correctly rated motor-current return wire."
+            }
+          ],
+          "note": "Prime onboard motor outputs replace the separate external drivers; the two power stages must never be attached to the same winding. All controller-to-machine assignments are proposed and dotted."
+        },
+        {
+          "title": "Prime alternative \u00b7 separate logic and motor supplies",
+          "nodes": [
+            {
+              "id": "logic",
+              "title": "Regulated 5 V logic supply",
+              "column": 0,
+              "contacts": [
+                {
+                  "id": "v",
+                  "label": "+5 V regulated",
+                  "side": "right"
+                },
+                {
+                  "id": "g",
+                  "label": "0 V logic return",
+                  "side": "right"
+                }
+              ]
+            },
+            {
+              "id": "motor",
+              "title": "Verified motor supply \u00b7 voltage/current TBD",
+              "column": 0,
+              "contacts": [
+                {
+                  "id": "v",
+                  "label": "DC + \u00b7 before fuse",
+                  "side": "right"
+                },
+                {
+                  "id": "g",
+                  "label": "0 V motor return",
+                  "side": "right"
+                }
+              ]
+            },
+            {
+              "id": "fuse",
+              "title": "Motor branch fuse \u00b7 rating selected after measurement",
+              "column": 1,
+              "contacts": [
+                {
+                  "id": "in",
+                  "label": "fuse input",
+                  "side": "left"
+                },
+                {
+                  "id": "out",
+                  "label": "fuse output",
+                  "side": "left"
+                }
+              ]
+            },
+            {
+              "id": "prime",
+              "title": "Prime P11/P12 \u00b7 confirm exact revision",
+              "column": 2,
+              "contacts": [
+                {
+                  "id": "v5",
+                  "label": "J42.1 \u00b7 5V_PORTIN",
+                  "side": "left"
+                },
+                {
+                  "id": "lg",
+                  "label": "J42.2 \u00b7 GND",
+                  "side": "left"
+                },
+                {
+                  "id": "vm",
+                  "label": "J9.1 \u00b7 VMOT",
+                  "side": "left"
+                },
+                {
+                  "id": "mg",
+                  "label": "J9.2 \u00b7 GND",
+                  "side": "left"
+                },
+                {
+                  "id": "aux1",
+                  "label": "J10.1 \u00b7 VMOT parallel \u00b7 unused",
+                  "side": "left"
+                },
+                {
+                  "id": "aux2",
+                  "label": "J10.2 \u00b7 GND parallel \u00b7 unused",
+                  "side": "left"
+                }
+              ]
+            }
+          ],
+          "edges": [
+            {
+              "from": "logic.v",
+              "to": "prime.v5",
+              "function": "Prime regulated logic supply",
+              "state": "guess",
+              "check": "Prime alternative only. Confirm fitted P11/P12 revision, input-voltage/current limits, supply sequencing and fuse/conductor ratings. Never connect both Core external drivers and Prime winding outputs to the same motor."
+            },
+            {
+              "from": "logic.g",
+              "to": "prime.lg",
+              "function": "Prime logic supply return",
+              "state": "guess",
+              "check": "Prime alternative only. Confirm fitted P11/P12 revision, input-voltage/current limits, supply sequencing and fuse/conductor ratings. Never connect both Core external drivers and Prime winding outputs to the same motor."
+            },
+            {
+              "from": "motor.v",
+              "to": "fuse.in",
+              "function": "Protected motor branch input",
+              "state": "guess",
+              "check": "Prime alternative only. Confirm fitted P11/P12 revision, input-voltage/current limits, supply sequencing and fuse/conductor ratings. Never connect both Core external drivers and Prime winding outputs to the same motor."
+            },
+            {
+              "from": "fuse.out",
+              "to": "prime.vm",
+              "function": "Prime VMOT power",
+              "state": "guess",
+              "check": "Prime alternative only. Confirm fitted P11/P12 revision, input-voltage/current limits, supply sequencing and fuse/conductor ratings. Never connect both Core external drivers and Prime winding outputs to the same motor."
+            },
+            {
+              "from": "motor.g",
+              "to": "prime.mg",
+              "function": "Prime motor supply return",
+              "state": "guess",
+              "check": "Prime alternative only. Confirm fitted P11/P12 revision, input-voltage/current limits, supply sequencing and fuse/conductor ratings. Never connect both Core external drivers and Prime winding outputs to the same motor."
+            }
+          ],
+          "note": "This is the alternative integrated-driver architecture. The same PCB-derived contact labels occur on P11/P12, but driver type, rating and current configuration differ. Use one verified power-entry arrangement; J10 parallels VMOT and is left unused here. Board ground is shared internally; route motor current directly to power distribution, not through logic wiring. Determine actual allowed voltage/current before choosing a supply; no machine-source adapter automatically qualifies."
+        }
+      ],
+      "parts": [
+        "A separate documented driver per motor, branch fuses and enclosed terminal distribution; never connect Core STEP/DIR pins to motor windings.",
+        "Identify each winding pair by continuity with power isolated. Label the newly terminated leads A1/A2/B1/B2; do not infer original cavity numbering or wire colours.",
+        "Core logic power: regulated 5 V to J42.1, return to J42.2, with exact board revision and supply-path checks. Motor power uses its own fused distribution."
+      ],
+      "instructions": [
+        "Photograph nameplates, connector orientation and existing safety wiring before disconnecting anything. Match the fitted board revision to the linked hardware source.",
+        "Disconnect the old motor-controller outputs before connecting the new drivers. Identify each coil pair and trace every endstop signal and return.",
+        "Set driver current from the motor rating, verify supplies and pull-ups, and configure channels and enable polarity. Initial MODE pins open means full step; update firmware steps/mm when selecting microsteps.",
+        "With process power disconnected, verify reset keeps drives disabled, test one motor at a time, then check endstop status, homing direction and travel. Enable the process only after its separate interface and hardware safety chain are proven."
+      ],
+      "target_options": {
+        "core": "Main drawing uses Core P1 logic and new Pololu 2133 drivers. Use only when measured motor current and supply fit the carrier; otherwise select a suitably rated driver and redraw its exact terminals.",
+        "prime": "Alternative: onboard winding outputs J5/J6/J7/J8, each pin 1 B2, 2 B1, 3 A2, 4 A1. Assign the required motors in firmware; check fitted P11/P12 current, voltage and thermal limits before replacing external drivers.",
+        "smoothiebox": "Use a Core-based box for the drawn external-driver option, or a Prime-based box for the rated winding-output option. Trace the actual carrier harness; exterior connector names do not establish board pin numbers."
+      }
+    },
+    "machine-side-graph-snapshot.json": {
+      "source_graph": "205-wiki-205.json",
+      "source_sha256": "89ce9985834ceffa65ed13396894fe89769ebf367c6bb6accdabedd7e8849958",
+      "graph": {
+        "profile_id": "wiki-205",
+        "devices": [
+          {
+            "id": "unidentified-machine",
+            "role": "peripheral"
+          }
+        ],
+        "connectors": [
+          {
+            "id": "machine-unidentified",
+            "device": "unidentified-machine",
+            "refdes": "No source-scoped connector identity",
+            "form": "unknown",
+            "scope": "Captured profile lacks a numbered machine connector or source-scoped cable-group identity.",
+            "contacts": []
+          }
+        ],
+        "wires": []
+      }
+    }
+  }
+}

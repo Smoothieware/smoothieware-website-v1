@@ -1,0 +1,41 @@
+{
+  "id": "forum-plasmaspider-dishtech55-4x10-myplasm-table",
+  "sources": {
+    "forum-peripheral-evidence.json": {
+      "id": "forum-plasmaspider-dishtech55-4x10-myplasm-table",
+      "dossier": "src/docs/machine-research/plasmaspider-dishtech55-4x10-myplasm-table.md",
+      "reported_fitted_or_used": [
+        {
+          "name": "Hypertherm Powermax 45XP plasma cutter",
+          "contacts": [],
+          "source_line_number": 18,
+          "source_line": "| Plasma source and air | Hypertherm Powermax 45XP; owner says they use dry air and find consumables last a long time. | No cut chart, amperage, air pressure, torch interface, or material-specific settings are supplied. |",
+          "evidence": "Hypertherm Powermax 45XP; owner says they use dry air and find consumables last a long time.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        }
+      ],
+      "listed_for_build_unverified": [],
+      "historical_reference": [],
+      "planned_only": [],
+      "open_function_group": [
+        {
+          "name": "NEMA 23 axis motors",
+          "contacts": [],
+          "source_line_number": 15,
+          "source_line": "| Drive | CNC Router Parts rack-and-pinion drives with 3:1 reduction, NEMA 23 motors described as \u201c425 oz.\u201d | The post does not explicitly state oz-in, so the original rating wording is retained. No drive model, motor wiring, current, or axis assignment is given. |",
+          "evidence": "CNC Router Parts rack-and-pinion drives with 3:1 reduction, NEMA 23 motors described as \u201c425 oz.\u201d.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        }
+      ],
+      "exclusions": [
+        {
+          "name": "Proma MyPlasm is existing controller",
+          "reason": "Existing or proposed controller belongs to the replaced control system, not the machine periphery.",
+          "source_line_number": 16,
+          "source_line": "| Controller / THC | Proma MyPlasm controller with torch-height control (THC). The owner chose it after considering other control boards and said it made it easy to stop and resume a cut file. | Exact MyPlasm hardware revision, firmware/software version, wiring, torch-height signals, and motion IO are not given. The owner\u2019s positive assessment is personal experience. |"
+        }
+      ],
+      "source_gap": "Dossier does not establish an as-built SmoothieBox route or a complete physical contact schedule for the listed peripherals."
+    }
+  }
+}

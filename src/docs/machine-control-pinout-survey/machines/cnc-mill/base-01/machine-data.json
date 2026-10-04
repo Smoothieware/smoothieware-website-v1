@@ -1,0 +1,264 @@
+{
+  "id": "base-01",
+  "sources": {
+    "machine-side-graph-snapshot.json": {
+      "source_graph": "001-base-01.json",
+      "source_sha256": "4b8dde515a74ec0dd8fac22caea31b13c23689b6ac8257b00a52cc9c2c1b83c3",
+      "graph": {
+        "profile_id": "base-01",
+        "devices": [
+          {
+            "id": "peripheral-01",
+            "role": "peripheral"
+          },
+          {
+            "id": "group-device-001",
+            "role": "peripheral"
+          }
+        ],
+        "connectors": [
+          {
+            "id": "machine-01",
+            "device": "peripheral-01",
+            "refdes": "DB25 J4/J10 \u00b7 PCNC 440",
+            "form": "DB25",
+            "scope": "controller-to-cabinet peripheral; official general-alignment image depicts male J4/cable and female MESA DB25, plus IDC26 crosswalk; installed face still unverified; numbered contact register, face unverified Machine/peripheral-side contact schedule; fitted presence unverified.",
+            "contacts": [
+              {
+                "id": "1",
+                "mark": "1",
+                "label": "Spindle enable"
+              },
+              {
+                "id": "2",
+                "mark": "2",
+                "label": "X step"
+              },
+              {
+                "id": "3",
+                "mark": "3",
+                "label": "X direction"
+              },
+              {
+                "id": "4",
+                "mark": "4",
+                "label": "Y step"
+              },
+              {
+                "id": "5",
+                "mark": "5",
+                "label": "Y direction"
+              },
+              {
+                "id": "6",
+                "mark": "6",
+                "label": "Z step"
+              },
+              {
+                "id": "7",
+                "mark": "7",
+                "label": "Z direction"
+              },
+              {
+                "id": "8",
+                "mark": "8",
+                "label": "A step"
+              },
+              {
+                "id": "9",
+                "mark": "9",
+                "label": "A direction"
+              },
+              {
+                "id": "10",
+                "mark": "10",
+                "label": "X limit; cited source says enclosure door switch use"
+              },
+              {
+                "id": "11",
+                "mark": "11",
+                "label": "Y limit"
+              },
+              {
+                "id": "12",
+                "mark": "12",
+                "label": "Z limit"
+              },
+              {
+                "id": "13",
+                "mark": "13",
+                "label": "Probe input"
+              },
+              {
+                "id": "14",
+                "mark": "14",
+                "label": "Spindle speed"
+              },
+              {
+                "id": "15",
+                "mark": "15",
+                "label": "E-stop reset, not a proven safety stop path"
+              },
+              {
+                "id": "16",
+                "mark": "16",
+                "label": "Charge pump"
+              },
+              {
+                "id": "17",
+                "mark": "17",
+                "label": "Coolant"
+              },
+              {
+                "id": "18",
+                "mark": "18",
+                "label": "Function not established for this scoped connector/revision"
+              },
+              {
+                "id": "19",
+                "mark": "19",
+                "label": "Function not established for this scoped connector/revision"
+              },
+              {
+                "id": "20",
+                "mark": "20",
+                "label": "Function not established for this scoped connector/revision"
+              },
+              {
+                "id": "21",
+                "mark": "21",
+                "label": "Function not established for this scoped connector/revision"
+              },
+              {
+                "id": "22",
+                "mark": "22",
+                "label": "Function not established for this scoped connector/revision"
+              },
+              {
+                "id": "23",
+                "mark": "23",
+                "label": "Function not established for this scoped connector/revision"
+              },
+              {
+                "id": "24",
+                "mark": "24",
+                "label": "Function not established for this scoped connector/revision"
+              },
+              {
+                "id": "25",
+                "mark": "25",
+                "label": "Function not established for this scoped connector/revision"
+              }
+            ]
+          },
+          {
+            "id": "machine-group-001",
+            "device": "group-device-001",
+            "refdes": "IDC26",
+            "form": "source-described cable / connector group",
+            "scope": "Source names this group, but provides no source-scoped physical contact map. Availability and exact housing are unverified. exact atlas group labels; open until contact mapping is established",
+            "contacts": []
+          }
+        ],
+        "wires": [
+          {
+            "state": "inferred",
+            "kind": "function",
+            "a": {
+              "connector": "v2-j5",
+              "contact": "16"
+            },
+            "b": {
+              "connector": "machine-01",
+              "contact": "2"
+            }
+          },
+          {
+            "state": "inferred",
+            "kind": "function",
+            "a": {
+              "connector": "v2-j5",
+              "contact": "18"
+            },
+            "b": {
+              "connector": "machine-01",
+              "contact": "3"
+            }
+          },
+          {
+            "state": "inferred",
+            "kind": "function",
+            "a": {
+              "connector": "v2-j5",
+              "contact": "22"
+            },
+            "b": {
+              "connector": "machine-01",
+              "contact": "4"
+            }
+          },
+          {
+            "state": "inferred",
+            "kind": "function",
+            "a": {
+              "connector": "v2-j5",
+              "contact": "24"
+            },
+            "b": {
+              "connector": "machine-01",
+              "contact": "5"
+            }
+          },
+          {
+            "state": "inferred",
+            "kind": "function",
+            "a": {
+              "connector": "v2-j5",
+              "contact": "28"
+            },
+            "b": {
+              "connector": "machine-01",
+              "contact": "6"
+            }
+          },
+          {
+            "state": "inferred",
+            "kind": "function",
+            "a": {
+              "connector": "v2-j5",
+              "contact": "30"
+            },
+            "b": {
+              "connector": "machine-01",
+              "contact": "7"
+            }
+          },
+          {
+            "state": "inferred",
+            "kind": "function",
+            "a": {
+              "connector": "v2-j5",
+              "contact": "34"
+            },
+            "b": {
+              "connector": "machine-01",
+              "contact": "8"
+            }
+          },
+          {
+            "state": "inferred",
+            "kind": "function",
+            "a": {
+              "connector": "v2-j5",
+              "contact": "36"
+            },
+            "b": {
+              "connector": "machine-01",
+              "contact": "9"
+            }
+          }
+        ]
+      }
+    }
+  }
+}

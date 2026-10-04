@@ -1,0 +1,44 @@
+{
+  "id": "forum-v1e-loki-italy-mpcnc-skr-tmc2209",
+  "sources": {
+    "forum-peripheral-evidence.json": {
+      "id": "forum-v1e-loki-italy-mpcnc-skr-tmc2209",
+      "dossier": "src/docs/machine-research/v1e-loki-italy-mpcnc-skr-tmc2209.md",
+      "reported_fitted_or_used": [],
+      "listed_for_build_unverified": [],
+      "historical_reference": [],
+      "planned_only": [
+        {
+          "name": "Spindle-start relay planned only",
+          "contacts": [],
+          "source_line_number": 21,
+          "source_line": "| Spindle control | Owner said the next step was connecting a relay to start/stop the spindle | No relay type, controller output, wiring, or completed test is documented. |",
+          "evidence": "Owner said the next step was connecting a relay to start/stop the spindle.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        }
+      ],
+      "open_function_group": [],
+      "exclusions": [
+        {
+          "name": "TMC2209 drivers",
+          "contacts": [],
+          "source_line_number": 16,
+          "source_line": "| Stepper drivers | TMC2209 | No current, microstep, UART, or motor-coil settings stated. |",
+          "evidence": "TMC2209",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route",
+          "reason": "Excluded: no separate externally addressable interface, existing control hardware, absent tooling, or inadequate positive device evidence in this dossier."
+        },
+        {
+          "name": "NEMA 17 17HS19-2004S1 motors",
+          "contacts": [],
+          "source_line_number": 17,
+          "source_line": "| Motors | NEMA 17, 17HS19-2004S1, 59 N\u00b7cm, 2 A | No winding/contact assignment is published. |",
+          "evidence": "NEMA 17, 17HS19-2004S1, 59 N\u00b7cm, 2 A",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route",
+          "reason": "Excluded: no separate externally addressable interface, existing control hardware, absent tooling, or inadequate positive device evidence in this dossier."
+        }
+      ],
+      "source_gap": "Dossier does not establish an as-built SmoothieBox route or a complete physical contact schedule for the listed peripherals."
+    }
+  }
+}

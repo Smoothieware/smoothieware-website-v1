@@ -1,0 +1,61 @@
+{
+  "id": "forum-openbuilds-bootstrappy-first-scratch-router",
+  "sources": {
+    "forum-peripheral-evidence.json": {
+      "id": "forum-openbuilds-bootstrappy-first-scratch-router",
+      "dossier": "src/docs/machine-research/openbuilds-bootstrappy-first-scratch-router.md",
+      "reported_fitted_or_used": [],
+      "listed_for_build_unverified": [
+        {
+          "name": "StepperOnline DM542T drivers",
+          "contacts": [],
+          "source_line_number": 14,
+          "source_line": "| Motion | Three 8 mm T8 metric lead screws, listed as 1040 mm long; anti-backlash nut blocks; NEMA 23 motors paired with StepperOnline DM542T drivers. | Motor winding/current and driver DIP settings, couplings, axis mapping, steps/mm, and travel limits are not supplied. |",
+          "evidence": "Three 8 mm T8 metric lead screws, listed as 1040 mm long; anti-backlash nut blocks; NEMA 23 motors paired with StepperOnline DM542T drivers.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        },
+        {
+          "name": "Makita RT0701C router",
+          "contacts": [],
+          "source_line_number": 16,
+          "source_line": "| Cutting tool | Makita RT0701C compact router, listed by the author. | Router mount, collet/tool range, speed setting, relay or spindle-control wiring, and completed cutting behavior are not documented in the inspected build page. |",
+          "evidence": "Makita RT0701C compact router, listed by the author.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        }
+      ],
+      "historical_reference": [],
+      "planned_only": [
+        {
+          "name": "Touch probe listed in parts only",
+          "contacts": [],
+          "source_line_number": 18,
+          "source_line": "| Sensors/probe | A touch probe appears in the listed parts. | The inspected page does not say it was installed or provide probe wiring, calibration, or a probing routine. |",
+          "evidence": "A touch probe appears in the listed parts.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        }
+      ],
+      "open_function_group": [],
+      "exclusions": [
+        {
+          "name": "NEMA 23 axis motors",
+          "contacts": [],
+          "source_line_number": 14,
+          "source_line": "| Motion | Three 8 mm T8 metric lead screws, listed as 1040 mm long; anti-backlash nut blocks; NEMA 23 motors paired with StepperOnline DM542T drivers. | Motor winding/current and driver DIP settings, couplings, axis mapping, steps/mm, and travel limits are not supplied. |",
+          "evidence": "Three 8 mm T8 metric lead screws, listed as 1040 mm long; anti-backlash nut blocks; NEMA 23 motors paired with StepperOnline DM542T drivers.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route",
+          "reason": "Excluded: no separate externally addressable interface, existing control hardware, absent tooling, or inadequate positive device evidence in this dossier."
+        },
+        {
+          "name": "C10 breakout board in existing controller",
+          "contacts": [],
+          "source_line_number": 15,
+          "source_line": "| Controller and computer | An eBay Dell PC running LinuxCNC, connected to a C10 breakout board installed in an old PC case. | Dell model, LinuxCNC version, C10 revision, parallel-port mapping, firmware/configuration, and exact IO wiring are not shown. |",
+          "evidence": "| Controller and computer | An eBay Dell PC running LinuxCNC, connected to a C10 breakout board installed in an old PC case. | Dell model, LinuxCNC version, C10 revision, parallel-port mapping, firmware/configuration, and exact IO wiring are not shown. |",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route",
+          "reason": "Existing LinuxCNC breakout board, not the SmoothieBox machine-side peripheral."
+        }
+      ],
+      "source_gap": "Dossier does not establish an as-built SmoothieBox route or a complete physical contact schedule for the listed peripherals."
+    }
+  }
+}

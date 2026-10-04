@@ -1,0 +1,23 @@
+# Taig DSLS Micro Mill family: machine-side reference contacts
+
+Checked: 2026-09-26. Applies as a **MicroProto DSLS 3000 historical controller reference** alongside Taig's current 2018DSLS, 2019DSLS and 5019DSLS product identities (`mill-h1`, `mill-h2`, `mill-h3`). It does not prove that an individual current machine uses the photographed 2006 controller, the parallel-port option, or any particular connector pin function.
+
+## Source and revision boundary
+
+- Taig's [2018DSLS](https://taigtools.com/product/micro-mill-2018dsls/), [2019DSLS](https://taigtools.com/product/micro-mill-2019dsls/) and [5019DSLS](https://taigtools.com/product/micro-mill-5019dsls/) listings each name closed-loop optical-encoder feedback, steppers, a control box/system, and Mach3. They do not identify the controller revision or publish its connector map.
+- MicroProto Systems' [MicroMill DSLS 3000 system page](https://www.microproto.com/MMDSLS.htm) identifies a computer parallel-printer-port input, a fourth-axis amplifier/port, a separate I/O port, and an optional USB module. It calls for a computer DB25 printer output in the parallel variant. That computer connector is not a set of generic motor outputs and USB-equipped systems need a separate survey.
+- MicroProto Systems' *MicroMill DSLS 3000 User's Manual*, preliminary release 2006, is [hosted as a PDF by Soigeneris](https://www.soigeneris.com/Document/Taig/MicroMill_DSLS_Manual.pdf). Captured `/tmp/atlas-taig-dsls-manual.pdf`, SHA-256 `5756b53491b2f781436dc3c50955698438677cde06126cfc9bc66a28098cd4f` (53 PDF pages, file metadata 2012). Printed p. 5 / PDF p. 5 names X, Y, Z and A driver-box **DIN 6** motor sockets and separate encoder leads, and photographs the back panel. Printed p. 6 / PDF p. 6 describes a separately powered 120 Vac spindle/auxiliary relay module attached to the driver I/O port. The table of contents promises “Wiring Configurations for Driver” on printed p. 55, but the captured PDF ends at printed p. 53; it therefore provides no driver pin assignment. We cannot transfer a generic printer-port, DIN 6, Mach3, or other manufacturer's pinout to this controller.
+
+## Positions shown in the primary diagrams
+
+| Reference peripheral | Positions | What is actually known |
+| --- | --- | --- |
+| Historical DSLS driver X, Y and Z motor DIN 6 ports | 1–6 each | Six physical socket positions per axis are named by the manual. No cavity-to-winding map, coil pair, voltage, current or replacement driver interface is supplied. These ports are downstream of the original motor amplifiers, not SmoothieBox STEP/DIR inputs. |
+| Historical DSLS driver A motor DIN 6 port | 1–6 | The old control box has an A port. A fitted fourth-axis motor is optional; the current machine listing does not prove one. |
+| Historical DSLS parallel-host DB25 input | 1–25 | MicroProto names the parallel-printer-port input and computer DB25 output; every numbered contact is kept OPEN because the DSLS-specific signal assignment and electrical levels are missing. The DB25 is drawn as a **machine-side peripheral** into which a qualified SmoothieBox interface could connect, never as part of the SmoothieBox case. Applies only to the legacy parallel variant, not the USB option. |
+
+Those are **49 REFERENCE ONLY / OPEN positions per profile** (24 DIN 6 + 25 DB25). The numbers enumerate standard connector positions; the SVG contact strip is not a mating-face or solder-side orientation drawing. The source has no demonstrated individual limit-switch, emergency-stop or encoder-cable positions, so those remain unnumbered OPEN boundaries. Each Taig listing identifies an ER16 spindle, which is shown as a separate zero-contact peripheral because the listing supplies no electrical spindle-motor interface. The historical spindle/auxiliary AC relay unit remains another separate zero-contact reference; its mains sockets are not a direct SmoothieBox output. No route is drawn because no specific source contact can be safely matched to a SmoothieBox exterior screw. Any later source-backed functional guess must use a dotted route with the existing legend.
+
+## Exclusions and missing evidence
+
+The 2009 DivisionMaster DIN motor table describes older Taig one-amp-per-phase unipolar motors, not a proven DSLS closed-loop motor cable. It is excluded. Also missing: actual controller part/revision and option photograph, DB25 host-input assignment and logic reference, DIN 6 winding order, encoder connector geometry and electrical interface, individual limit circuits, and spindle/relay load interface. Obtain those before selecting STEP, DIR, endstop GND, encoder, or AC control conductors.

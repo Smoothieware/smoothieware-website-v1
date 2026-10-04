@@ -1,0 +1,35 @@
+{
+  "id": "forum-sawmill-creek-morrisville-router-table",
+  "sources": {
+    "forum-peripheral-evidence.json": {
+      "id": "forum-sawmill-creek-morrisville-router-table",
+      "dossier": "src/docs/machine-research/sawmill-creek-morrisville-router-table.md",
+      "reported_fitted_or_used": [],
+      "listed_for_build_unverified": [],
+      "historical_reference": [],
+      "planned_only": [],
+      "open_function_group": [],
+      "exclusions": [
+        {
+          "name": "Gecko motion controller and drives unspecified",
+          "contacts": [],
+          "source_line_number": 17,
+          "source_line": "The initial report names a **Gecko Drive controller**, **Mastercam**, and **Mach3**. It does not give the controller/drive model, motors, power supplies, motion interface, spindle/router, workholding details, limit-switch layout, or connector pin assignments. A later adviser post refers to welded construction and axis details but supplies no electrical schematic.",
+          "evidence": "The initial report names a **Gecko Drive controller**, **Mastercam**, and **Mach3**. It does not give the controller/drive model, motors, power supplies, motion interface, spindle/router, workholding details, limit-switch layout, or connector pin assignments.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route",
+          "reason": "No separate supported machine-side electrical interface or positive fitted-device identity in this dossier."
+        },
+        {
+          "name": "Three-axis motors and router interface unidentified",
+          "contacts": [],
+          "source_line_number": 11,
+          "source_line": "The students' router is reported as a three-axis machine made from aluminum and steel, with a 54 \u00d7 61 \u00d7 6 in cutting area (approximately 1,372 \u00d7 1,549 \u00d7 152 mm). The thread describes a welded base, a welded full-length contact surface instead of suspended rails, dual 8020 X-axis members, a trammable head, and a spoilboard. The adviser says the students developed a new machine with features informed by studied plans.",
+          "evidence": "The students' router is reported as a three-axis machine made from aluminum and steel, with a 54 \u00d7 61 \u00d7 6 in cutting area (approximately 1,372 \u00d7 1,549 \u00d7 152 mm). The thread describes a welded base, a welded full-length contact surface instead of suspended rails, dual 8020 X-axis members, a trammable head, and a spoilboard.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route",
+          "reason": "No separate supported machine-side electrical interface or positive fitted-device identity in this dossier."
+        }
+      ],
+      "source_gap": "Dossier does not establish an as-built SmoothieBox route or a complete physical contact schedule for the listed peripherals."
+    }
+  }
+}

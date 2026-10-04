@@ -1,0 +1,557 @@
+{
+  "type": "independent-final-load-reconciliation",
+  "profiles": 330,
+  "compact_cards": 330,
+  "owned_asset_checks": 1338,
+  "connections": 1016,
+  "main_connections": 644,
+  "detail_connections": 372,
+  "selected": [
+    {
+      "id": "wiki-205",
+      "connections": 34,
+      "views": {
+        "DETAILED CIRCUIT": 4,
+        "MAIN": 30
+      },
+      "svg_sha256": "0c9068aaf671a3fd588fb1ee4ace87fb6ce88ec3caf35f267aa899ceffe3d3b2",
+      "geometry": {
+        "viewbox": [
+          0,
+          0,
+          3000,
+          3000
+        ],
+        "controller": [
+          1000,
+          1000,
+          1000,
+          1000
+        ],
+        "controller_area_fraction": 0.1111111111111111
+      }
+    },
+    {
+      "id": "laserplot-02",
+      "connections": 26,
+      "views": {
+        "DETAILED CIRCUIT": 5,
+        "MAIN": 21
+      },
+      "svg_sha256": "773ecd08ed4eb4128a6fe9c052a5601ccf190b3f4bd59cea5d1c11bb6a7f33bd",
+      "geometry": {
+        "viewbox": [
+          0,
+          0,
+          3000,
+          3000
+        ],
+        "controller": [
+          1000,
+          1000,
+          1000,
+          1000
+        ],
+        "controller_area_fraction": 0.1111111111111111
+      }
+    },
+    {
+      "id": "base-11",
+      "connections": 55,
+      "views": {
+        "DETAILED CIRCUIT": 8,
+        "MAIN": 47
+      },
+      "svg_sha256": "752eedc54779de9ac38088a0118716e70a8567be4a212691c026d7be3a4cd39d",
+      "geometry": {
+        "viewbox": [
+          0,
+          0,
+          3000,
+          3000
+        ],
+        "controller": [
+          1000,
+          1000,
+          1000,
+          1000
+        ],
+        "controller_area_fraction": 0.1111111111111111
+      }
+    },
+    {
+      "id": "wiki-132",
+      "connections": 56,
+      "views": {
+        "DETAILED CIRCUIT": 15,
+        "MAIN": 41
+      },
+      "svg_sha256": "e848781ea90d6900ec48618afa8b7564cd7649833fde8626881ec9ceb80b7e18",
+      "geometry": {
+        "viewbox": [
+          0,
+          0,
+          3000,
+          3000
+        ],
+        "controller": [
+          1000,
+          1000,
+          1000,
+          1000
+        ],
+        "controller_area_fraction": 0.1111111111111111
+      }
+    },
+    {
+      "id": "wiki-134",
+      "connections": 160,
+      "views": {
+        "DETAILED CIRCUIT": 75,
+        "MAIN": 85
+      },
+      "svg_sha256": "1f34ca6f4c60cd1506cc6a33d542fe831bcf688b78dedbc7e4b113ddd44e3b26",
+      "geometry": {
+        "viewbox": [
+          0,
+          0,
+          3000,
+          3000
+        ],
+        "controller": [
+          1000,
+          1000,
+          1000,
+          1000
+        ],
+        "controller_area_fraction": 0.1111111111111111
+      }
+    },
+    {
+      "id": "wiki-135",
+      "connections": 117,
+      "views": {
+        "DETAILED CIRCUIT": 61,
+        "MAIN": 56
+      },
+      "svg_sha256": "2458a4a9dcb0c62d8c76d13b33c4c47b95f1ee71deedf644d7bb5618b8b4e875",
+      "geometry": {
+        "viewbox": [
+          0,
+          0,
+          3000,
+          3000
+        ],
+        "controller": [
+          1000,
+          1000,
+          1000,
+          1000
+        ],
+        "controller_area_fraction": 0.1111111111111111
+      }
+    },
+    {
+      "id": "mill-g2",
+      "connections": 57,
+      "views": {
+        "DETAILED CIRCUIT": 8,
+        "MAIN": 49
+      },
+      "svg_sha256": "79631310f134bc1b61bd6510aa450e4a2f29090cb761f8c860be3e300d7043f1",
+      "geometry": {
+        "viewbox": [
+          0,
+          0,
+          3000,
+          3000
+        ],
+        "controller": [
+          1000,
+          1000,
+          1000,
+          1000
+        ],
+        "controller_area_fraction": 0.1111111111111111
+      }
+    },
+    {
+      "id": "mill-avid-ex-3",
+      "connections": 213,
+      "views": {
+        "DETAILED CIRCUIT": 104,
+        "MAIN": 109
+      },
+      "svg_sha256": "174a802f3d31f24638f2976d12f22dc1b52711c800604bdc09816d7dcaacec9a",
+      "geometry": {
+        "viewbox": [
+          0,
+          0,
+          3000,
+          3000
+        ],
+        "controller": [
+          1000,
+          1000,
+          1000,
+          1000
+        ],
+        "controller_area_fraction": 0.1111111111111111
+      }
+    },
+    {
+      "id": "wiki-206",
+      "connections": 39,
+      "views": {
+        "DETAILED CIRCUIT": 3,
+        "MAIN": 36
+      },
+      "svg_sha256": "c60a70ff856d8311892df734c57f86edf0c5ce06a615131f17def5279a2d7d9a",
+      "geometry": {
+        "viewbox": [
+          0,
+          0,
+          3000,
+          3000
+        ],
+        "controller": [
+          1000,
+          1000,
+          1000,
+          1000
+        ],
+        "controller_area_fraction": 0.1111111111111111
+      }
+    },
+    {
+      "id": "wiki-222",
+      "connections": 66,
+      "views": {
+        "DETAILED CIRCUIT": 5,
+        "MAIN": 61
+      },
+      "svg_sha256": "3223c244551154b6184f98a75000d4f7a0c2f7ae71725ec05c3c22db54bb6c45",
+      "geometry": {
+        "viewbox": [
+          0,
+          0,
+          3000,
+          3000
+        ],
+        "controller": [
+          1000,
+          1000,
+          1000,
+          1000
+        ],
+        "controller_area_fraction": 0.1111111111111111
+      }
+    },
+    {
+      "id": "forum-linuxcnc-optimill-mh50v-unlogic",
+      "connections": 161,
+      "views": {
+        "DETAILED CIRCUIT": 71,
+        "MAIN": 90
+      },
+      "svg_sha256": "d9d1ad2313cb97ce859ab0e53549dc54f9c28fea7387ae159feaddda720da037",
+      "geometry": {
+        "viewbox": [
+          0,
+          0,
+          3000,
+          3000
+        ],
+        "controller": [
+          1000,
+          1000,
+          1000,
+          1000
+        ],
+        "controller_area_fraction": 0.1111111111111111
+      }
+    },
+    {
+      "id": "forum-linuxcnc-rotarysmp-schaublin-125-cnc-retrofit",
+      "connections": 32,
+      "views": {
+        "DETAILED CIRCUIT": 13,
+        "MAIN": 19
+      },
+      "svg_sha256": "3ddee8be3a253ab7a4aaf5bfab13960cddaafa39aacdd3e2b4d299cd75ec0d9d",
+      "geometry": {
+        "viewbox": [
+          0,
+          0,
+          3000,
+          3000
+        ],
+        "controller": [
+          1000,
+          1000,
+          1000,
+          1000
+        ],
+        "controller_area_fraction": 0.1111111111111111
+      }
+    }
+  ],
+  "promoted_load_paths_checked": 48,
+  "promoted_load_paths": [
+    {
+      "profile": "wiki-205",
+      "id": "C07-003",
+      "current_view": "MAIN"
+    },
+    {
+      "profile": "wiki-205",
+      "id": "C07-004",
+      "current_view": "MAIN"
+    },
+    {
+      "profile": "wiki-132",
+      "id": "C10-001",
+      "current_view": "MAIN"
+    },
+    {
+      "profile": "wiki-132",
+      "id": "C10-005",
+      "current_view": "MAIN"
+    },
+    {
+      "profile": "mill-g2",
+      "id": "C04-003",
+      "current_view": "MAIN"
+    },
+    {
+      "profile": "mill-g2",
+      "id": "C04-004",
+      "current_view": "MAIN"
+    },
+    {
+      "profile": "mill-g2",
+      "id": "C05-001",
+      "current_view": "MAIN"
+    },
+    {
+      "profile": "mill-g2",
+      "id": "C05-002",
+      "current_view": "MAIN"
+    },
+    {
+      "profile": "wiki-222",
+      "id": "C07-003",
+      "current_view": "MAIN"
+    },
+    {
+      "profile": "wiki-222",
+      "id": "C14-001",
+      "current_view": "MAIN"
+    },
+    {
+      "profile": "wiki-222",
+      "id": "C14-005",
+      "current_view": "MAIN"
+    },
+    {
+      "profile": "forum-linuxcnc-optimill-mh50v-unlogic",
+      "id": "C05-001",
+      "current_view": "MAIN"
+    },
+    {
+      "profile": "forum-linuxcnc-optimill-mh50v-unlogic",
+      "id": "C05-002",
+      "current_view": "MAIN"
+    },
+    {
+      "profile": "forum-linuxcnc-optimill-mh50v-unlogic",
+      "id": "C05-003",
+      "current_view": "MAIN"
+    },
+    {
+      "profile": "forum-linuxcnc-optimill-mh50v-unlogic",
+      "id": "C05-004",
+      "current_view": "MAIN"
+    },
+    {
+      "profile": "forum-linuxcnc-optimill-mh50v-unlogic",
+      "id": "C05-005",
+      "current_view": "MAIN"
+    },
+    {
+      "profile": "forum-linuxcnc-optimill-mh50v-unlogic",
+      "id": "C05-006",
+      "current_view": "MAIN"
+    },
+    {
+      "profile": "forum-linuxcnc-optimill-mh50v-unlogic",
+      "id": "C05-007",
+      "current_view": "MAIN"
+    },
+    {
+      "profile": "forum-linuxcnc-optimill-mh50v-unlogic",
+      "id": "C05-008",
+      "current_view": "MAIN"
+    },
+    {
+      "profile": "forum-linuxcnc-optimill-mh50v-unlogic",
+      "id": "C05-009",
+      "current_view": "MAIN"
+    },
+    {
+      "profile": "forum-linuxcnc-optimill-mh50v-unlogic",
+      "id": "C06-001",
+      "current_view": "MAIN"
+    },
+    {
+      "profile": "forum-linuxcnc-optimill-mh50v-unlogic",
+      "id": "C06-002",
+      "current_view": "MAIN"
+    },
+    {
+      "profile": "forum-linuxcnc-optimill-mh50v-unlogic",
+      "id": "C06-003",
+      "current_view": "MAIN"
+    },
+    {
+      "profile": "forum-linuxcnc-optimill-mh50v-unlogic",
+      "id": "C06-004",
+      "current_view": "MAIN"
+    },
+    {
+      "profile": "forum-linuxcnc-optimill-mh50v-unlogic",
+      "id": "C06-005",
+      "current_view": "MAIN"
+    },
+    {
+      "profile": "forum-linuxcnc-optimill-mh50v-unlogic",
+      "id": "C06-006",
+      "current_view": "MAIN"
+    },
+    {
+      "profile": "forum-linuxcnc-optimill-mh50v-unlogic",
+      "id": "C06-007",
+      "current_view": "MAIN"
+    },
+    {
+      "profile": "forum-linuxcnc-optimill-mh50v-unlogic",
+      "id": "C06-008",
+      "current_view": "MAIN"
+    },
+    {
+      "profile": "forum-linuxcnc-optimill-mh50v-unlogic",
+      "id": "C06-009",
+      "current_view": "MAIN"
+    },
+    {
+      "profile": "forum-linuxcnc-optimill-mh50v-unlogic",
+      "id": "C07-001",
+      "current_view": "MAIN"
+    },
+    {
+      "profile": "forum-linuxcnc-optimill-mh50v-unlogic",
+      "id": "C07-002",
+      "current_view": "MAIN"
+    },
+    {
+      "profile": "forum-linuxcnc-optimill-mh50v-unlogic",
+      "id": "C07-003",
+      "current_view": "MAIN"
+    },
+    {
+      "profile": "forum-linuxcnc-optimill-mh50v-unlogic",
+      "id": "C07-004",
+      "current_view": "MAIN"
+    },
+    {
+      "profile": "forum-linuxcnc-optimill-mh50v-unlogic",
+      "id": "C07-005",
+      "current_view": "MAIN"
+    },
+    {
+      "profile": "forum-linuxcnc-optimill-mh50v-unlogic",
+      "id": "C07-006",
+      "current_view": "MAIN"
+    },
+    {
+      "profile": "forum-linuxcnc-optimill-mh50v-unlogic",
+      "id": "C07-007",
+      "current_view": "MAIN"
+    },
+    {
+      "profile": "forum-linuxcnc-optimill-mh50v-unlogic",
+      "id": "C07-008",
+      "current_view": "MAIN"
+    },
+    {
+      "profile": "forum-linuxcnc-optimill-mh50v-unlogic",
+      "id": "C07-009",
+      "current_view": "MAIN"
+    },
+    {
+      "profile": "forum-linuxcnc-optimill-mh50v-unlogic",
+      "id": "C07-010",
+      "current_view": "MAIN"
+    },
+    {
+      "profile": "forum-linuxcnc-optimill-mh50v-unlogic",
+      "id": "C07-011",
+      "current_view": "MAIN"
+    },
+    {
+      "profile": "forum-linuxcnc-optimill-mh50v-unlogic",
+      "id": "C19-003",
+      "current_view": "MAIN"
+    },
+    {
+      "profile": "forum-linuxcnc-optimill-mh50v-unlogic",
+      "id": "C19-004",
+      "current_view": "MAIN"
+    },
+    {
+      "profile": "forum-linuxcnc-optimill-mh50v-unlogic",
+      "id": "C19-005",
+      "current_view": "MAIN"
+    },
+    {
+      "profile": "forum-linuxcnc-optimill-mh50v-unlogic",
+      "id": "C19-006",
+      "current_view": "MAIN"
+    },
+    {
+      "profile": "forum-linuxcnc-optimill-mh50v-unlogic",
+      "id": "C20-003",
+      "current_view": "MAIN"
+    },
+    {
+      "profile": "forum-linuxcnc-optimill-mh50v-unlogic",
+      "id": "C20-004",
+      "current_view": "MAIN"
+    },
+    {
+      "profile": "forum-linuxcnc-optimill-mh50v-unlogic",
+      "id": "C20-005",
+      "current_view": "MAIN"
+    },
+    {
+      "profile": "forum-linuxcnc-optimill-mh50v-unlogic",
+      "id": "C20-006",
+      "current_view": "MAIN"
+    }
+  ],
+  "issues": [],
+  "limits": [
+    "No browser interaction/render legibility verification",
+    "No public deployment byte readback",
+    "No installed machine electrical qualification"
+  ],
+  "method": "Single read-only current manifest/canonical/index/detail/owned bytes/evidence and SVG provenance reconciliation; no test runner.",
+  "visible_id_xml_readback": {
+    "main_evidence_ids": 644,
+    "unique_manifest_route_ids": 644,
+    "context_ids_expected": 48,
+    "issues": [],
+    "method": "XML text and main_route_manifest; SVG metadata evidence content excluded from visible text check"
+  },
+  "passed": true
+}

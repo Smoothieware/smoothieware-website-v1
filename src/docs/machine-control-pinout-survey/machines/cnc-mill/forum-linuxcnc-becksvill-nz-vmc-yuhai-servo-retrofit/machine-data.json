@@ -1,0 +1,59 @@
+{
+  "id": "forum-linuxcnc-becksvill-nz-vmc-yuhai-servo-retrofit",
+  "sources": {
+    "forum-peripheral-evidence.json": {
+      "id": "forum-linuxcnc-becksvill-nz-vmc-yuhai-servo-retrofit",
+      "dossier": "src/docs/machine-research/linuxcnc-becksvill-nz-vmc-yuhai-servo-retrofit.md",
+      "reported_fitted_or_used": [
+        {
+          "name": "Differential encoder outputs",
+          "source_line_number": 17,
+          "source_line": "The owner describes the drive encoder output as standard 5 V differential A, B, and Z signals: three complementary pairs, six signal wires total. He says the encoder is powered by the drive and that he temporarily used the spindle encoder input on the Mesa 7i76. This describes his drive and test arrangement; it does not identify terminal names or numbers at either end, cable part numbers, a verified shield termination diagram, or the electrical details of every axis.",
+          "evidence": "The owner describes the drive encoder output as standard 5 V differential A, B, and Z signals: three complementary pairs, six signal wires total. He says the encoder is powered by the drive and that he temporarily used the spindle encoder input on the Mesa 7i76.",
+          "contacts": [],
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        },
+        {
+          "name": "Spindle VFD direction relay",
+          "source_line_number": 13,
+          "source_line": "The machine's VFD direction needed an interposing relay in this installation, according to the owner, because the 7i76 did not connect to that VFD's direction input in the way he wanted. The thread does not identify the VFD model or relay contacts. His later note says he had increased spindle-VFD acceleration, but provides no parameter values.",
+          "evidence": "The machine's VFD direction needed an interposing relay in this installation, according to the owner, because the 7i76 did not connect to that VFD's direction input in the way he wanted. The thread does not identify the VFD model or relay contacts.",
+          "contacts": [],
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        },
+        {
+          "name": "MPG handwheel",
+          "source_line_number": 11,
+          "source_line": "The owner also reported wiring a Chinese MPG into the 7i76 MPG counters. The MPG he had was described as a 12 V unit, while his available machine/control supplies were 5 V and 24 V. He says he used a small voltage-converter chip so it could operate from the available 24 V supply. The thread does not identify the converter part number, MPG model, input circuit, or full pin-to-pin wiring, so this is a build report rather than a reproducible wiring diagram.",
+          "evidence": "The owner also reported wiring a Chinese MPG into the 7i76 MPG counters. The MPG he had was described as a 12 V unit, while his available machine/control supplies were 5 V and 24 V.",
+          "contacts": [],
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        },
+        {
+          "name": "Chinese servo drives, exact model unverified",
+          "contacts": [],
+          "source_line_number": 3,
+          "source_line": "**Machine identity:** An unnamed vertical machining centre (VMC) in New Zealand, documented by forum member Becksvill / Andrew. He says it originally had a Heidenhain control; the maker, model, year, travels, spindle rating, and exact servo-drive model are not established in the thread. A photo shows the original Heidenhain display, while the owner attributes a major electrical failure to a possible lightning strike (his hypothesis). He stripped the control and retrofitted Chinese servo drives with LinuxCNC and Mesa hardware. The thread later calls the drives Chinese copies of Yaskawa Sigma 2 drives, and the owner says the manual contains a Yaskawa-name typo. Do not treat that comparison as proof of electrical or tuning compatibility with a particular Yaskawa model.",
+          "evidence": "He says it originally had a Heidenhain control; the maker, model, year, travels, spindle rating, and exact servo-drive model are not established in the thread. A photo shows the original Heidenhain display, while the owner attributes a major electrical failure to a possible lightning strike (his hypothesis).",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        }
+      ],
+      "listed_for_build_unverified": [],
+      "historical_reference": [],
+      "planned_only": [],
+      "open_function_group": [],
+      "exclusions": [
+        {
+          "name": "YUHAI as the installed drive brand",
+          "contacts": [],
+          "source_line_number": 1,
+          "source_line": "# Becksvill's New Zealand vertical machining centre with LinuxCNC and Chinese servo drives",
+          "evidence": "The owner posted a YUHAI manual screenshot, but the installed drives' label and revision are not shown.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route",
+          "reason": "The owner's posted manual image names YUHAI; its applicability to each installed drive remains unverified."
+        }
+      ],
+      "source_gap": "Dossier does not establish an as-built SmoothieBox route or a complete physical contact schedule for the listed peripherals."
+    }
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "id": "forum-plasmaspider-acourtjester-table-10-linuxcnc-qtplasmac",
+  "sources": {
+    "forum-peripheral-evidence.json": {
+      "id": "forum-plasmaspider-acourtjester-table-10-linuxcnc-qtplasmac",
+      "dossier": "src/docs/machine-research/plasmaspider-acourtjester-table-10-linuxcnc-qtplasmac.md",
+      "reported_fitted_or_used": [
+        {
+          "name": "Home and limit switches",
+          "source_line_number": 16,
+          "source_line": "| Home and limit | Owner reports that home/limit switches were working by 1 December 2022. | Switch type and individual input assignments are not given. |",
+          "evidence": "Owner reports that home/limit switches were working by 1 December 2022.",
+          "contacts": [],
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        },
+        {
+          "name": "Ohmic torch sensor",
+          "source_line_number": 17,
+          "source_line": "| Torch sensing | Owner says an Ohmic sensor was wired and tested OK. The owner planned a magnetic breakaway torch holder and a 3D-printed floating-head switch. | The post does not identify the Ohmic module or show the sensor circuit. The printed holder/switch are described as intended components, not confirmed installed final hardware. |",
+          "evidence": "Owner says an Ohmic sensor was wired and tested OK. The owner planned a magnetic breakaway torch holder and a 3D-printed floating-head switch.",
+          "contacts": [],
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        }
+      ],
+      "listed_for_build_unverified": [],
+      "historical_reference": [],
+      "planned_only": [],
+      "open_function_group": [],
+      "exclusions": [
+        {
+          "name": "THCAD card pending configuration",
+          "reason": "Existing or proposed controller belongs to the replaced control system, not the machine periphery.",
+          "source_line_number": 18,
+          "source_line": "| Torch height control | Owner says a THCAD card still needed configuration for THC. An earlier post says an add-on board was selected for THC; a January update says the owner was using one THC encoder and had not loaded newer Mesa firmware. | No arc-voltage scaling, divider, input pin, or final operating test is provided. THC completion remains unverified in the thread. |"
+        },
+        {
+          "name": "Plasma cutter identity unreported",
+          "contacts": [],
+          "source_line_number": 19,
+          "source_line": "| Plasma source | The inspected thread does not identify the plasma cutter used specifically on table #10. | Do not borrow the Powermax PM65 listed in the owner\u2019s forum signature; the signature is not tied to this build. |",
+          "evidence": "The inspected thread does not identify the plasma cutter used specifically on table #10.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route",
+          "reason": "Excluded: no separate externally addressable interface, existing control hardware, absent tooling, or inadequate positive device evidence in this dossier."
+        }
+      ],
+      "source_gap": "Dossier does not establish an as-built SmoothieBox route or a complete physical contact schedule for the listed peripherals."
+    }
+  }
+}

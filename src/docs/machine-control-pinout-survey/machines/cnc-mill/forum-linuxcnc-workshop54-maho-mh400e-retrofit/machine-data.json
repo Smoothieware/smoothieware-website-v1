@@ -1,0 +1,33 @@
+{
+  "id": "forum-linuxcnc-workshop54-maho-mh400e-retrofit",
+  "sources": {
+    "forum-peripheral-evidence.json": {
+      "id": "forum-linuxcnc-workshop54-maho-mh400e-retrofit",
+      "dossier": "src/docs/machine-research/linuxcnc-workshop54-maho-mh400e-retrofit.md",
+      "reported_fitted_or_used": [],
+      "listed_for_build_unverified": [],
+      "historical_reference": [],
+      "planned_only": [
+        {
+          "name": "Three DB15 Heidenhain cable breakouts planned",
+          "contacts": [],
+          "source_line_number": 11,
+          "source_line": "The owner lists planned breakout hardware to preserve the existing machine cables: three DB15 breakouts for Heidenhain cables, two DB9 breakouts for Indramat cables, and two IDC40 ribbon-cable breakouts. These are connector-family and intended-role observations only; the thread does not provide pin numbers, signal direction, electrical levels, or verified cable-to-board assignments.",
+          "evidence": "The owner lists planned breakout hardware to preserve the existing machine cables: three DB15 breakouts for Heidenhain cables, two DB9 breakouts for Indramat cables, and two IDC40 ribbon-cable breakouts. These are connector-family and intended-role observations only; the thread does not provide pin numbers, signal direction, electrical levels, or verified cable-to-board assignments.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        },
+        {
+          "name": "Two DB9 Indramat cable breakouts planned",
+          "contacts": [],
+          "source_line_number": 11,
+          "source_line": "The owner lists planned breakout hardware to preserve the existing machine cables: three DB15 breakouts for Heidenhain cables, two DB9 breakouts for Indramat cables, and two IDC40 ribbon-cable breakouts. These are connector-family and intended-role observations only; the thread does not provide pin numbers, signal direction, electrical levels, or verified cable-to-board assignments.",
+          "evidence": "The owner lists planned breakout hardware to preserve the existing machine cables: three DB15 breakouts for Heidenhain cables, two DB9 breakouts for Indramat cables, and two IDC40 ribbon-cable breakouts. These are connector-family and intended-role observations only; the thread does not provide pin numbers, signal direction, electrical levels, or verified cable-to-board assignments.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        }
+      ],
+      "open_function_group": [],
+      "exclusions": [],
+      "source_gap": "Dossier does not establish an as-built SmoothieBox route or a complete physical contact schedule for the listed peripherals."
+    }
+  }
+}

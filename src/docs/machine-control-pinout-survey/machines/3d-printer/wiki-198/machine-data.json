@@ -1,0 +1,116 @@
+{
+  "id": "wiki-198",
+  "sources": {
+    "machine-side-graph-snapshot.json": {
+      "source_graph": "198-wiki-198.json",
+      "source_sha256": "7f3cc07f768f1bac171e65e320c935717ee33ca46f1f11aca3a5f565ec209d9d",
+      "graph": {
+        "profile_id": "wiki-198",
+        "devices": [
+          {
+            "id": "supplement-device-001",
+            "role": "reference"
+          },
+          {
+            "id": "supplement-device-002",
+            "role": "reference"
+          },
+          {
+            "id": "supplement-device-003",
+            "role": "reference"
+          }
+        ],
+        "connectors": [
+          {
+            "id": "supplement-connector-001",
+            "device": "supplement-device-001",
+            "refdes": "Darwin card v1.2 X motor cable 4-way socket",
+            "form": "4-way 2.54 mm motor-cable socket; mating view unknown",
+            "scope": "One of three design-reference motor cables mating to controller card v1.2; X motor A/B/C/D order from the cable-socket table. The page instructs soldering/crimping this socket onto the motor wires. This does not establish the card fitted to any particular Darwin or a V2 route. This is a reference for the named source revision; installed-machine correspondence is not established.",
+            "contacts": [
+              {
+                "id": "1",
+                "mark": "1",
+                "label": "X motor phase D (source card v1.2)"
+              },
+              {
+                "id": "2",
+                "mark": "2",
+                "label": "X motor phase C (source card v1.2)"
+              },
+              {
+                "id": "3",
+                "mark": "3",
+                "label": "X motor phase B (source card v1.2)"
+              },
+              {
+                "id": "4",
+                "mark": "4",
+                "label": "X motor phase A (source card v1.2)"
+              }
+            ]
+          },
+          {
+            "id": "supplement-connector-002",
+            "device": "supplement-device-002",
+            "refdes": "Darwin card v1.2 Y motor cable 4-way socket",
+            "form": "4-way 2.54 mm motor-cable socket; mating view unknown",
+            "scope": "One of three design-reference motor cables mating to controller card v1.2; Y motor A/B/C/D order from the cable-socket table. The page instructs soldering/crimping this socket onto the motor wires. This does not establish the card fitted to any particular Darwin or a V2 route. This is a reference for the named source revision; installed-machine correspondence is not established.",
+            "contacts": [
+              {
+                "id": "1",
+                "mark": "1",
+                "label": "Y motor phase A (source card v1.2)"
+              },
+              {
+                "id": "2",
+                "mark": "2",
+                "label": "Y motor phase B (source card v1.2)"
+              },
+              {
+                "id": "3",
+                "mark": "3",
+                "label": "Y motor phase C (source card v1.2)"
+              },
+              {
+                "id": "4",
+                "mark": "4",
+                "label": "Y motor phase D (source card v1.2)"
+              }
+            ]
+          },
+          {
+            "id": "supplement-connector-003",
+            "device": "supplement-device-003",
+            "refdes": "Darwin card v1.2 Z motor cable 4-way socket",
+            "form": "4-way 2.54 mm motor-cable socket; mating view unknown",
+            "scope": "One of three design-reference motor cables mating to controller card v1.2; Z motor A/B/C/D order from the cable-socket table. The page instructs soldering/crimping this socket onto the motor wires. This does not establish the card fitted to any particular Darwin or a V2 route. This is a reference for the named source revision; installed-machine correspondence is not established.",
+            "contacts": [
+              {
+                "id": "1",
+                "mark": "1",
+                "label": "Z motor phase A (source card v1.2)"
+              },
+              {
+                "id": "2",
+                "mark": "2",
+                "label": "Z motor phase B (source card v1.2)"
+              },
+              {
+                "id": "3",
+                "mark": "3",
+                "label": "Z motor phase C (source card v1.2)"
+              },
+              {
+                "id": "4",
+                "mark": "4",
+                "label": "Z motor phase D (source card v1.2)"
+              }
+            ]
+          }
+        ],
+        "wires": []
+      }
+    }
+  }
+}

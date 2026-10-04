@@ -1,0 +1,41 @@
+{
+  "id": "laserplot-06",
+  "sources": {
+    "machine-side-graph-snapshot.json": {
+      "source_graph": "093-laserplot-06.json",
+      "source_sha256": "482c26d918a31601dd61b31f6bb012ade95eeec7bd7a8af66412f4c9f0e6db60",
+      "graph": {
+        "profile_id": "laserplot-06",
+        "devices": [
+          {
+            "id": "group-device-001",
+            "role": "peripheral"
+          },
+          {
+            "id": "group-device-002",
+            "role": "peripheral"
+          }
+        ],
+        "connectors": [
+          {
+            "id": "machine-group-001",
+            "device": "group-device-001",
+            "refdes": "Stepper port 1 \u2192 M1/M2 motor outputs",
+            "form": "source-described cable / connector group",
+            "scope": "Source names this group, but provides no source-scoped physical contact map. Availability and exact housing are unverified. exact atlas group labels; open until contact mapping is established",
+            "contacts": []
+          },
+          {
+            "id": "machine-group-002",
+            "device": "group-device-002",
+            "refdes": "Stepper port 2 \u2192 M3/M4 motor outputs",
+            "form": "source-described cable / connector group",
+            "scope": "Source names this group, but provides no source-scoped physical contact map. Availability and exact housing are unverified. exact atlas group labels; open until contact mapping is established",
+            "contacts": []
+          }
+        ],
+        "wires": []
+      }
+    }
+  }
+}

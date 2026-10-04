@@ -1,0 +1,1767 @@
+{
+  "profile_id": "wiki-206",
+  "controller": "Smoothieboard V2 Prime",
+  "classification": "Original motion-driver electronics are on the board being replaced. Use Prime integrated phase outputs directly to measured winding pairs; do not connect STEP/DIR signal outputs to motor windings. Confirm installed board, motor current and power rating from the cited machine source.",
+  "connections": [
+    {
+      "id": "C01-001",
+      "panel_index": 0,
+      "edge_index": 0,
+      "from": "X min limit · traced switch · 8-pin contact 2 · X min",
+      "to": "Prime P12 · X min endstop · J24.3 · input",
+      "state": "GUESS",
+      "view": "MAIN",
+      "rationale": "X min endstop signal: X min limit · traced switch · 8-pin contact 2 · X min → Prime P12 · X min endstop · J24.3 · input. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Trace cable with power isolated; confirm dry contact and NO/NC state. Leave selector pin 1 unused for passive switches; powered sensors require a matched interface.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · inputs.kicad_sch",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/inputs.kicad_sch",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "Shapeoko 2 pinned revision 16813",
+          "url": "https://wiki.raumzeitlabor.de/index.php?title=Shapeoko_2&oldid=16813",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C01-002",
+      "panel_index": 0,
+      "edge_index": 1,
+      "from": "Prime P12 · X min endstop · J24.2 · GND",
+      "to": "X min limit · traced switch · 8-pin sensor socket contact 1 · GND",
+      "state": "GUESS",
+      "view": "MAIN",
+      "rationale": "X min endstop GND: Prime P12 · X min endstop · J24.2 · GND → X min limit · traced switch · 8-pin sensor socket contact 1 · GND. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Trace cable with power isolated; confirm dry contact and NO/NC state. Leave selector pin 1 unused for passive switches; powered sensors require a matched interface.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · inputs.kicad_sch",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/inputs.kicad_sch",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "Shapeoko 2 pinned revision 16813",
+          "url": "https://wiki.raumzeitlabor.de/index.php?title=Shapeoko_2&oldid=16813",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C02-001",
+      "panel_index": 1,
+      "edge_index": 0,
+      "from": "X max limit · traced switch · 8-pin contact 3 · X max",
+      "to": "Prime P12 · X max endstop · J25.3 · input",
+      "state": "GUESS",
+      "view": "MAIN",
+      "rationale": "X max endstop signal: X max limit · traced switch · 8-pin contact 3 · X max → Prime P12 · X max endstop · J25.3 · input. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Trace cable with power isolated; confirm dry contact and NO/NC state. Leave selector pin 1 unused for passive switches; powered sensors require a matched interface.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · inputs.kicad_sch",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/inputs.kicad_sch",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "Shapeoko 2 pinned revision 16813",
+          "url": "https://wiki.raumzeitlabor.de/index.php?title=Shapeoko_2&oldid=16813",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C02-002",
+      "panel_index": 1,
+      "edge_index": 1,
+      "from": "Prime P12 · X max endstop · J25.2 · GND",
+      "to": "X max limit · traced switch · 8-pin sensor socket contact 1 · GND",
+      "state": "GUESS",
+      "view": "MAIN",
+      "rationale": "X max endstop GND: Prime P12 · X max endstop · J25.2 · GND → X max limit · traced switch · 8-pin sensor socket contact 1 · GND. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Trace cable with power isolated; confirm dry contact and NO/NC state. Leave selector pin 1 unused for passive switches; powered sensors require a matched interface.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · inputs.kicad_sch",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/inputs.kicad_sch",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "Shapeoko 2 pinned revision 16813",
+          "url": "https://wiki.raumzeitlabor.de/index.php?title=Shapeoko_2&oldid=16813",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C03-001",
+      "panel_index": 2,
+      "edge_index": 0,
+      "from": "Y min limit · traced switch · 8-pin contact 4 · Y min",
+      "to": "Prime P12 · Y min endstop · J26.3 · input",
+      "state": "GUESS",
+      "view": "MAIN",
+      "rationale": "Y min endstop signal: Y min limit · traced switch · 8-pin contact 4 · Y min → Prime P12 · Y min endstop · J26.3 · input. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Trace cable with power isolated; confirm dry contact and NO/NC state. Leave selector pin 1 unused for passive switches; powered sensors require a matched interface.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · inputs.kicad_sch",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/inputs.kicad_sch",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "Shapeoko 2 pinned revision 16813",
+          "url": "https://wiki.raumzeitlabor.de/index.php?title=Shapeoko_2&oldid=16813",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C03-002",
+      "panel_index": 2,
+      "edge_index": 1,
+      "from": "Prime P12 · Y min endstop · J26.2 · GND",
+      "to": "Y min limit · traced switch · 8-pin sensor socket contact 1 · GND",
+      "state": "GUESS",
+      "view": "MAIN",
+      "rationale": "Y min endstop GND: Prime P12 · Y min endstop · J26.2 · GND → Y min limit · traced switch · 8-pin sensor socket contact 1 · GND. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Trace cable with power isolated; confirm dry contact and NO/NC state. Leave selector pin 1 unused for passive switches; powered sensors require a matched interface.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · inputs.kicad_sch",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/inputs.kicad_sch",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "Shapeoko 2 pinned revision 16813",
+          "url": "https://wiki.raumzeitlabor.de/index.php?title=Shapeoko_2&oldid=16813",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C04-001",
+      "panel_index": 3,
+      "edge_index": 0,
+      "from": "Y max limit · traced switch · 8-pin contact 5 · Y max",
+      "to": "Prime P12 · Y max endstop · J27.3 · input",
+      "state": "GUESS",
+      "view": "MAIN",
+      "rationale": "Y max endstop signal: Y max limit · traced switch · 8-pin contact 5 · Y max → Prime P12 · Y max endstop · J27.3 · input. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Trace cable with power isolated; confirm dry contact and NO/NC state. Leave selector pin 1 unused for passive switches; powered sensors require a matched interface.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · inputs.kicad_sch",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/inputs.kicad_sch",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "Shapeoko 2 pinned revision 16813",
+          "url": "https://wiki.raumzeitlabor.de/index.php?title=Shapeoko_2&oldid=16813",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C04-002",
+      "panel_index": 3,
+      "edge_index": 1,
+      "from": "Prime P12 · Y max endstop · J27.2 · GND",
+      "to": "Y max limit · traced switch · 8-pin sensor socket contact 1 · GND",
+      "state": "GUESS",
+      "view": "MAIN",
+      "rationale": "Y max endstop GND: Prime P12 · Y max endstop · J27.2 · GND → Y max limit · traced switch · 8-pin sensor socket contact 1 · GND. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Trace cable with power isolated; confirm dry contact and NO/NC state. Leave selector pin 1 unused for passive switches; powered sensors require a matched interface.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · inputs.kicad_sch",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/inputs.kicad_sch",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "Shapeoko 2 pinned revision 16813",
+          "url": "https://wiki.raumzeitlabor.de/index.php?title=Shapeoko_2&oldid=16813",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C05-001",
+      "panel_index": 4,
+      "edge_index": 0,
+      "from": "Z min / probe limit · traced switch · alternative to Z-min on shared socket 7 · 8-pin contact 7 · mode-dependent",
+      "to": "Prime P12 · Z min / probe endstop · alternative to Z-min on shared socket 7 · J28.3 · input",
+      "state": "GUESS",
+      "view": "MAIN",
+      "rationale": "Z min / probe endstop signal: Z min / probe limit · traced switch · alternative to Z-min on shared socket 7 · 8-pin contact 7 · mode-dependent → Prime P12 · Z min / probe endstop · alternative to Z-min on shared socket 7 · J28.3 · input. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Trace cable with power isolated; confirm dry contact and NO/NC state. Leave selector pin 1 unused for passive switches; powered sensors require a matched interface.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · inputs.kicad_sch",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/inputs.kicad_sch",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "Shapeoko 2 pinned revision 16813",
+          "url": "https://wiki.raumzeitlabor.de/index.php?title=Shapeoko_2&oldid=16813",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C05-002",
+      "panel_index": 4,
+      "edge_index": 1,
+      "from": "Prime P12 · Z min / probe endstop · alternative to Z-min on shared socket 7 · J28.2 · GND",
+      "to": "Z min / probe limit · traced switch · alternative to Z-min on shared socket 7 · 8-pin sensor socket contact 1 · GND",
+      "state": "GUESS",
+      "view": "MAIN",
+      "rationale": "Z min / probe endstop GND: Prime P12 · Z min / probe endstop · alternative to Z-min on shared socket 7 · J28.2 · GND → Z min / probe limit · traced switch · alternative to Z-min on shared socket 7 · 8-pin sensor socket contact 1 · GND. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Trace cable with power isolated; confirm dry contact and NO/NC state. Leave selector pin 1 unused for passive switches; powered sensors require a matched interface.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · inputs.kicad_sch",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/inputs.kicad_sch",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "Shapeoko 2 pinned revision 16813",
+          "url": "https://wiki.raumzeitlabor.de/index.php?title=Shapeoko_2&oldid=16813",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C06-001",
+      "panel_index": 5,
+      "edge_index": 0,
+      "from": "Z max limit · traced switch · 8-pin contact 6 · Z max",
+      "to": "Prime P12 · Z max endstop · J29.3 · input",
+      "state": "GUESS",
+      "view": "MAIN",
+      "rationale": "Z max endstop signal: Z max limit · traced switch · 8-pin contact 6 · Z max → Prime P12 · Z max endstop · J29.3 · input. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Trace cable with power isolated; confirm dry contact and NO/NC state. Leave selector pin 1 unused for passive switches; powered sensors require a matched interface.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · inputs.kicad_sch",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/inputs.kicad_sch",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "Shapeoko 2 pinned revision 16813",
+          "url": "https://wiki.raumzeitlabor.de/index.php?title=Shapeoko_2&oldid=16813",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C06-002",
+      "panel_index": 5,
+      "edge_index": 1,
+      "from": "Prime P12 · Z max endstop · J29.2 · GND",
+      "to": "Z max limit · traced switch · 8-pin sensor socket contact 1 · GND",
+      "state": "GUESS",
+      "view": "MAIN",
+      "rationale": "Z max endstop GND: Prime P12 · Z max endstop · J29.2 · GND → Z max limit · traced switch · 8-pin sensor socket contact 1 · GND. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Trace cable with power isolated; confirm dry contact and NO/NC state. Leave selector pin 1 unused for passive switches; powered sensors require a matched interface.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · inputs.kicad_sch",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/inputs.kicad_sch",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "Shapeoko 2 pinned revision 16813",
+          "url": "https://wiki.raumzeitlabor.de/index.php?title=Shapeoko_2&oldid=16813",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C07-001",
+      "panel_index": 6,
+      "edge_index": 0,
+      "from": "V2 Prime P12 · proposed signals · J35.6 · PWM",
+      "to": "Inventables Quiet Cut speed control · PWM screw terminal · signal",
+      "state": "OPEN",
+      "view": "MAIN",
+      "rationale": "J35.6 · PWM: V2 Prime P12 · proposed signals · J35.6 · PWM → Inventables Quiet Cut speed control · PWM screw terminal · signal. The fitted interface or electrical contract is unresolved. The broken path is a boundary to identify, not a wire to install.",
+      "qualification": "Manufacturer documents separate PWM/GND speed-control screws and PWM-mode jumper position, but no input threshold/current here. Match the fitted controller; qualify Core 3.3 V input compatibility or a 5 V buffer before connecting. Spindle power uses the controller power stage, never Core GPIO.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · smoothiev2-prime.kicad_pcb",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/smoothiev2-prime.kicad_pcb",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "Shapeoko 2 pinned revision 16813",
+          "url": "https://wiki.raumzeitlabor.de/index.php?title=Shapeoko_2&oldid=16813",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        },
+        {
+          "title": "Inventables manufacturer spindle PWM terminal instructions",
+          "url": "https://inventables.github.io/xcarve2-instructions/upgrade/step3/2usage/",
+          "claim": "Device/source reference supplies its original contact functions or electrical interface limits. Match the cited revision before applying the proposed route."
+        }
+      ]
+    },
+    {
+      "id": "C07-002",
+      "panel_index": 6,
+      "edge_index": 1,
+      "from": "V2 Prime P12 · proposed signals · J35.10 · GND",
+      "to": "Inventables Quiet Cut speed control · PWM screw terminal · GND",
+      "state": "OPEN",
+      "view": "MAIN",
+      "rationale": "J35.10 · GND: V2 Prime P12 · proposed signals · J35.10 · GND → Inventables Quiet Cut speed control · PWM screw terminal · GND. The fitted interface or electrical contract is unresolved. The broken path is a boundary to identify, not a wire to install.",
+      "qualification": "Manufacturer documents separate PWM/GND speed-control screws and PWM-mode jumper position, but no input threshold/current here. Match the fitted controller; qualify Core 3.3 V input compatibility or a 5 V buffer before connecting. Spindle power uses the controller power stage, never Core GPIO.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · smoothiev2-prime.kicad_pcb",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/smoothiev2-prime.kicad_pcb",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "Shapeoko 2 pinned revision 16813",
+          "url": "https://wiki.raumzeitlabor.de/index.php?title=Shapeoko_2&oldid=16813",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        },
+        {
+          "title": "Inventables manufacturer spindle PWM terminal instructions",
+          "url": "https://inventables.github.io/xcarve2-instructions/upgrade/step3/2usage/",
+          "claim": "Device/source reference supplies its original contact functions or electrical interface limits. Match the cited revision before applying the proposed route."
+        }
+      ]
+    },
+    {
+      "id": "C08-001",
+      "panel_index": 7,
+      "edge_index": 0,
+      "from": "Prime P12 · X · J5.1 · B2",
+      "to": "X · measured winding leads · Winding B · lead 2",
+      "state": "GUESS",
+      "view": "MAIN",
+      "rationale": "X motor phase B2: Prime P12 · X · J5.1 · B2 → X · measured winding leads · Winding B · lead 2. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Alternative to the external-driver circuit, never simultaneously connected. Verify selected Prime revision, current settings, supply rating and winding pairs.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · smoothiev2-prime.kicad_pcb",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/smoothiev2-prime.kicad_pcb",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "Shapeoko 2 pinned revision 16813",
+          "url": "https://wiki.raumzeitlabor.de/index.php?title=Shapeoko_2&oldid=16813",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C08-002",
+      "panel_index": 7,
+      "edge_index": 1,
+      "from": "Prime P12 · X · J5.2 · B1",
+      "to": "X · measured winding leads · Winding B · lead 1",
+      "state": "GUESS",
+      "view": "MAIN",
+      "rationale": "X motor phase B1: Prime P12 · X · J5.2 · B1 → X · measured winding leads · Winding B · lead 1. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Alternative to the external-driver circuit, never simultaneously connected. Verify selected Prime revision, current settings, supply rating and winding pairs.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · smoothiev2-prime.kicad_pcb",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/smoothiev2-prime.kicad_pcb",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "Shapeoko 2 pinned revision 16813",
+          "url": "https://wiki.raumzeitlabor.de/index.php?title=Shapeoko_2&oldid=16813",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C08-003",
+      "panel_index": 7,
+      "edge_index": 2,
+      "from": "Prime P12 · X · J5.3 · A2",
+      "to": "X · measured winding leads · Winding A · lead 2",
+      "state": "GUESS",
+      "view": "MAIN",
+      "rationale": "X motor phase A2: Prime P12 · X · J5.3 · A2 → X · measured winding leads · Winding A · lead 2. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Alternative to the external-driver circuit, never simultaneously connected. Verify selected Prime revision, current settings, supply rating and winding pairs.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · smoothiev2-prime.kicad_pcb",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/smoothiev2-prime.kicad_pcb",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "Shapeoko 2 pinned revision 16813",
+          "url": "https://wiki.raumzeitlabor.de/index.php?title=Shapeoko_2&oldid=16813",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C08-004",
+      "panel_index": 7,
+      "edge_index": 3,
+      "from": "Prime P12 · X · J5.4 · A1",
+      "to": "X · measured winding leads · Winding A · lead 1",
+      "state": "GUESS",
+      "view": "MAIN",
+      "rationale": "X motor phase A1: Prime P12 · X · J5.4 · A1 → X · measured winding leads · Winding A · lead 1. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Alternative to the external-driver circuit, never simultaneously connected. Verify selected Prime revision, current settings, supply rating and winding pairs.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · smoothiev2-prime.kicad_pcb",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/smoothiev2-prime.kicad_pcb",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "Shapeoko 2 pinned revision 16813",
+          "url": "https://wiki.raumzeitlabor.de/index.php?title=Shapeoko_2&oldid=16813",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C09-001",
+      "panel_index": 8,
+      "edge_index": 0,
+      "from": "Prime P12 · Y left · J6.1 · B2",
+      "to": "Y left · measured winding leads · Winding B · lead 2",
+      "state": "GUESS",
+      "view": "MAIN",
+      "rationale": "Y left motor phase B2: Prime P12 · Y left · J6.1 · B2 → Y left · measured winding leads · Winding B · lead 2. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Alternative to the external-driver circuit, never simultaneously connected. Verify selected Prime revision, current settings, supply rating and winding pairs.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · smoothiev2-prime.kicad_pcb",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/smoothiev2-prime.kicad_pcb",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "Shapeoko 2 pinned revision 16813",
+          "url": "https://wiki.raumzeitlabor.de/index.php?title=Shapeoko_2&oldid=16813",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C09-002",
+      "panel_index": 8,
+      "edge_index": 1,
+      "from": "Prime P12 · Y left · J6.2 · B1",
+      "to": "Y left · measured winding leads · Winding B · lead 1",
+      "state": "GUESS",
+      "view": "MAIN",
+      "rationale": "Y left motor phase B1: Prime P12 · Y left · J6.2 · B1 → Y left · measured winding leads · Winding B · lead 1. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Alternative to the external-driver circuit, never simultaneously connected. Verify selected Prime revision, current settings, supply rating and winding pairs.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · smoothiev2-prime.kicad_pcb",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/smoothiev2-prime.kicad_pcb",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "Shapeoko 2 pinned revision 16813",
+          "url": "https://wiki.raumzeitlabor.de/index.php?title=Shapeoko_2&oldid=16813",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C09-003",
+      "panel_index": 8,
+      "edge_index": 2,
+      "from": "Prime P12 · Y left · J6.3 · A2",
+      "to": "Y left · measured winding leads · Winding A · lead 2",
+      "state": "GUESS",
+      "view": "MAIN",
+      "rationale": "Y left motor phase A2: Prime P12 · Y left · J6.3 · A2 → Y left · measured winding leads · Winding A · lead 2. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Alternative to the external-driver circuit, never simultaneously connected. Verify selected Prime revision, current settings, supply rating and winding pairs.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · smoothiev2-prime.kicad_pcb",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/smoothiev2-prime.kicad_pcb",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "Shapeoko 2 pinned revision 16813",
+          "url": "https://wiki.raumzeitlabor.de/index.php?title=Shapeoko_2&oldid=16813",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C09-004",
+      "panel_index": 8,
+      "edge_index": 3,
+      "from": "Prime P12 · Y left · J6.4 · A1",
+      "to": "Y left · measured winding leads · Winding A · lead 1",
+      "state": "GUESS",
+      "view": "MAIN",
+      "rationale": "Y left motor phase A1: Prime P12 · Y left · J6.4 · A1 → Y left · measured winding leads · Winding A · lead 1. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Alternative to the external-driver circuit, never simultaneously connected. Verify selected Prime revision, current settings, supply rating and winding pairs.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · smoothiev2-prime.kicad_pcb",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/smoothiev2-prime.kicad_pcb",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "Shapeoko 2 pinned revision 16813",
+          "url": "https://wiki.raumzeitlabor.de/index.php?title=Shapeoko_2&oldid=16813",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C10-001",
+      "panel_index": 9,
+      "edge_index": 0,
+      "from": "Prime P12 · Y right · J7.1 · B2",
+      "to": "Y right · measured winding leads · Winding B · lead 2",
+      "state": "GUESS",
+      "view": "MAIN",
+      "rationale": "Y right motor phase B2: Prime P12 · Y right · J7.1 · B2 → Y right · measured winding leads · Winding B · lead 2. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Alternative to the external-driver circuit, never simultaneously connected. Verify selected Prime revision, current settings, supply rating and winding pairs.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · smoothiev2-prime.kicad_pcb",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/smoothiev2-prime.kicad_pcb",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "Shapeoko 2 pinned revision 16813",
+          "url": "https://wiki.raumzeitlabor.de/index.php?title=Shapeoko_2&oldid=16813",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C10-002",
+      "panel_index": 9,
+      "edge_index": 1,
+      "from": "Prime P12 · Y right · J7.2 · B1",
+      "to": "Y right · measured winding leads · Winding B · lead 1",
+      "state": "GUESS",
+      "view": "MAIN",
+      "rationale": "Y right motor phase B1: Prime P12 · Y right · J7.2 · B1 → Y right · measured winding leads · Winding B · lead 1. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Alternative to the external-driver circuit, never simultaneously connected. Verify selected Prime revision, current settings, supply rating and winding pairs.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · smoothiev2-prime.kicad_pcb",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/smoothiev2-prime.kicad_pcb",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "Shapeoko 2 pinned revision 16813",
+          "url": "https://wiki.raumzeitlabor.de/index.php?title=Shapeoko_2&oldid=16813",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C10-003",
+      "panel_index": 9,
+      "edge_index": 2,
+      "from": "Prime P12 · Y right · J7.3 · A2",
+      "to": "Y right · measured winding leads · Winding A · lead 2",
+      "state": "GUESS",
+      "view": "MAIN",
+      "rationale": "Y right motor phase A2: Prime P12 · Y right · J7.3 · A2 → Y right · measured winding leads · Winding A · lead 2. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Alternative to the external-driver circuit, never simultaneously connected. Verify selected Prime revision, current settings, supply rating and winding pairs.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · smoothiev2-prime.kicad_pcb",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/smoothiev2-prime.kicad_pcb",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "Shapeoko 2 pinned revision 16813",
+          "url": "https://wiki.raumzeitlabor.de/index.php?title=Shapeoko_2&oldid=16813",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C10-004",
+      "panel_index": 9,
+      "edge_index": 3,
+      "from": "Prime P12 · Y right · J7.4 · A1",
+      "to": "Y right · measured winding leads · Winding A · lead 1",
+      "state": "GUESS",
+      "view": "MAIN",
+      "rationale": "Y right motor phase A1: Prime P12 · Y right · J7.4 · A1 → Y right · measured winding leads · Winding A · lead 1. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Alternative to the external-driver circuit, never simultaneously connected. Verify selected Prime revision, current settings, supply rating and winding pairs.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · smoothiev2-prime.kicad_pcb",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/smoothiev2-prime.kicad_pcb",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "Shapeoko 2 pinned revision 16813",
+          "url": "https://wiki.raumzeitlabor.de/index.php?title=Shapeoko_2&oldid=16813",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C11-001",
+      "panel_index": 10,
+      "edge_index": 0,
+      "from": "Prime P12 · Z · J8.1 · B2",
+      "to": "Z · measured winding leads · Winding B · lead 2",
+      "state": "GUESS",
+      "view": "MAIN",
+      "rationale": "Z motor phase B2: Prime P12 · Z · J8.1 · B2 → Z · measured winding leads · Winding B · lead 2. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Alternative to the external-driver circuit, never simultaneously connected. Verify selected Prime revision, current settings, supply rating and winding pairs.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · smoothiev2-prime.kicad_pcb",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/smoothiev2-prime.kicad_pcb",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "Shapeoko 2 pinned revision 16813",
+          "url": "https://wiki.raumzeitlabor.de/index.php?title=Shapeoko_2&oldid=16813",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C11-002",
+      "panel_index": 10,
+      "edge_index": 1,
+      "from": "Prime P12 · Z · J8.2 · B1",
+      "to": "Z · measured winding leads · Winding B · lead 1",
+      "state": "GUESS",
+      "view": "MAIN",
+      "rationale": "Z motor phase B1: Prime P12 · Z · J8.2 · B1 → Z · measured winding leads · Winding B · lead 1. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Alternative to the external-driver circuit, never simultaneously connected. Verify selected Prime revision, current settings, supply rating and winding pairs.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · smoothiev2-prime.kicad_pcb",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/smoothiev2-prime.kicad_pcb",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "Shapeoko 2 pinned revision 16813",
+          "url": "https://wiki.raumzeitlabor.de/index.php?title=Shapeoko_2&oldid=16813",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C11-003",
+      "panel_index": 10,
+      "edge_index": 2,
+      "from": "Prime P12 · Z · J8.3 · A2",
+      "to": "Z · measured winding leads · Winding A · lead 2",
+      "state": "GUESS",
+      "view": "MAIN",
+      "rationale": "Z motor phase A2: Prime P12 · Z · J8.3 · A2 → Z · measured winding leads · Winding A · lead 2. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Alternative to the external-driver circuit, never simultaneously connected. Verify selected Prime revision, current settings, supply rating and winding pairs.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · smoothiev2-prime.kicad_pcb",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/smoothiev2-prime.kicad_pcb",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "Shapeoko 2 pinned revision 16813",
+          "url": "https://wiki.raumzeitlabor.de/index.php?title=Shapeoko_2&oldid=16813",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C11-004",
+      "panel_index": 10,
+      "edge_index": 3,
+      "from": "Prime P12 · Z · J8.4 · A1",
+      "to": "Z · measured winding leads · Winding A · lead 1",
+      "state": "GUESS",
+      "view": "MAIN",
+      "rationale": "Z motor phase A1: Prime P12 · Z · J8.4 · A1 → Z · measured winding leads · Winding A · lead 1. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Alternative to the external-driver circuit, never simultaneously connected. Verify selected Prime revision, current settings, supply rating and winding pairs.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · smoothiev2-prime.kicad_pcb",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/smoothiev2-prime.kicad_pcb",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "Shapeoko 2 pinned revision 16813",
+          "url": "https://wiki.raumzeitlabor.de/index.php?title=Shapeoko_2&oldid=16813",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C12-001",
+      "panel_index": 11,
+      "edge_index": 0,
+      "from": "Regulated 5 V logic supply · +5 V regulated",
+      "to": "Prime P12 · confirm exact revision · J42.1 · 5V_PORTIN",
+      "state": "GUESS",
+      "view": "MAIN",
+      "rationale": "Prime regulated logic supply: Regulated 5 V logic supply · +5 V regulated → Prime P12 · confirm exact revision · J42.1 · 5V_PORTIN. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Prime alternative only. Confirm fitted P11/P12 revision, input-voltage/current limits, supply sequencing and fuse/conductor ratings. Never connect both Core external drivers and Prime winding outputs to the same motor.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · smoothiev2-prime.kicad_pcb",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/smoothiev2-prime.kicad_pcb",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "Shapeoko 2 pinned revision 16813",
+          "url": "https://wiki.raumzeitlabor.de/index.php?title=Shapeoko_2&oldid=16813",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C12-002",
+      "panel_index": 11,
+      "edge_index": 1,
+      "from": "Regulated 5 V logic supply · 0 V logic return",
+      "to": "Prime P12 · confirm exact revision · J42.2 · GND",
+      "state": "GUESS",
+      "view": "MAIN",
+      "rationale": "Prime logic supply return: Regulated 5 V logic supply · 0 V logic return → Prime P12 · confirm exact revision · J42.2 · GND. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Prime alternative only. Confirm fitted P11/P12 revision, input-voltage/current limits, supply sequencing and fuse/conductor ratings. Never connect both Core external drivers and Prime winding outputs to the same motor.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · smoothiev2-prime.kicad_pcb",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/smoothiev2-prime.kicad_pcb",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "Shapeoko 2 pinned revision 16813",
+          "url": "https://wiki.raumzeitlabor.de/index.php?title=Shapeoko_2&oldid=16813",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C12-003",
+      "panel_index": 11,
+      "edge_index": 2,
+      "from": "Verified motor supply · voltage/current TBD · DC + · before fuse",
+      "to": "Motor branch fuse · rating selected after measurement · fuse input",
+      "state": "GUESS",
+      "view": "DETAILED CIRCUIT",
+      "rationale": "Protected motor branch input: Verified motor supply · voltage/current TBD · DC + · before fuse → Motor branch fuse · rating selected after measurement · fuse input. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Prime alternative only. Confirm fitted P11/P12 revision, input-voltage/current limits, supply sequencing and fuse/conductor ratings. Never connect both Core external drivers and Prime winding outputs to the same motor.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · smoothiev2-prime.kicad_pcb",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/smoothiev2-prime.kicad_pcb",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "Shapeoko 2 pinned revision 16813",
+          "url": "https://wiki.raumzeitlabor.de/index.php?title=Shapeoko_2&oldid=16813",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C12-004",
+      "panel_index": 11,
+      "edge_index": 3,
+      "from": "Motor branch fuse · rating selected after measurement · fuse output",
+      "to": "Prime P12 · confirm exact revision · J9.1 · VMOT",
+      "state": "GUESS",
+      "view": "MAIN",
+      "rationale": "Prime VMOT power: Motor branch fuse · rating selected after measurement · fuse output → Prime P12 · confirm exact revision · J9.1 · VMOT. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Prime alternative only. Confirm fitted P11/P12 revision, input-voltage/current limits, supply sequencing and fuse/conductor ratings. Never connect both Core external drivers and Prime winding outputs to the same motor.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · smoothiev2-prime.kicad_pcb",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/smoothiev2-prime.kicad_pcb",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "Shapeoko 2 pinned revision 16813",
+          "url": "https://wiki.raumzeitlabor.de/index.php?title=Shapeoko_2&oldid=16813",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C12-005",
+      "panel_index": 11,
+      "edge_index": 4,
+      "from": "Verified motor supply · voltage/current TBD · 0 V motor return",
+      "to": "Prime P12 · confirm exact revision · J9.2 · GND",
+      "state": "GUESS",
+      "view": "MAIN",
+      "rationale": "Prime motor supply return: Verified motor supply · voltage/current TBD · 0 V motor return → Prime P12 · confirm exact revision · J9.2 · GND. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Prime alternative only. Confirm fitted P11/P12 revision, input-voltage/current limits, supply sequencing and fuse/conductor ratings. Never connect both Core external drivers and Prime winding outputs to the same motor.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · smoothiev2-prime.kicad_pcb",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/smoothiev2-prime.kicad_pcb",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "Shapeoko 2 pinned revision 16813",
+          "url": "https://wiki.raumzeitlabor.de/index.php?title=Shapeoko_2&oldid=16813",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C13-001",
+      "panel_index": 12,
+      "edge_index": 0,
+      "from": "Prime P12 · probe input candidate · alternative to Z-min on shared socket 7 · J31.4 · conditioned PROBE input",
+      "to": "Original 8-pin limit / probe peripheral · alternative to Z-min on shared socket 7 · 7 · Z-min/probe · shared function",
+      "state": "GUESS",
+      "view": "MAIN",
+      "rationale": "Alternative probe function on shared socket: Prime P12 · probe input candidate · alternative to Z-min on shared socket 7 · J31.4 · conditioned PROBE input → Original 8-pin limit / probe peripheral · alternative to Z-min on shared socket 7 · 7 · Z-min/probe · shared function. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Pinned source lists an E-stop while planning text also asks for one at the machine. Retain or engineer independent spindle/motion energy inhibition; no firmware-only safe stop is promised. Socket rear-view pin7 is Z-min/probe and pin1 GND; its saved configuration disables Z-min, so a new probe assignment requires firmware and physical fitment checks. Sensor socket pin 7 is shared Z-min/probe: select one function in firmware and wiring. Do not install both Z-min and probe signal routes simultaneously.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · inputs.kicad_sch",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/inputs.kicad_sch",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "Shapeoko 2 pinned revision 16813",
+          "url": "https://wiki.raumzeitlabor.de/index.php?title=Shapeoko_2&oldid=16813",
+          "claim": "Documents the machine component/function; new interface wiring requires the stated fitted-device checks."
+        }
+      ]
+    },
+    {
+      "id": "C13-002",
+      "panel_index": 12,
+      "edge_index": 1,
+      "from": "Prime P12 · probe input candidate · alternative to Z-min on shared socket 7 · J31.3 · GND",
+      "to": "Original 8-pin limit / probe peripheral · alternative to Z-min on shared socket 7 · 1 · GND",
+      "state": "GUESS",
+      "view": "MAIN",
+      "rationale": "Separate probe reference: Prime P12 · probe input candidate · alternative to Z-min on shared socket 7 · J31.3 · GND → Original 8-pin limit / probe peripheral · alternative to Z-min on shared socket 7 · 1 · GND. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Pinned source lists an E-stop while planning text also asks for one at the machine. Retain or engineer independent spindle/motion energy inhibition; no firmware-only safe stop is promised. Socket rear-view pin7 is Z-min/probe and pin1 GND; its saved configuration disables Z-min, so a new probe assignment requires firmware and physical fitment checks. Sensor socket pin 7 is shared Z-min/probe: select one function in firmware and wiring. Do not install both Z-min and probe signal routes simultaneously.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · inputs.kicad_sch",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/inputs.kicad_sch",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "Shapeoko 2 pinned revision 16813",
+          "url": "https://wiki.raumzeitlabor.de/index.php?title=Shapeoko_2&oldid=16813",
+          "claim": "Documents the machine component/function; new interface wiring requires the stated fitted-device checks."
+        }
+      ]
+    },
+    {
+      "id": "C13-003",
+      "panel_index": 12,
+      "edge_index": 2,
+      "from": "Identified machine E-stop hardware · Stop-chain contact A · identify",
+      "to": "Independent hardware spindle/motion inhibition · Monitored stop-loop input",
+      "state": "OPEN",
+      "view": "DETAILED CIRCUIT",
+      "rationale": "Independent emergency-stop input: Identified machine E-stop hardware · Stop-chain contact A · identify → Independent hardware spindle/motion inhibition · Monitored stop-loop input. The fitted interface or electrical contract is unresolved. The broken path is a boundary to identify, not a wire to install.",
+      "qualification": "Pinned source lists an E-stop while planning text also asks for one at the machine. Retain or engineer independent spindle/motion energy inhibition; no firmware-only safe stop is promised. Socket rear-view pin7 is Z-min/probe and pin1 GND; its saved configuration disables Z-min, so a new probe assignment requires firmware and physical fitment checks. Sensor socket pin 7 is shared Z-min/probe: select one function in firmware and wiring. Do not install both Z-min and probe signal routes simultaneously.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · inputs.kicad_sch",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/inputs.kicad_sch",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "Shapeoko 2 pinned revision 16813",
+          "url": "https://wiki.raumzeitlabor.de/index.php?title=Shapeoko_2&oldid=16813",
+          "claim": "Documents the machine component/function; new interface wiring requires the stated fitted-device checks."
+        }
+      ]
+    },
+    {
+      "id": "C13-004",
+      "panel_index": 12,
+      "edge_index": 3,
+      "from": "Identified machine E-stop hardware · Stop-chain contact B · identify",
+      "to": "Independent hardware spindle/motion inhibition · Monitored stop-loop return",
+      "state": "OPEN",
+      "view": "DETAILED CIRCUIT",
+      "rationale": "Emergency-stop loop return: Identified machine E-stop hardware · Stop-chain contact B · identify → Independent hardware spindle/motion inhibition · Monitored stop-loop return. The fitted interface or electrical contract is unresolved. The broken path is a boundary to identify, not a wire to install.",
+      "qualification": "Pinned source lists an E-stop while planning text also asks for one at the machine. Retain or engineer independent spindle/motion energy inhibition; no firmware-only safe stop is promised. Socket rear-view pin7 is Z-min/probe and pin1 GND; its saved configuration disables Z-min, so a new probe assignment requires firmware and physical fitment checks. Sensor socket pin 7 is shared Z-min/probe: select one function in firmware and wiring. Do not install both Z-min and probe signal routes simultaneously.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · inputs.kicad_sch",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/inputs.kicad_sch",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "Shapeoko 2 pinned revision 16813",
+          "url": "https://wiki.raumzeitlabor.de/index.php?title=Shapeoko_2&oldid=16813",
+          "claim": "Documents the machine component/function; new interface wiring requires the stated fitted-device checks."
+        }
+      ]
+    }
+  ],
+  "main_visible_connections": [
+    "C01-001",
+    "C01-002",
+    "C02-001",
+    "C02-002",
+    "C03-001",
+    "C03-002",
+    "C04-001",
+    "C04-002",
+    "C05-001",
+    "C05-002",
+    "C06-001",
+    "C06-002",
+    "C07-001",
+    "C07-002",
+    "C08-001",
+    "C08-002",
+    "C08-003",
+    "C08-004",
+    "C09-001",
+    "C09-002",
+    "C09-003",
+    "C09-004",
+    "C10-001",
+    "C10-002",
+    "C10-003",
+    "C10-004",
+    "C11-001",
+    "C11-002",
+    "C11-003",
+    "C11-004",
+    "C12-001",
+    "C12-002",
+    "C12-004",
+    "C12-005",
+    "C13-001",
+    "C13-002"
+  ],
+  "detailed_only_connections": [
+    "C12-003",
+    "C13-003",
+    "C13-004"
+  ],
+  "main_route_manifest": [
+    {
+      "connection_id": "C12-001",
+      "controller_identity": [
+        "J42",
+        "1"
+      ],
+      "controller_anchor": [
+        1207.8095238095239,
+        1000
+      ],
+      "assembly": [
+        "north",
+        "power"
+      ],
+      "assembly_anchor": [
+        1200.0,
+        820
+      ],
+      "assembly_port_index": 1,
+      "receiver_node": "Regulated 5 V logic supply",
+      "receiver_contact": "+5 V regulated"
+    },
+    {
+      "connection_id": "C12-002",
+      "controller_identity": [
+        "J42",
+        "2"
+      ],
+      "controller_anchor": [
+        1309.5238095238096,
+        1000
+      ],
+      "assembly": [
+        "north",
+        "power"
+      ],
+      "assembly_anchor": [
+        1400.0,
+        820
+      ],
+      "assembly_port_index": 2,
+      "receiver_node": "Regulated 5 V logic supply",
+      "receiver_contact": "0 V logic return"
+    },
+    {
+      "connection_id": "C12-004",
+      "controller_identity": [
+        "J9",
+        "1"
+      ],
+      "controller_anchor": [
+        1449.142857142857,
+        1000
+      ],
+      "assembly": [
+        "north",
+        "power"
+      ],
+      "assembly_anchor": [
+        1600.0,
+        820
+      ],
+      "assembly_port_index": 3,
+      "receiver_node": "Motor branch fuse · rating selected after measurement",
+      "receiver_contact": "fuse output"
+    },
+    {
+      "connection_id": "C12-005",
+      "controller_identity": [
+        "J9",
+        "2"
+      ],
+      "controller_anchor": [
+        1550.857142857143,
+        1000
+      ],
+      "assembly": [
+        "north",
+        "power"
+      ],
+      "assembly_anchor": [
+        1800.0,
+        820
+      ],
+      "assembly_port_index": 4,
+      "receiver_node": "Verified motor supply · voltage/current TBD",
+      "receiver_contact": "0 V motor return"
+    },
+    {
+      "connection_id": "C07-001",
+      "controller_identity": [
+        "J35",
+        "6"
+      ],
+      "controller_anchor": [
+        1000,
+        1345.7142857142858
+      ],
+      "assembly": [
+        "west",
+        "process"
+      ],
+      "assembly_anchor": [
+        765,
+        1250.0
+      ],
+      "assembly_port_index": 1,
+      "receiver_node": "Inventables Quiet Cut speed control",
+      "receiver_contact": "PWM screw terminal · signal"
+    },
+    {
+      "connection_id": "C07-002",
+      "controller_identity": [
+        "J35",
+        "10"
+      ],
+      "controller_anchor": [
+        1000,
+        1654.2857142857142
+      ],
+      "assembly": [
+        "west",
+        "process"
+      ],
+      "assembly_anchor": [
+        765,
+        1480.0
+      ],
+      "assembly_port_index": 2,
+      "receiver_node": "Inventables Quiet Cut speed control",
+      "receiver_contact": "PWM screw terminal · GND"
+    },
+    {
+      "connection_id": "C01-002",
+      "controller_identity": [
+        "J24",
+        "2"
+      ],
+      "controller_anchor": [
+        2000,
+        1191.9402985074628
+      ],
+      "assembly": [
+        "east",
+        "inputs"
+      ],
+      "assembly_anchor": [
+        2235,
+        309.1666666666667
+      ],
+      "assembly_port_index": 1,
+      "receiver_node": "X min limit · traced switch",
+      "receiver_contact": "8-pin sensor socket contact 1 · GND"
+    },
+    {
+      "connection_id": "C01-001",
+      "controller_identity": [
+        "J24",
+        "3"
+      ],
+      "controller_anchor": [
+        2000,
+        1223.1044776119402
+      ],
+      "assembly": [
+        "east",
+        "inputs"
+      ],
+      "assembly_anchor": [
+        2235,
+        347.5
+      ],
+      "assembly_port_index": 2,
+      "receiver_node": "X min limit · traced switch",
+      "receiver_contact": "8-pin contact 2 · X min"
+    },
+    {
+      "connection_id": "C02-002",
+      "controller_identity": [
+        "J25",
+        "2"
+      ],
+      "controller_anchor": [
+        2000,
+        1299.8208955223881
+      ],
+      "assembly": [
+        "east",
+        "inputs"
+      ],
+      "assembly_anchor": [
+        2235,
+        385.8333333333333
+      ],
+      "assembly_port_index": 3,
+      "receiver_node": "X max limit · traced switch",
+      "receiver_contact": "8-pin sensor socket contact 1 · GND"
+    },
+    {
+      "connection_id": "C02-001",
+      "controller_identity": [
+        "J25",
+        "3"
+      ],
+      "controller_anchor": [
+        2000,
+        1330.9850746268658
+      ],
+      "assembly": [
+        "east",
+        "inputs"
+      ],
+      "assembly_anchor": [
+        2235,
+        424.16666666666663
+      ],
+      "assembly_port_index": 4,
+      "receiver_node": "X max limit · traced switch",
+      "receiver_contact": "8-pin contact 3 · X max"
+    },
+    {
+      "connection_id": "C03-002",
+      "controller_identity": [
+        "J26",
+        "2"
+      ],
+      "controller_anchor": [
+        2000,
+        1407.7014925373135
+      ],
+      "assembly": [
+        "east",
+        "inputs"
+      ],
+      "assembly_anchor": [
+        2235,
+        462.5
+      ],
+      "assembly_port_index": 5,
+      "receiver_node": "Y min limit · traced switch",
+      "receiver_contact": "8-pin sensor socket contact 1 · GND"
+    },
+    {
+      "connection_id": "C03-001",
+      "controller_identity": [
+        "J26",
+        "3"
+      ],
+      "controller_anchor": [
+        2000,
+        1438.8656716417909
+      ],
+      "assembly": [
+        "east",
+        "inputs"
+      ],
+      "assembly_anchor": [
+        2235,
+        500.83333333333337
+      ],
+      "assembly_port_index": 6,
+      "receiver_node": "Y min limit · traced switch",
+      "receiver_contact": "8-pin contact 4 · Y min"
+    },
+    {
+      "connection_id": "C04-002",
+      "controller_identity": [
+        "J27",
+        "2"
+      ],
+      "controller_anchor": [
+        2000,
+        1515.5820895522388
+      ],
+      "assembly": [
+        "east",
+        "inputs"
+      ],
+      "assembly_anchor": [
+        2235,
+        539.1666666666666
+      ],
+      "assembly_port_index": 7,
+      "receiver_node": "Y max limit · traced switch",
+      "receiver_contact": "8-pin sensor socket contact 1 · GND"
+    },
+    {
+      "connection_id": "C04-001",
+      "controller_identity": [
+        "J27",
+        "3"
+      ],
+      "controller_anchor": [
+        2000,
+        1546.7462686567164
+      ],
+      "assembly": [
+        "east",
+        "inputs"
+      ],
+      "assembly_anchor": [
+        2235,
+        577.5
+      ],
+      "assembly_port_index": 8,
+      "receiver_node": "Y max limit · traced switch",
+      "receiver_contact": "8-pin contact 5 · Y max"
+    },
+    {
+      "connection_id": "C05-002",
+      "controller_identity": [
+        "J28",
+        "2"
+      ],
+      "controller_anchor": [
+        2000,
+        1623.4626865671642
+      ],
+      "assembly": [
+        "east",
+        "inputs"
+      ],
+      "assembly_anchor": [
+        2235,
+        615.8333333333333
+      ],
+      "assembly_port_index": 9,
+      "receiver_node": "Z min / probe limit · traced switch · alternative to Z-min on shared socket 7",
+      "receiver_contact": "8-pin sensor socket contact 1 · GND"
+    },
+    {
+      "connection_id": "C05-001",
+      "controller_identity": [
+        "J28",
+        "3"
+      ],
+      "controller_anchor": [
+        2000,
+        1654.6268656716416
+      ],
+      "assembly": [
+        "east",
+        "inputs"
+      ],
+      "assembly_anchor": [
+        2235,
+        654.1666666666667
+      ],
+      "assembly_port_index": 10,
+      "receiver_node": "Z min / probe limit · traced switch · alternative to Z-min on shared socket 7",
+      "receiver_contact": "8-pin contact 7 · mode-dependent"
+    },
+    {
+      "connection_id": "C06-002",
+      "controller_identity": [
+        "J29",
+        "2"
+      ],
+      "controller_anchor": [
+        2000,
+        1731.3432835820895
+      ],
+      "assembly": [
+        "east",
+        "inputs"
+      ],
+      "assembly_anchor": [
+        2235,
+        692.5
+      ],
+      "assembly_port_index": 11,
+      "receiver_node": "Z max limit · traced switch",
+      "receiver_contact": "8-pin sensor socket contact 1 · GND"
+    },
+    {
+      "connection_id": "C06-001",
+      "controller_identity": [
+        "J29",
+        "3"
+      ],
+      "controller_anchor": [
+        2000,
+        1762.5074626865671
+      ],
+      "assembly": [
+        "east",
+        "inputs"
+      ],
+      "assembly_anchor": [
+        2235,
+        730.8333333333333
+      ],
+      "assembly_port_index": 12,
+      "receiver_node": "Z max limit · traced switch",
+      "receiver_contact": "8-pin contact 6 · Z max"
+    },
+    {
+      "connection_id": "C13-002",
+      "controller_identity": [
+        "J31",
+        "3"
+      ],
+      "controller_anchor": [
+        2000,
+        1808.0597014925372
+      ],
+      "assembly": [
+        "east",
+        "probe"
+      ],
+      "assembly_anchor": [
+        2235,
+        1142.5
+      ],
+      "assembly_port_index": 1,
+      "receiver_node": "Original 8-pin limit / probe peripheral · alternative to Z-min on shared socket 7",
+      "receiver_contact": "1 · GND"
+    },
+    {
+      "connection_id": "C13-001",
+      "controller_identity": [
+        "J31",
+        "4"
+      ],
+      "controller_anchor": [
+        2000,
+        1839.2238805970148
+      ],
+      "assembly": [
+        "east",
+        "probe"
+      ],
+      "assembly_anchor": [
+        2235,
+        1377.5
+      ],
+      "assembly_port_index": 2,
+      "receiver_node": "Original 8-pin limit / probe peripheral · alternative to Z-min on shared socket 7",
+      "receiver_contact": "7 · Z-min/probe · shared function"
+    },
+    {
+      "connection_id": "C08-001",
+      "controller_identity": [
+        "J5",
+        "1"
+      ],
+      "controller_anchor": [
+        1167.2307692307693,
+        2000
+      ],
+      "assembly": [
+        "south",
+        "J5"
+      ],
+      "assembly_anchor": [
+        204.0,
+        2200
+      ],
+      "assembly_port_index": 1,
+      "receiver_node": "X · measured winding leads",
+      "receiver_contact": "Winding B · lead 2"
+    },
+    {
+      "connection_id": "C08-002",
+      "controller_identity": [
+        "J5",
+        "2"
+      ],
+      "controller_anchor": [
+        1208.076923076923,
+        2000
+      ],
+      "assembly": [
+        "south",
+        "J5"
+      ],
+      "assembly_anchor": [
+        343.0,
+        2200
+      ],
+      "assembly_port_index": 2,
+      "receiver_node": "X · measured winding leads",
+      "receiver_contact": "Winding B · lead 1"
+    },
+    {
+      "connection_id": "C08-003",
+      "controller_identity": [
+        "J5",
+        "3"
+      ],
+      "controller_anchor": [
+        1248.923076923077,
+        2000
+      ],
+      "assembly": [
+        "south",
+        "J5"
+      ],
+      "assembly_anchor": [
+        482.0,
+        2200
+      ],
+      "assembly_port_index": 3,
+      "receiver_node": "X · measured winding leads",
+      "receiver_contact": "Winding A · lead 2"
+    },
+    {
+      "connection_id": "C08-004",
+      "controller_identity": [
+        "J5",
+        "4"
+      ],
+      "controller_anchor": [
+        1289.7692307692307,
+        2000
+      ],
+      "assembly": [
+        "south",
+        "J5"
+      ],
+      "assembly_anchor": [
+        621.0,
+        2200
+      ],
+      "assembly_port_index": 4,
+      "receiver_node": "X · measured winding leads",
+      "receiver_contact": "Winding A · lead 1"
+    },
+    {
+      "connection_id": "C09-001",
+      "controller_identity": [
+        "J6",
+        "1"
+      ],
+      "controller_anchor": [
+        1348.2307692307693,
+        2000
+      ],
+      "assembly": [
+        "south",
+        "J6"
+      ],
+      "assembly_anchor": [
+        929.0,
+        2200
+      ],
+      "assembly_port_index": 1,
+      "receiver_node": "Y left · measured winding leads",
+      "receiver_contact": "Winding B · lead 2"
+    },
+    {
+      "connection_id": "C09-002",
+      "controller_identity": [
+        "J6",
+        "2"
+      ],
+      "controller_anchor": [
+        1389.076923076923,
+        2000
+      ],
+      "assembly": [
+        "south",
+        "J6"
+      ],
+      "assembly_anchor": [
+        1068.0,
+        2200
+      ],
+      "assembly_port_index": 2,
+      "receiver_node": "Y left · measured winding leads",
+      "receiver_contact": "Winding B · lead 1"
+    },
+    {
+      "connection_id": "C09-003",
+      "controller_identity": [
+        "J6",
+        "3"
+      ],
+      "controller_anchor": [
+        1429.923076923077,
+        2000
+      ],
+      "assembly": [
+        "south",
+        "J6"
+      ],
+      "assembly_anchor": [
+        1207.0,
+        2200
+      ],
+      "assembly_port_index": 3,
+      "receiver_node": "Y left · measured winding leads",
+      "receiver_contact": "Winding A · lead 2"
+    },
+    {
+      "connection_id": "C09-004",
+      "controller_identity": [
+        "J6",
+        "4"
+      ],
+      "controller_anchor": [
+        1470.7692307692307,
+        2000
+      ],
+      "assembly": [
+        "south",
+        "J6"
+      ],
+      "assembly_anchor": [
+        1346.0,
+        2200
+      ],
+      "assembly_port_index": 4,
+      "receiver_node": "Y left · measured winding leads",
+      "receiver_contact": "Winding A · lead 1"
+    },
+    {
+      "connection_id": "C10-001",
+      "controller_identity": [
+        "J7",
+        "1"
+      ],
+      "controller_anchor": [
+        1529.2307692307693,
+        2000
+      ],
+      "assembly": [
+        "south",
+        "J7"
+      ],
+      "assembly_anchor": [
+        1654.0,
+        2200
+      ],
+      "assembly_port_index": 1,
+      "receiver_node": "Y right · measured winding leads",
+      "receiver_contact": "Winding B · lead 2"
+    },
+    {
+      "connection_id": "C10-002",
+      "controller_identity": [
+        "J7",
+        "2"
+      ],
+      "controller_anchor": [
+        1570.076923076923,
+        2000
+      ],
+      "assembly": [
+        "south",
+        "J7"
+      ],
+      "assembly_anchor": [
+        1793.0,
+        2200
+      ],
+      "assembly_port_index": 2,
+      "receiver_node": "Y right · measured winding leads",
+      "receiver_contact": "Winding B · lead 1"
+    },
+    {
+      "connection_id": "C10-003",
+      "controller_identity": [
+        "J7",
+        "3"
+      ],
+      "controller_anchor": [
+        1610.923076923077,
+        2000
+      ],
+      "assembly": [
+        "south",
+        "J7"
+      ],
+      "assembly_anchor": [
+        1932.0,
+        2200
+      ],
+      "assembly_port_index": 3,
+      "receiver_node": "Y right · measured winding leads",
+      "receiver_contact": "Winding A · lead 2"
+    },
+    {
+      "connection_id": "C10-004",
+      "controller_identity": [
+        "J7",
+        "4"
+      ],
+      "controller_anchor": [
+        1651.7692307692307,
+        2000
+      ],
+      "assembly": [
+        "south",
+        "J7"
+      ],
+      "assembly_anchor": [
+        2071.0,
+        2200
+      ],
+      "assembly_port_index": 4,
+      "receiver_node": "Y right · measured winding leads",
+      "receiver_contact": "Winding A · lead 1"
+    },
+    {
+      "connection_id": "C11-001",
+      "controller_identity": [
+        "J8",
+        "1"
+      ],
+      "controller_anchor": [
+        1710.2307692307693,
+        2000
+      ],
+      "assembly": [
+        "south",
+        "J8"
+      ],
+      "assembly_anchor": [
+        2379.0,
+        2200
+      ],
+      "assembly_port_index": 1,
+      "receiver_node": "Z · measured winding leads",
+      "receiver_contact": "Winding B · lead 2"
+    },
+    {
+      "connection_id": "C11-002",
+      "controller_identity": [
+        "J8",
+        "2"
+      ],
+      "controller_anchor": [
+        1751.076923076923,
+        2000
+      ],
+      "assembly": [
+        "south",
+        "J8"
+      ],
+      "assembly_anchor": [
+        2518.0,
+        2200
+      ],
+      "assembly_port_index": 2,
+      "receiver_node": "Z · measured winding leads",
+      "receiver_contact": "Winding B · lead 1"
+    },
+    {
+      "connection_id": "C11-003",
+      "controller_identity": [
+        "J8",
+        "3"
+      ],
+      "controller_anchor": [
+        1791.923076923077,
+        2000
+      ],
+      "assembly": [
+        "south",
+        "J8"
+      ],
+      "assembly_anchor": [
+        2657.0,
+        2200
+      ],
+      "assembly_port_index": 3,
+      "receiver_node": "Z · measured winding leads",
+      "receiver_contact": "Winding A · lead 2"
+    },
+    {
+      "connection_id": "C11-004",
+      "controller_identity": [
+        "J8",
+        "4"
+      ],
+      "controller_anchor": [
+        1832.7692307692307,
+        2000
+      ],
+      "assembly": [
+        "south",
+        "J8"
+      ],
+      "assembly_anchor": [
+        2796.0,
+        2200
+      ],
+      "assembly_port_index": 4,
+      "receiver_node": "Z · measured winding leads",
+      "receiver_contact": "Winding A · lead 1"
+    }
+  ],
+  "geometry": {
+    "viewbox": [
+      0,
+      0,
+      3000,
+      3000
+    ],
+    "controller": [
+      1000,
+      1000,
+      1000,
+      1000
+    ],
+    "controller_area_fraction": 0.1111111111111111
+  },
+  "svg_sha256": "c60a70ff856d8311892df734c57f86edf0c5ce06a615131f17def5279a2d7d9a"
+}

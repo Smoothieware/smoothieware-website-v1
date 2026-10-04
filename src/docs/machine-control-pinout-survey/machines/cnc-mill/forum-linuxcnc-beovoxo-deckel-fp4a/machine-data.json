@@ -1,0 +1,25 @@
+{
+  "id": "forum-linuxcnc-beovoxo-deckel-fp4a",
+  "sources": {
+    "forum-peripheral-evidence.json": {
+      "id": "forum-linuxcnc-beovoxo-deckel-fp4a",
+      "dossier": "src/docs/machine-research/linuxcnc-beovoxo-deckel-fp4a.md",
+      "reported_fitted_or_used": [],
+      "listed_for_build_unverified": [],
+      "historical_reference": [],
+      "planned_only": [
+        {
+          "name": "EtherCAT servo retrofit planned only",
+          "contacts": [],
+          "source_line_number": 5,
+          "source_line": "LinuxCNC Forum member Beovoxo reports acquiring a used Deckel FP4A mill and planning a full EtherCAT servo retrofit. The original control unit and electrical cabinet were removed. The owner installed LinuxCNC on an IBM M78 computer and later reported getting a Beckhoff EK1100 running under LinuxCNC EtherCAT. By February 2025, the plan was for the EtherCAT I/O to control transmission functions, while the CX unit might serve as a conventional PLC. The inspected thread does not establish that the mill was fully commissioned.",
+          "evidence": "LinuxCNC Forum member Beovoxo reports acquiring a used Deckel FP4A mill and planning a full EtherCAT servo retrofit. The original control unit and electrical cabinet were removed.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        }
+      ],
+      "open_function_group": [],
+      "exclusions": [],
+      "source_gap": "Dossier does not establish an as-built SmoothieBox route or a complete physical contact schedule for the listed peripherals."
+    }
+  }
+}

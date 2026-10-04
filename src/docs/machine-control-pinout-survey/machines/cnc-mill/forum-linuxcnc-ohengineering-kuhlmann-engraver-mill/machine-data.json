@@ -1,0 +1,35 @@
+{
+  "id": "forum-linuxcnc-ohengineering-kuhlmann-engraver-mill",
+  "sources": {
+    "forum-peripheral-evidence.json": {
+      "id": "forum-linuxcnc-ohengineering-kuhlmann-engraver-mill",
+      "dossier": "src/docs/machine-research/linuxcnc-ohengineering-kuhlmann-engraver-mill.md",
+      "reported_fitted_or_used": [],
+      "listed_for_build_unverified": [],
+      "historical_reference": [],
+      "planned_only": [],
+      "open_function_group": [
+        {
+          "name": "Planned EtherCAT servo and I/O retrofit",
+          "contacts": [],
+          "source_line_number": 7,
+          "source_line": "This is an ongoing retrofit project, not a completed LinuxCNC installation. The owner initially planned to replace the stepper system with servos and EtherCAT I/O, and later reported already having EtherCAT servos and I/O. In January 2026 the machine had been disassembled for cleaning and was mostly reassembled. Motor adapter plates and a full set of electrical schematics were still planned; the owner said the main electrical layout had been sketched but still needed details and schematics.",
+          "evidence": "Servos and EtherCAT I/O were planned/reported, but the machine remained an ongoing project without a connector or schematic map.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        }
+      ],
+      "exclusions": [
+        {
+          "name": "Original stepper motors and Berger Lahr KIM500 control",
+          "contacts": [],
+          "source_line_number": 5,
+          "source_line": "LinuxCNC Forum member OHEngineering reports buying a Kuhlmann engraver/mill at auction in 2025 for less than \u20ac50 including fees and tax. The owner says its controls were partly missing and outdated. The installed system is identified as a Berger Lahr KIM500, and the original machine had five-phase stepper motors; the owner says all of the stepper drivers were missing. The exact Kuhlmann model and machine serial number are not stated in the inspected thread.",
+          "evidence": "LinuxCNC Forum member OHEngineering reports buying a Kuhlmann engraver/mill at auction in 2025 for less than \u20ac50 including fees and tax. The owner says its controls were partly missing and outdated.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route",
+          "reason": "No separate supported machine-side electrical interface or positive fitted-device identity in this dossier."
+        }
+      ],
+      "source_gap": "Dossier does not establish an as-built SmoothieBox route or a complete physical contact schedule for the listed peripherals."
+    }
+  }
+}

@@ -1,0 +1,393 @@
+{
+  "id": "mill-f1",
+  "sources": {
+    "machine-side-graph-snapshot.json": {
+      "source_graph": "038-mill-f1.json",
+      "source_sha256": "b853d0341ef8593c8b5e1ad9792df8479e92e15f8d4fcb0dfccdf950ea6b6be9",
+      "graph": {
+        "profile_id": "mill-f1",
+        "devices": [
+          {
+            "id": "peripheral-01",
+            "role": "peripheral"
+          },
+          {
+            "id": "peripheral-02",
+            "role": "peripheral"
+          },
+          {
+            "id": "group-device-001",
+            "role": "peripheral"
+          },
+          {
+            "id": "supplement-device-001",
+            "role": "reference"
+          }
+        ],
+        "connectors": [
+          {
+            "id": "machine-01",
+            "device": "peripheral-01",
+            "refdes": "DB25 I/O \u00b7 Buildbotics v1.0",
+            "form": "DB25",
+            "scope": "conditional retained female breakout; controller DB25 itself is not a machine peripheral; numbered contact register, face unverified Machine/peripheral-side contact schedule; fitted presence unverified.",
+            "contacts": [
+              {
+                "id": "1",
+                "mark": "1",
+                "label": "Load2"
+              },
+              {
+                "id": "2",
+                "mark": "2",
+                "label": "Load1"
+              },
+              {
+                "id": "3",
+                "mark": "3",
+                "label": "M0 min"
+              },
+              {
+                "id": "4",
+                "mark": "4",
+                "label": "M0 max"
+              },
+              {
+                "id": "5",
+                "mark": "5",
+                "label": "M1 min"
+              },
+              {
+                "id": "6",
+                "mark": "6",
+                "label": "+3.3 V; v1.0 only"
+              },
+              {
+                "id": "7",
+                "mark": "7",
+                "label": "GND"
+              },
+              {
+                "id": "8",
+                "mark": "8",
+                "label": "M1 max"
+              },
+              {
+                "id": "9",
+                "mark": "9",
+                "label": "M2 min"
+              },
+              {
+                "id": "10",
+                "mark": "10",
+                "label": "M2 max"
+              },
+              {
+                "id": "11",
+                "mark": "11",
+                "label": "M3 min"
+              },
+              {
+                "id": "12",
+                "mark": "12",
+                "label": "M3 max"
+              },
+              {
+                "id": "13",
+                "mark": "13",
+                "label": "RS485 A; v1 source calls positive"
+              },
+              {
+                "id": "14",
+                "mark": "14",
+                "label": "RS485 B; v1 source calls negative"
+              },
+              {
+                "id": "15",
+                "mark": "15",
+                "label": "Tool enable"
+              },
+              {
+                "id": "16",
+                "mark": "16",
+                "label": "Tool direction"
+              },
+              {
+                "id": "17",
+                "mark": "17",
+                "label": "Tool PWM"
+              },
+              {
+                "id": "18",
+                "mark": "18",
+                "label": "Analog2 TBD"
+              },
+              {
+                "id": "19",
+                "mark": "19",
+                "label": "GND"
+              },
+              {
+                "id": "20",
+                "mark": "20",
+                "label": "+3.3 V; v1.0 only"
+              },
+              {
+                "id": "21",
+                "mark": "21",
+                "label": "Fault"
+              },
+              {
+                "id": "22",
+                "mark": "22",
+                "label": "Probe"
+              },
+              {
+                "id": "23",
+                "mark": "23",
+                "label": "EStop software input; safety circuit unproven"
+              },
+              {
+                "id": "24",
+                "mark": "24",
+                "label": "Analog1 0\u20133.3 V TBD"
+              },
+              {
+                "id": "25",
+                "mark": "25",
+                "label": "GND"
+              }
+            ]
+          },
+          {
+            "id": "machine-02",
+            "device": "peripheral-02",
+            "refdes": "DB25 I/O \u00b7 Buildbotics v2.0",
+            "form": "DB25",
+            "scope": "conditional retained female breakout; incompatible with v1.0 pin 6 and pin 20 voltages; numbered contact register, face unverified Machine/peripheral-side contact schedule; fitted presence unverified.",
+            "contacts": [
+              {
+                "id": "1",
+                "mark": "1",
+                "label": "Flood"
+              },
+              {
+                "id": "2",
+                "mark": "2",
+                "label": "Mist"
+              },
+              {
+                "id": "3",
+                "mark": "3",
+                "label": "M0 min"
+              },
+              {
+                "id": "4",
+                "mark": "4",
+                "label": "M0 max"
+              },
+              {
+                "id": "5",
+                "mark": "5",
+                "label": "M1 min"
+              },
+              {
+                "id": "6",
+                "mark": "6",
+                "label": "SPIN_0-10; 0\u201310 V, v2.0 only"
+              },
+              {
+                "id": "7",
+                "mark": "7",
+                "label": "GND"
+              },
+              {
+                "id": "8",
+                "mark": "8",
+                "label": "M1 max"
+              },
+              {
+                "id": "9",
+                "mark": "9",
+                "label": "M2 min"
+              },
+              {
+                "id": "10",
+                "mark": "10",
+                "label": "M2 max"
+              },
+              {
+                "id": "11",
+                "mark": "11",
+                "label": "M3 min"
+              },
+              {
+                "id": "12",
+                "mark": "12",
+                "label": "M3 max"
+              },
+              {
+                "id": "13",
+                "mark": "13",
+                "label": "RS485 A; v2 source calls negative"
+              },
+              {
+                "id": "14",
+                "mark": "14",
+                "label": "RS485 B; v2 source calls positive"
+              },
+              {
+                "id": "15",
+                "mark": "15",
+                "label": "Tool enable"
+              },
+              {
+                "id": "16",
+                "mark": "16",
+                "label": "Tool direction"
+              },
+              {
+                "id": "17",
+                "mark": "17",
+                "label": "PWM"
+              },
+              {
+                "id": "18",
+                "mark": "18",
+                "label": "Mappable analog input"
+              },
+              {
+                "id": "19",
+                "mark": "19",
+                "label": "GND"
+              },
+              {
+                "id": "20",
+                "mark": "20",
+                "label": "+5 V; v2.0 only"
+              },
+              {
+                "id": "21",
+                "mark": "21",
+                "label": "Fault"
+              },
+              {
+                "id": "22",
+                "mark": "22",
+                "label": "Probe"
+              },
+              {
+                "id": "23",
+                "mark": "23",
+                "label": "EStop software input; safety circuit unproven"
+              },
+              {
+                "id": "24",
+                "mark": "24",
+                "label": "Mappable analog input"
+              },
+              {
+                "id": "25",
+                "mark": "25",
+                "label": "GND"
+              }
+            ]
+          },
+          {
+            "id": "machine-group-001",
+            "device": "group-device-001",
+            "refdes": "M0\u2013M3 motor",
+            "form": "source-described cable / connector group",
+            "scope": "Source names this group, but provides no source-scoped physical contact map. Availability and exact housing are unverified. exact atlas group labels; open until contact mapping is established",
+            "contacts": []
+          },
+          {
+            "id": "supplement-connector-001",
+            "device": "supplement-device-001",
+            "refdes": "Buildbotics V2 controller AUX DB15 reference contacts 1\u201315",
+            "form": "DB15; 15-contact male controller-side source reference",
+            "scope": "Buildbotics V2 manual only. This is a separate original-controller AUX output, not the machine-side DB25 I/O breakout, not a demonstrated retained interface, and not a V2 route. Male mating view is source-described; contact-face orientation is not verified here. Manual table also prints an out-of-range row 16 as NC; that is retained in this note, not fabricated as a 16th DB15 contact. This is a reference for the named source revision; installed-machine correspondence is not established.",
+            "contacts": [
+              {
+                "id": "1",
+                "mark": "1",
+                "label": "NC"
+              },
+              {
+                "id": "2",
+                "mark": "2",
+                "label": "Step_0 output"
+              },
+              {
+                "id": "3",
+                "mark": "3",
+                "label": "Step_1 output"
+              },
+              {
+                "id": "4",
+                "mark": "4",
+                "label": "Step_2 output"
+              },
+              {
+                "id": "5",
+                "mark": "5",
+                "label": "Step_3 output"
+              },
+              {
+                "id": "6",
+                "mark": "6",
+                "label": "5 V source"
+              },
+              {
+                "id": "7",
+                "mark": "7",
+                "label": "5 V source"
+              },
+              {
+                "id": "8",
+                "mark": "8",
+                "label": "0\u201310 V DC analog output"
+              },
+              {
+                "id": "9",
+                "mark": "9",
+                "label": "Motor_Enable output"
+              },
+              {
+                "id": "10",
+                "mark": "10",
+                "label": "Dir_0 output"
+              },
+              {
+                "id": "11",
+                "mark": "11",
+                "label": "Dir_1 output"
+              },
+              {
+                "id": "12",
+                "mark": "12",
+                "label": "Dir_2 output"
+              },
+              {
+                "id": "13",
+                "mark": "13",
+                "label": "Dir_3 output"
+              },
+              {
+                "id": "14",
+                "mark": "14",
+                "label": "GND return"
+              },
+              {
+                "id": "15",
+                "mark": "15",
+                "label": "GND return"
+              }
+            ]
+          }
+        ],
+        "wires": []
+      }
+    }
+  }
+}

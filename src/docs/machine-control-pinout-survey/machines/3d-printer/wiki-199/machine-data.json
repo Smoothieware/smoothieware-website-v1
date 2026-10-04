@@ -1,0 +1,73 @@
+{
+  "id": "wiki-199",
+  "sources": {
+    "machine-side-graph-snapshot.json": {
+      "source_graph": "199-wiki-199.json",
+      "source_sha256": "9d54da6708736d559157965a114345a2c9431ad7f0304ba6323339018b6ddaa5",
+      "graph": {
+        "profile_id": "wiki-199",
+        "devices": [
+          {
+            "id": "supplement-device-001",
+            "role": "reference"
+          },
+          {
+            "id": "supplement-device-002",
+            "role": "reference"
+          }
+        ],
+        "connectors": [
+          {
+            "id": "supplement-connector-001",
+            "device": "supplement-device-001",
+            "refdes": "RepRap Mendel Version II panel-mounted male XLR power input",
+            "form": "3-pin XLR; source image looks into female socket and male pins",
+            "scope": "RepRap Mendel Electronic Wiring Version II build guide only. This build has a panel-mounted male plug; source image describes the female-socket/male-pin viewing convention. No local installed connector, mating geometry reproduction, electrical qualification or V2 power route established. This is a reference for the named source revision; installed-machine correspondence is not established.",
+            "contacts": [
+              {
+                "id": "1",
+                "mark": "1",
+                "label": "Ground / negative"
+              },
+              {
+                "id": "2",
+                "mark": "2",
+                "label": "+12 V"
+              },
+              {
+                "id": "3",
+                "mark": "3",
+                "label": "Unused in Version II source build"
+              }
+            ]
+          },
+          {
+            "id": "supplement-connector-002",
+            "device": "supplement-device-002",
+            "refdes": "RepRap Mendel Version II opto endstop connector A",
+            "form": "board-specific opto endstop connector; source-image top/middle/bottom",
+            "scope": "Version II build guide board-connector A only; top/middle/bottom are source-image positions, not universal endstop wire colors or printed contact numbers. No fitted board revision, V2 mapping or electrical interface established. This is a reference for the named source revision; installed-machine correspondence is not established.",
+            "contacts": [
+              {
+                "id": "top",
+                "mark": "top",
+                "label": "VCC; source says verify stepper-controller board 5 V output"
+              },
+              {
+                "id": "middle",
+                "mark": "middle",
+                "label": "SIG"
+              },
+              {
+                "id": "bottom",
+                "mark": "bottom",
+                "label": "GND"
+              }
+            ]
+          }
+        ],
+        "wires": []
+      }
+    }
+  }
+}

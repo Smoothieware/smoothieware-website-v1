@@ -1,0 +1,60 @@
+{
+  "type": "final-paired-svg-addendum",
+  "profiles": [
+    {
+      "id": "mill-avid-ex-3",
+      "page_matches_manifest": true,
+      "global_svg_sha256": "51de6d196e8359d09fba8122e7f2d88a033bd5471770dfa5f6328a817df619d5",
+      "global_contains_probe_input": true,
+      "owned_svg_checks": [
+        {
+          "path": "src/docs/machine-control-pinout-survey/machines/cnc-router/mill-avid-ex-3/machine-control-pinout-survey/smoothiebox-machine-wiring/centered-mill-avid-ex-3.svg",
+          "manifest_sha256": "51de6d196e8359d09fba8122e7f2d88a033bd5471770dfa5f6328a817df619d5",
+          "actual_sha256": "51de6d196e8359d09fba8122e7f2d88a033bd5471770dfa5f6328a817df619d5",
+          "matches_manifest": true,
+          "matches_global_svg": true,
+          "contains_probe_input": true
+        }
+      ],
+      "retained_history_checks": [
+        {
+          "path": "src/docs/machine-control-pinout-survey/machines/cnc-router/mill-avid-ex-3/machine-control-pinout-survey/square-redesign-history/centered-mill-avid-ex-3.svg",
+          "manifest_sha256": "03b85f947029c55708adc5f8492731fa795582518b60b67d3c67acf87b3390fb",
+          "actual_sha256": "03b85f947029c55708adc5f8492731fa795582518b60b67d3c67acf87b3390fb",
+          "matches_manifest": true,
+          "matches_global_svg": false,
+          "contains_probe_input": false
+        }
+      ]
+    },
+    {
+      "id": "wiki-206",
+      "page_matches_manifest": true,
+      "global_svg_sha256": "e41153d7ee1f62018db8ee8775467fd893d2aad8c8c7548bee335242faa59efa",
+      "global_contains_probe_input": true,
+      "owned_svg_checks": [
+        {
+          "path": "src/docs/machine-control-pinout-survey/machines/cnc-router/wiki-206/machine-control-pinout-survey/smoothiebox-machine-wiring/centered-wiki-206.svg",
+          "manifest_sha256": "e41153d7ee1f62018db8ee8775467fd893d2aad8c8c7548bee335242faa59efa",
+          "actual_sha256": "e41153d7ee1f62018db8ee8775467fd893d2aad8c8c7548bee335242faa59efa",
+          "matches_manifest": true,
+          "matches_global_svg": true,
+          "contains_probe_input": true
+        }
+      ],
+      "retained_history_checks": [
+        {
+          "path": "src/docs/machine-control-pinout-survey/machines/cnc-router/wiki-206/machine-control-pinout-survey/square-redesign-history/centered-wiki-206.svg",
+          "manifest_sha256": "f66a79114cbdf48e86bfc822c1489c50cb3045a15e95fb820699980e4ff11abd",
+          "actual_sha256": "f66a79114cbdf48e86bfc822c1489c50cb3045a15e95fb820699980e4ff11abd",
+          "matches_manifest": true,
+          "matches_global_svg": false,
+          "contains_probe_input": false
+        }
+      ]
+    }
+  ],
+  "passed": true,
+  "scope": "Only latest Avid/Shapeoko paired page and owned SVG hash/label readback; no renderer job polling or publication claim.",
+  "history_note": "Older retained history intentionally differs from current main SVG; each retained hash remains verified."
+}

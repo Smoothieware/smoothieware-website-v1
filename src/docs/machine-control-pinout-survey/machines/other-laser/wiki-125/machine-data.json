@@ -1,0 +1,65 @@
+{
+  "id": "wiki-125",
+  "sources": {
+    "machine-side-graph-snapshot.json": {
+      "source_graph": "125-wiki-125.json",
+      "source_sha256": "ee006b4c1ccfc9e36c99f87d8a7aa95ff56a2a775d701efe8f1b8b331e07dc03",
+      "graph": {
+        "profile_id": "wiki-125",
+        "devices": [
+          {
+            "id": "group-device-001",
+            "role": "peripheral"
+          },
+          {
+            "id": "group-device-002",
+            "role": "peripheral"
+          },
+          {
+            "id": "group-device-003",
+            "role": "peripheral"
+          },
+          {
+            "id": "group-device-004",
+            "role": "peripheral"
+          }
+        ],
+        "connectors": [
+          {
+            "id": "machine-group-001",
+            "device": "group-device-001",
+            "refdes": "LiteMarker USB\u2013PC cable",
+            "form": "source-described cable / connector group",
+            "scope": "Source names this group, but provides no source-scoped physical contact map. Availability and exact housing are unverified. Source-documented cable or connector groups only; endpoints are functional labels, not numbered contacts. Installed machine revision and electrical contract remain unverified. Cloudray-authored LiteMarker User Guide v2.1 (2022.04) is a family manual hosted by ManualsLib; fitted Fabbulle MP-60 LiteMarker Pro chassis, enclosure and port revision unverified.",
+            "contacts": []
+          },
+          {
+            "id": "machine-group-002",
+            "device": "group-device-002",
+            "refdes": "LiteMarker rotary cable",
+            "form": "source-described cable / connector group",
+            "scope": "Source names this group, but provides no source-scoped physical contact map. Availability and exact housing are unverified. Source-documented cable or connector groups only; endpoints are functional labels, not numbered contacts. Installed machine revision and electrical contract remain unverified. Cloudray-authored LiteMarker User Guide v2.1 (2022.04) is a family manual hosted by ManualsLib; fitted Fabbulle MP-60 LiteMarker Pro chassis, enclosure and port revision unverified.",
+            "contacts": []
+          },
+          {
+            "id": "machine-group-003",
+            "device": "group-device-003",
+            "refdes": "LiteMarker foot-switch cable",
+            "form": "source-described cable / connector group",
+            "scope": "Source names this group, but provides no source-scoped physical contact map. Availability and exact housing are unverified. Source-documented cable or connector groups only; endpoints are functional labels, not numbered contacts. Installed machine revision and electrical contract remain unverified. Cloudray-authored LiteMarker User Guide v2.1 (2022.04) is a family manual hosted by ManualsLib; fitted Fabbulle MP-60 LiteMarker Pro chassis, enclosure and port revision unverified.",
+            "contacts": []
+          },
+          {
+            "id": "machine-group-004",
+            "device": "group-device-004",
+            "refdes": "LiteMarker power cable",
+            "form": "source-described cable / connector group",
+            "scope": "Source names this group, but provides no source-scoped physical contact map. Availability and exact housing are unverified. Source-documented cable or connector groups only; endpoints are functional labels, not numbered contacts. Installed machine revision and electrical contract remain unverified. Cloudray-authored LiteMarker User Guide v2.1 (2022.04) is a family manual hosted by ManualsLib; fitted Fabbulle MP-60 LiteMarker Pro chassis, enclosure and port revision unverified.",
+            "contacts": []
+          }
+        ],
+        "wires": []
+      }
+    }
+  }
+}

@@ -1,0 +1,185 @@
+{
+  "id": "wiki-109",
+  "sources": {
+    "machine-side-graph-snapshot.json": {
+      "source_graph": "109-wiki-109.json",
+      "source_sha256": "50d5da3e4eed85c74c8768b722c4eb1977d072e5ba41efe6fd7781753d85781a",
+      "graph": {
+        "profile_id": "wiki-109",
+        "devices": [
+          {
+            "id": "group-device-001",
+            "role": "peripheral"
+          },
+          {
+            "id": "group-device-002",
+            "role": "peripheral"
+          },
+          {
+            "id": "group-device-003",
+            "role": "peripheral"
+          },
+          {
+            "id": "group-device-004",
+            "role": "peripheral"
+          },
+          {
+            "id": "group-device-005",
+            "role": "peripheral"
+          },
+          {
+            "id": "group-device-006",
+            "role": "peripheral"
+          },
+          {
+            "id": "group-device-007",
+            "role": "peripheral"
+          },
+          {
+            "id": "group-device-008",
+            "role": "peripheral"
+          },
+          {
+            "id": "group-device-009",
+            "role": "peripheral"
+          },
+          {
+            "id": "group-device-010",
+            "role": "peripheral"
+          },
+          {
+            "id": "group-device-011",
+            "role": "peripheral"
+          },
+          {
+            "id": "group-device-012",
+            "role": "peripheral"
+          },
+          {
+            "id": "group-device-013",
+            "role": "reference"
+          },
+          {
+            "id": "group-device-014",
+            "role": "peripheral"
+          }
+        ],
+        "connectors": [
+          {
+            "id": "machine-group-001",
+            "device": "group-device-001",
+            "refdes": "X motor harness",
+            "form": "source-described cable / connector group",
+            "scope": "Source names this group, but provides no source-scoped physical contact map. Availability and exact housing are unverified. Source-documented cable or connector groups only; endpoints are functional labels, not numbered contacts. Installed machine revision and electrical contract remain unverified.",
+            "contacts": []
+          },
+          {
+            "id": "machine-group-002",
+            "device": "group-device-002",
+            "refdes": "Y motor harness",
+            "form": "source-described cable / connector group",
+            "scope": "Source names this group, but provides no source-scoped physical contact map. Availability and exact housing are unverified. Source-documented cable or connector groups only; endpoints are functional labels, not numbered contacts. Installed machine revision and electrical contract remain unverified.",
+            "contacts": []
+          },
+          {
+            "id": "machine-group-003",
+            "device": "group-device-003",
+            "refdes": "Z motor harness",
+            "form": "source-described cable / connector group",
+            "scope": "Source names this group, but provides no source-scoped physical contact map. Availability and exact housing are unverified. Source-documented cable or connector groups only; endpoints are functional labels, not numbered contacts. Installed machine revision and electrical contract remain unverified.",
+            "contacts": []
+          },
+          {
+            "id": "machine-group-004",
+            "device": "group-device-004",
+            "refdes": "E motor harness",
+            "form": "source-described cable / connector group",
+            "scope": "Source names this group, but provides no source-scoped physical contact map. Availability and exact housing are unverified. Source-documented cable or connector groups only; endpoints are functional labels, not numbered contacts. Installed machine revision and electrical contract remain unverified.",
+            "contacts": []
+          },
+          {
+            "id": "machine-group-005",
+            "device": "group-device-005",
+            "refdes": "X HOME harness",
+            "form": "source-described cable / connector group",
+            "scope": "Source names this group, but provides no source-scoped physical contact map. Availability and exact housing are unverified. Source-documented cable or connector groups only; endpoints are functional labels, not numbered contacts. Installed machine revision and electrical contract remain unverified.",
+            "contacts": []
+          },
+          {
+            "id": "machine-group-006",
+            "device": "group-device-006",
+            "refdes": "Y HOME harness",
+            "form": "source-described cable / connector group",
+            "scope": "Source names this group, but provides no source-scoped physical contact map. Availability and exact housing are unverified. Source-documented cable or connector groups only; endpoints are functional labels, not numbered contacts. Installed machine revision and electrical contract remain unverified.",
+            "contacts": []
+          },
+          {
+            "id": "machine-group-007",
+            "device": "group-device-007",
+            "refdes": "Z HOME harness",
+            "form": "source-described cable / connector group",
+            "scope": "Source names this group, but provides no source-scoped physical contact map. Availability and exact housing are unverified. Source-documented cable or connector groups only; endpoints are functional labels, not numbered contacts. Installed machine revision and electrical contract remain unverified.",
+            "contacts": []
+          },
+          {
+            "id": "machine-group-008",
+            "device": "group-device-008",
+            "refdes": "Heated-bed cable",
+            "form": "source-described cable / connector group",
+            "scope": "Source names this group, but provides no source-scoped physical contact map. Availability and exact housing are unverified. Source-documented cable or connector groups only; endpoints are functional labels, not numbered contacts. Installed machine revision and electrical contract remain unverified.",
+            "contacts": []
+          },
+          {
+            "id": "machine-group-009",
+            "device": "group-device-009",
+            "refdes": "Extruder-heater cable",
+            "form": "source-described cable / connector group",
+            "scope": "Source names this group, but provides no source-scoped physical contact map. Availability and exact housing are unverified. Source-documented cable or connector groups only; endpoints are functional labels, not numbered contacts. Installed machine revision and electrical contract remain unverified.",
+            "contacts": []
+          },
+          {
+            "id": "machine-group-010",
+            "device": "group-device-010",
+            "refdes": "Extruder thermistor cable",
+            "form": "source-described cable / connector group",
+            "scope": "Source names this group, but provides no source-scoped physical contact map. Availability and exact housing are unverified. Source-documented cable or connector groups only; endpoints are functional labels, not numbered contacts. Installed machine revision and electrical contract remain unverified.",
+            "contacts": []
+          },
+          {
+            "id": "machine-group-011",
+            "device": "group-device-011",
+            "refdes": "Bed thermistor cable",
+            "form": "source-described cable / connector group",
+            "scope": "Source names this group, but provides no source-scoped physical contact map. Availability and exact housing are unverified. Source-documented cable or connector groups only; endpoints are functional labels, not numbered contacts. Installed machine revision and electrical contract remain unverified.",
+            "contacts": []
+          },
+          {
+            "id": "machine-group-012",
+            "device": "group-device-012",
+            "refdes": "Fan cable",
+            "form": "source-described cable / connector group",
+            "scope": "Source names this group, but provides no source-scoped physical contact map. Availability and exact housing are unverified. Source-documented cable or connector groups only; endpoints are functional labels, not numbered contacts. Installed machine revision and electrical contract remain unverified.",
+            "contacts": []
+          },
+          {
+            "id": "machine-group-013",
+            "device": "group-device-013",
+            "refdes": "Controller power cable",
+            "form": "source-described cable / connector group",
+            "scope": "Source names this group, but provides no source-scoped physical contact map. Availability and exact housing are unverified. Source-documented cable or connector groups only; endpoints are functional labels, not numbered contacts. Installed machine revision and electrical contract remain unverified.",
+            "contacts": []
+          },
+          {
+            "id": "machine-group-014",
+            "device": "group-device-014",
+            "refdes": "PC USB link",
+            "form": "source-described cable / connector group",
+            "scope": "Source names this group, but provides no source-scoped physical contact map. Availability and exact housing are unverified. Source-documented cable or connector groups only; endpoints are functional labels, not numbered contacts. Installed machine revision and electrical contract remain unverified.",
+            "contacts": []
+          }
+        ],
+        "wires": []
+      }
+    }
+  }
+}

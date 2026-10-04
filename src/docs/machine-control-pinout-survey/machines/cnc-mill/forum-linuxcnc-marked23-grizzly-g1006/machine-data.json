@@ -1,0 +1,34 @@
+{
+  "id": "forum-linuxcnc-marked23-grizzly-g1006",
+  "sources": {
+    "forum-peripheral-evidence.json": {
+      "id": "forum-linuxcnc-marked23-grizzly-g1006",
+      "dossier": "src/docs/machine-research/linuxcnc-marked23-grizzly-g1006.md",
+      "reported_fitted_or_used": [
+        {
+          "name": "Spindle SSR",
+          "contacts": [],
+          "source_line_number": 11,
+          "source_line": "The forum includes photos of the control box, spindle SSR, and pendant internals, but the inspected text does not provide a connector-to-contact table. The prior owner's cable functions were partly unknown to the new owner, who reverse-engineered some cables. No cable or terminal assignment should be inferred from the component list.",
+          "evidence": "The forum includes photos of the control box, spindle SSR, and pendant internals, but the inspected text does not provide a connector-to-contact table. The prior owner's cable functions were partly unknown to the new owner, who reverse-engineered some cables.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        }
+      ],
+      "listed_for_build_unverified": [],
+      "historical_reference": [],
+      "planned_only": [],
+      "open_function_group": [
+        {
+          "name": "Axis servo system unspecified",
+          "contacts": [],
+          "source_line_number": 5,
+          "source_line": "LinuxCNC Forum member marked23 reports receiving a Grizzly G1006 mill/drill with a CNC kit built by its previous owner. That earlier owner had converted the mill and built its servo-control and pendant boxes. The inherited system had used a Windows computer, Mach3, a parallel port, PMDX-122, and three Geckodrive G320 drives. marked23 got it moving, then began converting its computer/controller side to LinuxCNC, planning a Mesa 7i96S in place of the PMDX-122 and a USB game controller in place of the pendant. The owner intended to retain the original servo box and bespoke power supply. The inspected thread does not report completion of the LinuxCNC conversion.",
+          "evidence": "The inherited system had used a Windows computer, Mach3, a parallel port, PMDX-122, and three Geckodrive G320 drives. marked23 got it moving, then began converting its computer/controller side to LinuxCNC, planning a Mesa 7i96S in place of the PMDX-122 and a USB game controller in place of the pendant. The owner intended to retain the original servo box and bespoke power supply.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        }
+      ],
+      "exclusions": [],
+      "source_gap": "Dossier does not establish an as-built SmoothieBox route or a complete physical contact schedule for the listed peripherals."
+    }
+  }
+}

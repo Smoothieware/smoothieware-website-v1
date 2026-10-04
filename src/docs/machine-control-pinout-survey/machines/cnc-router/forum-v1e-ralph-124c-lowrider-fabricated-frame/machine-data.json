@@ -1,0 +1,41 @@
+{
+  "id": "forum-v1e-ralph-124c-lowrider-fabricated-frame",
+  "sources": {
+    "forum-peripheral-evidence.json": {
+      "id": "forum-v1e-ralph-124c-lowrider-fabricated-frame",
+      "dossier": "src/docs/machine-research/v1e-ralph-124c-lowrider-fabricated-frame.md",
+      "reported_fitted_or_used": [
+        {
+          "name": "500 W brushless spindle and separate controller",
+          "source_line_number": 23,
+          "source_line": "| Spindle | 500 W brushless spindle, 48 V, 12,000 rpm, ER16 chuck, separate controller and potentiometer | Ralph says the kit had three motor wires, distinguishing it from visually similar two-wire brushed models. He powered it through a DC-DC converter from the 24 V supply used by the main controller board. No wiring diagram or verified input/output measurements are supplied. |",
+          "evidence": "500 W brushless spindle, 48 V, 12,000 rpm, ER16 chuck, separate controller and potentiometer.",
+          "contacts": [],
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        }
+      ],
+      "listed_for_build_unverified": [],
+      "historical_reference": [],
+      "planned_only": [],
+      "open_function_group": [],
+      "exclusions": [
+        {
+          "name": "NEMA 23 Y/Z and NEMA 17 X motors",
+          "reason": "The selected dossier line is an absence/novelty statement, not positive device evidence.",
+          "source_line_number": 13,
+          "source_line": "He used NEMA 23 motors on Z and Y while retaining a NEMA 17 on X. The roughly 3 m-long table can be split in half for storage and has removable legs. In a later reply, Ralph clarified that the gantry itself stays in one piece, though it is narrow enough to put on a shelf. These are the owner's reported dimensions and handling details; the thread does not establish the final machine's measured travel or repeatability."
+        },
+        {
+          "name": "TMC5160 drivers",
+          "contacts": [],
+          "source_line_number": 20,
+          "source_line": "| Drivers | TMC5160 | Driver current, microstepping, and motor wiring are not stated. |",
+          "evidence": "TMC5160",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route",
+          "reason": "Excluded: no separate externally addressable interface, existing control hardware, absent tooling, or inadequate positive device evidence in this dossier."
+        }
+      ],
+      "source_gap": "Dossier does not establish an as-built SmoothieBox route or a complete physical contact schedule for the listed peripherals."
+    }
+  }
+}

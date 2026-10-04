@@ -1,0 +1,35 @@
+{
+  "id": "forum-maslowcnc-darrenhearn-maslow4-12x8-frame-router",
+  "sources": {
+    "forum-peripheral-evidence.json": {
+      "id": "forum-maslowcnc-darrenhearn-maslow4-12x8-frame-router",
+      "dossier": "src/docs/machine-research/maslowcnc-darrenhearn-maslow4-12x8-frame-router.md",
+      "reported_fitted_or_used": [
+        {
+          "name": "DeWalt DWP611 router",
+          "contacts": [],
+          "source_line_number": 30,
+          "source_line": "| Router | DeWalt DWP611, speed setting 2, approximately 18,000 rpm |",
+          "evidence": "DeWalt DWP611, speed setting 2, approximately 18,000 rpm.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        }
+      ],
+      "listed_for_build_unverified": [],
+      "historical_reference": [],
+      "planned_only": [],
+      "open_function_group": [],
+      "exclusions": [
+        {
+          "name": "Maslow 4 belt-drive motors and encoders unspecified",
+          "contacts": [],
+          "source_line_number": 44,
+          "source_line": "After the machine sat for about two humid summer months in an uninsulated garage, the owner recalibrated in late August using firmware v0.83. Calibration initially stopped with `Unable to move safely, stopping calibration`. After manually setting the top-left and top-right anchor coordinates in `maslow.yaml` (the owner listed `maslow_tlX`, `maslow_tlY`, `maslow_trX`, etc.), a calibration run completed. They also had incomplete retraction on the bottom-right belt between calibration attempts. Raising `Maslow_Retract_Current_Threshold` to 1600 yielded reliable retraction; they set `Maslow_Calibration_Current_Threshold` to 1600 as well. The owner did not determine why the August procedure differed from the June run.",
+          "evidence": "After the machine sat for about two humid summer months in an uninsulated garage, the owner recalibrated in late August using firmware v0.83. Calibration initially stopped with `Unable to move safely, stopping calibration`.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route",
+          "reason": "Excluded: no separate externally addressable interface, existing control hardware, absent tooling, or inadequate positive device evidence in this dossier."
+        }
+      ],
+      "source_gap": "Dossier does not establish an as-built SmoothieBox route or a complete physical contact schedule for the listed peripherals."
+    }
+  }
+}

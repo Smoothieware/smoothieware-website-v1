@@ -1,0 +1,93 @@
+{
+  "id": "forum-linuxcnc-macgalempsy-benchman-xtr",
+  "sources": {
+    "forum-peripheral-evidence.json": {
+      "id": "forum-linuxcnc-macgalempsy-benchman-xtr",
+      "dossier": "src/docs/machine-research/linuxcnc-macgalempsy-benchman-xtr.md",
+      "reported_fitted_or_used": [],
+      "listed_for_build_unverified": [
+        {
+          "name": "Tanakawa TS-5412 encoders",
+          "contacts": [],
+          "source_line_number": 13,
+          "source_line": "| X/Y/Z feedback | Tanakawa TS-5412 encoders | Owner inventory; no connector contact map supplied. |",
+          "evidence": "Tanakawa TS-5412 encoders.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        },
+        {
+          "name": "Allen-Bradley spindle servo drive",
+          "contacts": [],
+          "source_line_number": 16,
+          "source_line": "| Spindle | Allen-Bradley Ultra 100 DDM-019 drive; Allen-Bradley TL-series AC servo and encoder | Owner inventory; exact TL model is not provided in the cited post. |",
+          "evidence": "Allen-Bradley Ultra 100 DDM-019 drive; Allen-Bradley TL-series AC servo and encoder.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        },
+        {
+          "name": "SMC ATC solenoid valves and sensors",
+          "contacts": [],
+          "source_line_number": 17,
+          "source_line": "| ATC pneumatics | Four SMC SY3120-5L0Z valves, cylinders/actuators and end sensors | The cited inventory does not supply a complete valve or sensor terminal schedule. |",
+          "evidence": "Four SMC SY3120-5L0Z valves, cylinders/actuators and end sensors.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        },
+        {
+          "name": "Machine limit and door switches",
+          "contacts": [],
+          "source_line_number": 20,
+          "source_line": "| Operator and machine I/O | Front-panel E-stop, cycle start/stop and overrides; X/Y/Z limit switches; front-door lock/switch; coolant and spindle controls | Functional inventory only; no full pinout or verified safety design. |",
+          "evidence": "Front-panel E-stop, cycle start/stop and overrides; X/Y/Z limit switches; front-door lock/switch; coolant and spindle controls.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        },
+        {
+          "name": "Copley Controls 800-469 servo amplifiers",
+          "contacts": [],
+          "source_line_number": 11,
+          "source_line": "| Servo amplifiers | Copley Controls 800-469; owner says the plate appears to carry four 4122 modules | Model identification is reported/visually tentative. |",
+          "evidence": "Copley Controls 800-469; owner says the plate appears to carry four 4122 modules.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        }
+      ],
+      "historical_reference": [],
+      "planned_only": [],
+      "open_function_group": [
+        {
+          "name": "SMW rotary axis servo and encoder",
+          "contacts": [],
+          "source_line_number": 15,
+          "source_line": "| Fourth axis | SMW 5C-RT rotary table, Magmotor C33-H-075X servo, DRC TK731 encoder | Separate rotary-axis components as reported by owner. |",
+          "evidence": "SMW 5C-RT rotary table, Magmotor C33-H-075X servo, DRC TK731 encoder.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        },
+        {
+          "name": "ATC carousel 24 V motor and encoder",
+          "contacts": [],
+          "source_line_number": 18,
+          "source_line": "| ATC carousel | 24 V motor and BEI H20EA-37-F28-SS-500 encoder; owner reports a 90 PSI gauge/interlock | Preserve as an owner-reported description, not a verified pressure-system design. |",
+          "evidence": "24 V motor and BEI H20EA-37-F28-SS-500 encoder; owner reports a 90 PSI gauge/interlock.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        }
+      ],
+      "exclusions": [
+        {
+          "name": "X/Y/Z Litton brushed DC servos",
+          "contacts": [],
+          "source_line_number": 12,
+          "source_line": "| X/Y/Z motors | Litton LW30 on X/Y and LW50 on Z, described as brushed DC servos | Owner inventory. |",
+          "evidence": "Litton LW30 on X/Y and LW50 on Z, described as brushed DC servos",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route",
+          "reason": "Excluded: no separate externally addressable interface, existing control hardware, absent tooling, or inadequate positive device evidence in this dossier."
+        },
+        {
+          "name": "ATC carousel 24 V motor and BEI encoder",
+          "contacts": [],
+          "source_line_number": 18,
+          "source_line": "| ATC carousel | 24 V motor and BEI H20EA-37-F28-SS-500 encoder; owner reports a 90 PSI gauge/interlock | Preserve as an owner-reported description, not a verified pressure-system design. |",
+          "evidence": "24 V motor and BEI H20EA-37-F28-SS-500 encoder; owner reports a 90 PSI gauge/interlock",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route",
+          "reason": "Excluded: no separate externally addressable interface, existing control hardware, absent tooling, or inadequate positive device evidence in this dossier."
+        }
+      ],
+      "source_gap": "Dossier does not establish an as-built SmoothieBox route or a complete physical contact schedule for the listed peripherals."
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "id": "forum-laseruser-x700-clone-rdc6442",
+  "sources": {
+    "forum-peripheral-evidence.json": {
+      "id": "forum-laseruser-x700-clone-rdc6442",
+      "dossier": "src/docs/machine-research/laseruser-x700-clone-rdc6442.md",
+      "reported_fitted_or_used": [
+        {
+          "name": "Cloudray 80 W laser PSU",
+          "contacts": [],
+          "source_line_number": 11,
+          "source_line": "In a follow-up the owner says Ruida CN5 pin 1 (GND) goes to Cloudray G&P and to the water-switch circuit; CN5 pin 2 (L-On1) goes to Cloudray L; CN5 pin 3 (LPWM1) goes to Cloudray IN; CN5 pin 4 (WS1) goes to the other water-switch terminal. The forum post also says Cloudray G and P were jumpered in one configuration. The owner reported occasional \u201cWater Error\u201d and inconsistent firing. These are a user's wiring observations on one particular machine and PSU, not a validated generic map.",
+          "evidence": "In a follow-up the owner says Ruida CN5 pin 1 (GND) goes to Cloudray G&P and to the water-switch circuit; CN5 pin 2 (L-On1) goes to Cloudray L; CN5 pin 3 (LPWM1) goes to Cloudray IN; CN5 pin 4 (WS1) goes to the other water-switch terminal. The forum post also says Cloudray G and P were jumpered in one configuration.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        },
+        {
+          "name": "Water-protection switch",
+          "contacts": [],
+          "source_line_number": 21,
+          "source_line": "The thread asks for a photo of PSU connections and Cloudray documentation. A stable full wiring schematic and confirmed repair outcome were not present in the extracted posts. Visual attachments exist in the forum thread, but were not pixel-inspected in this pass. Laser tube high voltage, grounding, interlocks, water-protection design, and full system safety are not documented sufficiently to reproduce.",
+          "evidence": "Laser tube high voltage, grounding, interlocks, water-protection design, and full system safety are not documented sufficiently to reproduce.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        }
+      ],
+      "listed_for_build_unverified": [],
+      "historical_reference": [],
+      "planned_only": [],
+      "open_function_group": [],
+      "exclusions": [],
+      "source_gap": "Dossier does not establish an as-built SmoothieBox route or a complete physical contact schedule for the listed peripherals."
+    }
+  }
+}

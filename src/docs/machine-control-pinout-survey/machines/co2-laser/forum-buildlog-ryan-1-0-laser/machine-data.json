@@ -1,0 +1,25 @@
+{
+  "id": "forum-buildlog-ryan-1-0-laser",
+  "sources": {
+    "forum-peripheral-evidence.json": {
+      "id": "forum-buildlog-ryan-1-0-laser",
+      "dossier": "src/docs/machine-research/buildlog-ryan-1-0-laser.md",
+      "reported_fitted_or_used": [],
+      "listed_for_build_unverified": [
+        {
+          "name": "Keling stepper drivers",
+          "contacts": [],
+          "source_line_number": 11,
+          "source_line": "The author says the electronics shown were subject to change. At that snapshot they included motors from the design author, Keling stepper drivers, two inexpensive power supplies, a 36 V / 7 A supply for the motion system (chosen over a suggested 24 V supply), and a proposed 5 V conversion/regulator. The forum post records the builder's uncertainty about modifying the supply; it is not a recommended power conversion. Stepper microstep configuration was chosen to reach 1,000 steps/in. for a Retina controller. Later replies and posts are needed to identify the final controller and laser wiring.",
+          "evidence": "At that snapshot they included motors from the design author, Keling stepper drivers, two inexpensive power supplies, a 36 V / 7 A supply for the motion system (chosen over a suggested 24 V supply), and a proposed 5 V conversion/regulator. The forum post records the builder's uncertainty about modifying the supply; it is not a recommended power conversion.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        }
+      ],
+      "historical_reference": [],
+      "planned_only": [],
+      "open_function_group": [],
+      "exclusions": [],
+      "source_gap": "Dossier does not establish an as-built SmoothieBox route or a complete physical contact schedule for the listed peripherals."
+    }
+  }
+}

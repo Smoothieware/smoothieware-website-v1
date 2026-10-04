@@ -1,0 +1,33 @@
+{
+  "id": "forum-v1e-daniel-moura-full-sheet-lowrider4-brazil",
+  "sources": {
+    "forum-peripheral-evidence.json": {
+      "id": "forum-v1e-daniel-moura-full-sheet-lowrider4-brazil",
+      "dossier": "src/docs/machine-research/v1e-daniel-moura-full-sheet-lowrider4-brazil.md",
+      "reported_fitted_or_used": [],
+      "listed_for_build_unverified": [],
+      "historical_reference": [],
+      "planned_only": [
+        {
+          "name": "One TMC2209 driver and motor bench tested",
+          "contacts": [],
+          "source_line_number": 21,
+          "source_line": "| Stepper drivers | A TMC2209 V2.0 was tested in standalone/StepStick mode; the thread does not establish the final driver population or a working five-axis configuration |",
+          "evidence": "A TMC2209 V2.0 was tested in standalone/StepStick mode; the thread does not establish the final driver population or a working five-axis configuration.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        },
+        {
+          "name": "Makita-style router planned only",
+          "contacts": [],
+          "source_line_number": 23,
+          "source_line": "| Tool | Initially plans a Makita-style router to keep moving mass down on the wide gantry; spindle and VFD are deferred until after operation can be assessed |",
+          "evidence": "Initially plans a Makita-style router to keep moving mass down on the wide gantry; spindle and VFD are deferred until after operation can be assessed.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        }
+      ],
+      "open_function_group": [],
+      "exclusions": [],
+      "source_gap": "Dossier does not establish an as-built SmoothieBox route or a complete physical contact schedule for the listed peripherals."
+    }
+  }
+}

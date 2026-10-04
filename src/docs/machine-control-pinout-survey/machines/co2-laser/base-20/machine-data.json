@@ -1,0 +1,29 @@
+{
+  "id": "base-20",
+  "sources": {
+    "machine-side-graph-snapshot.json": {
+      "source_graph": "060-base-20.json",
+      "source_sha256": "65793c1c18eafd82dfb9345a1f6d8d332ceca1ef3d05a2000a44c48cf3d75b90",
+      "graph": {
+        "profile_id": "base-20",
+        "devices": [
+          {
+            "id": "group-device-001",
+            "role": "peripheral"
+          }
+        ],
+        "connectors": [
+          {
+            "id": "machine-group-001",
+            "device": "group-device-001",
+            "refdes": "MYJG40W PSU terminals",
+            "form": "source-described cable / connector group",
+            "scope": "Source names this group, but provides no source-scoped physical contact map. Availability and exact housing are unverified. exact atlas group labels; open until contact mapping is established",
+            "contacts": []
+          }
+        ],
+        "wires": []
+      }
+    }
+  }
+}

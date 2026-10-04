@@ -1,0 +1,26 @@
+{
+  "id": "forum-makerforums-daid-braam-wall-mounted-router",
+  "sources": {
+    "forum-peripheral-evidence.json": {
+      "id": "forum-makerforums-daid-braam-wall-mounted-router",
+      "dossier": "src/docs/machine-research/makerforums-daid-braam-wall-mounted-router.md",
+      "reported_fitted_or_used": [],
+      "listed_for_build_unverified": [],
+      "historical_reference": [],
+      "planned_only": [],
+      "open_function_group": [],
+      "exclusions": [
+        {
+          "name": "Reused controller/motion electronics unidentified",
+          "contacts": [],
+          "source_line_number": 9,
+          "source_line": "The owner describes a self-designed machine using OpenBuilds components, 6 mm wooden plates, printed parts, and motors/electronics reused from an Ultimaker 2. The axes are approximately 1500 mm long. The claimed cutting area is up to 1200 \u00d7 1200 mm when an extension table is used. The wall-mounted guide and table-supported side are specific to this machine's location; the thread does not provide enough detail to reproduce its structure or establish its rigidity.",
+          "evidence": "The owner describes a self-designed machine using OpenBuilds components, 6 mm wooden plates, printed parts, and motors/electronics reused from an Ultimaker 2. The axes are approximately 1500 mm long.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route",
+          "reason": "No separate supported machine-side electrical interface or positive fitted-device identity in this dossier."
+        }
+      ],
+      "source_gap": "Dossier does not establish an as-built SmoothieBox route or a complete physical contact schedule for the listed peripherals."
+    }
+  }
+}

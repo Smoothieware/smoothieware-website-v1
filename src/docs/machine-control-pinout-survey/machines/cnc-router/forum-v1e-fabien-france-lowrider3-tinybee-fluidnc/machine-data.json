@@ -1,0 +1,60 @@
+{
+  "id": "forum-v1e-fabien-france-lowrider3-tinybee-fluidnc",
+  "sources": {
+    "forum-peripheral-evidence.json": {
+      "id": "forum-v1e-fabien-france-lowrider3-tinybee-fluidnc",
+      "dossier": "src/docs/machine-research/v1e-fabien-france-lowrider3-tinybee-fluidnc.md",
+      "reported_fitted_or_used": [
+        {
+          "name": "LaserTree 10 W optical laser",
+          "contacts": [],
+          "source_line_number": 67,
+          "source_line": "In July he also said an 80 W-labelled, 10 W optical LaserTree module had been working well, while cuts thicker than 5 mm were difficult and heavily scorched. He noted that air assist was not connected at first and linked the scorch marks to that omission. Photos in the thread show the machine in use with a laser, but do not reveal its electrical wiring. The owner described designing a mount for the laser and a daughterboard mount inside the TinyBee case.",
+          "evidence": "In July he also said an 80 W-labelled, 10 W optical LaserTree module had been working well, while cuts thicker than 5 mm were difficult and heavily scorched. He noted that air assist was not connected at first and linked the scorch marks to that omission.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        },
+        {
+          "name": "Later 1.5 kW spindle",
+          "contacts": [],
+          "source_line_number": 69,
+          "source_line": "By 8 December 2023 Fabien said he had changed from a Makita clone to a 1.5 kW spindle; the forum post links a VEVOR spindle listing. He reported similar cutting speed and quality with the earlier router but less noise from the spindle, then reported 2 mm depth of cut at 1500 mm/min in oak and 3 mm at 2000 mm/min in HDF using a 6 mm roughing end mill. These are the owner's reported trials, not independently measured performance ratings.",
+          "evidence": "By 8 December 2023 Fabien said he had changed from a Makita clone to a 1.5 kW spindle; the forum post links a VEVOR spindle listing. He reported similar cutting speed and quality with the earlier router but less noise from the spindle, then reported 2 mm depth of cut at 1500 mm/min in oak and 3 mm at 2000 mm/min in HDF using a 6 mm roughing end mill.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        }
+      ],
+      "listed_for_build_unverified": [],
+      "historical_reference": [],
+      "planned_only": [],
+      "open_function_group": [
+        {
+          "name": "LaserTree module PWM interface unidentified",
+          "contacts": [],
+          "source_line_number": 67,
+          "source_line": "In July he also said an 80 W-labelled, 10 W optical LaserTree module had been working well, while cuts thicker than 5 mm were difficult and heavily scorched. He noted that air assist was not connected at first and linked the scorch marks to that omission. Photos in the thread show the machine in use with a laser, but do not reveal its electrical wiring. The owner described designing a mount for the laser and a daughterboard mount inside the TinyBee case.",
+          "evidence": "In July he also said an 80 W-labelled, 10 W optical LaserTree module had been working well, while cuts thicker than 5 mm were difficult and heavily scorched. He noted that air assist was not connected at first and linked the scorch marks to that omission.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        },
+        {
+          "name": "Endstop switches",
+          "contacts": [],
+          "source_line_number": 71,
+          "source_line": "Later posts describe installing the PSU inside the struts and fitting a printed drag chain. In December Fabien reported that the chain did not strike the wall but the rails tended to fall off their base, and he considered shortening it. In a later post he said he had run for months without an X limit switch because the original switch arm did not reliably reach its target, then described making a printed adapter. Those reports show ongoing mechanical changes; they do not provide an updated controller configuration.",
+          "evidence": "Later posts describe installing the PSU inside the struts and fitting a printed drag chain. In December Fabien reported that the chain did not strike the wall but the rails tended to fall off their base, and he considered shortening it.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        }
+      ],
+      "exclusions": [
+        {
+          "name": "Five axis motors and drivers with X/Y1/Y2/Z1/Z2 historical mapping",
+          "contacts": [],
+          "source_line_number": 19,
+          "source_line": "On 5 July 2023, Fabien posted a configuration headed `MKS TinyBee V1.0 XYYZZ`. He said he was still investigating unusual `steps_per_mm` values and replacing two burnt drivers. The mapping below records the post as written. The thread does not establish whether the posted values were subsequently corrected or whether every assignment was tested. It must not be used as a wiring procedure.",
+          "evidence": "On 5 July 2023, Fabien posted a configuration headed `MKS TinyBee V1.0 XYYZZ`. He said he was still investigating unusual `steps_per_mm` values and replacing two burnt drivers.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route",
+          "reason": "Controller-local configuration or hardware, without a separate machine-side input for SmoothieBox."
+        }
+      ],
+      "source_gap": "Dossier does not establish an as-built SmoothieBox route or a complete physical contact schedule for the listed peripherals."
+    }
+  }
+}

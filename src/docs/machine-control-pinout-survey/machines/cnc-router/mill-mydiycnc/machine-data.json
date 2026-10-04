@@ -1,0 +1,228 @@
+{
+  "id": "mill-mydiycnc",
+  "sources": {
+    "machine-side-graph-snapshot.json": {
+      "source_graph": "037-mill-mydiycnc.json",
+      "source_sha256": "314ed7ec38b4fb23c2346a2aa2549c6220ba6261a6b8b914df7dc96adbb990b4",
+      "graph": {
+        "profile_id": "mill-mydiycnc",
+        "devices": [
+          {
+            "id": "peripheral-01",
+            "role": "peripheral"
+          }
+        ],
+        "connectors": [
+          {
+            "id": "machine-01",
+            "device": "peripheral-01",
+            "refdes": "DB25 \u00b7 MyDIYCNC panel",
+            "form": "DB25",
+            "scope": "panel male DB25; verify face orientation; ribbon conductor order is nonsequential; numbered contact register, face unverified Machine/peripheral-side contact schedule; fitted presence unverified.",
+            "contacts": [
+              {
+                "id": "1",
+                "mark": "1",
+                "label": "Spindle control"
+              },
+              {
+                "id": "2",
+                "mark": "2",
+                "label": "X step"
+              },
+              {
+                "id": "3",
+                "mark": "3",
+                "label": "X direction"
+              },
+              {
+                "id": "4",
+                "mark": "4",
+                "label": "X enable"
+              },
+              {
+                "id": "5",
+                "mark": "5",
+                "label": "Y step"
+              },
+              {
+                "id": "6",
+                "mark": "6",
+                "label": "Y direction"
+              },
+              {
+                "id": "7",
+                "mark": "7",
+                "label": "Y enable"
+              },
+              {
+                "id": "8",
+                "mark": "8",
+                "label": "Z step"
+              },
+              {
+                "id": "9",
+                "mark": "9",
+                "label": "Z direction"
+              },
+              {
+                "id": "10",
+                "mark": "10",
+                "label": "Unused"
+              },
+              {
+                "id": "11",
+                "mark": "11",
+                "label": "X limit"
+              },
+              {
+                "id": "12",
+                "mark": "12",
+                "label": "Y limit"
+              },
+              {
+                "id": "13",
+                "mark": "13",
+                "label": "Z limit"
+              },
+              {
+                "id": "14",
+                "mark": "14",
+                "label": "Z enable"
+              },
+              {
+                "id": "15",
+                "mark": "15",
+                "label": "Unused"
+              },
+              {
+                "id": "16",
+                "mark": "16",
+                "label": "Unused"
+              },
+              {
+                "id": "17",
+                "mark": "17",
+                "label": "Unused"
+              },
+              {
+                "id": "18",
+                "mark": "18",
+                "label": "GND per MyDIYCNC manual; no V2 bond selected"
+              },
+              {
+                "id": "19",
+                "mark": "19",
+                "label": "GND per MyDIYCNC manual; no V2 bond selected"
+              },
+              {
+                "id": "20",
+                "mark": "20",
+                "label": "GND per MyDIYCNC manual; no V2 bond selected"
+              },
+              {
+                "id": "21",
+                "mark": "21",
+                "label": "GND per MyDIYCNC manual; no V2 bond selected"
+              },
+              {
+                "id": "22",
+                "mark": "22",
+                "label": "GND per MyDIYCNC manual; no V2 bond selected"
+              },
+              {
+                "id": "23",
+                "mark": "23",
+                "label": "GND per MyDIYCNC manual; no V2 bond selected"
+              },
+              {
+                "id": "24",
+                "mark": "24",
+                "label": "GND per MyDIYCNC manual; no V2 bond selected"
+              },
+              {
+                "id": "25",
+                "mark": "25",
+                "label": "GND per MyDIYCNC manual; no V2 bond selected"
+              }
+            ]
+          }
+        ],
+        "wires": [
+          {
+            "state": "inferred",
+            "kind": "function",
+            "a": {
+              "connector": "v2-j5",
+              "contact": "16"
+            },
+            "b": {
+              "connector": "machine-01",
+              "contact": "2"
+            }
+          },
+          {
+            "state": "inferred",
+            "kind": "function",
+            "a": {
+              "connector": "v2-j5",
+              "contact": "18"
+            },
+            "b": {
+              "connector": "machine-01",
+              "contact": "3"
+            }
+          },
+          {
+            "state": "inferred",
+            "kind": "function",
+            "a": {
+              "connector": "v2-j5",
+              "contact": "22"
+            },
+            "b": {
+              "connector": "machine-01",
+              "contact": "5"
+            }
+          },
+          {
+            "state": "inferred",
+            "kind": "function",
+            "a": {
+              "connector": "v2-j5",
+              "contact": "24"
+            },
+            "b": {
+              "connector": "machine-01",
+              "contact": "6"
+            }
+          },
+          {
+            "state": "inferred",
+            "kind": "function",
+            "a": {
+              "connector": "v2-j5",
+              "contact": "28"
+            },
+            "b": {
+              "connector": "machine-01",
+              "contact": "8"
+            }
+          },
+          {
+            "state": "inferred",
+            "kind": "function",
+            "a": {
+              "connector": "v2-j5",
+              "contact": "30"
+            },
+            "b": {
+              "connector": "machine-01",
+              "contact": "9"
+            }
+          }
+        ]
+      }
+    }
+  }
+}

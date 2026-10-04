@@ -1,0 +1,42 @@
+{
+  "id": "forum-cncforum-lubbez-rebuilt-co2-laser",
+  "sources": {
+    "forum-peripheral-evidence.json": {
+      "id": "forum-cncforum-lubbez-rebuilt-co2-laser",
+      "dossier": "src/docs/machine-research/cncforum-lubbez-rebuilt-co2-laser.md",
+      "reported_fitted_or_used": [
+        {
+          "name": "Two 12 V cooling fans",
+          "contacts": [],
+          "source_line_number": 19,
+          "source_line": "He reports doing the complete wiring without a schematic. During final setup he found that two 12 V fans had been wired in parallel to 24 V; he corrected them to series and replaced a 24 V supply with a 5 A version. This is a post-specific account of his correction, **not** a general wiring recommendation.",
+          "evidence": "During final setup he found that two 12 V fans had been wired in parallel to 24 V; he corrected them to series and replaced a 24 V supply with a 5 A version. This is a post-specific account of his correction, **not** a general wiring recommendation.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        },
+        {
+          "name": "Cooling pump",
+          "contacts": [],
+          "source_line_number": 21,
+          "source_line": "For cooling, he first described a 20 L stainless vessel and pump, then the January 2024 update says he used a 30 L stainless vessel from his previous laser. The thread therefore records a revision; the later 30 L report is the more recent state. The owner also describes adding a water-flow monitor and a temperature alarm. Exact pump, flow threshold, alarm setting, tube model, power supply model, controller I/O assignments, and protection circuit are not specified.",
+          "evidence": "For cooling, he first described a 20 L stainless vessel and pump, then the January 2024 update says he used a 30 L stainless vessel from his previous laser. The thread therefore records a revision; the later 30 L report is the more recent state.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        }
+      ],
+      "listed_for_build_unverified": [],
+      "historical_reference": [],
+      "planned_only": [],
+      "open_function_group": [
+        {
+          "name": "CO2 laser tube and supply identity unreported",
+          "contacts": [],
+          "source_line_number": 11,
+          "source_line": "The owner says the motion uses stepper motors and belts, not ballscrews. The work area is described as a separate compartment, connected to the electronics/tube area by an 8 mm hole. He considered accommodating larger tubes, but the post does not establish the rating of the installed tube. A later update describes the original tube as Chinese and says the mounting supports can take a 60 mm diameter tube; these are not evidence of an installed 60 W tube.",
+          "evidence": "The work area is described as a separate compartment, connected to the electronics/tube area by an 8 mm hole. He considered accommodating larger tubes, but the post does not establish the rating of the installed tube.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        }
+      ],
+      "exclusions": [],
+      "source_gap": "Dossier does not establish an as-built SmoothieBox route or a complete physical contact schedule for the listed peripherals."
+    }
+  }
+}

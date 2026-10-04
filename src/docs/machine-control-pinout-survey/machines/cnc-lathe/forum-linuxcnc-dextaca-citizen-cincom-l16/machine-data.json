@@ -1,0 +1,26 @@
+{
+  "id": "forum-linuxcnc-dextaca-citizen-cincom-l16",
+  "sources": {
+    "forum-peripheral-evidence.json": {
+      "id": "forum-linuxcnc-dextaca-citizen-cincom-l16",
+      "dossier": "src/docs/machine-research/linuxcnc-dextaca-citizen-cincom-l16.md",
+      "reported_fitted_or_used": [],
+      "listed_for_build_unverified": [],
+      "historical_reference": [],
+      "planned_only": [],
+      "open_function_group": [],
+      "exclusions": [
+        {
+          "name": "Retrofit proposal only",
+          "contacts": [],
+          "source_line_number": 1,
+          "source_line": "# dextaca's Citizen Cincom L16 retrofit proposal",
+          "evidence": "# dextaca's Citizen Cincom L16 retrofit proposal",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route",
+          "reason": "Excluded: no separate externally addressable interface, existing control hardware, absent tooling, or inadequate positive device evidence in this dossier."
+        }
+      ],
+      "source_gap": "Dossier does not establish an as-built SmoothieBox route or a complete physical contact schedule for the listed peripherals."
+    }
+  }
+}

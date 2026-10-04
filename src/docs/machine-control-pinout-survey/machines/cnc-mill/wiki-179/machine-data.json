@@ -1,0 +1,29 @@
+{
+  "id": "wiki-179",
+  "sources": {
+    "machine-side-graph-snapshot.json": {
+      "source_graph": "179-wiki-179.json",
+      "source_sha256": "aa073070fdf5a7cc67c035a216ec773f75862cfae644b80052e03248d31d39d7",
+      "graph": {
+        "profile_id": "wiki-179",
+        "devices": [
+          {
+            "id": "unidentified-machine",
+            "role": "peripheral"
+          }
+        ],
+        "connectors": [
+          {
+            "id": "machine-unidentified",
+            "device": "unidentified-machine",
+            "refdes": "No source-scoped connector identity",
+            "form": "unknown",
+            "scope": "Captured profile lacks a numbered machine connector or source-scoped cable-group identity.",
+            "contacts": []
+          }
+        ],
+        "wires": []
+      }
+    }
+  }
+}

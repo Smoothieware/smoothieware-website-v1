@@ -1,0 +1,141 @@
+{
+  "id": "wiki-143",
+  "sources": {
+    "machine-side-graph-snapshot.json": {
+      "source_graph": "143-wiki-143.json",
+      "source_sha256": "1d1dbf8bc13062df1e8aec71377a6da36b3775a77cd888380db24fe978e1f2ff",
+      "graph": {
+        "profile_id": "wiki-143",
+        "devices": [
+          {
+            "id": "local-fablight-serial-30450",
+            "role": "peripheral"
+          },
+          {
+            "id": "fablight-1500-3000-4500-manual-family-v43",
+            "role": "reference"
+          }
+        ],
+        "connectors": [
+          {
+            "id": "machine-unidentified",
+            "device": "local-fablight-serial-30450",
+            "refdes": "No local connector contact schedule",
+            "form": "unknown",
+            "scope": "The Artisans Asylum record identifies a 3D FabLight 3000 Watt, serial 30450, but does not publish a controller connector map. Preserve the exact local machine as an open boundary.",
+            "contacts": []
+          },
+          {
+            "id": "fablight-v43-main-power",
+            "device": "fablight-1500-3000-4500-manual-family-v43",
+            "refdes": "Utility Panel \u00b7 MAIN POWER switch, breaker and AC input plug",
+            "form": "Switch and mains plug; plug contact positions unknown",
+            "scope": "The 2021 manufacturer-authored 1500/3000/4500 family manual labels MAIN POWER and describes an AC plug below the switch. The local serial 30450 is not proven to match this panel revision; plug type and contact schedule are not published. Reference only.",
+            "contacts": []
+          },
+          {
+            "id": "fablight-v43-ethernet",
+            "device": "fablight-1500-3000-4500-manual-family-v43",
+            "refdes": "Utility Panel \u00b7 ETHERNET port",
+            "form": "Network port; connector type and pin schedule not transcribed",
+            "scope": "The family manual labels ETHERNET and says job-file upload is not available through it. Do not infer a physical housing, numbered contacts, cable, or SmoothieBox network route. Local installation/revision unverified.",
+            "contacts": []
+          },
+          {
+            "id": "fablight-v43-gas-in",
+            "device": "fablight-1500-3000-4500-manual-family-v43",
+            "refdes": "Utility Panel \u00b7 GAS IN bulkhead",
+            "form": "3/8-inch tubing connector",
+            "scope": "The family manual identifies a 3/8-inch tubing connection for compressed gas input and explicitly reserves GAS IN for pressurized input. No electrical pins. Exact local fitting/revision unverified.",
+            "contacts": []
+          },
+          {
+            "id": "fablight-v43-gas-exhaust",
+            "device": "fablight-1500-3000-4500-manual-family-v43",
+            "refdes": "Utility Panel \u00b7 GAS EXHAUST bulkhead",
+            "form": "3/8-inch tubing connector in the pictured family revision; newer exhaust bulkhead may be 1/4-inch",
+            "scope": "The family manual identifies a regulator vent to outside the machine and warns not to apply compressed-gas input here. Revision-specific size is uncertain and must not be treated as an electrical contact. Local installation unverified.",
+            "contacts": []
+          },
+          {
+            "id": "fablight-v43-vacuum-port",
+            "device": "fablight-1500-3000-4500-manual-family-v43",
+            "refdes": "Utility Panel \u00b7 VACUUM appliance outlet \u00b7 C13 form implied by supplied C14 cable end",
+            "form": "Family-reference IEC C13 appliance outlet; mating-face orientation not established",
+            "scope": "The family manual describes a C14-to-NEMA-5-15R cable for VACUUM; mating compatibility implies a C13 appliance outlet. IEC/Interpower reference roles are functional labels only. This mains output is reference only, not a SmoothieBox load terminal; local panel/revision unverified.",
+            "contacts": [
+              {
+                "id": "L",
+                "mark": "L",
+                "label": "Line pin \u00b7 IEC functional terminal identity; face order unknown",
+                "fact": "source",
+                "source_relation": "C13/C14 family reference derived from FabLight v4.3 cable-end description and Interpower terminal drawing; installed serial-30450 panel unverified."
+              },
+              {
+                "id": "N",
+                "mark": "N",
+                "label": "Neutral pin \u00b7 IEC functional terminal identity; face order unknown",
+                "fact": "source",
+                "source_relation": "C13/C14 family reference derived from FabLight v4.3 cable-end description and Interpower terminal drawing; installed serial-30450 panel unverified."
+              },
+              {
+                "id": "PE",
+                "mark": "PE",
+                "label": "Protective-earth pin \u00b7 IEC functional terminal identity; face order unknown",
+                "fact": "source",
+                "source_relation": "C13/C14 family reference derived from FabLight v4.3 cable-end description and Interpower terminal drawing; installed serial-30450 panel unverified."
+              }
+            ]
+          },
+          {
+            "id": "fablight-v43-vacuum-power",
+            "device": "fablight-1500-3000-4500-manual-family-v43",
+            "refdes": "Utility Panel \u00b7 VACUUM POWER appliance inlet \u00b7 C14 form implied by supplied C13 cable end",
+            "form": "Family-reference IEC C14 appliance inlet; mating-face orientation not established",
+            "scope": "The family manual describes a C13-to-NEMA-5-15P cable for VACUUM POWER; mating compatibility implies a C14 appliance inlet. IEC/Interpower reference roles are functional labels only. This is AC mains input and is not a SmoothieBox power input; local panel/revision unverified.",
+            "contacts": [
+              {
+                "id": "L",
+                "mark": "L",
+                "label": "Line pin \u00b7 IEC functional terminal identity; face order unknown",
+                "fact": "source",
+                "source_relation": "C13/C14 family reference derived from FabLight v4.3 cable-end description and Interpower terminal drawing; installed serial-30450 panel unverified."
+              },
+              {
+                "id": "N",
+                "mark": "N",
+                "label": "Neutral pin \u00b7 IEC functional terminal identity; face order unknown",
+                "fact": "source",
+                "source_relation": "C13/C14 family reference derived from FabLight v4.3 cable-end description and Interpower terminal drawing; installed serial-30450 panel unverified."
+              },
+              {
+                "id": "PE",
+                "mark": "PE",
+                "label": "Protective-earth pin \u00b7 IEC functional terminal identity; face order unknown",
+                "fact": "source",
+                "source_relation": "C13/C14 family reference derived from FabLight v4.3 cable-end description and Interpower terminal drawing; installed serial-30450 panel unverified."
+              }
+            ]
+          },
+          {
+            "id": "fablight-v43-exhaust-duct",
+            "device": "fablight-1500-3000-4500-manual-family-v43",
+            "refdes": "Rear \u00b7 exhaust duct connection",
+            "form": "Exhaust duct port; duct adapter/contact details unnumbered",
+            "scope": "The family manual locates the exhaust connection at the rear and describes a dust collector/filtration system. This is a process/extraction interface, not an electrical pin group. Exact local connection unverified.",
+            "contacts": []
+          },
+          {
+            "id": "fablight-v43-io-controls",
+            "device": "fablight-1500-3000-4500-manual-family-v43",
+            "refdes": "I/O panel \u00b7 MAINS LED, ON LED, momentary Key Switch, Emergency Stop",
+            "form": "Existing machine controls; no connector pinout published",
+            "scope": "Family manual pages 18-19 describe the indicators, key switch, and E-stop sequence. These are retained machine controls, not external SmoothieBox signal contacts; do not bypass safety. Local hardware revision unverified.",
+            "contacts": []
+          }
+        ],
+        "wires": []
+      }
+    }
+  }
+}

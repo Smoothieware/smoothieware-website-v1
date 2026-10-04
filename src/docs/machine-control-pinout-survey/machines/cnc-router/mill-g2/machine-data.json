@@ -1,0 +1,4051 @@
+{
+  "id": "mill-g2",
+  "sources": {
+    "centered-guides.json": {
+      "id": "mill-g2",
+      "title": "Genmitsu 3018-PROVer V2 retrofit",
+      "target": "Replace the integrated Genmitsu motion board with Prime P12 direct motor-phase outputs. Use the depicted separate Cytron spindle stage and qualified interfaces for probe, limits, optional laser, pump, emergency stop and unsupported factory UI.",
+      "plan": "Original motion-driver electronics are on the board being replaced. Use Prime integrated phase outputs directly to measured winding pairs; do not connect STEP/DIR signal outputs to motor windings. Confirm installed board, motor current and power rating from the cited machine source. Selected architecture: Prime P12 with integrated motor drivers. The main diagram and connection-ID schedule define the current proposed routes. Dotted function-coloured GUESS routes need the named commissioning checks; OPEN routes remain disconnected until the missing terminal, rating or interface is established. Previous Core alternatives remain only in the superseded historical architecture record.",
+      "circuits": [
+        [
+          "X motor: integrated Prime phase outputs",
+          "V2 Prime P12 J5 \u00b7 J5.1 \u00b7 B2 \u2192 X motor harness (cavities unverified) \u00b7 New measured winding lead B2 (candidate X winding hookup); V2 Prime P12 J5 \u00b7 J5.2 \u00b7 B1 \u2192 X motor harness (cavities unverified) \u00b7 New measured winding lead B1 (candidate X winding hookup); V2 Prime P12 J5 \u00b7 J5.3 \u00b7 A2 \u2192 X motor harness (cavities unverified) \u00b7 New measured winding lead A2 (candidate X winding hookup); V2 Prime P12 J5 \u00b7 J5.4 \u00b7 A1 \u2192 X motor harness (cavities unverified) \u00b7 New measured winding lead A1 (candidate X winding hookup)",
+          "GUESS",
+          "Source establishes Prime output net names. Machine lead order and phase pairing are unknown; identify coils with power isolated."
+        ],
+        [
+          "Y motor: integrated Prime phase outputs",
+          "V2 Prime P12 J6 \u00b7 J6.1 \u00b7 B2 \u2192 Y motor harness (cavities unverified) \u00b7 New measured winding lead B2 (candidate Y winding hookup); V2 Prime P12 J6 \u00b7 J6.2 \u00b7 B1 \u2192 Y motor harness (cavities unverified) \u00b7 New measured winding lead B1 (candidate Y winding hookup); V2 Prime P12 J6 \u00b7 J6.3 \u00b7 A2 \u2192 Y motor harness (cavities unverified) \u00b7 New measured winding lead A2 (candidate Y winding hookup); V2 Prime P12 J6 \u00b7 J6.4 \u00b7 A1 \u2192 Y motor harness (cavities unverified) \u00b7 New measured winding lead A1 (candidate Y winding hookup)",
+          "GUESS",
+          "Source establishes Prime output net names. Machine lead order and phase pairing are unknown; identify coils with power isolated."
+        ],
+        [
+          "Z motor: integrated Prime phase outputs",
+          "V2 Prime P12 J7 \u00b7 J7.1 \u00b7 B2 \u2192 Z motor harness (cavities unverified) \u00b7 New measured winding lead B2 (candidate Z winding hookup); V2 Prime P12 J7 \u00b7 J7.2 \u00b7 B1 \u2192 Z motor harness (cavities unverified) \u00b7 New measured winding lead B1 (candidate Z winding hookup); V2 Prime P12 J7 \u00b7 J7.3 \u00b7 A2 \u2192 Z motor harness (cavities unverified) \u00b7 New measured winding lead A2 (candidate Z winding hookup); V2 Prime P12 J7 \u00b7 J7.4 \u00b7 A1 \u2192 Z motor harness (cavities unverified) \u00b7 New measured winding lead A1 (candidate Z winding hookup)",
+          "GUESS",
+          "Source establishes Prime output net names. Machine lead order and phase pairing are unknown; identify coils with power isolated."
+        ],
+        [
+          "775 spindle controller: PWM, direction and motor output",
+          "Smoothie PWM candidate (verify board) \u00b7 J35.6 TIM1_CH1 (PWM candidate) \u2192 Cytron MD10C R3.0 \u00b7 PWM (spindle speed PWM candidate); Smoothie PWM candidate (verify board) \u00b7 J35.10 GND \u2192 Cytron MD10C R3.0 \u00b7 GND (control signal reference); Cytron MD10C R3.0 \u00b7 OUT A \u2192 775 spindle: measured motor terminals (polarity unknown) \u00b7 measured motor terminal 1 (switched motor output A); Cytron MD10C R3.0 \u00b7 OUT B \u2192 775 spindle: measured motor terminals (polarity unknown) \u00b7 measured motor terminal 2 (switched motor output B); Smoothie PWM candidate (verify board) \u00b7 logic GND (fixed DIR candidate) \u2192 Cytron MD10C R3.0 \u00b7 DIR (fixed direction logic low candidate)",
+          "GUESS",
+          "Prime J35.6 exports TIM1_CH1 (PWM candidate) and J35.10 GND. Cytron MD10C R3.0 has PWM, DIR, GND, VM, PWR_GND, OUT_A/B; manual Rev3.0 V1.0 Aug 2018 supports sign-magnitude PWM+DIR and 3.3/5V logic. DIR tied to logic GND selects Forward while PWM is high per the manual truth table; bench-check actual spindle rotation and ensure PWM low stops/brakes as expected. Separate motor supply must match measured motor voltage/current and be fused. Do not use guessed red/black wiring. Resource conflict: spindle PWM C04-001 and optional laser PWM C14-001 both nominate Prime J35.6 TIM1_CH1. These are mutually exclusive alternatives, not two independent outputs. Disconnect the unused load or source and configure a distinct supported PWM output; never wire both loads expecting independent control."
+        ],
+        [
+          "Dedicated 775 spindle power stage",
+          "Fused dedicated 12-24V spindle supply \u00b7 V+ \u2192 Cytron MD10C R3.0 power input \u00b7 VM (spindle-stage supply); Fused dedicated 12-24V spindle supply \u00b7 0V \u2192 Cytron MD10C R3.0 power input \u00b7 GND (spindle-stage return)",
+          "GUESS",
+          "Do not assume the original 24 V / 4 A adapter is sufficient for controller, axes and spindle together. MD10C source says no overcurrent protection."
+        ],
+        [
+          "X MIN limit input (candidate mapping)",
+          "Prime J24 input \u00b7 pin 3 input \u2192 X MIN switch \u00b7 switch signal (X MIN endstop signal); Prime J24 input \u00b7 pin 2 GND \u2192 X MIN switch \u00b7 switch return (X MIN return); Prime J24 input \u00b7 pin 1 selector \u2192 X MIN switch \u00b7 Third cable lead \u00b7 identify supply or contact before connection (Three-wire factory limit sensor supply / third lead)",
+          "GUESS, OPEN",
+          "Prime source pin schedule: J24-J29 pin2 GND, pin3 input, pin1 selector. This candidate J-to-axis/end assignment is not established by Genmitsu manual; trace each harness and test switch state first."
+        ],
+        [
+          "X MAX limit input (candidate mapping)",
+          "Prime J25 input \u00b7 pin 3 input \u2192 X MAX switch \u00b7 switch signal (X MAX endstop signal); Prime J25 input \u00b7 pin 2 GND \u2192 X MAX switch \u00b7 switch return (X MAX return); Prime J25 input \u00b7 pin 1 selector \u2192 X MAX switch \u00b7 Third cable lead \u00b7 identify supply or contact before connection (Three-wire factory limit sensor supply / third lead)",
+          "GUESS, OPEN",
+          "Prime source pin schedule: J24-J29 pin2 GND, pin3 input, pin1 selector. This candidate J-to-axis/end assignment is not established by Genmitsu manual; trace each harness and test switch state first."
+        ],
+        [
+          "Y MIN limit input (candidate mapping)",
+          "Prime J26 input \u00b7 pin 3 input \u2192 Y MIN switch \u00b7 switch signal (Y MIN endstop signal); Prime J26 input \u00b7 pin 2 GND \u2192 Y MIN switch \u00b7 switch return (Y MIN return); Prime J26 input \u00b7 pin 1 selector \u2192 Y MIN switch \u00b7 Third cable lead \u00b7 identify supply or contact before connection (Three-wire factory limit sensor supply / third lead)",
+          "GUESS, OPEN",
+          "Prime source pin schedule: J24-J29 pin2 GND, pin3 input, pin1 selector. This candidate J-to-axis/end assignment is not established by Genmitsu manual; trace each harness and test switch state first."
+        ],
+        [
+          "Y MAX limit input (candidate mapping)",
+          "Prime J27 input \u00b7 pin 3 input \u2192 Y MAX switch \u00b7 switch signal (Y MAX endstop signal); Prime J27 input \u00b7 pin 2 GND \u2192 Y MAX switch \u00b7 switch return (Y MAX return); Prime J27 input \u00b7 pin 1 selector \u2192 Y MAX switch \u00b7 Third cable lead \u00b7 identify supply or contact before connection (Three-wire factory limit sensor supply / third lead)",
+          "GUESS, OPEN",
+          "Prime source pin schedule: J24-J29 pin2 GND, pin3 input, pin1 selector. This candidate J-to-axis/end assignment is not established by Genmitsu manual; trace each harness and test switch state first."
+        ],
+        [
+          "Z MIN limit input (candidate mapping)",
+          "Prime J28 input \u00b7 pin 3 input \u2192 Z MIN switch \u00b7 switch signal (Z MIN endstop signal); Prime J28 input \u00b7 pin 2 GND \u2192 Z MIN switch \u00b7 switch return (Z MIN return); Prime J28 input \u00b7 pin 1 selector \u2192 Z MIN switch \u00b7 Third cable lead \u00b7 identify supply or contact before connection (Three-wire factory limit sensor supply / third lead)",
+          "GUESS, OPEN",
+          "Prime source pin schedule: J24-J29 pin2 GND, pin3 input, pin1 selector. This candidate J-to-axis/end assignment is not established by Genmitsu manual; trace each harness and test switch state first."
+        ],
+        [
+          "Z MAX limit input (candidate mapping)",
+          "Prime J29 input \u00b7 pin 3 input \u2192 Z MAX switch \u00b7 switch signal (Z MAX endstop signal); Prime J29 input \u00b7 pin 2 GND \u2192 Z MAX switch \u00b7 switch return (Z MAX return); Prime J29 input \u00b7 pin 1 selector \u2192 Z MAX switch \u00b7 Third cable lead \u00b7 identify supply or contact before connection (Three-wire factory limit sensor supply / third lead)",
+          "GUESS, OPEN",
+          "Prime source pin schedule: J24-J29 pin2 GND, pin3 input, pin1 selector. This candidate J-to-axis/end assignment is not established by Genmitsu manual; trace each harness and test switch state first."
+        ],
+        [
+          "Prime selected \u00b7 separate logic and motor supplies",
+          "Regulated 5 V logic supply \u00b7 +5 V regulated \u2192 Prime P12 \u00b7 confirm exact revision \u00b7 J42.1 \u00b7 5V_PORTIN (Prime regulated logic supply); Regulated 5 V logic supply \u00b7 0 V logic return \u2192 Prime P12 \u00b7 confirm exact revision \u00b7 J42.2 \u00b7 GND (Prime logic supply return); Verified motor supply \u00b7 voltage/current TBD \u00b7 DC + \u00b7 before fuse \u2192 Motor branch fuse \u00b7 rating selected after measurement \u00b7 fuse input (Protected motor branch input); Motor branch fuse \u00b7 rating selected after measurement \u00b7 fuse output \u2192 Prime P12 \u00b7 confirm exact revision \u00b7 J9.1 \u00b7 VMOT (Prime VMOT power); Verified motor supply \u00b7 voltage/current TBD \u00b7 0 V motor return \u2192 Prime P12 \u00b7 confirm exact revision \u00b7 J9.2 \u00b7 GND (Prime motor supply return)",
+          "GUESS",
+          "This is the selected Prime P12 integrated-driver architecture. Use the current P12 PCB-derived contact labels; other board revisions require their own verified pinout and driver ratings. Use one verified power-entry arrangement; J10 parallels VMOT and is left unused here. Board ground is shared internally; route motor current directly to power distribution, not through logic wiring. Determine actual allowed voltage/current before choosing a supply; no machine-source adapter automatically qualifies."
+        ],
+        [
+          "Included Z height probe \u00b7 plate and tool clip separately",
+          "Prime P12 \u00b7 dedicated PROBE J31 \u00b7 J31.4 \u00b7 conditioned PROBE signal \u2192 Measured passive Z plate + tool clip \u00b7 Plate lead \u00b7 continuity identify (Probe plate signal); Prime P12 \u00b7 dedicated PROBE J31 \u00b7 J31.3 \u00b7 GND \u2192 Measured passive Z plate + tool clip \u00b7 Tool clip return \u00b7 continuity identify (Separate probe return)",
+          "GUESS",
+          "Documented probe kit; verify this fitted kit is a passive isolated contact. J31.4 is conditioned through comparator U24; establish JP7/JP8 population and safe pull-up/configuration from the exact P12 sheet. Leave J31.1 VMOT and J31.2 selected supply unused for a passive plate. Probe input maximum differs between board guides; no high-voltage capability is claimed."
+        ],
+        [
+          "Optional laser module \u00b7 controller signal, return and separate power",
+          "Prime P12 \u00b7 signal-level PWM candidate \u00b7 J35.6 \u00b7 TIM1_CH1 PWM candidate \u2192 Required laser level/isolating interface \u00b7 select from fitted driver \u00b7 Logic input \u00b7 threshold unresolved (PWM into matched laser interface); Prime P12 \u00b7 signal-level PWM candidate \u00b7 J35.10 \u00b7 signal GND \u2192 Required laser level/isolating interface \u00b7 select from fitted driver \u00b7 Logic reference (PWM logic return); Required laser level/isolating interface \u00b7 select from fitted driver \u00b7 Laser command output \u00b7 specification unresolved \u2192 Optional fitted laser driver \u00b7 model required \u00b7 Identify TTL/PWM input terminal (Qualified laser command); Required laser level/isolating interface \u00b7 select from fitted driver \u00b7 Laser-side reference \u2192 Optional fitted laser driver \u00b7 model required \u00b7 Identify input reference terminal (Separate laser command reference); Laser-rated fused supply \u00b7 voltage/current unknown \u00b7 DC + after fuse \u2192 Optional fitted laser driver \u00b7 model required \u00b7 Identify laser supply + (Laser stage supply \u00b7 not GPIO); Laser-rated fused supply \u00b7 voltage/current unknown \u00b7 DC return \u2192 Optional fitted laser driver \u00b7 model required \u00b7 Identify laser supply return (Laser stage return)",
+          "OPEN",
+          "Manual p.6 says optional laser is not included. Only populate this circuit if fitted. Identify laser driver model, TTL polarity/threshold/current, command connector and independent laser inhibition before choosing the level interface. Do not connect a logic output to laser power. Prime J35.6 is only a proposed PWM resource; verify firmware ownership. Resource conflict: spindle PWM C04-001 and optional laser PWM C14-001 both nominate Prime J35.6 TIM1_CH1. These are mutually exclusive alternatives, not two independent outputs. Disconnect the unused load or source and configure a distinct supported PWM output; never wire both loads expecting independent control."
+        ],
+        [
+          "Air pump interface \u00b7 optional/fitted pump must be identified",
+          "Prime P12 \u00b7 conditional pump power stage \u00b7 J20.1 \u00b7 cutoff-switched VFET \u2192 Pump branch fuse \u00b7 rating after load measurement \u00b7 Fuse input (Switched rail into pump branch fuse); Pump branch fuse \u00b7 rating after load measurement \u00b7 Fuse output \u2192 Identified DC air pump \u00b7 fitted status/rating unknown \u00b7 Measured pump + (Fused pump supply); Identified DC air pump \u00b7 fitted status/rating unknown \u00b7 Measured pump \u2212 \u2192 Prime P12 \u00b7 conditional pump power stage \u00b7 J20.2 \u00b7 Q22 switched return (Pump low-side switched return)",
+          "GUESS",
+          "Manual pp.19\u201320 names the air-pump interface but gives no pump model, connector pin map or load rating. Proposed DC pump load on Fan2 only after VFET voltage, startup/stall current, flyback suppression and connector rating are established. J20.1 is cutoff-switched VFET, J20.2 Q22 switched return; verify exact P12 firmware/resource assignment and reuse one VFET supply, not a second source tied to the same rail."
+        ],
+        [
+          "Emergency stop \u00b7 independent hazardous-energy interruption",
+          "Fitted E-stop switch \u00b7 contacts must be traced \u00b7 Identify stop-chain contact A \u2192 Independent hardware stop chain \u00b7 retain or engineer \u00b7 Identify monitored stop-loop input (Hardwired stop chain input); Fitted E-stop switch \u00b7 contacts must be traced \u00b7 Identify stop-chain contact B \u2192 Independent hardware stop chain \u00b7 retain or engineer \u00b7 Identify stop-loop return (Hardwired stop chain return)",
+          "OPEN",
+          "Manual pp.19\u201320 names E-stop interface without contact numbers or safety topology. Trace fitted switch and contactor/drive-inhibit circuit before wiring. Board-only firmware stop cannot assure safe stop. No Prime GPIO is presented as the hazardous-energy cut-off."
+        ],
+        [
+          "Factory offline controller and MPG \u00b7 protocol is not a GPIO pinout",
+          "Prime P12 \u00b7 no validated factory pendant interface \u00b7 Compatible host interface \u00b7 unsupported factory protocol \u2192 Factory offline controller \u00b7 optional accessory \u00b7 Factory-only interface \u00b7 connector unspecified (Factory offline interface compatibility); Prime P12 \u00b7 no validated factory pendant interface \u00b7 Compatible host interface \u00b7 unsupported factory protocol \u2192 Factory MPG/handwheel interface \u00b7 fitted status unresolved \u00b7 MPG interface \u00b7 protocol unspecified (Factory MPG interface compatibility)",
+          "OPEN",
+          "Manual p.28 warns factory offline port is designed for its controller and must not connect other controllers. Keep factory offline controller/MPG disconnected from Prime until protocol, electrical levels and replacement firmware support are established. J30 debug UART is not an assumed factory pendant adapter."
+        ]
+      ],
+      "pins": [
+        "Current contacts below are copied from the selected wire-panel endpoint labels. They are proposed controller assignments, not verified installed harness continuity.",
+        "Prime P12 \u00b7 J42.1 \u00b7 5V_PORTIN",
+        "Prime P12 \u00b7 J42.2 \u00b7 GND",
+        "Prime P12 \u00b7 J9.1 \u00b7 VMOT",
+        "Prime P12 \u00b7 J9.2 \u00b7 GND",
+        "Prime P12 \u00b7 J10.1 \u00b7 VMOT parallel \u00b7 unused",
+        "Prime P12 \u00b7 J10.2 \u00b7 GND parallel \u00b7 unused",
+        "Prime P12 \u00b7 J31.1 \u00b7 VMOT \u00b7 unused",
+        "Prime P12 \u00b7 J31.2 \u00b7 JP8 selected 3V3/5V \u00b7 unused",
+        "Prime P12 \u00b7 J31.3 \u00b7 GND",
+        "Prime P12 \u00b7 J31.4 \u00b7 conditioned PROBE signal",
+        "Prime P12 \u00b7 J35.6 \u00b7 TIM1_CH1 PWM candidate",
+        "Prime P12 \u00b7 J35.10 \u00b7 signal GND",
+        "Prime P12 \u00b7 J20.1 \u00b7 cutoff-switched VFET",
+        "Prime P12 \u00b7 J20.2 \u00b7 Q22 switched return",
+        "Prime P12 \u00b7 Compatible host interface \u00b7 unsupported factory protocol"
+      ],
+      "sources": [
+        [
+          "3018-PROVer V2 manual V1.0 2022-09-06, English pp.15-21; motor table PDF p.73",
+          "https://genmitsu.s3.us-east-1.amazonaws.com/101-60-3018PV2/3018-PROVer_V2_User_Manual_%E3%80%90EN%2BDE%2BJP_V1.0_20220906_1.pdf"
+        ],
+        [
+          "SainSmart V2 specifications",
+          "https://genmitsu.com/products/3028-prover"
+        ],
+        [
+          "StepperOnline DM320T manufacturer manual",
+          "https://www.omc-stepperonline.com/download/DM320T_user_manual.pdf"
+        ],
+        [
+          "Texas Instruments SN74LVC07A datasheet, Rev W, open-drain logic and pinout",
+          "https://www.ti.com/lit/ds/symlink/sn74lvc07a.pdf"
+        ],
+        [
+          "Cytron MD10C R3.0 manufacturer specification",
+          "https://www.cytron.io/c-industry/p-10amp-5v-30v-dc-motor-driver"
+        ],
+        [
+          "Cytron MD10C R3.0 User Manual Rev3.0 V1.0 Aug 2018",
+          "https://www.robot-maker.com/shop/img/cms/348%20-%20Driver%20MD10C%20Cytron/MD10C%20Rev3-0%20Users%20Manual.pdf"
+        ],
+        [
+          "Texas Instruments SN74LVC07A datasheet Rev W",
+          "https://www.ti.com/lit/ds/symlink/sn74lvc07a.pdf"
+        ],
+        [
+          "StepperOnline DM320T user manual",
+          "https://www.omc-stepperonline.com/download/DM320T_user_manual.pdf"
+        ]
+      ],
+      "target_options": {
+        "smoothiebox": "Enclosure/carrier only; choose and wire the contained Core or Prime below after confirming its exact board and harness.",
+        "core": "Three external drivers are required. Candidate StepperOnline DM320T provides named PUL/DIR/OPTO and P2 A+/A-/B+/B- terminals; match motor current and verify Core logic interface.",
+        "prime": "Selected main reference: Prime P12 integrated X/Y/Z winding outputs. Confirm measured phase pairs, motor current, VMOT and firmware mapping. Core plus external drivers remains a distinct redesign alternative, not the selected drawing."
+      },
+      "parts": [
+        "The following are the depicted retained, required or unresolved peripherals; a drawing label does not establish fitment or electrical compatibility. Select ratings and installed revisions from the per-connection evidence.",
+        "V2 Prime P12 J5",
+        "X motor harness (cavities unverified)",
+        "V2 Prime P12 J6",
+        "Y motor harness (cavities unverified)",
+        "V2 Prime P12 J7",
+        "Z motor harness (cavities unverified)",
+        "Smoothie PWM candidate (verify board)",
+        "Cytron MD10C R3.0",
+        "775 spindle: measured motor terminals (polarity unknown)",
+        "Fused dedicated 12-24V spindle supply",
+        "Cytron MD10C R3.0 power input",
+        "Prime J24 input",
+        "X MIN switch",
+        "Prime J25 input",
+        "X MAX switch",
+        "Prime J26 input",
+        "Y MIN switch",
+        "Prime J27 input",
+        "Y MAX switch",
+        "Prime J28 input",
+        "Z MIN switch",
+        "Prime J29 input",
+        "Z MAX switch",
+        "Regulated 5 V logic supply",
+        "Verified motor supply \u00b7 voltage/current TBD",
+        "Motor branch fuse \u00b7 rating selected after measurement",
+        "Measured passive Z plate + tool clip",
+        "Required laser level/isolating interface \u00b7 select from fitted driver",
+        "Optional fitted laser driver \u00b7 model required",
+        "Laser-rated fused supply \u00b7 voltage/current unknown",
+        "Pump branch fuse \u00b7 rating after load measurement",
+        "Identified DC air pump \u00b7 fitted status/rating unknown",
+        "Fitted E-stop switch \u00b7 contacts must be traced",
+        "Independent hardware stop chain \u00b7 retain or engineer",
+        "Factory offline controller \u00b7 optional accessory",
+        "Factory MPG/handwheel interface \u00b7 fitted status unresolved"
+      ],
+      "instructions": [
+        "Match the actual machine and controller revisions, trace the unpowered harness and verify all signal/reference, power and independent safety boundaries before energising. Follow the current connection IDs rather than the superseded architecture prose.",
+        "X motor: integrated Prime phase outputs: Source establishes Prime output net names. Machine lead order and phase pairing are unknown; identify coils with power isolated.",
+        "Y motor: integrated Prime phase outputs: Source establishes Prime output net names. Machine lead order and phase pairing are unknown; identify coils with power isolated.",
+        "Z motor: integrated Prime phase outputs: Source establishes Prime output net names. Machine lead order and phase pairing are unknown; identify coils with power isolated.",
+        "775 spindle controller: PWM, direction and motor output: Prime J35.6 exports TIM1_CH1 (PWM candidate) and J35.10 GND. Cytron MD10C R3.0 has PWM, DIR, GND, VM, PWR_GND, OUT_A/B; manual Rev3.0 V1.0 Aug 2018 supports sign-magnitude PWM+DIR and 3.3/5V logic. DIR tied to logic GND selects Forward while PWM is high per the manual truth table; bench-check actual spindle rotation and ensure PWM low stops/brakes as expected. Separate motor supply must match measured motor voltage/current and be fused. Do not use guessed red/black wiring.",
+        "Dedicated 775 spindle power stage: Do not assume the original 24 V / 4 A adapter is sufficient for controller, axes and spindle together. MD10C source says no overcurrent protection.",
+        "X MIN limit input (candidate mapping): Prime source pin schedule: J24-J29 pin2 GND, pin3 input, pin1 selector. This candidate J-to-axis/end assignment is not established by Genmitsu manual; trace each harness and test switch state first.",
+        "X MAX limit input (candidate mapping): Prime source pin schedule: J24-J29 pin2 GND, pin3 input, pin1 selector. This candidate J-to-axis/end assignment is not established by Genmitsu manual; trace each harness and test switch state first.",
+        "Y MIN limit input (candidate mapping): Prime source pin schedule: J24-J29 pin2 GND, pin3 input, pin1 selector. This candidate J-to-axis/end assignment is not established by Genmitsu manual; trace each harness and test switch state first.",
+        "Y MAX limit input (candidate mapping): Prime source pin schedule: J24-J29 pin2 GND, pin3 input, pin1 selector. This candidate J-to-axis/end assignment is not established by Genmitsu manual; trace each harness and test switch state first.",
+        "Z MIN limit input (candidate mapping): Prime source pin schedule: J24-J29 pin2 GND, pin3 input, pin1 selector. This candidate J-to-axis/end assignment is not established by Genmitsu manual; trace each harness and test switch state first.",
+        "Z MAX limit input (candidate mapping): Prime source pin schedule: J24-J29 pin2 GND, pin3 input, pin1 selector. This candidate J-to-axis/end assignment is not established by Genmitsu manual; trace each harness and test switch state first.",
+        "Prime selected \u00b7 separate logic and motor supplies: This is the selected Prime P12 integrated-driver architecture. Use the current P12 PCB-derived contact labels; other board revisions require their own verified pinout and driver ratings. Use one verified power-entry arrangement; J10 parallels VMOT and is left unused here. Board ground is shared internally; route motor current directly to power distribution, not through logic wiring. Determine actual allowed voltage/current before choosing a supply; no machine-source adapter automatically qualifies.",
+        "Included Z height probe \u00b7 plate and tool clip separately: Documented probe kit; verify this fitted kit is a passive isolated contact. J31.4 is conditioned through comparator U24; establish JP7/JP8 population and safe pull-up/configuration from the exact P12 sheet. Leave J31.1 VMOT and J31.2 selected supply unused for a passive plate. Probe input maximum differs between board guides; no high-voltage capability is claimed.",
+        "Optional laser module \u00b7 controller signal, return and separate power: Manual p.6 says optional laser is not included. Only populate this circuit if fitted. Identify laser driver model, TTL polarity/threshold/current, command connector and independent laser inhibition before choosing the level interface. Do not connect a logic output to laser power. Prime J35.6 is only a proposed PWM resource; verify firmware ownership.",
+        "Air pump interface \u00b7 optional/fitted pump must be identified: Manual pp.19\u201320 names the air-pump interface but gives no pump model, connector pin map or load rating. Proposed DC pump load on Fan2 only after VFET voltage, startup/stall current, flyback suppression and connector rating are established. J20.1 is cutoff-switched VFET, J20.2 Q22 switched return; verify exact P12 firmware/resource assignment and reuse one VFET supply, not a second source tied to the same rail.",
+        "Emergency stop \u00b7 independent hazardous-energy interruption: Manual pp.19\u201320 names E-stop interface without contact numbers or safety topology. Trace fitted switch and contactor/drive-inhibit circuit before wiring. Board-only firmware stop cannot assure safe stop. No Prime GPIO is presented as the hazardous-energy cut-off.",
+        "Factory offline controller and MPG \u00b7 protocol is not a GPIO pinout: Manual p.28 warns factory offline port is designed for its controller and must not connect other controllers. Keep factory offline controller/MPG disconnected from Prime until protocol, electrical levels and replacement firmware support are established. J30 debug UART is not an assumed factory pendant adapter.",
+        "Resource conflict: spindle PWM C04-001 and optional laser PWM C14-001 both nominate Prime J35.6 TIM1_CH1. These are mutually exclusive alternatives, not two independent outputs. Disconnect the unused load or source and configure a distinct supported PWM output; never wire both loads expecting independent control."
+      ],
+      "wire_panels": [
+        {
+          "title": "X motor: integrated Prime phase outputs",
+          "nodes": [
+            {
+              "id": "g2_x_board",
+              "title": "V2 Prime P12 J5",
+              "column": 0,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "1",
+                  "label": "J5.1 \u00b7 B2",
+                  "side": "right"
+                },
+                {
+                  "id": "2",
+                  "label": "J5.2 \u00b7 B1",
+                  "side": "right"
+                },
+                {
+                  "id": "3",
+                  "label": "J5.3 \u00b7 A2",
+                  "side": "right"
+                },
+                {
+                  "id": "4",
+                  "label": "J5.4 \u00b7 A1",
+                  "side": "right"
+                }
+              ]
+            },
+            {
+              "id": "g2_x_machine",
+              "title": "X motor harness (cavities unverified)",
+              "column": 2,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "1",
+                  "label": "New measured winding lead B2",
+                  "side": "left"
+                },
+                {
+                  "id": "2",
+                  "label": "New measured winding lead B1",
+                  "side": "left"
+                },
+                {
+                  "id": "3",
+                  "label": "New measured winding lead A2",
+                  "side": "left"
+                },
+                {
+                  "id": "4",
+                  "label": "New measured winding lead A1",
+                  "side": "left"
+                }
+              ]
+            }
+          ],
+          "edges": [
+            {
+              "from": "g2_x_board.1",
+              "to": "g2_x_machine.1",
+              "state": "guess",
+              "function": "candidate X winding hookup",
+              "check": "GUESS proposed cavity-to-phase map only; inspect Prime revision and meter both motor coil pairs before connecting. Set driver current to actual motor rating.",
+              "electrical_role": "power"
+            },
+            {
+              "from": "g2_x_board.2",
+              "to": "g2_x_machine.2",
+              "state": "guess",
+              "function": "candidate X winding hookup",
+              "check": "GUESS proposed cavity-to-phase map only; inspect Prime revision and meter both motor coil pairs before connecting. Set driver current to actual motor rating.",
+              "electrical_role": "power"
+            },
+            {
+              "from": "g2_x_board.3",
+              "to": "g2_x_machine.3",
+              "state": "guess",
+              "function": "candidate X winding hookup",
+              "check": "GUESS proposed cavity-to-phase map only; inspect Prime revision and meter both motor coil pairs before connecting. Set driver current to actual motor rating.",
+              "electrical_role": "power"
+            },
+            {
+              "from": "g2_x_board.4",
+              "to": "g2_x_machine.4",
+              "state": "guess",
+              "function": "candidate X winding hookup",
+              "check": "GUESS proposed cavity-to-phase map only; inspect Prime revision and meter both motor coil pairs before connecting. Set driver current to actual motor rating.",
+              "electrical_role": "power"
+            }
+          ],
+          "note": "Source establishes Prime output net names. Machine lead order and phase pairing are unknown; identify coils with power isolated.",
+          "original_panel_index": 1
+        },
+        {
+          "title": "Y motor: integrated Prime phase outputs",
+          "nodes": [
+            {
+              "id": "g2_y_board",
+              "title": "V2 Prime P12 J6",
+              "column": 0,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "1",
+                  "label": "J6.1 \u00b7 B2",
+                  "side": "right"
+                },
+                {
+                  "id": "2",
+                  "label": "J6.2 \u00b7 B1",
+                  "side": "right"
+                },
+                {
+                  "id": "3",
+                  "label": "J6.3 \u00b7 A2",
+                  "side": "right"
+                },
+                {
+                  "id": "4",
+                  "label": "J6.4 \u00b7 A1",
+                  "side": "right"
+                }
+              ]
+            },
+            {
+              "id": "g2_y_machine",
+              "title": "Y motor harness (cavities unverified)",
+              "column": 2,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "1",
+                  "label": "New measured winding lead B2",
+                  "side": "left"
+                },
+                {
+                  "id": "2",
+                  "label": "New measured winding lead B1",
+                  "side": "left"
+                },
+                {
+                  "id": "3",
+                  "label": "New measured winding lead A2",
+                  "side": "left"
+                },
+                {
+                  "id": "4",
+                  "label": "New measured winding lead A1",
+                  "side": "left"
+                }
+              ]
+            }
+          ],
+          "edges": [
+            {
+              "from": "g2_y_board.1",
+              "to": "g2_y_machine.1",
+              "state": "guess",
+              "function": "candidate Y winding hookup",
+              "check": "GUESS proposed cavity-to-phase map only; inspect Prime revision and meter both motor coil pairs before connecting. Set driver current to actual motor rating.",
+              "electrical_role": "power"
+            },
+            {
+              "from": "g2_y_board.2",
+              "to": "g2_y_machine.2",
+              "state": "guess",
+              "function": "candidate Y winding hookup",
+              "check": "GUESS proposed cavity-to-phase map only; inspect Prime revision and meter both motor coil pairs before connecting. Set driver current to actual motor rating.",
+              "electrical_role": "power"
+            },
+            {
+              "from": "g2_y_board.3",
+              "to": "g2_y_machine.3",
+              "state": "guess",
+              "function": "candidate Y winding hookup",
+              "check": "GUESS proposed cavity-to-phase map only; inspect Prime revision and meter both motor coil pairs before connecting. Set driver current to actual motor rating.",
+              "electrical_role": "power"
+            },
+            {
+              "from": "g2_y_board.4",
+              "to": "g2_y_machine.4",
+              "state": "guess",
+              "function": "candidate Y winding hookup",
+              "check": "GUESS proposed cavity-to-phase map only; inspect Prime revision and meter both motor coil pairs before connecting. Set driver current to actual motor rating.",
+              "electrical_role": "power"
+            }
+          ],
+          "note": "Source establishes Prime output net names. Machine lead order and phase pairing are unknown; identify coils with power isolated.",
+          "original_panel_index": 2
+        },
+        {
+          "title": "Z motor: integrated Prime phase outputs",
+          "nodes": [
+            {
+              "id": "g2_z_board",
+              "title": "V2 Prime P12 J7",
+              "column": 0,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "1",
+                  "label": "J7.1 \u00b7 B2",
+                  "side": "right"
+                },
+                {
+                  "id": "2",
+                  "label": "J7.2 \u00b7 B1",
+                  "side": "right"
+                },
+                {
+                  "id": "3",
+                  "label": "J7.3 \u00b7 A2",
+                  "side": "right"
+                },
+                {
+                  "id": "4",
+                  "label": "J7.4 \u00b7 A1",
+                  "side": "right"
+                }
+              ]
+            },
+            {
+              "id": "g2_z_machine",
+              "title": "Z motor harness (cavities unverified)",
+              "column": 2,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "1",
+                  "label": "New measured winding lead B2",
+                  "side": "left"
+                },
+                {
+                  "id": "2",
+                  "label": "New measured winding lead B1",
+                  "side": "left"
+                },
+                {
+                  "id": "3",
+                  "label": "New measured winding lead A2",
+                  "side": "left"
+                },
+                {
+                  "id": "4",
+                  "label": "New measured winding lead A1",
+                  "side": "left"
+                }
+              ]
+            }
+          ],
+          "edges": [
+            {
+              "from": "g2_z_board.1",
+              "to": "g2_z_machine.1",
+              "state": "guess",
+              "function": "candidate Z winding hookup",
+              "check": "GUESS proposed cavity-to-phase map only; inspect Prime revision and meter both motor coil pairs before connecting. Set driver current to actual motor rating.",
+              "electrical_role": "power"
+            },
+            {
+              "from": "g2_z_board.2",
+              "to": "g2_z_machine.2",
+              "state": "guess",
+              "function": "candidate Z winding hookup",
+              "check": "GUESS proposed cavity-to-phase map only; inspect Prime revision and meter both motor coil pairs before connecting. Set driver current to actual motor rating.",
+              "electrical_role": "power"
+            },
+            {
+              "from": "g2_z_board.3",
+              "to": "g2_z_machine.3",
+              "state": "guess",
+              "function": "candidate Z winding hookup",
+              "check": "GUESS proposed cavity-to-phase map only; inspect Prime revision and meter both motor coil pairs before connecting. Set driver current to actual motor rating.",
+              "electrical_role": "power"
+            },
+            {
+              "from": "g2_z_board.4",
+              "to": "g2_z_machine.4",
+              "state": "guess",
+              "function": "candidate Z winding hookup",
+              "check": "GUESS proposed cavity-to-phase map only; inspect Prime revision and meter both motor coil pairs before connecting. Set driver current to actual motor rating.",
+              "electrical_role": "power"
+            }
+          ],
+          "note": "Source establishes Prime output net names. Machine lead order and phase pairing are unknown; identify coils with power isolated.",
+          "original_panel_index": 3
+        },
+        {
+          "title": "775 spindle controller: PWM, direction and motor output",
+          "nodes": [
+            {
+              "id": "g2_pwm_source",
+              "title": "Smoothie PWM candidate (verify board)",
+              "column": 0,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "J35.6",
+                  "label": "J35.6 TIM1_CH1 (PWM candidate)",
+                  "side": "right"
+                },
+                {
+                  "id": "J35.10",
+                  "label": "J35.10 GND",
+                  "side": "right"
+                },
+                {
+                  "id": "DIR0",
+                  "label": "J35.10 GND \u00b7 fixed DIR logic low candidate",
+                  "side": "right"
+                }
+              ]
+            },
+            {
+              "id": "g2_md10c",
+              "title": "Cytron MD10C R3.0",
+              "column": 1,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "PWM",
+                  "label": "PWM",
+                  "side": "left"
+                },
+                {
+                  "id": "DIR",
+                  "label": "DIR",
+                  "side": "left"
+                },
+                {
+                  "id": "GND",
+                  "label": "GND",
+                  "side": "left"
+                },
+                {
+                  "id": "VM",
+                  "label": "VM",
+                  "side": "right"
+                },
+                {
+                  "id": "PWR_GND",
+                  "label": "power GND",
+                  "side": "right"
+                },
+                {
+                  "id": "OUT_A",
+                  "label": "OUT A",
+                  "side": "right"
+                },
+                {
+                  "id": "OUT_B",
+                  "label": "OUT B",
+                  "side": "right"
+                }
+              ]
+            },
+            {
+              "id": "g2_spindle",
+              "title": "775 spindle: measured motor terminals (polarity unknown)",
+              "column": 2,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "lead1",
+                  "label": "measured motor terminal 1",
+                  "side": "left"
+                },
+                {
+                  "id": "lead2",
+                  "label": "measured motor terminal 2",
+                  "side": "left"
+                }
+              ]
+            }
+          ],
+          "edges": [
+            {
+              "from": "g2_pwm_source.J35.6",
+              "to": "g2_md10c.PWM",
+              "state": "guess",
+              "function": "spindle speed PWM candidate",
+              "check": "Core P1 J35 source export: pin6 TIM1_CH1 and pin10 GND. Verify waveform range/frequency and common reference on exact board. Resource conflict: spindle PWM C04-001 and optional laser PWM C14-001 both nominate Prime J35.6 TIM1_CH1. These are mutually exclusive alternatives, not two independent outputs. Disconnect the unused load or source and configure a distinct supported PWM output; never wire both loads expecting independent control."
+            },
+            {
+              "from": "g2_pwm_source.J35.10",
+              "to": "g2_md10c.GND",
+              "state": "guess",
+              "function": "control signal reference",
+              "check": "Core P1 J35 source export: pin6 TIM1_CH1 and pin10 GND. Verify waveform range/frequency and common reference on exact board."
+            },
+            {
+              "from": "g2_md10c.OUT_A",
+              "to": "g2_spindle.lead1",
+              "state": "guess",
+              "function": "switched motor output A",
+              "check": "Only after measured spindle current, direction and terminal polarity are checked."
+            },
+            {
+              "from": "g2_md10c.OUT_B",
+              "to": "g2_spindle.lead2",
+              "state": "guess",
+              "function": "switched motor output B",
+              "check": "Map output to spindle leads only after safe direction test; not a logic return."
+            },
+            {
+              "from": "g2_pwm_source.DIR0",
+              "to": "g2_md10c.DIR",
+              "state": "guess",
+              "function": "fixed direction logic low candidate",
+              "check": "Cytron R3.0 manual: DIR sets motor direction. Verify input truth table and chosen spindle rotation on secured unloaded stage; reverse motor leads only after isolated power-down. Proposed physical allocation: branch from the same Prime J35.10 logic GND used by the MD10C control reference to MD10C control pin3 DIR for fixed low. Prime native PCB confirms J35.10 GND; Cytron R3.0 manual page7 confirms DIR low selects Forward when PWM is high. Verify actual spindle rotation and matching board revision; this remains GUESS, not an installed-machine claim.",
+              "electrical_role": "ground"
+            }
+          ],
+          "note": "Prime J35.6 exports TIM1_CH1 (PWM candidate) and J35.10 GND. Cytron MD10C R3.0 has PWM, DIR, GND, VM, PWR_GND, OUT_A/B; manual Rev3.0 V1.0 Aug 2018 supports sign-magnitude PWM+DIR and 3.3/5V logic. DIR tied to logic GND selects Forward while PWM is high per the manual truth table; bench-check actual spindle rotation and ensure PWM low stops/brakes as expected. Separate motor supply must match measured motor voltage/current and be fused. Do not use guessed red/black wiring. Resource conflict: spindle PWM C04-001 and optional laser PWM C14-001 both nominate Prime J35.6 TIM1_CH1. These are mutually exclusive alternatives, not two independent outputs. Disconnect the unused load or source and configure a distinct supported PWM output; never wire both loads expecting independent control.",
+          "original_panel_index": 12
+        },
+        {
+          "title": "Dedicated 775 spindle power stage",
+          "nodes": [
+            {
+              "id": "g2_spindle_psu",
+              "title": "Fused dedicated 12-24V spindle supply",
+              "column": 0,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "+",
+                  "label": "V+",
+                  "side": "right"
+                },
+                {
+                  "id": "-",
+                  "label": "0V",
+                  "side": "right"
+                }
+              ]
+            },
+            {
+              "id": "g2_md_power",
+              "title": "Cytron MD10C R3.0 power input",
+              "column": 1,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "VM",
+                  "label": "VM",
+                  "side": "left"
+                },
+                {
+                  "id": "GND",
+                  "label": "GND",
+                  "side": "left"
+                },
+                {
+                  "id": "OUT_A",
+                  "label": "OUT A",
+                  "side": "right"
+                },
+                {
+                  "id": "OUT_B",
+                  "label": "OUT B",
+                  "side": "right"
+                }
+              ]
+            }
+          ],
+          "edges": [
+            {
+              "from": "g2_spindle_psu.+",
+              "to": "g2_md_power.VM",
+              "state": "guess",
+              "function": "spindle-stage supply",
+              "check": "Rate from measured 775 running/stall current and MD10C limit; supply must match motor and total system loads."
+            },
+            {
+              "from": "g2_spindle_psu.-",
+              "to": "g2_md_power.GND",
+              "state": "guess",
+              "function": "spindle-stage return",
+              "check": "Keep power return distinct from logic signal reference unless manual grounding requires a bond."
+            }
+          ],
+          "note": "Do not assume the original 24 V / 4 A adapter is sufficient for controller, axes and spindle together. MD10C source says no overcurrent protection.",
+          "original_panel_index": 13
+        },
+        {
+          "title": "X MIN limit input (candidate mapping)",
+          "nodes": [
+            {
+              "id": "g2_x_min_in",
+              "title": "Prime J24 input",
+              "column": 0,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "SIG",
+                  "label": "pin 3 input",
+                  "side": "right"
+                },
+                {
+                  "id": "GND",
+                  "label": "pin 2 GND",
+                  "side": "right"
+                },
+                {
+                  "id": "SEL",
+                  "label": "pin 1 selector",
+                  "side": "right"
+                }
+              ]
+            },
+            {
+              "id": "g2_x_min_switch",
+              "title": "X MIN switch",
+              "column": 2,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "SIG",
+                  "label": "switch signal",
+                  "side": "left"
+                },
+                {
+                  "id": "RET",
+                  "label": "switch return",
+                  "side": "left"
+                },
+                {
+                  "id": "supply_identify",
+                  "label": "Third cable lead \u00b7 identify supply or contact before connection",
+                  "side": "left"
+                }
+              ]
+            }
+          ],
+          "edges": [
+            {
+              "from": "g2_x_min_in.SIG",
+              "to": "g2_x_min_switch.SIG",
+              "state": "guess",
+              "function": "X MIN endstop signal",
+              "check": "Only if this actual switch contact is traced and normally-open/closed state verified."
+            },
+            {
+              "from": "g2_x_min_in.GND",
+              "to": "g2_x_min_switch.RET",
+              "state": "guess",
+              "function": "X MIN return",
+              "check": "Verify contact function and sensor type. Leave selector disconnected until exact signal voltage is known."
+            },
+            {
+              "from": "g2_x_min_in.SEL",
+              "to": "g2_x_min_switch.supply_identify",
+              "state": "open",
+              "function": "Three-wire factory limit sensor supply / third lead",
+              "check": "Manual p.16 gives 3-wire switch cable, not pin functions. Identify passive switch/NPN/PNP, lead roles, supply voltage and Prime selector setting. Only two switches are included in the kit; the six sockets here are candidate channels, not a claim that six switches are fitted."
+            }
+          ],
+          "note": "Prime source pin schedule: J24-J29 pin2 GND, pin3 input, pin1 selector. This candidate J-to-axis/end assignment is not established by Genmitsu manual; trace each harness and test switch state first.",
+          "original_panel_index": 14
+        },
+        {
+          "title": "X MAX limit input (candidate mapping)",
+          "nodes": [
+            {
+              "id": "g2_x_max_in",
+              "title": "Prime J25 input",
+              "column": 0,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "SIG",
+                  "label": "pin 3 input",
+                  "side": "right"
+                },
+                {
+                  "id": "GND",
+                  "label": "pin 2 GND",
+                  "side": "right"
+                },
+                {
+                  "id": "SEL",
+                  "label": "pin 1 selector",
+                  "side": "right"
+                }
+              ]
+            },
+            {
+              "id": "g2_x_max_switch",
+              "title": "X MAX switch",
+              "column": 2,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "SIG",
+                  "label": "switch signal",
+                  "side": "left"
+                },
+                {
+                  "id": "RET",
+                  "label": "switch return",
+                  "side": "left"
+                },
+                {
+                  "id": "supply_identify",
+                  "label": "Third cable lead \u00b7 identify supply or contact before connection",
+                  "side": "left"
+                }
+              ]
+            }
+          ],
+          "edges": [
+            {
+              "from": "g2_x_max_in.SIG",
+              "to": "g2_x_max_switch.SIG",
+              "state": "guess",
+              "function": "X MAX endstop signal",
+              "check": "Only if this actual switch contact is traced and normally-open/closed state verified."
+            },
+            {
+              "from": "g2_x_max_in.GND",
+              "to": "g2_x_max_switch.RET",
+              "state": "guess",
+              "function": "X MAX return",
+              "check": "Verify contact function and sensor type. Leave selector disconnected until exact signal voltage is known."
+            },
+            {
+              "from": "g2_x_max_in.SEL",
+              "to": "g2_x_max_switch.supply_identify",
+              "state": "open",
+              "function": "Three-wire factory limit sensor supply / third lead",
+              "check": "Manual p.16 gives 3-wire switch cable, not pin functions. Identify passive switch/NPN/PNP, lead roles, supply voltage and Prime selector setting. Only two switches are included in the kit; the six sockets here are candidate channels, not a claim that six switches are fitted."
+            }
+          ],
+          "note": "Prime source pin schedule: J24-J29 pin2 GND, pin3 input, pin1 selector. This candidate J-to-axis/end assignment is not established by Genmitsu manual; trace each harness and test switch state first.",
+          "original_panel_index": 15
+        },
+        {
+          "title": "Y MIN limit input (candidate mapping)",
+          "nodes": [
+            {
+              "id": "g2_y_min_in",
+              "title": "Prime J26 input",
+              "column": 0,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "SIG",
+                  "label": "pin 3 input",
+                  "side": "right"
+                },
+                {
+                  "id": "GND",
+                  "label": "pin 2 GND",
+                  "side": "right"
+                },
+                {
+                  "id": "SEL",
+                  "label": "pin 1 selector",
+                  "side": "right"
+                }
+              ]
+            },
+            {
+              "id": "g2_y_min_switch",
+              "title": "Y MIN switch",
+              "column": 2,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "SIG",
+                  "label": "switch signal",
+                  "side": "left"
+                },
+                {
+                  "id": "RET",
+                  "label": "switch return",
+                  "side": "left"
+                },
+                {
+                  "id": "supply_identify",
+                  "label": "Third cable lead \u00b7 identify supply or contact before connection",
+                  "side": "left"
+                }
+              ]
+            }
+          ],
+          "edges": [
+            {
+              "from": "g2_y_min_in.SIG",
+              "to": "g2_y_min_switch.SIG",
+              "state": "guess",
+              "function": "Y MIN endstop signal",
+              "check": "Only if this actual switch contact is traced and normally-open/closed state verified."
+            },
+            {
+              "from": "g2_y_min_in.GND",
+              "to": "g2_y_min_switch.RET",
+              "state": "guess",
+              "function": "Y MIN return",
+              "check": "Verify contact function and sensor type. Leave selector disconnected until exact signal voltage is known."
+            },
+            {
+              "from": "g2_y_min_in.SEL",
+              "to": "g2_y_min_switch.supply_identify",
+              "state": "open",
+              "function": "Three-wire factory limit sensor supply / third lead",
+              "check": "Manual p.16 gives 3-wire switch cable, not pin functions. Identify passive switch/NPN/PNP, lead roles, supply voltage and Prime selector setting. Only two switches are included in the kit; the six sockets here are candidate channels, not a claim that six switches are fitted."
+            }
+          ],
+          "note": "Prime source pin schedule: J24-J29 pin2 GND, pin3 input, pin1 selector. This candidate J-to-axis/end assignment is not established by Genmitsu manual; trace each harness and test switch state first.",
+          "original_panel_index": 16
+        },
+        {
+          "title": "Y MAX limit input (candidate mapping)",
+          "nodes": [
+            {
+              "id": "g2_y_max_in",
+              "title": "Prime J27 input",
+              "column": 0,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "SIG",
+                  "label": "pin 3 input",
+                  "side": "right"
+                },
+                {
+                  "id": "GND",
+                  "label": "pin 2 GND",
+                  "side": "right"
+                },
+                {
+                  "id": "SEL",
+                  "label": "pin 1 selector",
+                  "side": "right"
+                }
+              ]
+            },
+            {
+              "id": "g2_y_max_switch",
+              "title": "Y MAX switch",
+              "column": 2,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "SIG",
+                  "label": "switch signal",
+                  "side": "left"
+                },
+                {
+                  "id": "RET",
+                  "label": "switch return",
+                  "side": "left"
+                },
+                {
+                  "id": "supply_identify",
+                  "label": "Third cable lead \u00b7 identify supply or contact before connection",
+                  "side": "left"
+                }
+              ]
+            }
+          ],
+          "edges": [
+            {
+              "from": "g2_y_max_in.SIG",
+              "to": "g2_y_max_switch.SIG",
+              "state": "guess",
+              "function": "Y MAX endstop signal",
+              "check": "Only if this actual switch contact is traced and normally-open/closed state verified."
+            },
+            {
+              "from": "g2_y_max_in.GND",
+              "to": "g2_y_max_switch.RET",
+              "state": "guess",
+              "function": "Y MAX return",
+              "check": "Verify contact function and sensor type. Leave selector disconnected until exact signal voltage is known."
+            },
+            {
+              "from": "g2_y_max_in.SEL",
+              "to": "g2_y_max_switch.supply_identify",
+              "state": "open",
+              "function": "Three-wire factory limit sensor supply / third lead",
+              "check": "Manual p.16 gives 3-wire switch cable, not pin functions. Identify passive switch/NPN/PNP, lead roles, supply voltage and Prime selector setting. Only two switches are included in the kit; the six sockets here are candidate channels, not a claim that six switches are fitted."
+            }
+          ],
+          "note": "Prime source pin schedule: J24-J29 pin2 GND, pin3 input, pin1 selector. This candidate J-to-axis/end assignment is not established by Genmitsu manual; trace each harness and test switch state first.",
+          "original_panel_index": 17
+        },
+        {
+          "title": "Z MIN limit input (candidate mapping)",
+          "nodes": [
+            {
+              "id": "g2_z_min_in",
+              "title": "Prime J28 input",
+              "column": 0,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "SIG",
+                  "label": "pin 3 input",
+                  "side": "right"
+                },
+                {
+                  "id": "GND",
+                  "label": "pin 2 GND",
+                  "side": "right"
+                },
+                {
+                  "id": "SEL",
+                  "label": "pin 1 selector",
+                  "side": "right"
+                }
+              ]
+            },
+            {
+              "id": "g2_z_min_switch",
+              "title": "Z MIN switch",
+              "column": 2,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "SIG",
+                  "label": "switch signal",
+                  "side": "left"
+                },
+                {
+                  "id": "RET",
+                  "label": "switch return",
+                  "side": "left"
+                },
+                {
+                  "id": "supply_identify",
+                  "label": "Third cable lead \u00b7 identify supply or contact before connection",
+                  "side": "left"
+                }
+              ]
+            }
+          ],
+          "edges": [
+            {
+              "from": "g2_z_min_in.SIG",
+              "to": "g2_z_min_switch.SIG",
+              "state": "guess",
+              "function": "Z MIN endstop signal",
+              "check": "Only if this actual switch contact is traced and normally-open/closed state verified."
+            },
+            {
+              "from": "g2_z_min_in.GND",
+              "to": "g2_z_min_switch.RET",
+              "state": "guess",
+              "function": "Z MIN return",
+              "check": "Verify contact function and sensor type. Leave selector disconnected until exact signal voltage is known."
+            },
+            {
+              "from": "g2_z_min_in.SEL",
+              "to": "g2_z_min_switch.supply_identify",
+              "state": "open",
+              "function": "Three-wire factory limit sensor supply / third lead",
+              "check": "Manual p.16 gives 3-wire switch cable, not pin functions. Identify passive switch/NPN/PNP, lead roles, supply voltage and Prime selector setting. Only two switches are included in the kit; the six sockets here are candidate channels, not a claim that six switches are fitted."
+            }
+          ],
+          "note": "Prime source pin schedule: J24-J29 pin2 GND, pin3 input, pin1 selector. This candidate J-to-axis/end assignment is not established by Genmitsu manual; trace each harness and test switch state first.",
+          "original_panel_index": 18
+        },
+        {
+          "title": "Z MAX limit input (candidate mapping)",
+          "nodes": [
+            {
+              "id": "g2_z_max_in",
+              "title": "Prime J29 input",
+              "column": 0,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "SIG",
+                  "label": "pin 3 input",
+                  "side": "right"
+                },
+                {
+                  "id": "GND",
+                  "label": "pin 2 GND",
+                  "side": "right"
+                },
+                {
+                  "id": "SEL",
+                  "label": "pin 1 selector",
+                  "side": "right"
+                }
+              ]
+            },
+            {
+              "id": "g2_z_max_switch",
+              "title": "Z MAX switch",
+              "column": 2,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "SIG",
+                  "label": "switch signal",
+                  "side": "left"
+                },
+                {
+                  "id": "RET",
+                  "label": "switch return",
+                  "side": "left"
+                },
+                {
+                  "id": "supply_identify",
+                  "label": "Third cable lead \u00b7 identify supply or contact before connection",
+                  "side": "left"
+                }
+              ]
+            }
+          ],
+          "edges": [
+            {
+              "from": "g2_z_max_in.SIG",
+              "to": "g2_z_max_switch.SIG",
+              "state": "guess",
+              "function": "Z MAX endstop signal",
+              "check": "Only if this actual switch contact is traced and normally-open/closed state verified."
+            },
+            {
+              "from": "g2_z_max_in.GND",
+              "to": "g2_z_max_switch.RET",
+              "state": "guess",
+              "function": "Z MAX return",
+              "check": "Verify contact function and sensor type. Leave selector disconnected until exact signal voltage is known."
+            },
+            {
+              "from": "g2_z_max_in.SEL",
+              "to": "g2_z_max_switch.supply_identify",
+              "state": "open",
+              "function": "Three-wire factory limit sensor supply / third lead",
+              "check": "Manual p.16 gives 3-wire switch cable, not pin functions. Identify passive switch/NPN/PNP, lead roles, supply voltage and Prime selector setting. Only two switches are included in the kit; the six sockets here are candidate channels, not a claim that six switches are fitted."
+            }
+          ],
+          "note": "Prime source pin schedule: J24-J29 pin2 GND, pin3 input, pin1 selector. This candidate J-to-axis/end assignment is not established by Genmitsu manual; trace each harness and test switch state first.",
+          "original_panel_index": 19
+        },
+        {
+          "title": "Prime selected \u00b7 separate logic and motor supplies",
+          "nodes": [
+            {
+              "id": "logic",
+              "title": "Regulated 5 V logic supply",
+              "column": 0,
+              "contacts": [
+                {
+                  "id": "v",
+                  "label": "+5 V regulated",
+                  "side": "right"
+                },
+                {
+                  "id": "g",
+                  "label": "0 V logic return",
+                  "side": "right"
+                }
+              ]
+            },
+            {
+              "id": "motor",
+              "title": "Verified motor supply \u00b7 voltage/current TBD",
+              "column": 0,
+              "contacts": [
+                {
+                  "id": "v",
+                  "label": "DC + \u00b7 before fuse",
+                  "side": "right"
+                },
+                {
+                  "id": "g",
+                  "label": "0 V motor return",
+                  "side": "right"
+                }
+              ]
+            },
+            {
+              "id": "fuse",
+              "title": "Motor branch fuse \u00b7 rating selected after measurement",
+              "column": 1,
+              "contacts": [
+                {
+                  "id": "in",
+                  "label": "fuse input",
+                  "side": "left"
+                },
+                {
+                  "id": "out",
+                  "label": "fuse output",
+                  "side": "left"
+                }
+              ]
+            },
+            {
+              "id": "prime",
+              "title": "Prime P12 \u00b7 confirm exact revision",
+              "column": 2,
+              "contacts": [
+                {
+                  "id": "v5",
+                  "label": "J42.1 \u00b7 5V_PORTIN",
+                  "side": "left"
+                },
+                {
+                  "id": "lg",
+                  "label": "J42.2 \u00b7 GND",
+                  "side": "left"
+                },
+                {
+                  "id": "vm",
+                  "label": "J9.1 \u00b7 VMOT",
+                  "side": "left"
+                },
+                {
+                  "id": "mg",
+                  "label": "J9.2 \u00b7 GND",
+                  "side": "left"
+                },
+                {
+                  "id": "aux1",
+                  "label": "J10.1 \u00b7 VMOT parallel \u00b7 unused",
+                  "side": "left"
+                },
+                {
+                  "id": "aux2",
+                  "label": "J10.2 \u00b7 GND parallel \u00b7 unused",
+                  "side": "left"
+                }
+              ]
+            }
+          ],
+          "edges": [
+            {
+              "from": "logic.v",
+              "to": "prime.v5",
+              "function": "Prime regulated logic supply",
+              "state": "guess",
+              "check": "Prime alternative only. Confirm fitted P11/P12 revision, input-voltage/current limits, supply sequencing and fuse/conductor ratings. Never connect both Core external drivers and Prime winding outputs to the same motor."
+            },
+            {
+              "from": "logic.g",
+              "to": "prime.lg",
+              "function": "Prime logic supply return",
+              "state": "guess",
+              "check": "Prime alternative only. Confirm fitted P11/P12 revision, input-voltage/current limits, supply sequencing and fuse/conductor ratings. Never connect both Core external drivers and Prime winding outputs to the same motor."
+            },
+            {
+              "from": "motor.v",
+              "to": "fuse.in",
+              "function": "Protected motor branch input",
+              "state": "guess",
+              "check": "Prime alternative only. Confirm fitted P11/P12 revision, input-voltage/current limits, supply sequencing and fuse/conductor ratings. Never connect both Core external drivers and Prime winding outputs to the same motor."
+            },
+            {
+              "from": "fuse.out",
+              "to": "prime.vm",
+              "function": "Prime VMOT power",
+              "state": "guess",
+              "check": "Prime alternative only. Confirm fitted P11/P12 revision, input-voltage/current limits, supply sequencing and fuse/conductor ratings. Never connect both Core external drivers and Prime winding outputs to the same motor."
+            },
+            {
+              "from": "motor.g",
+              "to": "prime.mg",
+              "function": "Prime motor supply return",
+              "state": "guess",
+              "check": "Prime alternative only. Confirm fitted P11/P12 revision, input-voltage/current limits, supply sequencing and fuse/conductor ratings. Never connect both Core external drivers and Prime winding outputs to the same motor."
+            }
+          ],
+          "note": "This is the selected Prime P12 integrated-driver architecture. Use the current P12 PCB-derived contact labels; other board revisions require their own verified pinout and driver ratings. Use one verified power-entry arrangement; J10 parallels VMOT and is left unused here. Board ground is shared internally; route motor current directly to power distribution, not through logic wiring. Determine actual allowed voltage/current before choosing a supply; no machine-source adapter automatically qualifies.",
+          "original_panel_index": 20
+        },
+        {
+          "title": "Included Z height probe \u00b7 plate and tool clip separately",
+          "note": "Documented probe kit; verify this fitted kit is a passive isolated contact. J31.4 is conditioned through comparator U24; establish JP7/JP8 population and safe pull-up/configuration from the exact P12 sheet. Leave J31.1 VMOT and J31.2 selected supply unused for a passive plate. Probe input maximum differs between board guides; no high-voltage capability is claimed.",
+          "nodes": [
+            {
+              "id": "prime",
+              "title": "Prime P12 \u00b7 dedicated PROBE J31",
+              "column": 0,
+              "contacts": [
+                {
+                  "id": "1",
+                  "label": "J31.1 \u00b7 VMOT \u00b7 unused",
+                  "side": "right"
+                },
+                {
+                  "id": "2",
+                  "label": "J31.2 \u00b7 JP8 selected 3V3/5V \u00b7 unused",
+                  "side": "right"
+                },
+                {
+                  "id": "3",
+                  "label": "J31.3 \u00b7 GND",
+                  "side": "right"
+                },
+                {
+                  "id": "4",
+                  "label": "J31.4 \u00b7 conditioned PROBE signal",
+                  "side": "right"
+                }
+              ]
+            },
+            {
+              "id": "probe",
+              "title": "Measured passive Z plate + tool clip",
+              "column": 2,
+              "contacts": [
+                {
+                  "id": "plate",
+                  "label": "Plate lead \u00b7 continuity identify",
+                  "side": "left"
+                },
+                {
+                  "id": "clip",
+                  "label": "Tool clip return \u00b7 continuity identify",
+                  "side": "left"
+                }
+              ]
+            }
+          ],
+          "edges": [
+            {
+              "from": "prime.4",
+              "to": "probe.plate",
+              "function": "Probe plate signal",
+              "state": "guess"
+            },
+            {
+              "from": "prime.3",
+              "to": "probe.clip",
+              "function": "Separate probe return",
+              "state": "guess"
+            }
+          ],
+          "original_panel_index": null,
+          "evidence_sources": [
+            {
+              "title": "3018-PROVer V2 manual V1.0 2022-09-06, English pp.15-21; motor table PDF p.73 \u00b7 English pp.19\u201320,26\u201328",
+              "url": "https://genmitsu.s3.us-east-1.amazonaws.com/101-60-3018PV2/3018-PROVer_V2_User_Manual_%E3%80%90EN%2BDE%2BJP_V1.0_20220906_1.pdf",
+              "claim": "Documents named machine interface/accessory functions; no connector cavity pin schedule or retrofit wiring is supplied."
+            },
+            {
+              "title": "Prime P12 exact inputs.kicad_sch",
+              "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/inputs.kicad_sch",
+              "claim": "Defines the Prime-side connector and conditioning circuit. Machine-side pairing is a new proposal and must be measured."
+            }
+          ]
+        },
+        {
+          "title": "Optional laser module \u00b7 controller signal, return and separate power",
+          "note": "Manual p.6 says optional laser is not included. Only populate this circuit if fitted. Identify laser driver model, TTL polarity/threshold/current, command connector and independent laser inhibition before choosing the level interface. Do not connect a logic output to laser power. Prime J35.6 is only a proposed PWM resource; verify firmware ownership. Resource conflict: spindle PWM C04-001 and optional laser PWM C14-001 both nominate Prime J35.6 TIM1_CH1. These are mutually exclusive alternatives, not two independent outputs. Disconnect the unused load or source and configure a distinct supported PWM output; never wire both loads expecting independent control.",
+          "nodes": [
+            {
+              "id": "prime",
+              "title": "Prime P12 \u00b7 signal-level PWM candidate",
+              "column": 0,
+              "contacts": [
+                {
+                  "id": "pwm",
+                  "label": "J35.6 \u00b7 TIM1_CH1 PWM candidate",
+                  "side": "right"
+                },
+                {
+                  "id": "gnd",
+                  "label": "J35.10 \u00b7 signal GND",
+                  "side": "right"
+                }
+              ]
+            },
+            {
+              "id": "interface",
+              "title": "Required laser level/isolating interface \u00b7 select from fitted driver",
+              "column": 1,
+              "contacts": [
+                {
+                  "id": "in",
+                  "label": "Logic input \u00b7 threshold unresolved",
+                  "side": "left"
+                },
+                {
+                  "id": "ref",
+                  "label": "Logic reference",
+                  "side": "left"
+                },
+                {
+                  "id": "out",
+                  "label": "Laser command output \u00b7 specification unresolved",
+                  "side": "left"
+                },
+                {
+                  "id": "outref",
+                  "label": "Laser-side reference",
+                  "side": "left"
+                }
+              ]
+            },
+            {
+              "id": "laser",
+              "title": "Optional fitted laser driver \u00b7 model required",
+              "column": 2,
+              "contacts": [
+                {
+                  "id": "cmd",
+                  "label": "Identify TTL/PWM input terminal",
+                  "side": "left"
+                },
+                {
+                  "id": "gnd",
+                  "label": "Identify input reference terminal",
+                  "side": "left"
+                },
+                {
+                  "id": "v",
+                  "label": "Identify laser supply +",
+                  "side": "left"
+                },
+                {
+                  "id": "pground",
+                  "label": "Identify laser supply return",
+                  "side": "left"
+                },
+                {
+                  "id": "inhibit",
+                  "label": "Identify hardware inhibit terminal",
+                  "side": "left"
+                }
+              ]
+            },
+            {
+              "id": "psu",
+              "title": "Laser-rated fused supply \u00b7 voltage/current unknown",
+              "column": 2,
+              "contacts": [
+                {
+                  "id": "v",
+                  "label": "DC + after fuse",
+                  "side": "left"
+                },
+                {
+                  "id": "gnd",
+                  "label": "DC return",
+                  "side": "left"
+                }
+              ]
+            }
+          ],
+          "edges": [
+            {
+              "from": "prime.pwm",
+              "to": "interface.in",
+              "function": "PWM into matched laser interface",
+              "state": "open",
+              "check": " Resource conflict: spindle PWM C04-001 and optional laser PWM C14-001 both nominate Prime J35.6 TIM1_CH1. These are mutually exclusive alternatives, not two independent outputs. Disconnect the unused load or source and configure a distinct supported PWM output; never wire both loads expecting independent control."
+            },
+            {
+              "from": "prime.gnd",
+              "to": "interface.ref",
+              "function": "PWM logic return",
+              "state": "open"
+            },
+            {
+              "from": "interface.out",
+              "to": "laser.cmd",
+              "function": "Qualified laser command",
+              "state": "open",
+              "electrical_role": "control"
+            },
+            {
+              "from": "interface.outref",
+              "to": "laser.gnd",
+              "function": "Separate laser command reference",
+              "state": "open"
+            },
+            {
+              "from": "psu.v",
+              "to": "laser.v",
+              "function": "Laser stage supply \u00b7 not GPIO",
+              "state": "open"
+            },
+            {
+              "from": "psu.gnd",
+              "to": "laser.pground",
+              "function": "Laser stage return",
+              "state": "open"
+            }
+          ],
+          "original_panel_index": null,
+          "evidence_sources": [
+            {
+              "title": "3018-PROVer V2 manual V1.0 2022-09-06, English pp.15-21; motor table PDF p.73 \u00b7 English pp.19\u201320,26\u201328",
+              "url": "https://genmitsu.s3.us-east-1.amazonaws.com/101-60-3018PV2/3018-PROVer_V2_User_Manual_%E3%80%90EN%2BDE%2BJP_V1.0_20220906_1.pdf",
+              "claim": "Documents named machine interface/accessory functions; no connector cavity pin schedule or retrofit wiring is supplied."
+            },
+            {
+              "title": "Prime P12 exact mosfets.kicad_sch",
+              "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/mosfets.kicad_sch",
+              "claim": "Defines the Prime-side connector and conditioning circuit. Machine-side pairing is a new proposal and must be measured."
+            }
+          ]
+        },
+        {
+          "title": "Air pump interface \u00b7 optional/fitted pump must be identified",
+          "note": "Manual pp.19\u201320 names the air-pump interface but gives no pump model, connector pin map or load rating. Proposed DC pump load on Fan2 only after VFET voltage, startup/stall current, flyback suppression and connector rating are established. J20.1 is cutoff-switched VFET, J20.2 Q22 switched return; verify exact P12 firmware/resource assignment and reuse one VFET supply, not a second source tied to the same rail.",
+          "nodes": [
+            {
+              "id": "prime",
+              "title": "Prime P12 \u00b7 conditional pump power stage",
+              "column": 0,
+              "contacts": [
+                {
+                  "id": "plus",
+                  "label": "J20.1 \u00b7 cutoff-switched VFET",
+                  "side": "right"
+                },
+                {
+                  "id": "minus",
+                  "label": "J20.2 \u00b7 Q22 switched return",
+                  "side": "right"
+                }
+              ]
+            },
+            {
+              "id": "fuse",
+              "title": "Pump branch fuse \u00b7 rating after load measurement",
+              "column": 1,
+              "contacts": [
+                {
+                  "id": "in",
+                  "label": "Fuse input",
+                  "side": "left"
+                },
+                {
+                  "id": "out",
+                  "label": "Fuse output",
+                  "side": "left"
+                }
+              ]
+            },
+            {
+              "id": "pump",
+              "title": "Identified DC air pump \u00b7 fitted status/rating unknown",
+              "column": 2,
+              "contacts": [
+                {
+                  "id": "v",
+                  "label": "Measured pump +",
+                  "side": "left"
+                },
+                {
+                  "id": "return",
+                  "label": "Measured pump \u2212",
+                  "side": "left"
+                }
+              ]
+            }
+          ],
+          "edges": [
+            {
+              "from": "prime.plus",
+              "to": "fuse.in",
+              "function": "Switched rail into pump branch fuse",
+              "state": "guess"
+            },
+            {
+              "from": "fuse.out",
+              "to": "pump.v",
+              "function": "Fused pump supply",
+              "state": "guess"
+            },
+            {
+              "from": "pump.return",
+              "to": "prime.minus",
+              "function": "Pump low-side switched return",
+              "state": "guess"
+            }
+          ],
+          "original_panel_index": null,
+          "evidence_sources": [
+            {
+              "title": "3018-PROVer V2 manual V1.0 2022-09-06, English pp.15-21; motor table PDF p.73 \u00b7 English pp.19\u201320,26\u201328",
+              "url": "https://genmitsu.s3.us-east-1.amazonaws.com/101-60-3018PV2/3018-PROVer_V2_User_Manual_%E3%80%90EN%2BDE%2BJP_V1.0_20220906_1.pdf",
+              "claim": "Documents named machine interface/accessory functions; no connector cavity pin schedule or retrofit wiring is supplied."
+            },
+            {
+              "title": "Prime P12 exact mosfets.kicad_sch",
+              "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/mosfets.kicad_sch",
+              "claim": "Defines the Prime-side connector and conditioning circuit. Machine-side pairing is a new proposal and must be measured."
+            }
+          ]
+        },
+        {
+          "title": "Emergency stop \u00b7 independent hazardous-energy interruption",
+          "note": "Manual pp.19\u201320 names E-stop interface without contact numbers or safety topology. Trace fitted switch and contactor/drive-inhibit circuit before wiring. Board-only firmware stop cannot assure safe stop. No Prime GPIO is presented as the hazardous-energy cut-off.",
+          "nodes": [
+            {
+              "id": "stop",
+              "title": "Fitted E-stop switch \u00b7 contacts must be traced",
+              "column": 0,
+              "contacts": [
+                {
+                  "id": "a",
+                  "label": "Identify stop-chain contact A",
+                  "side": "right"
+                },
+                {
+                  "id": "b",
+                  "label": "Identify stop-chain contact B",
+                  "side": "right"
+                }
+              ]
+            },
+            {
+              "id": "safety",
+              "title": "Independent hardware stop chain \u00b7 retain or engineer",
+              "column": 2,
+              "contacts": [
+                {
+                  "id": "in",
+                  "label": "Identify monitored stop-loop input",
+                  "side": "left"
+                },
+                {
+                  "id": "return",
+                  "label": "Identify stop-loop return",
+                  "side": "left"
+                },
+                {
+                  "id": "power",
+                  "label": "Verified hazardous-energy isolation outputs",
+                  "side": "left"
+                }
+              ]
+            }
+          ],
+          "edges": [
+            {
+              "from": "stop.a",
+              "to": "safety.in",
+              "function": "Hardwired stop chain input",
+              "state": "open"
+            },
+            {
+              "from": "stop.b",
+              "to": "safety.return",
+              "function": "Hardwired stop chain return",
+              "state": "open"
+            }
+          ],
+          "original_panel_index": null,
+          "evidence_sources": [
+            {
+              "title": "3018-PROVer V2 manual V1.0 2022-09-06, English pp.15-21; motor table PDF p.73 \u00b7 English pp.19\u201320,26\u201328",
+              "url": "https://genmitsu.s3.us-east-1.amazonaws.com/101-60-3018PV2/3018-PROVer_V2_User_Manual_%E3%80%90EN%2BDE%2BJP_V1.0_20220906_1.pdf",
+              "claim": "Documents named machine interface/accessory functions; no connector cavity pin schedule or retrofit wiring is supplied."
+            },
+            {
+              "title": "Prime P12 exact inputs.kicad_sch",
+              "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/inputs.kicad_sch",
+              "claim": "Defines the Prime-side connector and conditioning circuit. Machine-side pairing is a new proposal and must be measured."
+            },
+            {
+              "title": "Smoothieware emergency-stop guidance",
+              "url": "https://smoothieware.org/emergencystop.html",
+              "claim": "Firmware-only emergency stop cannot provide a safe stopping guarantee; hardware must remove hazardous energy."
+            }
+          ]
+        },
+        {
+          "title": "Factory offline controller and MPG \u00b7 protocol is not a GPIO pinout",
+          "note": "Manual p.28 warns factory offline port is designed for its controller and must not connect other controllers. Keep factory offline controller/MPG disconnected from Prime until protocol, electrical levels and replacement firmware support are established. J30 debug UART is not an assumed factory pendant adapter.",
+          "nodes": [
+            {
+              "id": "prime",
+              "title": "Prime P12 \u00b7 no validated factory pendant interface",
+              "column": 0,
+              "contacts": [
+                {
+                  "id": "port",
+                  "label": "Compatible host interface \u00b7 unsupported factory protocol",
+                  "side": "right"
+                }
+              ]
+            },
+            {
+              "id": "offline",
+              "title": "Factory offline controller \u00b7 optional accessory",
+              "column": 2,
+              "contacts": [
+                {
+                  "id": "port",
+                  "label": "Factory-only interface \u00b7 connector unspecified",
+                  "side": "left"
+                }
+              ]
+            },
+            {
+              "id": "mpg",
+              "title": "Factory MPG/handwheel interface \u00b7 fitted status unresolved",
+              "column": 2,
+              "contacts": [
+                {
+                  "id": "port",
+                  "label": "MPG interface \u00b7 protocol unspecified",
+                  "side": "left"
+                }
+              ]
+            }
+          ],
+          "edges": [
+            {
+              "from": "prime.port",
+              "to": "offline.port",
+              "function": "Factory offline interface compatibility",
+              "state": "open"
+            },
+            {
+              "from": "prime.port",
+              "to": "mpg.port",
+              "function": "Factory MPG interface compatibility",
+              "state": "open"
+            }
+          ],
+          "original_panel_index": null,
+          "evidence_sources": [
+            {
+              "title": "3018-PROVer V2 manual V1.0 2022-09-06, English pp.15-21; motor table PDF p.73 \u00b7 English pp.19\u201320,26\u201328",
+              "url": "https://genmitsu.s3.us-east-1.amazonaws.com/101-60-3018PV2/3018-PROVer_V2_User_Manual_%E3%80%90EN%2BDE%2BJP_V1.0_20220906_1.pdf",
+              "claim": "Documents named machine interface/accessory functions; no connector cavity pin schedule or retrofit wiring is supplied."
+            },
+            {
+              "title": "Prime P12 exact inputs.kicad_sch",
+              "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/inputs.kicad_sch",
+              "claim": "Defines the Prime-side connector and conditioning circuit. Machine-side pairing is a new proposal and must be measured."
+            }
+          ]
+        }
+      ],
+      "controller_title": "Smoothieboard V2 Prime",
+      "selected_controller": "prime",
+      "classification_note": "Original motion-driver electronics are on the board being replaced. Use Prime integrated phase outputs directly to measured winding pairs; do not connect STEP/DIR signal outputs to motor windings. Confirm installed board, motor current and power rating from the cited machine source.",
+      "historical_architecture": {
+        "status": "Superseded architecture prose; retained verbatim. Core/external-driver alternatives here are older conditional options, not instructions for the selected current main diagram.",
+        "fields": {
+          "target": "V2 Prime is a plausible three-motor replacement if motor current and supply fit; V2 Core needs three external drivers. Replace the factory controller rather than reusing its driven motor outputs.",
+          "plan": "The drawing provides individual motor, command, power and peripheral conductors. Select one controller architecture from the target assessment; alternatives must not be wired at the same time. Retain only matching, measured machine harnesses and commission each circuit against its listed gate.",
+          "circuits": [
+            [
+              "Prime X/Y/Z motor outputs\nmatching current only",
+              "Integrated drivers\nverify board revision / ratings",
+              "X/Y/Z four-contact machine motor sockets",
+              "[GUESS] terminal order and motor phase pairing must be meter-verified"
+            ],
+            [
+              "Core P1 J5 pin 16 \u00b7 /STEP_A \u00b7 candidate X STEP",
+              "Select rated external driver; verify logic threshold, timing, power stage and reference",
+              "X external driver input; model/contact not identified STEP",
+              "[OPEN] No installed/matching external-driver input terminals or complete harness are established by the cited source."
+            ],
+            [
+              "Core P1 J5 pin 18 \u00b7 /DIR_A \u00b7 candidate X DIR",
+              "Select rated external driver; verify logic threshold, timing, power stage and reference",
+              "X external driver input; model/contact not identified DIR",
+              "[OPEN] No installed/matching external-driver input terminals or complete harness are established by the cited source."
+            ],
+            [
+              "Core P1 J5 pin 22 \u00b7 /STEP_B \u00b7 candidate Y STEP",
+              "Select rated external driver; verify logic threshold, timing, power stage and reference",
+              "Y external driver input; model/contact not identified STEP",
+              "[OPEN] No installed/matching external-driver input terminals or complete harness are established by the cited source."
+            ],
+            [
+              "Core P1 J5 pin 24 \u00b7 /DIR_B \u00b7 candidate Y DIR",
+              "Select rated external driver; verify logic threshold, timing, power stage and reference",
+              "Y external driver input; model/contact not identified DIR",
+              "[OPEN] No installed/matching external-driver input terminals or complete harness are established by the cited source."
+            ],
+            [
+              "Core P1 J5 pin 28 \u00b7 /STEP_C \u00b7 candidate Z STEP",
+              "Select rated external driver; verify logic threshold, timing, power stage and reference",
+              "Z external driver input; model/contact not identified STEP",
+              "[OPEN] No installed/matching external-driver input terminals or complete harness are established by the cited source."
+            ],
+            [
+              "Core P1 J5 pin 30 \u00b7 /DIR_C \u00b7 candidate Z DIR",
+              "Select rated external driver; verify logic threshold, timing, power stage and reference",
+              "Z external driver input; model/contact not identified DIR",
+              "[OPEN] No installed/matching external-driver input terminals or complete harness are established by the cited source."
+            ],
+            [
+              "Prime/Core endstop inputs",
+              "Conditioning per input type\nsource polarity unknown",
+              "X/Y/Z MIN/MAX 3-contact sockets",
+              "[GUESS] exact signal / supply / GND pin order not established"
+            ],
+            [
+              "Probe / E-stop / laser",
+              "Probe interface; independent E-stop; laser controller interface TBD",
+              "Machine 3-pin probe, 2-pin E-stop, optional laser socket",
+              "[OPEN] OPEN: function is identified, electrical levels and interlock schematic are not"
+            ]
+          ],
+          "pins": [
+            "Genmitsu factory motor outputs are TB67S109-driven phases; they must not connect to Core STEP/DIR. For Prime candidate X/Y/Z J5/J6/J7 phase output contacts are pin1 B2, pin2 B1, pin3 A2, pin4 A1; individual machine lead-to-coil assignment remains test-gated.",
+            "Core external driver signal tuples: X J5.16 STEP_A -> SN74LVC07A pin1 A1/pin2 Y1 -> DM320T P1 PUL; J5.18 DIR_A -> pin3 A2/pin4 Y2 -> P1 DIR; J5.20 GND -> pin7; J5.10 3V3 -> pin14 VCC. Y: J5.22/.24/.26 -> chip pins5/6 and 9/8; Z: J5.28/.30/.32 -> pins11/10 and 13/12. P1 OPTO is regulated +5V; P2 +Vdc/GND is motor supply; P2 A+/A-/B+/B- connect to measured coils.",
+            "Prime P12 endstop connector schedule: J24-J29, each pin2 GND, pin3 input, pin1 selector. Which is X/Y/Z MIN/MAX is unknown; selector voltage is deliberately not assigned.",
+            "Spindle peripheral: Cytron MD10C control terminals PWM, DIR, GND; stage terminals VM/GND and OUT A/B. Candidate Smoothie PWM J35.6 TIM1_CH1 and reference J35.10 GND need board/header/firmware verification. Machine spindle red/black leads are documented polarity, but actual mating cavity mapping remains unknown.",
+            "Smoothieboard V2 Core P1 J42 candidate supply inlet: pin1=/5VPORTIN, pin2=GND (exported board contacts). Verify exact board-revision supply specifications before connection; pin1 is not a 5V output."
+          ],
+          "parts": [
+            "One StepperOnline DM320T per Core-controlled axis, with a TI SN74LVC07A six-channel open-drain buffer proposal (three buffers, one per axis (only two of six channels loaded per device)); manual exposes P1 PUL/DIR/OPTO/ENA and P2 +Vdc/GND/A+/A-/B+/B-.",
+            "Cytron MD10C R3.0 candidate for the brushed 775 spindle; dedicated fused supply after measuring motor current. R3.0 manual supports PWM+DIR sign-magnitude with 3.3/5V logic; fixed DIR logic must be verified before tying.",
+            "Retain the physical E-stop/safety chain; identify machine switch/probe/laser peripherals before wiring."
+          ],
+          "instructions": [
+            "Core power candidate: route the selected, fused and voltage-verified board supply to Core P1 J42.1 (/5VPORTIN) and supply return to J42.2 (GND). Check exact Core revision input range/current and upstream fuse before energizing; do not mistake J42.1 for a 5V output.",
+            "Record board/motor/PSU revision and use continuity to identify each 4-wire motor coil pair before connection.",
+            "For Core, use SN74LVC07A channels as 3.3V-input open-drain sinks: for each axis use one SN74LVC07A (STEP A1\u2192Y1 pins1\u21922, DIR A2\u2192Y2 pins3\u21924); pins5/6,9/8,11/10,13/12 remain unused. Power each pin14 from Core J5.10 3V3, pin7 to one verified J5 return, and fit 100nF directly across each device. DM320T PUL/DIR inputs draw 7\u201316mA each: two loaded sinks total 14\u201332mA/device, below TI 100mA package GND-current absolute maximum; verify actual input-current setting and scope pulse timing.",
+            "Set motor current from the motor nameplate, fuse every stage, and test one unloaded axis at conservative speed.",
+            "Map each individual MIN and MAX switch to its own Prime input only after continuity and NO/NC checks; do not infer connector assignment from socket placement.",
+            "Test PWM into MD10C with spindle disconnected first; then test secured spindle at low duty/current. Prove E-stop removes hazardous energy independent of firmware."
+          ]
+        }
+      },
+      "conditional_complete_figures": [],
+      "conditional_source_figures": [
+        {
+          "id": "optional-laser-module-open-boundary",
+          "title": "Optional laser module \u00b7 command, returns and separate power boundary",
+          "panel_indices": [
+            13
+          ],
+          "status": "open-boundary",
+          "requires": "Only if the optional laser is fitted. Identify the exact driver and qualify command input, conditioning, independent inhibition and power ratings. This is an OPEN boundary reference, not a complete installation diagram."
+        }
+      ]
+    },
+    "retrofit-guides.json": {
+      "id": "mill-g2",
+      "title": "Genmitsu 3018-PROVer V2 retrofit",
+      "target": "V2 Prime is a plausible three-motor replacement if motor current and supply fit; V2 Core needs three external drivers. Replace the factory controller rather than reusing its driven motor outputs.",
+      "plan": "The drawing provides individual motor, command, power and peripheral conductors. Select one controller architecture from the target assessment; alternatives must not be wired at the same time. Retain only matching, measured machine harnesses and commission each circuit against its listed gate.",
+      "circuits": [
+        [
+          "Prime X/Y/Z motor outputs\nmatching current only",
+          "Integrated drivers\nverify board revision / ratings",
+          "X/Y/Z four-contact machine motor sockets",
+          "[GUESS] terminal order and motor phase pairing must be meter-verified"
+        ],
+        [
+          "Core P1 J5 pin 16 \u00b7 /STEP_A \u00b7 candidate X STEP",
+          "Select rated external driver; verify logic threshold, timing, power stage and reference",
+          "X external driver input; model/contact not identified STEP",
+          "[OPEN] No installed/matching external-driver input terminals or complete harness are established by the cited source."
+        ],
+        [
+          "Core P1 J5 pin 18 \u00b7 /DIR_A \u00b7 candidate X DIR",
+          "Select rated external driver; verify logic threshold, timing, power stage and reference",
+          "X external driver input; model/contact not identified DIR",
+          "[OPEN] No installed/matching external-driver input terminals or complete harness are established by the cited source."
+        ],
+        [
+          "Core P1 J5 pin 22 \u00b7 /STEP_B \u00b7 candidate Y STEP",
+          "Select rated external driver; verify logic threshold, timing, power stage and reference",
+          "Y external driver input; model/contact not identified STEP",
+          "[OPEN] No installed/matching external-driver input terminals or complete harness are established by the cited source."
+        ],
+        [
+          "Core P1 J5 pin 24 \u00b7 /DIR_B \u00b7 candidate Y DIR",
+          "Select rated external driver; verify logic threshold, timing, power stage and reference",
+          "Y external driver input; model/contact not identified DIR",
+          "[OPEN] No installed/matching external-driver input terminals or complete harness are established by the cited source."
+        ],
+        [
+          "Core P1 J5 pin 28 \u00b7 /STEP_C \u00b7 candidate Z STEP",
+          "Select rated external driver; verify logic threshold, timing, power stage and reference",
+          "Z external driver input; model/contact not identified STEP",
+          "[OPEN] No installed/matching external-driver input terminals or complete harness are established by the cited source."
+        ],
+        [
+          "Core P1 J5 pin 30 \u00b7 /DIR_C \u00b7 candidate Z DIR",
+          "Select rated external driver; verify logic threshold, timing, power stage and reference",
+          "Z external driver input; model/contact not identified DIR",
+          "[OPEN] No installed/matching external-driver input terminals or complete harness are established by the cited source."
+        ],
+        [
+          "Prime/Core endstop inputs",
+          "Conditioning per input type\nsource polarity unknown",
+          "X/Y/Z MIN/MAX 3-contact sockets",
+          "[GUESS] exact signal / supply / GND pin order not established"
+        ],
+        [
+          "Probe / E-stop / laser",
+          "Probe interface; independent E-stop; laser controller interface TBD",
+          "Machine 3-pin probe, 2-pin E-stop, optional laser socket",
+          "[OPEN] OPEN: function is identified, electrical levels and interlock schematic are not"
+        ]
+      ],
+      "pins": [
+        "Genmitsu factory motor outputs are TB67S109-driven phases; they must not connect to Core STEP/DIR. For Prime candidate X/Y/Z J5/J6/J7 phase output contacts are pin1 B2, pin2 B1, pin3 A2, pin4 A1; individual machine lead-to-coil assignment remains test-gated.",
+        "Core external driver signal tuples: X J5.16 STEP_A -> SN74LVC07A pin1 A1/pin2 Y1 -> DM320T P1 PUL; J5.18 DIR_A -> pin3 A2/pin4 Y2 -> P1 DIR; J5.20 GND -> pin7; J5.10 3V3 -> pin14 VCC. Y: J5.22/.24/.26 -> chip pins5/6 and 9/8; Z: J5.28/.30/.32 -> pins11/10 and 13/12. P1 OPTO is regulated +5V; P2 +Vdc/GND is motor supply; P2 A+/A-/B+/B- connect to measured coils.",
+        "Prime P12 endstop connector schedule: J24-J29, each pin2 GND, pin3 input, pin1 selector. Which is X/Y/Z MIN/MAX is unknown; selector voltage is deliberately not assigned.",
+        "Spindle peripheral: Cytron MD10C control terminals PWM, DIR, GND; stage terminals VM/GND and OUT A/B. Candidate Smoothie PWM J35.6 TIM1_CH1 and reference J35.10 GND need board/header/firmware verification. Machine spindle red/black leads are documented polarity, but actual mating cavity mapping remains unknown.",
+        "Smoothieboard V2 Core P1 J42 candidate supply inlet: pin1=/5VPORTIN, pin2=GND (exported board contacts). Verify exact board-revision supply specifications before connection; pin1 is not a 5V output."
+      ],
+      "sources": [
+        [
+          "3018-PROVer V2 manual V1.0 2022-09-06, English pp.15-21; motor table PDF p.73",
+          "https://genmitsu.s3.us-east-1.amazonaws.com/101-60-3018PV2/3018-PROVer_V2_User_Manual_%E3%80%90EN%2BDE%2BJP_V1.0_20220906_1.pdf"
+        ],
+        [
+          "SainSmart V2 specifications",
+          "https://genmitsu.com/products/3028-prover"
+        ],
+        [
+          "StepperOnline DM320T manufacturer manual",
+          "https://www.omc-stepperonline.com/download/DM320T_user_manual.pdf"
+        ],
+        [
+          "Texas Instruments SN74LVC07A datasheet, Rev W, open-drain logic and pinout",
+          "https://www.ti.com/lit/ds/symlink/sn74lvc07a.pdf"
+        ],
+        [
+          "Cytron MD10C R3.0 manufacturer specification",
+          "https://www.cytron.io/c-industry/p-10amp-5v-30v-dc-motor-driver"
+        ],
+        [
+          "Cytron MD10C R3.0 User Manual Rev3.0 V1.0 Aug 2018",
+          "https://www.robot-maker.com/shop/img/cms/348%20-%20Driver%20MD10C%20Cytron/MD10C%20Rev3-0%20Users%20Manual.pdf"
+        ],
+        [
+          "Texas Instruments SN74LVC07A datasheet Rev W",
+          "https://www.ti.com/lit/ds/symlink/sn74lvc07a.pdf"
+        ],
+        [
+          "StepperOnline DM320T user manual",
+          "https://www.omc-stepperonline.com/download/DM320T_user_manual.pdf"
+        ]
+      ],
+      "target_options": {
+        "smoothiebox": "Enclosure/carrier only; choose and wire the contained Core or Prime below after confirming its exact board and harness.",
+        "core": "Three external drivers are required. Candidate StepperOnline DM320T provides named PUL/DIR/OPTO and P2 A+/A-/B+/B- terminals; match motor current and verify Core logic interface.",
+        "prime": "Integrated X/Y/Z stepper outputs are plausible only if selected P11/P12 variant, motor current and power rating match. Output pins are winding phases, never STEP/DIR."
+      },
+      "parts": [
+        "One StepperOnline DM320T per Core-controlled axis, with a TI SN74LVC07A six-channel open-drain buffer proposal (three buffers, one per axis (only two of six channels loaded per device)); manual exposes P1 PUL/DIR/OPTO/ENA and P2 +Vdc/GND/A+/A-/B+/B-.",
+        "Cytron MD10C R3.0 candidate for the brushed 775 spindle; dedicated fused supply after measuring motor current. R3.0 manual supports PWM+DIR sign-magnitude with 3.3/5V logic; fixed DIR logic must be verified before tying.",
+        "Retain the physical E-stop/safety chain; identify machine switch/probe/laser peripherals before wiring."
+      ],
+      "instructions": [
+        "Core power candidate: route the selected, fused and voltage-verified board supply to Core P1 J42.1 (/5VPORTIN) and supply return to J42.2 (GND). Check exact Core revision input range/current and upstream fuse before energizing; do not mistake J42.1 for a 5V output.",
+        "Record board/motor/PSU revision and use continuity to identify each 4-wire motor coil pair before connection.",
+        "For Core, use SN74LVC07A channels as 3.3V-input open-drain sinks: for each axis use one SN74LVC07A (STEP A1\u2192Y1 pins1\u21922, DIR A2\u2192Y2 pins3\u21924); pins5/6,9/8,11/10,13/12 remain unused. Power each pin14 from Core J5.10 3V3, pin7 to one verified J5 return, and fit 100nF directly across each device. DM320T PUL/DIR inputs draw 7\u201316mA each: two loaded sinks total 14\u201332mA/device, below TI 100mA package GND-current absolute maximum; verify actual input-current setting and scope pulse timing.",
+        "Set motor current from the motor nameplate, fuse every stage, and test one unloaded axis at conservative speed.",
+        "Map each individual MIN and MAX switch to its own Prime input only after continuity and NO/NC checks; do not infer connector assignment from socket placement.",
+        "Test PWM into MD10C with spindle disconnected first; then test secured spindle at low duty/current. Prove E-stop removes hazardous energy independent of firmware."
+      ],
+      "wire_panels": [
+        {
+          "title": "Smoothieboard V2 Core supply inlet: P1 J42",
+          "nodes": [
+            {
+              "id": "g2_core_psu",
+              "title": "Fused regulated supply matched to Core revision",
+              "column": 0,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "+",
+                  "label": "regulated supply +",
+                  "side": "right"
+                },
+                {
+                  "id": "-",
+                  "label": "regulated supply return",
+                  "side": "right"
+                }
+              ]
+            },
+            {
+              "id": "g2_core_j42",
+              "title": "Smoothieboard V2 Core P1 J42",
+              "column": 2,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "1",
+                  "label": "J42.1 /5VPORTIN (board supply input)",
+                  "side": "left"
+                },
+                {
+                  "id": "2",
+                  "label": "J42.2 GND",
+                  "side": "left"
+                }
+              ]
+            }
+          ],
+          "edges": [
+            {
+              "from": "g2_core_psu.+",
+              "to": "g2_core_j42.1",
+              "state": "guess",
+              "function": "supply positive into Core power input",
+              "check": "Check exact Core revision supply-voltage/current specifications and polarity; fuse upstream; do not treat /5VPORTIN as an output."
+            },
+            {
+              "from": "g2_core_psu.-",
+              "to": "g2_core_j42.2",
+              "state": "guess",
+              "function": "supply return",
+              "check": "Verify J42.2 return and protective-earth arrangement for the complete machine."
+            }
+          ],
+          "note": "Connector nets are from the exported Core P1 PCB contacts. Supply voltage limits and machine PSU suitability must be checked against the actual board revision before connection."
+        },
+        {
+          "title": "X motor: integrated Prime phase outputs",
+          "nodes": [
+            {
+              "id": "g2_x_board",
+              "title": "V2 Prime P11 J5",
+              "column": 0,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "1",
+                  "label": "J5.1 \u00b7 B2",
+                  "side": "right"
+                },
+                {
+                  "id": "2",
+                  "label": "J5.2 \u00b7 B1",
+                  "side": "right"
+                },
+                {
+                  "id": "3",
+                  "label": "J5.3 \u00b7 A2",
+                  "side": "right"
+                },
+                {
+                  "id": "4",
+                  "label": "J5.4 \u00b7 A1",
+                  "side": "right"
+                }
+              ]
+            },
+            {
+              "id": "g2_x_machine",
+              "title": "X motor harness (cavities unverified)",
+              "column": 2,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "1",
+                  "label": "New measured winding lead B2",
+                  "side": "left"
+                },
+                {
+                  "id": "2",
+                  "label": "New measured winding lead B1",
+                  "side": "left"
+                },
+                {
+                  "id": "3",
+                  "label": "New measured winding lead A2",
+                  "side": "left"
+                },
+                {
+                  "id": "4",
+                  "label": "New measured winding lead A1",
+                  "side": "left"
+                }
+              ]
+            }
+          ],
+          "edges": [
+            {
+              "from": "g2_x_board.1",
+              "to": "g2_x_machine.1",
+              "state": "guess",
+              "function": "candidate X winding hookup",
+              "check": "Dotted proposed cavity-to-phase map only; inspect Prime revision and meter both motor coil pairs before connecting. Set driver current to actual motor rating."
+            },
+            {
+              "from": "g2_x_board.2",
+              "to": "g2_x_machine.2",
+              "state": "guess",
+              "function": "candidate X winding hookup",
+              "check": "Dotted proposed cavity-to-phase map only; inspect Prime revision and meter both motor coil pairs before connecting. Set driver current to actual motor rating."
+            },
+            {
+              "from": "g2_x_board.3",
+              "to": "g2_x_machine.3",
+              "state": "guess",
+              "function": "candidate X winding hookup",
+              "check": "Dotted proposed cavity-to-phase map only; inspect Prime revision and meter both motor coil pairs before connecting. Set driver current to actual motor rating."
+            },
+            {
+              "from": "g2_x_board.4",
+              "to": "g2_x_machine.4",
+              "state": "guess",
+              "function": "candidate X winding hookup",
+              "check": "Dotted proposed cavity-to-phase map only; inspect Prime revision and meter both motor coil pairs before connecting. Set driver current to actual motor rating."
+            }
+          ],
+          "note": "Source establishes Prime output net names. Machine lead order and phase pairing are unknown; identify coils with power isolated."
+        },
+        {
+          "title": "Y motor: integrated Prime phase outputs",
+          "nodes": [
+            {
+              "id": "g2_y_board",
+              "title": "V2 Prime P11 J6",
+              "column": 0,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "1",
+                  "label": "J6.1 \u00b7 B2",
+                  "side": "right"
+                },
+                {
+                  "id": "2",
+                  "label": "J6.2 \u00b7 B1",
+                  "side": "right"
+                },
+                {
+                  "id": "3",
+                  "label": "J6.3 \u00b7 A2",
+                  "side": "right"
+                },
+                {
+                  "id": "4",
+                  "label": "J6.4 \u00b7 A1",
+                  "side": "right"
+                }
+              ]
+            },
+            {
+              "id": "g2_y_machine",
+              "title": "Y motor harness (cavities unverified)",
+              "column": 2,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "1",
+                  "label": "New measured winding lead B2",
+                  "side": "left"
+                },
+                {
+                  "id": "2",
+                  "label": "New measured winding lead B1",
+                  "side": "left"
+                },
+                {
+                  "id": "3",
+                  "label": "New measured winding lead A2",
+                  "side": "left"
+                },
+                {
+                  "id": "4",
+                  "label": "New measured winding lead A1",
+                  "side": "left"
+                }
+              ]
+            }
+          ],
+          "edges": [
+            {
+              "from": "g2_y_board.1",
+              "to": "g2_y_machine.1",
+              "state": "guess",
+              "function": "candidate Y winding hookup",
+              "check": "Dotted proposed cavity-to-phase map only; inspect Prime revision and meter both motor coil pairs before connecting. Set driver current to actual motor rating."
+            },
+            {
+              "from": "g2_y_board.2",
+              "to": "g2_y_machine.2",
+              "state": "guess",
+              "function": "candidate Y winding hookup",
+              "check": "Dotted proposed cavity-to-phase map only; inspect Prime revision and meter both motor coil pairs before connecting. Set driver current to actual motor rating."
+            },
+            {
+              "from": "g2_y_board.3",
+              "to": "g2_y_machine.3",
+              "state": "guess",
+              "function": "candidate Y winding hookup",
+              "check": "Dotted proposed cavity-to-phase map only; inspect Prime revision and meter both motor coil pairs before connecting. Set driver current to actual motor rating."
+            },
+            {
+              "from": "g2_y_board.4",
+              "to": "g2_y_machine.4",
+              "state": "guess",
+              "function": "candidate Y winding hookup",
+              "check": "Dotted proposed cavity-to-phase map only; inspect Prime revision and meter both motor coil pairs before connecting. Set driver current to actual motor rating."
+            }
+          ],
+          "note": "Source establishes Prime output net names. Machine lead order and phase pairing are unknown; identify coils with power isolated."
+        },
+        {
+          "title": "Z motor: integrated Prime phase outputs",
+          "nodes": [
+            {
+              "id": "g2_z_board",
+              "title": "V2 Prime P11 J7",
+              "column": 0,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "1",
+                  "label": "J7.1 \u00b7 B2",
+                  "side": "right"
+                },
+                {
+                  "id": "2",
+                  "label": "J7.2 \u00b7 B1",
+                  "side": "right"
+                },
+                {
+                  "id": "3",
+                  "label": "J7.3 \u00b7 A2",
+                  "side": "right"
+                },
+                {
+                  "id": "4",
+                  "label": "J7.4 \u00b7 A1",
+                  "side": "right"
+                }
+              ]
+            },
+            {
+              "id": "g2_z_machine",
+              "title": "Z motor harness (cavities unverified)",
+              "column": 2,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "1",
+                  "label": "New measured winding lead B2",
+                  "side": "left"
+                },
+                {
+                  "id": "2",
+                  "label": "New measured winding lead B1",
+                  "side": "left"
+                },
+                {
+                  "id": "3",
+                  "label": "New measured winding lead A2",
+                  "side": "left"
+                },
+                {
+                  "id": "4",
+                  "label": "New measured winding lead A1",
+                  "side": "left"
+                }
+              ]
+            }
+          ],
+          "edges": [
+            {
+              "from": "g2_z_board.1",
+              "to": "g2_z_machine.1",
+              "state": "guess",
+              "function": "candidate Z winding hookup",
+              "check": "Dotted proposed cavity-to-phase map only; inspect Prime revision and meter both motor coil pairs before connecting. Set driver current to actual motor rating."
+            },
+            {
+              "from": "g2_z_board.2",
+              "to": "g2_z_machine.2",
+              "state": "guess",
+              "function": "candidate Z winding hookup",
+              "check": "Dotted proposed cavity-to-phase map only; inspect Prime revision and meter both motor coil pairs before connecting. Set driver current to actual motor rating."
+            },
+            {
+              "from": "g2_z_board.3",
+              "to": "g2_z_machine.3",
+              "state": "guess",
+              "function": "candidate Z winding hookup",
+              "check": "Dotted proposed cavity-to-phase map only; inspect Prime revision and meter both motor coil pairs before connecting. Set driver current to actual motor rating."
+            },
+            {
+              "from": "g2_z_board.4",
+              "to": "g2_z_machine.4",
+              "state": "guess",
+              "function": "candidate Z winding hookup",
+              "check": "Dotted proposed cavity-to-phase map only; inspect Prime revision and meter both motor coil pairs before connecting. Set driver current to actual motor rating."
+            }
+          ],
+          "note": "Source establishes Prime output net names. Machine lead order and phase pairing are unknown; identify coils with power isolated."
+        },
+        {
+          "title": "Core X external driver: SN74LVC07A \u2192 DM320T PUL/DIR",
+          "nodes": [
+            {
+              "id": "g2_core_x",
+              "title": "Smoothieboard V2 Core P1 J5",
+              "column": 0,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "16",
+                  "label": "J5.16 STEP_A",
+                  "side": "right"
+                },
+                {
+                  "id": "18",
+                  "label": "J5.18 DIR_A",
+                  "side": "right"
+                },
+                {
+                  "id": "20",
+                  "label": "J5.20 GND",
+                  "side": "right"
+                },
+                {
+                  "id": "3V3",
+                  "label": "J5.10 3V3",
+                  "side": "right"
+                }
+              ]
+            },
+            {
+              "id": "g2_lvc07_x",
+              "title": "TI SN74LVC07A (14-pin)",
+              "column": 1,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "A1",
+                  "label": "pin1 A1",
+                  "side": "left"
+                },
+                {
+                  "id": "A2",
+                  "label": "pin3 A2",
+                  "side": "left"
+                },
+                {
+                  "id": "GND",
+                  "label": "pin7 GND",
+                  "side": "left"
+                },
+                {
+                  "id": "VCC",
+                  "label": "pin14 VCC",
+                  "side": "left"
+                },
+                {
+                  "id": "Y1",
+                  "label": "pin2 Y1",
+                  "side": "right"
+                },
+                {
+                  "id": "Y2",
+                  "label": "pin4 Y2",
+                  "side": "right"
+                }
+              ]
+            },
+            {
+              "id": "g2_dm320t_x",
+              "title": "StepperOnline DM320T P1",
+              "column": 2,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "PUL",
+                  "label": "PUL",
+                  "side": "left"
+                },
+                {
+                  "id": "DIR",
+                  "label": "DIR",
+                  "side": "left"
+                },
+                {
+                  "id": "OPTO",
+                  "label": "OPTO +5V",
+                  "side": "left"
+                },
+                {
+                  "id": "ENA",
+                  "label": "P1 ENA (NC by default; enabled)",
+                  "side": "right"
+                }
+              ]
+            }
+          ],
+          "edges": [
+            {
+              "from": "g2_core_x.16",
+              "to": "g2_lvc07_x.A1",
+              "state": "guess",
+              "function": "X STEP into open-drain buffer",
+              "check": "Confirm the Core 3.3V signal and pulse timing at selected IC input."
+            },
+            {
+              "from": "g2_lvc07_x.Y1",
+              "to": "g2_dm320t_x.PUL",
+              "state": "guess",
+              "function": "X step sink to DM320T PUL",
+              "check": "Verify 7-16mA input current and pulse width >=7.5us."
+            },
+            {
+              "from": "g2_core_x.18",
+              "to": "g2_lvc07_x.A2",
+              "state": "guess",
+              "function": "X DIR into open-drain buffer",
+              "check": "Confirm direction polarity/setup at actual drive."
+            },
+            {
+              "from": "g2_lvc07_x.Y2",
+              "to": "g2_dm320t_x.DIR",
+              "state": "guess",
+              "function": "X direction sink to DM320T DIR",
+              "check": "DM320T datasheet minimum DIR setup is 7.5us."
+            },
+            {
+              "from": "g2_core_x.20",
+              "to": "g2_lvc07_x.GND",
+              "state": "guess",
+              "function": "controller signal return",
+              "check": "Use source-derived channel return."
+            },
+            {
+              "from": "g2_core_x.3V3",
+              "to": "g2_lvc07_x.VCC",
+              "state": "guess",
+              "function": "SN74LVC07A supply",
+              "check": "Use Core 3.3V only if its header current limit and IC bypassing are satisfied."
+            }
+          ],
+          "note": "One SN74LVC07A per axis; DM320T P1 optocouplers are supplied by the +5V node in the dedicated opto panel. Each loaded sink draws 7\u201316mA; only two of six gates are used on this IC (14\u201332mA total estimated, never assume nameplate motor colour). Connect 100nF between pin14 VCC and pin7 GND at the IC. Verify Core J5 signal/return contacts and scope signals before driver enable. DM320T P1 also has ENA; manufacturer manual states it is enabled by default when left unconnected. It is intentionally open here; E-stop must remove hazardous power independently."
+        },
+        {
+          "title": "X DM320T P2 motor phase outputs",
+          "nodes": [
+            {
+              "id": "g2_phase_x",
+              "title": "StepperOnline DM320T P2",
+              "column": 0,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "A+",
+                  "label": "A+",
+                  "side": "right"
+                },
+                {
+                  "id": "A-",
+                  "label": "A-",
+                  "side": "right"
+                },
+                {
+                  "id": "B+",
+                  "label": "B+",
+                  "side": "right"
+                },
+                {
+                  "id": "B-",
+                  "label": "B-",
+                  "side": "right"
+                }
+              ]
+            },
+            {
+              "id": "g2_motor_x",
+              "title": "X machine motor harness (cavities unknown)",
+              "column": 2,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "1",
+                  "label": "motor lead 1",
+                  "side": "left"
+                },
+                {
+                  "id": "2",
+                  "label": "motor lead 2",
+                  "side": "left"
+                },
+                {
+                  "id": "3",
+                  "label": "motor lead 3",
+                  "side": "left"
+                },
+                {
+                  "id": "4",
+                  "label": "motor lead 4",
+                  "side": "left"
+                }
+              ]
+            }
+          ],
+          "edges": [
+            {
+              "from": "g2_phase_x.A+",
+              "to": "g2_motor_x.1",
+              "state": "guess",
+              "function": "X phase A+",
+              "check": "Identify winding and connector cavity with power isolated."
+            },
+            {
+              "from": "g2_phase_x.A-",
+              "to": "g2_motor_x.2",
+              "state": "guess",
+              "function": "X phase A-",
+              "check": "Identify winding and connector cavity with power isolated."
+            },
+            {
+              "from": "g2_phase_x.B+",
+              "to": "g2_motor_x.3",
+              "state": "guess",
+              "function": "X phase B+",
+              "check": "Identify second winding and connector cavity."
+            },
+            {
+              "from": "g2_phase_x.B-",
+              "to": "g2_motor_x.4",
+              "state": "guess",
+              "function": "X phase B-",
+              "check": "Identify second winding and connector cavity."
+            }
+          ],
+          "note": "DM320T P2 A+/A-/B+/B- are motor phase outputs. Identify machine winding pairs with continuity and never connect these terminals to controller STEP/DIR."
+        },
+        {
+          "title": "Core Y external driver: SN74LVC07A \u2192 DM320T PUL/DIR",
+          "nodes": [
+            {
+              "id": "g2_core_y",
+              "title": "Smoothieboard V2 Core P1 J5",
+              "column": 0,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "22",
+                  "label": "J5.22 STEP_B",
+                  "side": "right"
+                },
+                {
+                  "id": "24",
+                  "label": "J5.24 DIR_B",
+                  "side": "right"
+                },
+                {
+                  "id": "26",
+                  "label": "J5.26 GND",
+                  "side": "right"
+                },
+                {
+                  "id": "3V3",
+                  "label": "J5.10 3V3",
+                  "side": "right"
+                }
+              ]
+            },
+            {
+              "id": "g2_lvc07_y",
+              "title": "TI SN74LVC07A (14-pin)",
+              "column": 1,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "A3",
+                  "label": "pin5 A3",
+                  "side": "left"
+                },
+                {
+                  "id": "A4",
+                  "label": "pin9 A4",
+                  "side": "left"
+                },
+                {
+                  "id": "GND",
+                  "label": "pin7 GND",
+                  "side": "left"
+                },
+                {
+                  "id": "VCC",
+                  "label": "pin14 VCC",
+                  "side": "left"
+                },
+                {
+                  "id": "Y3",
+                  "label": "pin6 Y3",
+                  "side": "right"
+                },
+                {
+                  "id": "Y4",
+                  "label": "pin8 Y4",
+                  "side": "right"
+                }
+              ]
+            },
+            {
+              "id": "g2_dm320t_y",
+              "title": "StepperOnline DM320T P1",
+              "column": 2,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "PUL",
+                  "label": "PUL",
+                  "side": "left"
+                },
+                {
+                  "id": "DIR",
+                  "label": "DIR",
+                  "side": "left"
+                },
+                {
+                  "id": "OPTO",
+                  "label": "OPTO +5V",
+                  "side": "left"
+                },
+                {
+                  "id": "ENA",
+                  "label": "P1 ENA (NC by default; enabled)",
+                  "side": "right"
+                }
+              ]
+            }
+          ],
+          "edges": [
+            {
+              "from": "g2_core_y.22",
+              "to": "g2_lvc07_y.A3",
+              "state": "guess",
+              "function": "Y STEP into open-drain buffer",
+              "check": "Confirm the Core 3.3V signal and pulse timing at selected IC input."
+            },
+            {
+              "from": "g2_lvc07_y.Y3",
+              "to": "g2_dm320t_y.PUL",
+              "state": "guess",
+              "function": "Y step sink to DM320T PUL",
+              "check": "Verify 7-16mA input current and pulse width >=7.5us."
+            },
+            {
+              "from": "g2_core_y.24",
+              "to": "g2_lvc07_y.A4",
+              "state": "guess",
+              "function": "Y DIR into open-drain buffer",
+              "check": "Confirm direction polarity/setup at actual drive."
+            },
+            {
+              "from": "g2_lvc07_y.Y4",
+              "to": "g2_dm320t_y.DIR",
+              "state": "guess",
+              "function": "Y direction sink to DM320T DIR",
+              "check": "DM320T datasheet minimum DIR setup is 7.5us."
+            },
+            {
+              "from": "g2_core_y.26",
+              "to": "g2_lvc07_y.GND",
+              "state": "guess",
+              "function": "controller signal return",
+              "check": "Use source-derived channel return."
+            },
+            {
+              "from": "g2_core_y.3V3",
+              "to": "g2_lvc07_y.VCC",
+              "state": "guess",
+              "function": "SN74LVC07A supply",
+              "check": "Use Core 3.3V only if its header current limit and IC bypassing are satisfied."
+            }
+          ],
+          "note": "One SN74LVC07A per axis; DM320T P1 optocouplers are supplied by the +5V node in the dedicated opto panel. Each loaded sink draws 7\u201316mA; only two of six gates are used on this IC (14\u201332mA total estimated, never assume nameplate motor colour). Connect 100nF between pin14 VCC and pin7 GND at the IC. Verify Core J5 signal/return contacts and scope signals before driver enable. DM320T P1 also has ENA; manufacturer manual states it is enabled by default when left unconnected. It is intentionally open here; E-stop must remove hazardous power independently."
+        },
+        {
+          "title": "Y DM320T P2 motor phase outputs",
+          "nodes": [
+            {
+              "id": "g2_phase_y",
+              "title": "StepperOnline DM320T P2",
+              "column": 0,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "A+",
+                  "label": "A+",
+                  "side": "right"
+                },
+                {
+                  "id": "A-",
+                  "label": "A-",
+                  "side": "right"
+                },
+                {
+                  "id": "B+",
+                  "label": "B+",
+                  "side": "right"
+                },
+                {
+                  "id": "B-",
+                  "label": "B-",
+                  "side": "right"
+                }
+              ]
+            },
+            {
+              "id": "g2_motor_y",
+              "title": "Y machine motor harness (cavities unknown)",
+              "column": 2,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "1",
+                  "label": "motor lead 1",
+                  "side": "left"
+                },
+                {
+                  "id": "2",
+                  "label": "motor lead 2",
+                  "side": "left"
+                },
+                {
+                  "id": "3",
+                  "label": "motor lead 3",
+                  "side": "left"
+                },
+                {
+                  "id": "4",
+                  "label": "motor lead 4",
+                  "side": "left"
+                }
+              ]
+            }
+          ],
+          "edges": [
+            {
+              "from": "g2_phase_y.A+",
+              "to": "g2_motor_y.1",
+              "state": "guess",
+              "function": "Y phase A+",
+              "check": "Identify winding and connector cavity with power isolated."
+            },
+            {
+              "from": "g2_phase_y.A-",
+              "to": "g2_motor_y.2",
+              "state": "guess",
+              "function": "Y phase A-",
+              "check": "Identify winding and connector cavity with power isolated."
+            },
+            {
+              "from": "g2_phase_y.B+",
+              "to": "g2_motor_y.3",
+              "state": "guess",
+              "function": "Y phase B+",
+              "check": "Identify second winding and connector cavity."
+            },
+            {
+              "from": "g2_phase_y.B-",
+              "to": "g2_motor_y.4",
+              "state": "guess",
+              "function": "Y phase B-",
+              "check": "Identify second winding and connector cavity."
+            }
+          ],
+          "note": "DM320T P2 A+/A-/B+/B- are motor phase outputs. Identify machine winding pairs with continuity and never connect these terminals to controller STEP/DIR."
+        },
+        {
+          "title": "Core Z external driver: SN74LVC07A \u2192 DM320T PUL/DIR",
+          "nodes": [
+            {
+              "id": "g2_core_z",
+              "title": "Smoothieboard V2 Core P1 J5",
+              "column": 0,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "28",
+                  "label": "J5.28 STEP_C",
+                  "side": "right"
+                },
+                {
+                  "id": "30",
+                  "label": "J5.30 DIR_C",
+                  "side": "right"
+                },
+                {
+                  "id": "32",
+                  "label": "J5.32 GND",
+                  "side": "right"
+                },
+                {
+                  "id": "3V3",
+                  "label": "J5.10 3V3",
+                  "side": "right"
+                }
+              ]
+            },
+            {
+              "id": "g2_lvc07_z",
+              "title": "TI SN74LVC07A (14-pin)",
+              "column": 1,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "A5",
+                  "label": "pin11 A5",
+                  "side": "left"
+                },
+                {
+                  "id": "A6",
+                  "label": "pin13 A6",
+                  "side": "left"
+                },
+                {
+                  "id": "GND",
+                  "label": "pin7 GND",
+                  "side": "left"
+                },
+                {
+                  "id": "VCC",
+                  "label": "pin14 VCC",
+                  "side": "left"
+                },
+                {
+                  "id": "Y5",
+                  "label": "pin10 Y5",
+                  "side": "right"
+                },
+                {
+                  "id": "Y6",
+                  "label": "pin12 Y6",
+                  "side": "right"
+                }
+              ]
+            },
+            {
+              "id": "g2_dm320t_z",
+              "title": "StepperOnline DM320T P1",
+              "column": 2,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "PUL",
+                  "label": "PUL",
+                  "side": "left"
+                },
+                {
+                  "id": "DIR",
+                  "label": "DIR",
+                  "side": "left"
+                },
+                {
+                  "id": "OPTO",
+                  "label": "OPTO +5V",
+                  "side": "left"
+                },
+                {
+                  "id": "ENA",
+                  "label": "P1 ENA (NC by default; enabled)",
+                  "side": "right"
+                }
+              ]
+            }
+          ],
+          "edges": [
+            {
+              "from": "g2_core_z.28",
+              "to": "g2_lvc07_z.A5",
+              "state": "guess",
+              "function": "Z STEP into open-drain buffer",
+              "check": "Confirm the Core 3.3V signal and pulse timing at selected IC input."
+            },
+            {
+              "from": "g2_lvc07_z.Y5",
+              "to": "g2_dm320t_z.PUL",
+              "state": "guess",
+              "function": "Z step sink to DM320T PUL",
+              "check": "Verify 7-16mA input current and pulse width >=7.5us."
+            },
+            {
+              "from": "g2_core_z.30",
+              "to": "g2_lvc07_z.A6",
+              "state": "guess",
+              "function": "Z DIR into open-drain buffer",
+              "check": "Confirm direction polarity/setup at actual drive."
+            },
+            {
+              "from": "g2_lvc07_z.Y6",
+              "to": "g2_dm320t_z.DIR",
+              "state": "guess",
+              "function": "Z direction sink to DM320T DIR",
+              "check": "DM320T datasheet minimum DIR setup is 7.5us."
+            },
+            {
+              "from": "g2_core_z.32",
+              "to": "g2_lvc07_z.GND",
+              "state": "guess",
+              "function": "controller signal return",
+              "check": "Use source-derived channel return."
+            },
+            {
+              "from": "g2_core_z.3V3",
+              "to": "g2_lvc07_z.VCC",
+              "state": "guess",
+              "function": "SN74LVC07A supply",
+              "check": "Use Core 3.3V only if its header current limit and IC bypassing are satisfied."
+            }
+          ],
+          "note": "One SN74LVC07A per axis; DM320T P1 optocouplers are supplied by the +5V node in the dedicated opto panel. Each loaded sink draws 7\u201316mA; only two of six gates are used on this IC (14\u201332mA total estimated, never assume nameplate motor colour). Connect 100nF between pin14 VCC and pin7 GND at the IC. Verify Core J5 signal/return contacts and scope signals before driver enable. DM320T P1 also has ENA; manufacturer manual states it is enabled by default when left unconnected. It is intentionally open here; E-stop must remove hazardous power independently."
+        },
+        {
+          "title": "Z DM320T P2 motor phase outputs",
+          "nodes": [
+            {
+              "id": "g2_phase_z",
+              "title": "StepperOnline DM320T P2",
+              "column": 0,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "A+",
+                  "label": "A+",
+                  "side": "right"
+                },
+                {
+                  "id": "A-",
+                  "label": "A-",
+                  "side": "right"
+                },
+                {
+                  "id": "B+",
+                  "label": "B+",
+                  "side": "right"
+                },
+                {
+                  "id": "B-",
+                  "label": "B-",
+                  "side": "right"
+                }
+              ]
+            },
+            {
+              "id": "g2_motor_z",
+              "title": "Z machine motor harness (cavities unknown)",
+              "column": 2,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "1",
+                  "label": "motor lead 1",
+                  "side": "left"
+                },
+                {
+                  "id": "2",
+                  "label": "motor lead 2",
+                  "side": "left"
+                },
+                {
+                  "id": "3",
+                  "label": "motor lead 3",
+                  "side": "left"
+                },
+                {
+                  "id": "4",
+                  "label": "motor lead 4",
+                  "side": "left"
+                }
+              ]
+            }
+          ],
+          "edges": [
+            {
+              "from": "g2_phase_z.A+",
+              "to": "g2_motor_z.1",
+              "state": "guess",
+              "function": "Z phase A+",
+              "check": "Identify winding and connector cavity with power isolated."
+            },
+            {
+              "from": "g2_phase_z.A-",
+              "to": "g2_motor_z.2",
+              "state": "guess",
+              "function": "Z phase A-",
+              "check": "Identify winding and connector cavity with power isolated."
+            },
+            {
+              "from": "g2_phase_z.B+",
+              "to": "g2_motor_z.3",
+              "state": "guess",
+              "function": "Z phase B+",
+              "check": "Identify second winding and connector cavity."
+            },
+            {
+              "from": "g2_phase_z.B-",
+              "to": "g2_motor_z.4",
+              "state": "guess",
+              "function": "Z phase B-",
+              "check": "Identify second winding and connector cavity."
+            }
+          ],
+          "note": "DM320T P2 A+/A-/B+/B- are motor phase outputs. Identify machine winding pairs with continuity and never connect these terminals to controller STEP/DIR."
+        },
+        {
+          "title": "Core external driver power: three fused DM320T P2 branches",
+          "nodes": [
+            {
+              "id": "g2_motor_psu",
+              "title": "Fused external 10-30VDC motor supply",
+              "column": 0,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "+",
+                  "label": "V+",
+                  "side": "right"
+                },
+                {
+                  "id": "-",
+                  "label": "0V",
+                  "side": "right"
+                }
+              ]
+            },
+            {
+              "id": "g2_x_p2",
+              "title": "DM320T X P2",
+              "column": 1,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "+Vdc",
+                  "label": "X driver P2 +Vdc",
+                  "side": "left"
+                },
+                {
+                  "id": "GND",
+                  "label": "X driver P2 GND",
+                  "side": "left"
+                }
+              ]
+            },
+            {
+              "id": "g2_y_p2",
+              "title": "DM320T Y P2",
+              "column": 1,
+              "offset": 150,
+              "contacts": [
+                {
+                  "id": "+Vdc",
+                  "label": "Y driver P2 +Vdc",
+                  "side": "left"
+                },
+                {
+                  "id": "GND",
+                  "label": "Y driver P2 GND",
+                  "side": "left"
+                }
+              ]
+            },
+            {
+              "id": "g2_z_p2",
+              "title": "DM320T Z P2",
+              "column": 1,
+              "offset": 300,
+              "contacts": [
+                {
+                  "id": "+Vdc",
+                  "label": "Z driver P2 +Vdc",
+                  "side": "left"
+                },
+                {
+                  "id": "GND",
+                  "label": "Z driver P2 GND",
+                  "side": "left"
+                }
+              ]
+            }
+          ],
+          "edges": [
+            {
+              "from": "g2_motor_psu.+",
+              "to": "g2_x_p2.+Vdc",
+              "state": "guess",
+              "function": "X driver supply",
+              "check": "Use separately fused star branch sized for motor/driver; no reuse of factory 24V/4A adapter without total-load check."
+            },
+            {
+              "from": "g2_motor_psu.-",
+              "to": "g2_x_p2.GND",
+              "state": "guess",
+              "function": "X driver return",
+              "check": "Route each branch directly to rated supply distribution."
+            },
+            {
+              "from": "g2_motor_psu.+",
+              "to": "g2_y_p2.+Vdc",
+              "state": "guess",
+              "function": "Y driver supply",
+              "check": "Use separately fused star branch sized for motor/driver; no reuse of factory 24V/4A adapter without total-load check."
+            },
+            {
+              "from": "g2_motor_psu.-",
+              "to": "g2_y_p2.GND",
+              "state": "guess",
+              "function": "Y driver return",
+              "check": "Route each branch directly to rated supply distribution."
+            },
+            {
+              "from": "g2_motor_psu.+",
+              "to": "g2_z_p2.+Vdc",
+              "state": "guess",
+              "function": "Z driver supply",
+              "check": "Use separately fused star branch sized for motor/driver; no reuse of factory 24V/4A adapter without total-load check."
+            },
+            {
+              "from": "g2_motor_psu.-",
+              "to": "g2_z_p2.GND",
+              "state": "guess",
+              "function": "Z driver return",
+              "check": "Route each branch directly to rated supply distribution."
+            }
+          ],
+          "note": "DM320T P2 +Vdc/GND is the 10-30V motor-power input. Connect each drive as a separately fused branch. Select supply capacity and current setting only after measuring actual motor and full system loads."
+        },
+        {
+          "title": "Core external-driver P1 opto supplies and signal return",
+          "nodes": [
+            {
+              "id": "g2_opto_supply",
+              "title": "Regulated external +5V opto supply",
+              "column": 0,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "+5",
+                  "label": "+5V",
+                  "side": "right"
+                },
+                {
+                  "id": "GND",
+                  "label": "0V",
+                  "side": "right"
+                }
+              ]
+            },
+            {
+              "id": "g2_opto_ref",
+              "title": "Core return / open-drain IC ground",
+              "column": 1,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "X",
+                  "label": "X buffer GND",
+                  "side": "left"
+                },
+                {
+                  "id": "Y",
+                  "label": "Y buffer GND",
+                  "side": "left"
+                },
+                {
+                  "id": "Z",
+                  "label": "Z buffer GND",
+                  "side": "left"
+                },
+                {
+                  "id": "Core",
+                  "label": "Core signal return",
+                  "side": "right"
+                }
+              ]
+            },
+            {
+              "id": "g2_opto_drivers",
+              "title": "DM320T P1 optocoupler supplies",
+              "column": 2,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "X",
+                  "label": "X P1 OPTO",
+                  "side": "left"
+                },
+                {
+                  "id": "Y",
+                  "label": "Y P1 OPTO",
+                  "side": "left"
+                },
+                {
+                  "id": "Z",
+                  "label": "Z P1 OPTO",
+                  "side": "left"
+                }
+              ]
+            }
+          ],
+          "edges": [
+            {
+              "from": "g2_opto_supply.+5",
+              "to": "g2_opto_drivers.X",
+              "state": "guess",
+              "function": "regulated opto LED supply",
+              "check": "Use 5V only; DM320T P1 OPTO is optocoupler supply, not a ground."
+            },
+            {
+              "from": "g2_opto_supply.+5",
+              "to": "g2_opto_drivers.Y",
+              "state": "guess",
+              "function": "regulated opto LED supply",
+              "check": "Verify regulator current capacity for all three drivers."
+            },
+            {
+              "from": "g2_opto_supply.+5",
+              "to": "g2_opto_drivers.Z",
+              "state": "guess",
+              "function": "regulated opto LED supply",
+              "check": "Verify regulator current capacity for all three drivers."
+            },
+            {
+              "from": "g2_opto_supply.GND",
+              "to": "g2_opto_ref.Core",
+              "state": "guess",
+              "function": "logic supply return",
+              "check": "This common return completes OPTO-to-open-drain input current; validate wiring/noise strategy."
+            },
+            {
+              "from": "g2_opto_ref.X",
+              "to": "g2_opto_drivers.X",
+              "state": "guess",
+              "function": "X open-drain sink return",
+              "check": "P1 optocoupler current returns through the SN74LVC07A ground."
+            },
+            {
+              "from": "g2_opto_ref.Y",
+              "to": "g2_opto_drivers.Y",
+              "state": "guess",
+              "function": "Y open-drain sink return",
+              "check": "P1 optocoupler current returns through the SN74LVC07A ground."
+            },
+            {
+              "from": "g2_opto_ref.Z",
+              "to": "g2_opto_drivers.Z",
+              "state": "guess",
+              "function": "Z open-drain sink return",
+              "check": "P1 optocoupler current returns through the SN74LVC07A ground."
+            }
+          ],
+          "note": "The DM320T manual specifies P1 OPTO at typical +5V for common-anode input wiring. Feed each OPTO from regulated 5V. The TI SN74LVC07A open-drain outputs sink PUL/DIR current; its VCC is Core 3.3V and its ground return is the Core signal reference. Check regulator/output current and isolation boundaries."
+        },
+        {
+          "title": "775 spindle controller: PWM, direction and motor output",
+          "nodes": [
+            {
+              "id": "g2_pwm_source",
+              "title": "Smoothie PWM candidate (verify board)",
+              "column": 0,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "J35.6",
+                  "label": "J35.6 TIM1_CH1 (PWM candidate)",
+                  "side": "right"
+                },
+                {
+                  "id": "J35.10",
+                  "label": "J35.10 GND",
+                  "side": "right"
+                },
+                {
+                  "id": "DIR0",
+                  "label": "logic GND (fixed DIR candidate)",
+                  "side": "right"
+                }
+              ]
+            },
+            {
+              "id": "g2_md10c",
+              "title": "Cytron MD10C R3.0",
+              "column": 1,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "PWM",
+                  "label": "PWM",
+                  "side": "left"
+                },
+                {
+                  "id": "DIR",
+                  "label": "DIR",
+                  "side": "left"
+                },
+                {
+                  "id": "GND",
+                  "label": "GND",
+                  "side": "left"
+                },
+                {
+                  "id": "VM",
+                  "label": "VM",
+                  "side": "right"
+                },
+                {
+                  "id": "PWR_GND",
+                  "label": "power GND",
+                  "side": "right"
+                },
+                {
+                  "id": "OUT_A",
+                  "label": "OUT A",
+                  "side": "right"
+                },
+                {
+                  "id": "OUT_B",
+                  "label": "OUT B",
+                  "side": "right"
+                }
+              ]
+            },
+            {
+              "id": "g2_spindle",
+              "title": "775 spindle: measured motor terminals (polarity unknown)",
+              "column": 2,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "lead1",
+                  "label": "measured motor terminal 1",
+                  "side": "left"
+                },
+                {
+                  "id": "lead2",
+                  "label": "measured motor terminal 2",
+                  "side": "left"
+                }
+              ]
+            }
+          ],
+          "edges": [
+            {
+              "from": "g2_pwm_source.J35.6",
+              "to": "g2_md10c.PWM",
+              "state": "guess",
+              "function": "spindle speed PWM candidate",
+              "check": "Core P1 J35 source export: pin6 TIM1_CH1 and pin10 GND. Verify waveform range/frequency and common reference on exact board."
+            },
+            {
+              "from": "g2_pwm_source.J35.10",
+              "to": "g2_md10c.GND",
+              "state": "guess",
+              "function": "control signal reference",
+              "check": "Core P1 J35 source export: pin6 TIM1_CH1 and pin10 GND. Verify waveform range/frequency and common reference on exact board."
+            },
+            {
+              "from": "g2_md10c.OUT_A",
+              "to": "g2_spindle.lead1",
+              "state": "guess",
+              "function": "switched motor output A",
+              "check": "Only after measured spindle current, direction and terminal polarity are checked."
+            },
+            {
+              "from": "g2_md10c.OUT_B",
+              "to": "g2_spindle.lead2",
+              "state": "guess",
+              "function": "switched motor output B",
+              "check": "Map output to spindle leads only after safe direction test; not a logic return."
+            },
+            {
+              "from": "g2_pwm_source.DIR0",
+              "to": "g2_md10c.DIR",
+              "state": "guess",
+              "function": "fixed direction logic low candidate",
+              "check": "Cytron R3.0 manual: DIR sets motor direction. Verify input truth table and chosen spindle rotation on secured unloaded stage; reverse motor leads only after isolated power-down."
+            }
+          ],
+          "note": "Core J35.6 exports TIM1_CH1 (PWM candidate) and J35.10 GND. Cytron MD10C R3.0 has PWM, DIR, GND, VM, PWR_GND, OUT_A/B; manual Rev3.0 V1.0 Aug 2018 supports sign-magnitude PWM+DIR and 3.3/5V logic. DIR tied to logic GND selects Forward while PWM is high per the manual truth table; bench-check actual spindle rotation and ensure PWM low stops/brakes as expected. Separate motor supply must match measured motor voltage/current and be fused. Do not use guessed red/black wiring."
+        },
+        {
+          "title": "Dedicated 775 spindle power stage",
+          "nodes": [
+            {
+              "id": "g2_spindle_psu",
+              "title": "Fused dedicated 12-24V spindle supply",
+              "column": 0,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "+",
+                  "label": "V+",
+                  "side": "right"
+                },
+                {
+                  "id": "-",
+                  "label": "0V",
+                  "side": "right"
+                }
+              ]
+            },
+            {
+              "id": "g2_md_power",
+              "title": "Cytron MD10C R3.0 power input",
+              "column": 1,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "VM",
+                  "label": "VM",
+                  "side": "left"
+                },
+                {
+                  "id": "GND",
+                  "label": "GND",
+                  "side": "left"
+                },
+                {
+                  "id": "OUT_A",
+                  "label": "OUT A",
+                  "side": "right"
+                },
+                {
+                  "id": "OUT_B",
+                  "label": "OUT B",
+                  "side": "right"
+                }
+              ]
+            }
+          ],
+          "edges": [
+            {
+              "from": "g2_spindle_psu.+",
+              "to": "g2_md_power.VM",
+              "state": "guess",
+              "function": "spindle-stage supply",
+              "check": "Rate from measured 775 running/stall current and MD10C limit; supply must match motor and total system loads."
+            },
+            {
+              "from": "g2_spindle_psu.-",
+              "to": "g2_md_power.GND",
+              "state": "guess",
+              "function": "spindle-stage return",
+              "check": "Keep power return distinct from logic signal reference unless manual grounding requires a bond."
+            }
+          ],
+          "note": "Do not assume the original 24 V / 4 A adapter is sufficient for controller, axes and spindle together. MD10C source says no overcurrent protection."
+        },
+        {
+          "title": "X MIN limit input (candidate mapping)",
+          "nodes": [
+            {
+              "id": "g2_x_min_in",
+              "title": "Prime J24 input",
+              "column": 0,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "SIG",
+                  "label": "pin 3 input",
+                  "side": "right"
+                },
+                {
+                  "id": "GND",
+                  "label": "pin 2 GND",
+                  "side": "right"
+                },
+                {
+                  "id": "SEL",
+                  "label": "pin 1 selector",
+                  "side": "right"
+                }
+              ]
+            },
+            {
+              "id": "g2_x_min_switch",
+              "title": "X MIN switch",
+              "column": 2,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "SIG",
+                  "label": "switch signal",
+                  "side": "left"
+                },
+                {
+                  "id": "RET",
+                  "label": "switch return",
+                  "side": "left"
+                }
+              ]
+            }
+          ],
+          "edges": [
+            {
+              "from": "g2_x_min_in.SIG",
+              "to": "g2_x_min_switch.SIG",
+              "state": "guess",
+              "function": "X MIN endstop signal",
+              "check": "Only if this actual switch contact is traced and normally-open/closed state verified."
+            },
+            {
+              "from": "g2_x_min_in.GND",
+              "to": "g2_x_min_switch.RET",
+              "state": "guess",
+              "function": "X MIN return",
+              "check": "Verify contact function and sensor type. Leave selector disconnected until exact signal voltage is known."
+            }
+          ],
+          "note": "Prime source pin schedule: J24-J29 pin2 GND, pin3 input, pin1 selector. This candidate J-to-axis/end assignment is not established by Genmitsu manual; trace each harness and test switch state first."
+        },
+        {
+          "title": "X MAX limit input (candidate mapping)",
+          "nodes": [
+            {
+              "id": "g2_x_max_in",
+              "title": "Prime J25 input",
+              "column": 0,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "SIG",
+                  "label": "pin 3 input",
+                  "side": "right"
+                },
+                {
+                  "id": "GND",
+                  "label": "pin 2 GND",
+                  "side": "right"
+                },
+                {
+                  "id": "SEL",
+                  "label": "pin 1 selector",
+                  "side": "right"
+                }
+              ]
+            },
+            {
+              "id": "g2_x_max_switch",
+              "title": "X MAX switch",
+              "column": 2,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "SIG",
+                  "label": "switch signal",
+                  "side": "left"
+                },
+                {
+                  "id": "RET",
+                  "label": "switch return",
+                  "side": "left"
+                }
+              ]
+            }
+          ],
+          "edges": [
+            {
+              "from": "g2_x_max_in.SIG",
+              "to": "g2_x_max_switch.SIG",
+              "state": "guess",
+              "function": "X MAX endstop signal",
+              "check": "Only if this actual switch contact is traced and normally-open/closed state verified."
+            },
+            {
+              "from": "g2_x_max_in.GND",
+              "to": "g2_x_max_switch.RET",
+              "state": "guess",
+              "function": "X MAX return",
+              "check": "Verify contact function and sensor type. Leave selector disconnected until exact signal voltage is known."
+            }
+          ],
+          "note": "Prime source pin schedule: J24-J29 pin2 GND, pin3 input, pin1 selector. This candidate J-to-axis/end assignment is not established by Genmitsu manual; trace each harness and test switch state first."
+        },
+        {
+          "title": "Y MIN limit input (candidate mapping)",
+          "nodes": [
+            {
+              "id": "g2_y_min_in",
+              "title": "Prime J26 input",
+              "column": 0,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "SIG",
+                  "label": "pin 3 input",
+                  "side": "right"
+                },
+                {
+                  "id": "GND",
+                  "label": "pin 2 GND",
+                  "side": "right"
+                },
+                {
+                  "id": "SEL",
+                  "label": "pin 1 selector",
+                  "side": "right"
+                }
+              ]
+            },
+            {
+              "id": "g2_y_min_switch",
+              "title": "Y MIN switch",
+              "column": 2,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "SIG",
+                  "label": "switch signal",
+                  "side": "left"
+                },
+                {
+                  "id": "RET",
+                  "label": "switch return",
+                  "side": "left"
+                }
+              ]
+            }
+          ],
+          "edges": [
+            {
+              "from": "g2_y_min_in.SIG",
+              "to": "g2_y_min_switch.SIG",
+              "state": "guess",
+              "function": "Y MIN endstop signal",
+              "check": "Only if this actual switch contact is traced and normally-open/closed state verified."
+            },
+            {
+              "from": "g2_y_min_in.GND",
+              "to": "g2_y_min_switch.RET",
+              "state": "guess",
+              "function": "Y MIN return",
+              "check": "Verify contact function and sensor type. Leave selector disconnected until exact signal voltage is known."
+            }
+          ],
+          "note": "Prime source pin schedule: J24-J29 pin2 GND, pin3 input, pin1 selector. This candidate J-to-axis/end assignment is not established by Genmitsu manual; trace each harness and test switch state first."
+        },
+        {
+          "title": "Y MAX limit input (candidate mapping)",
+          "nodes": [
+            {
+              "id": "g2_y_max_in",
+              "title": "Prime J27 input",
+              "column": 0,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "SIG",
+                  "label": "pin 3 input",
+                  "side": "right"
+                },
+                {
+                  "id": "GND",
+                  "label": "pin 2 GND",
+                  "side": "right"
+                },
+                {
+                  "id": "SEL",
+                  "label": "pin 1 selector",
+                  "side": "right"
+                }
+              ]
+            },
+            {
+              "id": "g2_y_max_switch",
+              "title": "Y MAX switch",
+              "column": 2,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "SIG",
+                  "label": "switch signal",
+                  "side": "left"
+                },
+                {
+                  "id": "RET",
+                  "label": "switch return",
+                  "side": "left"
+                }
+              ]
+            }
+          ],
+          "edges": [
+            {
+              "from": "g2_y_max_in.SIG",
+              "to": "g2_y_max_switch.SIG",
+              "state": "guess",
+              "function": "Y MAX endstop signal",
+              "check": "Only if this actual switch contact is traced and normally-open/closed state verified."
+            },
+            {
+              "from": "g2_y_max_in.GND",
+              "to": "g2_y_max_switch.RET",
+              "state": "guess",
+              "function": "Y MAX return",
+              "check": "Verify contact function and sensor type. Leave selector disconnected until exact signal voltage is known."
+            }
+          ],
+          "note": "Prime source pin schedule: J24-J29 pin2 GND, pin3 input, pin1 selector. This candidate J-to-axis/end assignment is not established by Genmitsu manual; trace each harness and test switch state first."
+        },
+        {
+          "title": "Z MIN limit input (candidate mapping)",
+          "nodes": [
+            {
+              "id": "g2_z_min_in",
+              "title": "Prime J28 input",
+              "column": 0,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "SIG",
+                  "label": "pin 3 input",
+                  "side": "right"
+                },
+                {
+                  "id": "GND",
+                  "label": "pin 2 GND",
+                  "side": "right"
+                },
+                {
+                  "id": "SEL",
+                  "label": "pin 1 selector",
+                  "side": "right"
+                }
+              ]
+            },
+            {
+              "id": "g2_z_min_switch",
+              "title": "Z MIN switch",
+              "column": 2,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "SIG",
+                  "label": "switch signal",
+                  "side": "left"
+                },
+                {
+                  "id": "RET",
+                  "label": "switch return",
+                  "side": "left"
+                }
+              ]
+            }
+          ],
+          "edges": [
+            {
+              "from": "g2_z_min_in.SIG",
+              "to": "g2_z_min_switch.SIG",
+              "state": "guess",
+              "function": "Z MIN endstop signal",
+              "check": "Only if this actual switch contact is traced and normally-open/closed state verified."
+            },
+            {
+              "from": "g2_z_min_in.GND",
+              "to": "g2_z_min_switch.RET",
+              "state": "guess",
+              "function": "Z MIN return",
+              "check": "Verify contact function and sensor type. Leave selector disconnected until exact signal voltage is known."
+            }
+          ],
+          "note": "Prime source pin schedule: J24-J29 pin2 GND, pin3 input, pin1 selector. This candidate J-to-axis/end assignment is not established by Genmitsu manual; trace each harness and test switch state first."
+        },
+        {
+          "title": "Z MAX limit input (candidate mapping)",
+          "nodes": [
+            {
+              "id": "g2_z_max_in",
+              "title": "Prime J29 input",
+              "column": 0,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "SIG",
+                  "label": "pin 3 input",
+                  "side": "right"
+                },
+                {
+                  "id": "GND",
+                  "label": "pin 2 GND",
+                  "side": "right"
+                },
+                {
+                  "id": "SEL",
+                  "label": "pin 1 selector",
+                  "side": "right"
+                }
+              ]
+            },
+            {
+              "id": "g2_z_max_switch",
+              "title": "Z MAX switch",
+              "column": 2,
+              "offset": 0,
+              "contacts": [
+                {
+                  "id": "SIG",
+                  "label": "switch signal",
+                  "side": "left"
+                },
+                {
+                  "id": "RET",
+                  "label": "switch return",
+                  "side": "left"
+                }
+              ]
+            }
+          ],
+          "edges": [
+            {
+              "from": "g2_z_max_in.SIG",
+              "to": "g2_z_max_switch.SIG",
+              "state": "guess",
+              "function": "Z MAX endstop signal",
+              "check": "Only if this actual switch contact is traced and normally-open/closed state verified."
+            },
+            {
+              "from": "g2_z_max_in.GND",
+              "to": "g2_z_max_switch.RET",
+              "state": "guess",
+              "function": "Z MAX return",
+              "check": "Verify contact function and sensor type. Leave selector disconnected until exact signal voltage is known."
+            }
+          ],
+          "note": "Prime source pin schedule: J24-J29 pin2 GND, pin3 input, pin1 selector. This candidate J-to-axis/end assignment is not established by Genmitsu manual; trace each harness and test switch state first."
+        },
+        {
+          "title": "Prime alternative \u00b7 separate logic and motor supplies",
+          "nodes": [
+            {
+              "id": "logic",
+              "title": "Regulated 5 V logic supply",
+              "column": 0,
+              "contacts": [
+                {
+                  "id": "v",
+                  "label": "+5 V regulated",
+                  "side": "right"
+                },
+                {
+                  "id": "g",
+                  "label": "0 V logic return",
+                  "side": "right"
+                }
+              ]
+            },
+            {
+              "id": "motor",
+              "title": "Verified motor supply \u00b7 voltage/current TBD",
+              "column": 0,
+              "contacts": [
+                {
+                  "id": "v",
+                  "label": "DC + \u00b7 before fuse",
+                  "side": "right"
+                },
+                {
+                  "id": "g",
+                  "label": "0 V motor return",
+                  "side": "right"
+                }
+              ]
+            },
+            {
+              "id": "fuse",
+              "title": "Motor branch fuse \u00b7 rating selected after measurement",
+              "column": 1,
+              "contacts": [
+                {
+                  "id": "in",
+                  "label": "fuse input",
+                  "side": "left"
+                },
+                {
+                  "id": "out",
+                  "label": "fuse output",
+                  "side": "left"
+                }
+              ]
+            },
+            {
+              "id": "prime",
+              "title": "Prime P11/P12 \u00b7 confirm exact revision",
+              "column": 2,
+              "contacts": [
+                {
+                  "id": "v5",
+                  "label": "J42.1 \u00b7 5V_PORTIN",
+                  "side": "left"
+                },
+                {
+                  "id": "lg",
+                  "label": "J42.2 \u00b7 GND",
+                  "side": "left"
+                },
+                {
+                  "id": "vm",
+                  "label": "J9.1 \u00b7 VMOT",
+                  "side": "left"
+                },
+                {
+                  "id": "mg",
+                  "label": "J9.2 \u00b7 GND",
+                  "side": "left"
+                },
+                {
+                  "id": "aux1",
+                  "label": "J10.1 \u00b7 VMOT parallel \u00b7 unused",
+                  "side": "left"
+                },
+                {
+                  "id": "aux2",
+                  "label": "J10.2 \u00b7 GND parallel \u00b7 unused",
+                  "side": "left"
+                }
+              ]
+            }
+          ],
+          "edges": [
+            {
+              "from": "logic.v",
+              "to": "prime.v5",
+              "function": "Prime regulated logic supply",
+              "state": "guess",
+              "check": "Prime alternative only. Confirm fitted P11/P12 revision, input-voltage/current limits, supply sequencing and fuse/conductor ratings. Never connect both Core external drivers and Prime winding outputs to the same motor."
+            },
+            {
+              "from": "logic.g",
+              "to": "prime.lg",
+              "function": "Prime logic supply return",
+              "state": "guess",
+              "check": "Prime alternative only. Confirm fitted P11/P12 revision, input-voltage/current limits, supply sequencing and fuse/conductor ratings. Never connect both Core external drivers and Prime winding outputs to the same motor."
+            },
+            {
+              "from": "motor.v",
+              "to": "fuse.in",
+              "function": "Protected motor branch input",
+              "state": "guess",
+              "check": "Prime alternative only. Confirm fitted P11/P12 revision, input-voltage/current limits, supply sequencing and fuse/conductor ratings. Never connect both Core external drivers and Prime winding outputs to the same motor."
+            },
+            {
+              "from": "fuse.out",
+              "to": "prime.vm",
+              "function": "Prime VMOT power",
+              "state": "guess",
+              "check": "Prime alternative only. Confirm fitted P11/P12 revision, input-voltage/current limits, supply sequencing and fuse/conductor ratings. Never connect both Core external drivers and Prime winding outputs to the same motor."
+            },
+            {
+              "from": "motor.g",
+              "to": "prime.mg",
+              "function": "Prime motor supply return",
+              "state": "guess",
+              "check": "Prime alternative only. Confirm fitted P11/P12 revision, input-voltage/current limits, supply sequencing and fuse/conductor ratings. Never connect both Core external drivers and Prime winding outputs to the same motor."
+            }
+          ],
+          "note": "This is the alternative integrated-driver architecture. The same PCB-derived contact labels occur on P11/P12, but driver type, rating and current configuration differ. Use one verified power-entry arrangement; J10 parallels VMOT and is left unused here. Board ground is shared internally; route motor current directly to power distribution, not through logic wiring. Determine actual allowed voltage/current before choosing a supply; no machine-source adapter automatically qualifies."
+        }
+      ]
+    },
+    "machine-side-graph-snapshot.json": {
+      "source_graph": "041-mill-g2.json",
+      "source_sha256": "4927fe93123a58c52b3360aad80a7e74be48da7cb7dcfd3329206c600e7db71a",
+      "graph": {
+        "profile_id": "mill-g2",
+        "devices": [
+          {
+            "id": "group-device-001",
+            "role": "peripheral"
+          },
+          {
+            "id": "group-device-002",
+            "role": "peripheral"
+          },
+          {
+            "id": "group-device-003",
+            "role": "peripheral"
+          },
+          {
+            "id": "group-device-004",
+            "role": "peripheral"
+          }
+        ],
+        "connectors": [
+          {
+            "id": "machine-group-001",
+            "device": "group-device-001",
+            "refdes": "Y motor",
+            "form": "source-described cable / connector group",
+            "scope": "Source names this group, but provides no source-scoped physical contact map. Availability and exact housing are unverified. exact atlas group labels; open until contact mapping is established",
+            "contacts": []
+          },
+          {
+            "id": "machine-group-002",
+            "device": "group-device-002",
+            "refdes": "Y limit",
+            "form": "source-described cable / connector group",
+            "scope": "Source names this group, but provides no source-scoped physical contact map. Availability and exact housing are unverified. exact atlas group labels; open until contact mapping is established",
+            "contacts": []
+          },
+          {
+            "id": "machine-group-003",
+            "device": "group-device-003",
+            "refdes": "spindle",
+            "form": "source-described cable / connector group",
+            "scope": "Source names this group, but provides no source-scoped physical contact map. Availability and exact housing are unverified. exact atlas group labels; open until contact mapping is established",
+            "contacts": []
+          },
+          {
+            "id": "machine-group-004",
+            "device": "group-device-004",
+            "refdes": "X/Z motor and limit",
+            "form": "source-described cable / connector group",
+            "scope": "Source names this group, but provides no source-scoped physical contact map. Availability and exact housing are unverified. exact atlas group labels; open until contact mapping is established",
+            "contacts": []
+          }
+        ],
+        "wires": []
+      }
+    }
+  }
+}

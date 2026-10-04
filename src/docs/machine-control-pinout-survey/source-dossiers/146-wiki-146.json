@@ -1,0 +1,179 @@
+{
+  "profile_id": "wiki-146",
+  "devices": [
+    {
+      "id": "form2-power-input",
+      "role": "peripheral"
+    },
+    {
+      "id": "form2-usb",
+      "role": "peripheral"
+    },
+    {
+      "id": "form2-ethernet",
+      "role": "peripheral"
+    },
+    {
+      "id": "form2-wifi",
+      "role": "reference"
+    },
+    {
+      "id": "form2-display",
+      "role": "peripheral"
+    },
+    {
+      "id": "form2-motor-build-platform",
+      "role": "peripheral"
+    },
+    {
+      "id": "form2-motor-wiper",
+      "role": "peripheral"
+    },
+    {
+      "id": "form2-motor-tank-carrier",
+      "role": "peripheral"
+    },
+    {
+      "id": "form2-motor-drivers",
+      "role": "reference"
+    },
+    {
+      "id": "form2-laser",
+      "role": "reference"
+    }
+  ],
+  "connectors": [
+    {
+      "id": "power-input",
+      "device": "form2-power-input",
+      "refdes": "Form 2 mains power input · external connection",
+      "form": "Power-entry connector face and contact count not specified by reviewed official source",
+      "scope": "Formlabs technical specifications give 100–240 V AC, 1.5 A, 50/60 Hz and 65 W. The official Form 2 glossary says the internal PSU converts line power to +24 V DC. Connector type, individual input contacts, protective-earth terminal and installed power-cord details are not established here. No SmoothieBox route.",
+      "contacts": []
+    },
+    {
+      "id": "usb-port",
+      "device": "form2-usb",
+      "refdes": "Rear USB port · computer connection",
+      "form": "USB connector subtype and contact count unknown from reviewed Form 2 source",
+      "scope": "Formlabs identifies a rear USB port and says the supplied cable connects it to a computer. The source does not identify the Form 2 connector subtype or pin schedule. Do not infer USB-C from later Form 4 models. No SmoothieBox route.",
+      "contacts": []
+    },
+    {
+      "id": "ethernet-port",
+      "device": "form2-ethernet",
+      "refdes": "Rear RJ-45 Ethernet LAN port",
+      "form": "RJ-45/8P8C interface; eight connector reference positions",
+      "scope": "Formlabs identifies a rear RJ-45 Ethernet LAN port and 10BASE-T/100BASE-TX connectivity. Contacts 1–8 below are connector-reference positions only; the reviewed Form 2 documentation does not assign per-contact LAN functions or establish a Formlabs mating-view drawing. No SmoothieBox route.",
+      "contacts": [
+        {
+          "id": "1",
+          "mark": "1",
+          "label": "RJ-45 contact 1 · LAN function not mapped here; SmoothieBox route OPEN"
+        },
+        {
+          "id": "2",
+          "mark": "2",
+          "label": "RJ-45 contact 2 · LAN function not mapped here; SmoothieBox route OPEN"
+        },
+        {
+          "id": "3",
+          "mark": "3",
+          "label": "RJ-45 contact 3 · LAN function not mapped here; SmoothieBox route OPEN"
+        },
+        {
+          "id": "4",
+          "mark": "4",
+          "label": "RJ-45 contact 4 · LAN function not mapped here; SmoothieBox route OPEN"
+        },
+        {
+          "id": "5",
+          "mark": "5",
+          "label": "RJ-45 contact 5 · LAN function not mapped here; SmoothieBox route OPEN"
+        },
+        {
+          "id": "6",
+          "mark": "6",
+          "label": "RJ-45 contact 6 · LAN function not mapped here; SmoothieBox route OPEN"
+        },
+        {
+          "id": "7",
+          "mark": "7",
+          "label": "RJ-45 contact 7 · LAN function not mapped here; SmoothieBox route OPEN"
+        },
+        {
+          "id": "8",
+          "mark": "8",
+          "label": "RJ-45 contact 8 · LAN function not mapped here; SmoothieBox route OPEN"
+        }
+      ]
+    },
+    {
+      "id": "wifi-interface",
+      "device": "form2-wifi",
+      "refdes": "Built-in Wi-Fi interface",
+      "form": "Wireless interface; no external machine contact schedule",
+      "scope": "Formlabs states Form 2 has built-in Wi-Fi configured from the touchscreen. No external antenna connector or machine contact schedule is established by the reviewed Form 2 sources. Reference context only; no SmoothieBox route.",
+      "contacts": []
+    },
+    {
+      "id": "front-display",
+      "device": "form2-display",
+      "refdes": "Front touchscreen to motherboard ribbon connection",
+      "form": "Ribbon cable connection; pin count and pinout unknown",
+      "scope": "The Formlabs Form 2 glossary identifies a motherboard connector linked to the front display by a ribbon cable, but gives no contact count or pin schedule. Internal interface only; no SmoothieBox route.",
+      "contacts": []
+    },
+    {
+      "id": "motor-build-platform",
+      "device": "form2-motor-build-platform",
+      "refdes": "Build-platform stepper motor · internal motor connection",
+      "form": "Motor connector and winding-contact schedule unknown",
+      "scope": "Formlabs identifies one of three motherboard-driven stepper motors as the build-platform motor. Its connector positions and coil map are not provided by the reviewed source. Internal machine context; no SmoothieBox route.",
+      "contacts": []
+    },
+    {
+      "id": "motor-wiper",
+      "device": "form2-motor-wiper",
+      "refdes": "Wiper stepper motor · internal motor connection",
+      "form": "Motor connector and winding-contact schedule unknown",
+      "scope": "Formlabs identifies one of three motherboard-driven stepper motors as the wiper motor. Its connector positions and coil map are not provided by the reviewed source. Internal machine context; no SmoothieBox route.",
+      "contacts": []
+    },
+    {
+      "id": "motor-tank-carrier",
+      "device": "form2-motor-tank-carrier",
+      "refdes": "Tank-carrier stepper motor · internal motor connection",
+      "form": "Motor connector and winding-contact schedule unknown",
+      "scope": "Formlabs identifies one of three motherboard-driven stepper motors as the tank-carrier motor. Its connector positions and coil map are not provided by the reviewed source. Internal machine context; no SmoothieBox route.",
+      "contacts": []
+    },
+    {
+      "id": "motor-driver-set",
+      "device": "form2-motor-drivers",
+      "refdes": "Three motherboard motor-driver channels",
+      "form": "Integrated motor drivers; no external driver-input contacts documented",
+      "scope": "Formlabs says three motor-driver chips on the motherboard control the build-platform, wiper and tank-carrier motors. These are inside the Form 2; the reviewed sources do not document an external step/direction/enable interface. Reference context only; no SmoothieBox route.",
+      "contacts": []
+    },
+    {
+      "id": "laser-assembly",
+      "device": "form2-laser",
+      "refdes": "405 nm, 250 mW internal laser assembly",
+      "form": "Internal optical subsystem; electrical connector schedule unknown",
+      "scope": "Formlabs describes a 405 nm violet diode laser with maximum output 250 mW and Class 1 product classification. No external laser power supply or machine-side electrical contact schedule is identified. Reference context only; no SmoothieBox route.",
+      "contacts": []
+    }
+  ],
+  "wires": [],
+  "evidence": {
+    "primary": "Formlabs Form 2 Product Glossary, Form 2 connection instructions, and Form 2 technical specifications",
+    "sources": [
+      "https://formlabs.com/support/Form-2-3D-Glossary/",
+      "https://formlabs.com/support/Connecting-Formlabs-SLA-printers/",
+      "https://formlabs.com/3d-printers/form-2/tech-specs/",
+      "https://wiki.raumzeitlabor.de/wiki/Formlabs_Form_2"
+    ],
+    "scope_note": "Formlabs machine-side hardware remains electrically separate from SmoothieBox. Only externally identified RJ-45 contact positions are counted and enumerated; USB and power connector positions, the display ribbon, motor connectors, driver interfaces, Wi-Fi antenna interface and laser contacts remain unknown. No dotted guesses, solid routes or DB25 peripheral are established."
+  }
+}

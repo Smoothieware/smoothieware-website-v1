@@ -1,0 +1,740 @@
+{
+  "profile_id": "wiki-222",
+  "artifact_type": "additive_wire_panel_supplement",
+  "title": "Ultimaker 2 / Smoothieboard V2 Prime P12 MOSFET output source correction",
+  "source_snapshot": {
+    "repository": "/home/arthur/dev/smoothieware/Smoothieboard2",
+    "git_commit": "7dc4f9a972ad3e3587952171e63b278ee9997f10",
+    "source_files": [
+      {
+        "path": "/home/arthur/dev/smoothieware/Smoothieboard2/V2_P12_Prime2590/smoothiev2-prime.kicad_sch",
+        "sha256": "1796433747b44c7c22612039e7ced97cf4c128db9e536cdb229ce79be30028cc"
+      },
+      {
+        "path": "/home/arthur/dev/smoothieware/Smoothieboard2/V2_P12_Prime2590/mosfets.kicad_sch",
+        "sha256": "bdfaa2b2cb375c275aad1f95a1df8c1fd447d7a05c979f75b36c5611d96a354e"
+      },
+      {
+        "path": "/home/arthur/dev/smoothieware/Smoothieboard2/V2_P12_Prime2590/inputs.kicad_sch",
+        "sha256": "d4d81063494076011db8171d1cd2f356e7adb9528b3d13dfc50878ff049cebb8"
+      },
+      {
+        "path": "/home/arthur/dev/smoothieware/Smoothieboard2/V2_P12_Prime2590/smoothiev2-prime.kicad_pcb",
+        "sha256": "a7e84b8fb403d9b64fd7f0e09c6aa245f00525ba894bfe9a008093fe73626b29"
+      },
+      {
+        "path": "/home/arthur/dev/smoothieware/Smoothieboard2/V2_P12_Prime2590/bom/smoothiev2-prime.csv",
+        "sha256": "4a2472da3c12c9bb7d5e66e6e2ddf7fad7023dbc45e5bb635086a99d0ae1bcd8"
+      }
+    ],
+    "netlist": "Generated read-only from smoothiev2-prime.kicad_sch with kicad-cli; /tmp/p12prime-netlist.xml; source-derived pin connectivity cross-checked against PCB export."
+  },
+  "wire_panels": [
+    {
+      "title": "Ultimaker 2 hotend A: conditional Prime P12 wiring (verify machine harness first)",
+      "nodes": [
+        {
+          "id": "um2_vfet_source",
+          "title": "Fused DC supply for VFET (voltage/current must match heater)",
+          "column": 0,
+          "offset": 0,
+          "contacts": [
+            {
+              "id": "POS",
+              "label": "fused +V",
+              "side": "right"
+            },
+            {
+              "id": "RET",
+              "label": "supply 0V",
+              "side": "right"
+            }
+          ]
+        },
+        {
+          "id": "um2_prime_power",
+          "title": "V2 Prime P12 power entry",
+          "column": 1,
+          "offset": 0,
+          "contacts": [
+            {
+              "id": "J12.1",
+              "label": "J12.1 VFET +",
+              "side": "left"
+            },
+            {
+              "id": "J12.2",
+              "label": "J12.2 GND_FET 0V",
+              "side": "left"
+            }
+          ]
+        },
+        {
+          "id": "um2_j11",
+          "title": "Prime P12 J11 auxiliary rail contacts",
+          "column": 1,
+          "offset": 6,
+          "contacts": [
+            {
+              "id": "J11.1",
+              "label": "J11.1 VFET",
+              "side": "left"
+            },
+            {
+              "id": "J11.2",
+              "label": "J11.2 GND_FET",
+              "side": "left"
+            }
+          ]
+        },
+        {
+          "id": "um2_j17",
+          "title": "Prime P12 J17 Hotend A switched output",
+          "column": 1,
+          "offset": 12,
+          "contacts": [
+            {
+              "id": "1",
+              "label": "pin 1 shared switched +VFET",
+              "side": "right"
+            },
+            {
+              "id": "2",
+              "label": "pin 2 Hotend A low-side switch",
+              "side": "right"
+            }
+          ]
+        },
+        {
+          "id": "um2_thermal_cutoff",
+          "title": "Independent correctly rated thermal cutoff in series",
+          "column": 2,
+          "offset": 8,
+          "contacts": [
+            {
+              "id": "IN",
+              "label": "cutoff in",
+              "side": "left"
+            },
+            {
+              "id": "OUT",
+              "label": "cutoff out",
+              "side": "right"
+            }
+          ]
+        },
+        {
+          "id": "um2_heater",
+          "title": "Actual Ultimaker hotend heater (identity/rating unknown)",
+          "column": 2,
+          "offset": 14,
+          "contacts": [
+            {
+              "id": "A",
+              "label": "heater lead A; polarity/resistance unknown",
+              "side": "left"
+            },
+            {
+              "id": "B",
+              "label": "heater lead B; polarity/resistance unknown",
+              "side": "left"
+            }
+          ]
+        },
+        {
+          "id": "um2_j21",
+          "title": "Prime P12 temperature input (candidate only)",
+          "column": 1,
+          "offset": 22,
+          "contacts": [
+            {
+              "id": "1",
+              "label": "J21.1 analog sensor input",
+              "side": "right"
+            },
+            {
+              "id": "2",
+              "label": "J21.2 GND",
+              "side": "right"
+            }
+          ]
+        },
+        {
+          "id": "um2_sensor",
+          "title": "Installed hotend sensor (type and connector unknown)",
+          "column": 2,
+          "offset": 22,
+          "contacts": [
+            {
+              "id": "SIG",
+              "label": "sensor lead 1",
+              "side": "left"
+            },
+            {
+              "id": "RET",
+              "label": "sensor lead 2",
+              "side": "left"
+            }
+          ]
+        },
+        {
+          "id": "um2_q25",
+          "title": "Prime P12 Q25 shared high-side cutoff FET",
+          "column": 1,
+          "offset": 29,
+          "contacts": [
+            {
+              "id": "S1",
+              "label": "pin 1 source VFET",
+              "side": "left"
+            },
+            {
+              "id": "S2",
+              "label": "pin 2 source VFET",
+              "side": "left"
+            },
+            {
+              "id": "S3",
+              "label": "pin 3 source VFET",
+              "side": "left"
+            },
+            {
+              "id": "G4",
+              "label": "pin 4 cutoff gate (control not independently verified)",
+              "side": "left"
+            },
+            {
+              "id": "D5",
+              "label": "pin 5 drain switched +VFET",
+              "side": "right"
+            }
+          ]
+        },
+        {
+          "id": "um2_q19",
+          "title": "Prime P12 Q19 Hotend A low-side MOSFET",
+          "column": 1,
+          "offset": 36,
+          "contacts": [
+            {
+              "id": "D5",
+              "label": "pin 5 drain = J17.2",
+              "side": "left"
+            },
+            {
+              "id": "G4",
+              "label": "pin 4 gate = U9 pin 17/Y1",
+              "side": "left"
+            },
+            {
+              "id": "S123",
+              "label": "pins 1,2,3 source = GND_FET",
+              "side": "right"
+            }
+          ]
+        },
+        {
+          "id": "um2_u9_control",
+          "title": "Prime P12 U9 Hotend A buffer + output enable",
+          "column": 0,
+          "offset": 30,
+          "contacts": [
+            {
+              "id": "A1_3",
+              "label": "U9 pin 3/A1 input",
+              "side": "right"
+            },
+            {
+              "id": "Y1_17",
+              "label": "U9 pin 17/Y1 output",
+              "side": "right"
+            },
+            {
+              "id": "G2_19",
+              "label": "U9 pin 19/G2 output enable",
+              "side": "right"
+            }
+          ]
+        },
+        {
+          "id": "um2_mcu_control",
+          "title": "P12 MCU control nets (not external connector pins)",
+          "column": 0,
+          "offset": 37,
+          "contacts": [
+            {
+              "id": "PE0",
+              "label": "U2 C4/PE0 Hotend A command",
+              "side": "right"
+            },
+            {
+              "id": "PF14",
+              "label": "U2 P8/PF14 OUTPUTENABLE",
+              "side": "right"
+            }
+          ]
+        }
+      ],
+      "edges": [
+        {
+          "from": "um2_vfet_source.POS",
+          "to": "um2_prime_power.J12.1",
+          "state": "guess",
+          "function": "VFET power positive into the dedicated XT30 power connector",
+          "check": "Use only the board input connector and a supply that matches the identified heater; fuse and conductor ratings must be established first."
+        },
+        {
+          "from": "um2_vfet_source.RET",
+          "to": "um2_prime_power.J12.2",
+          "state": "guess",
+          "function": "VFET supply return into dedicated XT30 connector",
+          "check": "Confirm connector polarity physically and establish protective-earth/chassis bonding separately."
+        },
+        {
+          "from": "um2_prime_power.J12.1",
+          "to": "um2_j11.J11.1",
+          "state": "source",
+          "function": "Same VFET net (rail is internally shared)",
+          "check": "J11 is a 2.54 mm auxiliary header, not a high-current heater power input; do not route heater current through it."
+        },
+        {
+          "from": "um2_prime_power.J12.2",
+          "to": "um2_j11.J11.2",
+          "state": "source",
+          "function": "Same GND_FET net (rail is internally shared)",
+          "check": "J11 is a 2.54 mm auxiliary header, not a high-current heater power return; do not route heater current through it."
+        },
+        {
+          "from": "um2_j17.1",
+          "to": "um2_thermal_cutoff.IN",
+          "state": "guess",
+          "function": "Switched +VFET to independent thermal cutoff",
+          "check": "J17 is source-identified Hotend A; confirm contact rating for the actual installed connector and heater current before use. The board guide’s approximate output current is not a connector/harness guarantee."
+        },
+        {
+          "from": "um2_thermal_cutoff.OUT",
+          "to": "um2_heater.A",
+          "state": "guess",
+          "function": "Thermal cutoff then heater lead A",
+          "check": "Use a cutoff with documented voltage/current/temperature ratings and a mechanically safe mounting point; actual heater polarity is immaterial but wiring must be inspected."
+        },
+        {
+          "from": "um2_heater.B",
+          "to": "um2_j17.2",
+          "state": "guess",
+          "function": "Heater return through Hotend A low-side FET",
+          "check": "Confirm heater resistance/current and voltage against the actual supply; keep all heater power off until independent over-temperature protection and fuse are installed."
+        },
+        {
+          "from": "um2_sensor.SIG",
+          "to": "um2_j21.1",
+          "state": "guess",
+          "function": "Candidate sensor signal to J21 analog input",
+          "check": "Only after identifying sensor technology, resistance/curve and installed cable. Do not connect an unknown thermocouple/PT100 directly."
+        },
+        {
+          "from": "um2_sensor.RET",
+          "to": "um2_j21.2",
+          "state": "guess",
+          "function": "Candidate sensor return to J21 GND",
+          "check": "Verify connector polarity and isolation. Confirm correct firmware sensor channel/type and plausible ambient reading before enabling heater."
+        },
+        {
+          "from": "um2_prime_power.J12.1",
+          "to": "um2_q25.S1",
+          "state": "source",
+          "function": "VFET input rail to Q25 source pin 1"
+        },
+        {
+          "from": "um2_prime_power.J12.1",
+          "to": "um2_q25.S2",
+          "state": "source",
+          "function": "VFET input rail to Q25 source pin 2"
+        },
+        {
+          "from": "um2_prime_power.J12.1",
+          "to": "um2_q25.S3",
+          "state": "source",
+          "function": "VFET input rail to Q25 source pin 3"
+        },
+        {
+          "from": "um2_q25.D5",
+          "to": "um2_j17.1",
+          "state": "source",
+          "function": "Q25 cutoff-controlled switched +VFET to J17.1"
+        },
+        {
+          "from": "um2_j17.2",
+          "to": "um2_q19.D5",
+          "state": "source",
+          "function": "J17.2 Hotend A output to Q19 drain"
+        },
+        {
+          "from": "um2_q19.S123",
+          "to": "um2_prime_power.J12.2",
+          "state": "source",
+          "function": "Q19 source pins to shared GND_FET return"
+        },
+        {
+          "from": "um2_mcu_control.PE0",
+          "to": "um2_u9_control.A1_3",
+          "state": "source",
+          "function": "MCU PE0 Hotend A command into U9 pin 3/A1"
+        },
+        {
+          "from": "um2_u9_control.Y1_17",
+          "to": "um2_q19.G4",
+          "state": "source",
+          "function": "U9 pin 17/Y1 buffer output to Q19 gate"
+        },
+        {
+          "from": "um2_mcu_control.PF14",
+          "to": "um2_u9_control.G2_19",
+          "state": "source",
+          "function": "MCU PF14 output-enable net to U9 pin 19/G2",
+          "check": "Verify actual firmware polarity, startup state and behavior before enabling power."
+        }
+      ],
+      "note": "The P12 source ties J17.1 to the shared high-side cutoff-controlled +VFET net; J17.2 is Q19 drain, the Hotend A low-side output. J12.1/.2 are the XT30 VFET power input contacts. J11.1/.2 are the same rails on a small header and must not carry heater current. PE0 -> U9 pin 3/A1 -> U9 pin 17/Y1 -> Q19 gate is the source-derived Hotend A command path. PF14 drives U9 pin19/G2 OUTPUTENABLE; firmware output-enable truth table/startup state has not been verified, so test firmware polarity/state under current-limited load before fitting a heater. The installed MakeICT/Ultimaker heater and sensor identities, voltage/current, connector contacts, J21-to-hotend assignment, fuse and cutoff are unknown; every machine-side route is a guess. The board guide states approx. 5A/output but does not establish J17 connector or harness safe rating; do not treat that number as guaranteed. Internal topology: J12.1 feeds Q25 source pins 1–3; Q25 drain pin5 feeds J17.1 only through the high-side cutoff FET. J17.2 goes to Q19 drain pin5; Q19 source pins1–3 return to GND_FET/J12.2. Do not depict a direct rail wire bypassing Q25 or Q19. MCU U2 C4/PE0 -> U9 pin3/A1 -> U9 pin17/Y1 -> Q19 pin4 gate; U2 P8/PF14 -> U9 pin19/G2. Buffer supply U9 pin20/+5V and pin10/GND are board-internal; firmware enable semantics are unresolved."
+    },
+    {
+      "title": "Prime P12 J18 Hotend B channel: intentionally unused in this retrofit option",
+      "nodes": [
+        {
+          "id": "um2_j18_spare",
+          "title": "Prime P12 J18 (source-identified Hotend B)",
+          "column": 0,
+          "offset": 0,
+          "contacts": [
+            {
+              "id": "1",
+              "label": "pin 1 shared switched +VFET",
+              "side": "right"
+            },
+            {
+              "id": "2",
+              "label": "pin 2 Hotend B low-side switch",
+              "side": "right"
+            }
+          ]
+        },
+        {
+          "id": "um2_j18_cap",
+          "title": "No load connected",
+          "column": 2,
+          "offset": 0,
+          "contacts": [
+            {
+              "id": "OPEN",
+              "label": "leave both contacts unconnected and insulated",
+              "side": "left"
+            }
+          ]
+        }
+      ],
+      "edges": [
+        {
+          "from": "um2_j18_spare.1",
+          "to": "um2_j18_cap.OPEN",
+          "state": "open",
+          "function": "Hotend B output intentionally unused",
+          "check": "Do not bridge or repurpose J18; no matching installed second heater is verified."
+        },
+        {
+          "from": "um2_j18_spare.2",
+          "to": "um2_j18_cap.OPEN",
+          "state": "open",
+          "function": "Hotend B switched return intentionally unused",
+          "check": "Maintain physical clearance/insulation and verify board rev before use."
+        }
+      ],
+      "note": "P12 schematic/netlist identifies J18 pin 1 on shared cutoff-controlled +VFET and pin 2 on Q20 Hotend B low-side output. This proposed Ultimaker retrofit uses J17 Hotend A only. Leave J18 unused; its presence does not prove the installed machine has a second heater."
+    },
+    {
+      "title": "Prime P12 J19/J20 fan outputs: connect only after matching installed fan ratings",
+      "nodes": [
+        {
+          "id": "um2_fan_supply",
+          "title": "Same VFET supply as board input",
+          "column": 0,
+          "offset": 0,
+          "contacts": [
+            {
+              "id": "POS",
+              "label": "VFET +V at J12.1",
+              "side": "right"
+            },
+            {
+              "id": "RET",
+              "label": "GND_FET 0V at J12.2",
+              "side": "right"
+            }
+          ]
+        },
+        {
+          "id": "um2_j19",
+          "title": "Prime P12 J19 Fan 1",
+          "column": 1,
+          "offset": 0,
+          "contacts": [
+            {
+              "id": "1",
+              "label": "pin 1 shared switched +VFET",
+              "side": "right"
+            },
+            {
+              "id": "2",
+              "label": "pin 2 Fan 1 low-side output",
+              "side": "right"
+            }
+          ]
+        },
+        {
+          "id": "um2_j19_load",
+          "title": "Installed fan 1 (voltage/current unknown)",
+          "column": 2,
+          "offset": 0,
+          "contacts": [
+            {
+              "id": "POS",
+              "label": "fan +",
+              "side": "left"
+            },
+            {
+              "id": "NEG",
+              "label": "fan −",
+              "side": "left"
+            }
+          ]
+        },
+        {
+          "id": "um2_j20",
+          "title": "Prime P12 J20 Fan 2",
+          "column": 1,
+          "offset": 8,
+          "contacts": [
+            {
+              "id": "1",
+              "label": "pin 1 shared switched +VFET",
+              "side": "right"
+            },
+            {
+              "id": "2",
+              "label": "pin 2 Fan 2 low-side output",
+              "side": "right"
+            }
+          ]
+        },
+        {
+          "id": "um2_j20_load",
+          "title": "Installed fan 2 (identity/use unverified)",
+          "column": 2,
+          "offset": 8,
+          "contacts": [
+            {
+              "id": "POS",
+              "label": "fan +",
+              "side": "left"
+            },
+            {
+              "id": "NEG",
+              "label": "fan −",
+              "side": "left"
+            }
+          ]
+        },
+        {
+          "id": "um2_fan_q25",
+          "title": "Prime P12 Q25 shared high-side cutoff FET",
+          "column": 1,
+          "offset": 16,
+          "contacts": [
+            {
+              "id": "S123",
+              "label": "pins 1–3 source = VFET",
+              "side": "left"
+            },
+            {
+              "id": "G4",
+              "label": "pin 4 cutoff gate",
+              "side": "left"
+            },
+            {
+              "id": "D5",
+              "label": "pin 5 switched +VFET",
+              "side": "right"
+            }
+          ]
+        },
+        {
+          "id": "um2_fan_q21",
+          "title": "Prime P12 Q21 Fan 1 low-side FET",
+          "column": 1,
+          "offset": 23,
+          "contacts": [
+            {
+              "id": "D5",
+              "label": "pin 5 drain = J19.2",
+              "side": "left"
+            },
+            {
+              "id": "G4",
+              "label": "pin 4 gate = U9 pin 15/Y3",
+              "side": "left"
+            },
+            {
+              "id": "S123",
+              "label": "pins 1–3 source = GND_FET",
+              "side": "right"
+            }
+          ]
+        },
+        {
+          "id": "um2_fan_q22",
+          "title": "Prime P12 Q22 Fan 2 low-side FET",
+          "column": 1,
+          "offset": 30,
+          "contacts": [
+            {
+              "id": "D5",
+              "label": "pin 5 drain = J20.2",
+              "side": "left"
+            },
+            {
+              "id": "G4",
+              "label": "pin 4 gate = U9 pin 14/Y4",
+              "side": "left"
+            },
+            {
+              "id": "S123",
+              "label": "pins 1–3 source = GND_FET",
+              "side": "right"
+            }
+          ]
+        }
+      ],
+      "edges": [
+        {
+          "from": "um2_j19.1",
+          "to": "um2_j19_load.POS",
+          "state": "guess",
+          "function": "Fan 1 supply positive",
+          "check": "Only after confirming installed fan voltage/current, connector polarity and J19 installed footprint; J19 footprint is KK-254 header, while datasheet contact rating alone does not certify PCB/harness capacity."
+        },
+        {
+          "from": "um2_j19_load.NEG",
+          "to": "um2_j19.2",
+          "state": "guess",
+          "function": "Fan 1 switched low-side return",
+          "check": "Verify fan current including startup/stall and configure correct output; use a suitable external stage if board/connector/current rating is insufficient."
+        },
+        {
+          "from": "um2_j20.1",
+          "to": "um2_j20_load.POS",
+          "state": "guess",
+          "function": "Fan 2 supply positive",
+          "check": "Only after confirming a second installed fan and matching its voltage/current. No machine assignment to J20 is sourced."
+        },
+        {
+          "from": "um2_j20_load.NEG",
+          "to": "um2_j20.2",
+          "state": "guess",
+          "function": "Fan 2 switched low-side return",
+          "check": "Verify fan current including startup/stall and firmware mapping; otherwise leave open."
+        },
+        {
+          "from": "um2_fan_supply.POS",
+          "to": "um2_fan_q25.S123",
+          "state": "source",
+          "function": "J12.1 VFET supply reaches Q25 source pins 1–3"
+        },
+        {
+          "from": "um2_fan_q25.D5",
+          "to": "um2_j19.1",
+          "state": "source",
+          "function": "Q25 high-side switched +VFET to J19.1"
+        },
+        {
+          "from": "um2_fan_q25.D5",
+          "to": "um2_j20.1",
+          "state": "source",
+          "function": "Q25 high-side switched +VFET to J20.1"
+        },
+        {
+          "from": "um2_j19.2",
+          "to": "um2_fan_q21.D5",
+          "state": "source",
+          "function": "J19.2 to Q21 Fan 1 low-side drain"
+        },
+        {
+          "from": "um2_fan_q21.S123",
+          "to": "um2_fan_supply.RET",
+          "state": "source",
+          "function": "Q21 source pins to J12.2 GND_FET return"
+        },
+        {
+          "from": "um2_j20.2",
+          "to": "um2_fan_q22.D5",
+          "state": "source",
+          "function": "J20.2 to Q22 Fan 2 low-side drain"
+        },
+        {
+          "from": "um2_fan_q22.S123",
+          "to": "um2_fan_supply.RET",
+          "state": "source",
+          "function": "Q22 source pins to J12.2 GND_FET return"
+        }
+      ],
+      "note": "P12 netlist maps J19 pin 2 to Q21 (FAN1) and J20 pin 2 to Q22 (FAN2); both pin 1 contacts share high-side cutoff-controlled +VFET. Firmware fan-output/channel behavior and actual machine fan assignments are not verified. The source BOM identifies J19/J20 as Molex KK-254 2-pin footprints; this is a component identity, not proof of installed mating contact, wire, PCB copper or safe load rating. For an installed 5V fan, do not connect it to VFET unless the measured rail is 5V and all ratings match; use a correctly specified converter/driver otherwise. Actual switched paths: J12.1 -> Q25 source pins1–3 -> Q25 drain pin5 -> J19/J20 pin1; J19 pin2 -> Q21 drain, Q21 source pins1–3 -> J12.2 GND_FET; J20 pin2 -> Q22 drain, Q22 source pins1–3 -> J12.2. These include the board’s switched devices and do not represent direct wires from J12 to fan terminals."
+    }
+  ],
+  "semantic_review": {
+    "confirmed_corrections": [
+      "P12 source resolves exporter-unlabelled output-net placeholders: J17 = Hotend A; J18 = Hotend B; J19 = Fan 1; J20 = Fan 2. Pins 1 share Q25 drain/cutoff-controlled +VFET; pins 2 go respectively Q19/Q20/Q21/Q22 drains (low-side switched outputs).",
+      "J11.1=VFET and J11.2=GND_FET are rail distribution contacts, not power-input contacts. Dedicated XT30 rails include J12/J16 (VFET/GND_FET); J12 is used in the panel, and J16 is a parallel equivalent input option. Do not imply heater current should pass through the small J11 header.",
+      "Hotend A gate path: MCU U2 C4/PE0 to U9 pin3/A1; U9 pin17/Y1 to Q19 pin4 gate. Shared output enable is MCU U2 P8/PF14 to U9 pin19/G2. Hardware connectivity is confirmed; firmware enable polarity/startup behavior is not.",
+      "The board reference guide calls low-current channels approx. 5A, but this does not establish J17/J18 CONN_SFET contact rating, installed mate/wire rating, PCB thermal limits, or a guaranteed safe load. No 5A guarantee should appear.",
+      "Temperature connectors J21/J22/J23 have pin 1 analog sensor input and pin 2 GND at the board net level; which connector/channel is mapped to the installed Ultimaker sensor and sensor technology are unknown."
+    ],
+    "unresolved_gates": [
+      "Read the exact Prime physical revision marking; this pin/net evidence is P12 2590 only.",
+      "Identify installed heater voltage, resistance/current, cable connector and contact rating; install appropriately rated per-channel fuse and independent thermal cutoff before connecting heater power.",
+      "Verify whether fitted machine sensor is thermistor, supported PT100 amplifier, thermocouple, or other; establish J21/J22/J23 and firmware channel/type. Unknown sensor must remain open.",
+      "Verify VFET supply voltage, current capacity, connector polarity, PE/chassis bond, and current on wiring before connection. Do not power through J11.",
+      "Verify configured output names, PE0 control behavior, PF14/U9 output-enable truth table and safe startup state against actual firmware before energizing heater.",
+      "Identify installed fan count, voltage, running/startup/stall current and connector contacts. Use J19/J20 only when all limits match; otherwise use a sourced rated external switching stage.",
+      "Confirm J17/J18 custom CONN_SFET connector manufacturer/mating contact and current/temperature rating; schematic/BOM does not provide rating."
+    ],
+    "source_rating_notes": [
+      "Local official-repository guide docs/hardware/boards/smoothieboard-v2-schematic.md lists approximate current values (Hotend A/B and Fan outputs approx. 5A); treat this as board design guidance, not safe connector/load rating.",
+      "Local official-repository docs/hardware/boards/smoothieboard-v2-prime.md likewise says approx. 5A/output and explicitly says verify with specific revision.",
+      "P12 BOM: J17/J18 CONN_SFET (no manufacturer part/rating), J19/J20 Molex_KK-254_AE-6410-02A_1x02_P2.54mm_Vertical (no fitted wire/mate evidence)."
+    ]
+  },
+  "references": [
+    {
+      "title": "Smoothieboard2 official source repository, P12 Prime 2590 revision",
+      "url": "https://github.com/Smoothieware/Smoothieboard2/tree/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590"
+    },
+    {
+      "title": "P12 Prime MOSFET schematic (exact snapshot path listed above)",
+      "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/mosfets.kicad_sch"
+    },
+    {
+      "title": "P12 Prime top-level schematic and sheet hierarchy",
+      "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/smoothiev2-prime.kicad_sch"
+    },
+    {
+      "title": "P12 Prime BOM, connector footprints",
+      "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/bom/smoothiev2-prime.csv"
+    },
+    {
+      "title": "Smoothieboard V2 MOSFET output schematic notes (approximate board values)",
+      "url": "https://smoothieware.org/smoothieboard-v2-schematic"
+    },
+    {
+      "title": "Smoothieboard V2 Prime guide, approximate output value explicitly revision-dependent",
+      "url": "https://smoothieware.org/smoothieboard-v2-prime"
+    }
+  ]
+}

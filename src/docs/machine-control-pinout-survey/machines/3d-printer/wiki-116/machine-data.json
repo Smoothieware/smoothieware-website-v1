@@ -1,0 +1,65 @@
+{
+  "id": "wiki-116",
+  "sources": {
+    "machine-side-graph-snapshot.json": {
+      "source_graph": "116-wiki-116.json",
+      "source_sha256": "01175a19db89dc8d67a2b02f7cb790f8d4aeee230b41ce91239503c67864741f",
+      "graph": {
+        "profile_id": "wiki-116",
+        "devices": [
+          {
+            "id": "group-device-001",
+            "role": "peripheral"
+          },
+          {
+            "id": "group-device-002",
+            "role": "reference"
+          },
+          {
+            "id": "supplement-device-001",
+            "role": "reference"
+          },
+          {
+            "id": "supplement-device-002",
+            "role": "reference"
+          }
+        ],
+        "connectors": [
+          {
+            "id": "machine-group-001",
+            "device": "group-device-001",
+            "refdes": "P1 Series toolhead cable",
+            "form": "source-described cable / connector group",
+            "scope": "Source names this group, but provides no source-scoped physical contact map. Availability and exact housing are unverified. Source-documented cable or connector groups only; endpoints are functional labels, not numbered contacts. Installed machine revision and electrical contract remain unverified. Bambu replacement-part compatibility establishes family scope, not fitted cable revision; P1S and P1P plug treatments differ.",
+            "contacts": []
+          },
+          {
+            "id": "machine-group-002",
+            "device": "group-device-002",
+            "refdes": "Heatbed signal cable",
+            "form": "source-described cable / connector group; double-ended 6-contact 1.25 mm cable; contact map unknown",
+            "scope": "Source names this group, but provides no source-scoped physical contact map. Availability and exact housing are unverified. Source-documented cable or connector groups only; endpoints are functional labels, not numbered contacts. Installed machine revision and electrical contract remain unverified. Bambu replacement-part compatibility establishes family scope, not fitted cable revision; P1S and P1P plug treatments differ. Independent supplemental source: Bambu X1/P1 compatible heatbed signal cable product; exact fitted revision, end identity and six per-contact functions unverified.",
+            "contacts": []
+          },
+          {
+            "id": "supplement-connector-001",
+            "device": "supplement-device-001",
+            "refdes": "P1P toolhead cable 6-contact plug end",
+            "form": "6-contact 1.25 mm plug, contact map unknown",
+            "scope": "Bambu P1 series product group applicable to P1P; exact fitted cable revision and six per-contact functions unverified. This is one end of the parent P1 Series toolhead cable, not an additional cable. This is a reference for the named source revision; installed-machine correspondence is not established.",
+            "contacts": []
+          },
+          {
+            "id": "supplement-connector-002",
+            "device": "supplement-device-002",
+            "refdes": "P1P toolhead cable 12-contact BTB plug end",
+            "form": "12-contact 0.8 mm BTB plug, contact map unknown",
+            "scope": "Bambu P1 series product group applicable to P1P; exact fitted cable revision and twelve per-contact functions unverified. This is another end of the same parent P1 Series toolhead cable. This is a reference for the named source revision; installed-machine correspondence is not established.",
+            "contacts": []
+          }
+        ],
+        "wires": []
+      }
+    }
+  }
+}

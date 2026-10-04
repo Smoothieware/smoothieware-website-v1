@@ -1,0 +1,179 @@
+{
+  "id": "wiki-221",
+  "sources": {
+    "machine-side-graph-snapshot.json": {
+      "source_graph": "221-wiki-221.json",
+      "source_sha256": "021b109e92f16524c589fdac01587e526185adf1046f88ca6b63752e3c9f7c6a",
+      "graph": {
+        "profile_id": "wiki-221",
+        "devices": [
+          {
+            "id": "uls-vls660-and-optional-automation",
+            "role": "peripheral"
+          }
+        ],
+        "connectors": [
+          {
+            "id": "uls-ai-j2",
+            "device": "uls-vls660-and-optional-automation",
+            "refdes": "Optional ULS Automation Interface \u00b7 J2 programmable inputs",
+            "form": "Eight numbered J2 contacts; manufacturer pin labels shown. Installed option-board revision unverified.",
+            "scope": "Optional Automation Interface reference; VLS6.60 guide family includes discontinued model. Optional-board fitment on the Appropedia machine is not established. Input functions are user-programmable; local configuration is unknown.",
+            "contacts": [
+              {
+                "mark": "1",
+                "name": "INPUT 1",
+                "fact": "source"
+              },
+              {
+                "mark": "2",
+                "name": "INPUT 2",
+                "fact": "source"
+              },
+              {
+                "mark": "3",
+                "name": "INPUT 3",
+                "fact": "source"
+              },
+              {
+                "mark": "4",
+                "name": "I/O GND",
+                "fact": "source"
+              },
+              {
+                "mark": "5",
+                "name": "INPUT 4",
+                "fact": "source"
+              },
+              {
+                "mark": "6",
+                "name": "INPUT 5",
+                "fact": "source"
+              },
+              {
+                "mark": "7",
+                "name": "INPUT 6",
+                "fact": "source"
+              },
+              {
+                "mark": "8",
+                "name": "I/O GND",
+                "fact": "source"
+              }
+            ]
+          },
+          {
+            "id": "uls-ai-j6",
+            "device": "uls-vls660-and-optional-automation",
+            "refdes": "Optional ULS Automation Interface \u00b7 J6 programmable status outputs",
+            "form": "Four numbered J6 contacts; manufacturer pin labels shown. PNP/NPN mode is selected by board switch; fitted setting unknown.",
+            "scope": "Optional Automation Interface reference. The guide warns outputs are for information/status and not to drive external devices; no third-party safety-device support. Board fitment and mode on the Appropedia machine unknown.",
+            "contacts": [
+              {
+                "mark": "1",
+                "name": "PNP POWER",
+                "fact": "source"
+              },
+              {
+                "mark": "2",
+                "name": "I/O GND",
+                "fact": "source"
+              },
+              {
+                "mark": "3",
+                "name": "OUTPUT 1",
+                "fact": "source"
+              },
+              {
+                "mark": "4",
+                "name": "OUTPUT 2",
+                "fact": "source"
+              }
+            ]
+          },
+          {
+            "id": "uls-ai-j5",
+            "device": "uls-vls660-and-optional-automation",
+            "refdes": "Optional ULS Automation Interface \u00b7 J5 reserved connector",
+            "form": "Four diagram-marked positions J5-1 through J5-4; not an external-use connector.",
+            "scope": "The board illustration marks all four J5 positions \u201cFUTURE USE, DO NOT USE.\u201d Preserve only as source labels; do not connect.",
+            "contacts": [
+              {
+                "mark": "1",
+                "name": "FUTURE USE \u00b7 DO NOT USE",
+                "fact": "source"
+              },
+              {
+                "mark": "2",
+                "name": "FUTURE USE \u00b7 DO NOT USE",
+                "fact": "source"
+              },
+              {
+                "mark": "3",
+                "name": "FUTURE USE \u00b7 DO NOT USE",
+                "fact": "source"
+              },
+              {
+                "mark": "4",
+                "name": "FUTURE USE \u00b7 DO NOT USE",
+                "fact": "source"
+              }
+            ]
+          },
+          {
+            "id": "uls-ai-j8",
+            "device": "uls-vls660-and-optional-automation",
+            "refdes": "Optional ULS Automation Interface \u00b7 J8 positions",
+            "form": "Two numeral-marked J8 positions in board illustration; no function assignment shown.",
+            "scope": "Board illustration shows J8 pin marks 1 and 2 only; accessible manual does not identify connector function, electrical role, or whether these are user terminals.",
+            "contacts": [
+              {
+                "mark": "1",
+                "name": "Function unspecified \u00b7 printed J8 pin 1 mark",
+                "fact": "form_inventory_only"
+              },
+              {
+                "mark": "2",
+                "name": "Function unspecified \u00b7 printed J8 pin 2 mark",
+                "fact": "form_inventory_only"
+              }
+            ]
+          },
+          {
+            "id": "uls-ai-pwr-com-in",
+            "device": "uls-vls660-and-optional-automation",
+            "refdes": "Optional ULS Automation Interface \u00b7 PWR/COM IN",
+            "form": "RJ9 type named for input; no individual contact map supplied.",
+            "scope": "Manual calls this RJ9 and says the included patch cable connects it to either rear accessory port on the laser. Pin assignment, orientation and ratings not transcribed; card remains reference-only.",
+            "contacts": []
+          },
+          {
+            "id": "uls-ai-pwr-com-out",
+            "device": "uls-vls660-and-optional-automation",
+            "refdes": "Optional ULS Automation Interface \u00b7 PWR/COM OUT",
+            "form": "Board-top label only; connector form and individual contact map unspecified.",
+            "scope": "PWR/COM OUT is printed on the board illustration. No contact schedule or use instructions found in accessible manual text.",
+            "contacts": []
+          },
+          {
+            "id": "uls-vls-rear-accessory-ports",
+            "device": "uls-vls660-and-optional-automation",
+            "refdes": "VLS6.60 family \u00b7 rear accessory port(s) for Automation Interface patch cable",
+            "form": "Guide says either rear accessory port; no form/contact schedule given.",
+            "scope": "Manufacturer guide describes the included patch cable connecting the optional interface board with either rear machine accessory port. Local option installation and physical contacts unknown.",
+            "contacts": []
+          },
+          {
+            "id": "uls-automation-board",
+            "device": "uls-vls660-and-optional-automation",
+            "refdes": "Universal Laser Systems \u00b7 optional Automation Interface board",
+            "form": "Optional board/function reference; no proof of fitment on the catalogue machine.",
+            "scope": "VLS Platform User Guide explicitly covers discontinued VLS6.60 and describes this optional board. Do not treat family support as local installation evidence.",
+            "contacts": []
+          }
+        ],
+        "wires": []
+      }
+    }
+  }
+}

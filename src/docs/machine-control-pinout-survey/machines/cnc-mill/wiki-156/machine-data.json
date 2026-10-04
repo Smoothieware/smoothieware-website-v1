@@ -1,0 +1,53 @@
+{
+  "id": "wiki-156",
+  "sources": {
+    "machine-side-graph-snapshot.json": {
+      "source_graph": "156-wiki-156.json",
+      "source_sha256": "67f501fdccd395f93c552fa34fe81383ed5eadc6b769b7726e2234ec4cd08c37",
+      "graph": {
+        "profile_id": "wiki-156",
+        "devices": [
+          {
+            "id": "group-device-001",
+            "role": "peripheral"
+          },
+          {
+            "id": "group-device-002",
+            "role": "peripheral"
+          },
+          {
+            "id": "group-device-003",
+            "role": "peripheral"
+          }
+        ],
+        "connectors": [
+          {
+            "id": "machine-group-001",
+            "device": "group-device-001",
+            "refdes": "E-stop",
+            "form": "source-described cable / connector group",
+            "scope": "Source names this group, but provides no source-scoped physical contact map. Availability and exact housing are unverified. Connections and pinout",
+            "contacts": []
+          },
+          {
+            "id": "machine-group-002",
+            "device": "group-device-002",
+            "refdes": "Built-in PC / ProNC",
+            "form": "source-described cable / connector group",
+            "scope": "Source names this group, but provides no source-scoped physical contact map. Availability and exact housing are unverified. Connections and pinout",
+            "contacts": []
+          },
+          {
+            "id": "machine-group-003",
+            "device": "group-device-003",
+            "refdes": "Spindle / axes / reference switches",
+            "form": "source-described cable / connector group",
+            "scope": "Source names this group, but provides no source-scoped physical contact map. Availability and exact housing are unverified. Connections and pinout",
+            "contacts": []
+          }
+        ],
+        "wires": []
+      }
+    }
+  }
+}

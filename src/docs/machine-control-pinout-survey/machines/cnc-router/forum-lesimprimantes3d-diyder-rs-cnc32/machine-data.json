@@ -1,0 +1,34 @@
+{
+  "id": "forum-lesimprimantes3d-diyder-rs-cnc32",
+  "sources": {
+    "forum-peripheral-evidence.json": {
+      "id": "forum-lesimprimantes3d-diyder-rs-cnc32",
+      "dossier": "src/docs/machine-research/lesimprimantes3d-diyder-rs-cnc32.md",
+      "reported_fitted_or_used": [
+        {
+          "name": "Makita RT0700C router",
+          "contacts": [],
+          "source_line_number": 9,
+          "source_line": "DIYDER says the machine was built using largely reclaimed mechanical parts and uses remote motor drivers. The owner names a Makita RT0700C trim router and GRBL control, and says G-code can be read from an SD card without leaving a PC attached. FreeCAD and Fusion 360 are listed as design/file-generation tools.",
+          "evidence": "The owner names a Makita RT0700C trim router and GRBL control, and says G-code can be read from an SD card without leaving a PC attached. FreeCAD and Fusion 360 are listed as design/file-generation tools.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        }
+      ],
+      "listed_for_build_unverified": [],
+      "historical_reference": [],
+      "planned_only": [],
+      "open_function_group": [
+        {
+          "name": "Remote stepper drivers",
+          "contacts": [],
+          "source_line_number": 9,
+          "source_line": "DIYDER says the machine was built using largely reclaimed mechanical parts and uses remote motor drivers. The owner names a Makita RT0700C trim router and GRBL control, and says G-code can be read from an SD card without leaving a PC attached. FreeCAD and Fusion 360 are listed as design/file-generation tools.",
+          "evidence": "DIYDER says the machine was built using largely reclaimed mechanical parts and uses remote motor drivers. The owner names a Makita RT0700C trim router and GRBL control, and says G-code can be read from an SD card without leaving a PC attached.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        }
+      ],
+      "exclusions": [],
+      "source_gap": "Dossier does not establish an as-built SmoothieBox route or a complete physical contact schedule for the listed peripherals."
+    }
+  }
+}

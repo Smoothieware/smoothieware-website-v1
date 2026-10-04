@@ -1,0 +1,7 @@
+{
+  "main_evidence_ids": 644,
+  "unique_manifest_route_ids": 644,
+  "context_ids_expected": 48,
+  "issues": [],
+  "method": "XML text and main_route_manifest; SVG metadata evidence content excluded from visible text check"
+}

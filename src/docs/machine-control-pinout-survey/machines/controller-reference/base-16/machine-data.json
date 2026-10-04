@@ -1,0 +1,155 @@
+{
+  "id": "base-16",
+  "sources": {
+    "machine-side-graph-snapshot.json": {
+      "source_graph": "102-base-16.json",
+      "source_sha256": "f93b76bb8011e996a214edf4b341b8de0f9fec47db8b266717b0bd326bf714b1",
+      "graph": {
+        "profile_id": "base-16",
+        "devices": [
+          {
+            "id": "peripheral-01",
+            "role": "peripheral"
+          }
+        ],
+        "connectors": [
+          {
+            "id": "machine-01",
+            "device": "peripheral-01",
+            "refdes": "DB25 \u00b7 C11G Rev9.3 breakout",
+            "form": "DB25",
+            "scope": "all 25 conductors required; pin 18 detect is not GND; numbered contact register, face unverified Machine/peripheral-side contact schedule; fitted presence unverified.",
+            "contacts": [
+              {
+                "id": "1",
+                "mark": "1",
+                "label": "Output-capable, +5 V TTL; machine function unassigned"
+              },
+              {
+                "id": "2",
+                "mark": "2",
+                "label": "Output-capable, +5 V TTL; machine function unassigned"
+              },
+              {
+                "id": "3",
+                "mark": "3",
+                "label": "Output-capable, +5 V TTL; machine function unassigned"
+              },
+              {
+                "id": "4",
+                "mark": "4",
+                "label": "Output-capable, +5 V TTL; machine function unassigned"
+              },
+              {
+                "id": "5",
+                "mark": "5",
+                "label": "Output-capable, +5 V TTL; machine function unassigned"
+              },
+              {
+                "id": "6",
+                "mark": "6",
+                "label": "Output-capable, +5 V TTL; machine function unassigned"
+              },
+              {
+                "id": "7",
+                "mark": "7",
+                "label": "Output-capable, +5 V TTL; machine function unassigned"
+              },
+              {
+                "id": "8",
+                "mark": "8",
+                "label": "Output-capable, +5 V TTL; machine function unassigned"
+              },
+              {
+                "id": "9",
+                "mark": "9",
+                "label": "Output-capable, +5 V TTL; machine function unassigned"
+              },
+              {
+                "id": "10",
+                "mark": "10",
+                "label": "Dedicated input, jumper-dependent 4.7 k\u03a9 pull; machine function unassigned"
+              },
+              {
+                "id": "11",
+                "mark": "11",
+                "label": "Dedicated input, jumper-dependent 4.7 k\u03a9 pull; machine function unassigned"
+              },
+              {
+                "id": "12",
+                "mark": "12",
+                "label": "Dedicated input, jumper-dependent 4.7 k\u03a9 pull; machine function unassigned"
+              },
+              {
+                "id": "13",
+                "mark": "13",
+                "label": "Dedicated input, jumper-dependent 4.7 k\u03a9 pull; machine function unassigned"
+              },
+              {
+                "id": "14",
+                "mark": "14",
+                "label": "Output/PWM, 300\u20131000 Hz to analog stage"
+              },
+              {
+                "id": "15",
+                "mark": "15",
+                "label": "Dedicated input, jumper-dependent 4.7 k\u03a9 pull; machine function unassigned"
+              },
+              {
+                "id": "16",
+                "mark": "16",
+                "label": "Output/spindle direction capability"
+              },
+              {
+                "id": "17",
+                "mark": "17",
+                "label": "Output/charge-pump/relay3 jumper-dependent"
+              },
+              {
+                "id": "18",
+                "mark": "18",
+                "label": "Cable-disconnect detect; not generic GND"
+              },
+              {
+                "id": "19",
+                "mark": "19",
+                "label": "GND per C11G Rev9.3; no V2 bond selected"
+              },
+              {
+                "id": "20",
+                "mark": "20",
+                "label": "GND per C11G Rev9.3; no V2 bond selected"
+              },
+              {
+                "id": "21",
+                "mark": "21",
+                "label": "GND per C11G Rev9.3; no V2 bond selected"
+              },
+              {
+                "id": "22",
+                "mark": "22",
+                "label": "GND per C11G Rev9.3; no V2 bond selected"
+              },
+              {
+                "id": "23",
+                "mark": "23",
+                "label": "GND per C11G Rev9.3; no V2 bond selected"
+              },
+              {
+                "id": "24",
+                "mark": "24",
+                "label": "GND per C11G Rev9.3; no V2 bond selected"
+              },
+              {
+                "id": "25",
+                "mark": "25",
+                "label": "GND per C11G Rev9.3; no V2 bond selected"
+              }
+            ]
+          }
+        ],
+        "wires": []
+      }
+    }
+  }
+}

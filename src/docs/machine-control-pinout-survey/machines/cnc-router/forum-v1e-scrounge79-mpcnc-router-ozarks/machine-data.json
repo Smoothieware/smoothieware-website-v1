@@ -1,0 +1,33 @@
+{
+  "id": "forum-v1e-scrounge79-mpcnc-router-ozarks",
+  "sources": {
+    "forum-peripheral-evidence.json": {
+      "id": "forum-v1e-scrounge79-mpcnc-router-ozarks",
+      "dossier": "src/docs/machine-research/v1e-scrounge79-mpcnc-router-ozarks.md",
+      "reported_fitted_or_used": [
+        {
+          "name": "Craftsman trim router",
+          "contacts": [],
+          "source_line_number": 15,
+          "source_line": "- On September 15, 2019, he said the table was finished, with T-slot channels and a removable spoilboard, and that a Craftsman trim router was mounted. It was working with Ryan\u2019s posted G-code for the sides of a display mount.",
+          "evidence": "On September 15, 2019, he said the table was finished, with T-slot channels and a removable spoilboard, and that a Craftsman trim router was mounted. It was working with Ryan\u2019s posted G-code for the sides of a display mount.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        },
+        {
+          "name": "Dual endstop switches",
+          "contacts": [],
+          "source_line_number": 3,
+          "source_line": "**Machine identity:** Marion J. Makarewicz (`scrounge79`)\u2019s individual Mostly Printed CNC (MPCNC), built in 2019 and described as being in the Lake of the Ozarks area. This is the owner\u2019s machine, not a generic MPCNC specification.",
+          "evidence": "Makarewicz (`scrounge79`)\u2019s individual Mostly Printed CNC (MPCNC), built in 2019 and described as being in the Lake of the Ozarks area. This is the owner\u2019s machine, not a generic MPCNC specification.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        }
+      ],
+      "listed_for_build_unverified": [],
+      "historical_reference": [],
+      "planned_only": [],
+      "open_function_group": [],
+      "exclusions": [],
+      "source_gap": "Dossier does not establish an as-built SmoothieBox route or a complete physical contact schedule for the listed peripherals."
+    }
+  }
+}

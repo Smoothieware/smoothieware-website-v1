@@ -1,0 +1,41 @@
+{
+  "id": "forum-openbuilds-aaron-newsome-lead-cnc",
+  "sources": {
+    "forum-peripheral-evidence.json": {
+      "id": "forum-openbuilds-aaron-newsome-lead-cnc",
+      "dossier": "src/docs/machine-research/openbuilds-aaron-newsome-lead-cnc.md",
+      "reported_fitted_or_used": [
+        {
+          "name": "400 W brushed spindle kit and its speed controller",
+          "source_line_number": 13,
+          "source_line": "For the first completed logo cut, the owner said they replaced the original controller with an OpenBuilds BlackBox. The owner reported a 400 W brushed spindle kit sold as a 12,000 RPM unit and said they controlled spindle speed from G-code. They noted that the controller received differed from the pictured seller listing: the pictured unit had separate TTL and potentiometer connections, while their unit had a single connection, which initially caused confusion. No terminal or connector assignments are supplied, so this is functional context rather than a wiring pinout.",
+          "evidence": "The owner reported a 400 W brushed spindle kit sold as a 12,000 RPM unit and said they controlled spindle speed from G-code. They noted that the controller received differed from the pictured seller listing: the pictured unit had separate TTL and potentiometer connections, while their unit had a single connection, which initially caused confusion.",
+          "contacts": [],
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        }
+      ],
+      "listed_for_build_unverified": [],
+      "historical_reference": [],
+      "planned_only": [],
+      "open_function_group": [],
+      "exclusions": [
+        {
+          "name": "Machine control BlackBox is existing controller",
+          "reason": "Existing or proposed controller belongs to the replaced control system, not the machine periphery.",
+          "source_line_number": 13,
+          "source_line": "For the first completed logo cut, the owner said they replaced the original controller with an OpenBuilds BlackBox. The owner reported a 400 W brushed spindle kit sold as a 12,000 RPM unit and said they controlled spindle speed from G-code. They noted that the controller received differed from the pictured seller listing: the pictured unit had separate TTL and potentiometer connections, while their unit had a single connection, which initially caused confusion. No terminal or connector assignments are supplied, so this is functional context rather than a wiring pinout."
+        },
+        {
+          "name": "NEMA 23 axis motors",
+          "contacts": [],
+          "source_line_number": 23,
+          "source_line": "In June 2019, the owner criticized the LEAD's NEMA 23 motors being mounted with only two screws and said they might later make improved mounts, potentially alongside a closed-loop-stepper upgrade. That is a contemplated modification, not evidence it was performed. Replies discuss other builders' mount changes; those are not attributed to this machine.",
+          "evidence": "In June 2019, the owner criticized the LEAD's NEMA 23 motors being mounted with only two screws and said they might later make improved mounts, potentially alongside a closed-loop-stepper upgrade. That is a contemplated modification, not evidence it was performed.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route",
+          "reason": "Excluded: no separate externally addressable interface, existing control hardware, absent tooling, or inadequate positive device evidence in this dossier."
+        }
+      ],
+      "source_gap": "Dossier does not establish an as-built SmoothieBox route or a complete physical contact schedule for the listed peripherals."
+    }
+  }
+}

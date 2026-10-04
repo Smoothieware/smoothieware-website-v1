@@ -1,0 +1,301 @@
+{
+  "profile_id": "wiki-127",
+  "devices": [
+    {
+      "id": "x-stepper",
+      "role": "peripheral"
+    },
+    {
+      "id": "y-stepper",
+      "role": "peripheral"
+    },
+    {
+      "id": "z-stepper",
+      "role": "peripheral"
+    },
+    {
+      "id": "e-stepper",
+      "role": "peripheral"
+    },
+    {
+      "id": "x-limit-switch",
+      "role": "peripheral"
+    },
+    {
+      "id": "y-limit-switch",
+      "role": "peripheral"
+    },
+    {
+      "id": "z-limit-switch",
+      "role": "peripheral"
+    }
+  ],
+  "connectors": [
+    {
+      "id": "x-stepper-harness",
+      "device": "x-stepper",
+      "refdes": "X axis stepper-motor harness · 6-position / 4-wire group",
+      "form": "6-position / 4-wire motor-side connector form",
+      "scope": "Creality manual p.4 (PDF p.9) identifies this axis group and connector form. The motor/limit plug is shown as a white rectangular housing matched by yellow label; the manual separately labels circular control-box ports as aviation connectors. No cavity numbering, mating-face orientation, conductor identity, populated-slot map, or installed MakeICT revision is established. Schedule indices are editorial form slots only.",
+      "contacts": [
+        {
+          "id": "1",
+          "mark": "1",
+          "label": "X stepper form slot 1 · function OPEN",
+          "fact": "form_inventory_only"
+        },
+        {
+          "id": "2",
+          "mark": "2",
+          "label": "X stepper form slot 2 · function OPEN",
+          "fact": "form_inventory_only"
+        },
+        {
+          "id": "3",
+          "mark": "3",
+          "label": "X stepper form slot 3 · function OPEN",
+          "fact": "form_inventory_only"
+        },
+        {
+          "id": "4",
+          "mark": "4",
+          "label": "X stepper form slot 4 · function OPEN",
+          "fact": "form_inventory_only"
+        },
+        {
+          "id": "5",
+          "mark": "5",
+          "label": "X stepper form slot 5 · function OPEN",
+          "fact": "form_inventory_only"
+        },
+        {
+          "id": "6",
+          "mark": "6",
+          "label": "X stepper form slot 6 · function OPEN",
+          "fact": "form_inventory_only"
+        }
+      ]
+    },
+    {
+      "id": "y-stepper-harness",
+      "device": "y-stepper",
+      "refdes": "Y axis stepper-motor harness · 6-position / 4-wire group",
+      "form": "6-position / 4-wire motor-side connector form",
+      "scope": "Creality manual p.4 (PDF p.9) identifies this axis group and connector form. The motor/limit plug is shown as a white rectangular housing matched by yellow label; the manual separately labels circular control-box ports as aviation connectors. No cavity numbering, mating-face orientation, conductor identity, populated-slot map, or installed MakeICT revision is established. Schedule indices are editorial form slots only.",
+      "contacts": [
+        {
+          "id": "1",
+          "mark": "1",
+          "label": "Y stepper form slot 1 · function OPEN",
+          "fact": "form_inventory_only"
+        },
+        {
+          "id": "2",
+          "mark": "2",
+          "label": "Y stepper form slot 2 · function OPEN",
+          "fact": "form_inventory_only"
+        },
+        {
+          "id": "3",
+          "mark": "3",
+          "label": "Y stepper form slot 3 · function OPEN",
+          "fact": "form_inventory_only"
+        },
+        {
+          "id": "4",
+          "mark": "4",
+          "label": "Y stepper form slot 4 · function OPEN",
+          "fact": "form_inventory_only"
+        },
+        {
+          "id": "5",
+          "mark": "5",
+          "label": "Y stepper form slot 5 · function OPEN",
+          "fact": "form_inventory_only"
+        },
+        {
+          "id": "6",
+          "mark": "6",
+          "label": "Y stepper form slot 6 · function OPEN",
+          "fact": "form_inventory_only"
+        }
+      ]
+    },
+    {
+      "id": "z-stepper-harness",
+      "device": "z-stepper",
+      "refdes": "Z axis stepper-motor harness · 6-position / 4-wire group",
+      "form": "6-position / 4-wire motor-side connector form",
+      "scope": "Creality manual p.4 (PDF p.9) identifies this axis group and connector form. The motor/limit plug is shown as a white rectangular housing matched by yellow label; the manual separately labels circular control-box ports as aviation connectors. No cavity numbering, mating-face orientation, conductor identity, populated-slot map, or installed MakeICT revision is established. Schedule indices are editorial form slots only.",
+      "contacts": [
+        {
+          "id": "1",
+          "mark": "1",
+          "label": "Z stepper form slot 1 · function OPEN",
+          "fact": "form_inventory_only"
+        },
+        {
+          "id": "2",
+          "mark": "2",
+          "label": "Z stepper form slot 2 · function OPEN",
+          "fact": "form_inventory_only"
+        },
+        {
+          "id": "3",
+          "mark": "3",
+          "label": "Z stepper form slot 3 · function OPEN",
+          "fact": "form_inventory_only"
+        },
+        {
+          "id": "4",
+          "mark": "4",
+          "label": "Z stepper form slot 4 · function OPEN",
+          "fact": "form_inventory_only"
+        },
+        {
+          "id": "5",
+          "mark": "5",
+          "label": "Z stepper form slot 5 · function OPEN",
+          "fact": "form_inventory_only"
+        },
+        {
+          "id": "6",
+          "mark": "6",
+          "label": "Z stepper form slot 6 · function OPEN",
+          "fact": "form_inventory_only"
+        }
+      ]
+    },
+    {
+      "id": "e-stepper-harness",
+      "device": "e-stepper",
+      "refdes": "E axis stepper-motor harness · 6-position / 4-wire group",
+      "form": "6-position / 4-wire motor-side connector form",
+      "scope": "Creality manual p.4 (PDF p.9) identifies this axis group and connector form. The motor/limit plug is shown as a white rectangular housing matched by yellow label; the manual separately labels circular control-box ports as aviation connectors. No cavity numbering, mating-face orientation, conductor identity, populated-slot map, or installed MakeICT revision is established. Schedule indices are editorial form slots only.",
+      "contacts": [
+        {
+          "id": "1",
+          "mark": "1",
+          "label": "E stepper form slot 1 · function OPEN",
+          "fact": "form_inventory_only"
+        },
+        {
+          "id": "2",
+          "mark": "2",
+          "label": "E stepper form slot 2 · function OPEN",
+          "fact": "form_inventory_only"
+        },
+        {
+          "id": "3",
+          "mark": "3",
+          "label": "E stepper form slot 3 · function OPEN",
+          "fact": "form_inventory_only"
+        },
+        {
+          "id": "4",
+          "mark": "4",
+          "label": "E stepper form slot 4 · function OPEN",
+          "fact": "form_inventory_only"
+        },
+        {
+          "id": "5",
+          "mark": "5",
+          "label": "E stepper form slot 5 · function OPEN",
+          "fact": "form_inventory_only"
+        },
+        {
+          "id": "6",
+          "mark": "6",
+          "label": "E stepper form slot 6 · function OPEN",
+          "fact": "form_inventory_only"
+        }
+      ]
+    },
+    {
+      "id": "x-limit-harness",
+      "device": "x-limit-switch",
+      "refdes": "X axis limit-switch harness · 3-position / 2-wire group",
+      "form": "3-position / 2-wire switch-side connector form",
+      "scope": "Creality manual p.4 (PDF p.9) identifies this axis group and connector form. The motor/limit plug is shown as a white rectangular housing matched by yellow label; the manual separately labels circular control-box ports as aviation connectors. No cavity numbering, mating-face orientation, conductor identity, contact assignment, switch polarity/NO-NC state, or installed MakeICT revision is established. Schedule indices are editorial form slots only.",
+      "contacts": [
+        {
+          "id": "1",
+          "mark": "1",
+          "label": "X limit-switch form slot 1 · function OPEN",
+          "fact": "form_inventory_only"
+        },
+        {
+          "id": "2",
+          "mark": "2",
+          "label": "X limit-switch form slot 2 · function OPEN",
+          "fact": "form_inventory_only"
+        },
+        {
+          "id": "3",
+          "mark": "3",
+          "label": "X limit-switch form slot 3 · function OPEN",
+          "fact": "form_inventory_only"
+        }
+      ]
+    },
+    {
+      "id": "y-limit-harness",
+      "device": "y-limit-switch",
+      "refdes": "Y axis limit-switch harness · 3-position / 2-wire group",
+      "form": "3-position / 2-wire switch-side connector form",
+      "scope": "Creality manual p.4 (PDF p.9) identifies this axis group and connector form. The motor/limit plug is shown as a white rectangular housing matched by yellow label; the manual separately labels circular control-box ports as aviation connectors. No cavity numbering, mating-face orientation, conductor identity, contact assignment, switch polarity/NO-NC state, or installed MakeICT revision is established. Schedule indices are editorial form slots only.",
+      "contacts": [
+        {
+          "id": "1",
+          "mark": "1",
+          "label": "Y limit-switch form slot 1 · function OPEN",
+          "fact": "form_inventory_only"
+        },
+        {
+          "id": "2",
+          "mark": "2",
+          "label": "Y limit-switch form slot 2 · function OPEN",
+          "fact": "form_inventory_only"
+        },
+        {
+          "id": "3",
+          "mark": "3",
+          "label": "Y limit-switch form slot 3 · function OPEN",
+          "fact": "form_inventory_only"
+        }
+      ]
+    },
+    {
+      "id": "z-limit-harness",
+      "device": "z-limit-switch",
+      "refdes": "Z axis limit-switch harness · 3-position / 2-wire group",
+      "form": "3-position / 2-wire switch-side connector form",
+      "scope": "Creality manual p.4 (PDF p.9) identifies this axis group and connector form. The motor/limit plug is shown as a white rectangular housing matched by yellow label; the manual separately labels circular control-box ports as aviation connectors. No cavity numbering, mating-face orientation, conductor identity, contact assignment, switch polarity/NO-NC state, or installed MakeICT revision is established. Schedule indices are editorial form slots only.",
+      "contacts": [
+        {
+          "id": "1",
+          "mark": "1",
+          "label": "Z limit-switch form slot 1 · function OPEN",
+          "fact": "form_inventory_only"
+        },
+        {
+          "id": "2",
+          "mark": "2",
+          "label": "Z limit-switch form slot 2 · function OPEN",
+          "fact": "form_inventory_only"
+        },
+        {
+          "id": "3",
+          "mark": "3",
+          "label": "Z limit-switch form slot 3 · function OPEN",
+          "fact": "form_inventory_only"
+        }
+      ]
+    }
+  ],
+  "wires": [],
+  "evidence": {
+    "primary": "Creality CR-10 Series User Manual V5.1, p.4 (PDF p.9); plug shape cross-checked against the separate control-box aviation-port photograph; model applicability names CR-10S",
+    "scope_note": "The 33 labels are editorial form-slot indices derived from seven manual-stated connector groups, not source-assigned cavity identities or a complete installed connector census. Motor and limit plugs are separate from the pictured aviation control-box ports. The MakeICT machine revision is unknown. No SmoothieBox route is established."
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "type": "visual_readback",
+  "scope": "Local temporary previews only; integration/public parity pending monitor182",
+  "renderer_sha256": "600ba871ff415b817a0b273247ea02846b9da5e8644aa506c2681b933d4363e4",
+  "source_connections": 1016,
+  "main": 644,
+  "detail": 372,
+  "profiles": [
+    {
+      "id": "wiki-205",
+      "svg_sha256": "0c9068aaf671a3fd588fb1ee4ace87fb6ce88ec3caf35f267aa899ceffe3d3b2",
+      "png_sha256": "5757ace3652a8c615b627d92895bf67e534776b8c59778a19b2fbb330a6d9b4f",
+      "inspection": "Root inspected full changed five views and remaining seven; final Cube/UM supply closeups inspected after label fix"
+    },
+    {
+      "id": "laserplot-02",
+      "svg_sha256": "773ecd08ed4eb4128a6fe9c052a5601ccf190b3f4bd59cea5d1c11bb6a7f33bd",
+      "png_sha256": "b256dceddd708ad108eec5fd2c40aa0103262d3ceef142448327f4580de8118c",
+      "inspection": "Root inspected full changed five views and remaining seven; final Cube/UM supply closeups inspected after label fix"
+    },
+    {
+      "id": "base-11",
+      "svg_sha256": "752eedc54779de9ac38088a0118716e70a8567be4a212691c026d7be3a4cd39d",
+      "png_sha256": "82a46be7c012c10e5db15b309dba0efdf27ff283dd66b86102eea2555d7bdec9",
+      "inspection": "Root inspected full changed five views and remaining seven; final Cube/UM supply closeups inspected after label fix"
+    },
+    {
+      "id": "wiki-132",
+      "svg_sha256": "e848781ea90d6900ec48618afa8b7564cd7649833fde8626881ec9ceb80b7e18",
+      "png_sha256": "458346d11d1d7848ae7fde04defe220c18fa859225574eb6b6c49c2dd5eee097",
+      "inspection": "Root inspected full changed five views and remaining seven; final Cube/UM supply closeups inspected after label fix"
+    },
+    {
+      "id": "wiki-134",
+      "svg_sha256": "1f34ca6f4c60cd1506cc6a33d542fe831bcf688b78dedbc7e4b113ddd44e3b26",
+      "png_sha256": "a2ce6062fd91082f0c5d070723ab3461def8c3c29041a4fed2aa1c456d7cc755",
+      "inspection": "Root inspected full changed five views and remaining seven; final Cube/UM supply closeups inspected after label fix"
+    },
+    {
+      "id": "wiki-135",
+      "svg_sha256": "2458a4a9dcb0c62d8c76d13b33c4c47b95f1ee71deedf644d7bb5618b8b4e875",
+      "png_sha256": "d7d8fb1ce9643b666fcd3a0c76bfc662f00cd855bb87be9a0c8bdb29c9ad9b4b",
+      "inspection": "Root inspected full changed five views and remaining seven; final Cube/UM supply closeups inspected after label fix"
+    },
+    {
+      "id": "mill-g2",
+      "svg_sha256": "79631310f134bc1b61bd6510aa450e4a2f29090cb761f8c860be3e300d7043f1",
+      "png_sha256": "41518a755a9b1eb504af97819075a004327328bd2aa796d8d1ae461ddf4b4d39",
+      "inspection": "Root inspected full changed five views and remaining seven; final Cube/UM supply closeups inspected after label fix"
+    },
+    {
+      "id": "mill-avid-ex-3",
+      "svg_sha256": "174a802f3d31f24638f2976d12f22dc1b52711c800604bdc09816d7dcaacec9a",
+      "png_sha256": "137ccec85e07a1f50a81bb39b0792258d8eb770b8585385ee8ac84c3fd49a8ab",
+      "inspection": "Root inspected full changed five views and remaining seven; final Cube/UM supply closeups inspected after label fix"
+    },
+    {
+      "id": "wiki-206",
+      "svg_sha256": "c60a70ff856d8311892df734c57f86edf0c5ce06a615131f17def5279a2d7d9a",
+      "png_sha256": "2fe81b9d5b251cc7db5b92bb1d67824d7fe8f6a35d962ce76fdc52c8afd8d315",
+      "inspection": "Root inspected full changed five views and remaining seven; final Cube/UM supply closeups inspected after label fix"
+    },
+    {
+      "id": "wiki-222",
+      "svg_sha256": "3223c244551154b6184f98a75000d4f7a0c2f7ae71725ec05c3c22db54bb6c45",
+      "png_sha256": "4e70ebaed367f5de7d180d8caa06f94cc971c5bb4cbe187fd35c14b0686eca42",
+      "inspection": "Root inspected full changed five views and remaining seven; final Cube/UM supply closeups inspected after label fix"
+    },
+    {
+      "id": "forum-linuxcnc-optimill-mh50v-unlogic",
+      "svg_sha256": "d9d1ad2313cb97ce859ab0e53549dc54f9c28fea7387ae159feaddda720da037",
+      "png_sha256": "a32dd496d2a55f6cb00e5bb5f2ee0a689d1166bec0766813705d40146a5025e1",
+      "inspection": "Root inspected full changed five views and remaining seven; final Cube/UM supply closeups inspected after label fix"
+    },
+    {
+      "id": "forum-linuxcnc-rotarysmp-schaublin-125-cnc-retrofit",
+      "svg_sha256": "3ddee8be3a253ab7a4aaf5bfab13960cddaafa39aacdd3e2b4d299cd75ec0d9d",
+      "png_sha256": "31be5fa46ed2b7f313a1ca022890d1da402b9a8b658390f7e46b74b31d05461c",
+      "inspection": "Root inspected full changed five views and remaining seven; final Cube/UM supply closeups inspected after label fix"
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "id": "wiki-157",
+  "sources": {
+    "machine-side-graph-snapshot.json": {
+      "source_graph": "157-wiki-157.json",
+      "source_sha256": "77b4cca857fcda91b3e90fc71fdecc727457d272f71847c6cede722d12a8cc9c",
+      "graph": {
+        "profile_id": "wiki-157",
+        "devices": [
+          {
+            "id": "supplement-device-001",
+            "role": "reference"
+          },
+          {
+            "id": "supplement-device-002",
+            "role": "reference"
+          }
+        ],
+        "connectors": [
+          {
+            "id": "supplement-connector-001",
+            "device": "supplement-device-001",
+            "refdes": "Silvertail stock Leetro controller relay interface",
+            "form": "controller-to-relay group; contacts unknown",
+            "scope": "Stock Leetro arrangement is a historical controller reference; its installed state and terminal map are unverified. Do not join to upgrade route. This is a reference for the named source revision; installed-machine correspondence is not established.",
+            "contacts": []
+          },
+          {
+            "id": "supplement-connector-002",
+            "device": "supplement-device-002",
+            "refdes": "Silvertail Smoothieboard/ACnode upgrade relay interface",
+            "form": "controller-to-ACnode/relay group; contacts unknown",
+            "scope": "Upgrade arrangement is a distinct source-described variant; no exact controller revision, relay terminal or V2 contact path established. This is a reference for the named source revision; installed-machine correspondence is not established.",
+            "contacts": []
+          }
+        ],
+        "wires": []
+      }
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "id": "forum-linuxcnc-stenly-deckel-maho-dmu-50m",
+  "sources": {
+    "forum-peripheral-evidence.json": {
+      "id": "forum-linuxcnc-stenly-deckel-maho-dmu-50m",
+      "dossier": "src/docs/machine-research/linuxcnc-stenly-deckel-maho-dmu-50m.md",
+      "reported_fitted_or_used": [
+        {
+          "name": "Siemens Simodrive servo modules",
+          "contacts": [],
+          "source_line_number": 7,
+          "source_line": "The machine retained Siemens Simodrive hardware; stenly identifies servo modules 6SN1118-0AD11-0AA1 and control board 6SN1121-0BA11-0AA1. The owner says the original Heidenhain TNC 310 did not exhibit the Z drop. The post describes a separately operated AC-power/E-stop circuit: the operator starts LinuxCNC, enables it with F2, manually powers the servo AC circuit, then a drive feedback signal returns to Mesa and HAL releases the brake after a short delay. The brake/release signal is shared across XYZ in the described setup.",
+          "evidence": "The machine retained Siemens Simodrive hardware; stenly identifies servo modules 6SN1118-0AD11-0AA1 and control board 6SN1121-0BA11-0AA1. The owner says the original Heidenhain TNC 310 did not exhibit the Z drop.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        }
+      ],
+      "listed_for_build_unverified": [],
+      "historical_reference": [],
+      "planned_only": [],
+      "open_function_group": [
+        {
+          "name": "Z brake and drive-ready feedback",
+          "source_line_number": 13,
+          "source_line": "The inspected post gives board models and describes a logical sequence involving LinuxCNC enable, manually switched AC power, drive-ready feedback, and timed brake release. It does not identify the Mesa connector pins or screw terminals carrying those signals, electrical levels, contact numbers, or full machine harness mapping. This is not a pinout.",
+          "evidence": "The inspected post gives board models and describes a logical sequence involving LinuxCNC enable, manually switched AC power, drive-ready feedback, and timed brake release. It does not identify the Mesa connector pins or screw terminals carrying those signals, electrical levels, contact numbers, or full machine harness mapping.",
+          "contacts": [],
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        }
+      ],
+      "exclusions": [],
+      "source_gap": "Dossier does not establish an as-built SmoothieBox route or a complete physical contact schedule for the listed peripherals."
+    }
+  }
+}

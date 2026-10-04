@@ -1,0 +1,50 @@
+{
+  "id": "forum-linuxcnc-schuetzbuilds-maho-mh600t",
+  "sources": {
+    "forum-peripheral-evidence.json": {
+      "id": "forum-linuxcnc-schuetzbuilds-maho-mh600t",
+      "dossier": "src/docs/machine-research/linuxcnc-schuetzbuilds-maho-mh600t.md",
+      "reported_fitted_or_used": [
+        {
+          "name": "Indramat axis drives",
+          "contacts": [],
+          "source_line_number": 7,
+          "source_line": "The owners report using Mesa 5i25, 7i77, and 7i84 hardware with Gmoccapy. By August 2024, the LinuxCNC endstop chain and X/Y/Z linear motion with the Indramat drives were working. They also got the flood-coolant relay and spindle-start functions working after finding that the 7i84 field supply and relay-board 24 V supply were separate and had no common ground. A drawbar function was adapted from the centralized-lubrication component and interlocked against spindle operation.",
+          "evidence": "By August 2024, the LinuxCNC endstop chain and X/Y/Z linear motion with the Indramat drives were working. They also got the flood-coolant relay and spindle-start functions working after finding that the 7i84 field supply and relay-board 24 V supply were separate and had no common ground.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        }
+      ],
+      "listed_for_build_unverified": [],
+      "historical_reference": [],
+      "planned_only": [],
+      "open_function_group": [
+        {
+          "name": "Flood-coolant relay",
+          "contacts": [],
+          "source_line_number": 7,
+          "source_line": "The owners report using Mesa 5i25, 7i77, and 7i84 hardware with Gmoccapy. By August 2024, the LinuxCNC endstop chain and X/Y/Z linear motion with the Indramat drives were working. They also got the flood-coolant relay and spindle-start functions working after finding that the 7i84 field supply and relay-board 24 V supply were separate and had no common ground. A drawbar function was adapted from the centralized-lubrication component and interlocked against spindle operation.",
+          "evidence": "They also got the flood-coolant relay and spindle-start functions working after finding that the 7i84 field supply and relay-board 24 V supply were separate and had no common ground. A drawbar function was adapted from the centralized-lubrication component and interlocked against spindle operation.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        },
+        {
+          "name": "Spindle enable/CW/CCW relays",
+          "contacts": [],
+          "source_line_number": 18,
+          "source_line": "| Spindle enable relay 1K8 | `hm2_5i25.0.7i84.0.2.output-12` |",
+          "evidence": "`hm2_5i25.0.7i84.0.2.output-12`.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        },
+        {
+          "name": "Drawbar actuator and open switch",
+          "contacts": [],
+          "source_line_number": 22,
+          "source_line": "| Drawbar-open switch input | `hm2_5i25.0.7i77.0.0.input-00` |",
+          "evidence": "`hm2_5i25.0.7i77.0.0.input-00`.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        }
+      ],
+      "exclusions": [],
+      "source_gap": "Dossier does not establish an as-built SmoothieBox route or a complete physical contact schedule for the listed peripherals."
+    }
+  }
+}

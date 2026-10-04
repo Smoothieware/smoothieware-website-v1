@@ -1,0 +1,393 @@
+{
+  "id": "wiki-201",
+  "sources": {
+    "machine-side-graph-snapshot.json": {
+      "source_graph": "201-wiki-201.json",
+      "source_sha256": "867cf40fb9dc15e1995a3bda9f7eb04873971b93b3d217ca3df58c534d87d677",
+      "graph": {
+        "profile_id": "wiki-201",
+        "devices": [
+          {
+            "id": "supplement-device-001",
+            "role": "reference"
+          },
+          {
+            "id": "supplement-device-002",
+            "role": "reference"
+          },
+          {
+            "id": "supplement-device-003",
+            "role": "reference"
+          },
+          {
+            "id": "supplement-device-004",
+            "role": "reference"
+          },
+          {
+            "id": "supplement-device-005",
+            "role": "reference"
+          },
+          {
+            "id": "supplement-device-006",
+            "role": "reference"
+          },
+          {
+            "id": "supplement-device-007",
+            "role": "reference"
+          },
+          {
+            "id": "supplement-device-008",
+            "role": "reference"
+          },
+          {
+            "id": "supplement-device-009",
+            "role": "reference"
+          },
+          {
+            "id": "supplement-device-010",
+            "role": "reference"
+          },
+          {
+            "id": "supplement-device-011",
+            "role": "reference"
+          },
+          {
+            "id": "supplement-device-012",
+            "role": "reference"
+          },
+          {
+            "id": "supplement-device-013",
+            "role": "reference"
+          },
+          {
+            "id": "supplement-device-014",
+            "role": "reference"
+          },
+          {
+            "id": "supplement-device-015",
+            "role": "reference"
+          },
+          {
+            "id": "supplement-device-016",
+            "role": "reference"
+          },
+          {
+            "id": "supplement-device-017",
+            "role": "reference"
+          },
+          {
+            "id": "supplement-device-018",
+            "role": "reference"
+          },
+          {
+            "id": "supplement-device-019",
+            "role": "reference"
+          }
+        ],
+        "connectors": [
+          {
+            "id": "supplement-connector-001",
+            "device": "supplement-device-001",
+            "refdes": "RepRapPro Huxley Melzi motor connectors",
+            "form": "Melzi motor connectors; contact map incomplete",
+            "scope": "Manufacturer guide identifies axis/extruder motor groups; sequences context-specific, but exact complete contact schedule and fitted build revision unverified. Do not normalize differing motor wire orders. This is a reference for the named source revision; installed-machine correspondence is not established.",
+            "contacts": []
+          },
+          {
+            "id": "supplement-connector-002",
+            "device": "supplement-device-002",
+            "refdes": "RepRapPro Huxley Melzi NC endstop connectors",
+            "form": "Melzi NC endstop connectors; contact map incomplete",
+            "scope": "Manufacturer guide identifies normally closed endstop groups, but exact complete contact schedule and fitted build revision unverified. Do not normalize differing motor wire orders. This is a reference for the named source revision; installed-machine correspondence is not established.",
+            "contacts": []
+          },
+          {
+            "id": "supplement-connector-003",
+            "device": "supplement-device-003",
+            "refdes": "RepRapPro Huxley Melzi heated-bed header",
+            "form": "Melzi heated-bed header; contact map incomplete",
+            "scope": "Manufacturer guide identifies heated-bed power/sensor group, but exact complete contact schedule and fitted build revision unverified. Do not normalize differing motor wire orders. This is a reference for the named source revision; installed-machine correspondence is not established.",
+            "contacts": []
+          },
+          {
+            "id": "supplement-connector-004",
+            "device": "supplement-device-004",
+            "refdes": "RepRapPro Huxley source power plug pins 1\u20133",
+            "form": "three-pin source power plug; mating view unknown",
+            "scope": "Official archived RepRapPro Huxley wiring guide for its pictured Melzi build only. This is a source-specific contact/position schedule, not evidence of the fitted controller, connector face or V2 route on an arbitrary Huxley. Pins 1 and 2 are both 0 V; pin 3 is +19 V. This is a reference for the named source revision; installed-machine correspondence is not established.",
+            "contacts": [
+              {
+                "id": "1",
+                "mark": "1",
+                "label": "0 V / GND; source bonds both ground wires through pins 1 and 2"
+              },
+              {
+                "id": "2",
+                "mark": "2",
+                "label": "0 V / GND; source bonds both ground wires through pins 1 and 2"
+              },
+              {
+                "id": "3",
+                "mark": "3",
+                "label": "+19 V"
+              }
+            ]
+          },
+          {
+            "id": "supplement-connector-005",
+            "device": "supplement-device-005",
+            "refdes": "RepRapPro Huxley Melzi controller power input left/right",
+            "form": "two screw terminals; source-relative left/right positions",
+            "scope": "Official archived RepRapPro Huxley wiring guide for its pictured Melzi build only. This is a source-specific contact/position schedule, not evidence of the fitted controller, connector face or V2 route on an arbitrary Huxley. Source states +19 V left, 0 V right; no printed pin numbers or mating-face view. This is a reference for the named source revision; installed-machine correspondence is not established.",
+            "contacts": [
+              {
+                "id": "left",
+                "mark": "left",
+                "label": "+19 V input"
+              },
+              {
+                "id": "right",
+                "mark": "right",
+                "label": "0 V / GND input"
+              }
+            ]
+          },
+          {
+            "id": "supplement-connector-006",
+            "device": "supplement-device-006",
+            "refdes": "RepRapPro Huxley heated-bed power screw terminals left/middle/right",
+            "form": "three screw terminals; source-relative left/middle/right positions",
+            "scope": "Official archived RepRapPro Huxley wiring guide for its pictured Melzi build only. This is a source-specific contact/position schedule, not evidence of the fitted controller, connector face or V2 route on an arbitrary Huxley. Source says the left screw is unconnected in this pictured build, middle 0 V and right +19 V; no printed pin numbers. This is a reference for the named source revision; installed-machine correspondence is not established.",
+            "contacts": [
+              {
+                "id": "left",
+                "mark": "left",
+                "label": "Unused / no connection in source build"
+              },
+              {
+                "id": "middle",
+                "mark": "middle",
+                "label": "0 V / GND"
+              },
+              {
+                "id": "right",
+                "mark": "right",
+                "label": "+19 V"
+              }
+            ]
+          },
+          {
+            "id": "supplement-connector-007",
+            "device": "supplement-device-007",
+            "refdes": "RepRapPro Huxley bed 4-way header positions 1\u20134",
+            "form": "four-way bed PCB header; source photo edge/camera order",
+            "scope": "Official archived RepRapPro Huxley wiring guide for its pictured Melzi build only. This is a source-specific contact/position schedule, not evidence of the fitted controller, connector face or V2 route on an arbitrary Huxley. Source numbers bed PCB header 1\u20134 relative to board edge/camera. This is not a universal mating-face view; pin 1 is unused/future bed levelling in the pictured build. This is a reference for the named source revision; installed-machine correspondence is not established.",
+            "contacts": [
+              {
+                "id": "1",
+                "mark": "1",
+                "label": "Unused / future bed levelling, closest to PCB edge/camera"
+              },
+              {
+                "id": "2",
+                "mark": "2",
+                "label": "Heated-bed MOSFET control signal"
+              },
+              {
+                "id": "3",
+                "mark": "3",
+                "label": "Thermistor signal"
+              },
+              {
+                "id": "4",
+                "mark": "4",
+                "label": "Thermistor signal / GND, furthest from PCB edge/camera"
+              }
+            ]
+          },
+          {
+            "id": "supplement-connector-008",
+            "device": "supplement-device-008",
+            "refdes": "RepRapPro Huxley Melzi X-MOTOR left-to-right source positions",
+            "form": "four screw positions; source-relative left-to-right, no printed pin numbers",
+            "scope": "Official archived RepRapPro Huxley wiring guide for its pictured Melzi build only. This is a source-specific contact/position schedule, not evidence of the fitted controller, connector face or V2 route on an arbitrary Huxley. Official Melzi guide states the X-MOTOR controller screw-connector wire order from left to right: Black, Green, Blue, Red. Position labels here are source-relative order, not stamped contact numbers. This is a reference for the named source revision; installed-machine correspondence is not established.",
+            "contacts": [
+              {
+                "id": "leftmost",
+                "mark": "leftmost",
+                "label": "Black motor conductor"
+              },
+              {
+                "id": "second-from-left",
+                "mark": "second-from-left",
+                "label": "Green motor conductor"
+              },
+              {
+                "id": "third-from-left",
+                "mark": "third-from-left",
+                "label": "Blue motor conductor"
+              },
+              {
+                "id": "rightmost",
+                "mark": "rightmost",
+                "label": "Red motor conductor"
+              }
+            ]
+          },
+          {
+            "id": "supplement-connector-009",
+            "device": "supplement-device-009",
+            "refdes": "RepRapPro Huxley Melzi Y-MOTOR left-to-right source positions",
+            "form": "four screw positions; source-relative left-to-right, no printed pin numbers",
+            "scope": "Official archived RepRapPro Huxley wiring guide for its pictured Melzi build only. This is a source-specific contact/position schedule, not evidence of the fitted controller, connector face or V2 route on an arbitrary Huxley. Official Melzi guide states the Y-MOTOR controller screw-connector wire order from left to right: Black, Green, Blue, Red. Position labels here are source-relative order, not stamped contact numbers. This is a reference for the named source revision; installed-machine correspondence is not established.",
+            "contacts": [
+              {
+                "id": "leftmost",
+                "mark": "leftmost",
+                "label": "Black motor conductor"
+              },
+              {
+                "id": "second-from-left",
+                "mark": "second-from-left",
+                "label": "Green motor conductor"
+              },
+              {
+                "id": "third-from-left",
+                "mark": "third-from-left",
+                "label": "Blue motor conductor"
+              },
+              {
+                "id": "rightmost",
+                "mark": "rightmost",
+                "label": "Red motor conductor"
+              }
+            ]
+          },
+          {
+            "id": "supplement-connector-010",
+            "device": "supplement-device-010",
+            "refdes": "RepRapPro Huxley Melzi E-MOTOR left-to-right source positions",
+            "form": "four screw positions; source-relative left-to-right, no printed pin numbers",
+            "scope": "Official archived RepRapPro Huxley wiring guide for its pictured Melzi build only. This is a source-specific contact/position schedule, not evidence of the fitted controller, connector face or V2 route on an arbitrary Huxley. Official Melzi guide states the E-MOTOR controller screw-connector wire order from left to right: Black, Green, Blue, Red. Position labels here are source-relative order, not stamped contact numbers. This is a reference for the named source revision; installed-machine correspondence is not established.",
+            "contacts": [
+              {
+                "id": "leftmost",
+                "mark": "leftmost",
+                "label": "Black motor conductor"
+              },
+              {
+                "id": "second-from-left",
+                "mark": "second-from-left",
+                "label": "Green motor conductor"
+              },
+              {
+                "id": "third-from-left",
+                "mark": "third-from-left",
+                "label": "Blue motor conductor"
+              },
+              {
+                "id": "rightmost",
+                "mark": "rightmost",
+                "label": "Red motor conductor"
+              }
+            ]
+          },
+          {
+            "id": "supplement-connector-011",
+            "device": "supplement-device-011",
+            "refdes": "RepRapPro Huxley Melzi Z-MOTOR left-to-right source positions",
+            "form": "four screw positions; source-relative left-to-right, no printed pin numbers",
+            "scope": "Official archived RepRapPro Huxley wiring guide for its pictured Melzi build only. This is a source-specific contact/position schedule, not evidence of the fitted controller, connector face or V2 route on an arbitrary Huxley. Official Melzi guide states the Z-MOTOR controller screw-connector wire order from left to right: Black, Green, Blue, Red. Position labels here are source-relative order, not stamped contact numbers. This is a reference for the named source revision; installed-machine correspondence is not established.",
+            "contacts": [
+              {
+                "id": "leftmost",
+                "mark": "leftmost",
+                "label": "Black motor conductor"
+              },
+              {
+                "id": "second-from-left",
+                "mark": "second-from-left",
+                "label": "Green motor conductor"
+              },
+              {
+                "id": "third-from-left",
+                "mark": "third-from-left",
+                "label": "Blue motor conductor"
+              },
+              {
+                "id": "rightmost",
+                "mark": "rightmost",
+                "label": "Red motor conductor"
+              }
+            ]
+          },
+          {
+            "id": "supplement-connector-012",
+            "device": "supplement-device-012",
+            "refdes": "RepRapPro Huxley Melzi XSTOP source group",
+            "form": "source-named terminal group; individual contact inventory unknown",
+            "scope": "Official archived RepRapPro Huxley wiring guide for its pictured Melzi build only. This is a source-specific contact/position schedule, not evidence of the fitted controller, connector face or V2 route on an arbitrary Huxley. X switch outer two NC contacts; source says either wire orientation, controller terminal positions not numbered. This is a reference for the named source revision; installed-machine correspondence is not established.",
+            "contacts": []
+          },
+          {
+            "id": "supplement-connector-013",
+            "device": "supplement-device-013",
+            "refdes": "RepRapPro Huxley Melzi YSTOP source group",
+            "form": "source-named terminal group; individual contact inventory unknown",
+            "scope": "Official archived RepRapPro Huxley wiring guide for its pictured Melzi build only. This is a source-specific contact/position schedule, not evidence of the fitted controller, connector face or V2 route on an arbitrary Huxley. Y switch outer two NC contacts; source says either wire orientation, controller terminal positions not numbered. This is a reference for the named source revision; installed-machine correspondence is not established.",
+            "contacts": []
+          },
+          {
+            "id": "supplement-connector-014",
+            "device": "supplement-device-014",
+            "refdes": "RepRapPro Huxley Melzi ZSTOP source group",
+            "form": "source-named terminal group; individual contact inventory unknown",
+            "scope": "Official archived RepRapPro Huxley wiring guide for its pictured Melzi build only. This is a source-specific contact/position schedule, not evidence of the fitted controller, connector face or V2 route on an arbitrary Huxley. Z switch outer two NC contacts; source says either wire orientation, controller terminal positions not numbered. This is a reference for the named source revision; installed-machine correspondence is not established.",
+            "contacts": []
+          },
+          {
+            "id": "supplement-connector-015",
+            "device": "supplement-device-015",
+            "refdes": "RepRapPro Huxley Melzi HOTEND source group",
+            "form": "source-named terminal group; individual contact inventory unknown",
+            "scope": "Official archived RepRapPro Huxley wiring guide for its pictured Melzi build only. This is a source-specific contact/position schedule, not evidence of the fitted controller, connector face or V2 route on an arbitrary Huxley. hot-end heater pair; source says no polarity, controller terminal positions not numbered. This is a reference for the named source revision; installed-machine correspondence is not established.",
+            "contacts": []
+          },
+          {
+            "id": "supplement-connector-016",
+            "device": "supplement-device-016",
+            "refdes": "RepRapPro Huxley Melzi ETEMP source group",
+            "form": "source-named terminal group; individual contact inventory unknown",
+            "scope": "Official archived RepRapPro Huxley wiring guide for its pictured Melzi build only. This is a source-specific contact/position schedule, not evidence of the fitted controller, connector face or V2 route on an arbitrary Huxley. hot-end thermistor pair; source says no polarity, controller terminal positions not numbered. This is a reference for the named source revision; installed-machine correspondence is not established.",
+            "contacts": []
+          },
+          {
+            "id": "supplement-connector-017",
+            "device": "supplement-device-017",
+            "refdes": "RepRapPro Huxley Melzi BTEMP source group",
+            "form": "source-named terminal group; individual contact inventory unknown",
+            "scope": "Official archived RepRapPro Huxley wiring guide for its pictured Melzi build only. This is a source-specific contact/position schedule, not evidence of the fitted controller, connector face or V2 route on an arbitrary Huxley. bed thermistor pair; source identifies bed header positions 3/4 but Melzi screw positions remain unnumbered. This is a reference for the named source revision; installed-machine correspondence is not established.",
+            "contacts": []
+          },
+          {
+            "id": "supplement-connector-018",
+            "device": "supplement-device-018",
+            "refdes": "RepRapPro Huxley Melzi Melzi expansion D10 source group",
+            "form": "source-named terminal group; individual contact inventory unknown",
+            "scope": "Official archived RepRapPro Huxley wiring guide for its pictured Melzi build only. This is a source-specific contact/position schedule, not evidence of the fitted controller, connector face or V2 route on an arbitrary Huxley. bed-control signal from bed-header contact 2 to top row second from left in source picture; no printed contact number. This is a reference for the named source revision; installed-machine correspondence is not established.",
+            "contacts": []
+          },
+          {
+            "id": "supplement-connector-019",
+            "device": "supplement-device-019",
+            "refdes": "RepRapPro Huxley Melzi fan supply source group",
+            "form": "source-named terminal group; individual contact inventory unknown",
+            "scope": "Official archived RepRapPro Huxley wiring guide for its pictured Melzi build only. This is a source-specific contact/position schedule, not evidence of the fitted controller, connector face or V2 route on an arbitrary Huxley. extruder fan shares main controller power input terminals; source says FAN-labelled outlet is for optional print cooling. This is a reference for the named source revision; installed-machine correspondence is not established.",
+            "contacts": []
+          }
+        ],
+        "wires": []
+      }
+    }
+  }
+}

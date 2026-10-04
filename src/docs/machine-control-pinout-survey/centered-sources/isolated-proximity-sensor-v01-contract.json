@@ -1,0 +1,2064 @@
+{
+ "name": "Inductive proximity sensor level shifter (isolated)",
+ "slug": "inductive-proximity-sensor-adapter",
+ "revision": "v01",
+ "contract_date": "2026-10-01",
+ "status_target": "cad-clean-unqualified (best achievable without physical qualification)",
+ "hazard_class": "low-voltage",
+ "hazard_basis": "12-24 V DC SELV field input, fuse-limited (PPTC 0.5 A hold, 30 V rating), no mains, no stored energy beyond 2.3 uF. Functional (not safety) isolation, working voltage <= 30 V DC. No fabrication hold on hazard grounds; physical qualification still required before use.",
+ "generator": "tools/make_contract.py (single source; rerun instead of editing this JSON by hand)",
+ "license": "CERN-OHL-S-2.0",
+ "cad": "KiCad 9 (9.0.8); KiCad only",
+ "function": "Translates one qualified three-wire 10-30 V DC inductive proximity sensor (PNP or NPN output, selected by solder jumper SJ2) into one standard Smoothie endstop/probe signal. The sensor field side (own 12-24 V supply) is galvanically separated from the host (endstop S/G/5V cable) by TLP291 optocouplers. The output behaves like a normally-closed endstop to host ground: LOW = field healthy and sensor idle, RELEASED (host pull-up high) = triggered OR field power lost OR sensor/cable fault.",
+ "scope": "Single board, one sensor, one output connector, no Gadgeteer socket (design.md: no Gadgeteer interface), no firmware. Supported matrix: 3-wire DC, NPN (sinking) or PNP (sourcing) output selected by SJ2 (shipped NPN), NO or NC output selected by SJ1 (shipped NO); off-state leakage <= 20 uA, residual voltage <= 2 V, supply 10-30 V, load current >= 5 mA. Unsupported (marked on silkscreen/README): 2-wire sensors, AC or AC/DC sensors, NAMUR, push-pull (complementary) outputs, analog outputs, sensors drawing >200 mA, 5 V sensors. This contract replaces the missing ai-build-brief.md.",
+ "output_paths": {
+  "contract": "attempt/design-contract.json",
+  "version_dir": "attempt/versions/v01/",
+  "expected_files": [
+   "inductive-proximity-sensor-adapter.kicad_sch",
+   ".kicad_pcb",
+   ".kicad_pro",
+   "fp-lib-table",
+   "netlist.xml",
+   "erc.json",
+   "drc.json",
+   "verify.json",
+   "routing.json",
+   "bom.csv + bom.md",
+   "gerbers/ + drill files",
+   "checklist-review.md (132 items, stable IDs S001-S060 and L001-L072)",
+   "renders/ (populated + bare top/bottom/isometric black-mask PNG, assembly + copper drawings, schematic PDF/SVG, commands.json with model provenance)"
+  ],
+  "every_version_complete": "CLAUDE.md section 5: every retained version, including rejected ones, gets the complete package from its own saved CAD."
+ },
+ "reference_tools": {
+  "read_only": [
+   "src/gate-boards/attempt/tools/ (design.py, router.py, verify.py, stackup.py, finish.py, ...)",
+   "src/gate-boards/attempt/versions/v01/renders/{commands.json,black-render-commands.json}",
+   "src/spi-thermocouple-breakout/attempt/",
+   "src/spi-hub/attempt/"
+  ],
+  "rule": "Copy what is needed into attempt/tools/; never edit the reference trees. Python with pcbnew: /usr/bin/python3 (9.0.8). Heavy commands run as nice -n 19 ionice -c 3."
+ },
+ "sources": {
+  "tlp291": {
+   "file": "sources/tlp291.pdf",
+   "text": "sources/tlp291.txt",
+   "identity": "Toshiba TLP291 datasheet, 2019-5-27, 13 pages",
+   "url": "https://toshiba.semicon-storage.com/info/docget.jsp?did=12884&prodName=TLP291",
+   "facts": "p.1 pins 1 anode 2 cathode 3 emitter 4 collector; creepage 5.0 mm min, clearance 5.0 mm min, 3750 Vrms; p.2 CTR ranks, GB 100-400 % at IF 5 mA, ordering 'TLP291(GB,E'; p.3 VF 1.1-1.4 V at 10 mA, VR 5 V max, VCEO 80 V, ICEO 0.08 uA at 48 V; p.4 CTR_sat rank GB >= 30 % at IF 1 mA VCE 0.4 V, VCE(sat) <= 0.3 V at IC 2.4 mA IF 8 mA; switching ton 7 us toff 7 us (RL 100 ohm) and ts 30 us toff 60 us (RL 1.9 k, IF 16 mA)",
+   "sha256": "fd306864ded8756a4802d5bdf19953cbf07b714ef8eafcaa940094cf49752fd8"
+  },
+  "bss138": {
+   "file": "sources/bss138-onsemi.pdf",
+   "text": "sources/bss138-onsemi.txt",
+   "identity": "onsemi BSS138 N-channel logic-level MOSFET datasheet (BSS138/D)",
+   "url": "https://www.onsemi.com/pdf/datasheet/bss138-d.pdf",
+   "facts": "SOT-23, VGS(th) 0.8-1.5 V (typ 1.3) at ID 1 mA, RDS(on) 3.5 ohm at 10 V and 6.0 ohm at 4.5 V, V(BR)DSS 50 V",
+   "sha256": "d1bff01c42324bc87d9fef988b6ec27425a2d8e91a9ff422b709fd1f8d1d59a5"
+  },
+  "pmeg6010ceh": {
+   "file": "sources/pmeg6010ceh.pdf",
+   "text": "sources/pmeg6010ceh.txt",
+   "identity": "Nexperia PMEG6010CEH 60 V 1 A Schottky, product data sheet 1 July 2023",
+   "url": "https://assets.nexperia.com/documents/data-sheet/PMEG6010CEH.pdf",
+   "facts": "SOD123F, IF 1 A, VR 60 V, VF 0.40 V max at 100 mA and 0.53 V max at 500 mA (25 C), IR 50 uA max at 60 V; pin 1 cathode, pin 2 anode",
+   "sha256": "2d3a1e926e54be5ce802ee5bb8e5d1530ab44a07424518a3a82261cff05ccdc1"
+  },
+  "littelfuse_1812l": {
+   "file": "sources/littelfuse-1812l.pdf",
+   "text": "sources/littelfuse-1812l.txt",
+   "identity": "Littelfuse POLYFUSE 1812L series datasheet, revised 12 July 2010 (TTI copy)",
+   "url": "https://www.tti.com/content/dam/ttiinc/manufacturers/littelfuse/PDF/Littelfuse-POLYFUSE-Resettable-PTCs-Surface-Mount-1812L-Datasheet.pdf",
+   "facts": "1812L050/30: Ihold 0.50 A, Itrip 1.00 A, Vmax 30 V, Imax 100 A, Pd typ 0.8 W, R min 0.15 ohm, R1 max 1.0 ohm, max time to trip 0.15 s at 8 A; hold 0.44 A at 40 C, 0.33 A at 70 C; ordering 1812L050/30PR (tape and reel 2000); body 4.37-4.73 x 3.07-3.41 mm",
+   "sha256": "e6dafec34124ae976dce6e50edc3d61e6992fb05ae39af2c22cb7c2be2434d77"
+  },
+  "smf30ca": {
+   "file": "sources/smf30ca-nextgen.pdf",
+   "text": "sources/smf30ca-nextgen.txt",
+   "identity": "NextGen Components specification sheet P1102 rev A1 (2022-11-02) for SMF30CA (original MDD SMF30CA), SMF/SOD-123FL",
+   "url": "https://media.digikey.com/pdf/Data%20Sheets/NextGen%20Components%20PDFs/SMF30CA00S30CA.pdf",
+   "facts": "bidirectional, VRWM 30 V, VBR 33.3-36.8 V at 1 mA, IR 1 uA at VRWM, Vc 48.4 V at Ipp 4.1 A, 200 W 10/1000 us. Second-source sheet, not the Littelfuse/MCC original (those PDFs returned 403/timeouts).",
+   "sha256": "5d7022df07d9b354eb6e83528db92a08b909ecfa90e539eb429b625d12102a32"
+  },
+  "phoenix_1984620": {
+   "file": "sources/phoenix-1984620.pdf",
+   "text": "sources/phoenix-1984620.txt",
+   "identity": "Phoenix Contact generated datasheet PT 1,5/ 3-3,5-H, 1984620 (DigiKey copy)",
+   "url": "https://media.digikey.com/pdf/Data%20Sheets/Phoenix%20Contact%20PDFs/1984620.pdf",
+   "facts": "3 positions, 3.5 mm pitch, screw, 17.5 A, 200 V, length 7.6 mm, height 9 mm, hole 1.2 mm, green",
+   "sha256": "3ec9d17e624db2b78c5a8e9db7964f649386203872ff5bf9bb37cd4b7fb23a4c"
+  },
+  "phoenix_1984617": {
+   "file": "sources/phoenix-1984617-pt-1,5-2-3,5-h.pdf",
+   "text": "sources/phoenix-1984617-pt-1,5-2-3,5-h.txt",
+   "identity": "Phoenix Contact generated datasheet PT 1,5/ 2-3,5-H, 1984617 (copied from src/spi-thermocouple-breakout/attempt/sources/)",
+   "url": "https://www.phoenixcontact.com/us/produkte/1984617",
+   "facts": "2 positions, 3.5 mm, 17.5 A, 200 V, hole 1.2 mm",
+   "sha256": "a86bde4bf078b137b7677ade478c009753dbc3742a0ca1459fda633baddee306"
+  },
+  "molex_22272031": {
+   "file": "sources/molex-22272031.pdf",
+   "text": "sources/molex-22272031.txt",
+   "identity": "Molex KK 254 catalog sheet (Jameco copy, copied from src/differential-signal-extender/attempt/sources/)",
+   "url": "https://www.jameco.com (Jameco 879271)",
+   "facts": "22-27-2031: 3 circuits, tin, 2.54 mm, friction lock ramp, 250 V, 4.0 A, 0.64 mm square pin; dimension A 7.62 mm",
+   "sha256": "b44895aaba554d4fb0e9d6ae158f51120f01bc48dff0af7d127ff5af1810ffbc"
+  },
+  "murata_grm188": {
+   "file": "sources/murata-grm188r71h104ka93.pdf",
+   "text": "sources/murata-grm188r71h104ka93.txt",
+   "identity": "Murata GRM188R71H104KA93 series sheet (copied from src/spi-thermocouple-breakout/attempt/sources/)",
+   "url": "see source json in that attempt",
+   "facts": "100 nF X7R 50 V 0603",
+   "sha256": "e8f87c1f8f6a0aea950539e373bd175426d3e71c8ddb244f3cc72323ccbdf5d0"
+  },
+  "yageo_rc0603": {
+   "file": "sources/yageo-rc0603.pdf",
+   "text": "sources/yageo-rc0603.txt",
+   "identity": "Yageo RC0603 spec 2008 V3 (copied from spi-thermocouple attempt)",
+   "url": "see source json in that attempt",
+   "facts": "RC0603 1/10 W, 50 V. RC0805 (1/8 W) and RC1206 (1/4 W) ratings are NOT read from a primary sheet (Yageo page returned 404)",
+   "sha256": "82376df3d7a854e164738874e5707b77ccf6c5362667fd3f265ae93e34714e9f"
+  },
+  "kingbright_apt1608sgc": {
+   "file": "sources/kingbright-apt1608sgc.pdf",
+   "text": "sources/kingbright-apt1608sgc.txt",
+   "identity": "Kingbright APT1608SGC green 0603 (copied from src/spi-hub/attempt/sources/)",
+   "url": "see source json in spi-hub attempt",
+   "facts": "green 0603 LED",
+   "sha256": "3256acec755bc1983a85e4183d22de785a223d4ed97ea438d87f6f766bed8e31"
+  },
+  "endstop_host_evidence": {
+   "file": "../../additional-endstop-inputs-breakout/attempt/evidence/current-circuit-extraction.md",
+   "text": null,
+   "identity": "Native Prime2590 endstop input extraction (read-only reference)",
+   "url": null,
+   "facts": "ordinary endstop headers: pad1 selected power, pad2 GND, pad3 FIELD; FIELD has 10 k pull-up to selected rail (default 5 V), 100 nF, 1 k series into 74LCX07 open-drain buffer",
+   "sha256": "5be5b9f74dfd1f67d41093a9f05cad050707435e0ebacadd64df2dec566b5216"
+  }
+ },
+ "maintainer_decisions": [
+  {
+   "id": "D1",
+   "decision": "Board name: level shifter, not 'proximity sensor' (footnote [t]). Slug unchanged (README index key); silkscreen/title use 'INDUCTIVE SENSOR LEVEL SHIFTER'.",
+   "evidence": "specs.md footnote [t]"
+  },
+  {
+   "id": "D2",
+   "decision": "Design for 12-24 V (footnote [t]) = operating 10.8-26.4 V at J1; absolute continuous 30 V (PPTC Vmax and TVS VRWM); reverse connection up to 30 V survivable.",
+   "evidence": "specs.md; Littelfuse 1812L050/30 Vmax 30 V; SMF30CA VRWM 30 V"
+  },
+  {
+   "id": "D3",
+   "decision": "Same functional idea as the V2 Prime protected probe input (footnote [u]) but not a copy: the opto changes the ground model; the native comparator circuit is rated 3-45 V and shares ground, this board is isolated and rated 10.8-26.4 V.",
+   "evidence": "additional-endstop-inputs-breakout/attempt/evidence/current-circuit-extraction.md"
+  }
+ ],
+ "resolved_items": [
+  {
+   "id": "R1",
+   "item": "design.md 'Supported sensor matrix'",
+   "resolution": "See supported_sensor_matrix. PNP/NPN is selected by 3-pad solder jumper SJ2 (centre pad = SENSOR_IN, so exactly one of two opto LED branches is ever connected); NO/NC by SJ1. Auto-sensing both polarities without a jumper was REJECTED after a netlist-level DC check: two LED branches on one floating OUT node form a series path VF -> LED -> OUT -> LED -> GF that conducts with the sensor off (original defect, caught by review, now guarded by the DC solver in make_contract.py). SJ1 mismatch is visible and fail-safe (idle reads triggered). SJ2 mismatch is NOT detected: the wrong branch never conducts, so on the NO position a target is never reported (SIG stays LOW) - residual risk, mitigated by silkscreen, amber LED check and the first-power procedure (Q-mismatch). Push-pull outputs unsupported."
+  },
+  {
+   "id": "R2",
+   "item": "design.md 'Isolation/ground and polarity contract'",
+   "resolution": "Two named domains FIELD (VIN_RAW, VIN_F, VF, GF, SENSOR_IN + derived) and HOST (SIG, GND_H, +5V_H, GATE + derived). No net, pour, hole, shield or connector joins them (self-checked in make_contract.py). Output polarity: SIG LOW = idle and healthy; SIG released = triggered or fault. Host provides the pull-up (native Prime2590: 10 k to selected 5 V/3.3 V)."
+  },
+  {
+   "id": "R3",
+   "item": "design.md 'Transient and timing requirements'",
+   "resolution": "Transient environment: ESD handling and light industrial wiring; TVS 30 V standoff / 48.4 V clamp at 4.1 A (10/1000 us), no surge/EFT claim beyond that. Timing: board adds <= 250 us (opto toff typ 60 us with storage plus gate RC 9 us, worst-case budget); native host RC (100 nF with 10 k pull-up, ~1 ms) dominates; sensor events <= 1 kHz."
+  }
+ ],
+ "gadgeteer_socket": {
+  "type_letter": null,
+  "statement": "None. The board has no Gadgeteer 2x5 socket and no chain port. Its only host interface is the 3-pin 2.54 mm S/G/5V endstop connector J3 (CLAUDE.md 'Single input / endstop pinout'). CLAUDE.md pin 1 = +3.3V / pin 2 = +5V / pin 10 = GND therefore does not apply; the stale 'conflicting web ordering' note in research.md is moot and is NOT propagated (native schematics agree with the canonical table per additional-endstop-inputs-breakout evidence).",
+  "endstop_connector": {
+   "J3_pin1": "SIG (open-drain to GND_H, host pull-up)",
+   "J3_pin2": "GND_H",
+   "J3_pin3": "+5V_H (host 3.3-5 V accepted, consumed <= 0.1 mA)",
+   "viewing": "from above (component side), pin 1 marked; plug entry upward (vertical KK 254).",
+   "native_prime_cable_note": "Native Prime2590 J24-J29 are pad1 power, pad2 GND, pad3 FIELD: a straight 1:1 cable connects board SIG to host power. Use a cable that crosses pins 1 and 3, or confirm the host header pinout; printed on silkscreen."
+  },
+  "chain_policy": "No chaining.",
+  "external_power_rule": "EXCEPTION to the CLAUDE.md '12-24 V input also sourceable from Gadgeteer 5V' rule: no such jumper. A 10-30 V inductive sensor cannot run from 5 V, so a jumper would invite a non-working or unsafe configuration; DESIGN-RULES 'Supply choice' permits a documented exception when the function requires the higher voltage. Logged in questions.md."
+ },
+ "supported_sensor_matrix": [
+  {
+   "sensor": "NPN NO",
+   "SJ2": "NPN (pads 1-2, shipped)",
+   "SJ1": "NO (pads 1-2, shipped)",
+   "idle": "OUT high-Z, SIG LOW",
+   "target": "OUT sinks to 0V, DN lit, SIG RELEASED"
+  },
+  {
+   "sensor": "PNP NO",
+   "SJ2": "PNP (pads 2-3)",
+   "SJ1": "NO",
+   "idle": "OUT high-Z, SIG LOW",
+   "target": "OUT sources to +V, DP lit, SIG RELEASED"
+  },
+  {
+   "sensor": "NPN NC",
+   "SJ2": "NPN",
+   "SJ1": "NC (pads 2-3)",
+   "idle": "OUT sinks, DN lit, SIG LOW",
+   "target": "OUT high-Z, SIG RELEASED"
+  },
+  {
+   "sensor": "PNP NC",
+   "SJ2": "PNP",
+   "SJ1": "NC",
+   "idle": "OUT sources, DP lit, SIG LOW",
+   "target": "OUT high-Z, SIG RELEASED"
+  },
+  {
+   "note": "Wrong SJ1 (NO/NC) is visible and fail-safe: idle reads RELEASED (triggered). Wrong SJ2 (NPN/PNP) is NOT detected: neither LED lights, S_ON is never true; on SJ1 NC the SIG stays RELEASED (visible), on SJ1 NO the SIG stays LOW (target never reported, UNSAFE for a Z probe). Required mitigation: before first use wave metal at the sensor and confirm that exactly the selected-type amber LED lights (NPN: OUT LOW, PNP: OUT HIGH). Detectability of faults: field power loss reads RELEASED in all positions; a broken sensor wire or dead sensor reads RELEASED only for NC sensors on SJ1 NC (sensor idle = conducting); for NO sensors the sensor-off state is the idle state, so sensor-side cable breaks are NOT detectable. NC sensor + SJ1 NC is the fully fail-safe combination."
+  }
+ ],
+ "truth_table": [
+  {
+   "SJ1": "NO",
+   "SJ2": "NPN",
+   "field_power": true,
+   "host_5v": true,
+   "sensor_output": "none",
+   "SIG": "LOW"
+  },
+  {
+   "SJ1": "NO",
+   "SJ2": "NPN",
+   "field_power": true,
+   "host_5v": false,
+   "sensor_output": "none",
+   "SIG": "RELEASED"
+  },
+  {
+   "SJ1": "NO",
+   "SJ2": "NPN",
+   "field_power": false,
+   "host_5v": true,
+   "sensor_output": "none",
+   "SIG": "RELEASED"
+  },
+  {
+   "SJ1": "NO",
+   "SJ2": "NPN",
+   "field_power": false,
+   "host_5v": false,
+   "sensor_output": "none",
+   "SIG": "RELEASED"
+  },
+  {
+   "SJ1": "NO",
+   "SJ2": "NPN",
+   "field_power": true,
+   "host_5v": true,
+   "sensor_output": "npn_off",
+   "SIG": "LOW"
+  },
+  {
+   "SJ1": "NO",
+   "SJ2": "NPN",
+   "field_power": true,
+   "host_5v": false,
+   "sensor_output": "npn_off",
+   "SIG": "RELEASED"
+  },
+  {
+   "SJ1": "NO",
+   "SJ2": "NPN",
+   "field_power": false,
+   "host_5v": true,
+   "sensor_output": "npn_off",
+   "SIG": "RELEASED"
+  },
+  {
+   "SJ1": "NO",
+   "SJ2": "NPN",
+   "field_power": false,
+   "host_5v": false,
+   "sensor_output": "npn_off",
+   "SIG": "RELEASED"
+  },
+  {
+   "SJ1": "NO",
+   "SJ2": "NPN",
+   "field_power": true,
+   "host_5v": true,
+   "sensor_output": "npn_on",
+   "SIG": "RELEASED"
+  },
+  {
+   "SJ1": "NO",
+   "SJ2": "NPN",
+   "field_power": true,
+   "host_5v": false,
+   "sensor_output": "npn_on",
+   "SIG": "RELEASED"
+  },
+  {
+   "SJ1": "NO",
+   "SJ2": "NPN",
+   "field_power": false,
+   "host_5v": true,
+   "sensor_output": "npn_on",
+   "SIG": "RELEASED"
+  },
+  {
+   "SJ1": "NO",
+   "SJ2": "NPN",
+   "field_power": false,
+   "host_5v": false,
+   "sensor_output": "npn_on",
+   "SIG": "RELEASED"
+  },
+  {
+   "SJ1": "NO",
+   "SJ2": "NPN",
+   "field_power": true,
+   "host_5v": true,
+   "sensor_output": "pnp_off",
+   "SIG": "LOW"
+  },
+  {
+   "SJ1": "NO",
+   "SJ2": "NPN",
+   "field_power": true,
+   "host_5v": false,
+   "sensor_output": "pnp_off",
+   "SIG": "RELEASED"
+  },
+  {
+   "SJ1": "NO",
+   "SJ2": "NPN",
+   "field_power": false,
+   "host_5v": true,
+   "sensor_output": "pnp_off",
+   "SIG": "RELEASED"
+  },
+  {
+   "SJ1": "NO",
+   "SJ2": "NPN",
+   "field_power": false,
+   "host_5v": false,
+   "sensor_output": "pnp_off",
+   "SIG": "RELEASED"
+  },
+  {
+   "SJ1": "NO",
+   "SJ2": "NPN",
+   "field_power": true,
+   "host_5v": true,
+   "sensor_output": "pnp_on",
+   "SIG": "LOW"
+  },
+  {
+   "SJ1": "NO",
+   "SJ2": "NPN",
+   "field_power": true,
+   "host_5v": false,
+   "sensor_output": "pnp_on",
+   "SIG": "RELEASED"
+  },
+  {
+   "SJ1": "NO",
+   "SJ2": "NPN",
+   "field_power": false,
+   "host_5v": true,
+   "sensor_output": "pnp_on",
+   "SIG": "RELEASED"
+  },
+  {
+   "SJ1": "NO",
+   "SJ2": "NPN",
+   "field_power": false,
+   "host_5v": false,
+   "sensor_output": "pnp_on",
+   "SIG": "RELEASED"
+  },
+  {
+   "SJ1": "NO",
+   "SJ2": "PNP",
+   "field_power": true,
+   "host_5v": true,
+   "sensor_output": "none",
+   "SIG": "LOW"
+  },
+  {
+   "SJ1": "NO",
+   "SJ2": "PNP",
+   "field_power": true,
+   "host_5v": false,
+   "sensor_output": "none",
+   "SIG": "RELEASED"
+  },
+  {
+   "SJ1": "NO",
+   "SJ2": "PNP",
+   "field_power": false,
+   "host_5v": true,
+   "sensor_output": "none",
+   "SIG": "RELEASED"
+  },
+  {
+   "SJ1": "NO",
+   "SJ2": "PNP",
+   "field_power": false,
+   "host_5v": false,
+   "sensor_output": "none",
+   "SIG": "RELEASED"
+  },
+  {
+   "SJ1": "NO",
+   "SJ2": "PNP",
+   "field_power": true,
+   "host_5v": true,
+   "sensor_output": "npn_off",
+   "SIG": "LOW"
+  },
+  {
+   "SJ1": "NO",
+   "SJ2": "PNP",
+   "field_power": true,
+   "host_5v": false,
+   "sensor_output": "npn_off",
+   "SIG": "RELEASED"
+  },
+  {
+   "SJ1": "NO",
+   "SJ2": "PNP",
+   "field_power": false,
+   "host_5v": true,
+   "sensor_output": "npn_off",
+   "SIG": "RELEASED"
+  },
+  {
+   "SJ1": "NO",
+   "SJ2": "PNP",
+   "field_power": false,
+   "host_5v": false,
+   "sensor_output": "npn_off",
+   "SIG": "RELEASED"
+  },
+  {
+   "SJ1": "NO",
+   "SJ2": "PNP",
+   "field_power": true,
+   "host_5v": true,
+   "sensor_output": "npn_on",
+   "SIG": "LOW"
+  },
+  {
+   "SJ1": "NO",
+   "SJ2": "PNP",
+   "field_power": true,
+   "host_5v": false,
+   "sensor_output": "npn_on",
+   "SIG": "RELEASED"
+  },
+  {
+   "SJ1": "NO",
+   "SJ2": "PNP",
+   "field_power": false,
+   "host_5v": true,
+   "sensor_output": "npn_on",
+   "SIG": "RELEASED"
+  },
+  {
+   "SJ1": "NO",
+   "SJ2": "PNP",
+   "field_power": false,
+   "host_5v": false,
+   "sensor_output": "npn_on",
+   "SIG": "RELEASED"
+  },
+  {
+   "SJ1": "NO",
+   "SJ2": "PNP",
+   "field_power": true,
+   "host_5v": true,
+   "sensor_output": "pnp_off",
+   "SIG": "LOW"
+  },
+  {
+   "SJ1": "NO",
+   "SJ2": "PNP",
+   "field_power": true,
+   "host_5v": false,
+   "sensor_output": "pnp_off",
+   "SIG": "RELEASED"
+  },
+  {
+   "SJ1": "NO",
+   "SJ2": "PNP",
+   "field_power": false,
+   "host_5v": true,
+   "sensor_output": "pnp_off",
+   "SIG": "RELEASED"
+  },
+  {
+   "SJ1": "NO",
+   "SJ2": "PNP",
+   "field_power": false,
+   "host_5v": false,
+   "sensor_output": "pnp_off",
+   "SIG": "RELEASED"
+  },
+  {
+   "SJ1": "NO",
+   "SJ2": "PNP",
+   "field_power": true,
+   "host_5v": true,
+   "sensor_output": "pnp_on",
+   "SIG": "RELEASED"
+  },
+  {
+   "SJ1": "NO",
+   "SJ2": "PNP",
+   "field_power": true,
+   "host_5v": false,
+   "sensor_output": "pnp_on",
+   "SIG": "RELEASED"
+  },
+  {
+   "SJ1": "NO",
+   "SJ2": "PNP",
+   "field_power": false,
+   "host_5v": true,
+   "sensor_output": "pnp_on",
+   "SIG": "RELEASED"
+  },
+  {
+   "SJ1": "NO",
+   "SJ2": "PNP",
+   "field_power": false,
+   "host_5v": false,
+   "sensor_output": "pnp_on",
+   "SIG": "RELEASED"
+  },
+  {
+   "SJ1": "NC",
+   "SJ2": "NPN",
+   "field_power": true,
+   "host_5v": true,
+   "sensor_output": "none",
+   "SIG": "RELEASED"
+  },
+  {
+   "SJ1": "NC",
+   "SJ2": "NPN",
+   "field_power": true,
+   "host_5v": false,
+   "sensor_output": "none",
+   "SIG": "RELEASED"
+  },
+  {
+   "SJ1": "NC",
+   "SJ2": "NPN",
+   "field_power": false,
+   "host_5v": true,
+   "sensor_output": "none",
+   "SIG": "RELEASED"
+  },
+  {
+   "SJ1": "NC",
+   "SJ2": "NPN",
+   "field_power": false,
+   "host_5v": false,
+   "sensor_output": "none",
+   "SIG": "RELEASED"
+  },
+  {
+   "SJ1": "NC",
+   "SJ2": "NPN",
+   "field_power": true,
+   "host_5v": true,
+   "sensor_output": "npn_off",
+   "SIG": "RELEASED"
+  },
+  {
+   "SJ1": "NC",
+   "SJ2": "NPN",
+   "field_power": true,
+   "host_5v": false,
+   "sensor_output": "npn_off",
+   "SIG": "RELEASED"
+  },
+  {
+   "SJ1": "NC",
+   "SJ2": "NPN",
+   "field_power": false,
+   "host_5v": true,
+   "sensor_output": "npn_off",
+   "SIG": "RELEASED"
+  },
+  {
+   "SJ1": "NC",
+   "SJ2": "NPN",
+   "field_power": false,
+   "host_5v": false,
+   "sensor_output": "npn_off",
+   "SIG": "RELEASED"
+  },
+  {
+   "SJ1": "NC",
+   "SJ2": "NPN",
+   "field_power": true,
+   "host_5v": true,
+   "sensor_output": "npn_on",
+   "SIG": "LOW"
+  },
+  {
+   "SJ1": "NC",
+   "SJ2": "NPN",
+   "field_power": true,
+   "host_5v": false,
+   "sensor_output": "npn_on",
+   "SIG": "LOW"
+  },
+  {
+   "SJ1": "NC",
+   "SJ2": "NPN",
+   "field_power": false,
+   "host_5v": true,
+   "sensor_output": "npn_on",
+   "SIG": "RELEASED"
+  },
+  {
+   "SJ1": "NC",
+   "SJ2": "NPN",
+   "field_power": false,
+   "host_5v": false,
+   "sensor_output": "npn_on",
+   "SIG": "RELEASED"
+  },
+  {
+   "SJ1": "NC",
+   "SJ2": "NPN",
+   "field_power": true,
+   "host_5v": true,
+   "sensor_output": "pnp_off",
+   "SIG": "RELEASED"
+  },
+  {
+   "SJ1": "NC",
+   "SJ2": "NPN",
+   "field_power": true,
+   "host_5v": false,
+   "sensor_output": "pnp_off",
+   "SIG": "RELEASED"
+  },
+  {
+   "SJ1": "NC",
+   "SJ2": "NPN",
+   "field_power": false,
+   "host_5v": true,
+   "sensor_output": "pnp_off",
+   "SIG": "RELEASED"
+  },
+  {
+   "SJ1": "NC",
+   "SJ2": "NPN",
+   "field_power": false,
+   "host_5v": false,
+   "sensor_output": "pnp_off",
+   "SIG": "RELEASED"
+  },
+  {
+   "SJ1": "NC",
+   "SJ2": "NPN",
+   "field_power": true,
+   "host_5v": true,
+   "sensor_output": "pnp_on",
+   "SIG": "RELEASED"
+  },
+  {
+   "SJ1": "NC",
+   "SJ2": "NPN",
+   "field_power": true,
+   "host_5v": false,
+   "sensor_output": "pnp_on",
+   "SIG": "RELEASED"
+  },
+  {
+   "SJ1": "NC",
+   "SJ2": "NPN",
+   "field_power": false,
+   "host_5v": true,
+   "sensor_output": "pnp_on",
+   "SIG": "RELEASED"
+  },
+  {
+   "SJ1": "NC",
+   "SJ2": "NPN",
+   "field_power": false,
+   "host_5v": false,
+   "sensor_output": "pnp_on",
+   "SIG": "RELEASED"
+  },
+  {
+   "SJ1": "NC",
+   "SJ2": "PNP",
+   "field_power": true,
+   "host_5v": true,
+   "sensor_output": "none",
+   "SIG": "RELEASED"
+  },
+  {
+   "SJ1": "NC",
+   "SJ2": "PNP",
+   "field_power": true,
+   "host_5v": false,
+   "sensor_output": "none",
+   "SIG": "RELEASED"
+  },
+  {
+   "SJ1": "NC",
+   "SJ2": "PNP",
+   "field_power": false,
+   "host_5v": true,
+   "sensor_output": "none",
+   "SIG": "RELEASED"
+  },
+  {
+   "SJ1": "NC",
+   "SJ2": "PNP",
+   "field_power": false,
+   "host_5v": false,
+   "sensor_output": "none",
+   "SIG": "RELEASED"
+  },
+  {
+   "SJ1": "NC",
+   "SJ2": "PNP",
+   "field_power": true,
+   "host_5v": true,
+   "sensor_output": "npn_off",
+   "SIG": "RELEASED"
+  },
+  {
+   "SJ1": "NC",
+   "SJ2": "PNP",
+   "field_power": true,
+   "host_5v": false,
+   "sensor_output": "npn_off",
+   "SIG": "RELEASED"
+  },
+  {
+   "SJ1": "NC",
+   "SJ2": "PNP",
+   "field_power": false,
+   "host_5v": true,
+   "sensor_output": "npn_off",
+   "SIG": "RELEASED"
+  },
+  {
+   "SJ1": "NC",
+   "SJ2": "PNP",
+   "field_power": false,
+   "host_5v": false,
+   "sensor_output": "npn_off",
+   "SIG": "RELEASED"
+  },
+  {
+   "SJ1": "NC",
+   "SJ2": "PNP",
+   "field_power": true,
+   "host_5v": true,
+   "sensor_output": "npn_on",
+   "SIG": "RELEASED"
+  },
+  {
+   "SJ1": "NC",
+   "SJ2": "PNP",
+   "field_power": true,
+   "host_5v": false,
+   "sensor_output": "npn_on",
+   "SIG": "RELEASED"
+  },
+  {
+   "SJ1": "NC",
+   "SJ2": "PNP",
+   "field_power": false,
+   "host_5v": true,
+   "sensor_output": "npn_on",
+   "SIG": "RELEASED"
+  },
+  {
+   "SJ1": "NC",
+   "SJ2": "PNP",
+   "field_power": false,
+   "host_5v": false,
+   "sensor_output": "npn_on",
+   "SIG": "RELEASED"
+  },
+  {
+   "SJ1": "NC",
+   "SJ2": "PNP",
+   "field_power": true,
+   "host_5v": true,
+   "sensor_output": "pnp_off",
+   "SIG": "RELEASED"
+  },
+  {
+   "SJ1": "NC",
+   "SJ2": "PNP",
+   "field_power": true,
+   "host_5v": false,
+   "sensor_output": "pnp_off",
+   "SIG": "RELEASED"
+  },
+  {
+   "SJ1": "NC",
+   "SJ2": "PNP",
+   "field_power": false,
+   "host_5v": true,
+   "sensor_output": "pnp_off",
+   "SIG": "RELEASED"
+  },
+  {
+   "SJ1": "NC",
+   "SJ2": "PNP",
+   "field_power": false,
+   "host_5v": false,
+   "sensor_output": "pnp_off",
+   "SIG": "RELEASED"
+  },
+  {
+   "SJ1": "NC",
+   "SJ2": "PNP",
+   "field_power": true,
+   "host_5v": true,
+   "sensor_output": "pnp_on",
+   "SIG": "LOW"
+  },
+  {
+   "SJ1": "NC",
+   "SJ2": "PNP",
+   "field_power": true,
+   "host_5v": false,
+   "sensor_output": "pnp_on",
+   "SIG": "LOW"
+  },
+  {
+   "SJ1": "NC",
+   "SJ2": "PNP",
+   "field_power": false,
+   "host_5v": true,
+   "sensor_output": "pnp_on",
+   "SIG": "RELEASED"
+  },
+  {
+   "SJ1": "NC",
+   "SJ2": "PNP",
+   "field_power": false,
+   "host_5v": false,
+   "sensor_output": "pnp_on",
+   "SIG": "RELEASED"
+  }
+ ],
+ "domains": {
+  "FIELD": {
+   "nets": [
+    "VIN_RAW",
+    "VIN_F",
+    "VF",
+    "GF",
+    "SENSOR_IN",
+    "N_A",
+    "N_K",
+    "P_A",
+    "LN_A",
+    "P_B",
+    "LP_A",
+    "OK_A",
+    "OK_B"
+   ],
+   "ground": "GF (field 0V)",
+   "connectors": [
+    "J1",
+    "J2"
+   ],
+   "test_pads": [
+    "TP_VF",
+    "TP_GF",
+    "TP_SENS"
+   ],
+   "opto_pins": "U1-U3 pins 1,2"
+  },
+  "HOST": {
+   "nets": [
+    "SIG",
+    "GND_H",
+    "+5V_H",
+    "GATE",
+    "OK_E",
+    "Q_D"
+   ],
+   "ground": "GND_H (host ground from J3 pin 2)",
+   "connectors": [
+    "J3"
+   ],
+   "test_pads": [
+    "TP_SIG",
+    "TP_GH",
+    "TP_5V"
+   ],
+   "opto_pins": "U1-U3 pins 3,4"
+  },
+  "rule": "No copper, via, pour, mask opening, silkscreen-bridged pad, mounting-hole barrel or hardware tie joins the domains. FIELD and HOST copper stay >= 4.9 mm apart everywhere (the optocoupler pad-to-pad gap).",
+  "net_membership": {
+   "GF": [
+    "J1.1",
+    "J2.1",
+    "TVS1.2",
+    "C1.2",
+    "C2.2",
+    "RP.2",
+    "DP.1",
+    "U3.2",
+    "TP_GF.1"
+   ],
+   "VIN_RAW": [
+    "J1.2",
+    "F1.1"
+   ],
+   "VF": [
+    "J2.2",
+    "D1.1",
+    "C1.1",
+    "C2.1",
+    "RN.1",
+    "RLN.1",
+    "ROK.1",
+    "TP_VF.1"
+   ],
+   "SENSOR_IN": [
+    "J2.3",
+    "SJ2.2",
+    "TP_SENS.1"
+   ],
+   "VIN_F": [
+    "F1.2",
+    "TVS1.1",
+    "D1.2"
+   ],
+   "N_A": [
+    "RN.2",
+    "U1.1"
+   ],
+   "LN_A": [
+    "RLN.2",
+    "DN.2"
+   ],
+   "N_K": [
+    "DN.1",
+    "U1.2",
+    "SJ2.1"
+   ],
+   "P_B": [
+    "RP.1",
+    "U2.2"
+   ],
+   "P_A": [
+    "RLP.1",
+    "U2.1",
+    "SJ2.3"
+   ],
+   "LP_A": [
+    "RLP.2",
+    "DP.2"
+   ],
+   "OK_A": [
+    "ROK.2",
+    "DPWR.2"
+   ],
+   "OK_B": [
+    "DPWR.1",
+    "U3.1"
+   ],
+   "GND_H": [
+    "U1.3",
+    "U2.3",
+    "Q1.2",
+    "RPD.2",
+    "J3.2",
+    "TP_GH.1"
+   ],
+   "GATE": [
+    "U1.4",
+    "U2.4",
+    "Q1.1",
+    "RS.2",
+    "RPD.1",
+    "SJ1.3"
+   ],
+   "OK_E": [
+    "U3.3",
+    "RS.1"
+   ],
+   "+5V_H": [
+    "U3.4",
+    "J3.3",
+    "TP_5V.1"
+   ],
+   "Q_D": [
+    "Q1.3",
+    "SJ1.1"
+   ],
+   "SIG": [
+    "SJ1.2",
+    "J3.1",
+    "TP_SIG.1"
+   ]
+  }
+ },
+ "power_budget": {
+  "input": {
+   "VIN_operating_V": [
+    10.8,
+    26.4
+   ],
+   "VIN_abs_continuous_V": 30.0,
+   "reverse_survivable_V": 30.0
+  },
+  "host_5v": "Consumes only the RS/pTr_ok feed (<= 0.1 mA) and phototransistor leakage; the shared ~3 A regulator and unknown per-connector allocation are irrelevant at that magnitude (stated, not assumed).",
+  "sensor_supply_budget_mA": 200,
+  "calculations": {
+   "VF_min_v": 10.1,
+   "VF_max_v": 26.1,
+   "I_opto_branch_min_mA": 2.03,
+   "I_opto_branch_max_mA": 7.51,
+   "P_RN_RP_max_mW": 186.0,
+   "P_RN_RP_rating_mW_1206_70C": 250,
+   "P_RN_RP_derating_pct": 74.0,
+   "I_amber_branch_min_mA": 0.84,
+   "I_amber_branch_max_mA": 3.54,
+   "P_RLN_RLP_max_mW": 85.0,
+   "P_RLN_RLP_derating_pct_of_125mW_0805": 68.0,
+   "I_ok_branch_min_mA": 0.65,
+   "I_ok_branch_max_mA": 2.31,
+   "P_ROK_max_mW": 53.0,
+   "field_idle_current_max_mA": 2.31,
+   "field_active_board_current_max_mA": 13.4,
+   "sensor_supply_current_budget_mA": 200,
+   "fuse_path_current_max_A": 0.213,
+   "F1_hold_A_at_23C_40C_70C": [
+    0.5,
+    0.44,
+    0.33
+   ],
+   "F1_margin_at_70C_pct": 35.0,
+   "PPTC_drop_at_budget_V_max": 0.25,
+   "Ic_sat_guaranteed_at_IF_min_mA": 0.61,
+   "NC_mode_host_pullup_current_native_mA": 0.5,
+   "NC_mode_margin_pct": 22.0,
+   "NO_mode_gate_high_V_at_5V": 4.02,
+   "NO_mode_gate_high_V_at_3V3": 2.62,
+   "NO_mode_gate_low_when_sensor_on_V": 0.2,
+   "NO_mode_shunt_current_uA": 22.7,
+   "BSS138_Vgs_th_range_V": [
+    0.8,
+    1.5
+   ],
+   "NC_mode_injection_into_SIG_V_with_10k_to_3V3_host": 0.042,
+   "opto_off_leak_budget_uA": 20,
+   "isolation_gap_pad_to_pad_mm": 4.9,
+   "host_5V_draw_max_mA": 0.027,
+   "latency_budget_us": {
+    "opto_toff_typ_storage_worst": 60,
+    "RS_Cgate": 8.8,
+    "board_limit": 250
+   },
+   "inrush_note": "Peak is set by source/cable impedance plus PPTC initial resistance (Rmin 0.15 ohm; 1.0 ohm is the post-trip R1max); stored energy 0.5*2.3uF*26.4V^2 = 0.8 mJ, harmless",
+   "inrush_energy_mJ": 0.8,
+   "ok_channel_note": "U3 runs at 0.74 mA at VF_min (below the 1 mA point where CTR_sat is guaranteed) but only has to pass the 23 uA RS feed (needs CTR >= ~3 percent)",
+   "dc_solver_worst": {
+    "I_on_min_mA": 2.217,
+    "I_on_max_mA": 7.443,
+    "I_off_max_mA": 0.02,
+    "I_ok_min_mA": 0.738,
+    "I_mismatch_max_mA": 0.283
+   },
+   "dc_solver_cases": 60
+  },
+  "assumptions": [
+   "A-SAT: sensor output residual voltage <= 2.0 V at the LED current (typ. inductive sensors 0.5-2 V)",
+   "Sensor off-state leakage <= 20 uA",
+   "Host pull-up <= 0.5 mA when SIG is LOW (native 10 k to 5 V)"
+  ]
+ },
+ "protection": {
+  "J1_field_power": [
+   {
+    "fault": "reversed 12-24 V",
+    "result": "D1 blocks; TVS1 (30 V standoff) and F1 carry no current; board dark; POWER LED off",
+    "recovery": "none needed"
+   },
+   {
+    "fault": "wrong voltage above 30 V sustained",
+    "result": "NOT protected (TVS clamps at 48.4 V and may fail short; F1 then opens). Outside the declared envelope; no sustained-overvoltage cutoff fitted (decision, questions.md)",
+    "recovery": "replace TVS1 and F1 if exercised"
+   },
+   {
+    "fault": "short on J2 +V to 0V",
+    "result": "F1 trips (Ih 0.5 A, It 1.0 A; hold 0.33 A at 70 C); PPTC stays conductive at ~0.1 mA tripped state and cools on removal",
+    "recovery": "remove power, remove short"
+   },
+   {
+    "fault": "transient on the supply",
+    "result": "TVS1 clamps to 48.4 V at 4.1 A (10/1000 us); D1 is 60 V; resistors limit LED current at 48 V to <= 15 mA",
+    "recovery": "none"
+   }
+  ],
+  "J2_sensor": [
+   {
+    "fault": "wire permutations of 0V/+V/OUT",
+    "result": "No hazard to the board: any single permutation limits LED currents by RN/RP/RLN/RLP (<= 8 mA at 26 V), LED reverse stress <= 2 V (TLP291 VR 5 V). A sensor wired reversed may be damaged unless it has reverse protection; the board's F1 limits the current.",
+    "recovery": "rewire"
+   },
+   {
+    "fault": "OUT shorted to +V or 0V",
+    "result": "Looks like PNP ON or NPN ON: limited to <= 8 mA per branch",
+    "recovery": "none"
+   },
+   {
+    "fault": "ESD at the terminal",
+    "result": "No ESD diode fitted on SENSOR_IN (decision A-ESD): series RN/RP and the opto LED take it; unverified exposure",
+    "recovery": "add a TVS on SENSOR_IN if qualification shows failures"
+   }
+  ],
+  "J3_host": [
+   {
+    "fault": "native-Prime straight cable (pins 1/3 crossed)",
+    "result": "SIG meets host 5 V and +5V_H meets the host FIELD pin: no damage (Q1 50 V, pTr 80 V, Ioff of the host buffer), but no function",
+    "recovery": "use crossed cable"
+   },
+   {
+    "fault": "J3 plugged, field power off",
+    "result": "SIG released, host reads triggered/fault",
+    "recovery": "none"
+   },
+   {
+    "fault": "host power off, field power on",
+    "result": "SIG released; the only host-side current is pTr leakage",
+    "recovery": "none"
+   }
+  ],
+  "OVP_cutoff": "not fitted (decision)",
+  "reverse_indicator": "not fitted (decision)",
+  "tvs_failure_mode": "TVS1 failing short is cleared by F1 (placed upstream of TVS1)."
+ },
+ "host_interface": {
+  "pullup_requirement": "Host must provide the SIG pull-up (native Prime2590: 10 k to selected 5 V or 3.3 V). The board adds none.",
+  "load_when_low_uA": 500,
+  "NO_mode_gate_levels": {
+   "3V3_host": 2.62,
+   "5V_host": 4.02,
+   "BSS138_Vgs_th": [
+    0.8,
+    1.5
+   ]
+  },
+  "firmware_polarity": "Treat as a normally-closed endstop to ground: idle LOW, triggered HIGH. Smoothieware pin config example with pull-up and the usual inversion modifiers is a firmware matter and is not changed here (no firmware scope).",
+  "response_time": {
+   "requirement_us_board_contribution": 250,
+   "basis": "TLP291 toff typ 60 us (RL 1.9 k, IF 16 mA, storage) + RS*Cgate ~9 us; native host RC ~1 ms dominates",
+   "test": "qualification: scope SIG vs SENSOR_IN edge at 12 V and 24 V, both SJ1 positions"
+  }
+ },
+ "pcb": {
+  "width_mm": 28.0,
+  "height_mm": 36.0,
+  "outline_target_mm": [
+   28,
+   36
+  ],
+  "outline_limit_mm": [
+   32,
+   40
+  ],
+  "area_mm2": 1008,
+  "outline_rule": "Rectangle with 1.0 mm corner radius (conditional roundness rule). Squarer than a bar (aspect 1.29). Must shrink below 28 x 36 only if routing/clearance still pass; may grow to 32 x 40 only with the reason logged in the version notes. Report the actual size.",
+  "limiting_constraints": [
+   "terminal courtyards 9.0 mm deep along the north edge",
+   "isolation band 4.9 mm (optocoupler pad gap)",
+   "J3 6.9 mm tall at the south edge",
+   "two M3 holes 20 mm apart inside the band, keepout r = 4.0 mm"
+  ],
+  "compaction_levers_recorded": [
+   "drop the two amber LEDs and RLN/RLP (-4 parts, ~-1 mm height)",
+   "move the fuse beside the terminals",
+   "J3 in a right-angle KK footprint",
+   "1.27 mm hole spacing is NOT a lever (20 mm grid rule)"
+  ],
+  "origin": "top-left corner, x east, y south, positions in mm; mounting-hole datum is H1",
+  "layers": 2,
+  "layer_decision": "2 layers: low-speed, 6 nets of any significance, no impedance, no heat spreading; return paths are local pours or short tracks per domain. 4 layers would add cost with no benefit.",
+  "thickness_mm": 1.6,
+  "copper_oz": 1,
+  "finish": "lead-free HASL (cost); ENIG acceptable",
+  "mask": "black",
+  "silk": "white",
+  "stackup_rule": "Declare black solder mask (both sides) and white silkscreen in the board's setup and every render; confirm the black mask actually renders.",
+  "min_clearance_mm": 0.2,
+  "min_track_mm": 0.25,
+  "via_mm": [
+   0.6,
+   0.3
+  ],
+  "copper_edge_mm": 0.3,
+  "silk_edge_mm": 0.5,
+  "isolation_gap_mm": 4.9
+ },
+ "placement": {
+  "flow": "north (field terminals, protection, field-side opto LEDs) -> centre band (optocouplers, mounting holes) -> south (host Q1 stage, J3).",
+  "initial_positions": "parts[].position/rotation: courtyard-validated (0 overlaps, all inside 28 x 36) with pcbnew 9.0.8 and the KiCad 9.0.8 footprints named in parts[]; NOT routed. Placement stage may move parts but must keep every constraint in keepouts and net_constraints.",
+  "north_edge": "J2 (sensor, west) and J1 (power, east), rotation 180, wire entries face north, pad rows at y = 5.35. F1/TVS1/D1/C2 first row below, branch resistors and LEDs second and third row.",
+  "centre": "U1, U2, U3 at y = 23.8, x = 10, 14, 18, rotation 270: field pads y = 20.55, host pads y = 27.05, pad gap 4.9 mm.",
+  "south": "J3 at the south edge, centred about x = 12; Q1, RS, RPD, SJ1 and host test pads around it.",
+  "grouping": [
+   "Protection chain F1 -> TVS1 -> D1 next to J1",
+   "RN/RLN/DN near U1 and SENSOR_IN",
+   "RP/RLP/DP near U2 and SENSOR_IN",
+   "ROK/DPWR near U3",
+   "Q1/RS/RPD within 8 mm of the optocoupler host pads",
+   "LEDs grouped on the top side near the terminals, outward facing"
+  ]
+ },
+ "keepouts": [
+  {
+   "name": "isolation band",
+   "shape": "rectangle x 0..28, y 21.35..26.25",
+   "rule": "No copper, via, pour or track on any layer except the optocoupler pads themselves at its edges (pads end at y 21.35 and 26.25); no pour under the optocouplers; only the silkscreen legend 'FIELD | ISOLATION | HOST' may sit inside."
+  },
+  {
+   "name": "mounting holes",
+   "shape": "circle r = 4.0 mm around H1 (4.0, 23.8) and H2 (24.0, 23.8)",
+   "rule": "All copper layers, parts, silkscreen. NPTH, no annular ring, ungrounded. Recommend nylon M3 hardware so no metal bridges the band."
+  },
+  {
+   "name": "edge",
+   "shape": "0.3 mm from the outline for copper, 0.5 mm for silkscreen",
+   "rule": "Terminal bodies stay inside the outline."
+  },
+  {
+   "name": "J3 mating plug",
+   "shape": "rectangle about 9 x 9 mm above J3 (component side)",
+   "rule": "No parts taller than 2 mm; no test pads on top."
+  },
+  {
+   "name": "terminal screw/wire access",
+   "shape": "terminals at the north edge",
+   "rule": "Wire entries face outward with no part within 2 mm of the entry face."
+  },
+  {
+   "name": "GATE node guard",
+   "shape": "net GATE (RS/RPD/Q1.G/U1.4/U2.4/SJ1.3)",
+   "rule": "Keep every GATE track <= 15 mm, no parallel run closer than 0.5 mm to +5V_H or SIG for more than 5 mm, no vias; 1 M / 220 k high-impedance node."
+  }
+ ],
+ "net_constraints": {
+  "VIN_RAW": {
+   "width_mm": 0.6,
+   "layer": "top",
+   "rule": "J1.2 -> F1.1, <= 8 mm, fuse-path current 0.5 A max."
+  },
+  "VIN_F": {
+   "width_mm": 0.6,
+   "rule": "F1.2 -> TVS1.1 and D1.2; TVS1.2 to GF by the shortest path (<= 6 mm loop)."
+  },
+  "VF": {
+   "width_mm": 0.6,
+   "rule": "D1.1 -> C1, C2, J2.2, RN.1, RLN.1, ROK.1, TP_VF; star from D1.1; C2/C1 within 6 mm of J2.2."
+  },
+  "GF": {
+   "width_mm": 0.6,
+   "rule": "J1.1, J2.1, TVS1.2, C1.2, C2.2, RP.2, DP.K, U3.2, TP_GF; pour allowed on one or both layers confined to the FIELD side (y <= 19.2) and connected to every GF pad."
+  },
+  "SENSOR_IN": {
+   "width_mm": 0.3,
+   "rule": "J2.3 -> SJ2.2 and TP_SENS only; no vias."
+  },
+  "N_K": {
+   "width_mm": 0.3,
+   "rule": "SJ2.1, U1.2, DN.1"
+  },
+  "P_A": {
+   "width_mm": 0.3,
+   "rule": "SJ2.3, U2.1, RLP.1"
+  },
+  "N_A": {
+   "width_mm": 0.3
+  },
+  "P_B": {
+   "width_mm": 0.3
+  },
+  "LN_A": {
+   "width_mm": 0.3
+  },
+  "LP_A": {
+   "width_mm": 0.3
+  },
+  "OK_A": {
+   "width_mm": 0.3
+  },
+  "OK_B": {
+   "width_mm": 0.3
+  },
+  "SIG": {
+   "width_mm": 0.3,
+   "rule": "J3.1, SJ1.2, TP_SIG; <= 20 mm."
+  },
+  "GND_H": {
+   "width_mm": 0.4,
+   "rule": "J3.2, Q1.S, RPD.2, U1.3, U2.3, TP_GH; HOST-side pour only, confined to y >= 26.25 and clear of the band."
+  },
+  "+5V_H": {
+   "width_mm": 0.3,
+   "rule": "J3.3 -> U3.4, TP_5V only (no other pad)."
+  },
+  "OK_E": {
+   "width_mm": 0.25
+  },
+  "Q_D": {
+   "width_mm": 0.3
+  },
+  "GATE": {
+   "width_mm": 0.25,
+   "rule": "see keepouts: GATE node guard"
+  },
+  "default_width_mm": 0.3,
+  "clearance_mm": 0.2,
+  "crossing_rule": "No track of any net crosses y 21.35..26.25."
+ },
+ "schematic_rules": {
+  "symbols": "Isolator:TLP291 (check pin numbers against the datasheet: 1 A 2 K 3 E 4 C), Transistor_FET:BSS138, Device:D_Schottky for D1, Device:D_TVS (bidirectional) for TVS1, Device:Polyfuse for F1, Device:LED, Device:R, Device:C, Connector:Screw_Terminal_01x02 / 01x03, Connector_Generic:Conn_01x03 for J3, Jumper:SolderJumper_3_Bridged12 for SJ1, Connector:TestPoint.",
+  "erc": "Target 0 violations at default severities; PWR_FLAG on VIN_RAW, GF, +5V_H and GND_H if ERC asks for it. Never lower severities or add exclusions without recording each one.",
+  "labels": "Net labels exactly as in nets; domain titles 'FIELD' and 'HOST' as text boxes on the sheet.",
+  "polarity_note": "State on the sheet: SIG LOW = idle and healthy; RELEASED = triggered or fault."
+ },
+ "silkscreen": {
+  "required_strings": [
+   "INDUCTIVE SENSOR LEVEL SHIFTER",
+   "v01 BASE",
+   "CERN-OHL-S-2.0",
+   "FIELD",
+   "ISOLATION",
+   "HOST",
+   "FIELD 12-24V DC +",
+   "0V FIELD",
+   "SENSOR 0V(BU) +V(BN) OUT(BK)",
+   "3-WIRE NPN/PNP DC ONLY",
+   "SJ2 SENSOR NPN | PNP (SHIPPED NPN)",
+   "WAVE METAL: MATCHING AMBER LED MUST LIGHT BEFORE USE",
+   "NO PUSH-PULL, NO 2-WIRE",
+   "SJ1 SENSOR NO | NC (SHIPPED NO)",
+   "SIG LOW = IDLE",
+   "RELEASED = TRIGGERED/FAULT",
+   "J3 1 SIG 2 GND 3 5V",
+   "ENDSTOP S G 5V",
+   "NATIVE PRIME CABLE CROSSES 1-3",
+   "FIELD POWER",
+   "OUT LOW (NPN)",
+   "OUT HIGH (PNP)",
+   "NO POWER LED = CHECK POLARITY",
+   "GF/GND_H NOT JOINED",
+   "FUNCTIONAL ISOLATION <=30V ONLY",
+   "NYLON M3 HARDWARE",
+   "NO HOT-PLUG UNDER POWER",
+   "TP VF GF SENS SIG 5V GH"
+  ],
+  "rules": "Text >= 0.8 mm high, 0.15 mm stroke; not on pads or drills; not under J3, the terminal bodies or the optocouplers; a serial box of about 3 x 1.5 mm if area permits; pin-1 marks on J1, J2, J3, U1-U3; bottom side carries only test-pad labels (mirrored).",
+  "gadgeteer_letter": "Not applicable: no Gadgeteer socket; 'ENDSTOP S G 5V' replaces it."
+ },
+ "models": {
+  "U1,U2,U3": "${KICAD9_3DMODEL_DIR}/Package_SO.3dshapes/SOIC-4_4.55x2.6mm_P1.27mm.step (check presence)",
+  "Q1": "Package_TO_SOT_SMD.3dshapes/SOT-23.step",
+  "D1,TVS1": "Diode_SMD.3dshapes/D_SOD-123F.step",
+  "F1": "Fuse.3dshapes/Fuse_1812_4532Metric.step",
+  "J1,J2": "TerminalBlock_Phoenix.3dshapes/TerminalBlock_Phoenix_PT-1,5-{2,3}-3.5-H_*.step",
+  "J3": "Connector_Molex.3dshapes/Molex_KK-254_AE-6410-03A_1x03_P2.54mm_Vertical.step",
+  "passives/LEDs": "Resistor_SMD, Capacitor_SMD, LED_SMD .3dshapes",
+  "check": "A render without visible models for any part fails the visual gate."
+ },
+ "footprint_checks": [
+  "SOIC-4_4.55x2.6mm_P1.27mm: pad rows 6.5 mm centre to centre (pad 1.6 x 0.55), body 4.55 x 2.6 mm vs TLP291 package 11-3C1 outline (p.1): compare land pattern with the datasheet drawing/recommended pads before release (not done in this stage).",
+  "D_SOD-123F pad 1 = cathode for PMEG6010CEH (Table 2 pin 1 K); for the bidirectional SMF30CA (SOD-123FL, recommended pad layout 1.2 x 1.2 mm with 3.2 mm pitch per the NextGen sheet) pad order is irrelevant but the pads must fit.",
+  "Fuse_1812_4532Metric vs Littelfuse body 4.37-4.73 x 3.07-3.41 mm: pads 1.125 x 3.4 mm at +/-2.138 mm.",
+  "Phoenix PT 1,5/n-3,5-H footprints: drill 1.2 mm (datasheet hole 1.2 mm), pitch 3.5 mm, rotation 180 puts the wire entry on the board edge: verify against the datasheet drawing.",
+  "Molex KK 254 AE-6410-03A footprint for 22-27-2031 (pin 0.64 mm square, drill 1.19 mm): same footprint as the family endstop board.",
+  "TLP291 symbol pin numbers re-verified (pin 3 = emitter, pin 4 = collector).",
+  "Known delta: SOIC-4 land gap 4.9 mm vs the TLP291 package creepage/clearance 5.0 mm (p.1): the board path is pad-to-pad, functional isolation only at <= 30 V; recorded, not a defect."
+ ],
+ "board_specific_rules": [
+  "No net, pour, via or hole joins FIELD and HOST; no track crosses the isolation band.",
+  "J3.1 SIG is never driven high by the board.",
+  "J3.3 (+5V_H) feeds only U3.4 (and TP_5V).",
+  "SJ1 pad 2 (SIG) is the common pad; no other connection of SIG exists except J3.1 and TP_SIG.",
+  "TVS1 is connected after F1 and before D1; D1 is in the positive feed only; GF is continuous.",
+  "Each opto LED has its own series resistor (RN, RP, ROK); SENSOR_IN reaches exactly one of N_K (U1/DN) or P_A (U2/RLP) through SJ2, never both.",
+  "SJ2 pad 2 is the only SENSOR_IN connection besides J2.3 and TP_SENS.",
+  "ROK/DPWR labelled POWER and nothing else.",
+  "No part other than J1 sits before F1."
+ ],
+ "mpn_verification": {
+  "TLP291(GB,E": "Datasheet read (2019-5-27); ordering format 'TLP291(GB,E' from p.2; Toshiba ordering/ stock not checked online.",
+  "BSS138": "onsemi datasheet read; exact ordering code (BSS138 vs BSS138L/BSS138LT1G) to be confirmed against supplier stock in the BOM stage.",
+  "PMEG6010CEH": "Nexperia datasheet 1 July 2023 read; ordering code (e.g. PMEG6010CEH,115) not verified.",
+  "SMF30CA": "Second-source sheet (NextGen/MDD) read; Littelfuse and MCC originals not retrievable (403/timeouts). Equivalence of Vc 48.4 V and VRWM 30 V is stated by the distributor listing and the NextGen sheet only.",
+  "1812L050/30PR": "Littelfuse datasheet (TTI copy, 2010) read: electrical, derating, ordering table.",
+  "1984617 and 1984620": "Phoenix generated datasheets read (DigiKey copies).",
+  "22-27-2031": "Catalog sheet (Jameco copy) read.",
+  "GRM188R71H104KA93D": "Murata sheet from the thermocouple attempt (lifecycle not verified).",
+  "GRM21BR71H225KA73L": "Not verified (no datasheet read). Substitute any 2.2 uF >= 50 V X7R 0805 and re-run the DC-bias check.",
+  "RC1206FR-073K3L, RC0805FR-076K8L, RC0603FR-0710KL/-07220KL/-071ML": "Ordering codes follow the Yageo RC rule (RC0603 sheet in sources); RC1206 1/4 W and RC0805 1/8 W ratings are standard but not read from a primary sheet here.",
+  "APT1608SGC": "Kingbright sheet read in the spi-hub attempt.",
+  "APT1608SYCK": "Not verified (no datasheet read); pick any yellow/amber 0603 LED with VF <= 2.4 V at 2 mA and substitute."
+ },
+ "parts": [
+  {
+   "reference": "J1",
+   "value": "+12-24V FIELD",
+   "footprint": "TerminalBlock_Phoenix:TerminalBlock_Phoenix_PT-1,5-2-3.5-H_1x02_P3.50mm_Horizontal",
+   "pins": {
+    "1": "GF",
+    "2": "VIN_RAW"
+   },
+   "position": [
+    22.0,
+    5.35
+   ],
+   "rotation": 180,
+   "kind": "connector",
+   "domain": "FIELD",
+   "side": "F",
+   "mpn": "1984617",
+   "manufacturer": "Phoenix Contact",
+   "note": "Pad 1 = 0V FIELD, pad 2 = +12-24V. Rotation 180: wire entry faces the north edge; looking at the wire entries from the north, pad 1 is on the left (east side of the board)."
+  },
+  {
+   "reference": "J2",
+   "value": "SENSOR 0V +V OUT",
+   "footprint": "TerminalBlock_Phoenix:TerminalBlock_Phoenix_PT-1,5-3-3.5-H_1x03_P3.50mm_Horizontal",
+   "pins": {
+    "1": "GF",
+    "2": "VF",
+    "3": "SENSOR_IN"
+   },
+   "position": [
+    12.9,
+    5.35
+   ],
+   "rotation": 180,
+   "kind": "connector",
+   "domain": "FIELD",
+   "side": "F",
+   "mpn": "1984620",
+   "manufacturer": "Phoenix Contact",
+   "note": "Pad 1 = sensor 0V (blue), pad 2 = sensor +V (brown), pad 3 = sensor OUT (black). Order 0V/+V/OUT follows the source proposal GND/12V/Signal."
+  },
+  {
+   "reference": "F1",
+   "value": "1812L050/30PR",
+   "footprint": "Fuse:Fuse_1812_4532Metric",
+   "pins": {
+    "1": "VIN_RAW",
+    "2": "VIN_F"
+   },
+   "position": [
+    20.6,
+    11.9
+   ],
+   "rotation": 0,
+   "kind": "protection",
+   "domain": "FIELD",
+   "side": "F",
+   "mpn": "1812L050/30PR",
+   "manufacturer": "Littelfuse"
+  },
+  {
+   "reference": "TVS1",
+   "value": "SMF30CA",
+   "footprint": "Diode_SMD:D_SOD-123F",
+   "pins": {
+    "1": "VIN_F",
+    "2": "GF"
+   },
+   "position": [
+    14.4,
+    11.6
+   ],
+   "rotation": 0,
+   "kind": "protection",
+   "domain": "FIELD",
+   "side": "F",
+   "mpn": "SMF30CA",
+   "manufacturer": "Littelfuse (second sources MCC, MDD)",
+   "note": "Bidirectional: pin order is irrelevant electrically. Symbol Device:D_TVS (bidirectional)."
+  },
+  {
+   "reference": "D1",
+   "value": "PMEG6010CEH",
+   "footprint": "Diode_SMD:D_SOD-123F",
+   "pins": {
+    "1": "VF",
+    "2": "VIN_F"
+   },
+   "position": [
+    14.4,
+    14.5
+   ],
+   "rotation": 0,
+   "kind": "protection",
+   "domain": "FIELD",
+   "side": "F",
+   "mpn": "PMEG6010CEH",
+   "manufacturer": "Nexperia",
+   "note": "Pin 1 = cathode = VF (series reverse-polarity element in the positive feed); pin 2 = anode = VIN_F. Check pad 1 = K in the KiCad footprint (D_SOD-123F pad 1 is cathode)."
+  },
+  {
+   "reference": "C1",
+   "value": "100nF 50V X7R",
+   "footprint": "Capacitor_SMD:C_0603_1608Metric",
+   "pins": {
+    "1": "VF",
+    "2": "GF"
+   },
+   "position": [
+    9.0,
+    14.5
+   ],
+   "rotation": 0,
+   "kind": "passive",
+   "domain": "FIELD",
+   "side": "F",
+   "mpn": "GRM188R71H104KA93D",
+   "manufacturer": "Murata"
+  },
+  {
+   "reference": "C2",
+   "value": "2.2uF 50V X7R",
+   "footprint": "Capacitor_SMD:C_0805_2012Metric",
+   "pins": {
+    "1": "VF",
+    "2": "GF"
+   },
+   "position": [
+    8.6,
+    11.6
+   ],
+   "rotation": 0,
+   "kind": "passive",
+   "domain": "FIELD",
+   "side": "F",
+   "mpn": "GRM21BR71H225KA73L",
+   "manufacturer": "Murata",
+   "note": "MPN not verified against a datasheet in this stage (A-C2)."
+  },
+  {
+   "reference": "RN",
+   "value": "3.3k 1% 1206",
+   "footprint": "Resistor_SMD:R_1206_3216Metric",
+   "pins": {
+    "1": "VF",
+    "2": "N_A"
+   },
+   "position": [
+    4.4,
+    17.4
+   ],
+   "rotation": 0,
+   "kind": "passive",
+   "domain": "FIELD",
+   "side": "F",
+   "mpn": "RC1206FR-073K3L",
+   "manufacturer": "Yageo"
+  },
+  {
+   "reference": "RLN",
+   "value": "6.8k 1% 0805",
+   "footprint": "Resistor_SMD:R_0805_2012Metric",
+   "pins": {
+    "1": "VF",
+    "2": "LN_A"
+   },
+   "position": [
+    9.6,
+    17.4
+   ],
+   "rotation": 0,
+   "kind": "passive",
+   "domain": "FIELD",
+   "side": "F",
+   "mpn": "RC0805FR-076K8L",
+   "manufacturer": "Yageo"
+  },
+  {
+   "reference": "DN",
+   "value": "OUT LOW (NPN)",
+   "footprint": "LED_SMD:LED_0603_1608Metric",
+   "pins": {
+    "1": "N_K",
+    "2": "LN_A"
+   },
+   "position": [
+    13.4,
+    17.4
+   ],
+   "rotation": 0,
+   "kind": "indicator",
+   "domain": "FIELD",
+   "side": "F",
+   "mpn": "APT1608SYCK",
+   "manufacturer": "Kingbright",
+   "note": "Amber/yellow LED. KiCad LED pin 1 = cathode, pin 2 = anode: cathode on N_K (the NPN side of SJ2), anode on LN_A. Datasheet not retrieved (A-LED)."
+  },
+  {
+   "reference": "RP",
+   "value": "3.3k 1% 1206",
+   "footprint": "Resistor_SMD:R_1206_3216Metric",
+   "pins": {
+    "1": "P_B",
+    "2": "GF"
+   },
+   "position": [
+    19.2,
+    15.5
+   ],
+   "rotation": 0,
+   "kind": "passive",
+   "domain": "FIELD",
+   "side": "F",
+   "mpn": "RC1206FR-073K3L",
+   "manufacturer": "Yageo"
+  },
+  {
+   "reference": "RLP",
+   "value": "6.8k 1% 0805",
+   "footprint": "Resistor_SMD:R_0805_2012Metric",
+   "pins": {
+    "1": "P_A",
+    "2": "LP_A"
+   },
+   "position": [
+    23.0,
+    18.1
+   ],
+   "rotation": 0,
+   "kind": "passive",
+   "domain": "FIELD",
+   "side": "F",
+   "mpn": "RC0805FR-076K8L",
+   "manufacturer": "Yageo"
+  },
+  {
+   "reference": "DP",
+   "value": "OUT HIGH (PNP)",
+   "footprint": "LED_SMD:LED_0603_1608Metric",
+   "pins": {
+    "1": "GF",
+    "2": "LP_A"
+   },
+   "position": [
+    18.9,
+    18.1
+   ],
+   "rotation": 0,
+   "kind": "indicator",
+   "domain": "FIELD",
+   "side": "F",
+   "mpn": "APT1608SYCK",
+   "manufacturer": "Kingbright",
+   "note": "Cathode on GF, anode on LP_A (KiCad LED pin 1 = cathode)."
+  },
+  {
+   "reference": "ROK",
+   "value": "10k 1% 0603",
+   "footprint": "Resistor_SMD:R_0603_1608Metric",
+   "pins": {
+    "1": "VF",
+    "2": "OK_A"
+   },
+   "position": [
+    4.0,
+    14.5
+   ],
+   "rotation": 0,
+   "kind": "passive",
+   "domain": "FIELD",
+   "side": "F",
+   "mpn": "RC0603FR-0710KL",
+   "manufacturer": "Yageo"
+  },
+  {
+   "reference": "DPWR",
+   "value": "FIELD POWER",
+   "footprint": "LED_SMD:LED_0603_1608Metric",
+   "pins": {
+    "1": "OK_B",
+    "2": "OK_A"
+   },
+   "position": [
+    24.4,
+    15.3
+   ],
+   "rotation": 0,
+   "kind": "indicator",
+   "domain": "FIELD",
+   "side": "F",
+   "mpn": "APT1608SGC",
+   "manufacturer": "Kingbright",
+   "note": "Green. Cathode OK_B (to U3 anode), anode OK_A. Labelled POWER, never READY."
+  },
+  {
+   "reference": "U1",
+   "value": "TLP291(GB,E NPN",
+   "footprint": "Package_SO:SOIC-4_4.55x2.6mm_P1.27mm",
+   "pins": {
+    "1": "N_A",
+    "2": "N_K",
+    "3": "GND_H",
+    "4": "GATE"
+   },
+   "position": [
+    10.0,
+    23.8
+   ],
+   "rotation": 270,
+   "kind": "isolator",
+   "domain": "BARRIER",
+   "side": "F",
+   "mpn": "TLP291(GB,E",
+   "manufacturer": "Toshiba",
+   "note": "LED side (pins 1,2) north = FIELD, detector side (pins 3,4) south = HOST. Rotation 270 verified to put pads 1 and 2 at y = 20.55 and pads 3, 4 at y = 27.05."
+  },
+  {
+   "reference": "U2",
+   "value": "TLP291(GB,E PNP",
+   "footprint": "Package_SO:SOIC-4_4.55x2.6mm_P1.27mm",
+   "pins": {
+    "1": "P_A",
+    "2": "P_B",
+    "3": "GND_H",
+    "4": "GATE"
+   },
+   "position": [
+    14.0,
+    23.8
+   ],
+   "rotation": 270,
+   "kind": "isolator",
+   "domain": "BARRIER",
+   "side": "F",
+   "mpn": "TLP291(GB,E",
+   "manufacturer": "Toshiba"
+  },
+  {
+   "reference": "U3",
+   "value": "TLP291(GB,E OK",
+   "footprint": "Package_SO:SOIC-4_4.55x2.6mm_P1.27mm",
+   "pins": {
+    "1": "OK_B",
+    "2": "GF",
+    "3": "OK_E",
+    "4": "+5V_H"
+   },
+   "position": [
+    18.0,
+    23.8
+   ],
+   "rotation": 270,
+   "kind": "isolator",
+   "domain": "BARRIER",
+   "side": "F",
+   "mpn": "TLP291(GB,E",
+   "manufacturer": "Toshiba"
+  },
+  {
+   "reference": "Q1",
+   "value": "BSS138",
+   "footprint": "Package_TO_SOT_SMD:SOT-23",
+   "pins": {
+    "1": "GATE",
+    "2": "GND_H",
+    "3": "Q_D"
+   },
+   "position": [
+    3.0,
+    30.5
+   ],
+   "rotation": 0,
+   "kind": "transistor",
+   "domain": "HOST",
+   "side": "F",
+   "mpn": "BSS138",
+   "manufacturer": "onsemi"
+  },
+  {
+   "reference": "RS",
+   "value": "220k 1% 0603",
+   "footprint": "Resistor_SMD:R_0603_1608Metric",
+   "pins": {
+    "1": "OK_E",
+    "2": "GATE"
+   },
+   "position": [
+    22.5,
+    29.6
+   ],
+   "rotation": 0,
+   "kind": "passive",
+   "domain": "HOST",
+   "side": "F",
+   "mpn": "RC0603FR-07220KL",
+   "manufacturer": "Yageo"
+  },
+  {
+   "reference": "RPD",
+   "value": "1M 1% 0603",
+   "footprint": "Resistor_SMD:R_0603_1608Metric",
+   "pins": {
+    "1": "GATE",
+    "2": "GND_H"
+   },
+   "position": [
+    22.5,
+    31.4
+   ],
+   "rotation": 0,
+   "kind": "passive",
+   "domain": "HOST",
+   "side": "F",
+   "mpn": "RC0603FR-071ML",
+   "manufacturer": "Yageo"
+  },
+  {
+   "reference": "SJ1",
+   "value": "SENSOR NO|NC",
+   "footprint": "Jumper:SolderJumper-3_P1.3mm_Bridged12_Pad1.0x1.5mm",
+   "pins": {
+    "1": "Q_D",
+    "2": "SIG",
+    "3": "GATE"
+   },
+   "position": [
+    24.5,
+    33.9
+   ],
+   "rotation": 0,
+   "kind": "jumper",
+   "domain": "HOST",
+   "side": "F",
+   "note": "Shipped: pads 1-2 bridged = NO (SIG driven by Q1). Cut the trace and bridge pads 2-3 for NC (SIG driven directly by the phototransistors). Pad 2 is the common SIG pad, so the two states are mutually exclusive by construction."
+  },
+  {
+   "reference": "J3",
+   "value": "ENDSTOP S G 5V",
+   "footprint": "Connector_Molex:Molex_KK-254_AE-6410-03A_1x03_P2.54mm_Vertical",
+   "pins": {
+    "1": "SIG",
+    "2": "GND_H",
+    "3": "+5V_H"
+   },
+   "position": [
+    9.5,
+    32.0
+   ],
+   "rotation": 0,
+   "kind": "connector",
+   "domain": "HOST",
+   "side": "F",
+   "mpn": "22-27-2031",
+   "manufacturer": "Molex",
+   "note": "Signal, Ground, 5V (CLAUDE.md endstop standard). Keyed/polarised KK 254. Native Prime2590 endstop headers are pad1 power, pad2 GND, pad3 FIELD, so a straight cable crosses SIG and 5V (README note, silk)."
+  },
+  {
+   "reference": "SJ2",
+   "value": "SENSOR NPN|PNP",
+   "footprint": "Jumper:SolderJumper-3_P1.3mm_Bridged12_Pad1.0x1.5mm",
+   "pins": {
+    "1": "N_K",
+    "2": "SENSOR_IN",
+    "3": "P_A"
+   },
+   "position": [
+    3.2,
+    11.3
+   ],
+   "rotation": 0,
+   "kind": "jumper",
+   "domain": "FIELD",
+   "side": "F",
+   "note": "Shipped: pads 1-2 bridged = NPN (sensor OUT sinks to 0V when on). Cut the trace and bridge pads 2-3 for PNP (sensor OUT sources to +V). Pad 2 is the common SENSOR_IN pad: only one branch is ever connected to the sensor, so with the sensor output high-Z no current path VF -> GF exists (netlist DC solver check)."
+  },
+  {
+   "reference": "TP_VF",
+   "value": "VF",
+   "footprint": "TestPoint:TestPoint_Pad_D1.5mm",
+   "pins": {
+    "1": "VF"
+   },
+   "position": [
+    2.2,
+    17.9
+   ],
+   "rotation": 0,
+   "kind": "testpoint",
+   "domain": "FIELD",
+   "side": "B"
+  },
+  {
+   "reference": "TP_GF",
+   "value": "GF",
+   "footprint": "TestPoint:TestPoint_Pad_D1.5mm",
+   "pins": {
+    "1": "GF"
+   },
+   "position": [
+    26.0,
+    10.9
+   ],
+   "rotation": 0,
+   "kind": "testpoint",
+   "domain": "FIELD",
+   "side": "B"
+  },
+  {
+   "reference": "TP_SENS",
+   "value": "SENSOR_IN",
+   "footprint": "TestPoint:TestPoint_Pad_D1.5mm",
+   "pins": {
+    "1": "SENSOR_IN"
+   },
+   "position": [
+    2.2,
+    8.8
+   ],
+   "rotation": 0,
+   "kind": "testpoint",
+   "domain": "FIELD",
+   "side": "B"
+  },
+  {
+   "reference": "TP_SIG",
+   "value": "SIG",
+   "footprint": "TestPoint:TestPoint_Pad_D1.5mm",
+   "pins": {
+    "1": "SIG"
+   },
+   "position": [
+    2.5,
+    34.0
+   ],
+   "rotation": 0,
+   "kind": "testpoint",
+   "domain": "HOST",
+   "side": "B"
+  },
+  {
+   "reference": "TP_GH",
+   "value": "GND_H",
+   "footprint": "TestPoint:TestPoint_Pad_D1.5mm",
+   "pins": {
+    "1": "GND_H"
+   },
+   "position": [
+    5.8,
+    34.0
+   ],
+   "rotation": 0,
+   "kind": "testpoint",
+   "domain": "HOST",
+   "side": "B"
+  },
+  {
+   "reference": "TP_5V",
+   "value": "+5V_H",
+   "footprint": "TestPoint:TestPoint_Pad_D1.5mm",
+   "pins": {
+    "1": "+5V_H"
+   },
+   "position": [
+    18.8,
+    33.9
+   ],
+   "rotation": 0,
+   "kind": "testpoint",
+   "domain": "HOST",
+   "side": "B"
+  }
+ ],
+ "mounting_holes": [
+  {
+   "reference": "H1",
+   "footprint": "MountingHole:MountingHole_3.2mm_M3",
+   "position": [
+    4.0,
+    23.8
+   ],
+   "net": null,
+   "datum": true
+  },
+  {
+   "reference": "H2",
+   "footprint": "MountingHole:MountingHole_3.2mm_M3",
+   "position": [
+    24.0,
+    23.8
+   ],
+   "net": null,
+   "offset_from_datum_mm": [
+    20.0,
+    0.0
+   ]
+  }
+ ],
+ "mounting_rule": "Datum = H1; H2 at +20.0 mm X and 0 Y (20 mm grid, whole 10 mm offsets, rectangular pattern for two holes); NPTH, 3.2 mm finished, no copper, not connected to any net; both holes sit in the copper-free band so hardware cannot short a domain to the other except by touching copper outside r = 4.0 mm; nylon hardware recommended.",
+ "verification_checks": [
+  "contract == schematic netlist == PCB pad nets for every pin of every part (gate-board verify.py pattern): 0 mismatches.",
+  "Domain check on the saved PCB: no net has pads in both domains; no copper object on any layer inside the isolation band; minimum FIELD-to-HOST copper distance >= 4.9 mm measured on the saved copper (pad edges at the optocouplers 4.9 mm).",
+  "J3 pin order SIG/GND_H/+5V_H; J1 0V/+V; J2 0V/+V/OUT; SJ1 shipped bridged 1-2.",
+  "TVS1.1 is on VIN_F (after F1); D1 pin 1 (cathode) on VF.",
+  "Truth table (80 rows) reproduced from the SAVED netlist by a DC solver script (SJ1 x SJ2 x sensor states x power states) and asserted in verify.json; the guard must fail on the mutation that ties both opto LEDs to SENSOR_IN (verified for the contract netlist in make_contract.py).",
+  "Widths on the saved copper: VIN_RAW/VIN_F/VF/GF >= 0.6 mm everywhere they carry the fuse path; signals >= 0.25 mm; clearance >= 0.2 mm; GATE rules.",
+  "ERC 0, DRC 0 (all severities inspected), 0 unconnected, 0 parity issues, run fresh by a different step from the builder.",
+  "Complete render set black mask, populated models visible (inspect pixels), assembly/copper/schematic exports, BOM, Gerber/drill from the saved board, checklist review S001-S060 and L001-L072 with one status each.",
+  "Deliberate-violation proof: a temporary track across the band triggers a custom DRC rule or the verify script before the clean result is trusted."
+ ],
+ "stop_criteria": [
+  "At least three retained versions (process step 8-10) before the first maintainer review; the best passes the checks below.",
+  "KiCad 9.0.8 ERC 0 and DRC 0 with parity, 0 unconnected, on the reopened saved project; independent re-run.",
+  "verify checks above pass; truth table reproduced.",
+  "Outline <= 28 x 36 mm (hard limit 32 x 40 mm) with the reason logged if larger; compare with the previous version.",
+  "132 checklist items reconciled per version: counts pass/fail/unverified/NA reported and summing to 132; checklist signoff is NOT claimed while any applicable item fails or is unverified.",
+  "Every version folder has the full package (CLAUDE.md section 5); failed/rejected versions labelled unsuitable for fabrication.",
+  "Best status is cad-clean-unqualified: no electrical, thermal, isolation or EMC claim without a bench result. Qualification checklist lists: sensor matrix at 12 V and 24 V, leakage immunity, latency, field loss, reverse/swap/short, cable crossing, isolation resistance, hand-assembly BOM check."
+ ],
+ "overrides_of_design_md": [
+  "design.md 'Gadgeteer pin mapping' table (pins 1,2,10 canonical, pins 3-9 N/A): this board has no Gadgeteer socket at all; the table is superseded by gadgeteer_socket.",
+  "design.md 'host-side transistor/open-drain output compatible with the V2 pull-up' is implemented as the open-drain Q1 stage plus direct phototransistor mode (SJ1).",
+  "design.md 'Field fuse/current limit' = F1 PPTC; 'output clamp' = none beyond the host input protection (A-ESD).",
+  "design.md 'two ungrounded M3 holes on 20 mm grid' = H1/H2 20.0 mm apart in the isolation band.",
+  "design.md 'Field terminals on one edge, keyed host connector opposite' kept: J1/J2 north, J3 south.",
+  "design.md 'Blocked decisions' resolved by R1 (matrix), R2 (isolation/polarity), R3 (transients/timing).",
+  "specs.md and design.md are not edited in this stage; a later stage should fold these decisions back."
+ ],
+ "open_assumptions": [
+  "A-MISMATCH: a wrong SJ2 position is not detected (NO position: target never reported). Accepted for the prototype with printed warning, LED check and first-power test; a hardware fix would need a two-sided window detector (rejected: needs divider current and loses headroom at 10 V).",
+  "A-SAT: sensor residual voltage <= 2 V and leakage <= 20 uA; unverified for any real sensor (to measure).",
+  "A-HOST: host pull-up <= 0.5 mA load when LOW (native Prime2590 10 k to 5 V). NC mode margin is only +20 % over the guaranteed saturated CTR (30 %); NO mode has none of this limit.",
+  "A-ESD: no ESD diode on SENSOR_IN (cost); qualification may add one.",
+  "A-TVS: SMF30CA numbers come from a second-source sheet; originals not read.",
+  "A-C2/A-LED: C2 and amber LED MPNs unverified.",
+  "A-ASSY: hand or low-volume assembly assumed (no fiducials).",
+  "A-ENCL: no enclosure supplied; 20 mm hole pitch is the family rule.",
+  "A-STD: isolation spacing derived from the optocoupler's 5.0 mm package value, not from an IEC 60664-1 table (no access); safety rating is not claimed.",
+  "A-CABLE: sensor cable gauge/length unknown; PPTC and terminals sized for 0.2-1.5 mm2 wire."
+ ],
+ "consultation_status": "Astra (ChatGPT 6 Pro) NOT consulted in this batch stage: chosen deviation recorded in questions.md Q-astra. The hardest question (PNP/NPN/NO/NC topology with fail-safe) was resolved by primary-source datasheets, a behavioural truth-table assertion in make_contract.py and one built-in advisor review.",
+ "calculations_note": "Every number in power_budget.calculations is produced by tools/make_contract.py with the stated assumptions; rerun to regenerate."
+}

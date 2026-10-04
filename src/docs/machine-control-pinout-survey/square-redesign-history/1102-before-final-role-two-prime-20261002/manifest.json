@@ -1,0 +1,219 @@
+{
+  "type": "retained_before_installation",
+  "files": [
+    {
+      "path": "/home/arthur/dev/smoothieware/smoothieware-website-v1/src/docs/machine-control-pinout-survey/build_centered_guides.py",
+      "retained_path": "/home/arthur/dev/smoothieware/smoothieware-website-v1/src/docs/machine-control-pinout-survey/square-redesign-history/1102-before-final-role-two-prime-20261002/machine-control-pinout-survey/build_centered_guides.py",
+      "sha256": "f6e69aeaac942655bb9ac5e356f0bca7bd36ae4620fb92f3d3d9975ff432dabc",
+      "bytes": 23090
+    },
+    {
+      "path": "/home/arthur/dev/smoothieware/smoothieware-website-v1/src/docs/machine-control-pinout-survey/centered-connections-wiki-205.json",
+      "retained_path": "/home/arthur/dev/smoothieware/smoothieware-website-v1/src/docs/machine-control-pinout-survey/square-redesign-history/1102-before-final-role-two-prime-20261002/machine-control-pinout-survey/centered-connections-wiki-205.json",
+      "sha256": "bd2452e6e8edec546fb509cb7024d24c92b791c7d4fbd78b025fed674fc5f578",
+      "bytes": 139719
+    },
+    {
+      "path": "/home/arthur/dev/smoothieware/smoothieware-website-v1/src/docs/machine-control-pinout-survey/centered-connections-wiki-222.json",
+      "retained_path": "/home/arthur/dev/smoothieware/smoothieware-website-v1/src/docs/machine-control-pinout-survey/square-redesign-history/1102-before-final-role-two-prime-20261002/machine-control-pinout-survey/centered-connections-wiki-222.json",
+      "sha256": "d9cb3f1ec4d32987675ec1e74f8c262a1cac9cf0f0c91f3efe53ca0881fa531f",
+      "bytes": 296357
+    },
+    {
+      "path": "/home/arthur/dev/smoothieware/smoothieware-website-v1/src/docs/machine-control-pinout-survey/centered-guides.json",
+      "retained_path": "/home/arthur/dev/smoothieware/smoothieware-website-v1/src/docs/machine-control-pinout-survey/square-redesign-history/1102-before-final-role-two-prime-20261002/machine-control-pinout-survey/centered-guides.json",
+      "sha256": "930bd8975a4e89856b4ba166c9ad44b05c62f37e4ac17f25cd4cc640212072a1",
+      "bytes": 1779280
+    },
+    {
+      "path": "/home/arthur/dev/smoothieware/smoothieware-website-v1/src/docs/machine-control-pinout-survey/machine-page-source/articles/wiki-205.html",
+      "retained_path": "/home/arthur/dev/smoothieware/smoothieware-website-v1/src/docs/machine-control-pinout-survey/square-redesign-history/1102-before-final-role-two-prime-20261002/machine-control-pinout-survey/machine-page-source/articles/wiki-205.html",
+      "sha256": "5e8f817ca10bdbc74118e0b0669769fe9d19ca1094c45e5cfdc47ecf85f37345",
+      "bytes": 276481
+    },
+    {
+      "path": "/home/arthur/dev/smoothieware/smoothieware-website-v1/src/docs/machine-control-pinout-survey/machine-page-source/articles/wiki-222.html",
+      "retained_path": "/home/arthur/dev/smoothieware/smoothieware-website-v1/src/docs/machine-control-pinout-survey/square-redesign-history/1102-before-final-role-two-prime-20261002/machine-control-pinout-survey/machine-page-source/articles/wiki-222.html",
+      "sha256": "bb564b3420a1b2eb48d48e74f631ff73b22a57ced00fb60eefb0b6c3843ff42b",
+      "bytes": 454670
+    },
+    {
+      "path": "/home/arthur/dev/smoothieware/smoothieware-website-v1/src/docs/machine-control-pinout-survey/machine-page-source/compact/wiki-205.html",
+      "retained_path": "/home/arthur/dev/smoothieware/smoothieware-website-v1/src/docs/machine-control-pinout-survey/square-redesign-history/1102-before-final-role-two-prime-20261002/machine-control-pinout-survey/machine-page-source/compact/wiki-205.html",
+      "sha256": "87f05cb159582918d6fd0cbaf8b01944c7489393d74fc58834ffcb194e77f1ac",
+      "bytes": 2602
+    },
+    {
+      "path": "/home/arthur/dev/smoothieware/smoothieware-website-v1/src/docs/machine-control-pinout-survey/machine-page-source/compact/wiki-222.html",
+      "retained_path": "/home/arthur/dev/smoothieware/smoothieware-website-v1/src/docs/machine-control-pinout-survey/square-redesign-history/1102-before-final-role-two-prime-20261002/machine-control-pinout-survey/machine-page-source/compact/wiki-222.html",
+      "sha256": "d4b01b12eb7c39225b3efcd73a3962f69cf6a42cb05e3569fda74979bbc8fdf2",
+      "bytes": 2589
+    },
+    {
+      "path": "/home/arthur/dev/smoothieware/smoothieware-website-v1/src/docs/machine-control-pinout-survey/machine-pages-manifest.json",
+      "retained_path": "/home/arthur/dev/smoothieware/smoothieware-website-v1/src/docs/machine-control-pinout-survey/square-redesign-history/1102-before-final-role-two-prime-20261002/machine-control-pinout-survey/machine-pages-manifest.json",
+      "sha256": "fd918ce37d683e92e702fbb1c56f6fcfdc26fbd46fc2165d691091cf99a504c6",
+      "bytes": 765788
+    },
+    {
+      "path": "/home/arthur/dev/smoothieware/smoothieware-website-v1/src/docs/machine-control-pinout-survey/machines/3d-printer/wiki-222/machine-control-pinout-survey/archive/wiki-222-2026-09-29/wiki-222-machine-wiring-before.svg",
+      "retained_path": "/home/arthur/dev/smoothieware/smoothieware-website-v1/src/docs/machine-control-pinout-survey/square-redesign-history/1102-before-final-role-two-prime-20261002/machine-control-pinout-survey/machines/3d-printer/wiki-222/machine-control-pinout-survey/archive/wiki-222-2026-09-29/wiki-222-machine-wiring-before.svg",
+      "sha256": "e6f6f16cef974ce258799ffdbfbc274c184ed757105b02566cd487406da9f4b9",
+      "bytes": 68203
+    },
+    {
+      "path": "/home/arthur/dev/smoothieware/smoothieware-website-v1/src/docs/machine-control-pinout-survey/machines/3d-printer/wiki-222/machine-control-pinout-survey/contact-profiles/222-wiki-222.svg",
+      "retained_path": "/home/arthur/dev/smoothieware/smoothieware-website-v1/src/docs/machine-control-pinout-survey/square-redesign-history/1102-before-final-role-two-prime-20261002/machine-control-pinout-survey/machines/3d-printer/wiki-222/machine-control-pinout-survey/contact-profiles/222-wiki-222.svg",
+      "sha256": "bc1c49c761ea10663db6fc74f4fc531262b5a70050e31b033ccfeff6a93f2980",
+      "bytes": 565046
+    },
+    {
+      "path": "/home/arthur/dev/smoothieware/smoothieware-website-v1/src/docs/machine-control-pinout-survey/machines/3d-printer/wiki-222/machine-control-pinout-survey/normalized-profiles/222-wiki-222.html",
+      "retained_path": "/home/arthur/dev/smoothieware/smoothieware-website-v1/src/docs/machine-control-pinout-survey/square-redesign-history/1102-before-final-role-two-prime-20261002/machine-control-pinout-survey/machines/3d-printer/wiki-222/machine-control-pinout-survey/normalized-profiles/222-wiki-222.html",
+      "sha256": "fc828f725b58444781e2b3c09dc8175ee1eee101f4b0ca059bd88864fba5d1c7",
+      "bytes": 789687
+    },
+    {
+      "path": "/home/arthur/dev/smoothieware/smoothieware-website-v1/src/docs/machine-control-pinout-survey/machines/3d-printer/wiki-222/machine-control-pinout-survey/normalized-profiles/222-wiki-222.svg",
+      "retained_path": "/home/arthur/dev/smoothieware/smoothieware-website-v1/src/docs/machine-control-pinout-survey/square-redesign-history/1102-before-final-role-two-prime-20261002/machine-control-pinout-survey/machines/3d-printer/wiki-222/machine-control-pinout-survey/normalized-profiles/222-wiki-222.svg",
+      "sha256": "b1f5650407756905eb607431318c69ebd3cacc41f4abdb26d845abdfd7eb11f6",
+      "bytes": 451064
+    },
+    {
+      "path": "/home/arthur/dev/smoothieware/smoothieware-website-v1/src/docs/machine-control-pinout-survey/machines/3d-printer/wiki-222/machine-control-pinout-survey/retrofit-source-contact-history/wiki-222.svg",
+      "retained_path": "/home/arthur/dev/smoothieware/smoothieware-website-v1/src/docs/machine-control-pinout-survey/square-redesign-history/1102-before-final-role-two-prime-20261002/machine-control-pinout-survey/machines/3d-printer/wiki-222/machine-control-pinout-survey/retrofit-source-contact-history/wiki-222.svg",
+      "sha256": "56bc3e963ce17be47f93a0d016b554c1c4f246e791c65d93ac4bd296e0f2de66",
+      "bytes": 407413
+    },
+    {
+      "path": "/home/arthur/dev/smoothieware/smoothieware-website-v1/src/docs/machine-control-pinout-survey/machines/3d-printer/wiki-222/machine-control-pinout-survey/smoothiebox-machine-wiring/centered-wiki-222.svg",
+      "retained_path": "/home/arthur/dev/smoothieware/smoothieware-website-v1/src/docs/machine-control-pinout-survey/square-redesign-history/1102-before-final-role-two-prime-20261002/machine-control-pinout-survey/machines/3d-printer/wiki-222/machine-control-pinout-survey/smoothiebox-machine-wiring/centered-wiki-222.svg",
+      "sha256": "cd411516c39a6b871f7f70cc70217f0faf1c9b9ca085a1c032a56843f45238df",
+      "bytes": 787605
+    },
+    {
+      "path": "/home/arthur/dev/smoothieware/smoothieware-website-v1/src/docs/machine-control-pinout-survey/machines/3d-printer/wiki-222/machine-control-pinout-survey/smoothiebox-machine-wiring/retrofit-wiki-222.svg",
+      "retained_path": "/home/arthur/dev/smoothieware/smoothieware-website-v1/src/docs/machine-control-pinout-survey/square-redesign-history/1102-before-final-role-two-prime-20261002/machine-control-pinout-survey/machines/3d-printer/wiki-222/machine-control-pinout-survey/smoothiebox-machine-wiring/retrofit-wiki-222.svg",
+      "sha256": "95944e2f21590dd35f9928114377ac5ece514c32df465f898862e8bfa14741bf",
+      "bytes": 185683
+    },
+    {
+      "path": "/home/arthur/dev/smoothieware/smoothieware-website-v1/src/docs/machine-control-pinout-survey/machines/3d-printer/wiki-222/machine-control-pinout-survey/square-redesign-history/centered-wiki-222.svg",
+      "retained_path": "/home/arthur/dev/smoothieware/smoothieware-website-v1/src/docs/machine-control-pinout-survey/square-redesign-history/1102-before-final-role-two-prime-20261002/machine-control-pinout-survey/machines/3d-printer/wiki-222/machine-control-pinout-survey/square-redesign-history/centered-wiki-222.svg",
+      "sha256": "e75a43799e4c5ce57d2d2e36222c4d457ee2aef45a2d0edbeed47b961230f4c9",
+      "bytes": 124117
+    },
+    {
+      "path": "/home/arthur/dev/smoothieware/smoothieware-website-v1/src/docs/machine-control-pinout-survey/machines/3d-printer/wiki-222/machine-control-pinout-survey/wiki-222.svg",
+      "retained_path": "/home/arthur/dev/smoothieware/smoothieware-website-v1/src/docs/machine-control-pinout-survey/square-redesign-history/1102-before-final-role-two-prime-20261002/machine-control-pinout-survey/machines/3d-printer/wiki-222/machine-control-pinout-survey/wiki-222.svg",
+      "sha256": "88ae346627b3c107ff874f396c35e9b2f14055843982a39b47a86cf77955b91a",
+      "bytes": 4301
+    },
+    {
+      "path": "/home/arthur/dev/smoothieware/smoothieware-website-v1/src/docs/machine-control-pinout-survey/machines/3d-printer/wiki-222/machine-data.json",
+      "retained_path": "/home/arthur/dev/smoothieware/smoothieware-website-v1/src/docs/machine-control-pinout-survey/square-redesign-history/1102-before-final-role-two-prime-20261002/machine-control-pinout-survey/machines/3d-printer/wiki-222/machine-data.json",
+      "sha256": "54b838587770794af897817938acb7e7e00acd7341c237f0c3937e55ff17cf8f",
+      "bytes": 171921
+    },
+    {
+      "path": "/home/arthur/dev/smoothieware/smoothieware-website-v1/src/docs/machine-control-pinout-survey/machines/3d-printer/wiki-222.html",
+      "retained_path": "/home/arthur/dev/smoothieware/smoothieware-website-v1/src/docs/machine-control-pinout-survey/square-redesign-history/1102-before-final-role-two-prime-20261002/machine-control-pinout-survey/machines/3d-printer/wiki-222.html",
+      "sha256": "dd7deac8d0e4140e151ed5c0bf0f93fb62c0e471794afa0d760b2b54b3fc874c",
+      "bytes": 607252
+    },
+    {
+      "path": "/home/arthur/dev/smoothieware/smoothieware-website-v1/src/docs/machine-control-pinout-survey/machines/diode-laser/wiki-205/machine-control-pinout-survey/contact-profiles/205-wiki-205.svg",
+      "retained_path": "/home/arthur/dev/smoothieware/smoothieware-website-v1/src/docs/machine-control-pinout-survey/square-redesign-history/1102-before-final-role-two-prime-20261002/machine-control-pinout-survey/machines/diode-laser/wiki-205/machine-control-pinout-survey/contact-profiles/205-wiki-205.svg",
+      "sha256": "a4a94b1b26ea937278c1115ce2338b9f4a7491989c0c91a226bfac783cfd16ee",
+      "bytes": 565052
+    },
+    {
+      "path": "/home/arthur/dev/smoothieware/smoothieware-website-v1/src/docs/machine-control-pinout-survey/machines/diode-laser/wiki-205/machine-control-pinout-survey/normalized-profiles/205-wiki-205.html",
+      "retained_path": "/home/arthur/dev/smoothieware/smoothieware-website-v1/src/docs/machine-control-pinout-survey/square-redesign-history/1102-before-final-role-two-prime-20261002/machine-control-pinout-survey/machines/diode-laser/wiki-205/machine-control-pinout-survey/normalized-profiles/205-wiki-205.html",
+      "sha256": "9c6058547663175c7470981f821d1fcf8597c13f450022edef51b80b58a88b4f",
+      "bytes": 715528
+    },
+    {
+      "path": "/home/arthur/dev/smoothieware/smoothieware-website-v1/src/docs/machine-control-pinout-survey/machines/diode-laser/wiki-205/machine-control-pinout-survey/normalized-profiles/205-wiki-205.svg",
+      "retained_path": "/home/arthur/dev/smoothieware/smoothieware-website-v1/src/docs/machine-control-pinout-survey/square-redesign-history/1102-before-final-role-two-prime-20261002/machine-control-pinout-survey/machines/diode-laser/wiki-205/machine-control-pinout-survey/normalized-profiles/205-wiki-205.svg",
+      "sha256": "70598f7f239084e5976279e6f120d3eae44b49928d5a64dc5ccb8ac01120be03",
+      "bytes": 451070
+    },
+    {
+      "path": "/home/arthur/dev/smoothieware/smoothieware-website-v1/src/docs/machine-control-pinout-survey/machines/diode-laser/wiki-205/machine-control-pinout-survey/retrofit-source-contact-history/wiki-205.svg",
+      "retained_path": "/home/arthur/dev/smoothieware/smoothieware-website-v1/src/docs/machine-control-pinout-survey/square-redesign-history/1102-before-final-role-two-prime-20261002/machine-control-pinout-survey/machines/diode-laser/wiki-205/machine-control-pinout-survey/retrofit-source-contact-history/wiki-205.svg",
+      "sha256": "8bd13dcfbda1b1354a0a458b5775cee8b71d61c4602498c707946a6d51eb4b1e",
+      "bytes": 105332
+    },
+    {
+      "path": "/home/arthur/dev/smoothieware/smoothieware-website-v1/src/docs/machine-control-pinout-survey/machines/diode-laser/wiki-205/machine-control-pinout-survey/smoothiebox-machine-wiring/centered-wiki-205.svg",
+      "retained_path": "/home/arthur/dev/smoothieware/smoothieware-website-v1/src/docs/machine-control-pinout-survey/square-redesign-history/1102-before-final-role-two-prime-20261002/machine-control-pinout-survey/machines/diode-laser/wiki-205/machine-control-pinout-survey/smoothiebox-machine-wiring/centered-wiki-205.svg",
+      "sha256": "457860ed70fcdf0d123b973bf6e6e8dba3c6b1f79f5328207e8e2a3e1aea9590",
+      "bytes": 609004
+    },
+    {
+      "path": "/home/arthur/dev/smoothieware/smoothieware-website-v1/src/docs/machine-control-pinout-survey/machines/diode-laser/wiki-205/machine-control-pinout-survey/smoothiebox-machine-wiring/retrofit-wiki-205.svg",
+      "retained_path": "/home/arthur/dev/smoothieware/smoothieware-website-v1/src/docs/machine-control-pinout-survey/square-redesign-history/1102-before-final-role-two-prime-20261002/machine-control-pinout-survey/machines/diode-laser/wiki-205/machine-control-pinout-survey/smoothiebox-machine-wiring/retrofit-wiki-205.svg",
+      "sha256": "94bd12190f95f7abcb82015fa2b1b6f93db2785f0cda329aef2bde6c3f287219",
+      "bytes": 95922
+    },
+    {
+      "path": "/home/arthur/dev/smoothieware/smoothieware-website-v1/src/docs/machine-control-pinout-survey/machines/diode-laser/wiki-205/machine-control-pinout-survey/smoothiebox-machine-wiring/sfa9-pump-outlet-source-detail.svg",
+      "retained_path": "/home/arthur/dev/smoothieware/smoothieware-website-v1/src/docs/machine-control-pinout-survey/square-redesign-history/1102-before-final-role-two-prime-20261002/machine-control-pinout-survey/machines/diode-laser/wiki-205/machine-control-pinout-survey/smoothiebox-machine-wiring/sfa9-pump-outlet-source-detail.svg",
+      "sha256": "d9d013edb26ea66b77941aaf1f1760825f4250b1fe9905aab972026dc164d308",
+      "bytes": 4432
+    },
+    {
+      "path": "/home/arthur/dev/smoothieware/smoothieware-website-v1/src/docs/machine-control-pinout-survey/machines/diode-laser/wiki-205/machine-control-pinout-survey/square-redesign-history/centered-wiki-205.svg",
+      "retained_path": "/home/arthur/dev/smoothieware/smoothieware-website-v1/src/docs/machine-control-pinout-survey/square-redesign-history/1102-before-final-role-two-prime-20261002/machine-control-pinout-survey/machines/diode-laser/wiki-205/machine-control-pinout-survey/square-redesign-history/centered-wiki-205.svg",
+      "sha256": "304b8664d7e8c48aed709036fb195bcf06a522827b09bd934b925bf06b5e211f",
+      "bytes": 60284
+    },
+    {
+      "path": "/home/arthur/dev/smoothieware/smoothieware-website-v1/src/docs/machine-control-pinout-survey/machines/diode-laser/wiki-205/machine-control-pinout-survey/wiki-205.svg",
+      "retained_path": "/home/arthur/dev/smoothieware/smoothieware-website-v1/src/docs/machine-control-pinout-survey/square-redesign-history/1102-before-final-role-two-prime-20261002/machine-control-pinout-survey/machines/diode-laser/wiki-205/machine-control-pinout-survey/wiki-205.svg",
+      "sha256": "b65e1d8206658326f3cc68eec7fafe9e241480347868206fda92d696e27742bb",
+      "bytes": 4303
+    },
+    {
+      "path": "/home/arthur/dev/smoothieware/smoothieware-website-v1/src/docs/machine-control-pinout-survey/machines/diode-laser/wiki-205/machine-data.json",
+      "retained_path": "/home/arthur/dev/smoothieware/smoothieware-website-v1/src/docs/machine-control-pinout-survey/square-redesign-history/1102-before-final-role-two-prime-20261002/machine-control-pinout-survey/machines/diode-laser/wiki-205/machine-data.json",
+      "sha256": "4f940b9c00ba12baf5e8139667cd68ba6bdf7b1b3db608ca78693e32afd9d383",
+      "bytes": 123655
+    },
+    {
+      "path": "/home/arthur/dev/smoothieware/smoothieware-website-v1/src/docs/machine-control-pinout-survey/machines/diode-laser/wiki-205.html",
+      "retained_path": "/home/arthur/dev/smoothieware/smoothieware-website-v1/src/docs/machine-control-pinout-survey/square-redesign-history/1102-before-final-role-two-prime-20261002/machine-control-pinout-survey/machines/diode-laser/wiki-205.html",
+      "sha256": "4592f68140f19c7c4b953cd332ece0f42e699437af99b3ad4de80e508f3501ec",
+      "bytes": 428986
+    },
+    {
+      "path": "/home/arthur/dev/smoothieware/smoothieware-website-v1/src/docs/machine-control-pinout-survey/render_centered_wiring.py",
+      "retained_path": "/home/arthur/dev/smoothieware/smoothieware-website-v1/src/docs/machine-control-pinout-survey/square-redesign-history/1102-before-final-role-two-prime-20261002/machine-control-pinout-survey/render_centered_wiring.py",
+      "sha256": "6468e5b8f6f0f39949de6fc3ad4e191c5c9c081278e88cd332fbc9e9e14e2b84",
+      "bytes": 146325
+    },
+    {
+      "path": "/home/arthur/dev/smoothieware/smoothieware-website-v1/src/docs/machine-control-pinout-survey/smoothiebox-machine-wiring/centered-wiki-205.svg",
+      "retained_path": "/home/arthur/dev/smoothieware/smoothieware-website-v1/src/docs/machine-control-pinout-survey/square-redesign-history/1102-before-final-role-two-prime-20261002/machine-control-pinout-survey/smoothiebox-machine-wiring/centered-wiki-205.svg",
+      "sha256": "3bf98e2cf9378a9499c703187a0255a3763c444c5de3fe0cf8b11e1305d3f057",
+      "bytes": 807594
+    },
+    {
+      "path": "/home/arthur/dev/smoothieware/smoothieware-website-v1/src/docs/machine-control-pinout-survey/smoothiebox-machine-wiring/centered-wiki-222.svg",
+      "retained_path": "/home/arthur/dev/smoothieware/smoothieware-website-v1/src/docs/machine-control-pinout-survey/square-redesign-history/1102-before-final-role-two-prime-20261002/machine-control-pinout-survey/smoothiebox-machine-wiring/centered-wiki-222.svg",
+      "sha256": "c3dca0ad41543be949c640aad600311ab63a3945e7d9009fa14c65fdb387bad7",
+      "bytes": 1018265
+    },
+    {
+      "path": "/home/arthur/dev/smoothieware/smoothieware-website-v1/src/docs/machine-control-pinout-survey.html",
+      "retained_path": "/home/arthur/dev/smoothieware/smoothieware-website-v1/src/docs/machine-control-pinout-survey/square-redesign-history/1102-before-final-role-two-prime-20261002/machine-control-pinout-survey.html",
+      "sha256": "8dbaeb9dc4959bfac965c8b08b19805cb432e9dbc5f1c3d9ec5fe268dfe1b623",
+      "bytes": 997809
+    }
+  ],
+  "profiles": [
+    "wiki-205",
+    "wiki-222"
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "id": "forum-maslowcnc-pepperjohn-maslow4-floor-anchors-first-cut",
+  "sources": {
+    "forum-peripheral-evidence.json": {
+      "id": "forum-maslowcnc-pepperjohn-maslow4-floor-anchors-first-cut",
+      "dossier": "src/docs/machine-research/maslowcnc-pepperjohn-maslow4-floor-anchors-first-cut.md",
+      "reported_fitted_or_used": [],
+      "listed_for_build_unverified": [],
+      "historical_reference": [],
+      "planned_only": [],
+      "open_function_group": [
+        {
+          "name": "Mounted router model unidentified",
+          "contacts": [],
+          "source_line_number": 7,
+          "source_line": "## Floor-mounted frame anchors",
+          "evidence": "## Floor-mounted frame anchors.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        }
+      ],
+      "exclusions": [
+        {
+          "name": "Maslow 4 belt-drive motors unspecified",
+          "contacts": [],
+          "source_line_number": 11,
+          "source_line": "The thread lists shoulder bolts, diamond drill bits, 316 coupling nuts, and 5/16-in.-18 stainless machine screws. A photo shows a floor-level anchor assembly; another image shows the Maslow sled and router in use, while a wider view shows the suspended belt geometry from the corner anchors to the sled. The photographs support the described arrangement but are not dimensioned drawings. They do not establish anchor embedment depth, epoxy type, load capacity, or suitability of the floor for this installation.",
+          "evidence": "The thread lists shoulder bolts, diamond drill bits, 316 coupling nuts, and 5/16-in.-18 stainless machine screws. A photo shows a floor-level anchor assembly; another image shows the Maslow sled and router in use, while a wider view shows the suspended belt geometry from the corner anchors to the sled.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route",
+          "reason": "Excluded: no separate externally addressable interface, existing control hardware, absent tooling, or inadequate positive device evidence in this dossier."
+        }
+      ],
+      "source_gap": "Dossier does not establish an as-built SmoothieBox route or a complete physical contact schedule for the listed peripherals."
+    }
+  }
+}

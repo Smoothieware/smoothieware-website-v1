@@ -1,0 +1,50 @@
+{
+  "id": "forum-linuxcnc-rnjfab-homemade-cheap-plasma",
+  "sources": {
+    "forum-peripheral-evidence.json": {
+      "id": "forum-linuxcnc-rnjfab-homemade-cheap-plasma",
+      "dossier": "src/docs/machine-research/linuxcnc-rnjfab-homemade-cheap-plasma.md",
+      "reported_fitted_or_used": [],
+      "listed_for_build_unverified": [],
+      "historical_reference": [
+        {
+          "name": "TH6600 stepper drivers initial setup",
+          "contacts": [],
+          "source_line_number": 27,
+          "source_line": "| Motion axes | NEMA 23 motors; TH6600 drivers in the initial setup | Components reported; signal pin mapping absent |",
+          "evidence": "NEMA 23 motors; TH6600 drivers in the initial setup.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        }
+      ],
+      "planned_only": [],
+      "open_function_group": [
+        {
+          "name": "NEMA 23 motors",
+          "contacts": [],
+          "source_line_number": 9,
+          "source_line": "The owner says the project began in January 2020 for student access to CNC. The goal was a low-cost machine with a 1200 \u00d7 1200 mm work area that could accept either plasma or router tooling. The first configuration used 1200 mm ball screws, 1300 mm linear rails (later called a mistake), NEMA 23 motors, TH6600 stepper drivers, and a Mach3 USB motion board (also later called a mistake). The welded frame used salvaged 75 \u00d7 75 \u00d7 3 mm RHS; the gantry used the same section with angle to support bearings. The owner used a welded waterbed made from 50 \u00d7 50 angle with a 2 mm base.",
+          "evidence": "The first configuration used 1200 mm ball screws, 1300 mm linear rails (later called a mistake), NEMA 23 motors, TH6600 stepper drivers, and a Mach3 USB motion board (also later called a mistake). The welded frame used salvaged 75 \u00d7 75 \u00d7 3 mm RHS; the gantry used the same section with angle to support bearings.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        },
+        {
+          "name": "Arc-OK and torch-height signals",
+          "contacts": [],
+          "source_line_number": 17,
+          "source_line": "A later report in 2023 calls the machine an \u201cabsolute workhorse\u201d with everything working. The owner said in December 2024 that it was moving to a new home. A separate 2025 arc-OK/THC troubleshooting thread page explicitly refers to the old machine at its new home; the source discusses an arc-OK threshold adjustment but is not a stable configuration recipe. Do not conflate this older Cut50-era build with the owner's separately mentioned newer machine.",
+          "evidence": "A later report in 2023 calls the machine an \u201cabsolute workhorse\u201d with everything working. The owner said in December 2024 that it was moving to a new home.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        },
+        {
+          "name": "Probe and proximity sensor",
+          "contacts": [],
+          "source_line_number": 15,
+          "source_line": "The initial Mach3 USB setup required considerable trial and error because the owner says the board had no manual. Later the owner reports skipped steps and sheet-alignment loss, then migrated to LinuxCNC with a Mesa 7i96 and THCAD10 (10 inputs, 3 outputs). Initial LinuxCNC setup was difficult; after resolving laptop latency and configuration issues, the machine moved accurately and at useful speed. During a later PlasmaC transition, the owner reports mistakenly connecting a 5 V probe wire to a 24 V proximity-sensor path and shorting/damaging the Mesa 7i96. This is a forum-reported failure; it illustrates that sensor-voltage compatibility must be checked from the actual board documentation before wiring.",
+          "evidence": "During a later PlasmaC transition, the owner reports mistakenly connecting a 5 V probe wire to a 24 V proximity-sensor path and shorting/damaging the Mesa 7i96. This is a forum-reported failure; it illustrates that sensor-voltage compatibility must be checked from the actual board documentation before wiring.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        }
+      ],
+      "exclusions": [],
+      "source_gap": "Dossier does not establish an as-built SmoothieBox route or a complete physical contact schedule for the listed peripherals."
+    }
+  }
+}

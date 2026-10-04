@@ -1,0 +1,53 @@
+{
+  "id": "wiki-204",
+  "sources": {
+    "machine-side-graph-snapshot.json": {
+      "source_graph": "204-wiki-204.json",
+      "source_sha256": "c58e86e9fd68c02c75f8576539f0efdbc23d835087dbbafedbb00777da93b09c",
+      "graph": {
+        "profile_id": "wiki-204",
+        "devices": [
+          {
+            "id": "group-device-001",
+            "role": "reference"
+          },
+          {
+            "id": "group-device-002",
+            "role": "peripheral"
+          },
+          {
+            "id": "group-device-003",
+            "role": "peripheral"
+          }
+        ],
+        "connectors": [
+          {
+            "id": "machine-group-001",
+            "device": "group-device-001",
+            "refdes": "Controller logic and communication",
+            "form": "source-described cable / connector group",
+            "scope": "Source names this group, but provides no source-scoped physical contact map. Availability and exact housing are unverified. Connections and pinout",
+            "contacts": []
+          },
+          {
+            "id": "machine-group-002",
+            "device": "group-device-002",
+            "refdes": "Motors and spindle",
+            "form": "source-described cable / connector group",
+            "scope": "Source names this group, but provides no source-scoped physical contact map. Availability and exact housing are unverified. Connections and pinout",
+            "contacts": []
+          },
+          {
+            "id": "machine-group-003",
+            "device": "group-device-003",
+            "refdes": "Limits, probe, E-stop and protective circuits",
+            "form": "source-described cable / connector group",
+            "scope": "Source names this group, but provides no source-scoped physical contact map. Availability and exact housing are unverified. Connections and pinout",
+            "contacts": []
+          }
+        ],
+        "wires": []
+      }
+    }
+  }
+}

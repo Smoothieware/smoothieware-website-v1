@@ -1,0 +1,71 @@
+{
+  "id": "forum-v1e-apl4-uk-lowrider3-router-lasertree",
+  "sources": {
+    "forum-peripheral-evidence.json": {
+      "id": "forum-v1e-apl4-uk-lowrider3-router-lasertree",
+      "dossier": "src/docs/machine-research/v1e-apl4-uk-lowrider3-router-lasertree.md",
+      "reported_fitted_or_used": [
+        {
+          "name": "Makita RT0702C router",
+          "contacts": [],
+          "source_line_number": 11,
+          "source_line": "The main photograph shows the assembled gantry over a large, gridded spoilboard, with a Makita RT0702C router, dust hose, and a mounted LaserTree diode module. The photo establishes that both tools are present on the machine, but does not demonstrate a laser cut or provide a calibrated work-envelope measurement.",
+          "evidence": "The main photograph shows the assembled gantry over a large, gridded spoilboard, with a Makita RT0702C router, dust hose, and a mounted LaserTree diode module. The photo establishes that both tools are present on the machine, but does not demonstrate a laser cut or provide a calibrated work-envelope measurement.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        },
+        {
+          "name": "Mounted LaserTree 40 W diode module",
+          "contacts": [],
+          "source_line_number": 11,
+          "source_line": "The main photograph shows the assembled gantry over a large, gridded spoilboard, with a Makita RT0702C router, dust hose, and a mounted LaserTree diode module. The photo establishes that both tools are present on the machine, but does not demonstrate a laser cut or provide a calibrated work-envelope measurement.",
+          "evidence": "The main photograph shows the assembled gantry over a large, gridded spoilboard, with a Makita RT0702C router, dust hose, and a mounted LaserTree diode module. The photo establishes that both tools are present on the machine, but does not demonstrate a laser cut or provide a calibrated work-envelope measurement.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        }
+      ],
+      "listed_for_build_unverified": [
+        {
+          "name": "Five end stops listed in parts",
+          "contacts": [],
+          "source_line_number": 20,
+          "source_line": "| End stops | Five end stops listed in the parts table | Switch type, wiring, input assignments, and homing behavior are not documented. |",
+          "evidence": "Five end stops listed in the parts table.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        }
+      ],
+      "historical_reference": [],
+      "planned_only": [],
+      "open_function_group": [],
+      "exclusions": [
+        {
+          "name": "TMC2209 drivers for existing SKR Pro",
+          "reason": "Existing or proposed controller belongs to the replaced control system, not the machine periphery.",
+          "source_line_number": 19,
+          "source_line": "| Drivers | TMC2209 intended for the BTT SKR Pro; the owner accidentally ordered TMC2008 drivers first | He reports that the wrong driver model caused subtle and confusing problems. No detailed symptom table or driver configuration is provided. |"
+        },
+        {
+          "name": "Five NEMA 17 stepper motors",
+          "contacts": [],
+          "source_line_number": 18,
+          "source_line": "| Stepper motors | Five NEMA 17 motors; the owner recommends at least 20 mm shaft length | Motor make, winding, current, and connector pinout are not stated. |",
+          "evidence": "Five NEMA 17 motors; the owner recommends at least 20 mm shaft length",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route",
+          "reason": "Excluded: no separate externally addressable interface, existing control hardware, absent tooling, or inadequate positive device evidence in this dossier."
+        },
+        {
+          "name": "LaserTree module source scope unresolved",
+          "contacts": [],
+          "source_line_number": 11,
+          "source_line": "The main photograph shows the assembled gantry over a large, gridded spoilboard, with a Makita RT0702C router, dust hose, and a mounted LaserTree diode module. The photo establishes that both tools are present on the machine, but does not demonstrate a laser cut or provide a calibrated work-envelope measurement.",
+          "evidence": "The main photograph shows the assembled gantry over a large, gridded spoilboard, with a Makita RT0702C router, dust hose, and a mounted LaserTree diode module. The photo establishes that both tools are present on the machine, but does not demonstrate a laser cut or provide a calibrated work-envelope measurement.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route",
+          "reason": "Excluded: no separate externally addressable interface, existing control hardware, absent tooling, or inadequate positive device evidence in this dossier."
+        },
+        {
+          "name": "TMC2209 on BTT SKR Pro",
+          "reason": "Intended controller-local driver, not a separate exterior drive input."
+        }
+      ],
+      "source_gap": "Dossier does not establish an as-built SmoothieBox route or a complete physical contact schedule for the listed peripherals."
+    }
+  }
+}

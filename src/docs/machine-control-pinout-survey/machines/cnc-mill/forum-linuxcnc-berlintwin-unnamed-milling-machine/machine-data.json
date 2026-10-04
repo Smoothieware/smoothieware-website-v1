@@ -1,0 +1,33 @@
+{
+  "id": "forum-linuxcnc-berlintwin-unnamed-milling-machine",
+  "sources": {
+    "forum-peripheral-evidence.json": {
+      "id": "forum-linuxcnc-berlintwin-unnamed-milling-machine",
+      "dossier": "src/docs/machine-research/linuxcnc-berlintwin-unnamed-milling-machine.md",
+      "reported_fitted_or_used": [],
+      "listed_for_build_unverified": [],
+      "historical_reference": [],
+      "planned_only": [],
+      "open_function_group": [
+        {
+          "name": "Omron VFD",
+          "contacts": [],
+          "source_line_number": 5,
+          "source_line": "LinuxCNC Forum member Berlintwin describes an unnamed milling machine that had been running for roughly two years under LinuxCNC with a parallel-port interface by June 2021. The owner was upgrading it with an Omron VFD, a Mesa 7i93 card, and two owner-developed interface boards for Mesa. The thread does not identify the mill's manufacturer, model, dimensions, axis-drive models, or the detailed wiring of the new interface boards.",
+          "evidence": "The owner was upgrading the unnamed mill with an Omron VFD; no model or control contacts are provided.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        },
+        {
+          "name": "Mesa 7i93 and two owner-developed interface boards",
+          "contacts": [],
+          "source_line_number": 11,
+          "source_line": "The owner identifies the parallel-port-to-Mesa upgrade parts but does not publish a pin map or interface-board schematic in the inspected thread. No Mesa connector contacts, terminal assignments, step/dir polarity, VFD control wiring, or machine safety circuit are given. The attached forum images were not available as readable wiring diagrams in the inspected text. This dossier records the machine-specific control change only and is not a wiring reference.",
+          "evidence": "Mesa connector contacts, terminal assignments and interface-board schematic are not published.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        }
+      ],
+      "exclusions": [],
+      "source_gap": "Dossier does not establish an as-built SmoothieBox route or a complete physical contact schedule for the listed peripherals."
+    }
+  }
+}

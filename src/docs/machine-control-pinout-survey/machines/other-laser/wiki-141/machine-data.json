@@ -1,0 +1,45 @@
+{
+  "id": "wiki-141",
+  "sources": {
+    "machine-side-graph-snapshot.json": {
+      "source_graph": "141-wiki-141.json",
+      "source_sha256": "42e73778e1b9bcb8ae5e54c6182f126b0da9296f06b43b249ca367c19b8917c1",
+      "graph": {
+        "profile_id": "wiki-141",
+        "devices": [
+          {
+            "id": "zing-xy-limit-pcb",
+            "role": "peripheral"
+          }
+        ],
+        "connectors": [
+          {
+            "id": "zing-x-motor-plug",
+            "device": "zing-xy-limit-pcb",
+            "refdes": "X-axis motor plug at the X/Y Limit PCB",
+            "form": "Connector form, contact count, and view unknown",
+            "scope": "Epilog's Zing-family home-switch replacement instructions say to unplug the X-axis motor from the X/Y Limit PCB. This names the internal interface, but gives no contact number, conductor function, cavity count, voltage, polarity, or mating view. The local ZING 4030's installed PCB and harness revision are unverified.",
+            "contacts": []
+          },
+          {
+            "id": "zing-xy-limit-ribbon",
+            "device": "zing-xy-limit-pcb",
+            "refdes": "X/Y Limit PCB ribbon-cable connection",
+            "form": "Ribbon-cable connector; contact count and view unknown",
+            "scope": "Epilog's Zing-family home-switch replacement instructions say to unplug the ribbon cable from the X/Y Limit PCB. The destination and every contact identity/function are unspecified. The local ZING 4030's installed PCB and harness revision are unverified.",
+            "contacts": []
+          }
+        ],
+        "wires": [],
+        "evidence": {
+          "primary": "Epilog Support Center, How to Replace the Home Switch (XY PCB) \u2013 Zing",
+          "urls": [
+            "https://support.epiloglaser.com/laser-machine/zing/service-and-repair/x-axis/how-to-replace-the-home-switch-xy-pcb-zing/",
+            "https://wiki.fablab-nuernberg.de/w/ZING_4030"
+          ],
+          "scope_note": "The Epilog repair guide is scoped to the Zing family, not a serial- or revision-matched FabLab N\u00fcrnberg installation. It identifies an X-axis motor plug and a ribbon-cable connection on the X/Y Limit PCB but publishes no pin/contact schedule. Both groups remain OPEN with no assigned SmoothieBox endpoint. The local wiki's zing1.fablab.lan:515 is a VisiCut print-submission address; it does not identify a physical Ethernet/Wi-Fi connector or its pins. No laser-source, interlock, mains, or process-control wiring is inferred."
+        }
+      }
+    }
+  }
+}

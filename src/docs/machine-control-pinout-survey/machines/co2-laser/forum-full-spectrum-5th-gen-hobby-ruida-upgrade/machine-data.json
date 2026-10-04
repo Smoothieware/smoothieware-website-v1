@@ -1,0 +1,32 @@
+{
+  "id": "forum-full-spectrum-5th-gen-hobby-ruida-upgrade",
+  "sources": {
+    "forum-peripheral-evidence.json": {
+      "id": "forum-full-spectrum-5th-gen-hobby-ruida-upgrade",
+      "dossier": "src/docs/machine-research/full-spectrum-5th-gen-hobby-ruida-upgrade.md",
+      "reported_fitted_or_used": [],
+      "listed_for_build_unverified": [],
+      "historical_reference": [],
+      "planned_only": [],
+      "open_function_group": [],
+      "exclusions": [
+        {
+          "name": "Ruida RDC6445G retrofit proposed only",
+          "reason": "Existing or proposed controller belongs to the replaced control system, not the machine periphery.",
+          "source_line_number": 1,
+          "source_line": "# Full Spectrum Laser 5th Generation Hobby Series \u2014 proposed Ruida RDC6445G retrofit"
+        },
+        {
+          "name": "FSL machine motor and laser interfaces unidentified",
+          "contacts": [],
+          "source_line_number": 3,
+          "source_line": "**Machine identity:** Full Spectrum Laser 5th Gen Hobby Series. The forum post discusses retrofitting the FSL machine after its proprietary controller failed; the owner did not report completing the retrofit in the viewed thread.  ",
+          "evidence": "**Machine identity:** Full Spectrum Laser 5th Gen Hobby Series. The forum post discusses retrofitting the FSL machine after its proprietary controller failed; the owner did not report completing the retrofit in the viewed thread.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route",
+          "reason": "No separate supported machine-side electrical interface or positive fitted-device identity in this dossier."
+        }
+      ],
+      "source_gap": "Dossier does not establish an as-built SmoothieBox route or a complete physical contact schedule for the listed peripherals."
+    }
+  }
+}

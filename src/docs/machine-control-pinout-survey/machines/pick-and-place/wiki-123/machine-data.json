@@ -1,0 +1,41 @@
+{
+  "id": "wiki-123",
+  "sources": {
+    "machine-side-graph-snapshot.json": {
+      "source_graph": "123-wiki-123.json",
+      "source_sha256": "b9bbe4029a1c1906912798184fc8c3a130b1c2bac17a8f2bc1fa47d339e030cc",
+      "graph": {
+        "profile_id": "wiki-123",
+        "devices": [
+          {
+            "id": "group-device-001",
+            "role": "peripheral"
+          },
+          {
+            "id": "group-device-002",
+            "role": "peripheral"
+          }
+        ],
+        "connectors": [
+          {
+            "id": "machine-group-001",
+            "device": "group-device-001",
+            "refdes": "USB-to-serial cable",
+            "form": "source-described cable / connector group",
+            "scope": "Source names this group, but provides no source-scoped physical contact map. Availability and exact housing are unverified. Source-documented cable or connector groups only; endpoints are functional labels, not numbered contacts. Installed machine revision and electrical contract remain unverified.",
+            "contacts": []
+          },
+          {
+            "id": "machine-group-002",
+            "device": "group-device-002",
+            "refdes": "USB camera cable",
+            "form": "source-described cable / connector group",
+            "scope": "Source names this group, but provides no source-scoped physical contact map. Availability and exact housing are unverified. Source-documented cable or connector groups only; endpoints are functional labels, not numbered contacts. Installed machine revision and electrical contract remain unverified.",
+            "contacts": []
+          }
+        ],
+        "wires": []
+      }
+    }
+  }
+}

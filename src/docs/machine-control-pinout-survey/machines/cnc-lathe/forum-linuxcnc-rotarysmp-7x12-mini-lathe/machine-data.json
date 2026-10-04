@@ -1,0 +1,25 @@
+{
+  "id": "forum-linuxcnc-rotarysmp-7x12-mini-lathe",
+  "sources": {
+    "forum-peripheral-evidence.json": {
+      "id": "forum-linuxcnc-rotarysmp-7x12-mini-lathe",
+      "dossier": "src/docs/machine-research/linuxcnc-rotarysmp-7x12-mini-lathe.md",
+      "reported_fitted_or_used": [],
+      "listed_for_build_unverified": [],
+      "historical_reference": [],
+      "planned_only": [
+        {
+          "name": "VFD spindle control planned",
+          "contacts": [],
+          "source_line_number": 5,
+          "source_line": "LinuxCNC Forum member RotarySMP describes rebuilding a specific 7\u00d712 mini-lathe and preparing it for LinuxCNC. The machine had previously run TurboCNC with a once-per-revolution spindle encoder, but the owner noted that its X-axis ballscrew had never been installed. After the plastic back gears broke and its DC motor failed, the spindle was changed to a three-phase 3/4 hp induction motor and VFD with a toothed-belt drive. The owner also undertook scraping and geometry correction of the bed and tailstock surfaces.",
+          "evidence": "LinuxCNC Forum member RotarySMP describes rebuilding a specific 7\u00d712 mini-lathe and preparing it for LinuxCNC. The machine had previously run TurboCNC with a once-per-revolution spindle encoder, but the owner noted that its X-axis ballscrew had never been installed.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        }
+      ],
+      "open_function_group": [],
+      "exclusions": [],
+      "source_gap": "Dossier does not establish an as-built SmoothieBox route or a complete physical contact schedule for the listed peripherals."
+    }
+  }
+}

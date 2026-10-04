@@ -1,0 +1,42 @@
+{
+  "id": "forum-linuxcnc-chrissyag-krv2000",
+  "sources": {
+    "forum-peripheral-evidence.json": {
+      "id": "forum-linuxcnc-chrissyag-krv2000",
+      "dossier": "src/docs/machine-research/linuxcnc-chrissyag-krv2000.md",
+      "reported_fitted_or_used": [],
+      "listed_for_build_unverified": [
+        {
+          "name": "Spindle VFD",
+          "source_line_number": 5,
+          "source_line": "LinuxCNC Forum member ChrissyAG reports that they purchased a 1996 KRV2000 milling machine in 2020 for a CNC retrofit intended for disabled use. They had considered but rejected converting their earlier RF45-clone Chester Superlux mill because of its limited travel and rigidity. The KRV2000's electronics were initially on a test bench; the owner reports LinuxCNC 2.8 controlling spindle VFD, servo motors, and limit switches successfully during setup. The original Huangyang VFD was replaced in the test configuration with a Nflixin 9100 producing 380 V three-phase output, while the Huangyang VFD was used to keep the mill running manually during fabrication. The inspected search-indexed forum post does not establish final installation or commissioning.",
+          "evidence": "LinuxCNC Forum member ChrissyAG reports that they purchased a 1996 KRV2000 milling machine in 2020 for a CNC retrofit intended for disabled use. They had considered but rejected converting their earlier RF45-clone Chester Superlux mill because of its limited travel and rigidity.",
+          "contacts": [],
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        },
+        {
+          "name": "Limit switches",
+          "source_line_number": 5,
+          "source_line": "LinuxCNC Forum member ChrissyAG reports that they purchased a 1996 KRV2000 milling machine in 2020 for a CNC retrofit intended for disabled use. They had considered but rejected converting their earlier RF45-clone Chester Superlux mill because of its limited travel and rigidity. The KRV2000's electronics were initially on a test bench; the owner reports LinuxCNC 2.8 controlling spindle VFD, servo motors, and limit switches successfully during setup. The original Huangyang VFD was replaced in the test configuration with a Nflixin 9100 producing 380 V three-phase output, while the Huangyang VFD was used to keep the mill running manually during fabrication. The inspected search-indexed forum post does not establish final installation or commissioning.",
+          "evidence": "They had considered but rejected converting their earlier RF45-clone Chester Superlux mill because of its limited travel and rigidity. The KRV2000's electronics were initially on a test bench; the owner reports LinuxCNC 2.8 controlling spindle VFD, servo motors, and limit switches successfully during setup.",
+          "contacts": [],
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        }
+      ],
+      "historical_reference": [],
+      "planned_only": [],
+      "open_function_group": [
+        {
+          "name": "Lichuan servos and drives",
+          "contacts": [],
+          "source_line_number": 7,
+          "source_line": "The owners describe Lichuan servos, Debian 9, and the Probe Basic interface. Their report concerns the KRV2000 retrofit; details of their previous RF45-clone are not included as a second machine dossier here.",
+          "evidence": "The owners describe Lichuan servos, Debian 9, and the Probe Basic interface. Their report concerns the KRV2000 retrofit; details of their previous RF45-clone are not included as a second machine dossier here.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        }
+      ],
+      "exclusions": [],
+      "source_gap": "Dossier does not establish an as-built SmoothieBox route or a complete physical contact schedule for the listed peripherals."
+    }
+  }
+}

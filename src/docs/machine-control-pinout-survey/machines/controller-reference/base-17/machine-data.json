@@ -1,0 +1,29 @@
+{
+  "id": "base-17",
+  "sources": {
+    "machine-side-graph-snapshot.json": {
+      "source_graph": "103-base-17.json",
+      "source_sha256": "ac85750d00ab85d14f2c6963f37213955d21773412adb87751bdc969fd3a4b1d",
+      "graph": {
+        "profile_id": "base-17",
+        "devices": [
+          {
+            "id": "group-device-001",
+            "role": "peripheral"
+          }
+        ],
+        "connectors": [
+          {
+            "id": "machine-group-001",
+            "device": "group-device-001",
+            "refdes": "26-pin headers",
+            "form": "source-described cable / connector group",
+            "scope": "Source names this group, but provides no source-scoped physical contact map. Availability and exact housing are unverified. exact atlas group labels; open until contact mapping is established",
+            "contacts": []
+          }
+        ],
+        "wires": []
+      }
+    }
+  }
+}

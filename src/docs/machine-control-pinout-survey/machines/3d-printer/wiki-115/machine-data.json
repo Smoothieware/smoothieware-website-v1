@@ -1,0 +1,65 @@
+{
+  "id": "wiki-115",
+  "sources": {
+    "machine-side-graph-snapshot.json": {
+      "source_graph": "115-wiki-115.json",
+      "source_sha256": "8269b2ad0dde9ca0875398e9cbd446dc2e4975bc116719b9fe444a5af69862ee",
+      "graph": {
+        "profile_id": "wiki-115",
+        "devices": [
+          {
+            "id": "group-device-001",
+            "role": "peripheral"
+          },
+          {
+            "id": "group-device-002",
+            "role": "reference"
+          },
+          {
+            "id": "supplement-device-001",
+            "role": "reference"
+          },
+          {
+            "id": "supplement-device-002",
+            "role": "reference"
+          }
+        ],
+        "connectors": [
+          {
+            "id": "machine-group-001",
+            "device": "group-device-001",
+            "refdes": "X1 MC\u2013AP cable pack",
+            "form": "source-described cable / connector group",
+            "scope": "Source names this group, but provides no source-scoped physical contact map. Availability and exact housing are unverified. Source-documented cable or connector groups only; endpoints are functional labels, not numbered contacts. Installed machine revision and electrical contract remain unverified. Bambu replacement-part compatibility establishes family scope, not fitted cable revision; P1S and P1P plug treatments differ.",
+            "contacts": []
+          },
+          {
+            "id": "machine-group-002",
+            "device": "group-device-002",
+            "refdes": "Heatbed signal cable",
+            "form": "source-described cable / connector group; double-ended 6-contact 1.25 mm cable; contact map unknown",
+            "scope": "Source names this group, but provides no source-scoped physical contact map. Availability and exact housing are unverified. Source-documented cable or connector groups only; endpoints are functional labels, not numbered contacts. Installed machine revision and electrical contract remain unverified. Bambu replacement-part compatibility establishes family scope, not fitted cable revision; P1S and P1P plug treatments differ. Independent supplemental source: Bambu X1/P1 compatible heatbed signal cable product; exact fitted revision, end identity and six per-contact functions unverified.",
+            "contacts": []
+          },
+          {
+            "id": "supplement-connector-001",
+            "device": "supplement-device-001",
+            "refdes": "X1 MC\u2013AP cable pack, power cable",
+            "form": "inter-board cable; contact inventory unknown",
+            "scope": "X1 series application processor and motion control board power path; cable contact map and installed revision unverified. One of two member cables in the parent pack. This is a reference for the named source revision; installed-machine correspondence is not established.",
+            "contacts": []
+          },
+          {
+            "id": "supplement-connector-002",
+            "device": "supplement-device-002",
+            "refdes": "X1 MC\u2013AP cable pack, data cable",
+            "form": "inter-board cable; contact inventory unknown",
+            "scope": "X1 series application processor and motion control board data path; cable contact map and installed revision unverified. Other member cable in the same parent pack. This is a reference for the named source revision; installed-machine correspondence is not established.",
+            "contacts": []
+          }
+        ],
+        "wires": []
+      }
+    }
+  }
+}

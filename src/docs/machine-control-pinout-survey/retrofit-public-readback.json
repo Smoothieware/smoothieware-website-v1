@@ -1,0 +1,181 @@
+{
+  "type": "verification",
+  "base_url": "https://smoothie-box-pinout-research.pages.dev",
+  "assets": [
+    {
+      "path": "/machine-control-pinout-survey.html",
+      "curl_exit": 0,
+      "bytes": 7133579,
+      "sha256": "cf451fec04b6050f00e24a20d24932d545a530749835fc03c0eb56ee20d7140a",
+      "matches_local": true
+    },
+    {
+      "path": "/machine-control-pinout-survey/smoothiebox-machine-wiring/retrofit-wiki-205.svg",
+      "curl_exit": 0,
+      "bytes": 122058,
+      "sha256": "9cd7516afcfaed6aa95afc2d1e7b2eaab4696af1ea0203d465d22936eed63c05",
+      "matches_local": true
+    },
+    {
+      "path": "/machine-control-pinout-survey/smoothiebox-machine-wiring/wiki-205.svg",
+      "curl_exit": 0,
+      "bytes": 122058,
+      "sha256": "9cd7516afcfaed6aa95afc2d1e7b2eaab4696af1ea0203d465d22936eed63c05",
+      "matches_local": true
+    },
+    {
+      "path": "/machine-control-pinout-survey/smoothiebox-machine-wiring/retrofit-laserplot-02.svg",
+      "curl_exit": 0,
+      "bytes": 117225,
+      "sha256": "cf3adad4a62abc2a38b52711011ed4a606f1eea8055e48cd8426e8c4f3373f1e",
+      "matches_local": true
+    },
+    {
+      "path": "/machine-control-pinout-survey/smoothiebox-machine-wiring/laserplot-02.svg",
+      "curl_exit": 0,
+      "bytes": 117225,
+      "sha256": "cf3adad4a62abc2a38b52711011ed4a606f1eea8055e48cd8426e8c4f3373f1e",
+      "matches_local": true
+    },
+    {
+      "path": "/machine-control-pinout-survey/smoothiebox-machine-wiring/retrofit-base-11.svg",
+      "curl_exit": 0,
+      "bytes": 71940,
+      "sha256": "fb7a0582ca1607cf79c4ed00b33ef487109c38aad4b2a426ac8453cc6f2adc51",
+      "matches_local": true
+    },
+    {
+      "path": "/machine-control-pinout-survey/smoothiebox-machine-wiring/base-11.svg",
+      "curl_exit": 0,
+      "bytes": 71940,
+      "sha256": "fb7a0582ca1607cf79c4ed00b33ef487109c38aad4b2a426ac8453cc6f2adc51",
+      "matches_local": true
+    },
+    {
+      "path": "/machine-control-pinout-survey/smoothiebox-machine-wiring/retrofit-wiki-132.svg",
+      "curl_exit": 0,
+      "bytes": 192800,
+      "sha256": "f654b70bec6d1a72ee7fe415b7845802b5fd4b02fdbf7f3dbdb66afc3f136e02",
+      "matches_local": true
+    },
+    {
+      "path": "/machine-control-pinout-survey/smoothiebox-machine-wiring/wiki-132.svg",
+      "curl_exit": 0,
+      "bytes": 192800,
+      "sha256": "f654b70bec6d1a72ee7fe415b7845802b5fd4b02fdbf7f3dbdb66afc3f136e02",
+      "matches_local": true
+    },
+    {
+      "path": "/machine-control-pinout-survey/smoothiebox-machine-wiring/retrofit-wiki-134.svg",
+      "curl_exit": 0,
+      "bytes": 343655,
+      "sha256": "6bff477e6f295da4da570bd676614928723a44fa483ee30203a5fed186c121d0",
+      "matches_local": true
+    },
+    {
+      "path": "/machine-control-pinout-survey/smoothiebox-machine-wiring/wiki-134.svg",
+      "curl_exit": 0,
+      "bytes": 343655,
+      "sha256": "6bff477e6f295da4da570bd676614928723a44fa483ee30203a5fed186c121d0",
+      "matches_local": true
+    },
+    {
+      "path": "/machine-control-pinout-survey/smoothiebox-machine-wiring/retrofit-wiki-135.svg",
+      "curl_exit": 0,
+      "bytes": 207628,
+      "sha256": "d18c07acdb6b80a7c428fae0761acb6a6db222e79d6ad67eb900edb1e76c7181",
+      "matches_local": true
+    },
+    {
+      "path": "/machine-control-pinout-survey/smoothiebox-machine-wiring/wiki-135.svg",
+      "curl_exit": 0,
+      "bytes": 207628,
+      "sha256": "d18c07acdb6b80a7c428fae0761acb6a6db222e79d6ad67eb900edb1e76c7181",
+      "matches_local": true
+    },
+    {
+      "path": "/machine-control-pinout-survey/smoothiebox-machine-wiring/retrofit-mill-g2.svg",
+      "curl_exit": 0,
+      "bytes": 176691,
+      "sha256": "baeda7d7c7d3a51159656114199e93e3851c936b7c0d8a9ff78bc48bb5250d00",
+      "matches_local": true
+    },
+    {
+      "path": "/machine-control-pinout-survey/smoothiebox-machine-wiring/mill-g2.svg",
+      "curl_exit": 0,
+      "bytes": 176691,
+      "sha256": "baeda7d7c7d3a51159656114199e93e3851c936b7c0d8a9ff78bc48bb5250d00",
+      "matches_local": true
+    },
+    {
+      "path": "/machine-control-pinout-survey/smoothiebox-machine-wiring/retrofit-mill-avid-ex-3.svg",
+      "curl_exit": 0,
+      "bytes": 177794,
+      "sha256": "017d5ca4af07b1fd3439c63fb243478e672f65e3b6fc01a210f943067e0e6640",
+      "matches_local": true
+    },
+    {
+      "path": "/machine-control-pinout-survey/smoothiebox-machine-wiring/mill-avid-ex-3.svg",
+      "curl_exit": 0,
+      "bytes": 177794,
+      "sha256": "017d5ca4af07b1fd3439c63fb243478e672f65e3b6fc01a210f943067e0e6640",
+      "matches_local": true
+    },
+    {
+      "path": "/machine-control-pinout-survey/smoothiebox-machine-wiring/retrofit-wiki-206.svg",
+      "curl_exit": 0,
+      "bytes": 179089,
+      "sha256": "d7ba139e8cb8fd071c747d5941241104316c718fe189f96f9a3d46e3eef9cf0b",
+      "matches_local": true
+    },
+    {
+      "path": "/machine-control-pinout-survey/smoothiebox-machine-wiring/wiki-206.svg",
+      "curl_exit": 0,
+      "bytes": 179089,
+      "sha256": "d7ba139e8cb8fd071c747d5941241104316c718fe189f96f9a3d46e3eef9cf0b",
+      "matches_local": true
+    },
+    {
+      "path": "/machine-control-pinout-survey/smoothiebox-machine-wiring/retrofit-wiki-222.svg",
+      "curl_exit": 0,
+      "bytes": 233645,
+      "sha256": "a459dcb3ee49e51198765fcc1e52af26063c7ab93a12486894a4f6fa816acc96",
+      "matches_local": true
+    },
+    {
+      "path": "/machine-control-pinout-survey/smoothiebox-machine-wiring/wiki-222.svg",
+      "curl_exit": 0,
+      "bytes": 233645,
+      "sha256": "a459dcb3ee49e51198765fcc1e52af26063c7ab93a12486894a4f6fa816acc96",
+      "matches_local": true
+    },
+    {
+      "path": "/machine-control-pinout-survey/smoothiebox-machine-wiring/retrofit-forum-linuxcnc-optimill-mh50v-unlogic.svg",
+      "curl_exit": 0,
+      "bytes": 200692,
+      "sha256": "48737cdecfa4aa8a45226f6001fa54393b9fc0268b51cbb06d6c347c4f67f802",
+      "matches_local": true
+    },
+    {
+      "path": "/machine-control-pinout-survey/smoothiebox-machine-wiring/forum-linuxcnc-optimill-mh50v-unlogic.svg",
+      "curl_exit": 0,
+      "bytes": 200692,
+      "sha256": "48737cdecfa4aa8a45226f6001fa54393b9fc0268b51cbb06d6c347c4f67f802",
+      "matches_local": true
+    },
+    {
+      "path": "/machine-control-pinout-survey/smoothiebox-machine-wiring/retrofit-forum-linuxcnc-rotarysmp-schaublin-125-cnc-retrofit.svg",
+      "curl_exit": 0,
+      "bytes": 53439,
+      "sha256": "5e7153d6a428cf6f03b365ca8f9e319e2417d741f3367c99c7bc2bd4e4af1165",
+      "matches_local": true
+    },
+    {
+      "path": "/machine-control-pinout-survey/smoothiebox-machine-wiring/forum-linuxcnc-rotarysmp-schaublin-125-cnc-retrofit.svg",
+      "curl_exit": 0,
+      "bytes": 53439,
+      "sha256": "5e7153d6a428cf6f03b365ca8f9e319e2417d741f3367c99c7bc2bd4e4af1165",
+      "matches_local": true
+    }
+  ]
+}

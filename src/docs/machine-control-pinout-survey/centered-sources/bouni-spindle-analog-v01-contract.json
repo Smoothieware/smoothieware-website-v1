@@ -1,0 +1,2811 @@
+{
+  "name": "Smoothie Bouni spindle-module boards (family of two)",
+  "slug": "bouni-spindle-module-boards",
+  "revision": "v01",
+  "contract_date": "2026-10-01",
+  "status_target": "cad-clean-unqualified (best achievable without physical qualification); UNSUITABLE FOR FABRICATION until human review",
+  "hazard_class": "mains-or-hazardous",
+  "hazard_rationale": "Neither board carries mains: field-side voltages are <= 12 V (10 V VFD reference, 0-10 V, RUN contact, RS-485, 3.3 V isolated). The class is set conservatively because both boards are the isolation interface between a Smoothieboard (USB/PC-connected) and a VFD whose control terminals may be mains-referenced, and because the controlled load is a rotating spindle. A barrier failure or unintended RUN is a safety event. Per docs/board-design-process.md every mains/hazardous-class board is marked unsuitable for fabrication until human review, and disposition/self-review steps use the FRONTIER tier.",
+  "fabrication_status": "UNSUITABLE FOR FABRICATION until a human has reviewed the isolation spacing derivation, the VFD interface assumptions and the safe-state behaviour. Every generated artefact (silkscreen, README, versions.json, renders) must carry this label.",
+  "generator": "tools/make_contract.py with tools/bouni_layout.py (single source; rerun instead of editing this JSON)",
+  "license": "CERN-OHL-S-2.0",
+  "cad": "KiCad 9 (9.0.8); KiCad only",
+  "function": "Two separate Gadgeteer extension boards adapted from the two historical Bouni spindle boards of the Smoothieware spindle-module page: (A) PWM to 0-10 V analog speed reference + RUN contact, (B) UART to RS-485 for Modbus VFDs. Both add galvanic isolation relative to the originals.",
+  "scope": "Two boards in one slug, built together in every version, each with its own KiCad project in attempt/versions/vNN/. Not included: DC spindle MOSFET/PWM driver and hobby ESC/servo (covered by the MOSFET and servo boards), mains switching, spindle speed feedback input, direction output, relay, firmware. See questions.md Q1.",
+  "family": {
+    "boards": [
+      "analog",
+      "rs485"
+    ],
+    "shared_decisions": [
+      "Both boards keep the HOST domain (Gadgeteer) and a FIELD domain (VFD) galvanically separate with a copper-free barrier strip across the full board width.",
+      "Both put J1 (IN) and J2 (CHAIN) on the north edge and the field terminal on the south edge; same hole logic (two NPTH on the barrier line, 20 mm apart).",
+      "Same naming: HOST nets GND/+3V3/+5V, FIELD ground GND_VFD (A) or GND_ISO (B)."
+    ],
+    "version_layout": "versions/vNN/ holds both projects: bsm-analog.* and bsm-rs485.* (kicad_pro, kicad_sch, kicad_pcb, kicad_dru, netlist, erc, drc, verify, routing json) plus one renders/ directory with analog-* and rs485-* prefixed files, one commands.json per board, bom.md per board, diagnostics.json. The .kicad_pro files sit in vNN/ so ${KIPRJMOD}/../../models/ and ${KIPRJMOD}/../../footprints/ resolve.",
+    "versions_rule": "Both boards advance together: every version folder contains the complete package for both. Never overwrite earlier versions."
+  },
+  "output_paths": {
+    "contract": "attempt/design-contract.json",
+    "version_dir": "attempt/versions/v01/",
+    "expected_files": [
+      "design-contract.json (copy)",
+      "bsm-analog.kicad_{pro,sch,pcb,dru}",
+      "bsm-rs485.kicad_{pro,sch,pcb,dru}",
+      "fp-lib-table (Smoothie_Bouni -> ${KIPRJMOD}/../../footprints/Smoothie_Bouni.pretty)",
+      "sym-lib-table (local symbols)",
+      "netlist, erc.json, drc.json, verify.json, routing.json per board",
+      "renders/ (populated + bare top/bottom/isometric PNG per board, assembly SVG/PDF, copper SVG, schematic PDF/SVG, commands.json with model provenance)",
+      "checklist-review.md (S001-S060 and L001-L072 per board)",
+      "bom.md per board"
+    ],
+    "never_overwrite": "Earlier versions are never overwritten or deleted."
+  },
+  "reference_tools": {
+    "read_only": [
+      "src/gate-boards/attempt/tools/",
+      "src/spi-thermocouple-breakout/attempt/",
+      "src/spi-hub/attempt/"
+    ],
+    "rule": "Reuse by copying into attempt/tools/; never edit the reference trees. Routing uses the gate-board router.py / verify.py pattern (grid A*, clearance-inflated pads, DRC after every batch). The thermocouple pilot shrank to 36 x 28 and then had to grow to 40 x 30 for routing: do not shrink below the targets here before a routed version exists.",
+    "python": "/usr/bin/python3 (pcbnew 9.0.8); bare python3 has no pcbnew. Run CPU-heavy steps as nice -n 19 ionice -c 3.",
+    "scratch_check": "tools/scratch_place_check.py --board analog|rs485 (JSONL) reproduces the placement fit used for the outline targets: 0 issues on both boards."
+  },
+  "sources": {
+    "spindle_module_page_v1_site": {
+      "file": "sources/smoothieware-spindle-module-v1-site.html",
+      "identity": "Smoothieware website v1 mirror of http://smoothieware.org/spindle-module, fetched 2026-10-01 (live URL redirects to the same content)",
+      "use": "The only prose for the historical Bouni boards: analog (PWM to 0-10 V + RUN optocoupler) and Modbus (3.3 V UART to RS485) boards, config keys, Huanyang VFD parameters.",
+      "sha256": "9d0e00e3b3adce8f6fca6527c5505793bfcaa775efacc329c720e2f6187bea00",
+      "bytes": 33308
+    },
+    "analog_schematic": {
+      "file": "sources/analog-vfd-board-schematic.png",
+      "identity": "Figure on the spindle-module page: Eagle schematic \"PWM-Analog converter\" (ILD217 x2, TS912, 220 R, 2.2 k, 47 k, 47 n, 100 k, 100 n)",
+      "sha256": "25c34921bb453d26c47b132e60126796796989aac1be723c515bdc499e7169bf",
+      "bytes": 10860
+    },
+    "analog_pcb": {
+      "file": "sources/analog-vfd-board-pcb.png",
+      "identity": "Figure: historical analog board layout image",
+      "sha256": "73675a6663c6790b5676669da3ee77246bbae9476f53267713896994678a571c",
+      "bytes": 19295
+    },
+    "analog_wiring": {
+      "file": "sources/analog-wiring.png",
+      "identity": "Figure: PWM(P2.5)/SW(P2.7) to 10V/0-10V/GND/RUN/DCM terminals of a Huanyang VFD",
+      "sha256": "07f650b637426d12b95f643b91c2985b038c55aeca8dff247c97df655e4ca56b",
+      "bytes": 80148
+    },
+    "modbus_schematic": {
+      "file": "sources/modbus-vfd-board-schematic.png",
+      "identity": "Figure: Eagle schematic \"RS232 (3.3V) to RS485 converter\" (MAX3485, SJ1 + 120 R termination, DIR=P2.5, RX=P2.6, TX=P2.4)",
+      "sha256": "88d32ac8a31f2f5fb92fee8e6cad99057b7631fd0208ebea96385b7ec8ce5af0",
+      "bytes": 9360
+    },
+    "modbus_pcb": {
+      "file": "sources/modbus-vfd-board-pcb.png",
+      "identity": "Figure: historical Modbus board layout image",
+      "sha256": "e4112d3499560e19b8310cea593f3c56c83d791c2211644424d238228b1c6153",
+      "bytes": 14319
+    },
+    "rs485_wiring": {
+      "file": "sources/rs485wiring.png",
+      "identity": "Figure: RS485 wiring to a Huanyang VFD",
+      "sha256": "6cf1edbdb87aa60399723435bdfad8855cd2a52854bf9e1dab34ff4ae3d86750",
+      "bytes": 63895
+    },
+    "ild217t_datasheet": {
+      "file": "sources/ild217t.pdf",
+      "text": "sources/ild217t.txt",
+      "identity": "Vishay ILD217T, Rev. 1.0, 23-Jul-14, document 84268 (4 pages, Octopart copy). A Rev 1.1 (19-Jul-2023) exists and was not retrieved.",
+      "sha256": "99177d419ee494678fa7c3879f93d26b3ae839b0526580e616d7204b93870cfa",
+      "bytes": 82880
+    },
+    "isow1412_datasheet": {
+      "file": "sources/isow1412.pdf",
+      "text": "sources/isow1412.txt",
+      "identity": "TI ISOW1412/ISOW1432 SLLSF86D, May 2018 revised August 2026, retrieved from ti.com 2026-10-01 (10-page PDF as served; full text extracted, 2973 lines)",
+      "sha256": "3e46deca77909a2aab205ffae1ea0df4630a888126ef6dd60caaa08d6e4fa4b4",
+      "bytes": 3995213
+    },
+    "adm2587e_datasheet": {
+      "file": "sources/adm2582e-2587e.pdf",
+      "text": "sources/adm.txt",
+      "identity": "ADI ADM2582E/ADM2587E Rev. C (2011), Strawberry Linux copy. Consulted only as the rejected alternative (5 V logic thresholds 0.7 x VCC, 98-125 mA).",
+      "sha256": "d320b0d0ac559cedc15a2b516fc6ed604e97ef2f40e77c957983e45a758d2b53",
+      "bytes": 499967
+    },
+    "ti_sdaa268": {
+      "file": "sources/ti-sdaa268-clearance-creepage.pdf",
+      "text": "sources/sdaa268.txt",
+      "identity": "TI SDAA268 clearance and creepage application note; tables are images, so no numeric spacing was derived from it",
+      "sha256": "c680f80f1a507f58283d6b472b5b0ff649c498fe1c65631c601468326d112639",
+      "bytes": 1563345
+    },
+    "ts912": {
+      "file": null,
+      "identity": "ST TS912, datasheet \"November 2012\" (title seen in a search result). st.com blocks this host (timeouts); facts below come from a search-result summary: 2.7-16 V, 200 uA/amp at 3 V, 1 pA bias, output within 40 mV of the rail at 10 k load, +-40 mA. NOT read from the PDF: pin table, Abs Max, Icc at 10 V, unused-amp guidance remain unverified."
+    },
+    "sm712": {
+      "file": null,
+      "identity": "Littelfuse SM712 SOT-23 7 V/12 V asymmetrical TVS array: only the KiCad symbol/description (Diode:SM712_SOT23, datasheet URL in the symbol) was read; littelfuse.com returned 403. Ratings unverified."
+    },
+    "firmware_v2": {
+      "file": "/home/arthur/dev/smoothieware/firmware-source-mirrors/Smoothieware-v2/",
+      "identity": "Undated SmoothieV2 snapshot (files dated 2025-10-19): headers.md (Gadgeteer header GA-GI pin functions), Firmware/src/modules/tools/switch/Switch.cpp, Hal/src/Pwm.cpp, SigmaDeltaPwm.cpp. No analog-spindle or Modbus-spindle module exists in this snapshot."
+    },
+    "repo_inputs": [
+      "../specs.md",
+      "../design.md",
+      "../research.md",
+      "../../../CLAUDE.md sections 3-5, 9",
+      "../../../docs/DESIGN-RULES.md",
+      "../../../docs/board-design-process.md",
+      "../../../docs/pcb-checklist/schematic-checklist.md",
+      "../../../docs/pcb-checklist/layout-checklist.md",
+      "rules-digest.md",
+      "questions.md"
+    ],
+    "footprints": {
+      "Samtec_SHF105_TH_LC.kicad_mod": "a69b85b7225ace253dd5bdee90a99ba165e0219262c2fb2138730749678dc452",
+      "SOIC-20W_TI_DFM0020A.kicad_mod": "75bb7338aec0534ef076ccf01a54bc50d2fc73052888f220cb2a3ea28a944aba"
+    },
+    "models": {
+      "Samtec_SHF105_TH_LC.wrl": "199d654a3b74bfd933201630c756409826800d606db4f9ff04ecc881ef9b62ab"
+    }
+  },
+  "attribution": {
+    "designed_by": "Bouni (historical analog and Modbus boards on the Smoothieware spindle-module page; Eagle designs, license not stated on the page)",
+    "reference_url": "http://smoothieware.org/spindle-module",
+    "note": "This contract re-designs the two circuits from the page figures only; no Bouni file is reused. The page content was not licence-checked: attribution is recorded, no copying."
+  },
+  "rules_digest": "attempt/rules-digest.md (DESIGN-RULES groups, CLAUDE.md, process doc, S001-S060, L001-L072)",
+  "maintainer_decisions": [
+    {
+      "id": "D1",
+      "decision": "Use the CLAUDE.md section 3 canonical P-type and U-type rows for the socket pins.",
+      "evidence": "docs/to-investigate.md D1/open item 1 (settled by the maintainer; physical V2 Prime pin-1 marking not inspected). headers.md in the V2 snapshot shows +3V3 pin 1, +5V pin 2, GND pin 10 on every header, agreeing with the canonical table; only the wiki text differs.",
+      "risk": "If a physical host has a different rail order, a canonical cable can put 5 V on a logic pin: first-article continuity check of pins 1/2/10.",
+      "reversal": "Edit PIN maps in tools/bouni_layout.py and rerun make_contract.py."
+    },
+    {
+      "id": "D2",
+      "decision": "Two boards (analog, RS-485), both isolated; hazard class mains-or-hazardous, unsuitable for fabrication until human review.",
+      "evidence": "questions.md Q1, Q3, Q7, Q11.",
+      "risk": "Isolation adds cost/size versus the originals.",
+      "reversal": "Tie GND_VFD to GND (A) or fit MAX3485 (B) in a new version."
+    }
+  ],
+  "resolved_items": [
+    {
+      "id": "B1",
+      "item": "design.md \"Select one product variant\"",
+      "resolution": "Both historical Bouni boards, as two separate boards (analog 0-10 V + RUN, isolated RS-485). Rejected: one combined board (needs P and U sockets at once), AC/DC power stages (out of scope).",
+      "test": "Q1."
+    },
+    {
+      "id": "B2",
+      "item": "\"Recover authoritative prior art\"",
+      "resolution": "The spindle-module page figures (schematics, wiring) were downloaded and read; they are the authority for topology and values. The Bouni firmware gist is firmware only.",
+      "test": "Sources hashes."
+    },
+    {
+      "id": "B3",
+      "item": "\"Freeze electrical and firmware contracts\"",
+      "resolution": "Electrical: see boards[*].field_interface, analysis, power_budget. Firmware: SmoothieV2 snapshot has no analog/modbus spindle module; contract is the V1 key set plus a switch-module mapping, flagged unverified.",
+      "test": "Q6, qualification."
+    },
+    {
+      "id": "B4",
+      "item": "\"Resolve canonical-versus-current V2 Prime connector pinout discrepancy\"",
+      "resolution": "D1 (canonical) with evidence from headers.md; physical check left to qualification.",
+      "test": "Q5."
+    },
+    {
+      "id": "B5",
+      "item": "\"Replace every TBD electrical, mechanical and power value\"",
+      "resolution": "Values in boards[*].power_budget, pcb, parts; remaining unknowns are explicit assumptions in questions.md.",
+      "test": "questions.md."
+    }
+  ],
+  "common": {
+    "hot_plug": "Not supported; silkscreen \"NO HOT-PLUG\". Connectors may be changed only with host power and VFD off.",
+    "indicators": "None fitted (IND-01 conditional, CMP-09): a fault output exists only as test pad TP7 on board B.",
+    "restore_factory_configuration": {
+      "analog": "JP3 JP4 JP5 JP8 JP9 bridged; JP6 JP7 open.",
+      "rs485": "JP3 JP7 JP8 JP9 bridged; JP4 JP5 JP6 open; SJ1 open."
+    },
+    "changeable_while_powered": "None of the jumpers or terminals: power off first.",
+    "first_power_procedure": [
+      "Inspect: board marked PROTOTYPE, no solder bridges across the barrier strip, jumper states match the factory table.",
+      "Host only, field terminals empty, current-limited 5 V (<= 200 mA for BSM-R, <= 20 mA for BSM-A): check +3V3/+5V on TP, no heating.",
+      "BSM-R: VISO_IN 3.3 V +-5 % on TP5/TP6 with respect to GND_ISO, ISO_FLT_N high; BSM-A: PWM 0 %: TP5 0 V.",
+      "Connect the VFD with its motor DISCONNECTED and a current-limited VFD control supply as available; verify 10V IN, then command.",
+      "Only after bench checks connect the spindle motor with a guarded fixture."
+    ],
+    "wiring_examples": "To be written in qualification.md: minimal (one board + one VFD) and chained (BSM-A on GC with a downstream PWM board)."
+  },
+  "checklists": {
+    "schematic": "S001-S060",
+    "layout": "L001-L072",
+    "policy": "docs/board-design-process.md section \"Mandatory schematic and PCB layout checklists\"",
+    "per_board": "The per-version checklist-review.md carries both boards (264 rows total, each board reconciled to 132)."
+  },
+  "boards": {
+    "analog": {
+      "id": "analog",
+      "name": "Bouni spindle module A: Gadgeteer PWM to 0-10 V analog VFD speed reference plus isolated RUN contact",
+      "short_name": "BSM-A",
+      "file_prefix": "bsm-analog",
+      "function": "Converts the host PWM on P-socket pin 7 into a filtered 0-10 V speed reference (VFD analog input) and the host GPIO on pin 6 into a floating RUN contact closure (VFD FOR/RUN to DCM). Topology of the historical Bouni analog board: ILD217 phototransistor switches the VFD 10 V reference into a two-stage RC filter and a TS912 follower; a second ILD217 channel is the RUN contact. Deviation from the original: the host and VFD grounds are NOT tied together (the original shared one GND); the VFD side is a separate field domain GND_VFD referenced only through the optocoupler.",
+      "scope": "One VFD, one analog speed channel, one RUN contact. No direction, no feedback input, no relay, no mains. Works only with a VFD that provides a 10 V reference terminal and accepts 0-10 V on an analog input with a dry-contact RUN/FOR input. Accuracy: 96-99 % of full scale at 100 % PWM; mid-range error about +1.1 % (see analysis); no tighter claim.",
+      "socket": {
+        "type_letter": "P",
+        "table_row": {
+          "1": "+3V3",
+          "2": "+5V",
+          "3": "GPIO!",
+          "4": "UN",
+          "5": "UN",
+          "6": "GPIO",
+          "7": "PWM(G)",
+          "8": "PWM(G)",
+          "9": "PWM",
+          "10": "GND"
+        },
+        "rationale": "P gives hardware PWM on pins 7, 8, 9 and a GPIO on pin 6 (CLAUDE.md section 3). Pin 7 is a greedy PWM pin; pin 6 is the RUN GPIO. See questions.md Q4/Q5 for the host-header mapping (GC or GD on the V2 snapshot)."
+      },
+      "gadgeteer_pin_map": [
+        {
+          "pin": 1,
+          "socket_function": "+3V3",
+          "host_net": "+3V3",
+          "chain_net": "+3V3",
+          "chain_link": "direct",
+          "local_use": "not used locally (0 mA); forwarded to J2"
+        },
+        {
+          "pin": 2,
+          "socket_function": "+5V",
+          "host_net": "+5V",
+          "chain_net": "+5V",
+          "chain_link": "direct",
+          "local_use": "not used locally (0 mA); forwarded to J2"
+        },
+        {
+          "pin": 3,
+          "socket_function": "GPIO!",
+          "host_net": "GAD_P3",
+          "chain_net": "CHAIN_P3",
+          "chain_link": "JP3 bridged",
+          "local_use": "not used locally; forwarded (GPIO! of the P socket)"
+        },
+        {
+          "pin": 4,
+          "socket_function": "UN",
+          "host_net": "GAD_P4",
+          "chain_net": "CHAIN_P4",
+          "chain_link": "JP4 bridged",
+          "local_use": "not used locally; [UN] on the P socket; forwarded unchanged"
+        },
+        {
+          "pin": 5,
+          "socket_function": "UN",
+          "host_net": "GAD_P5",
+          "chain_net": "CHAIN_P5",
+          "chain_link": "JP5 bridged",
+          "local_use": "not used locally; [UN] on the P socket; forwarded unchanged"
+        },
+        {
+          "pin": 6,
+          "socket_function": "GPIO",
+          "host_net": "RUN_EN",
+          "chain_net": "CHAIN_P6",
+          "chain_link": "JP6 OPEN (consumed)",
+          "local_use": "RUN_EN: GPIO drives the RUN optocoupler LED (R2 220 R, R4 10 k pull-down)"
+        },
+        {
+          "pin": 7,
+          "socket_function": "PWM(G)",
+          "host_net": "PWM_IN",
+          "chain_net": "CHAIN_P7",
+          "chain_link": "JP7 OPEN (consumed)",
+          "local_use": "PWM_IN: PWM drives the speed optocoupler LED (R1 220 R, R3 10 k pull-down)"
+        },
+        {
+          "pin": 8,
+          "socket_function": "PWM(G)",
+          "host_net": "GAD_P8",
+          "chain_net": "CHAIN_P8",
+          "chain_link": "JP8 bridged",
+          "local_use": "not used locally; second PWM of the P socket stays free for a downstream board"
+        },
+        {
+          "pin": 9,
+          "socket_function": "PWM",
+          "host_net": "GAD_P9",
+          "chain_net": "CHAIN_P9",
+          "chain_link": "JP9 bridged",
+          "local_use": "not used locally; third PWM of the P socket stays free for a downstream board"
+        },
+        {
+          "pin": 10,
+          "socket_function": "GND",
+          "host_net": "GND",
+          "chain_net": "GND",
+          "chain_link": "direct",
+          "local_use": "host GND: optocoupler LED cathodes, pull-downs, host test point; forwarded to J2"
+        }
+      ],
+      "chain_policy": {
+        "summary": "J2 repeats J1 pin for pin. Pins 1, 2, 10 are direct copper. Pins 3..9 each pass through their own cuttable solder jumper JP3..JP9. Pins 6 and 7 (RUN, PWM) are consumed locally and shipped OPEN so a downstream board never sees the spindle signals; pins 3, 4, 5, 8, 9 are bridged.",
+        "defaults": {
+          "JP3": "bridged",
+          "JP4": "bridged",
+          "JP5": "bridged",
+          "JP6": "OPEN (RUN consumed)",
+          "JP7": "OPEN (PWM consumed)",
+          "JP8": "bridged",
+          "JP9": "bridged"
+        },
+        "kind": "point-to-point continuation of pins that are not consumed (cable forwarding), not a shared bus.",
+        "resources_used": "GPIO on pin 6 and the PWM channel on pin 7 are exclusive to this board; PWM pins 8 and 9 and GPIO pin 3 remain available downstream.",
+        "terminations": "None: no pull-ups or terminations are forwarded. R3/R4 pull-downs sit on J1 pins 7/6 only (upstream of JP6/JP7).",
+        "chain_current": "Pins 1/2/10 are straight copper at >= 0.4 mm; this board draws 0 mA from +3V3/+5V, so the whole host allocation is available downstream; downstream sum is bounded by the host regulator and the SHF contact rating (rating not verified).",
+        "cut_downstream": "Cutting or opening JP3..JP9 disconnects the downstream signals without touching +3V3, +5V, GND (direct) or the local circuit."
+      },
+      "external_power_rule": "No 12-24 V input exists: the CLAUDE.md \"source from Gadgeteer 5 V\" jumper rule is not applicable. The only external supply is the VFD 10 V reference (terminal 1), a current-limited low-power reference that this board only loads (about 3 mA).",
+      "field_interface": {
+        "domains": {
+          "HOST": "Gadgeteer rails and signals: +3V3, +5V, GND, PWM_IN, RUN_EN, GAD_P*, CHAIN_P*; U1 pins 1-4. Netclass HOST.",
+          "FIELD (GND_VFD)": "Everything wired to the VFD: VFD_10V, VFD_AOUT, VFD_RUN, VFD_DCM, GND_VFD and the internal analog nets AN_RAW/AN_F1/AN_F2/AN_BUF/UNUSED_B; U1 pins 5-8, U2, R5-R8, C1-C3, D1, J3. Netclass FIELD."
+        },
+        "J3_terminal": "Phoenix PT 1,5/5-3,5-H (1984646), 3.5 mm, wire entry facing the south edge. Pin 1 10V IN (VFD reference, input to this board), pin 2 0-10V OUT (to VFD analog input), pin 3 GND VFD (to VFD analog common), pin 4 RUN (to VFD forward/run input), pin 5 DCM (to VFD digital common).",
+        "viewing_direction": "Viewed from the south edge looking at the wire-entry openings, pin 1 is on the left (west). Pin 1 marked on silkscreen and by the footprint.",
+        "electrical": {
+          "vfd_10v_in": "Expected 9.5-10.5 V from the VFD reference, load <= 3.1 mA (R5 branch <= 2.0 mA at 9.6 V + U2 supply current assumed <= 1.1 mA). Wrong voltage above 12 V is clamped only by D1 (SM712) and will likely destroy U2; U2 abs max supply is believed to be 16-18 V (TS912 PDF unread).",
+          "aout": "0 to about 9.6 V (>= 9.5 V guaranteed by U1 VCEsat <= 0.4 V at IC 2.5 mA, IF 10 mA, ILD217T p.2), source impedance 100 ohm (R8), intended load >= 10 kohm (VFD analog input impedance unknown, assumption Q10). Settling 10-90 % about 40 ms, 99 % about 85 ms.",
+          "run_contact": "Floating phototransistor between RUN (U1.6 collector) and DCM (U1.5 emitter): BVCEO 70 V, VCEsat <= 0.4 V at IC 2.5 mA, polarity RUN = collector (more positive), DCM = emitter. Assumed VFD wetting current <= 5 mA at <= 30 V (assumption Q10)."
+        }
+      },
+      "analysis": {
+        "ild217_drive": "IF per LED = (VOH - VF)/220 R with VOH >= VDD - 0.4 V (assumed 8 mA GPIO spec): typical 7.7 mA, range 4.8-11.2 mA (abs max 30 mA). Two LEDs at once <= 22.4 mA from two GPIO pins, none from the rails.",
+        "full_scale": "Node AN_RAW high level = 10 V - VCEsat(ILD217T) >= 9.6 V (spec point IC 2.5 mA; actual IC = 2.0 mA at 9.6 V across 4.7 k, inside the spec point).",
+        "filter": "R6 100 k / C1 47 nF then R7 47 k / C2 100 nF (values swapped relative to the original 47 k/47 n then 100 k/100 n so that R5 4.7 k loading k = R5/(R5+R6) = 4.5 %, equal to the original 2.2 k/(47 k+2.2 k)). Cascade attenuation computed: 1 kHz -58.9 dB (13.9 mV pk-pk ripple for 9.6 V 50 % duty), 2 kHz -70.9 dB (3.5 mV), 20 kHz -110.9 dB (0.04 mV); 10-90 % step 40 ms, 99 % 85 ms.",
+        "dc_nonlinearity": "Vc = D*Vh/(1 - k(1-D)), Vh = 9.6 V, k = 0.045: error vs ideal +40 mV at D 0.1, +84 mV at 0.25, +110 mV at 0.5 (+1.1 % of 10 V), +82 mV at 0.75, +39 mV at 0.9, 0 at the ends. Firmware/VFD gain calibrates the 96 % top.",
+        "pwm_frequency_risk": "V1 default pwm_period 1000 us = 1 kHz (page). The V2 snapshot hwpwm default is 20 kHz (Hal TEST_pwm.cpp asserts 20000 Hz), where ILD217T emitter-follower switching time (not specified in the Vishay datasheet) may distort the duty cycle. Mitigation in firmware: sigmadeltapwm output type (2 kHz FastTicker in the snapshot) or lowering the PWM timer frequency; bench-measure transfer at the chosen frequency (qualification Q9)."
+      },
+      "power_budget": {
+        "3v3_ma": 0.0,
+        "5v_ma": 0.0,
+        "gpio_source_ma": {
+          "typ_each": 7.7,
+          "range_each": [
+            4.8,
+            11.2
+          ],
+          "channels": 2
+        },
+        "vfd_10v_ma_max": 3.1,
+        "note": "No Gadgeteer rail current is consumed (rule PWR-01/02: nothing to allocate); GPIO current is within the assumed 8 mA output spec at 220 R."
+      },
+      "safe_states": {
+        "reset_or_floating_gpio": "R3 (PWM) and R4 (RUN) 10 k pull-downs keep both LEDs off: AOUT = 0 V, RUN contact open.",
+        "host_unpowered_or_cable_removed": "LEDs unpowered: AOUT 0 V, RUN open. VFD side is independent of the host supply.",
+        "vfd_10v_absent": "AOUT 0 V (U2 unpowered, output pulled down by R5 path), RUN contact still follows RUN_EN (a VFD that is off just ignores it).",
+        "brownout": "Same as host unpowered below the LED forward voltage.",
+        "warning": "A GPIO that boots as a driven high output during reset would start the spindle: firmware/host-header behaviour is not verified (qualification item)."
+      },
+      "protection": {
+        "vfd_terminals": "D1 SM712-02HTG (asymmetric -7/+12 V standoff, GND_VFD common) across 10V IN and 0-10V OUT to GND_VFD, placed at the J3 entry. R8 100 ohm limits ESD/capacitive-load current into U2 output. U1 collector-emitter 70 V covers RUN/DCM; no clamp on RUN/DCM (Q28).",
+        "host_side": "No clamps on GPIO pins (R1/R2 220 R in series; LED reverse 6 V abs max is never reached with a 3.3 V source).",
+        "not_protected": "Wrong voltage above 12 V on terminal 1 or 2, reversed 10 V, VFD-side hot plug. Silkscreen warns."
+      },
+      "firmware_interface": {
+        "status": "SmoothieV2 snapshot has NO analog spindle module. A spindle is a switch module instance named \"spindle\" (CommandShell.cpp looks up Module \"switch\",\"spindle\"). For this board use a hwpwm or sigmadeltapwm switch on header pin 7 for speed plus a second digital switch on pin 6 for RUN, both on M3/M5; S scaling and a combined M3/S mapping are unverified.",
+        "v1_reference_config": "spindle.type analog; spindle.pwm_pin 2.4; spindle.pwm_period 1000; spindle.switch_on_pin 2.6; spindle.max_rpm; spindle.min_rpm (page).",
+        "host_pins": "Chosen for GC (pin 6 PI5, pin 7 PI6 per headers.md) or GD (pin 6 PE9, pin 7 PE11); board does not depend on which. Header pin functions differ from the canonical P row (PWM on 6-9): treated as compatible because pin 6 is used as a plain digital output."
+      },
+      "pcb": {
+        "width_mm": 40.0,
+        "height_mm": 39.0,
+        "outline_target_mm": [
+          40.0,
+          39.0
+        ],
+        "outline_limit_mm": [
+          46.0,
+          44.0
+        ],
+        "outline_rule": "Rectangle, square corners (or <= 1 mm radius). Target is the scratch placement fit (parts max x 38.98, max y 38.45 incl. courtyards). May grow to the limit only if routing fails, with the reason logged in the version notes; report the actual size. A later revision must try to shrink and align per rules CMP-01..11 / ELG.",
+        "origin": "top-left corner, x east, y south; positions in mm",
+        "layers": 2,
+        "thickness_mm": 1.6,
+        "copper_oz": 1,
+        "finish": "ENIG (flat pads for 1.27 mm sockets, SOIC, 0402 and solder jumpers); HASL is not acceptable for the 0402 and SOIC-20 pads.",
+        "mask": "black",
+        "silk": "white",
+        "layer_choice": "2 layers: DC and <= 2 kHz-equivalent analog, 3.3 V logic, a few mA; no impedance control, no thermal need. Each domain gets its own GND pour on both layers, separated by the barrier strip.",
+        "min_clearance_mm": 0.2,
+        "min_track_mm": 0.2,
+        "signal_width_mm": 0.25,
+        "power_width_mm": 0.3,
+        "via_mm": [
+          0.6,
+          0.3
+        ],
+        "edge_clearance_mm": 0.5,
+        "datum": "H1 centre (10.0, 21.0) = mechanical datum; X/Y axes parallel to the board edges.",
+        "holes_mm": [
+          [
+            10.0,
+            21.0
+          ],
+          [
+            30.0,
+            21.0
+          ]
+        ],
+        "hole_diameter_mm": 3.2,
+        "hole_grid_mm": 20,
+        "hole_note": "Two M3 NPTH (MountingHole_3.2mm_M3, no pad, no net: rule RND-03) centred on the barrier line beside U1: 20.0 mm apart, whole 20 mm offsets from the datum (H2 = datum + (20, 0)). Four holes do not fit under the sockets and terminal. Holes sit in copper-free barrier strip so a screw cannot bridge domains; keepout radius 3.5 mm copper/silk, 3.2 mm to component bodies.",
+        "fabricator_assumption": "Generic 2-layer prototype service (JLCPCB-class capability, not yet confirmed with a fabricator): min track/space 0.127 mm, min drill 0.3 mm, min annular ring 0.13 mm, mask dam 0.1 mm. The contract uses >= 0.2 mm clearance, >= 0.25 mm tracks and 0.6/0.3 mm vias, i.e. margin above those limits. Unverified until a fabricator capability sheet is attached (rules FAB-05/FAB-06, L005).",
+        "stackup": "2 layers, FR-4 1.6 mm, 1 oz (35 um) copper both sides, black solder mask both sides, white silkscreen; declare in the .kicad_pcb stackup (gate-board stackup.py black_stackup pattern). Dielectric/Tg not specified: no controlled impedance (RS-485 at <= 500 kbps over twisted pair, analog DC, 3.3 V logic <= 1 MHz)."
+      },
+      "placement": {
+        "north_edge": "J1 (IN) x 10, J2 (CHAIN) x 30, y 4.0, rotation 0 (notch south); courtyards y 0.85-7.15.",
+        "host_region": "y 7.15-19.5: chain jumpers JP3..JP9 in two rows (y 9.8: JP3-JP6 at x 14/18/22/26; y 12.6: JP7-JP9 at x 16/20/24); R1..R4 in a row at y 15.6 (R2 x 14, R1 x 26, R4 x 10, R3 x 30); host test points TP1-TP3 (bottom side) west at x 4.5.",
+        "barrier": "U1 (ILD217T) at (20, 21) rotation 270: host pins 1-4 on the north row (y 18.525), field pins 5-8 on the south row (y 23.475); copper-free strip y 19.5-22.5 across the full width (3.0 mm = pad gap); holes H1/H2 on y 21.",
+        "field_region": "y 22.5-39: U2 (TS912) at (7, 29.2); R5/R6/C1/R7/C2/R8 in one row at y 26.2 (x 13/17/21/25/29/32.5), C3 at (7, 25.6), D1 at (37, 27.5), J3 pads at y 33.4 starting x 13.5, wire entry south, field test points TP4-TP6 (bottom side) at x 35.5.",
+        "tolerance": "Positions are initial intent, courtyard-checked with tools/scratch_place_check.py (0 issues). The layout stage may move parts up to 3 mm; it must keep: host parts north of y 19.5, field parts south of y 22.5, holes on the 20 mm grid, J1/J2 on the north edge, J3 on the south edge, D1 at the J3 entry, U2 supply cap C3 within 3 mm of U2.",
+        "alignment": "J1/J2 on one y; jumpers on a 4.0 x 2.8 mm grid, rotation 0; R/C row on y 26.2 and 15.6; J3 pads on y 33.4."
+      },
+      "keepouts": [
+        {
+          "name": "barrier strip",
+          "shape": "rectangle x 0..40, y 19.5..22.5 (U1 pad gap, 3.0 mm)",
+          "layers": "F.Cu and B.Cu, all item types",
+          "rule": "No tracks, vias, pours, test pads or silkscreen. Only U1 pad edges bound it. Both pours stop at the strip edges."
+        },
+        {
+          "name": "mounting holes",
+          "shape": "circle r 3.5 mm around H1, H2",
+          "layers": "all copper and silkscreen",
+          "rule": "No copper or text; components bodies >= 3.2 mm."
+        },
+        {
+          "name": "solder jumpers",
+          "shape": "pad area + 0.3 mm",
+          "layers": "F.Cu, F.SilkS",
+          "rule": "No silkscreen on pads or gaps; no vias or tracks under the bridged copper strips (must stay cuttable)."
+        },
+        {
+          "name": "analog nodes",
+          "shape": "rectangle around R6, C1, R7, C2 and U2 pin 3",
+          "layers": "F.Cu, B.Cu",
+          "rule": "AN_F1 and AN_F2 carry nothing but their own pads; no host or PWM copper within 3 mm (leakage and coupling into a 100 k source)."
+        }
+      ],
+      "net_constraints": {
+        "netclasses": {
+          "HOST": "all host nets; width 0.25, clearance 0.2",
+          "FIELD": "all field nets; width 0.25, clearance 0.2",
+          "FIELD_ANALOG": "AN_RAW, AN_F1, AN_F2: width 0.25, no vias"
+        },
+        "net_domains": {
+          "+3V3": "host",
+          "+5V": "host",
+          "GAD_P3": "host",
+          "GAD_P4": "host",
+          "GAD_P5": "host",
+          "RUN_EN": "host",
+          "PWM_IN": "host",
+          "GAD_P8": "host",
+          "GAD_P9": "host",
+          "GND": "host",
+          "CHAIN_P3": "host",
+          "CHAIN_P4": "host",
+          "CHAIN_P5": "host",
+          "CHAIN_P6": "host",
+          "CHAIN_P7": "host",
+          "CHAIN_P8": "host",
+          "CHAIN_P9": "host",
+          "PWM_LED_A": "host",
+          "RUN_LED_A": "host",
+          "VFD_DCM": "field",
+          "VFD_RUN": "field",
+          "AN_RAW": "field",
+          "VFD_10V": "field",
+          "AN_BUF": "field",
+          "AN_F2": "field",
+          "GND_VFD": "field",
+          "UNUSED_B": "field",
+          "AN_F1": "field",
+          "VFD_AOUT": "field"
+        },
+        "power_like": {
+          "VFD_10V": {
+            "width_mm": 0.3,
+            "rule": "J3.1 to U1.8, U2.8, C3, D1.1, TP4; <= 3.1 mA."
+          },
+          "GND_VFD": {
+            "rule": "Field pour both layers; U2.4/U2.5, R5, C1, C2, C3, D1.3, J3.3, TP6 connect to the pour with 0.3 mm tracks or via stitching; no connection to host GND anywhere."
+          },
+          "GND": {
+            "rule": "Host pour (north) both layers; U1.2/U1.4, R3, R4, J1.10/J2.10, TP3."
+          }
+        },
+        "signal": {
+          "AN_BUF": {
+            "rule": "U2.1, U2.2 and R8.1 only; feedback from the output pin before R8."
+          },
+          "AN_RAW": {
+            "rule": "U1.7, R5.1, R6.1 only; keep <= 8 mm."
+          },
+          "VFD_RUN/VFD_DCM": "U1.6/U1.5 to J3.4/J3.5, 0.25 mm, no pour between them and host nets."
+        },
+        "domain_clearance": {
+          "min_mm": 2.95,
+          "rule_file": "attempt/versions/vNN/bsm-analog.kicad_dru",
+          "text": "(version 1)\n(rule \"isolation_barrier\" (constraint clearance (min 2.95mm)) (condition \"(A.NetClass == 'HOST' && B.NetClass == 'FIELD') || (A.NetClass == 'FIELD' && B.NetClass == 'HOST')\"))",
+          "proof": "Prove the rule is active by a temporary deliberate violation (move a host track within 2 mm of a field pad, run DRC, expect a violation, revert) before trusting a clean DRC (rule REL-06)."
+        }
+      },
+      "barrier": {
+        "min_clearance_mm": 2.95,
+        "package_limit": "ILD217T creepage 4 mm / clearance 4 mm (Vishay p.2); KiCad SOIC-8 pad gap 3.0 mm is the PCB limit. VIOTM 6000 V, VIORM 560 V, test 4000 Vrms 1 s.",
+        "assumed_working_voltage": "Design intent <= 60 V DC / 42 V peak between HOST and FIELD (SELV VFD control terminals). Spacing derivation per IEC 60664-1/62368-1/61010-1 is NOT done (open item, Q19): inputs recorded: pollution degree 2, FR-4 material group IIIa (CTI >= 175), altitude <= 2000 m, no coating, basic insulation intent.",
+        "not_claimed": "No mains-referenced VFD control terminal support, no reinforced insulation, no standard compliance; human review required."
+      },
+      "schematic_rules": {
+        "symbols": "U1 Isolator:LTV-827S pins 1-8 numbered like ILD217T (A1 K1 A2 K2 E2 C2 E1 C1: checked numerically as 1..8 only; function check against ILD217T p.1 is a schematic-stage task, override the footprint field with Package_SO SOIC-8). U2 Amplifier_Operational:TS912 (units A, B, power). D1 Diode:SM712_SOT23 (pins 1,2 lines, 3 common). R/C Device:R, Device:C. J1/J2 Connector_Generic:Conn_02x05_Odd_Even. J3 Connector_Generic:Conn_01x05. JP* Jumper:SolderJumper_2_Open/Bridged, exclude_from_bom. TP Connector:TestPoint.",
+        "erc": "Target 0 violations with default severities, no exclusions. Add PWR_FLAG on VFD_10V and GND_VFD (supplied from J3), on GND (from J1). +3V3 and +5V carry no power pins. U2 unit B: IN+ to GND_VFD, IN- to OUT (UNUSED_B net). Never lower severities.",
+        "sheet_notes": "Pin map, chain jumper defaults, domain split (HOST/FIELD), \"VFD ref only\", expected readings.",
+        "fields": "Every symbol carries Manufacturer and MPN equal to parts[]; jumpers and test points exclude_from_bom."
+      },
+      "silkscreen": {
+        "required_strings": [
+          "BSM-A v01",
+          "VFD 0-10V + RUN",
+          "P",
+          "IN",
+          "CHAIN",
+          "10V IN",
+          "0-10V OUT",
+          "GND VFD",
+          "RUN",
+          "DCM",
+          "FIELD ISOLATED FROM HOST",
+          "60V MAX",
+          "NO MAINS-REFERENCED TERMINALS",
+          "NO HOT-PLUG",
+          "RUN OFF AT RESET",
+          "JP6 JP7 OPEN",
+          "PROTOTYPE NOT REVIEWED",
+          "CERN-OHL-S-2.0"
+        ],
+        "top": [
+          "Beside J1: \"P\" (>= 1.5 mm tall) and \"IN\"; beside J2: \"P\" and \"CHAIN\"; pin-1 dot on both footprints.",
+          "Beside J3 (not on its body): \"10V IN\" \"0-10V OUT\" \"GND VFD\" \"RUN\" \"DCM\" under/over each pin, pin 1 marker; \"10V REF ONLY - NO 12-24V\".",
+          "On the barrier strip: no text (copper-free strip); put \"HOST\" north and \"FIELD / VFD\" south of it.",
+          "Chain jumper labels \"3\"..\"9\" beside JP3..JP9; \"OPEN\" at JP6 and JP7 (\"PWM/RUN NOT FORWARDED\").",
+          "Board name \"BSM-A v01\" and \"Smoothieboard v2 ext\"."
+        ],
+        "bottom": [
+          "Socket map (viewed from top, pins 1-10): \"1 3V3 2 5V 3 GPIO 4,5 -- 6 RUN 7 PWM 8,9 PWM(free) 10 GND\".",
+          "\"FIELD ISOLATED FROM HOST - 60V MAX - NO MAINS-REFERENCED TERMINALS\".",
+          "\"RUN OFF AT RESET - NO HOT-PLUG - 0 V OUT WHEN OFF\".",
+          "Test-pad labels (mirrored): PWM, RUN, GND (host) and 10V, AOUT, GNDV (field); \"TP = observe only\".",
+          "\"PROTOTYPE NOT REVIEWED - NOT FOR FABRICATION\", \"CERN-OHL-S-2.0\", \"Smoothieware\", \"KiCad\", \"2026\"; a 10 x 5 mm serial-number box."
+        ],
+        "rules": "White on black; min text 0.8 mm height / 0.15 mm stroke; bottom text mirrored; nothing on pads, jumper gaps, hole keepouts or the barrier strip; DRC silk checks clean."
+      },
+      "test_points": {
+        "host": {
+          "TP1": "PWM_IN (observe)",
+          "TP2": "RUN_EN (observe)",
+          "TP3": "GND (return)"
+        },
+        "field": {
+          "TP4": "VFD_10V (observe)",
+          "TP5": "VFD_AOUT (observe)",
+          "TP6": "GND_VFD (return)"
+        },
+        "rules": "Bottom-side 1.0 mm pads, >= 2 mm apart, each group with a same-domain return pad; observation only (no injection); expected readings in qualification.md (Q: 10V IN 9.5-10.5 V, PWM 0-3.3 V, AOUT = 9.6 V x duty + 110 mV max error)."
+      },
+      "models": {
+        "U1,U2": "${KICAD9_3DMODEL_DIR}/Package_SO.3dshapes/SOIC-8_3.9x4.9mm_P1.27mm.step",
+        "D1": "${KICAD9_3DMODEL_DIR}/Package_TO_SOT_SMD.3dshapes/SOT-23.step",
+        "J3": "${KICAD9_3DMODEL_DIR}/TerminalBlock_Phoenix.3dshapes/TerminalBlock_Phoenix_PT-1,5-5-3.5-H_1x05_P3.50mm_Horizontal.step",
+        "R*": "Resistor_SMD.3dshapes/R_0603_1608Metric.step",
+        "C1,C2,C3": "Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
+        "J1,J2": "${KIPRJMOD}/../../models/Samtec_SHF105_TH_LC.wrl (simplified, from the PT100 pilot; not a Samtec model)",
+        "jumpers, TP, holes": "no model"
+      },
+      "board_specific_rules": [
+        "GND (host) and GND_VFD never touch: no track, via, pour, test pad or footprint bridges them; netlist check = 0 shared nets between domains except through U1 (optical).",
+        "U1 is the only part spanning the barrier; no other component bridges the strip.",
+        "U2 has C3 within 3 mm; pin 4 and pin 5 go to GND_VFD; unit B is tied off, never floating.",
+        "R8 sits between the U2 feedback node and J3.2; feedback is taken at U2.1, not after R8.",
+        "Default jumper state shipped: JP6 and JP7 OPEN, JP3 JP4 JP5 JP8 JP9 bridged; printed on silkscreen and verified in the PCB footprint variants.",
+        "No LED, no relay, no firmware; 3V3/5V pins are pass-through only."
+      ],
+      "mpn_verification": {
+        "ILD217T": "Datasheet read (Rev 1.0): pin map A1 C2 A3 C4 / 5E 6C 7E 8C, CTR >= 100 % at IF 1 mA VCE 5 V, VCEsat <= 0.4 V at IF 10 mA IC 2.5 mA, BVCEO 70 V, VF 1.2/1.55 V at 10 mA, creepage/clearance 4 mm. Tape-and-reel only (T suffix). Switching times not given.",
+        "TS912IDT": "Facts from search-result summary only (Q22). SO-8 tape-and-reel code TS912IDT from the Digikey/LCSC listings seen in the search; ST PDF unread.",
+        "SM712-02HTG": "Unverified suffix (Q16): KiCad symbol description \"7V/12V, 600W asymmetrical TVS array, SOT-23\" and a Littelfuse datasheet link; littelfuse.com 403.",
+        "1984646": "Phoenix PT 1,5/ 5-3,5-H confirmed by a search result: 5 positions, 3.5 mm pitch, 17.5 A, 200 V (III/2), 1.5 mm2, wave soldering.",
+        "RC0603FR-07xxxxL": "Yageo ordering-code pattern verified in the thermocouple pilot (10k/100k/4.7k); 220R/100R/47k codes derived by the same rule, not individually checked.",
+        "GRM188R71H104KA93D, GRM21BR61C106KE15L, GRM21BR71E105KA99L": "Reused from earlier boards of this repository.",
+        "GRM188R71H473KA61D": "Unverified MPN from the Murata naming scheme (47 nF 50 V X7R 0603)."
+      },
+      "parts": [
+        {
+          "reference": "J1",
+          "value": "GADGETEER IN",
+          "footprint": "Smoothie_Bouni:Samtec_SHF105_TH_LC",
+          "pins": {
+            "1": "+3V3",
+            "2": "+5V",
+            "3": "GAD_P3",
+            "4": "GAD_P4",
+            "5": "GAD_P5",
+            "6": "RUN_EN",
+            "7": "PWM_IN",
+            "8": "GAD_P8",
+            "9": "GAD_P9",
+            "10": "GND"
+          },
+          "position": [
+            10.0,
+            4.0
+          ],
+          "rotation": 0,
+          "kind": "connector",
+          "manufacturer": "Samtec",
+          "mpn": "SHF-105-01-L-D-TH-LC"
+        },
+        {
+          "reference": "J2",
+          "value": "GADGETEER CHAIN",
+          "footprint": "Smoothie_Bouni:Samtec_SHF105_TH_LC",
+          "pins": {
+            "1": "+3V3",
+            "2": "+5V",
+            "3": "CHAIN_P3",
+            "4": "CHAIN_P4",
+            "5": "CHAIN_P5",
+            "6": "CHAIN_P6",
+            "7": "CHAIN_P7",
+            "8": "CHAIN_P8",
+            "9": "CHAIN_P9",
+            "10": "GND"
+          },
+          "position": [
+            30.0,
+            4.0
+          ],
+          "rotation": 0,
+          "kind": "connector",
+          "manufacturer": "Samtec",
+          "mpn": "SHF-105-01-L-D-TH-LC"
+        },
+        {
+          "reference": "JP3",
+          "value": "CHAIN P3 BRIDGED",
+          "footprint": "Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm",
+          "pins": {
+            "1": "GAD_P3",
+            "2": "CHAIN_P3"
+          },
+          "position": [
+            14,
+            9.8
+          ],
+          "rotation": 0,
+          "kind": "jumper",
+          "manufacturer": "PCB copper",
+          "mpn": "fabricated-copper",
+          "default_state": "bridged"
+        },
+        {
+          "reference": "JP4",
+          "value": "CHAIN P4 BRIDGED",
+          "footprint": "Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm",
+          "pins": {
+            "1": "GAD_P4",
+            "2": "CHAIN_P4"
+          },
+          "position": [
+            18,
+            9.8
+          ],
+          "rotation": 0,
+          "kind": "jumper",
+          "manufacturer": "PCB copper",
+          "mpn": "fabricated-copper",
+          "default_state": "bridged"
+        },
+        {
+          "reference": "JP5",
+          "value": "CHAIN P5 BRIDGED",
+          "footprint": "Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm",
+          "pins": {
+            "1": "GAD_P5",
+            "2": "CHAIN_P5"
+          },
+          "position": [
+            22,
+            9.8
+          ],
+          "rotation": 0,
+          "kind": "jumper",
+          "manufacturer": "PCB copper",
+          "mpn": "fabricated-copper",
+          "default_state": "bridged"
+        },
+        {
+          "reference": "JP6",
+          "value": "CHAIN P6 OPEN",
+          "footprint": "Jumper:SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm",
+          "pins": {
+            "1": "RUN_EN",
+            "2": "CHAIN_P6"
+          },
+          "position": [
+            26,
+            9.8
+          ],
+          "rotation": 0,
+          "kind": "jumper",
+          "manufacturer": "PCB copper",
+          "mpn": "fabricated-copper",
+          "default_state": "open"
+        },
+        {
+          "reference": "JP7",
+          "value": "CHAIN P7 OPEN",
+          "footprint": "Jumper:SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm",
+          "pins": {
+            "1": "PWM_IN",
+            "2": "CHAIN_P7"
+          },
+          "position": [
+            16,
+            12.6
+          ],
+          "rotation": 0,
+          "kind": "jumper",
+          "manufacturer": "PCB copper",
+          "mpn": "fabricated-copper",
+          "default_state": "open"
+        },
+        {
+          "reference": "JP8",
+          "value": "CHAIN P8 BRIDGED",
+          "footprint": "Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm",
+          "pins": {
+            "1": "GAD_P8",
+            "2": "CHAIN_P8"
+          },
+          "position": [
+            20,
+            12.6
+          ],
+          "rotation": 0,
+          "kind": "jumper",
+          "manufacturer": "PCB copper",
+          "mpn": "fabricated-copper",
+          "default_state": "bridged"
+        },
+        {
+          "reference": "JP9",
+          "value": "CHAIN P9 BRIDGED",
+          "footprint": "Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm",
+          "pins": {
+            "1": "GAD_P9",
+            "2": "CHAIN_P9"
+          },
+          "position": [
+            24,
+            12.6
+          ],
+          "rotation": 0,
+          "kind": "jumper",
+          "manufacturer": "PCB copper",
+          "mpn": "fabricated-copper",
+          "default_state": "bridged"
+        },
+        {
+          "reference": "U1",
+          "value": "ILD217T",
+          "footprint": "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm",
+          "pins": {
+            "1": "PWM_LED_A",
+            "2": "GND",
+            "3": "RUN_LED_A",
+            "4": "GND",
+            "5": "VFD_DCM",
+            "6": "VFD_RUN",
+            "7": "AN_RAW",
+            "8": "VFD_10V"
+          },
+          "position": [
+            20.0,
+            21.0
+          ],
+          "rotation": 270,
+          "kind": "ic",
+          "manufacturer": "Vishay",
+          "mpn": "ILD217T",
+          "pin_names": {
+            "1": "A1 (PWM LED anode)",
+            "2": "C1 (PWM LED cathode)",
+            "3": "A2 (RUN LED anode)",
+            "4": "C2 (RUN LED cathode)",
+            "5": "E2 (RUN emitter = DCM)",
+            "6": "C2 (RUN collector = RUN)",
+            "7": "E1 (speed emitter)",
+            "8": "C1 (speed collector = 10V)"
+          },
+          "pin_evidence": "sources/ild217t.pdf p.1 pin diagram A1 C2 A3 C4 / 5E 6C 7E 8C; channel 1 = pins 1,2,7,8; channel 2 = pins 3,4,5,6. Rotation 270 puts pins 1-4 on the north (host) row."
+        },
+        {
+          "reference": "U2",
+          "value": "TS912IDT",
+          "footprint": "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm",
+          "pins": {
+            "1": "AN_BUF",
+            "2": "AN_BUF",
+            "3": "AN_F2",
+            "4": "GND_VFD",
+            "5": "GND_VFD",
+            "6": "UNUSED_B",
+            "7": "UNUSED_B",
+            "8": "VFD_10V"
+          },
+          "position": [
+            7.0,
+            29.2
+          ],
+          "rotation": 0,
+          "kind": "ic",
+          "manufacturer": "STMicroelectronics",
+          "mpn": "TS912IDT",
+          "pin_names": {
+            "1": "OUT A",
+            "2": "IN- A",
+            "3": "IN+ A",
+            "4": "V- (GND_VFD)",
+            "5": "IN+ B (tied to GND_VFD)",
+            "6": "IN- B (tied to OUT B)",
+            "7": "OUT B (unused follower)",
+            "8": "V+ (VFD_10V)"
+          },
+          "pin_evidence": "Standard dual op-amp SO-8 pin order; the ST PDF was not readable (Q22): confirm against the datasheet and the KiCad TS912 symbol at schematic stage."
+        },
+        {
+          "reference": "R1",
+          "value": "220R",
+          "footprint": "Resistor_SMD:R_0603_1608Metric",
+          "pins": {
+            "1": "PWM_IN",
+            "2": "PWM_LED_A"
+          },
+          "position": [
+            26.0,
+            15.6
+          ],
+          "rotation": 0,
+          "kind": "resistor",
+          "manufacturer": "Yageo",
+          "mpn": "RC0603FR-07220RL"
+        },
+        {
+          "reference": "R2",
+          "value": "220R",
+          "footprint": "Resistor_SMD:R_0603_1608Metric",
+          "pins": {
+            "1": "RUN_EN",
+            "2": "RUN_LED_A"
+          },
+          "position": [
+            14.0,
+            15.6
+          ],
+          "rotation": 0,
+          "kind": "resistor",
+          "manufacturer": "Yageo",
+          "mpn": "RC0603FR-07220RL"
+        },
+        {
+          "reference": "R3",
+          "value": "10k",
+          "footprint": "Resistor_SMD:R_0603_1608Metric",
+          "pins": {
+            "1": "PWM_IN",
+            "2": "GND"
+          },
+          "position": [
+            30.0,
+            15.6
+          ],
+          "rotation": 0,
+          "kind": "resistor",
+          "manufacturer": "Yageo",
+          "mpn": "RC0603FR-0710KL"
+        },
+        {
+          "reference": "R4",
+          "value": "10k",
+          "footprint": "Resistor_SMD:R_0603_1608Metric",
+          "pins": {
+            "1": "RUN_EN",
+            "2": "GND"
+          },
+          "position": [
+            10.0,
+            15.6
+          ],
+          "rotation": 0,
+          "kind": "resistor",
+          "manufacturer": "Yageo",
+          "mpn": "RC0603FR-0710KL"
+        },
+        {
+          "reference": "R5",
+          "value": "4.7k",
+          "footprint": "Resistor_SMD:R_0603_1608Metric",
+          "pins": {
+            "1": "AN_RAW",
+            "2": "GND_VFD"
+          },
+          "position": [
+            13.0,
+            26.2
+          ],
+          "rotation": 0,
+          "kind": "resistor",
+          "manufacturer": "Yageo",
+          "mpn": "RC0603FR-074K7L"
+        },
+        {
+          "reference": "R6",
+          "value": "100k",
+          "footprint": "Resistor_SMD:R_0603_1608Metric",
+          "pins": {
+            "1": "AN_RAW",
+            "2": "AN_F1"
+          },
+          "position": [
+            17.0,
+            26.2
+          ],
+          "rotation": 0,
+          "kind": "resistor",
+          "manufacturer": "Yageo",
+          "mpn": "RC0603FR-07100KL"
+        },
+        {
+          "reference": "C1",
+          "value": "47nF",
+          "footprint": "Capacitor_SMD:C_0603_1608Metric",
+          "pins": {
+            "1": "AN_F1",
+            "2": "GND_VFD"
+          },
+          "position": [
+            21.0,
+            26.2
+          ],
+          "rotation": 0,
+          "kind": "capacitor",
+          "manufacturer": "Murata",
+          "mpn": "GRM188R71H473KA61D"
+        },
+        {
+          "reference": "R7",
+          "value": "47k",
+          "footprint": "Resistor_SMD:R_0603_1608Metric",
+          "pins": {
+            "1": "AN_F1",
+            "2": "AN_F2"
+          },
+          "position": [
+            25.0,
+            26.2
+          ],
+          "rotation": 0,
+          "kind": "resistor",
+          "manufacturer": "Yageo",
+          "mpn": "RC0603FR-0747KL"
+        },
+        {
+          "reference": "C2",
+          "value": "100nF",
+          "footprint": "Capacitor_SMD:C_0603_1608Metric",
+          "pins": {
+            "1": "AN_F2",
+            "2": "GND_VFD"
+          },
+          "position": [
+            29.0,
+            26.2
+          ],
+          "rotation": 0,
+          "kind": "capacitor",
+          "manufacturer": "Murata",
+          "mpn": "GRM188R71H104KA93D"
+        },
+        {
+          "reference": "C3",
+          "value": "100nF",
+          "footprint": "Capacitor_SMD:C_0603_1608Metric",
+          "pins": {
+            "1": "VFD_10V",
+            "2": "GND_VFD"
+          },
+          "position": [
+            7.0,
+            25.6
+          ],
+          "rotation": 0,
+          "kind": "capacitor",
+          "manufacturer": "Murata",
+          "mpn": "GRM188R71H104KA93D"
+        },
+        {
+          "reference": "R8",
+          "value": "100R",
+          "footprint": "Resistor_SMD:R_0603_1608Metric",
+          "pins": {
+            "1": "AN_BUF",
+            "2": "VFD_AOUT"
+          },
+          "position": [
+            32.5,
+            26.2
+          ],
+          "rotation": 0,
+          "kind": "resistor",
+          "manufacturer": "Yageo",
+          "mpn": "RC0603FR-07100RL"
+        },
+        {
+          "reference": "D1",
+          "value": "SM712-02HTG",
+          "footprint": "Package_TO_SOT_SMD:SOT-23",
+          "pins": {
+            "1": "VFD_10V",
+            "2": "VFD_AOUT",
+            "3": "GND_VFD"
+          },
+          "position": [
+            37.0,
+            27.5
+          ],
+          "rotation": 0,
+          "kind": "tvs",
+          "manufacturer": "Littelfuse",
+          "mpn": "SM712-02HTG"
+        },
+        {
+          "reference": "J3",
+          "value": "VFD 10V AOUT GND RUN DCM",
+          "footprint": "TerminalBlock_Phoenix:TerminalBlock_Phoenix_PT-1,5-5-3.5-H_1x05_P3.50mm_Horizontal",
+          "pins": {
+            "1": "VFD_10V",
+            "2": "VFD_AOUT",
+            "3": "GND_VFD",
+            "4": "VFD_RUN",
+            "5": "VFD_DCM"
+          },
+          "position": [
+            13.5,
+            33.4
+          ],
+          "rotation": 0,
+          "kind": "connector",
+          "manufacturer": "Phoenix Contact",
+          "mpn": "1984646"
+        },
+        {
+          "reference": "TP1",
+          "value": "PWM",
+          "footprint": "TestPoint:TestPoint_Pad_D1.0mm",
+          "pins": {
+            "1": "PWM_IN"
+          },
+          "position": [
+            4.5,
+            9.5
+          ],
+          "rotation": 0,
+          "kind": "testpoint",
+          "manufacturer": "PCB copper",
+          "mpn": "fabricated-copper",
+          "side": "bottom",
+          "layer": "B.Cu"
+        },
+        {
+          "reference": "TP2",
+          "value": "RUN",
+          "footprint": "TestPoint:TestPoint_Pad_D1.0mm",
+          "pins": {
+            "1": "RUN_EN"
+          },
+          "position": [
+            4.5,
+            12.0
+          ],
+          "rotation": 0,
+          "kind": "testpoint",
+          "manufacturer": "PCB copper",
+          "mpn": "fabricated-copper",
+          "side": "bottom",
+          "layer": "B.Cu"
+        },
+        {
+          "reference": "TP3",
+          "value": "GND",
+          "footprint": "TestPoint:TestPoint_Pad_D1.0mm",
+          "pins": {
+            "1": "GND"
+          },
+          "position": [
+            4.5,
+            14.5
+          ],
+          "rotation": 0,
+          "kind": "testpoint",
+          "manufacturer": "PCB copper",
+          "mpn": "fabricated-copper",
+          "side": "bottom",
+          "layer": "B.Cu"
+        },
+        {
+          "reference": "TP4",
+          "value": "10V",
+          "footprint": "TestPoint:TestPoint_Pad_D1.0mm",
+          "pins": {
+            "1": "VFD_10V"
+          },
+          "position": [
+            35.5,
+            31.5
+          ],
+          "rotation": 0,
+          "kind": "testpoint",
+          "manufacturer": "PCB copper",
+          "mpn": "fabricated-copper",
+          "side": "bottom",
+          "layer": "B.Cu"
+        },
+        {
+          "reference": "TP5",
+          "value": "AOUT",
+          "footprint": "TestPoint:TestPoint_Pad_D1.0mm",
+          "pins": {
+            "1": "VFD_AOUT"
+          },
+          "position": [
+            35.5,
+            34.0
+          ],
+          "rotation": 0,
+          "kind": "testpoint",
+          "manufacturer": "PCB copper",
+          "mpn": "fabricated-copper",
+          "side": "bottom",
+          "layer": "B.Cu"
+        },
+        {
+          "reference": "TP6",
+          "value": "GNDV",
+          "footprint": "TestPoint:TestPoint_Pad_D1.0mm",
+          "pins": {
+            "1": "GND_VFD"
+          },
+          "position": [
+            35.5,
+            36.5
+          ],
+          "rotation": 0,
+          "kind": "testpoint",
+          "manufacturer": "PCB copper",
+          "mpn": "fabricated-copper",
+          "side": "bottom",
+          "layer": "B.Cu"
+        }
+      ],
+      "mounting_holes": [
+        {
+          "reference": "H1",
+          "position": [
+            10.0,
+            21.0
+          ],
+          "net": null
+        },
+        {
+          "reference": "H2",
+          "position": [
+            30.0,
+            21.0
+          ],
+          "net": null
+        }
+      ],
+      "net_domains": {
+        "+3V3": "host",
+        "+5V": "host",
+        "GAD_P3": "host",
+        "GAD_P4": "host",
+        "GAD_P5": "host",
+        "RUN_EN": "host",
+        "PWM_IN": "host",
+        "GAD_P8": "host",
+        "GAD_P9": "host",
+        "GND": "host",
+        "CHAIN_P3": "host",
+        "CHAIN_P4": "host",
+        "CHAIN_P5": "host",
+        "CHAIN_P6": "host",
+        "CHAIN_P7": "host",
+        "CHAIN_P8": "host",
+        "CHAIN_P9": "host",
+        "PWM_LED_A": "host",
+        "RUN_LED_A": "host",
+        "VFD_DCM": "field",
+        "VFD_RUN": "field",
+        "AN_RAW": "field",
+        "VFD_10V": "field",
+        "AN_BUF": "field",
+        "AN_F2": "field",
+        "GND_VFD": "field",
+        "UNUSED_B": "field",
+        "AN_F1": "field",
+        "VFD_AOUT": "field"
+      },
+      "nets": {
+        "+3V3": [
+          "J1.1",
+          "J2.1"
+        ],
+        "+5V": [
+          "J1.2",
+          "J2.2"
+        ],
+        "AN_BUF": [
+          "U2.1",
+          "U2.2",
+          "R8.1"
+        ],
+        "AN_F1": [
+          "R6.2",
+          "C1.1",
+          "R7.1"
+        ],
+        "AN_F2": [
+          "U2.3",
+          "R7.2",
+          "C2.1"
+        ],
+        "AN_RAW": [
+          "U1.7",
+          "R5.1",
+          "R6.1"
+        ],
+        "CHAIN_P3": [
+          "J2.3",
+          "JP3.2"
+        ],
+        "CHAIN_P4": [
+          "J2.4",
+          "JP4.2"
+        ],
+        "CHAIN_P5": [
+          "J2.5",
+          "JP5.2"
+        ],
+        "CHAIN_P6": [
+          "J2.6",
+          "JP6.2"
+        ],
+        "CHAIN_P7": [
+          "J2.7",
+          "JP7.2"
+        ],
+        "CHAIN_P8": [
+          "J2.8",
+          "JP8.2"
+        ],
+        "CHAIN_P9": [
+          "J2.9",
+          "JP9.2"
+        ],
+        "GAD_P3": [
+          "J1.3",
+          "JP3.1"
+        ],
+        "GAD_P4": [
+          "J1.4",
+          "JP4.1"
+        ],
+        "GAD_P5": [
+          "J1.5",
+          "JP5.1"
+        ],
+        "GAD_P8": [
+          "J1.8",
+          "JP8.1"
+        ],
+        "GAD_P9": [
+          "J1.9",
+          "JP9.1"
+        ],
+        "GND": [
+          "J1.10",
+          "J2.10",
+          "U1.2",
+          "U1.4",
+          "R3.2",
+          "R4.2",
+          "TP3.1"
+        ],
+        "GND_VFD": [
+          "U2.4",
+          "U2.5",
+          "R5.2",
+          "C1.2",
+          "C2.2",
+          "C3.2",
+          "D1.3",
+          "J3.3",
+          "TP6.1"
+        ],
+        "PWM_IN": [
+          "J1.7",
+          "JP7.1",
+          "R1.1",
+          "R3.1",
+          "TP1.1"
+        ],
+        "PWM_LED_A": [
+          "U1.1",
+          "R1.2"
+        ],
+        "RUN_EN": [
+          "J1.6",
+          "JP6.1",
+          "R2.1",
+          "R4.1",
+          "TP2.1"
+        ],
+        "RUN_LED_A": [
+          "U1.3",
+          "R2.2"
+        ],
+        "UNUSED_B": [
+          "U2.6",
+          "U2.7"
+        ],
+        "VFD_10V": [
+          "U1.8",
+          "U2.8",
+          "C3.1",
+          "D1.1",
+          "J3.1",
+          "TP4.1"
+        ],
+        "VFD_AOUT": [
+          "R8.2",
+          "D1.2",
+          "J3.2",
+          "TP5.1"
+        ],
+        "VFD_DCM": [
+          "U1.5",
+          "J3.5"
+        ],
+        "VFD_RUN": [
+          "U1.6",
+          "J3.4"
+        ]
+      },
+      "verification_checks": [
+        "J1.pins equals gadgeteer_pin_map host_net; J2.pins equals chain_net; JP3..JP9 join host_net and CHAIN_Pn; JP6/JP7 use the Open footprint, the others Bridged.",
+        "Every pin of every part: contract == schematic netlist == PCB pad net (gate-board verify.py pattern), 0 mismatches.",
+        "Netlist split: no net contains both a HOST-domain and a FIELD-domain pad (except none; U1 pads are per-domain). GND and GND_VFD are different nets with no connection.",
+        "Saved PCB: no copper (track, via, zone fill, pad other than U1 pads) inside the barrier strip y 19.5..22.5 on F.Cu and B.Cu; minimum HOST-to-FIELD copper distance measured >= 2.95 mm.",
+        "Custom DRC rule isolation_barrier present in the saved project and proven active by a temporary violation.",
+        "Filled GND and GND_VFD zones each have area > 0 mm2 on each layer that has them (read back from the saved board after refill); no isolated islands.",
+        "U2 C3 within 3 mm; D1 within 6 mm of J3.1/J3.2; R8 between U2 and J3.2.",
+        "Mounting holes have no net; centre spacing 20.0 mm; hole keepouts clean.",
+        "Board outline equals pcb.width_mm x pcb.height_mm and is within outline_limit_mm.",
+        "Populated render PNGs differ by SHA-256 from any placement-stage render and show routed copper and every 3D model."
+      ],
+      "stop_criteria": [
+        "KiCad 9.0.8 ERC on the v01 schematic: 0 violations, no downgrades or exclusions.",
+        "KiCad 9.0.8 DRC with schematic parity on the saved PCB: 0 violations, 0 unconnected, 0 parity issues, re-run by an independent step.",
+        "All verification_checks pass; the independent verify.py-pattern check reports 0 mismatches.",
+        "Outline within outline_limit_mm; actual size reported.",
+        "Complete render set in versions/vNN/renders/ with the analog- prefix; models visible.",
+        "Per-version checklist review covers all 132 items with status and evidence (counts reconcile to 132).",
+        "Status is cad-clean-unqualified at best, labelled UNSUITABLE FOR FABRICATION until human review (hazard class mains-or-hazardous)."
+      ],
+      "open_assumptions": [
+        "Q10: VFD 10 V reference tolerates a 3 mA load; VFD analog input >= 10 kohm; RUN input wetting <= 5 mA at <= 30 V (no VFD datasheet read).",
+        "Q9: PWM frequency <= 2 kHz is used or the optocoupler is fast enough at the chosen frequency; unmeasured.",
+        "Q19: working voltage between HOST and FIELD stays <= 60 V DC; spacing derivation open.",
+        "Q22: TS912 limits (16 V supply, unused-amp handling) unread from the PDF."
+      ]
+    },
+    "rs485": {
+      "id": "rs485",
+      "name": "Bouni spindle module B: Gadgeteer UART to isolated RS-485 (Modbus RTU) for a VFD such as the Huanyang",
+      "short_name": "BSM-R",
+      "file_prefix": "bsm-rs485",
+      "function": "Half-duplex galvanically isolated RS-485 transceiver for the Gadgeteer U socket: host TX (pin 4) to D, host RX (pin 5) from R, host GPIO (pin 6) to DE and /RE tied together as direction. The historical Bouni board used a non-isolated MAX3485 at 3.3 V with a 120 ohm termination on a solder jumper. Deviation: this board uses TI ISOW1412 (signal and power isolated, integrated DC-DC, 5 kVrms/reinforced, >= 8 mm package creepage), powered from +5V (VDD) with the logic referenced to +3V3 (VIO), so a VFD control-ground offset or noise cannot reach the host.",
+      "scope": "One RS-485 port, half duplex, <= 500 kbps (ISOW1412 limit), Modbus RTU typically 9600 8N1 for a Huanyang. No firmware, no bias network (receiver is fail-safe for open/short/idle), no shield termination. Hardware only: the SmoothieV2 snapshot has no Modbus spindle module (Q6).",
+      "socket": {
+        "type_letter": "U",
+        "table_row": {
+          "1": "+3V3",
+          "2": "+5V",
+          "3": "GPIO!",
+          "4": "TX(G)",
+          "5": "RX(G)",
+          "6": "GPIO",
+          "7": "UN",
+          "8": "UN",
+          "9": "UN",
+          "10": "GND"
+        },
+        "rationale": "U = UART: pin 4 TX(G), pin 5 RX(G), pin 6 GPIO for direction (CLAUDE.md section 3). K (UART + RTS/CTS) would allow hardware DE on RTS but the Smoothie modbus spindle uses a dir_pin GPIO; U is the more common header (GB UART1, GD UART0)."
+      },
+      "gadgeteer_pin_map": [
+        {
+          "pin": 1,
+          "socket_function": "+3V3",
+          "host_net": "+3V3",
+          "chain_net": "+3V3",
+          "chain_link": "direct",
+          "local_use": "VIO of U1 (U1.1), C1, R2/R3 pull-ups; forwarded to J2"
+        },
+        {
+          "pin": 2,
+          "socket_function": "+5V",
+          "host_net": "+5V",
+          "chain_net": "+5V",
+          "chain_link": "direct",
+          "local_use": "VDD of U1 (U1.9), C2/C3/C4; forwarded to J2"
+        },
+        {
+          "pin": 3,
+          "socket_function": "GPIO!",
+          "host_net": "GAD_P3",
+          "chain_net": "CHAIN_P3",
+          "chain_link": "JP3 bridged",
+          "local_use": "not used locally; forwarded (GPIO! of the U socket)"
+        },
+        {
+          "pin": 4,
+          "socket_function": "TX(G)",
+          "host_net": "UART_TX",
+          "chain_net": "CHAIN_P4",
+          "chain_link": "JP4 OPEN (consumed)",
+          "local_use": "UART_TX: host transmit data, U1 D (U1.2)"
+        },
+        {
+          "pin": 5,
+          "socket_function": "RX(G)",
+          "host_net": "UART_RX",
+          "chain_net": "CHAIN_P5",
+          "chain_link": "JP5 OPEN (consumed)",
+          "local_use": "UART_RX: U1 R (U1.4) to host receive data, R2 10 k pull-up"
+        },
+        {
+          "pin": 6,
+          "socket_function": "GPIO",
+          "host_net": "RS485_DIR",
+          "chain_net": "CHAIN_P6",
+          "chain_link": "JP6 OPEN (consumed)",
+          "local_use": "RS485_DIR: U1 DE and /RE tied (U1.3, U1.5), R1 10 k pull-down; high = transmit"
+        },
+        {
+          "pin": 7,
+          "socket_function": "UN",
+          "host_net": "GAD_P7",
+          "chain_net": "CHAIN_P7",
+          "chain_link": "JP7 bridged",
+          "local_use": "not used locally; [UN] on the U socket; forwarded unchanged"
+        },
+        {
+          "pin": 8,
+          "socket_function": "UN",
+          "host_net": "GAD_P8",
+          "chain_net": "CHAIN_P8",
+          "chain_link": "JP8 bridged",
+          "local_use": "not used locally; [UN] on the U socket; forwarded unchanged"
+        },
+        {
+          "pin": 9,
+          "socket_function": "UN",
+          "host_net": "GAD_P9",
+          "chain_net": "CHAIN_P9",
+          "chain_link": "JP9 bridged",
+          "local_use": "not used locally; [UN] on the U socket; forwarded unchanged"
+        },
+        {
+          "pin": 10,
+          "socket_function": "GND",
+          "host_net": "GND",
+          "chain_net": "GND",
+          "chain_link": "direct",
+          "local_use": "host GND: U1 GND1/GNDIO, caps, pull-downs; forwarded to J2"
+        }
+      ],
+      "chain_policy": {
+        "summary": "J2 repeats J1 pin for pin. Pins 1, 2, 10 are direct copper. Pins 3..9 each pass through a cuttable solder jumper JP3..JP9. Pins 4, 5, 6 (TX, RX, DIR) are consumed locally and shipped OPEN; pins 3, 7, 8, 9 are bridged.",
+        "defaults": {
+          "JP3": "bridged",
+          "JP4": "OPEN (TX consumed)",
+          "JP5": "OPEN (RX consumed)",
+          "JP6": "OPEN (DIR consumed)",
+          "JP7": "bridged",
+          "JP8": "bridged",
+          "JP9": "bridged"
+        },
+        "kind": "cable forwarding of power and the unconsumed GPIO only. A UART cannot be shared by two boards; bridging JP4-JP6 is allowed only for a deliberate listener downstream and is not supported.",
+        "resources_used": "The host UART (TX/RX) and the DIR GPIO on pin 6 are exclusive to this board.",
+        "terminations": "The bus termination (SJ1 + R4 120 ohm) is on the FIELD side; no host-side pull-ups are forwarded (R2 on RX and R3 on FLT are on J1 side nets, upstream of JP5; R3 is on ISO_FLT_N which is not on the socket).",
+        "chain_current": "Pass-through +5V trace >= 0.4 mm; this board takes <= 0.15 A of the host 5 V (budget below), the rest of the shared 3 A remains for downstream boards; the +5V ISOW start-up pulse (250 mA for tens of us) is absorbed by C2/C3/C4 at the board.",
+        "cut_downstream": "JP3..JP9 can be cut individually without touching +3V3, +5V, GND or the local circuit."
+      },
+      "external_power_rule": "No 12-24 V input: the CLAUDE.md \"source from Gadgeteer 5 V\" jumper rule is not applicable. The field side is powered only by the isolated DC-DC of U1 (VISO, 3.3 V, MODE = GND2); no external supply connector exists.",
+      "field_interface": {
+        "domains": {
+          "HOST": "Gadgeteer rails and signals: +3V3, +5V, GND, UART_TX, UART_RX, RS485_DIR, ISO_FLT_N, GAD_P*, CHAIN_P*; U1 pins 1-10. Netclass HOST.",
+          "FIELD (GND_ISO)": "GND2_OUT, VISO_OUT, VISO_IN, GND_ISO, BUS_P, BUS_N, TERM_MID; U1 pins 11-20, C5-C9, FB1, FB2, D1, SJ1, R4, J3. Netclass FIELD."
+        },
+        "J3_terminal": "Phoenix PT 1,5/3-3,5-H (1984620, inferred), 3.5 mm, wire entry facing the south edge. Pin 1 D+ (BUS_P: U1 Y and A, the non-inverting line: more positive than D- when TXD = 1 / bus idle), pin 2 D- (BUS_N: Z and B), pin 3 GND ISO (isolated reference, optional to wire).",
+        "viewing_direction": "Viewed from the south edge looking at the wire-entry openings, pin 1 is on the left (west).",
+        "polarity_note": "Logic-defined (DIG-04): D+ is the line that is high for TXD = 1. A/B names of VFDs differ; if a Huanyang does not answer, swap the pair (harmless). Verify on hardware (Q12).",
+        "electrical": {
+          "bus_range": "ISOW1412 recommended -7..+12 V on A/B w.r.t. GND2, abs max -12..+15 V; HBM +-16 kV, IEC 61000-4-2 contact +-8 kV (datasheet 6.1/6.2). D1 SM712 adds clamping at the terminal.",
+          "data_rate": "<= 500 kbps (ISOW1412); intended 9600 baud; cable length and wiring assumptions to be published after bench test (calculated, not tested).",
+          "receiver": "Fail-safe for open, short and idle bus (datasheet features); 1/8 unit load; no external bias.",
+          "driver": "VOD >= 1.5 V into 54 ohm (MODE = GND2, 3.3 V RS-485 mode); short-circuit current <= 180 mA.",
+          "termination": "SJ1 + R4 120 ohm across D+/D- : shipped OPEN (CHN-04, DIG-05): close only at the physical end of the cable; the VFD end owns the other termination if its manual calls for one."
+        }
+      },
+      "analysis": {
+        "logic_levels": "VIO = +3V3 (VIH = 0.7 x VIO = 2.31 V, VIL = 0.3 x VIO = 0.99 V; R pin output VOH >= VIO - 0.3 V at 2 mA, rated +-2 mA at VIO 3-3.6 V). Host 3.3 V GPIO drive D, DE, /RE directly; no level shifter. This is why ADM2587E was rejected at 5 V (VIH 3.5 V) and why 3.3 V operation of it would draw up to 125 mA from the unknown 3.3 V budget.",
+        "power_5v": "VDD = +5V, MODE = GND2. IDD typ/max at VDD 5 V +-10 %: receiver only 16/28 mA; driver on, 120 ohm 500 kbps 62/86 mA; driver on, 54 ohm 90/122 mA; converter disabled 0.23/0.45 mA. Budget reserved from the host 5 V: 150 mA steady (5 % of the shared ~3 A), 300 mA short peaks (datasheet 9.3 asks the upstream source for >= 300 mA typical current limit).",
+        "power_3v3": "VIO current <= 7.2 mA max (driver+receiver enabled, dynamic) + R2 and R3 pull-ups 0.33 mA each when low: budget 10 mA from +3V3 (self-imposed; host 3.3 V allocation unknown).",
+        "thermal": "Worst PD about 0.6 W (122 mA x 5 V) at theta-JA 68.5 C/W (test board) => about 40 K rise; ambient limit 105-125 C (MODE = GND2, no extra VISO current used). Estimate only; measure on a populated board.",
+        "capacitor_derating": "Bulk caps are 10 uF 16 V X5R 0805: at 5 V DC bias effective capacitance may fall to about 50-65 % (Murata DC-bias curve not retrieved); datasheet minimum is 10 uF, so C2/C7/C9 remain >= the vendor value only if the bias curve holds: verify with the Murata curve or fit 25 V parts (open item)."
+      },
+      "power_budget": {
+        "3v3_ma": 10.0,
+        "5v_ma_steady": 150.0,
+        "5v_ma_peak": 300.0,
+        "ma_note": "Budgets, not measurements; no host allocation is known (rule PWR-02: kept as stated assumptions)."
+      },
+      "safe_states": {
+        "reset_or_floating_gpio": "R1 10 k pull-down on RS485_DIR keeps DE low and /RE low: driver disabled (high impedance), receiver enabled. U1 itself also has DE pull-down and /RE pull-up internally when floating; with DE and /RE tied R1 defines the level.",
+        "host_unpowered_or_cable_removed": "VDD absent: converter off, bus pins high impedance (datasheet: glitch-free power up/down). VIO absent while VDD present: unsupported, avoid (Q11).",
+        "brownout": "VDD UVLO 2.55/2.93 V; VIO UVLO 1.0/1.7 V; bus idle fail-safe high.",
+        "output_meaning": "No actuator output exists; the VFD acts only on valid Modbus frames. Energising the spindle remains a deliberate firmware action (CFG-05)."
+      },
+      "protection": {
+        "bus": "D1 SM712-02HTG from D+ and D- to GND_ISO at the J3 entry (asymmetric -7/+12 V standoff matches the RS-485 common-mode range); U1 has +-16 kV HBM / +-8 kV IEC contact on the bus pins itself. No series resistors or common-mode choke (EMC-10; option documented in Q17).",
+        "supply": "Host 5 V is shared and regulated; no fuse, TVS or reverse protection on the Gadgeteer rails (GSC-02). C4/C5 10 nF 0402, FB1/FB2 ferrites per TI layout guideline 4.",
+        "not_protected": "Sustained wrong voltage > +15 V or < -12 V on D+/D-, mains on the bus, VFD-side hot plug."
+      },
+      "firmware_interface": {
+        "status": "SmoothieV2 snapshot has no Modbus spindle module (no \"spindle\" source apart from the switch-named lookup in CommandShell.cpp). The board is a plain UART to RS-485 bridge usable by any future driver.",
+        "v1_reference_config": "spindle.type modbus; spindle.vfd_type huanyang; spindle.rx_pin 2.6; spindle.tx_pin 2.4; spindle.dir_pin 2.5 (page). Huanyang: PD001 2, PD002 2, PD163 1, PD164 1 (9600), PD165 3 (8N1 RTU).",
+        "host_pins": "Recommended GB (pin 4 PB9 UART1 TX, pin 5 PH14 UART1 RX, pin 6 PK0 as DIR) or GD (UART0 on pins 4/5, pin 6 PE9). DIR must be driven high only while transmitting; turnaround timing is firmware responsibility."
+      },
+      "pcb": {
+        "width_mm": 40.0,
+        "height_mm": 42.0,
+        "outline_target_mm": [
+          40.0,
+          42.0
+        ],
+        "outline_limit_mm": [
+          46.0,
+          48.0
+        ],
+        "outline_rule": "Rectangle, square corners (or <= 1 mm radius). Target is the scratch placement fit (parts max x 39.24, max y 41.05 incl. courtyards). May grow to the limit only if routing fails, with the reason logged; report the actual size. A later revision must try to shrink per CMP/ELG rules.",
+        "origin": "top-left corner, x east, y south; positions in mm",
+        "layers": 2,
+        "thickness_mm": 1.6,
+        "copper_oz": 1,
+        "finish": "ENIG (flat pads for 1.27 mm sockets, SOIC, 0402 and solder jumpers); HASL is not acceptable for the 0402 and SOIC-20 pads.",
+        "mask": "black",
+        "silk": "white",
+        "layer_choice": "2 layers: TI states CISPR 32 Class B is met on a two-layer PCB with the two ferrite beads and the < 1 mm 10 nF capacitors; signals <= 500 kbps; no impedance control (RS-485 at <= 500 kbps). 4 layers would add inter-domain capacitance without need.",
+        "min_clearance_mm": 0.2,
+        "min_track_mm": 0.2,
+        "signal_width_mm": 0.25,
+        "power_width_mm": 0.4,
+        "via_mm": [
+          0.6,
+          0.3
+        ],
+        "edge_clearance_mm": 0.5,
+        "datum": "H1 centre (10.0, 22.5) = mechanical datum; X/Y axes parallel to the board edges.",
+        "holes_mm": [
+          [
+            10.0,
+            22.5
+          ],
+          [
+            30.0,
+            22.5
+          ]
+        ],
+        "hole_diameter_mm": 3.2,
+        "hole_grid_mm": 20,
+        "hole_note": "Two M3 NPTH centred on the barrier line beside U1, 20.0 mm apart (whole 20 mm offsets from the datum). Body clearance U1 to hole centre is 3.6 mm (screw head r 3.0 mm); courtyards overlap by 0.2 mm, accepted (body-based rule 3.2 mm). Holes lie in the copper-free strip. Four holes do not fit.",
+        "fabricator_assumption": "Generic 2-layer prototype service (JLCPCB-class capability, not yet confirmed with a fabricator): min track/space 0.127 mm, min drill 0.3 mm, min annular ring 0.13 mm, mask dam 0.1 mm. The contract uses >= 0.2 mm clearance, >= 0.25 mm tracks and 0.6/0.3 mm vias, i.e. margin above those limits. Unverified until a fabricator capability sheet is attached (rules FAB-05/FAB-06, L005).",
+        "stackup": "2 layers, FR-4 1.6 mm, 1 oz (35 um) copper both sides, black solder mask both sides, white silkscreen; declare in the .kicad_pcb stackup (gate-board stackup.py black_stackup pattern). Dielectric/Tg not specified: no controlled impedance (RS-485 at <= 500 kbps over twisted pair, analog DC, 3.3 V logic <= 1 MHz)."
+      },
+      "placement": {
+        "north_edge": "J1 (IN) x 10, J2 (CHAIN) x 30, y 4.0, rotation 0 (notch south).",
+        "host_region": "y 7.15-16.3: JP3..JP9 two rows (y 9.8: JP3-JP6 x 14/18/22/26; y 12.6: JP7-JP9 x 16/20/24); C4 (10 nF 0402) at (14.9, 15.2) < 1 mm from U1 pins 9/10, C3 (11, 15), C2 (7, 15); C1 (28.5, 15.2) near U1.1; R1 (32, 15.2), R2 (35.5, 15.2), R3 (32, 17.2); host test points TP1-TP4 (bottom side) at x 3.0 (y 9.5/12/14.5/17), TP7 FLT at (35.5, 12.5), TP8 +5V / TP9 +3V3 / TP10 GND (bottom side) at x 38.2 (y 9.5/12/14.5).",
+        "barrier": "U1 (ISOW1412DFMR, custom SOIC-20 DFM0020A footprint) at (20, 22.5) rotation 270: host pins 1-10 on the north row (y 17.65, pin 1 at the east end), field pins 11-20 on the south row (y 27.35, pin 11 at the west end); copper-free strip y 18.7-26.3 (7.6 mm) across the full width.",
+        "field_region": "y 26.3-42: C5 (10 nF 0402) at (14.9, 29.3) < 1 mm from pins 11/12, C6 (11, 30), C7 (7, 30), FB1 (18, 29.8), FB2 (18, 31), C8 (22, 29.8), C9 (26, 29.8); D1 at (20.5, 33.5); SJ1 (14, 34) with R4 (14, 36.4); J3 pads at y 36.0 starting x 26.0, wire entry south; field test points TP5/TP6 at x 6.",
+        "tolerance": "Initial intent, courtyard-checked with tools/scratch_place_check.py (0 issues). The layout stage may move parts up to 3 mm; it must keep: host parts north of y 18.7, field parts south of y 26.3, TI keepout (below), C4/C5 < 1 mm from their pins (TI: required for emissions), FB1/FB2 per TI Figure 9-7, D1 at the J3 entry, holes on the 20 mm grid.",
+        "alignment": "J1/J2 on one y; jumpers on a 4.0 x 2.8 mm grid; field caps on y 29.8-30; J3 pads on y 36.0."
+      },
+      "keepouts": [
+        {
+          "name": "barrier strip",
+          "shape": "rectangle x 0..40, y 18.7..26.3 (U1 pad gap 7.6 mm)",
+          "layers": "F.Cu and B.Cu, all item types",
+          "rule": "No tracks, vias, pours, test pads or silkscreen; only U1 pads bound it."
+        },
+        {
+          "name": "TI VISOOUT keepout (required)",
+          "shape": "region within 4 mm of U1 pads 11 and 12 (centres (14.285, 27.35) and (15.555, 27.35))",
+          "layers": "F.Cu and B.Cu",
+          "rule": "TI datasheet 9.4.1 item 5 and Figure 9-7: no metal traces or ground pour within 4 mm of VISOOUT (pin 12) and GND2 (pin 11) except the VISO_OUT/GND2_OUT nets of C5, C6, C7, FB1.1, FB2.1 placed as in the figure; the GND_ISO pour is cut back 4 mm. MODE (pin 13) must tie to pin 11 or 12 (to GND2_OUT, a short bottom-layer jumper)."
+        },
+        {
+          "name": "mounting holes",
+          "shape": "circle r 3.5 mm around H1, H2",
+          "layers": "all copper and silkscreen",
+          "rule": "No copper or text; component bodies >= 3.2 mm."
+        },
+        {
+          "name": "solder jumpers",
+          "shape": "pad area + 0.3 mm",
+          "layers": "F.Cu, F.SilkS",
+          "rule": "No silkscreen on pads or gaps; no vias/tracks under bridged strips."
+        },
+        {
+          "name": "bus pair",
+          "shape": "BUS_P/BUS_N from U1 pads 17-20 to D1 and J3",
+          "layers": "F.Cu preferred",
+          "rule": "Route D+/D- together (equal length +-2 mm, no stubs except D1 and the SJ1/R4 branch); U1.17-U1.20 (BUS_P) are joined by a bottom-layer jumper under the BUS_N pair via vias outside the pad rows."
+        }
+      ],
+      "net_constraints": {
+        "netclasses": {
+          "HOST": "all host nets; width 0.25, +5V/+3V3/GND 0.4, clearance 0.2",
+          "FIELD": "all field nets; width 0.25, VISO_OUT/VISO_IN 0.4, clearance 0.2",
+          "BUS": "BUS_P, BUS_N: width 0.3, pair-routed"
+        },
+        "net_domains": {
+          "+3V3": "host",
+          "+5V": "host",
+          "GAD_P3": "host",
+          "UART_TX": "host",
+          "UART_RX": "host",
+          "RS485_DIR": "host",
+          "GAD_P7": "host",
+          "GAD_P8": "host",
+          "GAD_P9": "host",
+          "GND": "host",
+          "CHAIN_P3": "host",
+          "CHAIN_P4": "host",
+          "CHAIN_P5": "host",
+          "CHAIN_P6": "host",
+          "CHAIN_P7": "host",
+          "CHAIN_P8": "host",
+          "CHAIN_P9": "host",
+          "ISO_FLT_N": "host",
+          "GND2_OUT": "field",
+          "VISO_OUT": "field",
+          "GND_ISO": "field",
+          "VISO_IN": "field",
+          "BUS_P": "field",
+          "BUS_N": "field",
+          "TERM_MID": "field"
+        },
+        "power_like": {
+          "+5V": {
+            "width_mm": 0.4,
+            "rule": "J1.2 to U1.9 and the chain J2.2 as a spur from the C4/C3/C2 node; bypass loop U1.9-C4-U1.10 < 1 mm, symmetric VDD/GND1 traces to the caps (TI 9.4.1 item 3)."
+          },
+          "+3V3": {
+            "width_mm": 0.4,
+            "rule": "J1.1 to U1.1, C1, R2, R3 and J2.1."
+          },
+          "VISO_OUT/GND2_OUT": {
+            "rule": "Short, symmetric (TI item 3) to C5 (< 1 mm), C6, C7, then FB1/FB2 to VISO_IN/GND_ISO."
+          },
+          "GND": "Host pour north of the barrier, both layers.",
+          "GND_ISO": "Field pour south of the barrier, both layers, cut back 4 mm at pads 11/12."
+        },
+        "domain_clearance": {
+          "min_mm": 7.5,
+          "rule_file": "attempt/versions/vNN/bsm-rs485.kicad_dru",
+          "text": "(version 1)\n(rule \"isolation_barrier\" (constraint clearance (min 7.5mm)) (condition \"(A.NetClass == 'HOST' && B.NetClass == 'FIELD') || (A.NetClass == 'FIELD' && B.NetClass == 'HOST')\"))",
+          "proof": "Prove the rule is active with a temporary violation before trusting a clean DRC (REL-06). The 7.6 mm U1 pad gap passes a 7.5 mm rule by 0.1 mm; confirm the footprint pad gap in the saved board."
+        }
+      },
+      "barrier": {
+        "min_clearance_mm": 7.5,
+        "package_limit": "ISOW1412 external creepage and clearance > 8 mm, DTI > 17 um (signal) / > 120 um (power), VIOTM 7071 Vpk, VIOWM 1500 Vdc / 1000 Vrms, CTI > 600, material group I, PD 2 (datasheet 6.6). TI land pattern gives a pad-edge gap of 7.6 mm (below the 8 mm package value): the PCB, not the package, limits the barrier.",
+        "assumed_working_voltage": "Design intent <= 60 V DC / 42 V peak between HOST and FIELD (VFD RS-485 port); the isolator is rated far higher but the PCB spacing (7.6 mm) is the stated limit. Spacing derivation per IEC 60664-1 not done (Q19).",
+        "not_claimed": "No claim of reinforced insulation or standard compliance at the system level; the ISOW1412DFM (non-B) device is reinforced-rated but the PCB is not verified; human review required. A board slot cannot repair package spacing (ADD-05) and none is planned."
+      },
+      "schematic_rules": {
+        "symbols": "U1 needs a locally authored symbol in attempt/symbols/Smoothie_Bouni.kicad_sym named ISOW1412DFM (KiCad stock has no ISOW1412): pin numbers/names per the datasheet table 5-1 (1 VIO, 2 D, 3 DE, 4 R, 5 RE, 6 GNDIO, 7 OUT, 8 EN/FLT, 9 VDD, 10 GND1, 11 GND2, 12 VISOOUT, 13 MODE, 14 IN, 15 GISOIN, 16 VISOIN, 17 Y, 18 Z, 19 B, 20 A) with types: VIO/VDD power_in, VISOOUT power_out, VISOIN/GISOIN/GND2/GND1/GNDIO power_in, logic pins input/output, OUT unconnected (no-connect flag). D1 Diode:SM712_SOT23. FB Device:FerriteBead. R/C Device:R, Device:C. J3 Connector_Generic:Conn_01x03. SJ1 Jumper:SolderJumper_2_Open.",
+        "erc": "Target 0 violations with default severities, no exclusions. PWR_FLAG on +3V3, +5V, GND (from J1), VISO_IN and GND_ISO (the field supply is produced by U1: mark the nets via the symbol power_out pin and PWR_FLAG on GND_ISO). U1.7 gets a no-connect flag. Never lower severities.",
+        "sheet_notes": "Pin map, chain defaults, D+/D- logic polarity, termination SJ1 open, TI layout rules, expected readings.",
+        "fields": "Every symbol carries Manufacturer and MPN equal to parts[]; jumpers/test points exclude_from_bom."
+      },
+      "silkscreen": {
+        "required_strings": [
+          "BSM-R v01",
+          "RS485 ISOLATED",
+          "U",
+          "IN",
+          "CHAIN",
+          "D+",
+          "D-",
+          "GND ISO",
+          "TERM OPEN",
+          "MODBUS RTU <=500k",
+          "FIELD ISOLATED FROM HOST",
+          "60V MAX",
+          "NO MAINS ON D+ D-",
+          "NO HOT-PLUG",
+          "JP4 JP5 JP6 OPEN",
+          "PROTOTYPE NOT REVIEWED",
+          "CERN-OHL-S-2.0"
+        ],
+        "top": [
+          "Beside J1: \"U\" and \"IN\"; beside J2: \"U\" and \"CHAIN\"; pin-1 dots.",
+          "Beside J3: \"D+\" \"D-\" \"GND ISO\" with pin 1 marker; \"RS485 ISOLATED\".",
+          "At SJ1: \"TERM OPEN\" (\"close = 120R at cable end\").",
+          "Jumper labels \"3\"..\"9\"; \"OPEN\" at JP4, JP5, JP6 (\"UART/DIR NOT FORWARDED\").",
+          "\"HOST\" north and \"FIELD\" south of the barrier strip (no text in the strip); board name \"BSM-R v01\", \"Smoothieboard v2 ext\"."
+        ],
+        "bottom": [
+          "Socket map: \"1 3V3 2 5V 3 GPIO 4 TX 5 RX 6 DIR 7-9 -- 10 GND\".",
+          "\"D+ = high when TXD=1 (idle). SWAP D+/D- IF NO REPLY\".",
+          "\"FIELD ISOLATED FROM HOST - 60V MAX - NO MAINS ON D+ D-\", \"NO HOT-PLUG\".",
+          "Test pad labels (mirrored): DIR, TX, RX, GND, FLT, 5V, 3V3 (host); 3V3I, GNDI (field); \"TP = observe only\".",
+          "\"PROTOTYPE NOT REVIEWED - NOT FOR FABRICATION\", \"CERN-OHL-S-2.0\", \"Smoothieware\", \"KiCad\", \"2026\"; 10 x 5 mm serial box."
+        ],
+        "rules": "White on black; min text 0.8 mm / 0.15 mm stroke; bottom mirrored; nothing on pads, jumper gaps, hole keepouts or the barrier strip."
+      },
+      "test_points": {
+        "host": {
+          "TP1": "RS485_DIR (observe)",
+          "TP2": "UART_TX (observe)",
+          "TP3": "UART_RX (observe)",
+          "TP4": "GND (return)",
+          "TP7": "ISO_FLT_N (observe; low = DC-DC fault)",
+          "TP8": "+5V (observe)",
+          "TP9": "+3V3 (observe)",
+          "TP10": "GND (return for TP7-TP9)"
+        },
+        "field": {
+          "TP5": "VISO_IN 3.3 V (observe)",
+          "TP6": "GND_ISO (return)"
+        },
+        "rules": "Bottom-side 1.0 mm pads, >= 2 mm apart; observation only; expected readings: VISO_IN 3.135-3.465 V w.r.t. GND_ISO (datasheet 6.9), ISO_FLT_N high (3.3 V) when healthy, D+ - D- > +200 mV idle (driver off, fail-safe)."
+      },
+      "models": {
+        "U1": "${KICAD9_3DMODEL_DIR}/Package_SO.3dshapes/SOIC-20W_7.5x12.8mm_P1.27mm.step (body 7.5 x 12.8 is the same JEDEC MS-013 outline; pads differ)",
+        "D1": "Package_TO_SOT_SMD.3dshapes/SOT-23.step",
+        "FB1,FB2": "Inductor_SMD.3dshapes/L_0402_1005Metric.step",
+        "C4,C5": "Capacitor_SMD.3dshapes/C_0402_1005Metric.step",
+        "C1": "C_0603_1608Metric.step",
+        "C2,C3,C6,C7,C8,C9": "C_0805_2012Metric.step",
+        "R*": "R_0603_1608Metric.step",
+        "J3": "TerminalBlock_Phoenix_PT-1,5-3-3.5-H_1x03_P3.50mm_Horizontal.step",
+        "J1,J2": "${KIPRJMOD}/../../models/Samtec_SHF105_TH_LC.wrl (simplified)",
+        "jumpers, TP, holes": "no model"
+      },
+      "board_specific_rules": [
+        "GND (host) and GND_ISO never touch except through the isolator: no track, via, pour, test pad or footprint bridges them; mounting holes are NPTH with no net.",
+        "U1 is the only part spanning the barrier; D1, SJ1, R4, J3 and C5-C9, FB1, FB2 are FIELD only; C1-C4, R1-R3 and J1/J2 are HOST only.",
+        "U1 pin 7 (OUT) is a no-connect; pin 8 EN/FLT has the 10 k pull-up R3 to +3V3 (>= 5 k per datasheet) and TP7; pin 14 (IN) to GND_ISO; pin 13 (MODE) to GND2_OUT = 3.3 V RS-485 mode; pin 12 to pin 16 only through FB1; pin 11 to pin 15 only through FB2.",
+        "DE (pin 3) and /RE (pin 5) are tied together at U1 and connect only to R1, TP1 and J1.6 (via JP6 open, J2.6 is not driven).",
+        "BUS_P joins U1.17 (Y) and U1.20 (A); BUS_N joins U1.18 (Z) and U1.19 (B); D+ is J3.1 = BUS_P, D- is J3.2 = BUS_N.",
+        "SJ1 is the Open footprint (termination off by default); JP4, JP5, JP6 are Open footprints, JP3, JP7, JP8, JP9 Bridged.",
+        "No LED, no firmware, no bias resistors."
+      ],
+      "mpn_verification": {
+        "ISOW1412DFMR": "Datasheet read (SLLSF86D): orderable ISOW1412DFMR Active, SOIC DFM 20, 850/reel, -40..125 C; DFM0020A land pattern; pin table 5-1; electrical, insulation, layout sections 6, 9.2-9.4 read. A \"B\" basic-insulation variant exists (ISOW1412BDFMR): not used.",
+        "BLM15EX331SN1D": "TI datasheet 9.4.1 item 4 names BLM15EX331SN1 (Murata 0402 330 ohm ferrite); the \"D\" reel suffix and the DC current/DCR rating are not verified (Murata datasheet unread): confirm >= 0.1 A and DCR low enough that the isolated 3.3 V does not droop (PCT-08).",
+        "SM712-02HTG": "Unverified (Q16).",
+        "1984620": "Phoenix PT 1,5/ 3-3,5-H order number inferred from the 1984617 (2-pos), 1984633 (4-pos), 1984646 (5-pos) series seen in sources; not confirmed (phoenixcontact.com 403).",
+        "GRM155R71H103KA88D": "Murata 10 nF 50 V X7R 0402 (TI requires 0402 for the 10 nF HF caps): MPN from the Murata naming scheme, unverified.",
+        "GRM188R71H104KA93D, GRM21BR61C106KE15L, GRM21BR71E105KA99L": "Reused from earlier boards; the 10 uF 16 V bias derating is an open item (analysis.capacitor_derating).",
+        "RC0603FR-07xxxxL": "Yageo ordering-code pattern (see board A)."
+      },
+      "parts": [
+        {
+          "reference": "J1",
+          "value": "GADGETEER IN",
+          "footprint": "Smoothie_Bouni:Samtec_SHF105_TH_LC",
+          "pins": {
+            "1": "+3V3",
+            "2": "+5V",
+            "3": "GAD_P3",
+            "4": "UART_TX",
+            "5": "UART_RX",
+            "6": "RS485_DIR",
+            "7": "GAD_P7",
+            "8": "GAD_P8",
+            "9": "GAD_P9",
+            "10": "GND"
+          },
+          "position": [
+            10.0,
+            4.0
+          ],
+          "rotation": 0,
+          "kind": "connector",
+          "manufacturer": "Samtec",
+          "mpn": "SHF-105-01-L-D-TH-LC"
+        },
+        {
+          "reference": "J2",
+          "value": "GADGETEER CHAIN",
+          "footprint": "Smoothie_Bouni:Samtec_SHF105_TH_LC",
+          "pins": {
+            "1": "+3V3",
+            "2": "+5V",
+            "3": "CHAIN_P3",
+            "4": "CHAIN_P4",
+            "5": "CHAIN_P5",
+            "6": "CHAIN_P6",
+            "7": "CHAIN_P7",
+            "8": "CHAIN_P8",
+            "9": "CHAIN_P9",
+            "10": "GND"
+          },
+          "position": [
+            30.0,
+            4.0
+          ],
+          "rotation": 0,
+          "kind": "connector",
+          "manufacturer": "Samtec",
+          "mpn": "SHF-105-01-L-D-TH-LC"
+        },
+        {
+          "reference": "JP3",
+          "value": "CHAIN P3 BRIDGED",
+          "footprint": "Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm",
+          "pins": {
+            "1": "GAD_P3",
+            "2": "CHAIN_P3"
+          },
+          "position": [
+            14,
+            9.8
+          ],
+          "rotation": 0,
+          "kind": "jumper",
+          "manufacturer": "PCB copper",
+          "mpn": "fabricated-copper",
+          "default_state": "bridged"
+        },
+        {
+          "reference": "JP4",
+          "value": "CHAIN P4 OPEN",
+          "footprint": "Jumper:SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm",
+          "pins": {
+            "1": "UART_TX",
+            "2": "CHAIN_P4"
+          },
+          "position": [
+            18,
+            9.8
+          ],
+          "rotation": 0,
+          "kind": "jumper",
+          "manufacturer": "PCB copper",
+          "mpn": "fabricated-copper",
+          "default_state": "open"
+        },
+        {
+          "reference": "JP5",
+          "value": "CHAIN P5 OPEN",
+          "footprint": "Jumper:SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm",
+          "pins": {
+            "1": "UART_RX",
+            "2": "CHAIN_P5"
+          },
+          "position": [
+            22,
+            9.8
+          ],
+          "rotation": 0,
+          "kind": "jumper",
+          "manufacturer": "PCB copper",
+          "mpn": "fabricated-copper",
+          "default_state": "open"
+        },
+        {
+          "reference": "JP6",
+          "value": "CHAIN P6 OPEN",
+          "footprint": "Jumper:SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm",
+          "pins": {
+            "1": "RS485_DIR",
+            "2": "CHAIN_P6"
+          },
+          "position": [
+            26,
+            9.8
+          ],
+          "rotation": 0,
+          "kind": "jumper",
+          "manufacturer": "PCB copper",
+          "mpn": "fabricated-copper",
+          "default_state": "open"
+        },
+        {
+          "reference": "JP7",
+          "value": "CHAIN P7 BRIDGED",
+          "footprint": "Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm",
+          "pins": {
+            "1": "GAD_P7",
+            "2": "CHAIN_P7"
+          },
+          "position": [
+            16,
+            12.6
+          ],
+          "rotation": 0,
+          "kind": "jumper",
+          "manufacturer": "PCB copper",
+          "mpn": "fabricated-copper",
+          "default_state": "bridged"
+        },
+        {
+          "reference": "JP8",
+          "value": "CHAIN P8 BRIDGED",
+          "footprint": "Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm",
+          "pins": {
+            "1": "GAD_P8",
+            "2": "CHAIN_P8"
+          },
+          "position": [
+            20,
+            12.6
+          ],
+          "rotation": 0,
+          "kind": "jumper",
+          "manufacturer": "PCB copper",
+          "mpn": "fabricated-copper",
+          "default_state": "bridged"
+        },
+        {
+          "reference": "JP9",
+          "value": "CHAIN P9 BRIDGED",
+          "footprint": "Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm",
+          "pins": {
+            "1": "GAD_P9",
+            "2": "CHAIN_P9"
+          },
+          "position": [
+            24,
+            12.6
+          ],
+          "rotation": 0,
+          "kind": "jumper",
+          "manufacturer": "PCB copper",
+          "mpn": "fabricated-copper",
+          "default_state": "bridged"
+        },
+        {
+          "reference": "U1",
+          "value": "ISOW1412DFMR",
+          "footprint": "Smoothie_Bouni:SOIC-20W_TI_DFM0020A",
+          "pins": {
+            "1": "+3V3",
+            "2": "UART_TX",
+            "3": "RS485_DIR",
+            "4": "UART_RX",
+            "5": "RS485_DIR",
+            "6": "GND",
+            "7": null,
+            "8": "ISO_FLT_N",
+            "9": "+5V",
+            "10": "GND",
+            "11": "GND2_OUT",
+            "12": "VISO_OUT",
+            "13": "GND2_OUT",
+            "14": "GND_ISO",
+            "15": "GND_ISO",
+            "16": "VISO_IN",
+            "17": "BUS_P",
+            "18": "BUS_N",
+            "19": "BUS_N",
+            "20": "BUS_P"
+          },
+          "position": [
+            20.0,
+            22.5
+          ],
+          "rotation": 270,
+          "kind": "ic",
+          "manufacturer": "Texas Instruments",
+          "mpn": "ISOW1412DFMR",
+          "pin_names": {
+            "1": "VIO",
+            "2": "D",
+            "3": "DE",
+            "4": "R",
+            "5": "RE",
+            "6": "GNDIO",
+            "7": "OUT (no-connect)",
+            "8": "EN/FLT",
+            "9": "VDD",
+            "10": "GND1",
+            "11": "GND2",
+            "12": "VISOOUT",
+            "13": "MODE",
+            "14": "IN",
+            "15": "GISOIN",
+            "16": "VISOIN",
+            "17": "Y",
+            "18": "Z",
+            "19": "B",
+            "20": "A"
+          },
+          "pin_evidence": "sources/isow1412.pdf table 5-1 (p.5) and figure 5-1; land pattern DFM0020A (custom footprint Smoothie_Bouni:SOIC-20W_TI_DFM0020A: 20 pads 2.1 x 0.6, 9.7 mm row spacing). Rotation 270: pin 1 at the east end of the north (host) row, pin 11 at the west end of the south (field) row."
+        },
+        {
+          "reference": "C1",
+          "value": "100nF",
+          "footprint": "Capacitor_SMD:C_0603_1608Metric",
+          "pins": {
+            "1": "+3V3",
+            "2": "GND"
+          },
+          "position": [
+            28.5,
+            15.2
+          ],
+          "rotation": 0,
+          "kind": "capacitor",
+          "manufacturer": "Murata",
+          "mpn": "GRM188R71H104KA93D"
+        },
+        {
+          "reference": "C2",
+          "value": "10uF",
+          "footprint": "Capacitor_SMD:C_0805_2012Metric",
+          "pins": {
+            "1": "+5V",
+            "2": "GND"
+          },
+          "position": [
+            7.0,
+            15.0
+          ],
+          "rotation": 0,
+          "kind": "capacitor",
+          "manufacturer": "Murata",
+          "mpn": "GRM21BR61C106KE15L"
+        },
+        {
+          "reference": "C3",
+          "value": "1uF",
+          "footprint": "Capacitor_SMD:C_0805_2012Metric",
+          "pins": {
+            "1": "+5V",
+            "2": "GND"
+          },
+          "position": [
+            11.0,
+            15.0
+          ],
+          "rotation": 0,
+          "kind": "capacitor",
+          "manufacturer": "Murata",
+          "mpn": "GRM21BR71E105KA99L"
+        },
+        {
+          "reference": "C4",
+          "value": "10nF",
+          "footprint": "Capacitor_SMD:C_0402_1005Metric",
+          "pins": {
+            "1": "+5V",
+            "2": "GND"
+          },
+          "position": [
+            14.9,
+            15.2
+          ],
+          "rotation": 0,
+          "kind": "capacitor",
+          "manufacturer": "Murata",
+          "mpn": "GRM155R71H103KA88D"
+        },
+        {
+          "reference": "R1",
+          "value": "10k",
+          "footprint": "Resistor_SMD:R_0603_1608Metric",
+          "pins": {
+            "1": "RS485_DIR",
+            "2": "GND"
+          },
+          "position": [
+            32.0,
+            15.2
+          ],
+          "rotation": 0,
+          "kind": "resistor",
+          "manufacturer": "Yageo",
+          "mpn": "RC0603FR-0710KL"
+        },
+        {
+          "reference": "R2",
+          "value": "10k",
+          "footprint": "Resistor_SMD:R_0603_1608Metric",
+          "pins": {
+            "1": "UART_RX",
+            "2": "+3V3"
+          },
+          "position": [
+            35.5,
+            15.2
+          ],
+          "rotation": 0,
+          "kind": "resistor",
+          "manufacturer": "Yageo",
+          "mpn": "RC0603FR-0710KL"
+        },
+        {
+          "reference": "R3",
+          "value": "10k",
+          "footprint": "Resistor_SMD:R_0603_1608Metric",
+          "pins": {
+            "1": "ISO_FLT_N",
+            "2": "+3V3"
+          },
+          "position": [
+            32.0,
+            17.2
+          ],
+          "rotation": 0,
+          "kind": "resistor",
+          "manufacturer": "Yageo",
+          "mpn": "RC0603FR-0710KL"
+        },
+        {
+          "reference": "C5",
+          "value": "10nF",
+          "footprint": "Capacitor_SMD:C_0402_1005Metric",
+          "pins": {
+            "1": "VISO_OUT",
+            "2": "GND2_OUT"
+          },
+          "position": [
+            14.9,
+            29.3
+          ],
+          "rotation": 0,
+          "kind": "capacitor",
+          "manufacturer": "Murata",
+          "mpn": "GRM155R71H103KA88D"
+        },
+        {
+          "reference": "C6",
+          "value": "1uF",
+          "footprint": "Capacitor_SMD:C_0805_2012Metric",
+          "pins": {
+            "1": "VISO_OUT",
+            "2": "GND2_OUT"
+          },
+          "position": [
+            11.0,
+            30.0
+          ],
+          "rotation": 0,
+          "kind": "capacitor",
+          "manufacturer": "Murata",
+          "mpn": "GRM21BR71E105KA99L"
+        },
+        {
+          "reference": "C7",
+          "value": "10uF",
+          "footprint": "Capacitor_SMD:C_0805_2012Metric",
+          "pins": {
+            "1": "VISO_OUT",
+            "2": "GND2_OUT"
+          },
+          "position": [
+            7.0,
+            30.0
+          ],
+          "rotation": 0,
+          "kind": "capacitor",
+          "manufacturer": "Murata",
+          "mpn": "GRM21BR61C106KE15L"
+        },
+        {
+          "reference": "FB1",
+          "value": "BLM15EX331SN1D",
+          "footprint": "Inductor_SMD:L_0402_1005Metric",
+          "pins": {
+            "1": "VISO_OUT",
+            "2": "VISO_IN"
+          },
+          "position": [
+            18.0,
+            29.8
+          ],
+          "rotation": 0,
+          "kind": "ferrite",
+          "manufacturer": "Murata",
+          "mpn": "BLM15EX331SN1D"
+        },
+        {
+          "reference": "FB2",
+          "value": "BLM15EX331SN1D",
+          "footprint": "Inductor_SMD:L_0402_1005Metric",
+          "pins": {
+            "1": "GND2_OUT",
+            "2": "GND_ISO"
+          },
+          "position": [
+            18.0,
+            31.0
+          ],
+          "rotation": 0,
+          "kind": "ferrite",
+          "manufacturer": "Murata",
+          "mpn": "BLM15EX331SN1D"
+        },
+        {
+          "reference": "C8",
+          "value": "100nF",
+          "footprint": "Capacitor_SMD:C_0603_1608Metric",
+          "pins": {
+            "1": "VISO_IN",
+            "2": "GND_ISO"
+          },
+          "position": [
+            22.0,
+            29.8
+          ],
+          "rotation": 0,
+          "kind": "capacitor",
+          "manufacturer": "Murata",
+          "mpn": "GRM188R71H104KA93D"
+        },
+        {
+          "reference": "C9",
+          "value": "10uF",
+          "footprint": "Capacitor_SMD:C_0805_2012Metric",
+          "pins": {
+            "1": "VISO_IN",
+            "2": "GND_ISO"
+          },
+          "position": [
+            26.0,
+            29.8
+          ],
+          "rotation": 0,
+          "kind": "capacitor",
+          "manufacturer": "Murata",
+          "mpn": "GRM21BR61C106KE15L"
+        },
+        {
+          "reference": "D1",
+          "value": "SM712-02HTG",
+          "footprint": "Package_TO_SOT_SMD:SOT-23",
+          "pins": {
+            "1": "BUS_P",
+            "2": "BUS_N",
+            "3": "GND_ISO"
+          },
+          "position": [
+            20.5,
+            33.5
+          ],
+          "rotation": 0,
+          "kind": "tvs",
+          "manufacturer": "Littelfuse",
+          "mpn": "SM712-02HTG"
+        },
+        {
+          "reference": "SJ1",
+          "value": "TERM 120R OPEN",
+          "footprint": "Jumper:SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm",
+          "pins": {
+            "1": "BUS_P",
+            "2": "TERM_MID"
+          },
+          "position": [
+            14.0,
+            34.0
+          ],
+          "rotation": 0,
+          "kind": "jumper",
+          "manufacturer": "PCB copper",
+          "mpn": "fabricated-copper",
+          "default_state": "open"
+        },
+        {
+          "reference": "R4",
+          "value": "120R",
+          "footprint": "Resistor_SMD:R_0603_1608Metric",
+          "pins": {
+            "1": "TERM_MID",
+            "2": "BUS_N"
+          },
+          "position": [
+            14.0,
+            36.4
+          ],
+          "rotation": 0,
+          "kind": "resistor",
+          "manufacturer": "Yageo",
+          "mpn": "RC0603FR-07120RL"
+        },
+        {
+          "reference": "J3",
+          "value": "RS485 D+ D- GND",
+          "footprint": "TerminalBlock_Phoenix:TerminalBlock_Phoenix_PT-1,5-3-3.5-H_1x03_P3.50mm_Horizontal",
+          "pins": {
+            "1": "BUS_P",
+            "2": "BUS_N",
+            "3": "GND_ISO"
+          },
+          "position": [
+            26.0,
+            36.0
+          ],
+          "rotation": 0,
+          "kind": "connector",
+          "manufacturer": "Phoenix Contact",
+          "mpn": "1984620"
+        },
+        {
+          "reference": "TP1",
+          "value": "DIR",
+          "footprint": "TestPoint:TestPoint_Pad_D1.0mm",
+          "pins": {
+            "1": "RS485_DIR"
+          },
+          "position": [
+            3.0,
+            9.5
+          ],
+          "rotation": 0,
+          "kind": "testpoint",
+          "manufacturer": "PCB copper",
+          "mpn": "fabricated-copper",
+          "side": "bottom",
+          "layer": "B.Cu"
+        },
+        {
+          "reference": "TP2",
+          "value": "TX",
+          "footprint": "TestPoint:TestPoint_Pad_D1.0mm",
+          "pins": {
+            "1": "UART_TX"
+          },
+          "position": [
+            3.0,
+            12.0
+          ],
+          "rotation": 0,
+          "kind": "testpoint",
+          "manufacturer": "PCB copper",
+          "mpn": "fabricated-copper",
+          "side": "bottom",
+          "layer": "B.Cu"
+        },
+        {
+          "reference": "TP3",
+          "value": "RX",
+          "footprint": "TestPoint:TestPoint_Pad_D1.0mm",
+          "pins": {
+            "1": "UART_RX"
+          },
+          "position": [
+            3.0,
+            14.5
+          ],
+          "rotation": 0,
+          "kind": "testpoint",
+          "manufacturer": "PCB copper",
+          "mpn": "fabricated-copper",
+          "side": "bottom",
+          "layer": "B.Cu"
+        },
+        {
+          "reference": "TP4",
+          "value": "GND",
+          "footprint": "TestPoint:TestPoint_Pad_D1.0mm",
+          "pins": {
+            "1": "GND"
+          },
+          "position": [
+            3.0,
+            17.0
+          ],
+          "rotation": 0,
+          "kind": "testpoint",
+          "manufacturer": "PCB copper",
+          "mpn": "fabricated-copper",
+          "side": "bottom",
+          "layer": "B.Cu"
+        },
+        {
+          "reference": "TP7",
+          "value": "FLT",
+          "footprint": "TestPoint:TestPoint_Pad_D1.0mm",
+          "pins": {
+            "1": "ISO_FLT_N"
+          },
+          "position": [
+            35.5,
+            12.5
+          ],
+          "rotation": 0,
+          "kind": "testpoint",
+          "manufacturer": "PCB copper",
+          "mpn": "fabricated-copper",
+          "side": "bottom",
+          "layer": "B.Cu"
+        },
+        {
+          "reference": "TP8",
+          "value": "5V",
+          "footprint": "TestPoint:TestPoint_Pad_D1.0mm",
+          "pins": {
+            "1": "+5V"
+          },
+          "position": [
+            38.2,
+            9.5
+          ],
+          "rotation": 0,
+          "kind": "testpoint",
+          "manufacturer": "PCB copper",
+          "mpn": "fabricated-copper",
+          "side": "bottom",
+          "layer": "B.Cu"
+        },
+        {
+          "reference": "TP9",
+          "value": "3V3",
+          "footprint": "TestPoint:TestPoint_Pad_D1.0mm",
+          "pins": {
+            "1": "+3V3"
+          },
+          "position": [
+            38.2,
+            12.0
+          ],
+          "rotation": 0,
+          "kind": "testpoint",
+          "manufacturer": "PCB copper",
+          "mpn": "fabricated-copper",
+          "side": "bottom",
+          "layer": "B.Cu"
+        },
+        {
+          "reference": "TP10",
+          "value": "GND",
+          "footprint": "TestPoint:TestPoint_Pad_D1.0mm",
+          "pins": {
+            "1": "GND"
+          },
+          "position": [
+            38.2,
+            14.5
+          ],
+          "rotation": 0,
+          "kind": "testpoint",
+          "manufacturer": "PCB copper",
+          "mpn": "fabricated-copper",
+          "side": "bottom",
+          "layer": "B.Cu"
+        },
+        {
+          "reference": "TP5",
+          "value": "3V3I",
+          "footprint": "TestPoint:TestPoint_Pad_D1.0mm",
+          "pins": {
+            "1": "VISO_IN"
+          },
+          "position": [
+            6.0,
+            34.0
+          ],
+          "rotation": 0,
+          "kind": "testpoint",
+          "manufacturer": "PCB copper",
+          "mpn": "fabricated-copper",
+          "side": "bottom",
+          "layer": "B.Cu"
+        },
+        {
+          "reference": "TP6",
+          "value": "GNDI",
+          "footprint": "TestPoint:TestPoint_Pad_D1.0mm",
+          "pins": {
+            "1": "GND_ISO"
+          },
+          "position": [
+            6.0,
+            36.5
+          ],
+          "rotation": 0,
+          "kind": "testpoint",
+          "manufacturer": "PCB copper",
+          "mpn": "fabricated-copper",
+          "side": "bottom",
+          "layer": "B.Cu"
+        }
+      ],
+      "mounting_holes": [
+        {
+          "reference": "H1",
+          "position": [
+            10.0,
+            22.5
+          ],
+          "net": null
+        },
+        {
+          "reference": "H2",
+          "position": [
+            30.0,
+            22.5
+          ],
+          "net": null
+        }
+      ],
+      "net_domains": {
+        "+3V3": "host",
+        "+5V": "host",
+        "GAD_P3": "host",
+        "UART_TX": "host",
+        "UART_RX": "host",
+        "RS485_DIR": "host",
+        "GAD_P7": "host",
+        "GAD_P8": "host",
+        "GAD_P9": "host",
+        "GND": "host",
+        "CHAIN_P3": "host",
+        "CHAIN_P4": "host",
+        "CHAIN_P5": "host",
+        "CHAIN_P6": "host",
+        "CHAIN_P7": "host",
+        "CHAIN_P8": "host",
+        "CHAIN_P9": "host",
+        "ISO_FLT_N": "host",
+        "GND2_OUT": "field",
+        "VISO_OUT": "field",
+        "GND_ISO": "field",
+        "VISO_IN": "field",
+        "BUS_P": "field",
+        "BUS_N": "field",
+        "TERM_MID": "field"
+      },
+      "nets": {
+        "+3V3": [
+          "J1.1",
+          "J2.1",
+          "U1.1",
+          "C1.1",
+          "R2.2",
+          "R3.2",
+          "TP9.1"
+        ],
+        "+5V": [
+          "J1.2",
+          "J2.2",
+          "U1.9",
+          "C2.1",
+          "C3.1",
+          "C4.1",
+          "TP8.1"
+        ],
+        "BUS_N": [
+          "U1.18",
+          "U1.19",
+          "D1.2",
+          "R4.2",
+          "J3.2"
+        ],
+        "BUS_P": [
+          "U1.17",
+          "U1.20",
+          "D1.1",
+          "SJ1.1",
+          "J3.1"
+        ],
+        "CHAIN_P3": [
+          "J2.3",
+          "JP3.2"
+        ],
+        "CHAIN_P4": [
+          "J2.4",
+          "JP4.2"
+        ],
+        "CHAIN_P5": [
+          "J2.5",
+          "JP5.2"
+        ],
+        "CHAIN_P6": [
+          "J2.6",
+          "JP6.2"
+        ],
+        "CHAIN_P7": [
+          "J2.7",
+          "JP7.2"
+        ],
+        "CHAIN_P8": [
+          "J2.8",
+          "JP8.2"
+        ],
+        "CHAIN_P9": [
+          "J2.9",
+          "JP9.2"
+        ],
+        "GAD_P3": [
+          "J1.3",
+          "JP3.1"
+        ],
+        "GAD_P7": [
+          "J1.7",
+          "JP7.1"
+        ],
+        "GAD_P8": [
+          "J1.8",
+          "JP8.1"
+        ],
+        "GAD_P9": [
+          "J1.9",
+          "JP9.1"
+        ],
+        "GND": [
+          "J1.10",
+          "J2.10",
+          "U1.6",
+          "U1.10",
+          "C1.2",
+          "C2.2",
+          "C3.2",
+          "C4.2",
+          "R1.2",
+          "TP4.1",
+          "TP10.1"
+        ],
+        "GND2_OUT": [
+          "U1.11",
+          "U1.13",
+          "C5.2",
+          "C6.2",
+          "C7.2",
+          "FB2.1"
+        ],
+        "GND_ISO": [
+          "U1.14",
+          "U1.15",
+          "FB2.2",
+          "C8.2",
+          "C9.2",
+          "D1.3",
+          "J3.3",
+          "TP6.1"
+        ],
+        "ISO_FLT_N": [
+          "U1.8",
+          "R3.1",
+          "TP7.1"
+        ],
+        "RS485_DIR": [
+          "J1.6",
+          "JP6.1",
+          "U1.3",
+          "U1.5",
+          "R1.1",
+          "TP1.1"
+        ],
+        "TERM_MID": [
+          "SJ1.2",
+          "R4.1"
+        ],
+        "UART_RX": [
+          "J1.5",
+          "JP5.1",
+          "U1.4",
+          "R2.1",
+          "TP3.1"
+        ],
+        "UART_TX": [
+          "J1.4",
+          "JP4.1",
+          "U1.2",
+          "TP2.1"
+        ],
+        "VISO_IN": [
+          "U1.16",
+          "FB1.2",
+          "C8.1",
+          "C9.1",
+          "TP5.1"
+        ],
+        "VISO_OUT": [
+          "U1.12",
+          "C5.1",
+          "C6.1",
+          "C7.1",
+          "FB1.1"
+        ]
+      },
+      "verification_checks": [
+        "J1.pins equals gadgeteer_pin_map host_net; J2.pins equals chain_net; JP3..JP9 join host_net and CHAIN_Pn; JP4/JP5/JP6 and SJ1 use the Open footprint, the others Bridged.",
+        "Every pin of every part: contract == schematic netlist == PCB pad net (gate-board verify.py pattern), 0 mismatches; U1 pin map equals datasheet table 5-1.",
+        "Netlist split: GND vs GND_ISO different nets; the only parts connected to both domains are U1 (galvanic isolation inside the package); no net contains both HOST and FIELD pads.",
+        "Saved PCB: no copper inside the barrier strip y 18.7..26.3 on F.Cu/B.Cu; minimum HOST-to-FIELD copper distance measured >= 7.5 mm; no copper within 4 mm of U1.11/U1.12 other than the allowed VISO_OUT/GND2_OUT parts.",
+        "C4 and C5 (0402) pad centres within 1.5 mm of U1 pins 9/10 and 11/12 respectively (TI < 1 mm to the pins); VDD/GND1 and VISOOUT/GND2 traces to their caps symmetric (+-0.5 mm length).",
+        "Custom DRC rule isolation_barrier present and proven active by a temporary violation.",
+        "GND and GND_ISO zones filled, area > 0 on each layer that has them, no isolated islands (read back after refill).",
+        "BUS_P/BUS_N pair: equal length +-2 mm, 0.3 mm width, only D1 and the SJ1/R4 branch as stubs.",
+        "Mounting holes have no net; spacing 20.0 mm; body keepout >= 3.2 mm.",
+        "Board outline equals pcb.width_mm x pcb.height_mm and is within outline_limit_mm.",
+        "Populated render PNGs differ by SHA-256 from placement-stage renders and show routed copper and every 3D model (U1, J1-J3, passives)."
+      ],
+      "stop_criteria": [
+        "KiCad 9.0.8 ERC: 0 violations, no downgrades or exclusions.",
+        "KiCad 9.0.8 DRC with schematic parity on the saved PCB: 0 violations, 0 unconnected, 0 parity issues, re-run by an independent step.",
+        "All verification_checks pass; independent verify.py-pattern check 0 mismatches.",
+        "Outline within outline_limit_mm; actual size reported.",
+        "Complete render set in versions/vNN/renders/ with the rs485- prefix; models visible.",
+        "Per-version checklist review covers all 132 items with status and evidence (counts reconcile to 132).",
+        "Status is cad-clean-unqualified at best, labelled UNSUITABLE FOR FABRICATION until human review (hazard class mains-or-hazardous)."
+      ],
+      "open_assumptions": [
+        "Q11: ISOW1412 chosen over ADM2587E and the original MAX3485; VIO must not be absent while VDD is present.",
+        "Q12: D+/D- naming versus the Huanyang RS+/RS- terminals unverified.",
+        "Q19: working voltage <= 60 V DC on the field side; spacing derivation open; 7.6 mm pad gap below the 8 mm package value.",
+        "Q17: BLM15EX331SN1D rating unverified; 10 uF bias derating open."
+      ]
+    }
+  },
+  "overrides_of_design_md": [
+    "design.md \"Decisions blocked before KiCad\" are resolved by resolved_items B1-B5.",
+    "design.md pin-table TBD rows are replaced by boards[*].gadgeteer_pin_map.",
+    "design.md \"Place host and field connectors on opposing edges\" is kept (north/south).",
+    "design.md \"galvanic isolation wherever the external controller demands it\" is applied to both boards by default, which differs from the historical shared-ground analog board."
+  ],
+  "open_assumptions": [
+    "See questions.md Q1-Q33 for the full list; the five highest-risk: Q9 PWM frequency vs optocoupler speed, Q10 VFD interface assumptions, Q19 isolation spacing derivation, Q6 no V2 spindle firmware, Q11 isolator choice."
+  ]
+}

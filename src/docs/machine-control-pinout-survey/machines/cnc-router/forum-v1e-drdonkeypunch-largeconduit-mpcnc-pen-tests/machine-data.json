@@ -1,0 +1,26 @@
+{
+  "id": "forum-v1e-drdonkeypunch-largeconduit-mpcnc-pen-tests",
+  "sources": {
+    "forum-peripheral-evidence.json": {
+      "id": "forum-v1e-drdonkeypunch-largeconduit-mpcnc-pen-tests",
+      "dossier": "src/docs/machine-research/v1e-drdonkeypunch-largeconduit-mpcnc-pen-tests.md",
+      "reported_fitted_or_used": [],
+      "listed_for_build_unverified": [],
+      "historical_reference": [],
+      "planned_only": [],
+      "open_function_group": [],
+      "exclusions": [
+        {
+          "name": "Spindle not fitted at pen-test stage",
+          "contacts": [],
+          "source_line_number": 5,
+          "source_line": "**Commissioning/use state:** The owner said he had built for about a week after receiving hardware. He had not mounted a spindle yet and was running pen tests. In the cited posts he expressed uncertainty about whether the paired gantries stayed square under motion and reported inconsistent paper test results. The thread does not document a later confirmed fix or a completed milling job.",
+          "evidence": "**Commissioning/use state:** The owner said he had built for about a week after receiving hardware. He had not mounted a spindle yet and was running pen tests.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route",
+          "reason": "Excluded: no separate externally addressable interface, existing control hardware, absent tooling, or inadequate positive device evidence in this dossier."
+        }
+      ],
+      "source_gap": "Dossier does not establish an as-built SmoothieBox route or a complete physical contact schedule for the listed peripherals."
+    }
+  }
+}

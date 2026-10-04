@@ -1,0 +1,82 @@
+{
+  "id": "forum-cnczone-brother-tc225-pivotalcustoms-jeff-retrofit",
+  "sources": {
+    "forum-peripheral-evidence.json": {
+      "id": "forum-cnczone-brother-tc225-pivotalcustoms-jeff-retrofit",
+      "dossier": "src/docs/machine-research/cnczone-brother-tc225-pivotalcustoms-jeff-retrofit.md",
+      "reported_fitted_or_used": [
+        {
+          "name": "Fuji SC-N3 main contactor",
+          "contacts": [],
+          "source_line_number": 24,
+          "source_line": "| Main contactor and voltage conversion | Replaced the MCC contactor with a Fuji SC-N3 using a 240 VAC coil. Added a 150 VA buck transformer for the ATC motor and coolant-pump motor; the owner describes dropping about 48 V to suit the original 200 V loads. A voltage monitor is intended to prevent energizing unless the rotary phase converter is running. | Components and rationale are owner-reported. No complete mains, transformer, or contactor schematic is provided. |",
+          "evidence": "Replaced the MCC contactor with a Fuji SC-N3 using a 240 VAC coil. Added a 150 VA buck transformer for the ATC motor and coolant-pump motor; the owner describes dropping about 48 V to suit the original 200 V loads.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        },
+        {
+          "name": "Coolant-pump contactor and CKD 24 V solenoid",
+          "contacts": [],
+          "source_line_number": 26,
+          "source_line": "| Coolant | Added a contactor for the pump motor and replaced an original 100 VAC solenoid valve with a CKD 24 VDC valve. The owner plans a recirculation/manual-washdown/flood-coolant arrangement and G-code or HAL behavior around tool changes. | The proposed plumbing and automation are unfinished; do not present as an operating feature. |",
+          "evidence": "Added a contactor for the pump motor and replaced an original 100 VAC solenoid valve with a CKD 24 VDC valve. The owner plans a recirculation/manual-washdown/flood-coolant arrangement and G-code or HAL behavior around tool changes.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        },
+        {
+          "name": "24 V cabinet fans and thermostat",
+          "contacts": [],
+          "source_line_number": 27,
+          "source_line": "| Cabinet auxiliaries | Replaced 100 VAC heat-exchanger fans with 24 VDC fans and wired a thermostat; added a 24 VDC work light. Owner reports rearranging wiring paths and replacing an 8-relay board with slim Murrelektronik relays. | Exact fan, relay, and terminal models are not fully given. |",
+          "evidence": "Replaced 100 VAC heat-exchanger fans with 24 VDC fans and wired a thermostat; added a 24 VDC work light. Owner reports rearranging wiring paths and replacing an 8-relay board with slim Murrelektronik relays.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        },
+        {
+          "name": "24 VDC work light",
+          "contacts": [],
+          "source_line_number": 27,
+          "source_line": "| Cabinet auxiliaries | Replaced 100 VAC heat-exchanger fans with 24 VDC fans and wired a thermostat; added a 24 VDC work light. Owner reports rearranging wiring paths and replacing an 8-relay board with slim Murrelektronik relays. | Exact fan, relay, and terminal models are not fully given. |",
+          "evidence": "Replaced 100 VAC heat-exchanger fans with 24 VDC fans and wired a thermostat; added a 24 VDC work light. Owner reports rearranging wiring paths and replacing an 8-relay board with slim Murrelektronik relays.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        },
+        {
+          "name": "Pilz safety relay",
+          "source_line_number": 28,
+          "source_line": "| Emergency stop / safety relay | Owner reports adding a Pilz safety relay, with a single-chain E-stop arrangement because the MPG and E-stop buttons do not support dual-chain wiring; the Mesa receives a feedback input and the relay receives contactor-coil feedback. | This is a description of the owner\u2019s in-progress hobby installation. The forum does not show a safety validation or certified design. |",
+          "evidence": "Owner reports adding a Pilz safety relay, with a single-chain E-stop arrangement because the MPG and E-stop buttons do not support dual-chain wiring; the Mesa receives a feedback input and the relay receives contactor-coil feedback.",
+          "contacts": [],
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        },
+        {
+          "name": "ATC motor SBR32-ZP brake pack",
+          "contacts": [],
+          "source_line_number": 25,
+          "source_line": "| ATC motor/brake | Wired an SBR32-ZP brake pack for the ATC motor and added circuit protection for that motor. | Motor/drive model, brake circuit terminals, ATC sequence and tool-change commissioning are not stated. |",
+          "evidence": "Wired an SBR32-ZP brake pack for the ATC motor and added circuit protection for that motor.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        },
+        {
+          "name": "150 VA ATC buck transformer",
+          "contacts": [],
+          "source_line_number": 24,
+          "source_line": "| Main contactor and voltage conversion | Replaced the MCC contactor with a Fuji SC-N3 using a 240 VAC coil. Added a 150 VA buck transformer for the ATC motor and coolant-pump motor; the owner describes dropping about 48 V to suit the original 200 V loads. A voltage monitor is intended to prevent energizing unless the rotary phase converter is running. | Components and rationale are owner-reported. No complete mains, transformer, or contactor schematic is provided. |",
+          "evidence": "Added a 150 VA buck transformer for the ATC motor and coolant-pump motor; the owner describes dropping about 48 V to suit the original 200 V loads. A voltage monitor is intended to prevent energizing unless the rotary phase converter is running.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        }
+      ],
+      "listed_for_build_unverified": [
+        {
+          "name": "MIGE servo motors purchase only",
+          "contacts": [],
+          "source_line_number": 29,
+          "source_line": "| Servo motors | The original owner had reported buying two 1 kW MIGE servos for X/Y and one 1.8 kW MIGE servo for Z. The new owner\u2019s remaining-work list says servo tuning remains. | The 2026 owner does not re-identify the installed motors by model or confirm that all 2014 parts were retained. Preserve the 2014 values as historical, not a verified current bill of materials. |",
+          "evidence": "The original owner had reported buying two 1 kW MIGE servos for X/Y and one 1.8 kW MIGE servo for Z. The new owner\u2019s remaining-work list says servo tuning remains.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        }
+      ],
+      "historical_reference": [],
+      "planned_only": [],
+      "open_function_group": [],
+      "exclusions": [],
+      "source_gap": "Dossier does not establish an as-built SmoothieBox route or a complete physical contact schedule for the listed peripherals."
+    }
+  }
+}

@@ -1,0 +1,732 @@
+{
+  "profile_id": "wiki-142",
+  "devices": [
+    {
+      "id": "eventorbot-listed-peripherals",
+      "role": "peripheral"
+    },
+    {
+      "id": "sanguinololu-13a-bom-reference",
+      "role": "reference"
+    }
+  ],
+  "connectors": [
+    {
+      "id": "eventorbot-x-motor-leads",
+      "device": "eventorbot-listed-peripherals",
+      "refdes": "X-axis NEMA 17 motor · 4-wire lead group",
+      "form": "Four source-counted motor conductors; connector form unknown",
+      "scope": "RepRap Eventorbot 1.2 BOM lists three four-wire NEMA 17 motors. This editorial group represents one four-conductor motor lead set only; physical axis assignment, connector housing/cavity map, coil pairings, motor variant, and local installation are unverified.",
+      "contacts": [
+        {
+          "id": "1",
+          "mark": "1",
+          "label": "X-motor lead slot 1 · function/pairing unknown; editorial conductor slot, not a connector cavity",
+          "fact": "form_inventory_only"
+        },
+        {
+          "id": "2",
+          "mark": "2",
+          "label": "X-motor lead slot 2 · function/pairing unknown; editorial conductor slot, not a connector cavity",
+          "fact": "form_inventory_only"
+        },
+        {
+          "id": "3",
+          "mark": "3",
+          "label": "X-motor lead slot 3 · function/pairing unknown; editorial conductor slot, not a connector cavity",
+          "fact": "form_inventory_only"
+        },
+        {
+          "id": "4",
+          "mark": "4",
+          "label": "X-motor lead slot 4 · function/pairing unknown; editorial conductor slot, not a connector cavity",
+          "fact": "form_inventory_only"
+        }
+      ]
+    },
+    {
+      "id": "eventorbot-y-motor-leads",
+      "device": "eventorbot-listed-peripherals",
+      "refdes": "Y-axis NEMA 17 motor · 4-wire lead group",
+      "form": "Four source-counted motor conductors; connector form unknown",
+      "scope": "RepRap Eventorbot 1.2 BOM lists three four-wire NEMA 17 motors. This editorial group represents one four-conductor motor lead set only; physical axis assignment, connector housing/cavity map, coil pairings, motor variant, and local installation are unverified.",
+      "contacts": [
+        {
+          "id": "1",
+          "mark": "1",
+          "label": "Y-motor lead slot 1 · function/pairing unknown; editorial conductor slot, not a connector cavity",
+          "fact": "form_inventory_only"
+        },
+        {
+          "id": "2",
+          "mark": "2",
+          "label": "Y-motor lead slot 2 · function/pairing unknown; editorial conductor slot, not a connector cavity",
+          "fact": "form_inventory_only"
+        },
+        {
+          "id": "3",
+          "mark": "3",
+          "label": "Y-motor lead slot 3 · function/pairing unknown; editorial conductor slot, not a connector cavity",
+          "fact": "form_inventory_only"
+        },
+        {
+          "id": "4",
+          "mark": "4",
+          "label": "Y-motor lead slot 4 · function/pairing unknown; editorial conductor slot, not a connector cavity",
+          "fact": "form_inventory_only"
+        }
+      ]
+    },
+    {
+      "id": "eventorbot-z-motor-leads",
+      "device": "eventorbot-listed-peripherals",
+      "refdes": "Z-axis NEMA 17 motor · 4-wire lead group",
+      "form": "Four source-counted motor conductors; connector form unknown",
+      "scope": "RepRap Eventorbot 1.2 BOM lists three four-wire NEMA 17 motors. This editorial group represents one four-conductor motor lead set only; physical axis assignment, connector housing/cavity map, coil pairings, motor variant, and local installation are unverified.",
+      "contacts": [
+        {
+          "id": "1",
+          "mark": "1",
+          "label": "Z-motor lead slot 1 · function/pairing unknown; editorial conductor slot, not a connector cavity",
+          "fact": "form_inventory_only"
+        },
+        {
+          "id": "2",
+          "mark": "2",
+          "label": "Z-motor lead slot 2 · function/pairing unknown; editorial conductor slot, not a connector cavity",
+          "fact": "form_inventory_only"
+        },
+        {
+          "id": "3",
+          "mark": "3",
+          "label": "Z-motor lead slot 3 · function/pairing unknown; editorial conductor slot, not a connector cavity",
+          "fact": "form_inventory_only"
+        },
+        {
+          "id": "4",
+          "mark": "4",
+          "label": "Z-motor lead slot 4 · function/pairing unknown; editorial conductor slot, not a connector cavity",
+          "fact": "form_inventory_only"
+        }
+      ]
+    },
+    {
+      "id": "eventorbot-extruder-motor",
+      "device": "eventorbot-listed-peripherals",
+      "refdes": "Geared extruder stepper · PG35L-048",
+      "form": "Motor/connector contact schedule unknown",
+      "scope": "RepRap Eventorbot 1.2 BOM names a geared PG35L-048 extruder stepper. The cited Eventorbot source does not state lead count, coil pairing, connector form, or local installed variant.",
+      "contacts": []
+    },
+    {
+      "id": "eventorbot-endstop-switches",
+      "device": "eventorbot-listed-peripherals",
+      "refdes": "Four push-button momentary endstop switches · axis assignment unknown",
+      "form": "Switch terminal count and connector form unknown",
+      "scope": "RepRap Eventorbot 1.2 BOM lists four push-button momentary endstop switches. It does not assign each switch to an axis or publish switch terminals, harness contacts, or a connector map.",
+      "contacts": []
+    },
+    {
+      "id": "eventorbot-power-jack",
+      "device": "eventorbot-listed-peripherals",
+      "refdes": "Panel-mount DC power jack · 5.5 mm × 2.1 mm",
+      "form": "Female barrel-jack dimensions stated; terminal/contact schedule unknown",
+      "scope": "RepRap Eventorbot 1.2 BOM lists one 5.5 mm × 2.1 mm female panel-mount DC jack and a 12 V, 5 A supply (12 A if an optional heated bed is used). Jack terminal count, polarity, contact identity, selected power brick, and physical installation are unspecified.",
+      "contacts": []
+    },
+    {
+      "id": "eventorbot-hotend-resistor",
+      "device": "eventorbot-listed-peripherals",
+      "refdes": "Hotend heater resistor · 5.6 Ω / 5 W",
+      "form": "Two component leads; connector/harness identity unknown",
+      "scope": "RepRap Eventorbot 1.2 BOM specifies one 5.6 Ω, 5 W hotend resistor. The two terminal leads are component leads, not numbered connector cavities; harness, polarity convention, control, and local installation are unverified.",
+      "contacts": [
+        {
+          "id": "lead-1",
+          "mark": "lead 1",
+          "label": "Hotend resistor component lead · circuit endpoint unknown",
+          "fact": "form_inventory_only"
+        },
+        {
+          "id": "lead-2",
+          "mark": "lead 2",
+          "label": "Hotend resistor component lead · circuit endpoint unknown",
+          "fact": "form_inventory_only"
+        }
+      ]
+    },
+    {
+      "id": "eventorbot-optional-heated-bed",
+      "device": "eventorbot-listed-peripherals",
+      "refdes": "Optional heated bed · not established as fitted",
+      "form": "Contact/connector schedule unknown",
+      "scope": "Eventorbot BOM says its DC jack/supply should be upgraded if a heated bed is chosen. This is an optional design branch only; no bed, heater, connector, or contact schedule is established for a physical machine.",
+      "contacts": []
+    },
+    {
+      "id": "sanguinololu-x-driver-socket",
+      "device": "sanguinololu-13a-bom-reference",
+      "refdes": "Sanguinololu 1.3a X stepper-driver socket · 16-position header",
+      "form": "16-position female pin header per source assembly parts list",
+      "scope": "RepRap Eventorbot 1.2 BOM names a Sanguinololu 1.3a motherboard with stepper drivers. Sanguinololu assembly instructions list four 16-pin female headers and its board features name X/Y/Z/Extruder driver positions. These are design-reference header positions only; pin functions, installed board, driver modules, and mating orientation are unverified.",
+      "contacts": [
+        {
+          "id": "1",
+          "mark": "1",
+          "label": "X driver-carrier socket form position 1 · function not transcribed from the board schematic",
+          "fact": "form_inventory_only"
+        },
+        {
+          "id": "2",
+          "mark": "2",
+          "label": "X driver-carrier socket form position 2 · function not transcribed from the board schematic",
+          "fact": "form_inventory_only"
+        },
+        {
+          "id": "3",
+          "mark": "3",
+          "label": "X driver-carrier socket form position 3 · function not transcribed from the board schematic",
+          "fact": "form_inventory_only"
+        },
+        {
+          "id": "4",
+          "mark": "4",
+          "label": "X driver-carrier socket form position 4 · function not transcribed from the board schematic",
+          "fact": "form_inventory_only"
+        },
+        {
+          "id": "5",
+          "mark": "5",
+          "label": "X driver-carrier socket form position 5 · function not transcribed from the board schematic",
+          "fact": "form_inventory_only"
+        },
+        {
+          "id": "6",
+          "mark": "6",
+          "label": "X driver-carrier socket form position 6 · function not transcribed from the board schematic",
+          "fact": "form_inventory_only"
+        },
+        {
+          "id": "7",
+          "mark": "7",
+          "label": "X driver-carrier socket form position 7 · function not transcribed from the board schematic",
+          "fact": "form_inventory_only"
+        },
+        {
+          "id": "8",
+          "mark": "8",
+          "label": "X driver-carrier socket form position 8 · function not transcribed from the board schematic",
+          "fact": "form_inventory_only"
+        },
+        {
+          "id": "9",
+          "mark": "9",
+          "label": "X driver-carrier socket form position 9 · function not transcribed from the board schematic",
+          "fact": "form_inventory_only"
+        },
+        {
+          "id": "10",
+          "mark": "10",
+          "label": "X driver-carrier socket form position 10 · function not transcribed from the board schematic",
+          "fact": "form_inventory_only"
+        },
+        {
+          "id": "11",
+          "mark": "11",
+          "label": "X driver-carrier socket form position 11 · function not transcribed from the board schematic",
+          "fact": "form_inventory_only"
+        },
+        {
+          "id": "12",
+          "mark": "12",
+          "label": "X driver-carrier socket form position 12 · function not transcribed from the board schematic",
+          "fact": "form_inventory_only"
+        },
+        {
+          "id": "13",
+          "mark": "13",
+          "label": "X driver-carrier socket form position 13 · function not transcribed from the board schematic",
+          "fact": "form_inventory_only"
+        },
+        {
+          "id": "14",
+          "mark": "14",
+          "label": "X driver-carrier socket form position 14 · function not transcribed from the board schematic",
+          "fact": "form_inventory_only"
+        },
+        {
+          "id": "15",
+          "mark": "15",
+          "label": "X driver-carrier socket form position 15 · function not transcribed from the board schematic",
+          "fact": "form_inventory_only"
+        },
+        {
+          "id": "16",
+          "mark": "16",
+          "label": "X driver-carrier socket form position 16 · function not transcribed from the board schematic",
+          "fact": "form_inventory_only"
+        }
+      ]
+    },
+    {
+      "id": "sanguinololu-y-driver-socket",
+      "device": "sanguinololu-13a-bom-reference",
+      "refdes": "Sanguinololu 1.3a Y stepper-driver socket · 16-position header",
+      "form": "16-position female pin header per source assembly parts list",
+      "scope": "RepRap Eventorbot 1.2 BOM names a Sanguinololu 1.3a motherboard with stepper drivers. Sanguinololu assembly instructions list four 16-pin female headers and its board features name X/Y/Z/Extruder driver positions. These are design-reference header positions only; pin functions, installed board, driver modules, and mating orientation are unverified.",
+      "contacts": [
+        {
+          "id": "1",
+          "mark": "1",
+          "label": "Y driver-carrier socket form position 1 · function not transcribed from the board schematic",
+          "fact": "form_inventory_only"
+        },
+        {
+          "id": "2",
+          "mark": "2",
+          "label": "Y driver-carrier socket form position 2 · function not transcribed from the board schematic",
+          "fact": "form_inventory_only"
+        },
+        {
+          "id": "3",
+          "mark": "3",
+          "label": "Y driver-carrier socket form position 3 · function not transcribed from the board schematic",
+          "fact": "form_inventory_only"
+        },
+        {
+          "id": "4",
+          "mark": "4",
+          "label": "Y driver-carrier socket form position 4 · function not transcribed from the board schematic",
+          "fact": "form_inventory_only"
+        },
+        {
+          "id": "5",
+          "mark": "5",
+          "label": "Y driver-carrier socket form position 5 · function not transcribed from the board schematic",
+          "fact": "form_inventory_only"
+        },
+        {
+          "id": "6",
+          "mark": "6",
+          "label": "Y driver-carrier socket form position 6 · function not transcribed from the board schematic",
+          "fact": "form_inventory_only"
+        },
+        {
+          "id": "7",
+          "mark": "7",
+          "label": "Y driver-carrier socket form position 7 · function not transcribed from the board schematic",
+          "fact": "form_inventory_only"
+        },
+        {
+          "id": "8",
+          "mark": "8",
+          "label": "Y driver-carrier socket form position 8 · function not transcribed from the board schematic",
+          "fact": "form_inventory_only"
+        },
+        {
+          "id": "9",
+          "mark": "9",
+          "label": "Y driver-carrier socket form position 9 · function not transcribed from the board schematic",
+          "fact": "form_inventory_only"
+        },
+        {
+          "id": "10",
+          "mark": "10",
+          "label": "Y driver-carrier socket form position 10 · function not transcribed from the board schematic",
+          "fact": "form_inventory_only"
+        },
+        {
+          "id": "11",
+          "mark": "11",
+          "label": "Y driver-carrier socket form position 11 · function not transcribed from the board schematic",
+          "fact": "form_inventory_only"
+        },
+        {
+          "id": "12",
+          "mark": "12",
+          "label": "Y driver-carrier socket form position 12 · function not transcribed from the board schematic",
+          "fact": "form_inventory_only"
+        },
+        {
+          "id": "13",
+          "mark": "13",
+          "label": "Y driver-carrier socket form position 13 · function not transcribed from the board schematic",
+          "fact": "form_inventory_only"
+        },
+        {
+          "id": "14",
+          "mark": "14",
+          "label": "Y driver-carrier socket form position 14 · function not transcribed from the board schematic",
+          "fact": "form_inventory_only"
+        },
+        {
+          "id": "15",
+          "mark": "15",
+          "label": "Y driver-carrier socket form position 15 · function not transcribed from the board schematic",
+          "fact": "form_inventory_only"
+        },
+        {
+          "id": "16",
+          "mark": "16",
+          "label": "Y driver-carrier socket form position 16 · function not transcribed from the board schematic",
+          "fact": "form_inventory_only"
+        }
+      ]
+    },
+    {
+      "id": "sanguinololu-z-driver-socket",
+      "device": "sanguinololu-13a-bom-reference",
+      "refdes": "Sanguinololu 1.3a Z stepper-driver socket · 16-position header",
+      "form": "16-position female pin header per source assembly parts list",
+      "scope": "RepRap Eventorbot 1.2 BOM names a Sanguinololu 1.3a motherboard with stepper drivers. Sanguinololu assembly instructions list four 16-pin female headers and its board features name X/Y/Z/Extruder driver positions. These are design-reference header positions only; pin functions, installed board, driver modules, and mating orientation are unverified.",
+      "contacts": [
+        {
+          "id": "1",
+          "mark": "1",
+          "label": "Z driver-carrier socket form position 1 · function not transcribed from the board schematic",
+          "fact": "form_inventory_only"
+        },
+        {
+          "id": "2",
+          "mark": "2",
+          "label": "Z driver-carrier socket form position 2 · function not transcribed from the board schematic",
+          "fact": "form_inventory_only"
+        },
+        {
+          "id": "3",
+          "mark": "3",
+          "label": "Z driver-carrier socket form position 3 · function not transcribed from the board schematic",
+          "fact": "form_inventory_only"
+        },
+        {
+          "id": "4",
+          "mark": "4",
+          "label": "Z driver-carrier socket form position 4 · function not transcribed from the board schematic",
+          "fact": "form_inventory_only"
+        },
+        {
+          "id": "5",
+          "mark": "5",
+          "label": "Z driver-carrier socket form position 5 · function not transcribed from the board schematic",
+          "fact": "form_inventory_only"
+        },
+        {
+          "id": "6",
+          "mark": "6",
+          "label": "Z driver-carrier socket form position 6 · function not transcribed from the board schematic",
+          "fact": "form_inventory_only"
+        },
+        {
+          "id": "7",
+          "mark": "7",
+          "label": "Z driver-carrier socket form position 7 · function not transcribed from the board schematic",
+          "fact": "form_inventory_only"
+        },
+        {
+          "id": "8",
+          "mark": "8",
+          "label": "Z driver-carrier socket form position 8 · function not transcribed from the board schematic",
+          "fact": "form_inventory_only"
+        },
+        {
+          "id": "9",
+          "mark": "9",
+          "label": "Z driver-carrier socket form position 9 · function not transcribed from the board schematic",
+          "fact": "form_inventory_only"
+        },
+        {
+          "id": "10",
+          "mark": "10",
+          "label": "Z driver-carrier socket form position 10 · function not transcribed from the board schematic",
+          "fact": "form_inventory_only"
+        },
+        {
+          "id": "11",
+          "mark": "11",
+          "label": "Z driver-carrier socket form position 11 · function not transcribed from the board schematic",
+          "fact": "form_inventory_only"
+        },
+        {
+          "id": "12",
+          "mark": "12",
+          "label": "Z driver-carrier socket form position 12 · function not transcribed from the board schematic",
+          "fact": "form_inventory_only"
+        },
+        {
+          "id": "13",
+          "mark": "13",
+          "label": "Z driver-carrier socket form position 13 · function not transcribed from the board schematic",
+          "fact": "form_inventory_only"
+        },
+        {
+          "id": "14",
+          "mark": "14",
+          "label": "Z driver-carrier socket form position 14 · function not transcribed from the board schematic",
+          "fact": "form_inventory_only"
+        },
+        {
+          "id": "15",
+          "mark": "15",
+          "label": "Z driver-carrier socket form position 15 · function not transcribed from the board schematic",
+          "fact": "form_inventory_only"
+        },
+        {
+          "id": "16",
+          "mark": "16",
+          "label": "Z driver-carrier socket form position 16 · function not transcribed from the board schematic",
+          "fact": "form_inventory_only"
+        }
+      ]
+    },
+    {
+      "id": "sanguinololu-extruder-driver-socket",
+      "device": "sanguinololu-13a-bom-reference",
+      "refdes": "Sanguinololu 1.3a Extruder stepper-driver socket · 16-position header",
+      "form": "16-position female pin header per source assembly parts list",
+      "scope": "RepRap Eventorbot 1.2 BOM names a Sanguinololu 1.3a motherboard with stepper drivers. Sanguinololu assembly instructions list four 16-pin female headers and its board features name X/Y/Z/Extruder driver positions. These are design-reference header positions only; pin functions, installed board, driver modules, and mating orientation are unverified.",
+      "contacts": [
+        {
+          "id": "1",
+          "mark": "1",
+          "label": "Extruder driver-carrier socket form position 1 · function not transcribed from the board schematic",
+          "fact": "form_inventory_only"
+        },
+        {
+          "id": "2",
+          "mark": "2",
+          "label": "Extruder driver-carrier socket form position 2 · function not transcribed from the board schematic",
+          "fact": "form_inventory_only"
+        },
+        {
+          "id": "3",
+          "mark": "3",
+          "label": "Extruder driver-carrier socket form position 3 · function not transcribed from the board schematic",
+          "fact": "form_inventory_only"
+        },
+        {
+          "id": "4",
+          "mark": "4",
+          "label": "Extruder driver-carrier socket form position 4 · function not transcribed from the board schematic",
+          "fact": "form_inventory_only"
+        },
+        {
+          "id": "5",
+          "mark": "5",
+          "label": "Extruder driver-carrier socket form position 5 · function not transcribed from the board schematic",
+          "fact": "form_inventory_only"
+        },
+        {
+          "id": "6",
+          "mark": "6",
+          "label": "Extruder driver-carrier socket form position 6 · function not transcribed from the board schematic",
+          "fact": "form_inventory_only"
+        },
+        {
+          "id": "7",
+          "mark": "7",
+          "label": "Extruder driver-carrier socket form position 7 · function not transcribed from the board schematic",
+          "fact": "form_inventory_only"
+        },
+        {
+          "id": "8",
+          "mark": "8",
+          "label": "Extruder driver-carrier socket form position 8 · function not transcribed from the board schematic",
+          "fact": "form_inventory_only"
+        },
+        {
+          "id": "9",
+          "mark": "9",
+          "label": "Extruder driver-carrier socket form position 9 · function not transcribed from the board schematic",
+          "fact": "form_inventory_only"
+        },
+        {
+          "id": "10",
+          "mark": "10",
+          "label": "Extruder driver-carrier socket form position 10 · function not transcribed from the board schematic",
+          "fact": "form_inventory_only"
+        },
+        {
+          "id": "11",
+          "mark": "11",
+          "label": "Extruder driver-carrier socket form position 11 · function not transcribed from the board schematic",
+          "fact": "form_inventory_only"
+        },
+        {
+          "id": "12",
+          "mark": "12",
+          "label": "Extruder driver-carrier socket form position 12 · function not transcribed from the board schematic",
+          "fact": "form_inventory_only"
+        },
+        {
+          "id": "13",
+          "mark": "13",
+          "label": "Extruder driver-carrier socket form position 13 · function not transcribed from the board schematic",
+          "fact": "form_inventory_only"
+        },
+        {
+          "id": "14",
+          "mark": "14",
+          "label": "Extruder driver-carrier socket form position 14 · function not transcribed from the board schematic",
+          "fact": "form_inventory_only"
+        },
+        {
+          "id": "15",
+          "mark": "15",
+          "label": "Extruder driver-carrier socket form position 15 · function not transcribed from the board schematic",
+          "fact": "form_inventory_only"
+        },
+        {
+          "id": "16",
+          "mark": "16",
+          "label": "Extruder driver-carrier socket form position 16 · function not transcribed from the board schematic",
+          "fact": "form_inventory_only"
+        }
+      ]
+    },
+    {
+      "id": "sanguinololu-x-endstop-header",
+      "device": "sanguinololu-13a-bom-reference",
+      "refdes": "Sanguinololu 1.3a X endstop header · three positions",
+      "form": "Three-position connector for 1.3a reference; do not substitute 1.3b2 four-position form",
+      "scope": "The RepRap Sanguinololu page recommends connecting a mechanical switch C/NO to the two outside GND/SIG positions. Optical/proximity devices can use 5 V or supply voltage selected by the Stop Volt solder link. The page does not say which outside position is GND versus SIG. Its revision history says 1.3b2 replaced the three-pin endstop connector with a four-pin CD-ROM connector; that later revision is excluded here. This 1.3a board is only the Eventorbot design-BOM reference, not a verified installation.",
+      "contacts": [
+        {
+          "id": "1",
+          "mark": "outer position A",
+          "label": "Outer endstop-header position; the outside pair is GND and SIG, but left/right order is not stated",
+          "fact": "source"
+        },
+        {
+          "id": "2",
+          "mark": "center position",
+          "label": "Center endstop-header position · selectable 5 V or supply voltage via Stop Volt link; setting unknown",
+          "fact": "source"
+        },
+        {
+          "id": "3",
+          "mark": "outer position B",
+          "label": "Outer endstop-header position; the outside pair is GND and SIG, but left/right order is not stated",
+          "fact": "source"
+        }
+      ]
+    },
+    {
+      "id": "sanguinololu-y-endstop-header",
+      "device": "sanguinololu-13a-bom-reference",
+      "refdes": "Sanguinololu 1.3a Y endstop header · three positions",
+      "form": "Three-position connector for 1.3a reference; do not substitute 1.3b2 four-position form",
+      "scope": "The RepRap Sanguinololu page recommends connecting a mechanical switch C/NO to the two outside GND/SIG positions. Optical/proximity devices can use 5 V or supply voltage selected by the Stop Volt solder link. The page does not say which outside position is GND versus SIG. Its revision history says 1.3b2 replaced the three-pin endstop connector with a four-pin CD-ROM connector; that later revision is excluded here. This 1.3a board is only the Eventorbot design-BOM reference, not a verified installation.",
+      "contacts": [
+        {
+          "id": "1",
+          "mark": "outer position A",
+          "label": "Outer endstop-header position; the outside pair is GND and SIG, but left/right order is not stated",
+          "fact": "source"
+        },
+        {
+          "id": "2",
+          "mark": "center position",
+          "label": "Center endstop-header position · selectable 5 V or supply voltage via Stop Volt link; setting unknown",
+          "fact": "source"
+        },
+        {
+          "id": "3",
+          "mark": "outer position B",
+          "label": "Outer endstop-header position; the outside pair is GND and SIG, but left/right order is not stated",
+          "fact": "source"
+        }
+      ]
+    },
+    {
+      "id": "sanguinololu-z-endstop-header",
+      "device": "sanguinololu-13a-bom-reference",
+      "refdes": "Sanguinololu 1.3a Z endstop header · three positions",
+      "form": "Three-position connector for 1.3a reference; do not substitute 1.3b2 four-position form",
+      "scope": "The RepRap Sanguinololu page recommends connecting a mechanical switch C/NO to the two outside GND/SIG positions. Optical/proximity devices can use 5 V or supply voltage selected by the Stop Volt solder link. The page does not say which outside position is GND versus SIG. Its revision history says 1.3b2 replaced the three-pin endstop connector with a four-pin CD-ROM connector; that later revision is excluded here. This 1.3a board is only the Eventorbot design-BOM reference, not a verified installation.",
+      "contacts": [
+        {
+          "id": "1",
+          "mark": "outer position A",
+          "label": "Outer endstop-header position; the outside pair is GND and SIG, but left/right order is not stated",
+          "fact": "source"
+        },
+        {
+          "id": "2",
+          "mark": "center position",
+          "label": "Center endstop-header position · selectable 5 V or supply voltage via Stop Volt link; setting unknown",
+          "fact": "source"
+        },
+        {
+          "id": "3",
+          "mark": "outer position B",
+          "label": "Outer endstop-header position; the outside pair is GND and SIG, but left/right order is not stated",
+          "fact": "source"
+        }
+      ]
+    },
+    {
+      "id": "sanguinololu-power-screw-terminal",
+      "device": "sanguinololu-13a-bom-reference",
+      "refdes": "Sanguinololu supply screw terminal · design option",
+      "form": "Two-position DC input terminal; board option and fitted population unknown",
+      "scope": "The RepRap Sanguinololu page describes a 7–35 V screw-terminal supply input and states the negative lead is the pin nearest the screw hole. This is a board-family reference; local board and its selected power option are unverified.",
+      "contacts": [
+        {
+          "id": "1",
+          "mark": "hole-side position",
+          "label": "Supply terminal closest to screw hole · negative lead per source text",
+          "fact": "source"
+        },
+        {
+          "id": "2",
+          "mark": "other position",
+          "label": "Other supply input terminal · source prose does not name its polarity",
+          "fact": "form_inventory_only"
+        }
+      ]
+    },
+    {
+      "id": "sanguinololu-atx4-power",
+      "device": "sanguinololu-13a-bom-reference",
+      "refdes": "Sanguinololu ATX-4 power connector · optional board input",
+      "form": "Four-position ATX-4 connector form; exact pin assignments not transcribed",
+      "scope": "The RepRap Sanguinololu page describes an ATX-4 input option; its revision history says this connector was removed on 1.3b2. The Eventorbot lists a 1.3a board but does not identify which board power connector was populated or used. No ATX contact functions are assigned here.",
+      "contacts": [
+        {
+          "id": "1",
+          "mark": "1",
+          "label": "ATX-4 form position 1 · function not transcribed",
+          "fact": "form_inventory_only"
+        },
+        {
+          "id": "2",
+          "mark": "2",
+          "label": "ATX-4 form position 2 · function not transcribed",
+          "fact": "form_inventory_only"
+        },
+        {
+          "id": "3",
+          "mark": "3",
+          "label": "ATX-4 form position 3 · function not transcribed",
+          "fact": "form_inventory_only"
+        },
+        {
+          "id": "4",
+          "mark": "4",
+          "label": "ATX-4 form position 4 · function not transcribed",
+          "fact": "form_inventory_only"
+        }
+      ]
+    }
+  ],
+  "wires": [],
+  "evidence": {
+    "primary": "RepRap Eventorbot 1.2 parts list and RepRap Sanguinololu board documentation; design references only",
+    "urls": [
+      "https://reprap.org/wiki/Eventorbot_1.2",
+      "https://reprap.org/wiki/Sanguinololu",
+      "https://wiki.reprap.org/wiki/Eventorbot"
+    ],
+    "scope_note": "The Eventorbot BOM names motor, switch, heater, supply, and Sanguinololu 1.3a design groups but does not establish an installed unit or harness. Sanguinololu 1.3a contacts are a distinct reference-board device, not machine-side mating endpoints or SmoothieBox wiring instructions. Four-wire motor conductor indexes and 16-position carrier-socket slots are editorial/form indexes where stated; do not read them as connector-face geometry. Outside endstop contacts are GND/SIG as a set, but their left/right order is not published. Optional power inputs are alternatives, not simultaneous fitted connections. No routes or guesses are selected."
+  }
+}

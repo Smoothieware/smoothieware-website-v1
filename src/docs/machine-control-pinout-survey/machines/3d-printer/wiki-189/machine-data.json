@@ -1,0 +1,60 @@
+{
+  "id": "wiki-189",
+  "sources": {
+    "machine-side-graph-snapshot.json": {
+      "source_graph": "189-wiki-189.json",
+      "source_sha256": "ac28719629753f5bc8811af4ded9552153cc9a3915e57060ebf9d028b2407b0c",
+      "graph": {
+        "profile_id": "wiki-189",
+        "devices": [
+          {
+            "id": "supplement-device-001",
+            "role": "reference"
+          }
+        ],
+        "connectors": [
+          {
+            "id": "supplement-connector-001",
+            "device": "supplement-device-001",
+            "refdes": "Positron V3 support-PCB U7 bed magnetic connector",
+            "form": "1\u00d76 2.2 mm-pitch magnetic pogo connector; orientation unknown",
+            "scope": "Creator support-PCB design Rev 1.0 internally dated 2022-05-01 (PDF filename says 2022-05-20). U7 schematic numbers are source design contacts, not proof of a fitted board, receptacle orientation, bed harness, SKR Pico pin or V2 route. This is a reference for the named source revision; installed-machine correspondence is not established.",
+            "contacts": [
+              {
+                "id": "1",
+                "mark": "1",
+                "label": "BedTempSense"
+              },
+              {
+                "id": "2",
+                "mark": "2",
+                "label": "BedTempGND"
+              },
+              {
+                "id": "3",
+                "mark": "3",
+                "label": "BedGND"
+              },
+              {
+                "id": "4",
+                "mark": "4",
+                "label": "BedGND"
+              },
+              {
+                "id": "5",
+                "mark": "5",
+                "label": "BedVCC"
+              },
+              {
+                "id": "6",
+                "mark": "6",
+                "label": "BedVCC"
+              }
+            ]
+          }
+        ],
+        "wires": []
+      }
+    }
+  }
+}

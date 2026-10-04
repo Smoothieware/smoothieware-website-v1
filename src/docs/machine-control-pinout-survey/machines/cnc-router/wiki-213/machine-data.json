@@ -1,0 +1,53 @@
+{
+  "id": "wiki-213",
+  "sources": {
+    "machine-side-graph-snapshot.json": {
+      "source_graph": "213-wiki-213.json",
+      "source_sha256": "407853122a449093e9e534dc1bd8d6dd3c148a1023d6baea3d8c7a63097f775e",
+      "graph": {
+        "profile_id": "wiki-213",
+        "devices": [
+          {
+            "id": "group-device-001",
+            "role": "reference"
+          },
+          {
+            "id": "group-device-002",
+            "role": "peripheral"
+          },
+          {
+            "id": "group-device-003",
+            "role": "peripheral"
+          }
+        ],
+        "connectors": [
+          {
+            "id": "machine-group-001",
+            "device": "group-device-001",
+            "refdes": "RichAuto A18 controller",
+            "form": "source-described cable / connector group",
+            "scope": "Source names this group, but provides no source-scoped physical contact map. Availability and exact housing are unverified. Connections and pinout",
+            "contacts": []
+          },
+          {
+            "id": "machine-group-002",
+            "device": "group-device-002",
+            "refdes": "Rotary axis",
+            "form": "source-described cable / connector group",
+            "scope": "Source names this group, but provides no source-scoped physical contact map. Availability and exact housing are unverified. Connections and pinout",
+            "contacts": []
+          },
+          {
+            "id": "machine-group-003",
+            "device": "group-device-003",
+            "refdes": "Mist coolant",
+            "form": "source-described cable / connector group",
+            "scope": "Source names this group, but provides no source-scoped physical contact map. Availability and exact housing are unverified. Connections and pinout",
+            "contacts": []
+          }
+        ],
+        "wires": []
+      }
+    }
+  }
+}

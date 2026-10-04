@@ -1,0 +1,42 @@
+{
+  "id": "forum-linuxcnc-mtti-2500x1250-plasma-table",
+  "sources": {
+    "forum-peripheral-evidence.json": {
+      "id": "forum-linuxcnc-mtti-2500x1250-plasma-table",
+      "dossier": "src/docs/machine-research/linuxcnc-mtti-2500x1250-plasma-table.md",
+      "reported_fitted_or_used": [
+        {
+          "name": "Four StepperOnline DM860T drives",
+          "contacts": [],
+          "source_line_number": 15,
+          "source_line": "| Motion/control board | Pico Systems USC board; four StepperOnline DM860T V3.0 drives; four stepper motors with encoders. | Axis-to-drive assignment, encoder use, USC connector/pin mapping, drive switch settings, motor wiring, and IO allocation are absent. |",
+          "evidence": "Pico Systems USC board; four StepperOnline DM860T V3.0 drives; four stepper motors with encoders.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        },
+        {
+          "name": "Hypertherm Powermax 105 SYNC",
+          "contacts": [],
+          "source_line_number": 17,
+          "source_line": "| Plasma source | Hypertherm Powermax 105 SYNC. | Torch interface pins, CNC cable option, Arc OK wiring, cut parameters, and grounding arrangement are not mapped. |",
+          "evidence": "Hypertherm Powermax 105 SYNC.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        }
+      ],
+      "listed_for_build_unverified": [],
+      "historical_reference": [],
+      "planned_only": [],
+      "open_function_group": [
+        {
+          "name": "Four encoder-equipped stepper motors",
+          "contacts": [],
+          "source_line_number": 15,
+          "source_line": "| Motion/control board | Pico Systems USC board; four StepperOnline DM860T V3.0 drives; four stepper motors with encoders. | Axis-to-drive assignment, encoder use, USC connector/pin mapping, drive switch settings, motor wiring, and IO allocation are absent. |",
+          "evidence": "Pico Systems USC board; four StepperOnline DM860T V3.0 drives; four stepper motors with encoders.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        }
+      ],
+      "exclusions": [],
+      "source_gap": "Dossier does not establish an as-built SmoothieBox route or a complete physical contact schedule for the listed peripherals."
+    }
+  }
+}

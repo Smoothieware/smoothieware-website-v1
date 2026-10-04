@@ -1,0 +1,59 @@
+{
+  "id": "forum-cnc-mogul-slb-retrofit",
+  "sources": {
+    "forum-peripheral-evidence.json": {
+      "id": "forum-cnc-mogul-slb-retrofit",
+      "dossier": "src/docs/machine-research/cnc-mogul-slb-retrofit.md",
+      "reported_fitted_or_used": [],
+      "listed_for_build_unverified": [],
+      "historical_reference": [],
+      "planned_only": [],
+      "open_function_group": [
+        {
+          "name": "KL23H2100-35-4A bipolar stepper motors",
+          "contacts": [
+            {
+              "number": "A+",
+              "label": "Black motor conductor",
+              "source_line_number": 17,
+              "source_line": "| A+ | Black |"
+            },
+            {
+              "number": "A\u2212",
+              "label": "Green motor conductor",
+              "source_line_number": 18,
+              "source_line": "| A\u2212 | Green |"
+            },
+            {
+              "number": "B+",
+              "label": "Red motor conductor",
+              "source_line_number": 19,
+              "source_line": "| B+ | Red |"
+            },
+            {
+              "number": "B\u2212",
+              "label": "Blue motor conductor",
+              "source_line_number": 20,
+              "source_line": "| B\u2212 | Blue |"
+            }
+          ],
+          "numbering": "Owner-reported motor coil function and wire color; no connector cavity numbering or axis assignment",
+          "source_line_number": 13,
+          "source_line": "The owner identifies the existing motor as **KL23H2100-35-4A**, a 4-wire bipolar stepper, and records this color assignment:",
+          "evidence": "The owner identifies the existing motor as **KL23H2100-35-4A**, a 4-wire bipolar stepper, and records this color assignment:.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        },
+        {
+          "name": "Limit switches with unreported contacts",
+          "contacts": [],
+          "source_line_number": 4,
+          "source_line": "**Evidence state:** a 2025 owner build/restoration thread reports removal of the original controller, integration of an SLB, direction rewiring, limit setup, and calibration. Connector details are incomplete and some advice in the thread is explicitly tentative.  ",
+          "evidence": "**Evidence state:** a 2025 owner build/restoration thread reports removal of the original controller, integration of an SLB, direction rewiring, limit setup, and calibration. Connector details are incomplete and some advice in the thread is explicitly tentative.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        }
+      ],
+      "exclusions": [],
+      "source_gap": "Dossier does not establish an as-built SmoothieBox route or a complete physical contact schedule for the listed peripherals."
+    }
+  }
+}

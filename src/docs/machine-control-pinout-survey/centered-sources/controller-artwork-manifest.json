@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "assets": [
+    {
+      "filename": "smoothiebox-border-exterior-ch18.svg",
+      "role": "SmoothieBox exterior only; 24 border banks and82 contacts",
+      "bytes": 67345,
+      "sha256": "fccbb00a72235fc106190f584f5f78a7c0a00e2d25059c9c2f5dc30b76c7c2af"
+    },
+    {
+      "filename": "smoothiebox-accessory-header-cards-ch18.svg",
+      "role": "Separate optional Gadgeteer header access;9 cards and90 labelled contacts",
+      "bytes": 56294,
+      "sha256": "231e501a992d4510ba87a8f407d60bfb9b7bfc332a8946cf6b5d37484302a5c0"
+    },
+    {
+      "filename": "prime-p11-explorer-connectors-no-silk.svg",
+      "role": "Prime P11 PCB substrate and45 connector illustrations; no silk",
+      "bytes": 142215,
+      "sha256": "2e6ccb858e43cd0459ed99b60b250da6190d2f56cf3958b10cf7fd03e1475441"
+    },
+    {
+      "filename": "bouni-spindle-analog-v01-top.png",
+      "role": "Unqualified local spindle interface top view",
+      "bytes": 69153,
+      "sha256": "8267844bd5ce060d615dac83f9d47ad941eb489ed843b737495e258cca137c7b"
+    },
+    {
+      "filename": "isolated-proximity-sensor-v01-top.png",
+      "role": "Unqualified local sensor interface top view",
+      "bytes": 66214,
+      "sha256": "8034ef0c89c56821c7e08a6b80d23ac88981b824eb6587b9ea26ca5c51fd32f1"
+    }
+  ],
+  "contact_contract": "real-controller-source-contact-contract.json",
+  "revision_correspondence": "prime-p11-p12-contact-correspondence.json",
+  "interface_render_provenance": "local-interface-render-provenance.json",
+  "smoothiebox": {
+    "border_banks": 24,
+    "border_contacts": 82,
+    "coordinate_space": "0 0 2932 4940",
+    "accessory_headers_are_case_border_banks": false
+  },
+  "prime": {
+    "artwork_revision": "P11",
+    "electrical_contact_correspondence": "P12 functions checked separately; J16 has0.025mm displacement",
+    "connectors": 45,
+    "coordinate_space": "0.0000 0.0000 116.2050 116.0780",
+    "silk_visible": false
+  },
+  "integration_status": "prepared source assets; machine diagrams not yet regenerated"
+}

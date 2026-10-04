@@ -1,0 +1,570 @@
+{
+  "id": "base-26",
+  "sources": {
+    "machine-side-graph-snapshot.json": {
+      "source_graph": "010-base-26.json",
+      "source_sha256": "83e28152a2c0810a05a593885136119681a22d1529b98f0d846e0cf7afcbbbb1",
+      "graph": {
+        "profile_id": "base-26",
+        "devices": [
+          {
+            "id": "peripheral-01",
+            "role": "peripheral"
+          },
+          {
+            "id": "peripheral-02",
+            "role": "peripheral"
+          },
+          {
+            "id": "peripheral-03",
+            "role": "reference"
+          },
+          {
+            "id": "peripheral-04",
+            "role": "reference"
+          },
+          {
+            "id": "peripheral-05",
+            "role": "reference"
+          },
+          {
+            "id": "peripheral-06",
+            "role": "reference"
+          },
+          {
+            "id": "group-device-001",
+            "role": "peripheral"
+          },
+          {
+            "id": "group-device-002",
+            "role": "peripheral"
+          },
+          {
+            "id": "group-device-003",
+            "role": "peripheral"
+          }
+        ],
+        "connectors": [
+          {
+            "id": "machine-01",
+            "device": "peripheral-01",
+            "refdes": "DB25 \u00b7 TurboTaig J9 option",
+            "form": "DB25",
+            "scope": "J9 generic step/dir option; do not combine with J10; numbered contact register, face unverified Machine/peripheral-side contact schedule; fitted presence unverified.",
+            "contacts": [
+              {
+                "id": "1",
+                "mark": "1",
+                "label": "Relay 3"
+              },
+              {
+                "id": "2",
+                "mark": "2",
+                "label": "X direction"
+              },
+              {
+                "id": "3",
+                "mark": "3",
+                "label": "X step"
+              },
+              {
+                "id": "4",
+                "mark": "4",
+                "label": "Y direction"
+              },
+              {
+                "id": "5",
+                "mark": "5",
+                "label": "Y step"
+              },
+              {
+                "id": "6",
+                "mark": "6",
+                "label": "Z direction"
+              },
+              {
+                "id": "7",
+                "mark": "7",
+                "label": "Z step"
+              },
+              {
+                "id": "8",
+                "mark": "8",
+                "label": "A direction"
+              },
+              {
+                "id": "9",
+                "mark": "9",
+                "label": "A step"
+              },
+              {
+                "id": "10",
+                "mark": "10",
+                "label": "Emergency input toward PC; safety path not established"
+              },
+              {
+                "id": "11",
+                "mark": "11",
+                "label": "X limit"
+              },
+              {
+                "id": "12",
+                "mark": "12",
+                "label": "Y limit"
+              },
+              {
+                "id": "13",
+                "mark": "13",
+                "label": "Z limit"
+              },
+              {
+                "id": "14",
+                "mark": "14",
+                "label": "Source says In - Out - Relay 4; internally ambiguous"
+              },
+              {
+                "id": "15",
+                "mark": "15",
+                "label": "A limit"
+              },
+              {
+                "id": "16",
+                "mark": "16",
+                "label": "Relay 1"
+              },
+              {
+                "id": "17",
+                "mark": "17",
+                "label": "Relay 2"
+              },
+              {
+                "id": "18",
+                "mark": "18",
+                "label": "GND per TurboTaig J9 source; no V2 bond selected"
+              },
+              {
+                "id": "19",
+                "mark": "19",
+                "label": "GND per TurboTaig J9 source; no V2 bond selected"
+              },
+              {
+                "id": "20",
+                "mark": "20",
+                "label": "GND per TurboTaig J9 source; no V2 bond selected"
+              },
+              {
+                "id": "21",
+                "mark": "21",
+                "label": "GND per TurboTaig J9 source; no V2 bond selected"
+              },
+              {
+                "id": "22",
+                "mark": "22",
+                "label": "GND per TurboTaig J9 source; no V2 bond selected"
+              },
+              {
+                "id": "23",
+                "mark": "23",
+                "label": "GND per TurboTaig J9 source; no V2 bond selected"
+              },
+              {
+                "id": "24",
+                "mark": "24",
+                "label": "GND per TurboTaig J9 source; no V2 bond selected"
+              },
+              {
+                "id": "25",
+                "mark": "25",
+                "label": "GND per TurboTaig J9 source; no V2 bond selected"
+              }
+            ]
+          },
+          {
+            "id": "machine-02",
+            "device": "peripheral-02",
+            "refdes": "DB25 \u00b7 TurboTaig J10 option",
+            "form": "DB25",
+            "scope": "J10 SuperCam option; do not combine with J9; numbered contact register, face unverified Machine/peripheral-side contact schedule; fitted presence unverified.",
+            "contacts": [
+              {
+                "id": "1",
+                "mark": "1",
+                "label": "NC"
+              },
+              {
+                "id": "2",
+                "mark": "2",
+                "label": "X step"
+              },
+              {
+                "id": "3",
+                "mark": "3",
+                "label": "X direction"
+              },
+              {
+                "id": "4",
+                "mark": "4",
+                "label": "Y step"
+              },
+              {
+                "id": "5",
+                "mark": "5",
+                "label": "Y direction"
+              },
+              {
+                "id": "6",
+                "mark": "6",
+                "label": "Z step"
+              },
+              {
+                "id": "7",
+                "mark": "7",
+                "label": "Z direction"
+              },
+              {
+                "id": "8",
+                "mark": "8",
+                "label": "Relay 1"
+              },
+              {
+                "id": "9",
+                "mark": "9",
+                "label": "Relay 3"
+              },
+              {
+                "id": "10",
+                "mark": "10",
+                "label": "NC"
+              },
+              {
+                "id": "11",
+                "mark": "11",
+                "label": "X limit"
+              },
+              {
+                "id": "12",
+                "mark": "12",
+                "label": "Y limit"
+              },
+              {
+                "id": "13",
+                "mark": "13",
+                "label": "Z limit"
+              },
+              {
+                "id": "14",
+                "mark": "14",
+                "label": "Relay 2"
+              },
+              {
+                "id": "15",
+                "mark": "15",
+                "label": "Relay 4"
+              },
+              {
+                "id": "16",
+                "mark": "16",
+                "label": "NC"
+              },
+              {
+                "id": "17",
+                "mark": "17",
+                "label": "NC"
+              },
+              {
+                "id": "18",
+                "mark": "18",
+                "label": "GND per TurboTaig J10 source; no V2 bond selected"
+              },
+              {
+                "id": "19",
+                "mark": "19",
+                "label": "GND per TurboTaig J10 source; no V2 bond selected"
+              },
+              {
+                "id": "20",
+                "mark": "20",
+                "label": "GND per TurboTaig J10 source; no V2 bond selected"
+              },
+              {
+                "id": "21",
+                "mark": "21",
+                "label": "GND per TurboTaig J10 source; no V2 bond selected"
+              },
+              {
+                "id": "22",
+                "mark": "22",
+                "label": "GND per TurboTaig J10 source; no V2 bond selected"
+              },
+              {
+                "id": "23",
+                "mark": "23",
+                "label": "GND per TurboTaig J10 source; no V2 bond selected"
+              },
+              {
+                "id": "24",
+                "mark": "24",
+                "label": "GND per TurboTaig J10 source; no V2 bond selected"
+              },
+              {
+                "id": "25",
+                "mark": "25",
+                "label": "GND per TurboTaig J10 source; no V2 bond selected"
+              }
+            ]
+          },
+          {
+            "id": "machine-03",
+            "device": "peripheral-03",
+            "refdes": "TurboTaig \u00b7 J1",
+            "form": "source-described connector",
+            "scope": "TurboTaig manual connector roles; locate physical silkscreen because J numbers also name jumpers elsewhere; Source connector revision only; no installed harness, mating view, electrical compatibility or V2 route is proven; middle signal and remaining +5 V positions are not assigned pin numbers Original/reference connector availability unresolved; do not infer retained installation.",
+            "contacts": [
+              {
+                "id": "1",
+                "mark": "1",
+                "label": "GND; source identifies contact 1 only"
+              }
+            ]
+          },
+          {
+            "id": "machine-04",
+            "device": "peripheral-04",
+            "refdes": "TurboTaig \u00b7 J2",
+            "form": "source-described connector",
+            "scope": "TurboTaig manual connector roles; locate physical silkscreen because J numbers also name jumpers elsewhere; Source connector revision only; no installed harness, mating view, electrical compatibility or V2 route is proven; middle signal and remaining +5 V positions are not assigned pin numbers Original/reference connector availability unresolved; do not infer retained installation.",
+            "contacts": [
+              {
+                "id": "1",
+                "mark": "1",
+                "label": "GND; source identifies contact 1 only"
+              }
+            ]
+          },
+          {
+            "id": "machine-05",
+            "device": "peripheral-05",
+            "refdes": "TurboTaig \u00b7 J29",
+            "form": "source-described connector",
+            "scope": "TurboTaig manual connector roles; locate physical silkscreen because J numbers also name jumpers elsewhere; Source connector revision only; no installed harness, mating view, electrical compatibility or V2 route is proven; middle signal and remaining +5 V positions are not assigned pin numbers Original/reference connector availability unresolved; do not infer retained installation.",
+            "contacts": [
+              {
+                "id": "1",
+                "mark": "1",
+                "label": "GND; source identifies contact 1 only"
+              }
+            ]
+          },
+          {
+            "id": "machine-06",
+            "device": "peripheral-06",
+            "refdes": "TurboTaig \u00b7 J30",
+            "form": "source-described connector",
+            "scope": "TurboTaig manual connector roles; locate physical silkscreen because J numbers also name jumpers elsewhere; Source connector revision only; no installed harness, mating view, electrical compatibility or V2 route is proven; middle signal and remaining +5 V positions are not assigned pin numbers Original/reference connector availability unresolved; do not infer retained installation.",
+            "contacts": [
+              {
+                "id": "1",
+                "mark": "1",
+                "label": "GND; source identifies contact 1 only"
+              }
+            ]
+          },
+          {
+            "id": "machine-group-001",
+            "device": "group-device-001",
+            "refdes": "limit",
+            "form": "source-described cable / connector group",
+            "scope": "Source names this group, but provides no source-scoped physical contact map. Availability and exact housing are unverified. exact atlas group labels; open until contact mapping is established",
+            "contacts": []
+          },
+          {
+            "id": "machine-group-002",
+            "device": "group-device-002",
+            "refdes": "emergency",
+            "form": "source-described cable / connector group",
+            "scope": "Source names this group, but provides no source-scoped physical contact map. Availability and exact housing are unverified. exact atlas group labels; open until contact mapping is established",
+            "contacts": []
+          },
+          {
+            "id": "machine-group-003",
+            "device": "group-device-003",
+            "refdes": "enable",
+            "form": "source-described cable / connector group",
+            "scope": "Source names this group, but provides no source-scoped physical contact map. Availability and exact housing are unverified. exact atlas group labels; open until contact mapping is established",
+            "contacts": []
+          }
+        ],
+        "wires": [
+          {
+            "state": "inferred",
+            "kind": "function",
+            "a": {
+              "connector": "v2-j5",
+              "contact": "18"
+            },
+            "b": {
+              "connector": "machine-01",
+              "contact": "2"
+            }
+          },
+          {
+            "state": "inferred",
+            "kind": "function",
+            "a": {
+              "connector": "v2-j5",
+              "contact": "16"
+            },
+            "b": {
+              "connector": "machine-01",
+              "contact": "3"
+            }
+          },
+          {
+            "state": "inferred",
+            "kind": "function",
+            "a": {
+              "connector": "v2-j5",
+              "contact": "24"
+            },
+            "b": {
+              "connector": "machine-01",
+              "contact": "4"
+            }
+          },
+          {
+            "state": "inferred",
+            "kind": "function",
+            "a": {
+              "connector": "v2-j5",
+              "contact": "22"
+            },
+            "b": {
+              "connector": "machine-01",
+              "contact": "5"
+            }
+          },
+          {
+            "state": "inferred",
+            "kind": "function",
+            "a": {
+              "connector": "v2-j5",
+              "contact": "30"
+            },
+            "b": {
+              "connector": "machine-01",
+              "contact": "6"
+            }
+          },
+          {
+            "state": "inferred",
+            "kind": "function",
+            "a": {
+              "connector": "v2-j5",
+              "contact": "28"
+            },
+            "b": {
+              "connector": "machine-01",
+              "contact": "7"
+            }
+          },
+          {
+            "state": "inferred",
+            "kind": "function",
+            "a": {
+              "connector": "v2-j5",
+              "contact": "36"
+            },
+            "b": {
+              "connector": "machine-01",
+              "contact": "8"
+            }
+          },
+          {
+            "state": "inferred",
+            "kind": "function",
+            "a": {
+              "connector": "v2-j5",
+              "contact": "34"
+            },
+            "b": {
+              "connector": "machine-01",
+              "contact": "9"
+            }
+          },
+          {
+            "state": "inferred",
+            "kind": "function",
+            "a": {
+              "connector": "v2-j5",
+              "contact": "16"
+            },
+            "b": {
+              "connector": "machine-02",
+              "contact": "2"
+            }
+          },
+          {
+            "state": "inferred",
+            "kind": "function",
+            "a": {
+              "connector": "v2-j5",
+              "contact": "18"
+            },
+            "b": {
+              "connector": "machine-02",
+              "contact": "3"
+            }
+          },
+          {
+            "state": "inferred",
+            "kind": "function",
+            "a": {
+              "connector": "v2-j5",
+              "contact": "22"
+            },
+            "b": {
+              "connector": "machine-02",
+              "contact": "4"
+            }
+          },
+          {
+            "state": "inferred",
+            "kind": "function",
+            "a": {
+              "connector": "v2-j5",
+              "contact": "24"
+            },
+            "b": {
+              "connector": "machine-02",
+              "contact": "5"
+            }
+          },
+          {
+            "state": "inferred",
+            "kind": "function",
+            "a": {
+              "connector": "v2-j5",
+              "contact": "28"
+            },
+            "b": {
+              "connector": "machine-02",
+              "contact": "6"
+            }
+          },
+          {
+            "state": "inferred",
+            "kind": "function",
+            "a": {
+              "connector": "v2-j5",
+              "contact": "30"
+            },
+            "b": {
+              "connector": "machine-02",
+              "contact": "7"
+            }
+          }
+        ]
+      }
+    }
+  }
+}

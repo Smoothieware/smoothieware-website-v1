@@ -1,0 +1,16 @@
+{
+  "id": "forum-linuxcnc-lutztd-emcoturn-120",
+  "sources": {
+    "forum-peripheral-evidence.json": {
+      "id": "forum-linuxcnc-lutztd-emcoturn-120",
+      "dossier": "src/docs/machine-research/linuxcnc-lutztd-emcoturn-120.md",
+      "reported_fitted_or_used": [],
+      "listed_for_build_unverified": [],
+      "historical_reference": [],
+      "planned_only": [],
+      "open_function_group": [],
+      "exclusions": [],
+      "source_gap": "Dossier does not establish an as-built SmoothieBox route or a complete physical contact schedule for the listed peripherals."
+    }
+  }
+}

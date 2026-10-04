@@ -1,0 +1,68 @@
+{
+  "id": "forum-linuxcnc-todd-zuercher-eight-spindle-gang-router",
+  "sources": {
+    "forum-peripheral-evidence.json": {
+      "id": "forum-linuxcnc-todd-zuercher-eight-spindle-gang-router",
+      "dossier": "src/docs/machine-research/linuxcnc-todd-zuercher-eight-spindle-gang-router.md",
+      "reported_fitted_or_used": [
+        {
+          "name": "Vacuum output load",
+          "contacts": [],
+          "source_line_number": 20,
+          "source_line": "| Vacuum output | `hm2_5i25.0.7i84.0.0.output-14` |",
+          "evidence": "`hm2_5i25.0.7i84.0.0.output-14`.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        }
+      ],
+      "listed_for_build_unverified": [],
+      "historical_reference": [],
+      "planned_only": [],
+      "open_function_group": [
+        {
+          "name": "Eight Z closed-loop stepper drives",
+          "contacts": [],
+          "source_line_number": 5,
+          "source_line": "LinuxCNC Forum member Todd Zuercher describes an eight-spindle gang router with eight independent Z axes driven by closed-loop stepper motors, tandem servos on the Y gantry, and a servo on X. The machine evolved from his first LinuxCNC retrofit. Originally, it had three joints and one servo moving a large aluminium plate carrying all eight spindles; each spindle's depth was adjusted manually. The Y gantry used paired helical rack-and-pinion drives joined by a long torque tube, while X used a servo and leadscrew.",
+          "evidence": "LinuxCNC Forum member Todd Zuercher describes an eight-spindle gang router with eight independent Z axes driven by closed-loop stepper motors, tandem servos on the Y gantry, and a servo on X. The machine evolved from his first LinuxCNC retrofit.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        },
+        {
+          "name": "Eight spindle drive channels",
+          "contacts": [],
+          "source_line_number": 5,
+          "source_line": "LinuxCNC Forum member Todd Zuercher describes an eight-spindle gang router with eight independent Z axes driven by closed-loop stepper motors, tandem servos on the Y gantry, and a servo on X. The machine evolved from his first LinuxCNC retrofit. Originally, it had three joints and one servo moving a large aluminium plate carrying all eight spindles; each spindle's depth was adjusted manually. The Y gantry used paired helical rack-and-pinion drives joined by a long torque tube, while X used a servo and leadscrew.",
+          "evidence": "LinuxCNC Forum member Todd Zuercher describes an eight-spindle gang router with eight independent Z axes driven by closed-loop stepper motors, tandem servos on the Y gantry, and a servo on X. The machine evolved from his first LinuxCNC retrofit.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        },
+        {
+          "name": "J4\u2013J11 home and error sensors",
+          "contacts": [],
+          "source_line_number": 21,
+          "source_line": "| J4 through J11 home inputs | `hm2_5i25.0.7i84.0.0.input-00-not` through `input-07-not` |",
+          "evidence": "`hm2_5i25.0.7i84.0.0.input-00-not` through `input-07-not`.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        },
+        {
+          "name": "Probe input",
+          "contacts": [],
+          "source_line_number": 26,
+          "source_line": "| Probe input | `input-25-not` |",
+          "evidence": "`input-25-not`.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        }
+      ],
+      "exclusions": [
+        {
+          "name": "Tandem Y servos",
+          "contacts": [],
+          "source_line_number": 5,
+          "source_line": "LinuxCNC Forum member Todd Zuercher describes an eight-spindle gang router with eight independent Z axes driven by closed-loop stepper motors, tandem servos on the Y gantry, and a servo on X. The machine evolved from his first LinuxCNC retrofit. Originally, it had three joints and one servo moving a large aluminium plate carrying all eight spindles; each spindle's depth was adjusted manually. The Y gantry used paired helical rack-and-pinion drives joined by a long torque tube, while X used a servo and leadscrew.",
+          "evidence": "LinuxCNC Forum member Todd Zuercher describes an eight-spindle gang router with eight independent Z axes driven by closed-loop stepper motors, tandem servos on the Y gantry, and a servo on X. The machine evolved from his first LinuxCNC retrofit.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route",
+          "reason": "Excluded: no separate externally addressable interface, existing control hardware, absent tooling, or inadequate positive device evidence in this dossier."
+        }
+      ],
+      "source_gap": "Dossier does not establish an as-built SmoothieBox route or a complete physical contact schedule for the listed peripherals."
+    }
+  }
+}

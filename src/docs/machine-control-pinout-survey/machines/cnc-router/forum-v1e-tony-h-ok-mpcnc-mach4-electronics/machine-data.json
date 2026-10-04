@@ -1,0 +1,49 @@
+{
+  "id": "forum-v1e-tony-h-ok-mpcnc-mach4-electronics",
+  "sources": {
+    "forum-peripheral-evidence.json": {
+      "id": "forum-v1e-tony-h-ok-mpcnc-mach4-electronics",
+      "dossier": "src/docs/machine-research/v1e-tony-h-ok-mpcnc-mach4-electronics.md",
+      "reported_fitted_or_used": [
+        {
+          "name": "NPN inductive limit switches",
+          "contacts": [],
+          "source_line_number": 23,
+          "source_line": "| Limits | NPN inductive limit switches | Switch model, supply voltage, output wiring, and input assignments are not supplied. Switch positions still needed adjustment in the latest build post. |",
+          "evidence": "NPN inductive limit switches.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        },
+        {
+          "name": "DM542 stepper drives",
+          "contacts": [],
+          "source_line_number": 22,
+          "source_line": "| Motors/drives | Five Stepper Online 17HS19-2004S1 motors; driver model changed from TB6600 to DM542 | Driver current, step mode, and motor coil/contact assignments are not stated. |",
+          "evidence": "Five Stepper Online 17HS19-2004S1 motors; driver model changed from TB6600 to DM542.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        }
+      ],
+      "listed_for_build_unverified": [],
+      "historical_reference": [],
+      "planned_only": [],
+      "open_function_group": [],
+      "exclusions": [
+        {
+          "name": "ESS is existing controller",
+          "reason": "Existing or proposed controller belongs to the replaced control system, not the machine periphery.",
+          "source_line_number": 11,
+          "source_line": "Tony said he began in winter 2023 and took a phased approach. The build uses 1-inch stainless tubing for the frame and standard MPCNC bearings, fasteners, lead screws, and related hardware. He printed parts in PLA; some were printed with Smooth-On Smooth Cast 326, and he reprinted corner parts with gyroid infill before backfilling them with two-part epoxy. He also placed cut timing belt between the 1-inch tubes and other parts to reduce slippage, used inductive limit switches, and made a custom clamp for a Ridgid R2401 router."
+        },
+        {
+          "name": "Five StepperOnline 17HS19-2004S1 motors",
+          "contacts": [],
+          "source_line_number": 22,
+          "source_line": "| Motors/drives | Five Stepper Online 17HS19-2004S1 motors; driver model changed from TB6600 to DM542 | Driver current, step mode, and motor coil/contact assignments are not stated. |",
+          "evidence": "Five Stepper Online 17HS19-2004S1 motors; driver model changed from TB6600 to DM542",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route",
+          "reason": "Excluded: no separate externally addressable interface, existing control hardware, absent tooling, or inadequate positive device evidence in this dossier."
+        }
+      ],
+      "source_gap": "Dossier does not establish an as-built SmoothieBox route or a complete physical contact schedule for the listed peripherals."
+    }
+  }
+}

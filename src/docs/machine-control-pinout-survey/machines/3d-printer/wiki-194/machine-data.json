@@ -1,0 +1,232 @@
+{
+  "id": "wiki-194",
+  "sources": {
+    "machine-side-graph-snapshot.json": {
+      "source_graph": "194-wiki-194.json",
+      "source_sha256": "f883caec0a5f050ad8d1a71f62572ee07a8d77710223c8836299e176410844a8",
+      "graph": {
+        "profile_id": "wiki-194",
+        "devices": [
+          {
+            "id": "supplement-device-001",
+            "role": "reference"
+          },
+          {
+            "id": "supplement-device-002",
+            "role": "reference"
+          },
+          {
+            "id": "supplement-device-003",
+            "role": "reference"
+          },
+          {
+            "id": "supplement-device-004",
+            "role": "reference"
+          },
+          {
+            "id": "supplement-device-005",
+            "role": "reference"
+          }
+        ],
+        "connectors": [
+          {
+            "id": "supplement-connector-001",
+            "device": "supplement-device-001",
+            "refdes": "MK4 xBuddy J29 ACCELEROMETER",
+            "form": "6-contact manufacturer accessory header; mating view unknown",
+            "scope": "Prusa manufacturer MK4 xBuddy/xLCD board-family accessory-header reference only. MakeICT MK4 fitted board revision, accessories, harness and mating view are unknown; do not transfer this map to MK4S. The stated voltage/current limits are source ratings, not evidence of an electrically compatible V2 route. This is a reference for the named source revision; installed-machine correspondence is not established.",
+            "contacts": [
+              {
+                "id": "1",
+                "mark": "1",
+                "label": "SPI2 CS / PA10, open-drain output; 3.3 V, 5 mA max"
+              },
+              {
+                "id": "2",
+                "mark": "2",
+                "label": "SPI2 SCL / PB10, input/output; 5 V, 5 mA max"
+              },
+              {
+                "id": "3",
+                "mark": "3",
+                "label": "SPI2 SDI / PC3, input/output; 5 V, 5 mA max"
+              },
+              {
+                "id": "4",
+                "mark": "4",
+                "label": "SPI2 SDO / PC2, input/output; 5 V, 5 mA max"
+              },
+              {
+                "id": "5",
+                "mark": "5",
+                "label": "3V3 supply; 50 mA max"
+              },
+              {
+                "id": "6",
+                "mark": "6",
+                "label": "GND"
+              }
+            ]
+          },
+          {
+            "id": "supplement-connector-002",
+            "device": "supplement-device-002",
+            "refdes": "MK4 xBuddy J23 I2C",
+            "form": "4-contact manufacturer accessory header; mating view unknown",
+            "scope": "Prusa manufacturer MK4 xBuddy/xLCD board-family accessory-header reference only. MakeICT MK4 fitted board revision, accessories, harness and mating view are unknown; do not transfer this map to MK4S. The stated voltage/current limits are source ratings, not evidence of an electrically compatible V2 route. This is a reference for the named source revision; installed-machine correspondence is not established.",
+            "contacts": [
+              {
+                "id": "1",
+                "mark": "1",
+                "label": "I2C2 SCL / PF1, input/output; 5 V, 5 mA max"
+              },
+              {
+                "id": "2",
+                "mark": "2",
+                "label": "I2C2 SDA / PF0, input/output; 5 V, 5 mA max"
+              },
+              {
+                "id": "3",
+                "mark": "3",
+                "label": "3V3 supply; 50 mA max"
+              },
+              {
+                "id": "4",
+                "mark": "4",
+                "label": "GND"
+              }
+            ]
+          },
+          {
+            "id": "supplement-connector-003",
+            "device": "supplement-device-003",
+            "refdes": "MK4 xBuddy J15 A_TEMP",
+            "form": "2-contact manufacturer accessory header; mating view unknown",
+            "scope": "Prusa manufacturer MK4 xBuddy/xLCD board-family accessory-header reference only. MakeICT MK4 fitted board revision, accessories, harness and mating view are unknown; do not transfer this map to MK4S. The stated voltage/current limits are source ratings, not evidence of an electrically compatible V2 route. This is a reference for the named source revision; installed-machine correspondence is not established.",
+            "contacts": [
+              {
+                "id": "1",
+                "mark": "1",
+                "label": "THERM3 / PF5, analogue input; 3.3 V max"
+              },
+              {
+                "id": "2",
+                "mark": "2",
+                "label": "GND"
+              }
+            ]
+          },
+          {
+            "id": "supplement-connector-004",
+            "device": "supplement-device-004",
+            "refdes": "MK4 xBuddy J6 MMU",
+            "form": "12-contact manufacturer accessory header; mating view unknown",
+            "scope": "Prusa manufacturer MK4 xBuddy/xLCD board-family accessory-header reference only. MakeICT MK4 fitted board revision, accessories, harness and mating view are unknown; do not transfer this map to MK4S. The stated voltage/current limits are source ratings, not evidence of an electrically compatible V2 route. This is a reference for the named source revision; installed-machine correspondence is not established.",
+            "contacts": [
+              {
+                "id": "1",
+                "mark": "1",
+                "label": "USART6 TX / PC6, input/output; 5 V, 5 mA max"
+              },
+              {
+                "id": "2",
+                "mark": "2",
+                "label": "RS485\u2212; 3.3 V, 250 mA max"
+              },
+              {
+                "id": "3",
+                "mark": "3",
+                "label": "USART6 RX / PC7, input/output; 5 V, 5 mA max"
+              },
+              {
+                "id": "4",
+                "mark": "4",
+                "label": "RS485+; 3.3 V, 250 mA max"
+              },
+              {
+                "id": "5",
+                "mark": "5",
+                "label": "Switchable MMU 5 V / PG2; 5 V, 0.5 A max"
+              },
+              {
+                "id": "6",
+                "mark": "6",
+                "label": "MMU RESET / PG8, open-drain output; 5 V, 5 mA max"
+              },
+              {
+                "id": "7",
+                "mark": "7",
+                "label": "GND"
+              },
+              {
+                "id": "8",
+                "mark": "8",
+                "label": "nAC FAULT output; 3.3 V, 5 mA max"
+              },
+              {
+                "id": "9",
+                "mark": "9",
+                "label": "GND"
+              },
+              {
+                "id": "10",
+                "mark": "10",
+                "label": "Switchable MMU 24 V / PG2; 24 V, 3.6 A max"
+              },
+              {
+                "id": "11",
+                "mark": "11",
+                "label": "GND"
+              },
+              {
+                "id": "12",
+                "mark": "12",
+                "label": "Switchable MMU 24 V / PG2; 24 V, 3.6 A max"
+              }
+            ]
+          },
+          {
+            "id": "supplement-connector-005",
+            "device": "supplement-device-005",
+            "refdes": "MK4 xLCD P11",
+            "form": "6-contact manufacturer accessory header; mating view unknown",
+            "scope": "Prusa manufacturer MK4 xBuddy/xLCD board-family accessory-header reference only. MakeICT MK4 fitted board revision, accessories, harness and mating view are unknown; do not transfer this map to MK4S. The stated voltage/current limits are source ratings, not evidence of an electrically compatible V2 route. This is a reference for the named source revision; installed-machine correspondence is not established.",
+            "contacts": [
+              {
+                "id": "1",
+                "mark": "1",
+                "label": "3.3 V supply; 3.3 V, 50 mA max"
+              },
+              {
+                "id": "2",
+                "mark": "2",
+                "label": "LCD 1-wire / PD11, open-drain output; 5 V, 18.5 mA max"
+              },
+              {
+                "id": "3",
+                "mark": "3",
+                "label": "I2C3 SCL / PA8, input/output; 3.3 V, 5 mA max"
+              },
+              {
+                "id": "4",
+                "mark": "4",
+                "label": "I2C3 SDA / PC9, input/output; 3.3 V, 5 mA max"
+              },
+              {
+                "id": "5",
+                "mark": "5",
+                "label": "GND"
+              },
+              {
+                "id": "6",
+                "mark": "6",
+                "label": "5 V supply; 5 V, 100 mA max"
+              }
+            ]
+          }
+        ],
+        "wires": []
+      }
+    }
+  }
+}

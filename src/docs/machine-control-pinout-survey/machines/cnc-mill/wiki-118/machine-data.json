@@ -1,0 +1,155 @@
+{
+  "id": "wiki-118",
+  "sources": {
+    "machine-side-graph-snapshot.json": {
+      "source_graph": "118-wiki-118.json",
+      "source_sha256": "b6444e1a8606cb4aea4ed51ac2bf4c97142643599dd0eb3095dcb718309d9a57",
+      "graph": {
+        "profile_id": "wiki-118",
+        "devices": [
+          {
+            "id": "peripheral-01",
+            "role": "peripheral"
+          }
+        ],
+        "connectors": [
+          {
+            "id": "machine-01",
+            "device": "peripheral-01",
+            "refdes": "DB25 \u00b7 historical Boxford 190VMC rear port",
+            "form": "DB25",
+            "scope": "historical former-loan 190VMC only; connector face/gender, signal class and every contact function unknown; not the 190VMCxi USB variant or GS-D200S driver IC; numbered contact register, face unverified Original/reference connector availability unresolved; do not infer retained installation.",
+            "contacts": [
+              {
+                "id": "1",
+                "mark": "1",
+                "label": "Function not established for this scoped connector/revision"
+              },
+              {
+                "id": "2",
+                "mark": "2",
+                "label": "Function not established for this scoped connector/revision"
+              },
+              {
+                "id": "3",
+                "mark": "3",
+                "label": "Function not established for this scoped connector/revision"
+              },
+              {
+                "id": "4",
+                "mark": "4",
+                "label": "Function not established for this scoped connector/revision"
+              },
+              {
+                "id": "5",
+                "mark": "5",
+                "label": "Function not established for this scoped connector/revision"
+              },
+              {
+                "id": "6",
+                "mark": "6",
+                "label": "Function not established for this scoped connector/revision"
+              },
+              {
+                "id": "7",
+                "mark": "7",
+                "label": "Function not established for this scoped connector/revision"
+              },
+              {
+                "id": "8",
+                "mark": "8",
+                "label": "Function not established for this scoped connector/revision"
+              },
+              {
+                "id": "9",
+                "mark": "9",
+                "label": "Function not established for this scoped connector/revision"
+              },
+              {
+                "id": "10",
+                "mark": "10",
+                "label": "Function not established for this scoped connector/revision"
+              },
+              {
+                "id": "11",
+                "mark": "11",
+                "label": "Function not established for this scoped connector/revision"
+              },
+              {
+                "id": "12",
+                "mark": "12",
+                "label": "Function not established for this scoped connector/revision"
+              },
+              {
+                "id": "13",
+                "mark": "13",
+                "label": "Function not established for this scoped connector/revision"
+              },
+              {
+                "id": "14",
+                "mark": "14",
+                "label": "Function not established for this scoped connector/revision"
+              },
+              {
+                "id": "15",
+                "mark": "15",
+                "label": "Function not established for this scoped connector/revision"
+              },
+              {
+                "id": "16",
+                "mark": "16",
+                "label": "Function not established for this scoped connector/revision"
+              },
+              {
+                "id": "17",
+                "mark": "17",
+                "label": "Function not established for this scoped connector/revision"
+              },
+              {
+                "id": "18",
+                "mark": "18",
+                "label": "Function not established for this scoped connector/revision"
+              },
+              {
+                "id": "19",
+                "mark": "19",
+                "label": "Function not established for this scoped connector/revision"
+              },
+              {
+                "id": "20",
+                "mark": "20",
+                "label": "Function not established for this scoped connector/revision"
+              },
+              {
+                "id": "21",
+                "mark": "21",
+                "label": "Function not established for this scoped connector/revision"
+              },
+              {
+                "id": "22",
+                "mark": "22",
+                "label": "Function not established for this scoped connector/revision"
+              },
+              {
+                "id": "23",
+                "mark": "23",
+                "label": "Function not established for this scoped connector/revision"
+              },
+              {
+                "id": "24",
+                "mark": "24",
+                "label": "Function not established for this scoped connector/revision"
+              },
+              {
+                "id": "25",
+                "mark": "25",
+                "label": "Function not established for this scoped connector/revision"
+              }
+            ]
+          }
+        ],
+        "wires": []
+      }
+    }
+  }
+}

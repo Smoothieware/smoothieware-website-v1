@@ -1,0 +1,33 @@
+{
+  "id": "forum-linuxcnc-moosedesign-bridgeport-series2-interact4",
+  "sources": {
+    "forum-peripheral-evidence.json": {
+      "id": "forum-linuxcnc-moosedesign-bridgeport-series2-interact4",
+      "dossier": "src/docs/machine-research/linuxcnc-moosedesign-bridgeport-series2-interact4.md",
+      "reported_fitted_or_used": [],
+      "listed_for_build_unverified": [
+        {
+          "name": "Encoders",
+          "contacts": [],
+          "source_line_number": 38,
+          "source_line": "| Original machine interface | DB15 encoders, DB25 operator panel, IDC40 Dynapath I/O were listed for breakout reuse | Pin numbers, signal direction/polarity, voltage domain, connector view, and final reuse |",
+          "evidence": "DB15 encoders, DB25 operator panel, IDC40 Dynapath I/O were listed for breakout reuse.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        },
+        {
+          "name": "Axis servo drives with step/direction or 10 V input",
+          "contacts": [],
+          "source_line_number": 23,
+          "source_line": "- Allen-Bradley Ultra 3000i servo drives; the owner says these drives accept step/direction as well as 10 V control. His intended configuration used analog output with encoder feedback, although he initially returned to the 7i76 for tests.",
+          "evidence": "Allen-Bradley Ultra 3000i servo drives; the owner says these drives accept step/direction as well as 10 V control. His intended configuration used analog output with encoder feedback, although he initially returned to the 7i76 for tests.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        }
+      ],
+      "historical_reference": [],
+      "planned_only": [],
+      "open_function_group": [],
+      "exclusions": [],
+      "source_gap": "Dossier does not establish an as-built SmoothieBox route or a complete physical contact schedule for the listed peripherals."
+    }
+  }
+}

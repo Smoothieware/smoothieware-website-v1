@@ -1,0 +1,2622 @@
+{
+  "profile_id": "mill-g2",
+  "controller": "Smoothieboard V2 Prime",
+  "classification": "Original motion-driver electronics are on the board being replaced. Use Prime integrated phase outputs directly to measured winding pairs; do not connect STEP/DIR signal outputs to motor windings. Confirm installed board, motor current and power rating from the cited machine source.",
+  "connections": [
+    {
+      "id": "C01-001",
+      "panel_index": 0,
+      "edge_index": 0,
+      "from": "V2 Prime P12 J5 · J5.1 · B2",
+      "to": "X motor harness (cavities unverified) · New measured winding lead B2",
+      "state": "GUESS",
+      "view": "MAIN",
+      "rationale": "candidate X winding hookup: V2 Prime P12 J5 · J5.1 · B2 → X motor harness (cavities unverified) · New measured winding lead B2. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Dotted proposed cavity-to-phase map only; inspect Prime revision and meter both motor coil pairs before connecting. Set driver current to actual motor rating.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · smoothiev2-prime.kicad_pcb",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/smoothiev2-prime.kicad_pcb",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "3018-PROVer V2 manual V1.0 2022-09-06, English pp.15-21; motor table PDF p.73",
+          "url": "https://genmitsu.s3.us-east-1.amazonaws.com/101-60-3018PV2/3018-PROVer_V2_User_Manual_%E3%80%90EN%2BDE%2BJP_V1.0_20220906_1.pdf",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C01-002",
+      "panel_index": 0,
+      "edge_index": 1,
+      "from": "V2 Prime P12 J5 · J5.2 · B1",
+      "to": "X motor harness (cavities unverified) · New measured winding lead B1",
+      "state": "GUESS",
+      "view": "MAIN",
+      "rationale": "candidate X winding hookup: V2 Prime P12 J5 · J5.2 · B1 → X motor harness (cavities unverified) · New measured winding lead B1. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Dotted proposed cavity-to-phase map only; inspect Prime revision and meter both motor coil pairs before connecting. Set driver current to actual motor rating.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · smoothiev2-prime.kicad_pcb",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/smoothiev2-prime.kicad_pcb",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "3018-PROVer V2 manual V1.0 2022-09-06, English pp.15-21; motor table PDF p.73",
+          "url": "https://genmitsu.s3.us-east-1.amazonaws.com/101-60-3018PV2/3018-PROVer_V2_User_Manual_%E3%80%90EN%2BDE%2BJP_V1.0_20220906_1.pdf",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C01-003",
+      "panel_index": 0,
+      "edge_index": 2,
+      "from": "V2 Prime P12 J5 · J5.3 · A2",
+      "to": "X motor harness (cavities unverified) · New measured winding lead A2",
+      "state": "GUESS",
+      "view": "MAIN",
+      "rationale": "candidate X winding hookup: V2 Prime P12 J5 · J5.3 · A2 → X motor harness (cavities unverified) · New measured winding lead A2. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Dotted proposed cavity-to-phase map only; inspect Prime revision and meter both motor coil pairs before connecting. Set driver current to actual motor rating.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · smoothiev2-prime.kicad_pcb",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/smoothiev2-prime.kicad_pcb",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "3018-PROVer V2 manual V1.0 2022-09-06, English pp.15-21; motor table PDF p.73",
+          "url": "https://genmitsu.s3.us-east-1.amazonaws.com/101-60-3018PV2/3018-PROVer_V2_User_Manual_%E3%80%90EN%2BDE%2BJP_V1.0_20220906_1.pdf",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C01-004",
+      "panel_index": 0,
+      "edge_index": 3,
+      "from": "V2 Prime P12 J5 · J5.4 · A1",
+      "to": "X motor harness (cavities unverified) · New measured winding lead A1",
+      "state": "GUESS",
+      "view": "MAIN",
+      "rationale": "candidate X winding hookup: V2 Prime P12 J5 · J5.4 · A1 → X motor harness (cavities unverified) · New measured winding lead A1. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Dotted proposed cavity-to-phase map only; inspect Prime revision and meter both motor coil pairs before connecting. Set driver current to actual motor rating.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · smoothiev2-prime.kicad_pcb",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/smoothiev2-prime.kicad_pcb",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "3018-PROVer V2 manual V1.0 2022-09-06, English pp.15-21; motor table PDF p.73",
+          "url": "https://genmitsu.s3.us-east-1.amazonaws.com/101-60-3018PV2/3018-PROVer_V2_User_Manual_%E3%80%90EN%2BDE%2BJP_V1.0_20220906_1.pdf",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C02-001",
+      "panel_index": 1,
+      "edge_index": 0,
+      "from": "V2 Prime P12 J6 · J6.1 · B2",
+      "to": "Y motor harness (cavities unverified) · New measured winding lead B2",
+      "state": "GUESS",
+      "view": "MAIN",
+      "rationale": "candidate Y winding hookup: V2 Prime P12 J6 · J6.1 · B2 → Y motor harness (cavities unverified) · New measured winding lead B2. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Dotted proposed cavity-to-phase map only; inspect Prime revision and meter both motor coil pairs before connecting. Set driver current to actual motor rating.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · smoothiev2-prime.kicad_pcb",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/smoothiev2-prime.kicad_pcb",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "3018-PROVer V2 manual V1.0 2022-09-06, English pp.15-21; motor table PDF p.73",
+          "url": "https://genmitsu.s3.us-east-1.amazonaws.com/101-60-3018PV2/3018-PROVer_V2_User_Manual_%E3%80%90EN%2BDE%2BJP_V1.0_20220906_1.pdf",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C02-002",
+      "panel_index": 1,
+      "edge_index": 1,
+      "from": "V2 Prime P12 J6 · J6.2 · B1",
+      "to": "Y motor harness (cavities unverified) · New measured winding lead B1",
+      "state": "GUESS",
+      "view": "MAIN",
+      "rationale": "candidate Y winding hookup: V2 Prime P12 J6 · J6.2 · B1 → Y motor harness (cavities unverified) · New measured winding lead B1. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Dotted proposed cavity-to-phase map only; inspect Prime revision and meter both motor coil pairs before connecting. Set driver current to actual motor rating.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · smoothiev2-prime.kicad_pcb",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/smoothiev2-prime.kicad_pcb",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "3018-PROVer V2 manual V1.0 2022-09-06, English pp.15-21; motor table PDF p.73",
+          "url": "https://genmitsu.s3.us-east-1.amazonaws.com/101-60-3018PV2/3018-PROVer_V2_User_Manual_%E3%80%90EN%2BDE%2BJP_V1.0_20220906_1.pdf",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C02-003",
+      "panel_index": 1,
+      "edge_index": 2,
+      "from": "V2 Prime P12 J6 · J6.3 · A2",
+      "to": "Y motor harness (cavities unverified) · New measured winding lead A2",
+      "state": "GUESS",
+      "view": "MAIN",
+      "rationale": "candidate Y winding hookup: V2 Prime P12 J6 · J6.3 · A2 → Y motor harness (cavities unverified) · New measured winding lead A2. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Dotted proposed cavity-to-phase map only; inspect Prime revision and meter both motor coil pairs before connecting. Set driver current to actual motor rating.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · smoothiev2-prime.kicad_pcb",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/smoothiev2-prime.kicad_pcb",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "3018-PROVer V2 manual V1.0 2022-09-06, English pp.15-21; motor table PDF p.73",
+          "url": "https://genmitsu.s3.us-east-1.amazonaws.com/101-60-3018PV2/3018-PROVer_V2_User_Manual_%E3%80%90EN%2BDE%2BJP_V1.0_20220906_1.pdf",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C02-004",
+      "panel_index": 1,
+      "edge_index": 3,
+      "from": "V2 Prime P12 J6 · J6.4 · A1",
+      "to": "Y motor harness (cavities unverified) · New measured winding lead A1",
+      "state": "GUESS",
+      "view": "MAIN",
+      "rationale": "candidate Y winding hookup: V2 Prime P12 J6 · J6.4 · A1 → Y motor harness (cavities unverified) · New measured winding lead A1. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Dotted proposed cavity-to-phase map only; inspect Prime revision and meter both motor coil pairs before connecting. Set driver current to actual motor rating.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · smoothiev2-prime.kicad_pcb",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/smoothiev2-prime.kicad_pcb",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "3018-PROVer V2 manual V1.0 2022-09-06, English pp.15-21; motor table PDF p.73",
+          "url": "https://genmitsu.s3.us-east-1.amazonaws.com/101-60-3018PV2/3018-PROVer_V2_User_Manual_%E3%80%90EN%2BDE%2BJP_V1.0_20220906_1.pdf",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C03-001",
+      "panel_index": 2,
+      "edge_index": 0,
+      "from": "V2 Prime P12 J7 · J7.1 · B2",
+      "to": "Z motor harness (cavities unverified) · New measured winding lead B2",
+      "state": "GUESS",
+      "view": "MAIN",
+      "rationale": "candidate Z winding hookup: V2 Prime P12 J7 · J7.1 · B2 → Z motor harness (cavities unverified) · New measured winding lead B2. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Dotted proposed cavity-to-phase map only; inspect Prime revision and meter both motor coil pairs before connecting. Set driver current to actual motor rating.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · smoothiev2-prime.kicad_pcb",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/smoothiev2-prime.kicad_pcb",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "3018-PROVer V2 manual V1.0 2022-09-06, English pp.15-21; motor table PDF p.73",
+          "url": "https://genmitsu.s3.us-east-1.amazonaws.com/101-60-3018PV2/3018-PROVer_V2_User_Manual_%E3%80%90EN%2BDE%2BJP_V1.0_20220906_1.pdf",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C03-002",
+      "panel_index": 2,
+      "edge_index": 1,
+      "from": "V2 Prime P12 J7 · J7.2 · B1",
+      "to": "Z motor harness (cavities unverified) · New measured winding lead B1",
+      "state": "GUESS",
+      "view": "MAIN",
+      "rationale": "candidate Z winding hookup: V2 Prime P12 J7 · J7.2 · B1 → Z motor harness (cavities unverified) · New measured winding lead B1. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Dotted proposed cavity-to-phase map only; inspect Prime revision and meter both motor coil pairs before connecting. Set driver current to actual motor rating.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · smoothiev2-prime.kicad_pcb",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/smoothiev2-prime.kicad_pcb",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "3018-PROVer V2 manual V1.0 2022-09-06, English pp.15-21; motor table PDF p.73",
+          "url": "https://genmitsu.s3.us-east-1.amazonaws.com/101-60-3018PV2/3018-PROVer_V2_User_Manual_%E3%80%90EN%2BDE%2BJP_V1.0_20220906_1.pdf",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C03-003",
+      "panel_index": 2,
+      "edge_index": 2,
+      "from": "V2 Prime P12 J7 · J7.3 · A2",
+      "to": "Z motor harness (cavities unverified) · New measured winding lead A2",
+      "state": "GUESS",
+      "view": "MAIN",
+      "rationale": "candidate Z winding hookup: V2 Prime P12 J7 · J7.3 · A2 → Z motor harness (cavities unverified) · New measured winding lead A2. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Dotted proposed cavity-to-phase map only; inspect Prime revision and meter both motor coil pairs before connecting. Set driver current to actual motor rating.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · smoothiev2-prime.kicad_pcb",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/smoothiev2-prime.kicad_pcb",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "3018-PROVer V2 manual V1.0 2022-09-06, English pp.15-21; motor table PDF p.73",
+          "url": "https://genmitsu.s3.us-east-1.amazonaws.com/101-60-3018PV2/3018-PROVer_V2_User_Manual_%E3%80%90EN%2BDE%2BJP_V1.0_20220906_1.pdf",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C03-004",
+      "panel_index": 2,
+      "edge_index": 3,
+      "from": "V2 Prime P12 J7 · J7.4 · A1",
+      "to": "Z motor harness (cavities unverified) · New measured winding lead A1",
+      "state": "GUESS",
+      "view": "MAIN",
+      "rationale": "candidate Z winding hookup: V2 Prime P12 J7 · J7.4 · A1 → Z motor harness (cavities unverified) · New measured winding lead A1. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Dotted proposed cavity-to-phase map only; inspect Prime revision and meter both motor coil pairs before connecting. Set driver current to actual motor rating.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · smoothiev2-prime.kicad_pcb",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/smoothiev2-prime.kicad_pcb",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "3018-PROVer V2 manual V1.0 2022-09-06, English pp.15-21; motor table PDF p.73",
+          "url": "https://genmitsu.s3.us-east-1.amazonaws.com/101-60-3018PV2/3018-PROVer_V2_User_Manual_%E3%80%90EN%2BDE%2BJP_V1.0_20220906_1.pdf",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C04-001",
+      "panel_index": 3,
+      "edge_index": 0,
+      "from": "Smoothie PWM candidate (verify board) · J35.6 TIM1_CH1 (PWM candidate)",
+      "to": "Cytron MD10C R3.0 · PWM",
+      "state": "GUESS",
+      "view": "MAIN",
+      "rationale": "spindle speed PWM candidate: Smoothie PWM candidate (verify board) · J35.6 TIM1_CH1 (PWM candidate) → Cytron MD10C R3.0 · PWM. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Core P1 J35 source export: pin6 TIM1_CH1 and pin10 GND. Verify waveform range/frequency and common reference on exact board.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · smoothiev2-prime.kicad_pcb",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/smoothiev2-prime.kicad_pcb",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "3018-PROVer V2 manual V1.0 2022-09-06, English pp.15-21; motor table PDF p.73",
+          "url": "https://genmitsu.s3.us-east-1.amazonaws.com/101-60-3018PV2/3018-PROVer_V2_User_Manual_%E3%80%90EN%2BDE%2BJP_V1.0_20220906_1.pdf",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        },
+        {
+          "title": "Cytron MD10C R3.0 manufacturer specification",
+          "url": "https://www.cytron.io/c-industry/p-10amp-5v-30v-dc-motor-driver",
+          "claim": "Device/source reference supplies its original contact functions or electrical interface limits. Match the cited revision before applying the proposed route."
+        },
+        {
+          "title": "Cytron MD10C R3.0 User Manual Rev3.0 V1.0 Aug 2018",
+          "url": "https://www.robot-maker.com/shop/img/cms/348%20-%20Driver%20MD10C%20Cytron/MD10C%20Rev3-0%20Users%20Manual.pdf",
+          "claim": "Device/source reference supplies its original contact functions or electrical interface limits. Match the cited revision before applying the proposed route."
+        }
+      ]
+    },
+    {
+      "id": "C04-002",
+      "panel_index": 3,
+      "edge_index": 1,
+      "from": "Smoothie PWM candidate (verify board) · J35.10 GND",
+      "to": "Cytron MD10C R3.0 · GND",
+      "state": "GUESS",
+      "view": "MAIN",
+      "rationale": "control signal reference: Smoothie PWM candidate (verify board) · J35.10 GND → Cytron MD10C R3.0 · GND. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Core P1 J35 source export: pin6 TIM1_CH1 and pin10 GND. Verify waveform range/frequency and common reference on exact board.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · smoothiev2-prime.kicad_pcb",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/smoothiev2-prime.kicad_pcb",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "3018-PROVer V2 manual V1.0 2022-09-06, English pp.15-21; motor table PDF p.73",
+          "url": "https://genmitsu.s3.us-east-1.amazonaws.com/101-60-3018PV2/3018-PROVer_V2_User_Manual_%E3%80%90EN%2BDE%2BJP_V1.0_20220906_1.pdf",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        },
+        {
+          "title": "Cytron MD10C R3.0 manufacturer specification",
+          "url": "https://www.cytron.io/c-industry/p-10amp-5v-30v-dc-motor-driver",
+          "claim": "Device/source reference supplies its original contact functions or electrical interface limits. Match the cited revision before applying the proposed route."
+        },
+        {
+          "title": "Cytron MD10C R3.0 User Manual Rev3.0 V1.0 Aug 2018",
+          "url": "https://www.robot-maker.com/shop/img/cms/348%20-%20Driver%20MD10C%20Cytron/MD10C%20Rev3-0%20Users%20Manual.pdf",
+          "claim": "Device/source reference supplies its original contact functions or electrical interface limits. Match the cited revision before applying the proposed route."
+        }
+      ]
+    },
+    {
+      "id": "C04-003",
+      "panel_index": 3,
+      "edge_index": 2,
+      "from": "Cytron MD10C R3.0 · OUT A",
+      "to": "775 spindle: measured motor terminals (polarity unknown) · measured motor terminal 1",
+      "state": "GUESS",
+      "view": "MAIN",
+      "rationale": "switched motor output A: Cytron MD10C R3.0 · OUT A → 775 spindle: measured motor terminals (polarity unknown) · measured motor terminal 1. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Only after measured spindle current, direction and terminal polarity are checked.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · smoothiev2-prime.kicad_pcb",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/smoothiev2-prime.kicad_pcb",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "3018-PROVer V2 manual V1.0 2022-09-06, English pp.15-21; motor table PDF p.73",
+          "url": "https://genmitsu.s3.us-east-1.amazonaws.com/101-60-3018PV2/3018-PROVer_V2_User_Manual_%E3%80%90EN%2BDE%2BJP_V1.0_20220906_1.pdf",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        },
+        {
+          "title": "Cytron MD10C R3.0 manufacturer specification",
+          "url": "https://www.cytron.io/c-industry/p-10amp-5v-30v-dc-motor-driver",
+          "claim": "Device/source reference supplies its original contact functions or electrical interface limits. Match the cited revision before applying the proposed route."
+        },
+        {
+          "title": "Cytron MD10C R3.0 User Manual Rev3.0 V1.0 Aug 2018",
+          "url": "https://www.robot-maker.com/shop/img/cms/348%20-%20Driver%20MD10C%20Cytron/MD10C%20Rev3-0%20Users%20Manual.pdf",
+          "claim": "Device/source reference supplies its original contact functions or electrical interface limits. Match the cited revision before applying the proposed route."
+        }
+      ]
+    },
+    {
+      "id": "C04-004",
+      "panel_index": 3,
+      "edge_index": 3,
+      "from": "Cytron MD10C R3.0 · OUT B",
+      "to": "775 spindle: measured motor terminals (polarity unknown) · measured motor terminal 2",
+      "state": "GUESS",
+      "view": "MAIN",
+      "rationale": "switched motor output B: Cytron MD10C R3.0 · OUT B → 775 spindle: measured motor terminals (polarity unknown) · measured motor terminal 2. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Map output to spindle leads only after safe direction test; not a logic return.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · smoothiev2-prime.kicad_pcb",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/smoothiev2-prime.kicad_pcb",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "3018-PROVer V2 manual V1.0 2022-09-06, English pp.15-21; motor table PDF p.73",
+          "url": "https://genmitsu.s3.us-east-1.amazonaws.com/101-60-3018PV2/3018-PROVer_V2_User_Manual_%E3%80%90EN%2BDE%2BJP_V1.0_20220906_1.pdf",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        },
+        {
+          "title": "Cytron MD10C R3.0 manufacturer specification",
+          "url": "https://www.cytron.io/c-industry/p-10amp-5v-30v-dc-motor-driver",
+          "claim": "Device/source reference supplies its original contact functions or electrical interface limits. Match the cited revision before applying the proposed route."
+        },
+        {
+          "title": "Cytron MD10C R3.0 User Manual Rev3.0 V1.0 Aug 2018",
+          "url": "https://www.robot-maker.com/shop/img/cms/348%20-%20Driver%20MD10C%20Cytron/MD10C%20Rev3-0%20Users%20Manual.pdf",
+          "claim": "Device/source reference supplies its original contact functions or electrical interface limits. Match the cited revision before applying the proposed route."
+        }
+      ]
+    },
+    {
+      "id": "C04-005",
+      "panel_index": 3,
+      "edge_index": 4,
+      "from": "Smoothie PWM candidate (verify board) · logic GND (fixed DIR candidate)",
+      "to": "Cytron MD10C R3.0 · DIR",
+      "state": "GUESS",
+      "view": "MAIN",
+      "rationale": "fixed direction logic low candidate: Smoothie PWM candidate (verify board) · logic GND (fixed DIR candidate) → Cytron MD10C R3.0 · DIR. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Cytron R3.0 manual: DIR sets motor direction. Verify input truth table and chosen spindle rotation on secured unloaded stage; reverse motor leads only after isolated power-down.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · smoothiev2-prime.kicad_pcb",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/smoothiev2-prime.kicad_pcb",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "3018-PROVer V2 manual V1.0 2022-09-06, English pp.15-21; motor table PDF p.73",
+          "url": "https://genmitsu.s3.us-east-1.amazonaws.com/101-60-3018PV2/3018-PROVer_V2_User_Manual_%E3%80%90EN%2BDE%2BJP_V1.0_20220906_1.pdf",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        },
+        {
+          "title": "Cytron MD10C R3.0 manufacturer specification",
+          "url": "https://www.cytron.io/c-industry/p-10amp-5v-30v-dc-motor-driver",
+          "claim": "Device/source reference supplies its original contact functions or electrical interface limits. Match the cited revision before applying the proposed route."
+        },
+        {
+          "title": "Cytron MD10C R3.0 User Manual Rev3.0 V1.0 Aug 2018",
+          "url": "https://www.robot-maker.com/shop/img/cms/348%20-%20Driver%20MD10C%20Cytron/MD10C%20Rev3-0%20Users%20Manual.pdf",
+          "claim": "Device/source reference supplies its original contact functions or electrical interface limits. Match the cited revision before applying the proposed route."
+        }
+      ]
+    },
+    {
+      "id": "C05-001",
+      "panel_index": 4,
+      "edge_index": 0,
+      "from": "Fused dedicated 12-24V spindle supply · V+",
+      "to": "Cytron MD10C R3.0 power input · VM",
+      "state": "GUESS",
+      "view": "MAIN",
+      "rationale": "spindle-stage supply: Fused dedicated 12-24V spindle supply · V+ → Cytron MD10C R3.0 power input · VM. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Rate from measured 775 running/stall current and MD10C limit; supply must match motor and total system loads.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · smoothiev2-prime.kicad_pcb",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/smoothiev2-prime.kicad_pcb",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "3018-PROVer V2 manual V1.0 2022-09-06, English pp.15-21; motor table PDF p.73",
+          "url": "https://genmitsu.s3.us-east-1.amazonaws.com/101-60-3018PV2/3018-PROVer_V2_User_Manual_%E3%80%90EN%2BDE%2BJP_V1.0_20220906_1.pdf",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        },
+        {
+          "title": "Cytron MD10C R3.0 manufacturer specification",
+          "url": "https://www.cytron.io/c-industry/p-10amp-5v-30v-dc-motor-driver",
+          "claim": "Device/source reference supplies its original contact functions or electrical interface limits. Match the cited revision before applying the proposed route."
+        },
+        {
+          "title": "Cytron MD10C R3.0 User Manual Rev3.0 V1.0 Aug 2018",
+          "url": "https://www.robot-maker.com/shop/img/cms/348%20-%20Driver%20MD10C%20Cytron/MD10C%20Rev3-0%20Users%20Manual.pdf",
+          "claim": "Device/source reference supplies its original contact functions or electrical interface limits. Match the cited revision before applying the proposed route."
+        }
+      ]
+    },
+    {
+      "id": "C05-002",
+      "panel_index": 4,
+      "edge_index": 1,
+      "from": "Fused dedicated 12-24V spindle supply · 0V",
+      "to": "Cytron MD10C R3.0 power input · GND",
+      "state": "GUESS",
+      "view": "MAIN",
+      "rationale": "spindle-stage return: Fused dedicated 12-24V spindle supply · 0V → Cytron MD10C R3.0 power input · GND. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Keep power return distinct from logic signal reference unless manual grounding requires a bond.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · smoothiev2-prime.kicad_pcb",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/smoothiev2-prime.kicad_pcb",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "3018-PROVer V2 manual V1.0 2022-09-06, English pp.15-21; motor table PDF p.73",
+          "url": "https://genmitsu.s3.us-east-1.amazonaws.com/101-60-3018PV2/3018-PROVer_V2_User_Manual_%E3%80%90EN%2BDE%2BJP_V1.0_20220906_1.pdf",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        },
+        {
+          "title": "Cytron MD10C R3.0 manufacturer specification",
+          "url": "https://www.cytron.io/c-industry/p-10amp-5v-30v-dc-motor-driver",
+          "claim": "Device/source reference supplies its original contact functions or electrical interface limits. Match the cited revision before applying the proposed route."
+        },
+        {
+          "title": "Cytron MD10C R3.0 User Manual Rev3.0 V1.0 Aug 2018",
+          "url": "https://www.robot-maker.com/shop/img/cms/348%20-%20Driver%20MD10C%20Cytron/MD10C%20Rev3-0%20Users%20Manual.pdf",
+          "claim": "Device/source reference supplies its original contact functions or electrical interface limits. Match the cited revision before applying the proposed route."
+        }
+      ]
+    },
+    {
+      "id": "C06-001",
+      "panel_index": 5,
+      "edge_index": 0,
+      "from": "Prime J24 input · pin 3 input",
+      "to": "X MIN switch · switch signal",
+      "state": "GUESS",
+      "view": "MAIN",
+      "rationale": "X MIN endstop signal: Prime J24 input · pin 3 input → X MIN switch · switch signal. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Only if this actual switch contact is traced and normally-open/closed state verified.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · inputs.kicad_sch",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/inputs.kicad_sch",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "3018-PROVer V2 manual V1.0 2022-09-06, English pp.15-21; motor table PDF p.73",
+          "url": "https://genmitsu.s3.us-east-1.amazonaws.com/101-60-3018PV2/3018-PROVer_V2_User_Manual_%E3%80%90EN%2BDE%2BJP_V1.0_20220906_1.pdf",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C06-002",
+      "panel_index": 5,
+      "edge_index": 1,
+      "from": "Prime J24 input · pin 2 GND",
+      "to": "X MIN switch · switch return",
+      "state": "GUESS",
+      "view": "MAIN",
+      "rationale": "X MIN return: Prime J24 input · pin 2 GND → X MIN switch · switch return. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Verify contact function and sensor type. Leave selector disconnected until exact signal voltage is known.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · inputs.kicad_sch",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/inputs.kicad_sch",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "3018-PROVer V2 manual V1.0 2022-09-06, English pp.15-21; motor table PDF p.73",
+          "url": "https://genmitsu.s3.us-east-1.amazonaws.com/101-60-3018PV2/3018-PROVer_V2_User_Manual_%E3%80%90EN%2BDE%2BJP_V1.0_20220906_1.pdf",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C06-003",
+      "panel_index": 5,
+      "edge_index": 2,
+      "from": "Prime J24 input · pin 1 selector",
+      "to": "X MIN switch · Third cable lead · identify supply or contact before connection",
+      "state": "OPEN",
+      "view": "MAIN",
+      "rationale": "Three-wire factory limit sensor supply / third lead: Prime J24 input · pin 1 selector → X MIN switch · Third cable lead · identify supply or contact before connection. The fitted interface or electrical contract is unresolved. The broken path is a boundary to identify, not a wire to install.",
+      "qualification": "Manual p.16 gives 3-wire switch cable, not pin functions. Identify passive switch/NPN/PNP, lead roles, supply voltage and Prime selector setting. Only two switches are included in the kit; the six sockets here are candidate channels, not a claim that six switches are fitted.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · inputs.kicad_sch",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/inputs.kicad_sch",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "3018-PROVer V2 manual V1.0 2022-09-06, English pp.15-21; motor table PDF p.73",
+          "url": "https://genmitsu.s3.us-east-1.amazonaws.com/101-60-3018PV2/3018-PROVer_V2_User_Manual_%E3%80%90EN%2BDE%2BJP_V1.0_20220906_1.pdf",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C07-001",
+      "panel_index": 6,
+      "edge_index": 0,
+      "from": "Prime J25 input · pin 3 input",
+      "to": "X MAX switch · switch signal",
+      "state": "GUESS",
+      "view": "MAIN",
+      "rationale": "X MAX endstop signal: Prime J25 input · pin 3 input → X MAX switch · switch signal. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Only if this actual switch contact is traced and normally-open/closed state verified.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · inputs.kicad_sch",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/inputs.kicad_sch",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "3018-PROVer V2 manual V1.0 2022-09-06, English pp.15-21; motor table PDF p.73",
+          "url": "https://genmitsu.s3.us-east-1.amazonaws.com/101-60-3018PV2/3018-PROVer_V2_User_Manual_%E3%80%90EN%2BDE%2BJP_V1.0_20220906_1.pdf",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C07-002",
+      "panel_index": 6,
+      "edge_index": 1,
+      "from": "Prime J25 input · pin 2 GND",
+      "to": "X MAX switch · switch return",
+      "state": "GUESS",
+      "view": "MAIN",
+      "rationale": "X MAX return: Prime J25 input · pin 2 GND → X MAX switch · switch return. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Verify contact function and sensor type. Leave selector disconnected until exact signal voltage is known.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · inputs.kicad_sch",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/inputs.kicad_sch",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "3018-PROVer V2 manual V1.0 2022-09-06, English pp.15-21; motor table PDF p.73",
+          "url": "https://genmitsu.s3.us-east-1.amazonaws.com/101-60-3018PV2/3018-PROVer_V2_User_Manual_%E3%80%90EN%2BDE%2BJP_V1.0_20220906_1.pdf",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C07-003",
+      "panel_index": 6,
+      "edge_index": 2,
+      "from": "Prime J25 input · pin 1 selector",
+      "to": "X MAX switch · Third cable lead · identify supply or contact before connection",
+      "state": "OPEN",
+      "view": "MAIN",
+      "rationale": "Three-wire factory limit sensor supply / third lead: Prime J25 input · pin 1 selector → X MAX switch · Third cable lead · identify supply or contact before connection. The fitted interface or electrical contract is unresolved. The broken path is a boundary to identify, not a wire to install.",
+      "qualification": "Manual p.16 gives 3-wire switch cable, not pin functions. Identify passive switch/NPN/PNP, lead roles, supply voltage and Prime selector setting. Only two switches are included in the kit; the six sockets here are candidate channels, not a claim that six switches are fitted.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · inputs.kicad_sch",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/inputs.kicad_sch",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "3018-PROVer V2 manual V1.0 2022-09-06, English pp.15-21; motor table PDF p.73",
+          "url": "https://genmitsu.s3.us-east-1.amazonaws.com/101-60-3018PV2/3018-PROVer_V2_User_Manual_%E3%80%90EN%2BDE%2BJP_V1.0_20220906_1.pdf",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C08-001",
+      "panel_index": 7,
+      "edge_index": 0,
+      "from": "Prime J26 input · pin 3 input",
+      "to": "Y MIN switch · switch signal",
+      "state": "GUESS",
+      "view": "MAIN",
+      "rationale": "Y MIN endstop signal: Prime J26 input · pin 3 input → Y MIN switch · switch signal. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Only if this actual switch contact is traced and normally-open/closed state verified.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · inputs.kicad_sch",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/inputs.kicad_sch",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "3018-PROVer V2 manual V1.0 2022-09-06, English pp.15-21; motor table PDF p.73",
+          "url": "https://genmitsu.s3.us-east-1.amazonaws.com/101-60-3018PV2/3018-PROVer_V2_User_Manual_%E3%80%90EN%2BDE%2BJP_V1.0_20220906_1.pdf",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C08-002",
+      "panel_index": 7,
+      "edge_index": 1,
+      "from": "Prime J26 input · pin 2 GND",
+      "to": "Y MIN switch · switch return",
+      "state": "GUESS",
+      "view": "MAIN",
+      "rationale": "Y MIN return: Prime J26 input · pin 2 GND → Y MIN switch · switch return. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Verify contact function and sensor type. Leave selector disconnected until exact signal voltage is known.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · inputs.kicad_sch",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/inputs.kicad_sch",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "3018-PROVer V2 manual V1.0 2022-09-06, English pp.15-21; motor table PDF p.73",
+          "url": "https://genmitsu.s3.us-east-1.amazonaws.com/101-60-3018PV2/3018-PROVer_V2_User_Manual_%E3%80%90EN%2BDE%2BJP_V1.0_20220906_1.pdf",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C08-003",
+      "panel_index": 7,
+      "edge_index": 2,
+      "from": "Prime J26 input · pin 1 selector",
+      "to": "Y MIN switch · Third cable lead · identify supply or contact before connection",
+      "state": "OPEN",
+      "view": "MAIN",
+      "rationale": "Three-wire factory limit sensor supply / third lead: Prime J26 input · pin 1 selector → Y MIN switch · Third cable lead · identify supply or contact before connection. The fitted interface or electrical contract is unresolved. The broken path is a boundary to identify, not a wire to install.",
+      "qualification": "Manual p.16 gives 3-wire switch cable, not pin functions. Identify passive switch/NPN/PNP, lead roles, supply voltage and Prime selector setting. Only two switches are included in the kit; the six sockets here are candidate channels, not a claim that six switches are fitted.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · inputs.kicad_sch",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/inputs.kicad_sch",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "3018-PROVer V2 manual V1.0 2022-09-06, English pp.15-21; motor table PDF p.73",
+          "url": "https://genmitsu.s3.us-east-1.amazonaws.com/101-60-3018PV2/3018-PROVer_V2_User_Manual_%E3%80%90EN%2BDE%2BJP_V1.0_20220906_1.pdf",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C09-001",
+      "panel_index": 8,
+      "edge_index": 0,
+      "from": "Prime J27 input · pin 3 input",
+      "to": "Y MAX switch · switch signal",
+      "state": "GUESS",
+      "view": "MAIN",
+      "rationale": "Y MAX endstop signal: Prime J27 input · pin 3 input → Y MAX switch · switch signal. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Only if this actual switch contact is traced and normally-open/closed state verified.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · inputs.kicad_sch",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/inputs.kicad_sch",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "3018-PROVer V2 manual V1.0 2022-09-06, English pp.15-21; motor table PDF p.73",
+          "url": "https://genmitsu.s3.us-east-1.amazonaws.com/101-60-3018PV2/3018-PROVer_V2_User_Manual_%E3%80%90EN%2BDE%2BJP_V1.0_20220906_1.pdf",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C09-002",
+      "panel_index": 8,
+      "edge_index": 1,
+      "from": "Prime J27 input · pin 2 GND",
+      "to": "Y MAX switch · switch return",
+      "state": "GUESS",
+      "view": "MAIN",
+      "rationale": "Y MAX return: Prime J27 input · pin 2 GND → Y MAX switch · switch return. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Verify contact function and sensor type. Leave selector disconnected until exact signal voltage is known.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · inputs.kicad_sch",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/inputs.kicad_sch",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "3018-PROVer V2 manual V1.0 2022-09-06, English pp.15-21; motor table PDF p.73",
+          "url": "https://genmitsu.s3.us-east-1.amazonaws.com/101-60-3018PV2/3018-PROVer_V2_User_Manual_%E3%80%90EN%2BDE%2BJP_V1.0_20220906_1.pdf",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C09-003",
+      "panel_index": 8,
+      "edge_index": 2,
+      "from": "Prime J27 input · pin 1 selector",
+      "to": "Y MAX switch · Third cable lead · identify supply or contact before connection",
+      "state": "OPEN",
+      "view": "MAIN",
+      "rationale": "Three-wire factory limit sensor supply / third lead: Prime J27 input · pin 1 selector → Y MAX switch · Third cable lead · identify supply or contact before connection. The fitted interface or electrical contract is unresolved. The broken path is a boundary to identify, not a wire to install.",
+      "qualification": "Manual p.16 gives 3-wire switch cable, not pin functions. Identify passive switch/NPN/PNP, lead roles, supply voltage and Prime selector setting. Only two switches are included in the kit; the six sockets here are candidate channels, not a claim that six switches are fitted.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · inputs.kicad_sch",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/inputs.kicad_sch",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "3018-PROVer V2 manual V1.0 2022-09-06, English pp.15-21; motor table PDF p.73",
+          "url": "https://genmitsu.s3.us-east-1.amazonaws.com/101-60-3018PV2/3018-PROVer_V2_User_Manual_%E3%80%90EN%2BDE%2BJP_V1.0_20220906_1.pdf",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C10-001",
+      "panel_index": 9,
+      "edge_index": 0,
+      "from": "Prime J28 input · pin 3 input",
+      "to": "Z MIN switch · switch signal",
+      "state": "GUESS",
+      "view": "MAIN",
+      "rationale": "Z MIN endstop signal: Prime J28 input · pin 3 input → Z MIN switch · switch signal. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Only if this actual switch contact is traced and normally-open/closed state verified.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · inputs.kicad_sch",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/inputs.kicad_sch",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "3018-PROVer V2 manual V1.0 2022-09-06, English pp.15-21; motor table PDF p.73",
+          "url": "https://genmitsu.s3.us-east-1.amazonaws.com/101-60-3018PV2/3018-PROVer_V2_User_Manual_%E3%80%90EN%2BDE%2BJP_V1.0_20220906_1.pdf",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C10-002",
+      "panel_index": 9,
+      "edge_index": 1,
+      "from": "Prime J28 input · pin 2 GND",
+      "to": "Z MIN switch · switch return",
+      "state": "GUESS",
+      "view": "MAIN",
+      "rationale": "Z MIN return: Prime J28 input · pin 2 GND → Z MIN switch · switch return. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Verify contact function and sensor type. Leave selector disconnected until exact signal voltage is known.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · inputs.kicad_sch",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/inputs.kicad_sch",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "3018-PROVer V2 manual V1.0 2022-09-06, English pp.15-21; motor table PDF p.73",
+          "url": "https://genmitsu.s3.us-east-1.amazonaws.com/101-60-3018PV2/3018-PROVer_V2_User_Manual_%E3%80%90EN%2BDE%2BJP_V1.0_20220906_1.pdf",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C10-003",
+      "panel_index": 9,
+      "edge_index": 2,
+      "from": "Prime J28 input · pin 1 selector",
+      "to": "Z MIN switch · Third cable lead · identify supply or contact before connection",
+      "state": "OPEN",
+      "view": "MAIN",
+      "rationale": "Three-wire factory limit sensor supply / third lead: Prime J28 input · pin 1 selector → Z MIN switch · Third cable lead · identify supply or contact before connection. The fitted interface or electrical contract is unresolved. The broken path is a boundary to identify, not a wire to install.",
+      "qualification": "Manual p.16 gives 3-wire switch cable, not pin functions. Identify passive switch/NPN/PNP, lead roles, supply voltage and Prime selector setting. Only two switches are included in the kit; the six sockets here are candidate channels, not a claim that six switches are fitted.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · inputs.kicad_sch",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/inputs.kicad_sch",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "3018-PROVer V2 manual V1.0 2022-09-06, English pp.15-21; motor table PDF p.73",
+          "url": "https://genmitsu.s3.us-east-1.amazonaws.com/101-60-3018PV2/3018-PROVer_V2_User_Manual_%E3%80%90EN%2BDE%2BJP_V1.0_20220906_1.pdf",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C11-001",
+      "panel_index": 10,
+      "edge_index": 0,
+      "from": "Prime J29 input · pin 3 input",
+      "to": "Z MAX switch · switch signal",
+      "state": "GUESS",
+      "view": "MAIN",
+      "rationale": "Z MAX endstop signal: Prime J29 input · pin 3 input → Z MAX switch · switch signal. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Only if this actual switch contact is traced and normally-open/closed state verified.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · inputs.kicad_sch",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/inputs.kicad_sch",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "3018-PROVer V2 manual V1.0 2022-09-06, English pp.15-21; motor table PDF p.73",
+          "url": "https://genmitsu.s3.us-east-1.amazonaws.com/101-60-3018PV2/3018-PROVer_V2_User_Manual_%E3%80%90EN%2BDE%2BJP_V1.0_20220906_1.pdf",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C11-002",
+      "panel_index": 10,
+      "edge_index": 1,
+      "from": "Prime J29 input · pin 2 GND",
+      "to": "Z MAX switch · switch return",
+      "state": "GUESS",
+      "view": "MAIN",
+      "rationale": "Z MAX return: Prime J29 input · pin 2 GND → Z MAX switch · switch return. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Verify contact function and sensor type. Leave selector disconnected until exact signal voltage is known.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · inputs.kicad_sch",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/inputs.kicad_sch",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "3018-PROVer V2 manual V1.0 2022-09-06, English pp.15-21; motor table PDF p.73",
+          "url": "https://genmitsu.s3.us-east-1.amazonaws.com/101-60-3018PV2/3018-PROVer_V2_User_Manual_%E3%80%90EN%2BDE%2BJP_V1.0_20220906_1.pdf",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C11-003",
+      "panel_index": 10,
+      "edge_index": 2,
+      "from": "Prime J29 input · pin 1 selector",
+      "to": "Z MAX switch · Third cable lead · identify supply or contact before connection",
+      "state": "OPEN",
+      "view": "MAIN",
+      "rationale": "Three-wire factory limit sensor supply / third lead: Prime J29 input · pin 1 selector → Z MAX switch · Third cable lead · identify supply or contact before connection. The fitted interface or electrical contract is unresolved. The broken path is a boundary to identify, not a wire to install.",
+      "qualification": "Manual p.16 gives 3-wire switch cable, not pin functions. Identify passive switch/NPN/PNP, lead roles, supply voltage and Prime selector setting. Only two switches are included in the kit; the six sockets here are candidate channels, not a claim that six switches are fitted.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · inputs.kicad_sch",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/inputs.kicad_sch",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "3018-PROVer V2 manual V1.0 2022-09-06, English pp.15-21; motor table PDF p.73",
+          "url": "https://genmitsu.s3.us-east-1.amazonaws.com/101-60-3018PV2/3018-PROVer_V2_User_Manual_%E3%80%90EN%2BDE%2BJP_V1.0_20220906_1.pdf",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C12-001",
+      "panel_index": 11,
+      "edge_index": 0,
+      "from": "Regulated 5 V logic supply · +5 V regulated",
+      "to": "Prime P12 · confirm exact revision · J42.1 · 5V_PORTIN",
+      "state": "GUESS",
+      "view": "MAIN",
+      "rationale": "Prime regulated logic supply: Regulated 5 V logic supply · +5 V regulated → Prime P12 · confirm exact revision · J42.1 · 5V_PORTIN. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Prime alternative only. Confirm fitted P11/P12 revision, input-voltage/current limits, supply sequencing and fuse/conductor ratings. Never connect both Core external drivers and Prime winding outputs to the same motor.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · smoothiev2-prime.kicad_pcb",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/smoothiev2-prime.kicad_pcb",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "3018-PROVer V2 manual V1.0 2022-09-06, English pp.15-21; motor table PDF p.73",
+          "url": "https://genmitsu.s3.us-east-1.amazonaws.com/101-60-3018PV2/3018-PROVer_V2_User_Manual_%E3%80%90EN%2BDE%2BJP_V1.0_20220906_1.pdf",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C12-002",
+      "panel_index": 11,
+      "edge_index": 1,
+      "from": "Regulated 5 V logic supply · 0 V logic return",
+      "to": "Prime P12 · confirm exact revision · J42.2 · GND",
+      "state": "GUESS",
+      "view": "MAIN",
+      "rationale": "Prime logic supply return: Regulated 5 V logic supply · 0 V logic return → Prime P12 · confirm exact revision · J42.2 · GND. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Prime alternative only. Confirm fitted P11/P12 revision, input-voltage/current limits, supply sequencing and fuse/conductor ratings. Never connect both Core external drivers and Prime winding outputs to the same motor.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · smoothiev2-prime.kicad_pcb",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/smoothiev2-prime.kicad_pcb",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "3018-PROVer V2 manual V1.0 2022-09-06, English pp.15-21; motor table PDF p.73",
+          "url": "https://genmitsu.s3.us-east-1.amazonaws.com/101-60-3018PV2/3018-PROVer_V2_User_Manual_%E3%80%90EN%2BDE%2BJP_V1.0_20220906_1.pdf",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C12-003",
+      "panel_index": 11,
+      "edge_index": 2,
+      "from": "Verified motor supply · voltage/current TBD · DC + · before fuse",
+      "to": "Motor branch fuse · rating selected after measurement · fuse input",
+      "state": "GUESS",
+      "view": "DETAILED CIRCUIT",
+      "rationale": "Protected motor branch input: Verified motor supply · voltage/current TBD · DC + · before fuse → Motor branch fuse · rating selected after measurement · fuse input. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Prime alternative only. Confirm fitted P11/P12 revision, input-voltage/current limits, supply sequencing and fuse/conductor ratings. Never connect both Core external drivers and Prime winding outputs to the same motor.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · smoothiev2-prime.kicad_pcb",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/smoothiev2-prime.kicad_pcb",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "3018-PROVer V2 manual V1.0 2022-09-06, English pp.15-21; motor table PDF p.73",
+          "url": "https://genmitsu.s3.us-east-1.amazonaws.com/101-60-3018PV2/3018-PROVer_V2_User_Manual_%E3%80%90EN%2BDE%2BJP_V1.0_20220906_1.pdf",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C12-004",
+      "panel_index": 11,
+      "edge_index": 3,
+      "from": "Motor branch fuse · rating selected after measurement · fuse output",
+      "to": "Prime P12 · confirm exact revision · J9.1 · VMOT",
+      "state": "GUESS",
+      "view": "MAIN",
+      "rationale": "Prime VMOT power: Motor branch fuse · rating selected after measurement · fuse output → Prime P12 · confirm exact revision · J9.1 · VMOT. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Prime alternative only. Confirm fitted P11/P12 revision, input-voltage/current limits, supply sequencing and fuse/conductor ratings. Never connect both Core external drivers and Prime winding outputs to the same motor.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · smoothiev2-prime.kicad_pcb",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/smoothiev2-prime.kicad_pcb",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "3018-PROVer V2 manual V1.0 2022-09-06, English pp.15-21; motor table PDF p.73",
+          "url": "https://genmitsu.s3.us-east-1.amazonaws.com/101-60-3018PV2/3018-PROVer_V2_User_Manual_%E3%80%90EN%2BDE%2BJP_V1.0_20220906_1.pdf",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C12-005",
+      "panel_index": 11,
+      "edge_index": 4,
+      "from": "Verified motor supply · voltage/current TBD · 0 V motor return",
+      "to": "Prime P12 · confirm exact revision · J9.2 · GND",
+      "state": "GUESS",
+      "view": "MAIN",
+      "rationale": "Prime motor supply return: Verified motor supply · voltage/current TBD · 0 V motor return → Prime P12 · confirm exact revision · J9.2 · GND. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Prime alternative only. Confirm fitted P11/P12 revision, input-voltage/current limits, supply sequencing and fuse/conductor ratings. Never connect both Core external drivers and Prime winding outputs to the same motor.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · smoothiev2-prime.kicad_pcb",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/smoothiev2-prime.kicad_pcb",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "3018-PROVer V2 manual V1.0 2022-09-06, English pp.15-21; motor table PDF p.73",
+          "url": "https://genmitsu.s3.us-east-1.amazonaws.com/101-60-3018PV2/3018-PROVer_V2_User_Manual_%E3%80%90EN%2BDE%2BJP_V1.0_20220906_1.pdf",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C13-001",
+      "panel_index": 12,
+      "edge_index": 0,
+      "from": "Prime P12 · dedicated PROBE J31 · J31.4 · conditioned PROBE signal",
+      "to": "Measured passive Z plate + tool clip · Plate lead · continuity identify",
+      "state": "GUESS",
+      "view": "MAIN",
+      "rationale": "Probe plate signal: Prime P12 · dedicated PROBE J31 · J31.4 · conditioned PROBE signal → Measured passive Z plate + tool clip · Plate lead · continuity identify. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Documented probe kit; verify this fitted kit is a passive isolated contact. J31.4 is conditioned through comparator U24; establish JP7/JP8 population and safe pull-up/configuration from the exact P12 sheet. Leave J31.1 VMOT and J31.2 selected supply unused for a passive plate. Probe input maximum differs between board guides; no high-voltage capability is claimed.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · inputs.kicad_sch",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/inputs.kicad_sch",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "3018-PROVer V2 manual V1.0 2022-09-06, English pp.15-21; motor table PDF p.73 · English pp.19–20,26–28",
+          "url": "https://genmitsu.s3.us-east-1.amazonaws.com/101-60-3018PV2/3018-PROVer_V2_User_Manual_%E3%80%90EN%2BDE%2BJP_V1.0_20220906_1.pdf",
+          "claim": "Documents named machine interface/accessory functions; no connector cavity pin schedule or retrofit wiring is supplied."
+        },
+        {
+          "title": "Prime P12 exact inputs.kicad_sch",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/inputs.kicad_sch",
+          "claim": "Defines the Prime-side connector and conditioning circuit. Machine-side pairing is a new proposal and must be measured."
+        }
+      ]
+    },
+    {
+      "id": "C13-002",
+      "panel_index": 12,
+      "edge_index": 1,
+      "from": "Prime P12 · dedicated PROBE J31 · J31.3 · GND",
+      "to": "Measured passive Z plate + tool clip · Tool clip return · continuity identify",
+      "state": "GUESS",
+      "view": "MAIN",
+      "rationale": "Separate probe return: Prime P12 · dedicated PROBE J31 · J31.3 · GND → Measured passive Z plate + tool clip · Tool clip return · continuity identify. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Documented probe kit; verify this fitted kit is a passive isolated contact. J31.4 is conditioned through comparator U24; establish JP7/JP8 population and safe pull-up/configuration from the exact P12 sheet. Leave J31.1 VMOT and J31.2 selected supply unused for a passive plate. Probe input maximum differs between board guides; no high-voltage capability is claimed.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · inputs.kicad_sch",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/inputs.kicad_sch",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "3018-PROVer V2 manual V1.0 2022-09-06, English pp.15-21; motor table PDF p.73 · English pp.19–20,26–28",
+          "url": "https://genmitsu.s3.us-east-1.amazonaws.com/101-60-3018PV2/3018-PROVer_V2_User_Manual_%E3%80%90EN%2BDE%2BJP_V1.0_20220906_1.pdf",
+          "claim": "Documents named machine interface/accessory functions; no connector cavity pin schedule or retrofit wiring is supplied."
+        },
+        {
+          "title": "Prime P12 exact inputs.kicad_sch",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/inputs.kicad_sch",
+          "claim": "Defines the Prime-side connector and conditioning circuit. Machine-side pairing is a new proposal and must be measured."
+        }
+      ]
+    },
+    {
+      "id": "C14-001",
+      "panel_index": 13,
+      "edge_index": 0,
+      "from": "Prime P12 · signal-level PWM candidate · J35.6 · TIM1_CH1 PWM candidate",
+      "to": "Required laser level/isolating interface · select from fitted driver · Logic input · threshold unresolved",
+      "state": "OPEN",
+      "view": "MAIN",
+      "rationale": "PWM into matched laser interface: Prime P12 · signal-level PWM candidate · J35.6 · TIM1_CH1 PWM candidate → Required laser level/isolating interface · select from fitted driver · Logic input · threshold unresolved. The fitted interface or electrical contract is unresolved. The broken path is a boundary to identify, not a wire to install.",
+      "qualification": "Manual p.6 says optional laser is not included. Only populate this circuit if fitted. Identify laser driver model, TTL polarity/threshold/current, command connector and independent laser inhibition before choosing the level interface. Do not connect a logic output to laser power. Prime J35.6 is only a proposed PWM resource; verify firmware ownership.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · smoothiev2-prime.kicad_pcb",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/smoothiev2-prime.kicad_pcb",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "3018-PROVer V2 manual V1.0 2022-09-06, English pp.15-21; motor table PDF p.73 · English pp.19–20,26–28",
+          "url": "https://genmitsu.s3.us-east-1.amazonaws.com/101-60-3018PV2/3018-PROVer_V2_User_Manual_%E3%80%90EN%2BDE%2BJP_V1.0_20220906_1.pdf",
+          "claim": "Documents named machine interface/accessory functions; no connector cavity pin schedule or retrofit wiring is supplied."
+        },
+        {
+          "title": "Prime P12 exact mosfets.kicad_sch",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/mosfets.kicad_sch",
+          "claim": "Defines the Prime-side connector and conditioning circuit. Machine-side pairing is a new proposal and must be measured."
+        }
+      ]
+    },
+    {
+      "id": "C14-002",
+      "panel_index": 13,
+      "edge_index": 1,
+      "from": "Prime P12 · signal-level PWM candidate · J35.10 · signal GND",
+      "to": "Required laser level/isolating interface · select from fitted driver · Logic reference",
+      "state": "OPEN",
+      "view": "MAIN",
+      "rationale": "PWM logic return: Prime P12 · signal-level PWM candidate · J35.10 · signal GND → Required laser level/isolating interface · select from fitted driver · Logic reference. The fitted interface or electrical contract is unresolved. The broken path is a boundary to identify, not a wire to install.",
+      "qualification": "Manual p.6 says optional laser is not included. Only populate this circuit if fitted. Identify laser driver model, TTL polarity/threshold/current, command connector and independent laser inhibition before choosing the level interface. Do not connect a logic output to laser power. Prime J35.6 is only a proposed PWM resource; verify firmware ownership.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · smoothiev2-prime.kicad_pcb",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/smoothiev2-prime.kicad_pcb",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "3018-PROVer V2 manual V1.0 2022-09-06, English pp.15-21; motor table PDF p.73 · English pp.19–20,26–28",
+          "url": "https://genmitsu.s3.us-east-1.amazonaws.com/101-60-3018PV2/3018-PROVer_V2_User_Manual_%E3%80%90EN%2BDE%2BJP_V1.0_20220906_1.pdf",
+          "claim": "Documents named machine interface/accessory functions; no connector cavity pin schedule or retrofit wiring is supplied."
+        },
+        {
+          "title": "Prime P12 exact mosfets.kicad_sch",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/mosfets.kicad_sch",
+          "claim": "Defines the Prime-side connector and conditioning circuit. Machine-side pairing is a new proposal and must be measured."
+        }
+      ]
+    },
+    {
+      "id": "C14-003",
+      "panel_index": 13,
+      "edge_index": 2,
+      "from": "Required laser level/isolating interface · select from fitted driver · Laser command output · specification unresolved",
+      "to": "Optional fitted laser driver · model required · Identify TTL/PWM input terminal",
+      "state": "OPEN",
+      "view": "DETAILED CIRCUIT",
+      "rationale": "Qualified laser command: Required laser level/isolating interface · select from fitted driver · Laser command output · specification unresolved → Optional fitted laser driver · model required · Identify TTL/PWM input terminal. The fitted interface or electrical contract is unresolved. The broken path is a boundary to identify, not a wire to install.",
+      "qualification": "Manual p.6 says optional laser is not included. Only populate this circuit if fitted. Identify laser driver model, TTL polarity/threshold/current, command connector and independent laser inhibition before choosing the level interface. Do not connect a logic output to laser power. Prime J35.6 is only a proposed PWM resource; verify firmware ownership.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · smoothiev2-prime.kicad_pcb",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/smoothiev2-prime.kicad_pcb",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "3018-PROVer V2 manual V1.0 2022-09-06, English pp.15-21; motor table PDF p.73 · English pp.19–20,26–28",
+          "url": "https://genmitsu.s3.us-east-1.amazonaws.com/101-60-3018PV2/3018-PROVer_V2_User_Manual_%E3%80%90EN%2BDE%2BJP_V1.0_20220906_1.pdf",
+          "claim": "Documents named machine interface/accessory functions; no connector cavity pin schedule or retrofit wiring is supplied."
+        },
+        {
+          "title": "Prime P12 exact mosfets.kicad_sch",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/mosfets.kicad_sch",
+          "claim": "Defines the Prime-side connector and conditioning circuit. Machine-side pairing is a new proposal and must be measured."
+        }
+      ]
+    },
+    {
+      "id": "C14-004",
+      "panel_index": 13,
+      "edge_index": 3,
+      "from": "Required laser level/isolating interface · select from fitted driver · Laser-side reference",
+      "to": "Optional fitted laser driver · model required · Identify input reference terminal",
+      "state": "OPEN",
+      "view": "DETAILED CIRCUIT",
+      "rationale": "Separate laser command reference: Required laser level/isolating interface · select from fitted driver · Laser-side reference → Optional fitted laser driver · model required · Identify input reference terminal. The fitted interface or electrical contract is unresolved. The broken path is a boundary to identify, not a wire to install.",
+      "qualification": "Manual p.6 says optional laser is not included. Only populate this circuit if fitted. Identify laser driver model, TTL polarity/threshold/current, command connector and independent laser inhibition before choosing the level interface. Do not connect a logic output to laser power. Prime J35.6 is only a proposed PWM resource; verify firmware ownership.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · smoothiev2-prime.kicad_pcb",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/smoothiev2-prime.kicad_pcb",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "3018-PROVer V2 manual V1.0 2022-09-06, English pp.15-21; motor table PDF p.73 · English pp.19–20,26–28",
+          "url": "https://genmitsu.s3.us-east-1.amazonaws.com/101-60-3018PV2/3018-PROVer_V2_User_Manual_%E3%80%90EN%2BDE%2BJP_V1.0_20220906_1.pdf",
+          "claim": "Documents named machine interface/accessory functions; no connector cavity pin schedule or retrofit wiring is supplied."
+        },
+        {
+          "title": "Prime P12 exact mosfets.kicad_sch",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/mosfets.kicad_sch",
+          "claim": "Defines the Prime-side connector and conditioning circuit. Machine-side pairing is a new proposal and must be measured."
+        }
+      ]
+    },
+    {
+      "id": "C14-005",
+      "panel_index": 13,
+      "edge_index": 4,
+      "from": "Laser-rated fused supply · voltage/current unknown · DC + after fuse",
+      "to": "Optional fitted laser driver · model required · Identify laser supply +",
+      "state": "OPEN",
+      "view": "DETAILED CIRCUIT",
+      "rationale": "Laser stage supply · not GPIO: Laser-rated fused supply · voltage/current unknown · DC + after fuse → Optional fitted laser driver · model required · Identify laser supply +. The fitted interface or electrical contract is unresolved. The broken path is a boundary to identify, not a wire to install.",
+      "qualification": "Manual p.6 says optional laser is not included. Only populate this circuit if fitted. Identify laser driver model, TTL polarity/threshold/current, command connector and independent laser inhibition before choosing the level interface. Do not connect a logic output to laser power. Prime J35.6 is only a proposed PWM resource; verify firmware ownership.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · smoothiev2-prime.kicad_pcb",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/smoothiev2-prime.kicad_pcb",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "3018-PROVer V2 manual V1.0 2022-09-06, English pp.15-21; motor table PDF p.73 · English pp.19–20,26–28",
+          "url": "https://genmitsu.s3.us-east-1.amazonaws.com/101-60-3018PV2/3018-PROVer_V2_User_Manual_%E3%80%90EN%2BDE%2BJP_V1.0_20220906_1.pdf",
+          "claim": "Documents named machine interface/accessory functions; no connector cavity pin schedule or retrofit wiring is supplied."
+        },
+        {
+          "title": "Prime P12 exact mosfets.kicad_sch",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/mosfets.kicad_sch",
+          "claim": "Defines the Prime-side connector and conditioning circuit. Machine-side pairing is a new proposal and must be measured."
+        }
+      ]
+    },
+    {
+      "id": "C14-006",
+      "panel_index": 13,
+      "edge_index": 5,
+      "from": "Laser-rated fused supply · voltage/current unknown · DC return",
+      "to": "Optional fitted laser driver · model required · Identify laser supply return",
+      "state": "OPEN",
+      "view": "DETAILED CIRCUIT",
+      "rationale": "Laser stage return: Laser-rated fused supply · voltage/current unknown · DC return → Optional fitted laser driver · model required · Identify laser supply return. The fitted interface or electrical contract is unresolved. The broken path is a boundary to identify, not a wire to install.",
+      "qualification": "Manual p.6 says optional laser is not included. Only populate this circuit if fitted. Identify laser driver model, TTL polarity/threshold/current, command connector and independent laser inhibition before choosing the level interface. Do not connect a logic output to laser power. Prime J35.6 is only a proposed PWM resource; verify firmware ownership.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · smoothiev2-prime.kicad_pcb",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/smoothiev2-prime.kicad_pcb",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "3018-PROVer V2 manual V1.0 2022-09-06, English pp.15-21; motor table PDF p.73 · English pp.19–20,26–28",
+          "url": "https://genmitsu.s3.us-east-1.amazonaws.com/101-60-3018PV2/3018-PROVer_V2_User_Manual_%E3%80%90EN%2BDE%2BJP_V1.0_20220906_1.pdf",
+          "claim": "Documents named machine interface/accessory functions; no connector cavity pin schedule or retrofit wiring is supplied."
+        },
+        {
+          "title": "Prime P12 exact mosfets.kicad_sch",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/mosfets.kicad_sch",
+          "claim": "Defines the Prime-side connector and conditioning circuit. Machine-side pairing is a new proposal and must be measured."
+        }
+      ]
+    },
+    {
+      "id": "C15-001",
+      "panel_index": 14,
+      "edge_index": 0,
+      "from": "Prime P12 · conditional pump power stage · J20.1 · cutoff-switched VFET",
+      "to": "Pump branch fuse · rating after load measurement · Fuse input",
+      "state": "GUESS",
+      "view": "MAIN",
+      "rationale": "Switched rail into pump branch fuse: Prime P12 · conditional pump power stage · J20.1 · cutoff-switched VFET → Pump branch fuse · rating after load measurement · Fuse input. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Manual pp.19–20 names the air-pump interface but gives no pump model, connector pin map or load rating. Proposed DC pump load on Fan2 only after VFET voltage, startup/stall current, flyback suppression and connector rating are established. J20.1 is cutoff-switched VFET, J20.2 Q22 switched return; verify exact P12 firmware/resource assignment and reuse one VFET supply, not a second source tied to the same rail.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · mosfets.kicad_sch",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/mosfets.kicad_sch",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "3018-PROVer V2 manual V1.0 2022-09-06, English pp.15-21; motor table PDF p.73 · English pp.19–20,26–28",
+          "url": "https://genmitsu.s3.us-east-1.amazonaws.com/101-60-3018PV2/3018-PROVer_V2_User_Manual_%E3%80%90EN%2BDE%2BJP_V1.0_20220906_1.pdf",
+          "claim": "Documents named machine interface/accessory functions; no connector cavity pin schedule or retrofit wiring is supplied."
+        },
+        {
+          "title": "Prime P12 exact mosfets.kicad_sch",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/mosfets.kicad_sch",
+          "claim": "Defines the Prime-side connector and conditioning circuit. Machine-side pairing is a new proposal and must be measured."
+        }
+      ]
+    },
+    {
+      "id": "C15-002",
+      "panel_index": 14,
+      "edge_index": 1,
+      "from": "Pump branch fuse · rating after load measurement · Fuse output",
+      "to": "Identified DC air pump · fitted status/rating unknown · Measured pump +",
+      "state": "GUESS",
+      "view": "DETAILED CIRCUIT",
+      "rationale": "Fused pump supply: Pump branch fuse · rating after load measurement · Fuse output → Identified DC air pump · fitted status/rating unknown · Measured pump +. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Manual pp.19–20 names the air-pump interface but gives no pump model, connector pin map or load rating. Proposed DC pump load on Fan2 only after VFET voltage, startup/stall current, flyback suppression and connector rating are established. J20.1 is cutoff-switched VFET, J20.2 Q22 switched return; verify exact P12 firmware/resource assignment and reuse one VFET supply, not a second source tied to the same rail.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · mosfets.kicad_sch",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/mosfets.kicad_sch",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "3018-PROVer V2 manual V1.0 2022-09-06, English pp.15-21; motor table PDF p.73 · English pp.19–20,26–28",
+          "url": "https://genmitsu.s3.us-east-1.amazonaws.com/101-60-3018PV2/3018-PROVer_V2_User_Manual_%E3%80%90EN%2BDE%2BJP_V1.0_20220906_1.pdf",
+          "claim": "Documents named machine interface/accessory functions; no connector cavity pin schedule or retrofit wiring is supplied."
+        },
+        {
+          "title": "Prime P12 exact mosfets.kicad_sch",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/mosfets.kicad_sch",
+          "claim": "Defines the Prime-side connector and conditioning circuit. Machine-side pairing is a new proposal and must be measured."
+        }
+      ]
+    },
+    {
+      "id": "C15-003",
+      "panel_index": 14,
+      "edge_index": 2,
+      "from": "Identified DC air pump · fitted status/rating unknown · Measured pump −",
+      "to": "Prime P12 · conditional pump power stage · J20.2 · Q22 switched return",
+      "state": "GUESS",
+      "view": "MAIN",
+      "rationale": "Pump low-side switched return: Identified DC air pump · fitted status/rating unknown · Measured pump − → Prime P12 · conditional pump power stage · J20.2 · Q22 switched return. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Manual pp.19–20 names the air-pump interface but gives no pump model, connector pin map or load rating. Proposed DC pump load on Fan2 only after VFET voltage, startup/stall current, flyback suppression and connector rating are established. J20.1 is cutoff-switched VFET, J20.2 Q22 switched return; verify exact P12 firmware/resource assignment and reuse one VFET supply, not a second source tied to the same rail.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · mosfets.kicad_sch",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/mosfets.kicad_sch",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "3018-PROVer V2 manual V1.0 2022-09-06, English pp.15-21; motor table PDF p.73 · English pp.19–20,26–28",
+          "url": "https://genmitsu.s3.us-east-1.amazonaws.com/101-60-3018PV2/3018-PROVer_V2_User_Manual_%E3%80%90EN%2BDE%2BJP_V1.0_20220906_1.pdf",
+          "claim": "Documents named machine interface/accessory functions; no connector cavity pin schedule or retrofit wiring is supplied."
+        },
+        {
+          "title": "Prime P12 exact mosfets.kicad_sch",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/mosfets.kicad_sch",
+          "claim": "Defines the Prime-side connector and conditioning circuit. Machine-side pairing is a new proposal and must be measured."
+        }
+      ]
+    },
+    {
+      "id": "C16-001",
+      "panel_index": 15,
+      "edge_index": 0,
+      "from": "Fitted E-stop switch · contacts must be traced · Identify stop-chain contact A",
+      "to": "Independent hardware stop chain · retain or engineer · Identify monitored stop-loop input",
+      "state": "OPEN",
+      "view": "DETAILED CIRCUIT",
+      "rationale": "Hardwired stop chain input: Fitted E-stop switch · contacts must be traced · Identify stop-chain contact A → Independent hardware stop chain · retain or engineer · Identify monitored stop-loop input. The fitted interface or electrical contract is unresolved. The broken path is a boundary to identify, not a wire to install.",
+      "qualification": "Manual pp.19–20 names E-stop interface without contact numbers or safety topology. Trace fitted switch and contactor/drive-inhibit circuit before wiring. Board-only firmware stop cannot assure safe stop. No Prime GPIO is presented as the hazardous-energy cut-off.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · smoothiev2-prime.kicad_pcb",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/smoothiev2-prime.kicad_pcb",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "3018-PROVer V2 manual V1.0 2022-09-06, English pp.15-21; motor table PDF p.73 · English pp.19–20,26–28",
+          "url": "https://genmitsu.s3.us-east-1.amazonaws.com/101-60-3018PV2/3018-PROVer_V2_User_Manual_%E3%80%90EN%2BDE%2BJP_V1.0_20220906_1.pdf",
+          "claim": "Documents named machine interface/accessory functions; no connector cavity pin schedule or retrofit wiring is supplied."
+        },
+        {
+          "title": "Prime P12 exact inputs.kicad_sch",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/inputs.kicad_sch",
+          "claim": "Defines the Prime-side connector and conditioning circuit. Machine-side pairing is a new proposal and must be measured."
+        },
+        {
+          "title": "Smoothieware emergency-stop guidance",
+          "url": "https://smoothieware.org/emergencystop.html",
+          "claim": "Firmware-only emergency stop cannot provide a safe stopping guarantee; hardware must remove hazardous energy."
+        }
+      ]
+    },
+    {
+      "id": "C16-002",
+      "panel_index": 15,
+      "edge_index": 1,
+      "from": "Fitted E-stop switch · contacts must be traced · Identify stop-chain contact B",
+      "to": "Independent hardware stop chain · retain or engineer · Identify stop-loop return",
+      "state": "OPEN",
+      "view": "DETAILED CIRCUIT",
+      "rationale": "Hardwired stop chain return: Fitted E-stop switch · contacts must be traced · Identify stop-chain contact B → Independent hardware stop chain · retain or engineer · Identify stop-loop return. The fitted interface or electrical contract is unresolved. The broken path is a boundary to identify, not a wire to install.",
+      "qualification": "Manual pp.19–20 names E-stop interface without contact numbers or safety topology. Trace fitted switch and contactor/drive-inhibit circuit before wiring. Board-only firmware stop cannot assure safe stop. No Prime GPIO is presented as the hazardous-energy cut-off.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · smoothiev2-prime.kicad_pcb",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/smoothiev2-prime.kicad_pcb",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "3018-PROVer V2 manual V1.0 2022-09-06, English pp.15-21; motor table PDF p.73 · English pp.19–20,26–28",
+          "url": "https://genmitsu.s3.us-east-1.amazonaws.com/101-60-3018PV2/3018-PROVer_V2_User_Manual_%E3%80%90EN%2BDE%2BJP_V1.0_20220906_1.pdf",
+          "claim": "Documents named machine interface/accessory functions; no connector cavity pin schedule or retrofit wiring is supplied."
+        },
+        {
+          "title": "Prime P12 exact inputs.kicad_sch",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/inputs.kicad_sch",
+          "claim": "Defines the Prime-side connector and conditioning circuit. Machine-side pairing is a new proposal and must be measured."
+        },
+        {
+          "title": "Smoothieware emergency-stop guidance",
+          "url": "https://smoothieware.org/emergencystop.html",
+          "claim": "Firmware-only emergency stop cannot provide a safe stopping guarantee; hardware must remove hazardous energy."
+        }
+      ]
+    },
+    {
+      "id": "C17-001",
+      "panel_index": 16,
+      "edge_index": 0,
+      "from": "Prime P12 · no validated factory pendant interface · Compatible host interface · unsupported factory protocol",
+      "to": "Factory offline controller · optional accessory · Factory-only interface · connector unspecified",
+      "state": "OPEN",
+      "view": "MAIN",
+      "rationale": "Factory offline interface compatibility: Prime P12 · no validated factory pendant interface · Compatible host interface · unsupported factory protocol → Factory offline controller · optional accessory · Factory-only interface · connector unspecified. The fitted interface or electrical contract is unresolved. The broken path is a boundary to identify, not a wire to install.",
+      "qualification": "Manual p.28 warns factory offline port is designed for its controller and must not connect other controllers. Keep factory offline controller/MPG disconnected from Prime until protocol, electrical levels and replacement firmware support are established. J30 debug UART is not an assumed factory pendant adapter.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · smoothiev2-prime.kicad_pcb",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/smoothiev2-prime.kicad_pcb",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "3018-PROVer V2 manual V1.0 2022-09-06, English pp.15-21; motor table PDF p.73 · English pp.19–20,26–28",
+          "url": "https://genmitsu.s3.us-east-1.amazonaws.com/101-60-3018PV2/3018-PROVer_V2_User_Manual_%E3%80%90EN%2BDE%2BJP_V1.0_20220906_1.pdf",
+          "claim": "Documents named machine interface/accessory functions; no connector cavity pin schedule or retrofit wiring is supplied."
+        },
+        {
+          "title": "Prime P12 exact inputs.kicad_sch",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/inputs.kicad_sch",
+          "claim": "Defines the Prime-side connector and conditioning circuit. Machine-side pairing is a new proposal and must be measured."
+        }
+      ]
+    },
+    {
+      "id": "C17-002",
+      "panel_index": 16,
+      "edge_index": 1,
+      "from": "Prime P12 · no validated factory pendant interface · Compatible host interface · unsupported factory protocol",
+      "to": "Factory MPG/handwheel interface · fitted status unresolved · MPG interface · protocol unspecified",
+      "state": "OPEN",
+      "view": "MAIN",
+      "rationale": "Factory MPG interface compatibility: Prime P12 · no validated factory pendant interface · Compatible host interface · unsupported factory protocol → Factory MPG/handwheel interface · fitted status unresolved · MPG interface · protocol unspecified. The fitted interface or electrical contract is unresolved. The broken path is a boundary to identify, not a wire to install.",
+      "qualification": "Manual p.28 warns factory offline port is designed for its controller and must not connect other controllers. Keep factory offline controller/MPG disconnected from Prime until protocol, electrical levels and replacement firmware support are established. J30 debug UART is not an assumed factory pendant adapter.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · smoothiev2-prime.kicad_pcb",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/smoothiev2-prime.kicad_pcb",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "3018-PROVer V2 manual V1.0 2022-09-06, English pp.15-21; motor table PDF p.73 · English pp.19–20,26–28",
+          "url": "https://genmitsu.s3.us-east-1.amazonaws.com/101-60-3018PV2/3018-PROVer_V2_User_Manual_%E3%80%90EN%2BDE%2BJP_V1.0_20220906_1.pdf",
+          "claim": "Documents named machine interface/accessory functions; no connector cavity pin schedule or retrofit wiring is supplied."
+        },
+        {
+          "title": "Prime P12 exact inputs.kicad_sch",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/inputs.kicad_sch",
+          "claim": "Defines the Prime-side connector and conditioning circuit. Machine-side pairing is a new proposal and must be measured."
+        }
+      ]
+    }
+  ],
+  "main_visible_connections": [
+    "C01-001",
+    "C01-002",
+    "C01-003",
+    "C01-004",
+    "C02-001",
+    "C02-002",
+    "C02-003",
+    "C02-004",
+    "C03-001",
+    "C03-002",
+    "C03-003",
+    "C03-004",
+    "C04-001",
+    "C04-002",
+    "C04-003",
+    "C04-004",
+    "C04-005",
+    "C05-001",
+    "C05-002",
+    "C06-001",
+    "C06-002",
+    "C06-003",
+    "C07-001",
+    "C07-002",
+    "C07-003",
+    "C08-001",
+    "C08-002",
+    "C08-003",
+    "C09-001",
+    "C09-002",
+    "C09-003",
+    "C10-001",
+    "C10-002",
+    "C10-003",
+    "C11-001",
+    "C11-002",
+    "C11-003",
+    "C12-001",
+    "C12-002",
+    "C12-004",
+    "C12-005",
+    "C13-001",
+    "C13-002",
+    "C14-001",
+    "C14-002",
+    "C15-001",
+    "C15-003",
+    "C17-001",
+    "C17-002"
+  ],
+  "detailed_only_connections": [
+    "C12-003",
+    "C14-003",
+    "C14-004",
+    "C14-005",
+    "C14-006",
+    "C15-002",
+    "C16-001",
+    "C16-002"
+  ],
+  "main_route_manifest": [
+    {
+      "connection_id": "C12-001",
+      "controller_identity": [
+        "J42",
+        "1"
+      ],
+      "controller_anchor": [
+        1207.8095238095239,
+        1000
+      ],
+      "assembly": [
+        "north",
+        "power"
+      ],
+      "assembly_anchor": [
+        1200.0,
+        820
+      ],
+      "assembly_port_index": 1,
+      "receiver_node": "Regulated 5 V logic supply",
+      "receiver_contact": "+5 V regulated"
+    },
+    {
+      "connection_id": "C12-002",
+      "controller_identity": [
+        "J42",
+        "2"
+      ],
+      "controller_anchor": [
+        1309.5238095238096,
+        1000
+      ],
+      "assembly": [
+        "north",
+        "power"
+      ],
+      "assembly_anchor": [
+        1400.0,
+        820
+      ],
+      "assembly_port_index": 2,
+      "receiver_node": "Regulated 5 V logic supply",
+      "receiver_contact": "0 V logic return"
+    },
+    {
+      "connection_id": "C12-004",
+      "controller_identity": [
+        "J9",
+        "1"
+      ],
+      "controller_anchor": [
+        1449.142857142857,
+        1000
+      ],
+      "assembly": [
+        "north",
+        "power"
+      ],
+      "assembly_anchor": [
+        1600.0,
+        820
+      ],
+      "assembly_port_index": 3,
+      "receiver_node": "Motor branch fuse · rating selected after measurement",
+      "receiver_contact": "fuse output"
+    },
+    {
+      "connection_id": "C12-005",
+      "controller_identity": [
+        "J9",
+        "2"
+      ],
+      "controller_anchor": [
+        1550.857142857143,
+        1000
+      ],
+      "assembly": [
+        "north",
+        "power"
+      ],
+      "assembly_anchor": [
+        1800.0,
+        820
+      ],
+      "assembly_port_index": 4,
+      "receiver_node": "Verified motor supply · voltage/current TBD",
+      "receiver_contact": "0 V motor return"
+    },
+    {
+      "connection_id": "C15-001",
+      "controller_identity": [
+        "J20",
+        "1"
+      ],
+      "controller_anchor": [
+        1000,
+        1229.134693877551
+      ],
+      "assembly": [
+        "west",
+        "thermal"
+      ],
+      "assembly_anchor": [
+        765,
+        405.0
+      ],
+      "assembly_port_index": 1,
+      "receiver_node": "Pump branch fuse · rating after load measurement",
+      "receiver_contact": "Fuse input"
+    },
+    {
+      "connection_id": "C15-003",
+      "controller_identity": [
+        "J20",
+        "2"
+      ],
+      "controller_anchor": [
+        1000,
+        1408.865306122449
+      ],
+      "assembly": [
+        "west",
+        "thermal"
+      ],
+      "assembly_anchor": [
+        765,
+        635.0
+      ],
+      "assembly_port_index": 2,
+      "receiver_node": "Identified DC air pump · fitted status/rating unknown",
+      "receiver_contact": "Measured pump −"
+    },
+    {
+      "connection_id": "C04-001",
+      "controller_identity": [
+        "J35",
+        "6"
+      ],
+      "controller_anchor": [
+        1000,
+        1652.5061224489796
+      ],
+      "assembly": [
+        "west",
+        "process"
+      ],
+      "assembly_anchor": [
+        765,
+        1083.75
+      ],
+      "assembly_port_index": 1,
+      "receiver_node": "Cytron MD10C R3.0",
+      "receiver_contact": "PWM"
+    },
+    {
+      "connection_id": "C14-001",
+      "controller_identity": [
+        "J35",
+        "6"
+      ],
+      "controller_anchor": [
+        1000,
+        1652.5061224489796
+      ],
+      "assembly": [
+        "west",
+        "process"
+      ],
+      "assembly_anchor": [
+        765,
+        1201.25
+      ],
+      "assembly_port_index": 2,
+      "receiver_node": "Required laser level/isolating interface · select from fitted driver",
+      "receiver_contact": "Logic input · threshold unresolved"
+    },
+    {
+      "connection_id": "C04-002",
+      "controller_identity": [
+        "J35",
+        "10"
+      ],
+      "controller_anchor": [
+        1000,
+        1801.5510204081634
+      ],
+      "assembly": [
+        "west",
+        "process"
+      ],
+      "assembly_anchor": [
+        765,
+        1318.75
+      ],
+      "assembly_port_index": 3,
+      "receiver_node": "Cytron MD10C R3.0",
+      "receiver_contact": "GND"
+    },
+    {
+      "connection_id": "C14-002",
+      "controller_identity": [
+        "J35",
+        "10"
+      ],
+      "controller_anchor": [
+        1000,
+        1801.5510204081634
+      ],
+      "assembly": [
+        "west",
+        "process"
+      ],
+      "assembly_anchor": [
+        765,
+        1436.25
+      ],
+      "assembly_port_index": 4,
+      "receiver_node": "Required laser level/isolating interface · select from fitted driver",
+      "receiver_contact": "Logic reference"
+    },
+    {
+      "connection_id": "C04-003",
+      "kind": "assembly-load",
+      "assembly": [
+        "west",
+        "process"
+      ],
+      "from_node": "Cytron MD10C R3.0",
+      "from_contact": "OUT A",
+      "to_node": "775 spindle: measured motor terminals (polarity unknown)",
+      "to_contact": "measured motor terminal 1",
+      "from_anchor": [
+        73.0,
+        1367
+      ],
+      "to_anchor": [
+        388.0,
+        1367
+      ]
+    },
+    {
+      "connection_id": "C04-004",
+      "kind": "assembly-load",
+      "assembly": [
+        "west",
+        "process"
+      ],
+      "from_node": "Cytron MD10C R3.0",
+      "from_contact": "OUT B",
+      "to_node": "775 spindle: measured motor terminals (polarity unknown)",
+      "to_contact": "measured motor terminal 2",
+      "from_anchor": [
+        433.0,
+        1367
+      ],
+      "to_anchor": [
+        748.0,
+        1367
+      ]
+    },
+    {
+      "connection_id": "C05-001",
+      "kind": "assembly-load",
+      "assembly": [
+        "west",
+        "process"
+      ],
+      "from_node": "Fused dedicated 12-24V spindle supply",
+      "from_contact": "V+",
+      "to_node": "Cytron MD10C R3.0 power input",
+      "to_contact": "VM",
+      "from_anchor": [
+        73.0,
+        1477
+      ],
+      "to_anchor": [
+        388.0,
+        1477
+      ]
+    },
+    {
+      "connection_id": "C05-002",
+      "kind": "assembly-load",
+      "assembly": [
+        "west",
+        "process"
+      ],
+      "from_node": "Fused dedicated 12-24V spindle supply",
+      "from_contact": "0V",
+      "to_node": "Cytron MD10C R3.0 power input",
+      "to_contact": "GND",
+      "from_anchor": [
+        433.0,
+        1477
+      ],
+      "to_anchor": [
+        748.0,
+        1477
+      ]
+    },
+    {
+      "connection_id": "C06-003",
+      "controller_identity": [
+        "J24",
+        "1"
+      ],
+      "controller_anchor": [
+        2000,
+        1157.3
+      ],
+      "assembly": [
+        "east",
+        "inputs"
+      ],
+      "assembly_anchor": [
+        2235,
+        302.77777777777777
+      ],
+      "assembly_port_index": 1,
+      "receiver_node": "X MIN switch",
+      "receiver_contact": "Third cable lead · identify supply or contact before connection"
+    },
+    {
+      "connection_id": "C06-002",
+      "controller_identity": [
+        "J24",
+        "2"
+      ],
+      "controller_anchor": [
+        2000,
+        1183.25
+      ],
+      "assembly": [
+        "east",
+        "inputs"
+      ],
+      "assembly_anchor": [
+        2235,
+        328.3333333333333
+      ],
+      "assembly_port_index": 2,
+      "receiver_node": "X MIN switch",
+      "receiver_contact": "switch return"
+    },
+    {
+      "connection_id": "C06-001",
+      "controller_identity": [
+        "J24",
+        "3"
+      ],
+      "controller_anchor": [
+        2000,
+        1209.2
+      ],
+      "assembly": [
+        "east",
+        "inputs"
+      ],
+      "assembly_anchor": [
+        2235,
+        353.8888888888889
+      ],
+      "assembly_port_index": 3,
+      "receiver_node": "X MIN switch",
+      "receiver_contact": "switch signal"
+    },
+    {
+      "connection_id": "C07-003",
+      "controller_identity": [
+        "J25",
+        "1"
+      ],
+      "controller_anchor": [
+        2000,
+        1247.8
+      ],
+      "assembly": [
+        "east",
+        "inputs"
+      ],
+      "assembly_anchor": [
+        2235,
+        379.44444444444446
+      ],
+      "assembly_port_index": 4,
+      "receiver_node": "X MAX switch",
+      "receiver_contact": "Third cable lead · identify supply or contact before connection"
+    },
+    {
+      "connection_id": "C07-002",
+      "controller_identity": [
+        "J25",
+        "2"
+      ],
+      "controller_anchor": [
+        2000,
+        1273.75
+      ],
+      "assembly": [
+        "east",
+        "inputs"
+      ],
+      "assembly_anchor": [
+        2235,
+        405.0
+      ],
+      "assembly_port_index": 5,
+      "receiver_node": "X MAX switch",
+      "receiver_contact": "switch return"
+    },
+    {
+      "connection_id": "C07-001",
+      "controller_identity": [
+        "J25",
+        "3"
+      ],
+      "controller_anchor": [
+        2000,
+        1299.7
+      ],
+      "assembly": [
+        "east",
+        "inputs"
+      ],
+      "assembly_anchor": [
+        2235,
+        430.55555555555554
+      ],
+      "assembly_port_index": 6,
+      "receiver_node": "X MAX switch",
+      "receiver_contact": "switch signal"
+    },
+    {
+      "connection_id": "C08-003",
+      "controller_identity": [
+        "J26",
+        "1"
+      ],
+      "controller_anchor": [
+        2000,
+        1338.3
+      ],
+      "assembly": [
+        "east",
+        "inputs"
+      ],
+      "assembly_anchor": [
+        2235,
+        456.1111111111111
+      ],
+      "assembly_port_index": 7,
+      "receiver_node": "Y MIN switch",
+      "receiver_contact": "Third cable lead · identify supply or contact before connection"
+    },
+    {
+      "connection_id": "C08-002",
+      "controller_identity": [
+        "J26",
+        "2"
+      ],
+      "controller_anchor": [
+        2000,
+        1364.25
+      ],
+      "assembly": [
+        "east",
+        "inputs"
+      ],
+      "assembly_anchor": [
+        2235,
+        481.66666666666663
+      ],
+      "assembly_port_index": 8,
+      "receiver_node": "Y MIN switch",
+      "receiver_contact": "switch return"
+    },
+    {
+      "connection_id": "C08-001",
+      "controller_identity": [
+        "J26",
+        "3"
+      ],
+      "controller_anchor": [
+        2000,
+        1390.2
+      ],
+      "assembly": [
+        "east",
+        "inputs"
+      ],
+      "assembly_anchor": [
+        2235,
+        507.22222222222223
+      ],
+      "assembly_port_index": 9,
+      "receiver_node": "Y MIN switch",
+      "receiver_contact": "switch signal"
+    },
+    {
+      "connection_id": "C09-003",
+      "controller_identity": [
+        "J27",
+        "1"
+      ],
+      "controller_anchor": [
+        2000,
+        1428.8
+      ],
+      "assembly": [
+        "east",
+        "inputs"
+      ],
+      "assembly_anchor": [
+        2235,
+        532.7777777777778
+      ],
+      "assembly_port_index": 10,
+      "receiver_node": "Y MAX switch",
+      "receiver_contact": "Third cable lead · identify supply or contact before connection"
+    },
+    {
+      "connection_id": "C09-002",
+      "controller_identity": [
+        "J27",
+        "2"
+      ],
+      "controller_anchor": [
+        2000,
+        1454.75
+      ],
+      "assembly": [
+        "east",
+        "inputs"
+      ],
+      "assembly_anchor": [
+        2235,
+        558.3333333333333
+      ],
+      "assembly_port_index": 11,
+      "receiver_node": "Y MAX switch",
+      "receiver_contact": "switch return"
+    },
+    {
+      "connection_id": "C09-001",
+      "controller_identity": [
+        "J27",
+        "3"
+      ],
+      "controller_anchor": [
+        2000,
+        1480.7
+      ],
+      "assembly": [
+        "east",
+        "inputs"
+      ],
+      "assembly_anchor": [
+        2235,
+        583.8888888888889
+      ],
+      "assembly_port_index": 12,
+      "receiver_node": "Y MAX switch",
+      "receiver_contact": "switch signal"
+    },
+    {
+      "connection_id": "C10-003",
+      "controller_identity": [
+        "J28",
+        "1"
+      ],
+      "controller_anchor": [
+        2000,
+        1519.3
+      ],
+      "assembly": [
+        "east",
+        "inputs"
+      ],
+      "assembly_anchor": [
+        2235,
+        609.4444444444445
+      ],
+      "assembly_port_index": 13,
+      "receiver_node": "Z MIN switch",
+      "receiver_contact": "Third cable lead · identify supply or contact before connection"
+    },
+    {
+      "connection_id": "C10-002",
+      "controller_identity": [
+        "J28",
+        "2"
+      ],
+      "controller_anchor": [
+        2000,
+        1545.25
+      ],
+      "assembly": [
+        "east",
+        "inputs"
+      ],
+      "assembly_anchor": [
+        2235,
+        635.0
+      ],
+      "assembly_port_index": 14,
+      "receiver_node": "Z MIN switch",
+      "receiver_contact": "switch return"
+    },
+    {
+      "connection_id": "C10-001",
+      "controller_identity": [
+        "J28",
+        "3"
+      ],
+      "controller_anchor": [
+        2000,
+        1571.2
+      ],
+      "assembly": [
+        "east",
+        "inputs"
+      ],
+      "assembly_anchor": [
+        2235,
+        660.5555555555555
+      ],
+      "assembly_port_index": 15,
+      "receiver_node": "Z MIN switch",
+      "receiver_contact": "switch signal"
+    },
+    {
+      "connection_id": "C11-003",
+      "controller_identity": [
+        "J29",
+        "1"
+      ],
+      "controller_anchor": [
+        2000,
+        1609.8
+      ],
+      "assembly": [
+        "east",
+        "inputs"
+      ],
+      "assembly_anchor": [
+        2235,
+        686.1111111111111
+      ],
+      "assembly_port_index": 16,
+      "receiver_node": "Z MAX switch",
+      "receiver_contact": "Third cable lead · identify supply or contact before connection"
+    },
+    {
+      "connection_id": "C11-002",
+      "controller_identity": [
+        "J29",
+        "2"
+      ],
+      "controller_anchor": [
+        2000,
+        1635.75
+      ],
+      "assembly": [
+        "east",
+        "inputs"
+      ],
+      "assembly_anchor": [
+        2235,
+        711.6666666666667
+      ],
+      "assembly_port_index": 17,
+      "receiver_node": "Z MAX switch",
+      "receiver_contact": "switch return"
+    },
+    {
+      "connection_id": "C11-001",
+      "controller_identity": [
+        "J29",
+        "3"
+      ],
+      "controller_anchor": [
+        2000,
+        1661.7
+      ],
+      "assembly": [
+        "east",
+        "inputs"
+      ],
+      "assembly_anchor": [
+        2235,
+        737.2222222222222
+      ],
+      "assembly_port_index": 18,
+      "receiver_node": "Z MAX switch",
+      "receiver_contact": "switch signal"
+    },
+    {
+      "connection_id": "C13-002",
+      "controller_identity": [
+        "J31",
+        "3"
+      ],
+      "controller_anchor": [
+        2000,
+        1752.2
+      ],
+      "assembly": [
+        "east",
+        "probe"
+      ],
+      "assembly_anchor": [
+        2235,
+        1142.5
+      ],
+      "assembly_port_index": 1,
+      "receiver_node": "Measured passive Z plate + tool clip",
+      "receiver_contact": "Tool clip return · continuity identify"
+    },
+    {
+      "connection_id": "C13-001",
+      "controller_identity": [
+        "J31",
+        "4"
+      ],
+      "controller_anchor": [
+        2000,
+        1778.15
+      ],
+      "assembly": [
+        "east",
+        "probe"
+      ],
+      "assembly_anchor": [
+        2235,
+        1377.5
+      ],
+      "assembly_port_index": 2,
+      "receiver_node": "Measured passive Z plate + tool clip",
+      "receiver_contact": "Plate lead · continuity identify"
+    },
+    {
+      "connection_id": "C04-005",
+      "controller_identity": [
+        "UNRESOLVED",
+        "3:g2_pwm_source:DIR0"
+      ],
+      "controller_anchor": [
+        2000,
+        1816.75
+      ],
+      "assembly": [
+        "east",
+        "extension"
+      ],
+      "assembly_anchor": [
+        2235,
+        1816.6666666666667
+      ],
+      "assembly_port_index": 1,
+      "receiver_node": "Cytron MD10C R3.0",
+      "receiver_contact": "DIR"
+    },
+    {
+      "connection_id": "C17-001",
+      "controller_identity": [
+        "UNRESOLVED",
+        "16:prime:port"
+      ],
+      "controller_anchor": [
+        2000,
+        1842.7
+      ],
+      "assembly": [
+        "east",
+        "extension"
+      ],
+      "assembly_anchor": [
+        2235,
+        1930.0
+      ],
+      "assembly_port_index": 2,
+      "receiver_node": "Factory offline controller · optional accessory",
+      "receiver_contact": "Factory-only interface · connector unspecified"
+    },
+    {
+      "connection_id": "C17-002",
+      "controller_identity": [
+        "UNRESOLVED",
+        "16:prime:port"
+      ],
+      "controller_anchor": [
+        2000,
+        1842.7
+      ],
+      "assembly": [
+        "east",
+        "extension"
+      ],
+      "assembly_anchor": [
+        2235,
+        2043.3333333333333
+      ],
+      "assembly_port_index": 3,
+      "receiver_node": "Factory MPG/handwheel interface · fitted status unresolved",
+      "receiver_contact": "MPG interface · protocol unspecified"
+    },
+    {
+      "connection_id": "C01-001",
+      "controller_identity": [
+        "J5",
+        "1"
+      ],
+      "controller_anchor": [
+        1176.5128205128206,
+        2000
+      ],
+      "assembly": [
+        "south",
+        "J5"
+      ],
+      "assembly_anchor": [
+        204.0,
+        2200
+      ],
+      "assembly_port_index": 1,
+      "receiver_node": "X motor harness (cavities unverified)",
+      "receiver_contact": "New measured winding lead B2"
+    },
+    {
+      "connection_id": "C01-002",
+      "controller_identity": [
+        "J5",
+        "2"
+      ],
+      "controller_anchor": [
+        1231.2820512820513,
+        2000
+      ],
+      "assembly": [
+        "south",
+        "J5"
+      ],
+      "assembly_anchor": [
+        343.0,
+        2200
+      ],
+      "assembly_port_index": 2,
+      "receiver_node": "X motor harness (cavities unverified)",
+      "receiver_contact": "New measured winding lead B1"
+    },
+    {
+      "connection_id": "C01-003",
+      "controller_identity": [
+        "J5",
+        "3"
+      ],
+      "controller_anchor": [
+        1286.051282051282,
+        2000
+      ],
+      "assembly": [
+        "south",
+        "J5"
+      ],
+      "assembly_anchor": [
+        482.0,
+        2200
+      ],
+      "assembly_port_index": 3,
+      "receiver_node": "X motor harness (cavities unverified)",
+      "receiver_contact": "New measured winding lead A2"
+    },
+    {
+      "connection_id": "C01-004",
+      "controller_identity": [
+        "J5",
+        "4"
+      ],
+      "controller_anchor": [
+        1340.8205128205127,
+        2000
+      ],
+      "assembly": [
+        "south",
+        "J5"
+      ],
+      "assembly_anchor": [
+        621.0,
+        2200
+      ],
+      "assembly_port_index": 4,
+      "receiver_node": "X motor harness (cavities unverified)",
+      "receiver_contact": "New measured winding lead A1"
+    },
+    {
+      "connection_id": "C02-001",
+      "controller_identity": [
+        "J6",
+        "1"
+      ],
+      "controller_anchor": [
+        1417.8461538461538,
+        2000
+      ],
+      "assembly": [
+        "south",
+        "J6"
+      ],
+      "assembly_anchor": [
+        929.0,
+        2200
+      ],
+      "assembly_port_index": 1,
+      "receiver_node": "Y motor harness (cavities unverified)",
+      "receiver_contact": "New measured winding lead B2"
+    },
+    {
+      "connection_id": "C02-002",
+      "controller_identity": [
+        "J6",
+        "2"
+      ],
+      "controller_anchor": [
+        1472.6153846153845,
+        2000
+      ],
+      "assembly": [
+        "south",
+        "J6"
+      ],
+      "assembly_anchor": [
+        1068.0,
+        2200
+      ],
+      "assembly_port_index": 2,
+      "receiver_node": "Y motor harness (cavities unverified)",
+      "receiver_contact": "New measured winding lead B1"
+    },
+    {
+      "connection_id": "C02-003",
+      "controller_identity": [
+        "J6",
+        "3"
+      ],
+      "controller_anchor": [
+        1527.3846153846152,
+        2000
+      ],
+      "assembly": [
+        "south",
+        "J6"
+      ],
+      "assembly_anchor": [
+        1207.0,
+        2200
+      ],
+      "assembly_port_index": 3,
+      "receiver_node": "Y motor harness (cavities unverified)",
+      "receiver_contact": "New measured winding lead A2"
+    },
+    {
+      "connection_id": "C02-004",
+      "controller_identity": [
+        "J6",
+        "4"
+      ],
+      "controller_anchor": [
+        1582.1538461538462,
+        2000
+      ],
+      "assembly": [
+        "south",
+        "J6"
+      ],
+      "assembly_anchor": [
+        1346.0,
+        2200
+      ],
+      "assembly_port_index": 4,
+      "receiver_node": "Y motor harness (cavities unverified)",
+      "receiver_contact": "New measured winding lead A1"
+    },
+    {
+      "connection_id": "C03-001",
+      "controller_identity": [
+        "J7",
+        "1"
+      ],
+      "controller_anchor": [
+        1659.179487179487,
+        2000
+      ],
+      "assembly": [
+        "south",
+        "J7"
+      ],
+      "assembly_anchor": [
+        1654.0,
+        2200
+      ],
+      "assembly_port_index": 1,
+      "receiver_node": "Z motor harness (cavities unverified)",
+      "receiver_contact": "New measured winding lead B2"
+    },
+    {
+      "connection_id": "C03-002",
+      "controller_identity": [
+        "J7",
+        "2"
+      ],
+      "controller_anchor": [
+        1713.9487179487178,
+        2000
+      ],
+      "assembly": [
+        "south",
+        "J7"
+      ],
+      "assembly_anchor": [
+        1793.0,
+        2200
+      ],
+      "assembly_port_index": 2,
+      "receiver_node": "Z motor harness (cavities unverified)",
+      "receiver_contact": "New measured winding lead B1"
+    },
+    {
+      "connection_id": "C03-003",
+      "controller_identity": [
+        "J7",
+        "3"
+      ],
+      "controller_anchor": [
+        1768.7179487179485,
+        2000
+      ],
+      "assembly": [
+        "south",
+        "J7"
+      ],
+      "assembly_anchor": [
+        1932.0,
+        2200
+      ],
+      "assembly_port_index": 3,
+      "receiver_node": "Z motor harness (cavities unverified)",
+      "receiver_contact": "New measured winding lead A2"
+    },
+    {
+      "connection_id": "C03-004",
+      "controller_identity": [
+        "J7",
+        "4"
+      ],
+      "controller_anchor": [
+        1823.4871794871792,
+        2000
+      ],
+      "assembly": [
+        "south",
+        "J7"
+      ],
+      "assembly_anchor": [
+        2071.0,
+        2200
+      ],
+      "assembly_port_index": 4,
+      "receiver_node": "Z motor harness (cavities unverified)",
+      "receiver_contact": "New measured winding lead A1"
+    }
+  ],
+  "geometry": {
+    "viewbox": [
+      0,
+      0,
+      3000,
+      3000
+    ],
+    "controller": [
+      1000,
+      1000,
+      1000,
+      1000
+    ],
+    "controller_area_fraction": 0.1111111111111111
+  },
+  "svg_sha256": "79631310f134bc1b61bd6510aa450e4a2f29090cb761f8c860be3e300d7043f1"
+}

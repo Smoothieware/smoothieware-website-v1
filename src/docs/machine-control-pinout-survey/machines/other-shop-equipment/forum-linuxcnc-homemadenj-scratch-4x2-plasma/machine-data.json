@@ -1,0 +1,52 @@
+{
+  "id": "forum-linuxcnc-homemadenj-scratch-4x2-plasma",
+  "sources": {
+    "forum-peripheral-evidence.json": {
+      "id": "forum-linuxcnc-homemadenj-scratch-4x2-plasma",
+      "dossier": "src/docs/machine-research/linuxcnc-homemadenj-scratch-4x2-plasma.md",
+      "reported_fitted_or_used": [
+        {
+          "name": "Everlast PowerPlasma 60s",
+          "contacts": [],
+          "source_line_number": 17,
+          "source_line": "- Plasma source: Everlast PowerPlasma 60s.",
+          "evidence": "Plasma source: Everlast PowerPlasma 60s.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        },
+        {
+          "name": "Floating torch-head probe",
+          "contacts": [],
+          "source_line_number": 13,
+          "source_line": "- Z: owner-built Microcarve Z assembly with floating torch head.",
+          "evidence": "Z: owner-built Microcarve Z assembly with floating torch head.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        }
+      ],
+      "listed_for_build_unverified": [],
+      "historical_reference": [],
+      "planned_only": [],
+      "open_function_group": [],
+      "exclusions": [
+        {
+          "name": "Probotix motion electronics",
+          "contacts": [],
+          "source_line_number": 14,
+          "source_line": "- Electronics: Probotix electronics.",
+          "evidence": "- Electronics: Probotix electronics.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route",
+          "reason": "Excluded: no separate externally addressable interface, existing control hardware, absent tooling, or inadequate positive device evidence in this dossier."
+        },
+        {
+          "name": "Proma torch-height control",
+          "contacts": [],
+          "source_line_number": 16,
+          "source_line": "- Torch-height control: Proma THC.",
+          "evidence": "- Torch-height control: Proma THC.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route",
+          "reason": "Excluded: no separate externally addressable interface, existing control hardware, absent tooling, or inadequate positive device evidence in this dossier."
+        }
+      ],
+      "source_gap": "Dossier does not establish an as-built SmoothieBox route or a complete physical contact schedule for the listed peripherals."
+    }
+  }
+}

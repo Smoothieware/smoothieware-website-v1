@@ -1,0 +1,124 @@
+{
+  "id": "mill-avid-ex-4",
+  "sources": {
+    "machine-side-graph-snapshot.json": {
+      "source_graph": "030-mill-avid-ex-4.json",
+      "source_sha256": "ccab0c8b903b86d567b124b8ac3f1f8dc4e04bfda227ac929346deb839c7ea6b",
+      "graph": {
+        "profile_id": "mill-avid-ex-4",
+        "devices": [
+          {
+            "id": "peripheral-01",
+            "role": "peripheral"
+          },
+          {
+            "id": "group-device-001",
+            "role": "peripheral"
+          },
+          {
+            "id": "group-device-002",
+            "role": "peripheral"
+          }
+        ],
+        "connectors": [
+          {
+            "id": "machine-01",
+            "device": "peripheral-01",
+            "refdes": "Avid EX 25.1 14-contact peripheral cable \u00b7 option-dependent [SOURCE TABLE 1]",
+            "form": "source-described connector",
+            "scope": "Avid EX 25.1 14-contact peripheral cable \u00b7 option-dependent; not a motor connector Machine/peripheral-side contact schedule; fitted presence unverified.",
+            "contacts": [
+              {
+                "id": "1",
+                "mark": "1",
+                "label": "1 / 2 | Spindle OK return / signal | Spindle cable; may be absent from plasma-only cable; source row groups positions, individual function/color assignment unverified"
+              },
+              {
+                "id": "2",
+                "mark": "2",
+                "label": "1 / 2 | Spindle OK return / signal | Spindle cable; may be absent from plasma-only cable; source row groups positions, individual function/color assignment unverified"
+              },
+              {
+                "id": "3",
+                "mark": "3",
+                "label": "3 / 4 | Torch-on pair | Plasma option; dry-contact function; source row groups positions, individual function/color assignment unverified"
+              },
+              {
+                "id": "4",
+                "mark": "4",
+                "label": "3 / 4 | Torch-on pair | Plasma option; dry-contact function; source row groups positions, individual function/color assignment unverified"
+              },
+              {
+                "id": "5",
+                "mark": "5",
+                "label": "5 / 6 | Divided torch voltage \u2212 / + | Plasma option; never raw torch voltage; source row groups positions, individual function/color assignment unverified"
+              },
+              {
+                "id": "6",
+                "mark": "6",
+                "label": "5 / 6 | Divided torch voltage \u2212 / + | Plasma option; never raw torch voltage; source row groups positions, individual function/color assignment unverified"
+              },
+              {
+                "id": "7",
+                "mark": "7",
+                "label": "7 / 8 | Spindle forward / DCM | VFD command contacts; source cable option required; source row groups positions, individual function/color assignment unverified"
+              },
+              {
+                "id": "8",
+                "mark": "8",
+                "label": "7 / 8 | Spindle forward / DCM | VFD command contacts; source cable option required; source row groups positions, individual function/color assignment unverified"
+              },
+              {
+                "id": "9",
+                "mark": "9",
+                "label": "9 / 10 | Analog speed / analog common | VFD signal domain; verify actual range/common; source row groups positions, individual function/color assignment unverified"
+              },
+              {
+                "id": "10",
+                "mark": "10",
+                "label": "9 / 10 | Analog speed / analog common | VFD signal domain; verify actual range/common; source row groups positions, individual function/color assignment unverified"
+              },
+              {
+                "id": "11",
+                "mark": "11",
+                "label": "11\u201314 | Unused in cited EX schematic | Do not transfer to another revision; source row groups positions, individual function/color assignment unverified"
+              },
+              {
+                "id": "12",
+                "mark": "12",
+                "label": "11\u201314 | Unused in cited EX schematic | Do not transfer to another revision; source row groups positions, individual function/color assignment unverified"
+              },
+              {
+                "id": "13",
+                "mark": "13",
+                "label": "11\u201314 | Unused in cited EX schematic | Do not transfer to another revision; source row groups positions, individual function/color assignment unverified"
+              },
+              {
+                "id": "14",
+                "mark": "14",
+                "label": "11\u201314 | Unused in cited EX schematic | Do not transfer to another revision; source row groups positions, individual function/color assignment unverified"
+              }
+            ]
+          },
+          {
+            "id": "machine-group-001",
+            "device": "group-device-001",
+            "refdes": "14-pin control cable",
+            "form": "source-described cable / connector group",
+            "scope": "Source names this group, but provides no source-scoped physical contact map. Availability and exact housing are unverified. exact atlas group labels; open until contact mapping is established",
+            "contacts": []
+          },
+          {
+            "id": "machine-group-002",
+            "device": "group-device-002",
+            "refdes": "servo board harness",
+            "form": "source-described cable / connector group",
+            "scope": "Source names this group, but provides no source-scoped physical contact map. Availability and exact housing are unverified. exact atlas group labels; open until contact mapping is established",
+            "contacts": []
+          }
+        ],
+        "wires": []
+      }
+    }
+  }
+}

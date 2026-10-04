@@ -1,0 +1,41 @@
+{
+  "id": "forum-linuxcnc-thadwald-school-engraver-router",
+  "sources": {
+    "forum-peripheral-evidence.json": {
+      "id": "forum-linuxcnc-thadwald-school-engraver-router",
+      "dossier": "src/docs/machine-research/linuxcnc-thadwald-school-engraver-router.md",
+      "reported_fitted_or_used": [
+        {
+          "name": "Teknic ClearPath SKSD integrated servos",
+          "contacts": [],
+          "source_line_number": 7,
+          "source_line": "The owner reports replacing the original stepper motors with Teknic ClearPath SKSD integrated servo motors, controlled by step and direction. The original Toshiba VF-9 spindle drive was replaced with an AutomationDirect GS2 because the Toshiba unit did not provide the desired Modbus communication. The owner added two latching buffers to drive the panel LEDs and multiplex output signals after running out of direct outputs. Multiplexing was implemented in HAL; the owner describes this as an experiment rather than a recommended general approach.",
+          "evidence": "The owner reports replacing the original stepper motors with Teknic ClearPath SKSD integrated servo motors, controlled by step and direction. The original Toshiba VF-9 spindle drive was replaced with an AutomationDirect GS2 because the Toshiba unit did not provide the desired Modbus communication.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        },
+        {
+          "name": "Toshiba spindle VFD",
+          "contacts": [],
+          "source_line_number": 7,
+          "source_line": "The owner reports replacing the original stepper motors with Teknic ClearPath SKSD integrated servo motors, controlled by step and direction. The original Toshiba VF-9 spindle drive was replaced with an AutomationDirect GS2 because the Toshiba unit did not provide the desired Modbus communication. The owner added two latching buffers to drive the panel LEDs and multiplex output signals after running out of direct outputs. Multiplexing was implemented in HAL; the owner describes this as an experiment rather than a recommended general approach.",
+          "evidence": "The original Toshiba VF-9 spindle drive was replaced with an AutomationDirect GS2 because the Toshiba unit did not provide the desired Modbus communication. The owner added two latching buffers to drive the panel LEDs and multiplex output signals after running out of direct outputs.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        },
+        {
+          "name": "E-stop relays",
+          "contacts": [],
+          "source_line_number": 13,
+          "source_line": "The owner states that the main I/O card, power supplies, and E-stop relays are inside the machine enclosure, while the 7i73, USB-to-RS232 converter, keyboard, and manual controls are in a custom panel. Forum attachments include LinuxCNC HAL and INI configuration files. The inspected forum text does not provide a verified physical terminal map, connector viewing convention, panel matrix wiring diagram, buffer schematic, or safety-circuit drawing. Configuration filenames and logical HAL names should not be interpreted as machine terminal numbers.",
+          "evidence": "The owner states that the main I/O card, power supplies, and E-stop relays are inside the machine enclosure, while the 7i73, USB-to-RS232 converter, keyboard, and manual controls are in a custom panel. Forum attachments include LinuxCNC HAL and INI configuration files.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        }
+      ],
+      "listed_for_build_unverified": [],
+      "historical_reference": [],
+      "planned_only": [],
+      "open_function_group": [],
+      "exclusions": [],
+      "source_gap": "Dossier does not establish an as-built SmoothieBox route or a complete physical contact schedule for the listed peripherals."
+    }
+  }
+}

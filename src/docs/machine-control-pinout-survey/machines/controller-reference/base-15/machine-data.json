@@ -1,0 +1,383 @@
+{
+  "id": "base-15",
+  "sources": {
+    "machine-side-graph-snapshot.json": {
+      "source_graph": "101-base-15.json",
+      "source_sha256": "c0ae186f7ab99a916c0f94e807ecae7bb8c972371e639adcfce4a95cc3f569ce",
+      "graph": {
+        "profile_id": "base-15",
+        "devices": [
+          {
+            "id": "peripheral-01",
+            "role": "peripheral"
+          },
+          {
+            "id": "peripheral-02",
+            "role": "reference"
+          },
+          {
+            "id": "peripheral-03",
+            "role": "reference"
+          }
+        ],
+        "connectors": [
+          {
+            "id": "machine-01",
+            "device": "peripheral-01",
+            "refdes": "DB25 \u00b7 G540 Rev8 logic input",
+            "form": "DB25",
+            "scope": "straight-through cable required; DB9 motor outputs are separate; numbered contact register, face unverified Machine/peripheral-side contact schedule; fitted presence unverified.",
+            "contacts": [
+              {
+                "id": "1",
+                "mark": "1",
+                "label": "Output 2"
+              },
+              {
+                "id": "2",
+                "mark": "2",
+                "label": "X step"
+              },
+              {
+                "id": "3",
+                "mark": "3",
+                "label": "X direction"
+              },
+              {
+                "id": "4",
+                "mark": "4",
+                "label": "Y step"
+              },
+              {
+                "id": "5",
+                "mark": "5",
+                "label": "Y direction"
+              },
+              {
+                "id": "6",
+                "mark": "6",
+                "label": "Z step"
+              },
+              {
+                "id": "7",
+                "mark": "7",
+                "label": "Z direction"
+              },
+              {
+                "id": "8",
+                "mark": "8",
+                "label": "A step"
+              },
+              {
+                "id": "9",
+                "mark": "9",
+                "label": "A direction"
+              },
+              {
+                "id": "10",
+                "mark": "10",
+                "label": "Input 1"
+              },
+              {
+                "id": "11",
+                "mark": "11",
+                "label": "Input 2"
+              },
+              {
+                "id": "12",
+                "mark": "12",
+                "label": "Input 3"
+              },
+              {
+                "id": "13",
+                "mark": "13",
+                "label": "Input 4"
+              },
+              {
+                "id": "14",
+                "mark": "14",
+                "label": "VFD PWM, 50 Hz"
+              },
+              {
+                "id": "15",
+                "mark": "15",
+                "label": "G540 fault output to controller"
+              },
+              {
+                "id": "16",
+                "mark": "16",
+                "label": "Charge pump, >10 kHz"
+              },
+              {
+                "id": "17",
+                "mark": "17",
+                "label": "Output 1"
+              },
+              {
+                "id": "18",
+                "mark": "18",
+                "label": "GND per G540 Rev8 source; no V2 bond selected"
+              },
+              {
+                "id": "19",
+                "mark": "19",
+                "label": "GND per G540 Rev8 source; no V2 bond selected"
+              },
+              {
+                "id": "20",
+                "mark": "20",
+                "label": "GND per G540 Rev8 source; no V2 bond selected"
+              },
+              {
+                "id": "21",
+                "mark": "21",
+                "label": "GND per G540 Rev8 source; no V2 bond selected"
+              },
+              {
+                "id": "22",
+                "mark": "22",
+                "label": "GND per G540 Rev8 source; no V2 bond selected"
+              },
+              {
+                "id": "23",
+                "mark": "23",
+                "label": "GND per G540 Rev8 source; no V2 bond selected"
+              },
+              {
+                "id": "24",
+                "mark": "24",
+                "label": "GND per G540 Rev8 source; no V2 bond selected"
+              },
+              {
+                "id": "25",
+                "mark": "25",
+                "label": "GND per G540 Rev8 source; no V2 bond selected"
+              }
+            ]
+          },
+          {
+            "id": "machine-02",
+            "device": "peripheral-02",
+            "refdes": "G540 Rev8 \u00b7 DB9 MOTOR OUTPUT",
+            "form": "DB9",
+            "scope": "G540 DB9 motor-power output, manufacturer contact numbers; identify mating face separately; Source connector revision only; no installed harness, mating view, electrical compatibility or V2 route is proven; motor winding output, never a V2 STEP/DIR input Original/reference connector availability unresolved; do not infer retained installation.",
+            "contacts": [
+              {
+                "id": "1",
+                "mark": "1",
+                "label": "Current-set resistor contact"
+              },
+              {
+                "id": "5",
+                "mark": "5",
+                "label": "Current-set resistor contact"
+              },
+              {
+                "id": "2",
+                "mark": "2",
+                "label": "NC"
+              },
+              {
+                "id": "3",
+                "mark": "3",
+                "label": "NC"
+              },
+              {
+                "id": "4",
+                "mark": "4",
+                "label": "NC"
+              },
+              {
+                "id": "6",
+                "mark": "6",
+                "label": "B motor winding"
+              },
+              {
+                "id": "7",
+                "mark": "7",
+                "label": "B\u0305 motor winding"
+              },
+              {
+                "id": "8",
+                "mark": "8",
+                "label": "A motor winding"
+              },
+              {
+                "id": "9",
+                "mark": "9",
+                "label": "A\u0305 motor winding"
+              }
+            ]
+          },
+          {
+            "id": "machine-03",
+            "device": "peripheral-03",
+            "refdes": "G540 Rev8 \u00b7 12-POSITION MAIN TERMINAL",
+            "form": "source-described connector",
+            "scope": "G540 12-position main terminal \u00b7 separate from DB25 logic and DB9 motor output; Source connector revision only; no installed harness, mating view, electrical compatibility or V2 route is proven; power, VFD and safety terminals are not DB25 logic contacts Original/reference connector availability unresolved; do not infer retained installation.",
+            "contacts": [
+              {
+                "id": "1",
+                "mark": "1",
+                "label": "Input 1"
+              },
+              {
+                "id": "2",
+                "mark": "2",
+                "label": "Input 2"
+              },
+              {
+                "id": "3",
+                "mark": "3",
+                "label": "Input 3"
+              },
+              {
+                "id": "4",
+                "mark": "4",
+                "label": "Input 4"
+              },
+              {
+                "id": "5",
+                "mark": "5",
+                "label": "Output 1"
+              },
+              {
+                "id": "6",
+                "mark": "6",
+                "label": "Output 2"
+              },
+              {
+                "id": "7",
+                "mark": "7",
+                "label": "VFD ground"
+              },
+              {
+                "id": "8",
+                "mark": "8",
+                "label": "VFD output"
+              },
+              {
+                "id": "9",
+                "mark": "9",
+                "label": "VFD +10 V"
+              },
+              {
+                "id": "10",
+                "mark": "10",
+                "label": "Disable / E-stop input"
+              },
+              {
+                "id": "11",
+                "mark": "11",
+                "label": "+18\u201350 V DC supply"
+              },
+              {
+                "id": "12",
+                "mark": "12",
+                "label": "Supply ground"
+              }
+            ]
+          }
+        ],
+        "wires": [
+          {
+            "state": "inferred",
+            "kind": "function",
+            "a": {
+              "connector": "v2-j5",
+              "contact": "16"
+            },
+            "b": {
+              "connector": "machine-01",
+              "contact": "2"
+            }
+          },
+          {
+            "state": "inferred",
+            "kind": "function",
+            "a": {
+              "connector": "v2-j5",
+              "contact": "18"
+            },
+            "b": {
+              "connector": "machine-01",
+              "contact": "3"
+            }
+          },
+          {
+            "state": "inferred",
+            "kind": "function",
+            "a": {
+              "connector": "v2-j5",
+              "contact": "22"
+            },
+            "b": {
+              "connector": "machine-01",
+              "contact": "4"
+            }
+          },
+          {
+            "state": "inferred",
+            "kind": "function",
+            "a": {
+              "connector": "v2-j5",
+              "contact": "24"
+            },
+            "b": {
+              "connector": "machine-01",
+              "contact": "5"
+            }
+          },
+          {
+            "state": "inferred",
+            "kind": "function",
+            "a": {
+              "connector": "v2-j5",
+              "contact": "28"
+            },
+            "b": {
+              "connector": "machine-01",
+              "contact": "6"
+            }
+          },
+          {
+            "state": "inferred",
+            "kind": "function",
+            "a": {
+              "connector": "v2-j5",
+              "contact": "30"
+            },
+            "b": {
+              "connector": "machine-01",
+              "contact": "7"
+            }
+          },
+          {
+            "state": "inferred",
+            "kind": "function",
+            "a": {
+              "connector": "v2-j5",
+              "contact": "34"
+            },
+            "b": {
+              "connector": "machine-01",
+              "contact": "8"
+            }
+          },
+          {
+            "state": "inferred",
+            "kind": "function",
+            "a": {
+              "connector": "v2-j5",
+              "contact": "36"
+            },
+            "b": {
+              "connector": "machine-01",
+              "contact": "9"
+            }
+          }
+        ]
+      }
+    }
+  }
+}

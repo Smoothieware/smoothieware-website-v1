@@ -1,0 +1,91 @@
+{
+  "type": "verification",
+  "profiles_retained": 330,
+  "guides": [
+    {
+      "profile_id": "wiki-205",
+      "controller": "Smoothieboard V2 Prime",
+      "contacts": 57,
+      "connections": 26,
+      "svg_sha256": "7c5caff6c065f33dcf5b115fe9031f1b8127d8804eaead83723a33d27eec3958"
+    },
+    {
+      "profile_id": "laserplot-02",
+      "controller": "Smoothieboard V2 Prime",
+      "contacts": 56,
+      "connections": 26,
+      "svg_sha256": "79f44e182bac53fcb367cdc32704fc29fa4916e6c7e7cab0e51146b3537247db"
+    },
+    {
+      "profile_id": "base-11",
+      "controller": "SmoothieBox",
+      "contacts": 95,
+      "connections": 55,
+      "svg_sha256": "91914e78a38b690e5b18fda68c36fca7686a6ca6ce4d3d3f32ec25bdba2ab744"
+    },
+    {
+      "profile_id": "wiki-132",
+      "controller": "Smoothieboard V2 Prime",
+      "contacts": 125,
+      "connections": 56,
+      "svg_sha256": "b182acdcf74daf1709288ee3e379e057c8d197726ee46b354069d51f9642a753"
+    },
+    {
+      "profile_id": "wiki-134",
+      "controller": "SmoothieBox",
+      "contacts": 293,
+      "connections": 160,
+      "svg_sha256": "f1b75339b7c49a7f8c67dd2b9e0e31d0f5ed7e2856699ef4f1f8b706d16513a0"
+    },
+    {
+      "profile_id": "wiki-135",
+      "controller": "SmoothieBox",
+      "contacts": 226,
+      "connections": 117,
+      "svg_sha256": "e83d587dc105928904b5df59bb9c2e5fcb332bb085652b38daf332c4ca541119"
+    },
+    {
+      "profile_id": "mill-g2",
+      "controller": "Smoothieboard V2 Prime",
+      "contacts": 123,
+      "connections": 57,
+      "svg_sha256": "952be30d7e0815344093d92953dfc43d903fea7781ff3253b933b3fc0e8488ab"
+    },
+    {
+      "profile_id": "mill-avid-ex-3",
+      "controller": "SmoothieBox",
+      "contacts": 348,
+      "connections": 193,
+      "svg_sha256": "03b85f947029c55708adc5f8492731fa795582518b60b67d3c67acf87b3390fb"
+    },
+    {
+      "profile_id": "wiki-206",
+      "controller": "Smoothieboard V2 Prime",
+      "contacts": 86,
+      "connections": 39,
+      "svg_sha256": "f66a79114cbdf48e86bfc822c1489c50cb3045a15e95fb820699980e4ff11abd"
+    },
+    {
+      "profile_id": "wiki-222",
+      "controller": "Smoothieboard V2 Prime",
+      "contacts": 138,
+      "connections": 66,
+      "svg_sha256": "9634420e1d3e46469831f256b86221efb62b53f6b5043571cf7f31d3695e2251"
+    },
+    {
+      "profile_id": "forum-linuxcnc-optimill-mh50v-unlogic",
+      "controller": "SmoothieBox",
+      "contacts": 318,
+      "connections": 161,
+      "svg_sha256": "7ec5d414167fea9faf136152fed8602ec57112295f2d3c84502a4e4b6ef5d3a4"
+    },
+    {
+      "profile_id": "forum-linuxcnc-rotarysmp-schaublin-125-cnc-retrofit",
+      "controller": "SmoothieBox",
+      "contacts": 75,
+      "connections": 32,
+      "svg_sha256": "bc32db87916bc57c714c774132ad0a7cd8142e9be995d6d2e5b9c30f6eb6c217"
+    }
+  ],
+  "scope": "Current exact graph records, per-wire evidence links and HTML first-figure integration; not electrical/hardware or rendered acceptance."
+}

@@ -1,0 +1,29 @@
+{
+  "id": "base-05",
+  "sources": {
+    "machine-side-graph-snapshot.json": {
+      "source_graph": "005-base-05.json",
+      "source_sha256": "2621de6668537d3aedeba5e9d7117d4301d6fb1b199c5343e119f634cb59b354",
+      "graph": {
+        "profile_id": "base-05",
+        "devices": [
+          {
+            "id": "group-device-001",
+            "role": "peripheral"
+          }
+        ],
+        "connectors": [
+          {
+            "id": "machine-group-001",
+            "device": "group-device-001",
+            "refdes": "Internal terminal strips",
+            "form": "source-described cable / connector group",
+            "scope": "Source names this group, but provides no source-scoped physical contact map. Availability and exact housing are unverified. exact atlas group labels; open until contact mapping is established",
+            "contacts": []
+          }
+        ],
+        "wires": []
+      }
+    }
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "id": "forum-linuxcnc-rotarysmp-1986-maho-mh400e",
+  "sources": {
+    "forum-peripheral-evidence.json": {
+      "id": "forum-linuxcnc-rotarysmp-1986-maho-mh400e",
+      "dossier": "src/docs/machine-research/linuxcnc-rotarysmp-1986-maho-mh400e.md",
+      "reported_fitted_or_used": [
+        {
+          "name": "MAHO 28X1 relay-board ribbon header",
+          "contacts": [],
+          "source_line_number": 26,
+          "source_line": "The original Philips control connected to the door-mounted MAHO 28A1 relay board through ribbon connectors 28X1 and 28X2. RotarySMP states that the drawing identified the header contacts at both ends without mapping every contact to the relay function. The owner later clarified that the drawing references are DIL header contact numbers, not flat-cable conductor numbers: the 20-pin bottom row is 1\u201320, the upper row restarts at 21\u201340, and the cable alternates rows (conductor sequence described as pin 1, unused, pin 2, pin 21, pin 3, pin 22, and so on). This distinction corrected an earlier mistaken wiring interpretation.",
+          "evidence": "The original Philips control connected to the door-mounted MAHO 28A1 relay board through ribbon connectors 28X1 and 28X2. RotarySMP states that the drawing identified the header contacts at both ends without mapping every contact to the relay function.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        },
+        {
+          "name": "MAHO 28X2 relay-board ribbon header",
+          "contacts": [],
+          "source_line_number": 26,
+          "source_line": "The original Philips control connected to the door-mounted MAHO 28A1 relay board through ribbon connectors 28X1 and 28X2. RotarySMP states that the drawing identified the header contacts at both ends without mapping every contact to the relay function. The owner later clarified that the drawing references are DIL header contact numbers, not flat-cable conductor numbers: the 20-pin bottom row is 1\u201320, the upper row restarts at 21\u201340, and the cable alternates rows (conductor sequence described as pin 1, unused, pin 2, pin 21, pin 3, pin 22, and so on). This distinction corrected an earlier mistaken wiring interpretation.",
+          "evidence": "The original Philips control connected to the door-mounted MAHO 28A1 relay board through ribbon connectors 28X1 and 28X2. RotarySMP states that the drawing identified the header contacts at both ends without mapping every contact to the relay function.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        },
+        {
+          "name": "EXE position sensor cable",
+          "contacts": [],
+          "source_line_number": 11,
+          "source_line": "RotarySMP reports that the original MAHO drawings were wrong about the EXE wiring. For Heidenhain LS403 glass scales connected through an EXE 229 281 01, the owner transcribed these wire colors and functions:",
+          "evidence": "RotarySMP reports that the original MAHO drawings were wrong about the EXE wiring. For Heidenhain LS403 glass scales connected through an EXE 229 281 01, the owner transcribed these wire colors and functions:.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        }
+      ],
+      "listed_for_build_unverified": [],
+      "historical_reference": [],
+      "planned_only": [],
+      "open_function_group": [],
+      "exclusions": [],
+      "source_gap": "Dossier does not establish an as-built SmoothieBox route or a complete physical contact schedule for the listed peripherals."
+    }
+  }
+}

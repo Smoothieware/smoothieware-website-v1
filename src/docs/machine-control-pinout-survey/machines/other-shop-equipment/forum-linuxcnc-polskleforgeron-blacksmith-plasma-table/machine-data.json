@@ -1,0 +1,59 @@
+{
+  "id": "forum-linuxcnc-polskleforgeron-blacksmith-plasma-table",
+  "sources": {
+    "forum-peripheral-evidence.json": {
+      "id": "forum-linuxcnc-polskleforgeron-blacksmith-plasma-table",
+      "dossier": "src/docs/machine-research/linuxcnc-polskleforgeron-blacksmith-plasma-table.md",
+      "reported_fitted_or_used": [
+        {
+          "name": "Floating-head probe",
+          "contacts": [],
+          "source_line_number": 5,
+          "source_line": "**Evidence state:** The owner reports a successful first cut with floating-head probing and arc-ok behavior, initially with THC disabled. By August, the owner says the table had been used for a 50 m guardrail order, but an X-axis stepper had sometimes missed steps and the THC was not working as expected. These are owner-reported operating experiences; no independent accuracy or cut-quality measurements are supplied.",
+          "evidence": "**Evidence state:** The owner reports a successful first cut with floating-head probing and arc-ok behavior, initially with THC disabled. By August, the owner says the table had been used for a 50 m guardrail order, but an X-axis stepper had sometimes missed steps and the THC was not working as expected.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        },
+        {
+          "name": "Plasma arc-ok and torch trigger",
+          "contacts": [],
+          "source_line_number": 19,
+          "source_line": "In May, the owner reported that floating-head probing worked, arc-ok functioned, and the torch switched at the right time. THC was disabled for that first cut. The owner then said THC was still disabled in a May video update, and that probing sometimes triggered the limit behavior. They suspected unsupported/bouncy 2 mm sheet could double-trigger the floating switch and observed that supporting the sheet helped. These were the owner's diagnosis and test observations; the retrieved thread does not confirm the proposed water table or probing-speed changes resolved the issue.",
+          "evidence": "In May, the owner reported that floating-head probing worked, arc-ok functioned, and the torch switched at the right time. THC was disabled for that first cut.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        },
+        {
+          "name": "Separate stepper drivers",
+          "contacts": [],
+          "source_line_number": 15,
+          "source_line": "The owner selected LinuxCNC QtPlasmaC and a Mesa 7i96S with a THCAD-10. The motion electronics also included separate stepper drivers and a 36 V motor supply; the owner said they planned a 5 V DIN-rail supply for the Mesa board. These details identify the reported components but do not establish an exact as-built wiring map.",
+          "evidence": "The motion electronics also included separate stepper drivers and a 36 V motor supply; the owner said they planned a 5 V DIN-rail supply for the Mesa board. These details identify the reported components but do not establish an exact as-built wiring map.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        }
+      ],
+      "listed_for_build_unverified": [
+        {
+          "name": "THCAD voltage sensing",
+          "contacts": [],
+          "source_line_number": 21,
+          "source_line": "By August 2024 the owner had started configuring THC with a THCAD-2 and two 1 M\u03a9 resistors on the positive and negative plasma leads. The owner described the THCAD indicator LED as on, but QtPlasmaC's THC-active indicator did not engage during cuts. Another forum member calculated a 21:1 divider from that setup; this respondent calculation is not an independently measured or owner-confirmed calibration. The owner described the machine as saving substantial time in their small business, while reporting the THC issue still unresolved.",
+          "evidence": "By August 2024 the owner had started configuring THC with a THCAD-2 and two 1 M\u03a9 resistors on the positive and negative plasma leads. The owner described the THCAD indicator LED as on, but QtPlasmaC's THC-active indicator did not engage during cuts.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        }
+      ],
+      "historical_reference": [
+        {
+          "name": "Stahlwerk CUT 70 historical source",
+          "contacts": [],
+          "source_line_number": 17,
+          "source_line": "The owner initially had a Stahlwerk CUT 70 plasma source and was concerned it used high-frequency starting. They considered selling it and using a Stamos unit instead of modifying the Stahlwerk. In the April 2024 build update, the owner said they intended to use the Stamos; the May 2024 post says a CNC torch from Stahlwerk had been ordered, but does not clearly identify the final installed plasma source. Do not assume the early Stahlwerk was the source used for the successful cut.",
+          "evidence": "The owner initially had a Stahlwerk CUT 70 plasma source and was concerned it used high-frequency starting. They considered selling it and using a Stamos unit instead of modifying the Stahlwerk.",
+          "wiring_status": "OPEN: no source-supported SmoothieBox contact route"
+        }
+      ],
+      "planned_only": [],
+      "open_function_group": [],
+      "exclusions": [],
+      "source_gap": "Dossier does not establish an as-built SmoothieBox route or a complete physical contact schedule for the listed peripherals."
+    }
+  }
+}

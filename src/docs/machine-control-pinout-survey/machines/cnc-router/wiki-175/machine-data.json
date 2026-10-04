@@ -1,0 +1,362 @@
+{
+  "id": "wiki-175",
+  "sources": {
+    "machine-side-graph-snapshot.json": {
+      "source_graph": "175-wiki-175.json",
+      "source_sha256": "1e36032e79bb8fabf629bf665de144071d7a092580f03ecba87f72c3acf7e720",
+      "graph": {
+        "profile_id": "wiki-175",
+        "devices": [
+          {
+            "id": "peripheral-01",
+            "role": "peripheral"
+          },
+          {
+            "id": "peripheral-02",
+            "role": "peripheral"
+          },
+          {
+            "id": "group-device-001",
+            "role": "peripheral"
+          },
+          {
+            "id": "group-device-002",
+            "role": "peripheral"
+          },
+          {
+            "id": "group-device-003",
+            "role": "peripheral"
+          },
+          {
+            "id": "group-device-004",
+            "role": "peripheral"
+          },
+          {
+            "id": "group-device-005",
+            "role": "peripheral"
+          },
+          {
+            "id": "group-device-006",
+            "role": "peripheral"
+          },
+          {
+            "id": "group-device-007",
+            "role": "peripheral"
+          },
+          {
+            "id": "group-device-008",
+            "role": "peripheral"
+          },
+          {
+            "id": "group-device-009",
+            "role": "peripheral"
+          },
+          {
+            "id": "group-device-010",
+            "role": "peripheral"
+          },
+          {
+            "id": "group-device-011",
+            "role": "peripheral"
+          },
+          {
+            "id": "group-device-012",
+            "role": "peripheral"
+          },
+          {
+            "id": "supplement-device-001",
+            "role": "reference"
+          },
+          {
+            "id": "supplement-device-002",
+            "role": "reference"
+          }
+        ],
+        "connectors": [
+          {
+            "id": "machine-01",
+            "device": "peripheral-01",
+            "refdes": "MUNICH MAKER LAB \u00b7 SPINDLE CONNECTOR CONTACTS",
+            "form": "source-described connector",
+            "scope": "Documented motor and spindle contacts; exact source row Spindle | 1 U; 2 V; 3 W; 4 PE | Drive phases; protective earth is separate | Cable 1/2/3 to VFD U/V/W; PE to E, as recorded | Unassigned; no Core terminal evidence in this dossier.; motor cable position numbers do not prove plug cavities; spindle has source-labelled connector pins. Mating view/type and installed wiring unverified; power is outside V2 logic Machine/peripheral-side contact schedule; fitted presence unverified.",
+            "contacts": [
+              {
+                "id": "1",
+                "mark": "1",
+                "label": "U spindle phase"
+              },
+              {
+                "id": "2",
+                "mark": "2",
+                "label": "V spindle phase"
+              },
+              {
+                "id": "3",
+                "mark": "3",
+                "label": "W spindle phase"
+              },
+              {
+                "id": "4",
+                "mark": "4",
+                "label": "PE protective earth; not logic GND"
+              }
+            ]
+          },
+          {
+            "id": "machine-02",
+            "device": "peripheral-02",
+            "refdes": "MUNICH MAKER LAB \u00b7 PENDANT CONTACTS",
+            "form": "source-described connector",
+            "scope": "Pendant contact map; contact view and electrical contract unverified; removed RJ45 endstop connector is separate historical evidence Machine/peripheral-side contact schedule; fitted presence unverified.",
+            "contacts": [
+              {
+                "id": "1",
+                "mark": "1",
+                "label": "GND; Reference; relationship to chassis/PE unknown"
+              },
+              {
+                "id": "2",
+                "mark": "2",
+                "label": "+5 V; Pendant supply; permissible current unknown"
+              },
+              {
+                "id": "3",
+                "mark": "3",
+                "label": "Encoder A+; Encoder to controller; receiver compatibility unknown"
+              },
+              {
+                "id": "4",
+                "mark": "4",
+                "label": "Encoder B+; Encoder to controller; receiver compatibility unknown"
+              },
+              {
+                "id": "5",
+                "mark": "5",
+                "label": "Encoder A\u2212; Encoder to controller; receiver compatibility unknown"
+              },
+              {
+                "id": "6",
+                "mark": "6",
+                "label": "Encoder B\u2212; Encoder to controller; receiver compatibility unknown"
+              },
+              {
+                "id": "7",
+                "mark": "7",
+                "label": "E-stop contact 1; protective circuit unknown; Contact pair; whole protective circuit unknown"
+              },
+              {
+                "id": "8",
+                "mark": "8",
+                "label": "E-stop contact 2; protective circuit unknown; Contact pair; whole protective circuit unknown"
+              },
+              {
+                "id": "9",
+                "mark": "9",
+                "label": "LED+; Indicated polarity; source gives 20 mA, drive circuit unknown"
+              },
+              {
+                "id": "10",
+                "mark": "10",
+                "label": "LED\u2212; Indicated polarity; source gives 20 mA, drive circuit unknown"
+              },
+              {
+                "id": "11",
+                "mark": "11",
+                "label": "Selector COM; not proven GND; Selector common; not proven equivalent to GND"
+              },
+              {
+                "id": "12",
+                "mark": "12",
+                "label": "X selector; Selector contacts to COM when enable pressed"
+              },
+              {
+                "id": "13",
+                "mark": "13",
+                "label": "Y selector; Selector contacts to COM when enable pressed"
+              },
+              {
+                "id": "14",
+                "mark": "14",
+                "label": "Z selector; Selector contacts to COM when enable pressed"
+              },
+              {
+                "id": "15",
+                "mark": "15",
+                "label": "Fourth-axis selector; Selector contacts to COM when enable pressed"
+              },
+              {
+                "id": "16",
+                "mark": "16",
+                "label": "\u00d71 increment; Increment-selector contacts to COM when enable pressed"
+              },
+              {
+                "id": "17",
+                "mark": "17",
+                "label": "\u00d710 increment; Increment-selector contacts to COM when enable pressed"
+              },
+              {
+                "id": "18",
+                "mark": "18",
+                "label": "\u00d7100 increment; Increment-selector contacts to COM when enable pressed"
+              }
+            ]
+          },
+          {
+            "id": "machine-group-001",
+            "device": "group-device-001",
+            "refdes": "X motor cable \u00b7 01",
+            "form": "source-described cable / connector group",
+            "scope": "Source names this group, but provides no source-scoped physical contact map. Availability and exact housing are unverified. Documented motor and spindle contacts; exact source row X motor | 1 U; 2 V; 3 W; 4\u20136 NC | Driver to motor; phase sequence only | Connector view/type and contact ratings unknown | Unassigned; no Core terminal evidence in this dossier.; motor cable position numbers do not prove plug cavities; spindle has source-labelled connector pins. Mating view/type and installed wiring unverified; power is outside V2 logic",
+            "contacts": []
+          },
+          {
+            "id": "machine-group-002",
+            "device": "group-device-002",
+            "refdes": "X motor cable \u00b7 02",
+            "form": "source-described cable / connector group",
+            "scope": "Source names this group, but provides no source-scoped physical contact map. Availability and exact housing are unverified. Documented motor and spindle contacts; exact source row X motor | 1 U; 2 V; 3 W; 4\u20136 NC | Driver to motor; phase sequence only | Connector view/type and contact ratings unknown | Unassigned; no Core terminal evidence in this dossier.; motor cable position numbers do not prove plug cavities; spindle has source-labelled connector pins. Mating view/type and installed wiring unverified; power is outside V2 logic",
+            "contacts": []
+          },
+          {
+            "id": "machine-group-003",
+            "device": "group-device-003",
+            "refdes": "X motor cable \u00b7 03",
+            "form": "source-described cable / connector group",
+            "scope": "Source names this group, but provides no source-scoped physical contact map. Availability and exact housing are unverified. Documented motor and spindle contacts; exact source row X motor | 1 U; 2 V; 3 W; 4\u20136 NC | Driver to motor; phase sequence only | Connector view/type and contact ratings unknown | Unassigned; no Core terminal evidence in this dossier.; motor cable position numbers do not prove plug cavities; spindle has source-labelled connector pins. Mating view/type and installed wiring unverified; power is outside V2 logic",
+            "contacts": []
+          },
+          {
+            "id": "machine-group-004",
+            "device": "group-device-004",
+            "refdes": "X motor cable \u00b7 04",
+            "form": "source-described cable / connector group",
+            "scope": "Source names this group, but provides no source-scoped physical contact map. Availability and exact housing are unverified. Documented motor and spindle contacts; exact source row X motor | 1 U; 2 V; 3 W; 4\u20136 NC | Driver to motor; phase sequence only | Connector view/type and contact ratings unknown | Unassigned; no Core terminal evidence in this dossier.; motor cable position numbers do not prove plug cavities; spindle has source-labelled connector pins. Mating view/type and installed wiring unverified; power is outside V2 logic",
+            "contacts": []
+          },
+          {
+            "id": "machine-group-005",
+            "device": "group-device-005",
+            "refdes": "X motor cable \u00b7 05",
+            "form": "source-described cable / connector group",
+            "scope": "Source names this group, but provides no source-scoped physical contact map. Availability and exact housing are unverified. Documented motor and spindle contacts; exact source row X motor | 1 U; 2 V; 3 W; 4\u20136 NC | Driver to motor; phase sequence only | Connector view/type and contact ratings unknown | Unassigned; no Core terminal evidence in this dossier.; motor cable position numbers do not prove plug cavities; spindle has source-labelled connector pins. Mating view/type and installed wiring unverified; power is outside V2 logic",
+            "contacts": []
+          },
+          {
+            "id": "machine-group-006",
+            "device": "group-device-006",
+            "refdes": "X motor cable \u00b7 06",
+            "form": "source-described cable / connector group",
+            "scope": "Source names this group, but provides no source-scoped physical contact map. Availability and exact housing are unverified. Documented motor and spindle contacts; exact source row X motor | 1 U; 2 V; 3 W; 4\u20136 NC | Driver to motor; phase sequence only | Connector view/type and contact ratings unknown | Unassigned; no Core terminal evidence in this dossier.; motor cable position numbers do not prove plug cavities; spindle has source-labelled connector pins. Mating view/type and installed wiring unverified; power is outside V2 logic",
+            "contacts": []
+          },
+          {
+            "id": "machine-group-007",
+            "device": "group-device-007",
+            "refdes": "Z motor cable \u00b7 01",
+            "form": "source-described cable / connector group",
+            "scope": "Source names this group, but provides no source-scoped physical contact map. Availability and exact housing are unverified. Documented motor and spindle contacts; exact source row Z motor | 1 U; 2 V; 3 W; 4 NC; 5 brake brown; 6 brake white | Motor phases and brake; brake polarity unknown | Wiki states 24 V releases brake; no connector rating | Unassigned; no Core terminal evidence in this dossier.; motor cable position numbers do not prove plug cavities; spindle has source-labelled connector pins. Mating view/type and installed wiring unverified; power is outside V2 logic",
+            "contacts": []
+          },
+          {
+            "id": "machine-group-008",
+            "device": "group-device-008",
+            "refdes": "Z motor cable \u00b7 02",
+            "form": "source-described cable / connector group",
+            "scope": "Source names this group, but provides no source-scoped physical contact map. Availability and exact housing are unverified. Documented motor and spindle contacts; exact source row Z motor | 1 U; 2 V; 3 W; 4 NC; 5 brake brown; 6 brake white | Motor phases and brake; brake polarity unknown | Wiki states 24 V releases brake; no connector rating | Unassigned; no Core terminal evidence in this dossier.; motor cable position numbers do not prove plug cavities; spindle has source-labelled connector pins. Mating view/type and installed wiring unverified; power is outside V2 logic",
+            "contacts": []
+          },
+          {
+            "id": "machine-group-009",
+            "device": "group-device-009",
+            "refdes": "Z motor cable \u00b7 03",
+            "form": "source-described cable / connector group",
+            "scope": "Source names this group, but provides no source-scoped physical contact map. Availability and exact housing are unverified. Documented motor and spindle contacts; exact source row Z motor | 1 U; 2 V; 3 W; 4 NC; 5 brake brown; 6 brake white | Motor phases and brake; brake polarity unknown | Wiki states 24 V releases brake; no connector rating | Unassigned; no Core terminal evidence in this dossier.; motor cable position numbers do not prove plug cavities; spindle has source-labelled connector pins. Mating view/type and installed wiring unverified; power is outside V2 logic",
+            "contacts": []
+          },
+          {
+            "id": "machine-group-010",
+            "device": "group-device-010",
+            "refdes": "Z motor cable \u00b7 04",
+            "form": "source-described cable / connector group",
+            "scope": "Source names this group, but provides no source-scoped physical contact map. Availability and exact housing are unverified. Documented motor and spindle contacts; exact source row Z motor | 1 U; 2 V; 3 W; 4 NC; 5 brake brown; 6 brake white | Motor phases and brake; brake polarity unknown | Wiki states 24 V releases brake; no connector rating | Unassigned; no Core terminal evidence in this dossier.; motor cable position numbers do not prove plug cavities; spindle has source-labelled connector pins. Mating view/type and installed wiring unverified; power is outside V2 logic",
+            "contacts": []
+          },
+          {
+            "id": "machine-group-011",
+            "device": "group-device-011",
+            "refdes": "Z motor cable \u00b7 05",
+            "form": "source-described cable / connector group",
+            "scope": "Source names this group, but provides no source-scoped physical contact map. Availability and exact housing are unverified. Documented motor and spindle contacts; exact source row Z motor | 1 U; 2 V; 3 W; 4 NC; 5 brake brown; 6 brake white | Motor phases and brake; brake polarity unknown | Wiki states 24 V releases brake; no connector rating | Unassigned; no Core terminal evidence in this dossier.; motor cable position numbers do not prove plug cavities; spindle has source-labelled connector pins. Mating view/type and installed wiring unverified; power is outside V2 logic",
+            "contacts": []
+          },
+          {
+            "id": "machine-group-012",
+            "device": "group-device-012",
+            "refdes": "Z motor cable \u00b7 06",
+            "form": "source-described cable / connector group",
+            "scope": "Source names this group, but provides no source-scoped physical contact map. Availability and exact housing are unverified. Documented motor and spindle contacts; exact source row Z motor | 1 U; 2 V; 3 W; 4 NC; 5 brake brown; 6 brake white | Motor phases and brake; brake polarity unknown | Wiki states 24 V releases brake; no connector rating | Unassigned; no Core terminal evidence in this dossier.; motor cable position numbers do not prove plug cavities; spindle has source-labelled connector pins. Mating view/type and installed wiring unverified; power is outside V2 logic",
+            "contacts": []
+          },
+          {
+            "id": "supplement-connector-001",
+            "device": "supplement-device-001",
+            "refdes": "REMOVED 2020-07-09 \u00b7 Munich endstop RJ45 historical contact map",
+            "form": "RJ45 eight-contact historical connector; mating view unknown",
+            "scope": "REMOVED ON 2020-07-09 \u2014 NOT CURRENT. Archived Munich Maker Lab custom-router build oldid 9625 records this RJ45 endstop assignment, then explicitly says the endstops were connected directly to CSMIO/IP-M. The later direct connections have no published terminal positions here. This historical connector is never a fitted V2 route. This is a reference for the named source revision; installed-machine correspondence is not established.",
+            "contacts": [
+              {
+                "id": "1",
+                "mark": "1",
+                "label": "Z\u2212 limit"
+              },
+              {
+                "id": "2",
+                "mark": "2",
+                "label": "Z+ limit"
+              },
+              {
+                "id": "3",
+                "mark": "3",
+                "label": "VCC 5\u201324 V in historical source only"
+              },
+              {
+                "id": "4",
+                "mark": "4",
+                "label": "Y\u2212 limit"
+              },
+              {
+                "id": "5",
+                "mark": "5",
+                "label": "GND"
+              },
+              {
+                "id": "6",
+                "mark": "6",
+                "label": "Y+ limit"
+              },
+              {
+                "id": "7",
+                "mark": "7",
+                "label": "X+ limit"
+              },
+              {
+                "id": "8",
+                "mark": "8",
+                "label": "X\u2212 limit"
+              }
+            ]
+          },
+          {
+            "id": "supplement-connector-002",
+            "device": "supplement-device-002",
+            "refdes": "Munich post-2020 endstop direct-to-CSMIO/IP-M group",
+            "form": "later direct endstop group; physical terminal map unknown",
+            "scope": "After removal of the historical RJ45 on 2020-07-09, the archived owner record says endstops connect directly to CSMIO/IP-M. It gives no current terminal numbers, fitted sensor model or present contact map. This later arrangement is separate from the removed RJ45 and has no V2 route. This is a reference for the named source revision; installed-machine correspondence is not established.",
+            "contacts": []
+          }
+        ],
+        "wires": []
+      }
+    }
+  }
+}

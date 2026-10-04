@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 360" role="img" aria-labelledby="title desc">
+  <title id="title">Tormach PCNC 440 documented signal path</title>
+  <desc id="desc">PathPilot controller connects through DB25 J4 or J10, then an IDC26 ribbon cable to a machine control board or MX3660.</desc>
+  <defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0 10 5 0 10z" fill="#123247"/></marker></defs>
+  <rect width="1100" height="360" rx="24" fill="#f3f0e8"/>
+  <text x="48" y="58" font-family="system-ui,sans-serif" font-size="25" font-weight="800" fill="#123247">PCNC 440: documented controller-to-cabinet chain</text>
+  <g font-family="system-ui,sans-serif" text-anchor="middle">
+    <rect x="48" y="132" width="220" height="126" rx="16" fill="#d8efec" stroke="#087e82" stroke-width="3"/>
+    <text x="158" y="180" font-size="19" font-weight="800" fill="#123247">PathPilot</text><text x="158" y="211" font-size="15" fill="#455a63">controller</text>
+    <rect x="322" y="132" width="220" height="126" rx="16" fill="#fff0d8" stroke="#bc652e" stroke-width="3"/>
+    <text x="432" y="180" font-size="19" font-weight="800" fill="#123247">DB25 J4/J10</text><text x="432" y="211" font-size="15" fill="#455a63">machine-side pin map</text>
+    <rect x="596" y="132" width="220" height="126" rx="16" fill="#e6e1f2" stroke="#6b5aa6" stroke-width="3"/>
+    <text x="706" y="180" font-size="19" font-weight="800" fill="#123247">IDC26 ribbon</text><text x="706" y="211" font-size="15" fill="#455a63">inside cabinet</text>
+    <rect x="870" y="132" width="182" height="126" rx="16" fill="#dfe8dd" stroke="#3f704d" stroke-width="3"/>
+    <text x="961" y="177" font-size="17" font-weight="800" fill="#123247">Control board</text><text x="961" y="207" font-size="15" fill="#455a63">or MX3660</text>
+  </g>
+  <path d="M273 195h42M547 195h42M821 195h42" fill="none" stroke="#123247" stroke-width="4" marker-end="url(#arrow)"/>
+  <text x="550" y="310" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" fill="#455a63">This source describes an interface chain, not a universal pinout for other Tormach generations.</text>
+</svg>

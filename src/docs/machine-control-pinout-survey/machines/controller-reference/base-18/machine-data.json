@@ -1,0 +1,681 @@
+{
+  "id": "base-18",
+  "sources": {
+    "machine-side-graph-snapshot.json": {
+      "source_graph": "104-base-18.json",
+      "source_sha256": "8eb0ded66dea3635ca73870da89ccfe33389b5c503fc237a83d78243f3d74b99",
+      "graph": {
+        "profile_id": "base-18",
+        "devices": [
+          {
+            "id": "peripheral-01",
+            "role": "reference"
+          },
+          {
+            "id": "peripheral-02",
+            "role": "reference"
+          },
+          {
+            "id": "peripheral-03",
+            "role": "reference"
+          },
+          {
+            "id": "group-device-001",
+            "role": "peripheral"
+          },
+          {
+            "id": "group-device-002",
+            "role": "peripheral"
+          },
+          {
+            "id": "group-device-003",
+            "role": "peripheral"
+          },
+          {
+            "id": "supplement-device-001",
+            "role": "reference"
+          },
+          {
+            "id": "supplement-device-002",
+            "role": "reference"
+          },
+          {
+            "id": "supplement-device-003",
+            "role": "reference"
+          }
+        ],
+        "connectors": [
+          {
+            "id": "machine-01",
+            "device": "peripheral-01",
+            "refdes": "7I96S \u00b7 TB1",
+            "form": "source-described connector",
+            "scope": "7I96S TB1 connector, manual pages 8\u20139; Source connector revision only; no installed harness, mating view, electrical compatibility or V2 route is proven; differential STEP/DIR requires an independently qualified interface Original/reference connector availability unresolved; do not infer retained installation.",
+            "contacts": [
+              {
+                "id": "1",
+                "mark": "1",
+                "label": "GND"
+              },
+              {
+                "id": "13",
+                "mark": "13",
+                "label": "GND"
+              },
+              {
+                "id": "2",
+                "mark": "2",
+                "label": "STEP0\u2212"
+              },
+              {
+                "id": "3",
+                "mark": "3",
+                "label": "STEP0+"
+              },
+              {
+                "id": "4",
+                "mark": "4",
+                "label": "DIR0\u2212"
+              },
+              {
+                "id": "5",
+                "mark": "5",
+                "label": "DIR0+"
+              },
+              {
+                "id": "14",
+                "mark": "14",
+                "label": "STEP2\u2212"
+              },
+              {
+                "id": "15",
+                "mark": "15",
+                "label": "STEP2+"
+              },
+              {
+                "id": "16",
+                "mark": "16",
+                "label": "DIR2\u2212"
+              },
+              {
+                "id": "17",
+                "mark": "17",
+                "label": "DIR2+"
+              },
+              {
+                "id": "6",
+                "mark": "6",
+                "label": "+5VP"
+              },
+              {
+                "id": "18",
+                "mark": "18",
+                "label": "+5VP"
+              },
+              {
+                "id": "7",
+                "mark": "7",
+                "label": "GND"
+              },
+              {
+                "id": "19",
+                "mark": "19",
+                "label": "GND"
+              },
+              {
+                "id": "8",
+                "mark": "8",
+                "label": "STEP1\u2212"
+              },
+              {
+                "id": "9",
+                "mark": "9",
+                "label": "STEP1+"
+              },
+              {
+                "id": "10",
+                "mark": "10",
+                "label": "DIR1\u2212"
+              },
+              {
+                "id": "11",
+                "mark": "11",
+                "label": "DIR1+"
+              },
+              {
+                "id": "20",
+                "mark": "20",
+                "label": "STEP3\u2212"
+              },
+              {
+                "id": "21",
+                "mark": "21",
+                "label": "STEP3+"
+              },
+              {
+                "id": "22",
+                "mark": "22",
+                "label": "DIR3\u2212"
+              },
+              {
+                "id": "23",
+                "mark": "23",
+                "label": "DIR3+"
+              },
+              {
+                "id": "12",
+                "mark": "12",
+                "label": "+5VP"
+              },
+              {
+                "id": "24",
+                "mark": "24",
+                "label": "+5VP"
+              }
+            ]
+          },
+          {
+            "id": "machine-02",
+            "device": "peripheral-02",
+            "refdes": "7I96S \u00b7 TB2",
+            "form": "source-described connector",
+            "scope": "7I96S TB2 \u00b7 manual contact numbering; Source connector revision only; no installed harness, mating view, electrical compatibility or V2 route is proven Original/reference connector availability unresolved; do not infer retained installation.",
+            "contacts": [
+              {
+                "id": "1",
+                "mark": "1",
+                "label": "GND"
+              },
+              {
+                "id": "2",
+                "mark": "2",
+                "label": "STEP4\u2212"
+              },
+              {
+                "id": "3",
+                "mark": "3",
+                "label": "STEP4+"
+              },
+              {
+                "id": "4",
+                "mark": "4",
+                "label": "DIR4\u2212"
+              },
+              {
+                "id": "5",
+                "mark": "5",
+                "label": "DIR4+"
+              },
+              {
+                "id": "6",
+                "mark": "6",
+                "label": "+5VP protected"
+              },
+              {
+                "id": "7",
+                "mark": "7",
+                "label": "ENCA+"
+              },
+              {
+                "id": "8",
+                "mark": "8",
+                "label": "ENCA\u2212"
+              },
+              {
+                "id": "9",
+                "mark": "9",
+                "label": "GND"
+              },
+              {
+                "id": "10",
+                "mark": "10",
+                "label": "ENCB+"
+              },
+              {
+                "id": "11",
+                "mark": "11",
+                "label": "ENCB\u2212"
+              },
+              {
+                "id": "12",
+                "mark": "12",
+                "label": "+5VP protected"
+              },
+              {
+                "id": "13",
+                "mark": "13",
+                "label": "IDX+"
+              },
+              {
+                "id": "14",
+                "mark": "14",
+                "label": "IDX\u2212"
+              },
+              {
+                "id": "15",
+                "mark": "15",
+                "label": "GND"
+              },
+              {
+                "id": "16",
+                "mark": "16",
+                "label": "RX+"
+              },
+              {
+                "id": "17",
+                "mark": "17",
+                "label": "RX\u2212"
+              },
+              {
+                "id": "18",
+                "mark": "18",
+                "label": "TX+"
+              },
+              {
+                "id": "19",
+                "mark": "19",
+                "label": "TX\u2212"
+              },
+              {
+                "id": "20",
+                "mark": "20",
+                "label": "+5VP protected"
+              },
+              {
+                "id": "21",
+                "mark": "21",
+                "label": "Not connected"
+              },
+              {
+                "id": "22",
+                "mark": "22",
+                "label": "SPINDLE\u2212"
+              },
+              {
+                "id": "23",
+                "mark": "23",
+                "label": "SPINDLE OUT"
+              },
+              {
+                "id": "24",
+                "mark": "24",
+                "label": "SPINDLE+"
+              }
+            ]
+          },
+          {
+            "id": "machine-03",
+            "device": "peripheral-03",
+            "refdes": "7I96S \u00b7 TB3",
+            "form": "source-described connector",
+            "scope": "7I96S TB3 \u00b7 isolated field I/O; Source connector revision only; no installed harness, mating view, electrical compatibility or V2 route is proven; isolated field I/O domain must not be equated to V2 logic ground Original/reference connector availability unresolved; do not infer retained installation.",
+            "contacts": [
+              {
+                "id": "1",
+                "mark": "1",
+                "label": "INPUT0"
+              },
+              {
+                "id": "2",
+                "mark": "2",
+                "label": "INPUT1"
+              },
+              {
+                "id": "3",
+                "mark": "3",
+                "label": "INPUT2"
+              },
+              {
+                "id": "4",
+                "mark": "4",
+                "label": "INPUT3"
+              },
+              {
+                "id": "5",
+                "mark": "5",
+                "label": "INPUT4"
+              },
+              {
+                "id": "6",
+                "mark": "6",
+                "label": "INPUT5"
+              },
+              {
+                "id": "7",
+                "mark": "7",
+                "label": "INPUT6"
+              },
+              {
+                "id": "8",
+                "mark": "8",
+                "label": "INPUT7"
+              },
+              {
+                "id": "9",
+                "mark": "9",
+                "label": "INPUT8"
+              },
+              {
+                "id": "10",
+                "mark": "10",
+                "label": "INPUT9"
+              },
+              {
+                "id": "11",
+                "mark": "11",
+                "label": "INPUT10"
+              },
+              {
+                "id": "12",
+                "mark": "12",
+                "label": "INPUT COMMON"
+              },
+              {
+                "id": "13",
+                "mark": "13",
+                "label": "OUT0\u2212"
+              },
+              {
+                "id": "14",
+                "mark": "14",
+                "label": "OUT0+"
+              },
+              {
+                "id": "15",
+                "mark": "15",
+                "label": "OUT1\u2212"
+              },
+              {
+                "id": "16",
+                "mark": "16",
+                "label": "OUT1+"
+              },
+              {
+                "id": "17",
+                "mark": "17",
+                "label": "OUT2\u2212"
+              },
+              {
+                "id": "18",
+                "mark": "18",
+                "label": "OUT2+"
+              },
+              {
+                "id": "19",
+                "mark": "19",
+                "label": "OUT3\u2212"
+              },
+              {
+                "id": "20",
+                "mark": "20",
+                "label": "OUT3+"
+              },
+              {
+                "id": "21",
+                "mark": "21",
+                "label": "OUT4A"
+              },
+              {
+                "id": "22",
+                "mark": "22",
+                "label": "OUT4B"
+              },
+              {
+                "id": "23",
+                "mark": "23",
+                "label": "OUT5A"
+              },
+              {
+                "id": "24",
+                "mark": "24",
+                "label": "OUT5B"
+              }
+            ]
+          },
+          {
+            "id": "machine-group-001",
+            "device": "group-device-001",
+            "refdes": "TB1",
+            "form": "source-described cable / connector group",
+            "scope": "Source names this group, but provides no source-scoped physical contact map. Availability and exact housing are unverified. exact atlas group labels; open until contact mapping is established",
+            "contacts": []
+          },
+          {
+            "id": "machine-group-002",
+            "device": "group-device-002",
+            "refdes": "TB2",
+            "form": "source-described cable / connector group",
+            "scope": "Source names this group, but provides no source-scoped physical contact map. Availability and exact housing are unverified. exact atlas group labels; open until contact mapping is established",
+            "contacts": []
+          },
+          {
+            "id": "machine-group-003",
+            "device": "group-device-003",
+            "refdes": "TB3",
+            "form": "source-described cable / connector group",
+            "scope": "Source names this group, but provides no source-scoped physical contact map. Availability and exact housing are unverified. exact atlas group labels; open until contact mapping is established",
+            "contacts": []
+          },
+          {
+            "id": "supplement-connector-001",
+            "device": "supplement-device-001",
+            "refdes": "Mesa 7I96S P1 26-contact source expansion header",
+            "form": "2\u00d713 source-controller expansion header",
+            "scope": "Mesa 7I96S manual P1 expansion source reference only. Its published DB25 column describes a possible terminated daughtercard/breakout mapping; it does not prove any DB25 adapter is fitted. W6 can change even-position rail contacts 18,20,22,24,26 between GND and 5 V. No V2 connection. This is a reference for the named source revision; installed-machine correspondence is not established.",
+            "contacts": [
+              {
+                "id": "1",
+                "mark": "1",
+                "label": "IO34"
+              },
+              {
+                "id": "2",
+                "mark": "2",
+                "label": "IO35"
+              },
+              {
+                "id": "3",
+                "mark": "3",
+                "label": "IO36"
+              },
+              {
+                "id": "4",
+                "mark": "4",
+                "label": "IO37"
+              },
+              {
+                "id": "5",
+                "mark": "5",
+                "label": "IO38"
+              },
+              {
+                "id": "6",
+                "mark": "6",
+                "label": "IO39"
+              },
+              {
+                "id": "7",
+                "mark": "7",
+                "label": "IO40"
+              },
+              {
+                "id": "8",
+                "mark": "8",
+                "label": "IO41"
+              },
+              {
+                "id": "9",
+                "mark": "9",
+                "label": "IO42"
+              },
+              {
+                "id": "10",
+                "mark": "10",
+                "label": "GND"
+              },
+              {
+                "id": "11",
+                "mark": "11",
+                "label": "IO43"
+              },
+              {
+                "id": "12",
+                "mark": "12",
+                "label": "GND"
+              },
+              {
+                "id": "13",
+                "mark": "13",
+                "label": "IO44"
+              },
+              {
+                "id": "14",
+                "mark": "14",
+                "label": "GND"
+              },
+              {
+                "id": "15",
+                "mark": "15",
+                "label": "IO45"
+              },
+              {
+                "id": "16",
+                "mark": "16",
+                "label": "GND"
+              },
+              {
+                "id": "17",
+                "mark": "17",
+                "label": "IO46"
+              },
+              {
+                "id": "18",
+                "mark": "18",
+                "label": "GND or 5 V, W6 jumper dependent"
+              },
+              {
+                "id": "19",
+                "mark": "19",
+                "label": "IO47"
+              },
+              {
+                "id": "20",
+                "mark": "20",
+                "label": "GND or 5 V, W6 jumper dependent"
+              },
+              {
+                "id": "21",
+                "mark": "21",
+                "label": "IO48"
+              },
+              {
+                "id": "22",
+                "mark": "22",
+                "label": "GND or 5 V, W6 jumper dependent"
+              },
+              {
+                "id": "23",
+                "mark": "23",
+                "label": "IO49"
+              },
+              {
+                "id": "24",
+                "mark": "24",
+                "label": "GND or 5 V, W6 jumper dependent"
+              },
+              {
+                "id": "25",
+                "mark": "25",
+                "label": "IO50"
+              },
+              {
+                "id": "26",
+                "mark": "26",
+                "label": "GND or 5 V, W6 jumper dependent"
+              }
+            ]
+          },
+          {
+            "id": "supplement-connector-002",
+            "device": "supplement-device-002",
+            "refdes": "Mesa 7I96S P2 JTAG source service header",
+            "form": "10-contact source-controller service header",
+            "scope": "Mesa 7I96S manual P2 JTAG programming/debug connector. Original-controller service reference only; no retained machine-side V2 route or mating view is established. This is a reference for the named source revision; installed-machine correspondence is not established.",
+            "contacts": [
+              {
+                "id": "1",
+                "mark": "1",
+                "label": "TMS"
+              },
+              {
+                "id": "2",
+                "mark": "2",
+                "label": "TDI"
+              },
+              {
+                "id": "3",
+                "mark": "3",
+                "label": "TDO"
+              },
+              {
+                "id": "4",
+                "mark": "4",
+                "label": "GND"
+              },
+              {
+                "id": "5",
+                "mark": "5",
+                "label": "TCK"
+              },
+              {
+                "id": "6",
+                "mark": "6",
+                "label": "GND"
+              },
+              {
+                "id": "7",
+                "mark": "7",
+                "label": "/RESET"
+              },
+              {
+                "id": "8",
+                "mark": "8",
+                "label": "GND"
+              },
+              {
+                "id": "9",
+                "mark": "9",
+                "label": "/SS"
+              },
+              {
+                "id": "10",
+                "mark": "10",
+                "label": "+3.3 V"
+              }
+            ]
+          },
+          {
+            "id": "supplement-connector-003",
+            "device": "supplement-device-003",
+            "refdes": "Mesa 7I96S P4 5 V source power terminal",
+            "form": "2-contact source-controller power terminal",
+            "scope": "Mesa 7I96S manual P4 5 V power connector. Original-controller power reference only; do not transfer this supply contract to V2. Manual labels pin 1 top square pad and pin 2 bottom round pad, but this graph does not assert an installed view. This is a reference for the named source revision; installed-machine correspondence is not established.",
+            "contacts": [
+              {
+                "id": "1",
+                "mark": "1",
+                "label": "+5 V top square pad"
+              },
+              {
+                "id": "2",
+                "mark": "2",
+                "label": "GND bottom round pad"
+              }
+            ]
+          }
+        ],
+        "wires": []
+      }
+    }
+  }
+}

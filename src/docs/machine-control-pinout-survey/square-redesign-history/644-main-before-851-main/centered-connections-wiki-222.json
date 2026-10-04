@@ -1,0 +1,3125 @@
+{
+  "profile_id": "wiki-222",
+  "controller": "Smoothieboard V2 Prime",
+  "classification": "Original motion-driver electronics are on the board being replaced. Use Prime integrated phase outputs directly to measured winding pairs; do not connect STEP/DIR signal outputs to motor windings. Confirm installed board, motor current and power rating from the cited machine source.",
+  "connections": [
+    {
+      "id": "C01-001",
+      "panel_index": 0,
+      "edge_index": 0,
+      "from": "V2 Prime J5 · J5.1 · B2",
+      "to": "X stepper harness (actual contacts unknown) · New measured winding lead B2",
+      "state": "GUESS",
+      "view": "MAIN",
+      "rationale": "candidate X winding connection: V2 Prime J5 · J5.1 · B2 → X stepper harness (actual contacts unknown) · New measured winding lead B2. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Prime output pin order is source-derived; machine cavity/coil pairing and current remain unverified. Meter coil pairs and read motor ratings first.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · smoothiev2-prime.kicad_pcb",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/smoothiev2-prime.kicad_pcb",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "MakeICT Ultimaker 2 equipment page (modified hotend/extruder)",
+          "url": "https://wiki.makeict.org/wiki/Ultimaker_2",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C01-002",
+      "panel_index": 0,
+      "edge_index": 1,
+      "from": "V2 Prime J5 · J5.2 · B1",
+      "to": "X stepper harness (actual contacts unknown) · New measured winding lead B1",
+      "state": "GUESS",
+      "view": "MAIN",
+      "rationale": "candidate X winding connection: V2 Prime J5 · J5.2 · B1 → X stepper harness (actual contacts unknown) · New measured winding lead B1. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Prime output pin order is source-derived; machine cavity/coil pairing and current remain unverified. Meter coil pairs and read motor ratings first.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · smoothiev2-prime.kicad_pcb",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/smoothiev2-prime.kicad_pcb",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "MakeICT Ultimaker 2 equipment page (modified hotend/extruder)",
+          "url": "https://wiki.makeict.org/wiki/Ultimaker_2",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C01-003",
+      "panel_index": 0,
+      "edge_index": 2,
+      "from": "V2 Prime J5 · J5.3 · A2",
+      "to": "X stepper harness (actual contacts unknown) · New measured winding lead A2",
+      "state": "GUESS",
+      "view": "MAIN",
+      "rationale": "candidate X winding connection: V2 Prime J5 · J5.3 · A2 → X stepper harness (actual contacts unknown) · New measured winding lead A2. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Prime output pin order is source-derived; machine cavity/coil pairing and current remain unverified. Meter coil pairs and read motor ratings first.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · smoothiev2-prime.kicad_pcb",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/smoothiev2-prime.kicad_pcb",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "MakeICT Ultimaker 2 equipment page (modified hotend/extruder)",
+          "url": "https://wiki.makeict.org/wiki/Ultimaker_2",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C01-004",
+      "panel_index": 0,
+      "edge_index": 3,
+      "from": "V2 Prime J5 · J5.4 · A1",
+      "to": "X stepper harness (actual contacts unknown) · New measured winding lead A1",
+      "state": "GUESS",
+      "view": "MAIN",
+      "rationale": "candidate X winding connection: V2 Prime J5 · J5.4 · A1 → X stepper harness (actual contacts unknown) · New measured winding lead A1. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Prime output pin order is source-derived; machine cavity/coil pairing and current remain unverified. Meter coil pairs and read motor ratings first.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · smoothiev2-prime.kicad_pcb",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/smoothiev2-prime.kicad_pcb",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "MakeICT Ultimaker 2 equipment page (modified hotend/extruder)",
+          "url": "https://wiki.makeict.org/wiki/Ultimaker_2",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C02-001",
+      "panel_index": 1,
+      "edge_index": 0,
+      "from": "V2 Prime J6 · J6.1 · B2",
+      "to": "Y stepper harness (actual contacts unknown) · New measured winding lead B2",
+      "state": "GUESS",
+      "view": "MAIN",
+      "rationale": "candidate Y winding connection: V2 Prime J6 · J6.1 · B2 → Y stepper harness (actual contacts unknown) · New measured winding lead B2. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Prime output pin order is source-derived; machine cavity/coil pairing and current remain unverified. Meter coil pairs and read motor ratings first.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · smoothiev2-prime.kicad_pcb",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/smoothiev2-prime.kicad_pcb",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "MakeICT Ultimaker 2 equipment page (modified hotend/extruder)",
+          "url": "https://wiki.makeict.org/wiki/Ultimaker_2",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C02-002",
+      "panel_index": 1,
+      "edge_index": 1,
+      "from": "V2 Prime J6 · J6.2 · B1",
+      "to": "Y stepper harness (actual contacts unknown) · New measured winding lead B1",
+      "state": "GUESS",
+      "view": "MAIN",
+      "rationale": "candidate Y winding connection: V2 Prime J6 · J6.2 · B1 → Y stepper harness (actual contacts unknown) · New measured winding lead B1. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Prime output pin order is source-derived; machine cavity/coil pairing and current remain unverified. Meter coil pairs and read motor ratings first.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · smoothiev2-prime.kicad_pcb",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/smoothiev2-prime.kicad_pcb",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "MakeICT Ultimaker 2 equipment page (modified hotend/extruder)",
+          "url": "https://wiki.makeict.org/wiki/Ultimaker_2",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C02-003",
+      "panel_index": 1,
+      "edge_index": 2,
+      "from": "V2 Prime J6 · J6.3 · A2",
+      "to": "Y stepper harness (actual contacts unknown) · New measured winding lead A2",
+      "state": "GUESS",
+      "view": "MAIN",
+      "rationale": "candidate Y winding connection: V2 Prime J6 · J6.3 · A2 → Y stepper harness (actual contacts unknown) · New measured winding lead A2. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Prime output pin order is source-derived; machine cavity/coil pairing and current remain unverified. Meter coil pairs and read motor ratings first.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · smoothiev2-prime.kicad_pcb",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/smoothiev2-prime.kicad_pcb",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "MakeICT Ultimaker 2 equipment page (modified hotend/extruder)",
+          "url": "https://wiki.makeict.org/wiki/Ultimaker_2",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C02-004",
+      "panel_index": 1,
+      "edge_index": 3,
+      "from": "V2 Prime J6 · J6.4 · A1",
+      "to": "Y stepper harness (actual contacts unknown) · New measured winding lead A1",
+      "state": "GUESS",
+      "view": "MAIN",
+      "rationale": "candidate Y winding connection: V2 Prime J6 · J6.4 · A1 → Y stepper harness (actual contacts unknown) · New measured winding lead A1. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Prime output pin order is source-derived; machine cavity/coil pairing and current remain unverified. Meter coil pairs and read motor ratings first.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · smoothiev2-prime.kicad_pcb",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/smoothiev2-prime.kicad_pcb",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "MakeICT Ultimaker 2 equipment page (modified hotend/extruder)",
+          "url": "https://wiki.makeict.org/wiki/Ultimaker_2",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C03-001",
+      "panel_index": 2,
+      "edge_index": 0,
+      "from": "V2 Prime J7 · J7.1 · B2",
+      "to": "Z stepper harness (actual contacts unknown) · New measured winding lead B2",
+      "state": "GUESS",
+      "view": "MAIN",
+      "rationale": "candidate Z winding connection: V2 Prime J7 · J7.1 · B2 → Z stepper harness (actual contacts unknown) · New measured winding lead B2. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Prime output pin order is source-derived; machine cavity/coil pairing and current remain unverified. Meter coil pairs and read motor ratings first.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · smoothiev2-prime.kicad_pcb",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/smoothiev2-prime.kicad_pcb",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "MakeICT Ultimaker 2 equipment page (modified hotend/extruder)",
+          "url": "https://wiki.makeict.org/wiki/Ultimaker_2",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C03-002",
+      "panel_index": 2,
+      "edge_index": 1,
+      "from": "V2 Prime J7 · J7.2 · B1",
+      "to": "Z stepper harness (actual contacts unknown) · New measured winding lead B1",
+      "state": "GUESS",
+      "view": "MAIN",
+      "rationale": "candidate Z winding connection: V2 Prime J7 · J7.2 · B1 → Z stepper harness (actual contacts unknown) · New measured winding lead B1. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Prime output pin order is source-derived; machine cavity/coil pairing and current remain unverified. Meter coil pairs and read motor ratings first.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · smoothiev2-prime.kicad_pcb",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/smoothiev2-prime.kicad_pcb",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "MakeICT Ultimaker 2 equipment page (modified hotend/extruder)",
+          "url": "https://wiki.makeict.org/wiki/Ultimaker_2",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C03-003",
+      "panel_index": 2,
+      "edge_index": 2,
+      "from": "V2 Prime J7 · J7.3 · A2",
+      "to": "Z stepper harness (actual contacts unknown) · New measured winding lead A2",
+      "state": "GUESS",
+      "view": "MAIN",
+      "rationale": "candidate Z winding connection: V2 Prime J7 · J7.3 · A2 → Z stepper harness (actual contacts unknown) · New measured winding lead A2. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Prime output pin order is source-derived; machine cavity/coil pairing and current remain unverified. Meter coil pairs and read motor ratings first.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · smoothiev2-prime.kicad_pcb",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/smoothiev2-prime.kicad_pcb",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "MakeICT Ultimaker 2 equipment page (modified hotend/extruder)",
+          "url": "https://wiki.makeict.org/wiki/Ultimaker_2",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C03-004",
+      "panel_index": 2,
+      "edge_index": 3,
+      "from": "V2 Prime J7 · J7.4 · A1",
+      "to": "Z stepper harness (actual contacts unknown) · New measured winding lead A1",
+      "state": "GUESS",
+      "view": "MAIN",
+      "rationale": "candidate Z winding connection: V2 Prime J7 · J7.4 · A1 → Z stepper harness (actual contacts unknown) · New measured winding lead A1. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Prime output pin order is source-derived; machine cavity/coil pairing and current remain unverified. Meter coil pairs and read motor ratings first.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · smoothiev2-prime.kicad_pcb",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/smoothiev2-prime.kicad_pcb",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "MakeICT Ultimaker 2 equipment page (modified hotend/extruder)",
+          "url": "https://wiki.makeict.org/wiki/Ultimaker_2",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C04-001",
+      "panel_index": 3,
+      "edge_index": 0,
+      "from": "V2 Prime J8 · J8.1 · B2",
+      "to": "E / Titan stepper harness (actual contacts unknown) · New measured winding lead B2",
+      "state": "GUESS",
+      "view": "MAIN",
+      "rationale": "candidate E / Titan winding connection: V2 Prime J8 · J8.1 · B2 → E / Titan stepper harness (actual contacts unknown) · New measured winding lead B2. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Prime output pin order is source-derived; machine cavity/coil pairing and current remain unverified. Meter coil pairs and read motor ratings first.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · smoothiev2-prime.kicad_pcb",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/smoothiev2-prime.kicad_pcb",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "MakeICT Ultimaker 2 equipment page (modified hotend/extruder)",
+          "url": "https://wiki.makeict.org/wiki/Ultimaker_2",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C04-002",
+      "panel_index": 3,
+      "edge_index": 1,
+      "from": "V2 Prime J8 · J8.2 · B1",
+      "to": "E / Titan stepper harness (actual contacts unknown) · New measured winding lead B1",
+      "state": "GUESS",
+      "view": "MAIN",
+      "rationale": "candidate E / Titan winding connection: V2 Prime J8 · J8.2 · B1 → E / Titan stepper harness (actual contacts unknown) · New measured winding lead B1. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Prime output pin order is source-derived; machine cavity/coil pairing and current remain unverified. Meter coil pairs and read motor ratings first.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · smoothiev2-prime.kicad_pcb",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/smoothiev2-prime.kicad_pcb",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "MakeICT Ultimaker 2 equipment page (modified hotend/extruder)",
+          "url": "https://wiki.makeict.org/wiki/Ultimaker_2",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C04-003",
+      "panel_index": 3,
+      "edge_index": 2,
+      "from": "V2 Prime J8 · J8.3 · A2",
+      "to": "E / Titan stepper harness (actual contacts unknown) · New measured winding lead A2",
+      "state": "GUESS",
+      "view": "MAIN",
+      "rationale": "candidate E / Titan winding connection: V2 Prime J8 · J8.3 · A2 → E / Titan stepper harness (actual contacts unknown) · New measured winding lead A2. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Prime output pin order is source-derived; machine cavity/coil pairing and current remain unverified. Meter coil pairs and read motor ratings first.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · smoothiev2-prime.kicad_pcb",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/smoothiev2-prime.kicad_pcb",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "MakeICT Ultimaker 2 equipment page (modified hotend/extruder)",
+          "url": "https://wiki.makeict.org/wiki/Ultimaker_2",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C04-004",
+      "panel_index": 3,
+      "edge_index": 3,
+      "from": "V2 Prime J8 · J8.4 · A1",
+      "to": "E / Titan stepper harness (actual contacts unknown) · New measured winding lead A1",
+      "state": "GUESS",
+      "view": "MAIN",
+      "rationale": "candidate E / Titan winding connection: V2 Prime J8 · J8.4 · A1 → E / Titan stepper harness (actual contacts unknown) · New measured winding lead A1. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Prime output pin order is source-derived; machine cavity/coil pairing and current remain unverified. Meter coil pairs and read motor ratings first.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · smoothiev2-prime.kicad_pcb",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/smoothiev2-prime.kicad_pcb",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "MakeICT Ultimaker 2 equipment page (modified hotend/extruder)",
+          "url": "https://wiki.makeict.org/wiki/Ultimaker_2",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C05-001",
+      "panel_index": 4,
+      "edge_index": 0,
+      "from": "Prime P12 J21 temperature input · pin 1 sensor input",
+      "to": "Installed Hotend sensor (model unknown) · sensor lead(s)",
+      "state": "GUESS",
+      "view": "MAIN",
+      "rationale": "Hotend temperature candidate: Prime P12 J21 temperature input · pin 1 sensor input → Installed Hotend sensor (model unknown) · sensor lead(s). This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Identify thermistor/PT100/PT1000 part number and match ADC configuration/amplifier; no sensor type inferred.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · mosfets.kicad_sch",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/mosfets.kicad_sch",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "MakeICT Ultimaker 2 equipment page (modified hotend/extruder)",
+          "url": "https://wiki.makeict.org/wiki/Ultimaker_2",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C05-002",
+      "panel_index": 4,
+      "edge_index": 1,
+      "from": "Prime P12 J21 temperature input · pin 2 GND",
+      "to": "Installed Hotend sensor (model unknown) · sensor return",
+      "state": "GUESS",
+      "view": "MAIN",
+      "rationale": "Hotend sensor return: Prime P12 J21 temperature input · pin 2 GND → Installed Hotend sensor (model unknown) · sensor return. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Only if sensor topology is compatible and actual harness contacts are traced.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · mosfets.kicad_sch",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/mosfets.kicad_sch",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "MakeICT Ultimaker 2 equipment page (modified hotend/extruder)",
+          "url": "https://wiki.makeict.org/wiki/Ultimaker_2",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C06-001",
+      "panel_index": 5,
+      "edge_index": 0,
+      "from": "Prime P12 J22 temperature input · pin 1 sensor input",
+      "to": "Installed Bed sensor (model unknown) · sensor lead(s)",
+      "state": "GUESS",
+      "view": "MAIN",
+      "rationale": "Bed temperature candidate: Prime P12 J22 temperature input · pin 1 sensor input → Installed Bed sensor (model unknown) · sensor lead(s). This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Identify thermistor/PT100/PT1000 part number and match ADC configuration/amplifier; no sensor type inferred.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · mosfets.kicad_sch",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/mosfets.kicad_sch",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "MakeICT Ultimaker 2 equipment page (modified hotend/extruder)",
+          "url": "https://wiki.makeict.org/wiki/Ultimaker_2",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C06-002",
+      "panel_index": 5,
+      "edge_index": 1,
+      "from": "Prime P12 J22 temperature input · pin 2 GND",
+      "to": "Installed Bed sensor (model unknown) · sensor return",
+      "state": "GUESS",
+      "view": "MAIN",
+      "rationale": "Bed sensor return: Prime P12 J22 temperature input · pin 2 GND → Installed Bed sensor (model unknown) · sensor return. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Only if sensor topology is compatible and actual harness contacts are traced.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · mosfets.kicad_sch",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/mosfets.kicad_sch",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "MakeICT Ultimaker 2 equipment page (modified hotend/extruder)",
+          "url": "https://wiki.makeict.org/wiki/Ultimaker_2",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C07-001",
+      "panel_index": 6,
+      "edge_index": 0,
+      "from": "Measured fused heater supply · supply +",
+      "to": "Smoothieboard V2 Prime P12 · J12.1 · VFET · XT30 power entry",
+      "state": "GUESS",
+      "view": "MAIN",
+      "rationale": "heater-load supply to Prime VFET rail: Measured fused heater supply · supply + → Smoothieboard V2 Prime P12 · J12.1 · VFET · XT30 power entry. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Use only after measuring bed voltage/current and selecting the correct fuse, connector, and supply capacity.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · mosfets.kicad_sch",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/mosfets.kicad_sch",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "MakeICT Ultimaker 2 equipment page (modified hotend/extruder)",
+          "url": "https://wiki.makeict.org/wiki/Ultimaker_2",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C07-002",
+      "panel_index": 6,
+      "edge_index": 1,
+      "from": "Measured fused heater supply · return",
+      "to": "Smoothieboard V2 Prime P12 · J12.2 · GND_FET · XT30 return",
+      "state": "GUESS",
+      "view": "MAIN",
+      "rationale": "heater-load return supply: Measured fused heater supply · return → Smoothieboard V2 Prime P12 · J12.2 · GND_FET · XT30 return. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Confirm exact power-supply return and protective/logic-ground strategy.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · mosfets.kicad_sch",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/mosfets.kicad_sch",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "MakeICT Ultimaker 2 equipment page (modified hotend/extruder)",
+          "url": "https://wiki.makeict.org/wiki/Ultimaker_2",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C07-003",
+      "panel_index": 6,
+      "edge_index": 2,
+      "from": "Smoothieboard V2 Prime P12 · J12.1 · VFET · XT30 power entry",
+      "to": "Smoothieboard V2 Prime P12 · J13.1 · VFET bed positive",
+      "state": "SOURCE",
+      "view": "MAIN",
+      "rationale": "shared VFET bed-supply net: Smoothieboard V2 Prime P12 · J12.1 · VFET · XT30 power entry → Smoothieboard V2 Prime P12 · J13.1 · VFET bed positive. This path is reported by the cited original source; it is retained context, not proof of a completed Smoothie retrofit.",
+      "qualification": "Exact P12 schematic/netlist shows both connector contacts on VFET.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · mosfets.kicad_sch",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/mosfets.kicad_sch",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "MakeICT Ultimaker 2 equipment page (modified hotend/extruder)",
+          "url": "https://wiki.makeict.org/wiki/Ultimaker_2",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C07-004",
+      "panel_index": 6,
+      "edge_index": 3,
+      "from": "Smoothieboard V2 Prime P12 · J13.1 · VFET bed positive",
+      "to": "Installed bed heater (rating unknown) · heater lead +",
+      "state": "GUESS",
+      "view": "MAIN",
+      "rationale": "bed heater positive feed: Smoothieboard V2 Prime P12 · J13.1 · VFET bed positive → Installed bed heater (rating unknown) · heater lead +. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Dotted machine endpoint until actual bed voltage, current and harness cavity are identified.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · mosfets.kicad_sch",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/mosfets.kicad_sch",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "MakeICT Ultimaker 2 equipment page (modified hotend/extruder)",
+          "url": "https://wiki.makeict.org/wiki/Ultimaker_2",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C07-005",
+      "panel_index": 6,
+      "edge_index": 4,
+      "from": "Smoothieboard V2 Prime P12 · J13.2 · SW_BED switched return",
+      "to": "Installed bed heater (rating unknown) · heater lead -",
+      "state": "GUESS",
+      "view": "MAIN",
+      "rationale": "bed heater switched return: Smoothieboard V2 Prime P12 · J13.2 · SW_BED switched return → Installed bed heater (rating unknown) · heater lead -. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Dotted machine endpoint; confirm heater channel configuration, current and thermal protections.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · mosfets.kicad_sch",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/mosfets.kicad_sch",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "MakeICT Ultimaker 2 equipment page (modified hotend/extruder)",
+          "url": "https://wiki.makeict.org/wiki/Ultimaker_2",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C08-001",
+      "panel_index": 7,
+      "edge_index": 0,
+      "from": "Smoothieboard V2 Prime P12 J36 · J36.6 PD15 candidate CS",
+      "to": "Analog Devices MAX31865PMB1 12-pin Pmod J1 / CON1 · J1.1 SS / CS",
+      "state": "GUESS",
+      "view": "MAIN",
+      "rationale": "candidate SPI chip select to Pmod SS: Smoothieboard V2 Prime P12 J36 · J36.6 PD15 candidate CS → Analog Devices MAX31865PMB1 12-pin Pmod J1 / CON1 · J1.1 SS / CS. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Prime J36.6 is PD15 candidate CS; verify firmware CS mapping.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · mosfets.kicad_sch",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/mosfets.kicad_sch",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "MakeICT Ultimaker 2 equipment page (modified hotend/extruder)",
+          "url": "https://wiki.makeict.org/wiki/Ultimaker_2",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        },
+        {
+          "title": "Analog Devices MAX31865 datasheet, SPI platinum RTD converter",
+          "url": "https://www.analog.com/media/en/technical-documentation/data-sheets/MAX31865.pdf",
+          "claim": "Device/source reference supplies its original contact functions or electrical interface limits. Match the cited revision before applying the proposed route."
+        },
+        {
+          "title": "Analog Devices MAX31865PMB1 Peripheral Module datasheet Rev 0 (Jan 2014)",
+          "url": "https://www.analog.com/media/en/technical-documentation/data-sheets/max31865pmb1.pdf",
+          "claim": "Device/source reference supplies its original contact functions or electrical interface limits. Match the cited revision before applying the proposed route."
+        }
+      ]
+    },
+    {
+      "id": "C08-002",
+      "panel_index": 7,
+      "edge_index": 1,
+      "from": "Smoothieboard V2 Prime P12 J36 · J36.7 SPI1_COPI",
+      "to": "Analog Devices MAX31865PMB1 12-pin Pmod J1 / CON1 · J1.2 MOSI / SDI",
+      "state": "GUESS",
+      "view": "MAIN",
+      "rationale": "SPI1 COPI to MAX31865 MOSI: Smoothieboard V2 Prime P12 J36 · J36.7 SPI1_COPI → Analog Devices MAX31865PMB1 12-pin Pmod J1 / CON1 · J1.2 MOSI / SDI. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Confirm Prime pin nets/logic levels and firmware driver.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · mosfets.kicad_sch",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/mosfets.kicad_sch",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "MakeICT Ultimaker 2 equipment page (modified hotend/extruder)",
+          "url": "https://wiki.makeict.org/wiki/Ultimaker_2",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        },
+        {
+          "title": "Analog Devices MAX31865 datasheet, SPI platinum RTD converter",
+          "url": "https://www.analog.com/media/en/technical-documentation/data-sheets/MAX31865.pdf",
+          "claim": "Device/source reference supplies its original contact functions or electrical interface limits. Match the cited revision before applying the proposed route."
+        },
+        {
+          "title": "Analog Devices MAX31865PMB1 Peripheral Module datasheet Rev 0 (Jan 2014)",
+          "url": "https://www.analog.com/media/en/technical-documentation/data-sheets/max31865pmb1.pdf",
+          "claim": "Device/source reference supplies its original contact functions or electrical interface limits. Match the cited revision before applying the proposed route."
+        }
+      ]
+    },
+    {
+      "id": "C08-003",
+      "panel_index": 7,
+      "edge_index": 2,
+      "from": "Analog Devices MAX31865PMB1 12-pin Pmod J1 / CON1 · J1.3 MISO / SDO",
+      "to": "Smoothieboard V2 Prime P12 J36 · J36.8 SPI1_CIPO",
+      "state": "GUESS",
+      "view": "MAIN",
+      "rationale": "MAX31865 MISO to SPI1 CIPO: Analog Devices MAX31865PMB1 12-pin Pmod J1 / CON1 · J1.3 MISO / SDO → Smoothieboard V2 Prime P12 J36 · J36.8 SPI1_CIPO. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Confirm direction/logic levels on exact board revision.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · mosfets.kicad_sch",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/mosfets.kicad_sch",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "MakeICT Ultimaker 2 equipment page (modified hotend/extruder)",
+          "url": "https://wiki.makeict.org/wiki/Ultimaker_2",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        },
+        {
+          "title": "Analog Devices MAX31865 datasheet, SPI platinum RTD converter",
+          "url": "https://www.analog.com/media/en/technical-documentation/data-sheets/MAX31865.pdf",
+          "claim": "Device/source reference supplies its original contact functions or electrical interface limits. Match the cited revision before applying the proposed route."
+        },
+        {
+          "title": "Analog Devices MAX31865PMB1 Peripheral Module datasheet Rev 0 (Jan 2014)",
+          "url": "https://www.analog.com/media/en/technical-documentation/data-sheets/max31865pmb1.pdf",
+          "claim": "Device/source reference supplies its original contact functions or electrical interface limits. Match the cited revision before applying the proposed route."
+        }
+      ]
+    },
+    {
+      "id": "C08-004",
+      "panel_index": 7,
+      "edge_index": 3,
+      "from": "Smoothieboard V2 Prime P12 J36 · J36.9 SPI1_SCK",
+      "to": "Analog Devices MAX31865PMB1 12-pin Pmod J1 / CON1 · J1.4 SCLK / SCK",
+      "state": "GUESS",
+      "view": "MAIN",
+      "rationale": "SPI clock to MAX31865 SCLK: Smoothieboard V2 Prime P12 J36 · J36.9 SPI1_SCK → Analog Devices MAX31865PMB1 12-pin Pmod J1 / CON1 · J1.4 SCLK / SCK. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Confirm firmware SPI configuration and timing.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · mosfets.kicad_sch",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/mosfets.kicad_sch",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "MakeICT Ultimaker 2 equipment page (modified hotend/extruder)",
+          "url": "https://wiki.makeict.org/wiki/Ultimaker_2",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        },
+        {
+          "title": "Analog Devices MAX31865 datasheet, SPI platinum RTD converter",
+          "url": "https://www.analog.com/media/en/technical-documentation/data-sheets/MAX31865.pdf",
+          "claim": "Device/source reference supplies its original contact functions or electrical interface limits. Match the cited revision before applying the proposed route."
+        },
+        {
+          "title": "Analog Devices MAX31865PMB1 Peripheral Module datasheet Rev 0 (Jan 2014)",
+          "url": "https://www.analog.com/media/en/technical-documentation/data-sheets/max31865pmb1.pdf",
+          "claim": "Device/source reference supplies its original contact functions or electrical interface limits. Match the cited revision before applying the proposed route."
+        }
+      ]
+    },
+    {
+      "id": "C08-005",
+      "panel_index": 7,
+      "edge_index": 4,
+      "from": "Smoothieboard V2 Prime P12 J36 · J36.10 GND",
+      "to": "Analog Devices MAX31865PMB1 12-pin Pmod J1 / CON1 · J1.5 GND",
+      "state": "GUESS",
+      "view": "MAIN",
+      "rationale": "digital ground reference: Smoothieboard V2 Prime P12 J36 · J36.10 GND → Analog Devices MAX31865PMB1 12-pin Pmod J1 / CON1 · J1.5 GND. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "J36.10 is GND; verify 3.3V logic reference.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · mosfets.kicad_sch",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/mosfets.kicad_sch",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "MakeICT Ultimaker 2 equipment page (modified hotend/extruder)",
+          "url": "https://wiki.makeict.org/wiki/Ultimaker_2",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        },
+        {
+          "title": "Analog Devices MAX31865 datasheet, SPI platinum RTD converter",
+          "url": "https://www.analog.com/media/en/technical-documentation/data-sheets/MAX31865.pdf",
+          "claim": "Device/source reference supplies its original contact functions or electrical interface limits. Match the cited revision before applying the proposed route."
+        },
+        {
+          "title": "Analog Devices MAX31865PMB1 Peripheral Module datasheet Rev 0 (Jan 2014)",
+          "url": "https://www.analog.com/media/en/technical-documentation/data-sheets/max31865pmb1.pdf",
+          "claim": "Device/source reference supplies its original contact functions or electrical interface limits. Match the cited revision before applying the proposed route."
+        }
+      ]
+    },
+    {
+      "id": "C08-006",
+      "panel_index": 7,
+      "edge_index": 5,
+      "from": "Analog Devices MAX31865PMB1 12-pin Pmod J1 / CON1 · CON1.1 FORCE+ / FORCE2",
+      "to": "Installed sensor only if confirmed 2-wire PT100 · RTD lead A (measured)",
+      "state": "GUESS",
+      "view": "DETAILED CIRCUIT",
+      "rationale": "RTD lead A to CON1.1 FORCE+: Analog Devices MAX31865PMB1 12-pin Pmod J1 / CON1 · CON1.1 FORCE+ / FORCE2 → Installed sensor only if confirmed 2-wire PT100 · RTD lead A (measured). This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Use measured two-wire PT100 terminals; J2 jumper bridges FORCE+ with RTDIN+.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · mosfets.kicad_sch",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/mosfets.kicad_sch",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "MakeICT Ultimaker 2 equipment page (modified hotend/extruder)",
+          "url": "https://wiki.makeict.org/wiki/Ultimaker_2",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        },
+        {
+          "title": "Analog Devices MAX31865 datasheet, SPI platinum RTD converter",
+          "url": "https://www.analog.com/media/en/technical-documentation/data-sheets/MAX31865.pdf",
+          "claim": "Device/source reference supplies its original contact functions or electrical interface limits. Match the cited revision before applying the proposed route."
+        },
+        {
+          "title": "Analog Devices MAX31865PMB1 Peripheral Module datasheet Rev 0 (Jan 2014)",
+          "url": "https://www.analog.com/media/en/technical-documentation/data-sheets/max31865pmb1.pdf",
+          "claim": "Device/source reference supplies its original contact functions or electrical interface limits. Match the cited revision before applying the proposed route."
+        }
+      ]
+    },
+    {
+      "id": "C08-007",
+      "panel_index": 7,
+      "edge_index": 6,
+      "from": "Analog Devices MAX31865PMB1 12-pin Pmod J1 / CON1 · CON1.4 FORCE−",
+      "to": "Installed sensor only if confirmed 2-wire PT100 · RTD lead B (measured)",
+      "state": "GUESS",
+      "view": "DETAILED CIRCUIT",
+      "rationale": "RTD lead B to CON1.4 FORCE−: Analog Devices MAX31865PMB1 12-pin Pmod J1 / CON1 · CON1.4 FORCE− → Installed sensor only if confirmed 2-wire PT100 · RTD lead B (measured). This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Use measured two-wire PT100 terminals; J2 jumper bridges FORCE− with RTDIN−.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · mosfets.kicad_sch",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/mosfets.kicad_sch",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "MakeICT Ultimaker 2 equipment page (modified hotend/extruder)",
+          "url": "https://wiki.makeict.org/wiki/Ultimaker_2",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        },
+        {
+          "title": "Analog Devices MAX31865 datasheet, SPI platinum RTD converter",
+          "url": "https://www.analog.com/media/en/technical-documentation/data-sheets/MAX31865.pdf",
+          "claim": "Device/source reference supplies its original contact functions or electrical interface limits. Match the cited revision before applying the proposed route."
+        },
+        {
+          "title": "Analog Devices MAX31865PMB1 Peripheral Module datasheet Rev 0 (Jan 2014)",
+          "url": "https://www.analog.com/media/en/technical-documentation/data-sheets/max31865pmb1.pdf",
+          "claim": "Device/source reference supplies its original contact functions or electrical interface limits. Match the cited revision before applying the proposed route."
+        }
+      ]
+    },
+    {
+      "id": "C08-008",
+      "panel_index": 7,
+      "edge_index": 7,
+      "from": "Smoothieboard V2 Prime P12 J35 power contact · J35.1 3V3 output · verify limited 3V3 load",
+      "to": "Analog Devices MAX31865PMB1 12-pin Pmod J1 / CON1 · J1.6 VCC +3.3V",
+      "state": "GUESS",
+      "view": "MAIN",
+      "rationale": "3.3V module supply to Pmod VCC pin6: Smoothieboard V2 Prime P12 J35 power contact · J35.1 3V3 output · verify limited 3V3 load → Analog Devices MAX31865PMB1 12-pin Pmod J1 / CON1 · J1.6 VCC +3.3V. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Verify Prime 3V3 power budget and J35.1 rating; module data sheet identifies J1.6 as +3.3V.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · mosfets.kicad_sch",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/mosfets.kicad_sch",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "MakeICT Ultimaker 2 equipment page (modified hotend/extruder)",
+          "url": "https://wiki.makeict.org/wiki/Ultimaker_2",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        },
+        {
+          "title": "Analog Devices MAX31865 datasheet, SPI platinum RTD converter",
+          "url": "https://www.analog.com/media/en/technical-documentation/data-sheets/MAX31865.pdf",
+          "claim": "Device/source reference supplies its original contact functions or electrical interface limits. Match the cited revision before applying the proposed route."
+        },
+        {
+          "title": "Analog Devices MAX31865PMB1 Peripheral Module datasheet Rev 0 (Jan 2014)",
+          "url": "https://www.analog.com/media/en/technical-documentation/data-sheets/max31865pmb1.pdf",
+          "claim": "Device/source reference supplies its original contact functions or electrical interface limits. Match the cited revision before applying the proposed route."
+        }
+      ]
+    },
+    {
+      "id": "C08-009",
+      "panel_index": 7,
+      "edge_index": 8,
+      "from": "Smoothieboard V2 Prime P12 J35 power contact · J35.1 3V3 output · verify limited 3V3 load",
+      "to": "Analog Devices MAX31865PMB1 12-pin Pmod J1 / CON1 · J1.12 VCC +3.3V",
+      "state": "GUESS",
+      "view": "MAIN",
+      "rationale": "3.3V module supply to Pmod VCC pin12: Smoothieboard V2 Prime P12 J35 power contact · J35.1 3V3 output · verify limited 3V3 load → Analog Devices MAX31865PMB1 12-pin Pmod J1 / CON1 · J1.12 VCC +3.3V. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "J1.12 is a second Pmod +3.3V contact; use the same verified host 3V3 rail.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · mosfets.kicad_sch",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/mosfets.kicad_sch",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "MakeICT Ultimaker 2 equipment page (modified hotend/extruder)",
+          "url": "https://wiki.makeict.org/wiki/Ultimaker_2",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        },
+        {
+          "title": "Analog Devices MAX31865 datasheet, SPI platinum RTD converter",
+          "url": "https://www.analog.com/media/en/technical-documentation/data-sheets/MAX31865.pdf",
+          "claim": "Device/source reference supplies its original contact functions or electrical interface limits. Match the cited revision before applying the proposed route."
+        },
+        {
+          "title": "Analog Devices MAX31865PMB1 Peripheral Module datasheet Rev 0 (Jan 2014)",
+          "url": "https://www.analog.com/media/en/technical-documentation/data-sheets/max31865pmb1.pdf",
+          "claim": "Device/source reference supplies its original contact functions or electrical interface limits. Match the cited revision before applying the proposed route."
+        }
+      ]
+    },
+    {
+      "id": "C08-010",
+      "panel_index": 7,
+      "edge_index": 9,
+      "from": "Smoothieboard V2 Prime P12 J36 · J36.10 GND",
+      "to": "Analog Devices MAX31865PMB1 12-pin Pmod J1 / CON1 · J1.11 GND",
+      "state": "GUESS",
+      "view": "MAIN",
+      "rationale": "Pmod secondary GND contact pin11: Smoothieboard V2 Prime P12 J36 · J36.10 GND → Analog Devices MAX31865PMB1 12-pin Pmod J1 / CON1 · J1.11 GND. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "ADI data sheet identifies J1.11 as GND; tie to the same verified signal return.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · mosfets.kicad_sch",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/mosfets.kicad_sch",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "MakeICT Ultimaker 2 equipment page (modified hotend/extruder)",
+          "url": "https://wiki.makeict.org/wiki/Ultimaker_2",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        },
+        {
+          "title": "Analog Devices MAX31865 datasheet, SPI platinum RTD converter",
+          "url": "https://www.analog.com/media/en/technical-documentation/data-sheets/MAX31865.pdf",
+          "claim": "Device/source reference supplies its original contact functions or electrical interface limits. Match the cited revision before applying the proposed route."
+        },
+        {
+          "title": "Analog Devices MAX31865PMB1 Peripheral Module datasheet Rev 0 (Jan 2014)",
+          "url": "https://www.analog.com/media/en/technical-documentation/data-sheets/max31865pmb1.pdf",
+          "claim": "Device/source reference supplies its original contact functions or electrical interface limits. Match the cited revision before applying the proposed route."
+        }
+      ]
+    },
+    {
+      "id": "C08-011",
+      "panel_index": 7,
+      "edge_index": 10,
+      "from": "ADI Pmod J2 two-wire configuration · J2.1 · jumper header contact",
+      "to": "ADI Pmod J2 two-wire configuration · J2.2 · jumper header contact",
+      "state": "GUESS",
+      "view": "DETAILED CIRCUIT",
+      "rationale": "Fit 2-wire PT100 jumper J2.1–2: ADI Pmod J2 two-wire configuration · J2.1 · jumper header contact → ADI Pmod J2 two-wire configuration · J2.2 · jumper header contact. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "ADI PMB1 Rev0 user guide requires both jumpers for 2-wire mode; jumper is fitted on the module, not a cable to an RTD screw terminal.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · mosfets.kicad_sch",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/mosfets.kicad_sch",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "MakeICT Ultimaker 2 equipment page (modified hotend/extruder)",
+          "url": "https://wiki.makeict.org/wiki/Ultimaker_2",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        },
+        {
+          "title": "Analog Devices MAX31865 datasheet, SPI platinum RTD converter",
+          "url": "https://www.analog.com/media/en/technical-documentation/data-sheets/MAX31865.pdf",
+          "claim": "Device/source reference supplies its original contact functions or electrical interface limits. Match the cited revision before applying the proposed route."
+        },
+        {
+          "title": "Analog Devices MAX31865PMB1 Peripheral Module datasheet Rev 0 (Jan 2014)",
+          "url": "https://www.analog.com/media/en/technical-documentation/data-sheets/max31865pmb1.pdf",
+          "claim": "Device/source reference supplies its original contact functions or electrical interface limits. Match the cited revision before applying the proposed route."
+        }
+      ]
+    },
+    {
+      "id": "C08-012",
+      "panel_index": 7,
+      "edge_index": 11,
+      "from": "ADI Pmod J2 two-wire configuration · J2.3 · jumper header contact",
+      "to": "ADI Pmod J2 two-wire configuration · J2.4 · jumper header contact",
+      "state": "GUESS",
+      "view": "DETAILED CIRCUIT",
+      "rationale": "Fit 2-wire PT100 jumper J2.3–4: ADI Pmod J2 two-wire configuration · J2.3 · jumper header contact → ADI Pmod J2 two-wire configuration · J2.4 · jumper header contact. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "ADI PMB1 Rev0 user guide requires both jumpers for 2-wire mode; jumper is fitted on the module, not a cable to an RTD screw terminal.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · mosfets.kicad_sch",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/mosfets.kicad_sch",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "MakeICT Ultimaker 2 equipment page (modified hotend/extruder)",
+          "url": "https://wiki.makeict.org/wiki/Ultimaker_2",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        },
+        {
+          "title": "Analog Devices MAX31865 datasheet, SPI platinum RTD converter",
+          "url": "https://www.analog.com/media/en/technical-documentation/data-sheets/MAX31865.pdf",
+          "claim": "Device/source reference supplies its original contact functions or electrical interface limits. Match the cited revision before applying the proposed route."
+        },
+        {
+          "title": "Analog Devices MAX31865PMB1 Peripheral Module datasheet Rev 0 (Jan 2014)",
+          "url": "https://www.analog.com/media/en/technical-documentation/data-sheets/max31865pmb1.pdf",
+          "claim": "Device/source reference supplies its original contact functions or electrical interface limits. Match the cited revision before applying the proposed route."
+        }
+      ]
+    },
+    {
+      "id": "C09-001",
+      "panel_index": 8,
+      "edge_index": 0,
+      "from": "Smoothieboard V2 Prime P12 J35 · J35.1 3V3 output · verify limited 3V3 load",
+      "to": "Analog Devices MAX31865PMB1 J1 supply contacts · J1.6 VCC +3.3V",
+      "state": "GUESS",
+      "view": "MAIN",
+      "rationale": "Prime 3.3V to PMB1 VCC contact J1.6: Smoothieboard V2 Prime P12 J35 · J35.1 3V3 output · verify limited 3V3 load → Analog Devices MAX31865PMB1 J1 supply contacts · J1.6 VCC +3.3V. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Verify Prime J35.1 is an available output with enough current budget for module.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · inputs.kicad_sch",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/inputs.kicad_sch",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "MakeICT Ultimaker 2 equipment page (modified hotend/extruder)",
+          "url": "https://wiki.makeict.org/wiki/Ultimaker_2",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        },
+        {
+          "title": "Analog Devices MAX31865 datasheet, SPI platinum RTD converter",
+          "url": "https://www.analog.com/media/en/technical-documentation/data-sheets/MAX31865.pdf",
+          "claim": "Device/source reference supplies its original contact functions or electrical interface limits. Match the cited revision before applying the proposed route."
+        },
+        {
+          "title": "Analog Devices MAX31865PMB1 Peripheral Module datasheet Rev 0 (Jan 2014)",
+          "url": "https://www.analog.com/media/en/technical-documentation/data-sheets/max31865pmb1.pdf",
+          "claim": "Device/source reference supplies its original contact functions or electrical interface limits. Match the cited revision before applying the proposed route."
+        }
+      ]
+    },
+    {
+      "id": "C09-002",
+      "panel_index": 8,
+      "edge_index": 1,
+      "from": "Smoothieboard V2 Prime P12 J35 · J35.1 3V3 output · verify limited 3V3 load",
+      "to": "Analog Devices MAX31865PMB1 J1 supply contacts · J1.12 VCC +3.3V",
+      "state": "GUESS",
+      "view": "MAIN",
+      "rationale": "Prime 3.3V to duplicate PMB1 VCC contact J1.12: Smoothieboard V2 Prime P12 J35 · J35.1 3V3 output · verify limited 3V3 load → Analog Devices MAX31865PMB1 J1 supply contacts · J1.12 VCC +3.3V. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Same supply net contact, confirm Pmod board revision.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · inputs.kicad_sch",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/inputs.kicad_sch",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "MakeICT Ultimaker 2 equipment page (modified hotend/extruder)",
+          "url": "https://wiki.makeict.org/wiki/Ultimaker_2",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        },
+        {
+          "title": "Analog Devices MAX31865 datasheet, SPI platinum RTD converter",
+          "url": "https://www.analog.com/media/en/technical-documentation/data-sheets/MAX31865.pdf",
+          "claim": "Device/source reference supplies its original contact functions or electrical interface limits. Match the cited revision before applying the proposed route."
+        },
+        {
+          "title": "Analog Devices MAX31865PMB1 Peripheral Module datasheet Rev 0 (Jan 2014)",
+          "url": "https://www.analog.com/media/en/technical-documentation/data-sheets/max31865pmb1.pdf",
+          "claim": "Device/source reference supplies its original contact functions or electrical interface limits. Match the cited revision before applying the proposed route."
+        }
+      ]
+    },
+    {
+      "id": "C09-003",
+      "panel_index": 8,
+      "edge_index": 2,
+      "from": "Smoothieboard V2 Prime P12 J35 · J35.10 GND",
+      "to": "Analog Devices MAX31865PMB1 J1 supply contacts · J1.5 GND",
+      "state": "GUESS",
+      "view": "MAIN",
+      "rationale": "Prime return to PMB1 GND J1.5: Smoothieboard V2 Prime P12 J35 · J35.10 GND → Analog Devices MAX31865PMB1 J1 supply contacts · J1.5 GND. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Verify actual J35.10 GND net on board export.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · inputs.kicad_sch",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/inputs.kicad_sch",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "MakeICT Ultimaker 2 equipment page (modified hotend/extruder)",
+          "url": "https://wiki.makeict.org/wiki/Ultimaker_2",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        },
+        {
+          "title": "Analog Devices MAX31865 datasheet, SPI platinum RTD converter",
+          "url": "https://www.analog.com/media/en/technical-documentation/data-sheets/MAX31865.pdf",
+          "claim": "Device/source reference supplies its original contact functions or electrical interface limits. Match the cited revision before applying the proposed route."
+        },
+        {
+          "title": "Analog Devices MAX31865PMB1 Peripheral Module datasheet Rev 0 (Jan 2014)",
+          "url": "https://www.analog.com/media/en/technical-documentation/data-sheets/max31865pmb1.pdf",
+          "claim": "Device/source reference supplies its original contact functions or electrical interface limits. Match the cited revision before applying the proposed route."
+        }
+      ]
+    },
+    {
+      "id": "C09-004",
+      "panel_index": 8,
+      "edge_index": 3,
+      "from": "Smoothieboard V2 Prime P12 J35 · J35.10 GND",
+      "to": "Analog Devices MAX31865PMB1 J1 supply contacts · J1.11 GND",
+      "state": "GUESS",
+      "view": "MAIN",
+      "rationale": "Prime return to PMB1 GND J1.11: Smoothieboard V2 Prime P12 J35 · J35.10 GND → Analog Devices MAX31865PMB1 J1 supply contacts · J1.11 GND. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Same Pmod ground net, keep a low-impedance return.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · inputs.kicad_sch",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/inputs.kicad_sch",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "MakeICT Ultimaker 2 equipment page (modified hotend/extruder)",
+          "url": "https://wiki.makeict.org/wiki/Ultimaker_2",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        },
+        {
+          "title": "Analog Devices MAX31865 datasheet, SPI platinum RTD converter",
+          "url": "https://www.analog.com/media/en/technical-documentation/data-sheets/MAX31865.pdf",
+          "claim": "Device/source reference supplies its original contact functions or electrical interface limits. Match the cited revision before applying the proposed route."
+        },
+        {
+          "title": "Analog Devices MAX31865PMB1 Peripheral Module datasheet Rev 0 (Jan 2014)",
+          "url": "https://www.analog.com/media/en/technical-documentation/data-sheets/max31865pmb1.pdf",
+          "claim": "Device/source reference supplies its original contact functions or electrical interface limits. Match the cited revision before applying the proposed route."
+        }
+      ]
+    },
+    {
+      "id": "C10-001",
+      "panel_index": 9,
+      "edge_index": 0,
+      "from": "Prime P12 J24 endstop input · pin 3 input",
+      "to": "Actual X limit switch / sensor · signal unknown",
+      "state": "GUESS",
+      "view": "MAIN",
+      "rationale": "X endstop signal: Prime P12 J24 endstop input · pin 3 input → Actual X limit switch / sensor · signal unknown. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Trace actual cable, sensor output, NO/NC and level before assigning; J-number-to-axis is only a candidate.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · inputs.kicad_sch",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/inputs.kicad_sch",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "MakeICT Ultimaker 2 equipment page (modified hotend/extruder)",
+          "url": "https://wiki.makeict.org/wiki/Ultimaker_2",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C10-002",
+      "panel_index": 9,
+      "edge_index": 1,
+      "from": "Prime P12 J24 endstop input · pin 2 GND",
+      "to": "Actual X limit switch / sensor · return unknown",
+      "state": "GUESS",
+      "view": "MAIN",
+      "rationale": "X endstop return: Prime P12 J24 endstop input · pin 2 GND → Actual X limit switch / sensor · return unknown. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Verify common/return; selector pin must stay open until voltage requirement is known.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · inputs.kicad_sch",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/inputs.kicad_sch",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "MakeICT Ultimaker 2 equipment page (modified hotend/extruder)",
+          "url": "https://wiki.makeict.org/wiki/Ultimaker_2",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C11-001",
+      "panel_index": 10,
+      "edge_index": 0,
+      "from": "Prime P12 J26 endstop input · pin 3 input",
+      "to": "Actual Y limit switch / sensor · signal unknown",
+      "state": "GUESS",
+      "view": "MAIN",
+      "rationale": "Y endstop signal: Prime P12 J26 endstop input · pin 3 input → Actual Y limit switch / sensor · signal unknown. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Trace actual cable, sensor output, NO/NC and level before assigning; J-number-to-axis is only a candidate.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · inputs.kicad_sch",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/inputs.kicad_sch",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "MakeICT Ultimaker 2 equipment page (modified hotend/extruder)",
+          "url": "https://wiki.makeict.org/wiki/Ultimaker_2",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C11-002",
+      "panel_index": 10,
+      "edge_index": 1,
+      "from": "Prime P12 J26 endstop input · pin 2 GND",
+      "to": "Actual Y limit switch / sensor · return unknown",
+      "state": "GUESS",
+      "view": "MAIN",
+      "rationale": "Y endstop return: Prime P12 J26 endstop input · pin 2 GND → Actual Y limit switch / sensor · return unknown. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Verify common/return; selector pin must stay open until voltage requirement is known.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · inputs.kicad_sch",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/inputs.kicad_sch",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "MakeICT Ultimaker 2 equipment page (modified hotend/extruder)",
+          "url": "https://wiki.makeict.org/wiki/Ultimaker_2",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C12-001",
+      "panel_index": 11,
+      "edge_index": 0,
+      "from": "Prime P12 J28 endstop input · pin 3 input",
+      "to": "Actual Z limit switch / sensor · signal unknown",
+      "state": "GUESS",
+      "view": "MAIN",
+      "rationale": "Z endstop signal: Prime P12 J28 endstop input · pin 3 input → Actual Z limit switch / sensor · signal unknown. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Trace actual cable, sensor output, NO/NC and level before assigning; J-number-to-axis is only a candidate.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · inputs.kicad_sch",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/inputs.kicad_sch",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "MakeICT Ultimaker 2 equipment page (modified hotend/extruder)",
+          "url": "https://wiki.makeict.org/wiki/Ultimaker_2",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C12-002",
+      "panel_index": 11,
+      "edge_index": 1,
+      "from": "Prime P12 J28 endstop input · pin 2 GND",
+      "to": "Actual Z limit switch / sensor · return unknown",
+      "state": "GUESS",
+      "view": "MAIN",
+      "rationale": "Z endstop return: Prime P12 J28 endstop input · pin 2 GND → Actual Z limit switch / sensor · return unknown. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Verify common/return; selector pin must stay open until voltage requirement is known.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · inputs.kicad_sch",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/inputs.kicad_sch",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "MakeICT Ultimaker 2 equipment page (modified hotend/extruder)",
+          "url": "https://wiki.makeict.org/wiki/Ultimaker_2",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C13-001",
+      "panel_index": 12,
+      "edge_index": 0,
+      "from": "Regulated 5 V logic supply · +5 V regulated",
+      "to": "Prime P12 · confirm exact revision · J42.1 · 5V_PORTIN",
+      "state": "GUESS",
+      "view": "MAIN",
+      "rationale": "Prime regulated logic supply: Regulated 5 V logic supply · +5 V regulated → Prime P12 · confirm exact revision · J42.1 · 5V_PORTIN. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Prime alternative only. Confirm fitted P11/P12 revision, input-voltage/current limits, supply sequencing and fuse/conductor ratings. Never connect both Core external drivers and Prime winding outputs to the same motor.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · smoothiev2-prime.kicad_pcb",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/smoothiev2-prime.kicad_pcb",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "MakeICT Ultimaker 2 equipment page (modified hotend/extruder)",
+          "url": "https://wiki.makeict.org/wiki/Ultimaker_2",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C13-002",
+      "panel_index": 12,
+      "edge_index": 1,
+      "from": "Regulated 5 V logic supply · 0 V logic return",
+      "to": "Prime P12 · confirm exact revision · J42.2 · GND",
+      "state": "GUESS",
+      "view": "MAIN",
+      "rationale": "Prime logic supply return: Regulated 5 V logic supply · 0 V logic return → Prime P12 · confirm exact revision · J42.2 · GND. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Prime alternative only. Confirm fitted P11/P12 revision, input-voltage/current limits, supply sequencing and fuse/conductor ratings. Never connect both Core external drivers and Prime winding outputs to the same motor.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · smoothiev2-prime.kicad_pcb",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/smoothiev2-prime.kicad_pcb",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "MakeICT Ultimaker 2 equipment page (modified hotend/extruder)",
+          "url": "https://wiki.makeict.org/wiki/Ultimaker_2",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C13-003",
+      "panel_index": 12,
+      "edge_index": 2,
+      "from": "Verified motor supply · voltage/current TBD · DC + · before fuse",
+      "to": "Motor branch fuse · rating selected after measurement · fuse input",
+      "state": "GUESS",
+      "view": "DETAILED CIRCUIT",
+      "rationale": "Protected motor branch input: Verified motor supply · voltage/current TBD · DC + · before fuse → Motor branch fuse · rating selected after measurement · fuse input. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Prime alternative only. Confirm fitted P11/P12 revision, input-voltage/current limits, supply sequencing and fuse/conductor ratings. Never connect both Core external drivers and Prime winding outputs to the same motor.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · smoothiev2-prime.kicad_pcb",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/smoothiev2-prime.kicad_pcb",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "MakeICT Ultimaker 2 equipment page (modified hotend/extruder)",
+          "url": "https://wiki.makeict.org/wiki/Ultimaker_2",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C13-004",
+      "panel_index": 12,
+      "edge_index": 3,
+      "from": "Motor branch fuse · rating selected after measurement · fuse output",
+      "to": "Prime P12 · confirm exact revision · J9.1 · VMOT",
+      "state": "GUESS",
+      "view": "MAIN",
+      "rationale": "Prime VMOT power: Motor branch fuse · rating selected after measurement · fuse output → Prime P12 · confirm exact revision · J9.1 · VMOT. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Prime alternative only. Confirm fitted P11/P12 revision, input-voltage/current limits, supply sequencing and fuse/conductor ratings. Never connect both Core external drivers and Prime winding outputs to the same motor.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · smoothiev2-prime.kicad_pcb",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/smoothiev2-prime.kicad_pcb",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "MakeICT Ultimaker 2 equipment page (modified hotend/extruder)",
+          "url": "https://wiki.makeict.org/wiki/Ultimaker_2",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C13-005",
+      "panel_index": 12,
+      "edge_index": 4,
+      "from": "Verified motor supply · voltage/current TBD · 0 V motor return",
+      "to": "Prime P12 · confirm exact revision · J9.2 · GND",
+      "state": "GUESS",
+      "view": "MAIN",
+      "rationale": "Prime motor supply return: Verified motor supply · voltage/current TBD · 0 V motor return → Prime P12 · confirm exact revision · J9.2 · GND. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Prime alternative only. Confirm fitted P11/P12 revision, input-voltage/current limits, supply sequencing and fuse/conductor ratings. Never connect both Core external drivers and Prime winding outputs to the same motor.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · smoothiev2-prime.kicad_pcb",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/smoothiev2-prime.kicad_pcb",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "MakeICT Ultimaker 2 equipment page (modified hotend/extruder)",
+          "url": "https://wiki.makeict.org/wiki/Ultimaker_2",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C14-001",
+      "panel_index": 13,
+      "edge_index": 0,
+      "from": "Heater-matched DC supply · rating measured · DC + before branch fuse",
+      "to": "Individual heater branch fuse · rating TBD · input from supply +",
+      "state": "GUESS",
+      "view": "MAIN",
+      "rationale": "Heater branch fuse feed: Heater-matched DC supply · rating measured · DC + before branch fuse → Individual heater branch fuse · rating TBD · input from supply +. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Select fuse DC voltage/current/interrupt rating and conductor protection from actual heater/supply.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · mosfets.kicad_sch",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/mosfets.kicad_sch",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "MakeICT Ultimaker 2 equipment page (modified hotend/extruder)",
+          "url": "https://wiki.makeict.org/wiki/Ultimaker_2",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C14-002",
+      "panel_index": 13,
+      "edge_index": 1,
+      "from": "Individual heater branch fuse · rating TBD · output to VFET input",
+      "to": "Prime P12 · 2590 revision ONLY · J12.1 · VFET · XT30 power entry",
+      "state": "GUESS",
+      "view": "MAIN",
+      "rationale": "VFET power entry: Individual heater branch fuse · rating TBD · output to VFET input → Prime P12 · 2590 revision ONLY · J12.1 · VFET · XT30 power entry. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Use XT30 J12, not small 2.54mm J11 auxiliary header; verify exact board, connector, PCB and load current limits.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · mosfets.kicad_sch",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/mosfets.kicad_sch",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "MakeICT Ultimaker 2 equipment page (modified hotend/extruder)",
+          "url": "https://wiki.makeict.org/wiki/Ultimaker_2",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C14-003",
+      "panel_index": 13,
+      "edge_index": 2,
+      "from": "Heater-matched DC supply · rating measured · 0 V power return",
+      "to": "Prime P12 · 2590 revision ONLY · J12.2 · GND_FET · XT30 return",
+      "state": "GUESS",
+      "view": "MAIN",
+      "rationale": "Heater power return: Heater-matched DC supply · rating measured · 0 V power return → Prime P12 · 2590 revision ONLY · J12.2 · GND_FET · XT30 return. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Separate from logic supply/VMOT; verify return topology and protective earth as applicable.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · mosfets.kicad_sch",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/mosfets.kicad_sch",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "MakeICT Ultimaker 2 equipment page (modified hotend/extruder)",
+          "url": "https://wiki.makeict.org/wiki/Ultimaker_2",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C14-004",
+      "panel_index": 13,
+      "edge_index": 3,
+      "from": "Prime P12 · 2590 revision ONLY · J17.1 · shared cutoff-switched VFET",
+      "to": "Independent thermal cutoff · DC/load rated · series contact lead A",
+      "state": "GUESS",
+      "view": "MAIN",
+      "rationale": "Positive heater feed: Prime P12 · 2590 revision ONLY · J17.1 · shared cutoff-switched VFET → Independent thermal cutoff · DC/load rated · series contact lead A. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "J17.1 is downstream of factory Q25 high-side cutoff. Match heater voltage/current and output connector rating.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · mosfets.kicad_sch",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/mosfets.kicad_sch",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "MakeICT Ultimaker 2 equipment page (modified hotend/extruder)",
+          "url": "https://wiki.makeict.org/wiki/Ultimaker_2",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C14-005",
+      "panel_index": 13,
+      "edge_index": 4,
+      "from": "Independent thermal cutoff · DC/load rated · series contact lead B",
+      "to": "Measured hotend heater · never infer rating · heater lead A",
+      "state": "GUESS",
+      "view": "MAIN",
+      "rationale": "Thermally protected heater feed: Independent thermal cutoff · DC/load rated · series contact lead B → Measured hotend heater · never infer rating · heater lead A. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Install rated cutoff mechanically/electrically according to its manufacturer and heater location.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · mosfets.kicad_sch",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/mosfets.kicad_sch",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "MakeICT Ultimaker 2 equipment page (modified hotend/extruder)",
+          "url": "https://wiki.makeict.org/wiki/Ultimaker_2",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C14-006",
+      "panel_index": 13,
+      "edge_index": 5,
+      "from": "Measured hotend heater · never infer rating · heater lead B",
+      "to": "Prime P12 · 2590 revision ONLY · J17.2 · Hotend A switched return",
+      "state": "GUESS",
+      "view": "MAIN",
+      "rationale": "Hotend A switched heater return: Measured hotend heater · never infer rating · heater lead B → Prime P12 · 2590 revision ONLY · J17.2 · Hotend A switched return. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "J17.2 is Q19 drain; configured output, tested startup-off and validated temperature feedback are mandatory before enabling heat.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · mosfets.kicad_sch",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/mosfets.kicad_sch",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "MakeICT Ultimaker 2 equipment page (modified hotend/extruder)",
+          "url": "https://wiki.makeict.org/wiki/Ultimaker_2",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C15-001",
+      "panel_index": 14,
+      "edge_index": 0,
+      "from": "Prime P12 · powered by preceding J12 circuit · J19.1 · cutoff-switched VFET",
+      "to": "Installed fan1 · identify voltage/current and use · measured positive lead",
+      "state": "GUESS",
+      "view": "MAIN",
+      "rationale": "Fan1 positive feed: Prime P12 · powered by preceding J12 circuit · J19.1 · cutoff-switched VFET → Installed fan1 · identify voltage/current and use · measured positive lead. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Fan receives VFET rail, not a separately inferred 5V/12V supply. Match actual fan voltage/current.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · mosfets.kicad_sch",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/mosfets.kicad_sch",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "MakeICT Ultimaker 2 equipment page (modified hotend/extruder)",
+          "url": "https://wiki.makeict.org/wiki/Ultimaker_2",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C15-002",
+      "panel_index": 14,
+      "edge_index": 1,
+      "from": "Installed fan1 · identify voltage/current and use · measured return lead",
+      "to": "Prime P12 · powered by preceding J12 circuit · J19.2 · Fan1 switched return",
+      "state": "GUESS",
+      "view": "MAIN",
+      "rationale": "Fan1 switched return: Installed fan1 · identify voltage/current and use · measured return lead → Prime P12 · powered by preceding J12 circuit · J19.2 · Fan1 switched return. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Q21 internal low-side stage; configure fan function and prove cooling whenever heater is enabled.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · mosfets.kicad_sch",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/mosfets.kicad_sch",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "MakeICT Ultimaker 2 equipment page (modified hotend/extruder)",
+          "url": "https://wiki.makeict.org/wiki/Ultimaker_2",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C15-003",
+      "panel_index": 14,
+      "edge_index": 2,
+      "from": "Prime P12 · powered by preceding J12 circuit · J20.1 · cutoff-switched VFET",
+      "to": "Optional fan2 · identify fitment and ratings · measured positive lead",
+      "state": "GUESS",
+      "view": "MAIN",
+      "rationale": "Fan2 positive feed: Prime P12 · powered by preceding J12 circuit · J20.1 · cutoff-switched VFET → Optional fan2 · identify fitment and ratings · measured positive lead. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Connect only if fitted or deliberately added, electrically matched and firmware configured.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · mosfets.kicad_sch",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/mosfets.kicad_sch",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "MakeICT Ultimaker 2 equipment page (modified hotend/extruder)",
+          "url": "https://wiki.makeict.org/wiki/Ultimaker_2",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C15-004",
+      "panel_index": 14,
+      "edge_index": 3,
+      "from": "Optional fan2 · identify fitment and ratings · measured return lead",
+      "to": "Prime P12 · powered by preceding J12 circuit · J20.2 · Fan2 switched return",
+      "state": "GUESS",
+      "view": "MAIN",
+      "rationale": "Fan2 switched return: Optional fan2 · identify fitment and ratings · measured return lead → Prime P12 · powered by preceding J12 circuit · J20.2 · Fan2 switched return. This is a new conversion wire; the sources establish endpoint functions, while the connection and compatibility require the checks below.",
+      "qualification": "Q22 internal low-side stage; verify rated load and startup state.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · mosfets.kicad_sch",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/mosfets.kicad_sch",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "MakeICT Ultimaker 2 equipment page (modified hotend/extruder)",
+          "url": "https://wiki.makeict.org/wiki/Ultimaker_2",
+          "claim": "Machine source documents original functions/component inventory; the new terminal-to-terminal route is a proposal, not a manufacturer retrofit instruction."
+        }
+      ]
+    },
+    {
+      "id": "C16-001",
+      "panel_index": 15,
+      "edge_index": 0,
+      "from": "Prime P12 · user interface compatibility boundary · Supported display/host interface · verify firmware",
+      "to": "Original UM2 user interface · exact connector unresolved · Display interface",
+      "state": "OPEN",
+      "view": "MAIN",
+      "rationale": "Retained display compatibility: Prime P12 · user interface compatibility boundary · Supported display/host interface · verify firmware → Original UM2 user interface · exact connector unresolved · Display interface. The fitted interface or electrical contract is unresolved. The broken path is a boundary to identify, not a wire to install.",
+      "qualification": "Stock manual pp.11–16 names display, rotary input, SD printing and USB firmware update. MakeICT modified machine does not publish its retained panel wiring. Select a Prime-supported display/host workflow or identify exact panel protocol and connector before retaining it; debug UART is not an assumed panel adapter.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · smoothiev2-prime.kicad_pcb",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/smoothiev2-prime.kicad_pcb",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "Ultimaker 2 User Manual v1.13 · pp.11–16",
+          "url": "https://wiki.makeict.org/images/f/f9/Ultimaker_2_-_User_Manual_v1.13.pdf",
+          "claim": "Describes factory UI/power workflow; does not provide a Prime-compatible retained panel pinout."
+        },
+        {
+          "title": "MakeICT Ultimaker 2 equipment page (modified hotend/extruder)",
+          "url": "https://wiki.makeict.org/wiki/Ultimaker_2",
+          "claim": "MakeICT modification inventory identifies E3D V6/Titan/1.75mm, not installed UI, supply or harness revision."
+        }
+      ]
+    },
+    {
+      "id": "C16-002",
+      "panel_index": 15,
+      "edge_index": 1,
+      "from": "Prime P12 · user interface compatibility boundary · Supported display/host interface · verify firmware",
+      "to": "Original UM2 user interface · exact connector unresolved · Rotary/push control interface",
+      "state": "OPEN",
+      "view": "MAIN",
+      "rationale": "Retained rotary control compatibility: Prime P12 · user interface compatibility boundary · Supported display/host interface · verify firmware → Original UM2 user interface · exact connector unresolved · Rotary/push control interface. The fitted interface or electrical contract is unresolved. The broken path is a boundary to identify, not a wire to install.",
+      "qualification": "Stock manual pp.11–16 names display, rotary input, SD printing and USB firmware update. MakeICT modified machine does not publish its retained panel wiring. Select a Prime-supported display/host workflow or identify exact panel protocol and connector before retaining it; debug UART is not an assumed panel adapter.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · smoothiev2-prime.kicad_pcb",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/smoothiev2-prime.kicad_pcb",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "Ultimaker 2 User Manual v1.13 · pp.11–16",
+          "url": "https://wiki.makeict.org/images/f/f9/Ultimaker_2_-_User_Manual_v1.13.pdf",
+          "claim": "Describes factory UI/power workflow; does not provide a Prime-compatible retained panel pinout."
+        },
+        {
+          "title": "MakeICT Ultimaker 2 equipment page (modified hotend/extruder)",
+          "url": "https://wiki.makeict.org/wiki/Ultimaker_2",
+          "claim": "MakeICT modification inventory identifies E3D V6/Titan/1.75mm, not installed UI, supply or harness revision."
+        }
+      ]
+    },
+    {
+      "id": "C16-003",
+      "panel_index": 15,
+      "edge_index": 2,
+      "from": "Prime P12 · user interface compatibility boundary · Supported display/host interface · verify firmware",
+      "to": "Original UM2 user interface · exact connector unresolved · Original SD slot / controller protocol",
+      "state": "OPEN",
+      "view": "MAIN",
+      "rationale": "Retained SD printing compatibility: Prime P12 · user interface compatibility boundary · Supported display/host interface · verify firmware → Original UM2 user interface · exact connector unresolved · Original SD slot / controller protocol. The fitted interface or electrical contract is unresolved. The broken path is a boundary to identify, not a wire to install.",
+      "qualification": "Stock manual pp.11–16 names display, rotary input, SD printing and USB firmware update. MakeICT modified machine does not publish its retained panel wiring. Select a Prime-supported display/host workflow or identify exact panel protocol and connector before retaining it; debug UART is not an assumed panel adapter.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · smoothiev2-prime.kicad_pcb",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/smoothiev2-prime.kicad_pcb",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "Ultimaker 2 User Manual v1.13 · pp.11–16",
+          "url": "https://wiki.makeict.org/images/f/f9/Ultimaker_2_-_User_Manual_v1.13.pdf",
+          "claim": "Describes factory UI/power workflow; does not provide a Prime-compatible retained panel pinout."
+        },
+        {
+          "title": "MakeICT Ultimaker 2 equipment page (modified hotend/extruder)",
+          "url": "https://wiki.makeict.org/wiki/Ultimaker_2",
+          "claim": "MakeICT modification inventory identifies E3D V6/Titan/1.75mm, not installed UI, supply or harness revision."
+        }
+      ]
+    },
+    {
+      "id": "C16-004",
+      "panel_index": 15,
+      "edge_index": 3,
+      "from": "Prime P12 · user interface compatibility boundary · Supported display/host interface · verify firmware",
+      "to": "Original UM2 user interface · exact connector unresolved · Original USB firmware-update workflow",
+      "state": "OPEN",
+      "view": "MAIN",
+      "rationale": "Retained USB host compatibility: Prime P12 · user interface compatibility boundary · Supported display/host interface · verify firmware → Original UM2 user interface · exact connector unresolved · Original USB firmware-update workflow. The fitted interface or electrical contract is unresolved. The broken path is a boundary to identify, not a wire to install.",
+      "qualification": "Stock manual pp.11–16 names display, rotary input, SD printing and USB firmware update. MakeICT modified machine does not publish its retained panel wiring. Select a Prime-supported display/host workflow or identify exact panel protocol and connector before retaining it; debug UART is not an assumed panel adapter.",
+      "sources": [
+        {
+          "title": "Prime P12 exact source · smoothiev2-prime.kicad_pcb",
+          "url": "https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/smoothiev2-prime.kicad_pcb",
+          "claim": "Defines the named Prime connector contacts and board-side circuitry; does not establish the machine harness or replacement firmware configuration."
+        },
+        {
+          "title": "Ultimaker 2 User Manual v1.13 · pp.11–16",
+          "url": "https://wiki.makeict.org/images/f/f9/Ultimaker_2_-_User_Manual_v1.13.pdf",
+          "claim": "Describes factory UI/power workflow; does not provide a Prime-compatible retained panel pinout."
+        },
+        {
+          "title": "MakeICT Ultimaker 2 equipment page (modified hotend/extruder)",
+          "url": "https://wiki.makeict.org/wiki/Ultimaker_2",
+          "claim": "MakeICT modification inventory identifies E3D V6/Titan/1.75mm, not installed UI, supply or harness revision."
+        }
+      ]
+    }
+  ],
+  "main_visible_connections": [
+    "C01-001",
+    "C01-002",
+    "C01-003",
+    "C01-004",
+    "C02-001",
+    "C02-002",
+    "C02-003",
+    "C02-004",
+    "C03-001",
+    "C03-002",
+    "C03-003",
+    "C03-004",
+    "C04-001",
+    "C04-002",
+    "C04-003",
+    "C04-004",
+    "C05-001",
+    "C05-002",
+    "C06-001",
+    "C06-002",
+    "C07-001",
+    "C07-002",
+    "C07-003",
+    "C07-004",
+    "C07-005",
+    "C08-001",
+    "C08-002",
+    "C08-003",
+    "C08-004",
+    "C08-005",
+    "C08-008",
+    "C08-009",
+    "C08-010",
+    "C09-001",
+    "C09-002",
+    "C09-003",
+    "C09-004",
+    "C10-001",
+    "C10-002",
+    "C11-001",
+    "C11-002",
+    "C12-001",
+    "C12-002",
+    "C13-001",
+    "C13-002",
+    "C13-004",
+    "C13-005",
+    "C14-001",
+    "C14-002",
+    "C14-003",
+    "C14-004",
+    "C14-005",
+    "C14-006",
+    "C15-001",
+    "C15-002",
+    "C15-003",
+    "C15-004",
+    "C16-001",
+    "C16-002",
+    "C16-003",
+    "C16-004"
+  ],
+  "detailed_only_connections": [
+    "C08-006",
+    "C08-007",
+    "C08-011",
+    "C08-012",
+    "C13-003"
+  ],
+  "main_route_manifest": [
+    {
+      "connection_id": "C13-001",
+      "controller_identity": [
+        "J42",
+        "1"
+      ],
+      "controller_anchor": [
+        1180.2285714285715,
+        1000
+      ],
+      "assembly": [
+        "north",
+        "power"
+      ],
+      "assembly_anchor": [
+        1111.111111111111,
+        820
+      ],
+      "assembly_port_index": 1,
+      "receiver_node": "Regulated 5 V logic supply",
+      "receiver_contact": "+5 V regulated"
+    },
+    {
+      "connection_id": "C13-002",
+      "controller_identity": [
+        "J42",
+        "2"
+      ],
+      "controller_anchor": [
+        1240.5714285714287,
+        1000
+      ],
+      "assembly": [
+        "north",
+        "power"
+      ],
+      "assembly_anchor": [
+        1222.2222222222222,
+        820
+      ],
+      "assembly_port_index": 2,
+      "receiver_node": "Regulated 5 V logic supply",
+      "receiver_contact": "0 V logic return"
+    },
+    {
+      "connection_id": "C13-004",
+      "controller_identity": [
+        "J9",
+        "1"
+      ],
+      "controller_anchor": [
+        1325.0285714285715,
+        1000
+      ],
+      "assembly": [
+        "north",
+        "power"
+      ],
+      "assembly_anchor": [
+        1333.3333333333333,
+        820
+      ],
+      "assembly_port_index": 3,
+      "receiver_node": "Motor branch fuse · rating selected after measurement",
+      "receiver_contact": "fuse output"
+    },
+    {
+      "connection_id": "C13-005",
+      "controller_identity": [
+        "J9",
+        "2"
+      ],
+      "controller_anchor": [
+        1385.3714285714286,
+        1000
+      ],
+      "assembly": [
+        "north",
+        "power"
+      ],
+      "assembly_anchor": [
+        1444.4444444444443,
+        820
+      ],
+      "assembly_port_index": 4,
+      "receiver_node": "Verified motor supply · voltage/current TBD",
+      "receiver_contact": "0 V motor return"
+    },
+    {
+      "connection_id": "C07-001",
+      "controller_identity": [
+        "J12",
+        "1"
+      ],
+      "controller_anchor": [
+        1614.6285714285714,
+        1000
+      ],
+      "assembly": [
+        "north",
+        "power"
+      ],
+      "assembly_anchor": [
+        1555.5555555555557,
+        820
+      ],
+      "assembly_port_index": 5,
+      "receiver_node": "Measured fused heater supply",
+      "receiver_contact": "supply +"
+    },
+    {
+      "connection_id": "C14-002",
+      "controller_identity": [
+        "J12",
+        "1"
+      ],
+      "controller_anchor": [
+        1614.6285714285714,
+        1000
+      ],
+      "assembly": [
+        "north",
+        "power"
+      ],
+      "assembly_anchor": [
+        1666.6666666666665,
+        820
+      ],
+      "assembly_port_index": 6,
+      "receiver_node": "Individual heater branch fuse · rating TBD",
+      "receiver_contact": "output to VFET input"
+    },
+    {
+      "connection_id": "C07-002",
+      "controller_identity": [
+        "J12",
+        "2"
+      ],
+      "controller_anchor": [
+        1674.9714285714285,
+        1000
+      ],
+      "assembly": [
+        "north",
+        "power"
+      ],
+      "assembly_anchor": [
+        1777.7777777777778,
+        820
+      ],
+      "assembly_port_index": 7,
+      "receiver_node": "Measured fused heater supply",
+      "receiver_contact": "return"
+    },
+    {
+      "connection_id": "C14-003",
+      "controller_identity": [
+        "J12",
+        "2"
+      ],
+      "controller_anchor": [
+        1674.9714285714285,
+        1000
+      ],
+      "assembly": [
+        "north",
+        "power"
+      ],
+      "assembly_anchor": [
+        1888.888888888889,
+        820
+      ],
+      "assembly_port_index": 8,
+      "receiver_node": "Heater-matched DC supply · rating measured",
+      "receiver_contact": "0 V power return"
+    },
+    {
+      "connection_id": "C07-004",
+      "controller_identity": [
+        "J13",
+        "1"
+      ],
+      "controller_anchor": [
+        1000,
+        1169.9019607843138
+      ],
+      "assembly": [
+        "west",
+        "thermal"
+      ],
+      "assembly_anchor": [
+        765,
+        318.75
+      ],
+      "assembly_port_index": 1,
+      "receiver_node": "Installed bed heater (rating unknown)",
+      "receiver_contact": "heater lead +"
+    },
+    {
+      "connection_id": "C07-005",
+      "controller_identity": [
+        "J13",
+        "2"
+      ],
+      "controller_anchor": [
+        1000,
+        1230.1960784313726
+      ],
+      "assembly": [
+        "west",
+        "thermal"
+      ],
+      "assembly_anchor": [
+        765,
+        376.25
+      ],
+      "assembly_port_index": 2,
+      "receiver_node": "Installed bed heater (rating unknown)",
+      "receiver_contact": "heater lead -"
+    },
+    {
+      "connection_id": "C14-004",
+      "controller_identity": [
+        "J17",
+        "1"
+      ],
+      "controller_anchor": [
+        1000,
+        1314.5882352941178
+      ],
+      "assembly": [
+        "west",
+        "thermal"
+      ],
+      "assembly_anchor": [
+        765,
+        433.75
+      ],
+      "assembly_port_index": 3,
+      "receiver_node": "Independent thermal cutoff · DC/load rated",
+      "receiver_contact": "series contact lead A"
+    },
+    {
+      "connection_id": "C14-006",
+      "controller_identity": [
+        "J17",
+        "2"
+      ],
+      "controller_anchor": [
+        1000,
+        1385.1764705882354
+      ],
+      "assembly": [
+        "west",
+        "thermal"
+      ],
+      "assembly_anchor": [
+        765,
+        491.25
+      ],
+      "assembly_port_index": 4,
+      "receiver_node": "Measured hotend heater · never infer rating",
+      "receiver_contact": "heater lead B"
+    },
+    {
+      "connection_id": "C15-001",
+      "controller_identity": [
+        "J19",
+        "1"
+      ],
+      "controller_anchor": [
+        1000,
+        1552.4901960784316
+      ],
+      "assembly": [
+        "west",
+        "thermal"
+      ],
+      "assembly_anchor": [
+        765,
+        548.75
+      ],
+      "assembly_port_index": 5,
+      "receiver_node": "Installed fan1 · identify voltage/current and use",
+      "receiver_contact": "measured positive lead"
+    },
+    {
+      "connection_id": "C15-002",
+      "controller_identity": [
+        "J19",
+        "2"
+      ],
+      "controller_anchor": [
+        1000,
+        1612.7843137254904
+      ],
+      "assembly": [
+        "west",
+        "thermal"
+      ],
+      "assembly_anchor": [
+        765,
+        606.25
+      ],
+      "assembly_port_index": 6,
+      "receiver_node": "Installed fan1 · identify voltage/current and use",
+      "receiver_contact": "measured return lead"
+    },
+    {
+      "connection_id": "C15-003",
+      "controller_identity": [
+        "J20",
+        "1"
+      ],
+      "controller_anchor": [
+        1000,
+        1686.8823529411768
+      ],
+      "assembly": [
+        "west",
+        "thermal"
+      ],
+      "assembly_anchor": [
+        765,
+        663.75
+      ],
+      "assembly_port_index": 7,
+      "receiver_node": "Optional fan2 · identify fitment and ratings",
+      "receiver_contact": "measured positive lead"
+    },
+    {
+      "connection_id": "C15-004",
+      "controller_identity": [
+        "J20",
+        "2"
+      ],
+      "controller_anchor": [
+        1000,
+        1747.1764705882356
+      ],
+      "assembly": [
+        "west",
+        "thermal"
+      ],
+      "assembly_anchor": [
+        765,
+        721.25
+      ],
+      "assembly_port_index": 8,
+      "receiver_node": "Optional fan2 · identify fitment and ratings",
+      "receiver_contact": "measured return lead"
+    },
+    {
+      "connection_id": "C14-001",
+      "kind": "assembly-load",
+      "assembly": [
+        "west",
+        "thermal"
+      ],
+      "from_node": "Heater-matched DC supply · rating measured",
+      "from_contact": "DC + before branch fuse",
+      "to_node": "Individual heater branch fuse · rating TBD",
+      "to_contact": "input from supply +",
+      "from_anchor": [
+        73.0,
+        732
+      ],
+      "to_anchor": [
+        388.0,
+        732
+      ]
+    },
+    {
+      "connection_id": "C14-005",
+      "kind": "assembly-load",
+      "assembly": [
+        "west",
+        "thermal"
+      ],
+      "from_node": "Independent thermal cutoff · DC/load rated",
+      "from_contact": "series contact lead B",
+      "to_node": "Measured hotend heater · never infer rating",
+      "to_contact": "heater lead A",
+      "from_anchor": [
+        433.0,
+        732
+      ],
+      "to_anchor": [
+        748.0,
+        732
+      ]
+    },
+    {
+      "connection_id": "C08-008",
+      "controller_identity": [
+        "J35",
+        "1"
+      ],
+      "controller_anchor": [
+        1000,
+        1810.980392156863
+      ],
+      "assembly": [
+        "west",
+        "process"
+      ],
+      "assembly_anchor": [
+        765,
+        1064.1666666666667
+      ],
+      "assembly_port_index": 1,
+      "receiver_node": "Analog Devices MAX31865PMB1 12-pin Pmod J1 / CON1",
+      "receiver_contact": "J1.6 VCC +3.3V"
+    },
+    {
+      "connection_id": "C08-009",
+      "controller_identity": [
+        "J35",
+        "1"
+      ],
+      "controller_anchor": [
+        1000,
+        1810.980392156863
+      ],
+      "assembly": [
+        "west",
+        "process"
+      ],
+      "assembly_anchor": [
+        765,
+        1142.5
+      ],
+      "assembly_port_index": 2,
+      "receiver_node": "Analog Devices MAX31865PMB1 12-pin Pmod J1 / CON1",
+      "receiver_contact": "J1.12 VCC +3.3V"
+    },
+    {
+      "connection_id": "C09-001",
+      "controller_identity": [
+        "J35",
+        "1"
+      ],
+      "controller_anchor": [
+        1000,
+        1810.980392156863
+      ],
+      "assembly": [
+        "west",
+        "process"
+      ],
+      "assembly_anchor": [
+        765,
+        1220.8333333333333
+      ],
+      "assembly_port_index": 3,
+      "receiver_node": "Analog Devices MAX31865PMB1 J1 supply contacts",
+      "receiver_contact": "J1.6 VCC +3.3V"
+    },
+    {
+      "connection_id": "C09-002",
+      "controller_identity": [
+        "J35",
+        "1"
+      ],
+      "controller_anchor": [
+        1000,
+        1810.980392156863
+      ],
+      "assembly": [
+        "west",
+        "process"
+      ],
+      "assembly_anchor": [
+        765,
+        1299.1666666666667
+      ],
+      "assembly_port_index": 4,
+      "receiver_node": "Analog Devices MAX31865PMB1 J1 supply contacts",
+      "receiver_contact": "J1.12 VCC +3.3V"
+    },
+    {
+      "connection_id": "C09-003",
+      "controller_identity": [
+        "J35",
+        "10"
+      ],
+      "controller_anchor": [
+        1000,
+        1840.3921568627454
+      ],
+      "assembly": [
+        "west",
+        "process"
+      ],
+      "assembly_anchor": [
+        765,
+        1377.5
+      ],
+      "assembly_port_index": 5,
+      "receiver_node": "Analog Devices MAX31865PMB1 J1 supply contacts",
+      "receiver_contact": "J1.5 GND"
+    },
+    {
+      "connection_id": "C09-004",
+      "controller_identity": [
+        "J35",
+        "10"
+      ],
+      "controller_anchor": [
+        1000,
+        1840.3921568627454
+      ],
+      "assembly": [
+        "west",
+        "process"
+      ],
+      "assembly_anchor": [
+        765,
+        1455.8333333333333
+      ],
+      "assembly_port_index": 6,
+      "receiver_node": "Analog Devices MAX31865PMB1 J1 supply contacts",
+      "receiver_contact": "J1.11 GND"
+    },
+    {
+      "connection_id": "C05-001",
+      "controller_identity": [
+        "J21",
+        "1"
+      ],
+      "controller_anchor": [
+        2000,
+        1161.0590015128594
+      ],
+      "assembly": [
+        "east",
+        "inputs"
+      ],
+      "assembly_anchor": [
+        2235,
+        313.0
+      ],
+      "assembly_port_index": 1,
+      "receiver_node": "Installed Hotend sensor (model unknown)",
+      "receiver_contact": "sensor lead(s)"
+    },
+    {
+      "connection_id": "C05-002",
+      "controller_identity": [
+        "J21",
+        "2"
+      ],
+      "controller_anchor": [
+        2000,
+        1192.6475037821483
+      ],
+      "assembly": [
+        "east",
+        "inputs"
+      ],
+      "assembly_anchor": [
+        2235,
+        359.0
+      ],
+      "assembly_port_index": 2,
+      "receiver_node": "Installed Hotend sensor (model unknown)",
+      "receiver_contact": "sensor return"
+    },
+    {
+      "connection_id": "C06-001",
+      "controller_identity": [
+        "J22",
+        "1"
+      ],
+      "controller_anchor": [
+        2000,
+        1238.7655068078668
+      ],
+      "assembly": [
+        "east",
+        "inputs"
+      ],
+      "assembly_anchor": [
+        2235,
+        405.0
+      ],
+      "assembly_port_index": 3,
+      "receiver_node": "Installed Bed sensor (model unknown)",
+      "receiver_contact": "sensor lead(s)"
+    },
+    {
+      "connection_id": "C06-002",
+      "controller_identity": [
+        "J22",
+        "2"
+      ],
+      "controller_anchor": [
+        2000,
+        1270.3540090771558
+      ],
+      "assembly": [
+        "east",
+        "inputs"
+      ],
+      "assembly_anchor": [
+        2235,
+        451.0
+      ],
+      "assembly_port_index": 4,
+      "receiver_node": "Installed Bed sensor (model unknown)",
+      "receiver_contact": "sensor return"
+    },
+    {
+      "connection_id": "C10-002",
+      "controller_identity": [
+        "J24",
+        "2"
+      ],
+      "controller_anchor": [
+        2000,
+        1348.0605143721632
+      ],
+      "assembly": [
+        "east",
+        "inputs"
+      ],
+      "assembly_anchor": [
+        2235,
+        497.0
+      ],
+      "assembly_port_index": 5,
+      "receiver_node": "Actual X limit switch / sensor",
+      "receiver_contact": "return unknown"
+    },
+    {
+      "connection_id": "C10-001",
+      "controller_identity": [
+        "J24",
+        "3"
+      ],
+      "controller_anchor": [
+        2000,
+        1379.6490166414521
+      ],
+      "assembly": [
+        "east",
+        "inputs"
+      ],
+      "assembly_anchor": [
+        2235,
+        543.0
+      ],
+      "assembly_port_index": 6,
+      "receiver_node": "Actual X limit switch / sensor",
+      "receiver_contact": "signal unknown"
+    },
+    {
+      "connection_id": "C11-002",
+      "controller_identity": [
+        "J26",
+        "2"
+      ],
+      "controller_anchor": [
+        2000,
+        1457.3555219364598
+      ],
+      "assembly": [
+        "east",
+        "inputs"
+      ],
+      "assembly_anchor": [
+        2235,
+        589.0
+      ],
+      "assembly_port_index": 7,
+      "receiver_node": "Actual Y limit switch / sensor",
+      "receiver_contact": "return unknown"
+    },
+    {
+      "connection_id": "C11-001",
+      "controller_identity": [
+        "J26",
+        "3"
+      ],
+      "controller_anchor": [
+        2000,
+        1488.9440242057487
+      ],
+      "assembly": [
+        "east",
+        "inputs"
+      ],
+      "assembly_anchor": [
+        2235,
+        635.0
+      ],
+      "assembly_port_index": 8,
+      "receiver_node": "Actual Y limit switch / sensor",
+      "receiver_contact": "signal unknown"
+    },
+    {
+      "connection_id": "C12-002",
+      "controller_identity": [
+        "J28",
+        "2"
+      ],
+      "controller_anchor": [
+        2000,
+        1566.6505295007564
+      ],
+      "assembly": [
+        "east",
+        "inputs"
+      ],
+      "assembly_anchor": [
+        2235,
+        681.0
+      ],
+      "assembly_port_index": 9,
+      "receiver_node": "Actual Z limit switch / sensor",
+      "receiver_contact": "return unknown"
+    },
+    {
+      "connection_id": "C12-001",
+      "controller_identity": [
+        "J28",
+        "3"
+      ],
+      "controller_anchor": [
+        2000,
+        1598.2390317700454
+      ],
+      "assembly": [
+        "east",
+        "inputs"
+      ],
+      "assembly_anchor": [
+        2235,
+        727.0
+      ],
+      "assembly_port_index": 10,
+      "receiver_node": "Actual Z limit switch / sensor",
+      "receiver_contact": "signal unknown"
+    },
+    {
+      "connection_id": "C08-001",
+      "controller_identity": [
+        "J36",
+        "6"
+      ],
+      "controller_anchor": [
+        2000,
+        1655.4130105900151
+      ],
+      "assembly": [
+        "east",
+        "extension"
+      ],
+      "assembly_anchor": [
+        2235,
+        1048.5
+      ],
+      "assembly_port_index": 1,
+      "receiver_node": "Analog Devices MAX31865PMB1 12-pin Pmod J1 / CON1",
+      "receiver_contact": "J1.1 SS / CS"
+    },
+    {
+      "connection_id": "C08-002",
+      "controller_identity": [
+        "J36",
+        "7"
+      ],
+      "controller_anchor": [
+        2000,
+        1698.0574886535553
+      ],
+      "assembly": [
+        "east",
+        "extension"
+      ],
+      "assembly_anchor": [
+        2235,
+        1095.5
+      ],
+      "assembly_port_index": 2,
+      "receiver_node": "Analog Devices MAX31865PMB1 12-pin Pmod J1 / CON1",
+      "receiver_contact": "J1.2 MOSI / SDI"
+    },
+    {
+      "connection_id": "C08-003",
+      "controller_identity": [
+        "J36",
+        "8"
+      ],
+      "controller_anchor": [
+        2000,
+        1729.6459909228442
+      ],
+      "assembly": [
+        "east",
+        "extension"
+      ],
+      "assembly_anchor": [
+        2235,
+        1142.5
+      ],
+      "assembly_port_index": 3,
+      "receiver_node": "Analog Devices MAX31865PMB1 12-pin Pmod J1 / CON1",
+      "receiver_contact": "J1.3 MISO / SDO"
+    },
+    {
+      "connection_id": "C08-004",
+      "controller_identity": [
+        "J36",
+        "9"
+      ],
+      "controller_anchor": [
+        2000,
+        1761.2344931921332
+      ],
+      "assembly": [
+        "east",
+        "extension"
+      ],
+      "assembly_anchor": [
+        2235,
+        1189.5
+      ],
+      "assembly_port_index": 4,
+      "receiver_node": "Analog Devices MAX31865PMB1 12-pin Pmod J1 / CON1",
+      "receiver_contact": "J1.4 SCLK / SCK"
+    },
+    {
+      "connection_id": "C08-005",
+      "controller_identity": [
+        "J36",
+        "10"
+      ],
+      "controller_anchor": [
+        2000,
+        1792.8229954614221
+      ],
+      "assembly": [
+        "east",
+        "extension"
+      ],
+      "assembly_anchor": [
+        2235,
+        1236.5
+      ],
+      "assembly_port_index": 5,
+      "receiver_node": "Analog Devices MAX31865PMB1 12-pin Pmod J1 / CON1",
+      "receiver_contact": "J1.5 GND"
+    },
+    {
+      "connection_id": "C08-010",
+      "controller_identity": [
+        "J36",
+        "10"
+      ],
+      "controller_anchor": [
+        2000,
+        1792.8229954614221
+      ],
+      "assembly": [
+        "east",
+        "extension"
+      ],
+      "assembly_anchor": [
+        2235,
+        1283.5
+      ],
+      "assembly_port_index": 6,
+      "receiver_node": "Analog Devices MAX31865PMB1 12-pin Pmod J1 / CON1",
+      "receiver_contact": "J1.11 GND"
+    },
+    {
+      "connection_id": "C16-001",
+      "controller_identity": [
+        "UNRESOLVED",
+        "15:prime:ui"
+      ],
+      "controller_anchor": [
+        2000,
+        1838.9409984871409
+      ],
+      "assembly": [
+        "east",
+        "extension"
+      ],
+      "assembly_anchor": [
+        2235,
+        1330.5
+      ],
+      "assembly_port_index": 7,
+      "receiver_node": "Original UM2 user interface · exact connector unresolved",
+      "receiver_contact": "Display interface"
+    },
+    {
+      "connection_id": "C16-002",
+      "controller_identity": [
+        "UNRESOLVED",
+        "15:prime:ui"
+      ],
+      "controller_anchor": [
+        2000,
+        1838.9409984871409
+      ],
+      "assembly": [
+        "east",
+        "extension"
+      ],
+      "assembly_anchor": [
+        2235,
+        1377.5
+      ],
+      "assembly_port_index": 8,
+      "receiver_node": "Original UM2 user interface · exact connector unresolved",
+      "receiver_contact": "Rotary/push control interface"
+    },
+    {
+      "connection_id": "C16-003",
+      "controller_identity": [
+        "UNRESOLVED",
+        "15:prime:ui"
+      ],
+      "controller_anchor": [
+        2000,
+        1838.9409984871409
+      ],
+      "assembly": [
+        "east",
+        "extension"
+      ],
+      "assembly_anchor": [
+        2235,
+        1424.5
+      ],
+      "assembly_port_index": 9,
+      "receiver_node": "Original UM2 user interface · exact connector unresolved",
+      "receiver_contact": "Original SD slot / controller protocol"
+    },
+    {
+      "connection_id": "C16-004",
+      "controller_identity": [
+        "UNRESOLVED",
+        "15:prime:ui"
+      ],
+      "controller_anchor": [
+        2000,
+        1838.9409984871409
+      ],
+      "assembly": [
+        "east",
+        "extension"
+      ],
+      "assembly_anchor": [
+        2235,
+        1471.5
+      ],
+      "assembly_port_index": 10,
+      "receiver_node": "Original UM2 user interface · exact connector unresolved",
+      "receiver_contact": "Original USB firmware-update workflow"
+    },
+    {
+      "connection_id": "C01-001",
+      "controller_identity": [
+        "J5",
+        "1"
+      ],
+      "controller_anchor": [
+        1167.2307692307693,
+        2000
+      ],
+      "assembly": [
+        "south",
+        "J5"
+      ],
+      "assembly_anchor": [
+        204.0,
+        2200
+      ],
+      "assembly_port_index": 1,
+      "receiver_node": "X stepper harness (actual contacts unknown)",
+      "receiver_contact": "New measured winding lead B2"
+    },
+    {
+      "connection_id": "C01-002",
+      "controller_identity": [
+        "J5",
+        "2"
+      ],
+      "controller_anchor": [
+        1208.076923076923,
+        2000
+      ],
+      "assembly": [
+        "south",
+        "J5"
+      ],
+      "assembly_anchor": [
+        343.0,
+        2200
+      ],
+      "assembly_port_index": 2,
+      "receiver_node": "X stepper harness (actual contacts unknown)",
+      "receiver_contact": "New measured winding lead B1"
+    },
+    {
+      "connection_id": "C01-003",
+      "controller_identity": [
+        "J5",
+        "3"
+      ],
+      "controller_anchor": [
+        1248.923076923077,
+        2000
+      ],
+      "assembly": [
+        "south",
+        "J5"
+      ],
+      "assembly_anchor": [
+        482.0,
+        2200
+      ],
+      "assembly_port_index": 3,
+      "receiver_node": "X stepper harness (actual contacts unknown)",
+      "receiver_contact": "New measured winding lead A2"
+    },
+    {
+      "connection_id": "C01-004",
+      "controller_identity": [
+        "J5",
+        "4"
+      ],
+      "controller_anchor": [
+        1289.7692307692307,
+        2000
+      ],
+      "assembly": [
+        "south",
+        "J5"
+      ],
+      "assembly_anchor": [
+        621.0,
+        2200
+      ],
+      "assembly_port_index": 4,
+      "receiver_node": "X stepper harness (actual contacts unknown)",
+      "receiver_contact": "New measured winding lead A1"
+    },
+    {
+      "connection_id": "C02-001",
+      "controller_identity": [
+        "J6",
+        "1"
+      ],
+      "controller_anchor": [
+        1348.2307692307693,
+        2000
+      ],
+      "assembly": [
+        "south",
+        "J6"
+      ],
+      "assembly_anchor": [
+        929.0,
+        2200
+      ],
+      "assembly_port_index": 1,
+      "receiver_node": "Y stepper harness (actual contacts unknown)",
+      "receiver_contact": "New measured winding lead B2"
+    },
+    {
+      "connection_id": "C02-002",
+      "controller_identity": [
+        "J6",
+        "2"
+      ],
+      "controller_anchor": [
+        1389.076923076923,
+        2000
+      ],
+      "assembly": [
+        "south",
+        "J6"
+      ],
+      "assembly_anchor": [
+        1068.0,
+        2200
+      ],
+      "assembly_port_index": 2,
+      "receiver_node": "Y stepper harness (actual contacts unknown)",
+      "receiver_contact": "New measured winding lead B1"
+    },
+    {
+      "connection_id": "C02-003",
+      "controller_identity": [
+        "J6",
+        "3"
+      ],
+      "controller_anchor": [
+        1429.923076923077,
+        2000
+      ],
+      "assembly": [
+        "south",
+        "J6"
+      ],
+      "assembly_anchor": [
+        1207.0,
+        2200
+      ],
+      "assembly_port_index": 3,
+      "receiver_node": "Y stepper harness (actual contacts unknown)",
+      "receiver_contact": "New measured winding lead A2"
+    },
+    {
+      "connection_id": "C02-004",
+      "controller_identity": [
+        "J6",
+        "4"
+      ],
+      "controller_anchor": [
+        1470.7692307692307,
+        2000
+      ],
+      "assembly": [
+        "south",
+        "J6"
+      ],
+      "assembly_anchor": [
+        1346.0,
+        2200
+      ],
+      "assembly_port_index": 4,
+      "receiver_node": "Y stepper harness (actual contacts unknown)",
+      "receiver_contact": "New measured winding lead A1"
+    },
+    {
+      "connection_id": "C03-001",
+      "controller_identity": [
+        "J7",
+        "1"
+      ],
+      "controller_anchor": [
+        1529.2307692307693,
+        2000
+      ],
+      "assembly": [
+        "south",
+        "J7"
+      ],
+      "assembly_anchor": [
+        1654.0,
+        2200
+      ],
+      "assembly_port_index": 1,
+      "receiver_node": "Z stepper harness (actual contacts unknown)",
+      "receiver_contact": "New measured winding lead B2"
+    },
+    {
+      "connection_id": "C03-002",
+      "controller_identity": [
+        "J7",
+        "2"
+      ],
+      "controller_anchor": [
+        1570.076923076923,
+        2000
+      ],
+      "assembly": [
+        "south",
+        "J7"
+      ],
+      "assembly_anchor": [
+        1793.0,
+        2200
+      ],
+      "assembly_port_index": 2,
+      "receiver_node": "Z stepper harness (actual contacts unknown)",
+      "receiver_contact": "New measured winding lead B1"
+    },
+    {
+      "connection_id": "C03-003",
+      "controller_identity": [
+        "J7",
+        "3"
+      ],
+      "controller_anchor": [
+        1610.923076923077,
+        2000
+      ],
+      "assembly": [
+        "south",
+        "J7"
+      ],
+      "assembly_anchor": [
+        1932.0,
+        2200
+      ],
+      "assembly_port_index": 3,
+      "receiver_node": "Z stepper harness (actual contacts unknown)",
+      "receiver_contact": "New measured winding lead A2"
+    },
+    {
+      "connection_id": "C03-004",
+      "controller_identity": [
+        "J7",
+        "4"
+      ],
+      "controller_anchor": [
+        1651.7692307692307,
+        2000
+      ],
+      "assembly": [
+        "south",
+        "J7"
+      ],
+      "assembly_anchor": [
+        2071.0,
+        2200
+      ],
+      "assembly_port_index": 4,
+      "receiver_node": "Z stepper harness (actual contacts unknown)",
+      "receiver_contact": "New measured winding lead A1"
+    },
+    {
+      "connection_id": "C04-001",
+      "controller_identity": [
+        "J8",
+        "1"
+      ],
+      "controller_anchor": [
+        1710.2307692307693,
+        2000
+      ],
+      "assembly": [
+        "south",
+        "J8"
+      ],
+      "assembly_anchor": [
+        2379.0,
+        2200
+      ],
+      "assembly_port_index": 1,
+      "receiver_node": "E / Titan stepper harness (actual contacts unknown)",
+      "receiver_contact": "New measured winding lead B2"
+    },
+    {
+      "connection_id": "C04-002",
+      "controller_identity": [
+        "J8",
+        "2"
+      ],
+      "controller_anchor": [
+        1751.076923076923,
+        2000
+      ],
+      "assembly": [
+        "south",
+        "J8"
+      ],
+      "assembly_anchor": [
+        2518.0,
+        2200
+      ],
+      "assembly_port_index": 2,
+      "receiver_node": "E / Titan stepper harness (actual contacts unknown)",
+      "receiver_contact": "New measured winding lead B1"
+    },
+    {
+      "connection_id": "C04-003",
+      "controller_identity": [
+        "J8",
+        "3"
+      ],
+      "controller_anchor": [
+        1791.923076923077,
+        2000
+      ],
+      "assembly": [
+        "south",
+        "J8"
+      ],
+      "assembly_anchor": [
+        2657.0,
+        2200
+      ],
+      "assembly_port_index": 3,
+      "receiver_node": "E / Titan stepper harness (actual contacts unknown)",
+      "receiver_contact": "New measured winding lead A2"
+    },
+    {
+      "connection_id": "C04-004",
+      "controller_identity": [
+        "J8",
+        "4"
+      ],
+      "controller_anchor": [
+        1832.7692307692307,
+        2000
+      ],
+      "assembly": [
+        "south",
+        "J8"
+      ],
+      "assembly_anchor": [
+        2796.0,
+        2200
+      ],
+      "assembly_port_index": 4,
+      "receiver_node": "E / Titan stepper harness (actual contacts unknown)",
+      "receiver_contact": "New measured winding lead A1"
+    },
+    {
+      "connection_id": "C07-003",
+      "kind": "factory-internal",
+      "from_node": "Smoothieboard V2 Prime P12",
+      "from_contact": "J12.1 · VFET · XT30 power entry",
+      "to_node": "Smoothieboard V2 Prime P12",
+      "to_contact": "J13.1 · VFET bed positive",
+      "from_anchor": [
+        1614.6285714285714,
+        1000
+      ],
+      "to_anchor": [
+        1000,
+        1169.9019607843138
+      ]
+    }
+  ],
+  "geometry": {
+    "viewbox": [
+      0,
+      0,
+      3000,
+      3000
+    ],
+    "controller": [
+      1000,
+      1000,
+      1000,
+      1000
+    ],
+    "controller_area_fraction": 0.1111111111111111
+  },
+  "svg_sha256": "3223c244551154b6184f98a75000d4f7a0c2f7ae71725ec05c3c22db54bb6c45"
+}

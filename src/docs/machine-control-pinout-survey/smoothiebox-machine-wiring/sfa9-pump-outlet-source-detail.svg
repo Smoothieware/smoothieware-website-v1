@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1200 840" role="img" aria-labelledby="title desc">
+  <title id="title">SCULPFUN SF-A9 air-pump connector: physical connection detail</title>
+  <desc id="desc">A source-detail proposal showing the documented rear-panel pump barrel outlet connected to the intact pump cord and air pump. Electrical polarity, ratings, and switched conductor remain unknown.</desc>
+  <defs>
+    <style>
+      .bg{fill:#f5f7fa}.panel{fill:#e8edf2;stroke:#35475b;stroke-width:4}.face{fill:#f9fbfd;stroke:#35475b;stroke-width:3}.ink{fill:#182638}.muted{fill:#52657a}.accent{fill:#146c94}.cord{fill:none;stroke:#146c94;stroke-width:12;stroke-linecap:round;stroke-linejoin:round}.line{fill:none;stroke:#52657a;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}.socket{fill:#182638;stroke:#35475b;stroke-width:4}.metal{fill:#aab7c4;stroke:#35475b;stroke-width:3}.pump{fill:#e4eef3;stroke:#35475b;stroke-width:4}.unknown{fill:#fff8e7;stroke:#9b6b16;stroke-width:2}.label{font:600 22px system-ui,sans-serif;fill:#182638}.small{font:17px system-ui,sans-serif;fill:#52657a}.title{font:700 34px system-ui,sans-serif;fill:#182638}.subtitle{font:20px system-ui,sans-serif;fill:#52657a}.note{font:18px system-ui,sans-serif;fill:#182638}.tiny{font:14px system-ui,sans-serif;fill:#52657a}
+    </style>
+  </defs>
+  <rect class="bg" width="1200" height="840" rx="22"/>
+  <text class="title" x="54" y="60">SF-A9 · air-pump connector detail</text>
+  <text class="subtitle" x="56" y="94">Physical connection shown from the manufacturer’s rear-panel illustration</text>
+  <rect class="panel" x="58" y="142" width="505" height="405" rx="26"/>
+  <text class="label" x="92" y="184">Machine rear panel</text>
+  <text class="small" x="92" y="211">Connector order follows the cited rear-panel view</text>
+
+  <rect class="face" x="92" y="236" width="437" height="275" rx="14"/>
+  <rect class="face" x="121" y="269" width="69" height="52" rx="5"/>
+  <path class="line" d="M137 284h37v22h-37zM145 291h21v8h-21z"/>
+  <text class="label" x="219" y="301">Data line interface</text>
+
+  <rect class="face" x="121" y="342" width="69" height="55" rx="7"/>
+  <circle class="socket" cx="155" cy="369" r="19"/>
+  <circle fill="#f5f7fa" stroke="#aab7c4" stroke-width="3" cx="155" cy="369" r="9"/>
+  <path class="line" d="M198 369h30"/>
+  <rect class="metal" x="203" y="359" width="56" height="20" rx="4"/>
+  <path class="cord" d="M259 369H620V485H755"/>
+  <text class="label" x="277" y="348">Air pump interface</text>
+  <text class="small" x="277" y="397">Barrel-style outlet</text>
+  <text class="small" x="277" y="419">Pump cord retained intact</text>
+
+  <rect class="face" x="121" y="430" width="69" height="52" rx="7"/>
+  <circle class="metal" cx="155" cy="456" r="17"/>
+  <circle fill="#f5f7fa" stroke="#35475b" stroke-width="3" cx="155" cy="456" r="8"/>
+  <text class="label" x="219" y="464">Machine power interface</text>
+
+  <rect class="pump" x="755" y="408" width="350" height="186" rx="28"/>
+  <rect class="face" x="802" y="450" width="176" height="93" rx="15"/>
+  <path class="line" d="M824 474h132M824 490h132M824 506h132M824 522h132"/>
+  <circle class="metal" cx="1027" cy="501" r="36"/>
+  <circle fill="#e4eef3" stroke="#35475b" stroke-width="3" cx="1027" cy="501" r="13"/>
+  <text class="label" x="790" y="566">External air pump</text>
+  <text class="small" x="592" y="612">Continuous physical cord · no wire functions assigned</text>
+
+  <rect class="unknown" x="58" y="625" width="1047" height="112" rx="16"/>
+  <text class="label" x="84" y="663">Not established by this source</text>
+  <text class="note" x="84" y="697">Barrel diameter · centre/sleeve polarity · voltage/current rating · exact switched conductor or side</text>
+  <text class="small" x="84" y="722">The fitted SF-A9 head harness also remains unresolved; this is not the S9 three-pin head map.</text>
+
+  <text class="tiny" x="58" y="767">Source: SCULPFUN SF-A9 40 W Machine User Manual, PDF page 8 (printed page 6).</text>
+  <a xlink:href="https://cdn.shopify.com/s/files/1/0628/0695/0066/files/SCULPFUN_SF-A9_40W_User_Manual_1.pdf?v=1780023377#page=8" target="_blank" rel="noreferrer"><text class="tiny accent" x="58" y="791">Official manufacturer manual · page 8</text></a>
+  <text class="tiny" x="58" y="816">Physical connector reference · electrical replacement interface unresolved</text>
+</svg>
