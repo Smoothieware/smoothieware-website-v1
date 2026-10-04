@@ -95,8 +95,8 @@ Here are the various connections you will find on your PSU:
 
 | Connector | Connection label | Name | Description |
 | --------- | ---------------- | ---- | ----------- |
-| High power | `L-` | Mains Ground | Connects to the mains ground wire and to the enclosure for grounding |
-| | `FG` | Laser Ground | The ground side of the tube connects to this connection |
+| High power | `L-` | Laser return | Connects to the laser tube cathode, usually through the ammeter |
+| | `FG` | Mains and case protective earth | Connects to the mains protective earth and the enclosure |
 | | `AC` | Mains | Alternative current from the mains cable |
 | | `AC` | Mains | Alternative current from the mains cable |
 | Logic | `G` | Logic Ground | Common ground for all logic signals |
@@ -109,6 +109,8 @@ Here are the various connections you will find on your PSU:
 | | `G` | Power Ground | Common ground |
 | | `5V` | Logic power | Unconnected |
 | | `L` | ? | Unconnected |
+
+The pictured [MYJG-40W V20220713 terminal manual](https://7cad390533514c32acc8-75d23ce06fcfaf780446d85d50c33f7b.ssl.cf6.rackcdn.com/skuSpecification/4D9F11E28B4DE93366B248005EC86706.pdf#page=3) identifies `L-` as the tube-cathode return and `FG` as mains/case protective earth. Match the labels on the actual installed PSU before using this example; other MYJG-40W terminal variants exist.
 
 </div>
 </div>
