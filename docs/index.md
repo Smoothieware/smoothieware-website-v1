@@ -249,6 +249,7 @@ More: [Windows Drivers](windows-drivers), [Linux Drivers](linux-drivers), [Mac D
 - [V2 vs V1 Differences](smoothieboard-v2-differences): Comparison guide for migration and evaluation
 - [STM32H7 Pin Usage](stm32h7-pin-usage): Pin assignments for the STM32H7 microcontroller
 - [V2 Schematic](smoothieboard-v2-schematic): Hardware schematic documentation
+- [Forth on Smoothieboard V2](forth): Experimental onboard programming and scripting; requires the `add/forth` firmware branch
 
 {::nomarkdown}
 </v2>
@@ -337,3 +338,34 @@ Current edge build status: [![Build Status](https://app.travis-ci.com/Smoothiewa
   <img src="/images/oshw-logo.png" alt="OSHW logo" style="width:75px; height:auto;"/>
 </a>
 {:/nomarkdown}
+
+# Smoothie in Research
+
+- [PARA: A one-meter reach, two-kg payload, three-DoF open source robotic arm with customizable end effector](https://pmc.ncbi.nlm.nih.gov/articles/PMC9123426/)
+- [OpenWorkstation: A modular open-source technology for automated in vitro workflows](https://pmc.ncbi.nlm.nih.gov/articles/PMC9041211/)
+- [Automated melt electrowritting platform with real-time process monitoring](https://pmc.ncbi.nlm.nih.gov/articles/PMC9123438/)
+- [Additive manufacturing of metallic glass from powder in space](https://www.nature.com/articles/s41526-023-00327-7)
+- [GPCR signaling measurement and drug profiling with an automated live-cell microscopy system](https://pmc.ncbi.nlm.nih.gov/articles/PMC9994309/)
+- [FusX: A Rapid One-Step Transcription Activator-Like Effector Assembly System for Genome Science](https://pmc.ncbi.nlm.nih.gov/articles/PMC4931509/)
+- [MAPLE (modular automated platform for large-scale experiments), a robot for integrated organism-handling and phenotyping](https://elifesciences.org/articles/37166)
+- [Continuous, long-term crawling behavior characterized by a robotic transport system](https://elifesciences.org/articles/86585)
+- [Precision cooking for printed foods via multiwavelength lasers](https://www.nature.com/articles/s41538-021-00107-1)
+- [Multi-Material Three-Dimensional Food Printing with Simultaneous Infrared Cooking](https://doi.org/10.1089/3dp.2018.0042)
+- [MVO Automation Platform: Addressing Unmet Needs in Clinical Laboratories with Microcontrollers, 3D Printing, and Open-Source Hardware/Software](https://journals.sagepub.com/doi/10.1177/2472630318773693)
+- [A screw extrusion-based system for additive manufacturing of wood: Sodium silicate thermoset composites](https://journals.sagepub.com/doi/10.1177/16878132231210373)
+- [Effect of Biochar Reinforcement on the Wettability, Mechanical, and Thermal Properties of Extrudable Wood–Sodium Silicate Composites](https://www.mdpi.com/2227-9717/14/13/2094)
+- [Inverted laser sintering of metal powders](https://www.nature.com/articles/s41598-023-47184-8)
+- [Modular Approach in CNC Kernel Development](https://www.fruct.org/files/publications/volume-28/fruct28/Zim.pdf)
+- [Diseño e Implementación de una Impresora 3D Core XY multifuncional](https://doi.org/10.18050/td.v16i1.1960)
+- [Bridging Engineering and Biochemistry: Hands-On Automation Laboratory Modules with an Open-Source Pipetting Robot](https://peer.asee.org/59251)
+- [A Digital Manufacturing Process For Three-Dimensional Electronics](https://etheses.whiterose.ac.uk/id/eprint/27196/)
+- [Particle flow analysis for multi-material 3D food printing](https://pure.tue.nl/ws/portalfiles/portal/244136648/20221206_CO_Klomp_hf.pdf)
+- [Electronics and control system for Laser cutter](https://dspace.cvut.cz/entities/publication/9d354a36-bb15-4aa1-855d-c3ad33629c3d)
+- [3D Printing of Wood-Sodium Silicate Composites](https://verso.uidaho.edu/esploro/outputs/graduate/3D-Printing-of-Wood-Sodium-Silicate-Composites/996638044601851)
+- [Dopaminergic Regulation of Nicotine-Evoked Locomotor States in Drosophila Larvae](https://scholarship.miami.edu/esploro/outputs/doctoral/Dopaminergic-Regulation-of-Nicotine-Evoked-Locomotor-States/991033051934702976)
+- [Adaptação de fresadora CNC 3 eixos para uso em processos de biofabricação](https://riut.utfpr.edu.br/jspui/bitstream/1/10636/1/CT_DAMEC_2018_1_37.pdf)
+- [Identifying Features in Forks](https://www.cs.cmu.edu/~ckaestne/pdf/icse18forks.pdf)
+- [What the Fork: A Study of Inefficient and Efficient Forking Practices in Social Coding](https://cmustrudel.github.io/papers/fse19forks.pdf)
+- [Imaging-guided platform for real-time intervention in complex in vitro models](https://assets-eu.researchsquare.com/files/rs-7179174/v1/017e0c5b-c17e-4478-b9ce-88a21e1b9789.pdf?c=1758892117)
+- [Development of Open Source 3D Bioprinters For Low-Cost and High-Fidelity Biofabrication](https://abstracts.biomaterials.org/data/papers/2019/abstracts/511.pdf)
+- [Feature-based insight for forks in social coding platforms](https://www.sciencedirect.com/science/article/abs/pii/S0950584921001373)
