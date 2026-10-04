@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1060" height="350" viewBox="0 0 1060 350" role="img" aria-labelledby="title desc">
+<title id="title">ROS to Smoothie: from a robot trajectory to motor pulses</title>
+<desc id="desc">On the computer, MoveIt plans joint positions, a ROS driver converts them to G-code and exchanges serial responses with Smoothie. Smoothie plans motion and sends step and direction signals to the motor drivers. Controller coordinates return to ROS; encoders require a separate measurement path.</desc>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8" fill="#75b8f2"/></marker></defs>
+<rect width="1060" height="350" rx="12" fill="#182330"/>
+<g font-family="sans-serif" fill="#f2f6fa">
+<text x="28" y="38" font-size="22">Computer</text><text x="664" y="38" font-size="22">Machine</text>
+<g fill="#293b4e" stroke="#75b8f2" stroke-width="2"><rect x="28" y="66" width="235" height="130" rx="8"/><rect x="324" y="66" width="235" height="130" rx="8"/><rect x="666" y="66" width="176" height="130" rx="8"/><rect x="889" y="66" width="143" height="130" rx="8"/></g>
+<g font-size="20" text-anchor="middle"><text x="145" y="99">ROS + MoveIt</text><text x="441" y="99">Serial G-code driver</text><text x="754" y="99">Smoothie</text><text x="960" y="99">Motor drivers</text></g>
+<g font-size="15" text-anchor="middle" fill="#d6e3ef"><text x="145" y="130">Robot model, IK, collisions</text><text x="145" y="159">Joint trajectory in radians</text><text x="441" y="130">Units, limits, timing</text><text x="441" y="159">Commands + acknowledgements</text><text x="754" y="130">Motion planner</text><text x="754" y="159">Pulse generation</text><text x="960" y="130">STEP / DIR</text><text x="960" y="159">Motors</text></g>
+<g stroke="#75b8f2" stroke-width="2" fill="none" marker-end="url(#arrow)"><path d="M265 127H321"/><path d="M561 127H663"/><path d="M844 127H886"/><path d="M754 198V230H441V198"/><path d="M439 232H145V198"/></g>
+<text x="612" y="113" text-anchor="middle" font-size="14">USB serial</text><text x="563" y="257" text-anchor="middle" font-size="16">ok, errors, controller position</text>
+<text x="28" y="310" font-size="16" fill="#d6e3ef">Position from step counts estimates motion. Add encoder feedback to measure the physical joints.</text>
+</g></svg>
