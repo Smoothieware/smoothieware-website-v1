@@ -1,0 +1,17 @@
+{
+  "name": "smoothieware-docs-translator",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "translate": "bun run cli.ts",
+    "review": "bun run criticism_cli.ts",
+    "test": "bun test ./tests"
+  },
+  "dependencies": {
+    "mongodb": "7.5.0"
+  },
+  "devDependencies": {
+    "@types/bun": "1.4.0",
+    "@types/node": "26.2.0"
+  }
+}
