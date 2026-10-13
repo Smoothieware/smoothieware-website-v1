@@ -166,8 +166,12 @@ You'll need a config file for your machine type:
 <v2>
 {:/nomarkdown}
 
-- [V2 Prime config](https://github.com/Smoothieware/SmoothieV2/raw/main/FirmwareBin/config.ini) - Latest V2 board
+- [V2 Prime 3D-printer example](https://github.com/Smoothieware/SmoothieV2/blob/master/ConfigSamples/config-3d.ini)
+- [V2 Prime CNC example](https://github.com/Smoothieware/SmoothieV2/blob/master/ConfigSamples/config-cnc.ini)
+- [All V2 configuration examples](https://github.com/Smoothieware/SmoothieV2/tree/master/ConfigSamples)
 - Check the [Configuration Guide](/configuring-smoothie) for INI-style syntax differences
+
+Choose an example for your machine, review its board-specific pins and settings, then save your adapted file as `config.ini`. These are starting templates, not a ready-to-run configuration for every machine.
 
 {::nomarkdown}
 </v2>
@@ -398,9 +402,10 @@ When you're stuck:
 
 **Then ask the community:**
 
-- **IRC**: #smoothiedev @ irc.freenode.net - Fast, live help
+- **Community**: [Forums, chat and version-specific discussions](/community)
+- **IRC**: [#smoothieware on irc.libera.chat](/irc) - General help; #smoothiedev for development
 - **Email**: [wolf.arthur@gmail.com](mailto:wolf.arthur@gmail.com) - Be patient, volunteers
-- **GitHub**: [Report bugs](https://github.com/Smoothieware/Smoothieware/issues)
+- **GitHub bugs**: [Smoothieware V1](https://github.com/Smoothieware/Smoothieware/issues) or [Smoothieware V2](https://github.com/Smoothieware/SmoothieV2/issues)
 
 **When asking for help, include:**
 

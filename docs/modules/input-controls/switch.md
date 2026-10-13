@@ -7,7 +7,17 @@ permalink: /switch
 
 The Switch module takes care of basic input from things like buttons and switches and controls simple devices like fans and pumps.
 
-> For a V2-only panel of programmable input buttons, see the [Button Box module](/button-box). Button Box is focused on button inputs and actions; use Switch when you also need general-purpose input/output control.
+{::nomarkdown}
+<versioned orientation="vertical">
+<v2>
+{:/nomarkdown}
+
+For a programmable V2 button panel, see the [Button Box module](/button-box). Use Switch when you also need general-purpose input/output control.
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
 
 It is an incredibly versatile tool that allows you to setup a lot of on-off type systems. It listens to input pins and outputs custom G/M-codes or accepts custom G/M-codes and set outputs to GPIO pins.
 
@@ -239,12 +249,13 @@ Note that `pwm` is actually SigmaDelta Modulation and will allow you to set PWM 
 
 `swpwm` is PWM emulated by the software, and is PWM compatible with Hobby servos/bltouch and ESCs. And is otherwise similar to hwpwm. This is useful if your hwpwm clock must be set to a very high value for example for the laser module, as this would mean a hwpwm switch would need to have the same high value which can be incompatible with some hardware. Having a lower frequency swpwm allows for both the laser module and servos/bltouch control.
 
-### Send text to the auxiliary UART from a GPIO input (V2 only)
-
 {::nomarkdown}
 <versioned orientation="vertical">
+<v1>This input-to-UART feature is not available in V1.</v1>
 <v2>
 {:/nomarkdown}
+
+### Send text to the auxiliary UART from a GPIO input
 
 With the V2 auxiliary UART configured as described on the [UART port](/uart) page, an input-only Switch instance can turn a pin transition into a serial message. This is useful when a machine signal must command an external feeder, PLC, or other serial controller.
 

@@ -4,10 +4,6 @@
 # node_modules
 node_modules/
 
-# package json
-package.json
-package-lock.json
-
 # vs code
 .vscode/
 
@@ -34,3 +30,18 @@ AGENTS.md
 tmp
 CLAUDE.md
 /CHATROOM.md
+/CHATROOM.archive.md
+
+# Generated site cache and relocated private working material
+.jekyll-cache/
+/src/docs/*
+!/src/docs/machine-control-pinout-survey/
+/src/docs/machine-control-pinout-survey/*
+!/src/docs/machine-control-pinout-survey/eleven-machine-upgrade-owner-feedback.md
+!/src/docs/machine-control-pinout-survey/eleven-machine-upgrade-owner-feedback.archive.md
+!/src/docs/machine-control-pinout-survey/native-contact-coordinate-acceptance.md
+!/src/docs/machine-control-pinout-survey/expansion-22-owner-feedback-20261012.md
+/src/data/
+/src/translation/
+/src/scripts/tmp/
+/_site/

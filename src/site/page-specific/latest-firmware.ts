@@ -312,7 +312,7 @@ function init_full_commits(): void {
  * Main initialization function
  * Detects which containers exist and initializes appropriately
  */
-function init(): void {
+function init_latest_firmware(): void {
 
     // Check for compact containers (included via latest-firmware-compact-for-include.md)
     const has_compact = document.getElementById('v1-edge-commits-compact') ||
@@ -333,4 +333,4 @@ function init(): void {
 }
 
 // Run on DOMContentLoaded
-document.addEventListener('DOMContentLoaded', init);
+document.addEventListener('DOMContentLoaded', init_latest_firmware);

@@ -12,4 +12,10 @@ Exploratory side-projects that used to live in this repository were moved out on
 
 Deleted (not migrated): `.playwright-mcp/` screenshot dump from browser testing.
 
-Kept in place on purpose (local reference/research, git-ignored): `data/datasheets/`, `data/manuals/`, `data/v2-analysis-summary.md`, `data/smoothieware-v2-config-verified.md`, `data/all-pages.md`, `data/reviews.json`, `data/v2-renders/`, `import/`, `src/docs/*` (config research), `.venv/` (Python tooling for the PCB project).
+Historical 2026-09-05 retention (superseded for documentation research by the extraction below): `data/datasheets/`, `data/manuals/`, `data/v2-analysis-summary.md`, `data/smoothieware-v2-config-verified.md`, `data/all-pages.md`, `data/reviews.json`, `data/v2-renders/`, `import/`, `src/docs/*` (config research), `.venv/` (Python tooling for the PCB project).
+
+## Documentation improvement workspace — 2026-10-08
+
+Private research and tooling were extracted into the sibling `smoothie-documentation` workspace: `src/docs/` → private `docs/`, `src/data/` → private `data/` (including `data/import/`), retained root `data/` and `import/`, translation/review tooling and authored legacy scripts. Internal review/process notes are classified individually. Public website pages, assets, `src/site/` and the TypeScript watcher stay here.
+
+The final inventory contains 8,682 imported/reconciled files; 8,673 exact source files were removed after hash and consumer verification. Nine metadata/style/license copies remain intentionally. Per-file provenance and receipts live in the private project's `migration/2026-10-08/`. The authorized old publisher stop is retained; no deployment, Git publication or history removal was performed. Previously extracted projects retain ownership.

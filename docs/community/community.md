@@ -19,14 +19,15 @@ We have several ways to connect with the community:
 <v1>
 {:/nomarkdown}
 
-- [IRC (recommended ヾ(❀◦◡◦)彡*:・゚✧ )](/irc) - Real-time chat for quick questions and discussions
-- [Forum](forum/c-496918/general) - Threaded discussions for in-depth topics
+- [IRC](/irc) - Real-time chat in #smoothieware on irc.libera.chat
+- [Maker Forums: Smoothie](https://forum.makerforums.info/c/controllers/smoothie/101) - Threaded support and project discussions
+- [GitHub Discussions (V1)](https://github.com/Smoothieware/Smoothieware/discussions) - Questions and ideas for Smoothieware V1
 - [Support Mailing list](http://groups.google.com/group/smoothieware-support) - Email-based support and discussions
 - [Dev Mailing list](http://groups.google.com/group/smoothie-dev) - Development discussions and contributions
 
 <sl-alert variant="primary" open>
   <sl-icon slot="icon" name="chat-dots"></sl-icon>
-  IRC is the most active channel for real-time help and community interaction. Join us in #smoothie on irc.freenode.net!
+  Join #smoothieware on irc.libera.chat for general chat, or #smoothiedev for development discussion. Include your board model and firmware version when asking for help.
 </sl-alert>
 
 {::nomarkdown}
@@ -34,15 +35,16 @@ We have several ways to connect with the community:
 <v2>
 {:/nomarkdown}
 
-- [Maker Forums](https://forum.makerforums.info/) - Active Smoothie section for all discussions and support
-- [Discord](https://forum.makerforums.info/) - Community-run Discord server (check forums for invite)
+- [Maker Forums: Smoothie](https://forum.makerforums.info/c/controllers/smoothie/101) - Threaded support and project discussions
+- [GitHub Discussions (V2)](https://github.com/Smoothieware/SmoothieV2/discussions) - Questions and ideas for Smoothieware V2
+- [Discord](https://discord.gg/Ne3B8Fd) - Smoothieware and Smoothieboard community chat
 - [Support Mailing list](http://groups.google.com/group/smoothieware-support) - Email-based support and discussions
 - [Dev Mailing list](http://groups.google.com/group/smoothie-dev) - Development discussions and contributions
-- [IRC](/irc) - #smoothiedev @ irc.freenode.net (less active for v2)
+- [IRC](/irc) - #smoothieware on irc.libera.chat; #smoothiedev for development
 
 <sl-alert variant="primary" open>
   <sl-icon slot="icon" name="chat-dots"></sl-icon>
-  The Maker Forums are the most active place for V2 support and discussions. Discord is also popular for real-time chat!
+  For V2 questions, include your board model, firmware version and relevant config.ini settings. Use the V2 GitHub Discussions link for version-specific discussion.
 </sl-alert>
 
 {::nomarkdown}

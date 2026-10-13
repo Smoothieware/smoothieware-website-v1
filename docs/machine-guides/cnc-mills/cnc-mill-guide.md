@@ -75,7 +75,24 @@ This guide will walk through everything you need to accomplish to successfully p
 
 At the end of this guide, you should have a fully working machine.
 
-Smoothieware V2 CNC installations can also use [slaved axes](/actuator-slaving), [shared MPG hand wheels](/mpg#axis-selector-optional), [NIST G30/G30.1](/g30#nist-stored-position-in-v2-grbl-mode), and [real-time feed hold](/feed-hold). [Backlash compensation](/backlash-compensation) remains confined to an unmerged experimental V1 branch; normal V1 and V2 firmware builds do not include it.
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
+
+Backlash compensation remains experimental on V1 and is not included in the normal firmware build. See [Backlash Compensation](/backlash-compensation).
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+Smoothieware V2 CNC installations can also use [slaved axes](/actuator-slaving), [shared MPG hand wheels](/mpg#axis-selector-optional), [NIST G30/G30.1](/g30#nist-stored-position-in-v2-grbl-mode), and [real-time feed hold](/feed-hold). Backlash compensation remains confined to an unmerged V2 PR and is not included in normal V2 firmware builds; see [Backlash Compensation](/backlash-compensation).
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
 
 {% include getting-started/unboxing-for-include.md %}
 
@@ -87,11 +104,24 @@ Smoothieware V2 CNC installations can also use [slaved axes](/actuator-slaving),
 
 Smoothie firmware tries to create a single firmware for all types of machines (you then adapt the firmware to your machine type by changing the configuration).
 
-However, due to lack of flash space on the v1 hardware, the v1 Smoothie firmware has an optional special "CNC" build.
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
 
-It includes:
+V1 has limited flash space, so CNC users can choose an optional "CNC" firmware build. It includes a CNC version of the [Panel](/panel) screens.
 
-- A special CNC version of the [Panel](/panel) screens
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+The V2 GRBL mode setting uses the INI-style configuration shown below.
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
 
 
 

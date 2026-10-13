@@ -145,6 +145,12 @@ To access Smoothie over the network, you first need to know its IP address. If y
 - If you are running Linux, you can use a command like `nmap -sn 192.168.0.0/24` to find all accessible peripherals on the network.
 - **NOTE**: If the IP address shows `173.222.239.190`, then it means that DHCP did not get an IP address assigned. (Try a static IP instead).
 
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>V2 uses a different set of network services. See [V1 network services](#v1-network-services) below.</v1>
+<v2>
+{:/nomarkdown}
+
 ## V2 network services
 
 Smoothieware V2 uses the FreeRTOS+TCP stack and controls each service from `[network]`:
@@ -201,6 +207,16 @@ The current WebSocket implementation requires each incoming frame to set the FIN
 With `ntp_enable = true`, Smoothie resolves `ntp_server`, sends one request when the network starts, applies the integer `timezone` offset in hours, and sets the real-time clock. The default server is `pool.ntp.org` and the default timezone is `0`.
 
 The timezone setting does not apply daylight-saving rules or half-hour offsets. Set it to the required fixed UTC offset and update it when local civil time changes, or keep the clock on UTC with `timezone = 0`. The `ntp` console command requests another synchronization.
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
+
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
 
 ## V1 network services
 
@@ -301,6 +317,12 @@ If you want, you can also add the filesystem to your `/etc/fstab` as follows:
 192.168.1.6     /mnt/smoothie 9p     user,noauto,dfltuid=1000,dfltgid=1000 0      0
 ```
 
+{::nomarkdown}
+</v1>
+<v2>V1 network services are not available in V2. See [V2 network services](#v2-network-services) above.</v2>
+</versioned>
+{:/nomarkdown}
+
 ### Using a Hosts File
 
 If IP addresses are getting you down, you can address your Smoothie by name if you add a line to your computer's [hosts file](http://en.wikipedia.org/wiki/Hosts_file). For example, assuming your Smoothie's address is 192.168.2.120, you could add:
@@ -384,6 +406,11 @@ IP mask: 255.255.255.0
 MAC Address: 00:1F:11:02:04:C9
 ```
 
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
+
 ## V1 HTTP API
 
 Creating a custom interface, a script that talks to a Smoothieboard, or helping with Smoothie's web interface (please do!)?
@@ -417,3 +444,9 @@ Returns: Whatever the command returned.
 Parameter: The command you want to execute as the POST data/parameter.
 
 Returns: Nothing. Faster than /command, prefer whenever possible.
+
+{::nomarkdown}
+</v1>
+<v2>V2 uses the HTTP and WebSocket services described above.</v2>
+</versioned>
+{:/nomarkdown}

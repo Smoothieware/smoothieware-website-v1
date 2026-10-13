@@ -27,7 +27,13 @@ As the UART has NO FLOW CONTROL, you MUST rigidly use the ping-pong protocol, se
 
 You configure the baud rate in the [configuration file](configuring-smoothie) with <setting v1="uart0.baud_rate" v2="uart console.baudrate"></setting>.
 
-## V2 auxiliary UART configuration
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>The auxiliary command-console and serial-output modes described here are not available in V1.</v1>
+<v2>
+{:/nomarkdown}
+
+## Auxiliary UART configuration
 
 ```ini
 [uart console]
@@ -42,7 +48,7 @@ parity = none
 
 `console = true` enables command input and output. Set it to `false` when an external device should receive only messages sent through `echo -1`.
 
-## Send text to a connected device (V2 only)
+## Send text to a connected device
 
 {% include modules/network/echo-uart-for-include.md %}
 
@@ -53,6 +59,11 @@ This lets Smoothie act as a simple serial-output controller: a command, GPIO inp
   <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
   On Linux machines, the output of the serial debug port is not nicely formatted because the Smoothieboard sends only a LF, but a CRLF is needed.<br><br>Picocom offers a parameter to fix that: <code>picocom -b 115200 /dev/ttyUSB0 --imap lfcrlf</code>.
 </sl-alert>
+{:/nomarkdown}
+
+{::nomarkdown}
+</v2>
+</versioned>
 {:/nomarkdown}
 
 For reading the initial debug startup messages, the serial port communication settings are:

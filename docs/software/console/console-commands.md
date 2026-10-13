@@ -997,7 +997,7 @@ The [ECCE manual](https://history.dcs.ed.ac.uk/archive/apps/ecce/hmd/ldsecce.htm
 le
 ```
 
-The prompt changes to `cmd> `. Type and submit commands as usual. Use Left and Right to move within the line, Home and End to jump, Backspace or Delete to remove a character, and Up or Down to browse up to 16 distinct commands from this session.
+The prompt changes to `cmd> `. Unlike normal console mode, `le` echoes typed characters back to the terminal. Type and submit commands as usual. Use Left and Right to move within the line, Home and End to jump, Backspace or Delete to remove a character, and Up or Down to browse up to 16 distinct commands from this session.
 
 Press Control-D to leave line-editor mode. History belongs to this connection and disappears when you exit the mode or disconnect. While `le` captures console input, real-time single-character handlers such as `!` and `~` do not receive those characters.
 

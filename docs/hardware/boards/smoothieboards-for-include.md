@@ -10,7 +10,7 @@ All Smoothieboards are designed to run on the most powerful hardware in their pr
 
 | Board | Status | Processor | Drivers | Best For |
 |-------|--------|-----------|---------|----------|
-| **v2-prime** | ✅ In Production | STM32H745 (480MHz) | 4× TMC2660/2590 | High-performance, quiet operation |
+| **v2-prime** | ✅ In Production | STM32H745 (480MHz) | 4× TMC2660/2590 | High-performance, configurable drivers |
 | **v2-mini** | ⏸️ Postponed | LPC4330 | 4× Heroic | Budget v2 experience |
 | **v2-pro** | ❌ Never Produced | LPC4330 + FPGA | 5× TMC drivers | High-end experimentation |
 | **v1** | ✅ In Production | LPC1769 (120MHz) | 3-5× A5984 | Budget builds, proven reliability |
@@ -31,20 +31,19 @@ This table compares all Smoothieboard variants, including the different v1 model
 | **Stepper Drivers** | 3× A5984 | 4× A5984 | 5× A5984 | 4× TMC2660/2590 |
 | **Max Microstepping** | 1/32 | 1/32 | 1/32 | 1/256 |
 | **Motor Outputs** | 3 | 4 | 5 | 4 |
-| **Silent Operation** | No | No | No | Yes (StealthChop2) |
 | **MOSFETs (Small)** | 4× (12.5A) | 6× (12.5A) | 6× (12.5A) | Multiple high-power |
 | **MOSFETs (Large)** | 2× (30A) | 0 | 0 | Multiple high-power |
 | **Ethernet** | Yes | Yes | Yes | Yes (Fast Ethernet) |
 | **USB Ports** | 1× USB-B | 1× USB-B | 1× USB-B | 2× (USB-B + USB-A) |
 | **SD Card** | Standard SPI | Standard SPI | Standard SPI | High-speed SDIO |
-| **Expansion Ports** | Standard headers | Standard headers | Standard headers | 8× Gadgeteer (10-pin) |
+| **Expansion Ports** | Standard headers | Standard headers | Standard headers | 9× Gadgeteer (10-pin, reviewed P11/P12) |
 | **Form Factor** | Full size | Full size | Full size | Optimized layout |
-| **Best For** | 3-axis machines, deltabots | 3D printers, basic lasers | 5-axis machines, complex setups | High-end builds, quiet operation |
+| **Best For** | 3-axis machines, deltabots | 3D printers, basic lasers | 5-axis machines, complex setups | High-end builds, expansion |
 
 {::nomarkdown}
 <sl-alert variant="primary" open>
   <sl-icon slot="icon" name="info-circle"></sl-icon>
-  <strong>Key Differences:</strong> The v2-prime offers significantly more processing power (4× faster), quieter operation with advanced TMC drivers, and more expansion options via Gadgeteer ports. The v1 boards remain excellent for budget-conscious builds and proven reliability, with the 3X/4X/5X variants offering different numbers of motor outputs to match your specific machine needs.
+  <strong>Key Differences:</strong> The v2-prime offers significantly more processing power (4× faster), configurable TMC drivers, and more expansion options via Gadgeteer ports. The v1 boards remain excellent for budget-conscious builds and proven reliability, with the 3X/4X/5X variants offering different numbers of motor outputs to match your specific machine needs.
 </sl-alert>
 {:/nomarkdown}
 
@@ -75,12 +74,12 @@ The successor to the v1 board in the version 2 line of Smoothieboards. This is t
 
 - **Dual-core STM32H745** (Cortex-M7 @ 480MHz + Cortex-M4 @ 240MHz) with 2MB flash and 1MB RAM
 - **4× Advanced Stepper Drivers** - [TMC2660](http://www.trinamic.com/products/integrated-circuits/details/tmc2660-pa/) or TMC2590 with 1/256 microstepping
-- **Silent Operation** - StealthChop2 for near-silent stepper motors
+- **Driver Features** - SpreadCycle current control and StallGuard2 load detection; no StealthChop2. See the [revision-qualified Prime specifications](smoothieboard-v2-prime#tmc-features-both-variants) for chip capabilities and firmware qualifications.
 - **Powerful MOSFETs** - Control heaters, fans, and high-current devices
 - **Dual USB** - USB-B (computer connection) and USB-A (thumb drive)
 - **Fast Ethernet** - Built-in web interface, Telnet, and FTP
 - **SDIO SD Card** - High-speed SD card interface
-- **Gadgeteer Expansion** - 8× 10-pin expansion ports for plug-and-play daughterboards
+- **Gadgeteer Expansion** - 9× 10-pin headers on the reviewed P11 Prime2660 and P12 Prime2590 revisions. Signals may share on-board functions; use the [numbered-header references](smoothieboard-v2-prime#gadgeteer-expansion-headers).
 
 ### Documentation & Purchase
 
@@ -232,6 +231,6 @@ It has gone from an experimental project to a widely used and acclaimed system t
 **For most users**, we recommend:
 
 - **Budget-conscious or proven stability** → [Smoothieboard v1](#smoothieboard-v1)
-- **High performance and quiet operation** → [Smoothieboard v2-prime](#smoothieboard-v2-v2-prime)
+- **High performance and expansion** → [Smoothieboard v2-prime](#smoothieboard-v2-v2-prime)
 
 Both boards are in active production and fully supported by the community.

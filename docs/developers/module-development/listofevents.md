@@ -40,6 +40,11 @@ Smoothieware V2 does not use the event-based module system. Instead, V2 uses Fre
 {:/nomarkdown}
 
 {::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
+
+{::nomarkdown}
 <style>
 .events-table-wrapper {
   width: 100%;
@@ -115,25 +120,7 @@ Smoothieware V2 does not use the event-based module system. Instead, V2 uses Fre
 
 
 
-{::nomarkdown}
-<versioned orientation="horizontal">
-<v1>
-{:/nomarkdown}
-
 The Smoothieware V1 event system provides a publish-subscribe pattern for module communication. Events are defined in `/libs/Module.h` as an enumeration, and the kernel dispatches these events to all registered modules.
-
-{::nomarkdown}
-</v1>
-<v2>
-{:/nomarkdown}
-
-This section describes Smoothieware V1 only. V2 uses FreeRTOS with a module registry and request-based communication instead of the event system.
-
-{::nomarkdown}
-</v2>
-</versioned>
-
-{:/nomarkdown}
 
 ### How Events Work
 
@@ -146,25 +133,7 @@ This section describes Smoothieware V1 only. V2 uses FreeRTOS with a module regi
 
 
 
-{::nomarkdown}
-<versioned orientation="horizontal">
-<v1>
-{:/nomarkdown}
-
 To register your module for an event, add the registration call in your module's constructor or `on_module_loaded()` method (V1 only):
-
-{::nomarkdown}
-</v1>
-<v2>
-{:/nomarkdown}
-
-This section applies to Smoothieware V1 only. V2 modules use configuration-based registration instead.
-
-{::nomarkdown}
-</v2>
-</versioned>
-
-{:/nomarkdown}
 
 ```cpp
 void MyModule::on_module_loaded() {
@@ -225,25 +194,7 @@ void MyModule::on_halt(void *argument) {
 
 
 
-{::nomarkdown}
-<versioned orientation="horizontal">
-<v1>
-{:/nomarkdown}
-
 These best practices apply to Smoothieware V1 module development using the event system.
-
-{::nomarkdown}
-</v1>
-<v2>
-{:/nomarkdown}
-
-This section applies to Smoothieware V1 only. V2 modules use a different architecture.
-
-{::nomarkdown}
-</v2>
-</versioned>
-
-{:/nomarkdown}
 
 {::nomarkdown}
 <sl-alert variant="success" open>
@@ -338,6 +289,18 @@ This section applies to Smoothieware V1 only. V2 modules use a different archite
 
 {::nomarkdown}
 </div>
+{:/nomarkdown}
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+V2 modules use a registry and request-based communication model. See the [V2 module development guide](/developers-guide).
+
+{::nomarkdown}
+</v2>
+</versioned>
 {:/nomarkdown}
 
 ## See Also

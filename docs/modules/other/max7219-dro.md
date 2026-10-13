@@ -6,9 +6,15 @@ title: MAX7219 DRO
 # MAX7219 Digital Readout
 
 {::nomarkdown}
+<versioned orientation="vertical">
+<v1>This module is not available in Smoothieware V1.</v1>
+<v2>
+{:/nomarkdown}
+
+{::nomarkdown}
 <sl-alert variant="primary" open>
   <sl-icon slot="icon" name="info-circle"></sl-icon>
-  <strong>Smoothieware V2 only:</strong> The MAX7219 and DRO modules are present in the V2 source checked at commit <a href="https://github.com/Smoothieware/SmoothieV2/commit/2a21c0108b1d095ecd8b2b9358e94055f053c003"><code>2a21c010</code></a>. An installed firmware build may predate them.
+  The MAX7219 and DRO modules are present in the V2 source checked at commit <a href="https://github.com/Smoothieware/SmoothieV2/commit/2a21c0108b1d095ecd8b2b9358e94055f053c003"><code>2a21c010</code></a>. An installed firmware build may predate them.
 </sl-alert>
 {:/nomarkdown}
 
@@ -102,3 +108,7 @@ The axis subsection name must be one of `x`, `y`, `z`, `a`, `b`, or `c`. The cor
 
 - [MAX7219 driver](https://github.com/Smoothieware/SmoothieV2/blob/2a21c0108b1d095ecd8b2b9358e94055f053c003/Firmware/src/modules/utils/display/max7219/max7219.cpp)
 - [DRO module](https://github.com/Smoothieware/SmoothieV2/blob/2a21c0108b1d095ecd8b2b9358e94055f053c003/Firmware/src/modules/utils/dro/dro.cpp)
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}

@@ -91,7 +91,7 @@ It saves memory and allows you to use more of it for other things.
 
 **V2 Compilation:**
 
-SmoothieV2 has native support for up to 4 axes it needs to be rebuiilt to handle 6 axis. The build system is different from V1:
+SmoothieV2 supports up to four axes by default. Rebuild it for six-axis support. Its build system differs from V1:
 
 ```bash
 # V2 uses rake instead of make this will list all the options
@@ -114,13 +114,34 @@ rake axis=6 paxis=4 -m
 
 By default, Smoothie calculates distances only on the first three (XYZ) axes.
 
-You can change this behavior by setting the `PAXIS` compilation parameter, for example:
+Set the primary-axis count when compiling to include rotary axes in distance calculations:
+
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
 
 ```bash
 make AXIS=5 PAXIS=4 CNC=1
 ```
 
 Means Smoothie is compiled with XYZAB axes, and distances are calculated in the XYZA space.
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+For V2, pass `axis` and `paxis` to Rake. This builds for XYZAB and calculates distances in XYZA:
+
+```bash
+rake axis=5 paxis=4 -m
+```
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
 
 {::nomarkdown}
 <sl-alert variant="neutral" open>
@@ -359,5 +380,3 @@ minc.retract = 5
 </v2>
 </versioned>
 {:/nomarkdown}
-
-

@@ -6,9 +6,15 @@ title: Voltage Monitor
 # Voltage Monitor
 
 {::nomarkdown}
+<versioned orientation="vertical">
+<v1>This feature is not available in Smoothieware V1.</v1>
+<v2>
+{:/nomarkdown}
+
+{::nomarkdown}
 <sl-alert variant="primary" open>
   <sl-icon slot="icon" name="info-circle"></sl-icon>
-  <strong>Smoothieware V2 Only:</strong> The Voltage Monitor feature is only available in Smoothieware V2. It is not supported on Smoothieboard V1 hardware.
+  On Smoothieboard V2 Prime, voltage monitors report the motor and FET supply rails through ADC3.
 </sl-alert>
 {:/nomarkdown}
 
@@ -123,4 +129,8 @@ The TMC stepper drivers on V2 boards require proper motor voltage (Vmotor/Vbb) b
   <sl-icon slot="icon" name="info-circle"></sl-icon>
   If you want to learn more about this feature, or are curious how it works, Smoothie is Open-Source and you can simply go look at the code, <a href="https://github.com/Smoothieware/SmoothieV2/blob/master/Firmware/src/main.cpp">here</a>.
 </sl-alert>
+{:/nomarkdown}
+{::nomarkdown}
+</v2>
+</versioned>
 {:/nomarkdown}

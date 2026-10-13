@@ -23,9 +23,31 @@ The Host is suitable for controlling both 3D printers and CNC and Laser machines
 
 ## Installation
 
-Installation instructions can be found [here](https://github.com/wolfmanjm/kivy-smoothie-host.git).
+Installation instructions can be found in the upstream [INSTALL.md](https://github.com/wolfmanjm/kivy-smoothie-host/blob/master/INSTALL.md).
 
 There is a convenient RPI [image](http://smoothieware.org/_media/bin/smoopi.img) file that can be copied to an SD card for a ready-to-go installation.
+
+### Linux serial-port permissions
+
+If Smoopi cannot open the USB serial port and reports **permission denied**, check the port's owning group and your account's groups. For example, if the board appears as `/dev/ttyACM0`:
+
+```shell
+ls -l /dev/ttyACM0
+id -nG
+```
+
+Use the actual device name shown on your computer. On systems using the `dialout` and `tty` groups, the upstream installer documents these commands; add only the groups required by your device permissions and distribution:
+
+```shell
+sudo usermod -a -G dialout "$USER"
+sudo usermod -a -G tty "$USER"
+```
+
+Log out and back in, then reopen Smoopi so the new group membership takes effect. A reboot also applies it. Other distributions may use a different group, such as `uucp`.
+
+Alternatively, follow the upstream [udev rules instructions](https://github.com/wolfmanjm/kivy-smoothie-host/blob/master/INSTALL.md#L246) for rules under `/etc/udev/rules.d/`. Choose the approach appropriate to your system; group changes are not required if an applicable udev rule already grants access.
+
+This is a Linux host permission issue and applies to both Smoothieware V1 and V2 USB serial connections.
 
 ## Hardware Support
 

@@ -27,7 +27,7 @@ Smoothieboard v2 Prime is the current production version of the Smoothie control
 | **Processor**        | STM32H745 dual-core (M7 @ 480MHz + M4 @ 240MHz) |
 | **Memory**           | 2MB Flash, 1MB RAM                              |
 | **Stepper Drivers**  | 4× TMC2660 or TMC2590 (1/256 microstepping)     |
-| **GPIO Expansion**   | 56 pins via 8× Gadgeteer headers                |
+| **Expansion**        | 9× 10-pin Gadgeteer headers (GA–GI)             |
 | **SD Card**          | SDIO interface (20-50× faster than v1's SPI)    |
 | **Power Regulation** | On-board 3A @ 5V regulator                      |
 | **Networking**       | Ethernet (HTTP, Telnet, auto-update)            |
@@ -52,13 +52,13 @@ The improvements are substantial, some of them:
 
 **Drivers:**
 - Modern TMC drivers vs old A5984
-- Much quieter (StealthChop mode)
+- Configurable SpreadCycle current control
 - Up to 1/256 microstepping vs 1/32
-- StallGuard sensorless homing capability
+- StallGuard2 motor-load detection; sensorless homing requires configuration and validation
 - Higher currents available (TMC2590 up to 4.6A vs 2A on v1)
 
 **Expansion:**
-- 56 GPIO pins vs limited on v1
+- Nine Gadgeteer headers with header-specific signals; some share on-board functions
 - Standardized Gadgeteer headers
 - Can add displays, sensors, external drivers easily
 
@@ -146,17 +146,15 @@ Handles big motors for CNC milling and routing. Generates more heat - fan recomm
 
 ### TMC Features (Both Variants)
 
-Both driver types support advanced features:
+According to the [TMC2660](https://www.analog.com/en/products/tmc2660.html) and [TMC2590](https://www.analog.com/en/products/tmc2590.html) manufacturer documentation, both driver types provide SpreadCycle, StallGuard2 and CoolStep. They do not provide StealthChop2 or StallGuard4.
 
-**StealthChop2:** Ultra-quiet operation, perfect for 3D printers in quiet environments. Automatically switches to SpreadCycle at higher velocities. You can actually run a printer in your bedroom without waking anyone up.
+**SpreadCycle:** Current-control chopping for stepper motors. The reviewed [TMC26X driver](https://github.com/Smoothieware/SmoothieV2/blob/2a21c0108b1d095ecd8b2b9358e94055f053c003/Firmware/src/robot/drivers/TMC26X.cpp) and [TMC2590 driver](https://github.com/Smoothieware/SmoothieV2/blob/2a21c0108b1d095ecd8b2b9358e94055f053c003/Firmware/src/robot/drivers/TMC2590.cpp) select SpreadCycle by default. Acoustic behavior depends on the motor, current, speed and chopper configuration; this is not a near-silent-operation guarantee.
 
-**SpreadCycle:** High-performance chopping algorithm with excellent torque. Dynamic current control. Better for CNC and high-speed applications where you care more about torque than noise.
+**StallGuard2:** Sensorless motor-load detection. Firmware provides StallGuard configuration and diagnostic building blocks, but a sensorless-homing setup requires configuration, tuning and validation for the exact firmware, motor and machine. Chip capability alone does not establish a working homing arrangement.
 
-**StallGuard4:** Sensorless homing - detect motor stalls without endstops. Requires tuning but pretty cool when it works. Useful for saving endstop inputs or for axes where mounting switches is difficult.
+**CoolStep:** Both chips support load-dependent current reduction, which can save energy and reduce heat. CoolStep is disabled by default in the reviewed SmoothieV2 drivers; using it requires explicit configuration and tuning for the motor and machine.
 
-**CoolStep:** Automatic current reduction when motor is lightly loaded. Saves energy and reduces heat. The driver monitors load and backs off current when full torque isn't needed.
-
-**1/256 Microstepping:** Smoothest possible motion. Much better than v1's 1/32 maximum. Higher microstepping means smoother movement and quieter operation, at the cost of slightly lower top speed (more step pulses needed for same distance).
+**1/256 Microstepping:** Smoothest possible motion. Much better than v1's 1/32 maximum. Higher microstepping increases the input pulse rate needed for a given speed; it does not establish an acoustic-noise guarantee.
 
 ### Driver Configuration
 
@@ -274,23 +272,17 @@ There's a planned daughterboard for 40V+ inductive probes (future expansion). Th
 
 This is one of the biggest features of v2:
 
-**8× Headers (labeled GA through GH):**
-- 10 pins each
-- 7× GPIO per header = 56 total GPIO available
-- Plus 5V, 3.3V, GND on each header
-- Standardized pinout inspired by .NET Gadgeteer project
+**9× Headers (GA through GI, J32 through J40):**
+- 10 numbered contacts each
+- Pins 3–9 carry header-specific signals; some share on-board functions and are not freely available GPIO
+- Pin 1 is 3.3V, pin 2 is 5V, and pin 10 is GND
+- Numbering and nets below are qualified to the [P11 Prime2660 expansion schematic](https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P11_Prime2660/expansion.kicad_sch) and [P12 Prime2590 expansion schematic](https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/expansion.kicad_sch) at the linked hardware revision. These are numbered-contact assignments, not a connector viewing-orientation diagram.
 
-**Standard Pinout (All Headers):**
+**Numbered Pin Assignment (Reviewed P11/P12 Revisions):**
 ```
-Pin 1:  GPIO (function varies by header)
-Pin 2:  GPIO
-Pin 3:  GPIO
-Pin 4:  GPIO
-Pin 5:  GPIO
-Pin 6:  GPIO
-Pin 7:  GPIO
-Pin 8:  5V
-Pin 9:  3.3V
+Pin 1:  3.3V (G_3V3)
+Pin 2:  5V (G_5V)
+Pins 3–9: Header-specific signals; consult the exact header net map
 Pin 10: GND
 ```
 
@@ -298,11 +290,11 @@ Each header has a mix of capabilities:
 - **SPI:** High-speed data (multiple devices can share bus with different CS pins)
 - **I2C:** Multiple devices on 2 wires (sensors, displays, I/O expanders)
 - **ADC:** 6 unbuffered analog inputs across headers
-- **GPIO:** Standard digital I/O (most pins)
+- **GPIO:** Header-specific digital signals, subject to shared board functions
 - **PWM:** Pulse width modulation (on some pins)
 - **UART:** Serial communication (on some headers)
 
-See the [pinout documentation](https://github.com/Smoothieware/SmoothieV2/blob/master/pins.md) for exact functions per header. Each header (GA through GH) has specific pin functions documented there.
+For physical wiring, use the P11/P12 expansion schematics linked above. The [revision-qualified firmware pin map](https://github.com/Smoothieware/SmoothieV2/blob/2a21c0108b1d095ecd8b2b9358e94055f053c003/pins.md) documents software aliases and peripheral names for GA through GI; reconcile these with the exact hardware revision before assigning a signal.
 
 **Use Cases:**
 - LCD displays and touchscreens (SPI or I2C interfaces)
@@ -530,7 +522,7 @@ The CNC example shows why you might want external drivers for high-current motor
 
 **Size Comparison to v1:**
 Larger footprint due to:
-- 8× Gadgeteer headers (significant board space)
+- 9× Gadgeteer headers (significant board space)
 - Additional connectors (2× XT30 for VFET vs simpler v1 power)
 - More complex PCB layout (more layers, more routing)
 - Additional protection circuitry
@@ -542,7 +534,7 @@ Larger footprint due to:
 - 4× TMC2660 or TMC2590 drivers (near motor connectors for short traces)
 - Ethernet PHY (near RJ45 connector)
 - Power circuitry (near power inputs)
-- 8× Gadgeteer headers (one or two sides of board)
+- 9× Gadgeteer headers (GA through GI)
 - USB, Ethernet connectors (one edge)
 - XT30 power connectors (edges for easy access)
 
@@ -556,7 +548,7 @@ The layout is designed to minimize noise - power circuitry separated from sensit
 | **Motor (4-pin)**      | 4        | Stepper motor connections                         |
 | **Endstop (3-pin)**    | 6        | X/Y/Z min/max endstops                            |
 | **Thermistor (3-pin)** | 3        | Buffered ADC temperature inputs                   |
-| **Gadgeteer (10-pin)** | 8        | Expansion headers                                 |
+| **Gadgeteer (10-pin)** | 9        | GA–GI / J32–J40 on the reviewed P11/P12 revisions  |
 | **MOSFET Output**      | Variable | Screw terminals or headers for bed, hotends, fans |
 | **USB Device (Type B)**| 1        | USB-B connector for serial/mass storage (J1)      |
 | **USB Host (Type A)**  | 1        | USB-A connector for peripherals (J2)              |
@@ -888,25 +880,19 @@ For detailed troubleshooting beyond these quick checks, see the [full troublesho
 
 ### Gadgeteer Header Pinout
 
-**Standard Pinout (All Headers):**
+**Numbered Pin Assignment (Reviewed P11/P12 Revisions):**
 ```
-Pin 1:  GPIO (function varies by header)
-Pin 2:  GPIO
-Pin 3:  GPIO
-Pin 4:  GPIO
-Pin 5:  GPIO
-Pin 6:  GPIO
-Pin 7:  GPIO
-Pin 8:  5V
-Pin 9:  3.3V
+Pin 1:  3.3V (G_3V3)
+Pin 2:  5V (G_5V)
+Pins 3–9: Header-specific signals; consult the exact header net map
 Pin 10: GND
 ```
 
 **Specific Functions per Header:**
-- See [https://github.com/Smoothieware/SmoothieV2/blob/master/pins.md](https://github.com/Smoothieware/SmoothieV2/blob/master/pins.md)
-- Each header (GA through GH) has different GPIO functions
-- Some GPIOs are SPI, I2C, ADC, PWM, or standard GPIO
-- Pinout documentation shows exact functions for each pin on each header
+- Use the [P11/P12 expansion schematic references](#gadgeteer-expansion-headers) for physical wiring. The [reviewed firmware pin map](https://github.com/Smoothieware/SmoothieV2/blob/2a21c0108b1d095ecd8b2b9358e94055f053c003/pins.md) documents software aliases; reconcile them with the hardware design.
+- GA through GI carry header-specific signals, including SPI, I2C, ADC, PWM, UART and digital I/O.
+- Some signals share on-board functions; verify the exact header and hardware revision before use.
+- Numbered pins do not imply a physical connector viewing orientation.
 
 ### Motor Connector Pinout
 

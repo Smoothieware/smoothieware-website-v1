@@ -58,11 +58,11 @@ You can find a default config file for 3D printing [here in the github repositor
 
 ## Getting the Configuration File
 
-You can find a default config file for 3D printing [here in the github repository](https://github.com/Smoothieware/Smoothieware-V2/raw/main/ConfigSamples/config.ini) or by clicking on the big blue button just below:
+Start from the [V2 Prime 3D-printer example](https://github.com/Smoothieware/SmoothieV2/blob/master/ConfigSamples/config-3d.ini), or choose the [V2 Prime CNC example](https://github.com/Smoothieware/SmoothieV2/blob/master/ConfigSamples/config-cnc.ini) for a CNC machine. Review the board-specific pins and settings before use, and save the adapted file as `config.ini`. The button below opens the 3D-printer example.
 
 {::nomarkdown}
 <div style="margin: 2rem 0;">
-  <sl-button variant="primary" size="large" href="https://github.com/Smoothieware/Smoothieware-V2/raw/main/ConfigSamples/config.ini" style="width:100%; max-width: 600px;">
+  <sl-button variant="primary" size="large" href="https://github.com/Smoothieware/SmoothieV2/blob/master/ConfigSamples/config-3d.ini" style="width:100%; max-width: 600px;">
     <a href="/images/download-icon.png">
       <img src="/images/download-icon.png" style="width: 32px; margin-right: 16px; vertical-align: middle;"/>
     </a>

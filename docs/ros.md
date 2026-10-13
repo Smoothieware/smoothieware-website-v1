@@ -95,6 +95,11 @@ steps per joint degree = 200 × 16 × 10 / 360 = 88.888889
 
 For these independent joints, one firmware coordinate unit represents one joint degree. A target of `X10` moves the first joint ten degrees from its machine-coordinate zero. Set the physical driver's microstepping to match the calculation. An external drive that interprets STEP/DIR through electronic gearing needs its own pulses-per-joint-degree calculation.
 
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
+
 ### Smoothieware V1
 
 Merge these settings into your existing `config` file. Keep your board's pin assignments and current settings:
@@ -114,6 +119,11 @@ acceleration                 10
 ```
 
 In this example, `60` coordinate units/minute means 60 joint degrees/minute. The acceleration value means 10 joint degrees/s². These are example commissioning values, not limits established for your arm.
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
 
 ### Smoothieware V2
 
@@ -140,6 +150,11 @@ gamma.microsteps = 16
 ```
 
 V2 uses the `[actuator]` section with names such as `alpha.steps_per_mm`. Check the firmware's [configuration samples](https://github.com/Smoothieware/SmoothieV2/tree/master/ConfigSamples) for your board. Set the driver's microsteps separately; copying the numerical calibration does not change an external driver's switches or electronic gearing.
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
 
 For a linear machine, use its real steps/mm and millimetre-based speed limits instead. See [configuring Smoothie](configuring-smoothie), [Cartesian](cartesian), and [external drivers](stepper-motors#external-stepper-driver).
 

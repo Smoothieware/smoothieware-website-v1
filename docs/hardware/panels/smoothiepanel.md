@@ -2,12 +2,20 @@
 permalink: /smoothiepanel
 ---
 
+
 {::nomarkdown}
-<sl-alert variant="warning" open>
-  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
-  <strong>Historical V1 Documentation</strong><br>
-  This is documentation for V1 hardware. For V2 display options (ST7920, TM1638), see the <a href="/panel">panel documentation</a>.
-</sl-alert>
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
+Historical SmoothiePanel documentation for V1 hardware.
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+For V2 display options, see the [panel documentation](/panel).
+{::nomarkdown}
+</v2>
+</versioned>
 {:/nomarkdown}
 
 # SmoothiePanel

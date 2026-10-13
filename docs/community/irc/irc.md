@@ -51,4 +51,4 @@ If you do not wish to install a desktop IRC client, you can alternatively use a 
 
 There are several you can find online, what is important is that you connect to the `irc.libera.chat` server, with the port `6697`, and enter the channel `#smoothieware`
 
-Here is a direct link that should allow you to enter this configuration using the [KiwiIRC web-based client, right from your browser](https://kiwiirc.com/nextclient/irc.libera.chat:+6697/#reprap) or [Libera's own WebChat](https://web.libera.chat/#reprap).
+Here is a direct link that should allow you to enter this configuration using the [KiwiIRC web-based client, right from your browser](https://kiwiirc.com/nextclient/irc.libera.chat:+6697/#smoothieware) or [Libera's own WebChat](https://web.libera.chat/#smoothieware).

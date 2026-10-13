@@ -6,9 +6,15 @@ title: Button Box
 # Button Box Module
 
 {::nomarkdown}
+<versioned orientation="vertical">
+<v1>This module is not available in Smoothieware V1. See the [Switch module](/switch) for V1-compatible button inputs.</v1>
+<v2>
+{:/nomarkdown}
+
+{::nomarkdown}
 <sl-alert variant="primary" open>
   <sl-icon slot="icon" name="info-circle"></sl-icon>
-  <strong>Smoothieware V2 Only:</strong> The Button Box module is only available in Smoothieware V2. It is not supported on Smoothieboard V1 hardware.
+  <strong>Button Box inputs:</strong> Configure each input to run G-code or a built-in action when pressed or released.
 </sl-alert>
 {:/nomarkdown}
 
@@ -98,7 +104,7 @@ xminus.release = $J STOP
 </sl-alert>
 {:/nomarkdown}
 
-## Send text to the auxiliary UART (V2 only)
+## Send text to the auxiliary UART
 
 With the V2 auxiliary UART configured as described on the [UART port](/uart) page, a Button Box can send a distinct serial message on press and release. This is useful for giving an external feeder, PLC, or another controller a simple command interface.
 
@@ -302,4 +308,8 @@ Use Button Box for input-only button panels on V2. Use Switch for input/output c
   <sl-icon slot="icon" name="info-circle"></sl-icon>
   Verify button state handling and special actions in the checked <a href="https://github.com/Smoothieware/SmoothieV2/blob/2a21c0108b1d095ecd8b2b9358e94055f053c003/Firmware/src/modules/utils/buttonbox/buttonbox.cpp">V2 Button Box source</a>.
 </sl-alert>
+{:/nomarkdown}
+{::nomarkdown}
+</v2>
+</versioned>
 {:/nomarkdown}

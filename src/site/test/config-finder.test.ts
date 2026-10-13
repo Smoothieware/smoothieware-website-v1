@@ -8,7 +8,8 @@
 import { describe, it, expect } from 'bun:test';
 import { find_setting_in_config, type ConfigSearchRequest } from '../lib/config-finder';
 import yaml from 'js-yaml';
-import { readFileSync, writeFileSync } from 'fs';
+import { readFileSync, writeFileSync, mkdtempSync } from 'fs';
+import { tmpdir } from 'os';
 import { join } from 'path';
 
 // Known settings that are in YAML but not in example configs
@@ -26,7 +27,8 @@ const V1_YAML_PATH = 'docs/assets/data/smoothieware-v1-config.yaml';
 const V2_YAML_PATH = 'docs/assets/data/smoothieware-v2-config.yaml';
 const V1_CONFIG_PATH = 'docs/assets/config/v1/config';
 const V2_CONFIG_PATH = 'docs/assets/config/v2/config-3d.ini';
-const MISSING_SETTINGS_DOC_PATH = 'src/docs/missing-settings.md';
+// Generated diagnostics belong in temporary artifacts, never private research or public pages.
+const MISSING_SETTINGS_DOC_PATH = join(mkdtempSync(join(tmpdir(), 'smoothie-config-finder-')), 'missing-settings.md');
 
 // Load config files
 const v1_yaml_content = readFileSync(V1_YAML_PATH, 'utf-8');

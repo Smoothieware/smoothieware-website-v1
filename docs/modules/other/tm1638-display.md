@@ -6,9 +6,15 @@ title: TM1638 Display Module
 # TM1638 Display Module
 
 {::nomarkdown}
+<versioned orientation="vertical">
+<v1>This module is not available in Smoothieware V1.</v1>
+<v2>
+{:/nomarkdown}
+
+{::nomarkdown}
 <sl-alert variant="primary" open>
   <sl-icon slot="icon" name="info-circle"></sl-icon>
-  <strong>Smoothieware V2 Only:</strong> The TM1638 Display module is only available in Smoothieware V2. It is not supported on Smoothieboard V1 hardware.
+  <strong>TM1638 display:</strong> Configure the display for button input and status output.
 </sl-alert>
 {:/nomarkdown}
 
@@ -256,4 +262,8 @@ If you need a different display type, consider:
   <sl-icon slot="icon" name="info-circle"></sl-icon>
   If you want to learn more about this module, or are curious how it works, Smoothie is Open-Source and you can simply go look at the code, <a href="https://github.com/Smoothieware/SmoothieV2/blob/master/Firmware/src/modules/utils/display/tm1638/TM1638.cpp">here</a>.
 </sl-alert>
+{:/nomarkdown}
+{::nomarkdown}
+</v2>
+</versioned>
 {:/nomarkdown}

@@ -3,11 +3,18 @@ permalink: /rrdglcdadapter
 ---
 
 {::nomarkdown}
-<sl-alert variant="warning" open>
-  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
-  <strong>V1 Hardware Only</strong><br>
-  This adapter is designed for Smoothieboard V1 and is NOT compatible with Smoothieware V2.
-</sl-alert>
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
+This adapter is designed for Smoothieboard V1.
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+This adapter is not compatible with V2 hardware. See the [V2 panel options](/panel).
+{::nomarkdown}
+</v2>
+</versioned>
 {:/nomarkdown}
 
 # RRD GLCD Adapter board
@@ -24,7 +31,7 @@ This adapter allows you to connect a [Reprapdiscount GLCD panel](/panel) to a Sm
 **Smoothieware V2:**
 - ST7920-based displays (built-in support)
 - TM1638-based displays (built-in support)
-- Note: This RRD GLCD adapter is NOT compatible with V2 hardware
+
 
 {::nomarkdown}
 <div style="text-align: center; margin: 2rem 0;">
@@ -39,6 +46,11 @@ All of the panel's functionalities are available:
 - Button
 - Buzzer
 - SD card
+
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
 
 ## Open Hardware
 
@@ -152,7 +164,16 @@ Solder the connector missing
 
 Update firmware (version after October 2014), see [Flashing Smoothie firmware](flashing-smoothie-firmware)
 
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+The adapter assembly and configuration-port instructions apply to the V1 adapter.
 
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
 
 Edit the config file on the µSD:
 
@@ -214,6 +235,11 @@ sdcd_pin = P0_27!^                 # sd detect signal (set to nc if no sdcard de
 
 
 
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
+
 If you do not want to use the buzzer, leaving out the `panel.buzz_pin` line will leave the pin floating.
 
 As there is no pull-down on the buzzer, it will keep buzzing.
@@ -221,6 +247,17 @@ As there is no pull-down on the buzzer, it will keep buzzing.
 
 
 To avoid this, you can either solder a pull-down resistor on the adapter board or you can use this little hack:
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+These buzzer and soldering instructions apply to the V1 adapter.
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
 
 {::nomarkdown}
 <versioned orientation="vertical">
@@ -252,6 +289,11 @@ nonoise.output_type = digital
 {::nomarkdown}
 </v2>
 </versioned>
+{:/nomarkdown}
+
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
 {:/nomarkdown}
 
 This will create a pseudo-switch that does nothing, but it will enable the pull-down on the pin.
@@ -288,4 +330,14 @@ And soldering a cable under the PCB
     <img src="/images/rrdglcdadapter/gcldv1_04.jpg" alt="GLCD Adapter V1 Soldering" style="min-width: 640px; width: 80%; height: auto;"/>
   </a>
 </div>
+{:/nomarkdown}
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+The remaining adapter wiring notes apply to V1 hardware.
+{::nomarkdown}
+</v2>
+</versioned>
 {:/nomarkdown}

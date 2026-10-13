@@ -6,9 +6,15 @@ title: Slaved Axes
 # Slaved Axes
 
 {::nomarkdown}
+<versioned orientation="vertical">
+<v1>This feature is not available in Smoothieware V1.</v1>
+<v2>
+{:/nomarkdown}
+
+{::nomarkdown}
 <sl-alert variant="primary" open>
   <sl-icon slot="icon" name="info-circle"></sl-icon>
-  <strong>Smoothieware V2 only:</strong> Software slaving supports internal TMC2590 or TMC2660 drivers. Smoothie rejects <code>slaved_to</code> on an actuator configured with an external driver.
+  Software slaving supports internal TMC2590 or TMC2660 drivers. Smoothie rejects <code>slaved_to</code> on an actuator configured with an external driver.
 </sl-alert>
 {:/nomarkdown}
 
@@ -85,3 +91,7 @@ See the [G28 command family](/g28#g287-slaved-axis-homing-v2-only) for the comma
 
 - [`Robot.cpp` actuator configuration](https://github.com/Smoothieware/SmoothieV2/blob/2a21c0108b1d095ecd8b2b9358e94055f053c003/Firmware/src/robot/Robot.cpp#L285-L354)
 - [`Endstops.cpp` `G28.7` handling](https://github.com/Smoothieware/SmoothieV2/blob/2a21c0108b1d095ecd8b2b9358e94055f053c003/Firmware/src/modules/tools/endstops/Endstops.cpp#L988-L1003)
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}

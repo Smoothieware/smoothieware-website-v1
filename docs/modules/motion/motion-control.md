@@ -13,9 +13,9 @@ This page explains how to configure the different motion control parameters you 
 
 Related motion features:
 
-- [Feed Hold and Cycle Start](/feed-hold), the V2 work-in-progress real-time `!` and `~` controls
+- [Feed Hold and Cycle Start](/feed-hold), the merged V2 real-time `!` and `~` controls (installed firmware may predate them)
 - [Slaved Axes](/actuator-slaving), dual internal-driver motors with independent alignment
-- [Backlash Compensation](/backlash-compensation), experimental code confined to an unmerged V1 branch
+- [Backlash Compensation](/backlash-compensation), experimental V1 branch and pending V2 PR; see the version-specific instructions
 
 
 {::nomarkdown}

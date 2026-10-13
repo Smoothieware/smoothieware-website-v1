@@ -15,6 +15,21 @@ It started years ago as an offshoot of the Reprap project electronics, aimed at 
 
 > **Note:** Smoothieboard v2 is now on Kickstarter! Get your board [here](https://www.kickstarter.com/projects/arthurwolf/smoothieboard-v2).
 
+## Documentation improvement commands
+
+Translation/review shortcuts work directly from this website root. Keep the private `smoothie-documentation` checkout beside this repository; the shortcuts execute its tooling and automatically select this website as input:
+
+```sh
+bun run install:translation
+bun run translate --language fr
+bun run review --language fr
+bun run test:translation
+```
+
+Arguments are forwarded unchanged. Relative input/output overrides resolve from this website root. For a different website checkout, run the private CLI directly with `--website-root PATH`.
+
+See that repository's `docs/commands.md` for every shortcut and script entrypoint. The website retains `build`, `watch`, `test` and `test:all`; `test:all` in each repository covers its own test suite.
+
 ## Repository Structure
 
 This repository contains the documentation website hosted at **[smoothieware.org](https://smoothieware.org)** using GitHub Pages.
@@ -56,6 +71,12 @@ smoothieware-website-v1/
 - Organized into 23 logical subdirectories
 - Custom Midnight theme with Shoelace components
 - Interactive configuration documentation system
+
+## Website source and private improvement work
+
+`src/site/` contains the website TypeScript. The root package manifest contains only site dependencies; `bun run build`, `bun run test` and `bun run watch` use that source. `tsconfig.json` emits browser JavaScript into `docs/assets/js/`. Follow applicable remote-compilation and process-custody instructions before running these commands.
+
+Internal research, AI workflows, retained reference collections and translation/review tools are owned by the separate private `smoothie-documentation` workspace. Public pages and assets remain here. Do not add links from published content to private research paths. See `MIGRATED-PROJECTS.md` for the extraction record.
 
 ## GitHub Pages Setup
 

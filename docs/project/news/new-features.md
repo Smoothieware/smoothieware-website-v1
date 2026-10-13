@@ -9,7 +9,23 @@ This page records feature announcements by date. Topic pages provide the configu
 
 ## Fall 2026
 
-The table reconciles the [SmoothieV2 New features wiki](https://github.com/Smoothieware/SmoothieV2/wiki/New-features) and the [2026-09-13 Maker Forums announcement](https://forum.makerforums.info/t/new-and-upcoming-features-for-smoothieware-fall-2026/95442) with firmware source. The V2 source check used commit [`2a21c010`](https://github.com/Smoothieware/SmoothieV2/commit/2a21c0108b1d095ecd8b2b9358e94055f053c003), dated 2026-08-17. Source presence confirms an implementation, but it does not confirm that an older installed firmware build contains it.
+The table reconciles the [SmoothieV2 New features wiki](https://github.com/Smoothieware/SmoothieV2/wiki/New-features) and the [2026-09-13 Maker Forums announcement](https://forum.makerforums.info/t/new-and-upcoming-features-for-smoothieware-fall-2026/95442) with firmware source. The V2 source check used commit [`2a21c010`](https://github.com/Smoothieware/SmoothieV2/commit/2a21c0108b1d095ecd8b2b9358e94055f053c003), dated 2026-08-17. The 2026-10-05 wiki changes and V2 backlash PR #9 were checked on 2026-10-06. Source presence confirms an implementation, but it does not confirm that an older installed firmware build contains it.
+
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
+
+The feature list below records V2 releases. V1's experimental backlash branch is also documented at [Backlash Compensation](/backlash-compensation).
+
+| Feature | Status | Documentation |
+|---------|--------|---------------|
+| Backlash compensation | Experimental V1 `add/backlash` branch; not merged | [Backlash Compensation](/backlash-compensation) |
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
 
 | Feature | Source status | Documentation |
 |---------|---------------|---------------|
@@ -27,10 +43,16 @@ The table reconciles the [SmoothieV2 New features wiki](https://github.com/Smoot
 | Network shell, FTP, HTTP/WebSocket, and NTP | V2 implementation | [V2 network services](/network#v2-network-services) |
 | O-word subroutines | V2 limited implementation | [O-word Subroutines](/subroutines) |
 | MAX7219 seven-segment DRO | V2 implementation | [MAX7219 DRO](/max7219-dro) |
-| Real-time `!` feed hold and `~` cycle start | V2 implementation; forum announcement labels it work in progress | [Feed Hold and Cycle Start](/feed-hold) |
-| Backlash compensation | Experimental, unmerged V1 `add/backlash` branch; absent from V2 master | [Backlash Compensation](/backlash-compensation) |
+| Real-time `!` feed hold and `~` cycle start | V2 PR #8 merged 2026-08-17; upstream wiki moved it out of WIP on 2026-10-05 | [Feed Hold and Cycle Start](/feed-hold) |
+| Backlash compensation | Experimental V1 `add/backlash` branch and pending V2 PR #9; neither merged | [Backlash Compensation](/backlash-compensation) |
 
 Firmware development can change these statuses. Check each linked page's source and maturity notice before configuring a machine.
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
+
 
 ## 2013/04
 

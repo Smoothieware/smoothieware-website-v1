@@ -37,13 +37,6 @@ permalink: /rotatable-cartesian
 
 
 
-{::nomarkdown}
-<sl-alert variant="warning" open>
-  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
-  <strong>Version Support:</strong> This arm solution is only supported in Smoothieware v1 ✅. It has been removed in v2 ❌
-</sl-alert>
-{:/nomarkdown}
-
 Rotatable Cartesian is a variant of the standard Cartesian arm solution that allows you to rotate the entire coordinate system by a specified angle.
 
 This is useful when your machine's physical frame is not aligned with the desired working coordinate system, or when you want to work at an angle without physically rotating your workpiece or machine.

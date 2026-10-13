@@ -7,10 +7,8 @@ title: Jogger Developer Documentation
 # Jogger Developer Documentation
 
 {::nomarkdown}
-<sl-alert variant="warning" open>
-  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
-  <strong>Deprecated in Smoothieware V2:</strong> The jogger module has been deprecated in Smoothieware V2. For V2 development, please refer to the <a href="/mpg">MPG module documentation</a> which provides the modern approach to manual control and jogging.
-</sl-alert>
+<versioned orientation="vertical">
+<v1>
 {:/nomarkdown}
 
 {::nomarkdown}
@@ -90,13 +88,6 @@ You will need to fill in a few areas of the above example for your own module.
 
 The module "name_checksum" will need to be determined at startup, see "JoystickAxisPool.cpp" for an example of how to create many different named modules.
 
-{::nomarkdown}
-<sl-alert variant="primary" open>
-  <sl-icon slot="icon" name="info-circle"></sl-icon>
-  <strong>V2 Architecture Change:</strong> The joystick data source mechanism described above using <code>PublicDataRequest</code> and <code>ON_GET_PUBLIC_DATA</code> events does not exist in Smoothieware V2's architecture. V2 uses a different modular communication system. Developers working on V2 should consult the V2 architecture documentation for the current approach to inter-module communication.
-</sl-alert>
-{:/nomarkdown}
-
 ## Adding Axes
 
 The jogger module was written to support up to 6 concurrent jog axes.
@@ -140,4 +131,16 @@ The jogger data source names for each axis are:
 
 {::nomarkdown}
 Note that <mcode>M777</mcode> and <setting v1="jogger.jog_axes"></setting> will then accept up to 6 letters.
+{:/nomarkdown}
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+This guide documents V1's `PublicDataRequest` interface. For V2 module development, see the [V2 developers guide](developers-guide).
+
+{::nomarkdown}
+</v2>
+</versioned>
 {:/nomarkdown}

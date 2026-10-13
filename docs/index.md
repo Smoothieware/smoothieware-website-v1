@@ -10,7 +10,7 @@ description: "Set up Smoothieboard with Smoothieware for laser cutters, CNC mill
 {::nomarkdown}
 <sl-alert variant="neutral" open>
   <sl-icon slot="icon" name="info-circle"></sl-icon>
-  <strong>Smoothie</strong> is a <strong><a href="start">free, opensource, high performance</a></strong> and modular <strong>G-code</strong> interpreter and <strong>CNC</strong> control system for the powerful <strong><a href="smoothieboards">SmoothieBoard</a></strong> 32bit controller. It's designed to be very user-friendly and hacker-friendly. The Source code is on <a href="https://github.com/Smoothieware/Smoothieware">GitHub</a>. ヾ(❀◦◡◦)彡
+  <strong>Smoothie</strong> is a <strong><a href="start">free, opensource, high performance</a></strong> and modular <strong>G-code</strong> interpreter and <strong>CNC</strong> control system for the powerful <strong><a href="smoothieboards">SmoothieBoard</a></strong> 32bit controller. It's designed to be very user-friendly and hacker-friendly. Source code: <a href="https://github.com/Smoothieware/Smoothieware">Smoothieware V1 (LPC17xx)</a> and <a href="https://github.com/Smoothieware/SmoothieV2">Smoothieware V2 (STM32H7)</a> on GitHub. ヾ(❀◦◡◦)彡
 </sl-alert>
 {:/nomarkdown}
 
@@ -104,11 +104,29 @@ Retrofitting a K40 laser cutter? Start with the [K40 controller upgrade overview
 
 The [Fall 2026 feature inventory](new-features#fall-2026) records source and maturity status for this set.
 
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
+
+The Fall 2026 feature inventory below covers V2 additions. Backlash compensation is still experimental in both branches; see [its status](/backlash-compensation).
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
 - **Motion:** [real-time feed hold and cycle start](feed-hold), [slaved internal-driver axes](actuator-slaving), [NIST G30/G30.1](g30#nist-stored-position-in-v2-grbl-mode), [Lathe G33](lathe), and [Electronic Leadscrew](els)
 - **Machine controls:** [direct and shared MPG control](mpg#axis-selector-optional), [Button Box macros](button-box), [FAULT inputs](button-box#fault-inputs), and the current [matrix-keypad limitation](button-box#matrix-keypads)
 - **Console and programs:** [`ed` file editing](console-commands#ed), [`le` command-line editing and history](console-commands#le), and [O-word subroutines](subroutines)
 - **Communication and display:** [auxiliary UART targeting](uart#send-text-to-a-connected-device-v2-only), [V2 network services](network#v2-network-services), and [MAX7219 DRO displays](max7219-dro)
-- **Experimental V1 branch:** [backlash compensation](backlash-compensation), which has not been merged into a normal V1 or V2 release
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
+
+- **Experimental backlash compensation:** [V1 branch and pending V2 PR](backlash-compensation); neither implementation is merged into normal firmware
 
 {::nomarkdown}
 <a href="/images/tool-belt.png">
@@ -324,7 +342,7 @@ More: [Windows Drivers](windows-drivers), [Linux Drivers](linux-drivers), [Mac D
 - [Eclipse](eclipse): Using Eclipse IDE to build and debug
 - [Github](github): How to submit pull requests for Smoothie
 - [Third Party Branches](third-party-branches): a list of useful branches to smoothie that may be helpful to some but are not included in the main branch
-- Smoothie developer IRC forum on [IRC](irc) in #smoothiedev @ irc.freenode.net
+- Smoothie development chat: [IRC](irc), #smoothiedev on irc.libera.chat. General help: #smoothieware.
 - [Logo Proposals](logo-proposals)
 
 Current edge build status: [![Build Status](https://app.travis-ci.com/Smoothieware/Smoothieware.svg?branch=edge)](https://app.travis-ci.com/Smoothieware/Smoothieware)
@@ -369,3 +387,90 @@ Current edge build status: [![Build Status](https://app.travis-ci.com/Smoothiewa
 - [Imaging-guided platform for real-time intervention in complex in vitro models](https://assets-eu.researchsquare.com/files/rs-7179174/v1/017e0c5b-c17e-4478-b9ce-88a21e1b9789.pdf?c=1758892117)
 - [Development of Open Source 3D Bioprinters For Low-Cost and High-Fidelity Biofabrication](https://abstracts.biomaterials.org/data/papers/2019/abstracts/511.pdf)
 - [Feature-based insight for forks in social coding platforms](https://www.sciencedirect.com/science/article/abs/pii/S0950584921001373)
+
+<!-- extension-board-directory:start -->
+## Extension boards
+
+These 80 extension-board pages describe development studies, their wiring requirements and remaining qualification limits. They are not fabrication or operating approvals. Select the exact board and revision before wiring.
+
+- [AC SSR board](/extensions/ac-ssr-board)
+- [Additional endstop inputs breakout](/extensions/additional-endstop-inputs-breakout)
+- [Advanced H-bridge encoder board](/extensions/advanced-h-bridge-encoder-board)
+- [Arduino adapter](/extensions/arduino-adapter)
+- [Arduino-to-Gadgeteer shield](/extensions/arduino-to-gadgeteer-shield)
+- [ATX connector board](/extensions/atx-connector-board)
+- [BeagleBone breakout](/extensions/beaglebone-breakout)
+- [Bidirectional level shifting board](/extensions/bidirectional-level-shifting-board)
+- [BLTouch-like probe](/extensions/bltouch-like-probe)
+- [Bouni spindle module boards](/extensions/bouni-spindle-module-boards)
+- [Breadboard board](/extensions/breadboard-board)
+- [Button boards](/extensions/button-boards)
+- [Buzzer module](/extensions/buzzer-module)
+- [Camera trigger board](/extensions/camera-trigger-board)
+- [Cheap UART adapter breakout](/extensions/cheap-uart-adapter-breakout)
+- [C.H.I.P. breakout board](/extensions/chip-breakout-board)
+- [CPLD adapter](/extensions/cpld-adapter)
+- [D-sub-to-Gadgeteer IN adapter](/extensions/d-sub-to-gadgeteer-in)
+- [D-sub-to-Gadgeteer OUT adapter](/extensions/d-sub-to-gadgeteer-out)
+- [DC SSR board](/extensions/dc-ssr-board)
+- [Debug probe](/extensions/debug-probe)
+- [Differential signal extender](/extensions/differential-signal-extender)
+- [Differential SPI signal extender](/extensions/differential-spi-signal-extender)
+- [Differential STEP/DIR/ENABLE extender](/extensions/differential-step-dir-en-extender)
+- [Filament encoder board](/extensions/filament-encoder-board)
+- [Filament progress sensor](/extensions/filament-progress-sensor)
+- [FSR breakout board](/extensions/fsr-breakout-board)
+- [Gadgeteer-to-CAN adapter](/extensions/gadgeteer-to-can)
+- [Gate boards](/extensions/gate-boards)
+- [Additional general purpose outputs breakout / Servo board](/extensions/general-purpose-output-servo-board)
+- [GLCD breakout](/extensions/glcd-breakout)
+- [Hall endstop breakout](/extensions/hall-endstop-breakout)
+- [HX711 load-cell amplifier](/extensions/hx711-load-cell-amplifier)
+- [Inductive proximity sensor adapter (level shifter)](/extensions/inductive-proximity-sensor-adapter)
+- [Input protector](/extensions/input-protector)
+- [Intel Edison breakout](/extensions/intel-edison-breakout)
+- [Laser barrier board](/extensions/laser-barrier-board)
+- [Laser diode driver breakout](/extensions/laser-diode-driver-breakout)
+- [Laser PSU adapter board](/extensions/laser-psu-adapter-board)
+- [Leadshine-like external servo drivers](/extensions/leadshine-like-external-servo-drivers)
+- [Leadshine-like external stepper drivers](/extensions/leadshine-like-external-stepper-drivers)
+- [LED breakout](/extensions/led-breakout)
+- [Long distance extender](/extensions/long-distance-extender)
+- [Mechanical endstop breakout](/extensions/mechanical-endstop-breakout)
+- [Opto-isolation pass-through board](/extensions/opto-isolation-pass-through-board)
+- [Papilio adapter](/extensions/papilio-adapter)
+- [Parallel port breakout](/extensions/parallel-port-breakout)
+- [Gadgeteer perma-proto breadboard](/extensions/perma-proto-gadgeteer)
+- [Pololu driver breakout board](/extensions/pololu-driver-breakout-board)
+- [Position feedback board](/extensions/position-feedback-board)
+- [Power supply connector board](/extensions/power-supply-connector-board)
+- [Pressure sensor](/extensions/pressure-sensor)
+- [Qwiic-to-Gadgeteer adapter](/extensions/qwiic-to-gadgeteer-adapter)
+- [Raspberry Pi Zero breakout](/extensions/raspberry-pi-zero-breakout)
+- [Raw pins breakout](/extensions/raw-pins-breakout)
+- [Raw pins screw terminal breakout](/extensions/raw-pins-screw-terminal-breakout)
+- [SD card breakout](/extensions/sd-card-breakout)
+- [Serial to WiFi board](/extensions/serial-to-wifi-board)
+- [Servo control](/extensions/servo-control)
+- [Seven-channel AC mechanical relay](/extensions/seven-channel-ac-mechanical-relay)
+- [Seven-channel DC mechanical relay](/extensions/seven-channel-dc-mechanical-relay)
+- [Simple PT100 amplifier board](/extensions/simple-pt100-amplifier-board)
+- [Single-channel AC mechanical relay](/extensions/single-channel-ac-mechanical-relay)
+- [Single-channel DC mechanical relay](/extensions/single-channel-dc-mechanical-relay)
+- [Single-Channel Large MOSFET output](/extensions/single-channel-large-mosfet-output)
+- [Single-Channel Small MOSFET output](/extensions/single-channel-small-mosfet-output)
+- [Single-Channel AC solid-state relay output](/extensions/single-channel-solid-state-relay-output)
+- [Smoke detector](/extensions/smoke-detector)
+- [Spectral analysis board](/extensions/spectral-analysis-board)
+- [SPI hub](/extensions/spi-hub)
+- [SPI PT100 amplifier board](/extensions/spi-pt100-amplifier-board)
+- [SPI thermocouple breakout](/extensions/spi-thermocouple-breakout)
+- [Stepper motor driver breakout board (Allegro)](/extensions/stepper-driver-breakout-allegro)
+- [Stepper motor driver breakout board (Trinamic)](/extensions/stepper-driver-breakout-trinamic)
+- [UART breakout](/extensions/uart-breakout)
+- [Universal panel adapter](/extensions/universal-panel-adapter)
+- [USB/Serial breakout](/extensions/usb-serial-breakout)
+- [Water-flow sensor adapter](/extensions/water-flow-sensor-adapter)
+- [Wireless Gadgeteer extender](/extensions/wireless-gadgeteer-extender)
+- [Wireless series Smoothieboard-side master](/extensions/wireless-series-master)
+<!-- extension-board-directory:end -->

@@ -263,13 +263,28 @@ play /sd/on_boot.gcode
 
 ## Version Compatibility
 
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
+
 ### Smoothieware v1
 
 The `on_boot.gcode` feature is fully supported in Smoothieware v1 with the configuration options documented above.
 
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
 ### Smoothieware v2
 
 Smoothieware v2 also supports boot-time G-code execution. While the exact implementation may vary slightly, the core concept remains the same. Consult the v2 documentation for specific configuration details.
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
 
 ---
 

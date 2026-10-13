@@ -128,6 +128,11 @@ See [Pinout](pinout) for a diagram of the Smoothieboard with the pins labeled.
 
 ## Configuration
 
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
+
 ### Mapping Voltage to Position
 The configuration file, at its most basic level, must tell the SmoothieBoard how to convert the 0 to 3.3 V that it reads into a more useful range of numbers. The range that the Joystick module uses is -1 to 1. It is also possible to use a 0 to 1 range if negative values don't make sense for your application.
 
@@ -165,6 +170,18 @@ It would not make sense to enable for sliders or knobs, since the knob doesn't h
 ### All Configuration Options
 
 {% include modules/input-controls/joystick-options-for-include.md %}
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+The analog-voltage mapping and configuration options in this section are for the V1 joystick module. V2 does not currently provide this module.
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
 
 ### Migration from V1 to V2
 

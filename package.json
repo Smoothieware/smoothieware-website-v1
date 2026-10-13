@@ -1,0 +1,25 @@
+{
+  "name": "smoothieware-website-v1",
+  "private": true,
+  "scripts": {
+    "build": "bun ./node_modules/typescript/bin/tsc --project tsconfig.json",
+    "test": "bun test src/site/test/*.test.ts",
+    "test:all": "bun test src/site/test",
+    "watch": "bun run src/scripts/watch-typescript.ts",
+    "translate": "bun run ../smoothie-documentation/src/translation/cli.ts --website-root .",
+    "review": "bun run ../smoothie-documentation/src/translation/criticism_cli.ts --website-root .",
+    "test:translation": "bun test ../smoothie-documentation/src/translation/tests",
+    "install:translation": "bun install --cwd ../smoothie-documentation/src/translation"
+  },
+  "dependencies": {
+    "chokidar": "^4.0.3",
+    "handlebars": "^4.7.8",
+    "jquery": "^3.7.1",
+    "js-yaml": "^4.1.0"
+  },
+  "devDependencies": {
+    "@types/jquery": "^3.5.33",
+    "@types/js-yaml": "^4.0.9",
+    "typescript": "^5.9.3"
+  }
+}

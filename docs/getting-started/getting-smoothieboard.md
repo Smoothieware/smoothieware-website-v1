@@ -34,9 +34,9 @@ Both Smoothieboard v1 and v2-prime are currently in production. Here's a quick c
 **Smoothieboard v2-prime**
 
 - **Processor**: STM32H745 dual-core (480 MHz + 240 MHz)
-- **Drivers**: 4× TMC2660/2590 (silent operation)
+- **Drivers**: 4× TMC2660/2590 (SpreadCycle current control; no StealthChop2)
 - **Flash/RAM**: 2 MB / 1 MB
-- **Best for**: High-performance, quiet, advanced features
+- **Best for**: High-performance builds and expansion; see the [qualified driver features](smoothieboard-v2-prime#tmc-features-both-variants)
 - **Status**: In production since 2023
 
 {::nomarkdown}

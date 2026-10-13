@@ -4,6 +4,17 @@ permalink: /stm32h7-pin-usage
 
 
 # STM32H745 Pin Usage (V2 Prime)
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
+
+See [LPC1769 pin usage](/lpc1769-pin-usage) for Smoothieboard V1 pin assignments.
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
 
 This page documents all pin assignments for the STM32H745XIHx microcontroller on Smoothieboard V2 Prime.
 
@@ -1011,4 +1022,9 @@ The following images are extracted from the V2 Prime (TMC2660 variant) KiCad sch
   </a>
   <figcaption>Page 13: Motor Driver D (TMC2660)</figcaption>
 </figure>
+{:/nomarkdown}
+
+{::nomarkdown}
+</v2>
+</versioned>
 {:/nomarkdown}

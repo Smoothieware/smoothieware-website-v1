@@ -6,9 +6,18 @@ title: Feed Hold and Cycle Start
 # Feed Hold and Cycle Start
 
 {::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
+
+These real-time feed-hold controls are not available in V1. See [Stopping Smoothie](/stopping-smoothie) for V1 stop and suspend options.
+
+{::nomarkdown}
+</v1>
+<v2>
 <sl-alert variant="warning" open>
   <sl-icon slot="icon" name="construction"></sl-icon>
-  <strong>Smoothieware V2, work in progress:</strong> The commands described here are implemented in the V2 source checked at commit <a href="https://github.com/Smoothieware/SmoothieV2/commit/2a21c0108b1d095ecd8b2b9358e94055f053c003"><code>2a21c010</code></a>. The Fall 2026 announcement still describes feed hold as work in progress. An installed firmware build may predate it.
+  <strong>Smoothieware V2 only, merged implementation:</strong> The commands described here are implemented in the V2 source checked at commit <a href="https://github.com/Smoothieware/SmoothieV2/commit/2a21c0108b1d095ecd8b2b9358e94055f053c003"><code>2a21c010</code></a>. PR #8 merged on 2026-08-17, and the upstream wiki moved feed hold out of its WIP list on 2026-10-05. An installed firmware build may predate it.
 </sl-alert>
 {:/nomarkdown}
 
@@ -50,3 +59,8 @@ See [Stopping Smoothie](/stopping-smoothie) for a side-by-side comparison.
 - [`Consoles.cpp`](https://github.com/Smoothieware/SmoothieV2/blob/2a21c0108b1d095ecd8b2b9358e94055f053c003/Firmware/src/Consoles.cpp#L303-L315) receives `!` and `~`.
 - [`StepTicker.cpp`](https://github.com/Smoothieware/SmoothieV2/blob/2a21c0108b1d095ecd8b2b9358e94055f053c003/Firmware/src/robot/StepTicker.cpp#L202-L267) implements deceleration, hold, and acceleration.
 - [`Laser.cpp`](https://github.com/Smoothieware/SmoothieV2/blob/2a21c0108b1d095ecd8b2b9358e94055f053c003/Firmware/src/modules/tools/laser/Laser.cpp#L290-L293) disables laser output during the hold.
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}

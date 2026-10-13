@@ -109,30 +109,39 @@ This guide also applies to later versions - 4.5 (Mars) and 4.6 (Neon).
     - Leave the options **C** and **C++** checked
     - Select **Cross ARM GCC** toolchain from the **Toolchain for Indexer Settings** list.
     - Click the **Finish** button.
+  {::nomarkdown}
+  <versioned orientation="vertical">
+  <v1>
+  {:/nomarkdown}
+
   - Now you have to be quick: In the lower right corner there is the progress icon. Click it. If it isn't there, click **Window->Show View->other** and select **General/Progress**
     - When the **C/C++ Indexer** is running in the **Progress** view, stop it by clicking the red square icon.
-    - The reason is that the CHECKSUM()-macro causes an out of memory-exception in the indexer.
-
-{::nomarkdown}
-<sl-alert variant="neutral" open>
-  <sl-icon slot="icon" name="info-circle"></sl-icon>
-  <strong>V1-Specific Workaround:</strong><br>
-  This CHECKSUM() macro workaround is specific to Smoothieware V1. V2 uses a different configuration system and does not use the CHECKSUM() macro.
-</sl-alert>
-{:/nomarkdown}
-
+    - The CHECKSUM macro can make the indexer run out of memory.
     - To correct this, unfold the structure in the Project Explorer and open **src/libs/checksumm.h**
-      - This change does not affect normal compilation or build in Eclipse. It only affects the Indexer of Eclipse.
+      - This change affects only Eclipse's indexer, not normal compilation.
       - Insert at line 54:
         - `#ifdef __CDT_PARSER__`
         - `#define CHECKSUM(X) ((uint16_t)sizeof(X))`
         - `#else`
       - Insert at the end of the file before the line `#endif  /* CHECKSUM_USE_CPP */`:
         - `#endif /* __CDT_PARSER__ */`
-      - Save and close checksumm.h
-      - Mark this change as ignored for Git as the Dev Team does not like it:
-        - Either by right click on the file in Project Explorer and select **Team->Advanced->Assume unchanged**
-        - Or by executing the command `git update-index --assume-unchanged src/libs/checksumm.h` 
+      - Save and close checksumm.h.
+      - Mark this change as ignored for Git:
+        - Right-click the file in Project Explorer and select **Team->Advanced->Assume unchanged**, or
+        - Run `git update-index --assume-unchanged src/libs/checksumm.h`.
+
+  {::nomarkdown}
+  </v1>
+  <v2>
+  {:/nomarkdown}
+
+  V2 does not use this V1 CHECKSUM workaround; skip the indexer patch.
+
+  {::nomarkdown}
+  </v2>
+  </versioned>
+  {:/nomarkdown}
+
   - Right-click on the **Smoothie** project in the **Project Explorer** pane.
     - Select **Properties** from the pop-up menu.
     - Select **Index->Rebuild**

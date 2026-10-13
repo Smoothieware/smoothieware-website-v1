@@ -6,9 +6,15 @@ title: Lathe Module
 # Lathe Module
 
 {::nomarkdown}
+<versioned orientation="vertical">
+<v1>This module is not available in Smoothieware V1.</v1>
+<v2>
+{:/nomarkdown}
+
+{::nomarkdown}
 <sl-alert variant="primary" open>
   <sl-icon slot="icon" name="info-circle"></sl-icon>
-  <strong>Smoothieware V2 Only:</strong> The Lathe module is only available in Smoothieware V2. It is not supported on Smoothieboard V1 hardware.
+  <strong>Lathe module:</strong> Configure spindle synchronization and threading for a CNC lathe.
 </sl-alert>
 {:/nomarkdown}
 
@@ -208,4 +214,8 @@ If threads don't align on multi-pass operations:
   <sl-icon slot="icon" name="info-circle"></sl-icon>
   Verify evolving behaviour in the <a href="https://github.com/Smoothieware/SmoothieV2/blob/2a21c0108b1d095ecd8b2b9358e94055f053c003/Firmware/src/modules/tools/lathe/Lathe.cpp">Lathe source</a> and the <a href="https://github.com/Smoothieware/SmoothieV2/blob/2a21c0108b1d095ecd8b2b9358e94055f053c003/ConfigSamples/config-lathe.ini">V2 sample configuration</a> used for this page.
 </sl-alert>
+{:/nomarkdown}
+{::nomarkdown}
+</v2>
+</versioned>
 {:/nomarkdown}

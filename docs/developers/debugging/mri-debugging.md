@@ -11,10 +11,8 @@ title: Debugging with MRI
 # Debugging with MRI
 
 {::nomarkdown}
-<sl-alert variant="warning" open>
-  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
-  <strong>Smoothieware V1 Only:</strong> This page documents MRI (Monitor for Remote Inspection), which is specific to Smoothieware V1 and the LPC1768 microcontroller. Smoothieware V2 uses standard hardware debuggers (J-Link, ST-Link) via SWD instead. See the <a href="/eclipse">Debugging with Eclipse</a> page for V2 debugging information.
-</sl-alert>
+<versioned orientation="vertical">
+<v1>
 {:/nomarkdown}
 
 If Smoothie crashes, or you manually tell it to, it can go into a special mode (MRI), where if you use a serial cable to connect to its hardware serial port (UART0), you can use GDB to connect to it, and step through the code, add breakpoints, print values, and more generally debug the code. This is a feature that would otherwise require an expensive JTAG adapter.
@@ -235,6 +233,18 @@ base_stepping_frequency 50000 # Base frequency for stepping
 export NONETWORK=1
 export EXCLUDE_MODULES = tools/laser tools/filamentdetector tools/scaracal tools/temperaturecontrol tools/extruder tools/zprobe tools/endstops</pre>
 </sl-alert>
+{:/nomarkdown}
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+MRI debugging applies to V1 firmware on the LPC1768. For V2 debugging over SWD, see [Debugging with Eclipse](/eclipse).
+
+{::nomarkdown}
+</v2>
+</versioned>
 {:/nomarkdown}
 
 ## More documentation

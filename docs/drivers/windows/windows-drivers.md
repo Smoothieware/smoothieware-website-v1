@@ -43,11 +43,12 @@ permalink: /windows-drivers
 {:/nomarkdown}
 
 {::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
 
 <h2>Installers Windows 2000 through Windows 8</h2>
 
-<versioned orientation="vertical">
-<v1>
 <ul>
 <li><strong>Windows 2000/Vista/7/8 (64bit/32bit)</strong>: <a href="/images/windows-drivers/smoothieware-usb-driver-v1.1.exe">smoothieware-usb-driver-v1.1.exe</a></li>
 </ul>
@@ -58,13 +59,7 @@ permalink: /windows-drivers
 </sl-alert>
 
 <p>These drivers are for <strong>Smoothieware V1</strong> hardware only.</p>
-</v1>
-<v2>
-<p>For <strong>Smoothieware V2</strong>, driver support is generally better on modern Windows versions. If using Windows 10 or later, no drivers are needed. For older Windows versions with V2 hardware, the V1 drivers above may work, though V2 should ideally be used with modern operating systems.</p>
-</v2>
-</versioned>
 
-{:/nomarkdown}
 
 ## Using the Installers
 
@@ -154,6 +149,18 @@ Also, note that "smoothie DFU" is still unrecognized. This is fine. You can igno
 <a href="/images/windows-drivers/done.jpg">
   <img src="/images/windows-drivers/done.jpg" alt="Driver Installed" style="width: 640px; height: auto; display: block; margin: 2rem auto;"/>
 </a>
+{:/nomarkdown}
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+V2 normally uses Windows built-in USB drivers. On older Windows versions, see the legacy driver notes above; compatibility with these V1 driver packages is not guaranteed.
+
+{::nomarkdown}
+</v2>
+</versioned>
 {:/nomarkdown}
 
 ## Does None of This Work for You?

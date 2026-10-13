@@ -220,11 +220,11 @@ function init_be_nice_fireworks(): void {
  * Main initialization function
  * Runs on any page that has the BE NICE elements
  */
-function init(): void {
+function init_help_guidelines(): void {
 
     // Simply try to initialize - will exit early if elements aren't present
     init_be_nice_fireworks();
 }
 
 // Run on window load (after all resources including CDN scripts)
-window.addEventListener('load', init);
+window.addEventListener('load', init_help_guidelines);

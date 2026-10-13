@@ -130,6 +130,10 @@ Smoothie supports several ways to connect and communicate:
 
 
 
+## Linux USB serial permissions
+
+If your host reports **permission denied** when opening the USB serial port, see [Linux serial-port permissions](/smoopi#linux-serial-port-permissions) for checking device ownership, adding the required group, or using udev rules. Log out and back in after changing group membership. This applies to both V1 and V2.
+
 ## Choosing a Connection Method
 
 | Method | Best For | Advantages | Considerations |

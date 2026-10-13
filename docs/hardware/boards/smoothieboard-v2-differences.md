@@ -30,7 +30,7 @@ This comprehensive guide documents all the differences between Smoothieboard V2 
 | **Step Rate** | 100 kHz | 200 kHz | 2x faster |
 | **Microstepping** | 1/32 | 1/256 | 8x finer |
 | **SD Card Speed** | 0.4-0.5 MB/s | 10-25 MB/s | 20-50x faster |
-| **Stepper Drivers** | A5984 (basic) | TMC2660/2590 (silent) | Much quieter |
+| **Stepper Drivers** | A5984 (basic) | TMC2660/2590 (SpreadCycle) | SPI-configurable drivers |
 | **Expansion GPIO** | Limited | 90 pins (Gadgeteer) | Extensive |
 | **Price** | $100-150 | $230 | Higher |
 
@@ -110,10 +110,12 @@ This comprehensive guide documents all the differences between Smoothieboard V2 
 
 ### 2.1 Driver Comparison
 
+This comparison covers the P11 Prime2660 and P12 Prime2590 designs, whose driver schematics specify TMC2660 and TMC2590 respectively. Both chips provide SpreadCycle, StallGuard2 and CoolStep, but neither provides StealthChop2 or StallGuard4. See the [revision-qualified Prime specifications and firmware notes](/smoothieboard-v2-prime#tmc-features-both-variants) and the manufacturer documentation for [TMC2660](https://www.analog.com/en/products/tmc2660.html) and [TMC2590](https://www.analog.com/en/products/tmc2590.html). These capabilities should not be generalized to other V2 revisions or external drivers.
+
 {::nomarkdown}
 <sl-alert variant="success" open>
-  <sl-icon slot="icon" name="volume-mute"></sl-icon>
-  <strong>Silent Operation:</strong> The TMC drivers in V2 support StealthChop2 for near-silent operation - you can run a 3D printer in your bedroom without waking anyone up.
+  <sl-icon slot="icon" name="gear"></sl-icon>
+  <strong>SpreadCycle Operation:</strong> The Prime TMC2660/2590 drivers use SpreadCycle current control. Acoustic behavior depends on the motor, current, speed and chopper configuration; these chips do not provide StealthChop2 or a near-silent-operation guarantee.
 </sl-alert>
 {:/nomarkdown}
 
@@ -122,9 +124,9 @@ This comprehensive guide documents all the differences between Smoothieboard V2 
 | **Count** | 3-5x | 4x |
 | **Max Current** | 2A | 2.8A (2660) / 5.0A (2590) |
 | **Microstepping** | Up to 1/32 | Up to 1/256 |
-| **Silent Mode** | No | StealthChop2 |
-| **Sensorless Homing** | No | StallGuard4 |
-| **Dynamic Current** | No | CoolStep |
+| **Silent Mode** | No | No StealthChop2; SpreadCycle current control |
+| **Sensorless Homing** | No | StallGuard2 load detection; homing requires firmware configuration, tuning and validation |
+| **Dynamic Current** | No | CoolStep capability; disabled by default in the reviewed firmware drivers |
 | **Interface** | Digital pot (I2C) | SPI configuration |
 
 ### 2.2 TMC2660 vs TMC2590
@@ -461,7 +463,7 @@ Example: {::nomarkdown}<pin>PG10^</pin>{:/nomarkdown} (PG10 with pullup enabled)
 | **[Lathe Module](/lathe)** | G33 threading and spindle synchronization |
 | **[ELS](/els)** | Electronic Leadscrew controls with a TM1638; upstream notes label parts work in progress |
 | **[MPG](/mpg)** | Direct per-axis control or one shared hand wheel selected with M922 |
-| **Silent Steppers** | StealthChop2 |
+| **Configurable Prime Drivers** | SpreadCycle current control and StallGuard2 load detection; no StealthChop2 |
 | **OTA Updates** | Network firmware updates |
 | **[Slaved Axes](/actuator-slaving)** | Software-parallel internal TMC motors and independent G28.7 alignment |
 | **[Auxiliary UART target](/uart#send-text-to-a-connected-device-v2-only)** | Send device messages with `echo -1` |
@@ -484,7 +486,7 @@ Example: {::nomarkdown}<pin>PG10^</pin>{:/nomarkdown} (PG10 with pullup enabled)
 ### Choose V2 If:
 
 - Need 200 kHz step rates (fast motion, fine microstepping)
-- Want silent stepper operation (StealthChop2)
+- Want SPI-configurable Prime stepper drivers with SpreadCycle current control and StallGuard2 load detection
 - Require extensive expansion (90 GPIO pins)
 - Need fast SD card access (large G-code files)
 - Want network features (web, telnet, OTA updates)

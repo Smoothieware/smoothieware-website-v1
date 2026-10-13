@@ -6,9 +6,15 @@ title: O-word Subroutines
 # O-word Subroutines
 
 {::nomarkdown}
+<versioned orientation="vertical">
+<v1>O-word subroutines are not available in Smoothieware V1.</v1>
+<v2>
+{:/nomarkdown}
+
+{::nomarkdown}
 <sl-alert variant="primary" open>
   <sl-icon slot="icon" name="info-circle"></sl-icon>
-  <strong>Smoothieware V2 only:</strong> SmoothieV2 implements a small subset of LinuxCNC-style O-word subroutines. It supports definition and calls, but it does not support parameters, expressions, conditionals, loops, or the full LinuxCNC O-code language.
+  SmoothieV2 implements a small subset of LinuxCNC-style O-word subroutines: definitions and calls. Parameters, expressions, conditionals, loops, and the full LinuxCNC O-code language are not supported.
 </sl-alert>
 {:/nomarkdown}
 
@@ -55,3 +61,7 @@ The `save` command overwrites a file of the same name in the current working dir
 ## Source
 
 [`CommandShell.cpp`](https://github.com/Smoothieware/SmoothieV2/blob/2a21c0108b1d095ecd8b2b9358e94055f053c003/Firmware/src/CommandShell.cpp#L2195-L2347) implements the O-word command subset.
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}

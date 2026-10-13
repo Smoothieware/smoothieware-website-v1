@@ -152,7 +152,7 @@ function setup_periodic_refresh(): void {
  * Main initialization function
  * Only runs on the debug-review page
  */
-function init(): void {
+function init_debug_review(): void {
 
     // Guard: only run on debug-review page
     if (!is_debug_review_page()) {
@@ -172,4 +172,4 @@ function init(): void {
 }
 
 // Run on DOMContentLoaded
-document.addEventListener('DOMContentLoaded', init);
+document.addEventListener('DOMContentLoaded', init_debug_review);

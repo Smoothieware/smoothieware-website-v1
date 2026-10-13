@@ -14,6 +14,11 @@ This page documents all pin assignments for the LPC1769 microcontroller on Smoot
 </sl-alert>
 {:/nomarkdown}
 
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
+
 ## Pin list
 
 The following table shows all pin assignments on the LPC1769 microcontroller:
@@ -101,6 +106,17 @@ The following table shows all pin assignments on the LPC1769 microcontroller:
 
   <code>P0.*</code> and <code>P2.*</code> can be setup as interrupt enabled pins.
 </sl-alert>
+{:/nomarkdown}
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+The LPC1769 pin list does not apply to V2 Prime. See [STM32H7 pin usage](/stm32h7-pin-usage).
+
+{::nomarkdown}
+</v2>
+</versioned>
 {:/nomarkdown}
 
 ## Pin Format Reference
@@ -357,6 +373,11 @@ The following table shows common pin assignments with V1 and V2 format side-by-s
 </versioned>
 {:/nomarkdown}
 
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
+
 ## LPC176x ADC channels and pins
 
 | Adc Channel | Port Pin | Pin Functions | Associated PINSEL Register |
@@ -376,7 +397,35 @@ The following table shows common pin assignments with V1 and V2 format side-by-s
   ADC pins are not 5v tolerant.
 </sl-alert>
 {:/nomarkdown}
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+V2 Prime uses the STM32H745 ADC mapping; see [STM32H7 pin usage](/stm32h7-pin-usage).
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}
+
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
 
 ## Pinout
 
 {% include hardware/pins/pinout-for-include.md %}
+
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
+
+See [STM32H7 pin usage](/stm32h7-pin-usage) for V2 Prime pin assignments.
+
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}

@@ -6,9 +6,15 @@ title: MPG (Manual Pulse Generator)
 # MPG - Manual Pulse Generator Module
 
 {::nomarkdown}
+<versioned orientation="vertical">
+<v1>This module is not available in Smoothieware V1.</v1>
+<v2>
+{:/nomarkdown}
+
+{::nomarkdown}
 <sl-alert variant="primary" open>
   <sl-icon slot="icon" name="info-circle"></sl-icon>
-  <strong>Smoothieware V2 Only:</strong> The MPG module is only available in Smoothieware V2. It is not supported on Smoothieboard V1 hardware.
+  <strong>Manual pulse generator:</strong> Configure hand wheels to control selected axes.
 </sl-alert>
 {:/nomarkdown}
 
@@ -245,4 +251,8 @@ z.mmperpulse = 0.005
   <sl-icon slot="icon" name="info-circle"></sl-icon>
   Verify the subsection names and motion behaviour in the checked <a href="https://github.com/Smoothieware/SmoothieV2/blob/2a21c0108b1d095ecd8b2b9358e94055f053c003/Firmware/src/modules/utils/mpg/mpg.cpp">V2 MPG source</a>.
 </sl-alert>
+{:/nomarkdown}
+{::nomarkdown}
+</v2>
+</versioned>
 {:/nomarkdown}

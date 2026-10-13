@@ -7,25 +7,14 @@ title: Jogger Module
 # Jogger Module
 
 {::nomarkdown}
-<sl-alert variant="warning" open>
-  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
-  <strong>Deprecated in V2</strong><br>
-  The Jogger module is deprecated in Smoothieware V2. For V2, please see the <a href="/mpg">MPG module documentation</a> for jogging functionality.
-</sl-alert>
+<versioned orientation="vertical">
+<v1>
 {:/nomarkdown}
 
 {::nomarkdown}
 <sl-alert variant="danger" open>
   <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
   <strong>Deprecated:</strong> This module no longer works and has been abandoned, and there are no plans to integrate it.
-</sl-alert>
-{:/nomarkdown}
-
-{::nomarkdown}
-<sl-alert variant="primary" open>
-  <sl-icon slot="icon" name="info-circle"></sl-icon>
-  <strong>Historical V1 Documentation</strong><br>
-  This is historical documentation for Smoothieware V1. This module is not available in V2.
 </sl-alert>
 {:/nomarkdown}
 
@@ -160,3 +149,9 @@ If issued again, it will change to nothing/Z, and if issued once more, go back t
 ## Developer Documentation
 
 For information on how to write a module which the jogger can read, see the [jogger developer documentation](jogger-dev).
+
+{::nomarkdown}
+</v1>
+<v2>The Jogger module is not available in V2. Use the [MPG module](/mpg) for jogging.</v2>
+</versioned>
+{:/nomarkdown}
