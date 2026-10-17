@@ -64,6 +64,10 @@ Whenever a tool change has to occur, the post-processor inserts the right sequen
 
 4. Generate G-code and test
 
+## DC motor carousels
+
+If your tool changer uses a carousel with a DC motor and an encoder, like many large ATC tool changers do, you can use Smoothie's [motor branch](https://github.com/Smoothieware/Smoothieware/tree/feature/motor) to control it. This just requires using the separate `feature/motor` firmware branch.
+
 ## Physical setup example
 
 *To be added*
