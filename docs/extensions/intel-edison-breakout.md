@@ -10,7 +10,7 @@ Historical record only for a discontinued Intel Edison carrier concept.
 
 ## Development status
 
-**Second-round candidate accepted for engineering review — 2026-10-13.** The v20 package has current source-bound native checks, complete resolving model references, exports and six inspected normal-population/bare views. Newly recovered purple bodies are dimensioned principal-body prisms with contacts, voids and mating features omitted; they are not manufacturer or fit models. Inherited native findings and label crowding remain documented in the board work record. Hardware, electrical and mechanical qualification remain open; no fabrication release or priced saving is claimed.
+**Compact v21 engineering candidate — 2026-10-15.** The board now measures 52.5 × 47 mm, reduced from 52.5 × 57 mm. Required external 5–24 V input protection is retained beneath the original circuitry, with original front placements and module/antenna keepouts preserved. Full native DRC, connectivity, schematic parity and ERC report zero errors and warnings. Six fresh views were inspected; 71 model references resolve and 19 manufacturing exports are source-bound. See the repository `src/intel-edison-breakout/attempt/versions/v21/` source and receipts. USB geometry remains visualization-only. Electrical, current, thermal, module insertion and fabrication qualification remain open.
 
 **Baseline documentation snapshot: 2026-10-11, before the requested connector/protection/usability revision program.** New revision features require their own reviewed source and qualification evidence.
 
@@ -58,7 +58,7 @@ The following are specification requirements or study assumptions; they are **no
 
 The design describes the following protection intent. Check the selected schematic and remaining qualification gates before relying on it:
 
-- None designed; revival requires a full power-sequencing and protection review
+- Current v21 retains external-input electronic protection, reverse-polarity protection and fault indication. Thresholds and thermal/current performance still require hardware qualification.
 
 ## Selected component architecture
 

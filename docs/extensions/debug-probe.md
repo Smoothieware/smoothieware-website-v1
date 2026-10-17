@@ -112,14 +112,14 @@ A readable full wrapped board URL was added. Readability was checked against the
 Earlier revision readbacks remain historical.
 <!-- second-round-service:end -->
 
-## Trusted-power compact correction: v23
+## Trusted-power compact correction: v24
 
-USB-C USB 2.0 power is treated as a keyed, compliant 5 V source. The redundant input-protection/warning annex was removed in v22, restoring the 56 × 30 mm outline and retaining USB ESD, regulation, target-voltage sensing and interface circuitry. V23 cleans crowded underside wiring tables into fabrication documentation, keeps essential labels and Montserrat title outlines visible, and bundles project-relative native libraries. Prior revisions remain preserved.
+USB-C USB 2.0 power is treated as a keyed, compliant 5 V source. The redundant input-protection/warning annex was removed in v22, restoring the 56 × 30 mm outline and retaining USB ESD, regulation, target-voltage sensing and interface circuitry. V23 cleans crowded underside wiring tables into fabrication documentation, keeps essential labels and Montserrat title outlines visible, and bundles project-relative native libraries. V24 separates the underside status instructions and moves secondary manufacturing prose to the fabrication layer. It is the third and final correction revision. Prior revisions remain preserved.
 
-The current candidate passes all enabled native board, schematic and parity checks with zero findings, including the remote runner’s independent publication gate. Existing project rule exclusions remain unchanged; this is not physical or fabrication qualification. All six current normal-population renders and 17 source-bound manufacturing-candidate exports have been generated remotely and their hashes checked. Independent package review remains pending; fabrication release is false. Target backfeed, hot-plug, firmware and electrical/thermal behaviour still require validation.
+The current candidate passes all enabled native board, schematic and parity checks with zero findings, including the remote runner’s independent publication gate. Existing project rule exclusions remain unchanged; this is not physical or fabrication qualification. All six current normal-population renders and 17 source-bound manufacturing-candidate exports have been generated remotely and their hashes checked. Independent review verified all six images, 61 model references and 17 exports and inspected all six views; fabrication release is false. Target backfeed, hot-plug, firmware and electrical/thermal behaviour still require validation.
 
-- [Current v23 source](https://github.com/arthurwolf/extension-boards/blob/main/src/debug-probe/attempt/versions/v23/debug-probe.kicad_pcb), SHA-256 `225072cb50d529ba73d9b6b01208d5a6b55da18ca0901bce5c9937424b59c4e2`.
-- [Current connector-population renders](https://github.com/arthurwolf/extension-boards/blob/main/src/debug-probe/attempt/versions/v23/populations/debug-probe/normal/population.json).
+- [Current v24 source](https://github.com/arthurwolf/extension-boards/blob/main/src/debug-probe/attempt/versions/v24/debug-probe.kicad_pcb), SHA-256 `3d68d0f87fd5a1c6de0492741cccaec1174044bf6ae248c596ae1ff6b22a8caf`.
+- [Current connector-population renders](https://github.com/arthurwolf/extension-boards/blob/main/src/debug-probe/attempt/versions/v24/populations/debug-probe/normal/population.json).
 - [Correction record and remaining qualification](https://github.com/arthurwolf/extension-boards/blob/main/src/debug-probe/trusted-power.md).
 
 Earlier candidate sections above remain historical.

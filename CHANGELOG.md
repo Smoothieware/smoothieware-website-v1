@@ -7,6 +7,7 @@ History: see CHANGELOG.archive.md.
 ## [Unreleased]
 
 ### Changed
+- Update six extension-board pages with compact candidates, source-bound recovery results and remaining hardware qualification limits.
 - Document the separate motor firmware branch for ATC carousels using a DC motor and an encoder.
 - Point diagram and conversion-guide authors to the consolidated private authoring set and remove the stale duplicate project agent-instruction file so the current local CLAUDE.md is loaded.
 - Document additive isolated CAN v20 and spindle PWM-DAC v18 candidates, their host power/interface requirements, accurate PWM/RUN limits and unsigned physical qualification while preserving historical pages.
