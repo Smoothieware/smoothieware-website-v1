@@ -1,0 +1,33 @@
+[Unit]
+Description=Smoothieware Documentation Jekyll Preview (user service)
+StartLimitIntervalSec=120
+StartLimitBurst=5
+
+[Service]
+Type=simple
+WorkingDirectory=/home/arthur/dev/smoothieware/smoothieware-website-v1
+Slice=background-work.slice
+CPUAffinity=0 1 2 3 6 7 8 9
+Nice=19
+IOSchedulingClass=idle
+Restart=on-failure
+RestartSec=10
+TimeoutStopSec=45
+# Docker's daemon launches the server separately from the client. Apply CPU
+# limits to the container and low scheduling priority to Jekyll itself.
+# Mount Git metadata read-only; keep the existing writable docs source mount.
+ExecStart=/usr/bin/docker run --rm --pull=never \
+    --name smoothie-docs-user \
+    --label org.smoothieware.service=smoothie-docs-user \
+    --cpus=8 --cpuset-cpus=0,1,2,3,6,7,8,9 \
+    --mount type=bind,source=/home/arthur/dev/smoothieware/smoothieware-website-v1,target=/workspace,readonly \
+    --mount type=bind,source=/home/arthur/dev/smoothieware/smoothieware-website-v1/docs,target=/workspace/docs \
+    --workdir /workspace/docs \
+    --env GIT_DISCOVERY_ACROSS_FILESYSTEM=1 \
+    --publish 127.0.0.1:4000:4000 \
+    starefossen/github-pages \
+    /bin/nice -n 19 /bin/ionice -c 3 jekyll serve -d /_site --watch --force_polling -H 0.0.0.0 -P 4000
+ExecStop=/usr/bin/docker stop --time 20 smoothie-docs-user
+
+[Install]
+WantedBy=default.target
