@@ -6,6 +6,8 @@ permalink: /extensions/single-channel-ac-mechanical-relay
 
 # Single-channel AC mechanical relay
 
+{% include extension-board-visuals.html slug="single-channel-ac-mechanical-relay" %}
+
 Single-channel AC mechanical-relay study using a soldered Relpol relay and optical isolation. The retained study is 80 × 79.5 mm; AC switching, insulation, enclosure, relay endurance and physical qualification remain open.
 
 ## Development status

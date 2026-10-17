@@ -6,6 +6,8 @@ permalink: /extensions/arduino-to-gadgeteer-shield
 
 # Arduino-to-Gadgeteer shield
 
+{% include extension-board-visuals.html slug="arduino-to-gadgeteer-shield" %}
+
 Arduino Due A000062 host shield for experimenting with Smoothie Gadgeteer extension boards. The study provides six keyed sockets and a Qwiic connection on the type-I I²C bus; it is distinct from the Uno-oriented Arduino adapter.
 
 ## Current annotation candidate — revision 22

@@ -6,6 +6,8 @@ permalink: /extensions/inductive-proximity-sensor-adapter
 
 # Inductive proximity sensor adapter (level shifter)
 
+{% include extension-board-visuals.html slug="inductive-proximity-sensor-adapter" %}
+
 Safely translate a qualified 12–24 V three-wire inductive sensor into a standard Smoothie endstop/probe signal.
 
 ## Development status

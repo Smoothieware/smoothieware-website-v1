@@ -6,6 +6,8 @@ permalink: /extensions/filament-encoder-board
 
 # Filament encoder board
 
+{% include extension-board-visuals.html slug="filament-encoder-board" %}
+
 The selected v10 design reads a diametrically magnetised wheel with an AS5047P and presents conditioned encoder signals on the Gadgeteer Y connector. The root contract is still draft: v10 is a selected native design, not a mechanically, firmware, host, or electrically qualified product.
 
 ## Development status

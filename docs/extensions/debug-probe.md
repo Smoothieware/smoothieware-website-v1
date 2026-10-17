@@ -6,6 +6,8 @@ permalink: /extensions/debug-probe
 
 # Debug probe
 
+{% include extension-board-visuals.html slug="debug-probe" %}
+
 USB-hosted SWD/JTAG debug probe based on Black Magic Debug native hardware version 6 for Smoothie V2 targets. Component selection is documented in component-review.md; electrical release remains subject to first-article qualification.
 
 ## Development status

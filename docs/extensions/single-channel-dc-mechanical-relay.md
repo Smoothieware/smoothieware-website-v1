@@ -6,6 +6,8 @@ permalink: /extensions/single-channel-dc-mechanical-relay
 
 # Single-channel DC mechanical relay
 
+{% include extension-board-visuals.html slug="single-channel-dc-mechanical-relay" %}
+
 Single-channel DC mechanical-relay study using a soldered Finder relay and functional host/coil isolation. The retained study is 80 × 89.5 mm; contact, coil, converter, fuse and thermal limits remain unqualified.
 
 ## Development status

@@ -6,6 +6,8 @@ permalink: /extensions/gate-boards
 
 # Gate boards
 
+{% include extension-board-visuals.html slug="gate-boards" %}
+
 Family of deterministic logic-combination boards for ordinary endstop, interlock, and manual-control signals.
 
 ## Development status

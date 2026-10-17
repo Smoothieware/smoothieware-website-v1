@@ -6,6 +6,8 @@ permalink: /extensions/bltouch-like-probe
 
 # BLTouch-like probe
 
+{% include extension-board-visuals.html slug="bltouch-like-probe" %}
+
 Experimental solenoid probe intended to reproduce the externally observable control, trigger, and alarm behaviour of a BLTouch-class probe.
 
 ## Development status

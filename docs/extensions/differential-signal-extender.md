@@ -6,6 +6,8 @@ permalink: /extensions/differential-signal-extender
 
 # Differential signal extender
 
+{% include extension-board-visuals.html slug="differential-signal-extender" %}
+
 Paired transmitter (TX) and receiver (RX) carrying one digital host output to a field-side logic input over a dedicated twisted-pair cable. The retained candidate also sends limited low-voltage power from TX to RX. This is a source-level component selection, not a qualified product.
 
 ## Development status

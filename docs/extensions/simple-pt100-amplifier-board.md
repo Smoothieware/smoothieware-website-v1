@@ -6,6 +6,8 @@ permalink: /extensions/simple-pt100-amplifier-board
 
 # Simple PT100 amplifier board
 
+{% include extension-board-visuals.html slug="simple-pt100-amplifier-board" %}
+
 Condition one PT100 RTD into a bounded analogue voltage for a Smoothieboard analogue input.
 
 ## Development status

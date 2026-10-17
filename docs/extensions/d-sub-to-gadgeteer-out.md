@@ -6,6 +6,8 @@ permalink: /extensions/d-sub-to-gadgeteer-out
 
 # D-sub-to-Gadgeteer OUT adapter
 
+{% include extension-board-visuals.html slug="d-sub-to-gadgeteer-out" %}
+
 OUT is the remote, host-powered half of the custom nine-conductor extension.
 Its female DE-9 connects only to the dedicated cable from
 [IN](/extensions/d-sub-to-gadgeteer-in); its keyed 2 × 5, 1.27 mm Gadgeteer

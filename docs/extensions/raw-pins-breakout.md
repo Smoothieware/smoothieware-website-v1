@@ -6,6 +6,8 @@ permalink: /extensions/raw-pins-breakout
 
 # Raw pins breakout
 
+{% include extension-board-visuals.html slug="raw-pins-breakout" %}
+
 Expose one canonical Y-socket's ten contacts on a straight 2.54 mm header with one-to-one mapping and continuous GND. The v11 study adds seven bidirectional transient shunts on GPIO pins3–9.
 
 ## Development status

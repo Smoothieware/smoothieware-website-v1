@@ -6,6 +6,8 @@ permalink: /extensions/smoke-detector
 
 # Smoke detector
 
+{% include extension-board-visuals.html slug="smoke-detector" %}
+
 Original intent: a non-certified machine atmosphere monitor for CO/CO2-related warning and shutdown experimentation. The saved candidate implements CO2, temperature and relative humidity only; it does not meet the original CO/smoke/fire-response intent.
 
 ## Development status

@@ -6,6 +6,8 @@ permalink: /extensions/dc-ssr-board
 
 # DC SSR board
 
+{% include extension-board-visuals.html slug="dc-ssr-board" %}
+
 Switch a specified DC load up to a qualified 20 A point in a Fotek-like mechanical format using a MOSFET-based solid-state topology.
 
 ## Development status

@@ -6,6 +6,8 @@ permalink: /extensions/single-channel-solid-state-relay-output
 
 # Single-Channel AC solid-state relay output
 
+{% include extension-board-visuals.html slug="single-channel-solid-state-relay-output" %}
+
 Provide an optically isolated, single-channel AC mains switch targeting 240 VAC and 16 A; the proposed 48 V/30 A DC variant is a separate future board.
 
 ## Development status

@@ -6,6 +6,8 @@ permalink: /extensions/filament-progress-sensor
 
 # Filament progress sensor
 
+{% include extension-board-visuals.html slug="filament-progress-sensor" %}
+
 Research-stage optical-motion sensor that measures filament surface movement without a mechanical encoder ball.
 
 ## Development status

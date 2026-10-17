@@ -6,6 +6,8 @@ permalink: /extensions/sd-card-breakout
 
 # SD card breakout
 
+{% include extension-board-visuals.html slug="sd-card-breakout" %}
+
 Add a secondary removable SD or microSD card over the SPI Gadgeteer interface without replacing the onboard SDIO card.
 
 ## Development status

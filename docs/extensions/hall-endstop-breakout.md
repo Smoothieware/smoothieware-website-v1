@@ -6,6 +6,8 @@ permalink: /extensions/hall-endstop-breakout
 
 # Hall endstop breakout
 
+{% include extension-board-visuals.html slug="hall-endstop-breakout" %}
+
 Provide a magnetic endstop module with a Signal/Ground/5 V connection and explicit normal and fault-state behavior. The historical v13 design remains unqualified; the annotation-only v18 candidate below does not establish a qualified machine limit.
 
 ## Development status

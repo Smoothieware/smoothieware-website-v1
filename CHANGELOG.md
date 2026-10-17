@@ -7,9 +7,12 @@ History: see CHANGELOG.archive.md.
 ## [Unreleased]
 
 ### Added
+
+- Embed revision-captioned abstract board diagrams and available source-verified populated renders on all 80 extension-board pages, with full-size image links and mobile-friendly galleries.
 - Add standalone and embeddable v1/v2 configuration checkers using the existing YAML definitions, local browser validation and regression tests.
 
 ### Changed
+- Prepare a user-managed local Jekyll service with sudo-free routine commands, Git-aware repository mounts and background scheduling inside the container; remove the racy post-start scheduling dependency. One-time root handover and live activation verification remain pending.
 - Update six extension-board pages with compact candidates, source-bound recovery results and remaining hardware qualification limits.
 - Document the separate motor firmware branch for ATC carousels using a DC motor and an encoder.
 - Point diagram and conversion-guide authors to the consolidated private authoring set and remove the stale duplicate project agent-instruction file so the current local CLAUDE.md is loaded.

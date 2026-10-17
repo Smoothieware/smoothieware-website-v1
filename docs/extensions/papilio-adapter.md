@@ -6,6 +6,8 @@ permalink: /extensions/papilio-adapter
 
 # Papilio adapter
 
+{% include extension-board-visuals.html slug="papilio-adapter" %}
+
 Adapt a named Papilio FPGA board and wing connector revision to one or more compatible Gadgeteer interfaces.
 
 ## Development status

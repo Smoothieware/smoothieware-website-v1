@@ -6,6 +6,8 @@ permalink: /extensions/single-channel-large-mosfet-output
 
 # Single-Channel Large MOSFET output
 
+{% include extension-board-visuals.html slug="single-channel-large-mosfet-output" %}
+
 Switch one 5–24 V high-current DC load with a qualified continuous rating of at least 12.5 A.
 
 ## Development status

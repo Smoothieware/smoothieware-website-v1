@@ -6,6 +6,8 @@ permalink: /extensions/parallel-port-breakout
 
 # Parallel port breakout
 
+{% include extension-board-visuals.html slug="parallel-port-breakout" %}
+
 Expose 12 output and 5 input machine-control signals on a legacy DB25 interface, isolated and buffered from Smoothieboard V2.
 
 ## Additive digital-isolator candidate — 2026-10-13

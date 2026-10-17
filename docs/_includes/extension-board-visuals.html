@@ -1,0 +1,34 @@
+{% assign extension_visuals = site.data.extension_board_visuals[include.slug] %}
+{% if extension_visuals %}
+<section class="extension-board-visuals" aria-label="Board diagrams and renders">
+  <h2>Board diagrams and renders</h2>
+  <p>Select an image to open the full-size view. These are design representations; fitted components and wiring depend on the revision and population shown.</p>
+  {% for board in extension_visuals %}
+  <h3>{{ board.role | escape }} — {{ board.version | escape }}</h3>
+  <figure class="extension-board-diagram">
+    <a href="{{ board.diagram.url | relative_url }}"><img src="{{ board.diagram.url | relative_url }}" alt="{{ board.role | escape }} {{ board.version | escape }} abstract board diagram" width="800" height="600"></a>
+    <figcaption>Abstract board representation from smoothie-diagrams. {{ board.diagram.caption | escape }}</figcaption>
+  </figure>
+  {% if board.renders.size > 0 %}
+  <div class="extension-board-render-grid">
+    {% for render in board.renders %}
+    <figure>
+      <a href="{{ render.url | relative_url }}"><img src="{{ render.url | relative_url }}" alt="{{ board.role | escape }} {{ board.version | escape }} {{ render.label | escape }}" width="1400" height="1100" loading="lazy"></a>
+      <figcaption>{{ render.label | escape }} — {{ board.version | escape }}. {{ render.caption | escape }}</figcaption>
+    </figure>
+    {% endfor %}
+  </div>
+  {% else %}
+  <p>A matching, source-verified populated render is not available for this revision; the board diagram is shown above.</p>
+  {% endif %}
+  {% endfor %}
+</section>
+<style>
+.extension-board-visuals figure { margin: 1rem 0; min-width: 0; }
+.extension-board-visuals img { display: block; width: 100%; height: auto; object-fit: contain; background: #1f1f22; border: 1px solid #59616e; border-radius: 6px; }
+.extension-board-visuals .extension-board-diagram img { max-height: 520px; }
+.extension-board-visuals figcaption { margin-top: .5rem; color: #c7cbd3; font-size: .95rem; line-height: 1.5; }
+.extension-board-render-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: 1rem; }
+.extension-board-visuals a:focus-visible { outline: 3px solid #8ac7ff; outline-offset: 4px; }
+</style>
+{% endif %}

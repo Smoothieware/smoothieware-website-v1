@@ -6,6 +6,8 @@ permalink: /extensions/usb-serial-breakout
 
 # USB/Serial breakout
 
+{% include extension-board-visuals.html slug="usb-serial-breakout" %}
+
 Integrate a USB-device-to-3.3 V UART bridge between a USB-B connector and a U socket.
 
 ## Development status

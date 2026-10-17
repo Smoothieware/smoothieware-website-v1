@@ -6,6 +6,8 @@ permalink: /extensions/spectral-analysis-board
 
 # Spectral analysis board
 
+{% include extension-board-visuals.html slug="spectral-analysis-board" %}
+
 Acquire the 18 visible/near-infrared channels of one generation-2 AS72651/52/53 cluster for controlled reflectance experiments. The PCBA reports sensor data and status over host I²C; normalization, material classification and the dataset are host/fixture work. The named prototype target is in [`attempt/scope.md`](https://github.com/arthurwolf/extension-boards/blob/main/src/spectral-analysis-board/attempt/scope.md).
 
 ## Development status

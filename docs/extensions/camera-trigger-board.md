@@ -6,6 +6,8 @@ permalink: /extensions/camera-trigger-board
 
 # Camera trigger board
 
+{% include extension-board-visuals.html slug="camera-trigger-board" %}
+
 Camera-family-specific isolated trigger adapter for repeatable timelapse capture.
 
 ## Development status

@@ -6,6 +6,8 @@ permalink: /extensions/position-feedback-board
 
 # Position feedback board
 
+{% include extension-board-visuals.html slug="position-feedback-board" %}
+
 Acquire one specified magnetic or quadrature encoder and report position to Smoothieboard for following-error detection.
 
 ## Development status

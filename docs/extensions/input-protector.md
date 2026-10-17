@@ -6,6 +6,8 @@ permalink: /extensions/input-protector
 
 # Input protector
 
+{% include extension-board-visuals.html slug="input-protector" %}
+
 Protect a standard endstop input from a field sensor whose signal may reach 48 V.
 
 ## Development status

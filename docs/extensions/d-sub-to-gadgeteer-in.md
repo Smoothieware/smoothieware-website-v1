@@ -6,6 +6,8 @@ permalink: /extensions/d-sub-to-gadgeteer-in
 
 # D-sub-to-Gadgeteer IN adapter
 
+{% include extension-board-visuals.html slug="d-sub-to-gadgeteer-in" %}
+
 IN is the host-side half of a custom nine-conductor extension. It accepts a
 keyed 2 × 5, 1.27 mm Gadgeteer cable and presents a male DE-9 interface for a
 dedicated cable to [OUT](/extensions/d-sub-to-gadgeteer-out). IN and OUT name

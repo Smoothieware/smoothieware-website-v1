@@ -6,6 +6,8 @@ permalink: /extensions/cpld-adapter
 
 # CPLD adapter
 
+{% include extension-board-visuals.html slug="cpld-adapter" %}
+
 Programmable-logic motion-interface study using a Lattice MachXO2 LCMXO2-640HC-4SG48C. Hardware output permission and a bounded host/field pin contract remain separate from the proposed HDL behavior.
 
 ## Development status

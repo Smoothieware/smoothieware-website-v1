@@ -6,6 +6,8 @@ permalink: /extensions/beaglebone-breakout
 
 # BeagleBone breakout
 
+{% include extension-board-visuals.html slug="beaglebone-breakout" %}
+
 Connect a specifically selected BeagleBone to Smoothie V2 by UART and a separately qualified power arrangement.
 
 ## Development status

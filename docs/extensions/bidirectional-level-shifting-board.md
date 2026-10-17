@@ -6,6 +6,8 @@ permalink: /extensions/bidirectional-level-shifting-board
 
 # Bidirectional level shifting board
 
+{% include extension-board-visuals.html slug="bidirectional-level-shifting-board" %}
+
 Translate a deliberately bounded set of digital signals between two Y-port voltage domains.
 
 ## Development status

@@ -6,6 +6,8 @@ permalink: /extensions/raspberry-pi-zero-breakout
 
 # Raspberry Pi Zero breakout
 
+{% include extension-board-visuals.html slug="raspberry-pi-zero-breakout" %}
+
 Mechanically stack a frozen Raspberry Pi Zero-family board with Smoothie V2 and connect 3.3 V UART plus a safe 5 V supply.
 
 ## Development status

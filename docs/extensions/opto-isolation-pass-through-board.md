@@ -6,6 +6,8 @@ permalink: /extensions/opto-isolation-pass-through-board
 
 # Opto-isolation pass-through board
 
+{% include extension-board-visuals.html slug="opto-isolation-pass-through-board" %}
+
 Provide galvanic isolation for a deliberately defined set of seven extension signals; arbitrary reversible Gadgeteer isolation is not electrically well-defined.
 
 ## Development status

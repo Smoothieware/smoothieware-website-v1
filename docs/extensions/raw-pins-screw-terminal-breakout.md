@@ -6,6 +6,8 @@ permalink: /extensions/raw-pins-screw-terminal-breakout
 
 # Raw pins screw terminal breakout
 
+{% include extension-board-visuals.html slug="raw-pins-screw-terminal-breakout" %}
+
 Passively expose all ten Y-socket contacts on individually accessible 3.5 mm screw terminals.
 
 ## Development status

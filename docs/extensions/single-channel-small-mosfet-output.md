@@ -6,6 +6,8 @@ permalink: /extensions/single-channel-small-mosfet-output
 
 # Single-Channel Small MOSFET output
 
+{% include extension-board-visuals.html slug="single-channel-small-mosfet-output" %}
+
 Switch one 5–24 V DC load using a low-side MOSFET and flyback protection. The external-supply design target is 5 A; it is not a qualified rating. Host-supplied operation is a separate, default-disabled prototype mode, limited to 0.5 A only after an upstream allocation is authorized.
 
 ## Development status

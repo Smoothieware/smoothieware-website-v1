@@ -6,6 +6,8 @@ permalink: /extensions/gadgeteer-to-can
 
 # Gadgeteer-to-CAN adapter
 
+{% include extension-board-visuals.html slug="gadgeteer-to-can" %}
+
 ## Current additive annotation candidate: v21 (2026-10-13)
 
 The [v21 native sources and wiring guide](https://github.com/arthurwolf/extension-boards/tree/main/src/gadgeteer-to-can/attempt/versions/v21) preserve the released v20 isolated CAN circuit, placement and mechanics. The PCB revision label is current and its full documentation URL is retained. The wiring diagrams below describe exact saved pin numbers and default chain jumpers; they do not establish hardware qualification. **Fabrication release is false.** Native checks and source-bound model/export/render review are recorded in the revision's `can-usability-review.json`. Frozen v20 identity-label source drift and its missing auxiliary routed project file remain documented historical exceptions; neither is restored. Teardrop and reference-copper work remain open.

@@ -6,6 +6,8 @@ permalink: /extensions/led-breakout
 
 # LED breakout
 
+{% include extension-board-visuals.html slug="led-breakout" %}
+
 Provide seven low-current GPIO debug indicators without imposing excessive source current on V2 pins.
 
 ## Development status

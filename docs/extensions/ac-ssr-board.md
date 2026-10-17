@@ -6,6 +6,8 @@ permalink: /extensions/ac-ssr-board
 
 # AC SSR board
 
+{% include extension-board-visuals.html slug="ac-ssr-board" %}
+
 Switch a specified AC mains load with galvanically isolated low-voltage control. The selected v12 is an engineering study targeting 20 A, not a qualified 20 A product or a verified Fotek-compatible assembly.
 
 ## Development status

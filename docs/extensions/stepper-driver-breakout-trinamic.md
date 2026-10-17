@@ -6,6 +6,8 @@ permalink: /extensions/stepper-driver-breakout-trinamic
 
 # Stepper motor driver breakout board (Trinamic)
 
+{% include extension-board-visuals.html slug="stepper-driver-breakout-trinamic" %}
+
 Add one TMC2660-controlled bipolar stepper channel using STEP/DIR plus SPI configuration on one extension cable.
 
 ## Development status

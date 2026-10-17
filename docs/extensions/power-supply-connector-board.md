@@ -6,6 +6,8 @@ permalink: /extensions/power-supply-connector-board
 
 # Power supply connector board
 
+{% include extension-board-visuals.html slug="power-supply-connector-board" %}
+
 Convert an LED-style 12–24 V power-supply terminal interface into safer Smoothie-compatible connectors, regulated 5 V, replaceable fusing and controlled main-rail shutdown.
 
 ## Development status

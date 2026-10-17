@@ -6,6 +6,8 @@ permalink: /extensions/uart-breakout
 
 # UART breakout
 
+{% include extension-board-visuals.html slug="uart-breakout" %}
+
 Adapt a U socket to the historical six-pin FTDI-cable header for UART diagnostics.
 
 ## Development status

@@ -6,6 +6,8 @@ permalink: /extensions/universal-panel-adapter
 
 # Universal panel adapter
 
+{% include extension-board-visuals.html slug="universal-panel-adapter" %}
+
 Adapt a bounded list of legacy control panels to current V2 through explicitly selected Gadgeteer interfaces.
 
 ## Development status

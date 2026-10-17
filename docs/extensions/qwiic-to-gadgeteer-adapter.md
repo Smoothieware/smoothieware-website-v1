@@ -6,6 +6,8 @@ permalink: /extensions/qwiic-to-gadgeteer-adapter
 
 # Qwiic-to-Gadgeteer adapter
 
+{% include extension-board-visuals.html slug="qwiic-to-gadgeteer-adapter" %}
+
 Connect SparkFun Qwiic I²C modules to a Smoothieboard Gadgeteer type-I socket.
 This is the planned adapter requested by the maintainer on 2026-10-03 and also
 listed in the original specification's OTHER IDEAS section.

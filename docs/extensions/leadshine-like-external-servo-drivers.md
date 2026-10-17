@@ -6,6 +6,8 @@ permalink: /extensions/leadshine-like-external-servo-drivers
 
 # Leadshine-like external servo drivers
 
+{% include extension-board-visuals.html slug="leadshine-like-external-servo-drivers" %}
+
 Requirements placeholder for an external servo drive; no motor/control architecture is yet defined.
 
 ## Development status

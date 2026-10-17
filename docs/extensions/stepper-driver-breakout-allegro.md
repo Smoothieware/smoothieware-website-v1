@@ -6,6 +6,8 @@ permalink: /extensions/stepper-driver-breakout-allegro
 
 # Stepper motor driver breakout board (Allegro)
 
+{% include extension-board-visuals.html slug="stepper-driver-breakout-allegro" %}
+
 Add one on-board A5984 bipolar stepper driver controlled by a Smoothie V2 extension port.
 
 ## Development status

@@ -6,6 +6,8 @@ permalink: /extensions/spi-hub
 
 # SPI hub
 
+{% include extension-board-visuals.html slug="spi-hub" %}
+
 Fan one S socket into four independently selected downstream S sockets while preventing unselected devices from loading or driving the shared bus.
 
 ## Development status

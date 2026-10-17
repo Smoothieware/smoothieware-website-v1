@@ -6,6 +6,8 @@ permalink: /extensions/breadboard-board
 
 # Breadboard board
 
+{% include extension-board-visuals.html slug="breadboard-board" %}
+
 Expose a Y Gadgeteer port safely to solderless-breadboard rows for prototyping, with an explicit choice between horizontal signal-only and vertical rail-connected variants.
 
 ## Development status

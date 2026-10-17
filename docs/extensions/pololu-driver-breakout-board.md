@@ -6,6 +6,8 @@ permalink: /extensions/pololu-driver-breakout-board
 
 # Pololu driver breakout board
 
+{% include extension-board-visuals.html slug="pololu-driver-breakout-board" %}
+
 Carry three genuine Pololu item 2128 A4988 Black Edition modules on one
 Smoothieboard Y socket. Each channel has STEP and DIR; all three share one
 active-low ENABLE signal. The design is a KiCad-only CERN OHL hardware project.

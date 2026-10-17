@@ -6,6 +6,8 @@ permalink: /extensions/general-purpose-output-servo-board
 
 # Additional general purpose outputs breakout / Servo board
 
+{% include extension-board-visuals.html slug="general-purpose-output-servo-board" %}
+
 Provide seven buffered output channels on servo-style Ground/Power/Signal connectors for servos, SSR inputs, or external driver logic.
 
 ## Development status

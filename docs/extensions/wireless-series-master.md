@@ -6,6 +6,8 @@ permalink: /extensions/wireless-series-master
 
 # Wireless series Smoothieboard-side master
 
+{% include extension-board-visuals.html slug="wireless-series-master" %}
+
 Host-side radio endpoint for a deliberately configured remote-I/O protocol; it is not a transparent wire replacement.
 
 ## Development status

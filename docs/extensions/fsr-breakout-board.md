@@ -6,6 +6,8 @@ permalink: /extensions/fsr-breakout-board
 
 # FSR breakout board
 
+{% include extension-board-visuals.html slug="fsr-breakout-board" %}
+
 Combine three force-sensitive resistor channels into one switch-like endstop/probe output.
 
 ## Development status

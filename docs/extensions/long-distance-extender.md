@@ -6,6 +6,8 @@ permalink: /extensions/long-distance-extender
 
 # Long distance extender
 
+{% include extension-board-visuals.html slug="long-distance-extender" %}
+
 Carry one or three selected Smoothieboard signals and low-voltage power over a 10 m-class twisted-pair cable using a defined differential physical layer.
 
 ## Development status

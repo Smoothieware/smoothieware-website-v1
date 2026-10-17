@@ -6,6 +6,8 @@ permalink: /extensions/spi-pt100-amplifier-board
 
 # SPI PT100 amplifier board
 
+{% include extension-board-visuals.html slug="spi-pt100-amplifier-board" %}
+
 Measure one PT100 RTD using a dedicated SPI RTD converter and permit multiple uniquely selected boards on one SPI bus.
 
 ## Development status

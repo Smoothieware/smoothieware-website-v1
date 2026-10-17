@@ -6,6 +6,8 @@ permalink: /extensions/serial-to-wifi-board
 
 # Serial to WiFi board
 
+{% include extension-board-visuals.html slug="serial-to-wifi-board" %}
+
 Bridge a Smoothie UART to a local Wi-Fi network using a supported, certified Espressif module and an explicit firmware protocol.
 
 ## Development status

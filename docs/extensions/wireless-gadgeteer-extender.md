@@ -6,6 +6,8 @@ permalink: /extensions/wireless-gadgeteer-extender
 
 # Wireless Gadgeteer extender
 
+{% include extension-board-visuals.html slug="wireless-gadgeteer-extender" %}
+
 Paired seven-channel sampled digital-I/O radio endpoints with explicitly configured channel directions.
 
 ## Development status

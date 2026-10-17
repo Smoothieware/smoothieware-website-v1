@@ -6,6 +6,8 @@ permalink: /extensions/glcd-breakout
 
 # GLCD breakout
 
+{% include extension-board-visuals.html slug="glcd-breakout" %}
+
 Adapt a defined RepRapDiscount Full Graphic Smart Controller revision to Smoothie V2 while actively isolating its non-compliant ST7920 serial interface.
 
 ## Development status

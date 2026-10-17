@@ -6,6 +6,8 @@ permalink: /extensions/water-flow-sensor-adapter
 
 # Water-flow sensor adapter
 
+{% include extension-board-visuals.html slug="water-flow-sensor-adapter" %}
+
 Adapter for one specifically qualified three-wire pulse-output water-flow sensor, producing telemetry and/or a fail-safe no-flow event.
 
 ## Development status

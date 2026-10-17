@@ -6,6 +6,8 @@ permalink: /extensions/leadshine-like-external-stepper-drivers
 
 # Leadshine-like external stepper drivers
 
+{% include extension-board-visuals.html slug="leadshine-like-external-stepper-drivers" %}
+
 Research package for either an adapter to an existing external STEP/DIR drive or a new enclosed high-power Trinamic-based stepper drive; these are separate products.
 
 ## Development status

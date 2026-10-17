@@ -6,6 +6,8 @@ permalink: /extensions/atx-connector-board
 
 # ATX connector board
 
+{% include extension-board-visuals.html slug="atx-connector-board" %}
+
 Adapt a specifically supported ATX supply to Smoothie-compatible power connectors and controlled startup.
 
 ## Development status

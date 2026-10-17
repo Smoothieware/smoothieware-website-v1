@@ -6,6 +6,8 @@ permalink: /extensions/advanced-h-bridge-encoder-board
 
 # Advanced H-bridge encoder board
 
+{% include extension-board-visuals.html slug="advanced-h-bridge-encoder-board" %}
+
 Bidirectional 12 V brushed-DC motor driver with quadrature-encoder inputs, VNH5019A-E current sensing and a separate hardware overcurrent-cutoff path. The retained v31 study is rejected and must not be treated as a working motor controller.
 
 ## Development status

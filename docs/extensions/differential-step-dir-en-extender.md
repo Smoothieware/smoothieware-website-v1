@@ -6,6 +6,8 @@ permalink: /extensions/differential-step-dir-en-extender
 
 # Differential STEP/DIR/ENABLE extender
 
+{% include extension-board-visuals.html slug="differential-step-dir-en-extender" %}
+
 Provide a directional pair of extension boards that carries one axis's STEP,
 DIR and ENABLE commands from a Smoothieboard V2 Gadgeteer Y socket to a remote
 external stepper drive over three balanced twisted pairs.

@@ -6,6 +6,8 @@ permalink: /extensions/cheap-uart-adapter-breakout
 
 # Cheap UART adapter breakout
 
+{% include extension-board-visuals.html slug="cheap-uart-adapter-breakout" %}
+
 Adapt a specifically qualified low-cost CH340 USB-to-TTL module to a U socket.
 
 ## Development status

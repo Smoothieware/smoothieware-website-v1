@@ -6,6 +6,8 @@ permalink: /extensions/buzzer-module
 
 # Buzzer module
 
+{% include extension-board-visuals.html slug="buzzer-module" %}
+
 A small audible indicator for a Smoothieboard v2 (or any 3.3 V / 5 V controller). One control signal turns a
 buzzer on. It gives a machine an audible "job done", "alarm", "probe touched" or "door opened" cue without
 any firmware work beyond switching one output.

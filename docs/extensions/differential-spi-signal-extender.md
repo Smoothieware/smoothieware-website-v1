@@ -6,6 +6,8 @@ permalink: /extensions/differential-spi-signal-extender
 
 # Differential SPI signal extender
 
+{% include extension-board-visuals.html slug="differential-spi-signal-extender" %}
+
 Paired HOST and REMOTE boards carry one transparent SPI connection on four fixed-direction balanced data pairs. A separate two-wire link transports external 12 V power. This document reconciles the retained prototype contract; it does not certify the existing CAD or a physical assembly.
 
 ## Development status

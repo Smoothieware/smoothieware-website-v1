@@ -6,6 +6,8 @@ permalink: /extensions/intel-edison-breakout
 
 # Intel Edison breakout
 
+{% include extension-board-visuals.html slug="intel-edison-breakout" %}
+
 Historical record only for a discontinued Intel Edison carrier concept.
 
 ## Development status

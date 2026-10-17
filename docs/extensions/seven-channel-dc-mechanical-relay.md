@@ -6,6 +6,8 @@ permalink: /extensions/seven-channel-dc-mechanical-relay
 
 # Seven-channel DC mechanical relay
 
+{% include extension-board-visuals.html slug="seven-channel-dc-mechanical-relay" %}
+
 Seven-channel mechanical-relay output study for specified DC loads. Coil indicators show command/coil state; they do not prove that a contact has switched or that a connected load is drawing current.
 
 ## Development status

@@ -6,6 +6,8 @@ permalink: /extensions/mechanical-endstop-breakout
 
 # Mechanical endstop breakout
 
+{% include extension-board-visuals.html slug="mechanical-endstop-breakout" %}
+
 Interface one normally-closed mechanical endstop to a protected Smoothieboard input using the standard Signal/Ground/5 V field connector.
 
 ## Development status

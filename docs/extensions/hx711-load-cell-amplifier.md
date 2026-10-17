@@ -6,6 +6,8 @@ permalink: /extensions/hx711-load-cell-amplifier
 
 # HX711 load-cell amplifier
 
+{% include extension-board-visuals.html slug="hx711-load-cell-amplifier" %}
+
 HX711 load-cell measurement adapter with separate load-cell screw terminals and keyed Gadgeteer host/chain connections. DOUT/data-ready and PD_SCK require the board-specific digital interface; this is not an I²C peripheral.
 
 ## Development status

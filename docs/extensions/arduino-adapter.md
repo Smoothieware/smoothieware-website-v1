@@ -6,6 +6,8 @@ permalink: /extensions/arduino-adapter
 
 # Arduino adapter
 
+{% include extension-board-visuals.html slug="arduino-adapter" %}
+
 Adapt a bounded subset of Arduino Uno Rev3-style shields to Smoothieboard through A, S and U sockets with explicit compatibility limits.
 
 ## Development status

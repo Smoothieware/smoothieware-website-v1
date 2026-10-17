@@ -6,6 +6,8 @@ permalink: /extensions/servo-control
 
 # Servo control
 
+{% include extension-board-visuals.html slug="servo-control" %}
+
 Retained TMC4671-LA field-oriented-control interface study with S-socket host/chain, encoder/Hall inputs and an external power-stage interface. This supersedes the older hobby-servo/P-socket idea; the board is not itself a qualified motor power stage.
 
 ## Development status

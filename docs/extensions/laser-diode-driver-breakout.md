@@ -6,6 +6,8 @@ permalink: /extensions/laser-diode-driver-breakout
 
 # Laser diode driver breakout
 
+{% include extension-board-visuals.html slug="laser-diode-driver-breakout" %}
+
 Fixed-current, hardware-permitted PWM driver study for an ams OSRAM PLPT5 447KA 445 nm laser diode. The prototype commands approximately 0.849 A; the historical 2.5 W aspiration is not an achieved optical rating. Current evaluation is restricted to a dummy load.
 
 ## Development status

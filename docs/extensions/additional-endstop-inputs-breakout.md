@@ -6,6 +6,8 @@ permalink: /extensions/additional-endstop-inputs-breakout
 
 # Additional endstop inputs breakout
 
+{% include extension-board-visuals.html slug="additional-endstop-inputs-breakout" %}
+
 Seven-channel endstop/probe input adapter. Six ordinary digital channels use Schmitt conditioning; the seventh has a separate probe comparator. The retained study supports alternative 2.54 mm headers and 2.5 mm TRS jacks on the ordinary channels.
 
 ## Development status

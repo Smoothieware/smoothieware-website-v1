@@ -6,6 +6,8 @@ permalink: /extensions/chip-breakout-board
 
 # C.H.I.P. breakout board
 
+{% include extension-board-visuals.html slug="chip-breakout-board" %}
+
 Archival carrier concept connecting a C.H.I.P. computer module to Smoothie through UART and optional external power.
 
 ## Development status

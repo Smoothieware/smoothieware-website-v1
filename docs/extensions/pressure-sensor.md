@@ -6,6 +6,8 @@ permalink: /extensions/pressure-sensor
 
 # Pressure sensor
 
+{% include extension-board-visuals.html slug="pressure-sensor" %}
+
 Unresolved pressure-sensing board for an OpenPnP-related pneumatic application.
 
 ## Development status

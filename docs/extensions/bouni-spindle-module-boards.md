@@ -6,6 +6,8 @@ permalink: /extensions/bouni-spindle-module-boards
 
 # Bouni spindle module boards
 
+{% include extension-board-visuals.html slug="bouni-spindle-module-boards" %}
+
 **Reviewed saved V19 candidates — 2026-10-13.** Both analog and RS485 roles now carry current revision labels, complete documentation URLs and power-off wiring notes. Parent review verifies785 historical files,45 declared model references,40 export files and all12 current views. Analog has zero enabled native findings; RS485 retains three text-thickness warnings and five ignored rule categories, with zero schematic findings. All non-silk geometry and model expressions match V18. The larger analog DAC outline remains; priced savings, transfer/insulation/host/physical qualification and fabrication release remain open.
 
 ## Additive PWM DAC candidate: family v18 (2026-10-13)

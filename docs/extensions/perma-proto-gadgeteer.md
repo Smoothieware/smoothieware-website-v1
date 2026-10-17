@@ -6,6 +6,8 @@ permalink: /extensions/perma-proto-gadgeteer
 
 # Gadgeteer perma-proto breadboard
 
+{% include extension-board-visuals.html slug="perma-proto-gadgeteer" %}
+
 Solderable breadboard-style prototyping board with thirty 2.54 mm columns, split five-hole groups and four horizontal power rails, plus Gadgeteer access. It is a soldered prototyping substrate, not a solderless breadboard.
 
 ## Development status

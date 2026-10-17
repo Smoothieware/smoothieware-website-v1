@@ -6,6 +6,8 @@ permalink: /extensions/laser-psu-adapter-board
 
 # Laser PSU adapter board
 
+{% include extension-board-visuals.html slug="laser-psu-adapter-board" %}
+
 Provide fail-safe 5 V PWM/TTL control and individually diagnosable normally-closed protection inputs for a specified CO2 laser power supply.
 
 ## Development status

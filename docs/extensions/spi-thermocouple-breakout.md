@@ -6,6 +6,8 @@ permalink: /extensions/spi-thermocouple-breakout
 
 # SPI thermocouple breakout
 
+{% include extension-board-visuals.html slug="spi-thermocouple-breakout" %}
+
 Measure one K-type thermocouple with a cold-junction-compensated SPI converter.
 
 ## Additive MAX31856 revision v15 — 2026-10-13

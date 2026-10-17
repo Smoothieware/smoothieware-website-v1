@@ -6,6 +6,8 @@ permalink: /extensions/laser-barrier-board
 
 # Laser barrier board
 
+{% include extension-board-visuals.html slug="laser-barrier-board" %}
+
 Paired modulated optical emitter and receiver for tool-presence checking or non-certified machine interlock experiments.
 
 ## Development status

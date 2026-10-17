@@ -6,6 +6,8 @@ permalink: /extensions/seven-channel-ac-mechanical-relay
 
 # Seven-channel AC mechanical relay
 
+{% include extension-board-visuals.html slug="seven-channel-ac-mechanical-relay" %}
+
 Seven-channel mechanically switched AC-load study with host-side control, relay coils and separated load wiring. Mains insulation, coil-power allocation, enclosure, thermal behavior and relay/contact ratings require qualification before use.
 
 ## Development status

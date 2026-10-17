@@ -6,6 +6,8 @@ permalink: /extensions/button-boards
 
 # Button boards
 
+{% include extension-board-visuals.html slug="button-boards" %}
+
 Mechanical-button boards in one-button standard-input and seven-button Gadgeteer variants.
 
 ## Development status
