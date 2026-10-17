@@ -1,0 +1,349 @@
+<!doctype html>
+<html lang="en" data-version="v1" data-embed="true"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Local Smoothieware v1 configuration checker, based on the documentation definitions."><title>Smoothieware v1 configuration checker</title><link rel="stylesheet" href="/tools/config-checker/checker.css"><script src="/tools/config-checker/vendor/js-yaml.min.js" defer></script><script type="module" src="/tools/config-checker/app.js"></script></head>
+<body><a class="skip" href="#config">Skip to configuration</a><main class="shell">
+
+<div class="checker"><header class="tool-head"><div class="tool-title"><!--
+category: System
+tags: [settings, sliders, controls, filter, options, preferences, tune, done, success, confirmed, approved, complete, tick, ok]
+version: "2.10"
+unicode: "f7fd"
+-->
+<svg aria-hidden="true" class="icon"
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M4 10a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+  <path d="M6 4v4" />
+  <path d="M6 12v8" />
+  <path d="M13.823 15.176a2 2 0 1 0 -2.638 2.651" />
+  <path d="M12 4v10" />
+  <path d="M16 7a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+  <path d="M18 4v1" />
+  <path d="M18 9v5" />
+  <path d="M15 19l2 2l4 -4" />
+</svg>
+<h1>Config checker</h1><span class="version-badge" aria-label="Smoothieware v1">v1</span></div><div class="head-actions"><button id="theme" class="icon-button" aria-label="Switch color theme" title="Switch color theme" data-tooltip><!--
+tags: [night, dark-mode, dark, theme, crescent, sleep, lunar, evening, moon]
+category: Weather
+version: "1.0"
+unicode: "eaf8"
+-->
+<svg aria-hidden="true" class="icon"
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454l0 .008" />
+</svg>
+</button><a class="icon-button" href="/tools/config-checker/v1/" target="_blank" rel="noopener" aria-label="Open standalone checker" title="Open standalone checker" data-tooltip><!--
+tags: [external-link, open-in-new, new-tab, new-window, link, launch, redirect, outbound, arrow, url, external]
+category: System
+version: "1.0"
+unicode: "ea99"
+-->
+<svg aria-hidden="true" class="icon"
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6" />
+  <path d="M11 13l9 -9" />
+  <path d="M15 4h5v5" />
+</svg>
+</a></div></header>
+<section class="editor-section" aria-label="Configuration input"><div class="toolbar"><label class="file-button" title="Open a configuration file"><!--
+tags: [upload, arrow-up, import, send, attach, document, file, share, cloud]
+category: Document
+version: "1.15"
+unicode: "ec91"
+-->
+<svg aria-hidden="true" class="icon"
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M14 3v4a1 1 0 0 0 1 1h4" />
+  <path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2" />
+  <path d="M12 11v6" />
+  <path d="M9.5 13.5l2.5 -2.5l2.5 2.5" />
+</svg>
+<span>Open</span><input type="file" id="file" aria-label="Choose configuration file"></label><button id="example" class="icon-button" data-ready disabled aria-label="Load syntax example" title="Load syntax example" data-tooltip><!--
+tags: [brackets, angle-brackets, html, source, programming, developer, coding, embed, markup, tag, code]
+category: Text
+version: "1.0"
+unicode: "ea77"
+-->
+<svg aria-hidden="true" class="icon"
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M7 8l-4 4l4 4" />
+  <path d="M17 8l4 4l-4 4" />
+  <path d="M14 4l-4 16" />
+</svg>
+</button><button id="clear" class="icon-button" aria-label="Clear configuration" title="Clear configuration" data-tooltip><!--
+tags: [delete, remove, bin, garbage, rubbish, waste-basket, trash-can, recycle-bin, trash]
+category: System
+version: "1.0"
+unicode: "eb41"
+-->
+<svg aria-hidden="true" class="icon"
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M4 7l16 0" />
+  <path d="M10 11l0 6" />
+  <path d="M14 11l0 6" />
+  <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12" />
+  <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" />
+</svg>
+</button><span class="toolbar-spacer"></span><button class="primary" id="check" data-ready disabled aria-label="Check v1 configuration" title="Check configuration (Ctrl or Command + Enter)"><!--
+tags: [play, start, run, media, video, audio, music, resume, triangle, controls, button, player]
+category: Media
+version: "1.28"
+unicode: "ed46"
+-->
+<svg aria-hidden="true" class="icon"
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M7 4v16l13 -8l-13 -8" />
+</svg>
+<span>Check</span></button></div>
+<div class="editor-meta"><label for="config">config</label><span id="filename">Paste text or open a file</span></div><textarea id="config" spellcheck="false" autocapitalize="off" autocomplete="off" maxlength="2000000" aria-describedby="syntax-hint" placeholder="# Paste your v1 configuration&#10;acceleration 100"></textarea><div class="syntax-line" id="syntax-hint"><code>setting value</code><span># comment</span><kbd title="Check with Ctrl or Command and Enter">Ctrl/⌘ ↵</kbd></div><p id="input-error" role="alert"></p></section>
+<section class="result-section" aria-labelledby="summary"><div class="result-head"><div class="status" role="status" aria-live="polite"><span id="status-icon" aria-hidden="true"><!--
+tags: [info, information, about, details, help, tip, i, circle, notice]
+category: System
+version: "1.0"
+unicode: "eac5"
+-->
+<svg aria-hidden="true" class="icon"
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" />
+  <path d="M12 9h.01" />
+  <path d="M11 12h1v4h1" />
+</svg>
+</span><h2 id="summary">Loading definitions…</h2></div><label class="filter-control"><span class="sr-only">Filter findings</span><select id="filter" aria-label="Filter findings"><option value="all">All findings</option><option value="error">Errors</option><option value="warning">Warnings</option><option value="info">Notes</option></select></label><div id="counts" class="counts">v1 definitions only</div></div><div id="results" tabindex="0" aria-label="Configuration findings"><p class="empty-result">Loading the definition file…</p></div></section>
+<footer class="tool-foot"><span class="privacy" title="Your configuration is never uploaded or saved"><!--
+tags: [lock, padlock, locked, security, secure, password, private, protected]
+category: System
+version: "1.0"
+unicode: "eae2"
+-->
+<svg aria-hidden="true" class="icon"
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M5 13a2 2 0 0 1 2 -2h10a2 2 0 0 1 2 2v6a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2v-6" />
+  <path d="M11 16a1 1 0 1 0 2 0a1 1 0 0 0 -2 0" />
+  <path d="M8 11v-4a4 4 0 1 1 8 0v4" />
+</svg>
+<span>Local only</span></span><span class="safety-note" title="Does not verify electrical or machine safety">Not a safety check</span><details class="help"><summary aria-label="Help, limits and source" title="Help, limits and source"><!--
+tags: [help, question, support, faq, question-mark, circle, info, assistance, unknown]
+category: System
+version: "2.10"
+unicode: "f91d"
+-->
+<svg aria-hidden="true" class="icon"
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" />
+  <path d="M12 16v.01" />
+  <path d="M12 13a2 2 0 0 0 .914 -3.782a1.98 1.98 0 0 0 -2.414 .483" />
+</svg>
+<span>Help & source</span></summary><div class="help-content"><p><strong>Checks:</strong> syntax, documented scalar types, explicit enum lists and duplicates. Unknown settings are coverage warnings.</p><p><strong>Not checked:</strong> completeness, numeric operating limits, strings, pin syntax or capabilities, wiring, collisions, interlocks, or electrical and machine safety. Firmware may coerce values differently. No machine connection or commands.</p><p>Examples show syntax only, not a complete machine configuration. Config text stays in memory; no upload or browser storage.</p><p><a href="/configuring-smoothie" target="_blank" rel="noopener"><!--
+tags: [read, reading, library, education, study, literature, novel, ebook, book]
+category: Document
+version: "1.50"
+unicode: "efc5"
+-->
+<svg aria-hidden="true" class="icon"
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M19 4v16h-12a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12" />
+  <path d="M19 16h-12a2 2 0 0 0 -2 2" />
+  <path d="M9 8h6" />
+</svg>
+ Configuration guide</a> · <a href="/tools/config-checker/v2/" target="_blank" rel="noopener">v2 checker</a></p><p>Definitions: <a href="/assets/data/smoothieware-v1-config.yaml" target="_blank" rel="noopener">smoothieware-v1-config.yaml</a>, the settings-tag source. Counts reflect entries, including aliases. Only this version is loaded.</p><p id="provenance">Definitions have not loaded yet.</p><p>v2 sections use the explicit source section, otherwise the module name with spaces. Only explicit instance placeholders expand. No version conversion.</p></div></details></footer></div><noscript><p>Enable JavaScript to check locally. No configuration is uploaded.</p></noscript></main><template id="icon-circle-check"><!--
+tags: [check, done, success, confirmed, approved, tick, ok, verified, complete, correct, checkmark, circle]
+category: Shapes
+version: "1.0"
+unicode: "ea67"
+-->
+<svg aria-hidden="true" class="icon"
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M3 12a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" />
+  <path d="M9 12l2 2l4 -4" />
+</svg>
+</template><template id="icon-alert-circle"><!--
+tags: [warning, error, info, danger, caution, attention, exclamation, notice, round, alert, circle]
+category: System
+version: "1.0"
+unicode: "ea05"
+-->
+<svg aria-hidden="true" class="icon"
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" />
+  <path d="M12 8v4" />
+  <path d="M12 16h.01" />
+</svg>
+</template><template id="icon-alert-triangle"><!--
+tags: [warning, caution, danger, error, hazard, exclamation, attention, risk, notice, alert, triangle]
+category: System
+version: "1.0"
+unicode: "ea06"
+-->
+<svg aria-hidden="true" class="icon"
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M12 9v4" />
+  <path d="M10.363 3.591l-8.106 13.534a1.914 1.914 0 0 0 1.636 2.871h16.214a1.914 1.914 0 0 0 1.636 -2.87l-8.106 -13.536a1.914 1.914 0 0 0 -3.274 0" />
+  <path d="M12 16h.01" />
+</svg>
+</template><template id="icon-info-circle"><!--
+tags: [info, information, about, details, help, tip, i, circle, notice]
+category: System
+version: "1.0"
+unicode: "eac5"
+-->
+<svg aria-hidden="true" class="icon"
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" />
+  <path d="M12 9h.01" />
+  <path d="M11 12h1v4h1" />
+</svg>
+</template><template id="icon-book-2"><!--
+tags: [read, reading, library, education, study, literature, novel, ebook, book]
+category: Document
+version: "1.50"
+unicode: "efc5"
+-->
+<svg aria-hidden="true" class="icon"
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M19 4v16h-12a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12" />
+  <path d="M19 16h-12a2 2 0 0 0 -2 2" />
+  <path d="M9 8h6" />
+</svg>
+</template></body></html>

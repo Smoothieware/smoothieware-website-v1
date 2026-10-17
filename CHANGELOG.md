@@ -6,6 +6,9 @@ History: see CHANGELOG.archive.md.
 
 ## [Unreleased]
 
+### Added
+- Add standalone and embeddable v1/v2 configuration checkers using the existing YAML definitions, local browser validation and regression tests.
+
 ### Changed
 - Update six extension-board pages with compact candidates, source-bound recovery results and remaining hardware qualification limits.
 - Document the separate motor firmware branch for ATC carousels using a DC motor and an encoder.

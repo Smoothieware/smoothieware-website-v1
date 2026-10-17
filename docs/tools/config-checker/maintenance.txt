@@ -1,0 +1,61 @@
+Smoothieware configuration checker
+
+Hosting: existing GitHub Pages repository Smoothieware/smoothieware-website-v1,
+main branch, /docs source, custom domain smoothieware.org. No API or upload endpoint.
+
+Published URLs:
+  /tools/config-checker/v1/
+  /tools/config-checker/v2/
+  /tools/config-checker/v1/embed/
+  /tools/config-checker/v2/embed/
+
+Source: app.ts (browser), engine.ts (pure validation), checker.css,
+generate.ts (static HTML generation), engine.test.ts (actual YAML regression cases).
+Compiled JS is checked in beside its TypeScript, following the public site convention.
+From the website repository root, regenerate only this tool with:
+  nice -n 19 ionice -c 3 bun docs/tools/config-checker/generate.ts
+  nice -n 19 ionice -c 3 bun node_modules/typescript/bin/tsc docs/tools/config-checker/app.ts docs/tools/config-checker/engine.ts --target ES2020 --module ESNext --lib ES2020,DOM,DOM.Iterable --strict --skipLibCheck
+  nice -n 19 ionice -c 3 bun test docs/tools/config-checker/engine.test.ts
+
+YAML is fetched directly from /assets/data/smoothieware-v1-config.yaml or
+smoothieware-v2-config.yaml, not copied into a parallel database. Only one version
+is fetched per page. SHA-256 identifies the actual loaded source. The metadata
+counts in these files are historical; the UI counts actual entries.
+
+Matching is case sensitive. Only explicit {name}/<name> placeholders are expanded,
+and each placeholder matches one dot-delimited segment. Explicit section wins;
+otherwise v2 section derives from module (underscores become spaces). A clean
+corresponding_v2 prefix supplies instance information where the name omits it.
+Switch scalar definitions are instance keys in [switch]. Documentation actuator
+x/y/z labels map to alpha/beta/gamma in [actuator], as confirmed by actuator_keys
+in SmoothieV2 Firmware/src/robot/Robot.cpp (local mirror lines 147-156). No other
+axis or instance aliases are invented. Spindle's explicit [switch.spindle] source
+section is retained with a source-conflict warning: Switch.cpp line 48 reads
+[switch] with spindle.* subkeys, not [switch.spindle]. The definitions are not edited.
+
+Scalar checks are documentation lint, not a byte-for-byte firmware emulator.
+Numbers must be finite decimal/scientific notation. Booleans accept common explicit
+spellings; v2 yes/no gets a coercion warning. Enum checks apply only to explicit,
+unambiguous value lists. Typical values, default descriptions and prose ranges
+never become numeric constraints. Pins receive an explicit unverified review note.
+No required-machine settings, cross-setting constraints, wiring or safety checks.
+# begins a comment even in quotes, matching the firmware ConfigReader behavior.
+Semicolon comments are not recognized by the firmware and are not discarded here.
+Unknown settings/sections and duplicates are warnings. No config is persisted.
+
+File reads use a revision token so typing, clearing or a later file invalidates
+earlier pending reads. The file input is reset so the same file can be loaded again.
+Files over 2 MB or containing NUL are rejected without replacing current text.
+Diagnostic text uses textContent, not innerHTML. At most 300 findings are rendered;
+all findings remain counted and filtering is available.
+
+Vendor assets:
+  js-yaml browser distribution from the site's existing js-yaml dependency,
+  with its MIT license at vendor/js-yaml.LICENSE.
+  Tabler SVGs from https://github.com/tabler/tabler-icons/tree/main/icons/outline
+  (adjustments-check, file-upload, code, moon, lock, external-link), retained locally
+  unchanged with icons/LICENSE. Generated HTML adds aria-hidden and the icon class.
+  No runtime CDN, analytics, browser persistence or third-party requests.
+
+Review before publishing. A push to main publishes the docs automatically;
+publishing and all Git commands require the user's separate authorization.
