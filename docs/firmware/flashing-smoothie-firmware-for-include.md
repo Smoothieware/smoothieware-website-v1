@@ -204,7 +204,27 @@ If the SD bootloader is missing or damaged, see [Flashing the Bootloader](/flash
 <v2>
 {:/nomarkdown}
 
-If the firmware cannot run, an SD-card self-update cannot repair it. The [SmoothieV2 initial bootstrap and debrick instructions](https://github.com/Smoothieware/SmoothieV2/blob/master/Firmware/README.md#initial-bootstrap-or-debrick) describe recovery using BOOT0 USB flashing or a supported hardware programmer. Follow the instructions for your board and the firmware build you intend to install.
+If the firmware cannot run, the SD-card update cannot start. You can instead use the microcontroller's USB device firmware update (DFU) mode to write a Prime firmware binary directly to internal flash. This replaces the installed firmware. Preserve your SD card configuration and use the correct, checksum-verified Prime binary from the download step above.
+
+1. Install [dfu-util](https://dfu-util.sourceforge.net/) on your computer. Connect the board's USB device port to the computer using a data-capable cable; see [Connecting to Smoothie](/connecting-smoothie) for the connection. Power the board as described there.
+2. Press and hold **BOOT0 (labelled MSC on the board)**. While holding it, press and release **RST**. Then release BOOT0. The board should now be in USB DFU mode rather than running Smoothie.
+3. In a terminal, list DFU devices:
+
+   ```text
+   dfu-util -l
+   ```
+
+   Look for the STM32 device, normally identified as `0483:df11`, and its internal flash entry. If it does not appear, check the USB data cable, power and button sequence; USB permissions or drivers may also need attention. Disconnect other DFU devices before continuing so you do not flash the wrong device.
+4. In the directory containing the downloaded `pr.bin`, run:
+
+   ```text
+   dfu-util -d 0483:df11 -a 0 -s 0x08000000 -D pr.bin
+   ```
+
+   This writes the binary to the start of internal flash. If your Prime binary has a different filename, substitute its actual path. Wait for the command to finish successfully; do not disconnect power or USB during the write.
+5. If the SD card still contains a failed or unwanted `flashme.bin`, power down and remove or rename that file on a computer before restarting, so it cannot trigger another update. Keep your `config.ini`. Safely eject and reinsert the card, then power the board and press **RST** without holding BOOT0. Connect to the board and check `version`, its configuration and machine functions as described above.
+
+If DFU is not detected or the firmware still does not start, consult the [initial bootstrap and debrick instructions](https://github.com/Smoothieware/SmoothieV2/blob/master/Firmware/README.md#initial-bootstrap-or-debrick) for supported hardware programmer recovery and board option-byte details. Avoid changing option bytes or erasing flash indiscriminately; those operations can affect recovery.
 
 {::nomarkdown}
 </v2>
