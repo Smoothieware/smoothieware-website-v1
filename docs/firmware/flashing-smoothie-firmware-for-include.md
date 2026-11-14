@@ -1,377 +1,191 @@
+{::nomarkdown}
+<span id="flashing-smoothie"></span>
+{:/nomarkdown}
+
 # Flashing Smoothie Firmware
 
-Here is how to flash a new firmware to your Smoothieboard.
+Smoothieboards normally arrive with firmware installed. Flashing replaces that firmware; it is useful for updating or installing a custom build. Select your board version above, then follow the matching instructions below.
 
-
-
-{::nomarkdown}
-<versioned orientation="vertical">
-<v1>
-{:/nomarkdown}
-
-{::nomarkdown}
-<sl-alert variant="neutral" open>
-  <sl-icon slot="icon" name="info-circle"></sl-icon>
-  <strong>Smoothieboards come pre-flashed</strong><br><br>
-
-  You should not <strong>need</strong> to flash your Smoothieboard when you get it. You only need to do so to update it to a newer version of the firmware if you wish or if the pre-flashed firmware is not functioning properly.<br><br>
-
-  It is a good idea to flash your board to the latest stable version anyway when you first receive it.<br><br>
-
-  When you upgrade to a newer version, make sure you also upgrade your <a href="configuring-smoothie">configuration file</a>, to make sure the firmware can understand it. We try very hard to maintain backwards compatibility, however in the years since the start of the project, there have been a few very rare changes, so having a very old configuration with a very recent firmware can rarely cause problems.<br><br>
-
-  When upgrading from such a very old firmware, make sure you read <a href="https://github.com/smoothieware/smoothieware/blob/edge/upgrade-notes.md">the upgrade notes</a>.
-</sl-alert>
-{:/nomarkdown}
-
-{::nomarkdown}
-</v1>
-<v2>
-{:/nomarkdown}
-
-{::nomarkdown}
-<sl-alert variant="neutral" open>
-  <sl-icon slot="icon" name="info-circle"></sl-icon>
-  <strong>Smoothieboards V2 come pre-flashed</strong><br><br>
-
-  Smoothieboard V2 (Prime) comes with firmware pre-flashed. You only need to flash if you want to update to a newer version, use a custom build, or recover from a corrupted firmware.<br><br>
-
-  It is recommended to update to the latest stable version when you first receive your board, as it may include important bug fixes and improvements.<br><br>
-
-  When upgrading firmware versions, ensure your configuration file is compatible with the new version. V2 uses an INI-style configuration format (different from V1). See <a href="configuring-smoothie">configuration guide</a> and <a href="https://github.com/smoothieware/smoothieware/blob/edge/upgrade-notes.md">upgrade notes</a> for details.
-</sl-alert>
-{:/nomarkdown}
-
-{::nomarkdown}
-</v2>
-</versioned>
-{:/nomarkdown}
-
-
+Before updating, save a copy of your machine's SD card configuration and a known-working firmware binary, if you have one. Check that the new firmware is compatible with your configuration. Do not replace a working machine configuration with an example file without adapting it to the machine.
 
 ## Prerequisites
 
-
-
 {::nomarkdown}
 <versioned orientation="vertical">
 <v1>
 {:/nomarkdown}
 
-This guide presumes your Smoothieboard is already flashed with the [DFU bootloader](flashing-the-bootloader) ( it is already if you bought the board, it probably isn't if you built it yourself ).
+The SD card update method requires the [SD bootloader](/flashing-the-bootloader). Purchased Smoothieboards normally have it installed; a homemade board may need it installed first. Use a FAT32-formatted microSD card.
 
 {::nomarkdown}
 </v1>
 <v2>
 {:/nomarkdown}
 
-This guide covers flashing firmware to Smoothieboard V2 (Prime) with STM32H745 microcontroller. No bootloader installation is needed (unlike V1) - V2 firmware updates are handled through the bootloader that comes pre-installed.
+These instructions are for Smoothieboard V2 Prime with **working firmware**. The running firmware performs the SD card update; it is not an independent preinstalled SD bootloader. Keep the machine's working `config.ini` in the SD card root. If the board cannot run its firmware, use the [recovery instructions](#recovery) instead.
 
 {::nomarkdown}
 </v2>
 </versioned>
 {:/nomarkdown}
 
-
-
 ## Step by Step
 
-
-
 {::nomarkdown}
-<versioned orientation="vertical">
-<v1>
+<span id="download-v2-firmware"></span>
 {:/nomarkdown}
 
 ### Download
 
-The latest bin is available at [Smoothieware FirmwareBin](https://github.com/Smoothieware/Smoothieware/tree/edge/FirmwareBin)
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
 
-For detailed instructions and all the ways you can obtain a pre-made binary file or make your own, see [Getting Smoothie](getting-smoothie).
-
-### Copy
-
-Copy the file `firmware.bin` and `config.txt` to a micro SD card, then safely remove the SD card from your computer.
+Get a firmware binary appropriate for your board and machine from [Smoothieware FirmwareBin](https://github.com/Smoothieware/Smoothieware/tree/edge/FirmwareBin). For available variants and build instructions, see [Getting Smoothie](/getting-smoothie). Read the [upgrade notes](https://github.com/Smoothieware/Smoothieware/blob/edge/upgrade-notes.md) when moving from an old version.
 
 {::nomarkdown}
 </v1>
 <v2>
 {:/nomarkdown}
 
-### Download V2 Firmware
-
-Get the latest V2 firmware binary from:
-- **Official builds:** [Smoothieware V2 FirmwareBin](https://github.com/Smoothieware/smoothieware-v2/releases) - Stable releases and pre-built binaries
-- **Edge/dev builds:** [V2 Edge builds](https://github.com/Smoothieware/smoothieware-v2/tree/edge) - Latest development versions
-
-For building your own firmware from source, see [Compiling Smoothieware](compiling-smoothie).
-
-### Copy to SD Card (V2)
-
-Copy the firmware file to a micro SD card:
-1. Rename the firmware binary to `flashme.bin` (or `firmware.bin` for the active firmware slot)
-2. Copy to the root directory of your SD card
-3. Safely eject the SD card from your computer
+Download the [Prime firmware binary](https://download.smoothieware.org/pr.bin) and its [MD5 checksum](https://download.smoothieware.org/pr.md5), or consult the [SmoothieV2 releases](https://github.com/Smoothieware/SmoothieV2/releases). For a custom build, see the [source repository](https://github.com/Smoothieware/SmoothieV2) and [Compiling Smoothie](/compiling-smoothie). Use a binary built for **Prime**; binaries for other targets are not interchangeable.
 
 {::nomarkdown}
 </v2>
 </versioned>
 {:/nomarkdown}
 
+Make sure you download the binary itself, not the HTML page displaying it. If the publisher provides a checksum, compare it with the downloaded file.
 
+{::nomarkdown}
+<span id="copy"></span><span id="copy-to-sd-card-v2"></span>
+{:/nomarkdown}
 
-
+### Copy to the SD card
 
 {::nomarkdown}
 <versioned orientation="vertical">
 <v1>
 {:/nomarkdown}
 
-{::nomarkdown}
-<sl-alert variant="warning" open>
-  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
-  <strong>Filename</strong><br><br>
-
-  Make sure the file is named <code>firmware.bin</code>, and not anything else.<br><br>
-
-  Also make sure you downloaded the file itself, and not the HTML page containing it, as this would cause chaos. A good method is to check the MD5 sum for the file you downloaded ( or opening it in a web browser ).
-</sl-alert>
-{:/nomarkdown}
-
-Make sure you eject the SD card from your computer properly ( "eject" in your file explorer's menus ).
+1. Copy the firmware binary to the **root** of the microSD card and name it exactly `firmware.bin`.
+2. Keep your machine's existing `config.txt` on the card. If setting up a new machine, prepare the configuration for that machine using [Configuring Smoothie](/configuring-smoothie).
+3. Safely eject the card from your computer.
 
 {::nomarkdown}
 </v1>
 <v2>
 {:/nomarkdown}
 
-{::nomarkdown}
-<sl-alert variant="warning" open>
-  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
-  <strong>Filename - Important for V2</strong><br><br>
-
-  For automatic flashing on boot, name the file <code>flashme.bin</code> (not just <code>firmware.bin</code>).<br><br>
-
-  Make sure you downloaded the binary file itself, and not the HTML page. Verify by checking file size and, if available, MD5 checksum from the release notes.<br><br>
-
-  Example: If you see the file size is 4 KB instead of 100+ KB, it's probably an HTML page - re-download correctly.
-</sl-alert>
-{:/nomarkdown}
-
-Always safely eject the SD card from your computer before inserting it into the Smoothieboard.
+1. Copy the Prime firmware binary to the **root** of the microSD card and name it exactly `flashme.bin`.
+2. Keep your machine's existing `config.ini` on the card. See [Configuring Smoothie](/configuring-smoothie) when preparing a new configuration.
+3. Safely eject the card from your computer.
 
 {::nomarkdown}
 </v2>
 </versioned>
 {:/nomarkdown}
 
+{::nomarkdown}
+<span id="power"></span><span id="observe"></span>
+{:/nomarkdown}
 
+### Power and update
 
-### Power
-
-
+Insert the card in the board and power or reset it. Do not remove power or the card during the update.
 
 {::nomarkdown}
 <versioned orientation="vertical">
 <v1>
 {:/nomarkdown}
 
-Plug the SD card into the SmoothieBoard SD card slot, then plug a mini USB cable into the board. (pictures ???)
+The bootloader looks for `firmware.bin` and flashes it. The LEDs count up during the process; the board then starts the firmware.
 
 {::nomarkdown}
 </v1>
 <v2>
 {:/nomarkdown}
 
-Insert the SD card into the Smoothieboard V2 SD card slot, then connect a USB-C cable to power the board. The board will boot automatically and check for the <raw>flashme.bin</raw> file.
+The running firmware checks for `flashme.bin` during startup and, if it is valid, starts the update. This automatic check can be disabled by the `flash_on_boot` setting. If the board is running but automatic flashing is disabled, connect a console and issue `flash` after copying the file. The command is refused while the machine is busy or heaters are on.
 
 {::nomarkdown}
 </v2>
 </versioned>
 {:/nomarkdown}
-
-
-
-### Observe
-
-
-
-{::nomarkdown}
-<versioned orientation="vertical">
-<v1>
-{:/nomarkdown}
-
-Smoothie will boot and you should see the LEDs count up for a few seconds, then they will start flashing, at this point Smoothie has flashed the latest version of Smoothie and is running.
-
-{::nomarkdown}
-<sl-alert variant="neutral" open>
-  <sl-icon slot="icon" name="info-circle"></sl-icon>
-  <strong>SD Card Problems</strong><br><br>
-
-  If there is a problem with the SD card, LED4 will be off.<br><br>
-
-  If this happens, you need to format the SD card to FAT32, and if that fails, use another SD card.<br><br>
-
-  If the LEDs do not perform the count up sequence your firmware flashing did not complete.<br><br>
-
-  If this happens, you need to verify your formatting and naming of your files which should be:
-  <ul>
-    <li><code>firmware.bin</code></li>
-    <li><code>config.txt</code></li>
-  </ul>
-</sl-alert>
-{:/nomarkdown}
-
-{::nomarkdown}
-</v1>
-<v2>
-{:/nomarkdown}
-
-When the board powers on, it will check for the <raw>flashme.bin</raw> file on the SD card. The firmware flashing process is automatic:
-
-1. **Check**: Board validates the <raw>flashme.bin</raw> file (MD5 checksum, file size, magic number)
-2. **Flash**: If valid, the firmware is programmed into the board's internal flash memory
-3. **Verify**: Board confirms successful write and renames the file to <raw>flashme.old</raw>
-4. **Boot**: Board boots with the new firmware
-
-Watch the board's status indicator or serial console output (115200 baud) to confirm the flashing process completes successfully.
-
-{::nomarkdown}
-<sl-alert variant="neutral" open>
-  <sl-icon slot="icon" name="info-circle"></sl-icon>
-  <strong>V2 Firmware Flashing Troubleshooting</strong><br><br>
-
-  <strong>File not found or not flashing:</strong> Ensure the file is named exactly <code>flashme.bin</code> (not <code>firmware.bin</code>) and is in the SD card root directory.<br><br>
-
-  <strong>Invalid file error:</strong> The firmware file may be corrupted. Verify MD5 checksum from release notes and re-download if necessary.<br><br>
-
-  <strong>SD card problems:</strong> Format the card to FAT32 if flashing doesn't work. Use a different SD card to test.<br><br>
-
-  <strong>Rollback:</strong> If you need to restore the previous firmware, copy the <code>flashme.old</code> file and rename it to <code>flashme.bin</code>, then reboot.
-</sl-alert>
-{:/nomarkdown}
-
-{::nomarkdown}
-</v2>
-</versioned>
-{:/nomarkdown}
-
-
 
 ### Verification
 
-
-
 {::nomarkdown}
 <versioned orientation="vertical">
 <v1>
 {:/nomarkdown}
 
-You can make sure the new firmware was flashed by looking at the content of the SD card.
-
-If the firmware was flashed successfully, the filename should have changed from `firmware.bin` to `FIRMWARE.CUR`.
-
-The `config.txt` will always remain `config.txt`.
+After the board has restarted, inspect the SD card. The bootloader normally renames `firmware.bin` to `FIRMWARE.CUR`. Then connect to the board and use the `version` console command to check the running firmware. A renamed file alone does not establish that the machine's configuration and functions are correct.
 
 {::nomarkdown}
 </v1>
 <v2>
 {:/nomarkdown}
 
-After flashing, verify successful completion by checking the SD card contents. The firmware file status changes indicate success:
-
-- **Successful flash**: <raw>flashme.bin</raw> is renamed to <raw>flashme.old</raw>
-- **Failed flash**: <raw>flashme.bin</raw> remains unchanged (check file integrity and re-download if needed)
-
-The active firmware is identified by checking the serial console at startup or using the version command.
+After the board has restarted, connect to it and use the `version` console command to check the running firmware. The updater may rename the submitted image to `flashme.old` even if programming fails. It is **not** a backup of the previous firmware. The renamed file alone does not establish that the new firmware is running correctly or that the machine's configuration is correct.
 
 {::nomarkdown}
 </v2>
 </versioned>
 {:/nomarkdown}
 
+Check the configuration and machine functions before returning the machine to normal use.
 
+{::nomarkdown}
+<span id="terminal"></span><span id="useful-commands"></span>
+{:/nomarkdown}
 
 ### Connect
 
+Connect a USB cable and use [Pronterface](/pronterface) or another [host program](/software), or use a serial console with line-feed line endings. The board appears as a serial USB device. On Windows, see [Windows drivers](/windows-drivers) if needed. Type `help` for commands and `version` for the running firmware version. See the [console commands](/console-commands) and [supported G-codes](/supported-g-codes) references.
 
-
-{::nomarkdown}
-<versioned orientation="vertical">
-<v1>
-{:/nomarkdown}
-
-You can now connect to Smoothie with [Pronterface](pronterface) ( or any other host program, see [Software](software) ) at any baud rate, look for a serial USB device on your computer.
-
-If running Windows you may need to install the [Windows Drivers](windows-drivers).
-
-Mac OS/X and Linux have the drivers built in.
-
-You can ignore any messages about missing DFU drivers.
-
-{::nomarkdown}
-</v1>
-<v2>
-{:/nomarkdown}
-
-You can now connect to Smoothieboard V2 with [Pronterface](pronterface) or any other host program (see [Software](software)) via USB. The board appears as a serial USB device on your computer.
-
-**Connection:**
-- Linux/Mac: Drivers built-in, use `/dev/ttyACM0` or similar
-- Windows: Drivers typically installed automatically; if not, check Device Manager
-
-Baud rate: The V2 firmware uses **115200 baud** for serial communication (unlike V1 which is variable).
-
-{::nomarkdown}
-</v2>
-</versioned>
-{:/nomarkdown}
-
-
-
-### Terminal
-
-
+## Troubleshooting
 
 {::nomarkdown}
 <versioned orientation="vertical">
 <v1>
 {:/nomarkdown}
 
-You can also connect to Smoothie with any serial console program, which should be set to local echo and Linefeed line endings.
-
-Typing `help` will show a list of console commands available.
+- **The file was not renamed:** Check that the card is readable, formatted as FAT32, and that `firmware.bin` is in its root with the exact name. Try another card if necessary. Check that the [SD bootloader](/flashing-the-bootloader) is installed.
+- **The board starts but the machine behaves differently:** Check the running version, your saved configuration and the [upgrade notes](https://github.com/Smoothieware/Smoothieware/blob/edge/upgrade-notes.md).
 
 {::nomarkdown}
 </v1>
 <v2>
 {:/nomarkdown}
 
-You can also connect to Smoothieboard V2 with any serial console program:
-
-- **Baud rate**: 115200
-- **Echo**: Local echo enabled
-- **Line endings**: Linefeed (LF) or Carriage Return + Linefeed (CRLF)
-
-Type `help` to see available console commands.
+- **The update does not start:** Check that the running firmware starts successfully, `config.ini` is present, and `flashme.bin` is in the card root. Check whether `flash_on_boot` is disabled; a running board can instead update with the `flash` console command. Check the console for errors.
+- **The image is rejected:** Obtain a complete binary built for Prime and check its integrity. Try another readable FAT32 card if the card is suspect.
+- **You need to return to an older version:** Use a separately saved, known-working Prime binary as `flashme.bin` and update again while the firmware is running. `flashme.old` is not the previous firmware. If the firmware cannot run, follow the recovery instructions below.
 
 {::nomarkdown}
 </v2>
 </versioned>
 {:/nomarkdown}
 
+## Recovery
 
+{::nomarkdown}
+<versioned orientation="vertical">
+<v1>
+{:/nomarkdown}
 
-## Useful Commands
+If the SD bootloader is missing or damaged, see [Flashing the Bootloader](/flashing-the-bootloader) for installation and recovery.
 
+{::nomarkdown}
+</v1>
+<v2>
+{:/nomarkdown}
 
+If the firmware cannot run, an SD-card self-update cannot repair it. The [SmoothieV2 initial bootstrap and debrick instructions](https://github.com/Smoothieware/SmoothieV2/blob/master/Firmware/README.md#initial-bootstrap-or-debrick) describe recovery using BOOT0 USB flashing or a supported hardware programmer. Follow the instructions for your board and the firmware build you intend to install.
 
-Some useful console commands are:
-
-- `version` - Shows the current Smoothieware version and build info
-- `ls /sd` - Lists the files on the SD card
-- `play /sd/file` - Sends a G-code file from SD card to the machine
-
-More commands can be found on the [Console commands list](console-commands) and useful G-codes are in the [Supported G-codes list](supported-g-codes).
-
-
+{::nomarkdown}
+</v2>
+</versioned>
+{:/nomarkdown}

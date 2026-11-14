@@ -12,6 +12,8 @@ History: see CHANGELOG.archive.md.
 - Add standalone and embeddable v1/v2 configuration checkers using the existing YAML definitions, local browser validation and regression tests.
 
 ### Changed
+
+- Rewrote the firmware flashing guide with separate board-specific update and recovery steps, configuration preservation, verification and corrected rollback guidance.
 - Prepare a user-managed local Jekyll service with sudo-free routine commands, Git-aware repository mounts and background scheduling inside the container; remove the racy post-start scheduling dependency. One-time root handover and live activation verification remain pending.
 - Update six extension-board pages with compact candidates, source-bound recovery results and remaining hardware qualification limits.
 - Document the separate motor firmware branch for ATC carousels using a DC motor and an encoder.
