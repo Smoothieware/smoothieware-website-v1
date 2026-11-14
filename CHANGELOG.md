@@ -8,6 +8,8 @@ History: see CHANGELOG.archive.md.
 
 ### Added
 
+- Added Linux package installation commands for dfu-util to the firmware recovery guide.
+
 - Embed revision-captioned abstract board diagrams and available source-verified populated renders on all 80 extension-board pages, with full-size image links and mobile-friendly galleries.
 - Add standalone and embeddable v1/v2 configuration checkers using the existing YAML definitions, local browser validation and regression tests.
 

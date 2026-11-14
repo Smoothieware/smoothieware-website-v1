@@ -207,6 +207,24 @@ If the SD bootloader is missing or damaged, see [Flashing the Bootloader](/flash
 If the firmware cannot run, the SD-card update cannot start. You can instead use the microcontroller's USB device firmware update (DFU) mode to write a Prime firmware binary directly to internal flash. This replaces the installed firmware. Preserve your SD card configuration and use the correct, checksum-verified Prime binary from the download step above.
 
 1. Install [dfu-util](https://dfu-util.sourceforge.net/) on your computer. Connect the board's USB device port to the computer using a data-capable cable; see [Connecting to Smoothie](/connecting-smoothie) for the connection. Power the board as described there.
+
+   > **Installing dfu-util on Linux**
+   >
+   > Ubuntu, Debian and derivatives:
+   >
+   >     sudo apt-get update
+   >     sudo apt-get install dfu-util
+   >
+   > Fedora:
+   >
+   >     sudo dnf install dfu-util
+   >
+   > Arch Linux:
+   >
+   >     sudo pacman -S dfu-util
+   >
+   > On Ubuntu, the package is in the Universe repository. If it cannot be found, enable Universe and update the package lists.
+
 2. Press and hold **BOOT0 (labelled MSC on the board)**. While holding it, press and release **RST**. Then release BOOT0. The board should now be in USB DFU mode rather than running Smoothie.
 3. In a terminal, list DFU devices:
 
