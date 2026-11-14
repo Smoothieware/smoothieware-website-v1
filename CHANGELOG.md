@@ -15,6 +15,8 @@ History: see CHANGELOG.archive.md.
 
 ### Changed
 
+- Grouped the homepage extension-board links into responsive columns, placed them before research, and moved reviews to the bottom.
+
 - Added step-by-step USB DFU recovery, identified the BOOT0 button by its MSC board label, and restored the extension-board include path needed for website publishing.
 
 - Restored prominent flashing warnings and SD-card troubleshooting clues, and linked the flashing guide to the dedicated connection instructions.

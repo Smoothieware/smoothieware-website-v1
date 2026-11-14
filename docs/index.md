@@ -347,15 +347,171 @@ More: [Windows Drivers](windows-drivers), [Linux Drivers](linux-drivers), [Mac D
 
 Current edge build status: [![Build Status](https://app.travis-ci.com/Smoothieware/Smoothieware.svg?branch=edge)](https://app.travis-ci.com/Smoothieware/Smoothieware)
 
-# Reviews
+<!-- extension-board-directory:start -->
+## Extension boards
 
-[Watch a review](http://www.youtube.com/embed/vsu_vAKvRO0?hd=1)
+These 80 extension-board pages describe development studies, their wiring requirements and remaining qualification limits. They are not fabrication or operating approvals. Select the exact board and revision before wiring.
 
 {::nomarkdown}
-<a href="/images/oshw-logo.png">
-  <img src="/images/oshw-logo.png" alt="OSHW logo" style="width:75px; height:auto;"/>
-</a>
+<style>
+  .homepage-extension-groups { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0 1.5rem; }
+  .homepage-extension-groups section { min-width: 0; }
+  @media (max-width: 800px) { .homepage-extension-groups { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (max-width: 520px) { .homepage-extension-groups { grid-template-columns: 1fr; } }
+</style>
+<div class="homepage-extension-groups">
 {:/nomarkdown}
+
+{::nomarkdown}
+<section markdown="1">
+{:/nomarkdown}
+
+### Motor and motion control
+
+- [Advanced H-bridge encoder board](/extensions/advanced-h-bridge-encoder-board)
+- [Bouni spindle module boards](/extensions/bouni-spindle-module-boards)
+- [Leadshine-like external servo drivers](/extensions/leadshine-like-external-servo-drivers)
+- [Leadshine-like external stepper drivers](/extensions/leadshine-like-external-stepper-drivers)
+- [Pololu driver breakout board](/extensions/pololu-driver-breakout-board)
+- [Servo control](/extensions/servo-control)
+- [Stepper motor driver breakout board (Allegro)](/extensions/stepper-driver-breakout-allegro)
+- [Stepper motor driver breakout board (Trinamic)](/extensions/stepper-driver-breakout-trinamic)
+- [Position feedback board](/extensions/position-feedback-board)
+
+{::nomarkdown}
+</section>
+{:/nomarkdown}
+
+{::nomarkdown}
+<section markdown="1">
+{:/nomarkdown}
+
+### Sensors and inputs
+
+- [Additional endstop inputs breakout](/extensions/additional-endstop-inputs-breakout)
+- [BLTouch-like probe](/extensions/bltouch-like-probe)
+- [Filament encoder board](/extensions/filament-encoder-board)
+- [Filament progress sensor](/extensions/filament-progress-sensor)
+- [FSR breakout board](/extensions/fsr-breakout-board)
+- [Hall endstop breakout](/extensions/hall-endstop-breakout)
+- [HX711 load-cell amplifier](/extensions/hx711-load-cell-amplifier)
+- [Inductive proximity sensor adapter (level shifter)](/extensions/inductive-proximity-sensor-adapter)
+- [Input protector](/extensions/input-protector)
+- [Laser barrier board](/extensions/laser-barrier-board)
+- [Mechanical endstop breakout](/extensions/mechanical-endstop-breakout)
+- [Pressure sensor](/extensions/pressure-sensor)
+- [Simple PT100 amplifier board](/extensions/simple-pt100-amplifier-board)
+- [Smoke detector](/extensions/smoke-detector)
+- [Spectral analysis board](/extensions/spectral-analysis-board)
+- [SPI PT100 amplifier board](/extensions/spi-pt100-amplifier-board)
+- [SPI thermocouple breakout](/extensions/spi-thermocouple-breakout)
+- [Water-flow sensor adapter](/extensions/water-flow-sensor-adapter)
+
+{::nomarkdown}
+</section>
+{:/nomarkdown}
+
+{::nomarkdown}
+<section markdown="1">
+{:/nomarkdown}
+
+### Power, relays and outputs
+
+- [AC SSR board](/extensions/ac-ssr-board)
+- [ATX connector board](/extensions/atx-connector-board)
+- [DC SSR board](/extensions/dc-ssr-board)
+- [Gate boards](/extensions/gate-boards)
+- [Additional general purpose outputs breakout / Servo board](/extensions/general-purpose-output-servo-board)
+- [Laser diode driver breakout](/extensions/laser-diode-driver-breakout)
+- [Laser PSU adapter board](/extensions/laser-psu-adapter-board)
+- [Power supply connector board](/extensions/power-supply-connector-board)
+- [Seven-channel AC mechanical relay](/extensions/seven-channel-ac-mechanical-relay)
+- [Seven-channel DC mechanical relay](/extensions/seven-channel-dc-mechanical-relay)
+- [Single-channel AC mechanical relay](/extensions/single-channel-ac-mechanical-relay)
+- [Single-channel DC mechanical relay](/extensions/single-channel-dc-mechanical-relay)
+- [Single-Channel Large MOSFET output](/extensions/single-channel-large-mosfet-output)
+- [Single-Channel Small MOSFET output](/extensions/single-channel-small-mosfet-output)
+- [Single-Channel AC solid-state relay output](/extensions/single-channel-solid-state-relay-output)
+
+{::nomarkdown}
+</section>
+{:/nomarkdown}
+
+{::nomarkdown}
+<section markdown="1">
+{:/nomarkdown}
+
+### Communication and signal interfaces
+
+- [Bidirectional level shifting board](/extensions/bidirectional-level-shifting-board)
+- [Cheap UART adapter breakout](/extensions/cheap-uart-adapter-breakout)
+- [Differential signal extender](/extensions/differential-signal-extender)
+- [Differential SPI signal extender](/extensions/differential-spi-signal-extender)
+- [Differential STEP/DIR/ENABLE extender](/extensions/differential-step-dir-en-extender)
+- [Gadgeteer-to-CAN adapter](/extensions/gadgeteer-to-can)
+- [Long distance extender](/extensions/long-distance-extender)
+- [Opto-isolation pass-through board](/extensions/opto-isolation-pass-through-board)
+- [Qwiic-to-Gadgeteer adapter](/extensions/qwiic-to-gadgeteer-adapter)
+- [Serial to WiFi board](/extensions/serial-to-wifi-board)
+- [SPI hub](/extensions/spi-hub)
+- [UART breakout](/extensions/uart-breakout)
+- [USB/Serial breakout](/extensions/usb-serial-breakout)
+- [Wireless Gadgeteer extender](/extensions/wireless-gadgeteer-extender)
+- [Wireless series Smoothieboard-side master](/extensions/wireless-series-master)
+
+{::nomarkdown}
+</section>
+{:/nomarkdown}
+
+{::nomarkdown}
+<section markdown="1">
+{:/nomarkdown}
+
+### Displays, controls and accessories
+
+- [Button boards](/extensions/button-boards)
+- [Buzzer module](/extensions/buzzer-module)
+- [Camera trigger board](/extensions/camera-trigger-board)
+- [Debug probe](/extensions/debug-probe)
+- [GLCD breakout](/extensions/glcd-breakout)
+- [LED breakout](/extensions/led-breakout)
+- [SD card breakout](/extensions/sd-card-breakout)
+- [Universal panel adapter](/extensions/universal-panel-adapter)
+
+{::nomarkdown}
+</section>
+{:/nomarkdown}
+
+{::nomarkdown}
+<section markdown="1">
+{:/nomarkdown}
+
+### Host adapters and prototyping
+
+- [Arduino adapter](/extensions/arduino-adapter)
+- [Arduino-to-Gadgeteer shield](/extensions/arduino-to-gadgeteer-shield)
+- [BeagleBone breakout](/extensions/beaglebone-breakout)
+- [Breadboard board](/extensions/breadboard-board)
+- [C.H.I.P. breakout board](/extensions/chip-breakout-board)
+- [CPLD adapter](/extensions/cpld-adapter)
+- [D-sub-to-Gadgeteer IN adapter](/extensions/d-sub-to-gadgeteer-in)
+- [D-sub-to-Gadgeteer OUT adapter](/extensions/d-sub-to-gadgeteer-out)
+- [Intel Edison breakout](/extensions/intel-edison-breakout)
+- [Papilio adapter](/extensions/papilio-adapter)
+- [Parallel port breakout](/extensions/parallel-port-breakout)
+- [Gadgeteer perma-proto breadboard](/extensions/perma-proto-gadgeteer)
+- [Raspberry Pi Zero breakout](/extensions/raspberry-pi-zero-breakout)
+- [Raw pins breakout](/extensions/raw-pins-breakout)
+- [Raw pins screw terminal breakout](/extensions/raw-pins-screw-terminal-breakout)
+
+{::nomarkdown}
+</section>
+{:/nomarkdown}
+
+{::nomarkdown}
+</div>
+{:/nomarkdown}
+<!-- extension-board-directory:end -->
 
 # Smoothie in Research
 
@@ -388,89 +544,12 @@ Current edge build status: [![Build Status](https://app.travis-ci.com/Smoothiewa
 - [Development of Open Source 3D Bioprinters For Low-Cost and High-Fidelity Biofabrication](https://abstracts.biomaterials.org/data/papers/2019/abstracts/511.pdf)
 - [Feature-based insight for forks in social coding platforms](https://www.sciencedirect.com/science/article/abs/pii/S0950584921001373)
 
-<!-- extension-board-directory:start -->
-## Extension boards
+# Reviews
 
-These 80 extension-board pages describe development studies, their wiring requirements and remaining qualification limits. They are not fabrication or operating approvals. Select the exact board and revision before wiring.
+[Watch a review](http://www.youtube.com/embed/vsu_vAKvRO0?hd=1)
 
-- [AC SSR board](/extensions/ac-ssr-board)
-- [Additional endstop inputs breakout](/extensions/additional-endstop-inputs-breakout)
-- [Advanced H-bridge encoder board](/extensions/advanced-h-bridge-encoder-board)
-- [Arduino adapter](/extensions/arduino-adapter)
-- [Arduino-to-Gadgeteer shield](/extensions/arduino-to-gadgeteer-shield)
-- [ATX connector board](/extensions/atx-connector-board)
-- [BeagleBone breakout](/extensions/beaglebone-breakout)
-- [Bidirectional level shifting board](/extensions/bidirectional-level-shifting-board)
-- [BLTouch-like probe](/extensions/bltouch-like-probe)
-- [Bouni spindle module boards](/extensions/bouni-spindle-module-boards)
-- [Breadboard board](/extensions/breadboard-board)
-- [Button boards](/extensions/button-boards)
-- [Buzzer module](/extensions/buzzer-module)
-- [Camera trigger board](/extensions/camera-trigger-board)
-- [Cheap UART adapter breakout](/extensions/cheap-uart-adapter-breakout)
-- [C.H.I.P. breakout board](/extensions/chip-breakout-board)
-- [CPLD adapter](/extensions/cpld-adapter)
-- [D-sub-to-Gadgeteer IN adapter](/extensions/d-sub-to-gadgeteer-in)
-- [D-sub-to-Gadgeteer OUT adapter](/extensions/d-sub-to-gadgeteer-out)
-- [DC SSR board](/extensions/dc-ssr-board)
-- [Debug probe](/extensions/debug-probe)
-- [Differential signal extender](/extensions/differential-signal-extender)
-- [Differential SPI signal extender](/extensions/differential-spi-signal-extender)
-- [Differential STEP/DIR/ENABLE extender](/extensions/differential-step-dir-en-extender)
-- [Filament encoder board](/extensions/filament-encoder-board)
-- [Filament progress sensor](/extensions/filament-progress-sensor)
-- [FSR breakout board](/extensions/fsr-breakout-board)
-- [Gadgeteer-to-CAN adapter](/extensions/gadgeteer-to-can)
-- [Gate boards](/extensions/gate-boards)
-- [Additional general purpose outputs breakout / Servo board](/extensions/general-purpose-output-servo-board)
-- [GLCD breakout](/extensions/glcd-breakout)
-- [Hall endstop breakout](/extensions/hall-endstop-breakout)
-- [HX711 load-cell amplifier](/extensions/hx711-load-cell-amplifier)
-- [Inductive proximity sensor adapter (level shifter)](/extensions/inductive-proximity-sensor-adapter)
-- [Input protector](/extensions/input-protector)
-- [Intel Edison breakout](/extensions/intel-edison-breakout)
-- [Laser barrier board](/extensions/laser-barrier-board)
-- [Laser diode driver breakout](/extensions/laser-diode-driver-breakout)
-- [Laser PSU adapter board](/extensions/laser-psu-adapter-board)
-- [Leadshine-like external servo drivers](/extensions/leadshine-like-external-servo-drivers)
-- [Leadshine-like external stepper drivers](/extensions/leadshine-like-external-stepper-drivers)
-- [LED breakout](/extensions/led-breakout)
-- [Long distance extender](/extensions/long-distance-extender)
-- [Mechanical endstop breakout](/extensions/mechanical-endstop-breakout)
-- [Opto-isolation pass-through board](/extensions/opto-isolation-pass-through-board)
-- [Papilio adapter](/extensions/papilio-adapter)
-- [Parallel port breakout](/extensions/parallel-port-breakout)
-- [Gadgeteer perma-proto breadboard](/extensions/perma-proto-gadgeteer)
-- [Pololu driver breakout board](/extensions/pololu-driver-breakout-board)
-- [Position feedback board](/extensions/position-feedback-board)
-- [Power supply connector board](/extensions/power-supply-connector-board)
-- [Pressure sensor](/extensions/pressure-sensor)
-- [Qwiic-to-Gadgeteer adapter](/extensions/qwiic-to-gadgeteer-adapter)
-- [Raspberry Pi Zero breakout](/extensions/raspberry-pi-zero-breakout)
-- [Raw pins breakout](/extensions/raw-pins-breakout)
-- [Raw pins screw terminal breakout](/extensions/raw-pins-screw-terminal-breakout)
-- [SD card breakout](/extensions/sd-card-breakout)
-- [Serial to WiFi board](/extensions/serial-to-wifi-board)
-- [Servo control](/extensions/servo-control)
-- [Seven-channel AC mechanical relay](/extensions/seven-channel-ac-mechanical-relay)
-- [Seven-channel DC mechanical relay](/extensions/seven-channel-dc-mechanical-relay)
-- [Simple PT100 amplifier board](/extensions/simple-pt100-amplifier-board)
-- [Single-channel AC mechanical relay](/extensions/single-channel-ac-mechanical-relay)
-- [Single-channel DC mechanical relay](/extensions/single-channel-dc-mechanical-relay)
-- [Single-Channel Large MOSFET output](/extensions/single-channel-large-mosfet-output)
-- [Single-Channel Small MOSFET output](/extensions/single-channel-small-mosfet-output)
-- [Single-Channel AC solid-state relay output](/extensions/single-channel-solid-state-relay-output)
-- [Smoke detector](/extensions/smoke-detector)
-- [Spectral analysis board](/extensions/spectral-analysis-board)
-- [SPI hub](/extensions/spi-hub)
-- [SPI PT100 amplifier board](/extensions/spi-pt100-amplifier-board)
-- [SPI thermocouple breakout](/extensions/spi-thermocouple-breakout)
-- [Stepper motor driver breakout board (Allegro)](/extensions/stepper-driver-breakout-allegro)
-- [Stepper motor driver breakout board (Trinamic)](/extensions/stepper-driver-breakout-trinamic)
-- [UART breakout](/extensions/uart-breakout)
-- [Universal panel adapter](/extensions/universal-panel-adapter)
-- [USB/Serial breakout](/extensions/usb-serial-breakout)
-- [Water-flow sensor adapter](/extensions/water-flow-sensor-adapter)
-- [Wireless Gadgeteer extender](/extensions/wireless-gadgeteer-extender)
-- [Wireless series Smoothieboard-side master](/extensions/wireless-series-master)
-<!-- extension-board-directory:end -->
+{::nomarkdown}
+<a href="/images/oshw-logo.png">
+  <img src="/images/oshw-logo.png" alt="OSHW logo" style="width:75px; height:auto;"/>
+</a>
+{:/nomarkdown}
