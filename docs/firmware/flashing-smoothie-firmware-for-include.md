@@ -6,7 +6,13 @@
 
 Smoothieboards normally arrive with firmware installed. Flashing replaces that firmware; it is useful for updating or installing a custom build. Select your board version above, then follow the matching instructions below.
 
-Before updating, save a copy of your machine's SD card configuration and a known-working firmware binary, if you have one. Check that the new firmware is compatible with your configuration. Do not replace a working machine configuration with an example file without adapting it to the machine.
+{::nomarkdown}
+<sl-alert variant="warning" open>
+  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+  <strong>Preserve your configuration</strong><br><br>
+  Before updating, save a copy of your machine's SD card configuration and a known-working firmware binary, if you have one. Check that the new firmware is compatible with your configuration. Do not replace a working machine configuration with an example file without adapting it to the machine.
+</sl-alert>
+{:/nomarkdown}
 
 ## Prerequisites
 
@@ -56,7 +62,13 @@ Download the [Prime firmware binary](https://download.smoothieware.org/pr.bin) a
 </versioned>
 {:/nomarkdown}
 
-Make sure you download the binary itself, not the HTML page displaying it. If the publisher provides a checksum, compare it with the downloaded file.
+{::nomarkdown}
+<sl-alert variant="warning" open>
+  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+  <strong>Download the actual binary</strong><br><br>
+  Download the firmware file itself, not the HTML page displaying it. When a checksum is supplied, calculate the downloaded file's checksum using the same algorithm and compare the complete values before copying it to the card. A mismatch means the file should not be flashed; download it again and recheck.
+</sl-alert>
+{:/nomarkdown}
 
 {::nomarkdown}
 <span id="copy"></span><span id="copy-to-sd-card-v2"></span>
@@ -91,6 +103,14 @@ Make sure you download the binary itself, not the HTML page displaying it. If th
 <span id="power"></span><span id="observe"></span>
 {:/nomarkdown}
 
+{::nomarkdown}
+<sl-alert variant="warning" open>
+  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+  <strong>Check the filename</strong><br><br>
+  Use the exact filename shown for your board in the SD card root. Check that your computer has not added an extra <code>.bin</code> extension. Safely eject the card before removing it.
+</sl-alert>
+{:/nomarkdown}
+
 ### Power and update
 
 Insert the card in the board and power or reset it. Do not remove power or the card during the update.
@@ -100,7 +120,7 @@ Insert the card in the board and power or reset it. Do not remove power or the c
 <v1>
 {:/nomarkdown}
 
-The bootloader looks for `firmware.bin` and flashes it. The LEDs count up during the process; the board then starts the firmware.
+The bootloader looks for `firmware.bin` and flashes it. During flashing, the LEDs count up for a few seconds; the board then starts the firmware and its LEDs begin flashing. Check the filename and running version below rather than relying on the LED sequence alone.
 
 {::nomarkdown}
 </v1>
@@ -143,7 +163,7 @@ Check the configuration and machine functions before returning the machine to no
 
 ### Connect
 
-Connect a USB cable and use [Pronterface](/pronterface) or another [host program](/software), or use a serial console with line-feed line endings. The board appears as a serial USB device. On Windows, see [Windows drivers](/windows-drivers) if needed. Type `help` for commands and `version` for the running firmware version. See the [console commands](/console-commands) and [supported G-codes](/supported-g-codes) references.
+Follow [Connecting to Smoothie](/connecting-smoothie) to connect a host or console to your board. Send `version` to check the running firmware; see the [console commands](/console-commands) reference for other commands.
 
 ## Troubleshooting
 
@@ -152,7 +172,8 @@ Connect a USB cable and use [Pronterface](/pronterface) or another [host program
 <v1>
 {:/nomarkdown}
 
-- **The file was not renamed:** Check that the card is readable, formatted as FAT32, and that `firmware.bin` is in its root with the exact name. Try another card if necessary. Check that the [SD bootloader](/flashing-the-bootloader) is installed.
+- **The file was not renamed or the LEDs did not count up:** Check that the card is readable, formatted as FAT32, and that `firmware.bin` is in its root with the exact name. Check for a hidden second extension and confirm that the file is the binary, not an HTML download page. Check that the [SD bootloader](/flashing-the-bootloader) is installed.
+- **LED4 is off:** This can point to an SD card or card-access problem. Power down, remove the card and check it on a computer. Preserve its files before formatting; if needed, format as FAT32, restore the files, safely eject it and try again. If the problem persists, try another card. See [Troubleshooting](/troubleshooting) for the LED patterns and further checks.
 - **The board starts but the machine behaves differently:** Check the running version, your saved configuration and the [upgrade notes](https://github.com/Smoothieware/Smoothieware/blob/edge/upgrade-notes.md).
 
 {::nomarkdown}
@@ -161,7 +182,7 @@ Connect a USB cable and use [Pronterface](/pronterface) or another [host program
 {:/nomarkdown}
 
 - **The update does not start:** Check that the running firmware starts successfully, `config.ini` is present, and `flashme.bin` is in the card root. Check whether `flash_on_boot` is disabled; a running board can instead update with the `flash` console command. Check the console for errors.
-- **The image is rejected:** Obtain a complete binary built for Prime and check its integrity. Try another readable FAT32 card if the card is suspect.
+- **The image is rejected:** Obtain a complete binary built for Prime and compare its checksum when one is available. Confirm the exact filename, including any hidden extension. Try another readable FAT32 card if the card is suspect.
 - **You need to return to an older version:** Use a separately saved, known-working Prime binary as `flashme.bin` and update again while the firmware is running. `flashme.old` is not the previous firmware. If the firmware cannot run, follow the recovery instructions below.
 
 {::nomarkdown}

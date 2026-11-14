@@ -13,6 +13,8 @@ History: see CHANGELOG.archive.md.
 
 ### Changed
 
+- Restored prominent flashing warnings and SD-card troubleshooting clues, and linked the flashing guide to the dedicated connection instructions.
+
 - Rewrote the firmware flashing guide with separate board-specific update and recovery steps, configuration preservation, verification and corrected rollback guidance.
 - Prepare a user-managed local Jekyll service with sudo-free routine commands, Git-aware repository mounts and background scheduling inside the container; remove the racy post-start scheduling dependency. One-time root handover and live activation verification remain pending.
 - Update six extension-board pages with compact candidates, source-bound recovery results and remaining hardware qualification limits.
