@@ -166,6 +166,7 @@ The Fall 2026 feature inventory below covers V2 additions. Backlash compensation
     - [Panel](panel): Drive smoothie directly without a host using monochrome lcd screens and click encoders
 {::nomarkdown}<versioned><v1><div class="versioned-list-item" style="margin-left:1.25em;"><a href="jogger">Jogger</a>: Joystick-based jogging control for manual machine movement</div><div class="versioned-list-item" style="margin-left:1.25em;"><a href="joystick">Joystick</a>: Analog input from joysticks, sliders, and knobs</div></v1><v2><div class="versioned-list-item" style="margin-left:1.25em;"><a href="tm1638-display">TM1638 Display</a>: 7-segment LED display with buttons</div><div class="versioned-list-item" style="margin-left:1.25em;"><a href="button-box">Button Box</a>: Programmable button panel for macros and machine control</div><div class="versioned-list-item" style="margin-left:1.25em;"><a href="mpg">MPG</a>: Manual Pulse Generator hand wheels for axis jogging</div><div class="versioned-list-item" style="margin-left:1.25em;"><a href="voltage-monitor">Voltage Monitor</a>: Monitor power supply voltages</div></v2></versioned>{:/nomarkdown}
     - [on_boot.gcode File](on-boot-gcode): Execute G-codes every time the board boots
+{::nomarkdown}<versioned><v2><div class="versioned-list-item" style="margin-left:1.25em;"><a href="actuator-slaving">Slaved Axes</a>: Drive two motors from one axis (dual Y or Z) and square them independently</div></v2></versioned>{:/nomarkdown}
 
 {::nomarkdown}
 <a href="/images/console.png">
