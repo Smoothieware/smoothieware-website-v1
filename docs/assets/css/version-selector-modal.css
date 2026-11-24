@@ -178,10 +178,9 @@
 
 /* Reset button container - localhost only */
 .version-reset-container {
-    position: fixed;
-    bottom: 16px;
-    right: 16px;
-    z-index: 9999;
+    display: flex;
+    justify-content: flex-end;
+    margin: 16px;
 }
 
 #version-reset-button::part(base) {

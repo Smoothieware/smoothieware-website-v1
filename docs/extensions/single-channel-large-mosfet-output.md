@@ -1,114 +1,174 @@
 ---
 layout: default
-title: "Single-Channel Large MOSFET output"
+title: "Single-Channel Large Mosfet output"
+description: "Switch one high-current DC load such as a heated bed from Smoothieboard V2, with a built-in electronic breaker: pinout, wiring, configuration and troubleshooting."
 permalink: /extensions/single-channel-large-mosfet-output
 ---
 
-# Single-Channel Large MOSFET output
+{% include _includes/extension-board-page.html %}
 
-{% include extension-board-visuals.html slug="single-channel-large-mosfet-output" %}
+{::nomarkdown}
+<div class="xb-hero">
+  <div>
+    <p class="xb-eyebrow">Extension board · Power output</p>
+    <h1 id="single-channel-large-mosfet-output">Single-channel large mosfet output</h1>
+    <p class="xb-lead">Switch a heated bed, heater or bank of fans from a 3.3 V controller output. Use a three-pin header or a Gadgeteer type-Y socket. An optocoupler separates the selected command from the load circuit.</p>
+    <p class="xb-badge">Prototype design · revision v18 · untested on hardware</p>
+    <div class="xb-actions">
+      <a class="xb-btn xb-btn-primary" href="#get-started">Get started</a>
+      <a class="xb-btn" href="#pinout">Pinout</a>
+      <a class="xb-btn" href="#configuration">Configuration</a>
+    </div>
+  </div>
+  <figure>
+    <img src="/images/extensions/single-channel-large-mosfet-output/large-mosfet-diagram.svg" alt="Top view with the white control header and two keyed Gadgeteer connectors along the top, field supply on the left and load on the right">
+    <figcaption>Top view drawn from revision v18.</figcaption>
+  </figure>
+</div>
+<div class="xb-stats">
+  <div class="xb-stat"><b>1</b><span>low-side DC output</span></div>
+  <div class="xb-stat"><b>5–24 V</b><span>external DC field supply</span></div>
+  <div class="xb-stat"><b>12.5 A</b><span>load current design target</span></div>
+  <div class="xb-stat"><b>3.3 V</b><span>nominal logic command</span></div>
+  <div class="xb-stat"><b>7</b><span>outputs per type-Y socket</span></div>
+  <div class="xb-stat"><b>74 × 76</b><span>millimetres, four M3 holes</span></div>
+</div>
+<nav class="xb-nav" aria-label="On this page">
+  <a href="#compare-mosfet-boards">Compare boards</a><a href="#specs">Tech specs</a><a href="#tour">Board tour</a><a href="#pinout">Pinout</a><a href="#what-you-need">What you need</a><a href="#get-started">Get started</a><a href="#configuration">Configuration</a><a href="#loads">Wiring the load</a><a href="#how-it-works">How it works</a><a href="#options">Source selector</a><a href="#chaining">Chaining</a><a href="#troubleshooting">Troubleshooting</a><a href="#downloads">Downloads</a><a href="#mounting">Mounting</a><a href="#electrical">Electrical</a>
+</nav>
+{:/nomarkdown}
 
-Switch one 5–24 V high-current DC load with a qualified continuous rating of at least 12.5 A.
+<sl-alert variant="warning" open>
+  <sl-icon slot="icon" name="cone-striped"></sl-icon>
+  <strong>Prototype design.</strong> The current target and operating limits await hardware testing. Use an appropriately fused, current-limited DC supply. A heater also needs an independent thermal cut-out.
+</sl-alert>
 
-## Development status
+{% include _includes/mosfet-board-comparison.html %}
 
-**Baseline documentation snapshot: 2026-10-11, before the requested connector/protection/usability revision program.** New revision features require their own reviewed source and qualification evidence.
+## Tech specs {#specs}
 
-This page documents an **unqualified engineering study**, not a released or tested product. Saved CAD, renders and automated checks do not establish a safe assembly, compatible cable, firmware support or a usable current rating.
+| Parameter | Revision v18 |
+| --- | --- |
+| Output | One low-side DC switch with flyback diode |
+| Load supply | 5–24 V DC, external only |
+| Load current | 12.5 A design target, untested |
+| Control | Active-high 3.3 V from the selected three-pin or Gadgeteer input |
+| Isolation | Optical signal path with separate controller and field returns |
+| Connectors | Keyed three-pin header, two Gadgeteer type-Y ports and two XT30 connectors |
+| Size | 74 × 76 mm, four 3.2 mm mounting holes |
 
-Board-specific qualification limits: v12 retained native/ordinaryassembly0;20A fuse/15Aconnector coordination,reverseinput/TVS/freewheel/currentthermal/host/physical unqualified.
+See [mounting dimensions](#mounting) and [electrical specifications](#electrical).
 
-## Interfaces and wiring
+## Board tour {#tour}
 
-### Inputs
+Along the top edge, **CTRL IN (J1)** is the white three-pin connector. **Y IN (J4)** and **Y CHAIN (J5)** are the black keyed connectors. **INPUT SELECT (SJ14)** selects the local command. The six smaller links between the Gadgeteer connectors pass the remaining six commands. Field supply enters at **J2** on the left and the load plugs into **J3** on the right.
 
-- One keyed 2.54 mm logic connector.
-- One dedicated 5–24 V high-current DC input.
+## Pinout {#pinout}
 
-### Outputs
+| J1 contact | Function |
+| --- | --- |
+| 1 | Controller ground |
+| 2 | Unconnected |
+| 3 | Active-high 3.3 V command |
 
-- One dedicated high-current load connector.
+| Field connector | Pin 2 | Pin 1 |
+| --- | --- | --- |
+| J2, supply in | Supply positive | Field ground |
+| J3, load out | Load positive | Switched load return |
 
-Power off before connecting or changing jumpers. Verify pin 1, signal direction, supply voltage and ground at both ends of every cable. A mechanically fitting connector is not proof of electrical compatibility. If a host pin mapping or current allocation remains unresolved in the design record, do not connect the board until it is resolved.
+| Y IN pin | Function | Y CHAIN pin |
+| --- | --- | --- |
+| 1 | Controller 3.3 V pass-through | 1 |
+| 2 | Controller 5 V pass-through | 2 |
+| 3 | Local board command | — |
+| 4 | First forwarded command | 3 |
+| 5 | Second forwarded command | 4 |
+| 6 | Third forwarded command | 5 |
+| 7 | Fourth forwarded command | 6 |
+| 8 | Fifth forwarded command | 7 |
+| 9 | Sixth forwarded command | 8 |
+| 10 | Controller ground | 10 |
 
-## Electrical design requirements
+CHAIN pin 9 is unconnected. The passed-through rails and ground belong to the controller.
 
-The following are specification requirements or study assumptions; they are **not measured operating ratings**. A newer selected-revision note takes precedence over historical draft options.
+## What you need {#what-you-need}
 
-- 12.5 A minimum continuous target requires a stated ambient, airflow, copper weight, and temperature-rise limit.
-- Upstream connector power must not feed the load.
-- The saved candidate selects XT30PW connectors following footnotes [i]/[j]. Their current rating, mating polarity and temperature rise still require qualification of the assembled board.
+- A 3.3 V controller output and a keyed type-Y ribbon cable or a mating three-pin harness.
+- A 5–24 V DC supply, an appropriately rated fuse and wires sized for the load.
+- The mating field supply and load connectors.
 
-## Protection in the design record
+## Get started {#get-started}
 
-The design describes the following protection intent. Check the selected schematic and remaining qualification gates before relying on it:
+1. Power down. Choose one local command source at [SJ14](#options).
+2. For Gadgeteer, plug the controller's type-Y ribbon into **Y IN**. For the three-pin harness, wire controller ground to pin 1 and the command to pin 3. Leave pin 2 empty.
+3. Connect the external supply to **J2** and the load to **J3** using the polarity in the pinout. Keep the field and controller returns separate to preserve isolation.
+4. Configure the chosen controller pin to start and halt low. Bring up the board with a current-limited supply and a small test load.
 
-CB61F 20 A surface-mount fuse, SMDJ28A on EXT_RAW before the fuse, flyback diode and gate clamp are selected candidates. The fuse land remains provisional and the manufacturer discourages hand soldering. The TVS provides no DC overvoltage cutoff; reverse-input crowbar interruption, connector/fuse coordination and inductive energy limits remain open. No temperature sensor is populated. TP8 is a copper-only raw-input observation pad excluded from BOM and component placement in v12.
+## Configuration {#configuration}
 
-## Selected component architecture
+Example for the Smoothieware V2 [Switch module](/switch). Replace `PB1` with the controller pin that actually reaches the board's selected input. In a chain, configure a different output pin for each board.
 
-See [current review](https://github.com/arthurwolf/extension-boards/blob/main/src/single-channel-large-mosfet-output/component-review.md). Retain UCC27517A/CSD18536 single low-side output;TPS274C65 high-side four-channel part changes target. Existing V1 Molex J1 and C2/C3 bypass reuse retained,no successor. Current selected v12; retained native/stock/physical qualification limits remain explicit.
+```ini
+[switch]
+mosfet.enable            = true
+mosfet.output_pin        = PB1
+mosfet.output_type       = digital
+mosfet.input_on_command  = M64
+mosfet.input_off_command = M65
+mosfet.startup_state     = false
+mosfet.halt_set_to       = false
+```
 
-## Configuration and commissioning
+Send `M64` to turn on the test load and `M65` to turn it off.
 
-Use the configuration and firmware contract for the exact selected revision. Do not copy another module’s socket assignments or assume that an unused pin is available. First-article work must verify source selection, reset/unplug behavior, cable orientation and the actual load or sensor interface before normal operation.
+## Wiring the load {#loads}
 
-## Requested connector and usability upgrades
+Route both load wires to **J3**. The board switches the negative load return. The positive contact can remain energized while the command is low. Disconnect the field supply before moving wiring.
 
-The following are requirements for the next design iterations; this page does **not** claim they are already fitted:
+## How it works {#how-it-works}
 
-- On electrically suitable three/four-pin low-voltage ports, provide compact alternative 2.54 mm header/Molex-style and keyed STEMMA-family footprints. Populate one connector option per shared position and document its pin order. Use STEMMA QT only for compatible four-wire I²C; connector appearance does not make another signal protocol I²C-compatible.
-- Render each supported connector population separately. Document clearances, cable access and the exact fitted option.
-- Use uppercase titles in a consistent Montserrat-style face, labels on both sides, visible domain boundaries, a revision-specific wiring guide and this page’s URL on the silk where readable.
-- Keep mounting-hole centers on a documented 10 mm lattice; add cable-tie holes where space and electrical clearances permit. Place status LEDs near accessible edges and give every indicator its own disable solder jumper. Provide labeled test pads and a ground observation point.
-- Review applicable DC power entries for reverse-polarity cutoff with a blinking warning, overvoltage cutoff/indication, controlled startup and electronic overcurrent protection. Indicator and protection circuits must work in the fault state without defeating isolation or safe output defaults. Thermal protection belongs only where the power/thermal analysis justifies it.
-- Electronic protection does not automatically replace a required mains/branch safety fuse. Backfeed blocking and inductive-load flyback clamps are separate design functions. Do not add identity EEPROMs, fault memory, calibration storage or paid self-test hardware under this upgrade program.
+The optocoupler passes the selected command across the isolation barrier. The protected field supply powers the gate driver. The gate is held low when the command is absent or the bias supply is below its startup threshold. The field circuit also provides reverse-polarity and overcurrent protection and a path for inductive current at turn-off.
 
-## Design sources
+## Source selector {#options}
 
-- [Board specification](https://github.com/arthurwolf/extension-boards/blob/main/src/single-channel-large-mosfet-output/specs.md)
-- [Architecture and component decisions](https://github.com/arthurwolf/extension-boards/blob/main/src/single-channel-large-mosfet-output/design.md)
-- [Selected-revision review and qualification record](https://github.com/arthurwolf/extension-boards/blob/main/src/single-channel-large-mosfet-output/component-review.md)
-- [All extension boards](/#extension-boards)
+| Input | SJ14 |
+| --- | --- |
+| Y IN | Factory bridge between pads 1 and 2 |
+| Three-pin CTRL IN | Cut the 1–2 bridge, verify it is open, then bridge pads 2 and 3 |
 
-Documentation route: `smoothieware.org/extensions/single-channel-large-mosfet-output`.
+Power down both sides before changing the selector. Bridge only one pair.
 
-<!-- additive-cad-status:start -->
-## Additive design studies
+## Chaining {#chaining}
 
-The 2026-10-11 upgrade program has saved additional candidates v13, v14, v15. These studies preserve the historical design described above. Their connector, LED, mechanical and protection changes are revision-specific and remain unqualified.
+Connect **Y CHAIN** on one board to **Y IN** on the next. With Gadgeteer selected on each board, the local channel always uses Y IN pin 3. The six factory-closed links **SJ8–SJ13** pass Y IN pins 4–9 to Y CHAIN pins 3–8 in order. Cutting a link interrupts that command downstream. Use one host per chain. Adding or removing a board changes the downstream channel assignments.
 
-See the [per-board changes, failures and remaining work](https://github.com/arthurwolf/extension-boards/blob/main/src/single-channel-large-mosfet-output/fancification.md) and [mandatory family specification](https://github.com/arthurwolf/extension-boards/blob/main/docs/FANCIFICATION-SPEC.md). Use the source hash and native check for the exact candidate being reviewed; do not infer hardware ratings from a rendered population.
-<!-- additive-cad-status:end -->
+{% include _includes/extension-chain-figure.html id="xb-large-chain" board="Large MOSFET" in_label="Y IN" chain_label="Y CHAIN" lane1="Pin 3" lane2="Pin 4" lane3="Pin 5" s1="Local command" s2="Next command" s3="Third command" caption="Each board uses pin 3 and moves the remaining commands down one position." %}
 
-<!-- extension-upgrade-readback:start -->
-## Upgrade candidate readback
+## Troubleshooting {#troubleshooting}
 
-The three additional revisions are **v13, v14, v15**. They are engineering studies; saved CAD and renders do not release the hardware. The latest candidate is described below. Older baseline notes above remain historical.
+| What you see | What to check |
+| --- | --- |
+| Load stays off | Check field supply polarity and voltage, controller pin mapping and SJ14. A logic command alone supplies no gate or load power. |
+| Wrong load switches in a chain | Check ribbon direction, board order and the closed links. Each board shifts the remaining commands by one pin. |
+| Protection interrupts the load | Power down and check for a short, reversed supply or too much load current. |
 
-### large-mosfet
+## Downloads {#downloads}
 
-- [Latest PCB source](https://github.com/arthurwolf/extension-boards/blob/main/src/single-channel-large-mosfet-output/attempt/versions/v15/large-mosfet.kicad_pcb), SHA-256 `fe1a8ac86ef8994f01459acae322a4d9b3c8a6d7dc0827ac005e509b967e4cdd`.
-- Last native check: **0 errors**, including **0 open connections**. This is a CAD result, not electrical, assembly or firmware qualification.
-- No alternative connector population is recorded for this physical role. Any applicable connector conversion remains an explicit design-review item.
-- [normal population/render record](https://github.com/arthurwolf/extension-boards/blob/main/src/single-channel-large-mosfet-output/attempt/versions/v15/populations/large-mosfet/normal/population.json): 6 images; source current; image hashes match; 0 unresolved models.
-- [Changes, failed trials and remaining work](https://github.com/arthurwolf/extension-boards/blob/main/src/single-channel-large-mosfet-output/attempt/versions/v15/large-mosfet-fancification-revision.md).
+- [Top-view board drawing, v18](/images/extensions/single-channel-large-mosfet-output/large-mosfet-diagram.svg)
+- [Schematic PDF, v18](/images/extensions/single-channel-large-mosfet-output/schematic.pdf)
+- [Parts list CSV, v18](/images/extensions/single-channel-large-mosfet-output/bom.csv)
 
-Applicable protection, current-path, thermal, pinout, cable access and physical tests remain open wherever the linked board record has not verified them. A zero native-error count does not close those gates.
-<!-- extension-upgrade-readback:end -->
+## Appendix: mounting dimensions {#mounting}
 
-## Second-round annotation readback v16 — 2026-10-13
+The board is 74 × 76 mm. Four 3.2 mm holes form a 40 × 40 mm pattern. Hole centres from the top-left of the board are (15, 32), (55, 32), (15, 72) and (55, 72) mm.
 
-Protected source v15; current PCB SHA-256 `83ed5a1a58f80365e943c2f0fa1cccbc5eb93c2b00a9f2865be764908b9744d7`. Fresh checks: zero enabled PCB errors/opens/parity and ERC errors; 38 PCB warnings. Electrical geometry, project rules and 43 historical files unchanged. Verified 52 model entries, 19 exports and 6 current population views, all inspected. Full documentation URL readable. Inherited 35 footprint-symbol mismatches remain Inherited native warnings and enabled-rule exclusions remain explicit Physical/thermal/current/connector-fit qualification open No priced or area savings established by annotation candidate.
+## Appendix: electrical specifications {#electrical}
 
-## Compact external-input protection v17 — 2026-10-13
-
-The latest compact engineering candidate retains the user-wired XT30 input's electronic fuse, reverse blocking, overvoltage cutoff, soft start and indicators, together with functional load protection. Its outline returns from 74 × 100 mm to **74 × 49 mm**; all electrical components remain, while the two annex mounting holes are removed. The host interface remains **5–12 V and is not STEMMA**.
-
-Fresh full-track native checks find **zero errors and zero open connections**; schematic ERC has zero findings. The same 35 inherited footprint-symbol parity findings and two inherited text-thickness warnings remain. All six normal-population views were freshly rendered and inspected, with 52 resolved model entries and source-bound manufacturing, BOM and schematic exports. PCB SHA-256: `dbfb894793146078da94db5ee595084e2ff4094c99664acd77fa4e952222516e`.
-
-[Current review and remaining qualification](https://github.com/arthurwolf/extension-boards/blob/main/src/single-channel-large-mosfet-output/attempt/versions/v17/compact-power-review.json) · [Current six-view render record](https://github.com/arthurwolf/extension-boards/blob/main/src/single-channel-large-mosfet-output/attempt/versions/v17/populations/large-mosfet/normal/population.json). Current, thermal, Kelvin sensing, inrush/short-circuit energy and physical connector-fit qualification remain open; **fabrication release is false**.
-
-## Remote zero-warning publication gate — 2026-10-13
-
-The local verification of v17 above predates the required remote PCB execution policy. Its retained full native report has 2 warning(s): TrueType text-thickness. It therefore does **not** satisfy the new zero-violation remote publication gate. The supplied sources and six-view render evidence remain preserved. A portable additive repair helper is prepared, but its PCB output and same-font text repair are unverified until the pinned remote KiCad dependency is installed and the remote native checks succeed. Fabrication release remains **false**.
+| Parameter | Value | Basis |
+| --- | --- | --- |
+| Field supply | 5–24 V DC | Design range |
+| Continuous load | 12.5 A | Design target, untested |
+| Logic command | 3.3 V nominal | Design target for both interfaces |
+| Minimum loaded high | 2.72 V at the selected input | Design threshold, untested |
+| Maximum logic low | 0.4 V | Design threshold, untested |
+| Isolation voltage rating | Open | Hardware qualification pending. Use with low-voltage DC. |

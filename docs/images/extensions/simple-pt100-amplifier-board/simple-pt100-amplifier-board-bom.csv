@@ -1,0 +1,39 @@
+Reference,Value,Footprint,DNP
+C1,100nF 50V,Capacitor_SMD:C_0603_1608Metric,False
+C2,1uF 10V,Capacitor_SMD:C_0603_1608Metric,False
+C3,6.8nF C0G,Capacitor_SMD:C_0603_1608Metric,False
+C4,10nF C0G,Capacitor_SMD:C_0603_1608Metric,False
+C5,100nF 50V,Capacitor_SMD:C_0603_1608Metric,False
+D1,1N4148W,Diode_SMD:D_SOD-123,False
+D2,TPD4E1U06DCKR,Smoothie_PT100_AMP:TPD4E1U06_DCK_TI4214835D,False
+H1,MountingHole_3.2mm_M3,MountingHole:MountingHole_3.2mm_M3,False
+H2,MountingHole_3.2mm_M3,MountingHole:MountingHole_3.2mm_M3,False
+J1,GADGETEER A IN,Smoothie_PT100_AMP:Samtec_SHF105_TH_LC,False
+J2,GADGETEER A CHAIN,Smoothie_PT100_AMP:Samtec_SHF105_TH_LC,False
+J3,PT100 F+ S+ S- F-,"TerminalBlock_Phoenix:TerminalBlock_Phoenix_PT-1,5-4-3.5-H_1x04_P3.50mm_Horizontal",False
+JP10,2W F+/S+,Jumper:SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm,False
+JP11,2W F-/S-,Jumper:SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm,False
+JP3,AIN->P3,Jumper:SolderJumper-3_P1.3mm_Bridged12_RoundedPad1.0x1.5mm,False
+JP4,AIN->P4,Jumper:SolderJumper-3_P1.3mm_Bridged12_RoundedPad1.0x1.5mm,False
+JP5,AIN->P5,Jumper:SolderJumper-3_P1.3mm_Bridged12_RoundedPad1.0x1.5mm,False
+JP6,CHAIN P6,Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm,False
+JP7,CHAIN P7,Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm,False
+JP8,CHAIN P8,Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm,False
+JP9,CHAIN P9,Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm,False
+Q1,BSS84,Package_TO_SOT_SMD:SOT-23,False
+R1,33.2k 0.1%,Resistor_SMD:R_0603_1608Metric,False
+R10,332R 1%,Resistor_SMD:R_0603_1608Metric,False
+R2,665k 0.1%,Resistor_SMD:R_0603_1608Metric,False
+R3,33.2k 0.1%,Resistor_SMD:R_0603_1608Metric,False
+R4,412k 0.1%,Resistor_SMD:R_0603_1608Metric,False
+R5,1.21M 0.1%,Resistor_SMD:R_0805_2012Metric,False
+R6,1.00k 0.1%,Resistor_SMD:R_0603_1608Metric,False
+R7,9.09k 0.1%,Resistor_SMD:R_0603_1608Metric,False
+R8,332R 0.1%,Resistor_SMD:R_0603_1608Metric,False
+R9,1k 1%,Resistor_SMD:R_0603_1608Metric,False
+TP1,+3V3,TestPoint:TestPoint_Pad_D1.0mm,False
+TP2,AIN_OUT,TestPoint:TestPoint_Pad_D1.0mm,False
+TP3,GND,TestPoint:TestPoint_Pad_D1.0mm,False
+TP4,+5V,TestPoint:TestPoint_Pad_D1.0mm,False
+TP5,GND,TestPoint:TestPoint_Pad_D1.0mm,False
+U1,OPA2333AID,Package_SO:SOIC-8_3.9x4.9mm_P1.27mm,False

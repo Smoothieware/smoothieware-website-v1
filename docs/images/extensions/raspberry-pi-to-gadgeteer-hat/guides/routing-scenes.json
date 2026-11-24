@@ -1,0 +1,348 @@
+{
+  "jacket": {
+    "schema": "wiring-scene/1",
+    "bounds_mm": [
+      0,
+      0,
+      1000,
+      1000
+    ],
+    "grid_mm": 5,
+    "stroke_mm": 13,
+    "halo_mm": 17,
+    "clearance_mm": 5,
+    "bodies": [],
+    "contacts": [
+      {
+        "id": "hat-plug",
+        "point_mm": [
+          270.40000000000003,
+          462.0
+        ]
+      },
+      {
+        "id": "buzzer-plug",
+        "point_mm": [
+          706.0,
+          327.0
+        ]
+      }
+    ],
+    "wires": [
+      {
+        "id": "cable-C1-jacket",
+        "net": "mechanical ribbon C1",
+        "source": "hat-plug",
+        "destination": "buzzer-plug"
+      }
+    ]
+  },
+  "jacket_result": {
+    "schema": "wiring-route-result/1",
+    "status": "ROUTED_CANDIDATE",
+    "wires": [
+      {
+        "id": "cable-C1-jacket",
+        "net": "mechanical ribbon C1",
+        "source": "hat-plug",
+        "destination": "buzzer-plug",
+        "points_mm": [
+          [
+            270.40000000000003,
+            462.0
+          ],
+          [
+            270.0,
+            462.0
+          ],
+          [
+            270.0,
+            325.0
+          ],
+          [
+            705.0,
+            325.0
+          ],
+          [
+            705.0,
+            327.0
+          ],
+          [
+            706.0,
+            327.0
+          ]
+        ],
+        "source_exit": {
+          "side": "external",
+          "overflight_mm": 0
+        },
+        "destination_exit": {
+          "side": "external",
+          "overflight_mm": 0
+        }
+      }
+    ],
+    "failures": [],
+    "junctions": [],
+    "junction_obligations": [],
+    "body_overflight_mm": 0,
+    "cost": {
+      "owning_body_overflight_mm": 0,
+      "outside_length_mm": 575.4000000000001,
+      "turns": 4,
+      "crossings": 0
+    },
+    "score_priority": [
+      "owning_body_overflight_mm",
+      "outside_length_mm",
+      "turns",
+      "crossings"
+    ],
+    "globally_optimal": false,
+    "search": {
+      "max_expansions_per_pair": 10000,
+      "max_orders": 1,
+      "max_escape_pairs": 8,
+      "expanded": 1821,
+      "history": [
+        {
+          "order": [
+            "cable-C1-jacket"
+          ],
+          "routed": 1,
+          "failures": []
+        }
+      ],
+      "endpoint_minimum_overflight_mm": {
+        "cable-C1-jacket": {
+          "source_mm": 0,
+          "destination_mm": 0
+        }
+      },
+      "escape_policy": "minimum_owning_body_only"
+    },
+    "proved_impossible": false,
+    "accepted": false,
+    "remaining_gates": [
+      "source/native/copper registration",
+      "actual SVG independent lint",
+      "manual visual and topology review",
+      "reader Fit",
+      "electrical and fitted hardware qualification"
+    ]
+  },
+  "schematic": {
+    "schema": "wiring-scene/1",
+    "bounds_mm": [
+      0,
+      0,
+      1000,
+      1000
+    ],
+    "grid_mm": 5,
+    "stroke_mm": 4,
+    "halo_mm": 7,
+    "clearance_mm": 5,
+    "bodies": [],
+    "contacts": [
+      {
+        "id": "a0",
+        "point_mm": [
+          70,
+          250
+        ]
+      },
+      {
+        "id": "b0",
+        "point_mm": [
+          920,
+          250
+        ]
+      },
+      {
+        "id": "a1",
+        "point_mm": [
+          70,
+          460
+        ]
+      },
+      {
+        "id": "b1",
+        "point_mm": [
+          920,
+          460
+        ]
+      },
+      {
+        "id": "a2",
+        "point_mm": [
+          70,
+          670
+        ]
+      },
+      {
+        "id": "b2",
+        "point_mm": [
+          920,
+          670
+        ]
+      }
+    ],
+    "wires": [
+      {
+        "id": "functional-0",
+        "net": "GPIO5",
+        "source": "a0",
+        "destination": "b0"
+      },
+      {
+        "id": "functional-1",
+        "net": "P5V",
+        "source": "a1",
+        "destination": "b1"
+      },
+      {
+        "id": "functional-2",
+        "net": "GND",
+        "source": "a2",
+        "destination": "b2"
+      }
+    ]
+  },
+  "schematic_result": {
+    "schema": "wiring-route-result/1",
+    "status": "ROUTED_CANDIDATE",
+    "wires": [
+      {
+        "id": "functional-0",
+        "net": "GPIO5",
+        "source": "a0",
+        "destination": "b0",
+        "points_mm": [
+          [
+            70.0,
+            250.0
+          ],
+          [
+            920.0,
+            250.0
+          ]
+        ],
+        "source_exit": {
+          "side": "external",
+          "overflight_mm": 0
+        },
+        "destination_exit": {
+          "side": "external",
+          "overflight_mm": 0
+        }
+      },
+      {
+        "id": "functional-1",
+        "net": "P5V",
+        "source": "a1",
+        "destination": "b1",
+        "points_mm": [
+          [
+            70.0,
+            460.0
+          ],
+          [
+            920.0,
+            460.0
+          ]
+        ],
+        "source_exit": {
+          "side": "external",
+          "overflight_mm": 0
+        },
+        "destination_exit": {
+          "side": "external",
+          "overflight_mm": 0
+        }
+      },
+      {
+        "id": "functional-2",
+        "net": "GND",
+        "source": "a2",
+        "destination": "b2",
+        "points_mm": [
+          [
+            70.0,
+            670.0
+          ],
+          [
+            920.0,
+            670.0
+          ]
+        ],
+        "source_exit": {
+          "side": "external",
+          "overflight_mm": 0
+        },
+        "destination_exit": {
+          "side": "external",
+          "overflight_mm": 0
+        }
+      }
+    ],
+    "failures": [],
+    "junctions": [],
+    "junction_obligations": [],
+    "body_overflight_mm": 0,
+    "cost": {
+      "owning_body_overflight_mm": 0,
+      "outside_length_mm": 2550.0,
+      "turns": 0,
+      "crossings": 0
+    },
+    "score_priority": [
+      "owning_body_overflight_mm",
+      "outside_length_mm",
+      "turns",
+      "crossings"
+    ],
+    "globally_optimal": false,
+    "search": {
+      "max_expansions_per_pair": 1000,
+      "max_orders": 1,
+      "max_escape_pairs": 1,
+      "expanded": 513,
+      "history": [
+        {
+          "order": [
+            "functional-0",
+            "functional-1",
+            "functional-2"
+          ],
+          "routed": 3,
+          "failures": []
+        }
+      ],
+      "endpoint_minimum_overflight_mm": {
+        "functional-0": {
+          "source_mm": 0,
+          "destination_mm": 0
+        },
+        "functional-1": {
+          "source_mm": 0,
+          "destination_mm": 0
+        },
+        "functional-2": {
+          "source_mm": 0,
+          "destination_mm": 0
+        }
+      },
+      "escape_policy": "minimum_owning_body_only"
+    },
+    "proved_impossible": false,
+    "accepted": false,
+    "remaining_gates": [
+      "source/native/copper registration",
+      "actual SVG independent lint",
+      "manual visual and topology review",
+      "reader Fit",
+      "electrical and fitted hardware qualification"
+    ]
+  }
+}

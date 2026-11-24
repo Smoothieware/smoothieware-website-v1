@@ -1,0 +1,22 @@
+Seven-channel DC mechanical relay - selected v24 source inspection snapshot
+
+Native source directory:
+https://github.com/arthurwolf/extension-boards/tree/main/src/seven-channel-dc-mechanical-relay/attempt/versions/v24
+
+Native CAD, project/rule files and the matching exported BOM and netlist are
+retained byte for byte. The schematic declares CERN-OHL-S-2.0; all existing
+notices remain in the originals. The licence text is obtained from SPDX:
+https://github.com/spdx/license-list-data/blob/main/text/CERN-OHL-S-2.0.txt
+
+Open the .kicad_pcb and .kicad_sch in KiCad 9 for inspection. Their native
+footprints/symbol definitions are embedded. This is not the complete original
+project tree: the separately referenced symbol/footprint libraries and 3D
+models, historical trials and fabrication outputs are not included. Library
+resolution and all regeneration require the matching upstream resources.
+
+The file selection and this notice were prepared for the Smoothieware guide
+on 2026-10-25; the six original design/export files are unmodified.
+
+v24 is an unqualified TPL7407L prototype study, not a fabrication release.
+This snapshot grants no installed load rating, field-use or powered-wiring
+acceptance. Consult the matching guide for power, contact and firmware limits.

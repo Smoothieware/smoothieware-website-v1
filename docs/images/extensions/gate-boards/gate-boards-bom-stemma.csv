@@ -1,0 +1,77 @@
+Reference,Value,Footprint/assembly option,X_mm,Y_mm,Rotation_deg,Side,DNP
+C1,1uF 25V,Capacitor_SMD:C_0805_2012Metric,24.0,30.0,0.0,top,False
+C2,1uF 25V,Capacitor_SMD:C_0805_2012Metric,24.0,22.0,0.0,top,False
+C3,100nF 50V,Capacitor_SMD:C_0603_1608Metric,24.0,14.0,0.0,top,False
+C4,100nF 50V,Capacitor_SMD:C_0603_1608Metric,31.0,22.0,0.0,top,False
+C5,10uF 16V,Capacitor_SMD:C_0805_2012Metric,29.0,26.0,0.0,top,False
+C6,1uF 25V,Capacitor_SMD:C_0805_2012Metric,39.0,23.0,0.0,top,False
+C7,10nF 50V,Capacitor_SMD:C_0805_2012Metric,17.0,19.0,0.0,top,False
+C8,10nF 50V,Capacitor_SMD:C_0805_2012Metric,35.0,19.0,0.0,top,False
+CF1,100nF 25V X7R,Protection5V:C_0603_1608Metric,4.5,20.2,180.0,bottom,False
+CF2,100nF 50V X7R,Protection5V:C_0603_1608Metric,27.5,23.0,180.0,bottom,False
+CF3,1uF 25V X7R,Protection5V:C_0603_1608Metric,20.5,7.5,180.0,bottom,False
+CF4,10uF 16V X7R NONPOLAR,Protection5V:C_0805_2012Metric,23.0,22.0,180.0,bottom,False
+CF5,10uF 16V X7R NONPOLAR,Protection5V:C_0805_2012Metric,19.5,32.0,180.0,bottom,False
+D1,BAT54WS,Diode_SMD:D_SOD-323,17.0,15.0,0.0,top,False
+D2,BAT54WS,Diode_SMD:D_SOD-323,35.0,15.0,0.0,top,False
+D3,PESD5V0S1BA,Diode_SMD:D_SOD-323,12.0,12.7,0.0,top,False
+D4,PESD5V0S1BA,Diode_SMD:D_SOD-323,30.0,12.7,0.0,top,False
+D5,GREEN OUT,LED_SMD:LED_0805_2012Metric,38.0,30.0,0.0,top,False
+D6,GREEN POWER,LED_SMD:LED_0805_2012Metric,24.0,6.3,0.0,top,False
+DF1,1N4148WS-7-F,Protection5V:D_SOD-323,21.5,17.0,180.0,bottom,False
+DF10,BAT54WS-7-F,Protection5V:D_SOD-323,17.0,36.0,180.0,bottom,False
+DF2,LTST-C170KRKT,Protection5V:LED_0805_2012Metric,45.0,3.0,180.0,bottom,False
+DF3,BAT54WS-7-F,Protection5V:D_SOD-323,22.0,28.5,180.0,bottom,False
+DF4,BZT52C12S-7-F,Protection5V:D_SOD-323,12.5,36.0,180.0,bottom,False
+DF5,LTST-C170KRKT,Protection5V:LED_0805_2012Metric,40.0,5.5,180.0,bottom,False
+DF6,1N4148WS-7-F,Protection5V:D_SOD-323,10.0,9.5,180.0,bottom,False
+DF7,BZT52C3V9S-7-F,Protection5V:D_SOD-323,20.5,13.5,180.0,bottom,False
+DF8,LTST-C170KRKT,Protection5V:LED_0805_2012Metric,45.0,16.0,180.0,bottom,False
+DF9,BAT54WS-7-F,Protection5V:D_SOD-323,16.0,10.0,180.0,bottom,False
+H1,MountingHole_3.2mm_M3,MountingHole_3.2mm_M3,4.0,10.0,0.0,top,False
+H2,MountingHole_3.2mm_M3,MountingHole_3.2mm_M3,44.0,10.0,0.0,top,False
+H3,MountingHole_3.2mm_M3,MountingHole_3.2mm_M3,4.0,30.0,0.0,top,False
+H4,MountingHole_3.2mm_M3,MountingHole_3.2mm_M3,44.0,30.0,0.0,top,False
+J1,JST B3B-PH-K-S(LF)(SN),JST_PH_B3B-PH-K_1x03_P2.00mm_Vertical,12.54,8.3,0.0,top,False
+J2,JST B3B-PH-K-S(LF)(SN),JST_PH_B3B-PH-K_1x03_P2.00mm_Vertical,30.54,8.3,0.0,top,False
+J3,JST B3B-PH-K-S(LF)(SN),JST_PH_B3B-PH-K_1x03_P2.00mm_Vertical,32.54,37.3,0.0,top,False
+J4,5V POWER,"TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal",11.0,34.0,0.0,top,False
+JP1,CUT TO DISABLE D6,Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm,24.898442,3.500305,90.89517371,top,False
+JP2,CUT TO DISABLE D5,Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm,43.725087,35.80676,-46.84761027,top,False
+Q1,AO3401A reverse protection,Package_TO_SOT_SMD:SOT-23,18.0,25.5,0.0,top,False
+QF1,MMBT3904-7-F,Protection5V:SOT-23,11.0,29.0,180.0,bottom,False
+QF2,MMBT3904-7-F,Protection5V:SOT-23,18.0,23.0,180.0,bottom,False
+QF3,DMP3056L-7,Protection5V:SOT-23,5.0,17.0,180.0,bottom,False
+R1,100k,Resistor_SMD:R_0805_2012Metric,24.0,33.0,0.0,top,False
+R2,10k,Resistor_SMD:R_0805_2012Metric,12.0,15.0,0.0,top,False
+R3,10k,Resistor_SMD:R_0805_2012Metric,30.0,15.0,0.0,top,False
+R4,4.7k,Resistor_SMD:R_0805_2012Metric,12.0,19.0,0.0,top,False
+R5,4.7k,Resistor_SMD:R_0805_2012Metric,30.0,19.0,0.0,top,False
+R6,100k,Resistor_SMD:R_0805_2012Metric,28.0,29.0,0.0,top,False
+R7,10k,Resistor_SMD:R_0805_2012Metric,39.0,27.0,0.0,top,False
+R8,3.3k,Resistor_SMD:R_0805_2012Metric,33.0,30.0,0.0,top,False
+R9,10k,Resistor_SMD:R_0805_2012Metric,24.0,10.0,0.0,top,False
+RF1,26.7k 0.1%,Protection5V:R_0603_1608Metric,3.5,36.0,180.0,bottom,False
+RF10,470R 1W,Protection5V:R_1206_3216Metric,16.5,28.5,180.0,bottom,False
+RF11,680R 1W,Protection5V:R_1206_3216Metric,10.5,13.0,180.0,bottom,False
+RF12,47k 1%,Protection5V:R_0603_1608Metric,26.0,34.5,180.0,bottom,False
+RF13,47k 1%,Protection5V:R_0603_1608Metric,28.5,30.0,180.0,bottom,False
+RF14,10k 1%,Protection5V:R_0603_1608Metric,10.5,3.5,180.0,bottom,False
+RF15,10k 1%,Protection5V:R_0603_1608Metric,28.0,14.0,180.0,bottom,False
+RF16,2.2k 1%,Protection5V:R_0603_1608Metric,5.0,4.0,180.0,bottom,False
+RF2,10k 0.1%,Protection5V:R_0603_1608Metric,24.0,31.5,180.0,bottom,False
+RF3,35.7k 0.1%,Protection5V:R_0603_1608Metric,20.5,10.5,180.0,bottom,False
+RF4,10k 0.1%,Protection5V:R_0603_1608Metric,21.5,35.0,180.0,bottom,False
+RF5,24.0k 1%,Protection5V:R_0603_1608Metric,5.52,23.0,90.0,bottom,False
+RF6,10k 1%,Protection5V:R_0603_1608Metric,21.5,38.0,180.0,bottom,False
+RF7,11.3k 0.1%,Protection5V:R_0603_1608Metric,25.0,11.0,180.0,bottom,False
+RF8,10k 0.1%,Protection5V:R_0603_1608Metric,29.0,18.5,180.0,bottom,False
+RF9,1.8k 1W,Protection5V:R_1206_3216Metric,16.0,17.5,180.0,bottom,False
+SJF1,CUT FAULT LED,Protection5V:SolderJumper-2_P1.3mm_Bridged_Pad1.0x1.5mm,3.0,23.0,180.0,bottom,False
+SJF2,CUT OV LED,Protection5V:SolderJumper-2_P1.3mm_Bridged_Pad1.0x1.5mm,16.0,13.5,180.0,bottom,False
+SJF3,CUT REVERSE LED,Protection5V:SolderJumper-2_P1.3mm_Bridged_Pad1.0x1.5mm,8.0,35.0,180.0,bottom,False
+U1,AP2112K-3.3,Package_TO_SOT_SMD:SOT-23-5,24.0,25.5,0.0,top,False
+U2,SN74LVC1G97 AND,Package_TO_SOT_SMD:SOT-23-6,24.0,18.0,0.0,top,False
+U3,TPS22919,Package_TO_SOT_SMD:SOT-363_SC-70-6,34.0,25.0,0.0,top,False
+UF1,TPS26600PWPR,Protection5V:TPS26600_PWP0016A,10.5,23.0,180.0,bottom,False
+UF2,TL431BIDBZR,Protection5V:SOT-23,10.5,17.0,180.0,bottom,False

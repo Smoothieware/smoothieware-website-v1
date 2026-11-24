@@ -6,107 +6,193 @@ permalink: /extensions/d-sub-to-gadgeteer-in
 
 # D-sub-to-Gadgeteer IN adapter
 
-{% include extension-board-visuals.html slug="d-sub-to-gadgeteer-in" %}
+IN is the host-side half of a dedicated DE-9 cable extension. It transports seven logic contacts, 5 V and ground to the matching OUT board. IN names the power-flow direction; the seven copper signal paths retain the direction imposed by the attached devices.
 
-IN is the host-side half of a custom nine-conductor extension. It accepts a
-keyed 2 × 5, 1.27 mm Gadgeteer cable and presents a male DE-9 interface for a
-dedicated cable to [OUT](/extensions/d-sub-to-gadgeteer-out). IN and OUT name
-the power path, not signal direction. Use one host and one OUT; the assembly is
-not an RS-232 interface, level converter, isolator, or general-purpose D-sub
-extension. It must never be connected to a computer serial port.
+This guide selects **v24** from the existing abstract-export record. It is an engineering candidate, not a fabricated, released or hardware-qualified product. Historical and older revision prose does not establish the illustrated revision's behavior.
 
-## Development status
+The selected v24 source package retains schematic title-block revisions **v12**; **v11**. The package number does not rename the schematic or establish a released hardware revision.
 
-**Baseline documentation snapshot: 2026-10-11, before the requested connector/protection/usability revision program.** New revision features require their own reviewed source and qualification evidence.
+## How it works
 
-This page documents an **unqualified engineering study**, not a released or tested product. Saved CAD, renders and automated checks do not establish a safe assembly, compatible cable, firmware support or a usable current rating.
+J1 is the host Gadgeteer interface and J2 the male DE-9 custom cable interface. The cable does not transport host 3.3 V; OUT regenerates its own 3.3 V from the delivered 5 V. J3 branches host contacts 8/9 and host 3.3 V into a four-contact connector. Use it as a Qwiic interface only after establishing that contact 8 is SDA and contact 9 is SCL on the chosen host; the connector label cannot assign those functions.
 
-Board-specific qualification limits: Enabled native0;header-only purchasing BOM/blank native MPNs,partial STEP,five ignored categories/physical open.
+## Power, signals and limits
 
-## Interfaces and wiring
+The DE-9 map is 1→signal3, 2→signal4, 3→signal5, 4→signal6, 5→GND, 6→signal7, 7→signal8, 8→signal9, 9→5 V. This is not RS-232, isolation or level translation. Never connect a computer serial port, serial cable or null modem. A short or incorrect cable can apply power to an MCU signal. Cable length, load current, voltage drop and bus speed must be bounded for the actual peripheral.
 
-### Connection contract
+## Board reference
 
-The nine DE-9 contacts carry exactly seven independent signals, one ground,
-and one fused +5 V conductor. Gadgeteer pin 1, the host +3.3 V rail, does not
-enter the DE-9 or OUT board. Gadgeteer pin 2 supplies +5 V through IN's F1
-fuse; pin 10 is the sole signal/power return. The DE-9 shell is not a tenth
-conductor and has no intentional connection to circuit ground.
+<details markdown="1">
+<summary>Reading the connector callouts</summary>
 
-| DE-9 numbered contact | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| Gadgeteer pin | 3 | 4 | 5 | 6 | 10 | 7 | 8 | 9 | 2 |
-| IN net | SIG3 | SIG4 | SIG5 | SIG6 | GND | SIG7 | SIG8 | SIG9 | CABLE_5V |
+The dark end of each pill gives the source contact number. The adjoining label gives its function. Colours help locate related functions; the label and connection instructions determine how to use the contact.
 
-The OUT board uses this same numbered map. Confirm numbers from each actual
-mating face; male, female, and PCB solder views are mirrored. Only a tested
-nine-conductor straight-through cable is allowed: IN male mates a cable socket,
-OUT female mates its cable pins, with contact *n* wired to *n* for all nine.
-Maximum cable length is 1.0 m, with +5 V and ground conductors at least
-26 AWG. Before first power, prove every intended contact is continuous below
-0.5 Ω after test-lead compensation and all unintended contact/contact and
-contact/shell combinations are above 1 MΩ. Measure loaded voltage drop too.
-No null-modem, crossover, unidentified commercial serial cable, or hot plug.
+- Red: 3.3 V supply.
+- Orange: 5 V supply.
+- Near-black: Circuit ground.
+- Dark grey: Other source-labelled contact — read its exact function.
 
-Power off before connecting or changing jumpers. Verify pin 1, signal direction, supply voltage and ground at both ends of every cable. A mechanically fitting connector is not proof of electrical compatibility. If a host pin mapping or current allocation remains unresolved in the design record, do not connect the board until it is resolved.
+A voltage in a signal name does not make that contact a power output. Circuit ground, cable shield and protective earth are different connections. An underside projection shows rear components through the front view; it is not a mirrored rear view.
 
-## Selected component architecture
+</details>
 
-[Complete current review](https://github.com/arthurwolf/extension-boards/blob/main/src/d-sub-to-gadgeteer-in/component-review.md#current-v12-reconciliation--2026-10-11): actualv12 retains passive interface/fuse/shunts,no successor. Contract covers12 purchased/four testpad refs; purchasing BOMs are header-only and native BOM lacks MPNs. Enabled native checks0 do not close five ignored categories/partial STEP/physical gates.
+{% include _includes/extension-instruction-diagram.html id="d-sub-to-gadgeteer-in-v24-reader-compact-overview" src="/images/extensions/d-sub-to-gadgeteer-in/guides/reader-compact-overview.svg" title="DE-9 adapter · host — overview" alt="DE-9 adapter · host — overview for d-sub-to-gadgeteer-in v24" caption="Reference for the documented revision. Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
 
-## Configuration and commissioning
+<details markdown="1">
+<summary>Larger combined reference</summary>
 
-Use the configuration and firmware contract for the exact selected revision. Do not copy another module’s socket assignments or assume that an unused pin is available. First-article work must verify source selection, reset/unplug behavior, cable orientation and the actual load or sensor interface before normal operation.
+{% include _includes/extension-instruction-diagram.html id="d-sub-to-gadgeteer-in-v24-reference" src="/images/extensions/d-sub-to-gadgeteer-in/guides/reader-reference.svg" title="Annotated board reference — v24" alt="Annotated board reference for d-sub-to-gadgeteer-in" caption="Source-bound component-side reference. Dotted leaders locate parts and are not wiring. Physical mating, voltage qualification and actual page-viewer review remain open." width=1440 %}
 
-## Requested connector and usability upgrades
+</details>
 
-The following are requirements for the next design iterations; this page does **not** claim they are already fitted:
+Start with the overview, then use all focused sheets for exact contacts, controls and links. Source footprint defaults do not prove assembled continuity.
 
-- On electrically suitable three/four-pin low-voltage ports, provide compact alternative 2.54 mm header/Molex-style and keyed STEMMA-family footprints. Populate one connector option per shared position and document its pin order. Use STEMMA QT only for compatible four-wire I²C; connector appearance does not make another signal protocol I²C-compatible.
-- Render each supported connector population separately. Document clearances, cable access and the exact fitted option.
-- Use uppercase titles in a consistent Montserrat-style face, labels on both sides, visible domain boundaries, a revision-specific wiring guide and this page’s URL on the silk where readable.
-- Keep mounting-hole centers on a documented 10 mm lattice; add cable-tie holes where space and electrical clearances permit. Place status LEDs near accessible edges and give every indicator its own disable solder jumper. Provide labeled test pads and a ground observation point.
-- Review applicable DC power entries for reverse-polarity cutoff with a blinking warning, overvoltage cutoff/indication, controlled startup and electronic overcurrent protection. Indicator and protection circuits must work in the fault state without defeating isolation or safe output defaults. Thermal protection belongs only where the power/thermal analysis justifies it.
-- Electronic protection does not automatically replace a required mains/branch safety fuse. Backfeed blocking and inductive-load flyback clamps are separate design functions. Do not add identity EEPROMs, fault memory, calibration storage or paid self-test hardware under this upgrade program.
+<details markdown="1">
+<summary>Focused contact and component sheets</summary>
 
-## Design sources
 
-- [Board specification](https://github.com/arthurwolf/extension-boards/blob/main/src/d-sub-to-gadgeteer-in/specs.md)
-- [Architecture and component decisions](https://github.com/arthurwolf/extension-boards/blob/main/src/d-sub-to-gadgeteer-in/design.md)
-- [Selected-revision review and qualification record](https://github.com/arthurwolf/extension-boards/blob/main/src/d-sub-to-gadgeteer-in/component-review.md)
-- [All extension boards](/#extension-boards)
+{% include _includes/extension-instruction-diagram.html id="d-sub-to-gadgeteer-in-v24-reader-compact-gadgeteer-1-5" src="/images/extensions/d-sub-to-gadgeteer-in/guides/reader-compact-gadgeteer-1-5-central-pills.svg" title="J1 · Gadgeteer — gadgeteer 1 5" alt="J1 · Gadgeteer — gadgeteer 1 5 for d-sub-to-gadgeteer-in v24" caption="Reference for the documented revision. Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
 
-Documentation route: `smoothieware.org/extensions/d-sub-to-gadgeteer-in`.
+{% include _includes/extension-instruction-diagram.html id="d-sub-to-gadgeteer-in-v24-reader-compact-gadgeteer-6-10" src="/images/extensions/d-sub-to-gadgeteer-in/guides/reader-compact-gadgeteer-6-10-central-pills.svg" title="J1 · Gadgeteer — gadgeteer 6 10" alt="J1 · Gadgeteer — gadgeteer 6 10 for d-sub-to-gadgeteer-in v24" caption="Reference for the documented revision. Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
 
-<!-- additive-cad-status:start -->
-## Additive design studies
+{% include _includes/extension-instruction-diagram.html id="d-sub-to-gadgeteer-in-v24-reader-compact-custom-de9-1-5" src="/images/extensions/d-sub-to-gadgeteer-in/guides/reader-compact-custom-de9-1-5-central-pills.svg" title="J2 · Custom DE-9 — custom de9 1 5" alt="J2 · Custom DE-9 — custom de9 1 5 for d-sub-to-gadgeteer-in v24" caption="Reference for the documented revision. Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
 
-The 2026-10-11 upgrade program has saved additional candidates v13, v14, v15. These studies preserve the historical design described above. Their connector, LED, mechanical and protection changes are revision-specific and remain unqualified.
+{% include _includes/extension-instruction-diagram.html id="d-sub-to-gadgeteer-in-v24-reader-compact-custom-de9-6-9" src="/images/extensions/d-sub-to-gadgeteer-in/guides/reader-compact-custom-de9-6-9-central-pills.svg" title="J2 · Custom DE-9 — custom de9 6 9" alt="J2 · Custom DE-9 — custom de9 6 9 for d-sub-to-gadgeteer-in v24" caption="Reference for the documented revision. Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
 
-See the [per-board changes, failures and remaining work](https://github.com/arthurwolf/extension-boards/blob/main/src/d-sub-to-gadgeteer-in/fancification.md) and [mandatory family specification](https://github.com/arthurwolf/extension-boards/blob/main/docs/FANCIFICATION-SPEC.md). Use the source hash and native check for the exact candidate being reviewed; do not infer hardware ratings from a rendered population.
-<!-- additive-cad-status:end -->
+{% include _includes/extension-instruction-diagram.html id="d-sub-to-gadgeteer-in-v24-reader-compact-four-pin-breakout-1-4" src="/images/extensions/d-sub-to-gadgeteer-in/guides/reader-compact-four-pin-breakout-1-4-central-pills.svg" title="J3 · 4-pin breakout — four pin breakout 1 4" alt="J3 · 4-pin breakout — four pin breakout 1 4 for d-sub-to-gadgeteer-in v24" caption="Reference for the documented revision. Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
 
-<!-- extension-upgrade-readback:start -->
-## Upgrade candidate readback
+{% include _includes/extension-instruction-diagram.html id="d-sub-to-gadgeteer-in-v24-reader-compact-signal-protection-2-5" src="/images/extensions/d-sub-to-gadgeteer-in/guides/reader-compact-signal-protection-2-5.svg" title="Signal protection — signal protection 2 5" alt="Signal protection — signal protection 2 5 for d-sub-to-gadgeteer-in v24" caption="Reference for the documented revision. Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
 
-The three additional revisions are **v13, v14, v15**. They are engineering studies; saved CAD and renders do not release the hardware. The latest candidate is described below. Older baseline notes above remain historical.
+{% include _includes/extension-instruction-diagram.html id="d-sub-to-gadgeteer-in-v24-reader-compact-signal-protection-6-8" src="/images/extensions/d-sub-to-gadgeteer-in/guides/reader-compact-signal-protection-6-8.svg" title="Signal protection — signal protection 6 8" alt="Signal protection — signal protection 6 8 for d-sub-to-gadgeteer-in v24" caption="Reference for the documented revision. Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
 
-### d-sub-to-gadgeteer-in
+{% include _includes/extension-instruction-diagram.html id="d-sub-to-gadgeteer-in-v24-reader-compact-supply-protection" src="/images/extensions/d-sub-to-gadgeteer-in/guides/reader-compact-supply-protection-underside-caption.svg" title="Cable supply protector — supply protection" alt="Cable supply protector — supply protection for d-sub-to-gadgeteer-in v24" caption="Reference for the documented revision. Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
 
-- [Latest PCB source](https://github.com/arthurwolf/extension-boards/blob/main/src/d-sub-to-gadgeteer-in/attempt/versions/v15/d-sub-to-gadgeteer-in.kicad_pcb), SHA-256 `7a72ed48cbca355e6bc8af0c96eb76fb9f7de3b17b1e5dce11204d4df78bf25e`.
-- Last native check: **19 errors**, including **19 open connections**. This is a CAD result, not electrical, assembly or firmware qualification.
-- Alternative connector lands recorded: J3 / `PinHeader_1x04_P2.54mm_Vertical`. Fit only the selected population; check its pin map and voltage in the design record.
-- [normal population/render record](https://github.com/arthurwolf/extension-boards/blob/main/src/d-sub-to-gadgeteer-in/attempt/versions/v15/populations/d-sub-to-gadgeteer-in/normal/population.json): 6 images; source current; image hashes match; 0 unresolved models.
-- [stemma population/render record](https://github.com/arthurwolf/extension-boards/blob/main/src/d-sub-to-gadgeteer-in/attempt/versions/v15/populations/d-sub-to-gadgeteer-in/stemma/population.json): 6 images; source current; image hashes match; 0 unresolved models.
-- [Changes, failed trials and remaining work](https://github.com/arthurwolf/extension-boards/blob/main/src/d-sub-to-gadgeteer-in/attempt/versions/v15/d-sub-to-gadgeteer-in-fancification-revision.md).
+{% include _includes/extension-instruction-diagram.html id="d-sub-to-gadgeteer-in-v24-reader-compact-breakout-pads" src="/images/extensions/d-sub-to-gadgeteer-in/guides/reader-compact-breakout-pads-underside-caption.svg" title="Four-contact pad groups — breakout pads" alt="Four-contact pad groups — breakout pads for d-sub-to-gadgeteer-in v24" caption="Reference for the documented revision. Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
 
-Applicable protection, current-path, thermal, pinout, cable access and physical tests remain open wherever the linked board record has not verified them. A zero native-error count does not close those gates.
-<!-- extension-upgrade-readback:end -->
+{% include _includes/extension-instruction-diagram.html id="d-sub-to-gadgeteer-in-v24-reader-compact-test-pads" src="/images/extensions/d-sub-to-gadgeteer-in/guides/reader-compact-test-pads.svg" title="Test pads — test pads" alt="Test pads — test pads for d-sub-to-gadgeteer-in v24" caption="Reference for the documented revision. Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
 
-## Second-round annotation readback v21 — 2026-10-13
+</details>
 
-Protected source v20; current PCB SHA-256 `645c020ac2b62be9a0653f16f9d5aaa4edf8a3726437a61c551a5e04eeb9b44a`. Fresh native checks: zero enabled errors, opens, schematic mismatches and ERC findings; 1 PCB warnings remain. Electrical geometry/project rules unchanged; 189 historical files, 88 model entries,17 exports and12 current population images verified. All12 populated/bare views inspected. Full documentation URL is readable in the current renders. Physical qualification remains open; no price or area savings claimed.
+These annotated references explain the selected revision; the complete practical wiring diagram and desktop/narrow viewer checks remain incomplete.
 
-## Trusted-power compact correction
+### d-sub-to-gadgeteer-in — saved connector contacts
 
-Engineering revision **v24** removes36 redundant trusted-input protection parts and restores the original23 ×29mm outline. A horizontal2.54mm alternative header and undersideSH connector share the compact bottom area. Native checks find no errors or open connections; each connector population has six renders with the fullDB9 shell framed. This remains an unqualified engineering design, not a fabrication release.
+Contact numbering below is the selected PCB's pad numbering, viewed using the final board-reference drawing. Same-numbered duplicate lands are collapsed in this electrical table. Mechanical unnumbered pads are omitted here. Physical connector-population and mating qualification remains open. `NC` means unconnected in this saved source, not a spare supported function. Named nets alone do not establish direction; use the signal-path explanation above.
+
+<details markdown="1">
+<summary>Selected-source contact inventory</summary>
+
+<div class="extension-contact-table" role="region" aria-label="Selected-source contact inventory; scroll horizontally to read all columns" tabindex="0" markdown="1">
+
+| Connector | Contact(s) | Saved-source function/net |
+| --- | --- | --- |
+| J1 — SHF-105-01-L-D-TH | 1 | `HOST_3V3` |
+| J1 — SHF-105-01-L-D-TH | 2 | `HOST_5V` |
+| J1 — SHF-105-01-L-D-TH | 3 | `SIG3` |
+| J1 — SHF-105-01-L-D-TH | 4 | `SIG4` |
+| J1 — SHF-105-01-L-D-TH | 5 | `SIG5` |
+| J1 — SHF-105-01-L-D-TH | 6 | `SIG6` |
+| J1 — SHF-105-01-L-D-TH | 7 | `SIG7` |
+| J1 — SHF-105-01-L-D-TH | 8 | `SIG8` |
+| J1 — SHF-105-01-L-D-TH | 9 | `SIG9` |
+| J1 — SHF-105-01-L-D-TH | 10 | `GND` |
+| J2 — DE-9 PINS | 1 | `SIG3` |
+| J2 — DE-9 PINS | 2 | `SIG4` |
+| J2 — DE-9 PINS | 3 | `SIG5` |
+| J2 — DE-9 PINS | 4 | `SIG6` |
+| J2 — DE-9 PINS | 5 | `GND` |
+| J2 — DE-9 PINS | 6 | `SIG7` |
+| J2 — DE-9 PINS | 7 | `SIG8` |
+| J2 — DE-9 PINS | 8 | `SIG9` |
+| J2 — DE-9 PINS | 9 | `HOST_5V` |
+| J3 — QWIIC I-ONLY | 1 | `GND` |
+| J3 — QWIIC I-ONLY | 2 | `HOST_3V3` |
+| J3 — QWIIC I-ONLY | 3 | `SIG8` |
+| J3 — QWIIC I-ONLY | 4 | `SIG9` |
+| J3 — QWIIC I-ONLY | MP | `GND` |
+
+</div>
+
+<details markdown="1">
+<summary>Combined connector and link details</summary>
+
+{% include _includes/extension-instruction-diagram.html id="d-sub-to-gadgeteer-in-v24-connector-detail-01" src="/images/extensions/d-sub-to-gadgeteer-in/guides/reader-connector-detail-01.svg" title="Connector detail 01 — v24" alt="Connector detail 01 for d-sub-to-gadgeteer-in" caption="Source-bound component-side reference. Dotted leaders locate parts and are not wiring. Physical mating, voltage qualification and actual page-viewer review remain open." width=1440 %}
+
+{% include _includes/extension-instruction-diagram.html id="d-sub-to-gadgeteer-in-v24-connector-detail-02" src="/images/extensions/d-sub-to-gadgeteer-in/guides/reader-connector-detail-02.svg" title="Connector detail 02 — v24" alt="Connector detail 02 for d-sub-to-gadgeteer-in" caption="Source-bound component-side reference. Dotted leaders locate parts and are not wiring. Physical mating, voltage qualification and actual page-viewer review remain open." width=1440 %}
+
+</details>
+
+
+Selected active-component identities: no U-designated ICs in this saved PCB. These identities are not a substitute for matching datasheet limits.
+
+
+</details>
+
+## Practical use with Smoothieboard V2 Prime
+
+The selected example is a normally-open dry button on the custom DE-9 connector. This uses GPIO only; no remote adapter, sensor power or serial protocol is required.
+
+{% include _includes/extension-instruction-diagram.html id="d-sub-in-v24-compact-main" src="/images/extensions/d-sub-to-gadgeteer-in/guides/compact-individual-leads.svg" title="Prime to DE-9 input and dry button" alt="Prime to DE-9 input and dry button for the v24 normally-open dry-contact example" caption="Four external leads; no power feed. Keys show PCB pad projections, not cable mating faces. Not an RS-232 interface." width=420 %}
+
+### Locate the selected contacts
+
+Use these contact keys with the complete circuit. Filled pads are the selected contacts; leave the others unused.
+
+{% include _includes/extension-instruction-diagram.html id="d-sub-in-v24-compact-j37" src="/images/extensions/d-sub-to-gadgeteer-in/guides/compact-J37-numbered-pads.svg" title="Prime GF / J37" alt="Prime GF / J37 for the v24 normally-open dry-contact example" caption="Four external leads; no power feed. Keys show PCB pad projections, not cable mating faces. Not an RS-232 interface." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="d-sub-in-v24-compact-j1" src="/images/extensions/d-sub-to-gadgeteer-in/guides/compact-J1-numbered-pads.svg" title="Adapter J1" alt="Adapter J1 for the v24 normally-open dry-contact example" caption="Four external leads; no power feed. Keys show PCB pad projections, not cable mating faces. Not an RS-232 interface." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="d-sub-in-v24-compact-j2" src="/images/extensions/d-sub-to-gadgeteer-in/guides/compact-J2-numbered-pads.svg" title="Adapter DE-9 J2" alt="Adapter DE-9 J2 for the v24 normally-open dry-contact example" caption="Four external leads; no power feed. Keys show PCB pad projections, not cable mating faces. Not an RS-232 interface." width=420 %}
+
+<details markdown="1">
+<summary>Additional wide circuit view</summary>
+
+{% include _includes/extension-instruction-diagram.html id="d-sub-in-v24-installation" src="/images/extensions/d-sub-to-gadgeteer-in/guides/prime-installation-wiring.svg" title="DE-9 IN adapter v24 — normally-open button wiring" alt="Prime GF/J37 connects to J1; DE-9 J2.1 signal and J2.5 ground connect a normally-open button." caption="Source-numbered electrical schematic with retained P11 Prime artwork and checked P12 connector assignment. Physical mating and complete artwork checks remain open." width=1950 %}
+
+The compact plan above uses only the two required host leads. Leave all remaining host and adapter contacts unused for this example.
+
+</details>
+
+1. With power removed, connect **only Prime GF/J37.3 to J1.3** (PB1 / SIG3) and **GF/J37.10 to J1.10** (ground). Leave all other host and J1 contacts unused; do not fit a fully populated ten-wire cable for this example. Confirm actual header numbering and cable orientation; the contact keys are PCB projections, not mating-face views.
+2. Connect the two button contacts to DE-9 J2.1 (SIG3, from J1.3/PB1) and J2.5 (ground, from J1.10). The signal path is direct with a D2 transient clamp to ground; this board has no signal pull-up or buffer.
+3. Leave J2.9 (host 5 V), every other DE-9 signal and J3 Qwiic unused. Do not connect a computer serial port, external powered device or null modem.
+4. Reserve PB1 and enable its internal pull-up. Open at rest reads HIGH; pressing the button grounds the input and reads LOW. Test with machine loads disabled before enabling an action.
+
+A matching OUT board or I²C peripheral is a different installation. It needs a complete cable, local-supply, pull-up and bus-speed analysis; the Qwiic label does not establish long-distance I²C support.
+
+## Smoothieware use
+
+The passive adapter needs no board-specific driver. This GPIO example uses the [pinned V2 buttonbox parser](https://github.com/Smoothieware/SmoothieV2/blob/2a21c0108b1d095ecd8b2b9358e94055f053c003/Firmware/src/modules/utils/buttonbox/buttonbox.cpp#L49-L125):
+
+```ini
+[button box]
+extension_button.enable = true
+extension_button.pin = PB1!^
+extension_button.press = KILL
+```
+
+`^` enables the input pull-up; `!` makes the grounded button active. `KILL` requests a software halt, not a safety-rated emergency stop. This is source-checked parser syntax and electrical logic, not a tested controller session. Resolve any other PB1 assignment and verify idle, pressed and disconnected states with loads disabled. No DE-9 serial-port or baud setting applies to this GPIO circuit.
+
+If your intended downstream device needs support that is absent, email **wolf.arthur@gamil.com** with its revision and intended use. Select device-specific configuration only after its interface is established.
+
+## Sources and revision notes
+
+The selected-revision engineering repository was unavailable to anonymous readers when checked. Its source links are retained for provenance; an accessible matching source release has not been verified. Firmware and historical-board links are separate sources.
+
+- [Selected v24 source directory](https://github.com/arthurwolf/extension-boards/tree/main/src/d-sub-to-gadgeteer-in/attempt/versions/v24)
+- [Design specification](https://github.com/arthurwolf/extension-boards/blob/main/src/d-sub-to-gadgeteer-in/specs.md) — historical design intent where it names an older revision.
+- [Design discussion](https://github.com/arthurwolf/extension-boards/blob/main/src/d-sub-to-gadgeteer-in/design.md)
+- [All extension boards](/extension-boards)
+
+Upstream source-link availability has **not** been verified for publication.
+
+**Remaining board-specific uncertainty:** Exact peripheral and host bus allocation, cable current/length/timing and paired OUT revision compatibility remain open.
+
+<details markdown="1">
+<summary>Additional board views and engineering history</summary>
+
+{% include _includes/extension-board-visuals.html slug="d-sub-to-gadgeteer-in" %}
+
+The retained gallery is supplementary. It is not either required instructional diagram, and it may include older or different populations whose captions must remain explicit. Development iteration and qualification records remain engineering history rather than operating instructions.
+
+</details>

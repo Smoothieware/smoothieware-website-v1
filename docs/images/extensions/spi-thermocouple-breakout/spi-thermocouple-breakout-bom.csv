@@ -1,0 +1,20 @@
+Reference,Value,Footprint,DNP
+C1,100nF 50V X7R,Capacitor_SMD:C_0603_1608Metric,False
+C2,100nF 50V X7R,Capacitor_SMD:C_0603_1608Metric,False
+C3,100nF 50V X7R,Capacitor_SMD:C_0603_1608Metric,False
+C4,10nF 50V C0G,Capacitor_SMD:C_0603_1608Metric,False
+C5,10nF 50V C0G,Capacitor_SMD:C_0603_1608Metric,False
+H1,MountingHole_3.2mm_M3,MountingHole:MountingHole_3.2mm_M3,False
+H2,MountingHole_3.2mm_M3,MountingHole:MountingHole_3.2mm_M3,False
+J1,GADGETEER S IN,Smoothie_SPI_Thermocouple:Samtec_SHF105_TH_LC,False
+J2,GADGETEER S CHAIN,Smoothie_SPI_Thermocouple:Samtec_SHF105_TH_LC,False
+J3,THERMOCOUPLE T- T+,"TerminalBlock_Phoenix:TerminalBlock_Phoenix_PT-1,5-2-3.5-H_1x02_P3.50mm_Horizontal",False
+JP3,CHAIN P3,Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm,False
+JP4,CHAIN P4,Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm,False
+JP5,CHAIN P5,Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm,False
+JP6,CS OPEN,Jumper:SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm,False
+JP7,CHAIN P7,Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm,False
+JP8,CHAIN P8,Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm,False
+JP9,CHAIN P9,Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm,False
+R1,10k,Resistor_SMD:R_0603_1608Metric,False
+U1,MAX31856MUD+,Package_SO:TSSOP-14_4.4x5mm_P0.65mm,False

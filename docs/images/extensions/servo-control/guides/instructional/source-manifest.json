@@ -1,0 +1,748 @@
+{
+  "board": "servo-control",
+  "revision": "v24",
+  "sources": {
+    "extension-boards/src/servo-control/attempt/versions/v24/servo-control.kicad_pcb": "5ef31f641a2ea6ad41d17cd7c01c2da94b539c6e2dfd00004a473f11285010b8",
+    "extension-boards/src/servo-control/attempt/versions/v24/exports/schematic-netlist.xml": "f2b87b8e24863fe11f4d1401477f160ed98f4dc15334f50f53d74d4d41a9616e",
+    "smoothie-diagrams/data/extension-board-renders/servo-control/v24/servo-control.svg": "7c48c27d7c05bd10ebc6df215bd20c6388d0820724151d48c431c7a91de868b1",
+    "smoothie-documentation/docs/extension-board-inventory/compliance/diagrams/wiring/prime-p11-front-abstract.svg": "18f69db908a317196cb9d230f06eb5c949c081f36908118be8c3bd7fa5d1efbc",
+    "Smoothieboard2/V2_P11_Prime2660/smoothiev2-prime-2660.kicad_pcb": "c0d77f1fac1859ba3b03a6476ba8354763c09edc0a758fb0fc9c5fcf91af4627",
+    "Smoothieboard2/V2_P12_Prime2590/smoothiev2-prime.kicad_pcb": "a7e84b8fb403d9b64fd7f0e09c6aa245f00525ba894bfe9a008093fe73626b29"
+  },
+  "generator_sha256": "72799d8710a5a5fdae49f1e112507cb184713c667eebe024ccbd9a09dacc2712",
+  "host": "GE/J36 on Prime P11 and P12",
+  "host_nets": [
+    "3V3_LIMIT",
+    "5V_LIMIT",
+    "PE8",
+    "PJ7",
+    "PJ8",
+    "PD15",
+    "SPI1_COPI",
+    "SPI1_CIPO",
+    "SPI1_SCK",
+    "GND"
+  ],
+  "servo_nets": [
+    "+3V3",
+    "+5V",
+    "STEP_IN",
+    "DIR_IN",
+    "ENABLE_IN",
+    "SPI_CS_N",
+    "SPI_MOSI",
+    "SPI_MISO",
+    "SPI_SCK",
+    "GND"
+  ],
+  "scene": {
+    "schema": "wiring-scene/1",
+    "bounds_mm": [
+      0,
+      0,
+      200,
+      200
+    ],
+    "grid_mm": 5,
+    "origin_mm": [
+      0,
+      0
+    ],
+    "stroke_mm": 0.8,
+    "halo_mm": 1.6,
+    "clearance_mm": 5,
+    "bodies": [],
+    "contacts": [
+      {
+        "id": "prime.1",
+        "point_mm": [
+          50,
+          35
+        ]
+      },
+      {
+        "id": "servo.1",
+        "point_mm": [
+          150,
+          35
+        ]
+      },
+      {
+        "id": "prime.2",
+        "point_mm": [
+          50,
+          50
+        ]
+      },
+      {
+        "id": "servo.2",
+        "point_mm": [
+          150,
+          50
+        ]
+      },
+      {
+        "id": "prime.3",
+        "point_mm": [
+          50,
+          65
+        ]
+      },
+      {
+        "id": "servo.3",
+        "point_mm": [
+          150,
+          65
+        ]
+      },
+      {
+        "id": "prime.4",
+        "point_mm": [
+          50,
+          80
+        ]
+      },
+      {
+        "id": "servo.4",
+        "point_mm": [
+          150,
+          80
+        ]
+      },
+      {
+        "id": "prime.5",
+        "point_mm": [
+          50,
+          95
+        ]
+      },
+      {
+        "id": "servo.5",
+        "point_mm": [
+          150,
+          95
+        ]
+      },
+      {
+        "id": "prime.6",
+        "point_mm": [
+          50,
+          110
+        ]
+      },
+      {
+        "id": "servo.6",
+        "point_mm": [
+          150,
+          110
+        ]
+      },
+      {
+        "id": "prime.7",
+        "point_mm": [
+          50,
+          125
+        ]
+      },
+      {
+        "id": "servo.7",
+        "point_mm": [
+          150,
+          125
+        ]
+      },
+      {
+        "id": "prime.8",
+        "point_mm": [
+          50,
+          140
+        ]
+      },
+      {
+        "id": "servo.8",
+        "point_mm": [
+          150,
+          140
+        ]
+      },
+      {
+        "id": "prime.9",
+        "point_mm": [
+          50,
+          155
+        ]
+      },
+      {
+        "id": "servo.9",
+        "point_mm": [
+          150,
+          155
+        ]
+      },
+      {
+        "id": "prime.10",
+        "point_mm": [
+          50,
+          170
+        ]
+      },
+      {
+        "id": "servo.10",
+        "point_mm": [
+          150,
+          170
+        ]
+      }
+    ],
+    "wires": [
+      {
+        "id": "C1.01",
+        "source": "prime.1",
+        "destination": "servo.1",
+        "net": "+3V3",
+        "color": "#c83944"
+      },
+      {
+        "id": "C1.02",
+        "source": "prime.2",
+        "destination": "servo.2",
+        "net": "+5V",
+        "color": "#bd6b0c"
+      },
+      {
+        "id": "C1.03",
+        "source": "prime.3",
+        "destination": "servo.3",
+        "net": "STEP_IN",
+        "color": "#287aaf"
+      },
+      {
+        "id": "C1.04",
+        "source": "prime.4",
+        "destination": "servo.4",
+        "net": "DIR_IN",
+        "color": "#8051a0"
+      },
+      {
+        "id": "C1.05",
+        "source": "prime.5",
+        "destination": "servo.5",
+        "net": "ENABLE_IN",
+        "color": "#287b60"
+      },
+      {
+        "id": "C1.06",
+        "source": "prime.6",
+        "destination": "servo.6",
+        "net": "SPI_CS_N",
+        "color": "#8051a0"
+      },
+      {
+        "id": "C1.07",
+        "source": "prime.7",
+        "destination": "servo.7",
+        "net": "SPI_MOSI",
+        "color": "#287b60"
+      },
+      {
+        "id": "C1.08",
+        "source": "prime.8",
+        "destination": "servo.8",
+        "net": "SPI_MISO",
+        "color": "#247e9d"
+      },
+      {
+        "id": "C1.09",
+        "source": "prime.9",
+        "destination": "servo.9",
+        "net": "SPI_SCK",
+        "color": "#3b62a4"
+      },
+      {
+        "id": "C1.10",
+        "source": "prime.10",
+        "destination": "servo.10",
+        "net": "GND",
+        "color": "#192a30"
+      }
+    ]
+  },
+  "routed": {
+    "schema": "wiring-route-result/1",
+    "status": "ROUTED_CANDIDATE",
+    "wires": [
+      {
+        "id": "C1.01",
+        "source": "prime.1",
+        "destination": "servo.1",
+        "net": "+3V3",
+        "color": "#c83944",
+        "points_mm": [
+          [
+            50.0,
+            35.0
+          ],
+          [
+            150.0,
+            35.0
+          ]
+        ],
+        "source_exit": {
+          "side": "external",
+          "overflight_mm": 0
+        },
+        "destination_exit": {
+          "side": "external",
+          "overflight_mm": 0
+        }
+      },
+      {
+        "id": "C1.02",
+        "source": "prime.2",
+        "destination": "servo.2",
+        "net": "+5V",
+        "color": "#bd6b0c",
+        "points_mm": [
+          [
+            50.0,
+            50.0
+          ],
+          [
+            150.0,
+            50.0
+          ]
+        ],
+        "source_exit": {
+          "side": "external",
+          "overflight_mm": 0
+        },
+        "destination_exit": {
+          "side": "external",
+          "overflight_mm": 0
+        }
+      },
+      {
+        "id": "C1.03",
+        "source": "prime.3",
+        "destination": "servo.3",
+        "net": "STEP_IN",
+        "color": "#287aaf",
+        "points_mm": [
+          [
+            50.0,
+            65.0
+          ],
+          [
+            150.0,
+            65.0
+          ]
+        ],
+        "source_exit": {
+          "side": "external",
+          "overflight_mm": 0
+        },
+        "destination_exit": {
+          "side": "external",
+          "overflight_mm": 0
+        }
+      },
+      {
+        "id": "C1.04",
+        "source": "prime.4",
+        "destination": "servo.4",
+        "net": "DIR_IN",
+        "color": "#8051a0",
+        "points_mm": [
+          [
+            50.0,
+            80.0
+          ],
+          [
+            150.0,
+            80.0
+          ]
+        ],
+        "source_exit": {
+          "side": "external",
+          "overflight_mm": 0
+        },
+        "destination_exit": {
+          "side": "external",
+          "overflight_mm": 0
+        }
+      },
+      {
+        "id": "C1.05",
+        "source": "prime.5",
+        "destination": "servo.5",
+        "net": "ENABLE_IN",
+        "color": "#287b60",
+        "points_mm": [
+          [
+            50.0,
+            95.0
+          ],
+          [
+            150.0,
+            95.0
+          ]
+        ],
+        "source_exit": {
+          "side": "external",
+          "overflight_mm": 0
+        },
+        "destination_exit": {
+          "side": "external",
+          "overflight_mm": 0
+        }
+      },
+      {
+        "id": "C1.06",
+        "source": "prime.6",
+        "destination": "servo.6",
+        "net": "SPI_CS_N",
+        "color": "#8051a0",
+        "points_mm": [
+          [
+            50.0,
+            110.0
+          ],
+          [
+            150.0,
+            110.0
+          ]
+        ],
+        "source_exit": {
+          "side": "external",
+          "overflight_mm": 0
+        },
+        "destination_exit": {
+          "side": "external",
+          "overflight_mm": 0
+        }
+      },
+      {
+        "id": "C1.07",
+        "source": "prime.7",
+        "destination": "servo.7",
+        "net": "SPI_MOSI",
+        "color": "#287b60",
+        "points_mm": [
+          [
+            50.0,
+            125.0
+          ],
+          [
+            150.0,
+            125.0
+          ]
+        ],
+        "source_exit": {
+          "side": "external",
+          "overflight_mm": 0
+        },
+        "destination_exit": {
+          "side": "external",
+          "overflight_mm": 0
+        }
+      },
+      {
+        "id": "C1.08",
+        "source": "prime.8",
+        "destination": "servo.8",
+        "net": "SPI_MISO",
+        "color": "#247e9d",
+        "points_mm": [
+          [
+            50.0,
+            140.0
+          ],
+          [
+            150.0,
+            140.0
+          ]
+        ],
+        "source_exit": {
+          "side": "external",
+          "overflight_mm": 0
+        },
+        "destination_exit": {
+          "side": "external",
+          "overflight_mm": 0
+        }
+      },
+      {
+        "id": "C1.09",
+        "source": "prime.9",
+        "destination": "servo.9",
+        "net": "SPI_SCK",
+        "color": "#3b62a4",
+        "points_mm": [
+          [
+            50.0,
+            155.0
+          ],
+          [
+            150.0,
+            155.0
+          ]
+        ],
+        "source_exit": {
+          "side": "external",
+          "overflight_mm": 0
+        },
+        "destination_exit": {
+          "side": "external",
+          "overflight_mm": 0
+        }
+      },
+      {
+        "id": "C1.10",
+        "source": "prime.10",
+        "destination": "servo.10",
+        "net": "GND",
+        "color": "#192a30",
+        "points_mm": [
+          [
+            50.0,
+            170.0
+          ],
+          [
+            150.0,
+            170.0
+          ]
+        ],
+        "source_exit": {
+          "side": "external",
+          "overflight_mm": 0
+        },
+        "destination_exit": {
+          "side": "external",
+          "overflight_mm": 0
+        }
+      }
+    ],
+    "failures": [],
+    "junctions": [],
+    "junction_obligations": [],
+    "body_overflight_mm": 0,
+    "cost": {
+      "owning_body_overflight_mm": 0,
+      "outside_length_mm": 1000.0,
+      "turns": 0,
+      "crossings": 0
+    },
+    "score_priority": [
+      "owning_body_overflight_mm",
+      "outside_length_mm",
+      "turns",
+      "crossings"
+    ],
+    "globally_optimal": false,
+    "search": {
+      "max_expansions_per_pair": 2000,
+      "max_orders": 1,
+      "max_escape_pairs": 32,
+      "expanded": 210,
+      "history": [
+        {
+          "order": [
+            "C1.01",
+            "C1.02",
+            "C1.03",
+            "C1.04",
+            "C1.05",
+            "C1.06",
+            "C1.07",
+            "C1.08",
+            "C1.09",
+            "C1.10"
+          ],
+          "routed": 10,
+          "failures": []
+        }
+      ],
+      "endpoint_minimum_overflight_mm": {
+        "C1.01": {
+          "source_mm": 0,
+          "destination_mm": 0
+        },
+        "C1.02": {
+          "source_mm": 0,
+          "destination_mm": 0
+        },
+        "C1.03": {
+          "source_mm": 0,
+          "destination_mm": 0
+        },
+        "C1.04": {
+          "source_mm": 0,
+          "destination_mm": 0
+        },
+        "C1.05": {
+          "source_mm": 0,
+          "destination_mm": 0
+        },
+        "C1.06": {
+          "source_mm": 0,
+          "destination_mm": 0
+        },
+        "C1.07": {
+          "source_mm": 0,
+          "destination_mm": 0
+        },
+        "C1.08": {
+          "source_mm": 0,
+          "destination_mm": 0
+        },
+        "C1.09": {
+          "source_mm": 0,
+          "destination_mm": 0
+        },
+        "C1.10": {
+          "source_mm": 0,
+          "destination_mm": 0
+        }
+      },
+      "escape_policy": "minimum_owning_body_only"
+    },
+    "proved_impossible": false,
+    "accepted": false,
+    "remaining_gates": [
+      "source/native/copper registration",
+      "actual SVG independent lint",
+      "manual visual and topology review",
+      "reader Fit",
+      "electrical and fitted hardware qualification"
+    ]
+  },
+  "locator_transforms": {
+    "servo_native_to_art_mm": [
+      0.0548,
+      0.025
+    ],
+    "prime_native_to_art_mm": [
+      -95.5,
+      -35.25
+    ],
+    "overview_prime_J36": [
+      353.5915935836248,
+      597.9946243043471
+    ],
+    "overview_servo_J1": [
+      958.3076923076924,
+      396.53846153846155
+    ],
+    "physical_wire_claim": false
+  },
+  "contact_schedule": [
+    {
+      "core": "C1.01",
+      "prime": "J36.1",
+      "host_net": "3V3_LIMIT",
+      "servo": "J1.1",
+      "servo_net": "+3V3",
+      "state": "proposed",
+      "colour_basis": "diagram class, not observed insulation"
+    },
+    {
+      "core": "C1.02",
+      "prime": "J36.2",
+      "host_net": "5V_LIMIT",
+      "servo": "J1.2",
+      "servo_net": "+5V",
+      "state": "proposed",
+      "colour_basis": "diagram class, not observed insulation"
+    },
+    {
+      "core": "C1.03",
+      "prime": "J36.3",
+      "host_net": "PE8",
+      "servo": "J1.3",
+      "servo_net": "STEP_IN",
+      "state": "proposed",
+      "colour_basis": "diagram class, not observed insulation"
+    },
+    {
+      "core": "C1.04",
+      "prime": "J36.4",
+      "host_net": "PJ7",
+      "servo": "J1.4",
+      "servo_net": "DIR_IN",
+      "state": "proposed",
+      "colour_basis": "diagram class, not observed insulation"
+    },
+    {
+      "core": "C1.05",
+      "prime": "J36.5",
+      "host_net": "PJ8",
+      "servo": "J1.5",
+      "servo_net": "ENABLE_IN",
+      "state": "proposed",
+      "colour_basis": "diagram class, not observed insulation"
+    },
+    {
+      "core": "C1.06",
+      "prime": "J36.6",
+      "host_net": "PD15",
+      "servo": "J1.6",
+      "servo_net": "SPI_CS_N",
+      "state": "proposed",
+      "colour_basis": "diagram class, not observed insulation"
+    },
+    {
+      "core": "C1.07",
+      "prime": "J36.7",
+      "host_net": "SPI1_COPI",
+      "servo": "J1.7",
+      "servo_net": "SPI_MOSI",
+      "state": "proposed",
+      "colour_basis": "diagram class, not observed insulation"
+    },
+    {
+      "core": "C1.08",
+      "prime": "J36.8",
+      "host_net": "SPI1_CIPO",
+      "servo": "J1.8",
+      "servo_net": "SPI_MISO",
+      "state": "proposed",
+      "colour_basis": "diagram class, not observed insulation"
+    },
+    {
+      "core": "C1.09",
+      "prime": "J36.9",
+      "host_net": "SPI1_SCK",
+      "servo": "J1.9",
+      "servo_net": "SPI_SCK",
+      "state": "proposed",
+      "colour_basis": "diagram class, not observed insulation"
+    },
+    {
+      "core": "C1.10",
+      "prime": "J36.10",
+      "host_net": "GND",
+      "servo": "J1.10",
+      "servo_net": "GND",
+      "state": "proposed",
+      "colour_basis": "diagram class, not observed insulation"
+    }
+  ],
+  "open": [
+    "No selected external power-stage pinout or motor/encoder assembly.",
+    "No TMC4671 initialization, tuning or integrated firmware driver established.",
+    "Native physical mating, fanout, power budgets and fault behaviour unqualified."
+  ],
+  "qualification": {
+    "host_schedule": "source-numbered electrical proposal",
+    "native_clearance": "unverified; expanded electrical keys are not native fanout",
+    "complete_motor_wiring": false,
+    "hardware": false,
+    "accepted": false
+  },
+  "files": {
+    "instructional-reference.svg": "7bbf5ec7583f41bb387f184daaf2c046bcfd1a7a6a3c2c381a9b8aa06df02583",
+    "host-contacts-6-10.svg": "c68f09a194f5430a185ac5513cf0967f95a3ee09bc65ea65e6fd4622e03b7f5f",
+    "host-contacts-1-5.svg": "0cabd0178fd3e32bccb923a49021a3891ddf63fd33282e4f1d35de7c5e9a4421",
+    "prime-host-wiring.svg": "90b95b1f31b95791edcac3f03efccf41ddcb0aad35a4f88efd43bb6fd75f48eb"
+  }
+}

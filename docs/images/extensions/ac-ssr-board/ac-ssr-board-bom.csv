@@ -1,0 +1,31 @@
+Reference,Value,Footprint,DNP
+C1,22nF X2 305VAC,Capacitor_THT:C_Rect_L18.0mm_W5.0mm_P15.00mm_FKS3_FKP3,False
+C2,100n,Capacitor_SMD:C_0603_1608Metric,False
+CT1,CABLE TIE,Fancification_Mechanical:CableTie_NPTH_2_5mm,False
+CT2,CABLE TIE,Fancification_Mechanical:CableTie_NPTH_2_5mm,False
+D1,LED amber CMD,LED_SMD:LED_0805_2012Metric,False
+D2,PESD3V3U1UL,Diode_SMD:D_SOD-882,False
+F1,Fuseholder 6.3x32 + fuse 25A F,Fuse:Fuseholder_Cylinder-6.3x32mm_Schurter_FUP_0031.2520_Horizontal_Closed,False
+H1,MountingHole_3.2mm_M3,MountingHole:MountingHole_3.2mm_M3,False
+H2,MountingHole_3.2mm_M3,MountingHole:MountingHole_3.2mm_M3,False
+H3,MountingHole_3.2mm_M3,MountingHole:MountingHole_3.2mm_M3,False
+H4,MountingHole_3.2mm_M3,MountingHole:MountingHole_3.2mm_M3,False
+J1,SHF-105-01-L-D-TH-LC,AC_SSR:Samtec_SHF105_TH_LC,False
+J2,DT-55-B01X-02,TerminalBlock_Dinkle:TerminalBlock_Dinkle_DT-55-B01X-02_P10.00mm,False
+J3,THERMOSTAT_NC,Connector_JST:JST_XH_B2B-XH-A_1x02_P2.50mm_Vertical,False
+JP1,CUT TO DISABLE D1,Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm,False
+Q1,BTA41-800BRG,Package_TO_SOT_THT:TO-3P-3_Vertical,False
+Q2,DMN2056U,Package_TO_SOT_SMD:SOT-23,False
+R1,390,Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal,False
+R2,56,Resistor_THT:R_Axial_DIN0414_L11.9mm_D4.5mm_P15.24mm_Horizontal,False
+R4,1k,Resistor_SMD:R_0603_1608Metric,False
+R5,330R,Resistor_SMD:R_0805_2012Metric,False
+R6,1k,Resistor_SMD:R_0603_1608Metric,False
+R7,10k,Resistor_SMD:R_0603_1608Metric,False
+RV1,S14K275,Varistor:RV_Disc_D16.5mm_W6.7mm_P7.5mm,False
+TP1,TP_5V,TestPoint:TestPoint_Pad_D2.0mm,False
+TP2,TP_GND,TestPoint:TestPoint_Pad_D2.0mm,False
+TP3,TP_EN,TestPoint:TestPoint_Pad_D2.0mm,False
+TP4,TP_OPTOK,TestPoint:TestPoint_Pad_D2.0mm,False
+TP5,TP_GND2,TestPoint:TestPoint_Pad_D2.0mm,False
+U1,MOC3083TVM,Package_DIP:DIP-6_W10.16mm,False

@@ -1,0 +1,43 @@
+Reference,Value,Footprint,DNP
+C1,100n,Capacitor_SMD:C_0603_1608Metric,False
+C10,100n,Capacitor_SMD:C_0603_1608Metric,False
+C2,100n,Capacitor_SMD:C_0603_1608Metric,False
+C3,100n,Capacitor_SMD:C_0603_1608Metric,False
+C4,100n,Capacitor_SMD:C_0603_1608Metric,False
+C5,100n,Capacitor_SMD:C_0603_1608Metric,False
+C6,100n,Capacitor_SMD:C_0603_1608Metric,False
+C7,100n,Capacitor_SMD:C_0603_1608Metric,False
+C8,100n,Capacitor_SMD:C_0603_1608Metric,False
+C9,10u,Capacitor_SMD:C_0805_2012Metric,False
+CT1,CABLE TIE,Fancification_Mechanical:CableTie_NPTH_2_5mm,False
+CT2,CABLE TIE,Fancification_Mechanical:CableTie_NPTH_2_5mm,False
+D1,TPD2E2U06DCKR,Package_TO_SOT_SMD:SOT-323_SC-70,False
+D2,TPD2E2U06DCKR,Package_TO_SOT_SMD:SOT-323_SC-70,False
+H1,MountingHole_3.2mm_M3,MountingHole_3.2mm_M3,False
+H2,MountingHole_3.2mm_M3,MountingHole_3.2mm_M3,False
+H3,MountingHole_3.2mm_M3,MountingHole_3.2mm_M3,False
+H4,MountingHole_3.2mm_M3,MountingHole_3.2mm_M3,False
+J1,Gadgeteer-I,Spectral_Components:Samtec_SHF105_TH_LC,False
+J2,FLASH_SERVICE_2X05,Connector:Tag-Connect_TC2050-IDC-NL_2x05_P1.27mm_Vertical,False
+J3,Qwiic 3.3V,Fancification_Connectors:Dual_spectral_analysis_J3,False
+JP1,0R-programming-isolation,Resistor_SMD:R_0603_1608Metric,False
+JP2,0R-programming-isolation,Resistor_SMD:R_0603_1608Metric,False
+JP3,0R-programming-isolation,Resistor_SMD:R_0603_1608Metric,False
+JP4,0R-programming-isolation,Resistor_SMD:R_0603_1608Metric,False
+R1,4.7k,Resistor_SMD:R_0603_1608Metric,False
+R10,10k,Resistor_SMD:R_0603_1608Metric,False
+R11,10k,Resistor_SMD:R_0603_1608Metric,False
+R12,10k,Resistor_SMD:R_0603_1608Metric,False
+R2,4.7k,Resistor_SMD:R_0603_1608Metric,False
+R3,4.7k,Resistor_SMD:R_0603_1608Metric,False
+R4,4.7k,Resistor_SMD:R_0603_1608Metric,False
+R5,10k,Resistor_SMD:R_0603_1608Metric,False
+R6,10k,Resistor_SMD:R_0603_1608Metric,False
+R7,10k,Resistor_SMD:R_0603_1608Metric,False
+R8,10k,Resistor_SMD:R_0603_1608Metric,False
+R9,10k,Resistor_SMD:R_0603_1608Metric,False
+U1,AS72651-BLGM,Spectral_Components:AS7265x_BLGM_Gen2,False
+U2,AS72652-BLGM,Spectral_Components:AS7265x_BLGM_Gen2,False
+U3,AS72653-BLGM,Spectral_Components:AS7265x_BLGM_Gen2,False
+U4,SST25PF040C-40I/SN,Spectral_Components:SST25PF040C_SN,False
+U5,TCA9517ADGKR,Spectral_Components:TCA9517ADGKR_DGK,False

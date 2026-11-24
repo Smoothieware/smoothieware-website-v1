@@ -1,0 +1,76 @@
+Reference,Value,Footprint,DNP
+C1,100nF 100V X7R 0603,Capacitor_SMD:C_0603_1608Metric,False
+C2,2.2uF 50V X7R,Capacitor_SMD:C_0805_2012Metric,False
+CF1,100nF 25V X7R,Protection5V:C_0603_1608Metric,False
+CF2,100nF 50V X7R,Protection5V:C_0603_1608Metric,False
+CF3,1uF 50V X7R,Protection5V:C_0603_1608Metric,False
+CF4,10uF 16V X7R NONPOLAR,Protection5V:C_0805_2012Metric,False
+CF5,10uF 16V X7R NONPOLAR,Protection5V:C_0805_2012Metric,False
+D1,PMEG6010CEH,Diode_SMD:D_SOD-123F,False
+DF1,1N4148WS-7-F,Protection5V:D_SOD-323,False
+DF10,BAT54WS-7-F,Protection5V:D_SOD-323,False
+DF11,BZT52C12S-7-F,Protection5V:D_SOD-323,False
+DF2,LTST-C170KRKT,Protection5V:LED_0805_2012Metric,False
+DF3,BAT54WS-7-F,Protection5V:D_SOD-323,False
+DF4,BZT52C12S-7-F,Protection5V:D_SOD-323,False
+DF5,LTST-C170KRKT,Protection5V:LED_0805_2012Metric,False
+DF6,1N4148WS-7-F,Protection5V:D_SOD-323,False
+DF7,BZT52C3V9S-7-F,Protection5V:D_SOD-323,False
+DF8,LTST-C170KRKT,Protection5V:LED_0805_2012Metric,False
+DF9,BAT54WS-7-F,Protection5V:D_SOD-323,False
+DN,OUT LOW (NPN),LED_SMD:LED_0603_1608Metric,False
+DP,OUT HIGH (PNP),LED_SMD:LED_0603_1608Metric,False
+DPWR,FIELD POWER,LED_SMD:LED_0603_1608Metric,False
+H1,MountingHole_3.2mm_M3,MountingHole:MountingHole_3.2mm_M3,False
+H2,MountingHole_3.2mm_M3,MountingHole:MountingHole_3.2mm_M3,False
+J1,+12-24V FIELD,"TerminalBlock_Phoenix:TerminalBlock_Phoenix_PT-1,5-2-3.5-H_1x02_P3.50mm_Horizontal",False
+J2,SENSOR 0V +V OUT,"TerminalBlock_Phoenix:TerminalBlock_Phoenix_PT-1,5-3-3.5-H_1x03_P3.50mm_Horizontal",False
+J3,ENDSTOP S G 5V,Fancification_Connectors:Dual_inductive_proximity_sensor_adapter_J3,False
+JP1,CUT TO DISABLE DP,Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm,False
+JP2,CUT TO DISABLE DN,Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm,False
+JP3,CUT TO DISABLE DPWR,Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm,False
+Q1,BSS138,Package_TO_SOT_SMD:SOT-23,False
+QF1,MMBT3904-7-F,Protection5V:SOT-23,False
+QF2,MMBT3904-7-F,Protection5V:SOT-23,False
+QF3,BSS84-7-F,Protection5V:SOT-23,False
+RF1,80.6k 0.1%,Protection5V:R_0402_1005Metric,False
+RF10,22k 0.25W,Protection5V:R_1206_3216Metric,False
+RF11,10k 0.25W,Protection5V:R_1206_3216Metric,False
+RF12,47k 1%,Protection5V:R_0402_1005Metric,False
+RF13,47k 1%,Protection5V:R_0402_1005Metric,False
+RF14,10k 1%,Protection5V:R_0402_1005Metric,False
+RF15,10k 1%,Protection5V:R_0402_1005Metric,False
+RF16,2.2k 1%,Protection5V:R_0402_1005Metric,False
+RF17,100k 1%,Protection5V:R_0402_1005Metric,False
+RF2,10k 0.1%,Protection5V:R_0402_1005Metric,False
+RF3,230k 0.1%,Protection5V:R_0402_1005Metric,False
+RF4,10k 0.1%,Protection5V:R_0402_1005Metric,False
+RF5,24.0k 1%,Protection5V:R_0402_1005Metric,False
+RF6,10k 1%,Protection5V:R_0402_1005Metric,False
+RF7,100k 0.1%,Protection5V:R_0402_1005Metric,False
+RF8,10k 0.1%,Protection5V:R_0402_1005Metric,False
+RF9,18k 0.25W,Protection5V:R_1206_3216Metric,False
+RLN,10k 10% 0603,Resistor_SMD:R_0603_1608Metric,False
+RLP,10k 10% 0603,Resistor_SMD:R_0603_1608Metric,False
+RN,3.3k 1% 1206,Resistor_SMD:R_1206_3216Metric,False
+ROK,5.6k 1% 1206,Resistor_SMD:R_1206_3216Metric,False
+RP,3.3k 1% 1206,Resistor_SMD:R_1206_3216Metric,False
+RPD,1M 1% 0603,Resistor_SMD:R_0603_1608Metric,False
+RS,100k 1% 0603,Resistor_SMD:R_0603_1608Metric,False
+SJ1,SENSOR NO|NC,Jumper:SolderJumper-3_P1.3mm_Bridged12_Pad1.0x1.5mm,False
+SJ2,SENSOR NPN|PNP,Jumper:SolderJumper-3_P1.3mm_Bridged12_Pad1.0x1.5mm,False
+SJF1,CUT FAULT LED,Protection5V:SolderJumper-2_P1.3mm_Bridged_Pad1.0x1.5mm,False
+SJF2,CUT OV LED,Protection5V:SolderJumper-2_P1.3mm_Bridged_Pad1.0x1.5mm,False
+SJF3,CUT REVERSE LED,Protection5V:SolderJumper-2_P1.3mm_Bridged_Pad1.0x1.5mm,False
+TP_5V,+5V_H,TestPoint:TestPoint_Pad_D1.5mm,False
+TP_GF,GF,TestPoint:TestPoint_Pad_D1.5mm,False
+TP_GH,GND_H,TestPoint:TestPoint_Pad_D1.5mm,False
+TP_SENS,SENSOR_IN,TestPoint:TestPoint_Pad_D1.5mm,False
+TP_SIG,SIG,TestPoint:TestPoint_Pad_D1.5mm,False
+TP_VF,VF,TestPoint:TestPoint_Pad_D1.5mm,False
+TVS1,SMF30CA,Diode_SMD:D_SOD-123F,False
+U1,"TLP291(GB,E NPN",Package_SO:SOIC-4_4.55x2.6mm_P1.27mm,False
+U2,"TLP291(GB,E PNP",Package_SO:SOIC-4_4.55x2.6mm_P1.27mm,False
+U3,"TLP291(GB,E OK",Package_SO:SOIC-4_4.55x2.6mm_P1.27mm,False
+UF1,TPS26600PWPR,Protection5V:TPS26600_PWP0016A,False
+UF2,TL431BIDBZR,Protection5V:SOT-23,False

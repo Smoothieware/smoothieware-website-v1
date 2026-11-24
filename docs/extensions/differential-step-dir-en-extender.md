@@ -1,131 +1,237 @@
 ---
 layout: default
-title: "Differential STEP/DIR/ENABLE extender"
+title: "Differential step/dir/en extender"
 permalink: /extensions/differential-step-dir-en-extender
 ---
 
-# Differential STEP/DIR/ENABLE extender
+# Differential step/dir/en extender
 
-{% include extension-board-visuals.html slug="differential-step-dir-en-extender" %}
+This HOST/REMOTE pair carries one axis's STEP, DIR and ENABLE commands to a compatible remote stepper drive. It transports control logic only; motor power and motor phases stay at the drive. The retained example target is Leadshine DM556E hardware 2.0 with its identified manual.
 
-Provide a directional pair of extension boards that carries one axis's STEP,
-DIR and ENABLE commands from a Smoothieboard V2 Gadgeteer Y socket to a remote
-external stepper drive over three balanced twisted pairs.
+This guide selects **v31** from the existing abstract-export record. It is an engineering candidate, not a fabricated, released or hardware-qualified product. Historical and older revision prose does not establish the illustrated revision's behavior.
 
-## Development status
+## How it works
 
-**Baseline documentation snapshot: 2026-10-11, before the requested connector/protection/usability revision program.** New revision features require their own reviewed source and qualification evidence.
+HOST converts three 3.3 V commands to continuously driven balanced pairs. REMOTE receives them and produces common-anode sink controls for the drive. STEP and ENABLE inversion is part of the proposed fault/default-state design, not a cosmetic label. The selected remote source labels its inlet 18–50 V and includes local regulators, but its series-diode orientation conflicts with the intended forward supply path. Treat remote power operation as unresolved.
 
-This page documents an **unqualified engineering study**, not a released or tested product. Saved CAD, renders and automated checks do not establish a safe assembly, compatible cable, firmware support or a usable current rating.
+## Power, signals and limits
 
-Board-specific qualification limits: HOST30/REMOTE52findings,REMOTE5opens;56blank MPNs,host/common-mode/fault/physical open.
+**Unresolved source power path:** on REMOTE v31, D7 (STPS1H100A) has cathode contact 1 on `/VIN_FUSED` and anode contact 2 on `/VIN_PROTECTED`. Its ordinary forward direction is therefore from the protected side toward the fused inlet, opposing the intended inlet-to-regulator feed. Do not apply the labelled input voltage or assume the local supplies operate until this contradiction is reconciled against the actual design and assembly. The selected PCB footprint draws its cathode bar at pad 1; this is a board-source finding, not a measurement of a populated unit. Trace the intended feed as J3.1 → U80 inputs → U80 outputs → `/VIN_FUSED` → D7 → `/VIN_PROTECTED`. The [ST STPS1H100 datasheet](https://www.st.com/resource/en/datasheet/stps1h100.pdf) is the component reference. Do not bypass D7, reverse the supply, reverse-fit a part or inject power downstream as an undocumented workaround. A reviewed design or assembly resolution is required before a powered procedure can be supplied.
 
-## Interfaces and wiring
+HOST J1.3 is ENABLE_LOGIC, .4 STEP_LOGIC and .5 DIR_LOGIC, unlike adapters that place STEP on contact 3. REMOTE J2 is 1 +5V common anode, 2 PUL_MINUS, 3 DIR_MINUS, 4 ENA_MINUS. The 8P8C map is STEP pair 1/2, DIR pair 3/6, ENABLE pair 4/5 and signal ground 7/8. It is not Ethernet. The 500 kHz link target does not override the named drive's 200 kHz maximum, ≥2.5 µs pulse high/low, ≥5 µs DIR setup and ≥200 ms enable lead target.
 
-The exact connector orientation, pin mapping and supply ownership must be taken from the selected revision’s schematic and [connection specification](https://github.com/arthurwolf/extension-boards/blob/main/src/differential-step-dir-en-extender/specs.md). Do not infer wiring from the connector shape.
+## Board reference
 
-Power off before connecting or changing jumpers. Verify pin 1, signal direction, supply voltage and ground at both ends of every cable. A mechanically fitting connector is not proof of electrical compatibility. If a host pin mapping or current allocation remains unresolved in the design record, do not connect the board until it is resolved.
+<details markdown="1">
+<summary>Reading the connector callouts</summary>
 
-## Electrical design requirements
+The dark end of each pill gives the source contact number. The adjoining label gives its function. Colours help locate related functions; the label and connection instructions determine how to use the contact.
 
-The following are specification requirements or study assumptions; they are **not measured operating ratings**. A newer selected-revision note takes precedence over historical draft options.
+- Red: 3.3 V supply.
+- Orange: 5 V supply.
+- Near-black: Circuit ground.
+- Violet: Motor DIR.
+- Green: Motor enable.
+- Blue: Motor STEP.
+- Grey: Not routed in this board revision.
+- Dark grey: Other source-labelled contact — read its exact function.
 
-- Six TI THVD1451D devices, three per endpoint, operated at 3.3 V.
-- Remote-only 100 Ω ±1%, ≥0.25 W termination at each receiving pair, placed
-  adjacent to its receiver pins.
-- Allocate 150 mA from the HOST 3.3 V rail. The conservative bound is three
-  continuously driven 99 Ω minimum terminations at 3.6 V plus 3 mA per
-  transceiver, or 118.1 mA before inverter current and margin. Verify the
-  actual host rail allocation and measured current before physical use.
-- HOST line drivers continuously drive their pairs. The THVD1451 D pull-up
-  specifies HIGH for an open D pin; it does not qualify open Y-socket GPIO
-  or reset states, which depend on external bias and inverter paths.
-- Remote open-collector sinks shall handle 16 mA per channel minimum with
-  margin and shall be off for the STEP fail-safe state.
-- No signal conductor may back-power an unpowered endpoint. This is an
-  acceptance requirement, not a demonstrated property of retained CAD; verify
-  powered/unpowered permutations, brownout and slow ramps at the actual pins.
-- Route each pair with stable width/spacing, equal layer transitions and no
-  stubs; preserve a continuous reference return beneath it.
-- Keep the shield on a named SHIELD network with explicit bleed/capacitive or
-  chassis coupling. Mounting holes remain ungrounded.
+A voltage in a signal name does not make that contact a power output. Circuit ground, cable shield and protective earth are different connections. An underside projection shows rear components through the front view; it is not a mirrored rear view.
 
-## Selected component architecture
+</details>
 
-[Exhaustive current pair review](https://github.com/arthurwolf/extension-boards/blob/main/src/differential-step-dir-en-extender/component-review.md#exhaustive-current-v27-pair-reconciliation--2026-10-11): v27pair retains dedicated channels/rated terminations/conditional capacitor preferences,no successor.59refs/140selected/978role hashes;56exported MPNs blank. HOST30/REMOTE52findings,REMOTE5opens and host/fault/physical gates remain open.
+The emitter and receiver have separate source-bound references below. Identify the assembly before using any pin or link instructions. Complete Prime installation wiring and actual page/viewer acceptance remain open.
 
-## Configuration and commissioning
+### Host assembly
 
-Use the configuration and firmware contract for the exact selected revision. Do not copy another module’s socket assignments or assume that an unused pin is available. First-article work must verify source selection, reset/unplug behavior, cable orientation and the actual load or sensor interface before normal operation.
+{% include _includes/extension-instruction-diagram.html id="differential-step-dir-en-extender-v31-host-reader-compact-overview" src="/images/extensions/differential-step-dir-en-extender/guides/host/reader-compact-overview.svg" title="Step/dir extender host" alt="Step/dir extender host on the host assembly, v31" caption="Selected-source component-side reference for this assembly. Use the overview and focused sheets together. Bridge continuity, cable orientation and complete Prime wiring remain open." width=420 %}
 
-## Requested connector and usability upgrades
+{% include _includes/extension-instruction-diagram.html id="differential-step-dir-en-extender-v31-host-reader-compact-host-1-5" src="/images/extensions/differential-step-dir-en-extender/guides/host/reader-compact-host-1-5-central-pills.svg" title="J1 · Host Y interface" alt="J1 · Host Y interface on the host assembly, v31" caption="Selected-source component-side reference for this assembly. Use the overview and focused sheets together. Bridge continuity, cable orientation and complete Prime wiring remain open." width=420 %}
 
-The following are requirements for the next design iterations; this page does **not** claim they are already fitted:
+{% include _includes/extension-instruction-diagram.html id="differential-step-dir-en-extender-v31-host-reader-compact-host-6-10" src="/images/extensions/differential-step-dir-en-extender/guides/host/reader-compact-host-6-10-central-pills.svg" title="J1 · Host Y interface" alt="J1 · Host Y interface on the host assembly, v31" caption="Selected-source component-side reference for this assembly. Use the overview and focused sheets together. Bridge continuity, cable orientation and complete Prime wiring remain open." width=420 %}
 
-- On electrically suitable three/four-pin low-voltage ports, provide compact alternative 2.54 mm header/Molex-style and keyed STEMMA-family footprints. Populate one connector option per shared position and document its pin order. Use STEMMA QT only for compatible four-wire I²C; connector appearance does not make another signal protocol I²C-compatible.
-- Render each supported connector population separately. Document clearances, cable access and the exact fitted option.
-- Use uppercase titles in a consistent Montserrat-style face, labels on both sides, visible domain boundaries, a revision-specific wiring guide and this page’s URL on the silk where readable.
-- Keep mounting-hole centers on a documented 10 mm lattice; add cable-tie holes where space and electrical clearances permit. Place status LEDs near accessible edges and give every indicator its own disable solder jumper. Provide labeled test pads and a ground observation point.
-- Review applicable DC power entries for reverse-polarity cutoff with a blinking warning, overvoltage cutoff/indication, controlled startup and electronic overcurrent protection. Indicator and protection circuits must work in the fault state without defeating isolation or safe output defaults. Thermal protection belongs only where the power/thermal analysis justifies it.
-- Electronic protection does not automatically replace a required mains/branch safety fuse. Backfeed blocking and inductive-load flyback clamps are separate design functions. Do not add identity EEPROMs, fault memory, calibration storage or paid self-test hardware under this upgrade program.
+{% include _includes/extension-instruction-diagram.html id="differential-step-dir-en-extender-v31-host-reader-compact-link-1-5" src="/images/extensions/differential-step-dir-en-extender/guides/host/reader-compact-link-1-5-central-pills.svg" title="J2 · Differential cable" alt="J2 · Differential cable on the host assembly, v31" caption="Selected-source component-side reference for this assembly. Use the overview and focused sheets together. Bridge continuity, cable orientation and complete Prime wiring remain open." width=420 %}
 
-## Design sources
+{% include _includes/extension-instruction-diagram.html id="differential-step-dir-en-extender-v31-host-reader-compact-link-6-SH" src="/images/extensions/differential-step-dir-en-extender/guides/host/reader-compact-link-6-SH-central-pills.svg" title="J2 · Differential cable" alt="J2 · Differential cable on the host assembly, v31" caption="Selected-source component-side reference for this assembly. Use the overview and focused sheets together. Bridge continuity, cable orientation and complete Prime wiring remain open." width=420 %}
 
-- [Board specification](https://github.com/arthurwolf/extension-boards/blob/main/src/differential-step-dir-en-extender/specs.md)
-- [Architecture and component decisions](https://github.com/arthurwolf/extension-boards/blob/main/src/differential-step-dir-en-extender/design.md)
-- [Selected-revision review and qualification record](https://github.com/arthurwolf/extension-boards/blob/main/src/differential-step-dir-en-extender/component-review.md)
-- [All extension boards](/#extension-boards)
+{% include _includes/extension-instruction-diagram.html id="differential-step-dir-en-extender-v31-host-reader-compact-channels" src="/images/extensions/differential-step-dir-en-extender/guides/host/reader-compact-channels.svg" title="Three differential channels" alt="Three differential channels on the host assembly, v31" caption="Selected-source component-side reference for this assembly. Use the overview and focused sheets together. Bridge continuity, cable orientation and complete Prime wiring remain open." width=420 %}
 
-Documentation route: `smoothieware.org/extensions/differential-step-dir-en-extender`.
+{% include _includes/extension-instruction-diagram.html id="differential-step-dir-en-extender-v31-host-reader-compact-polarity" src="/images/extensions/differential-step-dir-en-extender/guides/host/reader-compact-polarity.svg" title="Transmit logic polarity" alt="Transmit logic polarity on the host assembly, v31" caption="Selected-source component-side reference for this assembly. Use the overview and focused sheets together. Bridge continuity, cable orientation and complete Prime wiring remain open." width=420 %}
 
-<!-- additive-cad-status:start -->
-## Additive design studies
+{% include _includes/extension-instruction-diagram.html id="differential-step-dir-en-extender-v31-host-reader-compact-idle" src="/images/extensions/differential-step-dir-en-extender/guides/host/reader-compact-idle.svg" title="Host input idle network" alt="Host input idle network on the host assembly, v31" caption="Selected-source component-side reference for this assembly. Use the overview and focused sheets together. Bridge continuity, cable orientation and complete Prime wiring remain open." width=420 %}
 
-The 2026-10-11 upgrade program has saved additional candidates v28, v29, v30. These studies preserve the historical design described above. Their connector, LED, mechanical and protection changes are revision-specific and remain unqualified.
+{% include _includes/extension-instruction-diagram.html id="differential-step-dir-en-extender-v31-host-reader-compact-shield" src="/images/extensions/differential-step-dir-en-extender/guides/host/reader-compact-shield.svg" title="Cable shield reference" alt="Cable shield reference on the host assembly, v31" caption="Selected-source component-side reference for this assembly. Use the overview and focused sheets together. Bridge continuity, cable orientation and complete Prime wiring remain open." width=420 %}
 
-See the [per-board changes, failures and remaining work](https://github.com/arthurwolf/extension-boards/blob/main/src/differential-step-dir-en-extender/fancification.md) and [mandatory family specification](https://github.com/arthurwolf/extension-boards/blob/main/docs/FANCIFICATION-SPEC.md). Use the source hash and native check for the exact candidate being reviewed; do not infer hardware ratings from a rendered population.
-<!-- additive-cad-status:end -->
+{% include _includes/extension-instruction-diagram.html id="differential-step-dir-en-extender-v31-host-reader-compact-mounts" src="/images/extensions/differential-step-dir-en-extender/guides/host/reader-compact-mounts.svg" title="Mounting holes" alt="Mounting holes on the host assembly, v31" caption="Selected-source component-side reference for this assembly. Use the overview and focused sheets together. Bridge continuity, cable orientation and complete Prime wiring remain open." width=420 %}
 
-<!-- extension-upgrade-readback:start -->
-## Upgrade candidate readback
+### Remote assembly
 
-The three additional revisions are **v28, v29, v30**. They are engineering studies; saved CAD and renders do not release the hardware. The latest candidate is described below. Older baseline notes above remain historical.
+{% include _includes/extension-instruction-diagram.html id="differential-step-dir-en-extender-v31-remote-reader-compact-overview" src="/images/extensions/differential-step-dir-en-extender/guides/remote/reader-compact-overview.svg" title="Step/dir extender remote" alt="Step/dir extender remote on the remote assembly, v31" caption="Selected-source component-side reference for this assembly. Use the overview and focused sheets together. Bridge continuity, cable orientation and complete Prime wiring remain open." width=420 %}
 
-### host
+{% include _includes/extension-instruction-diagram.html id="differential-step-dir-en-extender-v31-remote-reader-compact-link-1-5" src="/images/extensions/differential-step-dir-en-extender/guides/remote/reader-compact-link-1-5-central-pills.svg" title="J1 · Differential cable" alt="J1 · Differential cable on the remote assembly, v31" caption="Selected-source component-side reference for this assembly. Use the overview and focused sheets together. Bridge continuity, cable orientation and complete Prime wiring remain open." width=420 %}
 
-- [Latest PCB source](https://github.com/arthurwolf/extension-boards/blob/main/src/differential-step-dir-en-extender/attempt/versions/v30/host/host.kicad_pcb), SHA-256 `d2be2438b6e510ee1dbda3fba7e59d2a3bc454153b7abd11e65cf88c974d2e2e`.
-- Last native check: **14 errors**, including **0 open connections**. This is a CAD result, not electrical, assembly or firmware qualification.
-- No alternative connector population is recorded for this physical role. Any applicable connector conversion remains an explicit design-review item.
-- [normal population/render record](https://github.com/arthurwolf/extension-boards/blob/main/src/differential-step-dir-en-extender/attempt/versions/v30/host/populations/host/normal/population.json): 6 images; source current; image hashes match; 0 unresolved models.
-- [Changes, failed trials and remaining work](https://github.com/arthurwolf/extension-boards/blob/main/src/differential-step-dir-en-extender/attempt/versions/v30/host/host-fancification-revision.md).
+{% include _includes/extension-instruction-diagram.html id="differential-step-dir-en-extender-v31-remote-reader-compact-link-6-SH" src="/images/extensions/differential-step-dir-en-extender/guides/remote/reader-compact-link-6-SH-central-pills.svg" title="J1 · Differential cable" alt="J1 · Differential cable on the remote assembly, v31" caption="Selected-source component-side reference for this assembly. Use the overview and focused sheets together. Bridge continuity, cable orientation and complete Prime wiring remain open." width=420 %}
 
-### remote
+{% include _includes/extension-instruction-diagram.html id="differential-step-dir-en-extender-v31-remote-reader-compact-drive-1-4" src="/images/extensions/differential-step-dir-en-extender/guides/remote/reader-compact-drive-1-4-central-pills.svg" title="J2 · 5V driver inputs" alt="J2 · 5V driver inputs on the remote assembly, v31" caption="Selected-source component-side reference for this assembly. Use the overview and focused sheets together. Bridge continuity, cable orientation and complete Prime wiring remain open." width=420 %}
 
-- [Latest PCB source](https://github.com/arthurwolf/extension-boards/blob/main/src/differential-step-dir-en-extender/attempt/versions/v30/remote/remote.kicad_pcb), SHA-256 `e621304d60570f67cb04d12eec361d8040894bf0418e2b83f1e82b49bfb794e0`.
-- Last native check: **46 errors**, including **31 open connections**. This is a CAD result, not electrical, assembly or firmware qualification.
-- No alternative connector population is recorded for this physical role. Any applicable connector conversion remains an explicit design-review item.
-- [normal population/render record](https://github.com/arthurwolf/extension-boards/blob/main/src/differential-step-dir-en-extender/attempt/versions/v30/remote/populations/remote/normal/population.json): 6 images; source current; image hashes match; 0 unresolved models.
-- [Changes, failed trials and remaining work](https://github.com/arthurwolf/extension-boards/blob/main/src/differential-step-dir-en-extender/attempt/versions/v30/remote/remote-fancification-revision.md).
+{% include _includes/extension-instruction-diagram.html id="differential-step-dir-en-extender-v31-remote-reader-compact-power-1-2" src="/images/extensions/differential-step-dir-en-extender/guides/remote/reader-compact-power-1-2-central-pills.svg" title="J3 · Raw power input" alt="J3 · Raw power input on the remote assembly, v31" caption="Selected-source component-side reference for this assembly. Use the overview and focused sheets together. Bridge continuity, cable orientation and complete Prime wiring remain open." width=420 %}
 
-Applicable protection, current-path, thermal, pinout, cable access and physical tests remain open wherever the linked board record has not verified them. A zero native-error count does not close those gates.
-<!-- extension-upgrade-readback:end -->
+{% include _includes/extension-instruction-diagram.html id="differential-step-dir-en-extender-v31-remote-reader-compact-channels" src="/images/extensions/differential-step-dir-en-extender/guides/remote/reader-compact-channels.svg" title="Three differential channels" alt="Three differential channels on the remote assembly, v31" caption="Selected-source component-side reference for this assembly. Use the overview and focused sheets together. Bridge continuity, cable orientation and complete Prime wiring remain open." width=420 %}
 
-## Electronic protection working candidate
+{% include _includes/extension-instruction-diagram.html id="differential-step-dir-en-extender-v31-remote-reader-compact-polarity" src="/images/extensions/differential-step-dir-en-extender/guides/remote/reader-compact-polarity.svg" title="Receive logic polarity" alt="Receive logic polarity on the remote assembly, v31" caption="Selected-source component-side reference for this assembly. Use the overview and focused sheets together. Bridge continuity, cable orientation and complete Prime wiring remain open." width=420 %}
 
-The remote third additive candidate includes a TPS26600 automatic-retry input eFuse, OV cutoff with separate raw-side indication, reverse cutoff with a floating blinking timer, soft start and individual LED links. Protection returns to SIGNAL_GND; SHIELD remains separate and the host circuit is preserved. Signal power sequencing, failsafe behavior, transients and hardware qualification remain open. Native routing remains incomplete; see the source-bound readback and per-revision NATIVE-CHECKS.md.
+{% include _includes/extension-instruction-diagram.html id="differential-step-dir-en-extender-v31-remote-reader-compact-termination" src="/images/extensions/differential-step-dir-en-extender/guides/remote/reader-compact-termination-underside-caption.svg" title="Termination and FET gates" alt="Termination and FET gates on the remote assembly, v31" caption="Selected-source component-side reference for this assembly. Use the overview and focused sheets together. Bridge continuity, cable orientation and complete Prime wiring remain open." width=420 %}
 
-## Current annotation-only candidate V31
+{% include _includes/extension-instruction-diagram.html id="differential-step-dir-en-extender-v31-remote-reader-compact-d7-conflict" src="/images/extensions/differential-step-dir-en-extender/guides/remote/reader-compact-d7-conflict-underside-caption.svg" title="POWER SOURCE CONFLICT" alt="POWER SOURCE CONFLICT on the remote assembly, v31" caption="Selected-source component-side reference for this assembly. Use the overview and focused sheets together. Bridge continuity, cable orientation and complete Prime wiring remain open." width=420 %}
 
-The current retained revision is V31; the earlier readback above is historical. Uppercase version labels and documentation annotations were refreshed without changing the circuitry, placement, routing, zones, mechanics or rules. [Source-bound candidate review](https://github.com/arthurwolf/extension-boards/blob/main/src/differential-step-dir-en-extender/attempt/versions/v31/differential-usability-review.json) records every role, unchanged native diagnostic categories, current models, views and manufacturing hashes. This remains a partial engineering candidate with **fabrication release false**.
+{% include _includes/extension-instruction-diagram.html id="differential-step-dir-en-extender-v31-remote-reader-compact-d8-conflict" src="/images/extensions/differential-step-dir-en-extender/guides/remote/reader-compact-d8-conflict.svg" title="TVS polarity SOURCE OPEN" alt="TVS polarity SOURCE OPEN on the remote assembly, v31" caption="Selected-source component-side reference for this assembly. Use the overview and focused sheets together. Bridge continuity, cable orientation and complete Prime wiring remain open." width=420 %}
 
-Host: 14 clearance errors, zero opens, 9 warnings. Remote: 46 errors including 31 opens, 36 warnings. Both normal packages contain 12 inspected views and 91 resolved model entries. Complete documentation URLs remain readable; host edge proximity and title/cable-tie crowding, remote back annotation overlap and front low contrast remain explicit limitations.
+{% include _includes/extension-instruction-diagram.html id="differential-step-dir-en-extender-v31-remote-reader-compact-supplies" src="/images/extensions/differential-step-dir-en-extender/guides/remote/reader-compact-supplies-underside-caption.svg" title="Intended local supply stages" alt="Intended local supply stages on the remote assembly, v31" caption="Selected-source component-side reference for this assembly. Use the overview and focused sheets together. Bridge continuity, cable orientation and complete Prime wiring remain open." width=420 %}
 
-Short-title Montserrat conversion is deferred after warning-increasing retained trials. Native parity/ERC findings are zero and settings are unchanged, with no ignored rule categories or exclusions. This does not verify electrical operation, current/thermal limits, isolation, protection behavior, timing, mounting or assembly. All existing pin maps and power/cable safety limitations on this page still apply; no price or area-saving claim is made.
+{% include _includes/extension-instruction-diagram.html id="differential-step-dir-en-extender-v31-remote-reader-compact-led-D80" src="/images/extensions/differential-step-dir-en-extender/guides/remote/reader-compact-led-D80-underside-caption.svg" title="Input-stage fault indicator" alt="Input-stage fault indicator on the remote assembly, v31" caption="Selected-source component-side reference for this assembly. Use the overview and focused sheets together. Bridge continuity, cable orientation and complete Prime wiring remain open." width=420 %}
 
-## Parent acceptance of revision v31 — 2026-10-13
+{% include _includes/extension-instruction-diagram.html id="differential-step-dir-en-extender-v31-remote-reader-compact-led-D85" src="/images/extensions/differential-step-dir-en-extender/guides/remote/reader-compact-led-D85-underside-caption.svg" title="Overvoltage indicator" alt="Overvoltage indicator on the remote assembly, v31" caption="Selected-source component-side reference for this assembly. Use the overview and focused sheets together. Bridge continuity, cable orientation and complete Prime wiring remain open." width=420 %}
 
-Both physical boards passed independent source/history/model/export checks and all12views were visually reviewed with complete framing. Registered as a partial annotation improvement: remote retains46layout errors including31unrouted connections and36warnings; host retains14clearance errors and9warnings. Both schematics have zero errors. Current labels and complete documentation URLs are retained; crowded and component-occluded inherited labels and title font consistency need further work. Electrical geometry and rules are unchanged. Physical and fabrication qualification remain open.
+{% include _includes/extension-instruction-diagram.html id="differential-step-dir-en-extender-v31-remote-reader-compact-led-D88" src="/images/extensions/differential-step-dir-en-extender/guides/remote/reader-compact-led-D88-underside-caption.svg" title="Reverse-input indicator" alt="Reverse-input indicator on the remote assembly, v31" caption="Selected-source component-side reference for this assembly. Use the overview and focused sheets together. Bridge continuity, cable orientation and complete Prime wiring remain open." width=420 %}
 
-## Trusted-power layout review — 2026-10-13
+{% include _includes/extension-instruction-diagram.html id="differential-step-dir-en-extender-v31-remote-reader-compact-shield" src="/images/extensions/differential-step-dir-en-extender/guides/remote/reader-compact-shield-underside-caption.svg" title="Cable shield reference" alt="Cable shield reference on the remote assembly, v31" caption="Selected-source component-side reference for this assembly. Use the overview and focused sheets together. Bridge continuity, cable orientation and complete Prime wiring remain open." width=420 %}
 
-The V31 host receives trusted Gadgeteer power and has no added generic input-protection annex to remove. The remote accepts a user-wired 18–50 V screw-terminal supply, so its compact input protection is retained. The host remains 60 × 40 mm and the remote 60 × 60 mm. No CAD revision is added for this classification review; the existing host clearance errors and remote layout errors/open connections remain unresolved, and fabrication release remains false.
+{% include _includes/extension-instruction-diagram.html id="differential-step-dir-en-extender-v31-remote-reader-compact-mounts" src="/images/extensions/differential-step-dir-en-extender/guides/remote/reader-compact-mounts.svg" title="Mounting holes" alt="Mounting holes on the remote assembly, v31" caption="Selected-source component-side reference for this assembly. Use the overview and focused sheets together. Bridge continuity, cable orientation and complete Prime wiring remain open." width=420 %}
+
+The annotated board-reference sheets above describe the selected source revision; the contact table below is a companion source aid. Actual desktop and narrow-view page/viewer acceptance remains open. Follow the wiring section for the connection procedure and its remaining installation limitations.
+
+### host — saved connector contacts
+
+Contact numbering below is the selected PCB's pad numbering, viewed using the final board-reference drawing. Same-numbered duplicate lands are collapsed in this electrical table. Mechanical unnumbered pads are omitted here. Physical connector-population and mating qualification remains open. `NC` means unconnected in this saved source, not a spare supported function. Named nets alone do not establish direction; use the signal-path explanation above.
+
+<details markdown="1">
+<summary>Selected-source contact inventory</summary>
+
+<div class="extension-contact-table" role="region" aria-label="Selected-source contact inventory; scroll horizontally to read all columns" tabindex="0" markdown="1">
+
+| Connector | Contact(s) | Saved-source function/net |
+| --- | --- | --- |
+| J2 — RJHSE5380_NOT_ETHERNET | 1 | `/STEP_P` |
+| J2 — RJHSE5380_NOT_ETHERNET | 2 | `/STEP_N` |
+| J2 — RJHSE5380_NOT_ETHERNET | 3 | `/DIR_P` |
+| J2 — RJHSE5380_NOT_ETHERNET | 4 | `/ENABLE_P` |
+| J2 — RJHSE5380_NOT_ETHERNET | 5 | `/ENABLE_N` |
+| J2 — RJHSE5380_NOT_ETHERNET | 6 | `/DIR_N` |
+| J2 — RJHSE5380_NOT_ETHERNET | 7 | `/SIGNAL_GND` |
+| J2 — RJHSE5380_NOT_ETHERNET | 8 | `/SIGNAL_GND` |
+| J2 — RJHSE5380_NOT_ETHERNET | SH | `/SHIELD` |
+| J1 — GADGETEER_Y | 1 | `/+3V3` |
+| J1 — GADGETEER_Y | 2 | `/+5V` |
+| J1 — GADGETEER_Y | 3 | `/ENABLE_LOGIC` |
+| J1 — GADGETEER_Y | 4 | `/STEP_LOGIC` |
+| J1 — GADGETEER_Y | 5 | `/DIR_LOGIC` |
+| J1 — GADGETEER_Y | 10 | `/SIGNAL_GND` |
+| J1 | 6, 7, 8, 9 | NC |
+
+</div>
+
+</details>
+
+
+Selected active-component identities: `U3 THVD1451D`; `U1 THVD1451D`; `U4 74LVC2G04`; `U2 THVD1451D`. These identities are not a substitute for matching datasheet limits.
+
+### remote — saved connector contacts
+
+Contact numbering below is the selected PCB's pad numbering, viewed using the final board-reference drawing. Same-numbered duplicate lands are collapsed in this electrical table. Mechanical unnumbered pads are omitted here. Physical connector-population and mating qualification remains open. `NC` means unconnected in this saved source, not a spare supported function. Named nets alone do not establish direction; use the signal-path explanation above.
+
+<details markdown="1">
+<summary>Selected-source contact inventory</summary>
+
+| Connector | Contact(s) | Saved-source function/net |
+| --- | --- | --- |
+| J1 — RJHSE5380_NOT_ETHERNET | 1 | `/STEP_P` |
+| J1 — RJHSE5380_NOT_ETHERNET | 2 | `/STEP_N` |
+| J1 — RJHSE5380_NOT_ETHERNET | 3 | `/DIR_P` |
+| J1 — RJHSE5380_NOT_ETHERNET | 4 | `/ENABLE_P` |
+| J1 — RJHSE5380_NOT_ETHERNET | 5 | `/ENABLE_N` |
+| J1 — RJHSE5380_NOT_ETHERNET | 6 | `/DIR_N` |
+| J1 — RJHSE5380_NOT_ETHERNET | 7 | `/SIGNAL_GND` |
+| J1 — RJHSE5380_NOT_ETHERNET | 8 | `/SIGNAL_GND` |
+| J1 — RJHSE5380_NOT_ETHERNET | SH | `/SHIELD` |
+| J3 — 18-50VDC_IN | 1 | `/VIN_RAW` |
+| J3 — 18-50VDC_IN | 2 | `/SIGNAL_GND` |
+| J2 — DM556E_5V_COMMON_ANODE | 1 | `/+5V` |
+| J2 — DM556E_5V_COMMON_ANODE | 2 | `/PUL_MINUS` |
+| J2 — DM556E_5V_COMMON_ANODE | 3 | `/DIR_MINUS` |
+| J2 — DM556E_5V_COMMON_ANODE | 4 | `/ENA_MINUS` |
+
+</details>
+
+
+### Links, controls and indicators
+
+The selected footprint values identify the intended control or indication. A cut-to-disable LED link affects indication, not the protected circuit's electrical qualification. Link population, default state and any reused older labels still need schematic/BOM reconciliation before instructions to cut or bridge are accepted.
+
+| Item | Selected source label | Contact nets / observation |
+| --- | --- | --- |
+| JP82 | CUT TO DISABLE REVERSE_BLINK | 1 = REV_VCC; 2 = PROT_REVERSE_BLINK_LED |
+| JP81 | CUT TO DISABLE OVERVOLTAGE | 1 = OV_AUX; 2 = PROT_OVERVOLTAGE_LED |
+| D81 | BAT54HGW-Q FAULT LED REVERSE CLAMP | 1 = PROT_EFUSE_FAULT_A; 2 = EF_FAULT_N |
+| D80 | RED EFUSE_FAULT | 1 = EF_FAULT_N; 2 = PROT_EFUSE_FAULT_A |
+| JP80 | CUT TO DISABLE EFUSE_FAULT | 1 = /VIN_RAW; 2 = PROT_EFUSE_FAULT_LED |
+| D88 | RED REVERSE_BLINK | 1 = REV_OUT; 2 = PROT_REVERSE_BLINK_A |
+| D85 | AMBER OVERVOLTAGE | 1 = OV_FAULT_N; 2 = PROT_OVERVOLTAGE_A |
+
+## Practical use with Smoothieboard V2 Prime
+
+The intended example is one DM556E driving one stepper, with the drive separately powered and the REMOTE control power independently reviewed. A motor-turning configuration is incomplete until the actuator pulse/polarity/timing contract passes review.
+
+**Wiring remains incomplete:** the source-backed candidates below do not yet provide an accepted, complete host → board → peripheral installation. Any candidate P12 Prime2590 allocation below is limited to that revision and must not be copied to a different Prime revision. Its rail contacts are 1 = limited 3.3 V, 2 = limited 5 V, 10 = ground; verify the actual unshrouded host header and cable orientation before applying power.
+
+1. Verify the exact DM556E hardware/manual and its common-anode input requirements; do not generalize to an arbitrary external drive.
+2. Allocate HOST J1 contacts 3/4/5 as ENABLE/STEP/DIR. A P12 GF/J37 candidate would use PB1/PJ4/PA4 in that order, subject to pin capability and conflict review.
+3. Use the dedicated pair-preserving cable between HOST J2 and REMOTE J1; route power separately.
+4. Map REMOTE J2.1 to the drive's positive control inputs and .2/.3/.4 to PUL−/DIR−/ENA− only after checking current, polarity and enable truth table.
+5. Keep the motor disconnected until reset, cable-open, cable-short and supply-sequence tests show no false STEP and the correct disabled state.
+
+## Smoothieware use
+
+### v31 STEP/DIR request mapping and timing ownership
+The selected host J1.3/.4/.5 are ENABLE_LOGIC/STEP_LOGIC/DIR_LOGIC. A same-numbered GF/J37 request allocation is PB1/PJ4/PA4; contacts1/2/10 are source3.3 V/5 V/signal ground. Host-to-remote link pairs are 1–2 STEP,3–6 DIR and 4–5 ENABLE, with7/8 signal ground. The remote J2 is a common-anode5 V DM556E interface:1+5 V,2PUL_MINUS,3DIR_MINUS,4ENA_MINUS. It is not a generic four-wire logic header.
+
+The source-resolved pin ownership below is **not an installable drive recipe or permission to power the circuit**. Reserve these pins exclusively for this external actuator, replace conflicting assignments and preserve the other required contiguous actuators. Mechanical direction still requires separate qualification:
+
+```ini
+[actuator]
+alpha.driver = external
+alpha.step_pin = PJ4
+alpha.dir_pin = PA4
+alpha.en_pin = PB1
+```
+
+With valid supplies, the selected HOST J1.3 enable request is active HIGH: LOW is inverted by HOST U4, received HIGH by REMOTE U3 and drives Q3 through R13 to sink ENA−. The retained DM556E hardware 2.0 manual defines that optocoupler current as disabled. HIGH releases the sink and permits enable. Thus `alpha.en_pin = PB1` has no `!` suffix. This resolves logical polarity; it does not qualify startup, disconnected-cable or supply-fault behaviour.
+
+The real `[system] step_pulse_us` and `step_frequency` settings control nominal pulse width and step-ticker frequency. They do not enforce the complete drive timing contract. Automatic motion enables the actuator immediately before queuing a move without a 200 ms settling guard. DIR changes at a block start have no explicit 5 µs deadline before every effective STEP, and a missed-unstep fallback can clear and assert STEP in the same interrupt without a minimum-low-time guard. A pre-enable and dwell can provide a nominal first-enable delay, but does not close those block-transition and pulse-low gaps. A source comment about 10 µs is not an enforced timing guarantee. Separate link and sink propagation also remain relevant. Determine pulse width, steps_per_mm, max_rate and acceleration from the qualified driver/motor/mechanics; no nominal3 us setting is a completed recipe. Selected remote D7 supply orientation is still unresolved, so no remote-power, motor or G-code motion command is supplied. This is a precise incomplete external-axis binding, not an absent STEP/DIR implementation. Email **wolf.arthur@gamil.com** for a required board-specific enable/fault/timing application.
+
+These instructions identify source behavior at SmoothieV2 commit `2a21c0108b1d095ecd8b2b9358e94055f053c003`; they do not identify the installed build or prove target execution. Reserve every listed pin and command in the complete configuration. Merge entries into existing sections rather than duplicating sections. These software instructions do not verify powered hardware or provide a complete wiring diagram.
+
+Implementation references: [axis parser](https://github.com/Smoothieware/SmoothieV2/blob/2a21c0108b1d095ecd8b2b9358e94055f053c003/Firmware/src/robot/Robot.cpp#L252-L366), [retained Prime lathe sample](https://github.com/Smoothieware/SmoothieV2/blob/2a21c0108b1d095ecd8b2b9358e94055f053c003/ConfigSamples/config-lathe.ini#L6-L10), [startup parser](https://github.com/Smoothieware/SmoothieV2/blob/2a21c0108b1d095ecd8b2b9358e94055f053c003/Firmware/src/main.cpp#L278-L289).
+
+## Sources and revision notes
+
+The selected-revision engineering repository was unavailable to anonymous readers when checked. Its source links are retained for provenance; an accessible matching source release has not been verified. Firmware and historical-board links are separate sources.
+
+- [Selected v31 source directory](https://github.com/arthurwolf/extension-boards/tree/main/src/differential-step-dir-en-extender/attempt/versions/v31)
+- [Design specification](https://github.com/arthurwolf/extension-boards/blob/main/src/differential-step-dir-en-extender/specs.md) — historical design intent where it names an older revision.
+- [Design discussion](https://github.com/arthurwolf/extension-boards/blob/main/src/differential-step-dir-en-extender/design.md)
+- [All extension boards](/extension-boards)
+
+Upstream source-link availability has **not** been verified for publication.
+
+**Remaining board-specific uncertainty:** Logical enable polarity is source-resolved; complete actuator timing, pin/electrical capabilities, drive control-current qualification and power/fault behaviour remain open.
+
+<details markdown="1">
+<summary>Additional board views and engineering history</summary>
+
+Selected active-component identities: `U4 74LVC2G04`; `U2 THVD1451D`; `U1 THVD1451D`; `U3 THVD1451D`; `U6 LM5164DDA`; `U80 TPS26600PWPR AUTO-RETRY EFUSE`; `U82 LMC555CM/NOPB REVERSE BLINK`; `U7 AP2112K-3.3`; `U81 TPS3700DDCR OV STATUS`. These identities are not a substitute for matching datasheet limits.
+
+{% include _includes/extension-board-visuals.html slug="differential-step-dir-en-extender" %}
+
+The retained gallery is supplementary. It is not either required instructional diagram, and it may include older or different populations whose captions must remain explicit. Development iteration and qualification records remain engineering history rather than operating instructions.
+
+</details>

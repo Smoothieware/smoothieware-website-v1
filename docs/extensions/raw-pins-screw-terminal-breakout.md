@@ -6,123 +6,243 @@ permalink: /extensions/raw-pins-screw-terminal-breakout
 
 # Raw pins screw terminal breakout
 
-{% include extension-board-visuals.html slug="raw-pins-screw-terminal-breakout" %}
+Use this passive adapter to attach low-voltage signal wiring to screw terminals. It provides access to existing host pins, with conditional low-speed transient shunts; it does not add a controller, translate voltage or drive a motor.
 
-Passively expose all ten Y-socket contacts on individually accessible 3.5 mm screw terminals.
+## Purpose and operation
 
-## Development status
+This board presents one keyed 10-contact Y Gadgeteer connection at ten 3.5 mm terminals and a downstream chained Y connection. The netlist retained in the v24 package shows J1 input, J2 chain, J3 terminal block, optional Qwiic J4, nine cut links JP1–JP9, and seven GPIO shunts D1–D7 to GND. It adds no firmware function. Seven terminal signal lines are connected to the host contacts; rail and signal continuity to the chain is gated by cuttable links for contacts 1–9; GND remains continuous. The optional four-contact connector has J4.1 = GND, J4.2 = +3V3, J4.3 = P9 and J4.4 = P8 in both the selected PCB and netlist. Its Qwiic label does not establish that the selected Prime socket supplies a supported I²C bus. Do not connect another host or external Qwiic supply.
 
-**Baseline documentation snapshot: 2026-10-11, before the requested connector/protection/usability revision program.** New revision features require their own reviewed source and qualification evidence.
+## Revision and source boundary
 
-This page documents an **unqualified engineering study**, not a released or tested product. Saved CAD, renders and automated checks do not establish a safe assembly, compatible cable, firmware support or a usable current rating.
+This guide selects **v24**, the retained PCB and abstract revision. Family specifications still identify the earlier v17 inspection prototype; they are historical context, not evidence that the illustrated v24 is released. The v24 source remains an unqualified design candidate: physical terminal/header fit, current capacity and system ESD behavior remain unresolved. The diagrams explain the saved circuit; do not treat this candidate as a ready-to-build assembly.
 
-The retained design record states:
+## Specifications, power and signal direction
 
-Current inspection prototype:46×32 mm passive Y terminal/chain adapter, same-host populated Qwiic, and seven conditional LRC LESD8D3.3CAT5G SOD-882 shunts. This supersedes the historical unprotected draft below; it does not add level shifting, buffering or a controller. [Selected package and component decisions](https://github.com/arthurwolf/extension-boards/blob/main/src/raw-pins-screw-terminal-breakout/attempt/README.md), [comparison](https://github.com/arthurwolf/extension-boards/blob/main/src/raw-pins-screw-terminal-breakout/attempt/revision-comparison.md) and [parent review](https://github.com/arthurwolf/extension-boards/blob/main/src/raw-pins-screw-terminal-breakout/attempt/parent-review-v17.json) are authoritative for the retained CAD. Both Smoothieboard BOMs were reviewed; the V2 TVS family is conditional, its generic0402 label is not the adopted SOD-882 land pattern, and no stock quantity or exact connector reuse is established.
+The selected circuit is passive: the host supplies the rails and sets each signal's function. It provides no voltage conversion, galvanic isolation or load driver. Use the button example below as an input application; an output or bus application needs its own verified host configuration and compatible peripheral.
 
-Board-specific qualification limits: v17 ERC/geometry/parity0,fiveopens,no ignored categories;seven conservative mask contacts,host current/cutlinks/ESD/mating/assembly/physical unsigned.
+<div class="extension-contact-table" role="region" aria-label="Specifications and electrical limits; scroll horizontally to read all columns" tabindex="0" markdown="1">
 
-## Interfaces and wiring
+| Connection or feature | Direction and use | Limit or qualification |
+| --- | --- | --- |
+| J1 host input | One ten-contact host connection; 2 × 5, 1.27 mm pitch | The Prime and breakout footprints differ; a fitted cable and its mating orientation remain unverified. |
+| J3.1 / J3.2 | Host 3.3 V / 5 V rails to accessories | Available rail current, terminal current and cable capacity are unqualified. Do not feed external power into these terminals. The button example uses neither rail. |
+| J3.3–J3.9 | P3–P9 signals; input or output as configured on the host | Treat every signal as 3.3 V only. A terminal does not add drive current or change the pin's capabilities; avoid connecting two outputs together. |
+| J3.10 | Shared circuit ground and signal return | Common with host ground; not protective earth or an isolated return. |
+| J2 chain | Downstream continuation of the same host contacts | Contacts 1–9 pass through their corresponding cut links; ground stays connected. Opening a link isolates the chain contact, not its J3 terminal. Do not attach a second host. |
+| J4 optional four-contact connector | GND, 3.3 V, P9, P8 in contact order | Shares the same host nets; no additional bus controller or verified I²C support is provided by the connector. |
+| J3 terminal block | Ten individual screw terminals, 3.5 mm pitch | Wire gauge, tightening torque and assembled current rating require the actual fitted part's specification; none is qualified by this study. |
+| D1–D7 signal shunts | Signal-to-ground transient paths | Low-speed protection candidate only; assembled clamping, leakage, capacitance and system ESD performance remain unqualified. |
 
-### Inputs
+</div>
 
-- One canonical Y Gadgeteer port.
+## Board reference
 
-### Outputs
+<details markdown="1">
+<summary>Reading the connector callouts</summary>
 
-- Ten 3.5 mm screw-terminal positions and one parallel Y chain port.
+The dark end of each pill gives the source contact number. The adjoining label gives its function. Colours help locate related functions; the label and connection instructions determine how to use the contact.
 
-### Connection contract
+- Red: 3.3 V supply.
+- Orange: 5 V supply.
+- Green: Signal — use the printed function label.
+- Near-black: Circuit ground.
 
-The table below uses the repository-canonical connector rule: pin 1 is +3.3 V, pin 2 is +5 V, and pin 10 is GND. **Do not release a schematic from this table until it is reconciled pin-by-pin with the current V2 Prime connector implementation; current web documentation presents a conflicting ordering.**
+A voltage in a signal name does not make that contact a power output. Circuit ground, cable shield and protective earth are different connections. An underside projection shows rear components through the front view; it is not a mirrored rear view.
 
-|  Pin | Function | Design note                                                        |
-| ---: | -------- | ------------------------------------------------------------------ |
-|    1 | +3.3 V   | Canonical fixed rail.                                              |
-|    2 | +5 V     | Canonical fixed rail.                                              |
-|    3 | GPIO!    | Board mapping; validate against current V2 hardware before layout. |
-|    4 | GPIO     | Board mapping; validate against current V2 hardware before layout. |
-|    5 | GPIO     | Board mapping; validate against current V2 hardware before layout. |
-|    6 | GPIO     | Board mapping; validate against current V2 hardware before layout. |
-|    7 | GPIO     | Board mapping; validate against current V2 hardware before layout. |
-|    8 | GPIO     | Board mapping; validate against current V2 hardware before layout. |
-|    9 | GPIO     | Board mapping; validate against current V2 hardware before layout. |
-|   10 | GND      | Canonical fixed rail.                                              |
+</details>
 
-Power off before connecting or changing jumpers. Verify pin 1, signal direction, supply voltage and ground at both ends of every cable. A mechanically fitting connector is not proof of electrical compatibility. If a host pin mapping or current allocation remains unresolved in the design record, do not connect the board until it is resolved.
+Start with the connector overview, then use the focused sheets for exact contact numbers, chain links and protection. All sheets show the selected v24 source; check the actual assembled links and cable orientation before connecting.
 
-## Electrical design requirements
+{% include _includes/extension-instruction-diagram.html id="raw-pins-screw-terminal-breakout-v24-reader-compact-overview" src="/images/extensions/raw-pins-screw-terminal-breakout/guides/reader-compact-overview.svg" title="Screw-terminal breakout — overview" alt="Screw-terminal breakout — overview for screw-terminal breakout v24" caption="Component-side v24 reference. Use the overview to locate parts and the numbered details to identify contacts. Follow the complete cable and button instructions below; the drawing is not a cable mating-face view." width=420 %}
 
-The following are specification requirements or study assumptions; they are **not measured operating ratings**. A newer selected-revision note takes precedence over historical draft options.
+{% include _includes/extension-instruction-diagram.html id="raw-pins-screw-terminal-breakout-v24-reader-compact-host-input-contacts-1-5" src="/images/extensions/raw-pins-screw-terminal-breakout/guides/reader-compact-host-input-contacts-1-5-central-pills.svg" title="J1 · Host input — host input contacts 1 5" alt="J1 · Host input — host input contacts 1 5 for screw-terminal breakout v24" caption="Component-side v24 reference. Use the overview to locate parts and the numbered details to identify contacts. Follow the complete cable and button instructions below; the drawing is not a cable mating-face view." width=420 %}
 
-- Current is limited by the weakest Gadgeteer connector, cable, PCB trace, and terminal; terminal pitch is not a power-rating upgrade.
-- Select terminals accepting the documented wire range only after supplier validation.
+{% include _includes/extension-instruction-diagram.html id="raw-pins-screw-terminal-breakout-v24-reader-compact-host-input-contacts-6-10" src="/images/extensions/raw-pins-screw-terminal-breakout/guides/reader-compact-host-input-contacts-6-10-central-pills.svg" title="J1 · Host input — host input contacts 6 10" alt="J1 · Host input — host input contacts 6 10 for screw-terminal breakout v24" caption="Component-side v24 reference. Use the overview to locate parts and the numbered details to identify contacts. Follow the complete cable and button instructions below; the drawing is not a cable mating-face view." width=420 %}
 
-## Protection in the design record
+{% include _includes/extension-instruction-diagram.html id="raw-pins-screw-terminal-breakout-v24-reader-compact-screw-output-contacts-1-5" src="/images/extensions/raw-pins-screw-terminal-breakout/guides/reader-compact-screw-output-contacts-1-5-central-pills.svg" title="J3 · Screw output — screw output contacts 1 5" alt="J3 · Screw output — screw output contacts 1 5 for screw-terminal breakout v24" caption="Component-side v24 reference. Use the overview to locate parts and the numbered details to identify contacts. Follow the complete cable and button instructions below; the drawing is not a cable mating-face view." width=420 %}
 
-The design describes the following protection intent. Check the selected schematic and remaining qualification gates before relying on it:
+{% include _includes/extension-instruction-diagram.html id="raw-pins-screw-terminal-breakout-v24-reader-compact-screw-output-contacts-6-10" src="/images/extensions/raw-pins-screw-terminal-breakout/guides/reader-compact-screw-output-contacts-6-10-central-pills.svg" title="J3 · Screw output — screw output contacts 6 10" alt="J3 · Screw output — screw output contacts 6 10 for screw-terminal breakout v24" caption="Component-side v24 reference. Use the overview to locate parts and the numbered details to identify contacts. Follow the complete cable and button instructions below; the drawing is not a cable mating-face view." width=420 %}
 
-Use recessed terminals, clear polarity marking, keyed Gadgeteer connectors, and copper spacing that prevents solder bridges between rails.
+{% include _includes/extension-instruction-diagram.html id="raw-pins-screw-terminal-breakout-v24-reader-compact-chain-output-contacts-1-5" src="/images/extensions/raw-pins-screw-terminal-breakout/guides/reader-compact-chain-output-contacts-1-5-central-pills.svg" title="J2 · Chain output — chain output contacts 1 5" alt="J2 · Chain output — chain output contacts 1 5 for screw-terminal breakout v24" caption="Component-side v24 reference. Use the overview to locate parts and the numbered details to identify contacts. Follow the complete cable and button instructions below; the drawing is not a cable mating-face view." width=420 %}
 
-## Selected component architecture
+{% include _includes/extension-instruction-diagram.html id="raw-pins-screw-terminal-breakout-v24-reader-compact-chain-output-contacts-6-10" src="/images/extensions/raw-pins-screw-terminal-breakout/guides/reader-compact-chain-output-contacts-6-10-central-pills.svg" title="J2 · Chain output — chain output contacts 6 10" alt="J2 · Chain output — chain output contacts 6 10 for screw-terminal breakout v24" caption="Component-side v24 reference. Use the overview to locate parts and the numbered details to identify contacts. Follow the complete cable and button instructions below; the drawing is not a cable mating-face view." width=420 %}
 
-See [current review](https://github.com/arthurwolf/extension-boards/blob/main/src/raw-pins-screw-terminal-breakout/component-review.md). Retain passive terminal access and populated same-bus Qwiic; seven conditional V2 LRC SOD882 shunts already added v12. No spare active function or exact connector substitution justified;retain v17,no successor. Current selected v17; retained native/stock/physical qualification limits remain explicit.
+{% include _includes/extension-instruction-diagram.html id="raw-pins-screw-terminal-breakout-v24-reader-compact-four-contact-output-contacts-1-4" src="/images/extensions/raw-pins-screw-terminal-breakout/guides/reader-compact-four-contact-output-contacts-1-4-central-pills.svg" title="J4 · 4-pin output — four contact output contacts 1 4" alt="J4 · 4-pin output — four contact output contacts 1 4 for screw-terminal breakout v24" caption="Component-side v24 reference. Use the overview to locate parts and the numbered details to identify contacts. Follow the complete cable and button instructions below; the drawing is not a cable mating-face view." width=420 %}
 
-## Configuration and commissioning
+{% include _includes/extension-instruction-diagram.html id="raw-pins-screw-terminal-breakout-v24-reader-compact-chain-links-1-5" src="/images/extensions/raw-pins-screw-terminal-breakout/guides/reader-compact-chain-links-1-5.svg" title="Chain links 1–5 — chain links 1 5" alt="Chain links 1–5 — chain links 1 5 for screw-terminal breakout v24" caption="Component-side v24 reference. Use the overview to locate parts and the numbered details to identify contacts. Follow the complete cable and button instructions below; the drawing is not a cable mating-face view." width=420 %}
 
-Use the configuration and firmware contract for the exact selected revision. Do not copy another module’s socket assignments or assume that an unused pin is available. First-article work must verify source selection, reset/unplug behavior, cable orientation and the actual load or sensor interface before normal operation.
+{% include _includes/extension-instruction-diagram.html id="raw-pins-screw-terminal-breakout-v24-reader-compact-chain-links-6-9" src="/images/extensions/raw-pins-screw-terminal-breakout/guides/reader-compact-chain-links-6-9.svg" title="Chain links 6–9 — chain links 6 9" alt="Chain links 6–9 — chain links 6 9 for screw-terminal breakout v24" caption="Component-side v24 reference. Use the overview to locate parts and the numbered details to identify contacts. Follow the complete cable and button instructions below; the drawing is not a cable mating-face view." width=420 %}
 
-## Requested connector and usability upgrades
+{% include _includes/extension-instruction-diagram.html id="raw-pins-screw-terminal-breakout-v24-reader-compact-signal-ground-clamps" src="/images/extensions/raw-pins-screw-terminal-breakout/guides/reader-compact-signal-ground-clamps-front-projection.svg" title="Signal ground clamps — signal ground clamps" alt="Signal ground clamps — signal ground clamps for screw-terminal breakout v24" caption="Component-side v24 reference. Use the overview to locate parts and the numbered details to identify contacts. Follow the complete cable and button instructions below; the drawing is not a cable mating-face view." width=420 %}
 
-The following are requirements for the next design iterations; this page does **not** claim they are already fitted:
+{% include _includes/extension-instruction-diagram.html id="raw-pins-screw-terminal-breakout-v24-reader-compact-test-pads-and-mounts" src="/images/extensions/raw-pins-screw-terminal-breakout/guides/reader-compact-test-pads-and-mounts.svg" title="Test pads and mounts — test pads and mounts" alt="Test pads and mounts — test pads and mounts for screw-terminal breakout v24" caption="Component-side v24 reference. Use the overview to locate parts and the numbered details to identify contacts. Follow the complete cable and button instructions below; the drawing is not a cable mating-face view." width=420 %}
 
-- On electrically suitable three/four-pin low-voltage ports, provide compact alternative 2.54 mm header/Molex-style and keyed STEMMA-family footprints. Populate one connector option per shared position and document its pin order. Use STEMMA QT only for compatible four-wire I²C; connector appearance does not make another signal protocol I²C-compatible.
-- Render each supported connector population separately. Document clearances, cable access and the exact fitted option.
-- Use uppercase titles in a consistent Montserrat-style face, labels on both sides, visible domain boundaries, a revision-specific wiring guide and this page’s URL on the silk where readable.
-- Keep mounting-hole centers on a documented 10 mm lattice; add cable-tie holes where space and electrical clearances permit. Place status LEDs near accessible edges and give every indicator its own disable solder jumper. Provide labeled test pads and a ground observation point.
-- Review applicable DC power entries for reverse-polarity cutoff with a blinking warning, overvoltage cutoff/indication, controlled startup and electronic overcurrent protection. Indicator and protection circuits must work in the fault state without defeating isolation or safe output defaults. Thermal protection belongs only where the power/thermal analysis justifies it.
-- Electronic protection does not automatically replace a required mains/branch safety fuse. Backfeed blocking and inductive-load flyback clamps are separate design functions. Do not add identity EEPROMs, fault memory, calibration storage or paid self-test hardware under this upgrade program.
+<details markdown="1">
+<summary>Larger combined reference and contact sheets</summary>
 
-## Design sources
+{% include _includes/extension-instruction-diagram.html id="raw-pins-screw-terminal-breakout-v24-reference" src="/images/extensions/raw-pins-screw-terminal-breakout/guides/reader-reference-front-projection.svg" title="Annotated board reference — v24" alt="raw-pins-screw-terminal-breakout v24 annotated board reference, with source-numbered features." caption="Component-side source reference. Dotted leaders locate parts and are not wires. Use the numbered detail views together; mating orientation and assembled ratings remain unqualified." width=1440 %}
 
-- [Board specification](https://github.com/arthurwolf/extension-boards/blob/main/src/raw-pins-screw-terminal-breakout/specs.md)
-- [Architecture and component decisions](https://github.com/arthurwolf/extension-boards/blob/main/src/raw-pins-screw-terminal-breakout/design.md)
-- [Selected-revision review and qualification record](https://github.com/arthurwolf/extension-boards/blob/main/src/raw-pins-screw-terminal-breakout/component-review.md)
-- [All extension boards](/#extension-boards)
+{% include _includes/extension-instruction-diagram.html id="raw-pins-screw-terminal-breakout-v24-connector-detail-01" src="/images/extensions/raw-pins-screw-terminal-breakout/guides/reader-connector-detail-01.svg" title="Connector detail 01 — v24" alt="raw-pins-screw-terminal-breakout v24 connector detail 01, with source-numbered features." caption="Component-side source reference. Dotted leaders locate parts and are not wires. Use the numbered detail views together; mating orientation and assembled ratings remain unqualified." width=1440 %}
 
-Documentation route: `smoothieware.org/extensions/raw-pins-screw-terminal-breakout`.
+{% include _includes/extension-instruction-diagram.html id="raw-pins-screw-terminal-breakout-v24-connector-detail-02" src="/images/extensions/raw-pins-screw-terminal-breakout/guides/reader-connector-detail-02.svg" title="Connector detail 02 — v24" alt="raw-pins-screw-terminal-breakout v24 connector detail 02, with source-numbered features." caption="Component-side source reference. Dotted leaders locate parts and are not wires. Use the numbered detail views together; mating orientation and assembled ratings remain unqualified." width=1440 %}
 
-<!-- additive-cad-status:start -->
-## Additive design studies
+{% include _includes/extension-instruction-diagram.html id="raw-pins-screw-terminal-breakout-v24-link-detail-01" src="/images/extensions/raw-pins-screw-terminal-breakout/guides/reader-link-detail-01.svg" title="Link detail 01 — v24" alt="raw-pins-screw-terminal-breakout v24 link detail 01, with source-numbered features." caption="Component-side source reference. Dotted leaders locate parts and are not wires. Use the numbered detail views together; mating orientation and assembled ratings remain unqualified." width=1440 %}
 
-The 2026-10-11 upgrade program has saved additional candidates v18, v19, v20. These studies preserve the historical design described above. Their connector, LED, mechanical and protection changes are revision-specific and remain unqualified.
+{% include _includes/extension-instruction-diagram.html id="raw-pins-screw-terminal-breakout-v24-link-detail-02" src="/images/extensions/raw-pins-screw-terminal-breakout/guides/reader-link-detail-02.svg" title="Link detail 02 — v24" alt="raw-pins-screw-terminal-breakout v24 link detail 02, with source-numbered features." caption="Component-side source reference. Dotted leaders locate parts and are not wires. Use the numbered detail views together; mating orientation and assembled ratings remain unqualified." width=1440 %}
 
-See the [per-board changes, failures and remaining work](https://github.com/arthurwolf/extension-boards/blob/main/src/raw-pins-screw-terminal-breakout/fancification.md) and [mandatory family specification](https://github.com/arthurwolf/extension-boards/blob/main/docs/FANCIFICATION-SPEC.md). Use the source hash and native check for the exact candidate being reviewed; do not infer hardware ratings from a rendered population.
-<!-- additive-cad-status:end -->
+The combined reference keeps the whole board visible. Use the focused contact sheets for fine labels and the installation section for the actual cable connections. Verify the fitted connector separately; a PCB pad view is not a cable mating-face view.
 
-<!-- extension-upgrade-readback:start -->
-## Upgrade candidate readback
 
-The three additional revisions are **v18, v19, v20**. They are engineering studies; saved CAD and renders do not release the hardware. The latest candidate is described below. Older baseline notes above remain historical.
+</details>
 
-### raw-pins-screw-terminal-breakout
+## Contact table from v24 schematic netlist
 
-- [Latest PCB source](https://github.com/arthurwolf/extension-boards/blob/main/src/raw-pins-screw-terminal-breakout/attempt/versions/v20/raw-pins-screw-terminal-breakout.kicad_pcb), SHA-256 `f7c058285b7cada26ff504c03d159c9804f7340c9b52ef5e23ee30a0d5a81d6f`.
-- Last native check: **76 errors**, including **4 open connections**. This is a CAD result, not electrical, assembly or firmware qualification.
-- Alternative connector lands recorded: J4 / `PinHeader_1x04_P2.54mm_Vertical`. Fit only the selected population; check its pin map and voltage in the design record.
-- [normal population/render record](https://github.com/arthurwolf/extension-boards/blob/main/src/raw-pins-screw-terminal-breakout/attempt/versions/v20/populations/raw-pins-screw-terminal-breakout/normal/population.json): 6 images; source current; image hashes match; 0 unresolved models.
-- [stemma population/render record](https://github.com/arthurwolf/extension-boards/blob/main/src/raw-pins-screw-terminal-breakout/attempt/versions/v20/populations/raw-pins-screw-terminal-breakout/stemma/population.json): 6 images; source current; image hashes match; 0 unresolved models.
-- [Changes, failed trials and remaining work](https://github.com/arthurwolf/extension-boards/blob/main/src/raw-pins-screw-terminal-breakout/attempt/versions/v20/raw-pins-screw-terminal-breakout-fancification-revision.md).
+<details markdown="1">
+<summary>Selected-source contact inventory</summary>
 
-Applicable protection, current-path, thermal, pinout, cable access and physical tests remain open wherever the linked board record has not verified them. A zero native-error count does not close those gates.
-<!-- extension-upgrade-readback:end -->
+<div class="extension-contact-table" role="region" aria-label="Selected-source contact inventory; scroll horizontally to read all columns" tabindex="0" markdown="1">
 
-## Initial v24 readback — withdrawn pending dependency repair — 2026-10-13
+| Connector contact | Net | What it connects to |
+|---|---|---|
+| J1.1 | +3V3 | J3.1, Qwiic J4.2, JP1.1 |
+| J1.2 | +5V | J3.2 and JP2.1 |
+| J1.3–J1.9 | P3–P9 | Matching J3 terminal; corresponding D1–D7 shunt to GND; JP3–JP9 link toward matching chain contact |
+| J1.8/J1.9 | P8/P9 | Also J4.4/J4.3 respectively; no host I²C support implied |
+| J1.10 | GND | J2.10, J3.10, Qwiic GND, and TVS ground |
+| J2.1–J2.9 | CH_+3V3, CH_+5V, CH_P3–CH_P9 | Chain side of JP1–JP9 |
+| J2.10 | GND | Continuous to input ground |
+| J3.1–J3.10 | +3V3, +5V, P3–P9, GND | Ten individual screw terminals in canonical contact order |
+| JP1–JP9 | series bridge | J1 contact to corresponding J2 contact; J1 side is common with corresponding J3; opening bridge isolates downstream chain only |
+| D1–D7 | GPIO-to-GND shunts | Conditional protection for P3–P9; board source warns low-speed/3.3 V limits and unqualified capacitance/leakage/clamp behavior |
 
-Protected source v23; current PCB SHA-256 `6495237a6bcae001f61aa7bd6edd3a686ec629eea3c57aaa059381a7d1db6b46`. Fresh checks: zero enabled PCB errors/opens/parity and ERC errors; 23 PCB warnings. Electrical geometry, project rules and 94 historical files unchanged. Verified 22 model entries, 17 exports and 12 current population views, all inspected. Full documentation URL readable. Inherited 23 PCB library warnings and 68 schematic library/link warnings remain; exact libraries preserved Inherited native warnings and enabled-rule exclusions remain explicit Physical/thermal/current/connector-fit qualification open No priced or area savings established by annotation candidate.
+</div>
 
-The initial v24 registration was withdrawn after comparing diagnostics with the zero-warning v23 baseline: omitted native-source libraries caused23 PCB and68 schematic warnings. Exact authored dependencies restored; final fresh checks and population exports pending. Initial record retained as failed review history, not accepted status.
+</details>
 
-## Second-round annotation readback v24 — 2026-10-13
 
-Protected source v23; current PCB SHA-256 `6495237a6bcae001f61aa7bd6edd3a686ec629eea3c57aaa059381a7d1db6b46`. Fresh checks: zero enabled PCB errors/opens/parity and ERC errors; 0 PCB warnings. Electrical geometry, project rules and 94 historical files unchanged. Verified 22 model entries, 17 exports and 12 current population views, all inspected. Full documentation URL readable. Exact authored native-source dependencies restored; initial warning regression withdrawn and retained as review history Inherited native warnings and enabled-rule exclusions remain explicit Physical/thermal/current/connector-fit qualification open No priced or area savings established by annotation candidate.
+The selected PCB and retained schematic netlist agree on all **68 connected component contacts**. This comparison checks saved pad-to-net assignments, not manufactured copper continuity. This netlist uses its own connector references and must not be interpreted as physical screw-terminal orientation until the board-view labels are inspected. It records schematic intended connectivity, not connector orientation or operating limits.
+
+## Smoothieboard V2 Prime connection
+
+The illustrated host is Smoothieboard V2 Prime P11 (Prime2660). Its native PCB maps J37.3–J37.9 to PB1, PJ4, PA4, PG0, PJ3, PG1 and PJ2, with J37.10 = GND. J37.1 and J37.2 carry the source nets 3V3_LIMIT and 5V_LIMIT; neither rail is used in the button example. These ten contact identities were checked directly against the P11 PCB. They do not establish cable keying or mating-face orientation: match the actual connector marks and verify end-to-end contact numbers before wiring. The firmware pin table marks PB1, PA4 and PG1 not 5 V tolerant; treat every GPIO contact as 3.3 V only. Available rail current is not established. Connect only a single host; keep outside circuits unpowered unless a reviewed source arrangement explicitly says otherwise.
+
+
+### Select the connector hardware
+
+The saved footprints identify three different interfaces:
+
+- **Prime J37:** a generic vertical, surface-mount, 2 × 5 header on a **1.27 mm pitch**. The P11 PCB does not name a manufacturer or mating cable. Do not assume it has the breakout’s polarization feature.
+- **Breakout J1:** the custom footprint names **Samtec SHF-105-01-L-D-TH-LC**, a shrouded 2 × 5, **1.27 mm** header. [Samtec’s product information](https://www.samtec.com/products/shf-105-01-l-d-th-lc) identifies its polarization notch and the FFSD/FFTP mating families without strain relief. The saved footprint puts its notch below the contact rows and pin 1 at the lower left in the component-side PCB view. The numbering agrees with [Samtec’s through-hole PCB layout, sheet 4](https://suddendocs.samtec.com/prints/shf-1xx-01-x-d-xx-xx-footprint.pdf). A cable’s mating-face view is different; do not copy left/right positions from the PCB view.
+- **Breakout J3:** a ten-position, **3.5 mm pitch** Phoenix-style horizontal terminal-block footprint. Use the numbered terminal key rather than guessing which end is terminal 1.
+
+Confirm that the assembled parts match these saved footprints. A generic 2.54 mm jumper plug is not the documented 1.27 mm interface. The selected proposal uses all ten contacts; the button itself uses only PB1 and ground. Both rails and the other six GPIOs are carried to the board and must be accounted for. No specific harness assembly or installed mating face has been verified.
+
+## Firmware interaction
+
+The passive breakout needs no board-specific driver. Each P3–P9 contact follows its corresponding host pin’s configured function. The button example below requires an unallocated PB1 input and a signal no higher than 3.3 V; it is not a universal pin assignment. If your attached peripheral requires firmware support that is absent, email **wolf.arthur@gamil.com** with its identity, board revision and intended use.
+
+## Wire a normally-open button
+
+The source-backed circuit below uses a **complete ten-core cable** from **Prime P11 J37 to breakout J1**, followed by two leads from **J3.3 (P3/PB1)** and **J3.10 (ground)** to a dry, isolated, normally-open button. The button uses no supply rail, but the complete cable carries both rails and all seven GPIOs to the breakout. Keep J2 unconnected and isolate every unused J3 terminal.
+
+> **Unpowered assembly proposal.** The drawings attach to native source contact positions and show continuous routed paths. They do not select a fitted cable assembly or establish either cable mating-face orientation. Prime J37 is generic; the breakout's Samtec polarization cannot be assumed at the host. Resolve the actual mating parts, all ten end-to-end contact numbers, rail limits and GPIO ownership before energizing. These drawings are not a hardware qualification.
+
+Start with the complete host and board view, then use the three contact details and full contact schedule. The overview is context on a phone; the focused views carry the readable contact numbers. The red edge denotes proposed core 1 after its contact identity is established; it does not prove cable orientation.
+
+
+{% include _includes/extension-instruction-diagram.html id="raw-pins-screw-terminal-breakout-v24-integral-installation" src="/images/extensions/raw-pins-screw-terminal-breakout/guides/native-ribbon-proposal/screw-ten-core-overview.svg" title="Prime, ten-core cable and dry button" alt="Prime, ten-core cable and dry button" caption="Directory v24, drawing title v17; Prime P11 native contacts. Component-side source positions are not cable mating-face views. Keep unpowered until actual mating, continuity, rails and pin ownership are resolved." width=1000 %}
+
+{% include _includes/extension-instruction-diagram.html id="screw-v24-prime-j37-entry-detail" src="/images/extensions/raw-pins-screw-terminal-breakout/guides/native-ribbon-proposal/prime-j37-entry-detail.svg" title="Prime J37 cable entry detail" alt="Enlarged exact host entry from the complete screw-terminal wiring drawing" caption="Exact enlarged crop of the complete circuit. The grey ten-core jacket joins the symbolic plug; use the numbered J37 key for contact identities. This is not a cable mating-face view." width=1000 %}
+
+{% include _includes/extension-instruction-diagram.html id="screw-v24-native-j37" src="/images/extensions/raw-pins-screw-terminal-breakout/guides/native-ribbon-proposal/prime-j37-ten-contact.svg" title="Prime J37 — ten contact positions" alt="Prime J37 — ten contact positions" caption="Directory v24, drawing title v17; Prime P11 native contacts. Component-side source positions are not cable mating-face views. Keep unpowered until actual mating, continuity, rails and pin ownership are resolved." width=1000 %}
+
+{% include _includes/extension-instruction-diagram.html id="screw-v24-native-j1" src="/images/extensions/raw-pins-screw-terminal-breakout/guides/native-ribbon-proposal/screw-j1-ten-contact.svg" title="Breakout J1 — ten contact positions" alt="Breakout J1 — ten contact positions" caption="Directory v24, drawing title v17; Prime P11 native contacts. Component-side source positions are not cable mating-face views. Keep unpowered until actual mating, continuity, rails and pin ownership are resolved." width=1000 %}
+
+{% include _includes/extension-instruction-diagram.html id="screw-v24-native-j3" src="/images/extensions/raw-pins-screw-terminal-breakout/guides/native-ribbon-proposal/screw-j3-dry-button-contacts.svg" title="J3.3 signal and J3.10 ground to the button" alt="J3.3 signal and J3.10 ground to the button" caption="Directory v24, drawing title v17; Prime P11 native contacts. Component-side source positions are not cable mating-face views. Keep unpowered until actual mating, continuity, rails and pin ownership are resolved." width=1000 %}
+
+{% include _includes/extension-instruction-diagram.html id="screw-v24-ten-core-schedule" src="/images/extensions/raw-pins-screw-terminal-breakout/guides/native-ribbon-proposal/ten-core-contact-schedule.svg" title="All ten cable contacts and signal names" alt="All ten cable contacts and signal names" caption="Directory v24, drawing title v17; Prime P11 native contacts. Component-side source positions are not cable mating-face views. Keep unpowered until actual mating, continuity, rails and pin ownership are resolved." width=1000 %}
+
+1. Disconnect all power and machine loads. Confirm directory v24/drawing v17 and Prime P11, then reserve PB1 for this input. Check the configured function and electrical limits of all six other connected GPIOs; the cable exposes them even though the button does not use them.
+2. Resolve suitable mating hardware for both 1.27 mm headers. Wire **J37.n → J1.n for every contact 1–10**, using the complete schedule and native numbered keys. With power off, check every end-to-end contact and absence of shorts; neither a red stripe nor an apparent fit establishes that mapping. Ordinary 2.54 mm jumper plugs are unsuitable.
+3. Connect one isolated button terminal to **J3.3** and the other to **J3.10**. These source nets join J1.3 and J1.10 inside the passive board; no extra internal leads are needed. Leave J2 and all other J3 terminals unused and insulated. Do not attach an externally powered signal to the switch input.
+4. Inspect strands, solder links and jumpers. Check that the open switch leaves PB1 disconnected from ground and a press joins only PB1 to ground. Confirm supply/ground polarity and the board's source revision before considering power; available load current and a fitted assembly are not qualified here.
+5. With machine loads disconnected, use the following source-checked V2 input configuration only after the preceding hardware and pin-ownership checks are resolved. The controller's internal pull-up biases this bare switch; no board-specific driver is needed.
+
+```ini
+[button box]
+raw_button.enable = true
+raw_button.pin = PB1!^
+raw_button.press = KILL
+```
+
+The `^` suffix enables the pull-up; `!` inverts the input so a ground closure becomes an active logical input. The V2 buttonbox parser executes `press` when its sampled state changes from inactive to active. A button already held when sampling starts can trigger on its first sample. `KILL` calls the firmware halt path; release does not issue an unhalt action. This is a software-halt example, not a qualified emergency-stop circuit or power disconnect.
+
+The buttonbox and pin-parser syntax is checked against upstream V2 commit `2a21c0108b1d095ecd8b2b9358e94055f053c003`, linked below. The example has not been run on the controller. Do not substitute the sample's unbiased `PB1-` setting for this bare switch.
+
+The selected button syntax and press/release behavior were also checked against [upstream V2 buttonbox source at a pinned revision](https://github.com/Smoothieware/SmoothieV2/blob/2a21c0108b1d095ecd8b2b9358e94055f053c003/Firmware/src/modules/utils/buttonbox/buttonbox.cpp) and its [pin suffix parser](https://github.com/Smoothieware/SmoothieV2/blob/2a21c0108b1d095ecd8b2b9358e94055f053c003/Firmware/Hal/src/Pin.cpp). This identifies the reviewed implementation, not the installed firmware. Startup with the button held can invoke the first press action; releasing it does not unhalt the machine.
+
+## Instructional diagrams
+
+Use the complete native-contact circuit, three focused contact views and ten-contact schedule above. The older electrical-role and cable comparisons below are retained studies, not alternative installation instructions. Physical cable mating remains unverified.
+
+
+<details markdown="1">
+<summary>Earlier electrical layout and full-cable comparisons</summary>
+
+These archived comparisons predate the native-attached ten-core proposal above. Do not use their detached role boxes or selective-lead assumptions to choose cable contacts.
+
+[Archived four-lead electrical-role study](/images/extensions/raw-pins-screw-terminal-breakout/guides/wholeboard-electrical-role-proposal.svg). The original artwork is preserved; its role-box endpoints do not specify physical contact attachment.
+
+[Archived enlarged-contact comparison](/images/extensions/raw-pins-screw-terminal-breakout/guides/prime-source-contact-dry-button-role56.svg).
+
+{% include _includes/extension-instruction-diagram.html id="raw-pins-screw-terminal-breakout-v24-integral-installation-retained-alternative" src="/images/extensions/raw-pins-screw-terminal-breakout/guides/prime-source-located-installation.svg" title="Earlier source comparison — unqualified installation" alt="Source-numbered Prime, extension board and selected peripheral with continuous autorouted electrical paths." caption="Retained source comparison only; use the native-contact ten-core proposal above. This earlier layout does not qualify native attachment or a fitted cable. Dashed lines locate connectors and solid paths represent electrical relationships. P11 artwork uses selected P12 J37 assignments." width=1950 %}
+
+{% include _includes/extension-instruction-diagram.html src="/images/extensions/raw-pins-screw-terminal-breakout/guides/raw-pins-screw-terminal-breakout-button-wiring.svg" id="raw-pins-screw-terminal-breakout-v24-wiring" title="Earlier ten-conductor source comparison — v24" alt="Prime GF/J37 ten-conductor cable to the extension board, with continuous selected internal paths and a normally-open switch to ground." caption="Electrical schematic candidate using P11 Prime artwork and source-verified P12 GF/J37 assignments. Numbered banks show electrical identities rather than physical cavities. Verify cable continuity and pin 1; physical mating and native attachment remain unqualified." width="1920" %}
+
+### Match the numbered cable contacts
+
+{% include _includes/extension-instruction-diagram.html id="raw-pins-screw-terminal-breakout-v24-orientation" src="/images/extensions/raw-pins-screw-terminal-breakout/guides/raw-pins-screw-terminal-breakout-connector-orientation.svg" title="Component-side connector numbering and cable continuity" alt="Exact native PCB pad-centre layout of Prime GF J37 and the module input, with red pad 1 and all ten numbered conductor identities." caption="Component/front-side PCB views, uniformly enlarged eight times. Match pad numbers end to end; circles locate pad centres and do not depict connector cavities. No mating-face view or ribbon stripe is inferred." width=1200 %}
+
+</details>
+
+## Check the configured input before using machine loads
+
+Keep machine loads disabled while checking the example. These are the expected consequences of the source-checked pull-up, inversion and `KILL` action, not recorded hardware test results.
+
+<div class="table-wrapper" markdown="1">
+
+<div class="extension-contact-table" role="region" aria-label="Configured input checks; scroll horizontally to read all columns" tabindex="0" markdown="1">
+
+| Condition | Expected result | If it differs |
+| --- | --- | --- |
+| Button released | Input is inactive; no new press action | Check for a short to ground, a normally-closed switch or incorrect input inversion. |
+| Button pressed | Input becomes active and requests a software halt | Check the numbered signal and ground contacts, configured pin and pin-allocation errors. |
+| Button released after a halt | Halt remains set; release does not resume the machine | The example has no release action. Follow the controller's normal recovery procedure only after resolving the cause. |
+| Signal wire disconnected | The host pull-up normally leaves the input inactive | This arrangement does not detect a broken signal wire; do not use it as a fail-safe stop circuit. |
+| Button held during startup | The first active sample may request a halt | Release buttons before startup; do not assume a release-and-press cycle is required. |
+
+</div>
+
+</div>
+
+## Source files and further reading
+
+[Download the retained v24 CAD study (ZIP, 1.1 MB)](/assets/downloads/extensions/raw-pins-screw-terminal-breakout/raw-pins-screw-terminal-cad-study.zip). It contains the editable PCB, schematic, project and local libraries, plus the schematic, netlist, bill of materials and placement exports. The directory is v24, while the native title blocks still say v17; the included source manifest identifies the exact snapshot. This is an unqualified design study, not fabrication data.
+
+Open the project with KiCad 9 and keep the bundled libraries beside it. One optional Samtec connector 3D model is omitted because its redistribution terms are unestablished; the original references to that visualization remain in the CAD. Standard KiCad 9 libraries are also needed for some optional 3D views. The archive includes source and dependency notices. It has been checked for file integrity and required library paths, but has not been opened and qualified as a complete KiCad assembly.
+
+The upstream engineering links below remain unavailable to anonymous readers and are retained for provenance. Use the local study download for this documented snapshot; firmware links are separate sources.
+
+- [Selected v24 PCB source](https://github.com/arthurwolf/extension-boards/blob/main/src/raw-pins-screw-terminal-breakout/attempt/versions/v24/raw-pins-screw-terminal-breakout.kicad_pcb)
+- [Selected-source schematic netlist](https://github.com/arthurwolf/extension-boards/blob/main/src/raw-pins-screw-terminal-breakout/attempt/versions/v24/exports/schematic-netlist.xml)
+- [Family specification and retained earlier revisions](https://github.com/arthurwolf/extension-boards/blob/main/src/raw-pins-screw-terminal-breakout/specs.md)
+- [All extension boards](/extension-boards)
+
+Some engineering-source links may require repository access. Availability of those links remains a separate check from the local source review.
+
+<details markdown="1">
+<summary>Supplementary board views</summary>
+
+{% include _includes/extension-board-visuals.html slug="raw-pins-screw-terminal-breakout" %}
+
+</details>

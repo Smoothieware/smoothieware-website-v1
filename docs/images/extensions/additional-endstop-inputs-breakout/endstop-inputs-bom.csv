@@ -1,0 +1,102 @@
+Reference,Value,Footprint,DNP
+C11,100nF 50V,Capacitor_SMD:C_0805_2012Metric,False
+C12,100nF 50V,Capacitor_SMD:C_0805_2012Metric,False
+C13,100nF 50V,Capacitor_SMD:C_0805_2012Metric,False
+C14,100nF 50V,Capacitor_SMD:C_0805_2012Metric,False
+C15,100nF 50V,Capacitor_SMD:C_0805_2012Metric,False
+C16,100nF 50V,Capacitor_SMD:C_0805_2012Metric,False
+C21,100nF 50V,Capacitor_SMD:C_0805_2012Metric,False
+C24,100nF 50V,Capacitor_SMD:C_0805_2012Metric,False
+C71,100nF 50V,Capacitor_SMD:C_0805_2012Metric,False
+C72,100nF 50V,Capacitor_SMD:C_0805_2012Metric,False
+C73,100nF 50V,Capacitor_SMD:C_0805_2012Metric,False
+C80,100nF 50V,Capacitor_SMD:C_0805_2012Metric,False
+C81,100nF 50V,Capacitor_SMD:C_0805_2012Metric,False
+C82,10uF 16V,Capacitor_SMD:C_0805_2012Metric,False
+C83,100nF 50V SOFT START,Capacitor_SMD:C_0805_2012Metric,False
+D1,BAT54WS blocking pullup,Diode_SMD:D_SOD-323,False
+D10,GREEN 3V3 POWER,Smoothie_Endstop:Kingbright_AP2012SGC,False
+D19,BAS21J FAULT FEED ISOLATION,Diode_SMD:D_SOD-323F,False
+D2,BAT54WS blocking pullup,Diode_SMD:D_SOD-323,False
+D20,BAS21J FAULT LED ANTIPARALLEL,Diode_SMD:D_SOD-323F,False
+D3,BAT54WS blocking pullup,Diode_SMD:D_SOD-323,False
+D4,BAT54WS blocking pullup,Diode_SMD:D_SOD-323,False
+D5,BAT54WS blocking pullup,Diode_SMD:D_SOD-323,False
+D6,BAT54WS blocking pullup,Diode_SMD:D_SOD-323,False
+D7,BAV21W HV pullup isolation,Diode_SMD:D_SOD-123,False
+D8,SMBJ48A positive signal TVS,Diode_SMD:D_SMB,False
+D9,RED FIELD FAULT,Smoothie_Endstop:Kingbright_AP2012SURCK,False
+H1,MountingHole_3.2mm_M3,MountingHole_3.2mm_M3,False
+H2,MountingHole_3.2mm_M3,MountingHole_3.2mm_M3,False
+H3,MountingHole_3.2mm_M3,MountingHole_3.2mm_M3,False
+H4,MountingHole_3.2mm_M3,MountingHole_3.2mm_M3,False
+H5,CABLE TIE 2.5mm,Smoothie_Endstop:CableTie_NPTH3.2,False
+H6,CABLE TIE 2.5mm,Smoothie_Endstop:CableTie_NPTH3.2,False
+J1,ENDSTOP 1,Smoothie_Endstop:PJ2181_KK254_PH2_Triple,False
+J2,ENDSTOP 2,Smoothie_Endstop:PJ2181_KK254_PH2_Triple,False
+J3,ENDSTOP 3,Smoothie_Endstop:PJ2181_KK254_PH2_Triple,False
+J4,ENDSTOP 4,Smoothie_Endstop:PJ2181_KK254_PH2_Triple,False
+J5,ENDSTOP 5,Smoothie_Endstop:PJ2181_KK254_PH2_Triple,False
+J6,ENDSTOP 6,Smoothie_Endstop:PJ2181_KK254_PH2_Triple,False
+J7,PROBE 7 / POSITIVE 3-45V SIGNAL ONLY,"TerminalBlock_Phoenix:TerminalBlock_Phoenix_PT-1,5-3-3.5-H_1x03_P3.50mm_Horizontal",False
+J8,Y HOST,Smoothie_Endstop:Samtec_SHF105_TH_LC,False
+J9,Y CHAIN,Smoothie_Endstop:Samtec_SHF105_TH_LC,False
+JP1,CUT LINK,Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm,False
+JP11,CUT LINK,Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm,False
+JP12,CUT LINK,Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm,False
+JP13,OPEN CHAIN LINK,Jumper:SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm,False
+JP14,OPEN CHAIN LINK,Jumper:SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm,False
+JP15,OPEN CHAIN LINK,Jumper:SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm,False
+JP16,OPEN CHAIN LINK,Jumper:SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm,False
+JP17,OPEN CHAIN LINK,Jumper:SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm,False
+JP18,OPEN CHAIN LINK,Jumper:SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm,False
+JP19,OPEN CHAIN LINK,Jumper:SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm,False
+JP2,CUT LINK,Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm,False
+JP20,CUT LINK,Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm,False
+JP21,CUT LINK,Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm,False
+JP22,LED9 CUT TO DARK,Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm,False
+JP23,POWER LED CUT TO DARK,Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm,False
+JP3,CUT LINK,Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm,False
+JP4,CUT LINK,Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm,False
+JP5,CUT LINK,Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm,False
+JP6,CUT LINK,Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm,False
+JP7,CUT LINK,Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm,False
+R11,10k 1%,Resistor_SMD:R_0805_2012Metric,False
+R12,10k 1%,Resistor_SMD:R_0805_2012Metric,False
+R13,10k 1%,Resistor_SMD:R_0805_2012Metric,False
+R14,10k 1%,Resistor_SMD:R_0805_2012Metric,False
+R15,10k 1%,Resistor_SMD:R_0805_2012Metric,False
+R16,10k 1%,Resistor_SMD:R_0805_2012Metric,False
+R21,1k 1%,Resistor_SMD:R_0805_2012Metric,False
+R22,1k 1%,Resistor_SMD:R_0805_2012Metric,False
+R23,1k 1%,Resistor_SMD:R_0805_2012Metric,False
+R24,1k 1%,Resistor_SMD:R_0805_2012Metric,False
+R25,1k 1%,Resistor_SMD:R_0805_2012Metric,False
+R26,1k 1%,Resistor_SMD:R_0805_2012Metric,False
+R31,330R 1%,Resistor_SMD:R_0805_2012Metric,False
+R32,330R 1%,Resistor_SMD:R_0805_2012Metric,False
+R33,330R 1%,Resistor_SMD:R_0805_2012Metric,False
+R34,330R 1%,Resistor_SMD:R_0805_2012Metric,False
+R35,330R 1%,Resistor_SMD:R_0805_2012Metric,False
+R36,330R 1%,Resistor_SMD:R_0805_2012Metric,False
+R71,47k 1%,Resistor_SMD:R_0805_2012Metric,False
+R72,47k 1%,Resistor_SMD:R_0805_2012Metric,False
+R73,4.7k 1%,Resistor_SMD:R_0805_2012Metric,False
+R74,100k 1%,Resistor_SMD:R_0805_2012Metric,False
+R75,3.3k 1%,Resistor_SMD:R_0805_2012Metric,False
+R76,1M 1% HYSTERESIS,Resistor_SMD:R_0805_2012Metric,False
+R77,10k 1%,Resistor_SMD:R_0805_2012Metric,False
+R78,10k 1%,Resistor_SMD:R_0805_2012Metric,False
+R80,49.9k 1%,Resistor_SMD:R_0805_2012Metric,False
+R81,4.7k 1%,Resistor_SMD:R_0805_2012Metric,False
+R82,1k 1% POWER LED,Resistor_SMD:R_0805_2012Metric,False
+TP1,IN5V,TestPoint:TestPoint_Pad_D1.0mm,False
+TP2,FIELD5V,TestPoint:TestPoint_Pad_D1.0mm,False
+TP3,GND,TestPoint:TestPoint_Pad_D1.0mm,False
+TP4,RTN FLOAT,TestPoint:TestPoint_Pad_D1.0mm,False
+U1,74LVC3G17 triple Schmitt,Package_SO:Nexperia_SOT765_1_P0.5mm,False
+U10,TPD4E1U06,Package_TO_SOT_SMD:TPD4E1U06_DCK_TI,False
+U4,74LVC3G17 triple Schmitt,Package_SO:Nexperia_SOT765_1_P0.5mm,False
+U7,TLV9021 open-drain comparator,Package_TO_SOT_SMD:SOT-23-5,False
+U8,TPS26600 AUTO-RETRY 0.2A FIELD LIMIT/SLEW,Package_SO:HTSSOP-16-1EP_4.4x5mm_P0.65mm_EP3.4x5mm_Mask3x3mm_ThermalVias,False
+U9,TPD4E1U06,Package_TO_SOT_SMD:TPD4E1U06_DCK_TI,False

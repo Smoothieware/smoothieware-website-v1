@@ -1,0 +1,397 @@
+{
+  "scope": "Enlarged source-contact reading details; source copper geometry preserved in clipped frames, schematic positions/routes only. Not physical cable routing or powered wiring qualification.",
+  "sources": {
+    "inputs/bom.csv": "b199bfcfb073ebea539b4173db253af5b9613426bc6976c42e84e48bd2da0dc6",
+    "inputs/host-contract.json": "4c78a2a9828bbe103f2137162bfee946edf3b0009d04939e7c6c05cbd59261ef",
+    "inputs/Switch.h": "1e223c92da750a39d5e5c6e2c317178075d50f920a39fb4de585ae5f9c05d460",
+    "inputs/relay.svg": "5642f0bde8f09f393140d1525bfe526ec5d5a978b785d2111634ce5068bd0d0c",
+    "inputs/prime-p11.svg": "18f69db908a317196cb9d230f06eb5c949c081f36908118be8c3bd7fa5d1efbc",
+    "inputs/schematic-netlist.xml": "2f70e21ea1b31b938da12be25d3481fe47b18256520502df4e02ac2eec48627d",
+    "inputs/prime-p11.kicad_pcb": "c0d77f1fac1859ba3b03a6476ba8354763c09edc0a758fb0fc9c5fcf91af4627",
+    "inputs/Switch.cpp": "61660b17b5ea96d59f3717ea12003c8d162698cf0d8e6fe0c0b10dbf12b5e335",
+    "inputs/native-source.kicad_pcb": "eb30aab068748b8def81ea3c2977c4ca74525ee68629062322b1daef90a4f149",
+    "inputs/Pin.cpp": "eb44cd4f1b9c9a51a33ee961968e0fb8236d5bbc9c95fd00f0b66f8ec08d813e",
+    "inputs/export-bindings.json": "e367793200a5c207f369c932885b2effd77b3b870fd3c4708de591d1215fc7f4",
+    "inputs/native-source.kicad_sch": "2483de5d2c1c9d5e2d4282d6d476ed5a83a0e9c477138f69b917e1a178405020",
+    "inputs/prime-p12.kicad_pcb": "a7e84b8fb403d9b64fd7f0e09c6aa245f00525ba894bfe9a008093fe73626b29",
+    "inputs/Pin.h": "566069a90b1b46c9a9e40071a59df202154bdb626b34860fff7ea6f55ea18c90",
+    "inputs/Prime-upstream-README.md": "59aa49d088c0ba8d3fcf622f72cbc59eaadd5db723be524f821f119c4ccbeba6"
+  },
+  "figures": [
+    {
+      "file": "host-supply.svg",
+      "sha256": "132a23c9cd9804a22e1e0b23635c1a413c4454d72554bbaca87c761f1528d2fa",
+      "frames": [
+        {
+          "id": "prime",
+          "native_pcb_sha256": "c0d77f1fac1859ba3b03a6476ba8354763c09edc0a758fb0fc9c5fcf91af4627",
+          "abstract_svg_sha256": "18f69db908a317196cb9d230f06eb5c949c081f36908118be8c3bd7fa5d1efbc",
+          "reference": "J37",
+          "number": "2",
+          "instance": 1,
+          "pad_uuid": null,
+          "native_centre_mm": [
+            149.71,
+            96.39999999999999
+          ],
+          "source_net": "/5V_LIMIT",
+          "mapped_contact": [
+            85,
+            135
+          ],
+          "scale": 11,
+          "translation": [
+            -1561.8100000000002,
+            -925.3999999999999
+          ],
+          "source_art_offset_mm": [
+            -95.5,
+            -35.25
+          ],
+          "clip": [
+            25,
+            92,
+            145,
+            105
+          ],
+          "visible_pad_records": 12
+        },
+        {
+          "id": "relay",
+          "native_pcb_sha256": "eb30aab068748b8def81ea3c2977c4ca74525ee68629062322b1daef90a4f149",
+          "abstract_svg_sha256": "5642f0bde8f09f393140d1525bfe526ec5d5a978b785d2111634ce5068bd0d0c",
+          "reference": "J_HOST1",
+          "number": "2",
+          "instance": 3,
+          "pad_uuid": null,
+          "native_centre_mm": [
+            13.54,
+            82.3
+          ],
+          "source_net": "/HOST_5V",
+          "mapped_contact": [
+            315,
+            355
+          ],
+          "scale": 11,
+          "translation": [
+            166.06,
+            -550.3
+          ],
+          "source_art_offset_mm": [
+            4.4821,
+            0.025
+          ],
+          "clip": [
+            245,
+            307,
+            150,
+            105
+          ],
+          "visible_pad_records": 9
+        }
+      ],
+      "route": {
+        "id": "supply",
+        "source": "prime",
+        "destination": "relay",
+        "net": "Host 5 V input",
+        "color": "#b37300",
+        "points_mm": [
+          [
+            85.0,
+            135.0
+          ],
+          [
+            85.0,
+            115.0
+          ],
+          [
+            235.0,
+            115.0
+          ],
+          [
+            235.0,
+            370.0
+          ],
+          [
+            315.0,
+            370.0
+          ],
+          [
+            315.0,
+            355.0
+          ]
+        ],
+        "source_exit": {
+          "side": "top",
+          "overflight_mm": 13.200000000000045
+        },
+        "destination_exit": {
+          "side": "bottom",
+          "overflight_mm": 9.626988395472608
+        }
+      },
+      "source_geometry_retained": true,
+      "physical_path_qualified": false
+    },
+    {
+      "file": "host-command.svg",
+      "sha256": "21a9d47e175e8070d9e2e858aece7e9eb8944786dbdc5aee76f59a3a39cdf18d",
+      "frames": [
+        {
+          "id": "prime",
+          "native_pcb_sha256": "c0d77f1fac1859ba3b03a6476ba8354763c09edc0a758fb0fc9c5fcf91af4627",
+          "abstract_svg_sha256": "18f69db908a317196cb9d230f06eb5c949c081f36908118be8c3bd7fa5d1efbc",
+          "reference": "J37",
+          "number": "3",
+          "instance": 2,
+          "pad_uuid": null,
+          "native_centre_mm": [
+            150.98,
+            100.3
+          ],
+          "source_net": "/PB1",
+          "mapped_contact": [
+            85,
+            135
+          ],
+          "scale": 11,
+          "translation": [
+            -1575.78,
+            -968.3
+          ],
+          "source_art_offset_mm": [
+            -95.5,
+            -35.25
+          ],
+          "clip": [
+            25,
+            92,
+            145,
+            105
+          ],
+          "visible_pad_records": 15
+        },
+        {
+          "id": "relay",
+          "native_pcb_sha256": "eb30aab068748b8def81ea3c2977c4ca74525ee68629062322b1daef90a4f149",
+          "abstract_svg_sha256": "5642f0bde8f09f393140d1525bfe526ec5d5a978b785d2111634ce5068bd0d0c",
+          "reference": "J_HOST1",
+          "number": "3",
+          "instance": 4,
+          "pad_uuid": null,
+          "native_centre_mm": [
+            15.54,
+            82.3
+          ],
+          "source_net": "/HOST_CMD_1",
+          "mapped_contact": [
+            315,
+            355
+          ],
+          "scale": 11,
+          "translation": [
+            144.06,
+            -550.3
+          ],
+          "source_art_offset_mm": [
+            4.4821,
+            0.025
+          ],
+          "clip": [
+            245,
+            307,
+            150,
+            105
+          ],
+          "visible_pad_records": 10
+        }
+      ],
+      "route": {
+        "id": "command",
+        "source": "prime",
+        "destination": "relay",
+        "net": "PB1 command input",
+        "color": "#087361",
+        "points_mm": [
+          [
+            85.0,
+            135.0
+          ],
+          [
+            85.0,
+            155.0
+          ],
+          [
+            235.0,
+            155.0
+          ],
+          [
+            235.0,
+            370.0
+          ],
+          [
+            315.0,
+            370.0
+          ],
+          [
+            315.0,
+            355.0
+          ]
+        ],
+        "source_exit": {
+          "side": "bottom",
+          "overflight_mm": 13.200000000000045
+        },
+        "destination_exit": {
+          "side": "bottom",
+          "overflight_mm": 9.626988395472608
+        }
+      },
+      "source_geometry_retained": true,
+      "physical_path_qualified": false
+    },
+    {
+      "file": "host-ground.svg",
+      "sha256": "7091fde2b6185fce126fc57892beb22ce632cdce12254f31e8b018ee5029b707",
+      "frames": [
+        {
+          "id": "prime",
+          "native_pcb_sha256": "c0d77f1fac1859ba3b03a6476ba8354763c09edc0a758fb0fc9c5fcf91af4627",
+          "abstract_svg_sha256": "18f69db908a317196cb9d230f06eb5c949c081f36908118be8c3bd7fa5d1efbc",
+          "reference": "J37",
+          "number": "10",
+          "instance": 9,
+          "pad_uuid": null,
+          "native_centre_mm": [
+            154.79,
+            96.39999999999999
+          ],
+          "source_net": "GND",
+          "mapped_contact": [
+            85,
+            135
+          ],
+          "scale": 11,
+          "translation": [
+            -1617.6899999999998,
+            -925.3999999999999
+          ],
+          "source_art_offset_mm": [
+            -95.5,
+            -35.25
+          ],
+          "clip": [
+            25,
+            92,
+            145,
+            105
+          ],
+          "visible_pad_records": 21
+        },
+        {
+          "id": "relay",
+          "native_pcb_sha256": "eb30aab068748b8def81ea3c2977c4ca74525ee68629062322b1daef90a4f149",
+          "abstract_svg_sha256": "5642f0bde8f09f393140d1525bfe526ec5d5a978b785d2111634ce5068bd0d0c",
+          "reference": "J_HOST1",
+          "number": "1",
+          "instance": 1,
+          "pad_uuid": null,
+          "native_centre_mm": [
+            11.54,
+            82.3
+          ],
+          "source_net": "/HOST_GND",
+          "mapped_contact": [
+            315,
+            355
+          ],
+          "scale": 11,
+          "translation": [
+            188.06,
+            -550.3
+          ],
+          "source_art_offset_mm": [
+            4.4821,
+            0.025
+          ],
+          "clip": [
+            245,
+            307,
+            150,
+            105
+          ],
+          "visible_pad_records": 8
+        }
+      ],
+      "route": {
+        "id": "ground",
+        "source": "prime",
+        "destination": "relay",
+        "net": "Host ground",
+        "color": "#202b2d",
+        "points_mm": [
+          [
+            85.0,
+            135.0
+          ],
+          [
+            95.0,
+            135.0
+          ],
+          [
+            95.0,
+            220.0
+          ],
+          [
+            235.0,
+            220.0
+          ],
+          [
+            235.0,
+            370.0
+          ],
+          [
+            315.0,
+            370.0
+          ],
+          [
+            315.0,
+            355.0
+          ]
+        ],
+        "source_exit": {
+          "side": "right",
+          "overflight_mm": 4.070000000000164
+        },
+        "destination_exit": {
+          "side": "bottom",
+          "overflight_mm": 9.625
+        }
+      },
+      "source_geometry_retained": true,
+      "physical_path_qualified": false
+    },
+    {
+      "file": "limits-unpowered.svg",
+      "sha256": "1ae025877a9ef2db746d282adaf72e08a2fff0ba9b3958f3b18386c7b20b8aa8",
+      "source_scope": "Concise selected-source/page qualification summary; complete original limits retained."
+    },
+    {
+      "file": "limits-domains.svg",
+      "sha256": "e44d1cad651d060cfca463af9a3bf649550e9c3554db28d7e828909f8b82d42b",
+      "source_scope": "Concise selected-source/page qualification summary; complete original limits retained."
+    },
+    {
+      "file": "limits-qualification.svg",
+      "sha256": "097fd2a36e9f7802ecdadedb1f46894a8746152dce5862631708aecad008b802",
+      "source_scope": "Concise selected-source/page qualification summary; complete original limits retained."
+    },
+    {
+      "file": "limits-revisions.svg",
+      "sha256": "985ddbc15a7ae19c09bd828d6f4fa41c2cba87d229ba327930c18c94ddd95ba8",
+      "source_scope": "Concise selected-source/page qualification summary; complete original limits retained."
+    }
+  ]
+}

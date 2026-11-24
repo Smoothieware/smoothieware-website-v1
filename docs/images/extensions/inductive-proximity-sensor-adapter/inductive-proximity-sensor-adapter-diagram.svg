@@ -1,0 +1,709 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0.1155 -0.9750 40.0000 42.0250">
+<title>inductive-proximity-sensor-adapter v22</title>
+<desc>Source inductive-proximity-sensor-adapter/attempt/versions/v22/inductive-proximity-sensor-adapter.kicad_pcb sha256:4272b2e4705d6038e30e35a279c45e193fd07387c74b327803cc2823c5137cc9</desc>
+<g id="inductive-proximity-sensor-adapter-board-content"><rect id="layer-inductive-proximity-sensor-adapter-board-substrate" class="pcb-layer" data-label="Board substrate" x="1.1155" y="0.025" width="38" height="38.5" rx="1" fill="#1f1f22" stroke="#dfe4ee" stroke-width="0.3" style="display:inline" />
+<g id="layer-inductive-proximity-sensor-adapter-illustrated-f" class="pcb-layer" data-label="Illustrated components (top)" opacity="1" style="display:inline">
+<g class="pcb-part" data-instance-id="28bfed04-75ac-4f85-80a1-39cbd229e043" data-ref="J2" data-value="SENSOR 0V +V OUT" data-library="TerminalBlock_Phoenix:TerminalBlock_Phoenix_PT-1,5-3-3.5-H_1x03_P3.50mm_Horizontal" data-slug="top_terminalblock_phoenix_terminalblock_phoenix_pt_1_5_3_3_5_h_1x03_p3_50mm_horizontal" data-side="F" data-x="14.0155" data-y="5.3750" data-rot="-180" data-mirror="1" data-dx="0" data-dy="0" data-extra-rot="0" data-source="top_art/top_terminalblock_phoenix_terminalblock_phoenix_pt_1_5_3_3_5_h_1x03_p3_50mm_horizontal/v1/component.svg" data-viewbox="-2.3000 -3.6500 11.6000 8.7000" data-box-w="11.600" data-box-h="8.700" transform="translate(14.0155 5.3750) rotate(-180) scale(1 1)"><g><g><g><svg x="-2.3000" y="-3.6500" width="11.6000" height="8.7000" viewBox="-2.3000 -3.6500 11.6000 8.7000" overflow="visible"><title>J2 — SENSOR 0V +V OUT (illustrated: top_terminalblock_phoenix_terminalblock_phoenix_pt_1_5_3_3_5_h_1x03_p3_50mm_horizontal)</title><title>Phoenix PT 1,5/3-3,5-H horizontal terminal block, wire entry toward +y, top view</title><g id="pcb-art-1894-housing"><rect x="-1.75" y="-3.05" width="10.5" height="7.55" rx="0.12" fill="#7cc46b" stroke="#2f5a2a" stroke-width="0.08" /><rect x="-1.75" y="2.85" width="10.5" height="0.57" fill="#4e8a43" /><rect x="-1.67" y="-2.97" width="10.34" height="0.42" fill="#9ad68b" opacity="0.45" /><line x1="1.75" y1="-2.75" x2="1.75" y2="2.7" stroke="#4e8a43" stroke-width="0.1" stroke-linecap="round" /><line x1="5.25" y1="-2.75" x2="5.25" y2="2.7" stroke="#4e8a43" stroke-width="0.1" stroke-linecap="round" /><polygon points="8.75,-2.25 9.28,-2 9.28,-1.7 8.75,-1.45" fill="#7cc46b" stroke="#2f5a2a" stroke-width="0.04" stroke-linejoin="round" /><polygon points="8.75,1.5 9.28,1.75 9.28,2.05 8.75,2.3" fill="#7cc46b" stroke="#2f5a2a" stroke-width="0.04" stroke-linejoin="round" /></g><g id="pcb-art-1894-entries"><rect x="-1.25" y="3.95" width="2.5" height="0.55" rx="0.1" fill="#1d2024" /><rect x="2.25" y="3.95" width="2.5" height="0.55" rx="0.1" fill="#1d2024" /><rect x="5.75" y="3.95" width="2.5" height="0.55" rx="0.1" fill="#1d2024" /></g><g id="pcb-art-1894-screws"><circle cx="0" cy="0" r="1.35" fill="#4e8a43" /><circle cx="0" cy="0" r="1.05" fill="#b7bcc2" stroke="#6b717a" stroke-width="0.06" /><circle cx="-0.315" cy="-0.315" r="0.4725" fill="#dfe3e8" opacity="0.55" /><line x1="-0.819" y1="0" x2="0.819" y2="0" stroke="#15181b" stroke-width="0.231" stroke-linecap="round" /><circle cx="3.5" cy="0" r="1.35" fill="#4e8a43" /><circle cx="3.5" cy="0" r="1.05" fill="#b7bcc2" stroke="#6b717a" stroke-width="0.06" /><circle cx="3.185" cy="-0.315" r="0.4725" fill="#dfe3e8" opacity="0.55" /><line x1="2.681" y1="0" x2="4.319" y2="0" stroke="#15181b" stroke-width="0.231" stroke-linecap="round" /><circle cx="7" cy="0" r="1.35" fill="#4e8a43" /><circle cx="7" cy="0" r="1.05" fill="#b7bcc2" stroke="#6b717a" stroke-width="0.06" /><circle cx="6.685" cy="-0.315" r="0.4725" fill="#dfe3e8" opacity="0.55" /><line x1="6.181" y1="0" x2="7.819" y2="0" stroke="#15181b" stroke-width="0.231" stroke-linecap="round" /></g></svg></g></g></g></g>
+<g class="pcb-part" data-instance-id="2ad90c5c-8115-4fde-8f7f-100945d4164c" data-ref="RLN" data-value="10k 10% 0603" data-library="Resistor_SMD:R_0603_1608Metric" data-slug="top_resistor_smd_r_0603_1608metric" data-side="F" data-x="10.7155" data-y="17.4250" data-rot="0" data-mirror="1" data-dx="0" data-dy="0" data-extra-rot="0" data-source="top_art/top_resistor_smd_r_0603_1608metric/v1/component.svg" data-viewbox="-1.5300 -0.7800 3.0600 1.5600" data-box-w="3.060" data-box-h="1.560" transform="translate(10.7155 17.4250) rotate(0) scale(1 1)"><g><g><g><svg x="-1.5300" y="-0.7800" width="3.0600" height="1.5600" viewBox="-1.5300 -0.7800 3.0600 1.5600" overflow="visible"><title>RLN — 10k 10% 0603 (illustrated: top_resistor_smd_r_0603_1608metric)</title><title>top_resistor_smd_r_0603_1608metric (Resistor_SMD:R_0603_1608Metric, chip_resistor)</title>
+<g id="pcb-art-1895-housing"><rect x="-0.8" y="-0.41" width="1.6" height="0.82" fill="#2a2d31" stroke="#1d2024" stroke-width="0.02" /><rect x="-0.77" y="-0.38" width="1.54" height="0.1148" fill="#5c6470" opacity="0.35" /></g><g id="pcb-art-1895-contacts"><rect x="-0.8" y="-0.41" width="0.3" height="0.82" fill="#b7bcc2" stroke="#6b717a" stroke-width="0.02" /><rect x="-0.77" y="-0.38" width="0.27" height="0.1312" fill="#d9dcdf" opacity="0.7" /><rect x="0.5" y="-0.41" width="0.3" height="0.82" fill="#b7bcc2" stroke="#6b717a" stroke-width="0.02" /><rect x="0.5" y="-0.38" width="0.27" height="0.1312" fill="#d9dcdf" opacity="0.7" /></g></svg></g></g></g></g>
+<g class="pcb-part" data-instance-id="2cf14eac-b723-4263-9d48-aa626e18f65d" data-ref="U2" data-value="TLP291(GB,E PNP" data-library="Package_SO:SOIC-4_4.55x2.6mm_P1.27mm" data-slug="top_package_so_soic_4_4_55x2_6mm_p1_27mm" data-side="F" data-x="15.1155" data-y="26.2250" data-rot="90" data-mirror="1" data-dx="0" data-dy="0" data-extra-rot="0" data-source="top_art/top_package_so_soic_4_4_55x2_6mm_p1_27mm/v1/component.svg" data-viewbox="-4.3500 -1.6000 8.7000 3.2000" data-box-w="8.700" data-box-h="3.200" transform="translate(15.1155 26.2250) rotate(90) scale(1 1)"><g><g><g><svg x="-4.3500" y="-1.6000" width="8.7000" height="3.2000" viewBox="-4.3500 -1.6000 8.7000 3.2000" overflow="visible"><title>U2 — TLP291(GB,E PNP (illustrated: top_package_so_soic_4_4_55x2_6mm_p1_27mm)</title><title>top_package_so_soic_4_4_55x2_6mm_p1_27mm</title><g id="pcb-art-1896-body"><rect x="-2.275" y="-1.3" width="4.55" height="2.6" rx="0.104" fill="#2a2d31" stroke="#1d2024" stroke-width="0.02" /><rect x="-2.093" y="-1.118" width="4.186" height="2.236" rx="0.013" fill="#3c4147" /><rect x="-2.093" y="-1.118" width="4.186" height="0.05" fill="#5c6470" opacity="0.35" /><circle cx="-1.864" cy="-0.889" r="0.143" fill="#1d2024" /><circle cx="-1.864" cy="-0.889" r="0.103" fill="#e6e6e6" opacity="0.55" /></g><g id="pcb-art-1896-leads"><rect x="-3.5" y="-0.835" width="1.275" height="0.4" rx="0.072" fill="#b7bcc2" stroke="#6b717a" stroke-width="0.02" /><rect x="-2.667" y="-0.767" width="0.392" height="0.264" fill="#dfe3e8" opacity="0.6" /><rect x="-3.5" y="0.435" width="1.275" height="0.4" rx="0.072" fill="#b7bcc2" stroke="#6b717a" stroke-width="0.02" /><rect x="-2.667" y="0.503" width="0.392" height="0.264" fill="#dfe3e8" opacity="0.6" /><rect x="2.225" y="0.435" width="1.275" height="0.4" rx="0.072" fill="#b7bcc2" stroke="#6b717a" stroke-width="0.02" /><rect x="2.275" y="0.503" width="0.392" height="0.264" fill="#dfe3e8" opacity="0.6" /><rect x="2.225" y="-0.835" width="1.275" height="0.4" rx="0.072" fill="#b7bcc2" stroke="#6b717a" stroke-width="0.02" /><rect x="2.275" y="-0.767" width="0.392" height="0.264" fill="#dfe3e8" opacity="0.6" /></g><g id="pcb-art-1896-marking"><text x="-1.591" y="0.197" font-family="Arial, Helvetica, sans-serif" font-size="0.658" textLength="1.579" lengthAdjust="spacingAndGlyphs" fill="#8a929b" opacity="0.7">P291</text></g></svg></g></g></g></g>
+<g class="pcb-part" data-instance-id="2f60e1f7-0d70-4f12-abfa-3e8309e06e1a" data-ref="DP" data-value="OUT HIGH (PNP)" data-library="LED_SMD:LED_0603_1608Metric" data-slug="top_led_smd_led_0603_1608metric" data-side="F" data-x="20.0155" data-y="18.1250" data-rot="0" data-mirror="1" data-dx="0" data-dy="0" data-extra-rot="0" data-source="top_art/top_led_smd_led_0603_1608metric/v1/component.svg" data-viewbox="-1.5300 -0.7800 3.0600 1.5600" data-box-w="3.060" data-box-h="1.560" transform="translate(20.0155 18.1250) rotate(0) scale(1 1)"><g><g><g><svg x="-1.5300" y="-0.7800" width="3.0600" height="1.5600" viewBox="-1.5300 -0.7800 3.0600 1.5600" overflow="visible"><title>DP — OUT HIGH (PNP) (illustrated: top_led_smd_led_0603_1608metric)</title><title>top_led_smd_led_0603_1608metric (LED_SMD:LED_0603_1608Metric, chip_led)</title>
+<g id="pcb-art-1897-housing"><rect x="-0.8" y="-0.4" width="1.6" height="0.8" fill="#d9dde2" stroke="#6b717a" stroke-width="0.02" /></g><g id="pcb-art-1897-lens"><rect x="-0.48" y="-0.328" width="0.96" height="0.656" fill="#f2e27a" rx="0.04" /><rect x="-0.4" y="-0.278" width="0.8" height="0.176" fill="#efe7cf" rx="0.03" opacity="0.8" /></g><g id="pcb-art-1897-marking"><polygon points="-0.5,-0.328 -0.32,-0.328 -0.5,-0.148" fill="#15181b" /></g><g id="pcb-art-1897-contacts"><rect x="-0.8" y="-0.4" width="0.28" height="0.8" fill="#b7bcc2" stroke="#6b717a" stroke-width="0.02" /><rect x="-0.77" y="-0.37" width="0.25" height="0.128" fill="#d9dcdf" opacity="0.7" /><rect x="0.52" y="-0.4" width="0.28" height="0.8" fill="#b7bcc2" stroke="#6b717a" stroke-width="0.02" /><rect x="0.52" y="-0.37" width="0.25" height="0.128" fill="#d9dcdf" opacity="0.7" /></g></svg></g></g></g></g>
+<g class="pcb-part" data-instance-id="3273a570-76af-4ea9-8533-55f415cc8413" data-ref="DN" data-value="OUT LOW (NPN)" data-library="LED_SMD:LED_0603_1608Metric" data-slug="top_led_smd_led_0603_1608metric" data-side="F" data-x="14.5155" data-y="17.4250" data-rot="0" data-mirror="1" data-dx="0" data-dy="0" data-extra-rot="0" data-source="top_art/top_led_smd_led_0603_1608metric/v1/component.svg" data-viewbox="-1.5300 -0.7800 3.0600 1.5600" data-box-w="3.060" data-box-h="1.560" transform="translate(14.5155 17.4250) rotate(0) scale(1 1)"><g><g><g><svg x="-1.5300" y="-0.7800" width="3.0600" height="1.5600" viewBox="-1.5300 -0.7800 3.0600 1.5600" overflow="visible"><title>DN — OUT LOW (NPN) (illustrated: top_led_smd_led_0603_1608metric)</title><title>top_led_smd_led_0603_1608metric (LED_SMD:LED_0603_1608Metric, chip_led)</title>
+<g id="pcb-art-1898-housing"><rect x="-0.8" y="-0.4" width="1.6" height="0.8" fill="#d9dde2" stroke="#6b717a" stroke-width="0.02" /></g><g id="pcb-art-1898-lens"><rect x="-0.48" y="-0.328" width="0.96" height="0.656" fill="#f2e27a" rx="0.04" /><rect x="-0.4" y="-0.278" width="0.8" height="0.176" fill="#efe7cf" rx="0.03" opacity="0.8" /></g><g id="pcb-art-1898-marking"><polygon points="-0.5,-0.328 -0.32,-0.328 -0.5,-0.148" fill="#15181b" /></g><g id="pcb-art-1898-contacts"><rect x="-0.8" y="-0.4" width="0.28" height="0.8" fill="#b7bcc2" stroke="#6b717a" stroke-width="0.02" /><rect x="-0.77" y="-0.37" width="0.25" height="0.128" fill="#d9dcdf" opacity="0.7" /><rect x="0.52" y="-0.4" width="0.28" height="0.8" fill="#b7bcc2" stroke="#6b717a" stroke-width="0.02" /><rect x="0.52" y="-0.37" width="0.25" height="0.128" fill="#d9dcdf" opacity="0.7" /></g></svg></g></g></g></g>
+<g class="pcb-part" data-instance-id="35c1d5c7-6e6e-4785-b554-54411ceaa058" data-ref="RPD" data-value="1M 1% 0603" data-library="Resistor_SMD:R_0603_1608Metric" data-slug="top_resistor_smd_r_0603_1608metric" data-side="F" data-x="14.3155" data-y="33.6250" data-rot="0" data-mirror="1" data-dx="0" data-dy="0" data-extra-rot="0" data-source="top_art/top_resistor_smd_r_0603_1608metric/v1/component.svg" data-viewbox="-1.5300 -0.7800 3.0600 1.5600" data-box-w="3.060" data-box-h="1.560" transform="translate(14.3155 33.6250) rotate(0) scale(1 1)"><g><g><g><svg x="-1.5300" y="-0.7800" width="3.0600" height="1.5600" viewBox="-1.5300 -0.7800 3.0600 1.5600" overflow="visible"><title>RPD — 1M 1% 0603 (illustrated: top_resistor_smd_r_0603_1608metric)</title><title>top_resistor_smd_r_0603_1608metric (Resistor_SMD:R_0603_1608Metric, chip_resistor)</title>
+<g id="pcb-art-1899-housing"><rect x="-0.8" y="-0.41" width="1.6" height="0.82" fill="#2a2d31" stroke="#1d2024" stroke-width="0.02" /><rect x="-0.77" y="-0.38" width="1.54" height="0.1148" fill="#5c6470" opacity="0.35" /></g><g id="pcb-art-1899-contacts"><rect x="-0.8" y="-0.41" width="0.3" height="0.82" fill="#b7bcc2" stroke="#6b717a" stroke-width="0.02" /><rect x="-0.77" y="-0.38" width="0.27" height="0.1312" fill="#d9dcdf" opacity="0.7" /><rect x="0.5" y="-0.41" width="0.3" height="0.82" fill="#b7bcc2" stroke="#6b717a" stroke-width="0.02" /><rect x="0.5" y="-0.38" width="0.27" height="0.1312" fill="#d9dcdf" opacity="0.7" /></g></svg></g></g></g></g>
+<g class="pcb-part" data-instance-id="569fb68c-7a7a-4e0e-96d4-8e81707013b3" data-ref="U1" data-value="TLP291(GB,E NPN" data-library="Package_SO:SOIC-4_4.55x2.6mm_P1.27mm" data-slug="top_package_so_soic_4_4_55x2_6mm_p1_27mm" data-side="F" data-x="11.1155" data-y="26.2250" data-rot="90" data-mirror="1" data-dx="0" data-dy="0" data-extra-rot="0" data-source="top_art/top_package_so_soic_4_4_55x2_6mm_p1_27mm/v1/component.svg" data-viewbox="-4.3500 -1.6000 8.7000 3.2000" data-box-w="8.700" data-box-h="3.200" transform="translate(11.1155 26.2250) rotate(90) scale(1 1)"><g><g><g><svg x="-4.3500" y="-1.6000" width="8.7000" height="3.2000" viewBox="-4.3500 -1.6000 8.7000 3.2000" overflow="visible"><title>U1 — TLP291(GB,E NPN (illustrated: top_package_so_soic_4_4_55x2_6mm_p1_27mm)</title><title>top_package_so_soic_4_4_55x2_6mm_p1_27mm</title><g id="pcb-art-1900-body"><rect x="-2.275" y="-1.3" width="4.55" height="2.6" rx="0.104" fill="#2a2d31" stroke="#1d2024" stroke-width="0.02" /><rect x="-2.093" y="-1.118" width="4.186" height="2.236" rx="0.013" fill="#3c4147" /><rect x="-2.093" y="-1.118" width="4.186" height="0.05" fill="#5c6470" opacity="0.35" /><circle cx="-1.864" cy="-0.889" r="0.143" fill="#1d2024" /><circle cx="-1.864" cy="-0.889" r="0.103" fill="#e6e6e6" opacity="0.55" /></g><g id="pcb-art-1900-leads"><rect x="-3.5" y="-0.835" width="1.275" height="0.4" rx="0.072" fill="#b7bcc2" stroke="#6b717a" stroke-width="0.02" /><rect x="-2.667" y="-0.767" width="0.392" height="0.264" fill="#dfe3e8" opacity="0.6" /><rect x="-3.5" y="0.435" width="1.275" height="0.4" rx="0.072" fill="#b7bcc2" stroke="#6b717a" stroke-width="0.02" /><rect x="-2.667" y="0.503" width="0.392" height="0.264" fill="#dfe3e8" opacity="0.6" /><rect x="2.225" y="0.435" width="1.275" height="0.4" rx="0.072" fill="#b7bcc2" stroke="#6b717a" stroke-width="0.02" /><rect x="2.275" y="0.503" width="0.392" height="0.264" fill="#dfe3e8" opacity="0.6" /><rect x="2.225" y="-0.835" width="1.275" height="0.4" rx="0.072" fill="#b7bcc2" stroke="#6b717a" stroke-width="0.02" /><rect x="2.275" y="-0.767" width="0.392" height="0.264" fill="#dfe3e8" opacity="0.6" /></g><g id="pcb-art-1900-marking"><text x="-1.591" y="0.197" font-family="Arial, Helvetica, sans-serif" font-size="0.658" textLength="1.579" lengthAdjust="spacingAndGlyphs" fill="#8a929b" opacity="0.7">P291</text></g></svg></g></g></g></g>
+<g class="pcb-part" data-instance-id="5eba3976-d20e-4603-af67-2207321bf049" data-ref="DPWR" data-value="FIELD POWER" data-library="LED_SMD:LED_0603_1608Metric" data-slug="top_led_smd_led_0603_1608metric" data-side="F" data-x="26.3155" data-y="15.3250" data-rot="0" data-mirror="1" data-dx="0" data-dy="0" data-extra-rot="0" data-source="top_art/top_led_smd_led_0603_1608metric/v1/component.svg" data-viewbox="-1.5300 -0.7800 3.0600 1.5600" data-box-w="3.060" data-box-h="1.560" transform="translate(26.3155 15.3250) rotate(0) scale(1 1)"><g><g><g><svg x="-1.5300" y="-0.7800" width="3.0600" height="1.5600" viewBox="-1.5300 -0.7800 3.0600 1.5600" overflow="visible"><title>DPWR — FIELD POWER (illustrated: top_led_smd_led_0603_1608metric)</title><title>top_led_smd_led_0603_1608metric (LED_SMD:LED_0603_1608Metric, chip_led)</title>
+<g id="pcb-art-1901-housing"><rect x="-0.8" y="-0.4" width="1.6" height="0.8" fill="#d9dde2" stroke="#6b717a" stroke-width="0.02" /></g><g id="pcb-art-1901-lens"><rect x="-0.48" y="-0.328" width="0.96" height="0.656" fill="#f2e27a" rx="0.04" /><rect x="-0.4" y="-0.278" width="0.8" height="0.176" fill="#efe7cf" rx="0.03" opacity="0.8" /></g><g id="pcb-art-1901-marking"><polygon points="-0.5,-0.328 -0.32,-0.328 -0.5,-0.148" fill="#15181b" /></g><g id="pcb-art-1901-contacts"><rect x="-0.8" y="-0.4" width="0.28" height="0.8" fill="#b7bcc2" stroke="#6b717a" stroke-width="0.02" /><rect x="-0.77" y="-0.37" width="0.25" height="0.128" fill="#d9dcdf" opacity="0.7" /><rect x="0.52" y="-0.4" width="0.28" height="0.8" fill="#b7bcc2" stroke="#6b717a" stroke-width="0.02" /><rect x="0.52" y="-0.37" width="0.25" height="0.128" fill="#d9dcdf" opacity="0.7" /></g></svg></g></g></g></g>
+<g class="pcb-part" data-instance-id="7e6cf12a-245d-4bb4-9e2b-1eb01edd1e60" data-ref="RLP" data-value="10k 10% 0603" data-library="Resistor_SMD:R_0603_1608Metric" data-slug="top_resistor_smd_r_0603_1608metric" data-side="F" data-x="27.0155" data-y="18.1250" data-rot="0" data-mirror="1" data-dx="0" data-dy="0" data-extra-rot="0" data-source="top_art/top_resistor_smd_r_0603_1608metric/v1/component.svg" data-viewbox="-1.5300 -0.7800 3.0600 1.5600" data-box-w="3.060" data-box-h="1.560" transform="translate(27.0155 18.1250) rotate(0) scale(1 1)"><g><g><g><svg x="-1.5300" y="-0.7800" width="3.0600" height="1.5600" viewBox="-1.5300 -0.7800 3.0600 1.5600" overflow="visible"><title>RLP — 10k 10% 0603 (illustrated: top_resistor_smd_r_0603_1608metric)</title><title>top_resistor_smd_r_0603_1608metric (Resistor_SMD:R_0603_1608Metric, chip_resistor)</title>
+<g id="pcb-art-1902-housing"><rect x="-0.8" y="-0.41" width="1.6" height="0.82" fill="#2a2d31" stroke="#1d2024" stroke-width="0.02" /><rect x="-0.77" y="-0.38" width="1.54" height="0.1148" fill="#5c6470" opacity="0.35" /></g><g id="pcb-art-1902-contacts"><rect x="-0.8" y="-0.41" width="0.3" height="0.82" fill="#b7bcc2" stroke="#6b717a" stroke-width="0.02" /><rect x="-0.77" y="-0.38" width="0.27" height="0.1312" fill="#d9dcdf" opacity="0.7" /><rect x="0.5" y="-0.41" width="0.3" height="0.82" fill="#b7bcc2" stroke="#6b717a" stroke-width="0.02" /><rect x="0.5" y="-0.38" width="0.27" height="0.1312" fill="#d9dcdf" opacity="0.7" /></g></svg></g></g></g></g>
+<g class="pcb-part" data-instance-id="8016bcb7-bad3-4597-8cbb-d8707f7360b6" data-ref="C1" data-value="100nF 100V X7R 0603" data-library="Capacitor_SMD:C_0603_1608Metric" data-slug="top_capacitor_smd_c_0603_1608metric" data-side="F" data-x="10.1155" data-y="14.5250" data-rot="0" data-mirror="1" data-dx="0" data-dy="0" data-extra-rot="0" data-source="top_art/top_capacitor_smd_c_0603_1608metric/v1/component.svg" data-viewbox="-1.5300 -0.7800 3.0600 1.5600" data-box-w="3.060" data-box-h="1.560" transform="translate(10.1155 14.5250) rotate(0) scale(1 1)"><g><g><g><svg x="-1.5300" y="-0.7800" width="3.0600" height="1.5600" viewBox="-1.5300 -0.7800 3.0600 1.5600" overflow="visible"><title>C1 — 100nF 100V X7R 0603 (illustrated: top_capacitor_smd_c_0603_1608metric)</title><title>top_capacitor_smd_c_0603_1608metric (Capacitor_SMD:C_0603_1608Metric, chip_mlcc)</title>
+<g id="pcb-art-1903-housing"><rect x="-0.8" y="-0.4" width="1.6" height="0.8" fill="#c4a878" stroke="#7d6a48" stroke-width="0.02" /><rect x="-0.77" y="-0.37" width="1.54" height="0.112" fill="#efe7cf" opacity="0.35" /></g><g id="pcb-art-1903-contacts"><rect x="-0.8" y="-0.4" width="0.3" height="0.8" fill="#b7bcc2" stroke="#6b717a" stroke-width="0.02" /><rect x="-0.77" y="-0.37" width="0.27" height="0.128" fill="#d9dcdf" opacity="0.7" /><rect x="0.5" y="-0.4" width="0.3" height="0.8" fill="#b7bcc2" stroke="#6b717a" stroke-width="0.02" /><rect x="0.5" y="-0.37" width="0.27" height="0.128" fill="#d9dcdf" opacity="0.7" /></g></svg></g></g></g></g>
+<g class="pcb-part" data-instance-id="8a9c960e-dbf3-4316-8759-37c44b9a806b" data-ref="RP" data-value="3.3k 1% 1206" data-library="Resistor_SMD:R_1206_3216Metric" data-slug="top_resistor_smd_r_1206_3216metric" data-side="F" data-x="20.3155" data-y="16.1250" data-rot="0" data-mirror="1" data-dx="0" data-dy="0" data-extra-rot="0" data-source="top_art/top_resistor_smd_r_1206_3216metric/v1/component.svg" data-viewbox="-2.3300 -1.1800 4.6600 2.3600" data-box-w="4.660" data-box-h="2.360" transform="translate(20.3155 16.1250) rotate(0) scale(1 1)"><g><g><g><svg x="-2.3300" y="-1.1800" width="4.6600" height="2.3600" viewBox="-2.3300 -1.1800 4.6600 2.3600" overflow="visible"><title>RP — 3.3k 1% 1206 (illustrated: top_resistor_smd_r_1206_3216metric)</title><title>top_resistor_smd_r_1206_3216metric (Resistor_SMD:R_1206_3216Metric, chip_resistor)</title>
+<g id="pcb-art-1904-housing"><rect x="-1.6" y="-0.8" width="3.2" height="1.6" fill="#2a2d31" stroke="#1d2024" stroke-width="0.02" /><rect x="-1.57" y="-0.77" width="3.14" height="0.224" fill="#5c6470" opacity="0.35" /></g><g id="pcb-art-1904-contacts"><rect x="-1.6" y="-0.8" width="0.4" height="1.6" fill="#b7bcc2" stroke="#6b717a" stroke-width="0.02" /><rect x="-1.57" y="-0.77" width="0.37" height="0.256" fill="#d9dcdf" opacity="0.7" /><rect x="1.2" y="-0.8" width="0.4" height="1.6" fill="#b7bcc2" stroke="#6b717a" stroke-width="0.02" /><rect x="1.2" y="-0.77" width="0.37" height="0.256" fill="#d9dcdf" opacity="0.7" /></g></svg></g></g></g></g>
+<g class="pcb-part" data-instance-id="8b0246f7-a740-43d5-8c76-dad199216852" data-ref="J3" data-value="ENDSTOP S G 5V" data-library="Fancification_Connectors:Dual_inductive_proximity_sensor_adapter_J3" data-slug="top_fancification_connectors_dual_inductive_proximity_sensor_adapter_j3" data-side="F" data-x="21.9155" data-y="34.4250" data-rot="0" data-mirror="1" data-dx="0" data-dy="0" data-extra-rot="0" data-source="top_art/top_fancification_connectors_dual_inductive_proximity_sensor_adapter_j3/v1/component.svg" data-viewbox="-1.9850 -3.4950 9.0500 9.1700" data-box-w="9.050" data-box-h="9.170" transform="translate(21.9155 34.4250) rotate(0) scale(1 1)"><g><g><g><svg x="-1.9850" y="-3.4950" width="9.0500" height="9.1700" viewBox="-1.9850 -3.4950 9.0500 9.1700" overflow="visible"><title>J3 — ENDSTOP S G 5V (illustrated: top_fancification_connectors_dual_inductive_proximity_sensor_adapter_j3)</title><title>top_fancification_connectors_dual_inductive_proximity_sensor_adapter_j3 (Fancification_Connectors:Dual_inductive_proximity_sensor_adapter_J3, connector)</title><rect x="-1.82" y="-3.42" width="8.67" height="8.52" fill="#2a2d31" stroke="#1d2024" stroke-width="0.02" /><circle cx="0.332" cy="0.1109" r="0.426" fill="#e6e6e6" opacity="0.55" /><polygon points="-0.87,-1.095 0.87,-1.095 0.87,1.095 -0.87,1.095" fill="#c9a14a" stroke="#7a5f22" stroke-width="0.02" /><rect x="-0.4872" y="-0.7122" width="0.9744" height="1.4244" fill="#e8c878" opacity="0.55" /><polygon points="3.94,1.425 5.14,1.425 5.14,3.175 3.94,3.175" fill="#c9a14a" stroke="#7a5f22" stroke-width="0.02" /><rect x="4.204" y="1.689" width="0.672" height="1.222" fill="#e8c878" opacity="0.55" /><polygon points="-0.06,1.425 1.14,1.425 1.14,3.175 -0.06,3.175" fill="#c9a14a" stroke="#7a5f22" stroke-width="0.02" /><rect x="0.204" y="1.689" width="0.672" height="1.222" fill="#e8c878" opacity="0.55" /><polygon points="1.67,-1.095 3.41,-1.095 3.41,1.095 1.67,1.095" fill="#c9a14a" stroke="#7a5f22" stroke-width="0.02" /><rect x="2.0528" y="-0.7122" width="0.9744" height="1.4244" fill="#e8c878" opacity="0.55" /><polygon points="1.94,1.425 3.14,1.425 3.14,3.175 1.94,3.175" fill="#c9a14a" stroke="#7a5f22" stroke-width="0.02" /><rect x="2.204" y="1.689" width="0.672" height="1.222" fill="#e8c878" opacity="0.55" /><polygon points="4.21,-1.095 5.95,-1.095 5.95,1.095 4.21,1.095" fill="#c9a14a" stroke="#7a5f22" stroke-width="0.02" /><rect x="4.5928" y="-0.7122" width="0.9744" height="1.4244" fill="#e8c878" opacity="0.55" /></svg></g></g></g></g>
+<g class="pcb-part" data-instance-id="960104b4-0417-4af3-89a9-7ce945ea0d49" data-ref="RS" data-value="100k 1% 0603" data-library="Resistor_SMD:R_0603_1608Metric" data-slug="top_resistor_smd_r_0603_1608metric" data-side="F" data-x="17.4155" data-y="33.4250" data-rot="0" data-mirror="1" data-dx="0" data-dy="0" data-extra-rot="0" data-source="top_art/top_resistor_smd_r_0603_1608metric/v1/component.svg" data-viewbox="-1.5300 -0.7800 3.0600 1.5600" data-box-w="3.060" data-box-h="1.560" transform="translate(17.4155 33.4250) rotate(0) scale(1 1)"><g><g><g><svg x="-1.5300" y="-0.7800" width="3.0600" height="1.5600" viewBox="-1.5300 -0.7800 3.0600 1.5600" overflow="visible"><title>RS — 100k 1% 0603 (illustrated: top_resistor_smd_r_0603_1608metric)</title><title>top_resistor_smd_r_0603_1608metric (Resistor_SMD:R_0603_1608Metric, chip_resistor)</title>
+<g id="pcb-art-1906-housing"><rect x="-0.8" y="-0.41" width="1.6" height="0.82" fill="#2a2d31" stroke="#1d2024" stroke-width="0.02" /><rect x="-0.77" y="-0.38" width="1.54" height="0.1148" fill="#5c6470" opacity="0.35" /></g><g id="pcb-art-1906-contacts"><rect x="-0.8" y="-0.41" width="0.3" height="0.82" fill="#b7bcc2" stroke="#6b717a" stroke-width="0.02" /><rect x="-0.77" y="-0.38" width="0.27" height="0.1312" fill="#d9dcdf" opacity="0.7" /><rect x="0.5" y="-0.41" width="0.3" height="0.82" fill="#b7bcc2" stroke="#6b717a" stroke-width="0.02" /><rect x="0.5" y="-0.38" width="0.27" height="0.1312" fill="#d9dcdf" opacity="0.7" /></g></svg></g></g></g></g>
+<g class="pcb-part" data-instance-id="960e41a9-bcd6-469f-9762-f0b4c4e48851" data-ref="U3" data-value="TLP291(GB,E OK" data-library="Package_SO:SOIC-4_4.55x2.6mm_P1.27mm" data-slug="top_package_so_soic_4_4_55x2_6mm_p1_27mm" data-side="F" data-x="19.1155" data-y="26.2250" data-rot="90" data-mirror="1" data-dx="0" data-dy="0" data-extra-rot="0" data-source="top_art/top_package_so_soic_4_4_55x2_6mm_p1_27mm/v1/component.svg" data-viewbox="-4.3500 -1.6000 8.7000 3.2000" data-box-w="8.700" data-box-h="3.200" transform="translate(19.1155 26.2250) rotate(90) scale(1 1)"><g><g><g><svg x="-4.3500" y="-1.6000" width="8.7000" height="3.2000" viewBox="-4.3500 -1.6000 8.7000 3.2000" overflow="visible"><title>U3 — TLP291(GB,E OK (illustrated: top_package_so_soic_4_4_55x2_6mm_p1_27mm)</title><title>top_package_so_soic_4_4_55x2_6mm_p1_27mm</title><g id="pcb-art-1907-body"><rect x="-2.275" y="-1.3" width="4.55" height="2.6" rx="0.104" fill="#2a2d31" stroke="#1d2024" stroke-width="0.02" /><rect x="-2.093" y="-1.118" width="4.186" height="2.236" rx="0.013" fill="#3c4147" /><rect x="-2.093" y="-1.118" width="4.186" height="0.05" fill="#5c6470" opacity="0.35" /><circle cx="-1.864" cy="-0.889" r="0.143" fill="#1d2024" /><circle cx="-1.864" cy="-0.889" r="0.103" fill="#e6e6e6" opacity="0.55" /></g><g id="pcb-art-1907-leads"><rect x="-3.5" y="-0.835" width="1.275" height="0.4" rx="0.072" fill="#b7bcc2" stroke="#6b717a" stroke-width="0.02" /><rect x="-2.667" y="-0.767" width="0.392" height="0.264" fill="#dfe3e8" opacity="0.6" /><rect x="-3.5" y="0.435" width="1.275" height="0.4" rx="0.072" fill="#b7bcc2" stroke="#6b717a" stroke-width="0.02" /><rect x="-2.667" y="0.503" width="0.392" height="0.264" fill="#dfe3e8" opacity="0.6" /><rect x="2.225" y="0.435" width="1.275" height="0.4" rx="0.072" fill="#b7bcc2" stroke="#6b717a" stroke-width="0.02" /><rect x="2.275" y="0.503" width="0.392" height="0.264" fill="#dfe3e8" opacity="0.6" /><rect x="2.225" y="-0.835" width="1.275" height="0.4" rx="0.072" fill="#b7bcc2" stroke="#6b717a" stroke-width="0.02" /><rect x="2.275" y="-0.767" width="0.392" height="0.264" fill="#dfe3e8" opacity="0.6" /></g><g id="pcb-art-1907-marking"><text x="-1.591" y="0.197" font-family="Arial, Helvetica, sans-serif" font-size="0.658" textLength="1.579" lengthAdjust="spacingAndGlyphs" fill="#8a929b" opacity="0.7">P291</text></g></svg></g></g></g></g>
+<g class="pcb-part" data-instance-id="ab867ca2-55a3-45f7-a1bf-0cff18fdf211" data-ref="D1" data-value="PMEG6010CEH" data-library="Diode_SMD:D_SOD-123F" data-slug="top_diode_smd_d_sod_123f" data-side="F" data-x="15.5155" data-y="14.5250" data-rot="0" data-mirror="1" data-dx="0" data-dy="0" data-extra-rot="0" data-source="top_art/top_diode_smd_d_sod_123f/v1/component.svg" data-viewbox="-2.2500 -1.2000 4.5000 2.4000" data-box-w="4.500" data-box-h="2.400" transform="translate(15.5155 14.5250) rotate(0) scale(1 1)"><g><g><g><svg x="-2.2500" y="-1.2000" width="4.5000" height="2.4000" viewBox="-2.2500 -1.2000 4.5000 2.4000" overflow="visible"><title>D1 — PMEG6010CEH (illustrated: top_diode_smd_d_sod_123f)</title><title>top_diode_smd_d_sod_123f (Diode_SMD:D_SOD-123F, chip_diode)</title>
+<g id="pcb-art-1908-housing"><rect x="-1.4" y="-0.9" width="2.8" height="1.8" fill="#2a2d31" rx="0.05" stroke="#1d2024" stroke-width="0.02" /><rect x="-1.37" y="-0.87" width="2.74" height="0.252" fill="#5c6470" opacity="0.35" /></g><g id="pcb-art-1908-marking"><rect x="-1.148" y="-0.84" width="0.35" height="1.68" fill="#d9dde2" /></g><g id="pcb-art-1908-contacts"><rect x="-1.8" y="-0.5" width="0.4" height="1" fill="#b7bcc2" stroke="#6b717a" stroke-width="0.02" /><rect x="1.4" y="-0.5" width="0.4" height="1" fill="#b7bcc2" stroke="#6b717a" stroke-width="0.02" /></g></svg></g></g></g></g>
+<g class="pcb-part" data-instance-id="b6cb2d7c-7bd6-4251-a78c-79507b04bffe" data-ref="Q1" data-value="BSS138" data-library="Package_TO_SOT_SMD:SOT-23" data-slug="top_package_to_sot_smd_sot_23" data-side="F" data-x="5.7155" data-y="34.4250" data-rot="0" data-mirror="1" data-dx="0" data-dy="0" data-extra-rot="0" data-source="top_art/top_package_to_sot_smd_sot_23/v1/component.svg" data-viewbox="-1.9800 -1.7500 3.9600 3.5000" data-box-w="3.960" data-box-h="3.500" transform="translate(5.7155 34.4250) rotate(0) scale(1 1)"><g><g><g><svg x="-1.9800" y="-1.7500" width="3.9600" height="3.5000" viewBox="-1.9800 -1.7500 3.9600 3.5000" overflow="visible"><title>Q1 — BSS138 (illustrated: top_package_to_sot_smd_sot_23)</title><title>top_package_to_sot_smd_sot_23</title><g id="pcb-art-1909-body"><rect x="-0.65" y="-1.45" width="1.3" height="2.9" rx="0.052" fill="#2a2d31" stroke="#1d2024" stroke-width="0.02" /><rect x="-0.559" y="-1.359" width="1.118" height="2.718" rx="0.006" fill="#3c4147" /><rect x="-0.559" y="-1.359" width="1.118" height="0.04" fill="#5c6470" opacity="0.35" /><circle cx="-0.383" cy="-1.183" r="0.11" fill="#1d2024" /><circle cx="-0.383" cy="-1.183" r="0.079" fill="#e6e6e6" opacity="0.55" /></g><g id="pcb-art-1909-leads"><rect x="-1.3" y="-1.15" width="0.7" height="0.4" rx="0.072" fill="#b7bcc2" stroke="#6b717a" stroke-width="0.02" /><rect x="-0.858" y="-1.082" width="0.208" height="0.264" fill="#dfe3e8" opacity="0.6" /><rect x="-1.3" y="0.75" width="0.7" height="0.4" rx="0.072" fill="#b7bcc2" stroke="#6b717a" stroke-width="0.02" /><rect x="-0.858" y="0.818" width="0.208" height="0.264" fill="#dfe3e8" opacity="0.6" /><rect x="0.6" y="-0.2" width="0.7" height="0.4" rx="0.072" fill="#b7bcc2" stroke="#6b717a" stroke-width="0.02" /><rect x="0.65" y="-0.132" width="0.208" height="0.264" fill="#dfe3e8" opacity="0.6" /></g><g id="pcb-art-1909-marking"><rect x="-0.425" y="-0.457" width="0.663" height="0.19" rx="0.095" fill="#8a929b" opacity="0.45" /><rect x="-0.425" y="-0.095" width="0.442" height="0.19" rx="0.095" fill="#8a929b" opacity="0.45" /><rect x="-0.425" y="0.266" width="0.544" height="0.19" rx="0.095" fill="#8a929b" opacity="0.45" /></g></svg></g></g></g></g>
+<g class="pcb-part" data-instance-id="c06ec8bc-1cb8-43fe-85b2-9aedff3aa37e" data-ref="TVS1" data-value="SMF30CA" data-library="Diode_SMD:D_SOD-123F" data-slug="top_diode_smd_d_sod_123f" data-side="F" data-x="16.0155" data-y="11.6250" data-rot="0" data-mirror="1" data-dx="0" data-dy="0" data-extra-rot="0" data-source="top_art/top_diode_smd_d_sod_123f/v1/component.svg" data-viewbox="-2.2500 -1.2000 4.5000 2.4000" data-box-w="4.500" data-box-h="2.400" transform="translate(16.0155 11.6250) rotate(0) scale(1 1)"><g><g><g><svg x="-2.2500" y="-1.2000" width="4.5000" height="2.4000" viewBox="-2.2500 -1.2000 4.5000 2.4000" overflow="visible"><title>TVS1 — SMF30CA (illustrated: top_diode_smd_d_sod_123f)</title><title>top_diode_smd_d_sod_123f (Diode_SMD:D_SOD-123F, chip_diode)</title>
+<g id="pcb-art-1910-housing"><rect x="-1.4" y="-0.9" width="2.8" height="1.8" fill="#2a2d31" rx="0.05" stroke="#1d2024" stroke-width="0.02" /><rect x="-1.37" y="-0.87" width="2.74" height="0.252" fill="#5c6470" opacity="0.35" /></g><g id="pcb-art-1910-marking"><rect x="-1.148" y="-0.84" width="0.35" height="1.68" fill="#d9dde2" /></g><g id="pcb-art-1910-contacts"><rect x="-1.8" y="-0.5" width="0.4" height="1" fill="#b7bcc2" stroke="#6b717a" stroke-width="0.02" /><rect x="1.4" y="-0.5" width="0.4" height="1" fill="#b7bcc2" stroke="#6b717a" stroke-width="0.02" /></g></svg></g></g></g></g>
+<g class="pcb-part" data-instance-id="daf61ff2-a894-4a81-8844-e90001bb096f" data-ref="C2" data-value="2.2uF 50V X7R" data-library="Capacitor_SMD:C_0805_2012Metric" data-slug="top_capacitor_smd_c_0805_2012metric" data-side="F" data-x="11.5155" data-y="11.6250" data-rot="0" data-mirror="1" data-dx="0" data-dy="0" data-extra-rot="0" data-source="top_art/top_capacitor_smd_c_0805_2012metric/v1/component.svg" data-viewbox="-1.7500 -1.0300 3.5000 2.0600" data-box-w="3.500" data-box-h="2.060" transform="translate(11.5155 11.6250) rotate(0) scale(1 1)"><g><g><g><svg x="-1.7500" y="-1.0300" width="3.5000" height="2.0600" viewBox="-1.7500 -1.0300 3.5000 2.0600" overflow="visible"><title>C2 — 2.2uF 50V X7R (illustrated: top_capacitor_smd_c_0805_2012metric)</title><title>top_capacitor_smd_c_0805_2012metric (Capacitor_SMD:C_0805_2012Metric, chip_mlcc)</title>
+<g id="pcb-art-1911-housing"><rect x="-1" y="-0.625" width="2" height="1.25" fill="#c4a878" stroke="#7d6a48" stroke-width="0.02" /><rect x="-0.97" y="-0.595" width="1.94" height="0.175" fill="#efe7cf" opacity="0.35" /></g><g id="pcb-art-1911-contacts"><rect x="-1" y="-0.625" width="0.38" height="1.25" fill="#b7bcc2" stroke="#6b717a" stroke-width="0.02" /><rect x="-0.97" y="-0.595" width="0.35" height="0.2" fill="#d9dcdf" opacity="0.7" /><rect x="0.62" y="-0.625" width="0.38" height="1.25" fill="#b7bcc2" stroke="#6b717a" stroke-width="0.02" /><rect x="0.62" y="-0.595" width="0.35" height="0.2" fill="#d9dcdf" opacity="0.7" /></g></svg></g></g></g></g>
+<g class="pcb-part" data-instance-id="e64b403b-1557-4076-8b0d-c3d11d3be9b9" data-ref="J1" data-value="+12-24V FIELD" data-library="TerminalBlock_Phoenix:TerminalBlock_Phoenix_PT-1,5-2-3.5-H_1x02_P3.50mm_Horizontal" data-slug="top_terminalblock_phoenix_terminalblock_phoenix_pt_1_5_2_3_5_h_1x02_p3_50mm_horizontal" data-side="F" data-x="23.1155" data-y="5.3750" data-rot="-180" data-mirror="1" data-dx="0" data-dy="0" data-extra-rot="0" data-source="top_art/top_terminalblock_phoenix_terminalblock_phoenix_pt_1_5_2_3_5_h_1x02_p3_50mm_horizontal/v1/component.svg" data-viewbox="-2.3000 -3.6500 8.1000 8.7000" data-box-w="8.100" data-box-h="8.700" transform="translate(23.1155 5.3750) rotate(-180) scale(1 1)"><g><g><g><svg x="-2.3000" y="-3.6500" width="8.1000" height="8.7000" viewBox="-2.3000 -3.6500 8.1000 8.7000" overflow="visible"><title>J1 — +12-24V FIELD (illustrated: top_terminalblock_phoenix_terminalblock_phoenix_pt_1_5_2_3_5_h_1x02_p3_50mm_horizontal)</title><title>Phoenix PT 1,5/2-3,5-H horizontal terminal block, wire entry toward +y, top view</title><g id="pcb-art-1912-housing"><rect x="-1.75" y="-3.05" width="7" height="7.55" rx="0.12" fill="#7cc46b" stroke="#2f5a2a" stroke-width="0.08" /><rect x="-1.75" y="2.85" width="7" height="0.57" fill="#4e8a43" /><rect x="-1.67" y="-2.97" width="6.84" height="0.42" fill="#9ad68b" opacity="0.45" /><line x1="1.75" y1="-2.75" x2="1.75" y2="2.7" stroke="#4e8a43" stroke-width="0.1" stroke-linecap="round" /><polygon points="5.25,-2.25 5.78,-2 5.78,-1.7 5.25,-1.45" fill="#7cc46b" stroke="#2f5a2a" stroke-width="0.04" stroke-linejoin="round" /><polygon points="5.25,1.5 5.78,1.75 5.78,2.05 5.25,2.3" fill="#7cc46b" stroke="#2f5a2a" stroke-width="0.04" stroke-linejoin="round" /></g><g id="pcb-art-1912-entries"><rect x="-1.25" y="3.95" width="2.5" height="0.55" rx="0.1" fill="#1d2024" /><rect x="2.25" y="3.95" width="2.5" height="0.55" rx="0.1" fill="#1d2024" /></g><g id="pcb-art-1912-screws"><circle cx="0" cy="0" r="1.35" fill="#4e8a43" /><circle cx="0" cy="0" r="1.05" fill="#b7bcc2" stroke="#6b717a" stroke-width="0.06" /><circle cx="-0.315" cy="-0.315" r="0.4725" fill="#dfe3e8" opacity="0.55" /><line x1="-0.819" y1="0" x2="0.819" y2="0" stroke="#15181b" stroke-width="0.231" stroke-linecap="round" /><circle cx="3.5" cy="0" r="1.35" fill="#4e8a43" /><circle cx="3.5" cy="0" r="1.05" fill="#b7bcc2" stroke="#6b717a" stroke-width="0.06" /><circle cx="3.185" cy="-0.315" r="0.4725" fill="#dfe3e8" opacity="0.55" /><line x1="2.681" y1="0" x2="4.319" y2="0" stroke="#15181b" stroke-width="0.231" stroke-linecap="round" /></g></svg></g></g></g></g>
+<g class="pcb-part" data-instance-id="f03b554c-056c-4228-ae3e-09378bc5c333" data-ref="RN" data-value="3.3k 1% 1206" data-library="Resistor_SMD:R_1206_3216Metric" data-slug="top_resistor_smd_r_1206_3216metric" data-side="F" data-x="5.5155" data-y="17.4250" data-rot="0" data-mirror="1" data-dx="0" data-dy="0" data-extra-rot="0" data-source="top_art/top_resistor_smd_r_1206_3216metric/v1/component.svg" data-viewbox="-2.3300 -1.1800 4.6600 2.3600" data-box-w="4.660" data-box-h="2.360" transform="translate(5.5155 17.4250) rotate(0) scale(1 1)"><g><g><g><svg x="-2.3300" y="-1.1800" width="4.6600" height="2.3600" viewBox="-2.3300 -1.1800 4.6600 2.3600" overflow="visible"><title>RN — 3.3k 1% 1206 (illustrated: top_resistor_smd_r_1206_3216metric)</title><title>top_resistor_smd_r_1206_3216metric (Resistor_SMD:R_1206_3216Metric, chip_resistor)</title>
+<g id="pcb-art-1913-housing"><rect x="-1.6" y="-0.8" width="3.2" height="1.6" fill="#2a2d31" stroke="#1d2024" stroke-width="0.02" /><rect x="-1.57" y="-0.77" width="3.14" height="0.224" fill="#5c6470" opacity="0.35" /></g><g id="pcb-art-1913-contacts"><rect x="-1.6" y="-0.8" width="0.4" height="1.6" fill="#b7bcc2" stroke="#6b717a" stroke-width="0.02" /><rect x="-1.57" y="-0.77" width="0.37" height="0.256" fill="#d9dcdf" opacity="0.7" /><rect x="1.2" y="-0.8" width="0.4" height="1.6" fill="#b7bcc2" stroke="#6b717a" stroke-width="0.02" /><rect x="1.2" y="-0.77" width="0.37" height="0.256" fill="#d9dcdf" opacity="0.7" /></g></svg></g></g></g></g>
+<g class="pcb-part" data-instance-id="f72c8dc0-6b2f-469e-9184-e5f4d4eeabed" data-ref="ROK" data-value="5.6k 1% 1206" data-library="Resistor_SMD:R_1206_3216Metric" data-slug="top_resistor_smd_r_1206_3216metric" data-side="F" data-x="5.1155" data-y="15.1250" data-rot="0" data-mirror="1" data-dx="0" data-dy="0" data-extra-rot="0" data-source="top_art/top_resistor_smd_r_1206_3216metric/v1/component.svg" data-viewbox="-2.3300 -1.1800 4.6600 2.3600" data-box-w="4.660" data-box-h="2.360" transform="translate(5.1155 15.1250) rotate(0) scale(1 1)"><g><g><g><svg x="-2.3300" y="-1.1800" width="4.6600" height="2.3600" viewBox="-2.3300 -1.1800 4.6600 2.3600" overflow="visible"><title>ROK — 5.6k 1% 1206 (illustrated: top_resistor_smd_r_1206_3216metric)</title><title>top_resistor_smd_r_1206_3216metric (Resistor_SMD:R_1206_3216Metric, chip_resistor)</title>
+<g id="pcb-art-1914-housing"><rect x="-1.6" y="-0.8" width="3.2" height="1.6" fill="#2a2d31" stroke="#1d2024" stroke-width="0.02" /><rect x="-1.57" y="-0.77" width="3.14" height="0.224" fill="#5c6470" opacity="0.35" /></g><g id="pcb-art-1914-contacts"><rect x="-1.6" y="-0.8" width="0.4" height="1.6" fill="#b7bcc2" stroke="#6b717a" stroke-width="0.02" /><rect x="-1.57" y="-0.77" width="0.37" height="0.256" fill="#d9dcdf" opacity="0.7" /><rect x="1.2" y="-0.8" width="0.4" height="1.6" fill="#b7bcc2" stroke="#6b717a" stroke-width="0.02" /><rect x="1.2" y="-0.77" width="0.37" height="0.256" fill="#d9dcdf" opacity="0.7" /></g></svg></g></g></g></g>
+</g>
+<g id="layer-inductive-proximity-sensor-adapter-invented-f" class="pcb-layer" data-label="Provisional package placeholders (top)" opacity="1" style="display:inline">
+
+</g>
+<g id="layer-inductive-proximity-sensor-adapter-f-silk-art" class="pcb-layer" data-label="F.Silkscreen art and labels (top)" opacity="0.95" style="display:inline;--lc:#ffffff">
+<g transform="translate(0.1155 0.0000)"><g style="fill:#000000; fill-opacity:1.0000;stroke:#000000; stroke-opacity:1.0000; stroke-linecap:round; stroke-linejoin:round;" transform="translate(0 0) scale(1 1)">
+</g>
+<g style="fill:none;  stroke:#ffffff; stroke-width:0.1500; stroke-opacity:1;  stroke-linecap:round; stroke-linejoin:round;">
+<text x="3.4000" y="12.4250" textLength="2.7662" font-size="1.0667" lengthAdjust="spacingAndGlyphs" text-anchor="middle" opacity="0" stroke-opacity="0">NPN</text>
+<g class="stroked-text">
+<path d="M2.3524 12.3873 L2.3524 11.5873 " />
+<path d="M2.3524 11.5873 L2.8095 12.3873 " />
+<path d="M2.8095 12.3873 L2.8095 11.5873 " />
+<path d="M3.1905 12.3873 L3.1905 11.5873 " />
+<path d="M3.1905 11.5873 L3.4952 11.5873 " />
+<path d="M3.4952 11.5873 L3.5714 11.6254 " />
+<path d="M3.5714 11.6254 L3.6095 11.6635 " />
+<path d="M3.6095 11.6635 L3.6476 11.7397 " />
+<path d="M3.6476 11.7397 L3.6476 11.8540 " />
+<path d="M3.6476 11.8540 L3.6095 11.9302 " />
+<path d="M3.6095 11.9302 L3.5714 11.9682 " />
+<path d="M3.5714 11.9682 L3.4952 12.0063 " />
+<path d="M3.4952 12.0063 L3.1905 12.0063 " />
+<path d="M3.9905 12.3873 L3.9905 11.5873 " />
+<path d="M3.9905 11.5873 L4.4476 12.3873 " />
+<path d="M4.4476 12.3873 L4.4476 11.5873 " />
+</g><text x="5.0000" y="32.3750" textLength="6.0805" font-size="1.0667" lengthAdjust="spacingAndGlyphs" text-anchor="middle" opacity="0" stroke-opacity="0">V22 BASE</text>
+<g class="stroked-text">
+<path d="M2.1810 31.5373 L2.4476 32.3373 " />
+<path d="M2.4476 32.3373 L2.7143 31.5373 " />
+<path d="M2.9429 31.6135 L2.9810 31.5754 " />
+<path d="M2.9810 31.5754 L3.0571 31.5373 " />
+<path d="M3.0571 31.5373 L3.2476 31.5373 " />
+<path d="M3.2476 31.5373 L3.3238 31.5754 " />
+<path d="M3.3238 31.5754 L3.3619 31.6135 " />
+<path d="M3.3619 31.6135 L3.4000 31.6897 " />
+<path d="M3.4000 31.6897 L3.4000 31.7659 " />
+<path d="M3.4000 31.7659 L3.3619 31.8802 " />
+<path d="M3.3619 31.8802 L2.9048 32.3373 " />
+<path d="M2.9048 32.3373 L3.4000 32.3373 " />
+<path d="M3.7048 31.6135 L3.7429 31.5754 " />
+<path d="M3.7429 31.5754 L3.8190 31.5373 " />
+<path d="M3.8190 31.5373 L4.0095 31.5373 " />
+<path d="M4.0095 31.5373 L4.0857 31.5754 " />
+<path d="M4.0857 31.5754 L4.1238 31.6135 " />
+<path d="M4.1238 31.6135 L4.1619 31.6897 " />
+<path d="M4.1619 31.6897 L4.1619 31.7659 " />
+<path d="M4.1619 31.7659 L4.1238 31.8802 " />
+<path d="M4.1238 31.8802 L3.6667 32.3373 " />
+<path d="M3.6667 32.3373 L4.1619 32.3373 " />
+<path d="M5.3810 31.9182 L5.4952 31.9563 " />
+<path d="M5.4952 31.9563 L5.5333 31.9944 " />
+<path d="M5.5333 31.9944 L5.5714 32.0706 " />
+<path d="M5.5714 32.0706 L5.5714 32.1849 " />
+<path d="M5.5714 32.1849 L5.5333 32.2611 " />
+<path d="M5.5333 32.2611 L5.4952 32.2992 " />
+<path d="M5.4952 32.2992 L5.4190 32.3373 " />
+<path d="M5.4190 32.3373 L5.1143 32.3373 " />
+<path d="M5.1143 32.3373 L5.1143 31.5373 " />
+<path d="M5.1143 31.5373 L5.3810 31.5373 " />
+<path d="M5.3810 31.5373 L5.4571 31.5754 " />
+<path d="M5.4571 31.5754 L5.4952 31.6135 " />
+<path d="M5.4952 31.6135 L5.5333 31.6897 " />
+<path d="M5.5333 31.6897 L5.5333 31.7659 " />
+<path d="M5.5333 31.7659 L5.4952 31.8421 " />
+<path d="M5.4952 31.8421 L5.4571 31.8802 " />
+<path d="M5.4571 31.8802 L5.3810 31.9182 " />
+<path d="M5.3810 31.9182 L5.1143 31.9182 " />
+<path d="M5.8762 32.1087 L6.2571 32.1087 " />
+<path d="M5.8000 32.3373 L6.0667 31.5373 " />
+<path d="M6.0667 31.5373 L6.3333 32.3373 " />
+<path d="M6.5619 32.2992 L6.6762 32.3373 " />
+<path d="M6.6762 32.3373 L6.8667 32.3373 " />
+<path d="M6.8667 32.3373 L6.9429 32.2992 " />
+<path d="M6.9429 32.2992 L6.9810 32.2611 " />
+<path d="M6.9810 32.2611 L7.0190 32.1849 " />
+<path d="M7.0190 32.1849 L7.0190 32.1087 " />
+<path d="M7.0190 32.1087 L6.9810 32.0325 " />
+<path d="M6.9810 32.0325 L6.9429 31.9944 " />
+<path d="M6.9429 31.9944 L6.8667 31.9563 " />
+<path d="M6.8667 31.9563 L6.7143 31.9182 " />
+<path d="M6.7143 31.9182 L6.6381 31.8802 " />
+<path d="M6.6381 31.8802 L6.6000 31.8421 " />
+<path d="M6.6000 31.8421 L6.5619 31.7659 " />
+<path d="M6.5619 31.7659 L6.5619 31.6897 " />
+<path d="M6.5619 31.6897 L6.6000 31.6135 " />
+<path d="M6.6000 31.6135 L6.6381 31.5754 " />
+<path d="M6.6381 31.5754 L6.7143 31.5373 " />
+<path d="M6.7143 31.5373 L6.9048 31.5373 " />
+<path d="M6.9048 31.5373 L7.0190 31.5754 " />
+<path d="M7.3619 31.9182 L7.6286 31.9182 " />
+<path d="M7.7429 32.3373 L7.3619 32.3373 " />
+<path d="M7.3619 32.3373 L7.3619 31.5373 " />
+<path d="M7.3619 31.5373 L7.7429 31.5373 " />
+</g><text x="6.9000" y="10.0750" textLength="2.5757" font-size="1.0667" lengthAdjust="spacingAndGlyphs" text-anchor="middle" opacity="0" stroke-opacity="0">OUT</text>
+<g class="stroked-text">
+<path d="M6.1000 9.2373 L6.2524 9.2373 " />
+<path d="M6.2524 9.2373 L6.3286 9.2754 " />
+<path d="M6.3286 9.2754 L6.4048 9.3516 " />
+<path d="M6.4048 9.3516 L6.4429 9.5040 " />
+<path d="M6.4429 9.5040 L6.4429 9.7706 " />
+<path d="M6.4429 9.7706 L6.4048 9.9230 " />
+<path d="M6.4048 9.9230 L6.3286 9.9992 " />
+<path d="M6.3286 9.9992 L6.2524 10.0373 " />
+<path d="M6.2524 10.0373 L6.1000 10.0373 " />
+<path d="M6.1000 10.0373 L6.0238 9.9992 " />
+<path d="M6.0238 9.9992 L5.9476 9.9230 " />
+<path d="M5.9476 9.9230 L5.9095 9.7706 " />
+<path d="M5.9095 9.7706 L5.9095 9.5040 " />
+<path d="M5.9095 9.5040 L5.9476 9.3516 " />
+<path d="M5.9476 9.3516 L6.0238 9.2754 " />
+<path d="M6.0238 9.2754 L6.1000 9.2373 " />
+<path d="M6.7857 9.2373 L6.7857 9.8849 " />
+<path d="M6.7857 9.8849 L6.8238 9.9611 " />
+<path d="M6.8238 9.9611 L6.8619 9.9992 " />
+<path d="M6.8619 9.9992 L6.9381 10.0373 " />
+<path d="M6.9381 10.0373 L7.0905 10.0373 " />
+<path d="M7.0905 10.0373 L7.1667 9.9992 " />
+<path d="M7.1667 9.9992 L7.2048 9.9611 " />
+<path d="M7.2048 9.9611 L7.2429 9.8849 " />
+<path d="M7.2429 9.8849 L7.2429 9.2373 " />
+<path d="M7.5095 9.2373 L7.9667 9.2373 " />
+<path d="M7.7381 10.0373 L7.7381 9.2373 " />
+</g><text x="7.2000" y="37.5250" textLength="1.9662" font-size="1.0667" lengthAdjust="spacingAndGlyphs" text-anchor="middle" opacity="0" stroke-opacity="0">NO</text>
+<g class="stroked-text">
+<path d="M6.5524 37.4873 L6.5524 36.6873 " />
+<path d="M6.5524 36.6873 L7.0095 37.4873 " />
+<path d="M7.0095 37.4873 L7.0095 36.6873 " />
+<path d="M7.5429 36.6873 L7.6952 36.6873 " />
+<path d="M7.6952 36.6873 L7.7714 36.7254 " />
+<path d="M7.7714 36.7254 L7.8476 36.8016 " />
+<path d="M7.8476 36.8016 L7.8857 36.9540 " />
+<path d="M7.8857 36.9540 L7.8857 37.2206 " />
+<path d="M7.8857 37.2206 L7.8476 37.3730 " />
+<path d="M7.8476 37.3730 L7.7714 37.4492 " />
+<path d="M7.7714 37.4492 L7.6952 37.4873 " />
+<path d="M7.6952 37.4873 L7.5429 37.4873 " />
+<path d="M7.5429 37.4873 L7.4667 37.4492 " />
+<path d="M7.4667 37.4492 L7.3905 37.3730 " />
+<path d="M7.3905 37.3730 L7.3524 37.2206 " />
+<path d="M7.3524 37.2206 L7.3524 36.9540 " />
+<path d="M7.3524 36.9540 L7.3905 36.8016 " />
+<path d="M7.3905 36.8016 L7.4667 36.7254 " />
+<path d="M7.4667 36.7254 L7.5429 36.6873 " />
+</g><text x="10.3500" y="13.6750" textLength="2.7281" font-size="1.0667" lengthAdjust="spacingAndGlyphs" text-anchor="middle" opacity="0" stroke-opacity="0">PNP</text>
+<g class="stroked-text">
+<path d="M9.3214 13.6373 L9.3214 12.8373 " />
+<path d="M9.3214 12.8373 L9.6262 12.8373 " />
+<path d="M9.6262 12.8373 L9.7024 12.8754 " />
+<path d="M9.7024 12.8754 L9.7405 12.9135 " />
+<path d="M9.7405 12.9135 L9.7786 12.9897 " />
+<path d="M9.7786 12.9897 L9.7786 13.1040 " />
+<path d="M9.7786 13.1040 L9.7405 13.1802 " />
+<path d="M9.7405 13.1802 L9.7024 13.2182 " />
+<path d="M9.7024 13.2182 L9.6262 13.2563 " />
+<path d="M9.6262 13.2563 L9.3214 13.2563 " />
+<path d="M10.1214 13.6373 L10.1214 12.8373 " />
+<path d="M10.1214 12.8373 L10.5786 13.6373 " />
+<path d="M10.5786 13.6373 L10.5786 12.8373 " />
+<path d="M10.9595 13.6373 L10.9595 12.8373 " />
+<path d="M10.9595 12.8373 L11.2643 12.8373 " />
+<path d="M11.2643 12.8373 L11.3405 12.8754 " />
+<path d="M11.3405 12.8754 L11.3786 12.9135 " />
+<path d="M11.3786 12.9135 L11.4167 12.9897 " />
+<path d="M11.4167 12.9897 L11.4167 13.1040 " />
+<path d="M11.4167 13.1040 L11.3786 13.1802 " />
+<path d="M11.3786 13.1802 L11.3405 13.2182 " />
+<path d="M11.3405 13.2182 L11.2643 13.2563 " />
+<path d="M11.2643 13.2563 L10.9595 13.2563 " />
+</g><text x="10.4000" y="10.0750" textLength="1.9662" font-size="1.0667" lengthAdjust="spacingAndGlyphs" text-anchor="middle" opacity="0" stroke-opacity="0">+V</text>
+<g class="stroked-text">
+<path d="M9.7524 9.7325 L10.3619 9.7325 " />
+<path d="M10.0571 10.0373 L10.0571 9.4278 " />
+<path d="M10.6286 9.2373 L10.8952 10.0373 " />
+<path d="M10.8952 10.0373 L11.1619 9.2373 " />
+</g><text x="12.5500" y="20.7250" textLength="9.7376" font-size="1.0667" lengthAdjust="spacingAndGlyphs" text-anchor="middle" opacity="0" stroke-opacity="0">OUT LOW (NPN)</text>
+<g class="stroked-text">
+<path d="M8.1690 19.8873 L8.3214 19.8873 " />
+<path d="M8.3214 19.8873 L8.3976 19.9254 " />
+<path d="M8.3976 19.9254 L8.4738 20.0016 " />
+<path d="M8.4738 20.0016 L8.5119 20.1540 " />
+<path d="M8.5119 20.1540 L8.5119 20.4206 " />
+<path d="M8.5119 20.4206 L8.4738 20.5730 " />
+<path d="M8.4738 20.5730 L8.3976 20.6492 " />
+<path d="M8.3976 20.6492 L8.3214 20.6873 " />
+<path d="M8.3214 20.6873 L8.1690 20.6873 " />
+<path d="M8.1690 20.6873 L8.0929 20.6492 " />
+<path d="M8.0929 20.6492 L8.0167 20.5730 " />
+<path d="M8.0167 20.5730 L7.9786 20.4206 " />
+<path d="M7.9786 20.4206 L7.9786 20.1540 " />
+<path d="M7.9786 20.1540 L8.0167 20.0016 " />
+<path d="M8.0167 20.0016 L8.0929 19.9254 " />
+<path d="M8.0929 19.9254 L8.1690 19.8873 " />
+<path d="M8.8548 19.8873 L8.8548 20.5349 " />
+<path d="M8.8548 20.5349 L8.8929 20.6111 " />
+<path d="M8.8929 20.6111 L8.9310 20.6492 " />
+<path d="M8.9310 20.6492 L9.0071 20.6873 " />
+<path d="M9.0071 20.6873 L9.1595 20.6873 " />
+<path d="M9.1595 20.6873 L9.2357 20.6492 " />
+<path d="M9.2357 20.6492 L9.2738 20.6111 " />
+<path d="M9.2738 20.6111 L9.3119 20.5349 " />
+<path d="M9.3119 20.5349 L9.3119 19.8873 " />
+<path d="M9.5786 19.8873 L10.0357 19.8873 " />
+<path d="M9.8071 20.6873 L9.8071 19.8873 " />
+<path d="M11.2929 20.6873 L10.9119 20.6873 " />
+<path d="M10.9119 20.6873 L10.9119 19.8873 " />
+<path d="M11.7119 19.8873 L11.8643 19.8873 " />
+<path d="M11.8643 19.8873 L11.9405 19.9254 " />
+<path d="M11.9405 19.9254 L12.0167 20.0016 " />
+<path d="M12.0167 20.0016 L12.0548 20.1540 " />
+<path d="M12.0548 20.1540 L12.0548 20.4206 " />
+<path d="M12.0548 20.4206 L12.0167 20.5730 " />
+<path d="M12.0167 20.5730 L11.9405 20.6492 " />
+<path d="M11.9405 20.6492 L11.8643 20.6873 " />
+<path d="M11.8643 20.6873 L11.7119 20.6873 " />
+<path d="M11.7119 20.6873 L11.6357 20.6492 " />
+<path d="M11.6357 20.6492 L11.5595 20.5730 " />
+<path d="M11.5595 20.5730 L11.5214 20.4206 " />
+<path d="M11.5214 20.4206 L11.5214 20.1540 " />
+<path d="M11.5214 20.1540 L11.5595 20.0016 " />
+<path d="M11.5595 20.0016 L11.6357 19.9254 " />
+<path d="M11.6357 19.9254 L11.7119 19.8873 " />
+<path d="M12.3214 19.8873 L12.5119 20.6873 " />
+<path d="M12.5119 20.6873 L12.6643 20.1159 " />
+<path d="M12.6643 20.1159 L12.8167 20.6873 " />
+<path d="M12.8167 20.6873 L13.0071 19.8873 " />
+<path d="M14.1500 20.9921 L14.1119 20.9540 " />
+<path d="M14.1119 20.9540 L14.0357 20.8397 " />
+<path d="M14.0357 20.8397 L13.9976 20.7635 " />
+<path d="M13.9976 20.7635 L13.9595 20.6492 " />
+<path d="M13.9595 20.6492 L13.9214 20.4587 " />
+<path d="M13.9214 20.4587 L13.9214 20.3063 " />
+<path d="M13.9214 20.3063 L13.9595 20.1159 " />
+<path d="M13.9595 20.1159 L13.9976 20.0016 " />
+<path d="M13.9976 20.0016 L14.0357 19.9254 " />
+<path d="M14.0357 19.9254 L14.1119 19.8111 " />
+<path d="M14.1119 19.8111 L14.1500 19.7730 " />
+<path d="M14.4548 20.6873 L14.4548 19.8873 " />
+<path d="M14.4548 19.8873 L14.9119 20.6873 " />
+<path d="M14.9119 20.6873 L14.9119 19.8873 " />
+<path d="M15.2929 20.6873 L15.2929 19.8873 " />
+<path d="M15.2929 19.8873 L15.5976 19.8873 " />
+<path d="M15.5976 19.8873 L15.6738 19.9254 " />
+<path d="M15.6738 19.9254 L15.7119 19.9635 " />
+<path d="M15.7119 19.9635 L15.7500 20.0397 " />
+<path d="M15.7500 20.0397 L15.7500 20.1540 " />
+<path d="M15.7500 20.1540 L15.7119 20.2302 " />
+<path d="M15.7119 20.2302 L15.6738 20.2682 " />
+<path d="M15.6738 20.2682 L15.5976 20.3063 " />
+<path d="M15.5976 20.3063 L15.2929 20.3063 " />
+<path d="M16.0929 20.6873 L16.0929 19.8873 " />
+<path d="M16.0929 19.8873 L16.5500 20.6873 " />
+<path d="M16.5500 20.6873 L16.5500 19.8873 " />
+<path d="M16.8548 20.9921 L16.8929 20.9540 " />
+<path d="M16.8929 20.9540 L16.9690 20.8397 " />
+<path d="M16.9690 20.8397 L17.0071 20.7635 " />
+<path d="M17.0071 20.7635 L17.0452 20.6492 " />
+<path d="M17.0452 20.6492 L17.0833 20.4587 " />
+<path d="M17.0833 20.4587 L17.0833 20.3063 " />
+<path d="M17.0833 20.3063 L17.0452 20.1159 " />
+<path d="M17.0452 20.1159 L17.0071 20.0016 " />
+<path d="M17.0071 20.0016 L16.9690 19.9254 " />
+<path d="M16.9690 19.9254 L16.8929 19.8111 " />
+<path d="M16.8929 19.8111 L16.8548 19.7730 " />
+</g><text x="13.9000" y="10.0750" textLength="1.7376" font-size="1.0667" lengthAdjust="spacingAndGlyphs" text-anchor="middle" opacity="0" stroke-opacity="0">0V</text>
+<g class="stroked-text">
+<path d="M13.5190 9.2373 L13.5952 9.2373 " />
+<path d="M13.5952 9.2373 L13.6714 9.2754 " />
+<path d="M13.6714 9.2754 L13.7095 9.3135 " />
+<path d="M13.7095 9.3135 L13.7476 9.3897 " />
+<path d="M13.7476 9.3897 L13.7857 9.5421 " />
+<path d="M13.7857 9.5421 L13.7857 9.7325 " />
+<path d="M13.7857 9.7325 L13.7476 9.8849 " />
+<path d="M13.7476 9.8849 L13.7095 9.9611 " />
+<path d="M13.7095 9.9611 L13.6714 9.9992 " />
+<path d="M13.6714 9.9992 L13.5952 10.0373 " />
+<path d="M13.5952 10.0373 L13.5190 10.0373 " />
+<path d="M13.5190 10.0373 L13.4429 9.9992 " />
+<path d="M13.4429 9.9992 L13.4048 9.9611 " />
+<path d="M13.4048 9.9611 L13.3667 9.8849 " />
+<path d="M13.3667 9.8849 L13.3286 9.7325 " />
+<path d="M13.3286 9.7325 L13.3286 9.5421 " />
+<path d="M13.3286 9.5421 L13.3667 9.3897 " />
+<path d="M13.3667 9.3897 L13.4048 9.3135 " />
+<path d="M13.4048 9.3135 L13.4429 9.2754 " />
+<path d="M13.4429 9.2754 L13.5190 9.2373 " />
+<path d="M14.0143 9.2373 L14.2810 10.0373 " />
+<path d="M14.2810 10.0373 L14.5476 9.2373 " />
+</g><text x="14.0000" y="36.4250" textLength="1.9281" font-size="1.0667" lengthAdjust="spacingAndGlyphs" text-anchor="middle" opacity="0" stroke-opacity="0">NC</text>
+<g class="stroked-text">
+<path d="M13.3714 36.3873 L13.3714 35.5873 " />
+<path d="M13.3714 35.5873 L13.8286 36.3873 " />
+<path d="M13.8286 36.3873 L13.8286 35.5873 " />
+<path d="M14.6667 36.3111 L14.6286 36.3492 " />
+<path d="M14.6286 36.3492 L14.5143 36.3873 " />
+<path d="M14.5143 36.3873 L14.4381 36.3873 " />
+<path d="M14.4381 36.3873 L14.3238 36.3492 " />
+<path d="M14.3238 36.3492 L14.2476 36.2730 " />
+<path d="M14.2476 36.2730 L14.2095 36.1968 " />
+<path d="M14.2095 36.1968 L14.1714 36.0444 " />
+<path d="M14.1714 36.0444 L14.1714 35.9302 " />
+<path d="M14.1714 35.9302 L14.2095 35.7778 " />
+<path d="M14.2095 35.7778 L14.2476 35.7016 " />
+<path d="M14.2476 35.7016 L14.3238 35.6254 " />
+<path d="M14.3238 35.6254 L14.4381 35.5873 " />
+<path d="M14.4381 35.5873 L14.5143 35.5873 " />
+<path d="M14.5143 35.5873 L14.6286 35.6254 " />
+<path d="M14.6286 35.6254 L14.6667 35.6635 " />
+</g><text x="19.5000" y="10.0750" textLength="1.9662" font-size="1.0667" lengthAdjust="spacingAndGlyphs" text-anchor="middle" opacity="0" stroke-opacity="0">+V</text>
+<g class="stroked-text">
+<path d="M18.8524 9.7325 L19.4619 9.7325 " />
+<path d="M19.1571 10.0373 L19.1571 9.4278 " />
+<path d="M19.7286 9.2373 L19.9952 10.0373 " />
+<path d="M19.9952 10.0373 L20.2619 9.2373 " />
+</g><text x="21.8000" y="30.5250" textLength="2.2329" font-size="1.0667" lengthAdjust="spacingAndGlyphs" text-anchor="middle" opacity="0" stroke-opacity="0">SIG</text>
+<g class="stroked-text">
+<path d="M20.9810 30.4492 L21.0952 30.4873 " />
+<path d="M21.0952 30.4873 L21.2857 30.4873 " />
+<path d="M21.2857 30.4873 L21.3619 30.4492 " />
+<path d="M21.3619 30.4492 L21.4000 30.4111 " />
+<path d="M21.4000 30.4111 L21.4381 30.3349 " />
+<path d="M21.4381 30.3349 L21.4381 30.2587 " />
+<path d="M21.4381 30.2587 L21.4000 30.1825 " />
+<path d="M21.4000 30.1825 L21.3619 30.1444 " />
+<path d="M21.3619 30.1444 L21.2857 30.1063 " />
+<path d="M21.2857 30.1063 L21.1333 30.0682 " />
+<path d="M21.1333 30.0682 L21.0571 30.0302 " />
+<path d="M21.0571 30.0302 L21.0190 29.9921 " />
+<path d="M21.0190 29.9921 L20.9810 29.9159 " />
+<path d="M20.9810 29.9159 L20.9810 29.8397 " />
+<path d="M20.9810 29.8397 L21.0190 29.7635 " />
+<path d="M21.0190 29.7635 L21.0571 29.7254 " />
+<path d="M21.0571 29.7254 L21.1333 29.6873 " />
+<path d="M21.1333 29.6873 L21.3238 29.6873 " />
+<path d="M21.3238 29.6873 L21.4381 29.7254 " />
+<path d="M21.7810 30.4873 L21.7810 29.6873 " />
+<path d="M22.5810 29.7254 L22.5048 29.6873 " />
+<path d="M22.5048 29.6873 L22.3905 29.6873 " />
+<path d="M22.3905 29.6873 L22.2762 29.7254 " />
+<path d="M22.2762 29.7254 L22.2000 29.8016 " />
+<path d="M22.2000 29.8016 L22.1619 29.8778 " />
+<path d="M22.1619 29.8778 L22.1238 30.0302 " />
+<path d="M22.1238 30.0302 L22.1238 30.1444 " />
+<path d="M22.1238 30.1444 L22.1619 30.2968 " />
+<path d="M22.1619 30.2968 L22.2000 30.3730 " />
+<path d="M22.2000 30.3730 L22.2762 30.4492 " />
+<path d="M22.2762 30.4492 L22.3905 30.4873 " />
+<path d="M22.3905 30.4873 L22.4667 30.4873 " />
+<path d="M22.4667 30.4873 L22.5810 30.4492 " />
+<path d="M22.5810 30.4492 L22.6190 30.4111 " />
+<path d="M22.6190 30.4111 L22.6190 30.1444 " />
+<path d="M22.6190 30.1444 L22.4667 30.1444 " />
+</g><text x="22.4000" y="21.4250" textLength="10.1567" font-size="1.0667" lengthAdjust="spacingAndGlyphs" text-anchor="middle" opacity="0" stroke-opacity="0">OUT HIGH (PNP)</text>
+<g class="stroked-text">
+<path d="M17.8095 20.5873 L17.9619 20.5873 " />
+<path d="M17.9619 20.5873 L18.0381 20.6254 " />
+<path d="M18.0381 20.6254 L18.1143 20.7016 " />
+<path d="M18.1143 20.7016 L18.1524 20.8540 " />
+<path d="M18.1524 20.8540 L18.1524 21.1206 " />
+<path d="M18.1524 21.1206 L18.1143 21.2730 " />
+<path d="M18.1143 21.2730 L18.0381 21.3492 " />
+<path d="M18.0381 21.3492 L17.9619 21.3873 " />
+<path d="M17.9619 21.3873 L17.8095 21.3873 " />
+<path d="M17.8095 21.3873 L17.7333 21.3492 " />
+<path d="M17.7333 21.3492 L17.6571 21.2730 " />
+<path d="M17.6571 21.2730 L17.6190 21.1206 " />
+<path d="M17.6190 21.1206 L17.6190 20.8540 " />
+<path d="M17.6190 20.8540 L17.6571 20.7016 " />
+<path d="M17.6571 20.7016 L17.7333 20.6254 " />
+<path d="M17.7333 20.6254 L17.8095 20.5873 " />
+<path d="M18.4952 20.5873 L18.4952 21.2349 " />
+<path d="M18.4952 21.2349 L18.5333 21.3111 " />
+<path d="M18.5333 21.3111 L18.5714 21.3492 " />
+<path d="M18.5714 21.3492 L18.6476 21.3873 " />
+<path d="M18.6476 21.3873 L18.8000 21.3873 " />
+<path d="M18.8000 21.3873 L18.8762 21.3492 " />
+<path d="M18.8762 21.3492 L18.9143 21.3111 " />
+<path d="M18.9143 21.3111 L18.9524 21.2349 " />
+<path d="M18.9524 21.2349 L18.9524 20.5873 " />
+<path d="M19.2190 20.5873 L19.6762 20.5873 " />
+<path d="M19.4476 21.3873 L19.4476 20.5873 " />
+<path d="M20.5524 21.3873 L20.5524 20.5873 " />
+<path d="M20.5524 20.9682 L21.0095 20.9682 " />
+<path d="M21.0095 21.3873 L21.0095 20.5873 " />
+<path d="M21.3905 21.3873 L21.3905 20.5873 " />
+<path d="M22.1905 20.6254 L22.1143 20.5873 " />
+<path d="M22.1143 20.5873 L22.0000 20.5873 " />
+<path d="M22.0000 20.5873 L21.8857 20.6254 " />
+<path d="M21.8857 20.6254 L21.8095 20.7016 " />
+<path d="M21.8095 20.7016 L21.7714 20.7778 " />
+<path d="M21.7714 20.7778 L21.7333 20.9302 " />
+<path d="M21.7333 20.9302 L21.7333 21.0444 " />
+<path d="M21.7333 21.0444 L21.7714 21.1968 " />
+<path d="M21.7714 21.1968 L21.8095 21.2730 " />
+<path d="M21.8095 21.2730 L21.8857 21.3492 " />
+<path d="M21.8857 21.3492 L22.0000 21.3873 " />
+<path d="M22.0000 21.3873 L22.0762 21.3873 " />
+<path d="M22.0762 21.3873 L22.1905 21.3492 " />
+<path d="M22.1905 21.3492 L22.2286 21.3111 " />
+<path d="M22.2286 21.3111 L22.2286 21.0444 " />
+<path d="M22.2286 21.0444 L22.0762 21.0444 " />
+<path d="M22.5714 21.3873 L22.5714 20.5873 " />
+<path d="M22.5714 20.9682 L23.0286 20.9682 " />
+<path d="M23.0286 21.3873 L23.0286 20.5873 " />
+<path d="M24.2476 21.6921 L24.2095 21.6540 " />
+<path d="M24.2095 21.6540 L24.1333 21.5397 " />
+<path d="M24.1333 21.5397 L24.0952 21.4635 " />
+<path d="M24.0952 21.4635 L24.0571 21.3492 " />
+<path d="M24.0571 21.3492 L24.0190 21.1587 " />
+<path d="M24.0190 21.1587 L24.0190 21.0063 " />
+<path d="M24.0190 21.0063 L24.0571 20.8159 " />
+<path d="M24.0571 20.8159 L24.0952 20.7016 " />
+<path d="M24.0952 20.7016 L24.1333 20.6254 " />
+<path d="M24.1333 20.6254 L24.2095 20.5111 " />
+<path d="M24.2095 20.5111 L24.2476 20.4730 " />
+<path d="M24.5524 21.3873 L24.5524 20.5873 " />
+<path d="M24.5524 20.5873 L24.8571 20.5873 " />
+<path d="M24.8571 20.5873 L24.9333 20.6254 " />
+<path d="M24.9333 20.6254 L24.9714 20.6635 " />
+<path d="M24.9714 20.6635 L25.0095 20.7397 " />
+<path d="M25.0095 20.7397 L25.0095 20.8540 " />
+<path d="M25.0095 20.8540 L24.9714 20.9302 " />
+<path d="M24.9714 20.9302 L24.9333 20.9682 " />
+<path d="M24.9333 20.9682 L24.8571 21.0063 " />
+<path d="M24.8571 21.0063 L24.5524 21.0063 " />
+<path d="M25.3524 21.3873 L25.3524 20.5873 " />
+<path d="M25.3524 20.5873 L25.8095 21.3873 " />
+<path d="M25.8095 21.3873 L25.8095 20.5873 " />
+<path d="M26.1905 21.3873 L26.1905 20.5873 " />
+<path d="M26.1905 20.5873 L26.4952 20.5873 " />
+<path d="M26.4952 20.5873 L26.5714 20.6254 " />
+<path d="M26.5714 20.6254 L26.6095 20.6635 " />
+<path d="M26.6095 20.6635 L26.6476 20.7397 " />
+<path d="M26.6476 20.7397 L26.6476 20.8540 " />
+<path d="M26.6476 20.8540 L26.6095 20.9302 " />
+<path d="M26.6095 20.9302 L26.5714 20.9682 " />
+<path d="M26.5714 20.9682 L26.4952 21.0063 " />
+<path d="M26.4952 21.0063 L26.1905 21.0063 " />
+<path d="M26.9143 21.6921 L26.9524 21.6540 " />
+<path d="M26.9524 21.6540 L27.0286 21.5397 " />
+<path d="M27.0286 21.5397 L27.0667 21.4635 " />
+<path d="M27.0667 21.4635 L27.1048 21.3492 " />
+<path d="M27.1048 21.3492 L27.1429 21.1587 " />
+<path d="M27.1429 21.1587 L27.1429 21.0063 " />
+<path d="M27.1429 21.0063 L27.1048 20.8159 " />
+<path d="M27.1048 20.8159 L27.0667 20.7016 " />
+<path d="M27.0667 20.7016 L27.0286 20.6254 " />
+<path d="M27.0286 20.6254 L26.9524 20.5111 " />
+<path d="M26.9524 20.5111 L26.9143 20.4730 " />
+</g><text x="23.0000" y="10.0750" textLength="1.7376" font-size="1.0667" lengthAdjust="spacingAndGlyphs" text-anchor="middle" opacity="0" stroke-opacity="0">0V</text>
+<g class="stroked-text">
+<path d="M22.6190 9.2373 L22.6952 9.2373 " />
+<path d="M22.6952 9.2373 L22.7714 9.2754 " />
+<path d="M22.7714 9.2754 L22.8095 9.3135 " />
+<path d="M22.8095 9.3135 L22.8476 9.3897 " />
+<path d="M22.8476 9.3897 L22.8857 9.5421 " />
+<path d="M22.8857 9.5421 L22.8857 9.7325 " />
+<path d="M22.8857 9.7325 L22.8476 9.8849 " />
+<path d="M22.8476 9.8849 L22.8095 9.9611 " />
+<path d="M22.8095 9.9611 L22.7714 9.9992 " />
+<path d="M22.7714 9.9992 L22.6952 10.0373 " />
+<path d="M22.6952 10.0373 L22.6190 10.0373 " />
+<path d="M22.6190 10.0373 L22.5429 9.9992 " />
+<path d="M22.5429 9.9992 L22.5048 9.9611 " />
+<path d="M22.5048 9.9611 L22.4667 9.8849 " />
+<path d="M22.4667 9.8849 L22.4286 9.7325 " />
+<path d="M22.4286 9.7325 L22.4286 9.5421 " />
+<path d="M22.4286 9.5421 L22.4667 9.3897 " />
+<path d="M22.4667 9.3897 L22.5048 9.3135 " />
+<path d="M22.5048 9.3135 L22.5429 9.2754 " />
+<path d="M22.5429 9.2754 L22.6190 9.2373 " />
+<path d="M23.1143 9.2373 L23.3810 10.0373 " />
+<path d="M23.3810 10.0373 L23.6476 9.2373 " />
+</g><text x="24.3500" y="30.5250" textLength="2.7281" font-size="1.0667" lengthAdjust="spacingAndGlyphs" text-anchor="middle" opacity="0" stroke-opacity="0">GND</text>
+<g class="stroked-text">
+<path d="M23.7405 29.7254 L23.6643 29.6873 " />
+<path d="M23.6643 29.6873 L23.5500 29.6873 " />
+<path d="M23.5500 29.6873 L23.4357 29.7254 " />
+<path d="M23.4357 29.7254 L23.3595 29.8016 " />
+<path d="M23.3595 29.8016 L23.3214 29.8778 " />
+<path d="M23.3214 29.8778 L23.2833 30.0302 " />
+<path d="M23.2833 30.0302 L23.2833 30.1444 " />
+<path d="M23.2833 30.1444 L23.3214 30.2968 " />
+<path d="M23.3214 30.2968 L23.3595 30.3730 " />
+<path d="M23.3595 30.3730 L23.4357 30.4492 " />
+<path d="M23.4357 30.4492 L23.5500 30.4873 " />
+<path d="M23.5500 30.4873 L23.6262 30.4873 " />
+<path d="M23.6262 30.4873 L23.7405 30.4492 " />
+<path d="M23.7405 30.4492 L23.7786 30.4111 " />
+<path d="M23.7786 30.4111 L23.7786 30.1444 " />
+<path d="M23.7786 30.1444 L23.6262 30.1444 " />
+<path d="M24.1214 30.4873 L24.1214 29.6873 " />
+<path d="M24.1214 29.6873 L24.5786 30.4873 " />
+<path d="M24.5786 30.4873 L24.5786 29.6873 " />
+<path d="M24.9595 30.4873 L24.9595 29.6873 " />
+<path d="M24.9595 29.6873 L25.1500 29.6873 " />
+<path d="M25.1500 29.6873 L25.2643 29.7254 " />
+<path d="M25.2643 29.7254 L25.3405 29.8016 " />
+<path d="M25.3405 29.8016 L25.3786 29.8778 " />
+<path d="M25.3786 29.8778 L25.4167 30.0302 " />
+<path d="M25.4167 30.0302 L25.4167 30.1444 " />
+<path d="M25.4167 30.1444 L25.3786 30.2968 " />
+<path d="M25.3786 30.2968 L25.3405 30.3730 " />
+<path d="M25.3405 30.3730 L25.2643 30.4492 " />
+<path d="M25.2643 30.4492 L25.1500 30.4873 " />
+<path d="M25.1500 30.4873 L24.9595 30.4873 " />
+</g><text x="26.9000" y="30.5250" textLength="1.7376" font-size="1.0667" lengthAdjust="spacingAndGlyphs" text-anchor="middle" opacity="0" stroke-opacity="0">5V</text>
+<g class="stroked-text">
+<path d="M26.7476 29.6873 L26.3667 29.6873 " />
+<path d="M26.3667 29.6873 L26.3286 30.0682 " />
+<path d="M26.3286 30.0682 L26.3667 30.0302 " />
+<path d="M26.3667 30.0302 L26.4429 29.9921 " />
+<path d="M26.4429 29.9921 L26.6333 29.9921 " />
+<path d="M26.6333 29.9921 L26.7095 30.0302 " />
+<path d="M26.7095 30.0302 L26.7476 30.0682 " />
+<path d="M26.7476 30.0682 L26.7857 30.1444 " />
+<path d="M26.7857 30.1444 L26.7857 30.3349 " />
+<path d="M26.7857 30.3349 L26.7476 30.4111 " />
+<path d="M26.7476 30.4111 L26.7095 30.4492 " />
+<path d="M26.7095 30.4492 L26.6333 30.4873 " />
+<path d="M26.6333 30.4873 L26.4429 30.4873 " />
+<path d="M26.4429 30.4873 L26.3667 30.4492 " />
+<path d="M26.3667 30.4492 L26.3286 30.4111 " />
+<path d="M27.0143 29.6873 L27.2810 30.4873 " />
+<path d="M27.2810 30.4873 L27.5476 29.6873 " />
+</g><g transform="rotate(-90.000000 2.2000 19.0250)">
+<text x="2.2000" y="19.4250" textLength="3.5281" font-size="1.0667" lengthAdjust="spacingAndGlyphs" text-anchor="middle" opacity="0" stroke-opacity="0">FIELD</text>
+</g>
+<g class="stroked-text">
+<path d="M2.1432 20.1869 L2.1432 20.4536 " />
+<path d="M2.5623 20.4536 L1.7623 20.4536 " />
+<path d="M1.7623 20.4536 L1.7623 20.0726 " />
+<path d="M2.5623 19.7679 L1.7623 19.7679 " />
+<path d="M2.1432 19.3869 L2.1432 19.1202 " />
+<path d="M2.5623 19.0060 L2.5623 19.3869 " />
+<path d="M2.5623 19.3869 L1.7623 19.3869 " />
+<path d="M1.7623 19.3869 L1.7623 19.0060 " />
+<path d="M2.5623 18.2821 L2.5623 18.6631 " />
+<path d="M2.5623 18.6631 L1.7623 18.6631 " />
+<path d="M2.5623 18.0155 L1.7623 18.0155 " />
+<path d="M1.7623 18.0155 L1.7623 17.8250 " />
+<path d="M1.7623 17.8250 L1.8004 17.7107 " />
+<path d="M1.8004 17.7107 L1.8766 17.6345 " />
+<path d="M1.8766 17.6345 L1.9528 17.5964 " />
+<path d="M1.9528 17.5964 L2.1052 17.5583 " />
+<path d="M2.1052 17.5583 L2.2194 17.5583 " />
+<path d="M2.2194 17.5583 L2.3718 17.5964 " />
+<path d="M2.3718 17.5964 L2.4480 17.6345 " />
+<path d="M2.4480 17.6345 L2.5242 17.7107 " />
+<path d="M2.5242 17.7107 L2.5623 17.8250 " />
+<path d="M2.5623 17.8250 L2.5623 18.0155 " />
+</g><g transform="rotate(-90.000000 2.2000 34.5250)">
+<text x="2.2000" y="34.9250" textLength="3.3376" font-size="1.0667" lengthAdjust="spacingAndGlyphs" text-anchor="middle" opacity="0" stroke-opacity="0">HOST</text>
+</g>
+<g class="stroked-text">
+<path d="M2.5623 35.8583 L1.7623 35.8583 " />
+<path d="M2.1432 35.8583 L2.1432 35.4012 " />
+<path d="M2.5623 35.4012 L1.7623 35.4012 " />
+<path d="M1.7623 34.8679 L1.7623 34.7155 " />
+<path d="M1.7623 34.7155 L1.8004 34.6393 " />
+<path d="M1.8004 34.6393 L1.8766 34.5631 " />
+<path d="M1.8766 34.5631 L2.0290 34.5250 " />
+<path d="M2.0290 34.5250 L2.2956 34.5250 " />
+<path d="M2.2956 34.5250 L2.4480 34.5631 " />
+<path d="M2.4480 34.5631 L2.5242 34.6393 " />
+<path d="M2.5242 34.6393 L2.5623 34.7155 " />
+<path d="M2.5623 34.7155 L2.5623 34.8679 " />
+<path d="M2.5623 34.8679 L2.5242 34.9440 " />
+<path d="M2.5242 34.9440 L2.4480 35.0202 " />
+<path d="M2.4480 35.0202 L2.2956 35.0583 " />
+<path d="M2.2956 35.0583 L2.0290 35.0583 " />
+<path d="M2.0290 35.0583 L1.8766 35.0202 " />
+<path d="M1.8766 35.0202 L1.8004 34.9440 " />
+<path d="M1.8004 34.9440 L1.7623 34.8679 " />
+<path d="M2.5242 34.2202 L2.5623 34.1060 " />
+<path d="M2.5623 34.1060 L2.5623 33.9155 " />
+<path d="M2.5623 33.9155 L2.5242 33.8393 " />
+<path d="M2.5242 33.8393 L2.4861 33.8012 " />
+<path d="M2.4861 33.8012 L2.4099 33.7631 " />
+<path d="M2.4099 33.7631 L2.3337 33.7631 " />
+<path d="M2.3337 33.7631 L2.2575 33.8012 " />
+<path d="M2.2575 33.8012 L2.2194 33.8393 " />
+<path d="M2.2194 33.8393 L2.1813 33.9155 " />
+<path d="M2.1813 33.9155 L2.1432 34.0679 " />
+<path d="M2.1432 34.0679 L2.1052 34.1440 " />
+<path d="M2.1052 34.1440 L2.0671 34.1821 " />
+<path d="M2.0671 34.1821 L1.9909 34.2202 " />
+<path d="M1.9909 34.2202 L1.9147 34.2202 " />
+<path d="M1.9147 34.2202 L1.8385 34.1821 " />
+<path d="M1.8385 34.1821 L1.8004 34.1440 " />
+<path d="M1.8004 34.1440 L1.7623 34.0679 " />
+<path d="M1.7623 34.0679 L1.7623 33.8774 " />
+<path d="M1.7623 33.8774 L1.8004 33.7631 " />
+<path d="M1.7623 33.5345 L1.7623 33.0774 " />
+<path d="M2.5623 33.3060 L1.7623 33.3060 " />
+</g><g transform="rotate(-90.000000 26.2000 9.1750)">
+<text x="26.2000" y="9.5750" textLength="8.2138" font-size="1.0667" lengthAdjust="spacingAndGlyphs" text-anchor="middle" opacity="0" stroke-opacity="0">FIELD POWER</text>
+</g>
+<g class="stroked-text">
+<path d="M26.1432 12.6798 L26.1432 12.9464 " />
+<path d="M26.5623 12.9464 L25.7623 12.9464 " />
+<path d="M25.7623 12.9464 L25.7623 12.5655 " />
+<path d="M26.5623 12.2607 L25.7623 12.2607 " />
+<path d="M26.1432 11.8798 L26.1432 11.6131 " />
+<path d="M26.5623 11.4988 L26.5623 11.8798 " />
+<path d="M26.5623 11.8798 L25.7623 11.8798 " />
+<path d="M25.7623 11.8798 L25.7623 11.4988 " />
+<path d="M26.5623 10.7750 L26.5623 11.1560 " />
+<path d="M26.5623 11.1560 L25.7623 11.1560 " />
+<path d="M26.5623 10.5083 L25.7623 10.5083 " />
+<path d="M25.7623 10.5083 L25.7623 10.3179 " />
+<path d="M25.7623 10.3179 L25.8004 10.2036 " />
+<path d="M25.8004 10.2036 L25.8766 10.1274 " />
+<path d="M25.8766 10.1274 L25.9528 10.0893 " />
+<path d="M25.9528 10.0893 L26.1052 10.0512 " />
+<path d="M26.1052 10.0512 L26.2194 10.0512 " />
+<path d="M26.2194 10.0512 L26.3718 10.0893 " />
+<path d="M26.3718 10.0893 L26.4480 10.1274 " />
+<path d="M26.4480 10.1274 L26.5242 10.2036 " />
+<path d="M26.5242 10.2036 L26.5623 10.3179 " />
+<path d="M26.5623 10.3179 L26.5623 10.5083 " />
+<path d="M26.5623 9.0988 L25.7623 9.0988 " />
+<path d="M25.7623 9.0988 L25.7623 8.7940 " />
+<path d="M25.7623 8.7940 L25.8004 8.7179 " />
+<path d="M25.8004 8.7179 L25.8385 8.6798 " />
+<path d="M25.8385 8.6798 L25.9147 8.6417 " />
+<path d="M25.9147 8.6417 L26.0290 8.6417 " />
+<path d="M26.0290 8.6417 L26.1052 8.6798 " />
+<path d="M26.1052 8.6798 L26.1432 8.7179 " />
+<path d="M26.1432 8.7179 L26.1813 8.7940 " />
+<path d="M26.1813 8.7940 L26.1813 9.0988 " />
+<path d="M25.7623 8.1464 L25.7623 7.9940 " />
+<path d="M25.7623 7.9940 L25.8004 7.9179 " />
+<path d="M25.8004 7.9179 L25.8766 7.8417 " />
+<path d="M25.8766 7.8417 L26.0290 7.8036 " />
+<path d="M26.0290 7.8036 L26.2956 7.8036 " />
+<path d="M26.2956 7.8036 L26.4480 7.8417 " />
+<path d="M26.4480 7.8417 L26.5242 7.9179 " />
+<path d="M26.5242 7.9179 L26.5623 7.9940 " />
+<path d="M26.5623 7.9940 L26.5623 8.1464 " />
+<path d="M26.5623 8.1464 L26.5242 8.2226 " />
+<path d="M26.5242 8.2226 L26.4480 8.2988 " />
+<path d="M26.4480 8.2988 L26.2956 8.3369 " />
+<path d="M26.2956 8.3369 L26.0290 8.3369 " />
+<path d="M26.0290 8.3369 L25.8766 8.2988 " />
+<path d="M25.8766 8.2988 L25.8004 8.2226 " />
+<path d="M25.8004 8.2226 L25.7623 8.1464 " />
+<path d="M25.7623 7.5369 L26.5623 7.3464 " />
+<path d="M26.5623 7.3464 L25.9909 7.1940 " />
+<path d="M25.9909 7.1940 L26.5623 7.0417 " />
+<path d="M26.5623 7.0417 L25.7623 6.8512 " />
+<path d="M26.1432 6.5464 L26.1432 6.2798 " />
+<path d="M26.5623 6.1655 L26.5623 6.5464 " />
+<path d="M26.5623 6.5464 L25.7623 6.5464 " />
+<path d="M25.7623 6.5464 L25.7623 6.1655 " />
+<path d="M26.5623 5.3655 L26.1813 5.6321 " />
+<path d="M26.5623 5.8226 L25.7623 5.8226 " />
+<path d="M25.7623 5.8226 L25.7623 5.5179 " />
+<path d="M25.7623 5.5179 L25.8004 5.4417 " />
+<path d="M25.8004 5.4417 L25.8385 5.4036 " />
+<path d="M25.8385 5.4036 L25.9147 5.3655 " />
+<path d="M25.9147 5.3655 L26.0290 5.3655 " />
+<path d="M26.0290 5.3655 L26.1052 5.4036 " />
+<path d="M26.1052 5.4036 L26.1432 5.4417 " />
+<path d="M26.1432 5.4417 L26.1813 5.5179 " />
+<path d="M26.1813 5.5179 L26.1813 5.8226 " />
+</g></g></g>
+</g></g>
+</svg>

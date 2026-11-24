@@ -6,150 +6,145 @@ permalink: /extensions/gadgeteer-to-can
 
 # Gadgeteer-to-CAN adapter
 
-{% include extension-board-visuals.html slug="gadgeteer-to-can" %}
+The selected adapter provides an isolated CAN physical interface between compatible controller TX/RX signals and a CANH/CANL bus. ISOW1044DFMR includes the isolated converter/transceiver, while an SN74LVC1G32 OR gate forces recessive transmit data when SILENT is high without disabling reception. This is a transceiver board: it neither supplies a CAN controller nor converts arbitrary UART or SPI traffic into CAN frames.
 
-## Current additive annotation candidate: v21 (2026-10-13)
+## Revision and availability
 
-The [v21 native sources and wiring guide](https://github.com/arthurwolf/extension-boards/tree/main/src/gadgeteer-to-can/attempt/versions/v21) preserve the released v20 isolated CAN circuit, placement and mechanics. The PCB revision label is current and its full documentation URL is retained. The wiring diagrams below describe exact saved pin numbers and default chain jumpers; they do not establish hardware qualification. **Fabrication release is false.** Native checks and source-bound model/export/render review are recorded in the revision's `can-usability-review.json`. Frozen v20 identity-label source drift and its missing auxiliary routed project file remain documented historical exceptions; neither is restored. Teardrop and reference-copper work remain open.
+This guide selects **v21**, matching the revision selected by the retained abstract-diagram inventory. This is a design candidate; availability and operating ratings are unverified. The selected revision and contact map govern this guide; older specifications may describe another circuit.
 
-## Single-node wiring
+The selected v21 source package retains schematic title-block revision **WIP**. The package number does not rename the schematic or establish a released hardware revision.
 
-```text
-Compatible host CAN controller          J1 host socket    Isolation     J3 field terminal
-3.3 V logic supply -------------------> 1  3V3
-4.5–5.5 V converter supply -----------> 2  5V             ISOW1044
-TX-inhibit command ------------------> 3  HOST_SILENT       barrier
-CAN controller TX -------------------> 4  HOST_TXD      ||          ||   3 CANH ---- CANH bus
-CAN controller RX <------------------- 5  HOST_RXD      ||          ||   2 CANL ---- CANL bus
-Host ground -------------------------- 10 GND          ||          ||   1 FIELD_GND -- field reference
-```
+## Interfaces, power and operating limits
 
-SILENT high inhibits transmission while reception stays active: the OR gate produces `TXD_SAFE = HOST_TXD OR HOST_SILENT`. The local SHDN/standby strap is a separate function. Do not connect host ground to FIELD_GND across the isolation barrier. CANH/CANL are communication pins, not machine-power inputs. Firmware, pin mux, CAN controller compatibility, timing and cable orientation require separate verification; this revision adds no firmware.
+J1 contacts 1/2/10 supply host-domain 3.3 V, 4.5–5.5 V and ground. Contacts3/4/5 are active-high transmit inhibit, controller TX and controller RX respectively. J3 is field-side 1 FIELD_GND, 2 CANL, 3 CANH. Host ground and field ground must remain separated across the barrier. The converter demand is materially greater than the old non-isolated TCAN330 design: the retained engineering record cites 211 mA under its stated dominant-bus condition and pulses to 250 mA. Prime rail/cable capacity is not established. The 500 kbit/s over 20 m figure is a design target, not a measured limit.
 
-## J1/J2 chain mapping
+## Board reference
 
-| Number | J1 host | J2 chain | Default connection |
+<details markdown="1">
+<summary>Reading the connector callouts</summary>
+
+The dark end of each pill gives the source contact number. The adjoining label gives its function. Colours help locate related functions; the label and connection instructions determine how to use the contact.
+
+- Red: 3.3 V supply.
+- Orange: 5 V supply.
+- Green: Signal — use the printed function label.
+- Near-black: Circuit ground.
+- Dark grey: Other source-labelled contact — read its exact function.
+
+A voltage in a signal name does not make that contact a power output. Circuit ground, cable shield and protective earth are different connections. An underside projection shows rear components through the front view; it is not a mirrored rear view.
+
+</details>
+
+Start with the overview, then use all focused sheets for exact contacts, controls and links. Source footprint defaults do not prove assembled continuity.
+
+{% include _includes/extension-instruction-diagram.html id="gadgeteer-to-can-v21-reader-compact-overview" src="/images/extensions/gadgeteer-to-can/guides/reader-compact-overview.svg" title="Isolated CAN interface — overview" alt="Isolated CAN interface — overview for gadgeteer-to-can v21" caption="Reference for the documented revision. Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="gadgeteer-to-can-v21-reader-compact-host-1-5" src="/images/extensions/gadgeteer-to-can/guides/reader-compact-host-1-5-central-pills.svg" title="J1 · Host logic — host 1 5" alt="J1 · Host logic — host 1 5 for gadgeteer-to-can v21" caption="Reference for the documented revision. Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="gadgeteer-to-can-v21-reader-compact-host-6-10" src="/images/extensions/gadgeteer-to-can/guides/reader-compact-host-6-10-central-pills.svg" title="J1 · Host logic — host 6 10" alt="J1 · Host logic — host 6 10 for gadgeteer-to-can v21" caption="Reference for the documented revision. Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="gadgeteer-to-can-v21-reader-compact-chain-1-5" src="/images/extensions/gadgeteer-to-can/guides/reader-compact-chain-1-5-central-pills.svg" title="J2 · Host chain — chain 1 5" alt="J2 · Host chain — chain 1 5 for gadgeteer-to-can v21" caption="Reference for the documented revision. Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="gadgeteer-to-can-v21-reader-compact-chain-6-10" src="/images/extensions/gadgeteer-to-can/guides/reader-compact-chain-6-10-central-pills.svg" title="J2 · Host chain — chain 6 10" alt="J2 · Host chain — chain 6 10 for gadgeteer-to-can v21" caption="Reference for the documented revision. Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="gadgeteer-to-can-v21-reader-compact-field-1-3" src="/images/extensions/gadgeteer-to-can/guides/reader-compact-field-1-3-central-pills.svg" title="J3 · Isolated CAN field — field 1 3" alt="J3 · Isolated CAN field — field 1 3 for gadgeteer-to-can v21" caption="Reference for the documented revision. Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="gadgeteer-to-can-v21-reader-compact-transceiver" src="/images/extensions/gadgeteer-to-can/guides/reader-compact-transceiver.svg" title="Transceiver and power — transceiver" alt="Transceiver and power — transceiver for gadgeteer-to-can v21" caption="Reference for the documented revision. Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="gadgeteer-to-can-v21-reader-compact-silent" src="/images/extensions/gadgeteer-to-can/guides/reader-compact-silent.svg" title="Silent-command logic — silent" alt="Silent-command logic — silent for gadgeteer-to-can v21" caption="Reference for the documented revision. Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="gadgeteer-to-can-v21-reader-compact-standby" src="/images/extensions/gadgeteer-to-can/guides/reader-compact-standby.svg" title="Standby pin source strap — standby" alt="Standby pin source strap — standby for gadgeteer-to-can v21" caption="Reference for the documented revision. Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="gadgeteer-to-can-v21-reader-compact-converter" src="/images/extensions/gadgeteer-to-can/guides/reader-compact-converter.svg" title="Converter enable/fault — converter" alt="Converter enable/fault — converter for gadgeteer-to-can v21" caption="Reference for the documented revision. Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="gadgeteer-to-can-v21-reader-compact-termination" src="/images/extensions/gadgeteer-to-can/guides/reader-compact-termination-underside-caption.svg" title="CAN termination link — termination" alt="CAN termination link — termination for gadgeteer-to-can v21" caption="Reference for the documented revision. Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="gadgeteer-to-can-v21-reader-compact-local-chain" src="/images/extensions/gadgeteer-to-can/guides/reader-compact-local-chain-underside-caption.svg" title="Local signal chain links — local chain" alt="Local signal chain links — local chain for gadgeteer-to-can v21" caption="Reference for the documented revision. Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="gadgeteer-to-can-v21-reader-compact-generic-chain" src="/images/extensions/gadgeteer-to-can/guides/reader-compact-generic-chain-underside-caption.svg" title="Generic signal chain links — generic chain" alt="Generic signal chain links — generic chain for gadgeteer-to-can v21" caption="Reference for the documented revision. Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="gadgeteer-to-can-v21-reader-compact-tests" src="/images/extensions/gadgeteer-to-can/guides/reader-compact-tests-underside-caption.svg" title="Host supply and data tests — tests" alt="Host supply and data tests — tests for gadgeteer-to-can v21" caption="Reference for the documented revision. Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="gadgeteer-to-can-v21-reader-compact-mounts" src="/images/extensions/gadgeteer-to-can/guides/reader-compact-mounts-underside-caption.svg" title="Remaining tests and mounts — mounts" alt="Remaining tests and mounts — mounts for gadgeteer-to-can v21" caption="Reference for the documented revision. Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
+
+**Reference status:** the selected-revision annotated sheets above have passed source review. Read the overview and all focused sheets together. Practical wiring and actual desktop/narrow viewer acceptance are separate checks; use the connection section for the current installation limits.
+
+The following is the exact selected PCB’s intended pad-to-net schedule. Net labels identify circuit nodes; they are not wire colours or measured voltage/current ratings. Explicit unconnected contacts must remain unused. Duplicate physical pads with the same contact number represent alternative lands, not extra channels. Selector bridge/default population must be confirmed from the selected assembly record before alteration.
+
+<details markdown="1">
+<summary>Selected-source contact inventory</summary>
+
+<div class="extension-contact-table" role="region" aria-label="Selected-source contact inventory; scroll horizontally to read all columns" tabindex="0" markdown="1">
+
+| Member / reference | Label / control | Kind | Numbered contacts / assigned nodes |
 |---|---|---|---|
-| 1 | 3V3 | 3V3 | Direct host-domain power |
-| 2 | 5V | 5V | Direct host-domain power |
-| 3 | HOST_SILENT | CHAIN_3 | SJ3 open |
-| 4 | HOST_TXD | CHAIN_4 | SJ4 open |
-| 5 | HOST_RXD | CHAIN_5 | SJ5 open |
-| 6 | HOST_6 | CHAIN_6 | SJ6 bridged |
-| 7 | HOST_7 | CHAIN_7 | SJ7 bridged |
-| 8 | HOST_8 | CHAIN_8 | SJ8 bridged |
-| 9 | HOST_9 | CHAIN_9 | SJ9 bridged |
-| 10 | GND | GND | Direct host-domain ground |
+| gadgeteer-to-can / J1 | C HOST | Connector | 1: 3V3; 2: 5V; 3: HOST_SILENT; 4: HOST_TXD; 5: HOST_RXD; 6: HOST_6; 7: HOST_7; 8: HOST_8; 9: HOST_9; 10: GND |
+| gadgeteer-to-can / J2 | C CHAIN | Connector | 1: 3V3; 2: 5V; 3: CHAIN_3; 4: CHAIN_4; 5: CHAIN_5; 6: CHAIN_6; 7: CHAIN_7; 8: CHAIN_8; 9: CHAIN_9; 10: GND |
+| gadgeteer-to-can / J3 | CAN FIELD | Connector | 1: FIELD_GND; 2: CANL; 3: CANH |
+| gadgeteer-to-can / TP1 | 3V3 | Observation only | 1: 3V3 |
+| gadgeteer-to-can / TP2 | GND | Observation only | 1: GND |
+| gadgeteer-to-can / TP3 | HOST_TXD | Observation only | 1: HOST_TXD |
+| gadgeteer-to-can / TP4 | HOST_RXD | Observation only | 1: HOST_RXD |
+| gadgeteer-to-can / TP5 | HOST_SILENT | Observation only | 1: HOST_SILENT |
+| gadgeteer-to-can / TP6 | 5V observe | Observation only | 1: 5V |
+| gadgeteer-to-can / TP7 | GND reference | Observation only | 1: GND |
+| gadgeteer-to-can / SJ10 | TERM OPEN | Service link/selector | 1: TERM_LINK; 2: CANL |
+| gadgeteer-to-can / SJ3 | C pin 3 OPEN | Service link/selector | 1: HOST_SILENT; 2: CHAIN_3 |
+| gadgeteer-to-can / SJ4 | C pin 4 OPEN | Service link/selector | 1: HOST_TXD; 2: CHAIN_4 |
+| gadgeteer-to-can / SJ5 | C pin 5 OPEN | Service link/selector | 1: HOST_RXD; 2: CHAIN_5 |
+| gadgeteer-to-can / SJ6 | C pin 6 BRIDGED | Service link/selector | 1: HOST_6; 2: CHAIN_6 |
+| gadgeteer-to-can / SJ7 | C pin 7 BRIDGED | Service link/selector | 1: HOST_7; 2: CHAIN_7 |
+| gadgeteer-to-can / SJ8 | C pin 8 BRIDGED | Service link/selector | 1: HOST_8; 2: CHAIN_8 |
+| gadgeteer-to-can / SJ9 | C pin 9 BRIDGED | Service link/selector | 1: HOST_9; 2: CHAIN_9 |
 
-J2 forwards power/ground and unused pins 6–9. It does **not** forward the consumed CAN control signals on pins 3–5. A second CAN board cannot simply plug into J2 as another standard CAN C socket. Closing SJ3–5 is not a supported two-transceiver configuration and can connect competing RXD outputs. Downstream power remains subject to the combined source, connector and cable budget.
+</div>
 
-## Multiple isolated nodes with shared host power
-
-This is a conditional wiring topology, not a validated shared-power assembly. Each board needs its own compatible controller signals; J2 is not the controller-signal distribution path.
-
-```text
-Rated host-domain supply distribution (combined load/drop budget unresolved)
-  3V3 / 4.5–5.5 V / host GND
-       +----> board A J1 pins 1 / 2 / 10 <---- controller A pins SILENT/TX/RX
-       +----> board B J1 pins 1 / 2 / 10 <---- controller B pins SILENT/TX/RX
-                       || separate isolation barriers ||
-
-Field-domain linear bus (twisted CANH/CANL pair)
-  End A J3 pin3 CANH ============================= J3 pin3 CANH End B
-        J3 pin2 CANL ============================= J3 pin2 CANL
-        J3 pin1 FIELD_GND ------------------------ J3 pin1 FIELD_GND
-        SJ10 closed: 120 ohm                      SJ10 closed: 120 ohm
-                         |
-                Optional interior node:
-                CANH/CANL/field reference;
-                SJ10 OPEN, no endpoint termination
-```
-
-Use exactly two 120 ohm terminators, at the two physical ends of the complete linear bus. SJ10 is open by default; interior nodes remain unterminated. Keep stubs short; actual cable, field reference/ground potential, termination, fault envelope and EMC must be engineered for the installation. The 500 kbit/s / 20 m network is a qualification target, not measured operation.
-
-The converter input design uses manufacturer worst-case 211 mA at a 60 ohm dominant bus load and 250 mA pulses per board; the upstream current-limit recommendation is at least 300 mA per board. These figures do not establish the host socket allocation or a safe multi-board budget. Account for every board, other downstream loads, startup, protection behavior, source capacity and cable/contact drops before energization. No extra field-port TVS/bias network is fitted. Host supply, isolation, thermal, current, EMC, firmware, assembly and real network qualification remain open. The generic SOIC model does not certify package fit.
-
-
-## Historical isolated candidate: v20 (2026-10-13)
-
-The [v20 engineering record and native design](https://github.com/arthurwolf/extension-boards/tree/main/src/gadgeteer-to-can/attempt/versions/v20) adds **ISOW1044DFMR isolated CAN** alongside the retained common-ground revisions. Host 3.3 V supplies logic; host **4.5–5.5 V** supplies the isolated converter. Manufacturer worst-case VDD current is **211 mA at a 60 Ω dominant bus load**, with **250 mA pulses**; the recommended upstream current-limit target is at least 300 mA. The actual host socket allocation remains unqualified. The 70 × 45 mm candidate is larger than the 40 × 39.5 mm baseline.
-
-A separate transmit-inhibit gate preserves the existing active-high SILENT command while keeping reception active. No firmware is changed, and this is still a native CAN physical interface: the host must provide a compatible CAN controller, driver, timing and bus configuration. The 500 kbit/s / 20 m network remains a qualification target, not measured performance. Native electrical checks pass and fresh renders are retained, but power, thermal behavior, EMC, insulation, assembly and complete network operation remain unqualified. **No fabrication or energization approval is granted.** The historical snapshot below describes earlier revisions; select the exact revision before wiring.
-
-Gadgeteer-to-CAN physical-interface adapter. CAN 2.0 operation is a design target; the prototype qualification target is 500 kbit/s over a specified 20 m twisted-pair network, not measured performance.
-
-## Development status
-
-**Baseline documentation snapshot: 2026-10-11, before the requested connector/protection/usability revision program.** New revision features require their own reviewed source and qualification evidence.
-
-This page documents an **unqualified engineering study**, not a released or tested product. Saved CAD, renders and automated checks do not establish a safe assembly, compatible cable, firmware support or a usable current rating.
-
-Board-specific qualification limits: v16/9 purchased,7 named MPNs match/2 stock blanks;123 selected/1803 historical hashes;retained native0;host/fault/physical open.
-
-## Interfaces and wiring
-
-The exact connector orientation, pin mapping and supply ownership must be taken from the selected revision’s schematic and [connection specification](https://github.com/arthurwolf/extension-boards/blob/main/src/gadgeteer-to-can/specs.md). Do not infer wiring from the connector shape.
-
-Power off before connecting or changing jumpers. Verify pin 1, signal direction, supply voltage and ground at both ends of every cable. A mechanically fitting connector is not proof of electrical compatibility. If a host pin mapping or current allocation remains unresolved in the design record, do not connect the board until it is resolved.
-
-## Electrical design requirements
-
-The following are specification requirements or study assumptions; they are **not measured operating ratings**. A newer selected-revision note takes precedence over historical draft options.
+</details>
 
 
 
-## Selected component architecture
+## Practical connection to Smoothieboard V2 Prime
 
-[Current v16 component review](https://github.com/arthurwolf/extension-boards/blob/main/src/gadgeteer-to-can/component-review.md) retains TCAN330D and existing V1 10k10% stock envelope; all24 records covered,seven named purchasing identities match and R1/R2 remain unidentified stock reels. No successor; host/fault/EMC/physical and unsigned checklist gates remain. Earlier v15 notes are history.
+**Complete wiring diagram pending:** the source-matched Prime → board → peripheral assembly and autorouted continuous connections are not accepted. Any conditional pin allocation below is a research-backed candidate, not permission to energize unresolved hardware.
 
-## Configuration and commissioning
+For a two-node bench CAN bus, each node needs its own compatible controller and power allocation. Connect CANH to CANH, CANL to CANL and the field references together along the cable. Fit the optional 120-ohm termination only at the two physical bus ends; an interior node remains unterminated. J2 forwards power and unused contacts 6–9, while consumed contacts 3–5 are open by default. Do not chain a second transceiver expecting another CAN controller interface. A possible controller pin pair is established, but no complete Prime-to-J1 harness is accepted.
 
-Use the configuration and firmware contract for the exact selected revision. Do not copy another module’s socket assignments or assume that an unused pin is available. First-article work must verify source selection, reset/unplug behavior, cable orientation and the actual load or sensor interface before normal operation.
+### Possible Prime controller allocation — custom firmware required
 
-## Requested connector and usability upgrades
+The retained P11 and P12 Prime sources expose PB9 through R74 (100 Ω) at GB/J33.4, and PH14 through R75 (100 Ω) at J33.5. The [ST STM32H745xI/G datasheet, DS12923 Rev 3, Table 9](https://www.st.com/resource/en/datasheet/stm32h745bi.pdf) assigns PB9 to FDCAN1 transmit and PH14 to FDCAN1 receive at alternate function AF9. These are possible controller signals for adapter J1.4 HOST_TXD and J1.5 HOST_RXD. J33.3/PD9 is a possible separate GPIO for J1.3 HOST_SILENT, subject to complete ownership and startup design.
 
-The following are requirements for the next design iterations; this page does **not** claim they are already fitted:
+**This is a custom-firmware allocation candidate, not a working configuration.** The current UART4 implementation uses PB9/PH14 at AF8; UART4 and CAN cannot own the same pins simultaneously. Do not disable a console without a replacement communications path and a review of the complete machine configuration. The two 100 Ω series resistors remain in the signal paths, so edge timing and loading require qualification.
 
-- On electrically suitable three/four-pin low-voltage ports, provide compact alternative 2.54 mm header/Molex-style and keyed STEMMA-family footprints. Populate one connector option per shared position and document its pin order. Use STEMMA QT only for compatible four-wire I²C; connector appearance does not make another signal protocol I²C-compatible.
-- Render each supported connector population separately. Document clearances, cable access and the exact fitted option.
-- Use uppercase titles in a consistent Montserrat-style face, labels on both sides, visible domain boundaries, a revision-specific wiring guide and this page’s URL on the silk where readable.
-- Keep mounting-hole centers on a documented 10 mm lattice; add cable-tie holes where space and electrical clearances permit. Place status LEDs near accessible edges and give every indicator its own disable solder jumper. Provide labeled test pads and a ground observation point.
-- Review applicable DC power entries for reverse-polarity cutoff with a blinking warning, overvoltage cutoff/indication, controlled startup and electronic overcurrent protection. Indicator and protection circuits must work in the fault state without defeating isolation or safe output defaults. Thermal protection belongs only where the power/thermal analysis justifies it.
-- Electronic protection does not automatically replace a required mains/branch safety fuse. Backfeed blocking and inductive-load flyback clamps are separate design functions. Do not add identity EEPROMs, fault memory, calibration storage or paid self-test hardware under this upgrade program.
+The adapter's OR gate combines HOST_TXD with HOST_SILENT: HIGH on SILENT forces the transmitted recessive level but does not disable reception or implement a CAN controller. UART bytes and GPIO commands are not CAN frames. No pinmux, bitrate, filter, frame-command or application configuration is supplied by this candidate.
 
-## Design sources
+A named controller-equipped peer is the [PEAK PCAN-USB FD](https://www.peak-system.com/produktcd/Pdf/English/PCAN-USB-FD_UserMan_eng.pdf), manual 2.3.0, pages 14–15: its DB9.7/.2/.3 identify CANH/CANL/CAN ground. These correspond by signal name to adapter J3.3/.2/.1 on the **field side**. Leave the peer's optional supply pin unused. Its internal termination is not active at delivery; any eventual two-node design must establish both bus-end terminations. This identifies a possible peer, not a complete cable, power or commissioning instruction. Never bridge field ground to host ground by assumption.
 
-- [Board specification](https://github.com/arthurwolf/extension-boards/blob/main/src/gadgeteer-to-can/specs.md)
-- [Architecture and component decisions](https://github.com/arthurwolf/extension-boards/blob/main/src/gadgeteer-to-can/design.md)
-- [Selected-revision review and qualification record](https://github.com/arthurwolf/extension-boards/blob/main/src/gadgeteer-to-can/component-review.md)
-- [All extension boards](/#extension-boards)
+Where a conditional GF/J37 example is given, it applies only to **V2 P12 Prime2590**: contacts 1/2/10 are limited 3.3 V/limited 5 V/ground, and contacts 3–9 are PB1/PJ4/PA4/PG0/PJ3/PG1/PJ2. The host header is unshrouded; verify numbered continuity and cable orientation with power removed. Reserve pins in the complete machine configuration. No rail-current allowance, alternative Prime revision, timer route or bus mux is implied by this map.
 
-Documentation route: `smoothieware.org/extensions/gadgeteer-to-can`.
+## Smoothieware behaviour and commissioning
 
-<!-- additive-cad-status:start -->
-## Additive design studies
+The complete [pinned SmoothieV2 application/configuration source](https://github.com/Smoothieware/SmoothieV2/tree/2a21c0108b1d095ecd8b2b9358e94055f053c003/Firmware/src) contains no CANbus/FDCAN application implementation. No matching controller configuration, pin mux or application protocol is established for this selected board; an MCU peripheral or HAL implementation alone would not supply that protocol. Generic GPIO and bus-capable MCU silicon are insufficient. If the required CAN support is absent, email **wolf.arthur@gamil.com**; include the desired CAN application, bitrate, host revision and node topology.
 
-The 2026-10-11 upgrade program has saved additional candidates v17, v18, v19. These studies preserve the historical design described above. Their connector, LED, mechanical and protection changes are revision-specific and remain unqualified.
+## What remains unresolved
 
-See the [per-board changes, failures and remaining work](https://github.com/arthurwolf/extension-boards/blob/main/src/gadgeteer-to-can/fancification.md) and [mandatory family specification](https://github.com/arthurwolf/extension-boards/blob/main/docs/FANCIFICATION-SPEC.md). Use the source hash and native check for the exact candidate being reviewed; do not infer hardware ratings from a rendered population.
-<!-- additive-cad-status:end -->
+The selected v21 is isolated; old non-isolated specifications must not govern its power or grounds. Implemented CAN allocation, UART4 ownership, series-resistor timing, controller/application firmware, rail capacity and physical insulation/EMC remain open. The board-reference drawings explain the selected source revision. A complete practical wiring recipe is still pending; source-link availability and desktop/narrow page usability also remain to be verified.
 
-<!-- extension-upgrade-readback:start -->
-## Upgrade candidate readback
+## Sources and revision notes
 
-The three additional revisions are **v17, v18, v19**. They are engineering studies; saved CAD and renders do not release the hardware. The latest candidate is described below. Older baseline notes above remain historical.
+- [Selected v21 gadgeteer-to-can PCB](https://github.com/arthurwolf/extension-boards/blob/main/src/gadgeteer-to-can/attempt/versions/v21/gadgeteer-to-can.kicad_pcb)
+- [Specification and retained limitations](https://github.com/arthurwolf/extension-boards/blob/main/src/gadgeteer-to-can/specs.md)
+- [Architecture and source decisions](https://github.com/arthurwolf/extension-boards/blob/main/src/gadgeteer-to-can/design.md)
+- [Component review](https://github.com/arthurwolf/extension-boards/blob/main/src/gadgeteer-to-can/component-review.md)
+- [V2 configuration example](https://github.com/Smoothieware/SmoothieV2/blob/2a21c0108b1d095ecd8b2b9358e94055f053c003/ConfigSamples/config-3d.ini)
+- [All extension boards](/extension-boards)
 
-### gadgeteer-to-can
+The selected-revision engineering repository was unavailable to anonymous readers when checked. Its source links are retained for provenance; an accessible matching source release has not been verified. Firmware and historical-board links are separate sources.
 
-- [Latest PCB source](https://github.com/arthurwolf/extension-boards/blob/main/src/gadgeteer-to-can/attempt/versions/v19/gadgeteer-to-can.kicad_pcb), SHA-256 `11631fef695cd934603b48994ca1e82913964314b2653eb5ac53e2c433282dae`.
-- Last native check: **0 errors**, including **0 open connections**. This is a CAD result, not electrical, assembly or firmware qualification.
-- No alternative connector population is recorded for this physical role. Any applicable connector conversion remains an explicit design-review item.
-- [normal population/render record](https://github.com/arthurwolf/extension-boards/blob/main/src/gadgeteer-to-can/attempt/versions/v19/populations/gadgeteer-to-can/normal/population.json): 6 images; source current; image hashes match; 0 unresolved models.
-- [Changes, failed trials and remaining work](https://github.com/arthurwolf/extension-boards/blob/main/src/gadgeteer-to-can/attempt/versions/v19/gadgeteer-to-can-fancification-revision.md).
+<details markdown="1">
+<summary>Supplementary views and development history</summary>
 
-Applicable protection, current-path, thermal, pinout, cable access and physical tests remain open wherever the linked board record has not verified them. A zero native-error count does not close those gates.
-<!-- extension-upgrade-readback:end -->
+{% include _includes/extension-board-visuals.html slug="gadgeteer-to-can" %}
 
-## Second-round annotation readback v21 — 2026-10-13
+Older source amendments, component substitution trials and future connector upgrade requests are development history. They do not change the revision selected by this guide.
 
-Protected source v20; current PCB SHA-256 `06e0655a5f39ab8ec8997d30d5c99ebca10117a1e5a735ae4bf2a73989245575`. Fresh checks: zero enabled PCB errors/opens/parity and ERC errors; 0 PCB warnings. Electrical geometry, project rules and 61 historical files unchanged. Verified 20 model entries, 17 exports and 6 current population views, all inspected. Full documentation URL readable. Isolation, shared host-chain power and CAN transceiver behavior remain physically unqualified; no area or cost savings claimed Inherited native warnings and enabled-rule exclusions remain explicit Physical/thermal/current/connector-fit qualification open No priced or area savings established by annotation candidate.
+</details>

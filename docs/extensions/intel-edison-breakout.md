@@ -6,110 +6,207 @@ permalink: /extensions/intel-edison-breakout
 
 # Intel Edison breakout
 
-{% include extension-board-visuals.html slug="intel-edison-breakout" %}
+This is a historical Intel Edison host-carrier study. The platform was explicitly marked discontinued in the source brief, which says to ignore the Edison proposal. Nevertheless a retained candidate exists and is documented here rather than erased. The selected circuit includes an AP63200 regulator, an SN74AXC4T774 translator and a 70-contact Edison connector; it is not a currently supported production accessory.
 
-Historical record only for a discontinued Intel Edison carrier concept.
+## Revision and availability
 
-## Development status
+This guide selects **v21**, matching the revision selected by the retained abstract-diagram inventory. This is a design candidate; availability and operating ratings are unverified. The selected revision and contact map govern this guide; older specifications may describe another circuit.
 
-**Compact v21 engineering candidate — 2026-10-15.** The board now measures 52.5 × 47 mm, reduced from 52.5 × 57 mm. Required external 5–24 V input protection is retained beneath the original circuitry, with original front placements and module/antenna keepouts preserved. Full native DRC, connectivity, schematic parity and ERC report zero errors and warnings. Six fresh views were inspected; 71 model references resolve and 19 manufacturing exports are source-bound. See the repository `src/intel-edison-breakout/attempt/versions/v21/` source and receipts. USB geometry remains visualization-only. Electrical, current, thermal, module insertion and fabrication qualification remain open.
+The selected v21 source package retains schematic title-block revision **v12**. The package number does not rename the schematic or establish a released hardware revision.
 
-**Baseline documentation snapshot: 2026-10-11, before the requested connector/protection/usability revision program.** New revision features require their own reviewed source and qualification evidence.
+## Interfaces, power and operating limits
 
-This page documents an **unqualified engineering study**, not a released or tested product. Saved CAD, renders and automated checks do not establish a safe assembly, compatible cable, firmware support or a usable current rating.
+J1 U input contacts 3 RESET_OUT_N, 4 UART_RX_IN, 5 UART_TX_OUT and 6 PWR_OFF carry translated control/serial functions. J2 is external1 positive, 2 ground and is labelled 5–24 V in the selected source; that label is not a qualification of the assembled input. JP1 chooses external or host source and must never be treated as permission to parallel supplies. J3 supplies the Edison VSYS contacts and exposes the selected 1.8 V UART pins46 TX and 61 RX. J4 is USB Micro-B. Most Edison contacts remain explicitly unconnected; do not infer a general GPIO breakout.
 
-Board-specific qualification limits: v12/33 purchased/32 identity strings match/1 stock blank;71 selected/944 historical hashes;DRC1/connector peak/host/reset/USB/physical open.
+## Board reference
 
-## Interfaces and wiring
+<details markdown="1">
+<summary>Reading the connector callouts</summary>
 
-### Inputs
+The dark end of each pill gives the source contact number. The adjoining label gives its function. Colours help locate related functions; the label and connection instructions determine how to use the contact.
 
-- Historical U Gadgeteer and optional 5–24 V proposal; inactive
+- Red: 3.3 V supply.
+- Orange: 5 V supply.
+- Violet: Control signal.
+- Green: Signal — use the printed function label.
+- Near-black: Circuit ground.
+- Grey: Not routed in this board revision.
+- Cyan: Selected supply — check the jumper or rail-selection instructions.
+- Dark grey: Other source-labelled contact — read its exact function.
 
-### Outputs
+A voltage in a signal name does not make that contact a power output. Circuit ground, cable shield and protective earth are different connections. An underside projection shows rear components through the front view; it is not a mirrored rear view.
 
-- Historical Edison dense connector; inactive
+</details>
 
-### Connection contract
+Start with the overview, then use all focused sheets for exact contacts, controls and links. Source footprint defaults do not prove assembled continuity.
 
-The canonical repository connector contract is pin 1 = +3.3 V, pin 2 = +5 V, pin 10 = GND. Current Smoothie V2 Prime web material appears to describe a conflicting header assignment; the physical target header must be continuity-checked against its authoritative schematic before KiCad release. The table below expresses design intent against the repository's canonical contract, not proof of the live board pinout.
+{% include _includes/extension-instruction-diagram.html id="intel-edison-breakout-v21-reader-compact-overview" src="/images/extensions/intel-edison-breakout/guides/reader-compact-overview.svg" title="Intel Edison carrier — overview" alt="Intel Edison carrier — overview for intel-edison-breakout v21" caption="Reference for the documented revision. Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
 
-|  Pin | Canonical role        | Assigned function |
-| ---: | --------------------- | ----------------- |
-|    1 | +3.3V                 | +3.3 V rail       |
-|    2 | +5V                   | +5 V rail         |
-|    3 | GPIO! / type-specific | N/C — inactive    |
-|    4 | type-specific         | N/C — inactive    |
-|    5 | type-specific         | N/C — inactive    |
-|    6 | type-specific         | N/C — inactive    |
-|    7 | type-specific         | N/C — inactive    |
-|    8 | type-specific         | N/C — inactive    |
-|    9 | type-specific         | N/C — inactive    |
-|   10 | GND                   | Ground            |
+{% include _includes/extension-instruction-diagram.html id="intel-edison-breakout-v21-reader-compact-j1-1-5" src="/images/extensions/intel-edison-breakout/guides/reader-compact-j1-1-5-central-pills.svg" title="J1 · Host UART — j1 1 5" alt="J1 · Host UART — j1 1 5 for intel-edison-breakout v21" caption="Reference for the documented revision. Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
 
-Power off before connecting or changing jumpers. Verify pin 1, signal direction, supply voltage and ground at both ends of every cable. A mechanically fitting connector is not proof of electrical compatibility. If a host pin mapping or current allocation remains unresolved in the design record, do not connect the board until it is resolved.
+{% include _includes/extension-instruction-diagram.html id="intel-edison-breakout-v21-reader-compact-j1-6-10" src="/images/extensions/intel-edison-breakout/guides/reader-compact-j1-6-10-central-pills.svg" title="J1 · Host UART — j1 6 10" alt="J1 · Host UART — j1 6 10 for intel-edison-breakout v21" caption="Reference for the documented revision. Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
 
-## Electrical design requirements
+{% include _includes/extension-instruction-diagram.html id="intel-edison-breakout-v21-reader-compact-j2-1-2" src="/images/extensions/intel-edison-breakout/guides/reader-compact-j2-1-2-central-pills.svg" title="J2 · External supply — j2 1 2" alt="J2 · External supply — j2 1 2 for intel-edison-breakout v21" caption="Reference for the documented revision. Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
 
-The following are specification requirements or study assumptions; they are **not measured operating ratings**. A newer selected-revision note takes precedence over historical draft options.
+{% include _includes/extension-instruction-diagram.html id="intel-edison-breakout-v21-reader-compact-j3-1-5" src="/images/extensions/intel-edison-breakout/guides/reader-compact-j3-1-5-central-pills.svg" title="J3 · Edison70 contacts — j3 1 5" alt="J3 · Edison70 contacts — j3 1 5 for intel-edison-breakout v21" caption="Reference for the documented revision. Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
 
-- All Edison voltage, sequencing, current, and level-shifting values are intentionally unresolved
-- Intel marks the complete Edison series discontinued
+{% include _includes/extension-instruction-diagram.html id="intel-edison-breakout-v21-reader-compact-j3-6-10" src="/images/extensions/intel-edison-breakout/guides/reader-compact-j3-6-10-central-pills.svg" title="J3 · Edison70 contacts — j3 6 10" alt="J3 · Edison70 contacts — j3 6 10 for intel-edison-breakout v21" caption="Reference for the documented revision. Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
 
-## Protection in the design record
+{% include _includes/extension-instruction-diagram.html id="intel-edison-breakout-v21-reader-compact-j3-11-15" src="/images/extensions/intel-edison-breakout/guides/reader-compact-j3-11-15-central-pills.svg" title="J3 · Edison70 contacts — j3 11 15" alt="J3 · Edison70 contacts — j3 11 15 for intel-edison-breakout v21" caption="Reference for the documented revision. Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
 
-The design describes the following protection intent. Check the selected schematic and remaining qualification gates before relying on it:
+{% include _includes/extension-instruction-diagram.html id="intel-edison-breakout-v21-reader-compact-j3-16-20" src="/images/extensions/intel-edison-breakout/guides/reader-compact-j3-16-20-central-pills.svg" title="J3 · Edison70 contacts — j3 16 20" alt="J3 · Edison70 contacts — j3 16 20 for intel-edison-breakout v21" caption="Reference for the documented revision. Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
 
-- Current v21 retains external-input electronic protection, reverse-polarity protection and fault indication. Thresholds and thermal/current performance still require hardware qualification.
+{% include _includes/extension-instruction-diagram.html id="intel-edison-breakout-v21-reader-compact-j3-21-25" src="/images/extensions/intel-edison-breakout/guides/reader-compact-j3-21-25-central-pills.svg" title="J3 · Edison70 contacts — j3 21 25" alt="J3 · Edison70 contacts — j3 21 25 for intel-edison-breakout v21" caption="Reference for the documented revision. Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
 
-## Selected component architecture
+{% include _includes/extension-instruction-diagram.html id="intel-edison-breakout-v21-reader-compact-j3-26-30" src="/images/extensions/intel-edison-breakout/guides/reader-compact-j3-26-30-central-pills.svg" title="J3 · Edison70 contacts — j3 26 30" alt="J3 · Edison70 contacts — j3 26 30 for intel-edison-breakout v21" caption="Reference for the documented revision. Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
 
-[Current v12 review](https://github.com/arthurwolf/extension-boards/blob/main/src/intel-edison-breakout/component-review.md) covers52records/33 purchased components and existing V1 R5 discharge class. Retain dedicated power/translator,no successor. One MOD1 DRC finding,connector peak/host allowance,procurement/reset/USB/stackup/physical gates remain open.
+{% include _includes/extension-instruction-diagram.html id="intel-edison-breakout-v21-reader-compact-j3-31-35" src="/images/extensions/intel-edison-breakout/guides/reader-compact-j3-31-35-central-pills.svg" title="J3 · Edison70 contacts — j3 31 35" alt="J3 · Edison70 contacts — j3 31 35 for intel-edison-breakout v21" caption="Reference for the documented revision. Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
 
-## Configuration and commissioning
+{% include _includes/extension-instruction-diagram.html id="intel-edison-breakout-v21-reader-compact-j3-36-40" src="/images/extensions/intel-edison-breakout/guides/reader-compact-j3-36-40-central-pills.svg" title="J3 · Edison70 contacts — j3 36 40" alt="J3 · Edison70 contacts — j3 36 40 for intel-edison-breakout v21" caption="Reference for the documented revision. Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
 
-Use the configuration and firmware contract for the exact selected revision. Do not copy another module’s socket assignments or assume that an unused pin is available. First-article work must verify source selection, reset/unplug behavior, cable orientation and the actual load or sensor interface before normal operation.
+{% include _includes/extension-instruction-diagram.html id="intel-edison-breakout-v21-reader-compact-j3-41-45" src="/images/extensions/intel-edison-breakout/guides/reader-compact-j3-41-45-central-pills.svg" title="J3 · Edison70 contacts — j3 41 45" alt="J3 · Edison70 contacts — j3 41 45 for intel-edison-breakout v21" caption="Reference for the documented revision. Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
 
-## Requested connector and usability upgrades
+{% include _includes/extension-instruction-diagram.html id="intel-edison-breakout-v21-reader-compact-j3-46-50" src="/images/extensions/intel-edison-breakout/guides/reader-compact-j3-46-50-central-pills.svg" title="J3 · Edison70 contacts — j3 46 50" alt="J3 · Edison70 contacts — j3 46 50 for intel-edison-breakout v21" caption="Reference for the documented revision. Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
 
-The following are requirements for the next design iterations; this page does **not** claim they are already fitted:
+{% include _includes/extension-instruction-diagram.html id="intel-edison-breakout-v21-reader-compact-j3-51-55" src="/images/extensions/intel-edison-breakout/guides/reader-compact-j3-51-55-central-pills.svg" title="J3 · Edison70 contacts — j3 51 55" alt="J3 · Edison70 contacts — j3 51 55 for intel-edison-breakout v21" caption="Reference for the documented revision. Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
 
-- On electrically suitable three/four-pin low-voltage ports, provide compact alternative 2.54 mm header/Molex-style and keyed STEMMA-family footprints. Populate one connector option per shared position and document its pin order. Use STEMMA QT only for compatible four-wire I²C; connector appearance does not make another signal protocol I²C-compatible.
-- Render each supported connector population separately. Document clearances, cable access and the exact fitted option.
-- Use uppercase titles in a consistent Montserrat-style face, labels on both sides, visible domain boundaries, a revision-specific wiring guide and this page’s URL on the silk where readable.
-- Keep mounting-hole centers on a documented 10 mm lattice; add cable-tie holes where space and electrical clearances permit. Place status LEDs near accessible edges and give every indicator its own disable solder jumper. Provide labeled test pads and a ground observation point.
-- Review applicable DC power entries for reverse-polarity cutoff with a blinking warning, overvoltage cutoff/indication, controlled startup and electronic overcurrent protection. Indicator and protection circuits must work in the fault state without defeating isolation or safe output defaults. Thermal protection belongs only where the power/thermal analysis justifies it.
-- Electronic protection does not automatically replace a required mains/branch safety fuse. Backfeed blocking and inductive-load flyback clamps are separate design functions. Do not add identity EEPROMs, fault memory, calibration storage or paid self-test hardware under this upgrade program.
+{% include _includes/extension-instruction-diagram.html id="intel-edison-breakout-v21-reader-compact-j3-56-60" src="/images/extensions/intel-edison-breakout/guides/reader-compact-j3-56-60-central-pills.svg" title="J3 · Edison70 contacts — j3 56 60" alt="J3 · Edison70 contacts — j3 56 60 for intel-edison-breakout v21" caption="Reference for the documented revision. Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
 
-## Design sources
+{% include _includes/extension-instruction-diagram.html id="intel-edison-breakout-v21-reader-compact-j3-61-65" src="/images/extensions/intel-edison-breakout/guides/reader-compact-j3-61-65-central-pills.svg" title="J3 · Edison70 contacts — j3 61 65" alt="J3 · Edison70 contacts — j3 61 65 for intel-edison-breakout v21" caption="Reference for the documented revision. Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
 
-- [Board specification](https://github.com/arthurwolf/extension-boards/blob/main/src/intel-edison-breakout/specs.md)
-- [Architecture and component decisions](https://github.com/arthurwolf/extension-boards/blob/main/src/intel-edison-breakout/design.md)
-- [Selected-revision review and qualification record](https://github.com/arthurwolf/extension-boards/blob/main/src/intel-edison-breakout/component-review.md)
-- [All extension boards](/#extension-boards)
+{% include _includes/extension-instruction-diagram.html id="intel-edison-breakout-v21-reader-compact-j3-66-70" src="/images/extensions/intel-edison-breakout/guides/reader-compact-j3-66-70-central-pills.svg" title="J3 · Edison70 contacts — j3 66 70" alt="J3 · Edison70 contacts — j3 66 70 for intel-edison-breakout v21" caption="Reference for the documented revision. Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
 
-Documentation route: `smoothieware.org/extensions/intel-edison-breakout`.
+{% include _includes/extension-instruction-diagram.html id="intel-edison-breakout-v21-reader-compact-j4-1-5" src="/images/extensions/intel-edison-breakout/guides/reader-compact-j4-1-5-central-pills.svg" title="J4 · USB micro-B — j4 1 5" alt="J4 · USB micro-B — j4 1 5 for intel-edison-breakout v21" caption="Reference for the documented revision. Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
 
-<!-- additive-cad-status:start -->
-## Additive design studies
+{% include _includes/extension-instruction-diagram.html id="intel-edison-breakout-v21-reader-compact-j4-6-6" src="/images/extensions/intel-edison-breakout/guides/reader-compact-j4-6-6-central-pills.svg" title="J4 · USB micro-B — j4 6 6" alt="J4 · USB micro-B — j4 6 6 for intel-edison-breakout v21" caption="Reference for the documented revision. Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
 
-The 2026-10-11 upgrade program has saved additional candidates v13, v14, v15. These studies preserve the historical design described above. Their connector, LED, mechanical and protection changes are revision-specific and remain unqualified.
+{% include _includes/extension-instruction-diagram.html id="intel-edison-breakout-v21-reader-compact-jp1-1-3" src="/images/extensions/intel-edison-breakout/guides/reader-compact-jp1-1-3-central-pills.svg" title="JP1 · Supply selection — jp1 1 3" alt="JP1 · Supply selection — jp1 1 3 for intel-edison-breakout v21" caption="Reference for the documented revision. Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
 
-See the [per-board changes, failures and remaining work](https://github.com/arthurwolf/extension-boards/blob/main/src/intel-edison-breakout/fancification.md) and [mandatory family specification](https://github.com/arthurwolf/extension-boards/blob/main/docs/FANCIFICATION-SPEC.md). Use the source hash and native check for the exact candidate being reviewed; do not infer hardware ratings from a rendered population.
-<!-- additive-cad-status:end -->
+{% include _includes/extension-instruction-diagram.html id="intel-edison-breakout-v21-reader-compact-uart" src="/images/extensions/intel-edison-breakout/guides/reader-compact-uart.svg" title="UART translation directions — uart" alt="UART translation directions — uart for intel-edison-breakout v21" caption="Reference for the documented revision. Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
 
-<!-- extension-upgrade-readback:start -->
-## Upgrade candidate readback
+{% include _includes/extension-instruction-diagram.html id="intel-edison-breakout-v21-reader-compact-reset" src="/images/extensions/intel-edison-breakout/guides/reader-compact-reset.svg" title="Reset state translation — reset" alt="Reset state translation — reset for intel-edison-breakout v21" caption="Reference for the documented revision. Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
 
-The three additional revisions are **v13, v14, v15**. They are engineering studies; saved CAD and renders do not release the hardware. The latest candidate is described below. Older baseline notes above remain historical.
+{% include _includes/extension-instruction-diagram.html id="intel-edison-breakout-v21-reader-compact-source" src="/images/extensions/intel-edison-breakout/guides/reader-compact-source.svg" title="External versus host supply — source" alt="External versus host supply — source for intel-edison-breakout v21" caption="Reference for the documented revision. Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
 
-### intel-edison-breakout
+{% include _includes/extension-instruction-diagram.html id="intel-edison-breakout-v21-reader-compact-buck" src="/images/extensions/intel-edison-breakout/guides/reader-compact-buck-underside-caption.svg" title="Protected supply and buck — buck" alt="Protected supply and buck — buck for intel-edison-breakout v21" caption="Reference for the documented revision. Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
 
-- [Latest PCB source](https://github.com/arthurwolf/extension-boards/blob/main/src/intel-edison-breakout/attempt/versions/v15/intel-edison-breakout.kicad_pcb), SHA-256 `a9d668dc4ef61ece34c696398bb00c35dfa2be73dc42c846280fa606968a970f`.
-- Last native check: **14 errors**, including **11 open connections**. This is a CAD result, not electrical, assembly or firmware qualification.
-- No alternative connector population is recorded for this physical role. Any applicable connector conversion remains an explicit design-review item.
-- [normal population/render record](https://github.com/arthurwolf/extension-boards/blob/main/src/intel-edison-breakout/attempt/versions/v15/populations/intel-edison-breakout/normal/population.json): 6 images; source current; image hashes match; 1 unresolved models.
-- [Changes, failed trials and remaining work](https://github.com/arthurwolf/extension-boards/blob/main/src/intel-edison-breakout/attempt/versions/v15/intel-edison-breakout-fancification-revision.md).
+{% include _includes/extension-instruction-diagram.html id="intel-edison-breakout-v21-reader-compact-off" src="/images/extensions/intel-edison-breakout/guides/reader-compact-off.svg" title="Power-off control — off" alt="Power-off control — off for intel-edison-breakout v21" caption="Reference for the documented revision. Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
 
-Applicable protection, current-path, thermal, pinout, cable access and physical tests remain open wherever the linked board record has not verified them. A zero native-error count does not close those gates.
-<!-- extension-upgrade-readback:end -->
+{% include _includes/extension-instruction-diagram.html id="intel-edison-breakout-v21-reader-compact-usb" src="/images/extensions/intel-edison-breakout/guides/reader-compact-usb.svg" title="USB data and VBUS path — usb" alt="USB data and VBUS path — usb for intel-edison-breakout v21" caption="Reference for the documented revision. Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="intel-edison-breakout-v21-reader-compact-led" src="/images/extensions/intel-edison-breakout/guides/reader-compact-led.svg" title="Supply indicator — led" alt="Supply indicator — led for intel-edison-breakout v21" caption="Reference for the documented revision. Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="intel-edison-breakout-v21-reader-compact-faults" src="/images/extensions/intel-edison-breakout/guides/reader-compact-faults-underside-caption.svg" title="Protection status LEDs — faults" alt="Protection status LEDs — faults for intel-edison-breakout v21" caption="Reference for the documented revision. Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="intel-edison-breakout-v21-reader-compact-fault-clamp" src="/images/extensions/intel-edison-breakout/guides/reader-compact-fault-clamp-underside-caption.svg" title="Fault LED reverse clamp — fault clamp" alt="Fault LED reverse clamp — fault clamp for intel-edison-breakout v21" caption="Reference for the documented revision. Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="intel-edison-breakout-v21-reader-compact-aux" src="/images/extensions/intel-edison-breakout/guides/reader-compact-aux-underside-caption.svg" title="Protection auxiliary paths — aux" alt="Protection auxiliary paths — aux for intel-edison-breakout v21" caption="Reference for the documented revision. Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="intel-edison-breakout-v21-reader-compact-tests0" src="/images/extensions/intel-edison-breakout/guides/reader-compact-tests0-underside-caption.svg" title="Supply / control test pads — tests0" alt="Supply / control test pads — tests0 for intel-edison-breakout v21" caption="Reference for the documented revision. Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="intel-edison-breakout-v21-reader-compact-tests5" src="/images/extensions/intel-edison-breakout/guides/reader-compact-tests5-underside-caption.svg" title="Supply / control test pads — tests5" alt="Supply / control test pads — tests5 for intel-edison-breakout v21" caption="Reference for the documented revision. Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="intel-edison-breakout-v21-reader-compact-mounts" src="/images/extensions/intel-edison-breakout/guides/reader-compact-mounts.svg" title="Mounts / module retention — mounts" alt="Mounts / module retention — mounts for intel-edison-breakout v21" caption="Reference for the documented revision. Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
+
+**Reference status:** the selected-revision annotated sheets above have passed source review. Read the overview and all focused sheets together. Practical wiring and actual desktop/narrow viewer acceptance are separate checks; use the connection section for the current installation limits.
+
+The following is the exact selected PCB’s intended pad-to-net schedule. Net labels identify circuit nodes; they are not wire colours or measured voltage/current ratings. Explicit unconnected contacts must remain unused. Duplicate physical pads with the same contact number represent alternative lands, not extra channels. Selector bridge/default population must be confirmed from the selected assembly record before alteration.
+
+<details markdown="1">
+<summary>Selected-source contact inventory</summary>
+
+<div class="extension-contact-table" role="region" aria-label="Selected-source contact inventory; scroll horizontally to read all columns" tabindex="0" markdown="1">
+
+| Member / reference | Label / control | Kind | Numbered contacts / assigned nodes |
+|---|---|---|---|
+| intel-edison-breakout / J1 | GADGETEER U IN | Connector | 1: +3V3; 2: /+5V_HOST; 3: /RESET_OUT_N; 4: /UART_RX_IN; 5: /UART_TX_OUT; 6: /PWR_OFF; 7: unconnected-(J1-Pin_7-Pad7); 8: unconnected-(J1-Pin_8-Pad8); 9: unconnected-(J1-Pin_9-Pad9); 10: GND |
+| intel-edison-breakout / J2 | EXT 5-24V DC + GND | Connector | 1: /EXT_IN; 2: GND |
+| intel-edison-breakout / J3 | EDISON 70P DF40 | Connector | 1: GND; 2: /VSYS; 3: /USB_ID; 4: /VSYS; 5: GND; 6: /VSYS; 7: unconnected-(J3-MSIC_SLP_CLK3-Pad7); 8: unconnected-(J3-3.3V-Pad8); 9: GND; 10: unconnected-(J3-3.3V-Pad10); 11: GND; 12: /EDI_1V8; 13: GND; 14: /VSYS; 15: GND; 16: /USB_DP; 17: unconnected-(J3-PWRBTN#-Pad17); 18: /USB_DN; 19: GND; 20: /USB_VBUS; 21: unconnected-(J3-PSW-Pad21); 22: unconnected-(J3-GP134_UART_2_RX-Pad22); 23: unconnected-(J3-V_VBAT_BKUP-Pad23); 24: unconnected-(J3-GP44-Pad24); 25: unconnected-(J3-GP165-Pad25); 26: unconnected-(J3-GP45-Pad26); 27: unconnected-(J3-GP135_UART_2_TX-Pad27); 28: unconnected-(J3-GP46-Pad28); 29: unconnected-(J3-Unused-Pad29); 30: unconnected-(J3-GP47-Pad30); 31: unconnected-(J3-RCVR_MODE-Pad31); 32: unconnected-(J3-GP48-Pad32); 33: unconnected-(J3-GP13_PWM1-Pad33); 34: unconnected-(J3-GP49-Pad34); 35: unconnected-(J3-GP12_PWM0-Pad35); 36: /EDI_RESET_OUT_N; 37: unconnected-(J3-GP182_PWM2-Pad37); 38: unconnected-(J3-Unused-Pad38); 39: unconnected-(J3-GP183_PWM3-Pad39); 40: unconnected-(J3-Unused-Pad40); 41: unconnected-(J3-GP19_I2C_1_SCL-Pad41); 42: unconnected-(J3-GP15-Pad42); 43: unconnected-(J3-GP20_I2C_1_SDA-Pad43); 44: unconnected-(J3-GP84-Pad44); 45: unconnected-(J3-GP27_I2C_6_SCL-Pad45); 46: /EDI_UART1_TX; 47: unconnected-(J3-GP28_I2C_6_SDA-Pad47); 48: unconnected-(J3-GP14-Pad48); 49: unconnected-(J3-Unused-Pad49); 50: unconnected-(J3-GP42-Pad50); 51: unconnected-(J3-GP111-Pad51); 52: unconnected-(J3-GP40-Pad52); 53: unconnected-(J3-GP110-Pad53); 54: unconnected-(J3-GP41-Pad54); 55: unconnected-(J3-GP109-Pad55); 56: unconnected-(J3-GP43-Pad56); 57: unconnected-(J3-GP115-Pad57); 58: unconnected-(J3-GP78-Pad58); 59: unconnected-(J3-GP114-Pad59); 60: unconnected-(J3-GP77-Pad60); 61: /EDI_UART1_RX; 62: unconnected-(J3-GP79-Pad62); 63: unconnected-(J3-GP129_UART_1_RTS-Pad63); 64: unconnected-(J3-GP82-Pad64); 65: unconnected-(J3-GP128_UART_1_CTS-Pad65); 66: unconnected-(J3-GP80-Pad66); 67: unconnected-(J3-OSC_CLK_OUT_0-Pad67); 68: unconnected-(J3-GP83-Pad68); 69: unconnected-(J3-FW_RCVR-Pad69); 70: unconnected-(J3-GP81-Pad70) |
+| intel-edison-breakout / J4 | USB MICRO-B | Connector | 1: /USB_VBUS; 2: /USB_DN; 3: /USB_DP; 4: /USB_ID; 5: GND; 6: GND |
+| intel-edison-breakout / D3 | LED GREEN | Indicator | 1: GND; 2: LED_D3_DISABLE |
+| intel-edison-breakout / DF2 | LTST-C170KRKT | Indicator | 1: /P_edison_FLT; 2: /P_edison_FLT_A |
+| intel-edison-breakout / DF5 | LTST-C170KRKT | Indicator | 1: /P_edison_OV_K; 2: /P_edison_OV_A |
+| intel-edison-breakout / DF8 | LTST-C170KRKT | Indicator | 1: /P_edison_C1; 2: /P_edison_REV_A |
+| intel-edison-breakout / TP1 | TP GND | Observation only | 1: GND |
+| intel-edison-breakout / TP10 | TP BUCK_EN | Observation only | 1: /BUCK_EN |
+| intel-edison-breakout / TP2 | TP VIN | Observation only | 1: /VIN |
+| intel-edison-breakout / TP3 | TP VSYS | Observation only | 1: /VSYS |
+| intel-edison-breakout / TP4 | TP EDI_1V8 | Observation only | 1: /EDI_1V8 |
+| intel-edison-breakout / TP5 | TP GND | Observation only | 1: GND |
+| intel-edison-breakout / TP6 | TP +3V3 | Observation only | 1: +3V3 |
+| intel-edison-breakout / TP7 | TP +5V_HOST | Observation only | 1: /+5V_HOST |
+| intel-edison-breakout / TP8 | TP RESET_OUT_N | Observation only | 1: /RESET_OUT_N |
+| intel-edison-breakout / TP9 | TP GND | Observation only | 1: GND |
+| intel-edison-breakout / JP1 | SRC EXT / HOST | Service link/selector | 1: /EXT_D; 2: /VIN_RAW; 3: /+5V_HOST |
+| intel-edison-breakout / JP2 | CUT TO DISABLE D3 | Service link/selector | 1: LED_D3_DISABLE; 2: /LED_A |
+| intel-edison-breakout / SJF1 | CUT FAULT LED | Service link/selector | 1: /P_edison_FLT_R; 2: /P_edison_FLT_A |
+| intel-edison-breakout / SJF2 | CUT OV LED | Service link/selector | 1: /P_edison_OV_R; 2: /P_edison_OV_A |
+| intel-edison-breakout / SJF3 | CUT REVERSE LED | Service link/selector | 1: /P_edison_REV_R; 2: /P_edison_REV_A |
+
+</div>
+
+</details>
+
+
+
+## Practical connection to Smoothieboard V2 Prime
+
+**Complete wiring diagram pending:** the source-matched Prime → board → peripheral assembly and autorouted continuous connections are not accepted. Any conditional pin allocation below is a research-backed candidate, not permission to energize unresolved hardware.
+
+For archival evaluation, identify the exact Edison module and its authoritative power/sequence requirements before powering the carrier. Trace J3 orientation and every VSYS/ground contact, leave the host disconnected and use a limited bench supply only after the power circuit is independently checked. The conditional Prime GB/J33 UART1 signal allocation is documented below, but power ordering, translator enables, reset/shutdown integration and a complete powered harness remain unqualified. The old brief suggests the Prime Raspberry-Pi-Zero host interface if revived; the retained U carrier does not automatically meet that alternative.
+
+Where a conditional GF/J37 example is given, it applies only to **V2 P12 Prime2590**: contacts 1/2/10 are limited 3.3 V/limited 5 V/ground, and contacts 3–9 are PB1/PJ4/PA4/PG0/PJ3/PG1/PJ2. The host header is unshrouded; verify numbered continuity and cable orientation with power removed. Reserve pins in the complete machine configuration. No rail-current allowance, alternative Prime revision, timer route or bus mux is implied by this map.
+
+## Smoothieware behaviour and commissioning
+
+### Host setup still required
+
+The selected v21 carrier’s populated serial path is Edison UART1: module contact46 is TX and61 is RX; the UART2 contacts22/27 are not connected to that path. The Intel hardware guide establishes these signal identities, not a Linux serial device or working carrier image. Choose UART1 setup instructions for the actual Edison software image and verify translator direction, enable/reset sequencing and power domains before using a Prime serial console. USB connector presence does not establish a command-host protocol or replace that setup.
+
+
+The carrier translator requires no high-level driver by itself, but a working Edison link needs a defined serial/USB protocol, boot/reset sequence and host software. None is verified in the V2 firmware snapshot. If required support is absent, email **wolf.arthur@gamil.com** before attempting to use this historical module.
+
+### Conditional Prime console for the v21 Edison carrier
+
+The v21 carrier uses Edison UART1, not UART2. Prime GB/J33.4 PB9 TX reaches board J1.4 `/UART_RX_IN`, U2 B2/pin13 → A2/pin4, then Edison J3.61 RX. Edison J3.46 TX reaches U2 A1/pin3 → B1/pin14, J1.5 `/UART_TX_OUT`, then Prime GB/J33.5 PH14 RX. J1.10 is signal ground. The SN74AXC4T774 translator has a 1.8 V module domain and 3.3 V host domain; this topology does not itself qualify its power ordering, reset or enables. Leave J1.3 reset observation and J1.6 PWR_OFF unconnected in the conditional three-signal console allocation unless separately assigned; UART firmware does not implement an Edison shutdown service.
+
+Only after matching supplies, physical module/cable and translator operation are qualified, use:
+
+```ini
+[uart console]
+enable = true
+console = true
+channel = 1
+baudrate = 115200
+bits = 8
+stop_bits = 1
+parity = none
+```
+
+Enable UART1 with the installed Edison image's supported setup; verify its pin ownership and serial client without assuming a device pathname. Set 115200/8N1 with no hardware flow control and send `version` followed by LF (`\n`); CRLF works; CR alone does not dispatch. A response is communication evidence, not power/reset/shutdown qualification. For missing image-specific UART or shutdown integration, email **wolf.arthur@gamil.com**.
+
+These instructions identify source behavior at SmoothieV2 commit `2a21c0108b1d095ecd8b2b9358e94055f053c003`; they do not identify the installed build or prove target execution. Reserve every listed pin and command in the complete configuration. Merge entries into existing sections rather than duplicating sections. These software instructions do not verify powered hardware or provide a complete wiring diagram.
+
+## What remains unresolved
+
+Discontinued module availability, dense-connector orientation, power sequencing, host-interface choice, USB/reset and application support remain unresolved. The board-reference drawings explain the selected source revision. A complete practical wiring recipe is still pending; source-link availability and desktop/narrow page usability also remain to be verified.
+
+## Sources and revision notes
+
+- [Selected v21 intel-edison-breakout PCB](https://github.com/arthurwolf/extension-boards/blob/main/src/intel-edison-breakout/attempt/versions/v21/intel-edison-breakout.kicad_pcb)
+- [Specification and retained limitations](https://github.com/arthurwolf/extension-boards/blob/main/src/intel-edison-breakout/specs.md)
+- [Architecture and source decisions](https://github.com/arthurwolf/extension-boards/blob/main/src/intel-edison-breakout/design.md)
+- [Component review](https://github.com/arthurwolf/extension-boards/blob/main/src/intel-edison-breakout/component-review.md)
+- [V2 configuration example](https://github.com/Smoothieware/SmoothieV2/blob/2a21c0108b1d095ecd8b2b9358e94055f053c003/ConfigSamples/config-3d.ini)
+- [All extension boards](/extension-boards)
+
+The selected-revision engineering repository was unavailable to anonymous readers when checked. Its source links are retained for provenance; an accessible matching source release has not been verified. Firmware and historical-board links are separate sources.
+
+<details markdown="1">
+<summary>Supplementary views and development history</summary>
+
+{% include _includes/extension-board-visuals.html slug="intel-edison-breakout" %}
+
+Older source amendments, component substitution trials and future connector upgrade requests are development history. They do not change the revision selected by this guide.
+
+</details>

@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='utf-8'?>
+<ns0:svg xmlns:ns0="http://www.w3.org/2000/svg" viewBox="0 0 1200 2350" width="1200" height="2350" role="img" aria-labelledby="title desc">
+  <ns0:title id="title">FSR host and wiring limits</ns0:title>
+  <ns0:desc id="desc">Reader qualification sheet for the non-energizable FSR v18 host-only candidate.</ns0:desc>
+  <ns0:rect x="0" y="0" width="1200" height="2350" fill="#f4f1e8" />
+  <ns0:text x="55" y="125" font-family="Arial,sans-serif" font-size="80" font-weight="700" fill="#203135">FSR host and wiring limits</ns0:text>
+  <ns0:text x="55" y="205" font-family="Arial,sans-serif" font-size="94" font-weight="700" fill="#203135">Pin / artwork identity</ns0:text>
+  <ns0:text x="60" y="310" font-family="Arial,sans-serif" font-size="76" font-weight="600" fill="#203135">Drawing is P11 Prime art;</ns0:text>
+  <ns0:text x="60" y="402" font-family="Arial,sans-serif" font-size="76" font-weight="600" fill="#203135">host allocation is P12:</ns0:text>
+  <ns0:text x="60" y="494" font-family="Arial,sans-serif" font-size="76" font-weight="600" fill="#203135">GF J37.3 PB1 signal.</ns0:text>
+  <ns0:text x="60" y="586" font-family="Arial,sans-serif" font-size="76" font-weight="600" fill="#203135">PB1 signal + GF.10 GND only.</ns0:text>
+  <ns0:text x="60" y="678" font-family="Arial,sans-serif" font-size="76" font-weight="600" fill="#203135">J4.1 signal; J4.2 GND.</ns0:text>
+  <ns0:text x="60" y="770" font-family="Arial,sans-serif" font-size="76" font-weight="600" fill="#203135">P11 art is not P12 mapping.</ns0:text>
+  <ns0:text x="55" y="892" font-family="Arial,sans-serif" font-size="94" font-weight="700" fill="#203135">Power / assembly state</ns0:text>
+  <ns0:text x="60" y="997" font-family="Arial,sans-serif" font-size="76" font-weight="600" fill="#203135">J4.3 VCC, all host rails,</ns0:text>
+  <ns0:text x="60" y="1089" font-family="Arial,sans-serif" font-size="76" font-weight="600" fill="#203135">all 3 sensors disconnected.</ns0:text>
+  <ns0:text x="60" y="1181" font-family="Arial,sans-serif" font-size="76" font-weight="600" fill="#203135">SJ1 is source-BRIDGED.</ns0:text>
+  <ns0:text x="60" y="1273" font-family="Arial,sans-serif" font-size="76" font-weight="600" fill="#203135">Power off: physically</ns0:text>
+  <ns0:text x="60" y="1365" font-family="Arial,sans-serif" font-size="76" font-weight="600" fill="#203135">OPEN SJ1; verify continuity</ns0:text>
+  <ns0:text x="60" y="1457" font-family="Arial,sans-serif" font-size="76" font-weight="600" fill="#203135">before any host attachment.</ns0:text>
+  <ns0:text x="60" y="1549" font-family="Arial,sans-serif" font-size="76" font-weight="600" fill="#203135">Mating, fit and powered use</ns0:text>
+  <ns0:text x="60" y="1641" font-family="Arial,sans-serif" font-size="76" font-weight="600" fill="#203135">remain unqualified.</ns0:text>
+  <ns0:text x="55" y="2280" font-family="Arial,sans-serif" font-size="76" font-weight="700" fill="#8b2e16">INCOMPLETE — UNQUALIFIED</ns0:text>
+</ns0:svg>

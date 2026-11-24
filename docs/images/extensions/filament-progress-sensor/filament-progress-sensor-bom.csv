@@ -1,0 +1,30 @@
+Reference,Value,Footprint,DNP
+C1,10uF 25V X5R,Smoothie_Filament_Sensor:C_0805_2012Metric_NoSilk,False
+C2,100nF 50V X7R,Smoothie_Filament_Sensor:C_0603_1608Metric_NoSilk,False
+C3,10uF 25V X5R,Smoothie_Filament_Sensor:C_0805_2012Metric_NoSilk,False
+C4,100nF 50V X7R,Smoothie_Filament_Sensor:C_0603_1608Metric_NoSilk,False
+C5,4.7uF 10V X5R,Smoothie_Filament_Sensor:C_0603_1608Metric_NoSilk,False
+C6,100nF 50V X7R,Capacitor_SMD:C_0603_1608Metric,False
+D1,TPD4E1U06DCKR,Package_TO_SOT_SMD:SOT-363_SC-70-6,False
+H1,MountingHole_3.2mm_M3,MountingHole:MountingHole_3.2mm_M3,False
+H2,MountingHole_3.2mm_M3,MountingHole:MountingHole_3.2mm_M3,False
+J1,GADGETEER S IN,Smoothie_Filament_Sensor:Samtec_SHF105_TH_LC,False
+J2,GADGETEER S CHAIN,Smoothie_Filament_Sensor:Samtec_SHF105_TH_LC,False
+JP3,MOTION OPEN,Jumper:SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm,False
+JP4,CHAIN P4,Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm,False
+JP5,CHAIN P5,Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm,False
+JP6,CS OPEN,Jumper:SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm,False
+JP7,CHAIN P7,Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm,False
+JP8,CHAIN P8,Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm,False
+JP9,CHAIN P9,Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm,False
+R1,3.3k,Smoothie_Filament_Sensor:R_0603_1608Metric_NoSilk,False
+R2,10k,Smoothie_Filament_Sensor:R_0603_1608Metric_NoSilk,False
+TP1,+5V,TestPoint:TestPoint_Pad_D1.0mm,False
+TP2,+3V3,TestPoint:TestPoint_Pad_D1.0mm,False
+TP3,GND,TestPoint:TestPoint_Pad_D1.0mm,False
+TP4,VDDA 1V8,TestPoint:TestPoint_Pad_D1.0mm,False
+TP5,SDIO obs,TestPoint:TestPoint_Pad_D1.0mm,False
+TP6,GND,TestPoint:TestPoint_Pad_D1.0mm,False
+TP7,MOTION_N obs,TestPoint:TestPoint_Pad_D1.0mm,False
+U1,PAT9125EL-TKMT,Smoothie_Filament_Sensor:PixArt_PAT9125EL_LGA-8_3.5x3.2mm,False
+U2,SN74LVC1G125DBVR,Smoothie_Filament_Sensor:SOT-23-5_NoSilk,False

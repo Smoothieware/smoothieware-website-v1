@@ -1,0 +1,124 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 940" role="img">
+  <title>ESP32 v03 — SPI socket S — contacts 1–5</title>
+  <rect width="760" height="940" fill="#f4f3ef" />
+  <text x="25" y="58" font-family="Arial, sans-serif" font-size="48" font-weight="600" fill="#172633">SPI socket S</text>
+  <text x="25" y="106" font-family="Arial, sans-serif" font-size="36" font-weight="600" fill="#172633">v03 · J2 · contact locator</text>
+  <text x="25" y="151" font-family="Arial, sans-serif" font-size="36" font-weight="600" fill="#172633">Connector-local top · not mating face</text>
+  <rect x="15" y="175" width="730" height="132" rx="18" fill="#ffffff" stroke="#c6ced3" stroke-width="1.5" />
+  <g transform="translate(125,236) scale(12) rotate(0) translate(-0.0,-0.0)" data-reference="J2" data-source-side="F.Cu">
+    <rect x="-6.35" y="-2.795" width="12.7" height="5.59" rx="0.2" fill="#414b55" stroke="#0d1015" stroke-width="0.2" />
+    <rect x="-5.4" y="-1.95" width="10.8" height="3.9" fill="#171e24" />
+    <rect x="-1.27" y="1.8" width="2.54" height="1" fill="#171e24" />
+    <rect x="-2.79" y="0.385" width="0.5" height="0.5" fill="#d2af58" data-pin="1" data-net="+3V3" data-uuid="8b0c7934-331b-4b6c-b7ef-ab3b5c01bb70" />
+    <circle cx="-3.24" cy="-0.06499999999999995" r="0.23" fill="#f5f0e0" />
+    <rect x="-2.79" y="-0.885" width="0.5" height="0.5" fill="#d2af58" data-pin="2" data-net="+5V" data-uuid="ee526577-1562-4c75-af62-f03131b92a51" />
+    <rect x="-1.52" y="0.385" width="0.5" height="0.5" fill="#d2af58" data-pin="3" data-net="/S_P3" data-uuid="6dfb30a1-56ce-4d2e-88ae-dda51d95d308" />
+    <rect x="-1.52" y="-0.885" width="0.5" height="0.5" fill="#d2af58" data-pin="4" data-net="/S_P4" data-uuid="dbf403f8-36b1-4388-a4e5-c089294ea96a" />
+    <rect x="-0.25" y="0.385" width="0.5" height="0.5" fill="#d2af58" data-pin="5" data-net="/S_P5" data-uuid="caa97030-4730-4616-b883-01aa020cf946" />
+    <rect x="-0.25" y="-0.885" width="0.5" height="0.5" fill="#d2af58" data-pin="6" data-net="/S_CS" data-uuid="c5bba030-5997-4b98-b235-a23b6d105603" />
+    <rect x="1.02" y="0.385" width="0.5" height="0.5" fill="#d2af58" data-pin="7" data-net="/S_MOSI" data-uuid="34a83db1-f467-4c2e-8645-6914ac248f6e" />
+    <rect x="1.02" y="-0.885" width="0.5" height="0.5" fill="#d2af58" data-pin="8" data-net="/S_MISO" data-uuid="74a7f40b-f2b1-4139-b348-f13fbec35831" />
+    <rect x="2.29" y="0.385" width="0.5" height="0.5" fill="#d2af58" data-pin="9" data-net="/S_SCK" data-uuid="69803e9c-507e-46be-888b-92a702c5ef58" />
+    <rect x="2.29" y="-0.885" width="0.5" height="0.5" fill="#d2af58" data-pin="10" data-net="GND" data-uuid="0c5b3637-256e-4e34-9f4d-ee022a64a8b3" />
+  </g>
+  <path d="M94.5200,243.6200 L238.0000,243.6200 L238.0000,216.0000 L263.0000,216.0000" fill="none" stroke="#6a7a83" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-kind="annotation-leader" data-pad-uuid="8b0c7934-331b-4b6c-b7ef-ab3b5c01bb70" />
+  <circle cx="94.52" cy="243.62" r="5" fill="none" stroke="#b03680" stroke-width="2.5" data-selected-uuid="8b0c7934-331b-4b6c-b7ef-ab3b5c01bb70" data-source-x="3.2649999999999997" data-source-y="39.86" />
+  <text x="30" y="305" font-family="Arial, sans-serif" font-size="36" font-weight="600" fill="#172633">J2.1</text>
+  <rect x="263" y="191" width="466" height="48" rx="16" fill="#f3d2d0" stroke="#465966" stroke-width="1.5" />
+  <text x="278" y="225" font-family="Arial, sans-serif" font-size="36" font-weight="600" fill="#172633">3.3 V supply</text>
+  <text x="275" y="285" font-family="Arial, sans-serif" font-size="36" font-weight="600" fill="#172633">from DevKit · via FB1</text>
+  <rect x="15" y="319" width="730" height="132" rx="18" fill="#ffffff" stroke="#c6ced3" stroke-width="1.5" />
+  <g transform="translate(125,380) scale(12) rotate(0) translate(-0.0,-0.0)" data-reference="J2" data-source-side="F.Cu">
+    <rect x="-6.35" y="-2.795" width="12.7" height="5.59" rx="0.2" fill="#414b55" stroke="#0d1015" stroke-width="0.2" />
+    <rect x="-5.4" y="-1.95" width="10.8" height="3.9" fill="#171e24" />
+    <rect x="-1.27" y="1.8" width="2.54" height="1" fill="#171e24" />
+    <rect x="-2.79" y="0.385" width="0.5" height="0.5" fill="#d2af58" data-pin="1" data-net="+3V3" data-uuid="8b0c7934-331b-4b6c-b7ef-ab3b5c01bb70" />
+    <circle cx="-3.24" cy="-0.06499999999999995" r="0.23" fill="#f5f0e0" />
+    <rect x="-2.79" y="-0.885" width="0.5" height="0.5" fill="#d2af58" data-pin="2" data-net="+5V" data-uuid="ee526577-1562-4c75-af62-f03131b92a51" />
+    <rect x="-1.52" y="0.385" width="0.5" height="0.5" fill="#d2af58" data-pin="3" data-net="/S_P3" data-uuid="6dfb30a1-56ce-4d2e-88ae-dda51d95d308" />
+    <rect x="-1.52" y="-0.885" width="0.5" height="0.5" fill="#d2af58" data-pin="4" data-net="/S_P4" data-uuid="dbf403f8-36b1-4388-a4e5-c089294ea96a" />
+    <rect x="-0.25" y="0.385" width="0.5" height="0.5" fill="#d2af58" data-pin="5" data-net="/S_P5" data-uuid="caa97030-4730-4616-b883-01aa020cf946" />
+    <rect x="-0.25" y="-0.885" width="0.5" height="0.5" fill="#d2af58" data-pin="6" data-net="/S_CS" data-uuid="c5bba030-5997-4b98-b235-a23b6d105603" />
+    <rect x="1.02" y="0.385" width="0.5" height="0.5" fill="#d2af58" data-pin="7" data-net="/S_MOSI" data-uuid="34a83db1-f467-4c2e-8645-6914ac248f6e" />
+    <rect x="1.02" y="-0.885" width="0.5" height="0.5" fill="#d2af58" data-pin="8" data-net="/S_MISO" data-uuid="74a7f40b-f2b1-4139-b348-f13fbec35831" />
+    <rect x="2.29" y="0.385" width="0.5" height="0.5" fill="#d2af58" data-pin="9" data-net="/S_SCK" data-uuid="69803e9c-507e-46be-888b-92a702c5ef58" />
+    <rect x="2.29" y="-0.885" width="0.5" height="0.5" fill="#d2af58" data-pin="10" data-net="GND" data-uuid="0c5b3637-256e-4e34-9f4d-ee022a64a8b3" />
+  </g>
+  <path d="M94.5200,372.3800 L238.0000,372.3800 L238.0000,360.0000 L263.0000,360.0000" fill="none" stroke="#6a7a83" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-kind="annotation-leader" data-pad-uuid="ee526577-1562-4c75-af62-f03131b92a51" />
+  <circle cx="94.52" cy="372.38" r="5" fill="none" stroke="#b03680" stroke-width="2.5" data-selected-uuid="ee526577-1562-4c75-af62-f03131b92a51" data-source-x="4.535" data-source-y="39.86" />
+  <text x="30" y="449" font-family="Arial, sans-serif" font-size="36" font-weight="600" fill="#172633">J2.2</text>
+  <rect x="263" y="335" width="466" height="48" rx="16" fill="#f7dfbf" stroke="#465966" stroke-width="1.5" />
+  <text x="278" y="369" font-family="Arial, sans-serif" font-size="36" font-weight="600" fill="#172633">5 V supply</text>
+  <text x="275" y="429" font-family="Arial, sans-serif" font-size="36" font-weight="600" fill="#172633">from DevKit · via D1</text>
+  <rect x="15" y="463" width="730" height="132" rx="18" fill="#ffffff" stroke="#c6ced3" stroke-width="1.5" />
+  <g transform="translate(125,524) scale(12) rotate(0) translate(-0.0,-0.0)" data-reference="J2" data-source-side="F.Cu">
+    <rect x="-6.35" y="-2.795" width="12.7" height="5.59" rx="0.2" fill="#414b55" stroke="#0d1015" stroke-width="0.2" />
+    <rect x="-5.4" y="-1.95" width="10.8" height="3.9" fill="#171e24" />
+    <rect x="-1.27" y="1.8" width="2.54" height="1" fill="#171e24" />
+    <rect x="-2.79" y="0.385" width="0.5" height="0.5" fill="#d2af58" data-pin="1" data-net="+3V3" data-uuid="8b0c7934-331b-4b6c-b7ef-ab3b5c01bb70" />
+    <circle cx="-3.24" cy="-0.06499999999999995" r="0.23" fill="#f5f0e0" />
+    <rect x="-2.79" y="-0.885" width="0.5" height="0.5" fill="#d2af58" data-pin="2" data-net="+5V" data-uuid="ee526577-1562-4c75-af62-f03131b92a51" />
+    <rect x="-1.52" y="0.385" width="0.5" height="0.5" fill="#d2af58" data-pin="3" data-net="/S_P3" data-uuid="6dfb30a1-56ce-4d2e-88ae-dda51d95d308" />
+    <rect x="-1.52" y="-0.885" width="0.5" height="0.5" fill="#d2af58" data-pin="4" data-net="/S_P4" data-uuid="dbf403f8-36b1-4388-a4e5-c089294ea96a" />
+    <rect x="-0.25" y="0.385" width="0.5" height="0.5" fill="#d2af58" data-pin="5" data-net="/S_P5" data-uuid="caa97030-4730-4616-b883-01aa020cf946" />
+    <rect x="-0.25" y="-0.885" width="0.5" height="0.5" fill="#d2af58" data-pin="6" data-net="/S_CS" data-uuid="c5bba030-5997-4b98-b235-a23b6d105603" />
+    <rect x="1.02" y="0.385" width="0.5" height="0.5" fill="#d2af58" data-pin="7" data-net="/S_MOSI" data-uuid="34a83db1-f467-4c2e-8645-6914ac248f6e" />
+    <rect x="1.02" y="-0.885" width="0.5" height="0.5" fill="#d2af58" data-pin="8" data-net="/S_MISO" data-uuid="74a7f40b-f2b1-4139-b348-f13fbec35831" />
+    <rect x="2.29" y="0.385" width="0.5" height="0.5" fill="#d2af58" data-pin="9" data-net="/S_SCK" data-uuid="69803e9c-507e-46be-888b-92a702c5ef58" />
+    <rect x="2.29" y="-0.885" width="0.5" height="0.5" fill="#d2af58" data-pin="10" data-net="GND" data-uuid="0c5b3637-256e-4e34-9f4d-ee022a64a8b3" />
+  </g>
+  <path d="M109.7600,531.6200 L238.0000,531.6200 L238.0000,504.0000 L263.0000,504.0000" fill="none" stroke="#6a7a83" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-kind="annotation-leader" data-pad-uuid="6dfb30a1-56ce-4d2e-88ae-dda51d95d308" />
+  <circle cx="109.76" cy="531.62" r="5" fill="none" stroke="#b03680" stroke-width="2.5" data-selected-uuid="6dfb30a1-56ce-4d2e-88ae-dda51d95d308" data-source-x="3.2649999999999997" data-source-y="41.129999999999995" />
+  <text x="30" y="593" font-family="Arial, sans-serif" font-size="36" font-weight="600" fill="#172633">J2.3</text>
+  <rect x="263" y="479" width="466" height="48" rx="16" fill="#d8e9f4" stroke="#465966" stroke-width="1.5" />
+  <text x="278" y="513" font-family="Arial, sans-serif" font-size="36" font-weight="600" fill="#172633">GPIO33</text>
+  <text x="275" y="573" font-family="Arial, sans-serif" font-size="36" font-weight="600" fill="#172633">GPIO · app sets direction</text>
+  <rect x="15" y="607" width="730" height="132" rx="18" fill="#ffffff" stroke="#c6ced3" stroke-width="1.5" />
+  <g transform="translate(125,668) scale(12) rotate(0) translate(-0.0,-0.0)" data-reference="J2" data-source-side="F.Cu">
+    <rect x="-6.35" y="-2.795" width="12.7" height="5.59" rx="0.2" fill="#414b55" stroke="#0d1015" stroke-width="0.2" />
+    <rect x="-5.4" y="-1.95" width="10.8" height="3.9" fill="#171e24" />
+    <rect x="-1.27" y="1.8" width="2.54" height="1" fill="#171e24" />
+    <rect x="-2.79" y="0.385" width="0.5" height="0.5" fill="#d2af58" data-pin="1" data-net="+3V3" data-uuid="8b0c7934-331b-4b6c-b7ef-ab3b5c01bb70" />
+    <circle cx="-3.24" cy="-0.06499999999999995" r="0.23" fill="#f5f0e0" />
+    <rect x="-2.79" y="-0.885" width="0.5" height="0.5" fill="#d2af58" data-pin="2" data-net="+5V" data-uuid="ee526577-1562-4c75-af62-f03131b92a51" />
+    <rect x="-1.52" y="0.385" width="0.5" height="0.5" fill="#d2af58" data-pin="3" data-net="/S_P3" data-uuid="6dfb30a1-56ce-4d2e-88ae-dda51d95d308" />
+    <rect x="-1.52" y="-0.885" width="0.5" height="0.5" fill="#d2af58" data-pin="4" data-net="/S_P4" data-uuid="dbf403f8-36b1-4388-a4e5-c089294ea96a" />
+    <rect x="-0.25" y="0.385" width="0.5" height="0.5" fill="#d2af58" data-pin="5" data-net="/S_P5" data-uuid="caa97030-4730-4616-b883-01aa020cf946" />
+    <rect x="-0.25" y="-0.885" width="0.5" height="0.5" fill="#d2af58" data-pin="6" data-net="/S_CS" data-uuid="c5bba030-5997-4b98-b235-a23b6d105603" />
+    <rect x="1.02" y="0.385" width="0.5" height="0.5" fill="#d2af58" data-pin="7" data-net="/S_MOSI" data-uuid="34a83db1-f467-4c2e-8645-6914ac248f6e" />
+    <rect x="1.02" y="-0.885" width="0.5" height="0.5" fill="#d2af58" data-pin="8" data-net="/S_MISO" data-uuid="74a7f40b-f2b1-4139-b348-f13fbec35831" />
+    <rect x="2.29" y="0.385" width="0.5" height="0.5" fill="#d2af58" data-pin="9" data-net="/S_SCK" data-uuid="69803e9c-507e-46be-888b-92a702c5ef58" />
+    <rect x="2.29" y="-0.885" width="0.5" height="0.5" fill="#d2af58" data-pin="10" data-net="GND" data-uuid="0c5b3637-256e-4e34-9f4d-ee022a64a8b3" />
+  </g>
+  <path d="M109.7600,660.3800 L238.0000,660.3800 L238.0000,648.0000 L263.0000,648.0000" fill="none" stroke="#6a7a83" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-kind="annotation-leader" data-pad-uuid="dbf403f8-36b1-4388-a4e5-c089294ea96a" />
+  <circle cx="109.76" cy="660.38" r="5" fill="none" stroke="#b03680" stroke-width="2.5" data-selected-uuid="dbf403f8-36b1-4388-a4e5-c089294ea96a" data-source-x="4.535" data-source-y="41.129999999999995" />
+  <text x="30" y="737" font-family="Arial, sans-serif" font-size="36" font-weight="600" fill="#172633">J2.4</text>
+  <rect x="263" y="623" width="466" height="48" rx="16" fill="#d8e9f4" stroke="#465966" stroke-width="1.5" />
+  <text x="278" y="657" font-family="Arial, sans-serif" font-size="36" font-weight="600" fill="#172633">GPIO13</text>
+  <text x="275" y="717" font-family="Arial, sans-serif" font-size="36" font-weight="600" fill="#172633">GPIO · app sets direction</text>
+  <rect x="15" y="751" width="730" height="132" rx="18" fill="#ffffff" stroke="#c6ced3" stroke-width="1.5" />
+  <g transform="translate(125,812) scale(12) rotate(0) translate(-0.0,-0.0)" data-reference="J2" data-source-side="F.Cu">
+    <rect x="-6.35" y="-2.795" width="12.7" height="5.59" rx="0.2" fill="#414b55" stroke="#0d1015" stroke-width="0.2" />
+    <rect x="-5.4" y="-1.95" width="10.8" height="3.9" fill="#171e24" />
+    <rect x="-1.27" y="1.8" width="2.54" height="1" fill="#171e24" />
+    <rect x="-2.79" y="0.385" width="0.5" height="0.5" fill="#d2af58" data-pin="1" data-net="+3V3" data-uuid="8b0c7934-331b-4b6c-b7ef-ab3b5c01bb70" />
+    <circle cx="-3.24" cy="-0.06499999999999995" r="0.23" fill="#f5f0e0" />
+    <rect x="-2.79" y="-0.885" width="0.5" height="0.5" fill="#d2af58" data-pin="2" data-net="+5V" data-uuid="ee526577-1562-4c75-af62-f03131b92a51" />
+    <rect x="-1.52" y="0.385" width="0.5" height="0.5" fill="#d2af58" data-pin="3" data-net="/S_P3" data-uuid="6dfb30a1-56ce-4d2e-88ae-dda51d95d308" />
+    <rect x="-1.52" y="-0.885" width="0.5" height="0.5" fill="#d2af58" data-pin="4" data-net="/S_P4" data-uuid="dbf403f8-36b1-4388-a4e5-c089294ea96a" />
+    <rect x="-0.25" y="0.385" width="0.5" height="0.5" fill="#d2af58" data-pin="5" data-net="/S_P5" data-uuid="caa97030-4730-4616-b883-01aa020cf946" />
+    <rect x="-0.25" y="-0.885" width="0.5" height="0.5" fill="#d2af58" data-pin="6" data-net="/S_CS" data-uuid="c5bba030-5997-4b98-b235-a23b6d105603" />
+    <rect x="1.02" y="0.385" width="0.5" height="0.5" fill="#d2af58" data-pin="7" data-net="/S_MOSI" data-uuid="34a83db1-f467-4c2e-8645-6914ac248f6e" />
+    <rect x="1.02" y="-0.885" width="0.5" height="0.5" fill="#d2af58" data-pin="8" data-net="/S_MISO" data-uuid="74a7f40b-f2b1-4139-b348-f13fbec35831" />
+    <rect x="2.29" y="0.385" width="0.5" height="0.5" fill="#d2af58" data-pin="9" data-net="/S_SCK" data-uuid="69803e9c-507e-46be-888b-92a702c5ef58" />
+    <rect x="2.29" y="-0.885" width="0.5" height="0.5" fill="#d2af58" data-pin="10" data-net="GND" data-uuid="0c5b3637-256e-4e34-9f4d-ee022a64a8b3" />
+  </g>
+  <path d="M125.0000,819.6200 L238.0000,819.6200 L238.0000,792.0000 L263.0000,792.0000" fill="none" stroke="#6a7a83" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-kind="annotation-leader" data-pad-uuid="caa97030-4730-4616-b883-01aa020cf946" />
+  <circle cx="125.0" cy="819.62" r="5" fill="none" stroke="#b03680" stroke-width="2.5" data-selected-uuid="caa97030-4730-4616-b883-01aa020cf946" data-source-x="3.2649999999999997" data-source-y="42.4" />
+  <text x="30" y="881" font-family="Arial, sans-serif" font-size="36" font-weight="600" fill="#172633">J2.5</text>
+  <rect x="263" y="767" width="466" height="48" rx="16" fill="#d8e9f4" stroke="#465966" stroke-width="1.5" />
+  <text x="278" y="801" font-family="Arial, sans-serif" font-size="36" font-weight="600" fill="#172633">GPIO14</text>
+  <text x="275" y="861" font-family="Arial, sans-serif" font-size="36" font-weight="600" fill="#172633">GPIO · app sets direction</text>
+  <text x="25" y="918" font-family="Arial, sans-serif" font-size="36" font-weight="600" fill="#172633">Locator only · unrouted / unqualified</text>
+</svg>

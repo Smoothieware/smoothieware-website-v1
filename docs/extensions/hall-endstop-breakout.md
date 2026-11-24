@@ -1,130 +1,357 @@
 ---
 layout: default
 title: "Hall endstop breakout"
+description: "A contactless magnetic endstop with an open-drain output for a host pull-up: pinout, configuration, homing example and what is not established."
 permalink: /extensions/hall-endstop-breakout
 ---
 
-# Hall endstop breakout
+{% include _includes/extension-board-page.html %}
 
-{% include extension-board-visuals.html slug="hall-endstop-breakout" %}
+{::nomarkdown}
+<div class="xb-hero">
+  <div>
+    <p class="xb-eyebrow">Extension board · Endstops</p>
+    <h1 id="hall-endstop-breakout">Hall endstop breakout</h1>
+    <p class="xb-lead">A contactless endstop built around a DRV5033AJ Hall sensor. It detects either pole of a magnet and pulls the signal low through a transistor; the host supplies the pull-up. An unplugged signal wire therefore reads the same as a detected magnet.</p>
+    <p class="xb-badge">Design candidate · revision v18 · not yet built or tested</p>
+    <div class="xb-actions">
+      <a class="xb-btn xb-btn-primary" href="#get-started">Get started</a>
+      <a class="xb-btn" href="#pinout">Pinout</a>
+      <a class="xb-btn" href="#configuration">Configuration</a>
+    </div>
+  </div>
+  <figure>
+    <img src="/images/extensions/hall-endstop-breakout/hall-endstop-breakout-diagram.svg" alt="Top view of the Hall endstop breakout: a small black Hall sensor at the top, a transistor at the left and a three-contact connector at the bottom.">
+    <figcaption>Top view, drawn from the board&rsquo;s design files (revision v18). This is a drawing, not a photograph.</figcaption>
+  </figure>
+</div>
 
-Provide a magnetic endstop module with a Signal/Ground/5 V connection and explicit normal and fault-state behavior. The historical v13 design remains unqualified; the annotation-only v18 candidate below does not establish a qualified machine limit.
+<div class="xb-stats">
+  <div class="xb-stat"><b>3 wires</b><span>signal, ground and 5&nbsp;V on one connector</span></div>
+  <div class="xb-stat"><b>Either pole</b><span>the sensor is omnipolar; the trip distance depends on the magnet and geometry</span></div>
+  <div class="xb-stat"><b>Open drain</b><span>the board only pulls low; the host provides the pull-up</span></div>
+  <div class="xb-stat"><b>High = triggered</b><span>magnet detected, signal wire open or sensor power absent</span></div>
+  <div class="xb-stat"><b>Yellow LED</b><span>lights while a magnet is detected</span></div>
+  <div class="xb-stat"><b>28 × 17</b><span>millimetres, two M3 mounting holes</span></div>
+</div>
 
-## Development status
+<nav class="xb-nav" aria-label="On this page">
+  <a href="#specs">Tech specs</a>
+  <a href="#tour">Board tour</a>
+  <a href="#pinout">Pinout</a>
+  <a href="#what-you-need">What you need</a>
+  <a href="#get-started">Get started</a>
+  <a href="#configuration">Configuration</a>
+  <a href="#how-it-works">How it works</a>
+  <a href="#troubleshooting">Troubleshooting</a>
+  <a href="#downloads">Downloads</a>
+  <a href="#mounting">Mounting</a>
+  <a href="#electrical">Electrical</a>
+</nav>
+{:/nomarkdown}
 
-**Baseline documentation snapshot: 2026-10-11, before the requested connector/protection/usability revision program.** New revision features require their own reviewed source and qualification evidence.
+<sl-alert variant="warning" open>
+  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+  This is a design candidate that has not been built or tested, and it is not a qualified machine limit. The sensor&rsquo;s switching field does not give a repeatable trip distance in millimetres: the magnet, its orientation and the approach path must be tested. A signal wire shorted to ground reads as clear and is not detected.
+</sl-alert>
 
-This page documents an **unqualified engineering study**, not a released or tested product. Saved CAD, renders and automated checks do not establish a safe assembly, compatible cable, firmware support or a usable current rating.
+## Tech specs {#specs}
 
-Board-specific qualification limits: v13/10 purchased identities/15records/128 selected/1243 historical hashes match;retained native0;host/magnet/fault/physical open.
+{::nomarkdown}
+<div class="xb-tablewrap"><table class="xb-spec">
+  <tbody>
+    <tr><td>Purpose</td><td>Contactless endstop or limit sensing where a mechanical lever would wear</td></tr>
+    <tr><td>Sensor</td><td>Texas Instruments DRV5033AJ, continuous, omnipolar, open drain. Its data sheet gives 3 to 12&nbsp;mT to operate and 1 to 5&nbsp;mT to release; these do not give a trip gap for your magnet.</td></tr>
+    <tr><td>Output stage</td><td>A BSS138BK transistor pulls the signal low when no magnet is present. The board never drives the signal high, so the host must pull it up (3.3&nbsp;V in the example).</td></tr>
+    <tr><td>Series resistor</td><td>330&nbsp;&Omega;, 1&nbsp;%, 1206</td></tr>
+    <tr><td>Protection</td><td>A PESD5V0S1BA diode and a 10&nbsp;nF capacitor on the signal</td></tr>
+    <tr><td>Indicator</td><td>Yellow LED with a 2.2&nbsp;k&Omega; resistor, lit while a magnet is detected; cut link JP1 turns it off</td></tr>
+    <tr><td>Connector</td><td>3 contacts, S, G and 5V, at 2.54&nbsp;mm; exact connector series not specified</td></tr>
+    <tr><td>Test points</td><td>Five test points on the board for 5&nbsp;V, signal, sensor output and two grounds (not drawn in the top view)</td></tr>
+    <tr><td>Size</td><td>28 &times; 17&nbsp;mm with two M3 mounting holes</td></tr>
+    <tr><td>Works with</td><td><a href="/smoothieboard-v2-prime">Smoothieboard V2 Prime</a></td></tr>
+    <tr><td>Licence</td><td>Open hardware, CERN-OHL-S-2.0</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
-## Interfaces and wiring
+Every figure with its basis is in the [electrical specifications](#electrical) appendix; the hole positions are in the [mounting dimensions](#mounting) appendix.
 
-### Inputs
+## Board tour {#tour}
 
-- Magnetic field from a specified magnet and geometry.
-- 5 V field supply and ground through the three-pin Signal/Ground/+5 V connector. A separate adapter cable may connect to Gadgeteer X after its physical pinout is checked.
+The numbers on the drawing match the list below it. The board is shown from the component side. The mounting holes and test points are not drawn in this view.
 
-### Outputs
+{::nomarkdown}
+<figure class="xb-tour">
+  <div class="xb-tour-scroll" tabindex="0" role="region" aria-label="Annotated top view of the board">
+    <div class="xb-tour-stage">
+      <img src="/images/extensions/hall-endstop-breakout/hall-endstop-breakout-diagram.svg" alt="Top view of the Hall endstop breakout with nine numbered markers that are explained in the list below.">
+      <a class="xb-mk" href="#tour-1" style="left:49%;top:74%" aria-label="1: connector">1<span class="xb-pop"><b>Field connector (J1)</b> — a 3-contact connector marked S, G, 5V. Contact 1 (S, signal) is at the left, next to the white dot; 2 is ground; 3 is 5&nbsp;V. The drawing shows two sets of pads for the same three contacts. <i>See the pinout.</i></span></a>
+      <a class="xb-mk xb-pb" href="#tour-2" style="left:50%;top:20.5%" aria-label="2: Hall sensor">2<span class="xb-pop"><b>Hall sensor (U1)</b> — a DRV5033AJ continuous, omnipolar, open-drain Hall sensor. Either magnetic pole pulls its output low when the field is strong enough. The circle on the board marks where the magnet should be brought.</span></a>
+      <a class="xb-mk xb-pb xb-pl" href="#tour-3" style="left:17.7%;top:22.6%" aria-label="3: inverter">3<span class="xb-pop"><b>Inverter transistor (Q1)</b> — a BSS138BK MOSFET. The sensor output drives its gate; its drain, through a series resistor, is the board&rsquo;s signal output. It only pulls the signal low; it never drives it high.</span></a>
+      <a class="xb-mk xb-pb" href="#tour-4" style="left:31.7%;top:20%" aria-label="4: sensor pull-up">4<span class="xb-pop"><b>Sensor pull-up (R1)</b> — a 10&nbsp;k&Omega; resistor from 5&nbsp;V to the sensor output.</span></a>
+      <a class="xb-mk xb-pb xb-pl" href="#tour-5" style="left:18%;top:37%" aria-label="5: series resistor">5<span class="xb-pop"><b>Series resistor (R2)</b> — a 330&nbsp;&Omega; resistor between the transistor and the signal contact.</span></a>
+      <a class="xb-mk" href="#tour-6" style="left:31.7%;top:61%" aria-label="6: noise capacitor">6<span class="xb-pop"><b>Signal capacitor (C2)</b> — a 10&nbsp;nF capacitor from the signal to ground that smooths noise.</span></a>
+      <a class="xb-mk" href="#tour-7" style="left:31.4%;top:80%" aria-label="7: surge diode">7<span class="xb-pop"><b>Surge diode (D1)</b> — a PESD5V0S1BA protection diode from the signal to ground.</span></a>
+      <a class="xb-mk xb-pb xb-pr" href="#tour-8" style="left:82.5%;top:20%" aria-label="8: state LED">8<span class="xb-pop"><b>Magnet LED (D2)</b> — a yellow LED, marked MAG, that lights while the sensor output is low, which is when the magnet is detected. Cut link JP1 turns it off.</span></a>
+      <a class="xb-mk xb-pb" href="#tour-9" style="left:50%;top:33.5%" aria-label="9: supply capacitor">9<span class="xb-pop"><b>Supply capacitor (C1)</b> — a 100&nbsp;nF capacitor next to the sensor.</span></a>
+    </div>
+  </div>
+  <ol class="xb-tour-list">
+    <li id="tour-1"><span class="xb-n">1</span><div><b>Field connector (J1)</b> — a 3-contact connector marked S, G, 5V. Contact 1 (S, signal) is at the left, next to the white dot; 2 is ground; 3 is 5&nbsp;V. The drawing shows two sets of pads for the same three contacts. <i>See the pinout.</i></div></li>
+    <li id="tour-2"><span class="xb-n">2</span><div><b>Hall sensor (U1)</b> — a DRV5033AJ continuous, omnipolar, open-drain Hall sensor. Either magnetic pole pulls its output low when the field is strong enough. The circle on the board marks where the magnet should be brought.</div></li>
+    <li id="tour-3"><span class="xb-n">3</span><div><b>Inverter transistor (Q1)</b> — a BSS138BK MOSFET. The sensor output drives its gate; its drain, through a series resistor, is the board&rsquo;s signal output. It only pulls the signal low; it never drives it high.</div></li>
+    <li id="tour-4"><span class="xb-n">4</span><div><b>Sensor pull-up (R1)</b> — a 10&nbsp;k&Omega; resistor from 5&nbsp;V to the sensor output.</div></li>
+    <li id="tour-5"><span class="xb-n">5</span><div><b>Series resistor (R2)</b> — a 330&nbsp;&Omega; resistor between the transistor and the signal contact.</div></li>
+    <li id="tour-6"><span class="xb-n">6</span><div><b>Signal capacitor (C2)</b> — a 10&nbsp;nF capacitor from the signal to ground that smooths noise.</div></li>
+    <li id="tour-7"><span class="xb-n">7</span><div><b>Surge diode (D1)</b> — a PESD5V0S1BA protection diode from the signal to ground.</div></li>
+    <li id="tour-8"><span class="xb-n">8</span><div><b>Magnet LED (D2)</b> — a yellow LED, marked MAG, that lights while the sensor output is low, which is when the magnet is detected. Cut link JP1 turns it off.</div></li>
+    <li id="tour-9"><span class="xb-n">9</span><div><b>Supply capacitor (C1)</b> — a 100&nbsp;nF capacitor next to the sensor.</div></li>
+  </ol>
+  <figcaption>Point at a number, or tap it, to read what the part is; the same text is in the list. On a small screen, scroll the drawing sideways.</figcaption>
+</figure>
+{:/nomarkdown}
 
-- One host-biased digital endstop indication; HIGH means triggered/fault under the specified firmware polarity.
+## Pinout {#pinout}
 
-### Connection contract
+### J1: field connector
 
-The PCB has no Gadgeteer socket: J1 is pin 1 SIGNAL_OUT, pin 2 GND, pin 3 +5 V. The table below is the repository-canonical host-side X adapter mapping only. Current V2 Prime documentation describes a different physical rail placement; do not release an adapter cable or claim physical compatibility until the real target is inspected and this discrepancy is closed.
+Seen from the component side as in the tour, contact 1 (S) is at the left next to the white dot and contact 3 (5V) at the right.
 
-|  Pin | Function                     |
-| ---: | ---------------------------- |
-|    1 | +3.3 V host logic            |
-|    2 | +5 V sensor supply candidate |
-|    3 | HALL_ENDSTOP                 |
-|    4 | Unused                       |
-|    5 | Unused                       |
-|    6 | Unused                       |
-|    7 | Unused                       |
-|    8 | Unused                       |
-|    9 | Unused                       |
-|   10 | GND                          |
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>Contact</th><th>Function</th><th>Use</th></tr></thead>
+  <tbody>
+    <tr><td>1 (S)</td><td><span class="xb-pill xb-p-sig">SIGNAL_OUT</span></td><td>Open-drain output. Needs a host pull-up; low means clear, high means triggered.</td></tr>
+    <tr><td>2 (G)</td><td><span class="xb-pill xb-p-gnd">GND</span></td><td>Ground shared with the controller</td></tr>
+    <tr><td>3 (5V)</td><td><span class="xb-pill xb-p-5v">5 V</span></td><td>Sensor supply input. Establish the source&rsquo;s current allowance before connecting.</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
-Power off before connecting or changing jumpers. Verify pin 1, signal direction, supply voltage and ground at both ends of every cable. A mechanically fitting connector is not proof of electrical compatibility. If a host pin mapping or current allocation remains unresolved in the design record, do not connect the board until it is resolved.
+### Link and test points
 
-## Electrical design requirements
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>Name</th><th>What it is</th></tr></thead>
+  <tbody>
+    <tr><td>JP1</td><td>Solder link marked CUT TO DISABLE D2: bridged as delivered; cutting it turns the LED off</td></tr>
+    <tr><td>TP1</td><td>5&nbsp;V</td></tr>
+    <tr><td>TP2, TP5</td><td>Ground</td></tr>
+    <tr><td>TP3</td><td>SIGNAL_OUT</td></tr>
+    <tr><td>TP4</td><td>HALL_OUT, the sensor&rsquo;s own output</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
-The following are specification requirements or study assumptions; they are **not measured operating ratings**. A newer selected-revision note takes precedence over historical draft options.
+## What you need {#what-you-need}
 
-- Retain DRV5033AJQDBZR continuous, omnipolar, open-drain Hall sensing in the retained design; its 3–12 mT operate and 1–5 mT release ranges do not establish a trip gap without magnet and motion qualification.
-- Use the v09/v11 BSS138BK,215 inverter and host-owned 3.3 V pull-up; qualify LOW/HIGH levels, rise time, host input, cable, power-up and brownout behavior on the real target.
-- An unplugged/open signal must report trigger/fault when the host pull-up and firmware polarity are present. A grounded signal is an undetected clear fault.
-- Conditional V1 0603 stock-family candidates are C1 100 nF 50 V, R1 10 kΩ 10% and R3 2.2 kΩ 10%; exact reels and ratings require qualification. R2 now uses a 330 Ω 1% 1206 0.25 W part for fault margin; the unidentified stock 0603 alternative is not selected. The generic V2 2N7002 lacks the exact low-supply specification needed for Q1.
+{::nomarkdown}
+<div class="xb-cards">
+  <div class="xb-card"><b>This board</b><span>The design is not yet built.</span></div>
+  <div class="xb-card"><b>A magnet</b><span>Not specified by the design; qualify the part, gap and path.</span></div>
+  <div class="xb-card"><b>Three wires</b><span>Signal, ground and 5&nbsp;V to the controller, with the signal on an input that has a pull-up.</span></div>
+  <div class="xb-card"><b>A free input</b><span>PB1 in the example, if nothing else uses it.</span></div>
+</div>
+{:/nomarkdown}
 
-## Protection in the design record
+## Get started {#get-started}
 
-The design describes the following protection intent. Check the selected schematic and remaining qualification gates before relying on it:
+{::nomarkdown}
+<ol class="xb-steps">
+  <li class="xb-step">
+    <h3>Wire the board</h3>
+    <p>With the power off, connect header G_F (J37) contact 3 (PB1) to J1 contact 1 (signal), contact 10 to J1 contact 2 (ground) and contact 2 (5&nbsp;V) to J1 contact 3. Leave the host 3.3&nbsp;V contact unused: the PB1 pull-up biases the signal. Check the contact numbers on the real boards.</p>
+    <p class="xb-expect">The rail positions on the Prime&rsquo;s physical header need checking against the board before powering; see the Prime header note in the electrical appendix.</p>
+  </li>
+  <li class="xb-step">
+    <h3>Add the configuration</h3>
+    <p>Add the <a href="#configuration">input-check entry</a> to the endstops section and reset the controller.</p>
+  </li>
+  <li class="xb-step">
+    <h3>Check the state</h3>
+    <p>With motion disabled, send <code>M119</code>, bring the magnet to the sensor and take it away, then send it again.</p>
+    <p class="xb-expect">The PB1 state changes from 0 when clear to 1 when triggered. Test a disconnected signal wire separately.</p>
+  </li>
+  <li class="xb-step">
+    <h3>Only then consider homing</h3>
+    <p>Use the worked example below only after the check passes, and adapt every distance and speed to your machine.</p>
+  </li>
+</ol>
+{:/nomarkdown}
 
-The retained circuit has connector signal ESD (D1), C1 supply bypass and R2/C2 output filtering; the signal high level is supplied only by the 3.3 V host. It has no supply fuse, reverse-supply stage or supply TVS. Do not claim 24 V miswire tolerance or safe brownout behavior. R2 is RC1206FR-07330RL, 330 Ω 1%, 0.25 W at 70 °C. A 5.25 V signal short gives an ideal-source upper bound of 84.37 mW at 326.7 Ω; its manufacturer linear derating gives 205.88 mW at 85 °C. This is a calculated margin, with fault duration and actual thermal behavior unqualified.
+## Configuration {#configuration}
 
-## Selected component architecture
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>You want</th><th>Module</th><th>Example</th></tr></thead>
+  <tbody>
+    <tr><td>Read the sensor state without homing</td><td>Endstops (V2)</td><td>The input-check entry</td></tr>
+    <tr><td>Home X towards the sensor</td><td>Endstops (V2)</td><td>The worked X-min example</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
-[Selected v13 review](https://github.com/arthurwolf/extension-boards/blob/main/src/hall-endstop-breakout/component-review.md) covers15records/10 purchased identities. Retain DRV5033AJ and existing BSS138BK/1206 fault-resistor upgrades;earlier2N7002/0603 stock study is historical. Conditional V1 bypass/pulls only,no successor;host/magnet/fault/thermal/physical gates remain.
+### Check the input without homing
 
-## Configuration and commissioning
+With machine loads disabled and an existing configured X actuator, add this entry to the `[endstops]` section:
 
-Use the configuration and firmware contract for the exact selected revision. Do not copy another module’s socket assignments or assume that an unused pin is available. First-article work must verify source selection, reset/unplug behavior, cable orientation and the actual load or sensor interface before normal operation.
+```ini
+[endstops]
+bench_endstop.enable = true
+bench_endstop.pin = PB1^
+bench_endstop.axis = X
+bench_endstop.homing_direction = none
+bench_endstop.limit_enable = false
+```
 
-## Requested connector and usability upgrades
+`^` turns on the input pull-up and no `!` is used because triggered is high. The entry enables neither homing nor a limit. Do not use it while PB1 is allocated elsewhere. In the pinned SmoothieV2 source (revision 2a21c0108b1d095ecd8b2b9358e94055f053c003), the [input parser](https://github.com/Smoothieware/SmoothieV2/blob/2a21c0108b1d095ecd8b2b9358e94055f053c003/Firmware/src/modules/tools/endstops/Endstops.cpp#L130-L200) keeps `homing_direction = none` inputs and the [M119 handler](https://github.com/Smoothieware/SmoothieV2/blob/2a21c0108b1d095ecd8b2b9358e94055f053c003/Firmware/src/modules/tools/endstops/Endstops.cpp#L1013-L1030) reports their state. This has not been run on a built board.
 
-The following are requirements for the next design iterations; this page does **not** claim they are already fitted:
+### Worked X-min homing example
 
-- On electrically suitable three/four-pin low-voltage ports, provide compact alternative 2.54 mm header/Molex-style and keyed STEMMA-family footprints. Populate one connector option per shared position and document its pin order. Use STEMMA QT only for compatible four-wire I²C; connector appearance does not make another signal protocol I²C-compatible.
-- Assess a third shared jack option on eligible endstop-style ports, with separate header, keyed-connector and jack renders; preserve safe insertion behavior and document any fit exception.
-- Render each supported connector population separately. Document clearances, cable access and the exact fitted option.
-- Use uppercase titles in a consistent Montserrat-style face, labels on both sides, visible domain boundaries, a revision-specific wiring guide and this page’s URL on the silk where readable.
-- Keep mounting-hole centers on a documented 10 mm lattice; add cable-tie holes where space and electrical clearances permit. Place status LEDs near accessible edges and give every indicator its own disable solder jumper. Provide labeled test pads and a ground observation point.
-- Review applicable DC power entries for reverse-polarity cutoff with a blinking warning, overvoltage cutoff/indication, controlled startup and electronic overcurrent protection. Indicator and protection circuits must work in the fault state without defeating isolation or safe output defaults. Thermal protection belongs only where the power/thermal analysis justifies it.
-- Electronic protection does not automatically replace a required mains/branch safety fuse. Backfeed blocking and inductive-load flyback clamps are separate design functions. Do not add identity EEPROMs, fault memory, calibration storage or paid self-test hardware under this upgrade program.
+Use this only after the check above passes. It assumes a working Cartesian X axis moving in the negative direction towards the sensor and a carriage starting within 8&nbsp;mm of the trigger point. It allows a 10&nbsp;mm search at 5&nbsp;mm/s, retracts 2&nbsp;mm and approaches again at 1&nbsp;mm/s. The values do not qualify the magnet gap or stopping distance. Replace the check entry with this one; do not leave both enabled.
 
-## Design sources
+```ini
+[endstops]
+minx.enable = true
+minx.pin = PB1^
+minx.axis = X
+minx.homing_direction = home_to_min
+minx.homing_position = 0
+minx.max_travel = 10
+minx.fast_rate = 5
+minx.slow_rate = 1
+minx.retract = 2
+minx.limit_enable = false
+```
 
-- [Board specification](https://github.com/arthurwolf/extension-boards/blob/main/src/hall-endstop-breakout/specs.md)
-- [Architecture and component decisions](https://github.com/arthurwolf/extension-boards/blob/main/src/hall-endstop-breakout/design.md)
-- [Selected-revision review and qualification record](https://github.com/arthurwolf/extension-boards/blob/main/src/hall-endstop-breakout/component-review.md)
-- [All extension boards](/#extension-boards)
+Reload the configuration, then repeat `M119` with the magnet clear and triggered. Keep an emergency stop available and the travel path clear. With `grbl_mode = false` send `G28 X0`; with `grbl_mode = true` send `G28.2 X0`, because plain `G28` is a parking command there. Stop at once if the axis moves away from the sensor or does not stop when triggered. This example deliberately leaves `limit_enable = false`, so it does not give a continuous travel limit. The pinned firmware defines the [homing direction, rates, retract and search distance](https://github.com/Smoothieware/SmoothieV2/blob/2a21c0108b1d095ecd8b2b9358e94055f053c003/Firmware/src/modules/tools/endstops/Endstops.cpp#L196-L235) and the [mode-dependent homing commands](https://github.com/Smoothieware/SmoothieV2/blob/2a21c0108b1d095ecd8b2b9358e94055f053c003/Firmware/src/modules/tools/endstops/Endstops.cpp#L919-L938). Physical operation has not been verified.
 
-Documentation route: `smoothieware.org/extensions/hall-endstop-breakout`.
+## How it works {#how-it-works}
 
-<!-- additive-cad-status:start -->
-## Additive design studies
+{::nomarkdown}
+<figure class="xb-fig">
+  <div class="xb-fig-scroll" tabindex="0" role="region" aria-label="Signal path">
+  <svg viewBox="0 0 1000 170" role="img" aria-labelledby="xb-how-t">
+    <title id="xb-how-t">A magnet pulls the Hall sensor output low, which turns the transistor off and lets the host pull-up raise the signal.</title>
+    <g font-size="13" font-weight="700" text-anchor="middle" fill="#e6ebf2">
+      <rect x="20" y="55" width="170" height="60" rx="8" fill="#212936" stroke="#e0a877"/><text x="105" y="80">Magnet</text><text x="105" y="100" font-weight="400" fill="#a9b4c2">either pole</text>
+      <rect x="250" y="55" width="170" height="60" rx="8" fill="#212936" stroke="#6fe08a"/><text x="335" y="80">Hall sensor U1</text><text x="335" y="100" font-weight="400" fill="#a9b4c2">open drain, pull-up 10 k</text>
+      <rect x="480" y="55" width="170" height="60" rx="8" fill="#212936" stroke="#5fb3ff"/><text x="565" y="80">Transistor Q1</text><text x="565" y="100" font-weight="400" fill="#a9b4c2">pulls signal low</text>
+      <rect x="710" y="55" width="130" height="60" rx="8" fill="#212936" stroke="#5fb3ff"/><text x="775" y="80">330 &#937;</text><text x="775" y="100" font-weight="400" fill="#a9b4c2">series</text>
+      <rect x="880" y="55" width="100" height="60" rx="8" fill="#1f2226" stroke="#dfe4ee"/><text x="930" y="90">J1.1</text>
+    </g>
+    <g stroke-width="3" fill="none" stroke="#a9b4c2"><path d="M190 85H250"/><path d="M420 85H480"/><path d="M650 85H710"/><path d="M840 85H880"/></g>
+  </svg>
+  </div>
+  <figcaption>The path from the magnet to the signal contact.</figcaption>
+</figure>
+{:/nomarkdown}
 
-The 2026-10-11 upgrade program has saved additional candidates v14, v15, v16. These studies preserve the historical design described above. Their connector, LED, mechanical and protection changes are revision-specific and remain unqualified.
+With no magnet near, the sensor output is high through its 10&nbsp;k&Omega; pull-up, the transistor is on and the signal is pulled to ground: clear, read as 0. When a magnet is near, the sensor pulls its output low, the transistor turns off and the host pull-up raises the signal: triggered, read as 1. An unplugged signal wire or lost sensor power also lets the host pull-up raise the line, so both read as triggered. A signal shorted to ground reads as clear and is not detected.
 
-See the [per-board changes, failures and remaining work](https://github.com/arthurwolf/extension-boards/blob/main/src/hall-endstop-breakout/fancification.md) and [mandatory family specification](https://github.com/arthurwolf/extension-boards/blob/main/docs/FANCIFICATION-SPEC.md). Use the source hash and native check for the exact candidate being reviewed; do not infer hardware ratings from a rendered population.
-<!-- additive-cad-status:end -->
+## Troubleshooting {#troubleshooting}
 
-<!-- extension-upgrade-readback:start -->
-## Historical first-program candidate readback
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>Symptom</th><th>Check</th></tr></thead>
+  <tbody>
+    <tr><td>Always reads triggered</td><td>The signal wire is open, 5&nbsp;V is missing, or the magnet sits too close. Measure TP1 and TP4.</td></tr>
+    <tr><td>Never reads triggered</td><td>Signal shorted to ground, wrong input pin, or the magnet never reaches the sensor&rsquo;s operate field.</td></tr>
+    <tr><td>Reads high with no pull-up</td><td>The input has no pull-up: check the <code>^</code> in the pin name.</td></tr>
+    <tr><td>Trip point moves</td><td>Temperature, magnet and geometry are not specified or qualified.</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
-The three additional revisions are **v14, v15, v16**. They are engineering studies; saved CAD and renders do not release the hardware. The historical first-program candidate is described below; second-round v18 results are recorded separately further down.
+{::nomarkdown}
+<div class="xb-tablewrap"><table class="xb-leds">
+  <thead><tr><th>Light</th><th><span class="xb-led xb-led-amber"></span>Yellow (D2, MAG)</th></tr></thead>
+  <tbody>
+    <tr><td>Where</td><td>Top right, labelled HALL ENDSTOP</td></tr>
+    <tr><td>Lit means</td><td>The sensor output is low: a magnet is detected</td></tr>
+    <tr><td>Off means</td><td>No magnet, 5&nbsp;V missing, or link JP1 cut</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
-### hall-endstop
+Still stuck? Read [how to ask for help](/help-guidelines) or see the general [troubleshooting guide](/troubleshooting/).
 
-- [Historical first-program PCB source](https://github.com/arthurwolf/extension-boards/blob/main/src/hall-endstop-breakout/attempt/versions/v16/hall-endstop.kicad_pcb), SHA-256 `a2520e37f4d11516d0c7af8b12a7e12bbd5e2a1a6fe2fc2bddf0d25cf1cb9a42`.
-- Last native check: **2 errors**, including **0 open connections**. This is a CAD result, not electrical, assembly or firmware qualification.
-- Alternative connector lands recorded: J1 / `JST_PH_B3B-PH-K_1x03_P2.00mm_Vertical`. Fit only the selected population; check its pin map and voltage in the design record.
-- [normal population/render record](https://github.com/arthurwolf/extension-boards/blob/main/src/hall-endstop-breakout/attempt/versions/v16/populations/hall-endstop/normal/population.json): 6 images; source current; image hashes match; 0 unresolved models.
-- [stemma population/render record](https://github.com/arthurwolf/extension-boards/blob/main/src/hall-endstop-breakout/attempt/versions/v16/populations/hall-endstop/stemma/population.json): 6 images; source current; image hashes match; 0 unresolved models.
-- [Changes, failed trials and remaining work](https://github.com/arthurwolf/extension-boards/blob/main/src/hall-endstop-breakout/attempt/versions/v16/hall-endstop-fancification-revision.md).
+## Downloads {#downloads}
 
-Applicable protection, current-path, thermal, pinout, cable access and physical tests remain open wherever the linked board record has not verified them. A zero native-error count does not close those gates.
-<!-- extension-upgrade-readback:end -->
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>File</th><th>Revision</th><th>What it is</th></tr></thead>
+  <tbody>
+    <tr><td><a href="/images/extensions/hall-endstop-breakout/hall-endstop-breakout-schematic.pdf">Schematic (PDF)</a></td><td>v18</td><td>The complete circuit diagram. Its title block reads v13.</td></tr>
+    <tr><td><a href="/images/extensions/hall-endstop-breakout/hall-endstop-breakout-bom.csv">Parts list (CSV)</a></td><td>v18</td><td>Every component with its value and footprint</td></tr>
+    <tr><td><a href="/images/extensions/hall-endstop-breakout/hall-endstop-breakout-diagram.svg">Board drawing (SVG)</a></td><td>v18</td><td>The top view used on this page, at full resolution</td></tr>
+    <tr><td><a href="/assets/downloads/extensions/hall-endstop-breakout/hall-cad-study.zip">CAD study (ZIP, 70 KiB)</a></td><td>v18</td><td>KiCad 9 project, schematic, local libraries and notes. A 2D design study with no fabrication or operating qualification.</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
-## Second-round usability candidate: v18
+## Appendix: mounting dimensions {#mounting}
 
-Revision titles are corrected. The complete website URL still needs readable clear space; this revision does not claim that requirement is met.
+For drilling a mounting plate or designing an enclosure. Positions are hole centres, in millimetres, measured from the top-left corner with the board seen from the component side. The connector overhangs the lower edge.
 
-No enabled native design-rule or electrical-rule diagnostics remain. The protected v17 circuit, exact non-text electrical geometry, component placement, outline, schematic and electrical rule settings are unchanged. This is an annotation candidate, with no new components and no area or priced purchasing saving claimed.
+{::nomarkdown}
+<figure class="xb-fig">
+  <div class="xb-fig-scroll" tabindex="0" role="region" aria-label="Mounting drawing">
+  <svg viewBox="0 0 1000 480" role="img" aria-labelledby="xb-hall-mount-t">
+  <title id="xb-hall-mount-t">Mounting drawing of the hall endstop breakout, component side: outline 28 by 17 millimetres with 2 mounting holes. Hole positions are listed in the table below.</title>
+  <text x="480.0" y="24" text-anchor="middle" font-size="13" font-weight="700" letter-spacing="1" fill="#a9b4c2">COMPONENT SIDE · millimetres</text>
+  <rect x="200.0" y="78.0" width="560.0" height="340.0" rx="20.0" fill="#1f2226" stroke="#e6ebf2" stroke-width="1.5"/>
+  <g stroke="#a9b4c2" stroke-width="1.2" fill="none"><path d="M200.0 56H760.0"/><path d="M200.0 50V62"/><path d="M760.0 50V62"/><path d="M786.0 78.0V418.0"/><path d="M780.0 78.0h12"/><path d="M780.0 418.0h12"/></g>
+  <text x="480.0" y="48" text-anchor="middle" font-size="15" font-weight="700" fill="#e6ebf2">28</text>
+  <text x="798.0" y="253.0" font-size="15" font-weight="700" fill="#e6ebf2">17</text>
+  <circle cx="200.0" cy="78.0" r="4" fill="#ffcc33"/>
+  <text x="188.0" y="83.0" text-anchor="end" font-size="14" font-weight="700" fill="#ffcc33">0, 0</text>
+  <g stroke="#ffcc33" stroke-width="1.5" fill="#ffcc33"><path d="M142.0 104.0h30" fill="none"/><path d="M176.0 104.0l-8 -4v8z"/><path d="M142.0 104.0v30" fill="none"/><path d="M142.0 138.0l-4 -8h8z"/></g>
+  <text x="180.0" y="109.0" font-size="12" font-weight="700" fill="#ffcc33">X</text>
+  <text x="138.0" y="154.0" font-size="12" font-weight="700" fill="#ffcc33">Y</text>
+  <circle cx="280.0" cy="338.0" r="32.0" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <path d="M244.0 338.0h72.0M280.0 302.0v72.0" stroke="#ffcc33" stroke-width=".8" fill="none"/>
+  <text x="248.0" y="296.0" text-anchor="start" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">1</tspan>  4.00, 13.00</text>
+  <circle cx="680.0" cy="338.0" r="32.0" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <path d="M644.0 338.0h72.0M680.0 302.0v72.0" stroke="#ffcc33" stroke-width=".8" fill="none"/>
+  <text x="712.0" y="296.0" text-anchor="end" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">2</tspan>  24.00, 13.00</text>
+  <text x="480.0" y="448.0" text-anchor="middle" font-size="13" fill="#a9b4c2">Numbered rings are mounting holes. Positions are hole centres, X then Y, from the marked corner.</text>
+  </svg>
+  </div>
+  <figcaption>Board outline 28 × 17&nbsp;mm, corners rounded to a 1&nbsp;mm radius, board thickness 1.6&nbsp;mm. Drawn from the design files, component side up, in the same orientation as the board tour.</figcaption>
+</figure>
 
-All12 populated/bare top, bottom and isometric views across the existing normal and keyed STEMMA-family populations were hash-verified and inspected, with manufacturing exports, BOM and placement files regenerated from the current source. Select the connector and cable by the exact source pin map; matching connector shape does not establish interchangeable pin order or an I²C interface.
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>Hole</th><th>X (mm)</th><th>Y (mm)</th><th>Diameter</th><th>Use</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td>4.00</td><td>13.00</td><td>3.2&nbsp;mm, not plated</td><td>Mounting, M3 screw</td></tr>
+    <tr><td>2</td><td>24.00</td><td>13.00</td><td>3.2&nbsp;mm, not plated</td><td>Mounting, M3 screw</td></tr>
+  </tbody>
+</table></div>
 
-[Current v18 source](https://github.com/arthurwolf/extension-boards/blob/main/src/hall-endstop-breakout/attempt/versions/v18/hall-endstop.kicad_pcb), SHA-256 `2af85424da054ad77b81d73755e712ebbfe8f022b647018225b5d53e313f8fc5`. [Board-local second-round changes, ignored rules and remaining work](https://github.com/arthurwolf/extension-boards/blob/main/src/hall-endstop-breakout/fancification-round2.md).
+{:/nomarkdown}
 
-Physical assembly, connector fit, actual host wiring, fault-state behavior and sensor qualification remain open. **Fabrication release remains false.**
+## Appendix: electrical specifications {#electrical}
+
+Every figure is a design value, a value calculated from the design or a value from a part, as the last column says. None is a measurement on a built board. **Open** means not established.
+
+{::nomarkdown}
+<div class="xb-tablewrap"><table class="xb-elec">
+  <thead><tr><th>Parameter</th><th>Applies to</th><th>Lower</th><th>Nominal</th><th>Upper</th><th>Basis and conditions</th></tr></thead>
+  <tbody>
+    <tr><td>Sensor supply</td><td>J1 contact 3</td><td>Open</td><td>5 V</td><td>Open</td><td>Host-derived; current allowance Open</td></tr>
+    <tr><td>Operate field</td><td>DRV5033AJ</td><td>3 mT</td><td>—</td><td>12 mT</td><td>From the sensor data sheet; does not give a trip gap</td></tr>
+    <tr><td>Release field</td><td>DRV5033AJ</td><td>1 mT</td><td>—</td><td>5 mT</td><td>From the sensor data sheet</td></tr>
+    <tr><td>Signal output</td><td>J1 contact 1</td><td>—</td><td>Open drain, high = triggered</td><td>—</td><td>Host pull-up required; low and high levels, rise time and input compatibility Open</td></tr>
+    <tr><td>Trip gap, repeatability, temperature behaviour</td><td>Whole board</td><td>Open</td><td>Open</td><td>Open</td><td>Magnet and geometry not specified</td></tr>
+    <tr><td>Cable length and filtering, brownout behaviour</td><td>Whole board</td><td>Open</td><td>Open</td><td>Open</td><td>Needs testing</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+### Prime header G_F (J37)
+
+On the Prime, header G_F (J37) has 3.3&nbsp;V on contact 1, 5&nbsp;V on contact 2, PB1 on 3, PJ4 on 4 and ground on 10. A discrepancy in the rail positions on the Prime&rsquo;s physical connector has been noted: verify numbered continuity with the power removed. The header is unshrouded.
+
+See all boards on the [extension boards](/extension-boards) page.

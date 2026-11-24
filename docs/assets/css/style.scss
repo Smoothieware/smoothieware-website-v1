@@ -389,6 +389,12 @@ img[src*="icon."] {
   display: none;
 }
 
+
+/* Extension guides need their board name before the task instructions. */
+.markdown-body.extension-guide > h1:first-child {
+  display: block;
+}
+
 /* Increase page width by 25% - override midnight theme's wrapper and section widths */
 .wrapper {
   width: 1000px !important; /* Default is 800px, increased by 25% */
@@ -431,6 +437,68 @@ section {
 
 
 @media print, screen and (max-width: 1080px) {
+  /* A wrapped header has variable height; keep it in flow so it cannot cover
+     guide headings or force the whole page wider than a narrow viewport. */
+  .smoothie-nav {
+    position: relative;
+    height: auto;
+  }
+
+  body {
+    padding-top: 0;
+  }
+
+  .nav-content {
+    box-sizing: border-box;
+    min-width: 0;
+    flex-direction: column;
+    padding: 16px;
+    gap: 12px;
+  }
+
+  .nav-left {
+    max-width: 100%;
+    gap: 12px;
+  }
+
+  .nav-logo {
+    width: 40px !important;
+    height: 40px !important;
+  }
+
+  .nav-title {
+    font-size: 24px;
+  }
+
+  .nav-right {
+    width: 100%;
+    min-width: 0;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .nav-dropdown sl-menu {
+    box-sizing: border-box;
+    width: min(360px, calc(100vw - 24px));
+    max-width: calc(100vw - 24px);
+  }
+
+  .nav-dropdown sl-menu-item::part(label),
+  .nav-dropdown .menu-link {
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+
+  .search-menu {
+    min-width: 0;
+    width: min(300px, calc(100vw - 24px));
+  }
+
+  .search-input {
+    min-width: 0;
+  }
+
   .wrapper {
     width: auto !important;
     max-width: 90% !important;
@@ -471,6 +539,12 @@ section {
   font-size: 0.9em !important;
 }
 
+/* Source revisions and pin identifiers can be longer than a phone viewport.
+   Keep preformatted configuration blocks independently scrollable. */
+.markdown-body :not(pre) > code {
+  overflow-wrap: anywhere;
+}
+
 /* Table styling - prevent overflow and enable word wrap */
 .markdown-body table {
   max-width: 100% !important;
@@ -503,6 +577,38 @@ section {
   min-width: 80px !important; /* Minimum width to prevent columns from becoming too narrow */
 }
 
+/* Keep the Raw Pins contact inventory readable without widening the page. */
+.markdown-body .extension-contact-table,
+.markdown-body .raw-pins-contact-table {
+  max-width: 100%;
+  overflow-x: auto;
+  margin: 1.2em 0;
+}
+
+.markdown-body .extension-contact-table:focus-visible,
+.markdown-body .raw-pins-contact-table:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
+.markdown-body .extension-contact-table table,
+.markdown-body .raw-pins-contact-table table {
+  min-width: 640px !important;
+  max-width: none !important;
+  table-layout: auto !important;
+  margin: 0 !important;
+}
+
+.markdown-body .extension-contact-table th,
+.markdown-body .raw-pins-contact-table th,
+.markdown-body .extension-contact-table td,
+.markdown-body .raw-pins-contact-table td {
+  word-break: normal !important;
+  overflow-wrap: normal !important;
+  word-wrap: normal !important;
+  hyphens: none !important;
+}
+
 /* Draft additions highlighting - dark red background for new text (visible on dark theme) */
 .draft-addition {
   background-color: #4a1515 !important;
@@ -530,4 +636,36 @@ section {
 .markdown-body li li {
   margin-top: 0 !important;
   margin-bottom: 0 !important;
+}
+
+// Permit the complete pinned revision to wrap within the Perma-Proto reader.
+.markdown-body code.perma-proto-firmware-revision {
+  overflow-wrap: anywhere;
+  word-break: normal;
+}
+
+/* Preserve readable Perma-Proto contact phrases on narrow screens. */
+.markdown-body .perma-proto-contact-table { max-width: 100%; overflow-x: auto; margin: 1.2em 0; }
+.markdown-body .perma-proto-contact-table:focus-visible { outline: 2px solid currentColor; outline-offset: 2px; }
+.markdown-body .perma-proto-contact-table table { min-width: 460px !important; max-width: none !important; table-layout: fixed !important; margin: 0 !important; }
+.markdown-body .perma-proto-contact-table th,
+.markdown-body .perma-proto-contact-table td { word-break: normal !important; overflow-wrap: normal !important; word-wrap: normal !important; hyphens: none !important; }
+
+.markdown-body .perma-proto-contact-table th:first-child { width: 70px !important; }
+.markdown-body .perma-proto-contact-table th:nth-child(2) { width: 140px !important; }
+
+/* Directory columns retain readable phrases; narrow screens scroll inside the table. */
+.markdown-body .extension-board-directory { max-width: 100%; overflow-x: auto; margin: 1.2em 0; }
+.markdown-body .extension-board-directory:focus-visible { outline: 2px solid currentColor; outline-offset: 2px; }
+.markdown-body .extension-board-directory table { min-width: 760px !important; width: 100%; table-layout: fixed !important; margin: 0 !important; }
+.markdown-body .extension-board-directory th,
+.markdown-body .extension-board-directory td { word-break: normal !important; overflow-wrap: break-word !important; hyphens: none !important; }
+.markdown-body .extension-board-directory th:first-child { width: 20%; }
+.markdown-body .extension-board-directory th:nth-child(2) { width: 25%; }
+.markdown-body .extension-board-directory td:nth-child(2) img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 160px;
+  object-fit: contain;
 }

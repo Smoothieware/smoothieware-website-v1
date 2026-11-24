@@ -1,0 +1,178 @@
+---
+layout: default
+title: "Multi-motor single-axis command splitter"
+permalink: /extensions/historical-multi-motor-single-axis-splitter
+---
+
+# Multi-motor single-axis command splitter
+
+This logic board gates one shared STEP stream separately to four motor-driver channels while sharing buffered DIR and ENABLE. It is intended for parallel screws or actuators that normally move together but may require individual adjustment. It splits command signals, not motor winding power and not four independent interpolated axes.
+
+## Documented revision and original host
+
+This guide documents the **historical Ccecil source snapshot**, pinned by the local Smoothieboard2 parent, rather than a modern replacement board. [The exact upstream revision](https://github.com/Ccecil/MultiMotorSingleAxisSplitter/tree/78c84c17d5de61348682debc81ea5d1ebc0c7a5b) identifies the retained design. A repository commit is not an assembly revision or evidence of current production. The source targets the Smoothieboard V2/Gadgeteer era. That intended generation does not prove compatibility with every later V2 Prime board, cable or firmware build.
+
+## Interfaces, power and limitations
+
+J1/J7 contacts 3–9 are STEP,DIR,M1_EN,M2_EN,M3_EN,M4_EN,EN_Common. J2–J5 each use1 5 V, 2 gated STEP, 3 buffered DIR, 4 buffered common ENABLE, 5 ground. The retained parts are 74LS132 and 74LS240; the README describes noninverting paths with open-drain5 V pull-ups. Exact fitted logic family, output topology and input thresholds must be reconciled before relying on that prose.3.3 V host compatibility cannot be inferred from a 3–5 V README range alone.
+
+### TTL outputs need a matched receiver
+
+The traced logic uses NAND gates followed by inverting 74LS240 buffers; the gated STEP path depends on STEP and its channel enable. Do not treat the README’s “open-drain” description as a verified description of a 74LS240 output. Its resistor-array loading and actual fitted logic manufacturer still need reconciliation.
+
+For a named comparison, the [TI SN74LS240 datasheet](https://www.ti.com/lit/ds/symlink/sn74ls240.pdf), electrical characteristics on page 5, guarantees output HIGH of only 2.4 V at the stated −3 mA load and minimum supply. The [Leadshine DM542E manual](https://www.leadshine.com/upfiles/downloads/d5375bf4c28b5c75b2d150c9762781c9_1651052967281.pdf) requires at least 4.5 V HIGH in 5 V input mode. Thus that pairing has no guaranteed direct HIGH margin from these specifications. This does not predict every sample’s voltage; it means the documentation cannot offer a guaranteed direct cable. Use a source-qualified interface and named driver input circuit before documenting a powered installation.
+
+## Board-reference diagram
+
+The overview and contact sheets below use this revision’s canonical abstract board artwork. Each numbered pill identifies a native source contact; dashed leaders locate the selected source component, rather than an electrical wire. The four driver connectors carry command signals, not motor winding power. **Do not energize this board until the fitted logic, output topology, receiver margins and supply requirements are reconciled.** No Prime cable or motor-control sequence is qualified here.
+
+{% include _includes/extension-instruction-diagram.html id="historical-splitter-reference-overview" src="/images/extensions/historical-multi-motor-single-axis-splitter/guides/annotated-reference/overview.svg" title="Multi-motor splitter" alt="Multi-motor splitter — historical board source reference" caption="Source-matched logic and contact reference. The output-stage description conflicts with the named logic parts; ratings, receiver margins and physical mating remain unqualified." width=420 %}
+
+<details markdown="1">
+<summary>Connector, logic, resistor-array and mounting references</summary>
+
+{% include _includes/extension-instruction-diagram.html id="historical-splitter-reference-c1-pins-1" src="/images/extensions/historical-multi-motor-single-axis-splitter/guides/annotated-reference/c1-pins-1.svg" title="Capacitor C1 / 1" alt="Capacitor C1 / 1 — historical board source reference" caption="Source-matched logic and contact reference. The output-stage description conflicts with the named logic parts; ratings, receiver margins and physical mating remain unqualified." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="historical-splitter-reference-c2-pins-1" src="/images/extensions/historical-multi-motor-single-axis-splitter/guides/annotated-reference/c2-pins-1.svg" title="Capacitor C2 / 1" alt="Capacitor C2 / 1 — historical board source reference" caption="Source-matched logic and contact reference. The output-stage description conflicts with the named logic parts; ratings, receiver margins and physical mating remain unqualified." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="historical-splitter-reference-c3-pins-1" src="/images/extensions/historical-multi-motor-single-axis-splitter/guides/annotated-reference/c3-pins-1.svg" title="Capacitor C3 / 1" alt="Capacitor C3 / 1 — historical board source reference" caption="Source-matched logic and contact reference. The output-stage description conflicts with the named logic parts; ratings, receiver margins and physical mating remain unqualified." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="historical-splitter-reference-h1-pins-1" src="/images/extensions/historical-multi-motor-single-axis-splitter/guides/annotated-reference/h1-pins-1.svg" title="Mounting H1 / 1" alt="Mounting H1 / 1 — historical board source reference" caption="Source-matched logic and contact reference. The output-stage description conflicts with the named logic parts; ratings, receiver margins and physical mating remain unqualified." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="historical-splitter-reference-h2-pins-1" src="/images/extensions/historical-multi-motor-single-axis-splitter/guides/annotated-reference/h2-pins-1.svg" title="Mounting H2 / 1" alt="Mounting H2 / 1 — historical board source reference" caption="Source-matched logic and contact reference. The output-stage description conflicts with the named logic parts; ratings, receiver margins and physical mating remain unqualified." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="historical-splitter-reference-h3-pins-1" src="/images/extensions/historical-multi-motor-single-axis-splitter/guides/annotated-reference/h3-pins-1.svg" title="Mounting H3 / 1" alt="Mounting H3 / 1 — historical board source reference" caption="Source-matched logic and contact reference. The output-stage description conflicts with the named logic parts; ratings, receiver margins and physical mating remain unqualified." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="historical-splitter-reference-h4-pins-1" src="/images/extensions/historical-multi-motor-single-axis-splitter/guides/annotated-reference/h4-pins-1.svg" title="Mounting H4 / 1" alt="Mounting H4 / 1 — historical board source reference" caption="Source-matched logic and contact reference. The output-stage description conflicts with the named logic parts; ratings, receiver margins and physical mating remain unqualified." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="historical-splitter-reference-h5-pins-1" src="/images/extensions/historical-multi-motor-single-axis-splitter/guides/annotated-reference/h5-pins-1.svg" title="Mounting H5 / 1" alt="Mounting H5 / 1 — historical board source reference" caption="Source-matched logic and contact reference. The output-stage description conflicts with the named logic parts; ratings, receiver margins and physical mating remain unqualified." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="historical-splitter-reference-j1-pins-1" src="/images/extensions/historical-multi-motor-single-axis-splitter/guides/annotated-reference/j1-pins-1.svg" title="Host header J1 / 1" alt="Host header J1 / 1 — historical board source reference" caption="Source-matched logic and contact reference. The output-stage description conflicts with the named logic parts; ratings, receiver margins and physical mating remain unqualified." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="historical-splitter-reference-j1-pins-2" src="/images/extensions/historical-multi-motor-single-axis-splitter/guides/annotated-reference/j1-pins-2.svg" title="Host header J1 / 2" alt="Host header J1 / 2 — historical board source reference" caption="Source-matched logic and contact reference. The output-stage description conflicts with the named logic parts; ratings, receiver margins and physical mating remain unqualified." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="historical-splitter-reference-j2-pins-1" src="/images/extensions/historical-multi-motor-single-axis-splitter/guides/annotated-reference/j2-pins-1.svg" title="Driver controls J2 / 1" alt="Driver controls J2 / 1 — historical board source reference" caption="Source-matched logic and contact reference. The output-stage description conflicts with the named logic parts; ratings, receiver margins and physical mating remain unqualified." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="historical-splitter-reference-j3-pins-1" src="/images/extensions/historical-multi-motor-single-axis-splitter/guides/annotated-reference/j3-pins-1.svg" title="Driver controls J3 / 1" alt="Driver controls J3 / 1 — historical board source reference" caption="Source-matched logic and contact reference. The output-stage description conflicts with the named logic parts; ratings, receiver margins and physical mating remain unqualified." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="historical-splitter-reference-j4-pins-1" src="/images/extensions/historical-multi-motor-single-axis-splitter/guides/annotated-reference/j4-pins-1.svg" title="Driver controls J4 / 1" alt="Driver controls J4 / 1 — historical board source reference" caption="Source-matched logic and contact reference. The output-stage description conflicts with the named logic parts; ratings, receiver margins and physical mating remain unqualified." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="historical-splitter-reference-j5-pins-1" src="/images/extensions/historical-multi-motor-single-axis-splitter/guides/annotated-reference/j5-pins-1.svg" title="Driver controls J5 / 1" alt="Driver controls J5 / 1 — historical board source reference" caption="Source-matched logic and contact reference. The output-stage description conflicts with the named logic parts; ratings, receiver margins and physical mating remain unqualified." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="historical-splitter-reference-j7-pins-1" src="/images/extensions/historical-multi-motor-single-axis-splitter/guides/annotated-reference/j7-pins-1.svg" title="Control row J7 / 1" alt="Control row J7 / 1 — historical board source reference" caption="Source-matched logic and contact reference. The output-stage description conflicts with the named logic parts; ratings, receiver margins and physical mating remain unqualified." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="historical-splitter-reference-j7-pins-2" src="/images/extensions/historical-multi-motor-single-axis-splitter/guides/annotated-reference/j7-pins-2.svg" title="Control row J7 / 2" alt="Control row J7 / 2 — historical board source reference" caption="Source-matched logic and contact reference. The output-stage description conflicts with the named logic parts; ratings, receiver margins and physical mating remain unqualified." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="historical-splitter-reference-rn1-pins-1" src="/images/extensions/historical-multi-motor-single-axis-splitter/guides/annotated-reference/rn1-pins-1.svg" title="Resistor array RN1 / 1" alt="Resistor array RN1 / 1 — historical board source reference" caption="Source-matched logic and contact reference. The output-stage description conflicts with the named logic parts; ratings, receiver margins and physical mating remain unqualified." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="historical-splitter-reference-rn1-pins-2" src="/images/extensions/historical-multi-motor-single-axis-splitter/guides/annotated-reference/rn1-pins-2.svg" title="Resistor array RN1 / 2" alt="Resistor array RN1 / 2 — historical board source reference" caption="Source-matched logic and contact reference. The output-stage description conflicts with the named logic parts; ratings, receiver margins and physical mating remain unqualified." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="historical-splitter-reference-rn2-pins-1" src="/images/extensions/historical-multi-motor-single-axis-splitter/guides/annotated-reference/rn2-pins-1.svg" title="Resistor array RN2 / 1" alt="Resistor array RN2 / 1 — historical board source reference" caption="Source-matched logic and contact reference. The output-stage description conflicts with the named logic parts; ratings, receiver margins and physical mating remain unqualified." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="historical-splitter-reference-rn2-pins-2" src="/images/extensions/historical-multi-motor-single-axis-splitter/guides/annotated-reference/rn2-pins-2.svg" title="Resistor array RN2 / 2" alt="Resistor array RN2 / 2 — historical board source reference" caption="Source-matched logic and contact reference. The output-stage description conflicts with the named logic parts; ratings, receiver margins and physical mating remain unqualified." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="historical-splitter-reference-rn3-pins-1" src="/images/extensions/historical-multi-motor-single-axis-splitter/guides/annotated-reference/rn3-pins-1.svg" title="Resistor array RN3 / 1" alt="Resistor array RN3 / 1 — historical board source reference" caption="Source-matched logic and contact reference. The output-stage description conflicts with the named logic parts; ratings, receiver margins and physical mating remain unqualified." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="historical-splitter-reference-rn3-pins-2" src="/images/extensions/historical-multi-motor-single-axis-splitter/guides/annotated-reference/rn3-pins-2.svg" title="Resistor array RN3 / 2" alt="Resistor array RN3 / 2 — historical board source reference" caption="Source-matched logic and contact reference. The output-stage description conflicts with the named logic parts; ratings, receiver margins and physical mating remain unqualified." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="historical-splitter-reference-u1-pins-1" src="/images/extensions/historical-multi-motor-single-axis-splitter/guides/annotated-reference/u1-pins-1.svg" title="Logic IC U1 / 1" alt="Logic IC U1 / 1 — historical board source reference" caption="Source-matched logic and contact reference. The output-stage description conflicts with the named logic parts; ratings, receiver margins and physical mating remain unqualified." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="historical-splitter-reference-u1-pins-2" src="/images/extensions/historical-multi-motor-single-axis-splitter/guides/annotated-reference/u1-pins-2.svg" title="Logic IC U1 / 2" alt="Logic IC U1 / 2 — historical board source reference" caption="Source-matched logic and contact reference. The output-stage description conflicts with the named logic parts; ratings, receiver margins and physical mating remain unqualified." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="historical-splitter-reference-u1-pins-3" src="/images/extensions/historical-multi-motor-single-axis-splitter/guides/annotated-reference/u1-pins-3.svg" title="Logic IC U1 / 3" alt="Logic IC U1 / 3 — historical board source reference" caption="Source-matched logic and contact reference. The output-stage description conflicts with the named logic parts; ratings, receiver margins and physical mating remain unqualified." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="historical-splitter-reference-u2-pins-1" src="/images/extensions/historical-multi-motor-single-axis-splitter/guides/annotated-reference/u2-pins-1.svg" title="Logic IC U2 / 1" alt="Logic IC U2 / 1 — historical board source reference" caption="Source-matched logic and contact reference. The output-stage description conflicts with the named logic parts; ratings, receiver margins and physical mating remain unqualified." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="historical-splitter-reference-u2-pins-2" src="/images/extensions/historical-multi-motor-single-axis-splitter/guides/annotated-reference/u2-pins-2.svg" title="Logic IC U2 / 2" alt="Logic IC U2 / 2 — historical board source reference" caption="Source-matched logic and contact reference. The output-stage description conflicts with the named logic parts; ratings, receiver margins and physical mating remain unqualified." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="historical-splitter-reference-u2-pins-3" src="/images/extensions/historical-multi-motor-single-axis-splitter/guides/annotated-reference/u2-pins-3.svg" title="Logic IC U2 / 3" alt="Logic IC U2 / 3 — historical board source reference" caption="Source-matched logic and contact reference. The output-stage description conflicts with the named logic parts; ratings, receiver margins and physical mating remain unqualified." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="historical-splitter-reference-u2-pins-4" src="/images/extensions/historical-multi-motor-single-axis-splitter/guides/annotated-reference/u2-pins-4.svg" title="Logic IC U2 / 4" alt="Logic IC U2 / 4 — historical board source reference" caption="Source-matched logic and contact reference. The output-stage description conflicts with the named logic parts; ratings, receiver margins and physical mating remain unqualified." width=420 %}
+
+</details>
+
+### Supplementary logical circuits
+
+These independently drawn circuit sheets explain the selected source connectivity. They show electrical relationships separately from the source-matched board references above. Use the contact inventory and all companion sheets together. Physical cable orientation, ratings, installed operation and the full Prime/peripheral wiring remain unverified.
+
+Source: [selected original circuit](https://github.com/Ccecil/MultiMotorSingleAxisSplitter/blob/78c84c17d5de61348682debc81ea5d1ebc0c7a5b/MMSA.kicad_pcb), revision `78c84c17d5de61348682debc81ea5d1ebc0c7a5b`. No original-artwork redistribution grant has been established.
+
+{% include _includes/extension-instruction-diagram.html id="historical-multi-motor-single-axis-splitter-factual-motor-1-step" src="/images/extensions/historical-multi-motor-single-axis-splitter/guides/factual-circuits/motor-1-step.svg" title="Individual STEP gating path" alt="Individual STEP gating path — logical connections, not physical board layout" caption="Supplementary factual circuit only. These logical circuits supplement the canonical board references; complete Prime installation remains incomplete. Connector locations, mating and assembled ratings are not established by this drawing." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="historical-multi-motor-single-axis-splitter-factual-motor-2-step" src="/images/extensions/historical-multi-motor-single-axis-splitter/guides/factual-circuits/motor-2-step.svg" title="Individual STEP gating path" alt="Individual STEP gating path — logical connections, not physical board layout" caption="Supplementary factual circuit only. These logical circuits supplement the canonical board references; complete Prime installation remains incomplete. Connector locations, mating and assembled ratings are not established by this drawing." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="historical-multi-motor-single-axis-splitter-factual-motor-3-step" src="/images/extensions/historical-multi-motor-single-axis-splitter/guides/factual-circuits/motor-3-step.svg" title="Individual STEP gating path" alt="Individual STEP gating path — logical connections, not physical board layout" caption="Supplementary factual circuit only. These logical circuits supplement the canonical board references; complete Prime installation remains incomplete. Connector locations, mating and assembled ratings are not established by this drawing." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="historical-multi-motor-single-axis-splitter-factual-motor-4-step" src="/images/extensions/historical-multi-motor-single-axis-splitter/guides/factual-circuits/motor-4-step.svg" title="Individual STEP gating path" alt="Individual STEP gating path — logical connections, not physical board layout" caption="Supplementary factual circuit only. These logical circuits supplement the canonical board references; complete Prime installation remains incomplete. Connector locations, mating and assembled ratings are not established by this drawing." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="historical-multi-motor-single-axis-splitter-factual-dir" src="/images/extensions/historical-multi-motor-single-axis-splitter/guides/factual-circuits/dir.svg" title="DIR buffer path" alt="DIR buffer path — logical connections, not physical board layout" caption="Supplementary factual circuit only. These logical circuits supplement the canonical board references; complete Prime installation remains incomplete. Connector locations, mating and assembled ratings are not established by this drawing." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="historical-multi-motor-single-axis-splitter-factual-common-en" src="/images/extensions/historical-multi-motor-single-axis-splitter/guides/factual-circuits/common-en.svg" title="Common EN buffer path" alt="Common EN buffer path — logical connections, not physical board layout" caption="Supplementary factual circuit only. These logical circuits supplement the canonical board references; complete Prime installation remains incomplete. Connector locations, mating and assembled ratings are not established by this drawing." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="historical-multi-motor-single-axis-splitter-factual-j2" src="/images/extensions/historical-multi-motor-single-axis-splitter/guides/factual-circuits/j2.svg" title="J2 driver header" alt="J2 driver header — logical connections, not physical board layout" caption="Supplementary factual circuit only. These logical circuits supplement the canonical board references; complete Prime installation remains incomplete. Connector locations, mating and assembled ratings are not established by this drawing." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="historical-multi-motor-single-axis-splitter-factual-j3" src="/images/extensions/historical-multi-motor-single-axis-splitter/guides/factual-circuits/j3.svg" title="J3 driver header" alt="J3 driver header — logical connections, not physical board layout" caption="Supplementary factual circuit only. These logical circuits supplement the canonical board references; complete Prime installation remains incomplete. Connector locations, mating and assembled ratings are not established by this drawing." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="historical-multi-motor-single-axis-splitter-factual-j4" src="/images/extensions/historical-multi-motor-single-axis-splitter/guides/factual-circuits/j4.svg" title="J4 driver header" alt="J4 driver header — logical connections, not physical board layout" caption="Supplementary factual circuit only. These logical circuits supplement the canonical board references; complete Prime installation remains incomplete. Connector locations, mating and assembled ratings are not established by this drawing." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="historical-multi-motor-single-axis-splitter-factual-j5" src="/images/extensions/historical-multi-motor-single-axis-splitter/guides/factual-circuits/j5.svg" title="J5 driver header" alt="J5 driver header — logical connections, not physical board layout" caption="Supplementary factual circuit only. These logical circuits supplement the canonical board references; complete Prime installation remains incomplete. Connector locations, mating and assembled ratings are not established by this drawing." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="historical-multi-motor-single-axis-splitter-factual-host-1" src="/images/extensions/historical-multi-motor-single-axis-splitter/guides/factual-circuits/host-1.svg" title="Host header paths" alt="Host header paths — logical connections, not physical board layout" caption="Supplementary factual circuit only. These logical circuits supplement the canonical board references; complete Prime installation remains incomplete. Connector locations, mating and assembled ratings are not established by this drawing." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="historical-multi-motor-single-axis-splitter-factual-host-5" src="/images/extensions/historical-multi-motor-single-axis-splitter/guides/factual-circuits/host-5.svg" title="Host header paths" alt="Host header paths — logical connections, not physical board layout" caption="Supplementary factual circuit only. These logical circuits supplement the canonical board references; complete Prime installation remains incomplete. Connector locations, mating and assembled ratings are not established by this drawing." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="historical-multi-motor-single-axis-splitter-factual-host-9" src="/images/extensions/historical-multi-motor-single-axis-splitter/guides/factual-circuits/host-9.svg" title="Host header paths" alt="Host header paths — logical connections, not physical board layout" caption="Supplementary factual circuit only. These logical circuits supplement the canonical board references; complete Prime installation remains incomplete. Connector locations, mating and assembled ratings are not established by this drawing." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="historical-multi-motor-single-axis-splitter-factual-power" src="/images/extensions/historical-multi-motor-single-axis-splitter/guides/factual-circuits/power.svg" title="Logic supply and enables" alt="Logic supply and enables — logical connections, not physical board layout" caption="Supplementary factual circuit only. These logical circuits supplement the canonical board references; complete Prime installation remains incomplete. Connector locations, mating and assembled ratings are not established by this drawing." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="historical-multi-motor-single-axis-splitter-factual-rn1" src="/images/extensions/historical-multi-motor-single-axis-splitter/guides/factual-circuits/rn1.svg" title="Resistor-array source element pairs" alt="Resistor-array source element pairs — logical connections, not physical board layout" caption="Supplementary factual circuit only. These logical circuits supplement the canonical board references; complete Prime installation remains incomplete. Connector locations, mating and assembled ratings are not established by this drawing." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="historical-multi-motor-single-axis-splitter-factual-rn2" src="/images/extensions/historical-multi-motor-single-axis-splitter/guides/factual-circuits/rn2.svg" title="Resistor-array source element pairs" alt="Resistor-array source element pairs — logical connections, not physical board layout" caption="Supplementary factual circuit only. These logical circuits supplement the canonical board references; complete Prime installation remains incomplete. Connector locations, mating and assembled ratings are not established by this drawing." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="historical-multi-motor-single-axis-splitter-factual-rn3" src="/images/extensions/historical-multi-motor-single-axis-splitter/guides/factual-circuits/rn3.svg" title="Resistor-array source element pairs" alt="Resistor-array source element pairs — logical connections, not physical board layout" caption="Supplementary factual circuit only. These logical circuits supplement the canonical board references; complete Prime installation remains incomplete. Connector locations, mating and assembled ratings are not established by this drawing." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="historical-multi-motor-single-axis-splitter-factual-boundaries" src="/images/extensions/historical-multi-motor-single-axis-splitter/guides/factual-circuits/boundaries.svg" title="Multi-motor gating limitations" alt="Multi-motor gating limitations — logical connections, not physical board layout" caption="Supplementary factual circuit only. These logical circuits supplement the canonical board references; complete Prime installation remains incomplete. Connector locations, mating and assembled ratings are not established by this drawing." width=420 %}
+
+### Numbered source contacts and controls
+
+These are intended source net memberships, not measured electrical behaviour. Unassigned/unconnected pads must not receive invented connections. Auto-generated net names require schematic interpretation; they are not cable colours. Repeated footprints or pad numbers require geometric identity checks before wiring.
+
+| Source member | Connector/control | Source label | Contact → source net |
+|---|---|---|---|
+| MMSA.kicad_pcb | J5 | Conn_01x05_Pin | 1: +5V; 2: /M4_STP; 3: /DIR_Buf; 4: /EN_Common_Buf; 5: GND |
+| MMSA.kicad_pcb | J1 | Conn_02x05_Odd_Even | 1: +3V3; 2: +5V; 3: /STP; 4: /DIR; 5: /M1_EN; 6: /M2_EN; 7: /M3_EN; 8: /M4_EN; 9: /EN_Common; 10: GND |
+| MMSA.kicad_pcb | J2 | Conn_01x05_Pin | 1: +5V; 2: /M1_STP; 3: /DIR_Buf; 4: /EN_Common_Buf; 5: GND |
+| MMSA.kicad_pcb | J3 | Conn_01x05_Pin | 1: +5V; 2: /M2_STP; 3: /DIR_Buf; 4: /EN_Common_Buf; 5: GND |
+| MMSA.kicad_pcb | J7 | Conn_01x10_Pin | 1: +3V3; 2: +5V; 3: /STP; 4: /DIR; 5: /M1_EN; 6: /M2_EN; 7: /M3_EN; 8: /M4_EN; 9: /EN_Common; 10: GND |
+| MMSA.kicad_pcb | J4 | Conn_01x05_Pin | 1: +5V; 2: /M3_STP; 3: /DIR_Buf; 4: /EN_Common_Buf; 5: GND |
+
+## Practical use with Smoothieboard V2 Prime
+
+**Pending and unaccepted:** no complete practical Prime → historical board → named peripheral drawing has been accepted. Unknown conductors remain unresolved rather than routed by guesswork.
+
+For a two-screw bench experiment, keep commercial drive power disabled and connect only their logic inputs after verifying the actual circuit polarities. Test each M_EN state while supplying pulses to shared STEP and confirm only the selected output pulses. A conditional GF/J37 contact mapping is STEP PB1,DIR PJ4,M1_EN PA4,M2_EN PG0,M3_EN PJ3,M4_EN PG1,common enable PJ2. This is a pin candidate, not an accepted squaring algorithm or enable sequence.
+
+Conditional GF/J37 examples refer only to retained **P12 Prime2590**: contacts 1/2/10 are limited 3.3 V/limited 5 V/ground; contacts 3–9 are PB1/PJ4/PA4/PG0/PJ3/PG1/PJ2. The host header is unshrouded. Verify physical numbering, polarity, per-rail current allowance and free-pin ownership before connection. This pin map does not establish hardware SPI, UART, CAN or PWM availability on an arbitrary contact.
+
+## Smoothieware support and example boundary
+
+SmoothieV2 has motor slaving, but its implementation does not implement this board’s shared-step gate interface. At the reviewed revision, `slaved_to` belongs to the TMC actuator setup; the external STEP/DIR branch reports that it cannot be slaved in software and does not perform the TMC slave setup. The `G28.7` alignment routine moves a separate slave actuator object, rather than sequencing this board’s four motor-gate inputs on one common step stream. This board therefore needs a matching shared-step/gate and endstop-control workflow before independent homing or squaring can be used. No runnable configuration for that workflow is supplied by the reviewed application paths. Email **wolf.arthur@gamil.com** about the required support, identifying this historical splitter and the intended drivers/endstops. Ordinary shared movement and independently squared homing are different requirements; no motion or electrical qualification is implied.
+
+The V2 implementation reviewed for this documentation is pinned to SmoothieV2 commit `2a21c0108b1d095ecd8b2b9358e94055f053c003`. This does not identify the firmware installed on a reader’s controller or establish support for every historical board. Source-backed syntax is distinct from physical execution. If the required firmware functionality is absent, email **wolf.arthur@gamil.com** with the historical board, host revision and intended peripheral; unresolved support is not asserted to be absent.
+
+## Remaining requirements
+
+74LS versus stated open-drain topology, pulse timing/levels, gate polarity, drive compatibility and firmware squaring/selection semantics remain unresolved. Both instructional diagrams, public source/link availability and desktop/narrow rendered usability remain open.
+
+## Sources and attribution
+
+- [Ccecil upstream project](https://github.com/Ccecil/MultiMotorSingleAxisSplitter)
+- [Pinned original source](https://github.com/Ccecil/MultiMotorSingleAxisSplitter/tree/78c84c17d5de61348682debc81ea5d1ebc0c7a5b)
+- [Original MMSA.kicad_pcb](https://github.com/Ccecil/MultiMotorSingleAxisSplitter/blob/78c84c17d5de61348682debc81ea5d1ebc0c7a5b/MMSA.kicad_pcb)
+- [Original MMSA.kicad_sch](https://github.com/Ccecil/MultiMotorSingleAxisSplitter/blob/78c84c17d5de61348682debc81ea5d1ebc0c7a5b/MMSA.kicad_sch)
+- [Original NAND_noninverting.kicad_sch](https://github.com/Ccecil/MultiMotorSingleAxisSplitter/blob/78c84c17d5de61348682debc81ea5d1ebc0c7a5b/NAND_noninverting.kicad_sch)
+- [Original README.md](https://github.com/Ccecil/MultiMotorSingleAxisSplitter/blob/78c84c17d5de61348682debc81ea5d1ebc0c7a5b/README.md)
+
+The retained inventory did not identify a project license file. Preserve attribution and resolve redistribution rights before importing original artwork/layouts; absence of a license file is not public-domain permission. Modern counterpart guides are functional comparisons only and do not establish matching pinouts.
+
+[All extension boards](/extension-boards)

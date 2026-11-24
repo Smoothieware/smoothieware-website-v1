@@ -1,0 +1,53 @@
+{
+  "board": "seven-channel-dc-mechanical-relay",
+  "revision": "v24",
+  "role": "source inspection snapshot, not fabrication release",
+  "upstream_directory": "https://github.com/arthurwolf/extension-boards/tree/main/src/seven-channel-dc-mechanical-relay/attempt/versions/v24",
+  "files": {
+    "seven-channel-dc-mechanical-relay.kicad_pcb": {
+      "sha256": "19ac2c58cfd2a35e8dedb8c0644971cb2473a4bb10643d49010202432131fbe0",
+      "bytes": 1149777,
+      "unmodified_upstream": true
+    },
+    "seven-channel-dc-mechanical-relay.kicad_sch": {
+      "sha256": "9e420aabc9cf726c6a720713fb6d57debbad4b041b2ed38b4c61a0e2379403b7",
+      "bytes": 410128,
+      "unmodified_upstream": true
+    },
+    "seven-channel-dc-mechanical-relay.kicad_pro": {
+      "sha256": "37c431549bbecb016d522f9d0b92b545eb85207b9ee2dfab8bd7c2ed08f17873",
+      "bytes": 22468,
+      "unmodified_upstream": true
+    },
+    "seven-channel-dc-mechanical-relay.kicad_dru": {
+      "sha256": "65c48177f3e54f4c270cb8f58fcbc6b7cb2b6b630ef6f2ebd3ebcc6fe6cc3145",
+      "bytes": 5935,
+      "unmodified_upstream": true
+    },
+    "exports/bom.csv": {
+      "sha256": "377faced37a8329f86ae4556a2ff578d0527dc861805da24673aa6e72be5751d",
+      "bytes": 31553,
+      "unmodified_upstream": true
+    },
+    "exports/schematic-netlist.xml": {
+      "sha256": "2b0edc04e2ca93d6c02768bfd2418e9bc3af80a26f162e577078b6ed59449e32",
+      "bytes": 209930,
+      "unmodified_upstream": true
+    },
+    "LICENSE-CERN-OHL-S-2.0.txt": {
+      "sha256": "d6475a84171f0cf7ff52667dea714df268fc65cea42f0bf328b0b70d4cd0ebab",
+      "bytes": 13419,
+      "unmodified_upstream": false
+    },
+    "SOURCE-NOTICE.txt": {
+      "sha256": "792454d2c16aa9289f8c386b6406a84db7867389624754e9dc470598dc41a44f",
+      "bytes": 1273,
+      "unmodified_upstream": false
+    }
+  },
+  "license_text_source": "https://raw.githubusercontent.com/spdx/license-list-data/main/text/CERN-OHL-S-2.0.txt",
+  "limitations": [
+    "Libraries/3D models and fabrication outputs excluded; upstream required for regeneration.",
+    "No powered electrical, physical or load qualification."
+  ]
+}

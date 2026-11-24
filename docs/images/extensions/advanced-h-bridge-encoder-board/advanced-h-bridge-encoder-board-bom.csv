@@ -1,0 +1,134 @@
+Reference,Value,Footprint,DNP
+C1,EEEFT1E102UP,Capacitor_SMD:CP_Elec_10x10.5,False
+C10,C0603C104K4RAC,Capacitor_SMD:C_0603_1608Metric,False
+C11,C0603C472K4RAC,Capacitor_SMD:C_0603_1608Metric,False
+C12,C0805C106K8PACTU,Capacitor_SMD:C_0805_2012Metric,False
+C2,C1210C104K5RACTU,Capacitor_SMD:C_1210_3225Metric,False
+C3,C0603C472K4RAC,Capacitor_SMD:C_0603_1608Metric,False
+C4,C0603C104K4RAC,Capacitor_SMD:C_0603_1608Metric,False
+C5,C0603C104K4RAC,Capacitor_SMD:C_0603_1608Metric,False
+C6,C0603C104K4RAC,Capacitor_SMD:C_0603_1608Metric,False
+C7,C0603C104K4RAC,Capacitor_SMD:C_0603_1608Metric,False
+C8,C0603C104K4RAC,Capacitor_SMD:C_0603_1608Metric,False
+C9,C0603C104K4RAC,Capacitor_SMD:C_0603_1608Metric,False
+CE1,100nF 25V X7R,Protection5V:C_0603_1608Metric,False
+CE2,100nF 50V X7R,Protection5V:C_0603_1608Metric,False
+CE3,1uF 25V X7R,Protection5V:C_0603_1608Metric,False
+CF1,220nF 16V X7R,Protection5V:C_0603_1608Metric,False
+CF2,100nF 50V X7R,Protection5V:C_0603_1608Metric,False
+CF3,1uF 50V X7R,Protection5V:C_0603_1608Metric,False
+CF4,10uF 16V X7R NONPOLAR,Protection5V:C_0805_2012Metric,False
+CF5,10uF 16V X7R NONPOLAR,Protection5V:C_0805_2012Metric,False
+CF6,100nF 50V X7R,Protection5V:C_0603_1608Metric,False
+CF7,4.7nF 50V X7R,Protection5V:C_0603_1608Metric,False
+CT1,CABLE TIE,Fancification_Mechanical:CableTie_NPTH_2_5mm,False
+CT2,CABLE TIE,Fancification_Mechanical:CableTie_NPTH_2_5mm,False
+D1,SMBJ15A,Diode_SMD:D_SMB,False
+D2,"PESD3V3U2UT,215",Package_TO_SOT_SMD:SOT-23,False
+D3,"BAS116,115",Diode_SMD:D_SOD-323,False
+D4,"BAS116,115",Diode_SMD:D_SOD-323,False
+D5,"BAT54H,115",Diode_SMD:D_SOD-323,False
+D6,150060RS75000,LED_SMD:LED_0603_1608Metric,False
+DE1,1N4148WS-7-F,Protection5V:D_SOD-323,False
+DE2,LTST-C170KRKT,Protection5V:LED_0805_2012Metric,False
+DE3,BAT54WS-7-F,Protection5V:D_SOD-323,False
+DE4,BAT54WS-7-F,Protection5V:D_SOD-323,False
+DF1,1N4148WS-7-F,Protection5V:D_SOD-323,False
+DF10,BAT54WS-7-F,Protection5V:D_SOD-323,False
+DF11,BZT52C12S-7-F,Protection5V:D_SOD-323,False
+DF12,BAT54WS-7-F,Protection5V:D_SOD-323,False
+DF13,BAT54WS-7-F,Protection5V:D_SOD-323,False
+DF14,BAT54WS-7-F,Protection5V:D_SOD-323,False
+DF2,LTST-C170KRKT,Protection5V:LED_0805_2012Metric,False
+DF3,BAT54WS-7-F,Protection5V:D_SOD-323,False
+DF4,BZT52C12S-7-F,Protection5V:D_SOD-323,False
+DF5,LTST-C170KRKT,Protection5V:LED_0805_2012Metric,False
+DF6,1N4148WS-7-F,Protection5V:D_SOD-323,False
+DF7,BZT52C3V9S-7-F,Protection5V:D_SOD-323,False
+DF8,LTST-C170KRKT,Protection5V:LED_0805_2012Metric,False
+DF9,BAT54WS-7-F,Protection5V:D_SOD-323,False
+H1,,,False
+H2,,,False
+H3,,,False
+H4,,,False
+J1,GADGETEER-1.27MM-KEYED-2X05,AdvancedHBridge:Gadgeteer_Keyed_2x05,False
+J2,GADGETEER-1.27MM-KEYED-2X05,AdvancedHBridge:Gadgeteer_Keyed_2x05,False
+J3,XT60-M,Connector_AMASS:AMASS_XT60-M_1x02_P7.20mm_Vertical,False
+J4,1715721,"TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal",False
+J5,B4B-XH-A(LF)(SN),Connector_JST:JST_XH_B4B-XH-A_1x04_P2.50mm_Vertical,False
+JP1,CUT TO DISABLE D6,Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm,False
+Q1,"BUK9Y12-40E,115",Package_TO_SOT_SMD:LFPAK56,False
+Q2,"2N7002,215",Package_TO_SOT_SMD:SOT-23,False
+QF1,MMBT3904-7-F,Protection5V:SOT-23,False
+QF2,MMBT3904-7-F,Protection5V:SOT-23,False
+QF3,BSS84-7-F,Protection5V:SOT-23,False
+QF4,SiR870DP-T1-GE3,Protection5V:PowerPAK_SO-8_Single,False
+QF5,SiR870DP-T1-GE3,Protection5V:PowerPAK_SO-8_Single,False
+R1,CRCW0603100KFK,Resistor_SMD:R_0603_1608Metric,False
+R10,TNPW060322K0BEEA,Resistor_SMD:R_0603_1608Metric,False
+R11,CRCW0603220RFK,Resistor_SMD:R_0603_1608Metric,False
+R12,CRCW06031K00FK,Resistor_SMD:R_0603_1608Metric,False
+R13,CRCW06031K00FK,Resistor_SMD:R_0603_1608Metric,False
+R14,CRCW060310K0FK,Resistor_SMD:R_0603_1608Metric,False
+R15,CRCW0603100KFK,Resistor_SMD:R_0603_1608Metric,False
+R16,CRCW06031K00FK,Resistor_SMD:R_0603_1608Metric,False
+R17,CRCW0603330RFK,Resistor_SMD:R_0603_1608Metric,False
+R18,CRCW0603330RFK,Resistor_SMD:R_0603_1608Metric,False
+R19,CRCW0603100KFK,Resistor_SMD:R_0603_1608Metric,False
+R2,CRCW0603100KFK,Resistor_SMD:R_0603_1608Metric,False
+R20,CRCW0603100KFK,Resistor_SMD:R_0603_1608Metric,False
+R21,CRCW060310K0FK,Resistor_SMD:R_0603_1608Metric,True
+R22,CRCW060310K0FK,Resistor_SMD:R_0603_1608Metric,True
+R23,TNPW0603100KBEEA,Resistor_SMD:R_0603_1608Metric,False
+R24,TNPW060327K0BEEA,Resistor_SMD:R_0603_1608Metric,False
+R25,CRCW0603220RFK,Resistor_SMD:R_0603_1608Metric,False
+R3,CRCW0603100KFK,Resistor_SMD:R_0603_1608Metric,False
+R4,CRCW0603100KFK,Resistor_SMD:R_0603_1608Metric,False
+R5,CRCW060310K0FK,Resistor_SMD:R_0603_1608Metric,False
+R6,CRCW060310K0FK,Resistor_SMD:R_0603_1608Metric,False
+R7,CRCW060310K0FK,Resistor_SMD:R_0603_1608Metric,False
+R8,TNPW0805820RBEEA,Resistor_SMD:R_0805_2012Metric,False
+R9,TNPW060310K0BEEA,Resistor_SMD:R_0603_1608Metric,False
+RE1,24.9k 0.1%,Protection5V:R_0603_1608Metric,False
+RE2,10k 0.1%,Protection5V:R_0603_1608Metric,False
+RE3,34.8k 0.1%,Protection5V:R_0603_1608Metric,False
+RE4,10k 0.1%,Protection5V:R_0603_1608Metric,False
+RE5,120k 1%,Protection5V:R_0603_1608Metric,False
+RE6,10k 1%,Protection5V:R_0603_1608Metric,False
+RF1,182k 0.1%,Protection5V:R_0603_1608Metric,False
+RF10,10k 0.25W,Protection5V:R_1206_3216Metric,False
+RF11,4.7k 0.25W,Protection5V:R_1206_3216Metric,False
+RF12,47k 1%,Protection5V:R_0603_1608Metric,False
+RF13,47k 1%,Protection5V:R_0603_1608Metric,False
+RF14,10k 1%,Protection5V:R_0603_1608Metric,False
+RF15,10k 1%,Protection5V:R_0603_1608Metric,False
+RF16,2.2k 1%,Protection5V:R_0603_1608Metric,False
+RF17,100k 1%,Protection5V:R_0603_1608Metric,False
+RF18,100k 1%,Protection5V:R_0603_1608Metric,False
+RF19,1M 1%,Protection5V:R_0603_1608Metric,False
+RF2,10k 0.1%,Protection5V:R_0603_1608Metric,False
+RF20,22k 1%,Protection5V:R_0603_1608Metric,False
+RF3,274k 0.1%,Protection5V:R_0603_1608Metric,False
+RF4,10k 0.1%,Protection5V:R_0603_1608Metric,False
+RF5,WSL2512R0062FEA / 6.2mOhm 1% 2W,Protection5V:R_2512_6332Metric,False
+RF6,10k 1%,Protection5V:R_0603_1608Metric,False
+RF7,45.3k 0.1%,Protection5V:R_0603_1608Metric,False
+RF8,10k 0.1%,Protection5V:R_0603_1608Metric,False
+RF9,8.2k 0.25W,Protection5V:R_1206_3216Metric,False
+RV1,TC33X-2-103E,Potentiometer_SMD:Potentiometer_Bourns_TC33X_Vertical,False
+SJ1,SOLDER-JUMPER-NO,Jumper:SolderJumper-2_P1.3mm_Open_Pad1.0x1.5mm,True
+SJ2,SOLDER-JUMPER-NO,Jumper:SolderJumper-2_P1.3mm_Open_Pad1.0x1.5mm,True
+SJE1,CUT AUX FAULT LED,Protection5V:SolderJumper-2_P1.3mm_Bridged_Pad1.0x1.5mm,False
+SJF1,CUT FAULT LED,Protection5V:SolderJumper-2_P1.3mm_Bridged_Pad1.0x1.5mm,False
+SJF2,CUT OV LED,Protection5V:SolderJumper-2_P1.3mm_Bridged_Pad1.0x1.5mm,False
+SJF3,CUT REVERSE LED,Protection5V:SolderJumper-2_P1.3mm_Bridged_Pad1.0x1.5mm,False
+U1,VNH5019ATR-E,Package_SO:ST_MultiPowerSO-30,False
+U2,TLV9062IDR,Package_SO:SOIC-8_3.9x4.9mm_P1.27mm,False
+U3,TLV7041DBVR,Package_TO_SOT_SMD:SOT-23-5,False
+U4,SN74LVC1G74DCUR,Package_SO:TI_DCU0008A_0.85x0.30,False
+U5,SN74LVC1G27DBVR,Package_TO_SOT_SMD:SOT-23-6,False
+U6,SN74LVC2G08DCUR,Package_SO:TI_DCU0008A_0.85x0.30,False
+U7,SN74LVC2G17DBVR,Package_TO_SOT_SMD:TI_DBV0006A_1.10x0.60,False
+UE1,TPS26600PWPR,Protection5V:TPS26600_PWP0016A,False
+UF1,LTC4368IMS-2#PBF,Protection5V:LTC4368_MSOP10,False
+UF2,TL431BIDBZR,Protection5V:SOT-23,False

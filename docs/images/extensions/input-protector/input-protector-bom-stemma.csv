@@ -1,0 +1,30 @@
+Reference,Value,Footprint/assembly option,X_mm,Y_mm,Rotation_deg,Side,DNP
+C1,22nF 100V X7R 0805,Capacitor_SMD:C_0805_2012Metric,15.45,12.61,-90.0,top,False
+C2,100nF 50V X7R 0603,Capacitor_SMD:C_0603_1608Metric,29.0,12.0,90.0,top,False
+C3,22nF 50V X7R 0603,Capacitor_SMD:C_0603_1608Metric,32.0,4.5,0.0,top,False
+C4,10nF 100V X7R 0603,Capacitor_SMD:C_0603_1608Metric,18.5,14.0,0.0,top,False
+CT1,CABLE TIE,Fancification_Mechanical:CableTie_NPTH_2_5mm,19.0,19.0,0.0,top,False
+CT2,CABLE TIE,Fancification_Mechanical:CableTie_NPTH_2_5mm,24.0,19.0,0.0,top,False
+D1,SMBJ58CA,Diode_SMD:D_SMB,9.5,12.61,-90.0,top,False
+D3,FIELD HIGH green,LED_SMD:LED_0603_1608Metric,28.5,3.0,0.0,top,False
+H1,MountingHole_3.2mm_M3,MountingHole:MountingHole_3.2mm_M3,10.0,20.0,0.0,top,False
+H2,MountingHole_3.2mm_M3,MountingHole:MountingHole_3.2mm_M3,30.0,20.0,0.0,top,False
+J1,FIELD S/G/V 2.54mm,Connector_Molex:Molex_KK-254_AE-6410-03A_1x03_P2.54mm_Vertical,3.6,10.46,-90.0,top,False
+J2,JST B3B-PH-K-S(LF)(SN),JST_PH_B3B-PH-K_1x03_P2.00mm_Vertical,37.300000000000004,11.000000000000002,-90.0,top,False
+JP1,CUT TO DISABLE D3,Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm,24.287618,2.965518,179.604863,top,False
+Q2,MMBT3904,Package_TO_SOT_SMD:SOT-23,33.0,9.0,180.0,top,False
+R1,100R 1% 0.25W MELF,Resistor_SMD:R_MiniMELF_MMA-0204,15.5,4.8,0.0,top,False
+R2,27.4k 1% 0603,Resistor_SMD:R_0603_1608Metric,29.5,7.0,0.0,top,False
+R3,27.4k 1% 1206,Resistor_SMD:R_1206_3216Metric,13.0,12.61,-90.0,top,False
+R4,470R 1% 0603,Resistor_SMD:R_0603_1608Metric,34.0,13.0,0.0,top,False
+R5,22k 1% 0603,Resistor_SMD:R_0603_1608Metric,33.5,16.0,0.0,top,False
+R6,562R 1% 0603,Resistor_SMD:R_0603_1608Metric,18.5,10.7,0.0,top,False
+R7,100k 1% 0603,Resistor_SMD:R_0603_1608Metric,35.0,5.0,90.0,top,False
+R8,10k 10% 0603,Resistor_SMD:R_0603_1608Metric,32.0,3.0,0.0,top,False
+SJ1,PULLUP_EN (open),Jumper:SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm,37.0,20.0,0.0,top,False
+TP1,FIELD_SIG,TestPoint:TestPoint_Pad_D1.5mm,7.0,6.0,0.0,bottom,False
+TP2,FIELD_GND,TestPoint:TestPoint_Pad_D1.5mm,12.0,17.0,0.0,bottom,False
+TP3,HOST_OUT,TestPoint:TestPoint_Pad_D1.5mm,37.0,6.0,0.0,bottom,False
+TP4,HOST_GND,TestPoint:TestPoint_Pad_D1.5mm,40.0,20.0,0.0,bottom,False
+TP5,FLOAT SUB NO PROBE,TestPoint:TestPoint_Pad_2.0x2.0mm,18.2,8.095,0.0,top,False
+U1,ISO1211D,Package_SO:SOIC-8_3.9x4.9mm_P1.27mm,24.0,10.0,180.0,top,False

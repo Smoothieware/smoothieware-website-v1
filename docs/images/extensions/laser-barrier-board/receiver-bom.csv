@@ -1,0 +1,56 @@
+Reference,Value,Footprint,DNP
+C1,4.7 uF X5R 10 V,Capacitor_SMD:C_0603_1608Metric,False
+C10,10 nF X7R 16 V,Capacitor_SMD:C_0603_1608Metric,False
+C11,100 nF X7R 16 V,Capacitor_SMD:C_0603_1608Metric,False
+C12,4.7 nF C0G 50 V,Capacitor_SMD:C_0603_1608Metric,False
+C13,100 nF X7R 50 V,Capacitor_SMD:C_0603_1608Metric,False
+C2,100 nF X7R 50 V,Capacitor_SMD:C_0603_1608Metric,False
+C3,100 nF X7R 50 V,Capacitor_SMD:C_0603_1608Metric,False
+C4,100 nF X7R 50 V,Capacitor_SMD:C_0603_1608Metric,False
+C5,100 nF X7R 50 V,Capacitor_SMD:C_0603_1608Metric,False
+C6,100 nF X7R 50 V,Capacitor_SMD:C_0603_1608Metric,False
+C7,1 uF X7R 16 V,Capacitor_SMD:C_0603_1608Metric,False
+C8,4.7 uF X5R 10 V,Capacitor_SMD:C_0603_1608Metric,False
+C9,10 nF C0G 50 V,Capacitor_SMD:C_0603_1608Metric,False
+D1,TPD4E1U06DCKR,Package_TO_SOT_SMD:SOT-363_SC-70-6,False
+D2,BEAM (green),LED_SMD:LED_0603_1608Metric,False
+D3,BAT54WS,Diode_SMD:D_SOD-323,False
+H1,M3,MountingHole:MountingHole_3.2mm_M3,False
+H2,M3,MountingHole:MountingHole_3.2mm_M3,False
+J1,GADGETEER X IN,Smoothie_Laser_Barrier:Samtec_SHF105_TH_LC,False
+J2,LINK TO EMITTER,Fancification_Connectors:Dual_receiver_J2,False
+R1,100R,Resistor_SMD:R_0603_1608Metric,False
+R10,1k,Resistor_SMD:R_0603_1608Metric,False
+R11,100R,Resistor_SMD:R_0603_1608Metric,False
+R12,100R,Resistor_SMD:R_0603_1608Metric,False
+R13,10k,Resistor_SMD:R_0603_1608Metric,False
+R14,1k,Resistor_SMD:R_0603_1608Metric,False
+R15,220R,Resistor_SMD:R_0603_1608Metric,False
+R16,10k,Resistor_SMD:R_0603_1608Metric,False
+R2,1k,Resistor_SMD:R_0603_1608Metric,False
+R3,14.7k,Resistor_SMD:R_0603_1608Metric,False
+R4,220k,Resistor_SMD:R_0603_1608Metric,False
+R5,47k,Resistor_SMD:R_0603_1608Metric,False
+R6,210k,Resistor_SMD:R_0603_1608Metric,False
+R7,100k,Resistor_SMD:R_0603_1608Metric,False
+R8,100k,Resistor_SMD:R_0603_1608Metric,False
+R9,100k,Resistor_SMD:R_0603_1608Metric,True
+SJ1,LED_EN (bridged),Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm,False
+TP1,+3V3,TestPoint:TestPoint_Pad_D1.0mm,False
+TP10,LINK_5V,TestPoint:TestPoint_Pad_D1.0mm,False
+TP11,LINK_FAULT,TestPoint:TestPoint_Pad_D1.0mm,False
+TP2,+5V,TestPoint:TestPoint_Pad_D1.0mm,False
+TP3,GND,TestPoint:TestPoint_Pad_D1.0mm,False
+TP4,GND,TestPoint:TestPoint_Pad_D1.0mm,False
+TP5,RX_OUT,TestPoint:TestPoint_Pad_D1.0mm,False
+TP6,GATE_CLK,TestPoint:TestPoint_Pad_D1.0mm,False
+TP7,VALID,TestPoint:TestPoint_Pad_D1.0mm,False
+TP8,BEAM_OK,TestPoint:TestPoint_Pad_D1.0mm,False
+TP9,LINK_GATE,TestPoint:TestPoint_Pad_D1.0mm,False
+U1,TSSP4038,OptoDevice:Vishay_MOLD-3Pin,False
+U2,SN74HC14D,Package_SO:SOIC-14_3.9x8.7mm_P1.27mm,False
+U3,SN74HC393D,Package_SO:SOIC-14_3.9x8.7mm_P1.27mm,False
+U4,SN74HC74D,Package_SO:SOIC-14_3.9x8.7mm_P1.27mm,False
+U5,SN74LVC2G08DCTR,Package_SO:SSOP-8_2.95x2.8mm_P0.65mm,False
+U6,TPS2553DBVR,Package_TO_SOT_SMD:SOT-23-6,False
+U7,TLC555IDR (tick generator),Package_SO:SOIC-8_3.9x4.9mm_P1.27mm,False

@@ -1,0 +1,1 @@
+Compact source-derived instructional references for spi-pt100. Original source attribution and licence are retained alongside. Native geometry, functional pills and locating leaders are preserved. The mandatory limits sheet retains all detailed source qualifications. No powered, firmware, physical mating or hardware acceptance is implied.

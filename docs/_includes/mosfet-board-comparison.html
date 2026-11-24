@@ -1,0 +1,46 @@
+{::nomarkdown}
+<style>
+.markdown-body .xb-cmp td, .markdown-body .xb-cmp thead th { text-align: center; }
+.markdown-body .xb-cmp tbody th { text-align: left; font-weight: 400; }
+.markdown-body .xb-cmp .xb-cmp-group th { text-align: left; font-size: .78rem; letter-spacing: .06em; text-transform: uppercase; opacity: .7; }
+.xb-cmp-yes sl-icon { color: #35c26b; font-size: 1.25rem; vertical-align: middle; }
+.xb-cmp-no sl-icon { color: #ff5d5d; font-size: 1.25rem; vertical-align: middle; }
+.xb-cmp-note { display: block; font-size: .8rem; opacity: .75; }
+</style>
+<h2 id="compare-mosfet-boards">Compare the MOSFET boards</h2>
+<p>All three boards switch one DC load. The voltages and currents are design targets; none of the boards has been tested on hardware.</p>
+<div class="xb-tablewrap" role="region" aria-labelledby="compare-mosfet-boards" tabindex="0">
+  <table class="xb-cmp">
+    <thead>
+      <tr>
+        <th scope="col"></th>
+        <th scope="col"><a href="{{ '/extensions/single-channel-small-mosfet-basic-output' | relative_url }}">Small MOSFET basic</a></th>
+        <th scope="col"><a href="{{ '/extensions/single-channel-small-mosfet-advanced-output' | relative_url }}">Small MOSFET advanced</a></th>
+        <th scope="col"><a href="{{ '/extensions/single-channel-large-mosfet-output' | relative_url }}">Large MOSFET</a></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="xb-cmp-group"><th scope="rowgroup" colspan="4">Specifications</th></tr>
+      <tr><th scope="row">Load supply</th><td>12 V DC nominal</td><td>5 to 24 V DC</td><td>5 to 24 V DC</td></tr>
+      <tr><th scope="row">Load current, design target</th><td>1 A</td><td>4 A</td><td>12.5 A</td></tr>
+      <tr><th scope="row">Load connector</th><td>Screw terminal</td><td>Screw terminal</td><td>XT30</td></tr>
+      <tr><th scope="row">Control connector</th><td>Three-pin header and Gadgeteer IN / CHAIN</td><td>Three-pin header and Gadgeteer IN / CHAIN</td><td>Three-pin header and Gadgeteer IN / CHAIN</td></tr>
+      <tr class="xb-cmp-group"><th scope="rowgroup" colspan="4">Features</th></tr>
+      <tr><th scope="row">Works from a 3.3 V control signal</th><td class="xb-cmp-yes"><sl-icon name="check-circle-fill" label="Yes"></sl-icon></td><td class="xb-cmp-yes"><sl-icon name="check-circle-fill" label="Yes"></sl-icon></td><td class="xb-cmp-yes"><sl-icon name="check-circle-fill" label="Yes"></sl-icon></td></tr>
+      <tr><th scope="row">Optically isolated control</th><td class="xb-cmp-no"><sl-icon name="x-circle-fill" label="No"></sl-icon></td><td class="xb-cmp-yes"><sl-icon name="check-circle-fill" label="Yes"></sl-icon></td><td class="xb-cmp-yes"><sl-icon name="check-circle-fill" label="Yes"></sl-icon></td></tr>
+      <tr><th scope="row">Output stays off with the control cable unplugged</th><td class="xb-cmp-yes"><sl-icon name="check-circle-fill" label="Yes"></sl-icon></td><td class="xb-cmp-yes"><sl-icon name="check-circle-fill" label="Yes"></sl-icon></td><td class="xb-cmp-yes"><sl-icon name="check-circle-fill" label="Yes"></sl-icon></td></tr>
+      <tr><th scope="row">Diode for inductive loads (fans, solenoids)</th><td class="xb-cmp-yes"><sl-icon name="check-circle-fill" label="Yes"></sl-icon></td><td class="xb-cmp-yes"><sl-icon name="check-circle-fill" label="Yes"></sl-icon></td><td class="xb-cmp-yes"><sl-icon name="check-circle-fill" label="Yes"></sl-icon></td></tr>
+      <tr><th scope="row">Boards per Gadgeteer port</th><td>Up to seven</td><td>Up to seven</td><td>Up to seven</td></tr>
+      <tr><th scope="row">Can feed a small load from the controller</th><td class="xb-cmp-no"><sl-icon name="x-circle-fill" label="No"></sl-icon></td><td class="xb-cmp-no"><sl-icon name="x-circle-fill" label="No"></sl-icon></td><td class="xb-cmp-no"><sl-icon name="x-circle-fill" label="No"></sl-icon></td></tr>
+      <tr><th scope="row">Reversed-supply protection</th><td class="xb-cmp-no"><sl-icon name="x-circle-fill" label="No"></sl-icon></td><td class="xb-cmp-yes"><sl-icon name="check-circle-fill" label="Yes"></sl-icon></td><td class="xb-cmp-yes"><sl-icon name="check-circle-fill" label="Yes"></sl-icon></td></tr>
+      <tr><th scope="row">Electronic current limit</th><td class="xb-cmp-no"><sl-icon name="x-circle-fill" label="No"></sl-icon></td><td class="xb-cmp-yes"><sl-icon name="check-circle-fill" label="Yes"></sl-icon></td><td class="xb-cmp-yes"><sl-icon name="check-circle-fill" label="Yes"></sl-icon></td></tr>
+      <tr><th scope="row">Switches off when the supply voltage is out of range</th><td class="xb-cmp-no"><sl-icon name="x-circle-fill" label="No"></sl-icon></td><td class="xb-cmp-yes"><sl-icon name="check-circle-fill" label="Yes"></sl-icon></td><td class="xb-cmp-yes"><sl-icon name="check-circle-fill" label="Yes"></sl-icon></td></tr>
+      <tr><th scope="row">Soft start</th><td class="xb-cmp-no"><sl-icon name="x-circle-fill" label="No"></sl-icon></td><td class="xb-cmp-yes"><sl-icon name="check-circle-fill" label="Yes"></sl-icon></td><td class="xb-cmp-yes"><sl-icon name="check-circle-fill" label="Yes"></sl-icon></td></tr>
+      <tr><th scope="row">Light for output on</th><td class="xb-cmp-yes"><sl-icon name="check-circle-fill" label="Yes"></sl-icon></td><td class="xb-cmp-yes"><sl-icon name="check-circle-fill" label="Yes"></sl-icon></td><td class="xb-cmp-yes"><sl-icon name="check-circle-fill" label="Yes"></sl-icon></td></tr>
+      <tr><th scope="row">Lights for faults</th><td class="xb-cmp-no"><sl-icon name="x-circle-fill" label="No"></sl-icon></td><td class="xb-cmp-yes"><sl-icon name="check-circle-fill" label="Yes"></sl-icon></td><td class="xb-cmp-yes"><sl-icon name="check-circle-fill" label="Yes"></sl-icon></td></tr>
+      <tr><th scope="row">M3 mounting holes</th><td class="xb-cmp-yes"><sl-icon name="check-circle-fill" label="Yes"></sl-icon></td><td class="xb-cmp-yes"><sl-icon name="check-circle-fill" label="Yes"></sl-icon></td><td class="xb-cmp-yes"><sl-icon name="check-circle-fill" label="Yes"></sl-icon></td></tr>
+      <tr><th scope="row">Cable-tie holes</th><td class="xb-cmp-yes"><sl-icon name="check-circle-fill" label="Yes"></sl-icon></td><td class="xb-cmp-yes"><sl-icon name="check-circle-fill" label="Yes"></sl-icon></td><td class="xb-cmp-yes"><sl-icon name="check-circle-fill" label="Yes"></sl-icon></td></tr>
+    </tbody>
+  </table>
+</div>
+{:/nomarkdown}

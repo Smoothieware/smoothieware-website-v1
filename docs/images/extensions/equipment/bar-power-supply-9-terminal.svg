@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 115.0 62.0" width="115.0mm" height="62.0mm" data-equipment="bar-power-supply-9-terminal" data-terminal-pitch-mm="9.5" data-typical="true">
+<title>Typical enclosed power supply, terminal end, seen from above</title>
+<desc>Original drawing of a typical unit, not a specific model. Nine screw terminals 9.5 mm apart: L, N, protective earth, three negative outputs, three positive outputs. The body continues beyond the top edge.</desc>
+<defs><linearGradient id="bps-steel" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7d8793"/><stop offset=".18" stop-color="#b9c0c9"/><stop offset="1" stop-color="#dfe4ea"/></linearGradient><pattern id="bps-holes" width="5" height="4.4" patternUnits="userSpaceOnUse"><circle cx="1.25" cy="1.1" r=".95" fill="#3b424c"/><circle cx="3.75" cy="3.3" r=".95" fill="#3b424c"/></pattern></defs>
+<path d="M0 0H115.0V60.8a1.2 1.2 0 0 1 -1.2 1.2H1.2a1.2 1.2 0 0 1 -1.2 -1.2Z" fill="url(#bps-steel)" stroke="#7d8793" stroke-width=".5"/>
+<rect x="8" y="5" width="99.0" height="34.0" rx="1" fill="url(#bps-holes)"/>
+<path d="M0 0H115.0" stroke="#7d8793" stroke-width=".8" stroke-dasharray="2.5 1.6"/>
+<rect x="3.05" y="45.0" width="87.90" height="15.0" rx=".8" fill="#16181c" stroke="#000" stroke-width=".3"/>
+<rect x="4.95" y="49.2" width="8.1" height="10.0" rx=".5" fill="#23272e"/>
+<rect x="5.90" y="50.4" width="6.2" height="7.6" rx=".4" fill="#9aa3ae" stroke="#6b7480" stroke-width=".25"/>
+<g data-terminal="L" data-index="1" data-x="9.00" data-y="54.20"><circle cx="9.00" cy="54.20" r="2.4" fill="#d5dae1" stroke="#6b7480" stroke-width=".35"/><path d="M7.51 54.20h2.98" stroke="#6b7480" stroke-width=".55" stroke-linecap="round"/><path d="M9.00 52.71v2.98" stroke="#6b7480" stroke-width=".55" stroke-linecap="round"/></g>
+<text x="9.00" y="48.3" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="2.9" font-weight="700" fill="#f2f4f7">L</text>
+<rect x="14.45" y="49.2" width="8.1" height="10.0" rx=".5" fill="#23272e"/>
+<rect x="15.40" y="50.4" width="6.2" height="7.6" rx=".4" fill="#9aa3ae" stroke="#6b7480" stroke-width=".25"/>
+<g data-terminal="N" data-index="2" data-x="18.50" data-y="54.20"><circle cx="18.50" cy="54.20" r="2.4" fill="#d5dae1" stroke="#6b7480" stroke-width=".35"/><path d="M17.01 54.20h2.98" stroke="#6b7480" stroke-width=".55" stroke-linecap="round"/><path d="M18.50 52.71v2.98" stroke="#6b7480" stroke-width=".55" stroke-linecap="round"/></g>
+<text x="18.50" y="48.3" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="2.9" font-weight="700" fill="#f2f4f7">N</text>
+<rect x="23.95" y="49.2" width="8.1" height="10.0" rx=".5" fill="#23272e"/>
+<rect x="24.90" y="50.4" width="6.2" height="7.6" rx=".4" fill="#9aa3ae" stroke="#6b7480" stroke-width=".25"/>
+<g data-terminal="PE" data-index="3" data-x="28.00" data-y="54.20"><circle cx="28.00" cy="54.20" r="2.4" fill="#d5dae1" stroke="#6b7480" stroke-width=".35"/><path d="M26.51 54.20h2.98" stroke="#6b7480" stroke-width=".55" stroke-linecap="round"/><path d="M28.00 52.71v2.98" stroke="#6b7480" stroke-width=".55" stroke-linecap="round"/></g>
+<text x="28.00" y="48.3" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="2.9" font-weight="700" fill="#f2f4f7">⏚</text>
+<rect x="33.45" y="49.2" width="8.1" height="10.0" rx=".5" fill="#23272e"/>
+<rect x="34.40" y="50.4" width="6.2" height="7.6" rx=".4" fill="#9aa3ae" stroke="#6b7480" stroke-width=".25"/>
+<g data-terminal="-V" data-index="4" data-x="37.50" data-y="54.20"><circle cx="37.50" cy="54.20" r="2.4" fill="#d5dae1" stroke="#6b7480" stroke-width=".35"/><path d="M36.01 54.20h2.98" stroke="#6b7480" stroke-width=".55" stroke-linecap="round"/><path d="M37.50 52.71v2.98" stroke="#6b7480" stroke-width=".55" stroke-linecap="round"/></g>
+<text x="37.50" y="48.3" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="2.9" font-weight="700" fill="#f2f4f7">−V</text>
+<rect x="42.95" y="49.2" width="8.1" height="10.0" rx=".5" fill="#23272e"/>
+<rect x="43.90" y="50.4" width="6.2" height="7.6" rx=".4" fill="#9aa3ae" stroke="#6b7480" stroke-width=".25"/>
+<g data-terminal="-V" data-index="5" data-x="47.00" data-y="54.20"><circle cx="47.00" cy="54.20" r="2.4" fill="#d5dae1" stroke="#6b7480" stroke-width=".35"/><path d="M45.51 54.20h2.98" stroke="#6b7480" stroke-width=".55" stroke-linecap="round"/><path d="M47.00 52.71v2.98" stroke="#6b7480" stroke-width=".55" stroke-linecap="round"/></g>
+<text x="47.00" y="48.3" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="2.9" font-weight="700" fill="#f2f4f7">−V</text>
+<rect x="52.45" y="49.2" width="8.1" height="10.0" rx=".5" fill="#23272e"/>
+<rect x="53.40" y="50.4" width="6.2" height="7.6" rx=".4" fill="#9aa3ae" stroke="#6b7480" stroke-width=".25"/>
+<g data-terminal="-V" data-index="6" data-x="56.50" data-y="54.20"><circle cx="56.50" cy="54.20" r="2.4" fill="#d5dae1" stroke="#6b7480" stroke-width=".35"/><path d="M55.01 54.20h2.98" stroke="#6b7480" stroke-width=".55" stroke-linecap="round"/><path d="M56.50 52.71v2.98" stroke="#6b7480" stroke-width=".55" stroke-linecap="round"/></g>
+<text x="56.50" y="48.3" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="2.9" font-weight="700" fill="#f2f4f7">−V</text>
+<rect x="61.95" y="49.2" width="8.1" height="10.0" rx=".5" fill="#23272e"/>
+<rect x="62.90" y="50.4" width="6.2" height="7.6" rx=".4" fill="#9aa3ae" stroke="#6b7480" stroke-width=".25"/>
+<g data-terminal="+V" data-index="7" data-x="66.00" data-y="54.20"><circle cx="66.00" cy="54.20" r="2.4" fill="#d5dae1" stroke="#6b7480" stroke-width=".35"/><path d="M64.51 54.20h2.98" stroke="#6b7480" stroke-width=".55" stroke-linecap="round"/><path d="M66.00 52.71v2.98" stroke="#6b7480" stroke-width=".55" stroke-linecap="round"/></g>
+<text x="66.00" y="48.3" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="2.9" font-weight="700" fill="#f2f4f7">+V</text>
+<rect x="71.45" y="49.2" width="8.1" height="10.0" rx=".5" fill="#23272e"/>
+<rect x="72.40" y="50.4" width="6.2" height="7.6" rx=".4" fill="#9aa3ae" stroke="#6b7480" stroke-width=".25"/>
+<g data-terminal="+V" data-index="8" data-x="75.50" data-y="54.20"><circle cx="75.50" cy="54.20" r="2.4" fill="#d5dae1" stroke="#6b7480" stroke-width=".35"/><path d="M74.01 54.20h2.98" stroke="#6b7480" stroke-width=".55" stroke-linecap="round"/><path d="M75.50 52.71v2.98" stroke="#6b7480" stroke-width=".55" stroke-linecap="round"/></g>
+<text x="75.50" y="48.3" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="2.9" font-weight="700" fill="#f2f4f7">+V</text>
+<rect x="80.95" y="49.2" width="8.1" height="10.0" rx=".5" fill="#23272e"/>
+<rect x="81.90" y="50.4" width="6.2" height="7.6" rx=".4" fill="#9aa3ae" stroke="#6b7480" stroke-width=".25"/>
+<g data-terminal="+V" data-index="9" data-x="85.00" data-y="54.20"><circle cx="85.00" cy="54.20" r="2.4" fill="#d5dae1" stroke="#6b7480" stroke-width=".35"/><path d="M83.51 54.20h2.98" stroke="#6b7480" stroke-width=".55" stroke-linecap="round"/><path d="M85.00 52.71v2.98" stroke="#6b7480" stroke-width=".55" stroke-linecap="round"/></g>
+<text x="85.00" y="48.3" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="2.9" font-weight="700" fill="#f2f4f7">+V</text>
+<rect x="3.70" y="48.9" width="1.1" height="11.1" fill="#0b0c0e"/>
+<rect x="13.20" y="48.9" width="1.1" height="11.1" fill="#0b0c0e"/>
+<rect x="22.70" y="48.9" width="1.1" height="11.1" fill="#0b0c0e"/>
+<rect x="32.20" y="48.9" width="1.1" height="11.1" fill="#0b0c0e"/>
+<rect x="41.70" y="48.9" width="1.1" height="11.1" fill="#0b0c0e"/>
+<rect x="51.20" y="48.9" width="1.1" height="11.1" fill="#0b0c0e"/>
+<rect x="60.70" y="48.9" width="1.1" height="11.1" fill="#0b0c0e"/>
+<rect x="70.20" y="48.9" width="1.1" height="11.1" fill="#0b0c0e"/>
+<rect x="79.70" y="48.9" width="1.1" height="11.1" fill="#0b0c0e"/>
+<rect x="89.20" y="48.9" width="1.1" height="11.1" fill="#0b0c0e"/>
+<circle cx="97.90" cy="54.4" r="2.3" fill="#e9ecef" stroke="#6b7480" stroke-width=".3"/><path d="M96.50 54.4h2.8M97.90 53.0v2.8" stroke="#4a5360" stroke-width=".5"/><circle cx="97.90" cy="48.2" r="1.1" fill="#57d18c" stroke="#1f6b35" stroke-width=".25"/>
+</svg>

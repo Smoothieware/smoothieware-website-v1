@@ -1,138 +1,381 @@
 ---
 layout: default
 title: "Additional general purpose outputs breakout / Servo board"
+description: "Seven buffered 3.3 V or 5 V outputs on three-pin headers, usable for servo-style pulses, relay inputs and driver logic: pinout, links, a pulse check and limits."
 permalink: /extensions/general-purpose-output-servo-board
 ---
 
-# Additional general purpose outputs breakout / Servo board
+{% include _includes/extension-board-page.html %}
 
-{% include extension-board-visuals.html slug="general-purpose-output-servo-board" %}
+{::nomarkdown}
+<div class="xb-hero">
+  <div>
+    <p class="xb-eyebrow">Extension board · Motors and outputs</p>
+    <h1 id="general-purpose-output-servo-board">Additional general purpose outputs breakout / Servo board</h1>
+    <p class="xb-lead">Seven buffered outputs on three-pin ground, power and signal headers. Each channel follows its own host input through a UCC27524A driver and a fused supply branch. Smoothieware generates the level or pulse train; this board supplies the output stage. Typical uses are servo-style pulse inputs, solid-state relay control inputs and external-driver logic, once their voltage and current needs have been checked.</p>
+    <p class="xb-badge">Design candidate · revision v18 · unqualified study · not yet built or tested</p>
+    <div class="xb-actions">
+      <a class="xb-btn xb-btn-primary" href="#get-started">Get started</a>
+      <a class="xb-btn" href="#pinout">Pinout</a>
+      <a class="xb-btn" href="#configuration">Configuration</a>
+    </div>
+  </div>
+  <figure>
+    <img src="/images/extensions/general-purpose-output-servo-board/general-purpose-output-servo-board-diagram.svg" alt="Top view of the board: seven three-pin headers along the top edge with a numbered fuse below each, a ten-contact host socket at the left, a chain socket at the right, four driver chips in the middle and a green two-way terminal at the lower left.">
+    <figcaption>Top view, drawn from the board&rsquo;s design files. This is a drawing, not a photograph.</figcaption>
+  </figure>
+</div>
 
-Provide seven buffered output channels on servo-style Ground/Power/Signal connectors for servos, SSR inputs, or external driver logic.
+<div class="xb-stats">
+  <div class="xb-stat"><b>7 channels</b><span>one three-pin header each</span></div>
+  <div class="xb-stat"><b>UCC27524A</b><span>four dual drivers</span></div>
+  <div class="xb-stat"><b>1.1 A hold</b><span>fuse in every channel supply</span></div>
+  <div class="xb-stat"><b>0.12 A total</b><span>silk value for host 5&nbsp;V signal supply</span></div>
+  <div class="xb-stat"><b>8 lights</b><span>seven outputs and connector power</span></div>
+  <div class="xb-stat"><b>72 × 63</b><span>millimetres, four M3 holes</span></div>
+</div>
 
-## Development status
+<nav class="xb-nav" aria-label="On this page">
+  <a href="#specs">Tech specs</a>
+  <a href="#tour">Board tour</a>
+  <a href="#pinout">Pinout</a>
+  <a href="#what-you-need">What you need</a>
+  <a href="#get-started">Get started</a>
+  <a href="#configuration">Configuration</a>
+  <a href="#how-it-works">How it works</a>
+  <a href="#troubleshooting">Troubleshooting</a>
+  <a href="#downloads">Downloads</a>
+  <a href="#mounting">Mounting</a>
+  <a href="#electrical">Electrical</a>
+</nav>
+{:/nomarkdown}
 
-**Baseline documentation snapshot: 2026-10-11, before the requested connector/protection/usability revision program.** New revision features require their own reviewed source and qualification evidence.
+<sl-alert variant="warning" open>
+  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+  This is an unqualified design study that has not been built or tested, and no servo or other load has been demonstrated with it. A servo&rsquo;s supply voltage and its signal-input tolerance are separate requirements, and changing JP2 changes the driven signal amplitude. The silk says no hot-plug: power off first.
+</sl-alert>
 
-This page documents an **unqualified engineering study**, not a released or tested product. Saved CAD, renders and automated checks do not establish a safe assembly, compatible cable, firmware support or a usable current rating.
+## Tech specs {#specs}
 
-Board-specific qualification limits: v10/73 purchased identities/101records/82 selected/483 historical hashes match;retained native0;STEP/power/fault/physical open.
+{::nomarkdown}
+<div class="xb-tablewrap"><table class="xb-spec">
+  <tbody>
+    <tr><td>Purpose</td><td>Buffer seven controller outputs onto three-pin ground, power and signal headers</td></tr>
+    <tr><td>Drivers</td><td>Four UCC27524A dual drivers: channels 1 and 2 (U1), 3 and 4 (U2), 5 and 6 (U3), 7 and a spare (U4)</td></tr>
+    <tr><td>Host interface</td><td>J1, a ten-contact Gadgeteer socket: host 3.3&nbsp;V and 5&nbsp;V, seven requests IN1 to IN7, ground. J2 chains the raw requests and linked rails on.</td></tr>
+    <tr><td>Outputs</td><td>J3 to J9, channels 1 to 7: ground, channel supply, driven signal</td></tr>
+    <tr><td>Channel supply</td><td>Chosen by JP1 between protected external power (J10) and protected host power; each branch has a 1.1&nbsp;A hold fuse (F3 to F9)</td></tr>
+    <tr><td>Driver supply</td><td>Chosen by JP2 between protected host power and connector power. The silk reads SIG: HOST 5V 0.12A TOTAL.</td></tr>
+    <tr><td>External power</td><td>J10, 5 to 6&nbsp;V on the silk (5 to 12&nbsp;V for the 12&nbsp;V class), through a reverse-polarity transistor, a 6&nbsp;V-class surge diode (SMBJ6.0A) and an LTC4368 protection controller</td></tr>
+    <tr><td>Lights</td><td>Seven output-high lights and a connector-power light</td></tr>
+    <tr><td>Size</td><td>72 &times; 63&nbsp;mm with four 3.2&nbsp;mm holes</td></tr>
+    <tr><td>Works with</td><td><a href="/smoothieboard-v2-prime">Smoothieboard V2 Prime</a> through the <a href="/extensions/raw-pins-screw-terminal-breakout">screw-terminal breakout</a></td></tr>
+    <tr><td>Licence</td><td>Open hardware, CERN-OHL-S-2.0</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
-## Interfaces and wiring
+Every figure with its basis is in the [electrical specifications](#electrical) appendix; hole positions are in the [mounting dimensions](#mounting) appendix. The schematic title block reads v10, the PCB title block v17 and the silk V18; the page documents the v18 package.
 
-### Inputs
+## Board tour {#tour}
 
-- Y or P Gadgeteer signals.
-- External 5–12 V power on 3.5 mm terminal.
+The numbers on the drawing match the list below it. The board is shown from the component side. The mounting holes, J4 to J8, most small parts and the rear test pads are not marked.
 
-### Outputs
+{::nomarkdown}
+<figure class="xb-tour">
+  <div class="xb-tour-scroll" tabindex="0" role="region" aria-label="Annotated top view of the board">
+    <div class="xb-tour-stage">
+      <img src="/images/extensions/general-purpose-output-servo-board/general-purpose-output-servo-board-diagram.svg" alt="Top view of the general purpose outputs servo board with ten numbered markers that are explained in the list below.">
+      <a class="xb-mk xb-pb xb-pl" href="#tour-1" style="left:9%;top:32.7%" aria-label="1: host socket">1<span class="xb-pop"><b>Host socket (J1)</b> — a ten-contact socket (Gadgeteer): host 3.3&nbsp;V and 5&nbsp;V, seven requests (contacts 3 to 9) and ground. <i>See the pinout.</i></span></a>
+      <a class="xb-mk xb-pb xb-pr" href="#tour-2" style="left:91.5%;top:32.7%" aria-label="2: chain socket">2<span class="xb-pop"><b>Chain socket (J2)</b> — a second ten-contact socket carrying the raw host requests and linked rails on to another board, not the seven buffered outputs. Its links JP11 to JP17 are open on the silk.</span></a>
+      <a class="xb-mk xb-pb xb-pl" href="#tour-3" style="left:20.8%;top:10%" aria-label="3: channel 1 output">3<span class="xb-pop"><b>Channel 1 output (J3)</b> — a three-pin header, silk 1:GND 2:VSRV1 3:OUT1. Pin 2 is the channel supply, pin 3 the driven signal.</span></a>
+      <a class="xb-mk xb-pb xb-pr" href="#tour-4" style="left:79.2%;top:10%" aria-label="4: channel 7 output">4<span class="xb-pop"><b>Channel 7 output (J9)</b> — the seventh output, same order: ground, channel supply, signal. J4 to J8 are channels 2 to 6.</span></a>
+      <a class="xb-mk xb-pb xb-pl" href="#tour-5" style="left:22.5%;top:17.5%" aria-label="5: channel fuses">5<span class="xb-pop"><b>Channel fuses (F3 to F9)</b> — seven 1.1&nbsp;A hold fuses, one in each channel supply branch, drawn as the numbered blocks 1 to 7.</span></a>
+      <a class="xb-mk xb-pb xb-pl" href="#tour-6" style="left:23%;top:31%" aria-label="6: output lights">6<span class="xb-pop"><b>Output lights (D11 to D17)</b> — green lights labelled OUT 1 HIGH to OUT 7 HIGH, one per channel, lit while that output is high.</span></a>
+      <a class="xb-mk xb-pb xb-pl" href="#tour-7" style="left:22.5%;top:47.6%" aria-label="7: drivers">7<span class="xb-pop"><b>Output drivers (U1 to U4)</b> — four UCC27524A dual drivers: U1 channels 1 and 2, U2 channels 3 and 4, U3 channels 5 and 6, U4 channel 7 and a spare.</span></a>
+      <a class="xb-mk" href="#tour-8" style="left:66%;top:68.5%" aria-label="8: supply selectors">8<span class="xb-pop"><b>Supply selectors (JP1, JP2)</b> — three-way solder links: JP1 chooses the output connectors&rsquo; power rail (external or host), JP2 the drivers&rsquo; supply (host or connector). Both are bridged 1&ndash;2 as shipped.</span></a>
+      <a class="xb-mk xb-pl" href="#tour-9" style="left:21%;top:91.5%" aria-label="9: external power terminal">9<span class="xb-pop"><b>External power terminal (J10)</b> — a two-way screw terminal for external servo power: contact 1 positive, contact 2 ground. The silk reads 5 to 6&nbsp;V (5 to 12&nbsp;V for the 12&nbsp;V class).</span></a>
+      <a class="xb-mk" href="#tour-10" style="left:49%;top:88%" aria-label="10: protection stage">10<span class="xb-pop"><b>Connector-power protection (Q1, D1, UF1)</b> — a reverse-polarity transistor, a 6&nbsp;V-class surge diode and a protection controller (LTC4368) in the external power path. The CONN PWR light shows connector power.</span></a>
+    </div>
+  </div>
+  <ol class="xb-tour-list">
+    <li id="tour-1"><span class="xb-n">1</span><div><b>Host socket (J1)</b> — a ten-contact socket (Gadgeteer): host 3.3&nbsp;V and 5&nbsp;V, seven requests (contacts 3 to 9) and ground. <i>See the pinout.</i></div></li>
+    <li id="tour-2"><span class="xb-n">2</span><div><b>Chain socket (J2)</b> — a second ten-contact socket carrying the raw host requests and linked rails on to another board, not the seven buffered outputs. Its links JP11 to JP17 are open on the silk.</div></li>
+    <li id="tour-3"><span class="xb-n">3</span><div><b>Channel 1 output (J3)</b> — a three-pin header, silk 1:GND 2:VSRV1 3:OUT1. Pin 2 is the channel supply, pin 3 the driven signal.</div></li>
+    <li id="tour-4"><span class="xb-n">4</span><div><b>Channel 7 output (J9)</b> — the seventh output, same order: ground, channel supply, signal. J4 to J8 are channels 2 to 6.</div></li>
+    <li id="tour-5"><span class="xb-n">5</span><div><b>Channel fuses (F3 to F9)</b> — seven 1.1&nbsp;A hold fuses, one in each channel supply branch, drawn as the numbered blocks 1 to 7.</div></li>
+    <li id="tour-6"><span class="xb-n">6</span><div><b>Output lights (D11 to D17)</b> — green lights labelled OUT 1 HIGH to OUT 7 HIGH, one per channel, lit while that output is high.</div></li>
+    <li id="tour-7"><span class="xb-n">7</span><div><b>Output drivers (U1 to U4)</b> — four UCC27524A dual drivers: U1 channels 1 and 2, U2 channels 3 and 4, U3 channels 5 and 6, U4 channel 7 and a spare.</div></li>
+    <li id="tour-8"><span class="xb-n">8</span><div><b>Supply selectors (JP1, JP2)</b> — three-way solder links: JP1 chooses the output connectors&rsquo; power rail (external or host), JP2 the drivers&rsquo; supply (host or connector). Both are bridged 1&ndash;2 as shipped.</div></li>
+    <li id="tour-9"><span class="xb-n">9</span><div><b>External power terminal (J10)</b> — a two-way screw terminal for external servo power: contact 1 positive, contact 2 ground. The silk reads 5 to 6&nbsp;V (5 to 12&nbsp;V for the 12&nbsp;V class).</div></li>
+    <li id="tour-10"><span class="xb-n">10</span><div><b>Connector-power protection (Q1, D1, UF1)</b> — a reverse-polarity transistor, a 6&nbsp;V-class surge diode and a protection controller (LTC4368) in the external power path. The CONN PWR light shows connector power.</div></li>
+  </ol>
+  <figcaption>Point at a number, or tap it, to read what the part is; the same text is in the list. On a small screen, scroll the drawing sideways.</figcaption>
+</figure>
+{:/nomarkdown}
 
-- Seven keyed 2.54 mm Ground/Power/Signal connectors.
-- One chain port.
+## Pinout {#pinout}
 
-### Connection contract
+### J1: host socket
 
-The table below uses the repository-canonical connector rule: pin 1 is +3.3 V, pin 2 is +5 V, and pin 10 is GND. **Do not release a schematic from this table until it is reconciled pin-by-pin with the current V2 Prime connector implementation; current web documentation presents a conflicting ordering.**
+Contact 1 is at the dot marked on the socket; the odd contacts are in one row.
 
-|  Pin | Function | Design note                                                        |
-| ---: | -------- | ------------------------------------------------------------------ |
-|    1 | +3.3 V   | Canonical fixed rail.                                              |
-|    2 | +5 V     | Canonical fixed rail.                                              |
-|    3 | OUT_1    | Board mapping; validate against current V2 hardware before layout. |
-|    4 | OUT_2    | Board mapping; validate against current V2 hardware before layout. |
-|    5 | OUT_3    | Board mapping; validate against current V2 hardware before layout. |
-|    6 | OUT_4    | Board mapping; validate against current V2 hardware before layout. |
-|    7 | OUT_5    | Board mapping; validate against current V2 hardware before layout. |
-|    8 | OUT_6    | Board mapping; validate against current V2 hardware before layout. |
-|    9 | OUT_7    | Board mapping; validate against current V2 hardware before layout. |
-|   10 | GND      | Canonical fixed rail.                                              |
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>Contact</th><th>Signal</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td><span class="xb-pill xb-p-3v3">3.3 V</span> host</td></tr>
+    <tr><td>2</td><td><span class="xb-pill xb-p-5v">5 V</span> host</td></tr>
+    <tr><td>3 to 9</td><td><span class="xb-pill xb-p-sig">IN1 to IN7</span> requests for channels 1 to 7</td></tr>
+    <tr><td>10</td><td><span class="xb-pill xb-p-gnd">GND</span></td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
-Power off before connecting or changing jumpers. Verify pin 1, signal direction, supply voltage and ground at both ends of every cable. A mechanically fitting connector is not proof of electrical compatibility. If a host pin mapping or current allocation remains unresolved in the design record, do not connect the board until it is resolved.
+### J3 to J9: output headers, J10: external power
 
-## Electrical design requirements
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>Connector</th><th>Pin 1</th><th>Pin 2</th><th>Pin 3</th></tr></thead>
+  <tbody>
+    <tr><td>J3 to J9 (channels 1 to 7)</td><td><span class="xb-pill xb-p-gnd">GND</span></td><td>Channel supply (fused)</td><td><span class="xb-pill xb-p-sig">OUT</span> driven signal</td></tr>
+    <tr><td>J10 external power</td><td>Positive</td><td><span class="xb-pill xb-p-gnd">GND</span></td><td></td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
-The following are specification requirements or study assumptions; they are **not measured operating ratings**. A newer selected-revision note takes precedence over historical draft options.
+### Solder links
 
-- Source asks for 5–12 V connector power and 5–12 V signal; that is not a universal servo contract and remains blocked pending a supported-load matrix.
-- Signal outputs require 10 kΩ pull-downs under the project standard.
-- Total servo inrush can far exceed Gadgeteer power.
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>Link</th><th>Effect</th><th>As delivered</th></tr></thead>
+  <tbody>
+    <tr><td>JP1 (CONN_PWR)</td><td>Output connector power: pad 1 external, pad 3 host fused, to the common pad 2</td><td>Pads 1 and 2 bridged: external power</td></tr>
+    <tr><td>JP2 (SIG_VDD)</td><td>Driver supply: pad 1 host fused, pad 3 connector power</td><td>Pads 1 and 2 bridged: host power</td></tr>
+    <tr><td>JP11 to JP17</td><td>Chain links on J2</td><td>Open, as the silk says (OPEN: JP11&ndash;17)</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
-## Protection in the design record
+To select pads 2&ndash;3 on JP1 or JP2, remove the 1&ndash;2 bridge first; bridging all three pads joins the sources. Inspect the actual bridges before relying on this table. The board has further links (JP18 to JP27) whose roles are not described on this page; the schematic shows them.
 
-The design describes the following protection intent. Check the selected schematic and remaining qualification gates before relying on it:
+## What you need {#what-you-need}
 
-Reverse polarity and fuse/current limit external input; block backfeed; add output shorts protection and ESD appropriate to cables.
+{::nomarkdown}
+<div class="xb-cards">
+  <div class="xb-card"><b>This board</b><span>An unqualified design study, not yet built.</span></div>
+  <div class="xb-card"><b>A screw-terminal breakout</b><span>For the contact remapping from the Prime header.</span></div>
+  <div class="xb-card"><b>A ten-core ribbon</b><span>Checked core by core for continuity and isolation.</span></div>
+  <div class="xb-card"><b>A pulse instrument</b><span>High impedance, with a probe rated for the driver supply.</span></div>
+  <div class="xb-card"><b>For a load</b><span>The exact signal tolerance, supply range and startup or stall current of the servo or device.</span></div>
+</div>
+{:/nomarkdown}
 
-## Selected component architecture
+## Get started {#get-started}
 
-[Selected v10 review](https://github.com/arthurwolf/extension-boards/blob/main/src/general-purpose-output-servo-board/component-review.md) covers101records/73 purchased identities and four existing V1-compatible0603 bypasses. Retain strong drivers/direct interface,no successor. Signal/servo power, selector/backfeed, surge/PTC, thermal/host/STEP/physical gates remain open.
+Start with the no-servo pulse check: it exercises channel 1 through the normal host-powered driver path, with nothing attached to the output but an instrument.
 
-## Configuration and commissioning
+{::nomarkdown}
+<ol class="xb-steps">
+  <li class="xb-step">
+    <h3>Connect with the power removed</h3>
+    <p>Run the ten-core ribbon from the Prime GC/J34 position <i>n</i> to breakout J1 position <i>n</i> for all ten positions, then check continuity and isolation of every core. The red edge in the drawing is the proposed pin-one side; it does not establish the connector&rsquo;s real keying.</p>
+    <p class="xb-expect">The Prime timer output on contact 6 reaches IN1 (board J1 contact 3) through the breakout&rsquo;s remapping. A same-numbered ribbon straight to the board would send it to channel 4 instead.</p>
+  </li>
+  <li class="xb-step">
+    <h3>Check the links and leave the rest alone</h3>
+    <p>Keep JP2 pads 1&ndash;2 (host power to the drivers). Leave JP1 unchanged, J10 unpowered, J2 and all rear test pads untouched and outputs J4 to J9 disconnected.</p>
+  </li>
+  <li class="xb-step">
+    <h3>Connect the instrument to channel 1</h3>
+    <p>Connect J3 pin 3 to the instrument input and J3 pin 1 to its reference. Leave J3 pin 2 (peripheral power) disconnected. No servo or other load is attached.</p>
+  </li>
+  <li class="xb-step">
+    <h3>Send the commands</h3>
+    <p>Use the configuration below, then <code>M281.18</code>, <code>M280.18 P1500</code> and <code>M281.18</code>, measuring each state.</p>
+    <p class="xb-expect">Nominal 1500&nbsp;&micro;s HIGH pulses every 20&nbsp;ms, with the output LOW after <code>M281.18</code>.</p>
+  </li>
+</ol>
+{:/nomarkdown}
 
-Use the configuration and firmware contract for the exact selected revision. Do not copy another module’s socket assignments or assume that an unused pin is available. First-article work must verify source selection, reset/unplug behavior, cable orientation and the actual load or sensor interface before normal operation.
+## Configuration {#configuration}
 
-## Requested connector and usability upgrades
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>You want</th><th>Module</th><th>Example</th></tr></thead>
+  <tbody>
+    <tr><td>Servo-style pulses on channel 1</td><td>Switch with a hardware PWM output</td><td>Below</td></tr>
+    <tr><td>A plain on or off level</td><td>Switch</td><td>Use a digital output type instead of <code>hwpwm</code></td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
-The following are requirements for the next design iterations; this page does **not** claim they are already fitted:
+This example is checked against the pinned SmoothieV2 switch and timer sources (revision 2a21c0108b1d095ecd8b2b9358e94055f053c003) but has not been tested on an installed controller. It reserves <code>PWM2_1</code> (PI5) and the timer it shares; check that allocation against the rest of your configuration.
 
-- On electrically suitable three/four-pin low-voltage ports, provide compact alternative 2.54 mm header/Molex-style and keyed STEMMA-family footprints. Populate one connector option per shared position and document its pin order. Use STEMMA QT only for compatible four-wire I²C; connector appearance does not make another signal protocol I²C-compatible.
-- Render each supported connector population separately. Document clearances, cable access and the exact fitted option.
-- Use uppercase titles in a consistent Montserrat-style face, labels on both sides, visible domain boundaries, a revision-specific wiring guide and this page’s URL on the silk where readable.
-- Keep mounting-hole centers on a documented 10 mm lattice; add cable-tie holes where space and electrical clearances permit. Place status LEDs near accessible edges and give every indicator its own disable solder jumper. Provide labeled test pads and a ground observation point.
-- Review applicable DC power entries for reverse-polarity cutoff with a blinking warning, overvoltage cutoff/indication, controlled startup and electronic overcurrent protection. Indicator and protection circuits must work in the fault state without defeating isolation or safe output defaults. Thermal protection belongs only where the power/thermal analysis justifies it.
-- Electronic protection does not automatically replace a required mains/branch safety fuse. Backfeed blocking and inductive-load flyback clamps are separate design functions. Do not add identity EEPROMs, fault memory, calibration storage or paid self-test hardware under this upgrade program.
+```ini
+[pwm2]
+frequency = 50
 
-## Design sources
+[switch]
+pulse_bench.enable = true
+pulse_bench.output_pin = PWM2_1
+pulse_bench.output_type = hwpwm
+pulse_bench.input_on_command = M280
+pulse_bench.input_off_command = M281
+pulse_bench.subcode = 18
+pulse_bench.startup_state = false
+pulse_bench.startup_value = 0
+pulse_bench.default_on_value = 7.5
+pulse_bench.halt_set_to = false
+pulse_bench.ignore_on_halt = false
+```
 
-- [Board specification](https://github.com/arthurwolf/extension-boards/blob/main/src/general-purpose-output-servo-board/specs.md)
-- [Architecture and component decisions](https://github.com/arthurwolf/extension-boards/blob/main/src/general-purpose-output-servo-board/design.md)
-- [Selected-revision review and qualification record](https://github.com/arthurwolf/extension-boards/blob/main/src/general-purpose-output-servo-board/component-review.md)
-- [All extension boards](/#extension-boards)
+`M280.18 S7.5` requests the equivalent 7.5&nbsp;% duty at 50&nbsp;Hz; send either <code>P</code> or <code>S</code>, and <code>S</code> wins if both are given. Neither is an angle. The configuration does not establish the waveform during reset, boot or power sequencing; measure those separately. The seven buffered channels do not mean seven hardware-PWM allocations are available.
 
-Documentation route: `smoothieware.org/extensions/general-purpose-output-servo-board`.
+## How it works {#how-it-works}
 
-<!-- additive-cad-status:start -->
-## Additive design studies
+{::nomarkdown}
+<figure class="xb-fig">
+  <div class="xb-fig-scroll" tabindex="0" role="region" aria-label="Signal path of one channel">
+  <svg viewBox="0 0 1000 170" role="img" aria-labelledby="xb-how-t">
+    <title id="xb-how-t">A host request on J1 enters a UCC27524A driver whose supply is chosen by JP2, and the driven signal leaves on the channel&rsquo;s output header; the channel supply, chosen by JP1 and passed through a fuse, reaches pin 2 of the same header.</title>
+    <g font-size="13" font-weight="700" text-anchor="middle" fill="#e6ebf2">
+      <rect x="10" y="30" width="170" height="60" rx="8" fill="#1f2226" stroke="#e0a877"/><text x="95" y="55">J1 contact 3 to 9</text><text x="95" y="75" font-weight="400" fill="#a9b4c2">host request</text>
+      <rect x="270" y="30" width="190" height="60" rx="8" fill="#212936" stroke="#6fe08a"/><text x="365" y="55">UCC27524A</text><text x="365" y="75" font-weight="400" fill="#a9b4c2">supply set by JP2</text>
+      <rect x="550" y="30" width="190" height="60" rx="8" fill="#1f2226" stroke="#e0a877"/><text x="645" y="55">Output header</text><text x="645" y="75" font-weight="400" fill="#a9b4c2">pin 3 signal</text>
+      <rect x="270" y="110" width="190" height="50" rx="8" fill="#212936" stroke="#6fe08a"/><text x="365" y="132">JP1, then 1.1 A fuse</text>
+    </g>
+    <g stroke-width="3" fill="none" stroke="#a9b4c2"><path d="M180 60H270"/><path d="M460 60H550"/><path d="M460 135H645V90"/></g>
+    <text x="800" y="140" font-size="12" fill="#a9b4c2">channel supply to pin 2</text>
+  </svg>
+  </div>
+  <figcaption>Two independent selectors: JP1 for the connector power, JP2 for the drivers.</figcaption>
+</figure>
+{:/nomarkdown}
 
-The 2026-10-11 upgrade program has saved additional candidates v11, v12, v13. These studies preserve the historical design described above. Their connector, LED, mechanical and protection changes are revision-specific and remain unqualified.
+The board adds no pulse timing of its own: the controller generates the pulse train and each driver repeats it at the driver supply&rsquo;s voltage. A servo&rsquo;s supply and signal tolerances must both be met. The historical proposal of a 5 to 12&nbsp;V input and an output of at least 100&nbsp;mA is not a measured rating, and neither the host rails nor an output connector has a demonstrated servo startup or stall-current allowance here.
 
-See the [per-board changes, failures and remaining work](https://github.com/arthurwolf/extension-boards/blob/main/src/general-purpose-output-servo-board/fancification.md) and [mandatory family specification](https://github.com/arthurwolf/extension-boards/blob/main/docs/FANCIFICATION-SPEC.md). Use the source hash and native check for the exact candidate being reviewed; do not infer hardware ratings from a rendered population.
-<!-- additive-cad-status:end -->
+## Troubleshooting {#troubleshooting}
 
-<!-- extension-upgrade-readback:start -->
-## Historical upgrade candidate readback — 2026-10-11
+{::nomarkdown}
+<div class="xb-tablewrap"><table class="xb-leds">
+  <thead><tr><th>Light</th><th><span class="xb-led xb-led-green"></span>OUT 1 to 7 HIGH (D11 to D17)</th><th><span class="xb-led xb-led-green"></span>CONN PWR (D2)</th></tr></thead>
+  <tbody>
+    <tr><td>Where</td><td>Below the fuse row, labelled OUT n HIGH</td><td>Lower right, near J9</td></tr>
+    <tr><td>Lit means</td><td>That channel&rsquo;s output is high</td><td>Connector power is present</td></tr>
+  </tbody>
+</table></div>
 
-The three additional revisions are **v11, v12, v13**. They are engineering studies; saved CAD and renders do not release the hardware. The historical v13 candidate is described below. The current second-round retained study is recorded afterward.
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>Symptom</th><th>Check</th></tr></thead>
+  <tbody>
+    <tr><td>No pulses on the instrument</td><td>JP2 (driver supply), the ribbon orientation and the core carrying contact 6, and the configuration above.</td></tr>
+    <tr><td>Pulses on channel 4 instead of 1</td><td>A same-numbered ribbon without the breakout&rsquo;s remapping.</td></tr>
+    <tr><td>Servo twitches or resets</td><td>Startup and stall current against the supply and the fuse; the board has no demonstrated allowance.</td></tr>
+    <tr><td>Wrong signal amplitude</td><td>JP2: the driven signal takes the driver supply&rsquo;s voltage.</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
-### servo-out
+Still stuck? Read [how to ask for help](/help-guidelines) or see the general [troubleshooting guide](/troubleshooting/).
 
-- [Latest PCB source](https://github.com/arthurwolf/extension-boards/blob/main/src/general-purpose-output-servo-board/attempt/versions/v13/servo-out.kicad_pcb), SHA-256 `fbfe719fe9148718f5c5089aa77f2fdda35951440a768e05de085fa6be158126`.
-- Last native check: **518 errors**, including **88 open connections**. This is a CAD result, not electrical, assembly or firmware qualification.
-- No alternative connector population is recorded for this physical role. Any applicable connector conversion remains an explicit design-review item.
-- [normal population/render record](https://github.com/arthurwolf/extension-boards/blob/main/src/general-purpose-output-servo-board/attempt/versions/v13/populations/servo-out/normal/population.json): 6 images; source current; image hashes match; 2 unresolved models.
-- [Changes, failed trials and remaining work](https://github.com/arthurwolf/extension-boards/blob/main/src/general-purpose-output-servo-board/attempt/versions/v13/servo-out-fancification-revision.md).
+## Downloads {#downloads}
 
-Applicable protection, current-path, thermal, pinout, cable access and physical tests remain open wherever the linked board record has not verified them. A zero native-error count does not close those gates.
-<!-- extension-upgrade-readback:end -->
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>File</th><th>Revision</th><th>What it is</th></tr></thead>
+  <tbody>
+    <tr><td><a href="/images/extensions/general-purpose-output-servo-board/general-purpose-output-servo-board-schematic.pdf">Schematic (PDF)</a></td><td>v18</td><td>The complete circuit diagram. Its title block reads v10.</td></tr>
+    <tr><td><a href="/images/extensions/general-purpose-output-servo-board/general-purpose-output-servo-board-bom.csv">Parts list (CSV)</a></td><td>v18</td><td>Every component with its value and footprint</td></tr>
+    <tr><td><a href="/images/extensions/general-purpose-output-servo-board/general-purpose-output-servo-board-diagram.svg">Board drawing (SVG)</a></td><td>v18</td><td>The top view used on this page, at full resolution</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
-## Historical pre-recovery annotation study — v18, 2026-10-13
+## Appendix: mounting dimensions {#mounting}
 
-Revision **v18** improves the power legend, rear title, complete documentation URL, revision marking and J3–J9 wiring guide while preserving v17's circuit, component/footprint expressions, copper, drills and mechanics. [Source-bound review](https://github.com/arthurwolf/extension-boards/blob/main/src/general-purpose-output-servo-board/attempt/versions/v18/inherited-provenance-before-powerpak/servo-out-usability-review.json) binds the PCB to SHA-256 `3db4c61601f058902279f25e019189a237cb2e14509bac478dd4ba989ffd7228`. All 390 frozen historical hashes remain unchanged.
+For drilling a mounting plate or designing an enclosure. Positions are hole centres, in millimetres, measured from the top-left corner with the board seen from the component side.
 
-Fresh native checks have zero enabled design-rule errors, zero open connections, zero schematic parity findings and clean electrical rules. Warning categories did not increase; the inherited total fell from 204 to 186. Six normal populated/bare views were generated and inspected, and 17 source-bound manufacturing/BOM/placement/schematic export files were verified. No alternative connector population is declared.
+{::nomarkdown}
+<figure class="xb-fig">
+  <div class="xb-fig-scroll" tabindex="0" role="region" aria-label="Mounting drawing">
+  <svg viewBox="0 0 1000 480" role="img" aria-labelledby="xb-gp-mount-t">
+  <title id="xb-gp-mount-t">Mounting drawing of the General purpose outputs servo board, component side: outline 72 by 63 millimetres with 4 mounting holes. Hole positions are listed in the table below.</title>
+  <text x="480.0" y="24" text-anchor="middle" font-size="13" font-weight="700" letter-spacing="1" fill="#a9b4c2">COMPONENT SIDE · millimetres</text>
+  <rect x="285.7" y="78.0" width="388.6" height="340.0" rx="10.8" fill="#1f2226" stroke="#e6ebf2" stroke-width="1.5"/>
+  <g stroke="#a9b4c2" stroke-width="1.2" fill="none"><path d="M285.7 56H674.3"/><path d="M285.7 50V62"/><path d="M674.3 50V62"/><path d="M700.3 78.0V418.0"/><path d="M694.3 78.0h12"/><path d="M694.3 418.0h12"/></g>
+  <text x="480.0" y="48" text-anchor="middle" font-size="15" font-weight="700" fill="#e6ebf2">72</text>
+  <text x="712.3" y="253.0" font-size="15" font-weight="700" fill="#e6ebf2">63</text>
+  <circle cx="285.7" cy="78.0" r="4" fill="#ffcc33"/>
+  <text x="273.7" y="83.0" text-anchor="end" font-size="14" font-weight="700" fill="#ffcc33">0, 0</text>
+  <g stroke="#ffcc33" stroke-width="1.5" fill="#ffcc33"><path d="M227.7 104.0h30" fill="none"/><path d="M261.7 104.0l-8 -4v8z"/><path d="M227.7 104.0v30" fill="none"/><path d="M227.7 138.0l-4 -8h8z"/></g>
+  <text x="265.7" y="109.0" font-size="12" font-weight="700" fill="#ffcc33">X</text>
+  <text x="223.7" y="154.0" font-size="12" font-weight="700" fill="#ffcc33">Y</text>
+  <circle cx="318.1" cy="132.0" r="8.6" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <path d="M305.5 132.0h25.3M318.1 119.3v25.3" stroke="#ffcc33" stroke-width=".8" fill="none"/>
+  <text x="309.5" y="160.6" text-anchor="start" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">1</tspan>  6.00, 10.00</text>
+  <circle cx="641.9" cy="132.0" r="8.6" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <path d="M629.3 132.0h25.3M641.9 119.3v25.3" stroke="#ffcc33" stroke-width=".8" fill="none"/>
+  <text x="650.5" y="160.6" text-anchor="end" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">2</tspan>  66.00, 10.00</text>
+  <circle cx="318.1" cy="347.8" r="8.6" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <path d="M305.5 347.8h25.3M318.1 335.2v25.3" stroke="#ffcc33" stroke-width=".8" fill="none"/>
+  <text x="309.5" y="329.2" text-anchor="start" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">3</tspan>  6.00, 50.00</text>
+  <circle cx="641.9" cy="347.8" r="8.6" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <path d="M629.3 347.8h25.3M641.9 335.2v25.3" stroke="#ffcc33" stroke-width=".8" fill="none"/>
+  <text x="650.5" y="329.2" text-anchor="end" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">4</tspan>  66.00, 50.00</text>
+  <text x="480.0" y="448.0" text-anchor="middle" font-size="13" fill="#a9b4c2">Numbered rings are mounting holes. Positions are hole centres, X then Y, from the marked corner.</text>
+  </svg>
+  </div>
+  <figcaption>Board outline 72 × 63&nbsp;mm, corners rounded to a 2&nbsp;mm radius, board thickness 1.6&nbsp;mm. Drawn from the design files, component side up, in the same orientation as the board tour.</figcaption>
+</figure>
 
-**Pre-recovery historical status:** package acceptance was withheld: the exact PowerPAK SO-8 body model declared for QF4/QF5 is unavailable, and exact official recovery returned HTTP 404. Two of 133 model declarations remain unresolved, so populated views omit those bodies. No substitute package or electrical change was made. Render/package completeness and fabrication release remain false. Load-voltage compatibility, current, host, thermal, physical assembly and connector fit remain unqualified; inherited silk/library warnings remain.
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>Hole</th><th>X (mm)</th><th>Y (mm)</th><th>Diameter</th><th>Use</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td>6.00</td><td>10.00</td><td>3.2&nbsp;mm, not plated</td><td>Mounting, M3 screw</td></tr>
+    <tr><td>2</td><td>66.00</td><td>10.00</td><td>3.2&nbsp;mm, not plated</td><td>Mounting, M3 screw</td></tr>
+    <tr><td>3</td><td>6.00</td><td>50.00</td><td>3.2&nbsp;mm, not plated</td><td>Mounting, M3 screw</td></tr>
+    <tr><td>4</td><td>66.00</td><td>50.00</td><td>3.2&nbsp;mm, not plated</td><td>Mounting, M3 screw</td></tr>
+  </tbody>
+</table></div>
 
-## Current visualization package — v18, 2026-10-13
+{:/nomarkdown}
 
-The parent-authorized recovery associates QF4/QF5 with retained exact donor model bytes and changes only their model filenames. All circuitry, footprint/paste/pad/copper/drill/mounting geometry, model rotations/scales/offsets and rules remain unchanged. Current PCB SHA-256: `f8b01845d4fa82b3de4c3b3d97f1e38339df3b539475202f2b438dde718b3d9a`. [Current source-bound review](https://github.com/arthurwolf/extension-boards/blob/main/src/general-purpose-output-servo-board/attempt/versions/v18/powerpak-regeneration-review.json) supersedes pre-recovery renders and exports, preserved as historical provenance.
+## Appendix: electrical specifications {#electrical}
 
-Fresh checks report zero enabled errors, opens and parity errors, 186 DRC warnings and 0 ERC warnings, identical to the pre-model-change source. All 133 model declarations resolve; six normal-population views plus a supplemental backside isometric view were inspected and 17 source-bound exports verified. The recovered bodies' visible seating and terminal orientation are consistent with retained placements, including the servo-output zero-degree QF5 placement.
+Every figure is a board silk value or a value from the parts list, as the last column says. None is a measurement on a built board. **Open** means not established.
 
-**Visualization only:** the exact donor has up to 0.025 mm isolated-terminal Y-centre displacement from centered 1.27 mm basic pitch. Exact drawing fidelity and physical fit are not claimed. The rendering package is complete; fabrication release, current/load/thermal/host/system safety and physical assembly qualification remain withheld. Inherited silk/library warnings remain.
+{::nomarkdown}
+<div class="xb-tablewrap"><table class="xb-elec">
+  <thead><tr><th>Parameter</th><th>Applies to</th><th>Lower</th><th>Nominal</th><th>Upper</th><th>Basis and conditions</th></tr></thead>
+  <tbody>
+    <tr><td>External power</td><td>J10</td><td>5 V</td><td>Open</td><td>6 V (12 V class: 12 V)</td><td>Silk: EXT + 5&ndash;6V, 12V class 5&ndash;12V; not a qualified rating</td></tr>
+    <tr><td>Fuse per channel</td><td>F3 to F9</td><td>—</td><td>1.1 A hold</td><td>—</td><td>Parts list</td></tr>
+    <tr><td>Surge diode</td><td>D1</td><td>—</td><td>SMBJ6.0A</td><td>—</td><td>Parts list (6 V class)</td></tr>
+    <tr><td>Host 5 V for the signal supply</td><td>J1 contact 2</td><td>—</td><td>—</td><td>0.12 A total</td><td>Silk value (SIG: HOST 5V 0.12A TOTAL)</td></tr>
+    <tr><td>Output signal level</td><td>J3 to J9 pin 3</td><td>Open</td><td>Driver supply</td><td>Open</td><td>Follows JP2; not measured</td></tr>
+    <tr><td>Servo startup and stall current</td><td>J3 to J9 pin 2</td><td>Open</td><td>Open</td><td>Open</td><td>No allowance demonstrated</td></tr>
+    <tr><td>Behaviour at reset, boot and power-up</td><td>Outputs</td><td>Open</td><td>Open</td><td>Open</td><td>Not established</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
-## Trusted-power review — V18 retained
+### Prime headers
 
-The current board already uses the original 72 × 63 mm nominal outline without a sparse protection annex. The trusted host supply passes through a real downstream servo/output branch limiter before the selectable servo supply. The separate loose-wired external input retains its LTC4368/MOSFET protection and warning circuitry. No new CAD revision was justified by this review.
+The pulse check above uses **Smoothieboard V2 P11 Prime** through the screw-terminal breakout. This is a candidate allocation from the source and is not verified on a built system: the Prime&rsquo;s physical connector carries a noted rail-position discrepancy, so check numbered continuity with the power removed.
 
-Native layout, connectivity and schematic-parity checks have zero errors or opens; ERC is clean. Existing library/silkscreen warnings and visible label clutter remain unresolved. All six current normal-population views were visually checked for framing. Physical and electrical qualification remains open; fabrication release is false.
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>Cable core</th><th>Prime GC/J34 signal</th><th>Breakout J3 field connection</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td>Limited 3.3 V</td><td>To board J1 contact 1</td></tr>
+    <tr><td>2</td><td>Limited 5 V</td><td>To board J1 contact 2 (protected host driver feed)</td></tr>
+    <tr><td>3, 4, 5</td><td>PD14, PD12, PD10</td><td>No field lead; insulate</td></tr>
+    <tr><td>6</td><td>TIM8 channel 1 (PI5)</td><td>To board J1 contact 3, the IN1 request</td></tr>
+    <tr><td>7, 8, 9</td><td>TIM8 channels 2, 3, 4</td><td>No field lead; insulate</td></tr>
+    <tr><td>10</td><td>Circuit ground</td><td>To board J1 contact 10</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+See all boards on the [extension boards](/extension-boards) page.

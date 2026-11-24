@@ -1,0 +1,51 @@
+Reference,Value,Footprint,DNP
+C1,100nF 100V,Capacitor_SMD:C_0805_2012Metric,False
+C2,100nF 50V,Capacitor_SMD:C_0805_2012Metric,False
+C3,100nF 50V,Capacitor_SMD:C_0805_2012Metric,False
+C4,1uF 25V,Capacitor_SMD:C_0805_2012Metric,False
+D1,RED DRDY,LED_SMD:LED_0603_1608Metric,False
+FIDB1,Fiducial_1mm_Mask2mm,Fiducial:Fiducial_1mm_Mask2mm,False
+FIDB2,Fiducial_1mm_Mask2mm,Fiducial:Fiducial_1mm_Mask2mm,False
+FIDB3,Fiducial_1mm_Mask2mm,Fiducial:Fiducial_1mm_Mask2mm,False
+FIDF1,Fiducial_1mm_Mask2mm,Fiducial:Fiducial_1mm_Mask2mm,False
+FIDF2,Fiducial_1mm_Mask2mm,Fiducial:Fiducial_1mm_Mask2mm,False
+FIDF3,Fiducial_1mm_Mask2mm,Fiducial:Fiducial_1mm_Mask2mm,False
+H1,MountingHole_3.2mm_M3,MountingHole:MountingHole_3.2mm_M3,False
+H2,MountingHole_3.2mm_M3,MountingHole:MountingHole_3.2mm_M3,False
+H3,MountingHole_3.2mm_M3,MountingHole:MountingHole_3.2mm_M3,False
+H4,MountingHole_3.2mm_M3,MountingHole:MountingHole_3.2mm_M3,False
+J1,GADGETEER S IN,Smoothie_SPI_PT100:Samtec_SHF105_TH_LC,False
+J2,GADGETEER S CHAIN,Smoothie_SPI_PT100:Samtec_SHF105_TH_LC,False
+J3,PT100 F+ RTD+ RTD- F-,"TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-1,5-4-5.08_1x04_P5.08mm_Horizontal",False
+JP1,2W,Jumper:SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm,False
+JP10,F2,Jumper:SolderJumper-3_P1.3mm_Bridged12_RoundedPad1.0x1.5mm,False
+JP11,DRDY>P3,Jumper:SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm,False
+JP12,CUT TO DISABLE D1,Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm,False
+JP2,2W/3W,Jumper:SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm,False
+JP3,CHAIN P3,Jumper:SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm,False
+JP4,CHAIN P4,Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm,False
+JP5,CHAIN P5,Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm,False
+JP6,CHAIN P6,Jumper:SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm,False
+JP7,CHAIN P7,Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm,False
+JP8,CHAIN P8,Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm,False
+JP9,CHAIN P9,Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm,False
+R1,400R 0.1% 25ppm,Resistor_SMD:R_1206_3216Metric,False
+R2,10M,Resistor_SMD:R_0805_2012Metric,False
+R3,2.4k,Resistor_SMD:R_0805_2012Metric,False
+R4,10k,Resistor_SMD:R_0805_2012Metric,False
+TP1,GND,PT100_Probe:TestPoint_Pad_D1.5mm_NoSilk,False
+TP10,SPI_SCK,PT100_Probe:TestPoint_Pad_D1.5mm_NoSilk,False
+TP11,DRDY_N,PT100_Probe:TestPoint_Pad_D1.5mm_NoSilk,False
+TP12,BIAS,PT100_Probe:TestPoint_Pad_D1.5mm_NoSilk,False
+TP13,REFIN_M,PT100_Probe:TestPoint_Pad_D1.5mm_NoSilk,False
+TP14,RTD_SP,PT100_Probe:TestPoint_Pad_D1.5mm_NoSilk,False
+TP15,RTD_SM,PT100_Probe:TestPoint_Pad_D1.5mm_NoSilk,False
+TP2,GND,PT100_Probe:TestPoint_Pad_D1.5mm_NoSilk,False
+TP3,GND,PT100_Probe:TestPoint_Pad_D1.5mm_NoSilk,False
+TP4,GND,PT100_Probe:TestPoint_Pad_D1.5mm_NoSilk,False
+TP5,+3V3,PT100_Probe:TestPoint_Pad_D1.5mm_NoSilk,False
+TP6,+5V,PT100_Probe:TestPoint_Pad_D1.5mm_NoSilk,False
+TP7,SPI_CS_N,PT100_Probe:TestPoint_Pad_D1.5mm_NoSilk,False
+TP8,SPI_MOSI,PT100_Probe:TestPoint_Pad_D1.5mm_NoSilk,False
+TP9,SPI_MISO,PT100_Probe:TestPoint_Pad_D1.5mm_NoSilk,False
+U1,MAX31865AAP+,Package_SO:SSOP-20_5.3x7.2mm_P0.65mm,False

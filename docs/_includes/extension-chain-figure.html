@@ -1,0 +1,46 @@
+{% comment %}
+Shared figure: how a board with an IN and a CHAIN connector passes the controller's port on to a second board.
+Parameters: id (unique prefix), board (short name of this board), in_label, chain_label (the printed connector names),
+lane1, lane2, lane3 (what each of the three example pins is), s1, s2, s3 ("closed" or "open": the link of that pin as delivered),
+caption (sentence appended to the caption), links ("none" for a board whose two connectors are joined directly, without links). Call inside a nomarkdown block.
+{% endcomment %}
+<figure class="xb-fig">
+  <div class="xb-fig-scroll" tabindex="0" role="region" aria-label="Passing the port on to a second board">
+  <svg viewBox="0 0 1000 300" role="img" aria-labelledby="{{ include.id }}-chain-t">
+    <title id="{{ include.id }}-chain-t">The controller's ribbon cable goes to the connector {{ include.in_label }} of the {{ include.board }}. Inside the board each of the ten pins runs {% if include.links == "none" %}straight{% else %}through a solder link{% endif %} to the connector {{ include.chain_label }}, where a second ribbon cable continues to the next board.{% unless include.links == "none" %} A closed link passes its pin on, an open link stops it.{% endunless %}</title>
+    <rect x="14" y="90" width="150" height="110" rx="8" fill="#1f2226" stroke="#dfe4ee" stroke-width="1.5"/>
+    <text x="80" y="140" text-anchor="middle" font-size="14" font-weight="700" fill="#e6ebf2">Controller</text>
+    <text x="80" y="160" text-anchor="middle" font-size="12" fill="#a9b4c2">one ten-pin port</text>
+    <rect x="136" y="112" width="22" height="66" rx="3" fill="#0d0f12" stroke="#8a94a3"/>
+    <path d="M158 145H266" stroke="#8a94a3" stroke-width="20"/><g stroke="#5d6673"><path d="M158 139H266"/><path d="M158 145H266"/><path d="M158 151H266"/></g>
+    <rect x="258" y="36" width="450" height="218" rx="8" fill="#1f2226" stroke="#dfe4ee" stroke-width="1.5"/>
+    <text x="483" y="60" text-anchor="middle" font-size="15" font-weight="700" fill="#e6ebf2">{{ include.board }}</text>
+    <rect x="266" y="88" width="22" height="114" rx="3" fill="#0d0f12" stroke="#8a94a3"/>
+    <rect x="678" y="88" width="22" height="114" rx="3" fill="#0d0f12" stroke="#8a94a3"/>
+    <text x="277" y="222" text-anchor="middle" font-size="12" font-weight="700" fill="#ffcc33">{{ include.in_label }}</text>
+    <text x="689" y="222" text-anchor="middle" font-size="12" font-weight="700" fill="#ffcc33">{{ include.chain_label }}</text>
+    <text x="300" y="96" font-size="12" fill="#a9b4c2">{{ include.lane1 }}</text>
+    {% if include.links == "none" %}<path d="M288 105H678" stroke="#5fb3ff" stroke-width="3"/><text x="638" y="96" text-anchor="middle" font-size="11" fill="#4be07f">passed on</text>{% else %}
+    <path d="M288 105H560" stroke="#5fb3ff" stroke-width="3"/>
+    <g fill="#e0b84a" stroke="#6b5310"><rect x="560" y="97" width="16" height="16" rx="2"/><rect x="582" y="97" width="16" height="16" rx="2"/></g>
+    {% if include.s1 == "closed" %}<rect x="574" y="102" width="10" height="6" fill="#e0b84a"/><path d="M598 105H678" stroke="#5fb3ff" stroke-width="3"/><text x="638" y="96" text-anchor="middle" font-size="11" fill="#4be07f">passed on</text>{% else %}<path d="M598 105H678" stroke="#5fb3ff" stroke-width="3" opacity=".25" stroke-dasharray="5 5"/><text x="638" y="96" text-anchor="middle" font-size="11" fill="#ff9f43">stops here</text>{% endif %}{% endif %}
+    <text x="300" y="136" font-size="12" fill="#a9b4c2">{{ include.lane2 }}</text>
+    {% if include.links == "none" %}<path d="M288 145H678" stroke="#5fb3ff" stroke-width="3"/><text x="638" y="136" text-anchor="middle" font-size="11" fill="#4be07f">passed on</text>{% else %}
+    <path d="M288 145H560" stroke="#5fb3ff" stroke-width="3"/>
+    <g fill="#e0b84a" stroke="#6b5310"><rect x="560" y="137" width="16" height="16" rx="2"/><rect x="582" y="137" width="16" height="16" rx="2"/></g>
+    {% if include.s2 == "closed" %}<rect x="574" y="142" width="10" height="6" fill="#e0b84a"/><path d="M598 145H678" stroke="#5fb3ff" stroke-width="3"/><text x="638" y="136" text-anchor="middle" font-size="11" fill="#4be07f">passed on</text>{% else %}<path d="M598 145H678" stroke="#5fb3ff" stroke-width="3" opacity=".25" stroke-dasharray="5 5"/><text x="638" y="136" text-anchor="middle" font-size="11" fill="#ff9f43">stops here</text>{% endif %}{% endif %}
+    <text x="300" y="176" font-size="12" fill="#a9b4c2">{{ include.lane3 }}</text>
+    {% if include.links == "none" %}<path d="M288 185H678" stroke="#5fb3ff" stroke-width="3"/><text x="638" y="176" text-anchor="middle" font-size="11" fill="#4be07f">passed on</text>{% else %}
+    <path d="M288 185H560" stroke="#5fb3ff" stroke-width="3"/>
+    <g fill="#e0b84a" stroke="#6b5310"><rect x="560" y="177" width="16" height="16" rx="2"/><rect x="582" y="177" width="16" height="16" rx="2"/></g>
+    {% if include.s3 == "closed" %}<rect x="574" y="182" width="10" height="6" fill="#e0b84a"/><path d="M598 185H678" stroke="#5fb3ff" stroke-width="3"/><text x="638" y="176" text-anchor="middle" font-size="11" fill="#4be07f">passed on</text>{% else %}<path d="M598 185H678" stroke="#5fb3ff" stroke-width="3" opacity=".25" stroke-dasharray="5 5"/><text x="638" y="176" text-anchor="middle" font-size="11" fill="#ff9f43">stops here</text>{% endif %}{% endif %}
+    {% unless include.links == "none" %}<text x="579" y="240" text-anchor="middle" font-size="11" fill="#a9b4c2">one solder link per pin</text>{% endunless %}
+    <path d="M700 145H808" stroke="#8a94a3" stroke-width="20"/><g stroke="#5d6673"><path d="M700 139H808"/><path d="M700 145H808"/><path d="M700 151H808"/></g>
+    <rect x="800" y="90" width="186" height="110" rx="8" fill="#1f2226" stroke="#dfe4ee" stroke-width="1.5" stroke-dasharray="7 5"/>
+    <rect x="808" y="112" width="22" height="66" rx="3" fill="#0d0f12" stroke="#8a94a3"/>
+    <text x="906" y="140" text-anchor="middle" font-size="14" font-weight="700" fill="#e6ebf2">Next board</text>
+    <text x="906" y="160" text-anchor="middle" font-size="12" fill="#a9b4c2">sees what is passed on</text>
+  </svg>
+  </div>
+  <figcaption>Chaining: one port of the controller serves two boards. Pin 1 of {{ include.in_label }} leads to pin 1 of {{ include.chain_label }}, pin 2 to pin 2, and so on{% if include.links == "none" %}. The three lines stand for the ten pins.{% else %}, each through its own solder link. The three lines stand for the ten pins and show the links as delivered.{% endif %} Two boards must never drive the same pin, and a pin that one board uses for a signal is not free for the next. {{ include.caption }}</figcaption>
+</figure>

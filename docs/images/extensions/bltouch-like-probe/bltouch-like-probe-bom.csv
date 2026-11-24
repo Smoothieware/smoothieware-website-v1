@@ -1,0 +1,113 @@
+Reference,Value,Footprint,DNP
+C1,10uF 10V X5R,Capacitor_SMD:C_0805_2012Metric,False
+C10,100nF 50V X7R,Capacitor_SMD:C_0603_1608Metric,False
+C11,100pF 50V C0G,Capacitor_SMD:C_0603_1608Metric,False
+C2,2.2uF 10V X7R,Capacitor_SMD:C_0603_1608Metric,False
+C3,100nF 50V X7R,Capacitor_SMD:C_0603_1608Metric,False
+C4,10uF 10V X5R,Capacitor_SMD:C_0805_2012Metric,False
+C5,1nF 50V C0G,Capacitor_SMD:C_0603_1608Metric,False
+C6,100nF 50V X7R,Capacitor_SMD:C_0603_1608Metric,False
+C7,100nF 50V X7R,Capacitor_SMD:C_0603_1608Metric,False
+C8,100nF 50V X7R,Capacitor_SMD:C_0603_1608Metric,False
+C80,100nF 25V X7R,Protection:C_0603_1608Metric,False
+C81,22nF 25V X7R,Protection:C_0603_1608Metric,False
+C82,1uF 25V X7R,Protection:C_0603_1608Metric,False
+C83,1uF 25V X7R,Protection:C_0603_1608Metric,False
+C84,100nF 25V X7R,Protection:C_0603_1608Metric,False
+C85,100nF 25V X7R,Protection:C_0603_1608Metric,False
+C86,10nF 25V X7R,Protection:C_0603_1608Metric,False
+C87,10uF 16V X7R,Protection:C_0805_2012Metric,False
+C9,10uF 10V X5R,Capacitor_SMD:C_0603_1608Metric,False
+CT1,CABLE TIE,Fancification_Mechanical:CableTie_NPTH_2_5mm,False
+CT2,CABLE TIE,Fancification_Mechanical:CableTie_NPTH_2_5mm,False
+D1,SMAJ5.0A supply TVS,Diode_SMD:D_SMA,False
+D130,BAT54HGW-Q REVERSE AUX NEGATIVE CLAMP,Protection:D_SOD-323,False
+D131,BAT54HGW-Q RP NEGATIVE CLAMP,Protection:D_SOD-323,False
+D133,BAT54HGW-Q FAULT AUX NEGATIVE CLAMP,Protection:D_SOD-323,False
+D134,BAT54HGW-Q FAULT LED ANTIPARALLEL,Protection:D_SOD-323,False
+D2,B5819W flyback Schottky,Diode_SMD:D_SOD-123,False
+D3,LED green POWER 3V3,LED_SMD:LED_0603_1608Metric,False
+D4,LED red ALARM,LED_SMD:LED_0603_1608Metric,False
+D5,LED amber ACTIVE,LED_SMD:LED_0603_1608Metric,False
+D80,"BZX384-B6V8,115",Protection:D_SOD-323,False
+D81,AMBER OVERVOLTAGE,Protection:LED_0603_1608Metric,False
+D82,"BZX384-B4V7,115",Protection:D_SOD-323,False
+D83,RED EFUSE FAULT,Protection:LED_0603_1608Metric,False
+D84,BAT54HGW-QX,Protection:D_SOD-323,False
+D85,BAT54HGW-QX,Protection:D_SOD-323,False
+D86,"BZX384-B4V3,115",Protection:D_SOD-323,False
+D87,RED REVERSE BLINK,Protection:LED_0603_1608Metric,False
+J1,GADGETEER P (host),Connector_Smoothie_Probe:Samtec_SHF105_2x05_P1.27mm_TH_LC,False
+J2,SERVO IN G/5V/S,Fancification_Connectors:Dual_bltouch_like_probe_J2,False
+J3,PROBE OUT S/G,Connector_Molex:Molex_KK-254_AE-6410-02A_1x02_P2.54mm_Vertical,False
+J4,SOLENOID 5V,Connector_Molex:Molex_KK-254_AE-6410-02A_1x02_P2.54mm_Vertical,False
+J5,SWD,Connector_PinHeader_2.54mm:PinHeader_1x05_P2.54mm_Vertical,True
+JP1,CUT TO DISABLE D5,Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm,False
+JP2,CUT TO DISABLE D4,Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm,False
+JP3,CUT TO DISABLE D3,Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm,False
+JP80,CUT TO DISABLE RAIL0_OV PORT0,Protection:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm,False
+JP81,CUT TO DISABLE FUSE_FAULT PORT0,Protection:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm,False
+JP82,CUT TO DISABLE REVERSE,Protection:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm,False
+MH1,M3 hole,MountingHole:MountingHole_3.2mm_M3,False
+MH2,M3 hole,MountingHole:MountingHole_3.2mm_M3,False
+Q1,AO3400A solenoid low-side NFET,Package_TO_SOT_SMD:SOT-23,False
+Q2,AO3401A reverse-polarity PFET,Package_TO_SOT_SMD:SOT-23,False
+Q3,BSS138 probe open-drain NFET,Package_TO_SOT_SMD:SOT-23,False
+R1,100k,Resistor_SMD:R_0603_1608Metric,False
+R10,100,Resistor_SMD:R_0603_1608Metric,False
+R11,100k,Resistor_SMD:R_0603_1608Metric,False
+R12,10k,Resistor_SMD:R_0603_1608Metric,False
+R13,1k,Resistor_SMD:R_0603_1608Metric,False
+R14,100k,Resistor_SMD:R_0603_1608Metric,False
+R15,1k,Resistor_SMD:R_0603_1608Metric,False
+R16,680,Resistor_SMD:R_0603_1608Metric,False
+R17,680,Resistor_SMD:R_0603_1608Metric,False
+R18,680,Resistor_SMD:R_0603_1608Metric,False
+R2,23.7k,Resistor_SMD:R_0603_1608Metric,False
+R3,100k,Resistor_SMD:R_0603_1608Metric,False
+R4,100k,Resistor_SMD:R_0603_1608Metric,False
+R5,100,Resistor_SMD:R_0603_1608Metric,False
+R6,100k,Resistor_SMD:R_0603_1608Metric,False
+R7,33k,Resistor_SMD:R_0603_1608Metric,False
+R8,47k,Resistor_SMD:R_0603_1608Metric,False
+R80,1k 1%,Protection:R_0603_1608Metric,False
+R81,125k 0.1%,Protection:R_0603_1608Metric,False
+R82,10k 0.1%,Protection:R_0603_1608Metric,False
+R83,2.2k 1%,Protection:R_0603_1608Metric,False
+R84,0R,Protection:R_0603_1608Metric,False
+R85,604R 0.1%,Protection:R_0603_1608Metric,False
+R86,39k 0.1%,Protection:R_0603_1608Metric,False
+R87,10k 0.1%,Protection:R_0603_1608Metric,False
+R88,1k 0.25W,Protection:R_0805_2012Metric,False
+R89,10k 1%,Protection:R_0603_1608Metric,False
+R9,1k,Resistor_SMD:R_0603_1608Metric,False
+R90,100k 1%,Protection:R_0603_1608Metric,False
+R91,2.2k 1%,Protection:R_0603_1608Metric,False
+R92,1k 0.25W REVERSE AUX,Protection:R_0805_2012Metric,False
+R93,47k 1%,Protection:R_0603_1608Metric,False
+R94,47k 1%,Protection:R_0603_1608Metric,False
+R95,2.2k 1%,Protection:R_0603_1608Metric,False
+SJ1,5V:GADGETEER,Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm,False
+SJ2,5V:SERVO-HDR,Jumper:SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm,False
+SJ3,ALARM:J1.6,Jumper:SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm,False
+SJ4,PULLUP:10K,Jumper:SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm,False
+TIE1,TieHole_2.5mm,Smoothie_Probe:TieHole_2.5mm_Courtyard,False
+TIE2,TieHole_2.5mm,Smoothie_Probe:TieHole_2.5mm_Courtyard,False
+TP1,TP 5V,TestPoint:TestPoint_Pad_D1.5mm,False
+TP2,TP 3V3,TestPoint:TestPoint_Pad_D1.5mm,False
+TP3,TP GND,TestPoint:TestPoint_Pad_D1.5mm,False
+TP4,TP GND,TestPoint:TestPoint_Pad_D1.5mm,False
+TP5,TP CMD,TestPoint:TestPoint_Pad_D1.5mm,False
+TP6,TP PROBE,TestPoint:TestPoint_Pad_D1.5mm,False
+TP7,TP HALL,TestPoint:TestPoint_Pad_D1.5mm,False
+TP8,TP SOL-,TestPoint:TestPoint_Pad_D1.5mm,False
+TP9,TP SOL+,TestPoint:TestPoint_Pad_D1.5mm,False
+U1,STM32G030F6P6 MCU,Package_SO:TSSOP-20_4.4x6.5mm_P0.65mm,False
+U2,DRV5055A2 linear Hall,Package_TO_SOT_SMD:SOT-23,False
+U3,AP2112K-3.3 LDO,Package_TO_SOT_SMD:SOT-23-5,False
+U380,LM66200DRLR POST CUTOFF RCB,Protection:TI_DRL0008A,False
+U4,TPS2553 AUTO RECOVER COIL LIMIT,Package_TO_SOT_SMD:SOT-23-6,False
+U5,TPD4E1U06 ESD array,Smoothie_Probe:TPD4E1U06_DCK_TI,False
+U80,TPS3700DDCR OV CUTOFF,Protection:SOT-23-6,False
+U81,TPS259631DDAR AUTO RETRY 1.506A NOMINAL,Protection:TPS259631_DDA_TI_8_EP,False
+U82,LMC555CMX/NOPB REVERSE BLINK,Protection:SOIC-8_3.9x4.9mm_P1.27mm,False

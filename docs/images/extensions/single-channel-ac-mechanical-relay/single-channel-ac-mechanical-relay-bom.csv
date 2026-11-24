@@ -1,0 +1,68 @@
+Reference,Value,Footprint,DNP
+CT1,CABLE TIE,Fancification_Mechanical:CableTie_NPTH_2_5mm,False
+CT2,CABLE TIE,Fancification_Mechanical:CableTie_NPTH_2_5mm,False
+C_COIL_DVDT1,10nF 50V,Capacitor_SMD:C_0805_2012Metric,False
+C_COIL_IN1,100nF 35V,Capacitor_SMD:C_0805_2012Metric,False
+C_COIL_ITIMER1,2.2nF 16V,Capacitor_SMD:C_0805_2012Metric,False
+C_COIL_OUT1,100nF 35V,Capacitor_SMD:C_0805_2012Metric,False
+C_HOST_DVDT1,10nF 50V,Capacitor_SMD:C_0805_2012Metric,False
+C_HOST_IN1,100nF 25V,Capacitor_SMD:C_0805_2012Metric,False
+C_HOST_ITIMER1,2.2nF 16V,Capacitor_SMD:C_0805_2012Metric,False
+C_HOST_OUT1,100nF 25V,Capacitor_SMD:C_0805_2012Metric,False
+C_ISO_BYP1,100nF 25V,Capacitor_SMD:C_0805_2012Metric,False
+C_ISO_IN1,47uF 50V,Capacitor_THT:CP_Radial_D6.3mm_P2.50mm,False
+C_ISO_POST1,10uF 25V,Capacitor_THT:CP_Radial_D4.0mm_P1.50mm,False
+C_ISO_PRE1,10uF 25V,Capacitor_THT:CP_Radial_D4.0mm_P1.50mm,False
+D_FLY1,SS16-E3/61T,Diode_SMD:D_SMA,False
+D_GATE1,BZT52-C6V2,Diode_SMD:D_SOD-123,False
+D_IND1,GREEN,LED_SMD:LED_0603_1608Metric,False
+D_ISO_BLOCK1,B360A,Diode_SMD:D_SMA,False
+D_TERM1,B360A,Diode_SMD:D_SMA,False
+D_TVS1,SMAJ15A,Diode_SMD:D_SMA,False
+D_XT30,B360A,Diode_SMD:D_SMA,False
+F_HOST1,0452002.MRL,Fuse:Fuse_Littelfuse-NANO2-451_453,False
+F_TERM1,0452.500MRL,Fuse:Fuse_Littelfuse-NANO2-451_453,False
+F_XT30,0452.500MRL,Fuse:Fuse_Littelfuse-NANO2-451_453,False
+H1,MountingHole_3.2mm_M3,MountingHole_3.2mm_M3,False
+H2,MountingHole_3.2mm_M3,MountingHole_3.2mm_M3,False
+H3,MountingHole_3.2mm_M3,MountingHole_3.2mm_M3,False
+H4,MountingHole_3.2mm_M3,MountingHole_3.2mm_M3,False
+JP1,CUT TO DISABLE D_IND1,Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm,False
+J_COIL_SOURCE1,J_COIL_SOURCE,Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical,False
+J_EXT_INPUT1,J_EXT_INPUT,Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical,False
+J_HOST1,J_HOST,Fancification_Connectors:Dual_single_channel_ac_mechanical_relay_J_HOST1,False
+J_HOST_ARM1,J_HOST_ARM,Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical,False
+J_LOAD1,J_LOAD1,RelayCustom:DG302_7.5_03P,False
+J_TERM1,J_TERM,"TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal",False
+J_XT30,J_XT30,Connector_AMASS:AMASS_XT30PW-M_1x02_P2.50mm_Horizontal,False
+K1,RM85-2011-35-1012,RelayCustom:Relay_SPDT_Relpol_RM85_8Pin,False
+L_ISO1,10uH,Inductor_SMD:L_Bourns-SRN4018,False
+Q_COIL1,AO3400A,Package_TO_SOT_SMD:SOT-23,False
+Q_IN1,MMBT3904-7-F,Package_TO_SOT_SMD:SOT-23,False
+R_BASE1,1.50k 1%,Resistor_SMD:R_0805_2012Metric,False
+R_BASE_PD1,100k 1%,Resistor_SMD:R_0805_2012Metric,False
+R_COIL_BLEED1,2.2k 0.25W,Resistor_SMD:R_1206_3216Metric,False
+R_COIL_ILM1,6.49k 1%,Resistor_SMD:R_0805_2012Metric,False
+R_COIL_OV_BOT1,10k 1%,Resistor_SMD:R_0805_2012Metric,False
+R_COIL_OV_TOP1,102k 1%,Resistor_SMD:R_0805_2012Metric,False
+R_COIL_PG_BOT1,10k 1%,Resistor_SMD:R_0805_2012Metric,False
+R_COIL_PG_TOP1,71.5k 1%,Resistor_SMD:R_0805_2012Metric,False
+R_COIL_UV_BOT1,10k 1%,Resistor_SMD:R_0805_2012Metric,False
+R_COIL_UV_TOP1,71.5k 1%,Resistor_SMD:R_0805_2012Metric,False
+R_GATE_PD1,10k 1%,Resistor_SMD:R_0805_2012Metric,False
+R_GATE_SER1,100R 1%,Resistor_SMD:R_0805_2012Metric,False
+R_HOST_ILM1,1.65k 1%,Resistor_SMD:R_0805_2012Metric,False
+R_HOST_OV_BOT1,10k 1%,Resistor_SMD:R_0805_2012Metric,False
+R_HOST_OV_TOP1,36.5k 1%,Resistor_SMD:R_0805_2012Metric,False
+R_HOST_PG_BOT1,10k 1%,Resistor_SMD:R_0805_2012Metric,False
+R_HOST_PG_TOP1,27.4k 1%,Resistor_SMD:R_0805_2012Metric,False
+R_HOST_UV_BOT1,10k 1%,Resistor_SMD:R_0805_2012Metric,False
+R_HOST_UV_TOP1,27.4k 1%,Resistor_SMD:R_0805_2012Metric,False
+R_IND1,5.6k 10% >=0.1W,Resistor_SMD:R_0603_1608Metric,False
+R_LED1,620R 1%,Resistor_SMD:R_0805_2012Metric,False
+R_OPTO_PULL1,2.20k 1% 0.25W,Resistor_SMD:R_1206_3216Metric,False
+R_PRELOAD1,820R 1% >=0.5W,Resistor_SMD:R_2512_6332Metric,False
+U_COIL1,TPS259474LRPWR,RelayCustom:TPS259474_RPW0010A,False
+U_HOST1,TPS259474LRPWR,RelayCustom:TPS259474_RPW0010A,False
+U_ISO1,WRB0512S-3WR2,RelayCustom:EVISUN_WRB0512S_3WR2,False
+U_OPTO1,LTV-817S-TA1-C,RelayCustom:LTV817S_10.16Span,False

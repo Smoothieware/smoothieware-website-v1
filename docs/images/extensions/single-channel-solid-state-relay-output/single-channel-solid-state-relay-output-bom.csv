@@ -1,0 +1,41 @@
+Reference,Value,Footprint,DNP
+CT1,CABLE TIE,Fancification_Mechanical:CableTie_NPTH_2_5mm,False
+CT2,CABLE TIE,Fancification_Mechanical:CableTie_NPTH_2_5mm,False
+D1,1N4148W,Diode_SMD:D_SOD-123,False
+D2,SMF12A,Diode_SMD:D_SOD-123F,False
+F1,SHF 12.5A F,Fuse:Fuseholder_Cylinder-6.3x32mm_Schurter_0031-8002_Horizontal_Open,False
+FID1,Fiducial_1mm_Mask3mm,Fiducial_SSR:Fiducial_1mm_Mask3mm,False
+FID2,Fiducial_1mm_Mask3mm,Fiducial_SSR:Fiducial_1mm_Mask3mm,False
+FID3,Fiducial_1mm_Mask3mm,Fiducial_SSR:Fiducial_1mm_Mask3mm,False
+H1,MountingHole_3.2mm_M3,MountingHole:MountingHole_3.2mm_M3,False
+H2,MountingHole_3.2mm_M3,MountingHole:MountingHole_3.2mm_M3,False
+H3,MountingHole_3.2mm_M3,MountingHole:MountingHole_3.2mm_M3,False
+H4,MountingHole_3.2mm_M3,MountingHole:MountingHole_3.2mm_M3,False
+J1,SIG IN,Connector_Molex:Molex_KK-254_AE-6410-03A_1x03_P2.54mm_Vertical,False
+JP1,CUT TO DISABLE LED2,Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm,False
+JP2,CUT TO DISABLE LED1,Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm,False
+LED1,GREEN SIG,LED_SMD:LED_0603_1608Metric,False
+LED2,AMBER LOAD LIVE,LED_SMD:LED_0603_1608Metric,False
+Q1,BTA41-800B,Package_ST_SSR:TO-3P-3_Vertical_ST_BTA41_P5.45mm_Drill1.9mm,False
+R1,330R,Resistor_SMD:R_1206_3216Metric,False
+R10,27k,Resistor_SMD:R_1206_3216Metric,False
+R2,10k,Resistor_SMD:R_0603_1608Metric,False
+R3,1k 10%,Resistor_SMD:R_0603_1608Metric,False
+R4,1k5,Resistor_SMD:R_0603_1608Metric,False
+R5,360R 1W,Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal,False
+R6,360R,Resistor_SMD:R_1206_3216Metric,False
+R7,27k,Resistor_SMD:R_1206_3216Metric,False
+R8,27k,Resistor_SMD:R_1206_3216Metric,False
+R9,27k,Resistor_SMD:R_1206_3216Metric,False
+RV1,275 V MOV,Varistor:RV_Disc_D15.5mm_W6.1mm_P7.5mm,False
+TB1,MAINS IN L/PE/N,Connector_SSR_Terminal:TerminalBlock_MKDS3_1x03_P5.08mm,False
+TB2,LOAD L/PE/N,Connector_SSR_Terminal:TerminalBlock_MKDS3_1x03_P5.08mm,False
+TB3,PE BOND,Connector_SSR_Terminal:TerminalBlock_MKDS3_1x02_P5.08mm,False
+TCO1,REMOTE TCO 110C G5 CANDIDATE,Fuse_SSR_Remote:ThermalFuse_RemoteWirePair_P10.16mm,False
+TP1,SIG,TestPoint:TestPoint_Pad_D1.5mm,False
+TP2,GND,TestPoint:TestPoint_Pad_D1.5mm,False
+TP3,VCTRL,TestPoint:TestPoint_Pad_D1.5mm,False
+TP4,GND,TestPoint:TestPoint_Pad_D1.5mm,False
+TP5,SENSE_C,TestPoint_SSR:TestPoint_Pad_D1.5mm,False
+U1,MOC3063TVM,ssr-custom:DIP-6_W10.16mm_SSR,False
+U2,LTV-814 (AC in),ssr-custom:DIP-4_W7.62mm_SSR,False

@@ -1,121 +1,334 @@
 ---
 layout: default
-title: "Spectral analysis board"
+title: "Spectral analysis"
+description: "An 18-channel spectral sensor board (three AS7265x sensors) on I2C with a bus buffer and flash: pinout, fixture requirements and what is and is not provided."
 permalink: /extensions/spectral-analysis-board
 ---
 
-# Spectral analysis board
+{% include _includes/extension-board-page.html %}
 
-{% include extension-board-visuals.html slug="spectral-analysis-board" %}
+{::nomarkdown}
+<div class="xb-hero">
+  <div>
+    <p class="xb-eyebrow">Extension board · Sensors</p>
+    <h1 id="spectral-analysis-board">Spectral analysis</h1>
+    <p class="xb-lead">Three AS72651, AS72652 and AS72653 spectral sensors give 18 channels of reflected light, read over I2C, for controlled reflectance experiments. The board supplies sensor data only: the light source, the calibration and the classification of materials belong to the host and to your optical fixture.</p>
+    <p class="xb-badge">Design candidate · revision v31 · not yet built or tested</p>
+    <div class="xb-actions">
+      <a class="xb-btn xb-btn-primary" href="#get-started">Get started</a>
+      <a class="xb-btn" href="#pinout">Pinout</a>
+      <a class="xb-btn" href="#how-it-works">How it works</a>
+    </div>
+  </div>
+  <figure>
+    <img src="/images/extensions/spectral-analysis-board/spectral-analysis-board-diagram.svg" alt="Top view of the spectral analysis board: three square sensor windows in a row in the middle, a ten-contact socket at the right and a small connector at the bottom.">
+    <figcaption>Top view, drawn from the board&rsquo;s design files (revision v31). This is a drawing, not a photograph.</figcaption>
+  </figure>
+</div>
 
-Acquire the 18 visible/near-infrared channels of one generation-2 AS72651/52/53 cluster for controlled reflectance experiments. The PCBA reports sensor data and status over host I²C; normalization, material classification and the dataset are host/fixture work. The named prototype target is in [`attempt/scope.md`](https://github.com/arthurwolf/extension-boards/blob/main/src/spectral-analysis-board/attempt/scope.md).
+<div class="xb-stats">
+  <div class="xb-stat"><b>18 channels</b><span>three sensors, AS72651, AS72652 and AS72653</span></div>
+  <div class="xb-stat"><b>I2C 0x49</b><span>target address at 100&nbsp;kHz, not qualified</span></div>
+  <div class="xb-stat"><b>3.3 V only</b><span>no 5&nbsp;V load; 50&nbsp;mA board allocation, a target</span></div>
+  <div class="xb-stat"><b>15 ± 1 mm</b><span>target sample distance for a flat matte sample</span></div>
+  <div class="xb-stat"><b>No driver</b><span>no spectral sensor support in the pinned source</span></div>
+  <div class="xb-stat"><b>70 × 50</b><span>millimetres, four M3 holes and two cable-tie holes</span></div>
+</div>
 
-## Development status
+<nav class="xb-nav" aria-label="On this page">
+  <a href="#specs">Tech specs</a>
+  <a href="#tour">Board tour</a>
+  <a href="#pinout">Pinout</a>
+  <a href="#what-you-need">What you need</a>
+  <a href="#get-started">Get started</a>
+  <a href="#configuration">Configuration</a>
+  <a href="#how-it-works">How it works</a>
+  <a href="#troubleshooting">Troubleshooting</a>
+  <a href="#downloads">Downloads</a>
+  <a href="#mounting">Mounting</a>
+  <a href="#electrical">Electrical</a>
+</nav>
+{:/nomarkdown}
 
-**Baseline documentation snapshot: 2026-10-11, before the requested connector/protection/usability revision program.** New revision features require their own reviewed source and qualification evidence.
+<sl-alert variant="warning" open>
+  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+  This is a design candidate that has not been built or tested, and it is not ready to energize. The board is 3.3&nbsp;V only: never connect 5&nbsp;V. The light source is external, and its spectrum and stability decide the quality of any result. The address, bus speed, current and fixture distances on this page are design targets, not qualified operation.
+</sl-alert>
 
-This page documents an **unqualified engineering study**, not a released or tested product. Saved CAD, renders and automated checks do not establish a safe assembly, compatible cable, firmware support or a usable current rating.
+## Tech specs {#specs}
 
-Board-specific qualification limits: v27 strictnative/ordinaryassembly0;100checklist unsigned and wavelength/opticalfixture/calibration/I2C/host/stock/physical open.
+{::nomarkdown}
+<div class="xb-tablewrap"><table class="xb-spec">
+  <tbody>
+    <tr><td>Purpose</td><td>Read reflected light in 18 channels from a sample, for controlled reflectance experiments</td></tr>
+    <tr><td>Sensors</td><td>Three AS7265x parts: AS72651 (U1), AS72652 (U2) and AS72653 (U3). U1 coordinates the cluster.</td></tr>
+    <tr><td>Host interface</td><td>I2C on J1 contacts 8 (data) and 9 (clock), through a TCA9517A bus buffer to the sensor side. Target address 0x49, initial speed 100&nbsp;kHz.</td></tr>
+    <tr><td>Supply</td><td>3.3&nbsp;V on J1 contact 1 only; the board is marked 3V3 ONLY / NO 5V LOAD. Target allocation 50&nbsp;mA, not qualified.</td></tr>
+    <tr><td>Flash</td><td>An SST25PF040C serial flash (U4) supports the master sensor. A 10-contact Tag-Connect service connector J2 and four 0&nbsp;&Omega; links JP1 to JP4 isolate the flash lines for programming.</td></tr>
+    <tr><td>Protection</td><td>Two TPD2E2U06 surge-protection parts on the host data and clock lines</td></tr>
+    <tr><td>Connectors</td><td>One 10-contact Gadgeteer I socket (Samtec SHF-105, 1.27&nbsp;mm), a four-contact I2C connector J3, and the service connector J2</td></tr>
+    <tr><td>Fixture target</td><td>A flat matte sample at 15 &plusmn; 1&nbsp;mm, illuminated over at least 40&nbsp;mm diameter, with repeatable dark, white-reference and sample geometry</td></tr>
+    <tr><td>Size</td><td>70 &times; 50&nbsp;mm with four M3 mounting holes and two 2.5&nbsp;mm cable-tie holes</td></tr>
+    <tr><td>Works with</td><td><a href="/smoothieboard-v2-prime">Smoothieboard V2 Prime</a> (not yet usable without a driver)</td></tr>
+    <tr><td>Licence</td><td>Open hardware, CERN-OHL-S-2.0</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
-## Interfaces and wiring
+Every figure with its basis is in the [electrical specifications](#electrical) appendix; hole positions are in the [mounting dimensions](#mounting) appendix.
 
-### Inputs
+## Board tour {#tour}
 
-- Optical sample through three unobstructed apertures at 8 mm centre pitch
-- P12 Prime2590 J38 Gadgeteer I host connection through a numbered 1:1 prototype harness; actual mating/continuity is a later physical test
+The numbers on the drawing match the list below it. The board is shown from the component side. The drawing shows the sockets, the three sensor windows and the silk markings; the resistors, capacitors, flash, bus buffer, surge protection, links and service connector are small parts that are not drawn, and the mounting holes are not marked.
 
-### Outputs
+{::nomarkdown}
+<figure class="xb-tour">
+  <div class="xb-tour-scroll" tabindex="0" role="region" aria-label="Annotated top view of the board">
+    <div class="xb-tour-stage">
+      <img src="/images/extensions/spectral-analysis-board/spectral-analysis-board-diagram.svg" alt="Top view of the spectral analysis board with eight numbered markers that are explained in the list below.">
+      <a class="xb-mk xb-pb xb-pr" href="#tour-1" style="left:85.9%;top:34.3%" aria-label="1: host socket">1<span class="xb-pop"><b>Host socket I (J1)</b> — the Gadgeteer I socket to the controller. Only contacts 1, 8, 9 and 10 are connected: 3.3&nbsp;V, I2C data, I2C clock and ground. <i>See the pinout.</i></span></a>
+      <a class="xb-mk xb-pr" href="#tour-2" style="left:76.4%;top:82.9%" aria-label="2: I2C connector">2<span class="xb-pop"><b>I2C connector (J3)</b> — a four-contact Qwiic-style connector (ground, 3.3&nbsp;V, data, clock) on the sensor-side I2C branch, after the bus buffer.</span></a>
+      <a class="xb-mk xb-pb" href="#tour-3" style="left:38.9%;top:49.9%" aria-label="3: master sensor">3<span class="xb-pop"><b>Sensor U1 (AS72651)</b> — the first of the three sensors, which coordinates the cluster. Together the three give 18 channels.</span></a>
+      <a class="xb-mk xb-pb" href="#tour-4" style="left:50%;top:49.9%" aria-label="4: second sensor">4<span class="xb-pop"><b>Sensor U2 (AS72652)</b> — the second sensor of the cluster.</span></a>
+      <a class="xb-mk xb-pb" href="#tour-5" style="left:61.1%;top:49.9%" aria-label="5: third sensor">5<span class="xb-pop"><b>Sensor U3 (AS72653)</b> — the third sensor of the cluster. Keep the three apertures clear.</span></a>
+      <a class="xb-mk xb-pb xb-pl" href="#tour-6" style="left:21%;top:7.5%" aria-label="6: cable-tie holes">6<span class="xb-pop"><b>Cable-tie holes (CT1, CT2)</b> — two 2.5&nbsp;mm holes for strain relief of the cable.</span></a>
+      <a class="xb-mk" href="#tour-7" style="left:50%;top:90.2%" aria-label="7: aperture marking">7<span class="xb-pop"><b>Aperture marking</b> — the silk APERTURES KEEP CLEAR reminds you not to cover the three sensor windows.</span></a>
+      <a class="xb-mk" href="#tour-8" style="left:31.8%;top:78.6%" aria-label="8: supply marking">8<span class="xb-pop"><b>Supply marking</b> — the silk 3V3 ONLY / NO 5V LOAD: the board takes only 3.3&nbsp;V.</span></a>
+    </div>
+  </div>
+  <ol class="xb-tour-list">
+    <li id="tour-1"><span class="xb-n">1</span><div><b>Host socket I (J1)</b> — the Gadgeteer I socket to the controller. Only contacts 1, 8, 9 and 10 are connected: 3.3&nbsp;V, I2C data, I2C clock and ground. <i>See the pinout.</i></div></li>
+    <li id="tour-2"><span class="xb-n">2</span><div><b>I2C connector (J3)</b> — a four-contact Qwiic-style connector (ground, 3.3&nbsp;V, data, clock) on the sensor-side I2C branch, after the bus buffer.</div></li>
+    <li id="tour-3"><span class="xb-n">3</span><div><b>Sensor U1 (AS72651)</b> — the first of the three sensors, which coordinates the cluster. Together the three give 18 channels.</div></li>
+    <li id="tour-4"><span class="xb-n">4</span><div><b>Sensor U2 (AS72652)</b> — the second sensor of the cluster.</div></li>
+    <li id="tour-5"><span class="xb-n">5</span><div><b>Sensor U3 (AS72653)</b> — the third sensor of the cluster. Keep the three apertures clear.</div></li>
+    <li id="tour-6"><span class="xb-n">6</span><div><b>Cable-tie holes (CT1, CT2)</b> — two 2.5&nbsp;mm holes for strain relief of the cable.</div></li>
+    <li id="tour-7"><span class="xb-n">7</span><div><b>Aperture marking</b> — the silk APERTURES KEEP CLEAR reminds you not to cover the three sensor windows.</div></li>
+    <li id="tour-8"><span class="xb-n">8</span><div><b>Supply marking</b> — the silk 3V3 ONLY / NO 5V LOAD: the board takes only 3.3&nbsp;V.</div></li>
+  </ol>
+  <figcaption>Point at a number, or tap it, to read what the part is; the same text is in the list. On a small screen, scroll the drawing sideways.</figcaption>
+</figure>
+{:/nomarkdown}
 
-- 18 calibrated channels from 410–940 nm when AS7265x is selected
-- Sensor status and saturation data
+## Pinout {#pinout}
 
-### Connection contract
+### J1: host socket (I)
 
-The exact prototype target is P12 Prime2590 J38 from a fresh exported host netlist in [`attempt/host-interface-evidence.md`](https://github.com/arthurwolf/extension-boards/blob/main/src/spectral-analysis-board/attempt/host-interface-evidence.md). The fitted board and harness must still be continuity-checked before power. The table is the actual design assignment, with no guessed alternate UART or LED wiring.
+Contact 1 is at the lower left of the socket in the tour (the arrow marks the lower row), contact 2 directly above it, and odd contacts are in the lower row. The silk reads I / PIN1 above the socket.
 
-| Pin | I socket / P12 J38 | Board assignment |
-| ---: | --- | --- |
-| 1 | switched 3.3 V | V3V3 |
-| 2 | switched 5 V | no connect |
-| 3–7 | GPIO/reserved by socket type | no connect |
-| 8 | I2C2 SDA | host SDA through ESD protection to U5 A side |
-| 9 | I2C2 SCL | host SCL through ESD protection to U5 A side |
-| 10 | GND | common ground |
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>Contact</th><th>Function</th><th>Use</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td><span class="xb-pill xb-p-3v3">3.3 V</span></td><td>Supply for all the parts on the board</td></tr>
+    <tr><td>2 to 7</td><td>Not connected</td><td>Leave unused; there is no chain socket</td></tr>
+    <tr><td>8</td><td><span class="xb-pill xb-p-sig">SDA</span></td><td>I2C data</td></tr>
+    <tr><td>9</td><td><span class="xb-pill xb-p-sig">SCL</span></td><td>I2C clock</td></tr>
+    <tr><td>10</td><td><span class="xb-pill xb-p-gnd">GND</span></td><td>Ground</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
-Power off before connecting or changing jumpers. Verify pin 1, signal direction, supply voltage and ground at both ends of every cable. A mechanically fitting connector is not proof of electrical compatibility. If a host pin mapping or current allocation remains unresolved in the design record, do not connect the board until it is resolved.
+### J3: I2C connector
 
-## Electrical design requirements
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>Contact</th><th>Function</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td><span class="xb-pill xb-p-gnd">GND</span></td></tr>
+    <tr><td>2</td><td><span class="xb-pill xb-p-3v3">3.3 V</span></td></tr>
+    <tr><td>3</td><td><span class="xb-pill xb-p-sig">SENSOR_SDA</span> sensor-side data, after the bus buffer</td></tr>
+    <tr><td>4</td><td><span class="xb-pill xb-p-sig">SENSOR_SCL</span> sensor-side clock, after the bus buffer</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
-The following are specification requirements or study assumptions; they are **not measured operating ratings**. A newer selected-revision note takes precedence over historical draft options.
+The silk above the board lists the same four contacts. J3 joins the buffered sensor-side bus, not the host-side lines. The pads at the connector&rsquo;s sides are mechanical.
 
-- The generation-2 AS7265x I2C supply range is 2.7–3.6 V. Use J1 pin 1 switched 3.3 V, pin 10 ground, pins 8/9 SDA/SCL; leave pin 2 (5 V) and pins 3–7 unconnected
-- Allocate 50 mA for the whole board, subject to a measured shared-rail budget before physical power
-- Isolate the host's unswitched 1 kΩ pull-ups from the switched sensor rail with a powered-off-isolating I2C buffer and local pull-ups; verify levels and power sequencing physically
-- Follow vendor decoupling and flash requirements. The external illuminant is separately powered, so LED driver pins have no load
+### J2 and the programming links
 
-## Protection in the design record
+J2 is a Tag-Connect TC2050 style 10-contact service footprint for the flash and reset lines, with 3.3&nbsp;V on contact 1 and ground on contacts 2 and 8. It is not a normal peripheral inlet. JP1 to JP4 are 0&nbsp;&Omega; resistors that join the master sensor&rsquo;s SPI clock, data out, data in and chip select to the flash; remove them only to isolate the flash while programming. Their default is fitted, and the delivered state should be confirmed on the assembled board.
 
-The design describes the following protection intent. Check the selected schematic and remaining qualification gates before relying on it:
+## What you need {#what-you-need}
 
-- Two separate three-pin TI ESD devices, one per off-board I2C line, close to J1
-- TCA9517A powered-off high-impedance isolation between unswitched host pull-ups and the switched board rail; check the narrow sensor-to-buffer B-side low-level margin physically
-- Flash service isolation links to avoid external-programmer/SPI-master contention; board-side pad map and first-load sequence in [`attempt/flash-programming.md`](https://github.com/arthurwolf/extension-boards/blob/main/src/spectral-analysis-board/attempt/flash-programming.md)
-- Optical baffling, independent lamp power and measured temperature/stray-light drift
+{::nomarkdown}
+<div class="xb-cards">
+  <div class="xb-card"><b>This board</b><span>The design is not yet built.</span></div>
+  <div class="xb-card"><b>Four host wires</b><span>3.3&nbsp;V, I2C data, I2C clock and ground to the controller.</span></div>
+  <div class="xb-card"><b>An optical fixture</b><span>A stable light source, a holder at the target distance and dark and white references.</span></div>
+  <div class="xb-card"><b>A driver</b><span>Sensor firmware setup, acquisition and calibration code. None is supplied.</span></div>
+</div>
+{:/nomarkdown}
 
-## Selected component architecture
+## Get started {#get-started}
 
-See [current review](https://github.com/arthurwolf/extension-boards/blob/main/src/spectral-analysis-board/component-review.md). Retain18-channel AS72651/52/53 and TCA9517A powered-off isolation;AS7343/AS7341 changes410–940nmresponse/fixturecontract. Conditional V1 0603 bypass/pull families only,no successor. Current selected v27; retained native/stock/physical qualification limits remain explicit.
+{::nomarkdown}
+<ol class="xb-steps">
+  <li class="xb-step">
+    <h3>Wire four leads</h3>
+    <p>With the power off, connect header GG (J38) contacts 1 (3.3&nbsp;V), 8 (I2C2 data), 9 (I2C2 clock) and 10 (ground) to J1 contacts 1, 8, 9 and 10. Do not connect 5&nbsp;V. Verify numbered continuity and a free bus first.</p>
+    <p class="xb-expect">The rail positions on the Prime&rsquo;s physical headers need checking before powering; see the Prime header note in the electrical appendix.</p>
+  </li>
+  <li class="xb-step">
+    <h3>Build the fixture</h3>
+    <p>Hold a flat matte sample 15&nbsp;mm &plusmn; 1&nbsp;mm from the sensors and light it with an external source over at least 40&nbsp;mm. Keep the three apertures clear, and make the geometry repeatable between dark, white and sample readings.</p>
+  </li>
+  <li class="xb-step">
+    <h3>Check the bus</h3>
+    <p>Power on and look for a device at the target address 0x49 with a bus scan at 100&nbsp;kHz, if your firmware has one.</p>
+  </li>
+  <li class="xb-step">
+    <h3>Wait for a driver</h3>
+    <p>Measure dark, reference and sample data and watch for saturation before any normalisation or classification. Until a driver exists, no reading can be taken.</p>
+  </li>
+</ol>
+{:/nomarkdown}
 
-## Configuration and commissioning
+## Configuration {#configuration}
 
-Use the configuration and firmware contract for the exact selected revision. Do not copy another module’s socket assignments or assume that an unused pin is available. First-article work must verify source selection, reset/unplug behavior, cable orientation and the actual load or sensor interface before normal operation.
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>You want</th><th>Module</th><th>Example</th></tr></thead>
+  <tbody>
+    <tr><td>Read the 18 channels</td><td>None</td><td>No driver exists; no example is given</td></tr>
+    <tr><td>Classify a material</td><td>None</td><td>Not provided; a host and dataset task</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
-## Requested connector and usability upgrades
+There is no configuration to give. The pinned SmoothieV2 source (revision [2a21c0108b1d095ecd8b2b9358e94055f053c003](https://github.com/Smoothieware/SmoothieV2/tree/2a21c0108b1d095ecd8b2b9358e94055f053c003/Firmware/src)) has no spectral sensor driver. A configuration here would be invented.
 
-The following are requirements for the next design iterations; this page does **not** claim they are already fitted:
+## How it works {#how-it-works}
 
-- On electrically suitable three/four-pin low-voltage ports, provide compact alternative 2.54 mm header/Molex-style and keyed STEMMA-family footprints. Populate one connector option per shared position and document its pin order. Use STEMMA QT only for compatible four-wire I²C; connector appearance does not make another signal protocol I²C-compatible.
-- Render each supported connector population separately. Document clearances, cable access and the exact fitted option.
-- Use uppercase titles in a consistent Montserrat-style face, labels on both sides, visible domain boundaries, a revision-specific wiring guide and this page’s URL on the silk where readable.
-- Keep mounting-hole centers on a documented 10 mm lattice; add cable-tie holes where space and electrical clearances permit. Place status LEDs near accessible edges and give every indicator its own disable solder jumper. Provide labeled test pads and a ground observation point.
-- Review applicable DC power entries for reverse-polarity cutoff with a blinking warning, overvoltage cutoff/indication, controlled startup and electronic overcurrent protection. Indicator and protection circuits must work in the fault state without defeating isolation or safe output defaults. Thermal protection belongs only where the power/thermal analysis justifies it.
-- Electronic protection does not automatically replace a required mains/branch safety fuse. Backfeed blocking and inductive-load flyback clamps are separate design functions. Do not add identity EEPROMs, fault memory, calibration storage or paid self-test hardware under this upgrade program.
+{::nomarkdown}
+<figure class="xb-fig">
+  <div class="xb-fig-scroll" tabindex="0" role="region" aria-label="Signal path">
+  <svg viewBox="0 0 1000 170" role="img" aria-labelledby="xb-how-t">
+    <title id="xb-how-t">The host I2C bus passes surge protection and a bus buffer to three spectral sensors that read light from an external illuminated sample.</title>
+    <g font-size="13" font-weight="700" text-anchor="middle" fill="#e6ebf2">
+      <rect x="20" y="55" width="140" height="60" rx="8" fill="#1f2226" stroke="#dfe4ee"/><text x="90" y="80">J1</text><text x="90" y="100" font-weight="400" fill="#a9b4c2">3.3 V, SDA, SCL</text>
+      <rect x="210" y="55" width="150" height="60" rx="8" fill="#212936" stroke="#e0a877"/><text x="285" y="80">Protection</text><text x="285" y="100" font-weight="400" fill="#a9b4c2">TPD2E2U06</text>
+      <rect x="410" y="55" width="150" height="60" rx="8" fill="#212936" stroke="#5fb3ff"/><text x="485" y="80">TCA9517A</text><text x="485" y="100" font-weight="400" fill="#a9b4c2">bus buffer</text>
+      <rect x="610" y="55" width="190" height="60" rx="8" fill="#212936" stroke="#6fe08a"/><text x="705" y="80">U1, U2, U3</text><text x="705" y="100" font-weight="400" fill="#a9b4c2">18 channels</text>
+      <rect x="850" y="55" width="130" height="60" rx="8" fill="#1f2226" stroke="#e0a877"/><text x="915" y="80">Sample</text><text x="915" y="100" font-weight="400" fill="#a9b4c2">external light</text>
+    </g>
+    <g stroke-width="3" fill="none" stroke="#a9b4c2"><path d="M160 85H210"/><path d="M360 85H410"/><path d="M560 85H610"/><path d="M800 85H850"/></g>
+  </svg>
+  </div>
+  <figcaption>The host talks to the three sensors through a buffered I2C bus. The sample is lit from outside the board.</figcaption>
+</figure>
+{:/nomarkdown}
 
-## Design sources
+The master sensor U1 coordinates the other two, with a serial flash holding its supporting firmware. The host reads them over I2C through the TCA9517A buffer; J3 sits on the sensor side of that buffer. Raw or calibrated channel values need a defined sensor-firmware setup and acquisition procedure, which the board does not include.
 
-- [Board specification](https://github.com/arthurwolf/extension-boards/blob/main/src/spectral-analysis-board/specs.md)
-- [Architecture and component decisions](https://github.com/arthurwolf/extension-boards/blob/main/src/spectral-analysis-board/design.md)
-- [Selected-revision review and qualification record](https://github.com/arthurwolf/extension-boards/blob/main/src/spectral-analysis-board/component-review.md)
-- [All extension boards](/#extension-boards)
+## Troubleshooting {#troubleshooting}
 
-Documentation route: `smoothieware.org/extensions/spectral-analysis-board`.
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>Symptom</th><th>Check</th></tr></thead>
+  <tbody>
+    <tr><td>No device on the bus</td><td>3.3&nbsp;V on J1 contact 1, wiring of contacts 8 and 9, a free bus, and the address (target 0x49).</td></tr>
+    <tr><td>Readings are dark or saturated</td><td>The external light source, the sample distance and the aperture cover.</td></tr>
+    <tr><td>Results drift</td><td>Source spectrum and stability, and repeatable sample geometry.</td></tr>
+    <tr><td>Programming the flash fails</td><td>JP1 to JP4 must be fitted for normal operation; check the service connector wiring.</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
-<!-- additive-cad-status:start -->
-## Additive design studies
+This board has no indicator lights and no test points in the design.
 
-The 2026-10-11 upgrade program has saved additional candidates v28, v29, v30. These studies preserve the historical design described above. Their connector, LED, mechanical and protection changes are revision-specific and remain unqualified.
+Still stuck? Read [how to ask for help](/help-guidelines) or see the general [troubleshooting guide](/troubleshooting/).
 
-See the [per-board changes, failures and remaining work](https://github.com/arthurwolf/extension-boards/blob/main/src/spectral-analysis-board/fancification.md) and [mandatory family specification](https://github.com/arthurwolf/extension-boards/blob/main/docs/FANCIFICATION-SPEC.md). Use the source hash and native check for the exact candidate being reviewed; do not infer hardware ratings from a rendered population.
-<!-- additive-cad-status:end -->
+## Downloads {#downloads}
 
-<!-- extension-upgrade-readback:start -->
-## Upgrade candidate readback
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>File</th><th>Revision</th><th>What it is</th></tr></thead>
+  <tbody>
+    <tr><td><a href="/images/extensions/spectral-analysis-board/spectral-analysis-board-schematic.pdf">Schematic (PDF)</a></td><td>v31</td><td>The complete circuit diagram. Its title block reads v27.</td></tr>
+    <tr><td><a href="/images/extensions/spectral-analysis-board/spectral-analysis-board-bom.csv">Parts list (CSV)</a></td><td>v31</td><td>Every component with its value and footprint</td></tr>
+    <tr><td><a href="/images/extensions/spectral-analysis-board/spectral-analysis-board-diagram.svg">Board drawing (SVG)</a></td><td>v31</td><td>The top view used on this page, at full resolution</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
-The three additional revisions are **v28, v29, v30**. They are engineering studies; saved CAD and renders do not release the hardware. The latest candidate is described below. Older baseline notes above remain historical.
+## Appendix: mounting dimensions {#mounting}
 
-### spectral-analysis
+For drilling a mounting plate or designing an enclosure. Positions are hole centres, in millimetres, measured from the top-left corner with the board seen from the component side. The two cable-tie holes are 2.5&nbsp;mm.
 
-- [Latest PCB source](https://github.com/arthurwolf/extension-boards/blob/main/src/spectral-analysis-board/attempt/versions/v30/spectral-analysis.kicad_pcb), SHA-256 `7361b2bde4d11be5b3a52f4ed4e430744f4489e0124e808ffdcea4fea613591e`.
-- Last native check: **0 errors**, including **0 open connections**. This is a CAD result, not electrical, assembly or firmware qualification.
-- Alternative connector lands recorded: J3 / `PinHeader_1x04_P2.54mm_Vertical`. Fit only the selected population; check its pin map and voltage in the design record.
-- [normal population/render record](https://github.com/arthurwolf/extension-boards/blob/main/src/spectral-analysis-board/attempt/versions/v30/populations/spectral-analysis/normal/population.json): 6 images; source current; image hashes match; 0 unresolved models.
-- [stemma population/render record](https://github.com/arthurwolf/extension-boards/blob/main/src/spectral-analysis-board/attempt/versions/v30/populations/spectral-analysis/stemma/population.json): 6 images; source current; image hashes match; 0 unresolved models.
-- [Changes, failed trials and remaining work](https://github.com/arthurwolf/extension-boards/blob/main/src/spectral-analysis-board/attempt/versions/v30/spectral-analysis-fancification-revision.md).
+{::nomarkdown}
+<figure class="xb-fig">
+  <div class="xb-fig-scroll" tabindex="0" role="region" aria-label="Mounting drawing">
+  <svg viewBox="0 0 1000 480" role="img" aria-labelledby="xb-sp-mount-t">
+  <title id="xb-sp-mount-t">Mounting drawing of the spectral analysis board, component side: outline 70 by 50 millimetres with 4 mounting holes and 2 cable-tie holes. Hole positions are listed in the table below.</title>
+  <text x="480.0" y="24" text-anchor="middle" font-size="13" font-weight="700" letter-spacing="1" fill="#a9b4c2">COMPONENT SIDE · millimetres</text>
+  <rect x="242.0" y="78.0" width="476.0" height="340.0" rx="0.0" fill="#1f2226" stroke="#e6ebf2" stroke-width="1.5"/>
+  <g stroke="#a9b4c2" stroke-width="1.2" fill="none"><path d="M242.0 56H718.0"/><path d="M242.0 50V62"/><path d="M718.0 50V62"/><path d="M744.0 78.0V418.0"/><path d="M738.0 78.0h12"/><path d="M738.0 418.0h12"/></g>
+  <text x="480.0" y="48" text-anchor="middle" font-size="15" font-weight="700" fill="#e6ebf2">70</text>
+  <text x="756.0" y="253.0" font-size="15" font-weight="700" fill="#e6ebf2">50</text>
+  <circle cx="242.0" cy="78.0" r="4" fill="#ffcc33"/>
+  <text x="230.0" y="83.0" text-anchor="end" font-size="14" font-weight="700" fill="#ffcc33">0, 0</text>
+  <g stroke="#ffcc33" stroke-width="1.5" fill="#ffcc33"><path d="M184.0 104.0h30" fill="none"/><path d="M218.0 104.0l-8 -4v8z"/><path d="M184.0 104.0v30" fill="none"/><path d="M184.0 138.0l-4 -8h8z"/></g>
+  <text x="222.0" y="109.0" font-size="12" font-weight="700" fill="#ffcc33">X</text>
+  <text x="180.0" y="154.0" font-size="12" font-weight="700" fill="#ffcc33">Y</text>
+  <circle cx="276.0" cy="112.0" r="10.9" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <path d="M261.1 112.0h29.8M276.0 97.1v29.8" stroke="#ffcc33" stroke-width=".8" fill="none"/>
+  <text x="265.1" y="142.9" text-anchor="start" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">1</tspan>  5.00, 5.00</text>
+  <circle cx="684.0" cy="112.0" r="10.9" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <path d="M669.1 112.0h29.8M684.0 97.1v29.8" stroke="#ffcc33" stroke-width=".8" fill="none"/>
+  <text x="694.9" y="142.9" text-anchor="end" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">2</tspan>  65.00, 5.00</text>
+  <circle cx="276.0" cy="384.0" r="10.9" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <path d="M261.1 384.0h29.8M276.0 369.1v29.8" stroke="#ffcc33" stroke-width=".8" fill="none"/>
+  <text x="265.1" y="363.1" text-anchor="start" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">3</tspan>  5.00, 45.00</text>
+  <circle cx="684.0" cy="384.0" r="10.9" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <path d="M669.1 384.0h29.8M684.0 369.1v29.8" stroke="#ffcc33" stroke-width=".8" fill="none"/>
+  <text x="694.9" y="363.1" text-anchor="end" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">4</tspan>  65.00, 45.00</text>
+  <circle cx="316.8" cy="98.4" r="8.5" fill="#141920" stroke="#a9b4c2" stroke-width="1.5"/>
+  <circle cx="350.8" cy="98.4" r="8.5" fill="#141920" stroke="#a9b4c2" stroke-width="1.5"/>
+  <text x="333.8" y="124.9" text-anchor="middle" font-size="12" fill="#a9b4c2">cable tie</text>
+  <text x="480.0" y="448.0" text-anchor="middle" font-size="13" fill="#a9b4c2">Numbered rings are mounting holes. Positions are hole centres, X then Y, from the marked corner.</text>
+  </svg>
+  </div>
+  <figcaption>Board outline 70 × 50&nbsp;mm, square corners, board thickness 1.6&nbsp;mm. Drawn from the design files, component side up, in the same orientation as the board tour.</figcaption>
+</figure>
 
-Applicable protection, current-path, thermal, pinout, cable access and physical tests remain open wherever the linked board record has not verified them. A zero native-error count does not close those gates.
-<!-- extension-upgrade-readback:end -->
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>Hole</th><th>X (mm)</th><th>Y (mm)</th><th>Diameter</th><th>Use</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td>5.00</td><td>5.00</td><td>3.2&nbsp;mm, not plated</td><td>Mounting, M3 screw</td></tr>
+    <tr><td>2</td><td>65.00</td><td>5.00</td><td>3.2&nbsp;mm, not plated</td><td>Mounting, M3 screw</td></tr>
+    <tr><td>3</td><td>5.00</td><td>45.00</td><td>3.2&nbsp;mm, not plated</td><td>Mounting, M3 screw</td></tr>
+    <tr><td>4</td><td>65.00</td><td>45.00</td><td>3.2&nbsp;mm, not plated</td><td>Mounting, M3 screw</td></tr>
+    <tr><td>–</td><td>11.00</td><td>3.00</td><td>2.5&nbsp;mm, not plated</td><td>Cable tie</td></tr>
+    <tr><td>–</td><td>16.00</td><td>3.00</td><td>2.5&nbsp;mm, not plated</td><td>Cable tie</td></tr>
+  </tbody>
+</table></div>
 
-## Second-round annotation readback v31 — 2026-10-13
+{:/nomarkdown}
 
-Protected source v30; current PCB SHA-256 `146c0f332dc9fd34bba6561d71c96533401bce51db60e9ee663315521c9d2b48`. Fresh checks: zero enabled PCB errors/opens/parity and ERC errors; 2 PCB warnings. Electrical geometry, project rules and 57 historical files unchanged. Verified 70 model entries, 17 exports and 12 current population views, all inspected. Full documentation URL readable. Exact authored local-libraries restored; initial library warning regression rejected before export Inherited native warnings and enabled-rule exclusions remain explicit Physical/thermal/current/connector-fit qualification open No priced or area savings established by annotation candidate.
+## Appendix: electrical specifications {#electrical}
+
+Every figure is a design target or a value from the parts list, as the last column says. None is a measurement on a built board. **Open** means not established.
+
+{::nomarkdown}
+<div class="xb-tablewrap"><table class="xb-elec">
+  <thead><tr><th>Parameter</th><th>Applies to</th><th>Lower</th><th>Nominal</th><th>Upper</th><th>Basis and conditions</th></tr></thead>
+  <tbody>
+    <tr><td>Supply</td><td>J1 contact 1</td><td>Open</td><td>3.3 V</td><td>Open</td><td>3.3&nbsp;V only; 5&nbsp;V must not be connected</td></tr>
+    <tr><td>Supply current</td><td>Board</td><td>—</td><td>—</td><td>50 mA</td><td>Design allocation target; not measured</td></tr>
+    <tr><td>I2C address</td><td>Sensor cluster</td><td>—</td><td>0x49</td><td>—</td><td>Target, not qualified</td></tr>
+    <tr><td>I2C speed</td><td>Bus</td><td>—</td><td>100 kHz</td><td>—</td><td>Initial target, not qualified</td></tr>
+    <tr><td>Pull-ups</td><td>Sensor-side bus</td><td>—</td><td>4.7 k&Omega; and 10 k&Omega;</td><td>—</td><td>Parts list values; assignment per net not stated here</td></tr>
+    <tr><td>Sample distance</td><td>Optics</td><td>14 mm</td><td>15 mm</td><td>16 mm</td><td>Fixture target of 15 &plusmn; 1&nbsp;mm</td></tr>
+    <tr><td>Illuminated diameter</td><td>Sample</td><td>40 mm</td><td>—</td><td>—</td><td>Fixture target</td></tr>
+    <tr><td>Light source spectrum and stability</td><td>External</td><td>Open</td><td>Open</td><td>Open</td><td>Not part of the board</td></tr>
+    <tr><td>Calibration, noise</td><td>Whole board</td><td>Open</td><td>Open</td><td>Open</td><td>Not established</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+### Prime header GG (J38)
+
+The design notes name header GG (J38) for the four leads: contact 1 is the limited 3.3&nbsp;V, contacts 8 and 9 are the I2C2 data and clock, and contact 10 is ground. A discrepancy in the rail positions on the Prime&rsquo;s physical connector has been noted for the neighbouring G_F (J37) header; verify numbered continuity with the power removed.
+
+See all boards on the [extension boards](/extension-boards) page.

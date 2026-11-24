@@ -1,0 +1,90 @@
+{% comment %}
+Shared figure: one Gadgeteer port -> screw-terminal breakout -> several two-wire boards.
+Parameters: id (unique prefix), board (short board name), signal_note (optional sentence appended to the caption),
+power (optional, "5V": the boards also take their +V wire from the 5V screw).
+Terminal order 3V3, 5V, P3..P9, GND is the breakout's printed order (revision v24). Call inside a nomarkdown block.
+{% endcomment %}
+<figure class="xb-fig">
+  <div class="xb-fig-scroll" tabindex="0" role="region" aria-label="One port, several boards">
+  <svg viewBox="0 0 1000 430" role="img" aria-labelledby="{{ include.id }}-fan-t">
+    <title id="{{ include.id }}-fan-t">One ten-pin port of the controller goes by ribbon cable to a screw-terminal breakout board. Terminals P3, P4 and P5 each carry the signal wire of one {{ include.board }}. The ground wires of the three boards are joined and go to the GND terminal.{% if include.power %} Their +V wires are joined and go to the 5V terminal.{% endif %}</title>
+    <rect x="20" y="150" width="170" height="120" rx="8" fill="#1f2226" stroke="#dfe4ee" stroke-width="1.5"/>
+    <text x="86" y="204" text-anchor="middle" font-size="15" font-weight="700" fill="#e6ebf2">Smoothieboard</text>
+    <text x="86" y="224" text-anchor="middle" font-size="15" font-weight="700" fill="#e6ebf2">V2 Prime</text>
+    <rect x="158" y="176" width="24" height="68" rx="3" fill="#0d0f12" stroke="#8a94a3"/>
+    <text x="170" y="168" text-anchor="middle" font-size="12" font-weight="700" fill="#ffcc33">G_F</text>
+    <path d="M182 210H318" stroke="#8a94a3" stroke-width="22"/><g stroke="#5d6673" stroke-width="1"><path d="M182 203H318"/><path d="M182 210H318"/><path d="M182 217H318"/></g>
+    <text x="246" y="184" text-anchor="middle" font-size="11" fill="#a9b4c2">ribbon cable</text>
+    <rect x="310" y="50" width="200" height="330" rx="8" fill="#1f2226" stroke="#dfe4ee" stroke-width="1.5"/>
+    <rect x="318" y="176" width="24" height="68" rx="3" fill="#0d0f12" stroke="#8a94a3"/>
+    <text x="330" y="168" text-anchor="middle" font-size="11" font-weight="700" fill="#e6ebf2">Y IN</text>
+    <text x="372" y="302" text-anchor="middle" font-size="13" font-weight="700" fill="#e6ebf2">Screw-terminal</text>
+    <text x="372" y="320" text-anchor="middle" font-size="13" font-weight="700" fill="#e6ebf2">breakout</text>
+    <rect x="474" y="64" width="42" height="302" rx="4" fill="#7cc46b" stroke="#2f5a2a"/>
+    <circle cx="495" cy="80" r="8" fill="#c9ced6" stroke="#59616e"/><path d="M490 76L500 84" stroke="#59616e" stroke-width="2"/>
+    <text x="466" y="84" text-anchor="end" font-size="12" font-weight="700" fill="#7d8794">3V3</text>
+    <path d="M476 95H514" stroke="#3f7a36" stroke-width="1.5"/>
+    <circle cx="495" cy="110" r="8" fill="#c9ced6" stroke="#59616e"/><path d="M490 106L500 114" stroke="#59616e" stroke-width="2"/>
+    <text x="466" y="114" text-anchor="end" font-size="12" font-weight="700" fill="#7d8794">5V</text>
+    <path d="M476 125H514" stroke="#3f7a36" stroke-width="1.5"/>
+    <circle cx="495" cy="140" r="8" fill="#c9ced6" stroke="#59616e"/><path d="M490 136L500 144" stroke="#59616e" stroke-width="2"/>
+    <text x="466" y="144" text-anchor="end" font-size="12" font-weight="700" fill="#e6ebf2">P3</text>
+    <path d="M476 155H514" stroke="#3f7a36" stroke-width="1.5"/>
+    <circle cx="495" cy="170" r="8" fill="#c9ced6" stroke="#59616e"/><path d="M490 166L500 174" stroke="#59616e" stroke-width="2"/>
+    <text x="466" y="174" text-anchor="end" font-size="12" font-weight="700" fill="#e6ebf2">P4</text>
+    <path d="M476 185H514" stroke="#3f7a36" stroke-width="1.5"/>
+    <circle cx="495" cy="200" r="8" fill="#c9ced6" stroke="#59616e"/><path d="M490 196L500 204" stroke="#59616e" stroke-width="2"/>
+    <text x="466" y="204" text-anchor="end" font-size="12" font-weight="700" fill="#e6ebf2">P5</text>
+    <path d="M476 215H514" stroke="#3f7a36" stroke-width="1.5"/>
+    <circle cx="495" cy="230" r="8" fill="#c9ced6" stroke="#59616e"/><path d="M490 226L500 234" stroke="#59616e" stroke-width="2"/>
+    <text x="466" y="234" text-anchor="end" font-size="12" font-weight="700" fill="#7d8794">P6</text>
+    <path d="M476 245H514" stroke="#3f7a36" stroke-width="1.5"/>
+    <circle cx="495" cy="260" r="8" fill="#c9ced6" stroke="#59616e"/><path d="M490 256L500 264" stroke="#59616e" stroke-width="2"/>
+    <text x="466" y="264" text-anchor="end" font-size="12" font-weight="700" fill="#7d8794">P7</text>
+    <path d="M476 275H514" stroke="#3f7a36" stroke-width="1.5"/>
+    <circle cx="495" cy="290" r="8" fill="#c9ced6" stroke="#59616e"/><path d="M490 286L500 294" stroke="#59616e" stroke-width="2"/>
+    <text x="466" y="294" text-anchor="end" font-size="12" font-weight="700" fill="#7d8794">P8</text>
+    <path d="M476 305H514" stroke="#3f7a36" stroke-width="1.5"/>
+    <circle cx="495" cy="320" r="8" fill="#c9ced6" stroke="#59616e"/><path d="M490 316L500 324" stroke="#59616e" stroke-width="2"/>
+    <text x="466" y="324" text-anchor="end" font-size="12" font-weight="700" fill="#7d8794">P9</text>
+    <path d="M476 335H514" stroke="#3f7a36" stroke-width="1.5"/>
+    <circle cx="495" cy="350" r="8" fill="#c9ced6" stroke="#59616e"/><path d="M490 346L500 354" stroke="#59616e" stroke-width="2"/>
+    <text x="466" y="354" text-anchor="end" font-size="12" font-weight="700" fill="#e6ebf2">GND</text>
+    <g fill="none" stroke="#5fb3ff" stroke-width="4">
+      <path d="M516 140H620V80H770"/><path d="M516 170H590V210H770"/><path d="M516 200H560V340H770"/>
+    </g>
+    <g fill="none"><path d="M516 350H680M680 110V370M680 110H770M680 240H770M680 370H770" stroke="#aeb7c2" stroke-width="7"/><path d="M516 350H680M680 110V370M680 110H770M680 240H770M680 370H770" stroke="#0d0f12" stroke-width="4.5"/></g>
+    {% if include.power %}<path d="M516 110H650M650 95V355M650 95H770M650 225H770M650 355H770" fill="none" stroke="#ff5d5d" stroke-width="4"/>
+    <rect x="639" y="99" width="22" height="22" rx="4" fill="#ff9f43" stroke="#7a4a12"/>{% endif %}
+    <rect x="668" y="338" width="24" height="24" rx="4" fill="#ff9f43" stroke="#7a4a12"/>
+    <text x="664" y="398" text-anchor="middle" font-size="12" fill="#ff9f43">splice connector:</text>
+    <text x="664" y="413" text-anchor="middle" font-size="12" fill="#ff9f43">one wire in, three out</text>
+    <rect x="770" y="40" width="210" height="100" rx="8" fill="#1f2226" stroke="#dfe4ee" stroke-width="1.5"/>
+    <rect x="776" y="66" width="22" height="58" rx="3" fill="#efe6cf" stroke="#b8a878"/>
+    <g fill="#8a94a3"><rect x="782" y="76" width="10" height="8"/>{% if include.power %}<rect x="782" y="91" width="10" height="8"/>{% endif %}<rect x="782" y="106" width="10" height="8"/></g>
+    <g font-size="11" font-weight="700" fill="#e6ebf2"><text x="806" y="84">SIG</text>{% if include.power %}<text x="806" y="99">+V</text>{% endif %}<text x="806" y="114">GND</text></g>
+    <text x="906" y="88" text-anchor="middle" font-size="12" font-weight="700" fill="#e6ebf2" textLength="138" lengthAdjust="spacingAndGlyphs">{{ include.board }}</text>
+    <text x="910" y="108" text-anchor="middle" font-size="12" fill="#a9b4c2">number 1, on P3</text>
+    <rect x="770" y="170" width="210" height="100" rx="8" fill="#1f2226" stroke="#dfe4ee" stroke-width="1.5"/>
+    <rect x="776" y="196" width="22" height="58" rx="3" fill="#efe6cf" stroke="#b8a878"/>
+    <g fill="#8a94a3"><rect x="782" y="206" width="10" height="8"/>{% if include.power %}<rect x="782" y="221" width="10" height="8"/>{% endif %}<rect x="782" y="236" width="10" height="8"/></g>
+    <g font-size="11" font-weight="700" fill="#e6ebf2"><text x="806" y="214">SIG</text>{% if include.power %}<text x="806" y="229">+V</text>{% endif %}<text x="806" y="244">GND</text></g>
+    <text x="906" y="218" text-anchor="middle" font-size="12" font-weight="700" fill="#e6ebf2" textLength="138" lengthAdjust="spacingAndGlyphs">{{ include.board }}</text>
+    <text x="910" y="238" text-anchor="middle" font-size="12" fill="#a9b4c2">number 2, on P4</text>
+    <rect x="770" y="300" width="210" height="100" rx="8" fill="#1f2226" stroke="#dfe4ee" stroke-width="1.5"/>
+    <rect x="776" y="326" width="22" height="58" rx="3" fill="#efe6cf" stroke="#b8a878"/>
+    <g fill="#8a94a3"><rect x="782" y="336" width="10" height="8"/>{% if include.power %}<rect x="782" y="351" width="10" height="8"/>{% endif %}<rect x="782" y="366" width="10" height="8"/></g>
+    <g font-size="11" font-weight="700" fill="#e6ebf2"><text x="806" y="344">SIG</text>{% if include.power %}<text x="806" y="359">+V</text>{% endif %}<text x="806" y="374">GND</text></g>
+    <text x="906" y="348" text-anchor="middle" font-size="12" font-weight="700" fill="#e6ebf2" textLength="138" lengthAdjust="spacingAndGlyphs">{{ include.board }}</text>
+    <text x="910" y="368" text-anchor="middle" font-size="12" fill="#a9b4c2">number 3, on P5</text>
+  </svg>
+  </div>
+  <figcaption>A practical way to drive several boards from one port. The ribbon cable carries the whole port to a <a href="/extensions/raw-pins-screw-terminal-breakout">screw-terminal breakout</a>, where every pin has its own screw. Blue: one signal wire per board, on terminals P3, P4 and P5; P6 to P9 are free for four more. Black: the boards' ground wires, joined in a splice connector and taken to the single GND screw. {% if include.power %}Red: their +V wires, joined the same way and taken to the 5V screw. The 3V3 screw stays empty.{% else %}The 3V3 and 5V screws stay empty.{% endif %} The drawing shows which wire goes where, not the order of the pins on each board; go by the names printed on the board. {{ include.signal_note }}</figcaption>
+</figure>
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>Breakout screw</th><th>P3</th><th>P4</th><th>P5</th><th>P6</th><th>P7</th><th>P8</th><th>P9</th></tr></thead>
+  <tbody>
+    <tr><td>Pin name on header <b>G_F</b></td><td><code>PB1</code></td><td><code>PJ4</code></td><td><code>PA4</code></td><td><code>PG0</code></td><td><code>PJ3</code></td><td><code>PG1</code></td><td><code>PJ2</code></td></tr>
+    <tr><td>Pin name on header <b>G_C</b></td><td><code>PD14</code></td><td><code>PD12</code></td><td><code>PD10</code></td><td><code>PI5</code></td><td><code>PI6</code></td><td><code>PI7</code></td><td><code>PI2</code></td></tr>
+  </tbody>
+</table></div>

@@ -1,0 +1,279 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-0.9750 -5.0750 36.0000 39.1000">
+<title>mechanical-endstop-breakout v18</title>
+<desc>Source mechanical-endstop-breakout/attempt/versions/v18/mech-endstop.kicad_pcb sha256:51024c4739b0ed4e33ef6470cc43b3de8705227bd619dc70c02c6f4540c46b00</desc>
+<g id="mechanical-endstop-breakout-board-content"><rect id="layer-mechanical-endstop-breakout-board-substrate" class="pcb-layer" data-label="Board substrate" x="0.025" y="4.025" width="34" height="29" rx="1" fill="#1f1f22" stroke="#dfe4ee" stroke-width="0.3" style="display:inline" />
+<g id="layer-mechanical-endstop-breakout-illustrated-f" class="pcb-layer" data-label="Illustrated components (top)" opacity="1" style="display:inline">
+<g class="pcb-part" data-instance-id="3bf764c0-df5f-4483-9299-f95490311cb5" data-ref="R2" data-value="1k" data-library="Resistor_SMD:R_0603_1608Metric" data-slug="top_resistor_smd_r_0603_1608metric" data-side="F" data-x="19.0250" data-y="19.5250" data-rot="0" data-mirror="1" data-dx="0" data-dy="0" data-extra-rot="0" data-source="top_art/top_resistor_smd_r_0603_1608metric/v1/component.svg" data-viewbox="-1.5300 -0.7800 3.0600 1.5600" data-box-w="3.060" data-box-h="1.560" transform="translate(19.0250 19.5250) rotate(0) scale(1 1)"><g><g><g><svg x="-1.5300" y="-0.7800" width="3.0600" height="1.5600" viewBox="-1.5300 -0.7800 3.0600 1.5600" overflow="visible"><title>R2 — 1k (illustrated: top_resistor_smd_r_0603_1608metric)</title><title>top_resistor_smd_r_0603_1608metric (Resistor_SMD:R_0603_1608Metric, chip_resistor)</title>
+<g id="pcb-art-2766-housing"><rect x="-0.8" y="-0.41" width="1.6" height="0.82" fill="#2a2d31" stroke="#1d2024" stroke-width="0.02" /><rect x="-0.77" y="-0.38" width="1.54" height="0.1148" fill="#5c6470" opacity="0.35" /></g><g id="pcb-art-2766-contacts"><rect x="-0.8" y="-0.41" width="0.3" height="0.82" fill="#b7bcc2" stroke="#6b717a" stroke-width="0.02" /><rect x="-0.77" y="-0.38" width="0.27" height="0.1312" fill="#d9dcdf" opacity="0.7" /><rect x="0.5" y="-0.41" width="0.3" height="0.82" fill="#b7bcc2" stroke="#6b717a" stroke-width="0.02" /><rect x="0.5" y="-0.38" width="0.27" height="0.1312" fill="#d9dcdf" opacity="0.7" /></g></svg></g></g></g></g>
+<g class="pcb-part" data-instance-id="3c1913e6-97e6-4b8d-bbc6-74564b8c62c1" data-ref="C2" data-value="100nF 50V" data-library="Capacitor_SMD:C_0603_1608Metric" data-slug="top_capacitor_smd_c_0603_1608metric" data-side="F" data-x="27.5250" data-y="21.0250" data-rot="0" data-mirror="1" data-dx="0" data-dy="0" data-extra-rot="0" data-source="top_art/top_capacitor_smd_c_0603_1608metric/v1/component.svg" data-viewbox="-1.5300 -0.7800 3.0600 1.5600" data-box-w="3.060" data-box-h="1.560" transform="translate(27.5250 21.0250) rotate(0) scale(1 1)"><g><g><g><svg x="-1.5300" y="-0.7800" width="3.0600" height="1.5600" viewBox="-1.5300 -0.7800 3.0600 1.5600" overflow="visible"><title>C2 — 100nF 50V (illustrated: top_capacitor_smd_c_0603_1608metric)</title><title>top_capacitor_smd_c_0603_1608metric (Capacitor_SMD:C_0603_1608Metric, chip_mlcc)</title>
+<g id="pcb-art-2767-housing"><rect x="-0.8" y="-0.4" width="1.6" height="0.8" fill="#c4a878" stroke="#7d6a48" stroke-width="0.02" /><rect x="-0.77" y="-0.37" width="1.54" height="0.112" fill="#efe7cf" opacity="0.35" /></g><g id="pcb-art-2767-contacts"><rect x="-0.8" y="-0.4" width="0.3" height="0.8" fill="#b7bcc2" stroke="#6b717a" stroke-width="0.02" /><rect x="-0.77" y="-0.37" width="0.27" height="0.128" fill="#d9dcdf" opacity="0.7" /><rect x="0.5" y="-0.4" width="0.3" height="0.8" fill="#b7bcc2" stroke="#6b717a" stroke-width="0.02" /><rect x="0.5" y="-0.37" width="0.27" height="0.128" fill="#d9dcdf" opacity="0.7" /></g></svg></g></g></g></g>
+<g class="pcb-part" data-instance-id="535f9257-eca6-43e7-ac7a-7d3495ab7a65" data-ref="J1" data-value="KK254 RA S/G/5V" data-library="Fancification_Connectors:Dual_mech_endstop_J1" data-slug="top_fancification_connectors_dual_mech_endstop_j1" data-side="F" data-x="13.0250" data-y="23.0250" data-rot="-90" data-mirror="1" data-dx="0" data-dy="0" data-extra-rot="0" data-source="top_art/top_fancification_connectors_dual_mech_endstop_j1/v1/component.svg" data-viewbox="-3.9250 -12.5750 11.1800 14.0650" data-box-w="11.180" data-box-h="14.065" transform="translate(13.0250 23.0250) rotate(-90) scale(1 1)"><g><g><g><svg x="-3.9250" y="-12.5750" width="11.1800" height="14.0650" viewBox="-3.9250 -12.5750 11.1800 14.0650" overflow="visible"><title>J1 — KK254 RA S/G/5V (illustrated: top_fancification_connectors_dual_mech_endstop_j1)</title><title>top_fancification_connectors_dual_mech_endstop_j1 (Fancification_Connectors:Dual_mech_endstop_J1, connector)</title><rect x="-3.85" y="-12.5" width="10.53" height="13.94" fill="#2a2d31" stroke="#1d2024" stroke-width="0.02" /><circle cx="-2.3364" cy="-0.2847" r="0.5265" fill="#e6e6e6" opacity="0.55" /><polygon points="-3.41,-1.095 -1.67,-1.095 -1.67,1.095 -3.41,1.095" fill="#c9a14a" stroke="#7a5f22" stroke-width="0.02" /><rect x="-3.0272" y="-0.7122" width="0.9744" height="1.4244" fill="#e8c878" opacity="0.55" /><polygon points="4.13,-6.875 5.33,-6.875 5.33,-5.125 4.13,-5.125" fill="#c9a14a" stroke="#7a5f22" stroke-width="0.02" /><rect x="4.394" y="-6.611" width="0.672" height="1.222" fill="#e8c878" opacity="0.55" /><polygon points="-0.87,-1.095 0.87,-1.095 0.87,1.095 -0.87,1.095" fill="#c9a14a" stroke="#7a5f22" stroke-width="0.02" /><rect x="-0.4872" y="-0.7122" width="0.9744" height="1.4244" fill="#e8c878" opacity="0.55" /><polygon points="0.13,-6.875 1.33,-6.875 1.33,-5.125 0.13,-5.125" fill="#c9a14a" stroke="#7a5f22" stroke-width="0.02" /><rect x="0.394" y="-6.611" width="0.672" height="1.222" fill="#e8c878" opacity="0.55" /><polygon points="1.67,-1.095 3.41,-1.095 3.41,1.095 1.67,1.095" fill="#c9a14a" stroke="#7a5f22" stroke-width="0.02" /><rect x="2.0528" y="-0.7122" width="0.9744" height="1.4244" fill="#e8c878" opacity="0.55" /><polygon points="2.13,-6.875 3.33,-6.875 3.33,-5.125 2.13,-5.125" fill="#c9a14a" stroke="#7a5f22" stroke-width="0.02" /><rect x="2.394" y="-6.611" width="0.672" height="1.222" fill="#e8c878" opacity="0.55" /></svg></g></g></g></g>
+<g class="pcb-part" data-instance-id="55be3dcd-de31-44b5-a90f-82936f27ef4c" data-ref="D2" data-value="YELLOW ACT" data-library="LED_SMD:LED_0603_1608Metric" data-slug="top_led_smd_led_0603_1608metric" data-side="F" data-x="31.0250" data-y="16.7250" data-rot="0" data-mirror="1" data-dx="0" data-dy="0" data-extra-rot="0" data-source="top_art/top_led_smd_led_0603_1608metric/v1/component.svg" data-viewbox="-1.5300 -0.7800 3.0600 1.5600" data-box-w="3.060" data-box-h="1.560" transform="translate(31.0250 16.7250) rotate(0) scale(1 1)"><g><g><g><svg x="-1.5300" y="-0.7800" width="3.0600" height="1.5600" viewBox="-1.5300 -0.7800 3.0600 1.5600" overflow="visible"><title>D2 — YELLOW ACT (illustrated: top_led_smd_led_0603_1608metric)</title><title>top_led_smd_led_0603_1608metric (LED_SMD:LED_0603_1608Metric, chip_led)</title>
+<g id="pcb-art-2769-housing"><rect x="-0.8" y="-0.4" width="1.6" height="0.8" fill="#d9dde2" stroke="#6b717a" stroke-width="0.02" /></g><g id="pcb-art-2769-lens"><rect x="-0.48" y="-0.328" width="0.96" height="0.656" fill="#f2e27a" rx="0.04" /><rect x="-0.4" y="-0.278" width="0.8" height="0.176" fill="#efe7cf" rx="0.03" opacity="0.8" /></g><g id="pcb-art-2769-marking"><polygon points="-0.5,-0.328 -0.32,-0.328 -0.5,-0.148" fill="#15181b" /></g><g id="pcb-art-2769-contacts"><rect x="-0.8" y="-0.4" width="0.28" height="0.8" fill="#b7bcc2" stroke="#6b717a" stroke-width="0.02" /><rect x="-0.77" y="-0.37" width="0.25" height="0.128" fill="#d9dcdf" opacity="0.7" /><rect x="0.52" y="-0.4" width="0.28" height="0.8" fill="#b7bcc2" stroke="#6b717a" stroke-width="0.02" /><rect x="0.52" y="-0.37" width="0.25" height="0.128" fill="#d9dcdf" opacity="0.7" /></g></svg></g></g></g></g>
+<g class="pcb-part" data-instance-id="5ae1ee78-9168-4e4b-8d79-42da29b8b5c5" data-ref="SW1" data-value="D2F-01L-A" data-library="Smoothie_MechEndstop:Omron_D2F_RA" data-slug="top_smoothie_mechendstop_omron_d2f_ra" data-side="F" data-x="14.0250" data-y="9.0250" data-rot="0" data-mirror="1" data-dx="0" data-dy="0" data-extra-rot="0" data-source="top_art/top_smoothie_mechendstop_omron_d2f_ra/v1/component.svg" data-viewbox="-6.5500 -8.5500 13.1000 14.4500" data-box-w="13.100" data-box-h="14.450" transform="translate(14.0250 9.0250) rotate(0) scale(1 1)"><g><g><g><svg x="-6.5500" y="-8.5500" width="13.1000" height="14.4500" viewBox="-6.5500 -8.5500 13.1000 14.4500" overflow="visible"><title>SW1 — D2F-01L-A (illustrated: top_smoothie_mechendstop_omron_d2f_ra)</title><title>top_smoothie_mechendstop_omron_d2f_ra</title><g id="pcb-art-2770-terminals"><rect x="-6.03" y="2.6" width="1.9" height="3" fill="#c9a14a" rx="0.95" stroke="#8a6d2e" stroke-width="0.06" /><rect x="-6.03" y="2.6" width="1.9" height="3" fill="none" rx="0.95" stroke="#e0c070" stroke-width="0.06" opacity="0.5" /><rect x="-5.38" y="1.4" width="0.6" height="2.9" fill="#b7bcc2" rx="0.08" stroke="#6b717a" stroke-width="0.05" /><rect x="-5.28" y="1.5" width="0.18" height="2.5" fill="#e2e5e9" opacity="0.7" /><rect x="-0.95" y="2.6" width="1.9" height="3" fill="#c9a14a" rx="0.95" stroke="#8a6d2e" stroke-width="0.06" /><rect x="-0.95" y="2.6" width="1.9" height="3" fill="none" rx="0.95" stroke="#e0c070" stroke-width="0.06" opacity="0.5" /><rect x="-0.3" y="1.4" width="0.6" height="2.9" fill="#b7bcc2" rx="0.08" stroke="#6b717a" stroke-width="0.05" /><rect x="-0.2" y="1.5" width="0.18" height="2.5" fill="#e2e5e9" opacity="0.7" /><rect x="4.13" y="2.6" width="1.9" height="3" fill="#c9a14a" rx="0.95" stroke="#8a6d2e" stroke-width="0.06" /><rect x="4.13" y="2.6" width="1.9" height="3" fill="none" rx="0.95" stroke="#e0c070" stroke-width="0.06" opacity="0.5" /><rect x="4.78" y="1.4" width="0.6" height="2.9" fill="#b7bcc2" rx="0.08" stroke="#6b717a" stroke-width="0.05" /><rect x="4.88" y="1.5" width="0.18" height="2.5" fill="#e2e5e9" opacity="0.7" /></g><g id="pcb-art-2770-body"><rect x="-6.4" y="-5" width="12.8" height="6.5" fill="#34393f" rx="0.3" stroke="#15171a" stroke-width="0.16" /><rect x="-6.05" y="-4.65" width="12.1" height="0.7" fill="#5c6470" rx="0.2" opacity="0.8" /><rect x="-6.05" y="0.55" width="12.1" height="0.6" fill="#1d2024" rx="0.2" opacity="0.8" /><rect x="-6.05" y="-3.5" width="12.1" height="3.6" fill="#2a2d31" rx="0.2" /></g><g id="pcb-art-2770-mounting-holes"><circle cx="-3.25" cy="0" r="1.1" fill="#111315" stroke="#8a929b" stroke-width="0.1" /><circle cx="3.25" cy="0" r="1.1" fill="#111315" stroke="#8a929b" stroke-width="0.1" /></g><g id="pcb-art-2770-plunger"><rect x="-2.05" y="-5.95" width="1.5" height="1.1" fill="#c8322b" rx="0.12" stroke="#7a1d18" stroke-width="0.06" /><rect x="-1.95" y="-5.85" width="0.5" height="0.85" fill="#e8655c" rx="0.08" opacity="0.7" /></g><g id="pcb-art-2770-lever"><path d="M-5.4,-5.0 L4.75,-8.17" fill="none" stroke="#6b717a" stroke-width="0.72" stroke-linecap="round" /><path d="M-5.4,-5.0 L4.75,-8.17" fill="none" stroke="#c5c8cc" stroke-width="0.5" stroke-linecap="round" /><path d="M-5.1,-5.25 L4.5,-8.25" fill="none" stroke="#e2e5e9" stroke-width="0.12" stroke-linecap="round" opacity="0.8" /><circle cx="-5.4" cy="-5.0" r="0.55" fill="#6b717a" /><circle cx="-5.4" cy="-5.0" r="0.28" fill="#d2d6db" /></g></svg></g></g></g></g>
+<g class="pcb-part" data-instance-id="71502dee-1cdd-4333-a5b9-1839654a6910" data-ref="JX" data-value="X / 3.3V GPIO" data-library="Smoothie_MechEndstop:Samtec_SHF105_TH_LC" data-slug="top_smoothie_mechendstop_samtec_shf105_th_lc" data-side="F" data-x="27.0250" data-y="29.0250" data-rot="0" data-mirror="1" data-dx="0" data-dy="0" data-extra-rot="0" data-source="top_art/top_smoothie_mechendstop_samtec_shf105_th_lc/v1/component.svg" data-viewbox="-6.9000 -3.1500 13.8000 6.3000" data-box-w="13.800" data-box-h="6.300" transform="translate(27.0250 29.0250) rotate(0) scale(1 1)"><g><g><g><svg x="-6.9000" y="-3.1500" width="13.8000" height="6.3000" viewBox="-6.9000 -3.1500 13.8000 6.3000" overflow="visible"><title>JX — X / 3.3V GPIO (illustrated: top_smoothie_mechendstop_samtec_shf105_th_lc)</title><title>Samtec SHF-105 2x05 1.27 mm shrouded header, top view</title><g id="pcb-art-2771-housing"><rect x="-6.35" y="-2.795" width="12.7" height="5.59" rx="0.22" fill="#34393f" stroke="#15171a" stroke-width="0.2" /><polyline points="-6.15,2.495 -6.15,-2.595 6.05,-2.595" fill="none" stroke="#5c6470" stroke-width="0.14" /></g><g id="pcb-art-2771-cavity"><polygon points="-5.55,-1.995 5.55,-1.995 5.55,1.995 1.27,1.995 1.27,2.915 -1.27,2.915 -1.27,1.995 -5.55,1.995" fill="#1d2024" stroke="#0f1113" stroke-width="0.08" stroke-linejoin="round" /><line x1="-5.49" y1="-1.895" x2="5.49" y2="-1.895" stroke="#0f1113" stroke-width="0.14" opacity="0.8" /><line x1="-5.45" y1="-1.935" x2="-5.45" y2="1.935" stroke="#0f1113" stroke-width="0.14" opacity="0.8" /></g><g id="pcb-art-2771-contacts"><rect x="-2.74" y="0.435" width="0.4" height="0.4" fill="#c9a14a" stroke="#7a5f22" stroke-width="0.032" /><rect x="-2.7" y="0.475" width="0.168" height="0.168" fill="#e8c878" opacity="0.8" /><rect x="-2.74" y="-0.835" width="0.4" height="0.4" fill="#c9a14a" stroke="#7a5f22" stroke-width="0.032" /><rect x="-2.7" y="-0.795" width="0.168" height="0.168" fill="#e8c878" opacity="0.8" /><rect x="-1.47" y="0.435" width="0.4" height="0.4" fill="#c9a14a" stroke="#7a5f22" stroke-width="0.032" /><rect x="-1.43" y="0.475" width="0.168" height="0.168" fill="#e8c878" opacity="0.8" /><rect x="-1.47" y="-0.835" width="0.4" height="0.4" fill="#c9a14a" stroke="#7a5f22" stroke-width="0.032" /><rect x="-1.43" y="-0.795" width="0.168" height="0.168" fill="#e8c878" opacity="0.8" /><rect x="-0.2" y="0.435" width="0.4" height="0.4" fill="#c9a14a" stroke="#7a5f22" stroke-width="0.032" /><rect x="-0.16" y="0.475" width="0.168" height="0.168" fill="#e8c878" opacity="0.8" /><rect x="-0.2" y="-0.835" width="0.4" height="0.4" fill="#c9a14a" stroke="#7a5f22" stroke-width="0.032" /><rect x="-0.16" y="-0.795" width="0.168" height="0.168" fill="#e8c878" opacity="0.8" /><rect x="1.07" y="0.435" width="0.4" height="0.4" fill="#c9a14a" stroke="#7a5f22" stroke-width="0.032" /><rect x="1.11" y="0.475" width="0.168" height="0.168" fill="#e8c878" opacity="0.8" /><rect x="1.07" y="-0.835" width="0.4" height="0.4" fill="#c9a14a" stroke="#7a5f22" stroke-width="0.032" /><rect x="1.11" y="-0.795" width="0.168" height="0.168" fill="#e8c878" opacity="0.8" /><rect x="2.34" y="0.435" width="0.4" height="0.4" fill="#c9a14a" stroke="#7a5f22" stroke-width="0.032" /><rect x="2.38" y="0.475" width="0.168" height="0.168" fill="#e8c878" opacity="0.8" /><rect x="2.34" y="-0.835" width="0.4" height="0.4" fill="#c9a14a" stroke="#7a5f22" stroke-width="0.032" /><rect x="2.38" y="-0.795" width="0.168" height="0.168" fill="#e8c878" opacity="0.8" /></g><g id="pcb-art-2771-pin1"><polygon points="-2.76,2.62 -2.32,2.62 -2.54,2.2" fill="#e6e6e6" opacity="0.55" /></g></svg></g></g></g></g>
+<g class="pcb-part" data-instance-id="9eb7e1f4-d6c0-458d-baac-6ec3b65f550f" data-ref="D1" data-value="PESD5V0S1BA" data-library="Diode_SMD:D_SOD-323" data-slug="top_diode_smd_d_sod_323" data-side="F" data-x="15.8250" data-y="26.0250" data-rot="-90" data-mirror="1" data-dx="0" data-dy="0" data-extra-rot="0" data-source="top_art/top_diode_smd_d_sod_323/v1/component.svg" data-viewbox="-1.6500 -1.0000 3.3000 2.0000" data-box-w="3.300" data-box-h="2.000" transform="translate(15.8250 26.0250) rotate(-90) scale(1 1)"><g><g><g><svg x="-1.6500" y="-1.0000" width="3.3000" height="2.0000" viewBox="-1.6500 -1.0000 3.3000 2.0000" overflow="visible"><title>D1 — PESD5V0S1BA (illustrated: top_diode_smd_d_sod_323)</title><title>top_diode_smd_d_sod_323 (Diode_SMD:D_SOD-323, chip_diode)</title>
+<g id="pcb-art-2772-housing"><rect x="-0.85" y="-0.625" width="1.7" height="1.25" fill="#2a2d31" rx="0.05" stroke="#1d2024" stroke-width="0.02" /><rect x="-0.82" y="-0.595" width="1.64" height="0.175" fill="#5c6470" opacity="0.35" /></g><g id="pcb-art-2772-marking"><rect x="-0.697" y="-0.565" width="0.25" height="1.13" fill="#d9dde2" /></g><g id="pcb-art-2772-contacts"><rect x="-1.2" y="-0.15" width="0.35" height="0.3" fill="#b7bcc2" stroke="#6b717a" stroke-width="0.02" /><rect x="0.85" y="-0.15" width="0.35" height="0.3" fill="#b7bcc2" stroke="#6b717a" stroke-width="0.02" /></g></svg></g></g></g></g>
+<g class="pcb-part" data-instance-id="a0eb384c-ddad-4367-827a-3952c52d1cfc" data-ref="U1" data-value="SN74LVC1G17DBVR" data-library="Package_TO_SOT_SMD:SOT-23-5" data-slug="top_package_to_sot_smd_sot_23_5" data-side="F" data-x="23.0250" data-y="21.0250" data-rot="0" data-mirror="1" data-dx="0" data-dy="0" data-extra-rot="0" data-source="top_art/top_package_to_sot_smd_sot_23_5/v1/component.svg" data-viewbox="-2.1000 -1.7500 4.2000 3.5000" data-box-w="4.200" data-box-h="3.500" transform="translate(23.0250 21.0250) rotate(0) scale(1 1)"><g><g><g><svg x="-2.1000" y="-1.7500" width="4.2000" height="3.5000" viewBox="-2.1000 -1.7500 4.2000 3.5000" overflow="visible"><title>U1 — SN74LVC1G17DBVR (illustrated: top_package_to_sot_smd_sot_23_5)</title><title>top_package_to_sot_smd_sot_23_5</title><g id="pcb-art-2773-body"><rect x="-0.8" y="-1.45" width="1.6" height="2.9" rx="0.064" fill="#2a2d31" stroke="#1d2024" stroke-width="0.02" /><rect x="-0.688" y="-1.338" width="1.376" height="2.676" rx="0.008" fill="#3c4147" /><rect x="-0.688" y="-1.338" width="1.376" height="0.04" fill="#5c6470" opacity="0.35" /><circle cx="-0.512" cy="-1.162" r="0.11" fill="#1d2024" /><circle cx="-0.512" cy="-1.162" r="0.079" fill="#e6e6e6" opacity="0.55" /></g><g id="pcb-art-2773-leads"><rect x="-1.45" y="-1.15" width="0.7" height="0.4" rx="0.072" fill="#b7bcc2" stroke="#6b717a" stroke-width="0.02" /><rect x="-1.008" y="-1.082" width="0.208" height="0.264" fill="#dfe3e8" opacity="0.6" /><rect x="-1.45" y="-0.2" width="0.7" height="0.4" rx="0.072" fill="#b7bcc2" stroke="#6b717a" stroke-width="0.02" /><rect x="-1.008" y="-0.132" width="0.208" height="0.264" fill="#dfe3e8" opacity="0.6" /><rect x="-1.45" y="0.75" width="0.7" height="0.4" rx="0.072" fill="#b7bcc2" stroke="#6b717a" stroke-width="0.02" /><rect x="-1.008" y="0.818" width="0.208" height="0.264" fill="#dfe3e8" opacity="0.6" /><rect x="0.75" y="0.75" width="0.7" height="0.4" rx="0.072" fill="#b7bcc2" stroke="#6b717a" stroke-width="0.02" /><rect x="0.8" y="0.818" width="0.208" height="0.264" fill="#dfe3e8" opacity="0.6" /><rect x="0.75" y="-1.15" width="0.7" height="0.4" rx="0.072" fill="#b7bcc2" stroke="#6b717a" stroke-width="0.02" /><rect x="0.8" y="-1.082" width="0.208" height="0.264" fill="#dfe3e8" opacity="0.6" /></g><g id="pcb-art-2773-marking"><rect x="-0.523" y="-0.45" width="0.816" height="0.187" rx="0.094" fill="#8a929b" opacity="0.45" /><rect x="-0.523" y="-0.094" width="0.544" height="0.187" rx="0.094" fill="#8a929b" opacity="0.45" /><rect x="-0.523" y="0.262" width="0.669" height="0.187" rx="0.094" fill="#8a929b" opacity="0.45" /></g></svg></g></g></g></g>
+<g class="pcb-part" data-instance-id="a4611215-7c72-4eba-8c0f-848aca2ada28" data-ref="R5" data-value="10k" data-library="Resistor_SMD:R_0603_1608Metric" data-slug="top_resistor_smd_r_0603_1608metric" data-side="F" data-x="31.0250" data-y="25.0250" data-rot="0" data-mirror="1" data-dx="0" data-dy="0" data-extra-rot="0" data-source="top_art/top_resistor_smd_r_0603_1608metric/v1/component.svg" data-viewbox="-1.5300 -0.7800 3.0600 1.5600" data-box-w="3.060" data-box-h="1.560" transform="translate(31.0250 25.0250) rotate(0) scale(1 1)"><g><g><g><svg x="-1.5300" y="-0.7800" width="3.0600" height="1.5600" viewBox="-1.5300 -0.7800 3.0600 1.5600" overflow="visible"><title>R5 — 10k (illustrated: top_resistor_smd_r_0603_1608metric)</title><title>top_resistor_smd_r_0603_1608metric (Resistor_SMD:R_0603_1608Metric, chip_resistor)</title>
+<g id="pcb-art-2774-housing"><rect x="-0.8" y="-0.41" width="1.6" height="0.82" fill="#2a2d31" stroke="#1d2024" stroke-width="0.02" /><rect x="-0.77" y="-0.38" width="1.54" height="0.1148" fill="#5c6470" opacity="0.35" /></g><g id="pcb-art-2774-contacts"><rect x="-0.8" y="-0.41" width="0.3" height="0.82" fill="#b7bcc2" stroke="#6b717a" stroke-width="0.02" /><rect x="-0.77" y="-0.38" width="0.27" height="0.1312" fill="#d9dcdf" opacity="0.7" /><rect x="0.5" y="-0.41" width="0.3" height="0.82" fill="#b7bcc2" stroke="#6b717a" stroke-width="0.02" /><rect x="0.5" y="-0.38" width="0.27" height="0.1312" fill="#d9dcdf" opacity="0.7" /></g></svg></g></g></g></g>
+<g class="pcb-part" data-instance-id="b3f2ab1a-2daf-4699-8f49-906032d57c55" data-ref="CT2" data-value="CABLE TIE" data-library="Fancification_Mechanical:CableTie_NPTH_2_5mm" data-slug="top_fancification_mechanical_cabletie_npth_2_5mm" data-side="F" data-x="8.0250" data-y="29.0250" data-rot="0" data-mirror="1" data-dx="0" data-dy="0" data-extra-rot="0" data-source="top_art/top_fancification_mechanical_cabletie_npth_2_5mm/v1/component.svg" data-viewbox="-1.6000 -1.6000 3.2000 3.2000" data-box-w="3.200" data-box-h="3.200" transform="translate(8.0250 29.0250) rotate(0) scale(1 1)"><g><g><g><svg x="-1.6000" y="-1.6000" width="3.2000" height="3.2000" viewBox="-1.6000 -1.6000 3.2000 3.2000" overflow="visible"><title>CT2 — CABLE TIE (illustrated: top_fancification_mechanical_cabletie_npth_2_5mm)</title><title>top_fancification_mechanical_cabletie_npth_2_5mm (Fancification_Mechanical:CableTie_NPTH_2_5mm, generic)</title><rect x="-1.25" y="-1.25" width="2.5" height="2.5" fill="#2a2d31" stroke="#1d2024" stroke-width="0.02" /><rect x="-1.21" y="-1.22" width="2.42" height="0.22" fill="#5c6470" opacity="0.35" /><circle cx="0" cy="0" r="1.25" fill="#0b0c0e" stroke="#6b717a" stroke-width="0.02" /></svg></g></g></g></g>
+<g class="pcb-part" data-instance-id="b8adb99d-3835-4aaa-869f-3f8c86832c35" data-ref="CT1" data-value="CABLE TIE" data-library="Fancification_Mechanical:CableTie_NPTH_2_5mm" data-slug="top_fancification_mechanical_cabletie_npth_2_5mm" data-side="F" data-x="3.0250" data-y="29.0250" data-rot="0" data-mirror="1" data-dx="0" data-dy="0" data-extra-rot="0" data-source="top_art/top_fancification_mechanical_cabletie_npth_2_5mm/v1/component.svg" data-viewbox="-1.6000 -1.6000 3.2000 3.2000" data-box-w="3.200" data-box-h="3.200" transform="translate(3.0250 29.0250) rotate(0) scale(1 1)"><g><g><g><svg x="-1.6000" y="-1.6000" width="3.2000" height="3.2000" viewBox="-1.6000 -1.6000 3.2000 3.2000" overflow="visible"><title>CT1 — CABLE TIE (illustrated: top_fancification_mechanical_cabletie_npth_2_5mm)</title><title>top_fancification_mechanical_cabletie_npth_2_5mm (Fancification_Mechanical:CableTie_NPTH_2_5mm, generic)</title><rect x="-1.25" y="-1.25" width="2.5" height="2.5" fill="#2a2d31" stroke="#1d2024" stroke-width="0.02" /><rect x="-1.21" y="-1.22" width="2.42" height="0.22" fill="#5c6470" opacity="0.35" /><circle cx="0" cy="0" r="1.25" fill="#0b0c0e" stroke="#6b717a" stroke-width="0.02" /></svg></g></g></g></g>
+<g class="pcb-part" data-instance-id="d370f3ac-90ea-45a1-99c9-9608349af1c5" data-ref="R4" data-value="330" data-library="Resistor_SMD:R_0603_1608Metric" data-slug="top_resistor_smd_r_0603_1608metric" data-side="F" data-x="31.0250" data-y="22.5250" data-rot="0" data-mirror="1" data-dx="0" data-dy="0" data-extra-rot="0" data-source="top_art/top_resistor_smd_r_0603_1608metric/v1/component.svg" data-viewbox="-1.5300 -0.7800 3.0600 1.5600" data-box-w="3.060" data-box-h="1.560" transform="translate(31.0250 22.5250) rotate(0) scale(1 1)"><g><g><g><svg x="-1.5300" y="-0.7800" width="3.0600" height="1.5600" viewBox="-1.5300 -0.7800 3.0600 1.5600" overflow="visible"><title>R4 — 330 (illustrated: top_resistor_smd_r_0603_1608metric)</title><title>top_resistor_smd_r_0603_1608metric (Resistor_SMD:R_0603_1608Metric, chip_resistor)</title>
+<g id="pcb-art-2777-housing"><rect x="-0.8" y="-0.41" width="1.6" height="0.82" fill="#2a2d31" stroke="#1d2024" stroke-width="0.02" /><rect x="-0.77" y="-0.38" width="1.54" height="0.1148" fill="#5c6470" opacity="0.35" /></g><g id="pcb-art-2777-contacts"><rect x="-0.8" y="-0.41" width="0.3" height="0.82" fill="#b7bcc2" stroke="#6b717a" stroke-width="0.02" /><rect x="-0.77" y="-0.38" width="0.27" height="0.1312" fill="#d9dcdf" opacity="0.7" /><rect x="0.5" y="-0.41" width="0.3" height="0.82" fill="#b7bcc2" stroke="#6b717a" stroke-width="0.02" /><rect x="0.5" y="-0.38" width="0.27" height="0.1312" fill="#d9dcdf" opacity="0.7" /></g></svg></g></g></g></g>
+<g class="pcb-part" data-instance-id="d83b3322-8d35-49bb-9941-100325a3e74b" data-ref="D3" data-value="BZT52-C4V7" data-library="Diode_SMD:D_SOD-123" data-slug="top_diode_smd_d_sod_123" data-side="F" data-x="17.0250" data-y="29.0250" data-rot="0" data-mirror="1" data-dx="0" data-dy="0" data-extra-rot="0" data-source="top_art/top_diode_smd_d_sod_123/v1/component.svg" data-viewbox="-2.1500 -0.6500 4.3000 1.3000" data-box-w="4.300" data-box-h="1.300" transform="translate(17.0250 29.0250) rotate(0) scale(1 1)"><g><g><g><svg x="-2.1500" y="-0.6500" width="4.3000" height="1.3000" viewBox="-2.1500 -0.6500 4.3000 1.3000" overflow="visible"><title>D3 — BZT52-C4V7 (illustrated: top_diode_smd_d_sod_123)</title><title>top_diode_smd_d_sod_123 (Diode_SMD:D_SOD-123, chip_diode)</title>
+<g id="pcb-art-2778-housing"><rect x="-1.35" y="-0.8" width="2.7" height="1.6" fill="#2a2d31" rx="0.05" stroke="#1d2024" stroke-width="0.02" /><rect x="-1.32" y="-0.77" width="2.64" height="0.224" fill="#5c6470" opacity="0.35" /></g><g id="pcb-art-2778-marking"><rect x="-1.107" y="-0.74" width="0.35" height="1.48" fill="#d9dde2" /></g><g id="pcb-art-2778-contacts"><rect x="-1.8" y="-0.275" width="0.45" height="0.55" fill="#b7bcc2" stroke="#6b717a" stroke-width="0.02" /><rect x="1.35" y="-0.275" width="0.45" height="0.55" fill="#b7bcc2" stroke="#6b717a" stroke-width="0.02" /></g></svg></g></g></g></g>
+<g class="pcb-part" data-instance-id="dfd8b468-3a1e-458f-ae89-b46638de9244" data-ref="R3" data-value="1.5k" data-library="Resistor_SMD:R_0603_1608Metric" data-slug="top_resistor_smd_r_0603_1608metric" data-side="F" data-x="27.0250" data-y="16.7250" data-rot="-180" data-mirror="1" data-dx="0" data-dy="0" data-extra-rot="0" data-source="top_art/top_resistor_smd_r_0603_1608metric/v1/component.svg" data-viewbox="-1.5300 -0.7800 3.0600 1.5600" data-box-w="3.060" data-box-h="1.560" transform="translate(27.0250 16.7250) rotate(-180) scale(1 1)"><g><g><g><svg x="-1.5300" y="-0.7800" width="3.0600" height="1.5600" viewBox="-1.5300 -0.7800 3.0600 1.5600" overflow="visible"><title>R3 — 1.5k (illustrated: top_resistor_smd_r_0603_1608metric)</title><title>top_resistor_smd_r_0603_1608metric (Resistor_SMD:R_0603_1608Metric, chip_resistor)</title>
+<g id="pcb-art-2779-housing"><rect x="-0.8" y="-0.41" width="1.6" height="0.82" fill="#2a2d31" stroke="#1d2024" stroke-width="0.02" /><rect x="-0.77" y="-0.38" width="1.54" height="0.1148" fill="#5c6470" opacity="0.35" /></g><g id="pcb-art-2779-contacts"><rect x="-0.8" y="-0.41" width="0.3" height="0.82" fill="#b7bcc2" stroke="#6b717a" stroke-width="0.02" /><rect x="-0.77" y="-0.38" width="0.27" height="0.1312" fill="#d9dcdf" opacity="0.7" /><rect x="0.5" y="-0.41" width="0.3" height="0.82" fill="#b7bcc2" stroke="#6b717a" stroke-width="0.02" /><rect x="0.5" y="-0.38" width="0.27" height="0.1312" fill="#d9dcdf" opacity="0.7" /></g></svg></g></g></g></g>
+<g class="pcb-part" data-instance-id="e571bf32-ef48-4b96-be1c-9e140223a4a8" data-ref="C1" data-value="100nF 50V" data-library="Capacitor_SMD:C_0603_1608Metric" data-slug="top_capacitor_smd_c_0603_1608metric" data-side="F" data-x="19.0250" data-y="22.3250" data-rot="0" data-mirror="1" data-dx="0" data-dy="0" data-extra-rot="0" data-source="top_art/top_capacitor_smd_c_0603_1608metric/v1/component.svg" data-viewbox="-1.5300 -0.7800 3.0600 1.5600" data-box-w="3.060" data-box-h="1.560" transform="translate(19.0250 22.3250) rotate(0) scale(1 1)"><g><g><g><svg x="-1.5300" y="-0.7800" width="3.0600" height="1.5600" viewBox="-1.5300 -0.7800 3.0600 1.5600" overflow="visible"><title>C1 — 100nF 50V (illustrated: top_capacitor_smd_c_0603_1608metric)</title><title>top_capacitor_smd_c_0603_1608metric (Capacitor_SMD:C_0603_1608Metric, chip_mlcc)</title>
+<g id="pcb-art-2780-housing"><rect x="-0.8" y="-0.4" width="1.6" height="0.8" fill="#c4a878" stroke="#7d6a48" stroke-width="0.02" /><rect x="-0.77" y="-0.37" width="1.54" height="0.112" fill="#efe7cf" opacity="0.35" /></g><g id="pcb-art-2780-contacts"><rect x="-0.8" y="-0.4" width="0.3" height="0.8" fill="#b7bcc2" stroke="#6b717a" stroke-width="0.02" /><rect x="-0.77" y="-0.37" width="0.27" height="0.128" fill="#d9dcdf" opacity="0.7" /><rect x="0.5" y="-0.4" width="0.3" height="0.8" fill="#b7bcc2" stroke="#6b717a" stroke-width="0.02" /><rect x="0.5" y="-0.37" width="0.27" height="0.128" fill="#d9dcdf" opacity="0.7" /></g></svg></g></g></g></g>
+<g class="pcb-part" data-instance-id="e64d67fc-af6a-4f93-84d6-363924ee2133" data-ref="R1" data-value="3.3k" data-library="Resistor_SMD:R_0603_1608Metric" data-slug="top_resistor_smd_r_0603_1608metric" data-side="F" data-x="23.0250" data-y="16.7250" data-rot="-180" data-mirror="1" data-dx="0" data-dy="0" data-extra-rot="0" data-source="top_art/top_resistor_smd_r_0603_1608metric/v1/component.svg" data-viewbox="-1.5300 -0.7800 3.0600 1.5600" data-box-w="3.060" data-box-h="1.560" transform="translate(23.0250 16.7250) rotate(-180) scale(1 1)"><g><g><g><svg x="-1.5300" y="-0.7800" width="3.0600" height="1.5600" viewBox="-1.5300 -0.7800 3.0600 1.5600" overflow="visible"><title>R1 — 3.3k (illustrated: top_resistor_smd_r_0603_1608metric)</title><title>top_resistor_smd_r_0603_1608metric (Resistor_SMD:R_0603_1608Metric, chip_resistor)</title>
+<g id="pcb-art-2781-housing"><rect x="-0.8" y="-0.41" width="1.6" height="0.82" fill="#2a2d31" stroke="#1d2024" stroke-width="0.02" /><rect x="-0.77" y="-0.38" width="1.54" height="0.1148" fill="#5c6470" opacity="0.35" /></g><g id="pcb-art-2781-contacts"><rect x="-0.8" y="-0.41" width="0.3" height="0.82" fill="#b7bcc2" stroke="#6b717a" stroke-width="0.02" /><rect x="-0.77" y="-0.38" width="0.27" height="0.1312" fill="#d9dcdf" opacity="0.7" /><rect x="0.5" y="-0.41" width="0.3" height="0.82" fill="#b7bcc2" stroke="#6b717a" stroke-width="0.02" /><rect x="0.5" y="-0.38" width="0.27" height="0.1312" fill="#d9dcdf" opacity="0.7" /></g></svg></g></g></g></g>
+</g>
+<g id="layer-mechanical-endstop-breakout-invented-f" class="pcb-layer" data-label="Provisional package placeholders (top)" opacity="1" style="display:inline">
+
+</g>
+<g id="layer-mechanical-endstop-breakout-f-silk-art" class="pcb-layer" data-label="F.Silkscreen art and labels (top)" opacity="0.95" style="display:inline;--lc:#ffffff">
+<g style="fill:#000000; fill-opacity:1.0000;stroke:#000000; stroke-opacity:1.0000; stroke-linecap:round; stroke-linejoin:round;" transform="translate(0 0) scale(1 1)">
+</g>
+<g style="fill:none;  stroke:#ffffff; stroke-width:0.1500; stroke-opacity:1;  stroke-linecap:round; stroke-linejoin:round;">
+<text x="7.0250" y="32.1250" textLength="13.0138" font-size="1.0667" lengthAdjust="spacingAndGlyphs" text-anchor="middle" opacity="0" stroke-opacity="0">NC IN / G / 5V OUT</text>
+<g class="stroked-text">
+<path d="M0.8536 32.0873 L0.8536 31.2873 " />
+<path d="M0.8536 31.2873 L1.3107 32.0873 " />
+<path d="M1.3107 32.0873 L1.3107 31.2873 " />
+<path d="M2.1488 32.0111 L2.1107 32.0492 " />
+<path d="M2.1107 32.0492 L1.9964 32.0873 " />
+<path d="M1.9964 32.0873 L1.9202 32.0873 " />
+<path d="M1.9202 32.0873 L1.8060 32.0492 " />
+<path d="M1.8060 32.0492 L1.7298 31.9730 " />
+<path d="M1.7298 31.9730 L1.6917 31.8968 " />
+<path d="M1.6917 31.8968 L1.6536 31.7444 " />
+<path d="M1.6536 31.7444 L1.6536 31.6302 " />
+<path d="M1.6536 31.6302 L1.6917 31.4778 " />
+<path d="M1.6917 31.4778 L1.7298 31.4016 " />
+<path d="M1.7298 31.4016 L1.8060 31.3254 " />
+<path d="M1.8060 31.3254 L1.9202 31.2873 " />
+<path d="M1.9202 31.2873 L1.9964 31.2873 " />
+<path d="M1.9964 31.2873 L2.1107 31.3254 " />
+<path d="M2.1107 31.3254 L2.1488 31.3635 " />
+<path d="M3.1012 32.0873 L3.1012 31.2873 " />
+<path d="M3.4821 32.0873 L3.4821 31.2873 " />
+<path d="M3.4821 31.2873 L3.9393 32.0873 " />
+<path d="M3.9393 32.0873 L3.9393 31.2873 " />
+<path d="M5.5012 31.2492 L4.8155 32.2778 " />
+<path d="M6.7964 31.3254 L6.7202 31.2873 " />
+<path d="M6.7202 31.2873 L6.6060 31.2873 " />
+<path d="M6.6060 31.2873 L6.4917 31.3254 " />
+<path d="M6.4917 31.3254 L6.4155 31.4016 " />
+<path d="M6.4155 31.4016 L6.3774 31.4778 " />
+<path d="M6.3774 31.4778 L6.3393 31.6302 " />
+<path d="M6.3393 31.6302 L6.3393 31.7444 " />
+<path d="M6.3393 31.7444 L6.3774 31.8968 " />
+<path d="M6.3774 31.8968 L6.4155 31.9730 " />
+<path d="M6.4155 31.9730 L6.4917 32.0492 " />
+<path d="M6.4917 32.0492 L6.6060 32.0873 " />
+<path d="M6.6060 32.0873 L6.6821 32.0873 " />
+<path d="M6.6821 32.0873 L6.7964 32.0492 " />
+<path d="M6.7964 32.0492 L6.8345 32.0111 " />
+<path d="M6.8345 32.0111 L6.8345 31.7444 " />
+<path d="M6.8345 31.7444 L6.6821 31.7444 " />
+<path d="M8.3583 31.2492 L7.6726 32.2778 " />
+<path d="M9.6155 31.2873 L9.2345 31.2873 " />
+<path d="M9.2345 31.2873 L9.1964 31.6682 " />
+<path d="M9.1964 31.6682 L9.2345 31.6302 " />
+<path d="M9.2345 31.6302 L9.3107 31.5921 " />
+<path d="M9.3107 31.5921 L9.5012 31.5921 " />
+<path d="M9.5012 31.5921 L9.5774 31.6302 " />
+<path d="M9.5774 31.6302 L9.6155 31.6682 " />
+<path d="M9.6155 31.6682 L9.6536 31.7444 " />
+<path d="M9.6536 31.7444 L9.6536 31.9349 " />
+<path d="M9.6536 31.9349 L9.6155 32.0111 " />
+<path d="M9.6155 32.0111 L9.5774 32.0492 " />
+<path d="M9.5774 32.0492 L9.5012 32.0873 " />
+<path d="M9.5012 32.0873 L9.3107 32.0873 " />
+<path d="M9.3107 32.0873 L9.2345 32.0492 " />
+<path d="M9.2345 32.0492 L9.1964 32.0111 " />
+<path d="M9.8821 31.2873 L10.1488 32.0873 " />
+<path d="M10.1488 32.0873 L10.4155 31.2873 " />
+<path d="M11.4440 31.2873 L11.5964 31.2873 " />
+<path d="M11.5964 31.2873 L11.6726 31.3254 " />
+<path d="M11.6726 31.3254 L11.7488 31.4016 " />
+<path d="M11.7488 31.4016 L11.7869 31.5540 " />
+<path d="M11.7869 31.5540 L11.7869 31.8206 " />
+<path d="M11.7869 31.8206 L11.7488 31.9730 " />
+<path d="M11.7488 31.9730 L11.6726 32.0492 " />
+<path d="M11.6726 32.0492 L11.5964 32.0873 " />
+<path d="M11.5964 32.0873 L11.4440 32.0873 " />
+<path d="M11.4440 32.0873 L11.3679 32.0492 " />
+<path d="M11.3679 32.0492 L11.2917 31.9730 " />
+<path d="M11.2917 31.9730 L11.2536 31.8206 " />
+<path d="M11.2536 31.8206 L11.2536 31.5540 " />
+<path d="M11.2536 31.5540 L11.2917 31.4016 " />
+<path d="M11.2917 31.4016 L11.3679 31.3254 " />
+<path d="M11.3679 31.3254 L11.4440 31.2873 " />
+<path d="M12.1298 31.2873 L12.1298 31.9349 " />
+<path d="M12.1298 31.9349 L12.1679 32.0111 " />
+<path d="M12.1679 32.0111 L12.2060 32.0492 " />
+<path d="M12.2060 32.0492 L12.2821 32.0873 " />
+<path d="M12.2821 32.0873 L12.4345 32.0873 " />
+<path d="M12.4345 32.0873 L12.5107 32.0492 " />
+<path d="M12.5107 32.0492 L12.5488 32.0111 " />
+<path d="M12.5488 32.0111 L12.5869 31.9349 " />
+<path d="M12.5869 31.9349 L12.5869 31.2873 " />
+<path d="M12.8536 31.2873 L13.3107 31.2873 " />
+<path d="M13.0821 32.0873 L13.0821 31.2873 " />
+</g><text x="22.5250" y="15.2250" textLength="4.8995" font-size="1.0667" lengthAdjust="spacingAndGlyphs" text-anchor="middle" opacity="0" stroke-opacity="0">REMOTE</text>
+<g class="stroked-text">
+<path d="M20.8679 15.1873 L20.6012 14.8063 " />
+<path d="M20.4107 15.1873 L20.4107 14.3873 " />
+<path d="M20.4107 14.3873 L20.7155 14.3873 " />
+<path d="M20.7155 14.3873 L20.7917 14.4254 " />
+<path d="M20.7917 14.4254 L20.8298 14.4635 " />
+<path d="M20.8298 14.4635 L20.8679 14.5397 " />
+<path d="M20.8679 14.5397 L20.8679 14.6540 " />
+<path d="M20.8679 14.6540 L20.8298 14.7302 " />
+<path d="M20.8298 14.7302 L20.7917 14.7682 " />
+<path d="M20.7917 14.7682 L20.7155 14.8063 " />
+<path d="M20.7155 14.8063 L20.4107 14.8063 " />
+<path d="M21.2107 14.7682 L21.4774 14.7682 " />
+<path d="M21.5917 15.1873 L21.2107 15.1873 " />
+<path d="M21.2107 15.1873 L21.2107 14.3873 " />
+<path d="M21.2107 14.3873 L21.5917 14.3873 " />
+<path d="M21.9345 15.1873 L21.9345 14.3873 " />
+<path d="M21.9345 14.3873 L22.2012 14.9587 " />
+<path d="M22.2012 14.9587 L22.4679 14.3873 " />
+<path d="M22.4679 14.3873 L22.4679 15.1873 " />
+<path d="M23.0012 14.3873 L23.1536 14.3873 " />
+<path d="M23.1536 14.3873 L23.2298 14.4254 " />
+<path d="M23.2298 14.4254 L23.3060 14.5016 " />
+<path d="M23.3060 14.5016 L23.3440 14.6540 " />
+<path d="M23.3440 14.6540 L23.3440 14.9206 " />
+<path d="M23.3440 14.9206 L23.3060 15.0730 " />
+<path d="M23.3060 15.0730 L23.2298 15.1492 " />
+<path d="M23.2298 15.1492 L23.1536 15.1873 " />
+<path d="M23.1536 15.1873 L23.0012 15.1873 " />
+<path d="M23.0012 15.1873 L22.9250 15.1492 " />
+<path d="M22.9250 15.1492 L22.8488 15.0730 " />
+<path d="M22.8488 15.0730 L22.8107 14.9206 " />
+<path d="M22.8107 14.9206 L22.8107 14.6540 " />
+<path d="M22.8107 14.6540 L22.8488 14.5016 " />
+<path d="M22.8488 14.5016 L22.9250 14.4254 " />
+<path d="M22.9250 14.4254 L23.0012 14.3873 " />
+<path d="M23.5726 14.3873 L24.0298 14.3873 " />
+<path d="M23.8012 15.1873 L23.8012 14.3873 " />
+<path d="M24.2964 14.7682 L24.5631 14.7682 " />
+<path d="M24.6774 15.1873 L24.2964 15.1873 " />
+<path d="M24.2964 15.1873 L24.2964 14.3873 " />
+<path d="M24.2964 14.3873 L24.6774 14.3873 " />
+</g><text x="27.0250" y="13.4250" textLength="7.7567" font-size="1.0667" lengthAdjust="spacingAndGlyphs" text-anchor="middle" opacity="0" stroke-opacity="0">MECH X V18</text>
+<g class="stroked-text">
+<path d="M23.4821 13.3873 L23.4821 12.5873 " />
+<path d="M23.4821 12.5873 L23.7488 13.1587 " />
+<path d="M23.7488 13.1587 L24.0155 12.5873 " />
+<path d="M24.0155 12.5873 L24.0155 13.3873 " />
+<path d="M24.3964 12.9682 L24.6631 12.9682 " />
+<path d="M24.7774 13.3873 L24.3964 13.3873 " />
+<path d="M24.3964 13.3873 L24.3964 12.5873 " />
+<path d="M24.3964 12.5873 L24.7774 12.5873 " />
+<path d="M25.5774 13.3111 L25.5393 13.3492 " />
+<path d="M25.5393 13.3492 L25.4250 13.3873 " />
+<path d="M25.4250 13.3873 L25.3488 13.3873 " />
+<path d="M25.3488 13.3873 L25.2345 13.3492 " />
+<path d="M25.2345 13.3492 L25.1583 13.2730 " />
+<path d="M25.1583 13.2730 L25.1202 13.1968 " />
+<path d="M25.1202 13.1968 L25.0821 13.0444 " />
+<path d="M25.0821 13.0444 L25.0821 12.9302 " />
+<path d="M25.0821 12.9302 L25.1202 12.7778 " />
+<path d="M25.1202 12.7778 L25.1583 12.7016 " />
+<path d="M25.1583 12.7016 L25.2345 12.6254 " />
+<path d="M25.2345 12.6254 L25.3488 12.5873 " />
+<path d="M25.3488 12.5873 L25.4250 12.5873 " />
+<path d="M25.4250 12.5873 L25.5393 12.6254 " />
+<path d="M25.5393 12.6254 L25.5774 12.6635 " />
+<path d="M25.9202 13.3873 L25.9202 12.5873 " />
+<path d="M25.9202 12.9682 L26.3774 12.9682 " />
+<path d="M26.3774 13.3873 L26.3774 12.5873 " />
+<path d="M27.2917 12.5873 L27.8250 13.3873 " />
+<path d="M27.8250 12.5873 L27.2917 13.3873 " />
+<path d="M28.6250 12.5873 L28.8917 13.3873 " />
+<path d="M28.8917 13.3873 L29.1583 12.5873 " />
+<path d="M29.8440 13.3873 L29.3869 13.3873 " />
+<path d="M29.6155 13.3873 L29.6155 12.5873 " />
+<path d="M29.6155 12.5873 L29.5393 12.7016 " />
+<path d="M29.5393 12.7016 L29.4631 12.7778 " />
+<path d="M29.4631 12.7778 L29.3869 12.8159 " />
+<path d="M30.3012 12.9302 L30.2250 12.8921 " />
+<path d="M30.2250 12.8921 L30.1869 12.8540 " />
+<path d="M30.1869 12.8540 L30.1488 12.7778 " />
+<path d="M30.1488 12.7778 L30.1488 12.7397 " />
+<path d="M30.1488 12.7397 L30.1869 12.6635 " />
+<path d="M30.1869 12.6635 L30.2250 12.6254 " />
+<path d="M30.2250 12.6254 L30.3012 12.5873 " />
+<path d="M30.3012 12.5873 L30.4536 12.5873 " />
+<path d="M30.4536 12.5873 L30.5298 12.6254 " />
+<path d="M30.5298 12.6254 L30.5679 12.6635 " />
+<path d="M30.5679 12.6635 L30.6060 12.7397 " />
+<path d="M30.6060 12.7397 L30.6060 12.7778 " />
+<path d="M30.6060 12.7778 L30.5679 12.8540 " />
+<path d="M30.5679 12.8540 L30.5298 12.8921 " />
+<path d="M30.5298 12.8921 L30.4536 12.9302 " />
+<path d="M30.4536 12.9302 L30.3012 12.9302 " />
+<path d="M30.3012 12.9302 L30.2250 12.9682 " />
+<path d="M30.2250 12.9682 L30.1869 13.0063 " />
+<path d="M30.1869 13.0063 L30.1488 13.0825 " />
+<path d="M30.1488 13.0825 L30.1488 13.2349 " />
+<path d="M30.1488 13.2349 L30.1869 13.3111 " />
+<path d="M30.1869 13.3111 L30.2250 13.3492 " />
+<path d="M30.2250 13.3492 L30.3012 13.3873 " />
+<path d="M30.3012 13.3873 L30.4536 13.3873 " />
+<path d="M30.4536 13.3873 L30.5298 13.3492 " />
+<path d="M30.5298 13.3492 L30.5679 13.3111 " />
+<path d="M30.5679 13.3111 L30.6060 13.2349 " />
+<path d="M30.6060 13.2349 L30.6060 13.0825 " />
+<path d="M30.6060 13.0825 L30.5679 13.0063 " />
+<path d="M30.5679 13.0063 L30.5298 12.9682 " />
+<path d="M30.5298 12.9682 L30.4536 12.9302 " />
+</g><text x="30.0000" y="5.9000" textLength="3.9090" font-size="1.0667" lengthAdjust="spacingAndGlyphs" text-anchor="middle" opacity="0" stroke-opacity="0">LOCAL</text>
+<g class="stroked-text">
+<path d="M28.7619 5.8623 L28.3810 5.8623 " />
+<path d="M28.3810 5.8623 L28.3810 5.0623 " />
+<path d="M29.1810 5.0623 L29.3333 5.0623 " />
+<path d="M29.3333 5.0623 L29.4095 5.1004 " />
+<path d="M29.4095 5.1004 L29.4857 5.1766 " />
+<path d="M29.4857 5.1766 L29.5238 5.3290 " />
+<path d="M29.5238 5.3290 L29.5238 5.5956 " />
+<path d="M29.5238 5.5956 L29.4857 5.7480 " />
+<path d="M29.4857 5.7480 L29.4095 5.8242 " />
+<path d="M29.4095 5.8242 L29.3333 5.8623 " />
+<path d="M29.3333 5.8623 L29.1810 5.8623 " />
+<path d="M29.1810 5.8623 L29.1048 5.8242 " />
+<path d="M29.1048 5.8242 L29.0286 5.7480 " />
+<path d="M29.0286 5.7480 L28.9905 5.5956 " />
+<path d="M28.9905 5.5956 L28.9905 5.3290 " />
+<path d="M28.9905 5.3290 L29.0286 5.1766 " />
+<path d="M29.0286 5.1766 L29.1048 5.1004 " />
+<path d="M29.1048 5.1004 L29.1810 5.0623 " />
+<path d="M30.3238 5.7861 L30.2857 5.8242 " />
+<path d="M30.2857 5.8242 L30.1714 5.8623 " />
+<path d="M30.1714 5.8623 L30.0952 5.8623 " />
+<path d="M30.0952 5.8623 L29.9810 5.8242 " />
+<path d="M29.9810 5.8242 L29.9048 5.7480 " />
+<path d="M29.9048 5.7480 L29.8667 5.6718 " />
+<path d="M29.8667 5.6718 L29.8286 5.5194 " />
+<path d="M29.8286 5.5194 L29.8286 5.4052 " />
+<path d="M29.8286 5.4052 L29.8667 5.2528 " />
+<path d="M29.8667 5.2528 L29.9048 5.1766 " />
+<path d="M29.9048 5.1766 L29.9810 5.1004 " />
+<path d="M29.9810 5.1004 L30.0952 5.0623 " />
+<path d="M30.0952 5.0623 L30.1714 5.0623 " />
+<path d="M30.1714 5.0623 L30.2857 5.1004 " />
+<path d="M30.2857 5.1004 L30.3238 5.1385 " />
+<path d="M30.6286 5.6337 L31.0095 5.6337 " />
+<path d="M30.5524 5.8623 L30.8190 5.0623 " />
+<path d="M30.8190 5.0623 L31.0857 5.8623 " />
+<path d="M31.7333 5.8623 L31.3524 5.8623 " />
+<path d="M31.3524 5.8623 L31.3524 5.0623 " />
+</g></g>
+</g></g>
+</svg>

@@ -1,0 +1,70 @@
+Reference,Value,Footprint,DNP
+C1,100nF,Capacitor_SMD:C_0603_1608Metric,False
+C2,100nF,Capacitor_SMD:C_0603_1608Metric,False
+C3,100nF,Capacitor_SMD:C_0603_1608Metric,False
+C4,100nF,Capacitor_SMD:C_0603_1608Metric,False
+CT1,CABLE TIE,Fancification_Mechanical:CableTie_NPTH_2_5mm,False
+CT2,CABLE TIE,Fancification_Mechanical:CableTie_NPTH_2_5mm,False
+D1,APT1608SECK orange,LED_SMD:LED_0603_1608Metric,False
+D2,APT1608SECK orange,LED_SMD:LED_0603_1608Metric,False
+D3,APT1608SECK orange,LED_SMD:LED_0603_1608Metric,False
+D4,APT1608SECK orange,LED_SMD:LED_0603_1608Metric,False
+H1,MountingHole_3.2mm_M3,MountingHole:MountingHole_3.2mm_M3,False
+H2,MountingHole_3.2mm_M3,MountingHole:MountingHole_3.2mm_M3,False
+J1,FSR1 2-wire,Connector_Molex:Molex_KK-254_AE-6410-02A_1x02_P2.54mm_Vertical,False
+J2,FSR2 2-wire,Connector_Molex:Molex_KK-254_AE-6410-02A_1x02_P2.54mm_Vertical,False
+J3,FSR3 2-wire,Connector_Molex:Molex_KK-254_AE-6410-02A_1x02_P2.54mm_Vertical,False
+J4,ENDSTOP S/G/5V,Fancification_Connectors:Dual_fsr_breakout_J4,False
+JP1,CUT TO DISABLE D1,Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm,False
+JP2,CUT TO DISABLE D4,Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm,False
+JP3,CUT TO DISABLE D2,Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm,False
+JP4,CUT TO DISABLE D3,Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm,False
+Q1,BSS138,Package_TO_SOT_SMD:SOT-23,False
+Q2,BSS138,Package_TO_SOT_SMD:SOT-23,False
+Q3,BSS138,Package_TO_SOT_SMD:SOT-23,False
+Q4,BSS138,Package_TO_SOT_SMD:SOT-23,False
+R1,470R,Resistor_SMD:R_0603_1608Metric,False
+R10,10k,Resistor_SMD:R_0603_1608Metric,False
+R11,10k,Resistor_SMD:R_0603_1608Metric,False
+R12,10k,Resistor_SMD:R_0603_1608Metric,False
+R13,470k,Resistor_SMD:R_0603_1608Metric,False
+R14,470k,Resistor_SMD:R_0603_1608Metric,False
+R15,470k,Resistor_SMD:R_0603_1608Metric,False
+R16,22k,Resistor_SMD:R_0603_1608Metric,False
+R17,22k,Resistor_SMD:R_0603_1608Metric,False
+R18,22k,Resistor_SMD:R_0603_1608Metric,False
+R19,100k,Resistor_SMD:R_0603_1608Metric,False
+R2,470R,Resistor_SMD:R_0603_1608Metric,False
+R20,100k,Resistor_SMD:R_0603_1608Metric,False
+R21,100k,Resistor_SMD:R_0603_1608Metric,False
+R22,1k,Resistor_SMD:R_0603_1608Metric,False
+R23,1k,Resistor_SMD:R_0603_1608Metric,False
+R24,1k,Resistor_SMD:R_0603_1608Metric,False
+R25,100k,Resistor_SMD:R_0603_1608Metric,False
+R26,18k,Resistor_SMD:R_0603_1608Metric,False
+R27,47k,Resistor_SMD:R_0603_1608Metric,False
+R28,1M,Resistor_SMD:R_0603_1608Metric,False
+R29,220R,Resistor_SMD:R_0603_1608Metric,False
+R3,470R,Resistor_SMD:R_0603_1608Metric,False
+R30,47k,Resistor_SMD:R_0603_1608Metric,False
+R31,1k,Resistor_SMD:R_0603_1608Metric,False
+R4,4.7k,Resistor_SMD:R_0603_1608Metric,False
+R5,4.7k,Resistor_SMD:R_0603_1608Metric,False
+R6,4.7k,Resistor_SMD:R_0603_1608Metric,False
+R7,10k,Resistor_SMD:R_0603_1608Metric,False
+R8,10k,Resistor_SMD:R_0603_1608Metric,False
+R9,10k,Resistor_SMD:R_0603_1608Metric,False
+RV1,5k,Potentiometer_SMD:Potentiometer_Bourns_3314J_Vertical,False
+RV2,5k,Potentiometer_SMD:Potentiometer_Bourns_3314J_Vertical,False
+RV3,5k,Potentiometer_SMD:Potentiometer_Bourns_3314J_Vertical,False
+SJ1,PULLUP_EN,Jumper:SolderJumper-2_P1.3mm_Bridged_Pad1.0x1.5mm,False
+TP1,VCC,TestPoint:TestPoint_Pad_D1.0mm,False
+TP2,GND,TestPoint:TestPoint_Pad_D1.0mm,False
+TP3,ENDSTOP,TestPoint:TestPoint_Pad_D1.0mm,False
+TP4,N1,TestPoint:TestPoint_Pad_D1.0mm,False
+TP5,N2,TestPoint:TestPoint_Pad_D1.0mm,False
+TP6,N3,TestPoint:TestPoint_Pad_D1.0mm,False
+TP7,GND,TestPoint:TestPoint_Pad_D1.0mm,False
+U1,LMV339IDR,Package_SO:SOIC-14_3.9x8.7mm_P1.27mm,False
+U2,TPD4E1U06DCKR,Smoothie_TI:TPD4E1U06_DCK_TI_2024,False
+U3,TPD4E1U06DCKR,Smoothie_TI:TPD4E1U06_DCK_TI_2024,False

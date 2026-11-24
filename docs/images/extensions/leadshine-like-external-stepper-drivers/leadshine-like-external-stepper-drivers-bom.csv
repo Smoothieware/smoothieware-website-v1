@@ -1,0 +1,116 @@
+Reference,Value,Footprint,DNP
+C1,220uF 63V bulk,Capacitor_SMD:CP_Elec_10x10,False
+C10,100nF 50V 0603,Capacitor_SMD:C_0603_1608Metric,False
+C11,100nF 50V 0603,Capacitor_SMD:C_0603_1608Metric,False
+C12,100nF 50V 0603,Capacitor_SMD:C_0603_1608Metric,False
+C13,100nF 50V 0603,Capacitor_SMD:C_0603_1608Metric,False
+C14,100nF 50V 0603,Capacitor_SMD:C_0603_1608Metric,False
+C15,100nF 50V 0603,Capacitor_SMD:C_0603_1608Metric,False
+C2,220uF 63V bulk,Capacitor_SMD:CP_Elec_10x10,False
+C3,4.7uF 100V 1210,Capacitor_SMD:C_1210_3225Metric,False
+C4,4.7uF 100V 1210,Capacitor_SMD:C_1210_3225Metric,False
+C5,470nF 100V 0805,Capacitor_SMD:C_0805_2012Metric,False
+C6,470nF 100V 0805,Capacitor_SMD:C_0805_2012Metric,False
+C7,100nF 100V 0805,Capacitor_SMD:C_0805_2012Metric,False
+C8,220nF 25V 0603,Capacitor_SMD:C_0603_1608Metric,False
+C9,2.2uF 16V 0603,Capacitor_SMD:C_0603_1608Metric,False
+CF101,220nF 16V X7R retry 1.21s typ,Capacitor_SMD:C_0805_2012Metric,False
+CF102,47nF 100V X7R inrush,Capacitor_SMD:C_0805_2012Metric,False
+CF103,4.7uF 16V X7R timing,Capacitor_SMD:C_0805_2012Metric,False
+CF104,10nF 16V X7R,Capacitor_SMD:C_0805_2012Metric,False
+CF105,10uF 16V X7R reverse aux,Capacitor_SMD:C_0805_2012Metric,False
+CF190,1uF 100V X7R LOCAL VOUT,Capacitor_SMD:C_1210_3225Metric,False
+CT1,CABLE TIE,Fancification_Mechanical:CableTie_NPTH_2_5mm,False
+CT2,CABLE TIE,Fancification_Mechanical:CableTie_NPTH_2_5mm,False
+D1,SMBJ36A TVS,Diode_SMD:D_SMB,False
+D2,BZX84C12 12V,Package_TO_SOT_SMD:SOT-23,False
+D3,VM POWER green,LED_SMD:LED_0603_1608Metric,False
+D4,STALL SG amber,LED_SMD:LED_0603_1608Metric,False
+DF101,1N4148W-7-F,Diode_SMD:D_SOD-123,False
+DF102,LTST-C170KRKT FAULT,LED_SMD:LED_0805_2012Metric,False
+DF103,LTST-C170KRKT OVERVOLTAGE,LED_SMD:LED_0805_2012Metric,False
+DF104,1N4148W-7-F,Diode_SMD:D_SOD-123,False
+DF105,BZT52C5V1-7-F,Diode_SMD:D_SOD-123,False
+DF106,LTST-C170KRKT REVERSE BLINK,LED_SMD:LED_0805_2012Metric,False
+DF190,BAT54HGW-Q TIMER NEGATIVE CLAMP,Diode_SMD:D_SOD-323,False
+DF191,BAT54HGW-Q FAULT LED REVERSE CLAMP,Diode_SMD:D_SOD-323,False
+FID1,FIDUCIAL,Fiducial:Fiducial_1mm_Mask2mm,False
+FID2,FIDUCIAL,Fiducial:Fiducial_1mm_Mask2mm,False
+FID3,FIDUCIAL,Fiducial:Fiducial_1mm_Mask2mm,False
+H1,MountingHole_3.2mm_M3,MountingHole:MountingHole_3.2mm_M3,False
+H2,MountingHole_3.2mm_M3,MountingHole:MountingHole_3.2mm_M3,False
+H3,MountingHole_3.2mm_M3,MountingHole:MountingHole_3.2mm_M3,False
+H4,MountingHole_3.2mm_M3,MountingHole:MountingHole_3.2mm_M3,False
+J1,GADGETEER S IN,Smoothie_Leadshine:Samtec_SHF105_TH_LC,False
+J2,VM IN 18-32V DC,"TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal",False
+J3,MOTOR A1 A2 B1 B2,"TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-1,5-4-5.08_1x04_P5.08mm_Horizontal",False
+JP1,CUT TO DISABLE D4,Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm,False
+JP2,CUT TO DISABLE D3,Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm,False
+JPF101,CUT FAULT,Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm,False
+JPF102,CUT OVERVOLTAGE,Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm,False
+JPF103,CUT REVERSE,Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm,False
+NT1,NetTie SRAL,NetTie:NetTie-2_SMD_Pad0.5mm,False
+NT2,NetTie SRBL,NetTie:NetTie-2_SMD_Pad0.5mm,False
+Q1,AO4611 A1,Package_SO:SOIC-8_3.9x4.9mm_P1.27mm,False
+Q2,AO4611 A2,Package_SO:SOIC-8_3.9x4.9mm_P1.27mm,False
+Q3,AO4611 B1,Package_SO:SOIC-8_3.9x4.9mm_P1.27mm,False
+Q4,AO4611 B2,Package_SO:SOIC-8_3.9x4.9mm_P1.27mm,False
+Q5,AOD409 reverse polarity,Package_TO_SOT_SMD:TO-252-2,False
+QF101,CSD18536KTT,Package_TO_SOT_SMD:TO-263-2,False
+QF102,CSD18536KTT,Package_TO_SOT_SMD:TO-263-2,False
+R1,10k CS_N pull-up,Resistor_SMD:R_0603_1608Metric,False
+R10,100k P gate-source,Resistor_SMD:R_0603_1608Metric,False
+R11,100k P gate-source,Resistor_SMD:R_0603_1608Metric,False
+R12,100k P gate-source,Resistor_SMD:R_0603_1608Metric,False
+R13,100k P gate-source,Resistor_SMD:R_0603_1608Metric,False
+R14,100k N gate-GND,Resistor_SMD:R_0603_1608Metric,False
+R15,100k N gate-GND,Resistor_SMD:R_0603_1608Metric,False
+R16,100k N gate-GND,Resistor_SMD:R_0603_1608Metric,False
+R17,100k N gate-GND,Resistor_SMD:R_0603_1608Metric,False
+R18,100k SDO pull-up,Resistor_SMD:R_0603_1608Metric,False
+R2,10k ENABLE_N pull-up,Resistor_SMD:R_0603_1608Metric,False
+R3,100k STEP pull-down,Resistor_SMD:R_0603_1608Metric,False
+R4,47R SRA,Resistor_SMD:R_0603_1608Metric,False
+R5,47R SRB,Resistor_SMD:R_0603_1608Metric,False
+R6,100k ENN pull-up,Resistor_SMD:R_0603_1608Metric,False
+R7,100k Q5 gate,Resistor_SMD:R_0603_1608Metric,False
+R8,15k VM LED,Resistor_SMD:R_0603_1608Metric,False
+R9,2.0k SG LED,Resistor_SMD:R_0603_1608Metric,False
+RF101,7.5mOhm 1% >=3W Kelvin-qualified 2512 SHUNT - MPN OPEN,Resistor_SMD:R_2512_6332Metric,False
+RF102,681k 0.1% OV,Resistor_SMD:R_0805_2012Metric,False
+RF103,10k 0.1%,Resistor_SMD:R_0805_2012Metric,False
+RF104,320k 0.1% UV,Resistor_SMD:R_0805_2012Metric,False
+RF105,10k 0.1%,Resistor_SMD:R_0805_2012Metric,False
+RF106,22k 1% gate-shaping,Resistor_SMD:R_0805_2012Metric,False
+RF107,47k 1% 0.25W,Resistor_SMD:R_1206_3216Metric,False
+RF108,118k 0.1% OV STATUS,Resistor_SMD:R_0805_2012Metric,False
+RF109,10k 0.1%,Resistor_SMD:R_0805_2012Metric,False
+RF110,10k 1% 0.5W,Resistor_SMD:R_1206_3216Metric,False
+RF111,2.2k 1% 1W reverse auxiliary,Resistor_SMD:R_2512_6332Metric,False
+RF112,10k 1%,Resistor_SMD:R_0805_2012Metric,False
+RF113,100k 1%,Resistor_SMD:R_0805_2012Metric,False
+RF114,4.7k 1% reverse LED,Resistor_SMD:R_0805_2012Metric,False
+RF115,100k 1% SHDN reverse injection limit,Resistor_SMD:R_0805_2012Metric,False
+RS1,0.1R 1W sense A,Resistor_SMD:R_2512_6332Metric,False
+RS2,0.1R 1W sense B,Resistor_SMD:R_2512_6332Metric,False
+TP1,TP +VM,TestPoint:TestPoint_Pad_D1.5mm,False
+TP10,TP GND_H,TestPoint:TestPoint_Pad_D1.5mm,False
+TP11,TP EN_N,TestPoint:TestPoint_Pad_D1.5mm,False
+TP12,TP CS_N,TestPoint:TestPoint_Pad_D1.5mm,False
+TP2,TP GND_M,TestPoint:TestPoint_Pad_D1.5mm,False
+TP3,TP +5V_M,TestPoint:TestPoint_Pad_D1.0mm,False
+TP4,TP GND_M,TestPoint:TestPoint_Pad_D1.5mm,False
+TP5,TP SG_TST,TestPoint:TestPoint_Pad_D1.5mm,False
+TP6,TP ENN,TestPoint:TestPoint_Pad_D1.0mm,False
+TP7,TP STEP_M,TestPoint:TestPoint_Pad_D1.5mm,False
+TP8,TP DIR_M,TestPoint:TestPoint_Pad_D1.5mm,False
+TP9,TP +3V3,TestPoint:TestPoint_Pad_D1.5mm,False
+U1,TMC2590-TA,Smoothie_Leadshine:TQFP-32-1EP_5x5mm_P0.5mm_EP2.78x2.78mm,False
+U2,ISO7741 STEP DIR EN SDO,Package_SO:QSOP-16_3.9x4.9mm_P0.635mm,False
+U3,ISO7740 SCK SDI CSN,Package_SO:QSOP-16_3.9x4.9mm_P0.635mm,False
+U4,TPD4E1U06 ESD A,Package_TO_SOT_SMD:SOT-23-6,False
+U5,TPD4E1U06 ESD B,Package_TO_SOT_SMD:SOT-23-6,False
+U6,SN74LVC1G04 MISO_OE,Package_TO_SOT_SMD:SOT-23-5,False
+UF101,LTC4368IMS-2#PBF,Package_SO:MSOP-10_3x3mm_P0.5mm,False
+UF102,TL431BIDBZR,Package_TO_SOT_SMD:SOT-23,False
+UF103,LMC555CM/NOPB,Package_SO:SOIC-8_3.9x4.9mm_P1.27mm,False

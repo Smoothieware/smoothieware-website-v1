@@ -1,0 +1,37 @@
+{
+  "kind": "typography-only reader derivative",
+  "source": "wholeboard-wiring.svg",
+  "source_sha256": "380c45c5dd89ea65f80bc0864479cabe7d29c683b9f55ea242a4bad723a02fa4",
+  "output": "wholeboard-wiring-reader.svg",
+  "output_sha256": "1f774c6e18ddb5c413c8bf4458128e53f3f21e0b1d04606b878a1e56463408d6",
+  "edits": [
+    {
+      "x": "150",
+      "y": "225",
+      "before_font_size": 85,
+      "after_font_size": 95
+    },
+    {
+      "x": "2600",
+      "y": "380",
+      "before_font_size": 85,
+      "after_font_size": 95
+    },
+    {
+      "x": "2600",
+      "y": "2420",
+      "before_font_size": 85,
+      "after_font_size": 95
+    },
+    {
+      "x": "90",
+      "y": "2860",
+      "before_font_size": 85,
+      "after_font_size": 95
+    }
+  ],
+  "inverse_restores_source_byte_for_byte": true,
+  "all_other_bytes_unchanged": true,
+  "electrical_scope": "Three unpowered individual host leads; powered installation incomplete",
+  "qualification": "Source geometry retained; this derivative does not extend electrical, hardware or whole-guide acceptance."
+}

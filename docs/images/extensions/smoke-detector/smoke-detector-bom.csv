@@ -1,0 +1,41 @@
+Reference,Value,Footprint,DNP
+C1,4.7uF 10V X5R,Capacitor_SMD:C_0603_1608Metric,False
+C2,10uF 6.3V X5R,Capacitor_SMD:C_0603_1608Metric,False
+C3,100nF 50V X7R,Capacitor_SMD:C_0603_1608Metric,False
+D1,POWER 3V3S (green),LED_SMD:LED_0603_1608Metric,False
+D2,"ALARM (red, host-driven)",LED_SMD:LED_0603_1608Metric,False
+FID1,Fiducial_1mm_Mask3mm,Fiducial_Smoke:Fiducial_1mm_Mask3mm,False
+FID2,Fiducial_1mm_Mask3mm,Fiducial_Smoke:Fiducial_1mm_Mask3mm,False
+FID3,Fiducial_1mm_Mask3mm,Fiducial_Smoke:Fiducial_1mm_Mask3mm,False
+H1,MountingHole_3.2mm_M3,MountingHole:MountingHole_3.2mm_M3,False
+H2,MountingHole_3.2mm_M3,MountingHole:MountingHole_3.2mm_M3,False
+J1,GADGETEER I IN,Connector_Smoothie_Smoke:Samtec_SHF105_TH_LC_2x05_P1.27mm,False
+J2,GADGETEER I CHAIN,Connector_Smoothie_Smoke:Samtec_SHF105_TH_LC_2x05_P1.27mm,False
+J3,SM04B-SRSS-TB(LF)(SN),Fancification_Connectors:Dual_smoke_detector_J3,False
+JP10,CUT TO DISABLE D2,Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm,False
+JP11,CUT TO DISABLE D1,Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm,False
+JP3,CHAIN P3 OPEN,Jumper:SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm,False
+JP4,CHAIN P4,Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm,False
+JP5,CHAIN P5,Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm,False
+JP6,CHAIN P6,Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm,False
+JP7,CHAIN P7,Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm,False
+JP8,CHAIN P8,Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm,False
+JP9,CHAIN P9,Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm,False
+JP_5V,5V LINK,Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm,False
+JP_PU,PU_EN,Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm,False
+R_AL,100k,Resistor_SMD:R_0603_1608Metric,False
+R_D1,470,Resistor_SMD:R_0603_1608Metric,False
+R_D2,680,Resistor_SMD:R_0603_1608Metric,False
+R_PU1,10k,Resistor_SMD:R_0603_1608Metric,False
+R_PU2,10k,Resistor_SMD:R_0603_1608Metric,False
+TP1,TP 5V,TestPoint:TestPoint_Pad_D1.0mm,False
+TP2,TP GND,TestPoint:TestPoint_Pad_D1.0mm,False
+TP3,TP SDA,TestPoint:TestPoint_Pad_D1.0mm,False
+TP4,TP SCL,TestPoint:TestPoint_Pad_D1.0mm,False
+TP5,TP ALARM IN,TestPoint:TestPoint_Pad_D1.0mm,False
+TP6,TP 3V3 HOST,TestPoint:TestPoint_Pad_D1.0mm,False
+TP7,TP 3V3S,TestPoint:TestPoint_Pad_D1.0mm,False
+TP8,TP GND,TestPoint:TestPoint_Pad_D1.0mm,False
+U1,SCD41-D-R2,Smoothie_Smoke_Detector:Sensirion_SCD4x_DS_Fig4,False
+U2,TLV75533PDBVR,Package_TO_SOT_SMD:SOT-23-5,False
+U3,TPD4E1U06DCKR,ESD_TexasInstruments:TPD4E1U06_DCK0006A,False

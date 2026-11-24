@@ -1,134 +1,553 @@
 ---
 layout: default
-title: "Long distance extender"
+title: "Long distance extender (RJ45 differential)"
 permalink: /extensions/long-distance-extender
 ---
 
-# Long distance extender
+# Long distance extender (RJ45 differential)
 
-{% include extension-board-visuals.html slug="long-distance-extender" %}
+This paired transmitter/receiver carries three fixed-direction logic signals over differential twisted pairs. THVD1451 devices and Schmitt conditioning regenerate the signals at the remote board. It is a custom non-Ethernet cable interface, not an Ethernet network adapter or a transparent seven-signal bidirectional Gadgeteer cable. The 10 m-class distance is a design goal requiring rate/cable measurements.
 
-Carry one or three selected Smoothieboard signals and low-voltage power over a 10 m-class twisted-pair cable using a defined differential physical layer.
+## Revision and availability
 
-## Development status
+This guide selects **v15**, matching the revision selected by the retained abstract-diagram inventory. This is a design candidate; availability and operating ratings are unverified. The selected revision and contact map govern this guide; older specifications may describe another circuit.
 
-**Baseline documentation snapshot: 2026-10-11, before the requested connector/protection/usability revision program.** New revision features require their own reviewed source and qualification evidence.
+## Interfaces, power and operating limits
 
-This page documents an **unqualified engineering study**, not a released or tested product. Saved CAD, renders and automated checks do not establish a safe assembly, compatible cable, firmware support or a usable current rating.
+Emitter J1 contacts 3/4/5 are SIG1/2/3 inputs. Receiver J1 contacts 3/4/5 are reconstructed outputs;6–9 are unconnected. Both RJ45 J4 connectors use1/2 channel 1+/−, 3/6 channel 2+/−, 4/5 channel 3+/−, 7 cable5 V and 8 ground; shield is a separate net. The convenience J3 header is 1 5 V, 2 ground, 3–5 signals. Power selection links separately connect host/port, cable and header supplies; blindly closing every 5 V link can backfeed sources. JP4 bonds shield to ground and requires an explicit grounding plan.
 
-Board-specific qualification limits: v10 pair retained native0 with five ignored categories,2pass130unsigned each;two blank ≥1kV capacitor identities,350mA host/cable assumptions and physical gates open.
+The selected emitter fits the **SOURCE** resistor pair so local power feeds the cable through the controlled power path; the receiver fits the **SINK** pair so cable power feeds its local rail. The opposite direction pair is marked not fitted. Confirm actual population before applying power. **F1 is a zero-ohm feed, not a fuse.** A shared ground remains: differential signalling does not provide galvanic isolation. This RJ45 assignment is neither Ethernet nor PoE.
 
-## Interfaces and wiring
+## Board reference
 
-### Inputs
+<details markdown="1">
+<summary>Reading the connector callouts</summary>
 
-- Emitter: one Y socket using three selected GPIO signals, plus optional 2.54 mm 5 V/GND/signals header.
-- Receiver: RJ45 differential link and protected remote power.
+The dark end of each pill gives the source contact number. The adjoining label gives its function. Colours help locate related functions; the label and connection instructions determine how to use the contact.
 
-### Outputs
+- Red: 3.3 V supply.
+- Orange: 5 V supply.
+- Green: Signal — use the printed function label.
+- Near-black: Circuit ground.
+- Grey: Not routed in this board revision.
+- Dark grey: Other source-labelled contact — read its exact function.
 
-- Emitter: keyed non-Ethernet-labelled RJ45.
-- Receiver: three reconstructed 3.3 V-safe signals and optional local breakout header.
+A voltage in a signal name does not make that contact a power output. Circuit ground, cable shield and protective earth are different connections. An underside projection shows rear components through the front view; it is not a mirrored rear view.
 
-Power off before connecting or changing jumpers. Verify pin 1, signal direction, supply voltage and ground at both ends of every cable. A mechanically fitting connector is not proof of electrical compatibility. If a host pin mapping or current allocation remains unresolved in the design record, do not connect the board until it is resolved.
+</details>
 
-## Electrical design requirements
+The emitter and receiver have separate source-bound references below. Identify the assembly before using any pin or link instructions. Complete Prime installation wiring and actual page/viewer acceptance remain open.
 
-The following are specification requirements or study assumptions; they are **not measured operating ratings**. A newer selected-revision note takes precedence over historical draft options.
+### Emitter assembly
 
-- Do not implement the proposal's undefined 5 V/-5 V scheme.
-- Select an RS-422/RS-485-class transceiver only after direction, common-mode range and rate are frozen.
-- Meet the 10 m goal at the maximum required transition rate with measured margin.
-- Fuse/current-limit cable power and prohibit 5 V signalling into 3.3 V V2 inputs.
+{% include _includes/extension-instruction-diagram.html id="long-distance-extender-v15-emitter-reader-compact-overview" src="/images/extensions/long-distance-extender/guides/emitter/reader-compact-overview.svg" title="Long-distance emitter" alt="Long-distance emitter on the emitter assembly, v15" caption="Selected-source component-side reference for this assembly. Use the overview and focused sheets together. Bridge continuity, cable orientation and complete Prime wiring remain open." width=420 %}
 
-## Selected component architecture
+{% include _includes/extension-instruction-diagram.html id="long-distance-extender-v15-emitter-reader-compact-host-1-5" src="/images/extensions/long-distance-extender/guides/emitter/reader-compact-host-1-5-central-pills.svg" title="J1 · Host signal input" alt="J1 · Host signal input on the emitter assembly, v15" caption="Selected-source component-side reference for this assembly. Use the overview and focused sheets together. Bridge continuity, cable orientation and complete Prime wiring remain open." width=420 %}
 
-See [current review](https://github.com/arthurwolf/extension-boards/blob/main/src/long-distance-extender/component-review.md). Retain v10 raw differential endpoints; protocol-specific IC alternatives change the interface. Conditional support passives only; ≥1kV capacitor identities and host/cable/physical gates remain open. No successor.
+{% include _includes/extension-instruction-diagram.html id="long-distance-extender-v15-emitter-reader-compact-host-6-10" src="/images/extensions/long-distance-extender/guides/emitter/reader-compact-host-6-10-central-pills.svg" title="J1 · Host signal input" alt="J1 · Host signal input on the emitter assembly, v15" caption="Selected-source component-side reference for this assembly. Use the overview and focused sheets together. Bridge continuity, cable orientation and complete Prime wiring remain open." width=420 %}
 
-## Configuration and commissioning
+{% include _includes/extension-instruction-diagram.html id="long-distance-extender-v15-emitter-reader-compact-header-1-5" src="/images/extensions/long-distance-extender/guides/emitter/reader-compact-header-1-5-central-pills.svg" title="J3 · Alternate signal header" alt="J3 · Alternate signal header on the emitter assembly, v15" caption="Selected-source component-side reference for this assembly. Use the overview and focused sheets together. Bridge continuity, cable orientation and complete Prime wiring remain open." width=420 %}
 
-Use the configuration and firmware contract for the exact selected revision. Do not copy another module’s socket assignments or assume that an unused pin is available. First-article work must verify source selection, reset/unplug behavior, cable orientation and the actual load or sensor interface before normal operation.
+{% include _includes/extension-instruction-diagram.html id="long-distance-extender-v15-emitter-reader-compact-chain-1-5" src="/images/extensions/long-distance-extender/guides/emitter/reader-compact-chain-1-5-central-pills.svg" title="J2 · Host chain output" alt="J2 · Host chain output on the emitter assembly, v15" caption="Selected-source component-side reference for this assembly. Use the overview and focused sheets together. Bridge continuity, cable orientation and complete Prime wiring remain open." width=420 %}
 
-## Requested connector and usability upgrades
+{% include _includes/extension-instruction-diagram.html id="long-distance-extender-v15-emitter-reader-compact-chain-6-10" src="/images/extensions/long-distance-extender/guides/emitter/reader-compact-chain-6-10-central-pills.svg" title="J2 · Host chain output" alt="J2 · Host chain output on the emitter assembly, v15" caption="Selected-source component-side reference for this assembly. Use the overview and focused sheets together. Bridge continuity, cable orientation and complete Prime wiring remain open." width=420 %}
 
-The following are requirements for the next design iterations; this page does **not** claim they are already fitted:
+{% include _includes/extension-instruction-diagram.html id="long-distance-extender-v15-emitter-reader-compact-cable-1-5" src="/images/extensions/long-distance-extender/guides/emitter/reader-compact-cable-1-5-central-pills.svg" title="J4 · Custom differential cable" alt="J4 · Custom differential cable on the emitter assembly, v15" caption="Selected-source component-side reference for this assembly. Use the overview and focused sheets together. Bridge continuity, cable orientation and complete Prime wiring remain open." width=420 %}
 
-- On electrically suitable three/four-pin low-voltage ports, provide compact alternative 2.54 mm header/Molex-style and keyed STEMMA-family footprints. Populate one connector option per shared position and document its pin order. Use STEMMA QT only for compatible four-wire I²C; connector appearance does not make another signal protocol I²C-compatible.
-- Render each supported connector population separately. Document clearances, cable access and the exact fitted option.
-- Use uppercase titles in a consistent Montserrat-style face, labels on both sides, visible domain boundaries, a revision-specific wiring guide and this page’s URL on the silk where readable.
-- Keep mounting-hole centers on a documented 10 mm lattice; add cable-tie holes where space and electrical clearances permit. Place status LEDs near accessible edges and give every indicator its own disable solder jumper. Provide labeled test pads and a ground observation point.
-- Review applicable DC power entries for reverse-polarity cutoff with a blinking warning, overvoltage cutoff/indication, controlled startup and electronic overcurrent protection. Indicator and protection circuits must work in the fault state without defeating isolation or safe output defaults. Thermal protection belongs only where the power/thermal analysis justifies it.
-- Electronic protection does not automatically replace a required mains/branch safety fuse. Backfeed blocking and inductive-load flyback clamps are separate design functions. Do not add identity EEPROMs, fault memory, calibration storage or paid self-test hardware under this upgrade program.
+{% include _includes/extension-instruction-diagram.html id="long-distance-extender-v15-emitter-reader-compact-cable-6-SH" src="/images/extensions/long-distance-extender/guides/emitter/reader-compact-cable-6-SH-central-pills.svg" title="J4 · Custom differential cable" alt="J4 · Custom differential cable on the emitter assembly, v15" caption="Selected-source component-side reference for this assembly. Use the overview and focused sheets together. Bridge continuity, cable orientation and complete Prime wiring remain open." width=420 %}
 
-## Design sources
+{% include _includes/extension-instruction-diagram.html id="long-distance-extender-v15-emitter-reader-compact-signals" src="/images/extensions/long-distance-extender/guides/emitter/reader-compact-signals.svg" title="Three signal channels" alt="Three signal channels on the emitter assembly, v15" caption="Selected-source component-side reference for this assembly. Use the overview and focused sheets together. Bridge continuity, cable orientation and complete Prime wiring remain open." width=420 %}
 
-- [Board specification](https://github.com/arthurwolf/extension-boards/blob/main/src/long-distance-extender/specs.md)
-- [Architecture and component decisions](https://github.com/arthurwolf/extension-boards/blob/main/src/long-distance-extender/design.md)
-- [Selected-revision review and qualification record](https://github.com/arthurwolf/extension-boards/blob/main/src/long-distance-extender/component-review.md)
-- [All extension boards](/#extension-boards)
+{% include _includes/extension-instruction-diagram.html id="long-distance-extender-v15-emitter-reader-compact-line" src="/images/extensions/long-distance-extender/guides/emitter/reader-compact-line.svg" title="Line protection and bias" alt="Line protection and bias on the emitter assembly, v15" caption="Selected-source component-side reference for this assembly. Use the overview and focused sheets together. Bridge continuity, cable orientation and complete Prime wiring remain open." width=420 %}
 
-Documentation route: `smoothieware.org/extensions/long-distance-extender`.
+{% include _includes/extension-instruction-diagram.html id="long-distance-extender-v15-emitter-reader-compact-regulator" src="/images/extensions/long-distance-extender/guides/emitter/reader-compact-regulator.svg" title="Local logic supply" alt="Local logic supply on the emitter assembly, v15" caption="Selected-source component-side reference for this assembly. Use the overview and focused sheets together. Bridge continuity, cable orientation and complete Prime wiring remain open." width=420 %}
 
-<!-- additive-cad-status:start -->
-## Additive design studies
+{% include _includes/extension-instruction-diagram.html id="long-distance-extender-v15-emitter-reader-compact-jp1" src="/images/extensions/long-distance-extender/guides/emitter/reader-compact-jp1.svg" title="Power / chain link" alt="Power / chain link on the emitter assembly, v15" caption="Selected-source component-side reference for this assembly. Use the overview and focused sheets together. Bridge continuity, cable orientation and complete Prime wiring remain open." width=420 %}
 
-The 2026-10-11 upgrade program has saved additional candidates v11, v12, v13. These studies preserve the historical design described above. Their connector, LED, mechanical and protection changes are revision-specific and remain unqualified.
+{% include _includes/extension-instruction-diagram.html id="long-distance-extender-v15-emitter-reader-compact-jp2" src="/images/extensions/long-distance-extender/guides/emitter/reader-compact-jp2.svg" title="Power / chain link" alt="Power / chain link on the emitter assembly, v15" caption="Selected-source component-side reference for this assembly. Use the overview and focused sheets together. Bridge continuity, cable orientation and complete Prime wiring remain open." width=420 %}
 
-See the [per-board changes, failures and remaining work](https://github.com/arthurwolf/extension-boards/blob/main/src/long-distance-extender/fancification.md) and [mandatory family specification](https://github.com/arthurwolf/extension-boards/blob/main/docs/FANCIFICATION-SPEC.md). Use the source hash and native check for the exact candidate being reviewed; do not infer hardware ratings from a rendered population.
-<!-- additive-cad-status:end -->
+{% include _includes/extension-instruction-diagram.html id="long-distance-extender-v15-emitter-reader-compact-jp3" src="/images/extensions/long-distance-extender/guides/emitter/reader-compact-jp3.svg" title="Power / chain link" alt="Power / chain link on the emitter assembly, v15" caption="Selected-source component-side reference for this assembly. Use the overview and focused sheets together. Bridge continuity, cable orientation and complete Prime wiring remain open." width=420 %}
 
-<!-- extension-upgrade-readback:start -->
-## Upgrade candidate readback
+{% include _includes/extension-instruction-diagram.html id="long-distance-extender-v15-emitter-reader-compact-jp5" src="/images/extensions/long-distance-extender/guides/emitter/reader-compact-jp5.svg" title="Power / chain link" alt="Power / chain link on the emitter assembly, v15" caption="Selected-source component-side reference for this assembly. Use the overview and focused sheets together. Bridge continuity, cable orientation and complete Prime wiring remain open." width=420 %}
 
-The three additional revisions are **v11, v12, v13**. They are engineering studies; saved CAD and renders do not release the hardware. The latest candidate is described below. Older baseline notes above remain historical.
+{% include _includes/extension-instruction-diagram.html id="long-distance-extender-v15-emitter-reader-compact-jp6" src="/images/extensions/long-distance-extender/guides/emitter/reader-compact-jp6.svg" title="Power / chain link" alt="Power / chain link on the emitter assembly, v15" caption="Selected-source component-side reference for this assembly. Use the overview and focused sheets together. Bridge continuity, cable orientation and complete Prime wiring remain open." width=420 %}
 
-### emitter
+{% include _includes/extension-instruction-diagram.html id="long-distance-extender-v15-emitter-reader-compact-jp7" src="/images/extensions/long-distance-extender/guides/emitter/reader-compact-jp7.svg" title="Power / chain link" alt="Power / chain link on the emitter assembly, v15" caption="Selected-source component-side reference for this assembly. Use the overview and focused sheets together. Bridge continuity, cable orientation and complete Prime wiring remain open." width=420 %}
 
-- [Latest PCB source](https://github.com/arthurwolf/extension-boards/blob/main/src/long-distance-extender/attempt/versions/v13/emitter/emitter.kicad_pcb), SHA-256 `f91c5bd276d803ec2823e05ea52987c5ecf12e68de242b69aa21dd5c4477dff2`.
-- Last native check: **11 errors**, including **11 open connections**. This is a CAD result, not electrical, assembly or firmware qualification.
-- No alternative connector population is recorded for this physical role. Any applicable connector conversion remains an explicit design-review item.
-- [normal population/render record](https://github.com/arthurwolf/extension-boards/blob/main/src/long-distance-extender/attempt/versions/v13/emitter/populations/emitter/normal/population.json): 6 images; source current; image hashes match; 0 unresolved models.
-- [Changes, failed trials and remaining work](https://github.com/arthurwolf/extension-boards/blob/main/src/long-distance-extender/attempt/versions/v13/emitter/emitter-fancification-revision.md).
+{% include _includes/extension-instruction-diagram.html id="long-distance-extender-v15-emitter-reader-compact-jp8" src="/images/extensions/long-distance-extender/guides/emitter/reader-compact-jp8.svg" title="Power / chain link" alt="Power / chain link on the emitter assembly, v15" caption="Selected-source component-side reference for this assembly. Use the overview and focused sheets together. Bridge continuity, cable orientation and complete Prime wiring remain open." width=420 %}
 
-### receiver
+{% include _includes/extension-instruction-diagram.html id="long-distance-extender-v15-emitter-reader-compact-jp9" src="/images/extensions/long-distance-extender/guides/emitter/reader-compact-jp9.svg" title="Power / chain link" alt="Power / chain link on the emitter assembly, v15" caption="Selected-source component-side reference for this assembly. Use the overview and focused sheets together. Bridge continuity, cable orientation and complete Prime wiring remain open." width=420 %}
 
-- [Latest PCB source](https://github.com/arthurwolf/extension-boards/blob/main/src/long-distance-extender/attempt/versions/v13/receiver/receiver.kicad_pcb), SHA-256 `cdeee3a60febe70c2829bc41bffdba3249fb253b2866d5cc90df3f43cc644a4a`.
-- Last native check: **2 errors**, including **2 open connections**. This is a CAD result, not electrical, assembly or firmware qualification.
-- No alternative connector population is recorded for this physical role. Any applicable connector conversion remains an explicit design-review item.
-- [normal population/render record](https://github.com/arthurwolf/extension-boards/blob/main/src/long-distance-extender/attempt/versions/v13/receiver/populations/receiver/normal/population.json): 6 images; source current; image hashes match; 0 unresolved models.
-- [Changes, failed trials and remaining work](https://github.com/arthurwolf/extension-boards/blob/main/src/long-distance-extender/attempt/versions/v13/receiver/receiver-fancification-revision.md).
+{% include _includes/extension-instruction-diagram.html id="long-distance-extender-v15-emitter-reader-compact-jp10" src="/images/extensions/long-distance-extender/guides/emitter/reader-compact-jp10.svg" title="Power / chain link" alt="Power / chain link on the emitter assembly, v15" caption="Selected-source component-side reference for this assembly. Use the overview and focused sheets together. Bridge continuity, cable orientation and complete Prime wiring remain open." width=420 %}
 
-Applicable protection, current-path, thermal, pinout, cable access and physical tests remain open wherever the linked board record has not verified them. A zero native-error count does not close those gates.
-<!-- extension-upgrade-readback:end -->
+{% include _includes/extension-instruction-diagram.html id="long-distance-extender-v15-emitter-reader-compact-shield" src="/images/extensions/long-distance-extender/guides/emitter/reader-compact-shield.svg" title="Cable shield connection" alt="Cable shield connection on the emitter assembly, v15" caption="Selected-source component-side reference for this assembly. Use the overview and focused sheets together. Bridge continuity, cable orientation and complete Prime wiring remain open." width=420 %}
 
-<!-- owned-protection-circuit:start -->
+{% include _includes/extension-instruction-diagram.html id="long-distance-extender-v15-emitter-reader-compact-led1" src="/images/extensions/long-distance-extender/guides/emitter/reader-compact-led1.svg" title="Channel1 indication" alt="Channel1 indication on the emitter assembly, v15" caption="Selected-source component-side reference for this assembly. Use the overview and focused sheets together. Bridge continuity, cable orientation and complete Prime wiring remain open." width=420 %}
 
-## Selected-direction power protection in v13
+{% include _includes/extension-instruction-diagram.html id="long-distance-extender-v15-emitter-reader-compact-led2" src="/images/extensions/long-distance-extender/guides/emitter/reader-compact-led2.svg" title="Channel2 indication" alt="Channel2 indication on the emitter assembly, v15" caption="Selected-source component-side reference for this assembly. Use the overview and focused sheets together. Bridge continuity, cable orientation and complete Prime wiring remain open." width=420 %}
 
-Both native v13 boards now contain a TPS259470AR automatic-retry electronic breaker with integrated back-to-back reverse blocking, thermal shutdown and 22 nF startup control. A TPS3700 comparator supplies distinct OV cutoff/amber indication; a floating LMC555 blinks the reverse warning, and FAULT has a separate indicator. Every indicator has its own disable link. F1 on the emitter is now a 0 ohm assembly feed instead of the former 0.5 A PTC; the receiver's original 0 ohm F1 remains explicitly an assembly feed, not a fuse. The IC and selected links are the actual protected power path.
+{% include _includes/extension-instruction-diagram.html id="long-distance-extender-v15-emitter-reader-compact-led3" src="/images/extensions/long-distance-extender/guides/emitter/reader-compact-led3.svg" title="Channel3 indication" alt="Channel3 indication on the emitter assembly, v15" caption="Selected-source component-side reference for this assembly. Use the overview and focused sheets together. Bridge continuity, cable orientation and complete Prime wiring remain open." width=420 %}
 
-Four mutually exclusive links select direction through the breaker. SOURCE uses R1980/R1981; SINK uses R1982/R1983. Default assembly: emitter SOURCE, receiver SINK. For the previously documented receiver-to-cable REVPWR mode, fit emitter SINK and receiver SOURCE, and leave emitter JP1 OPEN. Change both pairs only with all power disconnected. Never fit SOURCE and SINK simultaneously or connect independent active 5 V sources. The original JP2-open PS2 mode still isolates cable power and retains local peripheral/host powering. Signal assignments, shared cable return and mating geometry remain unchanged.
+{% include _includes/extension-instruction-diagram.html id="long-distance-extender-v15-emitter-reader-compact-power-led" src="/images/extensions/long-distance-extender/guides/emitter/reader-compact-power-led.svg" title="Local power indication" alt="Local power indication on the emitter assembly, v15" caption="Selected-source component-side reference for this assembly. Use the overview and focused sheets together. Bridge continuity, cable orientation and complete Prime wiring remain open." width=420 %}
 
-The cable continuous-current target remains 200 mA. ILIM is 6.64 kohm / 0.1%; TI publishes 425/500/575 mA endpoints for 6.65 kohm under its 12 V test conditions. That setting is an engineering approximation, not a 500 mA continuous cable rating or a guaranteed 5 V hot trip range. Original local draw plus fault current can exceed the documented 350 mA host allocation; source-fault budget and cable heating require qualification. OV is 5.400 V nominal (5.334233–5.465987 V reference/divider/bias corners), with independent 5.88 V nominal backup OVLO.
+{% include _includes/extension-instruction-diagram.html id="long-distance-extender-v15-emitter-reader-compact-direction" src="/images/extensions/long-distance-extender/guides/emitter/reader-compact-direction-underside-caption.svg" title="Cable power direction" alt="Cable power direction on the emitter assembly, v15" caption="Selected-source component-side reference for this assembly. Use the overview and focused sheets together. Bridge continuity, cable orientation and complete Prime wiring remain open." width=420 %}
 
-The original unidirectional TSD05 D4 would have crowbarred negative raw cable voltage. Its positive terminal is now on protected EFP_OUT, and a bidirectional SMF15CA protects the raw cable. This avoids a steady reverse-input crowbar within the explicitly bounded ±12 V abnormal-input study. SMF15CA has 15 V standoff and 24.4 V maximum clamp at 8.2 A under the specified 25 C / 10–1000 microsecond pulse. Its negative clamp can exceed the eFuse's −15 V absolute limit: negative transients, temperature, source energy, trace inductance and ESD testing remain unqualified. Sustained 48 V passive PoE is not supported. Signal ESD and externally powered peripheral paths retain their original interface restrictions; arbitrary powered-cable abuse is not qualified.
+{% include _includes/extension-instruction-diagram.html id="long-distance-extender-v15-emitter-reader-compact-protection" src="/images/extensions/long-distance-extender/guides/emitter/reader-compact-protection-underside-caption.svg" title="Cable supply protection" alt="Cable supply protection on the emitter assembly, v15" caption="Selected-source component-side reference for this assembly. Use the overview and focused sheets together. Bridge continuity, cable orientation and complete Prime wiring remain open." width=420 %}
 
-Primary sources: [TI TPS25947](https://www.ti.com/lit/ds/symlink/tps25947.pdf), [TI TPS3700](https://www.ti.com/lit/ds/symlink/tps3700.pdf), [TI LMC555](https://www.ti.com/lit/ds/symlink/lmc555.pdf), and [Littelfuse SMF series](https://www.littelfuse.com/assetdocs/tvs-diodes-smf-datasheet?assetguid=7eb8a5b6-bdd0-4561-8f19-0c3cc6f9b2af). TPS259470 pin map: EN1, OVLO2, AUXOFF3 unused, FLT4, IN5, OUT6, dVdt7, GND8, ILM9, ITIMER10 unused. Pin absmax, direction selection, negative control clamps, source switching and thermal behavior require first-article verification. No manufacturing release.
+{% include _includes/extension-instruction-diagram.html id="long-distance-extender-v15-emitter-reader-compact-warnings" src="/images/extensions/long-distance-extender/guides/emitter/reader-compact-warnings-underside-caption.svg" title="Power warning indicators" alt="Power warning indicators on the emitter assembly, v15" caption="Selected-source component-side reference for this assembly. Use the overview and focused sheets together. Bridge continuity, cable orientation and complete Prime wiring remain open." width=420 %}
 
-<!-- owned-protection-circuit:end -->
+{% include _includes/extension-instruction-diagram.html id="long-distance-extender-v15-emitter-reader-compact-warning-clamps" src="/images/extensions/long-distance-extender/guides/emitter/reader-compact-warning-clamps-underside-caption.svg" title="Power warning clamps" alt="Power warning clamps on the emitter assembly, v15" caption="Selected-source component-side reference for this assembly. Use the overview and focused sheets together. Bridge continuity, cable orientation and complete Prime wiring remain open." width=420 %}
 
-In the v13 SOURCE assembly, protection covers local-to-cable power; raw local board/LDO power retains its original input restrictions. Default receiver SINK protects cable-to-local power. The reverse LED monitors the selected breaker input. For REVPWR, physically cut emitter JP1’s factory bridge and verify it is open; a DNP flag alone does not open a copper bridge. These are assembly configurations of the same copper, with first-article continuity and source-selection qualification still required.
+{% include _includes/extension-instruction-diagram.html id="long-distance-extender-v15-emitter-reader-compact-tests1" src="/images/extensions/long-distance-extender/guides/emitter/reader-compact-tests1-underside-caption.svg" title="Supply and signal tests" alt="Supply and signal tests on the emitter assembly, v15" caption="Selected-source component-side reference for this assembly. Use the overview and focused sheets together. Bridge continuity, cable orientation and complete Prime wiring remain open." width=420 %}
 
-### Revision 15 engineering candidate
+{% include _includes/extension-instruction-diagram.html id="long-distance-extender-v15-emitter-reader-compact-tests5" src="/images/extensions/long-distance-extender/guides/emitter/reader-compact-tests5-underside-caption.svg" title="Supply and signal tests" alt="Supply and signal tests on the emitter assembly, v15" caption="Selected-source component-side reference for this assembly. Use the overview and focused sheets together. Bridge continuity, cable orientation and complete Prime wiring remain open." width=420 %}
 
-The 2026-10-13 revision 15 package retains both emitter and receiver. Fresh native checks close the receiver’s two open connections with zero enabled receiver errors; all 53 inherited receiver warnings remain. The emitter circuit and copper remain unchanged and retain ten open connections and 71 warnings. Both schematics remain electrical-rule clear. This is a partial repair; parent render inspection and registration are pending.
+{% include _includes/extension-instruction-diagram.html id="long-distance-extender-v15-emitter-reader-compact-mounts" src="/images/extensions/long-distance-extender/guides/emitter/reader-compact-mounts.svg" title="Mounting holes" alt="Mounting holes on the emitter assembly, v15" caption="Selected-source component-side reference for this assembly. Use the overview and focused sheets together. Bridge continuity, cable orientation and complete Prime wiring remain open." width=420 %}
 
-The receiver’s bounded current-limit/fault-indicator routing preserves all parts, pads, mounting, rules and zone contracts. Both roles have current version labels, six source-bound populated/bare views, fully resolving declared models and regenerated engineering exports. Historical revisions are preserved. The candidate is not ready for manufacture: emitter routing, warning cleanup, physical connector fit, source selection, cable current, reverse input, overvoltage, transient, thermal and first-article functional checks remain open.
+### Receiver assembly
 
-## Long-distance extender v15 parent acceptance — 2026-10-13
+{% include _includes/extension-instruction-diagram.html id="long-distance-extender-v15-receiver-reader-compact-overview" src="/images/extensions/long-distance-extender/guides/receiver/reader-compact-overview.svg" title="Long-distance receiver" alt="Long-distance receiver on the receiver assembly, v15" caption="Selected-source component-side reference for this assembly. Use the overview and focused sheets together. Bridge continuity, cable orientation and complete Prime wiring remain open." width=420 %}
 
-Both roles are registered as a partial routing repair. Independent fresh native checks confirm receiver2→0opens with zero other errors and53unchanged warnings; emitter10opens and71warnings remain, both schematics clear. Exact1,973 untouched conductors,7declared replacements,192new conductors and five deterministic supply/ground dogbones pass; indicator return length23.092226mm with2vias. All1,513 historical files,165baselinefiles,163model references,38exports and12current views pass. Parent visual review confirms complete framing but severe inherited overlapping title/status/wiring legends on both roles; emitter rear URL is partly component occluded. Silk usability cleanup and emitter routing remain open. Physical/current/thermal/assembly qualification is not established.
+{% include _includes/extension-instruction-diagram.html id="long-distance-extender-v15-receiver-reader-compact-host-1-5" src="/images/extensions/long-distance-extender/guides/receiver/reader-compact-host-1-5-central-pills.svg" title="J1 · Peripheral signal output" alt="J1 · Peripheral signal output on the receiver assembly, v15" caption="Selected-source component-side reference for this assembly. Use the overview and focused sheets together. Bridge continuity, cable orientation and complete Prime wiring remain open." width=420 %}
 
-## Trusted-power source audit
+{% include _includes/extension-instruction-diagram.html id="long-distance-extender-v15-receiver-reader-compact-host-6-10" src="/images/extensions/long-distance-extender/guides/receiver/reader-compact-host-6-10-central-pills.svg" title="J1 · Peripheral signal output" alt="J1 · Peripheral signal output on the receiver assembly, v15" caption="Selected-source component-side reference for this assembly. Use the overview and focused sheets together. Bridge continuity, cable orientation and complete Prime wiring remain open." width=420 %}
 
-The selectable five-pin header can supply user-wired power, and the receiver Gadgeteer connector supplies a peripheral rather than proving a trusted incoming source. Existing revision v15 retains directional protection within the original 51 × 42 mm outline. The emitter still has ten native open connections and remains unqualified; this source audit creates no new hardware revision.
+{% include _includes/extension-instruction-diagram.html id="long-distance-extender-v15-receiver-reader-compact-header-1-5" src="/images/extensions/long-distance-extender/guides/receiver/reader-compact-header-1-5-central-pills.svg" title="J3 · Alternate signal header" alt="J3 · Alternate signal header on the receiver assembly, v15" caption="Selected-source component-side reference for this assembly. Use the overview and focused sheets together. Bridge continuity, cable orientation and complete Prime wiring remain open." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="long-distance-extender-v15-receiver-reader-compact-cable-1-5" src="/images/extensions/long-distance-extender/guides/receiver/reader-compact-cable-1-5-central-pills.svg" title="J4 · Custom differential cable" alt="J4 · Custom differential cable on the receiver assembly, v15" caption="Selected-source component-side reference for this assembly. Use the overview and focused sheets together. Bridge continuity, cable orientation and complete Prime wiring remain open." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="long-distance-extender-v15-receiver-reader-compact-cable-6-SH" src="/images/extensions/long-distance-extender/guides/receiver/reader-compact-cable-6-SH-central-pills.svg" title="J4 · Custom differential cable" alt="J4 · Custom differential cable on the receiver assembly, v15" caption="Selected-source component-side reference for this assembly. Use the overview and focused sheets together. Bridge continuity, cable orientation and complete Prime wiring remain open." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="long-distance-extender-v15-receiver-reader-compact-signals" src="/images/extensions/long-distance-extender/guides/receiver/reader-compact-signals.svg" title="Three signal channels" alt="Three signal channels on the receiver assembly, v15" caption="Selected-source component-side reference for this assembly. Use the overview and focused sheets together. Bridge continuity, cable orientation and complete Prime wiring remain open." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="long-distance-extender-v15-receiver-reader-compact-line" src="/images/extensions/long-distance-extender/guides/receiver/reader-compact-line.svg" title="Line protection and bias" alt="Line protection and bias on the receiver assembly, v15" caption="Selected-source component-side reference for this assembly. Use the overview and focused sheets together. Bridge continuity, cable orientation and complete Prime wiring remain open." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="long-distance-extender-v15-receiver-reader-compact-regulator" src="/images/extensions/long-distance-extender/guides/receiver/reader-compact-regulator.svg" title="Local logic supply" alt="Local logic supply on the receiver assembly, v15" caption="Selected-source component-side reference for this assembly. Use the overview and focused sheets together. Bridge continuity, cable orientation and complete Prime wiring remain open." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="long-distance-extender-v15-receiver-reader-compact-jp1" src="/images/extensions/long-distance-extender/guides/receiver/reader-compact-jp1.svg" title="Power / chain link" alt="Power / chain link on the receiver assembly, v15" caption="Selected-source component-side reference for this assembly. Use the overview and focused sheets together. Bridge continuity, cable orientation and complete Prime wiring remain open." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="long-distance-extender-v15-receiver-reader-compact-jp2" src="/images/extensions/long-distance-extender/guides/receiver/reader-compact-jp2.svg" title="Power / chain link" alt="Power / chain link on the receiver assembly, v15" caption="Selected-source component-side reference for this assembly. Use the overview and focused sheets together. Bridge continuity, cable orientation and complete Prime wiring remain open." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="long-distance-extender-v15-receiver-reader-compact-jp3" src="/images/extensions/long-distance-extender/guides/receiver/reader-compact-jp3.svg" title="Power / chain link" alt="Power / chain link on the receiver assembly, v15" caption="Selected-source component-side reference for this assembly. Use the overview and focused sheets together. Bridge continuity, cable orientation and complete Prime wiring remain open." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="long-distance-extender-v15-receiver-reader-compact-jp5" src="/images/extensions/long-distance-extender/guides/receiver/reader-compact-jp5.svg" title="Power / chain link" alt="Power / chain link on the receiver assembly, v15" caption="Selected-source component-side reference for this assembly. Use the overview and focused sheets together. Bridge continuity, cable orientation and complete Prime wiring remain open." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="long-distance-extender-v15-receiver-reader-compact-shield" src="/images/extensions/long-distance-extender/guides/receiver/reader-compact-shield.svg" title="Cable shield connection" alt="Cable shield connection on the receiver assembly, v15" caption="Selected-source component-side reference for this assembly. Use the overview and focused sheets together. Bridge continuity, cable orientation and complete Prime wiring remain open." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="long-distance-extender-v15-receiver-reader-compact-led1" src="/images/extensions/long-distance-extender/guides/receiver/reader-compact-led1.svg" title="Channel1 indication" alt="Channel1 indication on the receiver assembly, v15" caption="Selected-source component-side reference for this assembly. Use the overview and focused sheets together. Bridge continuity, cable orientation and complete Prime wiring remain open." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="long-distance-extender-v15-receiver-reader-compact-led2" src="/images/extensions/long-distance-extender/guides/receiver/reader-compact-led2.svg" title="Channel2 indication" alt="Channel2 indication on the receiver assembly, v15" caption="Selected-source component-side reference for this assembly. Use the overview and focused sheets together. Bridge continuity, cable orientation and complete Prime wiring remain open." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="long-distance-extender-v15-receiver-reader-compact-led3" src="/images/extensions/long-distance-extender/guides/receiver/reader-compact-led3.svg" title="Channel3 indication" alt="Channel3 indication on the receiver assembly, v15" caption="Selected-source component-side reference for this assembly. Use the overview and focused sheets together. Bridge continuity, cable orientation and complete Prime wiring remain open." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="long-distance-extender-v15-receiver-reader-compact-power-led" src="/images/extensions/long-distance-extender/guides/receiver/reader-compact-power-led.svg" title="Local power indication" alt="Local power indication on the receiver assembly, v15" caption="Selected-source component-side reference for this assembly. Use the overview and focused sheets together. Bridge continuity, cable orientation and complete Prime wiring remain open." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="long-distance-extender-v15-receiver-reader-compact-direction" src="/images/extensions/long-distance-extender/guides/receiver/reader-compact-direction-underside-caption.svg" title="Cable power direction" alt="Cable power direction on the receiver assembly, v15" caption="Selected-source component-side reference for this assembly. Use the overview and focused sheets together. Bridge continuity, cable orientation and complete Prime wiring remain open." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="long-distance-extender-v15-receiver-reader-compact-protection" src="/images/extensions/long-distance-extender/guides/receiver/reader-compact-protection-underside-caption.svg" title="Cable supply protection" alt="Cable supply protection on the receiver assembly, v15" caption="Selected-source component-side reference for this assembly. Use the overview and focused sheets together. Bridge continuity, cable orientation and complete Prime wiring remain open." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="long-distance-extender-v15-receiver-reader-compact-warnings" src="/images/extensions/long-distance-extender/guides/receiver/reader-compact-warnings-underside-caption.svg" title="Power warning indicators" alt="Power warning indicators on the receiver assembly, v15" caption="Selected-source component-side reference for this assembly. Use the overview and focused sheets together. Bridge continuity, cable orientation and complete Prime wiring remain open." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="long-distance-extender-v15-receiver-reader-compact-warning-clamps" src="/images/extensions/long-distance-extender/guides/receiver/reader-compact-warning-clamps-underside-caption.svg" title="Power warning clamps" alt="Power warning clamps on the receiver assembly, v15" caption="Selected-source component-side reference for this assembly. Use the overview and focused sheets together. Bridge continuity, cable orientation and complete Prime wiring remain open." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="long-distance-extender-v15-receiver-reader-compact-termination" src="/images/extensions/long-distance-extender/guides/receiver/reader-compact-termination.svg" title="Receiver termination" alt="Receiver termination on the receiver assembly, v15" caption="Selected-source component-side reference for this assembly. Use the overview and focused sheets together. Bridge continuity, cable orientation and complete Prime wiring remain open." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="long-distance-extender-v15-receiver-reader-compact-tests1" src="/images/extensions/long-distance-extender/guides/receiver/reader-compact-tests1-underside-caption.svg" title="Supply and signal tests" alt="Supply and signal tests on the receiver assembly, v15" caption="Selected-source component-side reference for this assembly. Use the overview and focused sheets together. Bridge continuity, cable orientation and complete Prime wiring remain open." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="long-distance-extender-v15-receiver-reader-compact-tests5" src="/images/extensions/long-distance-extender/guides/receiver/reader-compact-tests5-underside-caption.svg" title="Supply and signal tests" alt="Supply and signal tests on the receiver assembly, v15" caption="Selected-source component-side reference for this assembly. Use the overview and focused sheets together. Bridge continuity, cable orientation and complete Prime wiring remain open." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="long-distance-extender-v15-receiver-reader-compact-mounts" src="/images/extensions/long-distance-extender/guides/receiver/reader-compact-mounts.svg" title="Mounting holes" alt="Mounting holes on the receiver assembly, v15" caption="Selected-source component-side reference for this assembly. Use the overview and focused sheets together. Bridge continuity, cable orientation and complete Prime wiring remain open." width=420 %}
+
+The following is the exact selected PCB’s intended pad-to-net schedule. Net labels identify circuit nodes; they are not wire colours or measured voltage/current ratings. Explicit unconnected contacts must remain unused. Duplicate physical pads with the same contact number represent alternative lands, not extra channels. Selector bridge/default population must be confirmed from the selected assembly record before alteration.
+
+<details markdown="1">
+<summary>Selected-source contact inventory</summary>
+
+<div class="extension-contact-table" role="region" aria-label="Selected-source contact inventory; scroll horizontally to read all columns" tabindex="0" markdown="1">
+
+| Member / reference | Label / control | Kind | Numbered contacts / assigned nodes |
+|---|---|---|---|
+| emitter / J1 | GADGETEER Y IN (host) | Connector | 1: +3V3_HOST; 2: +5V_HOST; 3: SIG1_IN; 4: SIG2_IN; 5: SIG3_IN; 6: HOST_P6; 7: HOST_P7; 8: HOST_P8; 9: HOST_P9; 10: GND |
+| emitter / J2 | GADGETEER Y CHAIN | Connector | 1: CHAIN_3V3; 2: CHAIN_5V; 3: unconnected-(J2-Pin_3-Pad3); 4: unconnected-(J2-Pin_4-Pad4); 5: unconnected-(J2-Pin_5-Pad5); 6: CHAIN_P6; 7: CHAIN_P7; 8: CHAIN_P8; 9: CHAIN_P9; 10: GND |
+| emitter / J3 | HDR 5V GND S1 S2 S3 | Connector | 1: +5V_HDR; 2: GND; 3: SIG1_IN; 4: SIG2_IN; 5: SIG3_IN |
+| emitter / J4 | RJ45 NOT ETHERNET EMITTER | Connector | 1: CH1_P; 2: CH1_N; 3: CH2_P; 4: CH3_P; 5: CH3_N; 6: CH2_N; 7: +5V_CABLE; 8: GND; SH: SHIELD |
+| emitter / D5 | POWER 3V3 | Indicator | 1: GND; 2: LED_D5_DISABLE |
+| emitter / D6 | CH1 lit=HIGH | Indicator | 1: SIG1_INV; 2: LED_D6_DISABLE |
+| emitter / D7 | CH2 lit=HIGH | Indicator | 1: SIG2_INV; 2: LED_D7_DISABLE |
+| emitter / D8 | CH3 lit=HIGH | Indicator | 1: SIG3_INV; 2: LED_D8_DISABLE |
+| emitter / D981 | AMBER OVERVOLTAGE | Indicator | 1: EFP_OV_N; 2: EFP_OV_LED_R |
+| emitter / D983 | RED EFUSE FAULT | Indicator | 1: EFP_FAULT_N; 2: EFP_FUSE_FAULT_LED_R |
+| emitter / D987 | RED REVERSE BLINK | Indicator | 1: REV_OUT; 2: REVERSE_LED_R |
+| emitter / TP1 | GND | Observation only | 1: GND |
+| emitter / TP2 | GND | Observation only | 1: GND |
+| emitter / TP3 | +5V | Observation only | 1: +5V_LOCAL |
+| emitter / TP4 | +3V3 | Observation only | 1: +3V3 |
+| emitter / TP5 | S1 | Observation only | 1: SIG1_IN |
+| emitter / TP6 | S2 | Observation only | 1: SIG2_IN |
+| emitter / TP7 | S3 | Observation only | 1: SIG3_IN |
+| emitter / JP1 | 5V GAD link | Service link/selector | 1: +5V_HOST; 2: +5V_LOCAL |
+| emitter / JP10 | CHAIN P9 | Service link/selector | 1: HOST_P9; 2: CHAIN_P9 |
+| emitter / JP11 | CUT TO DISABLE D6 | Service link/selector | 1: LED_D6_DISABLE; 2: LED1_A |
+| emitter / JP12 | CUT TO DISABLE D8 | Service link/selector | 1: LED_D8_DISABLE; 2: LED3_A |
+| emitter / JP13 | CUT TO DISABLE D7 | Service link/selector | 1: LED_D7_DISABLE; 2: LED2_A |
+| emitter / JP14 | CUT TO DISABLE D5 | Service link/selector | 1: LED_D5_DISABLE; 2: PWR_LED_A |
+| emitter / JP2 | 5V CABLE link | Service link/selector | 1: +5V_CPTC; 2: +5V_LOCAL |
+| emitter / JP3 | 5V HDR link | Service link/selector | 1: +5V_LOCAL; 2: +5V_HDR |
+| emitter / JP4 | SHLD-GND bond | Service link/selector | 1: SHIELD; 2: GND |
+| emitter / JP5 | CHAIN 3V3 | Service link/selector | 1: +3V3_HOST; 2: CHAIN_3V3 |
+| emitter / JP6 | CHAIN 5V | Service link/selector | 1: +5V_HOST; 2: CHAIN_5V |
+| emitter / JP7 | CHAIN P6 | Service link/selector | 1: HOST_P6; 2: CHAIN_P6 |
+| emitter / JP8 | CHAIN P7 | Service link/selector | 1: HOST_P7; 2: CHAIN_P7 |
+| emitter / JP9 | CHAIN P8 | Service link/selector | 1: HOST_P8; 2: CHAIN_P8 |
+| emitter / JP980 | CUT TO DISABLE RAIL0_OV PORT0 | Service link/selector | 1: EFP_FAULT_AUX; 2: EFP_OV_LED |
+| emitter / JP981 | CUT TO DISABLE FUSE_FAULT PORT0 | Service link/selector | 1: EFP_FAULT_AUX; 2: EFP_FUSE_FAULT_LED |
+| emitter / JP982 | CUT TO DISABLE REVERSE | Service link/selector | 1: REV_VCC; 2: REVERSE_LED |
+| receiver / J1 | GADGETEER Y OUT (peripheral) | Connector | 1: +3V3_PORT; 2: +5V_PORT; 3: SIG1_OUT; 4: SIG2_OUT; 5: SIG3_OUT; 6: unconnected-(J1-Pin_6-Pad6); 7: unconnected-(J1-Pin_7-Pad7); 8: unconnected-(J1-Pin_8-Pad8); 9: unconnected-(J1-Pin_9-Pad9); 10: GND |
+| receiver / J3 | HDR 5V GND S1 S2 S3 | Connector | 1: +5V_HDR; 2: GND; 3: SIG1_OUT; 4: SIG2_OUT; 5: SIG3_OUT |
+| receiver / J4 | RJ45 NOT ETHERNET RECEIVER | Connector | 1: CH1_P; 2: CH1_N; 3: CH2_P; 4: CH3_P; 5: CH3_N; 6: CH2_N; 7: +5V_CABLE; 8: GND; SH: SHIELD |
+| receiver / D5 | POWER 3V3 | Indicator | 1: GND; 2: LED_D5_DISABLE |
+| receiver / D6 | CH1 lit=HIGH | Indicator | 1: GND; 2: LED_D6_DISABLE |
+| receiver / D7 | CH2 lit=HIGH | Indicator | 1: GND; 2: LED_D7_DISABLE |
+| receiver / D8 | CH3 lit=HIGH | Indicator | 1: GND; 2: LED_D8_DISABLE |
+| receiver / D981 | AMBER OVERVOLTAGE | Indicator | 1: EFP_OV_N; 2: EFP_OV_LED_R |
+| receiver / D983 | RED EFUSE FAULT | Indicator | 1: EFP_FAULT_N; 2: EFP_FUSE_FAULT_LED_R |
+| receiver / D987 | RED REVERSE BLINK | Indicator | 1: REV_OUT; 2: REVERSE_LED_R |
+| receiver / TP1 | GND | Observation only | 1: GND |
+| receiver / TP2 | GND | Observation only | 1: GND |
+| receiver / TP3 | +5V | Observation only | 1: +5V_LOCAL |
+| receiver / TP4 | +3V3 | Observation only | 1: +3V3 |
+| receiver / TP5 | S1 | Observation only | 1: SIG1_OUT |
+| receiver / TP6 | S2 | Observation only | 1: SIG2_OUT |
+| receiver / TP7 | S3 | Observation only | 1: SIG3_OUT |
+| receiver / JP1 | 5V PORT link | Service link/selector | 1: +5V_LOCAL; 2: +5V_PORT |
+| receiver / JP2 | 5V CABLE link | Service link/selector | 1: +5V_CPTC; 2: +5V_LOCAL |
+| receiver / JP3 | 5V HDR link | Service link/selector | 1: +5V_LOCAL; 2: +5V_HDR |
+| receiver / JP4 | SHLD-GND bond | Service link/selector | 1: SHIELD; 2: GND |
+| receiver / JP5 | 3V3 PORT link | Service link/selector | 1: +3V3; 2: +3V3_PORT |
+| receiver / JP6 | CUT TO DISABLE D8 | Service link/selector | 1: LED_D8_DISABLE; 2: LED3_A |
+| receiver / JP7 | CUT TO DISABLE D5 | Service link/selector | 1: LED_D5_DISABLE; 2: PWR_LED_A |
+| receiver / JP8 | CUT TO DISABLE D7 | Service link/selector | 1: LED_D7_DISABLE; 2: LED2_A |
+| receiver / JP9 | CUT TO DISABLE D6 | Service link/selector | 1: LED_D6_DISABLE; 2: LED1_A |
+| receiver / JP980 | CUT TO DISABLE RAIL0_OV PORT0 | Service link/selector | 1: EFP_FAULT_AUX; 2: EFP_OV_LED |
+| receiver / JP981 | CUT TO DISABLE FUSE_FAULT PORT0 | Service link/selector | 1: EFP_FAULT_AUX; 2: EFP_FUSE_FAULT_LED |
+| receiver / JP982 | CUT TO DISABLE REVERSE | Service link/selector | 1: REV_VCC; 2: REVERSE_LED |
+
+</div>
+
+</details>
+
+
+## Practical connection to Smoothieboard V2 Prime
+
+### Native-contact connection reference — incomplete
+
+The selected v15 emitter and receiver carry one illustrated channel from Prime GF/J37 to a Fluke 117 voltage input. **Keep every supply disconnected; do not energize this circuit.** Supply leads are deliberately omitted because available current, protection behaviour, cable drop, receiver rail margin and backfeed remain unresolved. The drawing is an incomplete source-traced connection reference, not an operating installation. Prime artwork is P11; the P12 J37 assignments were checked separately.
+
+This is the deliberately incomplete seven-lead signal/return subset; the selected ten-lead unpowered continuity/layout plan follows the drawing and safety qualifications. Its 3.3 V and 5 V contact names identify conductors only; those rails remain disconnected from every source.
+
+The seven individual leads are:
+
+1. Prime J37.3 (PB1) → emitter J1.3 (SIG1), and J37.10 (ground) → emitter J1.10. Leave J37.1/.2 and emitter supply contacts disconnected.
+2. Emitter J4.1 → receiver J4.1 (channel 1+), J4.2 → J4.2 (channel 1−), and J4.8 → J4.8 (common ground). Leave cable power J4.7 and the other signal pairs disconnected. This custom RJ45 assignment is neither Ethernet nor PoE; it does not authorize fitting an ordinary network cable.
+3. Receiver J3.3 (channel-1 output) → the Fluke 117 V input, and J3.2 (ground) → COM. The conditional meter setting is DC volts, with input resistance greater than 10 MΩ; do not use Auto-V LoZ or a current-input configuration. No powered measurement is authorized by this incomplete reference.
+
+Identify emitter and receiver before using a contact key. The selected emitter has SOURCE resistor population and receiver has SINK population; opposite-direction parts are not fitted in the selected source. Verify actual fitted parts and link positions. Each F1 is a zero-ohm feed, not a fuse. The shared return means there is no galvanic isolation. The source circuit preserves polarity through two inversions, but the operating rate and distance have not been established.
+
+Read the main drawing with the five selected-connector sheets. Dashed locators show the enlarged rows on the complete canonical board abstracts. These source PCB views are not plug mating faces.
+
+{% include _includes/extension-instruction-diagram.html id="long-distance-native-long-distance-native-reader" src="/images/extensions/long-distance-extender/guides/native-contact/reader-legibility-corrected/long-distance-native-reader.svg" title="Prime, emitter, receiver and meter — seven-lead signal subset" alt="Prime, emitter, receiver and meter — seven-lead signal subset" caption="Incomplete seven-lead signal/return subset; it omits the four feed conductors in the selected ten-lead test plan below. Keep every supply disconnected. Read the qualifications and all 91 contact keys. Native PCB geometry is not a plug mating view." width=900 %}
+
+#### Connection qualifications
+
+The following restrictions apply to the entire connection reference. Read them before using the contact keys; neither diagram is a powered installation.
+
+{% include _includes/extension-instruction-diagram.html id="long-distance-native-qualifications" src="/images/extensions/long-distance-extender/guides/native-contact/reader-legibility-corrected/qualifications.svg" title="Connection qualifications — all supplies disconnected" alt="Power, isolation, cable, meter and source limitations for the incomplete connection reference" caption="Read with the main reference above. These qualifications preserve the selected-source limits; current, cable rate, rail margins and physical mating remain unqualified." width=900 %}
+
+### Selected unpowered ten-lead test wiring plan
+
+This selected v15 continuity/layout test map connects the emitter and receiver to Prime GF/J37 and a Fluke 117 set to DC volts. **Remove all power sources and keep the entire test unpowered.** The listed 3.3 V and 5 V conductors identify contacts only; they do not authorize powering the boards. Receiver rail margin, protection behaviour and the shared host power budget are unqualified. This is not a commissioning procedure or permission to energize a machine installation. Prime artwork is P11, with the selected P12 J37 contact map checked separately.
+
+{% include _includes/extension-instruction-diagram.html id="long-distance-v15-compact-prime-installation-wiring" src="/images/extensions/long-distance-extender/guides/compact-prime-installation-wiring.svg" title="Single-channel extender · unpowered plan" alt="Single-channel extender · unpowered plan" caption="Ten individual leads; PB1 output, differential channel 1 and receiver measurement. Protection, power margins and complete wiring acceptance remain open." width=420 %}
+
+With every supply disconnected, identify the numbered PCB contacts:
+
+1. Prime J37.1/2/3/10 correspond to emitter J1.1/2/3/10: 3.3 V, 5 V, PB1 and ground. Leave J1.4–9 unused. The selected input has a 1 kΩ series resistor and 47 kΩ bias; unused channels 2 and 3 retain their source pull-downs.
+2. Emitter J4.1/2/7/8 correspond to receiver J4.1/2/7/8: S1+, S1−, cable 5 V and ground. Leave the other signal pairs unused. These are four individually identified leads, not an instruction to fit a complete eight-contact network cable. This assignment is **not Ethernet or PoE**.
+3. Receiver J3.3 is the channel-1 output and goes to the Fluke 117 V terminal; J3.2 goes to COM. Select DC volts. Leave the other receiver outputs and its unused connectors open. Do not put the meter in a current-input configuration.
+
+Keep the selected JP1/JP2/JP3 bridged defaults and JP4 shield bonds open; verify the actual populations rather than assuming an assembled board matches CAD. Emitter SOURCE and receiver SINK populations must match the selected revision. **Each selected F1 is a zero-ohm link, not a fuse.** Do not inject an external supply. The shared power budget, cable drop, receiver minimum rail and protection behavior remain prerequisites to any powered procedure.
+
+The signal passes through two inversions, so the source circuit preserves logic polarity. This does not establish measured levels, propagation delay, supported cable length or operating rate. Ground remains common: the pair provides no galvanic isolation.
+
+### Enlarged selected-contact keys
+
+These show native PCB-pad geometry, not the mating face of a plug. Filled pads identify selected connections; open pads stay unused. Read them with the complete plan and verify physical orientation before constructing a cable.
+
+{% include _includes/extension-instruction-diagram.html id="long-distance-v15-compact-J1-emitter-numbered-pads" src="/images/extensions/long-distance-extender/guides/compact-J1-emitter-numbered-pads.svg" title="Extender v15 · J1-emitter" alt="Extender v15 · J1-emitter" caption="Selected native PCB pads; not plug-face geometry or powered installation acceptance." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="long-distance-v15-compact-J3-receiver-numbered-pads" src="/images/extensions/long-distance-extender/guides/compact-J3-receiver-numbered-pads.svg" title="Extender v15 · J3-receiver" alt="Extender v15 · J3-receiver" caption="Selected native PCB pads; not plug-face geometry or powered installation acceptance." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="long-distance-v15-compact-J37-numbered-pads" src="/images/extensions/long-distance-extender/guides/compact-J37-numbered-pads.svg" title="Extender v15 · J37" alt="Extender v15 · J37" caption="Selected native PCB pads; not plug-face geometry or powered installation acceptance." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="long-distance-v15-compact-J4-emitter-numbered-pads" src="/images/extensions/long-distance-extender/guides/compact-J4-emitter-numbered-pads.svg" title="Extender v15 · J4-emitter" alt="Extender v15 · J4-emitter" caption="Selected native PCB pads; not plug-face geometry or powered installation acceptance." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="long-distance-v15-compact-J4-receiver-numbered-pads" src="/images/extensions/long-distance-extender/guides/compact-J4-receiver-numbered-pads.svg" title="Extender v15 · J4-receiver" alt="Extender v15 · J4-receiver" caption="Selected native PCB pads; not plug-face geometry or powered installation acceptance." width=420 %}
+
+
+{% include _includes/extension-instruction-diagram.html id="long-distance-native-emitter-j1" src="/images/extensions/long-distance-extender/guides/native-contact/reader-contact-keys/emitter-J1.svg" title="emitter · J1 — native contact key" alt="emitter · J1 — native contact key" caption="Selected v15 source contacts; verify the assembly and numbered position. Unselected pads and supplies remain disconnected in the incomplete main reference." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="long-distance-native-emitter-j4" src="/images/extensions/long-distance-extender/guides/native-contact/reader-contact-keys/emitter-J4.svg" title="emitter · J4 — native contact key" alt="emitter · J4 — native contact key" caption="Selected v15 source contacts; verify the assembly and numbered position. Unselected pads and supplies remain disconnected in the incomplete main reference." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="long-distance-native-prime-j37" src="/images/extensions/long-distance-extender/guides/native-contact/reader-contact-keys/prime-J37.svg" title="prime · J37 — native contact key" alt="prime · J37 — native contact key" caption="Selected v15 source contacts; verify the assembly and numbered position. Unselected pads and supplies remain disconnected in the incomplete main reference." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="long-distance-native-receiver-j3" src="/images/extensions/long-distance-extender/guides/native-contact/reader-contact-keys/receiver-J3.svg" title="receiver · J3 — native contact key" alt="receiver · J3 — native contact key" caption="Selected v15 source contacts; verify the assembly and numbered position. Unselected pads and supplies remain disconnected in the incomplete main reference." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="long-distance-native-receiver-j4" src="/images/extensions/long-distance-extender/guides/native-contact/reader-contact-keys/receiver-J4.svg" title="receiver · J4 — native contact key" alt="receiver · J4 — native contact key" caption="Selected v15 source contacts; verify the assembly and numbered position. Unselected pads and supplies remain disconnected in the incomplete main reference." width=420 %}
+
+<details markdown="1">
+<summary>All other emitter and receiver contact, jumper and indicator keys</summary>
+
+These reference sheets retain all numbered contacts. They do not add connections to the seven-lead incomplete reference above.
+
+{% include _includes/extension-instruction-diagram.html id="long-distance-native-emitter-d1" src="/images/extensions/long-distance-extender/guides/native-contact/reader-contact-keys/emitter-D1.svg" title="emitter · D1 — native contact key" alt="emitter · D1 — native contact key" caption="Selected v15 source contacts; verify the assembly and numbered position. Unselected pads and supplies remain disconnected in the incomplete main reference." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="long-distance-native-emitter-d1030" src="/images/extensions/long-distance-extender/guides/native-contact/reader-contact-keys/emitter-D1030.svg" title="emitter · D1030 — native contact key" alt="emitter · D1030 — native contact key" caption="Selected v15 source contacts; verify the assembly and numbered position. Unselected pads and supplies remain disconnected in the incomplete main reference." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="long-distance-native-emitter-d1033" src="/images/extensions/long-distance-extender/guides/native-contact/reader-contact-keys/emitter-D1033.svg" title="emitter · D1033 — native contact key" alt="emitter · D1033 — native contact key" caption="Selected v15 source contacts; verify the assembly and numbered position. Unselected pads and supplies remain disconnected in the incomplete main reference." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="long-distance-native-emitter-d1034" src="/images/extensions/long-distance-extender/guides/native-contact/reader-contact-keys/emitter-D1034.svg" title="emitter · D1034 — native contact key" alt="emitter · D1034 — native contact key" caption="Selected v15 source contacts; verify the assembly and numbered position. Unselected pads and supplies remain disconnected in the incomplete main reference." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="long-distance-native-emitter-d1980" src="/images/extensions/long-distance-extender/guides/native-contact/reader-contact-keys/emitter-D1980.svg" title="emitter · D1980 — native contact key" alt="emitter · D1980 — native contact key" caption="Selected v15 source contacts; verify the assembly and numbered position. Unselected pads and supplies remain disconnected in the incomplete main reference." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="long-distance-native-emitter-d1981" src="/images/extensions/long-distance-extender/guides/native-contact/reader-contact-keys/emitter-D1981.svg" title="emitter · D1981 — native contact key" alt="emitter · D1981 — native contact key" caption="Selected v15 source contacts; verify the assembly and numbered position. Unselected pads and supplies remain disconnected in the incomplete main reference." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="long-distance-native-emitter-d1982" src="/images/extensions/long-distance-extender/guides/native-contact/reader-contact-keys/emitter-D1982.svg" title="emitter · D1982 — native contact key" alt="emitter · D1982 — native contact key" caption="Selected v15 source contacts; verify the assembly and numbered position. Unselected pads and supplies remain disconnected in the incomplete main reference." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="long-distance-native-emitter-d1984" src="/images/extensions/long-distance-extender/guides/native-contact/reader-contact-keys/emitter-D1984.svg" title="emitter · D1984 — native contact key" alt="emitter · D1984 — native contact key" caption="Selected v15 source contacts; verify the assembly and numbered position. Unselected pads and supplies remain disconnected in the incomplete main reference." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="long-distance-native-emitter-d2" src="/images/extensions/long-distance-extender/guides/native-contact/reader-contact-keys/emitter-D2.svg" title="emitter · D2 — native contact key" alt="emitter · D2 — native contact key" caption="Selected v15 source contacts; verify the assembly and numbered position. Unselected pads and supplies remain disconnected in the incomplete main reference." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="long-distance-native-emitter-d3" src="/images/extensions/long-distance-extender/guides/native-contact/reader-contact-keys/emitter-D3.svg" title="emitter · D3 — native contact key" alt="emitter · D3 — native contact key" caption="Selected v15 source contacts; verify the assembly and numbered position. Unselected pads and supplies remain disconnected in the incomplete main reference." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="long-distance-native-emitter-d4" src="/images/extensions/long-distance-extender/guides/native-contact/reader-contact-keys/emitter-D4.svg" title="emitter · D4 — native contact key" alt="emitter · D4 — native contact key" caption="Selected v15 source contacts; verify the assembly and numbered position. Unselected pads and supplies remain disconnected in the incomplete main reference." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="long-distance-native-emitter-d5" src="/images/extensions/long-distance-extender/guides/native-contact/reader-contact-keys/emitter-D5.svg" title="emitter · D5 — native contact key" alt="emitter · D5 — native contact key" caption="Selected v15 source contacts; verify the assembly and numbered position. Unselected pads and supplies remain disconnected in the incomplete main reference." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="long-distance-native-emitter-d6" src="/images/extensions/long-distance-extender/guides/native-contact/reader-contact-keys/emitter-D6.svg" title="emitter · D6 — native contact key" alt="emitter · D6 — native contact key" caption="Selected v15 source contacts; verify the assembly and numbered position. Unselected pads and supplies remain disconnected in the incomplete main reference." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="long-distance-native-emitter-d7" src="/images/extensions/long-distance-extender/guides/native-contact/reader-contact-keys/emitter-D7.svg" title="emitter · D7 — native contact key" alt="emitter · D7 — native contact key" caption="Selected v15 source contacts; verify the assembly and numbered position. Unselected pads and supplies remain disconnected in the incomplete main reference." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="long-distance-native-emitter-d8" src="/images/extensions/long-distance-extender/guides/native-contact/reader-contact-keys/emitter-D8.svg" title="emitter · D8 — native contact key" alt="emitter · D8 — native contact key" caption="Selected v15 source contacts; verify the assembly and numbered position. Unselected pads and supplies remain disconnected in the incomplete main reference." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="long-distance-native-emitter-d981" src="/images/extensions/long-distance-extender/guides/native-contact/reader-contact-keys/emitter-D981.svg" title="emitter · D981 — native contact key" alt="emitter · D981 — native contact key" caption="Selected v15 source contacts; verify the assembly and numbered position. Unselected pads and supplies remain disconnected in the incomplete main reference." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="long-distance-native-emitter-d982" src="/images/extensions/long-distance-extender/guides/native-contact/reader-contact-keys/emitter-D982.svg" title="emitter · D982 — native contact key" alt="emitter · D982 — native contact key" caption="Selected v15 source contacts; verify the assembly and numbered position. Unselected pads and supplies remain disconnected in the incomplete main reference." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="long-distance-native-emitter-d983" src="/images/extensions/long-distance-extender/guides/native-contact/reader-contact-keys/emitter-D983.svg" title="emitter · D983 — native contact key" alt="emitter · D983 — native contact key" caption="Selected v15 source contacts; verify the assembly and numbered position. Unselected pads and supplies remain disconnected in the incomplete main reference." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="long-distance-native-emitter-d984" src="/images/extensions/long-distance-extender/guides/native-contact/reader-contact-keys/emitter-D984.svg" title="emitter · D984 — native contact key" alt="emitter · D984 — native contact key" caption="Selected v15 source contacts; verify the assembly and numbered position. Unselected pads and supplies remain disconnected in the incomplete main reference." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="long-distance-native-emitter-d985" src="/images/extensions/long-distance-extender/guides/native-contact/reader-contact-keys/emitter-D985.svg" title="emitter · D985 — native contact key" alt="emitter · D985 — native contact key" caption="Selected v15 source contacts; verify the assembly and numbered position. Unselected pads and supplies remain disconnected in the incomplete main reference." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="long-distance-native-emitter-d986" src="/images/extensions/long-distance-extender/guides/native-contact/reader-contact-keys/emitter-D986.svg" title="emitter · D986 — native contact key" alt="emitter · D986 — native contact key" caption="Selected v15 source contacts; verify the assembly and numbered position. Unselected pads and supplies remain disconnected in the incomplete main reference." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="long-distance-native-emitter-d987" src="/images/extensions/long-distance-extender/guides/native-contact/reader-contact-keys/emitter-D987.svg" title="emitter · D987 — native contact key" alt="emitter · D987 — native contact key" caption="Selected v15 source contacts; verify the assembly and numbered position. Unselected pads and supplies remain disconnected in the incomplete main reference." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="long-distance-native-emitter-f1" src="/images/extensions/long-distance-extender/guides/native-contact/reader-contact-keys/emitter-F1.svg" title="emitter · F1 — native contact key" alt="emitter · F1 — native contact key" caption="Selected v15 source contacts; verify the assembly and numbered position. Unselected pads and supplies remain disconnected in the incomplete main reference." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="long-distance-native-emitter-j2" src="/images/extensions/long-distance-extender/guides/native-contact/reader-contact-keys/emitter-J2.svg" title="emitter · J2 — native contact key" alt="emitter · J2 — native contact key" caption="Selected v15 source contacts; verify the assembly and numbered position. Unselected pads and supplies remain disconnected in the incomplete main reference." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="long-distance-native-emitter-j3" src="/images/extensions/long-distance-extender/guides/native-contact/reader-contact-keys/emitter-J3.svg" title="emitter · J3 — native contact key" alt="emitter · J3 — native contact key" caption="Selected v15 source contacts; verify the assembly and numbered position. Unselected pads and supplies remain disconnected in the incomplete main reference." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="long-distance-native-emitter-jp1" src="/images/extensions/long-distance-extender/guides/native-contact/reader-contact-keys/emitter-JP1.svg" title="emitter · JP1 — native contact key" alt="emitter · JP1 — native contact key" caption="Selected v15 source contacts; verify the assembly and numbered position. Unselected pads and supplies remain disconnected in the incomplete main reference." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="long-distance-native-emitter-jp10" src="/images/extensions/long-distance-extender/guides/native-contact/reader-contact-keys/emitter-JP10.svg" title="emitter · JP10 — native contact key" alt="emitter · JP10 — native contact key" caption="Selected v15 source contacts; verify the assembly and numbered position. Unselected pads and supplies remain disconnected in the incomplete main reference." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="long-distance-native-emitter-jp11" src="/images/extensions/long-distance-extender/guides/native-contact/reader-contact-keys/emitter-JP11.svg" title="emitter · JP11 — native contact key" alt="emitter · JP11 — native contact key" caption="Selected v15 source contacts; verify the assembly and numbered position. Unselected pads and supplies remain disconnected in the incomplete main reference." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="long-distance-native-emitter-jp12" src="/images/extensions/long-distance-extender/guides/native-contact/reader-contact-keys/emitter-JP12.svg" title="emitter · JP12 — native contact key" alt="emitter · JP12 — native contact key" caption="Selected v15 source contacts; verify the assembly and numbered position. Unselected pads and supplies remain disconnected in the incomplete main reference." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="long-distance-native-emitter-jp13" src="/images/extensions/long-distance-extender/guides/native-contact/reader-contact-keys/emitter-JP13.svg" title="emitter · JP13 — native contact key" alt="emitter · JP13 — native contact key" caption="Selected v15 source contacts; verify the assembly and numbered position. Unselected pads and supplies remain disconnected in the incomplete main reference." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="long-distance-native-emitter-jp14" src="/images/extensions/long-distance-extender/guides/native-contact/reader-contact-keys/emitter-JP14.svg" title="emitter · JP14 — native contact key" alt="emitter · JP14 — native contact key" caption="Selected v15 source contacts; verify the assembly and numbered position. Unselected pads and supplies remain disconnected in the incomplete main reference." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="long-distance-native-emitter-jp2" src="/images/extensions/long-distance-extender/guides/native-contact/reader-contact-keys/emitter-JP2.svg" title="emitter · JP2 — native contact key" alt="emitter · JP2 — native contact key" caption="Selected v15 source contacts; verify the assembly and numbered position. Unselected pads and supplies remain disconnected in the incomplete main reference." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="long-distance-native-emitter-jp3" src="/images/extensions/long-distance-extender/guides/native-contact/reader-contact-keys/emitter-JP3.svg" title="emitter · JP3 — native contact key" alt="emitter · JP3 — native contact key" caption="Selected v15 source contacts; verify the assembly and numbered position. Unselected pads and supplies remain disconnected in the incomplete main reference." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="long-distance-native-emitter-jp4" src="/images/extensions/long-distance-extender/guides/native-contact/reader-contact-keys/emitter-JP4.svg" title="emitter · JP4 — native contact key" alt="emitter · JP4 — native contact key" caption="Selected v15 source contacts; verify the assembly and numbered position. Unselected pads and supplies remain disconnected in the incomplete main reference." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="long-distance-native-emitter-jp5" src="/images/extensions/long-distance-extender/guides/native-contact/reader-contact-keys/emitter-JP5.svg" title="emitter · JP5 — native contact key" alt="emitter · JP5 — native contact key" caption="Selected v15 source contacts; verify the assembly and numbered position. Unselected pads and supplies remain disconnected in the incomplete main reference." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="long-distance-native-emitter-jp6" src="/images/extensions/long-distance-extender/guides/native-contact/reader-contact-keys/emitter-JP6.svg" title="emitter · JP6 — native contact key" alt="emitter · JP6 — native contact key" caption="Selected v15 source contacts; verify the assembly and numbered position. Unselected pads and supplies remain disconnected in the incomplete main reference." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="long-distance-native-emitter-jp7" src="/images/extensions/long-distance-extender/guides/native-contact/reader-contact-keys/emitter-JP7.svg" title="emitter · JP7 — native contact key" alt="emitter · JP7 — native contact key" caption="Selected v15 source contacts; verify the assembly and numbered position. Unselected pads and supplies remain disconnected in the incomplete main reference." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="long-distance-native-emitter-jp8" src="/images/extensions/long-distance-extender/guides/native-contact/reader-contact-keys/emitter-JP8.svg" title="emitter · JP8 — native contact key" alt="emitter · JP8 — native contact key" caption="Selected v15 source contacts; verify the assembly and numbered position. Unselected pads and supplies remain disconnected in the incomplete main reference." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="long-distance-native-emitter-jp9" src="/images/extensions/long-distance-extender/guides/native-contact/reader-contact-keys/emitter-JP9.svg" title="emitter · JP9 — native contact key" alt="emitter · JP9 — native contact key" caption="Selected v15 source contacts; verify the assembly and numbered position. Unselected pads and supplies remain disconnected in the incomplete main reference." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="long-distance-native-emitter-jp980" src="/images/extensions/long-distance-extender/guides/native-contact/reader-contact-keys/emitter-JP980.svg" title="emitter · JP980 — native contact key" alt="emitter · JP980 — native contact key" caption="Selected v15 source contacts; verify the assembly and numbered position. Unselected pads and supplies remain disconnected in the incomplete main reference." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="long-distance-native-emitter-jp981" src="/images/extensions/long-distance-extender/guides/native-contact/reader-contact-keys/emitter-JP981.svg" title="emitter · JP981 — native contact key" alt="emitter · JP981 — native contact key" caption="Selected v15 source contacts; verify the assembly and numbered position. Unselected pads and supplies remain disconnected in the incomplete main reference." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="long-distance-native-emitter-jp982" src="/images/extensions/long-distance-extender/guides/native-contact/reader-contact-keys/emitter-JP982.svg" title="emitter · JP982 — native contact key" alt="emitter · JP982 — native contact key" caption="Selected v15 source contacts; verify the assembly and numbered position. Unselected pads and supplies remain disconnected in the incomplete main reference." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="long-distance-native-emitter-r1980" src="/images/extensions/long-distance-extender/guides/native-contact/reader-contact-keys/emitter-R1980.svg" title="emitter · R1980 — native contact key" alt="emitter · R1980 — native contact key" caption="Selected v15 source contacts; verify the assembly and numbered position. Unselected pads and supplies remain disconnected in the incomplete main reference." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="long-distance-native-emitter-r1981" src="/images/extensions/long-distance-extender/guides/native-contact/reader-contact-keys/emitter-R1981.svg" title="emitter · R1981 — native contact key" alt="emitter · R1981 — native contact key" caption="Selected v15 source contacts; verify the assembly and numbered position. Unselected pads and supplies remain disconnected in the incomplete main reference." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="long-distance-native-emitter-r1982" src="/images/extensions/long-distance-extender/guides/native-contact/reader-contact-keys/emitter-R1982.svg" title="emitter · R1982 — native contact key" alt="emitter · R1982 — native contact key" caption="Selected v15 source contacts; verify the assembly and numbered position. Unselected pads and supplies remain disconnected in the incomplete main reference." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="long-distance-native-emitter-r1983" src="/images/extensions/long-distance-extender/guides/native-contact/reader-contact-keys/emitter-R1983.svg" title="emitter · R1983 — native contact key" alt="emitter · R1983 — native contact key" caption="Selected v15 source contacts; verify the assembly and numbered position. Unselected pads and supplies remain disconnected in the incomplete main reference." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="long-distance-native-receiver-d1" src="/images/extensions/long-distance-extender/guides/native-contact/reader-contact-keys/receiver-D1.svg" title="receiver · D1 — native contact key" alt="receiver · D1 — native contact key" caption="Selected v15 source contacts; verify the assembly and numbered position. Unselected pads and supplies remain disconnected in the incomplete main reference." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="long-distance-native-receiver-d1030" src="/images/extensions/long-distance-extender/guides/native-contact/reader-contact-keys/receiver-D1030.svg" title="receiver · D1030 — native contact key" alt="receiver · D1030 — native contact key" caption="Selected v15 source contacts; verify the assembly and numbered position. Unselected pads and supplies remain disconnected in the incomplete main reference." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="long-distance-native-receiver-d1033" src="/images/extensions/long-distance-extender/guides/native-contact/reader-contact-keys/receiver-D1033.svg" title="receiver · D1033 — native contact key" alt="receiver · D1033 — native contact key" caption="Selected v15 source contacts; verify the assembly and numbered position. Unselected pads and supplies remain disconnected in the incomplete main reference." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="long-distance-native-receiver-d1034" src="/images/extensions/long-distance-extender/guides/native-contact/reader-contact-keys/receiver-D1034.svg" title="receiver · D1034 — native contact key" alt="receiver · D1034 — native contact key" caption="Selected v15 source contacts; verify the assembly and numbered position. Unselected pads and supplies remain disconnected in the incomplete main reference." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="long-distance-native-receiver-d1980" src="/images/extensions/long-distance-extender/guides/native-contact/reader-contact-keys/receiver-D1980.svg" title="receiver · D1980 — native contact key" alt="receiver · D1980 — native contact key" caption="Selected v15 source contacts; verify the assembly and numbered position. Unselected pads and supplies remain disconnected in the incomplete main reference." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="long-distance-native-receiver-d1981" src="/images/extensions/long-distance-extender/guides/native-contact/reader-contact-keys/receiver-D1981.svg" title="receiver · D1981 — native contact key" alt="receiver · D1981 — native contact key" caption="Selected v15 source contacts; verify the assembly and numbered position. Unselected pads and supplies remain disconnected in the incomplete main reference." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="long-distance-native-receiver-d1982" src="/images/extensions/long-distance-extender/guides/native-contact/reader-contact-keys/receiver-D1982.svg" title="receiver · D1982 — native contact key" alt="receiver · D1982 — native contact key" caption="Selected v15 source contacts; verify the assembly and numbered position. Unselected pads and supplies remain disconnected in the incomplete main reference." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="long-distance-native-receiver-d1984" src="/images/extensions/long-distance-extender/guides/native-contact/reader-contact-keys/receiver-D1984.svg" title="receiver · D1984 — native contact key" alt="receiver · D1984 — native contact key" caption="Selected v15 source contacts; verify the assembly and numbered position. Unselected pads and supplies remain disconnected in the incomplete main reference." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="long-distance-native-receiver-d2" src="/images/extensions/long-distance-extender/guides/native-contact/reader-contact-keys/receiver-D2.svg" title="receiver · D2 — native contact key" alt="receiver · D2 — native contact key" caption="Selected v15 source contacts; verify the assembly and numbered position. Unselected pads and supplies remain disconnected in the incomplete main reference." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="long-distance-native-receiver-d3" src="/images/extensions/long-distance-extender/guides/native-contact/reader-contact-keys/receiver-D3.svg" title="receiver · D3 — native contact key" alt="receiver · D3 — native contact key" caption="Selected v15 source contacts; verify the assembly and numbered position. Unselected pads and supplies remain disconnected in the incomplete main reference." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="long-distance-native-receiver-d4" src="/images/extensions/long-distance-extender/guides/native-contact/reader-contact-keys/receiver-D4.svg" title="receiver · D4 — native contact key" alt="receiver · D4 — native contact key" caption="Selected v15 source contacts; verify the assembly and numbered position. Unselected pads and supplies remain disconnected in the incomplete main reference." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="long-distance-native-receiver-d5" src="/images/extensions/long-distance-extender/guides/native-contact/reader-contact-keys/receiver-D5.svg" title="receiver · D5 — native contact key" alt="receiver · D5 — native contact key" caption="Selected v15 source contacts; verify the assembly and numbered position. Unselected pads and supplies remain disconnected in the incomplete main reference." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="long-distance-native-receiver-d6" src="/images/extensions/long-distance-extender/guides/native-contact/reader-contact-keys/receiver-D6.svg" title="receiver · D6 — native contact key" alt="receiver · D6 — native contact key" caption="Selected v15 source contacts; verify the assembly and numbered position. Unselected pads and supplies remain disconnected in the incomplete main reference." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="long-distance-native-receiver-d7" src="/images/extensions/long-distance-extender/guides/native-contact/reader-contact-keys/receiver-D7.svg" title="receiver · D7 — native contact key" alt="receiver · D7 — native contact key" caption="Selected v15 source contacts; verify the assembly and numbered position. Unselected pads and supplies remain disconnected in the incomplete main reference." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="long-distance-native-receiver-d8" src="/images/extensions/long-distance-extender/guides/native-contact/reader-contact-keys/receiver-D8.svg" title="receiver · D8 — native contact key" alt="receiver · D8 — native contact key" caption="Selected v15 source contacts; verify the assembly and numbered position. Unselected pads and supplies remain disconnected in the incomplete main reference." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="long-distance-native-receiver-d981" src="/images/extensions/long-distance-extender/guides/native-contact/reader-contact-keys/receiver-D981.svg" title="receiver · D981 — native contact key" alt="receiver · D981 — native contact key" caption="Selected v15 source contacts; verify the assembly and numbered position. Unselected pads and supplies remain disconnected in the incomplete main reference." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="long-distance-native-receiver-d982" src="/images/extensions/long-distance-extender/guides/native-contact/reader-contact-keys/receiver-D982.svg" title="receiver · D982 — native contact key" alt="receiver · D982 — native contact key" caption="Selected v15 source contacts; verify the assembly and numbered position. Unselected pads and supplies remain disconnected in the incomplete main reference." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="long-distance-native-receiver-d983" src="/images/extensions/long-distance-extender/guides/native-contact/reader-contact-keys/receiver-D983.svg" title="receiver · D983 — native contact key" alt="receiver · D983 — native contact key" caption="Selected v15 source contacts; verify the assembly and numbered position. Unselected pads and supplies remain disconnected in the incomplete main reference." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="long-distance-native-receiver-d984" src="/images/extensions/long-distance-extender/guides/native-contact/reader-contact-keys/receiver-D984.svg" title="receiver · D984 — native contact key" alt="receiver · D984 — native contact key" caption="Selected v15 source contacts; verify the assembly and numbered position. Unselected pads and supplies remain disconnected in the incomplete main reference." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="long-distance-native-receiver-d985" src="/images/extensions/long-distance-extender/guides/native-contact/reader-contact-keys/receiver-D985.svg" title="receiver · D985 — native contact key" alt="receiver · D985 — native contact key" caption="Selected v15 source contacts; verify the assembly and numbered position. Unselected pads and supplies remain disconnected in the incomplete main reference." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="long-distance-native-receiver-d986" src="/images/extensions/long-distance-extender/guides/native-contact/reader-contact-keys/receiver-D986.svg" title="receiver · D986 — native contact key" alt="receiver · D986 — native contact key" caption="Selected v15 source contacts; verify the assembly and numbered position. Unselected pads and supplies remain disconnected in the incomplete main reference." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="long-distance-native-receiver-d987" src="/images/extensions/long-distance-extender/guides/native-contact/reader-contact-keys/receiver-D987.svg" title="receiver · D987 — native contact key" alt="receiver · D987 — native contact key" caption="Selected v15 source contacts; verify the assembly and numbered position. Unselected pads and supplies remain disconnected in the incomplete main reference." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="long-distance-native-receiver-f1" src="/images/extensions/long-distance-extender/guides/native-contact/reader-contact-keys/receiver-F1.svg" title="receiver · F1 — native contact key" alt="receiver · F1 — native contact key" caption="Selected v15 source contacts; verify the assembly and numbered position. Unselected pads and supplies remain disconnected in the incomplete main reference." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="long-distance-native-receiver-j1" src="/images/extensions/long-distance-extender/guides/native-contact/reader-contact-keys/receiver-J1.svg" title="receiver · J1 — native contact key" alt="receiver · J1 — native contact key" caption="Selected v15 source contacts; verify the assembly and numbered position. Unselected pads and supplies remain disconnected in the incomplete main reference." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="long-distance-native-receiver-jp1" src="/images/extensions/long-distance-extender/guides/native-contact/reader-contact-keys/receiver-JP1.svg" title="receiver · JP1 — native contact key" alt="receiver · JP1 — native contact key" caption="Selected v15 source contacts; verify the assembly and numbered position. Unselected pads and supplies remain disconnected in the incomplete main reference." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="long-distance-native-receiver-jp2" src="/images/extensions/long-distance-extender/guides/native-contact/reader-contact-keys/receiver-JP2.svg" title="receiver · JP2 — native contact key" alt="receiver · JP2 — native contact key" caption="Selected v15 source contacts; verify the assembly and numbered position. Unselected pads and supplies remain disconnected in the incomplete main reference." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="long-distance-native-receiver-jp3" src="/images/extensions/long-distance-extender/guides/native-contact/reader-contact-keys/receiver-JP3.svg" title="receiver · JP3 — native contact key" alt="receiver · JP3 — native contact key" caption="Selected v15 source contacts; verify the assembly and numbered position. Unselected pads and supplies remain disconnected in the incomplete main reference." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="long-distance-native-receiver-jp4" src="/images/extensions/long-distance-extender/guides/native-contact/reader-contact-keys/receiver-JP4.svg" title="receiver · JP4 — native contact key" alt="receiver · JP4 — native contact key" caption="Selected v15 source contacts; verify the assembly and numbered position. Unselected pads and supplies remain disconnected in the incomplete main reference." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="long-distance-native-receiver-jp5" src="/images/extensions/long-distance-extender/guides/native-contact/reader-contact-keys/receiver-JP5.svg" title="receiver · JP5 — native contact key" alt="receiver · JP5 — native contact key" caption="Selected v15 source contacts; verify the assembly and numbered position. Unselected pads and supplies remain disconnected in the incomplete main reference." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="long-distance-native-receiver-jp6" src="/images/extensions/long-distance-extender/guides/native-contact/reader-contact-keys/receiver-JP6.svg" title="receiver · JP6 — native contact key" alt="receiver · JP6 — native contact key" caption="Selected v15 source contacts; verify the assembly and numbered position. Unselected pads and supplies remain disconnected in the incomplete main reference." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="long-distance-native-receiver-jp7" src="/images/extensions/long-distance-extender/guides/native-contact/reader-contact-keys/receiver-JP7.svg" title="receiver · JP7 — native contact key" alt="receiver · JP7 — native contact key" caption="Selected v15 source contacts; verify the assembly and numbered position. Unselected pads and supplies remain disconnected in the incomplete main reference." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="long-distance-native-receiver-jp8" src="/images/extensions/long-distance-extender/guides/native-contact/reader-contact-keys/receiver-JP8.svg" title="receiver · JP8 — native contact key" alt="receiver · JP8 — native contact key" caption="Selected v15 source contacts; verify the assembly and numbered position. Unselected pads and supplies remain disconnected in the incomplete main reference." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="long-distance-native-receiver-jp9" src="/images/extensions/long-distance-extender/guides/native-contact/reader-contact-keys/receiver-JP9.svg" title="receiver · JP9 — native contact key" alt="receiver · JP9 — native contact key" caption="Selected v15 source contacts; verify the assembly and numbered position. Unselected pads and supplies remain disconnected in the incomplete main reference." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="long-distance-native-receiver-jp980" src="/images/extensions/long-distance-extender/guides/native-contact/reader-contact-keys/receiver-JP980.svg" title="receiver · JP980 — native contact key" alt="receiver · JP980 — native contact key" caption="Selected v15 source contacts; verify the assembly and numbered position. Unselected pads and supplies remain disconnected in the incomplete main reference." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="long-distance-native-receiver-jp981" src="/images/extensions/long-distance-extender/guides/native-contact/reader-contact-keys/receiver-JP981.svg" title="receiver · JP981 — native contact key" alt="receiver · JP981 — native contact key" caption="Selected v15 source contacts; verify the assembly and numbered position. Unselected pads and supplies remain disconnected in the incomplete main reference." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="long-distance-native-receiver-jp982" src="/images/extensions/long-distance-extender/guides/native-contact/reader-contact-keys/receiver-JP982.svg" title="receiver · JP982 — native contact key" alt="receiver · JP982 — native contact key" caption="Selected v15 source contacts; verify the assembly and numbered position. Unselected pads and supplies remain disconnected in the incomplete main reference." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="long-distance-native-receiver-r1980" src="/images/extensions/long-distance-extender/guides/native-contact/reader-contact-keys/receiver-R1980.svg" title="receiver · R1980 — native contact key" alt="receiver · R1980 — native contact key" caption="Selected v15 source contacts; verify the assembly and numbered position. Unselected pads and supplies remain disconnected in the incomplete main reference." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="long-distance-native-receiver-r1981" src="/images/extensions/long-distance-extender/guides/native-contact/reader-contact-keys/receiver-R1981.svg" title="receiver · R1981 — native contact key" alt="receiver · R1981 — native contact key" caption="Selected v15 source contacts; verify the assembly and numbered position. Unselected pads and supplies remain disconnected in the incomplete main reference." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="long-distance-native-receiver-r1982" src="/images/extensions/long-distance-extender/guides/native-contact/reader-contact-keys/receiver-R1982.svg" title="receiver · R1982 — native contact key" alt="receiver · R1982 — native contact key" caption="Selected v15 source contacts; verify the assembly and numbered position. Unselected pads and supplies remain disconnected in the incomplete main reference." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="long-distance-native-receiver-r1983" src="/images/extensions/long-distance-extender/guides/native-contact/reader-contact-keys/receiver-R1983.svg" title="receiver · R1983 — native contact key" alt="receiver · R1983 — native contact key" caption="Selected v15 source contacts; verify the assembly and numbered position. Unselected pads and supplies remain disconnected in the incomplete main reference." width=420 %}
+
+</details>
+
+<details markdown="1">
+<summary>Earlier unqualified wiring studies — retained source comparisons</summary>
+
+These older studies include supply connections whose operating margins remain unresolved. They are not commissioning procedures and do not replace the deliberately unpowered native-contact reference above.
+
+
+
+<details>
+<summary>Retained wider three-channel source comparison</summary>
+
+{% include _includes/extension-instruction-diagram.html id="long-distance-extender-v15-prime-bench-wiring" src="/images/extensions/long-distance-extender/guides/prime-installation-wiring.svg" title="Paired three-channel bench wiring" alt="Prime GF J37 to v15 emitter, numbered eight-contact cable, receiver and three oscilloscope channels" caption="Source-bound bench candidate. Use the numbered connection steps below; power budget and physical operation remain open." width=1800 %}
+
+This retained drawing includes additional channels and cable positions. It is a source comparison, not the selected ten-lead plan or a commissioning procedure. Power, protection, physical mating and reader acceptance remain unqualified.
+
+</details>
+
+
+</details>
+
+## Smoothieware behaviour and commissioning
+
+The physical layer needs no protocol driver; the attached signal determines firmware use. A free GPIO digital switch is a candidate, but the selected source has two inversions that preserve polarity, while actual levels and timing must be measured before copying a generic [switch] example. This pair cannot return an endstop signal through a channel wired host-to-remote. If an intended endpoint needs missing firmware support, email **wolf.arthur@gamil.com**.
+
+### Static host request with the extender disconnected
+
+The selected plan uses only PB1. Keep the extender and all loads disconnected while checking this software request. Reserve PB1 and the commands in the complete machine configuration; merge these entries into the existing section.
+
+```ini
+[switch]
+link_signal1.enable = true
+link_signal1.output_pin = PB1
+link_signal1.output_type = digital
+link_signal1.input_on_command = M42
+link_signal1.input_off_command = M43
+link_signal1.subcode = 21
+link_signal1.startup_state = false
+link_signal1.halt_set_to = false
+link_signal1.ignore_on_halt = false
+```
+
+Send `M43.21` to request LOW, `M42.21` to request HIGH, then `M43.21` to return LOW. These commands establish the software requests; they do not verify the disconnected receiver output. No powered receiver measurement sequence is qualified here. Startup and handled-halt settings do not guarantee levels during boot, reset or disconnection. Channels 2 and 3 are unused in this plan. The physical layer has no register driver; a complete attached-device application still needs its own support. Email **wolf.arthur@gamil.com** for the missing integration.
+
+These instructions identify source behavior at SmoothieV2 commit `2a21c0108b1d095ecd8b2b9358e94055f053c003`; they do not identify the installed build or prove target execution. Reserve every listed pin and command in the complete configuration. Merge entries into existing sections rather than duplicating sections. These software instructions do not verify powered hardware or provide a complete wiring diagram.
+
+## What remains unresolved
+
+Actual fitted power-link population, cable drop/current, remote load levels, transient protection, measured polarity/timing and actual distance performance remain open. Annotated references and a paired bench-wiring candidate are included; complete installation acceptance, link availability and rendered desktop/narrow usability remain open.
+
+## Sources and revision notes
+
+- [Selected v15 emitter PCB](https://github.com/arthurwolf/extension-boards/blob/main/src/long-distance-extender/attempt/versions/v15/emitter/emitter.kicad_pcb)
+- [Selected v15 receiver PCB](https://github.com/arthurwolf/extension-boards/blob/main/src/long-distance-extender/attempt/versions/v15/receiver/receiver.kicad_pcb)
+- [Specification and retained limitations](https://github.com/arthurwolf/extension-boards/blob/main/src/long-distance-extender/specs.md)
+- [Architecture and source decisions](https://github.com/arthurwolf/extension-boards/blob/main/src/long-distance-extender/design.md)
+- [Component review](https://github.com/arthurwolf/extension-boards/blob/main/src/long-distance-extender/component-review.md)
+- [V2 configuration example](https://github.com/Smoothieware/SmoothieV2/blob/2a21c0108b1d095ecd8b2b9358e94055f053c003/ConfigSamples/config-3d.ini)
+- [All extension boards](/extension-boards)
+
+The selected-revision engineering repository was unavailable to anonymous readers when checked. Its source links are retained for provenance; an accessible matching source release has not been verified. Firmware and historical-board links are separate sources.
+
+<details markdown="1">
+<summary>Supplementary views and development history</summary>
+
+{% include _includes/extension-board-visuals.html slug="long-distance-extender" %}
+
+Older source amendments, component substitution trials and future connector upgrade requests are development history. They do not change the revision selected by this guide.
+
+</details>

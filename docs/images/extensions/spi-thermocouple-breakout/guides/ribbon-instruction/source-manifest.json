@@ -1,0 +1,1102 @@
+{
+  "identity": "spi-thermocouple-breakout",
+  "selected_revision": "v16",
+  "producer_sha256": "dee5fcad4ac363e9027053cf5c2312538107c6788f12be16535864dc597d75c2",
+  "sources": {
+    "extension-boards/src/spi-thermocouple-breakout/attempt/versions/v16/spi-thermocouple.kicad_pcb": "6f528cd7fcdabc5548466ec9de23ee2298a2cd4323a806ccf6344bb73753e4ad",
+    "extension-boards/src/spi-thermocouple-breakout/attempt/versions/v16/exports/schematic-netlist.xml": "85a183980ab788f2f24e829c412d687898e21b9bc4eadf4f3f02b733e0348757",
+    "smoothie-diagrams/data/extension-board-renders/spi-thermocouple-breakout/v16/spi-thermocouple.svg": "ec909e96c424cc4a8ecb6cb8be0c0d74d20625a44ad63c95915d0ca2e57f963e",
+    "smoothie-documentation/docs/extension-board-inventory/compliance/diagrams/wiring/prime-p11-front-abstract.svg": "18f69db908a317196cb9d230f06eb5c949c081f36908118be8c3bd7fa5d1efbc",
+    "Smoothieboard2/V2_P11_Prime2660/smoothiev2-prime-2660.kicad_pcb": "c0d77f1fac1859ba3b03a6476ba8354763c09edc0a758fb0fc9c5fcf91af4627",
+    "Smoothieboard2/V2_P12_Prime2590/smoothiev2-prime.kicad_pcb": "a7e84b8fb403d9b64fd7f0e09c6aa245f00525ba894bfe9a008093fe73626b29"
+  },
+  "native_to_board_art_mm": [
+    0.025,
+    0.025
+  ],
+  "illustration_transforms": {
+    "board_reference": {
+      "translation": [
+        160,
+        360
+      ],
+      "scale": 23
+    },
+    "prime_overview": {
+      "translation": [
+        45,
+        325
+      ],
+      "scale": 4.4
+    },
+    "converter_overview": {
+      "translation": [
+        830,
+        345
+      ],
+      "scale": 12
+    },
+    "electrical_key": {
+      "native_geometry": false,
+      "grid_mm": 5,
+      "display_transform": "uniform scale 5; translation [0,75]; schematic spacing only"
+    }
+  },
+  "prime_P11_P12_J36_equal": true,
+  "contacts": [
+    {
+      "core": 1,
+      "prime": {
+        "pin": "1",
+        "uuid": "7f3a2aa4-24c2-446f-b812-55074001e49a",
+        "net": "/3V3_LIMIT",
+        "xy": [
+          149.71,
+          91.65
+        ],
+        "layers": [
+          "F.Cu",
+          "F.Paste",
+          "F.Mask"
+        ],
+        "size": [
+          "2.4",
+          "0.74"
+        ]
+      },
+      "converter": {
+        "pin": "1",
+        "uuid": "544a0787-4680-477f-9e37-a2f92302ea99",
+        "net": "+3V3",
+        "xy": [
+          6.46,
+          5.035
+        ],
+        "layers": [
+          "*.Cu",
+          "*.Mask"
+        ],
+        "size": [
+          "1.05",
+          "1.05"
+        ]
+      },
+      "role": "3.3 V supply"
+    },
+    {
+      "core": 2,
+      "prime": {
+        "pin": "2",
+        "uuid": "9450e5ce-d8c8-4306-8ee6-c164eb3efd91",
+        "net": "/5V_LIMIT",
+        "xy": [
+          149.71,
+          87.75
+        ],
+        "layers": [
+          "F.Cu",
+          "F.Paste",
+          "F.Mask"
+        ],
+        "size": [
+          "2.4",
+          "0.74"
+        ]
+      },
+      "converter": {
+        "pin": "2",
+        "uuid": "dcb65d33-76f5-4d99-9f8c-e49dbc7bd282",
+        "net": "+5V",
+        "xy": [
+          6.46,
+          3.7650000000000006
+        ],
+        "layers": [
+          "*.Cu",
+          "*.Mask"
+        ],
+        "size": [
+          "1.05",
+          "1.05"
+        ]
+      },
+      "role": "5 V through rail"
+    },
+    {
+      "core": 3,
+      "prime": {
+        "pin": "3",
+        "uuid": "8041221c-5f85-4499-a103-dbc07be25141",
+        "net": "/PE8",
+        "xy": [
+          150.98,
+          91.65
+        ],
+        "layers": [
+          "F.Cu",
+          "F.Paste",
+          "F.Mask"
+        ],
+        "size": [
+          "2.4",
+          "0.74"
+        ]
+      },
+      "converter": {
+        "pin": "3",
+        "uuid": "c963dd19-17d9-4df6-916d-370f7cfe1ebb",
+        "net": "GAD_P3",
+        "xy": [
+          7.73,
+          5.035
+        ],
+        "layers": [
+          "*.Cu",
+          "*.Mask"
+        ],
+        "size": [
+          "1.05",
+          "1.05"
+        ]
+      },
+      "role": "Auxiliary; unused"
+    },
+    {
+      "core": 4,
+      "prime": {
+        "pin": "4",
+        "uuid": "1c1b5258-ee3e-48f1-9f3f-606e8b1ba38d",
+        "net": "/PJ7",
+        "xy": [
+          150.98,
+          87.75
+        ],
+        "layers": [
+          "F.Cu",
+          "F.Paste",
+          "F.Mask"
+        ],
+        "size": [
+          "2.4",
+          "0.74"
+        ]
+      },
+      "converter": {
+        "pin": "4",
+        "uuid": "fbbe0940-19d9-48bd-9ebb-51e40cfbea75",
+        "net": "GAD_P4",
+        "xy": [
+          7.73,
+          3.7650000000000006
+        ],
+        "layers": [
+          "*.Cu",
+          "*.Mask"
+        ],
+        "size": [
+          "1.05",
+          "1.05"
+        ]
+      },
+      "role": "Auxiliary; unused"
+    },
+    {
+      "core": 5,
+      "prime": {
+        "pin": "5",
+        "uuid": "729f1223-896b-4fd3-b88c-acdfd60e745f",
+        "net": "/PJ8",
+        "xy": [
+          152.25,
+          91.65
+        ],
+        "layers": [
+          "F.Cu",
+          "F.Paste",
+          "F.Mask"
+        ],
+        "size": [
+          "2.4",
+          "0.74"
+        ]
+      },
+      "converter": {
+        "pin": "5",
+        "uuid": "4cd46663-6b67-46cc-8635-e69cb0b8fc95",
+        "net": "GAD_P5",
+        "xy": [
+          9.0,
+          5.035
+        ],
+        "layers": [
+          "*.Cu",
+          "*.Mask"
+        ],
+        "size": [
+          "1.05",
+          "1.05"
+        ]
+      },
+      "role": "Auxiliary; unused"
+    },
+    {
+      "core": 6,
+      "prime": {
+        "pin": "6",
+        "uuid": "d8a9f756-4ea1-444f-a074-556288414348",
+        "net": "/PD15",
+        "xy": [
+          152.25,
+          87.75
+        ],
+        "layers": [
+          "F.Cu",
+          "F.Paste",
+          "F.Mask"
+        ],
+        "size": [
+          "2.4",
+          "0.74"
+        ]
+      },
+      "converter": {
+        "pin": "6",
+        "uuid": "810bcab9-a47b-4be4-b41b-adae643d7bde",
+        "net": "SPI_CS_N",
+        "xy": [
+          9.0,
+          3.7650000000000006
+        ],
+        "layers": [
+          "*.Cu",
+          "*.Mask"
+        ],
+        "size": [
+          "1.05",
+          "1.05"
+        ]
+      },
+      "role": "Chip select"
+    },
+    {
+      "core": 7,
+      "prime": {
+        "pin": "7",
+        "uuid": "afbcbb78-a6c3-4633-8e06-9b939c78c20e",
+        "net": "/SPI1_COPI",
+        "xy": [
+          153.52,
+          91.65
+        ],
+        "layers": [
+          "F.Cu",
+          "F.Paste",
+          "F.Mask"
+        ],
+        "size": [
+          "2.4",
+          "0.74"
+        ]
+      },
+      "converter": {
+        "pin": "7",
+        "uuid": "40142a77-acaa-44f4-a793-6179f3969a70",
+        "net": "SPI_MOSI",
+        "xy": [
+          10.27,
+          5.035
+        ],
+        "layers": [
+          "*.Cu",
+          "*.Mask"
+        ],
+        "size": [
+          "1.05",
+          "1.05"
+        ]
+      },
+      "role": "Data to converter"
+    },
+    {
+      "core": 8,
+      "prime": {
+        "pin": "8",
+        "uuid": "9e0e1bc7-81c3-48f6-8021-85fd04a5907e",
+        "net": "/SPI1_CIPO",
+        "xy": [
+          153.52,
+          87.75
+        ],
+        "layers": [
+          "F.Cu",
+          "F.Paste",
+          "F.Mask"
+        ],
+        "size": [
+          "2.4",
+          "0.74"
+        ]
+      },
+      "converter": {
+        "pin": "8",
+        "uuid": "c645978b-a1f4-4bba-a63f-cb0d7762de10",
+        "net": "SPI_MISO",
+        "xy": [
+          10.27,
+          3.7650000000000006
+        ],
+        "layers": [
+          "*.Cu",
+          "*.Mask"
+        ],
+        "size": [
+          "1.05",
+          "1.05"
+        ]
+      },
+      "role": "Data from converter"
+    },
+    {
+      "core": 9,
+      "prime": {
+        "pin": "9",
+        "uuid": "6a7e350e-5fba-470a-bff5-5f8f99d60348",
+        "net": "/SPI1_SCK",
+        "xy": [
+          154.79,
+          91.65
+        ],
+        "layers": [
+          "F.Cu",
+          "F.Paste",
+          "F.Mask"
+        ],
+        "size": [
+          "2.4",
+          "0.74"
+        ]
+      },
+      "converter": {
+        "pin": "9",
+        "uuid": "37fe7574-b54f-490d-ba4b-b9cf6405575d",
+        "net": "SPI_SCK",
+        "xy": [
+          11.54,
+          5.035
+        ],
+        "layers": [
+          "*.Cu",
+          "*.Mask"
+        ],
+        "size": [
+          "1.05",
+          "1.05"
+        ]
+      },
+      "role": "Clock"
+    },
+    {
+      "core": 10,
+      "prime": {
+        "pin": "10",
+        "uuid": "9461545b-4e90-4eb4-b2cf-52841380e514",
+        "net": "GND",
+        "xy": [
+          154.79,
+          87.75
+        ],
+        "layers": [
+          "F.Cu",
+          "F.Paste",
+          "F.Mask"
+        ],
+        "size": [
+          "2.4",
+          "0.74"
+        ]
+      },
+      "converter": {
+        "pin": "10",
+        "uuid": "add86302-71d2-4a33-baea-21b483ce9888",
+        "net": "GND",
+        "xy": [
+          11.54,
+          3.7650000000000006
+        ],
+        "layers": [
+          "*.Cu",
+          "*.Mask"
+        ],
+        "size": [
+          "1.05",
+          "1.05"
+        ]
+      },
+      "role": "Circuit ground"
+    }
+  ],
+  "probe": {
+    "part": "Omega 5TC-TT-K-30-36",
+    "J3.1": "ANSI red negative",
+    "J3.2": "ANSI yellow positive",
+    "primary": "https://assets.omega.com/pdf/test-and-measurement-equipment/temperature/sensors/thermocouple-probes/5TC.pdf",
+    "colour_primary": "https://assets.omega.com/spec/tc_colorcodes.pdf"
+  },
+  "ribbon": {
+    "id": "C1",
+    "proposal": "one-to-one 10-core cable",
+    "mating_assembly": "unqualified",
+    "stripe": "identification only; verify continuity and pin-one mapping"
+  },
+  "scene": {
+    "schema": "wiring-scene/1",
+    "bounds_mm": [
+      0,
+      0,
+      200,
+      200
+    ],
+    "grid_mm": 5,
+    "origin_mm": [
+      0,
+      0
+    ],
+    "stroke_mm": 0.8,
+    "halo_mm": 1.6,
+    "clearance_mm": 5,
+    "bodies": [],
+    "contacts": [
+      {
+        "id": "prime.1",
+        "point_mm": [
+          50,
+          35
+        ]
+      },
+      {
+        "id": "converter.1",
+        "point_mm": [
+          150,
+          35
+        ]
+      },
+      {
+        "id": "prime.2",
+        "point_mm": [
+          50,
+          50
+        ]
+      },
+      {
+        "id": "converter.2",
+        "point_mm": [
+          150,
+          50
+        ]
+      },
+      {
+        "id": "prime.3",
+        "point_mm": [
+          50,
+          65
+        ]
+      },
+      {
+        "id": "converter.3",
+        "point_mm": [
+          150,
+          65
+        ]
+      },
+      {
+        "id": "prime.4",
+        "point_mm": [
+          50,
+          80
+        ]
+      },
+      {
+        "id": "converter.4",
+        "point_mm": [
+          150,
+          80
+        ]
+      },
+      {
+        "id": "prime.5",
+        "point_mm": [
+          50,
+          95
+        ]
+      },
+      {
+        "id": "converter.5",
+        "point_mm": [
+          150,
+          95
+        ]
+      },
+      {
+        "id": "prime.6",
+        "point_mm": [
+          50,
+          110
+        ]
+      },
+      {
+        "id": "converter.6",
+        "point_mm": [
+          150,
+          110
+        ]
+      },
+      {
+        "id": "prime.7",
+        "point_mm": [
+          50,
+          125
+        ]
+      },
+      {
+        "id": "converter.7",
+        "point_mm": [
+          150,
+          125
+        ]
+      },
+      {
+        "id": "prime.8",
+        "point_mm": [
+          50,
+          140
+        ]
+      },
+      {
+        "id": "converter.8",
+        "point_mm": [
+          150,
+          140
+        ]
+      },
+      {
+        "id": "prime.9",
+        "point_mm": [
+          50,
+          155
+        ]
+      },
+      {
+        "id": "converter.9",
+        "point_mm": [
+          150,
+          155
+        ]
+      },
+      {
+        "id": "prime.10",
+        "point_mm": [
+          50,
+          170
+        ]
+      },
+      {
+        "id": "converter.10",
+        "point_mm": [
+          150,
+          170
+        ]
+      }
+    ],
+    "wires": [
+      {
+        "id": "C1.01",
+        "source": "prime.1",
+        "destination": "converter.1",
+        "net": "+3V3",
+        "color": "#c83944"
+      },
+      {
+        "id": "C1.02",
+        "source": "prime.2",
+        "destination": "converter.2",
+        "net": "+5V",
+        "color": "#bd6b0c"
+      },
+      {
+        "id": "C1.03",
+        "source": "prime.3",
+        "destination": "converter.3",
+        "net": "GAD_P3",
+        "color": "#657784"
+      },
+      {
+        "id": "C1.04",
+        "source": "prime.4",
+        "destination": "converter.4",
+        "net": "GAD_P4",
+        "color": "#657784"
+      },
+      {
+        "id": "C1.05",
+        "source": "prime.5",
+        "destination": "converter.5",
+        "net": "GAD_P5",
+        "color": "#657784"
+      },
+      {
+        "id": "C1.06",
+        "source": "prime.6",
+        "destination": "converter.6",
+        "net": "SPI_CS_N",
+        "color": "#8051a0"
+      },
+      {
+        "id": "C1.07",
+        "source": "prime.7",
+        "destination": "converter.7",
+        "net": "SPI_MOSI",
+        "color": "#287b60"
+      },
+      {
+        "id": "C1.08",
+        "source": "prime.8",
+        "destination": "converter.8",
+        "net": "SPI_MISO",
+        "color": "#247e9d"
+      },
+      {
+        "id": "C1.09",
+        "source": "prime.9",
+        "destination": "converter.9",
+        "net": "SPI_SCK",
+        "color": "#3b62a4"
+      },
+      {
+        "id": "C1.10",
+        "source": "prime.10",
+        "destination": "converter.10",
+        "net": "GND",
+        "color": "#192a30"
+      }
+    ]
+  },
+  "routed": {
+    "schema": "wiring-route-result/1",
+    "status": "ROUTED_CANDIDATE",
+    "wires": [
+      {
+        "id": "C1.01",
+        "source": "prime.1",
+        "destination": "converter.1",
+        "net": "+3V3",
+        "color": "#c83944",
+        "points_mm": [
+          [
+            50.0,
+            35.0
+          ],
+          [
+            150.0,
+            35.0
+          ]
+        ],
+        "source_exit": {
+          "side": "external",
+          "overflight_mm": 0
+        },
+        "destination_exit": {
+          "side": "external",
+          "overflight_mm": 0
+        }
+      },
+      {
+        "id": "C1.02",
+        "source": "prime.2",
+        "destination": "converter.2",
+        "net": "+5V",
+        "color": "#bd6b0c",
+        "points_mm": [
+          [
+            50.0,
+            50.0
+          ],
+          [
+            150.0,
+            50.0
+          ]
+        ],
+        "source_exit": {
+          "side": "external",
+          "overflight_mm": 0
+        },
+        "destination_exit": {
+          "side": "external",
+          "overflight_mm": 0
+        }
+      },
+      {
+        "id": "C1.03",
+        "source": "prime.3",
+        "destination": "converter.3",
+        "net": "GAD_P3",
+        "color": "#657784",
+        "points_mm": [
+          [
+            50.0,
+            65.0
+          ],
+          [
+            150.0,
+            65.0
+          ]
+        ],
+        "source_exit": {
+          "side": "external",
+          "overflight_mm": 0
+        },
+        "destination_exit": {
+          "side": "external",
+          "overflight_mm": 0
+        }
+      },
+      {
+        "id": "C1.04",
+        "source": "prime.4",
+        "destination": "converter.4",
+        "net": "GAD_P4",
+        "color": "#657784",
+        "points_mm": [
+          [
+            50.0,
+            80.0
+          ],
+          [
+            150.0,
+            80.0
+          ]
+        ],
+        "source_exit": {
+          "side": "external",
+          "overflight_mm": 0
+        },
+        "destination_exit": {
+          "side": "external",
+          "overflight_mm": 0
+        }
+      },
+      {
+        "id": "C1.05",
+        "source": "prime.5",
+        "destination": "converter.5",
+        "net": "GAD_P5",
+        "color": "#657784",
+        "points_mm": [
+          [
+            50.0,
+            95.0
+          ],
+          [
+            150.0,
+            95.0
+          ]
+        ],
+        "source_exit": {
+          "side": "external",
+          "overflight_mm": 0
+        },
+        "destination_exit": {
+          "side": "external",
+          "overflight_mm": 0
+        }
+      },
+      {
+        "id": "C1.06",
+        "source": "prime.6",
+        "destination": "converter.6",
+        "net": "SPI_CS_N",
+        "color": "#8051a0",
+        "points_mm": [
+          [
+            50.0,
+            110.0
+          ],
+          [
+            150.0,
+            110.0
+          ]
+        ],
+        "source_exit": {
+          "side": "external",
+          "overflight_mm": 0
+        },
+        "destination_exit": {
+          "side": "external",
+          "overflight_mm": 0
+        }
+      },
+      {
+        "id": "C1.07",
+        "source": "prime.7",
+        "destination": "converter.7",
+        "net": "SPI_MOSI",
+        "color": "#287b60",
+        "points_mm": [
+          [
+            50.0,
+            125.0
+          ],
+          [
+            150.0,
+            125.0
+          ]
+        ],
+        "source_exit": {
+          "side": "external",
+          "overflight_mm": 0
+        },
+        "destination_exit": {
+          "side": "external",
+          "overflight_mm": 0
+        }
+      },
+      {
+        "id": "C1.08",
+        "source": "prime.8",
+        "destination": "converter.8",
+        "net": "SPI_MISO",
+        "color": "#247e9d",
+        "points_mm": [
+          [
+            50.0,
+            140.0
+          ],
+          [
+            150.0,
+            140.0
+          ]
+        ],
+        "source_exit": {
+          "side": "external",
+          "overflight_mm": 0
+        },
+        "destination_exit": {
+          "side": "external",
+          "overflight_mm": 0
+        }
+      },
+      {
+        "id": "C1.09",
+        "source": "prime.9",
+        "destination": "converter.9",
+        "net": "SPI_SCK",
+        "color": "#3b62a4",
+        "points_mm": [
+          [
+            50.0,
+            155.0
+          ],
+          [
+            150.0,
+            155.0
+          ]
+        ],
+        "source_exit": {
+          "side": "external",
+          "overflight_mm": 0
+        },
+        "destination_exit": {
+          "side": "external",
+          "overflight_mm": 0
+        }
+      },
+      {
+        "id": "C1.10",
+        "source": "prime.10",
+        "destination": "converter.10",
+        "net": "GND",
+        "color": "#192a30",
+        "points_mm": [
+          [
+            50.0,
+            170.0
+          ],
+          [
+            150.0,
+            170.0
+          ]
+        ],
+        "source_exit": {
+          "side": "external",
+          "overflight_mm": 0
+        },
+        "destination_exit": {
+          "side": "external",
+          "overflight_mm": 0
+        }
+      }
+    ],
+    "failures": [],
+    "junctions": [],
+    "junction_obligations": [],
+    "body_overflight_mm": 0,
+    "cost": {
+      "owning_body_overflight_mm": 0,
+      "outside_length_mm": 1000.0,
+      "turns": 0,
+      "crossings": 0
+    },
+    "score_priority": [
+      "owning_body_overflight_mm",
+      "outside_length_mm",
+      "turns",
+      "crossings"
+    ],
+    "globally_optimal": false,
+    "search": {
+      "max_expansions_per_pair": 2000,
+      "max_orders": 1,
+      "max_escape_pairs": 32,
+      "expanded": 210,
+      "history": [
+        {
+          "order": [
+            "C1.01",
+            "C1.02",
+            "C1.03",
+            "C1.04",
+            "C1.05",
+            "C1.06",
+            "C1.07",
+            "C1.08",
+            "C1.09",
+            "C1.10"
+          ],
+          "routed": 10,
+          "failures": []
+        }
+      ],
+      "endpoint_minimum_overflight_mm": {
+        "C1.01": {
+          "source_mm": 0,
+          "destination_mm": 0
+        },
+        "C1.02": {
+          "source_mm": 0,
+          "destination_mm": 0
+        },
+        "C1.03": {
+          "source_mm": 0,
+          "destination_mm": 0
+        },
+        "C1.04": {
+          "source_mm": 0,
+          "destination_mm": 0
+        },
+        "C1.05": {
+          "source_mm": 0,
+          "destination_mm": 0
+        },
+        "C1.06": {
+          "source_mm": 0,
+          "destination_mm": 0
+        },
+        "C1.07": {
+          "source_mm": 0,
+          "destination_mm": 0
+        },
+        "C1.08": {
+          "source_mm": 0,
+          "destination_mm": 0
+        },
+        "C1.09": {
+          "source_mm": 0,
+          "destination_mm": 0
+        },
+        "C1.10": {
+          "source_mm": 0,
+          "destination_mm": 0
+        }
+      },
+      "escape_policy": "minimum_owning_body_only"
+    },
+    "proved_impossible": false,
+    "accepted": false,
+    "remaining_gates": [
+      "source/native/copper registration",
+      "actual SVG independent lint",
+      "manual visual and topology review",
+      "reader Fit",
+      "electrical and fitted hardware qualification"
+    ]
+  },
+  "probe_routes": [
+    {
+      "pin": 1,
+      "points": [
+        [
+          1049.3,
+          633.3
+        ],
+        [
+          1049.3,
+          850
+        ],
+        [
+          1135,
+          850
+        ],
+        [
+          1135,
+          1120
+        ],
+        [
+          1165,
+          1180
+        ]
+      ],
+      "color": "#d53138"
+    },
+    {
+      "pin": 2,
+      "points": [
+        [
+          1091.3,
+          633.3
+        ],
+        [
+          1091.3,
+          820
+        ],
+        [
+          1195,
+          820
+        ],
+        [
+          1195,
+          1120
+        ],
+        [
+          1165,
+          1180
+        ]
+      ],
+      "color": "#c39a00"
+    }
+  ],
+  "qualification": {
+    "electrical_schedule": "10 source-numbered ribbon cores + 2 thermocouple leads",
+    "native_fanout": "not qualified; schematic electrical keys deliberately expanded",
+    "physical_mating": "not qualified; plug symbols are electrical expansion",
+    "native_obstacle_clearance": "not claimed for the non-electrical locator leaders",
+    "firmware": "MAX31856 support absent in reviewed factory; no powered recipe",
+    "reader": "inspect actual page separately",
+    "hardware": "not qualified"
+  },
+  "files": {
+    "ribbon-circuit-key.svg": "e4f0446b7558083b16038686addc6fc38b173989a8ccfc6d855554cbb6facbb6",
+    "prime-wiring.svg": "b07c9e9215129a29b16aef41dac0477defbab9590540a1ca7d6220db641991ab",
+    "ribbon-contacts-6-10.svg": "2f1c2a3369fe704a883b31d008e5f6009e6e8408d7b50720d29195d2762cf346",
+    "ribbon-contacts-1-5.svg": "9f8ced120698830ae99688d8c4ed551b45febf956c7a58b704392cd681efe559",
+    "board-reference.svg": "8d0cea2f9beedf5874d2a4aaa24146682247e9b9d5a317a7e1a4c390b469e5c5"
+  }
+}

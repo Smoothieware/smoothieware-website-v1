@@ -1,0 +1,7627 @@
+{
+  "board": "ESP32 DevKitC Gadgeteer host adapter",
+  "revision": "v03",
+  "sources": {
+    "extension-boards/src/esp32-to-gadgeteer-host/attempt/sources/esp32_devkitc_v4_dimensions.pdf": "93769872f5640475a25e6c367230b407606771e4bbee0aba56903263b17d8d30",
+    "extension-boards/src/esp32-to-gadgeteer-host/attempt/versions/v03/esp32-to-gadgeteer-host.kicad_pcb": "32a3b53df0c270c2fa441a16bebb82317858bd3610af7a46d82a6ef229a7927b",
+    "extension-boards/src/esp32-to-gadgeteer-host/attempt/versions/v03/esp32-to-gadgeteer-host.kicad_sch": "9abf6ea331d1d108fd59f931f6f75db25f16a1834dc8d8adc58bb03f18d77b25",
+    "extension-boards/src/esp32-to-gadgeteer-host/attempt/versions/v03/design-contract.json": "20ff1cc6b2f29374d9c79b23501660f4a2375727518ab49ecb79e2b3e6d189ad",
+    "extension-boards/src/esp32-to-gadgeteer-host/attempt/versions/v03/netlist.xml": "4bd1bfe22b3959ca6d38fa0c6aa8ab3a01c68e98e0eae22ffd9b8b8976182501",
+    "extension-boards/src/buzzer-module/attempt/versions/v14/buzzer-module.kicad_pcb": "6bc77eda610bb58ec562285216d892c781092cf5743c45742f3bd0db7fafa9a0",
+    "extension-boards/src/buzzer-module/attempt/versions/v14/exports/schematic-netlist.xml": "04accdc8043ad8631654ce5d296acf03bf0581674b6e5bdf01ff7e628ae956c4",
+    "smoothie-diagrams/data/extension-board-renders/buzzer-module/v14/buzzer-module.svg": "36e78aff9e1bfdcebf934252cb8a72a5b3d84ae3720d75205659e035972ad33b",
+    "smoothie-diagrams/src/host-adapter-guides/esp32_devkitc.py": "26c8927512f36177765fd5b4c86c9e9f9fb82b4e84b5afc83a30c675bb678ceb"
+  },
+  "pcb_to_abstract": {
+    "matrix": [
+      1,
+      0,
+      0,
+      1,
+      0,
+      0
+    ],
+    "unit": "mm"
+  },
+  "selected_population": "normal (J6 2.54 mm header)",
+  "logical_connector_contacts": 92,
+  "mechanical_ground_pad_identities": [
+    [
+      "J6",
+      "MP"
+    ]
+  ],
+  "physical_connector_pad_instances": 98,
+  "contacts": [
+    {
+      "reference": "J7",
+      "pin": "1",
+      "local": [
+        0.0,
+        0.0
+      ],
+      "xy": [
+        13.5,
+        2.5
+      ],
+      "net": "/HOST_3V3",
+      "uuid": "a09a1792-5efe-40bf-b117-098fb5db24ae",
+      "kind": "thru_hole",
+      "size": [
+        1.7,
+        1.7
+      ],
+      "drill": [
+        "1"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ]
+    },
+    {
+      "reference": "J7",
+      "pin": "2",
+      "local": [
+        0.0,
+        2.54
+      ],
+      "xy": [
+        13.5,
+        5.04
+      ],
+      "net": "unconnected-(J7-EN-Pad2)",
+      "uuid": "24ab45d3-4c94-4b20-93e8-69a3e310cebe",
+      "kind": "thru_hole",
+      "size": [
+        1.7,
+        1.7
+      ],
+      "drill": [
+        "1"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ]
+    },
+    {
+      "reference": "J7",
+      "pin": "3",
+      "local": [
+        0.0,
+        5.08
+      ],
+      "xy": [
+        13.5,
+        7.58
+      ],
+      "net": "/H_GPIO36",
+      "uuid": "76f8c705-48f0-4cda-b500-f1feb604ec22",
+      "kind": "thru_hole",
+      "size": [
+        1.7,
+        1.7
+      ],
+      "drill": [
+        "1"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ]
+    },
+    {
+      "reference": "J7",
+      "pin": "4",
+      "local": [
+        0.0,
+        7.62
+      ],
+      "xy": [
+        13.5,
+        10.120000000000001
+      ],
+      "net": "/H_GPIO39",
+      "uuid": "4e947e0e-b53e-4a82-b25f-d0ba16764f74",
+      "kind": "thru_hole",
+      "size": [
+        1.7,
+        1.7
+      ],
+      "drill": [
+        "1"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ]
+    },
+    {
+      "reference": "J7",
+      "pin": "5",
+      "local": [
+        0.0,
+        10.16
+      ],
+      "xy": [
+        13.5,
+        12.66
+      ],
+      "net": "/H_GPIO34",
+      "uuid": "b2079ba9-575d-44e9-9333-a01063b01b63",
+      "kind": "thru_hole",
+      "size": [
+        1.7,
+        1.7
+      ],
+      "drill": [
+        "1"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ]
+    },
+    {
+      "reference": "J7",
+      "pin": "6",
+      "local": [
+        0.0,
+        12.7
+      ],
+      "xy": [
+        13.5,
+        15.2
+      ],
+      "net": "/H_GPIO35",
+      "uuid": "8dd9df0a-7fb8-4e2c-ba79-263cc4723e3c",
+      "kind": "thru_hole",
+      "size": [
+        1.7,
+        1.7
+      ],
+      "drill": [
+        "1"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ]
+    },
+    {
+      "reference": "J7",
+      "pin": "7",
+      "local": [
+        0.0,
+        15.24
+      ],
+      "xy": [
+        13.5,
+        17.740000000000002
+      ],
+      "net": "/H_GPIO32",
+      "uuid": "20dbb63e-72ca-4ad1-a867-ce3be98efa73",
+      "kind": "thru_hole",
+      "size": [
+        1.7,
+        1.7
+      ],
+      "drill": [
+        "1"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ]
+    },
+    {
+      "reference": "J7",
+      "pin": "8",
+      "local": [
+        0.0,
+        17.78
+      ],
+      "xy": [
+        13.5,
+        20.28
+      ],
+      "net": "/H_GPIO33",
+      "uuid": "1f84cd6c-7b65-41ed-9ee2-78566f5c435d",
+      "kind": "thru_hole",
+      "size": [
+        1.7,
+        1.7
+      ],
+      "drill": [
+        "1"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ]
+    },
+    {
+      "reference": "J7",
+      "pin": "9",
+      "local": [
+        0.0,
+        20.32
+      ],
+      "xy": [
+        13.5,
+        22.82
+      ],
+      "net": "/H_GPIO25",
+      "uuid": "9983d29d-b5b7-438e-bea8-8498b7187c2f",
+      "kind": "thru_hole",
+      "size": [
+        1.7,
+        1.7
+      ],
+      "drill": [
+        "1"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ]
+    },
+    {
+      "reference": "J7",
+      "pin": "10",
+      "local": [
+        0.0,
+        22.86
+      ],
+      "xy": [
+        13.5,
+        25.36
+      ],
+      "net": "/H_GPIO26",
+      "uuid": "b2ea26da-115d-4cef-aeaf-e6bfccb366b1",
+      "kind": "thru_hole",
+      "size": [
+        1.7,
+        1.7
+      ],
+      "drill": [
+        "1"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ]
+    },
+    {
+      "reference": "J7",
+      "pin": "11",
+      "local": [
+        0.0,
+        25.4
+      ],
+      "xy": [
+        13.5,
+        27.9
+      ],
+      "net": "/H_GPIO27",
+      "uuid": "f5e4fb7c-021d-4dab-bc05-d753f50dfdde",
+      "kind": "thru_hole",
+      "size": [
+        1.7,
+        1.7
+      ],
+      "drill": [
+        "1"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ]
+    },
+    {
+      "reference": "J7",
+      "pin": "12",
+      "local": [
+        0.0,
+        27.94
+      ],
+      "xy": [
+        13.5,
+        30.44
+      ],
+      "net": "/H_GPIO14",
+      "uuid": "869a85d4-3aaa-4fa2-95b4-682d92a59ed6",
+      "kind": "thru_hole",
+      "size": [
+        1.7,
+        1.7
+      ],
+      "drill": [
+        "1"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ]
+    },
+    {
+      "reference": "J7",
+      "pin": "13",
+      "local": [
+        0.0,
+        30.48
+      ],
+      "xy": [
+        13.5,
+        32.980000000000004
+      ],
+      "net": "unconnected-(J7-GPIO12-Pad13)",
+      "uuid": "91fa99dd-bd1e-4c5c-b111-3561613844c3",
+      "kind": "thru_hole",
+      "size": [
+        1.7,
+        1.7
+      ],
+      "drill": [
+        "1"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ]
+    },
+    {
+      "reference": "J7",
+      "pin": "14",
+      "local": [
+        0.0,
+        33.02
+      ],
+      "xy": [
+        13.5,
+        35.52
+      ],
+      "net": "GND",
+      "uuid": "50309db6-308e-4327-a2f5-6fdaa5074f17",
+      "kind": "thru_hole",
+      "size": [
+        1.7,
+        1.7
+      ],
+      "drill": [
+        "1"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ]
+    },
+    {
+      "reference": "J7",
+      "pin": "15",
+      "local": [
+        0.0,
+        35.56
+      ],
+      "xy": [
+        13.5,
+        38.06
+      ],
+      "net": "/H_GPIO13",
+      "uuid": "20d6d8de-dc55-48db-91b1-f342163b36de",
+      "kind": "thru_hole",
+      "size": [
+        1.7,
+        1.7
+      ],
+      "drill": [
+        "1"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ]
+    },
+    {
+      "reference": "J7",
+      "pin": "16",
+      "local": [
+        0.0,
+        38.1
+      ],
+      "xy": [
+        13.5,
+        40.6
+      ],
+      "net": "unconnected-(J7-SD2-Pad16)",
+      "uuid": "954dba14-b97e-4ee8-a1dd-b8db0e64ef22",
+      "kind": "thru_hole",
+      "size": [
+        1.7,
+        1.7
+      ],
+      "drill": [
+        "1"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ]
+    },
+    {
+      "reference": "J7",
+      "pin": "17",
+      "local": [
+        0.0,
+        40.64
+      ],
+      "xy": [
+        13.5,
+        43.14
+      ],
+      "net": "unconnected-(J7-SD3-Pad17)",
+      "uuid": "c9e014b8-07a0-4581-aafd-20915fbf04fa",
+      "kind": "thru_hole",
+      "size": [
+        1.7,
+        1.7
+      ],
+      "drill": [
+        "1"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ]
+    },
+    {
+      "reference": "J7",
+      "pin": "18",
+      "local": [
+        0.0,
+        43.18
+      ],
+      "xy": [
+        13.5,
+        45.68
+      ],
+      "net": "unconnected-(J7-CMD-Pad18)",
+      "uuid": "ca36ef4c-506d-4e49-8321-2e74eb2b271a",
+      "kind": "thru_hole",
+      "size": [
+        1.7,
+        1.7
+      ],
+      "drill": [
+        "1"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ]
+    },
+    {
+      "reference": "J7",
+      "pin": "19",
+      "local": [
+        0.0,
+        45.72
+      ],
+      "xy": [
+        13.5,
+        48.22
+      ],
+      "net": "/HOST_5V",
+      "uuid": "910cae4b-d3fa-4c4e-8c79-4c5c4ff3f801",
+      "kind": "thru_hole",
+      "size": [
+        1.7,
+        1.7
+      ],
+      "drill": [
+        "1"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ]
+    },
+    {
+      "reference": "J8",
+      "pin": "1",
+      "local": [
+        0.0,
+        0.0
+      ],
+      "xy": [
+        38.9,
+        2.5
+      ],
+      "net": "GND",
+      "uuid": "f0532ea2-b190-4673-9b35-7e906f43bc3d",
+      "kind": "thru_hole",
+      "size": [
+        1.7,
+        1.7
+      ],
+      "drill": [
+        "1"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ]
+    },
+    {
+      "reference": "J8",
+      "pin": "2",
+      "local": [
+        0.0,
+        2.54
+      ],
+      "xy": [
+        38.9,
+        5.04
+      ],
+      "net": "/H_GPIO23",
+      "uuid": "0b650071-b05f-46de-9810-71eb4ddb38d6",
+      "kind": "thru_hole",
+      "size": [
+        1.7,
+        1.7
+      ],
+      "drill": [
+        "1"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ]
+    },
+    {
+      "reference": "J8",
+      "pin": "3",
+      "local": [
+        0.0,
+        5.08
+      ],
+      "xy": [
+        38.9,
+        7.58
+      ],
+      "net": "/H_GPIO22",
+      "uuid": "e0b41f16-21c2-4db8-bd2f-cf61a4ae4251",
+      "kind": "thru_hole",
+      "size": [
+        1.7,
+        1.7
+      ],
+      "drill": [
+        "1"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ]
+    },
+    {
+      "reference": "J8",
+      "pin": "4",
+      "local": [
+        0.0,
+        7.62
+      ],
+      "xy": [
+        38.9,
+        10.120000000000001
+      ],
+      "net": "unconnected-(J8-TXD0-Pad4)",
+      "uuid": "871677dc-e97a-4ceb-b97c-1fdb699348b3",
+      "kind": "thru_hole",
+      "size": [
+        1.7,
+        1.7
+      ],
+      "drill": [
+        "1"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ]
+    },
+    {
+      "reference": "J8",
+      "pin": "5",
+      "local": [
+        0.0,
+        10.16
+      ],
+      "xy": [
+        38.9,
+        12.66
+      ],
+      "net": "unconnected-(J8-RXD0-Pad5)",
+      "uuid": "940a162e-3588-4b2f-bd96-3a825f37db74",
+      "kind": "thru_hole",
+      "size": [
+        1.7,
+        1.7
+      ],
+      "drill": [
+        "1"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ]
+    },
+    {
+      "reference": "J8",
+      "pin": "6",
+      "local": [
+        0.0,
+        12.7
+      ],
+      "xy": [
+        38.9,
+        15.2
+      ],
+      "net": "/H_GPIO21",
+      "uuid": "ed98d194-da1f-4c31-808d-9ce5cebb0549",
+      "kind": "thru_hole",
+      "size": [
+        1.7,
+        1.7
+      ],
+      "drill": [
+        "1"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ]
+    },
+    {
+      "reference": "J8",
+      "pin": "7",
+      "local": [
+        0.0,
+        15.24
+      ],
+      "xy": [
+        38.9,
+        17.740000000000002
+      ],
+      "net": "GND",
+      "uuid": "f48a014c-c8ad-4082-93a3-9eaac4bf0077",
+      "kind": "thru_hole",
+      "size": [
+        1.7,
+        1.7
+      ],
+      "drill": [
+        "1"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ]
+    },
+    {
+      "reference": "J8",
+      "pin": "8",
+      "local": [
+        0.0,
+        17.78
+      ],
+      "xy": [
+        38.9,
+        20.28
+      ],
+      "net": "/H_GPIO19",
+      "uuid": "313a4bad-d242-413a-9530-284a8a2eb6e7",
+      "kind": "thru_hole",
+      "size": [
+        1.7,
+        1.7
+      ],
+      "drill": [
+        "1"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ]
+    },
+    {
+      "reference": "J8",
+      "pin": "9",
+      "local": [
+        0.0,
+        20.32
+      ],
+      "xy": [
+        38.9,
+        22.82
+      ],
+      "net": "/H_GPIO18",
+      "uuid": "ed7e5c3e-c8ac-4713-b701-19de4d9bcf77",
+      "kind": "thru_hole",
+      "size": [
+        1.7,
+        1.7
+      ],
+      "drill": [
+        "1"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ]
+    },
+    {
+      "reference": "J8",
+      "pin": "10",
+      "local": [
+        0.0,
+        22.86
+      ],
+      "xy": [
+        38.9,
+        25.36
+      ],
+      "net": "/H_GPIO5",
+      "uuid": "5ec1c01c-0d64-4009-93dd-7251ebfefbb6",
+      "kind": "thru_hole",
+      "size": [
+        1.7,
+        1.7
+      ],
+      "drill": [
+        "1"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ]
+    },
+    {
+      "reference": "J8",
+      "pin": "11",
+      "local": [
+        0.0,
+        25.4
+      ],
+      "xy": [
+        38.9,
+        27.9
+      ],
+      "net": "/H_GPIO17",
+      "uuid": "e4bbc822-a9ad-4572-ac27-b71c0327e2d8",
+      "kind": "thru_hole",
+      "size": [
+        1.7,
+        1.7
+      ],
+      "drill": [
+        "1"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ]
+    },
+    {
+      "reference": "J8",
+      "pin": "12",
+      "local": [
+        0.0,
+        27.94
+      ],
+      "xy": [
+        38.9,
+        30.44
+      ],
+      "net": "/H_GPIO16",
+      "uuid": "5bb66e22-05dd-4f7e-a690-43d3fb2dc1f6",
+      "kind": "thru_hole",
+      "size": [
+        1.7,
+        1.7
+      ],
+      "drill": [
+        "1"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ]
+    },
+    {
+      "reference": "J8",
+      "pin": "13",
+      "local": [
+        0.0,
+        30.48
+      ],
+      "xy": [
+        38.9,
+        32.980000000000004
+      ],
+      "net": "/H_GPIO4",
+      "uuid": "777cb0ae-36c3-4a6d-84ce-088822e7ea18",
+      "kind": "thru_hole",
+      "size": [
+        1.7,
+        1.7
+      ],
+      "drill": [
+        "1"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ]
+    },
+    {
+      "reference": "J8",
+      "pin": "14",
+      "local": [
+        0.0,
+        33.02
+      ],
+      "xy": [
+        38.9,
+        35.52
+      ],
+      "net": "unconnected-(J8-GPIO0-Pad14)",
+      "uuid": "8cc58c88-7695-40c9-8223-2436b547243c",
+      "kind": "thru_hole",
+      "size": [
+        1.7,
+        1.7
+      ],
+      "drill": [
+        "1"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ]
+    },
+    {
+      "reference": "J8",
+      "pin": "15",
+      "local": [
+        0.0,
+        35.56
+      ],
+      "xy": [
+        38.9,
+        38.06
+      ],
+      "net": "/H_GPIO2",
+      "uuid": "17a5d381-9834-4e30-b4e0-d71e00cce35c",
+      "kind": "thru_hole",
+      "size": [
+        1.7,
+        1.7
+      ],
+      "drill": [
+        "1"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ]
+    },
+    {
+      "reference": "J8",
+      "pin": "16",
+      "local": [
+        0.0,
+        38.1
+      ],
+      "xy": [
+        38.9,
+        40.6
+      ],
+      "net": "/H_GPIO15",
+      "uuid": "aaa9561d-ad71-4d56-8fd4-f988c46a673d",
+      "kind": "thru_hole",
+      "size": [
+        1.7,
+        1.7
+      ],
+      "drill": [
+        "1"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ]
+    },
+    {
+      "reference": "J8",
+      "pin": "17",
+      "local": [
+        0.0,
+        40.64
+      ],
+      "xy": [
+        38.9,
+        43.14
+      ],
+      "net": "unconnected-(J8-SD1-Pad17)",
+      "uuid": "e200d4df-975c-422b-b9ce-14996102ea1c",
+      "kind": "thru_hole",
+      "size": [
+        1.7,
+        1.7
+      ],
+      "drill": [
+        "1"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ]
+    },
+    {
+      "reference": "J8",
+      "pin": "18",
+      "local": [
+        0.0,
+        43.18
+      ],
+      "xy": [
+        38.9,
+        45.68
+      ],
+      "net": "unconnected-(J8-SD0-Pad18)",
+      "uuid": "faff99a2-2fc0-4a35-921f-ddcc86095796",
+      "kind": "thru_hole",
+      "size": [
+        1.7,
+        1.7
+      ],
+      "drill": [
+        "1"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ]
+    },
+    {
+      "reference": "J8",
+      "pin": "19",
+      "local": [
+        0.0,
+        45.72
+      ],
+      "xy": [
+        38.9,
+        48.22
+      ],
+      "net": "unconnected-(J8-CLK-Pad19)",
+      "uuid": "a0bd6af5-5aee-4561-a7e9-de3e03aa1c4c",
+      "kind": "thru_hole",
+      "size": [
+        1.7,
+        1.7
+      ],
+      "drill": [
+        "1"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ]
+    },
+    {
+      "reference": "J1",
+      "pin": "1",
+      "local": [
+        -2.54,
+        0.635
+      ],
+      "xy": [
+        3.2649999999999997,
+        5.659999999999999
+      ],
+      "net": "+3V3",
+      "uuid": "458d4bd4-62dd-4aaa-9409-8c2920db3720",
+      "kind": "thru_hole",
+      "size": [
+        1.05,
+        1.05
+      ],
+      "drill": [
+        "0.74"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ]
+    },
+    {
+      "reference": "J1",
+      "pin": "2",
+      "local": [
+        -2.54,
+        -0.635
+      ],
+      "xy": [
+        4.535,
+        5.659999999999999
+      ],
+      "net": "+5V",
+      "uuid": "6eb42f50-189b-43c6-a446-af5f32148f1b",
+      "kind": "thru_hole",
+      "size": [
+        1.05,
+        1.05
+      ],
+      "drill": [
+        "0.74"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ]
+    },
+    {
+      "reference": "J1",
+      "pin": "3",
+      "local": [
+        -1.27,
+        0.635
+      ],
+      "xy": [
+        3.2649999999999997,
+        6.93
+      ],
+      "net": "/A_P3",
+      "uuid": "198a9eb8-e17b-4c49-9efb-d99e16df654c",
+      "kind": "thru_hole",
+      "size": [
+        1.05,
+        1.05
+      ],
+      "drill": [
+        "0.74"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ]
+    },
+    {
+      "reference": "J1",
+      "pin": "4",
+      "local": [
+        -1.27,
+        -0.635
+      ],
+      "xy": [
+        4.535,
+        6.93
+      ],
+      "net": "/A_P4",
+      "uuid": "bec2b4ab-7bae-4aa9-b6de-39944a54f226",
+      "kind": "thru_hole",
+      "size": [
+        1.05,
+        1.05
+      ],
+      "drill": [
+        "0.74"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ]
+    },
+    {
+      "reference": "J1",
+      "pin": "5",
+      "local": [
+        0.0,
+        0.635
+      ],
+      "xy": [
+        3.2649999999999997,
+        8.2
+      ],
+      "net": "/A_P5",
+      "uuid": "d9fe5832-a1f4-47c0-a2a9-17504397d7a7",
+      "kind": "thru_hole",
+      "size": [
+        1.05,
+        1.05
+      ],
+      "drill": [
+        "0.74"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ]
+    },
+    {
+      "reference": "J1",
+      "pin": "6",
+      "local": [
+        0.0,
+        -0.635
+      ],
+      "xy": [
+        4.535,
+        8.2
+      ],
+      "net": "/A_P6",
+      "uuid": "8fda4e88-d9ad-4a21-81d9-ef702e4472cf",
+      "kind": "thru_hole",
+      "size": [
+        1.05,
+        1.05
+      ],
+      "drill": [
+        "0.74"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ]
+    },
+    {
+      "reference": "J1",
+      "pin": "7",
+      "local": [
+        1.27,
+        0.635
+      ],
+      "xy": [
+        3.2649999999999997,
+        9.469999999999999
+      ],
+      "net": "unconnected-(J1-P7-Pad7)",
+      "uuid": "f5cf2fcc-7d12-4b7c-b6f6-e7d89b46e567",
+      "kind": "thru_hole",
+      "size": [
+        1.05,
+        1.05
+      ],
+      "drill": [
+        "0.74"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ]
+    },
+    {
+      "reference": "J1",
+      "pin": "8",
+      "local": [
+        1.27,
+        -0.635
+      ],
+      "xy": [
+        4.535,
+        9.469999999999999
+      ],
+      "net": "unconnected-(J1-P8-Pad8)",
+      "uuid": "8cfb9e7c-5667-4a8b-a53c-844c83c08226",
+      "kind": "thru_hole",
+      "size": [
+        1.05,
+        1.05
+      ],
+      "drill": [
+        "0.74"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ]
+    },
+    {
+      "reference": "J1",
+      "pin": "9",
+      "local": [
+        2.54,
+        0.635
+      ],
+      "xy": [
+        3.2649999999999997,
+        10.739999999999998
+      ],
+      "net": "unconnected-(J1-P9-Pad9)",
+      "uuid": "8f666269-f492-48c8-86cd-b0ae14882c67",
+      "kind": "thru_hole",
+      "size": [
+        1.05,
+        1.05
+      ],
+      "drill": [
+        "0.74"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ]
+    },
+    {
+      "reference": "J1",
+      "pin": "10",
+      "local": [
+        2.54,
+        -0.635
+      ],
+      "xy": [
+        4.535,
+        10.739999999999998
+      ],
+      "net": "GND",
+      "uuid": "63601738-b540-46ef-b718-41dff90e224b",
+      "kind": "thru_hole",
+      "size": [
+        1.05,
+        1.05
+      ],
+      "drill": [
+        "0.74"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ]
+    },
+    {
+      "reference": "J5",
+      "pin": "1",
+      "local": [
+        -2.54,
+        0.635
+      ],
+      "xy": [
+        3.2649999999999997,
+        22.76
+      ],
+      "net": "+3V3",
+      "uuid": "b117c889-4335-4c94-8516-a08b741f3913",
+      "kind": "thru_hole",
+      "size": [
+        1.05,
+        1.05
+      ],
+      "drill": [
+        "0.74"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ]
+    },
+    {
+      "reference": "J5",
+      "pin": "2",
+      "local": [
+        -2.54,
+        -0.635
+      ],
+      "xy": [
+        4.535,
+        22.76
+      ],
+      "net": "+5V",
+      "uuid": "b3a400d7-3c48-4c17-9a0e-70fddf00937b",
+      "kind": "thru_hole",
+      "size": [
+        1.05,
+        1.05
+      ],
+      "drill": [
+        "0.74"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ]
+    },
+    {
+      "reference": "J5",
+      "pin": "3",
+      "local": [
+        -1.27,
+        0.635
+      ],
+      "xy": [
+        3.2649999999999997,
+        24.03
+      ],
+      "net": "/P_P3",
+      "uuid": "0058ffbd-24dd-43ed-8937-c569c2c47d52",
+      "kind": "thru_hole",
+      "size": [
+        1.05,
+        1.05
+      ],
+      "drill": [
+        "0.74"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ]
+    },
+    {
+      "reference": "J5",
+      "pin": "4",
+      "local": [
+        -1.27,
+        -0.635
+      ],
+      "xy": [
+        4.535,
+        24.03
+      ],
+      "net": "unconnected-(J5-P4-Pad4)",
+      "uuid": "009bcf3a-94a2-45a5-8393-c6767f81e1a0",
+      "kind": "thru_hole",
+      "size": [
+        1.05,
+        1.05
+      ],
+      "drill": [
+        "0.74"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ]
+    },
+    {
+      "reference": "J5",
+      "pin": "5",
+      "local": [
+        0.0,
+        0.635
+      ],
+      "xy": [
+        3.2649999999999997,
+        25.3
+      ],
+      "net": "unconnected-(J5-P5-Pad5)",
+      "uuid": "7fecd665-67f0-4ba0-95bc-68ced0c14fb4",
+      "kind": "thru_hole",
+      "size": [
+        1.05,
+        1.05
+      ],
+      "drill": [
+        "0.74"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ]
+    },
+    {
+      "reference": "J5",
+      "pin": "6",
+      "local": [
+        0.0,
+        -0.635
+      ],
+      "xy": [
+        4.535,
+        25.3
+      ],
+      "net": "/P_P6",
+      "uuid": "3e3922a8-a1d4-4723-8e12-1fc0bac12452",
+      "kind": "thru_hole",
+      "size": [
+        1.05,
+        1.05
+      ],
+      "drill": [
+        "0.74"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ]
+    },
+    {
+      "reference": "J5",
+      "pin": "7",
+      "local": [
+        1.27,
+        0.635
+      ],
+      "xy": [
+        3.2649999999999997,
+        26.57
+      ],
+      "net": "/P_P7",
+      "uuid": "acc3b5cc-279c-4631-9464-cff9d4c663b6",
+      "kind": "thru_hole",
+      "size": [
+        1.05,
+        1.05
+      ],
+      "drill": [
+        "0.74"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ]
+    },
+    {
+      "reference": "J5",
+      "pin": "8",
+      "local": [
+        1.27,
+        -0.635
+      ],
+      "xy": [
+        4.535,
+        26.57
+      ],
+      "net": "/P_P8",
+      "uuid": "96d61fae-49be-49ae-9500-f61338961682",
+      "kind": "thru_hole",
+      "size": [
+        1.05,
+        1.05
+      ],
+      "drill": [
+        "0.74"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ]
+    },
+    {
+      "reference": "J5",
+      "pin": "9",
+      "local": [
+        2.54,
+        0.635
+      ],
+      "xy": [
+        3.2649999999999997,
+        27.84
+      ],
+      "net": "/P_P9",
+      "uuid": "ce16077f-863f-477e-81b9-247f1e7d5a24",
+      "kind": "thru_hole",
+      "size": [
+        1.05,
+        1.05
+      ],
+      "drill": [
+        "0.74"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ]
+    },
+    {
+      "reference": "J5",
+      "pin": "10",
+      "local": [
+        2.54,
+        -0.635
+      ],
+      "xy": [
+        4.535,
+        27.84
+      ],
+      "net": "GND",
+      "uuid": "ddb234e5-1d2f-446a-9f8b-ea862ae5a8f1",
+      "kind": "thru_hole",
+      "size": [
+        1.05,
+        1.05
+      ],
+      "drill": [
+        "0.74"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ]
+    },
+    {
+      "reference": "J2",
+      "pin": "1",
+      "local": [
+        -2.54,
+        0.635
+      ],
+      "xy": [
+        3.2649999999999997,
+        39.86
+      ],
+      "net": "+3V3",
+      "uuid": "8b0c7934-331b-4b6c-b7ef-ab3b5c01bb70",
+      "kind": "thru_hole",
+      "size": [
+        1.05,
+        1.05
+      ],
+      "drill": [
+        "0.74"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ]
+    },
+    {
+      "reference": "J2",
+      "pin": "2",
+      "local": [
+        -2.54,
+        -0.635
+      ],
+      "xy": [
+        4.535,
+        39.86
+      ],
+      "net": "+5V",
+      "uuid": "ee526577-1562-4c75-af62-f03131b92a51",
+      "kind": "thru_hole",
+      "size": [
+        1.05,
+        1.05
+      ],
+      "drill": [
+        "0.74"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ]
+    },
+    {
+      "reference": "J2",
+      "pin": "3",
+      "local": [
+        -1.27,
+        0.635
+      ],
+      "xy": [
+        3.2649999999999997,
+        41.129999999999995
+      ],
+      "net": "/S_P3",
+      "uuid": "6dfb30a1-56ce-4d2e-88ae-dda51d95d308",
+      "kind": "thru_hole",
+      "size": [
+        1.05,
+        1.05
+      ],
+      "drill": [
+        "0.74"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ]
+    },
+    {
+      "reference": "J2",
+      "pin": "4",
+      "local": [
+        -1.27,
+        -0.635
+      ],
+      "xy": [
+        4.535,
+        41.129999999999995
+      ],
+      "net": "/S_P4",
+      "uuid": "dbf403f8-36b1-4388-a4e5-c089294ea96a",
+      "kind": "thru_hole",
+      "size": [
+        1.05,
+        1.05
+      ],
+      "drill": [
+        "0.74"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ]
+    },
+    {
+      "reference": "J2",
+      "pin": "5",
+      "local": [
+        0.0,
+        0.635
+      ],
+      "xy": [
+        3.2649999999999997,
+        42.4
+      ],
+      "net": "/S_P5",
+      "uuid": "caa97030-4730-4616-b883-01aa020cf946",
+      "kind": "thru_hole",
+      "size": [
+        1.05,
+        1.05
+      ],
+      "drill": [
+        "0.74"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ]
+    },
+    {
+      "reference": "J2",
+      "pin": "6",
+      "local": [
+        0.0,
+        -0.635
+      ],
+      "xy": [
+        4.535,
+        42.4
+      ],
+      "net": "/S_CS",
+      "uuid": "c5bba030-5997-4b98-b235-a23b6d105603",
+      "kind": "thru_hole",
+      "size": [
+        1.05,
+        1.05
+      ],
+      "drill": [
+        "0.74"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ]
+    },
+    {
+      "reference": "J2",
+      "pin": "7",
+      "local": [
+        1.27,
+        0.635
+      ],
+      "xy": [
+        3.2649999999999997,
+        43.67
+      ],
+      "net": "/S_MOSI",
+      "uuid": "34a83db1-f467-4c2e-8645-6914ac248f6e",
+      "kind": "thru_hole",
+      "size": [
+        1.05,
+        1.05
+      ],
+      "drill": [
+        "0.74"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ]
+    },
+    {
+      "reference": "J2",
+      "pin": "8",
+      "local": [
+        1.27,
+        -0.635
+      ],
+      "xy": [
+        4.535,
+        43.67
+      ],
+      "net": "/S_MISO",
+      "uuid": "74a7f40b-f2b1-4139-b348-f13fbec35831",
+      "kind": "thru_hole",
+      "size": [
+        1.05,
+        1.05
+      ],
+      "drill": [
+        "0.74"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ]
+    },
+    {
+      "reference": "J2",
+      "pin": "9",
+      "local": [
+        2.54,
+        0.635
+      ],
+      "xy": [
+        3.2649999999999997,
+        44.94
+      ],
+      "net": "/S_SCK",
+      "uuid": "69803e9c-507e-46be-888b-92a702c5ef58",
+      "kind": "thru_hole",
+      "size": [
+        1.05,
+        1.05
+      ],
+      "drill": [
+        "0.74"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ]
+    },
+    {
+      "reference": "J2",
+      "pin": "10",
+      "local": [
+        2.54,
+        -0.635
+      ],
+      "xy": [
+        4.535,
+        44.94
+      ],
+      "net": "GND",
+      "uuid": "0c5b3637-256e-4e34-9f4d-ee022a64a8b3",
+      "kind": "thru_hole",
+      "size": [
+        1.05,
+        1.05
+      ],
+      "drill": [
+        "0.74"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ]
+    },
+    {
+      "reference": "J4",
+      "pin": "1",
+      "local": [
+        -2.54,
+        0.635
+      ],
+      "xy": [
+        47.865,
+        8.96
+      ],
+      "net": "+3V3",
+      "uuid": "28969f7d-445d-4ed6-9807-6c9b4bc46b46",
+      "kind": "thru_hole",
+      "size": [
+        1.05,
+        1.05
+      ],
+      "drill": [
+        "0.74"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ]
+    },
+    {
+      "reference": "J4",
+      "pin": "2",
+      "local": [
+        -2.54,
+        -0.635
+      ],
+      "xy": [
+        49.135,
+        8.96
+      ],
+      "net": "+5V",
+      "uuid": "b8696f46-a916-47f2-be6b-7ba2384a16fd",
+      "kind": "thru_hole",
+      "size": [
+        1.05,
+        1.05
+      ],
+      "drill": [
+        "0.74"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ]
+    },
+    {
+      "reference": "J4",
+      "pin": "3",
+      "local": [
+        -1.27,
+        0.635
+      ],
+      "xy": [
+        47.865,
+        10.23
+      ],
+      "net": "/I_P3",
+      "uuid": "7d5941f6-d3bb-4236-9f66-d03dc1c81e07",
+      "kind": "thru_hole",
+      "size": [
+        1.05,
+        1.05
+      ],
+      "drill": [
+        "0.74"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ]
+    },
+    {
+      "reference": "J4",
+      "pin": "4",
+      "local": [
+        -1.27,
+        -0.635
+      ],
+      "xy": [
+        49.135,
+        10.23
+      ],
+      "net": "unconnected-(J4-P4-Pad4)",
+      "uuid": "66ed8e66-b47f-4aef-a288-e6200851f8bf",
+      "kind": "thru_hole",
+      "size": [
+        1.05,
+        1.05
+      ],
+      "drill": [
+        "0.74"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ]
+    },
+    {
+      "reference": "J4",
+      "pin": "5",
+      "local": [
+        0.0,
+        0.635
+      ],
+      "xy": [
+        47.865,
+        11.5
+      ],
+      "net": "unconnected-(J4-P5-Pad5)",
+      "uuid": "e0e1a3c7-0106-4dfd-83fa-947ac5ab2fe8",
+      "kind": "thru_hole",
+      "size": [
+        1.05,
+        1.05
+      ],
+      "drill": [
+        "0.74"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ]
+    },
+    {
+      "reference": "J4",
+      "pin": "6",
+      "local": [
+        0.0,
+        -0.635
+      ],
+      "xy": [
+        49.135,
+        11.5
+      ],
+      "net": "unconnected-(J4-P6-Pad6)",
+      "uuid": "517bbc6b-0861-4b01-bd1e-6a642b978147",
+      "kind": "thru_hole",
+      "size": [
+        1.05,
+        1.05
+      ],
+      "drill": [
+        "0.74"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ]
+    },
+    {
+      "reference": "J4",
+      "pin": "7",
+      "local": [
+        1.27,
+        0.635
+      ],
+      "xy": [
+        47.865,
+        12.77
+      ],
+      "net": "unconnected-(J4-P7-Pad7)",
+      "uuid": "81a23b45-633d-4345-a8f2-d98ee8d37bcb",
+      "kind": "thru_hole",
+      "size": [
+        1.05,
+        1.05
+      ],
+      "drill": [
+        "0.74"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ]
+    },
+    {
+      "reference": "J4",
+      "pin": "8",
+      "local": [
+        1.27,
+        -0.635
+      ],
+      "xy": [
+        49.135,
+        12.77
+      ],
+      "net": "/I2C_SDA",
+      "uuid": "5b556be7-a0c5-4018-a615-c19cb2d64861",
+      "kind": "thru_hole",
+      "size": [
+        1.05,
+        1.05
+      ],
+      "drill": [
+        "0.74"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ]
+    },
+    {
+      "reference": "J4",
+      "pin": "9",
+      "local": [
+        2.54,
+        0.635
+      ],
+      "xy": [
+        47.865,
+        14.04
+      ],
+      "net": "/I2C_SCL",
+      "uuid": "52d72b25-01ed-449d-b68e-cd1cc19ff38b",
+      "kind": "thru_hole",
+      "size": [
+        1.05,
+        1.05
+      ],
+      "drill": [
+        "0.74"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ]
+    },
+    {
+      "reference": "J4",
+      "pin": "10",
+      "local": [
+        2.54,
+        -0.635
+      ],
+      "xy": [
+        49.135,
+        14.04
+      ],
+      "net": "GND",
+      "uuid": "ccdfa080-facd-4455-a099-95cc978656e3",
+      "kind": "thru_hole",
+      "size": [
+        1.05,
+        1.05
+      ],
+      "drill": [
+        "0.74"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ]
+    },
+    {
+      "reference": "J3",
+      "pin": "1",
+      "local": [
+        -2.54,
+        0.635
+      ],
+      "xy": [
+        47.865,
+        24.26
+      ],
+      "net": "+3V3",
+      "uuid": "ccf685ef-25c5-4c59-a24f-a2c5c7fa900a",
+      "kind": "thru_hole",
+      "size": [
+        1.05,
+        1.05
+      ],
+      "drill": [
+        "0.74"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ]
+    },
+    {
+      "reference": "J3",
+      "pin": "2",
+      "local": [
+        -2.54,
+        -0.635
+      ],
+      "xy": [
+        49.135,
+        24.26
+      ],
+      "net": "+5V",
+      "uuid": "8720f5f6-0b80-4460-8f06-fd5b6d54204a",
+      "kind": "thru_hole",
+      "size": [
+        1.05,
+        1.05
+      ],
+      "drill": [
+        "0.74"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ]
+    },
+    {
+      "reference": "J3",
+      "pin": "3",
+      "local": [
+        -1.27,
+        0.635
+      ],
+      "xy": [
+        47.865,
+        25.53
+      ],
+      "net": "/U_P3",
+      "uuid": "ad5e59af-bac8-499d-a4f5-380950c95e61",
+      "kind": "thru_hole",
+      "size": [
+        1.05,
+        1.05
+      ],
+      "drill": [
+        "0.74"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ]
+    },
+    {
+      "reference": "J3",
+      "pin": "4",
+      "local": [
+        -1.27,
+        -0.635
+      ],
+      "xy": [
+        49.135,
+        25.53
+      ],
+      "net": "/U_TX",
+      "uuid": "fc106537-1275-4d36-a7e0-9c8d091ee8ae",
+      "kind": "thru_hole",
+      "size": [
+        1.05,
+        1.05
+      ],
+      "drill": [
+        "0.74"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ]
+    },
+    {
+      "reference": "J3",
+      "pin": "5",
+      "local": [
+        0.0,
+        0.635
+      ],
+      "xy": [
+        47.865,
+        26.8
+      ],
+      "net": "/U_RX",
+      "uuid": "b2432251-11cd-4647-87d9-a76101e8838e",
+      "kind": "thru_hole",
+      "size": [
+        1.05,
+        1.05
+      ],
+      "drill": [
+        "0.74"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ]
+    },
+    {
+      "reference": "J3",
+      "pin": "6",
+      "local": [
+        0.0,
+        -0.635
+      ],
+      "xy": [
+        49.135,
+        26.8
+      ],
+      "net": "unconnected-(J3-P6-Pad6)",
+      "uuid": "1814c688-e636-48fb-a5ad-fa72ddd0a56f",
+      "kind": "thru_hole",
+      "size": [
+        1.05,
+        1.05
+      ],
+      "drill": [
+        "0.74"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ]
+    },
+    {
+      "reference": "J3",
+      "pin": "7",
+      "local": [
+        1.27,
+        0.635
+      ],
+      "xy": [
+        47.865,
+        28.07
+      ],
+      "net": "unconnected-(J3-P7-Pad7)",
+      "uuid": "39cc8840-299f-442a-947a-575b0e06b648",
+      "kind": "thru_hole",
+      "size": [
+        1.05,
+        1.05
+      ],
+      "drill": [
+        "0.74"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ]
+    },
+    {
+      "reference": "J3",
+      "pin": "8",
+      "local": [
+        1.27,
+        -0.635
+      ],
+      "xy": [
+        49.135,
+        28.07
+      ],
+      "net": "unconnected-(J3-P8-Pad8)",
+      "uuid": "1f3236dc-07f9-4ed8-bcf5-9197ae89f488",
+      "kind": "thru_hole",
+      "size": [
+        1.05,
+        1.05
+      ],
+      "drill": [
+        "0.74"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ]
+    },
+    {
+      "reference": "J3",
+      "pin": "9",
+      "local": [
+        2.54,
+        0.635
+      ],
+      "xy": [
+        47.865,
+        29.34
+      ],
+      "net": "unconnected-(J3-P9-Pad9)",
+      "uuid": "6d387c7a-6fc7-4c67-90ab-aa54c9a54471",
+      "kind": "thru_hole",
+      "size": [
+        1.05,
+        1.05
+      ],
+      "drill": [
+        "0.74"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ]
+    },
+    {
+      "reference": "J3",
+      "pin": "10",
+      "local": [
+        2.54,
+        -0.635
+      ],
+      "xy": [
+        49.135,
+        29.34
+      ],
+      "net": "GND",
+      "uuid": "1e52ca3b-acf2-4219-8040-7f4fdad67a49",
+      "kind": "thru_hole",
+      "size": [
+        1.05,
+        1.05
+      ],
+      "drill": [
+        "0.74"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ]
+    },
+    {
+      "reference": "J6",
+      "pin": "1",
+      "local": [
+        -3.81,
+        -4.5
+      ],
+      "xy": [
+        50.0,
+        39.69
+      ],
+      "net": "GND",
+      "uuid": "ab8d092e-cc83-4a19-8690-3578f989c3e1",
+      "kind": "thru_hole",
+      "size": [
+        1.7,
+        1.7
+      ],
+      "drill": [
+        "1"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ]
+    },
+    {
+      "reference": "J6",
+      "pin": "1",
+      "local": [
+        -1.5,
+        -2.0
+      ],
+      "xy": [
+        47.5,
+        42.0
+      ],
+      "net": "GND",
+      "uuid": "ac06d5ce-8cb1-4d6b-86f5-61efff16cbe3",
+      "kind": "smd",
+      "size": [
+        0.6,
+        1.55
+      ],
+      "drill": [],
+      "layers": [
+        "F.Cu",
+        "F.Mask",
+        "F.Paste"
+      ]
+    },
+    {
+      "reference": "J6",
+      "pin": "2",
+      "local": [
+        -1.27,
+        -4.5
+      ],
+      "xy": [
+        50.0,
+        42.23
+      ],
+      "net": "+3V3",
+      "uuid": "7e41012a-c326-410c-a683-e6f631039ea0",
+      "kind": "thru_hole",
+      "size": [
+        1.7,
+        1.7
+      ],
+      "drill": [
+        "1"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ]
+    },
+    {
+      "reference": "J6",
+      "pin": "2",
+      "local": [
+        -0.5,
+        -2.0
+      ],
+      "xy": [
+        47.5,
+        43.0
+      ],
+      "net": "+3V3",
+      "uuid": "19b67c08-0a1e-452f-8fcb-d2fd9db67fb7",
+      "kind": "smd",
+      "size": [
+        0.6,
+        1.55
+      ],
+      "drill": [],
+      "layers": [
+        "F.Cu",
+        "F.Mask",
+        "F.Paste"
+      ]
+    },
+    {
+      "reference": "J6",
+      "pin": "3",
+      "local": [
+        0.5,
+        -2.0
+      ],
+      "xy": [
+        47.5,
+        44.0
+      ],
+      "net": "/I2C_SDA",
+      "uuid": "a819f59e-639a-488b-8d24-d92247052296",
+      "kind": "smd",
+      "size": [
+        0.6,
+        1.55
+      ],
+      "drill": [],
+      "layers": [
+        "F.Cu",
+        "F.Mask",
+        "F.Paste"
+      ]
+    },
+    {
+      "reference": "J6",
+      "pin": "3",
+      "local": [
+        1.27,
+        -4.5
+      ],
+      "xy": [
+        50.0,
+        44.77
+      ],
+      "net": "/I2C_SDA",
+      "uuid": "329b1f0b-9fa7-44d4-8d08-cd814ebdb1d1",
+      "kind": "thru_hole",
+      "size": [
+        1.7,
+        1.7
+      ],
+      "drill": [
+        "1"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ]
+    },
+    {
+      "reference": "J6",
+      "pin": "4",
+      "local": [
+        1.5,
+        -2.0
+      ],
+      "xy": [
+        47.5,
+        45.0
+      ],
+      "net": "/I2C_SCL",
+      "uuid": "2a99acc3-82c7-4dbf-ac79-e6712f60cd6b",
+      "kind": "smd",
+      "size": [
+        0.6,
+        1.55
+      ],
+      "drill": [],
+      "layers": [
+        "F.Cu",
+        "F.Mask",
+        "F.Paste"
+      ]
+    },
+    {
+      "reference": "J6",
+      "pin": "4",
+      "local": [
+        3.81,
+        -4.500001
+      ],
+      "xy": [
+        50.000001,
+        47.31
+      ],
+      "net": "/I2C_SCL",
+      "uuid": "e57599a1-8a0c-4240-bf34-184727586e28",
+      "kind": "thru_hole",
+      "size": [
+        1.7,
+        1.7
+      ],
+      "drill": [
+        "1"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ]
+    },
+    {
+      "reference": "J6",
+      "pin": "MP",
+      "local": [
+        -2.8,
+        1.875
+      ],
+      "xy": [
+        43.625,
+        40.7
+      ],
+      "net": "GND",
+      "uuid": "26518ea5-9fb3-4027-b683-d9be62771728",
+      "kind": "smd",
+      "size": [
+        1.2,
+        1.8
+      ],
+      "drill": [],
+      "layers": [
+        "F.Cu",
+        "F.Mask",
+        "F.Paste"
+      ]
+    },
+    {
+      "reference": "J6",
+      "pin": "MP",
+      "local": [
+        2.8,
+        1.875
+      ],
+      "xy": [
+        43.625,
+        46.3
+      ],
+      "net": "GND",
+      "uuid": "2f17b897-f192-4159-b55f-2c6290629cea",
+      "kind": "smd",
+      "size": [
+        1.2,
+        1.8
+      ],
+      "drill": [],
+      "layers": [
+        "F.Cu",
+        "F.Mask",
+        "F.Paste"
+      ]
+    }
+  ],
+  "ribbon_routes": [
+    {
+      "id": "ribbon-1",
+      "from": "J5.1",
+      "to": "Buzzer J1.1",
+      "source_pad_uuid": "b117c889-4335-4c94-8516-a08b741f3913",
+      "target_pad_uuid": "b4953411-4cea-4b9c-b6cd-fb74f77b933f",
+      "points": [
+        [
+          121.12,
+          402.08000000000004
+        ],
+        [
+          17,
+          402.08000000000004
+        ],
+        [
+          17,
+          732
+        ],
+        [
+          1035,
+          732
+        ],
+        [
+          1035,
+          329.715
+        ],
+        [
+          719.14,
+          329.715
+        ]
+      ],
+      "source_net": "+3V3",
+      "target_net": "+3V3"
+    },
+    {
+      "id": "ribbon-2",
+      "from": "J5.2",
+      "to": "Buzzer J1.2",
+      "source_pad_uuid": "b3a400d7-3c48-4c17-9a0e-70fddf00937b",
+      "target_pad_uuid": "1e236a52-e0b8-4467-8493-ca0f421fda14",
+      "points": [
+        [
+          131.28,
+          402.08000000000004
+        ],
+        [
+          22,
+          402.08000000000004
+        ],
+        [
+          22,
+          744
+        ],
+        [
+          1040,
+          744
+        ],
+        [
+          1040,
+          318.285
+        ],
+        [
+          719.14,
+          318.285
+        ]
+      ],
+      "source_net": "+5V",
+      "target_net": "+5V"
+    },
+    {
+      "id": "ribbon-3",
+      "from": "J5.3",
+      "to": "Buzzer J1.3",
+      "source_pad_uuid": "0058ffbd-24dd-43ed-8937-c569c2c47d52",
+      "target_pad_uuid": "a698b352-d5c5-4646-b672-04de7920a10e",
+      "points": [
+        [
+          121.12,
+          412.24
+        ],
+        [
+          27,
+          412.24
+        ],
+        [
+          27,
+          756
+        ],
+        [
+          1045,
+          756
+        ],
+        [
+          1045,
+          329.715
+        ],
+        [
+          730.57,
+          329.715
+        ]
+      ],
+      "source_net": "/P_P3",
+      "target_net": "/Y_P3"
+    },
+    {
+      "id": "ribbon-4",
+      "from": "J5.4",
+      "to": "Buzzer J1.4",
+      "source_pad_uuid": "009bcf3a-94a2-45a5-8393-c6767f81e1a0",
+      "target_pad_uuid": "c109b683-f30c-49b3-865b-1457361281b2",
+      "points": [
+        [
+          131.28,
+          412.24
+        ],
+        [
+          32,
+          412.24
+        ],
+        [
+          32,
+          768
+        ],
+        [
+          1050,
+          768
+        ],
+        [
+          1050,
+          318.285
+        ],
+        [
+          730.57,
+          318.285
+        ]
+      ],
+      "source_net": "unconnected-(J5-P4-Pad4)",
+      "target_net": "/G_P4"
+    },
+    {
+      "id": "ribbon-5",
+      "from": "J5.5",
+      "to": "Buzzer J1.5",
+      "source_pad_uuid": "7fecd665-67f0-4ba0-95bc-68ced0c14fb4",
+      "target_pad_uuid": "49f955a3-fd34-4044-8061-3cf5c92856dd",
+      "points": [
+        [
+          121.12,
+          422.4
+        ],
+        [
+          37,
+          422.4
+        ],
+        [
+          37,
+          780
+        ],
+        [
+          1055,
+          780
+        ],
+        [
+          1055,
+          329.715
+        ],
+        [
+          742.0,
+          329.715
+        ]
+      ],
+      "source_net": "unconnected-(J5-P5-Pad5)",
+      "target_net": "/G_P5"
+    },
+    {
+      "id": "ribbon-6",
+      "from": "J5.6",
+      "to": "Buzzer J1.6",
+      "source_pad_uuid": "3e3922a8-a1d4-4723-8e12-1fc0bac12452",
+      "target_pad_uuid": "741fe195-bfa3-4c10-a627-07988992e3b9",
+      "points": [
+        [
+          131.28,
+          422.4
+        ],
+        [
+          42,
+          422.4
+        ],
+        [
+          42,
+          792
+        ],
+        [
+          1060,
+          792
+        ],
+        [
+          1060,
+          318.285
+        ],
+        [
+          742.0,
+          318.285
+        ]
+      ],
+      "source_net": "/P_P6",
+      "target_net": "/G_P6"
+    },
+    {
+      "id": "ribbon-7",
+      "from": "J5.7",
+      "to": "Buzzer J1.7",
+      "source_pad_uuid": "acc3b5cc-279c-4631-9464-cff9d4c663b6",
+      "target_pad_uuid": "6c2d19fe-779f-4289-be64-2aaaeb7aff54",
+      "points": [
+        [
+          121.12,
+          432.56
+        ],
+        [
+          47,
+          432.56
+        ],
+        [
+          47,
+          804
+        ],
+        [
+          1065,
+          804
+        ],
+        [
+          1065,
+          329.715
+        ],
+        [
+          753.43,
+          329.715
+        ]
+      ],
+      "source_net": "/P_P7",
+      "target_net": "/G_P7"
+    },
+    {
+      "id": "ribbon-8",
+      "from": "J5.8",
+      "to": "Buzzer J1.8",
+      "source_pad_uuid": "96d61fae-49be-49ae-9500-f61338961682",
+      "target_pad_uuid": "69f25c60-85cb-4ada-b8ca-eed3910eaaa8",
+      "points": [
+        [
+          131.28,
+          432.56
+        ],
+        [
+          52,
+          432.56
+        ],
+        [
+          52,
+          816
+        ],
+        [
+          1070,
+          816
+        ],
+        [
+          1070,
+          318.285
+        ],
+        [
+          753.43,
+          318.285
+        ]
+      ],
+      "source_net": "/P_P8",
+      "target_net": "/G_P8"
+    },
+    {
+      "id": "ribbon-9",
+      "from": "J5.9",
+      "to": "Buzzer J1.9",
+      "source_pad_uuid": "ce16077f-863f-477e-81b9-247f1e7d5a24",
+      "target_pad_uuid": "4cb05b4c-489b-4bf4-bf22-832d3f41ab5b",
+      "points": [
+        [
+          121.12,
+          442.72
+        ],
+        [
+          57,
+          442.72
+        ],
+        [
+          57,
+          828
+        ],
+        [
+          1075,
+          828
+        ],
+        [
+          1075,
+          329.715
+        ],
+        [
+          764.86,
+          329.715
+        ]
+      ],
+      "source_net": "/P_P9",
+      "target_net": "/G_P9"
+    },
+    {
+      "id": "ribbon-10",
+      "from": "J5.10",
+      "to": "Buzzer J1.10",
+      "source_pad_uuid": "ddb234e5-1d2f-446a-9f8b-ea862ae5a8f1",
+      "target_pad_uuid": "b27f2279-a7dd-495a-85fb-87a54ee05266",
+      "points": [
+        [
+          131.28,
+          442.72
+        ],
+        [
+          62,
+          442.72
+        ],
+        [
+          62,
+          840
+        ],
+        [
+          1080,
+          840
+        ],
+        [
+          1080,
+          318.285
+        ],
+        [
+          764.86,
+          318.285
+        ]
+      ],
+      "source_net": "GND",
+      "target_net": "GND"
+    }
+  ],
+  "gpio26_series_resistor": "R10",
+  "contact_atlas": {
+    "logical_connector_coverage": 92,
+    "physical_connector_pad_coverage": 98,
+    "control_and_test_contact_coverage": 18,
+    "sheets": [
+      {
+        "file": "contact-atlas-j1-01.svg",
+        "owner": "J1",
+        "contacts": [
+          "J1.1",
+          "J1.2",
+          "J1.3",
+          "J1.4",
+          "J1.5"
+        ]
+      },
+      {
+        "file": "contact-atlas-j1-02.svg",
+        "owner": "J1",
+        "contacts": [
+          "J1.6",
+          "J1.7",
+          "J1.8",
+          "J1.9",
+          "J1.10"
+        ]
+      },
+      {
+        "file": "contact-atlas-j2-01.svg",
+        "owner": "J2",
+        "contacts": [
+          "J2.1",
+          "J2.2",
+          "J2.3",
+          "J2.4",
+          "J2.5"
+        ]
+      },
+      {
+        "file": "contact-atlas-j2-02.svg",
+        "owner": "J2",
+        "contacts": [
+          "J2.6",
+          "J2.7",
+          "J2.8",
+          "J2.9",
+          "J2.10"
+        ]
+      },
+      {
+        "file": "contact-atlas-j3-01.svg",
+        "owner": "J3",
+        "contacts": [
+          "J3.1",
+          "J3.2",
+          "J3.3",
+          "J3.4",
+          "J3.5"
+        ]
+      },
+      {
+        "file": "contact-atlas-j3-02.svg",
+        "owner": "J3",
+        "contacts": [
+          "J3.6",
+          "J3.7",
+          "J3.8",
+          "J3.9",
+          "J3.10"
+        ]
+      },
+      {
+        "file": "contact-atlas-j4-01.svg",
+        "owner": "J4",
+        "contacts": [
+          "J4.1",
+          "J4.2",
+          "J4.3",
+          "J4.4",
+          "J4.5"
+        ]
+      },
+      {
+        "file": "contact-atlas-j4-02.svg",
+        "owner": "J4",
+        "contacts": [
+          "J4.6",
+          "J4.7",
+          "J4.8",
+          "J4.9",
+          "J4.10"
+        ]
+      },
+      {
+        "file": "contact-atlas-j5-01.svg",
+        "owner": "J5",
+        "contacts": [
+          "J5.1",
+          "J5.2",
+          "J5.3",
+          "J5.4",
+          "J5.5"
+        ]
+      },
+      {
+        "file": "contact-atlas-j5-02.svg",
+        "owner": "J5",
+        "contacts": [
+          "J5.6",
+          "J5.7",
+          "J5.8",
+          "J5.9",
+          "J5.10"
+        ]
+      },
+      {
+        "file": "contact-atlas-j6-01.svg",
+        "owner": "J6",
+        "contacts": [
+          "J6.1",
+          "J6.2",
+          "J6.3",
+          "J6.4"
+        ]
+      },
+      {
+        "file": "contact-atlas-j7-01.svg",
+        "owner": "J7",
+        "contacts": [
+          "J7.1",
+          "J7.2",
+          "J7.3",
+          "J7.4",
+          "J7.5"
+        ]
+      },
+      {
+        "file": "contact-atlas-j7-02.svg",
+        "owner": "J7",
+        "contacts": [
+          "J7.6",
+          "J7.7",
+          "J7.8",
+          "J7.9",
+          "J7.10"
+        ]
+      },
+      {
+        "file": "contact-atlas-j7-03.svg",
+        "owner": "J7",
+        "contacts": [
+          "J7.11",
+          "J7.12",
+          "J7.13",
+          "J7.14",
+          "J7.15"
+        ]
+      },
+      {
+        "file": "contact-atlas-j7-04.svg",
+        "owner": "J7",
+        "contacts": [
+          "J7.16",
+          "J7.17",
+          "J7.18",
+          "J7.19"
+        ]
+      },
+      {
+        "file": "contact-atlas-j8-01.svg",
+        "owner": "J8",
+        "contacts": [
+          "J8.1",
+          "J8.2",
+          "J8.3",
+          "J8.4",
+          "J8.5"
+        ]
+      },
+      {
+        "file": "contact-atlas-j8-02.svg",
+        "owner": "J8",
+        "contacts": [
+          "J8.6",
+          "J8.7",
+          "J8.8",
+          "J8.9",
+          "J8.10"
+        ]
+      },
+      {
+        "file": "contact-atlas-j8-03.svg",
+        "owner": "J8",
+        "contacts": [
+          "J8.11",
+          "J8.12",
+          "J8.13",
+          "J8.14",
+          "J8.15"
+        ]
+      },
+      {
+        "file": "contact-atlas-j8-04.svg",
+        "owner": "J8",
+        "contacts": [
+          "J8.16",
+          "J8.17",
+          "J8.18",
+          "J8.19"
+        ]
+      },
+      {
+        "file": "contact-atlas-controls-top-01.svg",
+        "owner": "controls-top",
+        "contacts": [
+          "D2.1",
+          "D2.2",
+          "JP1.1",
+          "JP1.2",
+          "D3.1"
+        ]
+      },
+      {
+        "file": "contact-atlas-controls-top-02.svg",
+        "owner": "controls-top",
+        "contacts": [
+          "D3.2",
+          "JP2.1",
+          "JP2.2"
+        ]
+      },
+      {
+        "file": "contact-atlas-controls-bottom-01.svg",
+        "owner": "controls-bottom",
+        "contacts": [
+          "JP3.1",
+          "JP3.2",
+          "JP4.1",
+          "JP4.2",
+          "TP1.1"
+        ]
+      },
+      {
+        "file": "contact-atlas-controls-bottom-02.svg",
+        "owner": "controls-bottom",
+        "contacts": [
+          "TP2.1",
+          "TP3.1",
+          "TP4.1",
+          "TP5.1",
+          "TP6.1"
+        ]
+      },
+      {
+        "file": "contact-atlas-j6-alternative-01.svg",
+        "owner": "J6-alternative",
+        "contacts": [
+          "J6.1",
+          "J6.2",
+          "J6.3",
+          "J6.4",
+          "J6.MP"
+        ]
+      },
+      {
+        "file": "contact-atlas-j6-alternative-02.svg",
+        "owner": "J6-alternative",
+        "contacts": [
+          "J6.MP"
+        ]
+      }
+    ],
+    "contacts": [
+      {
+        "reference": "J1",
+        "pin": "1",
+        "sheet": "contact-atlas-j1-01.svg",
+        "role": "3.3 V supply",
+        "direction_or_duty": "from DevKit \u00b7 via FB1",
+        "source_side": "F.Cu",
+        "source_pad": {
+          "pin": "1",
+          "local": [
+            -2.54,
+            0.635
+          ],
+          "xy": [
+            3.2649999999999997,
+            5.659999999999999
+          ],
+          "net": "+3V3",
+          "uuid": "458d4bd4-62dd-4aaa-9409-8c2920db3720",
+          "kind": "thru_hole",
+          "size": [
+            1.05,
+            1.05
+          ],
+          "drill": [
+            "0.74"
+          ],
+          "layers": [
+            "*.Cu",
+            "*.Mask"
+          ]
+        },
+        "all_source_instances": [
+          "458d4bd4-62dd-4aaa-9409-8c2920db3720"
+        ],
+        "population": "selected normal / control",
+        "detail_view": "footprint local; no reflection"
+      },
+      {
+        "reference": "J1",
+        "pin": "2",
+        "sheet": "contact-atlas-j1-01.svg",
+        "role": "5 V supply",
+        "direction_or_duty": "from DevKit \u00b7 via D1",
+        "source_side": "F.Cu",
+        "source_pad": {
+          "pin": "2",
+          "local": [
+            -2.54,
+            -0.635
+          ],
+          "xy": [
+            4.535,
+            5.659999999999999
+          ],
+          "net": "+5V",
+          "uuid": "6eb42f50-189b-43c6-a446-af5f32148f1b",
+          "kind": "thru_hole",
+          "size": [
+            1.05,
+            1.05
+          ],
+          "drill": [
+            "0.74"
+          ],
+          "layers": [
+            "*.Cu",
+            "*.Mask"
+          ]
+        },
+        "all_source_instances": [
+          "6eb42f50-189b-43c6-a446-af5f32148f1b"
+        ],
+        "population": "selected normal / control",
+        "detail_view": "footprint local; no reflection"
+      },
+      {
+        "reference": "J1",
+        "pin": "3",
+        "sheet": "contact-atlas-j1-01.svg",
+        "role": "GPIO36",
+        "direction_or_duty": "input only \u00b7 ADC1",
+        "source_side": "F.Cu",
+        "source_pad": {
+          "pin": "3",
+          "local": [
+            -1.27,
+            0.635
+          ],
+          "xy": [
+            3.2649999999999997,
+            6.93
+          ],
+          "net": "/A_P3",
+          "uuid": "198a9eb8-e17b-4c49-9efb-d99e16df654c",
+          "kind": "thru_hole",
+          "size": [
+            1.05,
+            1.05
+          ],
+          "drill": [
+            "0.74"
+          ],
+          "layers": [
+            "*.Cu",
+            "*.Mask"
+          ]
+        },
+        "all_source_instances": [
+          "198a9eb8-e17b-4c49-9efb-d99e16df654c"
+        ],
+        "population": "selected normal / control",
+        "detail_view": "footprint local; no reflection"
+      },
+      {
+        "reference": "J1",
+        "pin": "4",
+        "sheet": "contact-atlas-j1-01.svg",
+        "role": "GPIO39",
+        "direction_or_duty": "input only \u00b7 ADC1",
+        "source_side": "F.Cu",
+        "source_pad": {
+          "pin": "4",
+          "local": [
+            -1.27,
+            -0.635
+          ],
+          "xy": [
+            4.535,
+            6.93
+          ],
+          "net": "/A_P4",
+          "uuid": "bec2b4ab-7bae-4aa9-b6de-39944a54f226",
+          "kind": "thru_hole",
+          "size": [
+            1.05,
+            1.05
+          ],
+          "drill": [
+            "0.74"
+          ],
+          "layers": [
+            "*.Cu",
+            "*.Mask"
+          ]
+        },
+        "all_source_instances": [
+          "bec2b4ab-7bae-4aa9-b6de-39944a54f226"
+        ],
+        "population": "selected normal / control",
+        "detail_view": "footprint local; no reflection"
+      },
+      {
+        "reference": "J1",
+        "pin": "5",
+        "sheet": "contact-atlas-j1-01.svg",
+        "role": "GPIO34",
+        "direction_or_duty": "input only \u00b7 ADC1",
+        "source_side": "F.Cu",
+        "source_pad": {
+          "pin": "5",
+          "local": [
+            0.0,
+            0.635
+          ],
+          "xy": [
+            3.2649999999999997,
+            8.2
+          ],
+          "net": "/A_P5",
+          "uuid": "d9fe5832-a1f4-47c0-a2a9-17504397d7a7",
+          "kind": "thru_hole",
+          "size": [
+            1.05,
+            1.05
+          ],
+          "drill": [
+            "0.74"
+          ],
+          "layers": [
+            "*.Cu",
+            "*.Mask"
+          ]
+        },
+        "all_source_instances": [
+          "d9fe5832-a1f4-47c0-a2a9-17504397d7a7"
+        ],
+        "population": "selected normal / control",
+        "detail_view": "footprint local; no reflection"
+      },
+      {
+        "reference": "J1",
+        "pin": "6",
+        "sheet": "contact-atlas-j1-02.svg",
+        "role": "GPIO32",
+        "direction_or_duty": "GPIO / ADC1 input",
+        "source_side": "F.Cu",
+        "source_pad": {
+          "pin": "6",
+          "local": [
+            0.0,
+            -0.635
+          ],
+          "xy": [
+            4.535,
+            8.2
+          ],
+          "net": "/A_P6",
+          "uuid": "8fda4e88-d9ad-4a21-81d9-ef702e4472cf",
+          "kind": "thru_hole",
+          "size": [
+            1.05,
+            1.05
+          ],
+          "drill": [
+            "0.74"
+          ],
+          "layers": [
+            "*.Cu",
+            "*.Mask"
+          ]
+        },
+        "all_source_instances": [
+          "8fda4e88-d9ad-4a21-81d9-ef702e4472cf"
+        ],
+        "population": "selected normal / control",
+        "detail_view": "footprint local; no reflection"
+      },
+      {
+        "reference": "J1",
+        "pin": "7",
+        "sheet": "contact-atlas-j1-02.svg",
+        "role": "NC \u00b7 no connection",
+        "direction_or_duty": "isolated on carrier",
+        "source_side": "F.Cu",
+        "source_pad": {
+          "pin": "7",
+          "local": [
+            1.27,
+            0.635
+          ],
+          "xy": [
+            3.2649999999999997,
+            9.469999999999999
+          ],
+          "net": "unconnected-(J1-P7-Pad7)",
+          "uuid": "f5cf2fcc-7d12-4b7c-b6f6-e7d89b46e567",
+          "kind": "thru_hole",
+          "size": [
+            1.05,
+            1.05
+          ],
+          "drill": [
+            "0.74"
+          ],
+          "layers": [
+            "*.Cu",
+            "*.Mask"
+          ]
+        },
+        "all_source_instances": [
+          "f5cf2fcc-7d12-4b7c-b6f6-e7d89b46e567"
+        ],
+        "population": "selected normal / control",
+        "detail_view": "footprint local; no reflection"
+      },
+      {
+        "reference": "J1",
+        "pin": "8",
+        "sheet": "contact-atlas-j1-02.svg",
+        "role": "NC \u00b7 no connection",
+        "direction_or_duty": "isolated on carrier",
+        "source_side": "F.Cu",
+        "source_pad": {
+          "pin": "8",
+          "local": [
+            1.27,
+            -0.635
+          ],
+          "xy": [
+            4.535,
+            9.469999999999999
+          ],
+          "net": "unconnected-(J1-P8-Pad8)",
+          "uuid": "8cfb9e7c-5667-4a8b-a53c-844c83c08226",
+          "kind": "thru_hole",
+          "size": [
+            1.05,
+            1.05
+          ],
+          "drill": [
+            "0.74"
+          ],
+          "layers": [
+            "*.Cu",
+            "*.Mask"
+          ]
+        },
+        "all_source_instances": [
+          "8cfb9e7c-5667-4a8b-a53c-844c83c08226"
+        ],
+        "population": "selected normal / control",
+        "detail_view": "footprint local; no reflection"
+      },
+      {
+        "reference": "J1",
+        "pin": "9",
+        "sheet": "contact-atlas-j1-02.svg",
+        "role": "NC \u00b7 no connection",
+        "direction_or_duty": "isolated on carrier",
+        "source_side": "F.Cu",
+        "source_pad": {
+          "pin": "9",
+          "local": [
+            2.54,
+            0.635
+          ],
+          "xy": [
+            3.2649999999999997,
+            10.739999999999998
+          ],
+          "net": "unconnected-(J1-P9-Pad9)",
+          "uuid": "8f666269-f492-48c8-86cd-b0ae14882c67",
+          "kind": "thru_hole",
+          "size": [
+            1.05,
+            1.05
+          ],
+          "drill": [
+            "0.74"
+          ],
+          "layers": [
+            "*.Cu",
+            "*.Mask"
+          ]
+        },
+        "all_source_instances": [
+          "8f666269-f492-48c8-86cd-b0ae14882c67"
+        ],
+        "population": "selected normal / control",
+        "detail_view": "footprint local; no reflection"
+      },
+      {
+        "reference": "J1",
+        "pin": "10",
+        "sheet": "contact-atlas-j1-02.svg",
+        "role": "Circuit ground",
+        "direction_or_duty": "common return",
+        "source_side": "F.Cu",
+        "source_pad": {
+          "pin": "10",
+          "local": [
+            2.54,
+            -0.635
+          ],
+          "xy": [
+            4.535,
+            10.739999999999998
+          ],
+          "net": "GND",
+          "uuid": "63601738-b540-46ef-b718-41dff90e224b",
+          "kind": "thru_hole",
+          "size": [
+            1.05,
+            1.05
+          ],
+          "drill": [
+            "0.74"
+          ],
+          "layers": [
+            "*.Cu",
+            "*.Mask"
+          ]
+        },
+        "all_source_instances": [
+          "63601738-b540-46ef-b718-41dff90e224b"
+        ],
+        "population": "selected normal / control",
+        "detail_view": "footprint local; no reflection"
+      },
+      {
+        "reference": "J2",
+        "pin": "1",
+        "sheet": "contact-atlas-j2-01.svg",
+        "role": "3.3 V supply",
+        "direction_or_duty": "from DevKit \u00b7 via FB1",
+        "source_side": "F.Cu",
+        "source_pad": {
+          "pin": "1",
+          "local": [
+            -2.54,
+            0.635
+          ],
+          "xy": [
+            3.2649999999999997,
+            39.86
+          ],
+          "net": "+3V3",
+          "uuid": "8b0c7934-331b-4b6c-b7ef-ab3b5c01bb70",
+          "kind": "thru_hole",
+          "size": [
+            1.05,
+            1.05
+          ],
+          "drill": [
+            "0.74"
+          ],
+          "layers": [
+            "*.Cu",
+            "*.Mask"
+          ]
+        },
+        "all_source_instances": [
+          "8b0c7934-331b-4b6c-b7ef-ab3b5c01bb70"
+        ],
+        "population": "selected normal / control",
+        "detail_view": "footprint local; no reflection"
+      },
+      {
+        "reference": "J2",
+        "pin": "2",
+        "sheet": "contact-atlas-j2-01.svg",
+        "role": "5 V supply",
+        "direction_or_duty": "from DevKit \u00b7 via D1",
+        "source_side": "F.Cu",
+        "source_pad": {
+          "pin": "2",
+          "local": [
+            -2.54,
+            -0.635
+          ],
+          "xy": [
+            4.535,
+            39.86
+          ],
+          "net": "+5V",
+          "uuid": "ee526577-1562-4c75-af62-f03131b92a51",
+          "kind": "thru_hole",
+          "size": [
+            1.05,
+            1.05
+          ],
+          "drill": [
+            "0.74"
+          ],
+          "layers": [
+            "*.Cu",
+            "*.Mask"
+          ]
+        },
+        "all_source_instances": [
+          "ee526577-1562-4c75-af62-f03131b92a51"
+        ],
+        "population": "selected normal / control",
+        "detail_view": "footprint local; no reflection"
+      },
+      {
+        "reference": "J2",
+        "pin": "3",
+        "sheet": "contact-atlas-j2-01.svg",
+        "role": "GPIO33",
+        "direction_or_duty": "GPIO \u00b7 app sets direction",
+        "source_side": "F.Cu",
+        "source_pad": {
+          "pin": "3",
+          "local": [
+            -1.27,
+            0.635
+          ],
+          "xy": [
+            3.2649999999999997,
+            41.129999999999995
+          ],
+          "net": "/S_P3",
+          "uuid": "6dfb30a1-56ce-4d2e-88ae-dda51d95d308",
+          "kind": "thru_hole",
+          "size": [
+            1.05,
+            1.05
+          ],
+          "drill": [
+            "0.74"
+          ],
+          "layers": [
+            "*.Cu",
+            "*.Mask"
+          ]
+        },
+        "all_source_instances": [
+          "6dfb30a1-56ce-4d2e-88ae-dda51d95d308"
+        ],
+        "population": "selected normal / control",
+        "detail_view": "footprint local; no reflection"
+      },
+      {
+        "reference": "J2",
+        "pin": "4",
+        "sheet": "contact-atlas-j2-01.svg",
+        "role": "GPIO13",
+        "direction_or_duty": "GPIO \u00b7 app sets direction",
+        "source_side": "F.Cu",
+        "source_pad": {
+          "pin": "4",
+          "local": [
+            -1.27,
+            -0.635
+          ],
+          "xy": [
+            4.535,
+            41.129999999999995
+          ],
+          "net": "/S_P4",
+          "uuid": "dbf403f8-36b1-4388-a4e5-c089294ea96a",
+          "kind": "thru_hole",
+          "size": [
+            1.05,
+            1.05
+          ],
+          "drill": [
+            "0.74"
+          ],
+          "layers": [
+            "*.Cu",
+            "*.Mask"
+          ]
+        },
+        "all_source_instances": [
+          "dbf403f8-36b1-4388-a4e5-c089294ea96a"
+        ],
+        "population": "selected normal / control",
+        "detail_view": "footprint local; no reflection"
+      },
+      {
+        "reference": "J2",
+        "pin": "5",
+        "sheet": "contact-atlas-j2-01.svg",
+        "role": "GPIO14",
+        "direction_or_duty": "GPIO \u00b7 app sets direction",
+        "source_side": "F.Cu",
+        "source_pad": {
+          "pin": "5",
+          "local": [
+            0.0,
+            0.635
+          ],
+          "xy": [
+            3.2649999999999997,
+            42.4
+          ],
+          "net": "/S_P5",
+          "uuid": "caa97030-4730-4616-b883-01aa020cf946",
+          "kind": "thru_hole",
+          "size": [
+            1.05,
+            1.05
+          ],
+          "drill": [
+            "0.74"
+          ],
+          "layers": [
+            "*.Cu",
+            "*.Mask"
+          ]
+        },
+        "all_source_instances": [
+          "caa97030-4730-4616-b883-01aa020cf946"
+        ],
+        "population": "selected normal / control",
+        "detail_view": "footprint local; no reflection"
+      },
+      {
+        "reference": "J2",
+        "pin": "6",
+        "sheet": "contact-atlas-j2-02.svg",
+        "role": "CS \u00b7 GPIO5",
+        "direction_or_duty": "output \u00b7 boot strapping",
+        "source_side": "F.Cu",
+        "source_pad": {
+          "pin": "6",
+          "local": [
+            0.0,
+            -0.635
+          ],
+          "xy": [
+            4.535,
+            42.4
+          ],
+          "net": "/S_CS",
+          "uuid": "c5bba030-5997-4b98-b235-a23b6d105603",
+          "kind": "thru_hole",
+          "size": [
+            1.05,
+            1.05
+          ],
+          "drill": [
+            "0.74"
+          ],
+          "layers": [
+            "*.Cu",
+            "*.Mask"
+          ]
+        },
+        "all_source_instances": [
+          "c5bba030-5997-4b98-b235-a23b6d105603"
+        ],
+        "population": "selected normal / control",
+        "detail_view": "footprint local; no reflection"
+      },
+      {
+        "reference": "J2",
+        "pin": "7",
+        "sheet": "contact-atlas-j2-02.svg",
+        "role": "MOSI \u00b7 GPIO23",
+        "direction_or_duty": "SPI host output",
+        "source_side": "F.Cu",
+        "source_pad": {
+          "pin": "7",
+          "local": [
+            1.27,
+            0.635
+          ],
+          "xy": [
+            3.2649999999999997,
+            43.67
+          ],
+          "net": "/S_MOSI",
+          "uuid": "34a83db1-f467-4c2e-8645-6914ac248f6e",
+          "kind": "thru_hole",
+          "size": [
+            1.05,
+            1.05
+          ],
+          "drill": [
+            "0.74"
+          ],
+          "layers": [
+            "*.Cu",
+            "*.Mask"
+          ]
+        },
+        "all_source_instances": [
+          "34a83db1-f467-4c2e-8645-6914ac248f6e"
+        ],
+        "population": "selected normal / control",
+        "detail_view": "footprint local; no reflection"
+      },
+      {
+        "reference": "J2",
+        "pin": "8",
+        "sheet": "contact-atlas-j2-02.svg",
+        "role": "MISO \u00b7 GPIO19",
+        "direction_or_duty": "SPI host input",
+        "source_side": "F.Cu",
+        "source_pad": {
+          "pin": "8",
+          "local": [
+            1.27,
+            -0.635
+          ],
+          "xy": [
+            4.535,
+            43.67
+          ],
+          "net": "/S_MISO",
+          "uuid": "74a7f40b-f2b1-4139-b348-f13fbec35831",
+          "kind": "thru_hole",
+          "size": [
+            1.05,
+            1.05
+          ],
+          "drill": [
+            "0.74"
+          ],
+          "layers": [
+            "*.Cu",
+            "*.Mask"
+          ]
+        },
+        "all_source_instances": [
+          "74a7f40b-f2b1-4139-b348-f13fbec35831"
+        ],
+        "population": "selected normal / control",
+        "detail_view": "footprint local; no reflection"
+      },
+      {
+        "reference": "J2",
+        "pin": "9",
+        "sheet": "contact-atlas-j2-02.svg",
+        "role": "SCK \u00b7 GPIO18",
+        "direction_or_duty": "SPI host clock output",
+        "source_side": "F.Cu",
+        "source_pad": {
+          "pin": "9",
+          "local": [
+            2.54,
+            0.635
+          ],
+          "xy": [
+            3.2649999999999997,
+            44.94
+          ],
+          "net": "/S_SCK",
+          "uuid": "69803e9c-507e-46be-888b-92a702c5ef58",
+          "kind": "thru_hole",
+          "size": [
+            1.05,
+            1.05
+          ],
+          "drill": [
+            "0.74"
+          ],
+          "layers": [
+            "*.Cu",
+            "*.Mask"
+          ]
+        },
+        "all_source_instances": [
+          "69803e9c-507e-46be-888b-92a702c5ef58"
+        ],
+        "population": "selected normal / control",
+        "detail_view": "footprint local; no reflection"
+      },
+      {
+        "reference": "J2",
+        "pin": "10",
+        "sheet": "contact-atlas-j2-02.svg",
+        "role": "Circuit ground",
+        "direction_or_duty": "common return",
+        "source_side": "F.Cu",
+        "source_pad": {
+          "pin": "10",
+          "local": [
+            2.54,
+            -0.635
+          ],
+          "xy": [
+            4.535,
+            44.94
+          ],
+          "net": "GND",
+          "uuid": "0c5b3637-256e-4e34-9f4d-ee022a64a8b3",
+          "kind": "thru_hole",
+          "size": [
+            1.05,
+            1.05
+          ],
+          "drill": [
+            "0.74"
+          ],
+          "layers": [
+            "*.Cu",
+            "*.Mask"
+          ]
+        },
+        "all_source_instances": [
+          "0c5b3637-256e-4e34-9f4d-ee022a64a8b3"
+        ],
+        "population": "selected normal / control",
+        "detail_view": "footprint local; no reflection"
+      },
+      {
+        "reference": "J3",
+        "pin": "1",
+        "sheet": "contact-atlas-j3-01.svg",
+        "role": "3.3 V supply",
+        "direction_or_duty": "from DevKit \u00b7 via FB1",
+        "source_side": "F.Cu",
+        "source_pad": {
+          "pin": "1",
+          "local": [
+            -2.54,
+            0.635
+          ],
+          "xy": [
+            47.865,
+            24.26
+          ],
+          "net": "+3V3",
+          "uuid": "ccf685ef-25c5-4c59-a24f-a2c5c7fa900a",
+          "kind": "thru_hole",
+          "size": [
+            1.05,
+            1.05
+          ],
+          "drill": [
+            "0.74"
+          ],
+          "layers": [
+            "*.Cu",
+            "*.Mask"
+          ]
+        },
+        "all_source_instances": [
+          "ccf685ef-25c5-4c59-a24f-a2c5c7fa900a"
+        ],
+        "population": "selected normal / control",
+        "detail_view": "footprint local; no reflection"
+      },
+      {
+        "reference": "J3",
+        "pin": "2",
+        "sheet": "contact-atlas-j3-01.svg",
+        "role": "5 V supply",
+        "direction_or_duty": "from DevKit \u00b7 via D1",
+        "source_side": "F.Cu",
+        "source_pad": {
+          "pin": "2",
+          "local": [
+            -2.54,
+            -0.635
+          ],
+          "xy": [
+            49.135,
+            24.26
+          ],
+          "net": "+5V",
+          "uuid": "8720f5f6-0b80-4460-8f06-fd5b6d54204a",
+          "kind": "thru_hole",
+          "size": [
+            1.05,
+            1.05
+          ],
+          "drill": [
+            "0.74"
+          ],
+          "layers": [
+            "*.Cu",
+            "*.Mask"
+          ]
+        },
+        "all_source_instances": [
+          "8720f5f6-0b80-4460-8f06-fd5b6d54204a"
+        ],
+        "population": "selected normal / control",
+        "detail_view": "footprint local; no reflection"
+      },
+      {
+        "reference": "J3",
+        "pin": "3",
+        "sheet": "contact-atlas-j3-01.svg",
+        "role": "GPIO4",
+        "direction_or_duty": "GPIO \u00b7 app sets direction",
+        "source_side": "F.Cu",
+        "source_pad": {
+          "pin": "3",
+          "local": [
+            -1.27,
+            0.635
+          ],
+          "xy": [
+            47.865,
+            25.53
+          ],
+          "net": "/U_P3",
+          "uuid": "ad5e59af-bac8-499d-a4f5-380950c95e61",
+          "kind": "thru_hole",
+          "size": [
+            1.05,
+            1.05
+          ],
+          "drill": [
+            "0.74"
+          ],
+          "layers": [
+            "*.Cu",
+            "*.Mask"
+          ]
+        },
+        "all_source_instances": [
+          "ad5e59af-bac8-499d-a4f5-380950c95e61"
+        ],
+        "population": "selected normal / control",
+        "detail_view": "footprint local; no reflection"
+      },
+      {
+        "reference": "J3",
+        "pin": "4",
+        "sheet": "contact-atlas-j3-01.svg",
+        "role": "TX \u00b7 GPIO17",
+        "direction_or_duty": "UART host output",
+        "source_side": "F.Cu",
+        "source_pad": {
+          "pin": "4",
+          "local": [
+            -1.27,
+            -0.635
+          ],
+          "xy": [
+            49.135,
+            25.53
+          ],
+          "net": "/U_TX",
+          "uuid": "fc106537-1275-4d36-a7e0-9c8d091ee8ae",
+          "kind": "thru_hole",
+          "size": [
+            1.05,
+            1.05
+          ],
+          "drill": [
+            "0.74"
+          ],
+          "layers": [
+            "*.Cu",
+            "*.Mask"
+          ]
+        },
+        "all_source_instances": [
+          "fc106537-1275-4d36-a7e0-9c8d091ee8ae"
+        ],
+        "population": "selected normal / control",
+        "detail_view": "footprint local; no reflection"
+      },
+      {
+        "reference": "J3",
+        "pin": "5",
+        "sheet": "contact-atlas-j3-01.svg",
+        "role": "RX \u00b7 GPIO16",
+        "direction_or_duty": "UART host input",
+        "source_side": "F.Cu",
+        "source_pad": {
+          "pin": "5",
+          "local": [
+            0.0,
+            0.635
+          ],
+          "xy": [
+            47.865,
+            26.8
+          ],
+          "net": "/U_RX",
+          "uuid": "b2432251-11cd-4647-87d9-a76101e8838e",
+          "kind": "thru_hole",
+          "size": [
+            1.05,
+            1.05
+          ],
+          "drill": [
+            "0.74"
+          ],
+          "layers": [
+            "*.Cu",
+            "*.Mask"
+          ]
+        },
+        "all_source_instances": [
+          "b2432251-11cd-4647-87d9-a76101e8838e"
+        ],
+        "population": "selected normal / control",
+        "detail_view": "footprint local; no reflection"
+      },
+      {
+        "reference": "J3",
+        "pin": "6",
+        "sheet": "contact-atlas-j3-02.svg",
+        "role": "NC \u00b7 no connection",
+        "direction_or_duty": "isolated on carrier",
+        "source_side": "F.Cu",
+        "source_pad": {
+          "pin": "6",
+          "local": [
+            0.0,
+            -0.635
+          ],
+          "xy": [
+            49.135,
+            26.8
+          ],
+          "net": "unconnected-(J3-P6-Pad6)",
+          "uuid": "1814c688-e636-48fb-a5ad-fa72ddd0a56f",
+          "kind": "thru_hole",
+          "size": [
+            1.05,
+            1.05
+          ],
+          "drill": [
+            "0.74"
+          ],
+          "layers": [
+            "*.Cu",
+            "*.Mask"
+          ]
+        },
+        "all_source_instances": [
+          "1814c688-e636-48fb-a5ad-fa72ddd0a56f"
+        ],
+        "population": "selected normal / control",
+        "detail_view": "footprint local; no reflection"
+      },
+      {
+        "reference": "J3",
+        "pin": "7",
+        "sheet": "contact-atlas-j3-02.svg",
+        "role": "NC \u00b7 no connection",
+        "direction_or_duty": "isolated on carrier",
+        "source_side": "F.Cu",
+        "source_pad": {
+          "pin": "7",
+          "local": [
+            1.27,
+            0.635
+          ],
+          "xy": [
+            47.865,
+            28.07
+          ],
+          "net": "unconnected-(J3-P7-Pad7)",
+          "uuid": "39cc8840-299f-442a-947a-575b0e06b648",
+          "kind": "thru_hole",
+          "size": [
+            1.05,
+            1.05
+          ],
+          "drill": [
+            "0.74"
+          ],
+          "layers": [
+            "*.Cu",
+            "*.Mask"
+          ]
+        },
+        "all_source_instances": [
+          "39cc8840-299f-442a-947a-575b0e06b648"
+        ],
+        "population": "selected normal / control",
+        "detail_view": "footprint local; no reflection"
+      },
+      {
+        "reference": "J3",
+        "pin": "8",
+        "sheet": "contact-atlas-j3-02.svg",
+        "role": "NC \u00b7 no connection",
+        "direction_or_duty": "isolated on carrier",
+        "source_side": "F.Cu",
+        "source_pad": {
+          "pin": "8",
+          "local": [
+            1.27,
+            -0.635
+          ],
+          "xy": [
+            49.135,
+            28.07
+          ],
+          "net": "unconnected-(J3-P8-Pad8)",
+          "uuid": "1f3236dc-07f9-4ed8-bcf5-9197ae89f488",
+          "kind": "thru_hole",
+          "size": [
+            1.05,
+            1.05
+          ],
+          "drill": [
+            "0.74"
+          ],
+          "layers": [
+            "*.Cu",
+            "*.Mask"
+          ]
+        },
+        "all_source_instances": [
+          "1f3236dc-07f9-4ed8-bcf5-9197ae89f488"
+        ],
+        "population": "selected normal / control",
+        "detail_view": "footprint local; no reflection"
+      },
+      {
+        "reference": "J3",
+        "pin": "9",
+        "sheet": "contact-atlas-j3-02.svg",
+        "role": "NC \u00b7 no connection",
+        "direction_or_duty": "isolated on carrier",
+        "source_side": "F.Cu",
+        "source_pad": {
+          "pin": "9",
+          "local": [
+            2.54,
+            0.635
+          ],
+          "xy": [
+            47.865,
+            29.34
+          ],
+          "net": "unconnected-(J3-P9-Pad9)",
+          "uuid": "6d387c7a-6fc7-4c67-90ab-aa54c9a54471",
+          "kind": "thru_hole",
+          "size": [
+            1.05,
+            1.05
+          ],
+          "drill": [
+            "0.74"
+          ],
+          "layers": [
+            "*.Cu",
+            "*.Mask"
+          ]
+        },
+        "all_source_instances": [
+          "6d387c7a-6fc7-4c67-90ab-aa54c9a54471"
+        ],
+        "population": "selected normal / control",
+        "detail_view": "footprint local; no reflection"
+      },
+      {
+        "reference": "J3",
+        "pin": "10",
+        "sheet": "contact-atlas-j3-02.svg",
+        "role": "Circuit ground",
+        "direction_or_duty": "common return",
+        "source_side": "F.Cu",
+        "source_pad": {
+          "pin": "10",
+          "local": [
+            2.54,
+            -0.635
+          ],
+          "xy": [
+            49.135,
+            29.34
+          ],
+          "net": "GND",
+          "uuid": "1e52ca3b-acf2-4219-8040-7f4fdad67a49",
+          "kind": "thru_hole",
+          "size": [
+            1.05,
+            1.05
+          ],
+          "drill": [
+            "0.74"
+          ],
+          "layers": [
+            "*.Cu",
+            "*.Mask"
+          ]
+        },
+        "all_source_instances": [
+          "1e52ca3b-acf2-4219-8040-7f4fdad67a49"
+        ],
+        "population": "selected normal / control",
+        "detail_view": "footprint local; no reflection"
+      },
+      {
+        "reference": "J4",
+        "pin": "1",
+        "sheet": "contact-atlas-j4-01.svg",
+        "role": "3.3 V supply",
+        "direction_or_duty": "from DevKit \u00b7 via FB1",
+        "source_side": "F.Cu",
+        "source_pad": {
+          "pin": "1",
+          "local": [
+            -2.54,
+            0.635
+          ],
+          "xy": [
+            47.865,
+            8.96
+          ],
+          "net": "+3V3",
+          "uuid": "28969f7d-445d-4ed6-9807-6c9b4bc46b46",
+          "kind": "thru_hole",
+          "size": [
+            1.05,
+            1.05
+          ],
+          "drill": [
+            "0.74"
+          ],
+          "layers": [
+            "*.Cu",
+            "*.Mask"
+          ]
+        },
+        "all_source_instances": [
+          "28969f7d-445d-4ed6-9807-6c9b4bc46b46"
+        ],
+        "population": "selected normal / control",
+        "detail_view": "footprint local; no reflection"
+      },
+      {
+        "reference": "J4",
+        "pin": "2",
+        "sheet": "contact-atlas-j4-01.svg",
+        "role": "5 V supply",
+        "direction_or_duty": "from DevKit \u00b7 via D1",
+        "source_side": "F.Cu",
+        "source_pad": {
+          "pin": "2",
+          "local": [
+            -2.54,
+            -0.635
+          ],
+          "xy": [
+            49.135,
+            8.96
+          ],
+          "net": "+5V",
+          "uuid": "b8696f46-a916-47f2-be6b-7ba2384a16fd",
+          "kind": "thru_hole",
+          "size": [
+            1.05,
+            1.05
+          ],
+          "drill": [
+            "0.74"
+          ],
+          "layers": [
+            "*.Cu",
+            "*.Mask"
+          ]
+        },
+        "all_source_instances": [
+          "b8696f46-a916-47f2-be6b-7ba2384a16fd"
+        ],
+        "population": "selected normal / control",
+        "detail_view": "footprint local; no reflection"
+      },
+      {
+        "reference": "J4",
+        "pin": "3",
+        "sheet": "contact-atlas-j4-01.svg",
+        "role": "GPIO35",
+        "direction_or_duty": "input only \u00b7 ADC1",
+        "source_side": "F.Cu",
+        "source_pad": {
+          "pin": "3",
+          "local": [
+            -1.27,
+            0.635
+          ],
+          "xy": [
+            47.865,
+            10.23
+          ],
+          "net": "/I_P3",
+          "uuid": "7d5941f6-d3bb-4236-9f66-d03dc1c81e07",
+          "kind": "thru_hole",
+          "size": [
+            1.05,
+            1.05
+          ],
+          "drill": [
+            "0.74"
+          ],
+          "layers": [
+            "*.Cu",
+            "*.Mask"
+          ]
+        },
+        "all_source_instances": [
+          "7d5941f6-d3bb-4236-9f66-d03dc1c81e07"
+        ],
+        "population": "selected normal / control",
+        "detail_view": "footprint local; no reflection"
+      },
+      {
+        "reference": "J4",
+        "pin": "4",
+        "sheet": "contact-atlas-j4-01.svg",
+        "role": "NC \u00b7 no connection",
+        "direction_or_duty": "isolated on carrier",
+        "source_side": "F.Cu",
+        "source_pad": {
+          "pin": "4",
+          "local": [
+            -1.27,
+            -0.635
+          ],
+          "xy": [
+            49.135,
+            10.23
+          ],
+          "net": "unconnected-(J4-P4-Pad4)",
+          "uuid": "66ed8e66-b47f-4aef-a288-e6200851f8bf",
+          "kind": "thru_hole",
+          "size": [
+            1.05,
+            1.05
+          ],
+          "drill": [
+            "0.74"
+          ],
+          "layers": [
+            "*.Cu",
+            "*.Mask"
+          ]
+        },
+        "all_source_instances": [
+          "66ed8e66-b47f-4aef-a288-e6200851f8bf"
+        ],
+        "population": "selected normal / control",
+        "detail_view": "footprint local; no reflection"
+      },
+      {
+        "reference": "J4",
+        "pin": "5",
+        "sheet": "contact-atlas-j4-01.svg",
+        "role": "NC \u00b7 no connection",
+        "direction_or_duty": "isolated on carrier",
+        "source_side": "F.Cu",
+        "source_pad": {
+          "pin": "5",
+          "local": [
+            0.0,
+            0.635
+          ],
+          "xy": [
+            47.865,
+            11.5
+          ],
+          "net": "unconnected-(J4-P5-Pad5)",
+          "uuid": "e0e1a3c7-0106-4dfd-83fa-947ac5ab2fe8",
+          "kind": "thru_hole",
+          "size": [
+            1.05,
+            1.05
+          ],
+          "drill": [
+            "0.74"
+          ],
+          "layers": [
+            "*.Cu",
+            "*.Mask"
+          ]
+        },
+        "all_source_instances": [
+          "e0e1a3c7-0106-4dfd-83fa-947ac5ab2fe8"
+        ],
+        "population": "selected normal / control",
+        "detail_view": "footprint local; no reflection"
+      },
+      {
+        "reference": "J4",
+        "pin": "6",
+        "sheet": "contact-atlas-j4-02.svg",
+        "role": "NC \u00b7 no connection",
+        "direction_or_duty": "isolated on carrier",
+        "source_side": "F.Cu",
+        "source_pad": {
+          "pin": "6",
+          "local": [
+            0.0,
+            -0.635
+          ],
+          "xy": [
+            49.135,
+            11.5
+          ],
+          "net": "unconnected-(J4-P6-Pad6)",
+          "uuid": "517bbc6b-0861-4b01-bd1e-6a642b978147",
+          "kind": "thru_hole",
+          "size": [
+            1.05,
+            1.05
+          ],
+          "drill": [
+            "0.74"
+          ],
+          "layers": [
+            "*.Cu",
+            "*.Mask"
+          ]
+        },
+        "all_source_instances": [
+          "517bbc6b-0861-4b01-bd1e-6a642b978147"
+        ],
+        "population": "selected normal / control",
+        "detail_view": "footprint local; no reflection"
+      },
+      {
+        "reference": "J4",
+        "pin": "7",
+        "sheet": "contact-atlas-j4-02.svg",
+        "role": "NC \u00b7 no connection",
+        "direction_or_duty": "isolated on carrier",
+        "source_side": "F.Cu",
+        "source_pad": {
+          "pin": "7",
+          "local": [
+            1.27,
+            0.635
+          ],
+          "xy": [
+            47.865,
+            12.77
+          ],
+          "net": "unconnected-(J4-P7-Pad7)",
+          "uuid": "81a23b45-633d-4345-a8f2-d98ee8d37bcb",
+          "kind": "thru_hole",
+          "size": [
+            1.05,
+            1.05
+          ],
+          "drill": [
+            "0.74"
+          ],
+          "layers": [
+            "*.Cu",
+            "*.Mask"
+          ]
+        },
+        "all_source_instances": [
+          "81a23b45-633d-4345-a8f2-d98ee8d37bcb"
+        ],
+        "population": "selected normal / control",
+        "detail_view": "footprint local; no reflection"
+      },
+      {
+        "reference": "J4",
+        "pin": "8",
+        "sheet": "contact-atlas-j4-02.svg",
+        "role": "SDA \u00b7 GPIO21",
+        "direction_or_duty": "I\u00b2C bidirectional data",
+        "source_side": "F.Cu",
+        "source_pad": {
+          "pin": "8",
+          "local": [
+            1.27,
+            -0.635
+          ],
+          "xy": [
+            49.135,
+            12.77
+          ],
+          "net": "/I2C_SDA",
+          "uuid": "5b556be7-a0c5-4018-a615-c19cb2d64861",
+          "kind": "thru_hole",
+          "size": [
+            1.05,
+            1.05
+          ],
+          "drill": [
+            "0.74"
+          ],
+          "layers": [
+            "*.Cu",
+            "*.Mask"
+          ]
+        },
+        "all_source_instances": [
+          "5b556be7-a0c5-4018-a615-c19cb2d64861"
+        ],
+        "population": "selected normal / control",
+        "detail_view": "footprint local; no reflection"
+      },
+      {
+        "reference": "J4",
+        "pin": "9",
+        "sheet": "contact-atlas-j4-02.svg",
+        "role": "SCL \u00b7 GPIO22",
+        "direction_or_duty": "I\u00b2C host clock",
+        "source_side": "F.Cu",
+        "source_pad": {
+          "pin": "9",
+          "local": [
+            2.54,
+            0.635
+          ],
+          "xy": [
+            47.865,
+            14.04
+          ],
+          "net": "/I2C_SCL",
+          "uuid": "52d72b25-01ed-449d-b68e-cd1cc19ff38b",
+          "kind": "thru_hole",
+          "size": [
+            1.05,
+            1.05
+          ],
+          "drill": [
+            "0.74"
+          ],
+          "layers": [
+            "*.Cu",
+            "*.Mask"
+          ]
+        },
+        "all_source_instances": [
+          "52d72b25-01ed-449d-b68e-cd1cc19ff38b"
+        ],
+        "population": "selected normal / control",
+        "detail_view": "footprint local; no reflection"
+      },
+      {
+        "reference": "J4",
+        "pin": "10",
+        "sheet": "contact-atlas-j4-02.svg",
+        "role": "Circuit ground",
+        "direction_or_duty": "common return",
+        "source_side": "F.Cu",
+        "source_pad": {
+          "pin": "10",
+          "local": [
+            2.54,
+            -0.635
+          ],
+          "xy": [
+            49.135,
+            14.04
+          ],
+          "net": "GND",
+          "uuid": "ccdfa080-facd-4455-a099-95cc978656e3",
+          "kind": "thru_hole",
+          "size": [
+            1.05,
+            1.05
+          ],
+          "drill": [
+            "0.74"
+          ],
+          "layers": [
+            "*.Cu",
+            "*.Mask"
+          ]
+        },
+        "all_source_instances": [
+          "ccdfa080-facd-4455-a099-95cc978656e3"
+        ],
+        "population": "selected normal / control",
+        "detail_view": "footprint local; no reflection"
+      },
+      {
+        "reference": "J5",
+        "pin": "1",
+        "sheet": "contact-atlas-j5-01.svg",
+        "role": "3.3 V supply",
+        "direction_or_duty": "from DevKit \u00b7 via FB1",
+        "source_side": "F.Cu",
+        "source_pad": {
+          "pin": "1",
+          "local": [
+            -2.54,
+            0.635
+          ],
+          "xy": [
+            3.2649999999999997,
+            22.76
+          ],
+          "net": "+3V3",
+          "uuid": "b117c889-4335-4c94-8516-a08b741f3913",
+          "kind": "thru_hole",
+          "size": [
+            1.05,
+            1.05
+          ],
+          "drill": [
+            "0.74"
+          ],
+          "layers": [
+            "*.Cu",
+            "*.Mask"
+          ]
+        },
+        "all_source_instances": [
+          "b117c889-4335-4c94-8516-a08b741f3913"
+        ],
+        "population": "selected normal / control",
+        "detail_view": "footprint local; no reflection"
+      },
+      {
+        "reference": "J5",
+        "pin": "2",
+        "sheet": "contact-atlas-j5-01.svg",
+        "role": "5 V supply",
+        "direction_or_duty": "from DevKit \u00b7 via D1",
+        "source_side": "F.Cu",
+        "source_pad": {
+          "pin": "2",
+          "local": [
+            -2.54,
+            -0.635
+          ],
+          "xy": [
+            4.535,
+            22.76
+          ],
+          "net": "+5V",
+          "uuid": "b3a400d7-3c48-4c17-9a0e-70fddf00937b",
+          "kind": "thru_hole",
+          "size": [
+            1.05,
+            1.05
+          ],
+          "drill": [
+            "0.74"
+          ],
+          "layers": [
+            "*.Cu",
+            "*.Mask"
+          ]
+        },
+        "all_source_instances": [
+          "b3a400d7-3c48-4c17-9a0e-70fddf00937b"
+        ],
+        "population": "selected normal / control",
+        "detail_view": "footprint local; no reflection"
+      },
+      {
+        "reference": "J5",
+        "pin": "3",
+        "sheet": "contact-atlas-j5-01.svg",
+        "role": "GPIO26",
+        "direction_or_duty": "GPIO \u00b7 app sets direction",
+        "source_side": "F.Cu",
+        "source_pad": {
+          "pin": "3",
+          "local": [
+            -1.27,
+            0.635
+          ],
+          "xy": [
+            3.2649999999999997,
+            24.03
+          ],
+          "net": "/P_P3",
+          "uuid": "0058ffbd-24dd-43ed-8937-c569c2c47d52",
+          "kind": "thru_hole",
+          "size": [
+            1.05,
+            1.05
+          ],
+          "drill": [
+            "0.74"
+          ],
+          "layers": [
+            "*.Cu",
+            "*.Mask"
+          ]
+        },
+        "all_source_instances": [
+          "0058ffbd-24dd-43ed-8937-c569c2c47d52"
+        ],
+        "population": "selected normal / control",
+        "detail_view": "footprint local; no reflection"
+      },
+      {
+        "reference": "J5",
+        "pin": "4",
+        "sheet": "contact-atlas-j5-01.svg",
+        "role": "NC \u00b7 no connection",
+        "direction_or_duty": "isolated on carrier",
+        "source_side": "F.Cu",
+        "source_pad": {
+          "pin": "4",
+          "local": [
+            -1.27,
+            -0.635
+          ],
+          "xy": [
+            4.535,
+            24.03
+          ],
+          "net": "unconnected-(J5-P4-Pad4)",
+          "uuid": "009bcf3a-94a2-45a5-8393-c6767f81e1a0",
+          "kind": "thru_hole",
+          "size": [
+            1.05,
+            1.05
+          ],
+          "drill": [
+            "0.74"
+          ],
+          "layers": [
+            "*.Cu",
+            "*.Mask"
+          ]
+        },
+        "all_source_instances": [
+          "009bcf3a-94a2-45a5-8393-c6767f81e1a0"
+        ],
+        "population": "selected normal / control",
+        "detail_view": "footprint local; no reflection"
+      },
+      {
+        "reference": "J5",
+        "pin": "5",
+        "sheet": "contact-atlas-j5-01.svg",
+        "role": "NC \u00b7 no connection",
+        "direction_or_duty": "isolated on carrier",
+        "source_side": "F.Cu",
+        "source_pad": {
+          "pin": "5",
+          "local": [
+            0.0,
+            0.635
+          ],
+          "xy": [
+            3.2649999999999997,
+            25.3
+          ],
+          "net": "unconnected-(J5-P5-Pad5)",
+          "uuid": "7fecd665-67f0-4ba0-95bc-68ced0c14fb4",
+          "kind": "thru_hole",
+          "size": [
+            1.05,
+            1.05
+          ],
+          "drill": [
+            "0.74"
+          ],
+          "layers": [
+            "*.Cu",
+            "*.Mask"
+          ]
+        },
+        "all_source_instances": [
+          "7fecd665-67f0-4ba0-95bc-68ced0c14fb4"
+        ],
+        "population": "selected normal / control",
+        "detail_view": "footprint local; no reflection"
+      },
+      {
+        "reference": "J5",
+        "pin": "6",
+        "sheet": "contact-atlas-j5-02.svg",
+        "role": "GPIO15",
+        "direction_or_duty": "GPIO \u00b7 boot strapping",
+        "source_side": "F.Cu",
+        "source_pad": {
+          "pin": "6",
+          "local": [
+            0.0,
+            -0.635
+          ],
+          "xy": [
+            4.535,
+            25.3
+          ],
+          "net": "/P_P6",
+          "uuid": "3e3922a8-a1d4-4723-8e12-1fc0bac12452",
+          "kind": "thru_hole",
+          "size": [
+            1.05,
+            1.05
+          ],
+          "drill": [
+            "0.74"
+          ],
+          "layers": [
+            "*.Cu",
+            "*.Mask"
+          ]
+        },
+        "all_source_instances": [
+          "3e3922a8-a1d4-4723-8e12-1fc0bac12452"
+        ],
+        "population": "selected normal / control",
+        "detail_view": "footprint local; no reflection"
+      },
+      {
+        "reference": "J5",
+        "pin": "7",
+        "sheet": "contact-atlas-j5-02.svg",
+        "role": "GPIO25",
+        "direction_or_duty": "GPIO \u00b7 app sets direction",
+        "source_side": "F.Cu",
+        "source_pad": {
+          "pin": "7",
+          "local": [
+            1.27,
+            0.635
+          ],
+          "xy": [
+            3.2649999999999997,
+            26.57
+          ],
+          "net": "/P_P7",
+          "uuid": "acc3b5cc-279c-4631-9464-cff9d4c663b6",
+          "kind": "thru_hole",
+          "size": [
+            1.05,
+            1.05
+          ],
+          "drill": [
+            "0.74"
+          ],
+          "layers": [
+            "*.Cu",
+            "*.Mask"
+          ]
+        },
+        "all_source_instances": [
+          "acc3b5cc-279c-4631-9464-cff9d4c663b6"
+        ],
+        "population": "selected normal / control",
+        "detail_view": "footprint local; no reflection"
+      },
+      {
+        "reference": "J5",
+        "pin": "8",
+        "sheet": "contact-atlas-j5-02.svg",
+        "role": "GPIO27",
+        "direction_or_duty": "GPIO \u00b7 app sets direction",
+        "source_side": "F.Cu",
+        "source_pad": {
+          "pin": "8",
+          "local": [
+            1.27,
+            -0.635
+          ],
+          "xy": [
+            4.535,
+            26.57
+          ],
+          "net": "/P_P8",
+          "uuid": "96d61fae-49be-49ae-9500-f61338961682",
+          "kind": "thru_hole",
+          "size": [
+            1.05,
+            1.05
+          ],
+          "drill": [
+            "0.74"
+          ],
+          "layers": [
+            "*.Cu",
+            "*.Mask"
+          ]
+        },
+        "all_source_instances": [
+          "96d61fae-49be-49ae-9500-f61338961682"
+        ],
+        "population": "selected normal / control",
+        "detail_view": "footprint local; no reflection"
+      },
+      {
+        "reference": "J5",
+        "pin": "9",
+        "sheet": "contact-atlas-j5-02.svg",
+        "role": "GPIO2",
+        "direction_or_duty": "GPIO \u00b7 boot strapping",
+        "source_side": "F.Cu",
+        "source_pad": {
+          "pin": "9",
+          "local": [
+            2.54,
+            0.635
+          ],
+          "xy": [
+            3.2649999999999997,
+            27.84
+          ],
+          "net": "/P_P9",
+          "uuid": "ce16077f-863f-477e-81b9-247f1e7d5a24",
+          "kind": "thru_hole",
+          "size": [
+            1.05,
+            1.05
+          ],
+          "drill": [
+            "0.74"
+          ],
+          "layers": [
+            "*.Cu",
+            "*.Mask"
+          ]
+        },
+        "all_source_instances": [
+          "ce16077f-863f-477e-81b9-247f1e7d5a24"
+        ],
+        "population": "selected normal / control",
+        "detail_view": "footprint local; no reflection"
+      },
+      {
+        "reference": "J5",
+        "pin": "10",
+        "sheet": "contact-atlas-j5-02.svg",
+        "role": "Circuit ground",
+        "direction_or_duty": "common return",
+        "source_side": "F.Cu",
+        "source_pad": {
+          "pin": "10",
+          "local": [
+            2.54,
+            -0.635
+          ],
+          "xy": [
+            4.535,
+            27.84
+          ],
+          "net": "GND",
+          "uuid": "ddb234e5-1d2f-446a-9f8b-ea862ae5a8f1",
+          "kind": "thru_hole",
+          "size": [
+            1.05,
+            1.05
+          ],
+          "drill": [
+            "0.74"
+          ],
+          "layers": [
+            "*.Cu",
+            "*.Mask"
+          ]
+        },
+        "all_source_instances": [
+          "ddb234e5-1d2f-446a-9f8b-ea862ae5a8f1"
+        ],
+        "population": "selected normal / control",
+        "detail_view": "footprint local; no reflection"
+      },
+      {
+        "reference": "J6",
+        "pin": "1",
+        "sheet": "contact-atlas-j6-01.svg",
+        "role": "Circuit ground",
+        "direction_or_duty": "common return",
+        "source_side": "F.Cu",
+        "source_pad": {
+          "pin": "1",
+          "local": [
+            -3.81,
+            -4.5
+          ],
+          "xy": [
+            50.0,
+            39.69
+          ],
+          "net": "GND",
+          "uuid": "ab8d092e-cc83-4a19-8690-3578f989c3e1",
+          "kind": "thru_hole",
+          "size": [
+            1.7,
+            1.7
+          ],
+          "drill": [
+            "1"
+          ],
+          "layers": [
+            "*.Cu",
+            "*.Mask"
+          ]
+        },
+        "all_source_instances": [
+          "ab8d092e-cc83-4a19-8690-3578f989c3e1",
+          "ac06d5ce-8cb1-4d6b-86f5-61efff16cbe3"
+        ],
+        "population": "selected normal / control",
+        "detail_view": "footprint local; no reflection"
+      },
+      {
+        "reference": "J6",
+        "pin": "2",
+        "sheet": "contact-atlas-j6-01.svg",
+        "role": "3.3 V supply",
+        "direction_or_duty": "from DevKit \u00b7 via FB1",
+        "source_side": "F.Cu",
+        "source_pad": {
+          "pin": "2",
+          "local": [
+            -1.27,
+            -4.5
+          ],
+          "xy": [
+            50.0,
+            42.23
+          ],
+          "net": "+3V3",
+          "uuid": "7e41012a-c326-410c-a683-e6f631039ea0",
+          "kind": "thru_hole",
+          "size": [
+            1.7,
+            1.7
+          ],
+          "drill": [
+            "1"
+          ],
+          "layers": [
+            "*.Cu",
+            "*.Mask"
+          ]
+        },
+        "all_source_instances": [
+          "7e41012a-c326-410c-a683-e6f631039ea0",
+          "19b67c08-0a1e-452f-8fcb-d2fd9db67fb7"
+        ],
+        "population": "selected normal / control",
+        "detail_view": "footprint local; no reflection"
+      },
+      {
+        "reference": "J6",
+        "pin": "3",
+        "sheet": "contact-atlas-j6-01.svg",
+        "role": "SDA \u00b7 GPIO21",
+        "direction_or_duty": "I\u00b2C bidirectional data",
+        "source_side": "F.Cu",
+        "source_pad": {
+          "pin": "3",
+          "local": [
+            1.27,
+            -4.5
+          ],
+          "xy": [
+            50.0,
+            44.77
+          ],
+          "net": "/I2C_SDA",
+          "uuid": "329b1f0b-9fa7-44d4-8d08-cd814ebdb1d1",
+          "kind": "thru_hole",
+          "size": [
+            1.7,
+            1.7
+          ],
+          "drill": [
+            "1"
+          ],
+          "layers": [
+            "*.Cu",
+            "*.Mask"
+          ]
+        },
+        "all_source_instances": [
+          "a819f59e-639a-488b-8d24-d92247052296",
+          "329b1f0b-9fa7-44d4-8d08-cd814ebdb1d1"
+        ],
+        "population": "selected normal / control",
+        "detail_view": "footprint local; no reflection"
+      },
+      {
+        "reference": "J6",
+        "pin": "4",
+        "sheet": "contact-atlas-j6-01.svg",
+        "role": "SCL \u00b7 GPIO22",
+        "direction_or_duty": "I\u00b2C host clock",
+        "source_side": "F.Cu",
+        "source_pad": {
+          "pin": "4",
+          "local": [
+            3.81,
+            -4.500001
+          ],
+          "xy": [
+            50.000001,
+            47.31
+          ],
+          "net": "/I2C_SCL",
+          "uuid": "e57599a1-8a0c-4240-bf34-184727586e28",
+          "kind": "thru_hole",
+          "size": [
+            1.7,
+            1.7
+          ],
+          "drill": [
+            "1"
+          ],
+          "layers": [
+            "*.Cu",
+            "*.Mask"
+          ]
+        },
+        "all_source_instances": [
+          "2a99acc3-82c7-4dbf-ac79-e6712f60cd6b",
+          "e57599a1-8a0c-4240-bf34-184727586e28"
+        ],
+        "population": "selected normal / control",
+        "detail_view": "footprint local; no reflection"
+      },
+      {
+        "reference": "J7",
+        "pin": "1",
+        "sheet": "contact-atlas-j7-01.svg",
+        "role": "3.3 V supply",
+        "direction_or_duty": "DevKit \u2192 carrier",
+        "source_side": "F.Cu",
+        "source_pad": {
+          "pin": "1",
+          "local": [
+            0.0,
+            0.0
+          ],
+          "xy": [
+            13.5,
+            2.5
+          ],
+          "net": "/HOST_3V3",
+          "uuid": "a09a1792-5efe-40bf-b117-098fb5db24ae",
+          "kind": "thru_hole",
+          "size": [
+            1.7,
+            1.7
+          ],
+          "drill": [
+            "1"
+          ],
+          "layers": [
+            "*.Cu",
+            "*.Mask"
+          ]
+        },
+        "all_source_instances": [
+          "a09a1792-5efe-40bf-b117-098fb5db24ae"
+        ],
+        "population": "selected normal / control",
+        "detail_view": "footprint local; rigid rotation -90 degrees"
+      },
+      {
+        "reference": "J7",
+        "pin": "2",
+        "sheet": "contact-atlas-j7-01.svg",
+        "role": "NC \u00b7 EN",
+        "direction_or_duty": "isolated on carrier",
+        "source_side": "F.Cu",
+        "source_pad": {
+          "pin": "2",
+          "local": [
+            0.0,
+            2.54
+          ],
+          "xy": [
+            13.5,
+            5.04
+          ],
+          "net": "unconnected-(J7-EN-Pad2)",
+          "uuid": "24ab45d3-4c94-4b20-93e8-69a3e310cebe",
+          "kind": "thru_hole",
+          "size": [
+            1.7,
+            1.7
+          ],
+          "drill": [
+            "1"
+          ],
+          "layers": [
+            "*.Cu",
+            "*.Mask"
+          ]
+        },
+        "all_source_instances": [
+          "24ab45d3-4c94-4b20-93e8-69a3e310cebe"
+        ],
+        "population": "selected normal / control",
+        "detail_view": "footprint local; rigid rotation -90 degrees"
+      },
+      {
+        "reference": "J7",
+        "pin": "3",
+        "sheet": "contact-atlas-j7-01.svg",
+        "role": "GPIO36",
+        "direction_or_duty": "input only \u00b7 ADC1",
+        "source_side": "F.Cu",
+        "source_pad": {
+          "pin": "3",
+          "local": [
+            0.0,
+            5.08
+          ],
+          "xy": [
+            13.5,
+            7.58
+          ],
+          "net": "/H_GPIO36",
+          "uuid": "76f8c705-48f0-4cda-b500-f1feb604ec22",
+          "kind": "thru_hole",
+          "size": [
+            1.7,
+            1.7
+          ],
+          "drill": [
+            "1"
+          ],
+          "layers": [
+            "*.Cu",
+            "*.Mask"
+          ]
+        },
+        "all_source_instances": [
+          "76f8c705-48f0-4cda-b500-f1feb604ec22"
+        ],
+        "population": "selected normal / control",
+        "detail_view": "footprint local; rigid rotation -90 degrees"
+      },
+      {
+        "reference": "J7",
+        "pin": "4",
+        "sheet": "contact-atlas-j7-01.svg",
+        "role": "GPIO39",
+        "direction_or_duty": "input only \u00b7 ADC1",
+        "source_side": "F.Cu",
+        "source_pad": {
+          "pin": "4",
+          "local": [
+            0.0,
+            7.62
+          ],
+          "xy": [
+            13.5,
+            10.120000000000001
+          ],
+          "net": "/H_GPIO39",
+          "uuid": "4e947e0e-b53e-4a82-b25f-d0ba16764f74",
+          "kind": "thru_hole",
+          "size": [
+            1.7,
+            1.7
+          ],
+          "drill": [
+            "1"
+          ],
+          "layers": [
+            "*.Cu",
+            "*.Mask"
+          ]
+        },
+        "all_source_instances": [
+          "4e947e0e-b53e-4a82-b25f-d0ba16764f74"
+        ],
+        "population": "selected normal / control",
+        "detail_view": "footprint local; rigid rotation -90 degrees"
+      },
+      {
+        "reference": "J7",
+        "pin": "5",
+        "sheet": "contact-atlas-j7-01.svg",
+        "role": "GPIO34",
+        "direction_or_duty": "input only \u00b7 ADC1",
+        "source_side": "F.Cu",
+        "source_pad": {
+          "pin": "5",
+          "local": [
+            0.0,
+            10.16
+          ],
+          "xy": [
+            13.5,
+            12.66
+          ],
+          "net": "/H_GPIO34",
+          "uuid": "b2079ba9-575d-44e9-9333-a01063b01b63",
+          "kind": "thru_hole",
+          "size": [
+            1.7,
+            1.7
+          ],
+          "drill": [
+            "1"
+          ],
+          "layers": [
+            "*.Cu",
+            "*.Mask"
+          ]
+        },
+        "all_source_instances": [
+          "b2079ba9-575d-44e9-9333-a01063b01b63"
+        ],
+        "population": "selected normal / control",
+        "detail_view": "footprint local; rigid rotation -90 degrees"
+      },
+      {
+        "reference": "J7",
+        "pin": "6",
+        "sheet": "contact-atlas-j7-02.svg",
+        "role": "GPIO35",
+        "direction_or_duty": "input only \u00b7 ADC1",
+        "source_side": "F.Cu",
+        "source_pad": {
+          "pin": "6",
+          "local": [
+            0.0,
+            12.7
+          ],
+          "xy": [
+            13.5,
+            15.2
+          ],
+          "net": "/H_GPIO35",
+          "uuid": "8dd9df0a-7fb8-4e2c-ba79-263cc4723e3c",
+          "kind": "thru_hole",
+          "size": [
+            1.7,
+            1.7
+          ],
+          "drill": [
+            "1"
+          ],
+          "layers": [
+            "*.Cu",
+            "*.Mask"
+          ]
+        },
+        "all_source_instances": [
+          "8dd9df0a-7fb8-4e2c-ba79-263cc4723e3c"
+        ],
+        "population": "selected normal / control",
+        "detail_view": "footprint local; rigid rotation -90 degrees"
+      },
+      {
+        "reference": "J7",
+        "pin": "7",
+        "sheet": "contact-atlas-j7-02.svg",
+        "role": "GPIO32",
+        "direction_or_duty": "GPIO \u00b7 app sets direction",
+        "source_side": "F.Cu",
+        "source_pad": {
+          "pin": "7",
+          "local": [
+            0.0,
+            15.24
+          ],
+          "xy": [
+            13.5,
+            17.740000000000002
+          ],
+          "net": "/H_GPIO32",
+          "uuid": "20dbb63e-72ca-4ad1-a867-ce3be98efa73",
+          "kind": "thru_hole",
+          "size": [
+            1.7,
+            1.7
+          ],
+          "drill": [
+            "1"
+          ],
+          "layers": [
+            "*.Cu",
+            "*.Mask"
+          ]
+        },
+        "all_source_instances": [
+          "20dbb63e-72ca-4ad1-a867-ce3be98efa73"
+        ],
+        "population": "selected normal / control",
+        "detail_view": "footprint local; rigid rotation -90 degrees"
+      },
+      {
+        "reference": "J7",
+        "pin": "8",
+        "sheet": "contact-atlas-j7-02.svg",
+        "role": "GPIO33",
+        "direction_or_duty": "GPIO \u00b7 app sets direction",
+        "source_side": "F.Cu",
+        "source_pad": {
+          "pin": "8",
+          "local": [
+            0.0,
+            17.78
+          ],
+          "xy": [
+            13.5,
+            20.28
+          ],
+          "net": "/H_GPIO33",
+          "uuid": "1f84cd6c-7b65-41ed-9ee2-78566f5c435d",
+          "kind": "thru_hole",
+          "size": [
+            1.7,
+            1.7
+          ],
+          "drill": [
+            "1"
+          ],
+          "layers": [
+            "*.Cu",
+            "*.Mask"
+          ]
+        },
+        "all_source_instances": [
+          "1f84cd6c-7b65-41ed-9ee2-78566f5c435d"
+        ],
+        "population": "selected normal / control",
+        "detail_view": "footprint local; rigid rotation -90 degrees"
+      },
+      {
+        "reference": "J7",
+        "pin": "9",
+        "sheet": "contact-atlas-j7-02.svg",
+        "role": "GPIO25",
+        "direction_or_duty": "GPIO \u00b7 app sets direction",
+        "source_side": "F.Cu",
+        "source_pad": {
+          "pin": "9",
+          "local": [
+            0.0,
+            20.32
+          ],
+          "xy": [
+            13.5,
+            22.82
+          ],
+          "net": "/H_GPIO25",
+          "uuid": "9983d29d-b5b7-438e-bea8-8498b7187c2f",
+          "kind": "thru_hole",
+          "size": [
+            1.7,
+            1.7
+          ],
+          "drill": [
+            "1"
+          ],
+          "layers": [
+            "*.Cu",
+            "*.Mask"
+          ]
+        },
+        "all_source_instances": [
+          "9983d29d-b5b7-438e-bea8-8498b7187c2f"
+        ],
+        "population": "selected normal / control",
+        "detail_view": "footprint local; rigid rotation -90 degrees"
+      },
+      {
+        "reference": "J7",
+        "pin": "10",
+        "sheet": "contact-atlas-j7-02.svg",
+        "role": "GPIO26",
+        "direction_or_duty": "GPIO \u00b7 app sets direction",
+        "source_side": "F.Cu",
+        "source_pad": {
+          "pin": "10",
+          "local": [
+            0.0,
+            22.86
+          ],
+          "xy": [
+            13.5,
+            25.36
+          ],
+          "net": "/H_GPIO26",
+          "uuid": "b2ea26da-115d-4cef-aeaf-e6bfccb366b1",
+          "kind": "thru_hole",
+          "size": [
+            1.7,
+            1.7
+          ],
+          "drill": [
+            "1"
+          ],
+          "layers": [
+            "*.Cu",
+            "*.Mask"
+          ]
+        },
+        "all_source_instances": [
+          "b2ea26da-115d-4cef-aeaf-e6bfccb366b1"
+        ],
+        "population": "selected normal / control",
+        "detail_view": "footprint local; rigid rotation -90 degrees"
+      },
+      {
+        "reference": "J7",
+        "pin": "11",
+        "sheet": "contact-atlas-j7-03.svg",
+        "role": "GPIO27",
+        "direction_or_duty": "GPIO \u00b7 app sets direction",
+        "source_side": "F.Cu",
+        "source_pad": {
+          "pin": "11",
+          "local": [
+            0.0,
+            25.4
+          ],
+          "xy": [
+            13.5,
+            27.9
+          ],
+          "net": "/H_GPIO27",
+          "uuid": "f5e4fb7c-021d-4dab-bc05-d753f50dfdde",
+          "kind": "thru_hole",
+          "size": [
+            1.7,
+            1.7
+          ],
+          "drill": [
+            "1"
+          ],
+          "layers": [
+            "*.Cu",
+            "*.Mask"
+          ]
+        },
+        "all_source_instances": [
+          "f5e4fb7c-021d-4dab-bc05-d753f50dfdde"
+        ],
+        "population": "selected normal / control",
+        "detail_view": "footprint local; rigid rotation -90 degrees"
+      },
+      {
+        "reference": "J7",
+        "pin": "12",
+        "sheet": "contact-atlas-j7-03.svg",
+        "role": "GPIO14",
+        "direction_or_duty": "GPIO \u00b7 app sets direction",
+        "source_side": "F.Cu",
+        "source_pad": {
+          "pin": "12",
+          "local": [
+            0.0,
+            27.94
+          ],
+          "xy": [
+            13.5,
+            30.44
+          ],
+          "net": "/H_GPIO14",
+          "uuid": "869a85d4-3aaa-4fa2-95b4-682d92a59ed6",
+          "kind": "thru_hole",
+          "size": [
+            1.7,
+            1.7
+          ],
+          "drill": [
+            "1"
+          ],
+          "layers": [
+            "*.Cu",
+            "*.Mask"
+          ]
+        },
+        "all_source_instances": [
+          "869a85d4-3aaa-4fa2-95b4-682d92a59ed6"
+        ],
+        "population": "selected normal / control",
+        "detail_view": "footprint local; rigid rotation -90 degrees"
+      },
+      {
+        "reference": "J7",
+        "pin": "13",
+        "sheet": "contact-atlas-j7-03.svg",
+        "role": "NC \u00b7 GPIO12",
+        "direction_or_duty": "isolated on carrier",
+        "source_side": "F.Cu",
+        "source_pad": {
+          "pin": "13",
+          "local": [
+            0.0,
+            30.48
+          ],
+          "xy": [
+            13.5,
+            32.980000000000004
+          ],
+          "net": "unconnected-(J7-GPIO12-Pad13)",
+          "uuid": "91fa99dd-bd1e-4c5c-b111-3561613844c3",
+          "kind": "thru_hole",
+          "size": [
+            1.7,
+            1.7
+          ],
+          "drill": [
+            "1"
+          ],
+          "layers": [
+            "*.Cu",
+            "*.Mask"
+          ]
+        },
+        "all_source_instances": [
+          "91fa99dd-bd1e-4c5c-b111-3561613844c3"
+        ],
+        "population": "selected normal / control",
+        "detail_view": "footprint local; rigid rotation -90 degrees"
+      },
+      {
+        "reference": "J7",
+        "pin": "14",
+        "sheet": "contact-atlas-j7-03.svg",
+        "role": "Circuit ground",
+        "direction_or_duty": "common return",
+        "source_side": "F.Cu",
+        "source_pad": {
+          "pin": "14",
+          "local": [
+            0.0,
+            33.02
+          ],
+          "xy": [
+            13.5,
+            35.52
+          ],
+          "net": "GND",
+          "uuid": "50309db6-308e-4327-a2f5-6fdaa5074f17",
+          "kind": "thru_hole",
+          "size": [
+            1.7,
+            1.7
+          ],
+          "drill": [
+            "1"
+          ],
+          "layers": [
+            "*.Cu",
+            "*.Mask"
+          ]
+        },
+        "all_source_instances": [
+          "50309db6-308e-4327-a2f5-6fdaa5074f17"
+        ],
+        "population": "selected normal / control",
+        "detail_view": "footprint local; rigid rotation -90 degrees"
+      },
+      {
+        "reference": "J7",
+        "pin": "15",
+        "sheet": "contact-atlas-j7-03.svg",
+        "role": "GPIO13",
+        "direction_or_duty": "GPIO \u00b7 app sets direction",
+        "source_side": "F.Cu",
+        "source_pad": {
+          "pin": "15",
+          "local": [
+            0.0,
+            35.56
+          ],
+          "xy": [
+            13.5,
+            38.06
+          ],
+          "net": "/H_GPIO13",
+          "uuid": "20d6d8de-dc55-48db-91b1-f342163b36de",
+          "kind": "thru_hole",
+          "size": [
+            1.7,
+            1.7
+          ],
+          "drill": [
+            "1"
+          ],
+          "layers": [
+            "*.Cu",
+            "*.Mask"
+          ]
+        },
+        "all_source_instances": [
+          "20d6d8de-dc55-48db-91b1-f342163b36de"
+        ],
+        "population": "selected normal / control",
+        "detail_view": "footprint local; rigid rotation -90 degrees"
+      },
+      {
+        "reference": "J7",
+        "pin": "16",
+        "sheet": "contact-atlas-j7-04.svg",
+        "role": "NC \u00b7 GPIO9 / D2",
+        "direction_or_duty": "isolated on carrier",
+        "source_side": "F.Cu",
+        "source_pad": {
+          "pin": "16",
+          "local": [
+            0.0,
+            38.1
+          ],
+          "xy": [
+            13.5,
+            40.6
+          ],
+          "net": "unconnected-(J7-SD2-Pad16)",
+          "uuid": "954dba14-b97e-4ee8-a1dd-b8db0e64ef22",
+          "kind": "thru_hole",
+          "size": [
+            1.7,
+            1.7
+          ],
+          "drill": [
+            "1"
+          ],
+          "layers": [
+            "*.Cu",
+            "*.Mask"
+          ]
+        },
+        "all_source_instances": [
+          "954dba14-b97e-4ee8-a1dd-b8db0e64ef22"
+        ],
+        "population": "selected normal / control",
+        "detail_view": "footprint local; rigid rotation -90 degrees"
+      },
+      {
+        "reference": "J7",
+        "pin": "17",
+        "sheet": "contact-atlas-j7-04.svg",
+        "role": "NC \u00b7 GPIO10 / D3",
+        "direction_or_duty": "isolated on carrier",
+        "source_side": "F.Cu",
+        "source_pad": {
+          "pin": "17",
+          "local": [
+            0.0,
+            40.64
+          ],
+          "xy": [
+            13.5,
+            43.14
+          ],
+          "net": "unconnected-(J7-SD3-Pad17)",
+          "uuid": "c9e014b8-07a0-4581-aafd-20915fbf04fa",
+          "kind": "thru_hole",
+          "size": [
+            1.7,
+            1.7
+          ],
+          "drill": [
+            "1"
+          ],
+          "layers": [
+            "*.Cu",
+            "*.Mask"
+          ]
+        },
+        "all_source_instances": [
+          "c9e014b8-07a0-4581-aafd-20915fbf04fa"
+        ],
+        "population": "selected normal / control",
+        "detail_view": "footprint local; rigid rotation -90 degrees"
+      },
+      {
+        "reference": "J7",
+        "pin": "18",
+        "sheet": "contact-atlas-j7-04.svg",
+        "role": "NC \u00b7 GPIO11 / CMD",
+        "direction_or_duty": "isolated on carrier",
+        "source_side": "F.Cu",
+        "source_pad": {
+          "pin": "18",
+          "local": [
+            0.0,
+            43.18
+          ],
+          "xy": [
+            13.5,
+            45.68
+          ],
+          "net": "unconnected-(J7-CMD-Pad18)",
+          "uuid": "ca36ef4c-506d-4e49-8321-2e74eb2b271a",
+          "kind": "thru_hole",
+          "size": [
+            1.7,
+            1.7
+          ],
+          "drill": [
+            "1"
+          ],
+          "layers": [
+            "*.Cu",
+            "*.Mask"
+          ]
+        },
+        "all_source_instances": [
+          "ca36ef4c-506d-4e49-8321-2e74eb2b271a"
+        ],
+        "population": "selected normal / control",
+        "detail_view": "footprint local; rigid rotation -90 degrees"
+      },
+      {
+        "reference": "J7",
+        "pin": "19",
+        "sheet": "contact-atlas-j7-04.svg",
+        "role": "5 V supply",
+        "direction_or_duty": "DevKit \u2192 carrier",
+        "source_side": "F.Cu",
+        "source_pad": {
+          "pin": "19",
+          "local": [
+            0.0,
+            45.72
+          ],
+          "xy": [
+            13.5,
+            48.22
+          ],
+          "net": "/HOST_5V",
+          "uuid": "910cae4b-d3fa-4c4e-8c79-4c5c4ff3f801",
+          "kind": "thru_hole",
+          "size": [
+            1.7,
+            1.7
+          ],
+          "drill": [
+            "1"
+          ],
+          "layers": [
+            "*.Cu",
+            "*.Mask"
+          ]
+        },
+        "all_source_instances": [
+          "910cae4b-d3fa-4c4e-8c79-4c5c4ff3f801"
+        ],
+        "population": "selected normal / control",
+        "detail_view": "footprint local; rigid rotation -90 degrees"
+      },
+      {
+        "reference": "J8",
+        "pin": "1",
+        "sheet": "contact-atlas-j8-01.svg",
+        "role": "Circuit ground",
+        "direction_or_duty": "common return",
+        "source_side": "F.Cu",
+        "source_pad": {
+          "pin": "1",
+          "local": [
+            0.0,
+            0.0
+          ],
+          "xy": [
+            38.9,
+            2.5
+          ],
+          "net": "GND",
+          "uuid": "f0532ea2-b190-4673-9b35-7e906f43bc3d",
+          "kind": "thru_hole",
+          "size": [
+            1.7,
+            1.7
+          ],
+          "drill": [
+            "1"
+          ],
+          "layers": [
+            "*.Cu",
+            "*.Mask"
+          ]
+        },
+        "all_source_instances": [
+          "f0532ea2-b190-4673-9b35-7e906f43bc3d"
+        ],
+        "population": "selected normal / control",
+        "detail_view": "footprint local; rigid rotation -90 degrees"
+      },
+      {
+        "reference": "J8",
+        "pin": "2",
+        "sheet": "contact-atlas-j8-01.svg",
+        "role": "MOSI \u00b7 GPIO23",
+        "direction_or_duty": "SPI host output",
+        "source_side": "F.Cu",
+        "source_pad": {
+          "pin": "2",
+          "local": [
+            0.0,
+            2.54
+          ],
+          "xy": [
+            38.9,
+            5.04
+          ],
+          "net": "/H_GPIO23",
+          "uuid": "0b650071-b05f-46de-9810-71eb4ddb38d6",
+          "kind": "thru_hole",
+          "size": [
+            1.7,
+            1.7
+          ],
+          "drill": [
+            "1"
+          ],
+          "layers": [
+            "*.Cu",
+            "*.Mask"
+          ]
+        },
+        "all_source_instances": [
+          "0b650071-b05f-46de-9810-71eb4ddb38d6"
+        ],
+        "population": "selected normal / control",
+        "detail_view": "footprint local; rigid rotation -90 degrees"
+      },
+      {
+        "reference": "J8",
+        "pin": "3",
+        "sheet": "contact-atlas-j8-01.svg",
+        "role": "SCL \u00b7 GPIO22",
+        "direction_or_duty": "I\u00b2C host clock",
+        "source_side": "F.Cu",
+        "source_pad": {
+          "pin": "3",
+          "local": [
+            0.0,
+            5.08
+          ],
+          "xy": [
+            38.9,
+            7.58
+          ],
+          "net": "/H_GPIO22",
+          "uuid": "e0b41f16-21c2-4db8-bd2f-cf61a4ae4251",
+          "kind": "thru_hole",
+          "size": [
+            1.7,
+            1.7
+          ],
+          "drill": [
+            "1"
+          ],
+          "layers": [
+            "*.Cu",
+            "*.Mask"
+          ]
+        },
+        "all_source_instances": [
+          "e0b41f16-21c2-4db8-bd2f-cf61a4ae4251"
+        ],
+        "population": "selected normal / control",
+        "detail_view": "footprint local; rigid rotation -90 degrees"
+      },
+      {
+        "reference": "J8",
+        "pin": "4",
+        "sheet": "contact-atlas-j8-01.svg",
+        "role": "NC \u00b7 GPIO1 / TX0",
+        "direction_or_duty": "isolated on carrier",
+        "source_side": "F.Cu",
+        "source_pad": {
+          "pin": "4",
+          "local": [
+            0.0,
+            7.62
+          ],
+          "xy": [
+            38.9,
+            10.120000000000001
+          ],
+          "net": "unconnected-(J8-TXD0-Pad4)",
+          "uuid": "871677dc-e97a-4ceb-b97c-1fdb699348b3",
+          "kind": "thru_hole",
+          "size": [
+            1.7,
+            1.7
+          ],
+          "drill": [
+            "1"
+          ],
+          "layers": [
+            "*.Cu",
+            "*.Mask"
+          ]
+        },
+        "all_source_instances": [
+          "871677dc-e97a-4ceb-b97c-1fdb699348b3"
+        ],
+        "population": "selected normal / control",
+        "detail_view": "footprint local; rigid rotation -90 degrees"
+      },
+      {
+        "reference": "J8",
+        "pin": "5",
+        "sheet": "contact-atlas-j8-01.svg",
+        "role": "NC \u00b7 GPIO3 / RX0",
+        "direction_or_duty": "isolated on carrier",
+        "source_side": "F.Cu",
+        "source_pad": {
+          "pin": "5",
+          "local": [
+            0.0,
+            10.16
+          ],
+          "xy": [
+            38.9,
+            12.66
+          ],
+          "net": "unconnected-(J8-RXD0-Pad5)",
+          "uuid": "940a162e-3588-4b2f-bd96-3a825f37db74",
+          "kind": "thru_hole",
+          "size": [
+            1.7,
+            1.7
+          ],
+          "drill": [
+            "1"
+          ],
+          "layers": [
+            "*.Cu",
+            "*.Mask"
+          ]
+        },
+        "all_source_instances": [
+          "940a162e-3588-4b2f-bd96-3a825f37db74"
+        ],
+        "population": "selected normal / control",
+        "detail_view": "footprint local; rigid rotation -90 degrees"
+      },
+      {
+        "reference": "J8",
+        "pin": "6",
+        "sheet": "contact-atlas-j8-02.svg",
+        "role": "SDA \u00b7 GPIO21",
+        "direction_or_duty": "I\u00b2C bidirectional data",
+        "source_side": "F.Cu",
+        "source_pad": {
+          "pin": "6",
+          "local": [
+            0.0,
+            12.7
+          ],
+          "xy": [
+            38.9,
+            15.2
+          ],
+          "net": "/H_GPIO21",
+          "uuid": "ed98d194-da1f-4c31-808d-9ce5cebb0549",
+          "kind": "thru_hole",
+          "size": [
+            1.7,
+            1.7
+          ],
+          "drill": [
+            "1"
+          ],
+          "layers": [
+            "*.Cu",
+            "*.Mask"
+          ]
+        },
+        "all_source_instances": [
+          "ed98d194-da1f-4c31-808d-9ce5cebb0549"
+        ],
+        "population": "selected normal / control",
+        "detail_view": "footprint local; rigid rotation -90 degrees"
+      },
+      {
+        "reference": "J8",
+        "pin": "7",
+        "sheet": "contact-atlas-j8-02.svg",
+        "role": "Circuit ground",
+        "direction_or_duty": "common return",
+        "source_side": "F.Cu",
+        "source_pad": {
+          "pin": "7",
+          "local": [
+            0.0,
+            15.24
+          ],
+          "xy": [
+            38.9,
+            17.740000000000002
+          ],
+          "net": "GND",
+          "uuid": "f48a014c-c8ad-4082-93a3-9eaac4bf0077",
+          "kind": "thru_hole",
+          "size": [
+            1.7,
+            1.7
+          ],
+          "drill": [
+            "1"
+          ],
+          "layers": [
+            "*.Cu",
+            "*.Mask"
+          ]
+        },
+        "all_source_instances": [
+          "f48a014c-c8ad-4082-93a3-9eaac4bf0077"
+        ],
+        "population": "selected normal / control",
+        "detail_view": "footprint local; rigid rotation -90 degrees"
+      },
+      {
+        "reference": "J8",
+        "pin": "8",
+        "sheet": "contact-atlas-j8-02.svg",
+        "role": "MISO \u00b7 GPIO19",
+        "direction_or_duty": "SPI host input",
+        "source_side": "F.Cu",
+        "source_pad": {
+          "pin": "8",
+          "local": [
+            0.0,
+            17.78
+          ],
+          "xy": [
+            38.9,
+            20.28
+          ],
+          "net": "/H_GPIO19",
+          "uuid": "313a4bad-d242-413a-9530-284a8a2eb6e7",
+          "kind": "thru_hole",
+          "size": [
+            1.7,
+            1.7
+          ],
+          "drill": [
+            "1"
+          ],
+          "layers": [
+            "*.Cu",
+            "*.Mask"
+          ]
+        },
+        "all_source_instances": [
+          "313a4bad-d242-413a-9530-284a8a2eb6e7"
+        ],
+        "population": "selected normal / control",
+        "detail_view": "footprint local; rigid rotation -90 degrees"
+      },
+      {
+        "reference": "J8",
+        "pin": "9",
+        "sheet": "contact-atlas-j8-02.svg",
+        "role": "SCK \u00b7 GPIO18",
+        "direction_or_duty": "SPI host clock output",
+        "source_side": "F.Cu",
+        "source_pad": {
+          "pin": "9",
+          "local": [
+            0.0,
+            20.32
+          ],
+          "xy": [
+            38.9,
+            22.82
+          ],
+          "net": "/H_GPIO18",
+          "uuid": "ed7e5c3e-c8ac-4713-b701-19de4d9bcf77",
+          "kind": "thru_hole",
+          "size": [
+            1.7,
+            1.7
+          ],
+          "drill": [
+            "1"
+          ],
+          "layers": [
+            "*.Cu",
+            "*.Mask"
+          ]
+        },
+        "all_source_instances": [
+          "ed7e5c3e-c8ac-4713-b701-19de4d9bcf77"
+        ],
+        "population": "selected normal / control",
+        "detail_view": "footprint local; rigid rotation -90 degrees"
+      },
+      {
+        "reference": "J8",
+        "pin": "10",
+        "sheet": "contact-atlas-j8-02.svg",
+        "role": "GPIO5",
+        "direction_or_duty": "GPIO \u00b7 boot strapping",
+        "source_side": "F.Cu",
+        "source_pad": {
+          "pin": "10",
+          "local": [
+            0.0,
+            22.86
+          ],
+          "xy": [
+            38.9,
+            25.36
+          ],
+          "net": "/H_GPIO5",
+          "uuid": "5ec1c01c-0d64-4009-93dd-7251ebfefbb6",
+          "kind": "thru_hole",
+          "size": [
+            1.7,
+            1.7
+          ],
+          "drill": [
+            "1"
+          ],
+          "layers": [
+            "*.Cu",
+            "*.Mask"
+          ]
+        },
+        "all_source_instances": [
+          "5ec1c01c-0d64-4009-93dd-7251ebfefbb6"
+        ],
+        "population": "selected normal / control",
+        "detail_view": "footprint local; rigid rotation -90 degrees"
+      },
+      {
+        "reference": "J8",
+        "pin": "11",
+        "sheet": "contact-atlas-j8-03.svg",
+        "role": "TX \u00b7 GPIO17",
+        "direction_or_duty": "UART host output",
+        "source_side": "F.Cu",
+        "source_pad": {
+          "pin": "11",
+          "local": [
+            0.0,
+            25.4
+          ],
+          "xy": [
+            38.9,
+            27.9
+          ],
+          "net": "/H_GPIO17",
+          "uuid": "e4bbc822-a9ad-4572-ac27-b71c0327e2d8",
+          "kind": "thru_hole",
+          "size": [
+            1.7,
+            1.7
+          ],
+          "drill": [
+            "1"
+          ],
+          "layers": [
+            "*.Cu",
+            "*.Mask"
+          ]
+        },
+        "all_source_instances": [
+          "e4bbc822-a9ad-4572-ac27-b71c0327e2d8"
+        ],
+        "population": "selected normal / control",
+        "detail_view": "footprint local; rigid rotation -90 degrees"
+      },
+      {
+        "reference": "J8",
+        "pin": "12",
+        "sheet": "contact-atlas-j8-03.svg",
+        "role": "RX \u00b7 GPIO16",
+        "direction_or_duty": "UART host input",
+        "source_side": "F.Cu",
+        "source_pad": {
+          "pin": "12",
+          "local": [
+            0.0,
+            27.94
+          ],
+          "xy": [
+            38.9,
+            30.44
+          ],
+          "net": "/H_GPIO16",
+          "uuid": "5bb66e22-05dd-4f7e-a690-43d3fb2dc1f6",
+          "kind": "thru_hole",
+          "size": [
+            1.7,
+            1.7
+          ],
+          "drill": [
+            "1"
+          ],
+          "layers": [
+            "*.Cu",
+            "*.Mask"
+          ]
+        },
+        "all_source_instances": [
+          "5bb66e22-05dd-4f7e-a690-43d3fb2dc1f6"
+        ],
+        "population": "selected normal / control",
+        "detail_view": "footprint local; rigid rotation -90 degrees"
+      },
+      {
+        "reference": "J8",
+        "pin": "13",
+        "sheet": "contact-atlas-j8-03.svg",
+        "role": "GPIO4",
+        "direction_or_duty": "GPIO \u00b7 app sets direction",
+        "source_side": "F.Cu",
+        "source_pad": {
+          "pin": "13",
+          "local": [
+            0.0,
+            30.48
+          ],
+          "xy": [
+            38.9,
+            32.980000000000004
+          ],
+          "net": "/H_GPIO4",
+          "uuid": "777cb0ae-36c3-4a6d-84ce-088822e7ea18",
+          "kind": "thru_hole",
+          "size": [
+            1.7,
+            1.7
+          ],
+          "drill": [
+            "1"
+          ],
+          "layers": [
+            "*.Cu",
+            "*.Mask"
+          ]
+        },
+        "all_source_instances": [
+          "777cb0ae-36c3-4a6d-84ce-088822e7ea18"
+        ],
+        "population": "selected normal / control",
+        "detail_view": "footprint local; rigid rotation -90 degrees"
+      },
+      {
+        "reference": "J8",
+        "pin": "14",
+        "sheet": "contact-atlas-j8-03.svg",
+        "role": "NC \u00b7 GPIO0",
+        "direction_or_duty": "isolated on carrier",
+        "source_side": "F.Cu",
+        "source_pad": {
+          "pin": "14",
+          "local": [
+            0.0,
+            33.02
+          ],
+          "xy": [
+            38.9,
+            35.52
+          ],
+          "net": "unconnected-(J8-GPIO0-Pad14)",
+          "uuid": "8cc58c88-7695-40c9-8223-2436b547243c",
+          "kind": "thru_hole",
+          "size": [
+            1.7,
+            1.7
+          ],
+          "drill": [
+            "1"
+          ],
+          "layers": [
+            "*.Cu",
+            "*.Mask"
+          ]
+        },
+        "all_source_instances": [
+          "8cc58c88-7695-40c9-8223-2436b547243c"
+        ],
+        "population": "selected normal / control",
+        "detail_view": "footprint local; rigid rotation -90 degrees"
+      },
+      {
+        "reference": "J8",
+        "pin": "15",
+        "sheet": "contact-atlas-j8-03.svg",
+        "role": "GPIO2",
+        "direction_or_duty": "GPIO \u00b7 boot strapping",
+        "source_side": "F.Cu",
+        "source_pad": {
+          "pin": "15",
+          "local": [
+            0.0,
+            35.56
+          ],
+          "xy": [
+            38.9,
+            38.06
+          ],
+          "net": "/H_GPIO2",
+          "uuid": "17a5d381-9834-4e30-b4e0-d71e00cce35c",
+          "kind": "thru_hole",
+          "size": [
+            1.7,
+            1.7
+          ],
+          "drill": [
+            "1"
+          ],
+          "layers": [
+            "*.Cu",
+            "*.Mask"
+          ]
+        },
+        "all_source_instances": [
+          "17a5d381-9834-4e30-b4e0-d71e00cce35c"
+        ],
+        "population": "selected normal / control",
+        "detail_view": "footprint local; rigid rotation -90 degrees"
+      },
+      {
+        "reference": "J8",
+        "pin": "16",
+        "sheet": "contact-atlas-j8-04.svg",
+        "role": "GPIO15",
+        "direction_or_duty": "GPIO \u00b7 boot strapping",
+        "source_side": "F.Cu",
+        "source_pad": {
+          "pin": "16",
+          "local": [
+            0.0,
+            38.1
+          ],
+          "xy": [
+            38.9,
+            40.6
+          ],
+          "net": "/H_GPIO15",
+          "uuid": "aaa9561d-ad71-4d56-8fd4-f988c46a673d",
+          "kind": "thru_hole",
+          "size": [
+            1.7,
+            1.7
+          ],
+          "drill": [
+            "1"
+          ],
+          "layers": [
+            "*.Cu",
+            "*.Mask"
+          ]
+        },
+        "all_source_instances": [
+          "aaa9561d-ad71-4d56-8fd4-f988c46a673d"
+        ],
+        "population": "selected normal / control",
+        "detail_view": "footprint local; rigid rotation -90 degrees"
+      },
+      {
+        "reference": "J8",
+        "pin": "17",
+        "sheet": "contact-atlas-j8-04.svg",
+        "role": "NC \u00b7 GPIO8 / D1",
+        "direction_or_duty": "isolated on carrier",
+        "source_side": "F.Cu",
+        "source_pad": {
+          "pin": "17",
+          "local": [
+            0.0,
+            40.64
+          ],
+          "xy": [
+            38.9,
+            43.14
+          ],
+          "net": "unconnected-(J8-SD1-Pad17)",
+          "uuid": "e200d4df-975c-422b-b9ce-14996102ea1c",
+          "kind": "thru_hole",
+          "size": [
+            1.7,
+            1.7
+          ],
+          "drill": [
+            "1"
+          ],
+          "layers": [
+            "*.Cu",
+            "*.Mask"
+          ]
+        },
+        "all_source_instances": [
+          "e200d4df-975c-422b-b9ce-14996102ea1c"
+        ],
+        "population": "selected normal / control",
+        "detail_view": "footprint local; rigid rotation -90 degrees"
+      },
+      {
+        "reference": "J8",
+        "pin": "18",
+        "sheet": "contact-atlas-j8-04.svg",
+        "role": "NC \u00b7 GPIO7 / D0",
+        "direction_or_duty": "isolated on carrier",
+        "source_side": "F.Cu",
+        "source_pad": {
+          "pin": "18",
+          "local": [
+            0.0,
+            43.18
+          ],
+          "xy": [
+            38.9,
+            45.68
+          ],
+          "net": "unconnected-(J8-SD0-Pad18)",
+          "uuid": "faff99a2-2fc0-4a35-921f-ddcc86095796",
+          "kind": "thru_hole",
+          "size": [
+            1.7,
+            1.7
+          ],
+          "drill": [
+            "1"
+          ],
+          "layers": [
+            "*.Cu",
+            "*.Mask"
+          ]
+        },
+        "all_source_instances": [
+          "faff99a2-2fc0-4a35-921f-ddcc86095796"
+        ],
+        "population": "selected normal / control",
+        "detail_view": "footprint local; rigid rotation -90 degrees"
+      },
+      {
+        "reference": "J8",
+        "pin": "19",
+        "sheet": "contact-atlas-j8-04.svg",
+        "role": "NC \u00b7 GPIO6 / CLK",
+        "direction_or_duty": "isolated on carrier",
+        "source_side": "F.Cu",
+        "source_pad": {
+          "pin": "19",
+          "local": [
+            0.0,
+            45.72
+          ],
+          "xy": [
+            38.9,
+            48.22
+          ],
+          "net": "unconnected-(J8-CLK-Pad19)",
+          "uuid": "a0bd6af5-5aee-4561-a7e9-de3e03aa1c4c",
+          "kind": "thru_hole",
+          "size": [
+            1.7,
+            1.7
+          ],
+          "drill": [
+            "1"
+          ],
+          "layers": [
+            "*.Cu",
+            "*.Mask"
+          ]
+        },
+        "all_source_instances": [
+          "a0bd6af5-5aee-4561-a7e9-de3e03aa1c4c"
+        ],
+        "population": "selected normal / control",
+        "detail_view": "footprint local; rigid rotation -90 degrees"
+      },
+      {
+        "reference": "D2",
+        "pin": "1",
+        "sheet": "contact-atlas-controls-top-01.svg",
+        "role": "3.3 V LED cathode",
+        "direction_or_duty": "to JP1 \u00b7 indicator return",
+        "source_side": "F.Cu",
+        "source_pad": {
+          "pin": "1",
+          "local": [
+            -0.7875,
+            0.0
+          ],
+          "xy": [
+            7.8125,
+            54.1
+          ],
+          "net": "/LED3V3_K",
+          "uuid": "a7c85e6c-3b05-4de4-9b86-374ca3d7a9c8",
+          "kind": "smd",
+          "size": [
+            0.875,
+            0.95
+          ],
+          "drill": [],
+          "layers": [
+            "F.Cu",
+            "F.Mask",
+            "F.Paste"
+          ]
+        },
+        "all_source_instances": [
+          "a7c85e6c-3b05-4de4-9b86-374ca3d7a9c8"
+        ],
+        "population": "selected normal / control",
+        "detail_view": "footprint local; no reflection"
+      },
+      {
+        "reference": "D2",
+        "pin": "2",
+        "sheet": "contact-atlas-controls-top-01.svg",
+        "role": "3.3 V LED anode",
+        "direction_or_duty": "from 3.3 V via resistor",
+        "source_side": "F.Cu",
+        "source_pad": {
+          "pin": "2",
+          "local": [
+            0.7875,
+            0.0
+          ],
+          "xy": [
+            9.3875,
+            54.1
+          ],
+          "net": "/LED3V3_A",
+          "uuid": "e122a00e-1539-4c16-bcb8-5993a7e50422",
+          "kind": "smd",
+          "size": [
+            0.875,
+            0.95
+          ],
+          "drill": [],
+          "layers": [
+            "F.Cu",
+            "F.Mask",
+            "F.Paste"
+          ]
+        },
+        "all_source_instances": [
+          "e122a00e-1539-4c16-bcb8-5993a7e50422"
+        ],
+        "population": "selected normal / control",
+        "detail_view": "footprint local; no reflection"
+      },
+      {
+        "reference": "JP1",
+        "pin": "1",
+        "sheet": "contact-atlas-controls-top-01.svg",
+        "role": "3.3 V LED return",
+        "direction_or_duty": "closed to contact 2",
+        "source_side": "F.Cu",
+        "source_pad": {
+          "pin": "1",
+          "local": [
+            -0.65,
+            0.0
+          ],
+          "xy": [
+            11.549999999999999,
+            54.1
+          ],
+          "net": "/LED3V3_K",
+          "uuid": "079b75b2-897e-4f18-be6a-cab36f9f4664",
+          "kind": "smd",
+          "size": [
+            1.0,
+            0.5
+          ],
+          "drill": [],
+          "layers": [
+            "F.Cu",
+            "F.Mask"
+          ]
+        },
+        "all_source_instances": [
+          "079b75b2-897e-4f18-be6a-cab36f9f4664"
+        ],
+        "population": "selected normal / control",
+        "detail_view": "footprint local; no reflection"
+      },
+      {
+        "reference": "JP1",
+        "pin": "2",
+        "sheet": "contact-atlas-controls-top-01.svg",
+        "role": "Circuit ground",
+        "direction_or_duty": "cut bridge disables LED",
+        "source_side": "F.Cu",
+        "source_pad": {
+          "pin": "2",
+          "local": [
+            0.65,
+            0.0
+          ],
+          "xy": [
+            12.85,
+            54.1
+          ],
+          "net": "GND",
+          "uuid": "ee2d26b1-35a6-4b0c-b746-e28161d8cd47",
+          "kind": "smd",
+          "size": [
+            1.0,
+            0.5
+          ],
+          "drill": [],
+          "layers": [
+            "F.Cu",
+            "F.Mask"
+          ]
+        },
+        "all_source_instances": [
+          "ee2d26b1-35a6-4b0c-b746-e28161d8cd47"
+        ],
+        "population": "selected normal / control",
+        "detail_view": "footprint local; no reflection"
+      },
+      {
+        "reference": "D3",
+        "pin": "1",
+        "sheet": "contact-atlas-controls-top-01.svg",
+        "role": "5 V LED cathode",
+        "direction_or_duty": "to JP2 \u00b7 indicator return",
+        "source_side": "F.Cu",
+        "source_pad": {
+          "pin": "1",
+          "local": [
+            -0.7875,
+            0.0
+          ],
+          "xy": [
+            41.8125,
+            54.1
+          ],
+          "net": "/LED5V_K",
+          "uuid": "a1b72d32-8d4f-422e-8afe-5a868248b621",
+          "kind": "smd",
+          "size": [
+            0.875,
+            0.95
+          ],
+          "drill": [],
+          "layers": [
+            "F.Cu",
+            "F.Mask",
+            "F.Paste"
+          ]
+        },
+        "all_source_instances": [
+          "a1b72d32-8d4f-422e-8afe-5a868248b621"
+        ],
+        "population": "selected normal / control",
+        "detail_view": "footprint local; no reflection"
+      },
+      {
+        "reference": "D3",
+        "pin": "2",
+        "sheet": "contact-atlas-controls-top-02.svg",
+        "role": "5 V LED anode",
+        "direction_or_duty": "from 5 V via resistor",
+        "source_side": "F.Cu",
+        "source_pad": {
+          "pin": "2",
+          "local": [
+            0.7875,
+            0.0
+          ],
+          "xy": [
+            43.3875,
+            54.1
+          ],
+          "net": "/LED5V_A",
+          "uuid": "6f27ee8f-c5a6-41a4-9bcc-8b8c6e65f33f",
+          "kind": "smd",
+          "size": [
+            0.875,
+            0.95
+          ],
+          "drill": [],
+          "layers": [
+            "F.Cu",
+            "F.Mask",
+            "F.Paste"
+          ]
+        },
+        "all_source_instances": [
+          "6f27ee8f-c5a6-41a4-9bcc-8b8c6e65f33f"
+        ],
+        "population": "selected normal / control",
+        "detail_view": "footprint local; no reflection"
+      },
+      {
+        "reference": "JP2",
+        "pin": "1",
+        "sheet": "contact-atlas-controls-top-02.svg",
+        "role": "5 V LED return",
+        "direction_or_duty": "closed to contact 2",
+        "source_side": "F.Cu",
+        "source_pad": {
+          "pin": "1",
+          "local": [
+            -0.65,
+            0.0
+          ],
+          "xy": [
+            45.550000000000004,
+            54.1
+          ],
+          "net": "/LED5V_K",
+          "uuid": "525fd8fc-dd24-47b7-a65b-9a28432969df",
+          "kind": "smd",
+          "size": [
+            1.0,
+            0.5
+          ],
+          "drill": [],
+          "layers": [
+            "F.Cu",
+            "F.Mask"
+          ]
+        },
+        "all_source_instances": [
+          "525fd8fc-dd24-47b7-a65b-9a28432969df"
+        ],
+        "population": "selected normal / control",
+        "detail_view": "footprint local; no reflection"
+      },
+      {
+        "reference": "JP2",
+        "pin": "2",
+        "sheet": "contact-atlas-controls-top-02.svg",
+        "role": "Circuit ground",
+        "direction_or_duty": "cut bridge disables LED",
+        "source_side": "F.Cu",
+        "source_pad": {
+          "pin": "2",
+          "local": [
+            0.65,
+            0.0
+          ],
+          "xy": [
+            46.85,
+            54.1
+          ],
+          "net": "GND",
+          "uuid": "42c65975-dc08-45ab-89e0-5b76680a86ce",
+          "kind": "smd",
+          "size": [
+            1.0,
+            0.5
+          ],
+          "drill": [],
+          "layers": [
+            "F.Cu",
+            "F.Mask"
+          ]
+        },
+        "all_source_instances": [
+          "42c65975-dc08-45ab-89e0-5b76680a86ce"
+        ],
+        "population": "selected normal / control",
+        "detail_view": "footprint local; no reflection"
+      },
+      {
+        "reference": "JP3",
+        "pin": "1",
+        "sheet": "contact-atlas-controls-bottom-01.svg",
+        "role": "SDA pull-up feed",
+        "direction_or_duty": "3.3 V via 4.7 k\u03a9",
+        "source_side": "B.Cu",
+        "source_pad": {
+          "pin": "1",
+          "local": [
+            -0.65,
+            0.0
+          ],
+          "xy": [
+            40.95,
+            9.1
+          ],
+          "net": "/PU_SDA",
+          "uuid": "104c6643-1451-4b3d-8ec4-af5f11ed0d01",
+          "kind": "smd",
+          "size": [
+            1.0,
+            0.5
+          ],
+          "drill": [],
+          "layers": [
+            "B.Cu",
+            "B.Mask"
+          ]
+        },
+        "all_source_instances": [
+          "104c6643-1451-4b3d-8ec4-af5f11ed0d01"
+        ],
+        "population": "selected normal / control",
+        "detail_view": "footprint local; no reflection"
+      },
+      {
+        "reference": "JP3",
+        "pin": "2",
+        "sheet": "contact-atlas-controls-bottom-01.svg",
+        "role": "SDA signal",
+        "direction_or_duty": "closed to pull-up feed",
+        "source_side": "B.Cu",
+        "source_pad": {
+          "pin": "2",
+          "local": [
+            0.65,
+            0.0
+          ],
+          "xy": [
+            42.25,
+            9.1
+          ],
+          "net": "/I2C_SDA",
+          "uuid": "c7e22419-0e1b-4f69-bedf-c1ed02648ed2",
+          "kind": "smd",
+          "size": [
+            1.0,
+            0.5
+          ],
+          "drill": [],
+          "layers": [
+            "B.Cu",
+            "B.Mask"
+          ]
+        },
+        "all_source_instances": [
+          "c7e22419-0e1b-4f69-bedf-c1ed02648ed2"
+        ],
+        "population": "selected normal / control",
+        "detail_view": "footprint local; no reflection"
+      },
+      {
+        "reference": "JP4",
+        "pin": "1",
+        "sheet": "contact-atlas-controls-bottom-01.svg",
+        "role": "SCL pull-up feed",
+        "direction_or_duty": "3.3 V via 4.7 k\u03a9",
+        "source_side": "B.Cu",
+        "source_pad": {
+          "pin": "1",
+          "local": [
+            -0.65,
+            0.0
+          ],
+          "xy": [
+            40.95,
+            12.4
+          ],
+          "net": "/PU_SCL",
+          "uuid": "70a5119f-2b6b-49e9-826d-bfd1d7547486",
+          "kind": "smd",
+          "size": [
+            1.0,
+            0.5
+          ],
+          "drill": [],
+          "layers": [
+            "B.Cu",
+            "B.Mask"
+          ]
+        },
+        "all_source_instances": [
+          "70a5119f-2b6b-49e9-826d-bfd1d7547486"
+        ],
+        "population": "selected normal / control",
+        "detail_view": "footprint local; no reflection"
+      },
+      {
+        "reference": "JP4",
+        "pin": "2",
+        "sheet": "contact-atlas-controls-bottom-01.svg",
+        "role": "SCL signal",
+        "direction_or_duty": "closed to pull-up feed",
+        "source_side": "B.Cu",
+        "source_pad": {
+          "pin": "2",
+          "local": [
+            0.65,
+            0.0
+          ],
+          "xy": [
+            42.25,
+            12.4
+          ],
+          "net": "/I2C_SCL",
+          "uuid": "15a81e94-8b32-4961-8189-d72d9ee6f6e5",
+          "kind": "smd",
+          "size": [
+            1.0,
+            0.5
+          ],
+          "drill": [],
+          "layers": [
+            "B.Cu",
+            "B.Mask"
+          ]
+        },
+        "all_source_instances": [
+          "15a81e94-8b32-4961-8189-d72d9ee6f6e5"
+        ],
+        "population": "selected normal / control",
+        "detail_view": "footprint local; no reflection"
+      },
+      {
+        "reference": "TP1",
+        "pin": "1",
+        "sheet": "contact-atlas-controls-bottom-01.svg",
+        "role": "3.3 V test pad",
+        "direction_or_duty": "measure \u00b7 not a load feed",
+        "source_side": "B.Cu",
+        "source_pad": {
+          "pin": "1",
+          "local": [
+            0.0,
+            0.0
+          ],
+          "xy": [
+            15.0,
+            54.1
+          ],
+          "net": "+3V3",
+          "uuid": "51b1f4b9-6ed8-48b3-b5c9-adb4b3b3f127",
+          "kind": "smd",
+          "size": [
+            1.5,
+            1.5
+          ],
+          "drill": [],
+          "layers": [
+            "B.Cu",
+            "B.Mask"
+          ]
+        },
+        "all_source_instances": [
+          "51b1f4b9-6ed8-48b3-b5c9-adb4b3b3f127"
+        ],
+        "population": "selected normal / control",
+        "detail_view": "footprint local; no reflection"
+      },
+      {
+        "reference": "TP2",
+        "pin": "1",
+        "sheet": "contact-atlas-controls-bottom-02.svg",
+        "role": "5 V test pad",
+        "direction_or_duty": "measure \u00b7 not a load feed",
+        "source_side": "B.Cu",
+        "source_pad": {
+          "pin": "1",
+          "local": [
+            0.0,
+            0.0
+          ],
+          "xy": [
+            18.0,
+            54.1
+          ],
+          "net": "+5V",
+          "uuid": "a110c1c5-a970-4d78-88bc-03a26e92a37a",
+          "kind": "smd",
+          "size": [
+            1.5,
+            1.5
+          ],
+          "drill": [],
+          "layers": [
+            "B.Cu",
+            "B.Mask"
+          ]
+        },
+        "all_source_instances": [
+          "a110c1c5-a970-4d78-88bc-03a26e92a37a"
+        ],
+        "population": "selected normal / control",
+        "detail_view": "footprint local; no reflection"
+      },
+      {
+        "reference": "TP3",
+        "pin": "1",
+        "sheet": "contact-atlas-controls-bottom-02.svg",
+        "role": "Ground test pad",
+        "direction_or_duty": "common circuit return",
+        "source_side": "B.Cu",
+        "source_pad": {
+          "pin": "1",
+          "local": [
+            0.0,
+            0.0
+          ],
+          "xy": [
+            21.0,
+            54.1
+          ],
+          "net": "GND",
+          "uuid": "67f02460-76ec-4575-b3d7-dc75d5bb5b7f",
+          "kind": "smd",
+          "size": [
+            1.5,
+            1.5
+          ],
+          "drill": [],
+          "layers": [
+            "B.Cu",
+            "B.Mask"
+          ]
+        },
+        "all_source_instances": [
+          "67f02460-76ec-4575-b3d7-dc75d5bb5b7f"
+        ],
+        "population": "selected normal / control",
+        "detail_view": "footprint local; no reflection"
+      },
+      {
+        "reference": "TP4",
+        "pin": "1",
+        "sheet": "contact-atlas-controls-bottom-02.svg",
+        "role": "SDA test pad",
+        "direction_or_duty": "bidirectional signal",
+        "source_side": "B.Cu",
+        "source_pad": {
+          "pin": "1",
+          "local": [
+            0.0,
+            0.0
+          ],
+          "xy": [
+            32.0,
+            54.1
+          ],
+          "net": "/I2C_SDA",
+          "uuid": "197fe9dd-bab6-478e-ad36-850d8c4fd714",
+          "kind": "smd",
+          "size": [
+            1.5,
+            1.5
+          ],
+          "drill": [],
+          "layers": [
+            "B.Cu",
+            "B.Mask"
+          ]
+        },
+        "all_source_instances": [
+          "197fe9dd-bab6-478e-ad36-850d8c4fd714"
+        ],
+        "population": "selected normal / control",
+        "detail_view": "footprint local; no reflection"
+      },
+      {
+        "reference": "TP5",
+        "pin": "1",
+        "sheet": "contact-atlas-controls-bottom-02.svg",
+        "role": "SCL test pad",
+        "direction_or_duty": "host-clocked signal",
+        "source_side": "B.Cu",
+        "source_pad": {
+          "pin": "1",
+          "local": [
+            0.0,
+            0.0
+          ],
+          "xy": [
+            34.7,
+            54.1
+          ],
+          "net": "/I2C_SCL",
+          "uuid": "36c5b434-aec5-4caf-afb0-aea276cb6aa3",
+          "kind": "smd",
+          "size": [
+            1.5,
+            1.5
+          ],
+          "drill": [],
+          "layers": [
+            "B.Cu",
+            "B.Mask"
+          ]
+        },
+        "all_source_instances": [
+          "36c5b434-aec5-4caf-afb0-aea276cb6aa3"
+        ],
+        "population": "selected normal / control",
+        "detail_view": "footprint local; no reflection"
+      },
+      {
+        "reference": "TP6",
+        "pin": "1",
+        "sheet": "contact-atlas-controls-bottom-02.svg",
+        "role": "Ground test pad",
+        "direction_or_duty": "common circuit return",
+        "source_side": "B.Cu",
+        "source_pad": {
+          "pin": "1",
+          "local": [
+            0.0,
+            0.0
+          ],
+          "xy": [
+            38.0,
+            54.1
+          ],
+          "net": "GND",
+          "uuid": "a4e10fac-12d0-4894-934c-43d483d3d432",
+          "kind": "smd",
+          "size": [
+            1.5,
+            1.5
+          ],
+          "drill": [],
+          "layers": [
+            "B.Cu",
+            "B.Mask"
+          ]
+        },
+        "all_source_instances": [
+          "a4e10fac-12d0-4894-934c-43d483d3d432"
+        ],
+        "population": "selected normal / control",
+        "detail_view": "footprint local; no reflection"
+      },
+      {
+        "reference": "J6",
+        "pin": "1",
+        "sheet": "contact-atlas-j6-alternative-01.svg",
+        "role": "Circuit ground",
+        "direction_or_duty": "common return",
+        "source_side": "F.Cu",
+        "source_pad": {
+          "pin": "1",
+          "local": [
+            -1.5,
+            -2.0
+          ],
+          "xy": [
+            47.5,
+            42.0
+          ],
+          "net": "GND",
+          "uuid": "ac06d5ce-8cb1-4d6b-86f5-61efff16cbe3",
+          "kind": "smd",
+          "size": [
+            0.6,
+            1.55
+          ],
+          "drill": [],
+          "layers": [
+            "F.Cu",
+            "F.Mask",
+            "F.Paste"
+          ]
+        },
+        "all_source_instances": [
+          "ab8d092e-cc83-4a19-8690-3578f989c3e1",
+          "ac06d5ce-8cb1-4d6b-86f5-61efff16cbe3"
+        ],
+        "population": "alternative JST-SH copper",
+        "detail_view": "footprint local; no reflection"
+      },
+      {
+        "reference": "J6",
+        "pin": "2",
+        "sheet": "contact-atlas-j6-alternative-01.svg",
+        "role": "3.3 V supply",
+        "direction_or_duty": "from DevKit \u00b7 via FB1",
+        "source_side": "F.Cu",
+        "source_pad": {
+          "pin": "2",
+          "local": [
+            -0.5,
+            -2.0
+          ],
+          "xy": [
+            47.5,
+            43.0
+          ],
+          "net": "+3V3",
+          "uuid": "19b67c08-0a1e-452f-8fcb-d2fd9db67fb7",
+          "kind": "smd",
+          "size": [
+            0.6,
+            1.55
+          ],
+          "drill": [],
+          "layers": [
+            "F.Cu",
+            "F.Mask",
+            "F.Paste"
+          ]
+        },
+        "all_source_instances": [
+          "7e41012a-c326-410c-a683-e6f631039ea0",
+          "19b67c08-0a1e-452f-8fcb-d2fd9db67fb7"
+        ],
+        "population": "alternative JST-SH copper",
+        "detail_view": "footprint local; no reflection"
+      },
+      {
+        "reference": "J6",
+        "pin": "3",
+        "sheet": "contact-atlas-j6-alternative-01.svg",
+        "role": "SDA \u00b7 GPIO21",
+        "direction_or_duty": "I\u00b2C bidirectional data",
+        "source_side": "F.Cu",
+        "source_pad": {
+          "pin": "3",
+          "local": [
+            0.5,
+            -2.0
+          ],
+          "xy": [
+            47.5,
+            44.0
+          ],
+          "net": "/I2C_SDA",
+          "uuid": "a819f59e-639a-488b-8d24-d92247052296",
+          "kind": "smd",
+          "size": [
+            0.6,
+            1.55
+          ],
+          "drill": [],
+          "layers": [
+            "F.Cu",
+            "F.Mask",
+            "F.Paste"
+          ]
+        },
+        "all_source_instances": [
+          "a819f59e-639a-488b-8d24-d92247052296",
+          "329b1f0b-9fa7-44d4-8d08-cd814ebdb1d1"
+        ],
+        "population": "alternative JST-SH copper",
+        "detail_view": "footprint local; no reflection"
+      },
+      {
+        "reference": "J6",
+        "pin": "4",
+        "sheet": "contact-atlas-j6-alternative-01.svg",
+        "role": "SCL \u00b7 GPIO22",
+        "direction_or_duty": "I\u00b2C host clock",
+        "source_side": "F.Cu",
+        "source_pad": {
+          "pin": "4",
+          "local": [
+            1.5,
+            -2.0
+          ],
+          "xy": [
+            47.5,
+            45.0
+          ],
+          "net": "/I2C_SCL",
+          "uuid": "2a99acc3-82c7-4dbf-ac79-e6712f60cd6b",
+          "kind": "smd",
+          "size": [
+            0.6,
+            1.55
+          ],
+          "drill": [],
+          "layers": [
+            "F.Cu",
+            "F.Mask",
+            "F.Paste"
+          ]
+        },
+        "all_source_instances": [
+          "2a99acc3-82c7-4dbf-ac79-e6712f60cd6b",
+          "e57599a1-8a0c-4240-bf34-184727586e28"
+        ],
+        "population": "alternative JST-SH copper",
+        "detail_view": "footprint local; no reflection"
+      },
+      {
+        "reference": "J6",
+        "pin": "MP",
+        "sheet": "contact-atlas-j6-alternative-01.svg",
+        "role": "Ground mounting land",
+        "direction_or_duty": "mechanical ground only",
+        "source_side": "F.Cu",
+        "source_pad": {
+          "pin": "MP",
+          "local": [
+            -2.8,
+            1.875
+          ],
+          "xy": [
+            43.625,
+            40.7
+          ],
+          "net": "GND",
+          "uuid": "26518ea5-9fb3-4027-b683-d9be62771728",
+          "kind": "smd",
+          "size": [
+            1.2,
+            1.8
+          ],
+          "drill": [],
+          "layers": [
+            "F.Cu",
+            "F.Mask",
+            "F.Paste"
+          ]
+        },
+        "all_source_instances": [
+          "26518ea5-9fb3-4027-b683-d9be62771728",
+          "2f17b897-f192-4159-b55f-2c6290629cea"
+        ],
+        "population": "alternative JST-SH copper",
+        "detail_view": "footprint local; no reflection"
+      },
+      {
+        "reference": "J6",
+        "pin": "MP",
+        "sheet": "contact-atlas-j6-alternative-02.svg",
+        "role": "Ground mounting land",
+        "direction_or_duty": "mechanical ground only",
+        "source_side": "F.Cu",
+        "source_pad": {
+          "pin": "MP",
+          "local": [
+            2.8,
+            1.875
+          ],
+          "xy": [
+            43.625,
+            46.3
+          ],
+          "net": "GND",
+          "uuid": "2f17b897-f192-4159-b55f-2c6290629cea",
+          "kind": "smd",
+          "size": [
+            1.2,
+            1.8
+          ],
+          "drill": [],
+          "layers": [
+            "F.Cu",
+            "F.Mask",
+            "F.Paste"
+          ]
+        },
+        "all_source_instances": [
+          "26518ea5-9fb3-4027-b683-d9be62771728",
+          "2f17b897-f192-4159-b55f-2c6290629cea"
+        ],
+        "population": "alternative JST-SH copper",
+        "detail_view": "footprint local; no reflection"
+      }
+    ],
+    "mating_orientation": "unqualified",
+    "bottom_view": "separate footprint-local source copper locator; not added to top art"
+  },
+  "qualifications": {
+    "source_contacts": "checked against v03 contract and native PCB",
+    "routing": "adapter is unrouted; logical connection study only",
+    "physical_cable": "one-to-one contact identity required; mating assembly unqualified",
+    "firmware": "not supplied or verified",
+    "powered_operation": "unqualified"
+  },
+  "files": {
+    "contact-atlas-j7-04.svg": "3b806c9e5346f38f65f728119fc423fa97304130820e8cc4c88e5e39a6c6ee4d",
+    "contact-atlas-j4-02.svg": "c81c8b3ad3a7d529aef76278b74d7a2707b6958548cdcc8746d68f8751d4baec",
+    "contact-atlas-j8-02.svg": "cb6af78c2681860f71db2ae95e817ffc1527a3a3f57c6c8fc4b170aaaa3ee58d",
+    "contact-atlas-j5-02.svg": "10377cfe6cfc1f3d1bec3e3c3cbb384e713aee3290e53d258d2239a3ef564c15",
+    "contact-atlas-j6-alternative-01.svg": "04c495867fd434d1e046068276f241451e849a059a19c679f01ba9a1db33ee10",
+    "contact-atlas-j8-03.svg": "533cb1215d676d2d177985c33705d4e27a7d30a4a9d677dad2ff462cab370e8a",
+    "contact-atlas-j8-04.svg": "d40105f0528e44681f4e50d02372b479b050d46a46045c566a627a27eedd638f",
+    "contact-atlas-j3-01.svg": "e43d10a94057ecdea8c6f98401bc4b187c6cb3e5be8da404ead7b83e391be421",
+    "contact-atlas-j2-01.svg": "bc8f0816755ed2dca5381bac39864c8c80721bf7ce80af00e11a063e816d8985",
+    "contact-atlas-controls-bottom-01.svg": "e8dcf0942c376f1f1cfec85bc19149eb708b3fabd26751284f34279015ff1829",
+    "contact-atlas-j4-01.svg": "909ad9386a0b1e5ccaa27133e1562c69744f8515b6b1234ad4255292f2cd504d",
+    "full-wiring.svg": "ba0918933b7adca0a42756cd81f2a395258ad72c9f8b01eebf051193328ae053",
+    "contact-atlas-j7-01.svg": "389fbb07f6d56b78b4238fb8508013ccd5e46fd421ff25575ee8c45accd7ed54",
+    "contact-atlas-controls-bottom-02.svg": "77b69d12b59a434c67d8cad77c8b28252140a3bcd7248a1c26333561902a5fbd",
+    "contact-atlas-j5-01.svg": "cb375d457a70a569edf5496eb3f74d39076f42c367a5606176b7f3c68d918ab5",
+    "contact-atlas-j6-01.svg": "8431654cb2aab77cd8d6c92f9a46ef4d85ff5dd0fbc6944f1157a949ed1ba7d0",
+    "contact-atlas-j1-02.svg": "25927ea4f6ae5ce847e25518c11f9de6f6f5ee64d63a37000b40a321aa977465",
+    "contact-atlas-j2-02.svg": "88366f5c3e326650496c8ccc35712533e209d12a863e49e360adfffc843655d9",
+    "contact-atlas-j3-02.svg": "6cd85cd7674ce22536cc68e75efba1d9b1d383d709c9d0ab04069acddf3aae0f",
+    "contact-atlas-j1-01.svg": "937bf2418640f083d9f3e8d8c88f3659333e60520b100c49b7e782e6c47030c9",
+    "cable-contact-key.svg": "6cba7abe45cd1d4962944240c0feab1a640d73b01688cadbbb05ba8e16037484",
+    "contact-atlas-controls-top-01.svg": "19a75ea3eabe05820c1ec16e320c4c013b0e3a460050f0d5bdcbbefc3b3c395b",
+    "esp32-to-gadgeteer-host.svg": "08e2676198a989844b04723287ec247ddd211c9fec9fa4e9f3112a525364b3d4",
+    "board-reference.svg": "afb56ee1e9dba535a12f96c82a1ed0ab43cf9ac63597c0a0473134590d2ea412",
+    "contact-atlas-j8-01.svg": "cf014f03751fdffbda354cf38a7fda54ce5276b9259a765dbea2236c467a70a3",
+    "contact-atlas-controls-top-02.svg": "00bff71ec44631ca9ac027a052ace99725172bd2ae96efb549401849b0f032a9",
+    "contact-atlas-j6-alternative-02.svg": "47c7e415eb0d61a44efbeebf967aead90b492c17a40311b715ed9a0831ea1266",
+    "contact-atlas-j7-03.svg": "5da46c625dce798e3d9b5ea15d4c2832a11800ffac7ea44c215c89d37ddf4f0d",
+    "contact-atlas-j7-02.svg": "353f51b91e1e672fae97078c89b0e45d4ef7a10fe7255067bf7bfb876686c99e"
+  }
+}

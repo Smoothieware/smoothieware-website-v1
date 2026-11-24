@@ -1,0 +1,158 @@
+Reference,Value,Footprint,DNP,Excluded_from_BOM,Manufacturer_part_number,Procurement_status,Assembly_role
+CT1,CABLE TIE,Fancification_Mechanical:CableTie_NPTH_2_5mm,False,True,,Retained baseline item; exact procurement mapping/availability requires review,Mechanical/no purchase line
+CT2,CABLE TIE,Fancification_Mechanical:CableTie_NPTH_2_5mm,False,True,,Retained baseline item; exact procurement mapping/availability requires review,Mechanical/no purchase line
+C_ARRAY1,885012207098,Capacitor_SMD:C_0805_2012Metric,False,False,885012207098,Exact ordering choice; supplier stock/format/MOQ not qualified,SMT; assembler eligibility/orientation requires approval
+C_COIL_BULK1,47uF 25V,Capacitor_THT:CP_Radial_D5.0mm_P2.00mm,False,False,EEUFR1E470,Exact ordering choice; supplier stock/format/MOQ not qualified,Through-hole hand-fit; exclude from SMT placement import
+C_COIL_DVDT1,10nF 50V,Capacitor_SMD:C_0805_2012Metric,False,False,,Retained baseline item; exact procurement mapping/availability requires review,SMT; assembler eligibility/orientation requires approval
+C_COIL_IN1,100nF 35V,Capacitor_SMD:C_0805_2012Metric,False,False,,Retained baseline item; exact procurement mapping/availability requires review,SMT; assembler eligibility/orientation requires approval
+C_COIL_ITIMER1,2.2nF 16V,Capacitor_SMD:C_0805_2012Metric,False,False,,Retained baseline item; exact procurement mapping/availability requires review,SMT; assembler eligibility/orientation requires approval
+C_COIL_OUT1,100nF 35V,Capacitor_SMD:C_0805_2012Metric,False,False,,Retained baseline item; exact procurement mapping/availability requires review,SMT; assembler eligibility/orientation requires approval
+C_HOST_DVDT1,10nF 50V,Capacitor_SMD:C_0805_2012Metric,False,False,,Retained baseline item; exact procurement mapping/availability requires review,SMT; assembler eligibility/orientation requires approval
+C_HOST_IN1,100nF 25V,Capacitor_SMD:C_0805_2012Metric,False,False,,Retained baseline item; exact procurement mapping/availability requires review,SMT; assembler eligibility/orientation requires approval
+C_HOST_ITIMER1,2.2nF 16V,Capacitor_SMD:C_0805_2012Metric,False,False,,Retained baseline item; exact procurement mapping/availability requires review,SMT; assembler eligibility/orientation requires approval
+C_HOST_OUT1,100nF 25V,Capacitor_SMD:C_0805_2012Metric,False,False,,Retained baseline item; exact procurement mapping/availability requires review,SMT; assembler eligibility/orientation requires approval
+C_ISO_BYP1,100nF 25V,Capacitor_SMD:C_0805_2012Metric,False,False,,Retained baseline item; exact procurement mapping/availability requires review,SMT; assembler eligibility/orientation requires approval
+C_ISO_IN1,100uF 16V,Capacitor_THT:CP_Radial_D5.0mm_P2.00mm,False,False,,Retained baseline item; exact procurement mapping/availability requires review,Through-hole hand-fit; exclude from SMT placement import
+C_ISO_PRE1,10uF 25V,Capacitor_THT:CP_Radial_D4.0mm_P1.50mm,False,False,,Retained baseline item; exact procurement mapping/availability requires review,Through-hole hand-fit; exclude from SMT placement import
+D_FLY1,SS16-E3/61T,Diode_SMD:D_SMA,False,False,,Retained baseline item; exact procurement mapping/availability requires review,SMT; assembler eligibility/orientation requires approval
+D_FLY2,SS16-E3/61T,Diode_SMD:D_SMA,False,False,,Retained baseline item; exact procurement mapping/availability requires review,SMT; assembler eligibility/orientation requires approval
+D_FLY3,SS16-E3/61T,Diode_SMD:D_SMA,False,False,,Retained baseline item; exact procurement mapping/availability requires review,SMT; assembler eligibility/orientation requires approval
+D_FLY4,SS16-E3/61T,Diode_SMD:D_SMA,False,False,,Retained baseline item; exact procurement mapping/availability requires review,SMT; assembler eligibility/orientation requires approval
+D_FLY5,SS16-E3/61T,Diode_SMD:D_SMA,False,False,,Retained baseline item; exact procurement mapping/availability requires review,SMT; assembler eligibility/orientation requires approval
+D_FLY6,SS16-E3/61T,Diode_SMD:D_SMA,False,False,,Retained baseline item; exact procurement mapping/availability requires review,SMT; assembler eligibility/orientation requires approval
+D_FLY7,SS16-E3/61T,Diode_SMD:D_SMA,False,False,,Retained baseline item; exact procurement mapping/availability requires review,SMT; assembler eligibility/orientation requires approval
+D_IND1,GREEN,LED_SMD:LED_0603_1608Metric,False,False,,Retained baseline item; exact procurement mapping/availability requires review,SMT; assembler eligibility/orientation requires approval
+D_IND2,GREEN,LED_SMD:LED_0603_1608Metric,False,False,,Retained baseline item; exact procurement mapping/availability requires review,SMT; assembler eligibility/orientation requires approval
+D_IND3,GREEN,LED_SMD:LED_0603_1608Metric,False,False,,Retained baseline item; exact procurement mapping/availability requires review,SMT; assembler eligibility/orientation requires approval
+D_IND4,GREEN,LED_SMD:LED_0603_1608Metric,False,False,,Retained baseline item; exact procurement mapping/availability requires review,SMT; assembler eligibility/orientation requires approval
+D_IND5,GREEN,LED_SMD:LED_0603_1608Metric,False,False,,Retained baseline item; exact procurement mapping/availability requires review,SMT; assembler eligibility/orientation requires approval
+D_IND6,GREEN,LED_SMD:LED_0603_1608Metric,False,False,,Retained baseline item; exact procurement mapping/availability requires review,SMT; assembler eligibility/orientation requires approval
+D_IND7,GREEN,LED_SMD:LED_0603_1608Metric,False,False,,Retained baseline item; exact procurement mapping/availability requires review,SMT; assembler eligibility/orientation requires approval
+D_ISO_BLOCK1,B360A,Diode_SMD:D_SMA,False,False,,Retained baseline item; exact procurement mapping/availability requires review,SMT; assembler eligibility/orientation requires approval
+D_TERM1,B360A,Diode_SMD:D_SMA,False,False,,Retained baseline item; exact procurement mapping/availability requires review,SMT; assembler eligibility/orientation requires approval
+D_TVS1,SMAJ15A,Diode_SMD:D_SMA,False,False,,Retained baseline item; exact procurement mapping/availability requires review,SMT; assembler eligibility/orientation requires approval
+D_XT30,B360A,Diode_SMD:D_SMA,False,False,,Retained baseline item; exact procurement mapping/availability requires review,SMT; assembler eligibility/orientation requires approval
+F_HOST1,0452003.MRL,Fuse:Fuse_Littelfuse-NANO2-451_453,False,False,,Retained baseline item; exact procurement mapping/availability requires review,SMT; assembler eligibility/orientation requires approval
+F_TERM1,045201.5MRL,Fuse:Fuse_Littelfuse-NANO2-451_453,False,False,,Retained baseline item; exact procurement mapping/availability requires review,SMT; assembler eligibility/orientation requires approval
+F_XT30,045201.5MRL,Fuse:Fuse_Littelfuse-NANO2-451_453,False,False,,Retained baseline item; exact procurement mapping/availability requires review,SMT; assembler eligibility/orientation requires approval
+H1,MountingHole_3.2mm_M3,MountingHole_3.2mm_M3,False,True,,Retained baseline item; exact procurement mapping/availability requires review,Mechanical/no purchase line
+H2,MountingHole_3.2mm_M3,MountingHole_3.2mm_M3,False,True,,Retained baseline item; exact procurement mapping/availability requires review,Mechanical/no purchase line
+H3,MountingHole_3.2mm_M3,MountingHole_3.2mm_M3,False,True,,Retained baseline item; exact procurement mapping/availability requires review,Mechanical/no purchase line
+H4,MountingHole_3.2mm_M3,MountingHole_3.2mm_M3,False,True,,Retained baseline item; exact procurement mapping/availability requires review,Mechanical/no purchase line
+JP1,CUT TO DISABLE D_IND3,Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm,False,True,,Retained baseline item; exact procurement mapping/availability requires review,Copper jumper; no purchased part
+JP2,CUT TO DISABLE D_IND2,Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm,False,True,,Retained baseline item; exact procurement mapping/availability requires review,Copper jumper; no purchased part
+JP3,CUT TO DISABLE D_IND6,Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm,False,True,,Retained baseline item; exact procurement mapping/availability requires review,Copper jumper; no purchased part
+JP4,CUT TO DISABLE D_IND1,Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm,False,True,,Retained baseline item; exact procurement mapping/availability requires review,Copper jumper; no purchased part
+JP5,CUT TO DISABLE D_IND5,Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm,False,True,,Retained baseline item; exact procurement mapping/availability requires review,Copper jumper; no purchased part
+JP6,CUT TO DISABLE D_IND4,Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm,False,True,,Retained baseline item; exact procurement mapping/availability requires review,Copper jumper; no purchased part
+JP7,CUT TO DISABLE D_IND7,Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm,False,True,,Retained baseline item; exact procurement mapping/availability requires review,Copper jumper; no purchased part
+J_CHAIN1,J_CHAIN,RelayCustom:Samtec_SHF105_01_L_D_TH,False,False,,Retained baseline item; exact procurement mapping/availability requires review,Through-hole hand-fit; exclude from SMT placement import
+J_COIL_SOURCE1,J_COIL_SOURCE,Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical,False,False,,Retained baseline item; exact procurement mapping/availability requires review,Through-hole hand-fit; exclude from SMT placement import
+J_EXT_INPUT1,J_EXT_INPUT,Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical,False,False,,Retained baseline item; exact procurement mapping/availability requires review,Through-hole hand-fit; exclude from SMT placement import
+J_HOST1,J_HOST,RelayCustom:Samtec_SHF105_01_L_D_TH,False,False,,Retained baseline item; exact procurement mapping/availability requires review,Through-hole hand-fit; exclude from SMT placement import
+J_HOST_ARM1,J_HOST_ARM,Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical,False,False,,Retained baseline item; exact procurement mapping/availability requires review,Through-hole hand-fit; exclude from SMT placement import
+J_LOAD1,J_LOAD1,RelayCustom:DG302_7.5_03P,False,False,,Retained baseline item; exact procurement mapping/availability requires review,SMT; assembler eligibility/orientation requires approval
+J_LOAD2,J_LOAD2,RelayCustom:DG302_7.5_03P,False,False,,Retained baseline item; exact procurement mapping/availability requires review,SMT; assembler eligibility/orientation requires approval
+J_LOAD3,J_LOAD3,RelayCustom:DG302_7.5_03P,False,False,,Retained baseline item; exact procurement mapping/availability requires review,SMT; assembler eligibility/orientation requires approval
+J_LOAD4,J_LOAD4,RelayCustom:DG302_7.5_03P,False,False,,Retained baseline item; exact procurement mapping/availability requires review,SMT; assembler eligibility/orientation requires approval
+J_LOAD5,J_LOAD5,RelayCustom:DG302_7.5_03P,False,False,,Retained baseline item; exact procurement mapping/availability requires review,SMT; assembler eligibility/orientation requires approval
+J_LOAD6,J_LOAD6,RelayCustom:DG302_7.5_03P,False,False,,Retained baseline item; exact procurement mapping/availability requires review,SMT; assembler eligibility/orientation requires approval
+J_LOAD7,J_LOAD7,RelayCustom:DG302_7.5_03P,False,False,,Retained baseline item; exact procurement mapping/availability requires review,SMT; assembler eligibility/orientation requires approval
+J_TERM1,J_TERM,"TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal",False,False,,Retained baseline item; exact procurement mapping/availability requires review,Through-hole hand-fit; exclude from SMT placement import
+J_XT30,J_XT30,Connector_AMASS:AMASS_XT30PW-M_1x02_P2.50mm_Horizontal,False,False,,Retained baseline item; exact procurement mapping/availability requires review,Through-hole hand-fit; exclude from SMT placement import
+K1,40.61.9.012.1000,RelayCustom:Relay_SPDT_Finder_40.61,False,False,,Retained baseline item; exact procurement mapping/availability requires review,Through-hole hand-fit; exclude from SMT placement import
+K2,40.61.9.012.1000,RelayCustom:Relay_SPDT_Finder_40.61,False,False,,Retained baseline item; exact procurement mapping/availability requires review,Through-hole hand-fit; exclude from SMT placement import
+K3,40.61.9.012.1000,RelayCustom:Relay_SPDT_Finder_40.61,False,False,,Retained baseline item; exact procurement mapping/availability requires review,Through-hole hand-fit; exclude from SMT placement import
+K4,40.61.9.012.1000,RelayCustom:Relay_SPDT_Finder_40.61,False,False,,Retained baseline item; exact procurement mapping/availability requires review,Through-hole hand-fit; exclude from SMT placement import
+K5,40.61.9.012.1000,RelayCustom:Relay_SPDT_Finder_40.61,False,False,,Retained baseline item; exact procurement mapping/availability requires review,Through-hole hand-fit; exclude from SMT placement import
+K6,40.61.9.012.1000,RelayCustom:Relay_SPDT_Finder_40.61,False,False,,Retained baseline item; exact procurement mapping/availability requires review,Through-hole hand-fit; exclude from SMT placement import
+K7,40.61.9.012.1000,RelayCustom:Relay_SPDT_Finder_40.61,False,False,,Retained baseline item; exact procurement mapping/availability requires review,Through-hole hand-fit; exclude from SMT placement import
+Q_IN1,MMBT3904-7-F,Package_TO_SOT_SMD:SOT-23,False,False,,Retained baseline item; exact procurement mapping/availability requires review,SMT; assembler eligibility/orientation requires approval
+Q_IN2,MMBT3904-7-F,Package_TO_SOT_SMD:SOT-23,False,False,,Retained baseline item; exact procurement mapping/availability requires review,SMT; assembler eligibility/orientation requires approval
+Q_IN3,MMBT3904-7-F,Package_TO_SOT_SMD:SOT-23,False,False,,Retained baseline item; exact procurement mapping/availability requires review,SMT; assembler eligibility/orientation requires approval
+Q_IN4,MMBT3904-7-F,Package_TO_SOT_SMD:SOT-23,False,False,,Retained baseline item; exact procurement mapping/availability requires review,SMT; assembler eligibility/orientation requires approval
+Q_IN5,MMBT3904-7-F,Package_TO_SOT_SMD:SOT-23,False,False,,Retained baseline item; exact procurement mapping/availability requires review,SMT; assembler eligibility/orientation requires approval
+Q_IN6,MMBT3904-7-F,Package_TO_SOT_SMD:SOT-23,False,False,,Retained baseline item; exact procurement mapping/availability requires review,SMT; assembler eligibility/orientation requires approval
+Q_IN7,MMBT3904-7-F,Package_TO_SOT_SMD:SOT-23,False,False,,Retained baseline item; exact procurement mapping/availability requires review,SMT; assembler eligibility/orientation requires approval
+R_BASE1,1.50k 1%,Resistor_SMD:R_0805_2012Metric,False,False,,Retained baseline item; exact procurement mapping/availability requires review,SMT; assembler eligibility/orientation requires approval
+R_BASE2,1.50k 1%,Resistor_SMD:R_0805_2012Metric,False,False,,Retained baseline item; exact procurement mapping/availability requires review,SMT; assembler eligibility/orientation requires approval
+R_BASE3,1.50k 1%,Resistor_SMD:R_0805_2012Metric,False,False,,Retained baseline item; exact procurement mapping/availability requires review,SMT; assembler eligibility/orientation requires approval
+R_BASE4,1.50k 1%,Resistor_SMD:R_0805_2012Metric,False,False,,Retained baseline item; exact procurement mapping/availability requires review,SMT; assembler eligibility/orientation requires approval
+R_BASE5,1.50k 1%,Resistor_SMD:R_0805_2012Metric,False,False,,Retained baseline item; exact procurement mapping/availability requires review,SMT; assembler eligibility/orientation requires approval
+R_BASE6,1.50k 1%,Resistor_SMD:R_0805_2012Metric,False,False,,Retained baseline item; exact procurement mapping/availability requires review,SMT; assembler eligibility/orientation requires approval
+R_BASE7,1.50k 1%,Resistor_SMD:R_0805_2012Metric,False,False,,Retained baseline item; exact procurement mapping/availability requires review,SMT; assembler eligibility/orientation requires approval
+R_BASE_PD1,100k 1%,Resistor_SMD:R_0805_2012Metric,False,False,,Retained baseline item; exact procurement mapping/availability requires review,SMT; assembler eligibility/orientation requires approval
+R_BASE_PD2,100k 1%,Resistor_SMD:R_0805_2012Metric,False,False,,Retained baseline item; exact procurement mapping/availability requires review,SMT; assembler eligibility/orientation requires approval
+R_BASE_PD3,100k 1%,Resistor_SMD:R_0805_2012Metric,False,False,,Retained baseline item; exact procurement mapping/availability requires review,SMT; assembler eligibility/orientation requires approval
+R_BASE_PD4,100k 1%,Resistor_SMD:R_0805_2012Metric,False,False,,Retained baseline item; exact procurement mapping/availability requires review,SMT; assembler eligibility/orientation requires approval
+R_BASE_PD5,100k 1%,Resistor_SMD:R_0805_2012Metric,False,False,,Retained baseline item; exact procurement mapping/availability requires review,SMT; assembler eligibility/orientation requires approval
+R_BASE_PD6,100k 1%,Resistor_SMD:R_0805_2012Metric,False,False,,Retained baseline item; exact procurement mapping/availability requires review,SMT; assembler eligibility/orientation requires approval
+R_BASE_PD7,100k 1%,Resistor_SMD:R_0805_2012Metric,False,False,,Retained baseline item; exact procurement mapping/availability requires review,SMT; assembler eligibility/orientation requires approval
+R_COIL_BLEED1,2.2k 0.25W,Resistor_SMD:R_1206_3216Metric,False,False,,Retained baseline item; exact procurement mapping/availability requires review,SMT; assembler eligibility/orientation requires approval
+R_COIL_ILM1,3.74k 1%,Resistor_SMD:R_0805_2012Metric,False,False,,Retained baseline item; exact procurement mapping/availability requires review,SMT; assembler eligibility/orientation requires approval
+R_COIL_OV_BOT1,10k 1%,Resistor_SMD:R_0805_2012Metric,False,False,,Retained baseline item; exact procurement mapping/availability requires review,SMT; assembler eligibility/orientation requires approval
+R_COIL_OV_TOP1,102k 1%,Resistor_SMD:R_0805_2012Metric,False,False,,Retained baseline item; exact procurement mapping/availability requires review,SMT; assembler eligibility/orientation requires approval
+R_COIL_PG_BOT1,10k 1%,Resistor_SMD:R_0805_2012Metric,False,False,,Retained baseline item; exact procurement mapping/availability requires review,SMT; assembler eligibility/orientation requires approval
+R_COIL_PG_TOP1,71.5k 1%,Resistor_SMD:R_0805_2012Metric,False,False,,Retained baseline item; exact procurement mapping/availability requires review,SMT; assembler eligibility/orientation requires approval
+R_COIL_UV_BOT1,10k 1%,Resistor_SMD:R_0805_2012Metric,False,False,,Retained baseline item; exact procurement mapping/availability requires review,SMT; assembler eligibility/orientation requires approval
+R_COIL_UV_TOP1,71.5k 1%,Resistor_SMD:R_0805_2012Metric,False,False,,Retained baseline item; exact procurement mapping/availability requires review,SMT; assembler eligibility/orientation requires approval
+R_GATE_PD1,10k 1%,Resistor_SMD:R_0805_2012Metric,False,False,,Retained baseline item; exact procurement mapping/availability requires review,SMT; assembler eligibility/orientation requires approval
+R_GATE_PD2,10k 1%,Resistor_SMD:R_0805_2012Metric,False,False,,Retained baseline item; exact procurement mapping/availability requires review,SMT; assembler eligibility/orientation requires approval
+R_GATE_PD3,10k 1%,Resistor_SMD:R_0805_2012Metric,False,False,,Retained baseline item; exact procurement mapping/availability requires review,SMT; assembler eligibility/orientation requires approval
+R_GATE_PD4,10k 1%,Resistor_SMD:R_0805_2012Metric,False,False,,Retained baseline item; exact procurement mapping/availability requires review,SMT; assembler eligibility/orientation requires approval
+R_GATE_PD5,10k 1%,Resistor_SMD:R_0805_2012Metric,False,False,,Retained baseline item; exact procurement mapping/availability requires review,SMT; assembler eligibility/orientation requires approval
+R_GATE_PD6,10k 1%,Resistor_SMD:R_0805_2012Metric,False,False,,Retained baseline item; exact procurement mapping/availability requires review,SMT; assembler eligibility/orientation requires approval
+R_GATE_PD7,10k 1%,Resistor_SMD:R_0805_2012Metric,False,False,,Retained baseline item; exact procurement mapping/availability requires review,SMT; assembler eligibility/orientation requires approval
+R_GATE_SER1,16.2k 1%,Resistor_SMD:R_0805_2012Metric,False,False,RC0805FR-0716K2L,Exact ordering choice; supplier stock/format/MOQ not qualified,SMT; assembler eligibility/orientation requires approval
+R_GATE_SER2,16.2k 1%,Resistor_SMD:R_0805_2012Metric,False,False,RC0805FR-0716K2L,Exact ordering choice; supplier stock/format/MOQ not qualified,SMT; assembler eligibility/orientation requires approval
+R_GATE_SER3,16.2k 1%,Resistor_SMD:R_0805_2012Metric,False,False,RC0805FR-0716K2L,Exact ordering choice; supplier stock/format/MOQ not qualified,SMT; assembler eligibility/orientation requires approval
+R_GATE_SER4,16.2k 1%,Resistor_SMD:R_0805_2012Metric,False,False,RC0805FR-0716K2L,Exact ordering choice; supplier stock/format/MOQ not qualified,SMT; assembler eligibility/orientation requires approval
+R_GATE_SER5,16.2k 1%,Resistor_SMD:R_0805_2012Metric,False,False,RC0805FR-0716K2L,Exact ordering choice; supplier stock/format/MOQ not qualified,SMT; assembler eligibility/orientation requires approval
+R_GATE_SER6,16.2k 1%,Resistor_SMD:R_0805_2012Metric,False,False,RC0805FR-0716K2L,Exact ordering choice; supplier stock/format/MOQ not qualified,SMT; assembler eligibility/orientation requires approval
+R_GATE_SER7,16.2k 1%,Resistor_SMD:R_0805_2012Metric,False,False,RC0805FR-0716K2L,Exact ordering choice; supplier stock/format/MOQ not qualified,SMT; assembler eligibility/orientation requires approval
+R_HOST_ILM1,1.30k 1%,Resistor_SMD:R_0805_2012Metric,False,False,,Retained baseline item; exact procurement mapping/availability requires review,SMT; assembler eligibility/orientation requires approval
+R_HOST_OV_BOT1,10k 1%,Resistor_SMD:R_0805_2012Metric,False,False,,Retained baseline item; exact procurement mapping/availability requires review,SMT; assembler eligibility/orientation requires approval
+R_HOST_OV_TOP1,36.5k 1%,Resistor_SMD:R_0805_2012Metric,False,False,,Retained baseline item; exact procurement mapping/availability requires review,SMT; assembler eligibility/orientation requires approval
+R_HOST_PG_BOT1,10k 1%,Resistor_SMD:R_0805_2012Metric,False,False,,Retained baseline item; exact procurement mapping/availability requires review,SMT; assembler eligibility/orientation requires approval
+R_HOST_PG_TOP1,27.4k 1%,Resistor_SMD:R_0805_2012Metric,False,False,,Retained baseline item; exact procurement mapping/availability requires review,SMT; assembler eligibility/orientation requires approval
+R_HOST_UV_BOT1,10k 1%,Resistor_SMD:R_0805_2012Metric,False,False,,Retained baseline item; exact procurement mapping/availability requires review,SMT; assembler eligibility/orientation requires approval
+R_HOST_UV_TOP1,27.4k 1%,Resistor_SMD:R_0805_2012Metric,False,False,,Retained baseline item; exact procurement mapping/availability requires review,SMT; assembler eligibility/orientation requires approval
+R_IND1,5.6k 10% >=0.1W,Resistor_SMD:R_0603_1608Metric,False,False,,Retained baseline item; exact procurement mapping/availability requires review,SMT; assembler eligibility/orientation requires approval
+R_IND2,5.6k 10% >=0.1W,Resistor_SMD:R_0603_1608Metric,False,False,,Retained baseline item; exact procurement mapping/availability requires review,SMT; assembler eligibility/orientation requires approval
+R_IND3,5.6k 10% >=0.1W,Resistor_SMD:R_0603_1608Metric,False,False,,Retained baseline item; exact procurement mapping/availability requires review,SMT; assembler eligibility/orientation requires approval
+R_IND4,5.6k 10% >=0.1W,Resistor_SMD:R_0603_1608Metric,False,False,,Retained baseline item; exact procurement mapping/availability requires review,SMT; assembler eligibility/orientation requires approval
+R_IND5,5.6k 10% >=0.1W,Resistor_SMD:R_0603_1608Metric,False,False,,Retained baseline item; exact procurement mapping/availability requires review,SMT; assembler eligibility/orientation requires approval
+R_IND6,5.6k 10% >=0.1W,Resistor_SMD:R_0603_1608Metric,False,False,,Retained baseline item; exact procurement mapping/availability requires review,SMT; assembler eligibility/orientation requires approval
+R_IND7,5.6k 10% >=0.1W,Resistor_SMD:R_0603_1608Metric,False,False,,Retained baseline item; exact procurement mapping/availability requires review,SMT; assembler eligibility/orientation requires approval
+R_LED1,620R 1%,Resistor_SMD:R_0805_2012Metric,False,False,,Retained baseline item; exact procurement mapping/availability requires review,SMT; assembler eligibility/orientation requires approval
+R_LED2,620R 1%,Resistor_SMD:R_0805_2012Metric,False,False,,Retained baseline item; exact procurement mapping/availability requires review,SMT; assembler eligibility/orientation requires approval
+R_LED3,620R 1%,Resistor_SMD:R_0805_2012Metric,False,False,,Retained baseline item; exact procurement mapping/availability requires review,SMT; assembler eligibility/orientation requires approval
+R_LED4,620R 1%,Resistor_SMD:R_0805_2012Metric,False,False,,Retained baseline item; exact procurement mapping/availability requires review,SMT; assembler eligibility/orientation requires approval
+R_LED5,620R 1%,Resistor_SMD:R_0805_2012Metric,False,False,,Retained baseline item; exact procurement mapping/availability requires review,SMT; assembler eligibility/orientation requires approval
+R_LED6,620R 1%,Resistor_SMD:R_0805_2012Metric,False,False,,Retained baseline item; exact procurement mapping/availability requires review,SMT; assembler eligibility/orientation requires approval
+R_LED7,620R 1%,Resistor_SMD:R_0805_2012Metric,False,False,,Retained baseline item; exact procurement mapping/availability requires review,SMT; assembler eligibility/orientation requires approval
+R_OPTO_PULL1,2.20k 1% 0.25W,Resistor_SMD:R_1206_3216Metric,False,False,,Retained baseline item; exact procurement mapping/availability requires review,SMT; assembler eligibility/orientation requires approval
+R_OPTO_PULL2,2.20k 1% 0.25W,Resistor_SMD:R_1206_3216Metric,False,False,,Retained baseline item; exact procurement mapping/availability requires review,SMT; assembler eligibility/orientation requires approval
+R_OPTO_PULL3,2.20k 1% 0.25W,Resistor_SMD:R_1206_3216Metric,False,False,,Retained baseline item; exact procurement mapping/availability requires review,SMT; assembler eligibility/orientation requires approval
+R_OPTO_PULL4,2.20k 1% 0.25W,Resistor_SMD:R_1206_3216Metric,False,False,,Retained baseline item; exact procurement mapping/availability requires review,SMT; assembler eligibility/orientation requires approval
+R_OPTO_PULL5,2.20k 1% 0.25W,Resistor_SMD:R_1206_3216Metric,False,False,,Retained baseline item; exact procurement mapping/availability requires review,SMT; assembler eligibility/orientation requires approval
+R_OPTO_PULL6,2.20k 1% 0.25W,Resistor_SMD:R_1206_3216Metric,False,False,,Retained baseline item; exact procurement mapping/availability requires review,SMT; assembler eligibility/orientation requires approval
+R_OPTO_PULL7,2.20k 1% 0.25W,Resistor_SMD:R_1206_3216Metric,False,False,,Retained baseline item; exact procurement mapping/availability requires review,SMT; assembler eligibility/orientation requires approval
+SJ_LOCAL_1,LOCAL GPIO cut link,Jumper:SolderJumper-2_P1.3mm_Bridged_Pad1.0x1.5mm,False,False,,Retained baseline item; exact procurement mapping/availability requires review,Copper jumper; no purchased part
+SJ_LOCAL_2,LOCAL GPIO cut link,Jumper:SolderJumper-2_P1.3mm_Bridged_Pad1.0x1.5mm,False,False,,Retained baseline item; exact procurement mapping/availability requires review,Copper jumper; no purchased part
+SJ_LOCAL_3,LOCAL GPIO cut link,Jumper:SolderJumper-2_P1.3mm_Bridged_Pad1.0x1.5mm,False,False,,Retained baseline item; exact procurement mapping/availability requires review,Copper jumper; no purchased part
+SJ_LOCAL_4,LOCAL GPIO cut link,Jumper:SolderJumper-2_P1.3mm_Bridged_Pad1.0x1.5mm,False,False,,Retained baseline item; exact procurement mapping/availability requires review,Copper jumper; no purchased part
+SJ_LOCAL_5,LOCAL GPIO cut link,Jumper:SolderJumper-2_P1.3mm_Bridged_Pad1.0x1.5mm,False,False,,Retained baseline item; exact procurement mapping/availability requires review,Copper jumper; no purchased part
+SJ_LOCAL_6,LOCAL GPIO cut link,Jumper:SolderJumper-2_P1.3mm_Bridged_Pad1.0x1.5mm,False,False,,Retained baseline item; exact procurement mapping/availability requires review,Copper jumper; no purchased part
+SJ_LOCAL_7,LOCAL GPIO cut link,Jumper:SolderJumper-2_P1.3mm_Bridged_Pad1.0x1.5mm,False,False,,Retained baseline item; exact procurement mapping/availability requires review,Copper jumper; no purchased part
+U_ARRAY1,TPL7407LDR,Package_SO:SOIC-16_3.9x9.9mm_P1.27mm,False,False,TPL7407LDR,Exact ordering choice; supplier stock/format/MOQ not qualified,SMT; assembler eligibility/orientation requires approval
+U_COIL1,TPS259474LRPWR,RelayCustom:TPS259474_RPW0010A,False,False,,Retained baseline item; exact procurement mapping/availability requires review,SMT; assembler eligibility/orientation requires approval
+U_HOST1,TPS259474LRPWR,RelayCustom:TPS259474_RPW0010A,False,False,,Retained baseline item; exact procurement mapping/availability requires review,SMT; assembler eligibility/orientation requires approval
+U_ISO1,VRB0512YMD-10WR3,RelayCustom:EVISUN_VRB0512YMD_10WR3,False,False,,Retained baseline item; exact procurement mapping/availability requires review,Through-hole hand-fit; exclude from SMT placement import
+U_OPTO1,LTV-817S-TA1-C,RelayCustom:LTV817S_10.16Span,False,False,,Retained baseline item; exact procurement mapping/availability requires review,SMT; assembler eligibility/orientation requires approval
+U_OPTO2,LTV-817S-TA1-C,RelayCustom:LTV817S_10.16Span,False,False,,Retained baseline item; exact procurement mapping/availability requires review,SMT; assembler eligibility/orientation requires approval
+U_OPTO3,LTV-817S-TA1-C,RelayCustom:LTV817S_10.16Span,False,False,,Retained baseline item; exact procurement mapping/availability requires review,SMT; assembler eligibility/orientation requires approval
+U_OPTO4,LTV-817S-TA1-C,RelayCustom:LTV817S_10.16Span,False,False,,Retained baseline item; exact procurement mapping/availability requires review,SMT; assembler eligibility/orientation requires approval
+U_OPTO5,LTV-817S-TA1-C,RelayCustom:LTV817S_10.16Span,False,False,,Retained baseline item; exact procurement mapping/availability requires review,SMT; assembler eligibility/orientation requires approval
+U_OPTO6,LTV-817S-TA1-C,RelayCustom:LTV817S_10.16Span,False,False,,Retained baseline item; exact procurement mapping/availability requires review,SMT; assembler eligibility/orientation requires approval
+U_OPTO7,LTV-817S-TA1-C,RelayCustom:LTV817S_10.16Span,False,False,,Retained baseline item; exact procurement mapping/availability requires review,SMT; assembler eligibility/orientation requires approval

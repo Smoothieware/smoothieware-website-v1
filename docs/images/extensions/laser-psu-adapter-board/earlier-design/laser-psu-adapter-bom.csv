@@ -1,0 +1,107 @@
+Reference,Value,Footprint,DNP
+C1,2.2uF X7R 16V 0603,Capacitor_SMD:C_0603_1608Metric,False
+C2,2.2uF X7R 16V 0603,Capacitor_SMD:C_0603_1608Metric,False
+C3,2.2uF X7R 16V 0603,Capacitor_SMD:C_0603_1608Metric,False
+C4,2.2uF X7R 16V 0603,Capacitor_SMD:C_0603_1608Metric,False
+C5,100nF X7R 50V 0603,Capacitor_SMD:C_0603_1608Metric,False
+C6,100nF X7R 50V 0603,Capacitor_SMD:C_0603_1608Metric,False
+C7,100nF X7R 50V 0603,Capacitor_SMD:C_0603_1608Metric,False
+C8,100nF X7R 50V 0603,Capacitor_SMD:C_0603_1608Metric,False
+C9,100nF X7R 50V 0603,Capacitor_SMD:C_0603_1608Metric,False
+CT1,CABLE TIE,Fancification_Mechanical:CableTie_NPTH_2_5mm,False
+CT2,CABLE TIE,Fancification_Mechanical:CableTie_NPTH_2_5mm,False
+D1,SMF48CA,Diode_SMD:D_SOD-123F,False
+D10,BZX84-C5V6,Package_TO_SOT_SMD:SOT-23,False
+D11,BZX84-C5V6,Package_TO_SOT_SMD:SOT-23,False
+D12,BZX84-C5V6,Package_TO_SOT_SMD:SOT-23,False
+D13,BAT54HT1G,Diode_SMD:D_SOD-323,False
+D14,BAT54HT1G,Diode_SMD:D_SOD-323,False
+D15,BAT54HT1G,Diode_SMD:D_SOD-323,False
+D16,BAT54HT1G,Diode_SMD:D_SOD-323,False
+D17,LOOP1 OPEN (red),LED_SMD:LED_0603_1608Metric,False
+D18,LOOP2 OPEN (red),LED_SMD:LED_0603_1608Metric,False
+D19,LOOP3 OPEN (red),LED_SMD:LED_0603_1608Metric,False
+D2,SMF48CA,Diode_SMD:D_SOD-123F,False
+D20,LOOP4 OPEN (red),LED_SMD:LED_0603_1608Metric,False
+D21,PERMIT (green),LED_SMD:LED_0603_1608Metric,False
+D3,SMF48CA,Diode_SMD:D_SOD-123F,False
+D4,SMF48CA,Diode_SMD:D_SOD-123F,False
+D5,BAS21LT1G,Package_TO_SOT_SMD:SOT-23,False
+D6,BAS21LT1G,Package_TO_SOT_SMD:SOT-23,False
+D7,BAS21LT1G,Package_TO_SOT_SMD:SOT-23,False
+D8,BAS21LT1G,Package_TO_SOT_SMD:SOT-23,False
+D9,BZX84-C5V6,Package_TO_SOT_SMD:SOT-23,False
+FID1,fiducial,Fiducial:Fiducial_1mm_Mask2mm,False
+FID2,fiducial,Fiducial:Fiducial_1mm_Mask2mm,False
+FID3,fiducial,Fiducial:Fiducial_1mm_Mask2mm,False
+FID4,fiducial,Fiducial:Fiducial_1mm_Mask2mm,False
+FID5,fiducial,Fiducial:Fiducial_1mm_Mask2mm,False
+H1,M3,MountingHole:MountingHole_3.2mm_M3,False
+H2,M3,MountingHole:MountingHole_3.2mm_M3,False
+H3,M3,MountingHole:MountingHole_3.2mm_M3,False
+H4,M3,MountingHole:MountingHole_3.2mm_M3,False
+J1,GADGETEER Y IN,Smoothie_Laser_PSU:Samtec_SHF105_TH_LC,False
+J2,LASER PSU,Connector_Molex:Molex_KK-254_AE-6410-06A_1x06_P2.54mm_Vertical,False
+J3,PROTECT 1-2,"TerminalBlock_Phoenix:TerminalBlock_Phoenix_PT-1,5-4-3.5-H_1x04_P3.50mm_Horizontal",False
+J4,PROTECT 3-4,"TerminalBlock_Phoenix:TerminalBlock_Phoenix_PT-1,5-4-3.5-H_1x04_P3.50mm_Horizontal",False
+JP1,CUT TO DISABLE D21,Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm,False
+JP2,CUT TO DISABLE D19,Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm,False
+JP3,CUT TO DISABLE D18,Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm,False
+JP4,CUT TO DISABLE D20,Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm,False
+JP5,CUT TO DISABLE D17,Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm,False
+Q1,2N7002,Package_TO_SOT_SMD:SOT-23,False
+R1,4.7k 1% 0.75W HP 1206,Resistor_SMD:R_1206_3216Metric,False
+R10,1M 0603 1%,Resistor_SMD:R_0603_1608Metric,False
+R11,1M 0603 1%,Resistor_SMD:R_0603_1608Metric,False
+R12,1M 0603 1%,Resistor_SMD:R_0603_1608Metric,False
+R13,82k 0603 1%,Resistor_SMD:R_0603_1608Metric,False
+R14,82k 0603 1%,Resistor_SMD:R_0603_1608Metric,False
+R15,82k 0603 1%,Resistor_SMD:R_0603_1608Metric,False
+R16,82k 0603 1%,Resistor_SMD:R_0603_1608Metric,False
+R17,2.2k 10% 0603,Resistor_SMD:R_0603_1608Metric,False
+R18,2.2k 10% 0603,Resistor_SMD:R_0603_1608Metric,False
+R19,2.2k 10% 0603,Resistor_SMD:R_0603_1608Metric,False
+R2,4.7k 1% 0.75W HP 1206,Resistor_SMD:R_1206_3216Metric,False
+R20,2.2k 10% 0603,Resistor_SMD:R_0603_1608Metric,False
+R21,100R 0603,Resistor_SMD:R_0603_1608Metric,False
+R22,100R 0603,Resistor_SMD:R_0603_1608Metric,False
+R23,100R 0603,Resistor_SMD:R_0603_1608Metric,False
+R24,100R 0603,Resistor_SMD:R_0603_1608Metric,False
+R25,100k 0603,Resistor_SMD:R_0603_1608Metric,False
+R26,100R 0603,Resistor_SMD:R_0603_1608Metric,False
+R27,2.2k 10% 0603,Resistor_SMD:R_0603_1608Metric,False
+R28,1k 0603,Resistor_SMD:R_0603_1608Metric,False
+R29,1k 0603,Resistor_SMD:R_0603_1608Metric,False
+R3,4.7k 1% 0.75W HP 1206,Resistor_SMD:R_1206_3216Metric,False
+R30,100k 0603,Resistor_SMD:R_0603_1608Metric,False
+R31,100k 0603,Resistor_SMD:R_0603_1608Metric,False
+R32,100R 0603,Resistor_SMD:R_0603_1608Metric,False
+R33,100R 0603,Resistor_SMD:R_0603_1608Metric,False
+R34,10k 0603,Resistor_SMD:R_0603_1608Metric,False
+R35,10k 0603,Resistor_SMD:R_0603_1608Metric,False
+R36,470R 0603,Resistor_SMD:R_0603_1608Metric,False
+R37,100k 0603,Resistor_SMD:R_0603_1608Metric,False
+R4,4.7k 1% 0.75W HP 1206,Resistor_SMD:R_1206_3216Metric,False
+R5,47k 0805 1%,Resistor_SMD:R_0805_2012Metric,False
+R6,47k 0805 1%,Resistor_SMD:R_0805_2012Metric,False
+R7,47k 0805 1%,Resistor_SMD:R_0805_2012Metric,False
+R8,47k 0805 1%,Resistor_SMD:R_0805_2012Metric,False
+R9,1M 0603 1%,Resistor_SMD:R_0603_1608Metric,False
+SJ1,BYP1,Jumper:SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm,False
+SJ2,BYP2,Jumper:SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm,False
+SJ3,BYP3,Jumper:SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm,False
+SJ4,BYP4,Jumper:SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm,False
+SJ5,SRC5V,Jumper:SolderJumper-3_P1.3mm_Bridged12_RoundedPad1.0x1.5mm,False
+SJ6,PWM POL,Jumper:SolderJumper-3_P1.3mm_Bridged12_RoundedPad1.0x1.5mm,False
+SJ7,TTL POL,Jumper:SolderJumper-3_P1.3mm_Bridged12_RoundedPad1.0x1.5mm,False
+TP1,TP +3V3,TestPoint:TestPoint_Pad_D1.0mm,False
+TP2,TP V5_DRV,TestPoint:TestPoint_Pad_D1.0mm,False
+TP3,TP PERMIT,TestPoint:TestPoint_Pad_D1.0mm,False
+TP4,TP GND,TestPoint:TestPoint_Pad_D1.0mm,False
+TP5,TP GND,TestPoint:TestPoint_Pad_D1.0mm,False
+U1,74LVC14A,Package_SO:TSSOP-14_4.4x5mm_P0.65mm,False
+U2,74LVC14A,Package_SO:TSSOP-14_4.4x5mm_P0.65mm,False
+U3,74HC4002,Package_SO:TSSOP-14_4.4x5mm_P0.65mm,False
+U4,74AHCT08,Package_SO:TSSOP-14_4.4x5mm_P0.65mm,False
+U5,74AHCT86,Package_SO:TSSOP-14_4.4x5mm_P0.65mm,False
+U6,TPD4E1U06,Package_TO_SOT_SMD:SOT-363_SC-70-6,False

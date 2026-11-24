@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='utf-8'?>
+<ns0:svg xmlns:ns0="http://www.w3.org/2000/svg" viewBox="0 0 1200 2350" width="1200" height="2350" role="img" aria-labelledby="title desc">
+  <ns0:title id="title">FSR sensor and logic limits</ns0:title>
+  <ns0:desc id="desc">Reader qualification sheet for the non-energizable FSR v18 host-only candidate.</ns0:desc>
+  <ns0:rect x="0" y="0" width="1200" height="2350" fill="#f4f1e8" />
+  <ns0:text x="55" y="125" font-family="Arial,sans-serif" font-size="80" font-weight="700" fill="#203135">FSR sensor and logic limits</ns0:text>
+  <ns0:text x="55" y="205" font-family="Arial,sans-serif" font-size="94" font-weight="700" fill="#203135">Sensor current / contact</ns0:text>
+  <ns0:text x="60" y="310" font-family="Arial,sans-serif" font-size="76" font-weight="600" fill="#203135">Sensor current and true</ns0:text>
+  <ns0:text x="60" y="402" font-family="Arial,sans-serif" font-size="76" font-weight="600" fill="#203135">applied area is unknown.</ns0:text>
+  <ns0:text x="60" y="494" font-family="Arial,sans-serif" font-size="76" font-weight="600" fill="#203135">Series resistance / thermal</ns0:text>
+  <ns0:text x="60" y="586" font-family="Arial,sans-serif" font-size="76" font-weight="600" fill="#203135">behavior are not qualified.</ns0:text>
+  <ns0:text x="60" y="678" font-family="Arial,sans-serif" font-size="76" font-weight="600" fill="#203135">Conditional math only:</ns0:text>
+  <ns0:text x="60" y="770" font-family="Arial,sans-serif" font-size="76" font-weight="600" fill="#203135">Series ≥5.30 kΩ;</ns0:text>
+  <ns0:text x="60" y="862" font-family="Arial,sans-serif" font-size="76" font-weight="600" fill="#203135">Supply ≤5.25 V; area ≥1 cm².</ns0:text>
+  <ns0:text x="60" y="954" font-family="Arial,sans-serif" font-size="76" font-weight="600" fill="#203135">Pot may not reach 5.30 kΩ.</ns0:text>
+  <ns0:text x="60" y="1046" font-family="Arial,sans-serif" font-size="76" font-weight="600" fill="#203135">DO NOT ENERGIZE.</ns0:text>
+  <ns0:text x="60" y="1138" font-family="Arial,sans-serif" font-size="76" font-weight="600" fill="#203135">Do not apply force.</ns0:text>
+  <ns0:text x="55" y="1260" font-family="Arial,sans-serif" font-size="94" font-weight="700" fill="#203135">Comparator / firmware</ns0:text>
+  <ns0:text x="60" y="1365" font-family="Arial,sans-serif" font-size="76" font-weight="600" fill="#203135">LMV339/BSS138 HIGH margin</ns0:text>
+  <ns0:text x="60" y="1457" font-family="Arial,sans-serif" font-size="76" font-weight="600" fill="#203135">at weak pull-up is unknown.</ns0:text>
+  <ns0:text x="60" y="1549" font-family="Arial,sans-serif" font-size="76" font-weight="600" fill="#203135">No powered firmware, trigger</ns0:text>
+  <ns0:text x="60" y="1641" font-family="Arial,sans-serif" font-size="76" font-weight="600" fill="#203135">polarity, probing, or homing</ns0:text>
+  <ns0:text x="60" y="1733" font-family="Arial,sans-serif" font-size="76" font-weight="600" fill="#203135">or force units are verified.</ns0:text>
+  <ns0:text x="60" y="1825" font-family="Arial,sans-serif" font-size="76" font-weight="600" fill="#203135">Keep motion disabled.</ns0:text>
+  <ns0:text x="60" y="1917" font-family="Arial,sans-serif" font-size="76" font-weight="600" fill="#203135">Missing integration: email</ns0:text>
+  <ns0:text x="60" y="2009" font-family="Arial,sans-serif" font-size="76" font-weight="600" fill="#203135">wolf.arthur@gamil.com.</ns0:text>
+  <ns0:text x="55" y="2280" font-family="Arial,sans-serif" font-size="76" font-weight="700" fill="#8b2e16">INCOMPLETE — UNQUALIFIED</ns0:text>
+</ns0:svg>

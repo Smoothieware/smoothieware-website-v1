@@ -1,0 +1,38 @@
+{::nomarkdown}
+<style>
+.markdown-body .xb-cmp td, .markdown-body .xb-cmp thead th { text-align: center; }
+.markdown-body .xb-cmp tbody th { text-align: left; font-weight: 400; }
+.markdown-body .xb-cmp .xb-cmp-group th { text-align: left; font-size: .78rem; letter-spacing: .06em; text-transform: uppercase; opacity: .7; }
+.xb-cmp-yes sl-icon { color: #35c26b; font-size: 1.25rem; vertical-align: middle; }
+.xb-cmp-no sl-icon { color: #ff5d5d; font-size: 1.25rem; vertical-align: middle; }
+.xb-cmp-note { display: block; font-size: .8rem; opacity: .75; }
+</style>
+<h2 id="compare-temperature-boards">Compare the temperature boards</h2>
+<p>Three boards read a temperature sensor. None has been tested on hardware, and the checked firmware has no driver for any of them.</p>
+<div class="xb-tablewrap" role="region" aria-labelledby="compare-temperature-boards" tabindex="0">
+  <table class="xb-cmp">
+    <thead>
+      <tr>
+        <th scope="col"></th>
+        <th scope="col"><a href="{{ '/extensions/simple-pt100-amplifier-board' | relative_url }}">Simple PT100 amplifier</a></th>
+        <th scope="col"><a href="{{ '/extensions/spi-pt100-amplifier-board' | relative_url }}">SPI PT100</a></th>
+        <th scope="col"><a href="{{ '/extensions/spi-thermocouple-breakout' | relative_url }}">SPI thermocouple</a></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="xb-cmp-group"><th scope="rowgroup" colspan="4">Specifications</th></tr>
+      <tr><th scope="row">Sensor</th><td>PT100, four-wire</td><td>PT100, two-, three- or four-wire</td><td>Thermocouple, type set by the driver</td></tr>
+      <tr><th scope="row">Converter</th><td>OPA2333 amplifier</td><td>MAX31865</td><td>MAX31856</td></tr>
+      <tr><th scope="row">Output to the controller</th><td>Analogue voltage</td><td>SPI</td><td>SPI</td></tr>
+      <tr><th scope="row">Controller connection</th><td>One analogue input</td><td>Four SPI lines</td><td>Four SPI lines</td></tr>
+      <tr class="xb-cmp-group"><th scope="rowgroup" colspan="4">Features</th></tr>
+      <tr><th scope="row">Returns a digital temperature</th><td class="xb-cmp-no"><sl-icon name="x-circle-fill" label="No"></sl-icon></td><td class="xb-cmp-yes"><sl-icon name="check-circle-fill" label="Yes"></sl-icon></td><td class="xb-cmp-yes"><sl-icon name="check-circle-fill" label="Yes"></sl-icon></td></tr>
+      <tr><th scope="row">Compensates the cold junction itself</th><td class="xb-cmp-no"><sl-icon name="x-circle-fill" label="No"></sl-icon><span class="xb-cmp-note">Not applicable</span></td><td class="xb-cmp-no"><sl-icon name="x-circle-fill" label="No"></sl-icon><span class="xb-cmp-note">Not applicable</span></td><td class="xb-cmp-yes"><sl-icon name="check-circle-fill" label="Yes"></sl-icon></td></tr>
+      <tr><th scope="row">Wiring mode set by solder links</th><td class="xb-cmp-no"><sl-icon name="x-circle-fill" label="No"></sl-icon><span class="xb-cmp-note">Four-wire; two-wire links</span></td><td class="xb-cmp-yes"><sl-icon name="check-circle-fill" label="Yes"></sl-icon></td><td class="xb-cmp-no"><sl-icon name="x-circle-fill" label="No"></sl-icon></td></tr>
+      <tr><th scope="row">Chain socket passes the lines on</th><td class="xb-cmp-yes"><sl-icon name="check-circle-fill" label="Yes"></sl-icon></td><td class="xb-cmp-yes"><sl-icon name="check-circle-fill" label="Yes"></sl-icon></td><td class="xb-cmp-yes"><sl-icon name="check-circle-fill" label="Yes"></sl-icon></td></tr>
+      <tr><th scope="row">Indicator light</th><td class="xb-cmp-no"><sl-icon name="x-circle-fill" label="No"></sl-icon></td><td class="xb-cmp-yes"><sl-icon name="check-circle-fill" label="Yes"></sl-icon><span class="xb-cmp-note">Data ready</span></td><td class="xb-cmp-no"><sl-icon name="x-circle-fill" label="No"></sl-icon></td></tr>
+      <tr><th scope="row">Matching driver in the checked firmware</th><td class="xb-cmp-no"><sl-icon name="x-circle-fill" label="No"></sl-icon></td><td class="xb-cmp-no"><sl-icon name="x-circle-fill" label="No"></sl-icon></td><td class="xb-cmp-no"><sl-icon name="x-circle-fill" label="No"></sl-icon></td></tr>
+    </tbody>
+  </table>
+</div>
+{:/nomarkdown}

@@ -1,125 +1,173 @@
 ---
 layout: default
-title: "Wireless series Smoothieboard-side master"
+title: 'Wireless series — Smoothieboard-side "Master"'
 permalink: /extensions/wireless-series-master
 ---
 
-# Wireless series Smoothieboard-side master
+# Wireless series — Smoothieboard-side "Master"
 
-{% include extension-board-visuals.html slug="wireless-series-master" %}
+This host-side radio controller is an experimental remote-I/O master, using an ATSAMD21 and nRF24L01+ module. The family's Y/U/S/I/P/A modes are configuration concepts, not evidence that arbitrary buses can be transported transparently.
 
-Host-side radio endpoint for a deliberately configured remote-I/O protocol; it is not a transparent wire replacement.
+This guide selects **v14**, the PCB revision named by the existing abstract export. It is a prototype/design candidate; no release, physical operation or current rating is established by a clean CAD check. Older root specifications are design history where they name another revision.
 
-## Development status
+The selected v14 source package retains schematic title-block revision **v10**. The package number does not rename the schematic or establish a released hardware revision.
 
-**Baseline documentation snapshot: 2026-10-11, before the requested connector/protection/usability revision program.** New revision features require their own reviewed source and qualification evidence.
+## How it works
 
-This page documents an **unqualified engineering study**, not a released or tested product. Saved CAD, renders and automated checks do not establish a safe assembly, compatible cable, firmware support or a usable current rating.
+J1 contacts 3–9 reach local HOST_P3–P9 through the selected interface. The MCU communicates with the E01-ML01S radio module. J2 programs the MCU. J3 branches contacts 8/9 as Qwiic only when the chosen host mode actually assigns those nets to I2C.
 
-Board-specific qualification limits: Retained ERC/DRC/opens/parity and assembly-shape checks zero;88 checklist items unsigned. Firmware OE/link-loss, partial-power, RF, host budget, debug, exact stock and physical qualification open.
+## Power, signal direction and limits
 
-## Interfaces and wiring
+J1.1 is host 3.3 V, .2 is NC and .10 ground. Radio/MCU current allocation, input/output direction and timing must be mode-specific. J3 is 3.3 V only; it must not be attached as I2C while the same contacts are driven as another mode. Link-loss, stale-data, host reset and protocol reliability remain unresolved. No safety or deterministic motion transport is claimed.
 
-### Inputs
+## Board reference
 
-- Mode-dependent canonical Gadgeteer socket
-- Optional local provisioning control and radio packets
+<details markdown="1">
+<summary>Reading the connector callouts</summary>
 
-### Outputs
+The dark end of each pill gives the source contact number. The adjoining label gives its function. Colours help locate related functions; the label and connection instructions determine how to use the contact.
 
-- nRF24 radio link
-- Mode-dependent reconstructed local signals
-- Status LEDs
+- Red: 3.3 V supply.
+- Near-black: Circuit ground.
+- Grey: Not routed in this board revision.
+- Dark grey: Other source-labelled contact — read its exact function.
 
-### Connection contract
+A voltage in a signal name does not make that contact a power output. Circuit ground, cable shield and protective earth are different connections. An underside projection shows rear components through the front view; it is not a mirrored rear view.
 
-The canonical repository connector contract is pin 1 = +3.3 V, pin 2 = +5 V, pin 10 = GND. Current Smoothie V2 Prime web material appears to describe a conflicting header assignment; the physical target header must be continuity-checked against its authoritative schematic before KiCad release. The table below expresses design intent against the repository's canonical contract, not proof of the live board pinout.
+</details>
 
-|  Pin | Canonical role        | Assigned function              |
-| ---: | --------------------- | ------------------------------ |
-|    1 | +3.3V                 | +3.3 V rail                    |
-|    2 | +5V                   | +5 V rail                      |
-|    3 | GPIO! / type-specific | Mode GPIO0 / provisioning GPIO |
-|    4 | type-specific         | Mode TX or GPIO1               |
-|    5 | type-specific         | Mode RX or GPIO2               |
-|    6 | type-specific         | Mode GPIO3 / CTS / CS          |
-|    7 | type-specific         | Mode GPIO4 / RTS / MOSI / PWM  |
-|    8 | type-specific         | Mode GPIO5 / SDA / MISO        |
-|    9 | type-specific         | Mode GPIO6 / SCL / SCK         |
-|   10 | GND                   | Ground                         |
+Start with the overview, then use all focused sheets for exact contacts, controls and links. Source footprint defaults do not prove assembled continuity.
 
-Power off before connecting or changing jumpers. Verify pin 1, signal direction, supply voltage and ground at both ends of every cable. A mechanically fitting connector is not proof of electrical compatibility. If a host pin mapping or current allocation remains unresolved in the design record, do not connect the board until it is resolved.
+{% include _includes/extension-instruction-diagram.html id="wireless-series-master-v14-reader-compact-overview" src="/images/extensions/wireless-series-master/guides/reader-compact-overview.svg" title="Wireless series master — overview" alt="Wireless series master — overview for wireless-series-master v14" caption="Reference for the documented revision. Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
 
-## Electrical design requirements
+{% include _includes/extension-instruction-diagram.html id="wireless-series-master-v14-reader-compact-host-1-5" src="/images/extensions/wireless-series-master/guides/reader-compact-host-1-5-central-pills.svg" title="J1 · Configurable host port — host 1 5" alt="J1 · Configurable host port — host 1 5 for wireless-series-master v14" caption="Reference for the documented revision. Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
 
-The following are specification requirements or study assumptions; they are **not measured operating ratings**. A newer selected-revision note takes precedence over historical draft options.
+{% include _includes/extension-instruction-diagram.html id="wireless-series-master-v14-reader-compact-host-6-10" src="/images/extensions/wireless-series-master/guides/reader-compact-host-6-10-central-pills.svg" title="J1 · Configurable host port — host 6 10" alt="J1 · Configurable host port — host 6 10 for wireless-series-master v14" caption="Reference for the documented revision. Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
 
-- Radio and MCU shall operate from a regulated 3.3 V rail
-- Antenna layout shall follow the selected module or IC reference design
-- Logic levels at the host socket shall remain 3.3 V compatible
-- No safety-critical motion, heater, or laser-enable function is permitted without independent safety validation
+{% include _includes/extension-instruction-diagram.html id="wireless-series-master-v14-reader-compact-swd-1-5" src="/images/extensions/wireless-series-master/guides/reader-compact-swd-1-5-central-pills.svg" title="J2 · MCU programming — swd 1 5" alt="J2 · MCU programming — swd 1 5 for wireless-series-master v14" caption="Reference for the documented revision. Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
 
-## Protection in the design record
+{% include _includes/extension-instruction-diagram.html id="wireless-series-master-v14-reader-compact-qwiic-1-4" src="/images/extensions/wireless-series-master/guides/reader-compact-qwiic-1-4-central-pills.svg" title="J3 · Shared Qwiic connector — qwiic 1 4" alt="J3 · Shared Qwiic connector — qwiic 1 4 for wireless-series-master v14" caption="Reference for the documented revision. Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
 
-The design describes the following protection intent. Check the selected schematic and remaining qualification gates before relying on it:
+{% include _includes/extension-instruction-diagram.html id="wireless-series-master-v14-reader-compact-bus" src="/images/extensions/wireless-series-master/guides/reader-compact-bus-underside-caption.svg" title="Host signal bus switch — bus" alt="Host signal bus switch — bus for wireless-series-master v14" caption="Reference for the documented revision. Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
 
-- Series resistance and ESD protection on every off-board signal
-- Brownout detector and watchdog must force safe state
-- Reverse-current isolation between selected supply sources
+{% include _includes/extension-instruction-diagram.html id="wireless-series-master-v14-reader-compact-signals" src="/images/extensions/wireless-series-master/guides/reader-compact-signals.svg" title="Seven host signal paths — signals" alt="Seven host signal paths — signals for wireless-series-master v14" caption="Reference for the documented revision. Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
 
-## Selected component architecture
+{% include _includes/extension-instruction-diagram.html id="wireless-series-master-v14-reader-compact-power" src="/images/extensions/wireless-series-master/guides/reader-compact-power.svg" title="3.3V supply feed — power" alt="3.3V supply feed — power for wireless-series-master v14" caption="Reference for the documented revision. Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
 
-See [current review](https://github.com/arthurwolf/extension-boards/blob/main/src/wireless-series-master/component-review.md). Retain v10 ATSAMD21E18A/nRF24L01+ interoperability and already adopted SN74CB3Q3245 bus isolation. Integrated nRF52832 requires unsupplied protocol/firmware migration. Existing V1-compatible bypass consolidation retained; no IC-stock successor. Current selected v10; retained native/stock/physical qualification limits remain explicit.
+{% include _includes/extension-instruction-diagram.html id="wireless-series-master-v14-reader-compact-controller" src="/images/extensions/wireless-series-master/guides/reader-compact-controller.svg" title="SAMD21 wireless controller — controller" alt="SAMD21 wireless controller — controller for wireless-series-master v14" caption="Reference for the documented revision. Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
 
-## Configuration and commissioning
+{% include _includes/extension-instruction-diagram.html id="wireless-series-master-v14-reader-compact-radio" src="/images/extensions/wireless-series-master/guides/reader-compact-radio.svg" title="Radio module interface — radio" alt="Radio module interface — radio for wireless-series-master v14" caption="Reference for the documented revision. Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
 
-Use the configuration and firmware contract for the exact selected revision. Do not copy another module’s socket assignments or assume that an unused pin is available. First-article work must verify source selection, reset/unplug behavior, cable orientation and the actual load or sensor interface before normal operation.
+{% include _includes/extension-instruction-diagram.html id="wireless-series-master-v14-reader-compact-button" src="/images/extensions/wireless-series-master/guides/reader-compact-button.svg" title="Provisioning button — button" alt="Provisioning button — button for wireless-series-master v14" caption="Reference for the documented revision. Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
 
-## Requested connector and usability upgrades
+{% include _includes/extension-instruction-diagram.html id="wireless-series-master-v14-reader-compact-led-D1" src="/images/extensions/wireless-series-master/guides/reader-compact-led-D1.svg" title="Provisioning indicator — led D1" alt="Provisioning indicator — led D1 for wireless-series-master v14" caption="Reference for the documented revision. Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
 
-The following are requirements for the next design iterations; this page does **not** claim they are already fitted:
+{% include _includes/extension-instruction-diagram.html id="wireless-series-master-v14-reader-compact-led-D2" src="/images/extensions/wireless-series-master/guides/reader-compact-led-D2.svg" title="Radio-link indicator — led D2" alt="Radio-link indicator — led D2 for wireless-series-master v14" caption="Reference for the documented revision. Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
 
-- On electrically suitable three/four-pin low-voltage ports, provide compact alternative 2.54 mm header/Molex-style and keyed STEMMA-family footprints. Populate one connector option per shared position and document its pin order. Use STEMMA QT only for compatible four-wire I²C; connector appearance does not make another signal protocol I²C-compatible.
-- Render each supported connector population separately. Document clearances, cable access and the exact fitted option.
-- Use uppercase titles in a consistent Montserrat-style face, labels on both sides, visible domain boundaries, a revision-specific wiring guide and this page’s URL on the silk where readable.
-- Keep mounting-hole centers on a documented 10 mm lattice; add cable-tie holes where space and electrical clearances permit. Place status LEDs near accessible edges and give every indicator its own disable solder jumper. Provide labeled test pads and a ground observation point.
-- Review applicable DC power entries for reverse-polarity cutoff with a blinking warning, overvoltage cutoff/indication, controlled startup and electronic overcurrent protection. Indicator and protection circuits must work in the fault state without defeating isolation or safe output defaults. Thermal protection belongs only where the power/thermal analysis justifies it.
-- Electronic protection does not automatically replace a required mains/branch safety fuse. Backfeed blocking and inductive-load flyback clamps are separate design functions. Do not add identity EEPROMs, fault memory, calibration storage or paid self-test hardware under this upgrade program.
+{% include _includes/extension-instruction-diagram.html id="wireless-series-master-v14-reader-compact-led-D3" src="/images/extensions/wireless-series-master/guides/reader-compact-led-D3.svg" title="Fault indicator — led D3" alt="Fault indicator — led D3 for wireless-series-master v14" caption="Reference for the documented revision. Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
 
-## Design sources
+{% include _includes/extension-instruction-diagram.html id="wireless-series-master-v14-reader-compact-tests" src="/images/extensions/wireless-series-master/guides/reader-compact-tests-underside-caption.svg" title="Power and logic test pads — tests" alt="Power and logic test pads — tests for wireless-series-master v14" caption="Reference for the documented revision. Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
 
-- [Board specification](https://github.com/arthurwolf/extension-boards/blob/main/src/wireless-series-master/specs.md)
-- [Architecture and component decisions](https://github.com/arthurwolf/extension-boards/blob/main/src/wireless-series-master/design.md)
-- [Selected-revision review and qualification record](https://github.com/arthurwolf/extension-boards/blob/main/src/wireless-series-master/component-review.md)
-- [All extension boards](/#extension-boards)
+{% include _includes/extension-instruction-diagram.html id="wireless-series-master-v14-reader-compact-mounts" src="/images/extensions/wireless-series-master/guides/reader-compact-mounts.svg" title="Mounting holes — mounts" alt="Mounting holes — mounts for wireless-series-master v14" caption="Reference for the documented revision. Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
 
-Documentation route: `smoothieware.org/extensions/wireless-series-master`.
+The annotated source references above cover the selected revision. Complete installation wiring and review in the actual page viewer remain open.
 
-<!-- additive-cad-status:start -->
-## Additive design studies
+### wireless-series-master — selected connector contact map
 
-The 2026-10-11 upgrade program has saved additional candidates v11, v12, v13. These studies preserve the historical design described above. Their connector, LED, mechanical and protection changes are revision-specific and remain unqualified.
+The following is saved PCB pad/net readback. It proves neither physical continuity nor mating orientation/current capacity. Same-numbered duplicate lands are collapsed in this electrical table. Physical connector-population and mating qualification remains open. `NC` is explicitly unconnected, not a supported spare.
 
-See the [per-board changes, failures and remaining work](https://github.com/arthurwolf/extension-boards/blob/main/src/wireless-series-master/fancification.md) and [mandatory family specification](https://github.com/arthurwolf/extension-boards/blob/main/docs/FANCIFICATION-SPEC.md). Use the source hash and native check for the exact candidate being reviewed; do not infer hardware ratings from a rendered population.
-<!-- additive-cad-status:end -->
+<details markdown="1">
+<summary>Selected-source contact inventory</summary>
 
-<!-- extension-upgrade-readback:start -->
-## Upgrade candidate readback
+<div class="extension-contact-table" role="region" aria-label="Selected-source contact inventory; scroll horizontally to read all columns" tabindex="0" markdown="1">
 
-The three additional revisions are **v11, v12, v13**. They are engineering studies; saved CAD and renders do not release the hardware. The latest candidate is described below. Older baseline notes above remain historical.
+| Connector | Contact | Saved function/net |
+| --- | --- | --- |
+| J1 — GADGETEER Y/U/S/I/P/A (config-selected) | 1 | `/+3V3_HOST` |
+| J1 — GADGETEER Y/U/S/I/P/A (config-selected) | 3 | `/HOST_P3` |
+| J1 — GADGETEER Y/U/S/I/P/A (config-selected) | 4 | `/HOST_P4` |
+| J1 — GADGETEER Y/U/S/I/P/A (config-selected) | 5 | `/HOST_P5` |
+| J1 — GADGETEER Y/U/S/I/P/A (config-selected) | 6 | `/HOST_P6` |
+| J1 — GADGETEER Y/U/S/I/P/A (config-selected) | 7 | `/HOST_P7` |
+| J1 — GADGETEER Y/U/S/I/P/A (config-selected) | 8 | `/HOST_P8` |
+| J1 — GADGETEER Y/U/S/I/P/A (config-selected) | 9 | `/HOST_P9` |
+| J1 — GADGETEER Y/U/S/I/P/A (config-selected) | 10 | `GND` |
+| J1 | 2 | NC |
+| J2 — SWD | 1 | `+3V3` |
+| J2 — SWD | 2 | `/SWDIO` |
+| J2 — SWD | 3 | `/SWCLK` |
+| J2 — SWD | 4 | `/NRST` |
+| J2 — SWD | 5 | `GND` |
+| J3 — QWIIC 3V3 SAME I2C BUS | 1 | `GND` |
+| J3 — QWIIC 3V3 SAME I2C BUS | 2 | `/+3V3_HOST` |
+| J3 — QWIIC 3V3 SAME I2C BUS | 3 | `/HOST_P8` |
+| J3 — QWIIC 3V3 SAME I2C BUS | 4 | `/HOST_P9` |
+| J3 | MP | NC |
 
-### wireless-series-master
+</div>
 
-- [Latest PCB source](https://github.com/arthurwolf/extension-boards/blob/main/src/wireless-series-master/attempt/versions/v13/wireless-series-master.kicad_pcb), SHA-256 `7e78f17eff86bef945feb82d979ce93fcdc8adc4aa58c7669be089c9d32f6438`.
-- Last native check: **0 errors**, including **0 open connections**. This is a CAD result, not electrical, assembly or firmware qualification.
-- Alternative connector lands recorded: J3 / `PinHeader_1x04_P2.54mm_Vertical`. Fit only the selected population; check its pin map and voltage in the design record.
-- [normal population/render record](https://github.com/arthurwolf/extension-boards/blob/main/src/wireless-series-master/attempt/versions/v13/populations/wireless-series-master/normal/population.json): 6 images; source current; image hashes match; 0 unresolved models.
-- [stemma population/render record](https://github.com/arthurwolf/extension-boards/blob/main/src/wireless-series-master/attempt/versions/v13/populations/wireless-series-master/stemma/population.json): 6 images; source current; image hashes match; 0 unresolved models.
-- [Changes, failed trials and remaining work](https://github.com/arthurwolf/extension-boards/blob/main/src/wireless-series-master/attempt/versions/v13/wireless-series-master-fancification-revision.md).
+</details>
 
-Applicable protection, current-path, thermal, pinout, cable access and physical tests remain open wherever the linked board record has not verified them. A zero native-error count does not close those gates.
-<!-- extension-upgrade-readback:end -->
 
-## Second-round annotation readback v14 — 2026-10-13
+### Links, indicators and controls
 
-Protected source v13; current PCB SHA-256 `3ebeab631adafcb91e2c705f9972ce772818bd22bb09b81b3740ca62f0af920c`. Fresh native checks: zero enabled errors, opens, schematic mismatches and ERC findings; 3 PCB warnings remain. Electrical geometry/project rules unchanged; 68 historical files, 66 model entries,17 exports and12 current population images verified. All12 populated/bare views inspected. Full documentation URL is readable in the current renders. Physical qualification remains open; no price or area savings claimed.
+The table identifies this selected board's actual links and indicators. Default population and complete circuit meaning must be reconciled before cut/bridge instructions are accepted. Indicator labels describe observed circuit signals, not physical load or safety qualification.
+
+| Item | Selected label | Contact nets |
+| --- | --- | --- |
+| JP2 | CUT TO DISABLE D3 | 1=LED_D3_DISABLE; 2=/LED_FAULT_A |
+| JP3 | CUT TO DISABLE D2 | 1=LED_D2_DISABLE; 2=/LED_LINK_A |
+| D1 | PROV amber | 1=GND; 2=LED_D1_DISABLE |
+| SW1 | PROV button | 1=/PROV_BTN; 2=GND |
+| D3 | FAULT red | 1=GND; 2=LED_D3_DISABLE |
+| JP1 | CUT TO DISABLE D1 | 1=LED_D1_DISABLE; 2=/LED_PROV_A |
+| D2 | LINK green | 1=GND; 2=LED_D2_DISABLE |
+
+### wireless-series-master — additional selected solder links
+
+These are distinct physical solder-link footprints, including links whose references begin `SJ` rather than `JP`. Their labels and nets must be included in the annotated reference; none is silently omitted because of its reference prefix.
+
+| Link | Selected label | Pad nets |
+| --- | --- | --- |
+| SJ1 | 3V3_FEED | 1=/+3V3_HOST; 2=+3V3 |
+
+
+
+## Practical use with Smoothieboard V2 Prime
+
+The intended example is one configured slow digital remote-I/O link with a matching remote endpoint. A nominal master board without a peer image and protocol is not a usable example.
+
+**Pending:** the complete autorouted Prime → board → peripheral diagram has not been composed or accepted. A connector contact map or standalone board illustration does not satisfy it. Do not transfer a host allocation between Prime revisions without matching source evidence.
+
+1. Select exactly one mode and its complete host/peer contact schedule before connecting J1.
+2. Identify the matching radio peer and firmware/protocol versions; do not mix this nRF24L01+ architecture with the nRF52832 endpoint family.
+3. Use J3 only for an explicitly configured I2C mode, with one host bus and a verified pull-up/power budget.
+4. Test reset, missing peer, interference and timeout outputs before allowing the link to control a machine function.
+
+## Smoothieware configuration and use
+
+The source specification explicitly leaves firmware/protocol outside the hardware deliverables. No matching master/peer implementation or V2 mode driver was verified. If required support is absent, email **wolf.arthur@gamil.com**. No invented wireless mode or pairing command is supplied.
+
+The V2 implementation reviewed for this documentation is pinned to SmoothieV2 commit `2a21c0108b1d095ecd8b2b9358e94055f053c003`; it is not proven to be the installed controller firmware. Source support, configured operation and physical/system qualification are separate checks. No arbitrary pin, driver setting or command is substituted for a missing contract.
+
+## Sources and revision notes
+
+- [Selected v14 source directory](https://github.com/arthurwolf/extension-boards/tree/main/src/wireless-series-master/attempt/versions/v14)
+- [Board specification](https://github.com/arthurwolf/extension-boards/blob/main/src/wireless-series-master/specs.md) — retain older revision boundaries.
+- [Design discussion](https://github.com/arthurwolf/extension-boards/blob/main/src/wireless-series-master/design.md)
+- [All extension boards](/extension-boards)
+
+The selected-revision engineering repository was unavailable to anonymous readers when checked. Its source links are retained for provenance; an accessible matching source release has not been verified. Firmware and historical-board links are separate sources.
+
+**Remaining board-specific issue:** Master/peer firmware, mode-specific host protocol, channel directions, link-loss behavior and power budget.
+
+<details markdown="1">
+<summary>Supplementary board views and engineering history</summary>
+
+Selected active components: `U2 E01-ML01S nRF24L01+ module`; `U1 ATSAMD21E18A-AU`; `U3 SN74CB3Q3245PWR`. Part identities do not establish an assembled rating.
+
+{% include _includes/extension-board-visuals.html slug="wireless-series-master" %}
+
+These gallery views are supplementary; they are not the two required instructional diagrams. Their captions must preserve any older/different revision or population. Iteration logs, trial results and future upgrade proposals remain engineering history rather than operating instructions.
+
+</details>

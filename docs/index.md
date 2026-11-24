@@ -351,7 +351,7 @@ Current edge build status: [![Build Status](https://app.travis-ci.com/Smoothiewa
 <!-- extension-board-directory:start -->
 ## Extension boards
 
-These 80 extension-board pages describe development studies, their wiring requirements and remaining qualification limits. They are not fabrication or operating approvals. Select the exact board and revision before wiring.
+The [complete extension-board directory](/extension-boards) covers 80 modern design families and 39 historical or related source records, with descriptions and guide status. Documentation and instructional diagrams are being completed; no board has yet passed the complete reader checklist. Select the exact revision before wiring.
 
 {::nomarkdown}
 <style>
@@ -370,9 +370,12 @@ These 80 extension-board pages describe development studies, their wiring requir
 ### Motor and motion control
 
 - [Advanced H-bridge encoder board](/extensions/advanced-h-bridge-encoder-board)
-- [Bouni spindle module boards](/extensions/bouni-spindle-module-boards)
+- [Bouni analog spindle control](/extensions/bouni-analog-spindle-control)
+- [External STEP/DIR signal breakout](/extensions/historical-external-stepper-signal-breakout)¹
+- [Six-axis interface board](/extensions/historical-six-axis-breakout)¹
 - [Leadshine-like external servo drivers](/extensions/leadshine-like-external-servo-drivers)
 - [Leadshine-like external stepper drivers](/extensions/leadshine-like-external-stepper-drivers)
+- [Multi-motor single-axis command splitter](/extensions/historical-multi-motor-single-axis-splitter)¹
 - [Pololu driver breakout board](/extensions/pololu-driver-breakout-board)
 - [Servo control](/extensions/servo-control)
 - [Stepper motor driver breakout board (Allegro)](/extensions/stepper-driver-breakout-allegro)
@@ -391,6 +394,7 @@ These 80 extension-board pages describe development studies, their wiring requir
 
 - [Additional endstop inputs breakout](/extensions/additional-endstop-inputs-breakout)
 - [BLTouch-like probe](/extensions/bltouch-like-probe)
+- [BounceStop hardware debounce](/extensions/historical-bounce-stop)¹
 - [Filament encoder board](/extensions/filament-encoder-board)
 - [Filament progress sensor](/extensions/filament-progress-sensor)
 - [FSR breakout board](/extensions/fsr-breakout-board)
@@ -400,12 +404,14 @@ These 80 extension-board pages describe development studies, their wiring requir
 - [Input protector](/extensions/input-protector)
 - [Laser barrier board](/extensions/laser-barrier-board)
 - [Mechanical endstop breakout](/extensions/mechanical-endstop-breakout)
+- [OptoIsoStop isolated endstop interface](/extensions/historical-opto-isolated-endstop-adapter)¹
 - [Pressure sensor](/extensions/pressure-sensor)
 - [Simple PT100 amplifier board](/extensions/simple-pt100-amplifier-board)
 - [Smoke detector](/extensions/smoke-detector)
 - [Spectral analysis board](/extensions/spectral-analysis-board)
 - [SPI PT100 amplifier board](/extensions/spi-pt100-amplifier-board)
 - [SPI thermocouple breakout](/extensions/spi-thermocouple-breakout)
+- [ThermistorTrigger — Dual thermistor hardware setpoint trigger](/extensions/historical-thermistortrigger)¹
 - [Water-flow sensor adapter](/extensions/water-flow-sensor-adapter)
 
 {::nomarkdown}
@@ -421,18 +427,25 @@ These 80 extension-board pages describe development studies, their wiring requir
 - [AC SSR board](/extensions/ac-ssr-board)
 - [ATX connector board](/extensions/atx-connector-board)
 - [DC SSR board](/extensions/dc-ssr-board)
+- [Extruder toolhead harness with motor provision](/extensions/historical-extruder-toolhead-harness-with-motor)¹
+- [Extruder toolhead harness without motor](/extensions/historical-extruder-toolhead-harness-without-motor)¹
+- [Flambegate — High-side heater shutoff](/extensions/historical-flambegate)¹
+- [Flambehub — Hardware trigger and power-disconnect hub](/extensions/historical-flambehub)¹
+- [Four-PWM/two-input/probe interface](/extensions/historical-gadgeteer-pwm-io-board)¹
 - [Gate boards](/extensions/gate-boards)
 - [Additional general purpose outputs breakout / Servo board](/extensions/general-purpose-output-servo-board)
 - [Laser diode driver breakout](/extensions/laser-diode-driver-breakout)
 - [Laser PSU adapter board](/extensions/laser-psu-adapter-board)
+- [PiPower — Pi power, UART and button shield](/extensions/historical-pipower)¹
 - [Power supply connector board](/extensions/power-supply-connector-board)
 - [Seven-channel AC mechanical relay](/extensions/seven-channel-ac-mechanical-relay)
 - [Seven-channel DC mechanical relay](/extensions/seven-channel-dc-mechanical-relay)
 - [Single-channel AC mechanical relay](/extensions/single-channel-ac-mechanical-relay)
 - [Single-channel DC mechanical relay](/extensions/single-channel-dc-mechanical-relay)
 - [Single-Channel Large MOSFET output](/extensions/single-channel-large-mosfet-output)
-- [Single-Channel Small MOSFET output](/extensions/single-channel-small-mosfet-output)
-- [Single-Channel AC solid-state relay output](/extensions/single-channel-solid-state-relay-output)
+- [Single-Channel Small MOSFET advanced output](/extensions/single-channel-small-mosfet-advanced-output)
+- [Single-Channel Small MOSFET basic output](/extensions/single-channel-small-mosfet-basic-output)
+- [Single-channel solid state relay output](/extensions/single-channel-solid-state-relay-output)
 
 {::nomarkdown}
 </section>
@@ -445,11 +458,17 @@ These 80 extension-board pages describe development studies, their wiring requir
 ### Communication and signal interfaces
 
 - [Bidirectional level shifting board](/extensions/bidirectional-level-shifting-board)
+- [Bouni RS-485 spindle control](/extensions/bouni-rs485-spindle-control)
 - [Cheap UART adapter breakout](/extensions/cheap-uart-adapter-breakout)
 - [Differential signal extender](/extensions/differential-signal-extender)
+- [Differential SPI LVDS extender](/extensions/historical-differential-spi-lvds-extender)¹
 - [Differential SPI signal extender](/extensions/differential-spi-signal-extender)
 - [Differential STEP/DIR/ENABLE extender](/extensions/differential-step-dir-en-extender)
+- [Fourteen channel 3.3/5 V level shifter](/extensions/historical-gadgeteer-3v3-5v-level-shifter)¹
+- [Gadgeteer RS-232 level adapter](/extensions/historical-gadgeteer-rs232-adapter)¹
 - [Gadgeteer-to-CAN adapter](/extensions/gadgeteer-to-can)
+- [Gadgeteer Qwiic hub](/extensions/historical-gadgeteer-qwiic-adapter)¹
+- [jaUART CP2104 USB-UART adapter](/extensions/historical-jauart-usb-uart-adapter)¹
 - [Long distance extender](/extensions/long-distance-extender)
 - [Opto-isolation pass-through board](/extensions/opto-isolation-pass-through-board)
 - [Qwiic-to-Gadgeteer adapter](/extensions/qwiic-to-gadgeteer-adapter)
@@ -474,7 +493,9 @@ These 80 extension-board pages describe development studies, their wiring requir
 - [Buzzer module](/extensions/buzzer-module)
 - [Camera trigger board](/extensions/camera-trigger-board)
 - [Debug probe](/extensions/debug-probe)
+- [DIP-switch and debounced-input board](/extensions/historical-gadgeteer-dip-switch-board)¹
 - [GLCD breakout](/extensions/glcd-breakout)
+- [Seven-LED GPIO board](/extensions/historical-gadgeteer-led-breakout)¹
 - [LED breakout](/extensions/led-breakout)
 - [SD card breakout](/extensions/sd-card-breakout)
 - [Universal panel adapter](/extensions/universal-panel-adapter)
@@ -497,13 +518,18 @@ These 80 extension-board pages describe development studies, their wiring requir
 - [CPLD adapter](/extensions/cpld-adapter)
 - [D-sub-to-Gadgeteer IN adapter](/extensions/d-sub-to-gadgeteer-in)
 - [D-sub-to-Gadgeteer OUT adapter](/extensions/d-sub-to-gadgeteer-out)
+- [Dual-device I2C digital potentiometer](/extensions/historical-dual-digital-potentiometer)¹
+- [ESP32 DevKit to Gadgeteer host board](/extensions/esp32-to-gadgeteer-host)
+- [Five-port Gadgeteer header adapter](/extensions/historical-five-port-gadgeteer-header-adapter)¹
 - [Intel Edison breakout](/extensions/intel-edison-breakout)
 - [Papilio adapter](/extensions/papilio-adapter)
 - [Parallel port breakout](/extensions/parallel-port-breakout)
 - [Gadgeteer perma-proto breadboard](/extensions/perma-proto-gadgeteer)
+- [Raspberry Pi 40-pin to Gadgeteer HAT](/extensions/raspberry-pi-to-gadgeteer-hat)
 - [Raspberry Pi Zero breakout](/extensions/raspberry-pi-zero-breakout)
 - [Raw pins breakout](/extensions/raw-pins-breakout)
 - [Raw pins screw terminal breakout](/extensions/raw-pins-screw-terminal-breakout)
+- [Teensy 4.1 to Gadgeteer host board](/extensions/teensy-to-gadgeteer-host)
 
 {::nomarkdown}
 </section>
@@ -554,3 +580,5 @@ These 80 extension-board pages describe development studies, their wiring requir
   <img src="/images/oshw-logo.png" alt="OSHW logo" style="width:75px; height:auto;"/>
 </a>
 {:/nomarkdown}
+
+¹ Historical design from the original extension-board collection.

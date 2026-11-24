@@ -1,0 +1,57 @@
+Reference,Value,Footprint,DNP
+C1,100nF,Capacitor_SMD:C_0603_1608Metric,False
+C2,100nF,Capacitor_SMD:C_0603_1608Metric,False
+C3,10nF,Capacitor_SMD:C_0603_1608Metric,False
+C4,1uF 16V X7R,Capacitor_SMD:C_0603_1608Metric,False
+C5,10uF 10V X5R,Capacitor_SMD:C_0805_2012Metric,False
+C6,100nF,Capacitor_SMD:C_0603_1608Metric,False
+C7,10nF,Capacitor_SMD:C_0603_1608Metric,False
+C8,100nF,Capacitor_SMD:C_0603_1608Metric,True
+D1,RED FLAG,LED_SMD:LED_0603_1608Metric,False
+D2,RED PWR FLT,LED_SMD:LED_0603_1608Metric,False
+H1,MountingHole_3.2mm_M3,MountingHole:MountingHole_3.2mm_M3,False
+H2,MountingHole_3.2mm_M3,MountingHole:MountingHole_3.2mm_M3,False
+J1,GADGETEER S IN,Connector_Smoothie_Position_Feedback:Samtec_SHF105_2x05_TH_LC,False
+J2,GADGETEER S CHAIN,Connector_Smoothie_Position_Feedback:Samtec_SHF105_2x05_TH_LC,False
+J3,ENCODER ABZ RS-422 5V,Connector_Molex:Molex_KK-254_AE-6410-09A_1x09_P2.54mm_Vertical,False
+JP10,CUT TO DISABLE D1,Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm,False
+JP11,CUT TO DISABLE D2,Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm,False
+JP3,CHAIN P3 FLAG,Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm,False
+JP4,CHAIN P4 PWR_FLT,Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm,False
+JP5,CHAIN P5 CS_ALT,Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm,False
+JP6,CHAIN P6 CS,Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm,False
+JP7,CHAIN P7 MOSI,Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm,False
+JP8,CHAIN P8 MISO,Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm,False
+JP9,CHAIN P9 SCK,Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm,False
+JPCS,CS SEL 6|5,Jumper:SolderJumper-3_P1.3mm_Bridged12_RoundedPad1.0x1.5mm,False
+JPMA,MODE A TERM|SE,Jumper:SolderJumper-3_P1.3mm_Bridged12_RoundedPad1.0x1.5mm,False
+JPMB,MODE B TERM|SE,Jumper:SolderJumper-3_P1.3mm_Bridged12_RoundedPad1.0x1.5mm,False
+JPMZ,MODE Z TERM|SE,Jumper:SolderJumper-3_P1.3mm_Bridged12_RoundedPad1.0x1.5mm,False
+JPSH,SHIELD GND,Jumper:SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm,False
+R1,10k,Resistor_SMD:R_0603_1608Metric,False
+R10,1k,Resistor_SMD:R_0603_1608Metric,True
+R11,3.3k,Resistor_SMD:R_0603_1608Metric,False
+R12,3.3k,Resistor_SMD:R_0603_1608Metric,False
+R13,10k,Resistor_SMD:R_0603_1608Metric,False
+R2,100k,Resistor_SMD:R_0603_1608Metric,False
+R3,100k,Resistor_SMD:R_0603_1608Metric,False
+R4,178k 1%,Resistor_SMD:R_0603_1608Metric,False
+R5,120R,Resistor_SMD:R_0603_1608Metric,False
+R6,120R,Resistor_SMD:R_0603_1608Metric,False
+R7,120R,Resistor_SMD:R_0603_1608Metric,False
+R8,1M,Resistor_SMD:R_0603_1608Metric,False
+R9,1k,Resistor_SMD:R_0603_1608Metric,True
+TP1,TP +3V3,TestPoint:TestPoint_Pad_D1.0mm,False
+TP10,TP RX_Z_N,TestPoint:TestPoint_Pad_D1.0mm,False
+TP2,TP +5V,TestPoint:TestPoint_Pad_D1.0mm,False
+TP3,TP ENC_5V,TestPoint:TestPoint_Pad_D1.0mm,False
+TP4,TP GND,TestPoint:TestPoint_Pad_D1.0mm,False
+TP5,TP GND,TestPoint:TestPoint_Pad_D1.0mm,False
+TP6,TP ENC_FLAG_N,TestPoint:TestPoint_Pad_D1.0mm,False
+TP7,TP ENC_PWR_FAULT_N,TestPoint:TestPoint_Pad_D1.0mm,False
+TP8,TP RX_A,TestPoint:TestPoint_Pad_D1.0mm,False
+TP9,TP RX_B,TestPoint:TestPoint_Pad_D1.0mm,False
+U1,LS7366R-S,Package_SO:SOIC-14_3.9x8.7mm_P1.27mm,False
+U2,AM26LV32EDR,Package_SO:SOIC-16_3.9x9.9mm_P1.27mm,False
+U3,TPS2553DBVR,Package_TO_SOT_SMD:SOT-23-6,False
+Y1,16 MHz XO 3.3V,Oscillator:Oscillator_SMD_Abracon_ASE-4Pin_3.2x2.5mm,False

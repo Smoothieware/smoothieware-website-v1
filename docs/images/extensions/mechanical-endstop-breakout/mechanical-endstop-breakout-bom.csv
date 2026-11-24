@@ -1,0 +1,21 @@
+Reference,Value,Footprint,DNP
+C1,100nF 50V,Capacitor_SMD:C_0603_1608Metric,False
+C2,100nF 50V,Capacitor_SMD:C_0603_1608Metric,False
+CT1,CABLE TIE,Fancification_Mechanical:CableTie_NPTH_2_5mm,False
+CT2,CABLE TIE,Fancification_Mechanical:CableTie_NPTH_2_5mm,False
+D1,PESD5V0S1BA,Diode_SMD:D_SOD-323,False
+D2,YELLOW ACT,LED_SMD:LED_0603_1608Metric,False
+D3,BZT52-C4V7,Diode_SMD:D_SOD-123,False
+H1,MountingHole_3.2mm_M3,MountingHole:MountingHole_3.2mm_M3,False
+H2,MountingHole_3.2mm_M3,MountingHole:MountingHole_3.2mm_M3,False
+J1,KK254 RA S/G/5V,Fancification_Connectors:Dual_mech_endstop_J1,False
+JP1,LOCAL / REMOTE,Jumper:SolderJumper-3_P1.3mm_Bridged12_Pad1.0x1.5mm,False
+JP2,CUT TO DISABLE D2,Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm,False
+JX,X / 3.3V GPIO,Smoothie_MechEndstop:Samtec_SHF105_TH_LC,False
+R1,3.3k,Resistor_SMD:R_0603_1608Metric,False
+R2,1k,Resistor_SMD:R_0603_1608Metric,False
+R3,1.5k,Resistor_SMD:R_0603_1608Metric,False
+R4,330,Resistor_SMD:R_0603_1608Metric,False
+R5,10k,Resistor_SMD:R_0603_1608Metric,False
+SW1,D2F-01L-A,Smoothie_MechEndstop:Omron_D2F_RA,False
+U1,SN74LVC1G17DBVR,Package_TO_SOT_SMD:SOT-23-5,False

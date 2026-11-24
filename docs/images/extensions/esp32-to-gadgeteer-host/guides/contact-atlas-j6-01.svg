@@ -1,0 +1,69 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 796" role="img">
+  <title>ESP32 v03 — I²C header — contacts 1–4</title>
+  <rect width="760" height="796" fill="#f4f3ef" />
+  <text x="25" y="58" font-family="Arial, sans-serif" font-size="48" font-weight="600" fill="#172633">I²C header</text>
+  <text x="25" y="106" font-family="Arial, sans-serif" font-size="36" font-weight="600" fill="#172633">v03 · J6 · contact locator</text>
+  <text x="25" y="151" font-family="Arial, sans-serif" font-size="36" font-weight="600" fill="#172633">Connector-local top · not mating face</text>
+  <rect x="15" y="175" width="730" height="132" rx="18" fill="#ffffff" stroke="#c6ced3" stroke-width="1.5" />
+  <g transform="translate(125,236) scale(8) rotate(0) translate(-0.0,4.5000005000000005)" data-reference="J6" data-source-side="F.Cu">
+    <rect x="-5.01" y="-5.700001" width="10.02" height="2.400001" fill="#48535e" stroke="#12161b" stroke-width="0.2" />
+    <rect x="-4.0600000000000005" y="-4.75" width="0.5" height="0.5" fill="#d2af58" data-pin="1" data-net="GND" data-uuid="ab8d092e-cc83-4a19-8690-3578f989c3e1" />
+    <circle cx="-4.51" cy="-5.2" r="0.23" fill="#f5f0e0" />
+    <rect x="-1.52" y="-4.75" width="0.5" height="0.5" fill="#d2af58" data-pin="2" data-net="+3V3" data-uuid="7e41012a-c326-410c-a683-e6f631039ea0" />
+    <rect x="1.02" y="-4.75" width="0.5" height="0.5" fill="#d2af58" data-pin="3" data-net="/I2C_SDA" data-uuid="329b1f0b-9fa7-44d4-8d08-cd814ebdb1d1" />
+    <rect x="3.56" y="-4.750001" width="0.5" height="0.5" fill="#d2af58" data-pin="4" data-net="/I2C_SCL" data-uuid="e57599a1-8a0c-4240-bf34-184727586e28" />
+  </g>
+  <path d="M94.5200,236.0000 L238.0000,236.0000 L238.0000,216.0000 L263.0000,216.0000" fill="none" stroke="#6a7a83" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-kind="annotation-leader" data-pad-uuid="ab8d092e-cc83-4a19-8690-3578f989c3e1" />
+  <circle cx="94.52" cy="236.000004" r="5" fill="none" stroke="#b03680" stroke-width="2.5" data-selected-uuid="ab8d092e-cc83-4a19-8690-3578f989c3e1" data-source-x="50.0" data-source-y="39.69" />
+  <text x="30" y="305" font-family="Arial, sans-serif" font-size="36" font-weight="600" fill="#172633">J6.1</text>
+  <rect x="263" y="191" width="466" height="48" rx="16" fill="#25313a" stroke="#465966" stroke-width="1.5" />
+  <text x="278" y="225" font-family="Arial, sans-serif" font-size="36" font-weight="600" fill="#ffffff">Circuit ground</text>
+  <text x="275" y="285" font-family="Arial, sans-serif" font-size="36" font-weight="600" fill="#172633">common return</text>
+  <rect x="15" y="319" width="730" height="132" rx="18" fill="#ffffff" stroke="#c6ced3" stroke-width="1.5" />
+  <g transform="translate(125,380) scale(8) rotate(0) translate(-0.0,4.5000005000000005)" data-reference="J6" data-source-side="F.Cu">
+    <rect x="-5.01" y="-5.700001" width="10.02" height="2.400001" fill="#48535e" stroke="#12161b" stroke-width="0.2" />
+    <rect x="-4.0600000000000005" y="-4.75" width="0.5" height="0.5" fill="#d2af58" data-pin="1" data-net="GND" data-uuid="ab8d092e-cc83-4a19-8690-3578f989c3e1" />
+    <circle cx="-4.51" cy="-5.2" r="0.23" fill="#f5f0e0" />
+    <rect x="-1.52" y="-4.75" width="0.5" height="0.5" fill="#d2af58" data-pin="2" data-net="+3V3" data-uuid="7e41012a-c326-410c-a683-e6f631039ea0" />
+    <rect x="1.02" y="-4.75" width="0.5" height="0.5" fill="#d2af58" data-pin="3" data-net="/I2C_SDA" data-uuid="329b1f0b-9fa7-44d4-8d08-cd814ebdb1d1" />
+    <rect x="3.56" y="-4.750001" width="0.5" height="0.5" fill="#d2af58" data-pin="4" data-net="/I2C_SCL" data-uuid="e57599a1-8a0c-4240-bf34-184727586e28" />
+  </g>
+  <path d="M114.8400,380.0000 L238.0000,380.0000 L238.0000,360.0000 L263.0000,360.0000" fill="none" stroke="#6a7a83" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-kind="annotation-leader" data-pad-uuid="7e41012a-c326-410c-a683-e6f631039ea0" />
+  <circle cx="114.84" cy="380.000004" r="5" fill="none" stroke="#b03680" stroke-width="2.5" data-selected-uuid="7e41012a-c326-410c-a683-e6f631039ea0" data-source-x="50.0" data-source-y="42.23" />
+  <text x="30" y="449" font-family="Arial, sans-serif" font-size="36" font-weight="600" fill="#172633">J6.2</text>
+  <rect x="263" y="335" width="466" height="48" rx="16" fill="#f3d2d0" stroke="#465966" stroke-width="1.5" />
+  <text x="278" y="369" font-family="Arial, sans-serif" font-size="36" font-weight="600" fill="#172633">3.3 V supply</text>
+  <text x="275" y="429" font-family="Arial, sans-serif" font-size="36" font-weight="600" fill="#172633">from DevKit · via FB1</text>
+  <rect x="15" y="463" width="730" height="132" rx="18" fill="#ffffff" stroke="#c6ced3" stroke-width="1.5" />
+  <g transform="translate(125,524) scale(8) rotate(0) translate(-0.0,4.5000005000000005)" data-reference="J6" data-source-side="F.Cu">
+    <rect x="-5.01" y="-5.700001" width="10.02" height="2.400001" fill="#48535e" stroke="#12161b" stroke-width="0.2" />
+    <rect x="-4.0600000000000005" y="-4.75" width="0.5" height="0.5" fill="#d2af58" data-pin="1" data-net="GND" data-uuid="ab8d092e-cc83-4a19-8690-3578f989c3e1" />
+    <circle cx="-4.51" cy="-5.2" r="0.23" fill="#f5f0e0" />
+    <rect x="-1.52" y="-4.75" width="0.5" height="0.5" fill="#d2af58" data-pin="2" data-net="+3V3" data-uuid="7e41012a-c326-410c-a683-e6f631039ea0" />
+    <rect x="1.02" y="-4.75" width="0.5" height="0.5" fill="#d2af58" data-pin="3" data-net="/I2C_SDA" data-uuid="329b1f0b-9fa7-44d4-8d08-cd814ebdb1d1" />
+    <rect x="3.56" y="-4.750001" width="0.5" height="0.5" fill="#d2af58" data-pin="4" data-net="/I2C_SCL" data-uuid="e57599a1-8a0c-4240-bf34-184727586e28" />
+  </g>
+  <path d="M135.1600,524.0000 L238.0000,524.0000 L238.0000,504.0000 L263.0000,504.0000" fill="none" stroke="#6a7a83" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-kind="annotation-leader" data-pad-uuid="329b1f0b-9fa7-44d4-8d08-cd814ebdb1d1" />
+  <circle cx="135.16" cy="524.000004" r="5" fill="none" stroke="#b03680" stroke-width="2.5" data-selected-uuid="329b1f0b-9fa7-44d4-8d08-cd814ebdb1d1" data-source-x="50.0" data-source-y="44.77" />
+  <text x="30" y="593" font-family="Arial, sans-serif" font-size="36" font-weight="600" fill="#172633">J6.3</text>
+  <rect x="263" y="479" width="466" height="48" rx="16" fill="#d8e9f4" stroke="#465966" stroke-width="1.5" />
+  <text x="278" y="513" font-family="Arial, sans-serif" font-size="36" font-weight="600" fill="#172633">SDA · GPIO21</text>
+  <text x="275" y="573" font-family="Arial, sans-serif" font-size="36" font-weight="600" fill="#172633">I²C bidirectional data</text>
+  <rect x="15" y="607" width="730" height="132" rx="18" fill="#ffffff" stroke="#c6ced3" stroke-width="1.5" />
+  <g transform="translate(125,668) scale(8) rotate(0) translate(-0.0,4.5000005000000005)" data-reference="J6" data-source-side="F.Cu">
+    <rect x="-5.01" y="-5.700001" width="10.02" height="2.400001" fill="#48535e" stroke="#12161b" stroke-width="0.2" />
+    <rect x="-4.0600000000000005" y="-4.75" width="0.5" height="0.5" fill="#d2af58" data-pin="1" data-net="GND" data-uuid="ab8d092e-cc83-4a19-8690-3578f989c3e1" />
+    <circle cx="-4.51" cy="-5.2" r="0.23" fill="#f5f0e0" />
+    <rect x="-1.52" y="-4.75" width="0.5" height="0.5" fill="#d2af58" data-pin="2" data-net="+3V3" data-uuid="7e41012a-c326-410c-a683-e6f631039ea0" />
+    <rect x="1.02" y="-4.75" width="0.5" height="0.5" fill="#d2af58" data-pin="3" data-net="/I2C_SDA" data-uuid="329b1f0b-9fa7-44d4-8d08-cd814ebdb1d1" />
+    <rect x="3.56" y="-4.750001" width="0.5" height="0.5" fill="#d2af58" data-pin="4" data-net="/I2C_SCL" data-uuid="e57599a1-8a0c-4240-bf34-184727586e28" />
+  </g>
+  <path d="M155.4800,668.0000 L238.0000,668.0000 L238.0000,648.0000 L263.0000,648.0000" fill="none" stroke="#6a7a83" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-kind="annotation-leader" data-pad-uuid="e57599a1-8a0c-4240-bf34-184727586e28" />
+  <circle cx="155.48" cy="667.999996" r="5" fill="none" stroke="#b03680" stroke-width="2.5" data-selected-uuid="e57599a1-8a0c-4240-bf34-184727586e28" data-source-x="50.000001" data-source-y="47.31" />
+  <text x="30" y="737" font-family="Arial, sans-serif" font-size="36" font-weight="600" fill="#172633">J6.4</text>
+  <rect x="263" y="623" width="466" height="48" rx="16" fill="#d8e9f4" stroke="#465966" stroke-width="1.5" />
+  <text x="278" y="657" font-family="Arial, sans-serif" font-size="36" font-weight="600" fill="#172633">SCL · GPIO22</text>
+  <text x="275" y="717" font-family="Arial, sans-serif" font-size="36" font-weight="600" fill="#172633">I²C host clock</text>
+  <text x="25" y="774" font-family="Arial, sans-serif" font-size="36" font-weight="600" fill="#172633">Locator only · unrouted / unqualified</text>
+</svg>

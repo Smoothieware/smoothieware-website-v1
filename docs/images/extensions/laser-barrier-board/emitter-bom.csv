@@ -1,0 +1,25 @@
+Reference,Value,Footprint,DNP
+C1,10 uF X5R 10 V,Capacitor_SMD:C_0805_2012Metric,False
+C2,100 nF X7R 50 V,Capacitor_SMD:C_0603_1608Metric,False
+C3,10 nF X7R 16 V,Capacitor_SMD:C_0603_1608Metric,False
+C4,1.5 nF C0G 50 V,Capacitor_SMD:C_0603_1608Metric,False
+D1,TPD4E1U06DCKR,Package_TO_SOT_SMD:SOT-363_SC-70-6,False
+D2,TSAL6100,LED_THT:LED_D5.0mm_Horizontal_O1.27mm_Z3.0mm_IRGrey,False
+H1,M3,MountingHole:MountingHole_3.2mm_M3,False
+H2,M3,MountingHole:MountingHole_3.2mm_M3,False
+J1,LINK FROM RECEIVER,Fancification_Connectors:Dual_emitter_J1,False
+JP1,CUT TO DISABLE D2,Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm,False
+Q1,AO3400A,Package_TO_SOT_SMD:SOT-23,False
+R1,1k,Resistor_SMD:R_0603_1608Metric,False
+R2,12.1k,Resistor_SMD:R_0603_1608Metric,False
+R3,1k,Resistor_SMD:R_0603_1608Metric,False
+R4,10k,Resistor_SMD:R_0603_1608Metric,False
+R5,100R,Resistor_SMD:R_0603_1608Metric,False
+R6,100k,Resistor_SMD:R_0603_1608Metric,False
+R7,39R 1206 0.25 W,Resistor_SMD:R_1206_3216Metric,False
+TP1,LINK_5V,TestPoint:TestPoint_Pad_D1.0mm,False
+TP2,GND,TestPoint:TestPoint_Pad_D1.0mm,False
+TP3,CARRIER,TestPoint:TestPoint_Pad_D1.0mm,False
+TP4,GATE,TestPoint:TestPoint_Pad_D1.0mm,False
+TP5,GND,TestPoint:TestPoint_Pad_D1.0mm,False
+U1,TLC555IDR (carrier),Package_SO:SOIC-8_3.9x4.9mm_P1.27mm,False

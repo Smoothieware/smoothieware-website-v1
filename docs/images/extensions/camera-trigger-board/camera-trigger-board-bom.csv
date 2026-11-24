@@ -1,0 +1,30 @@
+Reference,Value,Footprint,DNP
+C1,100n 50V X7R HOST BYPASS,Capacitor_SMD:C_0603_1608Metric,False
+D1,PESD15VL1BA FOCUS,Smoothie_Camera_Trigger:D_SOD-323_Camera_Silk,False
+D2,PESD15VL1BA SHUTTER,Smoothie_Camera_Trigger:D_SOD-323_Camera_Silk,False
+H1,MountingHole_3.2mm_M3,MountingHole:MountingHole_3.2mm_M3,False
+H2,MountingHole_3.2mm_M3,MountingHole:MountingHole_3.2mm_M3,False
+J1,GADGETEER X IN,Smoothie_Camera_Trigger:Samtec_SHF105_TH_LC,False
+J3,E3-TYPE 2.5mm TRS,Smoothie_Camera_Trigger:Jack_2.5mm_SameSky_SJ1-2503A_Horizontal,False
+J4,CAM BREAKOUT FOCUS COM SHUT,Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical,True
+JP1,LED_EN,Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm,False
+JP2,CUT TO DISABLE LED2,Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm,False
+JP3,CUT TO DISABLE LED1,Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm,False
+LED1,AMBER FOCUS CMD,LED_SMD:LED_0603_1608Metric,False
+LED2,AMBER SHUTTER CMD,LED_SMD:LED_0603_1608Metric,False
+Q1,DMN2056U FOCUS,Package_TO_SOT_SMD:SOT-23,False
+Q2,DMN2056U SHUTTER,Package_TO_SOT_SMD:SOT-23,False
+R1,300R 1% FOCUS PHOTOMOS,Resistor_SMD:R_0603_1608Metric,False
+R2,300R 1% SHUTTER PHOTOMOS,Resistor_SMD:R_0603_1608Metric,False
+R3,1k 1% FOCUS LED,Resistor_SMD:R_0603_1608Metric,False
+R4,1k 1% SHUTTER LED,Resistor_SMD:R_0603_1608Metric,False
+R5,10k 10% FOCUS LOCAL GATE PULL-DOWN,Resistor_SMD:R_0603_1608Metric,False
+R6,10k 10% SHUTTER LOCAL GATE PULL-DOWN,Resistor_SMD:R_0603_1608Metric,False
+R7,1k 10% FOCUS GATE SERIES,Resistor_SMD:R_0603_1608Metric,False
+R8,1k 10% SHUTTER GATE SERIES,Resistor_SMD:R_0603_1608Metric,False
+TP1,+3V3,TestPoint:TestPoint_Pad_D1.5mm,False
+TP2,GND,TestPoint:TestPoint_Pad_D1.5mm,False
+TP3,FOCUS_GATE,TestPoint:TestPoint_Pad_D1.5mm,False
+TP4,SHUTTER_GATE,TestPoint:TestPoint_Pad_D1.5mm,False
+U1,AQY212GS FOCUS,Package_SO:SO-4_4.4x4.3mm_P2.54mm,False
+U2,AQY212GS SHUTTER,Package_SO:SO-4_4.4x4.3mm_P2.54mm,False

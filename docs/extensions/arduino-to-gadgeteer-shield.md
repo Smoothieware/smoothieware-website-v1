@@ -6,110 +6,320 @@ permalink: /extensions/arduino-to-gadgeteer-shield
 
 # Arduino-to-Gadgeteer shield
 
-{% include extension-board-visuals.html slug="arduino-to-gadgeteer-shield" %}
+This shield makes an Arduino Due act as a host for Gadgeteer modules. It is the opposite direction from the Uno-shield adapter: its six Gadgeteer sockets are outputs from the Due. It is not an extension board that should be cabled directly between two powered hosts.
 
-Arduino Due A000062 host shield for experimenting with Smoothie Gadgeteer extension boards. The study provides six keyed sockets and a Qwiic connection on the type-I I²C bus; it is distinct from the Uno-oriented Arduino adapter.
+This guide selects **v23** from the existing abstract-export record. It is an engineering candidate, not a fabricated, released or hardware-qualified product. Historical and older revision prose does not establish the illustrated revision's behavior.
 
-## Current annotation candidate — revision 22
+The selected v23 source package retains schematic title-block revision **WIP**. The package number does not rename the schematic or establish a released hardware revision.
 
-The 2026-10-13 retained revision 22 adds current **V22 UNQUALIFIED** labels and clearer both-face Qwiic pin guidance: **1 GND, 2 protected 3.3 V, 3 SDA, 4 SCL**. J7 shares the type-I Wire bus; it is not an independent bus. Its full documentation URL is printed on the back. Existing uppercase board-title glyphs and detailed socket wiring tables remain unchanged.
+## How it works
 
-The selected baseline is the concurrently repaired revision 21 PCB (`038f93b6e72c13e55bb6046748c7a35ceb17ef7ec59656bbf0b12e18ff9fb4c1`); current revision 22 is `267ac2ca400d3ee0294030ee142fdb7538ed4466fd223b4641c15ab52035a103`. Fresh enabled-rule PCB checks, schematic parity and electrical-rule checks report zero findings for both. Five inherited PCB assembly-related rule categories remain ignored, without added exclusions. These automated results do not release the hardware.
+J1–J6 export Y/A/P/S/U/I interfaces; J7 branches the I socket's I2C bus as 3.3 V Qwiic. Host-powered TMUX1511 switches isolate signal paths when disabled. The selected v23 rail stages are labelled TPS259631 auto-retry 125 mA; root prose describing latching limiter recovery is older and must not be used as a v23 recovery instruction. JP1 arms the board through the host power-enable net.
 
-Both normal 2.54 mm and STEMMA/Qwiic connector populations have six current populated/bare views, all 12 reviewed. All 358 declared model references resolve and 19 manufacturing/document exports bind to this exact source. Rendering does not prove physical insertion, shield stacking, pin orientation or assembly quality. See the [source-bound revision review](https://github.com/arthurwolf/extension-boards/blob/main/src/arduino-to-gadgeteer-shield/attempt/versions/v22/arduino-shield-usability-review.json) and [current/remaining board record](https://github.com/arthurwolf/extension-boards/blob/main/src/arduino-to-gadgeteer-shield/fancification-round2.md).
+## Power, signals and limits
 
-**Arduino Due A000062 only; 3.3 V I/O; shared 80 mA per rail across sockets.** No circuit, protection, connector geometry, copper, board outline or hole changed in this annotation revision. The host headers and mounting holes preserve the fixed Arduino Due mechanical pattern rather than a forced 10 mm lattice. Actual protection thresholds, startup, backfeed behavior, thermal/current limits, host/firmware compatibility, cable fit and hardware operation remain unqualified; fabrication release is false. Parent acceptance of the saved package remains separate.
+The Due is the source of the exported rails. Never connect the shield's Gadgeteer power pins to a separately powered Smoothieboard socket as if both were peripherals. The root contract's 80 mA-per-rail exported-load target, 3.3 V I/O domain and cable/timing targets need revision-local confirmation before use. The shield provides no general 5 V signal translation. J7 is GND, 3.3 V, SDA, SCL and shares the J6 bus.
 
-## Development status
+## Board reference
 
-**Baseline documentation snapshot: 2026-10-11, before the requested connector/protection/usability revision program.** New revision features require their own reviewed source and qualification evidence.
+<details markdown="1">
+<summary>Reading the connector callouts</summary>
 
-This page documents an **unqualified engineering study**, not a released or tested product. Saved CAD, renders and automated checks do not establish a safe assembly, compatible cable, firmware support or a usable current rating.
+The dark end of each pill gives the source contact number. The adjoining label gives its function. Colours help locate related functions; the label and connection instructions determine how to use the contact.
 
-The retained design record states:
+- Red: 3.3 V supply.
+- Orange: 5 V supply.
+- Near-black: Circuit ground.
+- Grey: Not routed in this board revision.
+- Dark grey: Other source-labelled contact — read its exact function.
 
-The [current component review](https://github.com/arthurwolf/extension-boards/blob/main/src/arduino-to-gadgeteer-shield/component-review.md) reconciles v12, beyond the
-historical v01 proposal below. Ten exact V2-stock-family TPD4E1U06DCKR protection
-parts are already implemented. Retain dedicated switch/limiter/ideal-diode/supervisor
-roles; qualified V1 passive families are conditional candidates. No new revision
-in this pass; v13/v14 remain unused. All124 purchased references/142 electrical
-references and194 own-package hashes reconcile;2415 retained package-member
-hashes match. Existing independent geometry/opens/parity0 coexist with two
-unsuppressed ERC warnings,14 annular assembly contacts and132 unsigned checklist
-rows. Physical/stock/fabrication qualification remains open.
+A voltage in a signal name does not make that contact a power output. Circuit ground, cable shield and protective earth are different connections. An underside projection shows rear components through the front view; it is not a mirrored rear view.
 
-Board-specific qualification limits: v12 conditional study:geometry/opens/parity0;two ERC warnings/14 annular contacts/all132 unsigned;no fabrication/physical approval.
+</details>
 
-## Interfaces and wiring
+Start with the overview, then use all focused sheets for exact contacts, controls and links. Source footprint defaults do not prove assembled continuity.
 
-Every J1-J6 pin 1 is port_3v3, pin 2 is port_5v and pin 10 is gnd. Directions below describe the selected function while enabled, not a hardware-enforced direction. Ordinary GPIO can be input or output. A0-A2 are initially qualified as analog inputs; any digital reuse must account for their 1 kohm/1 nF filters.
+{% include _includes/extension-instruction-diagram.html id="arduino-to-gadgeteer-shield-v23-reader-compact-overview" src="/images/extensions/arduino-to-gadgeteer-shield/guides/reader-compact-overview.svg" title="Due to Gadgeteer shield — overview" alt="Due to Gadgeteer shield — overview for arduino-to-gadgeteer-shield v23" caption="Reference for the documented revision. Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
 
-| Socket pins | Host functions in the same order | Direction / ownership |
+{% include _includes/extension-instruction-diagram.html id="arduino-to-gadgeteer-shield-v23-reader-compact-j1-1-5" src="/images/extensions/arduino-to-gadgeteer-shield/guides/reader-compact-j1-1-5-central-pills.svg" title="J1 · Gadgeteer Y — j1 1 5" alt="J1 · Gadgeteer Y — j1 1 5 for arduino-to-gadgeteer-shield v23" caption="Reference for the documented revision. Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="arduino-to-gadgeteer-shield-v23-reader-compact-j1-6-10" src="/images/extensions/arduino-to-gadgeteer-shield/guides/reader-compact-j1-6-10-central-pills.svg" title="J1 · Gadgeteer Y — j1 6 10" alt="J1 · Gadgeteer Y — j1 6 10 for arduino-to-gadgeteer-shield v23" caption="Reference for the documented revision. Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="arduino-to-gadgeteer-shield-v23-reader-compact-j2-1-5" src="/images/extensions/arduino-to-gadgeteer-shield/guides/reader-compact-j2-1-5-central-pills.svg" title="J2 · Gadgeteer A — j2 1 5" alt="J2 · Gadgeteer A — j2 1 5 for arduino-to-gadgeteer-shield v23" caption="Reference for the documented revision. Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="arduino-to-gadgeteer-shield-v23-reader-compact-j2-6-10" src="/images/extensions/arduino-to-gadgeteer-shield/guides/reader-compact-j2-6-10-central-pills.svg" title="J2 · Gadgeteer A — j2 6 10" alt="J2 · Gadgeteer A — j2 6 10 for arduino-to-gadgeteer-shield v23" caption="Reference for the documented revision. Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="arduino-to-gadgeteer-shield-v23-reader-compact-j3-1-5" src="/images/extensions/arduino-to-gadgeteer-shield/guides/reader-compact-j3-1-5-central-pills.svg" title="J3 · Gadgeteer P — j3 1 5" alt="J3 · Gadgeteer P — j3 1 5 for arduino-to-gadgeteer-shield v23" caption="Reference for the documented revision. Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="arduino-to-gadgeteer-shield-v23-reader-compact-j3-6-10" src="/images/extensions/arduino-to-gadgeteer-shield/guides/reader-compact-j3-6-10-central-pills.svg" title="J3 · Gadgeteer P — j3 6 10" alt="J3 · Gadgeteer P — j3 6 10 for arduino-to-gadgeteer-shield v23" caption="Reference for the documented revision. Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="arduino-to-gadgeteer-shield-v23-reader-compact-j4-1-5" src="/images/extensions/arduino-to-gadgeteer-shield/guides/reader-compact-j4-1-5-central-pills.svg" title="J4 · Gadgeteer S — j4 1 5" alt="J4 · Gadgeteer S — j4 1 5 for arduino-to-gadgeteer-shield v23" caption="Reference for the documented revision. Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="arduino-to-gadgeteer-shield-v23-reader-compact-j4-6-10" src="/images/extensions/arduino-to-gadgeteer-shield/guides/reader-compact-j4-6-10-central-pills.svg" title="J4 · Gadgeteer S — j4 6 10" alt="J4 · Gadgeteer S — j4 6 10 for arduino-to-gadgeteer-shield v23" caption="Reference for the documented revision. Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="arduino-to-gadgeteer-shield-v23-reader-compact-j5-1-5" src="/images/extensions/arduino-to-gadgeteer-shield/guides/reader-compact-j5-1-5-central-pills.svg" title="J5 · Gadgeteer U — j5 1 5" alt="J5 · Gadgeteer U — j5 1 5 for arduino-to-gadgeteer-shield v23" caption="Reference for the documented revision. Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="arduino-to-gadgeteer-shield-v23-reader-compact-j5-6-10" src="/images/extensions/arduino-to-gadgeteer-shield/guides/reader-compact-j5-6-10-central-pills.svg" title="J5 · Gadgeteer U — j5 6 10" alt="J5 · Gadgeteer U — j5 6 10 for arduino-to-gadgeteer-shield v23" caption="Reference for the documented revision. Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="arduino-to-gadgeteer-shield-v23-reader-compact-j6-1-5" src="/images/extensions/arduino-to-gadgeteer-shield/guides/reader-compact-j6-1-5-central-pills.svg" title="J6 · Gadgeteer I — j6 1 5" alt="J6 · Gadgeteer I — j6 1 5 for arduino-to-gadgeteer-shield v23" caption="Reference for the documented revision. Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="arduino-to-gadgeteer-shield-v23-reader-compact-j6-6-10" src="/images/extensions/arduino-to-gadgeteer-shield/guides/reader-compact-j6-6-10-central-pills.svg" title="J6 · Gadgeteer I — j6 6 10" alt="J6 · Gadgeteer I — j6 6 10 for arduino-to-gadgeteer-shield v23" caption="Reference for the documented revision. Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="arduino-to-gadgeteer-shield-v23-reader-compact-j7-1-4" src="/images/extensions/arduino-to-gadgeteer-shield/guides/reader-compact-j7-1-4-central-pills.svg" title="J7 · Qwiic I2C — j7 1 4" alt="J7 · Qwiic I2C — j7 1 4 for arduino-to-gadgeteer-shield v23" caption="Reference for the documented revision. Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="arduino-to-gadgeteer-shield-v23-reader-compact-jh1-1-5" src="/images/extensions/arduino-to-gadgeteer-shield/guides/reader-compact-jh1-1-5-central-pills.svg" title="JH1 · Due power — jh1 1 5" alt="JH1 · Due power — jh1 1 5 for arduino-to-gadgeteer-shield v23" caption="Reference for the documented revision. Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="arduino-to-gadgeteer-shield-v23-reader-compact-jh1-6-8" src="/images/extensions/arduino-to-gadgeteer-shield/guides/reader-compact-jh1-6-8-central-pills.svg" title="JH1 · Due power — jh1 6 8" alt="JH1 · Due power — jh1 6 8 for arduino-to-gadgeteer-shield v23" caption="Reference for the documented revision. Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="arduino-to-gadgeteer-shield-v23-reader-compact-jh2-1-5" src="/images/extensions/arduino-to-gadgeteer-shield/guides/reader-compact-jh2-1-5-central-pills.svg" title="JH2 · Due analog low — jh2 1 5" alt="JH2 · Due analog low — jh2 1 5 for arduino-to-gadgeteer-shield v23" caption="Reference for the documented revision. Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="arduino-to-gadgeteer-shield-v23-reader-compact-jh2-6-8" src="/images/extensions/arduino-to-gadgeteer-shield/guides/reader-compact-jh2-6-8-central-pills.svg" title="JH2 · Due analog low — jh2 6 8" alt="JH2 · Due analog low — jh2 6 8 for arduino-to-gadgeteer-shield v23" caption="Reference for the documented revision. Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="arduino-to-gadgeteer-shield-v23-reader-compact-jh3-1-5" src="/images/extensions/arduino-to-gadgeteer-shield/guides/reader-compact-jh3-1-5-central-pills.svg" title="JH3 · Due analog high — jh3 1 5" alt="JH3 · Due analog high — jh3 1 5 for arduino-to-gadgeteer-shield v23" caption="Reference for the documented revision. Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="arduino-to-gadgeteer-shield-v23-reader-compact-jh3-6-8" src="/images/extensions/arduino-to-gadgeteer-shield/guides/reader-compact-jh3-6-8-central-pills.svg" title="JH3 · Due analog high — jh3 6 8" alt="JH3 · Due analog high — jh3 6 8 for arduino-to-gadgeteer-shield v23" caption="Reference for the documented revision. Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="arduino-to-gadgeteer-shield-v23-reader-compact-jh4-1-5" src="/images/extensions/arduino-to-gadgeteer-shield/guides/reader-compact-jh4-1-5-central-pills.svg" title="JH4 · Due digital low — jh4 1 5" alt="JH4 · Due digital low — jh4 1 5 for arduino-to-gadgeteer-shield v23" caption="Reference for the documented revision. Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="arduino-to-gadgeteer-shield-v23-reader-compact-jh4-6-8" src="/images/extensions/arduino-to-gadgeteer-shield/guides/reader-compact-jh4-6-8-central-pills.svg" title="JH4 · Due digital low — jh4 6 8" alt="JH4 · Due digital low — jh4 6 8 for arduino-to-gadgeteer-shield v23" caption="Reference for the documented revision. Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="arduino-to-gadgeteer-shield-v23-reader-compact-jh5-1-5" src="/images/extensions/arduino-to-gadgeteer-shield/guides/reader-compact-jh5-1-5-central-pills.svg" title="JH5 · Due PWM high — jh5 1 5" alt="JH5 · Due PWM high — jh5 1 5 for arduino-to-gadgeteer-shield v23" caption="Reference for the documented revision. Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="arduino-to-gadgeteer-shield-v23-reader-compact-jh5-6-10" src="/images/extensions/arduino-to-gadgeteer-shield/guides/reader-compact-jh5-6-10-central-pills.svg" title="JH5 · Due PWM high — jh5 6 10" alt="JH5 · Due PWM high — jh5 6 10 for arduino-to-gadgeteer-shield v23" caption="Reference for the documented revision. Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="arduino-to-gadgeteer-shield-v23-reader-compact-jh6-1-5" src="/images/extensions/arduino-to-gadgeteer-shield/guides/reader-compact-jh6-1-5-central-pills.svg" title="JH6 · Due communication — jh6 1 5" alt="JH6 · Due communication — jh6 1 5 for arduino-to-gadgeteer-shield v23" caption="Reference for the documented revision. Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="arduino-to-gadgeteer-shield-v23-reader-compact-jh6-6-8" src="/images/extensions/arduino-to-gadgeteer-shield/guides/reader-compact-jh6-6-8-central-pills.svg" title="JH6 · Due communication — jh6 6 8" alt="JH6 · Due communication — jh6 6 8 for arduino-to-gadgeteer-shield v23" caption="Reference for the documented revision. Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="arduino-to-gadgeteer-shield-v23-reader-compact-jh7-1-5" src="/images/extensions/arduino-to-gadgeteer-shield/guides/reader-compact-jh7-1-5-central-pills.svg" title="JH7 · Due extended GPIO — jh7 1 5" alt="JH7 · Due extended GPIO — jh7 1 5 for arduino-to-gadgeteer-shield v23" caption="Reference for the documented revision. Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="arduino-to-gadgeteer-shield-v23-reader-compact-jh7-6-10" src="/images/extensions/arduino-to-gadgeteer-shield/guides/reader-compact-jh7-6-10-central-pills.svg" title="JH7 · Due extended GPIO — jh7 6 10" alt="JH7 · Due extended GPIO — jh7 6 10 for arduino-to-gadgeteer-shield v23" caption="Reference for the documented revision. Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="arduino-to-gadgeteer-shield-v23-reader-compact-jh7-11-15" src="/images/extensions/arduino-to-gadgeteer-shield/guides/reader-compact-jh7-11-15-central-pills.svg" title="JH7 · Due extended GPIO — jh7 11 15" alt="JH7 · Due extended GPIO — jh7 11 15 for arduino-to-gadgeteer-shield v23" caption="Reference for the documented revision. Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="arduino-to-gadgeteer-shield-v23-reader-compact-jh7-16-20" src="/images/extensions/arduino-to-gadgeteer-shield/guides/reader-compact-jh7-16-20-central-pills.svg" title="JH7 · Due extended GPIO — jh7 16 20" alt="JH7 · Due extended GPIO — jh7 16 20 for arduino-to-gadgeteer-shield v23" caption="Reference for the documented revision. Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="arduino-to-gadgeteer-shield-v23-reader-compact-jh7-21-25" src="/images/extensions/arduino-to-gadgeteer-shield/guides/reader-compact-jh7-21-25-central-pills.svg" title="JH7 · Due extended GPIO — jh7 21 25" alt="JH7 · Due extended GPIO — jh7 21 25 for arduino-to-gadgeteer-shield v23" caption="Reference for the documented revision. Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="arduino-to-gadgeteer-shield-v23-reader-compact-jh7-26-30" src="/images/extensions/arduino-to-gadgeteer-shield/guides/reader-compact-jh7-26-30-central-pills.svg" title="JH7 · Due extended GPIO — jh7 26 30" alt="JH7 · Due extended GPIO — jh7 26 30 for arduino-to-gadgeteer-shield v23" caption="Reference for the documented revision. Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="arduino-to-gadgeteer-shield-v23-reader-compact-jh7-31-35" src="/images/extensions/arduino-to-gadgeteer-shield/guides/reader-compact-jh7-31-35-central-pills.svg" title="JH7 · Due extended GPIO — jh7 31 35" alt="JH7 · Due extended GPIO — jh7 31 35 for arduino-to-gadgeteer-shield v23" caption="Reference for the documented revision. Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="arduino-to-gadgeteer-shield-v23-reader-compact-jh7-36-36" src="/images/extensions/arduino-to-gadgeteer-shield/guides/reader-compact-jh7-36-36-central-pills.svg" title="JH7 · Due extended GPIO — jh7 36 36" alt="JH7 · Due extended GPIO — jh7 36 36 for arduino-to-gadgeteer-shield v23" caption="Reference for the documented revision. Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="arduino-to-gadgeteer-shield-v23-reader-compact-jh8-1-5" src="/images/extensions/arduino-to-gadgeteer-shield/guides/reader-compact-jh8-1-5-central-pills.svg" title="JH8 · Due SPI — jh8 1 5" alt="JH8 · Due SPI — jh8 1 5 for arduino-to-gadgeteer-shield v23" caption="Reference for the documented revision. Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="arduino-to-gadgeteer-shield-v23-reader-compact-jh8-6-6" src="/images/extensions/arduino-to-gadgeteer-shield/guides/reader-compact-jh8-6-6-central-pills.svg" title="JH8 · Due SPI — jh8 6 6" alt="JH8 · Due SPI — jh8 6 6 for arduino-to-gadgeteer-shield v23" caption="Reference for the documented revision. Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="arduino-to-gadgeteer-shield-v23-reader-compact-switches" src="/images/extensions/arduino-to-gadgeteer-shield/guides/reader-compact-switches.svg" title="Signal-path architecture — switches" alt="Signal-path architecture — switches for arduino-to-gadgeteer-shield v23" caption="Reference for the documented revision. Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="arduino-to-gadgeteer-shield-v23-reader-compact-analog" src="/images/extensions/arduino-to-gadgeteer-shield/guides/reader-compact-analog.svg" title="Analog input series/filter — analog" alt="Analog input series/filter — analog for arduino-to-gadgeteer-shield v23" caption="Reference for the documented revision. Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="arduino-to-gadgeteer-shield-v23-reader-compact-series" src="/images/extensions/arduino-to-gadgeteer-shield/guides/reader-compact-series.svg" title="Digital port series paths — series" alt="Digital port series paths — series for arduino-to-gadgeteer-shield v23" caption="Reference for the documented revision. Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="arduino-to-gadgeteer-shield-v23-reader-compact-pullups" src="/images/extensions/arduino-to-gadgeteer-shield/guides/reader-compact-pullups.svg" title="Port pull-ups — pullups" alt="Port pull-ups — pullups for arduino-to-gadgeteer-shield v23" caption="Reference for the documented revision. Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="arduino-to-gadgeteer-shield-v23-reader-compact-enable" src="/images/extensions/arduino-to-gadgeteer-shield/guides/reader-compact-enable-underside-caption.svg" title="User power-enable header — enable" alt="User power-enable header — enable for arduino-to-gadgeteer-shield v23" caption="Reference for the documented revision. Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="arduino-to-gadgeteer-shield-v23-reader-compact-supervision" src="/images/extensions/arduino-to-gadgeteer-shield/guides/reader-compact-supervision.svg" title="Signal enable supervision — supervision" alt="Signal enable supervision — supervision for arduino-to-gadgeteer-shield v23" caption="Reference for the documented revision. Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="arduino-to-gadgeteer-shield-v23-reader-compact-rail0" src="/images/extensions/arduino-to-gadgeteer-shield/guides/reader-compact-rail0-underside-caption.svg" title="Port3.3V power path — rail0" alt="Port3.3V power path — rail0 for arduino-to-gadgeteer-shield v23" caption="Reference for the documented revision. Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="arduino-to-gadgeteer-shield-v23-reader-compact-rail1" src="/images/extensions/arduino-to-gadgeteer-shield/guides/reader-compact-rail1-underside-caption.svg" title="Port5V power path — rail1" alt="Port5V power path — rail1 for arduino-to-gadgeteer-shield v23" caption="Reference for the documented revision. Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="arduino-to-gadgeteer-shield-v23-reader-compact-sense" src="/images/extensions/arduino-to-gadgeteer-shield/guides/reader-compact-sense.svg" title="Port rail sense dividers — sense" alt="Port rail sense dividers — sense for arduino-to-gadgeteer-shield v23" caption="Reference for the documented revision. Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="arduino-to-gadgeteer-shield-v23-reader-compact-fault" src="/images/extensions/arduino-to-gadgeteer-shield/guides/reader-compact-fault-underside-caption.svg" title="Fault / isolated indication — fault" alt="Fault / isolated indication — fault for arduino-to-gadgeteer-shield v23" caption="Reference for the documented revision. Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="arduino-to-gadgeteer-shield-v23-reader-compact-esd" src="/images/extensions/arduino-to-gadgeteer-shield/guides/reader-compact-esd.svg" title="Signal ESD networks — esd" alt="Signal ESD networks — esd for arduino-to-gadgeteer-shield v23" caption="Reference for the documented revision. Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="arduino-to-gadgeteer-shield-v23-reader-compact-tests0" src="/images/extensions/arduino-to-gadgeteer-shield/guides/reader-compact-tests0.svg" title="Supply / signal test pads — tests0" alt="Supply / signal test pads — tests0 for arduino-to-gadgeteer-shield v23" caption="Reference for the documented revision. Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="arduino-to-gadgeteer-shield-v23-reader-compact-tests4" src="/images/extensions/arduino-to-gadgeteer-shield/guides/reader-compact-tests4.svg" title="Supply / signal test pads — tests4" alt="Supply / signal test pads — tests4 for arduino-to-gadgeteer-shield v23" caption="Reference for the documented revision. Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="arduino-to-gadgeteer-shield-v23-reader-compact-tests8" src="/images/extensions/arduino-to-gadgeteer-shield/guides/reader-compact-tests8.svg" title="Supply / signal test pads — tests8" alt="Supply / signal test pads — tests8 for arduino-to-gadgeteer-shield v23" caption="Reference for the documented revision. Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="arduino-to-gadgeteer-shield-v23-reader-compact-tests12" src="/images/extensions/arduino-to-gadgeteer-shield/guides/reader-compact-tests12.svg" title="Supply / signal test pads — tests12" alt="Supply / signal test pads — tests12 for arduino-to-gadgeteer-shield v23" caption="Reference for the documented revision. Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="arduino-to-gadgeteer-shield-v23-reader-compact-tests16" src="/images/extensions/arduino-to-gadgeteer-shield/guides/reader-compact-tests16.svg" title="Supply / signal test pads — tests16" alt="Supply / signal test pads — tests16 for arduino-to-gadgeteer-shield v23" caption="Reference for the documented revision. Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="arduino-to-gadgeteer-shield-v23-reader-compact-mounts" src="/images/extensions/arduino-to-gadgeteer-shield/guides/reader-compact-mounts.svg" title="Mechanical supports — mounts" alt="Mechanical supports — mounts for arduino-to-gadgeteer-shield v23" caption="Reference for the documented revision. Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
+
+The annotated board-reference sheets above describe the selected source revision; the contact table below is a companion source aid. Actual desktop and narrow-view page/viewer acceptance remains open. Follow the wiring section for the connection procedure and its remaining installation limitations.
+
+### arduino-to-gadgeteer-shield — saved connector contacts
+
+Contact numbering below is the selected PCB's pad numbering, viewed using the final board-reference drawing. Same-numbered duplicate lands are collapsed in this electrical table. Mechanical unnumbered pads are omitted here. Physical connector-population and mating qualification remains open. `NC` means unconnected in this saved source, not a spare supported function. Named nets alone do not establish direction; use the signal-path explanation above.
+
+<details markdown="1">
+<summary>Selected-source contact inventory</summary>
+
+<div class="extension-contact-table" role="region" aria-label="Selected-source contact inventory; scroll horizontally to read all columns" tabindex="0" markdown="1">
+
+| Connector | Contact(s) | Saved-source function/net |
 | --- | --- | --- |
-| J1:3,4,5,6,7,8,9 | D22,D23,D24,D25,D26,D27,D28 | Configurable GPIO; module/host driver ownership must be explicit |
-| J2:3,4,5,6 | A0,A1,A2,D29 | Three inputs to ADC; one configurable GPIO |
-| J3:3,6,7,8,9 | D30,D31,D6,D7,D8 | Two configurable GPIO; three PWM outputs |
-| J4:3,4,5,6,7,8,9 | D32,D33,D34,D10,MOSI,MISO,SCK | Three GPIO; CS/MOSI/SCK host outputs; MISO host input |
-| J5:3,4,5,6 | D35,D18,D19,D36 | GPIO; host TX1 output; host RX1 input; GPIO |
-| J6:3,6,8,9 | D37,D38,D20,D21 | Two GPIO; SDA/SCL open-drain bidirectional |
+| J7 — SM04B-SRSS-TB(LF)(SN) | 1 | `gnd` |
+| J7 — SM04B-SRSS-TB(LF)(SN) | 2 | `port_3v3` |
+| J7 — SM04B-SRSS-TB(LF)(SN) | 3 | `i_8` |
+| J7 — SM04B-SRSS-TB(LF)(SN) | 4 | `i_9` |
+| J7 — SM04B-SRSS-TB(LF)(SN) | MP | `gnd` |
+| J3 — SHF-105-01-L-D-TH | 1 | `port_3v3` |
+| J3 — SHF-105-01-L-D-TH | 2 | `port_5v` |
+| J3 — SHF-105-01-L-D-TH | 3 | `p_3` |
+| J3 — SHF-105-01-L-D-TH | 6 | `p_6` |
+| J3 — SHF-105-01-L-D-TH | 7 | `p_7` |
+| J3 — SHF-105-01-L-D-TH | 8 | `p_8` |
+| J3 — SHF-105-01-L-D-TH | 9 | `p_9` |
+| J3 — SHF-105-01-L-D-TH | 10 | `gnd` |
+| J3 | 4, 5 | NC |
+| J4 — SHF-105-01-L-D-TH | 1 | `port_3v3` |
+| J4 — SHF-105-01-L-D-TH | 2 | `port_5v` |
+| J4 — SHF-105-01-L-D-TH | 3 | `s_3` |
+| J4 — SHF-105-01-L-D-TH | 4 | `s_4` |
+| J4 — SHF-105-01-L-D-TH | 5 | `s_5` |
+| J4 — SHF-105-01-L-D-TH | 6 | `s_6` |
+| J4 — SHF-105-01-L-D-TH | 7 | `s_7` |
+| J4 — SHF-105-01-L-D-TH | 8 | `s_8` |
+| J4 — SHF-105-01-L-D-TH | 9 | `s_9` |
+| J4 — SHF-105-01-L-D-TH | 10 | `gnd` |
+| J2 — SHF-105-01-L-D-TH | 1 | `port_3v3` |
+| J2 — SHF-105-01-L-D-TH | 2 | `port_5v` |
+| J2 — SHF-105-01-L-D-TH | 3 | `a_3` |
+| J2 — SHF-105-01-L-D-TH | 4 | `a_4` |
+| J2 — SHF-105-01-L-D-TH | 5 | `a_5` |
+| J2 — SHF-105-01-L-D-TH | 6 | `a_6` |
+| J2 — SHF-105-01-L-D-TH | 10 | `gnd` |
+| J2 | 7, 8, 9 | NC |
+| J1 — SHF-105-01-L-D-TH | 1 | `port_3v3` |
+| J1 — SHF-105-01-L-D-TH | 2 | `port_5v` |
+| J1 — SHF-105-01-L-D-TH | 3 | `y_3` |
+| J1 — SHF-105-01-L-D-TH | 4 | `y_4` |
+| J1 — SHF-105-01-L-D-TH | 5 | `y_5` |
+| J1 — SHF-105-01-L-D-TH | 6 | `y_6` |
+| J1 — SHF-105-01-L-D-TH | 7 | `y_7` |
+| J1 — SHF-105-01-L-D-TH | 8 | `y_8` |
+| J1 — SHF-105-01-L-D-TH | 9 | `y_9` |
+| J1 — SHF-105-01-L-D-TH | 10 | `gnd` |
+| J6 — SHF-105-01-L-D-TH | 1 | `port_3v3` |
+| J6 — SHF-105-01-L-D-TH | 2 | `port_5v` |
+| J6 — SHF-105-01-L-D-TH | 3 | `i_3` |
+| J6 — SHF-105-01-L-D-TH | 6 | `i_6` |
+| J6 — SHF-105-01-L-D-TH | 8 | `i_8` |
+| J6 — SHF-105-01-L-D-TH | 9 | `i_9` |
+| J6 — SHF-105-01-L-D-TH | 10 | `gnd` |
+| J6 | 4, 5, 7 | NC |
+| J5 — SHF-105-01-L-D-TH | 1 | `port_3v3` |
+| J5 — SHF-105-01-L-D-TH | 2 | `port_5v` |
+| J5 — SHF-105-01-L-D-TH | 3 | `u_3` |
+| J5 — SHF-105-01-L-D-TH | 4 | `u_4` |
+| J5 — SHF-105-01-L-D-TH | 5 | `u_5` |
+| J5 — SHF-105-01-L-D-TH | 6 | `u_6` |
+| J5 — SHF-105-01-L-D-TH | 10 | `gnd` |
+| J5 | 7, 8, 9 | NC |
+| JH1 — TSW-108-07-L-S | 3 | `host_reset_n` |
+| JH1 — TSW-108-07-L-S | 4 | `host_3v3` |
+| JH1 — TSW-108-07-L-S | 5 | `host_5v` |
+| JH1 — TSW-108-07-L-S | 6 | `gnd` |
+| JH1 — TSW-108-07-L-S | 7 | `gnd` |
+| JH1 | 1, 2, 8 | NC |
+| JH7 — TSW-118-07-G-D | 3 | `host_d22` |
+| JH7 — TSW-118-07-G-D | 4 | `host_d23` |
+| JH7 — TSW-118-07-G-D | 5 | `host_d24` |
+| JH7 — TSW-118-07-G-D | 6 | `host_d25` |
+| JH7 — TSW-118-07-G-D | 7 | `host_d26` |
+| JH7 — TSW-118-07-G-D | 8 | `host_d27` |
+| JH7 — TSW-118-07-G-D | 9 | `host_d28` |
+| JH7 — TSW-118-07-G-D | 10 | `host_d29` |
+| JH7 — TSW-118-07-G-D | 11 | `host_d30` |
+| JH7 — TSW-118-07-G-D | 12 | `host_d31` |
+| JH7 — TSW-118-07-G-D | 13 | `host_d32` |
+| JH7 — TSW-118-07-G-D | 14 | `host_d33` |
+| JH7 — TSW-118-07-G-D | 15 | `host_d34` |
+| JH7 — TSW-118-07-G-D | 16 | `host_d35` |
+| JH7 — TSW-118-07-G-D | 17 | `host_d36` |
+| JH7 — TSW-118-07-G-D | 18 | `host_d37` |
+| JH7 — TSW-118-07-G-D | 19 | `host_d38` |
+| JH7 — TSW-118-07-G-D | 35 | `gnd` |
+| JH7 — TSW-118-07-G-D | 36 | `gnd` |
+| JH7 | 1, 2, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34 | NC |
+| JH3 | 1, 2, 3, 4, 5, 6, 7, 8 | NC |
+| JH2 — TSW-108-07-L-S | 1 | `host_a0` |
+| JH2 — TSW-108-07-L-S | 2 | `host_a1` |
+| JH2 — TSW-108-07-L-S | 3 | `host_a2` |
+| JH2 | 4, 5, 6, 7, 8 | NC |
+| JH5 — TSW-110-07-L-S | 1 | `host_d8` |
+| JH5 — TSW-110-07-L-S | 3 | `host_d10` |
+| JH5 — TSW-110-07-L-S | 7 | `gnd` |
+| JH5 | 2, 4, 5, 6, 8, 9, 10 | NC |
+| JH6 — TSW-108-07-L-S | 5 | `host_d18` |
+| JH6 — TSW-108-07-L-S | 6 | `host_d19` |
+| JH6 — TSW-108-07-L-S | 7 | `host_d20` |
+| JH6 — TSW-108-07-L-S | 8 | `host_d21` |
+| JH6 | 1, 2, 3, 4 | NC |
+| JH8 — SSW-103-01-G-D | 1 | `host_miso` |
+| JH8 — SSW-103-01-G-D | 3 | `host_sck` |
+| JH8 — SSW-103-01-G-D | 4 | `host_mosi` |
+| JH8 — SSW-103-01-G-D | 6 | `gnd` |
+| JH8 | 2, 5 | NC |
+| JH4 — TSW-108-07-L-S | 7 | `host_d6` |
+| JH4 — TSW-108-07-L-S | 8 | `host_d7` |
+| JH4 | 1, 2, 3, 4, 5, 6 | NC |
 
-J7 Qwiic: pad 1=gnd, 2=port_3v3, 3=i_8 SDA, 4=i_9 SCL, both MP pads=gnd. These are the same protected module-side I2C nets exposed at J6, after R30/R31 and U8, with D10 ESD and C35 local 100 nF rail decoupling. No 5 V connection exists.
+</div>
 
-Reserved NC: J2:7,8,9; J3:4,5; J5:7,8,9; J6:4,5,7. These are eleven separate unconnected contacts. GPIO! positions use the native Due GPIO assignments shown; verify the exact core's interrupt behavior in qualification. The Version 16 greedy annotations do not authorize changing these fixed physical pin assignments.
+</details>
 
-The exact connector orientation, pin mapping and supply ownership must be taken from the selected revision’s schematic and [connection specification](https://github.com/arthurwolf/extension-boards/blob/main/src/arduino-to-gadgeteer-shield/specs.md). Do not infer wiring from the connector shape.
 
-Power off before connecting or changing jumpers. Verify pin 1, signal direction, supply voltage and ground at both ends of every cable. A mechanically fitting connector is not proof of electrical compatibility. If a host pin mapping or current allocation remains unresolved in the design record, do not connect the board until it is resolved.
+### Links, controls and indicators
 
-## Configuration and commissioning
+The selected footprint values identify the intended control or indication. A cut-to-disable LED link affects indication, not the protected circuit's electrical qualification. Link population, default state and any reused older labels still need schematic/BOM reconciliation before instructions to cut or bridge are accepted.
 
-Use the configuration and firmware contract for the exact selected revision. Do not copy another module’s socket assignments or assume that an unused pin is available. First-article work must verify source selection, reset/unplug behavior, cable orientation and the actual load or sensor interface before normal operation.
+| Item | Selected source label | Contact nets / observation |
+| --- | --- | --- |
+| JP1 | TSW-102-07-L-S | 1 = host_3v3; 2 = power_enable |
+| D89 | RED FAULT OR ISOLATED | 1 = signal_enable; 2 = FAULT_ISOLATED_LED_R |
+| JP83 | CUT TO DISABLE FAULT_ISOLATED | 1 = host_3v3; 2 = FAULT_ISOLATED_LED |
+| D134 | BAT54HGW-Q FAULT LED ANTIPARALLEL | 1 = FAULT_ISOLATED_LED_R; 2 = signal_enable |
 
-## Requested connector and usability upgrades
 
-The following are requirements for the next design iterations; this page does **not** claim they are already fitted:
 
-- On electrically suitable three/four-pin low-voltage ports, provide compact alternative 2.54 mm header/Molex-style and keyed STEMMA-family footprints. Populate one connector option per shared position and document its pin order. Use STEMMA QT only for compatible four-wire I²C; connector appearance does not make another signal protocol I²C-compatible.
-- Render each supported connector population separately. Document clearances, cable access and the exact fitted option.
-- Use uppercase titles in a consistent Montserrat-style face, labels on both sides, visible domain boundaries, a revision-specific wiring guide and this page’s URL on the silk where readable.
-- Keep free-standing mounting-hole centers on a documented 10 mm lattice; preserve fixed Arduino Due host mounting/header geometry on this shield. Add cable-tie holes where space and electrical clearances permit. Place status LEDs near accessible edges and give every indicator its own disable solder jumper. Provide labeled test pads and a ground observation point.
-- Review applicable DC power entries for reverse-polarity cutoff with a blinking warning, overvoltage cutoff/indication, controlled startup and electronic overcurrent protection. Indicator and protection circuits must work in the fault state without defeating isolation or safe output defaults. Thermal protection belongs only where the power/thermal analysis justifies it.
-- Electronic protection does not automatically replace a required mains/branch safety fuse. Backfeed blocking and inductive-load flyback clamps are separate design functions. Do not add identity EEPROMs, fault memory, calibration storage or paid self-test hardware under this upgrade program.
+## Practical use with Smoothieboard V2 Prime
 
-## Design sources
+Use the board to test a compatible low-power I2C Gadgeteer/Qwiic module from an Arduino Due. The Smoothieboard-use requirement is not directly applicable to that host role; communicating with Smoothieboard would require a separately specified host-to-host interface.
 
-- [Board specification](https://github.com/arthurwolf/extension-boards/blob/main/src/arduino-to-gadgeteer-shield/specs.md)
-- [Architecture and component decisions](https://github.com/arthurwolf/extension-boards/blob/main/src/arduino-to-gadgeteer-shield/design.md)
-- [Selected-revision review and qualification record](https://github.com/arthurwolf/extension-boards/blob/main/src/arduino-to-gadgeteer-shield/component-review.md)
-- [All extension boards](/#extension-boards)
+**Wiring remains incomplete:** the source-backed candidates below do not yet provide an accepted, complete host → board → peripheral installation. Any candidate P12 Prime2590 allocation below is limited to that revision and must not be copied to a different Prime revision. Its rail contacts are 1 = limited 3.3 V, 2 = limited 5 V, 10 = ground; verify the actual unshrouded host header and cable orientation before applying power.
 
-Documentation route: `smoothieware.org/extensions/arduino-to-gadgeteer-shield`.
+1. Confirm the host is the intended Due revision and inspect the downward perimeter and central SPI connector orientation before fitting the shield.
+2. Leave JP1 unarmed while selecting safe Due pin modes and checking each attached module's power ownership.
+3. Use only one powered host. J6.8/J7.3 are the same SDA net and J6.9/J7.4 the same SCL net; account for both branches' pull-ups and addresses.
+4. The retained source assigns Due Serial1 D18/D19 to the U socket and central SPI to the S socket. These assignments require the exact shield-to-Due contact reconciliation before a runnable sketch is published.
 
-<!-- additive-cad-status:start -->
-## Additive design studies
+## Smoothieware use
 
-The 2026-10-11 upgrade program has saved additional candidates v13, v14, v15. These studies preserve the historical design described above. Their connector, LED, mechanical and protection changes are revision-specific and remain unqualified.
+This is an Arduino Due host shield, so a Smoothieware extension-board driver is not its normal control mechanism. Due application software must configure the exported pins and each peripheral protocol. No verified Smoothieware-on-Due port or safe direct Prime connection is established here. If that is the required use and support is absent, email **wolf.arthur@gamil.com**.
 
-See the [per-board changes, failures and remaining work](https://github.com/arthurwolf/extension-boards/blob/main/src/arduino-to-gadgeteer-shield/fancification.md) and [mandatory family specification](https://github.com/arthurwolf/extension-boards/blob/main/docs/FANCIFICATION-SPEC.md). Use the source hash and native check for the exact candidate being reviewed; do not infer hardware ratings from a rendered population.
-<!-- additive-cad-status:end -->
+The firmware application/configuration evidence was checked against SmoothieV2 commit `2a21c0108b1d095ecd8b2b9358e94055f053c003`. This identifies the reviewed source, not the firmware installed on a user’s controller. Source-checked syntax does not establish physical operation.
 
-<!-- extension-upgrade-readback:start -->
-## Upgrade candidate readback
+## Sources and revision notes
 
-The three additional revisions are **v13, v14, v15**. They are engineering studies; saved CAD and renders do not release the hardware. The latest candidate is described below. Older baseline notes above remain historical.
+The selected-revision engineering repository was unavailable to anonymous readers when checked. Its source links are retained for provenance; an accessible matching source release has not been verified. Firmware and historical-board links are separate sources.
 
-### arduino-to-gadgeteer-shield
+- [Selected v23 source directory](https://github.com/arthurwolf/extension-boards/tree/main/src/arduino-to-gadgeteer-shield/attempt/versions/v23)
+- [Design specification](https://github.com/arthurwolf/extension-boards/blob/main/src/arduino-to-gadgeteer-shield/specs.md) — historical design intent where it names an older revision.
+- [Design discussion](https://github.com/arthurwolf/extension-boards/blob/main/src/arduino-to-gadgeteer-shield/design.md)
+- [All extension boards](/extension-boards)
 
-- [Latest PCB source](https://github.com/arthurwolf/extension-boards/blob/main/src/arduino-to-gadgeteer-shield/attempt/versions/v15/arduino-to-gadgeteer-shield.kicad_pcb), SHA-256 `e6a4c1a615cd00a2e6c563c56388a71f56067176c7308095add38ebace35d0ec`.
-- Last native check: **32 errors**, including **32 open connections**. This is a CAD result, not electrical, assembly or firmware qualification.
-- Alternative connector lands recorded: J7 / `PinHeader_1x04_P2.54mm_Vertical`. Fit only the selected population; check its pin map and voltage in the design record.
-- [normal population/render record](https://github.com/arthurwolf/extension-boards/blob/main/src/arduino-to-gadgeteer-shield/attempt/versions/v15/populations/arduino-to-gadgeteer-shield/normal/population.json): 6 images; source current; image hashes match; 0 unresolved models.
-- [stemma population/render record](https://github.com/arthurwolf/extension-boards/blob/main/src/arduino-to-gadgeteer-shield/attempt/versions/v15/populations/arduino-to-gadgeteer-shield/stemma/population.json): 6 images; source current; image hashes match; 0 unresolved models.
-- [Changes, failed trials and remaining work](https://github.com/arthurwolf/extension-boards/blob/main/src/arduino-to-gadgeteer-shield/attempt/versions/v15/arduino-to-gadgeteer-shield-fancification-revision.md).
+Upstream source-link availability has **not** been verified for publication.
 
-Applicable protection, current-path, thermal, pinout, cable access and physical tests remain open wherever the linked board record has not verified them. A zero native-error count does not close those gates.
-<!-- extension-upgrade-readback:end -->
+**Remaining board-specific uncertainty:** Host-role exception, selected v23 protection behavior, complete Due contact reconciliation and actual peripheral example remain open.
 
-## Trusted-power compact correction
+<details markdown="1">
+<summary>Additional board views and engineering history</summary>
 
-Engineering revision **v23** removes36 redundant trusted-input protection and warning parts while retaining both125mA protected output rails, soft-start, source/backfeed isolation, fault indicators and LED-disable jumpers. The existing outline is unchanged. Native electrical and schematic checks are clean, and both connector populations have six reviewed renders. This is an unqualified engineering design, not a fabrication release.
+Selected active-component identities: `U4 TMUX1511PWR`; `U3 TMUX1511PWR`; `U6 TMUX1511PWR`; `U1 TMUX1511PWR`; `U11 MAX40200AUK+T`; `U13 TPS3808G33DBVR`; `U5 TMUX1511PWR`; `U15 TPS3808G01DBVR`; `U8 TMUX1511PWR`; `U14 TPS3808G01DBVR`; `U12 MAX40200AUK+T`; `U2 TMUX1511PWR`; `U7 TMUX1511PWR`; `U10 TPS259631DDAR AUTO RETRY 125mA`; `U9 TPS259631DDAR AUTO RETRY 125mA`. These identities are not a substitute for matching datasheet limits.
+
+{% include _includes/extension-board-visuals.html slug="arduino-to-gadgeteer-shield" %}
+
+The retained gallery is supplementary. It is not either required instructional diagram, and it may include older or different populations whose captions must remain explicit. Development iteration and qualification records remain engineering history rather than operating instructions.
+
+</details>

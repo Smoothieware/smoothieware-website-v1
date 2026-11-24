@@ -1,0 +1,25 @@
+Reference,Value,Footprint,DNP
+C1,100nF 50V,Capacitor_SMD:C_0603_1608Metric,False
+C2,10nF 50V,Capacitor_SMD:C_0603_1608Metric,False
+D1,PESD5V0S1BA,Diode_SMD:D_SOD-323,False
+D2,MAG yellow,LED_SMD:LED_0603_1608Metric,False
+FID1,Fiducial_0.5mm_Mask1mm,Fiducial_0.5mm_Mask1mm,False
+FID2,Fiducial_0.5mm_Mask1mm,Fiducial_0.5mm_Mask1mm,False
+FID3,Fiducial_0.5mm_Mask1mm,Fiducial_0.5mm_Mask1mm,False
+FID4,Fiducial_0.5mm_Mask1mm,Fiducial_0.5mm_Mask1mm,False
+FID5,Fiducial_0.5mm_Mask1mm,Fiducial_0.5mm_Mask1mm,False
+FID6,Fiducial_0.5mm_Mask1mm,Fiducial_0.5mm_Mask1mm,False
+H1,MountingHole_3.2mm_M3,MountingHole:MountingHole_3.2mm_M3,False
+H2,MountingHole_3.2mm_M3,MountingHole:MountingHole_3.2mm_M3,False
+J1,S G +5V,Fancification_Connectors:Dual_hall_endstop_J1,False
+JP1,CUT TO DISABLE D2,Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm,False
+Q1,BSS138BK,Package_TO_SOT_SMD:SOT-23,False
+R1,10k,Resistor_SMD:R_0603_1608Metric,False
+R2,330R,Resistor_SMD:R_1206_3216Metric,False
+R3,2.2k,Resistor_SMD:R_0603_1608Metric,False
+TP1,+5V,TestPoint:TestPoint_Pad_D1.5mm,False
+TP2,GND,TestPoint:TestPoint_Pad_D1.5mm,False
+TP3,SIGNAL_OUT,TestPoint:TestPoint_Pad_D1.5mm,False
+TP4,HALL_OUT,TestPoint:TestPoint_Pad_D1.5mm,False
+TP5,GND,TestPoint:TestPoint_Pad_D1.5mm,False
+U1,DRV5033AJ,Package_TO_SOT_SMD:SOT-23,False

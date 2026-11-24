@@ -6,122 +6,302 @@ permalink: /extensions/differential-spi-signal-extender
 
 # Differential SPI signal extender
 
-{% include extension-board-visuals.html slug="differential-spi-signal-extender" %}
+This pair extends one SPI peripheral connection using four fixed-direction differential channels. It is intended for one named low-rate peripheral, such as a compatible thermocouple interface. It is not Ethernet, a shared serial network or a protocol converter.
 
-Paired HOST and REMOTE boards carry one transparent SPI connection on four fixed-direction balanced data pairs. A separate two-wire link transports external 12 V power. This document reconciles the retained prototype contract; it does not certify the existing CAD or a physical assembly.
+This guide selects **v18** from the existing abstract-export record. It is an engineering candidate, not a fabricated, released or hardware-qualified product. Historical and older revision prose does not establish the illustrated revision's behavior.
 
-## Development status
+## How it works
 
-**Baseline documentation snapshot: 2026-10-11, before the requested connector/protection/usability revision program.** New revision features require their own reviewed source and qualification evidence.
+HOST sends SCK, MOSI and CS to REMOTE, while REMOTE returns MISO. Each direction has a separate balanced pair and THVD1451 physical interface. An independent two-wire 12 V path powers the remote regulators; the RJ45 carries data pairs only. The peripheral keeps its native transaction length and clock edges. HOST U5 releases its MISO output when CS is high. REMOTE U5 instead combines received CS with MISO so its differential return is driven high while CS is high; that remote stage is not tri-state. Clock phase, propagation delay and maximum rate still require analysis.
 
-This page documents an **unqualified engineering study**, not a released or tested product. Saved CAD, renders and automated checks do not establish a safe assembly, compatible cable, firmware support or a usable current rating.
+## Power, signals and limits
 
-Board-specific qualification limits: Native0 retained;ambiguous capacitor MPNs,12V-only assessed,timing/fault/physical open.
+HOST J1.1 uses host 3.3 V, .2 is NC, .6 CS, .7 MOSI, .8 MISO, .9 SCK and .10 ground. REMOTE J1.1/.2 source local 3.3 V/5 V to the peripheral. The selected link has separate 12 V in/out terminals. The eight RJ45 contacts all carry signal pairs; none is a power or ground contact. A separate power-and-return cable is required, and the shield is not its signal return. Do not plug REMOTE J1 into Prime: its contacts 1 and 2 are supply outputs, unlike HOST J1. The root contract targets 10.8–13.2 V, 25 m at 500 kHz, and 100 mA per remote peripheral rail; these remain unqualified targets, not measured v18 operation. The link is common-ground rather than galvanically isolated.
 
-## Interfaces and wiring
+## Board reference
 
-### Inputs
+<details markdown="1">
+<summary>Reading the connector callouts</summary>
 
-- HOST S Gadgeteer connector: canonical pin 1 = 3.3 V input, pin 2 = no connection, pins 6–9 = SPI, pin 10 = ground.
-- HOST external 12 V DC nominal supply, with 10.8–13.2 V defined operating range.
-- Shielded straight-through Cat5e for four data pairs, and a separate two-wire 12 V/return cable of at least 24 AWG (about 0.205 mm²; use 0.25 mm² metric wire or larger).
+The dark end of each pill gives the source contact number. The adjoining label gives its function. Colours help locate related functions; the label and connection instructions determine how to use the contact.
 
-### Outputs
+- Red: 3.3 V supply.
+- Orange: 5 V supply.
+- Green: Signal — use the printed function label.
+- Near-black: Circuit ground.
+- Yellow: Power feed — check the stated voltage and current limits.
+- Grey: Not routed in this board revision.
+- Dark grey: Other source-labelled contact — read its exact function.
 
-- REMOTE S Gadgeteer connector: pin 1 = locally sourced 3.3 V, pin 2 = protected locally sourced 5 V, pins 6–9 = matching SPI, pin 10 = ground.
-- HOST MISO and optional active-low `STATUS_N` on pin 3; pin 3 is no connection at REMOTE. Pins 4 and 5 are unused at both ends.
+A voltage in a signal name does not make that contact a power output. Circuit ground, cable shield and protective earth are different connections. An underside projection shows rear components through the front view; it is not a mirrored rear view.
 
-Power off before connecting or changing jumpers. Verify pin 1, signal direction, supply voltage and ground at both ends of every cable. A mechanically fitting connector is not proof of electrical compatibility. If a host pin mapping or current allocation remains unresolved in the design record, do not connect the board until it is resolved.
+</details>
 
-## Electrical design requirements
+The emitter and receiver have separate source-bound references below. Identify the assembly before using any pin or link instructions. Complete Prime installation wiring and actual page/viewer acceptance remain open.
 
-The following are specification requirements or study assumptions; they are **not measured operating ratings**. A newer selected-revision note takes precedence over historical draft options.
+### Dse-host assembly
 
-- Retained physical layer: THVD1451DR-class 3.3 V fixed-direction differential channels, one pair per SPI signal, 100 Ω/1%/1206 termination at each receiving end. Receiver common mode must remain within the device's ±15 V operating limit. The power return supplies the shared reference; the boards are not galvanically isolated.
-- External 12 V is carried outside the RJ45. The RJ45 is a data connector, not Ethernet/PoE. REMOTE load allocation is at most 100 mA on each peripheral 3.3 V and 5 V rail; the actual peripheral and cable loss must be measured. HOST 3.3 V allocation of 150 mA is an assumption pending the named Smoothieboard S-socket limit.
-- The length/rate limits are calculations, not qualified link ratings. Check host CS lead and setup, MAX31855 first-bit and later-bit timing, actual cable delay/skew, receiver eye, and open/short/disconnected behavior before physical approval.
-- The retained contract mentions 24 V sustained fault tolerance; this is unverified and is not an operating range. Sustained wrong-voltage behavior, PTC/TVS coordination, regulator inductor saturation under short, and terminal temperatures remain release gates.
+{% include _includes/extension-instruction-diagram.html id="differential-spi-signal-extender-v18-dse-host-reader-compact-overview" src="/images/extensions/differential-spi-signal-extender/guides/dse-host/reader-compact-overview.svg" title="SPI extender host" alt="SPI extender host on the dse-host assembly, v18" caption="Selected-source component-side reference for this assembly. Use the overview and focused sheets together. Bridge continuity, cable orientation and complete Prime wiring remain open." width=420 %}
 
-## Protection in the design record
+{% include _includes/extension-instruction-diagram.html id="differential-spi-signal-extender-v18-dse-host-reader-compact-spi-1-5" src="/images/extensions/differential-spi-signal-extender/guides/dse-host/reader-compact-spi-1-5-central-pills.svg" title="J1 · SPI interface" alt="J1 · SPI interface on the dse-host assembly, v18" caption="Selected-source component-side reference for this assembly. Use the overview and focused sheets together. Bridge continuity, cable orientation and complete Prime wiring remain open." width=420 %}
 
-The design describes the following protection intent. Check the selected schematic and remaining qualification gates before relying on it:
+{% include _includes/extension-instruction-diagram.html id="differential-spi-signal-extender-v18-dse-host-reader-compact-spi-6-10" src="/images/extensions/differential-spi-signal-extender/guides/dse-host/reader-compact-spi-6-10-central-pills.svg" title="J1 · SPI interface" alt="J1 · SPI interface on the dse-host assembly, v18" caption="Selected-source component-side reference for this assembly. Use the overview and focused sheets together. Bridge continuity, cable orientation and complete Prime wiring remain open." width=420 %}
 
-HOST F1/D1/D2 form the 12 V PTC/reverse diode/TVS path; REMOTE D1/D2 guard the buck input. Four THVD1451 receivers provide the datasheet's open/short/idle high state, subject to wiring and ground offset. HOST CS is pulled inactive-high when its S pin floats; SCK and MOSI are pulled low. The REMOTE OR gate forces high MISO while deselected, and the HOST buffer leaves S MISO high impedance while deselected. This is not a fault-detection or safety function. Cable open/short/reversal, unpowered endpoints and brownout require physical verification; surge immunity is not claimed.
+{% include _includes/extension-instruction-diagram.html id="differential-spi-signal-extender-v18-dse-host-reader-compact-link-1-5" src="/images/extensions/differential-spi-signal-extender/guides/dse-host/reader-compact-link-1-5-central-pills.svg" title="J2 · Differential link" alt="J2 · Differential link on the dse-host assembly, v18" caption="Selected-source component-side reference for this assembly. Use the overview and focused sheets together. Bridge continuity, cable orientation and complete Prime wiring remain open." width=420 %}
 
-## Selected component architecture
+{% include _includes/extension-instruction-diagram.html id="differential-spi-signal-extender-v18-dse-host-reader-compact-link-6-SH" src="/images/extensions/differential-spi-signal-extender/guides/dse-host/reader-compact-link-6-SH-central-pills.svg" title="J2 · Differential link" alt="J2 · Differential link on the dse-host assembly, v18" caption="Selected-source component-side reference for this assembly. Use the overview and focused sheets together. Bridge continuity, cable orientation and complete Prime wiring remain open." width=420 %}
 
-[Exhaustive current pair review](https://github.com/arthurwolf/extension-boards/blob/main/src/differential-spi-signal-extender/component-review.md#exhaustive-current-v14-pair-reconciliation--2026-10-11): v14 HOST/REMOTE retain transparent channels/existing stock annotations,no successor.68 identities/159selected/2058 historical hashes match;actual HOST10k pull-ups supersede100k intent. Ambiguous capacitor MPN fields and12V-only assessed/timing/fault/physical gates remain open.
+{% include _includes/extension-instruction-diagram.html id="differential-spi-signal-extender-v18-dse-host-reader-compact-12v-in-1-2" src="/images/extensions/differential-spi-signal-extender/guides/dse-host/reader-compact-12v-in-1-2-central-pills.svg" title="J3 · 12V power input" alt="J3 · 12V power input on the dse-host assembly, v18" caption="Selected-source component-side reference for this assembly. Use the overview and focused sheets together. Bridge continuity, cable orientation and complete Prime wiring remain open." width=420 %}
 
-## Configuration and commissioning
+{% include _includes/extension-instruction-diagram.html id="differential-spi-signal-extender-v18-dse-host-reader-compact-12v-out-1-2" src="/images/extensions/differential-spi-signal-extender/guides/dse-host/reader-compact-12v-out-1-2-central-pills.svg" title="J4 · 12V power output" alt="J4 · 12V power output on the dse-host assembly, v18" caption="Selected-source component-side reference for this assembly. Use the overview and focused sheets together. Bridge continuity, cable orientation and complete Prime wiring remain open." width=420 %}
 
-Use the configuration and firmware contract for the exact selected revision. Do not copy another module’s socket assignments or assume that an unused pin is available. First-article work must verify source selection, reset/unplug behavior, cable orientation and the actual load or sensor interface before normal operation.
+{% include _includes/extension-instruction-diagram.html id="differential-spi-signal-extender-v18-dse-host-reader-compact-signals" src="/images/extensions/differential-spi-signal-extender/guides/dse-host/reader-compact-signals.svg" title="Differential signal directions" alt="Differential signal directions on the dse-host assembly, v18" caption="Selected-source component-side reference for this assembly. Use the overview and focused sheets together. Bridge continuity, cable orientation and complete Prime wiring remain open." width=420 %}
 
-## Requested connector and usability upgrades
+{% include _includes/extension-instruction-diagram.html id="differential-spi-signal-extender-v18-dse-host-reader-compact-termination" src="/images/extensions/differential-spi-signal-extender/guides/dse-host/reader-compact-termination.svg" title="Receive-end termination" alt="Receive-end termination on the dse-host assembly, v18" caption="Selected-source component-side reference for this assembly. Use the overview and focused sheets together. Bridge continuity, cable orientation and complete Prime wiring remain open." width=420 %}
 
-The following are requirements for the next design iterations; this page does **not** claim they are already fitted:
+{% include _includes/extension-instruction-diagram.html id="differential-spi-signal-extender-v18-dse-host-reader-compact-miso" src="/images/extensions/differential-spi-signal-extender/guides/dse-host/reader-compact-miso.svg" title="Host MISO bus release" alt="Host MISO bus release on the dse-host assembly, v18" caption="Selected-source component-side reference for this assembly. Use the overview and focused sheets together. Bridge continuity, cable orientation and complete Prime wiring remain open." width=420 %}
 
-- On electrically suitable three/four-pin low-voltage ports, provide compact alternative 2.54 mm header/Molex-style and keyed STEMMA-family footprints. Populate one connector option per shared position and document its pin order. Use STEMMA QT only for compatible four-wire I²C; connector appearance does not make another signal protocol I²C-compatible.
-- Render each supported connector population separately. Document clearances, cable access and the exact fitted option.
-- Use uppercase titles in a consistent Montserrat-style face, labels on both sides, visible domain boundaries, a revision-specific wiring guide and this page’s URL on the silk where readable.
-- Keep mounting-hole centers on a documented 10 mm lattice; add cable-tie holes where space and electrical clearances permit. Place status LEDs near accessible edges and give every indicator its own disable solder jumper. Provide labeled test pads and a ground observation point.
-- Review applicable DC power entries for reverse-polarity cutoff with a blinking warning, overvoltage cutoff/indication, controlled startup and electronic overcurrent protection. Indicator and protection circuits must work in the fault state without defeating isolation or safe output defaults. Thermal protection belongs only where the power/thermal analysis justifies it.
-- Electronic protection does not automatically replace a required mains/branch safety fuse. Backfeed blocking and inductive-load flyback clamps are separate design functions. Do not add identity EEPROMs, fault memory, calibration storage or paid self-test hardware under this upgrade program.
+{% include _includes/extension-instruction-diagram.html id="differential-spi-signal-extender-v18-dse-host-reader-compact-power" src="/images/extensions/differential-spi-signal-extender/guides/dse-host/reader-compact-power-underside-caption.svg" title="12V entry and outward feed" alt="12V entry and outward feed on the dse-host assembly, v18" caption="Selected-source component-side reference for this assembly. Use the overview and focused sheets together. Bridge continuity, cable orientation and complete Prime wiring remain open." width=420 %}
 
-## Design sources
+{% include _includes/extension-instruction-diagram.html id="differential-spi-signal-extender-v18-dse-host-reader-compact-status" src="/images/extensions/differential-spi-signal-extender/guides/dse-host/reader-compact-status.svg" title="Optional power-status return" alt="Optional power-status return on the dse-host assembly, v18" caption="Selected-source component-side reference for this assembly. Use the overview and focused sheets together. Bridge continuity, cable orientation and complete Prime wiring remain open." width=420 %}
 
-- [Board specification](https://github.com/arthurwolf/extension-boards/blob/main/src/differential-spi-signal-extender/specs.md)
-- [Architecture and component decisions](https://github.com/arthurwolf/extension-boards/blob/main/src/differential-spi-signal-extender/design.md)
-- [Selected-revision review and qualification record](https://github.com/arthurwolf/extension-boards/blob/main/src/differential-spi-signal-extender/component-review.md)
-- [All extension boards](/#extension-boards)
+{% include _includes/extension-instruction-diagram.html id="differential-spi-signal-extender-v18-dse-host-reader-compact-shield" src="/images/extensions/differential-spi-signal-extender/guides/dse-host/reader-compact-shield.svg" title="Cable shield bond" alt="Cable shield bond on the dse-host assembly, v18" caption="Selected-source component-side reference for this assembly. Use the overview and focused sheets together. Bridge continuity, cable orientation and complete Prime wiring remain open." width=420 %}
 
-Documentation route: `smoothieware.org/extensions/differential-spi-signal-extender`.
+{% include _includes/extension-instruction-diagram.html id="differential-spi-signal-extender-v18-dse-host-reader-compact-power-led" src="/images/extensions/differential-spi-signal-extender/guides/dse-host/reader-compact-power-led.svg" title="Local power indicator" alt="Local power indicator on the dse-host assembly, v18" caption="Selected-source component-side reference for this assembly. Use the overview and focused sheets together. Bridge continuity, cable orientation and complete Prime wiring remain open." width=420 %}
 
-<!-- additive-cad-status:start -->
-## Additive design studies
+{% include _includes/extension-instruction-diagram.html id="differential-spi-signal-extender-v18-dse-host-reader-compact-indicator-DF2" src="/images/extensions/differential-spi-signal-extender/guides/dse-host/reader-compact-indicator-DF2-underside-caption.svg" title="Supply fault indicator" alt="Supply fault indicator on the dse-host assembly, v18" caption="Selected-source component-side reference for this assembly. Use the overview and focused sheets together. Bridge continuity, cable orientation and complete Prime wiring remain open." width=420 %}
 
-The 2026-10-11 upgrade program has saved additional candidates v15, v16, v17. These studies preserve the historical design described above. Their connector, LED, mechanical and protection changes are revision-specific and remain unqualified.
+{% include _includes/extension-instruction-diagram.html id="differential-spi-signal-extender-v18-dse-host-reader-compact-indicator-DF5" src="/images/extensions/differential-spi-signal-extender/guides/dse-host/reader-compact-indicator-DF5-underside-caption.svg" title="Overvoltage indicator" alt="Overvoltage indicator on the dse-host assembly, v18" caption="Selected-source component-side reference for this assembly. Use the overview and focused sheets together. Bridge continuity, cable orientation and complete Prime wiring remain open." width=420 %}
 
-See the [per-board changes, failures and remaining work](https://github.com/arthurwolf/extension-boards/blob/main/src/differential-spi-signal-extender/fancification.md) and [mandatory family specification](https://github.com/arthurwolf/extension-boards/blob/main/docs/FANCIFICATION-SPEC.md). Use the source hash and native check for the exact candidate being reviewed; do not infer hardware ratings from a rendered population.
-<!-- additive-cad-status:end -->
+{% include _includes/extension-instruction-diagram.html id="differential-spi-signal-extender-v18-dse-host-reader-compact-indicator-DF8" src="/images/extensions/differential-spi-signal-extender/guides/dse-host/reader-compact-indicator-DF8-underside-caption.svg" title="Reverse-input indicator" alt="Reverse-input indicator on the dse-host assembly, v18" caption="Selected-source component-side reference for this assembly. Use the overview and focused sheets together. Bridge continuity, cable orientation and complete Prime wiring remain open." width=420 %}
 
-<!-- extension-upgrade-readback:start -->
-## Upgrade candidate readback
+{% include _includes/extension-instruction-diagram.html id="differential-spi-signal-extender-v18-dse-host-reader-compact-tests1" src="/images/extensions/differential-spi-signal-extender/guides/dse-host/reader-compact-tests1-underside-caption.svg" title="Supply and SPI test pads" alt="Supply and SPI test pads on the dse-host assembly, v18" caption="Selected-source component-side reference for this assembly. Use the overview and focused sheets together. Bridge continuity, cable orientation and complete Prime wiring remain open." width=420 %}
 
-The three additional revisions are **v15, v16, v17**. They are engineering studies; saved CAD and renders do not release the hardware. The latest candidate is described below. Older baseline notes above remain historical.
+{% include _includes/extension-instruction-diagram.html id="differential-spi-signal-extender-v18-dse-host-reader-compact-tests6" src="/images/extensions/differential-spi-signal-extender/guides/dse-host/reader-compact-tests6-underside-caption.svg" title="Supply and SPI test pads" alt="Supply and SPI test pads on the dse-host assembly, v18" caption="Selected-source component-side reference for this assembly. Use the overview and focused sheets together. Bridge continuity, cable orientation and complete Prime wiring remain open." width=420 %}
 
-### host
+{% include _includes/extension-instruction-diagram.html id="differential-spi-signal-extender-v18-dse-host-reader-compact-mounts" src="/images/extensions/differential-spi-signal-extender/guides/dse-host/reader-compact-mounts.svg" title="Mounts and cable ties" alt="Mounts and cable ties on the dse-host assembly, v18" caption="Selected-source component-side reference for this assembly. Use the overview and focused sheets together. Bridge continuity, cable orientation and complete Prime wiring remain open." width=420 %}
 
-- [Latest PCB source](https://github.com/arthurwolf/extension-boards/blob/main/src/differential-spi-signal-extender/attempt/versions/v17/host/dse-host.kicad_pcb), SHA-256 `6f8ceeed032944219c2e032167a4f3c706df1df5f9601444f1d9a1cf5aa3f04b`.
-- Last native check: **21 errors**, including **21 open connections**. This is a CAD result, not electrical, assembly or firmware qualification.
-- No alternative connector population is recorded for this physical role. Any applicable connector conversion remains an explicit design-review item.
-- [normal population/render record](https://github.com/arthurwolf/extension-boards/blob/main/src/differential-spi-signal-extender/attempt/versions/v17/host/populations/dse-host/normal/population.json): 6 images; source current; image hashes match; 0 unresolved models.
-- [Changes, failed trials and remaining work](https://github.com/arthurwolf/extension-boards/blob/main/src/differential-spi-signal-extender/attempt/versions/v17/host/dse-host-fancification-revision.md).
+{% include _includes/extension-instruction-diagram.html id="differential-spi-signal-extender-v18-dse-host-reader-compact-fiducials" src="/images/extensions/differential-spi-signal-extender/guides/dse-host/reader-compact-fiducials.svg" title="Assembly fiducials" alt="Assembly fiducials on the dse-host assembly, v18" caption="Selected-source component-side reference for this assembly. Use the overview and focused sheets together. Bridge continuity, cable orientation and complete Prime wiring remain open." width=420 %}
 
-### remote
+### Dse-remote assembly
 
-- [Latest PCB source](https://github.com/arthurwolf/extension-boards/blob/main/src/differential-spi-signal-extender/attempt/versions/v17/remote/dse-remote.kicad_pcb), SHA-256 `b8794eb336198e1d7016c4b6ef40ddd0136e2c21c0ee4f94b0c4a106302fcaa3`.
-- Last native check: **27 errors**, including **26 open connections**. This is a CAD result, not electrical, assembly or firmware qualification.
-- No alternative connector population is recorded for this physical role. Any applicable connector conversion remains an explicit design-review item.
-- [normal population/render record](https://github.com/arthurwolf/extension-boards/blob/main/src/differential-spi-signal-extender/attempt/versions/v17/remote/populations/dse-remote/normal/population.json): 6 images; source current; image hashes match; 0 unresolved models.
-- [Changes, failed trials and remaining work](https://github.com/arthurwolf/extension-boards/blob/main/src/differential-spi-signal-extender/attempt/versions/v17/remote/dse-remote-fancification-revision.md).
+{% include _includes/extension-instruction-diagram.html id="differential-spi-signal-extender-v18-dse-remote-reader-compact-overview" src="/images/extensions/differential-spi-signal-extender/guides/dse-remote/reader-compact-overview.svg" title="SPI extender remote" alt="SPI extender remote on the dse-remote assembly, v18" caption="Selected-source component-side reference for this assembly. Use the overview and focused sheets together. Bridge continuity, cable orientation and complete Prime wiring remain open." width=420 %}
 
-Applicable protection, current-path, thermal, pinout, cable access and physical tests remain open wherever the linked board record has not verified them. A zero native-error count does not close those gates.
-<!-- extension-upgrade-readback:end -->
+{% include _includes/extension-instruction-diagram.html id="differential-spi-signal-extender-v18-dse-remote-reader-compact-spi-1-5" src="/images/extensions/differential-spi-signal-extender/guides/dse-remote/reader-compact-spi-1-5-central-pills.svg" title="J1 · SPI interface" alt="J1 · SPI interface on the dse-remote assembly, v18" caption="Selected-source component-side reference for this assembly. Use the overview and focused sheets together. Bridge continuity, cable orientation and complete Prime wiring remain open." width=420 %}
 
-<!-- extension-round2-v18:start -->
-## Second-round partial repair: v18
+{% include _includes/extension-instruction-diagram.html id="differential-spi-signal-extender-v18-dse-remote-reader-compact-spi-6-10" src="/images/extensions/differential-spi-signal-extender/guides/dse-remote/reader-compact-spi-6-10-central-pills.svg" title="J1 · SPI interface" alt="J1 · SPI interface on the dse-remote assembly, v18" caption="Selected-source component-side reference for this assembly. Use the overview and focused sheets together. Bridge continuity, cable orientation and complete Prime wiring remain open." width=420 %}
 
-The saved host and remote v18 candidates close two connections per role and clear the remote jumper overlap. They remain **incomplete engineering candidates**, with **19 host and 24 remote open connections**. Fresh full-track native checks find no other enabled electrical errors or schematic parity errors, and no schematic-rule errors. Host retains 71 board warnings and one schematic library-link warning; remote retains 95 board warnings and two schematic library-link warnings. Enabled-rule results do not cover physical qualification or ignored rule categories.
+{% include _includes/extension-instruction-diagram.html id="differential-spi-signal-extender-v18-dse-remote-reader-compact-link-1-5" src="/images/extensions/differential-spi-signal-extender/guides/dse-remote/reader-compact-link-1-5-central-pills.svg" title="J2 · Differential link" alt="J2 · Differential link on the dse-remote assembly, v18" caption="Selected-source component-side reference for this assembly. Use the overview and focused sheets together. Bridge continuity, cable orientation and complete Prime wiring remain open." width=420 %}
 
-Both roles have current revision labels and wrapped documentation URLs. Parent verification checked 127 unchanged baseline files, 151 source/artifact hashes, all model paths and twelve current normal-population views. The dense back-side instruction overlap remains visible. No alternate connector land pattern is declared for either role; connector conversion remains open.
+{% include _includes/extension-instruction-diagram.html id="differential-spi-signal-extender-v18-dse-remote-reader-compact-link-6-SH" src="/images/extensions/differential-spi-signal-extender/guides/dse-remote/reader-compact-link-6-SH-central-pills.svg" title="J2 · Differential link" alt="J2 · Differential link on the dse-remote assembly, v18" caption="Selected-source component-side reference for this assembly. Use the overview and focused sheets together. Bridge continuity, cable orientation and complete Prime wiring remain open." width=420 %}
 
-- [Host v18 source](https://github.com/arthurwolf/extension-boards/blob/main/src/differential-spi-signal-extender/attempt/versions/v18/host/dse-host.kicad_pcb), SHA-256 `03602a68ec5ac09e5cd1c57d9f9c6915f7ac10fdffba9cff307e5008fd9a70a7`.
-- [Remote v18 source](https://github.com/arthurwolf/extension-boards/blob/main/src/differential-spi-signal-extender/attempt/versions/v18/remote/dse-remote.kicad_pcb), SHA-256 `6faa1f043d10dd93eb0f837294b25e25913452cd8418d7fb217d161ab97db721`.
-- [Second-round work and remaining qualification](https://github.com/arthurwolf/extension-boards/blob/main/src/differential-spi-signal-extender/fancification-round2.md).
+{% include _includes/extension-instruction-diagram.html id="differential-spi-signal-extender-v18-dse-remote-reader-compact-12v-in-1-2" src="/images/extensions/differential-spi-signal-extender/guides/dse-remote/reader-compact-12v-in-1-2-central-pills.svg" title="J3 · 12V power input" alt="J3 · 12V power input on the dse-remote assembly, v18" caption="Selected-source component-side reference for this assembly. Use the overview and focused sheets together. Bridge continuity, cable orientation and complete Prime wiring remain open." width=420 %}
 
-The added power-net copper does not establish a load rating. Current, thermal, mounting, assembly, backfeed, fault-injection and signal-integrity qualification remain open. Manufacturing exports and renders are review artifacts; fabrication release is false. The v17 readback above remains historical.
-<!-- extension-round2-v18:end -->
+{% include _includes/extension-instruction-diagram.html id="differential-spi-signal-extender-v18-dse-remote-reader-compact-signals" src="/images/extensions/differential-spi-signal-extender/guides/dse-remote/reader-compact-signals.svg" title="Differential signal directions" alt="Differential signal directions on the dse-remote assembly, v18" caption="Selected-source component-side reference for this assembly. Use the overview and focused sheets together. Bridge continuity, cable orientation and complete Prime wiring remain open." width=420 %}
 
-## Trusted-power layout review — 2026-10-13
+{% include _includes/extension-instruction-diagram.html id="differential-spi-signal-extender-v18-dse-remote-reader-compact-termination" src="/images/extensions/differential-spi-signal-extender/guides/dse-remote/reader-compact-termination.svg" title="Receive-end termination" alt="Receive-end termination on the dse-remote assembly, v18" caption="Selected-source component-side reference for this assembly. Use the overview and focused sheets together. Bridge continuity, cable orientation and complete Prime wiring remain open." width=420 %}
 
-Both V18 roles already fit a 50 × 50 mm outline. The host J3 input supplies the protected 12 V cable output; Gadgeteer J1 does not provide that field-power rail. The remote J3 user-wired supply feeds its protected buck input, while peripheral 5 V protection remains functional load protection. These circuits are retained. The existing 19 host and 24 remote opens remain unresolved; this classification review does not qualify either board for fabrication.
+{% include _includes/extension-instruction-diagram.html id="differential-spi-signal-extender-v18-dse-remote-reader-compact-miso" src="/images/extensions/differential-spi-signal-extender/guides/dse-remote/reader-compact-miso.svg" title="Remote MISO idle encoding" alt="Remote MISO idle encoding on the dse-remote assembly, v18" caption="Selected-source component-side reference for this assembly. Use the overview and focused sheets together. Bridge continuity, cable orientation and complete Prime wiring remain open." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="differential-spi-signal-extender-v18-dse-remote-reader-compact-power" src="/images/extensions/differential-spi-signal-extender/guides/dse-remote/reader-compact-power-underside-caption.svg" title="12V input and local supplies" alt="12V input and local supplies on the dse-remote assembly, v18" caption="Selected-source component-side reference for this assembly. Use the overview and focused sheets together. Bridge continuity, cable orientation and complete Prime wiring remain open." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="differential-spi-signal-extender-v18-dse-remote-reader-compact-peripheral-power" src="/images/extensions/differential-spi-signal-extender/guides/dse-remote/reader-compact-peripheral-power-underside-caption.svg" title="Peripheral5V output stage" alt="Peripheral5V output stage on the dse-remote assembly, v18" caption="Selected-source component-side reference for this assembly. Use the overview and focused sheets together. Bridge continuity, cable orientation and complete Prime wiring remain open." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="differential-spi-signal-extender-v18-dse-remote-reader-compact-shield" src="/images/extensions/differential-spi-signal-extender/guides/dse-remote/reader-compact-shield.svg" title="Cable shield bond" alt="Cable shield bond on the dse-remote assembly, v18" caption="Selected-source component-side reference for this assembly. Use the overview and focused sheets together. Bridge continuity, cable orientation and complete Prime wiring remain open." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="differential-spi-signal-extender-v18-dse-remote-reader-compact-power-led" src="/images/extensions/differential-spi-signal-extender/guides/dse-remote/reader-compact-power-led.svg" title="Local power indicator" alt="Local power indicator on the dse-remote assembly, v18" caption="Selected-source component-side reference for this assembly. Use the overview and focused sheets together. Bridge continuity, cable orientation and complete Prime wiring remain open." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="differential-spi-signal-extender-v18-dse-remote-reader-compact-indicator-DF2" src="/images/extensions/differential-spi-signal-extender/guides/dse-remote/reader-compact-indicator-DF2-underside-caption.svg" title="Supply fault indicator" alt="Supply fault indicator on the dse-remote assembly, v18" caption="Selected-source component-side reference for this assembly. Use the overview and focused sheets together. Bridge continuity, cable orientation and complete Prime wiring remain open." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="differential-spi-signal-extender-v18-dse-remote-reader-compact-indicator-DF5" src="/images/extensions/differential-spi-signal-extender/guides/dse-remote/reader-compact-indicator-DF5-underside-caption.svg" title="Overvoltage indicator" alt="Overvoltage indicator on the dse-remote assembly, v18" caption="Selected-source component-side reference for this assembly. Use the overview and focused sheets together. Bridge continuity, cable orientation and complete Prime wiring remain open." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="differential-spi-signal-extender-v18-dse-remote-reader-compact-indicator-DF8" src="/images/extensions/differential-spi-signal-extender/guides/dse-remote/reader-compact-indicator-DF8-underside-caption.svg" title="Reverse-input indicator" alt="Reverse-input indicator on the dse-remote assembly, v18" caption="Selected-source component-side reference for this assembly. Use the overview and focused sheets together. Bridge continuity, cable orientation and complete Prime wiring remain open." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="differential-spi-signal-extender-v18-dse-remote-reader-compact-indicator-DE2" src="/images/extensions/differential-spi-signal-extender/guides/dse-remote/reader-compact-indicator-DE2-underside-caption.svg" title="12V entry fault indicator" alt="12V entry fault indicator on the dse-remote assembly, v18" caption="Selected-source component-side reference for this assembly. Use the overview and focused sheets together. Bridge continuity, cable orientation and complete Prime wiring remain open." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="differential-spi-signal-extender-v18-dse-remote-reader-compact-tests1" src="/images/extensions/differential-spi-signal-extender/guides/dse-remote/reader-compact-tests1-underside-caption.svg" title="Supply and SPI test pads" alt="Supply and SPI test pads on the dse-remote assembly, v18" caption="Selected-source component-side reference for this assembly. Use the overview and focused sheets together. Bridge continuity, cable orientation and complete Prime wiring remain open." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="differential-spi-signal-extender-v18-dse-remote-reader-compact-tests6" src="/images/extensions/differential-spi-signal-extender/guides/dse-remote/reader-compact-tests6-underside-caption.svg" title="Supply and SPI test pads" alt="Supply and SPI test pads on the dse-remote assembly, v18" caption="Selected-source component-side reference for this assembly. Use the overview and focused sheets together. Bridge continuity, cable orientation and complete Prime wiring remain open." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="differential-spi-signal-extender-v18-dse-remote-reader-compact-mounts" src="/images/extensions/differential-spi-signal-extender/guides/dse-remote/reader-compact-mounts.svg" title="Mounts and cable ties" alt="Mounts and cable ties on the dse-remote assembly, v18" caption="Selected-source component-side reference for this assembly. Use the overview and focused sheets together. Bridge continuity, cable orientation and complete Prime wiring remain open." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="differential-spi-signal-extender-v18-dse-remote-reader-compact-fiducials" src="/images/extensions/differential-spi-signal-extender/guides/dse-remote/reader-compact-fiducials.svg" title="Assembly fiducials" alt="Assembly fiducials on the dse-remote assembly, v18" caption="Selected-source component-side reference for this assembly. Use the overview and focused sheets together. Bridge continuity, cable orientation and complete Prime wiring remain open." width=420 %}
+
+The annotated board-reference sheets above describe the selected source revision; the contact table below is a companion source aid. Actual desktop and narrow-view page/viewer acceptance remains open. Follow the wiring section for the connection procedure and its remaining installation limitations.
+
+### dse-host — saved connector contacts
+
+Contact numbering below is the selected PCB's pad numbering, viewed using the final board-reference drawing. Same-numbered duplicate lands are collapsed in this electrical table. Mechanical unnumbered pads are omitted here. Physical connector-population and mating qualification remains open. `NC` means unconnected in this saved source, not a spare supported function. Named nets alone do not establish direction; use the signal-path explanation above.
+
+<details markdown="1">
+<summary>Selected-source contact inventory</summary>
+
+<div class="extension-contact-table" role="region" aria-label="Selected-source contact inventory; scroll horizontally to read all columns" tabindex="0" markdown="1">
+
+| Connector | Contact(s) | Saved-source function/net |
+| --- | --- | --- |
+| J4 — 12V LINK OUT | 1 | `12V_OUT` |
+| J4 — 12V LINK OUT | 2 | `GND_HOST` |
+| J2 — LINK CAT5E | 1 | `LNK_SCK_POS` |
+| J2 — LINK CAT5E | 2 | `LNK_SCK_NEG` |
+| J2 — LINK CAT5E | 3 | `LNK_CS_POS` |
+| J2 — LINK CAT5E | 4 | `LNK_MOSI_POS` |
+| J2 — LINK CAT5E | 5 | `LNK_MOSI_NEG` |
+| J2 — LINK CAT5E | 6 | `LNK_CS_NEG` |
+| J2 — LINK CAT5E | 7 | `LNK_MISO_POS` |
+| J2 — LINK CAT5E | 8 | `LNK_MISO_NEG` |
+| J2 — LINK CAT5E | SH | `SHIELD` |
+| J1 — S FROM SMOOTHIE | 1 | `3V3_HOST` |
+| J1 — S FROM SMOOTHIE | 3 | `S_STATUS_N` |
+| J1 — S FROM SMOOTHIE | 6 | `S_CS_N` |
+| J1 — S FROM SMOOTHIE | 7 | `S_MOSI` |
+| J1 — S FROM SMOOTHIE | 8 | `S_MISO` |
+| J1 — S FROM SMOOTHIE | 9 | `S_SCK` |
+| J1 — S FROM SMOOTHIE | 10 | `GND_HOST` |
+| J1 | 2, 4, 5 | NC |
+| J3 — 12V DC IN | 1 | `12V_IN_RAW` |
+| J3 — 12V DC IN | 2 | `GND_HOST` |
+
+</div>
+
+</details>
+
+
+### Links, controls and indicators
+
+The selected footprint values identify the intended control or indication. A cut-to-disable LED link affects indication, not the protected circuit's electrical qualification. Link population, default state and any reused older labels still need schematic/BOM reconciliation before instructions to cut or bridge are accepted.
+
+| Item | Selected source label | Contact nets / observation |
+| --- | --- | --- |
+| JP1 | CUT TO DISABLE D3 | 1 = LED_D3_DISABLE; 2 = LED_A |
+| D3 | 12V POWER | 1 = GND_HOST; 2 = LED_D3_DISABLE |
+
+### dse-remote — saved connector contacts
+
+Contact numbering below is the selected PCB's pad numbering, viewed using the final board-reference drawing. Same-numbered duplicate lands are collapsed in this electrical table. Mechanical unnumbered pads are omitted here. Physical connector-population and mating qualification remains open. `NC` means unconnected in this saved source, not a spare supported function. Named nets alone do not establish direction; use the signal-path explanation above.
+
+<details markdown="1">
+<summary>Selected-source contact inventory</summary>
+
+| Connector | Contact(s) | Saved-source function/net |
+| --- | --- | --- |
+| J2 — LINK CAT5E | 1 | `LNK_SCK_POS` |
+| J2 — LINK CAT5E | 2 | `LNK_SCK_NEG` |
+| J2 — LINK CAT5E | 3 | `LNK_CS_POS` |
+| J2 — LINK CAT5E | 4 | `LNK_MOSI_POS` |
+| J2 — LINK CAT5E | 5 | `LNK_MOSI_NEG` |
+| J2 — LINK CAT5E | 6 | `LNK_CS_NEG` |
+| J2 — LINK CAT5E | 7 | `LNK_MISO_POS` |
+| J2 — LINK CAT5E | 8 | `LNK_MISO_NEG` |
+| J2 — LINK CAT5E | SH | `SHIELD` |
+| J1 — S TO PERIPHERAL | 1 | `3V3_REMOTE` |
+| J1 — S TO PERIPHERAL | 2 | `5V_S` |
+| J1 — S TO PERIPHERAL | 6 | `S_CS_N` |
+| J1 — S TO PERIPHERAL | 7 | `S_MOSI` |
+| J1 — S TO PERIPHERAL | 8 | `S_MISO` |
+| J1 — S TO PERIPHERAL | 9 | `S_SCK` |
+| J1 — S TO PERIPHERAL | 10 | `GND_REMOTE` |
+| J1 | 3, 4, 5 | NC |
+| J3 — 12V LINK IN | 1 | `12V_IN_RAW` |
+| J3 — 12V LINK IN | 2 | `GND_REMOTE` |
+
+</details>
+
+
+### Links, controls and indicators
+
+The selected footprint values identify the intended control or indication. A cut-to-disable LED link affects indication, not the protected circuit's electrical qualification. Link population, default state and any reused older labels still need schematic/BOM reconciliation before instructions to cut or bridge are accepted.
+
+| Item | Selected source label | Contact nets / observation |
+| --- | --- | --- |
+| D3 | 3V3 POWER | 1 = GND_REMOTE; 2 = LED_D3_DISABLE |
+| JP1 | CUT TO DISABLE D3 | 1 = LED_D3_DISABLE; 2 = LED_A |
+
+### dse-host — additional selected solder links
+
+These are distinct physical solder-link footprints, including links whose references begin `SJ` rather than `JP`. Their labels and nets must be included in the annotated reference; none is silently omitted because of its reference prefix.
+
+| Link | Selected label | Pad nets |
+| --- | --- | --- |
+| SJ3 | LINK_12V | 1=12V_LINK; 2=12V_OUT |
+| SJ1 | STATUS_EN | 1=STAT_D; 2=STAT_J |
+| SJ2 | SHIELD_BOND | 1=SHIELD; 2=GND_HOST |
+| SJF1 | CUT FAULT LED | 1=/P_spi_host_FLT_R; 2=/P_spi_host_FLT_A |
+| SJF2 | CUT OV LED | 1=/P_spi_host_OV_R; 2=/P_spi_host_OV_A |
+| SJF3 | CUT REVERSE LED | 1=/P_spi_host_REV_R; 2=/P_spi_host_REV_A |
+
+### dse-remote — additional selected solder links
+
+These are distinct physical solder-link footprints, including links whose references begin `SJ` rather than `JP`. Their labels and nets must be included in the annotated reference; none is silently omitted because of its reference prefix.
+
+| Link | Selected label | Pad nets |
+| --- | --- | --- |
+| SJ1 | SHIELD_BOND | 1=SHIELD; 2=GND_REMOTE |
+| SJF1 | CUT FAULT LED | 1=/P_spi_remote_FLT_R; 2=/P_spi_remote_FLT_A |
+| SJF3 | CUT REVERSE LED | 1=/P_spi_remote_REV_R; 2=/P_spi_remote_REV_A |
+| SJF2 | CUT OV LED | 1=/P_spi_remote_OV_R; 2=/P_spi_remote_OV_A |
+| SJE1 | CUT FAULT LED | 1=/P_spi_remote_entry_FLT_R; 2=/P_spi_remote_entry_FLT_A |
+
+## Practical use with Smoothieboard V2 Prime
+
+The intended example is reading a MAX31855-class peripheral. A genuine MAX31855 V2 driver exists, but exact chip revision, cable timing and host SPI selection still have to match this assembly.
+
+**Wiring remains incomplete:** the source-backed candidates below do not yet provide an accepted, complete host → board → peripheral installation. Any candidate P12 Prime2590 allocation below is limited to that revision and must not be copied to a different Prime revision. Its rail contacts are 1 = limited 3.3 V, 2 = limited 5 V, 10 = ground; verify the actual unshrouded host header and cable orientation before applying power.
+
+1. With power off, connect HOST to the named Prime SPI socket only after confirming its contact map and firmware bus. J1 contacts 6–9 must remain CS/MOSI/MISO/SCK.
+2. Connect the data jacks with the specified straight-through pair-preserving cable; do not connect Ethernet equipment.
+3. Connect HOST J3 to the reviewed 12 V supply and HOST J4 to REMOTE J3 using a separate correctly polarized power/return cable. Do not substitute Gadgeteer 5 V.
+4. Connect REMOTE J1 to the chosen peripheral, respecting its local supply selection and signal levels. Review CS timing and return propagation before selecting a clock speed.
+
+## Smoothieware use
+
+### v18 MAX31855 monitor software contract
+The v18 pair is transparent SPI transport; it needs no accessory register driver. For a named source-qualified3.3 V MAX31855 peripheral, the existing V2 driver is a real monitor implementation. This does not establish a working25 m/500 kHz link: the parser fixes mode0 at 1 MHz and exposes no lower-frequency or chip-select delay setting.
+
+The source-numbered candidate is Prime GE/J36.1 → host J1.1 3V3_HOST, GE.6 PD15 → host J1.6 S_CS_N, GE.7/.8/.9 SPI1 → host J1.7/.8/.9 MOSI/MISO/SCK and GE.10 ground. The host status contact3 is an input/status signal, not an extra driver. At the remote J1, a qualified MAX31855's3.3 V/GND/CS/DO/SCK correspond to 1/10/6/8/9; remote MOSI7 is unused by that sensor. This names electrical functions, not a qualified module or complete physical/power cable. Respect separate remote supply/return and paired-cable power/enable/bias requirements.
+
+Once the entire link and chosen sensor are independently qualified at the fixed driver timing, the software monitor is:
+
+```ini
+[temperature control]
+extended_tc.enable = true
+extended_tc.sensor = max31855
+extended_tc.spi_channel = 0
+extended_tc.spi_select_pin = PD15
+extended_tc.readings_per_second = 20
+extended_tc.heater_pin = nc
+extended_tc.designator = XT
+extended_tc.tool_id = 251
+```
+
+Reserve SPI0/channel0 and PD15 for this use and do not share them with an incompatible SPI format. Send `M105` to observe XT. Plain `M305` reports sensor configuration/raw diagnostics across configured controllers; do not use an S form as a read-only selector. The invalid-reading sentinel may be-100 and is not a measured-100degree temperature. Polling frequency20 Hz is not SPI clock. No heater is driven by this instance. Do not energize an unresolved link simply because this configuration parses. If the fixed timing cannot meet the selected link/peripheral contract, a matching driver/timing implementation is required; email **wolf.arthur@gamil.com**.
+
+These instructions identify source behavior at SmoothieV2 commit `2a21c0108b1d095ecd8b2b9358e94055f053c003`; they do not identify the installed build or prove target execution. Reserve every listed pin and command in the complete configuration. Merge entries into existing sections rather than duplicating sections. These software instructions do not verify powered hardware or provide a complete wiring diagram.
+
+Implementation references: [pinned MAX31855 implementation](https://github.com/Smoothieware/SmoothieV2/blob/2a21c0108b1d095ecd8b2b9358e94055f053c003/Firmware/src/modules/tools/temperaturecontrol/max31855.cpp#L25-L68).
+
+## Sources and revision notes
+
+The selected-revision engineering repository was unavailable to anonymous readers when checked. Its source links are retained for provenance; an accessible matching source release has not been verified. Firmware and historical-board links are separate sources.
+
+- [Selected v18 source directory](https://github.com/arthurwolf/extension-boards/tree/main/src/differential-spi-signal-extender/attempt/versions/v18)
+- [Design specification](https://github.com/arthurwolf/extension-boards/blob/main/src/differential-spi-signal-extender/specs.md) — historical design intent where it names an older revision.
+- [Design discussion](https://github.com/arthurwolf/extension-boards/blob/main/src/differential-spi-signal-extender/design.md)
+- [All extension boards](/extension-boards)
+
+Upstream source-link availability has **not** been verified for publication.
+
+**Remaining board-specific uncertainty:** Named peripheral revision, exact Prime SPI bus/CS mapping, complete temperature configuration and timing/power qualification remain open.
+
+<details markdown="1">
+<summary>Additional board views and engineering history</summary>
+
+Selected active-component identities: `U4 THVD1451D`; `U2 THVD1451D`; `U3 THVD1451D`; `U5 SN74LVC1G125`; `U1 THVD1451D`; `UF2 TL431BIDBZR`; `UF1 TPS26600PWPR`. These identities are not a substitute for matching datasheet limits.
+
+Selected active-component identities: `U1 THVD1451D`; `U7 AP2112K-3.3`; `U6 AP63205WU-7`; `U4 THVD1451D`; `U3 THVD1451D`; `U2 THVD1451D`; `U5 SN74LVC1G32`; `UF1 TPS26600PWPR`; `UF2 TL431BIDBZR`; `UE1 TPS26600PWPR`. These identities are not a substitute for matching datasheet limits.
+
+{% include _includes/extension-board-visuals.html slug="differential-spi-signal-extender" %}
+
+The retained gallery is supplementary. It is not either required instructional diagram, and it may include older or different populations whose captions must remain explicit. Development iteration and qualification records remain engineering history rather than operating instructions.
+
+</details>

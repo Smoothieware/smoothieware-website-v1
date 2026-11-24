@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1130" role="img">
+  <title>ESP32 to Buzzer ribbon contact key</title>
+  <rect width="1000" height="1130" fill="#f4f3ef" />
+  <text x="35" y="65" font-family="Arial, sans-serif" font-size="58" font-weight="600" fill="#172633">10-contact cable key</text>
+  <text x="35" y="120" font-family="Arial, sans-serif" font-size="36" font-weight="600" fill="#172633">Adapter PWM socket → Buzzer input</text>
+  <rect x="35" y="160" width="180" height="48" rx="16" fill="#d8e9f4" stroke="#465966" stroke-width="1.5" />
+  <text x="50" y="194" font-family="Arial, sans-serif" font-size="38" font-weight="600" fill="#172633">1 → 1</text>
+  <text x="240" y="194" font-family="Arial, sans-serif" font-size="36" font-weight="600" fill="#172633">3.3 V · forwarded, no local load</text>
+  <rect x="35" y="227" width="180" height="48" rx="16" fill="#d8e9f4" stroke="#465966" stroke-width="1.5" />
+  <text x="50" y="261" font-family="Arial, sans-serif" font-size="38" font-weight="600" fill="#172633">2 → 2</text>
+  <text x="240" y="261" font-family="Arial, sans-serif" font-size="36" font-weight="600" fill="#172633">5 V · powers the buzzer</text>
+  <rect x="35" y="294" width="180" height="48" rx="16" fill="#d8e9f4" stroke="#465966" stroke-width="1.5" />
+  <text x="50" y="328" font-family="Arial, sans-serif" font-size="38" font-weight="600" fill="#172633">3 → 3</text>
+  <text x="240" y="328" font-family="Arial, sans-serif" font-size="36" font-weight="600" fill="#172633">GPIO26 → buzzer command</text>
+  <rect x="35" y="361" width="180" height="48" rx="16" fill="#d8e9f4" stroke="#465966" stroke-width="1.5" />
+  <text x="50" y="395" font-family="Arial, sans-serif" font-size="38" font-weight="600" fill="#172633">4 → 4</text>
+  <text x="240" y="395" font-family="Arial, sans-serif" font-size="36" font-weight="600" fill="#172633">NC at host · no local load</text>
+  <rect x="35" y="428" width="180" height="48" rx="16" fill="#d8e9f4" stroke="#465966" stroke-width="1.5" />
+  <text x="50" y="462" font-family="Arial, sans-serif" font-size="38" font-weight="600" fill="#172633">5 → 5</text>
+  <text x="240" y="462" font-family="Arial, sans-serif" font-size="36" font-weight="600" fill="#172633">NC at host · no local load</text>
+  <rect x="35" y="495" width="180" height="48" rx="16" fill="#d8e9f4" stroke="#465966" stroke-width="1.5" />
+  <text x="50" y="529" font-family="Arial, sans-serif" font-size="38" font-weight="600" fill="#172633">6 → 6</text>
+  <text x="240" y="529" font-family="Arial, sans-serif" font-size="36" font-weight="600" fill="#172633">GPIO15 · no local load</text>
+  <rect x="35" y="562" width="180" height="48" rx="16" fill="#d8e9f4" stroke="#465966" stroke-width="1.5" />
+  <text x="50" y="596" font-family="Arial, sans-serif" font-size="38" font-weight="600" fill="#172633">7 → 7</text>
+  <text x="240" y="596" font-family="Arial, sans-serif" font-size="36" font-weight="600" fill="#172633">GPIO25 · no local load</text>
+  <rect x="35" y="629" width="180" height="48" rx="16" fill="#d8e9f4" stroke="#465966" stroke-width="1.5" />
+  <text x="50" y="663" font-family="Arial, sans-serif" font-size="38" font-weight="600" fill="#172633">8 → 8</text>
+  <text x="240" y="663" font-family="Arial, sans-serif" font-size="36" font-weight="600" fill="#172633">GPIO27 · no local load</text>
+  <rect x="35" y="696" width="180" height="48" rx="16" fill="#d8e9f4" stroke="#465966" stroke-width="1.5" />
+  <text x="50" y="730" font-family="Arial, sans-serif" font-size="38" font-weight="600" fill="#172633">9 → 9</text>
+  <text x="240" y="730" font-family="Arial, sans-serif" font-size="36" font-weight="600" fill="#172633">GPIO2 · no local load</text>
+  <rect x="35" y="763" width="180" height="48" rx="16" fill="#d8e9f4" stroke="#465966" stroke-width="1.5" />
+  <text x="50" y="797" font-family="Arial, sans-serif" font-size="38" font-weight="600" fill="#172633">10 → 10</text>
+  <text x="240" y="797" font-family="Arial, sans-serif" font-size="36" font-weight="600" fill="#172633">GND · common return</text>
+  <text x="35" y="890" font-family="Arial, sans-serif" font-size="38" font-weight="600" fill="#172633">Top-view connector, rotated: key below</text>
+  <rect x="120" y="925" width="100" height="48" rx="16" fill="#d8e9f4" stroke="#465966" stroke-width="1.5" />
+  <text x="135" y="959" font-family="Arial, sans-serif" font-size="38" font-weight="600" fill="#172633">2</text>
+  <rect x="265" y="925" width="100" height="48" rx="16" fill="#d8e9f4" stroke="#465966" stroke-width="1.5" />
+  <text x="280" y="959" font-family="Arial, sans-serif" font-size="38" font-weight="600" fill="#172633">4</text>
+  <rect x="410" y="925" width="100" height="48" rx="16" fill="#d8e9f4" stroke="#465966" stroke-width="1.5" />
+  <text x="425" y="959" font-family="Arial, sans-serif" font-size="38" font-weight="600" fill="#172633">6</text>
+  <rect x="555" y="925" width="100" height="48" rx="16" fill="#d8e9f4" stroke="#465966" stroke-width="1.5" />
+  <text x="570" y="959" font-family="Arial, sans-serif" font-size="38" font-weight="600" fill="#172633">8</text>
+  <rect x="700" y="925" width="100" height="48" rx="16" fill="#d8e9f4" stroke="#465966" stroke-width="1.5" />
+  <text x="715" y="959" font-family="Arial, sans-serif" font-size="38" font-weight="600" fill="#172633">10</text>
+  <rect x="120" y="990" width="100" height="48" rx="16" fill="#d8e9f4" stroke="#465966" stroke-width="1.5" />
+  <text x="135" y="1024" font-family="Arial, sans-serif" font-size="38" font-weight="600" fill="#172633">1</text>
+  <rect x="265" y="990" width="100" height="48" rx="16" fill="#d8e9f4" stroke="#465966" stroke-width="1.5" />
+  <text x="280" y="1024" font-family="Arial, sans-serif" font-size="38" font-weight="600" fill="#172633">3</text>
+  <rect x="410" y="990" width="100" height="48" rx="16" fill="#d8e9f4" stroke="#465966" stroke-width="1.5" />
+  <text x="425" y="1024" font-family="Arial, sans-serif" font-size="38" font-weight="600" fill="#172633">5</text>
+  <rect x="555" y="990" width="100" height="48" rx="16" fill="#d8e9f4" stroke="#465966" stroke-width="1.5" />
+  <text x="570" y="1024" font-family="Arial, sans-serif" font-size="38" font-weight="600" fill="#172633">7</text>
+  <rect x="700" y="990" width="100" height="48" rx="16" fill="#d8e9f4" stroke="#465966" stroke-width="1.5" />
+  <text x="715" y="1024" font-family="Arial, sans-serif" font-size="38" font-weight="600" fill="#172633">9</text>
+  <text x="300" y="1090" font-family="Arial, sans-serif" font-size="40" font-weight="600" fill="#172633">KEY / NOTCH</text>
+</svg>

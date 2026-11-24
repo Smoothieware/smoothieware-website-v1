@@ -1,136 +1,406 @@
 ---
 layout: default
-title: "Stepper motor driver breakout board (Trinamic)"
+title: "Trinamic stepper driver breakout board"
+description: "A one-motor stepper driver board on a Trinamic TMC2660 configured over SPI, with separate motor power and input protection: pinout, links, current setting and limits."
 permalink: /extensions/stepper-driver-breakout-trinamic
 ---
 
-# Stepper motor driver breakout board (Trinamic)
+{% include _includes/extension-board-page.html %}
 
-{% include extension-board-visuals.html slug="stepper-driver-breakout-trinamic" %}
+{::nomarkdown}
+<div class="xb-hero">
+  <div>
+    <p class="xb-eyebrow">Extension board · Motors</p>
+    <h1 id="stepper-driver-breakout-trinamic">Trinamic stepper driver breakout board</h1>
+    <p class="xb-lead">One bipolar stepper channel on a Trinamic TMC2660, with STEP, DIR and enable from the host and the driver registers set over SPI. Motor power comes in on its own connector through an input protection stage. The input socket combines motion and SPI functions, so it is not an ordinary peripheral ribbon, and it is not pin-compatible with the Allegro driver board.</p>
+    <p class="xb-badge">Design candidate · revision v19 · not yet built or tested</p>
+    <div class="xb-actions">
+      <a class="xb-btn xb-btn-primary" href="#get-started">Get started</a>
+      <a class="xb-btn" href="#pinout">Pinout</a>
+      <a class="xb-btn" href="#configuration">Configuration</a>
+    </div>
+  </div>
+  <figure>
+    <img src="/images/extensions/stepper-driver-breakout-trinamic/stepper-driver-breakout-trinamic-diagram.svg" alt="Top view of the Trinamic stepper driver breakout board: a yellow XT30 power connector at the top, the TMC2660 chip at the centre, a ten-contact socket at the lower left and a green four-way motor terminal at the lower centre.">
+    <figcaption>Top view, drawn from the board&rsquo;s design files (revision v19). This is a drawing, not a photograph.</figcaption>
+  </figure>
+</div>
 
-Add one TMC2660-controlled bipolar stepper channel using STEP/DIR plus SPI configuration on one extension cable.
+<div class="xb-stats">
+  <div class="xb-stat"><b>TMC2660</b><span>Trinamic driver, SPI configured</span></div>
+  <div class="xb-stat"><b>9 to 26 V</b><span>silk label, not a complete rating</span></div>
+  <div class="xb-stat"><b>0.100 &Omega; &times; 2</b><span>current-sense resistors</span></div>
+  <div class="xb-stat"><b>1 motor</b><span>one driver channel</span></div>
+  <div class="xb-stat"><b>4 lights</b><span>one green, three red</span></div>
+  <div class="xb-stat"><b>55 × 62</b><span>millimetres, four M3 holes</span></div>
+</div>
 
-## Development status
+<nav class="xb-nav" aria-label="On this page">
+  <a href="#specs">Tech specs</a>
+  <a href="#tour">Board tour</a>
+  <a href="#pinout">Pinout</a>
+  <a href="#what-you-need">What you need</a>
+  <a href="#get-started">Get started</a>
+  <a href="#configuration">Configuration</a>
+  <a href="#how-it-works">How it works</a>
+  <a href="#troubleshooting">Troubleshooting</a>
+  <a href="#downloads">Downloads</a>
+  <a href="#mounting">Mounting</a>
+  <a href="#electrical">Electrical</a>
+</nav>
+{:/nomarkdown}
 
-**Baseline documentation snapshot: 2026-10-11, before the requested connector/protection/usability revision program.** New revision features require their own reviewed source and qualification evidence.
+<sl-alert variant="warning" open>
+  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+  This is a design candidate that has not been built or tested, and it is not ready to energize. The silk marks the driver HOT and says no hot-plug. Never power the motor supply from a Gadgeteer 5&nbsp;V pin, and never connect or disconnect a motor while the supply is energized. The design review leaves operation above 24&nbsp;V unsupported, and that does not establish an approved range at or below 24&nbsp;V.
+</sl-alert>
 
-This page documents an **unqualified engineering study**, not a released or tested product. Saved CAD, renders and automated checks do not establish a safe assembly, compatible cable, firmware support or a usable current rating.
+## Tech specs {#specs}
 
-Board-specific qualification limits: v11 strictnative/ordinaryassembly0;99checklistunsigned,precision sense/motorpower/firmware/reel/physical open.
+{::nomarkdown}
+<div class="xb-tablewrap"><table class="xb-spec">
+  <tbody>
+    <tr><td>Purpose</td><td>Drive one bipolar stepper motor with a TMC2660, using STEP and DIR for motion and SPI for the driver registers</td></tr>
+    <tr><td>Driver</td><td>Trinamic TMC2660-PA (U1), two 0.100&nbsp;&Omega; sense resistors (R13, R14). The part&rsquo;s headline 5 to 30&nbsp;V and 2.8&nbsp;A figures are not ratings of this board.</td></tr>
+    <tr><td>Motor power</td><td>XT30 connector J2, labelled 9 to 26&nbsp;V DC. Contact 1 is ground and contact 2 is positive, the reverse order of the Allegro board&rsquo;s connector.</td></tr>
+    <tr><td>Input protection</td><td>An LTC4368-type stage with fault, over-voltage and reverse lights, an SMBJ26A surge diode and a bulk capacitor</td></tr>
+    <tr><td>SPI return</td><td>An SN74LVC1G125 buffer with its output enable tied to chip select, so only selected transactions drive the return line</td></tr>
+    <tr><td>Socket</td><td>One ten-contact socket, J1. Contact 2 is not connected. The silk reads GA (motor SPI) host.</td></tr>
+    <tr><td>Lights</td><td>Motor power (green); fault, over-voltage and reverse (red), each with a cut link</td></tr>
+    <tr><td>Size</td><td>55 &times; 62&nbsp;mm with four M3 mounting holes and two cable-tie holes</td></tr>
+    <tr><td>Works with</td><td><a href="/smoothieboard-v2-prime">Smoothieboard V2 Prime</a></td></tr>
+    <tr><td>Licence</td><td>Open hardware, CERN-OHL-S-2.0</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
-## Interfaces and wiring
+Every figure with its basis is in the [electrical specifications](#electrical) appendix; hole positions are in the [mounting dimensions](#mounting) appendix.
 
-### Inputs
+## Board tour {#tour}
 
-- Manufacturer-specific Z Gadgeteer mapping carrying STEP, DIR, ENABLE/CS, MOSI, MISO, SCK as finalized.
-- 5–30 V motor power through XT30.
+The numbers on the drawing match the list below it. The board is shown from the component side. The mounting holes, cable-tie holes, test points, solder links and most small parts are not marked.
 
-### Outputs
+{::nomarkdown}
+<figure class="xb-tour">
+  <div class="xb-tour-scroll" tabindex="0" role="region" aria-label="Annotated top view of the board">
+    <div class="xb-tour-stage">
+      <img src="/images/extensions/stepper-driver-breakout-trinamic/stepper-driver-breakout-trinamic-diagram.svg" alt="Top view of the Trinamic stepper driver breakout board with thirteen numbered markers that are explained in the list below.">
+      <a class="xb-mk xb-pl" href="#tour-1" style="left:20%;top:72.1%" aria-label="1: input socket">1<span class="xb-pop"><b>Input socket (J1)</b> — a ten-contact socket (the silk reads GA, motor SPI, host) carrying enable, STEP, DIR and four SPI lines. It combines motion and SPI functions. <i>See the pinout.</i></span></a>
+      <a class="xb-mk xb-pb" href="#tour-2" style="left:32%;top:8.5%" aria-label="2: motor power input">2<span class="xb-pop"><b>Motor power input (J2)</b> — an XT30 connector for the motor supply, labelled 9 to 26&nbsp;V DC. Contact 1 is ground and contact 2 is positive. No hot-plug.</span></a>
+      <a class="xb-mk" href="#tour-3" style="left:50%;top:70.3%" aria-label="3: motor terminal">3<span class="xb-pop"><b>Motor terminal (J3)</b> — a four-way screw terminal: coil A on contacts 1 and 2 (A+ and A-), coil B on 3 and 4 (B+ and B-). No hot-plug.</span></a>
+      <a class="xb-mk xb-pb" href="#tour-4" style="left:50%;top:39.6%" aria-label="4: driver chip">4<span class="xb-pop"><b>Driver chip (U1)</b> — a Trinamic TMC2660-PA stepper driver, marked HOT on the silk, configured over SPI.</span></a>
+      <a class="xb-mk xb-pb" href="#tour-5" style="left:26.8%;top:43.5%" aria-label="5: sense resistor A">5<span class="xb-pop"><b>Sense resistor (R13)</b> — a 0.100&nbsp;&Omega; current-sense resistor for one coil.</span></a>
+      <a class="xb-mk xb-pb" href="#tour-6" style="left:73%;top:43.5%" aria-label="6: sense resistor B">6<span class="xb-pop"><b>Sense resistor (R14)</b> — a 0.100&nbsp;&Omega; current-sense resistor for the other coil.</span></a>
+      <a class="xb-mk xb-pb xb-pr" href="#tour-7" style="left:88%;top:39.6%" aria-label="7: bulk capacitor">7<span class="xb-pop"><b>Bulk capacitor (C1)</b> — a 100&nbsp;&micro;F, 35&nbsp;V electrolytic capacitor on the motor supply.</span></a>
+      <a class="xb-mk xb-pb" href="#tour-8" style="left:72%;top:19.6%" aria-label="8: surge diode">8<span class="xb-pop"><b>Surge diode (D1)</b> — an SMBJ26A surge-protection diode on the motor supply.</span></a>
+      <a class="xb-mk" href="#tour-9" style="left:27.8%;top:60.7%" aria-label="9: return buffer">9<span class="xb-pop"><b>Return buffer (U2)</b> — an SN74LVC1G125 buffer whose output enable is tied to chip select, so only selected transactions drive the data return.</span></a>
+      <a class="xb-mk xb-pb xb-pl" href="#tour-10" style="left:9.5%;top:8.5%" aria-label="10: power light">10<span class="xb-pop"><b>Motor power light (D7)</b> — a green light that shows motor power. Cut JP1 to disable it.</span></a>
+      <a class="xb-mk xb-pb xb-pr" href="#tour-11" style="left:91%;top:6.2%" aria-label="11: fault light">11<span class="xb-pop"><b>Fault light (DF102)</b> — a red light from the input protection stage. Cut JPF101 to disable it.</span></a>
+      <a class="xb-mk xb-pb xb-pr" href="#tour-12" style="left:91%;top:15.6%" aria-label="12: over-voltage light">12<span class="xb-pop"><b>Over-voltage light (DF103)</b> — a red light that reports over-voltage at the input. Cut JPF102 to disable it.</span></a>
+      <a class="xb-mk xb-pb xb-pr" href="#tour-13" style="left:84%;top:17.4%" aria-label="13: reverse light">13<span class="xb-pop"><b>Reverse light (DF106)</b> — a red light that reports a reversed supply. Cut JPF103 to disable it.</span></a>
+    </div>
+  </div>
+  <ol class="xb-tour-list">
+    <li id="tour-1"><span class="xb-n">1</span><div><b>Input socket (J1)</b> — a ten-contact socket (the silk reads GA, motor SPI, host) carrying enable, STEP, DIR and four SPI lines. It combines motion and SPI functions. <i>See the pinout.</i></div></li>
+    <li id="tour-2"><span class="xb-n">2</span><div><b>Motor power input (J2)</b> — an XT30 connector for the motor supply, labelled 9 to 26&nbsp;V DC. Contact 1 is ground and contact 2 is positive. No hot-plug.</div></li>
+    <li id="tour-3"><span class="xb-n">3</span><div><b>Motor terminal (J3)</b> — a four-way screw terminal: coil A on contacts 1 and 2 (A+ and A-), coil B on 3 and 4 (B+ and B-). No hot-plug.</div></li>
+    <li id="tour-4"><span class="xb-n">4</span><div><b>Driver chip (U1)</b> — a Trinamic TMC2660-PA stepper driver, marked HOT on the silk, configured over SPI.</div></li>
+    <li id="tour-5"><span class="xb-n">5</span><div><b>Sense resistor (R13)</b> — a 0.100&nbsp;&Omega; current-sense resistor for one coil.</div></li>
+    <li id="tour-6"><span class="xb-n">6</span><div><b>Sense resistor (R14)</b> — a 0.100&nbsp;&Omega; current-sense resistor for the other coil.</div></li>
+    <li id="tour-7"><span class="xb-n">7</span><div><b>Bulk capacitor (C1)</b> — a 100&nbsp;&micro;F, 35&nbsp;V electrolytic capacitor on the motor supply.</div></li>
+    <li id="tour-8"><span class="xb-n">8</span><div><b>Surge diode (D1)</b> — an SMBJ26A surge-protection diode on the motor supply.</div></li>
+    <li id="tour-9"><span class="xb-n">9</span><div><b>Return buffer (U2)</b> — an SN74LVC1G125 buffer whose output enable is tied to chip select, so only selected transactions drive the data return.</div></li>
+    <li id="tour-10"><span class="xb-n">10</span><div><b>Motor power light (D7)</b> — a green light that shows motor power. Cut JP1 to disable it.</div></li>
+    <li id="tour-11"><span class="xb-n">11</span><div><b>Fault light (DF102)</b> — a red light from the input protection stage. Cut JPF101 to disable it.</div></li>
+    <li id="tour-12"><span class="xb-n">12</span><div><b>Over-voltage light (DF103)</b> — a red light that reports over-voltage at the input. Cut JPF102 to disable it.</div></li>
+    <li id="tour-13"><span class="xb-n">13</span><div><b>Reverse light (DF106)</b> — a red light that reports a reversed supply. Cut JPF103 to disable it.</div></li>
+  </ol>
+  <figcaption>Point at a number, or tap it, to read what the part is; the same text is in the list. On a small screen, scroll the drawing sideways.</figcaption>
+</figure>
+{:/nomarkdown}
 
-- One bipolar stepper motor output and diagnostic return.
+## Pinout {#pinout}
 
-### Connection contract
+### J1: input socket
 
-The table below uses the repository-canonical connector rule: pin 1 is +3.3 V, pin 2 is +5 V, and pin 10 is GND. **Do not release a schematic from this table until it is reconciled pin-by-pin with the current V2 Prime connector implementation; current web documentation presents a conflicting ordering.**
+Contact 1 is at the lower left of the socket, next to the small arrow below it; the odd contacts are in the lower row. Contacts 3 to 5 are motion lines and 6 to 9 are SPI lines, which come from two different Prime sockets.
 
-|  Pin | Function | Design note                                                        |
-| ---: | -------- | ------------------------------------------------------------------ |
-|    1 | +3.3 V   | Canonical fixed rail.                                              |
-|    2 | +5 V     | Canonical fixed rail.                                              |
-|    3 | ENABLE   | Board mapping; validate against current V2 hardware before layout. |
-|    4 | STEP     | Board mapping; validate against current V2 hardware before layout. |
-|    5 | DIR      | Board mapping; validate against current V2 hardware before layout. |
-|    6 | CS       | Board mapping; validate against current V2 hardware before layout. |
-|    7 | MOSI     | Board mapping; validate against current V2 hardware before layout. |
-|    8 | MISO     | Board mapping; validate against current V2 hardware before layout. |
-|    9 | SCK      | Board mapping; validate against current V2 hardware before layout. |
-|   10 | GND      | Canonical fixed rail.                                              |
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>Contact</th><th>Signal</th><th>Notes</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td><span class="xb-pill xb-p-3v3">3.3 V</span></td><td>Logic supply</td></tr>
+    <tr><td>2</td><td>Not connected</td><td>Not a 5&nbsp;V contact</td></tr>
+    <tr><td>3</td><td><span class="xb-pill xb-p-sig">ENN</span></td><td>Enable, active low; pulled up to 3.3&nbsp;V by a 10&nbsp;k&Omega; resistor</td></tr>
+    <tr><td>4</td><td><span class="xb-pill xb-p-sig">STEP</span></td><td>Through a series resistor to the driver</td></tr>
+    <tr><td>5</td><td><span class="xb-pill xb-p-sig">DIR</span></td><td>Through a series resistor to the driver</td></tr>
+    <tr><td>6</td><td><span class="xb-pill xb-p-sig">CSN</span></td><td>SPI chip select, active low</td></tr>
+    <tr><td>7</td><td><span class="xb-pill xb-p-sig">MOSI</span></td><td>SPI data to the driver</td></tr>
+    <tr><td>8</td><td><span class="xb-pill xb-p-sig">MISO</span></td><td>SPI data from the driver, through the buffer</td></tr>
+    <tr><td>9</td><td><span class="xb-pill xb-p-sig">SCK</span></td><td>SPI clock</td></tr>
+    <tr><td>10</td><td><span class="xb-pill xb-p-gnd">GND</span></td><td></td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
-Power off before connecting or changing jumpers. Verify pin 1, signal direction, supply voltage and ground at both ends of every cable. A mechanically fitting connector is not proof of electrical compatibility. If a host pin mapping or current allocation remains unresolved in the design record, do not connect the board until it is resolved.
+### Power and motor connectors
 
-## Electrical design requirements
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>Connector</th><th>Contact</th><th>Function</th></tr></thead>
+  <tbody>
+    <tr><td rowspan="2">J2 power (XT30)</td><td>1</td><td><span class="xb-pill xb-p-gnd">GND</span></td></tr>
+    <tr><td>2</td><td><span class="xb-pill xb-p-sig">VMOT</span> motor supply positive</td></tr>
+    <tr><td rowspan="4">J3 motor</td><td>1</td><td><span class="xb-pill xb-p-sig">OA1</span> coil A (A+)</td></tr>
+    <tr><td>2</td><td><span class="xb-pill xb-p-sig">OA2</span> coil A (A-)</td></tr>
+    <tr><td>3</td><td><span class="xb-pill xb-p-sig">OB1</span> coil B (B+)</td></tr>
+    <tr><td>4</td><td><span class="xb-pill xb-p-sig">OB2</span> coil B (B-)</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
-The following are specification requirements or study assumptions; they are **not measured operating ratings**. A newer selected-revision note takes precedence over historical draft options.
+Identify the two coil pairs of the motor with the power removed before wiring it. The XT30 order is taken from the schematic and the silk (minus at the left, plus at the right in the drawing); check it against the plug.
 
-- TMC2660 supports 5–30 V and up to the vendor-stated 2.8 A operating current; actual board rating needs thermal validation.
-- Gadgeteer 5 V fallback may power logic only, never VMOT.
+### Solder links
 
-## Protection in the design record
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>Link</th><th>Effect</th><th>As delivered</th></tr></thead>
+  <tbody>
+    <tr><td>JP1</td><td>Cut to disable the motor power light (D7)</td><td>Bridged</td></tr>
+    <tr><td>JPF101</td><td>Cut to disable the fault light</td><td>Bridged</td></tr>
+    <tr><td>JPF102</td><td>Cut to disable the over-voltage light</td><td>Bridged</td></tr>
+    <tr><td>JPF103</td><td>Cut to disable the reverse light</td><td>Bridged</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
-The design describes the following protection intent. Check the selected schematic and remaining qualification gates before relying on it:
+## What you need {#what-you-need}
 
-Fuse, reverse polarity, TVS after surge definition, local bulk/ceramic capacitance, thermal shutdown exposure, and motor-connector transient containment.
+{::nomarkdown}
+<div class="xb-cards">
+  <div class="xb-card"><b>This board</b><span>The design is not yet built.</span></div>
+  <div class="xb-card"><b>A stepper motor</b><span>With its coil pairs identified.</span></div>
+  <div class="xb-card"><b>A motor supply</b><span>Current-limited, on the XT30 connector, separate from the controller.</span></div>
+  <div class="xb-card"><b>Firmware with TMC2660 support</b><span>A build that includes the driver and a free chip-select pin.</span></div>
+  <div class="xb-card"><b>Host leads</b><span>Individual conductors from two Prime sockets to J1.</span></div>
+</div>
+{:/nomarkdown}
 
-## Selected component architecture
+## Get started {#get-started}
 
-See [current review](https://github.com/arthurwolf/extension-boards/blob/main/src/stepper-driver-breakout-trinamic/component-review.md). Retain TMC2660-PA STEP/DIR+SPI,matching V2P11 genericTMC2660/LQFP44family;exactPAorder/reel unproven. Five100nF50V0603capacitors already consolidated to V1-compatible family,no successor. Current selected v11; retained native/stock/physical qualification limits remain explicit.
+{::nomarkdown}
+<ol class="xb-steps">
+  <li class="xb-step">
+    <h3>Wire the motor</h3>
+    <p>With all power removed, pair the coils and connect one pair to J3 contacts 1 and 2 and the other to 3 and 4.</p>
+  </li>
+  <li class="xb-step">
+    <h3>Plan the two host connections</h3>
+    <p>Motion lines come from one Prime socket and SPI lines from another. The Prime allocation below is a candidate; verify the headers, the rail positions and the cable orientation with the power removed, and do not push loose wires into a socket.</p>
+    <p class="xb-expect">Allocate every contact against one named Prime revision.</p>
+  </li>
+  <li class="xb-step">
+    <h3>Provide motor power separately</h3>
+    <p>Motor power enters on J2, never through a Gadgeteer rail. The Prime&rsquo;s own motor-voltage monitor must also read a finite value, because the firmware&rsquo;s enable method checks that monitor.</p>
+  </li>
+  <li class="xb-step">
+    <h3>Initialize the driver first</h3>
+    <p>Set the current and microstep state through SPI, and verify the fault and reset behaviour with the motor unloaded, before enabling motion.</p>
+  </li>
+</ol>
+{:/nomarkdown}
 
-## Configuration and commissioning
+## Configuration {#configuration}
 
-Use the configuration and firmware contract for the exact selected revision. Do not copy another module’s socket assignments or assume that an unused pin is available. First-article work must verify source selection, reset/unplug behavior, cable orientation and the actual load or sensor interface before normal operation.
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>You want</th><th>Module</th><th>Example</th></tr></thead>
+  <tbody>
+    <tr><td>One stepper axis on a TMC2660</td><td>Actuator with the tmc2660 driver type, and the tmc2660 section</td><td>The block below</td></tr>
+    <tr><td>The external enable line</td><td>Switch, one digital output</td><td>The same block</td></tr>
+    <tr><td>Fault return handled by firmware</td><td>None</td><td>Not provided: this example is not a fault interlock</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
-## Requested connector and usability upgrades
+The checked SmoothieV2 source (revision 2a21c0108b1d095ecd8b2b9358e94055f053c003) has a TMC2660 implementation. The actuator uses the tmc2660 driver type, and the tmc2660 section uses the same actuator name with a chip-select pin, a sense resistor in milliohms and a maximum current in milliamps. The common SPI channel is set in mode 3 at 500&nbsp;kHz. The firmware must be built with the TMC driver option.
 
-The following are requirements for the next design iterations; this page does **not** claim they are already fitted:
+The example is a candidate for a Smoothieboard V2 P12 Prime2590: socket J37 contact 3 to PB1 (enable), 4 to PJ4 (STEP), 5 to PA4 (DIR) and 10 to ground; socket J36 contact 6 to PD15 (chip select), 7 to the controller data output, 8 from the driver data return and 9 to the clock. Contact 1 takes 3.3&nbsp;V; contact 2 stays unconnected. Merge the block into a working base configuration, reserve the pins and the SPI bus, and leave every other motor unconnected, because the enable command enables all registered motors.
 
-- On electrically suitable three/four-pin low-voltage ports, provide compact alternative 2.54 mm header/Molex-style and keyed STEMMA-family footprints. Populate one connector option per shared position and document its pin order. Use STEMMA QT only for compatible four-wire I²C; connector appearance does not make another signal protocol I²C-compatible.
-- Render each supported connector population separately. Document clearances, cable access and the exact fitted option.
-- Use uppercase titles in a consistent Montserrat-style face, labels on both sides, visible domain boundaries, a revision-specific wiring guide and this page’s URL on the silk where readable.
-- Keep mounting-hole centers on a documented 10 mm lattice; add cable-tie holes where space and electrical clearances permit. Place status LEDs near accessible edges and give every indicator its own disable solder jumper. Provide labeled test pads and a ground observation point.
-- Review applicable DC power entries for reverse-polarity cutoff with a blinking warning, overvoltage cutoff/indication, controlled startup and electronic overcurrent protection. Indicator and protection circuits must work in the fault state without defeating isolation or safe output defaults. Thermal protection belongs only where the power/thermal analysis justifies it.
-- Electronic protection does not automatically replace a required mains/branch safety fuse. Backfeed blocking and inductive-load flyback clamps are separate design functions. Do not add identity EEPROMs, fault memory, calibration storage or paid self-test hardware under this upgrade program.
+```ini
+[actuator]
+alpha.driver = tmc2660
+alpha.step_pin = PJ4
+alpha.dir_pin = PA4
+alpha.en_pin = nc
+alpha.microsteps = 1
 
-## Design sources
+[tmc2660]
+common.spi_channel = 0
+alpha.spi_cs_pin = PD15
+alpha.sense_resistor = 100
+alpha.max_current = 450
+alpha.standstill_current = 0
 
-- [Board specification](https://github.com/arthurwolf/extension-boards/blob/main/src/stepper-driver-breakout-trinamic/specs.md)
-- [Architecture and component decisions](https://github.com/arthurwolf/extension-boards/blob/main/src/stepper-driver-breakout-trinamic/design.md)
-- [Selected-revision review and qualification record](https://github.com/arthurwolf/extension-boards/blob/main/src/stepper-driver-breakout-trinamic/component-review.md)
-- [All extension boards](/#extension-boards)
+[current control]
+alpha.current = 0.45
 
-Documentation route: `smoothieware.org/extensions/stepper-driver-breakout-trinamic`.
+[switch]
+external_enn.enable = true
+external_enn.output_pin = PB1!
+external_enn.output_type = digital
+external_enn.input_on_command = M42
+external_enn.input_off_command = M43
+external_enn.subcode = 21
+external_enn.startup_state = false
+external_enn.halt_set_to = false
+external_enn.ignore_on_halt = false
+```
 
-<!-- additive-cad-status:start -->
-## Additive design studies
+The driver enable is register-based after initialization, so the separate switch owns the external enable pin; its logical off gives a physical high, matching the active-low line. The sense resistor entry is 100 milliohms from the 0.100&nbsp;&Omega; parts; confirm the assembled network before relying on it. A 0.45&nbsp;A request does not give an exact 0.45&nbsp;A setting: the driver routine rounds the current scale, which gives a nominal sine peak of about 0.464&nbsp;A and an RMS value near 0.328&nbsp;A. The maximum-current entry only clips the request and is not a calibrated ceiling.
 
-The 2026-10-11 upgrade program has saved additional candidates v12, v13, v14. These studies preserve the historical design described above. Their connector, LED, mechanical and protection changes are revision-specific and remain unqualified.
+After independent electrical qualification and a confirmed driver initialization, a slow bench check sends `M43.21` and `M18`, then `M17`, waits five seconds, sends `M42.21`, waits five seconds, then `test pulse x 2` (about 20 seconds), and finishes with `M43.21` before `M18`. The pulses are five seconds high and five seconds low with the direction unchanged, nominally two full steps (3.6 degrees); movement and direction remain unmeasured. Do not issue motion or homing commands, or infer steps per millimetre from this check. A handled halt turns the switch off, but it is not an independent fault controller. This applies to that source revision only; it does not describe firmware installed on a controller.
 
-See the [per-board changes, failures and remaining work](https://github.com/arthurwolf/extension-boards/blob/main/src/stepper-driver-breakout-trinamic/fancification.md) and [mandatory family specification](https://github.com/arthurwolf/extension-boards/blob/main/docs/FANCIFICATION-SPEC.md). Use the source hash and native check for the exact candidate being reviewed; do not infer hardware ratings from a rendered population.
-<!-- additive-cad-status:end -->
+## How it works {#how-it-works}
 
-<!-- extension-upgrade-readback:start -->
-## Upgrade candidate readback
+{::nomarkdown}
+<figure class="xb-fig">
+  <div class="xb-fig-scroll" tabindex="0" role="region" aria-label="Signal path">
+  <svg viewBox="0 0 1000 170" role="img" aria-labelledby="xb-how-t">
+    <title id="xb-how-t">The host sends STEP, DIR and enable and an SPI link on J1 to the TMC2660 driver; motor power enters at J2 through the input protection; the driver feeds two coils on J3 and returns SPI data through a buffer.</title>
+    <g font-size="13" font-weight="700" text-anchor="middle" fill="#e6ebf2">
+      <rect x="20" y="55" width="150" height="60" rx="8" fill="#1f2226" stroke="#e0a877"/><text x="95" y="80">J1 input</text><text x="95" y="100" font-weight="400" fill="#a9b4c2">motion and SPI</text>
+      <rect x="230" y="55" width="170" height="60" rx="8" fill="#212936" stroke="#6fe08a"/><text x="315" y="80">TMC2660 driver</text><text x="315" y="100" font-weight="400" fill="#a9b4c2">registers over SPI</text>
+      <rect x="460" y="55" width="140" height="60" rx="8" fill="#1f2226" stroke="#e0a877"/><text x="530" y="80">J3 motor</text><text x="530" y="100" font-weight="400" fill="#a9b4c2">coil A and coil B</text>
+      <rect x="660" y="55" width="170" height="60" rx="8" fill="#212936" stroke="#5fb3ff"/><text x="745" y="80">Input protection</text><text x="745" y="100" font-weight="400" fill="#a9b4c2">LTC4368, D1</text>
+      <rect x="880" y="55" width="100" height="60" rx="8" fill="#1f2226" stroke="#e0a877"/><text x="930" y="80">J2</text><text x="930" y="100" font-weight="400" fill="#a9b4c2">XT30</text>
+    </g>
+    <g stroke-width="3" fill="none" stroke="#a9b4c2"><path d="M170 85H230"/><path d="M400 85H460"/><path d="M660 85H600"/><path d="M880 85H830"/></g>
+  </svg>
+  </div>
+  <figcaption>Logic and SPI come in on J1; motor power comes in separately on J2 and reaches the driver after the protection stage.</figcaption>
+</figure>
+{:/nomarkdown}
 
-The three additional revisions are **v12, v13, v14**. They are engineering studies; saved CAD and renders do not release the hardware. The latest candidate is described below. Older baseline notes above remain historical.
+STEP and DIR reach the driver through series resistors, and SPI sets the driver registers before motion. The protection and lights do not qualify the driver current or thermal performance.
 
-### tmc2660-stepper
+## Troubleshooting {#troubleshooting}
 
-- [Latest PCB source](https://github.com/arthurwolf/extension-boards/blob/main/src/stepper-driver-breakout-trinamic/attempt/versions/v14/tmc2660-stepper.kicad_pcb), SHA-256 `99d1378445db9509f2939f15bc8ce3c29530ad5bd2f2748ffcb5164fc550b37b`.
-- Last native check: **14 errors**, including **5 open connections**. This is a CAD result, not electrical, assembly or firmware qualification.
-- No alternative connector population is recorded for this physical role. Any applicable connector conversion remains an explicit design-review item.
-- [normal population/render record](https://github.com/arthurwolf/extension-boards/blob/main/src/stepper-driver-breakout-trinamic/attempt/versions/v14/populations/tmc2660-stepper/normal/population.json): 6 images; source current; image hashes match; 0 unresolved models.
-- [Changes, failed trials and remaining work](https://github.com/arthurwolf/extension-boards/blob/main/src/stepper-driver-breakout-trinamic/attempt/versions/v14/tmc2660-stepper-fancification-revision.md).
+{::nomarkdown}
+<div class="xb-tablewrap"><table class="xb-leds">
+  <thead><tr><th>Light</th><th><span class="xb-led xb-led-green"></span>Motor power (D7)</th><th><span class="xb-led xb-led-red"></span>Fault</th><th><span class="xb-led xb-led-red"></span>Over-voltage</th><th><span class="xb-led xb-led-red"></span>Reverse</th></tr></thead>
+  <tbody>
+    <tr><td>Where</td><td>Top left</td><td>Top right (FAULT)</td><td>Top right (0V)</td><td>Upper right (REV)</td></tr>
+    <tr><td>Lit means</td><td>Motor power is present</td><td>The protection stage reports a fault</td><td>The protection stage reports over-voltage</td><td>The supply is connected the wrong way round (the silk says BLINK)</td></tr>
+    <tr><td>Disable it</td><td>Cut JP1</td><td>Cut JPF101</td><td>Cut JPF102</td><td>Cut JPF103</td></tr>
+  </tbody>
+</table></div>
 
-Applicable protection, current-path, thermal, pinout, cable access and physical tests remain open wherever the linked board record has not verified them. A zero native-error count does not close those gates.
-<!-- extension-upgrade-readback:end -->
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>Symptom</th><th>Check</th></tr></thead>
+  <tbody>
+    <tr><td>Motor does not turn</td><td>The enable line, the chip-select pin and SPI wiring, the Prime motor-voltage monitor, the supply on J2 and the coil wiring.</td></tr>
+    <tr><td>Driver does not respond to SPI</td><td>The firmware build includes the TMC driver, the SPI channel and chip-select pin are right, and the data return is connected to J1 contact 8.</td></tr>
+    <tr><td>Current differs from the request</td><td>The current scale is rounded by the firmware; see Configuration.</td></tr>
+    <tr><td>Everything dark with supply connected</td><td>The polarity of J2 and the supply fault lights.</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
-## Electronic protection working candidate
+Still stuck? Read [how to ask for help](/help-guidelines) or see the general [troubleshooting guide](/troubleshooting/).
 
-The latest third additive candidate replaces the input fuse with an LTC4368 automatic-retry electronic breaker and an external reverse/backfeed FET pair. It adds soft-start gate shaping, separate fault/overvoltage LEDs, a floating timer for blinking reverse indication, and individual solder links to disable status LEDs. Existing motor, host/isolation and mounting-pin contracts remain requirements.
+{% include _includes/stepper-driver-board-comparison.html %}
 
-This is an **unreleased implementation study**. Native opens/errors, shunt sourcing and Kelvin routing, FET linear SOA, continuous current/thermal limits, regeneration, input transients and enclosure compaction remain qualification gates. The controller does not support hot-plugging an externally powered output above 24 V; boards with a higher output domain still need a different qualified topology for that mode. Do not treat the candidate as approved for fabrication or motor operation. Exact source hashes and native checks are in the readback section and per-revision NATIVE-CHECKS.md.
+## Downloads {#downloads}
 
-## Second-round annotation readback v18 — 2026-10-13
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>File</th><th>Revision</th><th>What it is</th></tr></thead>
+  <tbody>
+    <tr><td><a href="/images/extensions/stepper-driver-breakout-trinamic/stepper-driver-breakout-trinamic-schematic.svg">Schematic (SVG)</a></td><td>v19</td><td>The circuit diagram. Its title block reads v11.</td></tr>
+    <tr><td><a href="/images/extensions/stepper-driver-breakout-trinamic/stepper-driver-breakout-trinamic-bom.csv">Parts list (CSV)</a></td><td>v19</td><td>Every component with its value and footprint</td></tr>
+    <tr><td><a href="/images/extensions/stepper-driver-breakout-trinamic/stepper-driver-breakout-trinamic-diagram.svg">Board drawing (SVG)</a></td><td>v19</td><td>The top view used on this page, at full resolution</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
-Protected source v17; current PCB SHA-256 `51d7394917d15cb8b97ef785ab3140e9facfe5243ba10d9cbbe412ffcbe949f5`. Fresh checks: zero enabled PCB errors/opens/parity and ERC errors; 5 PCB warnings. Electrical geometry, project rules and 101 historical files unchanged. Verified 73 model entries, 19 exports and 6 current population views, all inspected. Full documentation URL readable. Five inherited ignored PCB categories remain; assembly/thermal/current qualification open Inherited native warnings and enabled-rule exclusions remain explicit Physical/thermal/current/connector-fit qualification open No priced or area savings established by annotation candidate.
+## Appendix: mounting dimensions {#mounting}
 
-## Compact protection revision v19 — 2026-10-13
+For drilling a mounting plate or designing an enclosure. Positions are hole centres, in millimetres, measured from the top-left corner with the board seen from the component side.
 
-The engineering candidate reduces the outline from 76 × 109 mm to 55 × 62 mm while retaining all 94 footprints, external-input protection and the original motor-output and motor-supply copper. The existing four-layer stack and mounting datums are preserved. Source PCB SHA-256: `d34b82229913ce7fdc1dbb9def9f557b8cdbc50a9a743225cdec61872aae1d46`.
+{::nomarkdown}
+<figure class="xb-fig">
+  <div class="xb-fig-scroll" tabindex="0" role="region" aria-label="Mounting drawing">
+  <svg viewBox="0 0 1000 480" role="img" aria-labelledby="xb-tr-mount-t">
+  <title id="xb-tr-mount-t">Mounting drawing of the Trinamic stepper driver breakout board, component side: outline 55 by 62 millimetres with 4 mounting holes and 2 cable-tie holes. Hole positions are listed in the table below.</title>
+  <text x="480.0" y="24" text-anchor="middle" font-size="13" font-weight="700" letter-spacing="1" fill="#a9b4c2">COMPONENT SIDE · millimetres</text>
+  <rect x="329.2" y="78.0" width="301.6" height="340.0" rx="0.0" fill="#1f2226" stroke="#e6ebf2" stroke-width="1.5"/>
+  <g stroke="#a9b4c2" stroke-width="1.2" fill="none"><path d="M329.2 56H630.8"/><path d="M329.2 50V62"/><path d="M630.8 50V62"/><path d="M656.8 78.0V418.0"/><path d="M650.8 78.0h12"/><path d="M650.8 418.0h12"/></g>
+  <text x="480.0" y="48" text-anchor="middle" font-size="15" font-weight="700" fill="#e6ebf2">55</text>
+  <text x="668.8" y="253.0" font-size="15" font-weight="700" fill="#e6ebf2">62</text>
+  <circle cx="329.2" cy="78.0" r="4" fill="#ffcc33"/>
+  <text x="317.2" y="83.0" text-anchor="end" font-size="14" font-weight="700" fill="#ffcc33">0, 0</text>
+  <g stroke="#ffcc33" stroke-width="1.5" fill="#ffcc33"><path d="M271.2 104.0h30" fill="none"/><path d="M305.2 104.0l-8 -4v8z"/><path d="M271.2 104.0v30" fill="none"/><path d="M271.2 138.0l-4 -8h8z"/></g>
+  <text x="309.2" y="109.0" font-size="12" font-weight="700" fill="#ffcc33">X</text>
+  <text x="267.2" y="154.0" font-size="12" font-weight="700" fill="#ffcc33">Y</text>
+  <circle cx="370.3" cy="160.3" r="8.8" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <path d="M357.5 160.3h25.5M370.3 147.5v25.5" stroke="#ffcc33" stroke-width=".8" fill="none"/>
+  <text x="361.5" y="189.0" text-anchor="start" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">1</tspan>  7.50, 15.00</text>
+  <circle cx="589.7" cy="160.3" r="8.8" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <path d="M576.9 160.3h25.5M589.7 147.5v25.5" stroke="#ffcc33" stroke-width=".8" fill="none"/>
+  <text x="598.5" y="189.0" text-anchor="end" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">2</tspan>  47.50, 15.00</text>
+  <circle cx="370.3" cy="269.9" r="8.8" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <path d="M357.5 269.9h25.5M370.3 257.2v25.5" stroke="#ffcc33" stroke-width=".8" fill="none"/>
+  <text x="361.5" y="251.2" text-anchor="start" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">3</tspan>  7.50, 35.00</text>
+  <circle cx="589.7" cy="269.9" r="8.8" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <path d="M576.9 269.9h25.5M589.7 257.2v25.5" stroke="#ffcc33" stroke-width=".8" fill="none"/>
+  <text x="598.5" y="251.2" text-anchor="end" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">4</tspan>  47.50, 35.00</text>
+  <circle cx="543.1" cy="313.8" r="6.9" fill="#141920" stroke="#a9b4c2" stroke-width="1.5"/>
+  <circle cx="578.2" cy="313.8" r="6.9" fill="#141920" stroke="#a9b4c2" stroke-width="1.5"/>
+  <text x="560.6" y="298.0" text-anchor="middle" font-size="12" fill="#a9b4c2">cable tie</text>
+  <text x="480.0" y="448.0" text-anchor="middle" font-size="13" fill="#a9b4c2">Numbered rings are mounting holes. Positions are hole centres, X then Y, from the marked corner.</text>
+  </svg>
+  </div>
+  <figcaption>Board outline 55 × 62&nbsp;mm, square corners, board thickness 1.6&nbsp;mm. Drawn from the design files, component side up, in the same orientation as the board tour.</figcaption>
+</figure>
 
-Fresh native checks report zero PCB errors, unconnected items, schematic-parity differences and ERC errors; one inherited text-thickness warning remains. All six normal-connector render views were inspected. All 73 model entries and the source-bound BOM, four-copper-layer Gerbers, paste, drill, placement and schematic exports were verified. Revision-local review files and `trusted-power.md` record the implementation and evidence.
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>Hole</th><th>X (mm)</th><th>Y (mm)</th><th>Diameter</th><th>Use</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td>7.50</td><td>15.00</td><td>3.2&nbsp;mm, not plated</td><td>Mounting, M3 screw</td></tr>
+    <tr><td>2</td><td>47.50</td><td>15.00</td><td>3.2&nbsp;mm, not plated</td><td>Mounting, M3 screw</td></tr>
+    <tr><td>3</td><td>7.50</td><td>35.00</td><td>3.2&nbsp;mm, not plated</td><td>Mounting, M3 screw</td></tr>
+    <tr><td>4</td><td>47.50</td><td>35.00</td><td>3.2&nbsp;mm, not plated</td><td>Mounting, M3 screw</td></tr>
+    <tr><td>–</td><td>39.00</td><td>43.00</td><td>2.5&nbsp;mm, not plated</td><td>Cable tie</td></tr>
+    <tr><td>–</td><td>45.40</td><td>43.00</td><td>2.5&nbsp;mm, not plated</td><td>Cable tie</td></tr>
+  </tbody>
+</table></div>
 
-This is not fabrication-qualified. FET safe operating area, shunt/Kelvin routing, regeneration, continuous current, thermal behavior and physical connector fit remain open. In particular, the inherited LTC4368 topology does not support hot-plugging an externally powered output above 24 V; that operating mode needs a qualified topology before fabrication.
+{:/nomarkdown}
 
-## Remote zero-warning publication gate — 2026-10-13
+## Appendix: electrical specifications {#electrical}
 
-The local verification of v19 above predates the required remote PCB execution policy. Its retained full native report has 1 warning(s): TrueType text-thickness. It therefore does **not** satisfy the new zero-violation remote publication gate. The supplied sources and six-view render evidence remain preserved. A portable additive repair helper is prepared, but its PCB output and same-font text repair are unverified until the pinned remote KiCad dependency is installed and the remote native checks succeed. Fabrication release remains **false**.
+Every figure is a design value or a value from the parts list, as the last column says. None is a measurement on a built board. **Open** means not established.
+
+{::nomarkdown}
+<div class="xb-tablewrap"><table class="xb-elec">
+  <thead><tr><th>Parameter</th><th>Applies to</th><th>Lower</th><th>Nominal</th><th>Upper</th><th>Basis and conditions</th></tr></thead>
+  <tbody>
+    <tr><td>Motor supply</td><td>J2</td><td>9 V</td><td>Open</td><td>26 V</td><td>Silk label; the design review leaves operation above 24&nbsp;V unsupported, and no range at or below 24&nbsp;V is approved</td></tr>
+    <tr><td>Sense resistors</td><td>R13, R14</td><td>—</td><td>0.100 &Omega;, 1&nbsp;%, 1 W</td><td>—</td><td>Parts list</td></tr>
+    <tr><td>Example current request</td><td>Firmware</td><td>—</td><td>0.45 A request</td><td>—</td><td>Nominal sine peak about 0.464 A, RMS about 0.328 A; not calibrated</td></tr>
+    <tr><td>Standstill current</td><td>U1</td><td>—</td><td>—</td><td>1 A</td><td>Board silk (STANDSTILL &le; 1A); basis Open</td></tr>
+    <tr><td>Surge diode, bulk capacitor</td><td>D1, C1</td><td>—</td><td>SMBJ26A, 100 &micro;F 35 V</td><td>—</td><td>Parts list</td></tr>
+    <tr><td>Logic supply from host</td><td>J1 contact 1</td><td>Open</td><td>3.3 V</td><td>Open</td><td>Host current allowance Open</td></tr>
+    <tr><td>Continuous motor current, thermal rise</td><td>U1</td><td>Open</td><td>Open</td><td>Open</td><td>Not established; the chip is marked HOT</td></tr>
+    <tr><td>Protection ratings, startup and fault behaviour</td><td>Board</td><td>Open</td><td>Open</td><td>Open</td><td>Not established</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+### Prime headers
+
+The candidate allocation above applies only to a Smoothieboard V2 P12 Prime2590 and has not passed review. The silk reads GA for the host socket while the allocation uses sockets J37 and J36; verify against the Prime revision you hold. The Prime&rsquo;s physical connector carries a noted rail-position discrepancy: verify numbered continuity with the power removed.
+
+See all boards on the [extension boards](/extension-boards) page.

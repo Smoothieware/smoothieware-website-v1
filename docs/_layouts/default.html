@@ -248,7 +248,7 @@
     <div class="wrapper">
 
       <section>
-        <div class="markdown-body">
+        <div class="markdown-body{% if page.url contains '/extensions/' %} extension-guide{% endif %}">
 
           {{ content }}
 

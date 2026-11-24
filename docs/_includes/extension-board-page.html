@@ -1,0 +1,168 @@
+{% comment %}
+Shared presentation layer for a reader-first extension-board page (hero, spec
+strip, numbered board tour, pin tables, numbered steps, inline diagrams).
+Usage: {% include _includes/extension-board-page.html %} once, near the top of
+the page. Everything is scoped under classes that start with "xb-".
+Colour code used by diagrams and pin pills: red 3.3 V, orange 5 V, yellow
+12 V / high-power DC, black GND, blue logic signal, brown/blue/green-yellow
+European mains live/neutral/earth.
+{% endcomment %}
+<style>
+.xb-hero, .xb-stats, .xb-tour, .xb-steps, .xb-fig, .xb-cards, .xb-nav, .xb-tablewrap, .xb-jumpers {
+  --xb-panel: #1a2029; --xb-panel-2: #212936; --xb-line: #38424f; --xb-text: #e6ebf2; --xb-muted: #a9b4c2;
+  --xb-accent: #ffcc33; --xb-accent-ink: #1d1a0c; --xb-ok: #57d18c; --xb-sig: #5fb3ff;
+  --xb-3v3: #ff5d5d; --xb-5v: #ff9f43; --xb-12v: #ffd84d; --xb-gnd: #0d0f12;
+  --xb-live: #b0703c; --xb-neutral: #4f8dea; --xb-earth: #7ccf4a;
+  box-sizing: border-box; color: var(--xb-text);
+}
+.xb-hero *, .xb-stats *, .xb-tour *, .xb-steps *, .xb-fig *, .xb-cards *, .xb-nav *, .xb-tablewrap *, .xb-jumpers * { box-sizing: border-box; }
+
+/* Hero */
+.xb-hero { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: 2rem; align-items: center; margin: .5rem 0 1.5rem; padding: 2rem; border: 1px solid var(--xb-line); border-radius: 14px; background: radial-gradient(120% 140% at 100% 0%, #263246 0%, #1a2029 55%, #161b22 100%); }
+.xb-eyebrow { margin: 0 0 .6rem !important; font-size: .78rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--xb-accent); }
+.xb-hero h1 { margin: 0 0 .8rem !important; padding: 0 !important; border: 0 !important; font-size: 2.35rem !important; line-height: 1.12 !important; font-weight: 700 !important; color: #fff !important; }
+.xb-lead { margin: 0 0 1.1rem !important; font-size: 1.12rem; line-height: 1.55; color: var(--xb-text); }
+.xb-badge { display: inline-flex; align-items: center; gap: .5rem; margin: 0 0 1.2rem; padding: .35rem .75rem; border: 1px solid #8a6d1c; border-radius: 999px; background: #33290d; color: #ffe08a; font-size: .86rem; font-weight: 600; }
+.xb-badge::before { content: ""; width: .55rem; height: .55rem; border-radius: 50%; background: var(--xb-accent); }
+.xb-actions { display: flex; flex-wrap: wrap; gap: .6rem; }
+.xb-btn { display: inline-block; padding: .62rem 1.05rem; border: 1px solid var(--xb-line); border-radius: 8px; background: var(--xb-panel-2); color: var(--xb-text) !important; font-weight: 600; font-size: .95rem; text-decoration: none !important; }
+.xb-btn:hover { border-color: var(--xb-accent); }
+.xb-btn-primary { background: var(--xb-accent); border-color: var(--xb-accent); color: var(--xb-accent-ink) !important; }
+.xb-btn-primary:hover { background: #ffd95e; }
+.xb-hero figure { margin: 0; }
+.xb-hero figure img { display: block; width: 100%; height: auto; filter: drop-shadow(0 14px 26px rgb(0 0 0 / .6)); }
+.xb-hero figcaption, .xb-fig figcaption, .xb-tour figcaption { margin-top: .6rem; font-size: .84rem; line-height: 1.45; color: var(--xb-muted); }
+
+/* Key numbers */
+.xb-stats { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: .6rem; margin: 0 0 1.5rem; }
+.xb-stat { padding: .85rem .8rem; border: 1px solid var(--xb-line); border-radius: 10px; background: var(--xb-panel); }
+.xb-stat b { display: block; font-size: 1.3rem; line-height: 1.15; color: #fff; }
+.xb-stat span { display: block; margin-top: .3rem; font-size: .8rem; line-height: 1.35; color: var(--xb-muted); }
+
+/* On-page navigation */
+.xb-nav { display: flex; flex-wrap: wrap; gap: .4rem; margin: 0 0 2rem; padding: .7rem; border: 1px solid var(--xb-line); border-radius: 10px; background: var(--xb-panel); }
+.xb-nav a { padding: .3rem .7rem; border-radius: 999px; background: var(--xb-panel-2); color: var(--xb-text) !important; font-size: .86rem; text-decoration: none !important; }
+.xb-nav a:hover { background: var(--xb-accent); color: var(--xb-accent-ink) !important; }
+
+/* Board tour: numbered markers over the board drawing */
+.xb-tour { margin: 1.2rem 0; }
+.xb-tour-scroll { overflow-x: auto; border: 1px solid var(--xb-line); border-radius: 10px; background: #111418; }
+.xb-tour-stage { position: relative; min-width: 760px; }
+.xb-tour-stage img { display: block; width: 100%; height: auto; }
+.xb-mk, .xb-ch { position: absolute; transform: translate(-50%, -50%); text-decoration: none !important; font-weight: 700; line-height: 1; }
+.xb-mk { display: grid; place-items: center; width: 1.7rem; height: 1.7rem; border: 2px solid #111; border-radius: 50%; background: var(--xb-accent); color: var(--xb-accent-ink) !important; font-size: .84rem; box-shadow: 0 0 0 3px rgb(255 204 51 / .28), 0 2px 6px rgb(0 0 0 / .6); transition: transform .12s; }
+.xb-mk:hover, .xb-mk:focus { z-index: 6; outline: none; box-shadow: 0 0 0 5px rgb(255 204 51 / .55), 0 2px 6px rgb(0 0 0 / .6); }
+/* Popover: the description of a marker, shown on hover or keyboard focus. Default opens above the marker;
+   xb-pb opens below (markers in the upper half), xb-pl / xb-pr keep it inside the left / right edge. */
+.xb-pop { display: none; position: absolute; left: 50%; bottom: calc(100% + .7rem); transform: translateX(-50%); width: 17rem; max-width: 60vw; padding: .65rem .8rem; border: 1px solid var(--xb-accent); border-radius: 8px; background: #0f1318; color: var(--xb-text); font-size: .84rem; font-weight: 400; line-height: 1.45; text-align: left; white-space: normal; box-shadow: 0 10px 26px rgb(0 0 0 / .7); pointer-events: none; }
+.xb-pop b { color: #fff; font-weight: 700; }
+.xb-pop i { display: block; margin-top: .3rem; color: var(--xb-muted); font-style: normal; }
+.xb-mk:hover .xb-pop, .xb-mk:focus .xb-pop { display: block; }
+.xb-mk.xb-pb .xb-pop { bottom: auto; top: calc(100% + .7rem); }
+.xb-mk.xb-pl .xb-pop { left: -.4rem; transform: none; }
+.xb-mk.xb-pr .xb-pop { left: auto; right: -.4rem; transform: none; }
+.xb-ch { padding: .22rem .4rem; border-radius: 4px; background: rgb(17 20 24 / .88); color: #fff !important; font-size: .7rem; letter-spacing: .04em; white-space: nowrap; pointer-events: none; }
+.xb-tour-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .5rem .9rem; margin: 1rem 0 0 !important; padding: 0 !important; list-style: none !important; counter-reset: none; }
+.xb-tour-list li { display: grid; grid-template-columns: 1.9rem minmax(0, 1fr); gap: .6rem; margin: 0 !important; padding: .65rem .7rem; border: 1px solid var(--xb-line); border-radius: 8px; background: var(--xb-panel); font-size: .92rem; line-height: 1.5; scroll-margin-top: 100px; }
+.xb-tour-list li::before { content: none !important; }
+.xb-tour-list li:target { border-color: var(--xb-accent); background: #2b2a1c; }
+.xb-tour-list .xb-n { display: grid; place-items: center; width: 1.7rem; height: 1.7rem; border-radius: 50%; background: var(--xb-accent); color: var(--xb-accent-ink); font-weight: 700; font-size: .84rem; }
+.xb-tour-list b { color: #fff; }
+.xb-tour-list small { display: block; color: var(--xb-muted); font-size: .86rem; }
+
+/* Tables */
+.xb-tablewrap { overflow-x: auto; margin: 1rem 0 1.4rem; border: 1px solid var(--xb-line); border-radius: 10px; background: var(--xb-panel); }
+.markdown-body .xb-tablewrap table { width: 100% !important; min-width: 560px; margin: 0 !important; table-layout: auto !important; border-collapse: collapse !important; }
+.markdown-body .xb-tablewrap th, .markdown-body .xb-tablewrap td { padding: .6rem .8rem !important; border: 0 !important; border-bottom: 1px solid var(--xb-line) !important; min-width: 0 !important; word-break: normal !important; hyphens: manual !important; font-size: .93rem; line-height: 1.45; background: transparent !important; color: var(--xb-text); }
+.markdown-body .xb-tablewrap tr:last-child td { border-bottom: 0 !important; }
+.markdown-body .xb-tablewrap th { background: var(--xb-panel-2) !important; color: var(--xb-muted); font-size: .78rem; letter-spacing: .06em; text-transform: uppercase; white-space: nowrap; }
+.markdown-body .xb-tablewrap td:first-child { color: #fff; font-weight: 600; }
+.markdown-body .xb-spec td:first-child { width: 34%; color: var(--xb-muted); font-weight: 500; }
+.xb-pill { display: inline-block; min-width: 3.4rem; padding: .16rem .5rem; border-radius: 999px; font-family: 'Courier New', Courier, monospace; font-size: .86rem; font-weight: 700; text-align: center; white-space: nowrap; }
+.xb-p-3v3 { background: var(--xb-3v3); color: #1c0606; }
+.xb-p-5v { background: var(--xb-5v); color: #201004; }
+.xb-p-12v { background: var(--xb-12v); color: #201a02; }
+.xb-p-gnd { background: var(--xb-gnd); color: #fff; border: 1px solid #5c6673; }
+.xb-p-sig { background: var(--xb-sig); color: #04182b; }
+.xb-p-no { background: var(--xb-ok); color: #052413; }
+.xb-p-nc { background: #ff8f8f; color: #2b0707; }
+.xb-p-c { background: #e6ebf2; color: #14181d; }
+.xb-p-stat { background: #c9a6ff; color: #1c0b33; }
+.xb-note { color: var(--xb-muted); font-size: .86rem; }
+
+/* Cards (what you need) */
+.xb-cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .7rem; margin: 1rem 0 1.4rem; }
+.xb-card { padding: .9rem 1rem; border: 1px solid var(--xb-line); border-radius: 10px; background: var(--xb-panel); font-size: .92rem; line-height: 1.5; }
+.xb-card b { display: block; margin-bottom: .25rem; color: #fff; font-size: 1rem; }
+.xb-card span { color: var(--xb-muted); }
+
+/* Numbered steps */
+.xb-steps { margin: 1.2rem 0 1.6rem; padding: 0; list-style: none; counter-reset: xbstep; }
+.xb-step { position: relative; margin: 0 0 1rem; padding: 1.1rem 1.2rem 1.1rem 4.2rem; border: 1px solid var(--xb-line); border-radius: 10px; background: var(--xb-panel); counter-increment: xbstep; }
+.xb-step::before { content: counter(xbstep); position: absolute; left: 1.1rem; top: 1rem; display: grid; place-items: center; width: 2.2rem; height: 2.2rem; border-radius: 50%; background: var(--xb-accent); color: var(--xb-accent-ink); font-weight: 700; font-size: 1.05rem; }
+.markdown-body .xb-step h3 { margin: .15rem 0 .5rem !important; padding: 0 !important; border: 0 !important; font-size: 1.12rem !important; color: #fff !important; }
+.xb-step p { margin: .4rem 0 !important; line-height: 1.6; }
+.xb-step ul { margin: .4rem 0 .2rem 1.1rem !important; padding: 0 !important; }
+.xb-step li { margin: .2rem 0 !important; line-height: 1.55; }
+.xb-step pre { margin: .6rem 0 !important; padding: .7rem .9rem !important; border: 1px solid var(--xb-line); border-radius: 8px; background: #11151a !important; overflow-x: auto; }
+.xb-step pre code { padding: 0 !important; background: transparent !important; }
+.xb-expect { margin-top: .6rem !important; padding: .5rem .75rem; border-left: 3px solid var(--xb-ok); border-radius: 0 6px 6px 0; background: #16261d; font-size: .93rem; }
+.xb-warn { margin-top: .6rem !important; padding: .5rem .75rem; border-left: 3px solid #ff6b6b; border-radius: 0 6px 6px 0; background: #2b1717; font-size: .93rem; }
+
+/* Site-font consistency and code blocks on pages that use this include */
+.markdown-body strong, .markdown-body h3, .markdown-body b { font-family: inherit !important; }
+.markdown-body h2 { margin-top: 2.6rem !important; scroll-margin-top: 100px; }
+.markdown-body h3 { margin-top: 1.8rem !important; color: #fff !important; }
+.markdown-body pre { padding: 1rem 1.1rem !important; border: 1px solid #38424f !important; border-radius: 10px !important; background: #11151a !important; overflow-x: auto !important; }
+.markdown-body pre, .markdown-body pre code, .markdown-body pre code * { font-family: 'Courier New', Courier, monospace !important; font-size: .9rem !important; line-height: 1.55 !important; white-space: pre !important; }
+.markdown-body pre code { padding: 0 !important; background: transparent !important; }
+.markdown-body pre .c, .markdown-body pre .c1 { color: #8b97a6 !important; }
+
+/* Diagrams */
+.xb-fig { margin: 1.2rem 0 1.6rem; }
+.xb-fig-scroll { overflow-x: auto; border: 1px solid var(--xb-line); border-radius: 10px; background: #141920; }
+.xb-fig svg { display: block; width: 100%; min-width: 720px; height: auto; font-family: Montserrat, Arial, sans-serif; }
+
+/* Jumper drawings */
+.xb-jumpers { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .7rem; margin: 1rem 0 1.4rem; }
+.xb-jumper { padding: .9rem 1rem; border: 1px solid var(--xb-line); border-radius: 10px; background: var(--xb-panel); font-size: .9rem; line-height: 1.5; }
+.xb-jumper b { display: block; color: #fff; font-size: 1rem; }
+.xb-jumper svg { display: block; width: 100%; max-width: 250px; height: auto; margin: .6rem 0; font-family: Montserrat, Arial, sans-serif; }
+.xb-jumper span { color: var(--xb-muted); }
+
+/* Status lights: one column per light */
+.markdown-body .xb-leds th { text-align: center !important; text-transform: none; letter-spacing: 0; font-size: .9rem; color: #fff; white-space: normal; vertical-align: bottom; }
+.markdown-body .xb-leds td { text-align: center; vertical-align: top; font-size: .88rem; color: var(--xb-text); font-weight: 400 !important; min-width: 5.4rem !important; }
+.markdown-body .xb-leds th:first-child, .markdown-body .xb-leds td:first-child { text-align: left !important; color: var(--xb-muted) !important; font-weight: 600 !important; font-size: .78rem; letter-spacing: .06em; text-transform: uppercase; min-width: 5.5rem !important; white-space: nowrap; }
+.xb-led { display: block; width: 1.5rem; height: .95rem; margin: 0 auto .45rem; border-radius: 3px; border: 1px solid rgb(255 255 255 / .35); }
+.xb-led-green { background: #4be07f; box-shadow: 0 0 10px 2px rgb(75 224 127 / .65); }
+.xb-led-red { background: #ff5252; box-shadow: 0 0 10px 2px rgb(255 82 82 / .65); }
+.xb-led-amber { background: #ffb02e; box-shadow: 0 0 10px 2px rgb(255 176 46 / .65); }
+.xb-led-blue { background: #58a6ff; box-shadow: 0 0 10px 2px rgb(88 166 255 / .65); }
+.xb-led-white { background: #f1f4f8; box-shadow: 0 0 10px 2px rgb(241 244 248 / .5); }
+.xb-led-unknown { background: #7d8794; }
+.xb-led-blink { background-image: repeating-linear-gradient(90deg, rgb(0 0 0 / .55) 0 4px, transparent 4px 8px); }
+
+/* Appendix tables (electrical characteristics) */
+.markdown-body .xb-elec td:first-child { width: 24%; }
+.markdown-body .xb-elec td:nth-child(2), .markdown-body .xb-elec td:nth-child(3), .markdown-body .xb-elec td:nth-child(4) { white-space: nowrap; font-family: 'Courier New', Courier, monospace; }
+.markdown-body .xb-elec td:last-child { color: var(--xb-muted); font-size: .88rem; }
+
+.xb-hero :focus-visible, .xb-nav :focus-visible, .xb-tour-list :focus-visible { outline: 3px solid #8ac7ff; outline-offset: 2px; }
+
+@media (max-width: 1080px) {
+  .xb-hero { grid-template-columns: minmax(0, 1fr); padding: 1.2rem; gap: 1.2rem; }
+  .xb-hero h1 { font-size: 1.8rem !important; }
+  .xb-stats { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .xb-cards, .xb-jumpers { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 640px) {
+  .markdown-body .xb-spec, .markdown-body .xb-spec tbody, .markdown-body .xb-spec tr, .markdown-body .xb-spec td { display: block !important; width: auto !important; min-width: 0 !important; max-width: 100% !important; white-space: normal !important; }
+  .markdown-body .xb-spec td:first-child { padding-bottom: 0 !important; border-bottom: 0 !important; font-size: .82rem !important; text-transform: uppercase; letter-spacing: .06em; }
+  .markdown-body .xb-spec td + td { padding-top: .2rem !important; }
+  .xb-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .xb-cards, .xb-jumpers, .xb-tour-list { grid-template-columns: minmax(0, 1fr); }
+  .xb-step { padding: 3.6rem 1rem 1rem 1rem; }
+}
+@media (prefers-reduced-motion: reduce) { .xb-mk { transition: none; } }
+</style>

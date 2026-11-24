@@ -6,114 +6,225 @@ permalink: /extensions/papilio-adapter
 
 # Papilio adapter
 
-{% include extension-board-visuals.html slug="papilio-adapter" %}
+This passive adapter connects selected 3.3 V FPGA wing signals to seven Gadgeteer GPIO positions. It does not program the FPGA or provide an FPGA application. A typical use is a deliberately authored low-speed FPGA peripheral, provided its wing revision, I/O-bank supply and reset-time direction are verified.
 
-Adapt a named Papilio FPGA board and wing connector revision to one or more compatible Gadgeteer interfaces.
+## Revision and availability
 
-## Development status
+This guide selects **v17**, matching the revision selected by the retained abstract-diagram inventory. This is a design candidate; availability and operating ratings are unverified. The selected revision and contact map govern this guide; older specifications may describe another circuit.
 
-**Baseline documentation snapshot: 2026-10-11, before the requested connector/protection/usability revision program.** New revision features require their own reviewed source and qualification evidence.
+## Interfaces, power and operating limits
 
-This page documents an **unqualified engineering study**, not a released or tested product. Saved CAD, renders and automated checks do not establish a safe assembly, compatible cable, firmware support or a usable current rating.
+J1 contacts 3–9 are GAD_P3–P9, with 1 host 3.3 V, 2 host 5 V and 10 common ground. J2 is the bottom-mounted eight-signal wing row B0–B7; J3 wing power is 1 ground, 2 unconnected, 3 PAP_3V3, 4 PAP_5V. JP1/JP2 are explicitly open3.3 V/5 V rail links. Do not close them simply because voltages share a name: independent FPGA and host regulators can contend. The selected native board connects J1.3–J1.9 respectively through R1–R7 (each 470 Ω, 1%) to J2.1–J2.7, Wing B0–B6. The eighth Wing signal, J2.8/B7, reaches test point TP8 only and has no Gadgeteer signal channel. These passive resistors do not translate logic levels or establish direction; the host and FPGA configuration must avoid driving against each other. J2 and J3 mount underneath the board, so top-view contact labels must not be copied as a mating-face cable drawing.
 
-Board-specific qualification limits: Native checks zero and rear silkscreen collision corrected; independent final review, exact connector/cable fit, physical/ESD/thermal qualification remain unsigned.
+## Board reference
 
-## Interfaces and wiring
+<details markdown="1">
+<summary>Reading the connector callouts</summary>
 
-### Inputs
+The dark end of each pill gives the source contact number. The adjoining label gives its function. Colours help locate related functions; the label and connection instructions determine how to use the contact.
 
-- Papilio wing connector: model/revision TBD.
-- Gadgeteer socket types TBD from intended function.
+- Red: 3.3 V supply.
+- Orange: 5 V supply.
+- Near-black: Circuit ground.
+- Grey: Not routed in this board revision.
+- Dark grey: Other source-labelled contact — read its exact function.
 
-### Outputs
+A voltage in a signal name does not make that contact a power output. Circuit ground, cable shield and protective earth are different connections. An underside projection shows rear components through the front view; it is not a mirrored rear view.
 
-- Passive or translated interconnect only; no FPGA behavior belongs in this PCB.
+</details>
 
-### Connection contract
+Start with the overview, then use all focused sheets for exact contacts, controls and links. Source footprint defaults do not prove assembled continuity.
 
-The following is the repository-canonical 10-pin mapping for the selected/candidate socket arrangement. Pin 1 is +3.3 V, pin 2 is +5 V, and pin 10 is GND. Current V2 Prime documentation describes a different physical rail placement; do not create footprints, cables, or copper until the real target hardware is inspected and this discrepancy is closed.
+{% include _includes/extension-instruction-diagram.html id="papilio-adapter-v17-reader-compact-overview" src="/images/extensions/papilio-adapter/guides/reader-compact-overview-native-testpoints.svg" title="Papilio passive wing adapter — overview" alt="Papilio passive wing adapter — overview for papilio-adapter v17" caption="Reference for the documented revision. Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
 
-|  Pin | Function                          |
-| ---: | --------------------------------- |
-|    1 | +3.3 V canonical; destination TBD |
-|    2 | +5 V canonical; destination TBD   |
-|    3 | TBD signal 1                      |
-|    4 | TBD signal 2                      |
-|    5 | TBD signal 3                      |
-|    6 | TBD signal 4                      |
-|    7 | TBD signal 5                      |
-|    8 | TBD signal 6                      |
-|    9 | TBD signal 7                      |
-|   10 | GND; destination TBD              |
+{% include _includes/extension-instruction-diagram.html id="papilio-adapter-v17-reader-compact-host-1-5" src="/images/extensions/papilio-adapter/guides/reader-compact-host-1-5-central-pills-native-testpoints.svg" title="J1 · Host Y connector — host 1 5" alt="J1 · Host Y connector — host 1 5 for papilio-adapter v17" caption="Reference for the documented revision. Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
 
-Power off before connecting or changing jumpers. Verify pin 1, signal direction, supply voltage and ground at both ends of every cable. A mechanically fitting connector is not proof of electrical compatibility. If a host pin mapping or current allocation remains unresolved in the design record, do not connect the board until it is resolved.
+{% include _includes/extension-instruction-diagram.html id="papilio-adapter-v17-reader-compact-host-6-10" src="/images/extensions/papilio-adapter/guides/reader-compact-host-6-10-central-pills-native-testpoints.svg" title="J1 · Host Y connector — host 6 10" alt="J1 · Host Y connector — host 6 10 for papilio-adapter v17" caption="Reference for the documented revision. Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
 
-## Electrical design requirements
+{% include _includes/extension-instruction-diagram.html id="papilio-adapter-v17-reader-compact-wing-1-5" src="/images/extensions/papilio-adapter/guides/reader-compact-wing-1-5-central-pills-native-testpoints.svg" title="J2 · Wing I/O underside — wing 1 5" alt="J2 · Wing I/O underside — wing 1 5 for papilio-adapter v17" caption="Reference for the documented revision. Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
 
-The following are specification requirements or study assumptions; they are **not measured operating ratings**. A newer selected-revision note takes precedence over historical draft options.
+{% include _includes/extension-instruction-diagram.html id="papilio-adapter-v17-reader-compact-wing-6-8" src="/images/extensions/papilio-adapter/guides/reader-compact-wing-6-8-central-pills-native-testpoints.svg" title="J2 · Wing I/O underside — wing 6 8" alt="J2 · Wing I/O underside — wing 6 8 for papilio-adapter v17" caption="Reference for the documented revision. Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
 
-- Papilio model, I/O-bank voltage and wing pinout are absent.
-- Do not connect rails until both power architectures and backfeed behavior are known.
-- FPGA pin tolerance and configuration-time states must be verified.
+{% include _includes/extension-instruction-diagram.html id="papilio-adapter-v17-reader-compact-power-1-4" src="/images/extensions/papilio-adapter/guides/reader-compact-power-1-4-central-pills-native-testpoints.svg" title="J3 · Wing power underside — power 1 4" alt="J3 · Wing power underside — power 1 4 for papilio-adapter v17" caption="Reference for the documented revision. Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
 
-## Protection in the design record
+{% include _includes/extension-instruction-diagram.html id="papilio-adapter-v17-reader-compact-signals" src="/images/extensions/papilio-adapter/guides/reader-compact-signals-native-testpoints.svg" title="Seven series signal paths — signals" alt="Seven series signal paths — signals for papilio-adapter v17" caption="Reference for the documented revision. Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
 
-The design describes the following protection intent. Check the selected schematic and remaining qualification gates before relying on it:
+{% include _includes/extension-instruction-diagram.html id="papilio-adapter-v17-reader-compact-3v3-link" src="/images/extensions/papilio-adapter/guides/reader-compact-3v3-link-native-testpoints.svg" title="Optional3.3V power tie — 3v3 link" alt="Optional3.3V power tie — 3v3 link for papilio-adapter v17" caption="Reference for the documented revision. Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
 
-Default all power-link jumpers open; add Ioff-capable buffers if domains can power independently and ESD where connectors are externally accessible.
+{% include _includes/extension-instruction-diagram.html id="papilio-adapter-v17-reader-compact-5v-link" src="/images/extensions/papilio-adapter/guides/reader-compact-5v-link-native-testpoints.svg" title="Optional5V power tie — 5v link" alt="Optional5V power tie — 5v link for papilio-adapter v17" caption="Reference for the documented revision. Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
 
-## Selected component architecture
+{% include _includes/extension-instruction-diagram.html id="papilio-adapter-v17-reader-compact-orientation" src="/images/extensions/papilio-adapter/guides/reader-compact-orientation-underside-caption-native-testpoints.svg" title="Connector mounting side — orientation" alt="Connector mounting side — orientation for papilio-adapter v17" caption="Reference for the documented revision. Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
 
-See [current review](https://github.com/arthurwolf/extension-boards/blob/main/src/papilio-adapter/component-review.md). Retain passive interface and seven 470Ω 1% series resistors; no exact stock resistor match; no IC addition or active translator justified; v13 retained. Current selected v13; retained native/stock/physical qualification limits remain explicit.
+{% include _includes/extension-instruction-diagram.html id="papilio-adapter-v17-reader-compact-tests1" src="/images/extensions/papilio-adapter/guides/reader-compact-tests1-native-testpoints.svg" title="Signal and ground tests — tests1" alt="Signal and ground tests — tests1 for papilio-adapter v17" caption="Reference for the documented revision. Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
 
-## Configuration and commissioning
+{% include _includes/extension-instruction-diagram.html id="papilio-adapter-v17-reader-compact-tests6" src="/images/extensions/papilio-adapter/guides/reader-compact-tests6-native-testpoints.svg" title="Signal and ground tests — tests6" alt="Signal and ground tests — tests6 for papilio-adapter v17" caption="Reference for the documented revision. Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
 
-Use the configuration and firmware contract for the exact selected revision. Do not copy another module’s socket assignments or assume that an unused pin is available. First-article work must verify source selection, reset/unplug behavior, cable orientation and the actual load or sensor interface before normal operation.
+{% include _includes/extension-instruction-diagram.html id="papilio-adapter-v17-reader-compact-mounts" src="/images/extensions/papilio-adapter/guides/reader-compact-mounts-native-testpoints.svg" title="Mounting holes — mounts" alt="Mounting holes — mounts for papilio-adapter v17" caption="Reference for the documented revision. Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
 
-## Requested connector and usability upgrades
+**Reference status:** the selected-revision annotated sheets above have passed source review. Read the overview and all focused sheets together. Practical wiring and actual desktop/narrow viewer acceptance are separate checks; use the connection section for the current installation limits.
 
-The following are requirements for the next design iterations; this page does **not** claim they are already fitted:
+The following is the exact selected PCB’s intended pad-to-net schedule. Net labels identify circuit nodes; they are not wire colours or measured voltage/current ratings. Explicit unconnected contacts must remain unused. Duplicate physical pads with the same contact number represent alternative lands, not extra channels. Selector bridge/default population must be confirmed from the selected assembly record before alteration.
 
-- On electrically suitable three/four-pin low-voltage ports, provide compact alternative 2.54 mm header/Molex-style and keyed STEMMA-family footprints. Populate one connector option per shared position and document its pin order. Use STEMMA QT only for compatible four-wire I²C; connector appearance does not make another signal protocol I²C-compatible.
-- Render each supported connector population separately. Document clearances, cable access and the exact fitted option.
-- Use uppercase titles in a consistent Montserrat-style face, labels on both sides, visible domain boundaries, a revision-specific wiring guide and this page’s URL on the silk where readable.
-- Keep mounting-hole centers on a documented 10 mm lattice; add cable-tie holes where space and electrical clearances permit. Place status LEDs near accessible edges and give every indicator its own disable solder jumper. Provide labeled test pads and a ground observation point.
-- Review applicable DC power entries for reverse-polarity cutoff with a blinking warning, overvoltage cutoff/indication, controlled startup and electronic overcurrent protection. Indicator and protection circuits must work in the fault state without defeating isolation or safe output defaults. Thermal protection belongs only where the power/thermal analysis justifies it.
-- Electronic protection does not automatically replace a required mains/branch safety fuse. Backfeed blocking and inductive-load flyback clamps are separate design functions. Do not add identity EEPROMs, fault memory, calibration storage or paid self-test hardware under this upgrade program.
+<details markdown="1">
+<summary>Selected-source contact inventory</summary>
 
-## Design sources
+<div class="extension-contact-table" role="region" aria-label="Selected-source contact inventory; scroll horizontally to read all columns" tabindex="0" markdown="1">
 
-- [Board specification](https://github.com/arthurwolf/extension-boards/blob/main/src/papilio-adapter/specs.md)
-- [Architecture and component decisions](https://github.com/arthurwolf/extension-boards/blob/main/src/papilio-adapter/design.md)
-- [Selected-revision review and qualification record](https://github.com/arthurwolf/extension-boards/blob/main/src/papilio-adapter/component-review.md)
-- [All extension boards](/#extension-boards)
+| Member / reference | Label / control | Kind | Numbered contacts / assigned nodes |
+|---|---|---|---|
+| papilio-adapter / J1 | GADGETEER Y (to Smoothie) | Connector | 1: /HOST_3V3; 2: /HOST_5V; 3: /GAD_P3; 4: /GAD_P4; 5: /GAD_P5; 6: /GAD_P6; 7: /GAD_P7; 8: /GAD_P8; 9: /GAD_P9; 10: GND |
+| papilio-adapter / J2 | PAPILIO WING I/O 1x8 (male, bottom-mounted) | Connector | 1: /WING_B0; 2: /WING_B1; 3: /WING_B2; 4: /WING_B3; 5: /WING_B4; 6: /WING_B5; 7: /WING_B6; 8: /WING_B7 |
+| papilio-adapter / J3 | PAPILIO WING POWER 1x4 (male, bottom-mounted) | Connector | 1: GND; 2: unconnected-(J3-Pin_2-Pad2); 3: /PAP_3V3; 4: /PAP_5V |
+| papilio-adapter / TP1 | GAD_P3 (observe) | Observation only | 1: /GAD_P3 |
+| papilio-adapter / TP10 | GND | Observation only | 1: GND |
+| papilio-adapter / TP2 | GAD_P4 (observe) | Observation only | 1: /GAD_P4 |
+| papilio-adapter / TP3 | GAD_P5 (observe) | Observation only | 1: /GAD_P5 |
+| papilio-adapter / TP4 | GAD_P6 (observe) | Observation only | 1: /GAD_P6 |
+| papilio-adapter / TP5 | GAD_P7 (observe) | Observation only | 1: /GAD_P7 |
+| papilio-adapter / TP6 | GAD_P8 (observe) | Observation only | 1: /GAD_P8 |
+| papilio-adapter / TP7 | GAD_P9 (observe) | Observation only | 1: /GAD_P9 |
+| papilio-adapter / TP8 | WING_B7 spare (observe) | Observation only | 1: /WING_B7 |
+| papilio-adapter / TP9 | GND | Observation only | 1: GND |
+| papilio-adapter / JP1 | 3V3_LINK (open) | Service link/selector | 1: /HOST_3V3; 2: /PAP_3V3 |
+| papilio-adapter / JP2 | 5V_LINK (open) | Service link/selector | 1: /HOST_5V; 2: /PAP_5V |
 
-Documentation route: `smoothieware.org/extensions/papilio-adapter`.
+</div>
 
-<!-- additive-cad-status:start -->
-## Additive design studies
+</details>
 
-The 2026-10-11 upgrade program has saved additional candidates v14, v15, v16. These studies preserve the historical design described above. Their connector, LED, mechanical and protection changes are revision-specific and remain unqualified.
 
-See the [per-board changes, failures and remaining work](https://github.com/arthurwolf/extension-boards/blob/main/src/papilio-adapter/fancification.md) and [mandatory family specification](https://github.com/arthurwolf/extension-boards/blob/main/docs/FANCIFICATION-SPEC.md). Use the source hash and native check for the exact candidate being reviewed; do not infer hardware ratings from a rendered population.
-<!-- additive-cad-status:end -->
 
-<!-- extension-upgrade-readback:start -->
-## Upgrade candidate readback
+## Practical connection to Smoothieboard V2 Prime
 
-The three additional revisions are **v14, v15, v16**. They are engineering studies; saved CAD and renders do not release the hardware. The latest candidate is described below. Older baseline notes above remain historical.
+### Manual-status example: Omron B3FS-1000, with no FPGA attached
 
-### papilio-adapter
+This example uses the adapter's Wing B0 series path to read a locally held pushbutton. It is a useful passive-adapter application; it does not implement the board's intended FPGA protocol or bitstream. Use **Papilio adapter v17**, **V2 P12 Prime2590**, one **Omron B3FS-1000** normally-open tactile switch and an external **2.2 kΩ ±1% resistor rated at least 0.125 W**. Keep the switch and wiring local. This is not an endstop, emergency-stop, interlock, wire-break detector, long-cable interface or pulse counter.
 
-- [Latest PCB source](https://github.com/arthurwolf/extension-boards/blob/main/src/papilio-adapter/attempt/versions/v16/papilio-adapter.kicad_pcb), SHA-256 `9b375e4f67a3edce2bcc5896857b5b9ea7ed249485a6b473a2e496d6073d379a`.
-- Last native check: **0 errors**, including **0 open connections**. This is a CAD result, not electrical, assembly or firmware qualification.
-- No alternative connector population is recorded for this physical role. Any applicable connector conversion remains an explicit design-review item.
-- [normal population/render record](https://github.com/arthurwolf/extension-boards/blob/main/src/papilio-adapter/attempt/versions/v16/populations/papilio-adapter/normal/population.json): 6 images; source current; image hashes match; 0 unresolved models.
-- [Changes, failed trials and remaining work](https://github.com/arthurwolf/extension-boards/blob/main/src/papilio-adapter/attempt/versions/v16/papilio-adapter-fancification-revision.md).
+Leave **JP1 and JP2 OPEN**, including checking that the assembled board has no bridge. No FPGA, USB bridge, independent supply, 5 V lead or output load is attached. The pull-up is powered directly from Prime J37.1, not from an adapter power contact. Nothing else may drive PB1 or the button node.
 
-Applicable protection, current-path, thermal, pinout, cable access and physical tests remain open wherever the linked board record has not verified them. A zero native-error count does not close those gates.
-<!-- extension-upgrade-readback:end -->
+The overview below keeps both board abstracts intact and shows all seven external conductors. **N1 is one insulated three-way splice**, joining the resistor output, Wing signal and switch signal. The resistor and switch are electrical symbols, not physical housing drawings. Wire paths show electrical connectivity, but this is **not a finished physical cable-routing diagram**: several paths cross neighboring component envelopes. Prime J37 is a vertical, surface-mounted 2 × 5 header with 1.27 mm pitch; the drawing shows its PCB solder-pad projection, not the upright mating contacts. A source-backed connector-exit and cable-orientation drawing is still required before following this as an assembly guide. Use the enlarged contact keys for electrical contact identity; do not infer a cable face or a route across the board from these paths.
 
-## Second-round annotation readback v17 — 2026-10-13
+{% include _includes/extension-instruction-diagram.html id="papilio-v17-manual-status-wholeboard" src="/images/extensions/papilio-adapter/guides/manual-status-portrait-intact-boards.svg" title="Papilio v17: complete-board seven-lead wiring overview" alt="Intact Smoothieboard V2 Prime and Papilio adapter with seven wires, an external pull-up resistor and normally-open switch" caption="Electrical connectivity study; physical cable routing is incomplete. Native PCB-contact projection. N1 joins W4, W5 and W6. Connect with power removed; leave JP1 and JP2 open and attach no FPGA. Read the contact keys and supply limits before assembly." width=1200 %}
 
-Protected source v16; current PCB SHA-256 `9ede7353b510781fbfe36d3ba05d55ca7aaface6d9cdb2a0fa97cf4450a48c91`. Fresh checks: zero enabled PCB errors/opens/parity and ERC errors; 3 PCB warnings. Electrical geometry, project rules and 36 historical files unchanged. Verified 10 model entries, 17 exports and 6 current population views, all inspected. Full documentation URL readable. Five inherited ignored PCB categories remain explicit; assembly and provisional rail limits unqualified Inherited native warnings and enabled-rule exclusions remain explicit Physical/thermal/current/connector-fit qualification open No priced or area savings established by annotation candidate.
+The retained enlarged circuit below uses actual source-art connector details, linked by **A/B/C** locators to whole-board thumbnails. Read it with all six contact keys. Prime artwork is the retained **P11** abstract; the selected J37 placement and contact functions have been checked against **P12 Prime2590**. This does not claim whole-board P11/P12 equivalence. Papilio's retained v17 native board and abstract govern the drawing; its paired netlist title still says v13.
+
+{% include _includes/extension-instruction-diagram.html id="papilio-v17-manual-status-source-detail-1" src="/images/extensions/papilio-adapter/guides/manual-status-compact-fit-papilio-compact-source-installation-native-testpoints.svg" title="Papilio v17: seven-lead manual-status circuit" alt="Papilio v17: seven-lead manual-status circuit for the no-FPGA manual-status application" caption="Seven continuous external wires; native R1 and board ground complete the internal paths. A/B/C match whole-board locators. No FPGA or 5 V. Read all contact keys and the operating limits before assembly." width=900 %}
+
+{% include _includes/extension-instruction-diagram.html id="papilio-v17-manual-status-source-detail-2" src="/images/extensions/papilio-adapter/guides/manual-status-source-detail-contact-key-j37.svg" title="Prime J37: selected input/pull-up/return contacts" alt="Prime J37: selected input/pull-up/return contacts for the no-FPGA manual-status application" caption="Required companion to the seven-lead circuit. Follow source contact numbers and the stated projection; this is not a qualified cable mating-face drawing." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="papilio-v17-manual-status-source-detail-3" src="/images/extensions/papilio-adapter/guides/manual-status-source-detail-contact-key-j1.svg" title="Papilio J1: signal and return input" alt="Papilio J1: signal and return input for the no-FPGA manual-status application" caption="Required companion to the seven-lead circuit. Follow source contact numbers and the stated projection; this is not a qualified cable mating-face drawing." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="papilio-v17-manual-status-source-detail-4" src="/images/extensions/papilio-adapter/guides/manual-status-source-detail-contact-key-j2.svg" title="Papilio J2: Wing B0 status input" alt="Papilio J2: Wing B0 status input for the no-FPGA manual-status application" caption="Required companion to the seven-lead circuit. Follow source contact numbers and the stated projection; this is not a qualified cable mating-face drawing." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="papilio-v17-manual-status-source-detail-5" src="/images/extensions/papilio-adapter/guides/manual-status-source-detail-contact-key-j3.svg" title="Papilio J3: switch ground return" alt="Papilio J3: switch ground return for the no-FPGA manual-status application" caption="Required companion to the seven-lead circuit. Follow source contact numbers and the stated projection; this is not a qualified cable mating-face drawing." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="papilio-v17-manual-status-source-detail-6" src="/images/extensions/papilio-adapter/guides/manual-status-source-detail-contact-key-omron.svg" title="Omron B3FS-1000: top and matching installation terminal views" alt="Omron B3FS-1000: top and matching installation terminal views for the no-FPGA manual-status application" caption="Manufacturer top view and the matching bottom-terminal view rotated 90 degrees clockwise used in the retained enlarged circuit are shown side by side. Use terminals 1 and 3; terminals 2 and 4 have no external leads. Terminal numbers are not marked on the physical switch." width=420 %}
+
+{% include _includes/extension-instruction-diagram.html id="papilio-v17-manual-status-source-detail-7" src="/images/extensions/papilio-adapter/guides/manual-status-source-detail-contact-key-jp1-jp2-native-testpoints.svg" title="Papilio JP1/JP2: retained open-jumper source copper" alt="Papilio JP1/JP2: retained open-jumper source copper for the no-FPGA manual-status application" caption="Retained source top-copper detail with JP1/JP2 left open. The canonical artwork is unchanged; copper visibility is enabled only in this labelled derivative. Confirm actual assembled continuity with all power removed." width=420 %}
+
+### Assemble exactly seven individual leads
+
+Remove all supplies before assembly. Do not fit a complete 10-wire Gadgeteer cable. Identify numbered contacts from the keys and check continuity; J37 is unshrouded. Papilio J2/J3 are bottom-mounted: detail C reveals their retained bottom-component glyphs in an **unmirrored top-coordinate projection**, not a bottom mating view. The switch key explicitly pairs its top view with the retained enlarged circuit's bottom-terminal projection. Identify its continuity groups with power removed; do not infer terminal identity from appearance.
+
+Follow **W1–W7** in the complete-board overview. Each item below describes one continuous external lead; the native 470 Ω resistor and ground tracks are already on the adapter.
+
+1. **W1 — status input:** connect **Prime J37.3 (PB1)** to **Papilio J1.3 (GAD_P3)**. The adapter’s native R1, 470 Ω ±1%, continues this signal to J2.1.
+2. **W2 — common ground:** connect **Prime J37.10 (GND)** to **Papilio J1.10 (GND)**. The adapter’s ground track also connects to J3.1.
+3. **W3 — pull-up supply:** connect **Prime J37.1 (limited 3.3 V)** to **external resistor terminal 1**. This is the sole pull-up source; it does not feed an adapter power contact.
+4. **W4 — resistor output:** connect **external resistor terminal 2** to the **insulated three-way splice N1**.
+5. **W5 — Wing-side signal:** connect **N1** to **Papilio J2.1 (Wing B0)**. This connects the button node to the Wing side of native R1.
+6. **W6 — switch signal:** connect **N1** to **Omron terminal 1**.
+7. **W7 — switch return:** connect **Omron terminal 3** to **Papilio J3.1 (GND)**.
+
+N1 is a constructed insulated wire splice, not an adapter contact. Insulate resistor joints. Omron terminals 1/2 are common and 3/4 are common; pressing joins the groups. Use 1 and 3 across the groups.
+
+Leave unused: Prime J37.2 and .4–9; Papilio J1.1/.2/.4–9, J2.2–8, J3.2–4 and all test pads; Omron terminals 2/4. In particular, do not energize the adapter's host/wing power rails or close either supply jumper.
+
+<details markdown="1">
+<summary>Trace one lead at a time: W1–W7</summary>
+
+Each view keeps the complete circuit and emphasizes one continuous lead. **OFF means remove all supplies before wiring.** R pin 1/2 are the two ends of the external 2.2 kΩ resistor; switch 1/3 are the Omron terminals identified in its contact key. Read the exact endpoints with the numbered instructions and enlarged contact keys. The thin paths need zoom to inspect; these views do not qualify cable clearance above components or physical mating orientation.
+
+{% include _includes/extension-instruction-diagram.html id="papilio-v17-trace-w1" src="/images/extensions/papilio-adapter/guides/manual-status-portrait-trace-w1.svg" title="W1: status input · PB1" alt="Complete Prime and Papilio circuit with lead W1 emphasized and its exact source-backed endpoints in the heading" caption="W1 of seven external leads. Other leads remain visible in pale context. Power off; leave JP1/JP2 open and attach no FPGA. Use the contact keys to identify physical terminals." width=1200 %}
+
+{% include _includes/extension-instruction-diagram.html id="papilio-v17-trace-w2" src="/images/extensions/papilio-adapter/guides/manual-status-portrait-trace-w2.svg" title="W2: common ground" alt="Complete Prime and Papilio circuit with lead W2 emphasized and its exact source-backed endpoints in the heading" caption="W2 of seven external leads. Other leads remain visible in pale context. Power off; leave JP1/JP2 open and attach no FPGA. Use the contact keys to identify physical terminals." width=1200 %}
+
+{% include _includes/extension-instruction-diagram.html id="papilio-v17-trace-w3" src="/images/extensions/papilio-adapter/guides/manual-status-portrait-trace-w3.svg" title="W3: pull-up supply" alt="Complete Prime and Papilio circuit with lead W3 emphasized and its exact source-backed endpoints in the heading" caption="W3 of seven external leads. Other leads remain visible in pale context. Power off; leave JP1/JP2 open and attach no FPGA. Use the contact keys to identify physical terminals." width=1200 %}
+
+{% include _includes/extension-instruction-diagram.html id="papilio-v17-trace-w4" src="/images/extensions/papilio-adapter/guides/manual-status-portrait-trace-w4.svg" title="W4: resistor output" alt="Complete Prime and Papilio circuit with lead W4 emphasized and its exact source-backed endpoints in the heading" caption="W4 of seven external leads. Other leads remain visible in pale context. Power off; leave JP1/JP2 open and attach no FPGA. Use the contact keys to identify physical terminals." width=1200 %}
+
+{% include _includes/extension-instruction-diagram.html id="papilio-v17-trace-w5" src="/images/extensions/papilio-adapter/guides/manual-status-portrait-trace-w5.svg" title="W5: Wing B0 signal" alt="Complete Prime and Papilio circuit with lead W5 emphasized and its exact source-backed endpoints in the heading" caption="W5 of seven external leads. Other leads remain visible in pale context. Power off; leave JP1/JP2 open and attach no FPGA. Use the contact keys to identify physical terminals." width=1200 %}
+
+{% include _includes/extension-instruction-diagram.html id="papilio-v17-trace-w6" src="/images/extensions/papilio-adapter/guides/manual-status-portrait-trace-w6.svg" title="W6: switch signal" alt="Complete Prime and Papilio circuit with lead W6 emphasized and its exact source-backed endpoints in the heading" caption="W6 of seven external leads. Other leads remain visible in pale context. Power off; leave JP1/JP2 open and attach no FPGA. Use the contact keys to identify physical terminals." width=1200 %}
+
+{% include _includes/extension-instruction-diagram.html id="papilio-v17-trace-w7" src="/images/extensions/papilio-adapter/guides/manual-status-portrait-trace-w7.svg" title="W7: switch return" alt="Complete Prime and Papilio circuit with lead W7 emphasized and its exact source-backed endpoints in the heading" caption="W7 of seven external leads. Other leads remain visible in pale context. Power off; leave JP1/JP2 open and attach no FPGA. Use the contact keys to identify physical terminals." width=1200 %}
+
+</details>
+
+### Operating envelope
+
+Use Prime's normal supported power input. For this conditional example, limited 3.3 V must stay within **3.1–3.5 V**, MCU I/O VDD within **3.0–3.6 V**, and the limited rail must never exceed MCU VDD. Reserve **1.62 mA** from the shared limited rail in addition to its other consumers. These are installation conditions, not measured hardware qualifications.
+
+With the resistor at its tolerance corners, branch current is at most 1.607 mA and resistor dissipation 5.63 mW. Conservatively allocating ST's whole-product leakage term of 10 µA plus this pad's 250 nA to the single input gives released PB1 at least **3.072 V**, above the worst-case **2.52 V** CMOS HIGH threshold, and pressed PB1 at most **0.0051 V**, below the **0.9 V** LOW threshold. The calculation includes the native 470 Ω ±1% series resistor and Omron's initial 100 mΩ maximum contact resistance.
+
+Closed-contact current is at least **1.384 mA**, within Omron's stated 1–50 mA at 3–24 VDC resistive rating. Its separate minimum-applicable-load figure of 10 µA at 1 VDC is a reference value, not the basis of this circuit. Initial contact resistance is not a lifetime guarantee; cable noise, contact ageing and industrial immunity are not qualified. A broken wire and a released switch both read HIGH.
+
+## Smoothieware behaviour and commissioning
+
+For this passive input, use the built-in **Switch** module from [SmoothieV2 commit 2a21c010](https://github.com/Smoothieware/SmoothieV2/tree/2a21c0108b1d095ecd8b2b9358e94055f053c003). No Papilio-specific driver or bitstream is required for this manual-status application. Reserve **PB1 exclusively** in the complete machine configuration; it must not also be an output, ADC or another module's input.
+
+Merge these input-only entries into the existing `[switch]` section of the normal Prime configuration; do not create a duplicate section or reuse an instance name:
+
+```ini
+[switch]
+papilio_status.enable = true
+papilio_status.input_pin = PB1-
+papilio_status.input_pin_behavior = momentary
+```
+
+The `-` suffix disables the HAL's default internal pull-up; the external 2.2 kΩ resistor supplies the defined contact load. No output pin or output command is configured. The Switch module polls at 50 Hz; this does not guarantee switch debouncing.
+
+With power removed, check all seven leads, insulation, contact identities, the two open jumpers and every unused-contact restriction above. Keep all machine loads disabled for commissioning. With the input-only configuration installed, power Prime normally. There is no independently powered peripheral in this example.
+
+From an already-working Prime command console, use the **no-argument state query**:
+
+```text
+switch papilio_status
+```
+
+Released, the expected reply is `switch papilio_status is 1`. Hold the button for at least **0.1 s** and issue the same query: expect `switch papilio_status is 0`. Release, wait at least **0.1 s** and query again: expect 1. The wait allows for polling and contact bounce; it is not a certified debounce interval. Do not add `on`, `off` or a numeric argument, which requests a state change. No M119, motion or actuator command is needed. If the transition is absent, remove power and investigate continuity and configuration; do not try arbitrary Wing voltages.
+
+### Intended FPGA use
+
+The adapter's intended FPGA application is separate. It requires an exact Papilio/wing revision, I/O-bank supply and reset-time direction, matching bitstream/protocol and a corresponding Smoothieware application. Those are not supplied or verified here. If required firmware support is absent, email **wolf.arthur@gamil.com**. The manual-status example does not establish FPGA integration.
+
+## What remains unresolved
+
+The manual-status circuit, configuration and connected source-detail diagrams are source-backed candidates. Actual assembled continuity, numbered physical mating, rail conditions/shared budget and measured target behaviour remain unverified, as do actual normal-desktop and narrow page/viewer readability. The source-art crops and labelled layer-visibility derivatives preserve contact positions; their illustrative cable paths do not prescribe routing across PCB copper. Intended FPGA operation and its power/protocol/bitstream contract remain open. Source and raster checks do not close these physical, viewer or FPGA requirements.
+
+## Sources and revision notes
+
+- [Selected v17 papilio-adapter PCB](https://github.com/arthurwolf/extension-boards/blob/main/src/papilio-adapter/attempt/versions/v17/papilio-adapter.kicad_pcb)
+- [Specification and retained limitations](https://github.com/arthurwolf/extension-boards/blob/main/src/papilio-adapter/specs.md)
+- [Architecture and source decisions](https://github.com/arthurwolf/extension-boards/blob/main/src/papilio-adapter/design.md)
+- [Component review](https://github.com/arthurwolf/extension-boards/blob/main/src/papilio-adapter/component-review.md)
+- [V2 configuration example](https://github.com/Smoothieware/SmoothieV2/blob/2a21c0108b1d095ecd8b2b9358e94055f053c003/ConfigSamples/config-3d.ini)
+- [Omron B3FS datasheet, Cat. A113-E1-06 (2019), ratings and terminal views on printed pages 2–3](https://omronfs.omron.com/en_US/ecb/products/pdf/en-b3fs.pdf)
+- [ST STM32H745 datasheet DS12923, Table 59: input thresholds and leakage, including whole-product footnote](https://www.st.com/resource/en/datasheet/stm32h745bi.pdf)
+- [Pinned Switch input behaviour and polling](https://github.com/Smoothieware/SmoothieV2/blob/2a21c0108b1d095ecd8b2b9358e94055f053c003/Firmware/src/modules/tools/switch/Switch.cpp#L78-L115)
+- [Pinned HAL input-pull suffix handling](https://github.com/Smoothieware/SmoothieV2/blob/2a21c0108b1d095ecd8b2b9358e94055f053c003/Firmware/Hal/src/Pin.cpp#L234-L263)
+- [Pinned no-value switch state query](https://github.com/Smoothieware/SmoothieV2/blob/2a21c0108b1d095ecd8b2b9358e94055f053c003/Firmware/src/CommandShell.cpp#L579-L621)
+- [All extension boards](/extension-boards)
+
+The selected-revision engineering repository was unavailable to anonymous readers when checked. Its source links are retained for provenance; an accessible matching source release has not been verified. Firmware and historical-board links are separate sources.
+
+<details markdown="1">
+<summary>Supplementary views and development history</summary>
+
+[Retained wide complete-board overview](/images/extensions/papilio-adapter/guides/manual-status-intact-boards.svg). The portrait overview above replaces its layout; the same seven electrical duties apply.
+
+{% include _includes/extension-board-visuals.html slug="papilio-adapter" %}
+
+Older source amendments, component substitution trials and future connector upgrade requests are development history. They do not change the revision selected by this guide.
+
+</details>

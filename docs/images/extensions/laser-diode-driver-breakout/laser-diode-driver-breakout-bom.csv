@@ -1,0 +1,117 @@
+Reference,Value,Footprint,DNP
+C5,100nF X7R 50V 0603,Custom:Group3_C5,False
+C6,100nF X7R 50V 0603,Custom:Group3_C6,False
+C7,100nF X7R 50V 0603,Custom:Group3_C7,False
+C8,100nF X7R 50V 0603,Custom:Group3_C8,False
+C80,22nF 25V X7R,Protection:C80_C_0603_1608Metric,False
+C81,100nF 100V X7R,Protection:C81_C_0805_2012Metric,False
+C82,1uF 100V X7R,Protection:C82_C_1210_3225Metric,False
+C83,100nF 25V X7R,Protection:C83_C_0603_1608Metric,False
+C84,100nF 25V X7R,Protection:C84_C_0603_1608Metric,False
+C85,10nF 25V X7R,Protection:C85_C_0603_1608Metric,False
+C86,10uF 16V X7R,Protection:C86_C_0805_2012Metric,False
+C9,100nF X7R 50V 0603,Custom:Group3_C9,False
+CBOOST,220nF,Custom:Group3_CBOOST,False
+CIN1,2.2uF 50V,Custom:Group3_CIN1,False
+CIN2,22uF 50V hybrid,Custom:Group3_CIN2,False
+CLOOP,10nF,Custom:Group3_CLOOP,False
+CNTCF,100nF,Custom:Group3_CNTCF,False
+COUT,2.2uF 25V,Custom:Group3_COUT,False
+CT1,CABLE TIE,Fancification_Mechanical:CableTie_NPTH_2_5mm,False
+CT2,CABLE TIE,Fancification_Mechanical:CableTie_NPTH_2_5mm,False
+CU2B,100nF X7R 50V 0603,Custom:Group3_CU2B,False
+CU2IN,1uF 50V,Custom:Group3_CU2IN,False
+CU2OUT,1uF 10V,Custom:Group3_CU2OUT,False
+CVC1,3.3nF,Custom:Group3_CVC1,False
+CVC2,100nF,Custom:Group3_CVC2,False
+D1,B240A,Custom:Group3_D1,False
+D2,B340A,Custom:Group3_D2,False
+D3,PESD3V3U1UL,Custom:Group3_D3,False
+D4,PESD3V3U1UL,Custom:Group3_D4,False
+D80,RED EFUSE_FAULT,Protection:D80_LED_0603_1608Metric,False
+D81,BAT54HGW-Q FAULT LED REVERSE CLAMP,Protection:D81_D_SOD-323,False
+D82,BAS21J 300V POSITIVE AUX,Protection:D82_D_SOD-323F,False
+D83,BZT52C4V7 4.7V AUX CLAMP,Protection:D83_D_SOD-123,False
+D84,BAT54HGW-Q NEGATIVE SENSE CLAMP,Protection:D84_D_SOD-323,False
+D85,AMBER OVERVOLTAGE,Protection:D85_LED_0603_1608Metric,False
+D86,BAS21J 300V REVERSE AUX,Protection:D86_D_SOD-323F,False
+D87,BZT52C4V3 4.3V REVERSE CLAMP,Protection:D87_D_SOD-123,False
+D88,RED REVERSE_BLINK,Protection:D88_LED_0603_1608Metric,False
+D89,BAT54HGW-Q REVERSE AUX NEGATIVE CLAMP,Protection:D89_D_SOD-323,False
+D90,BAT54HGW-Q OV AUX NEGATIVE CLAMP,Protection:D90_D_SOD-323,False
+H1,MountingHole_3.2mm_M3,MountingHole:MountingHole_3.2mm_M3,False
+H2,MountingHole_3.2mm_M3,MountingHole:MountingHole_3.2mm_M3,False
+H3,MountingHole_3.2mm_M3,MountingHole:MountingHole_3.2mm_M3,False
+H4,MountingHole_3.2mm_M3,MountingHole:MountingHole_3.2mm_M3,False
+J1,GADGETEER_Y_IN,Custom:Samtec_SHF105_SMD,False
+J2,GADGETEER_Y_CHAIN,Custom:Samtec_SHF105_SMD,False
+J3,9-15VDC_IN,Custom:Group3_J3,False
+J4,LASER_HEAD_DUMMY_ONLY,Custom:Group3_J4,False
+JP80,CUT TO DISABLE EFUSE_FAULT,Protection:JP80_SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm,False
+JP81,CUT TO DISABLE OVERVOLTAGE,Protection:JP81_SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm,False
+JP82,CUT TO DISABLE REVERSE_BLINK,Protection:JP82_SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm,False
+L1,10uH,Custom:Group3_L1,False
+LK1,0R,Custom:Group3_LK1,False
+LK10,0R,Custom:Group3_LK10,False
+LK2,0R,Custom:Group3_LK2,False
+LK3,0R,Custom:Group3_LK3,True
+LK4,0R,Custom:Group3_LK4,False
+LK5,0R,Custom:Group3_LK5,False
+LK6,0R,Custom:Group3_LK6,True
+LK7,0R,Custom:Group3_LK7,True
+LK8,0R,Custom:Group3_LK8,False
+LK9,0R,Custom:Group3_LK9,False
+Q1,AO3400A,Custom:Group3_Q1,False
+Q2,2N7002,Custom:Group3_Q2,False
+Q3,2N7002,Custom:Group3_Q3,False
+R80,8.06k 1%,Protection:R80_R_0603_1608Metric,False
+R81,137k 0.1%,Protection:R81_R_0603_1608Metric,False
+R82,10k 0.1%,Protection:R82_R_0603_1608Metric,False
+R83,10k 1%,Protection:R83_R_0805_2012Metric,False
+R84,2.2k 0.5W,Protection:R84_R_1206_3216Metric,False
+R85,402k 0.1%,Protection:R85_R_0603_1608Metric,False
+R86,10k 0.1%,Protection:R86_R_0603_1608Metric,False
+R87,4.7k 1%,Protection:R87_R_0603_1608Metric,False
+R88,2.2k 0.5W,Protection:R88_R_1206_3216Metric,False
+R89,47k 1%,Protection:R89_R_0603_1608Metric,False
+R90,47k 1%,Protection:R90_R_0603_1608Metric,False
+R91,4.7k 1%,Protection:R91_R_0603_1608Metric,False
+RBLEED,100k,Custom:Group3_RBLEED,False
+RCOLD1,10.0k,Custom:Group3_RCOLD1,False
+RCOLD2,40.2k,Custom:Group3_RCOLD2,False
+RHOT1,28.0k,Custom:Group3_RHOT1,False
+RHOT2,10.0k,Custom:Group3_RHOT2,False
+RLOOPD,1.00k,Custom:Group3_RLOOPD,False
+RLOOPPD,100k,Custom:Group3_RLOOPPD,False
+RLOOPR,1.00k,Custom:Group3_RLOOPR,False
+RNTCF,1.00k,Custom:Group3_RNTCF,False
+RNTCPU,10.0k 0.1%,Custom:Group3_RNTCPU,False
+RPERMITPU,10k,Custom:Group3_RPERMITPU,False
+RPWM1,100R,Custom:Group3_RPWM1,False
+RPWMDRV,1.00k,Custom:Group3_RPWMDRV,False
+RPWMPD,10k,Custom:Group3_RPWMPD,False
+RQ1G,100R,Custom:Group3_RQ1G,False
+RQ1PD,10k,Custom:Group3_RQ1PD,False
+RQ2G,100R,Custom:Group3_RQ2G,False
+RQ2PD,10k,Custom:Group3_RQ2PD,False
+RQ3G,100R,Custom:Group3_RQ3G,False
+RQ3PD,10k,Custom:Group3_RQ3PD,False
+RRT,20k,Custom:Group3_RRT,False
+RSHDN1,10k,Custom:Group3_RSHDN1,False
+RSHDN2,10k,Custom:Group3_RSHDN2,False
+RU2LOAD,3.00k,Custom:Group3_RU2LOAD,False
+RVADJ1,1.78k,Custom:Group3_RVADJ1,False
+RVADJ2,10k,Custom:Group3_RVADJ2,False
+RVC,10k,Custom:Group3_RVC,False
+U1,LT3474IFE,Custom:LT3474_FE16_EP,False
+U2,TLV76033,Custom:Group3_U2,False
+U3,TLV810EA29,Custom:Group3_U3,False
+U4,TLV7012,Custom:TI_DGK0008A_VSSOP8,False
+U5,SN74LVC1G97,Custom:Group3_U5,False
+U6,SN74LVC1G97,Custom:Group3_U6,False
+U7,SN74LVC1G97,Custom:Group3_U7,False
+U8,SN74LVC1G97,Custom:Group3_U8,False
+U80,TPS26600PWPR AUTO-RETRY EFUSE,Protection:U80_HTSSOP-16-1EP_4.4x5mm_P0.65mm_EP3.4x5mm,False
+U81,TPS3700DDCR OV STATUS,Protection:U81_SOT-23-6,False
+U82,LMC555CM/NOPB REVERSE BLINK,Protection:U82_SOIC-8_3.9x4.9mm_P1.27mm,False
+U9,SN74LVC1G97,Custom:Group3_U9,False

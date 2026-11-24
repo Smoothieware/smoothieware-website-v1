@@ -1,0 +1,39 @@
+Reference,Value,Footprint,DNP
+C1,2.2uF 16V X7R,Capacitor_SMD:C_0805_2012Metric,False
+C2,2.2uF 16V X7R,Capacitor_SMD:C_0805_2012Metric,False
+C3,1uF 16V X7R,Capacitor_SMD:C_0603_1608Metric,False
+C4,100nF 16V X7R,Capacitor_SMD:C_0603_1608Metric,False
+CT1,CABLE TIE,FancifyMechanics:CableTie_NPTH_2.5mm,False
+CT2,CABLE TIE,FancifyMechanics:CableTie_NPTH_2.5mm,False
+D1,SMDJ33CA,Diode_SMD:D_SMC,False
+F1,Keystone 3568 + ATM 30 A 32 V,Fuse:Fuseholder_Blade_Mini_Keystone_3568,False
+FID1,Fiducial_0.5mm_Mask1mm,Fiducial_0.5mm_Mask1mm,False
+FID2,Fiducial_0.5mm_Mask1mm,Fiducial_0.5mm_Mask1mm,False
+FID3,Fiducial_0.5mm_Mask1mm,Fiducial_0.5mm_Mask1mm,False
+FID4,Fiducial_0.5mm_Mask1mm,Fiducial_0.5mm_Mask1mm,False
+FID5,Fiducial_0.5mm_Mask1mm,Fiducial_0.5mm_Mask1mm,False
+FID6,Fiducial_0.5mm_Mask1mm,Fiducial_0.5mm_Mask1mm,False
+H1,MountingHole_3.2mm_M3,MountingHole:MountingHole_3.2mm_M3,False
+H2,MountingHole_3.2mm_M3,MountingHole:MountingHole_3.2mm_M3,False
+H3,MountingHole_3.2mm_M3,MountingHole:MountingHole_3.2mm_M3,False
+H4,MountingHole_3.2mm_M3,MountingHole:MountingHole_3.2mm_M3,False
+J1,SHF-105-01-L-D-TH-LC,DC_SSR:Samtec_SHF105_TH_LC,False
+J2,DT-55-B01X-02,TerminalBlock_Dinkle:TerminalBlock_Dinkle_DT-55-B01X-02_P10.00mm,False
+JP1,CUT LED1,Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm,False
+LED1,green CMD,LED_SMD:LED_0603_1608Metric,False
+Q1,CSD18536KTT,Package_TO_SOT_SMD:TO-263-2,False
+Q2,CSD18536KTT,Package_TO_SOT_SMD:TO-263-2,False
+R1,100R,Resistor_SMD:R_0603_1608Metric,False
+R2,10k,Resistor_SMD:R_0603_1608Metric,False
+R3,9.09k 1%,Resistor_SMD:R_0603_1608Metric,False
+R4,10R,Resistor_SMD:R_0805_2012Metric,False
+R5,10R,Resistor_SMD:R_0805_2012Metric,False
+R6,100k,Resistor_SMD:R_0603_1608Metric,False
+R7,100k,Resistor_SMD:R_0603_1608Metric,False
+R8,2.2k,Resistor_SMD:R_0603_1608Metric,False
+TP1,TP_3V3,TestPoint:TestPoint_Pad_D2.0mm,False
+TP2,TP_GND_H,TestPoint:TestPoint_Pad_D2.0mm,False
+TP3,TP_EN,TestPoint:TestPoint_Pad_D2.0mm,False
+TP4,TP_VDRV,TestPoint:TestPoint_Pad_D2.0mm,False
+TP5,TP_COM,TestPoint:TestPoint_Pad_D2.0mm,False
+U1,TPSI3050DWZR,DC_SSR:SOIC-8W_TPSI3050_DWZ0008A,False

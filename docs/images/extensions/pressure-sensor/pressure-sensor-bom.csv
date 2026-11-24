@@ -1,0 +1,23 @@
+Reference,Value,Footprint,DNP
+C1,1uF 16V X7R,Capacitor_SMD:C_0603_1608Metric,False
+C2,100nF 50V X7R,Capacitor_SMD:C_0603_1608Metric,False
+C3,470pF 50V C0G,Capacitor_SMD:C_0603_1608Metric,False
+C4,33nF 50V X7R,Capacitor_SMD:C_0603_1608Metric,False
+H1,MountingHole_3.2mm_M3,MountingHole:MountingHole_3.2mm_M3,False
+H2,MountingHole_3.2mm_M3,MountingHole:MountingHole_3.2mm_M3,False
+J1,GADGETEER A IN,Smoothie_Pressure:Samtec_SHF105_TH_LC,False
+J2,GADGETEER A CHAIN,Smoothie_Pressure:Samtec_SHF105_TH_LC,False
+JP4,AIN1>CH0,Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm,False
+JP5,AIN2>CH1,Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm,False
+JP6,GPIO6,Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm,False
+R1,40.2k 0.1%,Resistor_SMD:R_0603_1608Metric,False
+R2,60.4k 0.1%,Resistor_SMD:R_0603_1608Metric,False
+S1,TieSlot_3.2x1.4mm_NPTH,Smoothie_Pressure:TieSlot_3.2x1.4mm_NPTH,False
+S2,TieSlot_3.2x1.4mm_NPTH,Smoothie_Pressure:TieSlot_3.2x1.4mm_NPTH,False
+TP1,TP +5V,TestPoint:TestPoint_Pad_D1.5mm,False
+TP2,TP +3V3,TestPoint:TestPoint_Pad_D1.5mm,False
+TP3,TP VSENS,TestPoint:TestPoint_Pad_D1.5mm,False
+TP4,TP AIN,TestPoint:TestPoint_Pad_D1.5mm,False
+TP5,TP GND,TestPoint:TestPoint_Pad_D1.5mm,False
+TP6,TP GND,TestPoint:TestPoint_Pad_D1.5mm,False
+U1,MPXV6115VC6U,Smoothie_Pressure:NXP_MPXV_SOP8_Case482A,False

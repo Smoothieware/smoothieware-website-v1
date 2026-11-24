@@ -1,0 +1,42 @@
+Reference,Value,Footprint,DNP
+C1,10nF 50V C0G,Capacitor_SMD:C_0603_1608Metric,False
+C2,2.2uF,Capacitor_SMD:C_0805_2012Metric,False
+C3,100nF,Capacitor_SMD:C_0603_1608Metric,False
+C4,100nF,Capacitor_SMD:C_0603_1608Metric,False
+C5,100nF,Capacitor_SMD:C_0603_1608Metric,False
+C80,100nF 25V X7R,Protection:C_0603_1608Metric,False
+C81,22nF 25V X7R,Protection:C_0603_1608Metric,False
+C82,1uF 25V X7R,Protection:C_0603_1608Metric,False
+C83,1uF 25V X7R,Protection:C_0603_1608Metric,False
+D1,FLOW OK,LED_SMD:LED_0603_1608Metric,False
+D134,BAT54HGW-Q FAULT LED ANTIPARALLEL,Protection:D_SOD-323,False
+D83,RED EFUSE FAULT,Protection:LED_0603_1608Metric,False
+H1,MountingHole_3.2mm_M3,MountingHole:MountingHole_3.2mm_M3,False
+H2,MountingHole_3.2mm_M3,MountingHole:MountingHole_3.2mm_M3,False
+J1,GADGETEER X,Smoothie_Water_Flow:Samtec_SHF105_TH_LC,False
+J2,SENSOR SIG/GND/5V,Fancification_Connectors:Dual_water_flow_adapter_J2,False
+JP1,CUT TO DISABLE D1,Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm,False
+JP81,CUT TO DISABLE FUSE_FAULT,Protection:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm,False
+R1,10k,Resistor_SMD:R_0603_1608Metric,False
+R2,4.7k,Resistor_SMD:R_0603_1608Metric,False
+R3,100,Resistor_SMD:R_0603_1608Metric,False
+R4,100,Resistor_SMD:R_0603_1608Metric,False
+R5,220k,Resistor_SMD:R_0603_1608Metric,False
+R6,470,Resistor_SMD:R_0603_1608Metric,False
+R85,7.87k 0.1%,Protection:R_0603_1608Metric,False
+R87,10k 0.1%,Protection:R_0603_1608Metric,False
+R90,100k 1%,Protection:R_0603_1608Metric,False
+R91,2.2k 1%,Protection:R_0603_1608Metric,False
+TP1,TP_GND,TestPoint:TestPoint_Pad_D1.0mm,False
+TP2,TP_3V3,TestPoint:TestPoint_Pad_D1.0mm,False
+TP3,TP_5V,TestPoint:TestPoint_Pad_D1.0mm,False
+TP4,TP_5VS,TestPoint:TestPoint_Pad_D1.0mm,False
+TP5,TP_SIG,TestPoint:TestPoint_Pad_D1.0mm,False
+TP6,TP_PULSE,TestPoint:TestPoint_Pad_D1.0mm,False
+TP7,TP_FAULT,TestPoint:TestPoint_Pad_D1.0mm,False
+TP8,TP_GND,TestPoint:TestPoint_Pad_D1.0mm,False
+U1,SN74LVC2G14DBVR,Package_TO_SOT_SMD:SOT-23-6,False
+U2,SN74LVC1G123DCTR,Package_SO:SSOP-8_2.95x2.8mm_P0.65mm,False
+U3,TPD4E1U06DCKR,Package_TO_SOT_SMD:SOT-363_SC-70-6,False
+U4,TPD4E1U06DCKR,Package_TO_SOT_SMD:SOT-363_SC-70-6,False
+U81,TPS259631DDAR AUTO RETRY 125mA,Protection:TPS259631_DDA_TI_8_EP,False

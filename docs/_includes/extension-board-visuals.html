@@ -1,4 +1,7 @@
 {% assign extension_visuals = site.data.extension_board_visuals[include.slug] %}
+{% if include.role %}
+{% assign extension_visuals = extension_visuals | where: "role", include.role %}
+{% endif %}
 {% if extension_visuals %}
 <section class="extension-board-visuals" aria-label="Board diagrams and renders">
   <h2>Board diagrams and renders</h2>

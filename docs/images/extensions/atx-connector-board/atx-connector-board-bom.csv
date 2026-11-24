@@ -1,0 +1,54 @@
+Reference,Value,Footprint/assembly option,X_mm,Y_mm,Rotation_deg,Side,DNP
+C1,100 nF 50 V X7R,Capacitor_SMD:C_0603_1608Metric,39.4,29.2,0.0,top,False
+D4,GREEN +12V OUT POWER,LED_SMD:LED_0603_1608Metric,60.5,5.8,-90.0,top,False
+D5,GREEN +5V OUT POWER,LED_SMD:LED_0603_1608Metric,13.0,15.0,0.0,top,False
+D6,GREEN +5VSB OUT POWER,LED_SMD:LED_0603_1608Metric,71.5,4.0,180.0,top,False
+D7,GREEN PWR_OK (PSU reports good),LED_SMD:LED_0603_1608Metric,37.0,24.5,180.0,top,False
+H1,MountingHole_3.2mm_M3,MountingHole:MountingHole_3.2mm_M3,7.0,10.0,0.0,top,False
+H2,MountingHole_3.2mm_M3,MountingHole:MountingHole_3.2mm_M3,67.0,10.0,0.0,top,False
+H3,MountingHole_3.2mm_M3,MountingHole:MountingHole_3.2mm_M3,7.0,30.0,0.0,top,False
+H4,MountingHole_3.2mm_M3,MountingHole:MountingHole_3.2mm_M3,67.0,30.0,0.0,top,False
+J1,ATX 24-PIN MAIN (PSU plug mates here),Connector_Molex:Molex_Mini-Fit_Jr_5566-24A2_2x12_P4.20mm_Vertical,13.9,39.2,0.0,top,False
+J3,+12V OUT  XT60,TerminalBlock_Smoothie_ATX:AMASS_XT60PW-F_1x02_P7.20mm_Horizontal,52.8,16.5,0.0,top,False
+J4,+5V OUT  3.5mm,"TerminalBlock_Phoenix:TerminalBlock_Phoenix_PT-1,5-2-3.5-H_1x02_P3.50mm_Horizontal",5.5,20.0,-90.0,top,False
+J5,+5VSB OUT  3.5mm  (ALWAYS LIVE),"TerminalBlock_Phoenix:TerminalBlock_Phoenix_PT-1,5-2-3.5-H_1x02_P3.50mm_Horizontal",68.5,20.0,90.0,top,False
+J6,PS_ON# MANUAL (shunt = ALWAYS ON),Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical,14.0,29.0,0.0,top,False
+JP10,CUT TO DISABLE D4,TrustedATX:LED_CutLink_Compact,60.5,7.5,-90.0,top,False
+JP11,CUT TO DISABLE D7,TrustedATX:LED_CutLink_Compact,35.25,24.5,180.0,top,False
+JP12,CUT TO DISABLE D5,TrustedATX:LED_CutLink_Compact,14.75,15.0,0.0,top,False
+JP13,CUT TO DISABLE D6,TrustedATX:LED_CutLink_Compact,69.5,4.0,180.0,top,False
+JP3,CHAIN pin 3 OPEN,Jumper:SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm,14.5,12.0,90.0,top,False
+JP4,CHAIN pin 4 OPEN,Jumper:SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm,18.5,12.0,90.0,top,False
+JP5,CHAIN pin 5 BRIDGED,Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm,22.5,12.0,90.0,top,False
+JP6,CHAIN pin 6 BRIDGED,Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm,26.5,12.0,90.0,top,False
+JP7,CHAIN pin 7 BRIDGED,Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm,30.5,12.0,90.0,top,False
+JP8,CHAIN pin 8 BRIDGED,Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm,34.5,12.0,90.0,top,False
+JP9,CHAIN pin 9 BRIDGED,Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm,38.5,12.0,90.0,top,False
+J_C,GADGETEER X CHAIN,Connector_Smoothie_ATX:Samtec_SHF105_2x05_P1.27mm_TH_LC,33.0,4.5,0.0,top,False
+J_X,GADGETEER X IN,Connector_Smoothie_ATX:Samtec_SHF105_2x05_P1.27mm_TH_LC,17.5,4.5,0.0,top,False
+Q1,DMN2056U-7 PS_ON# open-drain driver,Package_TO_SOT_SMD:SOT-23,28.3,32.2,0.0,top,False
+Q2,DMN2056U-7 PWR_OK LED sink,Package_TO_SOT_SMD:SOT-23,36.0,21.5,0.0,top,False
+R1,1k 10% 0603 gate >=0.1W,Resistor_SMD:R_0603_1608Metric,32.0,33.8,0.0,top,False
+R10,1k 10% 0603 LED >=0.1W,Resistor_SMD:R_0603_1608Metric,33.5,24.5,0.0,top,False
+R11,100 1% 0603,Resistor_SMD:R_0603_1608Metric,33.0,27.0,0.0,top,False
+R2,100k 10% 0603 pull-down >=0.1W,Resistor_SMD:R_0603_1608Metric,28.2,29.0,0.0,top,False
+R3,10k 1% 0603,Resistor_SMD:R_0603_1608Metric,45.0,33.8,0.0,top,False
+R4,1k 1% 0603,Resistor_SMD:R_0603_1608Metric,38.4,33.8,180.0,top,False
+R5,100k 1% 0603,Resistor_SMD:R_0603_1608Metric,35.2,33.8,180.0,top,False
+R6,100 1% 0603,Resistor_SMD:R_0603_1608Metric,29.2,27.0,0.0,top,False
+R7,4.7k 1% 0603,Resistor_SMD:R_0603_1608Metric,60.5,9.2,90.0,top,False
+R8,1k 10% 0603 LED >=0.1W,Resistor_SMD:R_0603_1608Metric,16.5,15.0,180.0,top,False
+R9,1k 10% 0603 LED >=0.1W,Resistor_SMD:R_0603_1608Metric,67.5,4.0,0.0,top,False
+TP1,TP +12V_OUT,TestPoint:TestPoint_Pad_D1.5mm,21.0,16.5,180.0,bottom,False
+TP10,TP GND,TestPoint:TestPoint_Pad_D1.5mm,30.0,16.5,180.0,bottom,False
+TP11,TP GND,TestPoint:TestPoint_Pad_D1.5mm,24.0,19.5,180.0,bottom,False
+TP12,TP GND,TestPoint:TestPoint_Pad_D1.5mm,33.0,19.5,180.0,bottom,False
+TP2,TP +5V_OUT,TestPoint:TestPoint_Pad_D1.5mm,27.0,16.5,180.0,bottom,False
+TP3,TP +5VSB_OUT,TestPoint:TestPoint_Pad_D1.5mm,33.0,16.5,180.0,bottom,False
+TP4,TP +3V3_TP,TestPoint:TestPoint_Pad_D1.5mm,36.0,16.5,180.0,bottom,False
+TP5,TP PS_ON_N,TestPoint:TestPoint_Pad_D1.5mm,21.0,19.5,180.0,bottom,False
+TP6,TP PWR_OK_SENSE,TestPoint:TestPoint_Pad_D1.5mm,27.0,19.5,180.0,bottom,False
+TP7,TP PWR_OK_OUT,TestPoint:TestPoint_Pad_D1.5mm,30.0,19.5,180.0,bottom,False
+TP8,TP PSU_EN_IN,TestPoint:TestPoint_Pad_D1.5mm,36.0,19.5,180.0,bottom,False
+TP9,TP GND,TestPoint:TestPoint_Pad_D1.5mm,24.0,16.5,180.0,bottom,False
+U1,SN74LVC1G17 PWR_OK 5 V to 3.3 V buffer,Package_Smoothie_ATX:Texas_R-PDSO-G5_DCK,36.0,30.0,0.0,top,False

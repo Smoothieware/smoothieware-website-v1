@@ -1,0 +1,87 @@
+Reference,Value,Footprint,DNP
+C1,"100 nF, X7R, 50 V",Capacitor_SMD:C_0603_1608Metric,False
+C10,"1 µF, X7R, 16 V",Capacitor_SMD:C_0805_2012Metric,False
+C11,"100 nF, X7R, 50 V",Capacitor_SMD:C_0603_1608Metric,False
+C12,"100 nF, X7R, 50 V",Capacitor_SMD:C_0603_1608Metric,False
+C13,"100 nF, X7R, 50 V",Capacitor_SMD:C_0603_1608Metric,False
+C14,"100 nF, X7R, 50 V",Capacitor_SMD:C_0603_1608Metric,False
+C15,"100 nF, C0G, ≥16 V, ±5%",Capacitor_SMD:C_1210_3225Metric,False
+C16,"100 nF, C0G, ≥16 V, ±5%",Capacitor_SMD:C_1210_3225Metric,False
+C17,"1 nF, C0G, 50 V, ±1%",Capacitor_SMD:C_0603_1608Metric,False
+C18,"1 nF, C0G, 50 V, ±1%",Capacitor_SMD:C_0603_1608Metric,False
+C19,"1 nF, C0G, 50 V, ±1%",Capacitor_SMD:C_0603_1608Metric,False
+C2,"100 nF, X7R, 50 V",Capacitor_SMD:C_0603_1608Metric,False
+C20,"1 nF, C0G, 50 V, ±1%",Capacitor_SMD:C_0603_1608Metric,False
+C3,"100 nF, X7R, 50 V",Capacitor_SMD:C_0603_1608Metric,False
+C4,"1 µF, X7R, 16 V",Capacitor_SMD:C_0805_2012Metric,False
+C5,"10 µF, X7R, 25 V, ±10% target",Capacitor_SMD:C_1210_3225Metric,False
+C6,"100 nF, X7R, 50 V",Capacitor_SMD:C_0603_1608Metric,False
+C7,"10 µF, X7R, 25 V, ±10% target",Capacitor_SMD:C_1210_3225Metric,False
+C8,"100 nF, X7R, 50 V",Capacitor_SMD:C_0603_1608Metric,False
+C9,"100 nF, C0G, ≥16 V, ±5%",Capacitor_SMD:C_1210_3225Metric,False
+CT1,CABLE TIE,Fancification_Mechanical:CableTie_NPTH_2_5mm,False
+CT2,CABLE TIE,Fancification_Mechanical:CableTie_NPTH_2_5mm,False
+D1,TPD1E10B06DYAR,Diode_SMD:D_SOD-523,False
+D2,TPD1E10B06DYAR,Diode_SMD:D_SOD-523,False
+D3,TPD1E10B06DYAR,Diode_SMD:D_SOD-523,False
+H1,MountingHole_3.2mm_M3,MountingHole_3.2mm_M3,False
+H2,MountingHole_3.2mm_M3,MountingHole_3.2mm_M3,False
+H3,MountingHole_3.2mm_M3,MountingHole_3.2mm_M3,False
+H4,MountingHole_3.2mm_M3,MountingHole_3.2mm_M3,False
+J1,Samtec SHF-105-01-L-D-TH-LC,HX711:Samtec_SHF105_TH_LC,False
+J2,Samtec SHF-105-01-L-D-TH-LC,HX711:Samtec_SHF105_TH_LC,False
+J3,"Phoenix PT 1,5/5-3,5-H","TerminalBlock_Phoenix:TerminalBlock_Phoenix_PT-1,5-5-3.5-H_1x05_P3.50mm_Horizontal",False
+J4,"Phoenix PT 1,5/2-3,5-H","TerminalBlock_Phoenix:TerminalBlock_Phoenix_PT-1,5-2-3.5-H_1x02_P3.50mm_Horizontal",False
+Q1,BCP51-16,Package_TO_SOT_SMD:SOT-223,False
+R1,"20.0 kΩ, 0.1%, ≤25 ppm/°C, ≥0.1 W",Resistor_SMD:R_0603_1608Metric,False
+R10,"100 Ω, 0.1%, ≤25 ppm/°C, ≥0.1 W",Resistor_SMD:R_0603_1608Metric,False
+R11,"100 Ω, 0.1%, ≤25 ppm/°C, ≥0.1 W",Resistor_SMD:R_0603_1608Metric,False
+R12,0 Ω serviceable shield bond; ≥0.25 W package,Resistor_SMD:R_1206_3216Metric,False
+R13,"100 kΩ, 1%, ≥0.1 W",Resistor_SMD:R_0603_1608Metric,False
+R2,"8.20 kΩ, 0.1%, ≤25 ppm/°C, ≥0.1 W",Resistor_SMD:R_0603_1608Metric,False
+R3,"100 Ω, 1%, ≥0.25 W",Resistor_SMD:R_1206_3216Metric,False
+R4,"10.0 kΩ, 1%, ≥0.1 W",Resistor_SMD:R_0603_1608Metric,False
+R5,"47.0 kΩ, 1%, ≥0.1 W",Resistor_SMD:R_0603_1608Metric,False
+R6,"470 Ω, 1%, ≥0.1 W",Resistor_SMD:R_0603_1608Metric,False
+R7,"470 Ω, 1%, ≥0.1 W",Resistor_SMD:R_0603_1608Metric,False
+R8,"100 Ω, 0.1%, ≤25 ppm/°C, ≥0.1 W",Resistor_SMD:R_0603_1608Metric,False
+R9,"100 Ω, 0.1%, ≤25 ppm/°C, ≥0.1 W",Resistor_SMD:R_0603_1608Metric,False
+SJ1,Closed,Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm,False
+SJ10,Closed,Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm,False
+SJ11,Factory-closed cut/rebridge link,Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm,False
+SJ2,Closed,Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm,False
+SJ3,Open,Jumper:SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm,False
+SJ4,Open,Jumper:SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm,False
+SJ5,Closed,Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm,False
+SJ6,Closed,Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm,False
+SJ7,Closed,Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm,False
+SJ8,Closed,Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm,False
+SJ9,Closed,Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm,False
+TP1,host_3v3,TestPoint:TestPoint_Pad_D1.5mm,False
+TP10,sck_local,TestPoint:TestPoint_Pad_D1.5mm,False
+TP11,dout_local,TestPoint:TestPoint_Pad_D1.5mm,False
+TP12,fault_5v_n,TestPoint:TestPoint_Pad_D1.5mm,False
+TP13,a_p,TestPoint:TestPoint_Pad_D1.5mm,False
+TP14,a_n,TestPoint:TestPoint_Pad_D1.5mm,False
+TP15,b_p,TestPoint:TestPoint_Pad_D1.5mm,False
+TP16,b_n,TestPoint:TestPoint_Pad_D1.5mm,False
+TP17,gnd,TestPoint:TestPoint_Pad_D1.5mm,False
+TP18,gnd,TestPoint:TestPoint_Pad_D1.5mm,False
+TP19,gnd,TestPoint:TestPoint_Pad_D1.5mm,False
+TP2,host_5v,TestPoint:TestPoint_Pad_D1.5mm,False
+TP20,chain_3v3,TestPoint:TestPoint_Pad_D1.5mm,False
+TP21,chain_5v,TestPoint:TestPoint_Pad_D1.5mm,False
+TP22,chain_gnd,TestPoint:TestPoint_Pad_D1.5mm,False
+TP23,rate_select,TestPoint:TestPoint_Pad_D1.5mm,False
+TP3,v3_reverse,TestPoint:TestPoint_Pad_D1.5mm,False
+TP4,dvdd_3v3,TestPoint:TestPoint_Pad_D1.5mm,False
+TP5,v5_reverse,TestPoint:TestPoint_Pad_D1.5mm,False
+TP6,vsup_5v,TestPoint:TestPoint_Pad_D1.5mm,False
+TP7,avdd_4v3,TestPoint:TestPoint_Pad_D1.5mm,False
+TP8,vfb,TestPoint:TestPoint_Pad_D1.5mm,False
+TP9,vbg,TestPoint:TestPoint_Pad_D1.5mm,False
+U1,AVIA HX711,Package_SO:SOIC-16_3.9x9.9mm_P1.27mm,False
+U2,TPS2553DBVR-1,Package_TO_SOT_SMD:SOT-23-6,False
+U3,"TPD4E001DBVR, analog protection",Package_TO_SOT_SMD:SOT-23-6,False
+U4,"TPD4E001DBVR, host protection",Package_TO_SOT_SMD:SOT-23-6,False
+U5,"TPD4E001DBVR, host protection",Package_TO_SOT_SMD:SOT-23-6,False
