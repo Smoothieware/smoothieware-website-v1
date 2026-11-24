@@ -49,9 +49,294 @@ defaults:
       path: "debug/*"
     values:
       sitemap: false
-  # Reusable Markdown fragments should not appear as standalone search results.
+  # Explicit fragment scopes avoid repeated recursive glob expansion in Jekyll 3.8.
+  # Add new reusable fragments here so they remain outside the sitemap.
   - scope:
-      path: "**/*-for-include.md"
+      path: "community/forum/forum-guidelines-for-include.md"
+    values:
+      sitemap: false
+  - scope:
+      path: "community/forum/help-guidelines-for-include.md"
+    values:
+      sitemap: false
+  - scope:
+      path: "configuration/override-warning-for-include.md"
+    values:
+      sitemap: false
+  - scope:
+      path: "developers/contributing-for-include.md"
+    values:
+      sitemap: false
+  - scope:
+      path: "firmware/builds/builds-edge-for-include.md"
+    values:
+      sitemap: false
+  - scope:
+      path: "firmware/builds/builds-feature-motor-for-include.md"
+    values:
+      sitemap: false
+  - scope:
+      path: "firmware/flashing-smoothie-firmware-for-include.md"
+    values:
+      sitemap: false
+  - scope:
+      path: "firmware/latest-firmware-compact-for-include.md"
+    values:
+      sitemap: false
+  - scope:
+      path: "getting-started/guides-for-include.md"
+    values:
+      sitemap: false
+  - scope:
+      path: "getting-started/unboxing-for-include.md"
+    values:
+      sitemap: false
+  - scope:
+      path: "hardware/boards/smoothieboards-for-include.md"
+    values:
+      sitemap: false
+  - scope:
+      path: "hardware/panels/panel-guide-for-include.md"
+    values:
+      sitemap: false
+  - scope:
+      path: "hardware/panels/panel-options-for-include.md"
+    values:
+      sitemap: false
+  - scope:
+      path: "hardware/pins/pin-configuration-for-include.md"
+    values:
+      sitemap: false
+  - scope:
+      path: "hardware/pins/pinout-for-include.md"
+    values:
+      sitemap: false
+  - scope:
+      path: "hardware/power/fuse-protection-for-include.md"
+    values:
+      sitemap: false
+  - scope:
+      path: "hardware/power/logic-power-for-include.md"
+    values:
+      sitemap: false
+  - scope:
+      path: "hardware/power/main-power-input-for-include.md"
+    values:
+      sitemap: false
+  - scope:
+      path: "hardware/power/mosfets-for-include.md"
+    values:
+      sitemap: false
+  - scope:
+      path: "hardware/power/mosfets-table-for-include.md"
+    values:
+      sitemap: false
+  - scope:
+      path: "hardware/power/power-supply-control-for-include.md"
+    values:
+      sitemap: false
+  - scope:
+      path: "hardware/wiring/general-appendixes-for-include.md"
+    values:
+      sitemap: false
+  - scope:
+      path: "hardware/wiring/stepper-motors-for-include.md"
+    values:
+      sitemap: false
+  - scope:
+      path: "hardware/wiring/warning-for-include.md"
+    values:
+      sitemap: false
+  - scope:
+      path: "machine-guides/3d-printers/extruder-guide-for-include.md"
+    values:
+      sitemap: false
+  - scope:
+      path: "machine-guides/laser-cutters/laser-guides-for-include.md"
+    values:
+      sitemap: false
+  - scope:
+      path: "machine-guides/laser-cutters/laser-warning-for-include.md"
+    values:
+      sitemap: false
+  - scope:
+      path: "machine-guides/other-machines/pick-and-place-control-for-include.md"
+    values:
+      sitemap: false
+  - scope:
+      path: "migration/migrating-for-include.md"
+    values:
+      sitemap: false
+  - scope:
+      path: "modules/endstops-probes/endstops-options-for-include.md"
+    values:
+      sitemap: false
+  - scope:
+      path: "modules/endstops-probes/guide-endstops-for-include.md"
+    values:
+      sitemap: false
+  - scope:
+      path: "modules/endstops-probes/guide-endstops-reworked-for-include.md"
+    values:
+      sitemap: false
+  - scope:
+      path: "modules/endstops-probes/z-probe-guide-for-include.md"
+    values:
+      sitemap: false
+  - scope:
+      path: "modules/endstops-probes/zprobe-options-for-include.md"
+    values:
+      sitemap: false
+  - scope:
+      path: "modules/extruders/extruder-options-for-include.md"
+    values:
+      sitemap: false
+  - scope:
+      path: "modules/input-controls/jogger-options-for-include.md"
+    values:
+      sitemap: false
+  - scope:
+      path: "modules/input-controls/joystick-options-for-include.md"
+    values:
+      sitemap: false
+  - scope:
+      path: "modules/input-controls/switch-options-for-include.md"
+    values:
+      sitemap: false
+  - scope:
+      path: "modules/laser/laser-for-include.md"
+    values:
+      sitemap: false
+  - scope:
+      path: "modules/laser/laser-options-for-include.md"
+    values:
+      sitemap: false
+  - scope:
+      path: "modules/leveling/delta-calibration-strategy-options-for-include.md"
+    values:
+      sitemap: false
+  - scope:
+      path: "modules/leveling/delta-grid-calibration-options-for-include.md"
+    values:
+      sitemap: false
+  - scope:
+      path: "modules/leveling/rectangular-grid-options-for-include.md"
+    values:
+      sitemap: false
+  - scope:
+      path: "modules/leveling/three-point-strategy-options-for-include.md"
+    values:
+      sitemap: false
+  - scope:
+      path: "modules/motion/actuators-options-for-include.md"
+    values:
+      sitemap: false
+  - scope:
+      path: "modules/motion/arm-solutions-for-include.md"
+    values:
+      sitemap: false
+  - scope:
+      path: "modules/motion/conveyor-options-for-include.md"
+    values:
+      sitemap: false
+  - scope:
+      path: "modules/motion/motion-control-options-for-include.md"
+    values:
+      sitemap: false
+  - scope:
+      path: "modules/motion/planner-options-for-include.md"
+    values:
+      sitemap: false
+  - scope:
+      path: "modules/motors/currentcontrol-options-for-include.md"
+    values:
+      sitemap: false
+  - scope:
+      path: "modules/network/echo-uart-for-include.md"
+    values:
+      sitemap: false
+  - scope:
+      path: "modules/network/network-options-for-include.md"
+    values:
+      sitemap: false
+  - scope:
+      path: "modules/other/drillingcycles-options-for-include.md"
+    values:
+      sitemap: false
+  - scope:
+      path: "modules/other/miscellaneous-options-for-include.md"
+    values:
+      sitemap: false
+  - scope:
+      path: "modules/other/system-options-for-include.md"
+    values:
+      sitemap: false
+  - scope:
+      path: "modules/player/player-options-for-include.md"
+    values:
+      sitemap: false
+  - scope:
+      path: "modules/player/printing-from-sd-card-for-include.md"
+    values:
+      sitemap: false
+  - scope:
+      path: "modules/spindle/spindle-control-for-include.md"
+    values:
+      sitemap: false
+  - scope:
+      path: "modules/spindle/spindle-options-for-include.md"
+    values:
+      sitemap: false
+  - scope:
+      path: "modules/temperature/pt100-for-include.md"
+    values:
+      sitemap: false
+  - scope:
+      path: "modules/temperature/sensor-types-for-include.md"
+    values:
+      sitemap: false
+  - scope:
+      path: "modules/temperature/temperaturecontrol-fine-tuning-for-include.md"
+    values:
+      sitemap: false
+  - scope:
+      path: "modules/temperature/temperaturecontrol-options-for-include.md"
+    values:
+      sitemap: false
+  - scope:
+      path: "modules/temperature/temperaturecontrol-pid-autotuning-for-include.md"
+    values:
+      sitemap: false
+  - scope:
+      path: "modules/temperature/temperaturecontrol-pid-for-include.md"
+    values:
+      sitemap: false
+  - scope:
+      path: "modules/temperature/temperaturecontrol-thermistor-choice-for-include.md"
+    values:
+      sitemap: false
+  - scope:
+      path: "modules/temperature/temperatureswitch-options-for-include.md"
+    values:
+      sitemap: false
+  - scope:
+      path: "project/donate-for-include.md"
+    values:
+      sitemap: false
+  - scope:
+      path: "software/host-software/bcnc-for-include.md"
+    values:
+      sitemap: false
+  - scope:
+      path: "troubleshooting/gamma-max-for-include.md"
+    values:
+      sitemap: false
+  - scope:
+      path: "troubleshooting/stopping-smoothie-for-include.md"
+    values:
+      sitemap: false
+  - scope:
+      path: "troubleshooting/troubleshooting-for-include.md"
     values:
       sitemap: false
 
