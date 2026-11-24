@@ -19,7 +19,7 @@ TimeoutStopSec=45
 ExecStart=/usr/bin/docker run --rm --pull=never \
     --name smoothie-docs-user \
     --label org.smoothieware.service=smoothie-docs-user \
-    --cpus=8 --cpuset-cpus=0,1,2,3,6,7,8,9 \
+    --cpus=6 --cpuset-cpus=0,1,2,6,7,8 \
     --mount type=bind,source=/home/arthur/dev/smoothieware/smoothieware-website-v1,target=/workspace,readonly \
     --mount type=bind,source=/home/arthur/dev/smoothieware/smoothieware-website-v1/docs,target=/workspace/docs \
     --workdir /workspace/docs \
