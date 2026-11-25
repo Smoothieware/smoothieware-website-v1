@@ -69,7 +69,7 @@ permalink: /extensions/laser-psu-adapter-board
   <tbody>
     <tr><td>Protection loops</td><td>4 inputs for normally closed, voltage-free switch contacts (lid switch, water-flow switch, emergency stop contact, and so on). A loop is healthy while its switch connects <b>S</b> to <b>G</b>.</td></tr>
     <tr><td>Loop test current</td><td>About 1&nbsp;mA through each closed switch, from the board's 5&nbsp;V supply (calculated)</td></tr>
-    <tr><td>Response</td><td>Opening a loop blocks the outputs with no added delay. After a loop closes again, the outputs return about 0.2&nbsp;s later, so a bouncing switch keeps the laser off (calculated).</td></tr>
+    <tr><td>Response</td><td>Opening a loop blocks the outputs with no added delay. After a loop closes again, the outputs return roughly 0.1&nbsp;s later (0.03 to 0.2&nbsp;s depending on part tolerances), so a bouncing switch keeps the laser off (simulated).</td></tr>
     <tr><td>Outputs to the laser supply</td><td><b>PWM</b>: power level, 0 to 5&nbsp;V pulses. <b>TTL</b>: fire signal, 5&nbsp;V logic. <b>WP</b>: enable line, a transistor that connects the supply's enable terminal (printed P or WP) to ground while firing is permitted.</td></tr>
     <tr><td>Output polarity</td><td>As delivered: PWM active high, TTL active low. Each can be reversed with a solder link.</td></tr>
     <tr><td>Status to the controller</td><td>PERMIT (high while all loops are closed) and one fault signal per loop (high while that loop is open), 3.3&nbsp;V logic</td></tr>
@@ -78,7 +78,7 @@ permalink: /extensions/laser-psu-adapter-board
     <tr><td>Laser supply connector</td><td>Two equivalent six-pin connections: a 5.00&nbsp;mm screw terminal at the top right and a 2.54&nbsp;mm Molex KK&nbsp;254 header at the bottom right</td></tr>
     <tr><td>Loop terminals</td><td>Two 4-way screw terminals, 5.00&nbsp;mm pitch</td></tr>
     <tr><td>Power</td><td>3.3&nbsp;V and 5&nbsp;V from the controller through the ribbon cable. The output stage can instead take its 5&nbsp;V from the laser supply.</td></tr>
-    <tr><td>Loop input protection</td><td>Each loop input carries protection parts intended to survive an accidental connection of up to 48&nbsp;V DC (design target, not tested). The inputs are for switch contacts only: never connect a voltage to them on purpose.</td></tr>
+    <tr><td>Loop input protection</td><td>Each loop input carries protection parts intended to survive an accidental connection of up to 48&nbsp;V DC in either polarity (design target; simulation found no part over its rating; not tested on a built board). The inputs are for switch contacts only: never connect a voltage to them on purpose.</td></tr>
     <tr><td>Isolation</td><td>None. Controller ground, loop ground and laser supply ground are the same net.</td></tr>
     <tr><td>Size</td><td>80 × 55.75&nbsp;mm, four M3 mounting holes, two cable-tie holes</td></tr>
     <tr><td>Works with</td><td><a href="/smoothieboard-v2-prime">Smoothieboard V2 Prime</a> and Smoothieware V2 firmware, using the standard <a href="/laser">laser module</a> with a chain or harness that routes a supported PWM output to adapter pin 3</td></tr>
@@ -606,7 +606,7 @@ Three things this board does not do, and what to do about them:
 
 **Loop inputs.** The board feeds about 1 mA into each S screw. A closed switch carries that current to ground and the input reads low: healthy. An open switch, a broken wire or an unplugged connector all leave the input high: open. A loop therefore cannot be made healthy by a wire falling off.
 
-**Filter.** When a loop opens, its fault signal rises immediately. When it closes, the signal waits about 0.2 s before clearing. A switch that chatters keeps the laser off for as long as it chatters. The same delay holds the laser off for a moment each time the board powers up.
+**Filter.** When a loop opens, its fault signal rises immediately. When it closes, the signal waits roughly 0.1 s (0.03 to 0.2 s with part tolerances, simulated) before clearing. A switch that chatters keeps the laser off for as long as it chatters. The same delay holds the laser off for a moment each time the board powers up.
 
 **PERMIT.** One gate combines the four fault signals: PERMIT is yes only when none of them is active. It lights the green LED and is reported to the controller.
 
@@ -671,6 +671,7 @@ The three options are solder links on the top side, each with three pads: the mi
   <tbody>
     <tr><td>No LED at all, with loops open</td><td>The board has no power.</td><td>Check continuity for adapter power pins 1 and 2 and ground pin 10 through the chain or harness.</td></tr>
     <tr><td>A red LED stays lit</td><td>That loop is open.</td><td>Check its switch is closed, both wires are tight in S and G, and the wire is not broken. If the loop is unused, bridge its BYP link.</td></tr>
+    <tr><td>A closed loop still shows a red LED, with a long cable or a worn switch</td><td>The total resistance of the wire and the switch contacts is too high for the board to see the loop as closed (limit about 560&nbsp;&Omega; in simulation).</td><td>Measure the loop with a multimeter, shorten or thicken the wire, and clean or replace the switch.</td></tr>
     <tr><td>A red LED never lights, even with the wire removed</td><td>That loop is bypassed, or its LED link is cut.</td><td>Inspect the BYP link of that loop for solder. PERMIT going dark when you remove the wire shows the loop itself works.</td></tr>
     <tr><td>All red LEDs dark but PERMIT also dark</td><td>The PERMIT LED link is cut, or the board has only part of its power.</td><td>Measure the PERMIT test pad on the underside: about 3.3&nbsp;V means the logic permits firing.</td></tr>
     <tr><td>PERMIT is lit but the laser does not fire</td><td>The command is not reaching the supply, or the polarity does not match it.</td><td>Repeat step 6 of <a href="#get-started">Get started</a> with a multimeter. If the outputs are right, compare them with what your supply's manual expects and check the <a href="#options">polarity links</a>.</td></tr>
@@ -755,7 +756,7 @@ For drilling a mounting plate or designing an enclosure. Positions are hole cent
 
 ## Appendix: electrical specifications {#electrical}
 
-Every figure below is a design value, a value calculated from the design, or a value from a part's datasheet, as the last column says. None is a measurement on a built board. A dash means the figure does not apply. **Open** means it has not been established yet.
+Every figure below is a design value, a value calculated from the design, a simulated value, or a value from a part's datasheet, as the last column says. None is a measurement on a built board. A dash means the figure does not apply. **Open** means it has not been established yet.
 
 {::nomarkdown}
 <div class="xb-tablewrap"><table class="xb-elec">
@@ -764,14 +765,15 @@ Every figure below is a design value, a value calculated from the design, or a v
     <tr><td>Logic supply</td><td>Y IN pin 1</td><td>—</td><td>3.3 V</td><td>—</td><td>From the controller</td></tr>
     <tr><td>Output-stage and loop supply</td><td>Y IN pin 2, or the 5V screw with SRC5V on PSU</td><td>—</td><td>5 V</td><td>—</td><td>From the controller as delivered</td></tr>
     <tr><td>Loop test current</td><td>S1 to S4, switch closed</td><td>—</td><td>≈ 1 mA</td><td>—</td><td>Calculated from the design</td></tr>
-    <tr><td>Delay from loop open to outputs blocked</td><td>PWM, TTL, WP</td><td>—</td><td>No added delay</td><td>—</td><td>By design; not measured</td></tr>
-    <tr><td>Delay from loop closed to outputs restored</td><td>PWM, TTL, WP</td><td>—</td><td>≈ 0.2 s</td><td>—</td><td>Calculated; not measured</td></tr>
-    <tr><td>PWM output level</td><td>PWM</td><td>0 V</td><td>—</td><td>5 V</td><td>Pulses; 5&nbsp;V logic output stage</td></tr>
+    <tr><td>Wire and contact resistance of a closed loop</td><td>S1 to S4, whole loop</td><td>—</td><td>—</td><td>≈ 560 Ω</td><td>Simulated (ngspice, v27), worst-case chip threshold. Above this a closed loop may read as open. Typical switches and short cables are far below it.</td></tr>
+    <tr><td>Delay from loop open to outputs blocked</td><td>PWM, TTL, WP</td><td>—</td><td>No added delay</td><td>—</td><td>By design; simulated at about 0.2&nbsp;ms; not measured</td></tr>
+    <tr><td>Delay from loop closed to outputs restored</td><td>PWM, TTL, WP</td><td>0.03 s</td><td>≈ 0.1 s</td><td>0.2 s</td><td>Simulated (ngspice, v27) over part tolerances, capacitor loss at DC bias and the chip's switching threshold range; not measured</td></tr>
+    <tr><td>PWM output level</td><td>PWM</td><td>0 V</td><td>—</td><td>5 V</td><td>Pulses; 5&nbsp;V logic output stage. Simulated at 20&nbsp;kHz into 1&nbsp;nF and 1&nbsp;k&Omega; with a 4.75&nbsp;V supply: 4.0&nbsp;V high, 0.3&nbsp;&micro;s rise</td></tr>
     <tr><td>TTL output level</td><td>TTL</td><td>0 V</td><td>—</td><td>5 V</td><td>5&nbsp;V logic. As delivered 0&nbsp;V means fire.</td></tr>
-    <tr><td>WP output</td><td>WP</td><td>—</td><td>—</td><td>Open</td><td>Transistor to ground while firing is permitted; current and voltage limits not established</td></tr>
+    <tr><td>WP output</td><td>WP</td><td>—</td><td>—</td><td>Open</td><td>Transistor to ground while firing is permitted. Simulated low level 0.1 to 0.5&nbsp;V while sinking 20&nbsp;mA; the supply's own input current and the transistor's voltage limit are not established here</td></tr>
     <tr><td>Status outputs</td><td>PERMIT, FAULT 1 to 4</td><td>0 V</td><td>—</td><td>3.3 V</td><td>3.3&nbsp;V logic</td></tr>
     <tr><td>PWM frequency</td><td>PWM</td><td>Open</td><td>Open</td><td>Open</td><td>Set by the laser supply; the board's own limit is not measured</td></tr>
-    <tr><td>Supply current</td><td>Y IN pins 1 and 2</td><td>Open</td><td>Open</td><td>Open</td><td>Not measured</td></tr>
+    <tr><td>Supply current</td><td>Y IN pins 1 and 2</td><td>—</td><td>≈ 4 mA from 5 V, ≈ 3.5 mA from 3.3 V</td><td>—</td><td>Simulated, four loops connected and every LED lit. The load the laser supply puts on PWM, TTL and WP adds to the 5&nbsp;V figure. Not measured</td></tr>
     <tr><td>Isolation</td><td>Controller, loops, laser supply</td><td>—</td><td>None</td><td>—</td><td>All three grounds are one net</td></tr>
     <tr><td>Ambient temperature</td><td>Board</td><td>Open</td><td>Open</td><td>Open</td><td>Not established</td></tr>
   </tbody>
@@ -786,11 +788,50 @@ These are limits of individual parts, beyond which the part can be damaged. They
 <div class="xb-tablewrap"><table>
   <thead><tr><th>Circuit</th><th>Pin or device stress</th><th>Absolute limit</th></tr></thead>
   <tbody>
-    <tr><td>Loop inputs</td><td>Accidental DC voltage on S1 to S4</td><td>48 V: design target, not tested</td></tr>
+    <tr><td>Loop inputs</td><td>Accidental DC voltage on S1 to S4</td><td>48&nbsp;V either polarity: design target; simulation found no part over its rating, the reversed-polarity case loads the 4.7&nbsp;k loop resistors to about 77&nbsp;% of their rating, so do not go higher. Not tested on a built board</td></tr>
     <tr><td>Outputs to the laser supply</td><td>Voltage applied to PWM, TTL or WP</td><td>Open</td></tr>
     <tr><td>5V screw</td><td>Voltage from the laser supply</td><td>Open; the terminal is an input for a 5&nbsp;V supply only</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}
+
+## Appendix: simulation {#simulation}
+
+These are circuit simulations of revision 27 of the design, run before any board was built. They are not measurements on a real board. The circuit was simulated with the open-source ngspice engine, with the logic chips modelled from their datasheet limits (no manufacturer simulation models exist for them). The laser supply's own input circuit is not known, so the output tests use generic loads. The simulation files and logs are kept with the design files.
+
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>What was simulated</th><th>Result</th><th>Requirement</th><th>Verdict</th></tr></thead>
+  <tbody>
+    <tr><td>Every combination of the four loops, PWM and TTL commands and the two polarity jumpers (256 cases)</td><td>Any open loop puts PWM and TTL at their idle level and releases the PERMIT output; closed loops pass the commands</td><td>No open loop may let the laser fire</td><td>Pass</td></tr>
+    <tr><td>Closed loop, wire and contact resistance</td><td>Reads closed up to about 560&nbsp;&Omega; in total (0.15&nbsp;V with zero resistance)</td><td>Below 0.6&nbsp;V at the loop input of the gate</td><td>Pass</td></tr>
+    <tr><td>Open loop</td><td>4.4 to 4.8&nbsp;V at the gate input</td><td>Above 2.0&nbsp;V</td><td>Pass</td></tr>
+    <tr><td>+48&nbsp;V accidentally applied to a loop</td><td>Gate input clamped at 5.6&nbsp;V; the 47&nbsp;k resistor dissipates 38&nbsp;mW</td><td>Gate input below 6.5&nbsp;V; resistor below 125&nbsp;mW</td><td>Pass</td></tr>
+    <tr><td>&minus;48&nbsp;V (reversed polarity) applied to a loop</td><td>Gate input clamped at &minus;0.59&nbsp;V by 1&nbsp;mA; the 4.7&nbsp;k resistor dissipates 580&nbsp;mW and draws 11&nbsp;mA from the 5&nbsp;V rail</td><td>Clamp current below 50&nbsp;mA; resistor below 750&nbsp;mW</td><td>Pass, with little margin on the resistor</td></tr>
+    <tr><td>A loop opens (trip)</td><td>Trips in 0.16&nbsp;ms</td><td>No delay on opening</td><td>Pass</td></tr>
+    <tr><td>A loop closes (reset delay)</td><td>57 to 169&nbsp;ms with nominal parts; 28 to 203&nbsp;ms over part tolerances and capacitor loss at DC bias</td><td>About 100&nbsp;ms</td><td>Pass</td></tr>
+    <tr><td>WP output, 20&nbsp;mA sunk</td><td>0.10 to 0.50&nbsp;V low level across transistor limits</td><td>Below 0.8&nbsp;V</td><td>Pass</td></tr>
+    <tr><td>PWM output, 20&nbsp;kHz into 1&nbsp;nF and 1&nbsp;k&Omega;, 4.75&nbsp;V supply</td><td>4.0&nbsp;V high, rise time 315&nbsp;ns</td><td>At least 3.5&nbsp;V</td><td>Pass</td></tr>
+    <tr><td>Open loop with the 5&nbsp;V supply absent and worst-case chip input leakage (5&nbsp;&micro;A)</td><td>The open loop is not guaranteed to read open (the guarantee holds up to about 1.3&nbsp;&micro;A)</td><td>Above 2.0&nbsp;V</td><td>Warning; no safety effect, because with no 5&nbsp;V supply the outputs are off and the laser stays inhibited</td></tr>
+  </tbody>
+</table></div>
+
+<figure class="xb-fig">
+  <img src="/images/extensions/laser-psu-adapter-board/simulation/01-loop-sense-and-overvoltage.png" alt="Three graphs. Left: the loop input voltage rises with loop resistance and stays under the 0.6 volt limit up to about 560 ohms. Middle: the loop input voltage stays between about minus 0.6 and 5.6 volts for any voltage from minus 60 to plus 60 volts on the loop wiring. Right: the power in the two loop resistors against voltage on the wiring.">
+  <figcaption>Loop input: closed-loop margin, clamp against voltage on the loop wiring, and resistor stress.</figcaption>
+</figure>
+
+<figure class="xb-fig">
+  <img src="/images/extensions/laser-psu-adapter-board/simulation/02-debounce.png" alt="Two graphs. Left: the debounce capacitor voltage rises over about 60 to 170 milliseconds after a loop closes, crossing the gate's switching window. Right: the capacitor voltage falls within a fraction of a millisecond after a loop opens.">
+  <figcaption>Debounce: slow re-arming after a loop closes, immediate trip when it opens.</figcaption>
+</figure>
+
+<figure class="xb-fig">
+  <img src="/images/extensions/laser-psu-adapter-board/simulation/03-output-stage.png" alt="Two graphs. Left: the 20 kilohertz PWM output waveform for three cable and load cases. Right: the WP output low level against sunk current for three transistor corner cases, all below 0.8 volts.">
+  <figcaption>Outputs: PWM waveform into cable and load, and the WP output low level.</figcaption>
+</figure>
+{:/nomarkdown}
+
+Not simulated: the PCB layout, interference, surge energy, temperature, and the controller side. The assumptions and the full list of 39 checks are in the board's simulation folder.
 
 See all boards on the [extension boards](/extension-boards) page.
