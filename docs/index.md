@@ -96,37 +96,11 @@ Retrofitting a K40 laser cutter? Start with the [K40 controller upgrade overview
 - [Configuring Smoothie](configuring-smoothie): Configuration and use, by module
   - [List of all configuration options](configuration-options)
   - [Motion control](motion-control): All things related to gcode interpolation, motion and acceleration planning, and step generation
+    - [Slaved Axes](actuator-slaving)² (V2)
+    - [Backlash compensation](backlash-compensation)² (experimental in both versions)
   - [Arm Solutions](arm-solutions): [Cartesian](cartesian), [Delta](delta), [Hbot](hbot), [Core-XY](Core-XY), [Rotary Delta](rotary-delta), [Morgan Scara](morgan-scara)
   - [6axis](6axis): Using A, B and C axes, for 4, 5 or 6 axis motion.
   - [Grbl mode](grbl-mode): Using Smoothie in CNC-specific mode instead of 3D printing mode
-
-### Fall 2026 feature documentation
-
-The [Fall 2026 feature inventory](new-features#fall-2026) records source and maturity status for this set.
-
-{::nomarkdown}
-<versioned orientation="vertical">
-<v1>
-{:/nomarkdown}
-
-The Fall 2026 feature inventory below covers V2 additions. Backlash compensation is still experimental in both branches; see [its status](/backlash-compensation).
-
-{::nomarkdown}
-</v1>
-<v2>
-{:/nomarkdown}
-
-- **Motion:** [real-time feed hold and cycle start](feed-hold), [slaved internal-driver axes](actuator-slaving), [NIST G30/G30.1](g30#nist-stored-position-in-v2-grbl-mode), [Lathe G33](lathe), and [Electronic Leadscrew](els)
-- **Machine controls:** [direct and shared MPG control](mpg#axis-selector-optional), [Button Box macros](button-box), [FAULT inputs](button-box#fault-inputs), and the current [matrix-keypad limitation](button-box#matrix-keypads)
-- **Console and programs:** [`ed` file editing](console-commands#ed), [`le` command-line editing and history](console-commands#le), and [O-word subroutines](subroutines)
-- **Communication and display:** [auxiliary UART targeting](uart#send-text-to-a-connected-device-v2-only), [V2 network services](network#v2-network-services), and [MAX7219 DRO displays](max7219-dro)
-
-{::nomarkdown}
-</v2>
-</versioned>
-{:/nomarkdown}
-
-- **Experimental backlash compensation:** [V1 branch and pending V2 PR](backlash-compensation); neither implementation is merged into normal firmware
 
 {::nomarkdown}
 <a href="/images/tool-belt.png">
@@ -144,7 +118,7 @@ The Fall 2026 feature inventory below covers V2 additions. Backlash compensation
   - [TemperatureSwitch](temperatureswitch): Automatically turn/on a device based on a threshold temperature
   - [Drillingcycles](drillingcycles): Canned drilling cycles support
   - [Filament-detector](filament-detector): Use an encoder to check filament is pushed correctly
-{::nomarkdown}<versioned><v1></v1><v2><div class="versioned-list-item" style="margin-left:1.25em;"><a href="lathe">Lathe</a>: Spindle-synchronized turning and threading operations</div><div class="versioned-list-item" style="margin-left:2.5em;"><a href="els">ELS</a>: Electronic Leadscrew with TM1638 display interface</div></v2></versioned>{:/nomarkdown}
+{::nomarkdown}<versioned><v1></v1><v2><div class="versioned-list-item" style="margin-left:1.25em;"><a href="lathe">Lathe</a>²: Spindle-synchronized turning and threading operations</div><div class="versioned-list-item" style="margin-left:2.5em;"><a href="els">ELS</a>²: Electronic Leadscrew with TM1638 display interface</div></v2></versioned>{:/nomarkdown}
   - [ZProbe](zprobe): For probing, levelling, and automated calibration
     - [PCB milling](pcb-milling): For PCB milling
     - [Using FSRs](using-fsrs): Force Sensing Resistors for bed leveling
@@ -164,9 +138,11 @@ The Fall 2026 feature inventory below covers V2 additions. Backlash compensation
     - [Configurator](configurator): Manipulate configuration using console commands
     - [Kill Button](killbutton) and [Play LED](play-led): S/W based kill and play activity LED
     - [Panel](panel): Drive smoothie directly without a host using monochrome lcd screens and click encoders
-{::nomarkdown}<versioned><v1><div class="versioned-list-item" style="margin-left:1.25em;"><a href="jogger">Jogger</a>: Joystick-based jogging control for manual machine movement</div><div class="versioned-list-item" style="margin-left:1.25em;"><a href="joystick">Joystick</a>: Analog input from joysticks, sliders, and knobs</div></v1><v2><div class="versioned-list-item" style="margin-left:1.25em;"><a href="tm1638-display">TM1638 Display</a>: 7-segment LED display with buttons</div><div class="versioned-list-item" style="margin-left:1.25em;"><a href="button-box">Button Box</a>: Programmable button panel for macros and machine control</div><div class="versioned-list-item" style="margin-left:1.25em;"><a href="mpg">MPG</a>: Manual Pulse Generator hand wheels for axis jogging</div><div class="versioned-list-item" style="margin-left:1.25em;"><a href="voltage-monitor">Voltage Monitor</a>: Monitor power supply voltages</div></v2></versioned>{:/nomarkdown}
+    - [MAX7219 digital readout](max7219-dro)² (V2)
+    - [FAULT inputs](button-box#fault-inputs)² (V2)
+    - [Matrix keypad support status](button-box#matrix-keypads)² (V2)
+{::nomarkdown}<versioned><v1><div class="versioned-list-item" style="margin-left:1.25em;"><a href="jogger">Jogger</a>: Joystick-based jogging control for manual machine movement</div><div class="versioned-list-item" style="margin-left:1.25em;"><a href="joystick">Joystick</a>: Analog input from joysticks, sliders, and knobs</div></v1><v2><div class="versioned-list-item" style="margin-left:1.25em;"><a href="tm1638-display">TM1638 Display</a>: 7-segment LED display with buttons</div><div class="versioned-list-item" style="margin-left:1.25em;"><a href="button-box">Button Box</a>²: Programmable button panel for macros and machine control</div><div class="versioned-list-item" style="margin-left:1.25em;"><a href="mpg">MPG</a>²: Manual Pulse Generator hand wheels for axis jogging with <a href="mpg#axis-selector-optional">direct or shared control</a></div><div class="versioned-list-item" style="margin-left:1.25em;"><a href="voltage-monitor">Voltage Monitor</a>: Monitor power supply voltages</div></v2></versioned>{:/nomarkdown}
     - [on_boot.gcode File](on-boot-gcode): Execute G-codes every time the board boots
-{::nomarkdown}<versioned><v2><div class="versioned-list-item" style="margin-left:1.25em;"><a href="actuator-slaving">Slaved Axes</a>: Drive two motors from one axis (dual Y or Z) and square them independently</div></v2></versioned>{:/nomarkdown}
 
 {::nomarkdown}
 <a href="/images/console.png">
@@ -178,9 +154,14 @@ The Fall 2026 feature inventory below covers V2 additions. Backlash compensation
 
 - [Using Smoothie](using-smoothie): General firmware use
   - [Console Commands](console-commands)
+    - [`ed` file editing](console-commands#ed)² (V2)
+    - [`le` command-line editing and history](console-commands#le)² (V2)
   - [Supported G-Codes](supported-g-codes)
+    - [NIST G30/G30.1 stored positions](g30#nist-stored-position-in-v2-grbl-mode)² (V2)
+    - [O-word subroutines](subroutines)² (V2)
   - [Stopping Smoothie](stopping-smoothie)
     - [Emergency Stop](emergencystop)
+    - [Real-time feed hold and cycle start](feed-hold)² (V2)
   - [Software](software)
     - [Smoopi](smoopi): **New and Recommended** drive Smoothie using a color touch screen on [Raspberry Pi](https://www.raspberrypi.com/)
     - [Pronterface](pronterface): Control 3D printers. The OG.
@@ -204,10 +185,31 @@ The Fall 2026 feature inventory below covers V2 additions. Backlash compensation
 
 - [Communication](communication)
   - [Network](network)
+    - [V2 network services](network#v2-network-services)²
   - [USB](usb)
   - [UART](uart)
+    - [Auxiliary UART targeting](uart#send-text-to-a-connected-device)² (V2)
   - [Bluetooth](bluetooth-serial)
   - [Wifi](wifi) (new)
+
+- **What’s new**
+  - [Feature inventory and firmware status](new-features#fall-2026). The ² marker identifies new entries in the documentation tree.
+  - [Real-time feed hold and cycle start](feed-hold) (V2)
+  - [Slaved internal-driver axes](actuator-slaving) (V2)
+  - [NIST G30/G30.1](g30#nist-stored-position-in-v2-grbl-mode) (V2)
+  - [Lathe G33](lathe) (V2)
+  - [Electronic Leadscrew](els) (V2)
+  - [Direct and shared MPG control](mpg#axis-selector-optional) (V2)
+  - [Button Box macros](button-box) (V2)
+  - [FAULT inputs](button-box#fault-inputs) (V2)
+  - [Matrix keypad support status](button-box#matrix-keypads) (V2)
+  - [`ed` file editing](console-commands#ed) (V2)
+  - [`le` command-line editing and history](console-commands#le) (V2)
+  - [O-word subroutines](subroutines) (V2)
+  - [Auxiliary UART targeting](uart#send-text-to-a-connected-device) (V2)
+  - [V2 network services](network#v2-network-services)
+  - [MAX7219 DRO displays](max7219-dro) (V2)
+  - [Experimental backlash compensation](backlash-compensation) (V1 branch and pending V2 pull request, both unmerged)
 
 {::nomarkdown}
 <a href="/images/binary-code.png">

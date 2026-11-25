@@ -8,6 +8,8 @@ History: see CHANGELOG.archive.md.
 
 ### Changed
 
+- Moved the homepage feature roundup below Communication as “What’s new” and marked new links in the documentation tree with ².
+
 - Serve extension-board diagram downloads and figures as optimized PNGs, with their editable SVG sources preserved in the diagram repository.
 
 - Share the diagram viewer stylesheet across pages to reduce page size and allow browser caching.
