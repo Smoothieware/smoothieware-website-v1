@@ -657,15 +657,15 @@ section {
 /* Directory columns retain readable phrases; narrow screens scroll inside the table. */
 .markdown-body .extension-board-directory { max-width: 100%; overflow-x: auto; margin: 1.2em 0; }
 .markdown-body .extension-board-directory:focus-visible { outline: 2px solid currentColor; outline-offset: 2px; }
-.markdown-body .extension-board-directory table { min-width: 760px !important; width: 100%; table-layout: fixed !important; margin: 0 !important; }
+.markdown-body .extension-board-directory table { min-width: 0 !important; width: 100%; table-layout: fixed !important; margin: 0 !important; }
 .markdown-body .extension-board-directory th,
 .markdown-body .extension-board-directory td { word-break: normal !important; overflow-wrap: break-word !important; hyphens: none !important; }
-.markdown-body .extension-board-directory th:first-child { width: 20%; }
-.markdown-body .extension-board-directory th:nth-child(2) { width: 25%; }
-.markdown-body .extension-board-directory td:nth-child(2) img {
+.markdown-body .extension-board-directory th:first-child { width: 40%; }
+.markdown-body .extension-board-directory td:first-child img {
   display: block;
   width: 100%;
   height: auto;
   max-height: 160px;
+  margin-top: .5em;
   object-fit: contain;
 }
