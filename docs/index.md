@@ -96,8 +96,8 @@ Retrofitting a K40 laser cutter? Start with the [K40 controller upgrade overview
 - [Configuring Smoothie](configuring-smoothie): Configuration and use, by module
   - [List of all configuration options](configuration-options)
   - [Motion control](motion-control): All things related to gcode interpolation, motion and acceleration planning, and step generation
-    - [Slaved Axes](actuator-slaving)² (V2)
     - [Backlash compensation](backlash-compensation)² (experimental in both versions)
+{::nomarkdown}<versioned><v1></v1><v2><div class="versioned-list-item" style="margin-left:1.25em;"><a href="actuator-slaving">Slaved Axes</a>²</div></v2></versioned>{:/nomarkdown}
   - [Arm Solutions](arm-solutions): [Cartesian](cartesian), [Delta](delta), [Hbot](hbot), [Core-XY](Core-XY), [Rotary Delta](rotary-delta), [Morgan Scara](morgan-scara)
   - [6axis](6axis): Using A, B and C axes, for 4, 5 or 6 axis motion.
   - [Grbl mode](grbl-mode): Using Smoothie in CNC-specific mode instead of 3D printing mode
@@ -138,8 +138,7 @@ Retrofitting a K40 laser cutter? Start with the [K40 controller upgrade overview
     - [Configurator](configurator): Manipulate configuration using console commands
     - [Kill Button](killbutton) and [Play LED](play-led): S/W based kill and play activity LED
     - [Panel](panel): Drive smoothie directly without a host using monochrome lcd screens and click encoders
-    - [MAX7219 digital readout](max7219-dro)² (V2)
-{::nomarkdown}<versioned><v1><div class="versioned-list-item" style="margin-left:1.25em;"><a href="jogger">Jogger</a>: Joystick-based jogging control for manual machine movement</div><div class="versioned-list-item" style="margin-left:1.25em;"><a href="joystick">Joystick</a>: Analog input from joysticks, sliders, and knobs</div></v1><v2><div class="versioned-list-item" style="margin-left:1.25em;"><a href="tm1638-display">TM1638 Display</a>: 7-segment LED display with buttons</div><div class="versioned-list-item" style="margin-left:1.25em;"><a href="button-box">Button Box</a>²: Programmable button panel for macros and machine control</div><div class="versioned-list-item" style="margin-left:1.25em;"><a href="mpg">MPG</a>: Manual Pulse Generator hand wheels for axis jogging</div><div class="versioned-list-item" style="margin-left:1.25em;"><a href="voltage-monitor">Voltage Monitor</a>: Monitor power supply voltages</div></v2></versioned>{:/nomarkdown}
+{::nomarkdown}<versioned><v1><div class="versioned-list-item" style="margin-left:1.25em;"><a href="jogger">Jogger</a>: Joystick-based jogging control for manual machine movement</div><div class="versioned-list-item" style="margin-left:1.25em;"><a href="joystick">Joystick</a>: Analog input from joysticks, sliders, and knobs</div></v1><v2><div class="versioned-list-item" style="margin-left:1.25em;"><a href="tm1638-display">TM1638 Display</a>: 7-segment LED display with buttons</div><div class="versioned-list-item" style="margin-left:1.25em;"><a href="button-box">Button Box</a>²: Programmable button panel for macros and machine control</div><div class="versioned-list-item" style="margin-left:1.25em;"><a href="mpg">MPG</a>: Manual Pulse Generator hand wheels for axis jogging</div><div class="versioned-list-item" style="margin-left:1.25em;"><a href="voltage-monitor">Voltage Monitor</a>: Monitor power supply voltages</div><div class="versioned-list-item" style="margin-left:1.25em;"><a href="max7219-dro">MAX7219 digital readout</a>²</div></v2></versioned>{:/nomarkdown}
     - [on_boot.gcode File](on-boot-gcode): Execute G-codes every time the board boots
 
 {::nomarkdown}
@@ -153,10 +152,10 @@ Retrofitting a K40 laser cutter? Start with the [K40 controller upgrade overview
 - [Using Smoothie](using-smoothie): General firmware use
   - [Console Commands](console-commands)
   - [Supported G-Codes](supported-g-codes)
-    - [O-word subroutines](subroutines)² (V2)
+{::nomarkdown}<versioned><v1></v1><v2><div class="versioned-list-item" style="margin-left:2.5em;"><a href="subroutines">O-word subroutines</a>²</div></v2></versioned>{:/nomarkdown}
   - [Stopping Smoothie](stopping-smoothie)
     - [Emergency Stop](emergencystop)
-    - [Real-time feed hold and cycle start](feed-hold)² (V2)
+{::nomarkdown}<versioned><v1></v1><v2><div class="versioned-list-item" style="margin-left:1.25em;"><a href="feed-hold">Real-time feed hold and cycle start</a>²</div></v2></versioned>{:/nomarkdown}
   - [Software](software)
     - [Smoopi](smoopi): **New and Recommended** drive Smoothie using a color touch screen on [Raspberry Pi](https://www.raspberrypi.com/)
     - [Pronterface](pronterface): Control 3D printers. The OG.

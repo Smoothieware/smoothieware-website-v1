@@ -8,7 +8,7 @@ History: see CHANGELOG.archive.md.
 
 ### Changed
 
-- Moved the homepage feature roundup below Communication as “What’s new” and marked standalone feature pages in the documentation tree with ². The roundup shows compact version labels and a short description for each feature.
+- Moved the homepage feature roundup below Communication as “What’s new” and marked standalone feature pages in the documentation tree with ². Version-specific tree entries follow the firmware selector. The roundup shows compact version labels and a short description for each feature.
 
 - Serve extension-board diagram downloads and figures as optimized PNGs, with their editable SVG sources preserved in the diagram repository.
 
