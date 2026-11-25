@@ -21,7 +21,7 @@ permalink: /extensions/leadshine-like-external-servo-drivers
     </div>
   </div>
   <figure>
-    <img src="/images/extensions/leadshine-like-external-servo-drivers/leadshine-like-external-servo-drivers-diagram.svg" alt="Top view of the servo driver board: a ten-contact socket at the top left, the TMC4671 chip at the upper centre, the TMC6100 and six transistor packages at the centre, a green four-way motor terminal at the right and a green two-way supply terminal at the left.">
+    <img src="/images/extensions/leadshine-like-external-servo-drivers/leadshine-like-external-servo-drivers-diagram.png" alt="Top view of the servo driver board: a ten-contact socket at the top left, the TMC4671 chip at the upper centre, the TMC6100 and six transistor packages at the centre, a green four-way motor terminal at the right and a green two-way supply terminal at the left.">
     <figcaption>Top view, drawn from the board&rsquo;s design files. The silk in this drawing reads V26; the page documents the v27 design files. This is a drawing, not a photograph.</figcaption>
   </figure>
 </div>
@@ -87,7 +87,7 @@ The numbers on the drawing match the list below it. The board is shown from the 
 <figure class="xb-tour">
   <div class="xb-tour-scroll" tabindex="0" role="region" aria-label="Annotated top view of the board">
     <div class="xb-tour-stage">
-      <img src="/images/extensions/leadshine-like-external-servo-drivers/leadshine-like-external-servo-drivers-diagram.svg" alt="Top view of the Leadshine-like external servo driver board with sixteen numbered markers that are explained in the list below.">
+      <img src="/images/extensions/leadshine-like-external-servo-drivers/leadshine-like-external-servo-drivers-diagram.png" alt="Top view of the Leadshine-like external servo driver board with sixteen numbered markers that are explained in the list below.">
       <a class="xb-mk xb-pb xb-pl" href="#tour-1" style="left:11%;top:4.3%" aria-label="1: input socket">1<span class="xb-pop"><b>Input socket (J1)</b> — a ten-contact socket (Gadgeteer S) carrying enable, step, direction and four SPI lines from the host. <i>See the pinout.</i></span></a>
       <a class="xb-mk xb-pb xb-pl" href="#tour-2" style="left:6.5%;top:24.7%" aria-label="2: motor supply terminal">2<span class="xb-pop"><b>Motor supply terminal (J2)</b> — a two-way screw terminal for the motor supply, 12 to 28&nbsp;V DC on the silk: contact 1 positive, contact 2 power ground. The silk says no hot-plug.</span></a>
       <a class="xb-mk xb-pb xb-pr" href="#tour-3" style="left:93.5%;top:35.4%" aria-label="3: motor terminal">3<span class="xb-pop"><b>Motor terminal (J3)</b> — a four-way screw terminal: contacts 1, 2 and 3 are the motor phases U, V and W, and contact 4 is the cable shield.</span></a>
@@ -308,7 +308,7 @@ Still stuck? Read [how to ask for help](/help-guidelines) or see the general [tr
   <tbody>
     <tr><td><a href="/images/extensions/leadshine-like-external-servo-drivers/leadshine-like-external-servo-drivers-schematic.pdf">Schematic (PDF)</a></td><td>v27</td><td>The complete circuit diagram. Its title block reads v10.</td></tr>
     <tr><td><a href="/images/extensions/leadshine-like-external-servo-drivers/leadshine-like-external-servo-drivers-bom.csv">Parts list (CSV)</a></td><td>v27</td><td>Every component with its value and footprint</td></tr>
-    <tr><td><a href="/images/extensions/leadshine-like-external-servo-drivers/leadshine-like-external-servo-drivers-diagram.svg">Board drawing (SVG)</a></td><td>v27</td><td>The top view used on this page, at full resolution; its silk reads V26</td></tr>
+    <tr><td><a href="/images/extensions/leadshine-like-external-servo-drivers/leadshine-like-external-servo-drivers-diagram.png">Board drawing (SVG)</a></td><td>v27</td><td>The top view used on this page, at full resolution; its silk reads V26</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}

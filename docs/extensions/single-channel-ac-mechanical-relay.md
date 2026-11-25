@@ -21,7 +21,7 @@ permalink: /extensions/single-channel-ac-mechanical-relay
     </div>
   </div>
   <figure>
-    <img src="/images/extensions/single-channel-ac-mechanical-relay/single-channel-ac-mechanical-relay-diagram.svg" alt="Top view of the single-channel relay board: a green three-way screw terminal at the top left, one large relay below it, a yellow XT30 connector at the right and a two-way green screw terminal at the left edge.">
+    <img src="/images/extensions/single-channel-ac-mechanical-relay/single-channel-ac-mechanical-relay-diagram.png" alt="Top view of the single-channel relay board: a green three-way screw terminal at the top left, one large relay below it, a yellow XT30 connector at the right and a two-way green screw terminal at the left edge.">
     <figcaption>Top view, drawn from the board's design files (revision v19). This is a drawing, not a photograph.</figcaption>
   </figure>
 </div>
@@ -95,7 +95,7 @@ The numbers on the drawing match the list below it. The board is shown from the 
 <figure class="xb-tour">
   <div class="xb-tour-scroll" tabindex="0" role="region" aria-label="Annotated top view of the board">
     <div class="xb-tour-stage">
-      <img src="/images/extensions/single-channel-ac-mechanical-relay/single-channel-ac-mechanical-relay-diagram.svg" alt="Top view of the relay board with fifteen numbered markers that are explained in the list below.">
+      <img src="/images/extensions/single-channel-ac-mechanical-relay/single-channel-ac-mechanical-relay-diagram.png" alt="Top view of the relay board with fifteen numbered markers that are explained in the list below.">
       <a class="xb-mk xb-pb xb-pl" href="#tour-1" style="left:15.9%;top:9.8%" aria-label="1: load terminal">1<span class="xb-pop"><b>Load terminal</b> — a three-way screw terminal marked <b>NO</b>, <b>NC</b> and <b>C</b> on the board. This is the only mains area.</span></a>
       <a class="xb-mk xb-pl" href="#tour-2" style="left:15.9%;top:54.9%" aria-label="2: relay">2<span class="xb-pop"><b>Relay</b> — one soldered 12&nbsp;V relay. You hear it click each time it switches.</span></a>
       <a class="xb-mk" href="#tour-3" style="left:30.5%;top:65.9%" aria-label="3: indicator light">3<span class="xb-pop"><b>Indicator light</b> — a green LED, lit while the relay coil is driven.</span></a>
@@ -428,7 +428,7 @@ Still stuck? Read [how to ask for help](/help-guidelines) or see the general [tr
   <tbody>
     <tr><td><a href="/images/extensions/single-channel-ac-mechanical-relay/single-channel-ac-mechanical-relay-schematic.pdf">Schematic (PDF)</a></td><td>v19</td><td>The complete circuit diagram</td></tr>
     <tr><td><a href="/images/extensions/single-channel-ac-mechanical-relay/single-channel-ac-mechanical-relay-bom.csv">Parts list (CSV)</a></td><td>v19</td><td>Every component with its value and footprint</td></tr>
-    <tr><td><a href="/images/extensions/single-channel-ac-mechanical-relay/single-channel-ac-mechanical-relay-diagram.svg">Board drawing (SVG)</a></td><td>v19</td><td>The top view used on this page, at full resolution</td></tr>
+    <tr><td><a href="/images/extensions/single-channel-ac-mechanical-relay/single-channel-ac-mechanical-relay-diagram.png">Board drawing (SVG)</a></td><td>v19</td><td>The top view used on this page, at full resolution</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}

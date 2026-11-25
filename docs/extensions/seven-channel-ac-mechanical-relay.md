@@ -21,7 +21,7 @@ permalink: /extensions/seven-channel-ac-mechanical-relay
     </div>
   </div>
   <figure>
-    <img src="/images/extensions/seven-channel-ac-mechanical-relay/seven-channel-ac-mechanical-relay-diagram.svg" alt="Top view of the seven-channel relay board: seven green three-way screw terminals along the top edge, seven relays below them, two small ribbon-cable connectors at the bottom left and two 12 volt power inputs at the bottom right.">
+    <img src="/images/extensions/seven-channel-ac-mechanical-relay/seven-channel-ac-mechanical-relay-diagram.png" alt="Top view of the seven-channel relay board: seven green three-way screw terminals along the top edge, seven relays below them, two small ribbon-cable connectors at the bottom left and two 12 volt power inputs at the bottom right.">
     <figcaption>Top view, drawn from the board's design files (revision v17). This is a drawing, not a photograph.</figcaption>
   </figure>
 </div>
@@ -97,7 +97,7 @@ The numbers on the drawing match the list below it. The board is shown from the 
 <figure class="xb-tour">
   <div class="xb-tour-scroll" tabindex="0" role="region" aria-label="Annotated top view of the board">
     <div class="xb-tour-stage">
-      <img src="/images/extensions/seven-channel-ac-mechanical-relay/seven-channel-ac-mechanical-relay-diagram.svg" alt="Top view of the relay board with fourteen numbered markers that are explained in the list below.">
+      <img src="/images/extensions/seven-channel-ac-mechanical-relay/seven-channel-ac-mechanical-relay-diagram.png" alt="Top view of the relay board with fourteen numbered markers that are explained in the list below.">
       <span class="xb-ch" style="left:7.8%;top:35%">RELAY 1</span>
       <span class="xb-ch" style="left:21.3%;top:35%">RELAY 2</span>
       <span class="xb-ch" style="left:34.8%;top:35%">RELAY 3</span>
@@ -784,7 +784,7 @@ Still stuck? Read [how to ask for help](/help-guidelines) or see the general [tr
   <tbody>
     <tr><td><a href="/images/extensions/seven-channel-ac-mechanical-relay/seven-channel-ac-mechanical-relay-schematic.pdf">Schematic (PDF)</a></td><td>v17</td><td>The complete circuit diagram</td></tr>
     <tr><td><a href="/images/extensions/seven-channel-ac-mechanical-relay/seven-channel-ac-mechanical-relay-bom.csv">Parts list (CSV)</a></td><td>v17</td><td>Every component with its value, footprint and manufacturer part number</td></tr>
-    <tr><td><a href="/images/extensions/seven-channel-ac-mechanical-relay/seven-channel-ac-mechanical-relay-diagram.svg">Board drawing (SVG)</a></td><td>v17</td><td>The top view used on this page, at full resolution</td></tr>
+    <tr><td><a href="/images/extensions/seven-channel-ac-mechanical-relay/seven-channel-ac-mechanical-relay-diagram.png">Board drawing (SVG)</a></td><td>v17</td><td>The top view used on this page, at full resolution</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}

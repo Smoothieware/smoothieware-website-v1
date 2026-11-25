@@ -21,7 +21,7 @@ permalink: /extensions/bltouch-like-probe
     </div>
   </div>
   <figure>
-    <img src="/images/extensions/bltouch-like-probe/bltouch-like-probe-diagram.svg" alt="Top view of the BLTouch-like probe board: a 10-contact socket at the left, a large microcontroller in the middle and two cream-coloured connectors at the right.">
+    <img src="/images/extensions/bltouch-like-probe/bltouch-like-probe-diagram.png" alt="Top view of the BLTouch-like probe board: a 10-contact socket at the left, a large microcontroller in the middle and two cream-coloured connectors at the right.">
     <figcaption>Top view, drawn from the board&rsquo;s design files (revision v18). This is a drawing, not a photograph.</figcaption>
   </figure>
 </div>
@@ -85,7 +85,7 @@ The numbers on the drawing match the list below it. The board is shown from the 
 <figure class="xb-tour">
   <div class="xb-tour-scroll" tabindex="0" role="region" aria-label="Annotated top view of the board">
     <div class="xb-tour-stage">
-      <img src="/images/extensions/bltouch-like-probe/bltouch-like-probe-diagram.svg" alt="Top view of the BLTouch-like probe board with fourteen numbered markers that are explained in the list below.">
+      <img src="/images/extensions/bltouch-like-probe/bltouch-like-probe-diagram.png" alt="Top view of the BLTouch-like probe board with fourteen numbered markers that are explained in the list below.">
       <a class="xb-mk xb-pl" href="#tour-1" style="left:10.4%;top:60.6%" aria-label="1: host socket">1<span class="xb-pop"><b>Gadgeteer socket P (J1)</b> — the 10-contact socket to the controller. Contact 3 is the probe output, 6 the alarm, 7 the control request. <i>See the pinout.</i></span></a>
       <a class="xb-mk" href="#tour-2" style="left:70%;top:84%" aria-label="2: servo-style input">2<span class="xb-pop"><b>Servo-style input (J2)</b> — an alternative control input, ground / 5&nbsp;V / signal. Do not power the board from both J1 and J2 without a settled power-source arrangement.</span></a>
       <a class="xb-mk xb-pb" href="#tour-3" style="left:75.8%;top:14%" aria-label="3: probe output">3<span class="xb-pop"><b>Probe output (J3)</b> — the probe trigger output as signal and ground. It must be wired to a host input separately from the control cable.</span></a>
@@ -302,7 +302,7 @@ Still stuck? Read [how to ask for help](/help-guidelines) or see the general [tr
   <tbody>
     <tr><td><a href="/images/extensions/bltouch-like-probe/bltouch-like-probe-schematic.pdf">Schematic (PDF)</a></td><td>v18</td><td>The complete circuit diagram. Its title block reads WIP.</td></tr>
     <tr><td><a href="/images/extensions/bltouch-like-probe/bltouch-like-probe-bom.csv">Parts list (CSV)</a></td><td>v18</td><td>Every component with its value and footprint</td></tr>
-    <tr><td><a href="/images/extensions/bltouch-like-probe/bltouch-like-probe-diagram.svg">Board drawing (SVG)</a></td><td>v18</td><td>The top view used on this page, at full resolution</td></tr>
+    <tr><td><a href="/images/extensions/bltouch-like-probe/bltouch-like-probe-diagram.png">Board drawing (SVG)</a></td><td>v18</td><td>The top view used on this page, at full resolution</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}

@@ -23,7 +23,7 @@ Teensy VIN feeds the socket 5 V rail through a Schottky diode. Teensy 3.3 V feed
 The source-coordinate abstraction preserves the selected v05 placement. The Teensy is removed in this view so its two receiving headers are visible. White dots identify source contact 1; they are not a qualified view into the mating plug. The contact keys provide the complete electrical pinout at a readable size.
 
 {::nomarkdown}
-{% include _includes/extension-instruction-diagram.html id="teensy-v05-reference" src="/images/extensions/teensy-to-gadgeteer-host/guides/board-reference.svg" title="Teensy host v05 — board reference" alt="Source-coordinate top view of the Teensy carrier with callouts to the analog, I2C, PWM, UART, SPI and GPIO sockets and both host headers." caption="Qwiic J7 fitted; alternative J8 unpopulated, with its copper contacts retained. The contact keys and power/service key below complete this reference. Source geometry does not establish manufactured fit or qualification." width=660 %}
+{% include _includes/extension-instruction-diagram.html id="teensy-v05-reference" src="/images/extensions/teensy-to-gadgeteer-host/guides/board-reference.png" title="Teensy host v05 — board reference" alt="Source-coordinate top view of the Teensy carrier with callouts to the analog, I2C, PWM, UART, SPI and GPIO sockets and both host headers." caption="Qwiic J7 fitted; alternative J8 unpopulated, with its copper contacts retained. The contact keys and power/service key below complete this reference. Source geometry does not establish manufactured fit or qualification." width=660 %}
 {:/nomarkdown}
 
 ### Common socket contacts
@@ -53,10 +53,10 @@ The socket tables list every remaining contact. `NC` means not connected in this
 These signals require **Teensy 4.1**. A Teensy 4.0 does not make the corresponding receiving-header connections.
 
 {::nomarkdown}
-{% include _includes/extension-instruction-diagram.html id="teensy-v05-y-1" src="/images/extensions/teensy-to-gadgeteer-host/guides/j1-contacts-1-5.svg" title="GPIO socket — contacts 1–5" alt="Readable electrical contact key for GPIO socket contacts 1 to 5, including both supply contacts." caption="Read with the native top-view board map. Rows are expanded electrical keys, not a view into the physical cable plug." width=660 %}
+{% include _includes/extension-instruction-diagram.html id="teensy-v05-y-1" src="/images/extensions/teensy-to-gadgeteer-host/guides/j1-contacts-1-5.png" title="GPIO socket — contacts 1–5" alt="Readable electrical contact key for GPIO socket contacts 1 to 5, including both supply contacts." caption="Read with the native top-view board map. Rows are expanded electrical keys, not a view into the physical cable plug." width=660 %}
 {:/nomarkdown}
 {::nomarkdown}
-{% include _includes/extension-instruction-diagram.html id="teensy-v05-y-2" src="/images/extensions/teensy-to-gadgeteer-host/guides/j1-contacts-6-10.svg" title="GPIO socket — contacts 6–10" alt="Readable electrical contact key for GPIO socket contacts 6 to 10, including common ground." caption="The two keys together cover every socket contact, including contacts unconnected in the selected source." width=660 %}
+{% include _includes/extension-instruction-diagram.html id="teensy-v05-y-2" src="/images/extensions/teensy-to-gadgeteer-host/guides/j1-contacts-6-10.png" title="GPIO socket — contacts 6–10" alt="Readable electrical contact key for GPIO socket contacts 6 to 10, including common ground." caption="The two keys together cover every socket contact, including contacts unconnected in the selected source." width=660 %}
 {:/nomarkdown}
 
 ### Analog socket — J2, type A
@@ -74,10 +74,10 @@ These signals require **Teensy 4.1**. A Teensy 4.0 does not make the correspondi
 Keep analog inputs within the Teensy's supported 0–3.3 V range. GPIO contact 6 also has an analog function on the Teensy; that does not change the socket type or provide a higher voltage range.
 
 {::nomarkdown}
-{% include _includes/extension-instruction-diagram.html id="teensy-v05-a-1" src="/images/extensions/teensy-to-gadgeteer-host/guides/j2-contacts-1-5.svg" title="Analog socket — contacts 1–5" alt="Readable electrical contact key for Analog socket contacts 1 to 5, including both supply contacts." caption="Read with the native top-view board map. Rows are expanded electrical keys, not a view into the physical cable plug." width=660 %}
+{% include _includes/extension-instruction-diagram.html id="teensy-v05-a-1" src="/images/extensions/teensy-to-gadgeteer-host/guides/j2-contacts-1-5.png" title="Analog socket — contacts 1–5" alt="Readable electrical contact key for Analog socket contacts 1 to 5, including both supply contacts." caption="Read with the native top-view board map. Rows are expanded electrical keys, not a view into the physical cable plug." width=660 %}
 {:/nomarkdown}
 {::nomarkdown}
-{% include _includes/extension-instruction-diagram.html id="teensy-v05-a-2" src="/images/extensions/teensy-to-gadgeteer-host/guides/j2-contacts-6-10.svg" title="Analog socket — contacts 6–10" alt="Readable electrical contact key for Analog socket contacts 6 to 10, including common ground." caption="The two keys together cover every socket contact, including contacts unconnected in the selected source." width=660 %}
+{% include _includes/extension-instruction-diagram.html id="teensy-v05-a-2" src="/images/extensions/teensy-to-gadgeteer-host/guides/j2-contacts-6-10.png" title="Analog socket — contacts 6–10" alt="Readable electrical contact key for Analog socket contacts 6 to 10, including common ground." caption="The two keys together cover every socket contact, including contacts unconnected in the selected source." width=660 %}
 {:/nomarkdown}
 
 ### SPI socket — J3, type S
@@ -95,10 +95,10 @@ Keep analog inputs within the Teensy's supported 0–3.3 V range. GPIO contact 6
 Arrows are relative to the Teensy acting as SPI controller. Pin 13 also drives the Teensy's onboard LED. Configure chip select, mode, clock and the device driver for the actual peripheral; a socket letter supplies none of those settings.
 
 {::nomarkdown}
-{% include _includes/extension-instruction-diagram.html id="teensy-v05-s-1" src="/images/extensions/teensy-to-gadgeteer-host/guides/j3-contacts-1-5.svg" title="SPI socket — contacts 1–5" alt="Readable electrical contact key for SPI socket contacts 1 to 5, including both supply contacts." caption="Read with the native top-view board map. Rows are expanded electrical keys, not a view into the physical cable plug." width=660 %}
+{% include _includes/extension-instruction-diagram.html id="teensy-v05-s-1" src="/images/extensions/teensy-to-gadgeteer-host/guides/j3-contacts-1-5.png" title="SPI socket — contacts 1–5" alt="Readable electrical contact key for SPI socket contacts 1 to 5, including both supply contacts." caption="Read with the native top-view board map. Rows are expanded electrical keys, not a view into the physical cable plug." width=660 %}
 {:/nomarkdown}
 {::nomarkdown}
-{% include _includes/extension-instruction-diagram.html id="teensy-v05-s-2" src="/images/extensions/teensy-to-gadgeteer-host/guides/j3-contacts-6-10.svg" title="SPI socket — contacts 6–10" alt="Readable electrical contact key for SPI socket contacts 6 to 10, including common ground." caption="The two keys together cover every socket contact, including contacts unconnected in the selected source." width=660 %}
+{% include _includes/extension-instruction-diagram.html id="teensy-v05-s-2" src="/images/extensions/teensy-to-gadgeteer-host/guides/j3-contacts-6-10.png" title="SPI socket — contacts 6–10" alt="Readable electrical contact key for SPI socket contacts 6 to 10, including common ground." caption="The two keys together cover every socket contact, including contacts unconnected in the selected source." width=660 %}
 {:/nomarkdown}
 
 ### UART socket — J4, type U
@@ -116,10 +116,10 @@ Arrows are relative to the Teensy acting as SPI controller. Pin 13 also drives t
 Use Teensy `Serial1` on pins 0/1. These are **3.3 V logic UART** signals, not RS-232 or RS-485 levels. For a directly wired peripheral, host TX goes to peripheral RX, host RX goes to peripheral TX, and grounds must be common.
 
 {::nomarkdown}
-{% include _includes/extension-instruction-diagram.html id="teensy-v05-u-1" src="/images/extensions/teensy-to-gadgeteer-host/guides/j4-contacts-1-5.svg" title="UART socket — contacts 1–5" alt="Readable electrical contact key for UART socket contacts 1 to 5, including both supply contacts." caption="Read with the native top-view board map. Rows are expanded electrical keys, not a view into the physical cable plug." width=660 %}
+{% include _includes/extension-instruction-diagram.html id="teensy-v05-u-1" src="/images/extensions/teensy-to-gadgeteer-host/guides/j4-contacts-1-5.png" title="UART socket — contacts 1–5" alt="Readable electrical contact key for UART socket contacts 1 to 5, including both supply contacts." caption="Read with the native top-view board map. Rows are expanded electrical keys, not a view into the physical cable plug." width=660 %}
 {:/nomarkdown}
 {::nomarkdown}
-{% include _includes/extension-instruction-diagram.html id="teensy-v05-u-2" src="/images/extensions/teensy-to-gadgeteer-host/guides/j4-contacts-6-10.svg" title="UART socket — contacts 6–10" alt="Readable electrical contact key for UART socket contacts 6 to 10, including common ground." caption="The two keys together cover every socket contact, including contacts unconnected in the selected source." width=660 %}
+{% include _includes/extension-instruction-diagram.html id="teensy-v05-u-2" src="/images/extensions/teensy-to-gadgeteer-host/guides/j4-contacts-6-10.png" title="UART socket — contacts 6–10" alt="Readable electrical contact key for UART socket contacts 6 to 10, including common ground." caption="The two keys together cover every socket contact, including contacts unconnected in the selected source." width=660 %}
 {:/nomarkdown}
 
 ### I²C socket — J5, type I
@@ -137,10 +137,10 @@ Use Teensy `Serial1` on pins 0/1. These are **3.3 V logic UART** signals, not RS
 Pins 18/19 belong to the Teensy `Wire` bus. J5, Qwiic J7 and alternative J8 share addresses, capacitance and pull-up loading. Use 3.3 V bus pull-ups; never attach a module that pulls the bus to 5 V. Contact 3 is GPIO 17, not a PWM channel.
 
 {::nomarkdown}
-{% include _includes/extension-instruction-diagram.html id="teensy-v05-i-1" src="/images/extensions/teensy-to-gadgeteer-host/guides/j5-contacts-1-5.svg" title="I²C socket — contacts 1–5" alt="Readable electrical contact key for I²C socket contacts 1 to 5, including both supply contacts." caption="Read with the native top-view board map. Rows are expanded electrical keys, not a view into the physical cable plug." width=660 %}
+{% include _includes/extension-instruction-diagram.html id="teensy-v05-i-1" src="/images/extensions/teensy-to-gadgeteer-host/guides/j5-contacts-1-5.png" title="I²C socket — contacts 1–5" alt="Readable electrical contact key for I²C socket contacts 1 to 5, including both supply contacts." caption="Read with the native top-view board map. Rows are expanded electrical keys, not a view into the physical cable plug." width=660 %}
 {:/nomarkdown}
 {::nomarkdown}
-{% include _includes/extension-instruction-diagram.html id="teensy-v05-i-2" src="/images/extensions/teensy-to-gadgeteer-host/guides/j5-contacts-6-10.svg" title="I²C socket — contacts 6–10" alt="Readable electrical contact key for I²C socket contacts 6 to 10, including common ground." caption="The two keys together cover every socket contact, including contacts unconnected in the selected source." width=660 %}
+{% include _includes/extension-instruction-diagram.html id="teensy-v05-i-2" src="/images/extensions/teensy-to-gadgeteer-host/guides/j5-contacts-6-10.png" title="I²C socket — contacts 6–10" alt="Readable electrical contact key for I²C socket contacts 6 to 10, including common ground." caption="The two keys together cover every socket contact, including contacts unconnected in the selected source." width=660 %}
 {:/nomarkdown}
 
 ### PWM socket — J6, type P
@@ -158,10 +158,10 @@ Pins 18/19 belong to the Teensy `Wire` bus. J5, Qwiic J7 and alternative J8 shar
 Pin 9 is the third PWM channel; an older draft incorrectly assigned that function to pin 17. Pins 7/8 can alternatively serve Teensy `Serial2`, so do not enable that UART while using them as PWM. These are logic signals; power loads need an appropriate driver.
 
 {::nomarkdown}
-{% include _includes/extension-instruction-diagram.html id="teensy-v05-p-1" src="/images/extensions/teensy-to-gadgeteer-host/guides/j6-contacts-1-5.svg" title="PWM socket — contacts 1–5" alt="Readable electrical contact key for PWM socket contacts 1 to 5, including both supply contacts." caption="Read with the native top-view board map. Rows are expanded electrical keys, not a view into the physical cable plug." width=660 %}
+{% include _includes/extension-instruction-diagram.html id="teensy-v05-p-1" src="/images/extensions/teensy-to-gadgeteer-host/guides/j6-contacts-1-5.png" title="PWM socket — contacts 1–5" alt="Readable electrical contact key for PWM socket contacts 1 to 5, including both supply contacts." caption="Read with the native top-view board map. Rows are expanded electrical keys, not a view into the physical cable plug." width=660 %}
 {:/nomarkdown}
 {::nomarkdown}
-{% include _includes/extension-instruction-diagram.html id="teensy-v05-p-2" src="/images/extensions/teensy-to-gadgeteer-host/guides/j6-contacts-6-10.svg" title="PWM socket — contacts 6–10" alt="Readable electrical contact key for PWM socket contacts 6 to 10, including common ground." caption="The two keys together cover every socket contact, including contacts unconnected in the selected source." width=660 %}
+{% include _includes/extension-instruction-diagram.html id="teensy-v05-p-2" src="/images/extensions/teensy-to-gadgeteer-host/guides/j6-contacts-6-10.png" title="PWM socket — contacts 6–10" alt="Readable electrical contact key for PWM socket contacts 6 to 10, including common ground." caption="The two keys together cover every socket contact, including contacts unconnected in the selected source." width=660 %}
 {:/nomarkdown}
 
 ### Host headers, Qwiic and controls
@@ -212,7 +212,7 @@ Qwiic J7 is a four-contact JST SH connector at 1.0 mm pitch: **1 GND, 2 filtered
 The adapter has no reset or programming control. Program the Teensy through its own USB interface. Reconcile all parallel I²C pull-ups before cutting links: these links affect the shared bus, not only Qwiic. See [PJRC's Wire reference](https://www.pjrc.com/teensy/td_libs_Wire.html) for the host API; each peripheral still needs its own compatible driver.
 
 {::nomarkdown}
-{% include _includes/extension-instruction-diagram.html id="teensy-v05-service" src="/images/extensions/teensy-to-gadgeteer-host/guides/power-service-key.svg" title="Teensy host — power and service key" alt="Readable Qwiic/header contact key, LED and I2C solder links, measurement pads and total design supply budgets." caption="Change solder links only with power disconnected. A lit indicator does not prove the rail is within specification or a peripheral works." width=660 %}
+{% include _includes/extension-instruction-diagram.html id="teensy-v05-service" src="/images/extensions/teensy-to-gadgeteer-host/guides/power-service-key.png" title="Teensy host — power and service key" alt="Readable Qwiic/header contact key, LED and I2C solder links, measurement pads and total design supply budgets." caption="Change solder links only with power disconnected. A lit indicator does not prove the rail is within specification or a peripheral works." width=660 %}
 {:/nomarkdown}
 
 ## Power and connection limits
@@ -230,7 +230,7 @@ Use **Teensy 4.1 + carrier v05 + Buzzer module v14**, without another module or 
 The diagram below is an **electrical contact map, not a complete installation drawing**. Its detached cable rows establish the contact-number schedule; they do not show continuous connections to the native board contacts. Physical plug orientation, source-native cable fanout and cable fit still need qualification before this can serve as an assembly guide.
 
 {::nomarkdown}
-{% include _includes/extension-instruction-diagram.html id="teensy-v05-buzzer-wiring" src="/images/extensions/teensy-to-gadgeteer-host/guides/full-wiring.svg" title="Teensy host to Buzzer — electrical cable contact map" alt="Source-derived Teensy v05 carrier and v14 buzzer board insets above a separate ten-conductor electrical contact map. The cable rows do not join the connectors in the board artwork. Contact 2 supplies 5 V, contact 3 carries Teensy 24 control and contact 10 supplies ground." caption="Electrical contact map only; the physical installation drawing is incomplete. The board insets retain source placement, but the numbered cable rows are detached from their native connector contacts and autorouted on a separate schematic grid. Physical plug orientation, source-native fanout and cable fit remain unqualified. Prove each cable contact number end-to-end; do not infer a mating-face layout from the rows. No Prime connection is applicable." width=660 %}
+{% include _includes/extension-instruction-diagram.html id="teensy-v05-buzzer-wiring" src="/images/extensions/teensy-to-gadgeteer-host/guides/full-wiring.png" title="Teensy host to Buzzer — electrical cable contact map" alt="Source-derived Teensy v05 carrier and v14 buzzer board insets above a separate ten-conductor electrical contact map. The cable rows do not join the connectors in the board artwork. Contact 2 supplies 5 V, contact 3 carries Teensy 24 control and contact 10 supplies ground." caption="Electrical contact map only; the physical installation drawing is incomplete. The board insets retain source placement, but the numbered cable rows are detached from their native connector contacts and autorouted on a separate schematic grid. Physical plug orientation, source-native fanout and cable fit remain unqualified. Prove each cable contact number end-to-end; do not infer a mating-face layout from the rows. No Prime connection is applicable." width=660 %}
 {:/nomarkdown}
 
 | Carrier GPIO socket J1 | Buzzer input J1 | Role |

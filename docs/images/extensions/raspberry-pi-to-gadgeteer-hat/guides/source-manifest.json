@@ -2875,7 +2875,7 @@
           "*.Mask"
         ]
       },
-      "role": "3.3 V \u00b7 no Buzzer load"
+      "role": "3.3 V · no Buzzer load"
     },
     {
       "id": "C1.2",
@@ -2933,7 +2933,7 @@
           "*.Mask"
         ]
       },
-      "role": "5 V \u00b7 module supply"
+      "role": "5 V · module supply"
     },
     {
       "id": "C1.3",
@@ -2991,7 +2991,7 @@
           "*.Mask"
         ]
       },
-      "role": "GPIO5 \u00b7 command \u2192"
+      "role": "GPIO5 · command →"
     },
     {
       "id": "C1.4",
@@ -3049,7 +3049,7 @@
           "*.Mask"
         ]
       },
-      "role": "GPIO27 \u00b7 no Buzzer load"
+      "role": "GPIO27 · no Buzzer load"
     },
     {
       "id": "C1.5",
@@ -3107,7 +3107,7 @@
           "*.Mask"
         ]
       },
-      "role": "GPIO7 \u00b7 no Buzzer load"
+      "role": "GPIO7 · no Buzzer load"
     },
     {
       "id": "C1.6",
@@ -3165,7 +3165,7 @@
           "*.Mask"
         ]
       },
-      "role": "GPIO22 \u00b7 no Buzzer load"
+      "role": "GPIO22 · no Buzzer load"
     },
     {
       "id": "C1.7",
@@ -3223,7 +3223,7 @@
           "*.Mask"
         ]
       },
-      "role": "GPIO25 \u00b7 no Buzzer load"
+      "role": "GPIO25 · no Buzzer load"
     },
     {
       "id": "C1.8",
@@ -3281,7 +3281,7 @@
           "*.Mask"
         ]
       },
-      "role": "GPIO23 \u00b7 no Buzzer load"
+      "role": "GPIO23 · no Buzzer load"
     },
     {
       "id": "C1.9",
@@ -3339,7 +3339,7 @@
           "*.Mask"
         ]
       },
-      "role": "GPIO24 \u00b7 no Buzzer load"
+      "role": "GPIO24 · no Buzzer load"
     },
     {
       "id": "C1.10",
@@ -3397,7 +3397,7 @@
           "*.Mask"
         ]
       },
-      "role": "GND \u00b7 return"
+      "role": "GND · return"
     }
   ],
   "verified": {
@@ -3440,5 +3440,97 @@
     "board-reference.svg": "c90edb2426901c141ee51c47d3055751f0f471bf09a60d30f70de740f6de3302",
     "contacts-j6.svg": "84c26fb030353e86863271d3daea97f9a7a6cefd78ef51021dbf3a19f19a15d8",
     "power-controls.svg": "afe5c04ed8f185e8effafde1a71adc7bc8198be6dd50ecb6d71229633259144f"
+  },
+  "website_png_exports": {
+    "board-reference.svg": {
+      "archived_svg": "smoothie-diagrams/data/website-extension-svg/raspberry-pi-to-gadgeteer-hat/guides/board-reference.svg",
+      "archived_svg_sha256": "6643342b8f4f8d664da6940169eb9da75cf0f3fcebec79db136d0fe674f74fc7",
+      "url": "/images/extensions/raspberry-pi-to-gadgeteer-hat/guides/board-reference.png",
+      "sha256": "b99ab62a34eabc2658ed3619d7b5045729f55a55b9ecf4d57ed72f5542fb2382"
+    },
+    "buzzer-electrical-paths.svg": {
+      "archived_svg": "smoothie-diagrams/data/website-extension-svg/raspberry-pi-to-gadgeteer-hat/guides/buzzer-electrical-paths.svg",
+      "archived_svg_sha256": "1cd76aa78efdbd2fec521e5373f28138679e6f4f3c43d4800d12ec7287cd16c0",
+      "url": "/images/extensions/raspberry-pi-to-gadgeteer-hat/guides/buzzer-electrical-paths.png",
+      "sha256": "09823d082c421c5e63a8350eb5ea2bf12d4066e9d7a3ad9f2231618af062cb09"
+    },
+    "cable-contact-key.svg": {
+      "archived_svg": "smoothie-diagrams/data/website-extension-svg/raspberry-pi-to-gadgeteer-hat/guides/cable-contact-key.svg",
+      "archived_svg_sha256": "38259b84ec596fc54d983255668746feb8dde642fc9bcda58aff476e2bb577de",
+      "url": "/images/extensions/raspberry-pi-to-gadgeteer-hat/guides/cable-contact-key.png",
+      "sha256": "dc0737e0fe06a320439842b0a28c9d31855218b90b611f2bb61788f8db2a38c3"
+    },
+    "contacts-j1.svg": {
+      "archived_svg": "smoothie-diagrams/data/website-extension-svg/raspberry-pi-to-gadgeteer-hat/guides/contacts-j1.svg",
+      "archived_svg_sha256": "a61b26ba4da4b87b132a5f86ec2850b1243092e7083abb2a0b85712b516c2ad0",
+      "url": "/images/extensions/raspberry-pi-to-gadgeteer-hat/guides/contacts-j1.png",
+      "sha256": "bef088fdee1a8f77908c928787cf5977cc9f47d80e8f9c5b8691647444068ea3"
+    },
+    "contacts-j2.svg": {
+      "archived_svg": "smoothie-diagrams/data/website-extension-svg/raspberry-pi-to-gadgeteer-hat/guides/contacts-j2.svg",
+      "archived_svg_sha256": "3f71b10094abdcdbd595eca1d33a198da7f343af4bd3202ed928d51e658c331a",
+      "url": "/images/extensions/raspberry-pi-to-gadgeteer-hat/guides/contacts-j2.png",
+      "sha256": "6bf17d62dfc2fb03a304fedb68784fdf6396923f6153621dac97959690f4c841"
+    },
+    "contacts-j3.svg": {
+      "archived_svg": "smoothie-diagrams/data/website-extension-svg/raspberry-pi-to-gadgeteer-hat/guides/contacts-j3.svg",
+      "archived_svg_sha256": "7eb638d20cadd300069c1f41dd6130bba47b40c905a19a480a3b35d8cb97855d",
+      "url": "/images/extensions/raspberry-pi-to-gadgeteer-hat/guides/contacts-j3.png",
+      "sha256": "36ccee855a85358e4422f2a0d7acf84efb70830ffeaded2693694b35b37e7b72"
+    },
+    "contacts-j4.svg": {
+      "archived_svg": "smoothie-diagrams/data/website-extension-svg/raspberry-pi-to-gadgeteer-hat/guides/contacts-j4.svg",
+      "archived_svg_sha256": "51a1d5ba0de4982876118ca72e87bc462109104366c7e30616e578c0fe2c70c1",
+      "url": "/images/extensions/raspberry-pi-to-gadgeteer-hat/guides/contacts-j4.png",
+      "sha256": "5c9d9c5263447e7304b9e0c54e2395e00227b181cccfc46dd29cf7b3e21a6e95"
+    },
+    "contacts-j5.svg": {
+      "archived_svg": "smoothie-diagrams/data/website-extension-svg/raspberry-pi-to-gadgeteer-hat/guides/contacts-j5.svg",
+      "archived_svg_sha256": "92aecc14b50bc9621cbd3ba78242cf70ad09dd78b9cdca613cf0eb3684646a9b",
+      "url": "/images/extensions/raspberry-pi-to-gadgeteer-hat/guides/contacts-j5.png",
+      "sha256": "d9c396b6511c67f9a7dd8c2c2fb0e3a7fa96ccd050d8dce32dce900ee5870f41"
+    },
+    "contacts-j6.svg": {
+      "archived_svg": "smoothie-diagrams/data/website-extension-svg/raspberry-pi-to-gadgeteer-hat/guides/contacts-j6.svg",
+      "archived_svg_sha256": "a3b00783030401f6c52ca5d101b0aaa897c52a2505dd5b5fe7065f216b203abe",
+      "url": "/images/extensions/raspberry-pi-to-gadgeteer-hat/guides/contacts-j6.png",
+      "sha256": "784889597ff1305fcf574f67fc15587d8f555f798899646437e4fe7ecbc494dd"
+    },
+    "contacts-j7.svg": {
+      "archived_svg": "smoothie-diagrams/data/website-extension-svg/raspberry-pi-to-gadgeteer-hat/guides/contacts-j7.svg",
+      "archived_svg_sha256": "ae7f8135519470da978b7499b788ffe051329c3f145cf387ad617a7a9ec878f8",
+      "url": "/images/extensions/raspberry-pi-to-gadgeteer-hat/guides/contacts-j7.png",
+      "sha256": "ef789fb767a8a611e4de6516cb577af8eb42b59a8afb9424e9f27e7bceddc6a6"
+    },
+    "full-wiring.svg": {
+      "archived_svg": "smoothie-diagrams/data/website-extension-svg/raspberry-pi-to-gadgeteer-hat/guides/full-wiring.svg",
+      "archived_svg_sha256": "6cf76eb1a91ffa68ef8804562682a9a1258d4e44d5d0836af97c30cd851abd1b",
+      "url": "/images/extensions/raspberry-pi-to-gadgeteer-hat/guides/full-wiring.png",
+      "sha256": "51eac76a9db5adc1e32e2586694b14763e61070626de2007f80659228c4299d2"
+    },
+    "pi-header-1.svg": {
+      "archived_svg": "smoothie-diagrams/data/website-extension-svg/raspberry-pi-to-gadgeteer-hat/guides/pi-header-1.svg",
+      "archived_svg_sha256": "e47ee5f3754ff0a10af9376fe26c07b6520da893615f68478097e9b7f8e91b9b",
+      "url": "/images/extensions/raspberry-pi-to-gadgeteer-hat/guides/pi-header-1.png",
+      "sha256": "b428cb2b9274109391c2eb201db1fee05b369bfaa1814951b7131e3570171bd8"
+    },
+    "pi-header-2.svg": {
+      "archived_svg": "smoothie-diagrams/data/website-extension-svg/raspberry-pi-to-gadgeteer-hat/guides/pi-header-2.svg",
+      "archived_svg_sha256": "30eb021a7fb3255324f3db480dc00c761547f8512eb1b7235ee803d88e930436",
+      "url": "/images/extensions/raspberry-pi-to-gadgeteer-hat/guides/pi-header-2.png",
+      "sha256": "60435825189a743dcc6b6a9d110d410e120da6ddd930745080f7842cc6d3f4b1"
+    },
+    "power-controls.svg": {
+      "archived_svg": "smoothie-diagrams/data/website-extension-svg/raspberry-pi-to-gadgeteer-hat/guides/power-controls.svg",
+      "archived_svg_sha256": "4bf1dc314263299ba296f00367f476a8fae0c132fc978d15d82cca832b7f6c72",
+      "url": "/images/extensions/raspberry-pi-to-gadgeteer-hat/guides/power-controls.png",
+      "sha256": "5e4acf2faace40983584d60ed428ab89333c4bd177d390e1fe2808283f09bd3c"
+    },
+    "raspberry-pi-hat-abstract.svg": {
+      "archived_svg": "smoothie-diagrams/data/website-extension-svg/raspberry-pi-to-gadgeteer-hat/guides/raspberry-pi-hat-abstract.svg",
+      "archived_svg_sha256": "7e7cb8c0bde224586516332fc26fd1cd866dce93a46378e8fc5dbcd8b201b831",
+      "url": "/images/extensions/raspberry-pi-to-gadgeteer-hat/guides/raspberry-pi-hat-abstract.png",
+      "sha256": "4fba005443170e8e065affc2c8775b3568d6fc4ac5413ddabcddbf779b85a5be"
+    }
   }
 }

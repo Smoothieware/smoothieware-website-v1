@@ -393,5 +393,49 @@
       "sha256": "985ddbc15a7ae19c09bd828d6f4fa41c2cba87d229ba327930c18c94ddd95ba8",
       "source_scope": "Concise selected-source/page qualification summary; complete original limits retained."
     }
-  ]
+  ],
+  "website_png_exports": {
+    "host-command.svg": {
+      "archived_svg": "smoothie-diagrams/data/website-extension-svg/single-channel-dc-mechanical-relay/guides/fit-companions/host-command.svg",
+      "archived_svg_sha256": "3c340e339bc40fa7935ec1f243065dc309690a7c165d2648a05906b7e21a155f",
+      "url": "/images/extensions/single-channel-dc-mechanical-relay/guides/fit-companions/host-command.png",
+      "sha256": "6abaf6b347bf53e01f8806d79cd25161a8d8cd57b74f73c9843cf16a3c86344f"
+    },
+    "host-ground.svg": {
+      "archived_svg": "smoothie-diagrams/data/website-extension-svg/single-channel-dc-mechanical-relay/guides/fit-companions/host-ground.svg",
+      "archived_svg_sha256": "79ca20d04e37f83fe0798ccb61d77424338bc79f1b86ab13c63bc407aabfa2e4",
+      "url": "/images/extensions/single-channel-dc-mechanical-relay/guides/fit-companions/host-ground.png",
+      "sha256": "0e99ca202ae644314143583686688d1eb5427c3ee011c48059038a05f2f8baf4"
+    },
+    "host-supply.svg": {
+      "archived_svg": "smoothie-diagrams/data/website-extension-svg/single-channel-dc-mechanical-relay/guides/fit-companions/host-supply.svg",
+      "archived_svg_sha256": "22689c35118c2393098c8b56b136de2b4a376fdb1a3c396add8e5747e717228f",
+      "url": "/images/extensions/single-channel-dc-mechanical-relay/guides/fit-companions/host-supply.png",
+      "sha256": "7b0c86e09fbe34fea9f66f3bc3c2ff849485fff5354d0b550722bade1a9249b7"
+    },
+    "limits-domains.svg": {
+      "archived_svg": "smoothie-diagrams/data/website-extension-svg/single-channel-dc-mechanical-relay/guides/fit-companions/limits-domains.svg",
+      "archived_svg_sha256": "e44d1cad651d060cfca463af9a3bf649550e9c3554db28d7e828909f8b82d42b",
+      "url": "/images/extensions/single-channel-dc-mechanical-relay/guides/fit-companions/limits-domains.png",
+      "sha256": "74301b76048c91a1002260cbadc340f363356a795e6f5775595974c3acaafca1"
+    },
+    "limits-qualification.svg": {
+      "archived_svg": "smoothie-diagrams/data/website-extension-svg/single-channel-dc-mechanical-relay/guides/fit-companions/limits-qualification.svg",
+      "archived_svg_sha256": "097fd2a36e9f7802ecdadedb1f46894a8746152dce5862631708aecad008b802",
+      "url": "/images/extensions/single-channel-dc-mechanical-relay/guides/fit-companions/limits-qualification.png",
+      "sha256": "bf907c7b7fe250de0f9652de8dab427bc198001d3ac7451a355d28781018a6b1"
+    },
+    "limits-revisions.svg": {
+      "archived_svg": "smoothie-diagrams/data/website-extension-svg/single-channel-dc-mechanical-relay/guides/fit-companions/limits-revisions.svg",
+      "archived_svg_sha256": "985ddbc15a7ae19c09bd828d6f4fa41c2cba87d229ba327930c18c94ddd95ba8",
+      "url": "/images/extensions/single-channel-dc-mechanical-relay/guides/fit-companions/limits-revisions.png",
+      "sha256": "88688e7dbfcae8236e94bcd115a51d2c36add96c431fd3becb76664a834ec24a"
+    },
+    "limits-unpowered.svg": {
+      "archived_svg": "smoothie-diagrams/data/website-extension-svg/single-channel-dc-mechanical-relay/guides/fit-companions/limits-unpowered.svg",
+      "archived_svg_sha256": "1ae025877a9ef2db746d282adaf72e08a2fff0ba9b3958f3b18386c7b20b8aa8",
+      "url": "/images/extensions/single-channel-dc-mechanical-relay/guides/fit-companions/limits-unpowered.png",
+      "sha256": "024e19846efd54d9c802c19a39f7a1cb9aa14d624f77a34b321d16fc7b35a370"
+    }
+  }
 }

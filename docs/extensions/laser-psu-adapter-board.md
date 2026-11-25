@@ -21,7 +21,7 @@ permalink: /extensions/laser-psu-adapter-board
     </div>
   </div>
   <figure>
-    <img src="/images/extensions/laser-psu-adapter-board/laser-psu-adapter-diagram.svg" alt="Top view of the laser PSU adapter board: two four-way screw terminals along the top edge for the four protection loops, a six-pin PSU screw terminal at the top right, a ribbon-cable connector at the bottom and a white six-pin PSU header at the bottom right.">
+    <img src="/images/extensions/laser-psu-adapter-board/laser-psu-adapter-diagram.png" alt="Top view of the laser PSU adapter board: two four-way screw terminals along the top edge for the four protection loops, a six-pin PSU screw terminal at the top right, a ribbon-cable connector at the bottom and a white six-pin PSU header at the bottom right.">
     <figcaption>Top view, drawn from the board's design files (revision v27). The connector shapes are stylized.</figcaption>
   </figure>
 </div>
@@ -97,7 +97,7 @@ The numbers on the drawing match the list below it. The board is shown from the 
 <figure class="xb-tour">
   <div class="xb-tour-scroll" tabindex="0" role="region" aria-label="Annotated top view of the board">
     <div class="xb-tour-stage">
-      <img src="/images/extensions/laser-psu-adapter-board/laser-psu-adapter-diagram.svg" alt="Top view of the laser PSU adapter board with twelve numbered markers that are explained in the list below.">
+      <img src="/images/extensions/laser-psu-adapter-board/laser-psu-adapter-diagram.png" alt="Top view of the laser PSU adapter board with twelve numbered markers that are explained in the list below.">
       <a class="xb-mk xb-pb" href="#tour-1" style="left:29%;top:11%" aria-label="1: loop terminals">1<span class="xb-pop"><b>Loop terminals</b> — eight screws, a pair per loop, marked <b>S1</b> to <b>S4</b> and <b>G</b>. Each safety switch goes between an S and the G beside it. <i>Loop 1 is at the right end, loop 4 at the left.</i></span></a>
       <a class="xb-mk xb-pb" href="#tour-2" style="left:37.3%;top:42.6%" aria-label="2: bypass links">2<span class="xb-pop"><b>Bypass links BYP1 to BYP4</b> — solder pads, delivered open. Bridging one makes that loop permanently healthy. <i>Bridge only the loops you do not use.</i></span></a>
       <a class="xb-mk" href="#tour-3" style="left:49%;top:62%" aria-label="3: loop open lights">3<span class="xb-pop"><b>Loop open lights</b> — four red LEDs. One lights while its loop is open, which tells you which switch stopped the laser.</span></a>
@@ -336,7 +336,7 @@ These steps take you from an unconnected board to outputs you have checked with 
     <!-- PSU: drawing of a typical supply's signal block (smoothie-diagrams, data/external-equipment/co2-laser-power-supply-panel) -->
     <text x="890" y="222" text-anchor="middle" font-size="14" font-weight="700" fill="#e6ebf2">CO2 laser supply</text>
     <text x="890" y="240" text-anchor="middle" font-size="11" fill="#a9b4c2">signal terminals of a typical unit</text>
-    <svg x="800" y="250" width="180" height="110.8" viewBox="84 8 52 32"><image href="/images/extensions/equipment/co2-laser-power-supply-panel.svg" width="170" height="46"/></svg>
+    <svg x="800" y="250" width="180" height="110.8" viewBox="84 8 52 32"><image href="/images/extensions/equipment/co2-laser-power-supply-panel.png" width="170" height="46"/></svg>
     <g fill="none" stroke-width="4" stroke-linejoin="round">
       <path d="M655 362V306H745V425H928.7V314.7" stroke="#5fb3ff"/>
       <path d="M565 362V318H775V380H849.5V314.7" stroke="#c9a6ff"/>
@@ -489,8 +489,8 @@ The pin is checked fifty times a second. The board blocks the laser by itself an
   <svg viewBox="0 0 900 525" role="img" aria-labelledby="xb-lpa-psu-t" xmlns="http://www.w3.org/2000/svg" font-family="system-ui, sans-serif">
     <title id="xb-lpa-psu-t">The connector panel of a typical CO2 laser supply above the top edge of the adapter board. Four wires: board PWM to supply IN, board TTL to supply L, board WP to supply P, board G to supply G. Supply terminals H and 5V and the board's 5V screw stay empty.</title>
     <text x="25" y="20" font-size="14" font-weight="700" fill="#e6ebf2">CO2 laser supply, connector panel</text><text x="345" y="20" font-size="13" fill="#a9b4c2">a typical unit, not a specific model</text>
-    <image href="/images/extensions/equipment/co2-laser-power-supply-panel.svg" x="25" y="30" width="850" height="230"/>
-    <svg x="88.85" y="380" width="626.3" height="115" viewBox="-0.95 0.1683 82 15.057"><image href="/images/extensions/laser-psu-adapter-board/laser-psu-adapter-diagram.svg" x="-0.95" y="0.1683" width="82" height="57.75"/></svg>
+    <image href="/images/extensions/equipment/co2-laser-power-supply-panel.png" x="25" y="30" width="850" height="230"/>
+    <svg x="88.85" y="380" width="626.3" height="115" viewBox="-0.95 0.1683 82 15.057"><image href="/images/extensions/laser-psu-adapter-board/laser-psu-adapter-diagram.png" x="-0.95" y="0.1683" width="82" height="57.75"/></svg>
     <g fill="none" stroke-linejoin="round">
       <path d="M516.5 392V163.5" stroke="#c9a6ff" stroke-width="4"/>
       <path d="M554.7 392V163.5" stroke="#e6ebf2" stroke-width="4"/>
@@ -693,7 +693,7 @@ Still stuck? Read [how to ask for help](/help-guidelines) or see the general [tr
   <tbody>
     <tr><td><a href="/images/extensions/laser-psu-adapter-board/laser-psu-adapter-schematic.pdf">Schematic (PDF)</a></td><td>v27</td><td>The complete revision 27 circuit diagram.</td></tr>
     <tr><td><a href="/images/extensions/laser-psu-adapter-board/laser-psu-adapter-bom.csv">Parts list (CSV)</a></td><td>v27</td><td>Every component with its value and footprint</td></tr>
-    <tr><td><a href="/images/extensions/laser-psu-adapter-board/laser-psu-adapter-diagram.svg">Board drawing (SVG)</a></td><td>v27</td><td>The top view used on this page, at full resolution</td></tr>
+    <tr><td><a href="/images/extensions/laser-psu-adapter-board/laser-psu-adapter-diagram.png">Board drawing (SVG)</a></td><td>v27</td><td>The top view used on this page, at full resolution</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}

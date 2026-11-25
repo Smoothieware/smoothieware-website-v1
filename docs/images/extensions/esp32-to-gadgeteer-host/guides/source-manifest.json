@@ -3207,7 +3207,7 @@
         "pin": "1",
         "sheet": "contact-atlas-j1-01.svg",
         "role": "3.3 V supply",
-        "direction_or_duty": "from DevKit \u00b7 via FB1",
+        "direction_or_duty": "from DevKit · via FB1",
         "source_side": "F.Cu",
         "source_pad": {
           "pin": "1",
@@ -3245,7 +3245,7 @@
         "pin": "2",
         "sheet": "contact-atlas-j1-01.svg",
         "role": "5 V supply",
-        "direction_or_duty": "from DevKit \u00b7 via D1",
+        "direction_or_duty": "from DevKit · via D1",
         "source_side": "F.Cu",
         "source_pad": {
           "pin": "2",
@@ -3283,7 +3283,7 @@
         "pin": "3",
         "sheet": "contact-atlas-j1-01.svg",
         "role": "GPIO36",
-        "direction_or_duty": "input only \u00b7 ADC1",
+        "direction_or_duty": "input only · ADC1",
         "source_side": "F.Cu",
         "source_pad": {
           "pin": "3",
@@ -3321,7 +3321,7 @@
         "pin": "4",
         "sheet": "contact-atlas-j1-01.svg",
         "role": "GPIO39",
-        "direction_or_duty": "input only \u00b7 ADC1",
+        "direction_or_duty": "input only · ADC1",
         "source_side": "F.Cu",
         "source_pad": {
           "pin": "4",
@@ -3359,7 +3359,7 @@
         "pin": "5",
         "sheet": "contact-atlas-j1-01.svg",
         "role": "GPIO34",
-        "direction_or_duty": "input only \u00b7 ADC1",
+        "direction_or_duty": "input only · ADC1",
         "source_side": "F.Cu",
         "source_pad": {
           "pin": "5",
@@ -3434,7 +3434,7 @@
         "reference": "J1",
         "pin": "7",
         "sheet": "contact-atlas-j1-02.svg",
-        "role": "NC \u00b7 no connection",
+        "role": "NC · no connection",
         "direction_or_duty": "isolated on carrier",
         "source_side": "F.Cu",
         "source_pad": {
@@ -3472,7 +3472,7 @@
         "reference": "J1",
         "pin": "8",
         "sheet": "contact-atlas-j1-02.svg",
-        "role": "NC \u00b7 no connection",
+        "role": "NC · no connection",
         "direction_or_duty": "isolated on carrier",
         "source_side": "F.Cu",
         "source_pad": {
@@ -3510,7 +3510,7 @@
         "reference": "J1",
         "pin": "9",
         "sheet": "contact-atlas-j1-02.svg",
-        "role": "NC \u00b7 no connection",
+        "role": "NC · no connection",
         "direction_or_duty": "isolated on carrier",
         "source_side": "F.Cu",
         "source_pad": {
@@ -3587,7 +3587,7 @@
         "pin": "1",
         "sheet": "contact-atlas-j2-01.svg",
         "role": "3.3 V supply",
-        "direction_or_duty": "from DevKit \u00b7 via FB1",
+        "direction_or_duty": "from DevKit · via FB1",
         "source_side": "F.Cu",
         "source_pad": {
           "pin": "1",
@@ -3625,7 +3625,7 @@
         "pin": "2",
         "sheet": "contact-atlas-j2-01.svg",
         "role": "5 V supply",
-        "direction_or_duty": "from DevKit \u00b7 via D1",
+        "direction_or_duty": "from DevKit · via D1",
         "source_side": "F.Cu",
         "source_pad": {
           "pin": "2",
@@ -3663,7 +3663,7 @@
         "pin": "3",
         "sheet": "contact-atlas-j2-01.svg",
         "role": "GPIO33",
-        "direction_or_duty": "GPIO \u00b7 app sets direction",
+        "direction_or_duty": "GPIO · app sets direction",
         "source_side": "F.Cu",
         "source_pad": {
           "pin": "3",
@@ -3701,7 +3701,7 @@
         "pin": "4",
         "sheet": "contact-atlas-j2-01.svg",
         "role": "GPIO13",
-        "direction_or_duty": "GPIO \u00b7 app sets direction",
+        "direction_or_duty": "GPIO · app sets direction",
         "source_side": "F.Cu",
         "source_pad": {
           "pin": "4",
@@ -3739,7 +3739,7 @@
         "pin": "5",
         "sheet": "contact-atlas-j2-01.svg",
         "role": "GPIO14",
-        "direction_or_duty": "GPIO \u00b7 app sets direction",
+        "direction_or_duty": "GPIO · app sets direction",
         "source_side": "F.Cu",
         "source_pad": {
           "pin": "5",
@@ -3776,8 +3776,8 @@
         "reference": "J2",
         "pin": "6",
         "sheet": "contact-atlas-j2-02.svg",
-        "role": "CS \u00b7 GPIO5",
-        "direction_or_duty": "output \u00b7 boot strapping",
+        "role": "CS · GPIO5",
+        "direction_or_duty": "output · boot strapping",
         "source_side": "F.Cu",
         "source_pad": {
           "pin": "6",
@@ -3814,7 +3814,7 @@
         "reference": "J2",
         "pin": "7",
         "sheet": "contact-atlas-j2-02.svg",
-        "role": "MOSI \u00b7 GPIO23",
+        "role": "MOSI · GPIO23",
         "direction_or_duty": "SPI host output",
         "source_side": "F.Cu",
         "source_pad": {
@@ -3852,7 +3852,7 @@
         "reference": "J2",
         "pin": "8",
         "sheet": "contact-atlas-j2-02.svg",
-        "role": "MISO \u00b7 GPIO19",
+        "role": "MISO · GPIO19",
         "direction_or_duty": "SPI host input",
         "source_side": "F.Cu",
         "source_pad": {
@@ -3890,7 +3890,7 @@
         "reference": "J2",
         "pin": "9",
         "sheet": "contact-atlas-j2-02.svg",
-        "role": "SCK \u00b7 GPIO18",
+        "role": "SCK · GPIO18",
         "direction_or_duty": "SPI host clock output",
         "source_side": "F.Cu",
         "source_pad": {
@@ -3967,7 +3967,7 @@
         "pin": "1",
         "sheet": "contact-atlas-j3-01.svg",
         "role": "3.3 V supply",
-        "direction_or_duty": "from DevKit \u00b7 via FB1",
+        "direction_or_duty": "from DevKit · via FB1",
         "source_side": "F.Cu",
         "source_pad": {
           "pin": "1",
@@ -4005,7 +4005,7 @@
         "pin": "2",
         "sheet": "contact-atlas-j3-01.svg",
         "role": "5 V supply",
-        "direction_or_duty": "from DevKit \u00b7 via D1",
+        "direction_or_duty": "from DevKit · via D1",
         "source_side": "F.Cu",
         "source_pad": {
           "pin": "2",
@@ -4043,7 +4043,7 @@
         "pin": "3",
         "sheet": "contact-atlas-j3-01.svg",
         "role": "GPIO4",
-        "direction_or_duty": "GPIO \u00b7 app sets direction",
+        "direction_or_duty": "GPIO · app sets direction",
         "source_side": "F.Cu",
         "source_pad": {
           "pin": "3",
@@ -4080,7 +4080,7 @@
         "reference": "J3",
         "pin": "4",
         "sheet": "contact-atlas-j3-01.svg",
-        "role": "TX \u00b7 GPIO17",
+        "role": "TX · GPIO17",
         "direction_or_duty": "UART host output",
         "source_side": "F.Cu",
         "source_pad": {
@@ -4118,7 +4118,7 @@
         "reference": "J3",
         "pin": "5",
         "sheet": "contact-atlas-j3-01.svg",
-        "role": "RX \u00b7 GPIO16",
+        "role": "RX · GPIO16",
         "direction_or_duty": "UART host input",
         "source_side": "F.Cu",
         "source_pad": {
@@ -4156,7 +4156,7 @@
         "reference": "J3",
         "pin": "6",
         "sheet": "contact-atlas-j3-02.svg",
-        "role": "NC \u00b7 no connection",
+        "role": "NC · no connection",
         "direction_or_duty": "isolated on carrier",
         "source_side": "F.Cu",
         "source_pad": {
@@ -4194,7 +4194,7 @@
         "reference": "J3",
         "pin": "7",
         "sheet": "contact-atlas-j3-02.svg",
-        "role": "NC \u00b7 no connection",
+        "role": "NC · no connection",
         "direction_or_duty": "isolated on carrier",
         "source_side": "F.Cu",
         "source_pad": {
@@ -4232,7 +4232,7 @@
         "reference": "J3",
         "pin": "8",
         "sheet": "contact-atlas-j3-02.svg",
-        "role": "NC \u00b7 no connection",
+        "role": "NC · no connection",
         "direction_or_duty": "isolated on carrier",
         "source_side": "F.Cu",
         "source_pad": {
@@ -4270,7 +4270,7 @@
         "reference": "J3",
         "pin": "9",
         "sheet": "contact-atlas-j3-02.svg",
-        "role": "NC \u00b7 no connection",
+        "role": "NC · no connection",
         "direction_or_duty": "isolated on carrier",
         "source_side": "F.Cu",
         "source_pad": {
@@ -4347,7 +4347,7 @@
         "pin": "1",
         "sheet": "contact-atlas-j4-01.svg",
         "role": "3.3 V supply",
-        "direction_or_duty": "from DevKit \u00b7 via FB1",
+        "direction_or_duty": "from DevKit · via FB1",
         "source_side": "F.Cu",
         "source_pad": {
           "pin": "1",
@@ -4385,7 +4385,7 @@
         "pin": "2",
         "sheet": "contact-atlas-j4-01.svg",
         "role": "5 V supply",
-        "direction_or_duty": "from DevKit \u00b7 via D1",
+        "direction_or_duty": "from DevKit · via D1",
         "source_side": "F.Cu",
         "source_pad": {
           "pin": "2",
@@ -4423,7 +4423,7 @@
         "pin": "3",
         "sheet": "contact-atlas-j4-01.svg",
         "role": "GPIO35",
-        "direction_or_duty": "input only \u00b7 ADC1",
+        "direction_or_duty": "input only · ADC1",
         "source_side": "F.Cu",
         "source_pad": {
           "pin": "3",
@@ -4460,7 +4460,7 @@
         "reference": "J4",
         "pin": "4",
         "sheet": "contact-atlas-j4-01.svg",
-        "role": "NC \u00b7 no connection",
+        "role": "NC · no connection",
         "direction_or_duty": "isolated on carrier",
         "source_side": "F.Cu",
         "source_pad": {
@@ -4498,7 +4498,7 @@
         "reference": "J4",
         "pin": "5",
         "sheet": "contact-atlas-j4-01.svg",
-        "role": "NC \u00b7 no connection",
+        "role": "NC · no connection",
         "direction_or_duty": "isolated on carrier",
         "source_side": "F.Cu",
         "source_pad": {
@@ -4536,7 +4536,7 @@
         "reference": "J4",
         "pin": "6",
         "sheet": "contact-atlas-j4-02.svg",
-        "role": "NC \u00b7 no connection",
+        "role": "NC · no connection",
         "direction_or_duty": "isolated on carrier",
         "source_side": "F.Cu",
         "source_pad": {
@@ -4574,7 +4574,7 @@
         "reference": "J4",
         "pin": "7",
         "sheet": "contact-atlas-j4-02.svg",
-        "role": "NC \u00b7 no connection",
+        "role": "NC · no connection",
         "direction_or_duty": "isolated on carrier",
         "source_side": "F.Cu",
         "source_pad": {
@@ -4612,8 +4612,8 @@
         "reference": "J4",
         "pin": "8",
         "sheet": "contact-atlas-j4-02.svg",
-        "role": "SDA \u00b7 GPIO21",
-        "direction_or_duty": "I\u00b2C bidirectional data",
+        "role": "SDA · GPIO21",
+        "direction_or_duty": "I²C bidirectional data",
         "source_side": "F.Cu",
         "source_pad": {
           "pin": "8",
@@ -4650,8 +4650,8 @@
         "reference": "J4",
         "pin": "9",
         "sheet": "contact-atlas-j4-02.svg",
-        "role": "SCL \u00b7 GPIO22",
-        "direction_or_duty": "I\u00b2C host clock",
+        "role": "SCL · GPIO22",
+        "direction_or_duty": "I²C host clock",
         "source_side": "F.Cu",
         "source_pad": {
           "pin": "9",
@@ -4727,7 +4727,7 @@
         "pin": "1",
         "sheet": "contact-atlas-j5-01.svg",
         "role": "3.3 V supply",
-        "direction_or_duty": "from DevKit \u00b7 via FB1",
+        "direction_or_duty": "from DevKit · via FB1",
         "source_side": "F.Cu",
         "source_pad": {
           "pin": "1",
@@ -4765,7 +4765,7 @@
         "pin": "2",
         "sheet": "contact-atlas-j5-01.svg",
         "role": "5 V supply",
-        "direction_or_duty": "from DevKit \u00b7 via D1",
+        "direction_or_duty": "from DevKit · via D1",
         "source_side": "F.Cu",
         "source_pad": {
           "pin": "2",
@@ -4803,7 +4803,7 @@
         "pin": "3",
         "sheet": "contact-atlas-j5-01.svg",
         "role": "GPIO26",
-        "direction_or_duty": "GPIO \u00b7 app sets direction",
+        "direction_or_duty": "GPIO · app sets direction",
         "source_side": "F.Cu",
         "source_pad": {
           "pin": "3",
@@ -4840,7 +4840,7 @@
         "reference": "J5",
         "pin": "4",
         "sheet": "contact-atlas-j5-01.svg",
-        "role": "NC \u00b7 no connection",
+        "role": "NC · no connection",
         "direction_or_duty": "isolated on carrier",
         "source_side": "F.Cu",
         "source_pad": {
@@ -4878,7 +4878,7 @@
         "reference": "J5",
         "pin": "5",
         "sheet": "contact-atlas-j5-01.svg",
-        "role": "NC \u00b7 no connection",
+        "role": "NC · no connection",
         "direction_or_duty": "isolated on carrier",
         "source_side": "F.Cu",
         "source_pad": {
@@ -4917,7 +4917,7 @@
         "pin": "6",
         "sheet": "contact-atlas-j5-02.svg",
         "role": "GPIO15",
-        "direction_or_duty": "GPIO \u00b7 boot strapping",
+        "direction_or_duty": "GPIO · boot strapping",
         "source_side": "F.Cu",
         "source_pad": {
           "pin": "6",
@@ -4955,7 +4955,7 @@
         "pin": "7",
         "sheet": "contact-atlas-j5-02.svg",
         "role": "GPIO25",
-        "direction_or_duty": "GPIO \u00b7 app sets direction",
+        "direction_or_duty": "GPIO · app sets direction",
         "source_side": "F.Cu",
         "source_pad": {
           "pin": "7",
@@ -4993,7 +4993,7 @@
         "pin": "8",
         "sheet": "contact-atlas-j5-02.svg",
         "role": "GPIO27",
-        "direction_or_duty": "GPIO \u00b7 app sets direction",
+        "direction_or_duty": "GPIO · app sets direction",
         "source_side": "F.Cu",
         "source_pad": {
           "pin": "8",
@@ -5031,7 +5031,7 @@
         "pin": "9",
         "sheet": "contact-atlas-j5-02.svg",
         "role": "GPIO2",
-        "direction_or_duty": "GPIO \u00b7 boot strapping",
+        "direction_or_duty": "GPIO · boot strapping",
         "source_side": "F.Cu",
         "source_pad": {
           "pin": "9",
@@ -5146,7 +5146,7 @@
         "pin": "2",
         "sheet": "contact-atlas-j6-01.svg",
         "role": "3.3 V supply",
-        "direction_or_duty": "from DevKit \u00b7 via FB1",
+        "direction_or_duty": "from DevKit · via FB1",
         "source_side": "F.Cu",
         "source_pad": {
           "pin": "2",
@@ -5184,8 +5184,8 @@
         "reference": "J6",
         "pin": "3",
         "sheet": "contact-atlas-j6-01.svg",
-        "role": "SDA \u00b7 GPIO21",
-        "direction_or_duty": "I\u00b2C bidirectional data",
+        "role": "SDA · GPIO21",
+        "direction_or_duty": "I²C bidirectional data",
         "source_side": "F.Cu",
         "source_pad": {
           "pin": "3",
@@ -5223,8 +5223,8 @@
         "reference": "J6",
         "pin": "4",
         "sheet": "contact-atlas-j6-01.svg",
-        "role": "SCL \u00b7 GPIO22",
-        "direction_or_duty": "I\u00b2C host clock",
+        "role": "SCL · GPIO22",
+        "direction_or_duty": "I²C host clock",
         "source_side": "F.Cu",
         "source_pad": {
           "pin": "4",
@@ -5263,7 +5263,7 @@
         "pin": "1",
         "sheet": "contact-atlas-j7-01.svg",
         "role": "3.3 V supply",
-        "direction_or_duty": "DevKit \u2192 carrier",
+        "direction_or_duty": "DevKit → carrier",
         "source_side": "F.Cu",
         "source_pad": {
           "pin": "1",
@@ -5300,7 +5300,7 @@
         "reference": "J7",
         "pin": "2",
         "sheet": "contact-atlas-j7-01.svg",
-        "role": "NC \u00b7 EN",
+        "role": "NC · EN",
         "direction_or_duty": "isolated on carrier",
         "source_side": "F.Cu",
         "source_pad": {
@@ -5339,7 +5339,7 @@
         "pin": "3",
         "sheet": "contact-atlas-j7-01.svg",
         "role": "GPIO36",
-        "direction_or_duty": "input only \u00b7 ADC1",
+        "direction_or_duty": "input only · ADC1",
         "source_side": "F.Cu",
         "source_pad": {
           "pin": "3",
@@ -5377,7 +5377,7 @@
         "pin": "4",
         "sheet": "contact-atlas-j7-01.svg",
         "role": "GPIO39",
-        "direction_or_duty": "input only \u00b7 ADC1",
+        "direction_or_duty": "input only · ADC1",
         "source_side": "F.Cu",
         "source_pad": {
           "pin": "4",
@@ -5415,7 +5415,7 @@
         "pin": "5",
         "sheet": "contact-atlas-j7-01.svg",
         "role": "GPIO34",
-        "direction_or_duty": "input only \u00b7 ADC1",
+        "direction_or_duty": "input only · ADC1",
         "source_side": "F.Cu",
         "source_pad": {
           "pin": "5",
@@ -5453,7 +5453,7 @@
         "pin": "6",
         "sheet": "contact-atlas-j7-02.svg",
         "role": "GPIO35",
-        "direction_or_duty": "input only \u00b7 ADC1",
+        "direction_or_duty": "input only · ADC1",
         "source_side": "F.Cu",
         "source_pad": {
           "pin": "6",
@@ -5491,7 +5491,7 @@
         "pin": "7",
         "sheet": "contact-atlas-j7-02.svg",
         "role": "GPIO32",
-        "direction_or_duty": "GPIO \u00b7 app sets direction",
+        "direction_or_duty": "GPIO · app sets direction",
         "source_side": "F.Cu",
         "source_pad": {
           "pin": "7",
@@ -5529,7 +5529,7 @@
         "pin": "8",
         "sheet": "contact-atlas-j7-02.svg",
         "role": "GPIO33",
-        "direction_or_duty": "GPIO \u00b7 app sets direction",
+        "direction_or_duty": "GPIO · app sets direction",
         "source_side": "F.Cu",
         "source_pad": {
           "pin": "8",
@@ -5567,7 +5567,7 @@
         "pin": "9",
         "sheet": "contact-atlas-j7-02.svg",
         "role": "GPIO25",
-        "direction_or_duty": "GPIO \u00b7 app sets direction",
+        "direction_or_duty": "GPIO · app sets direction",
         "source_side": "F.Cu",
         "source_pad": {
           "pin": "9",
@@ -5605,7 +5605,7 @@
         "pin": "10",
         "sheet": "contact-atlas-j7-02.svg",
         "role": "GPIO26",
-        "direction_or_duty": "GPIO \u00b7 app sets direction",
+        "direction_or_duty": "GPIO · app sets direction",
         "source_side": "F.Cu",
         "source_pad": {
           "pin": "10",
@@ -5643,7 +5643,7 @@
         "pin": "11",
         "sheet": "contact-atlas-j7-03.svg",
         "role": "GPIO27",
-        "direction_or_duty": "GPIO \u00b7 app sets direction",
+        "direction_or_duty": "GPIO · app sets direction",
         "source_side": "F.Cu",
         "source_pad": {
           "pin": "11",
@@ -5681,7 +5681,7 @@
         "pin": "12",
         "sheet": "contact-atlas-j7-03.svg",
         "role": "GPIO14",
-        "direction_or_duty": "GPIO \u00b7 app sets direction",
+        "direction_or_duty": "GPIO · app sets direction",
         "source_side": "F.Cu",
         "source_pad": {
           "pin": "12",
@@ -5718,7 +5718,7 @@
         "reference": "J7",
         "pin": "13",
         "sheet": "contact-atlas-j7-03.svg",
-        "role": "NC \u00b7 GPIO12",
+        "role": "NC · GPIO12",
         "direction_or_duty": "isolated on carrier",
         "source_side": "F.Cu",
         "source_pad": {
@@ -5795,7 +5795,7 @@
         "pin": "15",
         "sheet": "contact-atlas-j7-03.svg",
         "role": "GPIO13",
-        "direction_or_duty": "GPIO \u00b7 app sets direction",
+        "direction_or_duty": "GPIO · app sets direction",
         "source_side": "F.Cu",
         "source_pad": {
           "pin": "15",
@@ -5832,7 +5832,7 @@
         "reference": "J7",
         "pin": "16",
         "sheet": "contact-atlas-j7-04.svg",
-        "role": "NC \u00b7 GPIO9 / D2",
+        "role": "NC · GPIO9 / D2",
         "direction_or_duty": "isolated on carrier",
         "source_side": "F.Cu",
         "source_pad": {
@@ -5870,7 +5870,7 @@
         "reference": "J7",
         "pin": "17",
         "sheet": "contact-atlas-j7-04.svg",
-        "role": "NC \u00b7 GPIO10 / D3",
+        "role": "NC · GPIO10 / D3",
         "direction_or_duty": "isolated on carrier",
         "source_side": "F.Cu",
         "source_pad": {
@@ -5908,7 +5908,7 @@
         "reference": "J7",
         "pin": "18",
         "sheet": "contact-atlas-j7-04.svg",
-        "role": "NC \u00b7 GPIO11 / CMD",
+        "role": "NC · GPIO11 / CMD",
         "direction_or_duty": "isolated on carrier",
         "source_side": "F.Cu",
         "source_pad": {
@@ -5947,7 +5947,7 @@
         "pin": "19",
         "sheet": "contact-atlas-j7-04.svg",
         "role": "5 V supply",
-        "direction_or_duty": "DevKit \u2192 carrier",
+        "direction_or_duty": "DevKit → carrier",
         "source_side": "F.Cu",
         "source_pad": {
           "pin": "19",
@@ -6022,7 +6022,7 @@
         "reference": "J8",
         "pin": "2",
         "sheet": "contact-atlas-j8-01.svg",
-        "role": "MOSI \u00b7 GPIO23",
+        "role": "MOSI · GPIO23",
         "direction_or_duty": "SPI host output",
         "source_side": "F.Cu",
         "source_pad": {
@@ -6060,8 +6060,8 @@
         "reference": "J8",
         "pin": "3",
         "sheet": "contact-atlas-j8-01.svg",
-        "role": "SCL \u00b7 GPIO22",
-        "direction_or_duty": "I\u00b2C host clock",
+        "role": "SCL · GPIO22",
+        "direction_or_duty": "I²C host clock",
         "source_side": "F.Cu",
         "source_pad": {
           "pin": "3",
@@ -6098,7 +6098,7 @@
         "reference": "J8",
         "pin": "4",
         "sheet": "contact-atlas-j8-01.svg",
-        "role": "NC \u00b7 GPIO1 / TX0",
+        "role": "NC · GPIO1 / TX0",
         "direction_or_duty": "isolated on carrier",
         "source_side": "F.Cu",
         "source_pad": {
@@ -6136,7 +6136,7 @@
         "reference": "J8",
         "pin": "5",
         "sheet": "contact-atlas-j8-01.svg",
-        "role": "NC \u00b7 GPIO3 / RX0",
+        "role": "NC · GPIO3 / RX0",
         "direction_or_duty": "isolated on carrier",
         "source_side": "F.Cu",
         "source_pad": {
@@ -6174,8 +6174,8 @@
         "reference": "J8",
         "pin": "6",
         "sheet": "contact-atlas-j8-02.svg",
-        "role": "SDA \u00b7 GPIO21",
-        "direction_or_duty": "I\u00b2C bidirectional data",
+        "role": "SDA · GPIO21",
+        "direction_or_duty": "I²C bidirectional data",
         "source_side": "F.Cu",
         "source_pad": {
           "pin": "6",
@@ -6250,7 +6250,7 @@
         "reference": "J8",
         "pin": "8",
         "sheet": "contact-atlas-j8-02.svg",
-        "role": "MISO \u00b7 GPIO19",
+        "role": "MISO · GPIO19",
         "direction_or_duty": "SPI host input",
         "source_side": "F.Cu",
         "source_pad": {
@@ -6288,7 +6288,7 @@
         "reference": "J8",
         "pin": "9",
         "sheet": "contact-atlas-j8-02.svg",
-        "role": "SCK \u00b7 GPIO18",
+        "role": "SCK · GPIO18",
         "direction_or_duty": "SPI host clock output",
         "source_side": "F.Cu",
         "source_pad": {
@@ -6327,7 +6327,7 @@
         "pin": "10",
         "sheet": "contact-atlas-j8-02.svg",
         "role": "GPIO5",
-        "direction_or_duty": "GPIO \u00b7 boot strapping",
+        "direction_or_duty": "GPIO · boot strapping",
         "source_side": "F.Cu",
         "source_pad": {
           "pin": "10",
@@ -6364,7 +6364,7 @@
         "reference": "J8",
         "pin": "11",
         "sheet": "contact-atlas-j8-03.svg",
-        "role": "TX \u00b7 GPIO17",
+        "role": "TX · GPIO17",
         "direction_or_duty": "UART host output",
         "source_side": "F.Cu",
         "source_pad": {
@@ -6402,7 +6402,7 @@
         "reference": "J8",
         "pin": "12",
         "sheet": "contact-atlas-j8-03.svg",
-        "role": "RX \u00b7 GPIO16",
+        "role": "RX · GPIO16",
         "direction_or_duty": "UART host input",
         "source_side": "F.Cu",
         "source_pad": {
@@ -6441,7 +6441,7 @@
         "pin": "13",
         "sheet": "contact-atlas-j8-03.svg",
         "role": "GPIO4",
-        "direction_or_duty": "GPIO \u00b7 app sets direction",
+        "direction_or_duty": "GPIO · app sets direction",
         "source_side": "F.Cu",
         "source_pad": {
           "pin": "13",
@@ -6478,7 +6478,7 @@
         "reference": "J8",
         "pin": "14",
         "sheet": "contact-atlas-j8-03.svg",
-        "role": "NC \u00b7 GPIO0",
+        "role": "NC · GPIO0",
         "direction_or_duty": "isolated on carrier",
         "source_side": "F.Cu",
         "source_pad": {
@@ -6517,7 +6517,7 @@
         "pin": "15",
         "sheet": "contact-atlas-j8-03.svg",
         "role": "GPIO2",
-        "direction_or_duty": "GPIO \u00b7 boot strapping",
+        "direction_or_duty": "GPIO · boot strapping",
         "source_side": "F.Cu",
         "source_pad": {
           "pin": "15",
@@ -6555,7 +6555,7 @@
         "pin": "16",
         "sheet": "contact-atlas-j8-04.svg",
         "role": "GPIO15",
-        "direction_or_duty": "GPIO \u00b7 boot strapping",
+        "direction_or_duty": "GPIO · boot strapping",
         "source_side": "F.Cu",
         "source_pad": {
           "pin": "16",
@@ -6592,7 +6592,7 @@
         "reference": "J8",
         "pin": "17",
         "sheet": "contact-atlas-j8-04.svg",
-        "role": "NC \u00b7 GPIO8 / D1",
+        "role": "NC · GPIO8 / D1",
         "direction_or_duty": "isolated on carrier",
         "source_side": "F.Cu",
         "source_pad": {
@@ -6630,7 +6630,7 @@
         "reference": "J8",
         "pin": "18",
         "sheet": "contact-atlas-j8-04.svg",
-        "role": "NC \u00b7 GPIO7 / D0",
+        "role": "NC · GPIO7 / D0",
         "direction_or_duty": "isolated on carrier",
         "source_side": "F.Cu",
         "source_pad": {
@@ -6668,7 +6668,7 @@
         "reference": "J8",
         "pin": "19",
         "sheet": "contact-atlas-j8-04.svg",
-        "role": "NC \u00b7 GPIO6 / CLK",
+        "role": "NC · GPIO6 / CLK",
         "direction_or_duty": "isolated on carrier",
         "source_side": "F.Cu",
         "source_pad": {
@@ -6707,7 +6707,7 @@
         "pin": "1",
         "sheet": "contact-atlas-controls-top-01.svg",
         "role": "3.3 V LED cathode",
-        "direction_or_duty": "to JP1 \u00b7 indicator return",
+        "direction_or_duty": "to JP1 · indicator return",
         "source_side": "F.Cu",
         "source_pad": {
           "pin": "1",
@@ -6853,7 +6853,7 @@
         "pin": "1",
         "sheet": "contact-atlas-controls-top-01.svg",
         "role": "5 V LED cathode",
-        "direction_or_duty": "to JP2 \u00b7 indicator return",
+        "direction_or_duty": "to JP2 · indicator return",
         "source_side": "F.Cu",
         "source_pad": {
           "pin": "1",
@@ -6999,7 +6999,7 @@
         "pin": "1",
         "sheet": "contact-atlas-controls-bottom-01.svg",
         "role": "SDA pull-up feed",
-        "direction_or_duty": "3.3 V via 4.7 k\u03a9",
+        "direction_or_duty": "3.3 V via 4.7 kΩ",
         "source_side": "B.Cu",
         "source_pad": {
           "pin": "1",
@@ -7071,7 +7071,7 @@
         "pin": "1",
         "sheet": "contact-atlas-controls-bottom-01.svg",
         "role": "SCL pull-up feed",
-        "direction_or_duty": "3.3 V via 4.7 k\u03a9",
+        "direction_or_duty": "3.3 V via 4.7 kΩ",
         "source_side": "B.Cu",
         "source_pad": {
           "pin": "1",
@@ -7143,7 +7143,7 @@
         "pin": "1",
         "sheet": "contact-atlas-controls-bottom-01.svg",
         "role": "3.3 V test pad",
-        "direction_or_duty": "measure \u00b7 not a load feed",
+        "direction_or_duty": "measure · not a load feed",
         "source_side": "B.Cu",
         "source_pad": {
           "pin": "1",
@@ -7179,7 +7179,7 @@
         "pin": "1",
         "sheet": "contact-atlas-controls-bottom-02.svg",
         "role": "5 V test pad",
-        "direction_or_duty": "measure \u00b7 not a load feed",
+        "direction_or_duty": "measure · not a load feed",
         "source_side": "B.Cu",
         "source_pad": {
           "pin": "1",
@@ -7397,7 +7397,7 @@
         "pin": "2",
         "sheet": "contact-atlas-j6-alternative-01.svg",
         "role": "3.3 V supply",
-        "direction_or_duty": "from DevKit \u00b7 via FB1",
+        "direction_or_duty": "from DevKit · via FB1",
         "source_side": "F.Cu",
         "source_pad": {
           "pin": "2",
@@ -7434,8 +7434,8 @@
         "reference": "J6",
         "pin": "3",
         "sheet": "contact-atlas-j6-alternative-01.svg",
-        "role": "SDA \u00b7 GPIO21",
-        "direction_or_duty": "I\u00b2C bidirectional data",
+        "role": "SDA · GPIO21",
+        "direction_or_duty": "I²C bidirectional data",
         "source_side": "F.Cu",
         "source_pad": {
           "pin": "3",
@@ -7472,8 +7472,8 @@
         "reference": "J6",
         "pin": "4",
         "sheet": "contact-atlas-j6-alternative-01.svg",
-        "role": "SCL \u00b7 GPIO22",
-        "direction_or_duty": "I\u00b2C host clock",
+        "role": "SCL · GPIO22",
+        "direction_or_duty": "I²C host clock",
         "source_side": "F.Cu",
         "source_pad": {
           "pin": "4",
@@ -7623,5 +7623,181 @@
     "contact-atlas-j6-alternative-02.svg": "47c7e415eb0d61a44efbeebf967aead90b492c17a40311b715ed9a0831ea1266",
     "contact-atlas-j7-03.svg": "5da46c625dce798e3d9b5ea15d4c2832a11800ffac7ea44c215c89d37ddf4f0d",
     "contact-atlas-j7-02.svg": "353f51b91e1e672fae97078c89b0e45d4ef7a10fe7255067bf7bfb876686c99e"
+  },
+  "website_png_exports": {
+    "board-reference.svg": {
+      "archived_svg": "smoothie-diagrams/data/website-extension-svg/esp32-to-gadgeteer-host/guides/board-reference.svg",
+      "archived_svg_sha256": "2b2beaec16fd0408acd11431cca10fc5ec1fdd798aab8178b0bb2758e5beac61",
+      "url": "/images/extensions/esp32-to-gadgeteer-host/guides/board-reference.png",
+      "sha256": "b593061774c855b45368bc58f68d76832c7a141d3c356dba59b726049a45341d"
+    },
+    "cable-contact-key.svg": {
+      "archived_svg": "smoothie-diagrams/data/website-extension-svg/esp32-to-gadgeteer-host/guides/cable-contact-key.svg",
+      "archived_svg_sha256": "6cba7abe45cd1d4962944240c0feab1a640d73b01688cadbbb05ba8e16037484",
+      "url": "/images/extensions/esp32-to-gadgeteer-host/guides/cable-contact-key.png",
+      "sha256": "9754e95f7f9241d27b166badee5640d93a89a0dc30413e6984be83d4db82dad2"
+    },
+    "contact-atlas-controls-bottom-01.svg": {
+      "archived_svg": "smoothie-diagrams/data/website-extension-svg/esp32-to-gadgeteer-host/guides/contact-atlas-controls-bottom-01.svg",
+      "archived_svg_sha256": "9ae1901ffd5cce41a8d2c3de5a0cf94dd1d8d0da7ee50e49834bccdce0b0d57f",
+      "url": "/images/extensions/esp32-to-gadgeteer-host/guides/contact-atlas-controls-bottom-01.png",
+      "sha256": "7313d1a5bea1ffda88be1bdb9976709e0e52184077c5dfb58143d6ce9006aa3f"
+    },
+    "contact-atlas-controls-bottom-02.svg": {
+      "archived_svg": "smoothie-diagrams/data/website-extension-svg/esp32-to-gadgeteer-host/guides/contact-atlas-controls-bottom-02.svg",
+      "archived_svg_sha256": "9578a136d46b209b8ecae99e07c6eb7d21429ce7dbf1d146d8c67d0b5aa94f92",
+      "url": "/images/extensions/esp32-to-gadgeteer-host/guides/contact-atlas-controls-bottom-02.png",
+      "sha256": "76bf4789e6466e971703f48ca91ef9680cf41576c06eebe9a622c261bf56ddd2"
+    },
+    "contact-atlas-controls-top-01.svg": {
+      "archived_svg": "smoothie-diagrams/data/website-extension-svg/esp32-to-gadgeteer-host/guides/contact-atlas-controls-top-01.svg",
+      "archived_svg_sha256": "8e73604a2915cdd7be8612f13baae34d3a1c52e978d92c932a6eac5035dc5e11",
+      "url": "/images/extensions/esp32-to-gadgeteer-host/guides/contact-atlas-controls-top-01.png",
+      "sha256": "63f80959120bd3d55b4e0b74c087aefb12dea830eb70a5e2c7aca3acf81adcdb"
+    },
+    "contact-atlas-controls-top-02.svg": {
+      "archived_svg": "smoothie-diagrams/data/website-extension-svg/esp32-to-gadgeteer-host/guides/contact-atlas-controls-top-02.svg",
+      "archived_svg_sha256": "66b94f9c1d9ee451b2cd22c68bcaef75dda2ea20a02b59bec0b6f7bfb3c2a448",
+      "url": "/images/extensions/esp32-to-gadgeteer-host/guides/contact-atlas-controls-top-02.png",
+      "sha256": "77fcbe52fa43812dd0d2b6707dfe063e345484fd68d086289fedf1f609587d44"
+    },
+    "contact-atlas-j1-01.svg": {
+      "archived_svg": "smoothie-diagrams/data/website-extension-svg/esp32-to-gadgeteer-host/guides/contact-atlas-j1-01.svg",
+      "archived_svg_sha256": "f2640cc741912e5f8a8bd0d8160e810fada03396687ba3466cd5751775d3d724",
+      "url": "/images/extensions/esp32-to-gadgeteer-host/guides/contact-atlas-j1-01.png",
+      "sha256": "cf8dfb2c42e290f5c9a9ee5c1691b35b1ea70dc0f8f0a90589f8f071a7a1978c"
+    },
+    "contact-atlas-j1-02.svg": {
+      "archived_svg": "smoothie-diagrams/data/website-extension-svg/esp32-to-gadgeteer-host/guides/contact-atlas-j1-02.svg",
+      "archived_svg_sha256": "973e22a1f424e29b3930809a601ef3f6e553c0fce7f5d4c1e3b356481a9b986e",
+      "url": "/images/extensions/esp32-to-gadgeteer-host/guides/contact-atlas-j1-02.png",
+      "sha256": "20159089b4cec7935e0ed8fe3883fee3a835ffa895244327f8b528b9615412b9"
+    },
+    "contact-atlas-j2-01.svg": {
+      "archived_svg": "smoothie-diagrams/data/website-extension-svg/esp32-to-gadgeteer-host/guides/contact-atlas-j2-01.svg",
+      "archived_svg_sha256": "8b8fd171016c03c211f2977fe71f103799ed009d11692de5d8b696e222533402",
+      "url": "/images/extensions/esp32-to-gadgeteer-host/guides/contact-atlas-j2-01.png",
+      "sha256": "e0fbf6b966c7be333a61fe92c5a6908d84a263a645da27b2cc37c7adbcb7ed90"
+    },
+    "contact-atlas-j2-02.svg": {
+      "archived_svg": "smoothie-diagrams/data/website-extension-svg/esp32-to-gadgeteer-host/guides/contact-atlas-j2-02.svg",
+      "archived_svg_sha256": "4b9cd423ce20215a7cb07d14e0699b5de0b0fa4226a7f4a5dd3284ef34c852bf",
+      "url": "/images/extensions/esp32-to-gadgeteer-host/guides/contact-atlas-j2-02.png",
+      "sha256": "c49724dde63b6ad6b850122efd595a262713e58a41816bcc0668de921d94f8ef"
+    },
+    "contact-atlas-j3-01.svg": {
+      "archived_svg": "smoothie-diagrams/data/website-extension-svg/esp32-to-gadgeteer-host/guides/contact-atlas-j3-01.svg",
+      "archived_svg_sha256": "001ed9bb75937ff0e3340cad508196177b265fcc642011b45fdc54cc77cfd4c4",
+      "url": "/images/extensions/esp32-to-gadgeteer-host/guides/contact-atlas-j3-01.png",
+      "sha256": "072cea902b64aafee2785fe808efbc9c867ed7451dbfe699ce9d3f091b1df8ea"
+    },
+    "contact-atlas-j3-02.svg": {
+      "archived_svg": "smoothie-diagrams/data/website-extension-svg/esp32-to-gadgeteer-host/guides/contact-atlas-j3-02.svg",
+      "archived_svg_sha256": "23b8d32a3211bbb6358e70763141c06bbe84a6bf6f960741a84cc66d11f0c9fd",
+      "url": "/images/extensions/esp32-to-gadgeteer-host/guides/contact-atlas-j3-02.png",
+      "sha256": "97302d7c6a57a6b972b05a965deceb17d5bdfa5bcb8ce24abe9fa3cbdaeca222"
+    },
+    "contact-atlas-j4-01.svg": {
+      "archived_svg": "smoothie-diagrams/data/website-extension-svg/esp32-to-gadgeteer-host/guides/contact-atlas-j4-01.svg",
+      "archived_svg_sha256": "061414bcaec935fcdae7d0215a8d324f67bb67b6a2a1c7240cd582f29d4f302c",
+      "url": "/images/extensions/esp32-to-gadgeteer-host/guides/contact-atlas-j4-01.png",
+      "sha256": "f4bf436df2622c706d7374f52b178ca8d5f2d5b5c508387bd7e98a299bd69b18"
+    },
+    "contact-atlas-j4-02.svg": {
+      "archived_svg": "smoothie-diagrams/data/website-extension-svg/esp32-to-gadgeteer-host/guides/contact-atlas-j4-02.svg",
+      "archived_svg_sha256": "02d4f03684e1820f9b1698463e24504e53dac566d283305d5ffcacf252ae2719",
+      "url": "/images/extensions/esp32-to-gadgeteer-host/guides/contact-atlas-j4-02.png",
+      "sha256": "7d0e6f8f8405635e63d810bab810b0d94214d648e06ff6de1dc4bf2ba588b2f8"
+    },
+    "contact-atlas-j5-01.svg": {
+      "archived_svg": "smoothie-diagrams/data/website-extension-svg/esp32-to-gadgeteer-host/guides/contact-atlas-j5-01.svg",
+      "archived_svg_sha256": "b46781a586de9a6f56945bf07c6b6b3cc24fcd19c05bf6f5e5fc78a7104772f5",
+      "url": "/images/extensions/esp32-to-gadgeteer-host/guides/contact-atlas-j5-01.png",
+      "sha256": "0fda690612005c0b82c49ae6483c23e5d1ce1ad1ba8aa1405fa9c7d4b7dedaaf"
+    },
+    "contact-atlas-j5-02.svg": {
+      "archived_svg": "smoothie-diagrams/data/website-extension-svg/esp32-to-gadgeteer-host/guides/contact-atlas-j5-02.svg",
+      "archived_svg_sha256": "09f46661a6b6619fb8c060687766b3994e0601e327ec38d8753eb22a8a6092c6",
+      "url": "/images/extensions/esp32-to-gadgeteer-host/guides/contact-atlas-j5-02.png",
+      "sha256": "9f25ea5f7ff55e00fcdb3f007a9a41e8569b84120d85fa46c9aa7fcf6b3f5283"
+    },
+    "contact-atlas-j6-01.svg": {
+      "archived_svg": "smoothie-diagrams/data/website-extension-svg/esp32-to-gadgeteer-host/guides/contact-atlas-j6-01.svg",
+      "archived_svg_sha256": "2b304a9b3f74f9acab17158876b439085cd564fb5bb5142d9476a189e27211e4",
+      "url": "/images/extensions/esp32-to-gadgeteer-host/guides/contact-atlas-j6-01.png",
+      "sha256": "1985f40ded2cf92e6277177d962dfc661eca492b3928351aab5febd19981dccb"
+    },
+    "contact-atlas-j6-alternative-01.svg": {
+      "archived_svg": "smoothie-diagrams/data/website-extension-svg/esp32-to-gadgeteer-host/guides/contact-atlas-j6-alternative-01.svg",
+      "archived_svg_sha256": "f6e8656e63f49ba7b6f54c49f814ba9efe41f62c3d3b5281248fea0c1f3089d2",
+      "url": "/images/extensions/esp32-to-gadgeteer-host/guides/contact-atlas-j6-alternative-01.png",
+      "sha256": "f02f3b35777f56bdcb0ecebb33b1c7001cbcc7847aa6801b9f57267ccd606828"
+    },
+    "contact-atlas-j6-alternative-02.svg": {
+      "archived_svg": "smoothie-diagrams/data/website-extension-svg/esp32-to-gadgeteer-host/guides/contact-atlas-j6-alternative-02.svg",
+      "archived_svg_sha256": "61d4c76320a0faca8dcf44d5c8ef3ba5d8975656ded7ab1e68e1b8e37eac240b",
+      "url": "/images/extensions/esp32-to-gadgeteer-host/guides/contact-atlas-j6-alternative-02.png",
+      "sha256": "3b7e1c10b3016bf6bae5aa0617bec22642fb89f9c164d189f6f47e420ee7609d"
+    },
+    "contact-atlas-j7-01.svg": {
+      "archived_svg": "smoothie-diagrams/data/website-extension-svg/esp32-to-gadgeteer-host/guides/contact-atlas-j7-01.svg",
+      "archived_svg_sha256": "0b71f75ba05ff293ed239ea1053927f709cfe7fc2bf253ffbd8497fbb2455740",
+      "url": "/images/extensions/esp32-to-gadgeteer-host/guides/contact-atlas-j7-01.png",
+      "sha256": "9924372780c541e3e1932d596022c241d61c0a768c3787971c040dfb5fbc616a"
+    },
+    "contact-atlas-j7-02.svg": {
+      "archived_svg": "smoothie-diagrams/data/website-extension-svg/esp32-to-gadgeteer-host/guides/contact-atlas-j7-02.svg",
+      "archived_svg_sha256": "4deaf1c1b27870ff17b75d0de2d44d3d67a510d639277884671cb1a4713909ba",
+      "url": "/images/extensions/esp32-to-gadgeteer-host/guides/contact-atlas-j7-02.png",
+      "sha256": "7257ccc0b542ace474cfff1f28fedf10a91a264fcf86fff34a36a1f6eb7be402"
+    },
+    "contact-atlas-j7-03.svg": {
+      "archived_svg": "smoothie-diagrams/data/website-extension-svg/esp32-to-gadgeteer-host/guides/contact-atlas-j7-03.svg",
+      "archived_svg_sha256": "03f5851db17c8408733aa9f4b5eb9d0db6ec2f78c3ee39e01f0f1355374638fd",
+      "url": "/images/extensions/esp32-to-gadgeteer-host/guides/contact-atlas-j7-03.png",
+      "sha256": "1acfade14047f6d5664ce2ac40bb7d7e3ad09a6056c9b648f114831944af602f"
+    },
+    "contact-atlas-j7-04.svg": {
+      "archived_svg": "smoothie-diagrams/data/website-extension-svg/esp32-to-gadgeteer-host/guides/contact-atlas-j7-04.svg",
+      "archived_svg_sha256": "0892b9defde7053da7704e1e465569bada18ec349b0fe2d0c27d96d992ed1651",
+      "url": "/images/extensions/esp32-to-gadgeteer-host/guides/contact-atlas-j7-04.png",
+      "sha256": "056deb0dae903f743de3e9b9e889741cabbc0e03c06c412899514dc77d0b6cb6"
+    },
+    "contact-atlas-j8-01.svg": {
+      "archived_svg": "smoothie-diagrams/data/website-extension-svg/esp32-to-gadgeteer-host/guides/contact-atlas-j8-01.svg",
+      "archived_svg_sha256": "f2e9fc568e471e2f876cd4ce0a696391dfc198a119fa75a395c66e8027def568",
+      "url": "/images/extensions/esp32-to-gadgeteer-host/guides/contact-atlas-j8-01.png",
+      "sha256": "88668cd519846b4324b3d6baf0de15a61933e6fac30a2ff14cb503150d4df4eb"
+    },
+    "contact-atlas-j8-02.svg": {
+      "archived_svg": "smoothie-diagrams/data/website-extension-svg/esp32-to-gadgeteer-host/guides/contact-atlas-j8-02.svg",
+      "archived_svg_sha256": "2b398edadf6f1d8f2de9b3d666ddba2fe02051bd022c43a5ba0489aae5993d97",
+      "url": "/images/extensions/esp32-to-gadgeteer-host/guides/contact-atlas-j8-02.png",
+      "sha256": "cc167b2ccb738042498c4164145f8f59a263abbc9b726e24196a2e939eaab121"
+    },
+    "contact-atlas-j8-03.svg": {
+      "archived_svg": "smoothie-diagrams/data/website-extension-svg/esp32-to-gadgeteer-host/guides/contact-atlas-j8-03.svg",
+      "archived_svg_sha256": "4c26d4e9af185265a9676475282be9db2052b67a740c6d4b8837d1402e3c84dc",
+      "url": "/images/extensions/esp32-to-gadgeteer-host/guides/contact-atlas-j8-03.png",
+      "sha256": "689249af0e200ebf35477d487665a0ac36ff7225a2d5dd8ac66387fda5ff663a"
+    },
+    "contact-atlas-j8-04.svg": {
+      "archived_svg": "smoothie-diagrams/data/website-extension-svg/esp32-to-gadgeteer-host/guides/contact-atlas-j8-04.svg",
+      "archived_svg_sha256": "0f0fcb1a6e7cfacad52036c516f5ac59296e02fba4d77a006c98f8a341f97b2c",
+      "url": "/images/extensions/esp32-to-gadgeteer-host/guides/contact-atlas-j8-04.png",
+      "sha256": "c881aebf411c0b381de0a6bf5d3a7c27d77abc7b68a76d59bcab386cd6e4cc04"
+    },
+    "esp32-to-gadgeteer-host.svg": {
+      "archived_svg": "smoothie-diagrams/data/website-extension-svg/esp32-to-gadgeteer-host/guides/esp32-to-gadgeteer-host.svg",
+      "archived_svg_sha256": "08e2676198a989844b04723287ec247ddd211c9fec9fa4e9f3112a525364b3d4",
+      "url": "/images/extensions/esp32-to-gadgeteer-host/guides/esp32-to-gadgeteer-host.png",
+      "sha256": "30c24ea2e5ca00c916ddd5839863f628786fbce6701cd1f0eb4801cbe3b1474b"
+    },
+    "full-wiring.svg": {
+      "archived_svg": "smoothie-diagrams/data/website-extension-svg/esp32-to-gadgeteer-host/guides/full-wiring.svg",
+      "archived_svg_sha256": "36d258e8998a8aa69668736aa127bd384b15eabc9ca299114389deaba6045d3d",
+      "url": "/images/extensions/esp32-to-gadgeteer-host/guides/full-wiring.png",
+      "sha256": "9b32a47671525526c3b0a6fb61c3b121b17923f57aa8c4e04da43135869b278b"
+    }
   }
 }

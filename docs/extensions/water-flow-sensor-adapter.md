@@ -21,7 +21,7 @@ permalink: /extensions/water-flow-sensor-adapter
     </div>
   </div>
   <figure>
-    <img src="/images/extensions/water-flow-sensor-adapter/water-flow-sensor-adapter-diagram.svg" alt="Top view of the water flow sensor adapter: sensor pads at the top left, the host socket at the top right and small logic parts below.">
+    <img src="/images/extensions/water-flow-sensor-adapter/water-flow-sensor-adapter-diagram.png" alt="Top view of the water flow sensor adapter: sensor pads at the top left, the host socket at the top right and small logic parts below.">
     <figcaption>Top view, drawn from the board&rsquo;s design files (revision v20). This is a drawing, not a photograph.</figcaption>
   </figure>
 </div>
@@ -85,7 +85,7 @@ The numbers on the drawing match the list below it. The board is shown from the 
 <figure class="xb-tour">
   <div class="xb-tour-scroll" tabindex="0" role="region" aria-label="Annotated top view of the board">
     <div class="xb-tour-stage">
-      <img src="/images/extensions/water-flow-sensor-adapter/water-flow-sensor-adapter-diagram.svg" alt="Top view of the water flow sensor adapter with nine numbered markers that are explained in the list below.">
+      <img src="/images/extensions/water-flow-sensor-adapter/water-flow-sensor-adapter-diagram.png" alt="Top view of the water flow sensor adapter with nine numbered markers that are explained in the list below.">
       <a class="xb-mk xb-pb" href="#tour-1" style="left:62.1%;top:19.4%" aria-label="1: host socket">1<span class="xb-pop"><b>Host socket X (J1)</b> — the Gadgeteer socket to the controller. Contact 3 returns the pulses and contact 5 the no-flow fault line. <i>See the pinout.</i></span></a>
       <a class="xb-mk xb-pb" href="#tour-2" style="left:30.5%;top:15%" aria-label="2: sensor pads">2<span class="xb-pop"><b>Sensor connector (J2)</b> — three signal, ground and 5&nbsp;V pads for the flow sensor, in two alternative rows (2.54&nbsp;mm and 2.00&nbsp;mm) with different physical order. <i>See the pinout.</i></span></a>
       <a class="xb-mk xb-pb" href="#tour-3" style="left:30%;top:36.7%" aria-label="3: sensor protection">3<span class="xb-pop"><b>Sensor-side surge protection (U3)</b> — a TPD4E1U06 array on the raw sensor signal and the protected 5&nbsp;V sensor supply.</span></a>
@@ -312,7 +312,7 @@ Still stuck? Read [how to ask for help](/help-guidelines) or see the general [tr
   <tbody>
     <tr><td><a href="/images/extensions/water-flow-sensor-adapter/water-flow-sensor-adapter-schematic.pdf">Schematic (PDF)</a></td><td>v20</td><td>The circuit diagram. Its title block reads WIP.</td></tr>
     <tr><td><a href="/images/extensions/water-flow-sensor-adapter/water-flow-sensor-adapter-bom.csv">Parts list (CSV)</a></td><td>v20</td><td>Every component with its value and footprint</td></tr>
-    <tr><td><a href="/images/extensions/water-flow-sensor-adapter/water-flow-sensor-adapter-diagram.svg">Board drawing (SVG)</a></td><td>v20</td><td>The top view used on this page, at full resolution</td></tr>
+    <tr><td><a href="/images/extensions/water-flow-sensor-adapter/water-flow-sensor-adapter-diagram.png">Board drawing (SVG)</a></td><td>v20</td><td>The top view used on this page, at full resolution</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}

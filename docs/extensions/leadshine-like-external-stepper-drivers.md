@@ -21,7 +21,7 @@ permalink: /extensions/leadshine-like-external-stepper-drivers
     </div>
   </div>
   <figure>
-    <img src="/images/extensions/leadshine-like-external-stepper-drivers/leadshine-like-external-stepper-drivers-diagram.svg" alt="Top view of the Leadshine-like external stepper driver board: a ten-contact socket at the left, the driver chip and four transistor packages at the centre, a green four-way motor terminal at the right and a green two-way supply terminal below the centre.">
+    <img src="/images/extensions/leadshine-like-external-stepper-drivers/leadshine-like-external-stepper-drivers-diagram.png" alt="Top view of the Leadshine-like external stepper driver board: a ten-contact socket at the left, the driver chip and four transistor packages at the centre, a green four-way motor terminal at the right and a green two-way supply terminal below the centre.">
     <figcaption>Top view, drawn from the board&rsquo;s design files (revision v18). This is a drawing, not a photograph.</figcaption>
   </figure>
 </div>
@@ -85,7 +85,7 @@ The numbers on the drawing match the list below it. The board is shown from the 
 <figure class="xb-tour">
   <div class="xb-tour-scroll" tabindex="0" role="region" aria-label="Annotated top view of the board">
     <div class="xb-tour-stage">
-      <img src="/images/extensions/leadshine-like-external-stepper-drivers/leadshine-like-external-stepper-drivers-diagram.svg" alt="Top view of the Leadshine-like external stepper driver board with sixteen numbered markers that are explained in the list below.">
+      <img src="/images/extensions/leadshine-like-external-stepper-drivers/leadshine-like-external-stepper-drivers-diagram.png" alt="Top view of the Leadshine-like external stepper driver board with sixteen numbered markers that are explained in the list below.">
       <a class="xb-mk xb-pb xb-pl" href="#tour-1" style="left:6.5%;top:25.8%" aria-label="1: input socket">1<span class="xb-pop"><b>Input socket (J1)</b> — a ten-contact socket (Gadgeteer S in) carrying enable, STEP, DIR and four SPI lines from the host. The host ground is separate from the motor ground. <i>See the pinout.</i></span></a>
       <a class="xb-mk xb-pb" href="#tour-2" style="left:25%;top:46.3%" aria-label="2: motor supply terminal">2<span class="xb-pop"><b>Motor supply terminal (J2)</b> — a two-way screw terminal for the motor supply, 18 to 32&nbsp;V on the silk: contact 1 positive (red), contact 2 negative (black). The silk says no hot-plug.</span></a>
       <a class="xb-mk xb-pb xb-pr" href="#tour-3" style="left:91.5%;top:26%" aria-label="3: motor terminal">3<span class="xb-pop"><b>Motor terminal (J3)</b> — a four-way screw terminal: coil A on contacts 1 and 2 (A1, A2), coil B on 3 and 4 (B1, B2).</span></a>
@@ -345,7 +345,7 @@ Still stuck? Read [how to ask for help](/help-guidelines) or see the general [tr
   <tbody>
     <tr><td><a href="/images/extensions/leadshine-like-external-stepper-drivers/leadshine-like-external-stepper-drivers-schematic.pdf">Schematic (PDF)</a></td><td>v18</td><td>The complete circuit diagram. Its title block reads v10.</td></tr>
     <tr><td><a href="/images/extensions/leadshine-like-external-stepper-drivers/leadshine-like-external-stepper-drivers-bom.csv">Parts list (CSV)</a></td><td>v18</td><td>Every component with its value and footprint</td></tr>
-    <tr><td><a href="/images/extensions/leadshine-like-external-stepper-drivers/leadshine-like-external-stepper-drivers-diagram.svg">Board drawing (SVG)</a></td><td>v18</td><td>The top view used on this page, at full resolution</td></tr>
+    <tr><td><a href="/images/extensions/leadshine-like-external-stepper-drivers/leadshine-like-external-stepper-drivers-diagram.png">Board drawing (SVG)</a></td><td>v18</td><td>The top view used on this page, at full resolution</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}

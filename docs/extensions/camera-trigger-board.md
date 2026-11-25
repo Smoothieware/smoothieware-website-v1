@@ -21,7 +21,7 @@ permalink: /extensions/camera-trigger-board
     </div>
   </div>
   <figure>
-    <img src="/images/extensions/camera-trigger-board/camera-trigger-board-diagram.svg" alt="Top view of the camera trigger board: a ten-contact socket on the left, two solid-state contacts in the middle and a camera jack on the right.">
+    <img src="/images/extensions/camera-trigger-board/camera-trigger-board-diagram.png" alt="Top view of the camera trigger board: a ten-contact socket on the left, two solid-state contacts in the middle and a camera jack on the right.">
     <figcaption>Top view, drawn from the board&rsquo;s design files (revision v17). This is a drawing, not a photograph.</figcaption>
   </figure>
 </div>
@@ -85,7 +85,7 @@ The numbers on the drawing match the list below it. The board is shown from the 
 <figure class="xb-tour">
   <div class="xb-tour-scroll" tabindex="0" role="region" aria-label="Annotated top view of the board">
     <div class="xb-tour-stage">
-      <img src="/images/extensions/camera-trigger-board/camera-trigger-board-diagram.svg" alt="Top view of the camera trigger board with ten numbered markers that are explained in the list below.">
+      <img src="/images/extensions/camera-trigger-board/camera-trigger-board-diagram.png" alt="Top view of the camera trigger board with ten numbered markers that are explained in the list below.">
       <a class="xb-mk xb-pl" href="#tour-1" style="left:13.5%;top:55.2%" aria-label="1: host socket">1<span class="xb-pop"><b>Host socket X IN (J1)</b> — the Gadgeteer socket to the controller. Contact 3 commands the shutter, contact 4 the focus. <i>See the pinout.</i></span></a>
       <a class="xb-mk xb-pr" href="#tour-2" style="left:78.2%;top:54.5%" aria-label="2: camera jack">2<span class="xb-pop"><b>Camera jack (J3)</b> — a 2.5&nbsp;mm three-contact jack for an E3-type remote cable: tip shutter, ring focus, sleeve common (marked on the silk).</span></a>
       <a class="xb-mk xb-pb xb-pr" href="#tour-3" style="left:84.5%;top:36.1%" aria-label="3: breakout header">3<span class="xb-pop"><b>Breakout header (J4)</b> — three 2.54&nbsp;mm holes for the same camera-side contacts (focus, common, shutter). The silk reads J4 DNP, which marks it as not fitted.</span></a>
@@ -307,7 +307,7 @@ Still stuck? Read [how to ask for help](/help-guidelines) or see the general [tr
   <tbody>
     <tr><td><a href="/images/extensions/camera-trigger-board/camera-trigger-board-schematic.pdf">Schematic (PDF)</a></td><td>v17</td><td>The complete circuit diagram. Its title block reads v10.</td></tr>
     <tr><td><a href="/images/extensions/camera-trigger-board/camera-trigger-board-bom.csv">Parts list (CSV)</a></td><td>v17</td><td>Every component with its value and footprint</td></tr>
-    <tr><td><a href="/images/extensions/camera-trigger-board/camera-trigger-board-diagram.svg">Board drawing (SVG)</a></td><td>v17</td><td>The top view used on this page, at full resolution</td></tr>
+    <tr><td><a href="/images/extensions/camera-trigger-board/camera-trigger-board-diagram.png">Board drawing (SVG)</a></td><td>v17</td><td>The top view used on this page, at full resolution</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}

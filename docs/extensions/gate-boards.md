@@ -21,7 +21,7 @@ permalink: /extensions/gate-boards
     </div>
   </div>
   <figure>
-    <img src="/images/extensions/gate-boards/gate-boards-diagram.svg" alt="Top view of the gate board: two three-contact input connectors at the top, a two-screw power terminal at the bottom left, an AND gate chip in the middle and a three-contact output connector at the bottom right.">
+    <img src="/images/extensions/gate-boards/gate-boards-diagram.png" alt="Top view of the gate board: two three-contact input connectors at the top, a two-screw power terminal at the bottom left, an AND gate chip in the middle and a three-contact output connector at the bottom right.">
     <figcaption>Top view, drawn from the board&rsquo;s design files (revision v18). This is a drawing, not a photograph.</figcaption>
   </figure>
 </div>
@@ -88,7 +88,7 @@ The numbers on the drawing match the list below it. The board is shown from the 
 <figure class="xb-tour">
   <div class="xb-tour-scroll" tabindex="0" role="region" aria-label="Annotated top view of the board">
     <div class="xb-tour-stage">
-      <img src="/images/extensions/gate-boards/gate-boards-diagram.svg" alt="Top view of the gate board with eleven numbered markers that are explained in the list below.">
+      <img src="/images/extensions/gate-boards/gate-boards-diagram.png" alt="Top view of the gate board with eleven numbered markers that are explained in the list below.">
       <a class="xb-mk xb-pb" href="#tour-1" style="left:29.7%;top:14.4%" aria-label="1: input A">1<span class="xb-pop"><b>Input A (J1)</b> — a three-contact connector marked S, G, 5V from left to right: signal, ground and 5&nbsp;V. The signal contact is the first input of the AND gate. <i>See the pinout.</i></span></a>
       <a class="xb-mk xb-pb" href="#tour-2" style="left:65.2%;top:14.4%" aria-label="2: input B">2<span class="xb-pop"><b>Input B (J2)</b> — the same connector for the second input, marked S, G, 5V.</span></a>
       <a class="xb-mk" href="#tour-3" style="left:29%;top:82.8%" aria-label="3: 5 V power terminal">3<span class="xb-pop"><b>5 V power terminal (J4)</b> — a two-screw terminal marked &ldquo;5V IN&rdquo;, with a + beside the left screw. The board takes its 5&nbsp;V from here, not from the connectors.</span></a>
@@ -370,7 +370,7 @@ Still stuck? Read [how to ask for help](/help-guidelines) or see the general [tr
     <tr><td><a href="/images/extensions/gate-boards/gate-boards-schematic.pdf">Schematic (PDF)</a></td><td>v18</td><td>The complete circuit diagram</td></tr>
     <tr><td><a href="/images/extensions/gate-boards/gate-boards-bom-standard.csv">Parts list, standard connectors (CSV)</a></td><td>v18</td><td>Every component with its value, footprint and position</td></tr>
     <tr><td><a href="/images/extensions/gate-boards/gate-boards-bom-stemma.csv">Parts list, 2 mm JST PH connectors (CSV)</a></td><td>v18</td><td>The same, with the stemma connector build</td></tr>
-    <tr><td><a href="/images/extensions/gate-boards/gate-boards-diagram.svg">Board drawing (SVG)</a></td><td>v18</td><td>The top view used on this page, at full resolution</td></tr>
+    <tr><td><a href="/images/extensions/gate-boards/gate-boards-diagram.png">Board drawing (SVG)</a></td><td>v18</td><td>The top view used on this page, at full resolution</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}

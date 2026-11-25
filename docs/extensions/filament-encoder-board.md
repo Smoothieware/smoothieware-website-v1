@@ -21,7 +21,7 @@ permalink: /extensions/filament-encoder-board
     </div>
   </div>
   <figure>
-    <img src="/images/extensions/filament-encoder-board/filament-encoder-board-diagram.svg" alt="Top view of the filament encoder board: a 10-contact socket at the top, small chips in a column in the middle and the encoder chip at the bottom.">
+    <img src="/images/extensions/filament-encoder-board/filament-encoder-board-diagram.png" alt="Top view of the filament encoder board: a 10-contact socket at the top, small chips in a column in the middle and the encoder chip at the bottom.">
     <figcaption>Top view, drawn from the board&rsquo;s design files (revision v14). This is a drawing, not a photograph.</figcaption>
   </figure>
 </div>
@@ -87,7 +87,7 @@ The numbers on the drawing match the list below it. The board is shown from the 
 <figure class="xb-tour">
   <div class="xb-tour-scroll" tabindex="0" role="region" aria-label="Annotated top view of the board">
     <div class="xb-tour-stage">
-      <img src="/images/extensions/filament-encoder-board/filament-encoder-board-diagram.svg" alt="Top view of the filament encoder board with nine numbered markers that are explained in the list below.">
+      <img src="/images/extensions/filament-encoder-board/filament-encoder-board-diagram.png" alt="Top view of the filament encoder board with nine numbered markers that are explained in the list below.">
       <a class="xb-mk xb-pb" href="#tour-1" style="left:50%;top:23.1%" aria-label="1: host socket">1<span class="xb-pop"><b>Gadgeteer socket S (J1)</b> — the 10-contact socket to the controller. Contact 3 is the conditioned A pulse. <i>See the pinout.</i></span></a>
       <a class="xb-mk xb-pb" href="#tour-2" style="left:50%;top:8.9%" aria-label="2: upper protection array">2<span class="xb-pop"><b>Protection array (U3)</b> — a TPD4E1U06 surge-protection array on the sensor-to-host lines (blocks ESD pulses, not a current limit).</span></a>
       <a class="xb-mk xb-pb" href="#tour-3" style="left:50%;top:39.4%" aria-label="3: lower protection array">3<span class="xb-pop"><b>Protection array (U4)</b> — a second TPD4E1U06 array on the host-to-sensor lines.</span></a>
@@ -289,7 +289,7 @@ Still stuck? Read [how to ask for help](/help-guidelines) or see the general [tr
   <tbody>
     <tr><td><a href="/images/extensions/filament-encoder-board/filament-encoder-board-schematic.pdf">Schematic (PDF)</a></td><td>v14</td><td>The complete circuit diagram. Its title block reads v10.</td></tr>
     <tr><td><a href="/images/extensions/filament-encoder-board/filament-encoder-board-bom.csv">Parts list (CSV)</a></td><td>v14</td><td>Every component with its value and footprint</td></tr>
-    <tr><td><a href="/images/extensions/filament-encoder-board/filament-encoder-board-diagram.svg">Board drawing (SVG)</a></td><td>v14</td><td>The top view used on this page, at full resolution</td></tr>
+    <tr><td><a href="/images/extensions/filament-encoder-board/filament-encoder-board-diagram.png">Board drawing (SVG)</a></td><td>v14</td><td>The top view used on this page, at full resolution</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}

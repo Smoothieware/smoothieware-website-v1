@@ -21,7 +21,7 @@ permalink: /extensions/inductive-proximity-sensor-adapter
     </div>
   </div>
   <figure>
-    <img src="/images/extensions/inductive-proximity-sensor-adapter/inductive-proximity-sensor-adapter-diagram.svg" alt="Top view of the inductive proximity sensor adapter: two green screw terminals at the top, three optocouplers in the middle and a three-contact connector at the lower right.">
+    <img src="/images/extensions/inductive-proximity-sensor-adapter/inductive-proximity-sensor-adapter-diagram.png" alt="Top view of the inductive proximity sensor adapter: two green screw terminals at the top, three optocouplers in the middle and a three-contact connector at the lower right.">
     <figcaption>Top view, drawn from the board&rsquo;s design files (revision v22). This is a drawing, not a photograph.</figcaption>
   </figure>
 </div>
@@ -84,7 +84,7 @@ The numbers on the drawing match the list below it. The board is shown from the 
 <figure class="xb-tour">
   <div class="xb-tour-scroll" tabindex="0" role="region" aria-label="Annotated top view of the board">
     <div class="xb-tour-stage">
-      <img src="/images/extensions/inductive-proximity-sensor-adapter/inductive-proximity-sensor-adapter-diagram.svg" alt="Top view of the inductive proximity sensor adapter with eleven numbered markers that are explained in the list below.">
+      <img src="/images/extensions/inductive-proximity-sensor-adapter/inductive-proximity-sensor-adapter-diagram.png" alt="Top view of the inductive proximity sensor adapter with eleven numbered markers that are explained in the list below.">
       <a class="xb-mk xb-pb" href="#tour-1" style="left:26%;top:13.3%" aria-label="1: sensor terminal">1<span class="xb-pop"><b>Sensor terminal (J2)</b> — a 3-screw terminal for a three-wire sensor. From the left screw: OUT (the sensor signal), +V (protected sensor supply) and 0V (field ground). <i>See the pinout.</i></span></a>
       <a class="xb-mk xb-pb" href="#tour-2" style="left:53.2%;top:13.3%" aria-label="2: field power terminal">2<span class="xb-pop"><b>Field power terminal (J1)</b> — a 2-screw terminal for the 12 to 24&nbsp;V field supply: left +V, right 0V (field ground).</span></a>
       <a class="xb-mk" href="#tour-3" style="left:60.8%;top:85%" aria-label="3: host connector">3<span class="xb-pop"><b>Host connector (J3)</b> — 3 contacts marked SIG, GND and 5V: the endstop-style output to the controller, ground and 5&nbsp;V from the host. <i>See the pinout.</i></span></a>
@@ -298,7 +298,7 @@ Still stuck? Read [how to ask for help](/help-guidelines) or see the general [tr
   <tbody>
     <tr><td><a href="/images/extensions/inductive-proximity-sensor-adapter/inductive-proximity-sensor-adapter-schematic.pdf">Schematic (PDF)</a></td><td>v22</td><td>The complete circuit diagram. Its title block reads v14.</td></tr>
     <tr><td><a href="/images/extensions/inductive-proximity-sensor-adapter/inductive-proximity-sensor-adapter-bom.csv">Parts list (CSV)</a></td><td>v22</td><td>Every component with its value and footprint</td></tr>
-    <tr><td><a href="/images/extensions/inductive-proximity-sensor-adapter/inductive-proximity-sensor-adapter-diagram.svg">Board drawing (SVG)</a></td><td>v22</td><td>The top view used on this page, at full resolution</td></tr>
+    <tr><td><a href="/images/extensions/inductive-proximity-sensor-adapter/inductive-proximity-sensor-adapter-diagram.png">Board drawing (SVG)</a></td><td>v22</td><td>The top view used on this page, at full resolution</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}

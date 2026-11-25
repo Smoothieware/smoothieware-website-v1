@@ -33,5 +33,19 @@
   "inverse_restores_source_byte_for_byte": true,
   "all_other_bytes_unchanged": true,
   "electrical_scope": "Three unpowered individual host leads; powered installation incomplete",
-  "qualification": "Source geometry retained; this derivative does not extend electrical, hardware or whole-guide acceptance."
+  "qualification": "Source geometry retained; this derivative does not extend electrical, hardware or whole-guide acceptance.",
+  "website_png_exports": {
+    "wholeboard-wiring-reader.svg": {
+      "archived_svg": "smoothie-diagrams/data/website-extension-svg/seven-channel-dc-mechanical-relay/guides/wholeboard-context/wholeboard-wiring-reader.svg",
+      "archived_svg_sha256": "1fbb9920bf844417de6fcf751705d29f947ac0230cee690905f040ec07aeb248",
+      "url": "/images/extensions/seven-channel-dc-mechanical-relay/guides/wholeboard-context/wholeboard-wiring-reader.png",
+      "sha256": "2efc9a6c777cf01634e6a711f07169e721d7396a4e280a8d00c35a5ca2d9e895"
+    },
+    "wholeboard-wiring.svg": {
+      "archived_svg": "smoothie-diagrams/data/website-extension-svg/seven-channel-dc-mechanical-relay/guides/wholeboard-context/wholeboard-wiring.svg",
+      "archived_svg_sha256": "3f7db556931b7b45536cda9867300a3bce747c82d7f34914470775e1109dd42f",
+      "url": "/images/extensions/seven-channel-dc-mechanical-relay/guides/wholeboard-context/wholeboard-wiring.png",
+      "sha256": "aaed46333e1b74de7491aeac65a2e9e27748137c71e7c20afe49a2037340667b"
+    }
+  }
 }

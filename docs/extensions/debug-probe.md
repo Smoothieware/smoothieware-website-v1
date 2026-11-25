@@ -21,7 +21,7 @@ permalink: /extensions/debug-probe
     </div>
   </div>
   <figure>
-    <img src="/images/extensions/debug-probe/debug-probe-diagram.svg" alt="Top view of the debug probe board: a USB-C connector at the left, the processor in the middle and a ten-contact debug header at the right.">
+    <img src="/images/extensions/debug-probe/debug-probe-diagram.png" alt="Top view of the debug probe board: a USB-C connector at the left, the processor in the middle and a ten-contact debug header at the right.">
     <figcaption>Top view, drawn from the board&rsquo;s design files (revision v24). This is a drawing, not a photograph.</figcaption>
   </figure>
 </div>
@@ -86,7 +86,7 @@ The numbers on the drawing match the list below it. The board is shown from the 
 <figure class="xb-tour">
   <div class="xb-tour-scroll" tabindex="0" role="region" aria-label="Annotated top view of the board">
     <div class="xb-tour-stage">
-      <img src="/images/extensions/debug-probe/debug-probe-diagram.svg" alt="Top view of the debug probe board with thirteen numbered markers that are explained in the list below.">
+      <img src="/images/extensions/debug-probe/debug-probe-diagram.png" alt="Top view of the debug probe board with thirteen numbered markers that are explained in the list below.">
       <a class="xb-mk xb-pb xb-pl" href="#tour-1" style="left:8.6%;top:49.8%" aria-label="1: USB-C connector">1<span class="xb-pop"><b>USB-C connector (J1)</b> — the USB 2.0 connection to the development computer. It gives 5&nbsp;V power and data only; the unused Type-C contacts add no power delivery.</span></a>
       <a class="xb-mk xb-pr" href="#tour-2" style="left:90%;top:51.5%" aria-label="2: target debug connector">2<span class="xb-pop"><b>Target debug connector (J2)</b> — a 10-contact 1.27&nbsp;mm Cortex debug header to the controller being debugged. Contact 1 is next to the white dot at the lower right. <i>See the pinout.</i></span></a>
       <a class="xb-mk" href="#tour-3" style="left:63.6%;top:89.2%" aria-label="3: UART header">3<span class="xb-pop"><b>UART header (J3)</b> — three 2.54&nbsp;mm holes: ground, transmit and receive of a fixed 3.3&nbsp;V serial port.</span></a>
@@ -291,7 +291,7 @@ Still stuck? Read [how to ask for help](/help-guidelines) or see the general [tr
   <tbody>
     <tr><td><a href="/images/extensions/debug-probe/debug-probe-schematic.pdf">Schematic (PDF)</a></td><td>v24</td><td>The complete circuit diagram. Its title block reads v12.</td></tr>
     <tr><td><a href="/images/extensions/debug-probe/debug-probe-bom.csv">Parts list (CSV)</a></td><td>v24</td><td>Every component with its value and footprint</td></tr>
-    <tr><td><a href="/images/extensions/debug-probe/debug-probe-diagram.svg">Board drawing (SVG)</a></td><td>v24</td><td>The top view used on this page, at full resolution</td></tr>
+    <tr><td><a href="/images/extensions/debug-probe/debug-probe-diagram.png">Board drawing (SVG)</a></td><td>v24</td><td>The top view used on this page, at full resolution</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}

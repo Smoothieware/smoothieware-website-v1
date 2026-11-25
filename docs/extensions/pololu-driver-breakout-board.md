@@ -21,7 +21,7 @@ permalink: /extensions/pololu-driver-breakout-board
     </div>
   </div>
   <figure>
-    <img src="/images/extensions/pololu-driver-breakout-board/pololu-driver-breakout-board-diagram.svg" alt="Top view of the Pololu driver breakout board: two ten-contact sockets at the top, three driver module sockets in a row, an XT60 power connector at the left and three motor terminals below.">
+    <img src="/images/extensions/pololu-driver-breakout-board/pololu-driver-breakout-board-diagram.png" alt="Top view of the Pololu driver breakout board: two ten-contact sockets at the top, three driver module sockets in a row, an XT60 power connector at the left and three motor terminals below.">
     <figcaption>Top view, drawn from the board&rsquo;s design files (revision v34). This is a drawing, not a photograph.</figcaption>
   </figure>
 </div>
@@ -86,7 +86,7 @@ The numbers on the drawing match the list below it. The board is shown from the 
 <figure class="xb-tour">
   <div class="xb-tour-scroll" tabindex="0" role="region" aria-label="Annotated top view of the board">
     <div class="xb-tour-stage">
-      <img src="/images/extensions/pololu-driver-breakout-board/pololu-driver-breakout-board-diagram.svg" alt="Top view of the Pololu driver breakout board with fourteen numbered markers that are explained in the list below.">
+      <img src="/images/extensions/pololu-driver-breakout-board/pololu-driver-breakout-board-diagram.png" alt="Top view of the Pololu driver breakout board with fourteen numbered markers that are explained in the list below.">
       <a class="xb-mk xb-pb xb-pl" href="#tour-1" style="left:18%;top:6.5%" aria-label="1: input socket">1<span class="xb-pop"><b>Input socket (J1)</b> — a ten-contact socket carrying 3.3&nbsp;V, 5&nbsp;V, STEP and DIR for three drivers, a shared active-low enable and ground. <i>See the pinout.</i></span></a>
       <a class="xb-mk xb-pb xb-pr" href="#tour-2" style="left:86.2%;top:6.5%" aria-label="2: chain socket">2<span class="xb-pop"><b>Chain socket (J2)</b> — a second socket that repeats the J1 signals through ten solder links, to feed another board.</span></a>
       <a class="xb-mk xb-pb xb-pl" href="#tour-3" style="left:6.8%;top:39.4%" aria-label="3: motor power input">3<span class="xb-pop"><b>Motor power input (J3)</b> — an XT60 connector for the motor supply, kept separate from the controller. Never take motor current from the host.</span></a>
@@ -304,7 +304,7 @@ Still stuck? Read [how to ask for help](/help-guidelines) or see the general [tr
   <tbody>
     <tr><td><a href="/images/extensions/pololu-driver-breakout-board/pololu-driver-breakout-board-schematic.pdf">Schematic (PDF)</a></td><td>v34</td><td>The complete circuit diagram</td></tr>
     <tr><td><a href="/images/extensions/pololu-driver-breakout-board/pololu-driver-breakout-board-bom.csv">Parts list (CSV)</a></td><td>v34</td><td>Every component with its value and footprint</td></tr>
-    <tr><td><a href="/images/extensions/pololu-driver-breakout-board/pololu-driver-breakout-board-diagram.svg">Board drawing (SVG)</a></td><td>v34</td><td>The top view used on this page, at full resolution</td></tr>
+    <tr><td><a href="/images/extensions/pololu-driver-breakout-board/pololu-driver-breakout-board-diagram.png">Board drawing (SVG)</a></td><td>v34</td><td>The top view used on this page, at full resolution</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}

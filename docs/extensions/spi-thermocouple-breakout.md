@@ -21,7 +21,7 @@ permalink: /extensions/spi-thermocouple-breakout
     </div>
   </div>
   <figure>
-    <img src="/images/extensions/spi-thermocouple-breakout/spi-thermocouple-breakout-diagram.svg" alt="Top view of the SPI thermocouple breakout: two ten-contact sockets at the top, the converter in the middle and a two-way screw terminal at the bottom.">
+    <img src="/images/extensions/spi-thermocouple-breakout/spi-thermocouple-breakout-diagram.png" alt="Top view of the SPI thermocouple breakout: two ten-contact sockets at the top, the converter in the middle and a two-way screw terminal at the bottom.">
     <figcaption>Top view, drawn from the board&rsquo;s design files (revision v16). This is a drawing, not a photograph.</figcaption>
   </figure>
 </div>
@@ -84,7 +84,7 @@ The numbers on the drawing match the list below it. The board is shown from the 
 <figure class="xb-tour">
   <div class="xb-tour-scroll" tabindex="0" role="region" aria-label="Annotated top view of the board">
     <div class="xb-tour-stage">
-      <img src="/images/extensions/spi-thermocouple-breakout/spi-thermocouple-breakout-diagram.svg" alt="Top view of the SPI thermocouple breakout with nine numbered markers that are explained in the list below.">
+      <img src="/images/extensions/spi-thermocouple-breakout/spi-thermocouple-breakout-diagram.png" alt="Top view of the SPI thermocouple breakout with nine numbered markers that are explained in the list below.">
       <a class="xb-mk xb-pb xb-pl" href="#tour-1" style="left:23.6%;top:16.7%" aria-label="1: host socket">1<span class="xb-pop"><b>Host socket S IN (J1)</b> — the Gadgeteer socket to the controller: 3.3&nbsp;V, 5&nbsp;V through, and the SPI lines. <i>See the pinout.</i></span></a>
       <a class="xb-mk xb-pb xb-pr" href="#tour-2" style="left:76.2%;top:16.7%" aria-label="2: chain socket">2<span class="xb-pop"><b>Chain socket S CHAIN (J2)</b> — a second socket that carries the lines on to the next board. Leave it unconnected for a single sensor.</span></a>
       <a class="xb-mk" href="#tour-3" style="left:50%;top:80%" aria-label="3: thermocouple terminals">3<span class="xb-pop"><b>Thermocouple terminals (J3)</b> — two screw terminals: T&minus; at the left and T+ at the right. Use thermocouple alloy leads, not copper.</span></a>
@@ -263,7 +263,7 @@ Still stuck? Read [how to ask for help](/help-guidelines) or see the general [tr
   <tbody>
     <tr><td><a href="/images/extensions/spi-thermocouple-breakout/spi-thermocouple-breakout-schematic.pdf">Schematic (PDF)</a></td><td>v16</td><td>The complete circuit diagram. Its title block reads v11 and the work-in-progress mark.</td></tr>
     <tr><td><a href="/images/extensions/spi-thermocouple-breakout/spi-thermocouple-breakout-bom.csv">Parts list (CSV)</a></td><td>v16</td><td>Every component with its value and footprint</td></tr>
-    <tr><td><a href="/images/extensions/spi-thermocouple-breakout/spi-thermocouple-breakout-diagram.svg">Board drawing (SVG)</a></td><td>v16</td><td>The top view used on this page, at full resolution</td></tr>
+    <tr><td><a href="/images/extensions/spi-thermocouple-breakout/spi-thermocouple-breakout-diagram.png">Board drawing (SVG)</a></td><td>v16</td><td>The top view used on this page, at full resolution</td></tr>
     <tr><td><a href="/assets/downloads/extensions/spi-thermocouple-breakout/max31856-cad-study.zip">CAD study (ZIP)</a></td><td>v16</td><td>The KiCad project with libraries and licence texts; a source study, not a fabrication or tested release</td></tr>
   </tbody>
 </table></div>

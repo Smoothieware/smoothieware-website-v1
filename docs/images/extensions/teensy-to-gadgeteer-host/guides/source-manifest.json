@@ -4526,5 +4526,103 @@
     "j5-contacts-6-10.svg": "e37d149d0395f67314847f9654639e5fa9f761eeef478ce4e7548850fca32842",
     "j1-contacts-6-10.svg": "2c7dbe988333d6860cfb3d2c678cbd26b96ed73c50a0bd6dcd2a80a8fbb1df71",
     "j6-contacts-1-5.svg": "bfca78c1cd0a355d354d00514f42f98b78035891ed049f358c712cf278d81092"
+  },
+  "website_png_exports": {
+    "board-reference.svg": {
+      "archived_svg": "smoothie-diagrams/data/website-extension-svg/teensy-to-gadgeteer-host/guides/board-reference.svg",
+      "archived_svg_sha256": "e51f0034151839bec263e84d639ea34eb2b10b83f84247cf095494e790cc5825",
+      "url": "/images/extensions/teensy-to-gadgeteer-host/guides/board-reference.png",
+      "sha256": "009cd582a941590dfcf26a5571c7ea9b2c4d9dc0d8991aa9239f9009dd09c0fc"
+    },
+    "full-wiring.svg": {
+      "archived_svg": "smoothie-diagrams/data/website-extension-svg/teensy-to-gadgeteer-host/guides/full-wiring.svg",
+      "archived_svg_sha256": "efa1b87cc1dcfd1a8aca01bf741412b498006b0fcd0cca03e9a2f9d5e9a28234",
+      "url": "/images/extensions/teensy-to-gadgeteer-host/guides/full-wiring.png",
+      "sha256": "136e6c378c4bd764bb93000204de9cb2da215f5e4fb8be185642c424d7880119"
+    },
+    "j1-contacts-1-5.svg": {
+      "archived_svg": "smoothie-diagrams/data/website-extension-svg/teensy-to-gadgeteer-host/guides/j1-contacts-1-5.svg",
+      "archived_svg_sha256": "12736b233b2a93c06b7d879e2a5209a2dcc171711f58e82f1dcb62b78b750fc7",
+      "url": "/images/extensions/teensy-to-gadgeteer-host/guides/j1-contacts-1-5.png",
+      "sha256": "1f35837f6e16dca9b2bb15f64eb0c8011f254b27621451496e93c824b2ee0381"
+    },
+    "j1-contacts-6-10.svg": {
+      "archived_svg": "smoothie-diagrams/data/website-extension-svg/teensy-to-gadgeteer-host/guides/j1-contacts-6-10.svg",
+      "archived_svg_sha256": "2c7dbe988333d6860cfb3d2c678cbd26b96ed73c50a0bd6dcd2a80a8fbb1df71",
+      "url": "/images/extensions/teensy-to-gadgeteer-host/guides/j1-contacts-6-10.png",
+      "sha256": "90673ac48967106aeeae7ea604ba2a3579a6ef09f231621df925777bcf2c33c1"
+    },
+    "j2-contacts-1-5.svg": {
+      "archived_svg": "smoothie-diagrams/data/website-extension-svg/teensy-to-gadgeteer-host/guides/j2-contacts-1-5.svg",
+      "archived_svg_sha256": "52535d55b9fab2940ff727eb688eb4208246ebf7031a7007012e76fb50a5c6c6",
+      "url": "/images/extensions/teensy-to-gadgeteer-host/guides/j2-contacts-1-5.png",
+      "sha256": "40332a62840702ce312b2fe57b0c2b8d21600ebe7ea3e5a2f2c9b8295b8e0efa"
+    },
+    "j2-contacts-6-10.svg": {
+      "archived_svg": "smoothie-diagrams/data/website-extension-svg/teensy-to-gadgeteer-host/guides/j2-contacts-6-10.svg",
+      "archived_svg_sha256": "4956f7be74058d6d641187c15e0822a92b2872fdd530a2df035775b9e3c05d75",
+      "url": "/images/extensions/teensy-to-gadgeteer-host/guides/j2-contacts-6-10.png",
+      "sha256": "fd8d8b03dbd33392bb4587f82f336a3d56527f4033ac7b65ad40e25ff41ea540"
+    },
+    "j3-contacts-1-5.svg": {
+      "archived_svg": "smoothie-diagrams/data/website-extension-svg/teensy-to-gadgeteer-host/guides/j3-contacts-1-5.svg",
+      "archived_svg_sha256": "cdbb32ab5ce13e477152e513665ab2c7f9581750f51a9c50723b87e09c91ac97",
+      "url": "/images/extensions/teensy-to-gadgeteer-host/guides/j3-contacts-1-5.png",
+      "sha256": "495d041fe55be6d2e1d899249634596ce05f1cf3c6cad6c3ec9779d65e59a90b"
+    },
+    "j3-contacts-6-10.svg": {
+      "archived_svg": "smoothie-diagrams/data/website-extension-svg/teensy-to-gadgeteer-host/guides/j3-contacts-6-10.svg",
+      "archived_svg_sha256": "05b6d7acf9ca757867cf11b5a858036a95f0b382ce9d684f862f7b5a8f3d6ac9",
+      "url": "/images/extensions/teensy-to-gadgeteer-host/guides/j3-contacts-6-10.png",
+      "sha256": "a1ff553287681e3ec3bd61d91ae77a87126768819e2b8176ea0e20625d47f5e7"
+    },
+    "j4-contacts-1-5.svg": {
+      "archived_svg": "smoothie-diagrams/data/website-extension-svg/teensy-to-gadgeteer-host/guides/j4-contacts-1-5.svg",
+      "archived_svg_sha256": "127ea498a98c4bee2f535725131d44f98a73994bb927b75b81be032adaa82617",
+      "url": "/images/extensions/teensy-to-gadgeteer-host/guides/j4-contacts-1-5.png",
+      "sha256": "57398d20437db81dda37dab4ba116ac6b520fbde25cee8e53645679d415c424f"
+    },
+    "j4-contacts-6-10.svg": {
+      "archived_svg": "smoothie-diagrams/data/website-extension-svg/teensy-to-gadgeteer-host/guides/j4-contacts-6-10.svg",
+      "archived_svg_sha256": "29ebdeafac8acf17c4fffcd98b0e394e091f0c487c5b6cb1871a6dd57a6debaa",
+      "url": "/images/extensions/teensy-to-gadgeteer-host/guides/j4-contacts-6-10.png",
+      "sha256": "7f4720a70bb76a84a2bc2cd6c22ef173604b8abb980a317b2ee17ceb0523cd40"
+    },
+    "j5-contacts-1-5.svg": {
+      "archived_svg": "smoothie-diagrams/data/website-extension-svg/teensy-to-gadgeteer-host/guides/j5-contacts-1-5.svg",
+      "archived_svg_sha256": "e02b0e42b4eea0796e7ac542f5db1ffd27663177165bd7e088b02b073588d496",
+      "url": "/images/extensions/teensy-to-gadgeteer-host/guides/j5-contacts-1-5.png",
+      "sha256": "22145dab9f7b2afc1b61742aebabcaa16ad706066e1a83bcc5803d67e66e994f"
+    },
+    "j5-contacts-6-10.svg": {
+      "archived_svg": "smoothie-diagrams/data/website-extension-svg/teensy-to-gadgeteer-host/guides/j5-contacts-6-10.svg",
+      "archived_svg_sha256": "e37d149d0395f67314847f9654639e5fa9f761eeef478ce4e7548850fca32842",
+      "url": "/images/extensions/teensy-to-gadgeteer-host/guides/j5-contacts-6-10.png",
+      "sha256": "c4cc6b8b142145a9619a2901f4b8fbb46050be353ec01a22d5de77447f13cc5c"
+    },
+    "j6-contacts-1-5.svg": {
+      "archived_svg": "smoothie-diagrams/data/website-extension-svg/teensy-to-gadgeteer-host/guides/j6-contacts-1-5.svg",
+      "archived_svg_sha256": "bfca78c1cd0a355d354d00514f42f98b78035891ed049f358c712cf278d81092",
+      "url": "/images/extensions/teensy-to-gadgeteer-host/guides/j6-contacts-1-5.png",
+      "sha256": "d9aa7ad62b8af48b7aa8942561b21712021d8a81762dabbc11b894acc4069aa7"
+    },
+    "j6-contacts-6-10.svg": {
+      "archived_svg": "smoothie-diagrams/data/website-extension-svg/teensy-to-gadgeteer-host/guides/j6-contacts-6-10.svg",
+      "archived_svg_sha256": "9a61c8febf273d1c5b16b37481ebc7206e5de5f4dd254c7a0991a640b05ba6b8",
+      "url": "/images/extensions/teensy-to-gadgeteer-host/guides/j6-contacts-6-10.png",
+      "sha256": "ee3409086525d033bfc99d50685528c392c986f92354bbc34aa3c3282a5776f5"
+    },
+    "power-service-key.svg": {
+      "archived_svg": "smoothie-diagrams/data/website-extension-svg/teensy-to-gadgeteer-host/guides/power-service-key.svg",
+      "archived_svg_sha256": "138fe3589f032d40b30bc31dde19bba5f1d6b300ddaf1071726e7f0ed70c225f",
+      "url": "/images/extensions/teensy-to-gadgeteer-host/guides/power-service-key.png",
+      "sha256": "fe59c822df31c2713f3f81c0ae3037a40f86eed8d3d39cc3e6482be65fce142e"
+    },
+    "teensy-to-gadgeteer-host.svg": {
+      "archived_svg": "smoothie-diagrams/data/website-extension-svg/teensy-to-gadgeteer-host/guides/teensy-to-gadgeteer-host.svg",
+      "archived_svg_sha256": "6070fd2b4bf7936446cd939df235e8dea2b8b88d9cfc8ba2858f52535d7721ff",
+      "url": "/images/extensions/teensy-to-gadgeteer-host/guides/teensy-to-gadgeteer-host.png",
+      "sha256": "5efa5ca10a774b33b09aaf29a37c08a50b35c6fe3c5a198687043b0c82f970df"
+    }
   }
 }

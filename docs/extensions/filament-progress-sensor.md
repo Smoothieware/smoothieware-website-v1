@@ -21,7 +21,7 @@ permalink: /extensions/filament-progress-sensor
     </div>
   </div>
   <figure>
-    <img src="/images/extensions/filament-progress-sensor/filament-progress-sensor-diagram.svg" alt="Top view of the filament progress sensor: two ten-contact sockets across the top, the optical sensor chip in the lower middle and a row of small capacitors at the bottom.">
+    <img src="/images/extensions/filament-progress-sensor/filament-progress-sensor-diagram.png" alt="Top view of the filament progress sensor: two ten-contact sockets across the top, the optical sensor chip in the lower middle and a row of small capacitors at the bottom.">
     <figcaption>Top view, drawn from the board&rsquo;s design files (revision v29). This is a drawing, not a photograph.</figcaption>
   </figure>
 </div>
@@ -85,7 +85,7 @@ The numbers on the drawing match the list below it. The board is shown from the 
 <figure class="xb-tour">
   <div class="xb-tour-scroll" tabindex="0" role="region" aria-label="Annotated top view of the board">
     <div class="xb-tour-stage">
-      <img src="/images/extensions/filament-progress-sensor/filament-progress-sensor-diagram.svg" alt="Top view of the filament progress sensor with nine numbered markers that are explained in the list below.">
+      <img src="/images/extensions/filament-progress-sensor/filament-progress-sensor-diagram.png" alt="Top view of the filament progress sensor with nine numbered markers that are explained in the list below.">
       <a class="xb-mk xb-pb" href="#tour-1" style="left:28.6%;top:20%" aria-label="1: input socket">1<span class="xb-pop"><b>Input socket S IN (J1)</b> — the Gadgeteer S socket that connects to the controller. Contact 3 is the motion interrupt and contact 6 the chip select. <i>See the pinout.</i></span></a>
       <a class="xb-mk xb-pb xb-pr" href="#tour-2" style="left:78%;top:20%" aria-label="2: chain socket">2<span class="xb-pop"><b>Chain socket S CHAIN (J2)</b> — a second S socket that passes the shared lines on to another board. Contacts 3 and 6 are only joined through links JP3 and JP6, which are open as delivered.</span></a>
       <a class="xb-mk xb-pb" href="#tour-3" style="left:32.5%;top:37.1%" aria-label="3: protection array">3<span class="xb-pop"><b>Protection array (D1)</b> — a TPD4E1U06 surge-protection array (it blocks ESD pulses; it is not a current limit).</span></a>
@@ -273,7 +273,7 @@ Still stuck? Read [how to ask for help](/help-guidelines) or see the general [tr
   <tbody>
     <tr><td><a href="/images/extensions/filament-progress-sensor/filament-progress-sensor-schematic.pdf">Schematic (PDF)</a></td><td>v29</td><td>The complete circuit diagram. Its title block reads v25.</td></tr>
     <tr><td><a href="/images/extensions/filament-progress-sensor/filament-progress-sensor-bom.csv">Parts list (CSV)</a></td><td>v29</td><td>Every component with its value and footprint</td></tr>
-    <tr><td><a href="/images/extensions/filament-progress-sensor/filament-progress-sensor-diagram.svg">Board drawing (SVG)</a></td><td>v29</td><td>The top view used on this page, at full resolution</td></tr>
+    <tr><td><a href="/images/extensions/filament-progress-sensor/filament-progress-sensor-diagram.png">Board drawing (SVG)</a></td><td>v29</td><td>The top view used on this page, at full resolution</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}

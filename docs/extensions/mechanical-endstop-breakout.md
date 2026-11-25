@@ -21,7 +21,7 @@ permalink: /extensions/mechanical-endstop-breakout
     </div>
   </div>
   <figure>
-    <img src="/images/extensions/mechanical-endstop-breakout/mechanical-endstop-breakout-diagram.svg" alt="Top view of the mechanical endstop breakout: a lever microswitch at the top, a three-pad connector area at the lower left and a 10-contact socket at the lower right.">
+    <img src="/images/extensions/mechanical-endstop-breakout/mechanical-endstop-breakout-diagram.png" alt="Top view of the mechanical endstop breakout: a lever microswitch at the top, a three-pad connector area at the lower left and a 10-contact socket at the lower right.">
     <figcaption>Top view, drawn from the board&rsquo;s design files (revision v18). This is a drawing, not a photograph.</figcaption>
   </figure>
 </div>
@@ -87,7 +87,7 @@ The numbers on the drawing match the list below it. The board is shown from the 
 <figure class="xb-tour">
   <div class="xb-tour-scroll" tabindex="0" role="region" aria-label="Annotated top view of the board">
     <div class="xb-tour-stage">
-      <img src="/images/extensions/mechanical-endstop-breakout/mechanical-endstop-breakout-diagram.svg" alt="Top view of the mechanical endstop breakout with twelve numbered markers that are explained in the list below.">
+      <img src="/images/extensions/mechanical-endstop-breakout/mechanical-endstop-breakout-diagram.png" alt="Top view of the mechanical endstop breakout with twelve numbered markers that are explained in the list below.">
       <a class="xb-mk xb-pr" href="#tour-1" style="left:77.8%;top:87.2%" aria-label="1: host socket">1<span class="xb-pop"><b>Gadgeteer socket X (JX)</b> — the 10-contact socket that connects to the controller. Contact 3 carries the endstop signal. <i>See the pinout.</i></span></a>
       <a class="xb-mk" href="#tour-2" style="left:30%;top:69%" aria-label="2: remote input">2<span class="xb-pop"><b>Remote contact input (J1)</b> — a 3-contact connector for an external normally-closed contact: 1 contact, 2 ground, 3 5&nbsp;V from the host for an accessory. The drawing shows two sets of pads for the same three contacts, so either connector style can be fitted.</span></a>
       <a class="xb-mk xb-pb" href="#tour-3" style="left:41.4%;top:25%" aria-label="3: local switch">3<span class="xb-pop"><b>Local microswitch (SW1)</b> — an Omron D2F-01L-A lever switch. Contact 1 is ground, 2 is the normally-open contact (it lights the LED) and 3 is the normally-closed contact.</span></a>
@@ -287,7 +287,7 @@ Still stuck? Read [how to ask for help](/help-guidelines) or see the general [tr
   <tbody>
     <tr><td><a href="/images/extensions/mechanical-endstop-breakout/mechanical-endstop-breakout-schematic.pdf">Schematic (PDF)</a></td><td>v18</td><td>The complete circuit diagram. Its title block reads v12.</td></tr>
     <tr><td><a href="/images/extensions/mechanical-endstop-breakout/mechanical-endstop-breakout-bom.csv">Parts list (CSV)</a></td><td>v18</td><td>Every component with its value and footprint</td></tr>
-    <tr><td><a href="/images/extensions/mechanical-endstop-breakout/mechanical-endstop-breakout-diagram.svg">Board drawing (SVG)</a></td><td>v18</td><td>The top view used on this page, at full resolution</td></tr>
+    <tr><td><a href="/images/extensions/mechanical-endstop-breakout/mechanical-endstop-breakout-diagram.png">Board drawing (SVG)</a></td><td>v18</td><td>The top view used on this page, at full resolution</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}

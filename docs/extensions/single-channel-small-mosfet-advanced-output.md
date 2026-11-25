@@ -23,7 +23,7 @@ redirect_from:
     </div>
   </div>
   <figure>
-    <img src="/images/extensions/single-channel-small-mosfet-advanced-output/small-mosfet-advanced-diagram.svg" alt="Top view with the white control header and two keyed Gadgeteer connectors along the top, field supply on the left and load on the right">
+    <img src="/images/extensions/single-channel-small-mosfet-advanced-output/small-mosfet-advanced-diagram.png" alt="Top view with the white control header and two keyed Gadgeteer connectors along the top, field supply on the left and load on the right">
     <figcaption>Top view drawn from revision v29.</figcaption>
   </figure>
 </div>
@@ -156,7 +156,7 @@ Connect **Y CHAIN** on one board to **Y IN** on the next. With Gadgeteer selecte
 
 ## Downloads {#downloads}
 
-- [Top-view board drawing, v29](/images/extensions/single-channel-small-mosfet-advanced-output/small-mosfet-advanced-diagram.svg)
+- [Top-view board drawing, v29](/images/extensions/single-channel-small-mosfet-advanced-output/small-mosfet-advanced-diagram.png)
 - [Schematic PDF, v29](/images/extensions/single-channel-small-mosfet-advanced-output/schematic.pdf)
 - [Parts list CSV, v29](/images/extensions/single-channel-small-mosfet-advanced-output/bom.csv)
 

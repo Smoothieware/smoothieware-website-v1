@@ -21,7 +21,7 @@ permalink: /extensions/laser-diode-driver-breakout
     </div>
   </div>
   <figure>
-    <img src="/images/extensions/laser-diode-driver-breakout/laser-diode-driver-breakout-diagram.svg" alt="Top view of the laser diode driver breakout: two Gadgeteer sockets at the left, a green two-screw terminal at the top and a black six-contact laser head connector at the right.">
+    <img src="/images/extensions/laser-diode-driver-breakout/laser-diode-driver-breakout-diagram.png" alt="Top view of the laser diode driver breakout: two Gadgeteer sockets at the left, a green two-screw terminal at the top and a black six-contact laser head connector at the right.">
     <figcaption>Top view, drawn from the board&rsquo;s design files (revision v44). This is a drawing, not a photograph.</figcaption>
   </figure>
 </div>
@@ -91,7 +91,7 @@ The numbers on the drawing match the list below it. The board is shown from the 
 <figure class="xb-tour">
   <div class="xb-tour-scroll" tabindex="0" role="region" aria-label="Annotated top view of the board">
     <div class="xb-tour-stage">
-      <img src="/images/extensions/laser-diode-driver-breakout/laser-diode-driver-breakout-diagram.svg" alt="Top view of the laser diode driver breakout with twelve numbered markers that are explained in the list below.">
+      <img src="/images/extensions/laser-diode-driver-breakout/laser-diode-driver-breakout-diagram.png" alt="Top view of the laser diode driver breakout with twelve numbered markers that are explained in the list below.">
       <a class="xb-mk xb-pb xb-pl" href="#tour-1" style="left:7%;top:33.9%" aria-label="1: host socket">1<span class="xb-pop"><b>Gadgeteer socket Y IN (J1)</b> — the 10-contact socket that connects to the controller. Contact 3 is the arm request, 6 the permission output and 7 the PWM request. <i>See the pinout.</i></span></a>
       <a class="xb-mk xb-pl" href="#tour-2" style="left:7%;top:66.1%" aria-label="2: chain socket">2<span class="xb-pop"><b>Gadgeteer socket Y CHAIN (J2)</b> — a second socket that passes contacts on to another board through zero-ohm links. The links for the arm, permission and PWM contacts are open as delivered.</span></a>
       <a class="xb-mk xb-pb" href="#tour-3" style="left:48%;top:10.5%" aria-label="3: supply terminal">3<span class="xb-pop"><b>Supply terminal (J3)</b> — a two-screw terminal for the 9 to 15&nbsp;V supply: the left screw is +, the right screw is ground. Keep the supply within that range; see the electrical specifications.</span></a>
@@ -315,7 +315,7 @@ Still stuck? Read [how to ask for help](/help-guidelines) or see the general [tr
   <tbody>
     <tr><td><a href="/images/extensions/laser-diode-driver-breakout/laser-diode-driver-breakout-schematic.pdf">Schematic (PDF)</a></td><td>v44</td><td>The complete circuit diagram. Its title block still reads v37.</td></tr>
     <tr><td><a href="/images/extensions/laser-diode-driver-breakout/laser-diode-driver-breakout-bom.csv">Parts list (CSV)</a></td><td>v44</td><td>Every component with its value and footprint</td></tr>
-    <tr><td><a href="/images/extensions/laser-diode-driver-breakout/laser-diode-driver-breakout-diagram.svg">Board drawing (SVG)</a></td><td>v44</td><td>The top view used on this page, at full resolution</td></tr>
+    <tr><td><a href="/images/extensions/laser-diode-driver-breakout/laser-diode-driver-breakout-diagram.png">Board drawing (SVG)</a></td><td>v44</td><td>The top view used on this page, at full resolution</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}

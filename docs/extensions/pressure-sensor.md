@@ -21,7 +21,7 @@ permalink: /extensions/pressure-sensor
     </div>
   </div>
   <figure>
-    <img src="/images/extensions/pressure-sensor/pressure-sensor-diagram.svg" alt="Top view of the pressure sensor board: two ten-contact sockets along the top and the square pressure sensor with its round port in the middle.">
+    <img src="/images/extensions/pressure-sensor/pressure-sensor-diagram.png" alt="Top view of the pressure sensor board: two ten-contact sockets along the top and the square pressure sensor with its round port in the middle.">
     <figcaption>Top view, drawn from the board&rsquo;s design files (revision v23). This is a drawing, not a photograph.</figcaption>
   </figure>
 </div>
@@ -84,7 +84,7 @@ The numbers on the drawing match the list below it. The board is shown from the 
 <figure class="xb-tour">
   <div class="xb-tour-scroll" tabindex="0" role="region" aria-label="Annotated top view of the board">
     <div class="xb-tour-stage">
-      <img src="/images/extensions/pressure-sensor/pressure-sensor-diagram.svg" alt="Top view of the pressure sensor board with nine numbered markers that are explained in the list below.">
+      <img src="/images/extensions/pressure-sensor/pressure-sensor-diagram.png" alt="Top view of the pressure sensor board with nine numbered markers that are explained in the list below.">
       <a class="xb-mk xb-pb" href="#tour-1" style="left:25.5%;top:13.6%" aria-label="1: input socket">1<span class="xb-pop"><b>Input socket A IN (J1)</b> — the Gadgeteer A socket to the controller. Contact 3 carries the pressure signal. <i>See the pinout.</i></span></a>
       <a class="xb-mk xb-pb" href="#tour-2" style="left:73.5%;top:13.6%" aria-label="2: chain socket">2<span class="xb-pop"><b>Chain socket A CHAIN (J2)</b> — a second socket that passes some lines on to another board. It is a shifted chain, not a same-numbered extension.</span></a>
       <a class="xb-mk" href="#tour-3" style="left:49.7%;top:56.6%" aria-label="3: pressure sensor">3<span class="xb-pop"><b>Pressure sensor (U1)</b> — an MPXV6115VC6U vacuum sensor with a single port on top (the round opening). Its conditioned output goes to the divider. The board silk reads DRY AIR ONLY and NO LIQUID.</span></a>
@@ -250,7 +250,7 @@ Still stuck? Read [how to ask for help](/help-guidelines) or see the general [tr
   <tbody>
     <tr><td><a href="/images/extensions/pressure-sensor/pressure-sensor-schematic.pdf">Schematic (PDF)</a></td><td>v23</td><td>The complete circuit diagram. Its title block reads v19.</td></tr>
     <tr><td><a href="/images/extensions/pressure-sensor/pressure-sensor-bom.csv">Parts list (CSV)</a></td><td>v23</td><td>Every component with its value and footprint</td></tr>
-    <tr><td><a href="/images/extensions/pressure-sensor/pressure-sensor-diagram.svg">Board drawing (SVG)</a></td><td>v23</td><td>The top view used on this page, at full resolution</td></tr>
+    <tr><td><a href="/images/extensions/pressure-sensor/pressure-sensor-diagram.png">Board drawing (SVG)</a></td><td>v23</td><td>The top view used on this page, at full resolution</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}

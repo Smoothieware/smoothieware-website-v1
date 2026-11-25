@@ -8,6 +8,10 @@ History: see CHANGELOG.archive.md.
 
 ### Changed
 
+- Serve extension-board diagram downloads and figures as optimized PNGs, with their editable SVG sources preserved in the diagram repository.
+
+- Share the diagram viewer stylesheet across pages to reduce page size and allow browser caching.
+- Reduced the size of extension-board SVGs by sharing repeated drawing geometry and omitting unused hidden PCB layers from standalone images.
 - Made the site header wrap on narrow screens, kept extension-guide titles visible, and contained wide contact tables within the page.
 - Gave extension-board diagrams, guide images and downloads stable filenames and updated their references across the documentation.
 - Added a stepper driver comparison table shared by the four stepper driver board pages.

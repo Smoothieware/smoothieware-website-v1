@@ -24,7 +24,7 @@ redirect_from:
     </div>
   </div>
   <figure>
-    <img src="/images/extensions/single-channel-small-mosfet-basic-output/small-mosfet-basic-diagram.svg" alt="Top view drawing of the small MOSFET basic board: a white three-pin header at left and two black keyed ten-pin headers along the top edge, printed Y IN and CHAIN, two green two-way screw terminals along the bottom edge for the 12 V supply and the load, and a POWER and an ON light.">
+    <img src="/images/extensions/single-channel-small-mosfet-basic-output/small-mosfet-basic-diagram.png" alt="Top view drawing of the small MOSFET basic board: a white three-pin header at left and two black keyed ten-pin headers along the top edge, printed Y IN and CHAIN, two green two-way screw terminals along the bottom edge for the 12 V supply and the load, and a POWER and an ON light.">
     <figcaption>Revision 02 board drawing, 41 × 32 mm.</figcaption>
   </figure>
 </div>

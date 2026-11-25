@@ -21,7 +21,7 @@ permalink: /extensions/single-channel-solid-state-relay-output
     </div>
   </div>
   <figure>
-    <img src="/images/extensions/single-channel-solid-state-relay-output/single-channel-solid-state-relay-output-diagram.svg" alt="Top view of the solid-state relay board: a fuse holder and a mains input terminal on the left, a load terminal on the right, a triac on the right side and a three-pin control connector at the bottom.">
+    <img src="/images/extensions/single-channel-solid-state-relay-output/single-channel-solid-state-relay-output-diagram.png" alt="Top view of the solid-state relay board: a fuse holder and a mains input terminal on the left, a load terminal on the right, a triac on the right side and a three-pin control connector at the bottom.">
     <figcaption>Top view, drawn from the board&rsquo;s design files (revision v15). This is a drawing, not a photograph.</figcaption>
   </figure>
 </div>
@@ -95,7 +95,7 @@ The numbers on the drawing match the list below it. The board is shown from the 
 <figure class="xb-tour">
   <div class="xb-tour-scroll" tabindex="0" role="region" aria-label="Annotated top view of the board">
     <div class="xb-tour-stage">
-      <img src="/images/extensions/single-channel-solid-state-relay-output/single-channel-solid-state-relay-output-diagram.svg" alt="Top view of the relay board with fifteen numbered markers that are explained in the list below.">
+      <img src="/images/extensions/single-channel-solid-state-relay-output/single-channel-solid-state-relay-output-diagram.png" alt="Top view of the relay board with fifteen numbered markers that are explained in the list below.">
       <a class="xb-mk xb-pb xb-pl" href="#tour-1" style="left:7.2%;top:17.7%" aria-label="1: mains input terminal">1<span class="xb-pop"><b>Mains input</b> — a three-way screw terminal marked <b>L</b>, <b>PE</b> and <b>N</b> from top to bottom: live, protective earth and neutral. <i>Mains voltage.</i></span></a>
       <a class="xb-mk xb-pb xb-pl" href="#tour-2" style="left:7.2%;top:42.5%" aria-label="2: protective earth bond terminal">2<span class="xb-pop"><b>Earth bond</b> — two screws joined to protective earth, for bonding an enclosure or a heat sink.</span></a>
       <a class="xb-mk xb-pb xb-pl" href="#tour-3" style="left:19.5%;top:15.2%" aria-label="3: fuse holder">3<span class="xb-pop"><b>Fuse</b> — a holder for a 6.3 × 32&nbsp;mm 12.5&nbsp;A fast-acting fuse in the live input.</span></a>
@@ -412,7 +412,7 @@ Still stuck? Read [how to ask for help](/help-guidelines) or see the general [tr
   <tbody>
     <tr><td><a href="/images/extensions/single-channel-solid-state-relay-output/single-channel-solid-state-relay-output-schematic.pdf">Schematic (PDF)</a></td><td>v15</td><td>The complete circuit diagram</td></tr>
     <tr><td><a href="/images/extensions/single-channel-solid-state-relay-output/single-channel-solid-state-relay-output-bom.csv">Parts list (CSV)</a></td><td>v15</td><td>Every component with its value and footprint</td></tr>
-    <tr><td><a href="/images/extensions/single-channel-solid-state-relay-output/single-channel-solid-state-relay-output-diagram.svg">Board drawing (SVG)</a></td><td>v15</td><td>The top view used on this page, at full resolution</td></tr>
+    <tr><td><a href="/images/extensions/single-channel-solid-state-relay-output/single-channel-solid-state-relay-output-diagram.png">Board drawing (SVG)</a></td><td>v15</td><td>The top view used on this page, at full resolution</td></tr>
     <tr><td><a href="/assets/downloads/extensions/single-channel-solid-state-relay-output/single-channel-ssr-cad-study.zip">KiCad source study (ZIP)</a></td><td>v15</td><td>KiCad project, PCB, schematic and local libraries. The schematic title still reads v10.</td></tr>
   </tbody>
 </table></div>

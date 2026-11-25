@@ -21,7 +21,7 @@ permalink: /extensions/fsr-breakout-board
     </div>
   </div>
   <figure>
-    <img src="/images/extensions/fsr-breakout-board/fsr-breakout-board-diagram.svg" alt="Top view of the FSR breakout board: three two-contact sensor connectors and a three-contact output along the top, three trimmers and a comparator chip in the middle, three small lights along the bottom.">
+    <img src="/images/extensions/fsr-breakout-board/fsr-breakout-board-diagram.png" alt="Top view of the FSR breakout board: three two-contact sensor connectors and a three-contact output along the top, three trimmers and a comparator chip in the middle, three small lights along the bottom.">
     <figcaption>Top view, drawn from the board&rsquo;s design files (revision v18). This is a drawing, not a photograph.</figcaption>
   </figure>
 </div>
@@ -86,7 +86,7 @@ The numbers on the drawing match the list below it. The board is shown from the 
 <figure class="xb-tour">
   <div class="xb-tour-scroll" tabindex="0" role="region" aria-label="Annotated top view of the board">
     <div class="xb-tour-stage">
-      <img src="/images/extensions/fsr-breakout-board/fsr-breakout-board-diagram.svg" alt="Top view of the FSR breakout board with twelve numbered markers that are explained in the list below.">
+      <img src="/images/extensions/fsr-breakout-board/fsr-breakout-board-diagram.png" alt="Top view of the FSR breakout board with twelve numbered markers that are explained in the list below.">
       <a class="xb-mk xb-pb xb-pl" href="#tour-1" style="left:11.8%;top:11%" aria-label="1: FSR 1 connector">1<span class="xb-pop"><b>FSR 1 connector (J1)</b> — a 2-contact connector for the first force-sensitive resistor. A force-sensitive resistor has no polarity, so either wire goes to either contact.</span></a>
       <a class="xb-mk xb-pb" href="#tour-2" style="left:33.4%;top:11%" aria-label="2: FSR 2 connector">2<span class="xb-pop"><b>FSR 2 connector (J2)</b> — the second sensor connector, identical to J1.</span></a>
       <a class="xb-mk xb-pb" href="#tour-3" style="left:55.6%;top:11%" aria-label="3: FSR 3 connector">3<span class="xb-pop"><b>FSR 3 connector (J3)</b> — the third sensor connector, identical to J1.</span></a>
@@ -285,7 +285,7 @@ Still stuck? Read [how to ask for help](/help-guidelines) or see the general [tr
   <tbody>
     <tr><td><a href="/images/extensions/fsr-breakout-board/fsr-breakout-board-schematic.pdf">Schematic (PDF)</a></td><td>v18</td><td>The complete circuit diagram. Its title block reads v10.</td></tr>
     <tr><td><a href="/images/extensions/fsr-breakout-board/fsr-breakout-board-bom.csv">Parts list (CSV)</a></td><td>v18</td><td>Every component with its value and footprint</td></tr>
-    <tr><td><a href="/images/extensions/fsr-breakout-board/fsr-breakout-board-diagram.svg">Board drawing (SVG)</a></td><td>v18</td><td>The top view used on this page, at full resolution</td></tr>
+    <tr><td><a href="/images/extensions/fsr-breakout-board/fsr-breakout-board-diagram.png">Board drawing (SVG)</a></td><td>v18</td><td>The top view used on this page, at full resolution</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}

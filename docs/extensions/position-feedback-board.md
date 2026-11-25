@@ -21,7 +21,7 @@ permalink: /extensions/position-feedback-board
     </div>
   </div>
   <figure>
-    <img src="/images/extensions/position-feedback-board/position-feedback-board-diagram.svg" alt="Top view of the position feedback board: two sockets along the top, a counter and a receiver chip in the middle and a nine-contact encoder connector along the bottom.">
+    <img src="/images/extensions/position-feedback-board/position-feedback-board-diagram.png" alt="Top view of the position feedback board: two sockets along the top, a counter and a receiver chip in the middle and a nine-contact encoder connector along the bottom.">
     <figcaption>Top view, drawn from the board&rsquo;s design files (revision v33). This is a drawing, not a photograph.</figcaption>
   </figure>
 </div>
@@ -86,7 +86,7 @@ The numbers on the drawing match the list below it. The board is shown from the 
 <figure class="xb-tour">
   <div class="xb-tour-scroll" tabindex="0" role="region" aria-label="Annotated top view of the board">
     <div class="xb-tour-stage">
-      <img src="/images/extensions/position-feedback-board/position-feedback-board-diagram.svg" alt="Top view of the position feedback board with eleven numbered markers that are explained in the list below.">
+      <img src="/images/extensions/position-feedback-board/position-feedback-board-diagram.png" alt="Top view of the position feedback board with eleven numbered markers that are explained in the list below.">
       <a class="xb-mk xb-pb xb-pl" href="#tour-1" style="left:20.9%;top:8.7%" aria-label="1: input socket">1<span class="xb-pop"><b>Input socket S IN (J1)</b> — the Gadgeteer S socket to the controller: counter flag, encoder-power fault, chip select and the SPI lines. <i>See the pinout.</i></span></a>
       <a class="xb-mk xb-pb" href="#tour-2" style="left:73.6%;top:8.7%" aria-label="2: chain socket">2<span class="xb-pop"><b>Chain socket S CHAIN (J2)</b> — a second S socket that passes the lines on. The seven chain links JP3 to JP9 join it to J1 and are bridged as delivered.</span></a>
       <a class="xb-mk" href="#tour-3" style="left:31.4%;top:90.2%" aria-label="3: encoder connector">3<span class="xb-pop"><b>Encoder connector (J3)</b> — 9 contacts: encoder 5&nbsp;V, ground, the A, B and Z differential pairs and the shield. Contact 1 is at the left. <i>See the pinout.</i></span></a>
@@ -289,7 +289,7 @@ Still stuck? Read [how to ask for help](/help-guidelines) or see the general [tr
   <tbody>
     <tr><td><a href="/images/extensions/position-feedback-board/position-feedback-board-schematic.pdf">Schematic (PDF)</a></td><td>v33</td><td>The complete circuit diagram. Its title block reads v26.</td></tr>
     <tr><td><a href="/images/extensions/position-feedback-board/position-feedback-board-bom.csv">Parts list (CSV)</a></td><td>v33</td><td>Every component with its value and footprint</td></tr>
-    <tr><td><a href="/images/extensions/position-feedback-board/position-feedback-board-diagram.svg">Board drawing (SVG)</a></td><td>v33</td><td>The top view used on this page, at full resolution</td></tr>
+    <tr><td><a href="/images/extensions/position-feedback-board/position-feedback-board-diagram.png">Board drawing (SVG)</a></td><td>v33</td><td>The top view used on this page, at full resolution</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}

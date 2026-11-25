@@ -21,7 +21,7 @@ permalink: /extensions/spectral-analysis-board
     </div>
   </div>
   <figure>
-    <img src="/images/extensions/spectral-analysis-board/spectral-analysis-board-diagram.svg" alt="Top view of the spectral analysis board: three square sensor windows in a row in the middle, a ten-contact socket at the right and a small connector at the bottom.">
+    <img src="/images/extensions/spectral-analysis-board/spectral-analysis-board-diagram.png" alt="Top view of the spectral analysis board: three square sensor windows in a row in the middle, a ten-contact socket at the right and a small connector at the bottom.">
     <figcaption>Top view, drawn from the board&rsquo;s design files (revision v31). This is a drawing, not a photograph.</figcaption>
   </figure>
 </div>
@@ -85,7 +85,7 @@ The numbers on the drawing match the list below it. The board is shown from the 
 <figure class="xb-tour">
   <div class="xb-tour-scroll" tabindex="0" role="region" aria-label="Annotated top view of the board">
     <div class="xb-tour-stage">
-      <img src="/images/extensions/spectral-analysis-board/spectral-analysis-board-diagram.svg" alt="Top view of the spectral analysis board with eight numbered markers that are explained in the list below.">
+      <img src="/images/extensions/spectral-analysis-board/spectral-analysis-board-diagram.png" alt="Top view of the spectral analysis board with eight numbered markers that are explained in the list below.">
       <a class="xb-mk xb-pb xb-pr" href="#tour-1" style="left:85.9%;top:34.3%" aria-label="1: host socket">1<span class="xb-pop"><b>Host socket I (J1)</b> — the Gadgeteer I socket to the controller. Only contacts 1, 8, 9 and 10 are connected: 3.3&nbsp;V, I2C data, I2C clock and ground. <i>See the pinout.</i></span></a>
       <a class="xb-mk xb-pr" href="#tour-2" style="left:76.4%;top:82.9%" aria-label="2: I2C connector">2<span class="xb-pop"><b>I2C connector (J3)</b> — a four-contact Qwiic-style connector (ground, 3.3&nbsp;V, data, clock) on the sensor-side I2C branch, after the bus buffer.</span></a>
       <a class="xb-mk xb-pb" href="#tour-3" style="left:38.9%;top:49.9%" aria-label="3: master sensor">3<span class="xb-pop"><b>Sensor U1 (AS72651)</b> — the first of the three sensors, which coordinates the cluster. Together the three give 18 channels.</span></a>
@@ -247,7 +247,7 @@ Still stuck? Read [how to ask for help](/help-guidelines) or see the general [tr
   <tbody>
     <tr><td><a href="/images/extensions/spectral-analysis-board/spectral-analysis-board-schematic.pdf">Schematic (PDF)</a></td><td>v31</td><td>The complete circuit diagram. Its title block reads v27.</td></tr>
     <tr><td><a href="/images/extensions/spectral-analysis-board/spectral-analysis-board-bom.csv">Parts list (CSV)</a></td><td>v31</td><td>Every component with its value and footprint</td></tr>
-    <tr><td><a href="/images/extensions/spectral-analysis-board/spectral-analysis-board-diagram.svg">Board drawing (SVG)</a></td><td>v31</td><td>The top view used on this page, at full resolution</td></tr>
+    <tr><td><a href="/images/extensions/spectral-analysis-board/spectral-analysis-board-diagram.png">Board drawing (SVG)</a></td><td>v31</td><td>The top view used on this page, at full resolution</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}
