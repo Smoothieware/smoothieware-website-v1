@@ -193,23 +193,23 @@ Retrofitting a K40 laser cutter? Start with the [K40 controller upgrade overview
   - [Wifi](wifi) (new)
 
 - **What’s new**
-  - [Feature inventory and firmware status](new-features#fall-2026). The ² marker identifies new entries in the documentation tree.
-  - [Real-time feed hold and cycle start](feed-hold) (V2)
-  - [Slaved internal-driver axes](actuator-slaving) (V2)
-  - [NIST G30/G30.1](g30#nist-stored-position-in-v2-grbl-mode) (V2)
-  - [Lathe G33](lathe) (V2)
-  - [Electronic Leadscrew](els) (V2)
-  - [Direct and shared MPG control](mpg#axis-selector-optional) (V2)
-  - [Button Box macros](button-box) (V2)
-  - [FAULT inputs](button-box#fault-inputs) (V2)
-  - [Matrix keypad support status](button-box#matrix-keypads) (V2)
-  - [`ed` file editing](console-commands#ed) (V2)
-  - [`le` command-line editing and history](console-commands#le) (V2)
-  - [O-word subroutines](subroutines) (V2)
-  - [Auxiliary UART targeting](uart#send-text-to-a-connected-device) (V2)
-  - [V2 network services](network#v2-network-services)
-  - [MAX7219 DRO displays](max7219-dro) (V2)
-  - [Experimental backlash compensation](backlash-compensation) (V1 branch and pending V2 pull request, both unmerged)
+  - [Feature inventory and firmware status](new-features#fall-2026)
+  - [Real-time feed hold and cycle start](feed-hold) <small>(v2)</small> — Pause and resume motion.
+  - [Slaved internal-driver axes](actuator-slaving) <small>(v2)</small> — Drive two motors from one axis.
+  - [NIST G30/G30.1](g30#nist-stored-position-in-v2-grbl-mode) <small>(v2)</small> — Store and recall a machine position.
+  - [Lathe G33](lathe) <small>(v2)</small> — Synchronize lathe motion with the spindle.
+  - [Electronic Leadscrew](els) <small>(v2)</small> — Control threading pitch electronically.
+  - [Direct and shared MPG control](mpg#axis-selector-optional) <small>(v2)</small> — Jog axes with dedicated or shared handwheels.
+  - [Button Box macros](button-box) <small>(v2)</small> — Run macros from physical buttons.
+  - [FAULT inputs](button-box#fault-inputs) <small>(v2)</small> — Report machine faults through inputs.
+  - [Matrix keypad support status](button-box#matrix-keypads) <small>(v2)</small> — Matrix keypads are currently unsupported.
+  - [`ed` file editing](console-commands#ed) <small>(v2)</small> — Edit files from the console.
+  - [`le` command-line editing and history](console-commands#le) <small>(v2)</small> — Edit and recall console commands.
+  - [O-word subroutines](subroutines) <small>(v2)</small> — Call reusable routines from G-code.
+  - [Auxiliary UART targeting](uart#send-text-to-a-connected-device) <small>(v2)</small> — Send text to an auxiliary serial device.
+  - [Network services](network#v2-network-services) <small>(v2)</small> — Enable shell, FTP, web, and time services.
+  - [MAX7219 DRO displays](max7219-dro) <small>(v2)</small> — Show axis positions on LED displays.
+  - [Experimental backlash compensation](backlash-compensation) <small>(v1/v2)</small> — Both implementations are still unmerged.
 
 {::nomarkdown}
 <a href="/images/binary-code.png">

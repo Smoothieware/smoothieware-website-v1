@@ -8,7 +8,7 @@ History: see CHANGELOG.archive.md.
 
 ### Changed
 
-- Moved the homepage feature roundup below Communication as “What’s new” and marked new links in the documentation tree with ².
+- Moved the homepage feature roundup below Communication as “What’s new” and marked new links in the documentation tree with ². The roundup shows compact version labels and a short description for each feature.
 
 - Serve extension-board diagram downloads and figures as optimized PNGs, with their editable SVG sources preserved in the diagram repository.
 
