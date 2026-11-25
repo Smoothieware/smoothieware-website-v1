@@ -654,18 +654,30 @@ section {
 .markdown-body .perma-proto-contact-table th:first-child { width: 70px !important; }
 .markdown-body .perma-proto-contact-table th:nth-child(2) { width: 140px !important; }
 
-/* Directory columns retain readable phrases; narrow screens scroll inside the table. */
-.markdown-body .extension-board-directory { max-width: 100%; overflow-x: auto; margin: 1.2em 0; }
-.markdown-body .extension-board-directory:focus-visible { outline: 2px solid currentColor; outline-offset: 2px; }
+/* One shared column grid for every extension-board category. */
+.markdown-body .extension-board-directory { max-width: 100%; margin: 1.2em 0; }
 .markdown-body .extension-board-directory table { min-width: 0 !important; width: 100%; table-layout: fixed !important; margin: 0 !important; }
+.markdown-body .extension-board-directory .extension-board-preview { width: 32%; }
 .markdown-body .extension-board-directory th,
-.markdown-body .extension-board-directory td { word-break: normal !important; overflow-wrap: break-word !important; hyphens: none !important; }
-.markdown-body .extension-board-directory th:first-child { width: 40%; }
+.markdown-body .extension-board-directory td {
+  word-break: normal !important;
+  overflow-wrap: break-word !important;
+  hyphens: none !important;
+}
+.markdown-body .extension-board-directory td { vertical-align: middle !important; }
+.markdown-body .extension-board-directory .extension-board-category th {
+  text-align: left;
+  font-size: 1.1em;
+}
+.markdown-body .extension-board-directory td p { margin: 0; }
+.markdown-body .extension-board-directory td .extension-board-name {
+  font-weight: 700;
+  margin-bottom: .35em;
+}
 .markdown-body .extension-board-directory td:first-child img {
   display: block;
   width: 100%;
   height: auto;
   max-height: 160px;
-  margin-top: .5em;
   object-fit: contain;
 }

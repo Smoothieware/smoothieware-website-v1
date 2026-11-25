@@ -18,152 +18,532 @@ Find a board by function, then check the revision and connection instructions on
 
 Each guide identifies its selected source revision and links to the original design. On 18 October 2026, the modern extension-board and smoothie-diagrams repository links returned “not found” without signing in. Their public availability is unresolved; this response does not establish whether a repository is private, moved or removed. Retained source revisions were used for the documentation, but a provenance link is not a verified public download. Where a guide provides an editable source-package download, it is identified separately.
 
-## Modern design families
+<a id="modern-design-families"></a>
+<a id="historical-and-related-source-records"></a>
 
-Rows below summarize the purpose of each board. Practical wiring, firmware applicability and actual page/viewer checks are distinct; a reviewed board reference alone does not make a complete installation guide.
 
-<div class="extension-board-directory" markdown="1" role="region" aria-label="Modern extension-board directory" tabindex="0">
+Historical entries appear alongside related modern boards. A similar name does not establish electrical or mechanical compatibility.
 
-| Board | Purpose |
-| --- | --- |
-| [AC SSR board](/extensions/ac-ssr-board)<br><a href="/extensions/ac-ssr-board"><img src="/images/extensions/ac-ssr-board/ac-ssr-board-diagram.png" alt="Board diagram" loading="lazy" decoding="async"></a> | A solid-state relay for one AC mains load, enabled from a Gadgeteer output, with a thermostat input; v16 prototype design. |
-| [Additional endstop inputs breakout](/extensions/additional-endstop-inputs-breakout)<br><a href="/extensions/additional-endstop-inputs-breakout"><img src="/images/extensions/additional-endstop-inputs-breakout/previous-design/endstop-inputs-diagram.png" alt="Board diagram" loading="lazy" decoding="async"></a> | This board brings six ordinary endstop inputs and a separate positive-voltage probe input to one Gadgeteer connector. |
-| [Additional general purpose outputs breakout / Servo board](/extensions/general-purpose-output-servo-board)<br><a href="/extensions/general-purpose-output-servo-board"><img src="/images/extensions/general-purpose-output-servo-board/servo-out-diagram.png" alt="Board diagram" loading="lazy" decoding="async"></a> | Seven UCC27524A-driven output channels present Ground/Power/Signal connectors for compatible external logic loads or servos. |
-| [Advanced H-bridge encoder board](/extensions/advanced-h-bridge-encoder-board)<br><a href="/extensions/advanced-h-bridge-encoder-board"><img src="/images/extensions/advanced-h-bridge-encoder-board/advanced-h-bridge-diagram.png" alt="Board diagram" loading="lazy" decoding="async"></a> | This is a brushed-DC motor controller candidate combining a VNH5019A-E H-bridge, quadrature encoder inputs and current monitoring. |
-| [Arduino adapter](/extensions/arduino-adapter)<br><a href="/extensions/arduino-adapter"><img src="/images/extensions/arduino-adapter/arduino-adapter-diagram.png" alt="Board diagram" loading="lazy" decoding="async"></a> | This candidate connects selected Uno-format shields to Smoothieboard V2 Prime. |
-| [Arduino-to-Gadgeteer shield](/extensions/arduino-to-gadgeteer-shield)<br><a href="/extensions/arduino-to-gadgeteer-shield"><img src="/images/extensions/arduino-to-gadgeteer-shield/arduino-to-gadgeteer-shield-diagram.png" alt="Board diagram" loading="lazy" decoding="async"></a> | This shield makes an Arduino Due act as a host for Gadgeteer modules. |
-| [ATX connector board](/extensions/atx-connector-board)<br><a href="/extensions/atx-connector-board"><img src="/images/extensions/atx-connector-board/atx-connector-board-diagram.png" alt="Board diagram" loading="lazy" decoding="async"></a> | Starts and stops a standard 24-pin ATX supply from one controller pin, reports power good back as a 3.3 V signal, and brings out 12 V (XT60), 5 V and 5 V standby on connectors. No fuses on the board; current ratings are design targets; prototype design, not built yet |
-| [BeagleBone breakout](/extensions/beaglebone-breakout)<br><a href="/extensions/beaglebone-breakout"><img src="/images/extensions/beaglebone-breakout/bbb-uart-diagram.png" alt="Board diagram" loading="lazy" decoding="async"></a> | This UART carrier connects a BeagleBone header to a Smoothieboard UART. |
-| [Bidirectional level shifting board](/extensions/bidirectional-level-shifting-board)<br><a href="/extensions/bidirectional-level-shifting-board"><img src="/images/extensions/bidirectional-level-shifting-board/level-shifter-diagram.png" alt="Board diagram" loading="lazy" decoding="async"></a> | This is a seven-channel digital level-interface candidate between a 3.3 V host domain and a separately selected peripheral domain. |
-| [BLtouch-like probe](/extensions/bltouch-like-probe)<br><a href="/extensions/bltouch-like-probe"><img src="/images/extensions/bltouch-like-probe/bltouch-like-probe-diagram.png" alt="Board diagram" loading="lazy" decoding="async"></a> | This experimental deployable probe uses a local microcontroller and solenoid to attempt BLTouch-like control and trigger behavior. |
-| [Bouni analog spindle control](/extensions/bouni-analog-spindle-control)<br><a href="/extensions/bouni-analog-spindle-control"><img src="/images/extensions/bouni-spindle-module-boards/bsm-analog-diagram.png" alt="Board diagram" loading="lazy" decoding="async"></a> | Converts a controller PWM signal into an analog speed command and provides separate run control. |
-| [Bouni RS-485 spindle control](/extensions/bouni-rs485-spindle-control)<br><a href="/extensions/bouni-rs485-spindle-control"><img src="/images/extensions/bouni-spindle-module-boards/bsm-rs485-diagram.png" alt="Board diagram" loading="lazy" decoding="async"></a> | Provides an isolated RS-485 connection between a controller and a compatible drive. |
-| [Breadboard board](/extensions/breadboard-board)<br><a href="/extensions/breadboard-board"><img src="/images/extensions/breadboard-board/breadboard-diagram.png" alt="Board diagram" loading="lazy" decoding="async"></a> | This board exposes seven Gadgeteer GPIO contacts and protected supply rails on a breadboard-friendly eleven-contact header. |
-| [Button boards](/extensions/button-boards)<br><a href="/extensions/button-boards"><img src="/images/extensions/button-boards/buttons-diagram.png" alt="Board diagram" loading="lazy" decoding="async"></a> | The selected board presents seven mechanical momentary buttons to a Gadgeteer host socket. |
-| [Buzzer module](/extensions/buzzer-module)<br><a href="/extensions/buzzer-module"><img src="/images/extensions/buzzer-module/buzzer-module-diagram.png" alt="Board diagram" loading="lazy" decoding="async"></a> | This v14 active-buzzer candidate makes a steady audible cue when its control signal is HIGH. |
-| [Camera trigger board](/extensions/camera-trigger-board)<br><a href="/extensions/camera-trigger-board"><img src="/images/extensions/camera-trigger-board/camera-trigger-diagram.png" alt="Board diagram" loading="lazy" decoding="async"></a> | Isolated focus/shutter contact candidate for a specifically compatible camera remote input. |
-| [Carvera wireless-probe interface](/extensions/carvera-wireless-probe-interface) | Source-only v01 prototype contract for a proposed Carvera Z-probe receiver interface to Smoothieboard V2. |
-| [Cheap UART adapter breakout](/extensions/cheap-uart-adapter-breakout)<br><a href="/extensions/cheap-uart-adapter-breakout"><img src="/images/extensions/cheap-uart-adapter-breakout/cheap-uart-adapter-breakout-diagram.png" alt="Board diagram" loading="lazy" decoding="async"></a> | This carrier adapts a specifically identified USB-to-UART module to a Gadgeteer U socket. |
-| [Chip Breakout Board (C.H.I.P)](/extensions/chip-breakout-board)<br><a href="/extensions/chip-breakout-board"><img src="/images/extensions/chip-breakout-board/chip-breakout-diagram.png" alt="Board diagram" loading="lazy" decoding="async"></a> | This archival carrier candidate connects a C.H.I.P. single-board computer to Smoothieboard over UART and provides a proposed power path. |
-| [CPLD adapter](/extensions/cpld-adapter)<br><a href="/extensions/cpld-adapter"><img src="/images/extensions/cpld-adapter/cpld-adapter-diagram.png" alt="Board diagram" loading="lazy" decoding="async"></a> | This programmable single-axis conditioner sits between host STEP/DIR/ENABLE logic and a compatible 5 V logic receiver. |
-| [D-sub-to-Gadgeteer IN adapter](/extensions/d-sub-to-gadgeteer-in)<br><a href="/extensions/d-sub-to-gadgeteer-in"><img src="/images/extensions/d-sub-to-gadgeteer-in/d-sub-to-gadgeteer-in-diagram.png" alt="Board diagram" loading="lazy" decoding="async"></a> | IN is the host-side half of a dedicated DE-9 cable extension. |
-| [D-sub-to-Gadgeteer OUT adapter](/extensions/d-sub-to-gadgeteer-out)<br><a href="/extensions/d-sub-to-gadgeteer-out"><img src="/images/extensions/d-sub-to-gadgeteer-out/d-sub-to-gadgeteer-out-diagram.png" alt="Board diagram" loading="lazy" decoding="async"></a> | OUT is the remote half of the custom IN-to-OUT DE-9 extension. |
-| [DC SSR board](/extensions/dc-ssr-board)<br><a href="/extensions/dc-ssr-board"><img src="/images/extensions/dc-ssr-board/dc-ssr-board-diagram.png" alt="Board diagram" loading="lazy" decoding="async"></a> | A solid-state relay for one DC load, enabled from a Gadgeteer output, with two back-to-back MOSFETs; v18 prototype design. |
-| [Debug Probe (Black Magic Probe clone)](/extensions/debug-probe)<br><a href="/extensions/debug-probe"><img src="/images/extensions/debug-probe/debug-probe-diagram.png" alt="Board diagram" loading="lazy" decoding="async"></a> | This USB debug-probe candidate connects a development computer to the controller's SWD/JTAG interface. |
-| [Differential signal extender](/extensions/differential-signal-extender)<br><a href="/extensions/differential-signal-extender"><img src="/images/extensions/differential-signal-extender/dse-rx-diagram.png" alt="Board diagram" loading="lazy" decoding="async"></a> | Receiver half of a one-way logic link, with custom cable and output polarity references. |
-| [Differential SPI signal extender](/extensions/differential-spi-signal-extender)<br><a href="/extensions/differential-spi-signal-extender"><img src="/images/extensions/differential-spi-signal-extender/dse-host-diagram.png" alt="Board diagram" loading="lazy" decoding="async"></a> | This pair extends one SPI peripheral connection using four fixed-direction differential channels. |
-| [Differential step/dir/en extender](/extensions/differential-step-dir-en-extender)<br><a href="/extensions/differential-step-dir-en-extender"><img src="/images/extensions/differential-step-dir-en-extender/host-diagram.png" alt="Board diagram" loading="lazy" decoding="async"></a> | This HOST/REMOTE pair carries one axis's STEP, DIR and ENABLE commands to a compatible remote stepper drive. |
-| [ESP32 DevKit to Gadgeteer host board](/extensions/esp32-to-gadgeteer-host)<br><a href="/extensions/esp32-to-gadgeteer-host"><img src="/images/extensions/esp32-to-gadgeteer-host/guides/board-reference.png" alt="Board diagram" loading="lazy" decoding="async"></a> | Host adapter that lets a selected ESP32-DevKitC-32E run compatible Gadgeteer extension boards; it is not a Smoothieboard accessory. |
-| [Filament encoder board](/extensions/filament-encoder-board)<br><a href="/extensions/filament-encoder-board"><img src="/images/extensions/filament-encoder-board/filament-encoder-diagram.png" alt="Board diagram" loading="lazy" decoding="async"></a> | This board is a magnetic-encoder interface candidate for monitoring filament motion; the mechanism and fitted sensor mode remain unresolved. |
-| [Filament progress sensor](/extensions/filament-progress-sensor)<br><a href="/extensions/filament-progress-sensor"><img src="/images/extensions/filament-progress-sensor/filament-sensor-diagram.png" alt="Board diagram" loading="lazy" decoding="async"></a> | An optical filament-motion sensor observes the surface of moving filament without a contact encoder wheel. |
-| [FSR breakout board](/extensions/fsr-breakout-board)<br><a href="/extensions/fsr-breakout-board"><img src="/images/extensions/fsr-breakout-board/fsr-breakout-diagram.png" alt="Board diagram" loading="lazy" decoding="async"></a> | This board turns three force-sensitive resistors into one digital contact/probe indication. |
-| [Gadgeteer perma-proto](/extensions/perma-proto-gadgeteer)<br><a href="/extensions/perma-proto-gadgeteer"><img src="/images/extensions/perma-proto-gadgeteer/perma-proto-gadgeteer-diagram.png" alt="Board diagram" loading="lazy" decoding="async"></a> | Use this passive carrier to build a soldered low-voltage prototype connected to existing Smoothieboard pins. |
-| [Gadgeteer-to-CAN adapter](/extensions/gadgeteer-to-can)<br><a href="/extensions/gadgeteer-to-can"><img src="/images/extensions/gadgeteer-to-can/gadgeteer-to-can-diagram.png" alt="Board diagram" loading="lazy" decoding="async"></a> | The selected adapter provides an isolated CAN physical interface between compatible controller TX/RX signals and a CANH/CANL bus. |
-| [Gate boards](/extensions/gate-boards)<br><a href="/extensions/gate-boards"><img src="/images/extensions/gate-boards/gate-boards-diagram.png" alt="Board diagram" loading="lazy" decoding="async"></a> | A two-input AND logic board with a switched 5 V output (about 200 mA, printed on the board). An unconnected input counts as high. Prototype design, not built yet, not safety rated; input thresholds and power limits not measured |
-| [GLCD breakout](/extensions/glcd-breakout)<br><a href="/extensions/glcd-breakout"><img src="/images/extensions/glcd-breakout/glcd-breakout-diagram.png" alt="Board diagram" loading="lazy" decoding="async"></a> | This adapter interfaces a specified RepRapDiscount-style ST7920 graphic panel, encoder, buttons, buzzer and SD connection. |
-| [Hall endstop breakout](/extensions/hall-endstop-breakout)<br><a href="/extensions/hall-endstop-breakout"><img src="/images/extensions/hall-endstop-breakout/hall-endstop-diagram.png" alt="Board diagram" loading="lazy" decoding="async"></a> | This v18 magnetic endstop candidate uses a DRV5033AJ omnipolar Hall sensor and transistor interface for a host-biased digital output. |
-| [HX711 load-cell amplifier](/extensions/hx711-load-cell-amplifier)<br><a href="/extensions/hx711-load-cell-amplifier"><img src="/images/extensions/hx711-load-cell-amplifier/hx711_load_cell_amplifier-diagram.png" alt="Board diagram" loading="lazy" decoding="async"></a> | An AVIA HX711 measures a resistive Wheatstone-bridge load cell and reports signed 24-bit conversions over a dedicated data/clock interface. |
-| [Inductive Proximity Sensor Adapter (level shifter)](/extensions/inductive-proximity-sensor-adapter)<br><a href="/extensions/inductive-proximity-sensor-adapter"><img src="/images/extensions/inductive-proximity-sensor-adapter/inductive-proximity-sensor-adapter-diagram.png" alt="Board diagram" loading="lazy" decoding="async"></a> | This adapter conditions a selected three-wire 12–24 V inductive proximity sensor for a low-voltage Smoothie input. |
-| [Input protector](/extensions/input-protector)<br><a href="/extensions/input-protector"><img src="/images/extensions/input-protector/input-protector-diagram.png" alt="Board diagram" loading="lazy" decoding="async"></a> | An isolated digital input: an ISO1211D receiver separates a sensor signal from the controller and gives an inverting open-collector output, for use as an endstop-style input. About 8.5 V typical threshold calculated; no voltage rating established; prototype design, not built yet |
-| [Intel Edison breakout](/extensions/intel-edison-breakout)<br><a href="/extensions/intel-edison-breakout"><img src="/images/extensions/intel-edison-breakout/intel-edison-breakout-diagram.png" alt="Board diagram" loading="lazy" decoding="async"></a> | This is a historical Intel Edison host-carrier study. |
-| [Laser barrier board](/extensions/laser-barrier-board)<br><a href="/extensions/laser-barrier-board"><img src="/images/extensions/laser-barrier-board/receiver-diagram.png" alt="Board diagram" loading="lazy" decoding="async"></a> | A pair of boards, an infrared emitter and a receiver, that report whether a modulated 38 kHz beam is unbroken, for tool-presence checks. Not a light curtain; range, timing and output polarity not established; prototype design, not built yet |
-| [Laser diode driver breakout](/extensions/laser-diode-driver-breakout)<br><a href="/extensions/laser-diode-driver-breakout"><img src="/images/extensions/laser-diode-driver-breakout/laser-diode-driver-breakout-diagram.png" alt="Board diagram" loading="lazy" decoding="async"></a> | A constant-current driver study for one 445 nm laser diode with hardware permission logic. Marked not for fabrication, dummy load only; a supply-diode orientation question is open; no configuration supplied |
-| [Laser PSU adapter board](/extensions/laser-psu-adapter-board)<br><a href="/extensions/laser-psu-adapter-board"><img src="/images/extensions/laser-psu-adapter-board/earlier-design/laser-psu-adapter-diagram.png" alt="Board diagram" loading="lazy" decoding="async"></a> | This control adapter combines a CO2 laser PSU PWM/TTL interface with four separately observable protection-loop inputs. |
-| [Leadshine-like external servo drivers](/extensions/leadshine-like-external-servo-drivers)<br><a href="/extensions/leadshine-like-external-servo-drivers"><img src="/images/extensions/leadshine-like-external-servo-drivers/guides/reader-compact-overview.png" alt="Board diagram" loading="lazy" decoding="async"></a> | The selected candidate is a complete experimental three-phase servo-drive architecture, rather than a simple adapter for a commercial Leadshine drive. |
-| [Leadshine-like external stepper drivers](/extensions/leadshine-like-external-stepper-drivers)<br><a href="/extensions/leadshine-like-external-stepper-drivers"><img src="/images/extensions/leadshine-like-external-stepper-drivers/leadshine-drive-diagram.png" alt="Board diagram" loading="lazy" decoding="async"></a> | This selected study implements an external TMC2590 stepper power stage with isolated command/configuration signals. |
-| [LED breakout](/extensions/led-breakout)<br><a href="/extensions/led-breakout"><img src="/images/extensions/led-breakout/led-breakout-diagram.png" alt="Board diagram" loading="lazy" decoding="async"></a> | Seven low-current indicators make GPIO activity visible for bench debugging. |
-| [Long distance extender (custom RJ45 differential)](/extensions/long-distance-extender)<br><a href="/extensions/long-distance-extender"><img src="/images/extensions/long-distance-extender/emitter-diagram.png" alt="Board diagram" loading="lazy" decoding="async"></a> | Three fixed-direction logic channels across paired emitter and receiver boards; not Ethernet or PoE. |
-| [Mechanical endstop breakout](/extensions/mechanical-endstop-breakout)<br><a href="/extensions/mechanical-endstop-breakout"><img src="/images/extensions/mechanical-endstop-breakout/mech-endstop-diagram.png" alt="Board diagram" loading="lazy" decoding="async"></a> | This module selects either an onboard Omron-style microswitch or an external normally-closed contact, filters its state and buffers it toward a 3.3 V host input. |
-| [Opto-Isolation pass-through board](/extensions/opto-isolation-pass-through-board)<br><a href="/extensions/opto-isolation-pass-through-board"><img src="/images/extensions/opto-isolation-pass-through-board/opto-isolation-diagram.png" alt="Board diagram" loading="lazy" decoding="async"></a> | The selected board is a fixed-direction isolated SPI/control interface, despite its historical generic opto-isolation name. |
-| [Papilio adapter](/extensions/papilio-adapter)<br><a href="/extensions/papilio-adapter"><img src="/images/extensions/papilio-adapter/papilio-adapter-diagram.png" alt="Board diagram" loading="lazy" decoding="async"></a> | This passive adapter connects selected 3.3 V FPGA wing signals to seven Gadgeteer GPIO positions. |
-| [Parallel-port bench test jig](/extensions/parallel-port-breakout)<br><a href="/extensions/parallel-port-breakout"><img src="/images/extensions/parallel-port-breakout/parallel-port-breakout-diagram.png" alt="Board diagram" loading="lazy" decoding="async"></a> | Selected v22 is explicitly not for host or machine connection; its DB25 footprint is provisional. |
-| [Pololu driver breakout board](/extensions/pololu-driver-breakout-board)<br><a href="/extensions/pololu-driver-breakout-board"><img src="/images/extensions/pololu-driver-breakout-board/pololu-driver-breakout-diagram.png" alt="Board diagram" loading="lazy" decoding="async"></a> | This carrier board accepts three genuine Pololu 2128 A4988 Black Edition stepper modules, each with STEP/DIR and one shared active-low ENABLE. |
-| [Position feedback board](/extensions/position-feedback-board)<br><a href="/extensions/position-feedback-board"><img src="/images/extensions/position-feedback-board/position-feedback-diagram.png" alt="Board diagram" loading="lazy" decoding="async"></a> | This v33 prototype counts a differential incremental ABZ encoder with an AM26LV32 receiver and LS7366R SPI counter; its retained schematic title is v26. |
-| [Power supply connector board](/extensions/power-supply-connector-board)<br><a href="/extensions/power-supply-connector-board"><img src="/images/extensions/power-supply-connector-board/psu-diagram.png" alt="Board diagram" loading="lazy" decoding="async"></a> | Protected main and always-on control power interfaces; v23 package with seven WIP schematic sheets. |
-| [Pressure sensor](/extensions/pressure-sensor)<br><a href="/extensions/pressure-sensor"><img src="/images/extensions/pressure-sensor/pressure-sensor-diagram.png" alt="Board diagram" loading="lazy" decoding="async"></a> | This v23 prototype measures vacuum/pressure for experimental pickup monitoring; its schematic title block is v19. |
-| [Qwiic-to-Gadgeteer adapter](/extensions/qwiic-to-gadgeteer-adapter)<br><a href="/extensions/qwiic-to-gadgeteer-adapter"><img src="/images/extensions/qwiic-to-gadgeteer-adapter/qwiic-to-gadgeteer-adapter-diagram.png" alt="Board diagram" loading="lazy" decoding="async"></a> | Connects compatible 3.3 V I²C peripherals through the documented ten-contact host interface and four Qwiic-style ports. |
-| [Raspberry Pi 40-pin to Gadgeteer HAT](/extensions/raspberry-pi-to-gadgeteer-hat)<br><a href="/extensions/raspberry-pi-to-gadgeteer-hat"><img src="/images/extensions/raspberry-pi-to-gadgeteer-hat/guides/raspberry-pi-hat-abstract.png" alt="Board diagram" loading="lazy" decoding="async"></a> | Host adapter that turns a Raspberry Pi 40-pin GPIO header into five Gadgeteer sockets; it runs independently of Smoothieboard. |
-| [Raspberry Pi Zero breakout](/extensions/raspberry-pi-zero-breakout)<br><a href="/extensions/raspberry-pi-zero-breakout"><img src="/images/extensions/raspberry-pi-zero-breakout/rpi-zero-breakout-diagram.png" alt="Board diagram" loading="lazy" decoding="async"></a> | This carrier connects a selected Raspberry Pi Zero-family host to Smoothieboard by UART and a proposed protected 5 V supply. |
-| [Raw pins breakout](/extensions/raw-pins-breakout)<br><a href="/extensions/raw-pins-breakout"><img src="/images/extensions/raw-pins-breakout/raw-pins-breakout-diagram.png" alt="Board diagram" loading="lazy" decoding="async"></a> | Passive ten-contact Gadgeteer breakout for compatible low-voltage signals and prototypes. |
-| [Raw pins screw terminal breakout](/extensions/raw-pins-screw-terminal-breakout)<br><a href="/extensions/raw-pins-screw-terminal-breakout"><img src="/images/extensions/raw-pins-screw-terminal-breakout/raw-pins-screw-terminal-breakout-diagram.png" alt="Board diagram" loading="lazy" decoding="async"></a> | A passive v24 candidate exposes low-voltage signal, rail and ground contacts at screw terminals and a downstream chain port. |
-| [SD card breakout](/extensions/sd-card-breakout)<br><a href="/extensions/sd-card-breakout"><img src="/images/extensions/sd-card-breakout/sd-card-breakout-diagram.png" alt="Board diagram" loading="lazy" decoding="async"></a> | This candidate adds one removable microSD socket over SPI. |
-| [Serial to WiFi Board](/extensions/serial-to-wifi-board)<br><a href="/extensions/serial-to-wifi-board"><img src="/images/extensions/serial-to-wifi-board/serial-to-wifi-board-diagram.png" alt="Board diagram" loading="lazy" decoding="async"></a> | This board is a UART-to-Wi-Fi bridge candidate using ESP32-C3-MINI-1-N4X. |
-| [Servo control](/extensions/servo-control)<br><a href="/extensions/servo-control"><img src="/images/extensions/servo-control/servo-control-diagram.png" alt="Board diagram" loading="lazy" decoding="async"></a> | The selected v24 board is a TMC4671 field-oriented motor-control interface for a separately specified external power stage and motor feedback loop. |
-| [Seven-channel AC mechanical relay](/extensions/seven-channel-ac-mechanical-relay)<br><a href="/extensions/seven-channel-ac-mechanical-relay"><img src="/images/extensions/seven-channel-ac-mechanical-relay/seven-channel-ac-mechanical-relay-diagram.png" alt="Board diagram" loading="lazy" decoding="async"></a> | Seven SPDT relay channels with optocoupler inputs and a shared coil driver; v17 source study. |
-| [Seven-channel DC mechanical relay](/extensions/seven-channel-dc-mechanical-relay)<br><a href="/extensions/seven-channel-dc-mechanical-relay"><img src="/images/extensions/seven-channel-dc-mechanical-relay/seven-channel-dc-mechanical-relay-diagram.png" alt="Board diagram" loading="lazy" decoding="async"></a> | Seven soldered SPDT relays with optocoupler inputs and one driver chip, switched from seven controller pins; v24 prototype design. |
-| [Simple PT100 amplifier board](/extensions/simple-pt100-amplifier-board)<br><a href="/extensions/simple-pt100-amplifier-board"><img src="/images/extensions/simple-pt100-amplifier-board/simple-pt100-amp-diagram.png" alt="Board diagram" loading="lazy" decoding="async"></a> | This analogue front end converts a PT100 resistance into an analogue voltage for a controller ADC. |
-| [Single-channel AC mechanical relay](/extensions/single-channel-ac-mechanical-relay)<br><a href="/extensions/single-channel-ac-mechanical-relay"><img src="/images/extensions/single-channel-ac-mechanical-relay/single-channel-ac-mechanical-relay-diagram.png" alt="Board diagram" loading="lazy" decoding="async"></a> | One soldered SPDT relay with an optocoupler input, switched from a single controller pin; v19 prototype design. |
-| [Single-channel DC mechanical relay](/extensions/single-channel-dc-mechanical-relay)<br><a href="/extensions/single-channel-dc-mechanical-relay"><img src="/images/extensions/single-channel-dc-mechanical-relay/single-channel-dc-mechanical-relay-diagram.png" alt="Board diagram" loading="lazy" decoding="async"></a> | One soldered SPDT relay with an optocoupler input, switching a DC load from a single controller pin; v20 prototype design. |
-| [Single-Channel Large Mosfet output](/extensions/single-channel-large-mosfet-output)<br><a href="/extensions/single-channel-large-mosfet-output"><img src="/images/extensions/single-channel-large-mosfet-output/previous-design/large-mosfet-diagram.png" alt="Board diagram" loading="lazy" decoding="async"></a> | This low-side DC switch candidate drives one separately powered load such as a heater or fan bank. |
-| [Single-Channel Small MOSFET advanced output](/extensions/single-channel-small-mosfet-advanced-output)<br><a href="/extensions/single-channel-small-mosfet-advanced-output"><img src="/images/extensions/single-channel-small-mosfet-advanced-output/earlier-design/small-mosfet-advanced-diagram.png" alt="Board diagram" loading="lazy" decoding="async"></a> | Low-side DC load-switch candidate; direct Prime gate drive is unqualified. |
-| [Single-channel solid state relay output](/extensions/single-channel-solid-state-relay-output)<br><a href="/extensions/single-channel-solid-state-relay-output"><img src="/images/extensions/single-channel-solid-state-relay-output/single-channel-solid-state-relay-output-diagram.png" alt="Board diagram" loading="lazy" decoding="async"></a> | One optically isolated mains switch with a triac, controlled by a 4.5–6 V signal; v15 prototype design. |
-| [SCD41 environmental sensor (smoke-detector family)](/extensions/smoke-detector)<br><a href="/extensions/smoke-detector"><img src="/images/extensions/smoke-detector/smoke-detector-diagram.png" alt="Board diagram" loading="lazy" decoding="async"></a> | Despite its family name, this selected candidate measures CO2, temperature and relative humidity using SCD41. |
-| [Spectral analysis](/extensions/spectral-analysis-board)<br><a href="/extensions/spectral-analysis-board"><img src="/images/extensions/spectral-analysis-board/spectral-analysis-diagram.png" alt="Board diagram" loading="lazy" decoding="async"></a> | This candidate reads 18 channels from one AS72651/52/53 spectral sensor cluster for controlled reflectance experiments. |
-| [SPI Hub](/extensions/spi-hub)<br><a href="/extensions/spi-hub"><img src="/images/extensions/spi-hub/spi-hub-diagram.png" alt="Board diagram" loading="lazy" decoding="async"></a> | Shares SPI with four separately selected outputs; includes an OUT2 thermocouple wiring example. |
-| [SPI PT100 amplifier board](/extensions/spi-pt100-amplifier-board)<br><a href="/extensions/spi-pt100-amplifier-board"><img src="/images/extensions/spi-pt100-amplifier-board/spi-pt100-diagram.png" alt="Board diagram" loading="lazy" decoding="async"></a> | This board reads one PT100 resistance with a MAX31865 SPI converter. |
-| [SPI Thermocouple breakout](/extensions/spi-thermocouple-breakout)<br><a href="/extensions/spi-thermocouple-breakout"><img src="/images/extensions/spi-thermocouple-breakout/spi-thermocouple-diagram.png" alt="Board diagram" loading="lazy" decoding="async"></a> | The selected v16 candidate connects a thermocouple to a MAX31856 converter. |
-| [Stepper motor driver breakout board (Allegro A5984)](/extensions/stepper-driver-breakout-allegro)<br><a href="/extensions/stepper-driver-breakout-allegro"><img src="/images/extensions/stepper-driver-breakout-allegro/stepper-driver-allegro-diagram.png" alt="Board diagram" loading="lazy" decoding="async"></a> | This candidate adds one A5984 bipolar stepper-driver channel. |
-| [Stepper motor driver breakout board (Trinamic TMC2660)](/extensions/stepper-driver-breakout-trinamic)<br><a href="/extensions/stepper-driver-breakout-trinamic"><img src="/images/extensions/stepper-driver-breakout-trinamic/tmc2660-stepper-diagram.png" alt="Board diagram" loading="lazy" decoding="async"></a> | This v19 candidate adds one bipolar TMC2660 channel controlled by STEP/DIR and SPI. |
-| [Teensy 4.1 to Gadgeteer host board](/extensions/teensy-to-gadgeteer-host)<br><a href="/extensions/teensy-to-gadgeteer-host"><img src="/images/extensions/teensy-to-gadgeteer-host/guides/board-reference.png" alt="Board diagram" loading="lazy" decoding="async"></a> | Host adapter that lets a Teensy 4.1 run compatible Gadgeteer extension boards; it has no Smoothieware firmware of its own. |
-| [UART breakout](/extensions/uart-breakout)<br><a href="/extensions/uart-breakout"><img src="/images/extensions/uart-breakout/uart-breakout-diagram.png" alt="Board diagram" loading="lazy" decoding="async"></a> | v17 candidate bridges the Prime UART to a historical jaUART USB-to-TTL adapter; its guide gives a seven-lead plus USB-cable electrical proposal. |
-| [Universal panel adapter](/extensions/universal-panel-adapter)<br><a href="/extensions/universal-panel-adapter"><img src="/images/extensions/universal-panel-adapter/universal-panel-adapter-diagram.png" alt="Board diagram" loading="lazy" decoding="async"></a> | This candidate connects selected legacy LCD/encoder panels through a local ATmega328P. |
-| [USB/Serial breakout](/extensions/usb-serial-breakout)<br><a href="/extensions/usb-serial-breakout"><img src="/images/extensions/usb-serial-breakout/usb-serial-diagram.png" alt="Board diagram" loading="lazy" decoding="async"></a> | This board integrates a USB-to-UART bridge between a computer and a controller U socket. |
-| [Water flow sensor adapter](/extensions/water-flow-sensor-adapter)<br><a href="/extensions/water-flow-sensor-adapter"><img src="/images/extensions/water-flow-sensor-adapter/water-flow-adapter-diagram.png" alt="Board diagram" loading="lazy" decoding="async"></a> | This adapter conditions one specified three-wire pulse-output flow sensor and provides both pulse telemetry and a proposed no-flow indication. |
-| [Wireless gadgeteer extender](/extensions/wireless-gadgeteer-extender)<br><a href="/extensions/wireless-gadgeteer-extender"><img src="/images/extensions/wireless-gadgeteer-extender/wireless-gadgeteer-extender-diagram.png" alt="Board diagram" loading="lazy" decoding="async"></a> | This candidate uses paired nRF52832 radio endpoints to sample and reproduce seven deliberately directed digital channels. |
-| [Wireless series — Smoothieboard-side "Master](/extensions/wireless-series-master)<br><a href="/extensions/wireless-series-master"><img src="/images/extensions/wireless-series-master/wireless-series-master-diagram.png" alt="Board diagram" loading="lazy" decoding="async"></a> | This host-side radio controller is an experimental remote-I/O master, using an ATSAMD21 and nRF24L01+ module. |
-
+<div class="extension-board-directory">
+<table aria-label="Extension boards by function">
+<colgroup><col class="extension-board-preview"><col></colgroup>
+<tbody aria-labelledby="motor-and-motion-control">
+  <tr class="extension-board-category"><th id="motor-and-motion-control" colspan="2" scope="rowgroup">Motor and motion control</th></tr>
+  <tr>
+    <td><a href="/extensions/historical-a5984-stepper-driver" aria-label="Open the Three-channel A5984 stepper driver guide"><img src="/images/extensions/historical-a5984-stepper-driver/directory-preview.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><p class="extension-board-name"><a href="/extensions/historical-a5984-stepper-driver">Three-channel A5984 stepper driver</a></p><p>Three A5984GLP driver ICs turn three independent step/direction streams into current-regulated bipolar motor winding currents.</p></td>
+  </tr>
+  <tr>
+    <td><a href="/extensions/advanced-h-bridge-encoder-board" aria-label="Open the Advanced H-bridge encoder board guide"><img src="/images/extensions/advanced-h-bridge-encoder-board/advanced-h-bridge-diagram.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><p class="extension-board-name"><a href="/extensions/advanced-h-bridge-encoder-board">Advanced H-bridge encoder board</a></p><p>This is a brushed-DC motor controller candidate combining a VNH5019A-E H-bridge, quadrature encoder inputs and current monitoring.</p></td>
+  </tr>
+  <tr>
+    <td><a href="/extensions/bouni-analog-spindle-control" aria-label="Open the Bouni analog spindle control guide"><img src="/images/extensions/bouni-spindle-module-boards/bsm-analog-diagram.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><p class="extension-board-name"><a href="/extensions/bouni-analog-spindle-control">Bouni analog spindle control</a></p><p>Converts a controller PWM signal into an analog speed command and provides separate run control.</p></td>
+  </tr>
+  <tr>
+    <td><a href="/extensions/historical-external-stepper-signal-breakout" aria-label="Open the External STEP/DIR signal breakout guide"><img src="/images/extensions/historical-external-stepper-signal-breakout/directory-preview.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><p class="extension-board-name"><a href="/extensions/historical-external-stepper-signal-breakout">External STEP/DIR signal breakout</a></p><p>This passive board redistributes one V2 control header into three external-drive command connectors.</p></td>
+  </tr>
+  <tr>
+    <td><a href="/extensions/leadshine-like-external-servo-drivers" aria-label="Open the Leadshine-like external servo drivers guide"><img src="/images/extensions/leadshine-like-external-servo-drivers/guides/reader-compact-overview.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><p class="extension-board-name"><a href="/extensions/leadshine-like-external-servo-drivers">Leadshine-like external servo drivers</a></p><p>The selected candidate is a complete experimental three-phase servo-drive architecture, rather than a simple adapter for a commercial Leadshine drive.</p></td>
+  </tr>
+  <tr>
+    <td><a href="/extensions/leadshine-like-external-stepper-drivers" aria-label="Open the Leadshine-like external stepper drivers guide"><img src="/images/extensions/leadshine-like-external-stepper-drivers/leadshine-drive-diagram.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><p class="extension-board-name"><a href="/extensions/leadshine-like-external-stepper-drivers">Leadshine-like external stepper drivers</a></p><p>This selected study implements an external TMC2590 stepper power stage with isolated command/configuration signals.</p></td>
+  </tr>
+  <tr>
+    <td><a href="/extensions/historical-multi-motor-single-axis-splitter" aria-label="Open the Multi-motor single-axis command splitter guide"><img src="/images/extensions/historical-multi-motor-single-axis-splitter/directory-preview.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><p class="extension-board-name"><a href="/extensions/historical-multi-motor-single-axis-splitter">Multi-motor single-axis command splitter</a></p><p>This logic board gates one shared STEP stream separately to four motor-driver channels while sharing buffered DIR and ENABLE.</p></td>
+  </tr>
+  <tr>
+    <td><a href="/extensions/pololu-driver-breakout-board" aria-label="Open the Pololu driver breakout board guide"><img src="/images/extensions/pololu-driver-breakout-board/pololu-driver-breakout-diagram.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><p class="extension-board-name"><a href="/extensions/pololu-driver-breakout-board">Pololu driver breakout board</a></p><p>This carrier board accepts three genuine Pololu 2128 A4988 Black Edition stepper modules, each with STEP/DIR and one shared active-low ENABLE.</p></td>
+  </tr>
+  <tr>
+    <td><a href="/extensions/position-feedback-board" aria-label="Open the Position feedback board guide"><img src="/images/extensions/position-feedback-board/position-feedback-diagram.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><p class="extension-board-name"><a href="/extensions/position-feedback-board">Position feedback board</a></p><p>This v33 prototype counts a differential incremental ABZ encoder with an AM26LV32 receiver and LS7366R SPI counter; its retained schematic title is v26.</p></td>
+  </tr>
+  <tr>
+    <td><a href="/extensions/servo-control" aria-label="Open the Servo control guide"><img src="/images/extensions/servo-control/servo-control-diagram.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><p class="extension-board-name"><a href="/extensions/servo-control">Servo control</a></p><p>The selected v24 board is a TMC4671 field-oriented motor-control interface for a separately specified external power stage and motor feedback loop.</p></td>
+  </tr>
+  <tr>
+    <td><a href="/extensions/historical-six-axis-breakout" aria-label="Open the Historical six-axis interface board guide"><img src="/images/extensions/historical-six-axis-breakout/directory-preview.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><p class="extension-board-name"><a href="/extensions/historical-six-axis-breakout">Historical six-axis interface board</a></p><p>This large V2 interface combines six external STEP/DIR channels, shared enable, ABC min/max endstops, four small-FET PWM outputs, UART0, an ordinary E-stop input and a 40-contact harness connector.</p></td>
+  </tr>
+  <tr>
+    <td><a href="/extensions/stepper-driver-breakout-allegro" aria-label="Open the Stepper motor driver breakout board (Allegro A5984) guide"><img src="/images/extensions/stepper-driver-breakout-allegro/stepper-driver-allegro-diagram.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><p class="extension-board-name"><a href="/extensions/stepper-driver-breakout-allegro">Stepper motor driver breakout board (Allegro A5984)</a></p><p>This candidate adds one A5984 bipolar stepper-driver channel.</p></td>
+  </tr>
+  <tr>
+    <td><a href="/extensions/stepper-driver-breakout-trinamic" aria-label="Open the Stepper motor driver breakout board (Trinamic TMC2660) guide"><img src="/images/extensions/stepper-driver-breakout-trinamic/tmc2660-stepper-diagram.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><p class="extension-board-name"><a href="/extensions/stepper-driver-breakout-trinamic">Stepper motor driver breakout board (Trinamic TMC2660)</a></p><p>This v19 candidate adds one bipolar TMC2660 channel controlled by STEP/DIR and SPI.</p></td>
+  </tr>
+</tbody>
+<tbody aria-labelledby="sensors-and-inputs">
+  <tr class="extension-board-category"><th id="sensors-and-inputs" colspan="2" scope="rowgroup">Sensors and inputs</th></tr>
+  <tr>
+    <td><a href="/extensions/additional-endstop-inputs-breakout" aria-label="Open the Additional endstop inputs breakout guide"><img src="/images/extensions/additional-endstop-inputs-breakout/previous-design/endstop-inputs-diagram.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><p class="extension-board-name"><a href="/extensions/additional-endstop-inputs-breakout">Additional endstop inputs breakout</a></p><p>This board brings six ordinary endstop inputs and a separate positive-voltage probe input to one Gadgeteer connector.</p></td>
+  </tr>
+  <tr>
+    <td><a href="/extensions/bltouch-like-probe" aria-label="Open the BLtouch-like probe guide"><img src="/images/extensions/bltouch-like-probe/bltouch-like-probe-diagram.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><p class="extension-board-name"><a href="/extensions/bltouch-like-probe">BLtouch-like probe</a></p><p>This experimental deployable probe uses a local microcontroller and solenoid to attempt BLTouch-like control and trigger behavior.</p></td>
+  </tr>
+  <tr>
+    <td><a href="/extensions/historical-bounce-stop" aria-label="Open the BounceStop hardware debounce guide"><img src="/images/extensions/historical-bounce-stop/directory-preview.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><p class="extension-board-name"><a href="/extensions/historical-bounce-stop">BounceStop hardware debounce</a></p><p>A MAX6818EAP+ conditions eight noisy switch inputs in hardware.</p></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td><p class="extension-board-name"><a href="/extensions/carvera-wireless-probe-interface">Carvera wireless-probe interface</a></p><p>Source-only v01 prototype contract for a proposed Carvera Z-probe receiver interface to Smoothieboard V2.</p></td>
+  </tr>
+  <tr>
+    <td><a href="/extensions/historical-extraendstops" aria-label="Open the ExtraEndstops guide"><img src="/images/extensions/historical-extraendstops/directory-preview.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><p class="extension-board-name"><a href="/extensions/historical-extraendstops">ExtraEndstops — recovered upstream design</a></p><p>This board expands a host GPIO connector into seven powered three-wire endstop interfaces with per-channel filtering/indicator circuitry.</p></td>
+  </tr>
+  <tr>
+    <td><a href="/extensions/filament-encoder-board" aria-label="Open the Filament encoder board guide"><img src="/images/extensions/filament-encoder-board/filament-encoder-diagram.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><p class="extension-board-name"><a href="/extensions/filament-encoder-board">Filament encoder board</a></p><p>This board is a magnetic-encoder interface candidate for monitoring filament motion; the mechanism and fitted sensor mode remain unresolved.</p></td>
+  </tr>
+  <tr>
+    <td><a href="/extensions/filament-progress-sensor" aria-label="Open the Filament progress sensor guide"><img src="/images/extensions/filament-progress-sensor/filament-sensor-diagram.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><p class="extension-board-name"><a href="/extensions/filament-progress-sensor">Filament progress sensor</a></p><p>An optical filament-motion sensor observes the surface of moving filament without a contact encoder wheel.</p></td>
+  </tr>
+  <tr>
+    <td><a href="/extensions/fsr-breakout-board" aria-label="Open the FSR breakout board guide"><img src="/images/extensions/fsr-breakout-board/fsr-breakout-diagram.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><p class="extension-board-name"><a href="/extensions/fsr-breakout-board">FSR breakout board</a></p><p>This board turns three force-sensitive resistors into one digital contact/probe indication.</p></td>
+  </tr>
+  <tr>
+    <td><a href="/extensions/hall-endstop-breakout" aria-label="Open the Hall endstop breakout guide"><img src="/images/extensions/hall-endstop-breakout/hall-endstop-diagram.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><p class="extension-board-name"><a href="/extensions/hall-endstop-breakout">Hall endstop breakout</a></p><p>This v18 magnetic endstop candidate uses a DRV5033AJ omnipolar Hall sensor and transistor interface for a host-biased digital output.</p></td>
+  </tr>
+  <tr>
+    <td><a href="/extensions/hx711-load-cell-amplifier" aria-label="Open the HX711 load-cell amplifier guide"><img src="/images/extensions/hx711-load-cell-amplifier/hx711_load_cell_amplifier-diagram.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><p class="extension-board-name"><a href="/extensions/hx711-load-cell-amplifier">HX711 load-cell amplifier</a></p><p>An AVIA HX711 measures a resistive Wheatstone-bridge load cell and reports signed 24-bit conversions over a dedicated data/clock interface.</p></td>
+  </tr>
+  <tr>
+    <td><a href="/extensions/inductive-proximity-sensor-adapter" aria-label="Open the Inductive Proximity Sensor Adapter (level shifter) guide"><img src="/images/extensions/inductive-proximity-sensor-adapter/inductive-proximity-sensor-adapter-diagram.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><p class="extension-board-name"><a href="/extensions/inductive-proximity-sensor-adapter">Inductive Proximity Sensor Adapter (level shifter)</a></p><p>This adapter conditions a selected three-wire 12–24 V inductive proximity sensor for a low-voltage Smoothie input.</p></td>
+  </tr>
+  <tr>
+    <td><a href="/extensions/input-protector" aria-label="Open the Input protector guide"><img src="/images/extensions/input-protector/input-protector-diagram.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><p class="extension-board-name"><a href="/extensions/input-protector">Input protector</a></p><p>An isolated digital input: an ISO1211D receiver separates a sensor signal from the controller and gives an inverting open-collector output, for use as an endstop-style input. About 8.5 V typical threshold calculated; no voltage rating established; prototype design, not built yet</p></td>
+  </tr>
+  <tr>
+    <td><a href="/extensions/laser-barrier-board" aria-label="Open the Laser barrier board guide"><img src="/images/extensions/laser-barrier-board/receiver-diagram.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><p class="extension-board-name"><a href="/extensions/laser-barrier-board">Laser barrier board</a></p><p>A pair of boards, an infrared emitter and a receiver, that report whether a modulated 38 kHz beam is unbroken, for tool-presence checks. Not a light curtain; range, timing and output polarity not established; prototype design, not built yet</p></td>
+  </tr>
+  <tr>
+    <td><a href="/extensions/historical-mechanical-endstop" aria-label="Open the Mechanical endstop guide"><img src="/images/extensions/historical-mechanical-endstop/directory-preview.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><p class="extension-board-name"><a href="/extensions/historical-mechanical-endstop">Mechanical endstop</a></p><p>This is a powered three-wire mechanical limit-switch module with an indicator and signal filtering.</p></td>
+  </tr>
+  <tr>
+    <td><a href="/extensions/mechanical-endstop-breakout" aria-label="Open the Mechanical endstop breakout guide"><img src="/images/extensions/mechanical-endstop-breakout/mech-endstop-diagram.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><p class="extension-board-name"><a href="/extensions/mechanical-endstop-breakout">Mechanical endstop breakout</a></p><p>This module selects either an onboard Omron-style microswitch or an external normally-closed contact, filters its state and buffers it toward a 3.3 V host input.</p></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td><p class="extension-board-name"><a href="/extensions/historical-opto-isolated-endstop-adapter">OptoIsoStop isolated endstop interface</a></p><p>An H11L1SM optoisolator conditions an endstop-style field signal.</p></td>
+  </tr>
+  <tr>
+    <td><a href="/extensions/pressure-sensor" aria-label="Open the Pressure sensor guide"><img src="/images/extensions/pressure-sensor/pressure-sensor-diagram.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><p class="extension-board-name"><a href="/extensions/pressure-sensor">Pressure sensor</a></p><p>This v23 prototype measures vacuum/pressure for experimental pickup monitoring; its schematic title block is v19.</p></td>
+  </tr>
+  <tr>
+    <td><a href="/extensions/simple-pt100-amplifier-board" aria-label="Open the Simple PT100 amplifier board guide"><img src="/images/extensions/simple-pt100-amplifier-board/simple-pt100-amp-diagram.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><p class="extension-board-name"><a href="/extensions/simple-pt100-amplifier-board">Simple PT100 amplifier board</a></p><p>This analogue front end converts a PT100 resistance into an analogue voltage for a controller ADC.</p></td>
+  </tr>
+  <tr>
+    <td><a href="/extensions/smoke-detector" aria-label="Open the SCD41 environmental sensor (smoke-detector family) guide"><img src="/images/extensions/smoke-detector/smoke-detector-diagram.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><p class="extension-board-name"><a href="/extensions/smoke-detector">SCD41 environmental sensor (smoke-detector family)</a></p><p>Despite its family name, this selected candidate measures CO2, temperature and relative humidity using SCD41.</p></td>
+  </tr>
+  <tr>
+    <td><a href="/extensions/spectral-analysis-board" aria-label="Open the Spectral analysis guide"><img src="/images/extensions/spectral-analysis-board/spectral-analysis-diagram.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><p class="extension-board-name"><a href="/extensions/spectral-analysis-board">Spectral analysis</a></p><p>This candidate reads 18 channels from one AS72651/52/53 spectral sensor cluster for controlled reflectance experiments.</p></td>
+  </tr>
+  <tr>
+    <td><a href="/extensions/historical-spi-pt100" aria-label="Open the SPI PT100 interface guide"><img src="/images/extensions/historical-spi-pt100/directory-preview.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><p class="extension-board-name"><a href="/extensions/historical-spi-pt100">SPI PT100 interface</a></p><p>The MAX31865_SSOP20 converts a platinum resistance sensor into a digital SPI measurement.</p></td>
+  </tr>
+  <tr>
+    <td><a href="/extensions/spi-pt100-amplifier-board" aria-label="Open the SPI PT100 amplifier board guide"><img src="/images/extensions/spi-pt100-amplifier-board/spi-pt100-diagram.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><p class="extension-board-name"><a href="/extensions/spi-pt100-amplifier-board">SPI PT100 amplifier board</a></p><p>This board reads one PT100 resistance with a MAX31865 SPI converter.</p></td>
+  </tr>
+  <tr>
+    <td><a href="/extensions/spi-thermocouple-breakout" aria-label="Open the SPI Thermocouple breakout guide"><img src="/images/extensions/spi-thermocouple-breakout/spi-thermocouple-diagram.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><p class="extension-board-name"><a href="/extensions/spi-thermocouple-breakout">SPI Thermocouple breakout</a></p><p>The selected v16 candidate connects a thermocouple to a MAX31856 converter.</p></td>
+  </tr>
+  <tr>
+    <td><a href="/extensions/historical-thermistortrigger" aria-label="Open the ThermistorTrigger — Dual thermistor hardware setpoint trigger guide"><img src="/images/extensions/historical-thermistortrigger/directory-preview.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><p class="extension-board-name"><a href="/extensions/historical-thermistortrigger">ThermistorTrigger — Dual thermistor hardware setpoint trigger</a></p><p>ThermistorTrigger buffers two thermistor signals and compares them against hardware-adjusted thresholds.</p></td>
+  </tr>
+  <tr>
+    <td><a href="/extensions/historical-thermocouple-interface" aria-label="Open the K-type thermocouple interface guide"><img src="/images/extensions/historical-thermocouple-interface/directory-preview.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><p class="extension-board-name"><a href="/extensions/historical-thermocouple-interface">K-type thermocouple interface</a></p><p>A MAX31855KASA reads a K-type thermocouple and exposes temperature/fault data over a read-only SPI-style interface.</p></td>
+  </tr>
+  <tr>
+    <td><a href="/extensions/water-flow-sensor-adapter" aria-label="Open the Water flow sensor adapter guide"><img src="/images/extensions/water-flow-sensor-adapter/water-flow-adapter-diagram.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><p class="extension-board-name"><a href="/extensions/water-flow-sensor-adapter">Water flow sensor adapter</a></p><p>This adapter conditions one specified three-wire pulse-output flow sensor and provides both pulse telemetry and a proposed no-flow indication.</p></td>
+  </tr>
+</tbody>
+<tbody aria-labelledby="power-relays-and-outputs">
+  <tr class="extension-board-category"><th id="power-relays-and-outputs" colspan="2" scope="rowgroup">Power, relays and outputs</th></tr>
+  <tr>
+    <td><a href="/extensions/ac-ssr-board" aria-label="Open the AC SSR board guide"><img src="/images/extensions/ac-ssr-board/ac-ssr-board-diagram.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><p class="extension-board-name"><a href="/extensions/ac-ssr-board">AC SSR board</a></p><p>A solid-state relay for one AC mains load, enabled from a Gadgeteer output, with a thermostat input; v16 prototype design.</p></td>
+  </tr>
+  <tr>
+    <td><a href="/extensions/atx-connector-board" aria-label="Open the ATX connector board guide"><img src="/images/extensions/atx-connector-board/atx-connector-board-diagram.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><p class="extension-board-name"><a href="/extensions/atx-connector-board">ATX connector board</a></p><p>Starts and stops a standard 24-pin ATX supply from one controller pin, reports power good back as a 3.3 V signal, and brings out 12 V (XT60), 5 V and 5 V standby on connectors. No fuses on the board; current ratings are design targets; prototype design, not built yet</p></td>
+  </tr>
+  <tr>
+    <td><a href="/extensions/dc-ssr-board" aria-label="Open the DC SSR board guide"><img src="/images/extensions/dc-ssr-board/dc-ssr-board-diagram.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><p class="extension-board-name"><a href="/extensions/dc-ssr-board">DC SSR board</a></p><p>A solid-state relay for one DC load, enabled from a Gadgeteer output, with two back-to-back MOSFETs; v18 prototype design.</p></td>
+  </tr>
+  <tr>
+    <td><a href="/extensions/historical-extruder-toolhead-harness-with-motor" aria-label="Open the Extruder toolhead harness with motor provision guide"><img src="/images/extensions/historical-extruder-toolhead-harness-with-motor/directory-preview.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><p class="extension-board-name"><a href="/extensions/historical-extruder-toolhead-harness-with-motor">Extruder toolhead harness with motor provision</a></p><p>A passive toolhead wiring-distribution board consolidates heater, fans, thermistor, probe, servo and auxiliary5 V into one harness.</p></td>
+  </tr>
+  <tr>
+    <td><a href="/extensions/historical-extruder-toolhead-harness-without-motor" aria-label="Open the Extruder toolhead harness without motor guide"><img src="/images/extensions/historical-extruder-toolhead-harness-without-motor/directory-preview.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><p class="extension-board-name"><a href="/extensions/historical-extruder-toolhead-harness-without-motor">Extruder toolhead harness without motor</a></p><p>This early passive harness prototype joins heater and fan positive supply while leaving separate low-side switched returns.</p></td>
+  </tr>
+  <tr>
+    <td><a href="/extensions/historical-flambegate" aria-label="Open the Flambegate — High-side heater shutoff guide"><img src="/images/extensions/historical-flambegate/directory-preview.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><p class="extension-board-name"><a href="/extensions/historical-flambegate">Flambegate — High-side heater shutoff</a></p><p>This board adds a separately controlled high-side FET to a DC heater power path.</p></td>
+  </tr>
+  <tr>
+    <td><a href="/extensions/historical-flambehub" aria-label="Open the Flambehub — Hardware trigger and power-disconnect hub guide"><img src="/images/extensions/historical-flambehub/directory-preview.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><p class="extension-board-name"><a href="/extensions/historical-flambehub">Flambehub — Hardware trigger and power-disconnect hub</a></p><p>Flambehub combines eight hardware trigger inputs with an MCU input and a relay power-disconnect circuit.</p></td>
+  </tr>
+  <tr>
+    <td><a href="/extensions/historical-gadgeteer-pwm-io-board" aria-label="Open the Four-PWM/two-input/probe interface guide"><img src="/images/extensions/historical-gadgeteer-pwm-io-board/directory-preview.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><p class="extension-board-name"><a href="/extensions/historical-gadgeteer-pwm-io-board">Four-PWM/two-input/probe interface</a></p><p>This historical V2 PWM accessory combines four MOSFET-buffered PWM outputs, two passively debounced switch inputs and an LMV331 comparator probe input.</p></td>
+  </tr>
+  <tr>
+    <td><a href="/extensions/gate-boards" aria-label="Open the Gate boards guide"><img src="/images/extensions/gate-boards/gate-boards-diagram.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><p class="extension-board-name"><a href="/extensions/gate-boards">Gate boards</a></p><p>A two-input AND logic board with a switched 5 V output (about 200 mA, printed on the board). An unconnected input counts as high. Prototype design, not built yet, not safety rated; input thresholds and power limits not measured</p></td>
+  </tr>
+  <tr>
+    <td><a href="/extensions/general-purpose-output-servo-board" aria-label="Open the Additional general purpose outputs breakout / Servo board guide"><img src="/images/extensions/general-purpose-output-servo-board/servo-out-diagram.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><p class="extension-board-name"><a href="/extensions/general-purpose-output-servo-board">Additional general purpose outputs breakout / Servo board</a></p><p>Seven UCC27524A-driven output channels present Ground/Power/Signal connectors for compatible external logic loads or servos.</p></td>
+  </tr>
+  <tr>
+    <td><a href="/extensions/historical-large-mosfet-eagle" aria-label="Open the Large MOSFET — original Eagle layout guide"><img src="/images/extensions/historical-large-mosfet-eagle/directory-preview.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><p class="extension-board-name"><a href="/extensions/historical-large-mosfet-eagle">Large MOSFET — original Eagle layout</a></p><p>This original Eagle board is a single low-side MOSFET load switch.</p></td>
+  </tr>
+  <tr>
+    <td><a href="/extensions/historical-large-mosfet-kicad" aria-label="Open the Large MOSFET — KiCad layout guide"><img src="/images/extensions/historical-large-mosfet-kicad/directory-preview.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><p class="extension-board-name"><a href="/extensions/historical-large-mosfet-kicad">Large MOSFET — KiCad layout</a></p><p>Historical low-side power-switch design; the selected bill of materials specifies an IGBT that needs a suitable gate-driver installation.</p></td>
+  </tr>
+  <tr>
+    <td><a href="/extensions/laser-diode-driver-breakout" aria-label="Open the Laser diode driver breakout guide"><img src="/images/extensions/laser-diode-driver-breakout/laser-diode-driver-breakout-diagram.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><p class="extension-board-name"><a href="/extensions/laser-diode-driver-breakout">Laser diode driver breakout</a></p><p>A constant-current driver study for one 445 nm laser diode with hardware permission logic. Marked not for fabrication, dummy load only; a supply-diode orientation question is open; no configuration supplied</p></td>
+  </tr>
+  <tr>
+    <td><a href="/extensions/laser-psu-adapter-board" aria-label="Open the Laser PSU adapter board guide"><img src="/images/extensions/laser-psu-adapter-board/earlier-design/laser-psu-adapter-diagram.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><p class="extension-board-name"><a href="/extensions/laser-psu-adapter-board">Laser PSU adapter board</a></p><p>This control adapter combines a CO2 laser PSU PWM/TTL interface with four separately observable protection-loop inputs.</p></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td><p class="extension-board-name"><a href="/extensions/historical-pipower">PiPower — Pi power, UART and button shield</a></p><p>PiPower is a small Raspberry Pi header shield that distributes 5 V, exposes serial TX/RX and provides a button interface for computer startup/shutdown behavior.</p></td>
+  </tr>
+  <tr>
+    <td><a href="/extensions/power-supply-connector-board" aria-label="Open the Power supply connector board guide"><img src="/images/extensions/power-supply-connector-board/psu-diagram.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><p class="extension-board-name"><a href="/extensions/power-supply-connector-board">Power supply connector board</a></p><p>Protected main and always-on control power interfaces; v23 package with seven WIP schematic sheets.</p></td>
+  </tr>
+  <tr>
+    <td><a href="/extensions/seven-channel-ac-mechanical-relay" aria-label="Open the Seven-channel AC mechanical relay guide"><img src="/images/extensions/seven-channel-ac-mechanical-relay/seven-channel-ac-mechanical-relay-diagram.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><p class="extension-board-name"><a href="/extensions/seven-channel-ac-mechanical-relay">Seven-channel AC mechanical relay</a></p><p>Seven SPDT relay channels with optocoupler inputs and a shared coil driver; v17 source study.</p></td>
+  </tr>
+  <tr>
+    <td><a href="/extensions/seven-channel-dc-mechanical-relay" aria-label="Open the Seven-channel DC mechanical relay guide"><img src="/images/extensions/seven-channel-dc-mechanical-relay/seven-channel-dc-mechanical-relay-diagram.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><p class="extension-board-name"><a href="/extensions/seven-channel-dc-mechanical-relay">Seven-channel DC mechanical relay</a></p><p>Seven soldered SPDT relays with optocoupler inputs and one driver chip, switched from seven controller pins; v24 prototype design.</p></td>
+  </tr>
+  <tr>
+    <td><a href="/extensions/single-channel-ac-mechanical-relay" aria-label="Open the Single-channel AC mechanical relay guide"><img src="/images/extensions/single-channel-ac-mechanical-relay/single-channel-ac-mechanical-relay-diagram.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><p class="extension-board-name"><a href="/extensions/single-channel-ac-mechanical-relay">Single-channel AC mechanical relay</a></p><p>One soldered SPDT relay with an optocoupler input, switched from a single controller pin; v19 prototype design.</p></td>
+  </tr>
+  <tr>
+    <td><a href="/extensions/single-channel-dc-mechanical-relay" aria-label="Open the Single-channel DC mechanical relay guide"><img src="/images/extensions/single-channel-dc-mechanical-relay/single-channel-dc-mechanical-relay-diagram.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><p class="extension-board-name"><a href="/extensions/single-channel-dc-mechanical-relay">Single-channel DC mechanical relay</a></p><p>One soldered SPDT relay with an optocoupler input, switching a DC load from a single controller pin; v20 prototype design.</p></td>
+  </tr>
+  <tr>
+    <td><a href="/extensions/single-channel-large-mosfet-output" aria-label="Open the Single-Channel Large Mosfet output guide"><img src="/images/extensions/single-channel-large-mosfet-output/previous-design/large-mosfet-diagram.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><p class="extension-board-name"><a href="/extensions/single-channel-large-mosfet-output">Single-Channel Large Mosfet output</a></p><p>This low-side DC switch candidate drives one separately powered load such as a heater or fan bank.</p></td>
+  </tr>
+  <tr>
+    <td><a href="/extensions/single-channel-small-mosfet-advanced-output" aria-label="Open the Single-Channel Small MOSFET advanced output guide"><img src="/images/extensions/single-channel-small-mosfet-advanced-output/earlier-design/small-mosfet-advanced-diagram.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><p class="extension-board-name"><a href="/extensions/single-channel-small-mosfet-advanced-output">Single-Channel Small MOSFET advanced output</a></p><p>Low-side DC load-switch candidate; direct Prime gate drive is unqualified.</p></td>
+  </tr>
+  <tr>
+    <td><a href="/extensions/single-channel-solid-state-relay-output" aria-label="Open the Single-channel solid state relay output guide"><img src="/images/extensions/single-channel-solid-state-relay-output/single-channel-solid-state-relay-output-diagram.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><p class="extension-board-name"><a href="/extensions/single-channel-solid-state-relay-output">Single-channel solid state relay output</a></p><p>One optically isolated mains switch with a triac, controlled by a 4.5–6 V signal; v15 prototype design.</p></td>
+  </tr>
+  <tr>
+    <td><a href="/extensions/historical-small-mosfet-eagle" aria-label="Open the Small MOSFET — original Eagle layout guide"><img src="/images/extensions/historical-small-mosfet-eagle/directory-preview.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><p class="extension-board-name"><a href="/extensions/historical-small-mosfet-eagle">Small MOSFET — original Eagle layout</a></p><p>This Eagle board switches a DC load’s negative return using an IRLR024-labelled MOSFET.</p></td>
+  </tr>
+  <tr>
+    <td><a href="/extensions/historical-small-mosfet-kicad" aria-label="Open the Small MOSFET — KiCad layout guide"><img src="/images/extensions/historical-small-mosfet-kicad/directory-preview.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><p class="extension-board-name"><a href="/extensions/historical-small-mosfet-kicad">Small MOSFET — KiCad layout</a></p><p>This is the KiCad small low-side DC power switch.</p></td>
+  </tr>
+</tbody>
+<tbody aria-labelledby="communication-and-signal-interfaces">
+  <tr class="extension-board-category"><th id="communication-and-signal-interfaces" colspan="2" scope="rowgroup">Communication and signal interfaces</th></tr>
+  <tr>
+    <td><a href="/extensions/bidirectional-level-shifting-board" aria-label="Open the Bidirectional level shifting board guide"><img src="/images/extensions/bidirectional-level-shifting-board/level-shifter-diagram.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><p class="extension-board-name"><a href="/extensions/bidirectional-level-shifting-board">Bidirectional level shifting board</a></p><p>This is a seven-channel digital level-interface candidate between a 3.3 V host domain and a separately selected peripheral domain.</p></td>
+  </tr>
+  <tr>
+    <td><a href="/extensions/bouni-rs485-spindle-control" aria-label="Open the Bouni RS-485 spindle control guide"><img src="/images/extensions/bouni-spindle-module-boards/bsm-rs485-diagram.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><p class="extension-board-name"><a href="/extensions/bouni-rs485-spindle-control">Bouni RS-485 spindle control</a></p><p>Provides an isolated RS-485 connection between a controller and a compatible drive.</p></td>
+  </tr>
+  <tr>
+    <td><a href="/extensions/cheap-uart-adapter-breakout" aria-label="Open the Cheap UART adapter breakout guide"><img src="/images/extensions/cheap-uart-adapter-breakout/cheap-uart-adapter-breakout-diagram.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><p class="extension-board-name"><a href="/extensions/cheap-uart-adapter-breakout">Cheap UART adapter breakout</a></p><p>This carrier adapts a specifically identified USB-to-UART module to a Gadgeteer U socket.</p></td>
+  </tr>
+  <tr>
+    <td><a href="/extensions/differential-signal-extender" aria-label="Open the Differential signal extender guide"><img src="/images/extensions/differential-signal-extender/dse-rx-diagram.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><p class="extension-board-name"><a href="/extensions/differential-signal-extender">Differential signal extender</a></p><p>Receiver half of a one-way logic link, with custom cable and output polarity references.</p></td>
+  </tr>
+  <tr>
+    <td><a href="/extensions/historical-differential-spi-lvds-extender" aria-label="Open the Differential SPI LVDS extender guide"><img src="/images/extensions/historical-differential-spi-lvds-extender/directory-preview.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><p class="extension-board-name"><a href="/extensions/historical-differential-spi-lvds-extender">Differential SPI LVDS extender</a></p><p>This historical paired-layout circuit translates SPI MOSI, clock and chip select into LVDS toward a peripheral and translates MISO in the reverse direction.</p></td>
+  </tr>
+  <tr>
+    <td><a href="/extensions/differential-spi-signal-extender" aria-label="Open the Differential SPI signal extender guide"><img src="/images/extensions/differential-spi-signal-extender/dse-host-diagram.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><p class="extension-board-name"><a href="/extensions/differential-spi-signal-extender">Differential SPI signal extender</a></p><p>This pair extends one SPI peripheral connection using four fixed-direction differential channels.</p></td>
+  </tr>
+  <tr>
+    <td><a href="/extensions/differential-step-dir-en-extender" aria-label="Open the Differential step/dir/en extender guide"><img src="/images/extensions/differential-step-dir-en-extender/host-diagram.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><p class="extension-board-name"><a href="/extensions/differential-step-dir-en-extender">Differential step/dir/en extender</a></p><p>This HOST/REMOTE pair carries one axis’s STEP, DIR and ENABLE commands to a compatible remote stepper drive.</p></td>
+  </tr>
+  <tr>
+    <td><a href="/extensions/historical-gadgeteer-3v3-5v-level-shifter" aria-label="Open the Fourteen channel 3.3/5 V level shifter guide"><img src="/images/extensions/historical-gadgeteer-3v3-5v-level-shifter/directory-preview.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><p class="extension-board-name"><a href="/extensions/historical-gadgeteer-3v3-5v-level-shifter">Fourteen channel 3.3/5 V level shifter</a></p><p>Fourteen bidirectional translation channels interface two seven-signal Gadgeteer groups to 5 V-side pin rows.</p></td>
+  </tr>
+  <tr>
+    <td><a href="/extensions/historical-gadgeteer-qwiic-adapter" aria-label="Open the Historical Gadgeteer Qwiic hub guide"><img src="/images/extensions/historical-gadgeteer-qwiic-adapter/directory-preview.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><p class="extension-board-name"><a href="/extensions/historical-gadgeteer-qwiic-adapter">Historical Gadgeteer Qwiic hub</a></p><p>This passive adapter exposes the Gadgeteer I2C pair through four Qwiic-style four-contact connectors while retaining a second ten-contact header.</p></td>
+  </tr>
+  <tr>
+    <td><a href="/extensions/historical-gadgeteer-rs232-adapter" aria-label="Open the Gadgeteer RS-232 level adapter guide"><img src="/images/extensions/historical-gadgeteer-rs232-adapter/directory-preview.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><p class="extension-board-name"><a href="/extensions/historical-gadgeteer-rs232-adapter">Gadgeteer RS-232 level adapter</a></p><p>A MAX3232 converts host UART/control signals into bipolar RS-232 electrical levels.</p></td>
+  </tr>
+  <tr>
+    <td><a href="/extensions/gadgeteer-to-can" aria-label="Open the Gadgeteer-to-CAN adapter guide"><img src="/images/extensions/gadgeteer-to-can/gadgeteer-to-can-diagram.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><p class="extension-board-name"><a href="/extensions/gadgeteer-to-can">Gadgeteer-to-CAN adapter</a></p><p>The selected adapter provides an isolated CAN physical interface between compatible controller TX/RX signals and a CANH/CANL bus.</p></td>
+  </tr>
+  <tr>
+    <td><a href="/extensions/historical-jauart-usb-uart-adapter" aria-label="Open the jaUART CP2104 USB-UART adapter guide"><img src="/images/extensions/historical-jauart-usb-uart-adapter/directory-preview.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><p class="extension-board-name"><a href="/extensions/historical-jauart-usb-uart-adapter">jaUART CP2104 USB-UART adapter</a></p><p>USB-to-logic-UART bridge for the Prime serial console; separate handshake and GPIO headers.</p></td>
+  </tr>
+  <tr>
+    <td><a href="/extensions/historical-legacy-level-shifter-high-current" aria-label="Open the Legacy high-current level shifter guide"><img src="/images/extensions/historical-legacy-level-shifter-high-current/directory-preview.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><p class="extension-board-name"><a href="/extensions/historical-legacy-level-shifter-high-current">Legacy high-current level shifter</a></p><p>This board converts seven host GPIO outputs to a higher-voltage, buffered output bank.</p></td>
+  </tr>
+  <tr>
+    <td><a href="/extensions/long-distance-extender" aria-label="Open the Long distance extender (custom RJ45 differential) guide"><img src="/images/extensions/long-distance-extender/emitter-diagram.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><p class="extension-board-name"><a href="/extensions/long-distance-extender">Long distance extender (custom RJ45 differential)</a></p><p>Three fixed-direction logic channels across paired emitter and receiver boards; not Ethernet or PoE.</p></td>
+  </tr>
+  <tr>
+    <td><a href="/extensions/opto-isolation-pass-through-board" aria-label="Open the Opto-Isolation pass-through board guide"><img src="/images/extensions/opto-isolation-pass-through-board/opto-isolation-diagram.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><p class="extension-board-name"><a href="/extensions/opto-isolation-pass-through-board">Opto-Isolation pass-through board</a></p><p>The selected board is a fixed-direction isolated SPI/control interface, despite its historical generic opto-isolation name.</p></td>
+  </tr>
+  <tr>
+    <td><a href="/extensions/qwiic-to-gadgeteer-adapter" aria-label="Open the Qwiic-to-Gadgeteer adapter guide"><img src="/images/extensions/qwiic-to-gadgeteer-adapter/qwiic-to-gadgeteer-adapter-diagram.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><p class="extension-board-name"><a href="/extensions/qwiic-to-gadgeteer-adapter">Qwiic-to-Gadgeteer adapter</a></p><p>Connects compatible 3.3 V I²C peripherals through the documented ten-contact host interface and four Qwiic-style ports.</p></td>
+  </tr>
+  <tr>
+    <td><a href="/extensions/serial-to-wifi-board" aria-label="Open the Serial to WiFi Board guide"><img src="/images/extensions/serial-to-wifi-board/serial-to-wifi-board-diagram.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><p class="extension-board-name"><a href="/extensions/serial-to-wifi-board">Serial to WiFi Board</a></p><p>This board is a UART-to-Wi-Fi bridge candidate using ESP32-C3-MINI-1-N4X.</p></td>
+  </tr>
+  <tr>
+    <td><a href="/extensions/spi-hub" aria-label="Open the SPI Hub guide"><img src="/images/extensions/spi-hub/spi-hub-diagram.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><p class="extension-board-name"><a href="/extensions/spi-hub">SPI Hub</a></p><p>Shares SPI with four separately selected outputs; includes an OUT2 thermocouple wiring example.</p></td>
+  </tr>
+  <tr>
+    <td><a href="/extensions/historical-spi-hub" aria-label="Open the SPI hub guide"><img src="/images/extensions/historical-spi-hub/directory-preview.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><p class="extension-board-name"><a href="/extensions/historical-spi-hub">SPI hub</a></p><p>This passive hub shares one SPI clock/data bus among four peripherals and gives each peripheral its own chip-select wire.</p></td>
+  </tr>
+  <tr>
+    <td><a href="/extensions/historical-spi-opto-isolator" aria-label="Open the SPI opto-isolator guide"><img src="/images/extensions/historical-spi-opto-isolator/directory-preview.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><p class="extension-board-name"><a href="/extensions/historical-spi-opto-isolator">SPI opto-isolator</a></p><p>Seven 6N137 optocouplers transport six host-to-peripheral signals and one return signal across separate power domains.</p></td>
+  </tr>
+  <tr>
+    <td><a href="/extensions/uart-breakout" aria-label="Open the UART breakout guide"><img src="/images/extensions/uart-breakout/uart-breakout-diagram.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><p class="extension-board-name"><a href="/extensions/uart-breakout">UART breakout</a></p><p>v17 candidate bridges the Prime UART to a historical jaUART USB-to-TTL adapter; its guide gives a seven-lead plus USB-cable electrical proposal.</p></td>
+  </tr>
+  <tr>
+    <td><a href="/extensions/usb-serial-breakout" aria-label="Open the USB/Serial breakout guide"><img src="/images/extensions/usb-serial-breakout/usb-serial-diagram.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><p class="extension-board-name"><a href="/extensions/usb-serial-breakout">USB/Serial breakout</a></p><p>This board integrates a USB-to-UART bridge between a computer and a controller U socket.</p></td>
+  </tr>
+  <tr>
+    <td><a href="/extensions/wireless-gadgeteer-extender" aria-label="Open the Wireless gadgeteer extender guide"><img src="/images/extensions/wireless-gadgeteer-extender/wireless-gadgeteer-extender-diagram.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><p class="extension-board-name"><a href="/extensions/wireless-gadgeteer-extender">Wireless gadgeteer extender</a></p><p>This candidate uses paired nRF52832 radio endpoints to sample and reproduce seven deliberately directed digital channels.</p></td>
+  </tr>
+  <tr>
+    <td><a href="/extensions/wireless-series-master" aria-label="Open the Wireless series — Smoothieboard-side “Master guide"><img src="/images/extensions/wireless-series-master/wireless-series-master-diagram.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><p class="extension-board-name"><a href="/extensions/wireless-series-master">Wireless series — Smoothieboard-side “Master</a></p><p>This host-side radio controller is an experimental remote-I/O master, using an ATSAMD21 and nRF24L01+ module.</p></td>
+  </tr>
+</tbody>
+<tbody aria-labelledby="displays-controls-and-accessories">
+  <tr class="extension-board-category"><th id="displays-controls-and-accessories" colspan="2" scope="rowgroup">Displays, controls and accessories</th></tr>
+  <tr>
+    <td><a href="/extensions/button-boards" aria-label="Open the Button boards guide"><img src="/images/extensions/button-boards/buttons-diagram.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><p class="extension-board-name"><a href="/extensions/button-boards">Button boards</a></p><p>The selected board presents seven mechanical momentary buttons to a Gadgeteer host socket.</p></td>
+  </tr>
+  <tr>
+    <td><a href="/extensions/buzzer-module" aria-label="Open the Buzzer module guide"><img src="/images/extensions/buzzer-module/buzzer-module-diagram.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><p class="extension-board-name"><a href="/extensions/buzzer-module">Buzzer module</a></p><p>This v14 active-buzzer candidate makes a steady audible cue when its control signal is HIGH.</p></td>
+  </tr>
+  <tr>
+    <td><a href="/extensions/camera-trigger-board" aria-label="Open the Camera trigger board guide"><img src="/images/extensions/camera-trigger-board/camera-trigger-diagram.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><p class="extension-board-name"><a href="/extensions/camera-trigger-board">Camera trigger board</a></p><p>Isolated focus/shutter contact candidate for a specifically compatible camera remote input.</p></td>
+  </tr>
+  <tr>
+    <td><a href="/extensions/debug-probe" aria-label="Open the Debug Probe (Black Magic Probe clone) guide"><img src="/images/extensions/debug-probe/debug-probe-diagram.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><p class="extension-board-name"><a href="/extensions/debug-probe">Debug Probe (Black Magic Probe clone)</a></p><p>This USB debug-probe candidate connects a development computer to the controller’s SWD/JTAG interface.</p></td>
+  </tr>
+  <tr>
+    <td><a href="/extensions/historical-gadgeteer-dip-switch-board" aria-label="Open the DIP-switch and debounced-input board guide"><img src="/images/extensions/historical-gadgeteer-dip-switch-board/directory-preview.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><p class="extension-board-name"><a href="/extensions/historical-gadgeteer-dip-switch-board">DIP-switch and debounced-input board</a></p><p>Four onboard DIP switches and three conditioned external inputs provide seven digital states for V2.</p></td>
+  </tr>
+  <tr>
+    <td><a href="/extensions/historical-gadgeteer-led-breakout" aria-label="Open the Historical seven-LED GPIO board guide"><img src="/images/extensions/historical-gadgeteer-led-breakout/directory-preview.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><p class="extension-board-name"><a href="/extensions/historical-gadgeteer-led-breakout">Historical seven-LED GPIO board</a></p><p>Seven indicators connect host GPIOs through1 kΩ resistors to LED anodes, with cathodes at ground.</p></td>
+  </tr>
+  <tr>
+    <td><a href="/extensions/glcd-breakout" aria-label="Open the GLCD breakout guide"><img src="/images/extensions/glcd-breakout/glcd-breakout-diagram.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><p class="extension-board-name"><a href="/extensions/glcd-breakout">GLCD breakout</a></p><p>This adapter interfaces a specified RepRapDiscount-style ST7920 graphic panel, encoder, buttons, buzzer and SD connection.</p></td>
+  </tr>
+  <tr>
+    <td><a href="/extensions/led-breakout" aria-label="Open the LED breakout guide"><img src="/images/extensions/led-breakout/led-breakout-diagram.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><p class="extension-board-name"><a href="/extensions/led-breakout">LED breakout</a></p><p>Seven low-current indicators make GPIO activity visible for bench debugging.</p></td>
+  </tr>
+  <tr>
+    <td><a href="/extensions/historical-ledsimple" aria-label="Open the LedSimple guide"><img src="/images/extensions/historical-ledsimple/directory-preview.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><p class="extension-board-name"><a href="/extensions/historical-ledsimple">LedSimple — recovered upstream design</a></p><p>This is a seven-channel GPIO indicator board: each host signal lights its corresponding LED through a resistor.</p></td>
+  </tr>
+  <tr>
+    <td><a href="/extensions/sd-card-breakout" aria-label="Open the SD card breakout guide"><img src="/images/extensions/sd-card-breakout/sd-card-breakout-diagram.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><p class="extension-board-name"><a href="/extensions/sd-card-breakout">SD card breakout</a></p><p>This candidate adds one removable microSD socket over SPI.</p></td>
+  </tr>
+  <tr>
+    <td><a href="/extensions/universal-panel-adapter" aria-label="Open the Universal panel adapter guide"><img src="/images/extensions/universal-panel-adapter/universal-panel-adapter-diagram.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><p class="extension-board-name"><a href="/extensions/universal-panel-adapter">Universal panel adapter</a></p><p>This candidate connects selected legacy LCD/encoder panels through a local ATmega328P.</p></td>
+  </tr>
+</tbody>
+<tbody aria-labelledby="host-adapters-and-prototyping">
+  <tr class="extension-board-category"><th id="host-adapters-and-prototyping" colspan="2" scope="rowgroup">Host adapters and prototyping</th></tr>
+  <tr>
+    <td><a href="/extensions/arduino-adapter" aria-label="Open the Arduino adapter guide"><img src="/images/extensions/arduino-adapter/arduino-adapter-diagram.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><p class="extension-board-name"><a href="/extensions/arduino-adapter">Arduino adapter</a></p><p>This candidate connects selected Uno-format shields to Smoothieboard V2 Prime.</p></td>
+  </tr>
+  <tr>
+    <td><a href="/extensions/arduino-to-gadgeteer-shield" aria-label="Open the Arduino-to-Gadgeteer shield guide"><img src="/images/extensions/arduino-to-gadgeteer-shield/arduino-to-gadgeteer-shield-diagram.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><p class="extension-board-name"><a href="/extensions/arduino-to-gadgeteer-shield">Arduino-to-Gadgeteer shield</a></p><p>This shield makes an Arduino Due act as a host for Gadgeteer modules.</p></td>
+  </tr>
+  <tr>
+    <td><a href="/extensions/beaglebone-breakout" aria-label="Open the BeagleBone breakout guide"><img src="/images/extensions/beaglebone-breakout/bbb-uart-diagram.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><p class="extension-board-name"><a href="/extensions/beaglebone-breakout">BeagleBone breakout</a></p><p>This UART carrier connects a BeagleBone header to a Smoothieboard UART.</p></td>
+  </tr>
+  <tr>
+    <td><a href="/extensions/breadboard-board" aria-label="Open the Breadboard board guide"><img src="/images/extensions/breadboard-board/breadboard-diagram.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><p class="extension-board-name"><a href="/extensions/breadboard-board">Breadboard board</a></p><p>This board exposes seven Gadgeteer GPIO contacts and protected supply rails on a breadboard-friendly eleven-contact header.</p></td>
+  </tr>
+  <tr>
+    <td><a href="/extensions/historical-breakoutpins" aria-label="Open the BreakoutPins guide"><img src="/images/extensions/historical-breakoutpins/directory-preview.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><p class="extension-board-name"><a href="/extensions/historical-breakoutpins">BreakoutPins — recovered upstream design</a></p><p>This is a passive one-to-one ten-contact breakout and daisy-chain board.</p></td>
+  </tr>
+  <tr>
+    <td><a href="/extensions/historical-breakoutterm" aria-label="Open the BreakoutTerm guide"><img src="/images/extensions/historical-breakoutterm/directory-preview.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><p class="extension-board-name"><a href="/extensions/historical-breakoutterm">BreakoutTerm — recovered upstream design</a></p><p>This passive breakout moves a ten-contact host interface to a screw-terminal row and repeats it on another host connector.</p></td>
+  </tr>
+  <tr>
+    <td><a href="/extensions/chip-breakout-board" aria-label="Open the Chip Breakout Board (C.H.I.P) guide"><img src="/images/extensions/chip-breakout-board/chip-breakout-diagram.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><p class="extension-board-name"><a href="/extensions/chip-breakout-board">Chip Breakout Board (C.H.I.P)</a></p><p>This archival carrier candidate connects a C.H.I.P. single-board computer to Smoothieboard over UART and provides a proposed power path.</p></td>
+  </tr>
+  <tr>
+    <td><a href="/extensions/historical-chip-dip-computer-carrier" aria-label="Open the C.H.I.P. DIP computer carrier guide"><img src="/images/extensions/historical-chip-dip-computer-carrier/directory-preview.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><p class="extension-board-name"><a href="/extensions/historical-chip-dip-computer-carrier">C.H.I.P. DIP computer carrier</a></p><p>Companion-computer carrier for a C.H.I.P. Linux computer and the older Smoothieboard2 interface, with a regulator, serial indicators and two grounded pushbuttons.</p></td>
+  </tr>
+  <tr>
+    <td><a href="/extensions/cpld-adapter" aria-label="Open the CPLD adapter guide"><img src="/images/extensions/cpld-adapter/cpld-adapter-diagram.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><p class="extension-board-name"><a href="/extensions/cpld-adapter">CPLD adapter</a></p><p>This programmable single-axis conditioner sits between host STEP/DIR/ENABLE logic and a compatible 5 V logic receiver.</p></td>
+  </tr>
+  <tr>
+    <td><a href="/extensions/d-sub-to-gadgeteer-in" aria-label="Open the D-sub-to-Gadgeteer IN adapter guide"><img src="/images/extensions/d-sub-to-gadgeteer-in/d-sub-to-gadgeteer-in-diagram.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><p class="extension-board-name"><a href="/extensions/d-sub-to-gadgeteer-in">D-sub-to-Gadgeteer IN adapter</a></p><p>IN is the host-side half of a dedicated DE-9 cable extension.</p></td>
+  </tr>
+  <tr>
+    <td><a href="/extensions/d-sub-to-gadgeteer-out" aria-label="Open the D-sub-to-Gadgeteer OUT adapter guide"><img src="/images/extensions/d-sub-to-gadgeteer-out/d-sub-to-gadgeteer-out-diagram.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><p class="extension-board-name"><a href="/extensions/d-sub-to-gadgeteer-out">D-sub-to-Gadgeteer OUT adapter</a></p><p>OUT is the remote half of the custom IN-to-OUT DE-9 extension.</p></td>
+  </tr>
+  <tr>
+    <td><a href="/extensions/historical-dual-digital-potentiometer" aria-label="Open the Dual-device I2C digital potentiometer guide"><img src="/images/extensions/historical-dual-digital-potentiometer/directory-preview.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><p class="extension-board-name"><a href="/extensions/historical-dual-digital-potentiometer">Dual-device I2C digital potentiometer</a></p><p>Two MCP44X1-family devices expose four wiper outputs each.</p></td>
+  </tr>
+  <tr>
+    <td><a href="/extensions/esp32-to-gadgeteer-host" aria-label="Open the ESP32 DevKit to Gadgeteer host board guide"><img src="/images/extensions/esp32-to-gadgeteer-host/guides/board-reference.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><p class="extension-board-name"><a href="/extensions/esp32-to-gadgeteer-host">ESP32 DevKit to Gadgeteer host board</a></p><p>Host adapter that lets a selected ESP32-DevKitC-32E run compatible Gadgeteer extension boards; it is not a Smoothieboard accessory.</p></td>
+  </tr>
+  <tr>
+    <td><a href="/extensions/historical-five-port-gadgeteer-header-adapter" aria-label="Open the Five-port Gadgeteer header adapter guide"><img src="/images/extensions/historical-five-port-gadgeteer-header-adapter/directory-preview.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><p class="extension-board-name"><a href="/extensions/historical-five-port-gadgeteer-header-adapter">Five-port Gadgeteer header adapter</a></p><p>This passive carrier converts five ten-contact Gadgeteer ports into seven-signal2.54 mm socket rows and shared power breakouts.</p></td>
+  </tr>
+  <tr>
+    <td><a href="/extensions/intel-edison-breakout" aria-label="Open the Intel Edison breakout guide"><img src="/images/extensions/intel-edison-breakout/intel-edison-breakout-diagram.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><p class="extension-board-name"><a href="/extensions/intel-edison-breakout">Intel Edison breakout</a></p><p>This is a historical Intel Edison host-carrier study.</p></td>
+  </tr>
+  <tr>
+    <td><a href="/extensions/papilio-adapter" aria-label="Open the Papilio adapter guide"><img src="/images/extensions/papilio-adapter/papilio-adapter-diagram.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><p class="extension-board-name"><a href="/extensions/papilio-adapter">Papilio adapter</a></p><p>This passive adapter connects selected 3.3 V FPGA wing signals to seven Gadgeteer GPIO positions.</p></td>
+  </tr>
+  <tr>
+    <td><a href="/extensions/parallel-port-breakout" aria-label="Open the Parallel-port bench test jig guide"><img src="/images/extensions/parallel-port-breakout/parallel-port-breakout-diagram.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><p class="extension-board-name"><a href="/extensions/parallel-port-breakout">Parallel-port bench test jig</a></p><p>Selected v22 is explicitly not for host or machine connection; its DB25 footprint is provisional.</p></td>
+  </tr>
+  <tr>
+    <td><a href="/extensions/perma-proto-gadgeteer" aria-label="Open the Gadgeteer perma-proto guide"><img src="/images/extensions/perma-proto-gadgeteer/perma-proto-gadgeteer-diagram.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><p class="extension-board-name"><a href="/extensions/perma-proto-gadgeteer">Gadgeteer perma-proto</a></p><p>Use this passive carrier to build a soldered low-voltage prototype connected to existing Smoothieboard pins.</p></td>
+  </tr>
+  <tr>
+    <td><a href="/extensions/raspberry-pi-to-gadgeteer-hat" aria-label="Open the Raspberry Pi 40-pin to Gadgeteer HAT guide"><img src="/images/extensions/raspberry-pi-to-gadgeteer-hat/guides/raspberry-pi-hat-abstract.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><p class="extension-board-name"><a href="/extensions/raspberry-pi-to-gadgeteer-hat">Raspberry Pi 40-pin to Gadgeteer HAT</a></p><p>Host adapter that turns a Raspberry Pi 40-pin GPIO header into five Gadgeteer sockets; it runs independently of Smoothieboard.</p></td>
+  </tr>
+  <tr>
+    <td><a href="/extensions/raspberry-pi-zero-breakout" aria-label="Open the Raspberry Pi Zero breakout guide"><img src="/images/extensions/raspberry-pi-zero-breakout/rpi-zero-breakout-diagram.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><p class="extension-board-name"><a href="/extensions/raspberry-pi-zero-breakout">Raspberry Pi Zero breakout</a></p><p>This carrier connects a selected Raspberry Pi Zero-family host to Smoothieboard by UART and a proposed protected 5 V supply.</p></td>
+  </tr>
+  <tr>
+    <td><a href="/extensions/historical-raspberry-pi-zero-ethernet" aria-label="Open the Raspberry Pi Zero carrier with Ethernet guide"><img src="/images/extensions/historical-raspberry-pi-zero-ethernet/directory-preview.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><p class="extension-board-name"><a href="/extensions/historical-raspberry-pi-zero-ethernet">Raspberry Pi Zero carrier with Ethernet</a></p><p>This companion-computer carrier adds an ENC28J60-I/ML SPI Ethernet controller to a Raspberry Pi Zero interface.</p></td>
+  </tr>
+  <tr>
+    <td><a href="/extensions/historical-raspberry-pi-zero-interface" aria-label="Open the Raspberry Pi Zero carrier interface guide"><img src="/images/extensions/historical-raspberry-pi-zero-interface/directory-preview.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><p class="extension-board-name"><a href="/extensions/historical-raspberry-pi-zero-interface">Raspberry Pi Zero carrier interface</a></p><p>This carrier connects a Pi Zero’s GPIO/UART to an earlier Smoothieboard2 host connector and provides a regulator and serial indicator circuitry.</p></td>
+  </tr>
+  <tr>
+    <td><a href="/extensions/raw-pins-breakout" aria-label="Open the Raw pins breakout guide"><img src="/images/extensions/raw-pins-breakout/raw-pins-breakout-diagram.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><p class="extension-board-name"><a href="/extensions/raw-pins-breakout">Raw pins breakout</a></p><p>Passive ten-contact Gadgeteer breakout for compatible low-voltage signals and prototypes.</p></td>
+  </tr>
+  <tr>
+    <td><a href="/extensions/raw-pins-screw-terminal-breakout" aria-label="Open the Raw pins screw terminal breakout guide"><img src="/images/extensions/raw-pins-screw-terminal-breakout/raw-pins-screw-terminal-breakout-diagram.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><p class="extension-board-name"><a href="/extensions/raw-pins-screw-terminal-breakout">Raw pins screw terminal breakout</a></p><p>A passive v24 candidate exposes low-voltage signal, rail and ground contacts at screw terminals and a downstream chain port.</p></td>
+  </tr>
+  <tr>
+    <td><a href="/extensions/teensy-to-gadgeteer-host" aria-label="Open the Teensy 4.1 to Gadgeteer host board guide"><img src="/images/extensions/teensy-to-gadgeteer-host/guides/board-reference.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><p class="extension-board-name"><a href="/extensions/teensy-to-gadgeteer-host">Teensy 4.1 to Gadgeteer host board</a></p><p>Host adapter that lets a Teensy 4.1 run compatible Gadgeteer extension boards; it has no Smoothieware firmware of its own.</p></td>
+  </tr>
+</tbody>
+</table>
 </div>
 
 ## Source-only prototype record
 
 The Carvera wireless-probe interface entry records the retained v01 prototype contract for the Makera Carvera Z probe. It is included in the directory count, but it is not a released or built board. Its two required diagrams, exact connection plan and Smoothieware integration remain incomplete; do not treat the proposed contact map as wiring instructions.
-
-## Historical and related source records
-
-These pages retain the original design identities and source revisions. A similar modern name does not establish electrical or mechanical compatibility with a historical board.
-
-<div class="extension-board-directory" markdown="1" role="region" aria-label="Historical extension-board directory" tabindex="0">
-
-| Board | Purpose |
-| --- | --- |
-| [BounceStop hardware debounce](/extensions/historical-bounce-stop)<br><a href="/extensions/historical-bounce-stop"><img src="/images/extensions/historical-bounce-stop/directory-preview.png" alt="Top-view board illustration" loading="lazy" decoding="async"></a> | A MAX6818EAP+ conditions eight noisy switch inputs in hardware. |
-| [BreakoutPins — recovered upstream design](/extensions/historical-breakoutpins)<br><a href="/extensions/historical-breakoutpins"><img src="/images/extensions/historical-breakoutpins/directory-preview.png" alt="Top-view board illustration" loading="lazy" decoding="async"></a> | This is a passive one-to-one ten-contact breakout and daisy-chain board. |
-| [BreakoutTerm — recovered upstream design](/extensions/historical-breakoutterm)<br><a href="/extensions/historical-breakoutterm"><img src="/images/extensions/historical-breakoutterm/directory-preview.png" alt="Top-view board illustration" loading="lazy" decoding="async"></a> | This passive breakout moves a ten-contact host interface to a screw-terminal row and repeats it on another host connector. |
-| [C.H.I.P. DIP computer carrier](/extensions/historical-chip-dip-computer-carrier)<br><a href="/extensions/historical-chip-dip-computer-carrier"><img src="/images/extensions/historical-chip-dip-computer-carrier/directory-preview.png" alt="Top-view board illustration" loading="lazy" decoding="async"></a> | Companion-computer carrier for a C.H.I.P. Linux computer and the older Smoothieboard2 interface, with a regulator, serial indicators and two grounded pushbuttons. |
-| [Differential SPI LVDS extender](/extensions/historical-differential-spi-lvds-extender)<br><a href="/extensions/historical-differential-spi-lvds-extender"><img src="/images/extensions/historical-differential-spi-lvds-extender/directory-preview.png" alt="Top-view board illustration" loading="lazy" decoding="async"></a> | This historical paired-layout circuit translates SPI MOSI, clock and chip select into LVDS toward a peripheral and translates MISO in the reverse direction. |
-| [DIP-switch and debounced-input board](/extensions/historical-gadgeteer-dip-switch-board)<br><a href="/extensions/historical-gadgeteer-dip-switch-board"><img src="/images/extensions/historical-gadgeteer-dip-switch-board/directory-preview.png" alt="Top-view board illustration" loading="lazy" decoding="async"></a> | Four onboard DIP switches and three conditioned external inputs provide seven digital states for V2. |
-| [Dual-device I2C digital potentiometer](/extensions/historical-dual-digital-potentiometer)<br><a href="/extensions/historical-dual-digital-potentiometer"><img src="/images/extensions/historical-dual-digital-potentiometer/directory-preview.png" alt="Top-view board illustration" loading="lazy" decoding="async"></a> | Two MCP44X1-family devices expose four wiper outputs each. |
-| [External STEP/DIR signal breakout](/extensions/historical-external-stepper-signal-breakout)<br><a href="/extensions/historical-external-stepper-signal-breakout"><img src="/images/extensions/historical-external-stepper-signal-breakout/directory-preview.png" alt="Top-view board illustration" loading="lazy" decoding="async"></a> | This passive board redistributes one V2 control header into three external-drive command connectors. |
-| [ExtraEndstops — recovered upstream design](/extensions/historical-extraendstops)<br><a href="/extensions/historical-extraendstops"><img src="/images/extensions/historical-extraendstops/directory-preview.png" alt="Top-view board illustration" loading="lazy" decoding="async"></a> | This board expands a host GPIO connector into seven powered three-wire endstop interfaces with per-channel filtering/indicator circuitry. |
-| [Extruder toolhead harness with motor provision](/extensions/historical-extruder-toolhead-harness-with-motor)<br><a href="/extensions/historical-extruder-toolhead-harness-with-motor"><img src="/images/extensions/historical-extruder-toolhead-harness-with-motor/directory-preview.png" alt="Top-view board illustration" loading="lazy" decoding="async"></a> | A passive toolhead wiring-distribution board consolidates heater, fans, thermistor, probe, servo and auxiliary5 V into one harness. |
-| [Extruder toolhead harness without motor](/extensions/historical-extruder-toolhead-harness-without-motor)<br><a href="/extensions/historical-extruder-toolhead-harness-without-motor"><img src="/images/extensions/historical-extruder-toolhead-harness-without-motor/directory-preview.png" alt="Top-view board illustration" loading="lazy" decoding="async"></a> | This early passive harness prototype joins heater and fan positive supply while leaving separate low-side switched returns. |
-| [Five-port Gadgeteer header adapter](/extensions/historical-five-port-gadgeteer-header-adapter)<br><a href="/extensions/historical-five-port-gadgeteer-header-adapter"><img src="/images/extensions/historical-five-port-gadgeteer-header-adapter/directory-preview.png" alt="Top-view board illustration" loading="lazy" decoding="async"></a> | This passive carrier converts five ten-contact Gadgeteer ports into seven-signal2.54 mm socket rows and shared power breakouts. |
-| [Flambegate — High-side heater shutoff](/extensions/historical-flambegate)<br><a href="/extensions/historical-flambegate"><img src="/images/extensions/historical-flambegate/directory-preview.png" alt="Top-view board illustration" loading="lazy" decoding="async"></a> | This board adds a separately controlled high-side FET to a DC heater power path. |
-| [Flambehub — Hardware trigger and power-disconnect hub](/extensions/historical-flambehub)<br><a href="/extensions/historical-flambehub"><img src="/images/extensions/historical-flambehub/directory-preview.png" alt="Top-view board illustration" loading="lazy" decoding="async"></a> | Flambehub combines eight hardware trigger inputs with an MCU input and a relay power-disconnect circuit. |
-| [Four-PWM/two-input/probe interface](/extensions/historical-gadgeteer-pwm-io-board)<br><a href="/extensions/historical-gadgeteer-pwm-io-board"><img src="/images/extensions/historical-gadgeteer-pwm-io-board/directory-preview.png" alt="Top-view board illustration" loading="lazy" decoding="async"></a> | This historical V2 PWM accessory combines four MOSFET-buffered PWM outputs, two passively debounced switch inputs and an LMV331 comparator probe input. |
-| [Fourteen channel 3.3/5 V level shifter](/extensions/historical-gadgeteer-3v3-5v-level-shifter)<br><a href="/extensions/historical-gadgeteer-3v3-5v-level-shifter"><img src="/images/extensions/historical-gadgeteer-3v3-5v-level-shifter/directory-preview.png" alt="Top-view board illustration" loading="lazy" decoding="async"></a> | Fourteen bidirectional translation channels interface two seven-signal Gadgeteer groups to 5 V-side pin rows. |
-| [Gadgeteer RS-232 level adapter](/extensions/historical-gadgeteer-rs232-adapter)<br><a href="/extensions/historical-gadgeteer-rs232-adapter"><img src="/images/extensions/historical-gadgeteer-rs232-adapter/directory-preview.png" alt="Top-view board illustration" loading="lazy" decoding="async"></a> | A MAX3232 converts host UART/control signals into bipolar RS-232 electrical levels. |
-| [Historical Gadgeteer Qwiic hub](/extensions/historical-gadgeteer-qwiic-adapter)<br><a href="/extensions/historical-gadgeteer-qwiic-adapter"><img src="/images/extensions/historical-gadgeteer-qwiic-adapter/directory-preview.png" alt="Top-view board illustration" loading="lazy" decoding="async"></a> | This passive adapter exposes the Gadgeteer I2C pair through four Qwiic-style four-contact connectors while retaining a second ten-contact header. |
-| [Historical seven-LED GPIO board](/extensions/historical-gadgeteer-led-breakout)<br><a href="/extensions/historical-gadgeteer-led-breakout"><img src="/images/extensions/historical-gadgeteer-led-breakout/directory-preview.png" alt="Top-view board illustration" loading="lazy" decoding="async"></a> | Seven indicators connect host GPIOs through1 kΩ resistors to LED anodes, with cathodes at ground. |
-| [Historical six-axis interface board](/extensions/historical-six-axis-breakout)<br><a href="/extensions/historical-six-axis-breakout"><img src="/images/extensions/historical-six-axis-breakout/directory-preview.png" alt="Top-view board illustration" loading="lazy" decoding="async"></a> | This large V2 interface combines six external STEP/DIR channels, shared enable, ABC min/max endstops, four small-FET PWM outputs, UART0, an ordinary E-stop input and a 40-contact harness connector. |
-| [jaUART CP2104 USB-UART adapter](/extensions/historical-jauart-usb-uart-adapter)<br><a href="/extensions/historical-jauart-usb-uart-adapter"><img src="/images/extensions/historical-jauart-usb-uart-adapter/directory-preview.png" alt="Top-view board illustration" loading="lazy" decoding="async"></a> | USB-to-logic-UART bridge for the Prime serial console; separate handshake and GPIO headers. |
-| [K-type thermocouple interface](/extensions/historical-thermocouple-interface)<br><a href="/extensions/historical-thermocouple-interface"><img src="/images/extensions/historical-thermocouple-interface/directory-preview.png" alt="Top-view board illustration" loading="lazy" decoding="async"></a> | A MAX31855KASA reads a K-type thermocouple and exposes temperature/fault data over a read-only SPI-style interface. |
-| [Large MOSFET — KiCad layout](/extensions/historical-large-mosfet-kicad)<br><a href="/extensions/historical-large-mosfet-kicad"><img src="/images/extensions/historical-large-mosfet-kicad/directory-preview.png" alt="Top-view board illustration" loading="lazy" decoding="async"></a> | Historical low-side power-switch design; the selected bill of materials specifies an IGBT that needs a suitable gate-driver installation. |
-| [Large MOSFET — original Eagle layout](/extensions/historical-large-mosfet-eagle)<br><a href="/extensions/historical-large-mosfet-eagle"><img src="/images/extensions/historical-large-mosfet-eagle/directory-preview.png" alt="Top-view board illustration" loading="lazy" decoding="async"></a> | This original Eagle board is a single low-side MOSFET load switch. |
-| [LedSimple — recovered upstream design](/extensions/historical-ledsimple)<br><a href="/extensions/historical-ledsimple"><img src="/images/extensions/historical-ledsimple/directory-preview.png" alt="Top-view board illustration" loading="lazy" decoding="async"></a> | This is a seven-channel GPIO indicator board: each host signal lights its corresponding LED through a resistor. |
-| [Legacy high-current level shifter](/extensions/historical-legacy-level-shifter-high-current)<br><a href="/extensions/historical-legacy-level-shifter-high-current"><img src="/images/extensions/historical-legacy-level-shifter-high-current/directory-preview.png" alt="Top-view board illustration" loading="lazy" decoding="async"></a> | This board converts seven host GPIO outputs to a higher-voltage, buffered output bank. |
-| [Mechanical endstop](/extensions/historical-mechanical-endstop)<br><a href="/extensions/historical-mechanical-endstop"><img src="/images/extensions/historical-mechanical-endstop/directory-preview.png" alt="Top-view board illustration" loading="lazy" decoding="async"></a> | This is a powered three-wire mechanical limit-switch module with an indicator and signal filtering. |
-| [Multi-motor single-axis command splitter](/extensions/historical-multi-motor-single-axis-splitter)<br><a href="/extensions/historical-multi-motor-single-axis-splitter"><img src="/images/extensions/historical-multi-motor-single-axis-splitter/directory-preview.png" alt="Top-view board illustration" loading="lazy" decoding="async"></a> | This logic board gates one shared STEP stream separately to four motor-driver channels while sharing buffered DIR and ENABLE. |
-| [OptoIsoStop isolated endstop interface](/extensions/historical-opto-isolated-endstop-adapter) | An H11L1SM optoisolator conditions an endstop-style field signal. |
-| [PiPower — Pi power, UART and button shield](/extensions/historical-pipower) | PiPower is a small Raspberry Pi header shield that distributes 5 V, exposes serial TX/RX and provides a button interface for computer startup/shutdown behavior. |
-| [Raspberry Pi Zero carrier interface](/extensions/historical-raspberry-pi-zero-interface)<br><a href="/extensions/historical-raspberry-pi-zero-interface"><img src="/images/extensions/historical-raspberry-pi-zero-interface/directory-preview.png" alt="Top-view board illustration" loading="lazy" decoding="async"></a> | This carrier connects a Pi Zero’s GPIO/UART to an earlier Smoothieboard2 host connector and provides a regulator and serial indicator circuitry. |
-| [Raspberry Pi Zero carrier with Ethernet](/extensions/historical-raspberry-pi-zero-ethernet)<br><a href="/extensions/historical-raspberry-pi-zero-ethernet"><img src="/images/extensions/historical-raspberry-pi-zero-ethernet/directory-preview.png" alt="Top-view board illustration" loading="lazy" decoding="async"></a> | This companion-computer carrier adds an ENC28J60-I/ML SPI Ethernet controller to a Raspberry Pi Zero interface. |
-| [Small MOSFET — KiCad layout](/extensions/historical-small-mosfet-kicad)<br><a href="/extensions/historical-small-mosfet-kicad"><img src="/images/extensions/historical-small-mosfet-kicad/directory-preview.png" alt="Top-view board illustration" loading="lazy" decoding="async"></a> | This is the KiCad small low-side DC power switch. |
-| [Small MOSFET — original Eagle layout](/extensions/historical-small-mosfet-eagle)<br><a href="/extensions/historical-small-mosfet-eagle"><img src="/images/extensions/historical-small-mosfet-eagle/directory-preview.png" alt="Top-view board illustration" loading="lazy" decoding="async"></a> | This Eagle board switches a DC load’s negative return using an IRLR024-labelled MOSFET. |
-| [SPI hub](/extensions/historical-spi-hub)<br><a href="/extensions/historical-spi-hub"><img src="/images/extensions/historical-spi-hub/directory-preview.png" alt="Top-view board illustration" loading="lazy" decoding="async"></a> | This passive hub shares one SPI clock/data bus among four peripherals and gives each peripheral its own chip-select wire. |
-| [SPI opto-isolator](/extensions/historical-spi-opto-isolator)<br><a href="/extensions/historical-spi-opto-isolator"><img src="/images/extensions/historical-spi-opto-isolator/directory-preview.png" alt="Top-view board illustration" loading="lazy" decoding="async"></a> | Seven 6N137 optocouplers transport six host-to-peripheral signals and one return signal across separate power domains. |
-| [SPI PT100 interface](/extensions/historical-spi-pt100)<br><a href="/extensions/historical-spi-pt100"><img src="/images/extensions/historical-spi-pt100/directory-preview.png" alt="Top-view board illustration" loading="lazy" decoding="async"></a> | The MAX31865_SSOP20 converts a platinum resistance sensor into a digital SPI measurement. |
-| [ThermistorTrigger — Dual thermistor hardware setpoint trigger](/extensions/historical-thermistortrigger)<br><a href="/extensions/historical-thermistortrigger"><img src="/images/extensions/historical-thermistortrigger/directory-preview.png" alt="Top-view board illustration" loading="lazy" decoding="async"></a> | ThermistorTrigger buffers two thermistor signals and compares them against hardware-adjusted thresholds. |
-| [Three-channel A5984 stepper driver](/extensions/historical-a5984-stepper-driver)<br><a href="/extensions/historical-a5984-stepper-driver"><img src="/images/extensions/historical-a5984-stepper-driver/directory-preview.png" alt="Top-view board illustration" loading="lazy" decoding="async"></a> | Three A5984GLP driver ICs turn three independent step/direction streams into current-regulated bipolar motor winding currents. |
-
-</div>
