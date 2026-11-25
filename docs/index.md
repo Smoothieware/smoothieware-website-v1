@@ -139,9 +139,7 @@ Retrofitting a K40 laser cutter? Start with the [K40 controller upgrade overview
     - [Kill Button](killbutton) and [Play LED](play-led): S/W based kill and play activity LED
     - [Panel](panel): Drive smoothie directly without a host using monochrome lcd screens and click encoders
     - [MAX7219 digital readout](max7219-dro)² (V2)
-    - [FAULT inputs](button-box#fault-inputs)² (V2)
-    - [Matrix keypad support status](button-box#matrix-keypads)² (V2)
-{::nomarkdown}<versioned><v1><div class="versioned-list-item" style="margin-left:1.25em;"><a href="jogger">Jogger</a>: Joystick-based jogging control for manual machine movement</div><div class="versioned-list-item" style="margin-left:1.25em;"><a href="joystick">Joystick</a>: Analog input from joysticks, sliders, and knobs</div></v1><v2><div class="versioned-list-item" style="margin-left:1.25em;"><a href="tm1638-display">TM1638 Display</a>: 7-segment LED display with buttons</div><div class="versioned-list-item" style="margin-left:1.25em;"><a href="button-box">Button Box</a>²: Programmable button panel for macros and machine control</div><div class="versioned-list-item" style="margin-left:1.25em;"><a href="mpg">MPG</a>²: Manual Pulse Generator hand wheels for axis jogging with <a href="mpg#axis-selector-optional">direct or shared control</a></div><div class="versioned-list-item" style="margin-left:1.25em;"><a href="voltage-monitor">Voltage Monitor</a>: Monitor power supply voltages</div></v2></versioned>{:/nomarkdown}
+{::nomarkdown}<versioned><v1><div class="versioned-list-item" style="margin-left:1.25em;"><a href="jogger">Jogger</a>: Joystick-based jogging control for manual machine movement</div><div class="versioned-list-item" style="margin-left:1.25em;"><a href="joystick">Joystick</a>: Analog input from joysticks, sliders, and knobs</div></v1><v2><div class="versioned-list-item" style="margin-left:1.25em;"><a href="tm1638-display">TM1638 Display</a>: 7-segment LED display with buttons</div><div class="versioned-list-item" style="margin-left:1.25em;"><a href="button-box">Button Box</a>²: Programmable button panel for macros and machine control</div><div class="versioned-list-item" style="margin-left:1.25em;"><a href="mpg">MPG</a>: Manual Pulse Generator hand wheels for axis jogging</div><div class="versioned-list-item" style="margin-left:1.25em;"><a href="voltage-monitor">Voltage Monitor</a>: Monitor power supply voltages</div></v2></versioned>{:/nomarkdown}
     - [on_boot.gcode File](on-boot-gcode): Execute G-codes every time the board boots
 
 {::nomarkdown}
@@ -154,10 +152,7 @@ Retrofitting a K40 laser cutter? Start with the [K40 controller upgrade overview
 
 - [Using Smoothie](using-smoothie): General firmware use
   - [Console Commands](console-commands)
-    - [`ed` file editing](console-commands#ed)² (V2)
-    - [`le` command-line editing and history](console-commands#le)² (V2)
   - [Supported G-Codes](supported-g-codes)
-    - [NIST G30/G30.1 stored positions](g30#nist-stored-position-in-v2-grbl-mode)² (V2)
     - [O-word subroutines](subroutines)² (V2)
   - [Stopping Smoothie](stopping-smoothie)
     - [Emergency Stop](emergencystop)
@@ -185,10 +180,8 @@ Retrofitting a K40 laser cutter? Start with the [K40 controller upgrade overview
 
 - [Communication](communication)
   - [Network](network)
-    - [V2 network services](network#v2-network-services)²
   - [USB](usb)
   - [UART](uart)
-    - [Auxiliary UART targeting](uart#send-text-to-a-connected-device)² (V2)
   - [Bluetooth](bluetooth-serial)
   - [Wifi](wifi) (new)
 
