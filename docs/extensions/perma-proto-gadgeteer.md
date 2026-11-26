@@ -464,7 +464,7 @@ The [MPG module](https://github.com/Smoothieware/SmoothieV2/blob/2a21c0108b1d095
 </table></div>
 {:/nomarkdown}
 
-Still stuck? Read [how to ask for help](/help-guidelines) or see the general [troubleshooting guide](/troubleshooting/).
+Still stuck? Read [how to ask for help](/help-guidelines) or see the general [troubleshooting guide](/troubleshooting).
 
 ## Downloads {#downloads}
 
