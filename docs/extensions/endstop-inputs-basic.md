@@ -56,6 +56,10 @@ permalink: /extensions/endstop-inputs-basic
 </nav>
 {:/nomarkdown}
 
+<sl-alert variant="danger" open>
+<strong>5V position: it can damage a Smoothieboard V2.</strong> The controller pins behind INP0 (<code>PB1</code>), INP2 (<code>PA4</code>) and INP5 (<code>PG1</code>) are not 5&nbsp;V tolerant: the chip maker&rsquo;s limit is 4.0&nbsp;V. Leave the jumper cap on <strong>3V3</strong>. See <a href="#jp1">supply selector JP1</a>.
+</sl-alert>
+
 <sl-alert variant="warning" open>
   <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
   The <b>+</b> pins have <b>no fuse or current limit</b>: a short from + to − shorts the controller&rsquo;s own supply. Wire with all power off. The inputs have no isolation or surge protection, and the board is not a safety device: wire an emergency stop so that it cuts power by itself.
@@ -417,14 +421,16 @@ A 5.6&nbsp;kΩ resistor and a 100&nbsp;nF capacitor then smooth the signal befor
 
 ## Options {#options}
 
-### Supply selector JP1
+### Supply selector JP1 {#jp1}
+
+With the cap on 5V, every open input puts about 5&nbsp;V on its controller pin, whether or not a sensor is plugged in. On the STM32H7 processor family used by Smoothieboard V2, <code>PB1</code>, <code>PA4</code> and <code>PG1</code> accept at most 4.0&nbsp;V ([ST STM32H743 datasheet](https://www.st.com/resource/en/datasheet/stm32h743bi.pdf), pin definitions and voltage characteristics; the matching STM32H745 document was not checked). If you need the 5V position, first cut links JP2, JP4 and JP7, which takes INP0, INP2 and INP5 out of use, or power the sensor from elsewhere and keep the cap on 3V3.
 
 {::nomarkdown}
 <div class="xb-tablewrap"><table>
   <thead><tr><th>Jumper cap</th><th>+ pins</th><th>Open input at the controller</th><th>Use</th></tr></thead>
   <tbody>
     <tr><td>Middle and <b>3V3</b> (left)</td><td>3.3&nbsp;V</td><td>3.3&nbsp;V</td><td>Smoothieboard V2 and other 3.3&nbsp;V controllers</td></tr>
-    <tr><td>Middle and <b>5V</b> (right)</td><td>5&nbsp;V</td><td>5.0&nbsp;V</td><td>Only a controller whose pins are rated to accept 5&nbsp;V, with no pull resistor enabled</td></tr>
+    <tr><td>Middle and <b>5V</b> (right)</td><td>5&nbsp;V</td><td>5.0&nbsp;V</td><td>Only where every connected controller pin accepts 5&nbsp;V, with no pull resistor enabled. On a Smoothieboard V2, cut JP2, JP4 and JP7 first</td></tr>
     <tr><td>No cap</td><td>Not powered</td><td>Not defined</td><td>Do not use</td></tr>
     <tr><td>All three joined</td><td>Never: this joins the 3.3&nbsp;V and 5&nbsp;V supplies</td><td>—</td><td>Never</td></tr>
   </tbody>
