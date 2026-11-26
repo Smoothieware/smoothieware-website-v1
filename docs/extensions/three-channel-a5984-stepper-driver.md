@@ -52,6 +52,7 @@ permalink: /extensions/three-channel-a5984-stepper-driver
   <a href="#electrical">Electrical</a>
   <a href="#simulation">Simulation</a>
   <a href="#datasheets">Datasheet</a>
+  <a href="#historical">Historical page</a>
 </nav>
 {:/nomarkdown}
 
@@ -606,4 +607,8 @@ The first page of the driver chip&rsquo;s datasheet. Click the page to open the 
 </figure>
 {:/nomarkdown}
 
-See also the [earlier single description of this three-channel design](/extensions/historical-a5984-stepper-driver). See all boards on the [extension boards](/extension-boards) page.
+## Appendix: historical page {#historical}
+
+The [historical page for the three-channel A5984 stepper driver](/extensions/historical-a5984-stepper-driver) describes the original design files.
+
+See all boards on the [extension boards](/extension-boards) page.

@@ -20,8 +20,8 @@ Historical entries appear alongside related modern boards. A similar name does n
 <tbody aria-labelledby="motor-and-motion-control">
   <tr class="extension-board-category"><th id="motor-and-motion-control" colspan="2" scope="rowgroup">Motor and motion control</th></tr>
   <tr>
-    <td><a href="/extensions/historical-a5984-stepper-driver" aria-label="Open the Three-channel A5984 stepper driver guide"><img src="/images/extensions/historical-a5984-stepper-driver/directory-board-render.png" alt="" loading="lazy" decoding="async"></a></td>
-    <td><p class="extension-board-name"><a href="/extensions/historical-a5984-stepper-driver">Three-channel A5984 stepper driver</a></p><p>Three A5984GLP driver ICs turn three independent step/direction streams into current-regulated bipolar motor winding currents.</p></td>
+    <td><a href="/extensions/three-channel-a5984-stepper-driver" aria-label="Open the Three-channel A5984 stepper driver board guide"><img src="/images/extensions/three-channel-a5984-stepper-driver/directory-board-render.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><p class="extension-board-name"><a href="/extensions/three-channel-a5984-stepper-driver">Three-channel A5984 stepper driver board</a></p><p>Drives three bipolar stepper motors from STEP and DIR, with 8 to 36 V motor power.</p></td>
   </tr>
   <tr>
     <td><a href="/extensions/advanced-h-bridge-encoder-board" aria-label="Open the Advanced H-bridge encoder board guide"><img src="/images/extensions/advanced-h-bridge-encoder-board/directory-board-render.png" alt="" loading="lazy" decoding="async"></a></td>
@@ -70,10 +70,6 @@ Historical entries appear alongside related modern boards. A similar name does n
   <tr>
     <td><a href="/extensions/stepper-driver-breakout-trinamic" aria-label="Open the Stepper motor driver breakout board (Trinamic TMC2660) guide"><img src="/images/extensions/stepper-driver-breakout-trinamic/directory-board-render.png" alt="" loading="lazy" decoding="async"></a></td>
     <td><p class="extension-board-name"><a href="/extensions/stepper-driver-breakout-trinamic">Stepper motor driver breakout board (Trinamic TMC2660)</a></p><p>Adds one bipolar TMC2660 stepper channel controlled by STEP/DIR and SPI.</p></td>
-  </tr>
-  <tr>
-    <td><a href="/extensions/three-channel-a5984-stepper-driver" aria-label="Open the Three-channel A5984 stepper driver board guide"><img src="/images/extensions/three-channel-a5984-stepper-driver/directory-board-render.png" alt="" loading="lazy" decoding="async"></a></td>
-    <td><p class="extension-board-name"><a href="/extensions/three-channel-a5984-stepper-driver">Three-channel A5984 stepper driver board</a></p><p>Drives three bipolar stepper motors from STEP and DIR, with 8 to 36 V motor power.</p></td>
   </tr>
 </tbody>
 <tbody aria-labelledby="sensors-and-inputs">

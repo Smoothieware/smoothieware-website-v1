@@ -12,6 +12,7 @@ History: see CHANGELOG.archive.md.
 
 ### Fixed
 
+- The extension boards list now links the new three-channel A5984 stepper driver board page in place of the historical one, which is linked from an appendix on the new page.
 - Extension board drawings now show the solder pads of underside-mounted pin headers, plated test points and prototyping holes. The main drawing on ten board pages now includes these features.
 - Extension board drawings on the board directory and board pages now show their mounting and cable-tie holes.
 
