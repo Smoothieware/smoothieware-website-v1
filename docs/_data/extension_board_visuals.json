@@ -3029,6 +3029,40 @@
       ]
     }
   ],
+  "three-channel-a5984-stepper-driver": [
+    {
+      "role": "stepper driver three-channel a5984",
+      "version": "v03",
+      "cad_source_path": "extension-boards/src/three-channel-A5984-stepper-driver-board/attempt/website/a5984-3ch.kicad_pcb",
+      "cad_sha256": "1bd88cbeb444730a151ed9709f9abf5b4ffbca33f9fcbcc490c826f9dc8375ee",
+      "diagram": {
+        "url": "/images/extensions/three-channel-a5984-stepper-driver/three-channel-a5984-stepper-driver-diagram.png",
+        "sha256": "3121cc397d26da3dcf74af4a709b2de24e9f94a5ecaf42ff8517bf6b7391e1e2",
+        "source_path": "smoothie-diagrams/data/extension-board-renders/three-channel-a5984-stepper-driver/v03/a5984-3ch.svg",
+        "source_hash_matches": true,
+        "embedded_cad_sha256": "1bd88cbeb444730a151ed9709f9abf5b4ffbca33f9fcbcc490c826f9dc8375ee",
+        "caption": "v03; drawn from the website copy of the board file.",
+        "archived_svg": "smoothie-diagrams/data/website-extension-svg/three-channel-a5984-stepper-driver/three-channel-a5984-stepper-driver-diagram.svg",
+        "archived_svg_sha256": "ffe611c2bdbb4fcf06e9e2c7fa6acf4e4c1465234af882f8e276bccf035b63ae"
+      },
+      "renders": [
+        {
+          "url": "/images/extensions/three-channel-a5984-stepper-driver/three-channel-a5984-stepper-driver-populated-isometric.png",
+          "sha256": "cd695f32438a78d71560bbbc3a106cc2564e0e5dd1ee25ac926b1e5ba5e21104",
+          "source_path": "extension-boards/src/three-channel-A5984-stepper-driver-board/attempt/website/a5984-3ch.kicad_pcb",
+          "label": "Populated board, perspective view",
+          "caption": "Computer render, not a photograph; the trimmers have no 3D model."
+        },
+        {
+          "url": "/images/extensions/three-channel-a5984-stepper-driver/three-channel-a5984-stepper-driver-populated-top.png",
+          "sha256": "59aa1305fa601d72919e3bd9477e24877b337295339c39a654af3c34514938ea",
+          "source_path": "extension-boards/src/three-channel-A5984-stepper-driver-board/attempt/website/a5984-3ch.kicad_pcb",
+          "label": "Populated board, top view",
+          "caption": "Computer render, not a photograph; the trimmers have no 3D model."
+        }
+      ]
+    }
+  ],
   "stepper-driver-breakout-trinamic": [
     {
       "role": "tmc2660 stepper",

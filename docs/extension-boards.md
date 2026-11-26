@@ -71,6 +71,10 @@ Historical entries appear alongside related modern boards. A similar name does n
     <td><a href="/extensions/stepper-driver-breakout-trinamic" aria-label="Open the Stepper motor driver breakout board (Trinamic TMC2660) guide"><img src="/images/extensions/stepper-driver-breakout-trinamic/directory-board-render.png" alt="" loading="lazy" decoding="async"></a></td>
     <td><p class="extension-board-name"><a href="/extensions/stepper-driver-breakout-trinamic">Stepper motor driver breakout board (Trinamic TMC2660)</a></p><p>Adds one bipolar TMC2660 stepper channel controlled by STEP/DIR and SPI.</p></td>
   </tr>
+  <tr>
+    <td><a href="/extensions/three-channel-a5984-stepper-driver" aria-label="Open the Three-channel A5984 stepper driver board guide"><img src="/images/extensions/three-channel-a5984-stepper-driver/directory-board-render.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><p class="extension-board-name"><a href="/extensions/three-channel-a5984-stepper-driver">Three-channel A5984 stepper driver board</a></p><p>Drives three bipolar stepper motors from STEP and DIR, with 8 to 36 V motor power.</p></td>
+  </tr>
 </tbody>
 <tbody aria-labelledby="sensors-and-inputs">
   <tr class="extension-board-category"><th id="sensors-and-inputs" colspan="2" scope="rowgroup">Sensors and inputs</th></tr>

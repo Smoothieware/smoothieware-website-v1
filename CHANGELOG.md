@@ -6,6 +6,10 @@ History: see CHANGELOG.archive.md.
 
 ## [Unreleased]
 
+### Added
+
+- A page for the three-channel A5984 stepper driver board: pinout, wiring, current setting, configuration, electrical, mounting and simulation data. The board is also listed in the extension board directory and the stepper board comparison.
+
 ### Fixed
 
 - Extension board drawings now show the solder pads of underside-mounted pin headers, plated test points and prototyping holes. The main drawing on ten board pages now includes these features.
