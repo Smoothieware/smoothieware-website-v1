@@ -588,7 +588,7 @@ Historical entries appear alongside related modern boards. A similar name does n
   </tr>
   <tr>
     <td><a href="/extensions/perma-proto-gadgeteer" aria-label="Open the Gadgeteer perma-proto guide"><img src="/images/extensions/perma-proto-gadgeteer/directory-board-render.png" alt="" loading="lazy" decoding="async"></a></td>
-    <td><p class="extension-board-name"><a href="/extensions/perma-proto-gadgeteer">Gadgeteer perma-proto</a></p><p>Use this passive carrier to build a soldered low-voltage prototype connected to existing Smoothieboard pins.</p></td>
+    <td><p class="extension-board-name"><a href="/extensions/perma-proto-gadgeteer">Gadgeteer perma-proto</a></p><p>Use this passive board to solder a low-voltage prototype on existing Smoothieboard pins, with power lamps and a second connector you wire yourself.</p></td>
   </tr>
   <tr>
     <td><a href="/extensions/raspberry-pi-to-gadgeteer-hat" aria-label="Open the Raspberry Pi 40-pin to Gadgeteer HAT guide"><img src="/images/extensions/raspberry-pi-to-gadgeteer-hat/guides/raspberry-pi-hat-abstract.png" alt="" loading="lazy" decoding="async"></a></td>

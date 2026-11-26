@@ -2091,40 +2091,40 @@
   "perma-proto-gadgeteer": [
     {
       "role": "perma proto gadgeteer",
-      "version": "v15",
-      "cad_source_path": "extension-boards/src/perma-proto-gadgeteer/attempt/versions/v15/perma-proto-gadgeteer.kicad_pcb",
-      "cad_sha256": "f0a5a35ef2a6c7139b99ec6c0e3edc23f33dbd0b14519040985f8e5fc87bbf9b",
+      "version": "v16",
+      "cad_source_path": "extension-boards/src/perma-proto-gadgeteer/attempt/versions/v16/perma-proto-gadgeteer.kicad_pcb",
+      "cad_sha256": "a98e3c555a15eba4d91b9fa4408a1344237e976c197fbb82e193900065f6a366",
       "diagram": {
         "url": "/images/extensions/perma-proto-gadgeteer/perma-proto-gadgeteer-diagram.png",
-        "sha256": "aedb1bf284d565cd5cfccdbb6fe23ee62df17d7403e1c2897158617f8e7aa466",
-        "source_path": "smoothie-diagrams/data/extension-board-renders/perma-proto-gadgeteer/v15/perma-proto-gadgeteer.svg",
+        "sha256": "8b1c0aa92ca5ff8bdf491e35862854e4ed2a03a0807850667be4062a1682b93f",
+        "source_path": "smoothie-diagrams/data/website-extension-svg/perma-proto-gadgeteer/perma-proto-gadgeteer-diagram.svg",
         "source_hash_matches": true,
-        "embedded_cad_sha256": "f0a5a35ef2a6c7139b99ec6c0e3edc23f33dbd0b14519040985f8e5fc87bbf9b",
-        "caption": "v15; source hash matches this CAD revision.",
+        "embedded_cad_sha256": "a98e3c555a15eba4d91b9fa4408a1344237e976c197fbb82e193900065f6a366",
+        "caption": "v16; drawn from this CAD revision.",
         "archived_svg": "smoothie-diagrams/data/website-extension-svg/perma-proto-gadgeteer/perma-proto-gadgeteer-diagram.svg",
-        "archived_svg_sha256": "a623ddf966ffbfe89ceca1e97a276410e3c34e42d2645a6ac6a8515662223705"
+        "archived_svg_sha256": "ff59bc63be7ec650ba592f3abc3e6ece0933aad1593f2de5c9a1ba91278bf5fe"
       },
       "renders": [
         {
           "url": "/images/extensions/perma-proto-gadgeteer/perma-proto-gadgeteer-populated-isometric.png",
-          "sha256": "e464ca25860f4ade50fc2c3258e8e663220b981dba664c9a9898d9ee14759ee4",
-          "source_path": "extension-boards/src/perma-proto-gadgeteer/attempt/versions/v15/populations/perma-proto-gadgeteer/normal/populated-isometric.png",
+          "sha256": "1be77c19ad4ae433d68c7e2314fc07440220fd8a98201d821458ff1acdf305c9",
+          "source_path": "extension-boards/src/perma-proto-gadgeteer/attempt/versions/v16/renders/populated-isometric.png",
           "label": "Populated board, perspective view",
-          "caption": "Normal connector population; source and image hashes verified. Computer render, not a photograph."
+          "caption": "Computer render of the populated board, not a photograph."
         },
         {
           "url": "/images/extensions/perma-proto-gadgeteer/perma-proto-gadgeteer-populated-top.png",
-          "sha256": "59a9d01248158dc551726efedc28d5016eeda0324c30850335fb65fcedc22256",
-          "source_path": "extension-boards/src/perma-proto-gadgeteer/attempt/versions/v15/populations/perma-proto-gadgeteer/normal/populated-top.png",
+          "sha256": "5de09832973fdcb04f5f7f98accb5d043853d5d0650fe72bdffe8d4b74a16306",
+          "source_path": "extension-boards/src/perma-proto-gadgeteer/attempt/versions/v16/renders/populated-top.png",
           "label": "Populated board, top view",
-          "caption": "Normal connector population; source and image hashes verified. Computer render, not a photograph."
+          "caption": "Computer render of the populated board, not a photograph."
         },
         {
           "url": "/images/extensions/perma-proto-gadgeteer/perma-proto-gadgeteer-populated-bottom.png",
-          "sha256": "6891f9a7d6ca73220a6a40c1b4a067f3a908db7e0efe703be2f894c7597dec88",
-          "source_path": "extension-boards/src/perma-proto-gadgeteer/attempt/versions/v15/populations/perma-proto-gadgeteer/normal/populated-bottom.png",
+          "sha256": "257c037c9b838de274188b5a084932b167db6d3aafa76434df8f515b1c6624de",
+          "source_path": "extension-boards/src/perma-proto-gadgeteer/attempt/versions/v16/renders/populated-bottom.png",
           "label": "Populated board, bottom view",
-          "caption": "Normal connector population; source and image hashes verified. Computer render, not a photograph."
+          "caption": "Computer render of the populated board, not a photograph."
         }
       ]
     }

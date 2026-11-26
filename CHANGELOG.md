@@ -23,6 +23,7 @@ History: see CHANGELOG.archive.md.
 
 ### Changed
 
+- Perma-proto Gadgeteer page, drawings and downloads updated for the new board: second chain connector with 2.54 mm wiring holes, six-hole strips with a DIP-width centre gap, rail lamps and solder jumpers, printed pin guide lines, four mounting holes; example projects re-laid out with no track cutting. Old guide drawings and version 15 downloads removed.
 - The two endstop boards are now named "Endstop inputs (basic)" and "Endstop and probe inputs (advanced)" and listed together. The advanced board page moved to a new address, and the old one redirects.
 - Extension board pages: rebuilt 20 more pages (Qwiic, SD card, wireless, USB and serial Wi-Fi, CAN, the Arduino, BeagleBone, Edison, Papilio, Raspberry Pi, ESP32 and Teensy host adapters, the parallel-port jig, both D-sub adapters and the buzzer module) to the current page layout, and updated their directory descriptions.
 - Extension board pages: rebuilt the level shifting, opto-isolation pass-through, SPI Hub, UART breakout, cheap UART adapter, CPLD adapter, differential signal, differential SPI, differential STEP/DIR/EN and long-distance extender pages to the current page layout, with annotated drawings, wiring steps and chip datasheets.
