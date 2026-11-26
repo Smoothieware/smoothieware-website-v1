@@ -341,8 +341,6 @@ Still stuck? Read [how to ask for help](/help-guidelines) or see the general [tr
     <tr><td><a href="/images/extensions/rfid-reader/rfid-reader-schematic.pdf">Schematic (PDF)</a></td><td>The circuit diagram</td></tr>
     <tr><td><a href="/images/extensions/rfid-reader/rfid-reader-bom.csv">Parts list (CSV)</a></td><td>Every component with its value, footprint and part number where one is chosen</td></tr>
     <tr><td><a href="/images/extensions/rfid-reader/rfid-reader-diagram.png">Board drawing (PNG)</a></td><td>The top view used on this page</td></tr>
-    <tr><td><a href="/images/extensions/rfid-reader/rfid-reader-populated-top.png">3D view, top (PNG)</a></td><td>Rendered from the design files; the reader module is not shown</td></tr>
-    <tr><td><a href="/images/extensions/rfid-reader/rfid-reader-populated-isometric.png">3D view, angled (PNG)</a></td><td>Rendered from the design files; the reader module is not shown</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}
@@ -433,8 +431,11 @@ The clock line through its series resistor was simulated with ngspice.
   <div class="xb-fig-scroll" tabindex="0" role="region" aria-label="Simulated results against limits">
 <svg viewBox="0 0 1000 134" role="img" aria-labelledby="xb-rfid-sim-t">
 <title id="xb-rfid-sim-t">Each simulated value (yellow mark) against its allowed range (green band).</title>
-<text x="385" y="41" text-anchor="end" font-size="13" fill="#e6ebf2">Clock rise time at the module (10 MHz limit about...</text><path d="M400 36H860" stroke="#3a414c" stroke-width="10" stroke-linecap="round"/><path d="M400.0 36H810.7" stroke="#2f8f5b" stroke-width="10"/><path d="M696.6 23v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="41" font-size="13" font-weight="700" fill="#ffcc33">14.4&nbsp;ns</text>
-<text x="385" y="93" text-anchor="end" font-size="13" fill="#e6ebf2">High level reached</text><path d="M400 88H860" stroke="#3a414c" stroke-width="10" stroke-linecap="round"/><path d="M444.5 88H815.5" stroke="#2f8f5b" stroke-width="10"/><path d="M772.7 75v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="93" font-size="13" font-weight="700" fill="#ffcc33">3.3&nbsp;V</text>
+<text x="385" y="33" text-anchor="end" font-size="13" fill="#e6ebf2">Clock rise time at the module (10 MHz limit about 20</text>
+<text x="385" y="49" text-anchor="end" font-size="13" fill="#e6ebf2">ns)</text>
+<path d="M400 36H860" stroke="#3a414c" stroke-width="10" stroke-linecap="round"/><path d="M400.0 36H810.7" stroke="#2f8f5b" stroke-width="10"/><path d="M696.6 23v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="41" font-size="13" font-weight="700" fill="#ffcc33">14.4&nbsp;ns</text>
+<text x="385" y="93" text-anchor="end" font-size="13" fill="#e6ebf2">High level reached</text>
+<path d="M400 88H860" stroke="#3a414c" stroke-width="10" stroke-linecap="round"/><path d="M444.5 88H815.5" stroke="#2f8f5b" stroke-width="10"/><path d="M772.7 75v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="93" font-size="13" font-weight="700" fill="#ffcc33">3.3&nbsp;V</text>
 </svg>
   </div>
   <figcaption>Simulated value (yellow) against the limit used for it (green). Each bar has its own scale.</figcaption>

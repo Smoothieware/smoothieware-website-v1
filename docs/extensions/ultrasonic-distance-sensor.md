@@ -301,10 +301,14 @@ A further board on CHAIN can use contacts 5 to 9.
 </table></div>
 {:/nomarkdown}
 
-| Light | Meaning |
-|---|---|
-| Green (D1) | 5 V present |
-{: .xb-leds}
+{::nomarkdown}
+<div class="xb-tablewrap"><table class="xb-leds">
+  <thead><tr><th>Light</th><th><span class="xb-led xb-led-green"></span>Green (D1)</th></tr></thead>
+  <tbody>
+    <tr><td>Lit means</td><td>5 V present</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
 Still stuck? Read [how to ask for help](/help-guidelines) or see the general [troubleshooting guide](/troubleshooting/).
 
@@ -317,8 +321,6 @@ Still stuck? Read [how to ask for help](/help-guidelines) or see the general [tr
     <tr><td><a href="/images/extensions/ultrasonic-distance-sensor/ultrasonic-distance-sensor-schematic.pdf">Schematic (PDF)</a></td><td>The circuit diagram</td></tr>
     <tr><td><a href="/images/extensions/ultrasonic-distance-sensor/ultrasonic-distance-sensor-bom.csv">Parts list (CSV)</a></td><td>Every component with its value, footprint and part number where one is chosen</td></tr>
     <tr><td><a href="/images/extensions/ultrasonic-distance-sensor/ultrasonic-distance-sensor-diagram.png">Board drawing (PNG)</a></td><td>The top view used on this page</td></tr>
-    <tr><td><a href="/images/extensions/ultrasonic-distance-sensor/ultrasonic-distance-sensor-populated-top.png">3D view, top (PNG)</a></td><td>Rendered from the design files; the module itself is not shown</td></tr>
-    <tr><td><a href="/images/extensions/ultrasonic-distance-sensor/ultrasonic-distance-sensor-populated-isometric.png">3D view, angled (PNG)</a></td><td>Rendered from the design files; the module itself is not shown</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}
@@ -410,9 +412,12 @@ The echo divider was simulated with ngspice at the highest and a low module outp
   <div class="xb-fig-scroll" tabindex="0" role="region" aria-label="Simulated results against limits">
 <svg viewBox="0 0 1000 186" role="img" aria-labelledby="xb-sonar-sim-t">
 <title id="xb-sonar-sim-t">Each simulated value (yellow mark) against its allowed range (green band).</title>
-<text x="385" y="41" text-anchor="end" font-size="13" fill="#e6ebf2">Host input high level at 5.25 V echo</text><path d="M400 36H860" stroke="#3a414c" stroke-width="10" stroke-linecap="round"/><path d="M444.5 36H815.5" stroke="#2f8f5b" stroke-width="10"/><path d="M786.9 23v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="41" font-size="13" font-weight="700" fill="#ffcc33">3.37&nbsp;V</text>
-<text x="385" y="93" text-anchor="end" font-size="13" fill="#e6ebf2">Echo rise time (1 us equals 0.17 mm of range)</text><path d="M400 88H860" stroke="#3a414c" stroke-width="10" stroke-linecap="round"/><path d="M400.0 88H810.7" stroke="#2f8f5b" stroke-width="10"/><path d="M574.0 75v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="93" font-size="13" font-weight="700" fill="#ffcc33">424&nbsp;ns</text>
-<text x="385" y="145" text-anchor="end" font-size="13" fill="#e6ebf2">Host input high level at 4.4 V echo</text><path d="M400 140H860" stroke="#3a414c" stroke-width="10" stroke-linecap="round"/><path d="M444.5 140H860.0" stroke="#2f8f5b" stroke-width="10"/><path d="M585.2 127v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="145" font-size="13" font-weight="700" fill="#ffcc33">2.83&nbsp;V</text>
+<text x="385" y="41" text-anchor="end" font-size="13" fill="#e6ebf2">Host input high level at 5.25 V echo</text>
+<path d="M400 36H860" stroke="#3a414c" stroke-width="10" stroke-linecap="round"/><path d="M444.5 36H815.5" stroke="#2f8f5b" stroke-width="10"/><path d="M786.9 23v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="41" font-size="13" font-weight="700" fill="#ffcc33">3.37&nbsp;V</text>
+<text x="385" y="93" text-anchor="end" font-size="13" fill="#e6ebf2">Echo rise time (1 us equals 0.17 mm of range)</text>
+<path d="M400 88H860" stroke="#3a414c" stroke-width="10" stroke-linecap="round"/><path d="M400.0 88H810.7" stroke="#2f8f5b" stroke-width="10"/><path d="M574.0 75v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="93" font-size="13" font-weight="700" fill="#ffcc33">424&nbsp;ns</text>
+<text x="385" y="145" text-anchor="end" font-size="13" fill="#e6ebf2">Host input high level at 4.4 V echo</text>
+<path d="M400 140H860" stroke="#3a414c" stroke-width="10" stroke-linecap="round"/><path d="M444.5 140H860.0" stroke="#2f8f5b" stroke-width="10"/><path d="M585.2 127v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="145" font-size="13" font-weight="700" fill="#ffcc33">2.83&nbsp;V</text>
 </svg>
   </div>
   <figcaption>Simulated value (yellow) against the limit used for it (green). Each bar has its own scale.</figcaption>

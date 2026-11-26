@@ -267,10 +267,14 @@ A further board on CHAIN can use contacts 4 to 9.
 </table></div>
 {:/nomarkdown}
 
-| Light | Meaning |
-|---|---|
-| Green (D1) | Infrared signal being received |
-{: .xb-leds}
+{::nomarkdown}
+<div class="xb-tablewrap"><table class="xb-leds">
+  <thead><tr><th>Light</th><th><span class="xb-led xb-led-green"></span>Green (D1)</th></tr></thead>
+  <tbody>
+    <tr><td>Lit means</td><td>Infrared signal being received</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
 Still stuck? Read [how to ask for help](/help-guidelines) or see the general [troubleshooting guide](/troubleshooting/).
 
@@ -283,8 +287,6 @@ Still stuck? Read [how to ask for help](/help-guidelines) or see the general [tr
     <tr><td><a href="/images/extensions/infrared-remote-receiver/infrared-remote-receiver-schematic.pdf">Schematic (PDF)</a></td><td>The circuit diagram</td></tr>
     <tr><td><a href="/images/extensions/infrared-remote-receiver/infrared-remote-receiver-bom.csv">Parts list (CSV)</a></td><td>Every component with its value, footprint and part number where one is chosen</td></tr>
     <tr><td><a href="/images/extensions/infrared-remote-receiver/infrared-remote-receiver-diagram.png">Board drawing (PNG)</a></td><td>The top view used on this page</td></tr>
-    <tr><td><a href="/images/extensions/infrared-remote-receiver/infrared-remote-receiver-populated-top.png">3D view, top (PNG)</a></td><td>Rendered from the design files</td></tr>
-    <tr><td><a href="/images/extensions/infrared-remote-receiver/infrared-remote-receiver-populated-isometric.png">3D view, angled (PNG)</a></td><td>Rendered from the design files</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}
@@ -376,8 +378,10 @@ The supply filter was simulated with ngspice with 100&nbsp;kHz ripple.
   <div class="xb-fig-scroll" tabindex="0" role="region" aria-label="Simulated results against limits">
 <svg viewBox="0 0 1000 134" role="img" aria-labelledby="xb-irrx-sim-t">
 <title id="xb-irrx-sim-t">Each simulated value (yellow mark) against its allowed range (green band).</title>
-<text x="385" y="41" text-anchor="end" font-size="13" fill="#e6ebf2">Ripple at the receiver from 200 mV peak to peak</text><path d="M400 36H860" stroke="#3a414c" stroke-width="10" stroke-linecap="round"/><path d="M400.0 36H810.7" stroke="#2f8f5b" stroke-width="10"/><path d="M454.5 23v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="41" font-size="13" font-weight="700" fill="#ffcc33">663&nbsp;&micro;V</text>
-<text x="385" y="93" text-anchor="end" font-size="13" fill="#e6ebf2">Resistor voltage drop</text><path d="M400 88H860" stroke="#3a414c" stroke-width="10" stroke-linecap="round"/><path d="M400.0 88H810.7" stroke="#2f8f5b" stroke-width="10"/><path d="M584.8 75v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="93" font-size="13" font-weight="700" fill="#ffcc33">45&nbsp;mV</text>
+<text x="385" y="41" text-anchor="end" font-size="13" fill="#e6ebf2">Ripple at the receiver from 200 mV peak to peak</text>
+<path d="M400 36H860" stroke="#3a414c" stroke-width="10" stroke-linecap="round"/><path d="M400.0 36H810.7" stroke="#2f8f5b" stroke-width="10"/><path d="M454.5 23v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="41" font-size="13" font-weight="700" fill="#ffcc33">663&nbsp;&micro;V</text>
+<text x="385" y="93" text-anchor="end" font-size="13" fill="#e6ebf2">Resistor voltage drop</text>
+<path d="M400 88H860" stroke="#3a414c" stroke-width="10" stroke-linecap="round"/><path d="M400.0 88H810.7" stroke="#2f8f5b" stroke-width="10"/><path d="M584.8 75v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="93" font-size="13" font-weight="700" fill="#ffcc33">45&nbsp;mV</text>
 </svg>
   </div>
   <figcaption>Simulated value (yellow) against the limit used for it (green). Each bar has its own scale.</figcaption>

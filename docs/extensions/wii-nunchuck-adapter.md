@@ -315,8 +315,6 @@ Still stuck? Read [how to ask for help](/help-guidelines) or see the general [tr
     <tr><td><a href="/images/extensions/wii-nunchuck-adapter/wii-nunchuck-adapter-schematic.pdf">Schematic (PDF)</a></td><td>The circuit diagram</td></tr>
     <tr><td><a href="/images/extensions/wii-nunchuck-adapter/wii-nunchuck-adapter-bom.csv">Parts list (CSV)</a></td><td>Every component with its value, footprint and part number where one is chosen</td></tr>
     <tr><td><a href="/images/extensions/wii-nunchuck-adapter/wii-nunchuck-adapter-diagram.png">Board drawing (PNG)</a></td><td>The top view used on this page</td></tr>
-    <tr><td><a href="/images/extensions/wii-nunchuck-adapter/wii-nunchuck-adapter-populated-top.png">3D view, top (PNG)</a></td><td>Rendered from the design files; the controller is not shown</td></tr>
-    <tr><td><a href="/images/extensions/wii-nunchuck-adapter/wii-nunchuck-adapter-populated-isometric.png">3D view, angled (PNG)</a></td><td>Rendered from the design files; the controller is not shown</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}
@@ -405,7 +403,8 @@ The I2C bus rise time with a long controller cable was simulated with ngspice.
   <div class="xb-fig-scroll" tabindex="0" role="region" aria-label="Simulated results against limits">
 <svg viewBox="0 0 1000 82" role="img" aria-labelledby="xb-nunchuk-sim-t">
 <title id="xb-nunchuk-sim-t">Each simulated value (yellow mark) against its allowed range (green band).</title>
-<text x="385" y="41" text-anchor="end" font-size="13" fill="#e6ebf2">I2C rise time 30 to 70 % at an assumed 250 pF</text><path d="M400 36H860" stroke="#3a414c" stroke-width="10" stroke-linecap="round"/><path d="M400.0 36H810.7" stroke="#2f8f5b" stroke-width="10"/><path d="M687.1 23v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="41" font-size="13" font-weight="700" fill="#ffcc33">699&nbsp;ns</text>
+<text x="385" y="41" text-anchor="end" font-size="13" fill="#e6ebf2">I2C rise time 30 to 70 % at an assumed 250 pF</text>
+<path d="M400 36H860" stroke="#3a414c" stroke-width="10" stroke-linecap="round"/><path d="M400.0 36H810.7" stroke="#2f8f5b" stroke-width="10"/><path d="M687.1 23v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="41" font-size="13" font-weight="700" fill="#ffcc33">699&nbsp;ns</text>
 </svg>
   </div>
   <figcaption>Simulated value (yellow) against the limit used for it (green). Each bar has its own scale.</figcaption>

@@ -328,10 +328,14 @@ A further board on CHAIN can use contacts 4 to 9.
 </table></div>
 {:/nomarkdown}
 
-| Light | Meaning |
-|---|---|
-| Red (D1) | Switch on and interlock closed |
-{: .xb-leds}
+{::nomarkdown}
+<div class="xb-tablewrap"><table class="xb-leds">
+  <thead><tr><th>Light</th><th><span class="xb-led xb-led-red"></span>Red (D1)</th></tr></thead>
+  <tbody>
+    <tr><td>Lit means</td><td>Switch on and interlock closed</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
 Still stuck? Read [how to ask for help](/help-guidelines) or see the general [troubleshooting guide](/troubleshooting/).
 
@@ -344,8 +348,6 @@ Still stuck? Read [how to ask for help](/help-guidelines) or see the general [tr
     <tr><td><a href="/images/extensions/laser-emitter-board/laser-emitter-board-schematic.pdf">Schematic (PDF)</a></td><td>The circuit diagram</td></tr>
     <tr><td><a href="/images/extensions/laser-emitter-board/laser-emitter-board-bom.csv">Parts list (CSV)</a></td><td>Every component with its value, footprint and part number where one is chosen</td></tr>
     <tr><td><a href="/images/extensions/laser-emitter-board/laser-emitter-board-diagram.png">Board drawing (PNG)</a></td><td>The top view used on this page</td></tr>
-    <tr><td><a href="/images/extensions/laser-emitter-board/laser-emitter-board-populated-top.png">3D view, top (PNG)</a></td><td>Rendered from the design files</td></tr>
-    <tr><td><a href="/images/extensions/laser-emitter-board/laser-emitter-board-populated-isometric.png">3D view, angled (PNG)</a></td><td>Rendered from the design files</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}
@@ -440,10 +442,14 @@ The switch and gate network were simulated with ngspice with the module represen
   <div class="xb-fig-scroll" tabindex="0" role="region" aria-label="Simulated results against limits">
 <svg viewBox="0 0 1000 238" role="img" aria-labelledby="xb-laser-sim-t">
 <title id="xb-laser-sim-t">Each simulated value (yellow mark) against its allowed range (green band).</title>
-<text x="385" y="41" text-anchor="end" font-size="13" fill="#e6ebf2">Gate voltage when driven from 3.3 V</text><path d="M400 36H860" stroke="#3a414c" stroke-width="10" stroke-linecap="round"/><path d="M444.5 36H815.5" stroke="#2f8f5b" stroke-width="10"/><path d="M775.1 23v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="41" font-size="13" font-weight="700" fill="#ffcc33">3.27&nbsp;V</text>
-<text x="385" y="93" text-anchor="end" font-size="13" fill="#e6ebf2">Voltage lost in the switch</text><path d="M400 88H860" stroke="#3a414c" stroke-width="10" stroke-linecap="round"/><path d="M400.0 88H810.7" stroke="#2f8f5b" stroke-width="10"/><path d="M468.9 75v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="93" font-size="13" font-weight="700" fill="#ffcc33">1.68&nbsp;mV</text>
-<text x="385" y="145" text-anchor="end" font-size="13" fill="#e6ebf2">Module current assumed</text><path d="M400 140H860" stroke="#3a414c" stroke-width="10" stroke-linecap="round"/><path d="M400.0 140H810.7" stroke="#2f8f5b" stroke-width="10"/><path d="M810.2 127v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="145" font-size="13" font-weight="700" fill="#ffcc33">35&nbsp;mA</text>
-<text x="385" y="197" text-anchor="end" font-size="13" fill="#e6ebf2">Gate voltage with the signal low</text><path d="M400 192H860" stroke="#3a414c" stroke-width="10" stroke-linecap="round"/><path d="M400.0 192H810.7" stroke="#2f8f5b" stroke-width="10"/><path d="M400.0 179v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="197" font-size="13" font-weight="700" fill="#ffcc33">1.33e-35&nbsp;V</text>
+<text x="385" y="41" text-anchor="end" font-size="13" fill="#e6ebf2">Gate voltage when driven from 3.3 V</text>
+<path d="M400 36H860" stroke="#3a414c" stroke-width="10" stroke-linecap="round"/><path d="M444.5 36H815.5" stroke="#2f8f5b" stroke-width="10"/><path d="M775.1 23v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="41" font-size="13" font-weight="700" fill="#ffcc33">3.27&nbsp;V</text>
+<text x="385" y="93" text-anchor="end" font-size="13" fill="#e6ebf2">Voltage lost in the switch</text>
+<path d="M400 88H860" stroke="#3a414c" stroke-width="10" stroke-linecap="round"/><path d="M400.0 88H810.7" stroke="#2f8f5b" stroke-width="10"/><path d="M468.9 75v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="93" font-size="13" font-weight="700" fill="#ffcc33">1.68&nbsp;mV</text>
+<text x="385" y="145" text-anchor="end" font-size="13" fill="#e6ebf2">Module current assumed</text>
+<path d="M400 140H860" stroke="#3a414c" stroke-width="10" stroke-linecap="round"/><path d="M400.0 140H810.7" stroke="#2f8f5b" stroke-width="10"/><path d="M810.2 127v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="145" font-size="13" font-weight="700" fill="#ffcc33">35&nbsp;mA</text>
+<text x="385" y="197" text-anchor="end" font-size="13" fill="#e6ebf2">Gate voltage with the signal low</text>
+<path d="M400 192H860" stroke="#3a414c" stroke-width="10" stroke-linecap="round"/><path d="M400.0 192H810.7" stroke="#2f8f5b" stroke-width="10"/><path d="M400.0 179v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="197" font-size="13" font-weight="700" fill="#ffcc33">0&nbsp;V</text>
 </svg>
   </div>
   <figcaption>Simulated value (yellow) against the limit used for it (green). Each bar has its own scale.</figcaption>
@@ -454,7 +460,7 @@ The switch and gate network were simulated with ngspice with the module represen
     <tr><td>Gate voltage when driven from 3.3 V</td><td>3.27&nbsp;V</td><td>3&nbsp;V to 3.3&nbsp;V</td><td>Within</td></tr>
     <tr><td>Voltage lost in the switch</td><td>1.68&nbsp;mV</td><td>at most 10&nbsp;mV</td><td>Within</td></tr>
     <tr><td>Module current assumed</td><td>35&nbsp;mA</td><td>at most 35&nbsp;mA</td><td>Within</td></tr>
-    <tr><td>Gate voltage with the signal low</td><td>1.33e-35&nbsp;V</td><td>at most 100&nbsp;mV</td><td>Within</td></tr>
+    <tr><td>Gate voltage with the signal low</td><td>0&nbsp;V</td><td>at most 100&nbsp;mV</td><td>Within</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}

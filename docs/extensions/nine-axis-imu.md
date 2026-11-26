@@ -324,8 +324,6 @@ Still stuck? Read [how to ask for help](/help-guidelines) or see the general [tr
     <tr><td><a href="/images/extensions/nine-axis-imu/nine-axis-imu-schematic.pdf">Schematic (PDF)</a></td><td>The circuit diagram</td></tr>
     <tr><td><a href="/images/extensions/nine-axis-imu/nine-axis-imu-bom.csv">Parts list (CSV)</a></td><td>Every component with its value, footprint and part number where one is chosen</td></tr>
     <tr><td><a href="/images/extensions/nine-axis-imu/nine-axis-imu-diagram.png">Board drawing (PNG)</a></td><td>The top view used on this page</td></tr>
-    <tr><td><a href="/images/extensions/nine-axis-imu/nine-axis-imu-populated-top.png">3D view, top (PNG)</a></td><td>Rendered from the design files</td></tr>
-    <tr><td><a href="/images/extensions/nine-axis-imu/nine-axis-imu-populated-isometric.png">3D view, angled (PNG)</a></td><td>Rendered from the design files</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}
@@ -415,9 +413,13 @@ The I2C bus loading was simulated with ngspice with 100&nbsp;pF of bus capacitan
   <div class="xb-fig-scroll" tabindex="0" role="region" aria-label="Simulated results against limits">
 <svg viewBox="0 0 1000 186" role="img" aria-labelledby="xb-imu-sim-t">
 <title id="xb-imu-sim-t">Each simulated value (yellow mark) against its allowed range (green band).</title>
-<text x="385" y="41" text-anchor="end" font-size="13" fill="#e6ebf2">Rise time 30 to 70 %, one pull-up set, 100 pF (40...</text><path d="M400 36H860" stroke="#3a414c" stroke-width="10" stroke-linecap="round"/><path d="M400.0 36H810.7" stroke="#2f8f5b" stroke-width="10"/><path d="M782.8 23v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="41" font-size="13" font-weight="700" fill="#ffcc33">280&nbsp;ns</text>
-<text x="385" y="93" text-anchor="end" font-size="13" fill="#e6ebf2">Rise time with two pull-up sets</text><path d="M400 88H860" stroke="#3a414c" stroke-width="10" stroke-linecap="round"/><path d="M400.0 88H810.7" stroke="#2f8f5b" stroke-width="10"/><path d="M591.4 75v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="93" font-size="13" font-weight="700" fill="#ffcc33">140&nbsp;ns</text>
-<text x="385" y="145" text-anchor="end" font-size="13" fill="#e6ebf2">Low level with two pull-up sets</text><path d="M400 140H860" stroke="#3a414c" stroke-width="10" stroke-linecap="round"/><path d="M400.0 140H810.7" stroke="#2f8f5b" stroke-width="10"/><path d="M518.9 127v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="145" font-size="13" font-weight="700" fill="#ffcc33">116&nbsp;mV</text>
+<text x="385" y="33" text-anchor="end" font-size="13" fill="#e6ebf2">Rise time 30 to 70 %, one pull-up set, 100 pF (400</text>
+<text x="385" y="49" text-anchor="end" font-size="13" fill="#e6ebf2">kHz limit 300 ns)</text>
+<path d="M400 36H860" stroke="#3a414c" stroke-width="10" stroke-linecap="round"/><path d="M400.0 36H810.7" stroke="#2f8f5b" stroke-width="10"/><path d="M782.8 23v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="41" font-size="13" font-weight="700" fill="#ffcc33">280&nbsp;ns</text>
+<text x="385" y="93" text-anchor="end" font-size="13" fill="#e6ebf2">Rise time with two pull-up sets</text>
+<path d="M400 88H860" stroke="#3a414c" stroke-width="10" stroke-linecap="round"/><path d="M400.0 88H810.7" stroke="#2f8f5b" stroke-width="10"/><path d="M591.4 75v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="93" font-size="13" font-weight="700" fill="#ffcc33">140&nbsp;ns</text>
+<text x="385" y="145" text-anchor="end" font-size="13" fill="#e6ebf2">Low level with two pull-up sets</text>
+<path d="M400 140H860" stroke="#3a414c" stroke-width="10" stroke-linecap="round"/><path d="M400.0 140H810.7" stroke="#2f8f5b" stroke-width="10"/><path d="M518.9 127v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="145" font-size="13" font-weight="700" fill="#ffcc33">116&nbsp;mV</text>
 </svg>
   </div>
   <figcaption>Simulated value (yellow) against the limit used for it (green). Each bar has its own scale.</figcaption>

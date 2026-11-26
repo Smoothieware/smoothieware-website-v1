@@ -333,8 +333,6 @@ Still stuck? Read [how to ask for help](/help-guidelines) or see the general [tr
     <tr><td><a href="/images/extensions/joystick-breakout/joystick-breakout-schematic.pdf">Schematic (PDF)</a></td><td>The circuit diagram</td></tr>
     <tr><td><a href="/images/extensions/joystick-breakout/joystick-breakout-bom.csv">Parts list (CSV)</a></td><td>Every component with its value, footprint and part number where one is chosen</td></tr>
     <tr><td><a href="/images/extensions/joystick-breakout/joystick-breakout-diagram.png">Board drawing (PNG)</a></td><td>The top view used on this page</td></tr>
-    <tr><td><a href="/images/extensions/joystick-breakout/joystick-breakout-populated-top.png">3D view, top (PNG)</a></td><td>Rendered from the design files; the joystick body is an approximate model</td></tr>
-    <tr><td><a href="/images/extensions/joystick-breakout/joystick-breakout-populated-isometric.png">3D view, angled (PNG)</a></td><td>Rendered from the design files; the joystick body is an approximate model</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}
@@ -431,10 +429,14 @@ The wiper filter and the switch network were simulated with ngspice. The wiper c
   <div class="xb-fig-scroll" tabindex="0" role="region" aria-label="Simulated results against limits">
 <svg viewBox="0 0 1000 238" role="img" aria-labelledby="xb-joy-sim-t">
 <title id="xb-joy-sim-t">Each simulated value (yellow mark) against its allowed range (green band).</title>
-<text x="385" y="41" text-anchor="end" font-size="13" fill="#e6ebf2">Centre output at 3.3 V, 10 k element, no load</text><path d="M400 36H860" stroke="#3a414c" stroke-width="10" stroke-linecap="round"/><path d="M444.5 36H815.5" stroke="#2f8f5b" stroke-width="10"/><path d="M629.6 23v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="41" font-size="13" font-weight="700" fill="#ffcc33">1.65&nbsp;V</text>
-<text x="385" y="93" text-anchor="end" font-size="13" fill="#e6ebf2">Settling to 0.1 % after a step</text><path d="M400 88H860" stroke="#3a414c" stroke-width="10" stroke-linecap="round"/><path d="M400.0 88H810.7" stroke="#2f8f5b" stroke-width="10"/><path d="M499.3 75v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="93" font-size="13" font-weight="700" fill="#ffcc33">242&nbsp;&micro;s</text>
-<text x="385" y="145" text-anchor="end" font-size="13" fill="#e6ebf2">Switch output when pressed</text><path d="M400 140H860" stroke="#3a414c" stroke-width="10" stroke-linecap="round"/><path d="M400.0 140H810.7" stroke="#2f8f5b" stroke-width="10"/><path d="M646.5 127v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="145" font-size="13" font-weight="700" fill="#ffcc33">300&nbsp;mV</text>
-<text x="385" y="197" text-anchor="end" font-size="13" fill="#e6ebf2">Switch output 5.9 ms after release</text><path d="M400 192H860" stroke="#3a414c" stroke-width="10" stroke-linecap="round"/><path d="M444.5 192H815.5" stroke="#2f8f5b" stroke-width="10"/><path d="M752.9 179v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="197" font-size="13" font-weight="700" fill="#ffcc33">3.29&nbsp;V</text>
+<text x="385" y="41" text-anchor="end" font-size="13" fill="#e6ebf2">Centre output at 3.3 V, 10 k element, no load</text>
+<path d="M400 36H860" stroke="#3a414c" stroke-width="10" stroke-linecap="round"/><path d="M444.5 36H815.5" stroke="#2f8f5b" stroke-width="10"/><path d="M629.6 23v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="41" font-size="13" font-weight="700" fill="#ffcc33">1.65&nbsp;V</text>
+<text x="385" y="93" text-anchor="end" font-size="13" fill="#e6ebf2">Settling to 0.1 % after a step</text>
+<path d="M400 88H860" stroke="#3a414c" stroke-width="10" stroke-linecap="round"/><path d="M400.0 88H810.7" stroke="#2f8f5b" stroke-width="10"/><path d="M499.3 75v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="93" font-size="13" font-weight="700" fill="#ffcc33">242&nbsp;&micro;s</text>
+<text x="385" y="145" text-anchor="end" font-size="13" fill="#e6ebf2">Switch output when pressed</text>
+<path d="M400 140H860" stroke="#3a414c" stroke-width="10" stroke-linecap="round"/><path d="M400.0 140H810.7" stroke="#2f8f5b" stroke-width="10"/><path d="M646.5 127v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="145" font-size="13" font-weight="700" fill="#ffcc33">300&nbsp;mV</text>
+<text x="385" y="197" text-anchor="end" font-size="13" fill="#e6ebf2">Switch output 5.9 ms after release</text>
+<path d="M400 192H860" stroke="#3a414c" stroke-width="10" stroke-linecap="round"/><path d="M444.5 192H815.5" stroke="#2f8f5b" stroke-width="10"/><path d="M752.9 179v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="197" font-size="13" font-weight="700" fill="#ffcc33">3.29&nbsp;V</text>
 </svg>
   </div>
   <figcaption>Simulated value (yellow) against the limit used for it (green). Each bar has its own scale.</figcaption>

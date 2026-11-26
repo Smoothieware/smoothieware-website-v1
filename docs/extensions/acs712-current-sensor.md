@@ -313,8 +313,6 @@ Still stuck? Read [how to ask for help](/help-guidelines) or see the general [tr
     <tr><td><a href="/images/extensions/acs712-current-sensor/acs712-current-sensor-schematic.pdf">Schematic (PDF)</a></td><td>The circuit diagram</td></tr>
     <tr><td><a href="/images/extensions/acs712-current-sensor/acs712-current-sensor-bom.csv">Parts list (CSV)</a></td><td>Every component with its value, footprint and part number where one is chosen</td></tr>
     <tr><td><a href="/images/extensions/acs712-current-sensor/acs712-current-sensor-diagram.png">Board drawing (PNG)</a></td><td>The top view used on this page</td></tr>
-    <tr><td><a href="/images/extensions/acs712-current-sensor/acs712-current-sensor-populated-top.png">3D view, top (PNG)</a></td><td>Rendered from the design files</td></tr>
-    <tr><td><a href="/images/extensions/acs712-current-sensor/acs712-current-sensor-populated-isometric.png">3D view, angled (PNG)</a></td><td>Rendered from the design files</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}
@@ -408,11 +406,16 @@ The output dividers and filter were simulated with ngspice.
   <div class="xb-fig-scroll" tabindex="0" role="region" aria-label="Simulated results against limits">
 <svg viewBox="0 0 1000 290" role="img" aria-labelledby="xb-amps-sim-t">
 <title id="xb-amps-sim-t">Each simulated value (yellow mark) against its allowed range (green band).</title>
-<text x="385" y="41" text-anchor="end" font-size="13" fill="#e6ebf2">Output at zero current</text><path d="M400 36H860" stroke="#3a414c" stroke-width="10" stroke-linecap="round"/><path d="M444.5 36H815.5" stroke="#2f8f5b" stroke-width="10"/><path d="M656.5 23v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="41" font-size="13" font-weight="700" fill="#ffcc33">1.61&nbsp;V</text>
-<text x="385" y="93" text-anchor="end" font-size="13" fill="#e6ebf2">Output with VIOUT at 4.5 V (+20 A)</text><path d="M400 88H860" stroke="#3a414c" stroke-width="10" stroke-linecap="round"/><path d="M444.5 88H815.5" stroke="#2f8f5b" stroke-width="10"/><path d="M643.2 75v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="93" font-size="13" font-weight="700" fill="#ffcc33">2.89&nbsp;V</text>
-<text x="385" y="145" text-anchor="end" font-size="13" fill="#e6ebf2">Divider gain</text><path d="M400 140H860" stroke="#3a414c" stroke-width="10" stroke-linecap="round"/><path d="M444.5 140H815.5" stroke="#2f8f5b" stroke-width="10"/><path d="M621.2 127v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="145" font-size="13" font-weight="700" fill="#ffcc33">643&nbsp;mV/V</text>
-<text x="385" y="197" text-anchor="end" font-size="13" fill="#e6ebf2">90 % step response of the output filter</text><path d="M400 192H860" stroke="#3a414c" stroke-width="10" stroke-linecap="round"/><path d="M400.0 192H810.7" stroke="#2f8f5b" stroke-width="10"/><path d="M602.0 179v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="197" font-size="13" font-weight="700" fill="#ffcc33">148&nbsp;&micro;s</text>
-<text x="385" y="249" text-anchor="end" font-size="13" fill="#e6ebf2">Highest output with VIOUT at the 5 V rail</text><path d="M400 244H860" stroke="#3a414c" stroke-width="10" stroke-linecap="round"/><path d="M400.0 244H810.7" stroke="#2f8f5b" stroke-width="10"/><path d="M800.0 231v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="249" font-size="13" font-weight="700" fill="#ffcc33">3.21&nbsp;V</text>
+<text x="385" y="41" text-anchor="end" font-size="13" fill="#e6ebf2">Output at zero current</text>
+<path d="M400 36H860" stroke="#3a414c" stroke-width="10" stroke-linecap="round"/><path d="M444.5 36H815.5" stroke="#2f8f5b" stroke-width="10"/><path d="M656.5 23v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="41" font-size="13" font-weight="700" fill="#ffcc33">1.61&nbsp;V</text>
+<text x="385" y="93" text-anchor="end" font-size="13" fill="#e6ebf2">Output with VIOUT at 4.5 V (+20 A)</text>
+<path d="M400 88H860" stroke="#3a414c" stroke-width="10" stroke-linecap="round"/><path d="M444.5 88H815.5" stroke="#2f8f5b" stroke-width="10"/><path d="M643.2 75v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="93" font-size="13" font-weight="700" fill="#ffcc33">2.89&nbsp;V</text>
+<text x="385" y="145" text-anchor="end" font-size="13" fill="#e6ebf2">Divider gain</text>
+<path d="M400 140H860" stroke="#3a414c" stroke-width="10" stroke-linecap="round"/><path d="M444.5 140H815.5" stroke="#2f8f5b" stroke-width="10"/><path d="M621.2 127v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="145" font-size="13" font-weight="700" fill="#ffcc33">0.643&nbsp;V/V</text>
+<text x="385" y="197" text-anchor="end" font-size="13" fill="#e6ebf2">90 % step response of the output filter</text>
+<path d="M400 192H860" stroke="#3a414c" stroke-width="10" stroke-linecap="round"/><path d="M400.0 192H810.7" stroke="#2f8f5b" stroke-width="10"/><path d="M602.0 179v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="197" font-size="13" font-weight="700" fill="#ffcc33">148&nbsp;&micro;s</text>
+<text x="385" y="249" text-anchor="end" font-size="13" fill="#e6ebf2">Highest output with VIOUT at the 5 V rail</text>
+<path d="M400 244H860" stroke="#3a414c" stroke-width="10" stroke-linecap="round"/><path d="M400.0 244H810.7" stroke="#2f8f5b" stroke-width="10"/><path d="M800.0 231v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="249" font-size="13" font-weight="700" fill="#ffcc33">3.21&nbsp;V</text>
 </svg>
   </div>
   <figcaption>Simulated value (yellow) against the limit used for it (green). Each bar has its own scale.</figcaption>
@@ -422,7 +425,7 @@ The output dividers and filter were simulated with ngspice.
   <tbody>
     <tr><td>Output at zero current</td><td>1.61&nbsp;V</td><td>1.59&nbsp;V to 1.62&nbsp;V</td><td>Within</td></tr>
     <tr><td>Output with VIOUT at 4.5 V (+20 A)</td><td>2.89&nbsp;V</td><td>2.85&nbsp;V to 2.93&nbsp;V</td><td>Within</td></tr>
-    <tr><td>Divider gain</td><td>643&nbsp;mV/V</td><td>640&nbsp;mV/V to 646&nbsp;mV/V</td><td>Within</td></tr>
+    <tr><td>Divider gain</td><td>0.643&nbsp;V/V</td><td>0.64&nbsp;V/V to 0.646&nbsp;V/V</td><td>Within</td></tr>
     <tr><td>90 % step response of the output filter</td><td>148&nbsp;&micro;s</td><td>at most 300&nbsp;&micro;s</td><td>Within</td></tr>
     <tr><td>Highest output with VIOUT at the 5 V rail</td><td>3.21&nbsp;V</td><td>at most 3.3&nbsp;V</td><td>Within</td></tr>
   </tbody>

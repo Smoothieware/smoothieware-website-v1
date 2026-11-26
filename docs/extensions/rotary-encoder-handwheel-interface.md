@@ -377,8 +377,6 @@ Still stuck? Read [how to ask for help](/help-guidelines) or see the general [tr
     <tr><td><a href="/images/extensions/rotary-encoder-handwheel-interface/rotary-encoder-handwheel-interface-schematic.pdf">Schematic (PDF)</a></td><td>The circuit diagram</td></tr>
     <tr><td><a href="/images/extensions/rotary-encoder-handwheel-interface/rotary-encoder-handwheel-interface-bom.csv">Parts list (CSV)</a></td><td>Every component with its value, footprint and part number where one is chosen</td></tr>
     <tr><td><a href="/images/extensions/rotary-encoder-handwheel-interface/rotary-encoder-handwheel-interface-diagram.png">Board drawing (PNG)</a></td><td>The top view used on this page</td></tr>
-    <tr><td><a href="/images/extensions/rotary-encoder-handwheel-interface/rotary-encoder-handwheel-interface-populated-top.png">3D view, top (PNG)</a></td><td>Rendered from the design files</td></tr>
-    <tr><td><a href="/images/extensions/rotary-encoder-handwheel-interface/rotary-encoder-handwheel-interface-populated-isometric.png">3D view, angled (PNG)</a></td><td>Rendered from the design files</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}
@@ -472,10 +470,15 @@ The single-ended and open-collector input cases were simulated with ngspice.
   <div class="xb-fig-scroll" tabindex="0" role="region" aria-label="Simulated results against limits">
 <svg viewBox="0 0 1000 238" role="img" aria-labelledby="xb-wheel-sim-t">
 <title id="xb-wheel-sim-t">Each simulated value (yellow mark) against its allowed range (green band).</title>
-<text x="385" y="41" text-anchor="end" font-size="13" fill="#e6ebf2">Input low level with open-collector output</text><path d="M400 36H860" stroke="#3a414c" stroke-width="10" stroke-linecap="round"/><path d="M400.0 36H810.7" stroke="#2f8f5b" stroke-width="10"/><path d="M416.5 23v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="41" font-size="13" font-weight="700" fill="#ffcc33">52.2&nbsp;mV</text>
-<text x="385" y="93" text-anchor="end" font-size="13" fill="#e6ebf2">Input high level, pull-up fitted</text><path d="M400 88H860" stroke="#3a414c" stroke-width="10" stroke-linecap="round"/><path d="M444.5 88H815.5" stroke="#2f8f5b" stroke-width="10"/><path d="M675.9 75v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="93" font-size="13" font-weight="700" fill="#ffcc33">3.76&nbsp;V</text>
-<text x="385" y="145" text-anchor="end" font-size="13" fill="#e6ebf2">Rise to the 1.7 V threshold with 1 nF cable</text><path d="M400 140H860" stroke="#3a414c" stroke-width="10" stroke-linecap="round"/><path d="M400.0 140H810.7" stroke="#2f8f5b" stroke-width="10"/><path d="M436.0 127v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="145" font-size="13" font-weight="700" fill="#ffcc33">875&nbsp;ns</text>
-<text x="385" y="197" text-anchor="end" font-size="13" fill="#e6ebf2">Single-ended threshold, pessimistic loading to gr...</text><path d="M400 192H860" stroke="#3a414c" stroke-width="10" stroke-linecap="round"/><path d="M444.5 192H815.5" stroke="#2f8f5b" stroke-width="10"/><path d="M659.5 179v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="197" font-size="13" font-weight="700" fill="#ffcc33">1.26&nbsp;V</text>
+<text x="385" y="41" text-anchor="end" font-size="13" fill="#e6ebf2">Input low level with open-collector output</text>
+<path d="M400 36H860" stroke="#3a414c" stroke-width="10" stroke-linecap="round"/><path d="M400.0 36H810.7" stroke="#2f8f5b" stroke-width="10"/><path d="M416.5 23v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="41" font-size="13" font-weight="700" fill="#ffcc33">52.2&nbsp;mV</text>
+<text x="385" y="93" text-anchor="end" font-size="13" fill="#e6ebf2">Input high level, pull-up fitted</text>
+<path d="M400 88H860" stroke="#3a414c" stroke-width="10" stroke-linecap="round"/><path d="M444.5 88H815.5" stroke="#2f8f5b" stroke-width="10"/><path d="M675.9 75v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="93" font-size="13" font-weight="700" fill="#ffcc33">3.76&nbsp;V</text>
+<text x="385" y="145" text-anchor="end" font-size="13" fill="#e6ebf2">Rise to the 1.7 V threshold with 1 nF cable</text>
+<path d="M400 140H860" stroke="#3a414c" stroke-width="10" stroke-linecap="round"/><path d="M400.0 140H810.7" stroke="#2f8f5b" stroke-width="10"/><path d="M436.0 127v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="145" font-size="13" font-weight="700" fill="#ffcc33">875&nbsp;ns</text>
+<text x="385" y="189" text-anchor="end" font-size="13" fill="#e6ebf2">Single-ended threshold, pessimistic loading to</text>
+<text x="385" y="205" text-anchor="end" font-size="13" fill="#e6ebf2">ground</text>
+<path d="M400 192H860" stroke="#3a414c" stroke-width="10" stroke-linecap="round"/><path d="M444.5 192H815.5" stroke="#2f8f5b" stroke-width="10"/><path d="M659.5 179v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="197" font-size="13" font-weight="700" fill="#ffcc33">1.26&nbsp;V</text>
 </svg>
   </div>
   <figcaption>Simulated value (yellow) against the limit used for it (green). Each bar has its own scale.</figcaption>

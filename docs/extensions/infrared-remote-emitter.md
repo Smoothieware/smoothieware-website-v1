@@ -301,10 +301,14 @@ A further board on CHAIN can use contacts 3 to 6, 8 and 9. Allow for this board&
 </table></div>
 {:/nomarkdown}
 
-| Light | Meaning |
-|---|---|
-| Red (D3) | Infrared LEDs being driven |
-{: .xb-leds}
+{::nomarkdown}
+<div class="xb-tablewrap"><table class="xb-leds">
+  <thead><tr><th>Light</th><th><span class="xb-led xb-led-red"></span>Red (D3)</th></tr></thead>
+  <tbody>
+    <tr><td>Lit means</td><td>Infrared LEDs being driven</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
 Still stuck? Read [how to ask for help](/help-guidelines) or see the general [troubleshooting guide](/troubleshooting/).
 
@@ -317,8 +321,6 @@ Still stuck? Read [how to ask for help](/help-guidelines) or see the general [tr
     <tr><td><a href="/images/extensions/infrared-remote-emitter/infrared-remote-emitter-schematic.pdf">Schematic (PDF)</a></td><td>The circuit diagram</td></tr>
     <tr><td><a href="/images/extensions/infrared-remote-emitter/infrared-remote-emitter-bom.csv">Parts list (CSV)</a></td><td>Every component with its value, footprint and part number where one is chosen</td></tr>
     <tr><td><a href="/images/extensions/infrared-remote-emitter/infrared-remote-emitter-diagram.png">Board drawing (PNG)</a></td><td>The top view used on this page</td></tr>
-    <tr><td><a href="/images/extensions/infrared-remote-emitter/infrared-remote-emitter-populated-top.png">3D view, top (PNG)</a></td><td>Rendered from the design files</td></tr>
-    <tr><td><a href="/images/extensions/infrared-remote-emitter/infrared-remote-emitter-populated-isometric.png">3D view, angled (PNG)</a></td><td>Rendered from the design files</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}
@@ -412,9 +414,12 @@ The LED drive was simulated with ngspice at 38&nbsp;kHz and one-third duty with 
   <div class="xb-fig-scroll" tabindex="0" role="region" aria-label="Simulated results against limits">
 <svg viewBox="0 0 1000 186" role="img" aria-labelledby="xb-irtx-sim-t">
 <title id="xb-irtx-sim-t">Each simulated value (yellow mark) against its allowed range (green band).</title>
-<text x="385" y="41" text-anchor="end" font-size="13" fill="#e6ebf2">Peak LED current</text><path d="M400 36H860" stroke="#3a414c" stroke-width="10" stroke-linecap="round"/><path d="M444.5 36H815.5" stroke="#2f8f5b" stroke-width="10"/><path d="M612.3 23v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="41" font-size="13" font-weight="700" fill="#ffcc33">75.8&nbsp;mA</text>
-<text x="385" y="93" text-anchor="end" font-size="13" fill="#e6ebf2">Average LED current at one third duty</text><path d="M400 88H860" stroke="#3a414c" stroke-width="10" stroke-linecap="round"/><path d="M444.5 88H815.5" stroke="#2f8f5b" stroke-width="10"/><path d="M632.9 75v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="93" font-size="13" font-weight="700" fill="#ffcc33">25.2&nbsp;mA</text>
-<text x="385" y="145" text-anchor="end" font-size="13" fill="#e6ebf2">Resistor power if held on</text><path d="M400 140H860" stroke="#3a414c" stroke-width="10" stroke-linecap="round"/><path d="M400.0 140H810.7" stroke="#2f8f5b" stroke-width="10"/><path d="M622.0 127v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="145" font-size="13" font-weight="700" fill="#ffcc33">270&nbsp;mW</text>
+<text x="385" y="41" text-anchor="end" font-size="13" fill="#e6ebf2">Peak LED current</text>
+<path d="M400 36H860" stroke="#3a414c" stroke-width="10" stroke-linecap="round"/><path d="M444.5 36H815.5" stroke="#2f8f5b" stroke-width="10"/><path d="M612.3 23v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="41" font-size="13" font-weight="700" fill="#ffcc33">75.8&nbsp;mA</text>
+<text x="385" y="93" text-anchor="end" font-size="13" fill="#e6ebf2">Average LED current at one third duty</text>
+<path d="M400 88H860" stroke="#3a414c" stroke-width="10" stroke-linecap="round"/><path d="M444.5 88H815.5" stroke="#2f8f5b" stroke-width="10"/><path d="M632.9 75v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="93" font-size="13" font-weight="700" fill="#ffcc33">25.2&nbsp;mA</text>
+<text x="385" y="145" text-anchor="end" font-size="13" fill="#e6ebf2">Resistor power if held on</text>
+<path d="M400 140H860" stroke="#3a414c" stroke-width="10" stroke-linecap="round"/><path d="M400.0 140H810.7" stroke="#2f8f5b" stroke-width="10"/><path d="M622.0 127v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="145" font-size="13" font-weight="700" fill="#ffcc33">270&nbsp;mW</text>
 </svg>
   </div>
   <figcaption>Simulated value (yellow) against the limit used for it (green). Each bar has its own scale.</figcaption>
