@@ -449,17 +449,8 @@ Still stuck? Read [how to ask for help](/help-guidelines) or see the general [tr
     <tr><td><a href="/images/extensions/three-channel-a5984-stepper-driver/three-channel-a5984-stepper-driver-schematic.pdf">Schematic (PDF)</a></td><td>The circuit diagram</td></tr>
     <tr><td><a href="/images/extensions/three-channel-a5984-stepper-driver/three-channel-a5984-stepper-driver-bom.csv">Parts list (CSV)</a></td><td>Every component with its value, footprint and part number where one is chosen</td></tr>
     <tr><td><a href="/images/extensions/three-channel-a5984-stepper-driver/three-channel-a5984-stepper-driver-diagram.png">Board drawing (PNG)</a></td><td>The top view used on this page</td></tr>
-    <tr><td><a href="/images/extensions/three-channel-a5984-stepper-driver/three-channel-a5984-stepper-driver-populated-top.png">3D view, top (PNG)</a></td><td>Rendered from the design files; the trimmers have no 3D model</td></tr>
-    <tr><td><a href="/images/extensions/three-channel-a5984-stepper-driver/three-channel-a5984-stepper-driver-populated-isometric.png">3D view, angled (PNG)</a></td><td>Rendered from the design files; the trimmers have no 3D model</td></tr>
   </tbody>
 </table></div>
-{:/nomarkdown}
-
-{::nomarkdown}
-<figure class="xb-fig">
-  <a href="/images/extensions/three-channel-a5984-stepper-driver/three-channel-a5984-stepper-driver-populated-isometric.png"><img src="/images/extensions/three-channel-a5984-stepper-driver/three-channel-a5984-stepper-driver-populated-isometric.png" alt="Angled three-dimensional rendering of the board with capacitors, driver chips, motor pin headers and the power terminal." style="display:block;width:100%;max-width:640px;height:auto;margin:0 auto"></a>
-  <figcaption>Rendering from the design files. The trimmers have no 3D model, so only their pads show.</figcaption>
-</figure>
 {:/nomarkdown}
 
 ## Appendix: mounting dimensions {#mounting}
