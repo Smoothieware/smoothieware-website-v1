@@ -1,0 +1,39 @@
+{::nomarkdown}
+<style>
+.markdown-body .xb-cmp td, .markdown-body .xb-cmp thead th { text-align: center; }
+.markdown-body .xb-cmp tbody th { text-align: left; font-weight: 400; }
+.markdown-body .xb-cmp .xb-cmp-group th { text-align: left; font-size: .78rem; letter-spacing: .06em; text-transform: uppercase; opacity: .7; }
+.xb-cmp-yes sl-icon { color: #35c26b; font-size: 1.25rem; vertical-align: middle; }
+.xb-cmp-no sl-icon { color: #ff5d5d; font-size: 1.25rem; vertical-align: middle; }
+.xb-cmp-note { display: block; font-size: .8rem; opacity: .75; }
+</style>
+<h2 id="compare-endstop-boards">Compare the endstop input boards</h2>
+<p>Both boards bring several switches to one ten-way controller cable.</p>
+<div class="xb-tablewrap" role="region" aria-labelledby="compare-endstop-boards" tabindex="0">
+  <table class="xb-cmp">
+    <thead>
+      <tr>
+        <th scope="col"></th>
+        <th scope="col"><a href="{{ '/extensions/endstop-inputs-basic' | relative_url }}">Endstop inputs (basic)</a></th>
+        <th scope="col"><a href="{{ '/extensions/endstop-and-probe-inputs-advanced' | relative_url }}">Endstop and probe inputs (advanced)</a></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="xb-cmp-group"><th scope="rowgroup" colspan="3">Specifications</th></tr>
+      <tr><th scope="row">Inputs</th><td>7</td><td>6, plus 1 probe input</td></tr>
+      <tr><th scope="row">Sensor supply</th><td>3.3 or 5 V</td><td>5 V</td></tr>
+      <tr><th scope="row">Input connectors</th><td>3-pin 2.54 mm header</td><td>3-pin header, JST PH or jack, and a screw terminal</td></tr>
+      <tr><th scope="row">Size</th><td>77 × 27 mm</td><td>96 × 70.5 mm</td></tr>
+      <tr class="xb-cmp-group"><th scope="rowgroup" colspan="3">Features</th></tr>
+      <tr><th scope="row">Light on every input</th><td class="xb-cmp-yes"><sl-icon name="check-circle-fill" label="Yes"></sl-icon></td><td class="xb-cmp-no"><sl-icon name="x-circle-fill" label="No"></sl-icon></td></tr>
+      <tr><th scope="row">Buffered controller signals</th><td class="xb-cmp-no"><sl-icon name="x-circle-fill" label="No"></sl-icon></td><td class="xb-cmp-yes"><sl-icon name="check-circle-fill" label="Yes"></sl-icon></td></tr>
+      <tr><th scope="row">Limited sensor supply</th><td class="xb-cmp-no"><sl-icon name="x-circle-fill" label="No"></sl-icon></td><td class="xb-cmp-yes"><sl-icon name="check-circle-fill" label="Yes"></sl-icon></td></tr>
+      <tr><th scope="row">Probe input for a positive-voltage signal</th><td class="xb-cmp-no"><sl-icon name="x-circle-fill" label="No"></sl-icon></td><td class="xb-cmp-yes"><sl-icon name="check-circle-fill" label="Yes"></sl-icon></td></tr>
+      <tr><th scope="row">Cuttable link on every input</th><td class="xb-cmp-yes"><sl-icon name="check-circle-fill" label="Yes"></sl-icon></td><td class="xb-cmp-yes"><sl-icon name="check-circle-fill" label="Yes"></sl-icon></td></tr>
+      <tr><th scope="row">Second connector for another board</th><td class="xb-cmp-yes"><sl-icon name="check-circle-fill" label="Yes"></sl-icon></td><td class="xb-cmp-yes"><sl-icon name="check-circle-fill" label="Yes"></sl-icon></td></tr>
+      <tr><th scope="row">M3 mounting holes</th><td class="xb-cmp-yes"><sl-icon name="check-circle-fill" label="Yes"></sl-icon></td><td class="xb-cmp-yes"><sl-icon name="check-circle-fill" label="Yes"></sl-icon></td></tr>
+      <tr><th scope="row">Cable-tie holes</th><td class="xb-cmp-no"><sl-icon name="x-circle-fill" label="No"></sl-icon></td><td class="xb-cmp-yes"><sl-icon name="check-circle-fill" label="Yes"></sl-icon></td></tr>
+    </tbody>
+  </table>
+</div>
+{:/nomarkdown}

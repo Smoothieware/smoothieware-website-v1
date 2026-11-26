@@ -87,8 +87,8 @@ Historical entries appear alongside related modern boards. A similar name does n
     <td><p class="extension-board-name"><a href="/extensions/carvera-wireless-probe-interface">Carvera wireless-probe interface</a></p><p>Interface between a Makera Carvera wireless Z probe receiver and Smoothieboard V2. Do not wire it to a machine.</p></td>
   </tr>
   <tr>
-    <td><a href="/extensions/historical-extraendstops" aria-label="Open the Endstop inputs (basic) guide"><img src="/images/extensions/historical-extraendstops/directory-board-render.png" alt="" loading="lazy" decoding="async"></a></td>
-    <td><p class="extension-board-name"><a href="/extensions/historical-extraendstops">Endstop inputs (basic)</a></p><p>This board expands a host GPIO connector into seven powered three-wire endstop interfaces with per-channel filtering/indicator circuitry.</p></td>
+    <td><a href="/extensions/endstop-inputs-basic" aria-label="Open the Endstop inputs (basic) guide"><img src="/images/extensions/endstop-inputs-basic/directory-board-render.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><p class="extension-board-name"><a href="/extensions/endstop-inputs-basic">Endstop inputs (basic)</a></p><p>Connects seven switches to one controller cable, each with its own light and filter.</p></td>
   </tr>
   <tr>
     <td><a href="/extensions/endstop-and-probe-inputs-advanced" aria-label="Open the Endstop and probe inputs (advanced) guide"><img src="/images/extensions/endstop-and-probe-inputs-advanced/directory-board-render.png" alt="" loading="lazy" decoding="async"></a></td>

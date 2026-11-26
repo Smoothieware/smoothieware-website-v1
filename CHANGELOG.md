@@ -8,11 +8,13 @@ History: see CHANGELOG.archive.md.
 
 ### Added
 
+- A page for the Endstop inputs (basic) board: pinout, wiring, configuration, limits, mounting, electrical and simulation data, with a comparison against the Endstop and probe inputs (advanced) board on both pages.
 - Perma-proto Gadgeteer board page rebuilt, with three example projects (touch plate switch, 555 solenoid tapper, stepper motor as handwheel), populated-board drawings and Smoothie V2 settings.
 - A page for the three-channel A5984 stepper driver board: pinout, wiring, current setting, configuration, electrical, mounting and simulation data. The board is also listed in the extension board directory and the stepper board comparison.
 
 ### Fixed
 
+- The extension boards list now links the new Endstop inputs (basic) page in place of the historical ExtraEndstops page, which is linked from an appendix on the new page.
 - The extension boards list now links the new three-channel A5984 stepper driver board page in place of the historical one, which is linked from an appendix on the new page.
 - Extension board drawings now show the solder pads of underside-mounted pin headers, plated test points and prototyping holes. The main drawing on ten board pages now includes these features.
 - Extension board drawings on the board directory and board pages now show their mounting and cable-tie holes.

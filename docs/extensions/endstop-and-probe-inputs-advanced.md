@@ -37,6 +37,7 @@ redirect_from:
 </div>
 
 <nav class="xb-nav" aria-label="On this page">
+  <a href="#compare-endstop-boards">Compare boards</a>
   <a href="#specs">Tech specs</a>
   <a href="#tour">Board tour</a>
   <a href="#pinout">Pinout</a>
@@ -53,6 +54,8 @@ redirect_from:
   <a href="#electrical">Electrical</a>
 </nav>
 {:/nomarkdown}
+
+{% include _includes/endstop-board-comparison.html %}
 
 ## Tech specs {#specs}
 
