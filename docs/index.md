@@ -386,7 +386,7 @@ The [complete extension-board directory](/extension-boards) describes what each 
 
 ### Sensors and inputs
 
-- [Additional endstop inputs breakout](/extensions/additional-endstop-inputs-breakout)
+- [Endstop and probe inputs (advanced)](/extensions/endstop-and-probe-inputs-advanced)
 - [BLTouch-like probe](/extensions/bltouch-like-probe)
 - [BounceStop hardware debounce](/extensions/historical-bounce-stop)¹
 - [Filament encoder board](/extensions/filament-encoder-board)

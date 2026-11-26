@@ -1,8 +1,10 @@
 ---
 layout: default
-title: "Additional endstop inputs breakout"
+title: "Endstop and probe inputs (advanced)"
 description: "Add six endstop or sensor inputs and one probe input to Smoothieboard V2: pinout, wiring, configuration and troubleshooting."
-permalink: /extensions/additional-endstop-inputs-breakout
+permalink: /extensions/endstop-and-probe-inputs-advanced
+redirect_from:
+  - /extensions/additional-endstop-inputs-breakout
 ---
 
 {% include _includes/extension-board-page.html %}
@@ -11,7 +13,7 @@ permalink: /extensions/additional-endstop-inputs-breakout
 <div class="xb-hero">
   <div>
     <p class="xb-eyebrow">Extension board · Inputs</p>
-    <h1 id="additional-endstop-inputs-breakout">Additional endstop inputs breakout</h1>
+    <h1 id="endstop-and-probe-inputs-advanced">Endstop and probe inputs (advanced)</h1>
     <p class="xb-lead">Give your Smoothieboard seven more inputs: six for limit switches or 5&nbsp;V sensors, and one for a probe whose signal can be as high as 45&nbsp;V. One ribbon cable connects it, and the board powers your sensors itself.</p>
     <div class="xb-actions">
       <a class="xb-btn xb-btn-primary" href="#get-started">Get started</a>
@@ -20,7 +22,7 @@ permalink: /extensions/additional-endstop-inputs-breakout
     </div>
   </div>
   <figure>
-    <img src="/images/extensions/additional-endstop-inputs-breakout/endstop-inputs-diagram.png" alt="Top view drawing of the endstop inputs board: two ribbon-cable connectors along the top edge, six white three-pin input connectors numbered 1 to 6 along the bottom edge and a green three-way screw terminal at the bottom right.">
+    <img src="/images/extensions/endstop-and-probe-inputs-advanced/endstop-inputs-diagram.png" alt="Top view drawing of the endstop inputs board: two ribbon-cable connectors along the top edge, six white three-pin input connectors numbered 1 to 6 along the bottom edge and a green three-way screw terminal at the bottom right.">
     <figcaption>Drawing generated from the board's design files, to scale. It is not a photograph.</figcaption>
   </figure>
 </div>
@@ -86,7 +88,7 @@ The numbers on the picture match the list below it. The board is shown from the 
 <figure class="xb-tour">
   <div class="xb-tour-scroll" tabindex="0" role="region" aria-label="Annotated top view of the board">
     <div class="xb-tour-stage">
-      <img src="/images/extensions/additional-endstop-inputs-breakout/endstop-inputs-diagram.png" alt="Top view drawing of the endstop inputs board with thirteen numbered markers that are explained in the list below.">
+      <img src="/images/extensions/endstop-and-probe-inputs-advanced/endstop-inputs-diagram.png" alt="Top view drawing of the endstop inputs board with thirteen numbered markers that are explained in the list below.">
       <a class="xb-mk xb-pb xb-pl" href="#tour-1" style="left:21.4%;top:9.4%" aria-label="1: controller connector">1<span class="xb-pop"><b>Controller connector (J8)</b> — the ribbon cable to your Smoothieboard goes here. <i>Pin 1 is at the left, marked <b>1</b>. See the pinout.</i></span></a>
       <a class="xb-mk xb-pb" href="#tour-2" style="left:68.4%;top:9.4%" aria-label="2: chain connector">2<span class="xb-pop"><b>Chain connector (J9)</b> — passes power, and any controller pins you free up, to a second board. <i>Its signal pins are not connected as delivered.</i></span></a>
       <a class="xb-mk xb-pb" href="#tour-3" style="left:48.0%;top:22.9%" aria-label="3: chain links">3<span class="xb-pop"><b>Chain links JP11 to JP20</b> — one solder link per pin of the chain connector. <i>JP11, JP12 and JP20 (power and ground) are closed as delivered; JP13 to JP19 (signals) are open.</i></span></a>
@@ -641,9 +643,9 @@ Still stuck? Read [how to ask for help](/help-guidelines) or see the general [tr
 <div class="xb-tablewrap"><table>
   <thead><tr><th>File</th><th>What it is</th></tr></thead>
   <tbody>
-    <tr><td><a href="/images/extensions/additional-endstop-inputs-breakout/endstop-inputs-schematic.pdf">Schematic (PDF)</a></td><td>The complete circuit diagram</td></tr>
-    <tr><td><a href="/images/extensions/additional-endstop-inputs-breakout/endstop-inputs-bom.csv">Parts list (CSV)</a></td><td>Every component with its value and footprint. Inputs 1 to 6 are listed with the shared footprint that accepts all three connector types.</td></tr>
-    <tr><td><a href="/images/extensions/additional-endstop-inputs-breakout/endstop-inputs-diagram.png">Top view (SVG)</a></td><td>The drawing used on this page, to scale: one unit is one millimetre</td></tr>
+    <tr><td><a href="/images/extensions/endstop-and-probe-inputs-advanced/endstop-inputs-schematic.pdf">Schematic (PDF)</a></td><td>The complete circuit diagram</td></tr>
+    <tr><td><a href="/images/extensions/endstop-and-probe-inputs-advanced/endstop-inputs-bom.csv">Parts list (CSV)</a></td><td>Every component with its value and footprint. Inputs 1 to 6 are listed with the shared footprint that accepts all three connector types.</td></tr>
+    <tr><td><a href="/images/extensions/endstop-and-probe-inputs-advanced/endstop-inputs-diagram.png">Top view (SVG)</a></td><td>The drawing used on this page, to scale: one unit is one millimetre</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}

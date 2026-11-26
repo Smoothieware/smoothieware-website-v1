@@ -19,6 +19,7 @@ History: see CHANGELOG.archive.md.
 
 ### Changed
 
+- The two endstop boards are now named "Endstop inputs (basic)" and "Endstop and probe inputs (advanced)" and listed together. The advanced board page moved to a new address, and the old one redirects.
 - Extension board pages: rebuilt 20 more pages (Qwiic, SD card, wireless, USB and serial Wi-Fi, CAN, the Arduino, BeagleBone, Edison, Papilio, Raspberry Pi, ESP32 and Teensy host adapters, the parallel-port jig, both D-sub adapters and the buzzer module) to the current page layout, and updated their directory descriptions.
 - Extension board pages: rebuilt the level shifting, opto-isolation pass-through, SPI Hub, UART breakout, cheap UART adapter, CPLD adapter, differential signal, differential SPI, differential STEP/DIR/EN and long-distance extender pages to the current page layout, with annotated drawings, wiring steps and chip datasheets.
 - Use only transparent black board renders in the extension directory and leave rows without suitable artwork blank.
