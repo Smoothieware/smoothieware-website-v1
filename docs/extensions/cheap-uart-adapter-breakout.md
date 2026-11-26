@@ -1,195 +1,195 @@
 ---
 layout: default
 title: "Cheap UART adapter breakout"
+description: "A carrier that joins a low-cost six-pin USB serial module to a controller UART through two level translators."
 permalink: /extensions/cheap-uart-adapter-breakout
 ---
 
-# Cheap UART adapter breakout
+{% include _includes/extension-board-page.html %}
 
-Use this carrier to connect a computer’s USB serial adapter to a Smoothieboard UART. A terminal can then read controller messages and send console commands. The carrier provides two signal translators and connector routing; the separate USB module provides the USB interface.
 
-## How it works
-
-Two SN74LVC1T45 translators give fixed direction: module TXO goes toward host RX and host TX goes toward module RXI. The module's VCC output is a translator reference, not an input from the carrier. The carrier does not forward host 5 V, CTS or DTR.
-
-## Power, signals and limits
-
-J2 order is GND, unused CTS, MOD_VCC, MOD_TXO, MOD_RXI, unused DTR. J1.4 is HOST_TX, .5 HOST_RX, .1 host 3.3 V and .10 ground; .2/.3/.6–.9 are unconnected. The practical example below uses SparkFun FTDI Basic 3V3 DEV-09873. The fitted module’s voltage selection, USB supply and logic thresholds must be checked against the translator contract.
-
-## Board reference
-
-{% include _includes/extension-instruction-diagram.html id="cheap-uart-v14-guide-reference" src="/images/extensions/cheap-uart-adapter-breakout/guides/guide-board-reference.png" title="UART adapter — board reference" alt="Annotated carrier with host UART connector, module connector and fixed-direction translator paths, plus numbered functional contact keys" caption="Component-side board drawing. Numbered functional keys identify source contacts; they are not mating faces. Host and module 3.3 V references are separate rails. Red identifies a 3.3 V reference, green host transmit, violet host receive and black circuit ground." width=420 %}
-
-<details markdown="1">
-<summary>Detailed component references and contact sheets</summary>
-
-<details markdown="1">
-<summary>Reading the connector callouts</summary>
-
-The dark end of each pill gives the contact number. The adjoining label gives its function. Colours help locate related functions; the label and connection instructions determine how to use the contact.
-
-- Red: 3.3 V supply.
-- Green: Signal — use the printed function label.
-- Near-black: Circuit ground.
-- Grey: Not routed on this board.
-- Cyan: Selected supply — check the jumper or rail-selection instructions.
-
-A voltage in a signal name does not make that contact a power output. Circuit ground, cable shield and protective earth are different connections. An underside projection shows rear components through the front view; it is not a mirrored rear view.
-
-</details>
-
-{% include _includes/extension-instruction-diagram.html id="cheap-uart-adapter-breakout-v14-reader-compact-overview" src="/images/extensions/cheap-uart-adapter-breakout/guides/reader-compact-overview.png" title="UART module adapter — overview" alt="UART module adapter — overview" caption=" Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-<details markdown="1">
-<summary>Larger combined reference</summary>
-
-{% include _includes/extension-instruction-diagram.html id="cheap-uart-adapter-breakout-v14-reference" src="/images/extensions/cheap-uart-adapter-breakout/guides/reader-reference.png" title="Annotated board reference" alt="Annotated board reference for cheap-uart-adapter-breakout" caption="Component-side reference. Dotted leaders locate parts and are not wiring." width=1440 %}
-
-</details>
-
-Start with the overview, then use all focused sheets for exact contacts, controls and links.
-
-<details markdown="1">
-<summary>Focused contact and component sheets</summary>
-
-{% include _includes/extension-instruction-diagram.html id="cheap-uart-adapter-breakout-v14-reader-compact-host-uart-1-5" src="/images/extensions/cheap-uart-adapter-breakout/guides/reader-compact-host-uart-1-5-central-pills.png" title="J1 · Host UART — host uart 1 5" alt="J1 · Host UART — host uart 1 5" caption=" Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="cheap-uart-adapter-breakout-v14-reader-compact-host-uart-6-10" src="/images/extensions/cheap-uart-adapter-breakout/guides/reader-compact-host-uart-6-10-central-pills.png" title="J1 · Host UART — host uart 6 10" alt="J1 · Host UART — host uart 6 10" caption=" Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="cheap-uart-adapter-breakout-v14-reader-compact-module-header-1-5" src="/images/extensions/cheap-uart-adapter-breakout/guides/reader-compact-module-header-1-5-central-pills.png" title="J2 · Module header — module header 1 5" alt="J2 · Module header — module header 1 5" caption=" Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="cheap-uart-adapter-breakout-v14-reader-compact-module-header-6-6" src="/images/extensions/cheap-uart-adapter-breakout/guides/reader-compact-module-header-6-6-central-pills.png" title="J2 · Module header — module header 6 6" alt="J2 · Module header — module header 6 6" caption=" Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="cheap-uart-adapter-breakout-v14-reader-compact-module-to-host" src="/images/extensions/cheap-uart-adapter-breakout/guides/reader-compact-module-to-host.png" title="Module to host — module to host" alt="Module to host — module to host" caption=" Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="cheap-uart-adapter-breakout-v14-reader-compact-host-to-module" src="/images/extensions/cheap-uart-adapter-breakout/guides/reader-compact-host-to-module.png" title="Host to module — host to module" alt="Host to module — host to module" caption=" Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="cheap-uart-adapter-breakout-v14-reader-compact-protection" src="/images/extensions/cheap-uart-adapter-breakout/guides/reader-compact-protection-underside-caption.png" title="Signal protection — protection" alt="Signal protection — protection" caption=" Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="cheap-uart-adapter-breakout-v14-reader-compact-reference-test-pads" src="/images/extensions/cheap-uart-adapter-breakout/guides/reader-compact-reference-test-pads-underside-caption.png" title="Host / module test pads — reference test pads" alt="Host / module test pads — reference test pads" caption=" Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="cheap-uart-adapter-breakout-v14-reader-compact-ground-test-pads" src="/images/extensions/cheap-uart-adapter-breakout/guides/reader-compact-ground-test-pads-underside-caption.png" title="Ground test pads — ground test pads" alt="Ground test pads — ground test pads" caption=" Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="cheap-uart-adapter-breakout-v14-reader-compact-mounts" src="/images/extensions/cheap-uart-adapter-breakout/guides/reader-compact-mounts.png" title="Mounting holes — mounts" alt="Mounting holes — mounts" caption=" Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-</details>
-
-</details>
-
-The compact reference above explains the connections. The detailed sheets locate pads and components; check connector orientation on your board.
-
-### Connector contacts
-
-Contact numbering below is the PCB's pad numbering, viewed using the board-reference drawing. Same-numbered duplicate lands are collapsed in this electrical table. Mechanical unnumbered pads are omitted here. `NC` means unconnected, not a spare. Named nets alone do not establish direction; use the signal-path explanation above.
-
-<details markdown="1">
-<summary>Contact inventory</summary>
-
-<div class="extension-contact-table" role="region" aria-label="Contact inventory; scroll horizontally to read all columns" tabindex="0" markdown="1">
-
-| Connector | Contact(s) | Function/net |
-| --- | --- | --- |
-| J1 — GADGETEER U SOCKET | 1 | `+3V3` |
-| J1 — GADGETEER U SOCKET | 4 | `/HOST_TX` |
-| J1 — GADGETEER U SOCKET | 5 | `/HOST_RX` |
-| J1 — GADGETEER U SOCKET | 10 | `GND` |
-| J1 | 2, 3, 6, 7, 8, 9 | NC |
-| J2 — MODULE PINS GND CTS VCC TXO RXI DTR | 1 | `GND` |
-| J2 — MODULE PINS GND CTS VCC TXO RXI DTR | 3 | `/MOD_VCC` |
-| J2 — MODULE PINS GND CTS VCC TXO RXI DTR | 4 | `/MOD_TXO` |
-| J2 — MODULE PINS GND CTS VCC TXO RXI DTR | 5 | `/MOD_RXI` |
-| J2 | 2, 6 | NC |
-
+{::nomarkdown}
+<div class="xb-hero">
+  <div>
+    <p class="xb-eyebrow">Extension board · Signal interfaces</p>
+    <h1 id="cheap-uart-adapter-breakout">Cheap UART adapter breakout</h1>
+    <p class="xb-lead">Turn an inexpensive six-pin USB serial module into a controller console. Two translators match the module&rsquo;s logic voltage to the controller, one in each direction.</p>
+    <div class="xb-actions">
+      <a class="xb-btn xb-btn-primary" href="#get-started">Get started</a>
+      <a class="xb-btn" href="#pinout">Pinout</a>
+      <a class="xb-btn" href="#configuration">Configuration</a>
+    </div>
+  </div>
+  <figure>
+    <img src="/images/extensions/cheap-uart-adapter-breakout/v14/cheap-uart-adapter-breakout-diagram.png" alt="Top view of the adapter: a ten-contact host socket at the left and a six-pin module connector at the right.">
+    <figcaption>Top view, drawn from the board&rsquo;s design files. This is a drawing, not a photograph.</figcaption>
+  </figure>
 </div>
 
-<details markdown="1">
-<summary>Combined connector and link details</summary>
+<div class="xb-stats">
+  <div class="xb-stat"><b>2 paths</b><span>TX and RX, translated</span></div>
+  <div class="xb-stat"><b>3.3 V</b><span>controller side</span></div>
+  <div class="xb-stat"><b>Module VCC</b><span>sets the other side</span></div>
+  <div class="xb-stat"><b>6 pins</b><span>GND CTS VCC TXO RXI DTR</span></div>
+  <div class="xb-stat"><b>No 5 V</b><span>taken from the controller</span></div>
+  <div class="xb-stat"><b>32 × 27.5</b><span>millimetres</span></div>
+</div>
 
-{% include _includes/extension-instruction-diagram.html id="cheap-uart-adapter-breakout-v14-connector-detail-01" src="/images/extensions/cheap-uart-adapter-breakout/guides/reader-connector-detail-01.png" title="Connector detail 01" alt="Connector detail 01 for cheap-uart-adapter-breakout" caption="Component-side reference. Dotted leaders locate parts and are not wiring." width=1440 %}
+<nav class="xb-nav" aria-label="On this page">
+  <a href="#specs">Tech specs</a>
+  <a href="#tour">Board tour</a>
+  <a href="#pinout">Pinout</a>
+  <a href="#what-you-need">What you need</a>
+  <a href="#get-started">Get started</a>
+  <a href="#configuration">Configuration</a>
+  <a href="#how-it-works">How it works</a>
+  <a href="#troubleshooting">Troubleshooting</a>
+  <a href="#downloads">Downloads</a>
+  <a href="#mounting">Mounting</a>
+  <a href="#electrical">Electrical</a>
+  <a href="#datasheets">Datasheets</a>
+</nav>
+{:/nomarkdown}
 
-</details>
+<sl-alert variant="warning" open>
+  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+  Plug the module in with its power off, component side as the silk shows: a reversed module is wrong. Check its pin order against the table; similar-looking modules differ.
+</sl-alert>
 
-Active components: `U2 SN74LVC1T45 TX PATH`; `U1 SN74LVC1T45 RX PATH`; `U3 TPD4E1U06`; `U4 TPD4E1U06`.
+## Tech specs {#specs}
 
-</details>
+{::nomarkdown}
+<div class="xb-tablewrap"><table class="xb-spec">
+  
+  <tbody>
+    <tr><td>Purpose</td><td>USB serial console through a plug-in module</td></tr>
+    <tr><td>Translators</td><td>Two <a href="/images/extensions/cheap-uart-adapter-breakout/datasheets/sn74lvc1t45.pdf">SN74LVC1T45</a> with fixed directions</td></tr>
+    <tr><td>Host</td><td>J1: 3.3&nbsp;V, transmit (4), receive (5), ground</td></tr>
+    <tr><td>Module</td><td>J2, six pins: ground, CTS, VCC, TXO, RXI, DTR</td></tr>
+    <tr><td>Module-side supply</td><td>Taken from the module&rsquo;s VCC pin; the board does not power the module</td></tr>
+    <tr><td>Not connected</td><td>CTS, DTR and host 5&nbsp;V</td></tr>
+    <tr><td>Protection</td><td><a href="/images/extensions/cheap-uart-adapter-breakout/datasheets/tpd4e1u06.pdf">TPD4E1U06</a> arrays on both sides</td></tr>
+    <tr><td>Size</td><td>32 &times; 27.5&nbsp;mm, two M3 holes</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
-## Practical use with Smoothieboard V2 Prime
+Every figure with its basis is in the [electrical specifications](#electrical) appendix; hole positions are in the [mounting dimensions](#mounting) appendix.
 
-### USB-console wiring
+## Board tour {#tour}
 
-This example uses the **SparkFun FTDI Basic 3V3, DEV-09873**, from the [official hardware design](https://github.com/sparkfun/FTDI_Basic_Breakout-3.3V/tree/7f19f16b62e3f3e857c6f2e4e682809e38ac6ba8). Its numbered connector and 3.3 V selection are specific to that module; a similar-looking six-contact USB adapter is not interchangeable by appearance. The complete drawing below shows the **Prime GB/J33** electrical interface, carrier and module contacts, their separate supply origins, and the computer USB connection.
+The numbers on the drawing match the list below it.
 
-{% include _includes/extension-instruction-diagram.html id="cheap-uart-v14-guide-wiring" src="/images/extensions/cheap-uart-adapter-breakout/guides/guide-complete-console-wiring.png" title="Complete USB console connection" alt="Prime GB UART connected through a ten-core Gadgeteer ribbon to the carrier, four numbered leads to SparkFun FTDI Basic 3.3 V, and USB Mini-B cable to a computer" caption="Complete electrical connection. The ribbon contains ten separate cores; only contacts 1, 4, 5 and 10 serve this carrier. Grey jacket and red edge do not show pin-one orientation. The four local module leads are shown separately. Verify all ten end-to-end mappings, contacts, module rail and power sequencing before use. No galvanic isolation is provided." width=420 %}
+{::nomarkdown}
+<figure class="xb-tour">
+  <div class="xb-tour-scroll" tabindex="0" role="region" aria-label="Annotated top view">
+    <div class="xb-tour-stage">
+      <img src="/images/extensions/cheap-uart-adapter-breakout/v14/cheap-uart-adapter-breakout-diagram.png" alt="Top view of the adapter with numbered markers explained in the list below.">
+      <a class="xb-mk xb-pb xb-pl" href="#tour-1" style="left:15.4%;top:40.4%" aria-label="1: Host socket (J1)">1<span class="xb-pop"><b>Host socket (J1)</b> — connects to a controller UART socket.</span></a>
+      <a class="xb-mk xb-pb" href="#tour-2" style="left:55.7%;top:18.9%" aria-label="2: Module connector (J2)">2<span class="xb-pop"><b>Module connector (J2)</b> — the six module pins.</span></a>
+      <a class="xb-mk" href="#tour-3" style="left:35.1%;top:60.1%" aria-label="3: Transmit translator (U2)">3<span class="xb-pop"><b>Transmit translator (U2)</b> — controller to module.</span></a>
+      <a class="xb-mk xb-pb" href="#tour-4" style="left:35.1%;top:40.4%" aria-label="4: Receive translator (U1)">4<span class="xb-pop"><b>Receive translator (U1)</b> — module to controller.</span></a>
+      <a class="xb-mk" href="#tour-5" style="left:45.1%;top:59.4%" aria-label="5: Series resistors">5<span class="xb-pop"><b>Series resistors</b> — R1 and R2, 100&nbsp;&Omega;.</span></a>
+      <a class="xb-mk" href="#tour-6" style="left:31.2%;top:70.6%" aria-label="6: Resistors">6<span class="xb-pop"><b>Resistors</b> — R3 and R4, 10&nbsp;k&Omega;.</span></a>
+      <a class="xb-mk xb-pb" href="#tour-7" style="left:31.2%;top:31.3%" aria-label="7: Supply capacitors">7<span class="xb-pop"><b>Supply capacitors</b> — C1 to C4, 100&nbsp;nF.</span></a>
+      <a class="xb-mk xb-pb xb-pl" href="#tour-8" style="left:11.5%;top:6.5%" aria-label="8: Mounting holes">8<span class="xb-pop"><b>Mounting holes</b> — two M3 holes.</span></a>
+    </div>
+  </div>
+  <ol class="xb-tour-list" start="1">
+    <li id="tour-1"><span class="xb-n">1</span><div><b>Host socket (J1)</b> — connects to a controller UART socket.</div></li>
+    <li id="tour-2"><span class="xb-n">2</span><div><b>Module connector (J2)</b> — the six module pins.</div></li>
+    <li id="tour-3"><span class="xb-n">3</span><div><b>Transmit translator (U2)</b> — controller to module.</div></li>
+    <li id="tour-4"><span class="xb-n">4</span><div><b>Receive translator (U1)</b> — module to controller.</div></li>
+    <li id="tour-5"><span class="xb-n">5</span><div><b>Series resistors</b> — R1 and R2, 100&nbsp;&Omega;.</div></li>
+    <li id="tour-6"><span class="xb-n">6</span><div><b>Resistors</b> — R3 and R4, 10&nbsp;k&Omega;.</div></li>
+    <li id="tour-7"><span class="xb-n">7</span><div><b>Supply capacitors</b> — C1 to C4, 100&nbsp;nF.</div></li>
+    <li id="tour-8"><span class="xb-n">8</span><div><b>Mounting holes</b> — two M3 holes.</div></li>
+  </ol>
+  <figcaption>Point at a number, or tap it, to read what the part is; the same text is in the list. On a small screen, scroll the drawing sideways.</figcaption>
+</figure>
+{:/nomarkdown}
 
-| Connection | Exact electrical assignment |
-| --- | --- |
-| Prime to carrier | GB/J33.1 → J1.1: host 3.3 V; .4 → .4: PB9 TX; .5 → .5: PH14 RX; .10 → .10: ground |
-| Other ribbon cores | Matching numbers 2, 3, 6, 7, 8, 9; their carrier contacts are unconnected |
-| Carrier to module | J2.1 → JP1.1: ground; J2.3 → JP1.3: module 3.3 V output; J2.4 → JP1.4: module TXO; J2.5 → JP1.5: module RXI |
-| Module selection | Bridge SJ2.2–3 for POWER/VCCIO from 3V3OUT; leave SJ2.1, USB 5 V, unbridged |
-| Computer | Complete USB cable from a computer USB host port to the module’s Mini-B port |
-| Unused module controls | J2.2/CTS and J2.6/DTR stay disconnected; no reset or hardware flow-control lead |
+## Pinout {#pinout}
 
-The host supplies translator A-side 3.3 V. The USB module supplies translator B-side 3.3 V. These rails are not joined, although their grounds are common. The two UART paths cross inside the carrier: host TX reaches module RXI, and module TXO reaches host RX. The diagram’s colours identify functions rather than observed cable insulation.
+### J2: module
 
-<details markdown="1">
-<summary>Pad views and connector orientation</summary>
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>Contact</th><th>Signal</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td><span class="xb-pill xb-p-gnd">GND</span></td></tr>
+    <tr><td>2</td><td>CTS, not connected</td></tr>
+    <tr><td>3</td><td>VCC from the module</td></tr>
+    <tr><td>4</td><td><span class="xb-pill xb-p-sig">TXO</span> module transmit</td></tr>
+    <tr><td>5</td><td><span class="xb-pill xb-p-sig">RXI</span> module receive</td></tr>
+    <tr><td>6</td><td>DTR, not connected</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
-{% include _includes/extension-instruction-diagram.html id="cheap-uart-v14-native-0" src="/images/extensions/cheap-uart-adapter-breakout/guides/native-contact/cheap-uart-native-reader.png" title="Nine-connection USB console — contacts" alt="Nine-connection USB console — contacts for Prime J33, carrier and SparkFun DEV-09873" caption="Use the complete circuit with all five contact keys. Contact crops show every numbered pad; FTDI JP1 shows bottom-face contacts projected into the component-side frame. Host A-side and USB module B-side 3.3 V rails remain separate." width=2600 %}
+### J1: host
 
-{% include _includes/extension-instruction-diagram.html id="cheap-uart-v14-native-1" src="/images/extensions/cheap-uart-adapter-breakout/guides/native-contact/reader-contact-keys/J33-numbered-pads.png" title="J33 — contact key" alt="J33 — contact key for Prime J33, carrier and SparkFun DEV-09873" caption="Use the complete circuit with all five contact keys. Contact crops show every numbered pad; FTDI JP1 shows bottom-face contacts projected into the component-side frame. Host A-side and USB module B-side 3.3 V rails remain separate." width=520 %}
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>Contact</th><th>Signal</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td><span class="xb-pill xb-p-3v3">3.3 V</span></td></tr>
+    <tr><td>4</td><td><span class="xb-pill xb-p-sig">TX</span> from the controller</td></tr>
+    <tr><td>5</td><td><span class="xb-pill xb-p-sig">RX</span> to the controller</td></tr>
+    <tr><td>10</td><td><span class="xb-pill xb-p-gnd">GND</span></td></tr>
+    <tr><td>2, 3, 6 to 9</td><td>Not connected</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
-{% include _includes/extension-instruction-diagram.html id="cheap-uart-v14-native-2" src="/images/extensions/cheap-uart-adapter-breakout/guides/native-contact/reader-contact-keys/J1-numbered-pads.png" title="J1 — contact key" alt="J1 — contact key for Prime J33, carrier and SparkFun DEV-09873" caption="Use the complete circuit with all five contact keys. Contact crops show every numbered pad; FTDI JP1 shows bottom-face contacts projected into the component-side frame. Host A-side and USB module B-side 3.3 V rails remain separate." width=520 %}
+## What you need {#what-you-need}
 
-{% include _includes/extension-instruction-diagram.html id="cheap-uart-v14-native-3" src="/images/extensions/cheap-uart-adapter-breakout/guides/native-contact/reader-contact-keys/J2-numbered-pads.png" title="J2 — contact key" alt="J2 — contact key for Prime J33, carrier and SparkFun DEV-09873" caption="Use the complete circuit with all five contact keys. Contact crops show every numbered pad; FTDI JP1 shows bottom-face contacts projected into the component-side frame. Host A-side and USB module B-side 3.3 V rails remain separate." width=520 %}
+{::nomarkdown}
+<div class="xb-cards">
+  <div class="xb-card"><b>This board</b><span></span></div>
+  <div class="xb-card"><b>A USB serial module</b><span>Six pins in the order above, 3.3&nbsp;V logic. The example uses the SparkFun FTDI Basic 3.3 V (DEV-09873).</span></div>
+  <div class="xb-card"><b>A ribbon and a USB cable</b><span>Ten-core ribbon to the controller.</span></div>
+</div>
+{:/nomarkdown}
 
-{% include _includes/extension-instruction-diagram.html id="cheap-uart-v14-native-4" src="/images/extensions/cheap-uart-adapter-breakout/guides/native-contact/reader-contact-keys/JP1-numbered-pads.png" title="JP1 — contact key" alt="JP1 — contact key for Prime J33, carrier and SparkFun DEV-09873" caption="Use the complete circuit with all five contact keys. Contact crops show every numbered pad; FTDI JP1 shows bottom-face contacts projected into the component-side frame. Host A-side and USB module B-side 3.3 V rails remain separate." width=520 %}
+## Get started {#get-started}
 
-{% include _includes/extension-instruction-diagram.html id="cheap-uart-v14-native-5" src="/images/extensions/cheap-uart-adapter-breakout/guides/native-contact/reader-contact-keys/SJ2-numbered-pads.png" title="SJ2 — contact key" alt="SJ2 — contact key for Prime J33, carrier and SparkFun DEV-09873" caption="Use the complete circuit with all five contact keys. Contact crops show every numbered pad; FTDI JP1 shows bottom-face contacts projected into the component-side frame. Host A-side and USB module B-side 3.3 V rails remain separate." width=520 %}
+This example uses the Smoothieboard V2 Prime and the SparkFun module.
 
-<details>
-<summary>Additional wiring views</summary>
+{::nomarkdown}
+<ol class="xb-steps">
+  <li class="xb-step">
+    <h3>Check the module voltage</h3>
+    <p>On the DEV-09873, solder jumper SJ2 must bridge 2&ndash;3 (3.3&nbsp;V from the module), not 5&nbsp;V.</p>
+  </li>
+  <li class="xb-step">
+    <h3>Connect the ribbon with the power off</h3>
+    <p>Prime GB/J33 to J1, contact for contact. Verify pin 1 at both ends.</p>
+  </li>
+  <li class="xb-step">
+    <h3>Plug in the module</h3>
+    <p>Module ground, VCC, TXO and RXI to J2 contacts 1, 3, 4 and 5.</p>
+  </li>
+  <li class="xb-step">
+    <h3>Configure, connect USB and test</h3>
+    <p>Add the configuration below, restart, then send <code>version</code> followed by Enter.</p>
+    <p class="xb-expect">The controller replies with its build information.</p>
+  </li>
+</ol>
+{:/nomarkdown}
 
-{% include _includes/extension-instruction-diagram.html id="cheap-uart-v14-compact-prime-ftdi-installation" src="/images/extensions/cheap-uart-adapter-breakout/guides/compact-prime-ftdi-installation.png" title="Nine-connection layout" alt="Complete nine-connection FTDI console circuit for the SparkFun DEV-09873 module and carrier" caption="Read the complete circuit with all five contact keys. FTDI keys show the PCB top projection with USB at right and bottom pads projected through the board." width=520 %}
+## Configuration {#configuration}
 
-{% include _includes/extension-instruction-diagram.html id="cheap-uart-v14-J33-compact-numbered-pads" src="/images/extensions/cheap-uart-adapter-breakout/guides/J33-compact-numbered-pads.png" title="J33 contact positions" alt="J33 contact positions for the SparkFun DEV-09873 module and carrier" caption="Read the complete circuit with all five contact keys. FTDI keys show the PCB top projection with USB at right and bottom pads projected through the board." width=420 %}
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>You want</th><th>Module</th><th>Example</th></tr></thead>
+  <tbody>
+    <tr><td>A command console on a serial port</td><td>UART console</td><td><a href="#config-main">Setup</a></td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
-{% include _includes/extension-instruction-diagram.html id="cheap-uart-v14-J1-compact-numbered-pads" src="/images/extensions/cheap-uart-adapter-breakout/guides/J1-compact-numbered-pads.png" title="J1 contact positions" alt="J1 contact positions for the SparkFun DEV-09873 module and carrier" caption="Read the complete circuit with all five contact keys. FTDI keys show the PCB top projection with USB at right and bottom pads projected through the board." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="cheap-uart-v14-J2-compact-numbered-pads" src="/images/extensions/cheap-uart-adapter-breakout/guides/J2-compact-numbered-pads.png" title="J2 contact positions" alt="J2 contact positions for the SparkFun DEV-09873 module and carrier" caption="Read the complete circuit with all five contact keys. FTDI keys show the PCB top projection with USB at right and bottom pads projected through the board." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="cheap-uart-v14-FTDI-JP1-top-projection" src="/images/extensions/cheap-uart-adapter-breakout/guides/FTDI-JP1-top-projection.png" title="FTDI JP1 top-side projection" alt="FTDI JP1 top-side projection for the SparkFun DEV-09873 module and carrier" caption="Read the complete circuit with all five contact keys. FTDI keys show the PCB top projection with USB at right and bottom pads projected through the board." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="cheap-uart-v14-FTDI-SJ2-top-projection" src="/images/extensions/cheap-uart-adapter-breakout/guides/FTDI-SJ2-top-projection.png" title="FTDI SJ2 top-side projection" alt="FTDI SJ2 top-side projection for the SparkFun DEV-09873 module and carrier" caption="Read the complete circuit with all five contact keys. FTDI keys show the PCB top projection with USB at right and bottom pads projected through the board." width=420 %}
-
-<details>
-<summary>Wide wiring view</summary>
-
-{% include _includes/extension-instruction-diagram.html id="cheap-uart-v14-prime-ftdi-installation-wide-retained" src="/images/extensions/cheap-uart-adapter-breakout/guides/prime-installation-wiring.png" title="Wide view of the USB console" alt="Prime GB UART through the carrier to SparkFun FTDI Basic 3V3, with four numbered module wires and a computer USB cable" caption=" Verify the voltage selection, numbered mating and the separate supply domains before use." width=1800 %}
-
-</details>
-
-</details>
-
-</details>
-
-With all power removed:
-
-1. Verify the module's **SJ2 contacts 2–3 select 3.3 V**, connecting POWER/VCCIO to FT232RL 3V3OUT. Do not use the USB 5 V selection at SJ2.1. Verify the voltage and exact module before attaching the carrier.
-2. Use a **ten-core Gadgeteer ribbon with mating plugs at both ends**, connecting Prime GB/J33 to carrier J1. Verify every core by continuity against the contact keys; the coloured edge alone does not prove pin-one orientation. The electrical example is 1-to-1: contacts .1/.4/.5/.10 serve the carrier, while its other contacts are unconnected. Contact 1 supplies the translator A-side from limited host 3.3 V, 4 is PB9 host TX, 5 is PH14 host RX, and 10 is common ground. The carrier does not use host 5 V at contact 2 or the remaining signal contacts. Check the connector population, housing and mating of the host header and carrier.
-3. Connect carrier **J2.1/.3/.4/.5 to module JP1.1/.3/.4/.5**, respectively: ground, module 3.3 V output, module TXO and module RXI. Leave CTS at contact 2 and DTR at contact 6 disconnected; there is no reset lead or hardware flow control.
-4. Power the module through its computer USB cable. Its USB-derived 3.3 V supplies only the translator B-side; host 3.3 V supplies the A-side. Do not tie host 5 V to J2.3 or use the module rail to power Prime. These interfaces share ground and provide no galvanic isolation.
-5. After checking the cable, voltage and power-order behavior with machine loads disabled, use the channel-1 console settings below and the matching computer terminal settings. Power off before changing links or connections.
-
-Host TX crosses the A-to-B translator to module RXI at J2.5. Module TXO at J2.4 crosses the B-to-A translator to host RX. These are logic UART signals, not RS232 or RS485. Check mechanical fit, voltage and installed firmware before use.
-
-## Smoothieware configuration and use
-
-This board performs UART electrical conversion rather than implementing an accessory command protocol. The conversion direction and supply must match the computer adapter and Prime.
-
-### UART-console settings
-
-The [console parser](https://github.com/Smoothieware/SmoothieV2/blob/2a21c0108b1d095ecd8b2b9358e94055f053c003/Firmware/src/Consoles.cpp#L733-L761) implements the following settings. This example enables **channel 1** at **115200 bit/s, 8 data bits, no parity, one stop bit**:
+### Setup {#config-main}
 
 ```ini
 [uart console]
@@ -202,23 +202,109 @@ stop_bits = 1
 parity = none
 ```
 
-With `console = true`, the UART is initialized by the [console task after startup](https://github.com/Smoothieware/SmoothieV2/blob/2a21c0108b1d095ecd8b2b9358e94055f053c003/Firmware/src/Consoles.cpp#L515-L520), rather than immediately while parsing this section. Let the controller finish starting before sending `version`. If no reply arrives, check the startup log for UART initialization errors and confirm the selected channel, crossed TX/RX, common ground and terminal line ending; silence alone does not identify a failed adapter.
+With <code>console = true</code> the UART starts after the controller has finished booting ([console source](https://github.com/Smoothieware/SmoothieV2/blob/2a21c0108b1d095ecd8b2b9358e94055f053c003/Firmware/src/Consoles.cpp#L733-L761)). On the Prime, [channel 1 transmits on PB9 and receives on PH14](https://github.com/Smoothieware/SmoothieV2/blob/2a21c0108b1d095ecd8b2b9358e94055f053c003/Firmware/Hal/src/Uart.cpp#L101-L135), header GB contacts 4 and 5. Reserve both pins. Use 115200 baud, 8N1 and no hardware flow control on the computer.
 
-On Prime, [channel 1 uses TX PB9 and RX PH14](https://github.com/Smoothieware/SmoothieV2/blob/2a21c0108b1d095ecd8b2b9358e94055f053c003/Firmware/Hal/src/Uart.cpp#L101-L135); the [host pin table](https://github.com/Smoothieware/SmoothieV2/blob/2a21c0108b1d095ecd8b2b9358e94055f053c003/pins.md#L188-L202) places them on **GB contacts 4 and 5**, with ground on contact 10. Channel 0 instead uses PD8/PB11, identified as GD contacts 4/5. On the Prime PCB, GB is J33: contact 4 reaches PB9 through R74 (100 Ω), and contact 5 reaches PH14 through R75 (100 Ω). These channels are fixed HAL selections, not arbitrary GPIO assignments. Reserve the selected channel and both pins in the complete configuration; `console = false` initializes an auxiliary UART without starting its command-console reader.
+## How it works {#how-it-works}
 
-After the board-specific supply, direction and cable checks in this guide are complete, use a computer terminal at the matching 115200/8N1 settings, with hardware flow control disabled. Send `version` followed by LF (`\n`; CRLF also works, but CR alone is ignored): the [registered shell command](https://github.com/Smoothieware/SmoothieV2/blob/2a21c0108b1d095ecd8b2b9358e94055f053c003/Firmware/src/CommandShell.cpp#L1485-L1505) prints build information without requesting motion. A returned version identifies the running build; it does not check the adapter's electrical behavior.
+Each <a href="/images/extensions/cheap-uart-adapter-breakout/datasheets/sn74lvc1t45.pdf">SN74LVC1T45</a> has one supply from the controller&rsquo;s 3.3&nbsp;V and the other from the module&rsquo;s VCC pin, so the two logic voltages stay separate. Grounds are common: the board gives no isolation.
 
-- [Prime PCB source](https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/smoothiev2-prime.kicad_pcb) — GB/J33 and the R74/R75 UART paths.
+## Troubleshooting {#troubleshooting}
 
-- [SparkFun module hardware source](https://github.com/sparkfun/FTDI_Basic_Breakout-3.3V/tree/7f19f16b62e3f3e857c6f2e4e682809e38ac6ba8) — DEV-09873 numbered JP1 contacts and SJ2 3.3 V selection; hardware source licensed CC BY-SA 4.0. The module in the schematic drawing is independently depicted from interface facts.
-- [Design source directory](https://github.com/arthurwolf/extension-boards/tree/main/src/cheap-uart-adapter-breakout/attempt/versions/v14)
-- [Design specification](https://github.com/arthurwolf/extension-boards/blob/main/src/cheap-uart-adapter-breakout/specs.md)
-- [Design discussion](https://github.com/arthurwolf/extension-boards/blob/main/src/cheap-uart-adapter-breakout/design.md)
-- [All extension boards](/extension-boards)
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>Symptom</th><th>Check</th></tr></thead>
+  <tbody>
+    <tr><td>No reply</td><td>Module VCC present, pin order, channel number and line ending.</td></tr>
+    <tr><td>Garbled text</td><td>Match 115200 baud, 8N1 on both sides.</td></tr>
+    <tr><td>Module not seen by the computer</td><td>USB cable and driver: the carrier takes no part in USB.</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
-<details markdown="1">
-<summary>Supplementary board views</summary>
+Still stuck? Read [how to ask for help](/help-guidelines) or see the general [troubleshooting guide](/troubleshooting/).
 
-{% include _includes/extension-board-visuals.html slug="cheap-uart-adapter-breakout" %}
+## Downloads {#downloads}
 
-</details>
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>File</th><th>What it is</th></tr></thead>
+  <tbody>
+    <tr><td><a href="/images/extensions/cheap-uart-adapter-breakout/v14/cheap-uart-adapter-breakout-schematic.pdf">Schematic (PDF)</a></td><td>The complete circuit diagram</td></tr>
+    <tr><td><a href="/images/extensions/cheap-uart-adapter-breakout/v14/cheap-uart-adapter-breakout-bom.csv">Parts list (CSV)</a></td><td>Every component with its value and footprint</td></tr>
+    <tr><td><a href="/images/extensions/cheap-uart-adapter-breakout/v14/cheap-uart-adapter-breakout-diagram.png">Board drawing (PNG)</a></td><td>The top view used on this page</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+## Appendix: mounting dimensions {#mounting}
+
+For drilling a mounting plate or designing an enclosure. Positions are hole centres, in millimetres, measured from the top-left corner with the board seen from the component side.
+
+{::nomarkdown}
+<figure class="xb-fig">
+  <div class="xb-fig-scroll" tabindex="0" role="region" aria-label="Mounting drawing">
+  <svg viewBox="0 0 1000 480" role="img" aria-labelledby="xb-cu-mount-t">
+  <title id="xb-cu-mount-t">Mounting drawing of the cu, component side: outline 32 by 27.5 millimetres with 2 mounting holes. Hole positions are listed in the table below.</title>
+  <text x="480.0" y="24" text-anchor="middle" font-size="13" font-weight="700" letter-spacing="1" fill="#a9b4c2">COMPONENT SIDE · millimetres</text>
+  <rect x="282.2" y="78.0" width="395.6" height="340.0" rx="0.0" fill="#1f2226" stroke="#e6ebf2" stroke-width="1.5"/>
+  <g stroke="#a9b4c2" stroke-width="1.2" fill="none"><path d="M282.2 56H677.8"/><path d="M282.2 50V62"/><path d="M677.8 50V62"/><path d="M703.8 78.0V418.0"/><path d="M697.8 78.0h12"/><path d="M697.8 418.0h12"/></g>
+  <text x="480.0" y="48" text-anchor="middle" font-size="15" font-weight="700" fill="#e6ebf2">32</text>
+  <text x="715.8" y="253.0" font-size="15" font-weight="700" fill="#e6ebf2">27.5</text>
+  <circle cx="282.2" cy="78.0" r="4" fill="#ffcc33"/>
+  <text x="270.2" y="83.0" text-anchor="end" font-size="14" font-weight="700" fill="#ffcc33">0, 0</text>
+  <g stroke="#ffcc33" stroke-width="1.5" fill="#ffcc33"><path d="M224.2 104.0h30" fill="none"/><path d="M258.2 104.0l-8 -4v8z"/><path d="M224.2 104.0v30" fill="none"/><path d="M224.2 138.0l-4 -8h8z"/></g>
+  <text x="262.2" y="109.0" font-size="12" font-weight="700" fill="#ffcc33">X</text>
+  <text x="220.2" y="154.0" font-size="12" font-weight="700" fill="#ffcc33">Y</text>
+  <circle cx="319.3" cy="102.7" r="19.8" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <path d="M295.5 102.7h47.6M319.3 78.9v47.6" stroke="#ffcc33" stroke-width=".8" fill="none"/>
+  <text x="299.5" y="142.5" text-anchor="start" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">1</tspan>  3.00, 2.00</text>
+  <circle cx="319.3" cy="350.0" r="19.8" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <path d="M295.5 350.0h47.6M319.3 326.2v47.6" stroke="#ffcc33" stroke-width=".8" fill="none"/>
+  <text x="299.5" y="320.2" text-anchor="start" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">2</tspan>  3.00, 22.00</text>
+  <text x="480.0" y="448.0" text-anchor="middle" font-size="13" fill="#a9b4c2">Numbered rings are mounting holes. Positions are hole centres, X then Y, from the marked corner.</text>
+  </svg>
+  </div>
+  <figcaption>Board outline 32 × 27.5&nbsp;mm, square corners, board thickness 1.6&nbsp;mm. Drawn from the design files, component side up, in the same orientation as the board tour.</figcaption>
+</figure>
+
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>Hole</th><th>X (mm)</th><th>Y (mm)</th><th>Diameter</th><th>Use</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td>3.00</td><td>2.00</td><td>3.2&nbsp;mm, not plated</td><td>Mounting, M3 screw</td></tr>
+    <tr><td>2</td><td>3.00</td><td>22.00</td><td>3.2&nbsp;mm, not plated</td><td>Mounting, M3 screw</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+## Appendix: electrical specifications {#electrical}
+
+Chip values come from the datasheet.
+
+{::nomarkdown}
+<div class="xb-tablewrap"><table class="xb-elec">
+  <thead><tr><th>Parameter</th><th>Applies to</th><th>Lower</th><th>Nominal</th><th>Upper</th><th>Basis and conditions</th></tr></thead>
+  <tbody>
+    <tr><td>Controller-side supply</td><td>J1 contact 1</td><td>—</td><td>3.3 V</td><td>—</td><td>Design</td></tr>
+    <tr><td>Module-side supply range</td><td><a href="/images/extensions/cheap-uart-adapter-breakout/datasheets/sn74lvc1t45.pdf">SN74LVC1T45</a></td><td>1.65 V</td><td>—</td><td>5.5 V</td><td>Datasheet</td></tr>
+    <tr><td>Series resistance</td><td>Signal paths</td><td>—</td><td>100 Ω</td><td>—</td><td>Parts list</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+## Appendix: datasheets {#datasheets}
+
+The first page of each important chip&rsquo;s datasheet. Click a page to open the PDF.
+
+{::nomarkdown}
+<figure class="xb-fig">
+  <a href="/images/extensions/cheap-uart-adapter-breakout/datasheets/sn74lvc1t45.pdf"><img src="/images/extensions/cheap-uart-adapter-breakout/datasheets/sn74lvc1t45-page1.png" alt="First page of the SN74LVC1T45 datasheet" style="display:block;width:100%;max-width:480px;height:auto;margin:0 auto"></a>
+  <figcaption><a href="/images/extensions/cheap-uart-adapter-breakout/datasheets/sn74lvc1t45.pdf">SN74LVC1T45 single-bit dual-supply bus transceiver</a> — Texas Instruments, 42 pages.</figcaption>
+</figure>
+<figure class="xb-fig">
+  <a href="/images/extensions/cheap-uart-adapter-breakout/datasheets/tpd4e1u06.pdf"><img src="/images/extensions/cheap-uart-adapter-breakout/datasheets/tpd4e1u06-page1.png" alt="First page of the TPD4E1U06 datasheet" style="display:block;width:100%;max-width:480px;height:auto;margin:0 auto"></a>
+  <figcaption><a href="/images/extensions/cheap-uart-adapter-breakout/datasheets/tpd4e1u06.pdf">TPD4E1U06 quad-channel ESD protection device</a> — Texas Instruments, 27 pages.</figcaption>
+</figure>
+{:/nomarkdown}
+
+
+See all boards on the [extension boards](/extension-boards) page.

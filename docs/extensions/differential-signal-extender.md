@@ -1,227 +1,245 @@
 ---
 layout: default
 title: "Differential signal extender"
+description: "An emitter and a receiver that carry one logic signal and 5 V power over a dedicated cable as a differential pair."
 permalink: /extensions/differential-signal-extender
 ---
 
-# Differential signal extender
+{% include _includes/extension-board-page.html %}
 
-This is the receiver half of a one-way digital link intended to carry a host output to a remote logic load. It is not a bidirectional sensor extender. A complete installation needs the matching transmitter, cable and remote load contract.
 
-## How it works
-
-The board is a receiver only. It carries a THVD1451 receiver, UCC27517 output driver and TPS613222A boost supply. Cable LINE_HI reaches receiver input B and LINE_LO reaches input A. The UCC27517 stage inverts the receiver result: a valid differential input with HI above LO produces a high SIG_OUT. The boost supply feeds the output driver internally; it is not the supply exported at J1.2.
-
-## Power, signals and limits
-
-J1 is GND/5V/SIG order: pin 1 ground, .2 protected transported 5 V, .3 driven SIG_OUT. J2 uses a dedicated straight-through 8P8C cable; contacts 1/2 are LINE_HI/LINE_LO, 4/5 transported power, 3/6/7/8 ground and shell shield. It is not Ethernet or PoE and has no sensor-return channel. The output driver does not mean a valve or motor coil can be connected directly.
-
-## Board reference
-
-<details markdown="1">
-<summary>Reading the connector callouts</summary>
-
-The dark end of each pill gives the source contact number. The adjoining label gives its function. Colours help locate related functions; the label and connection instructions determine how to use the contact.
-
-- Orange: 5 V supply.
-- Near-black: Circuit ground.
-- Dark grey: Other labelled contact — read its exact function.
-
-A voltage in a signal name does not make that contact a power output. Circuit ground, cable shield and protective earth are different connections. An underside projection shows rear components through the front view; it is not a mirrored rear view.
-
-</details>
-
-Start with the overview, then use all focused sheets for exact contacts, controls and links.
-
-{% include _includes/extension-instruction-diagram.html id="differential-signal-extender-v15-reader-compact-overview" src="/images/extensions/differential-signal-extender/guides/reader-compact-overview.png" title="Differential signal receiver — overview" alt="Differential signal receiver — overview" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="differential-signal-extender-v15-reader-compact-cable-1-5" src="/images/extensions/differential-signal-extender/guides/reader-compact-cable-1-5-central-pills.png" title="J2 · Cable input — cable 1 5" alt="J2 · Cable input — cable 1 5" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="differential-signal-extender-v15-reader-compact-cable-6-SH" src="/images/extensions/differential-signal-extender/guides/reader-compact-cable-6-SH-central-pills.png" title="J2 · Cable input — cable 6 SH" alt="J2 · Cable input — cable 6 SH" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="differential-signal-extender-v15-reader-compact-load-1-3" src="/images/extensions/differential-signal-extender/guides/reader-compact-load-1-3-central-pills.png" title="J1 · Load output — load 1 3" alt="J1 · Load output — load 1 3" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="differential-signal-extender-v15-reader-compact-receiver" src="/images/extensions/differential-signal-extender/guides/reader-compact-receiver.png" title="Receiver and polarity — receiver" alt="Receiver and polarity — receiver" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="differential-signal-extender-v15-reader-compact-driver" src="/images/extensions/differential-signal-extender/guides/reader-compact-driver-underside-caption.png" title="Boosted output driver — driver" alt="Boosted output driver — driver" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="differential-signal-extender-v15-reader-compact-power" src="/images/extensions/differential-signal-extender/guides/reader-compact-power.png" title="Cable power protection — power" alt="Cable power protection — power" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="differential-signal-extender-v15-reader-compact-termination" src="/images/extensions/differential-signal-extender/guides/reader-compact-termination.png" title="Line termination link — termination" alt="Line termination link — termination" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="differential-signal-extender-v15-reader-compact-shield" src="/images/extensions/differential-signal-extender/guides/reader-compact-shield.png" title="Shield bond selector — shield" alt="Shield bond selector — shield" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="differential-signal-extender-v15-reader-compact-output" src="/images/extensions/differential-signal-extender/guides/reader-compact-output.png" title="Output bias and protection — output" alt="Output bias and protection — output" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="differential-signal-extender-v15-reader-compact-power-led" src="/images/extensions/differential-signal-extender/guides/reader-compact-power-led.png" title="Power indicator link — power led" alt="Power indicator link — power led" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="differential-signal-extender-v15-reader-compact-output-led" src="/images/extensions/differential-signal-extender/guides/reader-compact-output-led.png" title="Output-high indicator link — output led" alt="Output-high indicator link — output led" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="differential-signal-extender-v15-reader-compact-tests" src="/images/extensions/differential-signal-extender/guides/reader-compact-tests-underside-caption.png" title="Tests and mounting holes — tests" alt="Tests and mounting holes — tests" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-The annotated reference sheets above use the board drawing and numbered contacts. Use every focused sheet together with the connector table.
-
-### dse-rx — connector contacts
-
-Contact numbering below is the PCB pad numbering, viewed using the board-reference drawing. Same-numbered duplicate lands are collapsed in this electrical table. Mechanical unnumbered pads are omitted here. `NC` means unconnected, not a spare supported function. Named nets alone do not establish direction; use the signal-path explanation above.
-
-<details markdown="1">
-<summary>Contact inventory</summary>
-
-<div class="extension-contact-table" role="region" aria-label="Contact inventory; scroll horizontally to read all columns" tabindex="0" markdown="1">
-
-| Connector | Contact(s) | Function/net |
-| --- | --- | --- |
-| J1 — LOAD G/5V/S OUT | 1 | `GND` |
-| J1 — LOAD G/5V/S OUT | 2 | `/+5V_R` |
-| J1 — LOAD G/5V/S OUT | 3 | `/SIG_OUT` |
-| J2 — CABLE IN 8P8C | 1 | `/LINE_HI` |
-| J2 — CABLE IN 8P8C | 2 | `/LINE_LO` |
-| J2 — CABLE IN 8P8C | 3 | `GND` |
-| J2 — CABLE IN 8P8C | 4 | `/+5V_CABLE` |
-| J2 — CABLE IN 8P8C | 5 | `/+5V_CABLE` |
-| J2 — CABLE IN 8P8C | 6 | `GND` |
-| J2 — CABLE IN 8P8C | 7 | `GND` |
-| J2 — CABLE IN 8P8C | 8 | `GND` |
-| J2 — CABLE IN 8P8C | SH | `/SHIELD` |
-
+{::nomarkdown}
+<div class="xb-hero">
+  <div>
+    <p class="xb-eyebrow">Extension board · Signal interfaces</p>
+    <h1 id="differential-signal-extender">Differential signal extender</h1>
+    <p class="xb-lead">Send one logic output to a distant logic input. The emitter turns the signal into a differential pair and sends 5&nbsp;V along the same cable; the receiver turns it back into a 5&nbsp;V logic signal.</p>
+    <div class="xb-actions">
+      <a class="xb-btn xb-btn-primary" href="#get-started">Get started</a>
+      <a class="xb-btn" href="#pinout">Pinout</a>
+      <a class="xb-btn" href="#configuration">Configuration</a>
+    </div>
+  </div>
+  <figure>
+    <img src="/images/extensions/differential-signal-extender/v15/differential-signal-extender-emitter-diagram.png" alt="Top view of the emitter board: a three-pin input header and a large cable jack.">
+    <figcaption>Top view, drawn from the board&rsquo;s design files. This is a drawing, not a photograph.</figcaption>
+  </figure>
 </div>
 
-</details>
+<div class="xb-stats">
+  <div class="xb-stat"><b>1 signal</b><span>one direction</span></div>
+  <div class="xb-stat"><b>2 boards</b><span>emitter and receiver</span></div>
+  <div class="xb-stat"><b>5 V</b><span>power in the cable</span></div>
+  <div class="xb-stat"><b>≤ 140 mA</b><span>receiver 5 V pin plus signal</span></div>
+  <div class="xb-stat"><b>Low</b><span>receiver output when the link is idle</span></div>
+  <div class="xb-stat"><b>No isolation</b><span>grounds are common</span></div>
+</div>
 
-### Links, controls and indicators
+<nav class="xb-nav" aria-label="On this page">
+  <a href="#specs">Tech specs</a>
+  <a href="#tour">Board tour</a>
+  <a href="#pinout">Pinout</a>
+  <a href="#what-you-need">What you need</a>
+  <a href="#get-started">Get started</a>
+  <a href="#configuration">Configuration</a>
+  <a href="#how-it-works">How it works</a>
+  <a href="#troubleshooting">Troubleshooting</a>
+  <a href="#downloads">Downloads</a>
+  <a href="#mounting">Mounting</a>
+  <a href="#electrical">Electrical</a>
+  <a href="#datasheets">Datasheets</a>
+</nav>
+{:/nomarkdown}
 
-The footprint values identify the intended control or indication. A cut-to-disable LED link affects indication, not the protected circuit. Check each link against the schematic and parts list before cutting or bridging it.
+<sl-alert variant="warning" open>
+  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+  The cable jacks are not Ethernet and not PoE. One direction only: this does not return a sensor signal. The output is logic, never a valve or motor coil. Do not hot-plug, and never feed 5&nbsp;V into the receiver&rsquo;s output header.
+</sl-alert>
 
-| Item | Label | Contact nets / observation |
-| --- | --- | --- |
-| D5 | GREEN OUT HIGH | 1 = GND; 2 = LED_D5_DISABLE |
-| JP2 | SHLD_GND | 1 = /SHIELD; 2 = GND |
-| JP4 | CUT TO DISABLE D4 | 1 = LED_D4_DISABLE; 2 = /LED_P |
-| JP1 | TERM_DC | 1 = /TERM_MID; 2 = /LINE_LO |
-| JP3 | CUT TO DISABLE D5 | 1 = LED_D5_DISABLE; 2 = /LED_O |
-| D4 | GREEN 5V POWER | 1 = GND; 2 = LED_D4_DISABLE |
+## Tech specs {#specs}
 
-## Practical use with Smoothieboard V2 Prime
+{::nomarkdown}
+<div class="xb-tablewrap"><table class="xb-spec">
+  
+  <tbody>
+    <tr><td>Purpose</td><td>Extend one logic signal</td></tr>
+    <tr><td>Emitter</td><td><a href="/images/extensions/differential-signal-extender/datasheets/thvd1451.pdf">THVD1451</a> driver; 0.5&nbsp;A resettable fuse on the 5&nbsp;V input</td></tr>
+    <tr><td>Receiver</td><td><a href="/images/extensions/differential-signal-extender/datasheets/thvd1451.pdf">THVD1451</a> receiver, <a href="/images/extensions/differential-signal-extender/datasheets/ucc27517.pdf">UCC27517</a> output driver, reverse-polarity protection, <a href="/images/extensions/differential-signal-extender/datasheets/tps61322.pdf">TPS613222A</a> boost for the driver</td></tr>
+    <tr><td>Connectors</td><td>Three pins (G, 5V, S) on each board; 8P8C jack for the cable</td></tr>
+    <tr><td>Cable</td><td>Straight-through, 1/2 the signal pair, 4 and 5 power, 3, 6, 7, 8 ground, shield separate</td></tr>
+    <tr><td>Polarity</td><td>Output high when the input is high</td></tr>
+    <tr><td>Sizes</td><td>Emitter 28 &times; 31&nbsp;mm; receiver 34 &times; 34&nbsp;mm; two M3 holes each</td></tr>
+    <tr><td>Licence</td><td>Open hardware, CERN-OHL-S-2.0</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
-**Complete bench circuit.** The drawing accounts for the signal pair, both regulated supplies, all four receiver cable returns, the configured transmitter ground bond, and the meter connection. Read all five companion sheets before using the connection schedule. Check physical mating, fitted component identity, supply current and startup and fault behaviour before energizing the assembly.
+Every figure with its basis is in the [electrical specifications](#electrical) appendix; hole positions are in the [mounting dimensions](#mounting) appendix.
 
-Prime and receiver contacts use PCB artwork with enlarged rows and whole-board locators. The TI RS485-FL-DPLX-EVM and Fluke 115 are schematic terminal roles, not physical mating views. The transmitter must match the named SN65HVD73 population and setup described below.
+## Board tour {#tour}
 
-{% include _includes/extension-instruction-diagram.html id="differential-v15-complete-complete-source-circuit" src="/images/extensions/differential-signal-extender/guides/complete-source-circuit/complete-source-circuit.png" title="Complete bench circuit" alt="Differential receiver: Complete bench circuit" caption="Read the complete set of sheets. Check physical mating before powering." width=1200 %}
+The emitter is at the controller end, the receiver at the load end.
 
-{% include _includes/extension-instruction-diagram.html id="differential-v15-complete-01-logic-and-pair" src="/images/extensions/differential-signal-extender/guides/complete-source-circuit/01-logic-and-pair.png" title="Logic and differential pair" alt="Differential receiver: Logic and differential pair" caption="Read the complete set of sheets. Check physical mating before powering." width=1200 %}
+### Emitter
 
-{% include _includes/extension-instruction-diagram.html id="differential-v15-complete-02-supplies-and-returns" src="/images/extensions/differential-signal-extender/guides/complete-source-circuit/02-supplies-and-returns.png" title="Supplies and all returns" alt="Differential receiver: Supplies and all returns" caption="Read the complete set of sheets. Check physical mating before powering." width=1200 %}
+{::nomarkdown}
+<figure class="xb-tour">
+  <div class="xb-tour-scroll" tabindex="0" role="region" aria-label="Annotated top view">
+    <div class="xb-tour-stage">
+      <img src="/images/extensions/differential-signal-extender/v15/differential-signal-extender-emitter-diagram.png" alt="Top view of the emitter with numbered markers.">
+      <a class="xb-mk xb-pb xb-pl" href="#tour-1" style="left:16.6%;top:48.4%" aria-label="1: Input header (J1)">1<span class="xb-pop"><b>Input header (J1)</b> — ground, 5&nbsp;V in, signal in.</span></a>
+      <a class="xb-mk xb-pb" href="#tour-2" style="left:50.4%;top:30.0%" aria-label="2: Cable jack (J2)">2<span class="xb-pop"><b>Cable jack (J2)</b> — to the receiver.</span></a>
+      <a class="xb-mk" href="#tour-3" style="left:72.6%;top:65.1%" aria-label="3: Driver (U1)">3<span class="xb-pop"><b>Driver (U1)</b> — a THVD1451.</span></a>
+      <a class="xb-mk" href="#tour-4" style="left:32.6%;top:69.6%" aria-label="4: Fuse (F1)">4<span class="xb-pop"><b>Fuse (F1)</b> — resettable, 0.5&nbsp;A.</span></a>
+      <a class="xb-mk" href="#tour-5" style="left:35.6%;top:80.2%" aria-label="5: Power light (D4)">5<span class="xb-pop"><b>Power light (D4)</b> — 5&nbsp;V present.</span></a>
+    </div>
+  </div>
+  <ol class="xb-tour-list" start="1">
+    <li id="tour-1"><span class="xb-n">1</span><div><b>Input header (J1)</b> — ground, 5&nbsp;V in, signal in.</div></li>
+    <li id="tour-2"><span class="xb-n">2</span><div><b>Cable jack (J2)</b> — to the receiver.</div></li>
+    <li id="tour-3"><span class="xb-n">3</span><div><b>Driver (U1)</b> — a <a href="/images/extensions/differential-signal-extender/datasheets/thvd1451.pdf">THVD1451</a>.</div></li>
+    <li id="tour-4"><span class="xb-n">4</span><div><b>Fuse (F1)</b> — resettable, 0.5&nbsp;A.</div></li>
+    <li id="tour-5"><span class="xb-n">5</span><div><b>Power light (D4)</b> — 5&nbsp;V present.</div></li>
+  </ol>
+  <figcaption>Point at a number, or tap it, to read what the part is; the same text is in the list. On a small screen, scroll the drawing sideways.</figcaption>
+</figure>
+{:/nomarkdown}
 
-{% include _includes/extension-instruction-diagram.html id="differential-v15-complete-03-meter-and-setup" src="/images/extensions/differential-signal-extender/guides/complete-source-circuit/03-meter-and-setup.png" title="Meter and module setup" alt="Differential receiver: Meter and module setup" caption="Read the complete set of sheets. Check physical mating before powering." width=1200 %}
+### Receiver
 
-{% include _includes/extension-instruction-diagram.html id="differential-v15-complete-04-sequence-and-limits" src="/images/extensions/differential-signal-extender/guides/complete-source-circuit/04-sequence-and-limits.png" title="Sequence and limits" alt="Differential receiver: Sequence and limits" caption="Read the complete set of sheets. Check physical mating before powering." width=1200 %}
+{::nomarkdown}
+<figure class="xb-tour">
+  <div class="xb-tour-scroll" tabindex="0" role="region" aria-label="Annotated top view">
+    <div class="xb-tour-stage">
+      <img src="/images/extensions/differential-signal-extender/v15/differential-signal-extender-receiver-diagram.png" alt="Top view of the receiver with numbered markers.">
+      <a class="xb-mk xb-pb" href="#tour-6" style="left:58.6%;top:27.5%" aria-label="6: Cable jack (J2)">6<span class="xb-pop"><b>Cable jack (J2)</b> — from the emitter.</span></a>
+      <a class="xb-mk xb-pb xb-pl" href="#tour-7" style="left:13.8%;top:44.4%" aria-label="7: Output header (J1)">7<span class="xb-pop"><b>Output header (J1)</b> — ground, 5&nbsp;V out, signal out.</span></a>
+      <a class="xb-mk" href="#tour-8" style="left:59.9%;top:66.3%" aria-label="8: Receiver (U1)">8<span class="xb-pop"><b>Receiver (U1)</b> — a THVD1451.</span></a>
+      <a class="xb-mk xb-pb" href="#tour-9" style="left:35.2%;top:48.8%" aria-label="9: Output driver (U2)">9<span class="xb-pop"><b>Output driver (U2)</b> — a UCC27517.</span></a>
+      <a class="xb-mk" href="#tour-10" style="left:36.9%;top:87.7%" aria-label="10: Power light (D4)">10<span class="xb-pop"><b>Power light (D4)</b> — 5&nbsp;V present.</span></a>
+      <a class="xb-mk" href="#tour-11" style="left:36.6%;top:67.2%" aria-label="11: Output light (D5)">11<span class="xb-pop"><b>Output light (D5)</b> — lit when the output is high.</span></a>
+    </div>
+  </div>
+  <ol class="xb-tour-list" start="6">
+    <li id="tour-6"><span class="xb-n">6</span><div><b>Cable jack (J2)</b> — from the emitter.</div></li>
+    <li id="tour-7"><span class="xb-n">7</span><div><b>Output header (J1)</b> — ground, 5&nbsp;V out, signal out.</div></li>
+    <li id="tour-8"><span class="xb-n">8</span><div><b>Receiver (U1)</b> — a <a href="/images/extensions/differential-signal-extender/datasheets/thvd1451.pdf">THVD1451</a>.</div></li>
+    <li id="tour-9"><span class="xb-n">9</span><div><b>Output driver (U2)</b> — a <a href="/images/extensions/differential-signal-extender/datasheets/ucc27517.pdf">UCC27517</a>.</div></li>
+    <li id="tour-10"><span class="xb-n">10</span><div><b>Power light (D4)</b> — 5&nbsp;V present.</div></li>
+    <li id="tour-11"><span class="xb-n">11</span><div><b>Output light (D5)</b> — lit when the output is high.</div></li>
+  </ol>
+  <figcaption>Point at a number, or tap it, to read what the part is; the same text is in the list. On a small screen, scroll the drawing sideways.</figcaption>
+</figure>
+{:/nomarkdown}
 
-{% include _includes/extension-instruction-diagram.html id="differential-v15-complete-05-source-behaviour" src="/images/extensions/differential-signal-extender/guides/complete-source-circuit/05-source-behaviour.png" title="Expected behaviour" alt="Differential receiver: Expected behaviour" caption="Read the complete set of sheets. Check physical mating before powering." width=1200 %}
+### Lights {#lights}
 
-<details markdown="1">
-<summary>Seven-lead unpowered signal-path reference</summary>
+{::nomarkdown}
+<div class="xb-tablewrap"><table class="xb-leds">
+  <thead><tr><th>Light</th><th>Lit means</th><th>Disable it</th></tr></thead>
+  <tbody>
+    <tr><td>Emitter D4, green</td><td>5&nbsp;V present</td><td>—</td></tr>
+    <tr><td>Receiver D4, green</td><td>5&nbsp;V present</td><td>Cut JP4</td></tr>
+    <tr><td>Receiver D5, green</td><td>Output high</td><td>Cut JP3</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
-**Unpowered wiring reference — do not connect supplies or energize this circuit.** The drawing contains seven signal/return leads only: Prime PB1 and ground to a named TI transmitter module, its differential pair and common return to the receiver, and receiver output/ground to a Fluke 115 DC-voltage input. All external supplies and both Prime power contacts are omitted. The single drawn cable return does not replace the complete return wiring required by a powered installation.
+## Pinout {#pinout}
 
-Prime and receiver contacts use their PCB artwork with enlarged complete rows and whole-board locators. The **TI RS485-FL-DPLX-EVM is shown as schematic terminal roles**, not physical geometry. Check transmitter mating, the fitted SN65HVD73 and cable orientation. The Fluke symbol likewise identifies ordinary DC-voltage V/COM roles only.
+### Headers
 
-{% include _includes/extension-instruction-diagram.html id="differential-v15-native-differential-signal-native-reader" src="/images/extensions/differential-signal-extender/guides/native-contact/differential-signal-native-reader.png" title="Differential receiver — seven-lead unpowered reference" alt="Differential receiver — seven-lead unpowered reference" caption="All power disconnected. Schematic transmitter ports are not physical mating geometry." width=1200 %}
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>Pin</th><th>Emitter J1</th><th>Receiver J1</th></tr></thead>
+  <tbody>
+    <tr><td>G</td><td>Ground</td><td>Ground</td></tr>
+    <tr><td>5V</td><td>5&nbsp;V input</td><td>5&nbsp;V output from the cable</td></tr>
+    <tr><td>S</td><td>Signal input</td><td>Signal output</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
-</details>
+### Cable jacks
 
-### Essential contact keys
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>Contact</th><th>Signal</th></tr></thead>
+  <tbody>
+    <tr><td>1, 2</td><td>Signal pair (high, low)</td></tr>
+    <tr><td>4, 5</td><td><span class="xb-pill xb-p-5v">5 V</span></td></tr>
+    <tr><td>3, 6, 7, 8</td><td><span class="xb-pill xb-p-gnd">GND</span></td></tr>
+    <tr><td>Shell</td><td>Shield</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
-Read these complete contact keys with the main drawing; front-view pad numbers are not plug-face orientations. J1.2 is transported protected 5 V, not the internal boost rail, and remains open. The custom 8P8C cable is not Ethernet or PoE.
+### Solder links
 
-{% include _includes/extension-instruction-diagram.html id="differential-v15-native-prime-J37" src="/images/extensions/differential-signal-extender/guides/complete-source-circuit/reader-contact-keys/prime-J37.png" title="prime J37" alt="prime J37" caption="Front-view contact numbering; verify physical mating and read the complete circuit and setup sheets." width=420 %}
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>Board</th><th>Link</th><th>Effect</th><th>As delivered</th></tr></thead>
+  <tbody>
+    <tr><td>Emitter</td><td>JP1 CABLE_5V</td><td>Sends 5&nbsp;V into the cable</td><td>Bridged</td></tr>
+    <tr><td>Receiver</td><td>JP1 TERM_DC</td><td>Adds a DC termination path across the pair</td><td>Open</td></tr>
+    <tr><td>Both</td><td>JP2 SHLD_GND</td><td>Bonds the shield to ground</td><td>Open</td></tr>
+    <tr><td>Receiver</td><td>JP3, JP4</td><td>Cut to disable lights</td><td>Bridged</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
-{% include _includes/extension-instruction-diagram.html id="differential-v15-native-receiver-J2" src="/images/extensions/differential-signal-extender/guides/complete-source-circuit/reader-contact-keys/receiver-J2.png" title="receiver J2" alt="receiver J2" caption="Front-view contact numbering; verify physical mating and read the complete circuit and setup sheets." width=420 %}
+## What you need {#what-you-need}
 
-{% include _includes/extension-instruction-diagram.html id="differential-v15-native-receiver-J1" src="/images/extensions/differential-signal-extender/guides/complete-source-circuit/reader-contact-keys/receiver-J1.png" title="receiver J1" alt="receiver J1" caption="Front-view contact numbering; verify physical mating and read the complete circuit and setup sheets." width=420 %}
+{::nomarkdown}
+<div class="xb-cards">
+  <div class="xb-card"><b>Both boards</b><span></span></div>
+  <div class="xb-card"><b>A straight-through cable</b><span>8P8C with all eight cores, used only for this link.</span></div>
+  <div class="xb-card"><b>A 5 V supply</b><span>At the emitter, sharing ground with the controller.</span></div>
+  <div class="xb-card"><b>A logic load</b><span>Draws, with the 5&nbsp;V pin, 140&nbsp;mA at most.</span></div>
+</div>
+{:/nomarkdown}
 
-{% include _includes/extension-instruction-diagram.html id="differential-v15-native-evm-JMP4" src="/images/extensions/differential-signal-extender/guides/complete-source-circuit/reader-contact-keys/evm-JMP4.png" title="evm JMP4" alt="evm JMP4" caption="Front-view contact numbering; verify physical mating and read the complete circuit and setup sheets." width=420 %}
+## Get started {#get-started}
 
-{% include _includes/extension-instruction-diagram.html id="differential-v15-native-evm-TB3" src="/images/extensions/differential-signal-extender/guides/complete-source-circuit/reader-contact-keys/evm-TB3.png" title="evm TB3" alt="evm TB3" caption="Front-view contact numbering; verify physical mating and read the complete circuit and setup sheets." width=420 %}
+This example drives the input from a Smoothieboard V2 Prime output.
 
-{% include _includes/extension-instruction-diagram.html id="differential-v15-native-meter-Fluke115" src="/images/extensions/differential-signal-extender/guides/complete-source-circuit/reader-contact-keys/meter-Fluke115.png" title="meter Fluke115" alt="meter Fluke115" caption="Front-view contact numbering; verify physical mating and read the complete circuit and setup sheets." width=420 %}
+{::nomarkdown}
+<ol class="xb-steps">
+  <li class="xb-step">
+    <h3>Wire the emitter with the power off</h3>
+    <p>Prime GF/J37 contact 3 (PB1) to S, contact 10 and your supply&rsquo;s negative to G, the 5&nbsp;V supply to 5V.</p>
+  </li>
+  <li class="xb-step">
+    <h3>Connect the cable</h3>
+    <p>Emitter jack to receiver jack. Never plug either into network equipment.</p>
+  </li>
+  <li class="xb-step">
+    <h3>Power up without a load</h3>
+    <p>Check both power lights.</p>
+    <p class="xb-expect">The output stays low.</p>
+  </li>
+  <li class="xb-step">
+    <h3>Switch the signal</h3>
+    <p>Add the configuration below, send <code>M42.21</code> then <code>M43.21</code>.</p>
+    <p class="xb-expect">The output light follows. Then connect the load with the power off.</p>
+  </li>
+</ol>
+{:/nomarkdown}
 
-<details markdown="1">
-<summary>All remaining transmitter, receiver, jumper, indicator and protection contact keys</summary>
+## Configuration {#configuration}
 
-{% include _includes/extension-instruction-diagram.html id="differential-v15-native-evm-JMP2" src="/images/extensions/differential-signal-extender/guides/complete-source-circuit/reader-contact-keys/evm-JMP2.png" title="evm JMP2" alt="evm JMP2" caption="Contact numbering reference." width=420 %}
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>You want</th><th>Module</th><th>Example</th></tr></thead>
+  <tbody>
+    <tr><td>Switch a distant logic input</td><td><a href="/switch">Switch</a>, digital output</td><td><a href="#config-main">Setup</a></td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
-{% include _includes/extension-instruction-diagram.html id="differential-v15-native-evm-JMP3" src="/images/extensions/differential-signal-extender/guides/complete-source-circuit/reader-contact-keys/evm-JMP3.png" title="evm JMP3" alt="evm JMP3" caption="Contact numbering reference." width=420 %}
+### Setup {#config-main}
 
-{% include _includes/extension-instruction-diagram.html id="differential-v15-native-evm-JMP9" src="/images/extensions/differential-signal-extender/guides/complete-source-circuit/reader-contact-keys/evm-JMP9.png" title="evm JMP9" alt="evm JMP9" caption="Contact numbering reference." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="differential-v15-native-receiver-C5" src="/images/extensions/differential-signal-extender/guides/complete-source-circuit/reader-contact-keys/receiver-C5.png" title="receiver C5" alt="receiver C5" caption="Contact numbering reference." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="differential-v15-native-receiver-D2" src="/images/extensions/differential-signal-extender/guides/complete-source-circuit/reader-contact-keys/receiver-D2.png" title="receiver D2" alt="receiver D2" caption="Contact numbering reference." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="differential-v15-native-receiver-D3" src="/images/extensions/differential-signal-extender/guides/complete-source-circuit/reader-contact-keys/receiver-D3.png" title="receiver D3" alt="receiver D3" caption="Contact numbering reference." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="differential-v15-native-receiver-D4" src="/images/extensions/differential-signal-extender/guides/complete-source-circuit/reader-contact-keys/receiver-D4.png" title="receiver D4" alt="receiver D4" caption="Contact numbering reference." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="differential-v15-native-receiver-D5" src="/images/extensions/differential-signal-extender/guides/complete-source-circuit/reader-contact-keys/receiver-D5.png" title="receiver D5" alt="receiver D5" caption="Contact numbering reference." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="differential-v15-native-receiver-JP1" src="/images/extensions/differential-signal-extender/guides/complete-source-circuit/reader-contact-keys/receiver-JP1.png" title="receiver JP1" alt="receiver JP1" caption="Contact numbering reference." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="differential-v15-native-receiver-JP2" src="/images/extensions/differential-signal-extender/guides/complete-source-circuit/reader-contact-keys/receiver-JP2.png" title="receiver JP2" alt="receiver JP2" caption="Contact numbering reference." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="differential-v15-native-receiver-JP3" src="/images/extensions/differential-signal-extender/guides/complete-source-circuit/reader-contact-keys/receiver-JP3.png" title="receiver JP3" alt="receiver JP3" caption="Contact numbering reference." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="differential-v15-native-receiver-JP4" src="/images/extensions/differential-signal-extender/guides/complete-source-circuit/reader-contact-keys/receiver-JP4.png" title="receiver JP4" alt="receiver JP4" caption="Contact numbering reference." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="differential-v15-native-receiver-L1" src="/images/extensions/differential-signal-extender/guides/complete-source-circuit/reader-contact-keys/receiver-L1.png" title="receiver L1" alt="receiver L1" caption="Contact numbering reference." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="differential-v15-native-receiver-Q1" src="/images/extensions/differential-signal-extender/guides/complete-source-circuit/reader-contact-keys/receiver-Q1.png" title="receiver Q1" alt="receiver Q1" caption="Contact numbering reference." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="differential-v15-native-receiver-R1" src="/images/extensions/differential-signal-extender/guides/complete-source-circuit/reader-contact-keys/receiver-R1.png" title="receiver R1" alt="receiver R1" caption="Contact numbering reference." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="differential-v15-native-receiver-R2" src="/images/extensions/differential-signal-extender/guides/complete-source-circuit/reader-contact-keys/receiver-R2.png" title="receiver R2" alt="receiver R2" caption="Contact numbering reference." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="differential-v15-native-receiver-U1" src="/images/extensions/differential-signal-extender/guides/complete-source-circuit/reader-contact-keys/receiver-U1.png" title="receiver U1" alt="receiver U1" caption="Contact numbering reference." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="differential-v15-native-receiver-U2" src="/images/extensions/differential-signal-extender/guides/complete-source-circuit/reader-contact-keys/receiver-U2.png" title="receiver U2" alt="receiver U2" caption="Contact numbering reference." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="differential-v15-native-receiver-U3" src="/images/extensions/differential-signal-extender/guides/complete-source-circuit/reader-contact-keys/receiver-U3.png" title="receiver U3" alt="receiver U3" caption="Contact numbering reference." width=420 %}
-
-</details>
-
-The receiver uses LINE_HI → B and LINE_LO → A, followed by the UCC27517 inverting stage.
-
-## Smoothieware: named transmitter and meter example
-
-The receiver needs no device driver. This bench example uses an existing **TI RS485-FL-DPLX-EVM fitted with SN65HVD73**, one Prime digital output and a Fluke 115 meter. It is a static-output procedure, not a motion installation or a machine safety function. Verify the supplied module and fitted part before using its contacts. The Prime adaptation below is our application of manufacturer specifications, not a TI system design.
-
-**Do not power the unpowered reference drawing above.** Before any supply or connection step below, check physical mapping, fitted parts, full power and return wiring, startup and electrical margins.
-
-<details markdown="1">
-<summary>Transmitter module setup, firmware example and powered bench procedure</summary>
-
-### Prepare the named transmitter module
-
-Use SLLU197 (June2014), schematicFigure1 and section2.2. The guide documents R2/R3/R4 as 50Ω instrument-input terminations and permits removal when inputs are directly tied to rails. For this Prime application remove those shunts so they do not impose a 50Ω load on its GPIO; this is our application of the schematic/input specifications, not a TI Prime application. Set JMP2 1–2 (/RE HIGH, receiver disabled), JMP3 1–2 (DE HIGH), JMP9 3–4 (EARTH/GND common). Other optional shunts remain open. Supply regulated3.3 V at JMP4.1, return JMP4.3; D is JMP4.2. Do not bridge JMP4.1–2. Bus output TB3.2 is Y, TB3.1 Z; TB3.3 is EARTH, now grounded. Unused receiver/output headers remain disconnected. SLLU197 prose conflicts with its schematic about TB1 numbering; this procedure avoids TB1 and uses the unambiguous schematic header contacts instead. Verify actual module markings before connection.
-
-SN65HVD73 primary specifies3.0–3.6 V supply, HIGH input≥2 V and LOW≤0.8 V. Its driver guarantees differential magnitude≥1.5 V into54Ω under specified conditions. These limits support the named logic interface; they do not set a cable noise margin or a maximum distance for the link.
-
-### Connect Prime, receiver and meter
-
-Reserve Prime GF/J37.3 PB1 for EVM D/JMP4.2 and GF.10 for common ground. Prime power contacts remain unconnected. External3.3 V negative,5 V negative, EVM ground and receiver grounds are common in this intentional nonisolated bench. Do not return the receiver's driven5 V-domain output to Prime.
-
-Connect EVM Y/TB3.2→receiver J2.1 LINE_HI; Z/TB3.1→J2.2 LINE_LO. The native receiver's U1.7 B is LINE_HI and U1.8 A is LINE_LO. Thus the names do not mean normal receiver A/B ordering. J2.4/.5 both receive the separate regulated5.0 V cable supply; J2.3/.6/.7/.8 all connect common return. Maintain all those conductors; no Ethernet equipment may be connected. Keep the pair short and twisted for the bench; no length or rate is specified.
-
-With all power removed, verify/close receiver JP1 TERM_DC for its100Ω DC path R2; do not confuse the parallel C5 AC termination with a ground return. The EVM's retained120Ω output termination in parallel with100Ω is nominal54.55Ω, consistent with the transmitter's54Ω test load; resistor tolerances and fitted parts need checking. No new line-driver PCB or undocumented logic translator is introduced.
-
-The receiver power path is cable+5V→AO3401A Q1 drain3→source2 +5V_R (gate1 biased towardground throughR1), then L1/TPS613222A establishes +5V_BOOST for UCC27517. Do not bypass protection or inject a differently named rail. Confirm rail values/current consumption before requesting HIGH. Nominal5 V cable input does not set a current budget or guarantee booster startup. UCC IN+ is tied to its supply and IN− to RX_R, so this final stage inverts.
-
-Use **Fluke115 ordinary DC volts**: COM→receiver J1.1 GND, V→J1.3 SIG_OUT. J1.2 +5V_R remains disconnected. Its nominal >10MΩ input corresponds to <0.5µA resistive loading at5 V; do not use current/ohms/Auto-V LoZ terminals or settings. There is no field load. Record actual LOW/HIGH voltages rather than inventing guaranteed output values.
-
-### Configure and observe two output states
-
-Merge into a valid isolated base configuration. Remove conflicting PB1/command owners; do not duplicate sections.
+The boards need no driver; any digital output works.
 
 ```ini
 [switch]
@@ -233,38 +251,158 @@ line_request.input_off_command = M43
 line_request.subcode = 21
 line_request.startup_state = false
 line_request.halt_set_to = false
-line_request.ignore_on_halt = false
 ```
 
-Keep external module/receiver supplies off while initializing the host. Send `M43.21` and verify the request is LOW before external power. Establish returns first, power the EVM3.3 V supply and receiver5 V supply, and verify the rails and absence of unexpected current/heating. This is a controlled bench sequence, and does not allow arbitrary power order or hot-plugging. Do not drive HIGH into an unpowered module.
+The [switch module](https://github.com/Smoothieware/SmoothieV2/blob/2a21c0108b1d095ecd8b2b9358e94055f053c003/Firmware/src/modules/tools/switch/Switch.cpp) starts this output LOW and returns it LOW on a software halt. That is not a hardware safety function, and it does not define the level during reset or power-up. Check that nothing else uses PB1 or M42.21 and M43.21.
 
-With stable supplies and meter connected, send `M43.21`, wait for a settled reading and record LOW. Send `M42.21`, wait and record HIGH. Finish `M43.21` and record LOW. Keep the host powered/request LOW while removing the external positive supplies; remove the host signal before disconnecting common returns. Startup/halt settings apply only after software configuration/handled halt, not during every boot or supply failure.
+## How it works {#how-it-works}
 
-Logic path: D HIGH→EVM Y HIGH/Z LOW→receiver A LOW/B HIGH→R LOW→UCC inverting output HIGH. D LOW reverses those states→output LOW. The disconnect and failsafe state is not defined; LOW is not a machine safety function. No G-code motion, laser request, UART or special receiver driver is involved.
+The emitter drives the two wires in opposite directions. The receiver compares them, so noise picked up equally by both has little effect, and the output driver restores a 5&nbsp;V logic level. With the link idle or disconnected the output is meant to rest low.
 
-### Sources
+## Troubleshooting {#troubleshooting}
 
-- [TI evaluation module](https://www.ti.com/tool/RS485-FL-DPLX-EVM) and [SLLU197 guide](https://www.ti.com/lit/pdf/SLLU197), Figure 1 and sections 2.2–3: module contacts and input shunts; the Prime adaptation above is our own. The schematic and prose conflict about TB1 numbering; this example deliberately uses JMP4 and JMP9 instead.
-- [SN65HVD73 datasheet](https://www.ti.com/lit/ds/symlink/sn65hvd73.pdf): supply/input limits, differential output load and truth table.
-- [THVD1451 datasheet](https://www.ti.com/lit/ds/symlink/thvd1451.pdf) and [UCC27517 datasheet](https://www.ti.com/lit/ds/symlink/ucc27517.pdf): the receiver stages and inversion.
-- [Switch implementation](https://github.com/Smoothieware/SmoothieV2/blob/2a21c0108b1d095ecd8b2b9358e94055f053c003/Firmware/src/modules/tools/switch/Switch.cpp): digital output, command subcodes, configured startup and handled halt behavior.
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>Symptom</th><th>Check</th></tr></thead>
+  <tbody>
+    <tr><td>No power light at the receiver</td><td>Emitter supply, JP1 CABLE_5V bridged, all cable cores.</td></tr>
+    <tr><td>Output never goes high</td><td>Signal on pin S, common ground, pair on contacts 1 and 2.</td></tr>
+    <tr><td>Errors on a long run</td><td>Twisted pair for contacts 1 and 2; consider closing the receiver&rsquo;s JP1.</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
-Check mating, fitted parts, rails, current and temperature. The meter is ordinary DC volts with nominal >10 MΩ input, not its low-impedance mode. Connect no field load, and do not rely on disconnect or failsafe behaviour.
+Still stuck? Read [how to ask for help](/help-guidelines) or see the general [troubleshooting guide](/troubleshooting/).
 
-</details>
+## Downloads {#downloads}
 
-## Board sources
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>File</th><th>What it is</th></tr></thead>
+  <tbody>
+    <tr><td><a href="/images/extensions/differential-signal-extender/v15/differential-signal-extender-emitter-schematic.pdf">Schematic (PDF, emitter)</a></td><td>The complete circuit diagram</td></tr>
+    <tr><td><a href="/images/extensions/differential-signal-extender/v15/differential-signal-extender-emitter-bom.csv">Parts list (CSV, emitter)</a></td><td>Every component with its value and footprint</td></tr>
+    <tr><td><a href="/images/extensions/differential-signal-extender/v15/differential-signal-extender-emitter-diagram.png">Board drawing (PNG, emitter)</a></td><td>The top view used on this page</td></tr>
+    <tr><td><a href="/images/extensions/differential-signal-extender/v15/differential-signal-extender-receiver-schematic.pdf">Schematic (PDF, receiver)</a></td><td>The complete circuit diagram</td></tr>
+    <tr><td><a href="/images/extensions/differential-signal-extender/v15/differential-signal-extender-receiver-bom.csv">Parts list (CSV, receiver)</a></td><td>Every component with its value and footprint</td></tr>
+    <tr><td><a href="/images/extensions/differential-signal-extender/v15/differential-signal-extender-receiver-diagram.png">Board drawing (PNG, receiver)</a></td><td>The top view used on this page</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
-- [Board source directory](https://github.com/arthurwolf/extension-boards/tree/main/src/differential-signal-extender/attempt/versions/v15)
-- [Design specification](https://github.com/arthurwolf/extension-boards/blob/main/src/differential-signal-extender/specs.md)
-- [Design discussion](https://github.com/arthurwolf/extension-boards/blob/main/src/differential-signal-extender/design.md)
-- [All extension boards](/extension-boards)
+## Appendix: mounting dimensions {#mounting}
 
-<details markdown="1">
-<summary>Additional board views</summary>
+For drilling a mounting plate or designing an enclosure. Positions are hole centres, in millimetres, measured from the top-left corner with the board seen from the component side.
 
-Active components: `U1 THVD1451D`; `U2 UCC27517`; `U3 TPS613222A 5V BOOST`. Check the matching datasheet limits.
+### Emitter dimensions
 
-{% include _includes/extension-board-visuals.html slug="differential-signal-extender" %}
+{::nomarkdown}
+<figure class="xb-fig">
+  <div class="xb-fig-scroll" tabindex="0" role="region" aria-label="Mounting drawing">
+  <svg viewBox="0 0 1000 480" role="img" aria-labelledby="xb-dse-mount-t">
+  <title id="xb-dse-mount-t">Mounting drawing of the dse, component side: outline 28 by 31 millimetres with 2 mounting holes. Hole positions are listed in the table below.</title>
+  <text x="480.0" y="24" text-anchor="middle" font-size="13" font-weight="700" letter-spacing="1" fill="#a9b4c2">COMPONENT SIDE · millimetres</text>
+  <rect x="326.5" y="78.0" width="307.1" height="340.0" rx="0.0" fill="#1f2226" stroke="#e6ebf2" stroke-width="1.5"/>
+  <g stroke="#a9b4c2" stroke-width="1.2" fill="none"><path d="M326.5 56H633.5"/><path d="M326.5 50V62"/><path d="M633.5 50V62"/><path d="M659.5 78.0V418.0"/><path d="M653.5 78.0h12"/><path d="M653.5 418.0h12"/></g>
+  <text x="480.0" y="48" text-anchor="middle" font-size="15" font-weight="700" fill="#e6ebf2">28</text>
+  <text x="671.5" y="253.0" font-size="15" font-weight="700" fill="#e6ebf2">31</text>
+  <circle cx="326.5" cy="78.0" r="4" fill="#ffcc33"/>
+  <text x="314.5" y="83.0" text-anchor="end" font-size="14" font-weight="700" fill="#ffcc33">0, 0</text>
+  <g stroke="#ffcc33" stroke-width="1.5" fill="#ffcc33"><path d="M268.5 104.0h30" fill="none"/><path d="M302.5 104.0l-8 -4v8z"/><path d="M268.5 104.0v30" fill="none"/><path d="M268.5 138.0l-4 -8h8z"/></g>
+  <text x="306.5" y="109.0" font-size="12" font-weight="700" fill="#ffcc33">X</text>
+  <text x="264.5" y="154.0" font-size="12" font-weight="700" fill="#ffcc33">Y</text>
+  <circle cx="370.3" cy="374.1" r="17.5" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <path d="M348.8 374.1h43.1M370.3 352.6v43.1" stroke="#ffcc33" stroke-width=".8" fill="none"/>
+  <text x="352.8" y="346.6" text-anchor="start" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">1</tspan>  4.00, 27.00</text>
+  <circle cx="589.7" cy="374.1" r="17.5" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <path d="M568.1 374.1h43.1M589.7 352.6v43.1" stroke="#ffcc33" stroke-width=".8" fill="none"/>
+  <text x="607.2" y="346.6" text-anchor="end" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">2</tspan>  24.00, 27.00</text>
+  <text x="480.0" y="448.0" text-anchor="middle" font-size="13" fill="#a9b4c2">Numbered rings are mounting holes. Positions are hole centres, X then Y, from the marked corner.</text>
+  </svg>
+  </div>
+  <figcaption>Board outline 28 × 31&nbsp;mm, square corners, board thickness 1.6&nbsp;mm. Drawn from the design files, component side up, in the same orientation as the board tour.</figcaption>
+</figure>
 
-</details>
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>Hole</th><th>X (mm)</th><th>Y (mm)</th><th>Diameter</th><th>Use</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td>4.00</td><td>27.00</td><td>3.2&nbsp;mm, not plated</td><td>Mounting, M3 screw</td></tr>
+    <tr><td>2</td><td>24.00</td><td>27.00</td><td>3.2&nbsp;mm, not plated</td><td>Mounting, M3 screw</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+### Receiver dimensions
+
+{::nomarkdown}
+<figure class="xb-fig">
+  <div class="xb-fig-scroll" tabindex="0" role="region" aria-label="Mounting drawing">
+  <svg viewBox="0 0 1000 480" role="img" aria-labelledby="xb-dsr-mount-t">
+  <title id="xb-dsr-mount-t">Mounting drawing of the dsr, component side: outline 34 by 34 millimetres with 2 mounting holes. Hole positions are listed in the table below.</title>
+  <text x="480.0" y="24" text-anchor="middle" font-size="13" font-weight="700" letter-spacing="1" fill="#a9b4c2">COMPONENT SIDE · millimetres</text>
+  <rect x="310.0" y="78.0" width="340.0" height="340.0" rx="0.0" fill="#1f2226" stroke="#e6ebf2" stroke-width="1.5"/>
+  <g stroke="#a9b4c2" stroke-width="1.2" fill="none"><path d="M310.0 56H650.0"/><path d="M310.0 50V62"/><path d="M650.0 50V62"/><path d="M676.0 78.0V418.0"/><path d="M670.0 78.0h12"/><path d="M670.0 418.0h12"/></g>
+  <text x="480.0" y="48" text-anchor="middle" font-size="15" font-weight="700" fill="#e6ebf2">34</text>
+  <text x="688.0" y="253.0" font-size="15" font-weight="700" fill="#e6ebf2">34</text>
+  <circle cx="310.0" cy="78.0" r="4" fill="#ffcc33"/>
+  <text x="298.0" y="83.0" text-anchor="end" font-size="14" font-weight="700" fill="#ffcc33">0, 0</text>
+  <g stroke="#ffcc33" stroke-width="1.5" fill="#ffcc33"><path d="M252.0 104.0h30" fill="none"/><path d="M286.0 104.0l-8 -4v8z"/><path d="M252.0 104.0v30" fill="none"/><path d="M252.0 138.0l-4 -8h8z"/></g>
+  <text x="290.0" y="109.0" font-size="12" font-weight="700" fill="#ffcc33">X</text>
+  <text x="248.0" y="154.0" font-size="12" font-weight="700" fill="#ffcc33">Y</text>
+  <circle cx="380.0" cy="378.0" r="16.0" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <path d="M360.0 378.0h40.0M380.0 358.0v40.0" stroke="#ffcc33" stroke-width=".8" fill="none"/>
+  <text x="364.0" y="352.0" text-anchor="start" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">1</tspan>  7.00, 30.00</text>
+  <circle cx="580.0" cy="378.0" r="16.0" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <path d="M560.0 378.0h40.0M580.0 358.0v40.0" stroke="#ffcc33" stroke-width=".8" fill="none"/>
+  <text x="596.0" y="352.0" text-anchor="end" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">2</tspan>  27.00, 30.00</text>
+  <text x="480.0" y="448.0" text-anchor="middle" font-size="13" fill="#a9b4c2">Numbered rings are mounting holes. Positions are hole centres, X then Y, from the marked corner.</text>
+  </svg>
+  </div>
+  <figcaption>Board outline 34 × 34&nbsp;mm, square corners, board thickness 1.6&nbsp;mm. Drawn from the design files, component side up, in the same orientation as the board tour.</figcaption>
+</figure>
+
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>Hole</th><th>X (mm)</th><th>Y (mm)</th><th>Diameter</th><th>Use</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td>7.00</td><td>30.00</td><td>3.2&nbsp;mm, not plated</td><td>Mounting, M3 screw</td></tr>
+    <tr><td>2</td><td>27.00</td><td>30.00</td><td>3.2&nbsp;mm, not plated</td><td>Mounting, M3 screw</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+## Appendix: electrical specifications {#electrical}
+
+Board values come from the silk screen and parts list.
+
+{::nomarkdown}
+<div class="xb-tablewrap"><table class="xb-elec">
+  <thead><tr><th>Parameter</th><th>Applies to</th><th>Lower</th><th>Nominal</th><th>Upper</th><th>Basis and conditions</th></tr></thead>
+  <tbody>
+    <tr><td>Receiver output current</td><td>5 V pin plus signal</td><td>—</td><td>—</td><td>140 mA</td><td>Board silk</td></tr>
+    <tr><td>Supply</td><td>Emitter 5V pin</td><td>—</td><td>5 V</td><td>—</td><td>Board silk</td></tr>
+    <tr><td>Fuse</td><td>Emitter 5 V</td><td>—</td><td>0.5 A</td><td>—</td><td>Resettable fuse in the parts list</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+## Appendix: datasheets {#datasheets}
+
+The first page of each important chip&rsquo;s datasheet. Click a page to open the PDF.
+
+{::nomarkdown}
+<figure class="xb-fig">
+  <a href="/images/extensions/differential-signal-extender/datasheets/thvd1451.pdf"><img src="/images/extensions/differential-signal-extender/datasheets/thvd1451-page1.png" alt="First page of the THVD1451 datasheet" style="display:block;width:100%;max-width:480px;height:auto;margin:0 auto"></a>
+  <figcaption><a href="/images/extensions/differential-signal-extender/datasheets/thvd1451.pdf">THVD1451 3.3 V to 5 V RS-485 transceiver, full duplex</a> — Texas Instruments, 54 pages.</figcaption>
+</figure>
+<figure class="xb-fig">
+  <a href="/images/extensions/differential-signal-extender/datasheets/ucc27517.pdf"><img src="/images/extensions/differential-signal-extender/datasheets/ucc27517-page1.png" alt="First page of the UCC27517 datasheet" style="display:block;width:100%;max-width:480px;height:auto;margin:0 auto"></a>
+  <figcaption><a href="/images/extensions/differential-signal-extender/datasheets/ucc27517.pdf">UCC27517 single-channel gate driver</a> — Texas Instruments, 37 pages.</figcaption>
+</figure>
+<figure class="xb-fig">
+  <a href="/images/extensions/differential-signal-extender/datasheets/tps61322.pdf"><img src="/images/extensions/differential-signal-extender/datasheets/tps61322-page1.png" alt="First page of the TPS613222A datasheet" style="display:block;width:100%;max-width:480px;height:auto;margin:0 auto"></a>
+  <figcaption><a href="/images/extensions/differential-signal-extender/datasheets/tps61322.pdf">TPS61322 family boost converter</a> — Texas Instruments, 37 pages.</figcaption>
+</figure>
+{:/nomarkdown}
+
+
+See all boards on the [extension boards](/extension-boards) page.

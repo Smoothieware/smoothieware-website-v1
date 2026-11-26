@@ -8,6 +8,7 @@ History: see CHANGELOG.archive.md.
 
 ### Changed
 
+- Extension board pages: rebuilt the level shifting, opto-isolation pass-through, SPI Hub, UART breakout, cheap UART adapter, CPLD adapter, differential signal, differential SPI, differential STEP/DIR/EN and long-distance extender pages to the current page layout, with annotated drawings, wiring steps and chip datasheets.
 - Use only transparent black board renders in the extension directory and leave rows without suitable artwork blank.
 
 - Rewrote the extension board pages as finished product pages, without design-status or revision wording, and reduced the extension board directory to board (with a preview linking to its page) and purpose.

@@ -1,181 +1,361 @@
 ---
 layout: default
 title: "CPLD adapter"
+description: "A Lattice MachXO2 CPLD between controller STEP/DIR/ENABLE signals and a 5 V logic receiver, programmable over JTAG."
 permalink: /extensions/cpld-adapter
 ---
 
-# CPLD adapter
+{% include _includes/extension-board-page.html %}
 
-This programmable single-axis conditioner sits between host STEP/DIR/ENABLE logic and a compatible 5 V logic receiver. It is intended for defined timing or conditioning profiles. It is not a transparent passive level adapter and does not provide motor power.
 
-## How it works
-
-The board uses a Lattice LCMXO2-640HC, supervisors and output-gating logic. J1 supplies host commands and returns a fault-related signal; J2 carries the field interface. J3 programs the logic. JP1 is an open-by-default bypass-request input to the CPLD. Closing it does not make a copper path around the chip; its effect requires a matching programmed logic image. The three-input output gate enables U2 only when reset is released, CPLD_RUN is high and the host enable request is high.
-
-## Power, signals and limits
-
-J2 order is GND, STEP_OUT, DIR_OUT, ENABLE_OUT_N, FAULT_IN_N, GND. It carries no load supply. The outputs are 5 V CMOS through series resistors for high-impedance logic loads, not current-driven stepper optocouplers. Do not connect them directly to a DM556 input without checking its input current and interface. J3's USB-Blaster-style label is a connector convention, not proof that an Altera bitstream or programmer is compatible with this Lattice device.
-
-OUT_OE_N has a 10 kΩ pull-up to the 5 V rail while the gate driving it, U4, is powered from 3.3 V. Check device voltage tolerance, startup behaviour and the resulting enable levels before powered use.
-
-## Board reference
-
-<details markdown="1">
-<summary>Reading the connector callouts</summary>
-
-The dark end of each pill gives the contact number. The adjoining label gives its function. Colours help locate related functions; the label and connection instructions determine how to use the contact.
-
-- Red: 3.3 V supply.
-- Orange: 5 V supply.
-- Near-black: Circuit ground.
-- Green: Motor enable.
-- Blue: Motor STEP.
-- Grey: Not routed.
-- Dark grey: Other labelled contact — read its exact function.
-
-A voltage in a signal name does not make that contact a power output. Circuit ground, cable shield and protective earth are different connections. An underside projection shows rear components through the front view; it is not a mirrored rear view.
-
-</details>
-
-Start with the overview, then use all focused sheets for exact contacts, controls and links.
-
-{% include _includes/extension-instruction-diagram.html id="cpld-adapter-v19-reader-compact-overview" src="/images/extensions/cpld-adapter/guides/reader-compact-overview.png" title="MachXO2 logic adapter — overview" alt="MachXO2 logic adapter — overview" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="cpld-adapter-v19-reader-compact-host-1-5" src="/images/extensions/cpld-adapter/guides/reader-compact-host-1-5-central-pills.png" title="J1 · Host Y control — host 1 5" alt="J1 · Host Y control — host 1 5" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="cpld-adapter-v19-reader-compact-host-6-10" src="/images/extensions/cpld-adapter/guides/reader-compact-host-6-10-central-pills.png" title="J1 · Host Y control — host 6 10" alt="J1 · Host Y control — host 6 10" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="cpld-adapter-v19-reader-compact-field-1-5" src="/images/extensions/cpld-adapter/guides/reader-compact-field-1-5-central-pills.png" title="J2 · 5V field logic — field 1 5" alt="J2 · 5V field logic — field 1 5" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="cpld-adapter-v19-reader-compact-field-6-6" src="/images/extensions/cpld-adapter/guides/reader-compact-field-6-6-central-pills.png" title="J2 · 5V field logic — field 6 6" alt="J2 · 5V field logic — field 6 6" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="cpld-adapter-v19-reader-compact-jtag-1-5" src="/images/extensions/cpld-adapter/guides/reader-compact-jtag-1-5-central-pills.png" title="J3 · JTAG programming — jtag 1 5" alt="J3 · JTAG programming — jtag 1 5" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="cpld-adapter-v19-reader-compact-jtag-6-10" src="/images/extensions/cpld-adapter/guides/reader-compact-jtag-6-10-central-pills.png" title="J3 · JTAG programming — jtag 6 10" alt="J3 · JTAG programming — jtag 6 10" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="cpld-adapter-v19-reader-compact-logic" src="/images/extensions/cpld-adapter/guides/reader-compact-logic.png" title="Programmable signal path — logic" alt="Programmable signal path — logic" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="cpld-adapter-v19-reader-compact-enable" src="/images/extensions/cpld-adapter/guides/reader-compact-enable.png" title="Hardware output gate — enable" alt="Hardware output gate — enable" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="cpld-adapter-v19-reader-compact-output" src="/images/extensions/cpld-adapter/guides/reader-compact-output.png" title="Field output idle network — output" alt="Field output idle network — output" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="cpld-adapter-v19-reader-compact-fault" src="/images/extensions/cpld-adapter/guides/reader-compact-fault.png" title="Field fault return — fault" alt="Field fault return — fault" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="cpld-adapter-v19-reader-compact-bypass" src="/images/extensions/cpld-adapter/guides/reader-compact-bypass.png" title="Bypass request link — bypass" alt="Bypass request link — bypass" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="cpld-adapter-v19-reader-compact-power" src="/images/extensions/cpld-adapter/guides/reader-compact-power.png" title="Supply and JTAG reference — power" alt="Supply and JTAG reference — power" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="cpld-adapter-v19-reader-compact-watchdog" src="/images/extensions/cpld-adapter/guides/reader-compact-watchdog.png" title="Supervisor and watchdog — watchdog" alt="Supervisor and watchdog — watchdog" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="cpld-adapter-v19-reader-compact-led1" src="/images/extensions/cpld-adapter/guides/reader-compact-led1.png" title="3.3V power — led1" alt="3.3V power — led1" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="cpld-adapter-v19-reader-compact-led2" src="/images/extensions/cpld-adapter/guides/reader-compact-led2.png" title="Output enable — led2" alt="Output enable — led2" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="cpld-adapter-v19-reader-compact-led3" src="/images/extensions/cpld-adapter/guides/reader-compact-led3.png" title="Bypass indication — led3" alt="Bypass indication — led3" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="cpld-adapter-v19-reader-compact-led4" src="/images/extensions/cpld-adapter/guides/reader-compact-led4.png" title="Fault indication — led4" alt="Fault indication — led4" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="cpld-adapter-v19-reader-compact-tests1" src="/images/extensions/cpld-adapter/guides/reader-compact-tests1.png" title="Logic and supply tests — tests1" alt="Logic and supply tests — tests1" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="cpld-adapter-v19-reader-compact-tests6" src="/images/extensions/cpld-adapter/guides/reader-compact-tests6.png" title="Logic and supply tests — tests6" alt="Logic and supply tests — tests6" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="cpld-adapter-v19-reader-compact-mounts" src="/images/extensions/cpld-adapter/guides/reader-compact-mounts.png" title="Mounting holes — mounts" alt="Mounting holes — mounts" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-The contact table below accompanies the diagrams above. Follow the wiring section for the connection procedure.
-
-### Connector contacts
-
-Contact numbers are the PCB pad numbers, viewed as in the board drawings. Same-numbered duplicate lands are listed once. Mechanical unnumbered pads are omitted. `NC` means unconnected. Net names alone do not establish direction; use the signal-path explanation above.
-
-<details markdown="1">
-<summary>Connector contact table</summary>
-
-<div class="extension-contact-table" role="region" aria-label="Connector contacts; scroll horizontally to read all columns" tabindex="0" markdown="1">
-
-| Connector | Contact(s) | Function/net |
-| --- | --- | --- |
-| J3 — JTAG 10-PIN (USB-Blaster pinout) | 1 | `/JTAG_TCK` |
-| J3 — JTAG 10-PIN (USB-Blaster pinout) | 2 | `GND` |
-| J3 — JTAG 10-PIN (USB-Blaster pinout) | 3 | `/JTAG_TDO` |
-| J3 — JTAG 10-PIN (USB-Blaster pinout) | 4 | `/JTAG_VTREF` |
-| J3 — JTAG 10-PIN (USB-Blaster pinout) | 5 | `/JTAG_TMS` |
-| J3 — JTAG 10-PIN (USB-Blaster pinout) | 9 | `/JTAG_TDI` |
-| J3 — JTAG 10-PIN (USB-Blaster pinout) | 10 | `GND` |
-| J3 | 6, 7, 8 | NC |
-| J2 — FIELD OUT 5V LOGIC | 1 | `GND` |
-| J2 — FIELD OUT 5V LOGIC | 2 | `/STEP_OUT` |
-| J2 — FIELD OUT 5V LOGIC | 3 | `/DIR_OUT` |
-| J2 — FIELD OUT 5V LOGIC | 4 | `/ENABLE_OUT_N` |
-| J2 — FIELD OUT 5V LOGIC | 5 | `/FAULT_IN_N` |
-| J2 — FIELD OUT 5V LOGIC | 6 | `GND` |
-| J1 — GADGETEER Y (to Smoothieboard v2) | 1 | `/HOST_3V3` |
-| J1 — GADGETEER Y (to Smoothieboard v2) | 2 | `/HOST_5V` |
-| J1 — GADGETEER Y (to Smoothieboard v2) | 3 | `/HOST_STEP` |
-| J1 — GADGETEER Y (to Smoothieboard v2) | 4 | `/HOST_DIR` |
-| J1 — GADGETEER Y (to Smoothieboard v2) | 5 | `/HOST_ENABLE` |
-| J1 — GADGETEER Y (to Smoothieboard v2) | 6 | `/HOST_FAULT_N` |
-| J1 — GADGETEER Y (to Smoothieboard v2) | 7 | `/HOST_AUX0` |
-| J1 — GADGETEER Y (to Smoothieboard v2) | 8 | `/HOST_AUX1` |
-| J1 — GADGETEER Y (to Smoothieboard v2) | 9 | `/HOST_CLKREF` |
-| J1 — GADGETEER Y (to Smoothieboard v2) | 10 | `GND` |
-
+{::nomarkdown}
+<div class="xb-hero">
+  <div>
+    <p class="xb-eyebrow">Extension board · Motors and outputs</p>
+    <h1 id="cpld-adapter">CPLD adapter</h1>
+    <p class="xb-lead">Put programmable logic between your controller and a motion-signal receiver. A <a href="/images/extensions/cpld-adapter/datasheets/machxo2.pdf">MachXO2</a> CPLD processes STEP, DIR and ENABLE, a watchdog supervises it, and buffered 5&nbsp;V outputs drive the receiver.</p>
+    <div class="xb-actions">
+      <a class="xb-btn xb-btn-primary" href="#get-started">Get started</a>
+      <a class="xb-btn" href="#pinout">Pinout</a>
+      <a class="xb-btn" href="#configuration">Configuration</a>
+    </div>
+  </div>
+  <figure>
+    <img src="/images/extensions/cpld-adapter/v19/cpld-adapter-diagram.png" alt="Top view of the CPLD adapter: the CPLD in the middle, a JTAG header at the top left, controller and field connectors along the bottom and four lights at the right.">
+    <figcaption>Top view, drawn from the board&rsquo;s design files. This is a drawing, not a photograph.</figcaption>
+  </figure>
 </div>
 
-</details>
+<div class="xb-stats">
+  <div class="xb-stat"><b><a href="/images/extensions/cpld-adapter/datasheets/machxo2.pdf">MachXO2</a></b><span><a href="/images/extensions/cpld-adapter/datasheets/machxo2.pdf">LCMXO2-640HC</a></span></div>
+  <div class="xb-stat"><b>50 MHz</b><span>oscillator</span></div>
+  <div class="xb-stat"><b>5 V</b><span>logic outputs</span></div>
+  <div class="xb-stat"><b>JTAG</b><span>ten-pin programming header</span></div>
+  <div class="xb-stat"><b>Watchdog</b><span><a href="/images/extensions/cpld-adapter/datasheets/tps3823.pdf">TPS3823</a> supervisor</span></div>
+  <div class="xb-stat"><b>64 × 39</b><span>millimetres, four M3 holes</span></div>
+</div>
 
-### Links, controls and indicators
+<nav class="xb-nav" aria-label="On this page">
+  <a href="#specs">Tech specs</a>
+  <a href="#tour">Board tour</a>
+  <a href="#pinout">Pinout</a>
+  <a href="#what-you-need">What you need</a>
+  <a href="#get-started">Get started</a>
+  <a href="#configuration">Configuration</a>
+  <a href="#how-it-works">How it works</a>
+  <a href="#troubleshooting">Troubleshooting</a>
+  <a href="#downloads">Downloads</a>
+  <a href="#mounting">Mounting</a>
+  <a href="#electrical">Electrical</a>
+  <a href="#datasheets">Datasheets</a>
+</nav>
+{:/nomarkdown}
 
-The values below identify each control or indication. A cut-to-disable LED link affects only the indicator, not the protected circuit. Check the link population and default state on your board before cutting or bridging.
+<sl-alert variant="warning" open>
+  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+  Program the CPLD with your logic image before connecting a receiver. Outputs are 5&nbsp;V logic only: never 12 or 24&nbsp;V, motor coils or motor power. An unlit fault light does not mean the system is safe.
+</sl-alert>
 
-<details markdown="1">
-<summary>Links and indicators table</summary>
+## Tech specs {#specs}
 
-| Item | Label | Contact nets |
-| --- | --- | --- |
-| JP2 | CUT TO DISABLE D1 | 1 = LED_D1_DISABLE; 2 = /D1_A |
-| JP4 | CUT TO DISABLE D4 | 1 = LED_D4_DISABLE; 2 = /D4_A |
-| D1 | green POWER 3V3 | 1 = GND; 2 = LED_D1_DISABLE |
-| JP3 | CUT TO DISABLE D3 | 1 = LED_D3_DISABLE; 2 = /D3_A |
-| D3 | amber BYPASS | 1 = GND; 2 = LED_D3_DISABLE |
-| D4 | red FAULT | 1 = GND; 2 = LED_D4_DISABLE |
-| D2 | green OUT_EN | 1 = GND; 2 = LED_D2_DISABLE |
-| JP5 | CUT TO DISABLE D2 | 1 = LED_D2_DISABLE; 2 = /D2_A |
-| JP1 | BYPASS_EN (open) | 1 = /BYPASS_EN_N; 2 = GND |
+{::nomarkdown}
+<div class="xb-tablewrap"><table class="xb-spec">
+  
+  <tbody>
+    <tr><td>Purpose</td><td>Programmable conditioning of one axis of STEP, DIR and ENABLE</td></tr>
+    <tr><td>Logic</td><td><a href="/images/extensions/cpld-adapter/datasheets/machxo2.pdf">LCMXO2-640HC</a> CPLD, 50&nbsp;MHz oscillator</td></tr>
+    <tr><td>Supervision</td><td><a href="/images/extensions/cpld-adapter/datasheets/tps3823.pdf">TPS3823-33</a> reset and watchdog; <a href="/images/extensions/cpld-adapter/datasheets/sn74lvc1g10.pdf">SN74LVC1G10</a> output gate</td></tr>
+    <tr><td>Outputs</td><td><a href="/images/extensions/cpld-adapter/datasheets/sn74lv4t125.pdf">SN74LV4T125</a> buffers at 5&nbsp;V with series resistors, three-state unless enabled</td></tr>
+    <tr><td>Host</td><td>J1: STEP, DIR, ENABLE, fault return, two spare signals and a clock reference</td></tr>
+    <tr><td>Field</td><td>J2: STEP, DIR, ENABLE (active low), fault input, ground</td></tr>
+    <tr><td>Programming</td><td>J3, ten-pin JTAG header in the USB-Blaster pin order</td></tr>
+    <tr><td>Size</td><td>64 &times; 39&nbsp;mm, four M3 holes</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
-</details>
+Every figure with its basis is in the [electrical specifications](#electrical) appendix; hole positions are in the [mounting dimensions](#mounting) appendix.
 
-Active components: `U3 TPS3823-33DBVR`; `U6 PRTR5V0U4D`; `U4 SN74LVC1G10DBVR`; `U5 SN74LVC1G34DBVR`; `U2 SN74LV4T125PW`; `U1 LCMXO2-640HC-4SG48C`. Follow the matching datasheet limits.
+## Board tour {#tour}
 
-## Practical use with Smoothieboard V2 Prime
+The numbers on the drawing match the list below it.
 
-The intended example is a compatible high-impedance logic STEP/DIR receiver under a named programmed profile. Fix the bitstream, profile and timing transformation before wiring it into motion.
+{::nomarkdown}
+<figure class="xb-tour">
+  <div class="xb-tour-scroll" tabindex="0" role="region" aria-label="Annotated top view">
+    <div class="xb-tour-stage">
+      <img src="/images/extensions/cpld-adapter/v19/cpld-adapter-diagram.png" alt="Top view of the CPLD adapter with numbered markers explained in the list below.">
+      <a class="xb-mk" href="#tour-1" style="left:25.7%;top:88.2%" aria-label="1: Controller connector (J1)">1<span class="xb-pop"><b>Controller connector (J1)</b> — power and signals to and from the controller.</span></a>
+      <a class="xb-mk" href="#tour-2" style="left:41.8%;top:87.7%" aria-label="2: Field connector (J2)">2<span class="xb-pop"><b>Field connector (J2)</b> — 5&nbsp;V logic to the receiver.</span></a>
+      <a class="xb-mk xb-pb" href="#tour-3" style="left:31.6%;top:19.0%" aria-label="3: JTAG header (J3)">3<span class="xb-pop"><b>JTAG header (J3)</b> — programs the CPLD.</span></a>
+      <a class="xb-mk xb-pb" href="#tour-4" style="left:39.4%;top:48.7%" aria-label="4: CPLD (U1)">4<span class="xb-pop"><b>CPLD (U1)</b> — LCMXO2-640HC.</span></a>
+      <a class="xb-mk xb-pb" href="#tour-5" style="left:60.6%;top:48.7%" aria-label="5: Output buffer (U2)">5<span class="xb-pop"><b>Output buffer (U2)</b> — SN74LV4T125.</span></a>
+      <a class="xb-mk" href="#tour-6" style="left:69.2%;top:58.1%" aria-label="6: Supervisor (U3)">6<span class="xb-pop"><b>Supervisor (U3)</b> — TPS3823-33 reset and watchdog.</span></a>
+      <a class="xb-mk xb-pb" href="#tour-7" style="left:68.7%;top:48.1%" aria-label="7: Output gate (U4)">7<span class="xb-pop"><b>Output gate (U4)</b> — enables the buffer when reset is released, the CPLD reports running and the host requests enable.</span></a>
+      <a class="xb-mk xb-pb xb-pl" href="#tour-8" style="left:21.9%;top:37.7%" aria-label="8: Oscillator (Y1)">8<span class="xb-pop"><b>Oscillator (Y1)</b> — 50&nbsp;MHz.</span></a>
+      <a class="xb-mk xb-pb xb-pr" href="#tour-9" style="left:76.6%;top:27.5%" aria-label="9: Bypass request (JP1)">9<span class="xb-pop"><b>Bypass request (JP1)</b> — an input to the CPLD, open as delivered.</span></a>
+      <a class="xb-mk xb-pb xb-pr" href="#tour-10" style="left:86.0%;top:12.1%" aria-label="10: Lights">10<span class="xb-pop"><b>Lights</b> — power, output enabled, bypass and fault (D1 to D4).</span></a>
+    </div>
+  </div>
+  <ol class="xb-tour-list" start="1">
+    <li id="tour-1"><span class="xb-n">1</span><div><b>Controller connector (J1)</b> — power and signals to and from the controller.</div></li>
+    <li id="tour-2"><span class="xb-n">2</span><div><b>Field connector (J2)</b> — 5&nbsp;V logic to the receiver.</div></li>
+    <li id="tour-3"><span class="xb-n">3</span><div><b>JTAG header (J3)</b> — programs the CPLD.</div></li>
+    <li id="tour-4"><span class="xb-n">4</span><div><b>CPLD (U1)</b> — <a href="/images/extensions/cpld-adapter/datasheets/machxo2.pdf">LCMXO2-640HC</a>.</div></li>
+    <li id="tour-5"><span class="xb-n">5</span><div><b>Output buffer (U2)</b> — <a href="/images/extensions/cpld-adapter/datasheets/sn74lv4t125.pdf">SN74LV4T125</a>.</div></li>
+    <li id="tour-6"><span class="xb-n">6</span><div><b>Supervisor (U3)</b> — <a href="/images/extensions/cpld-adapter/datasheets/tps3823.pdf">TPS3823-33</a> reset and watchdog.</div></li>
+    <li id="tour-7"><span class="xb-n">7</span><div><b>Output gate (U4)</b> — enables the buffer when reset is released, the CPLD reports running and the host requests enable.</div></li>
+    <li id="tour-8"><span class="xb-n">8</span><div><b>Oscillator (Y1)</b> — 50&nbsp;MHz.</div></li>
+    <li id="tour-9"><span class="xb-n">9</span><div><b>Bypass request (JP1)</b> — an input to the CPLD, open as delivered.</div></li>
+    <li id="tour-10"><span class="xb-n">10</span><div><b>Lights</b> — power, output enabled, bypass and fault (D1 to D4).</div></li>
+  </ol>
+  <figcaption>Point at a number, or tap it, to read what the part is; the same text is in the list. On a small screen, scroll the drawing sideways.</figcaption>
+</figure>
+{:/nomarkdown}
 
-On a Smoothieboard V2 Prime GF/J37 header, contacts 1, 2 and 10 are limited 3.3 V, limited 5 V and ground. Check the unshrouded host header and cable orientation before applying power.
+### Lights {#lights}
 
-1. Confirm the exact logic image, profile and reset/default behavior before connecting the downstream receiver.
-2. A GF/J37 cable gives J1.3 STEP→PB1, .4 DIR→PJ4, .5 ENABLE→PA4 and .6 fault→PG0; allocate these pins deliberately and check for conflicts.
-3. Wire J2 only to the compatible logic receiver and common reference; do not attach motor coils, motor power or a high-current optocoupler input.
-4. Leave bypass in its documented default state until its complete truth table has been checked. Prove no unintended steps on reset and power loss before motion.
+{::nomarkdown}
+<div class="xb-tablewrap"><table class="xb-leds">
+  <thead><tr><th>Light</th><th>Lit means</th><th>Disable it</th></tr></thead>
+  <tbody>
+    <tr><td>D1, green</td><td>3.3&nbsp;V power</td><td>Cut JP2</td></tr>
+    <tr><td>D2, green</td><td>Outputs enabled</td><td>Cut JP5</td></tr>
+    <tr><td>D3, amber</td><td>Bypass</td><td>Cut JP3</td></tr>
+    <tr><td>D4, red</td><td>Fault. Dark does not mean safe.</td><td>Cut JP4</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
-## Smoothieware use
+## Pinout {#pinout}
 
-### Programmable logic
+### J1: controller
 
-The board needs a programmed MachXO2 image to implement its motion-signal transformation; the board project does not include one. Smoothieware's external STEP/DIR output can request pulses, but its settings cannot create the CPLD logic, configure its permit/watchdog policy or supply a programmed image. Do not treat JP1 as a passive bypass, and check programmer and connector compatibility before using a USB-Blaster cable.
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>Contact</th><th>Signal</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td><span class="xb-pill xb-p-3v3">3.3 V</span></td></tr>
+    <tr><td>2</td><td><span class="xb-pill xb-p-5v">5 V</span></td></tr>
+    <tr><td>3</td><td><span class="xb-pill xb-p-sig">STEP_IN</span></td></tr>
+    <tr><td>4</td><td><span class="xb-pill xb-p-sig">DIR_IN</span></td></tr>
+    <tr><td>5</td><td><span class="xb-pill xb-p-sig">ENABLE_IN</span></td></tr>
+    <tr><td>6</td><td><span class="xb-pill xb-p-sig">FAULT_OUT_N</span> low means fault</td></tr>
+    <tr><td>7, 8</td><td><span class="xb-pill xb-p-sig">AUX0, AUX1</span></td></tr>
+    <tr><td>9</td><td><span class="xb-pill xb-p-sig">CLKREF</span></td></tr>
+    <tr><td>10</td><td><span class="xb-pill xb-p-gnd">GND</span></td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
-Keep the board and downstream driver unpowered until the CPLD is programmed with a matching image.
+### J2: field
 
-## Sources
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>Contact</th><th>Signal</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td><span class="xb-pill xb-p-gnd">GND</span></td></tr>
+    <tr><td>2</td><td><span class="xb-pill xb-p-sig">STEP_OUT</span></td></tr>
+    <tr><td>3</td><td><span class="xb-pill xb-p-sig">DIR_OUT</span></td></tr>
+    <tr><td>4</td><td><span class="xb-pill xb-p-sig">ENABLE_OUT_N</span></td></tr>
+    <tr><td>5</td><td><span class="xb-pill xb-p-sig">FAULT_IN_N</span></td></tr>
+    <tr><td>6</td><td><span class="xb-pill xb-p-gnd">GND</span></td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
-- [Source directory](https://github.com/arthurwolf/extension-boards/tree/main/src/cpld-adapter/attempt/versions/v19)
-- [Design specification](https://github.com/arthurwolf/extension-boards/blob/main/src/cpld-adapter/specs.md)
-- [Design discussion](https://github.com/arthurwolf/extension-boards/blob/main/src/cpld-adapter/design.md)
+### J3: JTAG
 
-<details markdown="1">
-<summary>Additional board views</summary>
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>Contact</th><th>Signal</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td><span class="xb-pill xb-p-sig">TCK</span></td></tr>
+    <tr><td>2, 10</td><td><span class="xb-pill xb-p-gnd">GND</span></td></tr>
+    <tr><td>3</td><td><span class="xb-pill xb-p-sig">TDO</span></td></tr>
+    <tr><td>4</td><td>Target reference voltage</td></tr>
+    <tr><td>5</td><td><span class="xb-pill xb-p-sig">TMS</span></td></tr>
+    <tr><td>9</td><td><span class="xb-pill xb-p-sig">TDI</span></td></tr>
+    <tr><td>6 to 8</td><td>Not connected</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
-{% include _includes/extension-board-visuals.html slug="cpld-adapter" %}
+The pin order follows the USB-Blaster connector. That says nothing about software: use a programmer and tool chain that support Lattice <a href="/images/extensions/cpld-adapter/datasheets/machxo2.pdf">MachXO2</a> devices.
 
-</details>
+## What you need {#what-you-need}
 
-[All extension boards](/extension-boards)
+{::nomarkdown}
+<div class="xb-cards">
+  <div class="xb-card"><b>This board</b><span></span></div>
+  <div class="xb-card"><b>A logic design</b><span>Your own <a href="/images/extensions/cpld-adapter/datasheets/machxo2.pdf">MachXO2</a> image; the board is delivered without one.</span></div>
+  <div class="xb-card"><b>A JTAG programmer</b><span>Supporting Lattice devices.</span></div>
+  <div class="xb-card"><b>A 5 V logic receiver</b><span>High-impedance inputs.</span></div>
+</div>
+{:/nomarkdown}
+
+## Get started {#get-started}
+
+Program and check the board before it drives anything.
+
+{::nomarkdown}
+<ol class="xb-steps">
+  <li class="xb-step">
+    <h3>Build your logic</h3>
+    <p>Create the image with Lattice tools, including the watchdog output and the CPLD_RUN signal that the output gate needs.</p>
+  </li>
+  <li class="xb-step">
+    <h3>Program with the field connector empty</h3>
+    <p>Power the board and program it through J3.</p>
+    <p class="xb-expect">The power light is on.</p>
+  </li>
+  <li class="xb-step">
+    <h3>Connect the controller</h3>
+    <p>Wire J1 contacts 1, 2, 3, 4, 5, 6 and 10, for example to the Prime GF header (PB1 STEP, PJ4 DIR, PA4 ENABLE, PG0 fault).</p>
+  </li>
+  <li class="xb-step">
+    <h3>Verify the outputs</h3>
+    <p>Check J2 with an oscilloscope, including during reset and power-down, then connect the receiver.</p>
+    <p class="xb-expect">No pulses appear while the output gate is disabled.</p>
+  </li>
+</ol>
+{:/nomarkdown}
+
+## Configuration {#configuration}
+
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>You want</th><th>Module</th><th>Example</th></tr></thead>
+  <tbody>
+    <tr><td>Send step signals through the CPLD</td><td>Motion axis, external driver</td><td><a href="#config-main">Setup</a></td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+### Setup {#config-main}
+
+The controller sees an ordinary external step driver: assign the chosen STEP, DIR and ENABLE pins to one motion axis. The configuration cannot create or change the CPLD&rsquo;s logic.
+
+## How it works {#how-it-works}
+
+The <a href="/images/extensions/cpld-adapter/datasheets/machxo2.pdf">MachXO2</a> receives the controller&rsquo;s signals and produces the outputs according to your image. The <a href="/images/extensions/cpld-adapter/datasheets/sn74lv4t125.pdf">SN74LV4T125</a> converts them to 5&nbsp;V. A <a href="/images/extensions/cpld-adapter/datasheets/tps3823.pdf">TPS3823</a> holds the CPLD in reset on low supply voltage or when the watchdog is not serviced, and a three-input gate keeps the outputs disabled unless the board is out of reset, the CPLD says it is running and the host requests enable. The output-enable line is pulled up to 5&nbsp;V while its driving gate runs from 3.3&nbsp;V.
+
+JP1 only signals the CPLD; it does not create a wire around it.
+
+## Troubleshooting {#troubleshooting}
+
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>Symptom</th><th>Check</th></tr></thead>
+  <tbody>
+    <tr><td>Outputs stay off</td><td>Reset released, watchdog serviced, CPLD_RUN high and host enable asserted.</td></tr>
+    <tr><td>Programmer finds nothing</td><td>Board powered, JTAG orientation and a Lattice-capable programmer.</td></tr>
+    <tr><td>Receiver does not react</td><td>It must accept 5&nbsp;V logic without drawing significant current; opto inputs of many drivers need more.</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+Still stuck? Read [how to ask for help](/help-guidelines) or see the general [troubleshooting guide](/troubleshooting/).
+
+## Downloads {#downloads}
+
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>File</th><th>What it is</th></tr></thead>
+  <tbody>
+    <tr><td><a href="/images/extensions/cpld-adapter/v19/cpld-adapter-schematic.pdf">Schematic (PDF)</a></td><td>The complete circuit diagram</td></tr>
+    <tr><td><a href="/images/extensions/cpld-adapter/v19/cpld-adapter-bom.csv">Parts list (CSV)</a></td><td>Every component with its value and footprint</td></tr>
+    <tr><td><a href="/images/extensions/cpld-adapter/v19/cpld-adapter-diagram.png">Board drawing (PNG)</a></td><td>The top view used on this page</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+## Appendix: mounting dimensions {#mounting}
+
+For drilling a mounting plate or designing an enclosure. Positions are hole centres, in millimetres, measured from the top-left corner with the board seen from the component side.
+
+{::nomarkdown}
+<figure class="xb-fig">
+  <div class="xb-fig-scroll" tabindex="0" role="region" aria-label="Mounting drawing">
+  <svg viewBox="0 0 1000 480" role="img" aria-labelledby="xb-cp-mount-t">
+  <title id="xb-cp-mount-t">Mounting drawing of the cp, component side: outline 64 by 39 millimetres with 4 mounting holes. Hole positions are listed in the table below.</title>
+  <text x="480.0" y="24" text-anchor="middle" font-size="13" font-weight="700" letter-spacing="1" fill="#a9b4c2">COMPONENT SIDE · millimetres</text>
+  <rect x="201.0" y="78.0" width="557.9" height="340.0" rx="8.7" fill="#1f2226" stroke="#e6ebf2" stroke-width="1.5"/>
+  <g stroke="#a9b4c2" stroke-width="1.2" fill="none"><path d="M201.0 56H759.0"/><path d="M201.0 50V62"/><path d="M759.0 50V62"/><path d="M785.0 78.0V418.0"/><path d="M779.0 78.0h12"/><path d="M779.0 418.0h12"/></g>
+  <text x="480.0" y="48" text-anchor="middle" font-size="15" font-weight="700" fill="#e6ebf2">64</text>
+  <text x="797.0" y="253.0" font-size="15" font-weight="700" fill="#e6ebf2">39</text>
+  <circle cx="201.0" cy="78.0" r="4" fill="#ffcc33"/>
+  <text x="189.0" y="83.0" text-anchor="end" font-size="14" font-weight="700" fill="#ffcc33">0, 0</text>
+  <g stroke="#ffcc33" stroke-width="1.5" fill="#ffcc33"><path d="M143.0 104.0h30" fill="none"/><path d="M177.0 104.0l-8 -4v8z"/><path d="M143.0 104.0v30" fill="none"/><path d="M143.0 138.0l-4 -8h8z"/></g>
+  <text x="181.0" y="109.0" font-size="12" font-weight="700" fill="#ffcc33">X</text>
+  <text x="139.0" y="154.0" font-size="12" font-weight="700" fill="#ffcc33">Y</text>
+  <circle cx="244.6" cy="147.7" r="13.9" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <path d="M226.7 147.7h35.9M244.6 129.8v35.9" stroke="#ffcc33" stroke-width=".8" fill="none"/>
+  <text x="230.7" y="181.7" text-anchor="start" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">1</tspan>  5.00, 8.00</text>
+  <circle cx="593.3" cy="147.7" r="13.9" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <path d="M575.4 147.7h35.9M593.3 129.8v35.9" stroke="#ffcc33" stroke-width=".8" fill="none"/>
+  <text x="607.3" y="181.7" text-anchor="end" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">2</tspan>  45.00, 8.00</text>
+  <circle cx="244.6" cy="322.1" r="13.9" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <path d="M226.7 322.1h35.9M244.6 304.2v35.9" stroke="#ffcc33" stroke-width=".8" fill="none"/>
+  <text x="230.7" y="298.2" text-anchor="start" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">3</tspan>  5.00, 28.00</text>
+  <circle cx="593.3" cy="322.1" r="13.9" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <path d="M575.4 322.1h35.9M593.3 304.2v35.9" stroke="#ffcc33" stroke-width=".8" fill="none"/>
+  <text x="607.3" y="298.2" text-anchor="end" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">4</tspan>  45.00, 28.00</text>
+  <text x="480.0" y="448.0" text-anchor="middle" font-size="13" fill="#a9b4c2">Numbered rings are mounting holes. Positions are hole centres, X then Y, from the marked corner.</text>
+  </svg>
+  </div>
+  <figcaption>Board outline 64 × 39&nbsp;mm, corners rounded to a 1&nbsp;mm radius, board thickness 1.6&nbsp;mm. Drawn from the design files, component side up, in the same orientation as the board tour.</figcaption>
+</figure>
+
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>Hole</th><th>X (mm)</th><th>Y (mm)</th><th>Diameter</th><th>Use</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td>5.00</td><td>8.00</td><td>3.2&nbsp;mm, not plated</td><td>Mounting, M3 screw</td></tr>
+    <tr><td>2</td><td>45.00</td><td>8.00</td><td>3.2&nbsp;mm, not plated</td><td>Mounting, M3 screw</td></tr>
+    <tr><td>3</td><td>5.00</td><td>28.00</td><td>3.2&nbsp;mm, not plated</td><td>Mounting, M3 screw</td></tr>
+    <tr><td>4</td><td>45.00</td><td>28.00</td><td>3.2&nbsp;mm, not plated</td><td>Mounting, M3 screw</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+## Appendix: electrical specifications {#electrical}
+
+Values come from the silk screen and parts list.
+
+{::nomarkdown}
+<div class="xb-tablewrap"><table class="xb-elec">
+  <thead><tr><th>Parameter</th><th>Applies to</th><th>Lower</th><th>Nominal</th><th>Upper</th><th>Basis and conditions</th></tr></thead>
+  <tbody>
+    <tr><td>Output level</td><td>J2</td><td>—</td><td>5 V logic</td><td>—</td><td>Board silk</td></tr>
+    <tr><td>Logic supply</td><td>J1 contact 1</td><td>—</td><td>3.3 V</td><td>—</td><td>Design</td></tr>
+    <tr><td>Output supply</td><td>J1 contact 2</td><td>—</td><td>5 V</td><td>—</td><td>Design</td></tr>
+    <tr><td>Clock</td><td>Y1</td><td>—</td><td>50 MHz</td><td>—</td><td>Parts list</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+## Appendix: datasheets {#datasheets}
+
+The first page of each important chip&rsquo;s datasheet. Click a page to open the PDF.
+
+{::nomarkdown}
+<figure class="xb-fig">
+  <a href="/images/extensions/cpld-adapter/datasheets/machxo2.pdf"><img src="/images/extensions/cpld-adapter/datasheets/machxo2-page1.png" alt="First page of the MachXO2 datasheet" style="display:block;width:100%;max-width:480px;height:auto;margin:0 auto"></a>
+  <figcaption><a href="/images/extensions/cpld-adapter/datasheets/machxo2.pdf">MachXO2 family data sheet</a> — Lattice Semiconductor, 126 pages.</figcaption>
+</figure>
+<figure class="xb-fig">
+  <a href="/images/extensions/cpld-adapter/datasheets/sn74lv4t125.pdf"><img src="/images/extensions/cpld-adapter/datasheets/sn74lv4t125-page1.png" alt="First page of the SN74LV4T125 datasheet" style="display:block;width:100%;max-width:480px;height:auto;margin:0 auto"></a>
+  <figcaption><a href="/images/extensions/cpld-adapter/datasheets/sn74lv4t125.pdf">SN74LV4T125 quadruple level-shifting buffer</a> — Texas Instruments, 24 pages.</figcaption>
+</figure>
+<figure class="xb-fig">
+  <a href="/images/extensions/cpld-adapter/datasheets/sn74lvc1g10.pdf"><img src="/images/extensions/cpld-adapter/datasheets/sn74lvc1g10-page1.png" alt="First page of the SN74LVC1G10 datasheet" style="display:block;width:100%;max-width:480px;height:auto;margin:0 auto"></a>
+  <figcaption><a href="/images/extensions/cpld-adapter/datasheets/sn74lvc1g10.pdf">SN74LVC1G10 single 3-input NAND gate</a> — Texas Instruments, 39 pages.</figcaption>
+</figure>
+<figure class="xb-fig">
+  <a href="/images/extensions/cpld-adapter/datasheets/tps3823.pdf"><img src="/images/extensions/cpld-adapter/datasheets/tps3823-page1.png" alt="First page of the TPS3823 datasheet" style="display:block;width:100%;max-width:480px;height:auto;margin:0 auto"></a>
+  <figcaption><a href="/images/extensions/cpld-adapter/datasheets/tps3823.pdf">TPS382x voltage monitor with watchdog timer</a> — Texas Instruments, 34 pages.</figcaption>
+</figure>
+{:/nomarkdown}
+
+
+See all boards on the [extension boards](/extension-boards) page.

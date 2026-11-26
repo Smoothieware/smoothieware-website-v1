@@ -1,254 +1,224 @@
 ---
 layout: default
 title: "UART breakout"
+description: "A Gadgeteer UART brought out to a six-contact FTDI-style 3.3 V serial header, with activity lights and an optional chain socket."
 permalink: /extensions/uart-breakout
 ---
 
-# UART breakout
+{% include _includes/extension-board-page.html %}
 
-This adapter exposes a Gadgeteer UART on a six-contact FTDI-style TTL serial header. Use it for a compatible serial cable and a configured controller console. It is not RS-232 and is not itself a USB bridge.
 
-## How it works
-
-J1 receives the controller UART. Its transmit signal reaches J3.5 through R1 (100 Ω); an external transmitter on J3.4 reaches the controller receive node through R2 (100 Ω) and D1, with a 10 kΩ pull-up on the controller side. U1 (SN74LVC2G14) observes the UART signals and drives the activity indicators; it does not invert or translate the serial data path. The receive diode and pull-up do not establish compatibility with arbitrary logic voltages.
-
-J2 is an optional chain: JP4 and JP5 are open as delivered, isolating its transmit and receive paths. Connecting another transmitter requires deliberately setting the links and avoiding contention. The other same-numbered signal links are bridged; the supply rails and ground continue to J2.
-
-## Power, signal direction and limits
-
-J3 is **1 ground, 2 unused, 3 optional 5 V feed, 4 input toward controller RX (external TX), 5 output from controller TX (external RX), 6 unused**. Use actual cable contact numbers rather than assuming that its TX/RX labels use the same perspective. The controller logic domain is 3.3 V, not ±RS-232.
-
-JP10 is open as delivered. Closing it connects the host 5 V rail toward J3.3 through D3, with diode drop; D3’s anode is on the host side. Leave JP10 open for an independently powered adapter and never join independent supplies through this path. Verify logic thresholds, power sequencing and the cable pinout before connection.
-
-## Board reference
-
-<details markdown="1">
-<summary>Reading the connector callouts</summary>
-
-The dark end of each pill gives the source contact number. The adjoining label gives its function. Colours help locate related functions; the label and connection instructions determine how to use the contact.
-
-- Red: 3.3 V supply.
-- Orange: 5 V supply.
-- Green: Signal — use the printed function label.
-- Near-black: Circuit ground.
-- Grey: Not routed on this board.
-- Dark grey: Other source-labelled contact — read its exact function.
-
-A voltage in a signal name does not make that contact a power output. Circuit ground, cable shield and protective earth are different connections. An underside projection shows rear components through the front view; it is not a mirrored rear view.
-
-</details>
-
-{% include _includes/extension-instruction-diagram.html id="uart-breakout-v17-reader-compact-overview" src="/images/extensions/uart-breakout/guides/reader-compact-overview.png" title="UART breakout — overview" alt="UART breakout — overview for uart-breakout" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-<details markdown="1">
-<summary>Larger combined reference</summary>
-
-{% include _includes/extension-instruction-diagram.html id="uart-breakout-v17-reference" src="/images/extensions/uart-breakout/guides/reader-reference.png" title="Annotated board reference" alt="Annotated board reference for UART breakout" caption="Component-side reference. Dotted leaders locate parts, not wires." width=1440 %}
-
-</details>
-
-Start with the overview, then use all focused sheets for exact contacts, controls and links.
-
-<details markdown="1">
-<summary>Focused contact and component sheets</summary>
-
-{% include _includes/extension-instruction-diagram.html id="uart-breakout-v17-reader-compact-host-1-5" src="/images/extensions/uart-breakout/guides/reader-compact-host-1-5-central-pills.png" title="J1 · Controller UART — host 1 5" alt="J1 · Controller UART — host 1 5 for uart-breakout" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="uart-breakout-v17-reader-compact-host-6-10" src="/images/extensions/uart-breakout/guides/reader-compact-host-6-10-central-pills.png" title="J1 · Controller UART — host 6 10" alt="J1 · Controller UART — host 6 10 for uart-breakout" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="uart-breakout-v17-reader-compact-chain-1-5" src="/images/extensions/uart-breakout/guides/reader-compact-chain-1-5-central-pills.png" title="J2 · Chain UART — chain 1 5" alt="J2 · Chain UART — chain 1 5 for uart-breakout" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="uart-breakout-v17-reader-compact-chain-6-10" src="/images/extensions/uart-breakout/guides/reader-compact-chain-6-10-central-pills.png" title="J2 · Chain UART — chain 6 10" alt="J2 · Chain UART — chain 6 10 for uart-breakout" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="uart-breakout-v17-reader-compact-external-1-5" src="/images/extensions/uart-breakout/guides/reader-compact-external-1-5-central-pills.png" title="J3 · External serial — external 1 5" alt="J3 · External serial — external 1 5 for uart-breakout" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="uart-breakout-v17-reader-compact-external-6-6" src="/images/extensions/uart-breakout/guides/reader-compact-external-6-6-central-pills.png" title="J3 · External serial — external 6 6" alt="J3 · External serial — external 6 6 for uart-breakout" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="uart-breakout-v17-reader-compact-transmit" src="/images/extensions/uart-breakout/guides/reader-compact-transmit.png" title="Transmit path — transmit" alt="Transmit path — transmit for uart-breakout" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="uart-breakout-v17-reader-compact-receive" src="/images/extensions/uart-breakout/guides/reader-compact-receive.png" title="Receive paths — receive" alt="Receive paths — receive for uart-breakout" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="uart-breakout-v17-reader-compact-chain-uart" src="/images/extensions/uart-breakout/guides/reader-compact-chain-uart.png" title="Optional UART chain — chain uart" alt="Optional UART chain — chain uart for uart-breakout" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="uart-breakout-v17-reader-compact-chain-other" src="/images/extensions/uart-breakout/guides/reader-compact-chain-other.png" title="Other chain signals — chain other" alt="Other chain signals — chain other for uart-breakout" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="uart-breakout-v17-reader-compact-header-power" src="/images/extensions/uart-breakout/guides/reader-compact-header-power.png" title="Optional header power — header power" alt="Optional header power — header power for uart-breakout" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="uart-breakout-v17-reader-compact-activity-observer" src="/images/extensions/uart-breakout/guides/reader-compact-activity-observer.png" title="Activity observer — activity observer" alt="Activity observer — activity observer for uart-breakout" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="uart-breakout-v17-reader-compact-tx-led" src="/images/extensions/uart-breakout/guides/reader-compact-tx-led.png" title="Transmit activity LED — tx led" alt="Transmit activity LED — tx led for uart-breakout" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="uart-breakout-v17-reader-compact-rx-led" src="/images/extensions/uart-breakout/guides/reader-compact-rx-led.png" title="Receive activity LED — rx led" alt="Receive activity LED — rx led for uart-breakout" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="uart-breakout-v17-reader-compact-header-protection" src="/images/extensions/uart-breakout/guides/reader-compact-header-protection.png" title="Header protection — header protection" alt="Header protection — header protection for uart-breakout" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="uart-breakout-v17-reader-compact-supply-test" src="/images/extensions/uart-breakout/guides/reader-compact-supply-test-underside-caption.png" title="Supply test pads — supply test" alt="Supply test pads — supply test for uart-breakout" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="uart-breakout-v17-reader-compact-uart-test" src="/images/extensions/uart-breakout/guides/reader-compact-uart-test-underside-caption.png" title="UART test pads — uart test" alt="UART test pads — uart test for uart-breakout" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="uart-breakout-v17-reader-compact-mounts" src="/images/extensions/uart-breakout/guides/reader-compact-mounts.png" title="Mounting holes — mounts" alt="Mounting holes — mounts for uart-breakout" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-</details>
-
-### Connector contact map
-
-The following is the PCB pad and net list; check physical continuity, mating orientation and current capacity on the board. Same-numbered duplicate lands are collapsed in this electrical table. `NC` is unconnected, not a spare.
-
-<details markdown="1">
-<summary>Contact inventory</summary>
-
-<div class="extension-contact-table" role="region" aria-label="Contact inventory; scroll horizontally to read all columns" tabindex="0" markdown="1">
-
-| Connector | Contact | Function/net |
-| --- | --- | --- |
-| J2 — GADGETEER U CHAIN | 1 | `+3V3` |
-| J2 — GADGETEER U CHAIN | 2 | `+5V` |
-| J2 — GADGETEER U CHAIN | 3 | `/CHAIN_P3` |
-| J2 — GADGETEER U CHAIN | 4 | `/CHAIN_TX` |
-| J2 — GADGETEER U CHAIN | 5 | `/CHAIN_RX` |
-| J2 — GADGETEER U CHAIN | 6 | `/CHAIN_P6` |
-| J2 — GADGETEER U CHAIN | 7 | `/CHAIN_P7` |
-| J2 — GADGETEER U CHAIN | 8 | `/CHAIN_P8` |
-| J2 — GADGETEER U CHAIN | 9 | `/CHAIN_P9` |
-| J2 — GADGETEER U CHAIN | 10 | `GND` |
-| J1 — GADGETEER U IN | 1 | `+3V3` |
-| J1 — GADGETEER U IN | 2 | `+5V` |
-| J1 — GADGETEER U IN | 3 | `/GAD_P3` |
-| J1 — GADGETEER U IN | 4 | `/UART_TX` |
-| J1 — GADGETEER U IN | 5 | `/UART_RX` |
-| J1 — GADGETEER U IN | 6 | `/GAD_P6` |
-| J1 — GADGETEER U IN | 7 | `/GAD_P7` |
-| J1 — GADGETEER U IN | 8 | `/GAD_P8` |
-| J1 — GADGETEER U IN | 9 | `/GAD_P9` |
-| J1 — GADGETEER U IN | 10 | `GND` |
-| J3 — FTDI UART 3V3 | 1 | `GND` |
-| J3 — FTDI UART 3V3 | 3 | `/HDR_5V` |
-| J3 — FTDI UART 3V3 | 4 | `/HDR_RX` |
-| J3 — FTDI UART 3V3 | 5 | `/HDR_TX` |
-| J3 | 2, 6 | NC |
-
+{::nomarkdown}
+<div class="xb-hero">
+  <div>
+    <p class="xb-eyebrow">Extension board · Signal interfaces</p>
+    <h1 id="uart-breakout">UART breakout</h1>
+    <p class="xb-lead">Bring a controller UART out to the familiar six-contact serial-cable header. Lights show traffic in both directions, and a second socket passes the other signals on.</p>
+    <div class="xb-actions">
+      <a class="xb-btn xb-btn-primary" href="#get-started">Get started</a>
+      <a class="xb-btn" href="#pinout">Pinout</a>
+      <a class="xb-btn" href="#configuration">Configuration</a>
+    </div>
+  </div>
+  <figure>
+    <img src="/images/extensions/uart-breakout/v17/uart-breakout-diagram.png" alt="Top view of the UART breakout: two ten-contact sockets at the top and a six-contact serial header at the bottom.">
+    <figcaption>Top view, drawn from the board&rsquo;s design files. This is a drawing, not a photograph.</figcaption>
+  </figure>
 </div>
 
-<details markdown="1">
-<summary>Combined connector and link details</summary>
+<div class="xb-stats">
+  <div class="xb-stat"><b>3.3 V</b><span>logic</span></div>
+  <div class="xb-stat"><b>6 contacts</b><span>FTDI-style header</span></div>
+  <div class="xb-stat"><b>2 lights</b><span>TX and RX activity</span></div>
+  <div class="xb-stat"><b>Chain</b><span>second socket</span></div>
+  <div class="xb-stat"><b>100 Ω</b><span>series resistor each way</span></div>
+  <div class="xb-stat"><b>34.6 × 30</b><span>millimetres</span></div>
+</div>
 
-{% include _includes/extension-instruction-diagram.html id="uart-breakout-v17-connector-detail-01" src="/images/extensions/uart-breakout/guides/reader-connector-detail-01.png" title="Connector detail 01" alt="Connector detail 01 for UART breakout" caption="Component-side reference. Dotted leaders locate parts, not wiring. Check cable mating and logic compatibility." width=1440 %}
+<nav class="xb-nav" aria-label="On this page">
+  <a href="#specs">Tech specs</a>
+  <a href="#tour">Board tour</a>
+  <a href="#pinout">Pinout</a>
+  <a href="#what-you-need">What you need</a>
+  <a href="#get-started">Get started</a>
+  <a href="#configuration">Configuration</a>
+  <a href="#how-it-works">How it works</a>
+  <a href="#troubleshooting">Troubleshooting</a>
+  <a href="#downloads">Downloads</a>
+  <a href="#mounting">Mounting</a>
+  <a href="#electrical">Electrical</a>
+  <a href="#datasheets">Datasheets</a>
+</nav>
+{:/nomarkdown}
 
-{% include _includes/extension-instruction-diagram.html id="uart-breakout-v17-connector-detail-02" src="/images/extensions/uart-breakout/guides/reader-connector-detail-02.png" title="Connector detail 02" alt="Connector detail 02 for UART breakout" caption="Component-side reference. Dotted leaders locate parts, not wiring. Check cable mating and logic compatibility." width=1440 %}
+<sl-alert variant="warning" open>
+  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+  3.3&nbsp;V logic only. This is not RS-232 and not a USB adapter. Never connect a 5&nbsp;V logic signal, and let only one device transmit toward the controller.
+</sl-alert>
 
-{% include _includes/extension-instruction-diagram.html id="uart-breakout-v17-link-detail-01" src="/images/extensions/uart-breakout/guides/reader-link-detail-01.png" title="Link detail 01" alt="Link detail 01 for UART breakout" caption="Component-side reference. Dotted leaders locate parts, not wiring. Check cable mating and logic compatibility." width=1440 %}
+## Tech specs {#specs}
 
-{% include _includes/extension-instruction-diagram.html id="uart-breakout-v17-link-detail-02" src="/images/extensions/uart-breakout/guides/reader-link-detail-02.png" title="Link detail 02" alt="Link detail 02 for UART breakout" caption="Component-side reference. Dotted leaders locate parts, not wiring. Check cable mating and logic compatibility." width=1440 %}
+{::nomarkdown}
+<div class="xb-tablewrap"><table class="xb-spec">
+  
+  <tbody>
+    <tr><td>Purpose</td><td>Serial console or serial peripheral on a controller UART</td></tr>
+    <tr><td>Host</td><td>J1, ten-contact socket; transmit on contact 4, receive on contact 5</td></tr>
+    <tr><td>Serial header</td><td>J3: ground, optional 5&nbsp;V, receive toward the controller, transmit from the controller</td></tr>
+    <tr><td>Receive path</td><td>100&nbsp;&Omega; and a BAT54WS diode, with a 10&nbsp;k&Omega; pull-up</td></tr>
+    <tr><td>Activity lights</td><td>Driven by an <a href="/images/extensions/uart-breakout/datasheets/sn74lvc2g14.pdf">SN74LVC2G14</a>, which only watches the signals</td></tr>
+    <tr><td>Chain</td><td>J2; contacts 3 and 6 to 9 linked, transmit and receive open</td></tr>
+    <tr><td>5 V on the header</td><td>Off as delivered (JP10 open)</td></tr>
+    <tr><td>Protection</td><td><a href="/images/extensions/uart-breakout/datasheets/tpd4e1u06.pdf">TPD4E1U06</a> on the header</td></tr>
+    <tr><td>Size</td><td>34.6 &times; 30&nbsp;mm, two M3 holes</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
-</details>
+Every figure with its basis is in the [electrical specifications](#electrical) appendix; hole positions are in the [mounting dimensions](#mounting) appendix.
 
-### Links, indicators and controls
+## Board tour {#tour}
 
-The table lists the links and indicators. Check the fitted state of each link before cutting or bridging it. Indicator labels describe circuit signals.
+The numbers on the drawing match the list below it.
 
-<details markdown="1">
-<summary>Links and indicators</summary>
+{::nomarkdown}
+<figure class="xb-tour">
+  <div class="xb-tour-scroll" tabindex="0" role="region" aria-label="Annotated top view">
+    <div class="xb-tour-stage">
+      <img src="/images/extensions/uart-breakout/v17/uart-breakout-diagram.png" alt="Top view of the UART breakout with numbered markers explained in the list below.">
+      <a class="xb-mk xb-pb" href="#tour-1" style="left:25.6%;top:15.2%" aria-label="1: Host socket (J1)">1<span class="xb-pop"><b>Host socket (J1)</b> — connects to the controller.</span></a>
+      <a class="xb-mk xb-pb" href="#tour-2" style="left:74.2%;top:15.2%" aria-label="2: Chain socket (J2)">2<span class="xb-pop"><b>Chain socket (J2)</b> — passes rails and signals on.</span></a>
+      <a class="xb-mk" href="#tour-3" style="left:37.2%;top:82.7%" aria-label="3: Serial header (J3)">3<span class="xb-pop"><b>Serial header (J3)</b> — for a 3.3&nbsp;V serial cable or adapter.</span></a>
+      <a class="xb-mk xb-pb xb-pl" href="#tour-4" style="left:15.2%;top:34.3%" aria-label="4: Activity driver (U1)">4<span class="xb-pop"><b>Activity driver (U1)</b> — an SN74LVC2G14 that lights the activity lamps.</span></a>
+      <a class="xb-mk xb-pl" href="#tour-5" style="left:10.2%;top:65.4%" aria-label="5: Transmit light">5<span class="xb-pop"><b>Transmit light</b> — data from the controller.</span></a>
+      <a class="xb-mk xb-pl" href="#tour-6" style="left:17.6%;top:65.4%" aria-label="6: Receive light">6<span class="xb-pop"><b>Receive light</b> — data toward the controller.</span></a>
+      <a class="xb-mk" href="#tour-7" style="left:68.0%;top:55.5%" aria-label="7: Header 5 V link (JP10)">7<span class="xb-pop"><b>Header 5 V link (JP10)</b> — open as delivered.</span></a>
+      <a class="xb-mk xb-pb" href="#tour-8" style="left:68.0%;top:47.4%" aria-label="8: Chain links">8<span class="xb-pop"><b>Chain links</b> — JP4 (TX) and JP5 (RX) are open as delivered.</span></a>
+    </div>
+  </div>
+  <ol class="xb-tour-list" start="1">
+    <li id="tour-1"><span class="xb-n">1</span><div><b>Host socket (J1)</b> — connects to the controller.</div></li>
+    <li id="tour-2"><span class="xb-n">2</span><div><b>Chain socket (J2)</b> — passes rails and signals on.</div></li>
+    <li id="tour-3"><span class="xb-n">3</span><div><b>Serial header (J3)</b> — for a 3.3&nbsp;V serial cable or adapter.</div></li>
+    <li id="tour-4"><span class="xb-n">4</span><div><b>Activity driver (U1)</b> — an <a href="/images/extensions/uart-breakout/datasheets/sn74lvc2g14.pdf">SN74LVC2G14</a> that lights the activity lamps.</div></li>
+    <li id="tour-5"><span class="xb-n">5</span><div><b>Transmit light</b> — data from the controller.</div></li>
+    <li id="tour-6"><span class="xb-n">6</span><div><b>Receive light</b> — data toward the controller.</div></li>
+    <li id="tour-7"><span class="xb-n">7</span><div><b>Header 5 V link (JP10)</b> — open as delivered.</div></li>
+    <li id="tour-8"><span class="xb-n">8</span><div><b>Chain links</b> — JP4 (TX) and JP5 (RX) are open as delivered.</div></li>
+  </ol>
+  <figcaption>Point at a number, or tap it, to read what the part is; the same text is in the list. On a small screen, scroll the drawing sideways.</figcaption>
+</figure>
+{:/nomarkdown}
 
-| Item | Label | Contact nets |
-| --- | --- | --- |
-| JP12 | CUT TO DISABLE LED1 | 1=LED_LED1_DISABLE; 2=/LED_TX_A |
-| JP6 | CHAIN P6 | 1=/GAD_P6; 2=/CHAIN_P6 |
-| LED2 | RX amber | 1=GND; 2=LED_LED2_DISABLE |
-| JP3 | CHAIN P3 | 1=/GAD_P3; 2=/CHAIN_P3 |
-| JP10 | HDR 5V OPT | 1=+5V; 2=/HDR_5V_OPT |
-| JP9 | CHAIN P9 | 1=/GAD_P9; 2=/CHAIN_P9 |
-| JP11 | CUT TO DISABLE LED2 | 1=LED_LED2_DISABLE; 2=/LED_RX_A |
-| LED1 | TX amber | 1=GND; 2=LED_LED1_DISABLE |
-| JP5 | CHAIN RX | 1=/CHAIN_RX; 2=/CHAIN_RX_G |
-| JP7 | CHAIN P7 | 1=/GAD_P7; 2=/CHAIN_P7 |
-| JP8 | CHAIN P8 | 1=/GAD_P8; 2=/CHAIN_P8 |
-| JP4 | CHAIN TX | 1=/UART_TX; 2=/CHAIN_TX |
+### Lights {#lights}
 
-</details>
+{::nomarkdown}
+<div class="xb-tablewrap"><table class="xb-leds">
+  <thead><tr><th>Light</th><th>Lit means</th><th>Disable it</th></tr></thead>
+  <tbody>
+    <tr><td>LED1</td><td>Data from the controller (TX)</td><td>Cut JP11 or JP12, the link beside it</td></tr>
+    <tr><td>LED2, amber</td><td>Data toward the controller (RX)</td><td>Cut JP11 or JP12, the link beside it</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
-</details>
+## Pinout {#pinout}
 
-## Practical use with Smoothieboard V2 Prime
+### J3: serial header
 
-### Complete electrical connection
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>Contact</th><th>Signal</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td><span class="xb-pill xb-p-gnd">GND</span></td></tr>
+    <tr><td>2</td><td>Not connected</td></tr>
+    <tr><td>3</td><td><span class="xb-pill xb-p-5v">5 V</span> only if JP10 is closed, through a diode</td></tr>
+    <tr><td>4</td><td><span class="xb-pill xb-p-sig">RX</span> input: connect the cable&rsquo;s transmit wire</td></tr>
+    <tr><td>5</td><td><span class="xb-pill xb-p-sig">TX</span> output: connect the cable&rsquo;s receive wire</td></tr>
+    <tr><td>6</td><td>Not connected</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
-This plan connects **Prime GB/J33 → UART breakout → jaUART CP2104 bridge → computer USB**. It shows all seven individual conductors and the complete USB cable. The numbered banks are **logical electrical contacts, not plug faces or physical wire-entry locations**. Use the board-coordinate keys to identify the boards; do not infer cable orientation from the left/right positions in this plan.
+### J1: host socket
 
-{% include _includes/extension-instruction-diagram.html id="uart-breakout-v17-electrical-plan" src="/images/extensions/uart-breakout/guides/electrical-plan.png" title="Prime to computer — complete electrical connection" alt="Four individual Prime GB leads to UART J1, three UART J3 leads to jaUART, and a complete USB cable to the computer; logical contact banks, not mating faces." caption="Prime and UART are shown as board illustrations; jaUART is a functional block, not its board layout. Check logic levels, cable mating and power order. Read the complete lead schedule before assembly." width=420 %}
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>Contact</th><th>Signal</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td><span class="xb-pill xb-p-3v3">3.3 V</span></td></tr>
+    <tr><td>2</td><td><span class="xb-pill xb-p-5v">5 V</span></td></tr>
+    <tr><td>3, 6 to 9</td><td>Passed to J2</td></tr>
+    <tr><td>4</td><td><span class="xb-pill xb-p-sig">TX</span> from the controller</td></tr>
+    <tr><td>5</td><td><span class="xb-pill xb-p-sig">RX</span> to the controller</td></tr>
+    <tr><td>10</td><td><span class="xb-pill xb-p-gnd">GND</span></td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
-| Connection | From contact | To contact | Purpose |
-| --- | --- | --- | --- |
-| Host supply | Prime GB/J33.1 | UART J1.1 | Limited 3.3 V domain; check the available current |
-| Host transmit | Prime GB/J33.4 | UART J1.4 | PB9 TX into the board's transmit path |
-| Host receive | Prime GB/J33.5 | UART J1.5 | Board receive path into PH14 RX |
-| Host return | Prime GB/J33.10 | UART J1.10 | Circuit ground |
-| Peripheral receive | UART J3.5 | jaUART J3.2 | Board TX output to CP2104 RXD input |
-| Peripheral transmit | UART J3.4 | jaUART J3.3 | CP2104 TXD output into the board receive path |
-| Peripheral return | UART J3.1 | jaUART J3.4 | Common circuit ground |
-| Computer cable | jaUART J5 USB receptacle | Computer USB port | Complete cable matched to the fitted receptacle; no loose USB signal wires |
+### Solder links
 
-Use **only the four listed host contacts** with these individual leads; do not substitute a fully populated ribbon. Leave Prime GB/J33.2/.3/.6/.7/.8/.9, UART J1.2/.3/.6/.7/.8/.9, all of UART J2, UART J3.2/.3/.6, and jaUART J3.1 disconnected. In particular, neither host 5 V nor jaUART's VDD contact is a power lead in this wiring. The bridge receives USB power; the Prime supply remains the controller's own own supply arrangement.
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>Link</th><th>Effect</th><th>As delivered</th></tr></thead>
+  <tbody>
+    <tr><td>JP3, JP6 to JP9</td><td>Pass host contacts 3 and 6 to 9 to J2</td><td>Bridged</td></tr>
+    <tr><td>JP4</td><td>Passes TX to J2</td><td>Open</td></tr>
+    <tr><td>JP5</td><td>Passes RX from J2</td><td>Open</td></tr>
+    <tr><td>JP10</td><td>5&nbsp;V on J3 contact 3</td><td>Open</td></tr>
+    <tr><td>JP11, JP12</td><td>Cut to disable a light</td><td>Bridged</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
-Disconnect Prime power and computer USB before identifying or assembling any lead. Preserve **JP4, JP5 and JP10 open**. Confirm the other link states and the fitted board's continuity against the reference above. The 100 Ω resistors, receive diode/pull-up and activity circuitry are already board circuitry; they are not additional field parts to wire around.
+## What you need {#what-you-need}
 
-Before applying power, establish the actual connector population and mating orientation, verify both UART logic thresholds and the host's 3.3 V budget, and check unequal power-order/backfeed behavior. Once those checks pass, use the console setup and non-motion `version` check below; a version reply does not check the electrical margins.
+{::nomarkdown}
+<div class="xb-cards">
+  <div class="xb-card"><b>This board</b><span>Plus leads from the controller to J1.</span></div>
+  <div class="xb-card"><b>A 3.3 V serial adapter</b><span>With a known contact order.</span></div>
+  <div class="xb-card"><b>A terminal program</b><span>115200 baud, 8N1.</span></div>
+</div>
+{:/nomarkdown}
 
-The jaUART contact assignments come from [Ccecil's source](https://github.com/Ccecil/jaUART/tree/e9e69f50667e10d0af6d00339aa127826ec0522a). 
+## Get started {#get-started}
 
-<details markdown="1">
-<summary>Host-side contacts and complete numbered keys</summary>
+This example opens a command console on the Smoothieboard V2 Prime.
 
-This board-coordinate view shows the four host leads only, with J2, J3 and host 5 V disconnected. Use it to inspect the host contacts, not as the complete peripheral wiring.
+{::nomarkdown}
+<ol class="xb-steps">
+  <li class="xb-step">
+    <h3>Wire the controller with the power off</h3>
+    <p>Prime GB/J33 contacts 1, 4, 5 and 10 to J1 contacts 1, 4, 5 and 10. Leave the others unconnected.</p>
+  </li>
+  <li class="xb-step">
+    <h3>Wire the serial adapter</h3>
+    <p>Adapter ground to J3 contact 1, adapter receive to contact 5, adapter transmit to contact 4. Leave JP10 open.</p>
+  </li>
+  <li class="xb-step">
+    <h3>Configure and restart</h3>
+    <p>Add the configuration below and let the controller finish starting.</p>
+  </li>
+  <li class="xb-step">
+    <h3>Send a command</h3>
+    <p>Type <code>version</code> followed by Enter (line feed).</p>
+    <p class="xb-expect">The controller replies with its build information and both lights blink.</p>
+  </li>
+</ol>
+{:/nomarkdown}
 
-The complete keys show all contacts, including unused rows, optional links and activity indicators. These are PCB-coordinate views, not a plug face or assembly drawing.
+## Configuration {#configuration}
 
-{% include _includes/extension-instruction-diagram.html id="uart-native-0" src="/images/extensions/uart-breakout/guides/native-contact/uart-native-reader.png" title="UART breakout — four host leads; no peripheral" alt="UART breakout — four host leads; no peripheral" caption="Host-side view. J2/J3 and host 5 V unused; JP4/JP5/JP10 open. Outline pads indicate no field lead, not the absence of a jumper bridge." width=900 %}
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>You want</th><th>Module</th><th>Example</th></tr></thead>
+  <tbody>
+    <tr><td>A command console on a serial port</td><td>UART console</td><td><a href="#config-main">Setup</a></td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
-{% include _includes/extension-instruction-diagram.html id="uart-native-1" src="/images/extensions/uart-breakout/guides/native-contact/reader-contact-keys/J1-numbered-pads.png" title="J1 — complete board-coordinate contact key" alt="J1 — complete board-coordinate contact key" caption="Host-side view. J2/J3 and host 5 V unused; JP4/JP5/JP10 open. Outline pads indicate no field lead, not the absence of a jumper bridge." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="uart-native-2" src="/images/extensions/uart-breakout/guides/native-contact/reader-contact-keys/J2-numbered-pads.png" title="J2 — complete board-coordinate contact key" alt="J2 — complete board-coordinate contact key" caption="Host-side view. J2/J3 and host 5 V unused; JP4/JP5/JP10 open. Outline pads indicate no field lead, not the absence of a jumper bridge." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="uart-native-3" src="/images/extensions/uart-breakout/guides/native-contact/reader-contact-keys/J3-numbered-pads.png" title="J3 — complete board-coordinate contact key" alt="J3 — complete board-coordinate contact key" caption="Host-side view. J2/J3 and host 5 V unused; JP4/JP5/JP10 open. Outline pads indicate no field lead, not the absence of a jumper bridge." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="uart-native-4" src="/images/extensions/uart-breakout/guides/native-contact/reader-contact-keys/J33-numbered-pads.png" title="J33 — complete board-coordinate contact key" alt="J33 — complete board-coordinate contact key" caption="Host-side view. J2/J3 and host 5 V unused; JP4/JP5/JP10 open. Outline pads indicate no field lead, not the absence of a jumper bridge." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="uart-native-5" src="/images/extensions/uart-breakout/guides/native-contact/reader-contact-keys/JP10-numbered-pads.png" title="JP10 — complete board-coordinate contact key" alt="JP10 — complete board-coordinate contact key" caption="Host-side view. J2/J3 and host 5 V unused; JP4/JP5/JP10 open. Outline pads indicate no field lead, not the absence of a jumper bridge." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="uart-native-6" src="/images/extensions/uart-breakout/guides/native-contact/reader-contact-keys/JP11-numbered-pads.png" title="JP11 — complete board-coordinate contact key" alt="JP11 — complete board-coordinate contact key" caption="Host-side view. J2/J3 and host 5 V unused; JP4/JP5/JP10 open. Outline pads indicate no field lead, not the absence of a jumper bridge." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="uart-native-7" src="/images/extensions/uart-breakout/guides/native-contact/reader-contact-keys/JP12-numbered-pads.png" title="JP12 — complete board-coordinate contact key" alt="JP12 — complete board-coordinate contact key" caption="Host-side view. J2/J3 and host 5 V unused; JP4/JP5/JP10 open. Outline pads indicate no field lead, not the absence of a jumper bridge." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="uart-native-8" src="/images/extensions/uart-breakout/guides/native-contact/reader-contact-keys/JP3-numbered-pads.png" title="JP3 — complete board-coordinate contact key" alt="JP3 — complete board-coordinate contact key" caption="Host-side view. J2/J3 and host 5 V unused; JP4/JP5/JP10 open. Outline pads indicate no field lead, not the absence of a jumper bridge." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="uart-native-9" src="/images/extensions/uart-breakout/guides/native-contact/reader-contact-keys/JP4-numbered-pads.png" title="JP4 — complete board-coordinate contact key" alt="JP4 — complete board-coordinate contact key" caption="Host-side view. J2/J3 and host 5 V unused; JP4/JP5/JP10 open. Outline pads indicate no field lead, not the absence of a jumper bridge." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="uart-native-10" src="/images/extensions/uart-breakout/guides/native-contact/reader-contact-keys/JP5-numbered-pads.png" title="JP5 — complete board-coordinate contact key" alt="JP5 — complete board-coordinate contact key" caption="Host-side view. J2/J3 and host 5 V unused; JP4/JP5/JP10 open. Outline pads indicate no field lead, not the absence of a jumper bridge." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="uart-native-11" src="/images/extensions/uart-breakout/guides/native-contact/reader-contact-keys/JP6-numbered-pads.png" title="JP6 — complete board-coordinate contact key" alt="JP6 — complete board-coordinate contact key" caption="Host-side view. J2/J3 and host 5 V unused; JP4/JP5/JP10 open. Outline pads indicate no field lead, not the absence of a jumper bridge." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="uart-native-12" src="/images/extensions/uart-breakout/guides/native-contact/reader-contact-keys/JP7-numbered-pads.png" title="JP7 — complete board-coordinate contact key" alt="JP7 — complete board-coordinate contact key" caption="Host-side view. J2/J3 and host 5 V unused; JP4/JP5/JP10 open. Outline pads indicate no field lead, not the absence of a jumper bridge." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="uart-native-13" src="/images/extensions/uart-breakout/guides/native-contact/reader-contact-keys/JP8-numbered-pads.png" title="JP8 — complete board-coordinate contact key" alt="JP8 — complete board-coordinate contact key" caption="Host-side view. J2/J3 and host 5 V unused; JP4/JP5/JP10 open. Outline pads indicate no field lead, not the absence of a jumper bridge." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="uart-native-14" src="/images/extensions/uart-breakout/guides/native-contact/reader-contact-keys/JP9-numbered-pads.png" title="JP9 — complete board-coordinate contact key" alt="JP9 — complete board-coordinate contact key" caption="Host-side view. J2/J3 and host 5 V unused; JP4/JP5/JP10 open. Outline pads indicate no field lead, not the absence of a jumper bridge." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="uart-native-15" src="/images/extensions/uart-breakout/guides/native-contact/reader-contact-keys/LED1-numbered-pads.png" title="LED1 — complete board-coordinate contact key" alt="LED1 — complete board-coordinate contact key" caption="Host-side view. J2/J3 and host 5 V unused; JP4/JP5/JP10 open. Outline pads indicate no field lead, not the absence of a jumper bridge." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="uart-native-16" src="/images/extensions/uart-breakout/guides/native-contact/reader-contact-keys/LED2-numbered-pads.png" title="LED2 — complete board-coordinate contact key" alt="LED2 — complete board-coordinate contact key" caption="Host-side view. J2/J3 and host 5 V unused; JP4/JP5/JP10 open. Outline pads indicate no field lead, not the absence of a jumper bridge." width=420 %}
-
-</details>
-
-GB/J33.4 PB9 is controller TX; J33.5 PH14 is controller RX. The serial paths use R1/R2 (100 Ω), BAT54WS D1 and the R3 10 kΩ receive pull-up. U1 monitors activity and drives indicators; it is not serial data inversion or translation. Preserve JP4, JP5 and JP10 open; the other JP3–JP12 links are bridged as delivered. These defaults are not an instruction to change fitted links without continuity checks.
-
-J3 contact order is 1 GND, 2 NC, 3 optional 5 V, 4 cable transmitter into the board, 5 board transmitter toward the cable, 6 NC. A jaUART CP2104 bridge is the peripheral shown above; check its I/O voltage, supply ordering and cable. Do not connect J3.3 to an independently powered adapter or infer RS-232 voltage compatibility. The UART-console settings below cover the host software.
-
-## Smoothieware configuration and use
-
-This adapter adds no UART protocol: Smoothieware communicates through the selected electrical interface. The board-specific cable, power and level checks still apply.
-
-### UART console settings
-
-The [console parser](https://github.com/Smoothieware/SmoothieV2/blob/2a21c0108b1d095ecd8b2b9358e94055f053c003/Firmware/src/Consoles.cpp#L733-L761) implements the following settings. This example enables **channel 1** at **115200 bit/s, 8 data bits, no parity, one stop bit**:
+### Setup {#config-main}
 
 ```ini
 [uart console]
@@ -261,18 +231,110 @@ stop_bits = 1
 parity = none
 ```
 
-With `console = true`, the UART is initialized by the [console task after startup](https://github.com/Smoothieware/SmoothieV2/blob/2a21c0108b1d095ecd8b2b9358e94055f053c003/Firmware/src/Consoles.cpp#L515-L520), rather than immediately while parsing this section. Let the controller finish starting before sending `version`. If no reply arrives, check the startup log for UART initialization errors and confirm the selected channel, crossed TX/RX, common ground and terminal line ending; silence alone does not identify a failed adapter.
+With <code>console = true</code> the UART starts after the controller has finished booting ([console source](https://github.com/Smoothieware/SmoothieV2/blob/2a21c0108b1d095ecd8b2b9358e94055f053c003/Firmware/src/Consoles.cpp#L733-L761)). On the Prime, [channel 1 transmits on PB9 and receives on PH14](https://github.com/Smoothieware/SmoothieV2/blob/2a21c0108b1d095ecd8b2b9358e94055f053c003/Firmware/Hal/src/Uart.cpp#L101-L135), header GB contacts 4 and 5. Reserve both pins. Use 115200 baud, 8N1 and no hardware flow control on the computer.
 
-On Prime, [channel 1 uses TX PB9 and RX PH14](https://github.com/Smoothieware/SmoothieV2/blob/2a21c0108b1d095ecd8b2b9358e94055f053c003/Firmware/Hal/src/Uart.cpp#L101-L135); the [host pin table](https://github.com/Smoothieware/SmoothieV2/blob/2a21c0108b1d095ecd8b2b9358e94055f053c003/pins.md#L188-L202) places them on **GB contacts 4 and 5**, with ground on contact 10. Channel 0 instead uses PD8/PB11, identified as GD contacts 4/5. On the Prime, GB is J33: contact 4 reaches PB9 through R74 (100 Ω), and contact 5 reaches PH14 through R75 (100 Ω). These channels are fixed HAL selections, not arbitrary GPIO assignments. Reserve the selected channel and both pins in the complete configuration; `console = false` initializes an auxiliary UART without starting its command-console reader.
+## How it works {#how-it-works}
 
-After the board-specific supply, direction and cable checks in this guide are complete, use a computer terminal at the matching 115200/8N1 settings, with hardware flow control disabled. Send `version` followed by LF (`\n`; CRLF also works, but CR alone is ignored): the [registered shell command](https://github.com/Smoothieware/SmoothieV2/blob/2a21c0108b1d095ecd8b2b9358e94055f053c003/Firmware/src/CommandShell.cpp#L1485-L1505) prints build information without requesting motion. A returned version identifies the running build; it does not check the adapter&#39;s electrical behaviour.
+The controller&rsquo;s transmit line reaches J3 contact 5 through 100&nbsp;&Omega;. Data from the cable reaches the controller through 100&nbsp;&Omega; and a diode, with a pull-up holding the line high when nothing transmits. Neither path is inverted or level shifted.
 
-## Sources
+## Troubleshooting {#troubleshooting}
 
-- [Prime PCB source](https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/smoothiev2-prime.kicad_pcb) — GB/J33 and the R74/R75 UART paths.
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>Symptom</th><th>Check</th></tr></thead>
+  <tbody>
+    <tr><td>No reply</td><td>Cross transmit and receive, check ground, the channel number and the line ending (line feed).</td></tr>
+    <tr><td>Garbled text</td><td>Matching baud rate and format on both sides.</td></tr>
+    <tr><td>Receive light never blinks</td><td>The adapter&rsquo;s transmit wire on J3 contact 4.</td></tr>
+    <tr><td>Two devices fight</td><td>Keep JP5 open unless the chain device is the only transmitter.</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
-- [Source directory](https://github.com/arthurwolf/extension-boards/tree/main/src/uart-breakout/attempt/versions/v17)
-- [Board specification](https://github.com/arthurwolf/extension-boards/blob/main/src/uart-breakout/specs.md)
-- [Design discussion](https://github.com/arthurwolf/extension-boards/blob/main/src/uart-breakout/design.md)
-- [All extension boards](/extension-boards)
+Still stuck? Read [how to ask for help](/help-guidelines) or see the general [troubleshooting guide](/troubleshooting/).
 
+## Downloads {#downloads}
+
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>File</th><th>What it is</th></tr></thead>
+  <tbody>
+    <tr><td><a href="/images/extensions/uart-breakout/v17/uart-breakout-schematic.pdf">Schematic (PDF)</a></td><td>The complete circuit diagram</td></tr>
+    <tr><td><a href="/images/extensions/uart-breakout/v17/uart-breakout-bom.csv">Parts list (CSV)</a></td><td>Every component with its value and footprint</td></tr>
+    <tr><td><a href="/images/extensions/uart-breakout/v17/uart-breakout-diagram.png">Board drawing (PNG)</a></td><td>The top view used on this page</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+## Appendix: mounting dimensions {#mounting}
+
+For drilling a mounting plate or designing an enclosure. Positions are hole centres, in millimetres, measured from the top-left corner with the board seen from the component side.
+
+{::nomarkdown}
+<figure class="xb-fig">
+  <div class="xb-fig-scroll" tabindex="0" role="region" aria-label="Mounting drawing">
+  <svg viewBox="0 0 1000 480" role="img" aria-labelledby="xb-ub-mount-t">
+  <title id="xb-ub-mount-t">Mounting drawing of the ub, component side: outline 34.6 by 30 millimetres with 2 mounting holes. Hole positions are listed in the table below.</title>
+  <text x="480.0" y="24" text-anchor="middle" font-size="13" font-weight="700" letter-spacing="1" fill="#a9b4c2">COMPONENT SIDE · millimetres</text>
+  <rect x="283.9" y="78.0" width="392.1" height="340.0" rx="0.0" fill="#1f2226" stroke="#e6ebf2" stroke-width="1.5"/>
+  <g stroke="#a9b4c2" stroke-width="1.2" fill="none"><path d="M283.9 56H676.1"/><path d="M283.9 50V62"/><path d="M676.1 50V62"/><path d="M702.1 78.0V418.0"/><path d="M696.1 78.0h12"/><path d="M696.1 418.0h12"/></g>
+  <text x="480.0" y="48" text-anchor="middle" font-size="15" font-weight="700" fill="#e6ebf2">34.6</text>
+  <text x="714.1" y="253.0" font-size="15" font-weight="700" fill="#e6ebf2">30</text>
+  <circle cx="283.9" cy="78.0" r="4" fill="#ffcc33"/>
+  <text x="271.9" y="83.0" text-anchor="end" font-size="14" font-weight="700" fill="#ffcc33">0, 0</text>
+  <g stroke="#ffcc33" stroke-width="1.5" fill="#ffcc33"><path d="M225.9 104.0h30" fill="none"/><path d="M259.9 104.0l-8 -4v8z"/><path d="M225.9 104.0v30" fill="none"/><path d="M225.9 138.0l-4 -8h8z"/></g>
+  <text x="263.9" y="109.0" font-size="12" font-weight="700" fill="#ffcc33">X</text>
+  <text x="221.9" y="154.0" font-size="12" font-weight="700" fill="#ffcc33">Y</text>
+  <circle cx="397.3" cy="304.7" r="18.1" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <path d="M375.1 304.7h44.3M397.3 282.5v44.3" stroke="#ffcc33" stroke-width=".8" fill="none"/>
+  <text x="379.1" y="276.5" text-anchor="start" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">1</tspan>  10.00, 20.00</text>
+  <circle cx="623.9" cy="304.7" r="18.1" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <path d="M601.8 304.7h44.3M623.9 282.5v44.3" stroke="#ffcc33" stroke-width=".8" fill="none"/>
+  <text x="642.1" y="276.5" text-anchor="end" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">2</tspan>  30.00, 20.00</text>
+  <text x="480.0" y="448.0" text-anchor="middle" font-size="13" fill="#a9b4c2">Numbered rings are mounting holes. Positions are hole centres, X then Y, from the marked corner.</text>
+  </svg>
+  </div>
+  <figcaption>Board outline 34.6 × 30&nbsp;mm, square corners, board thickness 1.6&nbsp;mm. Drawn from the design files, component side up, in the same orientation as the board tour.</figcaption>
+</figure>
+
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>Hole</th><th>X (mm)</th><th>Y (mm)</th><th>Diameter</th><th>Use</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td>10.00</td><td>20.00</td><td>3.2&nbsp;mm, not plated</td><td>Mounting, M3 screw</td></tr>
+    <tr><td>2</td><td>30.00</td><td>20.00</td><td>3.2&nbsp;mm, not plated</td><td>Mounting, M3 screw</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+## Appendix: electrical specifications {#electrical}
+
+Board values come from the silk screen and parts list.
+
+{::nomarkdown}
+<div class="xb-tablewrap"><table class="xb-elec">
+  <thead><tr><th>Parameter</th><th>Applies to</th><th>Lower</th><th>Nominal</th><th>Upper</th><th>Basis and conditions</th></tr></thead>
+  <tbody>
+    <tr><td>Logic level</td><td>J3 signals</td><td>—</td><td>3.3 V</td><td>—</td><td>Board silk: no 5 V logic</td></tr>
+    <tr><td>Series resistance</td><td>Each direction</td><td>—</td><td>100 Ω</td><td>—</td><td>Parts list</td></tr>
+    <tr><td>Receive pull-up</td><td>Controller RX</td><td>—</td><td>10 kΩ</td><td>—</td><td>Parts list</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+## Appendix: datasheets {#datasheets}
+
+The first page of each important chip&rsquo;s datasheet. Click a page to open the PDF.
+
+{::nomarkdown}
+<figure class="xb-fig">
+  <a href="/images/extensions/uart-breakout/datasheets/sn74lvc2g14.pdf"><img src="/images/extensions/uart-breakout/datasheets/sn74lvc2g14-page1.png" alt="First page of the SN74LVC2G14 datasheet" style="display:block;width:100%;max-width:480px;height:auto;margin:0 auto"></a>
+  <figcaption><a href="/images/extensions/uart-breakout/datasheets/sn74lvc2g14.pdf">SN74LVC2G14 dual Schmitt-trigger inverter</a> — Texas Instruments, 33 pages.</figcaption>
+</figure>
+<figure class="xb-fig">
+  <a href="/images/extensions/uart-breakout/datasheets/tpd4e1u06.pdf"><img src="/images/extensions/uart-breakout/datasheets/tpd4e1u06-page1.png" alt="First page of the TPD4E1U06 datasheet" style="display:block;width:100%;max-width:480px;height:auto;margin:0 auto"></a>
+  <figcaption><a href="/images/extensions/uart-breakout/datasheets/tpd4e1u06.pdf">TPD4E1U06 quad-channel ESD protection device</a> — Texas Instruments, 27 pages.</figcaption>
+</figure>
+{:/nomarkdown}
+
+
+See all boards on the [extension boards](/extension-boards) page.

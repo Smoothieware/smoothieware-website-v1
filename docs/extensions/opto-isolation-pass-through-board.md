@@ -1,301 +1,355 @@
 ---
 layout: default
 title: "Opto-Isolation pass-through board"
+description: "A galvanically isolated SPI and control port: six signals out, one back, with isolated power for the far side."
 permalink: /extensions/opto-isolation-pass-through-board
 ---
 
-# Opto-Isolation pass-through board
+{% include _includes/extension-board-page.html %}
 
-This board is a fixed-direction isolated SPI/control interface. ISOW7741 and ISO7730 transfer six host-to-peripheral signals and one peripheral-to-host MISO signal; an integrated isolated-power path supplies the far side. It is not a reversible seven-GPIO isolator and cannot transparently carry arbitrary I2C or UART wiring.
 
-## Interfaces, power and operating limits
-
-J1 host contacts 3/4/5/6/7/9 drive far-side IO3/IO4/IO5/CS/MOSI/SCK; contact 8 returns MISO. J2 has corresponding isolated-domain signals and ground GND_ISO. JP1 feeds host 5 V; JP2 and JP3 expose isolated5 V/3.3 V at J2. JP4 selects isolated logic voltage and JP5 selects CS-gated or always-enabled MISO. Host GND and isolated GND are separate; joining them defeats the intended galvanic separation. Check logic voltage, isolated power capacity and propagation delay for your application.
-
-## Board reference
-
-<details markdown="1">
-<summary>Reading the connector callouts</summary>
-
-The dark end of each pill gives the contact number. The adjoining label gives its function. Colours help locate related functions; the label and connection instructions determine how to use the contact.
-
-- Red: 3.3 V supply.
-- Orange: 5 V supply.
-- Near-black: Circuit ground.
-- Dark grey: Other labelled contact — read its exact function.
-
-A voltage in a signal name does not make that contact a power output. Circuit ground, cable shield and protective earth are different connections. An underside projection shows rear components through the front view; it is not a mirrored rear view.
-
-</details>
-
-Start with the overview, then use all focused sheets for exact contacts, controls and links. Default solder-link footprints do not show whether a link is closed on your board.
-
-{% include _includes/extension-instruction-diagram.html id="opto-isolation-pass-through-board-v20-reader-compact-overview" src="/images/extensions/opto-isolation-pass-through-board/guides/reader-compact-overview.png" title="Isolated SPI/GPIO interface — overview" alt="Isolated SPI/GPIO interface — overview" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="opto-isolation-pass-through-board-v20-reader-compact-host-1-5" src="/images/extensions/opto-isolation-pass-through-board/guides/reader-compact-host-1-5-central-pills.png" title="J1 · Host side — host 1 5" alt="J1 · Host side — host 1 5" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="opto-isolation-pass-through-board-v20-reader-compact-host-6-10" src="/images/extensions/opto-isolation-pass-through-board/guides/reader-compact-host-6-10-central-pills.png" title="J1 · Host side — host 6 10" alt="J1 · Host side — host 6 10" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="opto-isolation-pass-through-board-v20-reader-compact-isolated-1-5" src="/images/extensions/opto-isolation-pass-through-board/guides/reader-compact-isolated-1-5-central-pills.png" title="J2 · Isolated side — isolated 1 5" alt="J2 · Isolated side — isolated 1 5" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="opto-isolation-pass-through-board-v20-reader-compact-isolated-6-10" src="/images/extensions/opto-isolation-pass-through-board/guides/reader-compact-isolated-6-10-central-pills.png" title="J2 · Isolated side — isolated 6 10" alt="J2 · Isolated side — isolated 6 10" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="opto-isolation-pass-through-board-v20-reader-compact-spi" src="/images/extensions/opto-isolation-pass-through-board/guides/reader-compact-spi.png" title="Isolated SPI channels — spi" alt="Isolated SPI channels — spi" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="opto-isolation-pass-through-board-v20-reader-compact-gpio" src="/images/extensions/opto-isolation-pass-through-board/guides/reader-compact-gpio.png" title="Isolated GPIO channels — gpio" alt="Isolated GPIO channels — gpio" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="opto-isolation-pass-through-board-v20-reader-compact-converter-feed" src="/images/extensions/opto-isolation-pass-through-board/guides/reader-compact-converter-feed.png" title="Host converter feed — converter feed" alt="Host converter feed — converter feed" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="opto-isolation-pass-through-board-v20-reader-compact-isolated-supply" src="/images/extensions/opto-isolation-pass-through-board/guides/reader-compact-isolated-supply.png" title="Isolated supply rails — isolated supply" alt="Isolated supply rails — isolated supply" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="opto-isolation-pass-through-board-v20-reader-compact-logic-select" src="/images/extensions/opto-isolation-pass-through-board/guides/reader-compact-logic-select.png" title="Logic voltage selector — logic select" alt="Logic voltage selector — logic select" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="opto-isolation-pass-through-board-v20-reader-compact-output-links" src="/images/extensions/opto-isolation-pass-through-board/guides/reader-compact-output-links.png" title="Isolated supply outputs — output links" alt="Isolated supply outputs — output links" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="opto-isolation-pass-through-board-v20-reader-compact-miso-enable" src="/images/extensions/opto-isolation-pass-through-board/guides/reader-compact-miso-enable.png" title="Return-data enable selector — miso enable" alt="Return-data enable selector — miso enable" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="opto-isolation-pass-through-board-v20-reader-compact-host-led" src="/images/extensions/opto-isolation-pass-through-board/guides/reader-compact-host-led.png" title="Host power indicator — host led" alt="Host power indicator — host led" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="opto-isolation-pass-through-board-v20-reader-compact-iso-led" src="/images/extensions/opto-isolation-pass-through-board/guides/reader-compact-iso-led-underside-caption.png" title="Isolated power indicator — iso led" alt="Isolated power indicator — iso led" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="opto-isolation-pass-through-board-v20-reader-compact-protection" src="/images/extensions/opto-isolation-pass-through-board/guides/reader-compact-protection.png" title="Isolated signal protection — protection" alt="Isolated signal protection — protection" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="opto-isolation-pass-through-board-v20-reader-compact-host-tests" src="/images/extensions/opto-isolation-pass-through-board/guides/reader-compact-host-tests-underside-caption.png" title="Host supply/fault tests — host tests" alt="Host supply/fault tests — host tests" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="opto-isolation-pass-through-board-v20-reader-compact-iso-tests" src="/images/extensions/opto-isolation-pass-through-board/guides/reader-compact-iso-tests-underside-caption.png" title="Isolated supply tests — iso tests" alt="Isolated supply tests — iso tests" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="opto-isolation-pass-through-board-v20-reader-compact-host-spi-tests" src="/images/extensions/opto-isolation-pass-through-board/guides/reader-compact-host-spi-tests.png" title="Host SPI tests — host spi tests" alt="Host SPI tests — host spi tests" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="opto-isolation-pass-through-board-v20-reader-compact-iso-spi-tests" src="/images/extensions/opto-isolation-pass-through-board/guides/reader-compact-iso-spi-tests.png" title="Isolated SPI tests — iso spi tests" alt="Isolated SPI tests — iso spi tests" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="opto-isolation-pass-through-board-v20-reader-compact-mounts" src="/images/extensions/opto-isolation-pass-through-board/guides/reader-compact-mounts.png" title="Mounts and fiducials — mounts" alt="Mounts and fiducials — mounts" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-Read the overview and all focused sheets together; use the connection section for installation.
-
-The following is the pad-to-net schedule. Net labels identify circuit nodes; they are not wire colours or voltage and current ratings. Explicit unconnected contacts must remain unused. Duplicate physical pads with the same contact number represent alternative lands, not extra channels. Check the selector bridge positions on your board before altering them.
-
-<details markdown="1">
-<summary>Contact inventory</summary>
-
-<div class="extension-contact-table" role="region" aria-label="Contact inventory; scroll horizontally to read all columns" tabindex="0" markdown="1">
-
-| Member / reference | Label / control | Kind | Numbered contacts / assigned nodes |
-|---|---|---|---|
-| opto-isolation / J1 | S HOST IN | Connector | 1: /+3V3_HOST; 2: /+5V_HOST; 3: /H_IO3_IN; 4: /H_IO4_IN; 5: /H_IO5_IN; 6: /H_CS_IN; 7: /H_MOSI_IN; 8: /H_MISO_OUT; 9: /H_SCK_IN; 10: /GND_HOST |
-| opto-isolation / J2 | S ISOLATED OUT | Connector | 1: /ISO_3V3_OUT; 2: /ISO_5V_OUT; 3: /I_IO3_OUT; 4: /I_IO4_OUT; 5: /I_IO5_OUT; 6: /I_CS_OUT; 7: /I_MOSI_OUT; 8: /I_MISO_IN; 9: /I_SCK_OUT; 10: /GND_ISO |
-| opto-isolation / D1 | LED green HOST 3V3 POWER | Indicator | 1: /GND_HOST; 2: LED_D1_DISABLE |
-| opto-isolation / D2 | LED green ISO 3V3 POWER | Indicator | 1: /GND_ISO; 2: LED_D2_DISABLE |
-| opto-isolation / TP1 | 5V HOST | Observation only | 1: /+5V_HOST |
-| opto-isolation / TP10 | GND ISO | Observation only | 1: /GND_ISO |
-| opto-isolation / TP11 | CS H | Observation only | 1: /H_CS_IN |
-| opto-isolation / TP12 | MOSI H | Observation only | 1: /H_MOSI_IN |
-| opto-isolation / TP13 | MISO H | Observation only | 1: /H_MISO_OUT |
-| opto-isolation / TP14 | SCK H | Observation only | 1: /H_SCK_IN |
-| opto-isolation / TP15 | CS I | Observation only | 1: /I_CS_OUT |
-| opto-isolation / TP16 | MOSI I | Observation only | 1: /I_MOSI_OUT |
-| opto-isolation / TP17 | MISO I | Observation only | 1: /I_MISO_IN |
-| opto-isolation / TP18 | SCK I | Observation only | 1: /I_SCK_OUT |
-| opto-isolation / TP2 | 3V3 HOST | Observation only | 1: /+3V3_HOST |
-| opto-isolation / TP3 | FLT N | Observation only | 1: /ISOW_FLT_N |
-| opto-isolation / TP4 | GND HOST | Observation only | 1: /GND_HOST |
-| opto-isolation / TP5 | GND HOST | Observation only | 1: /GND_HOST |
-| opto-isolation / TP6 | 5V ISO | Observation only | 1: /ISO_5V |
-| opto-isolation / TP7 | 3V3 ISO | Observation only | 1: /ISO_3V3 |
-| opto-isolation / TP8 | VISOIN | Observation only | 1: /VISOIN |
-| opto-isolation / TP9 | GND ISO | Observation only | 1: /GND_ISO |
-| opto-isolation / JP1 | 5V FEED | Service link/selector | 1: /+5V_HOST; 2: /+5V_HOST_F |
-| opto-isolation / JP2 | 5V OUT | Service link/selector | 1: /ISO_5V; 2: /ISO_5V_OUT |
-| opto-isolation / JP3 | 3V3 OUT | Service link/selector | 1: /ISO_3V3; 2: /ISO_3V3_OUT |
-| opto-isolation / JP4 | LOGIC 3V3 / 5V | Service link/selector | 1: /ISO_3V3; 2: /VISOIN; 3: /ISO_5V |
-| opto-isolation / JP5 | MISO CS-GATED / ALWAYS | Service link/selector | 1: /H_CS_IN; 2: /MISO_OE_N; 3: /GND_HOST |
-| opto-isolation / JP6 | CUT TO DISABLE D1 | Service link/selector | 1: LED_D1_DISABLE; 2: /LED_HOST_A |
-| opto-isolation / JP7 | CUT TO DISABLE D2 | Service link/selector | 1: LED_D2_DISABLE; 2: /LED_ISO_A |
-
+{::nomarkdown}
+<div class="xb-hero">
+  <div>
+    <p class="xb-eyebrow">Extension board · Signal interfaces</p>
+    <h1 id="opto-isolation-pass-through-board">Opto-Isolation pass-through board</h1>
+    <p class="xb-lead">Put an isolation barrier between your controller and a peripheral. Six signals cross outward, one comes back, and the board makes the isolated supply for the far side itself, so the two grounds never meet.</p>
+    <div class="xb-actions">
+      <a class="xb-btn xb-btn-primary" href="#get-started">Get started</a>
+      <a class="xb-btn" href="#pinout">Pinout</a>
+      <a class="xb-btn" href="#configuration">Configuration</a>
+    </div>
+  </div>
+  <figure>
+    <img src="/images/extensions/opto-isolation-pass-through-board/v20/opto-isolation-pass-through-board-diagram.png" alt="Top view of the isolation board: a ten-contact host socket at the left, a ten-contact isolated socket at the right and two isolator chips between them.">
+    <figcaption>Top view, drawn from the board&rsquo;s design files. This is a drawing, not a photograph.</figcaption>
+  </figure>
 </div>
 
-</details>
+<div class="xb-stats">
+  <div class="xb-stat"><b>6 + 1</b><span>signals out and back</span></div>
+  <div class="xb-stat"><b>60 V DC</b><span>functional isolation at most</span></div>
+  <div class="xb-stat"><b>4 MHz</b><span>maximum signal rate</span></div>
+  <div class="xb-stat"><b>30 mA</b><span>isolated supply at most</span></div>
+  <div class="xb-stat"><b>3.3 / 5 V</b><span>isolated logic level</span></div>
+  <div class="xb-stat"><b>40 × 38</b><span>millimetres</span></div>
+</div>
 
-## Practical connection to Smoothieboard V2 Prime
+<nav class="xb-nav" aria-label="On this page">
+  <a href="#specs">Tech specs</a>
+  <a href="#tour">Board tour</a>
+  <a href="#pinout">Pinout</a>
+  <a href="#what-you-need">What you need</a>
+  <a href="#get-started">Get started</a>
+  <a href="#configuration">Configuration</a>
+  <a href="#how-it-works">How it works</a>
+  <a href="#troubleshooting">Troubleshooting</a>
+  <a href="#downloads">Downloads</a>
+  <a href="#mounting">Mounting</a>
+  <a href="#electrical">Electrical</a>
+  <a href="#datasheets">Datasheets</a>
+</nav>
+{:/nomarkdown}
 
-### Contact connection reference
+<sl-alert variant="warning" open>
+  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+  Functional isolation only, for at most 60&nbsp;V DC across the barrier. It is not safety isolation and must never separate mains from anything. Never join host ground and isolated ground, use nylon mounting hardware, and do not hot-plug.
+</sl-alert>
 
-Connect GF/J37.3 PB1 to J1.3, J37.6 PG0 to J1.6, and J37.10 ground to J1.10. All supplies and J2 contacts remain disconnected in this drawing. Six channels carry host signals outward; MISO returns through the isolator and U6. Keep host and isolated ground domains separate. Keep the JP1–3 bridges, set JP4 at 1–2 for isolated 3.3 V logic and JP5 at 1–2 for chip-select-gated return, and verify the actual assembly. Do not energize from this drawing: it does not cover supplies, reset and boot chip-select states or peripheral timing.
+## Tech specs {#specs}
 
-Read the main drawing with every contact key below. Dashed locators identify the enlarged areas on the complete board drawings. The PCB views are not plug mating faces; preserve numbered contacts rather than inferring cable orientation.
+{::nomarkdown}
+<div class="xb-tablewrap"><table class="xb-spec">
+  
+  <tbody>
+    <tr><td>Purpose</td><td>Isolated fixed-direction SPI and control port</td></tr>
+    <tr><td>Isolators</td><td><a href="/images/extensions/opto-isolation-pass-through-board/datasheets/isow7741.pdf">ISOW7741</a> (CS, MOSI, SCK out, MISO back, plus isolated power) and <a href="/images/extensions/opto-isolation-pass-through-board/datasheets/iso7730.pdf">ISO7730</a> (IO3, IO4, IO5 out)</td></tr>
+    <tr><td>Host side</td><td>J1, ten-contact socket; 3.3&nbsp;V logic, 5&nbsp;V for the isolated supply through JP1</td></tr>
+    <tr><td>Isolated side</td><td>J2, ten-contact socket with its own ground</td></tr>
+    <tr><td>Isolated logic level</td><td>3.3&nbsp;V or 5&nbsp;V, chosen by JP4</td></tr>
+    <tr><td>Return signal</td><td>MISO through a 74LVC1G125 buffer, enabled by chip select or always (JP5)</td></tr>
+    <tr><td>Protection</td><td><a href="/images/extensions/opto-isolation-pass-through-board/datasheets/tpd4e1u06.pdf">TPD4E1U06</a> arrays on the J2 signals; ferrite beads on the supplies</td></tr>
+    <tr><td>Lights</td><td>Host 3.3&nbsp;V power (D1) and isolated 3.3&nbsp;V power (D2), each with a link that disables it</td></tr>
+    <tr><td>Size</td><td>40 &times; 38&nbsp;mm, two M3 holes</td></tr>
+    <tr><td>Licence</td><td>Open hardware, CERN-OHL-S-2.0</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
-{% include _includes/extension-instruction-diagram.html id="opto-native-0" src="/images/extensions/opto-isolation-pass-through-board/guides/native-contact/reader-legibility-corrected/opto-native-reader.png" title="Prime and extension — contact reference" alt="Prime and extension — contact reference" caption="Three unpowered host leads only. All supplies and J2 stay disconnected; host ground and isolated ground stay separate." width=900 %}
+Every figure with its basis is in the [electrical specifications](#electrical) appendix; hole positions are in the [mounting dimensions](#mounting) appendix.
 
-{% include _includes/extension-instruction-diagram.html id="opto-native-1" src="/images/extensions/opto-isolation-pass-through-board/guides/native-contact/reader-contact-keys/D1-numbered-pads.png" title="D1 — contact key" alt="D1 — contact key" caption="Host signal connections only; peripheral and supply connections are not shown. Use all keys with the main reference." width=420 %}
+## Board tour {#tour}
 
-{% include _includes/extension-instruction-diagram.html id="opto-native-2" src="/images/extensions/opto-isolation-pass-through-board/guides/native-contact/reader-contact-keys/D2-numbered-pads.png" title="D2 — contact key" alt="D2 — contact key" caption="Host signal connections only; peripheral and supply connections are not shown. Use all keys with the main reference." width=420 %}
+The numbers on the drawing match the list below it. The board is shown from the component side.
 
-{% include _includes/extension-instruction-diagram.html id="opto-native-3" src="/images/extensions/opto-isolation-pass-through-board/guides/native-contact/reader-contact-keys/J1-numbered-pads.png" title="J1 — contact key" alt="J1 — contact key" caption="Host signal connections only; peripheral and supply connections are not shown. Use all keys with the main reference." width=420 %}
+{::nomarkdown}
+<figure class="xb-tour">
+  <div class="xb-tour-scroll" tabindex="0" role="region" aria-label="Annotated top view">
+    <div class="xb-tour-stage">
+      <img src="/images/extensions/opto-isolation-pass-through-board/v20/opto-isolation-pass-through-board-diagram.png" alt="Top view of the isolation board with numbered markers that are explained in the list below.">
+      <a class="xb-mk xb-pb xb-pl" href="#tour-1" style="left:10.3%;top:40.0%" aria-label="1: Host socket (J1)">1<span class="xb-pop"><b>Host socket (J1)</b> — host rails, six outgoing signals, the MISO return and host ground.</span></a>
+      <a class="xb-mk xb-pb xb-pr" href="#tour-2" style="left:89.4%;top:40.0%" aria-label="2: Isolated socket (J2)">2<span class="xb-pop"><b>Isolated socket (J2)</b> — the isolated rails, signals and isolated ground.</span></a>
+      <a class="xb-mk" href="#tour-3" style="left:49.8%;top:67.5%" aria-label="3: Isolator with power (U1)">3<span class="xb-pop"><b>Isolator with power (U1)</b> — an ISOW7741: carries CS, MOSI, SCK and MISO and generates the isolated supply.</span></a>
+      <a class="xb-mk xb-pb" href="#tour-4" style="left:49.8%;top:36.4%" aria-label="4: Three-channel isolator (U2)">4<span class="xb-pop"><b>Three-channel isolator (U2)</b> — an ISO7730 carrying IO3, IO4 and IO5 outward.</span></a>
+      <a class="xb-mk xb-pl" href="#tour-5" style="left:22.7%;top:72.8%" aria-label="5: MISO buffer (U6)">5<span class="xb-pop"><b>MISO buffer (U6)</b> — drives the returned data onto the host contact.</span></a>
+      <a class="xb-mk xb-pl" href="#tour-6" style="left:11.8%;top:64.2%" aria-label="6: 5 V feed link (JP1)">6<span class="xb-pop"><b>5 V feed link (JP1)</b> — host 5&nbsp;V to the isolated supply.</span></a>
+      <a class="xb-mk" href="#tour-7" style="left:76.0%;top:55.0%" aria-label="7: Logic level link (JP4)">7<span class="xb-pop"><b>Logic level link (JP4)</b> — isolated logic at 3.3&nbsp;V or 5&nbsp;V.</span></a>
+      <a class="xb-mk xb-pl" href="#tour-8" style="left:11.5%;top:73.8%" aria-label="8: MISO enable link (JP5)">8<span class="xb-pop"><b>MISO enable link (JP5)</b> — return driven only while chip select is active, or always.</span></a>
+      <a class="xb-mk xb-pb xb-pr" href="#tour-9" style="left:92.7%;top:16.2%" aria-label="9: Isolated 5 V output link (JP2)">9<span class="xb-pop"><b>Isolated 5 V output link (JP2)</b> — connects the isolated 5&nbsp;V to J2.</span></a>
+      <a class="xb-mk xb-pb xb-pr" href="#tour-10" style="left:84.4%;top:16.2%" aria-label="10: Isolated 3.3 V output link (JP3)">10<span class="xb-pop"><b>Isolated 3.3 V output link (JP3)</b> — connects the isolated 3.3&nbsp;V to J2.</span></a>
+      <a class="xb-mk xb-pb xb-pl" href="#tour-11" style="left:8.9%;top:15.5%" aria-label="11: Host power light">11<span class="xb-pop"><b>Host power light</b> — host 3.3&nbsp;V present.</span></a>
+      <a class="xb-mk xb-pb xb-pr" href="#tour-12" style="left:89.8%;top:8.2%" aria-label="12: Isolated power light">12<span class="xb-pop"><b>Isolated power light</b> — isolated 3.3&nbsp;V present.</span></a>
+    </div>
+  </div>
+  <ol class="xb-tour-list" start="1">
+    <li id="tour-1"><span class="xb-n">1</span><div><b>Host socket (J1)</b> — host rails, six outgoing signals, the MISO return and host ground.</div></li>
+    <li id="tour-2"><span class="xb-n">2</span><div><b>Isolated socket (J2)</b> — the isolated rails, signals and isolated ground.</div></li>
+    <li id="tour-3"><span class="xb-n">3</span><div><b>Isolator with power (U1)</b> — an <a href="/images/extensions/opto-isolation-pass-through-board/datasheets/isow7741.pdf">ISOW7741</a>: carries CS, MOSI, SCK and MISO and generates the isolated supply.</div></li>
+    <li id="tour-4"><span class="xb-n">4</span><div><b>Three-channel isolator (U2)</b> — an <a href="/images/extensions/opto-isolation-pass-through-board/datasheets/iso7730.pdf">ISO7730</a> carrying IO3, IO4 and IO5 outward.</div></li>
+    <li id="tour-5"><span class="xb-n">5</span><div><b>MISO buffer (U6)</b> — drives the returned data onto the host contact.</div></li>
+    <li id="tour-6"><span class="xb-n">6</span><div><b>5 V feed link (JP1)</b> — host 5&nbsp;V to the isolated supply.</div></li>
+    <li id="tour-7"><span class="xb-n">7</span><div><b>Logic level link (JP4)</b> — isolated logic at 3.3&nbsp;V or 5&nbsp;V.</div></li>
+    <li id="tour-8"><span class="xb-n">8</span><div><b>MISO enable link (JP5)</b> — return driven only while chip select is active, or always.</div></li>
+    <li id="tour-9"><span class="xb-n">9</span><div><b>Isolated 5 V output link (JP2)</b> — connects the isolated 5&nbsp;V to J2.</div></li>
+    <li id="tour-10"><span class="xb-n">10</span><div><b>Isolated 3.3 V output link (JP3)</b> — connects the isolated 3.3&nbsp;V to J2.</div></li>
+    <li id="tour-11"><span class="xb-n">11</span><div><b>Host power light</b> — host 3.3&nbsp;V present.</div></li>
+    <li id="tour-12"><span class="xb-n">12</span><div><b>Isolated power light</b> — isolated 3.3&nbsp;V present.</div></li>
+  </ol>
+  <figcaption>Point at a number, or tap it, to read what the part is; the same text is in the list. On a small screen, scroll the drawing sideways.</figcaption>
+</figure>
+{:/nomarkdown}
 
-{% include _includes/extension-instruction-diagram.html id="opto-native-4" src="/images/extensions/opto-isolation-pass-through-board/guides/native-contact/reader-contact-keys/J2-numbered-pads.png" title="J2 — contact key" alt="J2 — contact key" caption="Host signal connections only; peripheral and supply connections are not shown. Use all keys with the main reference." width=420 %}
+### Lights {#lights}
 
-{% include _includes/extension-instruction-diagram.html id="opto-native-5" src="/images/extensions/opto-isolation-pass-through-board/guides/native-contact/reader-contact-keys/J37-numbered-pads.png" title="J37 — contact key" alt="J37 — contact key" caption="Host signal connections only; peripheral and supply connections are not shown. Use all keys with the main reference." width=420 %}
+{::nomarkdown}
+<div class="xb-tablewrap"><table class="xb-leds">
+  <thead><tr><th>Light</th><th>Lit means</th><th>Disable it</th></tr></thead>
+  <tbody>
+    <tr><td>D1, green</td><td>Host-side 3.3&nbsp;V present</td><td>—</td></tr>
+    <tr><td>D2, green</td><td>Isolated 3.3&nbsp;V present</td><td>—</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
-{% include _includes/extension-instruction-diagram.html id="opto-native-6" src="/images/extensions/opto-isolation-pass-through-board/guides/native-contact/reader-contact-keys/JP1-numbered-pads.png" title="JP1 — contact key" alt="JP1 — contact key" caption="Host signal connections only; peripheral and supply connections are not shown. Use all keys with the main reference." width=420 %}
+## Pinout {#pinout}
 
-{% include _includes/extension-instruction-diagram.html id="opto-native-7" src="/images/extensions/opto-isolation-pass-through-board/guides/native-contact/reader-contact-keys/JP2-numbered-pads.png" title="JP2 — contact key" alt="JP2 — contact key" caption="Host signal connections only; peripheral and supply connections are not shown. Use all keys with the main reference." width=420 %}
+Both sockets use the same contact numbers.
 
-{% include _includes/extension-instruction-diagram.html id="opto-native-8" src="/images/extensions/opto-isolation-pass-through-board/guides/native-contact/reader-contact-keys/JP3-numbered-pads.png" title="JP3 — contact key" alt="JP3 — contact key" caption="Host signal connections only; peripheral and supply connections are not shown. Use all keys with the main reference." width=420 %}
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>Contact</th><th>J1 (host)</th><th>J2 (isolated)</th><th>Direction</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td><span class="xb-pill xb-p-3v3">3.3 V</span></td><td><span class="xb-pill xb-p-3v3">3.3 V isolated</span> through JP3</td><td>—</td></tr>
+    <tr><td>2</td><td><span class="xb-pill xb-p-5v">5 V</span></td><td><span class="xb-pill xb-p-5v">5 V isolated</span> through JP2</td><td>—</td></tr>
+    <tr><td>3</td><td><span class="xb-pill xb-p-sig">IO3</span></td><td><span class="xb-pill xb-p-sig">IO3</span></td><td>Host to isolated</td></tr>
+    <tr><td>4</td><td><span class="xb-pill xb-p-sig">IO4</span></td><td><span class="xb-pill xb-p-sig">IO4</span></td><td>Host to isolated</td></tr>
+    <tr><td>5</td><td><span class="xb-pill xb-p-sig">IO5</span></td><td><span class="xb-pill xb-p-sig">IO5</span></td><td>Host to isolated</td></tr>
+    <tr><td>6</td><td><span class="xb-pill xb-p-sig">CS</span></td><td><span class="xb-pill xb-p-sig">CS</span></td><td>Host to isolated</td></tr>
+    <tr><td>7</td><td><span class="xb-pill xb-p-sig">MOSI</span></td><td><span class="xb-pill xb-p-sig">MOSI</span></td><td>Host to isolated</td></tr>
+    <tr><td>8</td><td><span class="xb-pill xb-p-sig">MISO</span></td><td><span class="xb-pill xb-p-sig">MISO</span></td><td>Isolated to host</td></tr>
+    <tr><td>9</td><td><span class="xb-pill xb-p-sig">SCK</span></td><td><span class="xb-pill xb-p-sig">SCK</span></td><td>Host to isolated</td></tr>
+    <tr><td>10</td><td><span class="xb-pill xb-p-gnd">Host ground</span></td><td><span class="xb-pill xb-p-gnd">Isolated ground</span></td><td>Separate</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
-{% include _includes/extension-instruction-diagram.html id="opto-native-9" src="/images/extensions/opto-isolation-pass-through-board/guides/native-contact/reader-contact-keys/JP4-numbered-pads.png" title="JP4 — contact key" alt="JP4 — contact key" caption="Host signal connections only; peripheral and supply connections are not shown. Use all keys with the main reference." width=420 %}
+### Solder links
 
-{% include _includes/extension-instruction-diagram.html id="opto-native-10" src="/images/extensions/opto-isolation-pass-through-board/guides/native-contact/reader-contact-keys/JP5-numbered-pads.png" title="JP5 — contact key" alt="JP5 — contact key" caption="Host signal connections only; peripheral and supply connections are not shown. Use all keys with the main reference." width=420 %}
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>Link</th><th>Effect</th><th>Setting for the first test</th></tr></thead>
+  <tbody>
+    <tr><td>JP1 (5V FEED)</td><td>Host 5&nbsp;V to the isolated supply</td><td>Bridged</td></tr>
+    <tr><td>JP2 (5V OUT)</td><td>Isolated 5&nbsp;V to J2 contact 2</td><td>Bridged</td></tr>
+    <tr><td>JP3 (3V3 OUT)</td><td>Isolated 3.3&nbsp;V to J2 contact 1</td><td>Bridged</td></tr>
+    <tr><td>JP4 (LOGIC)</td><td>1&ndash;2 isolated logic 3.3&nbsp;V, 2&ndash;3 isolated logic 5&nbsp;V</td><td>1&ndash;2</td></tr>
+    <tr><td>JP5 (MISO)</td><td>1&ndash;2 return enabled by chip select, 2&ndash;3 always enabled</td><td>1&ndash;2</td></tr>
+    <tr><td>JP6, JP7</td><td>Cut to switch off light D1 or D2</td><td>Bridged</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
-{% include _includes/extension-instruction-diagram.html id="opto-native-11" src="/images/extensions/opto-isolation-pass-through-board/guides/native-contact/reader-contact-keys/JP6-numbered-pads.png" title="JP6 — contact key" alt="JP6 — contact key" caption="Host signal connections only; peripheral and supply connections are not shown. Use all keys with the main reference." width=420 %}
+Cut JP2 and JP3 when the peripheral has its own supply. Check the bridges on your board before powering it.
 
-{% include _includes/extension-instruction-diagram.html id="opto-native-12" src="/images/extensions/opto-isolation-pass-through-board/guides/native-contact/reader-contact-keys/JP7-numbered-pads.png" title="JP7 — contact key" alt="JP7 — contact key" caption="Host signal connections only; peripheral and supply connections are not shown. Use all keys with the main reference." width=420 %}
+## What you need {#what-you-need}
 
-{% include _includes/extension-instruction-diagram.html id="opto-native-13" src="/images/extensions/opto-isolation-pass-through-board/guides/native-contact/reader-contact-keys/TP1-numbered-pads.png" title="TP1 — contact key" alt="TP1 — contact key" caption="Host signal connections only; peripheral and supply connections are not shown. Use all keys with the main reference." width=420 %}
+{::nomarkdown}
+<div class="xb-cards">
+  <div class="xb-card"><b>This board</b><span>With nylon screws and spacers.</span></div>
+  <div class="xb-card"><b>Five leads</b><span>From the Prime GF header to J1.</span></div>
+  <div class="xb-card"><b>A multimeter</b><span>DC volts, high input impedance.</span></div>
+  <div class="xb-card"><b>For your peripheral</b><span>Its logic level, current draw and signal rate.</span></div>
+</div>
+{:/nomarkdown}
 
-{% include _includes/extension-instruction-diagram.html id="opto-native-14" src="/images/extensions/opto-isolation-pass-through-board/guides/native-contact/reader-contact-keys/TP10-numbered-pads.png" title="TP10 — contact key" alt="TP10 — contact key" caption="Host signal connections only; peripheral and supply connections are not shown. Use all keys with the main reference." width=420 %}
+## Get started {#get-started}
 
-{% include _includes/extension-instruction-diagram.html id="opto-native-15" src="/images/extensions/opto-isolation-pass-through-board/guides/native-contact/reader-contact-keys/TP11-numbered-pads.png" title="TP11 — contact key" alt="TP11 — contact key" caption="Host signal connections only; peripheral and supply connections are not shown. Use all keys with the main reference." width=420 %}
+This first test switches one signal across the barrier and reads it on the isolated side with a meter. Nothing else is connected to J2.
 
-{% include _includes/extension-instruction-diagram.html id="opto-native-16" src="/images/extensions/opto-isolation-pass-through-board/guides/native-contact/reader-contact-keys/TP12-numbered-pads.png" title="TP12 — contact key" alt="TP12 — contact key" caption="Host signal connections only; peripheral and supply connections are not shown. Use all keys with the main reference." width=420 %}
+{::nomarkdown}
+<ol class="xb-steps">
+  <li class="xb-step">
+    <h3>Check the links with the power off</h3>
+    <p>JP1, JP2 and JP3 bridged, JP4 and JP5 on pads 1&ndash;2.</p>
+  </li>
+  <li class="xb-step">
+    <h3>Wire the host side</h3>
+    <p>Connect Prime GF/J37 contacts 1, 2, 3, 6 and 10 to the same contacts of J1.</p>
+    <p class="xb-expect">The host power light comes on when the Prime is powered.</p>
+  </li>
+  <li class="xb-step">
+    <h3>Connect the meter</h3>
+    <p>Probe on J2 contact 3 (isolated IO3), common on J2 contact 10 (isolated ground). Do not connect the meter or any other equipment between the two grounds.</p>
+  </li>
+  <li class="xb-step">
+    <h3>Switch the output</h3>
+    <p>Add the configuration below and send <code>M43.18</code>, <code>M42.18</code>, <code>M43.18</code>.</p>
+    <p class="xb-expect">Near 0&nbsp;V, then near 3.3&nbsp;V, then near 0&nbsp;V again.</p>
+  </li>
+</ol>
+{:/nomarkdown}
 
-{% include _includes/extension-instruction-diagram.html id="opto-native-17" src="/images/extensions/opto-isolation-pass-through-board/guides/native-contact/reader-contact-keys/TP13-numbered-pads.png" title="TP13 — contact key" alt="TP13 — contact key" caption="Host signal connections only; peripheral and supply connections are not shown. Use all keys with the main reference." width=420 %}
+## Configuration {#configuration}
 
-{% include _includes/extension-instruction-diagram.html id="opto-native-18" src="/images/extensions/opto-isolation-pass-through-board/guides/native-contact/reader-contact-keys/TP14-numbered-pads.png" title="TP14 — contact key" alt="TP14 — contact key" caption="Host signal connections only; peripheral and supply connections are not shown. Use all keys with the main reference." width=420 %}
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>You want</th><th>Module</th><th>Example</th></tr></thead>
+  <tbody>
+    <tr><td>Drive an isolated output</td><td><a href="/switch">Switch</a>, digital output</td><td><a href="#config-main">Setup</a></td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
-{% include _includes/extension-instruction-diagram.html id="opto-native-19" src="/images/extensions/opto-isolation-pass-through-board/guides/native-contact/reader-contact-keys/TP15-numbered-pads.png" title="TP15 — contact key" alt="TP15 — contact key" caption="Host signal connections only; peripheral and supply connections are not shown. Use all keys with the main reference." width=420 %}
+### Setup {#config-main}
 
-{% include _includes/extension-instruction-diagram.html id="opto-native-20" src="/images/extensions/opto-isolation-pass-through-board/guides/native-contact/reader-contact-keys/TP16-numbered-pads.png" title="TP16 — contact key" alt="TP16 — contact key" caption="Host signal connections only; peripheral and supply connections are not shown. Use all keys with the main reference." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="opto-native-21" src="/images/extensions/opto-isolation-pass-through-board/guides/native-contact/reader-contact-keys/TP17-numbered-pads.png" title="TP17 — contact key" alt="TP17 — contact key" caption="Host signal connections only; peripheral and supply connections are not shown. Use all keys with the main reference." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="opto-native-22" src="/images/extensions/opto-isolation-pass-through-board/guides/native-contact/reader-contact-keys/TP18-numbered-pads.png" title="TP18 — contact key" alt="TP18 — contact key" caption="Host signal connections only; peripheral and supply connections are not shown. Use all keys with the main reference." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="opto-native-23" src="/images/extensions/opto-isolation-pass-through-board/guides/native-contact/reader-contact-keys/TP2-numbered-pads.png" title="TP2 — contact key" alt="TP2 — contact key" caption="Host signal connections only; peripheral and supply connections are not shown. Use all keys with the main reference." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="opto-native-24" src="/images/extensions/opto-isolation-pass-through-board/guides/native-contact/reader-contact-keys/TP3-numbered-pads.png" title="TP3 — contact key" alt="TP3 — contact key" caption="Host signal connections only; peripheral and supply connections are not shown. Use all keys with the main reference." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="opto-native-25" src="/images/extensions/opto-isolation-pass-through-board/guides/native-contact/reader-contact-keys/TP4-numbered-pads.png" title="TP4 — contact key" alt="TP4 — contact key" caption="Host signal connections only; peripheral and supply connections are not shown. Use all keys with the main reference." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="opto-native-26" src="/images/extensions/opto-isolation-pass-through-board/guides/native-contact/reader-contact-keys/TP5-numbered-pads.png" title="TP5 — contact key" alt="TP5 — contact key" caption="Host signal connections only; peripheral and supply connections are not shown. Use all keys with the main reference." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="opto-native-27" src="/images/extensions/opto-isolation-pass-through-board/guides/native-contact/reader-contact-keys/TP6-numbered-pads.png" title="TP6 — contact key" alt="TP6 — contact key" caption="Host signal connections only; peripheral and supply connections are not shown. Use all keys with the main reference." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="opto-native-28" src="/images/extensions/opto-isolation-pass-through-board/guides/native-contact/reader-contact-keys/TP7-numbered-pads.png" title="TP7 — contact key" alt="TP7 — contact key" caption="Host signal connections only; peripheral and supply connections are not shown. Use all keys with the main reference." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="opto-native-29" src="/images/extensions/opto-isolation-pass-through-board/guides/native-contact/reader-contact-keys/TP8-numbered-pads.png" title="TP8 — contact key" alt="TP8 — contact key" caption="Host signal connections only; peripheral and supply connections are not shown. Use all keys with the main reference." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="opto-native-30" src="/images/extensions/opto-isolation-pass-through-board/guides/native-contact/reader-contact-keys/TP9-numbered-pads.png" title="TP9 — contact key" alt="TP9 — contact key" caption="Host signal connections only; peripheral and supply connections are not shown. Use all keys with the main reference." width=420 %}
-
-<details markdown="1">
-<summary>Isolated meter example wiring</summary>
-
-### Isolated digital-output meter example
-
-Use five individual host leads: **GF/J37.1/.2/.3/.6/.10 → J1.1/.2/.3/.6/.10**, respectively. Leave the other host and J1 contacts unconnected. Connect **J2.3 (isolated IO3) → Fluke 117 V**, and **J2.10 (isolated ground) → COM**. Select dedicated **DC volts**, with nominal input impedance greater than 10 MΩ; do not use Auto-V LoZ (approximately 3 kΩ) or the current terminal. The [Fluke 114/115/117 manual](https://assets.fluke.com/manuals/114_____umeng0100.pdf), PN 2572573, revision 1 (February 2007), printed pages 6, 11 and 23, documents those terminals, mode and impedance. **Keep host ground and isolated COM separate.** No other isolated load, external supply or peripheral is connected.
-
-Do not energize until you have checked the supply, sequencing and fitted connections.
-
-{% include _includes/extension-instruction-diagram.html id="opto-v20-seven-leads" src="/images/extensions/opto-isolation-pass-through-board/guides/compact-individual-leads.png" title="Isolated IO3 — seven-lead meter wiring" alt="Five Prime host leads to J1 and two isolated J2 leads to a Fluke 117; host and isolated grounds are separate" caption="PG0 HIGH disables the U6 return. JP4 and JP5 bridge 1–2; keep the JP1/JP2/JP3 bridges. No external supply or output load. Check mating orientation and the supply rail current." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="opto-v20-key-J37" src="/images/extensions/opto-isolation-pass-through-board/guides/compact-J37-numbered-pads.png" title="J37 — numbered contact key" alt="J37 contact numbering for the isolated IO3 meter example" caption="PCB view, not a plug mating face. Filled contacts identify the leads used or the specified bridge. Read with the complete drawing." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="opto-v20-key-J1" src="/images/extensions/opto-isolation-pass-through-board/guides/compact-J1-numbered-pads.png" title="J1 — numbered contact key" alt="J1 contact numbering for the isolated IO3 meter example" caption="PCB view, not a plug mating face. Filled contacts identify the leads used or the specified bridge. Read with the complete drawing." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="opto-v20-key-J2" src="/images/extensions/opto-isolation-pass-through-board/guides/compact-J2-numbered-pads.png" title="J2 — numbered contact key" alt="J2 contact numbering for the isolated IO3 meter example" caption="PCB view, not a plug mating face. Filled contacts identify the leads used or the specified bridge. Read with the complete drawing." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="opto-v20-key-JP4" src="/images/extensions/opto-isolation-pass-through-board/guides/compact-JP4-numbered-pads.png" title="JP4 — numbered contact key" alt="JP4 contact numbering for the isolated IO3 meter example" caption="PCB view, not a plug mating face. Filled contacts identify the leads used or the specified bridge. Read with the complete drawing." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="opto-v20-key-JP5" src="/images/extensions/opto-isolation-pass-through-board/guides/compact-JP5-numbered-pads.png" title="JP5 — numbered contact key" alt="JP5 contact numbering for the isolated IO3 meter example" caption="PCB view, not a plug mating face. Filled contacts identify the leads used or the specified bridge. Read with the complete drawing." width=420 %}
-
-With power removed, verify the JP1/JP2/JP3 bridges, JP4 at 1–2 (isolated 3.3 V logic) and JP5 at 1–2 (chip-select-gated return). Verify numbered continuity instead of inferring cable orientation from the drawing. The host header is unshrouded. Host PB1/J1.3 drives U2.3; U2.14 supplies isolated IO3/J2.3. The host 5 V rail feeds the onboard isolated converter and isolated regulator; check its load current for your supply.
-
-Before powered testing, reserve PB1 as a digital output and **hold PG0/J1.6 HIGH to disable the U6 MISO return buffer**. PG1/J1.8 is input-only; leave the other unused host GPIO as inputs. The conditional meter configuration below establishes those logical pin states. Do not treat the diagram as a complete runnable SPI application.
-
-J2 power contacts and remaining signal contacts stay unused. The unused forward isolator inputs have default-HIGH outputs. Check that USB, instruments or chassis do not create an incidental ground bridge. The meter example does not test insulation, transient behaviour or a safety function.
-
-</details>
-
-## Smoothieware behaviour and commissioning
-
-### Digital-meter configuration
-
-This example uses the [SmoothieV2 Switch module](https://github.com/Smoothieware/SmoothieV2/blob/2a21c0108b1d095ecd8b2b9358e94055f053c003/Firmware/src/modules/tools/switch/Switch.cpp) with the Endstops and Pin modules. It is a meter test, not an SPI application. Use it only when all seven GF/J37 GPIO and M42.20/M43.20/M44.20 are free and the existing machine already has a registered X actuator. Do not add motion hardware for this test. Merge the subsections into existing configuration sections, preserving machine homing and limits.
+The isolators need no driver. For the test above:
 
 ```ini
 [switch]
-# Host-side U6 return disable: only a HIGH command is registered.
-opto_a_return_disable.enable = true
-opto_a_return_disable.output_pin = PG0
-opto_a_return_disable.output_type = digital
-opto_a_return_disable.input_on_command = M44
-opto_a_return_disable.subcode = 20
-opto_a_return_disable.startup_state = true
-opto_a_return_disable.halt_set_to = true
-opto_a_return_disable.ignore_on_halt = false
-
-# Isolated IO3 meter stimulus; no servo, SPI device or load.
-opto_b_meter.enable = true
-opto_b_meter.output_pin = PB1
-opto_b_meter.output_type = digital
-opto_b_meter.input_on_command = M42
-opto_b_meter.input_off_command = M43
-opto_b_meter.subcode = 20
-opto_b_meter.startup_state = false
-opto_b_meter.halt_set_to = false
-opto_b_meter.ignore_on_halt = false
-
-[endstops]
-# Diagnostic input holders only; existing X actuator required.
-opto_input_io4.enable = true
-opto_input_io4.pin = PJ4-
-opto_input_io4.axis = X
-opto_input_io4.homing_direction = none
-opto_input_io4.limit_enable = false
-
-opto_input_io5.enable = true
-opto_input_io5.pin = PA4-
-opto_input_io5.axis = X
-opto_input_io5.homing_direction = none
-opto_input_io5.limit_enable = false
-
-opto_input_mosi.enable = true
-opto_input_mosi.pin = PJ3-
-opto_input_mosi.axis = X
-opto_input_mosi.homing_direction = none
-opto_input_mosi.limit_enable = false
-
-opto_input_miso.enable = true
-opto_input_miso.pin = PG1-
-opto_input_miso.axis = X
-opto_input_miso.homing_direction = none
-opto_input_miso.limit_enable = false
-
-opto_input_sck.enable = true
-opto_input_sck.pin = PJ2-
-opto_input_sck.axis = X
-opto_input_sck.homing_direction = none
-opto_input_sck.limit_enable = false
+iso_test.enable = true
+iso_test.output_pin = PB1
+iso_test.output_type = digital
+iso_test.input_on_command = M42
+iso_test.input_off_command = M43
+iso_test.subcode = 18
+iso_test.startup_state = false
+iso_test.halt_set_to = false
 ```
 
-The five Endstops entries hold unused GPIO as inputs without pull resistors (`-`). `homing_direction = none` and `limit_enable = false` exclude them from homing and limit monitoring; their X designation satisfies the parser requirement. Confirm all seven entries configure successfully without allocation or illegal-pin errors before connecting hardware. The return-disable Switch has only an on command: this implementation emits an expected missing-off-command warning but accepts that entry. Other configuration failures must not be ignored.
+The [switch module](https://github.com/Smoothieware/SmoothieV2/blob/2a21c0108b1d095ecd8b2b9358e94055f053c003/Firmware/src/modules/tools/switch/Switch.cpp) starts this output LOW and returns it LOW on a software halt. That is not a hardware safety function, and it does not define the level during reset or power-up. Check that nothing else uses PB1 or M42.18 and M43.18.
 
-After successful configuration, send `M44.20` to reassert PG0 HIGH, then `M43.20` for PB1 LOW. Measure J2.3 against J2.10 only. Send `M42.20` for HIGH and `M43.20` to finish LOW. Do not issue motion or homing commands. `M119` can list the input-holder pins; this says nothing about their electrical behaviour.
+For SPI use, configure the peripheral exactly as without the board, at 4&nbsp;MHz or less.
 
-The firmware preloads digital output states before enabling output mode and applies the stated software-halt levels. It does **not** guarantee PG0 HIGH during reset, boot, power loss, before module loading or after partial configuration. Check actual startup behaviour and installed pin ownership before physical testing.
+## How it works {#how-it-works}
 
-An SPI peripheral still requires its own matching driver, actual bus/CS allocation and timing review. The MAX31855 driver does not support arbitrary devices.
+The <a href="/images/extensions/opto-isolation-pass-through-board/datasheets/iso7730.pdf">ISO7730</a> and <a href="/images/extensions/opto-isolation-pass-through-board/datasheets/isow7741.pdf">ISOW7741</a> pass each signal across an insulating barrier in one fixed direction, so the board cannot be used as a reversible seven-bit port, and open-drain buses such as I2C do not work through it. The <a href="/images/extensions/opto-isolation-pass-through-board/datasheets/isow7741.pdf">ISOW7741</a> also transfers power across the barrier; an AP2112K regulator derives the isolated 3.3&nbsp;V from the isolated 5&nbsp;V.
 
-## Sources
+Isolation lasts only as long as nothing else joins the two sides: a shared supply, a grounded oscilloscope probe, a metal screw or a cable shield connected at both ends all defeat it.
 
-- [Opto-isolation PCB](https://github.com/arthurwolf/extension-boards/blob/main/src/opto-isolation-pass-through-board/attempt/versions/v20/opto-isolation.kicad_pcb)
-- [Specification](https://github.com/arthurwolf/extension-boards/blob/main/src/opto-isolation-pass-through-board/specs.md)
-- [Architecture](https://github.com/arthurwolf/extension-boards/blob/main/src/opto-isolation-pass-through-board/design.md)
-- [Component review](https://github.com/arthurwolf/extension-boards/blob/main/src/opto-isolation-pass-through-board/component-review.md)
-- [V2 configuration example](https://github.com/Smoothieware/SmoothieV2/blob/2a21c0108b1d095ecd8b2b9358e94055f053c003/ConfigSamples/config-3d.ini)
-- [All extension boards](/extension-boards)
+## Troubleshooting {#troubleshooting}
 
-<details markdown="1">
-<summary>Supplementary views</summary>
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>Symptom</th><th>Check</th></tr></thead>
+  <tbody>
+    <tr><td>Isolated light off</td><td>Host 5&nbsp;V, JP1, and the load on the isolated rails (30&nbsp;mA at most).</td></tr>
+    <tr><td>No data back on MISO</td><td>JP5: with 1&ndash;2 the return is driven only while chip select is active.</td></tr>
+    <tr><td>Peripheral sees the wrong level</td><td>JP4 selects 3.3&nbsp;V or 5&nbsp;V isolated logic.</td></tr>
+    <tr><td>SPI errors</td><td>Lower the clock; stay at 4&nbsp;MHz or below and keep cables short.</td></tr>
+    <tr><td>The grounds measure connected</td><td>Remove external ties: cable shields, metal hardware, shared supplies or instruments.</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
-{% include _includes/extension-board-visuals.html slug="opto-isolation-pass-through-board" %}
+Still stuck? Read [how to ask for help](/help-guidelines) or see the general [troubleshooting guide](/troubleshooting/).
 
-</details>
+## Downloads {#downloads}
+
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>File</th><th>What it is</th></tr></thead>
+  <tbody>
+    <tr><td><a href="/images/extensions/opto-isolation-pass-through-board/v20/opto-isolation-pass-through-board-schematic.pdf">Schematic (PDF)</a></td><td>The complete circuit diagram</td></tr>
+    <tr><td><a href="/images/extensions/opto-isolation-pass-through-board/v20/opto-isolation-pass-through-board-bom.csv">Parts list (CSV)</a></td><td>Every component with its value and footprint</td></tr>
+    <tr><td><a href="/images/extensions/opto-isolation-pass-through-board/v20/opto-isolation-pass-through-board-diagram.png">Board drawing (PNG)</a></td><td>The top view used on this page</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+## Appendix: mounting dimensions {#mounting}
+
+For drilling a mounting plate or designing an enclosure. Positions are hole centres, in millimetres, measured from the top-left corner with the board seen from the component side.
+
+{::nomarkdown}
+<figure class="xb-fig">
+  <div class="xb-fig-scroll" tabindex="0" role="region" aria-label="Mounting drawing">
+  <svg viewBox="0 0 1000 480" role="img" aria-labelledby="xb-oi-mount-t">
+  <title id="xb-oi-mount-t">Mounting drawing of the oi, component side: outline 40 by 38 millimetres with 2 mounting holes. Hole positions are listed in the table below.</title>
+  <text x="480.0" y="24" text-anchor="middle" font-size="13" font-weight="700" letter-spacing="1" fill="#a9b4c2">COMPONENT SIDE · millimetres</text>
+  <rect x="301.1" y="78.0" width="357.9" height="340.0" rx="8.9" fill="#1f2226" stroke="#e6ebf2" stroke-width="1.5"/>
+  <g stroke="#a9b4c2" stroke-width="1.2" fill="none"><path d="M301.1 56H658.9"/><path d="M301.1 50V62"/><path d="M658.9 50V62"/><path d="M684.9 78.0V418.0"/><path d="M678.9 78.0h12"/><path d="M678.9 418.0h12"/></g>
+  <text x="480.0" y="48" text-anchor="middle" font-size="15" font-weight="700" fill="#e6ebf2">40</text>
+  <text x="696.9" y="253.0" font-size="15" font-weight="700" fill="#e6ebf2">38</text>
+  <circle cx="301.1" cy="78.0" r="4" fill="#ffcc33"/>
+  <text x="289.1" y="83.0" text-anchor="end" font-size="14" font-weight="700" fill="#ffcc33">0, 0</text>
+  <g stroke="#ffcc33" stroke-width="1.5" fill="#ffcc33"><path d="M243.1 104.0h30" fill="none"/><path d="M277.1 104.0l-8 -4v8z"/><path d="M243.1 104.0v30" fill="none"/><path d="M243.1 138.0l-4 -8h8z"/></g>
+  <text x="281.1" y="109.0" font-size="12" font-weight="700" fill="#ffcc33">X</text>
+  <text x="239.1" y="154.0" font-size="12" font-weight="700" fill="#ffcc33">Y</text>
+  <circle cx="372.6" cy="122.7" r="14.3" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <path d="M354.3 122.7h36.6M372.6 104.4v36.6" stroke="#ffcc33" stroke-width=".8" fill="none"/>
+  <text x="358.3" y="157.1" text-anchor="start" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">1</tspan>  8.00, 5.00</text>
+  <circle cx="551.6" cy="122.7" r="14.3" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <path d="M533.3 122.7h36.6M551.6 104.4v36.6" stroke="#ffcc33" stroke-width=".8" fill="none"/>
+  <text x="565.9" y="157.1" text-anchor="end" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">2</tspan>  28.00, 5.00</text>
+  <text x="480.0" y="448.0" text-anchor="middle" font-size="13" fill="#a9b4c2">Numbered rings are mounting holes. Positions are hole centres, X then Y, from the marked corner.</text>
+  </svg>
+  </div>
+  <figcaption>Board outline 40 × 38&nbsp;mm, corners rounded to a 1&nbsp;mm radius, board thickness 1.6&nbsp;mm. Drawn from the design files, component side up, in the same orientation as the board tour.</figcaption>
+</figure>
+
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>Hole</th><th>X (mm)</th><th>Y (mm)</th><th>Diameter</th><th>Use</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td>8.00</td><td>5.00</td><td>3.2&nbsp;mm, not plated</td><td>Mounting, M3 screw</td></tr>
+    <tr><td>2</td><td>28.00</td><td>5.00</td><td>3.2&nbsp;mm, not plated</td><td>Mounting, M3 screw</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+## Appendix: electrical specifications {#electrical}
+
+Board values come from the silk screen.
+
+{::nomarkdown}
+<div class="xb-tablewrap"><table class="xb-elec">
+  <thead><tr><th>Parameter</th><th>Applies to</th><th>Lower</th><th>Nominal</th><th>Upper</th><th>Basis and conditions</th></tr></thead>
+  <tbody>
+    <tr><td>Voltage across the barrier</td><td>Host to isolated</td><td>—</td><td>—</td><td>60 V DC</td><td>Board silk: functional isolation only</td></tr>
+    <tr><td>Signal rate</td><td>All channels</td><td>—</td><td>—</td><td>4 MHz</td><td>Board silk</td></tr>
+    <tr><td>Isolated supply current</td><td>J2 rails together</td><td>—</td><td>—</td><td>30 mA</td><td>Board silk</td></tr>
+    <tr><td>Isolated logic level</td><td>J2 signals</td><td>—</td><td>3.3 or 5 V</td><td>—</td><td>Selected by JP4</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+## Appendix: datasheets {#datasheets}
+
+The first page of each important chip&rsquo;s datasheet. Click a page to open the PDF.
+
+{::nomarkdown}
+<figure class="xb-fig">
+  <a href="/images/extensions/opto-isolation-pass-through-board/datasheets/isow7741.pdf"><img src="/images/extensions/opto-isolation-pass-through-board/datasheets/isow7741-page1.png" alt="First page of the ISOW7741 datasheet" style="display:block;width:100%;max-width:480px;height:auto;margin:0 auto"></a>
+  <figcaption><a href="/images/extensions/opto-isolation-pass-through-board/datasheets/isow7741.pdf">ISOW774x isolator with integrated power converter</a> — Texas Instruments, 66 pages.</figcaption>
+</figure>
+<figure class="xb-fig">
+  <a href="/images/extensions/opto-isolation-pass-through-board/datasheets/iso7730.pdf"><img src="/images/extensions/opto-isolation-pass-through-board/datasheets/iso7730-page1.png" alt="First page of the ISO7730 datasheet" style="display:block;width:100%;max-width:480px;height:auto;margin:0 auto"></a>
+  <figcaption><a href="/images/extensions/opto-isolation-pass-through-board/datasheets/iso7730.pdf">ISO773x triple-channel digital isolator</a> — Texas Instruments, 49 pages.</figcaption>
+</figure>
+<figure class="xb-fig">
+  <a href="/images/extensions/opto-isolation-pass-through-board/datasheets/tpd4e1u06.pdf"><img src="/images/extensions/opto-isolation-pass-through-board/datasheets/tpd4e1u06-page1.png" alt="First page of the TPD4E1U06 datasheet" style="display:block;width:100%;max-width:480px;height:auto;margin:0 auto"></a>
+  <figcaption><a href="/images/extensions/opto-isolation-pass-through-board/datasheets/tpd4e1u06.pdf">TPD4E1U06 quad-channel ESD protection device</a> — Texas Instruments, 27 pages.</figcaption>
+</figure>
+{:/nomarkdown}
+
+
+See all boards on the [extension boards](/extension-boards) page.

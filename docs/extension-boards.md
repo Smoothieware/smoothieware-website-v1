@@ -294,11 +294,11 @@ Historical entries appear alongside related modern boards. A similar name does n
   </tr>
   <tr>
     <td><a href="/extensions/cheap-uart-adapter-breakout" aria-label="Open the Cheap UART adapter breakout guide"><img src="/images/extensions/cheap-uart-adapter-breakout/directory-board-render.png" alt="" loading="lazy" decoding="async"></a></td>
-    <td><p class="extension-board-name"><a href="/extensions/cheap-uart-adapter-breakout">Cheap UART adapter breakout</a></p><p>This carrier adapts a specifically identified USB-to-UART module to a Gadgeteer U socket.</p></td>
+    <td><p class="extension-board-name"><a href="/extensions/cheap-uart-adapter-breakout">Cheap UART adapter breakout</a></p><p>Joins a low-cost six-pin USB serial module to a controller UART through two level translators.</p></td>
   </tr>
   <tr>
     <td><a href="/extensions/differential-signal-extender" aria-label="Open the Differential signal extender guide"><img src="/images/extensions/differential-signal-extender/directory-board-render.png" alt="" loading="lazy" decoding="async"></a></td>
-    <td><p class="extension-board-name"><a href="/extensions/differential-signal-extender">Differential signal extender</a></p><p>A one-way differential logic link; the receiver half uses a custom cable and has output polarity references.</p></td>
+    <td><p class="extension-board-name"><a href="/extensions/differential-signal-extender">Differential signal extender</a></p><p>An emitter and receiver carrying one logic signal and 5 V power over a dedicated cable.</p></td>
   </tr>
   <tr>
     <td></td>
@@ -306,11 +306,11 @@ Historical entries appear alongside related modern boards. A similar name does n
   </tr>
   <tr>
     <td><a href="/extensions/differential-spi-signal-extender" aria-label="Open the Differential SPI signal extender guide"><img src="/images/extensions/differential-spi-signal-extender/directory-board-render.png" alt="" loading="lazy" decoding="async"></a></td>
-    <td><p class="extension-board-name"><a href="/extensions/differential-spi-signal-extender">Differential SPI signal extender</a></p><p>This pair extends one SPI peripheral connection using four fixed-direction differential channels.</p></td>
+    <td><p class="extension-board-name"><a href="/extensions/differential-spi-signal-extender">Differential SPI signal extender</a></p><p>A host and remote board carrying SPI over differential pairs, up to 500 kHz and 25 m, with a separate 12 V feed.</p></td>
   </tr>
   <tr>
     <td><a href="/extensions/differential-step-dir-en-extender" aria-label="Open the Differential step/dir/en extender guide"><img src="/images/extensions/differential-step-dir-en-extender/directory-board-render.png" alt="" loading="lazy" decoding="async"></a></td>
-    <td><p class="extension-board-name"><a href="/extensions/differential-step-dir-en-extender">Differential step/dir/en extender</a></p><p>This HOST/REMOTE pair carries one axis’s STEP, DIR and ENABLE commands to a compatible remote stepper drive.</p></td>
+    <td><p class="extension-board-name"><a href="/extensions/differential-step-dir-en-extender">Differential step/dir/en extender</a></p><p>A host and remote board carrying STEP, DIR and ENABLE to a Leadshine DM556E.</p></td>
   </tr>
   <tr>
     <td><a href="/extensions/historical-gadgeteer-3v3-5v-level-shifter" aria-label="Open the Fourteen channel 3.3/5 V level shifter guide"><img src="/images/extensions/historical-gadgeteer-3v3-5v-level-shifter/directory-board-render.png" alt="" loading="lazy" decoding="async"></a></td>
@@ -338,11 +338,11 @@ Historical entries appear alongside related modern boards. A similar name does n
   </tr>
   <tr>
     <td><a href="/extensions/long-distance-extender" aria-label="Open the Long distance extender (custom RJ45 differential) guide"><img src="/images/extensions/long-distance-extender/directory-board-render.png" alt="" loading="lazy" decoding="async"></a></td>
-    <td><p class="extension-board-name"><a href="/extensions/long-distance-extender">Long distance extender (custom RJ45 differential)</a></p><p>Three fixed-direction logic channels across paired emitter and receiver boards; not Ethernet or PoE.</p></td>
+    <td><p class="extension-board-name"><a href="/extensions/long-distance-extender">Long distance extender (custom RJ45 differential)</a></p><p>An emitter and receiver carrying three logic signals and 5 V over a dedicated cable.</p></td>
   </tr>
   <tr>
     <td><a href="/extensions/opto-isolation-pass-through-board" aria-label="Open the Opto-Isolation pass-through board guide"><img src="/images/extensions/opto-isolation-pass-through-board/directory-board-render.png" alt="" loading="lazy" decoding="async"></a></td>
-    <td><p class="extension-board-name"><a href="/extensions/opto-isolation-pass-through-board">Opto-Isolation pass-through board</a></p><p>A fixed-direction isolated SPI and control interface.</p></td>
+    <td><p class="extension-board-name"><a href="/extensions/opto-isolation-pass-through-board">Opto-Isolation pass-through board</a></p><p>Isolated SPI and control signals between a controller and a separately grounded peripheral.</p></td>
   </tr>
   <tr>
     <td><a href="/extensions/qwiic-to-gadgeteer-adapter" aria-label="Open the Qwiic-to-Gadgeteer adapter guide"><img src="/images/extensions/qwiic-to-gadgeteer-adapter/directory-board-render.png" alt="" loading="lazy" decoding="async"></a></td>
@@ -354,7 +354,7 @@ Historical entries appear alongside related modern boards. A similar name does n
   </tr>
   <tr>
     <td><a href="/extensions/spi-hub" aria-label="Open the SPI Hub guide"><img src="/images/extensions/spi-hub/directory-board-render.png" alt="" loading="lazy" decoding="async"></a></td>
-    <td><p class="extension-board-name"><a href="/extensions/spi-hub">SPI Hub</a></p><p>Shares SPI with four separately selected outputs; includes an OUT2 thermocouple wiring example.</p></td>
+    <td><p class="extension-board-name"><a href="/extensions/spi-hub">SPI Hub</a></p><p>One SPI bus shared by four sockets, each with its own chip select and bus switch.</p></td>
   </tr>
   <tr>
     <td><a href="/extensions/historical-spi-hub" aria-label="Open the SPI hub guide"><img src="/images/extensions/historical-spi-hub/directory-board-render.png" alt="" loading="lazy" decoding="async"></a></td>
@@ -366,7 +366,7 @@ Historical entries appear alongside related modern boards. A similar name does n
   </tr>
   <tr>
     <td><a href="/extensions/uart-breakout" aria-label="Open the UART breakout guide"><img src="/images/extensions/uart-breakout/directory-board-render.png" alt="" loading="lazy" decoding="async"></a></td>
-    <td><p class="extension-board-name"><a href="/extensions/uart-breakout">UART breakout</a></p><p>Connects the Smoothieboard V2 Prime UART to a jaUART USB-to-TTL adapter.</p></td>
+    <td><p class="extension-board-name"><a href="/extensions/uart-breakout">UART breakout</a></p><p>A controller UART on a six-contact FTDI-style 3.3 V serial header, with activity lights and a chain socket.</p></td>
   </tr>
   <tr>
     <td><a href="/extensions/usb-serial-breakout" aria-label="Open the USB/Serial breakout guide"><img src="/images/extensions/usb-serial-breakout/directory-board-render.png" alt="" loading="lazy" decoding="async"></a></td>
@@ -464,7 +464,7 @@ Historical entries appear alongside related modern boards. A similar name does n
   </tr>
   <tr>
     <td><a href="/extensions/cpld-adapter" aria-label="Open the CPLD adapter guide"><img src="/images/extensions/cpld-adapter/directory-board-render.png" alt="" loading="lazy" decoding="async"></a></td>
-    <td><p class="extension-board-name"><a href="/extensions/cpld-adapter">CPLD adapter</a></p><p>This programmable single-axis conditioner sits between host STEP/DIR/ENABLE logic and a compatible 5 V logic receiver.</p></td>
+    <td><p class="extension-board-name"><a href="/extensions/cpld-adapter">CPLD adapter</a></p><p>A MachXO2 CPLD between controller STEP/DIR/ENABLE signals and a 5 V logic receiver.</p></td>
   </tr>
   <tr>
     <td><a href="/extensions/d-sub-to-gadgeteer-in" aria-label="Open the D-sub-to-Gadgeteer IN adapter guide"><img src="/images/extensions/d-sub-to-gadgeteer-in/directory-board-render.png" alt="" loading="lazy" decoding="async"></a></td>
