@@ -2091,38 +2091,38 @@
   "perma-proto-gadgeteer": [
     {
       "role": "perma proto gadgeteer",
-      "version": "v16",
-      "cad_source_path": "extension-boards/src/perma-proto-gadgeteer/attempt/versions/v16/perma-proto-gadgeteer.kicad_pcb",
-      "cad_sha256": "a98e3c555a15eba4d91b9fa4408a1344237e976c197fbb82e193900065f6a366",
+      "version": "v17",
+      "cad_source_path": "extension-boards/src/perma-proto-gadgeteer/attempt/versions/v17/perma-proto-gadgeteer.kicad_pcb",
+      "cad_sha256": "a8bb21d95a234d017856c549a8701a58bd39a8bb710682a70ce97117fa0f82a4",
       "diagram": {
         "url": "/images/extensions/perma-proto-gadgeteer/perma-proto-gadgeteer-diagram.png",
-        "sha256": "8b1c0aa92ca5ff8bdf491e35862854e4ed2a03a0807850667be4062a1682b93f",
+        "sha256": "f5ab29d7d55ffe261d2125767b608b40b1a6ceb09d913f916cd161e66dd3be3a",
         "source_path": "smoothie-diagrams/data/website-extension-svg/perma-proto-gadgeteer/perma-proto-gadgeteer-diagram.svg",
         "source_hash_matches": true,
-        "embedded_cad_sha256": "a98e3c555a15eba4d91b9fa4408a1344237e976c197fbb82e193900065f6a366",
-        "caption": "v16; drawn from this CAD revision.",
+        "embedded_cad_sha256": "a8bb21d95a234d017856c549a8701a58bd39a8bb710682a70ce97117fa0f82a4",
+        "caption": "v17; drawn from this CAD revision.",
         "archived_svg": "smoothie-diagrams/data/website-extension-svg/perma-proto-gadgeteer/perma-proto-gadgeteer-diagram.svg",
-        "archived_svg_sha256": "ff59bc63be7ec650ba592f3abc3e6ece0933aad1593f2de5c9a1ba91278bf5fe"
+        "archived_svg_sha256": "87e8e86e438fd0e7809aeebb6f64b12641a0cf563523a9ea988342f5116e5591"
       },
       "renders": [
         {
           "url": "/images/extensions/perma-proto-gadgeteer/perma-proto-gadgeteer-populated-isometric.png",
-          "sha256": "1be77c19ad4ae433d68c7e2314fc07440220fd8a98201d821458ff1acdf305c9",
-          "source_path": "extension-boards/src/perma-proto-gadgeteer/attempt/versions/v16/renders/populated-isometric.png",
+          "sha256": "4cd055900ff7a881ececd4d69a73eb9e0bef266198b5991a6bc0ebdaf457c678",
+          "source_path": "extension-boards/src/perma-proto-gadgeteer/attempt/versions/v17/renders/populated-isometric.png",
           "label": "Populated board, perspective view",
           "caption": "Computer render of the populated board, not a photograph."
         },
         {
           "url": "/images/extensions/perma-proto-gadgeteer/perma-proto-gadgeteer-populated-top.png",
-          "sha256": "5de09832973fdcb04f5f7f98accb5d043853d5d0650fe72bdffe8d4b74a16306",
-          "source_path": "extension-boards/src/perma-proto-gadgeteer/attempt/versions/v16/renders/populated-top.png",
+          "sha256": "7663eead692e27e22eb9a09456b3a63715e14d7407641ccf931193966a5ff288",
+          "source_path": "extension-boards/src/perma-proto-gadgeteer/attempt/versions/v17/renders/populated-top.png",
           "label": "Populated board, top view",
           "caption": "Computer render of the populated board, not a photograph."
         },
         {
           "url": "/images/extensions/perma-proto-gadgeteer/perma-proto-gadgeteer-populated-bottom.png",
-          "sha256": "257c037c9b838de274188b5a084932b167db6d3aafa76434df8f515b1c6624de",
-          "source_path": "extension-boards/src/perma-proto-gadgeteer/attempt/versions/v16/renders/populated-bottom.png",
+          "sha256": "f1e1227d12dc88e9820afc87ecf5b4826de6a6680948f35795ad1517e5da8ea6",
+          "source_path": "extension-boards/src/perma-proto-gadgeteer/attempt/versions/v17/renders/populated-bottom.png",
           "label": "Populated board, bottom view",
           "caption": "Computer render of the populated board, not a photograph."
         }

@@ -22,6 +22,7 @@ History: see CHANGELOG.archive.md.
 - Extension board drawings on the board directory and board pages now show their mounting and cable-tie holes.
 
 ### Changed
+- Gadgeteer perma-proto page updated to board v17: visible cuttable copper links, chain connector moved to the left margin with labelled wiring holes, all example projects wired to off-board parts through screw terminals.
 
 - Perma-proto Gadgeteer page, drawings and downloads updated for the new board: second chain connector with 2.54 mm wiring holes, six-hole strips with a DIP-width centre gap, rail lamps and solder jumpers, printed pin guide lines, four mounting holes; example projects re-laid out with no track cutting. Old guide drawings and version 15 downloads removed.
 - The two endstop boards are now named "Endstop inputs (basic)" and "Endstop and probe inputs (advanced)" and listed together. The advanced board page moved to a new address, and the old one redirects.

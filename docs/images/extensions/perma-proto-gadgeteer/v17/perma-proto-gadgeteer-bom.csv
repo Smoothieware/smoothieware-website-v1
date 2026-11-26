@@ -1,0 +1,6 @@
+"Refs","Value","Footprint","MPN","Manufacturer","Qty"
+"D1","RED +5V POWER","LED_SMD:LED_0805_2012Metric","LTST-C170KRKT","Lite-On","1"
+"D2","ORANGE +3V3 POWER","LED_SMD:LED_0805_2012Metric","LTST-C170KFKT","Lite-On","1"
+"J1,J2","SHF-105-01-L-D-TH-LC","PermaProto:Samtec_SHF105_TH_LC","SHF-105-01-L-D-TH-LC","Samtec","2"
+"R1","1k5","Resistor_SMD:R_0805_2012Metric","RC0805FR-071K5L","Yageo","1"
+"R2","680","Resistor_SMD:R_0805_2012Metric","RC0805FR-07680RL","Yageo","1"
