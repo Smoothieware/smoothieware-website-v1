@@ -8,6 +8,7 @@ History: see CHANGELOG.archive.md.
 
 ### Added
 
+- Perma-proto Gadgeteer board page rebuilt, with three example projects (touch plate switch, 555 solenoid tapper, stepper motor as handwheel), populated-board drawings and Smoothie V2 settings.
 - A page for the three-channel A5984 stepper driver board: pinout, wiring, current setting, configuration, electrical, mounting and simulation data. The board is also listed in the extension board directory and the stepper board comparison.
 
 ### Fixed
