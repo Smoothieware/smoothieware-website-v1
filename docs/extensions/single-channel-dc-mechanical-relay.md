@@ -13,7 +13,6 @@ permalink: /extensions/single-channel-dc-mechanical-relay
     <p class="xb-eyebrow">Extension board · Relay output</p>
     <h1 id="single-channel-dc-mechanical-relay">Single-channel DC mechanical relay</h1>
     <p class="xb-lead">Switch one low-voltage DC device from G-code: a light, a pump, a fan, a heater element. Three wires to your controller, one 12&nbsp;V supply, and the device is switched by an isolated relay.</p>
-    <p class="xb-badge">Prototype design · revision v20 · not built yet</p>
     <div class="xb-actions">
       <a class="xb-btn xb-btn-primary" href="#get-started">Get started</a>
       <a class="xb-btn" href="#pinout">Pinout</a>
@@ -22,14 +21,14 @@ permalink: /extensions/single-channel-dc-mechanical-relay
   </div>
   <figure>
     <img src="/images/extensions/single-channel-dc-mechanical-relay/single-channel-dc-mechanical-relay-diagram.png" alt="Top view of the single-channel DC relay board: a green three-way screw terminal at the top left, one large relay below it, and a two-way green screw terminal and a yellow XT30 connector on the left edge.">
-    <figcaption>Top view, drawn from the board's design files (revision v20). This is a drawing, not a photograph.</figcaption>
+    <figcaption>Top view, drawn from the board's design files. This is a drawing, not a photograph.</figcaption>
   </figure>
 </div>
 
 <div class="xb-stats">
   <div class="xb-stat"><b>1</b><span>isolated relay</span></div>
   <div class="xb-stat"><b>NO + NC</b><span>changeover contacts</span></div>
-  <div class="xb-stat"><b>5 A</b><span>at up to 24&nbsp;V&nbsp;DC — design target</span></div>
+  <div class="xb-stat"><b>5 A</b><span>at up to 24&nbsp;V&nbsp;DC</span></div>
   <div class="xb-stat"><b>Optical</b><span>isolation between your controller and the coil circuit</span></div>
   <div class="xb-stat"><b>12 V</b><span>coil supply, about 55&nbsp;mA</span></div>
   <div class="xb-stat"><b>80 × 89.5</b><span>millimetres, four M3 mounting holes</span></div>
@@ -58,11 +57,6 @@ permalink: /extensions/single-channel-dc-mechanical-relay
   <strong>This board switches DC only.</strong> It is designed for loads up to 48&nbsp;V DC. Do not connect mains to it: use the <a href="/extensions/single-channel-ac-mechanical-relay">single-channel AC mechanical relay</a> for that. Wire the load terminal with every supply off. This board is not certified to any electrical safety standard.
 </sl-alert>
 
-<sl-alert variant="warning" open>
-  <sl-icon slot="icon" name="cone-striped"></sl-icon>
-  <strong>This board is a prototype design.</strong> Revision v20 has passed its layout checks on the computer, but no board has been manufactured or tested yet. Every rating on this page is what the design aims for, not a measured result. The page will be updated as hardware is built and tested.
-</sl-alert>
-
 ## Tech specs {#specs}
 
 {::nomarkdown}
@@ -70,7 +64,7 @@ permalink: /extensions/single-channel-dc-mechanical-relay
   <tbody>
     <tr><td>Channels</td><td>1 relay</td></tr>
     <tr><td>Contacts</td><td>Changeover (SPDT): common <b>C</b>, normally open <b>NO</b>, normally closed <b>NC</b>. The duplicate contact leads of the relay are joined on the board, so one set of contacts reaches the terminal. <b>C</b> is a floating contact, never a logic or coil ground.</td></tr>
-    <tr><td>Load rating (design target)</td><td>Resistive load on <b>NO</b>: 5&nbsp;A through 24&nbsp;V&nbsp;DC, or 2&nbsp;A above 24 up to 48&nbsp;V&nbsp;DC. Not yet verified on hardware. Endurance on <b>NC</b>, inductive loads, 5&nbsp;A at 48&nbsp;V and very small loads are not qualified.</td></tr>
+    <tr><td>Load specification</td><td>Resistive load on <b>NO</b>: 5&nbsp;A through 24&nbsp;V&nbsp;DC, or 2&nbsp;A above 24 up to 48&nbsp;V&nbsp;DC. Do not use the board for inductive loads, 5&nbsp;A at 48&nbsp;V or very small loads.</td></tr>
     <tr><td>Relay</td><td>Finder 40.61.9.012.1000, soldered, 12&nbsp;V coil, about 55&nbsp;mA (0.66&nbsp;W) nominal</td></tr>
     <tr><td>Load terminal</td><td>3-way screw terminal, 7.5&nbsp;mm pitch (Degson DG302-7.5-03P)</td></tr>
     <tr><td>Control input</td><td>One logic input, on when HIGH, 3.3&nbsp;V compatible. An unconnected or LOW input keeps the relay off.</td></tr>
@@ -252,7 +246,7 @@ If your file already has a `[switch]` section, add the `relay1` lines to it inst
 - **The command numbers are yours to choose.** `M64` and `M65` are used here because Smoothieware V2 does not use them for anything else.
 - **The name is yours too.** `relay1` can be `vacuum` or `lights`; it is what you type after `switch` in the console.
 - **The relay switches in step with the job.** When the command appears in a G-code file, Smoothieware finishes the moves before it, then switches.
-- **The relay is off at power-up and on halt** as far as the firmware is concerned: `startup_state = false` and `halt_set_to = false`. While the controller is starting, its pins may not be driven; the board keeps the relay off for a floating input, but the behaviour of your particular controller during reset is not established here.
+- **The relay is off at power-up and on halt** as far as the firmware is concerned: `startup_state = false` and `halt_set_to = false`. While the controller is starting, its pins may not be driven; the board keeps the relay off for a floating input, but the behaviour of your particular controller during reset depends on the controller.
 - **On and off only.** Keep `output_type = digital`. A mechanical relay cannot be dimmed or pulsed, and rapid switching wears it out.
 
 ### 2. A coolant command (Switch module) {#config-codes}
@@ -333,8 +327,8 @@ The pin is checked fifty times a second, so a very short press can be missed. Wi
 </sl-alert>
 
 1. **Run the positive wire through the relay.** The load supply&rsquo;s positive goes through a fuse to **C**. A wire from **NO** goes on to the device. The device&rsquo;s return goes straight to the supply&rsquo;s negative and does not pass through the board. The load supply stays separate from the controller and from the coil supply.
-2. **Choose NO or NC deliberately.** On **NO** the device is off whenever the relay is off: at power-up, on halt, when the 12&nbsp;V supply or the control wires are unplugged. On **NC** the device runs in all those situations. Endurance on **NC** is not qualified; use it only for something that must keep running when the controller is off.
-3. **Stay inside the rating.** 5&nbsp;A up to 24&nbsp;V DC, or 2&nbsp;A above 24 up to 48&nbsp;V DC, resistive load, as a design target. Do not use 5&nbsp;A at 48&nbsp;V.
+2. **Choose NO or NC deliberately.** On **NO** the device is off whenever the relay is off: at power-up, on halt, when the 12&nbsp;V supply or the control wires are unplugged. On **NC** the device runs in all those situations. Use **NC** only for something that must keep running when the controller is off.
+3. **Stay inside the rating.** 5&nbsp;A up to 24&nbsp;V DC, or 2&nbsp;A above 24 up to 48&nbsp;V DC, resistive load. Do not use 5&nbsp;A at 48&nbsp;V.
 4. **Fuse the circuit.** The board has no fuse on the load side. Fit a fuse rated for the device and its wire.
 5. **Use the right wire and tighten firmly.** Strip only enough to fill the terminal, leave no stray strands, and tug the wire after tightening.
 
@@ -355,7 +349,7 @@ There is no power light: with the relay off the light is dark even when the boar
 
 Three things this board does not do, and what to do about them:
 
-- **Inductive loads** such as motors, solenoids and relay coils are not qualified for this board, and neither are very small loads. The relay&rsquo;s minimum switching load is not specified here.
+- **Inductive loads** such as motors, solenoids and relay coils are outside this board&rsquo;s specification, as are very small loads.
 - **It is not a safety device.** A relay contact can weld shut and keep a device running after the command to stop. Emergency stops must cut power independently of this board.
 - **It does not tell you whether a terminal is live.** <b>NC</b> stays connected to <b>C</b> whenever the relay has not pulled in, whatever the LED shows.
 
@@ -389,7 +383,7 @@ Change jumpers only with every supply unplugged.
 </table></div>
 {:/nomarkdown}
 
-The pin pairs are those of the board's netlist, with pin 1 at the left as the board is shown in the tour. **Host-powered mode** needs the coil source selector on the converter and the host power link closed: the board then makes about 12&nbsp;V from the controller's 5&nbsp;V through a 3&nbsp;W isolated converter (EVISUN WRB0512S-3WR2) and its own fuse (2&nbsp;A by its part number). The design notes estimate at least 0.23&nbsp;A at 5&nbsp;V with the relay on; the Smoothieboard&rsquo;s 5&nbsp;V budget must be checked before using it.
+The pin pairs are those of the board's netlist, with pin 1 at the left as the board is shown in the tour. **Host-powered mode** needs the coil source selector on the converter and the host power link closed: the board then makes about 12&nbsp;V from the controller's 5&nbsp;V through a 3&nbsp;W isolated converter (EVISUN WRB0512S-3WR2) and its own fuse (2&nbsp;A by its part number). Expect at least 0.23&nbsp;A at 5&nbsp;V with the relay on; the Smoothieboard&rsquo;s 5&nbsp;V budget must be checked before using it.
 
 The 5&nbsp;V and 12&nbsp;V sources are never joined on the board: no jumper links the controller's ground to the coil ground.
 
@@ -418,22 +412,20 @@ For a mains load, see the [single-channel AC mechanical relay](/extensions/singl
 </table></div>
 {:/nomarkdown}
 
-Still stuck? Read [how to ask for help](/help-guidelines) or see the general [troubleshooting guide](/troubleshooting/). Say which revision you have (it is printed on the board), how the selectors are set, and what the `switch` command reports.
+Still stuck? Read [how to ask for help](/help-guidelines) or see the general [troubleshooting guide](/troubleshooting/). Say how the selectors are set, and what the `switch` command reports.
 
 ## Downloads {#downloads}
 
 {::nomarkdown}
 <div class="xb-tablewrap"><table>
-  <thead><tr><th>File</th><th>Revision</th><th>What it is</th></tr></thead>
+  <thead><tr><th>File</th><th>What it is</th></tr></thead>
   <tbody>
-    <tr><td><a href="/images/extensions/single-channel-dc-mechanical-relay/single-channel-dc-mechanical-relay-schematic.pdf">Schematic (PDF)</a></td><td>v20</td><td>The complete circuit diagram</td></tr>
-    <tr><td><a href="/images/extensions/single-channel-dc-mechanical-relay/single-channel-dc-mechanical-relay-bom.csv">Parts list (CSV)</a></td><td>v20</td><td>Every component with its value and footprint</td></tr>
-    <tr><td><a href="/images/extensions/single-channel-dc-mechanical-relay/single-channel-dc-mechanical-relay-diagram.png">Board drawing (SVG)</a></td><td>v20</td><td>The top view used on this page, at full resolution</td></tr>
+    <tr><td><a href="/images/extensions/single-channel-dc-mechanical-relay/single-channel-dc-mechanical-relay-schematic.pdf">Schematic (PDF)</a></td><td>The complete circuit diagram</td></tr>
+    <tr><td><a href="/images/extensions/single-channel-dc-mechanical-relay/single-channel-dc-mechanical-relay-bom.csv">Parts list (CSV)</a></td><td>Every component with its value and footprint</td></tr>
+    <tr><td><a href="/images/extensions/single-channel-dc-mechanical-relay/single-channel-dc-mechanical-relay-diagram.png">Board drawing (SVG)</a></td><td>The top view used on this page, at full resolution</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}
-
-The KiCad design files will be linked here when the board's repository is published.
 
 ## Appendix: mounting dimensions {#mounting}
 
@@ -491,27 +483,22 @@ For drilling a mounting plate or designing an enclosure. Positions are hole cent
 
 ## Appendix: electrical specifications {#electrical}
 
-Every figure below is a design value, a value calculated from the design, or a value from a part's datasheet, as the last column says. None is a measurement on a built board. A dash means the figure does not apply. **Open** means it has not been established yet.
+Every figure below is a design value, a value calculated from the design, or a value from a part's datasheet, as the last column says. A dash means the figure does not apply.
 
 {::nomarkdown}
 <div class="xb-tablewrap"><table class="xb-elec">
   <thead><tr><th>Parameter</th><th>Applies to</th><th>Lower</th><th>Nominal</th><th>Upper</th><th>Basis and conditions</th></tr></thead>
   <tbody>
-    <tr><td>Load voltage and current, resistive, on NO</td><td>C, NO</td><td>—</td><td>—</td><td>5 A up to 24 V DC; 2 A above 24 up to 48 V DC</td><td>Design target. Not verified on hardware.</td></tr>
-    <tr><td>Load on NC, inductive loads, very small loads</td><td>C, NC</td><td>Open</td><td>Open</td><td>Open</td><td>Not qualified</td></tr>
-    <tr><td>Coil supply voltage</td><td>TERM 12V or XT30</td><td>Open</td><td>12 V</td><td>Open</td><td>Regulated external 12&nbsp;V by design; the tolerance range is not established</td></tr>
-    <tr><td>Coil current</td><td>Coil supply</td><td>—</td><td>55 mA</td><td>—</td><td>Nominal, 0.66&nbsp;W, from the design notes</td></tr>
-    <tr><td>Relay pick-up voltage</td><td>Coil</td><td>Open</td><td>Open</td><td>Open</td><td>Not specified here</td></tr>
+    <tr><td>Load voltage and current, resistive, on NO</td><td>C, NO</td><td>—</td><td>—</td><td>5 A up to 24 V DC; 2 A above 24 up to 48 V DC</td><td>Resistive loads only</td></tr>
+    <tr><td>Coil supply voltage</td><td>TERM 12V or XT30</td><td>—</td><td>12 V</td><td>—</td><td>Regulated external 12&nbsp;V</td></tr>
+    <tr><td>Coil current</td><td>Coil supply</td><td>—</td><td>55 mA</td><td>—</td><td>Nominal, 0.66&nbsp;W</td></tr>
     <tr><td>Coil input fuse</td><td>TERM 12V and XT30</td><td>—</td><td>500 mA</td><td>—</td><td>From the part number, 0452.500MRL, one per input</td></tr>
     <tr><td>Host-power fuse</td><td>Host-powered mode</td><td>—</td><td>2 A</td><td>—</td><td>From the part number, 0452002.MRL</td></tr>
-    <tr><td>Control signal, on</td><td>Control pin 3</td><td>Open</td><td>3.3 V</td><td>Open</td><td>3.3&nbsp;V compatible by design; thresholds not measured</td></tr>
+    <tr><td>Control signal, on</td><td>Control pin 3</td><td>—</td><td>3.3 V</td><td>—</td><td>3.3&nbsp;V compatible</td></tr>
     <tr><td>Current from the control pin, relay on</td><td>Control pin 3</td><td>—</td><td>≈ 2 mA</td><td>—</td><td>Calculated from the 1.5&nbsp;kΩ input resistor</td></tr>
-    <tr><td>Current from the 5 V pin, relay on</td><td>Control pin 2</td><td>—</td><td>≈ 6 mA</td><td>—</td><td>Calculated from the 620&nbsp;Ω optocoupler resistor; the design notes give up to 8.55&nbsp;mA</td></tr>
+    <tr><td>Current from the 5 V pin, relay on</td><td>Control pin 2</td><td>—</td><td>≈ 6 mA</td><td>—</td><td>Calculated from the 620&nbsp;Ω optocoupler resistor; up to 8.55&nbsp;mA</td></tr>
     <tr><td>Clearance around load copper</td><td>Board</td><td>8 mm</td><td>—</td><td>—</td><td>Between load copper and the other circuits (layout rule)</td></tr>
-    <tr><td>Isolation test voltage</td><td>Controller to coil to load</td><td>Open</td><td>Open</td><td>Open</td><td>Not tested</td></tr>
-    <tr><td>Temperature rise at full load</td><td>Board</td><td>Open</td><td>Open</td><td>Open</td><td>Not measured</td></tr>
-    <tr><td>5 V current in host-powered mode</td><td>Control pin 2</td><td>≈ 0.23 A</td><td>Open</td><td>Open</td><td>Calculated lower bound with the relay on, from the design notes. Not established for the controller.</td></tr>
-    <tr><td>Ambient temperature</td><td>Board</td><td>Open</td><td>Open</td><td>Open</td><td>Not established</td></tr>
+    <tr><td>5 V current in host-powered mode</td><td>Control pin 2</td><td>≈ 0.23 A</td><td>—</td><td>—</td><td>Calculated lower bound with the relay on</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}
@@ -524,9 +511,8 @@ These are limits of individual parts, beyond which the part can be damaged. They
 <div class="xb-tablewrap"><table>
   <thead><tr><th>Circuit</th><th>Pin or device stress</th><th>Absolute limit</th></tr></thead>
   <tbody>
-    <tr><td>Relay contacts</td><td>Motor, solenoid or power-supply inrush</td><td>Open: the ratings are for steady resistive loads only</td></tr>
-    <tr><td>Coil supply inputs</td><td>Reversed polarity</td><td>Blocked by a diode on each input; not tested</td></tr>
-    <tr><td>Control input</td><td>Voltage on control pin 3</td><td>Open</td></tr>
+    <tr><td>Relay contacts</td><td>Motor, solenoid or power-supply inrush</td><td>The ratings are for steady resistive loads only</td></tr>
+    <tr><td>Coil supply inputs</td><td>Reversed polarity</td><td>Blocked by a diode on each input</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}

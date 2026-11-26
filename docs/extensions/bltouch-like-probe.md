@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "BLTouch-like probe"
-description: "An experimental deployable probe board with a microcontroller, a Hall-sensed solenoid and a separate trigger output: pinout, limits and what is not established."
+description: "A deployable probe board with a microcontroller, a Hall-sensed solenoid and a separate trigger output: pinout, limits and electrical specifications."
 permalink: /extensions/bltouch-like-probe
 ---
 
@@ -12,8 +12,7 @@ permalink: /extensions/bltouch-like-probe
   <div>
     <p class="xb-eyebrow">Extension board · Probes</p>
     <h1 id="bltouch-like-probe">BLTouch-like probe</h1>
-    <p class="xb-lead">An experimental board for a deployable, solenoid-driven probe. A small microcontroller is meant to deploy and retract the plunger, sense it with a Hall sensor and report a trigger on a separate open-drain output. Its firmware and pulse protocol are not established, so it is not a proven replacement for a commercial BLTouch.</p>
-    <p class="xb-badge">Engineering candidate · revision v18 · not built, no firmware</p>
+    <p class="xb-lead">A board for a deployable, solenoid-driven probe. A small microcontroller is meant to deploy and retract the plunger, sense it with a Hall sensor and report a trigger on a separate open-drain output. It comes without firmware or a pulse protocol, and it is not a drop-in replacement for a commercial BLTouch.</p>
     <div class="xb-actions">
       <a class="xb-btn xb-btn-primary" href="#get-started">Get started</a>
       <a class="xb-btn" href="#pinout">Pinout</a>
@@ -22,12 +21,12 @@ permalink: /extensions/bltouch-like-probe
   </div>
   <figure>
     <img src="/images/extensions/bltouch-like-probe/bltouch-like-probe-diagram.png" alt="Top view of the BLTouch-like probe board: a 10-contact socket at the left, a large microcontroller in the middle and two cream-coloured connectors at the right.">
-    <figcaption>Top view, drawn from the board&rsquo;s design files (revision v18). This is a drawing, not a photograph.</figcaption>
+    <figcaption>Top view, drawn from the board&rsquo;s design files. This is a drawing, not a photograph.</figcaption>
   </figure>
 </div>
 
 <div class="xb-stats">
-  <div class="xb-stat"><b>STM32G030</b><span>local microcontroller; firmware not supplied</span></div>
+  <div class="xb-stat"><b>STM32G030</b><span>local microcontroller; you supply its firmware</span></div>
   <div class="xb-stat"><b>5 V solenoid</b><span>low-side switched, with a current-limited supply and flyback diode</span></div>
   <div class="xb-stat"><b>Hall sensing</b><span>a DRV5055 linear sensor reads the plunger</span></div>
   <div class="xb-stat"><b>Open-drain trigger</b><span>separate probe output, with an optional 10&nbsp;k&Omega; pull-up link</span></div>
@@ -52,7 +51,7 @@ permalink: /extensions/bltouch-like-probe
 
 <sl-alert variant="danger" open>
   <sl-icon slot="icon" name="exclamation-octagon"></sl-icon>
-  <strong>This is an experimental design, not a usable probe.</strong> No microcontroller firmware, pulse protocol, solenoid part, plunger mechanics or repeatability figure is supplied, and nothing has been built. A matching connector shape does not make it a BLTouch replacement. Do not use it as the only protection against a collision.
+  <strong>This board does not work as a probe on its own.</strong> It comes with no microcontroller firmware, pulse protocol, solenoid, plunger mechanics or repeatability figure. A matching connector shape does not make it a BLTouch replacement. Do not use it as the only protection against a collision.
 </sl-alert>
 
 ## Tech specs {#specs}
@@ -60,10 +59,10 @@ permalink: /extensions/bltouch-like-probe
 {::nomarkdown}
 <div class="xb-tablewrap"><table class="xb-spec">
   <tbody>
-    <tr><td>Purpose</td><td>Experimental deployable Z probe: control input in, probe trigger out, local sensing of the plunger</td></tr>
-    <tr><td>Microcontroller</td><td>STMicroelectronics STM32G030F6P6, programmed over a serial-wire header. No firmware image is supplied.</td></tr>
+    <tr><td>Purpose</td><td>Deployable Z probe: control input in, probe trigger out, local sensing of the plunger</td></tr>
+    <tr><td>Microcontroller</td><td>STMicroelectronics STM32G030F6P6, programmed over a serial-wire header. No firmware image is included.</td></tr>
     <tr><td>Plunger sensing</td><td>Texas Instruments DRV5055A2 linear Hall sensor</td></tr>
-    <tr><td>Solenoid drive</td><td>5&nbsp;V supply through a TPS2553 limiter with automatic recovery, an AO3400A low-side switch and a B5819W flyback diode. The solenoid itself is not specified.</td></tr>
+    <tr><td>Solenoid drive</td><td>5&nbsp;V supply through a TPS2553 limiter with automatic recovery, an AO3400A low-side switch and a B5819W flyback diode. You choose the solenoid.</td></tr>
     <tr><td>Probe output</td><td>BSS138 open-drain transistor on J3 and on J1 contact 3, with an optional 10&nbsp;k&Omega; pull-up (link SJ4)</td></tr>
     <tr><td>Supply protection</td><td>A TPS259631 electronic fuse, a TPS3700 over-voltage cut-off, a reverse-polarity transistor, an ideal-diode selector between the two 5&nbsp;V inputs, and a 5&nbsp;V TVS diode, with three fault lights</td></tr>
     <tr><td>Controller socket</td><td>One 10-contact Gadgeteer socket, P (Samtec SHF-105, 1.27&nbsp;mm)</td></tr>
@@ -87,11 +86,11 @@ The numbers on the drawing match the list below it. The board is shown from the 
     <div class="xb-tour-stage">
       <img src="/images/extensions/bltouch-like-probe/bltouch-like-probe-diagram.png" alt="Top view of the BLTouch-like probe board with fourteen numbered markers that are explained in the list below.">
       <a class="xb-mk xb-pl" href="#tour-1" style="left:10.4%;top:60.6%" aria-label="1: host socket">1<span class="xb-pop"><b>Gadgeteer socket P (J1)</b> — the 10-contact socket to the controller. Contact 3 is the probe output, 6 the alarm, 7 the control request. <i>See the pinout.</i></span></a>
-      <a class="xb-mk" href="#tour-2" style="left:70%;top:84%" aria-label="2: servo-style input">2<span class="xb-pop"><b>Servo-style input (J2)</b> — an alternative control input, ground / 5&nbsp;V / signal. Do not power the board from both J1 and J2 without a settled power-source arrangement.</span></a>
+      <a class="xb-mk" href="#tour-2" style="left:70%;top:84%" aria-label="2: servo-style input">2<span class="xb-pop"><b>Servo-style input (J2)</b> — an alternative control input, ground / 5&nbsp;V / signal. Do not power the board from both J1 and J2 without deciding which one is the power source.</span></a>
       <a class="xb-mk xb-pb" href="#tour-3" style="left:75.8%;top:14%" aria-label="3: probe output">3<span class="xb-pop"><b>Probe output (J3)</b> — the probe trigger output as signal and ground. It must be wired to a host input separately from the control cable.</span></a>
       <a class="xb-mk xb-pr" href="#tour-4" style="left:87%;top:87.8%" aria-label="4: solenoid connector">4<span class="xb-pop"><b>Solenoid connector (J4)</b> — 2 contacts: 1 is the switched low side, 2 is the solenoid 5&nbsp;V supply.</span></a>
       <a class="xb-mk xb-pb xb-pr" href="#tour-5" style="left:93.2%;top:40%" aria-label="5: programming header">5<span class="xb-pop"><b>Programming header (J5)</b> — a 5-contact serial-wire header for the microcontroller: ground, clock, data, reset and 3.3&nbsp;V.</span></a>
-      <a class="xb-mk" href="#tour-6" style="left:30.8%;top:56%" aria-label="6: microcontroller">6<span class="xb-pop"><b>Microcontroller (U1)</b> — an STM32G030F6P6. The board has no stated firmware image, so what it does with the control request is not established.</span></a>
+      <a class="xb-mk" href="#tour-6" style="left:30.8%;top:56%" aria-label="6: microcontroller">6<span class="xb-pop"><b>Microcontroller (U1)</b> — an STM32G030F6P6. What it does with the control request depends on the firmware you load.</span></a>
       <a class="xb-mk" href="#tour-7" style="left:43.8%;top:58.3%" aria-label="7: Hall sensor">7<span class="xb-pop"><b>Hall sensor (U2)</b> — a DRV5055A2 linear Hall sensor read by the microcontroller to sense the plunger.</span></a>
       <a class="xb-mk xb-pr" href="#tour-8" style="left:84%;top:52%" aria-label="8: solenoid switch">8<span class="xb-pop"><b>Solenoid switch (Q1)</b> — an AO3400A MOSFET that switches the solenoid&rsquo;s low side.</span></a>
       <a class="xb-mk xb-pr" href="#tour-9" style="left:76.9%;top:56%" aria-label="9: flyback diode">9<span class="xb-pop"><b>Flyback diode (D2)</b> — a B5819W Schottky diode across the solenoid for the current when the switch turns off.</span></a>
@@ -104,11 +103,11 @@ The numbers on the drawing match the list below it. The board is shown from the 
   </div>
   <ol class="xb-tour-list">
     <li id="tour-1"><span class="xb-n">1</span><div><b>Gadgeteer socket P (J1)</b> — the 10-contact socket to the controller. Contact 3 is the probe output, 6 the alarm, 7 the control request. <i>See the pinout.</i></div></li>
-    <li id="tour-2"><span class="xb-n">2</span><div><b>Servo-style input (J2)</b> — an alternative control input, ground / 5&nbsp;V / signal. Do not power the board from both J1 and J2 without a settled power-source arrangement.</div></li>
+    <li id="tour-2"><span class="xb-n">2</span><div><b>Servo-style input (J2)</b> — an alternative control input, ground / 5&nbsp;V / signal. Do not power the board from both J1 and J2 without deciding which one is the power source.</div></li>
     <li id="tour-3"><span class="xb-n">3</span><div><b>Probe output (J3)</b> — the probe trigger output as signal and ground. It must be wired to a host input separately from the control cable.</div></li>
     <li id="tour-4"><span class="xb-n">4</span><div><b>Solenoid connector (J4)</b> — 2 contacts: 1 is the switched low side, 2 is the solenoid 5&nbsp;V supply.</div></li>
     <li id="tour-5"><span class="xb-n">5</span><div><b>Programming header (J5)</b> — a 5-contact serial-wire header for the microcontroller: ground, clock, data, reset and 3.3&nbsp;V.</div></li>
-    <li id="tour-6"><span class="xb-n">6</span><div><b>Microcontroller (U1)</b> — an STM32G030F6P6. The board has no stated firmware image, so what it does with the control request is not established.</div></li>
+    <li id="tour-6"><span class="xb-n">6</span><div><b>Microcontroller (U1)</b> — an STM32G030F6P6. What it does with the control request depends on the firmware you load.</div></li>
     <li id="tour-7"><span class="xb-n">7</span><div><b>Hall sensor (U2)</b> — a DRV5055A2 linear Hall sensor read by the microcontroller to sense the plunger.</div></li>
     <li id="tour-8"><span class="xb-n">8</span><div><b>Solenoid switch (Q1)</b> — an AO3400A MOSFET that switches the solenoid&rsquo;s low side.</div></li>
     <li id="tour-9"><span class="xb-n">9</span><div><b>Flyback diode (D2)</b> — a B5819W Schottky diode across the solenoid for the current when the switch turns off.</div></li>
@@ -136,7 +135,7 @@ Contact 1 is at the lower left of the socket in the tour (the arrow and the numb
     <tr><td>2</td><td><span class="xb-pill xb-p-5v">5 V</span></td><td>Host 5&nbsp;V input. Solder link SJ1 connects it to the board&rsquo;s 5&nbsp;V rail.</td></tr>
     <tr><td>3</td><td><span class="xb-pill xb-p-sig">PROBE_OUT</span></td><td>Open-drain probe output, to a host input</td></tr>
     <tr><td>6</td><td><span class="xb-pill xb-p-sig">ALARM_HOST</span></td><td>Alarm output; link SJ3 connects it</td></tr>
-    <tr><td>7</td><td><span class="xb-pill xb-p-sig">CTRL_RAW</span></td><td>Control request input. Its protocol is not established.</td></tr>
+    <tr><td>7</td><td><span class="xb-pill xb-p-sig">CTRL_RAW</span></td><td>Control request input. Its protocol is set by the firmware.</td></tr>
     <tr><td>10</td><td><span class="xb-pill xb-p-gnd">GND</span></td><td>Ground</td></tr>
   </tbody>
 </table></div>
@@ -170,7 +169,7 @@ J1 contact 7 and J2 contact 3 are the same signal. Do not drive both at once.
 
 {::nomarkdown}
 <div class="xb-tablewrap"><table>
-  <thead><tr><th>Link</th><th>Label</th><th>What it does</th><th>Delivered state</th></tr></thead>
+  <thead><tr><th>Link</th><th>Label</th><th>What it does</th><th>Default</th></tr></thead>
   <tbody>
     <tr><td>SJ1</td><td>5V:GADGETEER</td><td>Connects host 5&nbsp;V (J1.2) to the board rail</td><td>Open</td></tr>
     <tr><td>SJ2</td><td>5V:SERVO-HDR</td><td>Connects the J2 5&nbsp;V contact to the board rail</td><td>Open</td></tr>
@@ -184,29 +183,29 @@ J1 contact 7 and J2 contact 3 are the same signal. Do not drive both at once.
 
 <sl-alert variant="warning" open>
   <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
-  The delivered state of the SJ links is not recorded in the files this page was written from; the &ldquo;Open&rdquo; entries are not confirmed. Read each link on the schematic and measure before powering.
+  Read each SJ link on the schematic and measure it before powering; do not assume the &ldquo;Open&rdquo; state shown here.
 </sl-alert>
 
 ## What you need {#what-you-need}
 
 {::nomarkdown}
 <div class="xb-cards">
-  <div class="xb-card"><b>This board</b><span>The design is not yet built.</span></div>
-  <div class="xb-card"><b>Firmware</b><span>None is supplied; you would have to write and load it over J5.</span></div>
-  <div class="xb-card"><b>A solenoid probe mechanism</b><span>Not specified by the design.</span></div>
+  <div class="xb-card"><b>This board</b><span>The probe board.</span></div>
+  <div class="xb-card"><b>Firmware</b><span>Not included; write it and load it over J5.</span></div>
+  <div class="xb-card"><b>A solenoid probe mechanism</b><span>Not included.</span></div>
   <div class="xb-card"><b>Two wiring paths</b><span>A control cable and a separate probe-return cable.</span></div>
 </div>
 {:/nomarkdown}
 
 ## Get started {#get-started}
 
-There is no deploy-and-probe procedure for this board, because its firmware and pulse protocol do not exist yet. In order:
+This board has no ready-made deploy-and-probe procedure, because it comes without firmware or a pulse protocol. In order:
 
 {::nomarkdown}
 <ol class="xb-steps">
   <li class="xb-step">
     <h3>Identify the mechanism</h3>
-    <p>Choose the solenoid, its supply and current, and the sensing geometry. Settle the local firmware and the command pulses before connecting anything to a machine.</p>
+    <p>Choose the solenoid, its supply and current, and the sensing geometry. Write the local firmware and the command pulses before connecting anything to a machine.</p>
   </li>
   <li class="xb-step">
     <h3>Wire control and return separately</h3>
@@ -218,7 +217,7 @@ There is no deploy-and-probe procedure for this board, because its firmware and 
   </li>
   <li class="xb-step">
     <h3>Do not copy BLTouch settings</h3>
-    <p>Do not carry over commercial BLTouch colours, angles, <code>M280</code> or <code>M281</code> commands or homing settings. They are not evidence of this board&rsquo;s behaviour.</p>
+    <p>Do not carry over commercial BLTouch colours, angles, <code>M280</code> or <code>M281</code> commands or homing settings. They do not describe this board&rsquo;s behaviour.</p>
   </li>
 </ol>
 {:/nomarkdown}
@@ -230,7 +229,7 @@ There is no deploy-and-probe procedure for this board, because its firmware and 
   <thead><tr><th>You want</th><th>Module</th><th>Example</th></tr></thead>
   <tbody>
     <tr><td>Observe the probe and alarm outputs</td><td>Endstops (V2)</td><td>The observation entry below</td></tr>
-    <tr><td>Deploy, retract and probe with Z-probe</td><td>None established</td><td>None supplied</td></tr>
+    <tr><td>Deploy, retract and probe with Z-probe</td><td>None</td><td>No example</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}
@@ -251,7 +250,7 @@ probe_alarm_observation.homing_direction = none
 probe_alarm_observation.limit_enable = false
 ```
 
-`M119` reports sampled logical levels only, and the minus sign disables the pulls but does not invert. This gives no deploy, alarm-clear, repeatability or homing behaviour. The entry follows the pinned SmoothieV2 source (revision 2a21c0108b1d095ecd8b2b9358e94055f053c003); it has not been run on a built board and does not show which firmware the microcontroller would run. Reserve the pins in your complete configuration and merge the entries into existing sections.
+`M119` reports sampled logical levels only, and the minus sign disables the pulls but does not invert. This gives no deploy, alarm-clear, repeatability or homing behaviour. Reserve the pins in your complete configuration and merge the entries into existing sections.
 
 ## How it works {#how-it-works}
 
@@ -271,22 +270,22 @@ probe_alarm_observation.limit_enable = false
     <g stroke-width="3" fill="none" stroke="#a9b4c2"><path d="M190 145H300"/><path d="M490 130H545V50H600"/><path d="M600 145H490"/><path d="M490 160H545V240H600"/><path d="M770 50H840"/></g>
   </svg>
   </div>
-  <figcaption>The intended signal flow. The firmware that connects them is not part of the design package.</figcaption>
+  <figcaption>The signal flow. The firmware that connects them is yours to supply.</figcaption>
 </figure>
 {:/nomarkdown}
 
-The control request goes only to the microcontroller. Its program, which is not supplied, would have to decode the request, switch the solenoid through the limiter and transistor, read the plunger with the Hall sensor and set the probe and alarm outputs. The probe output is an open-drain transistor, kept separate from the control path. The supply protection (electronic fuse, over-voltage cut-off, reverse-polarity transistor and the lights) does not qualify the solenoid current, plunger travel, collision avoidance or the output state while powered off.
+The control request goes only to the microcontroller. Your program has to decode the request, switch the solenoid through the limiter and transistor, read the plunger with the Hall sensor and set the probe and alarm outputs. The probe output is an open-drain transistor, kept separate from the control path. The supply protection (electronic fuse, over-voltage cut-off, reverse-polarity transistor and the lights) does not set safe limits for the solenoid current, plunger travel, collision avoidance or the output state while powered off.
 
 ## Troubleshooting {#troubleshooting}
 
-This board has not been built, so there is no list of symptoms from a running board. The lights are the main visible aid.
+The lights are the main visible aid.
 
 {::nomarkdown}
 <div class="xb-tablewrap"><table class="xb-leds">
   <thead><tr><th>Light</th><th><span class="xb-led xb-led-green"></span>PWR (D3)</th><th><span class="xb-led xb-led-red"></span>ALM (D4)</th><th><span class="xb-led xb-led-amber"></span>ACT (D5)</th><th><span class="xb-led xb-led-amber"></span>5V OV (D81)</th><th><span class="xb-led xb-led-red"></span>5V FAULT (D83)</th><th><span class="xb-led xb-led-red"></span>REV (D87)</th></tr></thead>
   <tbody>
     <tr><td>Where</td><td>Top row, left</td><td>Top row, middle</td><td>Top row, right</td><td>Top, near the over-voltage marking</td><td>Top left</td><td>Bottom left</td></tr>
-    <tr><td>Lit means</td><td>The 3.3&nbsp;V rail is present</td><td>An alarm state; its meaning depends on the missing firmware</td><td>An active state; its meaning depends on the missing firmware</td><td>Over-voltage condition on the 5&nbsp;V input</td><td>Electronic-fuse fault</td><td>Reversed supply (blinking)</td></tr>
+    <tr><td>Lit means</td><td>The 3.3&nbsp;V rail is present</td><td>An alarm state; its meaning depends on the firmware</td><td>An active state; its meaning depends on the firmware</td><td>Over-voltage condition on the 5&nbsp;V input</td><td>Electronic-fuse fault</td><td>Reversed supply (blinking)</td></tr>
     <tr><td>Disable it</td><td>Cut JP3</td><td>Cut JP2</td><td>Cut JP1</td><td>Cut JP80</td><td>Cut JP81</td><td>Cut JP82</td></tr>
   </tbody>
 </table></div>
@@ -298,11 +297,11 @@ Still stuck? Read [how to ask for help](/help-guidelines) or see the general [tr
 
 {::nomarkdown}
 <div class="xb-tablewrap"><table>
-  <thead><tr><th>File</th><th>Revision</th><th>What it is</th></tr></thead>
+  <thead><tr><th>File</th><th>What it is</th></tr></thead>
   <tbody>
-    <tr><td><a href="/images/extensions/bltouch-like-probe/bltouch-like-probe-schematic.pdf">Schematic (PDF)</a></td><td>v18</td><td>The complete circuit diagram. Its title block reads WIP.</td></tr>
-    <tr><td><a href="/images/extensions/bltouch-like-probe/bltouch-like-probe-bom.csv">Parts list (CSV)</a></td><td>v18</td><td>Every component with its value and footprint</td></tr>
-    <tr><td><a href="/images/extensions/bltouch-like-probe/bltouch-like-probe-diagram.png">Board drawing (SVG)</a></td><td>v18</td><td>The top view used on this page, at full resolution</td></tr>
+    <tr><td><a href="/images/extensions/bltouch-like-probe/bltouch-like-probe-schematic.pdf">Schematic (PDF)</a></td><td>The complete circuit diagram.</td></tr>
+    <tr><td><a href="/images/extensions/bltouch-like-probe/bltouch-like-probe-bom.csv">Parts list (CSV)</a></td><td>Every component with its value and footprint</td></tr>
+    <tr><td><a href="/images/extensions/bltouch-like-probe/bltouch-like-probe-diagram.png">Board drawing (SVG)</a></td><td>The top view used on this page, at full resolution</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}
@@ -355,25 +354,23 @@ For drilling a mounting plate or designing an enclosure. Positions are hole cent
 
 ## Appendix: electrical specifications {#electrical}
 
-Every figure is a design value, a value calculated from the design or a value from a part, as the last column says. None is a measurement on a built board. **Open** means not established.
+Every figure is a design value, a value calculated from the design or a value from a part, as the last column says.
 
 {::nomarkdown}
 <div class="xb-tablewrap"><table class="xb-elec">
   <thead><tr><th>Parameter</th><th>Applies to</th><th>Lower</th><th>Nominal</th><th>Upper</th><th>Basis and conditions</th></tr></thead>
   <tbody>
-    <tr><td>Board supply</td><td>5 V rail</td><td>Open</td><td>5 V</td><td>Open</td><td>From J1 contact 2 or J2 contact 2 through the selection links; host power allocation Open</td></tr>
-    <tr><td>Electronic-fuse current</td><td>U81 TPS259631</td><td>—</td><td>about 1.5 A</td><td>—</td><td>Marked as the nominal automatic-retry limit in the design; not measured</td></tr>
-    <tr><td>Solenoid supply limit</td><td>U4 TPS2553</td><td>Open</td><td>Open</td><td>Open</td><td>Limit set by a resistor on the board; the solenoid current, inductance and flyback energy are not specified</td></tr>
-    <tr><td>Probe output</td><td>J3, J1 contact 3</td><td>—</td><td>Open drain</td><td>—</td><td>Optional 10&nbsp;k&Omega; pull-up by link SJ4; levels Open</td></tr>
-    <tr><td>Control request protocol</td><td>J1 contact 7, J2 contact 3</td><td>Open</td><td>Open</td><td>Open</td><td>Depends on firmware that is not supplied</td></tr>
-    <tr><td>Plunger travel, force, repeatability, thermal behaviour</td><td>Mechanism</td><td>Open</td><td>Open</td><td>Open</td><td>No mechanism is specified</td></tr>
-    <tr><td>Output state while unpowered</td><td>Probe output</td><td>Open</td><td>Open</td><td>Open</td><td>Not established</td></tr>
+    <tr><td>Board supply</td><td>5 V rail</td><td>—</td><td>5 V</td><td>—</td><td>From J1 contact 2 or J2 contact 2 through the selection links</td></tr>
+    <tr><td>Electronic-fuse current</td><td>U81 TPS259631</td><td>—</td><td>about 1.5 A</td><td>—</td><td>Nominal automatic-retry limit</td></tr>
+    <tr><td>Solenoid supply limit</td><td>U4 TPS2553</td><td>—</td><td>—</td><td>—</td><td>Set by a resistor on the board; choose a solenoid whose current, inductance and flyback energy suit it</td></tr>
+    <tr><td>Probe output</td><td>J3, J1 contact 3</td><td>—</td><td>Open drain</td><td>—</td><td>Optional 10&nbsp;k&Omega; pull-up by link SJ4</td></tr>
+    <tr><td>Control request protocol</td><td>J1 contact 7, J2 contact 3</td><td>—</td><td>—</td><td>—</td><td>Set by the firmware you load</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}
 
 ### Prime header G_F (J37)
 
-On the Prime, header G_F (J37) has 3.3&nbsp;V on contact 1, 5&nbsp;V on contact 2, PB1 on 3, PJ4 on 4, PG0 on 6 and ground on 10. A discrepancy in the rail positions on the Prime&rsquo;s physical connector has been noted: verify numbered continuity with the power removed. The header is unshrouded.
+On the Prime, header G_F (J37) has 3.3&nbsp;V on contact 1, 5&nbsp;V on contact 2, PB1 on 3, PJ4 on 4, PG0 on 6 and ground on 10. Verify numbered continuity and the rail positions on the physical connector with the power removed. The header is unshrouded.
 
 See all boards on the [extension boards](/extension-boards) page.

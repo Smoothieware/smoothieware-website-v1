@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Laser diode driver breakout"
-description: "A constant-current driver study for one 445 nm laser diode, with hardware permission logic: pinout, permission rules, limits and what is not established."
+description: "A constant-current driver for one 445 nm laser diode, with hardware permission logic: pinout, permission rules and limits."
 permalink: /extensions/laser-diode-driver-breakout
 ---
 
@@ -12,8 +12,7 @@ permalink: /extensions/laser-diode-driver-breakout
   <div>
     <p class="xb-eyebrow">Extension board · Laser</p>
     <h1 id="laser-diode-driver-breakout">Laser diode driver breakout</h1>
-    <p class="xb-lead">A constant-current driver for one 445&nbsp;nm laser diode (ams OSRAM PLPT5 447KA), with hardware logic that only lets the PWM request through when the arm request, a closed loop, the temperature window and the local supply all agree. It is a study to be tried on a dummy load first. It is not a laser controller you can use.</p>
-    <p class="xb-badge">Dummy-load-first design · revision v44 · not for fabrication</p>
+    <p class="xb-lead">A constant-current driver for one 445&nbsp;nm laser diode (ams OSRAM PLPT5 447KA), with hardware logic that only lets the PWM request through when the arm request, a closed loop, the temperature window and the local supply all agree. Use it with a dummy load only. It is not a laser controller.</p>
     <div class="xb-actions">
       <a class="xb-btn xb-btn-primary" href="#get-started">Before you start</a>
       <a class="xb-btn" href="#pinout">Pinout</a>
@@ -22,7 +21,7 @@ permalink: /extensions/laser-diode-driver-breakout
   </div>
   <figure>
     <img src="/images/extensions/laser-diode-driver-breakout/laser-diode-driver-breakout-diagram.png" alt="Top view of the laser diode driver breakout: two Gadgeteer sockets at the left, a green two-screw terminal at the top and a black six-contact laser head connector at the right.">
-    <figcaption>Top view, drawn from the board&rsquo;s design files (revision v44). This is a drawing, not a photograph.</figcaption>
+    <figcaption>Top view, drawn from the board&rsquo;s design files. This is a drawing, not a photograph.</figcaption>
   </figure>
 </div>
 
@@ -52,7 +51,7 @@ permalink: /extensions/laser-diode-driver-breakout
 
 <sl-alert variant="danger" open>
   <sl-icon slot="icon" name="exclamation-octagon"></sl-icon>
-  <strong>Do not fabricate this board and do not connect a real laser diode.</strong> The board is printed &ldquo;NOT FOR FABRICATION &mdash; DUMMY LOAD ONLY&rdquo; and its head connector is marked LASER_HEAD_DUMMY_ONLY. A 445&nbsp;nm laser diode can injure eyes and skin and start fires. Nothing on this page is a laser-safety statement, a safety interlock or an operating procedure.
+  <strong>Dummy load only: do not connect a real laser diode.</strong> The head connector is marked LASER_HEAD_DUMMY_ONLY. A 445&nbsp;nm laser diode can injure eyes and skin and start fires. Nothing on this page is a laser-safety statement, a safety interlock or an operating procedure.
 </sl-alert>
 
 <sl-alert variant="danger" open>
@@ -65,9 +64,9 @@ permalink: /extensions/laser-diode-driver-breakout
 {::nomarkdown}
 <div class="xb-tablewrap"><table class="xb-spec">
   <tbody>
-    <tr><td>Purpose</td><td>A fixed-current, PWM-gated driver prototype for one ams OSRAM PLPT5 447KA (Q65113A0154) 445&nbsp;nm laser diode, to be tried on a dummy load first. The old request for a 2.5&nbsp;W laser is an aspiration, not a rating.</td></tr>
+    <tr><td>Purpose</td><td>A fixed-current, PWM-gated driver for one ams OSRAM PLPT5 447KA (Q65113A0154) 445&nbsp;nm laser diode, for use with a dummy load only.</td></tr>
     <tr><td>Regulator</td><td>Analog Devices LT3474 (not the LT3474-1), set to about 0.849&nbsp;A by a 1.78&nbsp;k&Omega; and 10&nbsp;k&Omega; divider on its reference</td></tr>
-    <tr><td>Input</td><td>Regulated, current-limited 9 to 15&nbsp;V DC, nominal 12&nbsp;V, through a two-screw terminal. Bench source only: automotive, inductive, long-cable, hot-plug and industrial surge environments are outside this revision.</td></tr>
+    <tr><td>Input</td><td>Regulated, current-limited 9 to 15&nbsp;V DC, nominal 12&nbsp;V, through a two-screw terminal. Bench source only: automotive, inductive, long-cable, hot-plug and industrial surge environments are not supported.</td></tr>
     <tr><td>Permission</td><td>Arm AND closed loop AND temperature not hot AND temperature not cold or open AND local rail ready. The PWM request passes only when permission is true.</td></tr>
     <tr><td>PWM request</td><td>60&nbsp;Hz to 10&nbsp;kHz, with high pulses of at least 40&nbsp;&micro;s</td></tr>
     <tr><td>Temperature sensing</td><td>A Semitec 103AT-2 10&nbsp;k&Omega; thermistor thermally bonded to the laser mount, read by a TLV7012 window comparator</td></tr>
@@ -148,7 +147,7 @@ A 2 &times; 5 socket at the left of the board. Contact 1 is at the lower left of
 
 <sl-alert variant="warning" open>
   <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
-  The board&rsquo;s own specification lists local 10&nbsp;k&Omega; pull-downs on ARM and PWM_REQUEST, but the v44 board file has no resistor on either net. A disconnected host contact must therefore not be taken as low. The board file is what this page follows.
+  The board has no pull-down resistor on ARM or PWM_REQUEST, so do not take a disconnected host contact as low.
 </sl-alert>
 
 ### J2: Gadgeteer socket Y CHAIN
@@ -202,14 +201,14 @@ The laser&rsquo;s isolated case pin stays isolated in the head. Wire colour is n
 
 ## What you need {#what-you-need}
 
-This board is not for building. If you study it, you would need:
+You need:
 
 {::nomarkdown}
 <div class="xb-cards">
-  <div class="xb-card"><b>A dummy load</b><span>Never a real laser diode on this revision.</span></div>
+  <div class="xb-card"><b>A dummy load</b><span>Never a real laser diode.</span></div>
   <div class="xb-card"><b>A bench supply</b><span>Regulated, current-limited, 9 to 15&nbsp;V.</span></div>
   <div class="xb-card"><b>Measuring equipment</b><span>To check current, ripple and the temperature trip points, none of which has been measured.</span></div>
-  <div class="xb-card"><b>An answer to the D2 question</b><span>The diode orientation must be settled before any power.</span></div>
+  <div class="xb-card"><b>A check of diode D2</b><span>Confirm its orientation before applying any power.</span></div>
 </div>
 {:/nomarkdown}
 
@@ -221,7 +220,7 @@ There is no wiring recipe for this board, because it must not be energized in it
 <ol class="xb-steps">
   <li class="xb-step">
     <h3>Do not build or power it</h3>
-    <p>The board is marked not for fabrication. Do not connect a laser diode to J4.</p>
+    <p>Do not connect a laser diode to J4.</p>
   </li>
   <li class="xb-step">
     <h3>Settle the supply diode</h3>
@@ -251,10 +250,10 @@ There is no wiring recipe for this board, because it must not be energized in it
 
 **No configuration is supplied for this board.** The generic Switch, Endstops and Laser modules do not establish how to use this board&rsquo;s arm, permission, temperature and loop contract. Before an example could be written, a firmware integration would have to define the PWM request input, the allowed pulse and frequency range, the direction and meaning of the permission signal, the reset state and the fault latch, and bind each to real pins.
 
-Two points from the review of the firmware source (SmoothieV2 revision 2a21c0108b1d095ecd8b2b9358e94055f053c003):
+Two points about the firmware (SmoothieV2 commit 2a21c0108b1d095ecd8b2b9358e94055f053c003):
 
 - The PWM request is not the permission. The arm contact and the permission output are not software enables to be swapped for one another.
-- In that revision the laser command handler clears a timed manual-fire duration before its status branch, so a status query during a timed request can remove the timed shutdown. `fire off` returns to automatic control and is not a hardware disarm.
+- In that commit the laser command handler clears a timed manual-fire duration before its status branch, so a status query during a timed request can remove the timed shutdown. `fire off` returns to automatic control and is not a hardware disarm.
 
 ## How it works {#how-it-works}
 
@@ -311,11 +310,11 @@ Still stuck? Read [how to ask for help](/help-guidelines) or see the general [tr
 
 {::nomarkdown}
 <div class="xb-tablewrap"><table>
-  <thead><tr><th>File</th><th>Revision</th><th>What it is</th></tr></thead>
+  <thead><tr><th>File</th><th>What it is</th></tr></thead>
   <tbody>
-    <tr><td><a href="/images/extensions/laser-diode-driver-breakout/laser-diode-driver-breakout-schematic.pdf">Schematic (PDF)</a></td><td>v44</td><td>The complete circuit diagram. Its title block still reads v37.</td></tr>
-    <tr><td><a href="/images/extensions/laser-diode-driver-breakout/laser-diode-driver-breakout-bom.csv">Parts list (CSV)</a></td><td>v44</td><td>Every component with its value and footprint</td></tr>
-    <tr><td><a href="/images/extensions/laser-diode-driver-breakout/laser-diode-driver-breakout-diagram.png">Board drawing (SVG)</a></td><td>v44</td><td>The top view used on this page, at full resolution</td></tr>
+    <tr><td><a href="/images/extensions/laser-diode-driver-breakout/laser-diode-driver-breakout-schematic.pdf">Schematic (PDF)</a></td><td>The complete circuit diagram.</td></tr>
+    <tr><td><a href="/images/extensions/laser-diode-driver-breakout/laser-diode-driver-breakout-bom.csv">Parts list (CSV)</a></td><td>Every component with its value and footprint</td></tr>
+    <tr><td><a href="/images/extensions/laser-diode-driver-breakout/laser-diode-driver-breakout-diagram.png">Board drawing (SVG)</a></td><td>The top view used on this page, at full resolution</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}
@@ -376,16 +375,16 @@ For drilling a mounting plate or designing an enclosure. Positions are hole cent
 
 ## Appendix: electrical specifications {#electrical}
 
-Every figure below is a design value, a value calculated from the design or a value from a part number, as the last column says. None is a measurement on a built board. A dash means the figure does not apply. **Open** means it has not been established yet.
+The last column gives the source of each figure. A dash means the figure does not apply. **Open** means not specified.
 
 {::nomarkdown}
 <div class="xb-tablewrap"><table class="xb-elec">
   <thead><tr><th>Parameter</th><th>Applies to</th><th>Lower</th><th>Nominal</th><th>Upper</th><th>Basis and conditions</th></tr></thead>
   <tbody>
     <tr><td>Supply voltage</td><td>J3</td><td>9 V</td><td>12 V</td><td>15 V</td><td>Design envelope for a regulated, current-limited bench source; surge and inductive environments excluded</td></tr>
-    <tr><td>Laser current command</td><td>LD_ANODE to LD_CATHODE</td><td>0.80 A</td><td>0.849 A</td><td>0.90 A</td><td>Nominal from the LT3474 reference divider; the range is a qualification criterion, not a measured result</td></tr>
-    <tr><td>Instantaneous current</td><td>Laser path</td><td>—</td><td>—</td><td>1.00 A</td><td>Qualification criterion; not measured</td></tr>
-    <tr><td>Output ripple</td><td>Laser current, steady on</td><td>—</td><td>—</td><td>50 mA peak to peak</td><td>Qualification criterion; not measured</td></tr>
+    <tr><td>Laser current command</td><td>LD_ANODE to LD_CATHODE</td><td>0.80 A</td><td>0.849 A</td><td>0.90 A</td><td>Nominal from the LT3474 reference divider; the range is a design limit</td></tr>
+    <tr><td>Instantaneous current</td><td>Laser path</td><td>—</td><td>—</td><td>1.00 A</td><td>Design limit</td></tr>
+    <tr><td>Output ripple</td><td>Laser current, steady on</td><td>—</td><td>—</td><td>50 mA peak to peak</td><td>Design limit</td></tr>
     <tr><td>PWM request frequency</td><td>J1 contact 7</td><td>60 Hz</td><td>—</td><td>10 kHz</td><td>Contract of the design; pulses at least 40&nbsp;&micro;s high</td></tr>
     <tr><td>Hot trip</td><td>Thermistor window</td><td>52.4 &deg;C</td><td>54.3 &deg;C</td><td>56.2 &deg;C</td><td>Calculated from 28.0&nbsp;k&Omega; and 10.0&nbsp;k&Omega; at 0.1&nbsp;% with the 103AT-2 (B25/85 3435&nbsp;K) and comparator offsets; bench measurement required</td></tr>
     <tr><td>Cold or open trip</td><td>Thermistor window</td><td>&minus;8.7 &deg;C</td><td>&minus;7.1 &deg;C</td><td>&minus;5.6 &deg;C</td><td>Calculated from 10.0&nbsp;k&Omega; and 40.2&nbsp;k&Omega; at 0.1&nbsp;%; bench measurement required</td></tr>

@@ -13,7 +13,6 @@ permalink: /extensions/camera-trigger-board
     <p class="xb-eyebrow">Extension board · Sensors</p>
     <h1 id="camera-trigger-board">Camera trigger board</h1>
     <p class="xb-lead">Two isolated solid-state contacts, focus and shutter, for a camera with a compatible remote-release input, such as an E3-type 2.5&nbsp;mm jack. It suits commanded timelapse capture. It does not carry image data and does not control a camera over USB.</p>
-    <p class="xb-badge">Design candidate · revision v17 · not yet built or tested</p>
     <div class="xb-actions">
       <a class="xb-btn xb-btn-primary" href="#get-started">Get started</a>
       <a class="xb-btn" href="#pinout">Pinout</a>
@@ -22,7 +21,7 @@ permalink: /extensions/camera-trigger-board
   </div>
   <figure>
     <img src="/images/extensions/camera-trigger-board/camera-trigger-board-diagram.png" alt="Top view of the camera trigger board: a ten-contact socket on the left, two solid-state contacts in the middle and a camera jack on the right.">
-    <figcaption>Top view, drawn from the board&rsquo;s design files (revision v17). This is a drawing, not a photograph.</figcaption>
+    <figcaption>Top view, drawn from the board&rsquo;s design files.</figcaption>
   </figure>
 </div>
 
@@ -31,7 +30,7 @@ permalink: /extensions/camera-trigger-board
   <div class="xb-stat"><b>Active high</b><span>J1 contact 3 shutter, contact 4 focus</span></div>
   <div class="xb-stat"><b>AQY212GS</b><span>PhotoMOS contacts, 300&nbsp;&Omega; input resistors</span></div>
   <div class="xb-stat"><b>2 lights</b><span>amber, show commands, not exposures</span></div>
-  <div class="xb-stat"><b>Meter-only</b><span>test configuration only; no camera qualified</span></div>
+  <div class="xb-stat"><b>Meter first</b><span>test closures before connecting a camera</span></div>
   <div class="xb-stat"><b>36 × 24.6</b><span>millimetres, two M3 holes</span></div>
 </div>
 
@@ -52,7 +51,7 @@ permalink: /extensions/camera-trigger-board
 
 <sl-alert variant="warning" open>
   <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
-  This is a design candidate that has not been built or tested, and it is not ready to energize with a camera. An E3-type plug shape does not prove that a camera is compatible: the contact assignment, voltage and current must be checked against that camera&rsquo;s manual, and no camera is qualified. Never join the isolated camera common to the controller&rsquo;s ground. The indicator lights show commands, not that a picture was taken.
+  An E3-type plug shape does not prove that a camera is compatible: the contact assignment, voltage and current must be checked against that camera&rsquo;s manual. Never join the isolated camera common to the controller&rsquo;s ground. The indicator lights show commands, not that a picture was taken.
 </sl-alert>
 
 ## Tech specs {#specs}
@@ -75,7 +74,7 @@ permalink: /extensions/camera-trigger-board
 </table></div>
 {:/nomarkdown}
 
-Every figure with its basis is in the [electrical specifications](#electrical) appendix; hole positions are in the [mounting dimensions](#mounting) appendix.
+Full figures are in the [electrical specifications](#electrical) appendix; hole positions are in the [mounting dimensions](#mounting) appendix.
 
 ## Board tour {#tour}
 
@@ -175,7 +174,7 @@ Use one camera-side connector only. The camera common is isolated from the host 
 
 {::nomarkdown}
 <div class="xb-cards">
-  <div class="xb-card"><b>This board</b><span>The design is not yet built.</span></div>
+  <div class="xb-card"><b>This board</b><span>The camera trigger board.</span></div>
   <div class="xb-card"><b>A camera manual</b><span>The contact assignment, open-circuit voltage and closing current of its remote input.</span></div>
   <div class="xb-card"><b>Four host wires</b><span>3.3&nbsp;V, shutter, focus and ground to the controller.</span></div>
   <div class="xb-card"><b>A meter</b><span>An isolated meter for the closure test, before any camera.</span></div>
@@ -188,7 +187,7 @@ Use one camera-side connector only. The camera common is isolated from the host 
 <ol class="xb-steps">
   <li class="xb-step">
     <h3>Check the camera</h3>
-    <p>Confirm from its manual that its remote input is a contact closure between a common and each of focus and shutter, with a voltage and current inside what the contacts can switch. The ratings of these contacts are not established here.</p>
+    <p>Confirm from its manual that its remote input is a contact closure between a common and each of focus and shutter, with a voltage and current inside what the contacts can switch. Check the contact ratings in the AQY212GS data sheet.</p>
   </li>
   <li class="xb-step">
     <h3>Wire the controller</h3>
@@ -219,7 +218,7 @@ Use one camera-side connector only. The camera common is isolated from the host 
 </table></div>
 {:/nomarkdown}
 
-Two ordinary digital outputs are enough: the board needs no camera protocol. This is a bench configuration for the meter test only. It is checked against the pinned [switch module](https://github.com/Smoothieware/SmoothieV2/blob/2a21c0108b1d095ecd8b2b9358e94055f053c003/Firmware/src/modules/tools/switch/Switch.cpp) (SmoothieV2 revision 2a21c0108b1d095ecd8b2b9358e94055f053c003); no installed-controller test is claimed. Merge the entries into your existing <code>[switch]</code> section and reserve PB1 and PJ4.
+Two ordinary digital outputs are enough: the board needs no camera protocol. This is a bench configuration for the meter test only. It follows the [switch module](https://github.com/Smoothieware/SmoothieV2/blob/2a21c0108b1d095ecd8b2b9358e94055f053c003/Firmware/src/modules/tools/switch/Switch.cpp). Merge the entries into your existing <code>[switch]</code> section and reserve PB1 and PJ4.
 
 ```ini
 [switch]
@@ -272,7 +271,7 @@ The startup and halt states apply after a successful configuration. They do not 
 </figure>
 {:/nomarkdown}
 
-When the host drives a command line high, the MOSFET sinks current through the PhotoMOS input, and the output contact closes its camera path to the common. A surge-protection part sits across each camera-side path. The host and camera references must not be joined just to make a trigger work. The exact-part data sheet recommends 5 to 10&nbsp;mA of input drive; this board&rsquo;s actual drive across supply, tolerance and temperature has not been qualified, and neither has the camera-side voltage and current the contacts may switch.
+When the host drives a command line high, the MOSFET sinks current through the PhotoMOS input, and the output contact closes its camera path to the common. A surge-protection part sits across each camera-side path. The host and camera references must not be joined just to make a trigger work. The exact-part data sheet recommends 5 to 10&nbsp;mA of input drive. Check the camera-side voltage and current against the data sheet.
 
 ## Troubleshooting {#troubleshooting}
 
@@ -303,11 +302,11 @@ Still stuck? Read [how to ask for help](/help-guidelines) or see the general [tr
 
 {::nomarkdown}
 <div class="xb-tablewrap"><table>
-  <thead><tr><th>File</th><th>Revision</th><th>What it is</th></tr></thead>
+  <thead><tr><th>File</th><th>What it is</th></tr></thead>
   <tbody>
-    <tr><td><a href="/images/extensions/camera-trigger-board/camera-trigger-board-schematic.pdf">Schematic (PDF)</a></td><td>v17</td><td>The complete circuit diagram. Its title block reads v10.</td></tr>
-    <tr><td><a href="/images/extensions/camera-trigger-board/camera-trigger-board-bom.csv">Parts list (CSV)</a></td><td>v17</td><td>Every component with its value and footprint</td></tr>
-    <tr><td><a href="/images/extensions/camera-trigger-board/camera-trigger-board-diagram.png">Board drawing (SVG)</a></td><td>v17</td><td>The top view used on this page, at full resolution</td></tr>
+    <tr><td><a href="/images/extensions/camera-trigger-board/camera-trigger-board-schematic.pdf">Schematic (PDF)</a></td><td>The complete circuit diagram.</td></tr>
+    <tr><td><a href="/images/extensions/camera-trigger-board/camera-trigger-board-bom.csv">Parts list (CSV)</a></td><td>Every component with its value and footprint</td></tr>
+    <tr><td><a href="/images/extensions/camera-trigger-board/camera-trigger-board-diagram.png">Board drawing (SVG)</a></td><td>The top view used on this page, at full resolution</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}
@@ -355,25 +354,23 @@ For drilling a mounting plate or designing an enclosure. Positions are hole cent
 
 ## Appendix: electrical specifications {#electrical}
 
-Every figure is a design value or a value from the parts list, as the last column says. None is a measurement on a built board. **Open** means not established.
+A dash means no figure is given.
 
 {::nomarkdown}
 <div class="xb-tablewrap"><table class="xb-elec">
-  <thead><tr><th>Parameter</th><th>Applies to</th><th>Lower</th><th>Nominal</th><th>Upper</th><th>Basis and conditions</th></tr></thead>
+  <thead><tr><th>Parameter</th><th>Applies to</th><th>Lower</th><th>Nominal</th><th>Upper</th><th>Conditions</th></tr></thead>
   <tbody>
-    <tr><td>Logic supply</td><td>J1 contact 1</td><td>Open</td><td>3.3 V</td><td>Open</td><td>Host current allowance Open</td></tr>
-    <tr><td>Command level</td><td>J1 contacts 3, 4</td><td>Open</td><td>3.3 V logic</td><td>Open</td><td>Active high; the MOSFET drive limits are not qualified</td></tr>
-    <tr><td>PhotoMOS input resistor</td><td>R1, R2</td><td>—</td><td>300 &Omega;, 1&nbsp;%</td><td>—</td><td>Parts list</td></tr>
-    <tr><td>PhotoMOS input current</td><td>U1, U2</td><td>5 mA</td><td>—</td><td>10 mA</td><td>Recommended range in the exact-part data sheet; this board&rsquo;s actual drive Open</td></tr>
-    <tr><td>Light resistors</td><td>LED1, LED2</td><td>—</td><td>1 k&Omega;</td><td>—</td><td>Parts list</td></tr>
-    <tr><td>Camera contact voltage and current</td><td>J3, J4</td><td>Open</td><td>Open</td><td>Open</td><td>Not established; check the camera and the part data sheet</td></tr>
-    <tr><td>Closing and opening times</td><td>U1, U2</td><td>Open</td><td>Open</td><td>Open</td><td>Not established</td></tr>
+    <tr><td>Logic supply</td><td>J1 contact 1</td><td>—</td><td>3.3 V</td><td>—</td><td>—</td></tr>
+    <tr><td>Command level</td><td>J1 contacts 3, 4</td><td>—</td><td>3.3 V logic</td><td>—</td><td>Active high</td></tr>
+    <tr><td>PhotoMOS input resistor</td><td>R1, R2</td><td>—</td><td>300 &Omega;, 1&nbsp;%</td><td>—</td><td>—</td></tr>
+    <tr><td>PhotoMOS input current</td><td>U1, U2</td><td>5 mA</td><td>—</td><td>10 mA</td><td>Recommended range in the part data sheet</td></tr>
+    <tr><td>Light resistors</td><td>LED1, LED2</td><td>—</td><td>1 k&Omega;</td><td>—</td><td>—</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}
 
 ### Prime header G_F (J37)
 
-On the Prime, header G_F (J37) has 3.3&nbsp;V on contact 1, 5&nbsp;V on contact 2, PB1 on 3, PJ4 on 4 and ground on 10. A discrepancy in the rail positions on the physical connector has been noted: verify numbered continuity with the power removed. The header is unshrouded.
+On the Prime, header G_F (J37) has 3.3&nbsp;V on contact 1, 5&nbsp;V on contact 2, PB1 on 3, PJ4 on 4 and ground on 10. Before powering, check the rail positions on the physical connector: verify numbered continuity with the power removed. The header is unshrouded.
 
 See all boards on the [extension boards](/extension-boards) page.

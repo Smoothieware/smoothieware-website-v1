@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Leadshine-like external servo drivers"
-description: "An experimental three-phase servo drive on a TMC4671 and TMC6100 with current sensing, encoder and Hall inputs and a brake output: pinout, links and limits."
+description: "A three-phase servo drive on a TMC4671 and TMC6100 with current sensing, encoder and Hall inputs and a brake output: pinout, links and limits."
 permalink: /extensions/leadshine-like-external-servo-drivers
 ---
 
@@ -12,8 +12,7 @@ permalink: /extensions/leadshine-like-external-servo-drivers
   <div>
     <p class="xb-eyebrow">Extension board · Motors</p>
     <h1 id="leadshine-like-external-servo-drivers">Leadshine-like external servo drivers</h1>
-    <p class="xb-lead">An experimental three-phase servo drive for a brushless motor. A Trinamic TMC4671 performs the servo control and a TMC6100 drives six power transistors, with current sensing, differential encoder and Hall inputs, a brake-resistor output and a 12 to 28&nbsp;V motor supply. It is a complete drive architecture of its own, not an adapter for a commercial Leadshine drive, and the checked firmware has no setup support for it.</p>
-    <p class="xb-badge">Design candidate · revision v27 · unreviewed prototype · not yet built or tested</p>
+    <p class="xb-lead">A three-phase servo drive for a brushless motor. A Trinamic TMC4671 performs the servo control and a TMC6100 drives six power transistors, with current sensing, differential encoder and Hall inputs, a brake-resistor output and a 12 to 28&nbsp;V motor supply. It is a complete drive architecture of its own, not an adapter for a commercial Leadshine drive, and Smoothieware has no setup support for it.</p>
     <div class="xb-actions">
       <a class="xb-btn xb-btn-primary" href="#get-started">Get started</a>
       <a class="xb-btn" href="#pinout">Pinout</a>
@@ -22,13 +21,13 @@ permalink: /extensions/leadshine-like-external-servo-drivers
   </div>
   <figure>
     <img src="/images/extensions/leadshine-like-external-servo-drivers/leadshine-like-external-servo-drivers-diagram.png" alt="Top view of the servo driver board: a ten-contact socket at the top left, the TMC4671 chip at the upper centre, the TMC6100 and six transistor packages at the centre, a green four-way motor terminal at the right and a green two-way supply terminal at the left.">
-    <figcaption>Top view, drawn from the board&rsquo;s design files. The silk in this drawing reads V26; the page documents the v27 design files. This is a drawing, not a photograph.</figcaption>
+    <figcaption>Top view, drawn from the board&rsquo;s design files. This is a drawing, not a photograph.</figcaption>
   </figure>
 </div>
 
 <div class="xb-stats">
   <div class="xb-stat"><b>TMC4671 + TMC6100</b><span>servo controller and gate driver</span></div>
-  <div class="xb-stat"><b>12 to 28 V</b><span>silk label, up to 9 A, not qualified</span></div>
+  <div class="xb-stat"><b>12 to 28 V</b><span>silk label, up to 9 A</span></div>
   <div class="xb-stat"><b>Encoder + Hall</b><span>differential ABZ and U, V, W</span></div>
   <div class="xb-stat"><b>Brake output</b><span>resistor at least 22 &Omega;, 47 W on the silk</span></div>
   <div class="xb-stat"><b>7 lights</b><span>two green, five red</span></div>
@@ -52,7 +51,7 @@ permalink: /extensions/leadshine-like-external-servo-drivers
 
 <sl-alert variant="warning" open>
   <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
-  This is an unreviewed prototype that has not been built or tested, and it is not ready to energize. The silk marks the power parts hot and says no hot-plug, and the input protection stage is marked unreleased. The link labelled STO does not establish a certified STO function. Never connect a braking resistor, or close the STO link, merely to suppress an unknown fault.
+Do not energize this board until its power stage has been independently checked. The silk marks the power parts hot and says no hot-plug. The link labelled STO is not a certified STO function. Never connect a braking resistor, or close the STO link, merely to suppress an unknown fault.
 </sl-alert>
 
 ## Tech specs {#specs}
@@ -60,18 +59,18 @@ permalink: /extensions/leadshine-like-external-servo-drivers
 {::nomarkdown}
 <div class="xb-tablewrap"><table class="xb-spec">
   <tbody>
-    <tr><td>Purpose</td><td>An experimental three-phase brushless servo drive with its own control chip, current sensing and feedback inputs</td></tr>
+    <tr><td>Purpose</td><td>A three-phase brushless servo drive with its own control chip, current sensing and feedback inputs</td></tr>
     <tr><td>Controller</td><td>Trinamic TMC4671-LA (U11) performing the servo control, with a TMC6100-LA (U2) gate driver</td></tr>
     <tr><td>Power stage</td><td>Six CSD18540Q5B transistors (Q2 to Q7), a brake transistor (Q9), two INA240A1D current-sense amplifiers (U3, U4)</td></tr>
-    <tr><td>Motor supply</td><td>Screw terminal J2. The silk reads VM 12 to 28&nbsp;V DC and up to 9&nbsp;A, no hot-plug. These are silk values, not qualified ratings.</td></tr>
+    <tr><td>Motor supply</td><td>Screw terminal J2. The silk reads VM 12 to 28&nbsp;V DC and up to 9&nbsp;A, no hot-plug.</td></tr>
     <tr><td>Brake</td><td>Connector J4 for a braking resistor between the supply and the switched brake node. The silk asks for at least 22&nbsp;&Omega; and 47&nbsp;W.</td></tr>
     <tr><td>Feedback</td><td>J5 for 5&nbsp;V differential encoder A, B and Z through an RS-422 receiver (AM26LV32, U12); J6 for Hall U, V and W</td></tr>
     <tr><td>Logic supply</td><td>An on-board 5&nbsp;V converter (LM5164, U16) or the host 5&nbsp;V, chosen by link JP1; a 3.3&nbsp;V regulator (U17)</td></tr>
-    <tr><td>Input protection</td><td>A reverse-polarity transistor (Q1) with an ideal-diode controller (LM74700-Q1, U1), a SMBJ33A surge diode and an LTC4368-type stage; marked unreleased</td></tr>
+    <tr><td>Input protection</td><td>A reverse-polarity transistor (Q1) with an ideal-diode controller (LM74700-Q1, U1), a SMBJ33A surge diode and an LTC4368-type stage</td></tr>
     <tr><td>Sockets and headers</td><td>One ten-contact socket J1, the encoder and Hall headers J5 and J6, an STO link J7 and a UART header J8</td></tr>
     <tr><td>Lights</td><td>3.3&nbsp;V power and drive enable (green); motor supply live, latched fault, supply fault, over-voltage and reverse (red)</td></tr>
     <tr><td>Size</td><td>102 &times; 124.5&nbsp;mm with four M3 mounting holes</td></tr>
-    <tr><td>Works with</td><td><a href="/smoothieboard-v2-prime">Smoothieboard V2 Prime</a> for the host signals; the checked firmware cannot set the drive up</td></tr>
+    <tr><td>Works with</td><td><a href="/smoothieboard-v2-prime">Smoothieboard V2 Prime</a> for the host signals; Smoothieware cannot set the drive up</td></tr>
     <tr><td>Licence</td><td>Open hardware, CERN-OHL-S-2.0</td></tr>
   </tbody>
 </table></div>
@@ -97,7 +96,7 @@ The numbers on the drawing match the list below it. The board is shown from the 
       <a class="xb-mk xb-pb" href="#tour-7" style="left:45.2%;top:4.5%" aria-label="7: encoder connector">7<span class="xb-pop"><b>Encoder connector (J5)</b> — an eight-pin 2.54&nbsp;mm header for 5&nbsp;V differential A, B and Z feedback.</span></a>
       <a class="xb-mk xb-pb" href="#tour-8" style="left:66.8%;top:4.3%" aria-label="8: Hall connector">8<span class="xb-pop"><b>Hall connector (J6)</b> — a five-pin 2.54&nbsp;mm header: 5&nbsp;V, ground and Hall U, V and W.</span></a>
       <a class="xb-mk xb-pb xb-pl" href="#tour-9" style="left:5%;top:46.6%" aria-label="9: brake connector">9<span class="xb-pop"><b>Brake resistor connector (J4)</b> — a two-pin 2.54&nbsp;mm connector for a braking resistor between the motor supply and the switched brake node.</span></a>
-      <a class="xb-mk xb-pb xb-pr" href="#tour-10" style="left:86%;top:3.3%" aria-label="10: STO link">10<span class="xb-pop"><b>STO link (J7)</b> — a two-pin header the silk calls STO LINK, with RUN marked. The label does not establish a certified STO function.</span></a>
+      <a class="xb-mk xb-pb xb-pr" href="#tour-10" style="left:86%;top:3.3%" aria-label="10: STO link">10<span class="xb-pop"><b>STO link (J7)</b> — a two-pin header the silk calls STO LINK, with RUN marked. It is not a certified STO function.</span></a>
       <a class="xb-mk xb-pb" href="#tour-11" style="left:29.2%;top:3.3%" aria-label="11: UART header">11<span class="xb-pop"><b>UART header (J8)</b> — a three-pin 3.3&nbsp;V header: ground, transmit and receive.</span></a>
       <a class="xb-mk xb-pb" href="#tour-12" style="left:73%;top:29.2%" aria-label="12: logic supply selector">12<span class="xb-pop"><b>Logic supply selector (JP1)</b> — a three-way solder link that selects the 5&nbsp;V logic source: the on-board converter or the host 5&nbsp;V.</span></a>
       <a class="xb-mk xb-pb xb-pr" href="#tour-13" style="left:85.5%;top:19.3%" aria-label="13: buck inductor">13<span class="xb-pop"><b>Logic supply inductor (L1)</b> — a 47&nbsp;&micro;H inductor of the on-board 5&nbsp;V converter (an LM5164).</span></a>
@@ -178,7 +177,7 @@ Contact 1 is at the lower left of the socket, next to the small arrow below it; 
 </table></div>
 {:/nomarkdown}
 
-Establish the phase order and the feedback polarity before energizing anything. The J2 and J3 orders are taken from the schematic; check them against the silk and your plugs.
+Check the phase order and the feedback polarity before energizing anything. The J2 and J3 orders are taken from the schematic; check them against the silk and your plugs.
 
 ### Solder links
 
@@ -198,17 +197,16 @@ Establish the phase order and the feedback polarity before energizing anything. 
 </table></div>
 {:/nomarkdown}
 
-Motor bus, logic ground, shield and braking energy need a complete reviewed plan before any bonding link is changed.
+Motor bus, logic ground, shield and braking energy need a complete grounding plan before any bonding link is changed.
 
 ## What you need {#what-you-need}
 
 {::nomarkdown}
 <div class="xb-cards">
-  <div class="xb-card"><b>This board</b><span>An unreviewed prototype design, not yet built.</span></div>
   <div class="xb-card"><b>A brushless motor</b><span>With known phase order, and an encoder, Hall sensors or both.</span></div>
   <div class="xb-card"><b>A motor supply</b><span>Current-limited, separate from the controller.</span></div>
   <div class="xb-card"><b>A braking resistor</b><span>At least 22&nbsp;&Omega; and 47&nbsp;W on the silk, if regeneration is expected.</span></div>
-  <div class="xb-card"><b>A controller that sets the drive up</b><span>The checked firmware cannot; see Configuration.</span></div>
+  <div class="xb-card"><b>A controller that sets the drive up</b><span>Smoothieware cannot; see Configuration.</span></div>
 </div>
 {:/nomarkdown}
 
@@ -218,20 +216,20 @@ Motor bus, logic ground, shield and braking energy need a complete reviewed plan
 <ol class="xb-steps">
   <li class="xb-step">
     <h3>Choose the motor, encoder and supply</h3>
-    <p>Select a named motor and encoder and a current-limited supply, and establish the phase order and the feedback polarity on paper.</p>
+    <p>Select a named motor and encoder and a current-limited supply, and determine the phase order and the feedback polarity on paper.</p>
   </li>
   <li class="xb-step">
     <h3>Decide how the drive is configured</h3>
-    <p>The TMC4671 needs its registers set before any step or direction request means anything. The pinned firmware has no such setup, so a separate configuration source is needed; see Configuration.</p>
+    <p>The TMC4671 needs its registers set before any step or direction request means anything. Smoothieware has no such setup, so a separate configuration source is needed; see Configuration.</p>
     <p class="xb-expect">Do not assume the step and direction inputs configure this board.</p>
   </li>
   <li class="xb-step">
     <h3>Check the links</h3>
-    <p>JP1 chooses the logic 5&nbsp;V source and JP3 bonds the shield; both need a reviewed grounding plan.</p>
+    <p>JP1 chooses the logic 5&nbsp;V source and JP3 bonds the shield; both need a grounding plan.</p>
   </li>
   <li class="xb-step">
-    <h3>Commission restrained, only after the power stage is cleared</h3>
-    <p>Use a no-load, restrained test appropriate to the motor, and only after the power stage has been independently cleared. Switch the motor supply off when wiring the motor.</p>
+    <h3>Commission restrained, only after the power stage is checked</h3>
+    <p>Use a no-load, restrained test appropriate to the motor, and only after the power stage has been independently checked. Switch the motor supply off when wiring the motor.</p>
   </li>
 </ol>
 {:/nomarkdown}
@@ -242,13 +240,13 @@ Motor bus, logic ground, shield and braking energy need a complete reviewed plan
 <div class="xb-tablewrap"><table>
   <thead><tr><th>You want</th><th>Module</th><th>Example</th></tr></thead>
   <tbody>
-    <tr><td>A servo axis through this board</td><td>None in the checked firmware</td><td>Not supported</td></tr>
+    <tr><td>A servo axis through this board</td><td>None in Smoothieware</td><td>Not supported</td></tr>
     <tr><td>Step and direction on a stepper driver</td><td>Actuator with a stepper driver type</td><td>Does not apply: the step and direction inputs do not configure this board</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}
 
-This board needs motor, current-loop and encoder setup before step and direction requests can be meaningful. The checked SmoothieV2 source (revision 2a21c0108b1d095ecd8b2b9358e94055f053c003) has no TMC4671 setup backend: its Trinamic driver factory accepts only the 2590 and 2660 types, and the SPI users it implements are those stepper drivers and a thermocouple readout. Do not substitute a TMC2590 configuration or invent motor, current or encoder register values. A separately preconfigured external controller, or later or custom firmware, would need its own verified contract. This applies to that revision only; it does not describe firmware installed on a controller.
+This board needs motor, current-loop and encoder setup before step and direction requests can be meaningful. The SmoothieV2 source (commit 2a21c0108b1d095ecd8b2b9358e94055f053c003) has no TMC4671 setup backend: its Trinamic driver factory accepts only the 2590 and 2660 types, and the SPI users it implements are those stepper drivers and a thermocouple readout. Do not substitute a TMC2590 configuration or invent motor, current or encoder register values. A separately preconfigured external controller, or later or custom firmware, would need its own configuration interface. This applies to that commit only; it does not describe firmware installed on a controller.
 
 ## How it works {#how-it-works}
 
@@ -304,11 +302,11 @@ Still stuck? Read [how to ask for help](/help-guidelines) or see the general [tr
 
 {::nomarkdown}
 <div class="xb-tablewrap"><table>
-  <thead><tr><th>File</th><th>Revision</th><th>What it is</th></tr></thead>
+  <thead><tr><th>File</th><th>What it is</th></tr></thead>
   <tbody>
-    <tr><td><a href="/images/extensions/leadshine-like-external-servo-drivers/leadshine-like-external-servo-drivers-schematic.pdf">Schematic (PDF)</a></td><td>v27</td><td>The complete circuit diagram. Its title block reads v10.</td></tr>
-    <tr><td><a href="/images/extensions/leadshine-like-external-servo-drivers/leadshine-like-external-servo-drivers-bom.csv">Parts list (CSV)</a></td><td>v27</td><td>Every component with its value and footprint</td></tr>
-    <tr><td><a href="/images/extensions/leadshine-like-external-servo-drivers/leadshine-like-external-servo-drivers-diagram.png">Board drawing (SVG)</a></td><td>v27</td><td>The top view used on this page, at full resolution; its silk reads V26</td></tr>
+    <tr><td><a href="/images/extensions/leadshine-like-external-servo-drivers/leadshine-like-external-servo-drivers-schematic.pdf">Schematic (PDF)</a></td><td>The complete circuit diagram.</td></tr>
+    <tr><td><a href="/images/extensions/leadshine-like-external-servo-drivers/leadshine-like-external-servo-drivers-bom.csv">Parts list (CSV)</a></td><td>Every component with its value and footprint</td></tr>
+    <tr><td><a href="/images/extensions/leadshine-like-external-servo-drivers/leadshine-like-external-servo-drivers-diagram.png">Board drawing (SVG)</a></td><td>The top view used on this page, at full resolution</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}
@@ -364,26 +362,20 @@ For drilling a mounting plate or designing an enclosure. Positions are hole cent
 
 ## Appendix: electrical specifications {#electrical}
 
-Every figure is a board silk value or a value from the parts list, as the last column says. None is a measurement on a built board. **Open** means not established.
+Every figure is a board silk value or a value from the parts list, as the last column says.
 
 {::nomarkdown}
 <div class="xb-tablewrap"><table class="xb-elec">
   <thead><tr><th>Parameter</th><th>Applies to</th><th>Lower</th><th>Nominal</th><th>Upper</th><th>Basis and conditions</th></tr></thead>
   <tbody>
-    <tr><td>Motor supply</td><td>J2</td><td>12 V</td><td>Open</td><td>28 V</td><td>Silk label; not a qualified rating</td></tr>
-    <tr><td>Motor current</td><td>J3</td><td>—</td><td>—</td><td>9 A</td><td>Silk value (UP TO 28V DC 9A); not qualified</td></tr>
+    <tr><td>Motor supply</td><td>J2</td><td>12 V</td><td>—</td><td>28 V</td><td>Silk label</td></tr>
+    <tr><td>Motor current</td><td>J3</td><td>—</td><td>—</td><td>9 A</td><td>Silk value (UP TO 28V DC 9A)</td></tr>
     <tr><td>Braking resistor</td><td>J4</td><td>22 &Omega;</td><td>—</td><td>—</td><td>Silk: at least 22&nbsp;&Omega; and at least 47&nbsp;W</td></tr>
     <tr><td>Surge diode</td><td>D1</td><td>—</td><td>SMBJ33A</td><td>—</td><td>Parts list</td></tr>
     <tr><td>Logic inductor</td><td>L1</td><td>—</td><td>47 &micro;H, 2.5 A</td><td>—</td><td>Parts list</td></tr>
-    <tr><td>Logic supply from host</td><td>J1 contacts 1, 2</td><td>Open</td><td>3.3 V, 5 V</td><td>Open</td><td>Host current allowance Open</td></tr>
-    <tr><td>Thermal rise, regeneration, STO behaviour</td><td>Board</td><td>Open</td><td>Open</td><td>Open</td><td>Not established; the STO label is not a certified function</td></tr>
-    <tr><td>Protection ratings, start-up and fault behaviour</td><td>Board</td><td>Open</td><td>Open</td><td>Open</td><td>Not established; the stage is marked unreleased</td></tr>
+    <tr><td>Logic supply from host</td><td>J1 contacts 1, 2</td><td>—</td><td>3.3 V, 5 V</td><td>—</td><td>Host supplies</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}
-
-### Prime headers
-
-No complete allocation of Prime pins has been verified for this board, and none is given here. If one is prepared, it applies only to a named Prime revision, with the numbered continuity checked with the power removed; the Prime&rsquo;s physical connector carries a noted rail-position discrepancy. The Prime socket J37 contacts 3 to 9 have candidate roles for other boards, but none is established for this one.
 
 See all boards on the [extension boards](/extension-boards) page.

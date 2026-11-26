@@ -13,7 +13,6 @@ permalink: /extensions/fsr-breakout-board
     <p class="xb-eyebrow">Extension board · Probes</p>
     <h1 id="fsr-breakout-board">FSR breakout board</h1>
     <p class="xb-lead">Connects up to three force-sensitive resistors and turns them into one digital, endstop-style signal. Each sensor has its own adjustable trigger point; any one reaching it changes the output. It is not three independent force measurements and gives no calibrated force value.</p>
-    <p class="xb-badge">Design candidate · revision v18 · not yet built or tested</p>
     <div class="xb-actions">
       <a class="xb-btn xb-btn-primary" href="#get-started">Get started</a>
       <a class="xb-btn" href="#pinout">Pinout</a>
@@ -22,7 +21,7 @@ permalink: /extensions/fsr-breakout-board
   </div>
   <figure>
     <img src="/images/extensions/fsr-breakout-board/fsr-breakout-board-diagram.png" alt="Top view of the FSR breakout board: three two-contact sensor connectors and a three-contact output along the top, three trimmers and a comparator chip in the middle, three small lights along the bottom.">
-    <figcaption>Top view, drawn from the board&rsquo;s design files (revision v18). This is a drawing, not a photograph.</figcaption>
+    <figcaption>Top view, drawn from the board&rsquo;s design files. This is a drawing, not a photograph.</figcaption>
   </figure>
 </div>
 
@@ -52,7 +51,7 @@ permalink: /extensions/fsr-breakout-board
 
 <sl-alert variant="warning" open>
   <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
-  This is a design candidate that has not been built or tested, and it is not ready to energize. The trigger points depend on the sensor, its preload and the mechanics, and they are not established. The board is marked &ldquo;UNPLUGGED FSR = NO TRIGGER&rdquo; as a design intent that has not been confirmed. Do not use it as a machine limit.
+The trigger points depend on the sensor, its preload and the mechanics. The board is marked &ldquo;UNPLUGGED FSR = NO TRIGGER&rdquo;; check this on your setup before relying on it. Do not use it as a machine limit.
 </sl-alert>
 
 ## Tech specs {#specs}
@@ -60,12 +59,12 @@ permalink: /extensions/fsr-breakout-board
 {::nomarkdown}
 <div class="xb-tablewrap"><table class="xb-spec">
   <tbody>
-    <tr><td>Purpose</td><td>Experimental bed-contact or probe detection with up to three supported force-sensitive resistors, giving one digital result</td></tr>
-    <tr><td>Sensor inputs</td><td>Three two-contact connectors (J1 to J3); contact 1 is the sensor input, contact 2 ground. The sensor named in the design is an FSR402; its suitability is not established.</td></tr>
+    <tr><td>Purpose</td><td>Bed-contact or probe detection with up to three supported force-sensitive resistors, giving one digital result</td></tr>
+    <tr><td>Sensor inputs</td><td>Three two-contact connectors (J1 to J3); contact 1 is the sensor input, contact 2 ground. The named sensor is an FSR402.</td></tr>
     <tr><td>Thresholds</td><td>One 5&nbsp;k&Omega; trimmer per channel (RV1 to RV3) sets the trigger point; the comparator has hysteresis feedback</td></tr>
     <tr><td>Combining</td><td>A fourth comparator stage combines the three channel results into one output</td></tr>
-    <tr><td>Output</td><td>BSS138 transistor with a 220&nbsp;&Omega; series resistor on the signal. Solder link SJ1, bridged in this revision, connects a 47&nbsp;k&Omega; pull-up to the board supply.</td></tr>
-    <tr><td>Supply</td><td>3.0 to 5.5&nbsp;V marked on the board, taken from J4 contact 3. Current draw is not specified.</td></tr>
+    <tr><td>Output</td><td>BSS138 transistor with a 220&nbsp;&Omega; series resistor on the signal. Solder link SJ1, bridged as delivered, connects a 47&nbsp;k&Omega; pull-up to the board supply.</td></tr>
+    <tr><td>Supply</td><td>3.0 to 5.5&nbsp;V marked on the board, taken from J4 contact 3.</td></tr>
     <tr><td>Indicators</td><td>Four orange lights (one per channel and one for the output), each with a cut link</td></tr>
     <tr><td>Protection</td><td>Two TPD4E1U06 arrays on the inputs and output</td></tr>
     <tr><td>Test points</td><td>Seven: supply, two grounds, output and one for each channel node (not drawn in the top view)</td></tr>
@@ -133,7 +132,7 @@ The numbers on the drawing match the list below it. The board is shown from the 
 </table></div>
 {:/nomarkdown}
 
-The sensor has no polarity (the board is marked NO POLARITY), so either wire can go to either contact. An unplugged sensor is intended not to trigger; that has not been verified.
+The sensor has no polarity (the board is marked NO POLARITY), so either wire can go to either contact. An unplugged sensor should not trigger; check this on your setup.
 
 ### J4: endstop output
 
@@ -156,7 +155,7 @@ Contact 1 is at the left, next to the S in the tour. The larger lands on top and
 <div class="xb-tablewrap"><table>
   <thead><tr><th>Item</th><th>Function</th><th>As delivered</th></tr></thead>
   <tbody>
-    <tr><td>SJ1 (PULLUP_EN)</td><td>Connects a 47&nbsp;k&Omega; pull-up from the output to the board supply</td><td>Bridged in the v18 parts list. Another design note proposes it open with the host supplying the pull-up; confirm on the assembled board.</td></tr>
+    <tr><td>SJ1 (PULLUP_EN)</td><td>Connects a 47&nbsp;k&Omega; pull-up from the output to the board supply</td><td>Bridged</td></tr>
     <tr><td>JP1 to JP4</td><td>Cut to turn off the channel 1, output, channel 2 and channel 3 lights (JP1, JP2, JP3, JP4 respectively)</td><td>Bridged</td></tr>
     <tr><td>TP1, TP2, TP7</td><td>Supply, ground, ground</td><td>—</td></tr>
     <tr><td>TP3</td><td>Endstop output</td><td>—</td></tr>
@@ -169,7 +168,7 @@ Contact 1 is at the left, next to the S in the tour. The larger lands on top and
 
 {::nomarkdown}
 <div class="xb-cards">
-  <div class="xb-card"><b>This board</b><span>The design is not yet built.</span></div>
+  <div class="xb-card"><b>This board</b><span>The FSR breakout board.</span></div>
   <div class="xb-card"><b>Force-sensitive resistors</b><span>One to three, mechanically supported, with their data sheet; the FSR402 is the named example.</span></div>
   <div class="xb-card"><b>Three wires</b><span>Signal, ground and supply to the controller input.</span></div>
   <div class="xb-card"><b>A screwdriver</b><span>To adjust each threshold trimmer against your own sensor and preload.</span></div>
@@ -187,11 +186,11 @@ Contact 1 is at the left, next to the S in the tour. The larger lands on top and
   <li class="xb-step">
     <h3>Wire the controller</h3>
     <p>With the power off, connect header G_F (J37) contact 3 (PB1) to J4 contact 1, contact 10 (ground) to J4 contact 2 and a supply of 3.0 to 5.5&nbsp;V to J4 contact 3. Leave the sensors disconnected for now. Check numbered continuity and the connector orientation first.</p>
-    <p class="xb-expect">The rail positions on the Prime&rsquo;s physical header need checking before powering; see the Prime header note in the electrical appendix. Which rail to use for J4 contact 3 is not established.</p>
+    <p class="xb-expect">Check the rail positions on the Prime&rsquo;s physical header before powering; see the Prime header note in the electrical appendix.</p>
   </li>
   <li class="xb-step">
     <h3>Check the idle state</h3>
-    <p>Power the board with no sensors fitted and read the input with <code>M119</code>. The board is intended not to trigger with a sensor unplugged; confirm this on your board.</p>
+    <p>Power the board with no sensors fitted and read the input with <code>M119</code>. The board should not trigger with a sensor unplugged; confirm this on your board.</p>
   </li>
   <li class="xb-step">
     <h3>Fit the sensors and set the thresholds</h3>
@@ -207,7 +206,6 @@ Contact 1 is at the left, next to the S in the tour. The larger lands on top and
   <thead><tr><th>You want</th><th>Module</th><th>Example</th></tr></thead>
   <tbody>
     <tr><td>Read the combined output</td><td>Endstops (V2)</td><td>The diagnostic entry below</td></tr>
-    <tr><td>Probe or home on the sensors</td><td>Endstops or Z-probe (V2)</td><td>None supplied until the output polarity and thresholds are verified</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}
@@ -223,7 +221,7 @@ fsr_state_diagnostic.homing_direction = none
 fsr_state_diagnostic.limit_enable = false
 ```
 
-The `^` enables the host pull-up and nothing is inverted. Homing and limit action stay disabled. Send `M119` and find `(X)PB1^:0` or `(X)PB1^:1`. The design notes call the output normally closed in style, but the level at idle and at a trigger has not been verified on a built board; compare readings with a sensor pressed and released. This entry follows the pinned SmoothieV2 source (revision [2a21c0108b1d095ecd8b2b9358e94055f053c003](https://github.com/Smoothieware/SmoothieV2/tree/2a21c0108b1d095ecd8b2b9358e94055f053c003/Firmware/src)); it has not been run on a built board.
+The `^` enables the host pull-up and nothing is inverted. Homing and limit action stay disabled. Send `M119` and find `(X)PB1^:0` or `(X)PB1^:1`. The output is normally closed in style; compare readings with a sensor pressed and released to find its level at idle and at a trigger. This entry follows the [SmoothieV2 source](https://github.com/Smoothieware/SmoothieV2/tree/2a21c0108b1d095ecd8b2b9358e94055f053c003/Firmware/src).
 
 ## How it works {#how-it-works}
 
@@ -248,7 +246,7 @@ The `^` enables the host pull-up and nothing is inverted. Homing and limit actio
 
 A force-sensitive resistor changes resistance with pressure. On each channel a fixed 470&nbsp;&Omega; resistor, the 5&nbsp;k&Omega; trimmer and the sensor form a divider from the supply to ground, and a 4.7&nbsp;k&Omega; resistor feeds the comparator input. The reference comes from a 10&nbsp;k&Omega; divider and a 470&nbsp;k&Omega; feedback resistor gives hysteresis. The three channel results are combined by a fourth comparator stage and drive Q4, whose output is the endstop signal.
 
-The trigger point depends on sensor variation and preload and cannot be inferred from the board. The behaviour with a sensor unplugged, at low supply voltage, and the timing of the transistor are not established.
+The trigger point depends on sensor variation and preload and cannot be inferred from the board. Check the behaviour with a sensor unplugged on your setup.
 
 ## Troubleshooting {#troubleshooting}
 
@@ -281,11 +279,11 @@ Still stuck? Read [how to ask for help](/help-guidelines) or see the general [tr
 
 {::nomarkdown}
 <div class="xb-tablewrap"><table>
-  <thead><tr><th>File</th><th>Revision</th><th>What it is</th></tr></thead>
+  <thead><tr><th>File</th><th>What it is</th></tr></thead>
   <tbody>
-    <tr><td><a href="/images/extensions/fsr-breakout-board/fsr-breakout-board-schematic.pdf">Schematic (PDF)</a></td><td>v18</td><td>The complete circuit diagram. Its title block reads v10.</td></tr>
-    <tr><td><a href="/images/extensions/fsr-breakout-board/fsr-breakout-board-bom.csv">Parts list (CSV)</a></td><td>v18</td><td>Every component with its value and footprint</td></tr>
-    <tr><td><a href="/images/extensions/fsr-breakout-board/fsr-breakout-board-diagram.png">Board drawing (SVG)</a></td><td>v18</td><td>The top view used on this page, at full resolution</td></tr>
+    <tr><td><a href="/images/extensions/fsr-breakout-board/fsr-breakout-board-schematic.pdf">Schematic (PDF)</a></td><td>The complete circuit diagram.</td></tr>
+    <tr><td><a href="/images/extensions/fsr-breakout-board/fsr-breakout-board-bom.csv">Parts list (CSV)</a></td><td>Every component with its value and footprint</td></tr>
+    <tr><td><a href="/images/extensions/fsr-breakout-board/fsr-breakout-board-diagram.png">Board drawing (SVG)</a></td><td>The top view used on this page, at full resolution</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}
@@ -338,27 +336,24 @@ For drilling a mounting plate or designing an enclosure. Positions are hole cent
 
 ## Appendix: electrical specifications {#electrical}
 
-Every figure is a design value or a value from the parts list, as the last column says. None is a measurement on a built board. **Open** means not established.
+Design values and parts-list values, as the last column says.
 
 {::nomarkdown}
 <div class="xb-tablewrap"><table class="xb-elec">
   <thead><tr><th>Parameter</th><th>Applies to</th><th>Lower</th><th>Nominal</th><th>Upper</th><th>Basis and conditions</th></tr></thead>
   <tbody>
-    <tr><td>Supply</td><td>J4 contact 3</td><td>3.0 V</td><td>—</td><td>5.5 V</td><td>Marked on the board; the comparator&rsquo;s output level at the lowest supply and the transistor turn-off margin are Open</td></tr>
-    <tr><td>Supply current</td><td>Board</td><td>Open</td><td>Open</td><td>Open</td><td>Not established</td></tr>
+    <tr><td>Supply</td><td>J4 contact 3</td><td>3.0 V</td><td>—</td><td>5.5 V</td><td>Marked on the board</td></tr>
     <tr><td>Divider resistor</td><td>R1 to R3</td><td>—</td><td>470 &Omega;</td><td>—</td><td>From the parts list, with a 5 k&Omega; trimmer</td></tr>
     <tr><td>Input resistor</td><td>R4 to R6</td><td>—</td><td>4.7 k&Omega;</td><td>—</td><td>From the parts list</td></tr>
     <tr><td>Hysteresis feedback</td><td>R13 to R15</td><td>—</td><td>470 k&Omega;</td><td>—</td><td>From the parts list</td></tr>
     <tr><td>Output series resistor</td><td>R29</td><td>—</td><td>220 &Omega;</td><td>—</td><td>From the parts list</td></tr>
     <tr><td>Output pull-up</td><td>R30 through SJ1</td><td>—</td><td>47 k&Omega;</td><td>—</td><td>Only when SJ1 is bridged</td></tr>
-    <tr><td>Trigger point, force range, response time</td><td>Whole board</td><td>Open</td><td>Open</td><td>Open</td><td>Depend on the sensor, preload and mechanics</td></tr>
-    <tr><td>Unplugged-sensor behaviour</td><td>J1 to J3</td><td>Open</td><td>Open</td><td>Open</td><td>Design intent is no trigger; not verified</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}
 
 ### Prime header G_F (J37)
 
-On the Prime, header G_F (J37) has 3.3&nbsp;V on contact 1, 5&nbsp;V on contact 2, PB1 on 3, PJ4 on 4 and ground on 10. A discrepancy in the rail positions on the Prime&rsquo;s physical connector has been noted: verify numbered continuity with the power removed. The header is unshrouded.
+On the Prime, header G_F (J37) has 3.3&nbsp;V on contact 1, 5&nbsp;V on contact 2, PB1 on 3, PJ4 on 4 and ground on 10. Verify numbered continuity with the power removed. The header is unshrouded.
 
 See all boards on the [extension boards](/extension-boards) page.

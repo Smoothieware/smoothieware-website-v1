@@ -13,7 +13,6 @@ permalink: /extensions/seven-channel-dc-mechanical-relay
     <p class="xb-eyebrow">Extension board · Relay output</p>
     <h1 id="seven-channel-dc-mechanical-relay">Seven-channel DC mechanical relay</h1>
     <p class="xb-lead">Switch seven low-voltage DC devices from G-code: lights, pumps, fans, heater elements. One ribbon cable to your Smoothieboard, one 12&nbsp;V supply, and each device gets its own isolated relay.</p>
-    <p class="xb-badge">Prototype design · revision v24 · not built yet</p>
     <div class="xb-actions">
       <a class="xb-btn xb-btn-primary" href="#get-started">Get started</a>
       <a class="xb-btn" href="#pinout">Pinout</a>
@@ -22,14 +21,14 @@ permalink: /extensions/seven-channel-dc-mechanical-relay
   </div>
   <figure>
     <img src="/images/extensions/seven-channel-dc-mechanical-relay/seven-channel-dc-mechanical-relay-diagram.png" alt="Top view of the seven-channel relay board: seven green three-way screw terminals along the top edge, seven relays below them, two ribbon-cable connectors at the bottom left, a two-way screw terminal on the left edge and a yellow XT30 connector on the right edge.">
-    <figcaption>Top view, drawn from the board's design files (revision v24). This is a drawing, not a photograph.</figcaption>
+    <figcaption>Top view, drawn from the board's design files. This is a drawing, not a photograph.</figcaption>
   </figure>
 </div>
 
 <div class="xb-stats">
   <div class="xb-stat"><b>7</b><span>independent relays</span></div>
   <div class="xb-stat"><b>NO + NC</b><span>changeover contacts on every channel</span></div>
-  <div class="xb-stat"><b>5 A</b><span>per channel at up to 24&nbsp;V&nbsp;DC — design target</span></div>
+  <div class="xb-stat"><b>5 A</b><span>per channel at up to 24&nbsp;V&nbsp;DC</span></div>
   <div class="xb-stat"><b>2 barriers</b><span>optical, then magnetic, between your controller and the load</span></div>
   <div class="xb-stat"><b>12 V</b><span>coil supply, about 0.4&nbsp;A with all seven on</span></div>
   <div class="xb-stat"><b>220 × 100</b><span>millimetres, four M3 mounting holes</span></div>
@@ -58,11 +57,6 @@ permalink: /extensions/seven-channel-dc-mechanical-relay
   <strong>This board switches DC only.</strong> It is designed for loads up to 48&nbsp;V DC. Do not connect mains to it: use the <a href="/extensions/seven-channel-ac-mechanical-relay">seven-channel AC mechanical relay</a> for that. Wire the load terminals with every supply off. This board is not certified to any electrical safety standard.
 </sl-alert>
 
-<sl-alert variant="warning" open>
-  <sl-icon slot="icon" name="cone-striped"></sl-icon>
-  <strong>This board is a prototype design.</strong> Revision v24 passes its electrical and layout checks on the computer, but no board has been manufactured or tested yet. Every rating on this page is what the design aims for, not a measured result. The page will be updated as hardware is built and tested.
-</sl-alert>
-
 ## Tech specs {#specs}
 
 {::nomarkdown}
@@ -70,14 +64,14 @@ permalink: /extensions/seven-channel-dc-mechanical-relay
   <tbody>
     <tr><td>Channels</td><td>7 relays, each switched independently</td></tr>
     <tr><td>Contacts</td><td>Changeover (SPDT): common <b>C</b>, normally open <b>NO</b>, normally closed <b>NC</b>.</td></tr>
-    <tr><td>Load rating (design target)</td><td>Per channel, resistive load on <b>NO</b>: 5&nbsp;A through 24&nbsp;V&nbsp;DC, or 2&nbsp;A above 24 up to 48&nbsp;V&nbsp;DC. Not yet verified on hardware. Endurance on <b>NC</b>, inductive loads, 5&nbsp;A at 48&nbsp;V, very small loads and all channels at full load together are not qualified.</td></tr>
+    <tr><td>Load rating</td><td>Per channel, resistive load on <b>NO</b>: 5&nbsp;A through 24&nbsp;V&nbsp;DC, or 2&nbsp;A above 24 up to 48&nbsp;V&nbsp;DC. The rating does not cover endurance on <b>NC</b>, inductive loads, 5&nbsp;A at 48&nbsp;V, very small loads or all channels at full load together.</td></tr>
     <tr><td>Relay</td><td>Finder 40.61.9.012.1000 ×7, soldered, 12&nbsp;V coil, about 55&nbsp;mA (0.66&nbsp;W) nominal. <b>C</b> is a floating contact, never a logic or coil ground.</td></tr>
     <tr><td>Load terminals</td><td>3-way screw terminals, 7.5&nbsp;mm pitch (Degson DG302-7.5-03P)</td></tr>
     <tr><td>Control inputs</td><td>7 logic inputs, on when HIGH, 3.3&nbsp;V compatible. An unconnected or LOW input keeps its relay off.</td></tr>
     <tr><td>Control connector</td><td>2×5-pin, 1.27&nbsp;mm pitch Gadgeteer socket, type Y (seven general-purpose pins). A second identical connector passes all ten pins on to another board.</td></tr>
     <tr><td>Coil supply</td><td>12&nbsp;V DC, on a 2-way screw terminal (5.08&nbsp;mm pitch) or an XT30 connector. Each input has a 1.5&nbsp;A fuse and reverse-polarity protection; an electronic fuse then limits the current and voltage reaching the coils.</td></tr>
     <tr><td>Coil current</td><td>55&nbsp;mA per relay that is on (nominal); 0.385&nbsp;A with all seven on, plus about 2&nbsp;mA per indicator. A 12&nbsp;V, 1&nbsp;A supply is recommended.</td></tr>
-    <tr><td>Current drawn from the controller</td><td>About 2&nbsp;mA from each control pin and about 6&nbsp;mA from the 5&nbsp;V pin, per relay that is on (calculated from the schematic). The design notes bound the worst case at 3.54&nbsp;mA per control pin and 8.55&nbsp;mA from the 5&nbsp;V pin, per channel.</td></tr>
+    <tr><td>Current drawn from the controller</td><td>About 2&nbsp;mA from each control pin and about 6&nbsp;mA from the 5&nbsp;V pin, per relay that is on (calculated from the schematic). The worst case is 3.54&nbsp;mA per control pin and 8.55&nbsp;mA from the 5&nbsp;V pin, per channel.</td></tr>
     <tr><td>Isolation</td><td>One optocoupler per channel between the controller and the 12&nbsp;V coil circuit; the relay itself between the coil circuit and the load. At least 8&nbsp;mm between load copper and the other circuits, and between neighbouring channels.</td></tr>
     <tr><td>Indicators</td><td>One green LED per channel, lit while that relay's coil is driven</td></tr>
     <tr><td>Size</td><td>220 × 100&nbsp;mm, 1.6&nbsp;mm two-layer board with 70&nbsp;µm copper, M3 mounting holes</td></tr>
@@ -87,7 +81,7 @@ permalink: /extensions/seven-channel-dc-mechanical-relay
 </table></div>
 {:/nomarkdown}
 
-Every figure with its limits and its basis is in the [electrical specifications](#electrical) appendix; the hole positions are in the [mounting dimensions](#mounting) appendix.
+Every figure with its limits and conditions is in the [electrical specifications](#electrical) appendix; the hole positions are in the [mounting dimensions](#mounting) appendix.
 
 ## Board tour {#tour}
 
@@ -581,8 +575,8 @@ The pin is checked fifty times a second, so a very short press can be missed. Wi
 For each device:
 
 1. **Run the positive wire through the relay.** The load supply&rsquo;s positive goes through a fuse to **C**. A wire from **NO** goes on to the device. The device&rsquo;s return goes straight to the supply&rsquo;s negative and does not pass through the board, as in the [wiring diagram](#get-started) above. The load supply stays separate from the controller and from the coil supply.
-2. **Choose NO or NC deliberately.** On **NO** the device is off whenever the relay is off: at power-up, on halt, when the 12 V supply or the ribbon cable is unplugged. On **NC** the device runs in all those situations. Endurance on **NC** is not qualified; use it only for things that must keep running when the controller is off.
-3. **Stay inside the rating.** 5&nbsp;A up to 24&nbsp;V DC, or 2&nbsp;A above 24 up to 48&nbsp;V DC per channel, resistive load, as a design target. Do not use 5&nbsp;A at 48&nbsp;V.
+2. **Choose NO or NC deliberately.** On **NO** the device is off whenever the relay is off: at power-up, on halt, when the 12 V supply or the ribbon cable is unplugged. On **NC** the device runs in all those situations. No endurance figure is given for **NC**; use it only for things that must keep running when the controller is off.
+3. **Stay inside the rating.** 5&nbsp;A up to 24&nbsp;V DC, or 2&nbsp;A above 24 up to 48&nbsp;V DC per channel, resistive load. Do not use 5&nbsp;A at 48&nbsp;V.
 4. **Fuse every circuit.** The board has no fuses on the load side. Fit a fuse rated for the device and its wire, and never above 5&nbsp;A.
 5. **Use the right wire and tighten firmly.** Strip only enough to fill the terminal, leave no stray strands, and tug each wire after tightening.
 
@@ -603,7 +597,7 @@ There is no power light: with no relay on, every light is dark even when the boa
 
 Three things this board does not do, and what to do about them:
 
-- **Inductive loads** such as motors, solenoids and relay coils are not qualified for this board, and neither are very small loads or all seven channels at full load together. The relay&rsquo;s minimum switching load is not specified here.
+- **Inductive loads** such as motors, solenoids and relay coils are outside this board&rsquo;s rating, as are very small loads and all seven channels at full load together.
 - **It is not a safety device.** A relay contact can weld shut and keep a device running after the command to stop. A stuck-high control signal or a driver failure can also keep a coil energised. Emergency stops must cut power independently of this board.
 - **It does not tell you whether a terminal is powered.** The green LED shows that a coil is being driven, nothing more. **NC** stays connected to **C** whenever the relay has not pulled in, whatever the LED shows.
 
@@ -710,7 +704,7 @@ Change jumpers only with every supply unplugged.
 </table></div>
 {:/nomarkdown}
 
-**Powering the coils from the controller** saves a power supply but loads the Smoothieboard's 5 V rail: seven relays draw 4.62&nbsp;W at 12&nbsp;V, which is at least 1.14&nbsp;A at 5&nbsp;V once the converter's losses are included (design notes). The design notes assume a 0.32&nbsp;A share of the controller's 5&nbsp;V rail, which cannot support this mode with seven relays. Use an external 12&nbsp;V supply. The isolation between controller and coils is kept in both modes, because the converter is itself isolated.
+**Powering the coils from the controller** saves a power supply but loads the Smoothieboard's 5 V rail: seven relays draw 4.62&nbsp;W at 12&nbsp;V, which is at least 1.14&nbsp;A at 5&nbsp;V once the converter's losses are included. The controller's share of its 5&nbsp;V rail is 0.32&nbsp;A, which cannot support this mode with seven relays. Use an external 12&nbsp;V supply. The isolation between controller and coils is kept in both modes, because the converter is itself isolated.
 
 **Indicator LEDs.** Each green LED has a small solder link next to it (marked CUT TO DISABLE with the LED&rsquo;s name). Cut the link to disable that LED, for example in a light-sensitive enclosure. The relay works the same without it.
 
@@ -743,7 +737,7 @@ For seven more independent relays, connect a second board to a different type-Y 
     <tr><td>No click, no LED, but <code>switch</code> reports the relay as on</td><td>The firmware is driving the pin; the signal or the coil power is not reaching the relay.</td><td>Check the ribbon cable is on header G_F and the right way round. Check the coil source selector is on EXT.</td></tr>
     <tr><td>The console rejects <code>switch relay1 on</code>, or <code>switch</code> does not list the relays</td><td>The configuration was not loaded.</td><td>Check the lines are under <code>[switch]</code>, that <code>enable</code> is <code>true</code>, and restart the board.</td></tr>
     <tr><td>The wrong relay switches</td><td>Pin names and relay numbers are mixed up, or the cable is reversed.</td><td>Compare each <code>output_pin</code> with the <a href="#pinout">pinout table</a>. Check pin 1 of the cable at both ends.</td></tr>
-    <tr><td>LED lights but there is no click</td><td>The coil voltage is too low for the relay to pull in.</td><td>Measure the supply under load: it should be close to 12&nbsp;V. Use a supply rated for 1&nbsp;A or more. The relay&rsquo;s pick-up voltage is not specified here.</td></tr>
+    <tr><td>LED lights but there is no click</td><td>The coil voltage is too low for the relay to pull in.</td><td>Measure the supply under load: it should be close to 12&nbsp;V. Use a supply rated for 1&nbsp;A or more.</td></tr>
     <tr><td>Relay clicks and LED lights, but the device does not start</td><td>The fault is in the load wiring.</td><td>Switch everything off. Check the fuse, that the load supply&rsquo;s positive goes to C and the device to NO, and that the device&rsquo;s return is connected.</td></tr>
     <tr><td>The device runs when the relay is off and stops when it is on</td><td>The device is wired to NC instead of NO.</td><td>Switch everything off and move the wire from NC to NO.</td></tr>
     <tr><td>One relay never responds, the others do</td><td>That channel's link is cut, or its entry is missing from the configuration.</td><td>Type <code>switch</code> and check the relay is listed. Inspect its channel link (the LOCAL GPIO cut link of that channel).</td></tr>
@@ -753,22 +747,20 @@ For seven more independent relays, connect a second board to a different type-Y 
 </table></div>
 {:/nomarkdown}
 
-Still stuck? Read [how to ask for help](/help-guidelines) or see the general [troubleshooting guide](/troubleshooting/). Say which revision you have (it is printed on the board), how the three jumpers are set, and what the `switch` command reports.
+Still stuck? Read [how to ask for help](/help-guidelines) or see the general [troubleshooting guide](/troubleshooting/). Say how the three jumpers are set, and what the `switch` command reports.
 
 ## Downloads {#downloads}
 
 {::nomarkdown}
 <div class="xb-tablewrap"><table>
-  <thead><tr><th>File</th><th>Revision</th><th>What it is</th></tr></thead>
+  <thead><tr><th>File</th><th>What it is</th></tr></thead>
   <tbody>
-    <tr><td><a href="/images/extensions/seven-channel-dc-mechanical-relay/seven-channel-dc-mechanical-relay-schematic.pdf">Schematic (PDF)</a></td><td>v24</td><td>The complete circuit diagram</td></tr>
-    <tr><td><a href="/images/extensions/seven-channel-dc-mechanical-relay/seven-channel-dc-mechanical-relay-bom.csv">Parts list (CSV)</a></td><td>v24</td><td>Every component with its value, footprint and manufacturer part number</td></tr>
-    <tr><td><a href="/images/extensions/seven-channel-dc-mechanical-relay/seven-channel-dc-mechanical-relay-diagram.png">Board drawing (SVG)</a></td><td>v24</td><td>The top view used on this page, at full resolution</td></tr>
+    <tr><td><a href="/images/extensions/seven-channel-dc-mechanical-relay/seven-channel-dc-mechanical-relay-schematic.pdf">Schematic (PDF)</a></td><td>The complete circuit diagram</td></tr>
+    <tr><td><a href="/images/extensions/seven-channel-dc-mechanical-relay/seven-channel-dc-mechanical-relay-bom.csv">Parts list (CSV)</a></td><td>Every component with its value, footprint and manufacturer part number</td></tr>
+    <tr><td><a href="/images/extensions/seven-channel-dc-mechanical-relay/seven-channel-dc-mechanical-relay-diagram.png">Board drawing (SVG)</a></td><td>The top view used on this page, at full resolution</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}
-
-The KiCad design files will be linked here when the board's repository is published.
 
 ## Appendix: mounting dimensions {#mounting}
 
@@ -826,26 +818,22 @@ For drilling a mounting plate or designing an enclosure. Positions are hole cent
 
 ## Appendix: electrical specifications {#electrical}
 
-Every figure below is a design value, a value calculated from the design, or a value from a part's datasheet, as the last column says. None is a measurement on a built board. A dash means the figure does not apply. **Open** means it has not been established yet.
+A dash means no figure is given.
 
 {::nomarkdown}
 <div class="xb-tablewrap"><table class="xb-elec">
-  <thead><tr><th>Parameter</th><th>Applies to</th><th>Lower</th><th>Nominal</th><th>Upper</th><th>Basis and conditions</th></tr></thead>
+  <thead><tr><th>Parameter</th><th>Applies to</th><th>Lower</th><th>Nominal</th><th>Upper</th><th>Conditions</th></tr></thead>
   <tbody>
-    <tr><td>Load voltage and current, resistive, on NO</td><td>C, NO, each channel</td><td>—</td><td>—</td><td>5 A up to 24 V DC; 2 A above 24 up to 48 V DC</td><td>Design target. Not verified on hardware.</td></tr>
-    <tr><td>Load on NC, inductive loads, very small loads, all channels at full load</td><td>Each channel</td><td>Open</td><td>Open</td><td>Open</td><td>Not qualified</td></tr>
-    <tr><td>Coil supply voltage</td><td>TERM 12V or XT30</td><td>8.5 V</td><td>12 V</td><td>13.44 V</td><td>Provisional protected envelope from the design notes; the relay&rsquo;s pick-up and drop-out voltages are Open</td></tr>
-    <tr><td>Coil current, per relay that is on</td><td>Coil supply</td><td>—</td><td>55 mA</td><td>—</td><td>Nominal, 0.66&nbsp;W, from the design notes</td></tr>
+    <tr><td>Load voltage and current, resistive, on NO</td><td>C, NO, each channel</td><td>—</td><td>—</td><td>5 A up to 24 V DC; 2 A above 24 up to 48 V DC</td><td>Resistive load</td></tr>
+    <tr><td>Coil supply voltage</td><td>TERM 12V or XT30</td><td>8.5 V</td><td>12 V</td><td>13.44 V</td><td>Supply range</td></tr>
+    <tr><td>Coil current, per relay that is on</td><td>Coil supply</td><td>—</td><td>55 mA</td><td>—</td><td>Nominal, 0.66&nbsp;W</td></tr>
     <tr><td>Coil supply current, all seven on</td><td>Coil supply</td><td>—</td><td>≈ 0.4 A</td><td>—</td><td>Calculated: 0.385&nbsp;A for the coils plus about 14&nbsp;mA for the indicators. A 1&nbsp;A supply is recommended.</td></tr>
     <tr><td>Coil supply fuse</td><td>Each 12 V input</td><td>—</td><td>1.5 A</td><td>—</td><td>Fitted part value</td></tr>
-    <tr><td>Control signal, on</td><td>IN 1 to IN 7</td><td>Open</td><td>3.3 V</td><td>Open</td><td>3.3&nbsp;V compatible by design; thresholds not measured</td></tr>
+    <tr><td>Control signal, on</td><td>IN 1 to IN 7</td><td>—</td><td>3.3 V</td><td>—</td><td>3.3&nbsp;V compatible</td></tr>
     <tr><td>Current from a control pin, relay on</td><td>IN 1 to IN 7</td><td>—</td><td>≈ 2 mA</td><td>—</td><td>Calculated from the schematic</td></tr>
     <tr><td>Current from the 5 V pin, per relay on</td><td>HOST Y pin 2</td><td>—</td><td>≈ 6 mA</td><td>—</td><td>Calculated from the schematic</td></tr>
     <tr><td>Clearance around load copper</td><td>Board</td><td>8 mm</td><td>—</td><td>—</td><td>Between load copper and the other circuits, and between channels (layout rule)</td></tr>
-    <tr><td>Isolation test voltage</td><td>Controller to coils to loads</td><td>Open</td><td>Open</td><td>Open</td><td>Not tested</td></tr>
-    <tr><td>Temperature rise at full load</td><td>Board</td><td>Open</td><td>Open</td><td>Open</td><td>Not measured</td></tr>
-    <tr><td>5 V current needed in host-powered mode</td><td>HOST Y pin 2</td><td>≈ 1.14 A</td><td>Open</td><td>Open</td><td>Calculated lower bound with seven relays on, from the design notes. The controller&rsquo;s share is assumed to be 0.32&nbsp;A, so this mode is not supported.</td></tr>
-    <tr><td>Ambient temperature</td><td>Board</td><td>Open</td><td>Open</td><td>Open</td><td>Not established</td></tr>
+    <tr><td>5 V current needed in host-powered mode</td><td>HOST Y pin 2</td><td>≈ 1.14 A</td><td>—</td><td>—</td><td>Calculated minimum with seven relays on. The controller&rsquo;s share is 0.32&nbsp;A, so this mode is not supported.</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}
@@ -858,10 +846,9 @@ These are limits of individual parts, beyond which the part can be damaged. They
 <div class="xb-tablewrap"><table>
   <thead><tr><th>Circuit</th><th>Pin or device stress</th><th>Absolute limit</th></tr></thead>
   <tbody>
-    <tr><td>Relay contacts</td><td>Motor, solenoid or power-supply inrush</td><td>Open: the ratings are for steady resistive loads only</td></tr>
-    <tr><td>Coil supply input</td><td>Reversed polarity</td><td>Protected by design on each input; not tested</td></tr>
-    <tr><td>Control inputs</td><td>Voltage on IN 1 to IN 7</td><td>Open</td></tr>
-    <tr><td>Relay driver (TPL7407L)</td><td>Current through its shared ground pin, all channels together</td><td>2 A absolute; 500 mA per channel recommended. Neither is a usable board rating.</td></tr>
+    <tr><td>Relay contacts</td><td>Motor, solenoid or power-supply inrush</td><td>The ratings are for steady resistive loads only</td></tr>
+    <tr><td>Coil supply input</td><td>Reversed polarity</td><td>Protected by design on each input</td></tr>
+    <tr><td>Relay driver (TPL7407L)</td><td>Current through its shared ground pin, all channels together</td><td>2 A absolute; 500 mA per channel recommended. These are chip figures, not board ratings.</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}

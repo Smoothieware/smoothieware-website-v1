@@ -6,17 +6,12 @@ permalink: /extensions/button-boards
 
 # Button boards
 
-The selected board presents seven mechanical momentary buttons to a Gadgeteer host socket. Use it for ordinary machine controls such as a software halt, pause or a user action. This candidate is the seven-button assembly; historical single-button concepts are not automatically the same PCB.
+The board presents seven mechanical momentary buttons to a Gadgeteer host socket. Use it for ordinary machine controls such as a software halt, pause or a user action.
 
-This guide documents the **v14 source design** of the seven-button board. The source files and numbered drawings describe this revision; earlier single-button concepts and board revisions may differ. Fabrication and assembled hardware operation have not been qualified.
-
-The selected v14 source package retains schematic title-block revision **v05**. The package number does not rename the schematic or establish a released hardware revision.
 
 ## How it works
 
 Each of the seven buttons has the same circuit: a normally-open switch to ground, a **1 kΩ series resistor** between that switch and the host input, a **10 kΩ pull-up** from the input to 3.3 V, and a **100 nF filter capacitor** from the input to ground. Releasing the button lets the pull-up raise its input; pressing it pulls the input low through the series resistor. Each button has its own host signal, so simultaneous presses are independent electrical inputs. The filter is not a guarantee of bounce-free operation.
-
-The selected PCB, retained netlist and a fresh KiCad export of the selected schematic agree on all **96 connected component contacts**, including every channel below. This checks their source net assignments; it does not establish manufactured copper continuity or fitted component values.
 
 <div class="table-wrapper" markdown="1">
 
@@ -44,7 +39,7 @@ J1.1 is 3.3 V, .2 is 5 V and .10 ground. Contacts 3–9 carry BTN1_OUT through B
 
 ## Connectors and cable choice
 
-The selected v14 CAD names **Samtec SHF-105-01-L-D-TH-LC** for J1: a shrouded, two-row, ten-contact header on a **1.27 mm pitch**. [Samtec’s matching part documentation](https://www.samtec.com/products/shf-105-01-l-d-th-lc) lists FFSD ribbon and FFTP cable assemblies without strain relief as mating families. This identifies the board-side design intent; it does not identify an assembled cable or certify the fitted parts.
+The design uses **Samtec SHF-105-01-L-D-TH-LC** for J1: a shrouded, two-row, ten-contact header on a **1.27 mm pitch**. [Samtec’s matching part documentation](https://www.samtec.com/products/shf-105-01-l-d-th-lc) lists FFSD ribbon and FFTP cable assemblies without strain relief as mating families. Check that your cable mates with it.
 
 The retained Prime P11 source models J37 as a generic two-row, ten-contact, 1.27 mm surface-mount pin header. It does not declare the same keyed Samtec housing. Check the actual host header and both cable ends before selecting a cable; do not infer host-side key orientation from J1. Use the component-side contact keys below to establish **1→1 through 10→10**, and verify all ten connections with power removed. The red edge marks the intended contact-1 conductor; its colour alone does not prove continuity or orientation.
 
@@ -64,12 +59,12 @@ A voltage in a signal name does not make that contact a power output. Circuit gr
 
 </details>
 
-{% include _includes/extension-instruction-diagram.html id="button-boards-v14-reader-compact-overview" src="/images/extensions/button-boards/guides/reader-compact-overview.png" title="Seven-button board — overview" alt="Seven-button board — overview for button-boards v14" caption="Selected-source component-side reference. Use the overview and all focused sheets together. Use the focused sheets at narrow widths and zoom combined drawings for fine labels. Cable mating and assembled continuity remain unverified." width=420 %}
+{% include _includes/extension-instruction-diagram.html id="button-boards-v14-reader-compact-overview" src="/images/extensions/button-boards/guides/reader-compact-overview.png" title="Seven-button board — overview" alt="Seven-button board — overview for button-boards" caption="Component-side reference. Use the overview and all focused sheets together, and zoom for fine labels. Check cable mating and continuity before wiring." width=420 %}
 
 <details markdown="1">
 <summary>Larger combined reference</summary>
 
-{% include _includes/extension-instruction-diagram.html id="button-boards-v14-reference" src="/images/extensions/button-boards/guides/reader-reference.png" title="Annotated board reference — v14" alt="button-boards v14 annotated board reference, with source-numbered features." caption="Component-side source reference. Dotted leaders locate parts and are not wires. Use the numbered detail views together; mating orientation and assembled ratings remain unqualified." width=1440 %}
+{% include _includes/extension-instruction-diagram.html id="button-boards-v14-reference" src="/images/extensions/button-boards/guides/reader-reference.png" title="Annotated board reference" alt="button-boards annotated board reference, with source-numbered features." caption="Component-side reference. Dotted leaders locate parts and are not wires. Use the numbered detail views together and check mating orientation." width=1440 %}
 
 </details>
 
@@ -78,34 +73,33 @@ Start with the overview, then use the focused sheets for exact contacts, control
 <details markdown="1">
 <summary>Focused contact and component sheets</summary>
 
+{% include _includes/extension-instruction-diagram.html id="button-boards-v14-reader-compact-host-input-1-5" src="/images/extensions/button-boards/guides/reader-compact-host-input-1-5-central-pills.png" title="J1 · Host input — host input 1 5" alt="J1 · Host input — host input 1 5 for button-boards" caption="Component-side reference. Use the overview and all focused sheets together, and zoom for fine labels. Check cable mating and continuity before wiring." width=420 %}
 
-{% include _includes/extension-instruction-diagram.html id="button-boards-v14-reader-compact-host-input-1-5" src="/images/extensions/button-boards/guides/reader-compact-host-input-1-5-central-pills.png" title="J1 · Host input — host input 1 5" alt="J1 · Host input — host input 1 5 for button-boards v14" caption="Selected-source component-side reference. Use the overview and all focused sheets together. Use the focused sheets at narrow widths and zoom combined drawings for fine labels. Cable mating and assembled continuity remain unverified." width=420 %}
+{% include _includes/extension-instruction-diagram.html id="button-boards-v14-reader-compact-host-input-6-10" src="/images/extensions/button-boards/guides/reader-compact-host-input-6-10-central-pills.png" title="J1 · Host input — host input 6 10" alt="J1 · Host input — host input 6 10 for button-boards" caption="Component-side reference. Use the overview and all focused sheets together, and zoom for fine labels. Check cable mating and continuity before wiring." width=420 %}
 
-{% include _includes/extension-instruction-diagram.html id="button-boards-v14-reader-compact-host-input-6-10" src="/images/extensions/button-boards/guides/reader-compact-host-input-6-10-central-pills.png" title="J1 · Host input — host input 6 10" alt="J1 · Host input — host input 6 10 for button-boards v14" caption="Selected-source component-side reference. Use the overview and all focused sheets together. Use the focused sheets at narrow widths and zoom combined drawings for fine labels. Cable mating and assembled continuity remain unverified." width=420 %}
+{% include _includes/extension-instruction-diagram.html id="button-boards-v14-reader-compact-chain-output-1-5" src="/images/extensions/button-boards/guides/reader-compact-chain-output-1-5-central-pills.png" title="J2 · Chain output — chain output 1 5" alt="J2 · Chain output — chain output 1 5 for button-boards" caption="Component-side reference. Use the overview and all focused sheets together, and zoom for fine labels. Check cable mating and continuity before wiring." width=420 %}
 
-{% include _includes/extension-instruction-diagram.html id="button-boards-v14-reader-compact-chain-output-1-5" src="/images/extensions/button-boards/guides/reader-compact-chain-output-1-5-central-pills.png" title="J2 · Chain output — chain output 1 5" alt="J2 · Chain output — chain output 1 5 for button-boards v14" caption="Selected-source component-side reference. Use the overview and all focused sheets together. Use the focused sheets at narrow widths and zoom combined drawings for fine labels. Cable mating and assembled continuity remain unverified." width=420 %}
+{% include _includes/extension-instruction-diagram.html id="button-boards-v14-reader-compact-chain-output-6-10" src="/images/extensions/button-boards/guides/reader-compact-chain-output-6-10-central-pills.png" title="J2 · Chain output — chain output 6 10" alt="J2 · Chain output — chain output 6 10 for button-boards" caption="Component-side reference. Use the overview and all focused sheets together, and zoom for fine labels. Check cable mating and continuity before wiring." width=420 %}
 
-{% include _includes/extension-instruction-diagram.html id="button-boards-v14-reader-compact-chain-output-6-10" src="/images/extensions/button-boards/guides/reader-compact-chain-output-6-10-central-pills.png" title="J2 · Chain output — chain output 6 10" alt="J2 · Chain output — chain output 6 10 for button-boards v14" caption="Selected-source component-side reference. Use the overview and all focused sheets together. Use the focused sheets at narrow widths and zoom combined drawings for fine labels. Cable mating and assembled continuity remain unverified." width=420 %}
+{% include _includes/extension-instruction-diagram.html id="button-boards-v14-reader-compact-buttons-1-4" src="/images/extensions/button-boards/guides/reader-compact-buttons-1-4.png" title="Buttons 1–4 — buttons 1 4" alt="Buttons 1–4 — buttons 1 4 for button-boards" caption="Component-side reference. Use the overview and all focused sheets together, and zoom for fine labels. Check cable mating and continuity before wiring." width=420 %}
 
-{% include _includes/extension-instruction-diagram.html id="button-boards-v14-reader-compact-buttons-1-4" src="/images/extensions/button-boards/guides/reader-compact-buttons-1-4.png" title="Buttons 1–4 — buttons 1 4" alt="Buttons 1–4 — buttons 1 4 for button-boards v14" caption="Selected-source component-side reference. Use the overview and all focused sheets together. Use the focused sheets at narrow widths and zoom combined drawings for fine labels. Cable mating and assembled continuity remain unverified." width=420 %}
+{% include _includes/extension-instruction-diagram.html id="button-boards-v14-reader-compact-chain-links-1-4" src="/images/extensions/button-boards/guides/reader-compact-chain-links-1-4.png" title="Chain links 1–4 — chain links 1 4" alt="Chain links 1–4 — chain links 1 4 for button-boards" caption="Component-side reference. Use the overview and all focused sheets together, and zoom for fine labels. Check cable mating and continuity before wiring." width=420 %}
 
-{% include _includes/extension-instruction-diagram.html id="button-boards-v14-reader-compact-chain-links-1-4" src="/images/extensions/button-boards/guides/reader-compact-chain-links-1-4.png" title="Chain links 1–4 — chain links 1 4" alt="Chain links 1–4 — chain links 1 4 for button-boards v14" caption="Selected-source component-side reference. Use the overview and all focused sheets together. Use the focused sheets at narrow widths and zoom combined drawings for fine labels. Cable mating and assembled continuity remain unverified." width=420 %}
+{% include _includes/extension-instruction-diagram.html id="button-boards-v14-reader-compact-buttons-5-7" src="/images/extensions/button-boards/guides/reader-compact-buttons-5-7.png" title="Buttons 5–7 — buttons 5 7" alt="Buttons 5–7 — buttons 5 7 for button-boards" caption="Component-side reference. Use the overview and all focused sheets together, and zoom for fine labels. Check cable mating and continuity before wiring." width=420 %}
 
-{% include _includes/extension-instruction-diagram.html id="button-boards-v14-reader-compact-buttons-5-7" src="/images/extensions/button-boards/guides/reader-compact-buttons-5-7.png" title="Buttons 5–7 — buttons 5 7" alt="Buttons 5–7 — buttons 5 7 for button-boards v14" caption="Selected-source component-side reference. Use the overview and all focused sheets together. Use the focused sheets at narrow widths and zoom combined drawings for fine labels. Cable mating and assembled continuity remain unverified." width=420 %}
+{% include _includes/extension-instruction-diagram.html id="button-boards-v14-reader-compact-chain-links-5-7" src="/images/extensions/button-boards/guides/reader-compact-chain-links-5-7.png" title="Chain links 5–7 — chain links 5 7" alt="Chain links 5–7 — chain links 5 7 for button-boards" caption="Component-side reference. Use the overview and all focused sheets together, and zoom for fine labels. Check cable mating and continuity before wiring." width=420 %}
 
-{% include _includes/extension-instruction-diagram.html id="button-boards-v14-reader-compact-chain-links-5-7" src="/images/extensions/button-boards/guides/reader-compact-chain-links-5-7.png" title="Chain links 5–7 — chain links 5 7" alt="Chain links 5–7 — chain links 5 7 for button-boards v14" caption="Selected-source component-side reference. Use the overview and all focused sheets together. Use the focused sheets at narrow widths and zoom combined drawings for fine labels. Cable mating and assembled continuity remain unverified." width=420 %}
+{% include _includes/extension-instruction-diagram.html id="button-boards-v14-reader-compact-test-pads" src="/images/extensions/button-boards/guides/reader-compact-test-pads.png" title="Test pads — test pads" alt="Test pads — test pads for button-boards" caption="Component-side reference. Use the overview and all focused sheets together, and zoom for fine labels. Check cable mating and continuity before wiring." width=420 %}
 
-{% include _includes/extension-instruction-diagram.html id="button-boards-v14-reader-compact-test-pads" src="/images/extensions/button-boards/guides/reader-compact-test-pads.png" title="Test pads — test pads" alt="Test pads — test pads for button-boards v14" caption="Selected-source component-side reference. Use the overview and all focused sheets together. Use the focused sheets at narrow widths and zoom combined drawings for fine labels. Cable mating and assembled continuity remain unverified." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="button-boards-v14-reader-compact-mounting-holes" src="/images/extensions/button-boards/guides/reader-compact-mounting-holes.png" title="Mounting holes — mounting holes" alt="Mounting holes — mounting holes for button-boards v14" caption="Selected-source component-side reference. Use the overview and all focused sheets together. Use the focused sheets at narrow widths and zoom combined drawings for fine labels. Cable mating and assembled continuity remain unverified." width=420 %}
+{% include _includes/extension-instruction-diagram.html id="button-boards-v14-reader-compact-mounting-holes" src="/images/extensions/button-boards/guides/reader-compact-mounting-holes.png" title="Mounting holes — mounting holes" alt="Mounting holes — mounting holes for button-boards" caption="Component-side reference. Use the overview and all focused sheets together, and zoom for fine labels. Check cable mating and continuity before wiring." width=420 %}
 
 </details>
 
-**Reading the diagrams:** use the focused connector, button and link sheets on a narrow screen. Zoom the combined overview and larger detail sheets for fine labels. Choose **Fit** in the inspection viewer if a remembered zoom level crops the drawing. Physical connector mating and assembled behavior remain unverified.
+**Reading the diagrams:** use the focused connector, button and link sheets on a narrow screen. Zoom the combined overview and larger detail sheets for fine labels.
 
 ### buttons — saved connector contacts
 
-Contact numbering below is the selected PCB's pad numbering, viewed using the final board-reference drawing. Same-numbered duplicate lands are collapsed in this electrical table. Mechanical unnumbered pads are omitted here. Physical connector-population and mating qualification remains open. `NC` means unconnected in this saved source, not a spare supported function. Named nets alone do not establish direction; use the signal-path explanation above.
+Contact numbering below is the selected PCB's pad numbering, viewed using the final board-reference drawing. Same-numbered duplicate lands are collapsed in this electrical table. Mechanical unnumbered pads are omitted here. `NC` means unconnected in this saved source, not a spare supported function. Named nets alone do not establish direction; use the signal-path explanation above.
 
 <details markdown="1">
 <summary>Selected-source contact inventory</summary>
@@ -140,12 +134,11 @@ Contact numbering below is the selected PCB's pad numbering, viewed using the fi
 <details markdown="1">
 <summary>Combined connector and link details</summary>
 
-{% include _includes/extension-instruction-diagram.html id="button-boards-v14-connector-detail-01" src="/images/extensions/button-boards/guides/reader-connector-detail-01.png" title="Connector detail 01 — v14" alt="button-boards v14 connector detail 01, with source-numbered features." caption="Component-side source reference. Dotted leaders locate parts and are not wires. Use the numbered detail views together; mating orientation and assembled ratings remain unqualified." width=1440 %}
+{% include _includes/extension-instruction-diagram.html id="button-boards-v14-connector-detail-01" src="/images/extensions/button-boards/guides/reader-connector-detail-01.png" title="Connector detail 01" alt="button-boards connector detail 01, with source-numbered features." caption="Component-side reference. Dotted leaders locate parts and are not wires. Use the numbered detail views together and check mating orientation." width=1440 %}
 
-{% include _includes/extension-instruction-diagram.html id="button-boards-v14-link-detail-01" src="/images/extensions/button-boards/guides/reader-link-detail-01.png" title="Link detail 01 — v14" alt="button-boards v14 link detail 01, with source-numbered features." caption="Component-side source reference. Dotted leaders locate parts and are not wires. Use the numbered detail views together; mating orientation and assembled ratings remain unqualified." width=1440 %}
+{% include _includes/extension-instruction-diagram.html id="button-boards-v14-link-detail-01" src="/images/extensions/button-boards/guides/reader-link-detail-01.png" title="Link detail 01" alt="button-boards link detail 01, with source-numbered features." caption="Component-side reference. Dotted leaders locate parts and are not wires. Use the numbered detail views together and check mating orientation." width=1440 %}
 
 </details>
-
 
 ### Links, controls and indicators
 
@@ -173,44 +166,42 @@ JP1–JP7 can connect the seven local button-output nets to the corresponding ch
 
 </details>
 
-
 Selected active-component identities: no U-designated ICs in this saved PCB. These identities are not a substitute for matching datasheet limits.
-
 
 </details>
 
 ## Practical use with Smoothieboard V2 Prime
 
-> **Keep the assembly unpowered while checking connections.** This complete ribbon attaches all seven GPIOs and both supply rails. The drawings locate native pads; they do not qualify a fitted plug, keying or manufactured cable.
+> **Keep the assembly unpowered while checking connections.** This complete ribbon attaches all seven GPIOs and both supply rails.
 
 Use the overview to locate the cable, the two contact keys to verify every position, and the numbered close-ups for the fine Prime escape. Fine board labels in the overview require these detail views.
 
-{% include _includes/extension-instruction-diagram.html id="button-v14-ten-core-button-v14-ten-core-overview" src="/images/extensions/button-boards/guides/ten-core-ribbon/button-ten-core-overview.png" title="Complete seven-button ten-core connection" alt="Complete seven-button ten-core connection; source-numbered Prime P11 and Button Boards v14 contacts." caption="Prime P11 J37 to Button v14 J1 IN. Grey is the ten-core jacket; red marks the intended contact-1 edge. Verify actual fit and all ten connections while unpowered; J2 stays unused and JP1–JP7 open." width=420 %}
+{% include _includes/extension-instruction-diagram.html id="button-v14-ten-core-button-v14-ten-core-overview" src="/images/extensions/button-boards/guides/ten-core-ribbon/button-ten-core-overview.png" title="Complete seven-button ten-core connection" alt="Complete seven-button ten-core connection; source-numbered Prime P11 and Button Boards contacts." caption="Prime P11 J37 to Button J1 IN. Grey is the ten-core jacket; red marks the contact-1 edge. Verify fit and all ten connections while unpowered; J2 stays unused and JP1–JP7 open." width=420 %}
 
-{% include _includes/extension-instruction-diagram.html id="button-v14-ten-core-prime-j37-core-terminations" src="/images/extensions/button-boards/guides/ten-core-ribbon/prime-j37-core-terminations.png" title="Prime P11 J37 — ten separate terminations" alt="Prime P11 J37 — ten separate terminations; source-numbered Prime P11 and Button Boards v14 contacts." caption="Native pads connect separately to numbered logical plug positions. Front-coordinate view, not a qualified cable mating face." width=420 %}
+{% include _includes/extension-instruction-diagram.html id="button-v14-ten-core-prime-j37-core-terminations" src="/images/extensions/button-boards/guides/ten-core-ribbon/prime-j37-core-terminations.png" title="Prime P11 J37 — ten separate terminations" alt="Prime P11 J37 — ten separate terminations; source-numbered Prime P11 and Button Boards contacts." caption="Pads connect separately to numbered logical plug positions. Front view, not a cable mating face." width=420 %}
 
-{% include _includes/extension-instruction-diagram.html id="button-v14-ten-core-button-j1-ten-core-terminations" src="/images/extensions/button-boards/guides/ten-core-ribbon/button-j1-ten-core-terminations.png" title="Button v14 J1 — ten separate terminations" alt="Button v14 J1 — ten separate terminations; source-numbered Prime P11 and Button Boards v14 contacts." caption="Each stub starts at its native J1 pad. The proposed connector projection does not establish manufactured fit or orientation." width=420 %}
+{% include _includes/extension-instruction-diagram.html id="button-v14-ten-core-button-j1-ten-core-terminations" src="/images/extensions/button-boards/guides/ten-core-ribbon/button-j1-ten-core-terminations.png" title="Button J1 — ten separate terminations" alt="Button J1 — ten separate terminations; source-numbered Prime P11 and Button Boards contacts." caption="Each stub starts at its native J1 pad. The proposed connector projection does not establish manufactured fit or orientation." width=420 %}
 
 <details markdown="1">
 <summary>Follow the Prime cable path in five readable close-ups</summary>
 
-{% include _includes/extension-instruction-diagram.html id="button-v14-ten-core-01-prime-j37-to-one" src="/images/extensions/button-boards/guides/ten-core-ribbon/01-prime-j37-to-one.png" title="Prime cable path — view 1 of 5" alt="Prime cable path — view 1 of 5; source-numbered Prime P11 and Button Boards v14 contacts." caption="Follow matching continuation numbers in order. Source artwork remains unchanged; the corrected path passes around the filled serial text." width=420 %}
+{% include _includes/extension-instruction-diagram.html id="button-v14-ten-core-01-prime-j37-to-one" src="/images/extensions/button-boards/guides/ten-core-ribbon/01-prime-j37-to-one.png" title="Prime cable path — view 1 of 5" alt="Prime cable path — view 1 of 5; source-numbered Prime P11 and Button Boards contacts." caption="Follow matching continuation numbers in order. Source artwork remains unchanged; the corrected path passes around the filled serial text." width=420 %}
 
-{% include _includes/extension-instruction-diagram.html id="button-v14-ten-core-02-one-around-bank-to-two" src="/images/extensions/button-boards/guides/ten-core-ribbon/02-one-around-bank-to-two.png" title="Prime cable path — view 2 of 5" alt="Prime cable path — view 2 of 5; source-numbered Prime P11 and Button Boards v14 contacts." caption="Follow matching continuation numbers in order. Source artwork remains unchanged; the corrected path passes around the filled serial text." width=420 %}
+{% include _includes/extension-instruction-diagram.html id="button-v14-ten-core-02-one-around-bank-to-two" src="/images/extensions/button-boards/guides/ten-core-ribbon/02-one-around-bank-to-two.png" title="Prime cable path — view 2 of 5" alt="Prime cable path — view 2 of 5; source-numbered Prime P11 and Button Boards contacts." caption="Follow matching continuation numbers in order. Source artwork remains unchanged; the corrected path passes around the filled serial text." width=420 %}
 
-{% include _includes/extension-instruction-diagram.html id="button-v14-ten-core-03-two-right-descent-to-three" src="/images/extensions/button-boards/guides/ten-core-ribbon/03-two-right-descent-to-three.png" title="Prime cable path — view 3 of 5" alt="Prime cable path — view 3 of 5; source-numbered Prime P11 and Button Boards v14 contacts." caption="Follow matching continuation numbers in order. Source artwork remains unchanged; the corrected path passes around the filled serial text." width=420 %}
+{% include _includes/extension-instruction-diagram.html id="button-v14-ten-core-03-two-right-descent-to-three" src="/images/extensions/button-boards/guides/ten-core-ribbon/03-two-right-descent-to-three.png" title="Prime cable path — view 3 of 5" alt="Prime cable path — view 3 of 5; source-numbered Prime P11 and Button Boards contacts." caption="Follow matching continuation numbers in order. Source artwork remains unchanged; the corrected path passes around the filled serial text." width=420 %}
 
-{% include _includes/extension-instruction-diagram.html id="button-v14-ten-core-04-three-lower-turn-to-four" src="/images/extensions/button-boards/guides/ten-core-ribbon/04-three-lower-turn-to-four.png" title="Prime cable path — view 4 of 5" alt="Prime cable path — view 4 of 5; source-numbered Prime P11 and Button Boards v14 contacts." caption="Follow matching continuation numbers in order. Source artwork remains unchanged; the corrected path passes around the filled serial text." width=420 %}
+{% include _includes/extension-instruction-diagram.html id="button-v14-ten-core-04-three-lower-turn-to-four" src="/images/extensions/button-boards/guides/ten-core-ribbon/04-three-lower-turn-to-four.png" title="Prime cable path — view 4 of 5" alt="Prime cable path — view 4 of 5; source-numbered Prime P11 and Button Boards contacts." caption="Follow matching continuation numbers in order. Source artwork remains unchanged; the corrected path passes around the filled serial text." width=420 %}
 
-{% include _includes/extension-instruction-diagram.html id="button-v14-ten-core-05-four-to-ribbon-jacket" src="/images/extensions/button-boards/guides/ten-core-ribbon/05-four-to-ribbon-jacket.png" title="Prime cable path — view 5 of 5" alt="Prime cable path — view 5 of 5; source-numbered Prime P11 and Button Boards v14 contacts." caption="Follow matching continuation numbers in order. Source artwork remains unchanged; the corrected path passes around the filled serial text." width=420 %}
+{% include _includes/extension-instruction-diagram.html id="button-v14-ten-core-05-four-to-ribbon-jacket" src="/images/extensions/button-boards/guides/ten-core-ribbon/05-four-to-ribbon-jacket.png" title="Prime cable path — view 5 of 5" alt="Prime cable path — view 5 of 5; source-numbered Prime P11 and Button Boards contacts." caption="Follow matching continuation numbers in order. Source artwork remains unchanged; the corrected path passes around the filled serial text." width=420 %}
 
 </details>
 
-{% include _includes/extension-instruction-diagram.html id="button-v14-ten-core-button-v14-seven-controls" src="/images/extensions/button-boards/guides/ten-core-ribbon/button-seven-controls.png" title="Seven button positions and unused chain connection" alt="Seven button positions and unused chain connection; source-numbered Prime P11 and Button Boards v14 contacts." caption="SW1–SW3 top; SW4–SW6 middle; SW7 bottom. Leave J2 unused and JP1–JP7 open. J2 supply contacts remain connected despite open signal links." width=420 %}
+{% include _includes/extension-instruction-diagram.html id="button-v14-ten-core-button-v14-seven-controls" src="/images/extensions/button-boards/guides/ten-core-ribbon/button-seven-controls.png" title="Seven button positions and unused chain connection" alt="Seven button positions and unused chain connection; source-numbered Prime P11 and Button Boards contacts." caption="SW1–SW3 top; SW4–SW6 middle; SW7 bottom. Leave J2 unused and JP1–JP7 open. J2 supply contacts remain connected despite open signal links." width=420 %}
 
-This conditional example uses a ten-contact straight-through cable from the documented Prime P11 J37 connector to button-board v14 J1. It connects **all seven button circuits**, even when you intend to press only SW1. Before connecting, remove conflicting assignments on PB1, PJ4, PA4, PG0, PJ3, PG1 and PJ2 and establish that all seven are GPIO inputs (the example enables pull-ups) in the selected firmware configuration. A different Prime revision requires its own checked contact map.
+This example uses a ten-contact straight-through cable from the Prime P11 J37 connector to the button board’s J1. It connects **all seven button circuits**, even when you intend to press only SW1. Before connecting, remove conflicting assignments on PB1, PJ4, PA4, PG0, PJ3, PG1 and PJ2 and establish that all seven are GPIO inputs (the example enables pull-ups) in the selected firmware configuration. A different Prime model requires its own checked contact map.
 
-The connector drawings locate native PCB pads. They do not qualify a manufactured cable's mating face, keying or continuity. Use a correctly mating assembly, identify contact 1 at both ends, and verify every numbered connection while unpowered; the red cable edge alone does not prove continuity.
+The connector drawings locate native PCB pads. Use a correctly mating assembly, identify contact 1 at both ends, and verify every numbered connection while unpowered; the red cable edge alone does not prove continuity.
 
 On a narrow screen, scroll the contact schedule horizontally to read all four columns. Longer descriptions wrap within their column.
 
@@ -233,13 +224,13 @@ On a narrow screen, scroll the contact schedule horizontally to read all four co
 </div>
 
 1. Disconnect power from the controller and board. Leave J2 unused and check that JP1–JP7 are open. J2's supply contacts pass through directly; opening these seven signal links does not disconnect J2's rails.
-2. Verify all ten cable positions against the schedule and the matching native-contact details. Do not apply a different revision's connector orientation by analogy.
-3. Resolve every existing assignment on all seven GPIOs. The example below creates seven input buttons; it does not arbitrate conflicts with other firmware modules. Check both supply rails and the selected controller's available rail budget before applying power. No numerical load or fitted-connector qualification is established here.
+2. Verify all ten cable positions against the schedule and the matching native-contact details. Do not assume another board uses the same connector orientation.
+3. Resolve every existing assignment on all seven GPIOs. The example below creates seven input buttons; it does not arbitrate conflicts with other firmware modules. Check both supply rails and the selected controller's available rail budget before applying power.
 4. Test with machine loads disabled. Release all buttons before startup, then check each button individually and in combination. Pressing any of the seven invokes a software halt in this example; releasing a button does not clear that halt. Check disconnected-cable behavior separately. This board is a user interface, not a safety-rated emergency-stop system.
 
 ## Configure all seven inputs
 
-The reviewed V2 button-box implementation creates a separate `Pin::AS_INPUT` for each enabled named entry and accepts `KILL` as the press action. Configure all seven physically connected signals deliberately. This is checked against source, not tested on the physical board or the firmware currently installed on your controller.
+The V2 button-box implementation creates a separate `Pin::AS_INPUT` for each enabled named entry and accepts `KILL` as the press action. Configure all seven physically connected signals deliberately.
 
 ```ini
 [button box]
@@ -273,14 +264,14 @@ extension_button_7.press = KILL
 
 ```
 
-`!` makes the grounded button active and `^` selects the host pull-up; the board also has its own 10 kΩ pull-ups. A button held at startup can invoke its first press action. This software halt is not an independent hardware stop. If your intended function requires support absent from Smoothieware, email **wolf.arthur@gamil.com** with the board revision and intended connections.
+`!` makes the grounded button active and `^` selects the host pull-up; the board also has its own 10 kΩ pull-ups. A button held at startup can invoke its first press action. This software halt is not an independent hardware stop.
 
-The seven-input parser, input-mode creation, pin suffixes and software halt are checked against [pinned V2 Button Box source](https://github.com/Smoothieware/SmoothieV2/blob/2a21c0108b1d095ecd8b2b9358e94055f053c003/Firmware/src/modules/utils/buttonbox/buttonbox.cpp) and the [pin parser](https://github.com/Smoothieware/SmoothieV2/blob/2a21c0108b1d095ecd8b2b9358e94055f053c003/Firmware/Hal/src/Pin.cpp). This does not identify the installed firmware or prove hardware operation.
+The seven-input parser, input-mode creation, pin suffixes and software halt follow the [V2 Button Box source](https://github.com/Smoothieware/SmoothieV2/blob/2a21c0108b1d095ecd8b2b9358e94055f053c003/Firmware/src/modules/utils/buttonbox/buttonbox.cpp) and the [pin parser](https://github.com/Smoothieware/SmoothieV2/blob/2a21c0108b1d095ecd8b2b9358e94055f053c003/Firmware/Hal/src/Pin.cpp).
 
 <details markdown="1">
 <summary>Alternative three-lead SW1 example and earlier cable studies</summary>
 
-This alternative connects only contacts 1, 3 and 10, leaving all other contacts physically disconnected. Its single-input configuration must not be used as the configuration for the complete ten-core ribbon above. Its older mixed-revision illustrations retain their stated limitations.
+This alternative connects only contacts 1, 3 and 10, leaving all other contacts physically disconnected. Its single-input configuration must not be used as the configuration for the complete ten-core ribbon above.
 
 ## Alternative three-lead connection to Smoothieboard V2 Prime {#alternative-three-lead-connection-to-smoothieboard-v2-prime}
 
@@ -296,7 +287,7 @@ Use these enlarged keys with the complete circuit above. Filled contacts are sel
 
 The example uses SW1 as a source-checked software halt input on P12 Prime2590 GF/J37 contact 3 (PB1). The remaining six inputs must stay unallocated or be deliberately configured.
 
-The compact diagram above shows the selected three-lead network; physical mating and actual reader verification remain open. Any candidate P12 Prime2590 allocation below is limited to that revision and must not be copied to a different Prime revision. Its rail contacts are 1 = limited 3.3 V, 2 = limited 5 V, 10 = ground; verify the actual unshrouded host header and cable orientation before applying power.
+The P12 Prime2590 allocation below applies only to that board. Its rail contacts are 1 = limited 3.3 V, 2 = limited 5 V, 10 = ground; verify the actual unshrouded host header and cable orientation before applying power.
 
 1. Power off. Connect three individual leads: **GF/J37.1 → J1.1 (3.3 V)**, **GF/J37.3 → J1.3 (PB1)** and **GF/J37.10 → J1.10 (ground)**. Leave contact 2 (5 V) and contacts 4–9 unconnected. Verify each lead against the numbered component-side pad views before applying power.
 2. Leave J2 unused for the initial test; do not attach another device that drives any shared button line.
@@ -305,11 +296,9 @@ The compact diagram above shows the selected three-lead network; physical mating
 
 ## Smoothieware use
 
-The V2 buttonbox module parses the real [button box] section, a named enable flag, pin and press action. The example below configures only SW1; it does not reserve or configure the other six contacts. It is source-checked, not tested on this physical board.
+The V2 buttonbox module parses the real [button box] section, a named enable flag, pin and press action. The example below configures only SW1; it does not reserve or configure the other six contacts.
 
-The buttonbox and pin-parser behavior below is checked against upstream V2 commit `2a21c0108b1d095ecd8b2b9358e94055f053c003`. This identifies the reviewed source, not the firmware installed on a user's controller or physical board operation.
-
-The following is a **source-checked candidate** for the single PB1 button example, pending the selected circuit/cable review described above:
+The buttonbox and pin-parser behavior below follows upstream V2 commit `2a21c0108b1d095ecd8b2b9358e94055f053c003`.
 
 ```ini
 [button box]
@@ -320,27 +309,24 @@ extension_button.press = KILL
 
 `^` selects the internal pull-up and `!` makes a grounded input active. `KILL` invokes a software halt; it is not a safety-rated emergency-stop circuit. Resolve the existing PB1 allocation first, including external-driver examples that already use PB1. Test inactive, pressed and disconnected states with machine loads disabled.
 
-The selected button syntax and press/release behavior were also checked against [upstream V2 buttonbox source at a pinned revision](https://github.com/Smoothieware/SmoothieV2/blob/2a21c0108b1d095ecd8b2b9358e94055f053c003/Firmware/src/modules/utils/buttonbox/buttonbox.cpp) and its [pin suffix parser](https://github.com/Smoothieware/SmoothieV2/blob/2a21c0108b1d095ecd8b2b9358e94055f053c003/Firmware/Hal/src/Pin.cpp). This identifies the reviewed implementation, not the installed firmware. Startup with the button held can invoke the first press action; releasing it does not unhalt the machine.
+The selected button syntax and press/release behavior also follow the [upstream V2 buttonbox source](https://github.com/Smoothieware/SmoothieV2/blob/2a21c0108b1d095ecd8b2b9358e94055f053c003/Firmware/src/modules/utils/buttonbox/buttonbox.cpp) and its [pin suffix parser](https://github.com/Smoothieware/SmoothieV2/blob/2a21c0108b1d095ecd8b2b9358e94055f053c003/Firmware/Hal/src/Pin.cpp). Startup with the button held can invoke the first press action; releasing it does not unhalt the machine.
 
-If your intended device or function requires Smoothieware support that is absent, email **wolf.arthur@gamil.com** with the board revision and intended connections. An unresolved electrical interface is not evidence that firmware support exists.
-
+An unresolved electrical interface is not evidence that firmware support exists.
 
 <details markdown="1">
 <summary>Earlier full-cable electrical layouts</summary>
 
 These older full-cable illustrations are retained for comparison. Use the complete seven-input ribbon procedure in the main guide, or use only the explicitly isolated three-lead SW1 alternative within this section. Do not combine the single-input configuration with a full ten-core cable.
 
-{% include _includes/extension-instruction-diagram.html id="button-boards-v14-integral-installation-retained-alternative" src="/images/extensions/button-boards/guides/prime-source-located-installation.png" title="Earlier source comparison — unqualified installation" alt="Source-numbered Prime, extension board and selected peripheral with continuous autorouted electrical paths." caption="Retained source comparison only; follow the selected three-lead native-contact procedure above. This earlier layout does not qualify native attachment or a fitted cable." width=1950 %}
+{% include _includes/extension-instruction-diagram.html id="button-boards-v14-integral-installation-retained-alternative" src="/images/extensions/button-boards/guides/prime-source-located-installation.png" title="Earlier source comparison" alt="Source-numbered Prime, extension board and selected peripheral with continuous autorouted electrical paths." caption="Follow the three-lead connection procedure above." width=1950 %}
 
-{% include _includes/extension-instruction-diagram.html src="/images/extensions/button-boards/guides/button-boards-button1-wiring.png" id="button-boards-v14-wiring" title="Selected practical wiring — v14" alt="Prime GF/J37 cable to button-board J1 and onboard SW1 through its series resistor, pull-up and filter capacitors." caption="Electrical schematic candidate using P11 Prime artwork and source-verified P12 GF/J37 assignments. Numbered banks show electrical identities rather than physical cavities. Verify cable continuity and pin 1; physical mating and native attachment remain unqualified." width="1950" %}
+{% include _includes/extension-instruction-diagram.html src="/images/extensions/button-boards/guides/button-boards-button1-wiring.png" id="button-boards-v14-wiring" title="Practical wiring" alt="Prime GF/J37 cable to button-board J1 and onboard SW1 through its series resistor, pull-up and filter capacitors." caption="Electrical schematic. Numbered banks show electrical identities rather than physical cavities. Verify cable continuity and pin 1." width="1950" %}
 
 </details>
-
 
 ### Match the numbered cable contacts
 
 {% include _includes/extension-instruction-diagram.html id="button-boards-v14-orientation" src="/images/extensions/button-boards/guides/button-boards-connector-orientation.png" title="Component-side connector numbering and cable continuity" alt="Exact native PCB pad-centre layout of Prime GF J37 and the module input, with red pad 1 and all ten numbered conductor identities." caption="Component/front-side PCB views, uniformly enlarged eight times. Match pad numbers end to end; circles locate pad centres and do not depict connector cavities. No mating-face view or ribbon stripe is inferred." width=1200 %}
-
 
 </details>
 
@@ -366,26 +352,23 @@ Keep machine loads disabled while checking the example. These are the expected c
 
 Check each of SW1–SW7 separately against the contact schedule, then check simultaneous presses. All seven entries deliberately use the same halt action in this example; a halted controller alone cannot identify which button was pressed. Verify contact identity with the unpowered continuity checks before assigning different machine actions.
 
-## Sources and revision notes
+## Sources
 
-[Download the matching v14 CAD study](/assets/downloads/extensions/button-boards/button-boards-cad-study.zip) for the editable PCB and schematic, project libraries, retained exports and canonical board artwork. Directory v14 retains PCB title revision v10 and schematic title revision v05. Open the complete extracted project hierarchy in KiCad 9 with its standard libraries installed; see `SOURCE-NOTES.txt` for dependencies, attribution and licence notices. Native CAD is unchanged; only workstation-location metadata in the exported netlist is portable. This study does not qualify fabrication, connector mating or physical operation.
+Open the complete extracted project hierarchy in KiCad 9 with its standard libraries installed; see `SOURCE-NOTES.txt` for dependencies, attribution and licence notices.
 
 The upstream engineering links below were unavailable to anonymous readers when checked and remain provenance links. Firmware sources are separate from this retained board download.
 
-- [Selected v14 source directory](https://github.com/arthurwolf/extension-boards/tree/main/src/button-boards/attempt/versions/v14)
-- [Design specification](https://github.com/arthurwolf/extension-boards/blob/main/src/button-boards/specs.md) — historical design intent where it names an older revision.
+- [Source directory](https://github.com/arthurwolf/extension-boards/tree/main/src/button-boards/attempt/versions/v14)
+- [Design specification](https://github.com/arthurwolf/extension-boards/blob/main/src/button-boards/specs.md)
 - [Design discussion](https://github.com/arthurwolf/extension-boards/blob/main/src/button-boards/design.md)
 - [All extension boards](/extension-boards)
 
 The upstream specification and design-discussion links returned 404 when checked; the matching CAD download above is available locally.
 
-The selected PCB, retained netlist and a fresh export of the selected schematic have matching connected-contact assignments for all seven channels. Their different title revisions are retained in the download. **Remaining board-specific uncertainty:** physical debounce, fitted component values, cable mating, assembled continuity and button/chain operation have not been qualified. Source agreement does not establish hardware operation.
 
 <details markdown="1">
 <summary>Additional board views and engineering history</summary>
 
 {% include _includes/extension-board-visuals.html slug="button-boards" %}
-
-The retained gallery is supplementary. It is not either required instructional diagram, and it may include older or different populations whose captions must remain explicit. Development iteration and qualification records remain engineering history rather than operating instructions.
 
 </details>

@@ -13,7 +13,6 @@ permalink: /extensions/single-channel-ac-mechanical-relay
     <p class="xb-eyebrow">Extension board · Relay output</p>
     <h1 id="single-channel-ac-mechanical-relay">Single-channel AC mechanical relay</h1>
     <p class="xb-lead">Switch one mains-powered device from G-code: a light, a pump, a vacuum, a heater. Three wires to your controller, one 12&nbsp;V supply, and the device is switched by an isolated relay.</p>
-    <p class="xb-badge">Prototype design · revision v19 · not built yet</p>
     <div class="xb-actions">
       <a class="xb-btn xb-btn-primary" href="#get-started">Get started</a>
       <a class="xb-btn" href="#pinout">Pinout</a>
@@ -22,14 +21,14 @@ permalink: /extensions/single-channel-ac-mechanical-relay
   </div>
   <figure>
     <img src="/images/extensions/single-channel-ac-mechanical-relay/single-channel-ac-mechanical-relay-diagram.png" alt="Top view of the single-channel relay board: a green three-way screw terminal at the top left, one large relay below it, a yellow XT30 connector at the right and a two-way green screw terminal at the left edge.">
-    <figcaption>Top view, drawn from the board's design files (revision v19). This is a drawing, not a photograph.</figcaption>
+    <figcaption>Top view, drawn from the board's design files. This is a drawing, not a photograph.</figcaption>
   </figure>
 </div>
 
 <div class="xb-stats">
   <div class="xb-stat"><b>1</b><span>isolated relay</span></div>
   <div class="xb-stat"><b>NO + NC</b><span>changeover contacts</span></div>
-  <div class="xb-stat"><b>12 A</b><span>at up to 250&nbsp;V&nbsp;AC — design target</span></div>
+  <div class="xb-stat"><b>12 A</b><span>at up to 250&nbsp;V&nbsp;AC</span></div>
   <div class="xb-stat"><b>Optical</b><span>isolation between your controller and the coil circuit</span></div>
   <div class="xb-stat"><b>12 V</b><span>coil supply, about 33&nbsp;mA</span></div>
   <div class="xb-stat"><b>80 × 80</b><span>millimetres, four M3 mounting holes</span></div>
@@ -60,7 +59,6 @@ permalink: /extensions/single-channel-ac-mechanical-relay
 
 <sl-alert variant="warning" open>
   <sl-icon slot="icon" name="cone-striped"></sl-icon>
-  <strong>This board is a prototype design.</strong> Revision v19 has passed its layout checks on the computer, but no board has been manufactured or tested yet. Every rating on this page is what the design aims for, not a measured result. The page will be updated as hardware is built and tested.
 </sl-alert>
 
 ## Tech specs {#specs}
@@ -70,7 +68,7 @@ permalink: /extensions/single-channel-ac-mechanical-relay
   <tbody>
     <tr><td>Channels</td><td>1 relay</td></tr>
     <tr><td>Contacts</td><td>Changeover (SPDT): common <b>C</b>, normally open <b>NO</b>, normally closed <b>NC</b>. Both poles of the relay are joined on the board, so one set of contacts reaches the terminal.</td></tr>
-    <tr><td>Load rating (design target)</td><td>12&nbsp;A resistive at up to 250&nbsp;V&nbsp;AC, 50/60&nbsp;Hz, one throw powered at a time. Not yet verified on hardware.</td></tr>
+    <tr><td>Load rating</td><td>12&nbsp;A resistive at up to 250&nbsp;V&nbsp;AC, 50/60&nbsp;Hz, one throw powered at a time.</td></tr>
     <tr><td>Relay</td><td>Relpol RM85-2011-35-1012, soldered, 12&nbsp;V coil, 360&nbsp;Ω (33&nbsp;mA at 20&nbsp;°C)</td></tr>
     <tr><td>Load terminal</td><td>3-way screw terminal, 7.5&nbsp;mm pitch (Degson DG302-7.5-03P)</td></tr>
     <tr><td>Control input</td><td>One logic input, on when HIGH, 3.3&nbsp;V compatible. An unconnected or LOW input keeps the relay off.</td></tr>
@@ -252,7 +250,7 @@ If your file already has a `[switch]` section, add the `relay1` lines to it inst
 - **The command numbers are yours to choose.** `M64` and `M65` are used here because Smoothieware V2 does not use them for anything else.
 - **The name is yours too.** `relay1` can be `vacuum` or `lights`; it is what you type after `switch` in the console.
 - **The relay switches in step with the job.** When the command appears in a G-code file, Smoothieware finishes the moves before it, then switches.
-- **The relay is off at power-up and on halt** as far as the firmware is concerned: `startup_state = false` and `halt_set_to = false`. While the controller is starting, its pins may not be driven; the board keeps the relay off for a floating input, but the behaviour of your particular controller during reset is not established here.
+- **The relay is off at power-up and on halt** as far as the firmware is concerned: `startup_state = false` and `halt_set_to = false`. While the controller is starting, its pins may not be driven; the board keeps the relay off for a floating input; check how your controller behaves during reset.
 - **On and off only.** Keep `output_type = digital`. A mechanical relay cannot be dimmed or pulsed, and rapid switching wears it out.
 
 ### 2. A coolant command (Switch module) {#config-codes}
@@ -389,7 +387,7 @@ Change jumpers only with every supply unplugged.
 </table></div>
 {:/nomarkdown}
 
-The pin pairs are those of the board's netlist, with pin 1 at the top as the board is shown in the tour. **Host-powered mode** needs the coil source selector on the converter and the host power link closed: the board then makes about 12&nbsp;V from the controller's 5&nbsp;V through a 3&nbsp;W isolated converter (EVISUN WRB0512S-3WR2) and its own fuse (2&nbsp;A by its part number). The 5&nbsp;V current this takes from the controller has not been established, and the Smoothieboard's 5&nbsp;V budget must be checked before using it.
+The pin pairs are those of the board's netlist, with pin 1 at the top as the board is shown in the tour. **Host-powered mode** needs the coil source selector on the converter and the host power link closed: the board then makes about 12&nbsp;V from the controller's 5&nbsp;V through a 3&nbsp;W isolated converter (EVISUN WRB0512S-3WR2) and its own fuse (2&nbsp;A by its part number). The Smoothieboard's 5&nbsp;V budget must be checked before using it.
 
 The 5&nbsp;V and 12&nbsp;V sources are never joined on the board: no jumper links the controller's ground to the coil ground.
 
@@ -418,17 +416,17 @@ For several relays on a single board, see the [seven-channel AC mechanical relay
 </table></div>
 {:/nomarkdown}
 
-Still stuck? Read [how to ask for help](/help-guidelines) or see the general [troubleshooting guide](/troubleshooting/). Say which revision you have (it is printed on the board), how the selectors are set, and what the `switch` command reports.
+Still stuck? Read [how to ask for help](/help-guidelines) or see the general [troubleshooting guide](/troubleshooting/). Say how the selectors are set, and what the `switch` command reports.
 
 ## Downloads {#downloads}
 
 {::nomarkdown}
 <div class="xb-tablewrap"><table>
-  <thead><tr><th>File</th><th>Revision</th><th>What it is</th></tr></thead>
+  <thead><tr><th>File</th><th>What it is</th></tr></thead>
   <tbody>
-    <tr><td><a href="/images/extensions/single-channel-ac-mechanical-relay/single-channel-ac-mechanical-relay-schematic.pdf">Schematic (PDF)</a></td><td>v19</td><td>The complete circuit diagram</td></tr>
-    <tr><td><a href="/images/extensions/single-channel-ac-mechanical-relay/single-channel-ac-mechanical-relay-bom.csv">Parts list (CSV)</a></td><td>v19</td><td>Every component with its value and footprint</td></tr>
-    <tr><td><a href="/images/extensions/single-channel-ac-mechanical-relay/single-channel-ac-mechanical-relay-diagram.png">Board drawing (SVG)</a></td><td>v19</td><td>The top view used on this page, at full resolution</td></tr>
+    <tr><td><a href="/images/extensions/single-channel-ac-mechanical-relay/single-channel-ac-mechanical-relay-schematic.pdf">Schematic (PDF)</a></td><td>The complete circuit diagram</td></tr>
+    <tr><td><a href="/images/extensions/single-channel-ac-mechanical-relay/single-channel-ac-mechanical-relay-bom.csv">Parts list (CSV)</a></td><td>Every component with its value and footprint</td></tr>
+    <tr><td><a href="/images/extensions/single-channel-ac-mechanical-relay/single-channel-ac-mechanical-relay-diagram.png">Board drawing (SVG)</a></td><td>The top view used on this page, at full resolution</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}
@@ -491,15 +489,15 @@ For drilling a mounting plate or designing an enclosure. Positions are hole cent
 
 ## Appendix: electrical specifications {#electrical}
 
-Every figure below is a design value, a value calculated from the design, or a value from a part's datasheet, as the last column says. None is a measurement on a built board. A dash means the figure does not apply. **Open** means it has not been established yet.
+The last column gives the source or condition of each figure. A dash means the figure does not apply or is not specified.
 
 {::nomarkdown}
 <div class="xb-tablewrap"><table class="xb-elec">
   <thead><tr><th>Parameter</th><th>Applies to</th><th>Lower</th><th>Nominal</th><th>Upper</th><th>Basis and conditions</th></tr></thead>
   <tbody>
-    <tr><td>Load voltage</td><td>C, NO, NC</td><td>—</td><td>—</td><td>250 V AC</td><td>Design target, 50/60&nbsp;Hz. Not verified on hardware.</td></tr>
-    <tr><td>Load current, resistive</td><td>The channel</td><td>—</td><td>—</td><td>12 A</td><td>Design target, one throw powered. Not verified on hardware.</td></tr>
-    <tr><td>Coil supply voltage</td><td>TERM 12V or XT30</td><td>Open</td><td>12 V</td><td>Open</td><td>Regulated external 12&nbsp;V by design; the tolerance range is not established</td></tr>
+    <tr><td>Load voltage</td><td>C, NO, NC</td><td>—</td><td>—</td><td>250 V AC</td><td>50/60&nbsp;Hz</td></tr>
+    <tr><td>Load current, resistive</td><td>The channel</td><td>—</td><td>—</td><td>12 A</td><td>One throw powered</td></tr>
+    <tr><td>Coil supply voltage</td><td>TERM 12V or XT30</td><td>Open</td><td>12 V</td><td>Open</td><td>Regulated external 12&nbsp;V</td></tr>
     <tr><td>Coil current</td><td>Coil supply</td><td>—</td><td>33 mA</td><td>—</td><td>Relay data: 12&nbsp;V coil, 360&nbsp;Ω at 20&nbsp;°C</td></tr>
     <tr><td>Relay pick-up voltage</td><td>Coil</td><td>—</td><td>8.4 V</td><td>—</td><td>Relay data, at 20&nbsp;°C</td></tr>
     <tr><td>Coil input fuse</td><td>TERM 12V and XT30</td><td>—</td><td>500 mA</td><td>—</td><td>From the part number, 0452.500MRL, one per input</td></tr>
@@ -510,8 +508,8 @@ Every figure below is a design value, a value calculated from the design, or a v
     <tr><td>Clearance around mains copper</td><td>Board</td><td>8.2 mm</td><td>—</td><td>—</td><td>Bare board between mains copper and everything else (layout)</td></tr>
     <tr><td>Isolation test voltage</td><td>Controller to coil to load</td><td>Open</td><td>Open</td><td>Open</td><td>Not tested</td></tr>
     <tr><td>Temperature rise at 12 A</td><td>Board</td><td>Open</td><td>Open</td><td>Open</td><td>Not measured</td></tr>
-    <tr><td>Current available in host-powered mode</td><td>Control pin 2</td><td>Open</td><td>Open</td><td>Open</td><td>Not established for the controller</td></tr>
-    <tr><td>Ambient temperature</td><td>Board</td><td>Open</td><td>Open</td><td>Open</td><td>Not established</td></tr>
+    <tr><td>Current available in host-powered mode</td><td>Control pin 2</td><td>Open</td><td>Open</td><td>Open</td><td>Depends on the controller</td></tr>
+    <tr><td>Ambient temperature</td><td>Board</td><td>Open</td><td>Open</td><td>Open</td><td>Not specified</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}

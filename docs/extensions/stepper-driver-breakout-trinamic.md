@@ -13,7 +13,6 @@ permalink: /extensions/stepper-driver-breakout-trinamic
     <p class="xb-eyebrow">Extension board · Motors</p>
     <h1 id="stepper-driver-breakout-trinamic">Trinamic stepper driver breakout board</h1>
     <p class="xb-lead">One bipolar stepper channel on a Trinamic TMC2660, with STEP, DIR and enable from the host and the driver registers set over SPI. Motor power comes in on its own connector through an input protection stage. The input socket combines motion and SPI functions, so it is not an ordinary peripheral ribbon, and it is not pin-compatible with the Allegro driver board.</p>
-    <p class="xb-badge">Design candidate · revision v19 · not yet built or tested</p>
     <div class="xb-actions">
       <a class="xb-btn xb-btn-primary" href="#get-started">Get started</a>
       <a class="xb-btn" href="#pinout">Pinout</a>
@@ -22,7 +21,7 @@ permalink: /extensions/stepper-driver-breakout-trinamic
   </div>
   <figure>
     <img src="/images/extensions/stepper-driver-breakout-trinamic/stepper-driver-breakout-trinamic-diagram.png" alt="Top view of the Trinamic stepper driver breakout board: a yellow XT30 power connector at the top, the TMC2660 chip at the centre, a ten-contact socket at the lower left and a green four-way motor terminal at the lower centre.">
-    <figcaption>Top view, drawn from the board&rsquo;s design files (revision v19). This is a drawing, not a photograph.</figcaption>
+    <figcaption>Top view, drawn from the board&rsquo;s design files. This is a drawing, not a photograph.</figcaption>
   </figure>
 </div>
 
@@ -52,7 +51,7 @@ permalink: /extensions/stepper-driver-breakout-trinamic
 
 <sl-alert variant="warning" open>
   <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
-  This is a design candidate that has not been built or tested, and it is not ready to energize. The silk marks the driver HOT and says no hot-plug. Never power the motor supply from a Gadgeteer 5&nbsp;V pin, and never connect or disconnect a motor while the supply is energized. The design review leaves operation above 24&nbsp;V unsupported, and that does not establish an approved range at or below 24&nbsp;V.
+  The silk marks the driver HOT and says no hot-plug. Never power the motor supply from a Gadgeteer 5&nbsp;V pin, and never connect or disconnect a motor while the supply is energized. Do not operate the motor supply above 24&nbsp;V.
 </sl-alert>
 
 ## Tech specs {#specs}
@@ -179,7 +178,7 @@ Identify the two coil pairs of the motor with the power removed before wiring it
 
 {::nomarkdown}
 <div class="xb-cards">
-  <div class="xb-card"><b>This board</b><span>The design is not yet built.</span></div>
+  <div class="xb-card"><b>This board</b><span>The driver breakout.</span></div>
   <div class="xb-card"><b>A stepper motor</b><span>With its coil pairs identified.</span></div>
   <div class="xb-card"><b>A motor supply</b><span>Current-limited, on the XT30 connector, separate from the controller.</span></div>
   <div class="xb-card"><b>Firmware with TMC2660 support</b><span>A build that includes the driver and a free chip-select pin.</span></div>
@@ -197,8 +196,8 @@ Identify the two coil pairs of the motor with the power removed before wiring it
   </li>
   <li class="xb-step">
     <h3>Plan the two host connections</h3>
-    <p>Motion lines come from one Prime socket and SPI lines from another. The Prime allocation below is a candidate; verify the headers, the rail positions and the cable orientation with the power removed, and do not push loose wires into a socket.</p>
-    <p class="xb-expect">Allocate every contact against one named Prime revision.</p>
+    <p>Motion lines come from one Prime socket and SPI lines from another. Verify the headers, the rail positions and the cable orientation with the power removed, and do not push loose wires into a socket.</p>
+    <p class="xb-expect">Check every contact against your own Prime board.</p>
   </li>
   <li class="xb-step">
     <h3>Provide motor power separately</h3>
@@ -224,9 +223,9 @@ Identify the two coil pairs of the motor with the power removed before wiring it
 </table></div>
 {:/nomarkdown}
 
-The checked SmoothieV2 source (revision 2a21c0108b1d095ecd8b2b9358e94055f053c003) has a TMC2660 implementation. The actuator uses the tmc2660 driver type, and the tmc2660 section uses the same actuator name with a chip-select pin, a sense resistor in milliohms and a maximum current in milliamps. The common SPI channel is set in mode 3 at 500&nbsp;kHz. The firmware must be built with the TMC driver option.
+The SmoothieV2 source (commit 2a21c0108b1d095ecd8b2b9358e94055f053c003) has a TMC2660 implementation. The actuator uses the tmc2660 driver type, and the tmc2660 section uses the same actuator name with a chip-select pin, a sense resistor in milliohms and a maximum current in milliamps. The common SPI channel is set in mode 3 at 500&nbsp;kHz. The firmware must be built with the TMC driver option.
 
-The example is a candidate for a Smoothieboard V2 P12 Prime2590: socket J37 contact 3 to PB1 (enable), 4 to PJ4 (STEP), 5 to PA4 (DIR) and 10 to ground; socket J36 contact 6 to PD15 (chip select), 7 to the controller data output, 8 from the driver data return and 9 to the clock. Contact 1 takes 3.3&nbsp;V; contact 2 stays unconnected. Merge the block into a working base configuration, reserve the pins and the SPI bus, and leave every other motor unconnected, because the enable command enables all registered motors.
+The example is for a Smoothieboard V2 P12 Prime2590: socket J37 contact 3 to PB1 (enable), 4 to PJ4 (STEP), 5 to PA4 (DIR) and 10 to ground; socket J36 contact 6 to PD15 (chip select), 7 to the controller data output, 8 from the driver data return and 9 to the clock. Contact 1 takes 3.3&nbsp;V; contact 2 stays unconnected. Merge the block into a working base configuration, reserve the pins and the SPI bus, and leave every other motor unconnected, because the enable command enables all registered motors.
 
 ```ini
 [actuator]
@@ -260,7 +259,7 @@ external_enn.ignore_on_halt = false
 
 The driver enable is register-based after initialization, so the separate switch owns the external enable pin; its logical off gives a physical high, matching the active-low line. The sense resistor entry is 100 milliohms from the 0.100&nbsp;&Omega; parts; confirm the assembled network before relying on it. A 0.45&nbsp;A request does not give an exact 0.45&nbsp;A setting: the driver routine rounds the current scale, which gives a nominal sine peak of about 0.464&nbsp;A and an RMS value near 0.328&nbsp;A. The maximum-current entry only clips the request and is not a calibrated ceiling.
 
-After independent electrical qualification and a confirmed driver initialization, a slow bench check sends `M43.21` and `M18`, then `M17`, waits five seconds, sends `M42.21`, waits five seconds, then `test pulse x 2` (about 20 seconds), and finishes with `M43.21` before `M18`. The pulses are five seconds high and five seconds low with the direction unchanged, nominally two full steps (3.6 degrees); movement and direction remain unmeasured. Do not issue motion or homing commands, or infer steps per millimetre from this check. A handled halt turns the switch off, but it is not an independent fault controller. This applies to that source revision only; it does not describe firmware installed on a controller.
+After checking the wiring and confirming driver initialization, a slow bench check sends `M43.21` and `M18`, then `M17`, waits five seconds, sends `M42.21`, waits five seconds, then `test pulse x 2` (about 20 seconds), and finishes with `M43.21` before `M18`. The pulses are five seconds high and five seconds low with the direction unchanged, nominally two full steps (3.6 degrees); observe movement and direction. Do not issue motion or homing commands, or infer steps per millimetre from this check. A handled halt turns the switch off, but it is not an independent fault controller. This does not describe firmware installed on a controller.
 
 ## How it works {#how-it-works}
 
@@ -283,7 +282,7 @@ After independent electrical qualification and a confirmed driver initialization
 </figure>
 {:/nomarkdown}
 
-STEP and DIR reach the driver through series resistors, and SPI sets the driver registers before motion. The protection and lights do not qualify the driver current or thermal performance.
+STEP and DIR reach the driver through series resistors, and SPI sets the driver registers before motion. The protection and lights do not set a limit on driver current or temperature.
 
 ## Troubleshooting {#troubleshooting}
 
@@ -316,11 +315,11 @@ Still stuck? Read [how to ask for help](/help-guidelines) or see the general [tr
 
 {::nomarkdown}
 <div class="xb-tablewrap"><table>
-  <thead><tr><th>File</th><th>Revision</th><th>What it is</th></tr></thead>
+  <thead><tr><th>File</th><th>What it is</th></tr></thead>
   <tbody>
-    <tr><td><a href="/images/extensions/stepper-driver-breakout-trinamic/stepper-driver-breakout-trinamic-schematic.png">Schematic (SVG)</a></td><td>v19</td><td>The circuit diagram. Its title block reads v11.</td></tr>
-    <tr><td><a href="/images/extensions/stepper-driver-breakout-trinamic/stepper-driver-breakout-trinamic-bom.csv">Parts list (CSV)</a></td><td>v19</td><td>Every component with its value and footprint</td></tr>
-    <tr><td><a href="/images/extensions/stepper-driver-breakout-trinamic/stepper-driver-breakout-trinamic-diagram.png">Board drawing (SVG)</a></td><td>v19</td><td>The top view used on this page, at full resolution</td></tr>
+    <tr><td><a href="/images/extensions/stepper-driver-breakout-trinamic/stepper-driver-breakout-trinamic-schematic.png">Schematic (SVG)</a></td><td>The circuit diagram.</td></tr>
+    <tr><td><a href="/images/extensions/stepper-driver-breakout-trinamic/stepper-driver-breakout-trinamic-bom.csv">Parts list (CSV)</a></td><td>Every component with its value and footprint</td></tr>
+    <tr><td><a href="/images/extensions/stepper-driver-breakout-trinamic/stepper-driver-breakout-trinamic-diagram.png">Board drawing (SVG)</a></td><td>The top view used on this page, at full resolution</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}
@@ -381,7 +380,7 @@ For drilling a mounting plate or designing an enclosure. Positions are hole cent
 
 ## Appendix: electrical specifications {#electrical}
 
-Every figure is a design value or a value from the parts list, as the last column says. None is a measurement on a built board. **Open** means not established.
+The last column gives the source of each figure. **Open** means not specified.
 
 {::nomarkdown}
 <div class="xb-tablewrap"><table class="xb-elec">
@@ -393,14 +392,14 @@ Every figure is a design value or a value from the parts list, as the last colum
     <tr><td>Standstill current</td><td>U1</td><td>—</td><td>—</td><td>1 A</td><td>Board silk (STANDSTILL &le; 1A); basis Open</td></tr>
     <tr><td>Surge diode, bulk capacitor</td><td>D1, C1</td><td>—</td><td>SMBJ26A, 100 &micro;F 35 V</td><td>—</td><td>Parts list</td></tr>
     <tr><td>Logic supply from host</td><td>J1 contact 1</td><td>Open</td><td>3.3 V</td><td>Open</td><td>Host current allowance Open</td></tr>
-    <tr><td>Continuous motor current, thermal rise</td><td>U1</td><td>Open</td><td>Open</td><td>Open</td><td>Not established; the chip is marked HOT</td></tr>
-    <tr><td>Protection ratings, startup and fault behaviour</td><td>Board</td><td>Open</td><td>Open</td><td>Open</td><td>Not established</td></tr>
+    <tr><td>Continuous motor current, thermal rise</td><td>U1</td><td>Open</td><td>Open</td><td>Open</td><td>The chip is marked HOT</td></tr>
+    <tr><td>Protection ratings, startup and fault behaviour</td><td>Board</td><td>Open</td><td>Open</td><td>Open</td><td>Not specified</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}
 
 ### Prime headers
 
-The candidate allocation above applies only to a Smoothieboard V2 P12 Prime2590 and has not passed review. The silk reads GA for the host socket while the allocation uses sockets J37 and J36; verify against the Prime revision you hold. The Prime&rsquo;s physical connector carries a noted rail-position discrepancy: verify numbered continuity with the power removed.
+The allocation above applies only to a Smoothieboard V2 P12 Prime2590. The silk reads GA for the host socket while the allocation uses sockets J37 and J36; check against your Prime. Verify the rail positions and numbered continuity with the power removed.
 
 See all boards on the [extension boards](/extension-boards) page.

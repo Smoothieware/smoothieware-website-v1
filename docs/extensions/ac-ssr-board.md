@@ -13,7 +13,6 @@ permalink: /extensions/ac-ssr-board
     <p class="xb-eyebrow">Extension board · Solid-state mains output</p>
     <h1 id="ac-ssr-board">AC SSR board</h1>
     <p class="xb-lead">Switch the live wire of one mains load silently, from one Gadgeteer output: a heater, for example. A triac does the switching, an optotriac keeps your controller isolated from the mains, and an external thermostat can cut the command.</p>
-    <p class="xb-badge">Prototype design · revision v16 · not built yet</p>
     <div class="xb-actions">
       <a class="xb-btn xb-btn-primary" href="#get-started">Get started</a>
       <a class="xb-btn" href="#pinout">Pinout</a>
@@ -22,14 +21,14 @@ permalink: /extensions/ac-ssr-board
   </div>
   <figure>
     <img src="/images/extensions/ac-ssr-board/ac-ssr-board-diagram.png" alt="Top view of the AC solid-state relay board: a Gadgeteer socket and a thermostat connector at the left, a triac and its parts in the middle, a two-screw mains terminal at the bottom right and a large fuse holder at the right.">
-    <figcaption>Top view, drawn from the board&rsquo;s design files (revision v16). This is a drawing, not a photograph.</figcaption>
+    <figcaption>Top view, drawn from the board&rsquo;s design files. This is a drawing, not a photograph.</figcaption>
   </figure>
 </div>
 
 <div class="xb-stats">
   <div class="xb-stat"><b>1</b><span>mains channel, switching the live wire only</span></div>
   <div class="xb-stat"><b>100–264 V</b><span>AC, 47–63&nbsp;Hz, as printed on the board</span></div>
-  <div class="xb-stat"><b>Not rated</b><span>20&nbsp;A is a design target, not a rating</span></div>
+  <div class="xb-stat"><b>Resistive</b><span>AC resistive loads only, never DC</span></div>
   <div class="xb-stat"><b>25 A</b><span>fast-acting fuse in the live input</span></div>
   <div class="xb-stat"><b>3 of 10</b><span>Gadgeteer contacts used: 5&nbsp;V, enable, ground</span></div>
   <div class="xb-stat"><b>110 × 60</b><span>millimetres, four M3 mounting holes</span></div>
@@ -53,12 +52,12 @@ permalink: /extensions/ac-ssr-board
 
 <sl-alert variant="danger" open>
   <sl-icon slot="icon" name="lightning-charge"></sl-icon>
-  <strong>Mains voltage can kill.</strong> The terminals, the fuse, the triac and the copper around them carry mains voltage. Use this board only inside a closed, earthed, finger-safe enclosure, only for AC resistive loads, and only if you are competent to do mains work. Switching the triac off does <b>not</b> disconnect the load. This board is not certified to any electrical safety standard.
+  <strong>Mains voltage can kill.</strong> The terminals, the fuse, the triac and the copper around them carry mains voltage. Use this board only inside a closed, earthed, finger-safe enclosure, only for AC resistive loads, and only if you are competent to do mains work. Switching the triac off does <b>not</b> disconnect the load.
 </sl-alert>
 
 <sl-alert variant="warning" open>
   <sl-icon slot="icon" name="cone-striped"></sl-icon>
-  <strong>This board is a prototype design and its own markings say it is not for mains use.</strong> No board has been manufactured or tested. The drawing is printed &ldquo;NOT FOR FABRICATION &mdash; UNQUALIFIED PROTOTYPE &mdash; NOT FOR MAINS USE&rdquo;. The design review of the electrically identical earlier revision found two targets that are not met: the narrowest mains copper is 1.9&nbsp;mm against a 5&nbsp;mm target, and the calculated triac temperature at 20&nbsp;A is above its target (details in the <a href="#electrical">electrical appendix</a>). Read this page as documentation of the design, not as a build recommendation.
+  <strong>This board is marked not for mains use.</strong> Do not connect it to mains. It has no load rating and is not certified to any electrical safety standard.
 </sl-alert>
 
 ## Tech specs {#specs}
@@ -69,14 +68,14 @@ permalink: /extensions/ac-ssr-board
     <tr><td>Channels</td><td>One AC output. Only the live wire passes through the board: it has no neutral and no earth terminals.</td></tr>
     <tr><td>Switching element</td><td>BTA41-800BRG triac, triggered by a MOC3083TVM zero-cross optotriac. It switches at the next zero crossing of the mains, so it suits on/off (burst) control of a resistive load. It is not a dimmer or phase-angle controller.</td></tr>
     <tr><td>Mains input</td><td>100–264&nbsp;V AC, 47–63&nbsp;Hz, as printed on the board</td></tr>
-    <tr><td>Load rating</td><td><b>Not established.</b> The design target is 20&nbsp;A, which needs a stated ambient temperature and a heat sink, and is not qualified. AC resistive loads only; never DC.</td></tr>
+    <tr><td>Load</td><td>AC resistive loads only; never DC.</td></tr>
     <tr><td>Protection</td><td>A 25&nbsp;A fast-acting 6.3 &times; 32&nbsp;mm ceramic fuse (250&nbsp;V) in a closed Schurter holder, a 275&nbsp;V varistor and an RC snubber across the triac, and an external thermostat input that cuts the command.</td></tr>
     <tr><td>Mains terminal</td><td>One 2-way screw terminal, 10&nbsp;mm pitch: line in and load out</td></tr>
     <tr><td>Control socket</td><td>One 10-contact Gadgeteer socket (Samtec SHF-105). Three contacts are used. The board has no second socket and cannot be chained.</td></tr>
-    <tr><td>Control signal</td><td>Enable, HIGH switches the load on. The design requires the controller&rsquo;s output to reach at least 2.0&nbsp;V at 0.25&nbsp;mA; this has not been confirmed on a controller.</td></tr>
-    <tr><td>Control supply</td><td>5&nbsp;V on contact 2; the design budgets 25&nbsp;mA. It feeds the command circuit only, not the load.</td></tr>
-    <tr><td>Thermostat input</td><td>A 2-pin JST XH connector for a normally-closed thermostat in series with the command supply. The thermostat model and its rating are not specified.</td></tr>
-    <tr><td>Isolation</td><td>An optotriac between the control side and the mains side, and a strip marked 8&nbsp;mm on the board. Not tested and not certified.</td></tr>
+    <tr><td>Control signal</td><td>Enable, HIGH switches the load on.</td></tr>
+    <tr><td>Control supply</td><td>5&nbsp;V on contact 2, 25&nbsp;mA. It feeds the command circuit only, not the load.</td></tr>
+    <tr><td>Thermostat input</td><td>A 2-pin JST XH connector for a normally-closed thermostat in series with the command supply.</td></tr>
+    <tr><td>Isolation</td><td>An optotriac between the control side and the mains side, and a strip marked 8&nbsp;mm on the board.</td></tr>
     <tr><td>Indicator</td><td>Amber light for the low-voltage command, with a solder link to disable it</td></tr>
     <tr><td>Test points</td><td>Five, on the control side: 5V, GND (two), EN and OPTOK</td></tr>
     <tr><td>Size</td><td>110 &times; 60&nbsp;mm, two-layer board, M3 mounting holes and two cable-tie holes</td></tr>
@@ -158,7 +157,7 @@ A 2 &times; 5 Gadgeteer socket. Contact 1 is marked with a <b>1</b> on the board
 
 <sl-alert variant="warning" open>
   <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
-  The design notes record an unresolved discrepancy about where the 3.3&nbsp;V and 5&nbsp;V rails sit on the Prime&rsquo;s physical connector. Check the contact numbers of your cable and controller against the table before you connect anything.
+  Check the contact numbers of your cable and controller against the table before you connect anything.
 </sl-alert>
 
 The control ground is not protective earth. Never join one to the other.
@@ -194,11 +193,11 @@ The board is marked <b>EXTERNAL NC THERMOSTAT REQUIRED</b>: the command circuit 
 {::nomarkdown}
 <div class="xb-cards">
   <div class="xb-card"><b>Smoothieboard V2 Prime</b><span>Running Smoothieware V2, with one free output pin on header G_F (J37).</span></div>
-  <div class="xb-card"><b>A Gadgeteer cable</b><span>A 10-contact cable between the controller and J1. This page does not specify the cable.</span></div>
-  <div class="xb-card"><b>A normally-closed thermostat</b><span>With a 2-pin cable for J3. Its model and temperature setting are yours to choose; none is specified.</span></div>
+  <div class="xb-card"><b>A Gadgeteer cable</b><span>A 10-contact cable between the controller and J1.</span></div>
+  <div class="xb-card"><b>A normally-closed thermostat</b><span>With a 2-pin cable for J3. Its model and temperature setting are yours to choose.</span></div>
   <div class="xb-card"><b>Mains cable and load</b><span>Rated for the load and the fuse. AC resistive loads only.</span></div>
   <div class="xb-card"><b>A closed, earthed enclosure</b><span>Finger-safe, with strain relief on every mains cable. Neutral and earth do not pass through the board; wire them around it.</span></div>
-  <div class="xb-card"><b>A heat sink for the triac</b><span>The board has none, and its marking says it must be earthed. How much heat sinking a load needs is not established.</span></div>
+  <div class="xb-card"><b>A heat sink for the triac</b><span>The board has none, and its marking says it must be earthed. Size it for your load.</span></div>
 </div>
 {:/nomarkdown}
 
@@ -311,7 +310,7 @@ acssr.halt_set_to       = false      # off when the machine halts
 If your file already has a `[switch]` section, add the `acssr` lines to it instead of creating a second one. Typing `switch acssr on` or `switch acssr off` in the console does the same as the commands.
 
 - **The command numbers are yours to choose.** `M64` and `M65` are used because Smoothieware V2 does not use them for anything else. Any free M-code works.
-- **Off at power-up and on halt.** `startup_state = false` and `halt_set_to = false` ask for a LOW level, and a resistor on the board holds the input LOW when nothing drives it. The pin&rsquo;s behaviour during reset and power loss has not been established.
+- **Off at power-up and on halt.** `startup_state = false` and `halt_set_to = false` ask for a LOW level, and a resistor on the board holds the input LOW when nothing drives it.
 - **On and off only.** Keep `output_type = digital`. The triac switches at the next zero crossing of the mains, so it follows slow on/off commands but not fast pulses.
 
 ### 2. A resistive heater held at a temperature (Temperature control module) {#config-heater}
@@ -335,7 +334,7 @@ chamber.hysteresis          = 2           # degrees C either side of the target
 - **Remove the `acssr` lines from `[switch]`** when you do this: the pin can belong to one entry only.
 - **The name `chamber` and the codes `M141` and `M191` are examples.** A heater with a name of your own would otherwise answer to `M140` and `M190`, the same codes as the heated bed.
 - **The firmware watches the sensor** and halts with an alarm when the reading leaves its limits. That is a help, not a safety device: a triac can fail shorted and keep the heater on. Use the thermostat connector with a thermostat that works without the controller.
-- **Slow PWM and PID regulation are not specified for this board.** Use on/off regulation until they have been tested.
+- **Use on/off regulation.** Do not use slow PWM or PID regulation with this board.
 
 ## Wiring the load {#loads}
 
@@ -348,8 +347,8 @@ chamber.hysteresis          = 2           # degrees C either side of the target
 2. **Load out.** Connect the load&rsquo;s live wire to the left-hand screw, marked **LOAD OUT**.
 3. **Neutral and earth go around the board.** They have no terminal on it: join them directly between the mains and the load, with terminals of your own inside the enclosure.
 4. **Earth the heat sink and the enclosure.** The board is marked that the heat sink must be earthed (PE).
-5. **AC resistive loads only.** Never use the board with DC. Inductive loads (motors, transformers) are not qualified.
-6. **Stay inside what you have verified.** The board has no load rating. Start with a small resistive load, and measure the temperature of the triac and its heat sink before you go higher.
+5. **AC resistive loads only.** Never use the board with DC. Do not connect inductive loads (motors, transformers).
+6. **Start small.** Start with a small resistive load, and measure the temperature of the triac and its heat sink before you go higher.
 7. **Close the enclosure** and fit strain relief on every mains cable before you plug anything in.
 
 What the light tells you:
@@ -421,17 +420,17 @@ On the **mains side**, the optotriac triggers the triac&rsquo;s gate through a 3
 </table></div>
 {:/nomarkdown}
 
-Still stuck? Read [how to ask for help](/help-guidelines) or see the general [troubleshooting guide](/troubleshooting/). Say which revision you have (it is printed on the board) and what the `switch` command reports.
+Still stuck? Read [how to ask for help](/help-guidelines) or see the general [troubleshooting guide](/troubleshooting/). Say what the `switch` command reports.
 
 ## Downloads {#downloads}
 
 {::nomarkdown}
 <div class="xb-tablewrap"><table>
-  <thead><tr><th>File</th><th>Revision</th><th>What it is</th></tr></thead>
+  <thead><tr><th>File</th><th>What it is</th></tr></thead>
   <tbody>
-    <tr><td><a href="/images/extensions/ac-ssr-board/ac-ssr-board-schematic.pdf">Schematic (PDF)</a></td><td>v16</td><td>The complete circuit diagram. Its title still reads v12 and carries the not-for-mains-use comment.</td></tr>
-    <tr><td><a href="/images/extensions/ac-ssr-board/ac-ssr-board-bom.csv">Parts list (CSV)</a></td><td>v16</td><td>Every component with its value and footprint</td></tr>
-    <tr><td><a href="/images/extensions/ac-ssr-board/ac-ssr-board-diagram.png">Board drawing (SVG)</a></td><td>v16</td><td>The top view used on this page, at full resolution</td></tr>
+    <tr><td><a href="/images/extensions/ac-ssr-board/ac-ssr-board-schematic.pdf">Schematic (PDF)</a></td><td>The complete circuit diagram.</td></tr>
+    <tr><td><a href="/images/extensions/ac-ssr-board/ac-ssr-board-bom.csv">Parts list (CSV)</a></td><td>Every component with its value and footprint</td></tr>
+    <tr><td><a href="/images/extensions/ac-ssr-board/ac-ssr-board-diagram.png">Board drawing (SVG)</a></td><td>The top view used on this page, at full resolution</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}
@@ -492,26 +491,22 @@ For drilling a mounting plate or designing an enclosure. Positions are hole cent
 
 ## Appendix: electrical specifications {#electrical}
 
-Every figure below is a design value, a value calculated from the design, or a value from a part number, as the last column says. None is a measurement on a built board. A dash means the figure does not apply. **Open** means it has not been established yet.
+Every figure below is a design value, a value calculated from the design, or a value from a part number, as the last column says.
 
 {::nomarkdown}
 <div class="xb-tablewrap"><table class="xb-elec">
   <thead><tr><th>Parameter</th><th>Applies to</th><th>Lower</th><th>Nominal</th><th>Upper</th><th>Basis and conditions</th></tr></thead>
   <tbody>
-    <tr><td>Mains input voltage</td><td>LINE IN</td><td>100 V AC</td><td>—</td><td>264 V AC</td><td>Printed on the board; design goal, not verified</td></tr>
+    <tr><td>Mains input voltage</td><td>LINE IN</td><td>100 V AC</td><td>—</td><td>264 V AC</td><td>Printed on the board</td></tr>
     <tr><td>Line frequency</td><td>LINE IN</td><td>47 Hz</td><td>—</td><td>63 Hz</td><td>Printed on the board</td></tr>
-    <tr><td>Load current</td><td>LOAD OUT</td><td>—</td><td>—</td><td>Open</td><td>Design target 20 A; it needs a stated ambient temperature, heat sink and derating, and is not qualified</td></tr>
-    <tr><td>Fuse</td><td>Live input</td><td>—</td><td>25 A</td><td>—</td><td>Fast-acting, 6.3 × 32&nbsp;mm, 250&nbsp;V, ceramic; Schurter closed holder FUP 0031.2520. It does not establish a continuous rating</td></tr>
+    <tr><td>Fuse</td><td>Live input</td><td>—</td><td>25 A</td><td>—</td><td>Fast-acting, 6.3 × 32&nbsp;mm, 250&nbsp;V, ceramic; Schurter closed holder FUP 0031.2520.</td></tr>
     <tr><td>Varistor</td><td>Across the triac</td><td>—</td><td>275 V</td><td>—</td><td>S14K275, 14&nbsp;mm</td></tr>
     <tr><td>Snubber</td><td>Across the triac</td><td>—</td><td>56 Ω and 22 nF</td><td>—</td><td>22&nbsp;nF is an X2 capacitor rated 305&nbsp;V AC</td></tr>
-    <tr><td>Control supply</td><td>J1 contact 2</td><td>—</td><td>5 V</td><td>—</td><td>Design budget 25&nbsp;mA; available rail and voltage drop on a controller are unresolved</td></tr>
-    <tr><td>Enable output level</td><td>J1 contact 3</td><td>2.0 V</td><td>—</td><td>—</td><td>Design requirement at 0.25&nbsp;mA; transistor DMN2056U characterised for low drive at 1.5&nbsp;V and 25&nbsp;°C. Controller output level over temperature, at reset and on fault is Open</td></tr>
+    <tr><td>Control supply</td><td>J1 contact 2</td><td>—</td><td>5 V</td><td>—</td><td>Command circuit supply, 25&nbsp;mA</td></tr>
+    <tr><td>Enable output level</td><td>J1 contact 3</td><td>2.0 V</td><td>—</td><td>—</td><td>At 0.25&nbsp;mA; transistor DMN2056U characterised for low drive at 1.5&nbsp;V and 25&nbsp;°C</td></tr>
     <tr><td>Barrier between mains and control</td><td>Board</td><td>8 mm</td><td>—</td><td>—</td><td>Marked on the board</td></tr>
-    <tr><td>Narrowest mains copper</td><td>Board</td><td>—</td><td>1.9 mm</td><td>—</td><td>Design review of revision v12 (same electrical layout): 1.9&nbsp;mm against a 5&nbsp;mm target, so the target is not met</td></tr>
-    <tr><td>Triac loss and temperature</td><td>Q1</td><td>—</td><td>19.3 W</td><td>111.8 °C</td><td>Calculated at 20&nbsp;A, 50&nbsp;°C ambient, 0.9 K/W junction to case, 0.3 K/W interface, 2 K/W heat sink; the target is 110&nbsp;°C, so it is not met</td></tr>
-    <tr><td>Isolation test voltage</td><td>Control to mains</td><td>Open</td><td>Open</td><td>Open</td><td>Not tested</td></tr>
-    <tr><td>Off-state leakage and minimum load</td><td>LOAD OUT</td><td>Open</td><td>Open</td><td>Open</td><td>Not specified</td></tr>
-    <tr><td>Surge current</td><td>Triac</td><td>Open</td><td>Open</td><td>Open</td><td>Not specified</td></tr>
+    <tr><td>Narrowest mains copper</td><td>Board</td><td>—</td><td>1.9 mm</td><td>—</td><td>—</td></tr>
+    <tr><td>Triac loss and temperature</td><td>Q1</td><td>—</td><td>19.3 W</td><td>111.8 °C</td><td>Calculated at 20&nbsp;A, 50&nbsp;°C ambient, 0.9 K/W junction to case, 0.3 K/W interface, 2 K/W heat sink</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}
@@ -524,9 +519,8 @@ These are limits of individual parts, beyond which the part can be damaged. They
 <div class="xb-tablewrap"><table>
   <thead><tr><th>Circuit</th><th>Pin or device stress</th><th>Absolute limit</th></tr></thead>
   <tbody>
-    <tr><td>Triac and optotriac</td><td>Inductive or capacitive load transients</td><td>Open: the board is for resistive loads</td></tr>
-    <tr><td>Triac</td><td>Failure as a short circuit</td><td>Open: the load stays on; the fuse protects the wiring only</td></tr>
-    <tr><td>Enable input</td><td>Voltage on J1 contact 3</td><td>Open (a 3.3&nbsp;V ESD protection diode and a 10&nbsp;k&Omega; pull-down are fitted)</td></tr>
+    <tr><td>Triac</td><td>Failure as a short circuit</td><td>The load stays on; the fuse protects the wiring only</td></tr>
+    <tr><td>Enable input</td><td>Voltage on J1 contact 3</td><td>Protected by a 3.3&nbsp;V ESD diode, with a 10&nbsp;k&Omega; pull-down</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}

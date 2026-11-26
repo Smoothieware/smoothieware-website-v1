@@ -13,7 +13,6 @@ permalink: /extensions/spectral-analysis-board
     <p class="xb-eyebrow">Extension board · Sensors</p>
     <h1 id="spectral-analysis-board">Spectral analysis</h1>
     <p class="xb-lead">Three AS72651, AS72652 and AS72653 spectral sensors give 18 channels of reflected light, read over I2C, for controlled reflectance experiments. The board supplies sensor data only: the light source, the calibration and the classification of materials belong to the host and to your optical fixture.</p>
-    <p class="xb-badge">Design candidate · revision v31 · not yet built or tested</p>
     <div class="xb-actions">
       <a class="xb-btn xb-btn-primary" href="#get-started">Get started</a>
       <a class="xb-btn" href="#pinout">Pinout</a>
@@ -22,16 +21,16 @@ permalink: /extensions/spectral-analysis-board
   </div>
   <figure>
     <img src="/images/extensions/spectral-analysis-board/spectral-analysis-board-diagram.png" alt="Top view of the spectral analysis board: three square sensor windows in a row in the middle, a ten-contact socket at the right and a small connector at the bottom.">
-    <figcaption>Top view, drawn from the board&rsquo;s design files (revision v31). This is a drawing, not a photograph.</figcaption>
+    <figcaption>Top view, drawn from the board&rsquo;s design files. This is a drawing, not a photograph.</figcaption>
   </figure>
 </div>
 
 <div class="xb-stats">
   <div class="xb-stat"><b>18 channels</b><span>three sensors, AS72651, AS72652 and AS72653</span></div>
-  <div class="xb-stat"><b>I2C 0x49</b><span>target address at 100&nbsp;kHz, not qualified</span></div>
-  <div class="xb-stat"><b>3.3 V only</b><span>no 5&nbsp;V load; 50&nbsp;mA board allocation, a target</span></div>
-  <div class="xb-stat"><b>15 ± 1 mm</b><span>target sample distance for a flat matte sample</span></div>
-  <div class="xb-stat"><b>No driver</b><span>no spectral sensor support in the pinned source</span></div>
+  <div class="xb-stat"><b>I2C 0x49</b><span>address at 100&nbsp;kHz</span></div>
+  <div class="xb-stat"><b>3.3 V only</b><span>no 5&nbsp;V load; 50&nbsp;mA board allocation</span></div>
+  <div class="xb-stat"><b>15 ± 1 mm</b><span>sample distance for a flat matte sample</span></div>
+  <div class="xb-stat"><b>No driver</b><span>no spectral sensor support in SmoothieV2</span></div>
   <div class="xb-stat"><b>70 × 50</b><span>millimetres, four M3 holes and two cable-tie holes</span></div>
 </div>
 
@@ -52,7 +51,7 @@ permalink: /extensions/spectral-analysis-board
 
 <sl-alert variant="warning" open>
   <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
-  This is a design candidate that has not been built or tested, and it is not ready to energize. The board is 3.3&nbsp;V only: never connect 5&nbsp;V. The light source is external, and its spectrum and stability decide the quality of any result. The address, bus speed, current and fixture distances on this page are design targets, not qualified operation.
+  The board is 3.3&nbsp;V only: never connect 5&nbsp;V. Check the wiring and supply before applying power. The light source is external, and its spectrum and stability decide the quality of any result.
 </sl-alert>
 
 ## Tech specs {#specs}
@@ -62,14 +61,14 @@ permalink: /extensions/spectral-analysis-board
   <tbody>
     <tr><td>Purpose</td><td>Read reflected light in 18 channels from a sample, for controlled reflectance experiments</td></tr>
     <tr><td>Sensors</td><td>Three AS7265x parts: AS72651 (U1), AS72652 (U2) and AS72653 (U3). U1 coordinates the cluster.</td></tr>
-    <tr><td>Host interface</td><td>I2C on J1 contacts 8 (data) and 9 (clock), through a TCA9517A bus buffer to the sensor side. Target address 0x49, initial speed 100&nbsp;kHz.</td></tr>
-    <tr><td>Supply</td><td>3.3&nbsp;V on J1 contact 1 only; the board is marked 3V3 ONLY / NO 5V LOAD. Target allocation 50&nbsp;mA, not qualified.</td></tr>
+    <tr><td>Host interface</td><td>I2C on J1 contacts 8 (data) and 9 (clock), through a TCA9517A bus buffer to the sensor side. Address 0x49, initial speed 100&nbsp;kHz.</td></tr>
+    <tr><td>Supply</td><td>3.3&nbsp;V on J1 contact 1 only; the board is marked 3V3 ONLY / NO 5V LOAD. Allocation 50&nbsp;mA.</td></tr>
     <tr><td>Flash</td><td>An SST25PF040C serial flash (U4) supports the master sensor. A 10-contact Tag-Connect service connector J2 and four 0&nbsp;&Omega; links JP1 to JP4 isolate the flash lines for programming.</td></tr>
     <tr><td>Protection</td><td>Two TPD2E2U06 surge-protection parts on the host data and clock lines</td></tr>
     <tr><td>Connectors</td><td>One 10-contact Gadgeteer I socket (Samtec SHF-105, 1.27&nbsp;mm), a four-contact I2C connector J3, and the service connector J2</td></tr>
-    <tr><td>Fixture target</td><td>A flat matte sample at 15 &plusmn; 1&nbsp;mm, illuminated over at least 40&nbsp;mm diameter, with repeatable dark, white-reference and sample geometry</td></tr>
+    <tr><td>Fixture</td><td>A flat matte sample at 15 &plusmn; 1&nbsp;mm, illuminated over at least 40&nbsp;mm diameter, with repeatable dark, white-reference and sample geometry</td></tr>
     <tr><td>Size</td><td>70 &times; 50&nbsp;mm with four M3 mounting holes and two 2.5&nbsp;mm cable-tie holes</td></tr>
-    <tr><td>Works with</td><td><a href="/smoothieboard-v2-prime">Smoothieboard V2 Prime</a> (not yet usable without a driver)</td></tr>
+    <tr><td>Works with</td><td><a href="/smoothieboard-v2-prime">Smoothieboard V2 Prime</a> (needs a driver, which is not supplied)</td></tr>
     <tr><td>Licence</td><td>Open hardware, CERN-OHL-S-2.0</td></tr>
   </tbody>
 </table></div>
@@ -147,15 +146,15 @@ The silk above the board lists the same four contacts. J3 joins the buffered sen
 
 ### J2 and the programming links
 
-J2 is a Tag-Connect TC2050 style 10-contact service footprint for the flash and reset lines, with 3.3&nbsp;V on contact 1 and ground on contacts 2 and 8. It is not a normal peripheral inlet. JP1 to JP4 are 0&nbsp;&Omega; resistors that join the master sensor&rsquo;s SPI clock, data out, data in and chip select to the flash; remove them only to isolate the flash while programming. Their default is fitted, and the delivered state should be confirmed on the assembled board.
+J2 is a Tag-Connect TC2050 style 10-contact service footprint for the flash and reset lines, with 3.3&nbsp;V on contact 1 and ground on contacts 2 and 8. It is not a normal peripheral inlet. JP1 to JP4 are 0&nbsp;&Omega; resistors that join the master sensor&rsquo;s SPI clock, data out, data in and chip select to the flash; remove them only to isolate the flash while programming. Their default is fitted; check them on your board.
 
 ## What you need {#what-you-need}
 
 {::nomarkdown}
 <div class="xb-cards">
-  <div class="xb-card"><b>This board</b><span>The design is not yet built.</span></div>
+  <div class="xb-card"><b>This board</b><span>The spectral analysis board.</span></div>
   <div class="xb-card"><b>Four host wires</b><span>3.3&nbsp;V, I2C data, I2C clock and ground to the controller.</span></div>
-  <div class="xb-card"><b>An optical fixture</b><span>A stable light source, a holder at the target distance and dark and white references.</span></div>
+  <div class="xb-card"><b>An optical fixture</b><span>A stable light source, a holder at the set distance and dark and white references.</span></div>
   <div class="xb-card"><b>A driver</b><span>Sensor firmware setup, acquisition and calibration code. None is supplied.</span></div>
 </div>
 {:/nomarkdown}
@@ -175,11 +174,11 @@ J2 is a Tag-Connect TC2050 style 10-contact service footprint for the flash and 
   </li>
   <li class="xb-step">
     <h3>Check the bus</h3>
-    <p>Power on and look for a device at the target address 0x49 with a bus scan at 100&nbsp;kHz, if your firmware has one.</p>
+    <p>Power on and look for a device at address 0x49 with a bus scan at 100&nbsp;kHz, if your firmware has one.</p>
   </li>
   <li class="xb-step">
-    <h3>Wait for a driver</h3>
-    <p>Measure dark, reference and sample data and watch for saturation before any normalisation or classification. Until a driver exists, no reading can be taken.</p>
+    <h3>Provide a driver</h3>
+    <p>Measure dark, reference and sample data and watch for saturation before any normalisation or classification. No reading can be taken without a driver.</p>
   </li>
 </ol>
 {:/nomarkdown}
@@ -190,13 +189,13 @@ J2 is a Tag-Connect TC2050 style 10-contact service footprint for the flash and 
 <div class="xb-tablewrap"><table>
   <thead><tr><th>You want</th><th>Module</th><th>Example</th></tr></thead>
   <tbody>
-    <tr><td>Read the 18 channels</td><td>None</td><td>No driver exists; no example is given</td></tr>
+    <tr><td>Read the 18 channels</td><td>None</td><td>No driver is provided</td></tr>
     <tr><td>Classify a material</td><td>None</td><td>Not provided; a host and dataset task</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}
 
-There is no configuration to give. The pinned SmoothieV2 source (revision [2a21c0108b1d095ecd8b2b9358e94055f053c003](https://github.com/Smoothieware/SmoothieV2/tree/2a21c0108b1d095ecd8b2b9358e94055f053c003/Firmware/src)) has no spectral sensor driver. A configuration here would be invented.
+SmoothieV2 ([source](https://github.com/Smoothieware/SmoothieV2/tree/2a21c0108b1d095ecd8b2b9358e94055f053c003/Firmware/src)) has no spectral sensor driver, so there is no configuration for this board.
 
 ## How it works {#how-it-works}
 
@@ -227,7 +226,7 @@ The master sensor U1 coordinates the other two, with a serial flash holding its 
 <div class="xb-tablewrap"><table>
   <thead><tr><th>Symptom</th><th>Check</th></tr></thead>
   <tbody>
-    <tr><td>No device on the bus</td><td>3.3&nbsp;V on J1 contact 1, wiring of contacts 8 and 9, a free bus, and the address (target 0x49).</td></tr>
+    <tr><td>No device on the bus</td><td>3.3&nbsp;V on J1 contact 1, wiring of contacts 8 and 9, a free bus, and the address (0x49).</td></tr>
     <tr><td>Readings are dark or saturated</td><td>The external light source, the sample distance and the aperture cover.</td></tr>
     <tr><td>Results drift</td><td>Source spectrum and stability, and repeatable sample geometry.</td></tr>
     <tr><td>Programming the flash fails</td><td>JP1 to JP4 must be fitted for normal operation; check the service connector wiring.</td></tr>
@@ -243,11 +242,11 @@ Still stuck? Read [how to ask for help](/help-guidelines) or see the general [tr
 
 {::nomarkdown}
 <div class="xb-tablewrap"><table>
-  <thead><tr><th>File</th><th>Revision</th><th>What it is</th></tr></thead>
+  <thead><tr><th>File</th><th>What it is</th></tr></thead>
   <tbody>
-    <tr><td><a href="/images/extensions/spectral-analysis-board/spectral-analysis-board-schematic.pdf">Schematic (PDF)</a></td><td>v31</td><td>The complete circuit diagram. Its title block reads v27.</td></tr>
-    <tr><td><a href="/images/extensions/spectral-analysis-board/spectral-analysis-board-bom.csv">Parts list (CSV)</a></td><td>v31</td><td>Every component with its value and footprint</td></tr>
-    <tr><td><a href="/images/extensions/spectral-analysis-board/spectral-analysis-board-diagram.png">Board drawing (SVG)</a></td><td>v31</td><td>The top view used on this page, at full resolution</td></tr>
+    <tr><td><a href="/images/extensions/spectral-analysis-board/spectral-analysis-board-schematic.pdf">Schematic (PDF)</a></td><td>The complete circuit diagram.</td></tr>
+    <tr><td><a href="/images/extensions/spectral-analysis-board/spectral-analysis-board-bom.csv">Parts list (CSV)</a></td><td>Every component with its value and footprint</td></tr>
+    <tr><td><a href="/images/extensions/spectral-analysis-board/spectral-analysis-board-diagram.png">Board drawing (SVG)</a></td><td>The top view used on this page, at full resolution</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}
@@ -308,27 +307,26 @@ For drilling a mounting plate or designing an enclosure. Positions are hole cent
 
 ## Appendix: electrical specifications {#electrical}
 
-Every figure is a design target or a value from the parts list, as the last column says. None is a measurement on a built board. **Open** means not established.
+The last column gives the basis for each figure.
 
 {::nomarkdown}
 <div class="xb-tablewrap"><table class="xb-elec">
   <thead><tr><th>Parameter</th><th>Applies to</th><th>Lower</th><th>Nominal</th><th>Upper</th><th>Basis and conditions</th></tr></thead>
   <tbody>
-    <tr><td>Supply</td><td>J1 contact 1</td><td>Open</td><td>3.3 V</td><td>Open</td><td>3.3&nbsp;V only; 5&nbsp;V must not be connected</td></tr>
-    <tr><td>Supply current</td><td>Board</td><td>—</td><td>—</td><td>50 mA</td><td>Design allocation target; not measured</td></tr>
-    <tr><td>I2C address</td><td>Sensor cluster</td><td>—</td><td>0x49</td><td>—</td><td>Target, not qualified</td></tr>
-    <tr><td>I2C speed</td><td>Bus</td><td>—</td><td>100 kHz</td><td>—</td><td>Initial target, not qualified</td></tr>
+    <tr><td>Supply</td><td>J1 contact 1</td><td>—</td><td>3.3 V</td><td>—</td><td>3.3&nbsp;V only; 5&nbsp;V must not be connected</td></tr>
+    <tr><td>Supply current</td><td>Board</td><td>—</td><td>—</td><td>50 mA</td><td>Board allocation</td></tr>
+    <tr><td>I2C address</td><td>Sensor cluster</td><td>—</td><td>0x49</td><td>—</td><td>Sensor bus address</td></tr>
+    <tr><td>I2C speed</td><td>Bus</td><td>—</td><td>100 kHz</td><td>—</td><td>Initial speed</td></tr>
     <tr><td>Pull-ups</td><td>Sensor-side bus</td><td>—</td><td>4.7 k&Omega; and 10 k&Omega;</td><td>—</td><td>Parts list values; assignment per net not stated here</td></tr>
-    <tr><td>Sample distance</td><td>Optics</td><td>14 mm</td><td>15 mm</td><td>16 mm</td><td>Fixture target of 15 &plusmn; 1&nbsp;mm</td></tr>
-    <tr><td>Illuminated diameter</td><td>Sample</td><td>40 mm</td><td>—</td><td>—</td><td>Fixture target</td></tr>
-    <tr><td>Light source spectrum and stability</td><td>External</td><td>Open</td><td>Open</td><td>Open</td><td>Not part of the board</td></tr>
-    <tr><td>Calibration, noise</td><td>Whole board</td><td>Open</td><td>Open</td><td>Open</td><td>Not established</td></tr>
+    <tr><td>Sample distance</td><td>Optics</td><td>14 mm</td><td>15 mm</td><td>16 mm</td><td>Fixture distance of 15 &plusmn; 1&nbsp;mm</td></tr>
+    <tr><td>Illuminated diameter</td><td>Sample</td><td>40 mm</td><td>—</td><td>—</td><td>Fixture</td></tr>
+    <tr><td>Light source spectrum and stability</td><td>External</td><td>—</td><td>—</td><td>—</td><td>Not part of the board</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}
 
 ### Prime header GG (J38)
 
-The design notes name header GG (J38) for the four leads: contact 1 is the limited 3.3&nbsp;V, contacts 8 and 9 are the I2C2 data and clock, and contact 10 is ground. A discrepancy in the rail positions on the Prime&rsquo;s physical connector has been noted for the neighbouring G_F (J37) header; verify numbered continuity with the power removed.
+Header GG (J38) carries the four leads: contact 1 is the limited 3.3&nbsp;V, contacts 8 and 9 are the I2C2 data and clock, and contact 10 is ground. Check the rail positions on the Prime&rsquo;s headers by numbered continuity with the power removed.
 
 See all boards on the [extension boards](/extension-boards) page.

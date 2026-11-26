@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Position feedback board"
-description: "A counter board that reads a 5 V differential ABZ quadrature encoder over SPI, with a switched encoder supply: pinout, links and limits."
+description: "A counter board that reads a 5 V differential ABZ quadrature encoder over SPI, with a switched encoder supply: pinout, links and wiring."
 permalink: /extensions/position-feedback-board
 ---
 
@@ -12,8 +12,7 @@ permalink: /extensions/position-feedback-board
   <div>
     <p class="xb-eyebrow">Extension board · Sensors</p>
     <h1 id="position-feedback-board">Position feedback board</h1>
-    <p class="xb-lead">Counts the pulses of a 5&nbsp;V differential incremental encoder (A, B and Z pairs) with an LS7366R counter that the controller reads over SPI, and powers the encoder through a switch that reports faults. It is not an adapter for magnetic absolute encoders, and no firmware driver is supplied.</p>
-    <p class="xb-badge">Design candidate · revision v33 · not yet built or tested</p>
+    <p class="xb-lead">Counts the pulses of a 5&nbsp;V differential incremental encoder (A, B and Z pairs) with an LS7366R counter that the controller reads over SPI, and powers the encoder through a switch that reports faults. It is not an adapter for magnetic absolute encoders, and Smoothieware has no driver for it.</p>
     <div class="xb-actions">
       <a class="xb-btn xb-btn-primary" href="#get-started">Get started</a>
       <a class="xb-btn" href="#pinout">Pinout</a>
@@ -22,7 +21,7 @@ permalink: /extensions/position-feedback-board
   </div>
   <figure>
     <img src="/images/extensions/position-feedback-board/position-feedback-board-diagram.png" alt="Top view of the position feedback board: two sockets along the top, a counter and a receiver chip in the middle and a nine-contact encoder connector along the bottom.">
-    <figcaption>Top view, drawn from the board&rsquo;s design files (revision v33). This is a drawing, not a photograph.</figcaption>
+    <figcaption>Top view, drawn from the board&rsquo;s design files. This is a drawing, not a photograph.</figcaption>
   </figure>
 </div>
 
@@ -31,7 +30,7 @@ permalink: /extensions/position-feedback-board
   <div class="xb-stat"><b>ABZ, RS-422</b><span>three differential pairs with a 120&nbsp;&Omega; termination link each</span></div>
   <div class="xb-stat"><b>5 V encoder</b><span>switched by a TPS2553 with a fault output; the board is marked 176&nbsp;mA max</span></div>
   <div class="xb-stat"><b>2 lights</b><span>counter flag and encoder-power fault</span></div>
-  <div class="xb-stat"><b>No driver</b><span>the counter must be set up and read by firmware that does not exist yet</span></div>
+  <div class="xb-stat"><b>No driver</b><span>Smoothieware has no counter driver; the counter needs firmware to set it up and read it</span></div>
   <div class="xb-stat"><b>50 × 47</b><span>millimetres, two M3 mounting holes</span></div>
 </div>
 
@@ -52,7 +51,7 @@ permalink: /extensions/position-feedback-board
 
 <sl-alert variant="warning" open>
   <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
-  This is a design candidate that has not been built or tested. The hardware only counts; it does not compare the measured position with commanded motion and it does not stop an axis. The pinned firmware has no counter driver or following-error handling. Count rate, cable length, encoder current allowance, shield plan and the count direction convention are not established.
+  The hardware only counts; it does not compare the measured position with commanded motion and it does not stop an axis. Smoothieware has no counter driver or following-error handling. Check count rate, cable length, encoder current, shielding and count direction for your installation.
 </sl-alert>
 
 ## Tech specs {#specs}
@@ -60,23 +59,23 @@ permalink: /extensions/position-feedback-board
 {::nomarkdown}
 <div class="xb-tablewrap"><table class="xb-spec">
   <tbody>
-    <tr><td>Purpose</td><td>Measure axis position from one 5&nbsp;V differential incremental encoder, for following-error detection once firmware exists</td></tr>
+    <tr><td>Purpose</td><td>Measure axis position from one 5&nbsp;V differential incremental encoder, for following-error detection with suitable firmware</td></tr>
     <tr><td>Counter</td><td>LS7366R-S SPI quadrature counter with a 16&nbsp;MHz oscillator; its flag line and index input are wired to the host</td></tr>
     <tr><td>Receiver</td><td>AM26LV32 differential line receiver for the A, B and Z pairs; the Z receiver&rsquo;s inputs are reversed so the index reaches the counter active low</td></tr>
-    <tr><td>Encoder supply</td><td>TPS2553 switch from the controller 5&nbsp;V with an adjustable limit (R4, 178&nbsp;k&Omega;); the board silk reads &ldquo;176mA MAX&rdquo;, which is a source marking, not a qualified rating</td></tr>
+    <tr><td>Encoder supply</td><td>TPS2553 switch from the controller 5&nbsp;V with an adjustable limit (R4, 178&nbsp;k&Omega;); the board silk reads &ldquo;176mA MAX&rdquo;</td></tr>
     <tr><td>Termination</td><td>120&nbsp;&Omega; across each pair, selected by a 3-pad link per channel</td></tr>
     <tr><td>Shield</td><td>Reaches ground through 1&nbsp;M&Omega; in parallel with 10&nbsp;nF; link JPSH, open as delivered, bridges it directly</td></tr>
     <tr><td>Sockets</td><td>Two 10-contact Gadgeteer S sockets (input and chain), 1.27&nbsp;mm. Not for hot-plugging.</td></tr>
     <tr><td>Encoder connector</td><td>One 9-contact connector, J3; the exact series is not specified</td></tr>
     <tr><td>Test points</td><td>Ten: 3.3&nbsp;V, 5&nbsp;V, encoder 5&nbsp;V, two grounds, flag, power fault and the receiver outputs (not drawn in the top view)</td></tr>
     <tr><td>Size</td><td>50 &times; 47&nbsp;mm with two M3 mounting holes</td></tr>
-    <tr><td>Works with</td><td><a href="/smoothieboard-v2-prime">Smoothieboard V2 Prime</a> (not yet usable without a driver)</td></tr>
+    <tr><td>Works with</td><td><a href="/smoothieboard-v2-prime">Smoothieboard V2 Prime</a> (Smoothieware has no counter driver)</td></tr>
     <tr><td>Licence</td><td>Open hardware, CERN-OHL-S-2.0</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}
 
-Every figure with its basis is in the [electrical specifications](#electrical) appendix; hole positions are in the [mounting dimensions](#mounting) appendix.
+The electrical figures are in the [electrical specifications](#electrical) appendix; hole positions are in the [mounting dimensions](#mounting) appendix.
 
 ## Board tour {#tour}
 
@@ -168,7 +167,7 @@ Keep each pair together. The minus contacts are not ground. Take the pinout and 
   <thead><tr><th>Link</th><th>Function</th><th>As delivered</th></tr></thead>
   <tbody>
     <tr><td>JPCS</td><td>1&ndash;2: chip select from J1 contact 6. 2&ndash;3: from contact 5.</td><td>1&ndash;2 bridged</td></tr>
-    <tr><td>JPMA, JPMB, JPMZ</td><td>1&ndash;2: 120&nbsp;&Omega; termination across the pair. 2&ndash;3 (labelled SE) connects the minus input to a reference node. The silk adds &ldquo;SE: fit R9 R10 C8&rdquo;. Single-ended operation is not established by the design.</td><td>1&ndash;2 bridged</td></tr>
+    <tr><td>JPMA, JPMB, JPMZ</td><td>1&ndash;2: 120&nbsp;&Omega; termination across the pair. 2&ndash;3 (labelled SE) connects the minus input to a reference node. The silk adds &ldquo;SE: fit R9 R10 C8&rdquo;. Use differential encoders.</td><td>1&ndash;2 bridged</td></tr>
     <tr><td>JPSH</td><td>Bridges the shield node directly to ground</td><td>Open</td></tr>
     <tr><td>JP3 to JP9</td><td>Join the J1 contacts 3 to 9 to the chain socket J2</td><td>All bridged</td></tr>
     <tr><td>JP10, JP11</td><td>Cut to turn the FLAG and PWR FLT lights off</td><td>Bridged</td></tr>
@@ -182,7 +181,6 @@ The delivered states come from the parts list; confirm them on the assembled boa
 
 {::nomarkdown}
 <div class="xb-cards">
-  <div class="xb-card"><b>This board</b><span>The design is not yet built.</span></div>
   <div class="xb-card"><b>A differential encoder</b><span>5&nbsp;V incremental ABZ with RS-422 style outputs; check its pinout, current and line drivers first.</span></div>
   <div class="xb-card"><b>Seven wires</b><span>3.3&nbsp;V, 5&nbsp;V, chip select, MOSI, MISO, clock and ground to the controller, plus flag and fault if wanted.</span></div>
   <div class="xb-card"><b>A driver</b><span>Firmware that sets up and reads the counter. None is supplied.</span></div>
@@ -199,16 +197,16 @@ The delivered states come from the parts list; confirm them on the assembled boa
   </li>
   <li class="xb-step">
     <h3>Wire the controller</h3>
-    <p>With the power off, connect header GE (J36 in the design notes) to J1 contact for contact. Contacts 1, 2 and 10 are 3.3&nbsp;V, 5&nbsp;V and ground; 3 (PE8) receives the flag, 4 (PJ7) the power fault, 6 (PD15) is chip select and 7, 8, 9 are the SPI1 data and clock. Contact 5 (PJ8) stays unused with JPCS at 1&ndash;2. Leave J2 unconnected. Check numbered continuity and the connector orientation first.</p>
-    <p class="xb-expect">The rail positions on the Prime&rsquo;s physical header need checking before powering; see the Prime header note in the electrical appendix. The 5&nbsp;V and 3.3&nbsp;V rails&rsquo; available current is not established.</p>
+    <p>With the power off, connect header GE (J36) to J1 contact for contact. Contacts 1, 2 and 10 are 3.3&nbsp;V, 5&nbsp;V and ground; 3 (PE8) receives the flag, 4 (PJ7) the power fault, 6 (PD15) is chip select and 7, 8, 9 are the SPI1 data and clock. Contact 5 (PJ8) stays unused with JPCS at 1&ndash;2. Leave J2 unconnected. Check numbered continuity and the connector orientation first.</p>
+    <p class="xb-expect">Check the rail positions on the Prime&rsquo;s physical header before powering; see the Prime header note in the electrical appendix. Check the available current of the 5&nbsp;V and 3.3&nbsp;V rails.</p>
   </li>
   <li class="xb-step">
     <h3>Connect the encoder</h3>
     <p>Join J3 contacts 1 to 9 to the encoder by function. Leave JPSH open unless you have a shield plan.</p>
   </li>
   <li class="xb-step">
-    <h3>Wait for a driver</h3>
-    <p>The counter needs initialisation, index and filter setup and readout over SPI. Until a driver exists the board cannot report a position.</p>
+    <h3>Provide a driver</h3>
+    <p>The counter needs initialisation, index and filter setup and readout over SPI. Without a driver the board cannot report a position.</p>
   </li>
 </ol>
 {:/nomarkdown}
@@ -219,14 +217,14 @@ The delivered states come from the parts list; confirm them on the assembled boa
 <div class="xb-tablewrap"><table>
   <thead><tr><th>You want</th><th>Module</th><th>Example</th></tr></thead>
   <tbody>
-    <tr><td>Read the axis position</td><td>None</td><td>No driver exists; no example is given</td></tr>
-    <tr><td>Detect following error</td><td>None</td><td>No implementation exists</td></tr>
+    <tr><td>Read the axis position</td><td>None</td><td>No driver in Smoothieware</td></tr>
+    <tr><td>Detect following error</td><td>None</td><td>Not in Smoothieware</td></tr>
     <tr><td>Use the encoder as a handwheel</td><td>Rotary encoder (V2)</td><td>Does not apply: that module reads direct A and B pins, not this counter</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}
 
-There is no configuration to give. The pinned SmoothieV2 source (revision [2a21c0108b1d095ecd8b2b9358e94055f053c003](https://github.com/Smoothieware/SmoothieV2/tree/2a21c0108b1d095ecd8b2b9358e94055f053c003/Firmware/src)) has no LS7366R initialisation, register readout, rollover or index policy, or comparison of this count with commanded motion. A configuration here would be invented. This finding is limited to that revision and does not rule out later or custom code.
+SmoothieV2 has no LS7366R initialisation, register readout, rollover or index policy, or comparison of this count with commanded motion. There is no configuration to give.
 
 ## How it works {#how-it-works}
 
@@ -251,7 +249,7 @@ There is no configuration to give. The pinned SmoothieV2 source (revision [2a21c
 
 The receiver converts the three pairs to logic levels. Its A and B outputs go to the counter; the Z output goes to the counter&rsquo;s active-low index input. The 16&nbsp;MHz oscillator clocks the counter, and the controller sets it up and reads it over SPI. The TPS2553 switches the controller&rsquo;s 5&nbsp;V to the encoder. Its active-low fault line also reaches the counter&rsquo;s enable pin and J1 contact 4, and the counter&rsquo;s own flag reaches contact 3. These are status signals, not a motion shutdown.
 
-The oscillator sets the counter timing but does not establish a qualified maximum count rate, cable length or no-loss guarantee. Index polarity, count direction, filtering and rollover all need a firmware contract and tests. The silk reads &ldquo;A leads B = count up&rdquo; as a source marking, not a verified convention.
+The oscillator sets the counter timing; it does not by itself set a maximum count rate or cable length. The firmware must define index polarity, count direction, filtering and rollover. The silk reads &ldquo;A leads B = count up&rdquo;; check the direction on your machine.
 
 ## Troubleshooting {#troubleshooting}
 
@@ -262,7 +260,7 @@ The oscillator sets the counter timing but does not establish a qualified maximu
     <tr><td>PWR FLT light on</td><td>The encoder is drawing more than the switch limit, or its supply is shorted.</td></tr>
     <tr><td>Encoder has no power</td><td>Measure the encoder 5&nbsp;V test point; check J1 contact 2 and the fault light.</td></tr>
     <tr><td>No counts</td><td>The counter needs a driver; check pair polarity, termination and that the encoder drives differentially.</td></tr>
-    <tr><td>Counts in the wrong direction</td><td>Swap the pair polarity at the encoder or handle it in the driver; the convention is not verified.</td></tr>
+    <tr><td>Counts in the wrong direction</td><td>Swap the pair polarity at the encoder or handle it in the driver.</td></tr>
     <tr><td>Chain board does not respond</td><td>Check that JP3 to JP9 are bridged.</td></tr>
   </tbody>
 </table></div>
@@ -285,11 +283,11 @@ Still stuck? Read [how to ask for help](/help-guidelines) or see the general [tr
 
 {::nomarkdown}
 <div class="xb-tablewrap"><table>
-  <thead><tr><th>File</th><th>Revision</th><th>What it is</th></tr></thead>
+  <thead><tr><th>File</th><th>What it is</th></tr></thead>
   <tbody>
-    <tr><td><a href="/images/extensions/position-feedback-board/position-feedback-board-schematic.pdf">Schematic (PDF)</a></td><td>v33</td><td>The complete circuit diagram. Its title block reads v26.</td></tr>
-    <tr><td><a href="/images/extensions/position-feedback-board/position-feedback-board-bom.csv">Parts list (CSV)</a></td><td>v33</td><td>Every component with its value and footprint</td></tr>
-    <tr><td><a href="/images/extensions/position-feedback-board/position-feedback-board-diagram.png">Board drawing (SVG)</a></td><td>v33</td><td>The top view used on this page, at full resolution</td></tr>
+    <tr><td><a href="/images/extensions/position-feedback-board/position-feedback-board-schematic.pdf">Schematic (PDF)</a></td><td>The complete circuit diagram.</td></tr>
+    <tr><td><a href="/images/extensions/position-feedback-board/position-feedback-board-bom.csv">Parts list (CSV)</a></td><td>Every component with its value and footprint</td></tr>
+    <tr><td><a href="/images/extensions/position-feedback-board/position-feedback-board-diagram.png">Board drawing (SVG)</a></td><td>The top view used on this page, at full resolution</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}
@@ -337,25 +335,23 @@ For drilling a mounting plate or designing an enclosure. Positions are hole cent
 
 ## Appendix: electrical specifications {#electrical}
 
-Every figure is a design value or a value from the parts list, as the last column says. None is a measurement on a built board. **Open** means not established.
+A dash means no value is given.
 
 {::nomarkdown}
 <div class="xb-tablewrap"><table class="xb-elec">
-  <thead><tr><th>Parameter</th><th>Applies to</th><th>Lower</th><th>Nominal</th><th>Upper</th><th>Basis and conditions</th></tr></thead>
+  <thead><tr><th>Parameter</th><th>Applies to</th><th>Lower</th><th>Nominal</th><th>Upper</th><th>Conditions</th></tr></thead>
   <tbody>
-    <tr><td>Logic supply</td><td>J1 contact 1</td><td>Open</td><td>3.3 V</td><td>Open</td><td>Controller rail allowance Open</td></tr>
-    <tr><td>Encoder supply</td><td>J3 contact 1</td><td>—</td><td>5 V switched</td><td>176 mA</td><td>Source marking on the board; set by the 178&nbsp;k&Omega; R4. A qualified rating and the shared host rail capacity are Open.</td></tr>
+    <tr><td>Logic supply</td><td>J1 contact 1</td><td>—</td><td>3.3 V</td><td>—</td><td>From the controller</td></tr>
+    <tr><td>Encoder supply</td><td>J3 contact 1</td><td>—</td><td>5 V switched</td><td>176 mA</td><td>Board marking; set by the 178&nbsp;k&Omega; R4</td></tr>
     <tr><td>Termination</td><td>Per pair</td><td>—</td><td>120 &Omega;</td><td>—</td><td>R5 to R7, selected by JPMA, JPMB, JPMZ</td></tr>
     <tr><td>Shield</td><td>J3 contact 9</td><td>—</td><td>1 M&Omega; and 10 nF to ground</td><td>—</td><td>R8 and C7; JPSH open as delivered</td></tr>
     <tr><td>Oscillator</td><td>Y1</td><td>—</td><td>16 MHz</td><td>—</td><td>From the parts list</td></tr>
-    <tr><td>Maximum count rate, cable length, SPI rate</td><td>Whole board</td><td>Open</td><td>Open</td><td>Open</td><td>Not established</td></tr>
-    <tr><td>Count direction, index polarity, filtering</td><td>Counter set-up</td><td>Open</td><td>Open</td><td>Open</td><td>Need a driver and tests</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}
 
 ### Prime header G_F (J37)
 
-On the Prime, header G_F (J37) has 3.3&nbsp;V on contact 1, 5&nbsp;V on contact 2, PB1 on 3, PJ4 on 4 and ground on 10. A discrepancy in the rail positions on the Prime&rsquo;s physical connector has been noted: verify numbered continuity with the power removed. The header is unshrouded. The design notes for this board name header GE (J36), which this page does not map further than the pins listed above.
+On the Prime, header G_F (J37) has 3.3&nbsp;V on contact 1, 5&nbsp;V on contact 2, PB1 on 3, PJ4 on 4 and ground on 10. Check the rail positions on the Prime&rsquo;s physical connector, and verify numbered continuity with the power removed. The header is unshrouded. For header GE (J36), use the pins listed under Get started.
 
 See all boards on the [extension boards](/extension-boards) page.

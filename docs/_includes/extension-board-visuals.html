@@ -5,24 +5,22 @@
 {% if extension_visuals %}
 <section class="extension-board-visuals" aria-label="Board diagrams and renders">
   <h2>Board diagrams and renders</h2>
-  <p>Select an image to open the full-size view. These are design representations; fitted components and wiring depend on the revision and population shown.</p>
+  <p>Select an image to open the full-size view. These are drawings and computer renders; fitted components and wiring depend on the population shown.</p>
   {% for board in extension_visuals %}
-  <h3>{{ board.role | escape }} — {{ board.version | escape }}</h3>
+  <h3>{{ board.role | escape }}</h3>
   <figure class="extension-board-diagram">
-    <a href="{{ board.diagram.url | relative_url }}"><img src="{{ board.diagram.url | relative_url }}" alt="{{ board.role | escape }} {{ board.version | escape }} abstract board diagram" width="800" height="600"></a>
-    <figcaption>Abstract board representation from smoothie-diagrams. {{ board.diagram.caption | escape }}</figcaption>
+    <a href="{{ board.diagram.url | relative_url }}"><img src="{{ board.diagram.url | relative_url }}" alt="{{ board.role | escape }} abstract board diagram" width="800" height="600"></a>
+    <figcaption>Abstract board representation from smoothie-diagrams.</figcaption>
   </figure>
   {% if board.renders.size > 0 %}
   <div class="extension-board-render-grid">
     {% for render in board.renders %}
     <figure>
-      <a href="{{ render.url | relative_url }}"><img src="{{ render.url | relative_url }}" alt="{{ board.role | escape }} {{ board.version | escape }} {{ render.label | escape }}" width="1400" height="1100" loading="lazy"></a>
-      <figcaption>{{ render.label | escape }} — {{ board.version | escape }}. {{ render.caption | escape }}</figcaption>
+      <a href="{{ render.url | relative_url }}"><img src="{{ render.url | relative_url }}" alt="{{ board.role | escape }} {{ render.label | escape }}" width="1400" height="1100" loading="lazy"></a>
+      <figcaption>{{ render.label | escape }}. Computer render, not a photograph.</figcaption>
     </figure>
     {% endfor %}
   </div>
-  {% else %}
-  <p>A matching, source-verified populated render is not available for this revision; the board diagram is shown above.</p>
   {% endif %}
   {% endfor %}
 </section>

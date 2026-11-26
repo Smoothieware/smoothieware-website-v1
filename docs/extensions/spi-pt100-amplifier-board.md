@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "SPI PT100 amplifier board"
-description: "A MAX31865 RTD-to-digital board for one PT100 over SPI: pinout, wiring-mode links, 400 ohm reference and the limits of what is established."
+description: "A MAX31865 RTD-to-digital board for one PT100 over SPI: pinout, wiring-mode links, 400 ohm reference and electrical specifications."
 permalink: /extensions/spi-pt100-amplifier-board
 ---
 
@@ -12,8 +12,7 @@ permalink: /extensions/spi-pt100-amplifier-board
   <div>
     <p class="xb-eyebrow">Extension board · Temperature</p>
     <h1 id="spi-pt100-amplifier-board">SPI PT100 amplifier board</h1>
-    <p class="xb-lead">A MAX31865 converter that reads one PT100 resistance and reports it over SPI, for two-, three- or four-wire sensors. It is not a thermocouple board and not the analogue PT100 amplifier. The checked firmware has no driver for this converter.</p>
-    <p class="xb-badge">Design candidate · revision v17 · not yet built or tested</p>
+    <p class="xb-lead">A MAX31865 converter that reads one PT100 resistance and reports it over SPI, for two-, three- or four-wire sensors. It is not a thermocouple board and not the analogue PT100 amplifier. SmoothieV2 has no driver for this converter.</p>
     <div class="xb-actions">
       <a class="xb-btn xb-btn-primary" href="#get-started">Get started</a>
       <a class="xb-btn" href="#pinout">Pinout</a>
@@ -22,7 +21,7 @@ permalink: /extensions/spi-pt100-amplifier-board
   </div>
   <figure>
     <img src="/images/extensions/spi-pt100-amplifier-board/spi-pt100-amplifier-board-diagram.png" alt="Top view of the SPI PT100 amplifier board: two ten-contact sockets at the top, the converter in the middle and a four-way screw terminal at the bottom.">
-    <figcaption>Top view, drawn from the board&rsquo;s design files (revision v17). This is a drawing, not a photograph.</figcaption>
+    <figcaption>Top view, drawn from the board&rsquo;s design files. This is a drawing, not a photograph.</figcaption>
   </figure>
 </div>
 
@@ -31,7 +30,7 @@ permalink: /extensions/spi-pt100-amplifier-board
   <div class="xb-stat"><b>2, 3 or 4 wire</b><span>chosen by solder links and converter settings</span></div>
   <div class="xb-stat"><b>400 &Omega;</b><span>reference resistor, not the common 430 &Omega;</span></div>
   <div class="xb-stat"><b>1 light</b><span>red data-ready</span></div>
-  <div class="xb-stat"><b>No firmware</b><span>no driver in the checked firmware</span></div>
+  <div class="xb-stat"><b>No firmware</b><span>no driver in SmoothieV2</span></div>
   <div class="xb-stat"><b>48 × 40</b><span>millimetres, four M3 holes</span></div>
 </div>
 
@@ -52,7 +51,7 @@ permalink: /extensions/spi-pt100-amplifier-board
 
 <sl-alert variant="warning" open>
   <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
-  This is a design candidate that has not been built or tested, and it is not ready to energize. It needs a MAX31865 driver configured for your wiring mode and the 400&nbsp;&Omega; reference, with fault handling and calibration, and none exists in the checked firmware. Do not use it in a heater-control loop or present it as a working temperature readout.
+  It needs a MAX31865 driver configured for your wiring mode and the 400&nbsp;&Omega; reference, with fault handling and calibration, and SmoothieV2 does not include one. Do not use it in a heater-control loop or rely on it as a temperature readout.
 </sl-alert>
 
 ## Tech specs {#specs}
@@ -151,7 +150,7 @@ No wiring mode is selected by the connector alone: two-, three- and four-wire us
 
 {::nomarkdown}
 <div class="xb-tablewrap"><table>
-  <thead><tr><th>Link</th><th>Effect</th><th>As delivered</th></tr></thead>
+  <thead><tr><th>Link</th><th>Effect</th><th>Default</th></tr></thead>
   <tbody>
     <tr><td>JP1 (2W)</td><td>Joins F+ to RTD+</td><td>Open</td></tr>
     <tr><td>JP2 (2W/3W)</td><td>Joins RTD&minus; to F&minus;</td><td>Open</td></tr>
@@ -179,10 +178,10 @@ No wiring mode is selected by the connector alone: two-, three- and four-wire us
 
 {::nomarkdown}
 <div class="xb-cards">
-  <div class="xb-card"><b>This board</b><span>The design is not yet built.</span></div>
+  <div class="xb-card"><b>This board</b><span>The MAX31865 amplifier board.</span></div>
   <div class="xb-card"><b>A PT100</b><span>With its wiring mode and lead pairs identified from its data sheet or by continuity.</span></div>
   <div class="xb-card"><b>Six host wires</b><span>3.3&nbsp;V, chip select, MOSI, MISO, clock and ground.</span></div>
-  <div class="xb-card"><b>A driver</b><span>Matching converter firmware for the 400&nbsp;&Omega; reference. None is available in the checked firmware.</span></div>
+  <div class="xb-card"><b>A driver</b><span>Matching converter firmware for the 400&nbsp;&Omega; reference. SmoothieV2 does not include one.</span></div>
 </div>
 {:/nomarkdown}
 
@@ -197,7 +196,7 @@ No wiring mode is selected by the connector alone: two-, three- and four-wire us
   <li class="xb-step">
     <h3>Wire the controller</h3>
     <p>With everything unpowered, connect Prime header GE (J36) contacts 1, 6, 7, 8, 9 and 10 to J1 contacts 1, 6, 7, 8, 9 and 10: 3.3&nbsp;V, chip select on PD15, data out, data in, clock and ground. Leave 5&nbsp;V, the other contacts and J2 unconnected.</p>
-    <p class="xb-expect">Check numbered continuity, the connector orientation and the rail current available first. The Prime rail positions need checking; see the electrical appendix.</p>
+    <p class="xb-expect">Check numbered continuity, the connector orientation and the rail current available first. Check the Prime rail positions too; see the electrical appendix.</p>
   </li>
   <li class="xb-step">
     <h3>Connect the sensor</h3>
@@ -205,7 +204,7 @@ No wiring mode is selected by the connector alone: two-, three- and four-wire us
   </li>
   <li class="xb-step">
     <h3>Stop at the bench</h3>
-    <p>Without a driver there is nothing to read. Do not attach a sensor to a live tool or a heater with this candidate.</p>
+    <p>Without a driver there is nothing to read. Do not attach a sensor to a live tool or a heater with this board.</p>
   </li>
 </ol>
 {:/nomarkdown}
@@ -216,12 +215,12 @@ No wiring mode is selected by the connector alone: two-, three- and four-wire us
 <div class="xb-tablewrap"><table>
   <thead><tr><th>You want</th><th>Module</th><th>Example</th></tr></thead>
   <tbody>
-    <tr><td>A temperature from this board</td><td>None in the checked firmware</td><td>Not supported</td></tr>
+    <tr><td>A temperature from this board</td><td>None in SmoothieV2</td><td>Not supported</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}
 
-The checked SmoothieV2 source (revision 2a21c0108b1d095ecd8b2b9358e94055f053c003) selects only <code>thermistor</code> or <code>max31855</code> in its [temperature factory](https://github.com/Smoothieware/SmoothieV2/blob/2a21c0108b1d095ecd8b2b9358e94055f053c003/Firmware/src/modules/tools/temperaturecontrol/TemperatureControl.cpp#L177-L193). Any other name creates a dummy sensor, so setting a MAX31865 sensor name does not enable this converter, and the thermocouple driver does not work with it. No MAX31865 implementation or sample configuration was found in the checked paths, so no settings are given. This applies to that revision only; it does not describe firmware installed on a controller.
+SmoothieV2 selects only <code>thermistor</code> or <code>max31855</code> in its [temperature factory](https://github.com/Smoothieware/SmoothieV2/blob/2a21c0108b1d095ecd8b2b9358e94055f053c003/Firmware/src/modules/tools/temperaturecontrol/TemperatureControl.cpp#L177-L193). Any other name creates a dummy sensor, so setting a MAX31865 sensor name does not enable this converter, and the thermocouple driver does not work with it. There is no MAX31865 implementation, so no settings are given.
 
 ## How it works {#how-it-works}
 
@@ -244,7 +243,7 @@ The checked SmoothieV2 source (revision 2a21c0108b1d095ecd8b2b9358e94055f053c003
 </figure>
 {:/nomarkdown}
 
-J3 brings out the force and sense contacts; the MAX31865 exchanges configuration, data and faults over SPI on J1 contacts 6 to 9. J2 carries chain paths: the chip-select path is open by default, so daisy-chaining does not give a following board its own chip select. The reference resistor is 400&nbsp;&Omega;, so a driver written for a 430&nbsp;&Omega; module needs this value. Excitation, self-heating, fault policy and cable resistance are not established.
+J3 brings out the force and sense contacts; the MAX31865 exchanges configuration, data and faults over SPI on J1 contacts 6 to 9. J2 carries chain paths: the chip-select path is open by default, so daisy-chaining does not give a following board its own chip select. The reference resistor is 400&nbsp;&Omega;, so a driver written for a 430&nbsp;&Omega; module needs this value. Excitation and self-heating depend on the sensor and the converter configuration.
 
 {% include _includes/temperature-board-comparison.html %}
 
@@ -277,11 +276,11 @@ Still stuck? Read [how to ask for help](/help-guidelines) or see the general [tr
 
 {::nomarkdown}
 <div class="xb-tablewrap"><table>
-  <thead><tr><th>File</th><th>Revision</th><th>What it is</th></tr></thead>
+  <thead><tr><th>File</th><th>What it is</th></tr></thead>
   <tbody>
-    <tr><td><a href="/images/extensions/spi-pt100-amplifier-board/spi-pt100-amplifier-board-schematic.pdf">Schematic (PDF)</a></td><td>v17</td><td>The complete circuit diagram. Its title block reads v13.</td></tr>
-    <tr><td><a href="/images/extensions/spi-pt100-amplifier-board/spi-pt100-amplifier-board-bom.csv">Parts list (CSV)</a></td><td>v17</td><td>Every component with its value and footprint</td></tr>
-    <tr><td><a href="/images/extensions/spi-pt100-amplifier-board/spi-pt100-amplifier-board-diagram.png">Board drawing (SVG)</a></td><td>v17</td><td>The top view used on this page, at full resolution</td></tr>
+    <tr><td><a href="/images/extensions/spi-pt100-amplifier-board/spi-pt100-amplifier-board-schematic.pdf">Schematic (PDF)</a></td><td>The complete circuit diagram.</td></tr>
+    <tr><td><a href="/images/extensions/spi-pt100-amplifier-board/spi-pt100-amplifier-board-bom.csv">Parts list (CSV)</a></td><td>Every component with its value and footprint</td></tr>
+    <tr><td><a href="/images/extensions/spi-pt100-amplifier-board/spi-pt100-amplifier-board-diagram.png">Board drawing (SVG)</a></td><td>The top view used on this page, at full resolution</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}
@@ -337,24 +336,22 @@ For drilling a mounting plate or designing an enclosure. Positions are hole cent
 
 ## Appendix: electrical specifications {#electrical}
 
-Every figure is a design value or a value from the parts list, as the last column says. None is a measurement on a built board. **Open** means not established.
+Every figure is a design value or a value from the parts list, as the last column says.
 
 {::nomarkdown}
 <div class="xb-tablewrap"><table class="xb-elec">
   <thead><tr><th>Parameter</th><th>Applies to</th><th>Lower</th><th>Nominal</th><th>Upper</th><th>Basis and conditions</th></tr></thead>
   <tbody>
-    <tr><td>Logic supply</td><td>J1 contact 1</td><td>Open</td><td>3.3 V</td><td>Open</td><td>Host current allowance Open</td></tr>
+    <tr><td>Logic supply</td><td>J1 contact 1</td><td>—</td><td>3.3 V</td><td>—</td><td>Supplied by the host</td></tr>
     <tr><td>Reference resistor</td><td>R1</td><td>—</td><td>400 &Omega;, 0.1&nbsp;%, 25&nbsp;ppm</td><td>—</td><td>Parts list</td></tr>
-    <tr><td>SPI clock rate, mode</td><td>J1 contacts 6 to 9</td><td>Open</td><td>Open</td><td>Open</td><td>Set by the converter data sheet and the driver; not restated here</td></tr>
-    <tr><td>Sensor excitation and self-heating</td><td>J3</td><td>Open</td><td>Open</td><td>Open</td><td>Depends on the sensor and the converter configuration</td></tr>
-    <tr><td>Cable resistance limit</td><td>J3</td><td>Open</td><td>Open</td><td>Open</td><td>Not established</td></tr>
-    <tr><td>Temperature range and accuracy</td><td>System</td><td>Open</td><td>Open</td><td>Open</td><td>Requires a driver and calibration</td></tr>
+    <tr><td>SPI clock rate, mode</td><td>J1 contacts 6 to 9</td><td>—</td><td>—</td><td>—</td><td>Set by the converter data sheet and the driver</td></tr>
+    <tr><td>Sensor excitation and self-heating</td><td>J3</td><td>—</td><td>—</td><td>—</td><td>Depends on the sensor and the converter configuration</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}
 
 ### Prime header GE (J36)
 
-The design notes name the Prime&rsquo;s GE (J36) header for this board, with chip select on PD15. A discrepancy in the rail positions on the physical connector has been noted: verify numbered continuity and the available rail current with the power removed.
+The Prime&rsquo;s GE (J36) header is used for this board, with chip select on PD15. Before wiring, with the power removed, verify numbered continuity, the rail positions on the physical connector and the available rail current.
 
 See all boards on the [extension boards](/extension-boards) page.

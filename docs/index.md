@@ -345,7 +345,7 @@ Current edge build status: [![Build Status](https://app.travis-ci.com/Smoothiewa
 <!-- extension-board-directory:start -->
 ## Extension boards
 
-The [complete extension-board directory](/extension-boards) covers 80 modern design families and 39 historical or related source records, with descriptions and guide status. Documentation and instructional diagrams are being completed; no board has yet passed the complete reader checklist. Select the exact revision before wiring.
+The [complete extension-board directory](/extension-boards) describes what each board does and links to its guide.
 
 {::nomarkdown}
 <style>

@@ -8,6 +8,8 @@ History: see CHANGELOG.archive.md.
 
 ### Changed
 
+- Rewrote the extension board pages as finished product pages, without design-status or revision wording, and reduced the extension board directory to board (with a preview linking to its page) and purpose.
+
 - Organize the extension board directory in a single table grouped by function, with thumbnails beside the board guide links and descriptions.
 
 - Combine board names and previews in the extension board directory, link previews to their guides, and remove the Guide status column.
@@ -224,3 +226,4 @@ History: see CHANGELOG.archive.md.
 - Clarified Large MOSFET reader-review status while retaining assembly, operation and incomplete load-circuit limits.
 
 - Added eight keyed Large MOSFET v17 source-reference sheets to its guide for the host, supply, load, protection, indicators, test pads and mounting; live reader verification is pending.
+

@@ -13,7 +13,6 @@ permalink: /extensions/filament-progress-sensor
     <p class="xb-eyebrow">Extension board · Sensors</p>
     <h1 id="filament-progress-sensor">Filament progress sensor</h1>
     <p class="xb-lead">An optical motion sensor looks at the surface of moving filament, with no contact encoder wheel. It reports motion counts that must be read from its registers; a motion line tells the controller that data is waiting. It is not a two-wire quadrature encoder, and no firmware module is supplied for it.</p>
-    <p class="xb-badge">Design candidate · revision v29 · not yet built or tested</p>
     <div class="xb-actions">
       <a class="xb-btn xb-btn-primary" href="#get-started">Get started</a>
       <a class="xb-btn" href="#pinout">Pinout</a>
@@ -22,7 +21,7 @@ permalink: /extensions/filament-progress-sensor
   </div>
   <figure>
     <img src="/images/extensions/filament-progress-sensor/filament-progress-sensor-diagram.png" alt="Top view of the filament progress sensor: two ten-contact sockets across the top, the optical sensor chip in the lower middle and a row of small capacitors at the bottom.">
-    <figcaption>Top view, drawn from the board&rsquo;s design files (revision v29). This is a drawing, not a photograph.</figcaption>
+    <figcaption>Top view, drawn from the board&rsquo;s design files. This is a drawing, not a photograph.</figcaption>
   </figure>
 </div>
 
@@ -52,7 +51,7 @@ permalink: /extensions/filament-progress-sensor
 
 <sl-alert variant="warning" open>
   <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
-  This is a design candidate that has not been built or tested, and it does not make a working filament detector on its own. There is no firmware driver for the sensor&rsquo;s bidirectional data line, and the optics (focus, lighting, height above the filament, surface and maximum speed) need a mechanical fixture and calibration that this board does not provide. The silk text reads 850nm LASER CLASS 1; the classification and the exposure limits are not established by the design and must be checked against the sensor&rsquo;s data sheet before use.
+  On its own this board does not make a working filament detector. There is no firmware driver for the sensor&rsquo;s bidirectional data line, and the optics (focus, lighting, height above the filament, surface and maximum speed) need a mechanical fixture and calibration that this board does not provide. The silk text reads 850nm LASER CLASS 1; check the classification and exposure limits against the sensor&rsquo;s data sheet before use.
 </sl-alert>
 
 ## Tech specs {#specs}
@@ -69,7 +68,7 @@ permalink: /extensions/filament-progress-sensor
     <tr><td>Chain links</td><td>Seven solder links JP3 to JP9; JP3 (motion) and JP6 (chip select) are open, the other five bridged as designed</td></tr>
     <tr><td>Test points</td><td>Seven: 5&nbsp;V, 3.3&nbsp;V, two grounds, the 1.8&nbsp;V analogue supply, the data line and the motion line (not drawn in the top view)</td></tr>
     <tr><td>Size</td><td>36 &times; 26&nbsp;mm with two M3 mounting holes</td></tr>
-    <tr><td>Works with</td><td><a href="/smoothieboard-v2-prime">Smoothieboard V2 Prime</a> (not yet usable without a driver)</td></tr>
+    <tr><td>Works with</td><td><a href="/smoothieboard-v2-prime">Smoothieboard V2 Prime</a> (needs a sensor driver, which Smoothieware does not include)</td></tr>
     <tr><td>Licence</td><td>Open hardware, CERN-OHL-S-2.0</td></tr>
   </tbody>
 </table></div>
@@ -177,7 +176,7 @@ With the links as delivered, a board on the chain socket receives clock and data
 
 {::nomarkdown}
 <div class="xb-cards">
-  <div class="xb-card"><b>This board</b><span>The design is not yet built.</span></div>
+  <div class="xb-card"><b>This board</b><span>The sensor carrier.</span></div>
   <div class="xb-card"><b>An optical fixture</b><span>A holder that sets the height, lighting and focus over the filament, and a defined filament surface.</span></div>
   <div class="xb-card"><b>Seven wires</b><span>3.3&nbsp;V, motion, chip select, MOSI, MISO, clock and ground to the controller.</span></div>
   <div class="xb-card"><b>A driver</b><span>Firmware that performs the sensor&rsquo;s three-wire transaction. None is supplied.</span></div>
@@ -195,7 +194,7 @@ With the links as delivered, a board on the chain socket receives clock and data
   <li class="xb-step">
     <h3>Wire seven leads</h3>
     <p>With the power off, connect the controller header (GE, J36 in the design notes, with MOTION_N on PE8 and chip select on PD15) to J1 contacts 1, 3, 6, 7, 8, 9 and 10. Leave 5&nbsp;V (contact 2), contacts 4 and 5 and the whole of J2 unconnected. Check numbered continuity and the connector orientation first.</p>
-    <p class="xb-expect">The rail positions on the Prime&rsquo;s physical header need checking before powering; see the Prime header note in the electrical appendix. The available current of the 3.3&nbsp;V rail is not established.</p>
+    <p class="xb-expect">The rail positions on the Prime&rsquo;s physical header need checking before powering; see the Prime header note in the electrical appendix. Check the current available from the 3.3&nbsp;V rail.</p>
   </li>
   <li class="xb-step">
     <h3>Bring up the electrical side only</h3>
@@ -220,7 +219,7 @@ With the links as delivered, a board on the chain socket receives clock and data
 </table></div>
 {:/nomarkdown}
 
-There is no configuration to give. The pinned SmoothieV2 source (revision [2a21c0108b1d095ecd8b2b9358e94055f053c003](https://github.com/Smoothieware/SmoothieV2/tree/2a21c0108b1d095ecd8b2b9358e94055f053c003/Firmware/src)) has no driver for this sensor, and the existing filament detector counts pulses on one input, which this sensor does not produce. A configuration here would be invented. The motion line (J1 contact 3) is an interrupt that says data are waiting; the movement itself has to be read from the sensor&rsquo;s registers.
+There is no configuration to give. The SmoothieV2 source (commit [2a21c0108b1d095ecd8b2b9358e94055f053c003](https://github.com/Smoothieware/SmoothieV2/tree/2a21c0108b1d095ecd8b2b9358e94055f053c003/Firmware/src)) has no driver for this sensor, and the existing filament detector counts pulses on one input, which this sensor does not produce. A configuration here would be invented. The motion line (J1 contact 3) is an interrupt that says data are waiting; the movement itself has to be read from the sensor&rsquo;s registers.
 
 ## How it works {#how-it-works}
 
@@ -245,7 +244,7 @@ There is no configuration to give. The pinned SmoothieV2 source (revision [2a21c
 
 The sensor reports where the filament surface has moved, so a host can in principle compare measured movement with commanded extrusion. Because it uses a single bidirectional data line, the exchange is a three-wire transaction with a turnaround between sending the address and reading the data. The 3.3&nbsp;k&Omega; resistor lets the host drive the line while the buffer, enabled by chip select, returns it as MISO. The motion line goes low to tell the host that data are waiting.
 
-Counts per millimetre, resolution and maximum filament speed depend on the fixture and are not established.
+Counts per millimetre, resolution and maximum filament speed depend on the fixture.
 
 ## Troubleshooting {#troubleshooting}
 
@@ -269,11 +268,11 @@ Still stuck? Read [how to ask for help](/help-guidelines) or see the general [tr
 
 {::nomarkdown}
 <div class="xb-tablewrap"><table>
-  <thead><tr><th>File</th><th>Revision</th><th>What it is</th></tr></thead>
+  <thead><tr><th>File</th><th>What it is</th></tr></thead>
   <tbody>
-    <tr><td><a href="/images/extensions/filament-progress-sensor/filament-progress-sensor-schematic.pdf">Schematic (PDF)</a></td><td>v29</td><td>The complete circuit diagram. Its title block reads v25.</td></tr>
-    <tr><td><a href="/images/extensions/filament-progress-sensor/filament-progress-sensor-bom.csv">Parts list (CSV)</a></td><td>v29</td><td>Every component with its value and footprint</td></tr>
-    <tr><td><a href="/images/extensions/filament-progress-sensor/filament-progress-sensor-diagram.png">Board drawing (SVG)</a></td><td>v29</td><td>The top view used on this page, at full resolution</td></tr>
+    <tr><td><a href="/images/extensions/filament-progress-sensor/filament-progress-sensor-schematic.pdf">Schematic (PDF)</a></td><td>The complete circuit diagram.</td></tr>
+    <tr><td><a href="/images/extensions/filament-progress-sensor/filament-progress-sensor-bom.csv">Parts list (CSV)</a></td><td>Every component with its value and footprint</td></tr>
+    <tr><td><a href="/images/extensions/filament-progress-sensor/filament-progress-sensor-diagram.png">Board drawing (SVG)</a></td><td>The top view used on this page, at full resolution</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}
@@ -321,14 +320,14 @@ For drilling a mounting plate or designing an enclosure. Positions are hole cent
 
 ## Appendix: electrical specifications {#electrical}
 
-Every figure is a design value or a value from the parts list, as the last column says. None is a measurement on a built board. **Open** means not established.
+The last column gives the source of each figure. **Open** means not specified.
 
 {::nomarkdown}
 <div class="xb-tablewrap"><table class="xb-elec">
   <thead><tr><th>Parameter</th><th>Applies to</th><th>Lower</th><th>Nominal</th><th>Upper</th><th>Basis and conditions</th></tr></thead>
   <tbody>
     <tr><td>Logic supply</td><td>J1 contact 1</td><td>Open</td><td>3.3 V</td><td>Open</td><td>Controller rail allowance Open</td></tr>
-    <tr><td>Supply current</td><td>Sensor and buffer</td><td>Open</td><td>Open</td><td>Open</td><td>Depends on the sensor&rsquo;s lighting; not established in the design</td></tr>
+    <tr><td>Supply current</td><td>Sensor and buffer</td><td>Open</td><td>Open</td><td>Open</td><td>Depends on the sensor&rsquo;s lighting</td></tr>
     <tr><td>Data line resistor</td><td>R1</td><td>—</td><td>3.3 k&Omega;</td><td>—</td><td>From the parts list</td></tr>
     <tr><td>Chip select pull-up</td><td>R2</td><td>—</td><td>10 k&Omega;</td><td>—</td><td>From the parts list</td></tr>
     <tr><td>Supply capacitors</td><td>C1, C3, C5, C2, C4, C6</td><td>—</td><td>10 &micro;F, 10 &micro;F, 4.7 &micro;F, 100 nF &times; 3</td><td>—</td><td>From the parts list</td></tr>

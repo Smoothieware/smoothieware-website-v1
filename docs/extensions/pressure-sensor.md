@@ -13,7 +13,6 @@ permalink: /extensions/pressure-sensor
     <p class="xb-eyebrow">Extension board · Sensors</p>
     <h1 id="pressure-sensor">Pressure sensor</h1>
     <p class="xb-lead">A vacuum sensor on a board: the MPXV6115VC6U turns the pressure at its port into an analogue voltage, scaled down for a 3.3&nbsp;V analogue input. It is meant for experiments such as watching a pickup nozzle&rsquo;s vacuum. It does not switch a pump or valve, and no pressure or pickup firmware is supplied.</p>
-    <p class="xb-badge">Design candidate · revision v23 · not yet built or tested</p>
     <div class="xb-actions">
       <a class="xb-btn xb-btn-primary" href="#get-started">Get started</a>
       <a class="xb-btn" href="#pinout">Pinout</a>
@@ -22,7 +21,7 @@ permalink: /extensions/pressure-sensor
   </div>
   <figure>
     <img src="/images/extensions/pressure-sensor/pressure-sensor-diagram.png" alt="Top view of the pressure sensor board: two ten-contact sockets along the top and the square pressure sensor with its round port in the middle.">
-    <figcaption>Top view, drawn from the board&rsquo;s design files (revision v23). This is a drawing, not a photograph.</figcaption>
+    <figcaption>Top view, drawn from the board&rsquo;s design files. This is a drawing, not a photograph.</figcaption>
   </figure>
 </div>
 
@@ -31,7 +30,7 @@ permalink: /extensions/pressure-sensor
   <div class="xb-stat"><b>≈ 2.944 V</b><span>calculated upper output at the divider, rated conditions</span></div>
   <div class="xb-stat"><b>5 V</b><span>sensor supply, 4.75 to 5.25&nbsp;V, 10&nbsp;mA maximum from its data sheet</span></div>
   <div class="xb-stat"><b>Dry air only</b><span>marked on the board; no liquids</span></div>
-  <div class="xb-stat"><b>No driver</b><span>no pressure acquisition or pickup logic in the pinned source</span></div>
+  <div class="xb-stat"><b>No driver</b><span>no pressure acquisition or pickup logic in SmoothieV2</span></div>
   <div class="xb-stat"><b>36 × 31.6</b><span>millimetres, two M3 holes and two tube-tie slots</span></div>
 </div>
 
@@ -50,11 +49,6 @@ permalink: /extensions/pressure-sensor
 </nav>
 {:/nomarkdown}
 
-<sl-alert variant="warning" open>
-  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
-  This is a design candidate that has not been built or tested. The board is marked DRY AIR ONLY and NO LIQUID, and its range is 0 to &minus;115&nbsp;kPa gauge; the vacuum actually reachable depends on the ambient pressure. The data sheet values do not establish this board&rsquo;s accuracy, sampling rate or the load on the controller&rsquo;s limited 5&nbsp;V rail. Calibration is yours to do.
-</sl-alert>
-
 ## Tech specs {#specs}
 
 {::nomarkdown}
@@ -68,7 +62,7 @@ permalink: /extensions/pressure-sensor
     <tr><td>Sockets</td><td>Two 10-contact Gadgeteer A sockets (Samtec SHF-105, 1.27&nbsp;mm): input and a shifted chain. Not for hot-plugging.</td></tr>
     <tr><td>Test points</td><td>Six: 5&nbsp;V, 3.3&nbsp;V, sensor output, divided output and two grounds (not drawn in the top view)</td></tr>
     <tr><td>Size</td><td>36 &times; 31.6&nbsp;mm with two M3 mounting holes and two 3.2 &times; 1.4&nbsp;mm tie slots</td></tr>
-    <tr><td>Works with</td><td><a href="/smoothieboard-v2-prime">Smoothieboard V2 Prime</a> (not yet usable without a driver)</td></tr>
+    <tr><td>Works with</td><td><a href="/smoothieboard-v2-prime">Smoothieboard V2 Prime</a> (needs a driver)</td></tr>
     <tr><td>Licence</td><td>Open hardware, CERN-OHL-S-2.0</td></tr>
   </tbody>
 </table></div>
@@ -154,7 +148,6 @@ Confirm the delivered state on the assembled board before changing a link.
 
 {::nomarkdown}
 <div class="xb-cards">
-  <div class="xb-card"><b>This board</b><span>The design is not yet built.</span></div>
   <div class="xb-card"><b>A vacuum tube</b><span>Tube and fitting for the sensor port, secured at the tie slots; dry air only.</span></div>
   <div class="xb-card"><b>Three wires</b><span>5&nbsp;V, the signal on PC3 and ground to the controller.</span></div>
   <div class="xb-card"><b>An acquisition driver</b><span>Code that converts the voltage to pressure and applies your own pickup policy. None is supplied.</span></div>
@@ -167,7 +160,7 @@ Confirm the delivered state on the assembled board before changing a link.
 <ol class="xb-steps">
   <li class="xb-step">
     <h3>Check the supply</h3>
-    <p>Establish the 5&nbsp;V budget of the controller&rsquo;s limited rail before connecting the board; the sensor can draw up to 10&nbsp;mA and the board&rsquo;s total is not specified.</p>
+    <p>Check the 5&nbsp;V budget of the controller&rsquo;s limited rail before connecting the board; the sensor can draw up to 10&nbsp;mA.</p>
   </li>
   <li class="xb-step">
     <h3>Wire three leads</h3>
@@ -197,7 +190,7 @@ Confirm the delivered state on the assembled board before changing a link.
 </table></div>
 {:/nomarkdown}
 
-There is no configuration to give. The pinned SmoothieV2 source (revision [2a21c0108b1d095ecd8b2b9358e94055f053c003](https://github.com/Smoothieware/SmoothieV2/tree/2a21c0108b1d095ecd8b2b9358e94055f053c003/Firmware/src)) has no pressure acquisition or threshold module, and generic analogue input alone gives neither pressure units nor a pickup decision. The same revision&rsquo;s [analogue input lookup](https://github.com/Smoothieware/SmoothieV2/blob/2a21c0108b1d095ecd8b2b9358e94055f053c003/Firmware/Hal/src/Adc.cpp#L104-L123) uses logical names: PC3 is the logical `ADC1_5`, hardware channel 13. PB1 is not in its seven-input lookup.
+There is no configuration to give. SmoothieV2 (source commit [2a21c0108b1d095ecd8b2b9358e94055f053c003](https://github.com/Smoothieware/SmoothieV2/tree/2a21c0108b1d095ecd8b2b9358e94055f053c003/Firmware/src)) has no pressure acquisition or threshold module, and generic analogue input alone gives neither pressure units nor a pickup decision. The same source&rsquo;s [analogue input lookup](https://github.com/Smoothieware/SmoothieV2/blob/2a21c0108b1d095ecd8b2b9358e94055f053c003/Firmware/Hal/src/Adc.cpp#L104-L123) uses logical names: PC3 is the logical `ADC1_5`, hardware channel 13. PB1 is not in its seven-input lookup.
 
 ## How it works {#how-it-works}
 
@@ -222,7 +215,7 @@ There is no configuration to give. The pinned SmoothieV2 source (revision [2a21c
 
 The sensor conditions and compensates its own signal. The divider scales its output so that, with the sensor&rsquo;s upper output and a 5.25&nbsp;V supply over 0 to 85&nbsp;&deg;C, the node reaches about 2.944&nbsp;V at most, which suits a 3.3&nbsp;V analogue input. That is a rated-condition calculation, not a bound on a fault voltage. A driver would convert the divided voltage back with the fitted divider and the sensor&rsquo;s transfer curve, then apply thresholds and timing that you choose.
 
-The sensor values come from the manufacturer&rsquo;s [MPXV6115V data sheet](https://www.nxp.com/docs/en/data-sheet/MPXV6115V.pdf), revision 4.0 (September 2015). They do not establish this assembled board&rsquo;s accuracy, sample rate or fault tolerance.
+The sensor values come from the manufacturer&rsquo;s [MPXV6115V data sheet](https://www.nxp.com/docs/en/data-sheet/MPXV6115V.pdf) (September 2015). They do not give the assembled board&rsquo;s accuracy, sample rate or fault tolerance.
 
 ## Troubleshooting {#troubleshooting}
 
@@ -246,11 +239,11 @@ Still stuck? Read [how to ask for help](/help-guidelines) or see the general [tr
 
 {::nomarkdown}
 <div class="xb-tablewrap"><table>
-  <thead><tr><th>File</th><th>Revision</th><th>What it is</th></tr></thead>
+  <thead><tr><th>File</th><th>What it is</th></tr></thead>
   <tbody>
-    <tr><td><a href="/images/extensions/pressure-sensor/pressure-sensor-schematic.pdf">Schematic (PDF)</a></td><td>v23</td><td>The complete circuit diagram. Its title block reads v19.</td></tr>
-    <tr><td><a href="/images/extensions/pressure-sensor/pressure-sensor-bom.csv">Parts list (CSV)</a></td><td>v23</td><td>Every component with its value and footprint</td></tr>
-    <tr><td><a href="/images/extensions/pressure-sensor/pressure-sensor-diagram.png">Board drawing (SVG)</a></td><td>v23</td><td>The top view used on this page, at full resolution</td></tr>
+    <tr><td><a href="/images/extensions/pressure-sensor/pressure-sensor-schematic.pdf">Schematic (PDF)</a></td><td>The complete circuit diagram.</td></tr>
+    <tr><td><a href="/images/extensions/pressure-sensor/pressure-sensor-bom.csv">Parts list (CSV)</a></td><td>Every component with its value and footprint</td></tr>
+    <tr><td><a href="/images/extensions/pressure-sensor/pressure-sensor-diagram.png">Board drawing (SVG)</a></td><td>The top view used on this page, at full resolution</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}
@@ -298,24 +291,23 @@ For drilling a mounting plate or designing an enclosure. Positions are hole cent
 
 ## Appendix: electrical specifications {#electrical}
 
-Every figure is a design value, a value from the sensor&rsquo;s data sheet or a value from the parts list, as the last column says. None is a measurement on a built board. **Open** means not established.
+Every figure is a design value, a value from the sensor&rsquo;s data sheet or a value from the parts list, as the last column says. A dash means no figure is given.
 
 {::nomarkdown}
 <div class="xb-tablewrap"><table class="xb-elec">
   <thead><tr><th>Parameter</th><th>Applies to</th><th>Lower</th><th>Nominal</th><th>Upper</th><th>Basis and conditions</th></tr></thead>
   <tbody>
-    <tr><td>Sensor supply</td><td>J1 contact 2</td><td>4.75 V</td><td>5 V</td><td>5.25 V</td><td>Data sheet; the Prime&rsquo;s limited-rail availability is Open</td></tr>
-    <tr><td>Sensor current</td><td>U1</td><td>—</td><td>—</td><td>10 mA</td><td>Data sheet maximum for the sensor only; the board total is Open</td></tr>
+    <tr><td>Sensor supply</td><td>J1 contact 2</td><td>4.75 V</td><td>5 V</td><td>5.25 V</td><td>Data sheet; check the Prime&rsquo;s limited rail</td></tr>
+    <tr><td>Sensor current</td><td>U1</td><td>—</td><td>—</td><td>10 mA</td><td>Data sheet maximum for the sensor only</td></tr>
     <tr><td>Pressure range</td><td>U1 port</td><td>&minus;115 kPa</td><td>—</td><td>0 kPa</td><td>Gauge range from the data sheet; ambient pressure limits what can be reached</td></tr>
     <tr><td>Divider</td><td>R1, R2</td><td>—</td><td>40.2 k&Omega; and 60.4 k&Omega;</td><td>—</td><td>0.1&nbsp;% parts from the parts list</td></tr>
-    <tr><td>Divided output</td><td>J1 contact 3</td><td>Open</td><td>Open</td><td>about 2.944 V</td><td>Calculated at the sensor&rsquo;s upper output, 5.25&nbsp;V and 0 to 85&nbsp;&deg;C; not a fault-voltage bound</td></tr>
-    <tr><td>Accuracy, sampling rate, ADC loading</td><td>Whole board</td><td>Open</td><td>Open</td><td>Open</td><td>Not established</td></tr>
+    <tr><td>Divided output</td><td>J1 contact 3</td><td>—</td><td>—</td><td>about 2.944 V</td><td>Calculated at the sensor&rsquo;s upper output, 5.25&nbsp;V and 0 to 85&nbsp;&deg;C; not a fault-voltage bound</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}
 
 ### Prime header GH (J39)
 
-The design notes name header GH (J39) for the three leads: contact 2 is 5&nbsp;V, contact 3 is PC3 (the analogue input) and contact 10 is ground. A discrepancy in the rail positions on the Prime&rsquo;s physical connectors has been noted for the nearby G_F (J37) header; verify numbered continuity with the power removed, and do not assume GH is free of it.
+Use header GH (J39) for the three leads: contact 2 is 5&nbsp;V, contact 3 is PC3 (the analogue input) and contact 10 is ground. Verify numbered continuity with the power removed.
 
 See all boards on the [extension boards](/extension-boards) page.

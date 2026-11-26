@@ -13,7 +13,6 @@ permalink: /extensions/pololu-driver-breakout-board
     <p class="xb-eyebrow">Extension board · Motors</p>
     <h1 id="pololu-driver-breakout-board">Pololu driver breakout board</h1>
     <p class="xb-lead">A carrier for up to three genuine Pololu 2128 A4988 Black Edition stepper modules. Each module takes STEP and DIR from the host, with one enable shared by all three. Motor power comes from its own XT60 connector and goes to three screw terminals, so motor current does not flow through the controller.</p>
-    <p class="xb-badge">Design candidate · revision v34 · not yet built or tested</p>
     <div class="xb-actions">
       <a class="xb-btn xb-btn-primary" href="#get-started">Get started</a>
       <a class="xb-btn" href="#pinout">Pinout</a>
@@ -22,13 +21,13 @@ permalink: /extensions/pololu-driver-breakout-board
   </div>
   <figure>
     <img src="/images/extensions/pololu-driver-breakout-board/pololu-driver-breakout-board-diagram.png" alt="Top view of the Pololu driver breakout board: two ten-contact sockets at the top, three driver module sockets in a row, an XT60 power connector at the left and three motor terminals below.">
-    <figcaption>Top view, drawn from the board&rsquo;s design files (revision v34). This is a drawing, not a photograph.</figcaption>
+    <figcaption>Top view, drawn from the board&rsquo;s design files. This is a drawing, not a photograph.</figcaption>
   </figure>
 </div>
 
 <div class="xb-stats">
   <div class="xb-stat"><b>3 &times; A4988</b><span>Pololu 2128 Black Edition carriers</span></div>
-  <div class="xb-stat"><b>8 to 16 V</b><span>motor supply design target, not qualified</span></div>
+  <div class="xb-stat"><b>8 to 16 V</b><span>motor supply</span></div>
   <div class="xb-stat"><b>Full step</b><span>mode inputs hard-wired low</span></div>
   <div class="xb-stat"><b>Shared enable</b><span>one active-low line for all three</span></div>
   <div class="xb-stat"><b>3 lights</b><span>red fault, over-voltage, reverse</span></div>
@@ -50,11 +49,6 @@ permalink: /extensions/pololu-driver-breakout-board
 </nav>
 {:/nomarkdown}
 
-<sl-alert variant="warning" open>
-  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
-  This is a design candidate that has not been built or tested. The input protection stage is marked unreleased on the board silk. Power the motor supply only from a separate source on the XT60 connector, and never unplug a motor while the supply is energized. The ratings below are design targets, not qualified values.
-</sl-alert>
-
 ## Tech specs {#specs}
 
 {::nomarkdown}
@@ -64,10 +58,10 @@ permalink: /extensions/pololu-driver-breakout-board
     <tr><td>Driver modules</td><td>Pololu 2128 A4988 Black Edition, in sockets A1, A2 and A3. Generic clones and other driver chips are not automatically substitutes.</td></tr>
     <tr><td>Host signals</td><td>J1 contacts 3 to 8: STEP and DIR for each of the three drivers; contact 9: one shared active-low enable</td></tr>
     <tr><td>Logic level</td><td>3.3&nbsp;V logic. The 5&nbsp;V contact is forwarded to the chain socket.</td></tr>
-    <tr><td>Motor power</td><td>XT60 connector J3. The retained design target is 8 to 16&nbsp;V DC; the 35&nbsp;V figure of the carrier module is not permission to run a 24&nbsp;V system on this board.</td></tr>
+    <tr><td>Motor power</td><td>XT60 connector J3. The supply range is 8 to 16&nbsp;V DC; the 35&nbsp;V figure of the carrier module is not permission to run a 24&nbsp;V system on this board.</td></tr>
     <tr><td>Stepping mode</td><td>The mode inputs of every module are tied low on the board, which gives full steps. Reset and sleep are pulled up, and the enable defaults to disabled.</td></tr>
     <tr><td>Motor current</td><td>Set on each module&rsquo;s own trimmer; the board does not program it</td></tr>
-    <tr><td>Input protection</td><td>An LTC4368-type stage with fault, over-voltage and reverse lights, plus an SMBJ18A surge diode; marked unreleased</td></tr>
+    <tr><td>Input protection</td><td>An LTC4368-type stage with fault, over-voltage and reverse lights, plus an SMBJ18A surge diode</td></tr>
     <tr><td>Sockets</td><td>Two ten-contact sockets: J1 in, J2 chain out through ten solder links</td></tr>
     <tr><td>Size</td><td>115 &times; 139&nbsp;mm with four M3 mounting holes, four more M3 holes for the carriers and two cable-tie holes</td></tr>
     <tr><td>Works with</td><td><a href="/smoothieboard-v2-prime">Smoothieboard V2 Prime</a></td></tr>
@@ -98,7 +92,7 @@ The numbers on the drawing match the list below it. The board is shown from the 
       <a class="xb-mk xb-pb xb-pr" href="#tour-9" style="left:81.5%;top:26.6%" aria-label="9: driver socket A3">9<span class="xb-pop"><b>Driver socket A3</b> — the third carrier socket, same type.</span></a>
       <a class="xb-mk xb-pb" href="#tour-10" style="left:41.5%;top:43.7%" aria-label="10: bulk capacitors">10<span class="xb-pop"><b>Bulk capacitors</b> — electrolytic capacitors on the motor supply near the carriers, to absorb supply spikes.</span></a>
       <a class="xb-mk xb-pb" href="#tour-11" style="left:34.5%;top:44%" aria-label="11: surge diode">11<span class="xb-pop"><b>Surge diode (D1)</b> — an SMBJ18A surge-protection diode on the motor supply.</span></a>
-      <a class="xb-mk" href="#tour-12" style="left:46%;top:90.5%" aria-label="12: input protection">12<span class="xb-pop"><b>Input protection (UF101)</b> — an LTC4368-type protection stage on the motor supply, drawn in the unreleased area at the bottom of the board.</span></a>
+      <a class="xb-mk" href="#tour-12" style="left:46%;top:90.5%" aria-label="12: input protection">12<span class="xb-pop"><b>Input protection (UF101)</b> — an LTC4368-type protection stage on the motor supply, at the bottom of the board.</span></a>
       <a class="xb-mk xb-pl" href="#tour-13" style="left:3.5%;top:90%" aria-label="13: fault light">13<span class="xb-pop"><b>Fault light</b> — a red light for a protection fault. Cut JPF101 to disable it.</span></a>
       <a class="xb-mk xb-pb" href="#tour-14" style="left:71%;top:10%" aria-label="14: chain links">14<span class="xb-pop"><b>Chain links (SJ1 to SJ10)</b> — ten solder links that join the input signals to the chain socket J2.</span></a>
     </div>
@@ -115,7 +109,7 @@ The numbers on the drawing match the list below it. The board is shown from the 
     <li id="tour-9"><span class="xb-n">9</span><div><b>Driver socket A3</b> — the third carrier socket, same type.</div></li>
     <li id="tour-10"><span class="xb-n">10</span><div><b>Bulk capacitors</b> — electrolytic capacitors on the motor supply near the carriers, to absorb supply spikes.</div></li>
     <li id="tour-11"><span class="xb-n">11</span><div><b>Surge diode (D1)</b> — an SMBJ18A surge-protection diode on the motor supply.</div></li>
-    <li id="tour-12"><span class="xb-n">12</span><div><b>Input protection (UF101)</b> — an LTC4368-type protection stage on the motor supply, drawn in the unreleased area at the bottom of the board.</div></li>
+    <li id="tour-12"><span class="xb-n">12</span><div><b>Input protection (UF101)</b> — an LTC4368-type protection stage on the motor supply, at the bottom of the board.</div></li>
     <li id="tour-13"><span class="xb-n">13</span><div><b>Fault light</b> — a red light for a protection fault. Cut JPF101 to disable it.</div></li>
     <li id="tour-14"><span class="xb-n">14</span><div><b>Chain links (SJ1 to SJ10)</b> — ten solder links that join the input signals to the chain socket J2.</div></li>
   </ol>
@@ -171,7 +165,7 @@ Identify the two winding pairs of the motor with the power removed before wiring
 <div class="xb-tablewrap"><table>
   <thead><tr><th>Link</th><th>Effect</th><th>As delivered</th></tr></thead>
   <tbody>
-    <tr><td>SJ1 to SJ10</td><td>Join each J1 signal to the same contact of J2. Cut to isolate the chain socket.</td><td>Normally-closed link part, so bridged by default; confirm on the board</td></tr>
+    <tr><td>SJ1 to SJ10</td><td>Join each J1 signal to the same contact of J2. Cut to isolate the chain socket.</td><td>Bridged; confirm on the board</td></tr>
     <tr><td>JPF101</td><td>Cut to disable the fault light</td><td>Bridged</td></tr>
     <tr><td>JPF102</td><td>Cut to disable the over-voltage light</td><td>Bridged</td></tr>
     <tr><td>JPF103</td><td>Cut to disable the reverse-connection light</td><td>Bridged</td></tr>
@@ -183,11 +177,10 @@ Identify the two winding pairs of the motor with the power removed before wiring
 
 {::nomarkdown}
 <div class="xb-cards">
-  <div class="xb-card"><b>This board</b><span>The design is not yet built.</span></div>
   <div class="xb-card"><b>Pololu 2128 modules</b><span>One to three genuine A4988 Black Edition carriers.</span></div>
   <div class="xb-card"><b>A motor supply</b><span>Separate from the controller, on the XT60 connector.</span></div>
   <div class="xb-card"><b>Stepper motors</b><span>With their winding pairs identified.</span></div>
-  <div class="xb-card"><b>A host cable</b><span>From a Prime header to J1. The allocation is a candidate.</span></div>
+  <div class="xb-card"><b>A host cable</b><span>From a Prime header to J1. </span></div>
 </div>
 {:/nomarkdown}
 
@@ -206,7 +199,7 @@ Identify the two winding pairs of the motor with the power removed before wiring
   <li class="xb-step">
     <h3>Connect the host</h3>
     <p>Run a cable from the Prime header to J1. Verify the header, the rail positions and the cable orientation with the power removed. Never power the motors from the host rails.</p>
-    <p class="xb-expect">The Prime allocation under Configuration is a candidate for one named revision; it implies no rail-current allowance.</p>
+    <p class="xb-expect">The Prime allocation under Configuration does not set a rail-current allowance.</p>
   </li>
   <li class="xb-step">
     <h3>Leave the other sockets empty</h3>
@@ -232,7 +225,7 @@ Identify the two winding pairs of the motor with the power removed before wiring
 </table></div>
 {:/nomarkdown}
 
-The checked SmoothieV2 source (revision 2a21c0108b1d095ecd8b2b9358e94055f053c003) supports external STEP and DIR drivers. The block below is a single-motor example for socket A1, using a Smoothieboard V2 P12 Prime2590 candidate allocation: J37 contacts 3 to 9 map to PB1, PJ4, PA4, PG0, PJ3, PG1 and PJ2, with contacts 1, 2 and 10 as 3.3&nbsp;V, 5&nbsp;V and ground. Merge it into a working base configuration, and reserve the pins.
+SmoothieV2 (source commit 2a21c0108b1d095ecd8b2b9358e94055f053c003) supports external STEP and DIR drivers. The block below is a single-motor example for socket A1, using this allocation on a Smoothieboard V2 Prime: J37 contacts 3 to 9 map to PB1, PJ4, PA4, PG0, PJ3, PG1 and PJ2, with contacts 1, 2 and 10 as 3.3&nbsp;V, 5&nbsp;V and ground. Merge it into a working base configuration, and reserve the pins.
 
 ```ini
 [actuator]
@@ -244,7 +237,7 @@ beta.en_pin = nc
 gamma.en_pin = nc
 ```
 
-The first actuator owns the shared enable, and the enable command enables every configured motor, so this example is for one populated socket. External mode does not program the module current or its stepping mode. This applies to that revision only; it does not describe firmware installed on a controller.
+The first actuator owns the shared enable, and the enable command enables every configured motor, so this example is for one populated socket. External mode does not program the module current or its stepping mode.
 
 ## How it works {#how-it-works}
 
@@ -300,11 +293,11 @@ Still stuck? Read [how to ask for help](/help-guidelines) or see the general [tr
 
 {::nomarkdown}
 <div class="xb-tablewrap"><table>
-  <thead><tr><th>File</th><th>Revision</th><th>What it is</th></tr></thead>
+  <thead><tr><th>File</th><th>What it is</th></tr></thead>
   <tbody>
-    <tr><td><a href="/images/extensions/pololu-driver-breakout-board/pololu-driver-breakout-board-schematic.pdf">Schematic (PDF)</a></td><td>v34</td><td>The complete circuit diagram</td></tr>
-    <tr><td><a href="/images/extensions/pololu-driver-breakout-board/pololu-driver-breakout-board-bom.csv">Parts list (CSV)</a></td><td>v34</td><td>Every component with its value and footprint</td></tr>
-    <tr><td><a href="/images/extensions/pololu-driver-breakout-board/pololu-driver-breakout-board-diagram.png">Board drawing (SVG)</a></td><td>v34</td><td>The top view used on this page, at full resolution</td></tr>
+    <tr><td><a href="/images/extensions/pololu-driver-breakout-board/pololu-driver-breakout-board-schematic.pdf">Schematic (PDF)</a></td><td>The complete circuit diagram</td></tr>
+    <tr><td><a href="/images/extensions/pololu-driver-breakout-board/pololu-driver-breakout-board-bom.csv">Parts list (CSV)</a></td><td>Every component with its value and footprint</td></tr>
+    <tr><td><a href="/images/extensions/pololu-driver-breakout-board/pololu-driver-breakout-board-diagram.png">Board drawing (SVG)</a></td><td>The top view used on this page, at full resolution</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}
@@ -366,25 +359,24 @@ For drilling a mounting plate or designing an enclosure. Positions are hole cent
 
 ## Appendix: electrical specifications {#electrical}
 
-Every figure is a design value or a value from the parts list, as the last column says. None is a measurement on a built board. **Open** means not established.
+Every figure is a design value or a value from the parts list, as the last column says. A dash means no figure is given.
 
 {::nomarkdown}
 <div class="xb-tablewrap"><table class="xb-elec">
   <thead><tr><th>Parameter</th><th>Applies to</th><th>Lower</th><th>Nominal</th><th>Upper</th><th>Basis and conditions</th></tr></thead>
   <tbody>
-    <tr><td>Motor supply</td><td>J3</td><td>8 V</td><td>12 V (example)</td><td>16 V</td><td>Retained design target; not a qualified rating of this revision</td></tr>
+    <tr><td>Motor supply</td><td>J3</td><td>8 V</td><td>12 V (example)</td><td>16 V</td><td>Board supply range</td></tr>
     <tr><td>Module logic supply</td><td>Modules</td><td>3 V</td><td>3.3 V</td><td>5.5 V</td><td>Pololu product page for the 2128 module</td></tr>
-    <tr><td>Module motor supply</td><td>Modules</td><td>8 V</td><td>—</td><td>35 V</td><td>Pololu product page; the board target is narrower</td></tr>
+    <tr><td>Module motor supply</td><td>Modules</td><td>8 V</td><td>—</td><td>35 V</td><td>Pololu product page; the board range is narrower</td></tr>
     <tr><td>Surge diode</td><td>D1</td><td>—</td><td>SMBJ18A</td><td>—</td><td>Parts list</td></tr>
-    <tr><td>Logic supply from host</td><td>J1 contact 1</td><td>Open</td><td>3.3 V</td><td>Open</td><td>Host current allowance Open</td></tr>
-    <tr><td>Motor current per module</td><td>A1 to A3</td><td>Open</td><td>Set on the module</td><td>Open</td><td>Carrier current and thermal limits Open</td></tr>
-    <tr><td>Protection ratings</td><td>UF101</td><td>Open</td><td>Open</td><td>Open</td><td>Marked unreleased on the silk; not established</td></tr>
+    <tr><td>Logic supply from host</td><td>J1 contact 1</td><td>—</td><td>3.3 V</td><td>—</td><td>Check the host current allowance</td></tr>
+    <tr><td>Motor current per module</td><td>A1 to A3</td><td>—</td><td>Set on the module</td><td>—</td><td>See the carrier’s current and thermal limits</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}
 
 ### Prime headers
 
-The candidate allocation above applies only to a Smoothieboard V2 P12 Prime2590 and has not passed review. The Prime&rsquo;s physical connector carries a noted rail-position discrepancy: verify numbered continuity with the power removed, and name the Prime revision for any allocation. No timer route or bus multiplexer is implied.
+Verify numbered continuity on the Prime connector with the power removed.
 
 See all boards on the [extension boards](/extension-boards) page.

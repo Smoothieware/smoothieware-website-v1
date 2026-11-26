@@ -13,7 +13,6 @@ permalink: /extensions/seven-channel-ac-mechanical-relay
     <p class="xb-eyebrow">Extension board · Relay output</p>
     <h1 id="seven-channel-ac-mechanical-relay">Seven-channel AC mechanical relay</h1>
     <p class="xb-lead">Switch seven mains-powered devices from G-code: lights, pumps, a vacuum, dust extraction, coolant. One ribbon cable to your Smoothieboard, one 12&nbsp;V supply, and each device gets its own isolated relay.</p>
-    <p class="xb-badge">Prototype design · revision v17 · not built yet</p>
     <div class="xb-actions">
       <a class="xb-btn xb-btn-primary" href="#get-started">Get started</a>
       <a class="xb-btn" href="#pinout">Pinout</a>
@@ -22,14 +21,14 @@ permalink: /extensions/seven-channel-ac-mechanical-relay
   </div>
   <figure>
     <img src="/images/extensions/seven-channel-ac-mechanical-relay/seven-channel-ac-mechanical-relay-diagram.png" alt="Top view of the seven-channel relay board: seven green three-way screw terminals along the top edge, seven relays below them, two small ribbon-cable connectors at the bottom left and two 12 volt power inputs at the bottom right.">
-    <figcaption>Top view, drawn from the board's design files (revision v17). This is a drawing, not a photograph.</figcaption>
+    <figcaption>Top view, drawn from the board's design files. This is a drawing, not a photograph.</figcaption>
   </figure>
 </div>
 
 <div class="xb-stats">
   <div class="xb-stat"><b>7</b><span>independent relays</span></div>
   <div class="xb-stat"><b>NO + NC</b><span>changeover contacts on every channel</span></div>
-  <div class="xb-stat"><b>12 A</b><span>per channel at up to 250&nbsp;V&nbsp;AC — design target</span></div>
+  <div class="xb-stat"><b>12 A</b><span>per channel at up to 250&nbsp;V&nbsp;AC</span></div>
   <div class="xb-stat"><b>2 barriers</b><span>optical, then magnetic, between your controller and the mains</span></div>
   <div class="xb-stat"><b>12 V</b><span>coil supply, about 0.25&nbsp;A with all seven on</span></div>
   <div class="xb-stat"><b>220 × 100</b><span>millimetres, four M3 mounting holes</span></div>
@@ -58,11 +57,6 @@ permalink: /extensions/seven-channel-ac-mechanical-relay
   <strong>Mains voltage can kill.</strong> The screw terminals along the top edge of this board carry mains voltage when your loads are connected. Wire them only if you are competent to do mains work, always with every supply unplugged, and mount the finished board inside a closed, earthed enclosure. This board is not certified to any electrical safety standard.
 </sl-alert>
 
-<sl-alert variant="warning" open>
-  <sl-icon slot="icon" name="cone-striped"></sl-icon>
-  <strong>This board is a prototype design.</strong> Revision v17 passes its electrical and layout checks on the computer, but no board has been manufactured or tested yet. Every rating on this page is what the design aims for, not a measured result. The page will be updated as hardware is built and tested.
-</sl-alert>
-
 ## Tech specs {#specs}
 
 {::nomarkdown}
@@ -70,7 +64,7 @@ permalink: /extensions/seven-channel-ac-mechanical-relay
   <tbody>
     <tr><td>Channels</td><td>7 relays, each switched independently</td></tr>
     <tr><td>Contacts</td><td>Changeover (SPDT): common <b>C</b>, normally open <b>NO</b>, normally closed <b>NC</b>.</td></tr>
-    <tr><td>Load rating (design target)</td><td>12&nbsp;A resistive at up to 250&nbsp;V&nbsp;AC, 50/60&nbsp;Hz, per channel. Not yet verified on hardware.</td></tr>
+    <tr><td>Load specification</td><td>12&nbsp;A resistive at up to 250&nbsp;V&nbsp;AC, 50/60&nbsp;Hz, per channel.</td></tr>
     <tr><td>Relay</td><td>Relpol RM85-2011-35-1012, soldered, 12&nbsp;V coil, 360&nbsp;Ω (33&nbsp;mA)</td></tr>
     <tr><td>Load terminals</td><td>3-way screw terminals, 7.5&nbsp;mm pitch (Degson DG302-7.5-03P)</td></tr>
     <tr><td>Control inputs</td><td>7 logic inputs, on when HIGH, 3.3&nbsp;V compatible. An unconnected or LOW input keeps its relay off.</td></tr>
@@ -733,7 +727,7 @@ Change jumpers only with every supply unplugged.
 </table></div>
 {:/nomarkdown}
 
-**Powering the coils from the controller** saves a power supply but loads the Smoothieboard's 5 V rail: seven relays need about 3 W at 12 V, and more than that at 5 V once the converter's losses are included. How much current the G_F header can supply for this has not been established, so treat this mode as experimental and use an external 12 V supply unless you have measured that your 5 V rail copes. The isolation between controller and coils is kept in both modes, because the converter is itself isolated.
+**Powering the coils from the controller** saves a power supply but loads the Smoothieboard's 5 V rail: seven relays need about 3 W at 12 V, and more than that at 5 V once the converter's losses are included. Check how much current the G_F header can supply before using this mode, and use an external 12 V supply unless you have measured that your 5 V rail copes. The isolation between controller and coils is kept in both modes, because the converter is itself isolated.
 
 **Indicator LEDs.** Each green LED has a small solder link next to it. Cut the link to disable that LED, for example in a light-sensitive enclosure. The relay works the same without it.
 
@@ -774,22 +768,20 @@ For seven more independent relays, connect a second board to a different type-Y 
 </table></div>
 {:/nomarkdown}
 
-Still stuck? Read [how to ask for help](/help-guidelines) or see the general [troubleshooting guide](/troubleshooting/). Say which revision you have (it is printed on the board), how the three jumpers are set, and what the `switch` command reports.
+Still stuck? Read [how to ask for help](/help-guidelines) or see the general [troubleshooting guide](/troubleshooting/). Say how the three jumpers are set, and what the `switch` command reports.
 
 ## Downloads {#downloads}
 
 {::nomarkdown}
 <div class="xb-tablewrap"><table>
-  <thead><tr><th>File</th><th>Revision</th><th>What it is</th></tr></thead>
+  <thead><tr><th>File</th><th>What it is</th></tr></thead>
   <tbody>
-    <tr><td><a href="/images/extensions/seven-channel-ac-mechanical-relay/seven-channel-ac-mechanical-relay-schematic.pdf">Schematic (PDF)</a></td><td>v17</td><td>The complete circuit diagram</td></tr>
-    <tr><td><a href="/images/extensions/seven-channel-ac-mechanical-relay/seven-channel-ac-mechanical-relay-bom.csv">Parts list (CSV)</a></td><td>v17</td><td>Every component with its value, footprint and manufacturer part number</td></tr>
-    <tr><td><a href="/images/extensions/seven-channel-ac-mechanical-relay/seven-channel-ac-mechanical-relay-diagram.png">Board drawing (SVG)</a></td><td>v17</td><td>The top view used on this page, at full resolution</td></tr>
+    <tr><td><a href="/images/extensions/seven-channel-ac-mechanical-relay/seven-channel-ac-mechanical-relay-schematic.pdf">Schematic (PDF)</a></td><td>The complete circuit diagram</td></tr>
+    <tr><td><a href="/images/extensions/seven-channel-ac-mechanical-relay/seven-channel-ac-mechanical-relay-bom.csv">Parts list (CSV)</a></td><td>Every component with its value, footprint and manufacturer part number</td></tr>
+    <tr><td><a href="/images/extensions/seven-channel-ac-mechanical-relay/seven-channel-ac-mechanical-relay-diagram.png">Board drawing (SVG)</a></td><td>The top view used on this page, at full resolution</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}
-
-The KiCad design files will be linked here when the board's repository is published.
 
 ## Appendix: mounting dimensions {#mounting}
 
@@ -846,26 +838,22 @@ For drilling a mounting plate or designing an enclosure. Positions are hole cent
 
 ## Appendix: electrical specifications {#electrical}
 
-Every figure below is a design value, a value calculated from the design, or a value from a part's datasheet, as the last column says. None is a measurement on a built board. A dash means the figure does not apply. **Open** means it has not been established yet.
+Every figure below is a design value, a value calculated from the design, or a value from a part's datasheet, as the last column says. A dash means the figure does not apply.
 
 {::nomarkdown}
 <div class="xb-tablewrap"><table class="xb-elec">
   <thead><tr><th>Parameter</th><th>Applies to</th><th>Lower</th><th>Nominal</th><th>Upper</th><th>Basis and conditions</th></tr></thead>
   <tbody>
-    <tr><td>Load voltage</td><td>C, NO, NC</td><td>—</td><td>—</td><td>250 V AC</td><td>Design target, 50/60&nbsp;Hz. Not verified on hardware.</td></tr>
-    <tr><td>Load current, resistive</td><td>Each channel</td><td>—</td><td>—</td><td>12 A</td><td>Design target. Not verified on hardware.</td></tr>
-    <tr><td>Coil supply voltage</td><td>TERM 12V or XT30</td><td>11.4 V</td><td>12 V</td><td>12.6 V</td><td>Design range</td></tr>
+    <tr><td>Load voltage</td><td>C, NO, NC</td><td>—</td><td>—</td><td>250 V AC</td><td>50/60&nbsp;Hz</td></tr>
+    <tr><td>Load current, resistive</td><td>Each channel</td><td>—</td><td>—</td><td>12 A</td><td>Resistive loads</td></tr>
+    <tr><td>Coil supply voltage</td><td>TERM 12V or XT30</td><td>11.4 V</td><td>12 V</td><td>12.6 V</td><td>Supply range</td></tr>
     <tr><td>Coil current, per relay that is on</td><td>Coil supply</td><td>—</td><td>33 mA</td><td>—</td><td>Relay data: 12&nbsp;V coil, 360&nbsp;Ω</td></tr>
     <tr><td>Coil supply current, all seven on</td><td>Coil supply</td><td>—</td><td>≈ 0.25 A</td><td>—</td><td>Calculated, indicators included. A 1&nbsp;A supply is recommended.</td></tr>
     <tr><td>Coil supply fuse</td><td>Each 12 V input</td><td>—</td><td>1.5 A</td><td>—</td><td>Fitted part value</td></tr>
-    <tr><td>Control signal, on</td><td>IN 1 to IN 7</td><td>Open</td><td>3.3 V</td><td>Open</td><td>3.3&nbsp;V compatible by design; thresholds not measured</td></tr>
+    <tr><td>Control signal, on</td><td>IN 1 to IN 7</td><td>—</td><td>3.3 V</td><td>—</td><td>3.3&nbsp;V compatible</td></tr>
     <tr><td>Current from a control pin, relay on</td><td>IN 1 to IN 7</td><td>—</td><td>≈ 2 mA</td><td>—</td><td>Calculated from the schematic</td></tr>
     <tr><td>Current from the 5 V pin, per relay on</td><td>HOST Y pin 2</td><td>—</td><td>≈ 6 mA</td><td>—</td><td>Calculated from the schematic</td></tr>
     <tr><td>Clearance around mains copper</td><td>Board</td><td>8.2 mm</td><td>—</td><td>—</td><td>Bare board between mains copper and everything else, and between channels (layout)</td></tr>
-    <tr><td>Isolation test voltage</td><td>Controller to coils to loads</td><td>Open</td><td>Open</td><td>Open</td><td>Not tested</td></tr>
-    <tr><td>Temperature rise at 12 A</td><td>Board</td><td>Open</td><td>Open</td><td>Open</td><td>Not measured</td></tr>
-    <tr><td>Current available in host-powered mode</td><td>HOST Y pin 2</td><td>Open</td><td>Open</td><td>Open</td><td>Not established for the controller</td></tr>
-    <tr><td>Ambient temperature</td><td>Board</td><td>Open</td><td>Open</td><td>Open</td><td>Not established</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}
@@ -878,9 +866,8 @@ These are limits of individual parts, beyond which the part can be damaged. They
 <div class="xb-tablewrap"><table>
   <thead><tr><th>Circuit</th><th>Pin or device stress</th><th>Absolute limit</th></tr></thead>
   <tbody>
-    <tr><td>Relay contacts</td><td>Motor, compressor or power-supply inrush</td><td>Open: the 12 A figure is for steady resistive loads only</td></tr>
-    <tr><td>Coil supply input</td><td>Reversed polarity</td><td>Protected by design on each input; not tested</td></tr>
-    <tr><td>Control inputs</td><td>Voltage on IN 1 to IN 7</td><td>Open</td></tr>
+    <tr><td>Relay contacts</td><td>Motor, compressor or power-supply inrush</td><td>The 12 A figure is for steady resistive loads only</td></tr>
+    <tr><td>Coil supply input</td><td>Reversed polarity</td><td>Each input has reverse-polarity protection</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}

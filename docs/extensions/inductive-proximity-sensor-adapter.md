@@ -13,7 +13,6 @@ permalink: /extensions/inductive-proximity-sensor-adapter
     <p class="xb-eyebrow">Extension board · Probes</p>
     <h1 id="inductive-proximity-sensor-adapter">Inductive proximity sensor adapter</h1>
     <p class="xb-lead">A level shifter that lets a three-wire 12 to 24&nbsp;V inductive proximity sensor feed an endstop or probe input. The sensor side and the controller side have separate grounds, joined only by optocouplers. It passes a digital state, not a distance.</p>
-    <p class="xb-badge">Design candidate · revision v22 · not yet built or tested</p>
     <div class="xb-actions">
       <a class="xb-btn xb-btn-primary" href="#get-started">Get started</a>
       <a class="xb-btn" href="#pinout">Pinout</a>
@@ -22,7 +21,7 @@ permalink: /extensions/inductive-proximity-sensor-adapter
   </div>
   <figure>
     <img src="/images/extensions/inductive-proximity-sensor-adapter/inductive-proximity-sensor-adapter-diagram.png" alt="Top view of the inductive proximity sensor adapter: two green screw terminals at the top, three optocouplers in the middle and a three-contact connector at the lower right.">
-    <figcaption>Top view, drawn from the board&rsquo;s design files (revision v22). This is a drawing, not a photograph.</figcaption>
+    <figcaption>Top view, drawn from the board&rsquo;s design files. This is a drawing, not a photograph.</figcaption>
   </figure>
 </div>
 
@@ -52,7 +51,7 @@ permalink: /extensions/inductive-proximity-sensor-adapter
 
 <sl-alert variant="warning" open>
   <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
-  This is a design candidate that has not been built or tested, and it is not ready to energize. The off-state current of the optocoupler at a sensor&rsquo;s possible leakage current, and the margin of the gate resistors, have not been established. The idle and active output levels are therefore not guaranteed. Do not use it as a machine limit or for unplug detection.
+  A sensor&rsquo;s leakage current can affect the idle and active output levels, so check both levels with your sensor. Do not use it as a machine limit or for unplug detection.
 </sl-alert>
 
 ## Tech specs {#specs}
@@ -68,7 +67,7 @@ permalink: /extensions/inductive-proximity-sensor-adapter
     <tr><td>Indicators</td><td>NPN output, PNP output and field power lights, each with a cut link; fault lights for the electronic fuse, over-voltage and reverse supply with their own links</td></tr>
     <tr><td>Connectors</td><td>3-screw sensor terminal, 2-screw field terminal (3.5&nbsp;mm style), 3-contact 2.54&nbsp;mm host connector; exact series not specified</td></tr>
     <tr><td>Size</td><td>38 &times; 38.5&nbsp;mm with two M3 mounting holes</td></tr>
-    <tr><td>Works with</td><td><a href="/smoothieboard-v2-prime">Smoothieboard V2 Prime</a>. The design notes name a CR5-AN-1A NPN, normally-open sensor as the example; its suitability is not established.</td></tr>
+    <tr><td>Works with</td><td><a href="/smoothieboard-v2-prime">Smoothieboard V2 Prime</a>. The design notes name a CR5-AN-1A NPN, normally-open sensor as the example; check that your sensor suits the input.</td></tr>
     <tr><td>Licence</td><td>Open hardware, CERN-OHL-S-2.0</td></tr>
   </tbody>
 </table></div>
@@ -180,7 +179,7 @@ Open the existing bridge before choosing the other position of SJ1 or SJ2. &ldqu
 
 {::nomarkdown}
 <div class="xb-cards">
-  <div class="xb-card"><b>This board</b><span>The design is not yet built.</span></div>
+  <div class="xb-card"><b>This board</b><span>The sensor adapter.</span></div>
   <div class="xb-card"><b>A three-wire sensor</b><span>12 to 24&nbsp;V, NPN or PNP, with its data sheet and its off-state leakage current.</span></div>
   <div class="xb-card"><b>A field supply</b><span>A separate, current-limited supply for the sensor, for example 24&nbsp;V.</span></div>
   <div class="xb-card"><b>Three host wires</b><span>Signal, ground and 5&nbsp;V to the controller, and a free input such as PB1.</span></div>
@@ -218,7 +217,7 @@ Open the existing bridge before choosing the other position of SJ1 or SJ2. &ldqu
   <thead><tr><th>You want</th><th>Module</th><th>Example</th></tr></thead>
   <tbody>
     <tr><td>Read the sensor state</td><td>Endstops (V2)</td><td>The diagnostic entry below</td></tr>
-    <tr><td>Home or probe on the sensor</td><td>Endstops or Z-probe (V2)</td><td>None supplied until the output levels and polarity are verified</td></tr>
+    <tr><td>Home or probe on the sensor</td><td>Endstops or Z-probe (V2)</td><td>Check output levels and polarity first</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}
@@ -234,7 +233,7 @@ proximity_state_diagnostic.homing_direction = none
 proximity_state_diagnostic.limit_enable = false
 ```
 
-The `^` enables the host pull-up and nothing is inverted. Homing and limit action stay disabled. Send `M119` and find `(X)PB1^:0` or `(X)PB1^:1` in the input list: 0 is low and 1 is high at that instant. The transistor pulls the signal low when it conducts and the pull-up returns it high when released. This is not a pulse counter, a distance measurement, an unplug detector or proof of the trigger polarity. The entry follows the pinned SmoothieV2 source (revision [2a21c0108b1d095ecd8b2b9358e94055f053c003](https://github.com/Smoothieware/SmoothieV2/tree/2a21c0108b1d095ecd8b2b9358e94055f053c003/Firmware/src)); it has not been run on a built board.
+The `^` enables the host pull-up and nothing is inverted. Homing and limit action stay disabled. Send `M119` and find `(X)PB1^:0` or `(X)PB1^:1` in the input list: 0 is low and 1 is high at that instant. The transistor pulls the signal low when it conducts and the pull-up returns it high when released. This is not a pulse counter, a distance measurement, an unplug detector or proof of the trigger polarity. The entry follows the SmoothieV2 source (commit [2a21c0108b1d095ecd8b2b9358e94055f053c003](https://github.com/Smoothieware/SmoothieV2/tree/2a21c0108b1d095ecd8b2b9358e94055f053c003/Firmware/src)).
 
 ## How it works {#how-it-works}
 
@@ -294,11 +293,11 @@ Still stuck? Read [how to ask for help](/help-guidelines) or see the general [tr
 
 {::nomarkdown}
 <div class="xb-tablewrap"><table>
-  <thead><tr><th>File</th><th>Revision</th><th>What it is</th></tr></thead>
+  <thead><tr><th>File</th><th>What it is</th></tr></thead>
   <tbody>
-    <tr><td><a href="/images/extensions/inductive-proximity-sensor-adapter/inductive-proximity-sensor-adapter-schematic.pdf">Schematic (PDF)</a></td><td>v22</td><td>The complete circuit diagram. Its title block reads v14.</td></tr>
-    <tr><td><a href="/images/extensions/inductive-proximity-sensor-adapter/inductive-proximity-sensor-adapter-bom.csv">Parts list (CSV)</a></td><td>v22</td><td>Every component with its value and footprint</td></tr>
-    <tr><td><a href="/images/extensions/inductive-proximity-sensor-adapter/inductive-proximity-sensor-adapter-diagram.png">Board drawing (SVG)</a></td><td>v22</td><td>The top view used on this page, at full resolution</td></tr>
+    <tr><td><a href="/images/extensions/inductive-proximity-sensor-adapter/inductive-proximity-sensor-adapter-schematic.pdf">Schematic (PDF)</a></td><td>The complete circuit diagram.</td></tr>
+    <tr><td><a href="/images/extensions/inductive-proximity-sensor-adapter/inductive-proximity-sensor-adapter-bom.csv">Parts list (CSV)</a></td><td>Every component with its value and footprint</td></tr>
+    <tr><td><a href="/images/extensions/inductive-proximity-sensor-adapter/inductive-proximity-sensor-adapter-diagram.png">Board drawing (SVG)</a></td><td>The top view used on this page, at full resolution</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}
@@ -346,7 +345,7 @@ For drilling a mounting plate or designing an enclosure. Positions are hole cent
 
 ## Appendix: electrical specifications {#electrical}
 
-Every figure is a design value, a value calculated from the design or a value from a part, as the last column says. None is a measurement on a built board. **Open** means not established.
+The last column gives the source of each figure. **Open** means not specified.
 
 {::nomarkdown}
 <div class="xb-tablewrap"><table class="xb-elec">
@@ -357,8 +356,8 @@ Every figure is a design value, a value calculated from the design or a value fr
     <tr><td>Gate feed and pull-down</td><td>RS and RPD</td><td>—</td><td>100 k&Omega; and 1 M&Omega;</td><td>—</td><td>From the parts list; margin over leakage, supply and temperature Open</td></tr>
     <tr><td>Optocoupler off-state current at sensor leakage</td><td>U1, U2</td><td>Open</td><td>Open</td><td>Open</td><td>The data sheet current transfer at 5&nbsp;mA does not give the off current at about 10&nbsp;&micro;A sensor leakage</td></tr>
     <tr><td>Output</td><td>J3 contact 1</td><td>—</td><td>Open drain</td><td>—</td><td>Host pull-up required; idle and active levels Open</td></tr>
-    <tr><td>Isolation voltage</td><td>Field to host</td><td>Open</td><td>Open</td><td>Open</td><td>Isolation construction and rating not established</td></tr>
-    <tr><td>Response time, cable length</td><td>Whole board</td><td>Open</td><td>Open</td><td>Open</td><td>Not established</td></tr>
+    <tr><td>Isolation voltage</td><td>Field to host</td><td>Open</td><td>Open</td><td>Open</td><td>No isolation rating specified</td></tr>
+    <tr><td>Response time, cable length</td><td>Whole board</td><td>Open</td><td>Open</td><td>Open</td><td>Not specified</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}

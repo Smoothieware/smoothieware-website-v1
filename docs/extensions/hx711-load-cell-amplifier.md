@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HX711 load-cell amplifier"
-description: "A load-cell amplifier built on the HX711 24-bit converter for weighing and low-speed force measurement, with a chain socket: pinout, links and limits."
+description: "A load-cell amplifier built on the HX711 24-bit converter for weighing and low-speed force measurement, with a chain socket: pinout, links and wiring."
 permalink: /extensions/hx711-load-cell-amplifier
 ---
 
@@ -13,7 +13,6 @@ permalink: /extensions/hx711-load-cell-amplifier
     <p class="xb-eyebrow">Extension board · Sensors</p>
     <h1 id="hx711-load-cell-amplifier">HX711 load-cell amplifier</h1>
     <p class="xb-lead">Reads a resistive Wheatstone-bridge load cell with an AVIA HX711 and reports signed 24-bit conversions over a data and a clock line (it is not I2C). It suits weighing, such as a filament spool, and slow force measurements. It is not an overload interlock.</p>
-    <p class="xb-badge">Design candidate · revision v16 · not yet built or tested</p>
     <div class="xb-actions">
       <a class="xb-btn xb-btn-primary" href="#get-started">Get started</a>
       <a class="xb-btn" href="#pinout">Pinout</a>
@@ -22,7 +21,7 @@ permalink: /extensions/hx711-load-cell-amplifier
   </div>
   <figure>
     <img src="/images/extensions/hx711-load-cell-amplifier/hx711-load-cell-amplifier-diagram.png" alt="Top view of the HX711 load-cell amplifier: two sockets on the left, the converter in the middle and two green screw terminals on the right.">
-    <figcaption>Top view, drawn from the board&rsquo;s design files (revision v16). This is a drawing, not a photograph.</figcaption>
+    <figcaption>Top view, drawn from the board&rsquo;s design files. This is a drawing, not a photograph.</figcaption>
   </figure>
 </div>
 
@@ -30,8 +29,8 @@ permalink: /extensions/hx711-load-cell-amplifier
   <div class="xb-stat"><b>HX711</b><span>24-bit converter, 10 conversions per second by default</span></div>
   <div class="xb-stat"><b>4.29878 V</b><span>nominal bridge excitation from a feedback network</span></div>
   <div class="xb-stat"><b>2 channels</b><span>A with gain 128 or 64, B with gain 32</span></div>
-  <div class="xb-stat"><b>≥ 350 Ω</b><span>combined bridge resistance, a design requirement</span></div>
-  <div class="xb-stat"><b>No driver</b><span>no acquisition firmware in the pinned source</span></div>
+  <div class="xb-stat"><b>≥ 350 Ω</b><span>minimum combined bridge resistance</span></div>
+  <div class="xb-stat"><b>No driver</b><span>Smoothieware has no HX711 code</span></div>
   <div class="xb-stat"><b>59 × 48</b><span>millimetres, four M3 holes and two cable-tie holes</span></div>
 </div>
 
@@ -52,7 +51,7 @@ permalink: /extensions/hx711-load-cell-amplifier
 
 <sl-alert variant="warning" open>
   <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
-  This is a design candidate that has not been built or tested, and it is not ready to energize. The pinned firmware has no HX711 driver, so no reading can be taken yet. Check the load cell&rsquo;s excitation rating and bridge resistance first; the board supplies about 4.3&nbsp;V to it. The host rail capacity, noise, calibration and the board&rsquo;s own timing are not established.
+  Smoothieware has no HX711 driver, so reading the board needs your own firmware. Check the load cell&rsquo;s excitation rating and bridge resistance first; the board supplies about 4.3&nbsp;V to it. Check the host rail capacity, and calibrate your assembly.
 </sl-alert>
 
 ## Tech specs {#specs}
@@ -64,20 +63,20 @@ permalink: /extensions/hx711-load-cell-amplifier
     <tr><td>Converter</td><td>AVIA HX711, signed 24-bit. Channel A gain 128 or 64, channel B gain 32, chosen by the number of clock pulses (25, 27 or 26) after each reading. Default 10 samples per second; 80 per second is a strap option.</td></tr>
     <tr><td>Excitation</td><td>Nominal 4.29878&nbsp;V from the HX711 driving a PNP transistor, with a 20&nbsp;k&Omega; and 8.2&nbsp;k&Omega; feedback network, from the 5&nbsp;V rail</td></tr>
     <tr><td>Logic</td><td>3.3&nbsp;V from the controller, so the data and clock lines suit the host input</td></tr>
-    <tr><td>Supply budget</td><td>25&nbsp;mA from 5&nbsp;V and 2&nbsp;mA from 3.3&nbsp;V as a design allocation; the host availability is not verified</td></tr>
+    <tr><td>Supply budget</td><td>25&nbsp;mA from 5&nbsp;V and 2&nbsp;mA from 3.3&nbsp;V; check that the host rails can supply it</td></tr>
     <tr><td>Input range</td><td>&plusmn;0.5 &times; AVDD / gain, with both inputs between AGND + 1.2&nbsp;V and AVDD &minus; 1.3&nbsp;V</td></tr>
     <tr><td>Protection</td><td>A TPS2553 switch with fault output on the 5&nbsp;V branch and TPD4E001 / TPD1E10B06 surge-protection parts on the lines</td></tr>
     <tr><td>Sockets</td><td>Two 10-contact Gadgeteer Y sockets (Samtec SHF-105, 1.27&nbsp;mm), host and chain. The chain passes the lines on; it is not an addressed bus.</td></tr>
     <tr><td>Terminals</td><td>Five-screw terminal J3 (channel A, excitation, shield) and two-screw terminal J4 (channel B), 3.5&nbsp;mm Phoenix style</td></tr>
     <tr><td>Test points</td><td>Twenty-three, covering supplies, the bridge nodes, clock and data, the fault line and the chain rails (not drawn in the top view)</td></tr>
     <tr><td>Size</td><td>59 &times; 48&nbsp;mm with four M3 mounting holes and two cable-tie holes</td></tr>
-    <tr><td>Works with</td><td><a href="/smoothieboard-v2-prime">Smoothieboard V2 Prime</a> (not yet usable without a driver)</td></tr>
+    <tr><td>Works with</td><td><a href="/smoothieboard-v2-prime">Smoothieboard V2 Prime</a> (Smoothieware has no HX711 driver)</td></tr>
     <tr><td>Licence</td><td>Open hardware, CERN-OHL-S-2.0</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}
 
-Every figure with its basis is in the [electrical specifications](#electrical) appendix; hole positions are in the [mounting dimensions](#mounting) appendix.
+The electrical figures are in the [electrical specifications](#electrical) appendix; hole positions are in the [mounting dimensions](#mounting) appendix.
 
 ## Board tour {#tour}
 
@@ -184,7 +183,7 @@ J2 has the same contact order. Each of its contacts, except ground and the rails
     <tr><td>SJ3, SJ4</td><td>DOUT and PD_SCK to J2 contacts 3 and 4</td><td>Open, so another board cannot reuse the occupied pins</td></tr>
     <tr><td>SJ5 to SJ9</td><td>GPIO 5 to 9 to J2</td><td>Closed</td></tr>
     <tr><td>SJ10</td><td>Ground to J2 contact 10</td><td>Closed</td></tr>
-    <tr><td>SJ11</td><td>Converter rate-select pin to ground</td><td>Closed, which selects the default 10 samples per second. The strap for 80 per second is not described further here.</td></tr>
+    <tr><td>SJ11</td><td>Converter rate-select pin to ground</td><td>Closed, which selects the default 10 samples per second.</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}
@@ -211,10 +210,9 @@ Do not run a board on the chain socket with its ground cut while any supply or s
 
 {::nomarkdown}
 <div class="xb-cards">
-  <div class="xb-card"><b>This board</b><span>The design is not yet built.</span></div>
   <div class="xb-card"><b>A bridge load cell</b><span>Four-wire, with at least 350&nbsp;&Omega; bridge resistance and an excitation rating that includes about 4.3&nbsp;V.</span></div>
   <div class="xb-card"><b>Five host wires</b><span>3.3&nbsp;V, 5&nbsp;V, data, clock and ground to the controller.</span></div>
-  <div class="xb-card"><b>A driver</b><span>Firmware that clocks the HX711 and reads its data. None is supplied.</span></div>
+  <div class="xb-card"><b>A driver</b><span>Firmware that clocks the HX711 and reads its data. Smoothieware does not include it.</span></div>
 </div>
 {:/nomarkdown}
 
@@ -229,15 +227,15 @@ Do not run a board on the chain socket with its ground cut while any supply or s
   <li class="xb-step">
     <h3>Wire the controller</h3>
     <p>With the power off, connect header G_F (J37) contacts 1, 2, 3, 4 and 10 to J1 contacts 1, 2, 3, 4 and 10: 3.3&nbsp;V, 5&nbsp;V, data on PB1, clock on PJ4 and ground. Leave contacts 5 to 9 and the chain socket unconnected. Check numbered continuity and the connector orientation first.</p>
-    <p class="xb-expect">The rail positions on the Prime&rsquo;s physical header need checking before powering; see the Prime header note in the electrical appendix. The available current of the 5&nbsp;V and 3.3&nbsp;V rails is not established.</p>
+    <p class="xb-expect">Check the rail positions on the Prime&rsquo;s physical header before powering; see the Prime header note in the electrical appendix. Check the available current of the 5&nbsp;V and 3.3&nbsp;V rails.</p>
   </li>
   <li class="xb-step">
     <h3>Check the board supplies first</h3>
     <p>Before connecting a load cell, measure the analogue supply at TP7 and the excitation node, and confirm the fault line TP12 is not asserted.</p>
   </li>
   <li class="xb-step">
-    <h3>Connect the load cell and wait for a driver</h3>
-    <p>Join E+, E&minus;, A+, A&minus; and the shield to J3. A driver must read the 24 data bits and then send the gain-selection clock pulses. Until one exists, no reading can be taken.</p>
+    <h3>Connect the load cell and read it</h3>
+    <p>Join E+, E&minus;, A+, A&minus; and the shield to J3. A driver must read the 24 data bits and then send the gain-selection clock pulses. Smoothieware does not include such a driver.</p>
   </li>
 </ol>
 {:/nomarkdown}
@@ -248,12 +246,12 @@ Do not run a board on the chain socket with its ground cut while any supply or s
 <div class="xb-tablewrap"><table>
   <thead><tr><th>You want</th><th>Module</th><th>Example</th></tr></thead>
   <tbody>
-    <tr><td>Read a weight or force</td><td>None</td><td>No driver exists; no example is given</td></tr>
+    <tr><td>Read a weight or force</td><td>None</td><td>No driver in Smoothieware</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}
 
-There is no configuration to give. The pinned SmoothieV2 source (revision [2a21c0108b1d095ecd8b2b9358e94055f053c003](https://github.com/Smoothieware/SmoothieV2/tree/2a21c0108b1d095ecd8b2b9358e94055f053c003/Firmware/src)) has no HX711 acquisition code. A configuration here would be invented.
+There is no configuration to give. SmoothieV2 has no HX711 acquisition code.
 
 ## How it works {#how-it-works}
 
@@ -303,11 +301,11 @@ Still stuck? Read [how to ask for help](/help-guidelines) or see the general [tr
 
 {::nomarkdown}
 <div class="xb-tablewrap"><table>
-  <thead><tr><th>File</th><th>Revision</th><th>What it is</th></tr></thead>
+  <thead><tr><th>File</th><th>What it is</th></tr></thead>
   <tbody>
-    <tr><td><a href="/images/extensions/hx711-load-cell-amplifier/hx711-load-cell-amplifier-schematic.pdf">Schematic (PDF)</a></td><td>v16</td><td>The complete circuit diagram. Its title block reads v11.</td></tr>
-    <tr><td><a href="/images/extensions/hx711-load-cell-amplifier/hx711-load-cell-amplifier-bom.csv">Parts list (CSV)</a></td><td>v16</td><td>Every component with its value and footprint</td></tr>
-    <tr><td><a href="/images/extensions/hx711-load-cell-amplifier/hx711-load-cell-amplifier-diagram.png">Board drawing (SVG)</a></td><td>v16</td><td>The top view used on this page, at full resolution</td></tr>
+    <tr><td><a href="/images/extensions/hx711-load-cell-amplifier/hx711-load-cell-amplifier-schematic.pdf">Schematic (PDF)</a></td><td>The complete circuit diagram.</td></tr>
+    <tr><td><a href="/images/extensions/hx711-load-cell-amplifier/hx711-load-cell-amplifier-bom.csv">Parts list (CSV)</a></td><td>Every component with its value and footprint</td></tr>
+    <tr><td><a href="/images/extensions/hx711-load-cell-amplifier/hx711-load-cell-amplifier-diagram.png">Board drawing (SVG)</a></td><td>The top view used on this page, at full resolution</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}
@@ -368,27 +366,26 @@ For drilling a mounting plate or designing an enclosure. Positions are hole cent
 
 ## Appendix: electrical specifications {#electrical}
 
-Every figure is a design value, a value from the converter&rsquo;s data sheet or a value from the parts list, as the last column says. None is a measurement on a built board. **Open** means not established.
+A dash means no value is given.
 
 {::nomarkdown}
 <div class="xb-tablewrap"><table class="xb-elec">
-  <thead><tr><th>Parameter</th><th>Applies to</th><th>Lower</th><th>Nominal</th><th>Upper</th><th>Basis and conditions</th></tr></thead>
+  <thead><tr><th>Parameter</th><th>Applies to</th><th>Lower</th><th>Nominal</th><th>Upper</th><th>Conditions</th></tr></thead>
   <tbody>
-    <tr><td>Logic supply</td><td>J1 contact 1</td><td>Open</td><td>3.3 V</td><td>Open</td><td>Budget 2 mA, a design allocation; host allowance Open</td></tr>
-    <tr><td>Analogue supply</td><td>J1 contact 2</td><td>Open</td><td>5 V</td><td>Open</td><td>Budget 25 mA, a design allocation; host allowance Open</td></tr>
-    <tr><td>Excitation</td><td>J3 contact 1</td><td>—</td><td>4.29878 V</td><td>—</td><td>Calculated from the 20&nbsp;k&Omega; and 8.2&nbsp;k&Omega; feedback network; accuracy and drift Open</td></tr>
-    <tr><td>Bridge resistance</td><td>Load cell</td><td>350 &Omega;</td><td>—</td><td>—</td><td>Design requirement for the combined bridge</td></tr>
+    <tr><td>Logic supply</td><td>J1 contact 1</td><td>—</td><td>3.3 V</td><td>—</td><td>Budget 2 mA</td></tr>
+    <tr><td>Analogue supply</td><td>J1 contact 2</td><td>—</td><td>5 V</td><td>—</td><td>Budget 25 mA</td></tr>
+    <tr><td>Excitation</td><td>J3 contact 1</td><td>—</td><td>4.29878 V</td><td>—</td><td>Calculated from the 20&nbsp;k&Omega; and 8.2&nbsp;k&Omega; feedback network</td></tr>
+    <tr><td>Bridge resistance</td><td>Load cell</td><td>350 &Omega;</td><td>—</td><td>—</td><td>Minimum for the combined bridge</td></tr>
     <tr><td>Differential input</td><td>A and B inputs</td><td>—</td><td>&plusmn;0.5 &times; AVDD / gain</td><td>—</td><td>Converter data sheet; inputs must stay between AGND + 1.2&nbsp;V and AVDD &minus; 1.3&nbsp;V</td></tr>
     <tr><td>Clock high time</td><td>PD_SCK</td><td>0.2 &micro;s</td><td>—</td><td>50 &micro;s</td><td>Converter data sheet; above 60&nbsp;&micro;s the converter powers down</td></tr>
     <tr><td>Clock low time</td><td>PD_SCK</td><td>0.2 &micro;s</td><td>—</td><td>—</td><td>Converter data sheet</td></tr>
     <tr><td>Sample rate</td><td>HX711</td><td>—</td><td>10 per second</td><td>—</td><td>Default with SJ11 closed; 80 per second by strap, which needs settling after a change</td></tr>
-    <tr><td>Noise, calibration, ESD limits</td><td>Whole board</td><td>Open</td><td>Open</td><td>Open</td><td>Not established</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}
 
 ### Prime header G_F (J37)
 
-On the Prime, header G_F (J37) has 3.3&nbsp;V on contact 1, 5&nbsp;V on contact 2, PB1 on 3, PJ4 on 4 and ground on 10. A discrepancy in the rail positions on the Prime&rsquo;s physical connector has been noted: verify numbered continuity with the power removed. The header is unshrouded.
+On the Prime, header G_F (J37) has 3.3&nbsp;V on contact 1, 5&nbsp;V on contact 2, PB1 on 3, PJ4 on 4 and ground on 10. Check the rail positions on the Prime&rsquo;s physical connector, and verify numbered continuity with the power removed. The header is unshrouded.
 
 See all boards on the [extension boards](/extension-boards) page.

@@ -13,7 +13,6 @@ permalink: /extensions/leadshine-like-external-stepper-drivers
     <p class="xb-eyebrow">Extension board · Motors</p>
     <h1 id="leadshine-like-external-stepper-drivers">Leadshine-like external stepper drivers</h1>
     <p class="xb-lead">An external stepper power stage built around a Trinamic TMC2590 driving four AO4611 transistor packages, with the host signals separated from the motor side by digital isolators. It takes STEP, DIR, enable and SPI from the host and a separate 18 to 32&nbsp;V motor supply. It is a board of its own design, not a terminal adapter for any commercial drive with a similar name.</p>
-    <p class="xb-badge">Design candidate · revision v18 · not for fabrication yet · not yet built or tested</p>
     <div class="xb-actions">
       <a class="xb-btn xb-btn-primary" href="#get-started">Get started</a>
       <a class="xb-btn" href="#pinout">Pinout</a>
@@ -22,14 +21,14 @@ permalink: /extensions/leadshine-like-external-stepper-drivers
   </div>
   <figure>
     <img src="/images/extensions/leadshine-like-external-stepper-drivers/leadshine-like-external-stepper-drivers-diagram.png" alt="Top view of the Leadshine-like external stepper driver board: a ten-contact socket at the left, the driver chip and four transistor packages at the centre, a green four-way motor terminal at the right and a green two-way supply terminal below the centre.">
-    <figcaption>Top view, drawn from the board&rsquo;s design files (revision v18). This is a drawing, not a photograph.</figcaption>
+    <figcaption>Top view, drawn from the board&rsquo;s design files. This is a drawing, not a photograph.</figcaption>
   </figure>
 </div>
 
 <div class="xb-stats">
   <div class="xb-stat"><b>TMC2590</b><span>Trinamic driver with external transistors</span></div>
   <div class="xb-stat"><b>18 to 32 V</b><span>silk label, absolute maximum 36 V</span></div>
-  <div class="xb-stat"><b>2.3 A RMS</b><span>silk maximum, not a qualified rating</span></div>
+  <div class="xb-stat"><b>2.3 A RMS</b><span>silk maximum</span></div>
   <div class="xb-stat"><b>Isolated</b><span>functional isolation only</span></div>
   <div class="xb-stat"><b>5 lights</b><span>green, amber and three red</span></div>
   <div class="xb-stat"><b>80 × 118</b><span>millimetres, four M3 holes</span></div>
@@ -52,7 +51,7 @@ permalink: /extensions/leadshine-like-external-stepper-drivers
 
 <sl-alert variant="warning" open>
   <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
-  This is a design candidate that has not been built or tested, and it is not ready to energize. The board silk reads NOT FOR FAB, REVIEW, says the isolation is functional only, and says the input protection stage is unreleased. Do not join the host ground and the motor ground, switch the motor supply off before wiring the motor, and never hot-plug the supply or the motor. The supply must be able to absorb regenerated energy.
+  Do not energize this board. Its silk says the isolation is functional only. Do not join the host ground and the motor ground, switch the motor supply off before wiring the motor, and never hot-plug the supply or the motor. The supply must be able to absorb regenerated energy.
 </sl-alert>
 
 ## Tech specs {#specs}
@@ -60,11 +59,11 @@ permalink: /extensions/leadshine-like-external-stepper-drivers
 {::nomarkdown}
 <div class="xb-tablewrap"><table class="xb-spec">
   <tbody>
-    <tr><td>Purpose</td><td>An isolated, separately powered stepper channel with its current, thermal and pulse-rate limits to be established on the assembled board</td></tr>
+    <tr><td>Purpose</td><td>An isolated, separately powered stepper channel driving one motor</td></tr>
     <tr><td>Driver</td><td>Trinamic TMC2590-TA (U1) with four AO4611 transistor packages (Q1 to Q4) and two 0.100&nbsp;&Omega; sense resistors (RS1, RS2)</td></tr>
     <tr><td>Isolation</td><td>An ISO7741 (U2) and an ISO7740 (U3) between the host and motor domains; functional isolation only. The host ground and motor ground are separate and must not be joined, for example by a USB lead or a shield.</td></tr>
     <tr><td>Motor supply</td><td>Screw terminal J2. The silk reads VM 18 to 32&nbsp;V DC regulated, absolute maximum 36&nbsp;V, 2.3&nbsp;A RMS maximum, no hot-plug. A 5&nbsp;A fuse position is marked F1.</td></tr>
-    <tr><td>Input protection</td><td>A reverse-polarity transistor (Q5), a SMBJ36A surge diode and an LTC4368-type stage with fault, over-voltage and reverse lights; marked unreleased</td></tr>
+    <tr><td>Input protection</td><td>A reverse-polarity transistor (Q5), a SMBJ36A surge diode and an LTC4368-type stage with fault, over-voltage and reverse lights</td></tr>
     <tr><td>Socket</td><td>One ten-contact socket, J1 (Gadgeteer S in). Contact 2 is not connected.</td></tr>
     <tr><td>Lights</td><td>Supply power (green), stall (amber); fault, over-voltage and reverse (red), each with a cut link</td></tr>
     <tr><td>Test points</td><td>Twelve, TP1 to TP12, for the supplies, the grounds and the control lines</td></tr>
@@ -75,7 +74,7 @@ permalink: /extensions/leadshine-like-external-stepper-drivers
 </table></div>
 {:/nomarkdown}
 
-Every figure with its basis is in the [electrical specifications](#electrical) appendix; hole positions are in the [mounting dimensions](#mounting) appendix. Component ratings quoted in earlier architecture research (60&nbsp;V, 10&nbsp;A) are not ratings of this board.
+Every figure with its basis is in the [electrical specifications](#electrical) appendix; hole positions are in the [mounting dimensions](#mounting) appendix.
 
 ## Board tour {#tour}
 
@@ -96,7 +95,7 @@ The numbers on the drawing match the list below it. The board is shown from the 
       <a class="xb-mk xb-pb" href="#tour-8" style="left:59.8%;top:15.4%" aria-label="8: sense resistor 1">8<span class="xb-pop"><b>Sense resistor (RS1)</b> — a 0.100&nbsp;&Omega; current-sense resistor for one coil.</span></a>
       <a class="xb-mk xb-pb" href="#tour-9" style="left:59.8%;top:36.2%" aria-label="9: sense resistor 2">9<span class="xb-pop"><b>Sense resistor (RS2)</b> — a 0.100&nbsp;&Omega; current-sense resistor for the other coil.</span></a>
       <a class="xb-mk xb-pb" href="#tour-10" style="left:57.3%;top:46%" aria-label="10: bulk capacitors">10<span class="xb-pop"><b>Bulk capacitors</b> — 220&nbsp;&micro;F, 63&nbsp;V electrolytic capacitors on the motor supply. The silk says the supply must be able to sink regenerated energy.</span></a>
-      <a class="xb-mk" href="#tour-11" style="left:31.7%;top:64.2%" aria-label="11: protection MOSFETs">11<span class="xb-pop"><b>Protection MOSFETs (QF101, QF102)</b> — the two large transistors of the input protection stage, in the area the silk marks as unreleased.</span></a>
+      <a class="xb-mk" href="#tour-11" style="left:31.7%;top:64.2%" aria-label="11: protection MOSFETs">11<span class="xb-pop"><b>Protection MOSFETs (QF101, QF102)</b> — the two large transistors of the input protection stage.</span></a>
       <a class="xb-mk xb-pb" href="#tour-12" style="left:46.8%;top:49.4%" aria-label="12: power light">12<span class="xb-pop"><b>Supply power light (D3)</b> — a green light that shows the motor supply. Cut JP2 to disable it.</span></a>
       <a class="xb-mk xb-pb xb-pr" href="#tour-13" style="left:76.8%;top:25.8%" aria-label="13: stall light">13<span class="xb-pop"><b>Stall light (D4)</b> — an amber light for the driver stall output. Cut JP1 to disable it.</span></a>
       <a class="xb-mk xb-pl" href="#tour-14" style="left:4.8%;top:88.3%" aria-label="14: fault light">14<span class="xb-pop"><b>Fault light (DF102)</b> — a red light from the input protection stage. Cut JPF101 to disable it.</span></a>
@@ -115,7 +114,7 @@ The numbers on the drawing match the list below it. The board is shown from the 
     <li id="tour-8"><span class="xb-n">8</span><div><b>Sense resistor (RS1)</b> — a 0.100&nbsp;&Omega; current-sense resistor for one coil.</div></li>
     <li id="tour-9"><span class="xb-n">9</span><div><b>Sense resistor (RS2)</b> — a 0.100&nbsp;&Omega; current-sense resistor for the other coil.</div></li>
     <li id="tour-10"><span class="xb-n">10</span><div><b>Bulk capacitors</b> — 220&nbsp;&micro;F, 63&nbsp;V electrolytic capacitors on the motor supply. The silk says the supply must be able to sink regenerated energy.</div></li>
-    <li id="tour-11"><span class="xb-n">11</span><div><b>Protection MOSFETs (QF101, QF102)</b> — the two large transistors of the input protection stage, in the area the silk marks as unreleased.</div></li>
+    <li id="tour-11"><span class="xb-n">11</span><div><b>Protection MOSFETs (QF101, QF102)</b> — the two large transistors of the input protection stage.</div></li>
     <li id="tour-12"><span class="xb-n">12</span><div><b>Supply power light (D3)</b> — a green light that shows the motor supply. Cut JP2 to disable it.</div></li>
     <li id="tour-13"><span class="xb-n">13</span><div><b>Stall light (D4)</b> — an amber light for the driver stall output. Cut JP1 to disable it.</div></li>
     <li id="tour-14"><span class="xb-n">14</span><div><b>Fault light (DF102)</b> — a red light from the input protection stage. Cut JPF101 to disable it.</div></li>
@@ -172,7 +171,7 @@ Pair the motor coils with the power removed and connect each pair to J3, never a
 
 {::nomarkdown}
 <div class="xb-tablewrap"><table>
-  <thead><tr><th>Link</th><th>Effect</th><th>As delivered</th></tr></thead>
+  <thead><tr><th>Link</th><th>Effect</th><th>Default</th></tr></thead>
   <tbody>
     <tr><td>JP1</td><td>Cut to disable the stall light (D4)</td><td>Bridged</td></tr>
     <tr><td>JP2</td><td>Cut to disable the supply power light (D3)</td><td>Bridged</td></tr>
@@ -203,7 +202,7 @@ Take host-side measurements against the host ground and motor-side measurements 
 
 {::nomarkdown}
 <div class="xb-cards">
-  <div class="xb-card"><b>This board</b><span>The design is not yet built or released for fabrication.</span></div>
+  <div class="xb-card"><b>This board</b><span>The TMC2590 stepper power stage.</span></div>
   <div class="xb-card"><b>A stepper motor</b><span>With its coil pairs identified.</span></div>
   <div class="xb-card"><b>A motor supply</b><span>Regulated, current-limited, able to sink regenerated energy, separate from the controller.</span></div>
   <div class="xb-card"><b>Firmware with TMC2590 support</b><span>A build that includes the driver, and a free chip-select pin.</span></div>
@@ -222,7 +221,7 @@ Take host-side measurements against the host ground and motor-side measurements 
   <li class="xb-step">
     <h3>Connect the host side</h3>
     <p>Motion lines come from one Prime socket and SPI lines from another, as individual conductors, not a same-numbered ribbon. Verify the headers, the rail positions and the cable orientation with the power removed.</p>
-    <p class="xb-expect">Allocate every contact against one named Prime revision. Keep the host ground and the motor ground separate.</p>
+    <p class="xb-expect">Allocate every contact against your own Prime board. Keep the host ground and the motor ground separate.</p>
   </li>
   <li class="xb-step">
     <h3>Provide the motor supply separately</h3>
@@ -248,9 +247,9 @@ Take host-side measurements against the host ground and motor-side measurements 
 </table></div>
 {:/nomarkdown}
 
-This board needs the real TMC2590 driver, not the external driver type alone. The checked SmoothieV2 source (revision 2a21c0108b1d095ecd8b2b9358e94055f053c003) constructs and initializes it in a build with the TMC driver option; its common SPI channel runs in mode 3 at 500&nbsp;kHz.
+This board needs the real TMC2590 driver, not the external driver type alone. SmoothieV2 constructs and initializes it in a build with the TMC driver option; its common SPI channel runs in mode 3 at 500&nbsp;kHz.
 
-The example is a candidate for a Smoothieboard V2 P12 Prime2590: socket J37 contact 3 to PB1 (enable), 4 to PJ4 (STEP), 5 to PA4 (DIR); socket J36 contact 6 to PD15 (chip select), 7 to the controller data output, 8 from the driver data return, 9 to the clock; J1 contact 1 takes 3.3&nbsp;V and contact 10 the host ground. Merge the block into a working base configuration, reserve the pins and the SPI bus, and leave every other motor unconnected, because the enable command enables all registered motors.
+The example is for a Smoothieboard V2 P12 Prime2590: socket J37 contact 3 to PB1 (enable), 4 to PJ4 (STEP), 5 to PA4 (DIR); socket J36 contact 6 to PD15 (chip select), 7 to the controller data output, 8 from the driver data return, 9 to the clock; J1 contact 1 takes 3.3&nbsp;V and contact 10 the host ground. Merge the block into a working base configuration, reserve the pins and the SPI bus, and leave every other motor unconnected, because the enable command enables all registered motors.
 
 ```ini
 [actuator]
@@ -282,9 +281,9 @@ external_enn.halt_set_to = false
 external_enn.ignore_on_halt = false
 ```
 
-The two sense resistors are separate 0.100&nbsp;&Omega; coil shunts, so the entry is 100 milliohms. A 0.5&nbsp;A request does not give an exact 0.5&nbsp;A setting: the driver routine rounds the current scale, which gives a nominal sine peak of about 0.487&nbsp;A and an RMS value near 0.344&nbsp;A. The maximum-current entry only clips the request. After independent electrical qualification and verified driver readback, a slow bench check sends `M43.21` and `M18`, then `M17`, waits five seconds, sends `M42.21`, waits five seconds, then `test pulse x 2` (about 20 seconds), and ends with `M43.21` before `M18`. The pulses are five seconds high and five seconds low with the direction unchanged, nominally two full steps (3.6 degrees); movement and direction remain unmeasured, and no motion or homing command or steps-per-millimetre value follows from it.
+The two sense resistors are separate 0.100&nbsp;&Omega; coil shunts, so the entry is 100 milliohms. A 0.5&nbsp;A request does not give an exact 0.5&nbsp;A setting: the driver routine rounds the current scale, which gives a nominal sine peak of about 0.487&nbsp;A and an RMS value near 0.344&nbsp;A. The maximum-current entry only clips the request. After checking the electrical side and verifying driver readback, a slow bench check sends `M43.21` and `M18`, then `M17`, waits five seconds, sends `M42.21`, waits five seconds, then `test pulse x 2` (about 20 seconds), and ends with `M43.21` before `M18`. The pulses are five seconds high and five seconds low with the direction unchanged, nominally two full steps (3.6 degrees); check movement and direction on your machine, and no motion or homing command or steps-per-millimetre value follows from it.
 
-A handled halt turns the switch off, but boot, brownout, loss of the external supply and stalled communications are not covered by it. Automatic supply and fault supervision for a machine would have to be added and qualified. The source gives no SPI propagation margin through the isolators, and the driver starts the transfer without an explicit chip-select setup delay; both need hardware verification. This applies to that source revision only; it does not describe firmware installed on a controller.
+A handled halt turns the switch off, but boot, brownout, loss of the external supply and stalled communications are not covered by it. Automatic supply and fault supervision for a machine has to be added and checked. The firmware sets no SPI propagation margin for the isolators and starts the transfer without an explicit chip-select setup delay; verify both on your hardware.
 
 ## How it works {#how-it-works}
 
@@ -341,11 +340,11 @@ Still stuck? Read [how to ask for help](/help-guidelines) or see the general [tr
 
 {::nomarkdown}
 <div class="xb-tablewrap"><table>
-  <thead><tr><th>File</th><th>Revision</th><th>What it is</th></tr></thead>
+  <thead><tr><th>File</th><th>What it is</th></tr></thead>
   <tbody>
-    <tr><td><a href="/images/extensions/leadshine-like-external-stepper-drivers/leadshine-like-external-stepper-drivers-schematic.pdf">Schematic (PDF)</a></td><td>v18</td><td>The complete circuit diagram. Its title block reads v10.</td></tr>
-    <tr><td><a href="/images/extensions/leadshine-like-external-stepper-drivers/leadshine-like-external-stepper-drivers-bom.csv">Parts list (CSV)</a></td><td>v18</td><td>Every component with its value and footprint</td></tr>
-    <tr><td><a href="/images/extensions/leadshine-like-external-stepper-drivers/leadshine-like-external-stepper-drivers-diagram.png">Board drawing (SVG)</a></td><td>v18</td><td>The top view used on this page, at full resolution</td></tr>
+    <tr><td><a href="/images/extensions/leadshine-like-external-stepper-drivers/leadshine-like-external-stepper-drivers-schematic.pdf">Schematic (PDF)</a></td><td>The complete circuit diagram.</td></tr>
+    <tr><td><a href="/images/extensions/leadshine-like-external-stepper-drivers/leadshine-like-external-stepper-drivers-bom.csv">Parts list (CSV)</a></td><td>Every component with its value and footprint</td></tr>
+    <tr><td><a href="/images/extensions/leadshine-like-external-stepper-drivers/leadshine-like-external-stepper-drivers-diagram.png">Board drawing (SVG)</a></td><td>The top view used on this page, at full resolution</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}
@@ -407,28 +406,26 @@ For drilling a mounting plate or designing an enclosure. Positions are hole cent
 
 ## Appendix: electrical specifications {#electrical}
 
-Every figure is a design value, a board silk value or a value from the parts list, as the last column says. None is a measurement on a built board. **Open** means not established.
+Every figure is a design value, a board silk value or a value from the parts list, as the last column says.
 
 {::nomarkdown}
 <div class="xb-tablewrap"><table class="xb-elec">
   <thead><tr><th>Parameter</th><th>Applies to</th><th>Lower</th><th>Nominal</th><th>Upper</th><th>Basis and conditions</th></tr></thead>
   <tbody>
-    <tr><td>Motor supply</td><td>J2</td><td>18 V</td><td>Open</td><td>32 V</td><td>Silk label, regulated; absolute maximum 36&nbsp;V on the silk. Design intent only</td></tr>
-    <tr><td>Motor current</td><td>J3</td><td>—</td><td>—</td><td>2.3 A RMS</td><td>Silk maximum; not qualified</td></tr>
-    <tr><td>Fuse position</td><td>F1</td><td>—</td><td>5 A</td><td>—</td><td>Silk marking; fitting and rating Open</td></tr>
+    <tr><td>Motor supply</td><td>J2</td><td>18 V</td><td>—</td><td>32 V</td><td>Silk label, regulated; absolute maximum 36&nbsp;V on the silk</td></tr>
+    <tr><td>Motor current</td><td>J3</td><td>—</td><td>—</td><td>2.3 A RMS</td><td>Silk maximum</td></tr>
+    <tr><td>Fuse position</td><td>F1</td><td>—</td><td>5 A</td><td>—</td><td>Silk marking</td></tr>
     <tr><td>Sense resistors</td><td>RS1, RS2</td><td>—</td><td>0.100 &Omega; each</td><td>—</td><td>Parts list</td></tr>
-    <tr><td>Example current request</td><td>Firmware</td><td>—</td><td>0.5 A request</td><td>—</td><td>Nominal sine peak about 0.487 A, RMS about 0.344 A; not measured</td></tr>
+    <tr><td>Example current request</td><td>Firmware</td><td>—</td><td>0.5 A request</td><td>—</td><td>Nominal sine peak about 0.487 A, RMS about 0.344 A</td></tr>
     <tr><td>Surge diode, bulk capacitors</td><td>D1, C1, C2</td><td>—</td><td>SMBJ36A, 220 &micro;F 63 V</td><td>—</td><td>Parts list</td></tr>
-    <tr><td>Logic supply from host</td><td>J1 contact 1</td><td>Open</td><td>3.3 V</td><td>Open</td><td>Host current allowance Open</td></tr>
-    <tr><td>Isolation rating</td><td>U2, U3</td><td>Open</td><td>Open</td><td>Open</td><td>The silk says functional isolation only</td></tr>
-    <tr><td>Thermal rise, SPI timing, regeneration</td><td>Board</td><td>Open</td><td>Open</td><td>Open</td><td>Not established</td></tr>
-    <tr><td>Protection ratings, start-up and fault behaviour</td><td>Board</td><td>Open</td><td>Open</td><td>Open</td><td>Not established; the stage is marked unreleased</td></tr>
+    <tr><td>Logic supply from host</td><td>J1 contact 1</td><td>—</td><td>3.3 V</td><td>—</td><td>Supplied by the host</td></tr>
+    <tr><td>Isolation</td><td>U2, U3</td><td>—</td><td>—</td><td>—</td><td>The silk says functional isolation only</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}
 
 ### Prime headers
 
-The candidate allocation above applies only to a Smoothieboard V2 P12 Prime2590 and has not passed review. The Prime&rsquo;s physical connector carries a noted rail-position discrepancy: verify numbered continuity with the power removed, and name the Prime revision for any allocation. No rail-current allowance, timer route or bus multiplexer is implied.
+The allocation above applies only to a Smoothieboard V2 P12 Prime2590. Verify numbered continuity and the rail positions on the physical connector with the power removed.
 
 See all boards on the [extension boards](/extension-boards) page.

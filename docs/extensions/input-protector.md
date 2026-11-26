@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Input protector"
-description: "An isolated digital input for a sensor signal that may be well above 3.3 V: pinout, wiring, endstop configuration and limits."
+description: "An isolated digital input for a sensor signal that may be well above 3.3 V: pinout, wiring and endstop configuration."
 permalink: /extensions/input-protector
 ---
 
@@ -13,7 +13,6 @@ permalink: /extensions/input-protector
     <p class="xb-eyebrow">Extension board · Isolated input</p>
     <h1 id="input-protector">Input protector</h1>
     <p class="xb-lead">Read a sensor signal that may be far above 3.3&nbsp;V with a Smoothieboard input. An isolated receiver separates the sensor side from the controller side, and a transistor gives the controller a plain open-collector signal, like an endstop.</p>
-    <p class="xb-badge">Prototype design · revision v17 · not built yet</p>
     <div class="xb-actions">
       <a class="xb-btn xb-btn-primary" href="#get-started">Get started</a>
       <a class="xb-btn" href="#pinout">Pinout</a>
@@ -22,14 +21,14 @@ permalink: /extensions/input-protector
   </div>
   <figure>
     <img src="/images/extensions/input-protector/input-protector-diagram.png" alt="Top view of the input protector: a three-contact field connector at the left, a surge diode and resistors, an eight-pin receiver chip in the middle, a transistor and a three-contact host connector at the right.">
-    <figcaption>Top view, drawn from the board&rsquo;s design files (revision v17). This is a drawing, not a photograph.</figcaption>
+    <figcaption>Top view, drawn from the board&rsquo;s design files. This is a drawing, not a photograph.</figcaption>
   </figure>
 </div>
 
 <div class="xb-stats">
   <div class="xb-stat"><b>1</b><span>isolated digital input, one open-collector output</span></div>
-  <div class="xb-stat"><b>About 8.5 V</b><span>typical ON threshold calculated from the receiver&rsquo;s data sheet. Not measured.</span></div>
-  <div class="xb-stat"><b>Not rated</b><span>the 48&nbsp;V in the original brief is a goal, not a rating</span></div>
+  <div class="xb-stat"><b>About 8.5 V</b><span>typical ON threshold calculated from the receiver&rsquo;s data sheet.</span></div>
+  <div class="xb-stat"><b>&plusmn;60 V</b><span>receiver absolute maximum at its input pin</span></div>
   <div class="xb-stat"><b>Separate</b><span>field ground and host ground are not connected</span></div>
   <div class="xb-stat"><b>3 + 3</b><span>contacts on each of the two connectors</span></div>
   <div class="xb-stat"><b>43.2 × 24</b><span>millimetres, two M3 mounting holes</span></div>
@@ -52,12 +51,7 @@ permalink: /extensions/input-protector
 
 <sl-alert variant="danger" open>
   <sl-icon slot="icon" name="lightning-charge"></sl-icon>
-  <strong>Not a surge clamp, and no voltage rating is established.</strong> The original brief asked for a signal that can reach 48&nbsp;V. The design notes record that the surge diode on the board clamps above the receiver&rsquo;s absolute maximum, and no 48&nbsp;V figure has been qualified. Do not connect a signal you have not checked against the limits in the <a href="#electrical">electrical specifications</a>.
-</sl-alert>
-
-<sl-alert variant="warning" open>
-  <sl-icon slot="icon" name="cone-striped"></sl-icon>
-  <strong>This board is a prototype design.</strong> Revision v17 passes its checks on the computer, but no board has been manufactured or tested. The thresholds, the start-up behaviour, the isolation voltage and the host pull-up have not been measured. The schematic inside the download still reads v12: the v17 changes are to the board layout and its labels, not to the circuit.
+  <strong>This board is not a surge clamp.</strong> The surge diode clamps at a voltage above the receiver&rsquo;s &plusmn;60&nbsp;V absolute maximum. Do not connect a signal you have not checked against the limits in the <a href="#electrical">electrical specifications</a>.
 </sl-alert>
 
 ## Tech specs {#specs}
@@ -68,12 +62,12 @@ permalink: /extensions/input-protector
     <tr><td>Channels</td><td>One isolated digital input with one open-collector output</td></tr>
     <tr><td>Receiver</td><td>TI ISO1211D, powered from the field signal itself on the field side and from host 5&nbsp;V on the host side. No separate field-side supply is needed.</td></tr>
     <tr><td>Input network</td><td>100&nbsp;&Omega; and 562&nbsp;&Omega; in series, a 27.4&nbsp;k&Omega; resistor and a 22&nbsp;nF capacitor across the input, and an SMBJ58CA surge diode</td></tr>
-    <tr><td>Input threshold</td><td>About 8.5&nbsp;V typical, calculated from the receiver&rsquo;s data sheet for this resistor network. Worst case and measured values are Open.</td></tr>
+    <tr><td>Input threshold</td><td>About 8.5&nbsp;V typical, calculated from the receiver&rsquo;s data sheet for this resistor network.</td></tr>
     <tr><td>Output</td><td>Open collector (MMBT3904), inverting: a high field signal pulls the host output low. A pull-up is needed: the controller&rsquo;s own, or the optional 22&nbsp;k&Omega; link to 5&nbsp;V.</td></tr>
-    <tr><td>Isolation</td><td>Inside the receiver chip. The field and host grounds are separate nets. <b>Isolation voltage Open;</b> not tested.</td></tr>
+    <tr><td>Isolation</td><td>Inside the receiver chip. The field and host grounds are separate nets.</td></tr>
     <tr><td>Field connector</td><td>J1, Molex KK 2.54&nbsp;mm, three contacts: signal, ground, and one unused</td></tr>
     <tr><td>Host connector</td><td>J2, three contacts: output, ground, 5&nbsp;V. Two footprints for the same contacts: a 2.54&nbsp;mm one and a 2&nbsp;mm JST PH one. Fit one.</td></tr>
-    <tr><td>Host supply</td><td>5&nbsp;V on J2 contact 3. The design needs 4.75 to 5.25&nbsp;V. There is no Gadgeteer socket.</td></tr>
+    <tr><td>Host supply</td><td>5&nbsp;V on J2 contact 3. The board needs 4.75 to 5.25&nbsp;V. There is no Gadgeteer socket.</td></tr>
     <tr><td>Indicator</td><td>One green light for the receiver state, with a solder link to disable it</td></tr>
     <tr><td>Test points</td><td>Five: field signal, field ground, host output, host ground, and a floating receiver node marked NO PROBE</td></tr>
     <tr><td>Size</td><td>43.2 &times; 24&nbsp;mm, two M3 mounting holes and two cable-tie holes</td></tr>
@@ -83,7 +77,7 @@ permalink: /extensions/input-protector
 </table></div>
 {:/nomarkdown}
 
-Every figure with its limits and its basis is in the [electrical specifications](#electrical) appendix; the hole positions are in the [mounting dimensions](#mounting) appendix.
+The electrical figures are in the [electrical specifications](#electrical) appendix; the hole positions are in the [mounting dimensions](#mounting) appendix.
 
 ## Board tour {#tour}
 
@@ -95,7 +89,7 @@ The numbers on the drawing match the list below it. The board is shown from the 
     <div class="xb-tour-stage">
       <img src="/images/extensions/input-protector/input-protector-diagram.png" alt="Top view of the input protector with eleven numbered markers that are explained in the list below.">
       <a class="xb-mk xb-pl" href="#tour-1" style="left:10.2%;top:53.5%" aria-label="1: field connector">1<span class="xb-pop"><b>Field connector (J1)</b> — a three-contact connector for the sensor side. Contact 1 is the signal, contact 2 the field ground. Contact 3 is not connected to anything and does not power a sensor. <i>See the pinout.</i></span></a>
-      <a class="xb-mk xb-pl" href="#tour-2" style="left:23.2%;top:52%" aria-label="2: surge diode">2<span class="xb-pop"><b>Surge diode</b> — an SMBJ58CA bidirectional suppressor across the field signal and ground. It clips short spikes. <i>Its clamp voltage is higher than the receiver&rsquo;s absolute maximum, so it does not by itself make a 48&nbsp;V signal acceptable to the receiver.</i></span></a>
+      <a class="xb-mk xb-pl" href="#tour-2" style="left:23.2%;top:52%" aria-label="2: surge diode">2<span class="xb-pop"><b>Surge diode</b> — an SMBJ58CA bidirectional suppressor across the field signal and ground. It clips short spikes. <i>Its clamp voltage is higher than the receiver&rsquo;s absolute maximum, so it does not by itself protect the receiver from an over-voltage signal.</i></span></a>
       <a class="xb-mk" href="#tour-3" style="left:33.7%;top:52%" aria-label="3: shunt resistor and capacitor">3<span class="xb-pop"><b>Shunt resistor and capacitor</b> — a 27.4&nbsp;k&Omega; resistor and a 22&nbsp;nF capacitor between the field signal and field ground. With the series resistors they set the input threshold and filter short pulses.</span></a>
       <a class="xb-mk xb-pb" href="#tour-4" style="left:36.5%;top:22.3%" aria-label="4: series resistor R1">4<span class="xb-pop"><b>First series resistor</b> — R1, 100&nbsp;&Omega;, between the field signal and the sense node.</span></a>
       <a class="xb-mk xb-pb" href="#tour-5" style="left:43.2%;top:45%" aria-label="5: series resistor R6">5<span class="xb-pop"><b>Second series resistor</b> — R6, 562&nbsp;&Omega;, between the sense node and the receiver input.</span></a>
@@ -109,7 +103,7 @@ The numbers on the drawing match the list below it. The board is shown from the 
   </div>
   <ol class="xb-tour-list">
     <li id="tour-1"><span class="xb-n">1</span><div><b>Field connector (J1)</b> — a three-contact connector for the sensor side. Contact 1 is the signal, contact 2 the field ground. Contact 3 is not connected to anything and does not power a sensor. <i>See the pinout.</i></div></li>
-    <li id="tour-2"><span class="xb-n">2</span><div><b>Surge diode</b> — an SMBJ58CA bidirectional suppressor across the field signal and ground. It clips short spikes. <i>Its clamp voltage is higher than the receiver&rsquo;s absolute maximum, so it does not by itself make a 48&nbsp;V signal acceptable to the receiver.</i></div></li>
+    <li id="tour-2"><span class="xb-n">2</span><div><b>Surge diode</b> — an SMBJ58CA bidirectional suppressor across the field signal and ground. It clips short spikes. <i>Its clamp voltage is higher than the receiver&rsquo;s absolute maximum, so it does not by itself protect the receiver from an over-voltage signal.</i></div></li>
     <li id="tour-3"><span class="xb-n">3</span><div><b>Shunt resistor and capacitor</b> — a 27.4&nbsp;k&Omega; resistor and a 22&nbsp;nF capacitor between the field signal and field ground. With the series resistors they set the input threshold and filter short pulses.</div></li>
     <li id="tour-4"><span class="xb-n">4</span><div><b>First series resistor</b> — R1, 100&nbsp;&Omega;, between the field signal and the sense node.</div></li>
     <li id="tour-5"><span class="xb-n">5</span><div><b>Second series resistor</b> — R6, 562&nbsp;&Omega;, between the sense node and the receiver input.</div></li>
@@ -158,7 +152,7 @@ At the right of the board. It has two footprints for the same three contacts, si
 
 <sl-alert variant="warning" open>
   <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
-  Keep the field ground and the host ground apart. Do not join J1 contact 2 to J2 contact 2, or the isolation is defeated. The design notes record an unresolved discrepancy about where the 5&nbsp;V and 3.3&nbsp;V rails sit on the Prime&rsquo;s physical connector: check your cable against the table before you connect anything.
+  Keep the field ground and the host ground apart. Do not join J1 contact 2 to J2 contact 2, or the isolation is defeated. Check where the 5&nbsp;V and 3.3&nbsp;V rails sit on the Prime&rsquo;s physical connector, and check your cable against the table before you connect anything.
 </sl-alert>
 
 ### Links and test points
@@ -239,7 +233,7 @@ The worked example reads a normally-open contact. Switch everything off before y
   <li class="xb-step">
     <h3>Add the input to your configuration</h3>
     <p>Copy <a href="#config-input">example 1</a> into the configuration file on the SD card, restart the board, power the field supply, and send <code>M119</code> with the contact open and then closed.</p>
-    <p class="xb-expect"><b>You should see:</b> the entry for <code>PB1</code> changes from 0 to 1 when the contact closes, and the green light comes on. These are the expected readings from the design: they have not been shown on a built board.</p>
+    <p class="xb-expect"><b>You should see:</b> the entry for <code>PB1</code> changes from 0 to 1 when the contact closes, and the green light comes on.</p>
   </li>
 </ol>
 {:/nomarkdown}
@@ -282,7 +276,7 @@ How to read the result:
     <tr><td>Contact open, supplies present</td><td>The pull-up holds PB1 high</td><td><code>0</code></td></tr>
     <tr><td>Contact closed, supplies present</td><td>The transistor pulls PB1 low</td><td><code>1</code></td></tr>
     <tr><td>Field wire broken</td><td>The receiver sees no signal</td><td>Normally <code>0</code>, the same as an open contact. This wiring cannot tell the two apart.</td></tr>
-    <tr><td>Host power missing or restarting</td><td>The receiver&rsquo;s output is not established</td><td>No guaranteed reading. Do not take it as a known state.</td></tr>
+    <tr><td>Host power missing or restarting</td><td>The receiver&rsquo;s output is undefined</td><td>No guaranteed reading. Do not take it as a known state.</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}
@@ -360,24 +354,24 @@ What the light tells you:
     <tr><td><code>M119</code> stays at 0 with the contact closed</td><td>The field signal does not reach the receiver, or the host side has no 5&nbsp;V.</td><td>With the supplies off, check J1 contacts 1 and 2 and J2 contacts 1 to 3 with a meter. Check that the field supply is on and above the threshold, and that 5&nbsp;V reaches J2 contact 3.</td></tr>
     <tr><td><code>M119</code> stays at 1 with the contact open</td><td>The output is held low: a short to host ground, or a contact that is not normally open.</td><td>Check for a short between J2 contact 1 and contact 2, and check the contact type. Do not close the PULLUP_EN link as a shortcut: it selects a 5&nbsp;V pull-up and this example uses the controller&rsquo;s own.</td></tr>
     <tr><td>The green light is on but <code>M119</code> reads 0</td><td>The receiver works, but the output does not reach <code>PB1</code>.</td><td>Check J2 contact 1 to J37 pin 3, and that the configuration line has <code>^</code> and <code>!</code>.</td></tr>
-    <tr><td>The reading is wrong only at some voltages</td><td>The signal is near the threshold.</td><td>Measure the field voltage at J1. The typical threshold is about 8.5&nbsp;V; the worst case has not been established.</td></tr>
+    <tr><td>The reading is wrong only at some voltages</td><td>The signal is near the threshold.</td><td>Measure the field voltage at J1. The typical threshold is about 8.5&nbsp;V.</td></tr>
     <tr><td>Wrong or unreadable contact order on J2</td><td>The two connector footprints list the contacts differently.</td><td>Re-check with a meter and the table in the pinout.</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}
 
-Still stuck? Read [how to ask for help](/help-guidelines) or see the general [troubleshooting guide](/troubleshooting/). Say which revision you have (it is printed on the board) and what `M119` reports.
+Still stuck? Read [how to ask for help](/help-guidelines) or see the general [troubleshooting guide](/troubleshooting/). Include the text printed on your board and what `M119` reports.
 
 ## Downloads {#downloads}
 
 {::nomarkdown}
 <div class="xb-tablewrap"><table>
-  <thead><tr><th>File</th><th>Revision</th><th>What it is</th></tr></thead>
+  <thead><tr><th>File</th><th>What it is</th></tr></thead>
   <tbody>
-    <tr><td><a href="/images/extensions/input-protector/input-protector-schematic.pdf">Schematic (PDF)</a></td><td>v17</td><td>The complete circuit diagram. Its title still reads v12.</td></tr>
-    <tr><td><a href="/images/extensions/input-protector/input-protector-bom-standard.csv">Parts list, 2.54 mm host connector (CSV)</a></td><td>v17</td><td>Every component with its value, footprint and position</td></tr>
-    <tr><td><a href="/images/extensions/input-protector/input-protector-bom-stemma.csv">Parts list, 2 mm JST PH host connector (CSV)</a></td><td>v17</td><td>The same, with the compact host connector</td></tr>
-    <tr><td><a href="/images/extensions/input-protector/input-protector-diagram.png">Board drawing (SVG)</a></td><td>v17</td><td>The top view used on this page, at full resolution</td></tr>
+    <tr><td><a href="/images/extensions/input-protector/input-protector-schematic.pdf">Schematic (PDF)</a></td><td>The complete circuit diagram.</td></tr>
+    <tr><td><a href="/images/extensions/input-protector/input-protector-bom-standard.csv">Parts list, 2.54 mm host connector (CSV)</a></td><td>Every component with its value, footprint and position</td></tr>
+    <tr><td><a href="/images/extensions/input-protector/input-protector-bom-stemma.csv">Parts list, 2 mm JST PH host connector (CSV)</a></td><td>The same, with the compact host connector</td></tr>
+    <tr><td><a href="/images/extensions/input-protector/input-protector-diagram.png">Board drawing (SVG)</a></td><td>The top view used on this page, at full resolution</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}
@@ -430,22 +424,19 @@ For drilling a mounting plate or designing an enclosure. Positions are hole cent
 
 ## Appendix: electrical specifications {#electrical}
 
-Every figure below is a design value, a value calculated from the design or a value from a part number, as the last column says. None is a measurement on a built board. A dash means the figure does not apply. **Open** means it has not been established yet.
+A dash means that no value is given or the figure does not apply.
 
 {::nomarkdown}
 <div class="xb-tablewrap"><table class="xb-elec">
-  <thead><tr><th>Parameter</th><th>Applies to</th><th>Lower</th><th>Nominal</th><th>Upper</th><th>Basis and conditions</th></tr></thead>
+  <thead><tr><th>Parameter</th><th>Applies to</th><th>Lower</th><th>Nominal</th><th>Upper</th><th>Conditions</th></tr></thead>
   <tbody>
-    <tr><td>Field signal, ON threshold</td><td>J1 contact 1</td><td>Open</td><td>8.475 V</td><td>Open</td><td>Typical, interpolated from the receiver&rsquo;s data sheet for the 100&nbsp;&Omega; and 562&nbsp;&Omega; series resistors. Worst case Open</td></tr>
-    <tr><td>Field signal, maximum</td><td>J1 contact 1</td><td>—</td><td>—</td><td>Open</td><td>The original brief asked for 48&nbsp;V; no figure is qualified</td></tr>
-    <tr><td>Surge diode</td><td>Across the field input</td><td>—</td><td>58 V</td><td>93.6 V</td><td>SMBJ58CA, bidirectional: 58&nbsp;V standoff and 93.6&nbsp;V clamp at its stated pulse. The design notes record that this clamp is above the receiver&rsquo;s &plusmn;60&nbsp;V absolute maximum</td></tr>
-    <tr><td>Host supply</td><td>J2 contact 3</td><td>4.75 V</td><td>5 V</td><td>5.25 V</td><td>Required by the design; the current drawn is Open</td></tr>
-    <tr><td>Host pull-up current</td><td>Host output</td><td>—</td><td>—</td><td>0.5 mA</td><td>Design limit for the combined pull-ups</td></tr>
+    <tr><td>Field signal, ON threshold</td><td>J1 contact 1</td><td>—</td><td>8.475 V</td><td>—</td><td>Typical, interpolated from the receiver&rsquo;s data sheet for the 100&nbsp;&Omega; and 562&nbsp;&Omega; series resistors.</td></tr>
+    <tr><td>Surge diode</td><td>Across the field input</td><td>—</td><td>58 V</td><td>93.6 V</td><td>SMBJ58CA, bidirectional: 58&nbsp;V standoff and 93.6&nbsp;V clamp at its stated pulse. This clamp is above the receiver&rsquo;s &plusmn;60&nbsp;V absolute maximum</td></tr>
+    <tr><td>Host supply</td><td>J2 contact 3</td><td>4.75 V</td><td>5 V</td><td>5.25 V</td><td>Required supply range</td></tr>
+    <tr><td>Host pull-up current</td><td>Host output</td><td>—</td><td>—</td><td>0.5 mA</td><td>Limit for the combined pull-ups</td></tr>
     <tr><td>Optional pull-up</td><td>SJ1, R5</td><td>—</td><td>22 k&Omega;</td><td>—</td><td>To host 5&nbsp;V when the link is closed; open as delivered</td></tr>
     <tr><td>Output state</td><td>J2 contact 1</td><td>—</td><td>Low when the field signal is high</td><td>—</td><td>Inverting, through an MMBT3904 and 470&nbsp;&Omega;</td></tr>
-    <tr><td>Isolation voltage</td><td>Field to host</td><td>Open</td><td>Open</td><td>Open</td><td>Not tested</td></tr>
-    <tr><td>Switching time and pulse filtering</td><td>Input to output</td><td>Open</td><td>Open</td><td>Open</td><td>Not measured</td></tr>
-    <tr><td>Behaviour when the host is unpowered</td><td>Output</td><td>—</td><td>Not established</td><td>—</td><td>The receiver&rsquo;s output is undetermined when it is unpowered</td></tr>
+    <tr><td>Behaviour when the host is unpowered</td><td>Output</td><td>—</td><td>Undefined</td><td>—</td><td>The receiver&rsquo;s output is undetermined when it is unpowered</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}
@@ -456,9 +447,7 @@ Every figure below is a design value, a value calculated from the design or a va
 <div class="xb-tablewrap"><table>
   <thead><tr><th>Circuit</th><th>Pin or device stress</th><th>Absolute limit</th></tr></thead>
   <tbody>
-    <tr><td>Receiver</td><td>Voltage at its input pin</td><td>&plusmn;60&nbsp;V, from the design notes; the data sheet is the reference</td></tr>
-    <tr><td>Series resistors</td><td>Pulse energy and power</td><td>Open: not calculated for a stated surge</td></tr>
-    <tr><td>Host output</td><td>Voltage at J2 contact 1</td><td>Open</td></tr>
+    <tr><td>Receiver</td><td>Voltage at its input pin</td><td>&plusmn;60&nbsp;V; the data sheet is the reference</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}

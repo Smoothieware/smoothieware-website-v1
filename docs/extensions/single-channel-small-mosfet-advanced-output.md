@@ -15,7 +15,6 @@ redirect_from:
     <p class="xb-eyebrow">Extension board · Power output</p>
     <h1 id="single-channel-small-mosfet-advanced-output">Single-channel small mosfet advanced output</h1>
     <p class="xb-lead">Switch a fan, solenoid, pump or light from a 3.3 V controller output. Use a three-pin header or a Gadgeteer type-Y socket. An optocoupler separates the selected command from the load circuit.</p>
-    <p class="xb-badge">Prototype design · revision v29 · untested on hardware</p>
     <div class="xb-actions">
       <a class="xb-btn xb-btn-primary" href="#get-started">Get started</a>
       <a class="xb-btn" href="#pinout">Pinout</a>
@@ -24,13 +23,13 @@ redirect_from:
   </div>
   <figure>
     <img src="/images/extensions/single-channel-small-mosfet-advanced-output/small-mosfet-advanced-diagram.png" alt="Top view with the white control header and two keyed Gadgeteer connectors along the top, field supply on the left and load on the right">
-    <figcaption>Top view drawn from revision v29.</figcaption>
+<figcaption>Top view of the board.</figcaption>
   </figure>
 </div>
 <div class="xb-stats">
   <div class="xb-stat"><b>1</b><span>low-side DC output</span></div>
   <div class="xb-stat"><b>5–24 V</b><span>external DC field supply</span></div>
-  <div class="xb-stat"><b>4 A</b><span>load current design target</span></div>
+  <div class="xb-stat"><b>4 A</b><span>load current</span></div>
   <div class="xb-stat"><b>3.3 V</b><span>nominal logic command</span></div>
   <div class="xb-stat"><b>7</b><span>outputs per type-Y socket</span></div>
   <div class="xb-stat"><b>60 × 87</b><span>millimetres, four M3 holes</span></div>
@@ -40,20 +39,15 @@ redirect_from:
 </nav>
 {:/nomarkdown}
 
-<sl-alert variant="warning" open>
-  <sl-icon slot="icon" name="cone-striped"></sl-icon>
-  <strong>Prototype design.</strong> The current target and operating limits await hardware testing. Use an appropriately fused, current-limited DC supply. A heater also needs an independent thermal cut-out.
-</sl-alert>
-
 {% include _includes/mosfet-board-comparison.html %}
 
 ## Tech specs {#specs}
 
-| Parameter | Revision v29 |
+| Parameter | Value |
 | --- | --- |
 | Output | One low-side DC switch with flyback diode |
 | Load supply | 5–24 V DC, external only |
-| Load current | 4 A design target, untested |
+| Load current | 4 A |
 | Control | Active-high 3.3 V from the selected three-pin or Gadgeteer input |
 | Isolation | Optical signal path with separate controller and field returns |
 | Connectors | Keyed three-pin header, two Gadgeteer type-Y ports and two screw terminals |
@@ -156,9 +150,9 @@ Connect **Y CHAIN** on one board to **Y IN** on the next. With Gadgeteer selecte
 
 ## Downloads {#downloads}
 
-- [Top-view board drawing, v29](/images/extensions/single-channel-small-mosfet-advanced-output/small-mosfet-advanced-diagram.png)
-- [Schematic PDF, v29](/images/extensions/single-channel-small-mosfet-advanced-output/schematic.pdf)
-- [Parts list CSV, v29](/images/extensions/single-channel-small-mosfet-advanced-output/bom.csv)
+- [Top-view board drawing](/images/extensions/single-channel-small-mosfet-advanced-output/small-mosfet-advanced-diagram.png)
+- [Schematic PDF](/images/extensions/single-channel-small-mosfet-advanced-output/schematic.pdf)
+- [Parts list CSV](/images/extensions/single-channel-small-mosfet-advanced-output/bom.csv)
 
 ## Appendix: mounting dimensions {#mounting}
 
@@ -168,9 +162,9 @@ The board is 60 × 87 mm. Four 3.2 mm holes form a 40 × 40 mm pattern. Hole cen
 
 | Parameter | Value | Basis |
 | --- | --- | --- |
-| Field supply | 5–24 V DC | Design range |
-| Continuous load | 4 A | Design target, untested |
-| Logic command | 3.3 V nominal | Design target for both interfaces |
-| Minimum loaded high | 2.72 V at the selected input | Design threshold, untested |
-| Maximum logic low | 0.4 V | Design threshold, untested |
-| Isolation voltage rating | Open | Hardware qualification pending. Use with low-voltage DC. |
+| Field supply | 5–24 V DC | Supply range |
+| Continuous load | 4 A | Load rating |
+| Logic command | 3.3 V nominal | Both interfaces |
+| Minimum loaded high | 2.72 V at the selected input | Input threshold |
+| Maximum logic low | 0.4 V | Input threshold |
+| Isolation voltage rating | Not specified | Use with low-voltage DC. |

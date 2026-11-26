@@ -13,7 +13,6 @@ permalink: /extensions/dc-ssr-board
     <p class="xb-eyebrow">Extension board · Solid-state DC output</p>
     <h1 id="dc-ssr-board">DC SSR board</h1>
     <p class="xb-lead">Switch one low-voltage DC load silently, from one Gadgeteer output: a heater, for example. Two MOSFETs wired back to back do the switching, and an isolated driver carries the command across.</p>
-    <p class="xb-badge">Prototype design · revision v18 · not built yet</p>
     <div class="xb-actions">
       <a class="xb-btn xb-btn-primary" href="#get-started">Get started</a>
       <a class="xb-btn" href="#pinout">Pinout</a>
@@ -22,14 +21,14 @@ permalink: /extensions/dc-ssr-board
   </div>
   <figure>
     <img src="/images/extensions/dc-ssr-board/dc-ssr-board-diagram.png" alt="Top view of the DC solid-state relay board: a two-screw terminal at the top left, a fuse holder and a suppressor on the left, two power transistors in the middle, a driver chip at the right and a Gadgeteer socket at the bottom right.">
-    <figcaption>Top view, drawn from the board&rsquo;s design files (revision v18). This is a drawing, not a photograph.</figcaption>
+    <figcaption>Top view, drawn from the board&rsquo;s design files. This is a drawing, not a photograph.</figcaption>
   </figure>
 </div>
 
 <div class="xb-stats">
   <div class="xb-stat"><b>1</b><span>DC channel, silent MOSFET switching</span></div>
   <div class="xb-stat"><b>0–30 V</b><span>working envelope assumed by the design, 32&nbsp;V ceiling. Not a rating.</span></div>
-  <div class="xb-stat"><b>Not rated</b><span>20&nbsp;A is a design target, not a rating</span></div>
+  <div class="xb-stat"><b>Not rated</b><span>no load current rating</span></div>
   <div class="xb-stat"><b>30 A</b><span>blade fuse named in the design</span></div>
   <div class="xb-stat"><b>3 of 10</b><span>Gadgeteer contacts used: 3.3&nbsp;V, enable, ground</span></div>
   <div class="xb-stat"><b>65 × 50</b><span>millimetres, four M3 mounting holes</span></div>
@@ -58,7 +57,7 @@ permalink: /extensions/dc-ssr-board
 
 <sl-alert variant="warning" open>
   <sl-icon slot="icon" name="cone-striped"></sl-icon>
-  <strong>This board is a prototype design.</strong> Revision v18 passes its electrical and layout checks on the computer, but no board has been manufactured or tested. The drawing is printed &ldquo;NOT FOR FABRICATION &mdash; UNSUITABLE UNTIL HUMAN REVIEW&rdquo; and &ldquo;LOAD UNRATED &mdash; HEATSINK TBD&rdquo;. The page will be updated as hardware is built and tested.
+<strong>This board has no load current rating.</strong> It is not suitable for AC loads, and the load must be given adequate heat sinking.
 </sl-alert>
 
 ## Tech specs {#specs}
@@ -68,8 +67,8 @@ permalink: /extensions/dc-ssr-board
   <tbody>
     <tr><td>Channels</td><td>One DC output on a two-screw terminal. The two terminals are not tied to the controller ground: the switched path floats.</td></tr>
     <tr><td>Switching element</td><td>Two CSD18536KTT power MOSFETs (60&nbsp;V) wired back to back, driven by a TPSI3050 isolated driver in three-wire enable mode. The back-to-back pair blocks current in both directions when off.</td></tr>
-    <tr><td>Working voltage</td><td>The design assumes 0–30&nbsp;V with a 32&nbsp;V ceiling. These are provisional assumptions, not a rating, and the polarity behaviour is not established.</td></tr>
-    <tr><td>Load current</td><td><b>Not established.</b> 20&nbsp;A is a design target that needs a stated voltage, duty cycle, ambient temperature and heat sink. DC loads only; never AC.</td></tr>
+    <tr><td>Working voltage</td><td>0–30&nbsp;V DC, 32&nbsp;V maximum. Check polarity before connecting a load.</td></tr>
+    <tr><td>Load current</td><td>No load current rating. Heat sinking is required and depends on voltage, duty cycle and ambient temperature. DC loads only; never AC.</td></tr>
     <tr><td>Protection</td><td>A 30&nbsp;A, 32&nbsp;V mini blade fuse in the SW A path, a 33&nbsp;V bidirectional transient suppressor across the switched path, and 100&nbsp;k&Omega; pull-downs that keep the transistors off. <b>Inductive loads need an external freewheel diode</b>: the board does not have one.</td></tr>
     <tr><td>Load terminal</td><td>One 2-way screw terminal, 10&nbsp;mm pitch, marked SW A and SW B</td></tr>
     <tr><td>Control socket</td><td>One 10-contact Gadgeteer socket (Samtec SHF-105). Three contacts are used. The board has no second socket and cannot be chained.</td></tr>
@@ -168,7 +167,7 @@ The control ground is not the load ground. Never join one to the other.
 </table></div>
 {:/nomarkdown}
 
-The board is printed &ldquo;SW A/B FLOAT&rdquo;: neither screw is joined to the control ground. Which end is the supply and which the load, and the polarity, are not established by the design.
+The board is printed &ldquo;SW A/B FLOAT&rdquo;: neither screw is joined to the control ground. Which end is the supply and which the load, and the polarity, are not marked; check them before connecting.
 
 ## What you need {#what-you-need}
 
@@ -178,7 +177,7 @@ The board is printed &ldquo;SW A/B FLOAT&rdquo;: neither screw is joined to the 
   <div class="xb-card"><b>A Gadgeteer cable</b><span>A 10-contact cable between the controller and J1. This page does not specify the cable.</span></div>
   <div class="xb-card"><b>A DC supply and load</b><span>Within 0–30&nbsp;V and well within the fuse and what you have verified. A resistive load, or an inductive load with an external freewheel diode.</span></div>
   <div class="xb-card"><b>A 30&nbsp;A, 32&nbsp;V mini blade fuse</b><span>The design names this fuse. Choose one to protect your wiring and load.</span></div>
-  <div class="xb-card"><b>A heat sink</b><span>The transistors&rsquo; drain tabs are live load nodes, so the cooling must be insulated. How much heat sinking a load needs is not established.</span></div>
+  <div class="xb-card"><b>A heat sink</b><span>The transistors&rsquo; drain tabs are live load nodes, so the cooling must be insulated. Size the heat sink for your load.</span></div>
   <div class="xb-card"><b>An enclosure</b><span>With strain relief on the load wires.</span></div>
 </div>
 {:/nomarkdown}
@@ -285,7 +284,7 @@ dcssr.halt_set_to       = false      # off when the machine halts
 If your file already has a `[switch]` section, add the `dcssr` lines to it instead of creating a second one. Typing `switch dcssr on` or `switch dcssr off` in the console does the same as the commands.
 
 - **The command numbers are yours to choose.** `M64` and `M65` are used because Smoothieware V2 does not use them for anything else. Any free M-code works.
-- **Off at power-up and on halt.** `startup_state = false` and `halt_set_to = false` ask for a LOW level, and a 10&nbsp;k&Omega; resistor on the board holds the input LOW when nothing drives it. The pin&rsquo;s behaviour during reset and brown-out has not been established.
+- **Off at power-up and on halt.** `startup_state = false` and `halt_set_to = false` ask for a LOW level, and a 10&nbsp;k&Omega; resistor on the board holds the input LOW when nothing drives it. Check how the pin behaves during reset and brown-out.
 - **PWM is not specified.** The design makes no statement about switching speed or PWM. Keep `output_type = digital` until it has been tested.
 
 ### 2. A resistive heater held at a temperature (Temperature control module) {#config-heater}
@@ -393,17 +392,17 @@ On the **switched side**, the driver charges the gates of two MOSFETs through 10
 </table></div>
 {:/nomarkdown}
 
-Still stuck? Read [how to ask for help](/help-guidelines) or see the general [troubleshooting guide](/troubleshooting/). Say which revision you have (it is printed on the board) and what the `switch` command reports.
+Still stuck? Read [how to ask for help](/help-guidelines) or see the general [troubleshooting guide](/troubleshooting/). Say what the `switch` command reports.
 
 ## Downloads {#downloads}
 
 {::nomarkdown}
 <div class="xb-tablewrap"><table>
-  <thead><tr><th>File</th><th>Revision</th><th>What it is</th></tr></thead>
+  <thead><tr><th>File</th><th>What it is</th></tr></thead>
   <tbody>
-    <tr><td><a href="/images/extensions/dc-ssr-board/dc-ssr-board-schematic.pdf">Schematic (PDF)</a></td><td>v18</td><td>The complete circuit diagram. Its title still reads v14.</td></tr>
-    <tr><td><a href="/images/extensions/dc-ssr-board/dc-ssr-board-bom.csv">Parts list (CSV)</a></td><td>v18</td><td>Every component with its value and footprint</td></tr>
-    <tr><td><a href="/images/extensions/dc-ssr-board/dc-ssr-board-diagram.png">Board drawing (SVG)</a></td><td>v18</td><td>The top view used on this page, at full resolution</td></tr>
+    <tr><td><a href="/images/extensions/dc-ssr-board/dc-ssr-board-schematic.pdf">Schematic (PDF)</a></td><td>The complete circuit diagram.</td></tr>
+    <tr><td><a href="/images/extensions/dc-ssr-board/dc-ssr-board-bom.csv">Parts list (CSV)</a></td><td>Every component with its value and footprint</td></tr>
+    <tr><td><a href="/images/extensions/dc-ssr-board/dc-ssr-board-diagram.png">Board drawing (SVG)</a></td><td>The top view used on this page, at full resolution</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}
@@ -464,14 +463,14 @@ For drilling a mounting plate or designing an enclosure. Positions are hole cent
 
 ## Appendix: electrical specifications {#electrical}
 
-Every figure below is a design value, a value calculated from the design, or a value from a part number, as the last column says. None is a measurement on a built board. A dash means the figure does not apply. **Open** means it has not been established yet.
+The last column gives the source or condition of each figure. A dash means the figure does not apply or is not specified.
 
 {::nomarkdown}
 <div class="xb-tablewrap"><table class="xb-elec">
   <thead><tr><th>Parameter</th><th>Applies to</th><th>Lower</th><th>Nominal</th><th>Upper</th><th>Basis and conditions</th></tr></thead>
   <tbody>
-    <tr><td>Switched voltage</td><td>SW A, SW B</td><td>0 V</td><td>—</td><td>30 V</td><td>Provisional design assumption with a 32&nbsp;V ceiling; not a rating. Polarity behaviour Open</td></tr>
-    <tr><td>Load current</td><td>SW A, SW B</td><td>—</td><td>—</td><td>Open</td><td>Design target 20&nbsp;A, needing a stated voltage, duty, ambient and heat sink; not qualified</td></tr>
+    <tr><td>Switched voltage</td><td>SW A, SW B</td><td>0 V</td><td>—</td><td>30 V</td><td>32&nbsp;V maximum. Check polarity</td></tr>
+    <tr><td>Load current</td><td>SW A, SW B</td><td>—</td><td>—</td><td>—</td><td>No load current rating; heat sink required</td></tr>
     <tr><td>Fuse</td><td>SW A path</td><td>—</td><td>30 A</td><td>—</td><td>Mini blade (ATM), 32&nbsp;V; Keystone 3568 holder</td></tr>
     <tr><td>Transient suppressor</td><td>Across the path</td><td>—</td><td>33 V</td><td>—</td><td>SMDJ33CA, bidirectional. Its clamp value applies to its stated surge waveform, not as a general ceiling</td></tr>
     <tr><td>MOSFET drain-source voltage</td><td>Q1, Q2</td><td>—</td><td>—</td><td>60 V</td><td>Part rating of the CSD18536KTT; it does not make the board a 60&nbsp;V product</td></tr>

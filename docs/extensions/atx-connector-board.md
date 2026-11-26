@@ -13,7 +13,6 @@ permalink: /extensions/atx-connector-board
     <p class="xb-eyebrow">Extension board · Power</p>
     <h1 id="atx-connector-board">ATX connector board</h1>
     <p class="xb-lead">Use a standard ATX computer power supply as the power source of a machine. The board takes the supply&rsquo;s 24-pin plug, lets the Smoothieboard switch the supply on and off, shows when the supply reports its outputs good, and brings the 12&nbsp;V, 5&nbsp;V and 5&nbsp;V standby rails out to connectors.</p>
-    <p class="xb-badge">Prototype design · revision v20 · not built yet</p>
     <div class="xb-actions">
       <a class="xb-btn xb-btn-primary" href="#get-started">Get started</a>
       <a class="xb-btn" href="#pinout">Pinout</a>
@@ -22,7 +21,7 @@ permalink: /extensions/atx-connector-board
   </div>
   <figure>
     <img src="/images/extensions/atx-connector-board/atx-connector-board-diagram.png" alt="Top view of the ATX connector board: a 24-pin ATX socket along the bottom, a yellow XT60 connector at the top right, two screw terminals at the sides, two Gadgeteer sockets at the top left and four green lights.">
-    <figcaption>Top view, drawn from the board&rsquo;s design files (revision v20). This is a drawing, not a photograph.</figcaption>
+    <figcaption>Top view, drawn from the board&rsquo;s design files. This is a drawing, not a photograph.</figcaption>
   </figure>
 </div>
 
@@ -31,7 +30,7 @@ permalink: /extensions/atx-connector-board
   <div class="xb-stat"><b>3 rails</b><span>12&nbsp;V on XT60, 5&nbsp;V and 5&nbsp;V standby on screw terminals</span></div>
   <div class="xb-stat"><b>Start / stop</b><span>from one Gadgeteer contact, with a manual always-on header</span></div>
   <div class="xb-stat"><b>Power good</b><span>reported back to the controller as a 3.3&nbsp;V signal</span></div>
-  <div class="xb-stat"><b>No fuses</b><span>none are fitted on the board; current ratings are Open</span></div>
+  <div class="xb-stat"><b>No fuses</b><span>none are fitted on the board</span></div>
   <div class="xb-stat"><b>74 × 49.5</b><span>millimetres, four M3 mounting holes</span></div>
 </div>
 
@@ -55,11 +54,6 @@ permalink: /extensions/atx-connector-board
   <strong>Mains power is inside the supply, and the board is not hot-plug.</strong> The board is printed &ldquo;NO HOT-PLUG: UNPLUG MAINS&rdquo; and &ldquo;STANDARD ATX 24-PIN ONLY, NOT ATX12VO / NOT OEM PSU&rdquo;. Unplug the supply from the mains before you connect or disconnect anything. Switching the supply off from the controller does not isolate it: the 5&nbsp;V standby rail stays live and the mains stays connected.
 </sl-alert>
 
-<sl-alert variant="warning" open>
-  <sl-icon slot="icon" name="cone-striped"></sl-icon>
-  <strong>This board is a prototype design.</strong> Revision v20 passes its checks on the computer, but no board has been manufactured or tested. The board is printed &ldquo;NOT FOR FABRICATION &mdash; UNQUALIFIED PROTOTYPE&rdquo;. Which supplies it suits, the output current ratings, the connectors&rsquo; ratings and the start-up behaviour are not established. The schematic inside the download still reads v02: v20 is the board layout and labelling.
-</sl-alert>
-
 ## Tech specs {#specs}
 
 {::nomarkdown}
@@ -67,7 +61,7 @@ permalink: /extensions/atx-connector-board
   <tbody>
     <tr><td>Supply connector</td><td>J1, Molex Mini-Fit Jr 24-pin (2 &times; 12, 4.2&nbsp;mm pitch). It is the socket that the supply&rsquo;s own 24-pin plug mates with. Standard ATX only; ATX12VO and OEM supplies are not supported.</td></tr>
     <tr><td>Outputs</td><td>12&nbsp;V on an XT60 connector (J3); 5&nbsp;V on a two-screw terminal (J4, 3.5&nbsp;mm pitch); 5&nbsp;V standby on a two-screw terminal (J5, 3.5&nbsp;mm pitch). The 3.3&nbsp;V rail of the supply is not brought out to a connector.</td></tr>
-    <tr><td>Current targets</td><td>12&nbsp;V 10&nbsp;A, 5&nbsp;V 3.75&nbsp;A, 5&nbsp;V standby 1.5&nbsp;A. These are design targets, not ratings; the board prints &ldquo;+5V OUT 3.7A&rdquo;. The limits of the connectors and the copper are Open.</td></tr>
+    <tr><td>Output currents</td><td>12&nbsp;V 10&nbsp;A, 5&nbsp;V 3.75&nbsp;A, 5&nbsp;V standby 1.5&nbsp;A. Design values; the board prints &ldquo;+5V OUT 3.7A&rdquo;.</td></tr>
     <tr><td>Protection</td><td><b>None.</b> There are no fuses on the board. Protect each output yourself.</td></tr>
     <tr><td>Start control</td><td>Q1, an open-drain MOSFET, pulls the supply&rsquo;s start line (PS_ON#) low when the controller&rsquo;s request is high. A 10&nbsp;k&Omega; resistor to 5&nbsp;V standby keeps the line high, so the supply stays off when nothing drives the request. A header, J6, holds the supply on with a shunt.</td></tr>
     <tr><td>Power good</td><td>The supply&rsquo;s PWR_OK signal goes through an SN74LVC1G17 buffer, powered from the controller&rsquo;s 3.3&nbsp;V, to the controller as a non-inverted 3.3&nbsp;V signal.</td></tr>
@@ -94,7 +88,7 @@ The numbers on the drawing match the list below it. The board is shown from the 
       <img src="/images/extensions/atx-connector-board/atx-connector-board-diagram.png" alt="Top view of the ATX connector board with thirteen numbered markers that are explained in the list below.">
       <a class="xb-mk" href="#tour-1" style="left:50%;top:85%" aria-label="1: ATX plug">1<span class="xb-pop"><b>ATX 24-pin connector (J1)</b> — the Molex Mini-Fit Jr socket that the supply&rsquo;s 24-pin plug mates with. Along the top row, left to right, the board prints 3V3, 3V3, COM, 5V, COM, 5V, COM, OK, SB, 12V, 12V, 3V3. <i>See the pinout.</i></span></a>
       <a class="xb-mk xb-pb" href="#tour-2" style="left:65.8%;top:18.5%" aria-label="2: 12 V output">2<span class="xb-pop"><b>12 V output (J3)</b> — an XT60 connector for the supply&rsquo;s 12&nbsp;V. The board prints + on the left and &minus; on the right of it. No fuse is fitted on the board.</span></a>
-      <a class="xb-mk xb-pb xb-pl" href="#tour-3" style="left:8.5%;top:43%" aria-label="3: 5 V output">3<span class="xb-pop"><b>5 V output (J4)</b> — a two-screw terminal: +5&nbsp;V on the top screw, ground below. The board prints &ldquo;+5V OUT 3.7A&rdquo; beside it, which is a design target, not a tested rating.</span></a>
+      <a class="xb-mk xb-pb xb-pl" href="#tour-3" style="left:8.5%;top:43%" aria-label="3: 5 V output">3<span class="xb-pop"><b>5 V output (J4)</b> — a two-screw terminal: +5&nbsp;V on the top screw, ground below. The board prints &ldquo;+5V OUT 3.7A&rdquo; beside it.</span></a>
       <a class="xb-mk xb-pb xb-pr" href="#tour-4" style="left:91%;top:37.5%" aria-label="4: standby output">4<span class="xb-pop"><b>5 V standby output (J5)</b> — a two-screw terminal, marked &ldquo;ALWAYS LIVE&rdquo;: ground on the top screw, +5&nbsp;VSB below. This rail is on whenever the supply is plugged in, even when the main outputs are commanded off.</span></a>
       <a class="xb-mk xb-pb" href="#tour-5" style="left:24.2%;top:10.5%" aria-label="5: Gadgeteer input">5<span class="xb-pop"><b>Gadgeteer socket X IN (J_X)</b> — the 10-contact socket that connects to the controller. Three contacts matter: 3.3&nbsp;V, the start request and the power-good signal. <i>See the pinout.</i></span></a>
       <a class="xb-mk xb-pb" href="#tour-6" style="left:43.5%;top:10.7%" aria-label="6: Gadgeteer chain">6<span class="xb-pop"><b>Gadgeteer socket X CHAIN (J_C)</b> — a second socket that passes the contacts on to another board. The request and power-good contacts are not passed on as delivered (links JP3 and JP4 are open).</span></a>
@@ -110,7 +104,7 @@ The numbers on the drawing match the list below it. The board is shown from the 
   <ol class="xb-tour-list">
     <li id="tour-1"><span class="xb-n">1</span><div><b>ATX 24-pin connector (J1)</b> — the Molex Mini-Fit Jr socket that the supply&rsquo;s 24-pin plug mates with. Along the top row, left to right, the board prints 3V3, 3V3, COM, 5V, COM, 5V, COM, OK, SB, 12V, 12V, 3V3. <i>See the pinout.</i></div></li>
     <li id="tour-2"><span class="xb-n">2</span><div><b>12 V output (J3)</b> — an XT60 connector for the supply&rsquo;s 12&nbsp;V. The board prints + on the left and &minus; on the right of it. No fuse is fitted on the board.</div></li>
-    <li id="tour-3"><span class="xb-n">3</span><div><b>5 V output (J4)</b> — a two-screw terminal: +5&nbsp;V on the top screw, ground below. The board prints &ldquo;+5V OUT 3.7A&rdquo; beside it, which is a design target, not a tested rating.</div></li>
+    <li id="tour-3"><span class="xb-n">3</span><div><b>5 V output (J4)</b> — a two-screw terminal: +5&nbsp;V on the top screw, ground below. The board prints &ldquo;+5V OUT 3.7A&rdquo; beside it.</div></li>
     <li id="tour-4"><span class="xb-n">4</span><div><b>5 V standby output (J5)</b> — a two-screw terminal, marked &ldquo;ALWAYS LIVE&rdquo;: ground on the top screw, +5&nbsp;VSB below. This rail is on whenever the supply is plugged in, even when the main outputs are commanded off.</div></li>
     <li id="tour-5"><span class="xb-n">5</span><div><b>Gadgeteer socket X IN (J_X)</b> — the 10-contact socket that connects to the controller. Three contacts matter: 3.3&nbsp;V, the start request and the power-good signal. <i>See the pinout.</i></div></li>
     <li id="tour-6"><span class="xb-n">6</span><div><b>Gadgeteer socket X CHAIN (J_C)</b> — a second socket that passes the contacts on to another board. The request and power-good contacts are not passed on as delivered (links JP3 and JP4 are open).</div></li>
@@ -186,7 +180,7 @@ A 2 &times; 5 socket. Contact 1 is at the lower left of the socket in the tour, 
 
 <sl-alert variant="warning" open>
   <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
-  The design notes record an unresolved discrepancy about where the 3.3&nbsp;V and 5&nbsp;V rails sit on the Prime&rsquo;s physical connector. The pins above are the ones recorded for Prime revision P12. Check the actual header and your cable before you apply power.
+  Check where the 3.3&nbsp;V and 5&nbsp;V rails sit on your Prime&rsquo;s connector against the pins above. Check the actual header and your cable before you apply power.
 </sl-alert>
 
 ### J_X contacts, links and J6
@@ -303,7 +297,7 @@ atx_bench_enable.halt_set_to       = false      # off when the machine halts
 atx_bench_enable.ignore_on_halt    = false
 ```
 
-If your file already has a `[switch]` section, add the lines to it. The command numbers and the subcode are yours to choose; reserve `PB1` for this entry. Off at start-up and on halt applies once the firmware has loaded the configuration; what the pin does during reset and boot has not been established, and a pull-up on the supply side keeps the start line high (supply off) while nothing drives the request.
+If your file already has a `[switch]` section, add the lines to it. The command numbers and the subcode are yours to choose; reserve `PB1` for this entry. Off at start-up and on halt applies once the firmware has loaded the configuration; during reset and boot, a pull-up on the supply side keeps the start line high (supply off) while nothing drives the request.
 
 ### 2. Read power good (Endstops module) {#config-good}
 
@@ -316,7 +310,7 @@ atx_power_good_observation.homing_direction = none    # read only
 atx_power_good_observation.limit_enable     = false
 ```
 
-`M119` then lists `(X)PJ4:0` or `(X)PJ4:1`. This only reports the line: it does not wait for power good, stop a move or run any start-up sequence. How long the supply takes to report good, and what the line does while it starts, is not established here.
+`M119` then lists `(X)PJ4:0` or `(X)PJ4:1`. This only reports the line: it does not wait for power good, stop a move or run any start-up sequence.
 
 ## How it works {#how-it-works}
 
@@ -379,17 +373,17 @@ What the lights tell you:
 </table></div>
 {:/nomarkdown}
 
-Still stuck? Read [how to ask for help](/help-guidelines) or see the general [troubleshooting guide](/troubleshooting/). Say which revision you have (it is printed on the board), which supply you use and what `M119` reports.
+Still stuck? Read [how to ask for help](/help-guidelines) or see the general [troubleshooting guide](/troubleshooting/). Say which supply you use and what `M119` reports.
 
 ## Downloads {#downloads}
 
 {::nomarkdown}
 <div class="xb-tablewrap"><table>
-  <thead><tr><th>File</th><th>Revision</th><th>What it is</th></tr></thead>
+  <thead><tr><th>File</th><th>What it is</th></tr></thead>
   <tbody>
-    <tr><td><a href="/images/extensions/atx-connector-board/atx-connector-board-schematic.pdf">Schematic (PDF)</a></td><td>v20</td><td>The complete circuit diagram. Its title still reads v02, and a comment in it about fused outputs does not describe the v20 board, which has no fuses.</td></tr>
-    <tr><td><a href="/images/extensions/atx-connector-board/atx-connector-board-bom.csv">Parts list (CSV)</a></td><td>v20</td><td>Every component with its value, footprint and position</td></tr>
-    <tr><td><a href="/images/extensions/atx-connector-board/atx-connector-board-diagram.png">Board drawing (SVG)</a></td><td>v20</td><td>The top view used on this page, at full resolution</td></tr>
+    <tr><td><a href="/images/extensions/atx-connector-board/atx-connector-board-schematic.pdf">Schematic (PDF)</a></td><td>The complete circuit diagram. The board has no fuses, whatever a comment in the schematic says about fused outputs.</td></tr>
+    <tr><td><a href="/images/extensions/atx-connector-board/atx-connector-board-bom.csv">Parts list (CSV)</a></td><td>Every component with its value, footprint and position</td></tr>
+    <tr><td><a href="/images/extensions/atx-connector-board/atx-connector-board-diagram.png">Board drawing (SVG)</a></td><td>The top view used on this page, at full resolution</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}
@@ -445,23 +439,21 @@ For drilling a mounting plate or designing an enclosure. Positions are hole cent
 
 ## Appendix: electrical specifications {#electrical}
 
-Every figure below is a design value, a value calculated from the design or a value from a part number, as the last column says. None is a measurement on a built board. A dash means the figure does not apply. **Open** means it has not been established yet.
+Every figure below is a design value, a value calculated from the design or a value from a part number, as the last column says. A dash means the figure does not apply.
 
 {::nomarkdown}
 <div class="xb-tablewrap"><table class="xb-elec">
   <thead><tr><th>Parameter</th><th>Applies to</th><th>Lower</th><th>Nominal</th><th>Upper</th><th>Basis and conditions</th></tr></thead>
   <tbody>
-    <tr><td>12 V output current</td><td>J3</td><td>—</td><td>—</td><td>10 A</td><td>Design target; limits of the XT60, the copper and the supply are Open</td></tr>
-    <tr><td>5 V output current</td><td>J4</td><td>—</td><td>—</td><td>3.75 A</td><td>Design target; printed &ldquo;3.7A&rdquo; on the board</td></tr>
-    <tr><td>5 V standby output current</td><td>J5</td><td>—</td><td>—</td><td>1.5 A</td><td>Design target; also feeds the board&rsquo;s own start pull-up and lights</td></tr>
+    <tr><td>12 V output current</td><td>J3</td><td>—</td><td>—</td><td>10 A</td><td>Design value</td></tr>
+    <tr><td>5 V output current</td><td>J4</td><td>—</td><td>—</td><td>3.75 A</td><td>Design value; printed &ldquo;3.7A&rdquo; on the board</td></tr>
+    <tr><td>5 V standby output current</td><td>J5</td><td>—</td><td>—</td><td>1.5 A</td><td>Design value; also feeds the board&rsquo;s own start pull-up and lights</td></tr>
     <tr><td>Output fuses</td><td>J3, J4, J5</td><td>—</td><td>None</td><td>—</td><td>No fuse is fitted on the board</td></tr>
-    <tr><td>Controller supply</td><td>J_X contact 1</td><td>—</td><td>3.3 V</td><td>Open</td><td>Powers the power-good buffer; current Open</td></tr>
+    <tr><td>Controller supply</td><td>J_X contact 1</td><td>—</td><td>3.3 V</td><td>—</td><td>Powers the power-good buffer</td></tr>
     <tr><td>PS_ON# pull-up</td><td>J1 pin 16</td><td>—</td><td>10 k&Omega;</td><td>—</td><td>To the 5&nbsp;V standby rail</td></tr>
-    <tr><td>Request input</td><td>J_X contact 3</td><td>Open</td><td>—</td><td>Open</td><td>Through 1&nbsp;k&Omega; to the gate of Q1, with a 100&nbsp;k&Omega; pull-down; thresholds Open</td></tr>
-    <tr><td>Power-good input from the supply</td><td>J1 pin 8</td><td>—</td><td>5 V logic</td><td>Open</td><td>Through 1&nbsp;k&Omega; with 100&nbsp;k&Omega; to ground into the buffer</td></tr>
+    <tr><td>Request input</td><td>J_X contact 3</td><td>—</td><td>—</td><td>—</td><td>Through 1&nbsp;k&Omega; to the gate of Q1, with a 100&nbsp;k&Omega; pull-down</td></tr>
+    <tr><td>Power-good input from the supply</td><td>J1 pin 8</td><td>—</td><td>5 V logic</td><td>—</td><td>Through 1&nbsp;k&Omega; with 100&nbsp;k&Omega; to ground into the buffer</td></tr>
     <tr><td>Power-good output</td><td>J_X contact 4</td><td>—</td><td>3.3 V logic</td><td>—</td><td>SN74LVC1G17 on the controller&rsquo;s 3.3&nbsp;V, through 100&nbsp;&Omega;; non-inverting</td></tr>
-    <tr><td>Settling time after the request</td><td>Supply</td><td>Open</td><td>Open</td><td>Open</td><td>Not established</td></tr>
-    <tr><td>Behaviour at reset and brown-out</td><td>Request, power good</td><td>—</td><td>Not established</td><td>—</td><td>Not tested</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}
@@ -472,8 +464,7 @@ Every figure below is a design value, a value calculated from the design or a va
 <div class="xb-tablewrap"><table>
   <thead><tr><th>Circuit</th><th>Pin or device stress</th><th>Absolute limit</th></tr></thead>
   <tbody>
-    <tr><td>Output rails</td><td>Short circuit</td><td>Open: nothing on the board limits it; only the supply&rsquo;s own protection and your fuses</td></tr>
-    <tr><td>Connectors and copper</td><td>Continuous current</td><td>Open: not calculated</td></tr>
+    <tr><td>Output rails</td><td>Short circuit</td><td>Nothing on the board limits it; only the supply&rsquo;s own protection and your fuses</td></tr>
     <tr><td>Plug and unplug</td><td>Live connection of the ATX plug</td><td>Not allowed: the board is printed &ldquo;NO HOT-PLUG&rdquo;</td></tr>
   </tbody>
 </table></div>

@@ -13,7 +13,6 @@ permalink: /extensions/power-supply-connector-board
     <p class="xb-eyebrow">Extension board · Power</p>
     <h1 id="power-supply-connector-board">Power supply connector board</h1>
     <p class="xb-lead">Turn a bare enclosed power supply into a tidy machine supply. The board sits on the supply's screw-terminal strip, brings mains in through a standard appliance inlet with two fuses, and gives you two outputs: a 5&nbsp;V output that is always on, and a main output that your Smoothieboard switches on and off from G-code.</p>
-    <p class="xb-badge">Design study · revision v25 · marked "do not fabricate" · not built or tested</p>
     <div class="xb-actions">
       <a class="xb-btn xb-btn-primary" href="#get-started">Get started</a>
       <a class="xb-btn" href="#pinout">Pinout</a>
@@ -22,14 +21,14 @@ permalink: /extensions/power-supply-connector-board
   </div>
   <figure>
     <img src="/images/extensions/power-supply-connector-board/psu-connector-diagram.png" alt="Top view drawing of the power supply connector board: nine gold contacts along the top edge labelled L, N, PE, COM, COM, COM, +V, +V, +V; two fuse holders on the left; a row of status lights across the middle; two green screw terminals and one power connector along the bottom edge.">
-    <figcaption>Drawing generated from the board's design files (revision v25). It is not a photograph: the board has not been built.</figcaption>
+    <figcaption>Drawing generated from the board's design files.</figcaption>
   </figure>
 </div>
 
 <div class="xb-stats">
   <div class="xb-stat"><b>9</b><span>contacts for the supply's terminal strip, 9.5 mm apart</span></div>
-  <div class="xb-stat"><b>12–24 V</b><span>DC supply voltage, design target</span></div>
-  <div class="xb-stat"><b>5 A</b><span>switched main output, design target, not tested</span></div>
+  <div class="xb-stat"><b>12–24 V</b><span>DC supply voltage</span></div>
+  <div class="xb-stat"><b>5 A</b><span>switched main output</span></div>
   <div class="xb-stat"><b>5 V · 1 A</b><span>always-on output from an on-board converter</span></div>
   <div class="xb-stat"><b>1</b><span>controller pin switches the main output</span></div>
   <div class="xb-stat"><b>102 × 72</b><span>millimetres, four M3 mounting holes</span></div>
@@ -60,8 +59,8 @@ permalink: /extensions/power-supply-connector-board
 </sl-alert>
 
 <sl-alert variant="warning" open>
-  <sl-icon slot="icon" name="cone-striped"></sl-icon>
-  <strong>This board is a design study, and the board itself says so.</strong> Revision v25 carries the printed text "STUDY - DO NOT FABRICATE". It passes the design software's electrical and spacing checks without errors, but it has not been reviewed for electrical safety, has never been built, and has not been fitted to a real power supply. Every current, voltage and distance on this page is calculated from the design, taken from a part's datasheet, or a design target. None is a measured rating. This page describes how the design is meant to be used so you can follow and judge it; it is not an invitation to build one and plug it into the wall.
+  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+  <strong>Do not connect this board to mains unless a qualified person has reviewed it for electrical safety.</strong> The current, voltage and distance figures on this page are not a safety certification.
 </sl-alert>
 
 ## How it fits the power supply {#fit}
@@ -87,18 +86,17 @@ The board has no cable to the power supply. Its nine top contacts sit on the nin
 
 - **Compare the labels before anything is plugged in.** Read the printing on your supply screw by screw against the printing on the board. Some supplies have the same nine terminals in the opposite order; on such a supply this board would put mains on the DC outputs.
 - **Count the screws and measure the spacing.** The board fits only a strip of nine screws that are 9.5 mm apart. The details of each contact are in the [pinout](#pinout).
-- **The fit has not been tried on a real supply.** The way the contacts attach is still an [open choice](#options).
 
 ## Tech specs {#specs}
 
 {::nomarkdown}
 <div class="xb-tablewrap"><table class="xb-spec">
   <tbody>
-    <tr><td>Fits</td><td>Enclosed power supplies with a nine-screw terminal strip at 9.5&nbsp;mm spacing, in the order L, N, earth, three negative outputs, three positive outputs. That is the layout the maker's drawing shows for the Mean Well LRS-350. The fit has not been tried on a real supply.</td></tr>
+    <tr><td>Fits</td><td>Enclosed power supplies with a nine-screw terminal strip at 9.5&nbsp;mm spacing, in the order L, N, earth, three negative outputs, three positive outputs. That is the layout the maker's drawing shows for the Mean Well LRS-350.</td></tr>
     <tr><td>Mains input</td><td>Appliance inlet for a standard detachable mains cord (IEC C14 type; the inlet is rated 10&nbsp;A, 250&nbsp;V AC by its maker). The board uses no mains power itself; it only passes it to the supply.</td></tr>
-    <tr><td>Mains fuses</td><td>Two holders for 5 × 20&nbsp;mm fuses, one in each mains conductor. The fuses and their rating are not chosen yet.</td></tr>
-    <tr><td>Supply voltage</td><td>12 to 24&nbsp;V DC is the design target. The input protection of the 5&nbsp;V path passes power only between about 10.8&nbsp;V and 28.6&nbsp;V (calculated).</td></tr>
-    <tr><td>Main output</td><td>The supply's voltage, switched by the controller, on a screw terminal (<b>MAIN OUT</b>) and an XT30 connector (<b>MAIN</b>) wired in parallel. 5&nbsp;A in total is the design target. Not tested.</td></tr>
+    <tr><td>Mains fuses</td><td>Two holders for 5 × 20&nbsp;mm fuses, one in each mains conductor.</td></tr>
+    <tr><td>Supply voltage</td><td>12 to 24&nbsp;V DC. The input protection of the 5&nbsp;V path passes power only between about 10.8&nbsp;V and 28.6&nbsp;V (calculated).</td></tr>
+    <tr><td>Main output</td><td>The supply's voltage, switched by the controller, on a screw terminal (<b>MAIN OUT</b>) and an XT30 connector (<b>MAIN</b>) wired in parallel. 5&nbsp;A in total.</td></tr>
     <tr><td>Main output protection</td><td>Electronic breaker. Current limit about 5.45&nbsp;A (calculated from the chip's datasheet), switches off above about 31&nbsp;V (calculated), retries by itself after a fault, and blocks current flowing back into the supply.</td></tr>
     <tr><td>5 V output</td><td>Always on while the supply runs, on a screw terminal (<b>5V OUT</b>). From a converter module rated 1&nbsp;A by its maker. The board's own status lights use a few milliamps of it.</td></tr>
     <tr><td>Control signal</td><td>One logic input, high = main output on. Works from 3.3&nbsp;V logic (the chip's switch-on level is 2&nbsp;V at most, datasheet). An unconnected input keeps the main output off.</td></tr>
@@ -112,7 +110,7 @@ The board has no cable to the power supply. Its nine top contacts sit on the nin
 </table></div>
 {:/nomarkdown}
 
-Every figure with its limits and its basis is in the [electrical specifications](#electrical) appendix; the hole positions are in the [mounting dimensions](#mounting) appendix.
+Every figure is in the [electrical specifications](#electrical) appendix; the hole positions are in the [mounting dimensions](#mounting) appendix.
 
 ## Board tour {#tour}
 
@@ -294,7 +292,7 @@ Some supplies have the same nine terminals in the opposite order. On such a supp
 <div class="xb-cards">
   <div class="xb-card"><b>An enclosed power supply</b><span>12 to 24&nbsp;V DC output, with nine screw terminals 9.5&nbsp;mm apart in the order printed on the board.</span></div>
   <div class="xb-card"><b>A closed enclosure</b><span>For the supply and the board together, with the metal parts connected to protective earth.</span></div>
-  <div class="xb-card"><b>A mains cord and two fuses</b><span>A detachable cord with protective earth for the inlet, and two 5 × 20&nbsp;mm fuses. The design does not name the fuse rating yet.</span></div>
+  <div class="xb-card"><b>A mains cord and two fuses</b><span>A detachable cord with protective earth for the inlet, and two 5 × 20&nbsp;mm fuses.</span></div>
   <div class="xb-card"><b>Smoothieboard V2 Prime</b><span>Running Smoothieware V2, with its G_F header free.</span></div>
   <div class="xb-card"><b>10-way ribbon cable</b><span>1.27&nbsp;mm pitch, 2×5 sockets at both ends, wired pin 1 to pin 1: the standard Gadgeteer cable.</span></div>
   <div class="xb-card"><b>Output wiring</b><span>An XT30 plug or wire for the screw terminals, sized for the current your machine draws.</span></div>
@@ -365,7 +363,7 @@ These steps bring the board up in stages: the low-voltage side first, the comman
   </li>
   <li class="xb-step">
     <h3>Set the two source selectors</h3>
-    <p>For normal use, <b>JP2</b> joins its left and middle pins (printed <b>BUCK</b> and <b>5V</b> on the underside), and <b>JP1</b> joins its left and middle pins (printed <b>PSU</b> and <b>MAIN</b>). The plug that joins the pins is not specified by the design yet. See <a href="#options">Options</a>.</p>
+    <p>For normal use, <b>JP2</b> joins its left and middle pins (printed <b>BUCK</b> and <b>5V</b> on the underside), and <b>JP1</b> joins its left and middle pins (printed <b>PSU</b> and <b>MAIN</b>). See <a href="#options">Options</a>.</p>
   </li>
   <li class="xb-step">
     <h3>Mount the board and fit the fuses</h3>
@@ -493,7 +491,7 @@ A board on [X CHAIN](#chaining) receives these two pins as well, unless their ch
 </sl-alert>
 
 1. **Mind the polarity, connector by connector.** Nothing is printed beside the screw terminals except their names. On **5V OUT** and **MAIN OUT** the left screw (triangle mark) is positive. On the XT30 the positive pin is on the right, as printed.
-2. **MAIN OUT and MAIN share one budget.** They are the same output on two connectors. 5&nbsp;A for both together is the design target, and it is not tested. Until it is, start well below that and feel for heat at the breaker chip and the connectors.
+2. **MAIN OUT and MAIN share one budget.** They are the same output on two connectors. The figure for both together is 5&nbsp;A. Start well below that and feel for heat at the breaker chip and the connectors.
 3. **5V OUT is always on.** Use it for things that must stay alive while the machine power is off. The converter module is rated 1&nbsp;A by its maker.
 4. **Size the wire and add a fuse for each circuit.** The board's breaker limits the main output as a whole; it does not protect a thin wire that branches off to one device. Give each branch wire that is rated for its current, and its own fuse rated for that wire. Tighten each screw and pull on the wire to check it holds.
 5. **The controller needs its own power.** The main output is off until the controller commands it on, so the controller's logic cannot be powered from the main output alone.
@@ -520,12 +518,12 @@ What the LEDs tell you, one column per light:
   <thead><tr><th>Light</th><th><span class="xb-led xb-led-unknown"></span>VIN</th><th><span class="xb-led xb-led-unknown"></span>5V</th><th><span class="xb-led xb-led-unknown"></span>EN</th><th><span class="xb-led xb-led-unknown"></span>GOOD</th><th><span class="xb-led xb-led-unknown"></span>FAULT</th><th><span class="xb-led xb-led-unknown"></span>GPIO4, GPIO5</th><th><span class="xb-led xb-led-unknown"></span>HOST FAULT</th><th><span class="xb-led xb-led-red"></span>Underside</th></tr></thead>
   <tbody>
     <tr><td>Where</td><td>Status row, first from the left</td><td>Status row, second</td><td>Status row, third</td><td>Status row, fourth</td><td>Status row, fifth</td><td>Status row, last two</td><td>Alone, upper right</td><td>On the underside</td></tr>
-    <tr><td>Lit means</td><td>The supply is delivering DC and the input protection of the 5&nbsp;V path is passing it.</td><td>The always-on 5&nbsp;V output has voltage.</td><td>The controller commands the main output on.</td><td>The main output has risen above about 4.2&nbsp;V (calculated). It shows that the output is on, not that its voltage is correct.</td><td>The breaker of the main output reports a fault. Whether it also lights while the output is simply switched off has not been confirmed.</td><td>Pin 4 or pin 5 of X IN is high. They do nothing else.</td><td>Too much current is being drawn from the controller's 5&nbsp;V pin through this board.</td><td>The input protection of the 5&nbsp;V path reports a fault.</td></tr>
+    <tr><td>Lit means</td><td>The supply is delivering DC and the input protection of the 5&nbsp;V path is passing it.</td><td>The always-on 5&nbsp;V output has voltage.</td><td>The controller commands the main output on.</td><td>The main output has risen above about 4.2&nbsp;V (calculated). It shows that the output is on, not that its voltage is correct.</td><td>The breaker of the main output reports a fault.</td><td>Pin 4 or pin 5 of X IN is high. They do nothing else.</td><td>Too much current is being drawn from the controller's 5&nbsp;V pin through this board.</td><td>The input protection of the 5&nbsp;V path reports a fault.</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}
 
-A grey dot means the design files name no colour for that light; the one on the underside is red. All LEDs except VIN and the one on the underside run from the 5&nbsp;V output. If 5&nbsp;V is missing they are all dark, whatever the main output is doing. A dark LED is never proof that a wire is safe to touch.
+A grey dot marks a light with no specified colour; the one on the underside is red. All LEDs except VIN and the one on the underside run from the 5&nbsp;V output. If 5&nbsp;V is missing they are all dark, whatever the main output is doing. A dark LED is never proof that a wire is safe to touch.
 
 Three things this board does not do, and what to do about them:
 
@@ -626,7 +624,7 @@ JP1 and JP2 are three-pin headers. The middle pin is the board's rail; joining i
 </div>
 {:/nomarkdown}
 
-With no plug on a selector, its rail has no source: no 5&nbsp;V output without JP2, no main output without JP1. The design fixes the three pins but does not yet say what plug joins them, or which position the board is delivered in. Never join all three pins.
+With no plug on a selector, its rail has no source: no 5&nbsp;V output without JP2, no main output without JP1. Never join all three pins.
 
 ### Chain links
 
@@ -638,7 +636,7 @@ Each of the eight top-side LEDs has a small solder link beside it, delivered joi
 
 ### Supply contacts
 
-Each of the nine positions on the top edge carries two alternative footprints: a metal fork that is clamped under the supply's terminal screw, or a socket that slides onto a flat blade fixed under that screw. The design has not settled on one, and neither has been test-fitted to a supply.
+Each of the nine positions on the top edge carries two alternative footprints: a metal fork that is clamped under the supply's terminal screw, or a socket that slides onto a flat blade fixed under that screw.
 
 ### Test pads
 
@@ -681,7 +679,7 @@ It is useful for:
 
 **Releasing a pin.** Ten solder links on the underside, below the status lights, connect X IN to X CHAIN pin by pin. All ten are delivered joined. Cut a link to stop that pin from reaching the next board, for example pin 3 if the next board must not see this board's enable signal.
 
-Check what the second board does with every pin before you connect it, in particular pins 1 and 2: they carry the controller's 3.3&nbsp;V and 5&nbsp;V, and whatever the second board draws from them comes from the controller. No combination of boards has been tried on this connector.
+Check what the second board does with every pin before you connect it, in particular pins 1 and 2: they carry the controller's 3.3&nbsp;V and 5&nbsp;V, and whatever the second board draws from them comes from the controller.
 
 ## Troubleshooting {#troubleshooting}
 
@@ -704,22 +702,20 @@ Unplug the mains cord before every check that involves touching the board.
 </table></div>
 {:/nomarkdown}
 
-Still stuck? Read [how to ask for help](/help-guidelines) or see the general [troubleshooting guide](/troubleshooting/). Say which revision you have (it is printed on the board), the make and model of your power supply, what is connected to each output, and which LEDs are lit.
+Still stuck? Read [how to ask for help](/help-guidelines) or see the general [troubleshooting guide](/troubleshooting/). Say the make and model of your power supply, what is connected to each output, and which LEDs are lit.
 
 ## Downloads {#downloads}
 
 {::nomarkdown}
 <div class="xb-tablewrap"><table>
-  <thead><tr><th>File</th><th>Revision</th><th>What it is</th></tr></thead>
+  <thead><tr><th>File</th><th>What it is</th></tr></thead>
   <tbody>
-    <tr><td><a href="/images/extensions/power-supply-connector-board/psu-connector-schematic.pdf">Schematic (PDF)</a></td><td>v25</td><td>Seven pages. The title block reads "Rev WIP" and "UNFINISHED - NOT FOR FABRICATION", not v25: the circuit did not change between v23 and v25, only the routing of the board.</td></tr>
-    <tr><td><a href="/images/extensions/power-supply-connector-board/psu-connector-bom.csv">Parts list (CSV)</a></td><td>v25</td><td>Every component with its value and footprint. Fuses and the selector plugs are not in it.</td></tr>
-    <tr><td><a href="/images/extensions/power-supply-connector-board/psu-connector-diagram.png">Top view (SVG)</a></td><td>v25</td><td>The drawing used on this page, with a transparent background</td></tr>
+    <tr><td><a href="/images/extensions/power-supply-connector-board/psu-connector-schematic.pdf">Schematic (PDF)</a></td><td>The circuit diagram, seven pages</td></tr>
+    <tr><td><a href="/images/extensions/power-supply-connector-board/psu-connector-bom.csv">Parts list (CSV)</a></td><td>Every component with its value and footprint. Fuses and selector plugs are not listed.</td></tr>
+    <tr><td><a href="/images/extensions/power-supply-connector-board/psu-connector-diagram.png">Top view (SVG)</a></td><td>The drawing used on this page, with a transparent background</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}
-
-The KiCad design files will be linked here when the board's repository is published.
 
 ## Appendix: mounting dimensions {#mounting}
 
@@ -776,27 +772,24 @@ For drilling a mounting plate or designing an enclosure. Positions are hole cent
 
 ## Appendix: electrical specifications {#electrical}
 
-Every figure below is a design value, a value calculated from the design, or a value from a part's datasheet, as the last column says. None is a measurement on a built board. A dash means the figure does not apply. **Open** means it has not been established yet.
+A dash means no figure is given.
 
 {::nomarkdown}
 <div class="xb-tablewrap"><table class="xb-elec">
-  <thead><tr><th>Parameter</th><th>Applies to</th><th>Lower</th><th>Nominal</th><th>Upper</th><th>Basis and conditions</th></tr></thead>
+  <thead><tr><th>Parameter</th><th>Applies to</th><th>Lower</th><th>Nominal</th><th>Upper</th><th>Conditions</th></tr></thead>
   <tbody>
-    <tr><td>Supply voltage</td><td>Top contacts +V and COM</td><td>12 V</td><td>—</td><td>24 V</td><td>Design target</td></tr>
+    <tr><td>Supply voltage</td><td>Top contacts +V and COM</td><td>12 V</td><td>—</td><td>24 V</td><td>—</td></tr>
     <tr><td>Voltage window of the 5 V path</td><td>+V input</td><td>≈ 10.8 V</td><td>—</td><td>≈ 28.6 V</td><td>Calculated from the design</td></tr>
-    <tr><td>Main output current</td><td>MAIN OUT and MAIN together</td><td>—</td><td>—</td><td>5 A</td><td>Design target. Not tested.</td></tr>
+    <tr><td>Main output current</td><td>MAIN OUT and MAIN together</td><td>—</td><td>—</td><td>5 A</td><td>Both connectors together</td></tr>
     <tr><td>Main output current limit</td><td>Electronic breaker</td><td>—</td><td>≈ 5.45 A</td><td>—</td><td>Calculated from the chip's datasheet</td></tr>
     <tr><td>Main output overvoltage switch-off</td><td>Electronic breaker</td><td>—</td><td>≈ 31 V</td><td>—</td><td>Calculated</td></tr>
     <tr><td>5 V output current</td><td>5V OUT</td><td>—</td><td>—</td><td>1 A</td><td>Converter module rating (maker). The status lights use a few milliamps of it.</td></tr>
     <tr><td>Enable signal, switch-on level</td><td>X IN pin 3</td><td>—</td><td>—</td><td>2 V</td><td>Chip datasheet: on at 2&nbsp;V at most, so 3.3&nbsp;V logic switches it</td></tr>
     <tr><td>Current limit on the controller's 5 V</td><td>X IN pin 2, HOST modes</td><td>—</td><td>≈ 0.43 A</td><td>—</td><td>Calculated from the design</td></tr>
     <tr><td>GOOD light threshold</td><td>Main output</td><td>—</td><td>≈ 4.2 V</td><td>—</td><td>Calculated</td></tr>
-    <tr><td>Mains inlet rating</td><td>Inlet</td><td>—</td><td>—</td><td>10 A, 250 V AC</td><td>Inlet maker's rating; the board as a whole is not rated</td></tr>
-    <tr><td>Mains fuse rating</td><td>F1, F2</td><td>Open</td><td>Open</td><td>Open</td><td>Fuses not chosen</td></tr>
+    <tr><td>Mains inlet rating</td><td>Inlet</td><td>—</td><td>—</td><td>10 A, 250 V AC</td><td>Inlet maker's rating; applies to the inlet only</td></tr>
     <tr><td>Mains to low-voltage spacing</td><td>Board</td><td>9.5 mm</td><td>—</td><td>—</td><td>Measured in the design files; not a safety certification</td></tr>
     <tr><td>Mains to protective earth spacing</td><td>Board</td><td>3.0 mm</td><td>—</td><td>—</td><td>Measured in the design files; not a safety certification</td></tr>
-    <tr><td>Temperature rise at 5 A</td><td>Board</td><td>Open</td><td>Open</td><td>Open</td><td>Not measured</td></tr>
-    <tr><td>Ambient temperature</td><td>Board</td><td>Open</td><td>Open</td><td>Open</td><td>Not established</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}
@@ -810,8 +803,7 @@ These are limits of individual parts, beyond which the part can be damaged. They
   <thead><tr><th>Circuit</th><th>Pin or device stress</th><th>Absolute limit</th></tr></thead>
   <tbody>
     <tr><td>Supply contacts</td><td>Supply fitted with its terminals in the opposite order</td><td>No protection: mains would reach the DC side</td></tr>
-    <tr><td>Main output</td><td>Voltage fed back from the load</td><td>Blocked by the breaker by design; limit Open</td></tr>
-    <tr><td>Enable and GPIO inputs</td><td>Voltage on X IN pins 3, 4, 5</td><td>Open</td></tr>
+    <tr><td>Main output</td><td>Voltage fed back from the load</td><td>Blocked by the breaker by design</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}

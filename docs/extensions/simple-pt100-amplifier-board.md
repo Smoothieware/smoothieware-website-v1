@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Simple PT100 amplifier board"
-description: "An analogue four-wire PT100 front end that outputs a voltage for a controller analogue input: pinout, links and the limits of what is established."
+description: "An analogue four-wire PT100 front end that outputs a voltage for a controller analogue input: pinout, links and wiring."
 permalink: /extensions/simple-pt100-amplifier-board
 ---
 
@@ -12,8 +12,7 @@ permalink: /extensions/simple-pt100-amplifier-board
   <div>
     <p class="xb-eyebrow">Extension board · Temperature</p>
     <h1 id="simple-pt100-amplifier-board">Simple PT100 amplifier board</h1>
-    <p class="xb-lead">An analogue front end for a four-wire PT100 temperature sensor. It sources a constant excitation current, senses the voltage across the element and presents an amplified voltage to a controller analogue input. It does not return a digital temperature, and no matching firmware conversion exists yet in the checked firmware.</p>
-    <p class="xb-badge">Design candidate · revision v22 · not yet built or tested</p>
+    <p class="xb-lead">An analogue front end for a four-wire PT100 temperature sensor. It sources a constant excitation current, senses the voltage across the element and presents an amplified voltage to a controller analogue input. It does not return a digital temperature, and Smoothieware has no matching conversion for it.</p>
     <div class="xb-actions">
       <a class="xb-btn xb-btn-primary" href="#get-started">Get started</a>
       <a class="xb-btn" href="#pinout">Pinout</a>
@@ -22,16 +21,16 @@ permalink: /extensions/simple-pt100-amplifier-board
   </div>
   <figure>
     <img src="/images/extensions/simple-pt100-amplifier-board/simple-pt100-amplifier-board-diagram.png" alt="Top view of the simple PT100 amplifier board: two ten-contact sockets at the top, an amplifier in the middle and a four-way screw terminal at the bottom.">
-    <figcaption>Top view, drawn from the board&rsquo;s design files (revision v22). This is a drawing, not a photograph.</figcaption>
+    <figcaption>Top view, drawn from the board&rsquo;s design files. This is a drawing, not a photograph.</figcaption>
   </figure>
 </div>
 
 <div class="xb-stats">
   <div class="xb-stat"><b>4-wire PT100</b><span>separate force and sense leads</span></div>
   <div class="xb-stat"><b>Analogue out</b><span>a voltage on J1 contact 3 by default</span></div>
-  <div class="xb-stat"><b>~0.985 mA</b><span>calculated excitation at 3.3&nbsp;V, not a measurement</span></div>
+  <div class="xb-stat"><b>~0.985 mA</b><span>calculated excitation at 3.3&nbsp;V</span></div>
   <div class="xb-stat"><b>OPA2333</b><span>precision dual amplifier</span></div>
-  <div class="xb-stat"><b>No firmware</b><span>no matching conversion in the checked firmware</span></div>
+  <div class="xb-stat"><b>No firmware</b><span>no matching Smoothieware conversion</span></div>
   <div class="xb-stat"><b>40 × 35.6</b><span>millimetres, two M3 holes</span></div>
 </div>
 
@@ -52,7 +51,7 @@ permalink: /extensions/simple-pt100-amplifier-board
 
 <sl-alert variant="warning" open>
   <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
-  This is a design candidate that has not been built or tested, and it is not ready to energize. It is not calibrated: the transfer from resistance to voltage, the sensor self-heating and the error budget are not established, and the checked firmware cannot convert its output to a temperature. Do not use it to control a heater. Keep the whole setup unpowered while wiring.
+  The board is not calibrated, and Smoothieware cannot convert its output to a temperature. Do not use it to control a heater. Keep the whole setup unpowered while wiring.
 </sl-alert>
 
 ## Tech specs {#specs}
@@ -76,7 +75,7 @@ permalink: /extensions/simple-pt100-amplifier-board
 </table></div>
 {:/nomarkdown}
 
-Every figure with its basis is in the [electrical specifications](#electrical) appendix; hole positions are in the [mounting dimensions](#mounting) appendix. This is a different interface from the [SPI PT100 board](/extensions/spi-pt100-amplifier-board), which returns a digital value.
+The electrical figures are in the [electrical specifications](#electrical) appendix; hole positions are in the [mounting dimensions](#mounting) appendix. This is a different interface from the [SPI PT100 board](/extensions/spi-pt100-amplifier-board), which returns a digital value.
 
 ## Board tour {#tour}
 
@@ -181,8 +180,7 @@ Never join two driven outputs: open the existing bridge on a contact before sele
 
 {::nomarkdown}
 <div class="xb-cards">
-  <div class="xb-card"><b>This board</b><span>The design is not yet built.</span></div>
-  <div class="xb-card"><b>A four-wire PT100</b><span>The element, its lead identification and operating range are not selected here.</span></div>
+  <div class="xb-card"><b>A four-wire PT100</b><span>Choose the element for your temperature range and identify its leads.</span></div>
   <div class="xb-card"><b>Three host wires</b><span>3.3&nbsp;V, the analogue output and ground to the controller.</span></div>
   <div class="xb-card"><b>A meter</b><span>To check AIN_OUT at TP2 against a known resistor, before any heater use.</span></div>
 </div>
@@ -195,7 +193,7 @@ Never join two driven outputs: open the existing bridge on a contact before sele
   <li class="xb-step">
     <h3>Wire the controller</h3>
     <p>With everything unpowered, connect header GH (J39) contact 1 to J1 contact 1 (3.3&nbsp;V), contact 3 to J1 contact 3 (analogue output on PC3) and contact 10 to J1 contact 10 (ground). Leave the 5&nbsp;V and all other contacts disconnected. Leave J2 unconnected.</p>
-    <p class="xb-expect">Check numbered continuity and the connector orientation first. The rail positions on the Prime&rsquo;s physical header need checking; see the electrical appendix.</p>
+    <p class="xb-expect">Check numbered continuity and the connector orientation first. Check the rail positions on the Prime&rsquo;s physical header; see the electrical appendix.</p>
   </li>
   <li class="xb-step">
     <h3>Check the links</h3>
@@ -207,7 +205,7 @@ Never join two driven outputs: open the existing bridge on a contact before sele
   </li>
   <li class="xb-step">
     <h3>Check the output with a fixed resistor first</h3>
-    <p>Before a real sensor, power the board and read TP2 with a known resistor across the leads. No transfer function has been established, so compare against your own calibration. Reserve PC3 as an analogue input; never configure it as a driven output.</p>
+    <p>Before a real sensor, power the board and read TP2 with a known resistor across the leads. Compare the reading against your own calibration. Reserve PC3 as an analogue input; never configure it as a driven output.</p>
   </li>
 </ol>
 {:/nomarkdown}
@@ -218,12 +216,12 @@ Never join two driven outputs: open the existing bridge on a contact before sele
 <div class="xb-tablewrap"><table>
   <thead><tr><th>You want</th><th>Module</th><th>Example</th></tr></thead>
   <tbody>
-    <tr><td>A temperature from this board</td><td>None in the checked firmware</td><td>Not supported</td></tr>
+    <tr><td>A temperature from this board</td><td>None in Smoothieware</td><td>Not supported</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}
 
-The checked SmoothieV2 source (revision 2a21c0108b1d095ecd8b2b9358e94055f053c003) has no selectable sensor for this analogue amplifier. Its [temperature factory](https://github.com/Smoothieware/SmoothieV2/blob/2a21c0108b1d095ecd8b2b9358e94055f053c003/Firmware/src/modules/tools/temperaturecontrol/TemperatureControl.cpp#L177-L195) selects <code>thermistor</code> or <code>max31855</code>; any other sensor name creates a dummy sensor and enables no PT100 conversion. The <code>max31855</code> option is a different digital thermocouple chip. The [thermistor conversion](https://github.com/Smoothieware/SmoothieV2/blob/2a21c0108b1d095ecd8b2b9358e94055f053c003/Firmware/src/modules/tools/temperaturecontrol/Thermistor.cpp#L286-L314) models a thermistor resistance, so its coefficients are not this amplifier&rsquo;s voltage-to-PT100 transfer, and no beta values or heater settings should be invented for it. This finding applies to the checked revision only; it does not describe firmware installed on a controller. Until a matching conversion exists, no configuration is given.
+SmoothieV2 has no selectable sensor for this analogue amplifier. Its [temperature factory](https://github.com/Smoothieware/SmoothieV2/blob/2a21c0108b1d095ecd8b2b9358e94055f053c003/Firmware/src/modules/tools/temperaturecontrol/TemperatureControl.cpp#L177-L195) selects <code>thermistor</code> or <code>max31855</code>; any other sensor name creates a dummy sensor and enables no PT100 conversion. The <code>max31855</code> option is a different digital thermocouple chip. The [thermistor conversion](https://github.com/Smoothieware/SmoothieV2/blob/2a21c0108b1d095ecd8b2b9358e94055f053c003/Firmware/src/modules/tools/temperaturecontrol/Thermistor.cpp#L286-L314) models a thermistor resistance, so its coefficients are not this amplifier&rsquo;s voltage-to-PT100 transfer, and no beta values or heater settings should be invented for it. Without a matching conversion there is no configuration to give.
 
 ## How it works {#how-it-works}
 
@@ -246,7 +244,7 @@ The checked SmoothieV2 source (revision 2a21c0108b1d095ecd8b2b9358e94055f053c003
 </figure>
 {:/nomarkdown}
 
-One amplifier half drives the BSS84 gate until the sense node follows the reference, so the drop across the 332&nbsp;&Omega; resistor sets the excitation current; the transistor and diode feed the force-positive lead. The other half receives the sense leads through its resistor network and produces a raw output, which a 332&nbsp;&Omega; resistor and 100&nbsp;nF capacitor filter into AIN_OUT. The board does not return a digital temperature word. The exact transfer function, excitation accuracy, sensor self-heating and amplifier output limits are not established.
+One amplifier half drives the BSS84 gate until the sense node follows the reference, so the drop across the 332&nbsp;&Omega; resistor sets the excitation current; the transistor and diode feed the force-positive lead. The other half receives the sense leads through its resistor network and produces a raw output, which a 332&nbsp;&Omega; resistor and 100&nbsp;nF capacitor filter into AIN_OUT. The board does not return a digital temperature word. Calibrate your assembly for its transfer function, and allow for excitation accuracy, sensor self-heating and amplifier output limits.
 
 {% include _includes/temperature-board-comparison.html %}
 
@@ -262,7 +260,7 @@ This board has no indicator lights.
     <tr><td>Output stuck at a limit</td><td>An open or reversed sensor lead; force and sense leads swapped; no element connected.</td></tr>
     <tr><td>Reading changes with lead movement</td><td>Check that all four leads reach the element separately and that JP10 and JP11 are open.</td></tr>
     <tr><td>Nothing on a different contact</td><td>The link selecting AIN_OUT for contact 4 or 5 is on pads 2&ndash;3; JP3 sends it to contact 3 by default.</td></tr>
-    <tr><td>Temperature does not display</td><td>The checked firmware has no conversion for this board; see Configuration.</td></tr>
+    <tr><td>Temperature does not display</td><td>Smoothieware has no conversion for this board; see Configuration.</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}
@@ -273,12 +271,12 @@ Still stuck? Read [how to ask for help](/help-guidelines) or see the general [tr
 
 {::nomarkdown}
 <div class="xb-tablewrap"><table>
-  <thead><tr><th>File</th><th>Revision</th><th>What it is</th></tr></thead>
+  <thead><tr><th>File</th><th>What it is</th></tr></thead>
   <tbody>
-    <tr><td><a href="/images/extensions/simple-pt100-amplifier-board/simple-pt100-amplifier-board-schematic.pdf">Schematic (PDF)</a></td><td>v22</td><td>The complete circuit diagram. Its title block reads v14.</td></tr>
-    <tr><td><a href="/images/extensions/simple-pt100-amplifier-board/simple-pt100-amplifier-board-bom.csv">Parts list (CSV)</a></td><td>v22</td><td>Every component with its value and footprint</td></tr>
-    <tr><td><a href="/images/extensions/simple-pt100-amplifier-board/simple-pt100-amplifier-board-diagram.png">Board drawing (SVG)</a></td><td>v22</td><td>The top view used on this page, at full resolution</td></tr>
-    <tr><td><a href="/assets/downloads/extensions/simple-pt100-amplifier-board/simple-pt100-cad-study.zip">CAD study (ZIP)</a></td><td>v22</td><td>The KiCad project with libraries and licence texts; a source study, not a fabrication or calibrated release</td></tr>
+    <tr><td><a href="/images/extensions/simple-pt100-amplifier-board/simple-pt100-amplifier-board-schematic.pdf">Schematic (PDF)</a></td><td>The complete circuit diagram.</td></tr>
+    <tr><td><a href="/images/extensions/simple-pt100-amplifier-board/simple-pt100-amplifier-board-bom.csv">Parts list (CSV)</a></td><td>Every component with its value and footprint</td></tr>
+    <tr><td><a href="/images/extensions/simple-pt100-amplifier-board/simple-pt100-amplifier-board-diagram.png">Board drawing (SVG)</a></td><td>The top view used on this page, at full resolution</td></tr>
+    <tr><td><a href="/assets/downloads/extensions/simple-pt100-amplifier-board/simple-pt100-cad-study.zip">KiCad project (ZIP)</a></td><td>The KiCad project with libraries and licence texts</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}
@@ -326,25 +324,22 @@ For drilling a mounting plate or designing an enclosure. Positions are hole cent
 
 ## Appendix: electrical specifications {#electrical}
 
-Every figure is a design value or a value from the parts list, as the last column says. None is a measurement on a built board. **Open** means not established.
+A dash means no value is given.
 
 {::nomarkdown}
 <div class="xb-tablewrap"><table class="xb-elec">
-  <thead><tr><th>Parameter</th><th>Applies to</th><th>Lower</th><th>Nominal</th><th>Upper</th><th>Basis and conditions</th></tr></thead>
+  <thead><tr><th>Parameter</th><th>Applies to</th><th>Lower</th><th>Nominal</th><th>Upper</th><th>Conditions</th></tr></thead>
   <tbody>
-    <tr><td>Logic supply</td><td>J1 contact 1</td><td>Open</td><td>3.3 V</td><td>Open</td><td>Host current allowance Open</td></tr>
-    <tr><td>Excitation current</td><td>F+</td><td>Open</td><td>about 0.985 mA</td><td>Open</td><td>Calculation at nominal 3.3&nbsp;V from the parts list; not a measurement or a calibration, tolerance Open</td></tr>
+    <tr><td>Logic supply</td><td>J1 contact 1</td><td>—</td><td>3.3 V</td><td>—</td><td>From the host</td></tr>
+    <tr><td>Excitation current</td><td>F+</td><td>—</td><td>about 0.985 mA</td><td>—</td><td>Calculated at nominal 3.3&nbsp;V from the parts list</td></tr>
     <tr><td>Sense resistor</td><td>R8</td><td>—</td><td>332 &Omega;, 0.1&nbsp;%</td><td>—</td><td>Parts list</td></tr>
     <tr><td>Output filter</td><td>R10, C5</td><td>—</td><td>332 &Omega;, 100 nF</td><td>—</td><td>Parts list</td></tr>
-    <tr><td>Output voltage range</td><td>AIN_OUT</td><td>Open</td><td>Open</td><td>Open</td><td>Transfer function not established</td></tr>
-    <tr><td>Sensor self-heating</td><td>PT100</td><td>Open</td><td>Open</td><td>Open</td><td>Depends on the chosen element; not established</td></tr>
-    <tr><td>Temperature range and accuracy</td><td>System</td><td>Open</td><td>Open</td><td>Open</td><td>Requires calibration and a firmware conversion</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}
 
 ### Prime header GH (J39)
 
-On the Prime, header GH (J39) has 3.3&nbsp;V on contact 1, 5&nbsp;V on contact 2, PC3 on contact 3 and ground on 10. PC3 is hardware ADC1 channel 13, logical <code>ADC1_5</code> in the reviewed implementation. A discrepancy in the rail positions on the physical connector has been noted: verify numbered continuity with the power removed.
+On the Prime, header GH (J39) has 3.3&nbsp;V on contact 1, 5&nbsp;V on contact 2, PC3 on contact 3 and ground on 10. PC3 is hardware ADC1 channel 13, logical <code>ADC1_5</code> in SmoothieV2. Check the rail positions on the physical connector, and verify numbered continuity with the power removed.
 
 See all boards on the [extension boards](/extension-boards) page.

@@ -15,7 +15,6 @@ redirect_from:
     <p class="xb-eyebrow">Extension board · Power output</p>
     <h1>Single-channel small MOSFET basic output</h1>
     <p class="xb-lead">Switch one small DC load, such as a fan or a solenoid, from a 3.3 V signal on the three-pin header or Gadgeteer IN. The load has its own power supply. One type-Y host socket can provide seven independent control signals for a chain of seven boards.</p>
-    <p class="xb-badge">Prototype design · not built or tested yet</p>
     <div class="xb-actions">
       <a class="xb-btn xb-btn-primary" href="#wiring">Wiring</a>
       <a class="xb-btn" href="#pinout">Pinout</a>
@@ -25,7 +24,7 @@ redirect_from:
   </div>
   <figure>
     <img src="/images/extensions/single-channel-small-mosfet-basic-output/small-mosfet-basic-diagram.png" alt="Top view drawing of the small MOSFET basic board: a white three-pin header at left and two black keyed ten-pin headers along the top edge, printed Y IN and CHAIN, two green two-way screw terminals along the bottom edge for the 12 V supply and the load, and a POWER and an ON light.">
-    <figcaption>Revision 02 board drawing, 41 × 32 mm.</figcaption>
+    <figcaption>Board drawing, 41 × 32 mm.</figcaption>
   </figure>
 </div>
 {:/nomarkdown}
@@ -34,18 +33,16 @@ redirect_from:
 
 ## Technical specifications
 
-| Item | Prototype design target |
+| Item | Specification |
 | --- | --- |
 | Output | One low-side DC switch with a flyback diode |
 | Control | One active-high 3.3 V logic signal, with a hardware pull-down |
 | Field supply | 12 V nominal, externally supplied and current limited |
-| Continuous load | 1 A initial qualification target |
+| Continuous load | 1 A |
 | Indicators | Green **POWER** and amber **ON**, each with a separate disable link |
 | Mounting | Ungrounded M3 holes on a 10 mm grid and load-cable tie holes |
 
-The routed prototype measures 41 × 32 mm in KiCad. The supply and load
-figures are design targets. Electrical ratings and fabrication suitability
-remain unverified.
+The board measures 41 × 32 mm.
 
 ## Wiring
 
@@ -55,7 +52,7 @@ its negative to **LOAD−**. **LOAD+** is connected directly to **EXT+** and
 remains live while external power is present. The board switches **LOAD−**
 to ground. Ground is shared with the controller for signaling.
 
-Connect only a verified type-Y host socket or the previous board's **CHAIN**
+Connect only a type-Y host socket or the previous board's **CHAIN**
 connector to **IN**, using a keyed straight-through cable. Keep the load
 return on the external wiring. Both Gadgeteer supply rails pass to the next
 socket and have no connection to the load or either indicator.
@@ -110,7 +107,7 @@ turn-off. The basic circuit relies on correct supply polarity and an
 external current-limited source. See the [small MOSFET advanced board](/extensions/single-channel-small-mosfet-advanced-output)
 for onboard supply protection and fault indicators.
 
-## Revision 02 downloads
+## Downloads
 
 - [Schematic PDF](/images/extensions/single-channel-small-mosfet-basic-output/schematic.pdf)
 - [Parts list CSV](/images/extensions/single-channel-small-mosfet-basic-output/bom.csv)

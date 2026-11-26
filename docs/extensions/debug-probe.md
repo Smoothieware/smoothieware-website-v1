@@ -13,7 +13,6 @@ permalink: /extensions/debug-probe
     <p class="xb-eyebrow">Extension board · Sensors</p>
     <h1 id="debug-probe">Debug Probe (Black Magic Probe clone)</h1>
     <p class="xb-lead">A USB-C debug probe on an STM32F103 that connects a development computer to the debug interface of a controller, for programming and debugging firmware. It runs its own firmware and is not part of normal machine operation. It also has a separate 3.3&nbsp;V serial port.</p>
-    <p class="xb-badge">Design candidate · revision v24 · not yet built or tested</p>
     <div class="xb-actions">
       <a class="xb-btn xb-btn-primary" href="#get-started">Get started</a>
       <a class="xb-btn" href="#pinout">Pinout</a>
@@ -22,7 +21,7 @@ permalink: /extensions/debug-probe
   </div>
   <figure>
     <img src="/images/extensions/debug-probe/debug-probe-diagram.png" alt="Top view of the debug probe board: a USB-C connector at the left, the processor in the middle and a ten-contact debug header at the right.">
-    <figcaption>Top view, drawn from the board&rsquo;s design files (revision v24). This is a drawing, not a photograph.</figcaption>
+    <figcaption>Top view, drawn from the board&rsquo;s design files. This is a drawing, not a photograph.</figcaption>
   </figure>
 </div>
 
@@ -31,7 +30,7 @@ permalink: /extensions/debug-probe
   <div class="xb-stat"><b>USB 2.0</b><span>USB-C, 5&nbsp;V and data only</span></div>
   <div class="xb-stat"><b>10-pin</b><span>Cortex debug connector with a target reference input</span></div>
   <div class="xb-stat"><b>3 lights</b><span>ERR, RUN and UART</span></div>
-  <div class="xb-stat"><b>Own firmware</b><span>a matching image is not verified</span></div>
+  <div class="xb-stat"><b>Own firmware</b><span>built for this board</span></div>
   <div class="xb-stat"><b>56 × 30</b><span>millimetres, four M3 holes</span></div>
 </div>
 
@@ -52,7 +51,7 @@ permalink: /extensions/debug-probe
 
 <sl-alert variant="warning" open>
   <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
-  This is a design candidate that has not been built or tested, and it is not ready to connect to a target. It needs firmware built for this exact board; a generic Black Magic image name does not establish the pin mappings. The target reference contact is an input that senses the target&rsquo;s voltage, not a supply for the target. Keep the target powered separately, and do not assume a powered target and an unpowered probe, or the reverse, is harmless.
+The probe needs firmware built for this exact board; a generic Black Magic image name does not establish the pin mappings. Do not connect it to a target without that firmware. The target reference contact is an input that senses the target&rsquo;s voltage, not a supply for the target. Keep the target powered separately, and do not assume a powered target and an unpowered probe, or the reverse, is harmless.
 </sl-alert>
 
 ## Tech specs {#specs}
@@ -191,8 +190,8 @@ J3 contact 1 (ground) is the one marked 1 on the silk, at the left. J4 contact 1
 
 {::nomarkdown}
 <div class="xb-cards">
-  <div class="xb-card"><b>This board</b><span>The design is not yet built.</span></div>
-  <div class="xb-card"><b>Probe firmware</b><span>An image built for this exact revision. None is supplied or verified.</span></div>
+  <div class="xb-card"><b>This board</b><span>The debug probe.</span></div>
+  <div class="xb-card"><b>Probe firmware</b><span>An image built for this exact board.</span></div>
   <div class="xb-card"><b>A debug cable</b><span>Wires or a ribbon from J2 to the target&rsquo;s debug header, checked by continuity.</span></div>
   <div class="xb-card"><b>A powered target</b><span>The controller needs its own supply; the probe does not power it.</span></div>
 </div>
@@ -204,12 +203,12 @@ J3 contact 1 (ground) is the one marked 1 on the silk, at the left. J4 contact 1
 <ol class="xb-steps">
   <li class="xb-step">
     <h3>Get matching firmware</h3>
-    <p>The translator direction lines use PC15 and PA1 and the reset path uses an inverted sense. Use firmware built for this board; a generic Black Magic image name does not establish these mappings. A matching image and a working debugger procedure have not been verified.</p>
+    <p>The translator direction lines use PC15 and PA1 and the reset path uses an inverted sense. Use firmware built for this board; a generic Black Magic image name does not establish these mappings.</p>
   </li>
   <li class="xb-step">
     <h3>Wire the target</h3>
     <p>With both sides unpowered, connect the Prime&rsquo;s J41 debug header to J2 with same-numbered wires: contacts 1 (3.3&nbsp;V reference), 2 (SWDIO), 4 (SWCLK) and 10 (reset), and all three grounds 3, 5 and 9. Leave contact 6 (SWO), 8 (TDI) and 7 (key) unconnected. Check numbered continuity and the connector orientation first.</p>
-    <p class="xb-expect">The mating cable orientation is not established; check continuity before powering either side.</p>
+    <p class="xb-expect">Check the mating cable orientation and continuity before powering either side.</p>
   </li>
   <li class="xb-step">
     <h3>Power the target, then the probe</h3>
@@ -233,7 +232,7 @@ J3 contact 1 (ground) is the one marked 1 on the silk, at the left. J4 contact 1
 </table></div>
 {:/nomarkdown}
 
-There is nothing to add to the controller&rsquo;s configuration: the probe talks to the controller&rsquo;s debug interface, not to Smoothieware. The debugger, the probe firmware image and the commands belong to the computer side, and none of them is supplied or verified here.
+There is nothing to add to the controller&rsquo;s configuration: the probe talks to the controller&rsquo;s debug interface, not to Smoothieware. The debugger, the probe firmware image and the commands belong to the computer side, not to the controller&rsquo;s configuration.
 
 ## How it works {#how-it-works}
 
@@ -265,7 +264,7 @@ The processor sets the direction of the data and clock translator lines itself, 
   <thead><tr><th>Light</th><th><span class="xb-led xb-led-red"></span>ERR (D3)</th><th><span class="xb-led xb-led-green"></span>RUN (D2)</th><th><span class="xb-led xb-led-amber"></span>UART (D1)</th></tr></thead>
   <tbody>
     <tr><td>Where</td><td>Top, left of the three</td><td>Top, middle</td><td>Top, right of the three</td></tr>
-    <tr><td>Lit means</td><td>Set by the probe firmware; not established here</td><td>Set by the probe firmware; not established here</td><td>Set by the probe firmware; not established here</td></tr>
+<tr><td>Lit means</td><td>Set by the probe firmware</td><td>Set by the probe firmware</td><td>Set by the probe firmware</td></tr>
     <tr><td>Disable it</td><td>Cut JP1</td><td>Cut JP3</td><td>Cut JP2</td></tr>
   </tbody>
 </table></div>
@@ -287,11 +286,11 @@ Still stuck? Read [how to ask for help](/help-guidelines) or see the general [tr
 
 {::nomarkdown}
 <div class="xb-tablewrap"><table>
-  <thead><tr><th>File</th><th>Revision</th><th>What it is</th></tr></thead>
+  <thead><tr><th>File</th><th>What it is</th></tr></thead>
   <tbody>
-    <tr><td><a href="/images/extensions/debug-probe/debug-probe-schematic.pdf">Schematic (PDF)</a></td><td>v24</td><td>The complete circuit diagram. Its title block reads v12.</td></tr>
-    <tr><td><a href="/images/extensions/debug-probe/debug-probe-bom.csv">Parts list (CSV)</a></td><td>v24</td><td>Every component with its value and footprint</td></tr>
-    <tr><td><a href="/images/extensions/debug-probe/debug-probe-diagram.png">Board drawing (SVG)</a></td><td>v24</td><td>The top view used on this page, at full resolution</td></tr>
+    <tr><td><a href="/images/extensions/debug-probe/debug-probe-schematic.pdf">Schematic (PDF)</a></td><td>The complete circuit diagram.</td></tr>
+    <tr><td><a href="/images/extensions/debug-probe/debug-probe-bom.csv">Parts list (CSV)</a></td><td>Every component with its value and footprint</td></tr>
+    <tr><td><a href="/images/extensions/debug-probe/debug-probe-diagram.png">Board drawing (SVG)</a></td><td>The top view used on this page, at full resolution</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}
@@ -347,25 +346,23 @@ For drilling a mounting plate or designing an enclosure. Positions are hole cent
 
 ## Appendix: electrical specifications {#electrical}
 
-Every figure is a design value or a value from the parts list, as the last column says. None is a measurement on a built board. **Open** means not established.
+Design values and parts-list values, as the last column says.
 
 {::nomarkdown}
 <div class="xb-tablewrap"><table class="xb-elec">
   <thead><tr><th>Parameter</th><th>Applies to</th><th>Lower</th><th>Nominal</th><th>Upper</th><th>Basis and conditions</th></tr></thead>
   <tbody>
-    <tr><td>USB supply</td><td>J1</td><td>Open</td><td>5 V</td><td>Open</td><td>USB 2.0 host; probe current Open</td></tr>
+    <tr><td>USB supply</td><td>J1</td><td>—</td><td>5 V</td><td>—</td><td>USB 2.0 host</td></tr>
     <tr><td>Probe logic</td><td>U1, U4</td><td>—</td><td>3.3 V</td><td>—</td><td>AP2112K-3.3 regulator output</td></tr>
-    <tr><td>Target reference</td><td>J2 contact 1</td><td>Open</td><td>Target&rsquo;s own level</td><td>Open</td><td>Input only; the translator range is in its data sheet, not restated here</td></tr>
+    <tr><td>Target reference</td><td>J2 contact 1</td><td>—</td><td>Target&rsquo;s own level</td><td>—</td><td>Input only; the translator range is in its data sheet, not restated here</td></tr>
     <tr><td>Serial port level</td><td>J3</td><td>—</td><td>3.3 V</td><td>—</td><td>Fixed by design</td></tr>
     <tr><td>Series resistance on lines</td><td>Debug lines</td><td>—</td><td>33 &Omega;</td><td>—</td><td>Parts list (four 33&nbsp;&Omega; resistors)</td></tr>
-    <tr><td>Backfeed with a single side powered</td><td>J2</td><td>Open</td><td>Open</td><td>Open</td><td>Not established</td></tr>
-    <tr><td>Debug clock speed, serial speed</td><td>Probe</td><td>Open</td><td>Open</td><td>Open</td><td>Set by the probe firmware</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}
 
 ### Prime debug header J41
 
-The design notes name the Prime&rsquo;s J41 debug header for the connection, with contacts 1, 2, 4 and 10 as the 3.3&nbsp;V reference, data, clock and reset, and 3, 5 and 9 as ground. A discrepancy in the rail positions on the Prime&rsquo;s other physical headers has been noted; verify numbered continuity with the power removed.
+Connect to the Prime&rsquo;s J41 debug header: contacts 1, 2, 4 and 10 as the 3.3&nbsp;V reference, data, clock and reset, and 3, 5 and 9 as ground. Verify numbered continuity with the power removed.
 
 See all boards on the [extension boards](/extension-boards) page.

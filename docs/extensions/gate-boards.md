@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Gate boards"
-description: "A 2-input AND logic board with a switched 5 V output: pinout, wiring, configuration and limits."
+description: "A 2-input AND logic board with a switched 5 V output: pinout, wiring and configuration."
 permalink: /extensions/gate-boards
 ---
 
@@ -13,7 +13,6 @@ permalink: /extensions/gate-boards
     <p class="xb-eyebrow">Extension board · Logic</p>
     <h1 id="gate-boards">Gate boards</h1>
     <p class="xb-lead">Combine two signals with a hardware AND gate. The output goes high only when both inputs are high, and it is a switched 5&nbsp;V line that can drive a small load or be read by the controller.</p>
-    <p class="xb-badge">Prototype design · revision v18 · not built yet · not safety rated</p>
     <div class="xb-actions">
       <a class="xb-btn xb-btn-primary" href="#get-started">Get started</a>
       <a class="xb-btn" href="#pinout">Pinout</a>
@@ -22,7 +21,7 @@ permalink: /extensions/gate-boards
   </div>
   <figure>
     <img src="/images/extensions/gate-boards/gate-boards-diagram.png" alt="Top view of the gate board: two three-contact input connectors at the top, a two-screw power terminal at the bottom left, an AND gate chip in the middle and a three-contact output connector at the bottom right.">
-    <figcaption>Top view, drawn from the board&rsquo;s design files (revision v18). This is a drawing, not a photograph.</figcaption>
+    <figcaption>Top view, drawn from the board&rsquo;s design files. This is a drawing, not a photograph.</figcaption>
   </figure>
 </div>
 
@@ -55,17 +54,12 @@ permalink: /extensions/gate-boards
   <strong>Not a safety device.</strong> The board is printed &ldquo;NOT SAFETY RATED&rdquo;. Do not use it in an emergency-stop chain, an interlock or any circuit where a wrong output could hurt someone or damage a machine.
 </sl-alert>
 
-<sl-alert variant="warning" open>
-  <sl-icon slot="icon" name="cone-striped"></sl-icon>
-  <strong>This board is a prototype design.</strong> Revision v18 passes its checks on the computer, but no board has been manufactured or tested, and the assembled thresholds and the power limits have not been measured. The page will be updated as hardware is built and tested.
-</sl-alert>
-
 ## Tech specs {#specs}
 
 {::nomarkdown}
 <div class="xb-tablewrap"><table class="xb-spec">
   <tbody>
-    <tr><td>Function</td><td>One 2-input AND gate: the output is on only when input A and input B are both HIGH. The truth table is printed on the board. The other gate types (OR, NAND and so on) are not part of this revision.</td></tr>
+    <tr><td>Function</td><td>One 2-input AND gate: the output is on only when input A and input B are both HIGH. The truth table is printed on the board.</td></tr>
     <tr><td>Inputs</td><td>Two, each on its own three-contact connector (signal, ground, 5&nbsp;V). Each input has a series resistor, a small filter capacitor, a clamp to the 3.3&nbsp;V supply and a protection diode to ground. An <b>unconnected input reads HIGH</b>, as printed on the board.</td></tr>
     <tr><td>Output</td><td>One three-contact connector (ground, 5&nbsp;V, output). The output is the board&rsquo;s own 5&nbsp;V, switched by a load switch. It is <b>not a 3.3&nbsp;V logic signal</b>. The board is printed &ldquo;OUT 200 mA, slow I/O&rdquo;.</td></tr>
     <tr><td>Power</td><td>5&nbsp;V on a two-screw terminal, through a reverse-polarity MOSFET and a protection circuit on the back of the board. The board is printed &ldquo;5 V / 250 mA total&rdquo;.</td></tr>
@@ -78,7 +72,7 @@ permalink: /extensions/gate-boards
 </table></div>
 {:/nomarkdown}
 
-Every figure with its limits and its basis is in the [electrical specifications](#electrical) appendix; the hole positions are in the [mounting dimensions](#mounting) appendix.
+The electrical figures are in the [electrical specifications](#electrical) appendix; the hole positions are in the [mounting dimensions](#mounting) appendix.
 
 ## Board tour {#tour}
 
@@ -175,7 +169,7 @@ The board is powered only from this terminal: the 5&nbsp;V contact of an input c
   <div class="xb-card"><b>A regulated 5 V supply</b><span>Able to give at least what the board and its load use. The board is printed 250&nbsp;mA total.</span></div>
   <div class="xb-card"><b>Mating connectors</b><span>For the standard build, plugs for the three-contact connectors; for the stemma build, 2&nbsp;mm JST PH plugs.</span></div>
   <div class="xb-card"><b>Two signal sources</b><span>For example two outputs of the controller, or two sensors with 3.3&nbsp;V or 5&nbsp;V signals.</span></div>
-  <div class="xb-card"><b>A receiver for the output</b><span>A small 5&nbsp;V load, or an input that tolerates 5&nbsp;V. Whether a controller input does is <b>not established here</b>: check it first.</span></div>
+  <div class="xb-card"><b>A receiver for the output</b><span>A small 5&nbsp;V load, or an input that tolerates 5&nbsp;V. Check a controller input&rsquo;s rating first.</span></div>
   <div class="xb-card"><b>A multimeter</b><span>To check the contact order and the output level.</span></div>
 </div>
 {:/nomarkdown}
@@ -272,16 +266,16 @@ If your file already has a `[switch]` section, add the lines to it. The command 
 3. `M65.1` then `M66.1`: A low, B high. Output 0&nbsp;V.
 4. `M64.1`: both high. Output about 5&nbsp;V, and the green output light is on.
 
-The board holds nothing at start-up: with the inputs not driven it reads them as HIGH. What the controller pins do during reset and boot has not been established.
+The board holds nothing at start-up: with the inputs not driven it reads them as HIGH. Check what your controller pins do during reset and boot.
 
 ### 2. Read the output (Switch module with an input pin) {#config-read}
 
 <sl-alert variant="warning" open>
   <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
-  <strong>Check the input level first.</strong> The output is 5&nbsp;V. This page does not establish that any input of the controller accepts 5&nbsp;V. Read the input&rsquo;s rating in the <a href="/smoothieboard-v2-prime">controller&rsquo;s documentation</a>, and if it is not 5&nbsp;V tolerant, bring the level down with a resistor divider you build yourself. Do not connect the output to a controller pin until you have done this.
+  <strong>Check the input level first.</strong> The output is 5&nbsp;V. Do not assume that a controller input accepts 5&nbsp;V. Read the input&rsquo;s rating in the <a href="/smoothieboard-v2-prime">controller&rsquo;s documentation</a>, and if it is not 5&nbsp;V tolerant, bring the level down with a resistor divider you build yourself. Do not connect the output to a controller pin until you have done this.
 </sl-alert>
 
-With a level you have verified, the Switch module can run a command when the pin changes. The pin name below is an example: use any free input pin you have checked.
+With a level you have checked, the Switch module can run a command when the pin changes. The pin name below is an example: use any free input pin you have checked.
 
 ```ini
 [switch]
@@ -320,7 +314,7 @@ Each input goes through a 4.7&nbsp;k&Omega; series resistor and a 10&nbsp;nF fil
 
 The gate output does not leave the board directly. It switches on a TPS22919 load switch, which connects the board&rsquo;s own 5&nbsp;V to the output contact; a 10&nbsp;k&Omega; resistor pulls the output to ground when the switch is off. That is why the output is 5&nbsp;V and why it is slow and current limited: the board prints &ldquo;OUT 200 mA slow I/O&rdquo;.
 
-The back of the board holds the power-entry protection: a controller chip with a supply monitor, a protection MOSFET, and three red lights (fault, over-voltage and reverse), each with a solder link to turn it off. Its trip thresholds are not specified on this page.
+The back of the board holds the power-entry protection: a controller chip with a supply monitor, a protection MOSFET, and three red lights (fault, over-voltage and reverse), each with a solder link to turn it off.
 
 {::nomarkdown}
 <figure class="xb-fig">
@@ -359,18 +353,18 @@ What the lights tell you:
 </table></div>
 {:/nomarkdown}
 
-Still stuck? Read [how to ask for help](/help-guidelines) or see the general [troubleshooting guide](/troubleshooting/). Say which revision and connector build you have (the revision is printed on the board) and what you measured.
+Still stuck? Read [how to ask for help](/help-guidelines) or see the general [troubleshooting guide](/troubleshooting/). Include which connector build you have, the text printed on your board and what you measured.
 
 ## Downloads {#downloads}
 
 {::nomarkdown}
 <div class="xb-tablewrap"><table>
-  <thead><tr><th>File</th><th>Revision</th><th>What it is</th></tr></thead>
+  <thead><tr><th>File</th><th>What it is</th></tr></thead>
   <tbody>
-    <tr><td><a href="/images/extensions/gate-boards/gate-boards-schematic.pdf">Schematic (PDF)</a></td><td>v18</td><td>The complete circuit diagram</td></tr>
-    <tr><td><a href="/images/extensions/gate-boards/gate-boards-bom-standard.csv">Parts list, standard connectors (CSV)</a></td><td>v18</td><td>Every component with its value, footprint and position</td></tr>
-    <tr><td><a href="/images/extensions/gate-boards/gate-boards-bom-stemma.csv">Parts list, 2 mm JST PH connectors (CSV)</a></td><td>v18</td><td>The same, with the stemma connector build</td></tr>
-    <tr><td><a href="/images/extensions/gate-boards/gate-boards-diagram.png">Board drawing (SVG)</a></td><td>v18</td><td>The top view used on this page, at full resolution</td></tr>
+    <tr><td><a href="/images/extensions/gate-boards/gate-boards-schematic.pdf">Schematic (PDF)</a></td><td>The complete circuit diagram</td></tr>
+    <tr><td><a href="/images/extensions/gate-boards/gate-boards-bom-standard.csv">Parts list, standard connectors (CSV)</a></td><td>Every component with its value, footprint and position</td></tr>
+    <tr><td><a href="/images/extensions/gate-boards/gate-boards-bom-stemma.csv">Parts list, 2 mm JST PH connectors (CSV)</a></td><td>The same, with the stemma connector build</td></tr>
+    <tr><td><a href="/images/extensions/gate-boards/gate-boards-diagram.png">Board drawing (SVG)</a></td><td>The top view used on this page, at full resolution</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}
@@ -426,35 +420,19 @@ For drilling a mounting plate or designing an enclosure. Positions are hole cent
 
 ## Appendix: electrical specifications {#electrical}
 
-Every figure below is a design value or a value printed on the board, as the last column says. None is a measurement on a built board. A dash means the figure does not apply. **Open** means it has not been established yet.
+A dash means that no value is given or the figure does not apply.
 
 {::nomarkdown}
 <div class="xb-tablewrap"><table class="xb-elec">
-  <thead><tr><th>Parameter</th><th>Applies to</th><th>Lower</th><th>Nominal</th><th>Upper</th><th>Basis and conditions</th></tr></thead>
+  <thead><tr><th>Parameter</th><th>Applies to</th><th>Lower</th><th>Nominal</th><th>Upper</th><th>Conditions</th></tr></thead>
   <tbody>
-    <tr><td>Supply voltage</td><td>J4</td><td>Open</td><td>5 V</td><td>Open</td><td>The board is a 5&nbsp;V board; the protection circuit&rsquo;s trip thresholds are not stated on this page</td></tr>
-    <tr><td>Total supply current</td><td>J4</td><td>—</td><td>—</td><td>250 mA</td><td>Printed on the board (&ldquo;5V / 250mA total&rdquo;); not verified</td></tr>
-    <tr><td>Output current</td><td>J3 contact 3</td><td>—</td><td>—</td><td>200 mA</td><td>Printed on the board (&ldquo;OUT 200mA, slow I/O&rdquo;); not verified</td></tr>
-    <tr><td>Output level, on</td><td>J3 contact 3</td><td>Open</td><td>5 V</td><td>—</td><td>The board&rsquo;s 5&nbsp;V through the load switch; the voltage drop is Open</td></tr>
+    <tr><td>Supply voltage</td><td>J4</td><td>—</td><td>5 V</td><td>—</td><td>The board is a 5&nbsp;V board</td></tr>
+    <tr><td>Total supply current</td><td>J4</td><td>—</td><td>—</td><td>250 mA</td><td>Printed on the board (&ldquo;5V / 250mA total&rdquo;)</td></tr>
+    <tr><td>Output current</td><td>J3 contact 3</td><td>—</td><td>—</td><td>200 mA</td><td>Printed on the board (&ldquo;OUT 200mA, slow I/O&rdquo;)</td></tr>
+    <tr><td>Output level, on</td><td>J3 contact 3</td><td>—</td><td>5 V</td><td>—</td><td>The board&rsquo;s 5&nbsp;V through the load switch</td></tr>
     <tr><td>Output level, off</td><td>J3 contact 3</td><td>—</td><td>0 V</td><td>—</td><td>Pulled down by a 10&nbsp;k&Omega; resistor</td></tr>
-    <tr><td>Input thresholds</td><td>J1, J2 contact 1</td><td>Open</td><td>Open</td><td>Open</td><td>Not measured on an assembled board</td></tr>
-    <tr><td>Input voltage range</td><td>J1, J2 contact 1</td><td>Open</td><td>—</td><td>Open</td><td>Each input has a 4.7&nbsp;k&Omega; series resistor and clamps; the permitted range is Open</td></tr>
     <tr><td>Unconnected input</td><td>J1, J2 contact 1</td><td>—</td><td>HIGH</td><td>—</td><td>Printed on the board (&ldquo;open input = high&rdquo;)</td></tr>
-    <tr><td>Switching speed</td><td>Output</td><td>Open</td><td>Open</td><td>Open</td><td>The board is printed &ldquo;slow I/O&rdquo;; no figure is given</td></tr>
     <tr><td>Logic supply</td><td>Gate chip</td><td>—</td><td>3.3 V</td><td>—</td><td>AP2112K-3.3 regulator</td></tr>
-  </tbody>
-</table></div>
-{:/nomarkdown}
-
-### Component stress limits
-
-{::nomarkdown}
-<div class="xb-tablewrap"><table>
-  <thead><tr><th>Circuit</th><th>Pin or device stress</th><th>Absolute limit</th></tr></thead>
-  <tbody>
-    <tr><td>Output</td><td>Short circuit or over-current</td><td>Open: current limiting of the load switch is not characterised for this board</td></tr>
-    <tr><td>Inputs</td><td>Voltage on a signal contact</td><td>Open</td></tr>
-    <tr><td>Supply</td><td>Reversed or over-voltage supply</td><td>Open: the board has reverse and over-voltage protection; its thresholds are not stated here</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}

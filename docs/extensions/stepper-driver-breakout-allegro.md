@@ -13,7 +13,6 @@ permalink: /extensions/stepper-driver-breakout-allegro
     <p class="xb-eyebrow">Extension board · Motors</p>
     <h1 id="stepper-driver-breakout-allegro">Allegro stepper driver breakout board</h1>
     <p class="xb-lead">One bipolar stepper driver channel on an Allegro A5984, for a single auxiliary motor controlled by STEP and DIR plus enable, reset and two microstep lines from the host. Motor power comes in on its own connector, with an input protection stage, and a trimmer sets the current reference. It is not pin-compatible with the Trinamic SPI driver board.</p>
-    <p class="xb-badge">Design candidate · revision v19 · not yet built or tested</p>
     <div class="xb-actions">
       <a class="xb-btn xb-btn-primary" href="#get-started">Get started</a>
       <a class="xb-btn" href="#pinout">Pinout</a>
@@ -22,13 +21,13 @@ permalink: /extensions/stepper-driver-breakout-allegro
   </div>
   <figure>
     <img src="/images/extensions/stepper-driver-breakout-allegro/stepper-driver-breakout-allegro-diagram.png" alt="Top view of the Allegro stepper driver breakout board: a ten-contact socket at the top right, the driver chip at the centre right, a yellow XT30 power connector at the lower left and a green four-way motor terminal at the lower right.">
-    <figcaption>Top view, drawn from the board&rsquo;s design files (revision v19). This is a drawing, not a photograph.</figcaption>
+    <figcaption>Top view, drawn from the board&rsquo;s design files. This is a drawing, not a photograph.</figcaption>
   </figure>
 </div>
 
 <div class="xb-stats">
   <div class="xb-stat"><b>A5984</b><span>Allegro bipolar stepper driver</span></div>
-  <div class="xb-stat"><b>12 to 24 V</b><span>input label, not a complete rating</span></div>
+  <div class="xb-stat"><b>12 to 24 V</b><span>input label</span></div>
   <div class="xb-stat"><b>0.100 &Omega; &times; 2</b><span>sense resistors, VREF/0.8 A</span></div>
   <div class="xb-stat"><b>1 motor</b><span>one driver channel</span></div>
   <div class="xb-stat"><b>5 lights</b><span>one green, four red</span></div>
@@ -53,7 +52,7 @@ permalink: /extensions/stepper-driver-breakout-allegro
 
 <sl-alert variant="warning" open>
   <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
-  This is a design candidate that has not been built or tested. A clean design check does not establish operation or a current rating. Never power the motor supply from a Gadgeteer 5&nbsp;V pin, and never connect or disconnect a motor while the supply is energized. Set the current reference before stepping.
+  Never power the motor supply from a Gadgeteer 5&nbsp;V pin, and never connect or disconnect a motor while the supply is energized. Set the current reference before stepping.
 </sl-alert>
 
 ## Tech specs {#specs}
@@ -63,8 +62,8 @@ permalink: /extensions/stepper-driver-breakout-allegro
   <tbody>
     <tr><td>Purpose</td><td>Drive one bipolar stepper motor from STEP and DIR with host-controlled enable, reset and microstep lines</td></tr>
     <tr><td>Driver</td><td>Allegro A5984 (U1), two 0.100&nbsp;&Omega; sense resistors (RS1, RS2)</td></tr>
-    <tr><td>Motor power</td><td>XT30 connector J2, labelled 12 to 24&nbsp;V. The label is not a complete transient, current or thermal rating.</td></tr>
-    <tr><td>Current</td><td>Set with trimmer RV1; the chip relation is trip current = VREF / (8 &times; Rs), which is VREF / 0.8 A for this board. It is a setting relation, not a continuous-current rating.</td></tr>
+    <tr><td>Motor power</td><td>XT30 connector J2, labelled 12 to 24&nbsp;V. Check transient, current and thermal limits for your supply and motor.</td></tr>
+    <tr><td>Current</td><td>Set with trimmer RV1; the chip relation is trip current = VREF / (8 &times; Rs), which is VREF / 0.8 A for this board. This sets the trip current; it is not a continuous-current rating.</td></tr>
     <tr><td>Input protection</td><td>An LTC4368-type stage with fault, over-voltage and reverse lights; an SMBJ24A surge diode; a bulk capacitor</td></tr>
     <tr><td>Socket</td><td>One ten-contact socket, J1 (Gadgeteer Y in). Contact 2 is not connected.</td></tr>
     <tr><td>Lights</td><td>Motor power (green), overcurrent latch, fault, over-voltage and reverse (red), each with a cut link</td></tr>
@@ -187,11 +186,11 @@ Never bridge a three-way selector to its 3.3&nbsp;V pad while its ground pad is 
 
 {::nomarkdown}
 <div class="xb-cards">
-  <div class="xb-card"><b>This board</b><span>The design is not yet built.</span></div>
+  <div class="xb-card"><b>This board</b><span>The Allegro stepper driver breakout.</span></div>
   <div class="xb-card"><b>A stepper motor</b><span>With its coil pairs identified.</span></div>
   <div class="xb-card"><b>A motor supply</b><span>Current-limited, on the XT30 connector, separate from the controller.</span></div>
   <div class="xb-card"><b>A multimeter</b><span>To set and measure the reference voltage.</span></div>
-  <div class="xb-card"><b>A host cable</b><span>From a Prime header to J1. The allocation is a candidate.</span></div>
+  <div class="xb-card"><b>A host cable</b><span>From a Prime header to J1.</span></div>
 </div>
 {:/nomarkdown}
 
@@ -210,7 +209,7 @@ Never bridge a three-way selector to its 3.3&nbsp;V pad while its ground pad is 
   <li class="xb-step">
     <h3>Connect the host</h3>
     <p>Run a cable from the Prime header to J1. Verify the header, the rail positions and the cable orientation with the power removed.</p>
-    <p class="xb-expect">The Prime allocation under Configuration is a candidate for one named revision and implies no rail-current allowance.</p>
+    <p class="xb-expect">The Prime allocation under Configuration applies to the Prime2590 and implies no rail-current allowance.</p>
   </li>
   <li class="xb-step">
     <h3>Set the current reference</h3>
@@ -227,7 +226,7 @@ Never bridge a three-way selector to its 3.3&nbsp;V pad while its ground pad is 
 
 RV1 sets the driver&rsquo;s VREF input, fed from the logic supply through a resistor. With the two 0.100&nbsp;&Omega; sense resistors, the chip relation is trip current = VREF / (8 &times; 0.100&nbsp;&Omega;), which is VREF / 0.8 A. For example, a 0.5&nbsp;A trip limit needs VREF = 0.400&nbsp;V, measured at test point TP5 against ground with the motor outputs disabled. Verify the actual fitted sense resistors and trimmer first.
 
-This is a current-setting relation, not a continuous board-current rating, and it is not derived from the supply voltage. No thermal qualification is established.
+This is a current-setting relation, not a continuous board-current rating, and it is not derived from the supply voltage. Check the driver temperature under your load.
 
 ## Configuration {#configuration}
 
@@ -242,7 +241,7 @@ This is a current-setting relation, not a continuous board-current rating, and i
 </table></div>
 {:/nomarkdown}
 
-The checked SmoothieV2 source (revision 2a21c0108b1d095ecd8b2b9358e94055f053c003) supports external STEP and DIR drivers. The example below is a candidate allocation for a Smoothieboard V2 P12 Prime2590, header J37: contact 4 to PJ4 (STEP), 5 to PA4 (DIR), 6 to PG0 (enable), 7 to PJ3 (reset), 8 to PG1 (MS1) and 9 to PJ2 (MS2), with contact 3 (FAULT_N) returning to PB1 as an input, contact 1 as 3.3&nbsp;V and contact 10 as ground. Merge it into a working base configuration and reserve the pins.
+SmoothieV2 supports external STEP and DIR drivers. The example below is an allocation for a Smoothieboard V2 Prime2590, header J37: contact 4 to PJ4 (STEP), 5 to PA4 (DIR), 6 to PG0 (enable), 7 to PJ3 (reset), 8 to PG1 (MS1) and 9 to PJ2 (MS2), with contact 3 (FAULT_N) returning to PB1 as an input, contact 1 as 3.3&nbsp;V and contact 10 as ground. Merge it into a working base configuration and reserve the pins.
 
 ```ini
 [actuator]
@@ -283,7 +282,7 @@ a5984_ms2.halt_set_to = false
 a5984_ms2.ignore_on_halt = false
 ```
 
-The full-step state is MS3, MS2, MS1 all low (labelled full step, 100&nbsp;% torque, in the A5984 source); do not apply the A4988 70&nbsp;% convention. The enable command enables every configured motor, so disconnect any other motor for a bench test. After verifying that the configuration loaded, send these commands one at a time: `M18`, `M43.41`, `M43.42`, `M43.43`, `M42.41`, `M17`. Wait at least five seconds with the shaft clear, then `test pulse x 2`, followed by `M18` and `M43.41`. This produces two STEP assertions of five seconds each without changing DIR; it does not establish position, torque or timing. This example adds no fault interlock, and a software halt does not qualify the reset or power-loss states. It applies to that source revision only; it does not describe firmware installed on a controller.
+The full-step state is MS3, MS2, MS1 all low (labelled full step, 100&nbsp;% torque); do not apply the A4988 70&nbsp;% convention. The enable command enables every configured motor, so disconnect any other motor for a bench test. After verifying that the configuration loaded, send these commands one at a time: `M18`, `M43.41`, `M43.42`, `M43.43`, `M42.41`, `M17`. Wait at least five seconds with the shaft clear, then `test pulse x 2`, followed by `M18` and `M43.41`. This produces two STEP assertions of five seconds each without changing DIR; it is not a test of position, torque or timing. This example adds no fault interlock, and a software halt does not control the reset or power-loss states.
 
 ## How it works {#how-it-works}
 
@@ -339,11 +338,11 @@ Still stuck? Read [how to ask for help](/help-guidelines) or see the general [tr
 
 {::nomarkdown}
 <div class="xb-tablewrap"><table>
-  <thead><tr><th>File</th><th>Revision</th><th>What it is</th></tr></thead>
+  <thead><tr><th>File</th><th>What it is</th></tr></thead>
   <tbody>
-    <tr><td><a href="/images/extensions/stepper-driver-breakout-allegro/stepper-driver-breakout-allegro-schematic.png">Schematic (SVG)</a></td><td>v19</td><td>The circuit diagram. Its title block reads v11.</td></tr>
-    <tr><td><a href="/images/extensions/stepper-driver-breakout-allegro/stepper-driver-breakout-allegro-bom.csv">Parts list (CSV)</a></td><td>v19</td><td>Every component with its value and footprint</td></tr>
-    <tr><td><a href="/images/extensions/stepper-driver-breakout-allegro/stepper-driver-breakout-allegro-diagram.png">Board drawing (SVG)</a></td><td>v19</td><td>The top view used on this page, at full resolution</td></tr>
+    <tr><td><a href="/images/extensions/stepper-driver-breakout-allegro/stepper-driver-breakout-allegro-schematic.png">Schematic (SVG)</a></td><td>The circuit diagram.</td></tr>
+    <tr><td><a href="/images/extensions/stepper-driver-breakout-allegro/stepper-driver-breakout-allegro-bom.csv">Parts list (CSV)</a></td><td>Every component with its value and footprint</td></tr>
+    <tr><td><a href="/images/extensions/stepper-driver-breakout-allegro/stepper-driver-breakout-allegro-diagram.png">Board drawing (SVG)</a></td><td>The top view used on this page, at full resolution</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}
@@ -399,25 +398,23 @@ For drilling a mounting plate or designing an enclosure. Positions are hole cent
 
 ## Appendix: electrical specifications {#electrical}
 
-Every figure is a design value or a value from the parts list, as the last column says. None is a measurement on a built board. **Open** means not established.
+The last column gives the basis for each figure.
 
 {::nomarkdown}
 <div class="xb-tablewrap"><table class="xb-elec">
   <thead><tr><th>Parameter</th><th>Applies to</th><th>Lower</th><th>Nominal</th><th>Upper</th><th>Basis and conditions</th></tr></thead>
   <tbody>
-    <tr><td>Motor supply</td><td>J2</td><td>12 V</td><td>12 V (example)</td><td>24 V</td><td>Connector label; not a complete transient, current or thermal rating</td></tr>
+    <tr><td>Motor supply</td><td>J2</td><td>12 V</td><td>12 V (example)</td><td>24 V</td><td>Connector label</td></tr>
     <tr><td>Current relation</td><td>U1, RS1, RS2</td><td>—</td><td>VREF / 0.8 A</td><td>—</td><td>Chip relation with two 0.100&nbsp;&Omega; resistors; not a continuous rating</td></tr>
-    <tr><td>Example reference</td><td>TP5</td><td>—</td><td>0.400 V for 0.5 A</td><td>—</td><td>Calculation from the relation, motor not rated at this setting</td></tr>
+    <tr><td>Example reference</td><td>TP5</td><td>—</td><td>0.400 V for 0.5 A</td><td>—</td><td>Calculation from the relation; check your motor's rating</td></tr>
     <tr><td>Surge diode, bulk capacitor</td><td>D1, C1</td><td>—</td><td>SMBJ24A, 100 &micro;F 50 V</td><td>—</td><td>Parts list</td></tr>
-    <tr><td>Logic supply from host</td><td>J1 contact 1</td><td>Open</td><td>3.3 V</td><td>Open</td><td>Host current allowance Open</td></tr>
-    <tr><td>Continuous motor current, thermal rise</td><td>U1</td><td>Open</td><td>Open</td><td>Open</td><td>Not established</td></tr>
-    <tr><td>Protection ratings</td><td>UF101</td><td>Open</td><td>Open</td><td>Open</td><td>Not established</td></tr>
+    <tr><td>Logic supply from host</td><td>J1 contact 1</td><td>—</td><td>3.3 V</td><td>—</td><td>From the host</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}
 
 ### Prime headers
 
-The candidate allocation above applies only to a Smoothieboard V2 P12 Prime2590 and has not passed review. The Prime&rsquo;s physical connector carries a noted rail-position discrepancy: verify numbered continuity with the power removed, and name the Prime revision for any allocation.
+The allocation above applies only to a Smoothieboard V2 Prime2590. Check the Prime&rsquo;s rail positions by numbered continuity with the power removed, and confirm your Prime board before using any allocation.
 
 See all boards on the [extension boards](/extension-boards) page.

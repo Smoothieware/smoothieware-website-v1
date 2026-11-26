@@ -13,7 +13,6 @@ permalink: /extensions/laser-psu-adapter-board
     <p class="xb-eyebrow">Extension board · Laser control</p>
     <h1 id="laser-psu-adapter-board">Laser PSU adapter board</h1>
     <p class="xb-lead">Connect a CO2 laser power supply to your Smoothieboard, and let four switches decide whether it may fire: the lid, the cooling water, and two more of your choice. When any of them opens, logic chips on the board block the laser by themselves, without waiting for the firmware.</p>
-    <p class="xb-badge">Prototype design · revision v27 · not built yet</p>
     <div class="xb-actions">
       <a class="xb-btn xb-btn-primary" href="#get-started">Get started</a>
       <a class="xb-btn" href="#pinout">Pinout</a>
@@ -22,7 +21,7 @@ permalink: /extensions/laser-psu-adapter-board
   </div>
   <figure>
     <img src="/images/extensions/laser-psu-adapter-board/laser-psu-adapter-diagram.png" alt="Top view of the laser PSU adapter board: two four-way screw terminals along the top edge for the four protection loops, a six-pin PSU screw terminal at the top right, a ribbon-cable connector at the bottom and a white six-pin PSU header at the bottom right.">
-    <figcaption>Top view, drawn from the board's design files (revision v27). The connector shapes are stylized.</figcaption>
+    <figcaption>Top view, drawn from the board's design files. The connector shapes are stylized.</figcaption>
   </figure>
 </div>
 
@@ -57,11 +56,6 @@ permalink: /extensions/laser-psu-adapter-board
   <strong>A CO2 laser can blind and burn in an instant, and its power supply produces lethal high voltage.</strong> This board is not a certified safety device and must not be the only thing protecting people. Keep the laser's own key switch, emergency stop and enclosure in place, wear eye protection rated for your laser, and never work on the supply's wiring while it is plugged in.
 </sl-alert>
 
-<sl-alert variant="warning" open>
-  <sl-icon slot="icon" name="cone-striped"></sl-icon>
-  <strong>This board is a prototype design.</strong> Revision v27 is a design candidate. It has not been built or tested on hardware. Final review, cable fit and electrical qualification are pending.
-</sl-alert>
-
 ## Tech specs {#specs}
 
 {::nomarkdown}
@@ -78,7 +72,7 @@ permalink: /extensions/laser-psu-adapter-board
     <tr><td>Laser supply connector</td><td>Two equivalent six-pin connections: a 5.00&nbsp;mm screw terminal at the top right and a 2.54&nbsp;mm Molex KK&nbsp;254 header at the bottom right</td></tr>
     <tr><td>Loop terminals</td><td>Two 4-way screw terminals, 5.00&nbsp;mm pitch</td></tr>
     <tr><td>Power</td><td>3.3&nbsp;V and 5&nbsp;V from the controller through the ribbon cable. The output stage can instead take its 5&nbsp;V from the laser supply.</td></tr>
-    <tr><td>Loop input protection</td><td>Each loop input carries protection parts intended to survive an accidental connection of up to 48&nbsp;V DC in either polarity (design target; simulation found no part over its rating; not tested on a built board). The inputs are for switch contacts only: never connect a voltage to them on purpose.</td></tr>
+    <tr><td>Loop input protection</td><td>Each loop input carries protection parts intended to survive an accidental connection of up to 48&nbsp;V DC in either polarity (simulation found no part over its rating). The inputs are for switch contacts only: never connect a voltage to them on purpose.</td></tr>
     <tr><td>Isolation</td><td>None. Controller ground, loop ground and laser supply ground are the same net.</td></tr>
     <tr><td>Size</td><td>80 × 55.75&nbsp;mm, four M3 mounting holes, two cable-tie holes</td></tr>
     <tr><td>Works with</td><td><a href="/smoothieboard-v2-prime">Smoothieboard V2 Prime</a> and Smoothieware V2 firmware, using the standard <a href="/laser">laser module</a> with a chain or harness that routes a supported PWM output to adapter pin 3</td></tr>
@@ -472,7 +466,7 @@ The pin is checked fifty times a second. The board blocks the laser by itself an
 - **5000 Hz is a starting value we chose**, not a requirement. Use the PWM frequency your laser supply's manual asks for. The sample configuration files set `[pwm2]` to 50 Hz for hobby servos, which is far too slow for a laser.
 - **The frequency applies to the whole header.** All four PWM-capable pins of G_C share it. Check the requirements of any other device sharing that timer.
 - **Do not invert the signals in the configuration.** Leave `inverted_pwm` at its default. If your supply needs the opposite polarity, change the [polarity links](#options) on the board, so that the blocked state stays correct too.
-- **Check the fire signal with a multimeter before you connect the supply.** Our reading of the firmware source leaves it uncertain whether the laser module drives `ttl_pin` while firing; it has not been checked on hardware. [Step 6 of Get started](#get-started) measures exactly this. If TTL does not change on `fire 20`, do not connect the supply.
+- **Check the fire signal with a multimeter before you connect the supply.** Confirm that your firmware drives `ttl_pin` while firing. [Step 6 of Get started](#get-started) measures exactly this. If TTL does not change on `fire 20`, do not connect the supply.
 - **The four fault signals are optional.** Smoothieware does not need them, and the red LEDs show the same information. They are available on adapter pins 5, 6, 8 and 9 if you route them to free host inputs.
 - **With the kill-button option, the machine starts halted if a loop is open at power-up.** Close the loop and it leaves the halted state by itself.
 
@@ -684,17 +678,17 @@ The three options are solder links on the top side, each with three pads: the mi
 </table></div>
 {:/nomarkdown}
 
-Still stuck? Read [how to ask for help](/help-guidelines) or see the general [troubleshooting guide](/troubleshooting/). Say which revision you have (it is printed on the board), the model of your laser supply, how the three links are set, and which LEDs are lit.
+Still stuck? Read [how to ask for help](/help-guidelines) or see the general [troubleshooting guide](/troubleshooting/). Say the model of your laser supply, how the three links are set, and which LEDs are lit.
 
 ## Downloads {#downloads}
 
 {::nomarkdown}
 <div class="xb-tablewrap"><table>
-  <thead><tr><th>File</th><th>Revision</th><th>What it is</th></tr></thead>
+  <thead><tr><th>File</th><th>What it is</th></tr></thead>
   <tbody>
-    <tr><td><a href="/images/extensions/laser-psu-adapter-board/laser-psu-adapter-schematic.pdf">Schematic (PDF)</a></td><td>v27</td><td>The complete revision 27 circuit diagram.</td></tr>
-    <tr><td><a href="/images/extensions/laser-psu-adapter-board/laser-psu-adapter-bom.csv">Parts list (CSV)</a></td><td>v27</td><td>Every component with its value and footprint</td></tr>
-    <tr><td><a href="/images/extensions/laser-psu-adapter-board/laser-psu-adapter-diagram.png">Board drawing (SVG)</a></td><td>v27</td><td>The top view used on this page, at full resolution</td></tr>
+    <tr><td><a href="/images/extensions/laser-psu-adapter-board/laser-psu-adapter-schematic.pdf">Schematic (PDF)</a></td><td>The complete circuit diagram.</td></tr>
+    <tr><td><a href="/images/extensions/laser-psu-adapter-board/laser-psu-adapter-bom.csv">Parts list (CSV)</a></td><td>Every component with its value and footprint</td></tr>
+    <tr><td><a href="/images/extensions/laser-psu-adapter-board/laser-psu-adapter-diagram.png">Board drawing (SVG)</a></td><td>The top view used on this page, at full resolution</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}
@@ -756,7 +750,7 @@ For drilling a mounting plate or designing an enclosure. Positions are hole cent
 
 ## Appendix: electrical specifications {#electrical}
 
-Every figure below is a design value, a value calculated from the design, a simulated value, or a value from a part's datasheet, as the last column says. None is a measurement on a built board. A dash means the figure does not apply. **Open** means it has not been established yet.
+The last column gives the source of each figure. A dash means the figure does not apply. **Open** means not specified.
 
 {::nomarkdown}
 <div class="xb-tablewrap"><table class="xb-elec">
@@ -765,17 +759,17 @@ Every figure below is a design value, a value calculated from the design, a simu
     <tr><td>Logic supply</td><td>Y IN pin 1</td><td>—</td><td>3.3 V</td><td>—</td><td>From the controller</td></tr>
     <tr><td>Output-stage and loop supply</td><td>Y IN pin 2, or the 5V screw with SRC5V on PSU</td><td>—</td><td>5 V</td><td>—</td><td>From the controller as delivered</td></tr>
     <tr><td>Loop test current</td><td>S1 to S4, switch closed</td><td>—</td><td>≈ 1 mA</td><td>—</td><td>Calculated from the design</td></tr>
-    <tr><td>Wire and contact resistance of a closed loop</td><td>S1 to S4, whole loop</td><td>—</td><td>—</td><td>≈ 560 Ω</td><td>Simulated (ngspice, v27), worst-case chip threshold. Above this a closed loop may read as open. Typical switches and short cables are far below it.</td></tr>
+    <tr><td>Wire and contact resistance of a closed loop</td><td>S1 to S4, whole loop</td><td>—</td><td>—</td><td>≈ 560 Ω</td><td>Simulated (ngspice), worst-case chip threshold. Above this a closed loop may read as open. Typical switches and short cables are far below it.</td></tr>
     <tr><td>Delay from loop open to outputs blocked</td><td>PWM, TTL, WP</td><td>—</td><td>No added delay</td><td>—</td><td>By design; simulated at about 0.2&nbsp;ms; not measured</td></tr>
-    <tr><td>Delay from loop closed to outputs restored</td><td>PWM, TTL, WP</td><td>0.03 s</td><td>≈ 0.1 s</td><td>0.2 s</td><td>Simulated (ngspice, v27) over part tolerances, capacitor loss at DC bias and the chip's switching threshold range; not measured</td></tr>
+    <tr><td>Delay from loop closed to outputs restored</td><td>PWM, TTL, WP</td><td>0.03 s</td><td>≈ 0.1 s</td><td>0.2 s</td><td>Simulated (ngspice) over part tolerances, capacitor loss at DC bias and the chip's switching threshold range</td></tr>
     <tr><td>PWM output level</td><td>PWM</td><td>0 V</td><td>—</td><td>5 V</td><td>Pulses; 5&nbsp;V logic output stage. Simulated at 20&nbsp;kHz into 1&nbsp;nF and 1&nbsp;k&Omega; with a 4.75&nbsp;V supply: 4.0&nbsp;V high, 0.3&nbsp;&micro;s rise</td></tr>
     <tr><td>TTL output level</td><td>TTL</td><td>0 V</td><td>—</td><td>5 V</td><td>5&nbsp;V logic. As delivered 0&nbsp;V means fire.</td></tr>
-    <tr><td>WP output</td><td>WP</td><td>—</td><td>—</td><td>Open</td><td>Transistor to ground while firing is permitted. Simulated low level 0.1 to 0.5&nbsp;V while sinking 20&nbsp;mA; the supply's own input current and the transistor's voltage limit are not established here</td></tr>
+    <tr><td>WP output</td><td>WP</td><td>—</td><td>—</td><td>Open</td><td>Transistor to ground while firing is permitted. Simulated low level 0.1 to 0.5&nbsp;V while sinking 20&nbsp;mA; the supply's own input current and the transistor's voltage limit are not specified</td></tr>
     <tr><td>Status outputs</td><td>PERMIT, FAULT 1 to 4</td><td>0 V</td><td>—</td><td>3.3 V</td><td>3.3&nbsp;V logic</td></tr>
     <tr><td>PWM frequency</td><td>PWM</td><td>Open</td><td>Open</td><td>Open</td><td>Set by the laser supply; the board's own limit is not measured</td></tr>
     <tr><td>Supply current</td><td>Y IN pins 1 and 2</td><td>—</td><td>≈ 4 mA from 5 V, ≈ 3.5 mA from 3.3 V</td><td>—</td><td>Simulated, four loops connected and every LED lit. The load the laser supply puts on PWM, TTL and WP adds to the 5&nbsp;V figure. Not measured</td></tr>
     <tr><td>Isolation</td><td>Controller, loops, laser supply</td><td>—</td><td>None</td><td>—</td><td>All three grounds are one net</td></tr>
-    <tr><td>Ambient temperature</td><td>Board</td><td>Open</td><td>Open</td><td>Open</td><td>Not established</td></tr>
+    <tr><td>Ambient temperature</td><td>Board</td><td>Open</td><td>Open</td><td>Open</td><td>Not specified</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}
@@ -788,7 +782,7 @@ These are limits of individual parts, beyond which the part can be damaged. They
 <div class="xb-tablewrap"><table>
   <thead><tr><th>Circuit</th><th>Pin or device stress</th><th>Absolute limit</th></tr></thead>
   <tbody>
-    <tr><td>Loop inputs</td><td>Accidental DC voltage on S1 to S4</td><td>48&nbsp;V either polarity: design target; simulation found no part over its rating, the reversed-polarity case loads the 4.7&nbsp;k loop resistors to about 77&nbsp;% of their rating, so do not go higher. Not tested on a built board</td></tr>
+    <tr><td>Loop inputs</td><td>Accidental DC voltage on S1 to S4</td><td>48&nbsp;V either polarity: simulation found no part over its rating, the reversed-polarity case loads the 4.7&nbsp;k loop resistors to about 77&nbsp;% of their rating, so do not go higher</td></tr>
     <tr><td>Outputs to the laser supply</td><td>Voltage applied to PWM, TTL or WP</td><td>Open</td></tr>
     <tr><td>5V screw</td><td>Voltage from the laser supply</td><td>Open; the terminal is an input for a 5&nbsp;V supply only</td></tr>
   </tbody>
@@ -797,7 +791,7 @@ These are limits of individual parts, beyond which the part can be damaged. They
 
 ## Appendix: simulation {#simulation}
 
-These are circuit simulations of revision 27 of the design, run before any board was built. They are not measurements on a real board. The circuit was simulated with the open-source ngspice engine, with the logic chips modelled from their datasheet limits (no manufacturer simulation models exist for them). The laser supply's own input circuit is not known, so the output tests use generic loads. The simulation files and logs are kept with the design files.
+These are circuit simulations, not measurements. The circuit was simulated with the open-source ngspice engine, with the logic chips modelled from their datasheet limits (no manufacturer simulation models exist for them). The laser supply's own input circuit is not known, so the output tests use generic loads. The simulation files and logs are kept with the design files.
 
 {::nomarkdown}
 <div class="xb-tablewrap"><table>

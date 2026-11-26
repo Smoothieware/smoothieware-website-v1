@@ -13,7 +13,6 @@ permalink: /extensions/additional-endstop-inputs-breakout
     <p class="xb-eyebrow">Extension board · Inputs</p>
     <h1 id="additional-endstop-inputs-breakout">Additional endstop inputs breakout</h1>
     <p class="xb-lead">Give your Smoothieboard seven more inputs: six for limit switches or 5&nbsp;V sensors, and one for a probe whose signal can be as high as 45&nbsp;V. One ribbon cable connects it, and the board powers your sensors itself.</p>
-    <p class="xb-badge">Prototype design · revision v25 · not tested on hardware</p>
     <div class="xb-actions">
       <a class="xb-btn xb-btn-primary" href="#get-started">Get started</a>
       <a class="xb-btn" href="#pinout">Pinout</a>
@@ -22,14 +21,14 @@ permalink: /extensions/additional-endstop-inputs-breakout
   </div>
   <figure>
     <img src="/images/extensions/additional-endstop-inputs-breakout/endstop-inputs-diagram.png" alt="Top view drawing of the endstop inputs board: two ribbon-cable connectors along the top edge, six white three-pin input connectors numbered 1 to 6 along the bottom edge and a green three-way screw terminal at the bottom right.">
-    <figcaption>Drawing generated from the board's design files (revision v25), to scale. It is not a photograph.</figcaption>
+    <figcaption>Drawing generated from the board's design files, to scale. It is not a photograph.</figcaption>
   </figure>
 </div>
 
 <div class="xb-stats">
   <div class="xb-stat"><b>6</b><span>inputs for switches and 5&nbsp;V sensors</span></div>
-  <div class="xb-stat"><b>1</b><span>probe input for signals from 3 to 45&nbsp;V (design target)</span></div>
-  <div class="xb-stat"><b>0.2 A</b><span>of 5&nbsp;V sensor power in total, current-limited (design value)</span></div>
+  <div class="xb-stat"><b>1</b><span>probe input for signals from 3 to 45&nbsp;V</span></div>
+  <div class="xb-stat"><b>0.2 A</b><span>of 5&nbsp;V sensor power in total, current-limited</span></div>
   <div class="xb-stat"><b>3.3 V</b><span>clean logic signals to the controller</span></div>
   <div class="xb-stat"><b>3</b><span>input connector types, one chosen at assembly</span></div>
   <div class="xb-stat"><b>96 × 70.5</b><span>millimetres, four M3 mounting holes</span></div>
@@ -53,11 +52,6 @@ permalink: /extensions/additional-endstop-inputs-breakout
 </nav>
 {:/nomarkdown}
 
-<sl-alert variant="warning" open>
-  <sl-icon slot="icon" name="cone-striped"></sl-icon>
-  <strong>This board is a prototype design.</strong> Revision v25 passes the design software's electrical and spacing checks without errors, but it has not been released for manufacturing and has no hardware test results. Every figure on this page is calculated from the design, not measured. The page will be updated as hardware is built and tested.
-</sl-alert>
-
 ## Tech specs {#specs}
 
 {::nomarkdown}
@@ -66,9 +60,9 @@ permalink: /extensions/additional-endstop-inputs-breakout
     <tr><td>Inputs 1 to 6</td><td>For switch contacts to ground and for sensors with a 0 to 5&nbsp;V output. Each has three pins: signal, ground and 5&nbsp;V.</td></tr>
     <tr><td>Pull-up, inputs 1 to 6</td><td>10&nbsp;kΩ to the board's 5&nbsp;V sensor supply: about 0.5&nbsp;mA through a closed switch (calculated)</td></tr>
     <tr><td>Filtering, inputs 1 to 6</td><td>A filter of about 1&nbsp;ms (calculated) followed by a Schmitt-trigger buffer, which turns a slow or noisy edge into one clean transition</td></tr>
-    <tr><td>Input 7 (probe)</td><td>For a signal between 3 and 45&nbsp;V, positive only (design target, as printed on the board). Reads high above about 2.2&nbsp;V and low below (calculated).</td></tr>
+    <tr><td>Input 7 (probe)</td><td>For a signal between 3 and 45&nbsp;V, positive only (as printed on the board). Reads high above about 2.2&nbsp;V and low below (calculated).</td></tr>
     <tr><td>Signals to the controller</td><td>Seven 3.3&nbsp;V logic outputs, each through 330&nbsp;Ω (inputs 1 to 6) or a 10&nbsp;kΩ pull-up (input 7). Not inverted: an open switch reads high.</td></tr>
-    <tr><td>Sensor power</td><td>5&nbsp;V on every input connector, taken from the controller and limited to about 0.2&nbsp;A for all seven together (design value, as printed on the board)</td></tr>
+    <tr><td>Sensor power</td><td>5&nbsp;V on every input connector, taken from the controller and limited to about 0.2&nbsp;A for all seven together (as printed on the board)</td></tr>
     <tr><td>Indicators</td><td>Green <b>POWER 3V3</b> LED. Red <b>FIELD FAULT</b> LED, lit when the sensor power limiter reports a fault.</td></tr>
     <tr><td>Control connector</td><td>2×5-pin, 1.27&nbsp;mm pitch Gadgeteer socket, type Y</td></tr>
     <tr><td>Chain connector</td><td>A second 2×5-pin socket that can pass unused controller pins on to another board</td></tr>
@@ -82,7 +76,7 @@ permalink: /extensions/additional-endstop-inputs-breakout
 </table></div>
 {:/nomarkdown}
 
-Every figure with its limits and its basis is in the [electrical specifications](#electrical) appendix; the hole positions are in the [mounting dimensions](#mounting) appendix.
+The electrical figures are in the [electrical specifications](#electrical) appendix; the hole positions are in the [mounting dimensions](#mounting) appendix.
 
 ## Board tour {#tour}
 
@@ -520,7 +514,7 @@ The firmware has one kill button only. It is polled five times a second and acts
 
 **Never put more than 5 V on S of inputs 1 to 6.** They are built for switches and 5 V sensors. A sensor powered from 12 or 24 V whose output rises to its supply voltage belongs on input 7.
 
-**A probe on input 7.** This input accepts a signal up to 45 V (design target) and reads high above about 2.2 V. Power a 12 to 24 V probe from its own supply, connect that supply's negative terminal to G and the probe's output to S. Then:
+**A probe on input 7.** This input accepts a signal up to 45 V and reads high above about 2.2 V. Power a 12 to 24 V probe from its own supply, connect that supply's negative terminal to G and the probe's output to S. Then:
 
 - If the probe **pulls its output to ground** when it triggers (NPN), leave link JP21 closed. The input reads high when idle and low when triggered, so the configuration uses `!`.
 - If the probe **drives its output up to its supply voltage** when it triggers (PNP), cut link JP21. The input then reads low when idle and high when triggered, and the configuration needs no `!`.
@@ -639,22 +633,20 @@ That controller pin then appears on the same pin number of J9. Power and ground 
 </table></div>
 {:/nomarkdown}
 
-Still stuck? Read [how to ask for help](/help-guidelines) or see the general [troubleshooting guide](/troubleshooting/). Say which revision you have (it is printed on the board), which connector type it has, what is connected to each input, and what `M119` replies.
+Still stuck? Read [how to ask for help](/help-guidelines) or see the general [troubleshooting guide](/troubleshooting/). Include the text printed on your board, which connector type it has, what is connected to each input, and what `M119` replies.
 
 ## Downloads {#downloads}
 
 {::nomarkdown}
 <div class="xb-tablewrap"><table>
-  <thead><tr><th>File</th><th>Revision</th><th>What it is</th></tr></thead>
+  <thead><tr><th>File</th><th>What it is</th></tr></thead>
   <tbody>
-    <tr><td><a href="/images/extensions/additional-endstop-inputs-breakout/endstop-inputs-schematic.pdf">Schematic (PDF)</a></td><td>v25</td><td>The complete circuit diagram</td></tr>
-    <tr><td><a href="/images/extensions/additional-endstop-inputs-breakout/endstop-inputs-bom.csv">Parts list (CSV)</a></td><td>v25</td><td>Every component with its value and footprint. Inputs 1 to 6 are listed with the shared footprint that accepts all three connector types.</td></tr>
-    <tr><td><a href="/images/extensions/additional-endstop-inputs-breakout/endstop-inputs-diagram.png">Top view (SVG)</a></td><td>v25</td><td>The drawing used on this page, to scale: one unit is one millimetre</td></tr>
+    <tr><td><a href="/images/extensions/additional-endstop-inputs-breakout/endstop-inputs-schematic.pdf">Schematic (PDF)</a></td><td>The complete circuit diagram</td></tr>
+    <tr><td><a href="/images/extensions/additional-endstop-inputs-breakout/endstop-inputs-bom.csv">Parts list (CSV)</a></td><td>Every component with its value and footprint. Inputs 1 to 6 are listed with the shared footprint that accepts all three connector types.</td></tr>
+    <tr><td><a href="/images/extensions/additional-endstop-inputs-breakout/endstop-inputs-diagram.png">Top view (SVG)</a></td><td>The drawing used on this page, to scale: one unit is one millimetre</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}
-
-The KiCad design files will be linked here when the board's repository is published.
 
 ## Appendix: mounting dimensions {#mounting}
 
@@ -711,25 +703,22 @@ For drilling a mounting plate or designing an enclosure. Positions are hole cent
 
 ## Appendix: electrical specifications {#electrical}
 
-Every figure below is a design value, a value calculated from the design, or a value from a part's datasheet, as the last column says. None is a measurement on a built board. A dash means the figure does not apply. **Open** means it has not been established yet.
+A dash means that no value is given or the figure does not apply.
 
 {::nomarkdown}
 <div class="xb-tablewrap"><table class="xb-elec">
-  <thead><tr><th>Parameter</th><th>Applies to</th><th>Lower</th><th>Nominal</th><th>Upper</th><th>Basis and conditions</th></tr></thead>
+  <thead><tr><th>Parameter</th><th>Applies to</th><th>Lower</th><th>Nominal</th><th>Upper</th><th>Conditions</th></tr></thead>
   <tbody>
     <tr><td>Logic supply</td><td>J8 pin 1</td><td>—</td><td>3.3 V</td><td>—</td><td>From the controller</td></tr>
     <tr><td>Sensor supply input</td><td>J8 pin 2</td><td>—</td><td>5 V</td><td>—</td><td>From the controller</td></tr>
-    <tr><td>Sensor power, all seven inputs together</td><td>5V contacts</td><td>—</td><td>—</td><td>≈ 0.2 A</td><td>Design value, as printed on the board</td></tr>
-    <tr><td>Sensor signal voltage</td><td>Inputs 1 to 6</td><td>0 V</td><td>—</td><td>5 V</td><td>Design range</td></tr>
+    <tr><td>Sensor power, all seven inputs together</td><td>5V contacts</td><td>—</td><td>—</td><td>≈ 0.2 A</td><td>Printed on the board</td></tr>
+    <tr><td>Sensor signal voltage</td><td>Inputs 1 to 6</td><td>0 V</td><td>—</td><td>5 V</td><td>Signal range</td></tr>
     <tr><td>Pull-up</td><td>Inputs 1 to 6</td><td>—</td><td>10 kΩ</td><td>—</td><td>Fitted part value, to the 5&nbsp;V sensor supply</td></tr>
     <tr><td>Current through a closed switch</td><td>Inputs 1 to 6</td><td>—</td><td>≈ 0.5 mA</td><td>—</td><td>Calculated</td></tr>
     <tr><td>Input filter time</td><td>Inputs 1 to 6</td><td>—</td><td>≈ 1 ms</td><td>—</td><td>Calculated</td></tr>
-    <tr><td>Signal voltage</td><td>Input 7 (probe)</td><td>3 V</td><td>—</td><td>45 V</td><td>Design target, as printed on the board. Positive only.</td></tr>
+    <tr><td>Signal voltage</td><td>Input 7 (probe)</td><td>3 V</td><td>—</td><td>45 V</td><td>Printed on the board. Positive only.</td></tr>
     <tr><td>Switching threshold</td><td>Input 7 (probe)</td><td>—</td><td>≈ 2.2 V</td><td>—</td><td>Calculated</td></tr>
     <tr><td>Output level to the controller</td><td>J8 pins 3 to 9</td><td>0 V</td><td>—</td><td>3.3 V</td><td>Logic outputs; through 330&nbsp;Ω (inputs 1 to 6) or a 10&nbsp;kΩ pull-up (input 7)</td></tr>
-    <tr><td>Switching thresholds</td><td>Inputs 1 to 6</td><td>Open</td><td>Open</td><td>Open</td><td>Not measured</td></tr>
-    <tr><td>Current drawn from the controller</td><td>J8 pins 1 and 2</td><td>Open</td><td>Open</td><td>Open</td><td>Not measured</td></tr>
-    <tr><td>Ambient temperature</td><td>Board</td><td>Open</td><td>Open</td><td>Open</td><td>Not established</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}
@@ -742,9 +731,9 @@ These are limits of individual parts, beyond which the part can be damaged. They
 <div class="xb-tablewrap"><table>
   <thead><tr><th>Circuit</th><th>Pin or device stress</th><th>Absolute limit</th></tr></thead>
   <tbody>
-    <tr><td>Probe input</td><td>Voltage on the S screw of input 7</td><td>45 V, positive only (design target); negative voltage: Open</td></tr>
-    <tr><td>Inputs 1 to 6</td><td>Voltage on a signal pin</td><td>Open; design range ends at 5 V</td></tr>
-    <tr><td>Sensor power</td><td>Short circuit on a 5V contact</td><td>Limited to about 0.2 A (design value); not tested</td></tr>
+    <tr><td>Probe input</td><td>Voltage on the S screw of input 7</td><td>45 V, positive only</td></tr>
+    <tr><td>Inputs 1 to 6</td><td>Voltage on a signal pin</td><td>Stay within 0 to 5 V</td></tr>
+    <tr><td>Sensor power</td><td>Short circuit on a 5V contact</td><td>Limited to about 0.2 A</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}

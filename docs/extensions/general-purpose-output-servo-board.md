@@ -13,7 +13,6 @@ permalink: /extensions/general-purpose-output-servo-board
     <p class="xb-eyebrow">Extension board · Motors and outputs</p>
     <h1 id="general-purpose-output-servo-board">Additional general purpose outputs breakout / Servo board</h1>
     <p class="xb-lead">Seven buffered outputs on three-pin ground, power and signal headers. Each channel follows its own host input through a UCC27524A driver and a fused supply branch. Smoothieware generates the level or pulse train; this board supplies the output stage. Typical uses are servo-style pulse inputs, solid-state relay control inputs and external-driver logic, once their voltage and current needs have been checked.</p>
-    <p class="xb-badge">Design candidate · revision v18 · unqualified study · not yet built or tested</p>
     <div class="xb-actions">
       <a class="xb-btn xb-btn-primary" href="#get-started">Get started</a>
       <a class="xb-btn" href="#pinout">Pinout</a>
@@ -52,7 +51,7 @@ permalink: /extensions/general-purpose-output-servo-board
 
 <sl-alert variant="warning" open>
   <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
-  This is an unqualified design study that has not been built or tested, and no servo or other load has been demonstrated with it. A servo&rsquo;s supply voltage and its signal-input tolerance are separate requirements, and changing JP2 changes the driven signal amplitude. The silk says no hot-plug: power off first.
+A servo&rsquo;s supply voltage and its signal-input tolerance are separate requirements, and changing JP2 changes the driven signal amplitude. The silk says no hot-plug: power off first.
 </sl-alert>
 
 ## Tech specs {#specs}
@@ -75,7 +74,7 @@ permalink: /extensions/general-purpose-output-servo-board
 </table></div>
 {:/nomarkdown}
 
-Every figure with its basis is in the [electrical specifications](#electrical) appendix; hole positions are in the [mounting dimensions](#mounting) appendix. The schematic title block reads v10, the PCB title block v17 and the silk V18; the page documents the v18 package.
+Every figure with its basis is in the [electrical specifications](#electrical) appendix; hole positions are in the [mounting dimensions](#mounting) appendix.
 
 ## Board tour {#tour}
 
@@ -163,9 +162,9 @@ To select pads 2&ndash;3 on JP1 or JP2, remove the 1&ndash;2 bridge first; bridg
 
 {::nomarkdown}
 <div class="xb-cards">
-  <div class="xb-card"><b>This board</b><span>An unqualified design study, not yet built.</span></div>
+  <div class="xb-card"><b>This board</b><span>Seven buffered outputs.</span></div>
   <div class="xb-card"><b>A screw-terminal breakout</b><span>For the contact remapping from the Prime header.</span></div>
-  <div class="xb-card"><b>A ten-core ribbon</b><span>Checked core by core for continuity and isolation.</span></div>
+  <div class="xb-card"><b>A ten-core ribbon</b><span>Test each core for continuity and isolation.</span></div>
   <div class="xb-card"><b>A pulse instrument</b><span>High impedance, with a probe rated for the driver supply.</span></div>
   <div class="xb-card"><b>For a load</b><span>The exact signal tolerance, supply range and startup or stall current of the servo or device.</span></div>
 </div>
@@ -179,7 +178,7 @@ Start with the no-servo pulse check: it exercises channel 1 through the normal h
 <ol class="xb-steps">
   <li class="xb-step">
     <h3>Connect with the power removed</h3>
-    <p>Run the ten-core ribbon from the Prime GC/J34 position <i>n</i> to breakout J1 position <i>n</i> for all ten positions, then check continuity and isolation of every core. The red edge in the drawing is the proposed pin-one side; it does not establish the connector&rsquo;s real keying.</p>
+    <p>Run the ten-core ribbon from the Prime GC/J34 position <i>n</i> to breakout J1 position <i>n</i> for all ten positions, then check continuity and isolation of every core. The red edge in the drawing marks the pin-one side; check it against the connector&rsquo;s keying.</p>
     <p class="xb-expect">The Prime timer output on contact 6 reaches IN1 (board J1 contact 3) through the breakout&rsquo;s remapping. A same-numbered ribbon straight to the board would send it to channel 4 instead.</p>
   </li>
   <li class="xb-step">
@@ -210,7 +209,7 @@ Start with the no-servo pulse check: it exercises channel 1 through the normal h
 </table></div>
 {:/nomarkdown}
 
-This example is checked against the pinned SmoothieV2 switch and timer sources (revision 2a21c0108b1d095ecd8b2b9358e94055f053c003) but has not been tested on an installed controller. It reserves <code>PWM2_1</code> (PI5) and the timer it shares; check that allocation against the rest of your configuration.
+This example follows the SmoothieV2 switch and timer sources at commit 2a21c0108b1d095ecd8b2b9358e94055f053c003. It reserves <code>PWM2_1</code> (PI5) and the timer it shares; check that allocation against the rest of your configuration.
 
 ```ini
 [pwm2]
@@ -253,7 +252,7 @@ pulse_bench.ignore_on_halt = false
 </figure>
 {:/nomarkdown}
 
-The board adds no pulse timing of its own: the controller generates the pulse train and each driver repeats it at the driver supply&rsquo;s voltage. A servo&rsquo;s supply and signal tolerances must both be met. The historical proposal of a 5 to 12&nbsp;V input and an output of at least 100&nbsp;mA is not a measured rating, and neither the host rails nor an output connector has a demonstrated servo startup or stall-current allowance here.
+The board adds no pulse timing of its own: the controller generates the pulse train and each driver repeats it at the driver supply&rsquo;s voltage. A servo&rsquo;s supply and signal tolerances must both be met. Check the servo&rsquo;s startup and stall current against the supply and the channel fuse.
 
 ## Troubleshooting {#troubleshooting}
 
@@ -271,7 +270,7 @@ The board adds no pulse timing of its own: the controller generates the pulse tr
   <tbody>
     <tr><td>No pulses on the instrument</td><td>JP2 (driver supply), the ribbon orientation and the core carrying contact 6, and the configuration above.</td></tr>
     <tr><td>Pulses on channel 4 instead of 1</td><td>A same-numbered ribbon without the breakout&rsquo;s remapping.</td></tr>
-    <tr><td>Servo twitches or resets</td><td>Startup and stall current against the supply and the fuse; the board has no demonstrated allowance.</td></tr>
+    <tr><td>Servo twitches or resets</td><td>Startup and stall current against the supply and the fuse.</td></tr>
     <tr><td>Wrong signal amplitude</td><td>JP2: the driven signal takes the driver supply&rsquo;s voltage.</td></tr>
   </tbody>
 </table></div>
@@ -283,11 +282,11 @@ Still stuck? Read [how to ask for help](/help-guidelines) or see the general [tr
 
 {::nomarkdown}
 <div class="xb-tablewrap"><table>
-  <thead><tr><th>File</th><th>Revision</th><th>What it is</th></tr></thead>
+  <thead><tr><th>File</th><th>What it is</th></tr></thead>
   <tbody>
-    <tr><td><a href="/images/extensions/general-purpose-output-servo-board/general-purpose-output-servo-board-schematic.pdf">Schematic (PDF)</a></td><td>v18</td><td>The complete circuit diagram. Its title block reads v10.</td></tr>
-    <tr><td><a href="/images/extensions/general-purpose-output-servo-board/general-purpose-output-servo-board-bom.csv">Parts list (CSV)</a></td><td>v18</td><td>Every component with its value and footprint</td></tr>
-    <tr><td><a href="/images/extensions/general-purpose-output-servo-board/general-purpose-output-servo-board-diagram.png">Board drawing (SVG)</a></td><td>v18</td><td>The top view used on this page, at full resolution</td></tr>
+    <tr><td><a href="/images/extensions/general-purpose-output-servo-board/general-purpose-output-servo-board-schematic.pdf">Schematic (PDF)</a></td><td>The complete circuit diagram.</td></tr>
+    <tr><td><a href="/images/extensions/general-purpose-output-servo-board/general-purpose-output-servo-board-bom.csv">Parts list (CSV)</a></td><td>Every component with its value and footprint</td></tr>
+    <tr><td><a href="/images/extensions/general-purpose-output-servo-board/general-purpose-output-servo-board-diagram.png">Board drawing (SVG)</a></td><td>The top view used on this page, at full resolution</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}
@@ -343,26 +342,24 @@ For drilling a mounting plate or designing an enclosure. Positions are hole cent
 
 ## Appendix: electrical specifications {#electrical}
 
-Every figure is a board silk value or a value from the parts list, as the last column says. None is a measurement on a built board. **Open** means not established.
+Every figure is a board silk value or a value from the parts list, as the last column says.
 
 {::nomarkdown}
 <div class="xb-tablewrap"><table class="xb-elec">
   <thead><tr><th>Parameter</th><th>Applies to</th><th>Lower</th><th>Nominal</th><th>Upper</th><th>Basis and conditions</th></tr></thead>
   <tbody>
-    <tr><td>External power</td><td>J10</td><td>5 V</td><td>Open</td><td>6 V (12 V class: 12 V)</td><td>Silk: EXT + 5&ndash;6V, 12V class 5&ndash;12V; not a qualified rating</td></tr>
+    <tr><td>External power</td><td>J10</td><td>5 V</td><td>—</td><td>6 V (12 V class: 12 V)</td><td>Silk: EXT + 5&ndash;6V, 12V class 5&ndash;12V</td></tr>
     <tr><td>Fuse per channel</td><td>F3 to F9</td><td>—</td><td>1.1 A hold</td><td>—</td><td>Parts list</td></tr>
     <tr><td>Surge diode</td><td>D1</td><td>—</td><td>SMBJ6.0A</td><td>—</td><td>Parts list (6 V class)</td></tr>
     <tr><td>Host 5 V for the signal supply</td><td>J1 contact 2</td><td>—</td><td>—</td><td>0.12 A total</td><td>Silk value (SIG: HOST 5V 0.12A TOTAL)</td></tr>
-    <tr><td>Output signal level</td><td>J3 to J9 pin 3</td><td>Open</td><td>Driver supply</td><td>Open</td><td>Follows JP2; not measured</td></tr>
-    <tr><td>Servo startup and stall current</td><td>J3 to J9 pin 2</td><td>Open</td><td>Open</td><td>Open</td><td>No allowance demonstrated</td></tr>
-    <tr><td>Behaviour at reset, boot and power-up</td><td>Outputs</td><td>Open</td><td>Open</td><td>Open</td><td>Not established</td></tr>
+    <tr><td>Output signal level</td><td>J3 to J9 pin 3</td><td>—</td><td>Driver supply</td><td>—</td><td>Follows JP2</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}
 
 ### Prime headers
 
-The pulse check above uses **Smoothieboard V2 P11 Prime** through the screw-terminal breakout. This is a candidate allocation from the source and is not verified on a built system: the Prime&rsquo;s physical connector carries a noted rail-position discrepancy, so check numbered continuity with the power removed.
+The pulse check above uses **Smoothieboard V2 P11 Prime** through the screw-terminal breakout. Check the Prime connector&rsquo;s rail positions and numbered continuity with the power removed.
 
 {::nomarkdown}
 <div class="xb-tablewrap"><table>

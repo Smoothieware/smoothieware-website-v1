@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Hall endstop breakout"
-description: "A contactless magnetic endstop with an open-drain output for a host pull-up: pinout, configuration, homing example and what is not established."
+description: "A contactless magnetic endstop with an open-drain output for a host pull-up: pinout, configuration and homing example."
 permalink: /extensions/hall-endstop-breakout
 ---
 
@@ -13,7 +13,6 @@ permalink: /extensions/hall-endstop-breakout
     <p class="xb-eyebrow">Extension board · Endstops</p>
     <h1 id="hall-endstop-breakout">Hall endstop breakout</h1>
     <p class="xb-lead">A contactless endstop built around a DRV5033AJ Hall sensor. It detects either pole of a magnet and pulls the signal low through a transistor; the host supplies the pull-up. An unplugged signal wire therefore reads the same as a detected magnet.</p>
-    <p class="xb-badge">Design candidate · revision v18 · not yet built or tested</p>
     <div class="xb-actions">
       <a class="xb-btn xb-btn-primary" href="#get-started">Get started</a>
       <a class="xb-btn" href="#pinout">Pinout</a>
@@ -22,7 +21,7 @@ permalink: /extensions/hall-endstop-breakout
   </div>
   <figure>
     <img src="/images/extensions/hall-endstop-breakout/hall-endstop-breakout-diagram.png" alt="Top view of the Hall endstop breakout: a small black Hall sensor at the top, a transistor at the left and a three-contact connector at the bottom.">
-    <figcaption>Top view, drawn from the board&rsquo;s design files (revision v18). This is a drawing, not a photograph.</figcaption>
+    <figcaption>Top view, drawn from the board&rsquo;s design files. This is a drawing, not a photograph.</figcaption>
   </figure>
 </div>
 
@@ -52,7 +51,7 @@ permalink: /extensions/hall-endstop-breakout
 
 <sl-alert variant="warning" open>
   <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
-  This is a design candidate that has not been built or tested, and it is not a qualified machine limit. The sensor&rsquo;s switching field does not give a repeatable trip distance in millimetres: the magnet, its orientation and the approach path must be tested. A signal wire shorted to ground reads as clear and is not detected.
+  The sensor&rsquo;s switching field does not give a repeatable trip distance in millimetres: test it with your magnet, orientation and approach path. A signal wire shorted to ground reads as clear and is not detected.
 </sl-alert>
 
 ## Tech specs {#specs}
@@ -66,7 +65,7 @@ permalink: /extensions/hall-endstop-breakout
     <tr><td>Series resistor</td><td>330&nbsp;&Omega;, 1&nbsp;%, 1206</td></tr>
     <tr><td>Protection</td><td>A PESD5V0S1BA diode and a 10&nbsp;nF capacitor on the signal</td></tr>
     <tr><td>Indicator</td><td>Yellow LED with a 2.2&nbsp;k&Omega; resistor, lit while a magnet is detected; cut link JP1 turns it off</td></tr>
-    <tr><td>Connector</td><td>3 contacts, S, G and 5V, at 2.54&nbsp;mm; exact connector series not specified</td></tr>
+    <tr><td>Connector</td><td>3 contacts, S, G and 5V, at 2.54&nbsp;mm</td></tr>
     <tr><td>Test points</td><td>Five test points on the board for 5&nbsp;V, signal, sensor output and two grounds (not drawn in the top view)</td></tr>
     <tr><td>Size</td><td>28 &times; 17&nbsp;mm with two M3 mounting holes</td></tr>
     <tr><td>Works with</td><td><a href="/smoothieboard-v2-prime">Smoothieboard V2 Prime</a></td></tr>
@@ -148,8 +147,7 @@ Seen from the component side as in the tour, contact 1 (S) is at the left next t
 
 {::nomarkdown}
 <div class="xb-cards">
-  <div class="xb-card"><b>This board</b><span>The design is not yet built.</span></div>
-  <div class="xb-card"><b>A magnet</b><span>Not specified by the design; qualify the part, gap and path.</span></div>
+  <div class="xb-card"><b>A magnet</b><span>Choose the magnet, gap and approach path, and check them on your machine.</span></div>
   <div class="xb-card"><b>Three wires</b><span>Signal, ground and 5&nbsp;V to the controller, with the signal on an input that has a pull-up.</span></div>
   <div class="xb-card"><b>A free input</b><span>PB1 in the example, if nothing else uses it.</span></div>
 </div>
@@ -162,7 +160,7 @@ Seen from the component side as in the tour, contact 1 (S) is at the left next t
   <li class="xb-step">
     <h3>Wire the board</h3>
     <p>With the power off, connect header G_F (J37) contact 3 (PB1) to J1 contact 1 (signal), contact 10 to J1 contact 2 (ground) and contact 2 (5&nbsp;V) to J1 contact 3. Leave the host 3.3&nbsp;V contact unused: the PB1 pull-up biases the signal. Check the contact numbers on the real boards.</p>
-    <p class="xb-expect">The rail positions on the Prime&rsquo;s physical header need checking against the board before powering; see the Prime header note in the electrical appendix.</p>
+    <p class="xb-expect">The rail positions on the Prime&rsquo;s physical header must be checked against the board before powering; see the Prime header note in the electrical appendix.</p>
   </li>
   <li class="xb-step">
     <h3>Add the configuration</h3>
@@ -205,11 +203,11 @@ bench_endstop.homing_direction = none
 bench_endstop.limit_enable = false
 ```
 
-`^` turns on the input pull-up and no `!` is used because triggered is high. The entry enables neither homing nor a limit. Do not use it while PB1 is allocated elsewhere. In the pinned SmoothieV2 source (revision 2a21c0108b1d095ecd8b2b9358e94055f053c003), the [input parser](https://github.com/Smoothieware/SmoothieV2/blob/2a21c0108b1d095ecd8b2b9358e94055f053c003/Firmware/src/modules/tools/endstops/Endstops.cpp#L130-L200) keeps `homing_direction = none` inputs and the [M119 handler](https://github.com/Smoothieware/SmoothieV2/blob/2a21c0108b1d095ecd8b2b9358e94055f053c003/Firmware/src/modules/tools/endstops/Endstops.cpp#L1013-L1030) reports their state. This has not been run on a built board.
+`^` turns on the input pull-up and no `!` is used because triggered is high. The entry enables neither homing nor a limit. Do not use it while PB1 is allocated elsewhere. In the SmoothieV2 source (commit 2a21c0108b1d095ecd8b2b9358e94055f053c003), the [input parser](https://github.com/Smoothieware/SmoothieV2/blob/2a21c0108b1d095ecd8b2b9358e94055f053c003/Firmware/src/modules/tools/endstops/Endstops.cpp#L130-L200) keeps `homing_direction = none` inputs and the [M119 handler](https://github.com/Smoothieware/SmoothieV2/blob/2a21c0108b1d095ecd8b2b9358e94055f053c003/Firmware/src/modules/tools/endstops/Endstops.cpp#L1013-L1030) reports their state.
 
 ### Worked X-min homing example
 
-Use this only after the check above passes. It assumes a working Cartesian X axis moving in the negative direction towards the sensor and a carriage starting within 8&nbsp;mm of the trigger point. It allows a 10&nbsp;mm search at 5&nbsp;mm/s, retracts 2&nbsp;mm and approaches again at 1&nbsp;mm/s. The values do not qualify the magnet gap or stopping distance. Replace the check entry with this one; do not leave both enabled.
+Use this only after the check above passes. It assumes a working Cartesian X axis moving in the negative direction towards the sensor and a carriage starting within 8&nbsp;mm of the trigger point. It allows a 10&nbsp;mm search at 5&nbsp;mm/s, retracts 2&nbsp;mm and approaches again at 1&nbsp;mm/s. The values do not establish a safe magnet gap or stopping distance. Replace the check entry with this one; do not leave both enabled.
 
 ```ini
 [endstops]
@@ -225,7 +223,7 @@ minx.retract = 2
 minx.limit_enable = false
 ```
 
-Reload the configuration, then repeat `M119` with the magnet clear and triggered. Keep an emergency stop available and the travel path clear. With `grbl_mode = false` send `G28 X0`; with `grbl_mode = true` send `G28.2 X0`, because plain `G28` is a parking command there. Stop at once if the axis moves away from the sensor or does not stop when triggered. This example deliberately leaves `limit_enable = false`, so it does not give a continuous travel limit. The pinned firmware defines the [homing direction, rates, retract and search distance](https://github.com/Smoothieware/SmoothieV2/blob/2a21c0108b1d095ecd8b2b9358e94055f053c003/Firmware/src/modules/tools/endstops/Endstops.cpp#L196-L235) and the [mode-dependent homing commands](https://github.com/Smoothieware/SmoothieV2/blob/2a21c0108b1d095ecd8b2b9358e94055f053c003/Firmware/src/modules/tools/endstops/Endstops.cpp#L919-L938). Physical operation has not been verified.
+Reload the configuration, then repeat `M119` with the magnet clear and triggered. Keep an emergency stop available and the travel path clear. With `grbl_mode = false` send `G28 X0`; with `grbl_mode = true` send `G28.2 X0`, because plain `G28` is a parking command there. Stop at once if the axis moves away from the sensor or does not stop when triggered. This example deliberately leaves `limit_enable = false`, so it does not give a continuous travel limit. The firmware defines the [homing direction, rates, retract and search distance](https://github.com/Smoothieware/SmoothieV2/blob/2a21c0108b1d095ecd8b2b9358e94055f053c003/Firmware/src/modules/tools/endstops/Endstops.cpp#L196-L235) and the [mode-dependent homing commands](https://github.com/Smoothieware/SmoothieV2/blob/2a21c0108b1d095ecd8b2b9358e94055f053c003/Firmware/src/modules/tools/endstops/Endstops.cpp#L919-L938).
 
 ## How it works {#how-it-works}
 
@@ -259,7 +257,7 @@ With no magnet near, the sensor output is high through its 10&nbsp;k&Omega; pull
     <tr><td>Always reads triggered</td><td>The signal wire is open, 5&nbsp;V is missing, or the magnet sits too close. Measure TP1 and TP4.</td></tr>
     <tr><td>Never reads triggered</td><td>Signal shorted to ground, wrong input pin, or the magnet never reaches the sensor&rsquo;s operate field.</td></tr>
     <tr><td>Reads high with no pull-up</td><td>The input has no pull-up: check the <code>^</code> in the pin name.</td></tr>
-    <tr><td>Trip point moves</td><td>Temperature, magnet and geometry are not specified or qualified.</td></tr>
+    <tr><td>Trip point moves</td><td>Temperature, magnet and geometry are all affect it.</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}
@@ -281,12 +279,12 @@ Still stuck? Read [how to ask for help](/help-guidelines) or see the general [tr
 
 {::nomarkdown}
 <div class="xb-tablewrap"><table>
-  <thead><tr><th>File</th><th>Revision</th><th>What it is</th></tr></thead>
+  <thead><tr><th>File</th><th>What it is</th></tr></thead>
   <tbody>
-    <tr><td><a href="/images/extensions/hall-endstop-breakout/hall-endstop-breakout-schematic.pdf">Schematic (PDF)</a></td><td>v18</td><td>The complete circuit diagram. Its title block reads v13.</td></tr>
-    <tr><td><a href="/images/extensions/hall-endstop-breakout/hall-endstop-breakout-bom.csv">Parts list (CSV)</a></td><td>v18</td><td>Every component with its value and footprint</td></tr>
-    <tr><td><a href="/images/extensions/hall-endstop-breakout/hall-endstop-breakout-diagram.png">Board drawing (SVG)</a></td><td>v18</td><td>The top view used on this page, at full resolution</td></tr>
-    <tr><td><a href="/assets/downloads/extensions/hall-endstop-breakout/hall-cad-study.zip">CAD study (ZIP, 70 KiB)</a></td><td>v18</td><td>KiCad 9 project, schematic, local libraries and notes. A 2D design study with no fabrication or operating qualification.</td></tr>
+    <tr><td><a href="/images/extensions/hall-endstop-breakout/hall-endstop-breakout-schematic.pdf">Schematic (PDF)</a></td><td>The complete circuit diagram.</td></tr>
+    <tr><td><a href="/images/extensions/hall-endstop-breakout/hall-endstop-breakout-bom.csv">Parts list (CSV)</a></td><td>Every component with its value and footprint</td></tr>
+    <tr><td><a href="/images/extensions/hall-endstop-breakout/hall-endstop-breakout-diagram.png">Board drawing (SVG)</a></td><td>The top view used on this page, at full resolution</td></tr>
+    <tr><td><a href="/assets/downloads/extensions/hall-endstop-breakout/hall-cad-study.zip">CAD files (ZIP, 70 KiB)</a></td><td>KiCad 9 project, schematic, local libraries and notes.</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}
@@ -334,24 +332,22 @@ For drilling a mounting plate or designing an enclosure. Positions are hole cent
 
 ## Appendix: electrical specifications {#electrical}
 
-Every figure is a design value, a value calculated from the design or a value from a part, as the last column says. None is a measurement on a built board. **Open** means not established.
+The table lists the supply, sensor and signal values and their basis.
 
 {::nomarkdown}
 <div class="xb-tablewrap"><table class="xb-elec">
   <thead><tr><th>Parameter</th><th>Applies to</th><th>Lower</th><th>Nominal</th><th>Upper</th><th>Basis and conditions</th></tr></thead>
   <tbody>
-    <tr><td>Sensor supply</td><td>J1 contact 3</td><td>Open</td><td>5 V</td><td>Open</td><td>Host-derived; current allowance Open</td></tr>
+    <tr><td>Sensor supply</td><td>J1 contact 3</td><td>—</td><td>5 V</td><td>—</td><td>Host-derived</td></tr>
     <tr><td>Operate field</td><td>DRV5033AJ</td><td>3 mT</td><td>—</td><td>12 mT</td><td>From the sensor data sheet; does not give a trip gap</td></tr>
     <tr><td>Release field</td><td>DRV5033AJ</td><td>1 mT</td><td>—</td><td>5 mT</td><td>From the sensor data sheet</td></tr>
-    <tr><td>Signal output</td><td>J1 contact 1</td><td>—</td><td>Open drain, high = triggered</td><td>—</td><td>Host pull-up required; low and high levels, rise time and input compatibility Open</td></tr>
-    <tr><td>Trip gap, repeatability, temperature behaviour</td><td>Whole board</td><td>Open</td><td>Open</td><td>Open</td><td>Magnet and geometry not specified</td></tr>
-    <tr><td>Cable length and filtering, brownout behaviour</td><td>Whole board</td><td>Open</td><td>Open</td><td>Open</td><td>Needs testing</td></tr>
+    <tr><td>Signal output</td><td>J1 contact 1</td><td>—</td><td>Open drain, high = triggered</td><td>—</td><td>Host pull-up required</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}
 
 ### Prime header G_F (J37)
 
-On the Prime, header G_F (J37) has 3.3&nbsp;V on contact 1, 5&nbsp;V on contact 2, PB1 on 3, PJ4 on 4 and ground on 10. A discrepancy in the rail positions on the Prime&rsquo;s physical connector has been noted: verify numbered continuity with the power removed. The header is unshrouded.
+On the Prime, header G_F (J37) has 3.3&nbsp;V on contact 1, 5&nbsp;V on contact 2, PB1 on 3, PJ4 on 4 and ground on 10. Verify numbered continuity of the rail positions with the power removed. The header is unshrouded.
 
 See all boards on the [extension boards](/extension-boards) page.

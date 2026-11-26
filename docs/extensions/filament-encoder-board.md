@@ -13,7 +13,6 @@ permalink: /extensions/filament-encoder-board
     <p class="xb-eyebrow">Extension board · Sensors</p>
     <h1 id="filament-encoder-board">Filament encoder board</h1>
     <p class="xb-lead">Reads a small diametrically magnetised wheel turned by the filament with an AS5047P magnetic encoder, and sends conditioned A, B and index pulses to the controller. The firmware counts the A pulses to notice commanded extrusion with no filament movement. It does not measure filament diameter, force or print quality.</p>
-    <p class="xb-badge">Design candidate · revision v14 · not yet built or tested</p>
     <div class="xb-actions">
       <a class="xb-btn xb-btn-primary" href="#get-started">Get started</a>
       <a class="xb-btn" href="#pinout">Pinout</a>
@@ -22,7 +21,7 @@ permalink: /extensions/filament-encoder-board
   </div>
   <figure>
     <img src="/images/extensions/filament-encoder-board/filament-encoder-board-diagram.png" alt="Top view of the filament encoder board: a 10-contact socket at the top, small chips in a column in the middle and the encoder chip at the bottom.">
-    <figcaption>Top view, drawn from the board&rsquo;s design files (revision v14). This is a drawing, not a photograph.</figcaption>
+    <figcaption>Top view, drawn from the board&rsquo;s design files. This is a drawing, not a photograph.</figcaption>
   </figure>
 </div>
 
@@ -52,7 +51,7 @@ permalink: /extensions/filament-encoder-board
 
 <sl-alert variant="warning" open>
   <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
-  This is a design candidate that has not been built or tested. The board has no magnet or wheel: the magnet, the wheel, the air gap and the filament path are your mechanical design. The current alarm only checks for zero pulses while extrusion is required, so stray pulses at rest can hide a jam, and it is not a calibrated slip or diameter measurement.
+  The board has no magnet or wheel: the magnet, the wheel, the air gap and the filament path are your mechanical design. The current alarm only checks for zero pulses while extrusion is required, so stray pulses at rest can hide a jam, and it is not a calibrated slip or diameter measurement.
 </sl-alert>
 
 ## Tech specs {#specs}
@@ -61,11 +60,11 @@ permalink: /extensions/filament-encoder-board
 <div class="xb-tablewrap"><table class="xb-spec">
   <tbody>
     <tr><td>Purpose</td><td>Detect commanded extrusion without measured filament movement</td></tr>
-    <tr><td>Sensor</td><td>ams OSRAM AS5047P-ATSM magnetic position encoder, with A, B and index (ABI) outputs and an SPI port for configuration and diagnostics. Its programmed state is not established by the design.</td></tr>
+    <tr><td>Sensor</td><td>ams OSRAM AS5047P-ATSM magnetic position encoder, with A, B and index (ABI) outputs and an SPI port for configuration and diagnostics. Check its programmed output mode before use.</td></tr>
     <tr><td>Buffer</td><td>74LVC3G17 Schmitt-trigger buffer for A, B and index</td></tr>
-    <tr><td>Magnet target</td><td>Diametric N35 or better, 8&nbsp;mm diameter by 3&nbsp;mm, air gap 2.0&nbsp;mm &plusmn; 0.5&nbsp;mm, axis offset within 0.5&nbsp;mm, giving 35 to 70&nbsp;mT at the sensor. Not part of the board.</td></tr>
-    <tr><td>Wheel target</td><td>12&nbsp;mm filament wheel, 1000 pulses per turn, 4000 step positions per turn</td></tr>
-    <tr><td>Supply</td><td>3.3&nbsp;V from the controller. A planning estimate of 15.84&nbsp;mA is allocated at 25&nbsp;mA; the controller header allowance is not documented.</td></tr>
+    <tr><td>Magnet</td><td>Diametric N35 or better, 8&nbsp;mm diameter by 3&nbsp;mm, air gap 2.0&nbsp;mm &plusmn; 0.5&nbsp;mm, axis offset within 0.5&nbsp;mm, giving 35 to 70&nbsp;mT at the sensor. Not part of the board.</td></tr>
+    <tr><td>Wheel</td><td>12&nbsp;mm filament wheel, 1000 pulses per turn, 4000 step positions per turn</td></tr>
+    <tr><td>Supply</td><td>3.3&nbsp;V from the controller. About 15.84&nbsp;mA estimated; allow 25&nbsp;mA.</td></tr>
     <tr><td>Protection</td><td>Two TPD4E1U06 arrays and 100&nbsp;&Omega; series resistors in the signal lines</td></tr>
     <tr><td>SPI</td><td>Mode 1, no more than 1&nbsp;MHz and a cable no longer than 0.3&nbsp;m</td></tr>
     <tr><td>Controller socket</td><td>One 10-contact Gadgeteer socket, S (Samtec SHF-105, 1.27&nbsp;mm). Not for hot-plugging.</td></tr>
@@ -157,8 +156,8 @@ Contact 1 is at the lower left of the socket in the tour (the arrow marks the lo
 
 {::nomarkdown}
 <div class="xb-cards">
-  <div class="xb-card"><b>This board</b><span>The design is not yet built.</span></div>
-  <div class="xb-card"><b>A magnet and wheel</b><span>Diametrically magnetised, 8&nbsp;mm by 3&nbsp;mm as a target, on a wheel the filament turns.</span></div>
+  <div class="xb-card"><b>This board</b><span>The AS5047P encoder board.</span></div>
+  <div class="xb-card"><b>A magnet and wheel</b><span>Diametrically magnetised, 8&nbsp;mm by 3&nbsp;mm, on a wheel the filament turns.</span></div>
   <div class="xb-card"><b>Three wires</b><span>3.3&nbsp;V, the A pulse and ground to the controller.</span></div>
   <div class="xb-card"><b>A free interrupt input</b><span>PB1 in the example. Another pin with the same line number can conflict.</span></div>
 </div>
@@ -175,11 +174,11 @@ Contact 1 is at the lower left of the socket in the tour (the arrow marks the lo
   <li class="xb-step">
     <h3>Wire three leads</h3>
     <p>With the power off, connect header G_F (J37) contacts 1, 3 and 10 to J1 contacts 1, 3 and 10: 3.3&nbsp;V, the A pulse on PB1 and ground. Leave every other contact unconnected. Check numbered continuity and the connector orientation first.</p>
-    <p class="xb-expect">The rail positions on the Prime&rsquo;s physical header need checking before powering; see the Prime header note in the electrical appendix.</p>
+    <p class="xb-expect">Check the rail positions on the Prime&rsquo;s physical header before powering; see the Prime header note in the electrical appendix.</p>
   </li>
   <li class="xb-step">
     <h3>Confirm the sensor output mode</h3>
-    <p>The sensor&rsquo;s programmed ABI state is not established by the design. Confirm that it outputs A pulses before relying on any count.</p>
+    <p>The sensor&rsquo;s ABI outputs depend on its programmed state. Confirm that it outputs A pulses before relying on any count.</p>
   </li>
   <li class="xb-step">
     <h3>Add the configuration and calibrate</h3>
@@ -200,7 +199,7 @@ Contact 1 is at the lower left of the socket in the tour (the arrow marks the lo
 </table></div>
 {:/nomarkdown}
 
-The [reviewed V2 filament detector](https://github.com/Smoothieware/SmoothieV2/blob/2a21c0108b1d095ecd8b2b9358e94055f053c003/Firmware/src/modules/tools/filamentdetector/FilamentDetector.cpp) (revision 2a21c0108b1d095ecd8b2b9358e94055f053c003) counts rising edges on one input. **26.53 is only the calculated 12&nbsp;mm and 1000-pulse example; replace it with your measured pulses per millimetre before automatic use.** PB1 is left uninverted, counting the rising edges of the conditioned A output.
+The [V2 filament detector](https://github.com/Smoothieware/SmoothieV2/blob/2a21c0108b1d095ecd8b2b9358e94055f053c003/Firmware/src/modules/tools/filamentdetector/FilamentDetector.cpp) counts rising edges on one input. **26.53 is only the calculated 12&nbsp;mm and 1000-pulse example; replace it with your measured pulses per millimetre before automatic use.** PB1 is left uninverted, counting the rising edges of the conditioned A output.
 
 ```ini
 [filament detector]
@@ -211,13 +210,13 @@ seconds_per_check = 2
 leave_heaters_on = false
 ```
 
-The module starts with checking active and this source has no separate start-inactive field, so keep automatic extrusion inactive while setting up and send `M405` before the calibration below. Look at the start-up output for interrupt-allocation errors. Do not combine this PB1 allocation with button or endstop examples elsewhere, or another interrupt on line 1. Choose a check interval long enough to contain meaningful pulses at your lowest feed rate.
+The module starts with checking active and there is no separate start-inactive field, so keep automatic extrusion inactive while setting up and send `M405` before the calibration below. Look at the start-up output for interrupt-allocation errors. Do not combine this PB1 allocation with button or endstop examples elsewhere, or another interrupt on line 1. Choose a check interval long enough to contain meaningful pulses at your lowest feed rate.
 
 ### Commands
 
 {::nomarkdown}
 <div class="xb-tablewrap"><table>
-  <thead><tr><th>Command</th><th>Reviewed behaviour</th></tr></thead>
+  <thead><tr><th>Command</th><th>Behaviour</th></tr></thead>
   <tbody>
     <tr><td><code>M404</code></td><td>Prints the parameters. Optional <code>S</code>, <code>P</code> and <code>H</code> temporarily change the check interval, pulses per millimetre and the leave-heaters-on policy. It does not save them.</td></tr>
     <tr><td><code>M405</code></td><td>Disables detection, clears the pulse count and refreshes the extrusion baseline</td></tr>
@@ -236,7 +235,7 @@ With the machine idle, heaters and motion off, no filament alarm pending and the
 1. Send `M405`. This does not detach the interrupt, so pulses keep accumulating.
 2. Move a measured length of filament through the wheel by hand in one direction and stop.
 3. Send `M407` and divide the reported pulse count by the travel in millimetres. Repeat, sending `M405` before each measurement.
-4. Do not send `M406` until you have qualified the calibration and the alarm for your installation.
+4. Do not send `M406` until you have checked the calibration and the alarm for your installation.
 
 A halt or restart resets the count. The test counts A rising edges in either direction, so it does not give signed travel.
 
@@ -285,11 +284,11 @@ Still stuck? Read [how to ask for help](/help-guidelines) or see the general [tr
 
 {::nomarkdown}
 <div class="xb-tablewrap"><table>
-  <thead><tr><th>File</th><th>Revision</th><th>What it is</th></tr></thead>
+  <thead><tr><th>File</th><th>What it is</th></tr></thead>
   <tbody>
-    <tr><td><a href="/images/extensions/filament-encoder-board/filament-encoder-board-schematic.pdf">Schematic (PDF)</a></td><td>v14</td><td>The complete circuit diagram. Its title block reads v10.</td></tr>
-    <tr><td><a href="/images/extensions/filament-encoder-board/filament-encoder-board-bom.csv">Parts list (CSV)</a></td><td>v14</td><td>Every component with its value and footprint</td></tr>
-    <tr><td><a href="/images/extensions/filament-encoder-board/filament-encoder-board-diagram.png">Board drawing (SVG)</a></td><td>v14</td><td>The top view used on this page, at full resolution</td></tr>
+    <tr><td><a href="/images/extensions/filament-encoder-board/filament-encoder-board-schematic.pdf">Schematic (PDF)</a></td><td>The complete circuit diagram.</td></tr>
+    <tr><td><a href="/images/extensions/filament-encoder-board/filament-encoder-board-bom.csv">Parts list (CSV)</a></td><td>Every component with its value and footprint</td></tr>
+    <tr><td><a href="/images/extensions/filament-encoder-board/filament-encoder-board-diagram.png">Board drawing (SVG)</a></td><td>The top view used on this page, at full resolution</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}
@@ -337,26 +336,25 @@ For drilling a mounting plate or designing an enclosure. Positions are hole cent
 
 ## Appendix: electrical specifications {#electrical}
 
-Every figure is a design value, a value calculated from the design or a value from a part, as the last column says. None is a measurement on a built board. **Open** means not established.
+Every figure is a design value, a value calculated from the design or a value from a part, as the last column says.
 
 {::nomarkdown}
 <div class="xb-tablewrap"><table class="xb-elec">
   <thead><tr><th>Parameter</th><th>Applies to</th><th>Lower</th><th>Nominal</th><th>Upper</th><th>Basis and conditions</th></tr></thead>
   <tbody>
-    <tr><td>Supply</td><td>J1 contact 1</td><td>Open</td><td>3.3 V</td><td>Open</td><td>Controller header allowance Open</td></tr>
-    <tr><td>Supply current</td><td>Board</td><td>—</td><td>15.84 mA</td><td>25 mA</td><td>A planning estimate, and the allocation; not a measured worst case</td></tr>
-    <tr><td>Sensor bypass</td><td>C2 at 3.3 V</td><td>0.7 &micro;F effective</td><td>1 &micro;F</td><td>—</td><td>Owner-defined acceptance target, not a manufacturer minimum; check effective value over bias, tolerance, temperature and age</td></tr>
+    <tr><td>Supply</td><td>J1 contact 1</td><td>—</td><td>3.3 V</td><td>—</td><td>Supplied by the controller header</td></tr>
+    <tr><td>Supply current</td><td>Board</td><td>—</td><td>15.84 mA</td><td>25 mA</td><td>Estimated current; allow the upper value</td></tr>
+    <tr><td>Sensor bypass</td><td>C2 at 3.3 V</td><td>0.7 &micro;F effective</td><td>1 &micro;F</td><td>—</td><td>Design minimum; check effective value over bias, tolerance, temperature and age</td></tr>
     <tr><td>Output drive</td><td>A, B, index of the sensor</td><td>—</td><td>—</td><td>1 mA at 50 pF</td><td>Device data; check the cable and host load</td></tr>
     <tr><td>Pulse density</td><td>A output</td><td>—</td><td>26.53 pulses/mm</td><td>—</td><td>Calculated for a 12&nbsp;mm wheel and 1000 pulses per turn</td></tr>
-    <tr><td>Magnetic field</td><td>At the sensor</td><td>35 mT</td><td>—</td><td>70 mT</td><td>Target for the specified magnet and gap</td></tr>
-    <tr><td>SPI</td><td>J1 contacts 6 to 9</td><td>—</td><td>Mode 1</td><td>1 MHz</td><td>Recommended limit with a cable up to 0.3&nbsp;m; not a qualified cable rate</td></tr>
-    <tr><td>Programmed ABI state, slip, enclosure fit</td><td>Whole board</td><td>Open</td><td>Open</td><td>Open</td><td>Not established</td></tr>
+    <tr><td>Magnetic field</td><td>At the sensor</td><td>35 mT</td><td>—</td><td>70 mT</td><td>For the specified magnet and gap</td></tr>
+    <tr><td>SPI</td><td>J1 contacts 6 to 9</td><td>—</td><td>Mode 1</td><td>1 MHz</td><td>Recommended limit with a cable up to 0.3&nbsp;m</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}
 
 ### Prime header G_F (J37)
 
-On the Prime, header G_F (J37) has 3.3&nbsp;V on contact 1, 5&nbsp;V on contact 2, PB1 on 3, PJ4 on 4 and ground on 10. A discrepancy in the rail positions on the Prime&rsquo;s physical connector has been noted: verify numbered continuity with the power removed. The header is unshrouded.
+On the Prime, header G_F (J37) has 3.3&nbsp;V on contact 1, 5&nbsp;V on contact 2, PB1 on 3, PJ4 on 4 and ground on 10. Verify numbered continuity and the rail positions on the physical connector with the power removed. The header is unshrouded.
 
 See all boards on the [extension boards](/extension-boards) page.

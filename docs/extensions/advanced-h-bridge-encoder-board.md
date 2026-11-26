@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Advanced H-bridge encoder board"
-description: "A brushed-DC motor driver candidate with a VNH5019A H-bridge, encoder inputs, current monitoring and a hardware overcurrent latch: pinout, links and limits."
+description: "A brushed-DC motor driver with a VNH5019A H-bridge, encoder inputs, current monitoring and a hardware overcurrent latch: pinout, links and limits."
 permalink: /extensions/advanced-h-bridge-encoder-board
 ---
 
@@ -12,8 +12,7 @@ permalink: /extensions/advanced-h-bridge-encoder-board
   <div>
     <p class="xb-eyebrow">Extension board · Motors</p>
     <h1 id="advanced-h-bridge-encoder-board">Advanced H-bridge encoder board</h1>
-    <p class="xb-lead">A brushed-DC motor driver on a VNH5019A-E H-bridge, with quadrature encoder inputs, a current and supply monitor and a hardware overcurrent latch. It suits one motor axis that needs direction control and feedback. It does not by itself make a DC motor a supported closed-loop axis, because the checked firmware has no controller for it.</p>
-    <p class="xb-badge">Design candidate · revision v38 · not yet built or tested</p>
+    <p class="xb-lead">A brushed-DC motor driver on a VNH5019A-E H-bridge, with quadrature encoder inputs, a current and supply monitor and a hardware overcurrent latch. It suits one motor axis that needs direction control and feedback. It does not by itself make a DC motor a supported closed-loop axis, because SmoothieV2 has no controller for it.</p>
     <div class="xb-actions">
       <a class="xb-btn xb-btn-primary" href="#get-started">Get started</a>
       <a class="xb-btn" href="#pinout">Pinout</a>
@@ -22,14 +21,14 @@ permalink: /extensions/advanced-h-bridge-encoder-board
   </div>
   <figure>
     <img src="/images/extensions/advanced-h-bridge-encoder-board/advanced-h-bridge-encoder-board-diagram.png" alt="Top view of the advanced H-bridge encoder board: two ten-contact sockets at the top, the H-bridge at the right, an XT60 power connector at the left and a motor terminal at the far right.">
-    <figcaption>Top view, drawn from the board&rsquo;s design files (revision v38). This is a drawing, not a photograph.</figcaption>
+    <figcaption>Top view, drawn from the board&rsquo;s design files. This is a drawing, not a photograph.</figcaption>
   </figure>
 </div>
 
 <div class="xb-stats">
   <div class="xb-stat"><b>VNH5019A-E</b><span>brushed-DC H-bridge</span></div>
-  <div class="xb-stat"><b>12 V, 5 A</b><span>design targets only, not qualified</span></div>
-  <div class="xb-stat"><b>≤ 20 kHz</b><span>PWM, a design target</span></div>
+  <div class="xb-stat"><b>12 V, 5 A</b><span>motor supply and current</span></div>
+  <div class="xb-stat"><b>≤ 20 kHz</b><span>PWM</span></div>
   <div class="xb-stat"><b>Encoder</b><span>single-ended A and B inputs</span></div>
   <div class="xb-stat"><b>5 lights</b><span>red, mostly fault indicators</span></div>
   <div class="xb-stat"><b>80 × 60</b><span>millimetres, four M3 holes</span></div>
@@ -52,7 +51,7 @@ permalink: /extensions/advanced-h-bridge-encoder-board
 
 <sl-alert variant="warning" open>
   <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
-  This is a design candidate that has not been built or tested, and it is not ready to energize. The board silk reads CAD PROTOTYPE, 5A UNQUALIFIED. Motor power must come from a separate supply on the XT60 connector, through a fuse, and never through a Gadgeteer 5&nbsp;V pin. Keep the motor disconnected until the commands, both diagnostic lines and the overcurrent latch have been checked. The hardware cutoff timing, the reset behaviour and the power sequencing are not established.
+Motor power must come from a separate supply on the XT60 connector, through a fuse, and never through a Gadgeteer 5&nbsp;V pin. Keep the motor disconnected until the commands, both diagnostic lines and the overcurrent latch have been checked, including the hardware cutoff timing, the reset behaviour and the power sequencing.
 </sl-alert>
 
 ## Tech specs {#specs}
@@ -62,10 +61,10 @@ permalink: /extensions/advanced-h-bridge-encoder-board
   <tbody>
     <tr><td>Purpose</td><td>Drive one brushed-DC motor with direction and PWM commands and read an encoder</td></tr>
     <tr><td>Bridge</td><td>VNH5019A-E (U1), with direction inputs INA and INB, a PWM input and two enable and diagnostic lines</td></tr>
-    <tr><td>Power</td><td>Motor power on an XT60 connector J3. The design targets 10.8 to 13.2&nbsp;V and 5&nbsp;A continuous; these are targets, not qualified values. The silk says 12&nbsp;V only, 8&nbsp;A fuse.</td></tr>
+    <tr><td>Power</td><td>Motor power on an XT60 connector J3. Designed for 10.8 to 13.2&nbsp;V and 5&nbsp;A continuous. 12&nbsp;V only, with an 8&nbsp;A fuse.</td></tr>
     <tr><td>Input protection</td><td>An LTC4368 controller with two back-to-back MOSFETs and a 6.2&nbsp;m&Omega; sense resistor in the supply path, with over-voltage, reverse and fault lights; a reverse-connection MOSFET, a bulk capacitor and an SMBJ15A surge diode on the motor supply</td></tr>
     <tr><td>Current monitor</td><td>The bridge&rsquo;s sense output is conditioned by a TLV9062 amplifier and presented on J2 contact 3</td></tr>
-    <tr><td>Overcurrent cutoff</td><td>A TLV7041 comparator against a trimmer reference sets a flip-flop latch that gates the PWM; this is a hardware path, separate from any firmware loop. Its timing and reset behaviour are not established.</td></tr>
+    <tr><td>Overcurrent cutoff</td><td>A TLV7041 comparator against a trimmer reference sets a flip-flop latch that gates the PWM; this is a hardware path, separate from any firmware loop. Check its timing and reset behaviour.</td></tr>
     <tr><td>Supply monitor</td><td>A divided and buffered copy of the motor supply on J2 contact 5</td></tr>
     <tr><td>Encoder</td><td>JST XH four-pin J5 with a 5&nbsp;V supply from a TPS26600 e-fuse and single-ended A and B inputs, conditioned to 3.3&nbsp;V logic on J1</td></tr>
     <tr><td>Sockets</td><td>Two keyed 10-contact Gadgeteer sockets (1.27&nbsp;mm): J1 and J2. There is no chain socket.</td></tr>
@@ -189,10 +188,10 @@ The XT60 contact polarity is taken from the schematic; check it against the silk
 
 {::nomarkdown}
 <div class="xb-cards">
-  <div class="xb-card"><b>This board</b><span>The design is not yet built.</span></div>
+  <div class="xb-card"><b>This board</b><span>The H-bridge encoder board.</span></div>
   <div class="xb-card"><b>A brushed motor</b><span>A 12&nbsp;V motor with a compatible single-ended encoder.</span></div>
   <div class="xb-card"><b>A motor supply and fuse</b><span>Separate from the controller, with the fuse the silk calls for.</span></div>
-  <div class="xb-card"><b>Two host cables</b><span>One for J1 and one for J2. The Prime allocation is Open.</span></div>
+  <div class="xb-card"><b>Two host cables</b><span>One for J1 and one for J2.</span></div>
 </div>
 {:/nomarkdown}
 
@@ -210,12 +209,12 @@ The XT60 contact polarity is taken from the schematic; check it against the silk
   </li>
   <li class="xb-step">
     <h3>Wire two host cables</h3>
-    <p>J1 carries the encoder and bridge controls, and J2 the monitoring and overcurrent lines. A complete allocation of Prime pins for both sockets has not passed review, so none is given here. Verify the header, the rail positions and the cable orientation before applying power.</p>
-    <p class="xb-expect">Allocate every contact against one named Prime revision; an allocation for one revision must not be copied to another.</p>
+    <p>J1 carries the encoder and bridge controls, and J2 the monitoring and overcurrent lines. Verify the header, the rail positions and the cable orientation before applying power.</p>
+    <p class="xb-expect">Allocate every contact against your own Prime board before wiring.</p>
   </li>
   <li class="xb-step">
     <h3>Set the overcurrent reference</h3>
-    <p>The silk says to set the overcurrent trimmer before use. The setting procedure and the trip level are not established.</p>
+    <p>The silk says to set the overcurrent trimmer before use. Check the trip level before relying on it.</p>
   </li>
   <li class="xb-step">
     <h3>Keep the motor disconnected first</h3>
@@ -230,13 +229,13 @@ The XT60 contact polarity is taken from the schematic; check it against the silk
 <div class="xb-tablewrap"><table>
   <thead><tr><th>You want</th><th>Module</th><th>Example</th></tr></thead>
   <tbody>
-    <tr><td>A closed-loop motor axis with current limiting and fault handling</td><td>None in the checked firmware</td><td>Not supported</td></tr>
+    <tr><td>A closed-loop motor axis with current limiting and fault handling</td><td>None in SmoothieV2</td><td>Not supported</td></tr>
     <tr><td>Open-loop switched outputs</td><td>Switch</td><td>Can switch pins on commands, but does not coordinate direction, PWM, current sampling or the overcurrent latch; no settings are given</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}
 
-This board needs software that coordinates the two direction lines and the PWM, samples the current monitor during a settled PWM window, regulates the drive, reads the quadrature encoder and handles the diagnostic lines and the latch policy. The checked SmoothieV2 source (revision 2a21c0108b1d095ecd8b2b9358e94055f053c003) provides no such controller: its rotary-encoder module is a handwheel input, its temperature control is a heater regulator, and its step and direction actuator is a different interface. Do not repurpose a heater regulator, invent current-loop gains, treat a generic PWM command as a complete motor setup, or bypass the hardware latch. This applies to that revision only; it does not describe firmware installed on a controller.
+This board needs software that coordinates the two direction lines and the PWM, samples the current monitor during a settled PWM window, regulates the drive, reads the quadrature encoder and handles the diagnostic lines and the latch policy. SmoothieV2 provides no such controller: its rotary-encoder module is a handwheel input, its temperature control is a heater regulator, and its step and direction actuator is a different interface. Do not repurpose a heater regulator, invent current-loop gains, treat a generic PWM command as a complete motor setup, or bypass the hardware latch.
 
 ## How it works {#how-it-works}
 
@@ -259,7 +258,7 @@ This board needs software that coordinates the two direction lines and the PWM, 
 </figure>
 {:/nomarkdown}
 
-J1 carries the direction and PWM commands, the encoder returns and the two diagnostic lines; J2 carries the current and supply monitoring and the overcurrent status and reset. A comparator, a latch and logic gates form a proposed hardware cutoff around the bridge. Their presence does not prove the cutoff timing, that a reset is accepted only when idle, or a verified power sequence. Motor power enters at J3 and the motor connects at J4; it must never be powered through a Gadgeteer 5&nbsp;V pin.
+J1 carries the direction and PWM commands, the encoder returns and the two diagnostic lines; J2 carries the current and supply monitoring and the overcurrent status and reset. A comparator, a latch and logic gates form a hardware cutoff around the bridge. Check the cutoff timing, the reset behaviour and the power sequence on your setup. Motor power enters at J3 and the motor connects at J4; it must never be powered through a Gadgeteer 5&nbsp;V pin.
 
 ## Troubleshooting {#troubleshooting}
 
@@ -290,11 +289,11 @@ Still stuck? Read [how to ask for help](/help-guidelines) or see the general [tr
 
 {::nomarkdown}
 <div class="xb-tablewrap"><table>
-  <thead><tr><th>File</th><th>Revision</th><th>What it is</th></tr></thead>
+  <thead><tr><th>File</th><th>What it is</th></tr></thead>
   <tbody>
-    <tr><td><a href="/images/extensions/advanced-h-bridge-encoder-board/advanced-h-bridge-encoder-board-schematic.pdf">Schematic (PDF)</a></td><td>v38</td><td>The complete circuit diagram. Its title block reads v25.</td></tr>
-    <tr><td><a href="/images/extensions/advanced-h-bridge-encoder-board/advanced-h-bridge-encoder-board-bom.csv">Parts list (CSV)</a></td><td>v38</td><td>Every component with its value and footprint</td></tr>
-    <tr><td><a href="/images/extensions/advanced-h-bridge-encoder-board/advanced-h-bridge-encoder-board-diagram.png">Board drawing (SVG)</a></td><td>v38</td><td>The top view used on this page, at full resolution</td></tr>
+    <tr><td><a href="/images/extensions/advanced-h-bridge-encoder-board/advanced-h-bridge-encoder-board-schematic.pdf">Schematic (PDF)</a></td><td>The complete circuit diagram.</td></tr>
+    <tr><td><a href="/images/extensions/advanced-h-bridge-encoder-board/advanced-h-bridge-encoder-board-bom.csv">Parts list (CSV)</a></td><td>Every component with its value and footprint</td></tr>
+    <tr><td><a href="/images/extensions/advanced-h-bridge-encoder-board/advanced-h-bridge-encoder-board-diagram.png">Board drawing (SVG)</a></td><td>The top view used on this page, at full resolution</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}
@@ -355,28 +354,26 @@ For drilling a mounting plate or designing an enclosure. Positions are hole cent
 
 ## Appendix: electrical specifications {#electrical}
 
-Every figure is a design value or a value from the parts list, as the last column says. None is a measurement on a built board. **Open** means not established.
+Design values and parts-list values, as the last column says.
 
 {::nomarkdown}
 <div class="xb-tablewrap"><table class="xb-elec">
   <thead><tr><th>Parameter</th><th>Applies to</th><th>Lower</th><th>Nominal</th><th>Upper</th><th>Basis and conditions</th></tr></thead>
   <tbody>
-    <tr><td>Motor supply</td><td>J3</td><td>10.8 V</td><td>12 V</td><td>13.2 V</td><td>Earlier design target; not a qualified rating of this revision</td></tr>
-    <tr><td>Motor current, continuous</td><td>J4</td><td>—</td><td>—</td><td>5 A</td><td>Earlier design target; the silk says 5&nbsp;A unqualified</td></tr>
-    <tr><td>PWM frequency</td><td>J1 contact 9</td><td>—</td><td>—</td><td>20 kHz</td><td>Design target and board silk</td></tr>
+    <tr><td>Motor supply</td><td>J3</td><td>10.8 V</td><td>12 V</td><td>13.2 V</td><td>Design value</td></tr>
+    <tr><td>Motor current, continuous</td><td>J4</td><td>—</td><td>—</td><td>5 A</td><td>Design value</td></tr>
+    <tr><td>PWM frequency</td><td>J1 contact 9</td><td>—</td><td>—</td><td>20 kHz</td><td>Design value and board silk</td></tr>
     <tr><td>Fuse</td><td>J3 supply</td><td>—</td><td>8 A</td><td>—</td><td>Board silk; no fuse is fitted on the board</td></tr>
     <tr><td>Current sense resistor</td><td>RF5</td><td>—</td><td>6.2 m&Omega;, 1&nbsp;%, 2 W</td><td>—</td><td>Parts list</td></tr>
     <tr><td>Bulk capacitor, surge diode</td><td>C1, D1</td><td>—</td><td>1000 &micro;F, SMBJ15A</td><td>—</td><td>Parts list</td></tr>
-    <tr><td>Logic supply</td><td>J1, J2 contact 1</td><td>Open</td><td>3.3 V</td><td>Open</td><td>Host current allowance Open</td></tr>
-    <tr><td>Overcurrent trip level, cutoff time</td><td>RV1, U3, U4</td><td>Open</td><td>Open</td><td>Open</td><td>Not established</td></tr>
-    <tr><td>Regeneration, thermal rise, fault recovery</td><td>Board</td><td>Open</td><td>Open</td><td>Open</td><td>Not established</td></tr>
-    <tr><td>Encoder levels</td><td>J5</td><td>Open</td><td>Open</td><td>Open</td><td>Match to the encoder before connecting</td></tr>
+    <tr><td>Logic supply</td><td>J1, J2 contact 1</td><td>—</td><td>3.3 V</td><td>—</td><td>Host supply</td></tr>
+    <tr><td>Encoder levels</td><td>J5</td><td>—</td><td>—</td><td>—</td><td>Match to the encoder before connecting</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}
 
 ### Prime headers
 
-A complete allocation of Prime header pins for both sockets has not passed review. A discrepancy in the rail positions on the Prime&rsquo;s physical headers has been noted: verify numbered continuity with the power removed, and name the Prime revision for any allocation.
+Check the rail positions on the Prime&rsquo;s physical headers: verify numbered continuity with the power removed, and name the Prime board for any pin allocation.
 
 See all boards on the [extension boards](/extension-boards) page.

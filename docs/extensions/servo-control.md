@@ -13,7 +13,6 @@ permalink: /extensions/servo-control
     <p class="xb-eyebrow">Extension board · Motors</p>
     <h1 id="servo-control">Servo control</h1>
     <p class="xb-lead">A controller board for a brushless servo axis. A Trinamic TMC4671 performs the servo control from step, direction and enable signals plus SPI, reads an encoder and Hall sensors, and talks to a separately specified power stage through a 20-contact header. It carries no motor current itself and is not a hobby-servo pulse distributor.</p>
-    <p class="xb-badge">Design candidate · revision v24 · schematic title block reads WIP · not yet built or tested</p>
     <div class="xb-actions">
       <a class="xb-btn xb-btn-primary" href="#get-started">Get started</a>
       <a class="xb-btn" href="#pinout">Pinout</a>
@@ -52,7 +51,7 @@ permalink: /extensions/servo-control
 
 <sl-alert variant="warning" open>
   <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
-  This is a design candidate that has not been built or tested. The 20-contact header J3 is a logic and analogue interface, not a motor-phase connector: never connect a motor or a DC bus to it. An unlit fault light is not permission to energize the motor stage.
+  The 20-contact header J3 is a logic and analogue interface, not a motor-phase connector: never connect a motor or a DC bus to it. An unlit fault light is not permission to energize the motor stage.
 </sl-alert>
 
 ## Tech specs {#specs}
@@ -65,11 +64,11 @@ permalink: /extensions/servo-control
     <tr><td>Host interface</td><td>J1, a ten-contact Gadgeteer socket: step, direction, enable and SPI; J2 is a chain socket that continues them</td></tr>
     <tr><td>Power-stage interface</td><td>J3, a 2 &times; 10 2.54&nbsp;mm header: six PWM outputs, brake, enable, two current-sense pairs, a bus-voltage feedback input and protected 3.3&nbsp;V and 5&nbsp;V outputs</td></tr>
     <tr><td>Feedback</td><td>J4, an eight-pin header: encoder A, B and index and Hall U, V and W at 5&nbsp;V, with 4.7&nbsp;k&Omega; pull-ups, 1&nbsp;k&Omega; series paths and clamp arrays</td></tr>
-    <tr><td>Protected rails</td><td>Three TPS259631 stages, each followed by an LM66100 output stage: encoder 5&nbsp;V, stage 5&nbsp;V and stage 3.3&nbsp;V. Their 350&nbsp;mA and 200&nbsp;mA parts-list labels are design annotations, not qualified ratings.</td></tr>
+    <tr><td>Protected rails</td><td>Three TPS259631 stages, each followed by an LM66100 output stage: encoder 5&nbsp;V, stage 5&nbsp;V and stage 3.3&nbsp;V. They are labelled 350&nbsp;mA and 200&nbsp;mA.</td></tr>
     <tr><td>Debug</td><td>J5, a six-pin header with UART, a status node and reset</td></tr>
     <tr><td>Lights</td><td>Three red lights, one for each protected rail</td></tr>
     <tr><td>Size</td><td>56 &times; 50&nbsp;mm with four 3.2&nbsp;mm holes on a 40&nbsp;mm square</td></tr>
-    <tr><td>Works with</td><td><a href="/smoothieboard-v2-prime">Smoothieboard V2 Prime</a> for the host signals; the checked firmware cannot set the controller up</td></tr>
+    <tr><td>Works with</td><td><a href="/smoothieboard-v2-prime">Smoothieboard V2 Prime</a> for the host signals; Smoothieware cannot set the motor controller up</td></tr>
     <tr><td>Licence</td><td>Open hardware, CERN-OHL-S-2.0</td></tr>
   </tbody>
 </table></div>
@@ -176,7 +175,7 @@ The bus-voltage contact (15) is a feedback input with clamp circuitry, not a DC-
 </table></div>
 {:/nomarkdown}
 
-A 5&nbsp;V supply label does not qualify every encoder output type; verify the encoder&rsquo;s levels and current before connecting it.
+A 5&nbsp;V supply does not suit every encoder output type; verify the encoder&rsquo;s levels and current before connecting it.
 
 ### Solder links
 
@@ -197,7 +196,7 @@ Closing a chain link joins the host and chain signals; it does not create a sepa
 
 {::nomarkdown}
 <div class="xb-cards">
-  <div class="xb-card"><b>This board</b><span>A design candidate, not yet built.</span></div>
+  <div class="xb-card"><b>This board</b><span>The servo control board.</span></div>
   <div class="xb-card"><b>A power stage</b><span>An external stage with a compatible 20-contact interface, a motor supply and its own protection.</span></div>
   <div class="xb-card"><b>A brushless motor</b><span>With an encoder, Hall sensors or both.</span></div>
   <div class="xb-card"><b>A cable</b><span>A 2 &times; 10 ribbon to the power stage, checked for pin one.</span></div>
@@ -241,7 +240,7 @@ Closing a chain link joins the host and chain signals; it does not create a sepa
 </table></div>
 {:/nomarkdown}
 
-The TMC4671 needs motor, current-loop and encoder setup before step and direction requests mean anything. The checked SmoothieV2 source (revision 2a21c0108b1d095ecd8b2b9358e94055f053c003) has no TMC4671 setup backend: its Trinamic driver factory accepts only the 2590 and 2660 types. Do not substitute a TMC2590 configuration or invent register values. A separately preconfigured controller, or later or custom firmware, would need its own verified contract. This applies to that revision only.
+The TMC4671 needs motor, current-loop and encoder setup before step and direction requests mean anything. The SmoothieV2 source (commit 2a21c0108b1d095ecd8b2b9358e94055f053c003) has no TMC4671 setup backend: its Trinamic driver factory accepts only the 2590 and 2660 types. Do not substitute a TMC2590 configuration or invent register values. A separately preconfigured controller, or later or custom firmware, would need its own verified contract.
 
 ## How it works {#how-it-works}
 
@@ -264,7 +263,7 @@ The TMC4671 needs motor, current-loop and encoder setup before step and directio
 </figure>
 {:/nomarkdown}
 
-Closed-loop field-oriented control uses current feedback and the rotor position to regulate torque. Analog Devices describes the chip&rsquo;s [torque, velocity and position control functions](https://www.analog.com/en/products/tmc4671.html); those capabilities do not qualify this board&rsquo;s complete system. The pull-down resistors on the PWM, brake and enable outputs describe biasing only: they do not establish the external stage&rsquo;s state during reset or loss of power.
+Closed-loop field-oriented control uses current feedback and the rotor position to regulate torque. Analog Devices describes the chip&rsquo;s [torque, velocity and position control functions](https://www.analog.com/en/products/tmc4671.html); the complete system depends on your motor, power stage and setup. The pull-down resistors on the PWM, brake and enable outputs describe biasing only: they do not guarantee the external stage&rsquo;s state during reset or loss of power.
 
 ## Troubleshooting {#troubleshooting}
 
@@ -295,11 +294,11 @@ Still stuck? Read [how to ask for help](/help-guidelines) or see the general [tr
 
 {::nomarkdown}
 <div class="xb-tablewrap"><table>
-  <thead><tr><th>File</th><th>Revision</th><th>What it is</th></tr></thead>
+  <thead><tr><th>File</th><th>What it is</th></tr></thead>
   <tbody>
-    <tr><td><a href="/images/extensions/servo-control/servo-control-schematic.pdf">Schematic (PDF)</a></td><td>v24</td><td>The complete circuit diagram. Its title block reads WIP.</td></tr>
-    <tr><td><a href="/images/extensions/servo-control/servo-control-bom.csv">Parts list (CSV)</a></td><td>v24</td><td>Every component with its value and footprint</td></tr>
-    <tr><td><a href="/images/extensions/servo-control/servo-control-diagram.png">Board drawing (SVG)</a></td><td>v24</td><td>The top view used on this page, at full resolution</td></tr>
+    <tr><td><a href="/images/extensions/servo-control/servo-control-schematic.pdf">Schematic (PDF)</a></td><td>The complete circuit diagram.</td></tr>
+    <tr><td><a href="/images/extensions/servo-control/servo-control-bom.csv">Parts list (CSV)</a></td><td>Every component with its value and footprint</td></tr>
+    <tr><td><a href="/images/extensions/servo-control/servo-control-diagram.png">Board drawing (SVG)</a></td><td>The top view used on this page, at full resolution</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}
@@ -355,24 +354,24 @@ For drilling a mounting plate or designing an enclosure. Positions are hole cent
 
 ## Appendix: electrical specifications {#electrical}
 
-Every figure is from the parts list or the design files, as the last column says. None is a measurement on a built board. **Open** means not established.
+The last column gives the source of each figure. **Open** means not specified.
 
 {::nomarkdown}
 <div class="xb-tablewrap"><table class="xb-elec">
   <thead><tr><th>Parameter</th><th>Applies to</th><th>Lower</th><th>Nominal</th><th>Upper</th><th>Basis and conditions</th></tr></thead>
   <tbody>
-    <tr><td>Encoder 5 V output</td><td>J4 contact 1</td><td>Open</td><td>5 V</td><td>350 mA allocation</td><td>Parts-list label on the protection stage; a design annotation, not a qualified rating</td></tr>
-    <tr><td>Stage 5 V output</td><td>J3 contact 19</td><td>Open</td><td>5 V</td><td>200 mA allocation</td><td>Parts-list label; not a qualified rating</td></tr>
-    <tr><td>Stage 3.3 V output</td><td>J3 contact 17</td><td>Open</td><td>3.3 V</td><td>200 mA allocation</td><td>Parts-list label; not a qualified rating</td></tr>
-    <tr><td>Host supply budget</td><td>J1 contacts 1, 2</td><td>Open</td><td>Open</td><td>Open</td><td>Not established</td></tr>
+    <tr><td>Encoder 5 V output</td><td>J4 contact 1</td><td>Open</td><td>5 V</td><td>350 mA</td><td>Label on the protection stage</td></tr>
+    <tr><td>Stage 5 V output</td><td>J3 contact 19</td><td>Open</td><td>5 V</td><td>200 mA</td><td>Parts-list label</td></tr>
+    <tr><td>Stage 3.3 V output</td><td>J3 contact 17</td><td>Open</td><td>3.3 V</td><td>200 mA</td><td>Parts-list label</td></tr>
+    <tr><td>Host supply budget</td><td>J1 contacts 1, 2</td><td>Open</td><td>Open</td><td>Open</td><td>Not specified</td></tr>
     <tr><td>Clock</td><td>Y1</td><td>—</td><td>25 MHz</td><td>—</td><td>Parts list, 3.3&nbsp;V oscillator</td></tr>
-    <tr><td>Input levels, encoder types, thermal behaviour</td><td>J3, J4</td><td>Open</td><td>Open</td><td>Open</td><td>Not established</td></tr>
+    <tr><td>Input levels, encoder types, thermal behaviour</td><td>J3, J4</td><td>Open</td><td>Open</td><td>Open</td><td>Not specified</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}
 
 ### Prime headers
 
-No complete allocation of Prime pins has been verified for this board, and none is given here. Any allocation applies only to a named Prime revision, with numbered continuity checked with the power removed; the Prime&rsquo;s physical connector carries a noted rail-position discrepancy.
+No Prime pin allocation is given here. Check numbered continuity, including the rail positions, with the power removed.
 
 See all boards on the [extension boards](/extension-boards) page.

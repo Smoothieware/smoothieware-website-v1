@@ -8,70 +8,66 @@ permalink: /extensions/bouni-rs485-spindle-control
 
 This board provides an isolated RS-485 serial interface between a controller and a compatible variable-frequency drive (VFD). For drives that take an analog speed command, see [Bouni analog spindle control](/extensions/bouni-analog-spindle-control).
 
-This guide covers the **RS-485 revision 17** design carried forward in **export package 19**. The board design and installation remain unqualified.
-
-## How it works
-
-The ISOW1412 provides the isolated serial physical interface. Drive commands depend on the controller software and the drive’s protocol. Match the differential terminals to the actual drive manual because D+ and D− naming varies. Keep host and isolated field returns separate and select termination and bias for the verified link.
+The ISOW1412 provides the isolated serial physical interface. Drive commands depend on the controller software and the drive’s protocol. Match the differential terminals to the actual drive manual because D+ and D− naming varies. Keep host and isolated field returns separate and select termination and bias for the link.
 
 ## Board reference
 
 <details markdown="1">
 <summary>Reading the connector callouts</summary>
 
-The dark end of each pill gives the source contact number. The adjoining label gives its function. Colours help locate related functions; the label and connection instructions determine how to use the contact.
+The dark end of each pill gives the contact number. The adjoining label gives its function. Colours help locate related functions; the label and connection instructions determine how to use the contact.
 
 - Red: 3.3 V supply.
 - Orange: 5 V supply.
 - Violet: Control signal.
 - Green: Signal — use the printed function label.
 - Near-black: Circuit ground.
-- Dark grey: Other source-labelled contact — read its exact function.
+- Dark grey: Other labelled contact — read its exact function.
 
 A voltage in a signal name does not make that contact a power output. Circuit ground, cable shield and protective earth are different connections. An underside projection shows rear components through the front view; it is not a mirrored rear view.
 
 </details>
 
-{% include _includes/extension-instruction-diagram.html id="bouni-spindle-module-boards-v19-bsm-rs485-reader-compact-overview" src="/images/extensions/bouni-spindle-module-boards/guides/bsm-rs485/reader-compact-overview.png" title="Spindle module RS485" alt="Spindle module RS485 on the bsm-rs485 assembly, v19" caption="Selected-source component-side reference for this assembly. Use the overview and focused sheets together. Bridge continuity, cable orientation and complete Prime wiring remain open." width=420 %}
+{% include _includes/extension-instruction-diagram.html id="bouni-spindle-module-boards-v19-bsm-rs485-reader-compact-overview" src="/images/extensions/bouni-spindle-module-boards/guides/bsm-rs485/reader-compact-overview.png" title="Spindle module RS485" alt="Spindle module RS485 on the RS-485 board" caption="Component-side reference. Use the overview and focused sheets together." width=420 %}
 
-{% include _includes/extension-instruction-diagram.html id="bouni-spindle-module-boards-v19-bsm-rs485-reader-compact-j1-1-5" src="/images/extensions/bouni-spindle-module-boards/guides/bsm-rs485/reader-compact-j1-1-5-central-pills.png" title="J1 · Host interface" alt="J1 · Host interface on the bsm-rs485 assembly, v19" caption="Selected-source component-side reference for this assembly. Use the overview and focused sheets together. Bridge continuity, cable orientation and complete Prime wiring remain open." width=420 %}
+{% include _includes/extension-instruction-diagram.html id="bouni-spindle-module-boards-v19-bsm-rs485-reader-compact-j1-1-5" src="/images/extensions/bouni-spindle-module-boards/guides/bsm-rs485/reader-compact-j1-1-5-central-pills.png" title="J1 · Host interface" alt="J1 · Host interface on the RS-485 board" caption="Component-side reference. Use the overview and focused sheets together." width=420 %}
 
-{% include _includes/extension-instruction-diagram.html id="bouni-spindle-module-boards-v19-bsm-rs485-reader-compact-j1-6-10" src="/images/extensions/bouni-spindle-module-boards/guides/bsm-rs485/reader-compact-j1-6-10-central-pills.png" title="J1 · Host interface" alt="J1 · Host interface on the bsm-rs485 assembly, v19" caption="Selected-source component-side reference for this assembly. Use the overview and focused sheets together. Bridge continuity, cable orientation and complete Prime wiring remain open." width=420 %}
+{% include _includes/extension-instruction-diagram.html id="bouni-spindle-module-boards-v19-bsm-rs485-reader-compact-j1-6-10" src="/images/extensions/bouni-spindle-module-boards/guides/bsm-rs485/reader-compact-j1-6-10-central-pills.png" title="J1 · Host interface" alt="J1 · Host interface on the RS-485 board" caption="Component-side reference. Use the overview and focused sheets together." width=420 %}
 
-{% include _includes/extension-instruction-diagram.html id="bouni-spindle-module-boards-v19-bsm-rs485-reader-compact-j2-1-5" src="/images/extensions/bouni-spindle-module-boards/guides/bsm-rs485/reader-compact-j2-1-5-central-pills.png" title="J2 · Chain interface" alt="J2 · Chain interface on the bsm-rs485 assembly, v19" caption="Selected-source component-side reference for this assembly. Use the overview and focused sheets together. Bridge continuity, cable orientation and complete Prime wiring remain open." width=420 %}
+{% include _includes/extension-instruction-diagram.html id="bouni-spindle-module-boards-v19-bsm-rs485-reader-compact-j2-1-5" src="/images/extensions/bouni-spindle-module-boards/guides/bsm-rs485/reader-compact-j2-1-5-central-pills.png" title="J2 · Chain interface" alt="J2 · Chain interface on the RS-485 board" caption="Component-side reference. Use the overview and focused sheets together." width=420 %}
 
-{% include _includes/extension-instruction-diagram.html id="bouni-spindle-module-boards-v19-bsm-rs485-reader-compact-j2-6-10" src="/images/extensions/bouni-spindle-module-boards/guides/bsm-rs485/reader-compact-j2-6-10-central-pills.png" title="J2 · Chain interface" alt="J2 · Chain interface on the bsm-rs485 assembly, v19" caption="Selected-source component-side reference for this assembly. Use the overview and focused sheets together. Bridge continuity, cable orientation and complete Prime wiring remain open." width=420 %}
+{% include _includes/extension-instruction-diagram.html id="bouni-spindle-module-boards-v19-bsm-rs485-reader-compact-j2-6-10" src="/images/extensions/bouni-spindle-module-boards/guides/bsm-rs485/reader-compact-j2-6-10-central-pills.png" title="J2 · Chain interface" alt="J2 · Chain interface on the RS-485 board" caption="Component-side reference. Use the overview and focused sheets together." width=420 %}
 
-{% include _includes/extension-instruction-diagram.html id="bouni-spindle-module-boards-v19-bsm-rs485-reader-compact-vfd-1-3" src="/images/extensions/bouni-spindle-module-boards/guides/bsm-rs485/reader-compact-vfd-1-3-central-pills.png" title="J3 · RS485 bus" alt="J3 · RS485 bus on the bsm-rs485 assembly, v19" caption="Selected-source component-side reference for this assembly. Use the overview and focused sheets together. Bridge continuity, cable orientation and complete Prime wiring remain open." width=420 %}
+{% include _includes/extension-instruction-diagram.html id="bouni-spindle-module-boards-v19-bsm-rs485-reader-compact-vfd-1-3" src="/images/extensions/bouni-spindle-module-boards/guides/bsm-rs485/reader-compact-vfd-1-3-central-pills.png" title="J3 · RS485 bus" alt="J3 · RS485 bus on the RS-485 board" caption="Component-side reference. Use the overview and focused sheets together." width=420 %}
 
-{% include _includes/extension-instruction-diagram.html id="bouni-spindle-module-boards-v19-bsm-rs485-reader-compact-links3" src="/images/extensions/bouni-spindle-module-boards/guides/bsm-rs485/reader-compact-links3.png" title="Chain signal links" alt="Chain signal links on the bsm-rs485 assembly, v19" caption="Selected-source component-side reference for this assembly. Use the overview and focused sheets together. Bridge continuity, cable orientation and complete Prime wiring remain open." width=420 %}
+{% include _includes/extension-instruction-diagram.html id="bouni-spindle-module-boards-v19-bsm-rs485-reader-compact-links3" src="/images/extensions/bouni-spindle-module-boards/guides/bsm-rs485/reader-compact-links3.png" title="Chain signal links" alt="Chain signal links on the RS-485 board" caption="Component-side reference. Use the overview and focused sheets together." width=420 %}
 
-{% include _includes/extension-instruction-diagram.html id="bouni-spindle-module-boards-v19-bsm-rs485-reader-compact-links6" src="/images/extensions/bouni-spindle-module-boards/guides/bsm-rs485/reader-compact-links6.png" title="Chain signal links" alt="Chain signal links on the bsm-rs485 assembly, v19" caption="Selected-source component-side reference for this assembly. Use the overview and focused sheets together. Bridge continuity, cable orientation and complete Prime wiring remain open." width=420 %}
+{% include _includes/extension-instruction-diagram.html id="bouni-spindle-module-boards-v19-bsm-rs485-reader-compact-links6" src="/images/extensions/bouni-spindle-module-boards/guides/bsm-rs485/reader-compact-links6.png" title="Chain signal links" alt="Chain signal links on the RS-485 board" caption="Component-side reference. Use the overview and focused sheets together." width=420 %}
 
-{% include _includes/extension-instruction-diagram.html id="bouni-spindle-module-boards-v19-bsm-rs485-reader-compact-links8" src="/images/extensions/bouni-spindle-module-boards/guides/bsm-rs485/reader-compact-links8.png" title="Chain signal links" alt="Chain signal links on the bsm-rs485 assembly, v19" caption="Selected-source component-side reference for this assembly. Use the overview and focused sheets together. Bridge continuity, cable orientation and complete Prime wiring remain open." width=420 %}
+{% include _includes/extension-instruction-diagram.html id="bouni-spindle-module-boards-v19-bsm-rs485-reader-compact-links8" src="/images/extensions/bouni-spindle-module-boards/guides/bsm-rs485/reader-compact-links8.png" title="Chain signal links" alt="Chain signal links on the RS-485 board" caption="Component-side reference. Use the overview and focused sheets together." width=420 %}
 
-{% include _includes/extension-instruction-diagram.html id="bouni-spindle-module-boards-v19-bsm-rs485-reader-compact-serial" src="/images/extensions/bouni-spindle-module-boards/guides/bsm-rs485/reader-compact-serial.png" title="Serial and direction path" alt="Serial and direction path on the bsm-rs485 assembly, v19" caption="Selected-source component-side reference for this assembly. Use the overview and focused sheets together. Bridge continuity, cable orientation and complete Prime wiring remain open." width=420 %}
+{% include _includes/extension-instruction-diagram.html id="bouni-spindle-module-boards-v19-bsm-rs485-reader-compact-serial" src="/images/extensions/bouni-spindle-module-boards/guides/bsm-rs485/reader-compact-serial.png" title="Serial and direction path" alt="Serial and direction path on the RS-485 board" caption="Component-side reference. Use the overview and focused sheets together." width=420 %}
 
-{% include _includes/extension-instruction-diagram.html id="bouni-spindle-module-boards-v19-bsm-rs485-reader-compact-termination" src="/images/extensions/bouni-spindle-module-boards/guides/bsm-rs485/reader-compact-termination.png" title="Bus end termination" alt="Bus end termination on the bsm-rs485 assembly, v19" caption="Selected-source component-side reference for this assembly. Use the overview and focused sheets together. Bridge continuity, cable orientation and complete Prime wiring remain open." width=420 %}
+{% include _includes/extension-instruction-diagram.html id="bouni-spindle-module-boards-v19-bsm-rs485-reader-compact-termination" src="/images/extensions/bouni-spindle-module-boards/guides/bsm-rs485/reader-compact-termination.png" title="Bus end termination" alt="Bus end termination on the RS-485 board" caption="Component-side reference. Use the overview and focused sheets together." width=420 %}
 
-{% include _includes/extension-instruction-diagram.html id="bouni-spindle-module-boards-v19-bsm-rs485-reader-compact-power" src="/images/extensions/bouni-spindle-module-boards/guides/bsm-rs485/reader-compact-power.png" title="Two supply domains" alt="Two supply domains on the bsm-rs485 assembly, v19" caption="Selected-source component-side reference for this assembly. Use the overview and focused sheets together. Bridge continuity, cable orientation and complete Prime wiring remain open." width=420 %}
+{% include _includes/extension-instruction-diagram.html id="bouni-spindle-module-boards-v19-bsm-rs485-reader-compact-power" src="/images/extensions/bouni-spindle-module-boards/guides/bsm-rs485/reader-compact-power.png" title="Two supply domains" alt="Two supply domains on the RS-485 board" caption="Component-side reference. Use the overview and focused sheets together." width=420 %}
 
-{% include _includes/extension-instruction-diagram.html id="bouni-spindle-module-boards-v19-bsm-rs485-reader-compact-tests0" src="/images/extensions/bouni-spindle-module-boards/guides/bsm-rs485/reader-compact-tests0-underside-caption.png" title="Interface test pads" alt="Interface test pads on the bsm-rs485 assembly, v19" caption="Selected-source component-side reference for this assembly. Use the overview and focused sheets together. Bridge continuity, cable orientation and complete Prime wiring remain open." width=420 %}
+{% include _includes/extension-instruction-diagram.html id="bouni-spindle-module-boards-v19-bsm-rs485-reader-compact-tests0" src="/images/extensions/bouni-spindle-module-boards/guides/bsm-rs485/reader-compact-tests0-underside-caption.png" title="Interface test pads" alt="Interface test pads on the RS-485 board" caption="Component-side reference. Use the overview and focused sheets together." width=420 %}
 
-{% include _includes/extension-instruction-diagram.html id="bouni-spindle-module-boards-v19-bsm-rs485-reader-compact-tests5" src="/images/extensions/bouni-spindle-module-boards/guides/bsm-rs485/reader-compact-tests5-underside-caption.png" title="Interface test pads" alt="Interface test pads on the bsm-rs485 assembly, v19" caption="Selected-source component-side reference for this assembly. Use the overview and focused sheets together. Bridge continuity, cable orientation and complete Prime wiring remain open." width=420 %}
+{% include _includes/extension-instruction-diagram.html id="bouni-spindle-module-boards-v19-bsm-rs485-reader-compact-tests5" src="/images/extensions/bouni-spindle-module-boards/guides/bsm-rs485/reader-compact-tests5-underside-caption.png" title="Interface test pads" alt="Interface test pads on the RS-485 board" caption="Component-side reference. Use the overview and focused sheets together." width=420 %}
 
-{% include _includes/extension-instruction-diagram.html id="bouni-spindle-module-boards-v19-bsm-rs485-reader-compact-mounts" src="/images/extensions/bouni-spindle-module-boards/guides/bsm-rs485/reader-compact-mounts.png" title="Mounting holes" alt="Mounting holes on the bsm-rs485 assembly, v19" caption="Selected-source component-side reference for this assembly. Use the overview and focused sheets together. Bridge continuity, cable orientation and complete Prime wiring remain open." width=420 %}
+{% include _includes/extension-instruction-diagram.html id="bouni-spindle-module-boards-v19-bsm-rs485-reader-compact-mounts" src="/images/extensions/bouni-spindle-module-boards/guides/bsm-rs485/reader-compact-mounts.png" title="Mounting holes" alt="Mounting holes on the RS-485 board" caption="Component-side reference. Use the overview and focused sheets together." width=420 %}
 
-The annotated board-reference sheets above describe the selected source revision; the contact table below is a companion source aid. Actual desktop and narrow-view page/viewer acceptance remains open. Follow the wiring section for the connection procedure and its remaining installation limitations.
+The annotated board-reference sheets above describe the board; the contact table below accompanies them. Follow the wiring section for the connection procedure and its limitations.
 
 ### Connector contacts
 
-Contact numbering below is the selected PCB's pad numbering, viewed using the final board-reference drawing. Same-numbered duplicate lands are collapsed in this electrical table. Mechanical unnumbered pads are omitted here. Physical connector-population and mating qualification remains open. `NC` means unconnected in this saved source, not a spare supported function. Named nets alone do not establish direction; use the signal-path explanation above.
+Contact numbering below is the PCB's pad numbering, viewed using the board-reference drawing. Same-numbered duplicate lands are combined in this table. Mechanical unnumbered pads are omitted here. `NC` means unconnected, not a spare. Named nets alone do not establish direction; use the signal-path explanation above.
 
 <details markdown="1">
-<summary>Selected-source contact inventory</summary>
+<summary>Contact inventory</summary>
 
-| Connector | Contact(s) | Saved-source function/net |
+| Connector | Contact(s) | Function/net |
 | --- | --- | --- |
 | J1 — GADGETEER IN | 1 | `+3V3` |
 | J1 — GADGETEER IN | 2 | `+5V` |
@@ -99,12 +95,11 @@ Contact numbering below is the selected PCB's pad numbering, viewed using the fi
 
 </details>
 
-
 ### Links, controls and indicators
 
-The selected footprint values identify the intended control or indication. A cut-to-disable LED link affects indication, not the protected circuit's electrical qualification. Link population, default state and any reused older labels still need schematic/BOM reconciliation before instructions to cut or bridge are accepted.
+The footprint values identify the intended control or indication. A cut-to-disable LED link affects indication only. Check link population and default state before cutting or bridging.
 
-| Item | Selected source label | Contact nets / observation |
+| Item | Label | Contact nets / observation |
 | --- | --- | --- |
 | JP4 | CHAIN P4 OPEN | 1 = /UART_TX; 2 = /CHAIN_P4 |
 | JP5 | CHAIN P5 OPEN | 1 = /UART_RX; 2 = /CHAIN_P5 |
@@ -116,33 +111,29 @@ The selected footprint values identify the intended control or indication. A cut
 
 ### Termination link
 
-These are distinct physical solder-link footprints, including links whose references begin `SJ` rather than `JP`. Their labels and nets must be included in the annotated reference; none is silently omitted because of its reference prefix.
+These are additional solder links, including references beginning `SJ` rather than `JP`.
 
-| Link | Selected label | Pad nets |
+| Link | Label | Pad nets |
 | --- | --- | --- |
 | SJ1 | TERM 120R OPEN | 1=/BUS_P; 2=/TERM_MID |
 
 ## Practical use with Smoothieboard V2 Prime
 
-A complete Prime-to-drive installation remains open. Confirm the exact drive terminal mapping, protocol, addressing and direction control, as well as the host header allocation and both supply domains, before attempting installation.
+Before installing, confirm the exact drive terminal mapping, protocol, addressing and direction control, as well as the host header allocation and both supply domains.
 
 ## Smoothieware use
 
-The pinned170-file application/config snapshot and reviewed UART/M3 consumers contain no matching Modbus/VFD command application for this assembly. The UART console is not a half-duplex direction scheduler, Modbus register implementation or VFD fault controller. Matching required VFD support is absent from that pinned application scope; email wolf.arthur@gamil.com with the VFD model and selected RS485 assembly. Do not transfer the analog recipe to the serial board or invent Modbus registers. Availability in other forks/builds is unverified.
+SmoothieV2 contains no Modbus/VFD command application for this board. The UART console is not a half-duplex direction scheduler, Modbus register implementation or VFD fault controller.  Do not transfer the analog recipe to the serial board or invent Modbus registers.
 
-The source review covers SmoothieV2 revision `2a21c0108b1d095ecd8b2b9358e94055f053c003`. It does not establish the behavior of an installed version.
+This refers to SmoothieV2 commit `2a21c0108b1d095ecd8b2b9358e94055f053c003`.
 
-## Sources and revision notes
+## Sources
 
-The selected-revision engineering repository was unavailable to anonymous readers when checked. Its source links are retained for provenance; an accessible matching source release has not been verified. Firmware and historical-board links are separate sources.
-
-- [Selected v19 source directory](https://github.com/arthurwolf/extension-boards/tree/main/src/bouni-spindle-module-boards/attempt/versions/v19)
-- [Design specification](https://github.com/arthurwolf/extension-boards/blob/main/src/bouni-spindle-module-boards/specs.md) — historical design intent where it names an older revision.
+- [Design source directory](https://github.com/arthurwolf/extension-boards/tree/main/src/bouni-spindle-module-boards/attempt/versions/v19)
+- [Design specification](https://github.com/arthurwolf/extension-boards/blob/main/src/bouni-spindle-module-boards/specs.md)
 - [Design discussion](https://github.com/arthurwolf/extension-boards/blob/main/src/bouni-spindle-module-boards/design.md)
 - [All extension boards](/extension-boards)
 
-Upstream source-link availability has **not** been verified for publication.
-
-Selected active-component identities: `U1 ISOW1412DFMR`. These identities are not a substitute for matching datasheet limits.
+Active components: `U1 ISOW1412DFMR`. These identities are not a substitute for matching datasheet limits.
 
 {% include _includes/extension-board-visuals.html slug="bouni-spindle-module-boards" role="bsm rs485" %}

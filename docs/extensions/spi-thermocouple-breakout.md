@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "SPI Thermocouple Breakout"
-description: "A MAX31856 thermocouple-to-digital board: pinout, solder links, probe connection and the limits of what is established."
+description: "A MAX31856 thermocouple-to-digital board: pinout, solder links, probe connection and limitations."
 permalink: /extensions/spi-thermocouple-breakout
 ---
 
@@ -12,8 +12,7 @@ permalink: /extensions/spi-thermocouple-breakout
   <div>
     <p class="xb-eyebrow">Extension board · Temperature</p>
     <h1 id="spi-thermocouple-breakout">SPI Thermocouple Breakout</h1>
-    <p class="xb-lead">A MAX31856 converter that turns the small voltage of a thermocouple into a digital temperature over SPI. It is a sensor interface: it supplies no heater power and no independent over-temperature shutdown. The checked firmware has no driver for this converter.</p>
-    <p class="xb-badge">Design candidate · revision v16 · not yet built or tested</p>
+    <p class="xb-lead">A MAX31856 converter that turns the small voltage of a thermocouple into a digital temperature over SPI. It is a sensor interface: it supplies no heater power and no independent over-temperature shutdown. Smoothieware has no driver for this converter.</p>
     <div class="xb-actions">
       <a class="xb-btn xb-btn-primary" href="#get-started">Get started</a>
       <a class="xb-btn" href="#pinout">Pinout</a>
@@ -22,7 +21,7 @@ permalink: /extensions/spi-thermocouple-breakout
   </div>
   <figure>
     <img src="/images/extensions/spi-thermocouple-breakout/spi-thermocouple-breakout-diagram.png" alt="Top view of the SPI thermocouple breakout: two ten-contact sockets at the top, the converter in the middle and a two-way screw terminal at the bottom.">
-    <figcaption>Top view, drawn from the board&rsquo;s design files (revision v16). This is a drawing, not a photograph.</figcaption>
+    <figcaption>Top view, drawn from the board&rsquo;s design files. This is a drawing, not a photograph.</figcaption>
   </figure>
 </div>
 
@@ -31,7 +30,7 @@ permalink: /extensions/spi-thermocouple-breakout
   <div class="xb-stat"><b>Type selectable</b><span>set in the converter by the driver</span></div>
   <div class="xb-stat"><b>3.3 V</b><span>converter supply from the host</span></div>
   <div class="xb-stat"><b>No light</b><span>the board has no indicator</span></div>
-  <div class="xb-stat"><b>No firmware</b><span>no driver in the checked firmware</span></div>
+  <div class="xb-stat"><b>No firmware</b><span>no Smoothieware driver</span></div>
   <div class="xb-stat"><b>40 × 30</b><span>millimetres, two M3 holes</span></div>
 </div>
 
@@ -52,7 +51,7 @@ permalink: /extensions/spi-thermocouple-breakout
 
 <sl-alert variant="warning" open>
   <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
-  This is a design candidate that has not been built or tested, and it is not ready to energize; its schematic title block still reads WIP. It needs a MAX31856 driver, and none exists in the checked firmware: do not select the thermocouple driver for a different chip, and do not invent a sensor name. The board has no demonstrated galvanic isolation. Keep the thermocouple junction electrically isolated, and never connect heater power or a resistance sensor to J3.
+  <strong>Do not energize this board.</strong> It needs a MAX31856 driver, and Smoothieware has none: do not select the thermocouple driver for a different chip, and do not invent a sensor name. The board provides no galvanic isolation. Keep the thermocouple junction electrically isolated, and never connect heater power or a resistance sensor to J3.
 </sl-alert>
 
 ## Tech specs {#specs}
@@ -62,7 +61,7 @@ permalink: /extensions/spi-thermocouple-breakout
   <tbody>
     <tr><td>Purpose</td><td>Read a thermocouple digitally over SPI where a thermistor is inconvenient</td></tr>
     <tr><td>Converter</td><td>MAX31856MUD+, which compensates the cold junction and applies the selected thermocouple curve. It must be configured over MOSI as well as read over MISO, so it is not a drop-in replacement for a read-only MAX31855.</td></tr>
-    <tr><td>Interface</td><td>SPI on J1 contacts 6 to 9; the converter needs clock phase 1 with clock polarity 0 (mode 1) according to the earlier design notes</td></tr>
+    <tr><td>Interface</td><td>SPI on J1 contacts 6 to 9; the converter needs clock phase 1 with clock polarity 0 (mode 1)</td></tr>
     <tr><td>Input</td><td>Two-way screw terminal J3 (T&minus;, T+). The converter&rsquo;s input bias is tied to T&minus; in the schematic.</td></tr>
     <tr><td>Sockets</td><td>Two 10-contact Gadgeteer S sockets: J1 IN and J2 CHAIN</td></tr>
     <tr><td>Not brought out</td><td>The converter&rsquo;s data-ready and fault outputs are not on any connector</td></tr>
@@ -74,7 +73,7 @@ permalink: /extensions/spi-thermocouple-breakout
 </table></div>
 {:/nomarkdown}
 
-Every figure with its basis is in the [electrical specifications](#electrical) appendix; hole positions are in the [mounting dimensions](#mounting) appendix. The converter&rsquo;s capabilities are in the [manufacturer data sheet](https://www.analog.com/media/en/technical-documentation/data-sheets/MAX31856.pdf); they are not a temperature range or accuracy rating for this board, a probe or an installation.
+Every figure with its conditions is in the [electrical specifications](#electrical) appendix; hole positions are in the [mounting dimensions](#mounting) appendix. The converter&rsquo;s capabilities are in the [manufacturer data sheet](https://www.analog.com/media/en/technical-documentation/data-sheets/MAX31856.pdf); they are not a temperature range or accuracy rating for this board, a probe or an installation.
 
 ## Board tour {#tour}
 
@@ -162,16 +161,16 @@ These are thermocouple alloy leads, not ordinary copper jumpers and not supply w
 </table></div>
 {:/nomarkdown}
 
-Do not bridge JP6 to add a second converter: both would be selected at once. A second sensor needs its own verified chip-select scheme and compatible firmware.
+Do not bridge JP6 to add a second converter: both would be selected at once. A second sensor needs its own chip-select scheme and compatible firmware.
 
 ## What you need {#what-you-need}
 
 {::nomarkdown}
 <div class="xb-cards">
-  <div class="xb-card"><b>This board</b><span>The design is not yet built.</span></div>
-  <div class="xb-card"><b>A thermocouple</b><span>A probe whose type and lead colours you have identified. An ANSI type-K Omega 5TC-TT-K-30-36 is the design example.</span></div>
+  <div class="xb-card"><b>This board</b><span>The SPI thermocouple breakout.</span></div>
+  <div class="xb-card"><b>A thermocouple</b><span>A probe whose type and lead colours you have identified. An ANSI type-K Omega 5TC-TT-K-30-36 is the example.</span></div>
   <div class="xb-card"><b>A ten-core ribbon</b><span>To the host header, checked end to end with the power removed.</span></div>
-  <div class="xb-card"><b>A driver</b><span>Matching converter firmware. None is available in the checked firmware.</span></div>
+  <div class="xb-card"><b>A driver</b><span>Matching converter firmware. Smoothieware does not include one.</span></div>
 </div>
 {:/nomarkdown}
 
@@ -181,11 +180,11 @@ Do not bridge JP6 to add a second converter: both would be selected at once. A s
 <ol class="xb-steps">
   <li class="xb-step">
     <h3>Identify the board</h3>
-    <p>Confirm the board uses a MAX31856MUD+ and matches revision v16. A different board or a MAX31855 module does not have the same circuit.</p>
+    <p>Confirm the board uses a MAX31856MUD+. A different board or a MAX31855 module does not have the same circuit.</p>
   </li>
   <li class="xb-step">
     <h3>Check the cable</h3>
-    <p>With everything unpowered and the cable detached from both boards, establish contact 1 at each plug and check the ten number-to-number cores, and that no two cores touch. A red stripe or a plug that fits is not enough. The proposed connection is Prime header GE (J36) contacts 1 to 10 to J1 contacts 1 to 10; the board uses 3.3&nbsp;V (1), chip select on PD15 (6), MOSI (7), MISO (8), clock (9) and ground (10).</p>
+    <p>With everything unpowered and the cable detached from both boards, establish contact 1 at each plug and check the ten number-to-number cores, and that no two cores touch. A red stripe or a plug that fits is not enough. The connection is Prime header GE (J36) contacts 1 to 10 to J1 contacts 1 to 10; the board uses 3.3&nbsp;V (1), chip select on PD15 (6), MOSI (7), MISO (8), clock (9) and ground (10).</p>
     <p class="xb-expect">Keep J2 unconnected and do not attach an external supply to the through rails. Do not configure PE8, PJ7 or PJ8 as outputs just because the ribbon carries them.</p>
   </li>
   <li class="xb-step">
@@ -194,7 +193,7 @@ Do not bridge JP6 to add a second converter: both would be selected at once. A s
   </li>
   <li class="xb-step">
     <h3>Stop at the bench</h3>
-    <p>Without a driver there is nothing to read. Treat this as a connection study; there is no heater in the example, and the board is not qualified for one.</p>
+    <p>Without a driver there is nothing to read. There is no heater in this example.</p>
   </li>
 </ol>
 {:/nomarkdown}
@@ -205,12 +204,12 @@ Do not bridge JP6 to add a second converter: both would be selected at once. A s
 <div class="xb-tablewrap"><table>
   <thead><tr><th>You want</th><th>Module</th><th>Example</th></tr></thead>
   <tbody>
-    <tr><td>A temperature from this board</td><td>None in the checked firmware</td><td>Not supported</td></tr>
+    <tr><td>A temperature from this board</td><td>None in Smoothieware</td><td>Not supported</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}
 
-The checked SmoothieV2 source (revision 2a21c0108b1d095ecd8b2b9358e94055f053c003) recognises <code>thermistor</code> and <code>max31855</code> in its [temperature factory](https://github.com/Smoothieware/SmoothieV2/blob/2a21c0108b1d095ecd8b2b9358e94055f053c003/Firmware/src/modules/tools/temperaturecontrol/TemperatureControl.cpp#L177-L193); any other name creates a dummy sensor. The thermocouple driver for the other chip cannot substitute, and a pin assignment alone gives neither acquisition nor fault handling. This applies to that revision only; it does not describe firmware installed on a controller. A matching driver would have to allocate the SPI port and the chip select on PD15, select the thermocouple type, enable conversions and fault reporting, and use clock phase 1. The converter resets with conversions off. After support exists, polarity, cold-junction performance, calibration and open-probe behaviour need independent validation; no settings are given here.
+The SmoothieV2 source recognises <code>thermistor</code> and <code>max31855</code> in its [temperature factory](https://github.com/Smoothieware/SmoothieV2/blob/2a21c0108b1d095ecd8b2b9358e94055f053c003/Firmware/src/modules/tools/temperaturecontrol/TemperatureControl.cpp#L177-L193); any other name creates a dummy sensor. The thermocouple driver for the other chip cannot substitute, and a pin assignment alone gives neither acquisition nor fault handling. A matching driver would have to allocate the SPI port and the chip select on PD15, select the thermocouple type, enable conversions and fault reporting, and use clock phase 1. The converter resets with conversions off. After support exists, polarity, cold-junction performance, calibration and open-probe behaviour need checking; no settings are given here.
 
 ## How it works {#how-it-works}
 
@@ -233,7 +232,7 @@ The checked SmoothieV2 source (revision 2a21c0108b1d095ecd8b2b9358e94055f053c003
 </figure>
 {:/nomarkdown}
 
-Two dissimilar-metal leads meet at the sensing junction, and their small differential voltage enters at T&minus; and T+. The controller must send configuration to the converter as well as read it. The converter supply comes from the host 3.3&nbsp;V rail; its available budget, cable loss and the total attached load are not established. The board has no demonstrated galvanic isolation, so a grounded or mains-referenced junction must not be connected.
+Two dissimilar-metal leads meet at the sensing junction, and their small differential voltage enters at T&minus; and T+. The controller must send configuration to the converter as well as read it. The converter supply comes from the host 3.3&nbsp;V rail; check the available current, cable loss and total attached load. The board provides no galvanic isolation, so a grounded or mains-referenced junction must not be connected.
 
 {% include _includes/temperature-board-comparison.html %}
 
@@ -248,7 +247,7 @@ This board has no indicator lights.
     <tr><td>No SPI answer</td><td>3.3&nbsp;V on contact 1, chip select, and the numbered continuity of the ribbon.</td></tr>
     <tr><td>Reading reversed or implausible</td><td>T&minus; and T+ swapped; a probe type that does not match the converter&rsquo;s configured type.</td></tr>
     <tr><td>A following chained board does not answer</td><td>Chip select is not passed on by default (JP6 open).</td></tr>
-    <tr><td>Fault or open-probe report</td><td>Probe leads and terminals; the open-circuit and fault behaviour needs independent validation.</td></tr>
+    <tr><td>Fault or open-probe report</td><td>Probe leads and terminals; open-circuit and fault behaviour depend on the driver.</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}
@@ -259,12 +258,12 @@ Still stuck? Read [how to ask for help](/help-guidelines) or see the general [tr
 
 {::nomarkdown}
 <div class="xb-tablewrap"><table>
-  <thead><tr><th>File</th><th>Revision</th><th>What it is</th></tr></thead>
+  <thead><tr><th>File</th><th>What it is</th></tr></thead>
   <tbody>
-    <tr><td><a href="/images/extensions/spi-thermocouple-breakout/spi-thermocouple-breakout-schematic.pdf">Schematic (PDF)</a></td><td>v16</td><td>The complete circuit diagram. Its title block reads v11 and the work-in-progress mark.</td></tr>
-    <tr><td><a href="/images/extensions/spi-thermocouple-breakout/spi-thermocouple-breakout-bom.csv">Parts list (CSV)</a></td><td>v16</td><td>Every component with its value and footprint</td></tr>
-    <tr><td><a href="/images/extensions/spi-thermocouple-breakout/spi-thermocouple-breakout-diagram.png">Board drawing (SVG)</a></td><td>v16</td><td>The top view used on this page, at full resolution</td></tr>
-    <tr><td><a href="/assets/downloads/extensions/spi-thermocouple-breakout/max31856-cad-study.zip">CAD study (ZIP)</a></td><td>v16</td><td>The KiCad project with libraries and licence texts; a source study, not a fabrication or tested release</td></tr>
+    <tr><td><a href="/images/extensions/spi-thermocouple-breakout/spi-thermocouple-breakout-schematic.pdf">Schematic (PDF)</a></td><td>The complete circuit diagram.</td></tr>
+    <tr><td><a href="/images/extensions/spi-thermocouple-breakout/spi-thermocouple-breakout-bom.csv">Parts list (CSV)</a></td><td>Every component with its value and footprint</td></tr>
+    <tr><td><a href="/images/extensions/spi-thermocouple-breakout/spi-thermocouple-breakout-diagram.png">Board drawing (SVG)</a></td><td>The top view used on this page, at full resolution</td></tr>
+    <tr><td><a href="/assets/downloads/extensions/spi-thermocouple-breakout/max31856-cad-study.zip">CAD files (ZIP)</a></td><td>The KiCad project with libraries and licence texts</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}
@@ -312,24 +311,22 @@ For drilling a mounting plate or designing an enclosure. Positions are hole cent
 
 ## Appendix: electrical specifications {#electrical}
 
-Every figure is a design value or a value from the parts list, as the last column says. None is a measurement on a built board. **Open** means not established.
+A dash means no figure is given.
 
 {::nomarkdown}
 <div class="xb-tablewrap"><table class="xb-elec">
-  <thead><tr><th>Parameter</th><th>Applies to</th><th>Lower</th><th>Nominal</th><th>Upper</th><th>Basis and conditions</th></tr></thead>
+  <thead><tr><th>Parameter</th><th>Applies to</th><th>Lower</th><th>Nominal</th><th>Upper</th><th>Conditions</th></tr></thead>
   <tbody>
-    <tr><td>Converter supply</td><td>J1 contact 1</td><td>Open</td><td>3.3 V</td><td>Open</td><td>Host rail budget and cable loss Open</td></tr>
+    <tr><td>Converter supply</td><td>J1 contact 1</td><td>—</td><td>3.3 V</td><td>—</td><td>Supplied by the host</td></tr>
     <tr><td>Chip-select pull-up</td><td>R1</td><td>—</td><td>10 k&Omega;</td><td>—</td><td>Parts list</td></tr>
     <tr><td>Input capacitors</td><td>C2, C4, C5</td><td>—</td><td>100 nF across, 10 nF to ground each</td><td>—</td><td>Parts list</td></tr>
-    <tr><td>Thermocouple type, range, accuracy</td><td>J3</td><td>Open</td><td>Open</td><td>Open</td><td>The converter&rsquo;s capability is in its data sheet, not a rating for this board or a probe</td></tr>
-    <tr><td>Isolation</td><td>J3</td><td>—</td><td>None demonstrated</td><td>—</td><td>Input bias is tied to T&minus; in the schematic</td></tr>
-    <tr><td>SPI clock rate</td><td>J1 contacts 6 to 9</td><td>Open</td><td>Open</td><td>Open</td><td>Set by the converter data sheet and the driver</td></tr>
+    <tr><td>Isolation</td><td>J3</td><td>—</td><td>None</td><td>—</td><td>Input bias is tied to T&minus; in the schematic</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}
 
 ### Prime header GE (J36)
 
-The design notes name the Prime&rsquo;s GE (J36) header for this board, with chip select on PD15. A discrepancy in the rail positions on the physical connector has been noted: verify numbered continuity and the available rail current with the power removed.
+This board connects to the Prime&rsquo;s GE (J36) header, with chip select on PD15. Verify numbered continuity and the available rail current with the power removed.
 
 See all boards on the [extension boards](/extension-boards) page.

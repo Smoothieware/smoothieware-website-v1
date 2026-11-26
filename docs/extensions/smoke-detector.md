@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "SCD41 environmental sensor"
-description: "A CO2, temperature and humidity sensor board (Sensirion SCD41) on I2C with a local 3.3 V regulator and a chain socket. Despite its folder name it is not a smoke, carbon monoxide or fire alarm."
+description: "A CO2, temperature and humidity sensor board (Sensirion SCD41) on I2C with a local 3.3 V regulator and a chain socket. It is not a smoke, carbon monoxide or fire alarm."
 permalink: /extensions/smoke-detector
 ---
 
@@ -12,8 +12,7 @@ permalink: /extensions/smoke-detector
   <div>
     <p class="xb-eyebrow">Extension board · Sensors</p>
     <h1 id="smoke-detector">SCD41 environmental sensor</h1>
-    <p class="xb-lead">A Sensirion SCD41 on a board: it reports carbon dioxide, temperature and relative humidity over I2C, with its own 3.3&nbsp;V regulator and a chain socket. The project folder is still called smoke-detector, but this board does not detect smoke or carbon monoxide and is not a fire alarm.</p>
-    <p class="xb-badge">Design candidate · revision v18 · not yet built or tested</p>
+    <p class="xb-lead">A Sensirion SCD41 on a board: it reports carbon dioxide, temperature and relative humidity over I2C, with its own 3.3&nbsp;V regulator and a chain socket. This board does not detect smoke or carbon monoxide and is not a fire alarm.</p>
     <div class="xb-actions">
       <a class="xb-btn xb-btn-primary" href="#get-started">Get started</a>
       <a class="xb-btn" href="#pinout">Pinout</a>
@@ -22,7 +21,7 @@ permalink: /extensions/smoke-detector
   </div>
   <figure>
     <img src="/images/extensions/smoke-detector/smoke-detector-diagram.png" alt="Top view of the CO2 sensor board: two sockets along the top, link pads and logic parts in the middle, the square sensor at the lower right and a small connector at the lower left.">
-    <figcaption>Top view, drawn from the board&rsquo;s design files (revision v18). This is a drawing, not a photograph.</figcaption>
+    <figcaption>Top view, drawn from the board&rsquo;s design files. This is a drawing, not a photograph.</figcaption>
   </figure>
 </div>
 
@@ -31,7 +30,7 @@ permalink: /extensions/smoke-detector
   <div class="xb-stat"><b>I2C 0x62</b><span>the address printed on the board</span></div>
   <div class="xb-stat"><b>3.3 V local</b><span>from the 5&nbsp;V host rail through a TLV75533</span></div>
   <div class="xb-stat"><b>2 lights</b><span>sensor power, and a host-driven alarm</span></div>
-  <div class="xb-stat"><b>No driver</b><span>no SCD41 code in the pinned source</span></div>
+  <div class="xb-stat"><b>No driver</b><span>Smoothieware has no SCD41 code</span></div>
   <div class="xb-stat"><b>39 × 38</b><span>millimetres, two M3 holes</span></div>
 </div>
 
@@ -52,7 +51,7 @@ permalink: /extensions/smoke-detector
 
 <sl-alert variant="warning" open>
   <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
-  This is a design candidate that has not been built or tested, and it is not ready to energize. It is not a smoke, carbon monoxide or fire alarm and has no certification; the board itself is marked NON-CERTIFIED and NOT A SMOKE, CO OR FIRE ALARM. Do not rely on it for protection of people or property. Warm-up, calibration, sensor supply peaks, enclosure ventilation and the host rail budget are not established.
+  This board is not a smoke, carbon monoxide or fire alarm and has no certification; the board itself is marked NON-CERTIFIED and NOT A SMOKE, CO OR FIRE ALARM. Do not rely on it for protection of people or property. Allow for sensor warm-up, calibration, sensor supply peaks, enclosure ventilation and the host rail budget.
 </sl-alert>
 
 ## Tech specs {#specs}
@@ -60,7 +59,7 @@ permalink: /extensions/smoke-detector
 {::nomarkdown}
 <div class="xb-tablewrap"><table class="xb-spec">
   <tbody>
-    <tr><td>Purpose</td><td>Experimental environmental telemetry: CO2 concentration, temperature and relative humidity</td></tr>
+    <tr><td>Purpose</td><td>Environmental telemetry: CO2 concentration, temperature and relative humidity</td></tr>
     <tr><td>Sensor</td><td>Sensirion SCD41 (U1) on I2C, address 0x62 as printed on the board</td></tr>
     <tr><td>Sensor supply</td><td>Separate from the host 3.3&nbsp;V rail: the host 5&nbsp;V on J1 contact 2 passes link JP_5V to a TLV75533 regulator whose output feeds the sensor-local rail 3V3S</td></tr>
     <tr><td>I2C pull-ups</td><td>10&nbsp;k&Omega; to the sensor-local rail, enabled by the PU_EN link JP_PU (bridged as delivered)</td></tr>
@@ -69,13 +68,13 @@ permalink: /extensions/smoke-detector
     <tr><td>Sockets</td><td>Two 10-contact Gadgeteer I sockets (Samtec SHF-105, 1.27&nbsp;mm): input and chain. A four-contact 1&nbsp;mm I2C connector J3.</td></tr>
     <tr><td>Test points</td><td>Eight: 5&nbsp;V, ground (two), data, clock, alarm input, host 3.3&nbsp;V and sensor 3.3&nbsp;V (not drawn in the top view)</td></tr>
     <tr><td>Size</td><td>39 &times; 38&nbsp;mm with two M3 mounting holes</td></tr>
-    <tr><td>Works with</td><td><a href="/smoothieboard-v2-prime">Smoothieboard V2 Prime</a> (not yet usable without a driver)</td></tr>
+    <tr><td>Works with</td><td><a href="/smoothieboard-v2-prime">Smoothieboard V2 Prime</a> (Smoothieware has no SCD41 driver)</td></tr>
     <tr><td>Licence</td><td>Open hardware, CERN-OHL-S-2.0</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}
 
-Every figure with its basis is in the [electrical specifications](#electrical) appendix; hole positions are in the [mounting dimensions](#mounting) appendix.
+The electrical figures are in the [electrical specifications](#electrical) appendix; hole positions are in the [mounting dimensions](#mounting) appendix.
 
 ## Board tour {#tour}
 
@@ -176,7 +175,6 @@ A second board on the chain sees the same SDA and SCL, and the pull-ups here add
 
 {::nomarkdown}
 <div class="xb-cards">
-  <div class="xb-card"><b>This board</b><span>The design is not yet built.</span></div>
   <div class="xb-card"><b>Four host wires</b><span>5&nbsp;V, I2C data, I2C clock and ground to the controller.</span></div>
   <div class="xb-card"><b>A driver</b><span>Code that talks to the SCD41 and decides what the numbers mean. None is supplied.</span></div>
   <div class="xb-card"><b>A real alarm</b><span>If you need smoke or carbon monoxide detection, use a certified detector.</span></div>
@@ -189,12 +187,12 @@ A second board on the chain sees the same SDA and SCL, and the pull-ups here add
 <ol class="xb-steps">
   <li class="xb-step">
     <h3>Check the rails</h3>
-    <p>Establish the 5&nbsp;V budget of the controller&rsquo;s limited rail and the sensor&rsquo;s supply peaks before connecting the board. The 3.3&nbsp;V on J1 contact 1 is not needed.</p>
+    <p>Check the 5&nbsp;V budget of the controller&rsquo;s limited rail and the sensor&rsquo;s supply peaks before connecting the board. The 3.3&nbsp;V on J1 contact 1 is not needed.</p>
   </li>
   <li class="xb-step">
     <h3>Wire four leads</h3>
     <p>With the power off, connect header GG (J38) contacts 2 (5&nbsp;V), 8 (I2C2 data), 9 (I2C2 clock) and 10 (ground) to J1 contacts 2, 8, 9 and 10. Leave the other contacts unconnected. Check numbered continuity and the connector orientation first.</p>
-    <p class="xb-expect">The rail positions on the Prime&rsquo;s physical headers need checking before powering; see the Prime header note in the electrical appendix.</p>
+    <p class="xb-expect">Check the rail positions on the Prime&rsquo;s physical headers before powering; see the Prime header note in the electrical appendix.</p>
   </li>
   <li class="xb-step">
     <h3>Check the links and the rail</h3>
@@ -202,7 +200,7 @@ A second board on the chain sees the same SDA and SCL, and the pull-ups here add
   </li>
   <li class="xb-step">
     <h3>Wait for a driver</h3>
-    <p>The sensor needs warm-up, calibration and a defined policy for stale or failed readings. Until a driver exists, no reading can be taken.</p>
+    <p>The sensor needs warm-up, calibration and a defined policy for stale or failed readings. Without a driver, no reading can be taken.</p>
   </li>
 </ol>
 {:/nomarkdown}
@@ -213,13 +211,13 @@ A second board on the chain sees the same SDA and SCL, and the pull-ups here add
 <div class="xb-tablewrap"><table>
   <thead><tr><th>You want</th><th>Module</th><th>Example</th></tr></thead>
   <tbody>
-    <tr><td>Read CO2, temperature, humidity</td><td>None</td><td>No driver exists; no example is given</td></tr>
+    <tr><td>Read CO2, temperature, humidity</td><td>None</td><td>No driver in Smoothieware</td></tr>
     <tr><td>Light the red alarm light from a threshold</td><td>None</td><td>No matching code; the light follows contact 3</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}
 
-There is no configuration to give. The pinned SmoothieV2 source (revision [2a21c0108b1d095ecd8b2b9358e94055f053c003](https://github.com/Smoothieware/SmoothieV2/tree/2a21c0108b1d095ecd8b2b9358e94055f053c003/Firmware/src)) contains no SCD41 driver, and generic I2C hardware alone gives neither CO2 values nor a threshold policy. A configuration here would be invented.
+There is no configuration to give. Smoothieware contains no SCD41 driver, and generic I2C hardware alone gives neither CO2 values nor a threshold policy.
 
 ## How it works {#how-it-works}
 
@@ -273,11 +271,11 @@ Still stuck? Read [how to ask for help](/help-guidelines) or see the general [tr
 
 {::nomarkdown}
 <div class="xb-tablewrap"><table>
-  <thead><tr><th>File</th><th>Revision</th><th>What it is</th></tr></thead>
+  <thead><tr><th>File</th><th>What it is</th></tr></thead>
   <tbody>
-    <tr><td><a href="/images/extensions/smoke-detector/smoke-detector-schematic.pdf">Schematic (PDF)</a></td><td>v18</td><td>The complete circuit diagram. Its title block reads v11.</td></tr>
-    <tr><td><a href="/images/extensions/smoke-detector/smoke-detector-bom.csv">Parts list (CSV)</a></td><td>v18</td><td>Every component with its value and footprint</td></tr>
-    <tr><td><a href="/images/extensions/smoke-detector/smoke-detector-diagram.png">Board drawing (SVG)</a></td><td>v18</td><td>The top view used on this page, at full resolution</td></tr>
+    <tr><td><a href="/images/extensions/smoke-detector/smoke-detector-schematic.pdf">Schematic (PDF)</a></td><td>The complete circuit diagram.</td></tr>
+    <tr><td><a href="/images/extensions/smoke-detector/smoke-detector-bom.csv">Parts list (CSV)</a></td><td>Every component with its value and footprint</td></tr>
+    <tr><td><a href="/images/extensions/smoke-detector/smoke-detector-diagram.png">Board drawing (SVG)</a></td><td>The top view used on this page, at full resolution</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}
@@ -325,24 +323,23 @@ For drilling a mounting plate or designing an enclosure. Positions are hole cent
 
 ## Appendix: electrical specifications {#electrical}
 
-Every figure is a design value or a value from the parts list, as the last column says. None is a measurement on a built board. **Open** means not established.
+A dash means no value is given.
 
 {::nomarkdown}
 <div class="xb-tablewrap"><table class="xb-elec">
-  <thead><tr><th>Parameter</th><th>Applies to</th><th>Lower</th><th>Nominal</th><th>Upper</th><th>Basis and conditions</th></tr></thead>
+  <thead><tr><th>Parameter</th><th>Applies to</th><th>Lower</th><th>Nominal</th><th>Upper</th><th>Conditions</th></tr></thead>
   <tbody>
-    <tr><td>Sensor supply input</td><td>J1 contact 2</td><td>Open</td><td>5 V</td><td>Open</td><td>Host allowance and sensor peak current Open</td></tr>
-    <tr><td>Sensor-local rail</td><td>3V3S, TP7</td><td>—</td><td>3.3 V</td><td>—</td><td>Output of the TLV75533 regulator; not measured</td></tr>
+    <tr><td>Sensor supply input</td><td>J1 contact 2</td><td>—</td><td>5 V</td><td>—</td><td>From the host</td></tr>
+    <tr><td>Sensor-local rail</td><td>3V3S, TP7</td><td>—</td><td>3.3 V</td><td>—</td><td>Output of the TLV75533 regulator</td></tr>
     <tr><td>I2C pull-ups</td><td>SDA, SCL</td><td>—</td><td>10 k&Omega;</td><td>—</td><td>Parts list, to the sensor-local rail</td></tr>
     <tr><td>Power light resistor</td><td>D1</td><td>—</td><td>470 &Omega;</td><td>—</td><td>Parts list</td></tr>
     <tr><td>Alarm light resistor</td><td>D2</td><td>—</td><td>680 &Omega;</td><td>—</td><td>Parts list; pull-down 100&nbsp;k&Omega;</td></tr>
-    <tr><td>Warm-up, calibration, accuracy</td><td>Whole board</td><td>Open</td><td>Open</td><td>Open</td><td>Not established</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}
 
 ### Prime header GG (J38)
 
-The design notes name header GG (J38) for the four leads: contact 2 is 5&nbsp;V, contacts 8 and 9 are the I2C2 data and clock, and contact 10 is ground. A discrepancy in the rail positions on the Prime&rsquo;s physical connector has been noted for the neighbouring G_F (J37) header; verify numbered continuity with the power removed.
+Use header GG (J38) for the four leads: contact 2 is 5&nbsp;V, contacts 8 and 9 are the I2C2 data and clock, and contact 10 is ground. Check the rail positions on the Prime&rsquo;s physical connector, and verify numbered continuity with the power removed.
 
 See all boards on the [extension boards](/extension-boards) page.

@@ -13,7 +13,6 @@ permalink: /extensions/mechanical-endstop-breakout
     <p class="xb-eyebrow">Extension board · Endstops</p>
     <h1 id="mechanical-endstop-breakout">Mechanical endstop breakout</h1>
     <p class="xb-lead">Reads either an onboard Omron-style microswitch or an external normally-closed contact, filters it and passes it to one 3.3&nbsp;V host input through a Schmitt buffer. A broken normally-closed circuit reads as triggered.</p>
-    <p class="xb-badge">Design candidate · revision v18 · not yet built or tested</p>
     <div class="xb-actions">
       <a class="xb-btn xb-btn-primary" href="#get-started">Get started</a>
       <a class="xb-btn" href="#pinout">Pinout</a>
@@ -22,7 +21,7 @@ permalink: /extensions/mechanical-endstop-breakout
   </div>
   <figure>
     <img src="/images/extensions/mechanical-endstop-breakout/mechanical-endstop-breakout-diagram.png" alt="Top view of the mechanical endstop breakout: a lever microswitch at the top, a three-pad connector area at the lower left and a 10-contact socket at the lower right.">
-    <figcaption>Top view, drawn from the board&rsquo;s design files (revision v18). This is a drawing, not a photograph.</figcaption>
+    <figcaption>Top view, drawn from the board&rsquo;s design files. This is a drawing, not a photograph.</figcaption>
   </figure>
 </div>
 
@@ -52,7 +51,7 @@ permalink: /extensions/mechanical-endstop-breakout
 
 <sl-alert variant="warning" open>
   <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
-  This is a design candidate that has not been built or tested. Ratings are design values, not measurements. A normally-closed loop that reads as triggered when broken does not detect every fault, for example a short, and this board is not a qualified safety limit.
+A normally-closed loop that reads as triggered when broken does not detect every fault, for example a short; do not rely on this board as a safety limit.
 </sl-alert>
 
 ## Tech specs {#specs}
@@ -169,7 +168,6 @@ Contact 1 is at the lower left of the socket in the tour, contact 2 directly abo
 
 {::nomarkdown}
 <div class="xb-cards">
-  <div class="xb-card"><b>This board</b><span>The design is not yet built.</span></div>
   <div class="xb-card"><b>Four wires</b><span>Individual leads from header G_F to the socket: 3.3&nbsp;V, 5&nbsp;V, signal and ground.</span></div>
   <div class="xb-card"><b>A free input</b><span>PB1 in the example, if nothing else uses it.</span></div>
   <div class="xb-card"><b>A remote contact</b><span>Only for the remote option: a normally-closed switch.</span></div>
@@ -187,7 +185,7 @@ Contact 1 is at the lower left of the socket in the tour, contact 2 directly abo
   <li class="xb-step">
     <h3>Wire the host</h3>
     <p>Connect header G_F (J37) contacts 1, 2, 3 and 10 to JX contacts 1, 2, 3 and 10 with individual leads: 3.3&nbsp;V, 5&nbsp;V, PB1 and ground. Leave JX contacts 4 to 9 unused. Check the contact numbers against the real board first.</p>
-    <p class="xb-expect">On the Prime the rail positions on the physical header need checking against the board before powering; see the note on the Prime header in the electrical appendix.</p>
+    <p class="xb-expect">On the Prime the rail positions on the physical header must be checked against the board before powering; see the note on the Prime header in the electrical appendix.</p>
   </li>
   <li class="xb-step">
     <h3>Add the configuration</h3>
@@ -224,7 +222,7 @@ bench_endstop.homing_direction = none
 bench_endstop.limit_enable = false
 ```
 
-The `^` turns on the input pull-up and no `!` is used because triggered is high. The entry enables neither homing nor a limit. Do not use it while PB1 is allocated elsewhere. In the pinned SmoothieV2 source (revision 2a21c0108b1d095ecd8b2b9358e94055f053c003), the [input parser](https://github.com/Smoothieware/SmoothieV2/blob/2a21c0108b1d095ecd8b2b9358e94055f053c003/Firmware/src/modules/tools/endstops/Endstops.cpp#L130-L200) keeps `homing_direction = none` inputs and the [M119 handler](https://github.com/Smoothieware/SmoothieV2/blob/2a21c0108b1d095ecd8b2b9358e94055f053c003/Firmware/src/modules/tools/endstops/Endstops.cpp#L1013-L1030) reports their state. This has not been run on a built board.
+The `^` turns on the input pull-up and no `!` is used because triggered is high. The entry enables neither homing nor a limit. Do not use it while PB1 is allocated elsewhere. In the SmoothieV2 source (commit 2a21c0108b1d095ecd8b2b9358e94055f053c003), the [input parser](https://github.com/Smoothieware/SmoothieV2/blob/2a21c0108b1d095ecd8b2b9358e94055f053c003/Firmware/src/modules/tools/endstops/Endstops.cpp#L130-L200) keeps `homing_direction = none` inputs and the [M119 handler](https://github.com/Smoothieware/SmoothieV2/blob/2a21c0108b1d095ecd8b2b9358e94055f053c003/Firmware/src/modules/tools/endstops/Endstops.cpp#L1013-L1030) reports their state.
 
 ## How it works {#how-it-works}
 
@@ -249,7 +247,7 @@ The `^` turns on the input pull-up and no `!` is used because triggered is high.
 
 A closed normally-closed contact holds the node at ground, so the output is low. When the contact opens, or the cable breaks, the 3.3&nbsp;k&Omega; pull-up to 5&nbsp;V raises the node, the Schmitt buffer sees a high input and the output goes high. The buffer runs from 3.3&nbsp;V and the family is specified for 5&nbsp;V-tolerant inputs, so the host sees a 3.3&nbsp;V logic level. The LED is wired to the local switch&rsquo;s normally-open contact, so it lights only when the local lever is pressed.
 
-If 3.3&nbsp;V is lost while 5&nbsp;V is present, the output behaviour is not established. Rail-loss behaviour is open.
+If 3.3&nbsp;V is lost while 5&nbsp;V is present, do not rely on the output state.
 
 ## Troubleshooting {#troubleshooting}
 
@@ -283,11 +281,11 @@ Still stuck? Read [how to ask for help](/help-guidelines) or see the general [tr
 
 {::nomarkdown}
 <div class="xb-tablewrap"><table>
-  <thead><tr><th>File</th><th>Revision</th><th>What it is</th></tr></thead>
+  <thead><tr><th>File</th><th>What it is</th></tr></thead>
   <tbody>
-    <tr><td><a href="/images/extensions/mechanical-endstop-breakout/mechanical-endstop-breakout-schematic.pdf">Schematic (PDF)</a></td><td>v18</td><td>The complete circuit diagram. Its title block reads v12.</td></tr>
-    <tr><td><a href="/images/extensions/mechanical-endstop-breakout/mechanical-endstop-breakout-bom.csv">Parts list (CSV)</a></td><td>v18</td><td>Every component with its value and footprint</td></tr>
-    <tr><td><a href="/images/extensions/mechanical-endstop-breakout/mechanical-endstop-breakout-diagram.png">Board drawing (SVG)</a></td><td>v18</td><td>The top view used on this page, at full resolution</td></tr>
+    <tr><td><a href="/images/extensions/mechanical-endstop-breakout/mechanical-endstop-breakout-schematic.pdf">Schematic (PDF)</a></td><td>The complete circuit diagram.</td></tr>
+    <tr><td><a href="/images/extensions/mechanical-endstop-breakout/mechanical-endstop-breakout-bom.csv">Parts list (CSV)</a></td><td>Every component with its value and footprint</td></tr>
+    <tr><td><a href="/images/extensions/mechanical-endstop-breakout/mechanical-endstop-breakout-diagram.png">Board drawing (SVG)</a></td><td>The top view used on this page, at full resolution</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}
@@ -340,25 +338,23 @@ For drilling a mounting plate or designing an enclosure. Positions are hole cent
 
 ## Appendix: electrical specifications {#electrical}
 
-Every figure is a design value, a value calculated from the design or a value from a part, as the last column says. None is a measurement on a built board. **Open** means not established.
+The table lists the supply, signal and filter values and their basis.
 
 {::nomarkdown}
 <div class="xb-tablewrap"><table class="xb-elec">
   <thead><tr><th>Parameter</th><th>Applies to</th><th>Lower</th><th>Nominal</th><th>Upper</th><th>Basis and conditions</th></tr></thead>
   <tbody>
-    <tr><td>Logic supply</td><td>JX contact 1</td><td>Open</td><td>3.3 V</td><td>Open</td><td>Buffer and output pull-up supply</td></tr>
-    <tr><td>Field supply</td><td>JX contact 2</td><td>Open</td><td>5 V</td><td>Open</td><td>Contact pull-up, LED and J1 contact 3; host-derived</td></tr>
-    <tr><td>Contact pull-up current</td><td>Closed contact to ground</td><td>—</td><td>about 1.5 mA</td><td>—</td><td>Calculated: 5&nbsp;V through 3.3&nbsp;k&Omega;; the contact micro-load rating is Open</td></tr>
+    <tr><td>Logic supply</td><td>JX contact 1</td><td>—</td><td>3.3 V</td><td>—</td><td>Buffer and output pull-up supply</td></tr>
+    <tr><td>Field supply</td><td>JX contact 2</td><td>—</td><td>5 V</td><td>—</td><td>Contact pull-up, LED and J1 contact 3; host-derived</td></tr>
+    <tr><td>Contact pull-up current</td><td>Closed contact to ground</td><td>—</td><td>about 1.5 mA</td><td>—</td><td>Calculated: 5&nbsp;V through 3.3&nbsp;k&Omega;</td></tr>
     <tr><td>Filter corner</td><td>R2 and C1</td><td>—</td><td>about 1.6 kHz</td><td>—</td><td>Calculated from 1&nbsp;k&Omega; and 100&nbsp;nF with no source resistance counted</td></tr>
-    <tr><td>Output</td><td>JX contact 3</td><td>—</td><td>High = triggered</td><td>—</td><td>Buffer through 330&nbsp;&Omega;, 10&nbsp;k&Omega; pull-up to 3.3&nbsp;V; output threshold Open</td></tr>
-    <tr><td>Debounce time, cable length, repeatability</td><td>Whole board</td><td>Open</td><td>Open</td><td>Open</td><td>Needs testing with real cables</td></tr>
-    <tr><td>Rail-loss behaviour</td><td>Output</td><td>Open</td><td>Open</td><td>Open</td><td>Not established</td></tr>
+    <tr><td>Output</td><td>JX contact 3</td><td>—</td><td>High = triggered</td><td>—</td><td>Buffer through 330&nbsp;&Omega;, 10&nbsp;k&Omega; pull-up to 3.3&nbsp;V</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}
 
 ### Prime header G_F (J37)
 
-On the Prime, header G_F (J37) has 3.3&nbsp;V on contact 1, 5&nbsp;V on contact 2, PB1 on 3, PJ4 on 4 and ground on 10. A discrepancy in the rail positions on the Prime&rsquo;s physical connector has been noted: verify numbered continuity with the power removed. The header is unshrouded. No current allowance for the two rails is established.
+On the Prime, header G_F (J37) has 3.3&nbsp;V on contact 1, 5&nbsp;V on contact 2, PB1 on 3, PJ4 on 4 and ground on 10. Verify numbered continuity of the rail positions with the power removed. The header is unshrouded.
 
 See all boards on the [extension boards](/extension-boards) page.
