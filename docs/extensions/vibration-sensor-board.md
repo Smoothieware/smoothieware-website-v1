@@ -16,7 +16,7 @@ permalink: /extensions/vibration-sensor-board
     <div class="xb-actions">
       <a class="xb-btn xb-btn-primary" href="#get-started">Get started</a>
       <a class="xb-btn" href="#pinout">Pinout</a>
-      <a class="xb-btn" href="#how-it-works">How it works</a>
+      <a class="xb-btn" href="#configuration">Configuration</a>
     </div>
   </div>
   <figure>
@@ -393,9 +393,9 @@ The pulse stretcher was simulated with ngspice for a 2&nbsp;ms switch closure, w
 <svg viewBox="0 0 1000 186" role="img" aria-labelledby="xb-vib-sim-t">
 <title id="xb-vib-sim-t">Each simulated value (yellow mark) against its allowed range (green band).</title>
 <text x="385" y="41" text-anchor="end" font-size="13" fill="#e6ebf2">Output pulse from a 2 ms contact closure</text>
-<path d="M400 36H860" stroke="#3a414c" stroke-width="10" stroke-linecap="round"/><path d="M444.5 36H815.5" stroke="#2f8f5b" stroke-width="10"/><path d="M599.4 23v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="41" font-size="13" font-weight="700" fill="#ffcc33">33.8&nbsp;ms</text>
+<path d="M400 36H860" stroke="#3a414c" stroke-width="10" stroke-linecap="round"/><path d="M444.5 36H815.5" stroke="#2f8f5b" stroke-width="10"/><path d="M599.4 23v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="41" font-size="13" font-weight="700" fill="#ffcc33">34&nbsp;ms</text>
 <text x="385" y="93" text-anchor="end" font-size="13" fill="#e6ebf2">Peak contact current against 50 mA rating</text>
-<path d="M400 88H860" stroke="#3a414c" stroke-width="10" stroke-linecap="round"/><path d="M400.0 88H810.7" stroke="#2f8f5b" stroke-width="10"/><path d="M608.5 75v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="93" font-size="13" font-weight="700" fill="#ffcc33">25.4&nbsp;mA</text>
+<path d="M400 88H860" stroke="#3a414c" stroke-width="10" stroke-linecap="round"/><path d="M400.0 88H810.7" stroke="#2f8f5b" stroke-width="10"/><path d="M608.5 75v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="93" font-size="13" font-weight="700" fill="#ffcc33">25&nbsp;mA</text>
 <text x="385" y="145" text-anchor="end" font-size="13" fill="#e6ebf2">Node level while closed</text>
 <path d="M400 140H860" stroke="#3a414c" stroke-width="10" stroke-linecap="round"/><path d="M400.0 140H810.7" stroke="#2f8f5b" stroke-width="10"/><path d="M400.9 127v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="145" font-size="13" font-weight="700" fill="#ffcc33">913&nbsp;&micro;V</text>
 </svg>
@@ -405,8 +405,8 @@ The pulse stretcher was simulated with ngspice for a 2&nbsp;ms switch closure, w
 <div class="xb-tablewrap"><table>
   <thead><tr><th>Result</th><th>Simulated value</th><th>Limit</th><th>Outcome</th></tr></thead>
   <tbody>
-    <tr><td>Output pulse from a 2 ms contact closure</td><td>33.8&nbsp;ms</td><td>15&nbsp;ms to 60&nbsp;ms</td><td>Within</td></tr>
-    <tr><td>Peak contact current against 50 mA rating</td><td>25.4&nbsp;mA</td><td>at most 50&nbsp;mA</td><td>Within</td></tr>
+    <tr><td>Output pulse from a 2 ms contact closure</td><td>34&nbsp;ms</td><td>15&nbsp;ms to 60&nbsp;ms</td><td>Within</td></tr>
+    <tr><td>Peak contact current against 50 mA rating</td><td>25&nbsp;mA</td><td>at most 50&nbsp;mA</td><td>Within</td></tr>
     <tr><td>Node level while closed</td><td>913&nbsp;&micro;V</td><td>at most 400&nbsp;mV</td><td>Within</td></tr>
   </tbody>
 </table></div>

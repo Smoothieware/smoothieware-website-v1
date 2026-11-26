@@ -16,7 +16,7 @@ permalink: /extensions/rotary-encoder-handwheel-interface
     <div class="xb-actions">
       <a class="xb-btn xb-btn-primary" href="#get-started">Get started</a>
       <a class="xb-btn" href="#pinout">Pinout</a>
-      <a class="xb-btn" href="#how-it-works">How it works</a>
+      <a class="xb-btn" href="#configuration">Configuration</a>
     </div>
   </div>
   <figure>
@@ -475,7 +475,7 @@ The single-ended and open-collector input cases were simulated with ngspice.
 <text x="385" y="93" text-anchor="end" font-size="13" fill="#e6ebf2">Input high level, pull-up fitted</text>
 <path d="M400 88H860" stroke="#3a414c" stroke-width="10" stroke-linecap="round"/><path d="M444.5 88H815.5" stroke="#2f8f5b" stroke-width="10"/><path d="M675.9 75v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="93" font-size="13" font-weight="700" fill="#ffcc33">3.76&nbsp;V</text>
 <text x="385" y="145" text-anchor="end" font-size="13" fill="#e6ebf2">Rise to the 1.7 V threshold with 1 nF cable</text>
-<path d="M400 140H860" stroke="#3a414c" stroke-width="10" stroke-linecap="round"/><path d="M400.0 140H810.7" stroke="#2f8f5b" stroke-width="10"/><path d="M436.0 127v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="145" font-size="13" font-weight="700" fill="#ffcc33">875&nbsp;ns</text>
+<path d="M400 140H860" stroke="#3a414c" stroke-width="10" stroke-linecap="round"/><path d="M400.0 140H810.7" stroke="#2f8f5b" stroke-width="10"/><path d="M436.0 127v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="145" font-size="13" font-weight="700" fill="#ffcc33">0.88&nbsp;&micro;s</text>
 <text x="385" y="189" text-anchor="end" font-size="13" fill="#e6ebf2">Single-ended threshold, pessimistic loading to</text>
 <text x="385" y="205" text-anchor="end" font-size="13" fill="#e6ebf2">ground</text>
 <path d="M400 192H860" stroke="#3a414c" stroke-width="10" stroke-linecap="round"/><path d="M444.5 192H815.5" stroke="#2f8f5b" stroke-width="10"/><path d="M659.5 179v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="197" font-size="13" font-weight="700" fill="#ffcc33">1.26&nbsp;V</text>
@@ -488,7 +488,7 @@ The single-ended and open-collector input cases were simulated with ngspice.
   <tbody>
     <tr><td>Input low level with open-collector output</td><td>52.2&nbsp;mV</td><td>at most 1.3&nbsp;V</td><td>Within</td></tr>
     <tr><td>Input high level, pull-up fitted</td><td>3.76&nbsp;V</td><td>1.7&nbsp;V to 5&nbsp;V</td><td>Within</td></tr>
-    <tr><td>Rise to the 1.7 V threshold with 1 nF cable</td><td>875&nbsp;ns</td><td>at most 10&nbsp;&micro;s</td><td>Within</td></tr>
+    <tr><td>Rise to the 1.7 V threshold with 1 nF cable</td><td>0.88&nbsp;&micro;s</td><td>at most 10&nbsp;&micro;s</td><td>Within</td></tr>
     <tr><td>Single-ended threshold, pessimistic loading to ground</td><td>1.26&nbsp;V</td><td>800&nbsp;mV to 1.6&nbsp;V</td><td>Within</td></tr>
   </tbody>
 </table></div>

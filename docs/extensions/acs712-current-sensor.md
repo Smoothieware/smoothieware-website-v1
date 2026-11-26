@@ -16,7 +16,7 @@ permalink: /extensions/acs712-current-sensor
     <div class="xb-actions">
       <a class="xb-btn xb-btn-primary" href="#get-started">Get started</a>
       <a class="xb-btn" href="#pinout">Pinout</a>
-      <a class="xb-btn" href="#how-it-works">How it works</a>
+      <a class="xb-btn" href="#configuration">Configuration</a>
     </div>
   </div>
   <figure>
@@ -375,7 +375,7 @@ Every figure is a design value, a calculated or simulated value, or a manufactur
     <tr><td>Measured circuit voltage</td><td>J3</td><td>&mdash;</td><td>&mdash;</td><td>30 V DC</td><td>Design limit</td></tr>
     <tr><td>Continuous current</td><td>J3</td><td>&mdash;</td><td>&mdash;</td><td>15 A</td><td>Design target</td></tr>
     <tr><td>Supply</td><td>5 V</td><td>4.5 V</td><td>5 V</td><td>5.5 V</td><td>Allegro data sheet</td></tr>
-    <tr><td>Zero-current output</td><td>Contact 3</td><td>1.59 V</td><td>1.607 V</td><td>1.62 V</td><td>Simulated at 5.00 V</td></tr>
+    <tr><td>Zero-current output</td><td>Contact 3</td><td>1.59 V</td><td>1.61 V</td><td>1.62 V</td><td>Simulated at 5.00 V</td></tr>
     <tr><td>Output with VIOUT at 4.5 V</td><td>Contact 3</td><td>2.85 V</td><td>2.89 V</td><td>2.93 V</td><td>Simulated</td></tr>
     <tr><td>Highest possible output</td><td>Contact 3</td><td>&mdash;</td><td>3.21 V</td><td>3.3 V</td><td>Simulated</td></tr>
     <tr><td>Filter step response, 90 %</td><td>Contact 3</td><td>&mdash;</td><td>0.15 ms</td><td>0.3 ms</td><td>Simulated</td></tr>
@@ -413,7 +413,7 @@ The output dividers and filter were simulated with ngspice.
 <text x="385" y="145" text-anchor="end" font-size="13" fill="#e6ebf2">Divider gain</text>
 <path d="M400 140H860" stroke="#3a414c" stroke-width="10" stroke-linecap="round"/><path d="M444.5 140H815.5" stroke="#2f8f5b" stroke-width="10"/><path d="M621.2 127v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="145" font-size="13" font-weight="700" fill="#ffcc33">0.643&nbsp;V/V</text>
 <text x="385" y="197" text-anchor="end" font-size="13" fill="#e6ebf2">90 % step response of the output filter</text>
-<path d="M400 192H860" stroke="#3a414c" stroke-width="10" stroke-linecap="round"/><path d="M400.0 192H810.7" stroke="#2f8f5b" stroke-width="10"/><path d="M602.0 179v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="197" font-size="13" font-weight="700" fill="#ffcc33">148&nbsp;&micro;s</text>
+<path d="M400 192H860" stroke="#3a414c" stroke-width="10" stroke-linecap="round"/><path d="M400.0 192H810.7" stroke="#2f8f5b" stroke-width="10"/><path d="M602.0 179v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="197" font-size="13" font-weight="700" fill="#ffcc33">0.15&nbsp;ms</text>
 <text x="385" y="249" text-anchor="end" font-size="13" fill="#e6ebf2">Highest output with VIOUT at the 5 V rail</text>
 <path d="M400 244H860" stroke="#3a414c" stroke-width="10" stroke-linecap="round"/><path d="M400.0 244H810.7" stroke="#2f8f5b" stroke-width="10"/><path d="M800.0 231v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="249" font-size="13" font-weight="700" fill="#ffcc33">3.21&nbsp;V</text>
 </svg>
@@ -426,7 +426,7 @@ The output dividers and filter were simulated with ngspice.
     <tr><td>Output at zero current</td><td>1.61&nbsp;V</td><td>1.59&nbsp;V to 1.62&nbsp;V</td><td>Within</td></tr>
     <tr><td>Output with VIOUT at 4.5 V (+20 A)</td><td>2.89&nbsp;V</td><td>2.85&nbsp;V to 2.93&nbsp;V</td><td>Within</td></tr>
     <tr><td>Divider gain</td><td>0.643&nbsp;V/V</td><td>0.64&nbsp;V/V to 0.646&nbsp;V/V</td><td>Within</td></tr>
-    <tr><td>90 % step response of the output filter</td><td>148&nbsp;&micro;s</td><td>at most 300&nbsp;&micro;s</td><td>Within</td></tr>
+    <tr><td>90 % step response of the output filter</td><td>0.15&nbsp;ms</td><td>at most 300&nbsp;&micro;s</td><td>Within</td></tr>
     <tr><td>Highest output with VIOUT at the 5 V rail</td><td>3.21&nbsp;V</td><td>at most 3.3&nbsp;V</td><td>Within</td></tr>
   </tbody>
 </table></div>

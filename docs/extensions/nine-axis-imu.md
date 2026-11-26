@@ -16,7 +16,7 @@ permalink: /extensions/nine-axis-imu
     <div class="xb-actions">
       <a class="xb-btn xb-btn-primary" href="#get-started">Get started</a>
       <a class="xb-btn" href="#pinout">Pinout</a>
-      <a class="xb-btn" href="#how-it-works">How it works</a>
+      <a class="xb-btn" href="#configuration">Configuration</a>
     </div>
   </div>
   <figure>
@@ -419,7 +419,7 @@ The I2C bus loading was simulated with ngspice with 100&nbsp;pF of bus capacitan
 <text x="385" y="93" text-anchor="end" font-size="13" fill="#e6ebf2">Rise time with two pull-up sets</text>
 <path d="M400 88H860" stroke="#3a414c" stroke-width="10" stroke-linecap="round"/><path d="M400.0 88H810.7" stroke="#2f8f5b" stroke-width="10"/><path d="M591.4 75v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="93" font-size="13" font-weight="700" fill="#ffcc33">140&nbsp;ns</text>
 <text x="385" y="145" text-anchor="end" font-size="13" fill="#e6ebf2">Low level with two pull-up sets</text>
-<path d="M400 140H860" stroke="#3a414c" stroke-width="10" stroke-linecap="round"/><path d="M400.0 140H810.7" stroke="#2f8f5b" stroke-width="10"/><path d="M518.9 127v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="145" font-size="13" font-weight="700" fill="#ffcc33">116&nbsp;mV</text>
+<path d="M400 140H860" stroke="#3a414c" stroke-width="10" stroke-linecap="round"/><path d="M400.0 140H810.7" stroke="#2f8f5b" stroke-width="10"/><path d="M518.9 127v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="145" font-size="13" font-weight="700" fill="#ffcc33">0.12&nbsp;V</text>
 </svg>
   </div>
   <figcaption>Simulated value (yellow) against the limit used for it (green). Each bar has its own scale.</figcaption>
@@ -429,7 +429,7 @@ The I2C bus loading was simulated with ngspice with 100&nbsp;pF of bus capacitan
   <tbody>
     <tr><td>Rise time 30 to 70 %, one pull-up set, 100 pF (400 kHz limit 300 ns)</td><td>280&nbsp;ns</td><td>at most 300&nbsp;ns</td><td>Within</td></tr>
     <tr><td>Rise time with two pull-up sets</td><td>140&nbsp;ns</td><td>at most 300&nbsp;ns</td><td>Within</td></tr>
-    <tr><td>Low level with two pull-up sets</td><td>116&nbsp;mV</td><td>at most 400&nbsp;mV</td><td>Within</td></tr>
+    <tr><td>Low level with two pull-up sets</td><td>0.12&nbsp;V</td><td>at most 400&nbsp;mV</td><td>Within</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}

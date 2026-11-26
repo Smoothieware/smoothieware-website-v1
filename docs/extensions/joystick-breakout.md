@@ -16,7 +16,7 @@ permalink: /extensions/joystick-breakout
     <div class="xb-actions">
       <a class="xb-btn xb-btn-primary" href="#get-started">Get started</a>
       <a class="xb-btn" href="#pinout">Pinout</a>
-      <a class="xb-btn" href="#how-it-works">How it works</a>
+      <a class="xb-btn" href="#configuration">Configuration</a>
     </div>
   </div>
   <figure>
@@ -432,11 +432,11 @@ The wiper filter and the switch network were simulated with ngspice. The wiper c
 <text x="385" y="41" text-anchor="end" font-size="13" fill="#e6ebf2">Centre output at 3.3 V, 10 k element, no load</text>
 <path d="M400 36H860" stroke="#3a414c" stroke-width="10" stroke-linecap="round"/><path d="M444.5 36H815.5" stroke="#2f8f5b" stroke-width="10"/><path d="M629.6 23v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="41" font-size="13" font-weight="700" fill="#ffcc33">1.65&nbsp;V</text>
 <text x="385" y="93" text-anchor="end" font-size="13" fill="#e6ebf2">Settling to 0.1 % after a step</text>
-<path d="M400 88H860" stroke="#3a414c" stroke-width="10" stroke-linecap="round"/><path d="M400.0 88H810.7" stroke="#2f8f5b" stroke-width="10"/><path d="M499.3 75v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="93" font-size="13" font-weight="700" fill="#ffcc33">242&nbsp;&micro;s</text>
+<path d="M400 88H860" stroke="#3a414c" stroke-width="10" stroke-linecap="round"/><path d="M400.0 88H810.7" stroke="#2f8f5b" stroke-width="10"/><path d="M499.3 75v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="93" font-size="13" font-weight="700" fill="#ffcc33">0.24&nbsp;ms</text>
 <text x="385" y="145" text-anchor="end" font-size="13" fill="#e6ebf2">Switch output when pressed</text>
-<path d="M400 140H860" stroke="#3a414c" stroke-width="10" stroke-linecap="round"/><path d="M400.0 140H810.7" stroke="#2f8f5b" stroke-width="10"/><path d="M646.5 127v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="145" font-size="13" font-weight="700" fill="#ffcc33">300&nbsp;mV</text>
+<path d="M400 140H860" stroke="#3a414c" stroke-width="10" stroke-linecap="round"/><path d="M400.0 140H810.7" stroke="#2f8f5b" stroke-width="10"/><path d="M646.5 127v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="145" font-size="13" font-weight="700" fill="#ffcc33">0.30&nbsp;V</text>
 <text x="385" y="197" text-anchor="end" font-size="13" fill="#e6ebf2">Switch output 5.9 ms after release</text>
-<path d="M400 192H860" stroke="#3a414c" stroke-width="10" stroke-linecap="round"/><path d="M444.5 192H815.5" stroke="#2f8f5b" stroke-width="10"/><path d="M752.9 179v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="197" font-size="13" font-weight="700" fill="#ffcc33">3.29&nbsp;V</text>
+<path d="M400 192H860" stroke="#3a414c" stroke-width="10" stroke-linecap="round"/><path d="M444.5 192H815.5" stroke="#2f8f5b" stroke-width="10"/><path d="M752.9 179v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="197" font-size="13" font-weight="700" fill="#ffcc33">3.3&nbsp;V</text>
 </svg>
   </div>
   <figcaption>Simulated value (yellow) against the limit used for it (green). Each bar has its own scale.</figcaption>
@@ -445,9 +445,9 @@ The wiper filter and the switch network were simulated with ngspice. The wiper c
   <thead><tr><th>Result</th><th>Simulated value</th><th>Limit</th><th>Outcome</th></tr></thead>
   <tbody>
     <tr><td>Centre output at 3.3 V, 10 k element, no load</td><td>1.65&nbsp;V</td><td>1.64&nbsp;V to 1.66&nbsp;V</td><td>Within</td></tr>
-    <tr><td>Settling to 0.1 % after a step</td><td>242&nbsp;&micro;s</td><td>at most 1&nbsp;ms</td><td>Within</td></tr>
-    <tr><td>Switch output when pressed</td><td>300&nbsp;mV</td><td>at most 500&nbsp;mV</td><td>Within</td></tr>
-    <tr><td>Switch output 5.9 ms after release</td><td>3.29&nbsp;V</td><td>3.2&nbsp;V to 3.31&nbsp;V</td><td>Within</td></tr>
+    <tr><td>Settling to 0.1 % after a step</td><td>0.24&nbsp;ms</td><td>at most 1&nbsp;ms</td><td>Within</td></tr>
+    <tr><td>Switch output when pressed</td><td>0.30&nbsp;V</td><td>at most 500&nbsp;mV</td><td>Within</td></tr>
+    <tr><td>Switch output 5.9 ms after release</td><td>3.3&nbsp;V</td><td>3.2&nbsp;V to 3.31&nbsp;V</td><td>Within</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}

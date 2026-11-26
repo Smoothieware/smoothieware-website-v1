@@ -16,7 +16,7 @@ permalink: /extensions/led-matrix-8x8
     <div class="xb-actions">
       <a class="xb-btn xb-btn-primary" href="#get-started">Get started</a>
       <a class="xb-btn" href="#pinout">Pinout</a>
-      <a class="xb-btn" href="#how-it-works">How it works</a>
+      <a class="xb-btn" href="#configuration">Configuration</a>
     </div>
   </div>
   <figure>
@@ -395,7 +395,7 @@ A buffered signal edge was simulated with ngspice.
 <svg viewBox="0 0 1000 134" role="img" aria-labelledby="xb-matrix-sim-t">
 <title id="xb-matrix-sim-t">Each simulated value (yellow mark) against its allowed range (green band).</title>
 <text x="385" y="41" text-anchor="end" font-size="13" fill="#e6ebf2">Edge from low to high threshold at the driver</text>
-<path d="M400 36H860" stroke="#3a414c" stroke-width="10" stroke-linecap="round"/><path d="M400.0 36H810.7" stroke="#2f8f5b" stroke-width="10"/><path d="M519.1 23v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="41" font-size="13" font-weight="700" fill="#ffcc33">1.45&nbsp;ns</text>
+<path d="M400 36H860" stroke="#3a414c" stroke-width="10" stroke-linecap="round"/><path d="M400.0 36H810.7" stroke="#2f8f5b" stroke-width="10"/><path d="M519.1 23v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="41" font-size="13" font-weight="700" fill="#ffcc33">1.4&nbsp;ns</text>
 <text x="385" y="93" text-anchor="end" font-size="13" fill="#e6ebf2">High level against 3.5 V minimum</text>
 <path d="M400 88H860" stroke="#3a414c" stroke-width="10" stroke-linecap="round"/><path d="M444.5 88H815.5" stroke="#2f8f5b" stroke-width="10"/><path d="M803.5 75v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="93" font-size="13" font-weight="700" fill="#ffcc33">5&nbsp;V</text>
 </svg>
@@ -405,7 +405,7 @@ A buffered signal edge was simulated with ngspice.
 <div class="xb-tablewrap"><table>
   <thead><tr><th>Result</th><th>Simulated value</th><th>Limit</th><th>Outcome</th></tr></thead>
   <tbody>
-    <tr><td>Edge from low to high threshold at the driver</td><td>1.45&nbsp;ns</td><td>at most 5&nbsp;ns</td><td>Within</td></tr>
+    <tr><td>Edge from low to high threshold at the driver</td><td>1.4&nbsp;ns</td><td>at most 5&nbsp;ns</td><td>Within</td></tr>
     <tr><td>High level against 3.5 V minimum</td><td>5&nbsp;V</td><td>3.5&nbsp;V to 5.05&nbsp;V</td><td>Within</td></tr>
   </tbody>
 </table></div>

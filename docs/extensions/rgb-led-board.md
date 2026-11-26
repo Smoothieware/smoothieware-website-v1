@@ -16,7 +16,7 @@ permalink: /extensions/rgb-led-board
     <div class="xb-actions">
       <a class="xb-btn xb-btn-primary" href="#get-started">Get started</a>
       <a class="xb-btn" href="#pinout">Pinout</a>
-      <a class="xb-btn" href="#how-it-works">How it works</a>
+      <a class="xb-btn" href="#configuration">Configuration</a>
     </div>
   </div>
   <figure>
@@ -431,7 +431,7 @@ The LED currents were simulated with ngspice with all channels fully on.
 <text x="385" y="93" text-anchor="end" font-size="13" fill="#e6ebf2">Green or blue current per LED</text>
 <path d="M400 88H860" stroke="#3a414c" stroke-width="10" stroke-linecap="round"/><path d="M444.5 88H815.5" stroke="#2f8f5b" stroke-width="10"/><path d="M642.6 75v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="93" font-size="13" font-weight="700" fill="#ffcc33">16.4&nbsp;mA</text>
 <text x="385" y="145" text-anchor="end" font-size="13" fill="#e6ebf2">All channels fully on</text>
-<path d="M400 140H860" stroke="#3a414c" stroke-width="10" stroke-linecap="round"/><path d="M400.0 140H810.7" stroke="#2f8f5b" stroke-width="10"/><path d="M721.3 127v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="145" font-size="13" font-weight="700" fill="#ffcc33">196&nbsp;mA</text>
+<path d="M400 140H860" stroke="#3a414c" stroke-width="10" stroke-linecap="round"/><path d="M400.0 140H810.7" stroke="#2f8f5b" stroke-width="10"/><path d="M721.3 127v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="145" font-size="13" font-weight="700" fill="#ffcc33">0.196&nbsp;A</text>
 </svg>
   </div>
   <figcaption>Simulated value (yellow) against the limit used for it (green). Each bar has its own scale.</figcaption>
@@ -441,7 +441,7 @@ The LED currents were simulated with ngspice with all channels fully on.
   <tbody>
     <tr><td>Red current per LED</td><td>16.1&nbsp;mA</td><td>10&nbsp;mA to 22&nbsp;mA</td><td>Within</td></tr>
     <tr><td>Green or blue current per LED</td><td>16.4&nbsp;mA</td><td>10&nbsp;mA to 22&nbsp;mA</td><td>Within</td></tr>
-    <tr><td>All channels fully on</td><td>196&nbsp;mA</td><td>at most 250&nbsp;mA</td><td>Within</td></tr>
+    <tr><td>All channels fully on</td><td>0.196&nbsp;A</td><td>at most 250&nbsp;mA</td><td>Within</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}

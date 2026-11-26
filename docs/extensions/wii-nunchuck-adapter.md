@@ -16,7 +16,7 @@ permalink: /extensions/wii-nunchuck-adapter
     <div class="xb-actions">
       <a class="xb-btn xb-btn-primary" href="#get-started">Get started</a>
       <a class="xb-btn" href="#pinout">Pinout</a>
-      <a class="xb-btn" href="#how-it-works">How it works</a>
+      <a class="xb-btn" href="#configuration">Configuration</a>
     </div>
   </div>
   <figure>
@@ -404,7 +404,7 @@ The I2C bus rise time with a long controller cable was simulated with ngspice.
 <svg viewBox="0 0 1000 82" role="img" aria-labelledby="xb-nunchuk-sim-t">
 <title id="xb-nunchuk-sim-t">Each simulated value (yellow mark) against its allowed range (green band).</title>
 <text x="385" y="41" text-anchor="end" font-size="13" fill="#e6ebf2">I2C rise time 30 to 70 % at an assumed 250 pF</text>
-<path d="M400 36H860" stroke="#3a414c" stroke-width="10" stroke-linecap="round"/><path d="M400.0 36H810.7" stroke="#2f8f5b" stroke-width="10"/><path d="M687.1 23v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="41" font-size="13" font-weight="700" fill="#ffcc33">699&nbsp;ns</text>
+<path d="M400 36H860" stroke="#3a414c" stroke-width="10" stroke-linecap="round"/><path d="M400.0 36H810.7" stroke="#2f8f5b" stroke-width="10"/><path d="M687.1 23v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="41" font-size="13" font-weight="700" fill="#ffcc33">0.70&nbsp;&micro;s</text>
 </svg>
   </div>
   <figcaption>Simulated value (yellow) against the limit used for it (green). Each bar has its own scale.</figcaption>
@@ -412,7 +412,7 @@ The I2C bus rise time with a long controller cable was simulated with ngspice.
 <div class="xb-tablewrap"><table>
   <thead><tr><th>Result</th><th>Simulated value</th><th>Limit</th><th>Outcome</th></tr></thead>
   <tbody>
-    <tr><td>I2C rise time 30 to 70 % at an assumed 250 pF</td><td>699&nbsp;ns</td><td>at most 1&nbsp;&micro;s</td><td>Within</td></tr>
+    <tr><td>I2C rise time 30 to 70 % at an assumed 250 pF</td><td>0.70&nbsp;&micro;s</td><td>at most 1&nbsp;&micro;s</td><td>Within</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}

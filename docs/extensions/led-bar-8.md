@@ -16,7 +16,7 @@ permalink: /extensions/led-bar-8
     <div class="xb-actions">
       <a class="xb-btn xb-btn-primary" href="#get-started">Get started</a>
       <a class="xb-btn" href="#pinout">Pinout</a>
-      <a class="xb-btn" href="#how-it-works">How it works</a>
+      <a class="xb-btn" href="#configuration">Configuration</a>
     </div>
   </div>
   <figure>
@@ -454,7 +454,7 @@ One lamp circuit was simulated with ngspice.
 <svg viewBox="0 0 1000 82" role="img" aria-labelledby="xb-bar-sim-t">
 <title id="xb-bar-sim-t">Each simulated value (yellow mark) against its allowed range (green band).</title>
 <text x="385" y="41" text-anchor="end" font-size="13" fill="#e6ebf2">LED current per pin</text>
-<path d="M400 36H860" stroke="#3a414c" stroke-width="10" stroke-linecap="round"/><path d="M444.5 36H815.5" stroke="#2f8f5b" stroke-width="10"/><path d="M623.2 23v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="41" font-size="13" font-weight="700" fill="#ffcc33">1.17&nbsp;mA</text>
+<path d="M400 36H860" stroke="#3a414c" stroke-width="10" stroke-linecap="round"/><path d="M444.5 36H815.5" stroke="#2f8f5b" stroke-width="10"/><path d="M623.2 23v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="41" font-size="13" font-weight="700" fill="#ffcc33">1.2&nbsp;mA</text>
 </svg>
   </div>
   <figcaption>Simulated value (yellow) against the limit used for it (green). Each bar has its own scale.</figcaption>
@@ -462,7 +462,7 @@ One lamp circuit was simulated with ngspice.
 <div class="xb-tablewrap"><table>
   <thead><tr><th>Result</th><th>Simulated value</th><th>Limit</th><th>Outcome</th></tr></thead>
   <tbody>
-    <tr><td>LED current per pin</td><td>1.17&nbsp;mA</td><td>400&nbsp;&micro;A to 2&nbsp;mA</td><td>Within</td></tr>
+    <tr><td>LED current per pin</td><td>1.2&nbsp;mA</td><td>400&nbsp;&micro;A to 2&nbsp;mA</td><td>Within</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}

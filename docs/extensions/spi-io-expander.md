@@ -16,7 +16,7 @@ permalink: /extensions/spi-io-expander
     <div class="xb-actions">
       <a class="xb-btn xb-btn-primary" href="#get-started">Get started</a>
       <a class="xb-btn" href="#pinout">Pinout</a>
-      <a class="xb-btn" href="#how-it-works">How it works</a>
+      <a class="xb-btn" href="#configuration">Configuration</a>
     </div>
   </div>
   <figure>
@@ -430,14 +430,14 @@ Fault and interrupt cases were simulated with ngspice.
 <svg viewBox="0 0 1000 238" role="img" aria-labelledby="xb-io-sim-t">
 <title id="xb-io-sim-t">Each simulated value (yellow mark) against its allowed range (green band).</title>
 <text x="385" y="41" text-anchor="end" font-size="13" fill="#e6ebf2">Shared interrupt low level</text>
-<path d="M400 36H860" stroke="#3a414c" stroke-width="10" stroke-linecap="round"/><path d="M400.0 36H810.7" stroke="#2f8f5b" stroke-width="10"/><path d="M648.2 23v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="41" font-size="13" font-weight="700" fill="#ffcc33">399&nbsp;mV</text>
+<path d="M400 36H860" stroke="#3a414c" stroke-width="10" stroke-linecap="round"/><path d="M400.0 36H810.7" stroke="#2f8f5b" stroke-width="10"/><path d="M648.2 23v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="41" font-size="13" font-weight="700" fill="#ffcc33">0.40&nbsp;V</text>
 <text x="385" y="85" text-anchor="end" font-size="13" fill="#e6ebf2">Current into the low INT output during</text>
 <text x="385" y="101" text-anchor="end" font-size="13" fill="#e6ebf2">misconfiguration</text>
 <path d="M400 88H860" stroke="#3a414c" stroke-width="10" stroke-linecap="round"/><path d="M400.0 88H810.7" stroke="#2f8f5b" stroke-width="10"/><path d="M430.6 75v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="93" font-size="13" font-weight="700" fill="#ffcc33">1.86&nbsp;mA</text>
 <text x="385" y="145" text-anchor="end" font-size="13" fill="#e6ebf2">Output shorted to ground</text>
-<path d="M400 140H860" stroke="#3a414c" stroke-width="10" stroke-linecap="round"/><path d="M400.0 140H810.7" stroke="#2f8f5b" stroke-width="10"/><path d="M519.7 127v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="145" font-size="13" font-weight="700" fill="#ffcc33">7.28&nbsp;mA</text>
+<path d="M400 140H860" stroke="#3a414c" stroke-width="10" stroke-linecap="round"/><path d="M400.0 140H810.7" stroke="#2f8f5b" stroke-width="10"/><path d="M519.7 127v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="145" font-size="13" font-weight="700" fill="#ffcc33">7.3&nbsp;mA</text>
 <text x="385" y="197" text-anchor="end" font-size="13" fill="#e6ebf2">External 5 V on one line (generic clamp diode)</text>
-<path d="M400 192H860" stroke="#3a414c" stroke-width="10" stroke-linecap="round"/><path d="M400.0 192H810.7" stroke="#2f8f5b" stroke-width="10"/><path d="M475.4 179v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="197" font-size="13" font-weight="700" fill="#ffcc33">4.59&nbsp;mA</text>
+<path d="M400 192H860" stroke="#3a414c" stroke-width="10" stroke-linecap="round"/><path d="M400.0 192H810.7" stroke="#2f8f5b" stroke-width="10"/><path d="M475.4 179v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="197" font-size="13" font-weight="700" fill="#ffcc33">4.6&nbsp;mA</text>
 </svg>
   </div>
   <figcaption>Simulated value (yellow) against the limit used for it (green). Each bar has its own scale.</figcaption>
@@ -445,10 +445,10 @@ Fault and interrupt cases were simulated with ngspice.
 <div class="xb-tablewrap"><table>
   <thead><tr><th>Result</th><th>Simulated value</th><th>Limit</th><th>Outcome</th></tr></thead>
   <tbody>
-    <tr><td>Shared interrupt low level</td><td>399&nbsp;mV</td><td>at most 660&nbsp;mV</td><td>Within</td></tr>
+    <tr><td>Shared interrupt low level</td><td>0.40&nbsp;V</td><td>at most 660&nbsp;mV</td><td>Within</td></tr>
     <tr><td>Current into the low INT output during misconfiguration</td><td>1.86&nbsp;mA</td><td>at most 25&nbsp;mA</td><td>Within</td></tr>
-    <tr><td>Output shorted to ground</td><td>7.28&nbsp;mA</td><td>at most 25&nbsp;mA</td><td>Within</td></tr>
-    <tr><td>External 5 V on one line (generic clamp diode)</td><td>4.59&nbsp;mA</td><td>at most 25&nbsp;mA</td><td>Within</td></tr>
+    <tr><td>Output shorted to ground</td><td>7.3&nbsp;mA</td><td>at most 25&nbsp;mA</td><td>Within</td></tr>
+    <tr><td>External 5 V on one line (generic clamp diode)</td><td>4.6&nbsp;mA</td><td>at most 25&nbsp;mA</td><td>Within</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}

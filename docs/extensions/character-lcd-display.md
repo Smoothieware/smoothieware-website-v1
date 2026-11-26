@@ -16,7 +16,7 @@ permalink: /extensions/character-lcd-display
     <div class="xb-actions">
       <a class="xb-btn xb-btn-primary" href="#get-started">Get started</a>
       <a class="xb-btn" href="#pinout">Pinout</a>
-      <a class="xb-btn" href="#how-it-works">How it works</a>
+      <a class="xb-btn" href="#configuration">Configuration</a>
     </div>
   </div>
   <figure>
@@ -394,7 +394,7 @@ Every figure is a design value, a calculated or simulated value, or a manufactur
     <tr><td>Module logic current</td><td>5 V</td><td>&mdash;</td><td>&mdash;</td><td>4 mA</td><td>Module data sheet</td></tr>
     <tr><td>Backlight current</td><td>5 V</td><td>&mdash;</td><td>&mdash;</td><td>80 mA</td><td>Estimate from module data</td></tr>
     <tr><td>I2C clock</td><td>U1</td><td>&mdash;</td><td>&mdash;</td><td>100 kHz</td><td>PCF8574 data sheet</td></tr>
-    <tr><td>Low level, 5 V side</td><td>SDA, SCL</td><td>&mdash;</td><td>0.04 V</td><td>0.4 V</td><td>Simulated</td></tr>
+    <tr><td>Low level, 5 V side</td><td>SDA, SCL</td><td>&mdash;</td><td>43 mV</td><td>0.4 V</td><td>Simulated</td></tr>
     <tr><td>Rise time, 5 V side</td><td>SDA, SCL</td><td>&mdash;</td><td>0.41 &micro;s</td><td>1 &micro;s</td><td>Simulated</td></tr>
   </tbody>
 </table></div>
@@ -422,10 +422,10 @@ The level shifter was simulated with ngspice.
 <svg viewBox="0 0 1000 134" role="img" aria-labelledby="xb-lcd-sim-t">
 <title id="xb-lcd-sim-t">Each simulated value (yellow mark) against its allowed range (green band).</title>
 <text x="385" y="41" text-anchor="end" font-size="13" fill="#e6ebf2">Low level on the 5 V side</text>
-<path d="M400 36H860" stroke="#3a414c" stroke-width="10" stroke-linecap="round"/><path d="M400.0 36H810.7" stroke="#2f8f5b" stroke-width="10"/><path d="M444.6 23v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="41" font-size="13" font-weight="700" fill="#ffcc33">43.4&nbsp;mV</text>
+<path d="M400 36H860" stroke="#3a414c" stroke-width="10" stroke-linecap="round"/><path d="M400.0 36H810.7" stroke="#2f8f5b" stroke-width="10"/><path d="M444.6 23v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="41" font-size="13" font-weight="700" fill="#ffcc33">43&nbsp;mV</text>
 <text x="385" y="85" text-anchor="end" font-size="13" fill="#e6ebf2">Rise time on the 5 V side (400 kHz limit 300 ns;</text>
 <text x="385" y="101" text-anchor="end" font-size="13" fill="#e6ebf2">module bus 100 kHz limit 1000 ns)</text>
-<path d="M400 88H860" stroke="#3a414c" stroke-width="10" stroke-linecap="round"/><path d="M400.0 88H810.7" stroke="#2f8f5b" stroke-width="10"/><path d="M570.2 75v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="93" font-size="13" font-weight="700" fill="#ffcc33">414&nbsp;ns</text>
+<path d="M400 88H860" stroke="#3a414c" stroke-width="10" stroke-linecap="round"/><path d="M400.0 88H810.7" stroke="#2f8f5b" stroke-width="10"/><path d="M570.2 75v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="93" font-size="13" font-weight="700" fill="#ffcc33">0.41&nbsp;&micro;s</text>
 </svg>
   </div>
   <figcaption>Simulated value (yellow) against the limit used for it (green). Each bar has its own scale.</figcaption>
@@ -433,8 +433,8 @@ The level shifter was simulated with ngspice.
 <div class="xb-tablewrap"><table>
   <thead><tr><th>Result</th><th>Simulated value</th><th>Limit</th><th>Outcome</th></tr></thead>
   <tbody>
-    <tr><td>Low level on the 5 V side</td><td>43.4&nbsp;mV</td><td>at most 400&nbsp;mV</td><td>Within</td></tr>
-    <tr><td>Rise time on the 5 V side (400 kHz limit 300 ns; module bus 100 kHz limit 1000 ns)</td><td>414&nbsp;ns</td><td>at most 1&nbsp;&micro;s</td><td>Within</td></tr>
+    <tr><td>Low level on the 5 V side</td><td>43&nbsp;mV</td><td>at most 400&nbsp;mV</td><td>Within</td></tr>
+    <tr><td>Rise time on the 5 V side (400 kHz limit 300 ns; module bus 100 kHz limit 1000 ns)</td><td>0.41&nbsp;&micro;s</td><td>at most 1&nbsp;&micro;s</td><td>Within</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}

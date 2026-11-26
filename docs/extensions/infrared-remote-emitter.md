@@ -16,7 +16,7 @@ permalink: /extensions/infrared-remote-emitter
     <div class="xb-actions">
       <a class="xb-btn xb-btn-primary" href="#get-started">Get started</a>
       <a class="xb-btn" href="#pinout">Pinout</a>
-      <a class="xb-btn" href="#how-it-works">How it works</a>
+      <a class="xb-btn" href="#configuration">Configuration</a>
     </div>
   </div>
   <figure>
@@ -415,11 +415,11 @@ The LED drive was simulated with ngspice at 38&nbsp;kHz and one-third duty with 
 <svg viewBox="0 0 1000 186" role="img" aria-labelledby="xb-irtx-sim-t">
 <title id="xb-irtx-sim-t">Each simulated value (yellow mark) against its allowed range (green band).</title>
 <text x="385" y="41" text-anchor="end" font-size="13" fill="#e6ebf2">Peak LED current</text>
-<path d="M400 36H860" stroke="#3a414c" stroke-width="10" stroke-linecap="round"/><path d="M444.5 36H815.5" stroke="#2f8f5b" stroke-width="10"/><path d="M612.3 23v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="41" font-size="13" font-weight="700" fill="#ffcc33">75.8&nbsp;mA</text>
+<path d="M400 36H860" stroke="#3a414c" stroke-width="10" stroke-linecap="round"/><path d="M444.5 36H815.5" stroke="#2f8f5b" stroke-width="10"/><path d="M612.3 23v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="41" font-size="13" font-weight="700" fill="#ffcc33">76&nbsp;mA</text>
 <text x="385" y="93" text-anchor="end" font-size="13" fill="#e6ebf2">Average LED current at one third duty</text>
-<path d="M400 88H860" stroke="#3a414c" stroke-width="10" stroke-linecap="round"/><path d="M444.5 88H815.5" stroke="#2f8f5b" stroke-width="10"/><path d="M632.9 75v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="93" font-size="13" font-weight="700" fill="#ffcc33">25.2&nbsp;mA</text>
+<path d="M400 88H860" stroke="#3a414c" stroke-width="10" stroke-linecap="round"/><path d="M444.5 88H815.5" stroke="#2f8f5b" stroke-width="10"/><path d="M632.9 75v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="93" font-size="13" font-weight="700" fill="#ffcc33">25&nbsp;mA</text>
 <text x="385" y="145" text-anchor="end" font-size="13" fill="#e6ebf2">Resistor power if held on</text>
-<path d="M400 140H860" stroke="#3a414c" stroke-width="10" stroke-linecap="round"/><path d="M400.0 140H810.7" stroke="#2f8f5b" stroke-width="10"/><path d="M622.0 127v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="145" font-size="13" font-weight="700" fill="#ffcc33">270&nbsp;mW</text>
+<path d="M400 140H860" stroke="#3a414c" stroke-width="10" stroke-linecap="round"/><path d="M400.0 140H810.7" stroke="#2f8f5b" stroke-width="10"/><path d="M622.0 127v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="145" font-size="13" font-weight="700" fill="#ffcc33">0.27&nbsp;W</text>
 </svg>
   </div>
   <figcaption>Simulated value (yellow) against the limit used for it (green). Each bar has its own scale.</figcaption>
@@ -427,9 +427,9 @@ The LED drive was simulated with ngspice at 38&nbsp;kHz and one-third duty with 
 <div class="xb-tablewrap"><table>
   <thead><tr><th>Result</th><th>Simulated value</th><th>Limit</th><th>Outcome</th></tr></thead>
   <tbody>
-    <tr><td>Peak LED current</td><td>75.8&nbsp;mA</td><td>60&nbsp;mA to 95&nbsp;mA</td><td>Within</td></tr>
-    <tr><td>Average LED current at one third duty</td><td>25.2&nbsp;mA</td><td>15&nbsp;mA to 35&nbsp;mA</td><td>Within</td></tr>
-    <tr><td>Resistor power if held on</td><td>270&nbsp;mW</td><td>at most 500&nbsp;mW</td><td>Within</td></tr>
+    <tr><td>Peak LED current</td><td>76&nbsp;mA</td><td>60&nbsp;mA to 95&nbsp;mA</td><td>Within</td></tr>
+    <tr><td>Average LED current at one third duty</td><td>25&nbsp;mA</td><td>15&nbsp;mA to 35&nbsp;mA</td><td>Within</td></tr>
+    <tr><td>Resistor power if held on</td><td>0.27&nbsp;W</td><td>at most 500&nbsp;mW</td><td>Within</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}

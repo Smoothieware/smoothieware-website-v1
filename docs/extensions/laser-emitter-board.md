@@ -16,7 +16,7 @@ permalink: /extensions/laser-emitter-board
     <div class="xb-actions">
       <a class="xb-btn xb-btn-primary" href="#get-started">Get started</a>
       <a class="xb-btn" href="#pinout">Pinout</a>
-      <a class="xb-btn" href="#how-it-works">How it works</a>
+      <a class="xb-btn" href="#configuration">Configuration</a>
     </div>
   </div>
   <figure>
@@ -445,7 +445,7 @@ The switch and gate network were simulated with ngspice with the module represen
 <text x="385" y="41" text-anchor="end" font-size="13" fill="#e6ebf2">Gate voltage when driven from 3.3 V</text>
 <path d="M400 36H860" stroke="#3a414c" stroke-width="10" stroke-linecap="round"/><path d="M444.5 36H815.5" stroke="#2f8f5b" stroke-width="10"/><path d="M775.1 23v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="41" font-size="13" font-weight="700" fill="#ffcc33">3.27&nbsp;V</text>
 <text x="385" y="93" text-anchor="end" font-size="13" fill="#e6ebf2">Voltage lost in the switch</text>
-<path d="M400 88H860" stroke="#3a414c" stroke-width="10" stroke-linecap="round"/><path d="M400.0 88H810.7" stroke="#2f8f5b" stroke-width="10"/><path d="M468.9 75v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="93" font-size="13" font-weight="700" fill="#ffcc33">1.68&nbsp;mV</text>
+<path d="M400 88H860" stroke="#3a414c" stroke-width="10" stroke-linecap="round"/><path d="M400.0 88H810.7" stroke="#2f8f5b" stroke-width="10"/><path d="M468.9 75v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="93" font-size="13" font-weight="700" fill="#ffcc33">1.7&nbsp;mV</text>
 <text x="385" y="145" text-anchor="end" font-size="13" fill="#e6ebf2">Module current assumed</text>
 <path d="M400 140H860" stroke="#3a414c" stroke-width="10" stroke-linecap="round"/><path d="M400.0 140H810.7" stroke="#2f8f5b" stroke-width="10"/><path d="M810.2 127v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="145" font-size="13" font-weight="700" fill="#ffcc33">35&nbsp;mA</text>
 <text x="385" y="197" text-anchor="end" font-size="13" fill="#e6ebf2">Gate voltage with the signal low</text>
@@ -458,7 +458,7 @@ The switch and gate network were simulated with ngspice with the module represen
   <thead><tr><th>Result</th><th>Simulated value</th><th>Limit</th><th>Outcome</th></tr></thead>
   <tbody>
     <tr><td>Gate voltage when driven from 3.3 V</td><td>3.27&nbsp;V</td><td>3&nbsp;V to 3.3&nbsp;V</td><td>Within</td></tr>
-    <tr><td>Voltage lost in the switch</td><td>1.68&nbsp;mV</td><td>at most 10&nbsp;mV</td><td>Within</td></tr>
+    <tr><td>Voltage lost in the switch</td><td>1.7&nbsp;mV</td><td>at most 10&nbsp;mV</td><td>Within</td></tr>
     <tr><td>Module current assumed</td><td>35&nbsp;mA</td><td>at most 35&nbsp;mA</td><td>Within</td></tr>
     <tr><td>Gate voltage with the signal low</td><td>0&nbsp;V</td><td>at most 100&nbsp;mV</td><td>Within</td></tr>
   </tbody>

@@ -16,7 +16,7 @@ permalink: /extensions/infrared-remote-receiver
     <div class="xb-actions">
       <a class="xb-btn xb-btn-primary" href="#get-started">Get started</a>
       <a class="xb-btn" href="#pinout">Pinout</a>
-      <a class="xb-btn" href="#how-it-works">How it works</a>
+      <a class="xb-btn" href="#configuration">Configuration</a>
     </div>
   </div>
   <figure>
@@ -379,7 +379,7 @@ The supply filter was simulated with ngspice with 100&nbsp;kHz ripple.
 <svg viewBox="0 0 1000 134" role="img" aria-labelledby="xb-irrx-sim-t">
 <title id="xb-irrx-sim-t">Each simulated value (yellow mark) against its allowed range (green band).</title>
 <text x="385" y="41" text-anchor="end" font-size="13" fill="#e6ebf2">Ripple at the receiver from 200 mV peak to peak</text>
-<path d="M400 36H860" stroke="#3a414c" stroke-width="10" stroke-linecap="round"/><path d="M400.0 36H810.7" stroke="#2f8f5b" stroke-width="10"/><path d="M454.5 23v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="41" font-size="13" font-weight="700" fill="#ffcc33">663&nbsp;&micro;V</text>
+<path d="M400 36H860" stroke="#3a414c" stroke-width="10" stroke-linecap="round"/><path d="M400.0 36H810.7" stroke="#2f8f5b" stroke-width="10"/><path d="M454.5 23v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="41" font-size="13" font-weight="700" fill="#ffcc33">0.66&nbsp;mV</text>
 <text x="385" y="93" text-anchor="end" font-size="13" fill="#e6ebf2">Resistor voltage drop</text>
 <path d="M400 88H860" stroke="#3a414c" stroke-width="10" stroke-linecap="round"/><path d="M400.0 88H810.7" stroke="#2f8f5b" stroke-width="10"/><path d="M584.8 75v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="93" font-size="13" font-weight="700" fill="#ffcc33">45&nbsp;mV</text>
 </svg>
@@ -389,7 +389,7 @@ The supply filter was simulated with ngspice with 100&nbsp;kHz ripple.
 <div class="xb-tablewrap"><table>
   <thead><tr><th>Result</th><th>Simulated value</th><th>Limit</th><th>Outcome</th></tr></thead>
   <tbody>
-    <tr><td>Ripple at the receiver from 200 mV peak to peak</td><td>663&nbsp;&micro;V</td><td>at most 5&nbsp;mV</td><td>Within</td></tr>
+    <tr><td>Ripple at the receiver from 200 mV peak to peak</td><td>0.66&nbsp;mV</td><td>at most 5&nbsp;mV</td><td>Within</td></tr>
     <tr><td>Resistor voltage drop</td><td>45&nbsp;mV</td><td>at most 100&nbsp;mV</td><td>Within</td></tr>
   </tbody>
 </table></div>

@@ -16,7 +16,7 @@ permalink: /extensions/rotary-potentiometer-board
     <div class="xb-actions">
       <a class="xb-btn xb-btn-primary" href="#get-started">Get started</a>
       <a class="xb-btn" href="#pinout">Pinout</a>
-      <a class="xb-btn" href="#how-it-works">How it works</a>
+      <a class="xb-btn" href="#configuration">Configuration</a>
     </div>
   </div>
   <figure>
@@ -392,7 +392,7 @@ The wiper filter was simulated with ngspice at mid travel, where the potentiomet
 <text x="385" y="41" text-anchor="end" font-size="13" fill="#e6ebf2">Settling to within 1.4 % after a step</text>
 <path d="M400 36H860" stroke="#3a414c" stroke-width="10" stroke-linecap="round"/><path d="M400.0 36H810.7" stroke="#2f8f5b" stroke-width="10"/><path d="M531.4 23v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="41" font-size="13" font-weight="700" fill="#ffcc33">1.6&nbsp;ms</text>
 <text x="385" y="93" text-anchor="end" font-size="13" fill="#e6ebf2">Loading error with a 1 Mohm input, percent of range</text>
-<path d="M400 88H860" stroke="#3a414c" stroke-width="10" stroke-linecap="round"/><path d="M400.0 88H810.7" stroke="#2f8f5b" stroke-width="10"/><path d="M543.3 75v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="93" font-size="13" font-weight="700" fill="#ffcc33">0.174&nbsp;%</text>
+<path d="M400 88H860" stroke="#3a414c" stroke-width="10" stroke-linecap="round"/><path d="M400.0 88H810.7" stroke="#2f8f5b" stroke-width="10"/><path d="M543.3 75v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="93" font-size="13" font-weight="700" fill="#ffcc33">0.17&nbsp;%</text>
 </svg>
   </div>
   <figcaption>Simulated value (yellow) against the limit used for it (green). Each bar has its own scale.</figcaption>
@@ -401,7 +401,7 @@ The wiper filter was simulated with ngspice at mid travel, where the potentiomet
   <thead><tr><th>Result</th><th>Simulated value</th><th>Limit</th><th>Outcome</th></tr></thead>
   <tbody>
     <tr><td>Settling to within 1.4 % after a step</td><td>1.6&nbsp;ms</td><td>at most 5&nbsp;ms</td><td>Within</td></tr>
-    <tr><td>Loading error with a 1 Mohm input, percent of range</td><td>0.174&nbsp;%</td><td>at most 0.5&nbsp;%</td><td>Within</td></tr>
+    <tr><td>Loading error with a 1 Mohm input, percent of range</td><td>0.17&nbsp;%</td><td>at most 0.5&nbsp;%</td><td>Within</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}

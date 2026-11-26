@@ -16,7 +16,7 @@ permalink: /extensions/ultrasonic-distance-sensor
     <div class="xb-actions">
       <a class="xb-btn xb-btn-primary" href="#get-started">Get started</a>
       <a class="xb-btn" href="#pinout">Pinout</a>
-      <a class="xb-btn" href="#how-it-works">How it works</a>
+      <a class="xb-btn" href="#configuration">Configuration</a>
     </div>
   </div>
   <figure>
@@ -415,7 +415,7 @@ The echo divider was simulated with ngspice at the highest and a low module outp
 <text x="385" y="41" text-anchor="end" font-size="13" fill="#e6ebf2">Host input high level at 5.25 V echo</text>
 <path d="M400 36H860" stroke="#3a414c" stroke-width="10" stroke-linecap="round"/><path d="M444.5 36H815.5" stroke="#2f8f5b" stroke-width="10"/><path d="M786.9 23v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="41" font-size="13" font-weight="700" fill="#ffcc33">3.37&nbsp;V</text>
 <text x="385" y="93" text-anchor="end" font-size="13" fill="#e6ebf2">Echo rise time (1 us equals 0.17 mm of range)</text>
-<path d="M400 88H860" stroke="#3a414c" stroke-width="10" stroke-linecap="round"/><path d="M400.0 88H810.7" stroke="#2f8f5b" stroke-width="10"/><path d="M574.0 75v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="93" font-size="13" font-weight="700" fill="#ffcc33">424&nbsp;ns</text>
+<path d="M400 88H860" stroke="#3a414c" stroke-width="10" stroke-linecap="round"/><path d="M400.0 88H810.7" stroke="#2f8f5b" stroke-width="10"/><path d="M574.0 75v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="93" font-size="13" font-weight="700" fill="#ffcc33">0.42&nbsp;&micro;s</text>
 <text x="385" y="145" text-anchor="end" font-size="13" fill="#e6ebf2">Host input high level at 4.4 V echo</text>
 <path d="M400 140H860" stroke="#3a414c" stroke-width="10" stroke-linecap="round"/><path d="M444.5 140H860.0" stroke="#2f8f5b" stroke-width="10"/><path d="M585.2 127v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="145" font-size="13" font-weight="700" fill="#ffcc33">2.83&nbsp;V</text>
 </svg>
@@ -426,7 +426,7 @@ The echo divider was simulated with ngspice at the highest and a low module outp
   <thead><tr><th>Result</th><th>Simulated value</th><th>Limit</th><th>Outcome</th></tr></thead>
   <tbody>
     <tr><td>Host input high level at 5.25 V echo</td><td>3.37&nbsp;V</td><td>2.4&nbsp;V to 3.45&nbsp;V</td><td>Within</td></tr>
-    <tr><td>Echo rise time (1 us equals 0.17 mm of range)</td><td>424&nbsp;ns</td><td>at most 1&nbsp;&micro;s</td><td>Within</td></tr>
+    <tr><td>Echo rise time (1 us equals 0.17 mm of range)</td><td>0.42&nbsp;&micro;s</td><td>at most 1&nbsp;&micro;s</td><td>Within</td></tr>
     <tr><td>Host input high level at 4.4 V echo</td><td>2.83&nbsp;V</td><td>at least 2.31&nbsp;V</td><td>Within</td></tr>
   </tbody>
 </table></div>
