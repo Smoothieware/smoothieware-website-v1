@@ -63,7 +63,7 @@ permalink: /extensions/endstop-inputs-basic
 
 <sl-alert variant="warning" open>
   <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
-  Made for <b>mechanical switches</b>. A closed input reaches only about 0.7&nbsp;V at the controller, so write the pin names <b>without <code>^</code></b>, and read <a href="#sensors">before connecting an electronic sensor</a>. Keep the supply jumper on <b>3V3</b> with a Smoothieboard V2.
+  Made for <b>mechanical switches</b>. A closed input reaches only about 0.7&nbsp;V at the controller, so end every pin name with <b><code>-</code></b> (no pull resistor), and read <a href="#sensors">before connecting an electronic sensor</a>. Keep the supply jumper on <b>3V3</b> with a Smoothieboard V2.
 </sl-alert>
 
 {% include _includes/endstop-board-comparison.html %}
@@ -185,6 +185,26 @@ Connect INPUT Y to the header labelled **G_F** on the Smoothieboard V2 Prime wit
 
 Check the order of any ready-made switch cable against the printed **+ − S** before plugging it in: a different order can short the supply.
 
+### CHAIN Y: chain connector
+
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>Pin</th><th>On CHAIN Y</th><th>Used by this board</th><th>As delivered</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td>3.3&nbsp;V from INPUT Y</td><td>Yes: lights and the 3V3 position</td><td>Passed through</td></tr>
+    <tr><td>2</td><td>5&nbsp;V from INPUT Y</td><td>Only in the 5V position</td><td>Passed through</td></tr>
+    <tr><td>3</td><td>Controller pin of INP0</td><td>Yes, through link JP2</td><td>Passed through; JP2 closed</td></tr>
+    <tr><td>4</td><td>Controller pin of INP1</td><td>Yes, through link JP3</td><td>Passed through; JP3 closed</td></tr>
+    <tr><td>5</td><td>Controller pin of INP2</td><td>Yes, through link JP4</td><td>Passed through; JP4 closed</td></tr>
+    <tr><td>6</td><td>Controller pin of INP3</td><td>Yes, through link JP5</td><td>Passed through; JP5 closed</td></tr>
+    <tr><td>7</td><td>Controller pin of INP4</td><td>Yes, through link JP6</td><td>Passed through; JP6 closed</td></tr>
+    <tr><td>8</td><td>Controller pin of INP5</td><td>Yes, through link JP7</td><td>Passed through; JP7 closed</td></tr>
+    <tr><td>9</td><td>Controller pin of INP6</td><td>Yes, through link JP8</td><td>Passed through; JP8 closed</td></tr>
+    <tr><td>10</td><td>Ground</td><td>Yes</td><td>Passed through</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
 ## What you need {#what-you-need}
 
 {::nomarkdown}
@@ -246,7 +266,7 @@ The board needs no module of its own: each input is an ordinary controller pin, 
 </table></div>
 {:/nomarkdown}
 
-Write each pin **without `^`**. The controller&rsquo;s own pull-up would raise the level of a closed switch to about 1&nbsp;V, at the limit of what reads as low; the board already has a pull-up on every input. Each pin can be claimed by one entry only. Merge the lines into your configuration file, adding to a section that already exists.
+End each pin name with **`-`**, which switches the controller&rsquo;s pull resistor off. Without it the firmware turns a pull-up on, even when the name has no `^`. That pull-up would raise the level of a closed switch to about 1&nbsp;V, at the limit of what reads as low; the board already has a pull-up on every input. Each pin can be claimed by one entry only. Merge the lines into your configuration file, adding to a section that already exists.
 
 ### 1. Limit switches (Endstops module) {#config-limits}
 
@@ -255,17 +275,17 @@ Normally closed switches on INP0 to INP2:
 ```ini
 [endstops]
 maxx.enable       = true
-maxx.pin          = PB1       # INP0  (G_F pin 3)
+maxx.pin          = PB1-      # INP0  (G_F pin 3)
 maxx.axis         = X
 maxx.limit_enable = true      # halt when hit during a move
 
 maxy.enable       = true
-maxy.pin          = PJ4       # INP1  (G_F pin 4)
+maxy.pin          = PJ4-      # INP1  (G_F pin 4)
 maxy.axis         = Y
 maxy.limit_enable = true
 
 maxz.enable       = true
-maxz.pin          = PA4       # INP2  (G_F pin 5)
+maxz.pin          = PA4-      # INP2  (G_F pin 5)
 maxz.axis         = Z
 maxz.limit_enable = true
 ```
@@ -277,7 +297,7 @@ A normally closed switch at the low end of X on INP3, used by `G28`:
 ```ini
 [endstops]
 minx.enable           = true
-minx.pin              = PG0          # INP3  (G_F pin 6)
+minx.pin              = PG0-         # INP3  (G_F pin 6)
 minx.axis             = X
 minx.homing_direction = home_to_min
 minx.homing_position  = 0
@@ -297,7 +317,7 @@ A normally open contact on INP6, such as a touch plate that the tool connects to
 ```ini
 [zprobe]
 enable        = true
-probe_pin     = PJ2!          # INP6  (G_F pin 9), contact that closes to ground
+probe_pin     = PJ2!-         # INP6  (G_F pin 9), contact that closes to ground
 slow_feedrate = 2             # mm/s while probing
 fast_feedrate = 20            # mm/s between probe points
 probe_height  = 5             # mm above the surface to start from
@@ -312,7 +332,7 @@ A contact on INP4 that is closed while the door is shut:
 ```ini
 [switch]
 door.enable             = true
-door.input_pin          = PJ3         # INP4  (G_F pin 7)
+door.input_pin          = PJ3-        # INP4  (G_F pin 7)
 door.input_pin_behavior = momentary
 door.output_on_command  = M600        # contact open: suspend the job
 door.output_off_command = M601        # contact closed again: resume
@@ -325,7 +345,7 @@ A button on INP5 that closes its contact to ground when pressed:
 ```ini
 [kill button]
 enable        = true
-pin           = PG1           # INP5  (G_F pin 8)
+pin           = PG1-          # INP5  (G_F pin 8)
 toggle_enable = false         # true for a latching button
 unkill_enable = true          # holding the button about 2 s clears the halt
 ```
@@ -348,7 +368,7 @@ This button acts through the firmware. It does not replace an emergency stop tha
 
 - **No `!` for normally closed switches.** A closed switch reads 0 and an open one reads 1, which the endstops module treats as triggered.
 - **An input with nothing connected reads 1.** Enable only the inputs that have a switch.
-- **An unplugged ribbon cable is not detected reliably.** Without a controller pull resistor the pins float, so run `M119` and press each switch after any rewiring.
+- **An unplugged ribbon cable is not detected reliably.** With the pull resistors off, the pins float, so run `M119` and press each switch after any rewiring.
 - **Extra filtering.** `common.debounce_ms` under `[endstops]` adds a debounce time in the firmware.
 
 ## Wiring switches and sensors {#sensors}
@@ -431,7 +451,7 @@ CHAIN Y is wired contact for contact to INPUT Y: power, ground and all seven sig
   <tbody>
     <tr><td>A light stays dark when its switch is closed</td><td>No 3.3&nbsp;V, or the switch is not between S and −.</td><td>Check the cable is in INPUT Y and pin 1 goes to pin 1; join S and − with a wire: the light must come on.</td></tr>
     <tr><td>Every input reads wrong</td><td>JP1 has no cap, or the cable is not on G_F.</td><td>Fit the cap on 3V3 and check both cable ends.</td></tr>
-    <tr><td>The light is on but <code>M119</code> shows 1</td><td>The low level does not reach the controller threshold, or the pin is not the one configured.</td><td>Remove <code>^</code> from the pin name, check the link JP2 to JP8 is closed, and check the <a href="#sensors">sensor limits</a>.</td></tr>
+    <tr><td>The light is on but <code>M119</code> shows 1</td><td>The low level does not reach the controller threshold, or the pin is not the one configured.</td><td>End the pin name with <code>-</code> and no <code>^</code>, check the link JP2 to JP8 is closed, and check the <a href="#sensors">sensor limits</a>.</td></tr>
     <tr><td><code>M119</code> does not list the pin</td><td>The input is not configured.</td><td>Check <code>enable = true</code> and the pin name, then restart.</td></tr>
     <tr><td>The machine halts with <code>ALARM: Hard limit</code> as soon as an axis moves</td><td>An enabled limit input reads triggered.</td><td>Send <code>M119</code>; disable unused entries and check the switch wiring.</td></tr>
     <tr><td>The controller resets or loses power when a switch is plugged in</td><td>The + pin is shorted to ground.</td><td>Unplug it and check the cable order against + − S.</td></tr>
@@ -451,8 +471,6 @@ Still stuck? Read [how to ask for help](/help-guidelines) or see the general [tr
     <tr><td><a href="/images/extensions/endstop-inputs-basic/endstop-inputs-basic-schematic.pdf">Schematic (PDF)</a></td><td>The complete circuit diagram</td></tr>
     <tr><td><a href="/images/extensions/endstop-inputs-basic/endstop-inputs-basic-bom.csv">Parts list (CSV)</a></td><td>Every component with its value, footprint and part number</td></tr>
     <tr><td><a href="/images/extensions/endstop-inputs-basic/endstop-inputs-basic-diagram.png">Top view (PNG)</a></td><td>The drawing used on this page</td></tr>
-    <tr><td><a href="/images/extensions/endstop-inputs-basic/endstop-inputs-basic-populated-top.png">3D render, top (PNG)</a></td><td>Computer render of the assembled board</td></tr>
-    <tr><td><a href="/images/extensions/endstop-inputs-basic/endstop-inputs-basic-populated-isometric.png">3D render, angled (PNG)</a></td><td>Computer render of the assembled board; the ten-pin connector shrouds are not shown</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}
@@ -564,10 +582,10 @@ One input channel was simulated in ngspice with generic diode and light models, 
 <div class="xb-tablewrap"><table>
   <thead><tr><th>Controller pin setting (3V3 position)</th><th>Closed level, −10 to 60&nbsp;&deg;C</th><th>Reads low reliably</th></tr></thead>
   <tbody>
-    <tr><td>No pull resistor</td><td>0.62 to 0.74&nbsp;V</td><td>Yes</td></tr>
-    <tr><td>Pull-up <code>^</code>, 50&nbsp;k&Omega;</td><td>0.89 to 1.00&nbsp;V</td><td>Marginal</td></tr>
-    <tr><td>Pull-up <code>^</code>, 40&nbsp;k&Omega;</td><td>0.95 to 1.06&nbsp;V</td><td>Marginal</td></tr>
-    <tr><td>Pull-up <code>^</code>, 30&nbsp;k&Omega;</td><td>1.05 to 1.14&nbsp;V</td><td>No</td></tr>
+    <tr><td>No pull resistor (<code>-</code>)</td><td>0.62 to 0.74&nbsp;V</td><td>Yes</td></tr>
+    <tr><td>Pull-up (default or <code>^</code>), 50&nbsp;k&Omega;</td><td>0.89 to 1.00&nbsp;V</td><td>Marginal</td></tr>
+    <tr><td>Pull-up (default or <code>^</code>), 40&nbsp;k&Omega;</td><td>0.95 to 1.06&nbsp;V</td><td>Marginal</td></tr>
+    <tr><td>Pull-up (default or <code>^</code>), 30&nbsp;k&Omega;</td><td>1.05 to 1.14&nbsp;V</td><td>No</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}

@@ -3366,22 +3366,7 @@
         "archived_svg": "smoothie-diagrams/data/website-extension-svg/endstop-inputs-basic/endstop-inputs-basic-diagram.svg",
         "archived_svg_sha256": "16feca65ef2dd1c74523d0e23c15d4b8c6355dae6f122900bb1a511c64b65bb7"
       },
-      "renders": [
-        {
-          "url": "/images/extensions/endstop-inputs-basic/endstop-inputs-basic-populated-isometric.png",
-          "sha256": "41d4edb1960d636f4b2cdc07a77de5ff9925f05b8588b91a004fe27582969873",
-          "source_path": "extension-boards/src/endstop-inputs-basic/attempt/website/endstop-inputs.kicad_pcb",
-          "label": "Populated board, perspective view",
-          "caption": "Computer render, not a photograph."
-        },
-        {
-          "url": "/images/extensions/endstop-inputs-basic/endstop-inputs-basic-populated-top.png",
-          "sha256": "591d7ac391db68ece85fd8be021a64879308a299360a49f9069812c21099564b",
-          "source_path": "extension-boards/src/endstop-inputs-basic/attempt/website/endstop-inputs.kicad_pcb",
-          "label": "Populated board, top view",
-          "caption": "Computer render, not a photograph."
-        }
-      ]
+      "renders": []
     }
   ]
 }
