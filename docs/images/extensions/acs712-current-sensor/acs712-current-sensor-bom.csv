@@ -1,0 +1,10 @@
+References,Quantity,Value,Footprint,Manufacturer,MPN
+C1 C5,2,100nF 50V X7R,Capacitor_SMD:C_0603_1608Metric,,
+C2,1,1uF 16V X7R,Capacitor_SMD:C_0603_1608Metric,,
+C3 C4,2,10nF 50V X7R,Capacitor_SMD:C_0603_1608Metric,,
+J1,1,A IN,SmoothieBoardgen:Samtec_SHF105_TH_LC,Samtec,SHF-105-01-L-D-TH-LC
+J2,1,A CHAIN,SmoothieBoardgen:Samtec_SHF105_TH_LC,Samtec,SHF-105-01-L-D-TH-LC
+J3,1,CURRENT PATH,TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-3-2-5.08_1x02_P5.08mm_Horizontal,Phoenix Contact,"MKDS 3/ 2-5,08"
+R1 R3,2,10k 0.1%,Resistor_SMD:R_0603_1608Metric,,
+R2 R4,2,18k 0.1%,Resistor_SMD:R_0603_1608Metric,,
+U1,1,ACS712ELCTR-20A-T,Package_SO:SOIC-8_3.9x4.9mm_P1.27mm,Allegro MicroSystems,ACS712ELCTR-20A-T

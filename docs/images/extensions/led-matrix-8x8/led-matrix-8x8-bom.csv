@@ -1,0 +1,10 @@
+References,Quantity,Value,Footprint,Manufacturer,MPN
+C1 C3,2,100nF 16V X7R,Capacitor_SMD:C_0603_1608Metric,,
+C2,1,10uF 10V X5R,Capacitor_SMD:C_0805_2012Metric,,
+DS1,1,1088AS RED 8x8,SmoothieBoardgen:LED_Matrix_8x8_1088AS,generic,1088AS
+J1,1,S IN,SmoothieBoardgen:Samtec_SHF105_TH_LC,Samtec,SHF-105-01-L-D-TH-LC
+J2,1,S CHAIN,SmoothieBoardgen:Samtec_SHF105_TH_LC,Samtec,SHF-105-01-L-D-TH-LC
+R1,1,28k 1%,Resistor_SMD:R_0603_1608Metric,,
+R2,1,10k,Resistor_SMD:R_0603_1608Metric,,
+U1,1,MAX7219,Package_SO:SOIC-24W_7.5x15.4mm_P1.27mm,Analog Devices,MAX7219CWG+
+U2,1,SN74AHCT125DR,Package_SO:SOIC-14_3.9x8.7mm_P1.27mm,Texas Instruments,SN74AHCT125DR

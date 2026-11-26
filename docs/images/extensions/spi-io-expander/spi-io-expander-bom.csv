@@ -1,0 +1,13 @@
+References,Quantity,Value,Footprint,Manufacturer,MPN
+C1 C2 C3 C4,4,100nF 16V X7R,Capacitor_SMD:C_0603_1608Metric,,
+C5,1,10uF 10V X5R,Capacitor_SMD:C_0805_2012Metric,,
+J1,1,S IN,SmoothieBoardgen:Samtec_SHF105_TH_LC,Samtec,SHF-105-01-L-D-TH-LC
+J2,1,S CHAIN,SmoothieBoardgen:Samtec_SHF105_TH_LC,Samtec,SHF-105-01-L-D-TH-LC
+J3,1,PORT 1,Connector_PinHeader_2.54mm:PinHeader_2x10_P2.54mm_Vertical,,
+J4,1,PORT 2,Connector_PinHeader_2.54mm:PinHeader_2x10_P2.54mm_Vertical,,
+J5,1,PORT 3,Connector_PinHeader_2.54mm:PinHeader_2x10_P2.54mm_Vertical,,
+J6,1,PORT 4,Connector_PinHeader_2.54mm:PinHeader_2x10_P2.54mm_Vertical,,
+R1 R2 R3 R4,4,1k,Resistor_SMD:R_0603_1608Metric,,
+R5 R6 R7,3,10k,Resistor_SMD:R_0603_1608Metric,,
+RN1 RN2 RN3 RN4 RN5 RN6 RN7 RN8 RN9 RN10 RN11 RN12 RN13 RN14 RN15 RN16,16,220R x4,Resistor_SMD:R_Array_Convex_4x0603,,
+U1 U2 U3 U4,4,MCP23S17-E/SS,Package_SO:SSOP-28_5.3x10.2mm_P0.65mm,Microchip,MCP23S17-E/SS

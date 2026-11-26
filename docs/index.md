@@ -386,26 +386,34 @@ The [complete extension-board directory](/extension-boards) describes what each 
 
 ### Sensors and inputs
 
+- [3-axis accelerometer](/extensions/three-axis-accelerometer)
+- [9-axis IMU](/extensions/nine-axis-imu)
+- [ACS712 current sensor](/extensions/acs712-current-sensor)
 - [Endstop and probe inputs (advanced)](/extensions/endstop-and-probe-inputs-advanced)
 - [BLTouch-like probe](/extensions/bltouch-like-probe)
 - [BounceStop hardware debounce](/extensions/historical-bounce-stop)¹
 - [Filament encoder board](/extensions/filament-encoder-board)
 - [Filament progress sensor](/extensions/filament-progress-sensor)
 - [FSR breakout board](/extensions/fsr-breakout-board)
+- [Hall effect sensor board](/extensions/hall-effect-sensor-board)
 - [Hall endstop breakout](/extensions/hall-endstop-breakout)
 - [HX711 load-cell amplifier](/extensions/hx711-load-cell-amplifier)
 - [Inductive proximity sensor adapter (level shifter)](/extensions/inductive-proximity-sensor-adapter)
 - [Input protector](/extensions/input-protector)
+- [IR remote receiver](/extensions/infrared-remote-receiver)
 - [Laser barrier board](/extensions/laser-barrier-board)
 - [Mechanical endstop breakout](/extensions/mechanical-endstop-breakout)
 - [OptoIsoStop isolated endstop interface](/extensions/historical-opto-isolated-endstop-adapter)¹
 - [Pressure sensor](/extensions/pressure-sensor)
+- [RFID reader](/extensions/rfid-reader)
 - [Simple PT100 amplifier board](/extensions/simple-pt100-amplifier-board)
 - [Smoke detector](/extensions/smoke-detector)
 - [Spectral analysis board](/extensions/spectral-analysis-board)
 - [SPI PT100 amplifier board](/extensions/spi-pt100-amplifier-board)
 - [SPI thermocouple breakout](/extensions/spi-thermocouple-breakout)
 - [ThermistorTrigger — Dual thermistor hardware setpoint trigger](/extensions/historical-thermistortrigger)¹
+- [Ultrasonic distance sensor](/extensions/ultrasonic-distance-sensor)
+- [Vibration sensor board](/extensions/vibration-sensor-board)
 - [Water-flow sensor adapter](/extensions/water-flow-sensor-adapter)
 
 {::nomarkdown}
@@ -428,7 +436,9 @@ The [complete extension-board directory](/extension-boards) describes what each 
 - [Four-PWM/two-input/probe interface](/extensions/historical-gadgeteer-pwm-io-board)¹
 - [Gate boards](/extensions/gate-boards)
 - [Additional general purpose outputs breakout / Servo board](/extensions/general-purpose-output-servo-board)
+- [IR remote emitter](/extensions/infrared-remote-emitter)
 - [Laser diode driver breakout](/extensions/laser-diode-driver-breakout)
+- [Laser light emitter](/extensions/laser-emitter-board)
 - [Laser PSU adapter board](/extensions/laser-psu-adapter-board)
 - [PiPower — Pi power, UART and button shield](/extensions/historical-pipower)¹
 - [Power supply connector board](/extensions/power-supply-connector-board)
@@ -451,6 +461,7 @@ The [complete extension-board directory](/extension-boards) describes what each 
 
 ### Communication and signal interfaces
 
+- [64-pin SPI I/O expander](/extensions/spi-io-expander)
 - [Bidirectional level shifting board](/extensions/bidirectional-level-shifting-board)
 - [Bouni RS-485 spindle control](/extensions/bouni-rs485-spindle-control)
 - [Cheap UART adapter breakout](/extensions/cheap-uart-adapter-breakout)
@@ -483,16 +494,27 @@ The [complete extension-board directory](/extension-boards) describes what each 
 
 ### Displays, controls and accessories
 
+- [16-key keypad](/extensions/sixteen-key-keypad)
+- [8x8 LED matrix](/extensions/led-matrix-8x8)
 - [Button boards](/extensions/button-boards)
 - [Buzzer module](/extensions/buzzer-module)
 - [Camera trigger board](/extensions/camera-trigger-board)
+- [Character LCD display](/extensions/character-lcd-display)
 - [Debug probe](/extensions/debug-probe)
 - [DIP-switch and debounced-input board](/extensions/historical-gadgeteer-dip-switch-board)¹
 - [GLCD breakout](/extensions/glcd-breakout)
+- [Handwheel encoder interface](/extensions/rotary-encoder-handwheel-interface)
+- [LED bar, 8 lamps](/extensions/led-bar-8)
+- [Linear potentiometer board](/extensions/linear-potentiometer-board)
+- [RGB LED board](/extensions/rgb-led-board)
+- [Rotary potentiometer board](/extensions/rotary-potentiometer-board)
+- [SD audio player](/extensions/sd-audio-player)
 - [Seven-LED GPIO board](/extensions/historical-gadgeteer-led-breakout)¹
 - [LED breakout](/extensions/led-breakout)
 - [SD card breakout](/extensions/sd-card-breakout)
+- [Thumb joystick breakout](/extensions/joystick-breakout)
 - [Universal panel adapter](/extensions/universal-panel-adapter)
+- [Wii Nunchuck adapter](/extensions/wii-nunchuck-adapter)
 
 {::nomarkdown}
 </section>

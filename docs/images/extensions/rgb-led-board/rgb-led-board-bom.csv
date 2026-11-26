@@ -1,0 +1,10 @@
+References,Quantity,Value,Footprint,Manufacturer,MPN
+C1,1,10uF 10V X5R,Capacitor_SMD:C_0805_2012Metric,,
+D1 D2 D3 D4,4,Inolux_IN-P55TATRGB,SmoothieBoardgen:LED_Inolux_IN-P55TATRGB_PLCC6_5.0x5.5mm_P1.8mm,Inolux,IN-P55TATRGB
+J1,1,P IN,SmoothieBoardgen:Samtec_SHF105_TH_LC,Samtec,SHF-105-01-L-D-TH-LC
+J2,1,P CHAIN,SmoothieBoardgen:Samtec_SHF105_TH_LC,Samtec,SHF-105-01-L-D-TH-LC
+Q1 Q2 Q3,3,AO3400A,Package_TO_SOT_SMD:SOT-23,Alpha and Omega Semiconductor,AO3400A
+R1 R2 R3,3,100R,Resistor_SMD:R_0603_1608Metric,,
+R10 R13 R16 R19,4,180R,Resistor_SMD:R_0603_1608Metric,,
+R11 R12 R14 R15 R17 R18 R20 R21,8,120R,Resistor_SMD:R_0603_1608Metric,,
+R4 R5 R6,3,100k,Resistor_SMD:R_0603_1608Metric,,

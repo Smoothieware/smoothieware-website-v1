@@ -1,0 +1,7 @@
+References,Quantity,Value,Footprint,Manufacturer,MPN
+D1 D2 D3 D4 D5 D6 D7,7,GREEN,LED_SMD:LED_0603_1608Metric,,
+D8,1,RED,LED_SMD:LED_0603_1608Metric,,
+J1,1,Y IN,SmoothieBoardgen:Samtec_SHF105_TH_LC,Samtec,SHF-105-01-L-D-TH-LC
+J2,1,Y CHAIN,SmoothieBoardgen:Samtec_SHF105_TH_LC,Samtec,SHF-105-01-L-D-TH-LC
+J3,1,LED8 EXT,Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical,,
+R1 R2 R3 R4 R5 R6 R7 R8 R9,9,1k,Resistor_SMD:R_0603_1608Metric,,

@@ -1,0 +1,9 @@
+References,Quantity,Value,Footprint,Manufacturer,MPN
+C1,1,100nF 16V X7R,Capacitor_SMD:C_0603_1608Metric,,
+C2,1,10uF 10V X5R,Capacitor_SMD:C_0805_2012Metric,,
+J1,1,S IN,SmoothieBoardgen:Samtec_SHF105_TH_LC,Samtec,SHF-105-01-L-D-TH-LC
+J2,1,S CHAIN,SmoothieBoardgen:Samtec_SHF105_TH_LC,Samtec,SHF-105-01-L-D-TH-LC
+J3,1,RC522 MODULE,Connector_PinSocket_2.54mm:PinSocket_1x08_P2.54mm_Horizontal,,
+R1 R2 R3 R4 R5 R6,6,100R,Resistor_SMD:R_0603_1608Metric,,
+R7 R8,2,10k,Resistor_SMD:R_0603_1608Metric,,
+U1,1,SN74LVC1G125DBVR,Package_TO_SOT_SMD:SOT-23-5,Texas Instruments,SN74LVC1G125DBVR

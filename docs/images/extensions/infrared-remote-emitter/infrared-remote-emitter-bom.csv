@@ -1,0 +1,11 @@
+References,Quantity,Value,Footprint,Manufacturer,MPN
+C1,1,10uF 10V X5R,Capacitor_SMD:C_0805_2012Metric,,
+D1 D2,2,TSAL6200,LED_THT:LED_D5.0mm_IRBlack,Vishay,TSAL6200
+D3,1,RED,LED_SMD:LED_0603_1608Metric,,
+J1,1,P IN,SmoothieBoardgen:Samtec_SHF105_TH_LC,Samtec,SHF-105-01-L-D-TH-LC
+J2,1,P CHAIN,SmoothieBoardgen:Samtec_SHF105_TH_LC,Samtec,SHF-105-01-L-D-TH-LC
+Q1,1,AO3400A,Package_TO_SOT_SMD:SOT-23,Alpha and Omega Semiconductor,AO3400A
+R1 R2,2,47R 1W,Resistor_SMD:R_2512_6332Metric,,
+R3,1,100R,Resistor_SMD:R_0603_1608Metric,,
+R4,1,100k,Resistor_SMD:R_0603_1608Metric,,
+R5,1,2k2,Resistor_SMD:R_0603_1608Metric,,

@@ -1,0 +1,6 @@
+References,Quantity,Value,Footprint,Manufacturer,MPN
+C1 C2,2,100nF 16V X7R,Capacitor_SMD:C_0603_1608Metric,,
+J1,1,A IN,SmoothieBoardgen:Samtec_SHF105_TH_LC,Samtec,SHF-105-01-L-D-TH-LC
+J2,1,A CHAIN,SmoothieBoardgen:Samtec_SHF105_TH_LC,Samtec,SHF-105-01-L-D-TH-LC
+R1,1,1k,Resistor_SMD:R_0603_1608Metric,,
+U1,1,DRV5055A3QDBZR,Package_TO_SOT_SMD:SOT-23,Texas Instruments,DRV5055A3QDBZR

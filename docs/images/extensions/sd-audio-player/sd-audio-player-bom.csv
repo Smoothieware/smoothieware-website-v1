@@ -1,0 +1,11 @@
+References,Quantity,Value,Footprint,Manufacturer,MPN
+C1,1,220uF 10V,Capacitor_THT:CP_Radial_D8.0mm_P3.50mm,,
+C2,1,10uF 10V X5R,Capacitor_SMD:C_0805_2012Metric,,
+C3,1,100nF 16V X7R,Capacitor_SMD:C_0603_1608Metric,,
+J1,1,U IN,SmoothieBoardgen:Samtec_SHF105_TH_LC,Samtec,SHF-105-01-L-D-TH-LC
+J2,1,U CHAIN,SmoothieBoardgen:Samtec_SHF105_TH_LC,Samtec,SHF-105-01-L-D-TH-LC
+J3,1,SPEAKER 8R,"TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal",,
+J4,1,LINE OUT,Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical,,
+J5,1,TRIGGERS,Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical,,
+R1 R2 R3 R4 R5 R6 R7,7,1k,Resistor_SMD:R_0603_1608Metric,,
+U1,1,DFPlayer Mini (DFR0299),SmoothieBoardgen:DFPlayer_Mini_Socketed,DFRobot,DFR0299

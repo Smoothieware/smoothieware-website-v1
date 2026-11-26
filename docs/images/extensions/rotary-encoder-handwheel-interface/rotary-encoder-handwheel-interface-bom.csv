@@ -1,0 +1,15 @@
+References,Quantity,Value,Footprint,Manufacturer,MPN
+C1 C2,2,100nF 50V X7R,Capacitor_SMD:C_0603_1608Metric,,
+C3,1,10uF 16V X5R,Capacitor_SMD:C_0805_2012Metric,,
+C4,1,1uF 16V X7R,Capacitor_SMD:C_0603_1608Metric,,
+D1,1,SMAJ5.0A,Diode_SMD:D_SMA,Littelfuse,SMAJ5.0A
+F1,1,PTC 0.5A,SmoothieBoardgen:Fuse_1812_4532Metric,Bourns,MF-MSMF050-2
+J1,1,Y IN,SmoothieBoardgen:Samtec_SHF105_TH_LC,Samtec,SHF-105-01-L-D-TH-LC
+J2,1,Y CHAIN,SmoothieBoardgen:Samtec_SHF105_TH_LC,Samtec,SHF-105-01-L-D-TH-LC
+J3,1,HANDWHEEL,"TerminalBlock_Phoenix:TerminalBlock_Phoenix_PT-1,5-8-3.5-H_1x08_P3.50mm_Horizontal",Phoenix Contact,"PT 1,5/ 8-3,5-H"
+R1 R2 R3,3,100R,Resistor_SMD:R_0603_1608Metric,,
+R10,1,560R 1%,Resistor_SMD:R_0603_1608Metric,,
+R11,1,470R 1%,Resistor_SMD:R_0603_1608Metric,,
+R4 R5 R6,3,120R 0.25W,Resistor_SMD:R_0805_2012Metric,,
+R7 R8 R9,3,2k2,Resistor_SMD:R_0603_1608Metric,,
+U1,1,AM26LV32E,Package_SO:SOIC-16_3.9x9.9mm_P1.27mm,Texas Instruments,AM26LV32EIDR

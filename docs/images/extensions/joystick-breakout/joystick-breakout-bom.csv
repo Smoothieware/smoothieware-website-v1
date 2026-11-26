@@ -1,0 +1,9 @@
+References,Quantity,Value,Footprint,Manufacturer,MPN
+C1 C2,2,10nF 50V X7R,Capacitor_SMD:C_0603_1608Metric,,
+C3 C4,2,100nF 50V X7R,Capacitor_SMD:C_0603_1608Metric,,
+C5,1,10uF 16V X5R,Capacitor_SMD:C_0805_2012Metric,,
+J1,1,A IN,SmoothieBoardgen:Samtec_SHF105_TH_LC,Samtec,SHF-105-01-L-D-TH-LC
+J2,1,A CHAIN,SmoothieBoardgen:Samtec_SHF105_TH_LC,Samtec,SHF-105-01-L-D-TH-LC
+R1 R2 R4,3,1k 1%,Resistor_SMD:R_0603_1608Metric,,
+R3,1,10k 1%,Resistor_SMD:R_0603_1608Metric,,
+RV1,1,RKJXV1224005 10K,SmoothieBoardgen:Alps_RKJXV1224005,Alps Alpine,RKJXV1224005

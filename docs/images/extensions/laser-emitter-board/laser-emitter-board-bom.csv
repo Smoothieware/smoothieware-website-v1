@@ -1,0 +1,13 @@
+References,Quantity,Value,Footprint,Manufacturer,MPN
+C1,1,10uF 10V X5R,Capacitor_SMD:C_0805_2012Metric,,
+C2,1,100nF 16V X7R,Capacitor_SMD:C_0603_1608Metric,,
+D1,1,RED,LED_SMD:LED_0603_1608Metric,,
+F1,1,PTC 0.5A,SmoothieBoardgen:Fuse_1812_4532Metric,Bourns,MF-MSMF050-2
+J1,1,X IN,SmoothieBoardgen:Samtec_SHF105_TH_LC,Samtec,SHF-105-01-L-D-TH-LC
+J2,1,X CHAIN,SmoothieBoardgen:Samtec_SHF105_TH_LC,Samtec,SHF-105-01-L-D-TH-LC
+J3,1,INTERLOCK / KEY,Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical,,
+J4,1,LASER MODULE,Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical,,
+Q1,1,AO3400A,Package_TO_SOT_SMD:SOT-23,Alpha and Omega Semiconductor,AO3400A
+R1,1,100R,Resistor_SMD:R_0603_1608Metric,,
+R2,1,10k,Resistor_SMD:R_0603_1608Metric,,
+R3,1,1k,Resistor_SMD:R_0603_1608Metric,,

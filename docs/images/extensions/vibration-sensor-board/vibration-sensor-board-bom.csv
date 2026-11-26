@@ -1,0 +1,10 @@
+References,Quantity,Value,Footprint,Manufacturer,MPN
+C1 C2,2,100nF 16V X7R,Capacitor_SMD:C_0603_1608Metric,,
+D1,1,GREEN,LED_SMD:LED_0603_1608Metric,,
+J1,1,X IN,SmoothieBoardgen:Samtec_SHF105_TH_LC,Samtec,SHF-105-01-L-D-TH-LC
+J2,1,X CHAIN,SmoothieBoardgen:Samtec_SHF105_TH_LC,Samtec,SHF-105-01-L-D-TH-LC
+R1 R3,2,100R,Resistor_SMD:R_0603_1608Metric,,
+R2,1,470k,Resistor_SMD:R_0603_1608Metric,,
+R4,1,2k2,Resistor_SMD:R_0603_1608Metric,,
+SW1,1,SW-18020P,SmoothieBoardgen:SW_Vibration_SW18020P_Horizontal,BaiLing,SW-18020P
+U1,1,SN74LVC1G14DBVR,Package_TO_SOT_SMD:SOT-23-5,Texas Instruments,SN74LVC1G14DBVR

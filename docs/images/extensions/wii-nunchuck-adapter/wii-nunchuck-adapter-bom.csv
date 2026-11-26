@@ -1,0 +1,8 @@
+References,Quantity,Value,Footprint,Manufacturer,MPN
+C1,1,10uF 10V X5R,Capacitor_SMD:C_0805_2012Metric,,
+C2,1,100nF 16V X7R,Capacitor_SMD:C_0603_1608Metric,,
+FB1,1,0R,Resistor_SMD:R_0603_1608Metric,,
+J1,1,I IN,SmoothieBoardgen:Samtec_SHF105_TH_LC,Samtec,SHF-105-01-L-D-TH-LC
+J2,1,I CHAIN,SmoothieBoardgen:Samtec_SHF105_TH_LC,Samtec,SHF-105-01-L-D-TH-LC
+J3,1,QWIIC 3V3,Connector_JST:JST_SH_SM04B-SRSS-TB_1x04-1MP_P1.00mm_Horizontal,JST,SM04B-SRSS-TB(LF)(SN)
+R1 R2,2,3k3,Resistor_SMD:R_0603_1608Metric,,
