@@ -638,7 +638,7 @@ That controller pin then appears on the same pin number of J9. Power and ground 
 </table></div>
 {:/nomarkdown}
 
-Still stuck? Read [how to ask for help](/help-guidelines) or see the general [troubleshooting guide](/troubleshooting/). Include the text printed on your board, which connector type it has, what is connected to each input, and what `M119` replies.
+Still stuck? Read [how to ask for help](/help-guidelines) or see the general [troubleshooting guide](/troubleshooting). Include the text printed on your board, which connector type it has, what is connected to each input, and what `M119` replies.
 
 ## Downloads {#downloads}
 
